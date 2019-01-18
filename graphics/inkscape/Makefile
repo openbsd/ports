@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2018/09/04 12:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2019/01/18 20:08:55 sthen Exp $
 
 COMMENT =	SVG vector drawing application
 
@@ -36,7 +36,6 @@ MODULES=	textproc/intltool \
 COMPILER =	base-clang ports-gcc
 
 # We are just substituting paths at build time
-MODPY_BUILDDEP =	No
 MODRUBY_BUILDDEP =	No
 
 # There are no (enabled) ruby extensions yet, but users may like
