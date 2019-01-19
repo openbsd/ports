@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/01/04 17:01:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/01/19 12:01:10 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LLD=	No
@@ -21,8 +21,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 HOMEPAGE=	https://www.seabios.org/
 
-MASTER_SITES=	https://code.coreboot.org/p/seabios/downloads/get/ \
-		https://spacehopper.org/mirrors/
+MASTER_SITES=	https://www.seabios.org/downloads/
 MASTER_SITES0=	https://github.com/qemu/sgabios/archive/
 
 # LGPLv3 but distributed via fw_update/firmware.openbsd.org so disable
