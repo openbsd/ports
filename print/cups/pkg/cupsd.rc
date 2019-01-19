@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: cupsd.rc,v 1.29 2018/10/16 11:18:47 ajacoutot Exp $
+# $OpenBSD: cupsd.rc,v 1.30 2019/01/19 21:37:46 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/cupsd"
 
@@ -12,8 +12,10 @@ rc_pre() {
 	# XXX cups-driverd(8) can crash when setting up a printer driver
 	rm -f /var/cache/cups/*
 
-	# rcexec is needed if openfiles limits are bumped and cupsd(8) runs in
-	# debug mode to prevent MaxClients warnings in logs
+	# rcexec is needed because:
+	# - ${TRUEPREFIX}/sbin/cupsd is only executable by root
+	# - if openfiles limits are bumped and cupsd(8) runs in debug mode to
+	#   prevent MaxClients warnings in logs
 	${rcexec} "${daemon} ${daemon_flags} -t" || return 1
 
 	# no existing printcap means we're not running lpd(8) so link cups'
