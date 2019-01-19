@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.65 2018/11/16 07:24:21 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.66 2019/01/19 16:11:12 giovanni Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/phpmyadmin.conf
 @group daemon
 phpMyAdmin/
@@ -133,8 +133,8 @@ phpMyAdmin/examples/
 phpMyAdmin/examples/config.manyhosts.inc.php
 phpMyAdmin/examples/openid.php
 phpMyAdmin/examples/phpMyAdmin-apache2.conf
-@sample /var/www/conf/modules.sample/
-@sample /var/www/conf/modules.sample/phpmyadmin.conf
+@sample conf/modules.sample/
+@sample conf/modules.sample/phpmyadmin.conf
 phpMyAdmin/examples/phpMyAdmin-nginx.conf
 phpMyAdmin/examples/signon-script.php
 phpMyAdmin/examples/signon.php
@@ -159,6 +159,7 @@ phpMyAdmin/js/db_central_columns.js
 phpMyAdmin/js/db_multi_table_query.js
 phpMyAdmin/js/db_operations.js
 phpMyAdmin/js/db_qbe.js
+phpMyAdmin/js/db_query_generator.js
 phpMyAdmin/js/db_search.js
 phpMyAdmin/js/db_structure.js
 phpMyAdmin/js/db_tracking.js
@@ -863,11 +864,9 @@ phpMyAdmin/locale/fr/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/gl/
 phpMyAdmin/locale/gl/LC_MESSAGES/
 phpMyAdmin/locale/gl/LC_MESSAGES/phpmyadmin.mo
-@group
 phpMyAdmin/locale/he/
 phpMyAdmin/locale/he/LC_MESSAGES/
 phpMyAdmin/locale/he/LC_MESSAGES/phpmyadmin.mo
-@group daemon
 phpMyAdmin/locale/hu/
 phpMyAdmin/locale/hu/LC_MESSAGES/
 phpMyAdmin/locale/hu/LC_MESSAGES/phpmyadmin.mo
@@ -889,11 +888,9 @@ phpMyAdmin/locale/ja/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/ko/
 phpMyAdmin/locale/ko/LC_MESSAGES/
 phpMyAdmin/locale/ko/LC_MESSAGES/phpmyadmin.mo
-@group
 phpMyAdmin/locale/lt/
 phpMyAdmin/locale/lt/LC_MESSAGES/
 phpMyAdmin/locale/lt/LC_MESSAGES/phpmyadmin.mo
-@group daemon
 phpMyAdmin/locale/nb/
 phpMyAdmin/locale/nb/LC_MESSAGES/
 phpMyAdmin/locale/nb/LC_MESSAGES/phpmyadmin.mo
@@ -1879,21 +1876,15 @@ phpMyAdmin/vendor/composer/autoload_static.php
 phpMyAdmin/vendor/composer/installed.json
 phpMyAdmin/vendor/google/
 phpMyAdmin/vendor/google/recaptcha/
-@group
 phpMyAdmin/vendor/google/recaptcha/.github/
 phpMyAdmin/vendor/google/recaptcha/.github/ISSUE_TEMPLATE/
 phpMyAdmin/vendor/google/recaptcha/.github/ISSUE_TEMPLATE/bug_report.md
-@group daemon
 phpMyAdmin/vendor/google/recaptcha/.travis.yml
-@group
 phpMyAdmin/vendor/google/recaptcha/ARCHITECTURE.md
-@group daemon
 phpMyAdmin/vendor/google/recaptcha/CONTRIBUTING.md
 phpMyAdmin/vendor/google/recaptcha/LICENSE
 phpMyAdmin/vendor/google/recaptcha/README.md
-@group
 phpMyAdmin/vendor/google/recaptcha/app.yaml
-@group daemon
 phpMyAdmin/vendor/google/recaptcha/composer.json
 phpMyAdmin/vendor/google/recaptcha/phpunit.xml.dist
 phpMyAdmin/vendor/google/recaptcha/src/
@@ -2349,6 +2340,7 @@ phpMyAdmin/vendor/phpseclib/phpseclib/
 phpMyAdmin/vendor/phpseclib/phpseclib/AUTHORS
 phpMyAdmin/vendor/phpseclib/phpseclib/LICENSE
 phpMyAdmin/vendor/phpseclib/phpseclib/README.md
+phpMyAdmin/vendor/phpseclib/phpseclib/appveyor.yml
 phpMyAdmin/vendor/phpseclib/phpseclib/composer.json
 phpMyAdmin/vendor/phpseclib/phpseclib/phpseclib/
 phpMyAdmin/vendor/phpseclib/phpseclib/phpseclib/Crypt/
@@ -2442,14 +2434,12 @@ phpMyAdmin/vendor/symfony/expression-language/Token.php
 phpMyAdmin/vendor/symfony/expression-language/TokenStream.php
 phpMyAdmin/vendor/symfony/expression-language/composer.json
 phpMyAdmin/vendor/symfony/expression-language/phpunit.xml.dist
-@group
 phpMyAdmin/vendor/symfony/polyfill-ctype/
 phpMyAdmin/vendor/symfony/polyfill-ctype/Ctype.php
 phpMyAdmin/vendor/symfony/polyfill-ctype/LICENSE
 phpMyAdmin/vendor/symfony/polyfill-ctype/README.md
 phpMyAdmin/vendor/symfony/polyfill-ctype/bootstrap.php
 phpMyAdmin/vendor/symfony/polyfill-ctype/composer.json
-@group daemon
 phpMyAdmin/vendor/symfony/polyfill-mbstring/
 phpMyAdmin/vendor/symfony/polyfill-mbstring/LICENSE
 phpMyAdmin/vendor/symfony/polyfill-mbstring/Mbstring.php
@@ -2457,9 +2447,7 @@ phpMyAdmin/vendor/symfony/polyfill-mbstring/README.md
 phpMyAdmin/vendor/symfony/polyfill-mbstring/Resources/
 phpMyAdmin/vendor/symfony/polyfill-mbstring/Resources/unidata/
 phpMyAdmin/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
-@group
 phpMyAdmin/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
-@group daemon
 phpMyAdmin/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
 phpMyAdmin/vendor/symfony/polyfill-mbstring/bootstrap.php
 phpMyAdmin/vendor/symfony/polyfill-mbstring/composer.json
