@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/27 21:03:38 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/01/19 15:38:28 sthen Exp $
 
 COMMENT=	tool to programme a wide range of amateur radios
 
-MODPY_EGG_VERSION= 20180104
+MODPY_EGG_VERSION= 20190112
 DISTNAME=	chirp-daily-${MODPY_EGG_VERSION}
 PKGNAME=	chirp-${MODPY_EGG_VERSION}
-REVISION=	0
 
 CATEGORIES=	comms hamradio
 
-HOMEPAGE=	http://chirp.danplanet.com/
+HOMEPAGE=	https://chirp.danplanet.com/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://trac.chirp.danplanet.com/chirp_daily/daily-${MODPY_EGG_VERSION}/ \
-		https://deftly.net/dist/
+MASTER_SITES=	https://trac.chirp.danplanet.com/chirp_daily/daily-${MODPY_EGG_VERSION}/
 
 MODULES=	lang/python
 COMMON_DEPS=	devel/py-serial \

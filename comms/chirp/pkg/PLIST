@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:03:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/01/19 15:38:28 sthen Exp $
 bin/chirpw
 bin/rpttool
 lib/python${MODPY_VERSION}/site-packages/chirp/
@@ -52,6 +52,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bj9900.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bj9900.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bjuv55.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bjuv55.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/boblov_x3plus.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/boblov_x3plus.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/btech.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/btech.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/fd268.py
@@ -66,16 +68,24 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft2900.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft2900.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft2d.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft2d.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft450d.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft450d.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft50.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft50.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft60.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft60.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft70.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft70.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft7100.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft7100.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft7800.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft7800.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft8100.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft8100.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft817.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft817.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft818.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft818.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft857.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft857.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft90.py
@@ -106,6 +116,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ic2300.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ic2300.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ic2720.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ic2720.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ic2730.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ic2730.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ic2820.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ic2820.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ic9x.py
@@ -158,6 +170,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv8d.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv8d.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv8dplus.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv8dplus.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv9dplus.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kguv9dplus.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kyd.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kyd.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kyd_IP620.py
@@ -166,10 +180,14 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/leixen.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/leixen.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/lt725uv.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/lt725uv.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/mursv1.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/mursv1.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/puxing.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/puxing.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/puxing_px888k.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/puxing_px888k.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/radioddity_r2.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/radioddity_r2.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/radtel_t18.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/radtel_t18.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/repeaterbook.py
@@ -222,6 +240,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/tmv71_ll.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/tmv71_ll.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ts2000.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ts2000.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ts850.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ts850.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/uv5r.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/uv5r.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/uv5x3.py
