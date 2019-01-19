@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_common_mm_mem_io_p_h,v 1.1 2019/01/19 10:30:42 rsadowski Exp $
+
+fix implicit narrowing conversion in brace initializers
+https://gitlab.com/mbunkus/mkvtoolnix/commit/653f74b692d334ea4b3691f3b61c195f464c39d4?view=inline
+
+Index: src/common/mm_mem_io_p.h
+--- src/common/mm_mem_io_p.h.orig
++++ src/common/mm_mem_io_p.h
+@@ -28,8 +28,8 @@ class mm_mem_io_private_c : public mm_io_private_c { (
+   explicit mm_mem_io_private_c(unsigned char *p_mem,
+                                uint64_t p_mem_size,
+                                std::size_t p_increase)
+-    : mem_size{p_mem_size}
+-    , allocated{p_mem_size}
++    : mem_size{static_cast<std::size_t>(p_mem_size)}
++    , allocated{static_cast<std::size_t>(p_mem_size)}
+     , increase{p_increase}
+     , mem{p_mem}
+   {
+@@ -48,8 +48,8 @@ class mm_mem_io_private_c : public mm_io_private_c { (
+ 
+   explicit mm_mem_io_private_c(unsigned char const *p_mem,
+                                uint64_t p_mem_size)
+-    : mem_size{p_mem_size}
+-    , allocated{p_mem_size}
++    : mem_size{static_cast<std::size_t>(p_mem_size)}
++    , allocated{static_cast<std::size_t>(p_mem_size)}
+     , ro_mem{p_mem}
+     , read_only{true}
+   {
