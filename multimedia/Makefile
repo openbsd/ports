@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2019/01/10 20:34:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.112 2019/01/19 02:43:15 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += assimp
@@ -65,6 +65,8 @@
      SUBDIR += phonon-qt5
      SUBDIR += phonon-backend
      SUBDIR += py-caption
+     SUBDIR += py-casttube
+     SUBDIR += py-casttube,python3
      SUBDIR += py-chromecast
      SUBDIR += py-pafy
      SUBDIR += qt-gstreamer
