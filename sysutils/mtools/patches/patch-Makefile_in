@@ -1,7 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2013/11/06 15:06:53 sthen Exp $
---- Makefile.in.orig	Sun Oct 17 16:41:09 2010
-+++ Makefile.in	Wed Nov  6 14:31:40 2013
-@@ -277,7 +277,7 @@ install-links: $(DESTDIR)$(bindir)/mtools
+$OpenBSD: patch-Makefile_in,v 1.4 2019/01/19 15:47:32 sthen Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -278,7 +278,7 @@ install-links: $(DESTDIR)$(bindir)/mtools
  install-scripts: $(DESTDIR)$(bindir)/mtools
  	@$(top_srcdir)/mkinstalldirs $(DESTDIR)$(bindir)
  	@for j in $(SCRIPTS) ; do \
