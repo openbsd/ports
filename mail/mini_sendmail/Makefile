@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2018/09/04 12:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2019/01/19 15:17:21 sthen Exp $
 
 COMMENT-main=	accept email on behalf of real sendmail
 COMMENT-chroot=	static mini_sendmail for chrooted apache
 
-V=		1.3.6
+V=		1.3.9
 DISTNAME=	mini_sendmail-${V}
 PKGNAME-main=	mini_sendmail-${V}
-REVISION-main=	4
 PKGNAME-chroot=	mini_sendmail-chroot-${V}
-REVISION-chroot=3
 CATEGORIES=	mail www
 MASTER_SITES=	${HOMEPAGE}
 
@@ -19,7 +17,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 NO_TEST=	Yes
 
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+MAKE_FLAGS+=	CC="${CC}" \
+		CFLAGS="${CFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 MULTI_PACKAGES=	-main -chroot
 
