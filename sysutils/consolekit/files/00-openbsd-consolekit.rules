@@ -1,0 +1,41 @@
+/*
+ * $OpenBSD: 00-openbsd-consolekit.rules,v 1.1 2019/01/19 01:50:49 ajacoutot Exp $
+ *
+ * These rules try to match OpenBSD default behavior
+ */
+
+/*
+ * Allow members of the operator group to shutdown and reboot without
+ * password authentication"
+ */
+polkit.addRule(function(action, subject) {
+    if (action.id == "org.freedesktop.consolekit.system.stop" ||
+        action.id == "org.freedesktop.consolekit.system.stop-multiple-users" ||
+        action.id == "org.freedesktop.consolekit.system.restart" ||
+        action.id == "org.freedesktop.consolekit.system.restart-multiple-users") {
+            if (subject.local && subject.active && subject.isInGroup("operator")) {
+                return polkit.Result.YES;
+            } else {
+                return polkit.Result.AUTH_ADMIN_KEEP;
+            }
+        }
+});
+
+/*
+ * Allow members of the wheel group to suspend and hibernate without
+ * password authentication"
+ */
+polkit.addRule(function(action, subject) {
+    if (action.id == "org.freedesktop.consolekit.system.hibernate" ||
+        action.id == "org.freedesktop.consolekit.system.hibernate-multiple-users" ||
+        action.id == "org.freedesktop.consolekit.system.hybridsleep" ||
+        action.id == "org.freedesktop.consolekit.system.hybridsleep-multiple-users" ||
+        action.id == "org.freedesktop.consolekit.system.suspend" ||
+        action.id == "org.freedesktop.consolekit.system.suspend-multiple-users") {
+            if (subject.local && subject.active && subject.isInGroup("wheel")) {
+                return polkit.Result.YES;
+            } else {
+                return polkit.Result.AUTH_ADMIN_KEEP;
+            }
+        }
+});

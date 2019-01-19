@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/09/04 12:46:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/01/19 01:50:49 ajacoutot Exp $
 @conflict consolekit-*
 @extra /var/log/ConsoleKit/history
 @bin bin/ck-history
@@ -56,7 +56,6 @@ share/examples/consolekit/ConsoleKit/seats.d/
 share/examples/consolekit/ConsoleKit/seats.d/00-primary.seat
 @sample ${SYSCONFDIR}/ConsoleKit/seats.d/00-primary.seat
 share/examples/consolekit/dbus-1/
-@sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/consolekit/dbus-1/ConsoleKit.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/ConsoleKit.conf
 share/gir-1.0/libconsolekit-1.0.gir
@@ -67,4 +66,5 @@ share/locale/es_419/LC_MESSAGES/
 share/locale/es_419/LC_MESSAGES/ConsoleKit2.mo
 share/locale/ru/LC_MESSAGES/ConsoleKit2.mo
 share/polkit-1/actions/org.freedesktop.consolekit.policy
+share/polkit-1/rules.d/00-openbsd-consolekit.rules
 @sample /var/log/ConsoleKit/

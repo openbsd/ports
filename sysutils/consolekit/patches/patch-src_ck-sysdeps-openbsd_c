@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.25 2019/01/18 02:27:35 ajacoutot Exp $
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.26 2019/01/19 01:50:49 ajacoutot Exp $
 
 https://github.com/ConsoleKit2/ConsoleKit2/pull/117
 
@@ -44,25 +44,20 @@ Index: src/ck-sysdeps-openbsd.c
          res = ioctl (console_fd, VT_GETACTIVE, &active);
          if (res == ERROR) {
                  perror ("ioctl VT_GETACTIVE");
-@@ -477,13 +474,33 @@ ck_get_active_console_num (int    console_fd,
+@@ -477,13 +474,28 @@ ck_get_active_console_num (int    console_fd,
  gboolean
  ck_system_can_suspend (void)
  {
 -        return TRUE;
 +/* needs acpi(4) */
 +#if defined(__i386__) || defined(__amd64__) || defined(__aarch64__)
-+	const char *apmdev = "/var/run/apmdev";
 +	struct stat st;
 +
-+	if (stat(apmdev, &st) < 0) {
++	if (stat("/var/run/apmdev", &st) < 0) {
 +		return FALSE;
 +	}
 +
 +	if (!S_ISSOCK(st.st_mode)) {
-+		return FALSE;
-+	}
-+
-+	if (access(apmdev, W_OK) == -1) {
 +		return FALSE;
 +	}
 +
