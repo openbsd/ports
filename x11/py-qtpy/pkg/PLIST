@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/08/29 21:19:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/01/19 23:27:41 mariani Exp $
 lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -17,6 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/qtpy/QtOpenGL.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/QtPrintSupport.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/QtQml.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/QtQuick.py
+lib/python${MODPY_VERSION}/site-packages/qtpy/QtQuickWidgets.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/QtSql.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/QtSvg.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/QtTest.py
@@ -39,6 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}QtOpenGL.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}QtPrintSupport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}QtQml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}QtQuick.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}QtQuickWidgets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}QtSql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}QtSvg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/${MODPY_PYCACHE}QtTest.${MODPY_PYC_MAGIC_TAG}pyc
@@ -84,10 +86,12 @@ lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qtnetwo
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qtprintsupport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qtqml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qtquick.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qtquickwidgets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qtsql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qtsvg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qttest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qtwebchannel.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qtwebenginewidgets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qtwebsockets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_qtxmlpatterns.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/${MODPY_PYCACHE}test_uic.${MODPY_PYC_MAGIC_TAG}pyc
@@ -108,10 +112,12 @@ lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qtnetwork.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qtprintsupport.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qtqml.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qtquick.py
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qtquickwidgets.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qtsql.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qtsvg.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qttest.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qtwebchannel.py
+lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qtwebenginewidgets.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qtwebsockets.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_qtxmlpatterns.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/tests/test_uic.py
