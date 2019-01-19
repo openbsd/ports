@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/11/15 21:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/01/19 15:31:24 sthen Exp $
 
 COMMENT=	DKIM and DomainKeys message-signing implementation
 
@@ -11,7 +11,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
 PKG_ARCH=	*
-CPAN_AUTHOR=	JASLONG
 
 RUN_DEPENDS=	security/p5-Crypt-OpenSSL-RSA \
 		mail/p5-Mail-Tools \
