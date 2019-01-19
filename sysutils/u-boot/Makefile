@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.47 2019/01/17 20:41:47 kettenis Exp $
+#	$OpenBSD: Makefile,v 1.48 2019/01/19 11:27:05 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -29,6 +29,9 @@ BUILD_DEPENDS=	devel/bison \
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No
+
+MODPY_ADJ_FILES=\
+	arch/arm/mach-rockchip/make_fit_atf.py
 
 MAKE_ENV=	KBUILD_VERBOSE=1 \
 		PYTHON="${MODPY_BIN}"
