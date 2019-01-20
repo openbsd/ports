@@ -1,0 +1,17 @@
+$OpenBSD: patch-policyd-spf,v 1.1 2019/01/20 11:11:15 giovanni Exp $
+
+Pretend string to be unicode,
+fixes compatibility with python 2.7
+
+Index: policyd-spf
+--- policyd-spf.orig
++++ policyd-spf
+@@ -52,6 +52,8 @@ policydspfsupp._setExceptHook()
+ #############################################
+ def _cidrmatch(ip, netwrk):
+     """Match connect IP against a CIDR network of other IP addresses."""
++    netwrk = unicode(netwrk)
++    ip = unicode(ip)
+ 
+     try:
+         address = ipaddress.ip_address(ip)
