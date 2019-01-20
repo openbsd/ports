@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2018/11/19 08:24:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2019/01/20 23:00:32 ajacoutot Exp $
 
 # XXX merge this patch and rid of the dot.la files?
 https://git.archlinux.org/svntogit/packages.git/tree/trunk/0030-dont_use_la_files_for_opening_plugins.patch?h=packages/cyrus-sasl
@@ -6,6 +6,7 @@ https://git.archlinux.org/svntogit/packages.git/tree/trunk/0030-dont_use_la_file
 COMMENT=		RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=		cyrus-sasl-2.1.27
+REVISION=		0
 
 SHARED_LIBS +=  sasl2                3.1      # 3.0
 
