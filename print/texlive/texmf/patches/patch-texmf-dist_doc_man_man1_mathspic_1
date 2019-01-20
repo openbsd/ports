@@ -1,0 +1,14 @@
+$OpenBSD: patch-texmf-dist_doc_man_man1_mathspic_1,v 1.1 2019/01/20 11:17:51 edd Exp $
+
+Index: texmf-dist/doc/man/man1/mathspic.1
+--- texmf-dist/doc/man/man1/mathspic.1.orig
++++ texmf-dist/doc/man/man1/mathspic.1
+@@ -4,7 +4,7 @@
+ ..
+ .TH mathsPIC 1 "April 26, 2010"  "mathsPIC perl version"
+ .SH NAME
+-.B mathsPIC
++mathsPIC \(en Perl filter program for PiCTeX
+ .SH AUTHORS
+ A. Syropoulos and R.W.D. Nickalls (April 26, 2010)
+ 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.6 2018/01/30 20:35:54 edd Exp $
+$OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.7 2019/01/20 11:17:52 edd Exp $
 Index: texmf-dist/web2c/texmf.cnf
 --- texmf-dist/web2c/texmf.cnf.orig
 +++ texmf-dist/web2c/texmf.cnf
@@ -13,21 +13,20 @@ Index: texmf-dist/web2c/texmf.cnf
  % If you modify this original file, YOUR CHANGES WILL BE LOST when it is
  % updated.  Instead, put your changes -- and only your changes, not an
  % entire copy! -- in ../../texmf.cnf.  That is, if this file is
-@@ -51,10 +55,9 @@
- % All trees must be organized according to the TeX Directory Structure
- % (http://tug.org/tds), or files may not be found.
- %
--% Redistributors will probably want $SELFAUTODIR/share, i.e., /usr/share.
--% Kpathsea sets SELFAUTOLOC (the directory with the binary),
--% SELFAUTODIR (its parent), and SELFAUTOPARENT (its grandparent).
+@@ -58,8 +62,11 @@
+ % SELFAUTOPARENT (its grandparent = /usr/local/texlive/YYYY), and
+ % SELFAUTOGRANDPARENT (its great-grandparent = /usr/local/texlive).
+ % Sorry for the off-by-one-generation names.
 -TEXMFROOT = $SELFAUTOPARENT
-+% We use the old teTeX paths in OpenBSD, respect the legacy.
+ 
++% We use the old teTeX paths in OpenBSD.
 +OBSD_PREFIX= ${TRUEPREFIX}
 +TEXMFROOT = $OBSD_PREFIX/share
- 
++
  % The main tree of distributed packages and programs:
  TEXMFDIST = $TEXMFROOT/texmf-dist
-@@ -64,7 +67,7 @@ TEXMFDIST = $TEXMFROOT/texmf-dist
+ 
+@@ -68,7 +75,7 @@ TEXMFDIST = $TEXMFROOT/texmf-dist
  TEXMFMAIN = $TEXMFDIST
  
  % Local additions to the distribution trees.
@@ -36,7 +35,7 @@ Index: texmf-dist/web2c/texmf.cnf
  
  % TEXMFSYSVAR, where *-sys store cached runtime data.
  TEXMFSYSVAR = $TEXMFROOT/texmf-var
-@@ -457,7 +460,7 @@ LUAINPUTS.dvilualatex = .;$TEXMF/scripts/{$progname,$e
+@@ -465,7 +472,7 @@ LUAINPUTS.dvilualatex = .;$TEXMF/scripts/{$progname,$e
  LUAINPUTS = .;$TEXMF/scripts/{$progname,$engine,}/{lua,}//;$TEXMF/tex/{luatex,plain,generic,}//
  
  % Lua needs to look for binary lua libraries distributed with packages.

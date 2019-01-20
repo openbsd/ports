@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.18 2018/01/30 20:35:30 edd Exp $
+# $OpenBSD: Makefile.inc,v 1.19 2019/01/20 11:17:30 edd Exp $
 
 CATEGORIES ?=	print
 HOMEPAGE ?=	http://tug.org/texlive/
@@ -11,12 +11,12 @@ PERMIT_DISTFILES_FTP ?=		Yes
 
 EXTRACT_SUFX ?=		.tar.xz
 
-V ?=		2017
-DIST_V ?=	${V}0524
+V ?=		2018
+DIST_V ?=	${V}0414
 
 # Note: The TUG FTP server is frequently overloaded and doesn't work with
 # ftp(1)'s keepalive implementation.
 FETCH_CMD =	/usr/bin/ftp -V -m -C -k0
-MASTER_SITES ?=	ftp://ftp.tug.org/texlive/historic/${V}/
+MASTER_SITES ?=	ftp://tug.org/historic/systems/texlive/${V}/
 
 PATCHORIG ?=	.origy

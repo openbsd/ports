@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2018/09/04 12:46:20 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2019/01/20 11:17:46 edd Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
@@ -24,18 +24,21 @@ bin/arlatex
 bin/authorindex
 bin/autoinst
 @bin bin/autosp
+@bin bin/axohelp
 bin/bbl2bib
 bin/bg5+latex
 bin/bg5+pdflatex
 @bin bin/bg5conv
 bin/bg5latex
 bin/bg5pdflatex
+bin/bib2gls
 bin/bibdoiadd
 bin/bibexport
 bin/bibmradd
 @bin bin/bibtex
 @bin bin/bibtex8
 @bin bin/bibtexu
+bin/biburl2doi
 bin/bibzbladd
 bin/bundledoc
 bin/cachepic
@@ -57,8 +60,10 @@ bin/cjk-gs-integrate
 bin/context
 bin/contextjit
 bin/convbkmk
+bin/convertgls2bib
 bin/cslatex
 bin/csplain
+bin/ctan-o-mat
 @bin bin/ctangle
 bin/ctanify
 bin/ctanupload
@@ -81,6 +86,7 @@ bin/dviasm
 @bin bin/dvidvi
 bin/dvigif
 bin/dvihp
+bin/dviinfox
 @bin bin/dvilj
 @bin bin/dvilj2p
 @bin bin/dvilj4
@@ -142,6 +148,7 @@ bin/initex
 bin/installfont-tl
 bin/jadetex
 bin/jamo-normalize
+bin/jfmutil
 bin/kanji-config-updmap
 bin/kanji-config-updmap-sys
 bin/kanji-config-updmap-user
@@ -151,6 +158,7 @@ bin/kpsepath
 bin/kpsetool
 bin/kpsewhere
 bin/kpsexpand
+bin/l3build
 @bin bin/lacheck
 bin/lamed
 bin/latex
@@ -158,6 +166,7 @@ bin/latex-git-log
 bin/latex-papersize
 bin/latex2man
 bin/latex2nemeth
+bin/latexdef
 bin/latexdiff
 bin/latexdiff-vc
 bin/latexfileversion
@@ -177,6 +186,7 @@ bin/lua2dox_filter
 bin/lualatex
 bin/luaotfload-tool
 @bin bin/luatex
+@bin bin/luatex53
 bin/luatools
 bin/lwarpmk
 bin/m-tx
@@ -322,6 +332,7 @@ bin/svn-multi
 @bin bin/tangle
 @bin bin/teckit_compile
 @bin bin/tex
+@bin bin/tex2aspc
 bin/tex4ebook
 @bin bin/tex4ht
 bin/texconfig
@@ -340,6 +351,7 @@ bin/texlinks
 bin/texliveonfly
 bin/texloganalyser
 bin/texlua
+bin/texlua53
 bin/texluac
 bin/texmfstart
 bin/texosquery
@@ -349,6 +361,8 @@ bin/texsis
 @bin bin/tftopl
 bin/thumbpdf
 @bin bin/tie
+bin/tlcockpit
+bin/tlshell
 bin/tpic2pdftex
 @bin bin/ttf2afm
 bin/ttf2kotexfont
@@ -381,6 +395,7 @@ bin/vpl2vpl
 @bin bin/weave
 @bin bin/wofm2opl
 @bin bin/wopl2ofm
+bin/wordcount
 @bin bin/wovf2ovp
 @bin bin/wovp2ovf
 bin/xdvi
@@ -403,6 +418,12 @@ include/texlua52/lua.h
 include/texlua52/lua.hpp
 include/texlua52/luaconf.h
 include/texlua52/lualib.h
+include/texlua53/
+include/texlua53/lauxlib.h
+include/texlua53/lua.h
+include/texlua53/lua.hpp
+include/texlua53/luaconf.h
+include/texlua53/lualib.h
 lib/libptexenc.a
 lib/libptexenc.la
 @lib lib/libptexenc.so.${LIBptexenc_VERSION}
@@ -412,6 +433,9 @@ lib/libsynctex.la
 lib/libtexlua52.a
 lib/libtexlua52.la
 @lib lib/libtexlua52.so.${LIBtexlua52_VERSION}
+lib/libtexlua53.a
+lib/libtexlua53.la
+@lib lib/libtexlua53.so.${LIBtexlua53_VERSION}
 lib/pkgconfig/ptexenc.pc
 lib/pkgconfig/synctex.pc
 lib/pkgconfig/texlua52.pc
@@ -422,7 +446,11 @@ lib/pkgconfig/texlua52.pc
 @unexec-delete if [ -d %D/share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/ ]; then rmdir %D/share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/; fi
 @unexec-delete rm -f %D/share/texmf/ls-R
 @unexec-delete rm -f %D/share/texmf-local/ls-R
+lib/pkgconfig/texlua53.pc
 ${P5SITE}/TeXLive/
 ${P5SITE}/TeXLive/TLConfig.pm
 ${P5SITE}/TeXLive/TLUtils.pm
+share/applications/
+share/applications/xdvi.desktop
 share/doc/pkg-readmes/${PKGSTEM}
+@tag update-desktop-database

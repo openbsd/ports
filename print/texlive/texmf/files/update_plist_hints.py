@@ -5,10 +5,10 @@ Output update-plist(1) hints for which files go into which PLIST.
 XXX this is not yet integrated with update-plist(1).
 
 Usage:
-  env WRKINST=... TRUEPREFIX=... python2.7 update_plist_hints.py <tlpdb-gz>
+  env WRKINST=... TRUEPREFIX=... python2.7 update_plist_hints.py <tlpdb>
 
 Arguments:
-    tlpdb-gz: The (gzipped) TeX Live database file to use.
+    tlpdb: The TeX Live database file to use.
 """
 
 import re

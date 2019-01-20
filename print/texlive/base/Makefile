@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2018/10/16 16:48:27 landry Exp $
+# $OpenBSD: Makefile,v 1.106 2019/01/20 11:17:32 edd Exp $
 
 COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
@@ -6,9 +6,6 @@ COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
 DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
-
-# XXX texmf/Makefile has tight dependencies
-REVISION =		3
 
 MULTI_PACKAGES = -main -mktexlsr
 PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
@@ -21,6 +18,7 @@ SHARED_LIBS =		kpathsea	8.1 # 8.2
 SHARED_LIBS +=		ptexenc		5.1 # 4.4
 SHARED_LIBS +=		synctex		1.0 # 19.0
 SHARED_LIBS +=		texlua52	0.0 # 7.4
+SHARED_LIBS +=		texlua53        0.0 # 8.4
 
 WANTLIB-main += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xi
 WANTLIB-main += Xmu Xpm Xrender Xt avahi-client avahi-common c cairo
@@ -41,7 +39,8 @@ RUN_DEPENDS-main =	print/ghostscript/gnu \
 			print/ps2eps \
 			print/psutils \
 			print/t1utils \
-			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
+			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset \
+			devel/desktop-file-utils
 
 LIB_DEPENDS-main =	converters/libiconv \
 			graphics/png \
@@ -78,8 +77,7 @@ CONFIGURE_ENV +=	TL_MAKE=${GMAKE} \
 WRKBUILD =              ${WRKSRC}/Work
 CONFIGURE_SCRIPT =      ../configure
 MAKE_ENV =		${CONFIGURE_ENV}
-# XXX probably not needed
-#TEST_TARGET =		check
+TEST_TARGET =		check
 
 USE_GMAKE =	Yes
 

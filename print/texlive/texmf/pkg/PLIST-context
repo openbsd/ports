@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-context,v 1.11 2018/07/01 08:59:32 espie Exp $
+@comment $OpenBSD: PLIST-context,v 1.12 2019/01/20 11:17:53 edd Exp $
 @conflict teTeX_texmf-*
 @conflict texlive_base-<2017
 @conflict texlive_texmf-docs-<2017
@@ -17,6 +17,7 @@
 @man man/man1/mtx-context.1
 @man man/man1/mtx-dvi.1
 @man man/man1/mtx-epub.1
+@man man/man1/mtx-evohome.1
 @man man/man1/mtx-fcd.1
 @man man/man1/mtx-flac.1
 @man man/man1/mtx-fonts.1
@@ -67,6 +68,7 @@ share/texmf-dist/context/data/scite/context/documents/scite-context-visual.pdf
 share/texmf-dist/context/data/scite/context/documents/scite-context-visual.png
 share/texmf-dist/context/data/scite/context/lexers/
 share/texmf-dist/context/data/scite/context/lexers/data/
+share/texmf-dist/context/data/scite/context/lexers/data/scite-context-data-bidi.lua
 share/texmf-dist/context/data/scite/context/lexers/data/scite-context-data-context.lua
 share/texmf-dist/context/data/scite/context/lexers/data/scite-context-data-interfaces.lua
 share/texmf-dist/context/data/scite/context/lexers/data/scite-context-data-metafun.lua
@@ -74,6 +76,7 @@ share/texmf-dist/context/data/scite/context/lexers/data/scite-context-data-metap
 share/texmf-dist/context/data/scite/context/lexers/data/scite-context-data-tex.lua
 share/texmf-dist/context/data/scite/context/lexers/lexer.lua
 share/texmf-dist/context/data/scite/context/lexers/scite-context-lexer-bibtex.lua
+share/texmf-dist/context/data/scite/context/lexers/scite-context-lexer-bnf.lua
 share/texmf-dist/context/data/scite/context/lexers/scite-context-lexer-cld.lua
 share/texmf-dist/context/data/scite/context/lexers/scite-context-lexer-cpp-web.lua
 share/texmf-dist/context/data/scite/context/lexers/scite-context-lexer-cpp.lua
@@ -106,6 +109,7 @@ share/texmf-dist/context/data/scite/context/scite-context-external.properties
 share/texmf-dist/context/data/scite/context/scite-context-internal.properties
 share/texmf-dist/context/data/scite/context/scite-context-user.properties
 share/texmf-dist/context/data/scite/context/scite-context.properties
+share/texmf-dist/context/data/scite/context/scite-ctx-bidi.lua
 share/texmf-dist/context/data/scite/context/scite-ctx-context.properties
 share/texmf-dist/context/data/scite/context/scite-ctx-example.properties
 share/texmf-dist/context/data/scite/context/scite-ctx.lua
@@ -130,6 +134,7 @@ share/texmf-dist/context/data/textadept/context/init.lua
 share/texmf-dist/context/data/textadept/context/lexers/
 share/texmf-dist/context/data/textadept/context/lexers/lexer.rme
 share/texmf-dist/context/data/textadept/context/lexers/scite-context-lexer-bibtex.lua
+share/texmf-dist/context/data/textadept/context/lexers/scite-context-lexer-bidi.lua
 share/texmf-dist/context/data/textadept/context/lexers/scite-context-lexer-cld.lua
 share/texmf-dist/context/data/textadept/context/lexers/scite-context-lexer-cpp-web.lua
 share/texmf-dist/context/data/textadept/context/lexers/scite-context-lexer-cpp.lua
@@ -314,6 +319,7 @@ share/texmf-dist/metapost/context/base/mpiv/mp-step.mpiv
 share/texmf-dist/metapost/context/base/mpiv/mp-symb.mpiv
 share/texmf-dist/metapost/context/base/mpiv/mp-text.mpiv
 share/texmf-dist/metapost/context/base/mpiv/mp-tool.mpiv
+share/texmf-dist/metapost/context/base/mpiv/mp-tres.mpiv
 share/texmf-dist/metapost/context/fonts/
 share/texmf-dist/metapost/context/fonts/mpiv/
 share/texmf-dist/metapost/context/fonts/mpiv/bidi-symbols.mp
@@ -344,6 +350,7 @@ share/texmf-dist/scripts/context/lua/mtx-context.xml
 share/texmf-dist/scripts/context/lua/mtx-convert.lua
 share/texmf-dist/scripts/context/lua/mtx-dvi.lua
 share/texmf-dist/scripts/context/lua/mtx-epub.lua
+share/texmf-dist/scripts/context/lua/mtx-evohome.lua
 share/texmf-dist/scripts/context/lua/mtx-fcd.lua
 share/texmf-dist/scripts/context/lua/mtx-flac.lua
 share/texmf-dist/scripts/context/lua/mtx-fonts.lua
@@ -364,6 +371,7 @@ share/texmf-dist/scripts/context/lua/mtx-server-ctx-fonttest.lua
 share/texmf-dist/scripts/context/lua/mtx-server-ctx-help.lua
 share/texmf-dist/scripts/context/lua/mtx-server-ctx-startup.lua
 share/texmf-dist/scripts/context/lua/mtx-server.lua
+share/texmf-dist/scripts/context/lua/mtx-synctex.lua
 share/texmf-dist/scripts/context/lua/mtx-texworks.lua
 share/texmf-dist/scripts/context/lua/mtx-timing.lua
 share/texmf-dist/scripts/context/lua/mtx-tools.lua
@@ -968,7 +976,7 @@ share/texmf-dist/tex/context/base/mkiv/char-fio.lua
 share/texmf-dist/tex/context/base/mkiv/char-ini.lua
 share/texmf-dist/tex/context/base/mkiv/char-ini.mkiv
 share/texmf-dist/tex/context/base/mkiv/char-map.lua
-share/texmf-dist/tex/context/base/mkiv/char-obs.lua
+share/texmf-dist/tex/context/base/mkiv/char-prv.lua
 share/texmf-dist/tex/context/base/mkiv/char-tex.lua
 share/texmf-dist/tex/context/base/mkiv/char-utf.lua
 share/texmf-dist/tex/context/base/mkiv/char-utf.mkiv
@@ -1093,7 +1101,6 @@ share/texmf-dist/tex/context/base/mkiv/file-res.mkvi
 share/texmf-dist/tex/context/base/mkiv/file-syn.lua
 share/texmf-dist/tex/context/base/mkiv/file-syn.mkvi
 share/texmf-dist/tex/context/base/mkiv/font-afk.lua
-share/texmf-dist/tex/context/base/mkiv/font-afm.lua
 share/texmf-dist/tex/context/base/mkiv/font-age.lua
 share/texmf-dist/tex/context/base/mkiv/font-agl.lua
 share/texmf-dist/tex/context/base/mkiv/font-aux.lua
@@ -1121,8 +1128,6 @@ share/texmf-dist/tex/context/base/mkiv/font-gds.mkvi
 share/texmf-dist/tex/context/base/mkiv/font-hsh.lua
 share/texmf-dist/tex/context/base/mkiv/font-ini.lua
 share/texmf-dist/tex/context/base/mkiv/font-ini.mkvi
-share/texmf-dist/tex/context/base/mkiv/font-inj.lua
-share/texmf-dist/tex/context/base/mkiv/font-ldr.lua
 share/texmf-dist/tex/context/base/mkiv/font-lib.mkvi
 share/texmf-dist/tex/context/base/mkiv/font-lig.lua
 share/texmf-dist/tex/context/base/mkiv/font-log.lua
@@ -1133,24 +1138,18 @@ share/texmf-dist/tex/context/base/mkiv/font-mis.lua
 share/texmf-dist/tex/context/base/mkiv/font-mps.lua
 share/texmf-dist/tex/context/base/mkiv/font-nod.lua
 share/texmf-dist/tex/context/base/mkiv/font-ocl.lua
-share/texmf-dist/tex/context/base/mkiv/font-odk.lua
-share/texmf-dist/tex/context/base/mkiv/font-odv.lua
 share/texmf-dist/tex/context/base/mkiv/font-off.lua
 share/texmf-dist/tex/context/base/mkiv/font-one.lua
 share/texmf-dist/tex/context/base/mkiv/font-onr.lua
 share/texmf-dist/tex/context/base/mkiv/font-osd.lua
 share/texmf-dist/tex/context/base/mkiv/font-ota.lua
-share/texmf-dist/tex/context/base/mkiv/font-otb.lua
 share/texmf-dist/tex/context/base/mkiv/font-otc.lua
 share/texmf-dist/tex/context/base/mkiv/font-otd.lua
-share/texmf-dist/tex/context/base/mkiv/font-otf.lua
 share/texmf-dist/tex/context/base/mkiv/font-oth.lua
 share/texmf-dist/tex/context/base/mkiv/font-oti.lua
 share/texmf-dist/tex/context/base/mkiv/font-otj.lua
 share/texmf-dist/tex/context/base/mkiv/font-otl.lua
-share/texmf-dist/tex/context/base/mkiv/font-otn.lua
 share/texmf-dist/tex/context/base/mkiv/font-oto.lua
-share/texmf-dist/tex/context/base/mkiv/font-otp.lua
 share/texmf-dist/tex/context/base/mkiv/font-otr.lua
 share/texmf-dist/tex/context/base/mkiv/font-ots.lua
 share/texmf-dist/tex/context/base/mkiv/font-ott.lua
@@ -1174,7 +1173,7 @@ share/texmf-dist/tex/context/base/mkiv/font-ttf.lua
 share/texmf-dist/tex/context/base/mkiv/font-uni.mkiv
 share/texmf-dist/tex/context/base/mkiv/font-unk.mkiv
 share/texmf-dist/tex/context/base/mkiv/font-var.mkvi
-share/texmf-dist/tex/context/base/mkiv/font-vf.lua
+share/texmf-dist/tex/context/base/mkiv/font-vir.lua
 share/texmf-dist/tex/context/base/mkiv/font-web.lua
 share/texmf-dist/tex/context/base/mkiv/font-xtx.lua
 share/texmf-dist/tex/context/base/mkiv/good-ctx.lua
@@ -1207,6 +1206,7 @@ share/texmf-dist/tex/context/base/mkiv/java-imp-rhh.mkiv
 share/texmf-dist/tex/context/base/mkiv/java-imp-stp.mkiv
 share/texmf-dist/tex/context/base/mkiv/java-ini.lua
 share/texmf-dist/tex/context/base/mkiv/java-ini.mkiv
+share/texmf-dist/tex/context/base/mkiv/l-bit32.lua
 share/texmf-dist/tex/context/base/mkiv/l-boolean.lua
 share/texmf-dist/tex/context/base/mkiv/l-dir.lua
 share/texmf-dist/tex/context/base/mkiv/l-file.lua
@@ -1215,6 +1215,8 @@ share/texmf-dist/tex/context/base/mkiv/l-gzip.lua
 share/texmf-dist/tex/context/base/mkiv/l-io.lua
 share/texmf-dist/tex/context/base/mkiv/l-lpeg.lua
 share/texmf-dist/tex/context/base/mkiv/l-lua.lua
+share/texmf-dist/tex/context/base/mkiv/l-macro-imp-optimize.lua
+share/texmf-dist/tex/context/base/mkiv/l-macro.lua
 share/texmf-dist/tex/context/base/mkiv/l-math.lua
 share/texmf-dist/tex/context/base/mkiv/l-md5.lua
 share/texmf-dist/tex/context/base/mkiv/l-number.lua
@@ -1232,6 +1234,8 @@ share/texmf-dist/tex/context/base/mkiv/lang-cnt.lua
 share/texmf-dist/tex/context/base/mkiv/lang-def.lua
 share/texmf-dist/tex/context/base/mkiv/lang-def.mkiv
 share/texmf-dist/tex/context/base/mkiv/lang-dis.lua
+share/texmf-dist/tex/context/base/mkiv/lang-exc.lua
+share/texmf-dist/tex/context/base/mkiv/lang-exp.lua
 share/texmf-dist/tex/context/base/mkiv/lang-frd.mkiv
 share/texmf-dist/tex/context/base/mkiv/lang-frq-de.lua
 share/texmf-dist/tex/context/base/mkiv/lang-frq-en.lua
@@ -1319,7 +1323,6 @@ share/texmf-dist/tex/context/base/mkiv/lxml-xml.lua
 share/texmf-dist/tex/context/base/mkiv/m-fonts-plugins.mkiv
 share/texmf-dist/tex/context/base/mkiv/m-newcolumnsets.mkiv
 share/texmf-dist/tex/context/base/mkiv/m-oldbibtex.mkiv
-share/texmf-dist/tex/context/base/mkiv/m-oldotf.mkiv
 share/texmf-dist/tex/context/base/mkiv/math-acc.mkvi
 share/texmf-dist/tex/context/base/mkiv/math-act.lua
 share/texmf-dist/tex/context/base/mkiv/math-ali.mkiv
@@ -1346,6 +1349,7 @@ share/texmf-dist/tex/context/base/mkiv/math-pln.mkiv
 share/texmf-dist/tex/context/base/mkiv/math-rad.mkvi
 share/texmf-dist/tex/context/base/mkiv/math-ren.lua
 share/texmf-dist/tex/context/base/mkiv/math-scr.mkiv
+share/texmf-dist/tex/context/base/mkiv/math-spa.lua
 share/texmf-dist/tex/context/base/mkiv/math-stc.mkvi
 share/texmf-dist/tex/context/base/mkiv/math-tag.lua
 share/texmf-dist/tex/context/base/mkiv/math-ttv.lua
@@ -1363,13 +1367,15 @@ share/texmf-dist/tex/context/base/mkiv/meta-imp-grid.mkiv
 share/texmf-dist/tex/context/base/mkiv/meta-imp-mat.mkiv
 share/texmf-dist/tex/context/base/mkiv/meta-imp-mis.mkiv
 share/texmf-dist/tex/context/base/mkiv/meta-imp-nav.mkiv
-share/texmf-dist/tex/context/base/mkiv/meta-imp-nodes.mkiv
 share/texmf-dist/tex/context/base/mkiv/meta-imp-outlines.mkiv
 share/texmf-dist/tex/context/base/mkiv/meta-imp-pre.mkiv
 share/texmf-dist/tex/context/base/mkiv/meta-imp-tab.mkiv
 share/texmf-dist/tex/context/base/mkiv/meta-imp-txt.mkiv
 share/texmf-dist/tex/context/base/mkiv/meta-ini.lua
 share/texmf-dist/tex/context/base/mkiv/meta-ini.mkiv
+share/texmf-dist/tex/context/base/mkiv/meta-lua.lua
+share/texmf-dist/tex/context/base/mkiv/meta-lua.mkiv
+share/texmf-dist/tex/context/base/mkiv/meta-nod.mkiv
 share/texmf-dist/tex/context/base/mkiv/meta-pag.mkiv
 share/texmf-dist/tex/context/base/mkiv/meta-pdf.lua
 share/texmf-dist/tex/context/base/mkiv/meta-pdf.mkiv
@@ -1378,7 +1384,6 @@ share/texmf-dist/tex/context/base/mkiv/meta-pdh.mkiv
 share/texmf-dist/tex/context/base/mkiv/meta-tex.lua
 share/texmf-dist/tex/context/base/mkiv/meta-tex.mkiv
 share/texmf-dist/tex/context/base/mkiv/meta-xml.mkiv
-share/texmf-dist/tex/context/base/mkiv/metatex.lus
 share/texmf-dist/tex/context/base/mkiv/metatex.tex
 share/texmf-dist/tex/context/base/mkiv/mlib-ctx.lua
 share/texmf-dist/tex/context/base/mkiv/mlib-ctx.mkiv
@@ -1392,11 +1397,14 @@ share/texmf-dist/tex/context/base/mkiv/mlib-run.lua
 share/texmf-dist/tex/context/base/mkiv/mtx-context-arrange.tex
 share/texmf-dist/tex/context/base/mkiv/mtx-context-combine.tex
 share/texmf-dist/tex/context/base/mkiv/mtx-context-common.tex
+share/texmf-dist/tex/context/base/mkiv/mtx-context-compare.tex
 share/texmf-dist/tex/context/base/mkiv/mtx-context-copy.tex
 share/texmf-dist/tex/context/base/mkiv/mtx-context-domotica.tex
 share/texmf-dist/tex/context/base/mkiv/mtx-context-ideas.tex
 share/texmf-dist/tex/context/base/mkiv/mtx-context-listing.tex
 share/texmf-dist/tex/context/base/mkiv/mtx-context-markdown.tex
+share/texmf-dist/tex/context/base/mkiv/mtx-context-meaning.tex
+share/texmf-dist/tex/context/base/mkiv/mtx-context-module.tex
 share/texmf-dist/tex/context/base/mkiv/mtx-context-precache.tex
 share/texmf-dist/tex/context/base/mkiv/mtx-context-select.tex
 share/texmf-dist/tex/context/base/mkiv/mtx-context-setups.tex
@@ -1478,12 +1486,13 @@ share/texmf-dist/tex/context/base/mkiv/page-com.mkiv
 share/texmf-dist/tex/context/base/mkiv/page-cst.lua
 share/texmf-dist/tex/context/base/mkiv/page-cst.mkiv
 share/texmf-dist/tex/context/base/mkiv/page-fac.mkiv
+share/texmf-dist/tex/context/base/mkiv/page-ffl.mkiv
 share/texmf-dist/tex/context/base/mkiv/page-flt.lua
 share/texmf-dist/tex/context/base/mkiv/page-flt.mkiv
 share/texmf-dist/tex/context/base/mkiv/page-flw.mkiv
-share/texmf-dist/tex/context/base/mkiv/page-grd.mkiv
 share/texmf-dist/tex/context/base/mkiv/page-imp.mkiv
 share/texmf-dist/tex/context/base/mkiv/page-inf.mkiv
+share/texmf-dist/tex/context/base/mkiv/page-ini.lua
 share/texmf-dist/tex/context/base/mkiv/page-ini.mkiv
 share/texmf-dist/tex/context/base/mkiv/page-inj.lua
 share/texmf-dist/tex/context/base/mkiv/page-inj.mkvi
@@ -1503,9 +1512,11 @@ share/texmf-dist/tex/context/base/mkiv/page-one.mkiv
 share/texmf-dist/tex/context/base/mkiv/page-otr.lua
 share/texmf-dist/tex/context/base/mkiv/page-otr.mkvi
 share/texmf-dist/tex/context/base/mkiv/page-par.mkiv
+share/texmf-dist/tex/context/base/mkiv/page-pcl.mkiv
 share/texmf-dist/tex/context/base/mkiv/page-plg.mkiv
 share/texmf-dist/tex/context/base/mkiv/page-pst.lua
 share/texmf-dist/tex/context/base/mkiv/page-pst.mkiv
+share/texmf-dist/tex/context/base/mkiv/page-run.lua
 share/texmf-dist/tex/context/base/mkiv/page-run.mkiv
 share/texmf-dist/tex/context/base/mkiv/page-sel.mkvi
 share/texmf-dist/tex/context/base/mkiv/page-set.mkiv
@@ -1619,8 +1630,6 @@ share/texmf-dist/tex/context/base/mkiv/spac-ver.lua
 share/texmf-dist/tex/context/base/mkiv/spac-ver.mkiv
 share/texmf-dist/tex/context/base/mkiv/status-files.pdf
 share/texmf-dist/tex/context/base/mkiv/status-lua.pdf
-share/texmf-dist/tex/context/base/mkiv/status-mkiv.lua
-share/texmf-dist/tex/context/base/mkiv/status-mkiv.tex
 share/texmf-dist/tex/context/base/mkiv/strc-bkm.lua
 share/texmf-dist/tex/context/base/mkiv/strc-bkm.mkiv
 share/texmf-dist/tex/context/base/mkiv/strc-blk.lua
@@ -1793,9 +1802,13 @@ share/texmf-dist/tex/context/base/mkiv/typo-lin.mkiv
 share/texmf-dist/tex/context/base/mkiv/typo-man.lua
 share/texmf-dist/tex/context/base/mkiv/typo-mar.lua
 share/texmf-dist/tex/context/base/mkiv/typo-mar.mkiv
+share/texmf-dist/tex/context/base/mkiv/typo-ovl.lua
+share/texmf-dist/tex/context/base/mkiv/typo-ovl.mkiv
 share/texmf-dist/tex/context/base/mkiv/typo-pag.lua
 share/texmf-dist/tex/context/base/mkiv/typo-pag.mkiv
 share/texmf-dist/tex/context/base/mkiv/typo-par.mkiv
+share/texmf-dist/tex/context/base/mkiv/typo-pnc.lua
+share/texmf-dist/tex/context/base/mkiv/typo-pnc.mkiv
 share/texmf-dist/tex/context/base/mkiv/typo-prc.lua
 share/texmf-dist/tex/context/base/mkiv/typo-prc.mkvi
 share/texmf-dist/tex/context/base/mkiv/typo-rep.lua
@@ -1817,6 +1830,8 @@ share/texmf-dist/tex/context/base/mkiv/unic-ini.mkiv
 share/texmf-dist/tex/context/base/mkiv/util-deb.lua
 share/texmf-dist/tex/context/base/mkiv/util-dim.lua
 share/texmf-dist/tex/context/base/mkiv/util-env.lua
+share/texmf-dist/tex/context/base/mkiv/util-evo-imp-server.lua
+share/texmf-dist/tex/context/base/mkiv/util-evo.lua
 share/texmf-dist/tex/context/base/mkiv/util-fil.lua
 share/texmf-dist/tex/context/base/mkiv/util-fmt.lua
 share/texmf-dist/tex/context/base/mkiv/util-jsn.lua
@@ -1832,12 +1847,15 @@ share/texmf-dist/tex/context/base/mkiv/util-sac.lua
 share/texmf-dist/tex/context/base/mkiv/util-sbx.lua
 share/texmf-dist/tex/context/base/mkiv/util-sci.lua
 share/texmf-dist/tex/context/base/mkiv/util-seq.lua
+share/texmf-dist/tex/context/base/mkiv/util-sha.lua
 share/texmf-dist/tex/context/base/mkiv/util-soc.lua
 share/texmf-dist/tex/context/base/mkiv/util-sql-imp-client.lua
+share/texmf-dist/tex/context/base/mkiv/util-sql-imp-ffi.lua
 share/texmf-dist/tex/context/base/mkiv/util-sql-imp-library.lua
 share/texmf-dist/tex/context/base/mkiv/util-sql-imp-sqlite.lua
 share/texmf-dist/tex/context/base/mkiv/util-sql-imp-swiglib.lua
 share/texmf-dist/tex/context/base/mkiv/util-sql-loggers.lua
+share/texmf-dist/tex/context/base/mkiv/util-sql-logins.lua
 share/texmf-dist/tex/context/base/mkiv/util-sql-sessions.lua
 share/texmf-dist/tex/context/base/mkiv/util-sql-tickets.lua
 share/texmf-dist/tex/context/base/mkiv/util-sql-tracers.lua
@@ -1937,6 +1955,7 @@ share/texmf-dist/tex/context/fonts/mkiv/type-imp-ebgaramond.mkiv
 share/texmf-dist/tex/context/fonts/mkiv/type-imp-euler.mkiv
 share/texmf-dist/tex/context/fonts/mkiv/type-imp-gentium.mkiv
 share/texmf-dist/tex/context/fonts/mkiv/type-imp-ghz.mkiv
+share/texmf-dist/tex/context/fonts/mkiv/type-imp-gofonts.mkiv
 share/texmf-dist/tex/context/fonts/mkiv/type-imp-hgz.mkiv
 share/texmf-dist/tex/context/fonts/mkiv/type-imp-husayni.mkiv
 share/texmf-dist/tex/context/fonts/mkiv/type-imp-hvmath.mkiv
@@ -1958,6 +1977,7 @@ share/texmf-dist/tex/context/fonts/mkiv/type-imp-mathdesign.mkiv
 share/texmf-dist/tex/context/fonts/mkiv/type-imp-mathdigits.mkiv
 share/texmf-dist/tex/context/fonts/mkiv/type-imp-mathtimes.mkiv
 share/texmf-dist/tex/context/fonts/mkiv/type-imp-minion.mkiv
+share/texmf-dist/tex/context/fonts/mkiv/type-imp-modernlatin.mkiv
 share/texmf-dist/tex/context/fonts/mkiv/type-imp-mscore.mkiv
 share/texmf-dist/tex/context/fonts/mkiv/type-imp-opendyslexic.mkiv
 share/texmf-dist/tex/context/fonts/mkiv/type-imp-osx.mkiv
@@ -2030,10 +2050,12 @@ share/texmf-dist/tex/context/interface/mkiv/i-common-instance.xml
 share/texmf-dist/tex/context/interface/mkiv/i-common-keyword.xml
 share/texmf-dist/tex/context/interface/mkiv/i-common-string.xml
 share/texmf-dist/tex/context/interface/mkiv/i-common-value.xml
+share/texmf-dist/tex/context/interface/mkiv/i-context-modules.xml
 share/texmf-dist/tex/context/interface/mkiv/i-context.pdf
 share/texmf-dist/tex/context/interface/mkiv/i-context.xml
 share/texmf-dist/tex/context/interface/mkiv/i-conversion.xml
 share/texmf-dist/tex/context/interface/mkiv/i-counter.xml
+share/texmf-dist/tex/context/interface/mkiv/i-database.xml
 share/texmf-dist/tex/context/interface/mkiv/i-dataset.xml
 share/texmf-dist/tex/context/interface/mkiv/i-define.xml
 share/texmf-dist/tex/context/interface/mkiv/i-delimitedtext.xml
@@ -2061,9 +2083,11 @@ share/texmf-dist/tex/context/interface/mkiv/i-form.xml
 share/texmf-dist/tex/context/interface/mkiv/i-formula.xml
 share/texmf-dist/tex/context/interface/mkiv/i-fraction.xml
 share/texmf-dist/tex/context/interface/mkiv/i-framed.xml
+share/texmf-dist/tex/context/interface/mkiv/i-framedtable.xml
 share/texmf-dist/tex/context/interface/mkiv/i-graphics.xml
 share/texmf-dist/tex/context/interface/mkiv/i-grid.xml
 share/texmf-dist/tex/context/interface/mkiv/i-help.xml
+share/texmf-dist/tex/context/interface/mkiv/i-hemistich.xml
 share/texmf-dist/tex/context/interface/mkiv/i-highlight.xml
 share/texmf-dist/tex/context/interface/mkiv/i-hspace.xml
 share/texmf-dist/tex/context/interface/mkiv/i-hyphenation.xml
@@ -2130,6 +2154,7 @@ share/texmf-dist/tex/context/interface/mkiv/i-pagefigure.xml
 share/texmf-dist/tex/context/interface/mkiv/i-pagegrid.xml
 share/texmf-dist/tex/context/interface/mkiv/i-pageinjection.xml
 share/texmf-dist/tex/context/interface/mkiv/i-pagelayout.xml
+share/texmf-dist/tex/context/interface/mkiv/i-pagemarks.xml
 share/texmf-dist/tex/context/interface/mkiv/i-pagenumber.xml
 share/texmf-dist/tex/context/interface/mkiv/i-pageselection.xml
 share/texmf-dist/tex/context/interface/mkiv/i-pageshift.xml
@@ -2184,17 +2209,20 @@ share/texmf-dist/tex/context/interface/mkiv/i-stream.xml
 share/texmf-dist/tex/context/interface/mkiv/i-string.xml
 share/texmf-dist/tex/context/interface/mkiv/i-strut.xml
 share/texmf-dist/tex/context/interface/mkiv/i-symbol.xml
+share/texmf-dist/tex/context/interface/mkiv/i-synctex.xml
 share/texmf-dist/tex/context/interface/mkiv/i-synonym.xml
 share/texmf-dist/tex/context/interface/mkiv/i-system.xml
 share/texmf-dist/tex/context/interface/mkiv/i-systemlog.xml
 share/texmf-dist/tex/context/interface/mkiv/i-table.xml
 share/texmf-dist/tex/context/interface/mkiv/i-tabulation.xml
 share/texmf-dist/tex/context/interface/mkiv/i-tagging.xml
+share/texmf-dist/tex/context/interface/mkiv/i-tex.xml
 share/texmf-dist/tex/context/interface/mkiv/i-textbackground.xml
 share/texmf-dist/tex/context/interface/mkiv/i-textflow.xml
 share/texmf-dist/tex/context/interface/mkiv/i-textrule.xml
 share/texmf-dist/tex/context/interface/mkiv/i-texts.xml
 share/texmf-dist/tex/context/interface/mkiv/i-thinrule.xml
+share/texmf-dist/tex/context/interface/mkiv/i-todo.xml
 share/texmf-dist/tex/context/interface/mkiv/i-token.xml
 share/texmf-dist/tex/context/interface/mkiv/i-tolerance.xml
 share/texmf-dist/tex/context/interface/mkiv/i-tooltip.xml
@@ -2231,10 +2259,12 @@ share/texmf-dist/tex/context/interface/third/t-title.xml
 share/texmf-dist/tex/context/interface/third/t-transliterator.xml
 share/texmf-dist/tex/context/modules/
 share/texmf-dist/tex/context/modules/common/
-share/texmf-dist/tex/context/modules/common/s-abr-01.tex
-share/texmf-dist/tex/context/modules/common/s-abr-02.tex
-share/texmf-dist/tex/context/modules/common/s-abr-03.tex
-share/texmf-dist/tex/context/modules/common/s-abr-04.tex
+share/texmf-dist/tex/context/modules/common/s-abbreviations-extras.tex
+share/texmf-dist/tex/context/modules/common/s-abbreviations-logos.tex
+share/texmf-dist/tex/context/modules/common/s-abbreviations-mixed.mkiv
+share/texmf-dist/tex/context/modules/common/s-abbreviations-pseudocaps.mkiv
+share/texmf-dist/tex/context/modules/common/s-abbreviations-smallcaps.mkiv
+share/texmf-dist/tex/context/modules/common/s-abbreviations-words.mkiv
 share/texmf-dist/tex/context/modules/common/s-cdr-01.tex
 share/texmf-dist/tex/context/modules/common/s-faq-00.tex
 share/texmf-dist/tex/context/modules/common/s-faq-01.tex
@@ -2287,6 +2317,8 @@ share/texmf-dist/tex/context/modules/mkii/m-visual.mkii
 share/texmf-dist/tex/context/modules/mkii/ppchtex.mkii
 share/texmf-dist/tex/context/modules/mkii/rlxcache.rlx
 share/texmf-dist/tex/context/modules/mkii/rlxtools.rlx
+share/texmf-dist/tex/context/modules/mkii/s-abr-01.mkii
+share/texmf-dist/tex/context/modules/mkii/s-abr-02.mkii
 share/texmf-dist/tex/context/modules/mkii/s-chi-00.mkii
 share/texmf-dist/tex/context/modules/mkii/s-fnt-01.mkii
 share/texmf-dist/tex/context/modules/mkii/s-fnt-02.mkii
@@ -2381,6 +2413,7 @@ share/texmf-dist/tex/context/modules/mkiv/m-barcodes.mkiv
 share/texmf-dist/tex/context/modules/mkiv/m-chart.lua
 share/texmf-dist/tex/context/modules/mkiv/m-chart.mkvi
 share/texmf-dist/tex/context/modules/mkiv/m-chemic.mkiv
+share/texmf-dist/tex/context/modules/mkiv/m-compatible.mkiv
 share/texmf-dist/tex/context/modules/mkiv/m-cweb.mkiv
 share/texmf-dist/tex/context/modules/mkiv/m-database.lua
 share/texmf-dist/tex/context/modules/mkiv/m-database.mkiv
@@ -2400,6 +2433,7 @@ share/texmf-dist/tex/context/modules/mkiv/m-markdown.lua
 share/texmf-dist/tex/context/modules/mkiv/m-markdown.mkiv
 share/texmf-dist/tex/context/modules/mkiv/m-mathcrap.mkiv
 share/texmf-dist/tex/context/modules/mkiv/m-matrix.mkiv
+share/texmf-dist/tex/context/modules/mkiv/m-media.mkiv
 share/texmf-dist/tex/context/modules/mkiv/m-mkii.mkiv
 share/texmf-dist/tex/context/modules/mkiv/m-mkivhacks.mkiv
 share/texmf-dist/tex/context/modules/mkiv/m-morse.mkvi
@@ -2422,37 +2456,46 @@ share/texmf-dist/tex/context/modules/mkiv/m-sql.mkiv
 share/texmf-dist/tex/context/modules/mkiv/m-steps.lua
 share/texmf-dist/tex/context/modules/mkiv/m-steps.mkvi
 share/texmf-dist/tex/context/modules/mkiv/m-subsub.mkiv
+share/texmf-dist/tex/context/modules/mkiv/m-three.mkiv
 share/texmf-dist/tex/context/modules/mkiv/m-timing.mkiv
 share/texmf-dist/tex/context/modules/mkiv/m-trackers.mkiv
 share/texmf-dist/tex/context/modules/mkiv/m-translate.mkiv
+share/texmf-dist/tex/context/modules/mkiv/m-typesetting.mkiv
 share/texmf-dist/tex/context/modules/mkiv/m-units.mkiv
 share/texmf-dist/tex/context/modules/mkiv/m-visual.mkiv
 share/texmf-dist/tex/context/modules/mkiv/m-zint.mkiv
 share/texmf-dist/tex/context/modules/mkiv/ppchtex.mkiv
-share/texmf-dist/tex/context/modules/mkiv/s-art-01.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-abbreviations-mixed.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-abbreviations-pseudocaps.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-abbreviations-smallcaps.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-abbreviations-words.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-article-basic.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-characters-properties.lua
 share/texmf-dist/tex/context/modules/mkiv/s-characters-properties.mkiv
-share/texmf-dist/tex/context/modules/mkiv/s-def-01.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-domotica-settings.lua
 share/texmf-dist/tex/context/modules/mkiv/s-domotica-settings.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-evohome.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-figures-names.mkiv
-share/texmf-dist/tex/context/modules/mkiv/s-fnt-10.mkiv
-share/texmf-dist/tex/context/modules/mkiv/s-fnt-20.mkiv
-share/texmf-dist/tex/context/modules/mkiv/s-fnt-21.mkiv
-share/texmf-dist/tex/context/modules/mkiv/s-fnt-24.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-fonts-basics.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-fonts-charts.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-fonts-cjk.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-fonts-complete.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-fonts-coverage.lua
 share/texmf-dist/tex/context/modules/mkiv/s-fonts-coverage.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-fonts-emoji.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-fonts-engines.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-fonts-features.lua
 share/texmf-dist/tex/context/modules/mkiv/s-fonts-features.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-fonts-goodies.lua
 share/texmf-dist/tex/context/modules/mkiv/s-fonts-goodies.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-fonts-kerns.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-fonts-ligatures.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-fonts-missing.lua
 share/texmf-dist/tex/context/modules/mkiv/s-fonts-missing.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-fonts-overlay.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-fonts-shapes.lua
 share/texmf-dist/tex/context/modules/mkiv/s-fonts-shapes.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-fonts-steps.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-fonts-system.lua
 share/texmf-dist/tex/context/modules/mkiv/s-fonts-system.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-fonts-tables.lua
@@ -2478,23 +2521,21 @@ share/texmf-dist/tex/context/modules/mkiv/s-languages-system.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-languages-words.lua
 share/texmf-dist/tex/context/modules/mkiv/s-languages-words.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-lingual-de.mkiv
-share/texmf-dist/tex/context/modules/mkiv/s-mag-01.mkiv
-share/texmf-dist/tex/context/modules/mkiv/s-map-10.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-magazine-basic.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-maps.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-math-characters.lua
 share/texmf-dist/tex/context/modules/mkiv/s-math-characters.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-math-coverage.lua
 share/texmf-dist/tex/context/modules/mkiv/s-math-coverage.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-math-extensibles.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-math-ligatures.lua
+share/texmf-dist/tex/context/modules/mkiv/s-math-ligatures.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-math-parameters.lua
 share/texmf-dist/tex/context/modules/mkiv/s-math-parameters.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-math-repertoire.mkiv
-share/texmf-dist/tex/context/modules/mkiv/s-mod-00.mkiv
-share/texmf-dist/tex/context/modules/mkiv/s-mod-01.mkiv
-share/texmf-dist/tex/context/modules/mkiv/s-mod-02.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-module-basic.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-pages-statistics.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-physics-units.mkiv
-share/texmf-dist/tex/context/modules/mkiv/s-pre-17.mkiv
-share/texmf-dist/tex/context/modules/mkiv/s-pre-30.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-present-balls.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-present-banner.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-present-bars.mkiv
@@ -2505,6 +2546,7 @@ share/texmf-dist/tex/context/modules/mkiv/s-present-funny.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-present-fuzzy.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-present-green.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-present-grow.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-present-lines.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-present-organic.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-present-original.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-present-ovals.mkiv
@@ -2521,16 +2563,19 @@ share/texmf-dist/tex/context/modules/mkiv/s-present-stack.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-present-stepper.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-present-stepwise.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-present-tiles.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-present-weird.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-present-windows.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-present-wobbling.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-references-show.mkiv
-share/texmf-dist/tex/context/modules/mkiv/s-reg-01.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-regimes-list.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-setups-macros.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-setups-missing.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-sql-tables.lua
 share/texmf-dist/tex/context/modules/mkiv/s-sql-tables.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-structure-sections.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-syntax.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-tugboat-columns.mkiv
+share/texmf-dist/tex/context/modules/mkiv/s-tugboat.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-typesetting-kerning.mkiv
 share/texmf-dist/tex/context/modules/mkiv/s-xml-analyzers.lua
 share/texmf-dist/tex/context/modules/mkiv/s-xml-analyzers.mkiv
@@ -2551,6 +2596,8 @@ share/texmf-dist/tex/context/modules/mkiv/x-html.mkiv
 share/texmf-dist/tex/context/modules/mkiv/x-ldx.ctx
 share/texmf-dist/tex/context/modules/mkiv/x-ldx.lua
 share/texmf-dist/tex/context/modules/mkiv/x-ldx.mkiv
+share/texmf-dist/tex/context/modules/mkiv/x-lmx-demo.mkiv
+share/texmf-dist/tex/context/modules/mkiv/x-lmx-html.mkiv
 share/texmf-dist/tex/context/modules/mkiv/x-math-svg.lua
 share/texmf-dist/tex/context/modules/mkiv/x-math-svg.mkvi
 share/texmf-dist/tex/context/modules/mkiv/x-mathml-basics.mkiv
@@ -2765,16 +2812,21 @@ share/texmf-dist/tex/context/sample/common/demo-mps.tex
 share/texmf-dist/tex/context/sample/common/demo-tex.tex
 share/texmf-dist/tex/context/sample/common/demo-xml.tex
 share/texmf-dist/tex/context/sample/common/douglas.tex
+share/texmf-dist/tex/context/sample/common/greenfield.tex
 share/texmf-dist/tex/context/sample/common/hacker.jpg
 share/texmf-dist/tex/context/sample/common/hawking.tex
+share/texmf-dist/tex/context/sample/common/jojomayer.tex
 share/texmf-dist/tex/context/sample/common/khatt-ar.tex
 share/texmf-dist/tex/context/sample/common/khatt-en.tex
+share/texmf-dist/tex/context/sample/common/klein.tex
 share/texmf-dist/tex/context/sample/common/knuth.tex
 share/texmf-dist/tex/context/sample/common/linden.tex
 share/texmf-dist/tex/context/sample/common/lorem.tex
 share/texmf-dist/tex/context/sample/common/materie.tex
+share/texmf-dist/tex/context/sample/common/mcnish.tex
 share/texmf-dist/tex/context/sample/common/mill.png
 share/texmf-dist/tex/context/sample/common/montgomery.tex
+share/texmf-dist/tex/context/sample/common/poe.tex
 share/texmf-dist/tex/context/sample/common/quevedo-es.tex
 share/texmf-dist/tex/context/sample/common/reich.tex
 share/texmf-dist/tex/context/sample/common/sample.tex
@@ -2854,6 +2906,11 @@ share/texmf-dist/tex/context/third/gantt/t-gantt.tex
 share/texmf-dist/tex/context/third/gnuplot/
 share/texmf-dist/tex/context/third/gnuplot/t-gnuplot.mkii
 share/texmf-dist/tex/context/third/gnuplot/t-gnuplot.mkiv
+share/texmf-dist/tex/context/third/handlecsv/
+share/texmf-dist/tex/context/third/handlecsv/t-handlecsv-extra.lua
+share/texmf-dist/tex/context/third/handlecsv/t-handlecsv-tools.lua
+share/texmf-dist/tex/context/third/handlecsv/t-handlecsv.lua
+share/texmf-dist/tex/context/third/handlecsv/t-handlecsv.tex
 share/texmf-dist/tex/context/third/inifile/
 share/texmf-dist/tex/context/third/inifile/t-inifile.tex
 share/texmf-dist/tex/context/third/layout/
@@ -3087,12 +3144,14 @@ share/texmf-dist/tex/generic/context/luatex/luatex-basics-prepare.tex
 share/texmf-dist/tex/generic/context/luatex/luatex-basics.tex
 share/texmf-dist/tex/generic/context/luatex/luatex-core.lua
 share/texmf-dist/tex/generic/context/luatex/luatex-core.tex
+share/texmf-dist/tex/generic/context/luatex/luatex-fonts-demo-tt.lua
 share/texmf-dist/tex/generic/context/luatex/luatex-fonts-demo-vf-1.lua
 share/texmf-dist/tex/generic/context/luatex/luatex-fonts-demo-vf-4.lua
 share/texmf-dist/tex/generic/context/luatex/luatex-fonts-enc.lua
 share/texmf-dist/tex/generic/context/luatex/luatex-fonts-ext.lua
 share/texmf-dist/tex/generic/context/luatex/luatex-fonts-lig.lua
 share/texmf-dist/tex/generic/context/luatex/luatex-fonts-merged.lua
+share/texmf-dist/tex/generic/context/luatex/luatex-fonts-mis.lua
 share/texmf-dist/tex/generic/context/luatex/luatex-fonts-syn.lua
 share/texmf-dist/tex/generic/context/luatex/luatex-fonts.lua
 share/texmf-dist/tex/generic/context/luatex/luatex-fonts.tex

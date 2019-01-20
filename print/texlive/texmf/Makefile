@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2018/10/10 15:17:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2019/01/20 11:17:48 edd Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -15,16 +15,14 @@ MASTER_SITES0 =		https://spacehopper.org/mirrors/ \
 			http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
-			texmf-var-pregen-${V}${EXTRACT_SUFX}:0 \
-			texlive2017.tlpdb.gz:0
+			texlive-${DIST_V}-tlpdb-full.tar.gz \
+			texmf-var-pregen-${V}.0${EXTRACT_SUFX}:0 \
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
 PKGNAME-docs =		texlive_texmf-docs-${V}
 PKGNAME-context =	texlive_texmf-context-${V}
 PKGNAME-buildset =	texlive_texmf-buildset-${V}
-
-REVISION =		2
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
@@ -41,14 +39,14 @@ MODRUBY_RUNDEP =	No
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 
-RUN_DEPENDS-main +=	texlive_base-${V}p3:print/texlive/base,-main \
+RUN_DEPENDS-main +=	texlive_base-${V}:print/texlive/base,-main \
 			${FULLPKGNAME-buildset}:print/texlive/texmf,-buildset
 RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
 			${_MODLUA_RUNDEPENDS}
 RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
 			${MODRUBY_RUNDEPENDS}
-RUN_DEPENDS-docs +=	texlive_base-${V}p3:print/texlive/base,-main \
+RUN_DEPENDS-docs +=	texlive_base-${V}:print/texlive/base,-main \
 			x11/p5-Tk
 RUN_DEPENDS-buildset +=	texlive_mktexlsr-${V}:print/texlive/base,-mktexlsr
 
@@ -86,7 +84,7 @@ pre-configure:
 	done
 	@# Don't use ${MODRUBY_ADJ_FILES} as ruby.port.mk uses find(1) which
 	@# takes an age on such a large directory.
-	for F in ${RUBY_ADJ_FILES}; do \
+	cd ${WRKSRC} && for F in ${RUBY_ADJ_FILES}; do \
 		${MODRUBY_RUBY_ADJ} $$F; \
 	done
 	for F in ${WISH_ADJ_FILES}; do \
@@ -125,14 +123,16 @@ do-install:
 
 	# plug in my pregenerated map and formats
 	#
-	# These are created (as root) with:
+	# To make these, first check you are all hashed (all commands as root):
+	#   mktexlsr
+	#   mtxrun --generate
+	#
+	# Then create the necessary files with:
 	#   updmap-sys
 	#   fmtutil-sys --all
 	#   context --make
 	#
-	# Make sure you hashed the tree before running the above commands:
-	#   mktexlsr
-	#   mtxrun --generate
+	# Then you can tar them up and host them as the pregen tarball.
 	mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
 	# Put manuals in the right place.
@@ -164,7 +164,7 @@ update-plist: plist
 plist: fake
 	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} ${MODPY_BIN} \
 		${FILESDIR}/update_plist_hints.py \
-		${DISTDIR}/texlive2017.tlpdb.gz | \
+		${WRKDIR}/texlive.tlpdb | \
 		${MODPY_BIN} ${FILESDIR}/write_plists.py
 
 # regenerate adj.mk

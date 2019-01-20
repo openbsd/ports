@@ -1,7 +1,5 @@
-# $OpenBSD: tlpdb.py,v 1.1 2018/09/11 21:32:28 edd Exp $
+# $OpenBSD: tlpdb.py,v 1.2 2019/01/20 11:17:49 edd Exp $
 """Lightweight TeX Live TLPDB parser."""
-
-import gzip
 
 
 class DBError(Exception):
@@ -54,12 +52,26 @@ class Pkg(object):
         for k in FileKind.MAP.values():
             self.files[k] = set()
         self.deps = set()
+        self.relocated = False
 
-    def run_files(self):
-        return self.files[FileKind.RUN]
+    def _reloc(self, fls):
+        """If the package is "relocated" then we have to rewrite the "RELOC"
+        prefix on the filenames. This behaviour was new in the TeX Live 2018
+        TLPDB."""
 
-    def doc_files(self):
-        return self.files[FileKind.DOC]
+        if not self.relocated:
+            return fls
+
+        ret = set()
+        for f in fls:
+            elems = f.split("/")
+            assert elems[0] == "RELOC"
+            ret.add("/".join(["texmf-dist"] + elems[1:]))
+
+        return ret
+
+    def get_files(self, kind):
+        return self._reloc(self.files[kind])
 
 
 class Parser(object):
@@ -68,10 +80,11 @@ class Parser(object):
                      "longdesc", "catalogue-ctan", "catalogue-date",
                      "catalogue-license", "catalogue-topics",
                      "catalogue-version", "catalogue-also", "execute",
-                     "postaction")
+                     "postaction", "containersize",
+                     "containerchecksum")
 
     def __init__(self, filename):
-        self.fh = gzip.GzipFile(filename)
+        self.fh = open(filename, "r")
 
     def parse(self):
         pos = Pos.TOP
@@ -100,6 +113,8 @@ class Parser(object):
                     continue
                 pkg.deps.add(dep)
                 pos = Pos.PKG
+            elif line.startswith("relocated"):
+                pkg.relocated = fields(line)[1] == "1"
             elif line.strip() == "":
                 # End of package -- add completed package to the map.
                 assert pkg_name not in pkgs
@@ -208,8 +223,8 @@ class DB(object):
 
         ret = set()
         for pp in pps:
-            ret.update([fn_prefix + x
-                        for x in self.map[pp.pkg_name].files[pp.file_kind]])
+            ret.update([fn_prefix + x for x in
+                        self.map[pp.pkg_name].get_files(pp.file_kind)])
         return ret
 
     def pkgs(self):
