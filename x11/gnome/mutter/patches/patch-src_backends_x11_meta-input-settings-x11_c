@@ -1,16 +1,23 @@
-$OpenBSD: patch-src_backends_x11_meta-input-settings-x11_c,v 1.1 2019/01/18 01:24:19 ajacoutot Exp $
+$OpenBSD: patch-src_backends_x11_meta-input-settings-x11_c,v 1.2 2019/01/20 04:55:56 ajacoutot Exp $
 
 https://gitlab.gnome.org/GNOME/mutter/merge_requests/394
 
 Index: src/backends/x11/meta-input-settings-x11.c
 --- src/backends/x11/meta-input-settings-x11.c.orig
 +++ src/backends/x11/meta-input-settings-x11.c
-@@ -486,7 +486,7 @@ has_udev_property (MetaInputSettings  *settings,
+@@ -486,7 +486,14 @@ has_udev_property (MetaInputSettings  *settings,
    g_object_unref (parent_udev_device);
    return FALSE;
  #else
 -  g_warning ("Failed to set acceleration profile: no udev support");
-+  g_debug ("Failed to set acceleration profile: no udev support");
++  static gboolean warned_once = FALSE;
++
++  if (!warned_once)
++    {
++      g_warning ("Failed to set acceleration profile: no udev support");
++      warned_once = TRUE;
++    }
++
    return FALSE;
  #endif
  }
