@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2018/05/09 09:05:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/01/20 12:09:00 sthen Exp $
 
 COMMENT =	portable network interface information
 
 CATEGORIES =	net
 
-MODPY_EGG_VERSION = 0.10.7
+MODPY_EGG_VERSION = 0.10.9
 DISTNAME =	netifaces-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
