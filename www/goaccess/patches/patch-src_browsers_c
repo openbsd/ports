@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_browsers_c,v 1.1 2019/01/20 13:36:51 sthen Exp $
+
+https://github.com/allinurl/goaccess/pull/1350
+
+Index: src/browsers.c
+--- src/browsers.c.orig
++++ src/browsers.c
+@@ -116,6 +116,8 @@ static const char *browsers[][2] = {
+   {"MicroMessenger", "Others"},
+   {"Apache", "Others"},
+   {"JOSM", "Others"},
++  {"OpenBSD ftp", "Others"},
++  {"lftp", "Others"},
+ 
+   /* Feed-reader-as-a-service */
+   {"AppleNewsBot", "Feeds"},
+@@ -183,6 +185,7 @@ static const char *browsers[][2] = {
+   {"Python", "Crawlers"},
+   {"LinkedIn", "Crawlers"},
+   {"Microsoft-WebDAV", "Crawlers"},
++  {"The Knowledge AI", "Crawlers"},
+ 
+   /* Podcast fetchers */
+   {"Downcast", "Podcasts"},

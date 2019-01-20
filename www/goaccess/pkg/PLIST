@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/11/28 19:40:27 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/01/20 13:36:51 sthen Exp $
 @bin bin/goaccess
 @man man/man1/goaccess.1
 share/examples/goaccess/
+share/examples/goaccess/browsers.list
 share/examples/goaccess/goaccess.conf
 @sample ${SYSCONFDIR}/goaccess.conf
 share/locale/es/LC_MESSAGES/goaccess.mo

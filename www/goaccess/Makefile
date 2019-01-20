@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2018/11/28 19:40:27 kirby Exp $
+# $OpenBSD: Makefile,v 1.20 2019/01/20 13:36:51 sthen Exp $
 
 COMMENT =		realtime console web log analyzer
 
 DISTNAME =		goaccess-1.3
+REVISION =		0
 
 CATEGORIES =		www
 
@@ -13,20 +14,21 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GeoIP c curses intl pthread
+WANTLIB += c curses intl maxminddb pthread
 
 MASTER_SITES =		https://tar.goaccess.io/
 
 LIB_DEPENDS =		devel/gettext \
-			net/GeoIP
+			net/libmaxminddb
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--enable-geoip=legacy \
+CONFIGURE_ARGS =	--enable-geoip=mmdb \
 			--enable-utf8 \
 			--with-libiconv-prefix
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+FAKE_FLAGS =		confdir="${PREFIX}/share/examples/goaccess"
 
 FLAVORS = 		tokyocabinet
 FLAVOR ?=
@@ -36,10 +38,5 @@ WANTLIB += 		bz2 tokyocabinet z
 LIB_DEPENDS += 		databases/tokyocabinet
 CONFIGURE_ARGS += 	--enable-tcb=btree
 .endif
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/goaccess/
-	${INSTALL_DATA} ${WRKSRC}/config/goaccess.conf \
-		${PREFIX}/share/examples/goaccess/
 
 .include <bsd.port.mk>
