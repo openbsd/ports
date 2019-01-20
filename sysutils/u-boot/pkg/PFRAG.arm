@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.arm,v 1.16 2019/01/15 14:20:09 kirby Exp $
+@comment $OpenBSD: PFRAG.arm,v 1.17 2019/01/20 11:51:02 jsg Exp $
 @pkgpath sysutils/u-boot,
 share/u-boot/
 share/u-boot/A10-OLinuXino-Lime/
@@ -132,6 +132,11 @@ share/u-boot/am335x_boneblack/MLO
 share/u-boot/am335x_boneblack/u-boot
 share/u-boot/am335x_boneblack/u-boot.bin
 share/u-boot/am335x_boneblack/u-boot.img
+share/u-boot/am335x_evm/
+share/u-boot/am335x_evm/MLO
+share/u-boot/am335x_evm/u-boot
+share/u-boot/am335x_evm/u-boot.bin
+share/u-boot/am335x_evm/u-boot.img
 share/u-boot/bananapi_m2_zero/
 share/u-boot/bananapi_m2_zero/sunxi-spl.bin
 share/u-boot/bananapi_m2_zero/u-boot
