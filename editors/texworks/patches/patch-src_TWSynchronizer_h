@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_TWSynchronizer_h,v 1.1 2019/01/20 11:20:45 edd Exp $
+
+Make texworks build against a newer synctex:
+https://github.com/TeXworks/texworks/commit/496cc1785f335f0eb4451005025fe11ae295d3e4
+
+Index: src/TWSynchronizer.h
+--- src/TWSynchronizer.h.orig
++++ src/TWSynchronizer.h
+@@ -72,7 +72,7 @@ class TWSyncTeXSynchronizer : public TWSynchronizer (p
+ 
+   static int _findCorrespondingPosition(const QString & srcContext, const QString & destContext, const int col, bool & unique);
+ 
+-  SyncTeX::synctex_scanner_t _scanner;
++  SyncTeX::synctex_scanner_p _scanner;
+ };
+ 
+ #endif // !defined(TW_SYNCHRONIZER_H)
