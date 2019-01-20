@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/01/20 23:24:28 juanfra Exp $
 
 COMMENT =		BASIC converter to C translator for Unix system
 
-DISTNAME =		bacon-3.8
-REVISION =		0
+DISTNAME =		bacon-3.8.1
 
 CATEGORIES =		lang
 
@@ -32,6 +31,7 @@ PORTHOME =		${WRKDIR}
 CONFIGURE_STYLE =	gnu
 # Disable the gtk bacongui. It doesn't works on OpenBSD.
 CONFIGURE_ARGS =	--with-bash \
+			--enable-gui-fltk \
 			--disable-gui-gtk
 CONFIGURE_ENV =		CPPFLAGS="`fltk-config --cxxflags`" \
 			CFLAGS="`fltk-config --cflags` ${CFLAGS}" \
