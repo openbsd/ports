@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2018/11/24 22:23:53 juanfra Exp $
+# $OpenBSD: Makefile,v 1.34 2019/01/20 20:11:59 juanfra Exp $
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
-V=		4.9.1
+V=		4.9.2
 DISTNAME=	gambit-v${V:S/./_/g}
 PKGNAME=	gambit-$V
 API_V=		${V:R:S/./0/}00${V:E}
@@ -10,7 +10,7 @@ SUBST_VARS+=	API_V
 
 CATEGORIES=	lang
 
-HOMEPAGE=	http://gambitscheme.org/
+HOMEPAGE=	http://dynamo.iro.umontreal.ca/wiki/index.php/Main_Page
 
 MAINTAINER=	Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
