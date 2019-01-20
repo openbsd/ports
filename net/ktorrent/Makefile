@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2018/09/05 16:26:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.44 2019/01/20 11:51:35 rsadowski Exp $
 
 COMMENT =	BitTorrent Client
 
@@ -32,6 +32,9 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/ktorrent/${VERSION}/}
 
 MODULES =		devel/kf5 \
 			multimedia/phonon
+
+# try to fix bulk builds
+USE_NINJA = samurai
 
 BUILD_DEPENDS =		devel/gettext-tools \
 			devel/kf5/kross \
