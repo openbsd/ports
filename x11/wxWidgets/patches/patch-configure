@@ -1,16 +1,15 @@
-$OpenBSD: patch-configure,v 1.4 2019/01/02 12:41:48 jca Exp $
+$OpenBSD: patch-configure,v 1.5 2019/01/21 18:55:07 jca Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -40002,6 +40002,12 @@ EOF
+@@ -40002,6 +40002,11 @@ EOF
          USE_SOVERSION=1
          USE_SOVERLINUX=1
          USE_SOTWOSYMLINKS=1
 +        case "${BAKEFILE_HOST}" in
 +          *-*-openbsd*)
 +            USE_SOTWOSYMLINKS=0
-+            SONAME_FLAG="-Wl,-z,kludge="
 +          ;;
 +        esac
        ;;
