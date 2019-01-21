@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2019/01/14 08:51:03 sebastia Exp $
+# $OpenBSD: Makefile,v 1.38 2019/01/21 17:00:02 bcallah Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 
-V =		3.0.0
+V =		3.0.1
 COMMENT =	WYSIWYG music notation software (MuseScore)
 DISTNAME =	MuseScore-${V}
 PKGNAME =	musescore-${V}
