@@ -1,14 +1,37 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/01/21 20:13:44 landry Exp $
 @bin bin/beaver
+include/beaver.h
+lib/beaver/
+lib/beaver/plugins/
+lib/beaver/plugins/ascii.a
+lib/beaver/plugins/ascii.la
+lib/beaver/plugins/ascii.so
+lib/beaver/plugins/sample.a
+lib/beaver/plugins/sample.la
+lib/beaver/plugins/sample.so
+lib/beaver/plugins/tools.a
+lib/beaver/plugins/tools.la
+lib/beaver/plugins/tools.so
 @man man/man1/beaver.1
 share/applications/beaver.desktop
 share/beaver/
-share/beaver/bl/
-share/beaver/bl/example1.bl
-share/beaver/bl/example2.bl
-share/beaver/bl/glib.bl
 share/beaver/pixmaps/
 share/beaver/pixmaps/about.xpm
-share/beaver/pixmaps/beaver.png
-share/beaver/pixmaps/stock_about.xpm
+share/beaver/pixmaps/beaver-old.png
+share/beaver/pixmaps/beaver-project-icon.svg
+share/beaver/pixmaps/beaver-project-icon_16.svg
+share/beaver/pixmaps/beaver-project-icon_22.svg
+share/beaver/pixmaps/beaver-project-icon_32.svg
+share/beaver/pixmaps/beaver-project-icon_48.svg
+share/beaver/resource/
+share/beaver/resource/beaver.conf.default
+share/beaver/resource/standard.xml
+share/beaver/resource/wordfile.default
+share/icons/hicolor/16x16/apps/beaver.png
+share/icons/hicolor/22x22/apps/beaver.png
+share/icons/hicolor/32x32/apps/beaver.png
+share/icons/hicolor/48x48/apps/beaver.png
+share/pixmaps/
+share/pixmaps/beaver.png
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
