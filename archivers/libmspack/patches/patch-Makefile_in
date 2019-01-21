@@ -1,13 +1,13 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2017/11/09 15:07:02 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.8 2019/01/21 15:27:29 sthen Exp $
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -93,7 +93,7 @@ build_triplet = @build@
+@@ -92,7 +92,7 @@ POST_UNINSTALL = :
+ build_triplet = @build@
  host_triplet = @host@
  # add "-DMSPACK_NO_DEFAULT_SYSTEM" to remove default mspack_system
- @DEBUG_TRUE@am__append_1 = -DDEBUG
--@GCC_TRUE@am__append_2 = -Wall -Wextra -Wno-unused-parameter -Wno-unused-result
-+@GCC_TRUE@am__append_2 = -Wall -Wextra -Wno-unused-parameter
- bin_PROGRAMS = src/cabrip$(EXEEXT) src/chmextract$(EXEEXT) \
- 	src/msexpand$(EXEEXT) src/oabextract$(EXEEXT)
+-@GCC_TRUE@am__append_1 = -Wall -Wextra -Wno-unused-parameter -Wno-unused-result
++@GCC_TRUE@am__append_1 = -Wall -Wextra -Wno-unused-parameter
  noinst_PROGRAMS = examples/cabd_memory$(EXEEXT) \
+ 	examples/cabrip$(EXEEXT) examples/chmextract$(EXEEXT) \
+ 	examples/msexpand$(EXEEXT) examples/multifh$(EXEEXT) \
