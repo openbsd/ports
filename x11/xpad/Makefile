@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.43 2019/01/02 01:42:31 bcallah Exp $
+# $OpenBSD: Makefile,v 1.44 2019/01/21 17:08:32 bcallah Exp $
 
-V=		5.3.0
+V=		5.4.0
 COMMENT=	virtual sticky pad system
 DISTNAME=	xpad-${V}
 EXTRACT_SUFX=	.tar.bz2

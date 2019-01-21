@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/06/29 22:16:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/01/21 17:08:32 bcallah Exp $
 @bin bin/xpad
 @man man/man1/xpad.1
 share/applications/xpad.desktop
@@ -31,6 +31,8 @@ share/locale/tr/LC_MESSAGES/xpad.mo
 share/locale/vi/LC_MESSAGES/xpad.mo
 share/locale/zh_CN/LC_MESSAGES/xpad.mo
 share/locale/zh_TW/LC_MESSAGES/xpad.mo
+share/metainfo/
+share/metainfo/xpad.appdata.xml
 share/xpad/
 share/xpad/help/
 share/xpad/help/xpad-user-help.txt
