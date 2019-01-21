@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.32 2018/12/22 12:17:49 robert Exp $
+# $OpenBSD: Makefile,v 1.33 2019/01/21 17:27:26 sthen Exp $
+
+# undefined ref's to libicon*, libintl*
+USE_LLD=	Yes
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-mapi=	kopano MAPI extensions for PHP
