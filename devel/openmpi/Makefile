@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/01/21 14:24:30 jca Exp $
 
 BROKEN-hppa =		error: Could not determine global symbol label prefix
 BROKEN-powerpc =	checking if Fortran 77 compiler works... no
@@ -7,7 +7,7 @@ COMMENT =		open source MPI-2 implementation
 
 V=			1.4.1
 DISTNAME =		openmpi-$V
-REVISION =		7
+REVISION =		8
 
 SHARED_LIBS =		mca_common_sm 1.0 \
 			mpi 0.1 \
@@ -39,6 +39,11 @@ USE_LIBTOOL =		No
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/openmpi/
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		F77=${MODFORTRAN_COMPILER}
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+CONFIGURE_ARGS =	--disable-visibility
+.endif
 
 # openmpi's otfinfo conflicts with the one from texlive
 post-install:
