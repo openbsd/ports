@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2018/11/16 21:18:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.76 2019/01/21 23:46:01 abieber Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -11,14 +11,12 @@ USE_WXNEEDED =		Yes
 
 COMMENT =		V8 JavaScript for clients and servers
 
-NODE_VERSION =		v8.12.0
-
+NODE_VERSION =		v10.15.0
 PLEDGE_VER =		1.1.0
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 ${DISTNAME}.tar.gz
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
-REVISION =		1
 
 MASTER_SITES0 =		https://github.com/qbit/node-pledge/archive/
 
@@ -35,7 +33,7 @@ MASTER_SITES =		${HOMEPAGE}dist/${NODE_VERSION}/
 
 MODULES =		lang/python
 
-WANTLIB += c execinfo kvm m pthread util z ${COMPILER_LIBCXX}
+WANTLIB += c execinfo kvm m pthread util ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -53,8 +51,7 @@ CONFIGURE_STYLE =	simple
 
 # libpath and includes aren't picked up, but I added them here as a note.
 # The patch for node.gyp is where they are actually being set.
-CONFIGURE_ARGS =	--prefix=${PREFIX} \
-			--shared-zlib
+CONFIGURE_ARGS =	--prefix=${PREFIX}
 
 .if "${MACHINE_ARCH}" ==	"aarch64"
 CONFIGURE_ARGS +=	--openssl-no-asm
@@ -78,13 +75,6 @@ do-extract:
 	mv ${WRKSRC}/deps/npm/node_modules/node-pledge-${PLEDGE_VER} \
 		${WRKSRC}/deps/npm/node_modules/node-pledge
 
-post-extract:
-	# Currently tarbals exclude tools/eslint, while the tests that require it
-	# are still in tree
-	cd ${WRKSRC} && for x in $$(grep -r "tools/eslint" test/* | awk -F: '{print $$1}' | sort | uniq); do \
-		rm $$x; \
-	done
-
 pre-configure:
 	@# Bad practice, but prevents a whole stack of patches.
 	ln -sf ${LOCALBASE}/bin/python${MODPY_VERSION} ${WRKDIR}/bin/python
@@ -95,13 +85,12 @@ pre-configure:
 		${WRKDIST}/node.gyp \
 		${WRKDIST}/common.gypi \
 		${WRKDIST}/tools/test.py
-# generate PIC assembly code
-.if ${MACHINE_ARCH} == "i386"
-	find ${WRKDIST}/deps/openssl/asm/x86-elf-gas -name '*.s' -delete
-	find ${WRKDIST}/deps/openssl/asm -type f -exec touch {} +
-	cd ${WRKDIST}/deps/openssl/asm && \
-		${MAKE_PROGRAM} -j${MAKE_JOBS} CC="${CC}" ASM="${CC}" all
-.endif
+	cd ${WRKDIST}/deps/openssl/config && \
+		${MAKE_PROGRAM} ARCHS=BSD-x86-elf
+
+post-configure:
+	sed -i 's/-ldl //' ${WRKSRC}/out/deps/openssl/openssl.target.mk
+	sed -i 's/-ldl //' ${WRKSRC}/out/deps/openssl/openssl-cli.target.mk
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \

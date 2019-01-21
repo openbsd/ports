@@ -1,23 +1,23 @@
-$OpenBSD: patch-deps_v8_src_base_cpu_cc,v 1.1 2018/02/10 14:50:35 abieber Exp $
+$OpenBSD: patch-deps_v8_src_base_cpu_cc,v 1.2 2019/01/21 23:46:01 abieber Exp $
 
 Index: deps/v8/src/base/cpu.cc
 --- deps/v8/src/base/cpu.cc.orig
 +++ deps/v8/src/base/cpu.cc
-@@ -607,6 +607,8 @@ CPU::CPU()
+@@ -424,6 +424,8 @@ CPU::CPU()
  
- #elif V8_HOST_ARCH_ARM64
+ #if V8_OS_LINUX
  
 +#ifdef V8_OS_LINUX
 +
    CPUInfo cpu_info;
  
    // Extract implementor from the "CPU implementer" field.
-@@ -640,6 +642,8 @@ CPU::CPU()
+@@ -457,6 +459,8 @@ CPU::CPU()
      }
      delete[] part;
    }
 +
 +#endif // V8_OS_LINUX
  
- #elif V8_HOST_ARCH_PPC
- 
+   // Extract architecture from the "CPU Architecture" field.
+   // The list is well-known, unlike the the output of
