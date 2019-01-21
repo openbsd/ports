@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2016/07/30 21:36:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/01/21 16:49:45 cwen Exp $
 
 COMMENT =	extensible framework for Perl server engines
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Net-Server-2.008
-REVISION =	0
+DISTNAME =	Net-Server-2.009
 CATEGORIES =	devel net
-
-HOMEPAGE =	http://seamons.com/projects/
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
