@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2018/10/26 19:53:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/01/21 23:21:19 naddy Exp $
 
 COMMENT =		modern, open-source flight simulator
 
 DISTNAME =		flightgear-${V}
-REVISION =		2
+REVISION =		3
 
 WANTLIB += ICE GL GLU OpenThreads SimGearCore SimGearScene SM X11 Xext Xi
 WANTLIB += Xmu c curl glut m openal osg osgDB osgFX osgGA osgParticle
