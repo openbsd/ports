@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_celeste_CMakeLists_txt,v 1.1 2019/01/21 17:35:34 kirby Exp $
+
+Index: src/celeste/CMakeLists.txt
+--- src/celeste/CMakeLists.txt.orig
++++ src/celeste/CMakeLists.txt
+@@ -17,7 +17,7 @@
+ #    along with Hugin  If not, see <http://www.gnu.org/licenses/>.
+  
+ IF(NOT WIN32)
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+ ENDIF(NOT WIN32)
+ 
+ # a list of all files belonging to celeste library

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/07/01 18:33:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2019/01/21 17:35:34 kirby Exp $
 @bin bin/PTBatcherGUI
 @bin bin/align_image_stack
 @bin bin/autooptimiser
@@ -14,6 +14,7 @@
 @bin bin/hugin_executor
 @bin bin/hugin_hdrmerge
 @bin bin/hugin_lensdb
+@bin bin/hugin_stacker
 @bin bin/hugin_stitch_project
 @bin bin/icpfind
 @bin bin/linefind
@@ -36,7 +37,6 @@ lib/hugin/
 @lib lib/hugin/libhugin_python_interface.so.${LIBhugin_python_interface_VERSION}
 @lib lib/hugin/libhuginbase.so.${LIBhuginbase_VERSION}
 @lib lib/hugin/libhuginbasewx.so.${LIBhuginbasewx_VERSION}
-@lib lib/hugin/libhuginlines.so.${LIBhuginlines_VERSION}
 @lib lib/hugin/libicpfindlib.so.${LIBicpfindlib_VERSION}
 @lib lib/hugin/liblocalfeatures.so.${LIBlocalfeatures_VERSION}
 lib/python${MODPY_VERSION}/site-packages/_hsi.so
@@ -88,10 +88,18 @@ share/hugin/data/
 share/hugin/data/blended_stacks.executor
 share/hugin/data/celeste.model
 share/hugin/data/default.setting
+share/hugin/data/duallens.assistant
+share/hugin/data/expressions.ini
 share/hugin/data/fused_layers.executor
 share/hugin/data/hdr_pano.executor
 share/hugin/data/hugin_exiftool_copy.arg
+share/hugin/data/hugin_exiftool_final_example.arg
+share/hugin/data/median_stack.executor
+share/hugin/data/multirow.assistant
+share/hugin/data/normal.assistant
 share/hugin/data/normal_enblend.executor
+share/hugin/data/normal_enblend_cubic.executor
+share/hugin/data/normal_layered_tiff.executor
 share/hugin/data/normal_smartblend.executor
 share/hugin/data/plugins/
 share/hugin/data/plugins-templates/
@@ -106,6 +114,9 @@ share/hugin/data/plugins/top_five.py
 share/hugin/data/plugins/top_five.pyc
 share/hugin/data/plugins/woa.py
 share/hugin/data/plugins/woa.pyc
+share/hugin/data/scanned.assistant
+share/hugin/data/scanned2.assistant
+share/hugin/data/stacked.assistant
 share/hugin/data/zeronoise.executor
 share/hugin/xrc/
 share/hugin/xrc/about.xrc
@@ -396,6 +407,7 @@ share/hugin/xrc/data/help_en_EN/Lightprobe.html
 share/hugin/xrc/data/help_en_EN/Linefind.html
 share/hugin/xrc/data/help_en_EN/Medinet_habu_horizontal_fisheye.jpg
 share/hugin/xrc/data/help_en_EN/Medinet_habu_horizontal_stereographic.jpg
+share/hugin/xrc/data/help_en_EN/Multi_image_techniques.html
 share/hugin/xrc/data/help_en_EN/NPP.html
 share/hugin/xrc/data/help_en_EN/Nadir.html
 share/hugin/xrc/data/help_en_EN/No-parallax_point.html
@@ -460,6 +472,7 @@ share/hugin/xrc/data/help_en_EN/TIFF.html
 share/hugin/xrc/data/help_en_EN/Tca_correct.html
 share/hugin/xrc/data/help_en_EN/The_General_Panini_Projection.html
 share/hugin/xrc/data/help_en_EN/Tone_mapping.html
+share/hugin/xrc/data/help_en_EN/User_defined_output_sequence_and_user_defined_assistant.html
 share/hugin/xrc/data/help_en_EN/Using_Celeste_with_hugin.html
 share/hugin/xrc/data/help_en_EN/Verdandi.html
 share/hugin/xrc/data/help_en_EN/Vertical-fisheye.jpg
@@ -485,132 +498,11 @@ share/hugin/xrc/data/help_en_EN/f7bd60b75b29d79b660a2859395c1a24.png
 share/hugin/xrc/data/help_en_EN/fa5313ae442c1ac7f832c141880e3e74.png
 share/hugin/xrc/data/help_en_EN/help_index_en.hhk
 share/hugin/xrc/data/help_en_EN/help_toc_en.hhc
-share/hugin/xrc/data/help_en_EN/hugin.hhc
-share/hugin/xrc/data/help_en_EN/hugin.hhk
-share/hugin/xrc/data/help_en_EN/hugin.hhp
 share/hugin/xrc/data/help_en_EN/hugin_help_en_EN.hhp
 share/hugin/xrc/data/help_en_EN/license.html
 share/hugin/xrc/data/help_en_EN/magnify-clip.png
 share/hugin/xrc/data/help_en_EN/manual.css
 share/hugin/xrc/data/help_en_EN/panotoolsng.png
-share/hugin/xrc/data/help_it_IT/
-share/hugin/xrc/data/help_it_IT/16bit_workflow_with_hugin.html
-share/hugin/xrc/data/help_it_IT/Aliasing.html
-share/hugin/xrc/data/help_it_IT/Align_a_stack_of_photos.html
-share/hugin/xrc/data/help_it_IT/Align_image_stack.html
-share/hugin/xrc/data/help_it_IT/Alpha_channel.html
-share/hugin/xrc/data/help_it_IT/Aspect_Ratio.html
-share/hugin/xrc/data/help_it_IT/Autooptimiser.html
-share/hugin/xrc/data/help_it_IT/Autopano-sift-C.html
-share/hugin/xrc/data/help_it_IT/Autopano-sift.html
-share/hugin/xrc/data/help_it_IT/Autopano.html
-share/hugin/xrc/data/help_it_IT/Banding.html
-share/hugin/xrc/data/help_it_IT/Barrel_distortion.html
-share/hugin/xrc/data/help_it_IT/Bracketing.html
-share/hugin/xrc/data/help_it_IT/CCD.html
-share/hugin/xrc/data/help_it_IT/Camera_response_curve.html
-share/hugin/xrc/data/help_it_IT/Chromatic_aberration.html
-share/hugin/xrc/data/help_it_IT/Color_correct_tiff.html
-share/hugin/xrc/data/help_it_IT/Colour_profile.html
-share/hugin/xrc/data/help_it_IT/Control_points.html
-share/hugin/xrc/data/help_it_IT/Crop_factor.html
-share/hugin/xrc/data/help_it_IT/Cropped_TIFF.html
-share/hugin/xrc/data/help_it_IT/Cubic.html
-share/hugin/xrc/data/help_it_IT/Cubic_Projection.html
-share/hugin/xrc/data/help_it_IT/Cylindrical.html
-share/hugin/xrc/data/help_it_IT/Cylindrical_Projection.html
-share/hugin/xrc/data/help_it_IT/Cylindrical_panorama.html
-share/hugin/xrc/data/help_it_IT/Depth_of_Field.html
-share/hugin/xrc/data/help_it_IT/Dust_Removal_with_Flatfield.html
-share/hugin/xrc/data/help_it_IT/Dynamic_range.html
-share/hugin/xrc/data/help_it_IT/EXIF.html
-share/hugin/xrc/data/help_it_IT/Enblend.html
-share/hugin/xrc/data/help_it_IT/Enfuse.html
-share/hugin/xrc/data/help_it_IT/Entrance_pupil.html
-share/hugin/xrc/data/help_it_IT/Equirectangular.html
-share/hugin/xrc/data/help_it_IT/Equirectangular_Projection.html
-share/hugin/xrc/data/help_it_IT/Field_of_View.html
-share/hugin/xrc/data/help_it_IT/Fisheye_Projection.html
-share/hugin/xrc/data/help_it_IT/Focal_Length.html
-share/hugin/xrc/data/help_it_IT/Freepv.html
-share/hugin/xrc/data/help_it_IT/Fulla.html
-share/hugin/xrc/data/help_it_IT/GIF.html
-share/hugin/xrc/data/help_it_IT/Gamma.html
-share/hugin/xrc/data/help_it_IT/HDR.html
-share/hugin/xrc/data/help_it_IT/HDR_workflow_with_hugin.html
-share/hugin/xrc/data/help_it_IT/Horizontal_control_points.html
-share/hugin/xrc/data/help_it_IT/Hugin.html
-share/hugin/xrc/data/help_it_IT/Hugin_Assistant_tab.html
-share/hugin/xrc/data/help_it_IT/Hugin_Batch_Processor.html
-share/hugin/xrc/data/help_it_IT/Hugin_Batch_Stitcher.html
-share/hugin/xrc/data/help_it_IT/Hugin_Camera_and_Lens_tab.html
-share/hugin/xrc/data/help_it_IT/Hugin_Control_Points_tab.html
-share/hugin/xrc/data/help_it_IT/Hugin_Control_Points_table.html
-share/hugin/xrc/data/help_it_IT/Hugin_Crop_tab.html
-share/hugin/xrc/data/help_it_IT/Hugin_Exposure_tab.html
-share/hugin/xrc/data/help_it_IT/Hugin_FAQ.html
-share/hugin/xrc/data/help_it_IT/Hugin_Fast_Preview_window.html
-share/hugin/xrc/data/help_it_IT/Hugin_Images_tab.html
-share/hugin/xrc/data/help_it_IT/Hugin_Keyboard_shortcuts.html
-share/hugin/xrc/data/help_it_IT/Hugin_Main_window.html
-share/hugin/xrc/data/help_it_IT/Hugin_Optimizer_tab.html
-share/hugin/xrc/data/help_it_IT/Hugin_Preferences.html
-share/hugin/xrc/data/help_it_IT/Hugin_Preview_window.html
-share/hugin/xrc/data/help_it_IT/Hugin_Stitcher_tab.html
-share/hugin/xrc/data/help_it_IT/Hugin_translation_guide.html
-share/hugin/xrc/data/help_it_IT/Interpolation.html
-share/hugin/xrc/data/help_it_IT/JPEG.html
-share/hugin/xrc/data/help_it_IT/Landscape.html
-share/hugin/xrc/data/help_it_IT/Lens_correction_model.html
-share/hugin/xrc/data/help_it_IT/Lens_distortion.html
-share/hugin/xrc/data/help_it_IT/MatchPoint.html
-share/hugin/xrc/data/help_it_IT/NPP.html
-share/hugin/xrc/data/help_it_IT/Nadir.html
-share/hugin/xrc/data/help_it_IT/No-parallax_point.html
-share/hugin/xrc/data/help_it_IT/Nodal_Point.html
-share/hugin/xrc/data/help_it_IT/Nona.html
-share/hugin/xrc/data/help_it_IT/Nona_gui.html
-share/hugin/xrc/data/help_it_IT/OpenEXR.html
-share/hugin/xrc/data/help_it_IT/Optimization.html
-share/hugin/xrc/data/help_it_IT/PNG.html
-share/hugin/xrc/data/help_it_IT/PPI.html
-share/hugin/xrc/data/help_it_IT/PSD.html
-share/hugin/xrc/data/help_it_IT/PTOptimizer.html
-share/hugin/xrc/data/help_it_IT/PTStitcher.html
-share/hugin/xrc/data/help_it_IT/PTblender.html
-share/hugin/xrc/data/help_it_IT/PTmender.html
-share/hugin/xrc/data/help_it_IT/PTtiff2psd.html
-share/hugin/xrc/data/help_it_IT/Pano12.html
-share/hugin/xrc/data/help_it_IT/Panoglview.html
-share/hugin/xrc/data/help_it_IT/Panoinfo.html
-share/hugin/xrc/data/help_it_IT/Panomatic.html
-share/hugin/xrc/data/help_it_IT/Panorama.html
-share/hugin/xrc/data/help_it_IT/Panorama_formats.html
-share/hugin/xrc/data/help_it_IT/Panorama_tools.html
-share/hugin/xrc/data/help_it_IT/Panotools.html
-share/hugin/xrc/data/help_it_IT/Parallax.html
-share/hugin/xrc/data/help_it_IT/Perspective_correction.html
-share/hugin/xrc/data/help_it_IT/Perspective_distortion.html
-share/hugin/xrc/data/help_it_IT/Pincushion_distortion.html
-share/hugin/xrc/data/help_it_IT/Pitch.html
-share/hugin/xrc/data/help_it_IT/Portrait.html
-share/hugin/xrc/data/help_it_IT/Projections.html
-share/hugin/xrc/data/help_it_IT/QTVR.html
-share/hugin/xrc/data/help_it_IT/RAW.html
-share/hugin/xrc/data/help_it_IT/RGBE.html
-share/hugin/xrc/data/help_it_IT/Rectilinear_Projection.html
-share/hugin/xrc/data/help_it_IT/Roll.html
-share/hugin/xrc/data/help_it_IT/Spherical.html
-share/hugin/xrc/data/help_it_IT/Stereographic_Projection.html
-share/hugin/xrc/data/help_it_IT/Straight_line_control_points.html
-share/hugin/xrc/data/help_it_IT/TIFF.html
-share/hugin/xrc/data/help_it_IT/Tone_mapping.html
-share/hugin/xrc/data/help_it_IT/Vertical_control_points.html
-share/hugin/xrc/data/help_it_IT/Vignetting.html
-share/hugin/xrc/data/help_it_IT/Wavy_distortion.html
-share/hugin/xrc/data/help_it_IT/Yaw.html
-share/hugin/xrc/data/help_it_IT/Zenith.html
-share/hugin/xrc/data/help_it_IT/license.html
 share/hugin/xrc/data/hugin.ico
 share/hugin/xrc/data/hugin.png
 share/hugin/xrc/data/hugin_small.png
@@ -676,6 +568,9 @@ share/hugin/xrc/pano_panel.xrc
 share/hugin/xrc/pref_dialog.xrc
 share/hugin/xrc/preview_frame.xrc
 share/hugin/xrc/reset_dialog.xrc
+share/icons/gnome/
+share/icons/gnome/48x48/
+share/icons/gnome/48x48/mimetypes/
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-ptoptimizer-script.png
 share/locale/ca_ES/
 share/locale/ca_ES/LC_MESSAGES/
