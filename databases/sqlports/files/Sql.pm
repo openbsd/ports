@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.31 2019/01/17 17:39:00 espie Exp $
+# $OpenBSD: Sql.pm,v 1.32 2019/01/21 08:51:56 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -695,7 +695,7 @@ sub column
 	}
 	if (defined $self->{join} && 
 	    Sql::Create->is_table_column($self->{join}->name, $name)) {
-		return $self->{join}->alias.".".$name;
+		return $self->{join}->join_table.".".$name;
 	} else {
 		return $self->{parent}->origin.".".$name;
 	}
@@ -708,11 +708,21 @@ sub group_by
 	return $self;
 }
 
+sub join_table
+{
+	my $self = shift;
+	return $self->{parent}->origin;
+}
+
 sub join
 {
-	my ($self, $j) = @_;
-	$self->{join} = $j;
-	$j->{parent} = $self;
+	my ($self, @j) = @_;
+	my $subject = $self;
+	for my $j (@j) {
+		$subject->{join} = $j;
+		$j->{previous} = $subject;
+		$subject = $j;
+	}
 	return $self;
 }
 
@@ -852,7 +862,7 @@ sub join_part
 	return $s;
 }
 
-sub alias
+sub join_table
 {
 	my $self = shift;
 	return $self->{alias} // $self->name;
@@ -893,10 +903,10 @@ sub equation
 	my $a = $self->{a};
 	my $b = $self->{b};
 	if (!$view->is_unique_name($a)) {
-		$a = $join->alias.".".$a;
+		$a = $join->join_table.".".$a;
 	}
 	if (!$view->is_unique_name($b)) {
-		$b = $join->{parent}{parent}->origin.".".$b;
+		$b = $join->{previous}->join_table.".".$b;
 	}
 	return "$a=$b";
 }
@@ -909,7 +919,7 @@ sub equation
 	my ($self, $join, $view) = @_;
 	my $a = $self->{a};
 	if (!$view->is_unique_name($a)) {
-		$a = $join->alias.".".$a;
+		$a = $join->join_table.".".$a;
 	}
 
 	return "$a=$self->{b}";
@@ -922,7 +932,7 @@ sub equation
 	my ($self, $join, $view) = @_;
 	my $a = $self->{a};
 	if (!$view->is_unique_name($a)) {
-		$a = $join->alias.".".$a;
+		$a = $join->join_table.".".$a;
 	}
 
 	return "$a IS NULL";
