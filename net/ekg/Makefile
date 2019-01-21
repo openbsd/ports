@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2017/06/13 07:43:15 fcambus Exp $
+# $OpenBSD: Makefile,v 1.11 2019/01/21 14:33:26 jca Exp $
 
 COMMENT=	Gadu-Gadu IM protocol client
 
 DISTNAME=	ekg-1.7
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 
 HOMEPAGE=	http://ekg.chmurka.net/
-
-MAINTAINER=	Aleksander Piotrowski <pelotasplus@gmail.com>
 
 # GPLv2 - LGPL
 PERMIT_PACKAGE_CDROM=	Yes

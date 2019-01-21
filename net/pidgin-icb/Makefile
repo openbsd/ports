@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/16 16:46:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/01/21 14:33:26 jca Exp $
 
 COMMENT=	ICB protocol plugin for Pidgin
 
 DISTNAME=	pidgin-icb-20070505
-REVISION=	6
+REVISION=	7
 CATEGORIES=	net
 
 HOMEPAGE=	http://nic.com.pl/~alek/pidgin-icb/
-
-MAINTAINER=	Aleksander Piotrowski <pelotasplus@gmail.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
