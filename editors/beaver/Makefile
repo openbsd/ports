@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/01/21 20:13:44 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2019/01/22 15:05:11 landry Exp $
 
 COMMENT=	lightweight Gtk text editor with syntax highlighting
 
@@ -23,7 +23,8 @@ LIB_DEPENDS=	x11/gtk+2
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext-tools \
+			textproc/intltool
 CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.mk>
