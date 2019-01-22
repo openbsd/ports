@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_synctex_parser_c,v 1.1 2019/01/20 11:20:45 edd Exp $
+$OpenBSD: patch-src_synctex_parser_c,v 1.2 2019/01/22 12:13:22 edd Exp $
 
 Make texworks build against a newer synctex:
 https://github.com/TeXworks/texworks/commit/496cc1785f335f0eb4451005025fe11ae295d3e4
@@ -120,7 +120,7 @@ Index: src/synctex_parser.c
 +/**
 + *  \file synctex_parser.c
 + *  \brief SyncTeX file parser and controller.
-+ *  - author: JÃ©rÃ´me LAURENS
++ *  - author: Jérôme LAURENS
 + *  \version 1.19
 + *  \date Mon Apr 24 07:08:56 UTC 2017
 + *
@@ -644,7 +644,7 @@ Index: src/synctex_parser.c
 - *  It takes care of sending the proper message if possible.
 +/*  We ensure that SYNCTEX_BUFFER_SIZE < UINT_MAX, I don't know if it makes sense... */
 +/*  Actually, the minimum buffer size is driven by integer and float parsing, including the unit.
-+ *  Â±0.123456789e123??
++ *  ±0.123456789e123??
   */
 -#   define SYNCTEX_MSG_SEND(NODE,SELECTOR) if (NODE && SYNCTEX_CAN_PERFORM(NODE,SELECTOR)) {\
 -		(*((((NODE)->class))->SELECTOR))(NODE);\
@@ -4202,7 +4202,7 @@ Index: src/synctex_parser.c
 +}
  
 -/*  Actually, the minimum buffer size is driven by integer and float parsing.
-- *  ±0.123456789e123
+- *  �0.123456789e123
 - */
 -#   define SYNCTEX_BUFFER_MIN_SIZE 16
 -#   define SYNCTEX_BUFFER_SIZE 32768
@@ -9422,14 +9422,14 @@ Index: src/synctex_parser.c
 +
 +/**
 + *  The higher box node in the parent hierarchy which
-+ *  mean line number is the one of node Â±1.
++ *  mean line number is the one of node ±1.
 + *  This enclosing box is computed as follows
 + *  1) get the first hbox in the parent linked list
 + *  starting at node.
 + *  If there is none, simply return the parent of node.
 + *  2) compute the mean line number
 + *  3) scans up the tree for the higher hbox with
-+ *  the same mean line number, Â±1 eventually
++ *  the same mean line number, ±1 eventually
 +*  - parameter node: a node.
 + *  - returns: a (proxy to a) box node.
 + *  - author: JL
@@ -9440,7 +9440,7 @@ Index: src/synctex_parser.c
 +        int bound = 1500000/(node->class->scanner->pre_magnification/1000);
 +        synctex_node_p parent = NULL;
 +        /*  get the first enclosing parent
-+         *  then get the highest enclosing parent with the same mean line Â±1 */
++         *  then get the highest enclosing parent with the same mean line ±1 */
 +        node = _synctex_node_or_handle_target(node);
 +        if (!_synctex_node_is_box(node)) {
 +            if ((parent = _synctex_tree_parent(node))) {
