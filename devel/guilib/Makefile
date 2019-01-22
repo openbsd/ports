@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2019/01/22 19:23:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2019/01/22 19:27:35 naddy Exp $
 
 COMMENT=	SDL C++ GUI widget library
 
 DISTNAME=	GUIlib-1.2.1
 PKGNAME=	${DISTNAME:L}
-REVISION=	3
+REVISION=	5
 
 SHARED_LIBS +=	GUI                  2.0      # .0.1
 
@@ -26,7 +26,5 @@ LIB_DEPENDS=	converters/libiconv \
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS="-L${X11BASE}/lib"
-
-MAKE_FLAGS+=	libGUI_la_LIBADD=-lsupc++
 
 .include <bsd.port.mk>
