@@ -1,0 +1,36 @@
+$OpenBSD: patch-Makefile_am,v 1.4 2019/01/22 19:03:08 naddy Exp $
+
+Add dummy C++ sources that don't need to exist.  This forces the
+C++ linker to be chosen, which is required when linking C code
+against a C++ library.
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -1,5 +1,7 @@
+ # Makefile.am for the SDL sample image loading library and viewer
+ 
++AUTOMAKE_OPTIONS = foreign
++
+ lib_LTLIBRARIES = libGUI.la
+ 
+ libGUIincludedir = $(includedir)/GUI
+@@ -53,7 +55,6 @@ EXTRA_DIST =			\
+ 	scroll_up.bmp
+ libGUI_la_LDFLAGS = 		\
+ 	-no-undefined		\
+-	-release $(LT_RELEASE)	\
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ 
+@@ -63,8 +64,10 @@ genimage_SOURCES = genimage.c
+ hello_SOURCES = hello.cpp
+ hello_LDADD = libGUI.la
+ hello_C_SOURCES = hello_C.c
++nodist_EXTRA_hello_C_SOURCES = dummy.cpp
+ hello_C_LDADD = libGUI.la
+ keyboard_SOURCES = keyboard.cpp
+ keyboard_LDADD = libGUI.la
+ okay_SOURCES = okay.c
++nodist_EXTRA_okay_SOURCES = dummy.cpp
+ okay_LDADD = libGUI.la
