@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/01/22 11:08:25 mlarkin Exp $
+# $OpenBSD: Makefile,v 1.49 2019/01/22 23:04:22 ajacoutot Exp $
 
 COMMENT=		fast and easy porn downloader
 
@@ -45,7 +45,7 @@ AUTOFUCK_ENV=		${AUTOCONF_ENV}
 BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS}
 
-pre-configure:
+do-gen:
 	cd ${WRKSRC} && env -i ${AUTOFUCK_ENV} autoreconf -fi
 
 .include <bsd.port.mk>
