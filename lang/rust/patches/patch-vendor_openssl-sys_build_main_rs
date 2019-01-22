@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_vendor_openssl-sys_build_main_rs,v 1.2 2018/12/08 09:16:09 semarie Exp $
+$OpenBSD: patch-vendor_openssl-sys_build_main_rs,v 1.1 2019/01/22 05:07:19 semarie Exp $
 The LibreSSL version in -current isn't explicitly supported.
-Index: src/vendor/openssl-sys/build/main.rs
---- src/vendor/openssl-sys/build/main.rs.orig
-+++ src/vendor/openssl-sys/build/main.rs
+Index: vendor/openssl-sys/build/main.rs
+--- vendor/openssl-sys/build/main.rs.orig
++++ vendor/openssl-sys/build/main.rs
 @@ -500,7 +500,7 @@ See rust-openssl README for more information:
              (7, _) => ('7', 'x'),
              (8, 0) => ('8', '0'),
