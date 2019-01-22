@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_backends_x11_meta-input-settings-x11_c,v 1.2 2019/01/20 04:55:56 ajacoutot Exp $
+$OpenBSD: patch-src_backends_x11_meta-input-settings-x11_c,v 1.3 2019/01/22 11:11:39 ajacoutot Exp $
 
-https://gitlab.gnome.org/GNOME/mutter/merge_requests/394
+From 1ca60f424af84382365dcb4550538a6f2012b921 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Tue, 22 Jan 2019 02:20:49 +0100
+Subject: [PATCH] input-settings/x11: Only warn once about missing udev support
 
 Index: src/backends/x11/meta-input-settings-x11.c
 --- src/backends/x11/meta-input-settings-x11.c.orig
