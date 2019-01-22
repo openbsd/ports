@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/01/22 10:25:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2019/01/22 10:36:09 ajacoutot Exp $
 
 COMMENT=		fast and easy porn downloader
 
@@ -35,6 +35,9 @@ MODGCONF2_SCHEMAS_DIR=	gnaughty
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# for obvious reasons
+TEST_IS_INTERACTIVE=	Yes
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
