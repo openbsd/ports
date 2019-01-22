@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.11 2018/09/04 12:46:14 espie Exp $
+$OpenBSD: README,v 1.12 2019/01/22 11:22:23 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -20,7 +20,7 @@ Tclsh and Wish
 normally
 ${TRUEPREFIX}/lib/tclsh, ${TRUEPREFIX}/lib/wish
 now
-${TRUEPREFIX}/lib/tclsh8.5, ${TRUEPREFIX}/lib/wish8.5
+${TRUEPREFIX}/bin/tclsh8.5, ${TRUEPREFIX}/bin/wish8.5
 
 Library files
 -------------
