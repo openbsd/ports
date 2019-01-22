@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2018/12/28 09:01:53 landry Exp $
+@comment $OpenBSD: PLIST,v 1.46 2019/01/22 08:22:00 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -1637,7 +1637,7 @@ share/qgis/python/plugins/processing/algs/grass7/description/r.li.shape.ascii.tx
 share/qgis/python/plugins/processing/algs/grass7/description/r.li.shape.txt
 share/qgis/python/plugins/processing/algs/grass7/description/r.li.simpson.ascii.txt
 share/qgis/python/plugins/processing/algs/grass7/description/r.li.simpson.txt
-share/qgis/python/plugins/processing/algs/grass7/description/r.mapcalc.txt
+share/qgis/python/plugins/processing/algs/grass7/description/r.mapcalc.simple.txt
 share/qgis/python/plugins/processing/algs/grass7/description/r.mask.rast.txt
 share/qgis/python/plugins/processing/algs/grass7/description/r.mask.vect.txt
 share/qgis/python/plugins/processing/algs/grass7/description/r.mfilter.txt
@@ -2048,7 +2048,7 @@ share/qgis/python/plugins/processing/algs/qgis/ui/ExecuteSQLWidgetBase.ui
 share/qgis/python/plugins/processing/algs/qgis/ui/FieldsCalculatorDialog.py
 share/qgis/python/plugins/processing/algs/qgis/ui/FieldsMappingPanel.py
 share/qgis/python/plugins/processing/algs/qgis/ui/HeatmapWidgets.py
-share/qgis/python/plugins/processing/algs/qgis/ui/InterpolationDataWidget.py
+share/qgis/python/plugins/processing/algs/qgis/ui/InterpolationWidgets.py
 share/qgis/python/plugins/processing/algs/qgis/ui/PredefinedExpressionDialog.ui
 share/qgis/python/plugins/processing/algs/qgis/ui/RasterCalculatorWidget.ui
 share/qgis/python/plugins/processing/algs/qgis/ui/RasterCalculatorWidgets.py
@@ -4021,14 +4021,23 @@ share/qgis/resources/symbology-style.xml
 share/qgis/resources/themes/
 share/qgis/resources/themes/Night Mapping/
 share/qgis/resources/themes/Night Mapping/icons/
-share/qgis/resources/themes/Night Mapping/icons/caret-down_ffffff_14.png
-share/qgis/resources/themes/Night Mapping/icons/caret-right_ffffff_14.png
-share/qgis/resources/themes/Night Mapping/icons/check.png
-share/qgis/resources/themes/Night Mapping/icons/cross.svg
-share/qgis/resources/themes/Night Mapping/icons/down_arrow.png
+share/qgis/resources/themes/Night Mapping/icons/arrow-down.svg
+share/qgis/resources/themes/Night Mapping/icons/arrow-up.svg
+share/qgis/resources/themes/Night Mapping/icons/caret-down.svg
+share/qgis/resources/themes/Night Mapping/icons/caret-right.svg
+share/qgis/resources/themes/Night Mapping/icons/close.svg
 share/qgis/resources/themes/Night Mapping/icons/eye-blocked.svg
 share/qgis/resources/themes/Night Mapping/icons/eye.svg
-share/qgis/resources/themes/Night Mapping/icons/up_arrow.png
+share/qgis/resources/themes/Night Mapping/icons/handle-horizontal.svg
+share/qgis/resources/themes/Night Mapping/icons/handle-vertical.svg
+share/qgis/resources/themes/Night Mapping/icons/qcheckbox-checked.svg
+share/qgis/resources/themes/Night Mapping/icons/qcheckbox-unchecked.svg
+share/qgis/resources/themes/Night Mapping/icons/qradiobox-checked.svg
+share/qgis/resources/themes/Night Mapping/icons/qradiobox-unchecked.svg
+share/qgis/resources/themes/Night Mapping/icons/separator-horizontal.svg
+share/qgis/resources/themes/Night Mapping/icons/separator-vertical.svg
+share/qgis/resources/themes/Night Mapping/palette.txt
+share/qgis/resources/themes/Night Mapping/qscintilla.ini
 share/qgis/resources/themes/Night Mapping/style.qss
 share/qgis/resources/themes/Night Mapping/variables.qss
 share/qgis/svg/
