@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2018/09/04 12:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2019/01/22 17:54:30 naddy Exp $
 
 COMMENT=	GNU Problem Report Management System
 
 DISTNAME=	gnats-3.113.1
-REVISION=	18
+REVISION=	19
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_GNU:=gnats/}
 

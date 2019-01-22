@@ -1,23 +1,50 @@
-$OpenBSD: patch-libiberty_functions_def,v 1.3 2017/04/19 15:08:11 jca Exp $
---- libiberty/functions.def.orig	Thu Nov  5 20:54:15 1998
-+++ libiberty/functions.def	Wed Apr 19 16:16:19 2017
+$OpenBSD: patch-libiberty_functions_def,v 1.4 2019/01/22 17:54:30 naddy Exp $
+Index: libiberty/functions.def
+--- libiberty/functions.def.orig
++++ libiberty/functions.def
+@@ -10,15 +10,15 @@
+  */
+ 
+ DEF(atexit, int, (f), void (*f)())
+-DEF(bcmp, int, (s1, s2, length), char *s1 AND char *s2 AND int length )
+-DEF(bcopy, void, (s1, s2, length), char *s1 AND char *s2 AND int length )
+-DEF(bzero, void, (s, length), char *s AND int length)
++DEF(bcmp, int, (s1, s2, length), PTR s1 AND PTR s2 AND size_t length )
++DEF(bcopy, void, (s1, s2, length), PTR s1 AND PTR s2 AND size_t length )
++DEF(bzero, void, (s, length), PTR s AND size_t length)
+ DEF(clock, clock_t, (), NOTHING)
+ DEF(getopt, int, (argc, argv, optstring),
+ 	int argc AND char **argv AND CONST char *optstring)	
+ DEF(getpagesize, int , (), NOTHING)
+ DEF(getcwd, char*, (buf, len), char *buf AND int len)
+-DEF(index, char*, (s, c), char *s AND int c)
++DEF(index, char*, (s, c), CONST char *s AND int c)
+ DEF(insque, void, (), NOTHING)
+ DEF(memchr, PTR, (s, c, length), CONST PTR s AND int c AND size_t length)
+ DEF(memcmp, int, (s1, s2, length),
 @@ -27,26 +27,26 @@ DEF(memcpy, PTR, (s1, s2, length), PTR s1 AND CONST PT
  DEF(memmove, PTR, (s1, s2, length), PTR s1 AND CONST PTR s2 AND size_t length)
  DEF(memset, PTR, (s, val, length), PTR s AND int val AND size_t length )
  DEF(random, long int, (), NOTHING)
 -DEF(rename, int, (f, t), char *f AND char *t)
+-DEF(rindex, char*, (s, c), char *s AND int c)
+-DEF(strcasecmp, int, (s1, s2), char *s1 AND char *s2)
+-DEF(strncasecmp, int, (s1, s2, n), char *s1 AND char *s2 AND int n)
 +DEF(rename, int, (f, t), CONST char *f AND CONST char *t)
- DEF(rindex, char*, (s, c), char *s AND int c)
- DEF(strcasecmp, int, (s1, s2), char *s1 AND char *s2)
- DEF(strncasecmp, int, (s1, s2, n), char *s1 AND char *s2 AND int n)
++DEF(rindex, char*, (s, c), CONST char *s AND int c)
++DEF(strcasecmp, int, (s1, s2), CONST char *s1 AND CONST char *s2)
++DEF(strncasecmp, int, (s1, s2, n), CONST char *s1 AND CONST char *s2 AND size_t n)
  DEF(strchr, char*, (s, c), CONST char *s AND int c)
  DEF(strdup, char*, (s1), char * s1)
  DEF(strrchr, char*, (s, c), CONST char *s AND int c)
 -DEF(strstr, char*, (), NOTHING)
+-DEF(strtod, double, (), NOTHING)
+-DEF(strtol, long, (), NOTHING)
+-DEF(strtoul, unsigned long, (), NOTHING)
 +DEF(strstr, char*, (s1, s2), CONST char *s1 AND CONST char *s2)
- DEF(strtod, double, (), NOTHING)
- DEF(strtol, long, (), NOTHING)
- DEF(strtoul, unsigned long, (), NOTHING)
++DEF(strtod, double, (n, end), CONST char *n AND char **end)
++DEF(strtol, long, (n, end, b), CONST char *n AND char **end AND int b)
++DEF(strtoul, unsigned long, (n, end, b), CONST char *n AND char **end AND int b)
  DEF(tmpnam, char *, (s), char * s)
  DEF(vfork, int, (), NOTHING)
 -DEF(vfprintf, int, (), NOTHING)
