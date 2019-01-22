@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2018/10/02 07:58:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2019/01/22 22:37:06 sthen Exp $
 
 COMMENT=		DHCPv4/IPv4LL/IPv6RS/DHCPv6 quad stack client
 
-DISTNAME=		dhcpcd-7.0.8
-REVISION=		2
+DISTNAME=		dhcpcd-7.1.0
 
 CATEGORIES=		net
 EXTRACT_SUFX=		.tar.xz
