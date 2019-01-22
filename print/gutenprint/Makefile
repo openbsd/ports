@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.50 2018/04/11 07:41:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2019/01/22 01:00:35 ajacoutot Exp $
 
 COMMENT=		high quality print drivers for foomatic and CUPS
 
-V=			5.2.14
+V=			5.3.1
 DISTNAME=		gutenprint-${V}
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -10,9 +10,9 @@ SUBST_VARS=		MAJOR_V
 
 CATEGORIES=		print
 
-EXTRACT_SUFX=		.tar.bz2
+EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=  gutenprint           2.0      # 9.0
+SHARED_LIBS +=  gutenprint           2.1      # 9.0
 
 HOMEPAGE=		http://gimp-print.sourceforge.net/
 

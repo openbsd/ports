@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/04/11 07:41:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/01/22 01:00:35 ajacoutot Exp $
 @conflict foomatic-db-gutenprint-<5.2.4p1
 @conflict foomatic-db-gutenprint-*
 @pkgpath print/gutenprint,-foomatic
@@ -24,8 +24,10 @@ include/gutenprint/mxml.h
 include/gutenprint/paper.h
 include/gutenprint/path.h
 include/gutenprint/printers.h
+include/gutenprint/refcache.h
 include/gutenprint/sequence.h
 include/gutenprint/string-list.h
+include/gutenprint/types.h
 include/gutenprint/util.h
 include/gutenprint/vars.h
 include/gutenprint/weave.h
@@ -35,7 +37,7 @@ lib/libgutenprint.la
 @lib lib/libgutenprint.so.${LIBgutenprint_VERSION}
 lib/pkgconfig/gutenprint.pc
 @mode 0700
-@bin libexec/cups/backend/gutenprint52+usb
+@bin libexec/cups/backend/gutenprint53+usb
 @mode
 @bin libexec/cups/driver/gutenprint.${MAJOR_V}
 @bin libexec/cups/filter/commandtocanon
@@ -86,9 +88,10 @@ share/examples/gutenprint/command.types
 share/gutenprint/
 share/gutenprint/${MAJOR_V}/
 share/gutenprint/${MAJOR_V}/xml/
-share/gutenprint/${MAJOR_V}/xml/dither-matrix-1x1.xml
-share/gutenprint/${MAJOR_V}/xml/dither-matrix-2x1.xml
-share/gutenprint/${MAJOR_V}/xml/dither-matrix-4x1.xml
+share/gutenprint/${MAJOR_V}/xml/dither/
+share/gutenprint/${MAJOR_V}/xml/dither/matrix-1x1.xml
+share/gutenprint/${MAJOR_V}/xml/dither/matrix-2x1.xml
+share/gutenprint/${MAJOR_V}/xml/dither/matrix-4x1.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/artisan.xml
@@ -98,6 +101,7 @@ share/gutenprint/${MAJOR_V}/xml/escp2/inks/c64.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/c80.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/c82.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/claria.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/inks/claria_xp.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/cmy.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/cmykrb.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/cmykro.xml
@@ -168,6 +172,7 @@ share/gutenprint/${MAJOR_V}/xml/escp2/media/c80.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/c82.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/claria.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/claria1400.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/media/claria_xp.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/cmy.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/cmykrb.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/cmykro.xml
@@ -207,6 +212,41 @@ share/gutenprint/${MAJOR_V}/xml/escp2/media/x80.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/mediasizes/
 share/gutenprint/${MAJOR_V}/xml/escp2/mediasizes/standard.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/baseline_300.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/baseline_360.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/bx.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/c1xx.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/c2x.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/c4x.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/c7xx.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/c8x.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/c8x_base.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/cpro.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/photo2.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/picmate.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_ultrachrome_k3.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_ultrachrome_k3_base.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_ultrachrome_k3_cutter.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_ultrachrome_k3v.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_ultrachrome_k3v10.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_ultrachrome_k3v10_base.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_ultrachrome_k3v10a.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_ultrachrome_k3v10b.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_x000.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_x500.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_x600.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_x700.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_x800.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_x880.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/r200.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/r240.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/r800.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/sc800.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/sp700.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/sp750.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/sp950.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/wf7xxx.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_0.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_1.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_10.xml
@@ -222,7 +262,6 @@ share/gutenprint/${MAJOR_V}/xml/escp2/model/model_108.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_109.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_11.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_110.xml
-share/gutenprint/${MAJOR_V}/xml/escp2/model/model_111.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_112.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_113.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_114.xml
@@ -245,12 +284,12 @@ share/gutenprint/${MAJOR_V}/xml/escp2/model/model_129.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_13.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_130.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_131.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_132.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_14.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_15.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_16.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_17.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_18.xml
-share/gutenprint/${MAJOR_V}/xml/escp2/model/model_19.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_2.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_20.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_21.xml
@@ -266,7 +305,6 @@ share/gutenprint/${MAJOR_V}/xml/escp2/model/model_3.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_30.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_31.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_32.xml
-share/gutenprint/${MAJOR_V}/xml/escp2/model/model_33.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_34.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_35.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_36.xml
@@ -294,7 +332,6 @@ share/gutenprint/${MAJOR_V}/xml/escp2/model/model_55.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_56.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_57.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_58.xml
-share/gutenprint/${MAJOR_V}/xml/escp2/model/model_59.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_6.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_60.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_61.xml
@@ -346,13 +383,34 @@ share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/prox900.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/standard.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/v2880.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/wf40.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/resolutions/
+share/gutenprint/${MAJOR_V}/xml/escp2/resolutions/c8x.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/resolutions/escp2-i.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/resolutions/prox600.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/resolutions/sc480.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/resolutions/sc680.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/resolutions/sc740.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/resolutions/sc860.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/resolutions/sp700.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/resolutions/sp720.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/resolutions/wf6xx.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/weaves/
 share/gutenprint/${MAJOR_V}/xml/escp2/weaves/pro7000.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/weaves/pro7500.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/weaves/pro7600.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/weaves/standard.xml
-share/gutenprint/${MAJOR_V}/xml/papers.xml
-share/gutenprint/${MAJOR_V}/xml/printers.xml
+share/gutenprint/${MAJOR_V}/xml/papers/
+share/gutenprint/${MAJOR_V}/xml/papers/labels.xml
+share/gutenprint/${MAJOR_V}/xml/papers/standard.xml
+share/gutenprint/${MAJOR_V}/xml/printers/
+share/gutenprint/${MAJOR_V}/xml/printers/canon.xml
+share/gutenprint/${MAJOR_V}/xml/printers/dpl.xml
+share/gutenprint/${MAJOR_V}/xml/printers/dyesub.xml
+share/gutenprint/${MAJOR_V}/xml/printers/escp2.xml
+share/gutenprint/${MAJOR_V}/xml/printers/lexmark.xml
+share/gutenprint/${MAJOR_V}/xml/printers/pcl.xml
+share/gutenprint/${MAJOR_V}/xml/printers/ps.xml
+share/gutenprint/${MAJOR_V}/xml/printers/raw.xml
 share/gutenprint/samples/
 share/gutenprint/samples/colorbars4.png
 share/gutenprint/samples/colorsweep.png
