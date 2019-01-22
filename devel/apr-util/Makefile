@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.53 2018/11/07 13:39:46 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2019/01/22 23:58:04 ajacoutot Exp $
 
 COMMENT=	companion library to APR
 
 V=		1.6.1
-REVISION=	1
+REVISION=	2
 DISTNAME=	apr-util-$V
 SHARED_LIBS +=	aprutil-1          6.1     # .6.0
 
@@ -55,6 +55,6 @@ CONFIGURE_ARGS+=	--with-ldap=no
 
 CONFIGURE_ENV+=	APRUTIL_EXPORT_LIBS=-pthread
 LIB_DEPENDS+=	devel/apr
-WANTLIB+=	apr-1=6
+WANTLIB+=	apr-1
 
 .include <bsd.port.mk>
