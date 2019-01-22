@@ -1,9 +1,35 @@
-$OpenBSD: patch-configure_in,v 1.1 2017/10/25 19:36:46 naddy Exp $
+$OpenBSD: patch-configure_in,v 1.2 2019/01/22 11:55:20 stsp Exp $
 
 Index: configure.in
 --- configure.in.orig
 +++ configure.in
-@@ -2281,7 +2281,7 @@ fi
+@@ -1460,6 +1460,10 @@ case $host in
+     *)
+         AC_CHECK_FUNCS(mkstemp)
+         ;;
++    *-openbsd*)
++        off_t_fmt='#define APR_OFF_T_FMT APR_INT64_T_FMT'
++        off_t_strfn='apr_strtoi64'
++	;;
+ esac
+ 
+ AC_SUBST(fork)
+@@ -1936,6 +1940,14 @@ elif test "$ac_cv_type_off_t" = "yes"; then
+         off_t_fmt='#define APR_OFF_T_FMT "I64d"'
+         off_t_strfn='_strtoi64'
+         ;;
++    *-openbsd*)
++        int64_t_fmt='#define APR_INT64_T_FMT "lld"'
++        uint64_t_fmt='#define APR_UINT64_T_FMT "llu"'
++        uint64_t_hex_fmt='#define APR_UINT64_T_HEX_FMT "llx"'
++        int64_value="long long"
++        long_value="long long"
++        int64_strfn="strtoll"
++	;;
+     esac
+ else
+    # Fallback on int
+@@ -2289,7 +2301,7 @@ fi
  APR_IFALLYES(header:semaphore.h func:sem_open func:sem_close dnl
               func:sem_unlink func:sem_post func:sem_wait,
               hasposixser="1", hasposixser="0")
@@ -12,7 +38,7 @@ Index: configure.in
               hassysvser="0")
  APR_IFALLYES(func:flock define:LOCK_EX, hasflockser="1", hasflockser="0")
  APR_IFALLYES(header:fcntl.h define:F_SETLK, hasfcntlser="1", hasfcntlser="0")
-@@ -2470,6 +2470,8 @@ else
+@@ -2478,6 +2490,8 @@ else
  fi
  
  dnl ----------------------------- Checking for /dev/random 
@@ -21,7 +47,7 @@ Index: configure.in
  AC_MSG_CHECKING(for entropy source)
  
  why_no_rand=""
-@@ -2486,6 +2488,13 @@ AC_ARG_WITH(egd, 
+@@ -2494,6 +2508,13 @@ AC_ARG_WITH(egd, 
      AC_MSG_RESULT(EGD-compatible daemon)
      rand="1"
    ])

@@ -1,0 +1,50 @@
+$OpenBSD: patch-memory_unix_apr_pools_c,v 1.4 2019/01/22 11:55:20 stsp Exp $
+Force APR pools to always call free(3) when memory gets released.
+Index: memory/unix/apr_pools.c
+--- memory/unix/apr_pools.c.orig
++++ memory/unix/apr_pools.c
+@@ -127,8 +127,8 @@ struct apr_allocator_t {
+     apr_size_t        max_index;
+     /** Total size (in BOUNDARY_SIZE multiples) of unused memory before
+      * blocks are given back. @see apr_allocator_max_free_set().
+-     * @note Initialized to APR_ALLOCATOR_MAX_FREE_UNLIMITED,
+-     * which means to never give back blocks.
++     * @note Initialized to APR_ALLOCATOR_MAX_FREE_DEFAULT,
++     * which by default means to never give back blocks.
+      */
+     apr_size_t        max_free_index;
+     /**
+@@ -170,7 +170,7 @@ APR_DECLARE(apr_status_t) apr_allocator_create(apr_all
+         return APR_ENOMEM;
+ 
+     memset(new_allocator, 0, SIZEOF_ALLOCATOR_T);
+-    new_allocator->max_free_index = APR_ALLOCATOR_MAX_FREE_UNLIMITED;
++    new_allocator->max_free_index = APR_ALLOCATOR_MAX_FREE_DEFAULT;
+ 
+     *allocator = new_allocator;
+ 
+@@ -226,6 +226,7 @@ APR_DECLARE(apr_pool_t *) apr_allocator_owner_get(apr_
+ APR_DECLARE(void) apr_allocator_max_free_set(apr_allocator_t *allocator,
+                                              apr_size_t in_size)
+ {
++#ifndef __OpenBSD__
+     apr_size_t max_free_index;
+     apr_size_t size = in_size;
+ 
+@@ -248,6 +249,7 @@ APR_DECLARE(void) apr_allocator_max_free_set(apr_alloc
+     if (mutex != NULL)
+         apr_thread_mutex_unlock(mutex);
+ #endif
++#endif
+ }
+ 
+ static APR_INLINE
+@@ -1180,7 +1182,7 @@ APR_DECLARE(apr_status_t) apr_pool_create_unmanaged_ex
+             return APR_ENOMEM;
+         }
+         memset(pool_allocator, 0, SIZEOF_ALLOCATOR_T);
+-        pool_allocator->max_free_index = APR_ALLOCATOR_MAX_FREE_UNLIMITED;
++        pool_allocator->max_free_index = APR_ALLOCATOR_MAX_FREE_DEFAULT;
+     }
+     if ((node = allocator_alloc(pool_allocator,
+                                 MIN_ALLOC - APR_MEMNODE_T_SIZE)) == NULL) {
