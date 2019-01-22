@@ -1,7 +1,9 @@
-$OpenBSD: patch-configure_in,v 1.1 2012/11/17 14:07:50 ratchov Exp $
---- configure.in.orig	Mon May 10 20:58:57 2010
-+++ configure.in	Sun Nov 11 14:39:43 2012
-@@ -182,6 +182,24 @@ if test x$alsa_midi = xtrue ; then 
+$OpenBSD: patch-configure_ac,v 1.1 2019/01/22 04:31:41 jsg Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -196,6 +196,24 @@ if test x$alsa_midi = xtrue ; then 
    CXXFLAGS="$CXXFLAGS $ALSA_CFLAGS"
  fi
  
