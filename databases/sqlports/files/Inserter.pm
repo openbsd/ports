@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.37 2019/01/12 13:57:41 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.38 2019/01/22 16:55:22 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -120,26 +120,6 @@ sub insert_done
 	$self->{transaction}++;
 }
 
-sub new_object
-{
-	my ($self, $type, $name, $request) = @_;
-	my $o;
-	if ($type eq 'VIEW') {
-		$o = $self->view_name($name);
-	} elsif ($type eq 'TABLE') {
-		return unless $self->{create};
-		$o = $self->table_name($name);
-	} else {
-		die "unknown object type";
-	}
-	return if defined $self->{created}{$o};
-	$self->{created}{$o} = 1;
-	$self->db->do("DROP $type IF EXISTS $o");
-	$request = "CREATE $type $o $request";
-	print "$request\n" if $self->{verbose};
-	$self->db->do($request);
-}
-
 sub new_sql
 {
 	my ($self, $sql) = @_;
@@ -149,6 +129,15 @@ sub new_sql
 	$self->db->do($sql->drop);
 	my $request = $sql->stringize;
 	print "$request\n" if $self->{verbose};
+	$self->db->do($request);
+}
+
+sub create_index
+{
+	my ($self, $name, $cols) = @_;
+	$self->db->do("DROP INDEX IF EXISTS $name");
+	my $request = "CREATE INDEX $name ON $cols";
+	print $request, "\n";
 	$self->db->do($request);
 }
 
@@ -165,19 +154,11 @@ sub create_schema
 			$self->{insert}{$t->name} = $self->prepare($i);
 		}
 	}
+	$self->create_index("canonical", "_Paths(Canonical)");
 	for my $v (Sql::Create->all_views) {
 		$self->new_sql($v);
 	}
-	for my $v (@{$self->{prepare_list}}) {
-		&$v;
-	}
 	$self->commit_to_db;
-}
-
-sub register_prepare
-{
-	my ($self, $code) = @_;
-	push (@{$self->{prepare_list}}, $code);
 }
 
 sub prepare
@@ -239,19 +220,17 @@ sub create_canonical_depends
 		->join(Sql::Join->new($p)
 		    ->add(Sql::Equal->new("Id", "DependsPath"))),
 	    Sql::Column::View->new("Type"));
-	$self->new_object('VIEW', "canonical_depends",
-		qq{AS
-    SELECT 
-	p1.fullpkgpath AS fullpkgpath, 
-	p2.fullpkgpath AS dependspath, 
-	$t.type 
-    FROM $t 
-	JOIN $p p1 
-	    ON p1.canonical=$t.fullpkgpath
-	JOIN $p p2 
-	    ON p2.Id=p3.canonical
-	JOIN $p p3 
-	    ON p3.Id=$t.dependspath});
+
+	Sql::Create::View->new("canonical_depends", origin=>$t)->add(
+	    Sql::Column::View->new("FullPkgPath")
+		->join(Sql::Join->new($p)
+		    ->add(Sql::Equal->new("Canonical", "FullPkgPath"))),
+	    Sql::Column::View->new("DependsPath", origin=>"FullPkgPath")
+		->join(Sql::Join->new($p)
+		    ->add(Sql::Equal->new("Id", "DependsPath")),
+		       Sql::Join->new($p)
+		    ->add(Sql::Equal->new("Id", "canonical"))),
+	    Sql::Column::View->new("Type"));
 }
 
 sub commit_to_db
@@ -270,6 +249,12 @@ sub view_name
 {
 	my ($class, $name) = @_;
 	return $name;
+}
+
+sub adjust
+{
+	my $self = shift;
+	return $self->{adjust} //= $self->prepare("UPDATE _Paths set Canonical=? where Id=?");
 }
 
 sub create_path_table
@@ -293,9 +278,6 @@ sub create_path_table
 		->join(Sql::Join->new($t)->add(
 		    Sql::Equal->new("Id", "Canonical")))
 	    );
-	$self->register_prepare(sub {
-	    $self->{adjust} = $self->db->prepare("UPDATE $t set Canonical=? where Id=?");
-	});
 }
 
 my $path_cache = {};
@@ -330,7 +312,7 @@ sub find_pathkey
 sub add_path
 {
 	my ($self, $key, $alias) = @_;
-	$self->{adjust}->execute($path_cache->{$alias}, $path_cache->{$key});
+	$self->adjust->execute($path_cache->{$alias}, $path_cache->{$key});
 }
 
 sub set_newkey
