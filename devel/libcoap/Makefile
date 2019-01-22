@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/01/04 17:03:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/01/22 22:22:58 sthen Exp $
 
 COMMENT=	communicate with embedded devices using CoAP (RFC 7252)
 
@@ -53,8 +53,7 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 
 do-gen:
-	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
+	cd ${WRKSRC}; ${AUTOCONF_ENV} ./autogen.sh
 
 post-install:
 	cd ${PREFIX}/man/man5; for i in *; do mv $$i ../man1/$${i%.5}.1; done
