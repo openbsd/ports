@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2018/12/21 08:24:19 semarie Exp $
+# $OpenBSD: Makefile,v 1.89 2019/01/22 04:47:48 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -10,20 +10,20 @@ DPB_PROPERTIES =	parallel
 
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
-COMMENT-gdb =		Rust debugger thought gdb
+COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.31.1
-CARGO_V =		0.32.0
+V =			1.32.0
+CARGO_V =		0.33.0
 CLIPPY_V =		0.0.212
 RUSTFMT_V =		1.0.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.31.0-20181207
-BV-amd64 =		1.31.0-20181205
-BV-i386 =		1.31.0-20181205
+BV-aarch64 =		1.32.0-20190119
+BV-amd64 =		1.32.0-20190117
+BV-i386 =		1.32.0-20190117
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -134,7 +134,7 @@ TEST_DEPENDS +=		devel/git \
 SUBST_VARS +=	WRKBUILD
 post-patch:
 	sed -i 's/"files":{[^}]*}/"files":{}/' \
-		${WRKSRC}/src/vendor/*/.cargo-checksum.json
+		${WRKSRC}/vendor/*/.cargo-checksum.json
 	${SUBST_CMD} ${WRKSRC}/src/tools/cargo/tests/testsuite/support/paths.rs
 
 # - check datasize limit before configuring (and building)
