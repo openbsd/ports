@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2019/01/22 15:05:11 landry Exp $
+# $OpenBSD: Makefile,v 1.36 2019/01/22 23:03:49 ajacoutot Exp $
 
 COMMENT=	lightweight Gtk text editor with syntax highlighting
 
 DISTNAME=	beaver-0.4.1
 CATEGORIES=	editors
+REVISION=	0
 
 HOMEPAGE=	http://beaver-editor.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=beaver-editor/}
@@ -19,12 +20,11 @@ WANTLIB+= intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread z
 WANTLIB += expat ffi fribidi gmodule-2.0 graphite2 gthread-2.0
 WANTLIB += harfbuzz pcre pixman-1 png xcb xcb-render xcb-shm
 
+MODULES=	textproc/intltool
 LIB_DEPENDS=	x11/gtk+2
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
-BUILD_DEPENDS =	devel/gettext-tools \
-			textproc/intltool
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
