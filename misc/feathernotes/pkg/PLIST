@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/01/23 15:24:28 bcallah Exp $
+@bin bin/feathernotes
+share/applications/feathernotes.desktop
+share/feathernotes/
+share/feathernotes/translations/
+share/feathernotes/translations/feathernotes_cy.qm
+share/feathernotes/translations/feathernotes_de.qm
+share/feathernotes/translations/feathernotes_eo.qm
+share/feathernotes/translations/feathernotes_es.qm
+share/feathernotes/translations/feathernotes_lt.qm
+share/feathernotes/translations/feathernotes_pl.qm
+share/icons/hicolor/scalable/apps/feathernotes.svg
+share/icons/hicolor/scalable/mimetypes/text-feathernotes-fnx.svg
+share/mime/packages/feathernotes.xml
+@tag update-mime-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

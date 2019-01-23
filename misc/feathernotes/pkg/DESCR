@@ -1,0 +1,17 @@
+FeatherNotes is a lightweight Qt5 hierarchical notes manager. It is
+independent of any desktop environment and has:
+
+* Support for rich text formatting, image embedding and inserting
+  editable tables
+* Drag-and-drop capability for moving nodes and also for embedding
+  images
+* A tray icon for quick access on any desktop
+* Correct position/size saving and restoring with most window managers
+* Compact but complete search and replacement widgets
+* The ability to include searchable tags (hidden info on each node)
+* Support for optional node icons
+* Support for local and remote hyperlinks (bookmarks)
+* Text zooming
+* Printing and exporting to HTML and PDF
+* Password protection
+* Auto-saving

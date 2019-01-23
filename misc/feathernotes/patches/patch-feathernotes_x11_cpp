@@ -1,0 +1,43 @@
+$OpenBSD: patch-feathernotes_x11_cpp,v 1.1.1.1 2019/01/23 15:24:28 bcallah Exp $
+
+Upstreamed.
+
+Index: feathernotes/x11.cpp
+--- feathernotes/x11.cpp.orig
++++ feathernotes/x11.cpp
+@@ -18,7 +18,7 @@
+ #include <QString>
+ #include "x11.h"
+ 
+-#if defined Q_WS_X11 || defined Q_OS_LINUX
++#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_OPENBSD
+ #include <X11/Xatom.h>
+ #include <QX11Info>
+ #endif
+@@ -35,7 +35,7 @@ long fromDesktop()
+ {
+     long res = -1;
+ 
+-#if defined Q_WS_X11 || defined Q_OS_LINUX
++#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_OPENBSD
+     Display  *disp = QX11Info::display();
+     if (!disp) return res;
+ 
+@@ -70,7 +70,7 @@ long onWhichDesktop (Window w)
+ {
+     long res = -1;
+ 
+-#if defined Q_WS_X11 || defined Q_OS_LINUX
++#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_OPENBSD
+     Display *disp = QX11Info::display();
+     if (!disp) return res;
+ 
+@@ -102,7 +102,7 @@ long onWhichDesktop (Window w)
+ // which was defined in gdkwindow-x11.c.
+ void moveToCurrentDesktop (Window w)
+ {
+-#if defined Q_WS_X11 || defined Q_OS_LINUX
++#if defined Q_WS_X11 || defined Q_OS_LINUX || defined Q_OS_OPENBSD
+     Display *disp = QX11Info::display();
+     if (!disp) return;
+ 
