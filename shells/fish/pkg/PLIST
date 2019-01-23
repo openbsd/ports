@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/16 05:14:32 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/01/23 00:53:06 abieber Exp $
 @shell bin/fish
 @bin bin/fish_indent
 @bin bin/fish_key_reader
@@ -8,33 +8,11 @@
 share/doc/fish/
 share/doc/fish/CHANGELOG.md
 share/doc/fish/ascii_fish.png
-share/doc/fish/bc_s.png
-share/doc/fish/bdwn.png
-share/doc/fish/closed.png
 share/doc/fish/commands.html
 share/doc/fish/design.html
-share/doc/fish/doc.png
-share/doc/fish/doxygen.css
-share/doc/fish/doxygen.png
 share/doc/fish/faq.html
-share/doc/fish/folderclosed.png
-share/doc/fish/folderopen.png
 share/doc/fish/index.html
-share/doc/fish/jquery.js
 share/doc/fish/license.html
-share/doc/fish/nav_f.png
-share/doc/fish/nav_g.png
-share/doc/fish/nav_h.png
-share/doc/fish/open.png
-share/doc/fish/pages.html
-share/doc/fish/splitbar.png
-share/doc/fish/sync_off.png
-share/doc/fish/sync_on.png
-share/doc/fish/tab_a.png
-share/doc/fish/tab_b.png
-share/doc/fish/tab_h.png
-share/doc/fish/tab_s.png
-share/doc/fish/tabs.css
 share/doc/fish/tutorial.html
 share/doc/fish/user_doc.css
 share/examples/fish/
@@ -66,6 +44,10 @@ share/fish/completions/alsamixer.fish
 share/fish/completions/amixer.fish
 share/fish/completions/and.fish
 share/fish/completions/animate.fish
+share/fish/completions/ansible-galaxy.fish
+share/fish/completions/ansible-playbook.fish
+share/fish/completions/ansible-vault.fish
+share/fish/completions/ansible.fish
 share/fish/completions/ant.fish
 share/fish/completions/apack.fish
 share/fish/completions/apm.fish
@@ -111,11 +93,14 @@ share/fish/completions/aura.fish
 share/fish/completions/awk.fish
 share/fish/completions/badblocks.fish
 share/fish/completions/base64.fish
+share/fish/completions/bb-wrapper.fish
 share/fish/completions/bc.fish
+share/fish/completions/bd.fish
 share/fish/completions/bg.fish
 share/fish/completions/bind.fish
 share/fish/completions/bison.fish
 share/fish/completions/block.fish
+share/fish/completions/bower.fish
 share/fish/completions/break.fish
 share/fish/completions/brew.fish
 share/fish/completions/btdownloadcurses.py.fish
@@ -144,6 +129,8 @@ share/fish/completions/chgrp.fish
 share/fish/completions/chmod.fish
 share/fish/completions/chown.fish
 share/fish/completions/chsh.fish
+share/fish/completions/clang++.fish
+share/fish/completions/clang.fish
 share/fish/completions/climate.fish
 share/fish/completions/colordiff.fish
 share/fish/completions/colorsvn.fish
@@ -155,6 +142,7 @@ share/fish/completions/complete.fish
 share/fish/completions/composer.fish
 share/fish/completions/composer.phar.fish
 share/fish/completions/composite.fish
+share/fish/completions/conda.fish
 share/fish/completions/configure.fish
 share/fish/completions/conjure.fish
 share/fish/completions/connmanctl.fish
@@ -168,6 +156,7 @@ share/fish/completions/cupsaccept.fish
 share/fish/completions/cupsdisable.fish
 share/fish/completions/cupsenable.fish
 share/fish/completions/cupsreject.fish
+share/fish/completions/curl.fish
 share/fish/completions/cut.fish
 share/fish/completions/cvs.fish
 share/fish/completions/cygport.fish
@@ -187,6 +176,8 @@ share/fish/completions/djview4.fish
 share/fish/completions/dlocate.fish
 share/fish/completions/dmesg.fish
 share/fish/completions/dnf.fish
+share/fish/completions/doas.fish
+share/fish/completions/docker.fish
 share/fish/completions/dpkg-reconfigure.fish
 share/fish/completions/dpkg.fish
 share/fish/completions/dropbox.fish
@@ -194,6 +185,7 @@ share/fish/completions/du.fish
 share/fish/completions/duply.fish
 share/fish/completions/dvipdf.fish
 share/fish/completions/dvipdfm.fish
+share/fish/completions/ebuild.fish
 share/fish/completions/echo.fish
 share/fish/completions/egrep.fish
 share/fish/completions/eix-sync.fish
@@ -201,16 +193,19 @@ share/fish/completions/eix.fish
 share/fish/completions/elatex.fish
 share/fish/completions/elixir.fish
 share/fish/completions/emacs.fish
+share/fish/completions/emaint.fish
 share/fish/completions/emerge.fish
 share/fish/completions/encfs.fish
 share/fish/completions/entr.fish
 share/fish/completions/env.fish
+share/fish/completions/eopkg.fish
 share/fish/completions/equery.fish
 share/fish/completions/eselect.fish
 share/fish/completions/etex.fish
 share/fish/completions/eval.fish
 share/fish/completions/evince.fish
 share/fish/completions/exec.fish
+share/fish/completions/exercism.fish
 share/fish/completions/exit.fish
 share/fish/completions/expand.fish
 share/fish/completions/ezjail-admin.fish
@@ -267,7 +262,9 @@ share/fish/completions/heroku.fish
 share/fish/completions/hg.fish
 share/fish/completions/highlight.fish
 share/fish/completions/history.fish
+share/fish/completions/hjson.fish
 share/fish/completions/htop.fish
+share/fish/completions/hugo.fish
 share/fish/completions/i3-msg.fish
 share/fish/completions/iconv.fish
 share/fish/completions/id.fish
@@ -282,7 +279,10 @@ share/fish/completions/invoke-rc.d.fish
 share/fish/completions/ip.fish
 share/fish/completions/ipset.fish
 share/fish/completions/iptables.fish
+share/fish/completions/j.fish
+share/fish/completions/jbake.fish
 share/fish/completions/jest.fish
+share/fish/completions/jhipster.fish
 share/fish/completions/jobs.fish
 share/fish/completions/journalctl.fish
 share/fish/completions/jq.fish
@@ -291,6 +291,9 @@ share/fish/completions/kdeconnect-cli.fish
 share/fish/completions/kill.fish
 share/fish/completions/killall.fish
 share/fish/completions/kitchen.fish
+share/fish/completions/kitty.fish
+share/fish/completions/kldload.fish
+share/fish/completions/kldunload.fish
 share/fish/completions/la.fish
 share/fish/completions/latex.fish
 share/fish/completions/latexmk.fish
@@ -328,8 +331,10 @@ share/fish/completions/machinectl.fish
 share/fish/completions/magento.fish
 share/fish/completions/make.fish
 share/fish/completions/makedepend.fish
+share/fish/completions/makensis.fish
 share/fish/completions/makepkg.fish
 share/fish/completions/man.fish
+share/fish/completions/math.fish
 share/fish/completions/mc.fish
 share/fish/completions/md5sum.fish
 share/fish/completions/mdadm.fish
@@ -339,9 +344,11 @@ share/fish/completions/mdfind.fish
 share/fish/completions/mdimport.fish
 share/fish/completions/mdls.fish
 share/fish/completions/mdutil.fish
+share/fish/completions/meson.fish
 share/fish/completions/minikube.fish
 share/fish/completions/mix.fish
 share/fish/completions/mkdir.fish
+share/fish/completions/mkdocs.fish
 share/fish/completions/mkdosfs.fish
 share/fish/completions/mkfs.fat.fish
 share/fish/completions/mkfs.vfat.fish
@@ -370,6 +377,7 @@ share/fish/completions/netctl-auto.fish
 share/fish/completions/netctl.fish
 share/fish/completions/networkctl.fish
 share/fish/completions/nextd.fish
+share/fish/completions/ngrok.fish
 share/fish/completions/nice.fish
 share/fish/completions/ninja.fish
 share/fish/completions/nl.fish
@@ -386,6 +394,9 @@ share/fish/completions/oggenc.fish
 share/fish/completions/omega.fish
 share/fish/completions/opam.fish
 share/fish/completions/open.fish
+share/fish/completions/openocd.fish
+share/fish/completions/opkg.fish
+share/fish/completions/optipng.fish
 share/fish/completions/or.fish
 share/fish/completions/p4.fish
 share/fish/completions/pacaur.fish
@@ -397,6 +408,7 @@ share/fish/completions/pacmd.fish
 share/fish/completions/pacsrv.fish
 share/fish/completions/pactl.fish
 share/fish/completions/pactree.fish
+share/fish/completions/pandoc.fish
 share/fish/completions/passwd.fish
 share/fish/completions/patch.fish
 share/fish/completions/pbget.fish
@@ -429,14 +441,17 @@ share/fish/completions/pkgrm.fish
 share/fish/completions/pkill.fish
 share/fish/completions/poff.fish
 share/fish/completions/pon.fish
+share/fish/completions/port.fish
 share/fish/completions/portmaster.fish
 share/fish/completions/ports.fish
 share/fish/completions/poweroff.fish
+share/fish/completions/powerpill.fish
 share/fish/completions/prevd.fish
 share/fish/completions/prt-get.fish
 share/fish/completions/ps.fish
 share/fish/completions/ps2pdf.fish
 share/fish/completions/psql.fish
+share/fish/completions/pstack.fish
 share/fish/completions/psub.fish
 share/fish/completions/pushd.fish
 share/fish/completions/pv.fish
@@ -483,6 +498,7 @@ share/fish/completions/scrot.fish
 share/fish/completions/scss.fish
 share/fish/completions/sed.fish
 share/fish/completions/seq.fish
+share/fish/completions/serve.fish
 share/fish/completions/service.fish
 share/fish/completions/set.fish
 share/fish/completions/set_color.fish
@@ -536,14 +552,17 @@ share/fish/completions/transmission-remote.fish
 share/fish/completions/trap.fish
 share/fish/completions/travis.fish
 share/fish/completions/tree.fish
+share/fish/completions/ttx.fish
 share/fish/completions/type.fish
 share/fish/completions/udisksctl.fish
 share/fish/completions/ulimit.fish
+share/fish/completions/umask.fish
 share/fish/completions/umount.fish
 share/fish/completions/uname.fish
 share/fish/completions/unexpand.fish
 share/fish/completions/uniq.fish
 share/fish/completions/unrar.fish
+share/fish/completions/unzip.fish
 share/fish/completions/update-eix-remote.fish
 share/fish/completions/update-eix.fish
 share/fish/completions/useradd.fish
@@ -555,6 +574,7 @@ share/fish/completions/vi.fish
 share/fish/completions/vim-addons.fish
 share/fish/completions/vim.fish
 share/fish/completions/vimdiff.fish
+share/fish/completions/virsh.fish
 share/fish/completions/vmctl.fish
 share/fish/completions/w.fish
 share/fish/completions/wajig.fish
@@ -571,6 +591,7 @@ share/fish/completions/wicd-gtk.fish
 share/fish/completions/wpa_cli.fish
 share/fish/completions/wvdial.fish
 share/fish/completions/xargs.fish
+share/fish/completions/xclip.fish
 share/fish/completions/xdg-mime.fish
 share/fish/completions/xdvi.fish
 share/fish/completions/xelatex.fish
@@ -582,6 +603,7 @@ share/fish/completions/xprop.fish
 share/fish/completions/xrandr.fish
 share/fish/completions/xrdb.fish
 share/fish/completions/xsel.fish
+share/fish/completions/xsv.fish
 share/fish/completions/xterm.fish
 share/fish/completions/xz.fish
 share/fish/completions/yaourt.fish
@@ -589,16 +611,21 @@ share/fish/completions/yarn.fish
 share/fish/completions/yast2.fish
 share/fish/completions/yum.fish
 share/fish/completions/zcat.fish
+share/fish/completions/zfs.fish
 share/fish/completions/zip.fish
+share/fish/completions/zpool.fish
 share/fish/completions/zypper.fish
 share/fish/config.fish
 share/fish/functions/
 share/fish/functions/N_.fish
 share/fish/functions/_.fish
+share/fish/functions/__fish_abbr_old.fish
 share/fish/functions/__fish_append.fish
 share/fish/functions/__fish_bind_test1.fish
 share/fish/functions/__fish_bind_test2.fish
+share/fish/functions/__fish_can_complete_switches.fish
 share/fish/functions/__fish_cancel_commandline.fish
+share/fish/functions/__fish_clang_complete.fish
 share/fish/functions/__fish_commandline_is_singlequoted.fish
 share/fish/functions/__fish_commandline_test.fish
 share/fish/functions/__fish_complete_abook_formats.fish
@@ -636,6 +663,11 @@ share/fish/functions/__fish_complete_unrar.fish
 share/fish/functions/__fish_complete_user_at_hosts.fish
 share/fish/functions/__fish_complete_users.fish
 share/fish/functions/__fish_complete_wvdial_peers.fish
+share/fish/functions/__fish_complete_zfs_mountpoint_properties.fish
+share/fish/functions/__fish_complete_zfs_pools.fish
+share/fish/functions/__fish_complete_zfs_ro_properties.fish
+share/fish/functions/__fish_complete_zfs_rw_properties.fish
+share/fish/functions/__fish_complete_zfs_write_once_properties.fish
 share/fish/functions/__fish_config_interactive.fish
 share/fish/functions/__fish_contains_opt.fish
 share/fish/functions/__fish_crux_packages.fish
@@ -644,12 +676,16 @@ share/fish/functions/__fish_cursor_konsole.fish
 share/fish/functions/__fish_cursor_xterm.fish
 share/fish/functions/__fish_describe_command.fish
 share/fish/functions/__fish_filter_ant_targets.fish
+share/fish/functions/__fish_first_token.fish
 share/fish/functions/__fish_git_prompt.fish
 share/fish/functions/__fish_gnu_complete.fish
 share/fish/functions/__fish_hg_prompt.fish
+share/fish/functions/__fish_is_first_arg.fish
 share/fish/functions/__fish_is_first_token.fish
 share/fish/functions/__fish_is_git_repository.fish
+share/fish/functions/__fish_is_switch.fish
 share/fish/functions/__fish_is_token_n.fish
+share/fish/functions/__fish_is_zfs_feature_enabled.fish
 share/fish/functions/__fish_list_current_token.fish
 share/fish/functions/__fish_make_completion_signals.fish
 share/fish/functions/__fish_man_page.fish
@@ -658,7 +694,14 @@ share/fish/functions/__fish_no_arguments.fish
 share/fish/functions/__fish_not_contain_opt.fish
 share/fish/functions/__fish_number_of_cmd_args_wo_opts.fish
 share/fish/functions/__fish_paginate.fish
+share/fish/functions/__fish_parent_directories.fish
+share/fish/functions/__fish_parse_configure.fish
+share/fish/functions/__fish_portage_print_available_pkgs.fish
+share/fish/functions/__fish_portage_print_installed_pkgs.fish
+share/fish/functions/__fish_portage_print_repository_names.fish
+share/fish/functions/__fish_portage_print_repository_paths.fish
 share/fish/functions/__fish_ports_dirs.fish
+share/fish/functions/__fish_prev_arg_in.fish
 share/fish/functions/__fish_print_VBox_vms.fish
 share/fish/functions/__fish_print_abook_emails.fish
 share/fish/functions/__fish_print_addresses.fish
@@ -673,6 +716,7 @@ share/fish/functions/__fish_print_debian_services.fish
 share/fish/functions/__fish_print_encodings.fish
 share/fish/functions/__fish_print_filesystems.fish
 share/fish/functions/__fish_print_function_prototypes.fish
+share/fish/functions/__fish_print_groups.fish
 share/fish/functions/__fish_print_help.fish
 share/fish/functions/__fish_print_hostnames.fish
 share/fish/functions/__fish_print_interfaces.fish
@@ -695,36 +739,33 @@ share/fish/functions/__fish_print_xdg_mimetypes.fish
 share/fish/functions/__fish_print_xrandr_modes.fish
 share/fish/functions/__fish_print_xrandr_outputs.fish
 share/fish/functions/__fish_print_xwindows.fish
+share/fish/functions/__fish_print_zfs_bookmarks.fish
+share/fish/functions/__fish_print_zfs_filesystems.fish
+share/fish/functions/__fish_print_zfs_snapshots.fish
+share/fish/functions/__fish_print_zfs_volumes.fish
 share/fish/functions/__fish_prt_no_subcommand.fish
 share/fish/functions/__fish_prt_packages.fish
 share/fish/functions/__fish_prt_ports.fish
 share/fish/functions/__fish_prt_use_package.fish
 share/fish/functions/__fish_prt_use_port.fish
 share/fish/functions/__fish_pwd.fish
+share/fish/functions/__fish_seen_argument.fish
 share/fish/functions/__fish_seen_subcommand_from.fish
 share/fish/functions/__fish_set_locale.fish
 share/fish/functions/__fish_sgrep.fish
 share/fish/functions/__fish_shared_key_bindings.fish
+share/fish/functions/__fish_should_complete_switches.fish
 share/fish/functions/__fish_svn_prompt.fish
-share/fish/functions/__fish_systemctl_automounts.fish
-share/fish/functions/__fish_systemctl_devices.fish
-share/fish/functions/__fish_systemctl_mounts.fish
-share/fish/functions/__fish_systemctl_scopes.fish
-share/fish/functions/__fish_systemctl_service_paths.fish
 share/fish/functions/__fish_systemctl_services.fish
-share/fish/functions/__fish_systemctl_slices.fish
-share/fish/functions/__fish_systemctl_snapshots.fish
-share/fish/functions/__fish_systemctl_sockets.fish
-share/fish/functions/__fish_systemctl_swaps.fish
-share/fish/functions/__fish_systemctl_targets.fish
-share/fish/functions/__fish_systemctl_timers.fish
 share/fish/functions/__fish_systemd_machine_images.fish
 share/fish/functions/__fish_systemd_machines.fish
 share/fish/functions/__fish_test_arg.fish
 share/fish/functions/__fish_toggle_comment_commandline.fish
 share/fish/functions/__fish_use_subcommand.fish
 share/fish/functions/__fish_vcs_prompt.fish
+share/fish/functions/__fish_whatis.fish
 share/fish/functions/__terlar_git_prompt.fish
+share/fish/functions/_fish_systemctl.fish
 share/fish/functions/_validate_int.fish
 share/fish/functions/abbr.fish
 share/fish/functions/alias.fish
@@ -751,7 +792,9 @@ share/fish/functions/fish_key_reader.fish
 share/fish/functions/fish_md5.fish
 share/fish/functions/fish_mode_prompt.fish
 share/fish/functions/fish_opt.fish
+share/fish/functions/fish_print_hg_root.fish
 share/fish/functions/fish_prompt.fish
+share/fish/functions/fish_title.fish
 share/fish/functions/fish_update_completions.fish
 share/fish/functions/fish_vi_cursor.fish
 share/fish/functions/fish_vi_key_bindings.fish
@@ -767,7 +810,6 @@ share/fish/functions/la.fish
 share/fish/functions/ll.fish
 share/fish/functions/ls.fish
 share/fish/functions/man.fish
-share/fish/functions/math.fish
 share/fish/functions/nextd-or-forward-word.fish
 share/fish/functions/nextd.fish
 share/fish/functions/open.fish
@@ -791,7 +833,7 @@ share/fish/functions/vared.fish
 share/fish/groff/
 share/fish/groff/fish.tmac
 share/fish/lynx.lss
-share/fish/man/
+@mandir share/fish/man/
 share/fish/man/man1/
 @man share/fish/man/man1/abbr.1
 @man share/fish/man/man1/alias.1
@@ -876,6 +918,7 @@ share/fish/man/man1/
 @man share/fish/man/man1/ulimit.1
 @man share/fish/man/man1/umask.1
 @man share/fish/man/man1/vared.1
+@man share/fish/man/man1/wait.1
 @man share/fish/man/man1/while.1
 share/fish/tools/
 share/fish/tools/create_manpage_completions.py
@@ -919,7 +962,6 @@ share/fish/tools/web_config/sample_prompts/robbyrussell.fish
 share/fish/tools/web_config/sample_prompts/screen_savvy.fish
 share/fish/tools/web_config/sample_prompts/sorin.fish
 share/fish/tools/web_config/sample_prompts/terlar.fish
-share/fish/tools/web_config/sample_prompts/user_host_path.fish
 share/fish/tools/web_config/webconfig.py
 share/fish/tools/web_config/webconfig.pyc
 share/fish/vendor_completions.d/
