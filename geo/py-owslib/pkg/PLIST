@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/10/30 14:30:35 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/01/23 17:26:08 landry Exp $
 lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -37,11 +37,15 @@ lib/python${MODPY_VERSION}/site-packages/owslib/coverage/${MODPY_PYCACHE}__init_
 lib/python${MODPY_VERSION}/site-packages/owslib/coverage/${MODPY_PYCACHE}wcs100.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/coverage/${MODPY_PYCACHE}wcs110.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/coverage/${MODPY_PYCACHE}wcs111.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/owslib/coverage/${MODPY_PYCACHE}wcs200.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/owslib/coverage/${MODPY_PYCACHE}wcs201.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/coverage/${MODPY_PYCACHE}wcsBase.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/coverage/${MODPY_PYCACHE}wcsdecoder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/coverage/wcs100.py
 lib/python${MODPY_VERSION}/site-packages/owslib/coverage/wcs110.py
 lib/python${MODPY_VERSION}/site-packages/owslib/coverage/wcs111.py
+lib/python${MODPY_VERSION}/site-packages/owslib/coverage/wcs200.py
+lib/python${MODPY_VERSION}/site-packages/owslib/coverage/wcs201.py
 lib/python${MODPY_VERSION}/site-packages/owslib/coverage/wcsBase.py
 lib/python${MODPY_VERSION}/site-packages/owslib/coverage/wcsdecoder.py
 lib/python${MODPY_VERSION}/site-packages/owslib/crs.py
@@ -57,11 +61,13 @@ lib/python${MODPY_VERSION}/site-packages/owslib/feature/${MODPY_PYCACHE}schema.$
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/${MODPY_PYCACHE}wfs100.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/${MODPY_PYCACHE}wfs110.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/${MODPY_PYCACHE}wfs200.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/owslib/feature/${MODPY_PYCACHE}wfs300.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/common.py
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/schema.py
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/wfs100.py
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/wfs110.py
 lib/python${MODPY_VERSION}/site-packages/owslib/feature/wfs200.py
+lib/python${MODPY_VERSION}/site-packages/owslib/feature/wfs300.py
 lib/python${MODPY_VERSION}/site-packages/owslib/fes.py
 lib/python${MODPY_VERSION}/site-packages/owslib/fgdc.py
 lib/python${MODPY_VERSION}/site-packages/owslib/gm03.py
@@ -80,6 +86,18 @@ lib/python${MODPY_VERSION}/site-packages/owslib/map/wms111.py
 lib/python${MODPY_VERSION}/site-packages/owslib/map/wms130.py
 lib/python${MODPY_VERSION}/site-packages/owslib/namespaces.py
 lib/python${MODPY_VERSION}/site-packages/owslib/ows.py
+lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/
+lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/${MODPY_PYCACHE}atom.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/${MODPY_PYCACHE}geojson.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/atom.py
+lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/common.py
+lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/core.py
+lib/python${MODPY_VERSION}/site-packages/owslib/owscontext/geojson.py
 lib/python${MODPY_VERSION}/site-packages/owslib/sos.py
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/
 lib/python${MODPY_VERSION}/site-packages/owslib/swe/__init__.py
