@@ -9,7 +9,7 @@ my $varwww = $wrkinst . '/var/www';
 my $phpbin = shift;
 my $spawn  = new Expect;
 
-$spawn = Expect->spawn("$phpbin -d suhosin.executor.include.whitelist=phar go-pear.phar");
+$spawn = Expect->spawn("$phpbin go-pear.phar");
 $spawn->log_file("/tmp/go-pear.log.$$");
 
 my $ret = $spawn->expect(
