@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2018/12/02 20:21:53 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.23 2019/01/23 11:50:23 pvk Exp $
 @newgroup _kibana:766
 @newuser _kibana:766:_kibana:daemon:Kibana user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/kibana/{data,plugins}/*
@@ -2648,6 +2648,8 @@ kibana/node_modules/@kbn/i18n/node_modules/react-intl/src/utils.js
 kibana/node_modules/@kbn/i18n/package.json
 kibana/node_modules/@kbn/i18n/react/
 kibana/node_modules/@kbn/i18n/react/package.json
+kibana/node_modules/@kbn/i18n/scripts/
+kibana/node_modules/@kbn/i18n/scripts/build.js
 kibana/node_modules/@kbn/i18n/src/
 kibana/node_modules/@kbn/i18n/src/__fixtures__/
 kibana/node_modules/@kbn/i18n/src/__fixtures__/test_plugin_1/
@@ -2714,6 +2716,8 @@ kibana/node_modules/@kbn/i18n/target/web/react/index.js
 kibana/node_modules/@kbn/i18n/target/web/react/inject.js
 kibana/node_modules/@kbn/i18n/target/web/react/inject_i18n_provider.js
 kibana/node_modules/@kbn/i18n/target/web/react/provider.js
+kibana/node_modules/@kbn/i18n/tasks/
+kibana/node_modules/@kbn/i18n/tasks/build_cli.js
 kibana/node_modules/@kbn/i18n/tslint.yml
 kibana/node_modules/@kbn/i18n/types/
 kibana/node_modules/@kbn/pm/
@@ -46268,9 +46272,6 @@ kibana/node_modules/tinymath/lib/tinymath.js
 kibana/node_modules/tinymath/lib/tinymath.min.js
 kibana/node_modules/tinymath/lib/tinymath.mjs
 kibana/node_modules/tinymath/package.json
-kibana/node_modules/tinymath/src/
-kibana/node_modules/tinymath/src/functions/
-kibana/node_modules/tinymath/src/functions/lib/
 kibana/node_modules/to-arraybuffer/
 kibana/node_modules/to-arraybuffer/LICENSE
 kibana/node_modules/to-arraybuffer/README.md
