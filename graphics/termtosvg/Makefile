@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2018/12/14 23:18:27 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2019/01/23 22:37:41 fcambus Exp $
 
 COMMENT =	record terminal sessions as SVG animations
 
-MODPY_EGG_VERSION = 0.7.0
+MODPY_EGG_VERSION = 0.8.0
 DISTNAME =	termtosvg-${MODPY_EGG_VERSION}
 
 CATEGORIES =	graphics

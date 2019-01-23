@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/12/14 23:18:27 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/01/23 22:37:41 fcambus Exp $
 bin/termtosvg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/
 lib/python${MODPY_VERSION}/site-packages/termtosvg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -19,10 +19,12 @@ lib/python${MODPY_VERSION}/site-packages/termtosvg/anim.py
 lib/python${MODPY_VERSION}/site-packages/termtosvg/asciicast.py
 lib/python${MODPY_VERSION}/site-packages/termtosvg/config.py
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/
+lib/python${MODPY_VERSION}/site-packages/termtosvg/data/svg11-flat-20110816.dtd
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/base16_default_dark.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/dracula.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/gjm8.svg
+lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/gjm8_play.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/progress_bar.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/solarized_dark.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/solarized_light.svg
