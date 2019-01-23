@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/05/23 13:33:50 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/01/23 00:54:08 abieber Exp $
 @bin bin/restic
 @man man/man1/restic-backup.1
 @man man/man1/restic-cache.1
@@ -17,8 +17,11 @@
 @man man/man1/restic-mount.1
 @man man/man1/restic-prune.1
 @man man/man1/restic-rebuild-index.1
+@man man/man1/restic-recover.1
 @man man/man1/restic-restore.1
+@man man/man1/restic-self-update.1
 @man man/man1/restic-snapshots.1
+@man man/man1/restic-stats.1
 @man man/man1/restic-tag.1
 @man man/man1/restic-unlock.1
 @man man/man1/restic-version.1
