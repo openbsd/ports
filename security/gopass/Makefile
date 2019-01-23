@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2018/12/16 01:09:55 abieber Exp $
+# $OpenBSD: Makefile,v 1.12 2019/01/23 00:56:46 abieber Exp $
 
 COMMENT =	pass compatible password manager written in go
 
-V =		1.8.3
+V =		1.8.4
 DISTNAME =	gopass-$V
 
 CATEGORIES =	security
