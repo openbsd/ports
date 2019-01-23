@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2019/01/23 03:48:59 ajacoutot Exp $
-
-BROKEN=			needs sysctl kern.usermount
+# $OpenBSD: Makefile,v 1.21 2019/01/23 03:56:16 ajacoutot Exp $
 
 COMMENT=		hotplugd(8) automounter (Toad Opens All Devices)
 
 GH_ACCOUNT=		ajacoutot
 GH_PROJECT=		toad
-GH_TAGNAME=		1.6
+GH_TAGNAME=		1.7
 
 CATEGORIES=		sysutils
 
@@ -24,5 +22,9 @@ MAKE_FLAGS=		PREFIX=${TRUEPREFIX} \
 			MANDIR=${TRUEPREFIX}/man/man
 
 NO_TEST=		Yes
+
+pre-configure:
+	sed -i -e "s,/usr/local,${LOCALBASE},g" -e "s,/etc,${SYSCONFDIR},g" \
+		${WRKSRC}/toad.{8,pl}
 
 .include <bsd.port.mk>

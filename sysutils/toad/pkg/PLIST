@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/01/23 03:48:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/01/23 03:56:16 ajacoutot Exp $
+@rcscript ${RCDIR}/toadd
 libexec/toad
 @bin libexec/toadd
 @man man/man8/toad.8
@@ -9,4 +10,3 @@ share/examples/toad/hotplug-scripts
 @sample /etc/hotplug/attach
 @sample /etc/hotplug/detach
 @mode
-@rcscript ${RCDIR}/toadd
