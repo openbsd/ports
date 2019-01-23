@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2018/08/17 00:47:11 schwarze Exp $
+# $OpenBSD: Makefile,v 1.187 2019/01/23 15:24:53 bcallah Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -25,6 +25,7 @@
      SUBDIR += dvtm
      SUBDIR += ent
      SUBDIR += fasd
+     SUBDIR += feathernotes
      SUBDIR += figlet
      SUBDIR += findutils
      SUBDIR += ftdi-eeprom
