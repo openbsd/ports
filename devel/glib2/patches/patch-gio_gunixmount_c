@@ -1,23 +1,46 @@
-$OpenBSD: patch-gio_gunixmount_c,v 1.14 2016/10/28 13:40:04 ajacoutot Exp $
+$OpenBSD: patch-gio_gunixmount_c,v 1.15 2019/01/23 03:37:10 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=653555
 
---- gio/gunixmount.c.orig	Fri Jul  1 21:54:29 2016
-+++ gio/gunixmount.c	Wed Oct 26 11:37:25 2016
+Index: gio/gunixmount.c
+--- gio/gunixmount.c.orig
++++ gio/gunixmount.c
 @@ -27,6 +27,12 @@
  #include <sys/wait.h>
  #include <unistd.h>
  
 +#ifdef __OpenBSD__
 +#include <errno.h>
-+#include <sys/param.h>
++#include <sys/types.h>
 +#include <sys/mount.h>
 +#endif
 +
  #include <glib.h>
  #include "gsubprocess.h"
  #include "gioenums.h"
-@@ -358,12 +364,20 @@ g_unix_mount_eject (GMount             *mount,
+@@ -337,6 +343,21 @@ g_unix_mount_unmount (GMount             *mount,
+   else
+     argv[1] = unix_mount->device_path;
+ 
++/* sysutils/toad */
++#ifdef __OpenBSD__
++  if (getuid() != 0)
++    {
++      char *argv[] = {"umount", NULL, NULL, NULL};
++      gchar *pkexec;
++      if ((pkexec = g_find_program_in_path ("pkexec")) != NULL)
++        {
++          argv[0] = pkexec;
++          argv[2] = argv[1];
++          argv[1] = "/sbin/umount";
++        }
++    }
++#endif
++
+   eject_unmount_do (mount, cancellable, callback, user_data, argv);
+ }
+ 
+@@ -358,12 +379,20 @@ g_unix_mount_eject (GMount             *mount,
    GUnixMount *unix_mount = G_UNIX_MOUNT (mount);
    char *argv[] = {"eject", NULL, NULL};
  
