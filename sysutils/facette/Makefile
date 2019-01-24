@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2018/10/08 14:07:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/01/24 14:02:40 landry Exp $
 
 COMMENT =	time series data visualization and graphing software
 
 GH_ACCOUNT =	facette
 GH_PROJECT =	facette
-GH_TAGNAME =	0.4.0
-REVISION =	1
+GH_TAGNAME =	0.4.1
 
 CATEGORIES =	sysutils
 
@@ -14,7 +13,7 @@ HOMEPAGE =	https://facette.io
 # selfhosted node_modules deps generated via gmake node_modules
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX}{${GH_TAGNAME}${EXTRACT_SUFX}} \
 		${GH_PROJECT}-${GH_TAGNAME}-node_modules${EXTRACT_SUFX}:0
-MASTER_SITES0 =	https://rhaalovely.net/stuff/
+MASTER_SITES0 =	https://deftly.net/dist/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/04/25 16:09:56 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/01/24 14:02:40 landry Exp $
 @newgroup _facette:774
 @newuser _facette:774:774:daemon:Facette Daemon:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/facette
 @bin bin/facette
 @bin bin/facettectl
 share/examples/facette/
@@ -11,7 +12,7 @@ share/facette/
 share/facette/assets/
 share/facette/assets/css/
 share/facette/assets/css/font-awesome-269550530c.min.css
-share/facette/assets/css/style-c5fbcc078d.css
+share/facette/assets/css/style-bc6bbc4dae.css
 share/facette/assets/css/style-print-59792da171.css
 share/facette/assets/fonts/
 share/facette/assets/fonts/Roboto-Light-7b5fb88f12.ttf
@@ -29,7 +30,7 @@ share/facette/assets/images/favicon-bec05f9734.png
 share/facette/assets/images/logo-main-e327a302b8.png
 share/facette/assets/images/logo-nav-f5c7f823c6.png
 share/facette/assets/js/
-share/facette/assets/js/facette-d71d72966b.js
+share/facette/assets/js/facette-11fd54e369.js
 share/facette/assets/js/locales/
 share/facette/assets/js/locales/en.json
 share/facette/assets/js/locales/fr.json
@@ -37,6 +38,3 @@ share/facette/assets/js/vendor-01cb0c030c.js
 @owner _facette
 @group _facette
 @sample /var/facette/
-@owner
-@group
-@rcscript ${RCDIR}/facette
