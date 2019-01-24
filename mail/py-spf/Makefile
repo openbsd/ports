@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2015/11/16 11:30:21 giovanni Exp $
+# $OpenBSD: Makefile,v 1.19 2019/01/24 17:10:55 giovanni Exp $
 
 COMMENT=	Sender-Policy-Framework queries in Python
 
 MODPY_EGG_VERSION=2.0.12
 DISTNAME=	pyspf-${MODPY_EGG_VERSION}
-REVISION=	0
+REVISION=	1
 PKGNAME=	py-spf-${MODPY_EGG_VERSION}
 CATEGORIES=	mail
 
 HOMEPAGE=	http://bmsi.com/python/milter.html
-
-MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # Python
 PERMIT_PACKAGE_CDROM=	Yes
