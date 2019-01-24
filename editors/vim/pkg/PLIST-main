@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2018/12/08 22:39:20 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2019/01/24 09:32:15 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -254,6 +254,7 @@ share/vim/${P}/doc/tags
 share/vim/${P}/doc/tagsrch.txt
 share/vim/${P}/doc/term.txt
 share/vim/${P}/doc/terminal.txt
+share/vim/${P}/doc/textprop.txt
 share/vim/${P}/doc/tips.txt
 share/vim/${P}/doc/todo.txt
 share/vim/${P}/doc/uganda.txt
@@ -320,6 +321,7 @@ share/vim/${P}/ftplugin/art.vim
 share/vim/${P}/ftplugin/aspvbs.vim
 share/vim/${P}/ftplugin/automake.vim
 share/vim/${P}/ftplugin/awk.vim
+share/vim/${P}/ftplugin/bash.vim
 share/vim/${P}/ftplugin/bdf.vim
 share/vim/${P}/ftplugin/bst.vim
 share/vim/${P}/ftplugin/btm.vim
@@ -327,6 +329,7 @@ share/vim/${P}/ftplugin/bzl.vim
 share/vim/${P}/ftplugin/c.vim
 share/vim/${P}/ftplugin/calendar.vim
 share/vim/${P}/ftplugin/cdrdaoconf.vim
+share/vim/${P}/ftplugin/cfg.vim
 share/vim/${P}/ftplugin/ch.vim
 share/vim/${P}/ftplugin/changelog.vim
 share/vim/${P}/ftplugin/chicken.vim

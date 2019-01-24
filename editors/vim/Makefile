@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.178 2018/12/08 22:39:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.179 2019/01/24 09:32:15 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-# XXX if updating major version (e.g. 8.1.x->8.2.x), sync editors/vim-spell
-V=		8.1.0573
+V=		8.1.0800
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
 
-PKGNAME-main=	vim-$V
-PKGNAME-lang=	vim-lang-$V
+T=		${V:C/\.0+/./}
+PKGNAME-main=	vim-$T
+PKGNAME-lang=	vim-lang-$T
+FULLPKGNAME-lang= vim-lang-$T
+FULLPKGPATH-lang= ${PKGPATH},-lang
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
 
@@ -24,9 +26,6 @@ WANTLIB +=	c curses iconv intl
 LIB_DEPENDS-main= ${LIB_DEPENDS} devel/gettext
 
 MULTI_PACKAGES=	-main -lang
-
-FULLPKGNAME-lang= vim-lang-$V
-FULLPKGPATH-lang= ${PKGPATH},-lang
 
 FLAVORS=	huge gtk2 athena motif no_x11 lua perl python python3 ruby
 FLAVOR?=	gtk2
@@ -151,6 +150,10 @@ WANTLIB-lang=
 
 WRKSRC=		${WRKDIST}/src
 SUBST_VARS=	P
+
+.if ${P} != vim81
+ERRORS=		"Fatal: Major version was updated; sync editors/vim-spell and update this check"
+.endif
 
 # CONFIGURE_STYLE=autoconf doesn't work
 post-patch:
