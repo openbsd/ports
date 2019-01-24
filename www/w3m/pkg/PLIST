@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.21 2016/12/21 20:54:16 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.22 2019/01/24 20:54:04 sthen Exp $
 @conflict ja-w3m-*
 %%image%%
-!%%image%%
 @bin bin/w3m
 bin/w3mman
 libexec/w3m/
@@ -33,6 +32,7 @@ share/doc/w3m/README
 share/doc/w3m/README.cookie
 share/doc/w3m/README.dict
 share/doc/w3m/README.func
+!%%image%%
 share/doc/w3m/README.m17n
 share/doc/w3m/README.mouse
 share/doc/w3m/README.passwd

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.89 2018/02/05 20:36:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.90 2019/01/24 20:54:04 sthen Exp $
 
 COMMENT=	pager/text-based web browser
 
 DISTNAME=	w3m-0.5.3
-REVISION=	6
+REVISION=	7
 CATEGORIES=	www
 HOMEPAGE=	http://w3m.sourceforge.net/
 
@@ -16,7 +16,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=w3m/}
 MASTER_SITES0=	${MASTER_SITE_DEBIAN:=main/w/w3m/}
 
 DISTFILES=	${DISTNAME}.tar.gz \
-		w3m_0.5.3-36.debian.tar.xz:0
+		w3m_0.5.3-37.debian.tar.xz:0
 
 BUILD_DEPENDS=	devel/gettext-tools
 
