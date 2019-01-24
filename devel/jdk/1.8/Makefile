@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.38 2019/01/21 15:54:59 kurt Exp $
+# $OpenBSD: Makefile,v 1.39 2019/01/24 17:20:14 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
+DPB_PROPERTIES=	parallel
 
 COMMENT-main=	OpenJDK Software Development Kit v${V}
 COMMENT-jre=	OpenJDK Runtime Environment v${V}
-U=		172
+U=		192
 V=		1.8.0.${U}
-B=		b11
+B=		b26
 PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
 EPOCH=		0
-REVISION-jre=	3
-REVISION-main=	3
 
 DIST_SUBDIR=	jdk
-DISTNAME=	openjdk-8u172b11-bsd-port-20180529
+DISTNAME=	openjdk-8u192b26-bsd-port-20190122
 BOOTJDK_DATE=	20190111
 EXTRACT_SUFX=	.tar.xz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
