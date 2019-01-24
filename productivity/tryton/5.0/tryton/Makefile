@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/01/06 05:38:23 semarie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/01/24 05:51:57 semarie Exp $
 
 COMMENT =		tryton desktop client
 
-MODPY_EGG_VERSION =	5.0.4
+MODPY_EGG_VERSION =	5.0.5
 DISTNAME =		tryton-${MODPY_EGG_VERSION}
 
 TRYTON_PY =		Yes
