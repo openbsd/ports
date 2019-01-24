@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2019/01/20 11:17:32 edd Exp $
+# $OpenBSD: Makefile,v 1.107 2019/01/24 16:38:41 jca Exp $
 
 COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
@@ -7,6 +7,8 @@ DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
 
+REVISION-main =		0
+
 MULTI_PACKAGES = -main -mktexlsr
 PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
 PKGNAME-main =		${PKGNAME}
@@ -14,9 +16,9 @@ PKGNAME-main =		${PKGNAME}
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
 
-SHARED_LIBS =		kpathsea	8.1 # 8.2
-SHARED_LIBS +=		ptexenc		5.1 # 4.4
-SHARED_LIBS +=		synctex		1.0 # 19.0
+SHARED_LIBS =		kpathsea	8.1 # 8.3
+SHARED_LIBS +=		ptexenc		5.2 # 4.5
+SHARED_LIBS +=		synctex		2.0 # 19.0
 SHARED_LIBS +=		texlua52	0.0 # 7.4
 SHARED_LIBS +=		texlua53        0.0 # 8.4
 
