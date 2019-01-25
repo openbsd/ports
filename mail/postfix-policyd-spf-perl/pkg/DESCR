@@ -1,0 +1,4 @@
+postfix-policyd-spf-perl is a Postfix SMTPd policy server for SPF
+checking.  It is implemented in pure Perl and uses the Mail::SPF
+CPAN module.  Note that Mail::SPF is a complete re-implementation
+of SPF based on the final SPF RFC, RFC 4408.
