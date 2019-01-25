@@ -1,0 +1,33 @@
+$OpenBSD: patch-enforcer_utils_1_4-2_0_db_convert_convert_sqlite,v 1.1 2019/01/25 08:32:02 pvk Exp $
+
+Index: enforcer/utils/1.4-2.0_db_convert/convert_sqlite
+--- enforcer/utils/1.4-2.0_db_convert/convert_sqlite.orig
++++ enforcer/utils/1.4-2.0_db_convert/convert_sqlite
+@@ -1,9 +1,9 @@
+-#!/bin/bash
++#!/bin/sh
+ set -e
+ 
+ # This scipt converts a ODS 1.4.9 Sqlite database to ODS 2.0.
+ 
+-SCHEMA=../../src/db/schema.sqlite
++SCHEMA=${PREFIX}/share/opendnssec/schema.sqlite
+ 
+ DB_IN=""
+ DB_OUT=""
+@@ -36,7 +36,7 @@ if [ ! $DB_VERSION -eq 4 ]; then
+ fi
+ 
+ # Look for zones without an active key.
+-Z=`sqlite3 $DB_IN < find_problematic_zones.sql`
++Z=`sqlite3 $DB_IN < ${PREFIX}/share/opendnssec/migration/find_problematic_zones.sql`
+ if [[ $Z = *[![:space:]]* ]]; then
+ 	echo "Found zones without an active KSK but with a ready KSK waiting for ds-seen. This can cause problem after the conversion if the DS was actually already uploaded. You are adviced to submit these DS records and issue a ds-seen command before continueing. If you know better, disable this check to continue."
+ 	       echo "Zones: $Z"
+@@ -46,5 +46,5 @@ fi
+ rm -f $DB_OUT
+ sqlite3 $DB_OUT < $SCHEMA 
+ echo "attach '$DB_IN' as REMOTE;" |
+-	cat - sqlite_convert.sql | sqlite3 $DB_OUT
++	cat - ${PREFIX}/share/opendnssec/migration/migrate-sqlite.sql | sqlite3 $DB_OUT
+ 

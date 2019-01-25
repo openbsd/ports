@@ -1,0 +1,15 @@
+$OpenBSD: patch-contrib_ods-sequencer_ods-sequencer-submit_sh,v 1.1 2019/01/25 08:32:02 pvk Exp $
+
+Index: contrib/ods-sequencer/ods-sequencer-submit.sh
+--- contrib/ods-sequencer/ods-sequencer-submit.sh.orig
++++ contrib/ods-sequencer/ods-sequencer-submit.sh
+@@ -1,6 +1,6 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+-now=`../../../sbin/ods-enforcer queue 2>&1 | sed -e 's/^It is now.*(\([0-9][0-9]*\)[^)]*).*$/\1/p' -e 'd'`
+-cat > ../../../var/opendnssec/sequences/$now-dssubmit
++now=`${PREFIX}/sbin/ods-enforcer queue 2>&1 | sed -e 's/^It is now.*(\([0-9][0-9]*\)[^)]*).*$/\1/p' -e 'd'`
++cat > ${LOCALSTATEDIR}/opendnssec/sequences/$now-dssubmit
+ 
+ exit 0

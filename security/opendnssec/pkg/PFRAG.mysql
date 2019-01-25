@@ -1,2 +1,5 @@
-@comment $OpenBSD: PFRAG.mysql,v 1.1.1.1 2015/10/13 17:03:55 jca Exp $
-share/opendnssec/database_create.mysql
+@comment $OpenBSD: PFRAG.mysql,v 1.2 2019/01/25 08:32:02 pvk Exp $
+sbin/ods-convert_sqlite_to_mysql
+sbin/ods-migrate-mysql
+share/opendnssec/migration/migrate-mysql.sql
+share/opendnssec/schema.mysql

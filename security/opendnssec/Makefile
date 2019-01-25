@@ -1,28 +1,30 @@
-# $OpenBSD: Makefile,v 1.15 2018/09/04 12:46:21 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2019/01/25 08:32:02 pvk Exp $
 
 COMMENT=	open-source turn-key solution for DNSSEC
 
-DISTNAME=	opendnssec-1.4.14
-REVISION=	1
+DISTNAME=	opendnssec-2.1.3
 
 CATEGORIES=	security
 
-HOMEPAGE=	http://www.opendnssec.org/
+HOMEPAGE=	https://www.opendnssec.org/
 
-MAINTAINER=	Patrik Lundin <patrik@sigterm.se>
+MAINTAINER=	Pavel Korovin <pvk@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto iconv ldns lzma m pthread xml2 z
 
-MASTER_SITES=	http://dist.opendnssec.org/source/
+MASTER_SITES=	https://dist.opendnssec.org/source/
+
+BUILD_DEPENDS=	devel/cunit
 
 LIB_DEPENDS=	converters/libiconv \
 		net/ldns/libldns \
 		textproc/libxml
 
-TEST_DEPENDS=	security/softhsm
+TEST_DEPENDS=	${BUILD_DEPENDS} \
+		security/softhsm2
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/opendnssec
 
@@ -47,11 +49,52 @@ LIB_DEPENDS+=	databases/mariadb
 ERRORS+= "Fatal: mutually exclusive flavors: ${FLAVORS}"
 .endif
 
+SUBST_TARGETS=	${WRKSRC}/enforcer/utils/1.4-2.0_db_convert/README.md \
+	${WRKSRC}/enforcer/utils/1.4-2.0_db_convert/convert_{mysql,sqlite} \
+	${WRKSRC}/enforcer/utils/convert_{mysql_to_sqlite,sqlite_to_mysql} \
+	${WRKSRC}/contrib/ods-sequencer/ods-sequencer-submit.sh \
+	${WRKSRC}/MIGRATION
+
+post-patch:
+	${SUBST_CMD} ${SUBST_TARGETS}
+
+# regress-db target doesn't currently work
+# https://github.com/opendnssec/opendnssec/commit/6b1b0da4a7ba5ae658aca49a45a45be4867f6806
+pre-test:
+	sed -i 's/^check: regress-db/\#check: regress-db/' \
+		${WRKSRC}/enforcer/src/db/test/Makefile
+
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/opendnssec
-	cd ${WRKSRC}; \
-	${INSTALL_DATA} LICENSE ${PREFIX}/share/doc/opendnssec; \
-	${INSTALL_DATA} plugins/simple-dnskey-mailer/simple-dnskey-mailer.sh \
-			${PREFIX}/share/opendnssec
+	sed -i 's,#!/bin/bash,#!/bin/sh,' \
+		${WRKSRC}/contrib/ods-sequencer/ods-sequencer-submit.sh \
+		${WRKSRC}/contrib/simple-dnskey-mailer/simple-dnskey-mailer.sh
+	@find ${WRKSRC} -type f \
+		\( -name '*.beforesubst' -o -name '*.orig' \) -delete
+	${INSTALL_SCRIPT} ${WRKSRC}/enforcer/utils/convert_mysql_to_sqlite \
+		${PREFIX}/sbin/ods-convert_mysql_to_sqlite
+	${INSTALL_SCRIPT} ${WRKSRC}/enforcer/utils/convert_sqlite_to_mysql \
+		${PREFIX}/sbin/ods-convert_sqlite_to_mysql
+	${INSTALL_SCRIPT} ${WRKSRC}/enforcer/utils/1.4-2.0_db_convert/convert_mysql \
+		${PREFIX}/sbin/ods-migrate-mysql
+	${INSTALL_SCRIPT} ${WRKSRC}/enforcer/utils/1.4-2.0_db_convert/convert_sqlite \
+		${PREFIX}/sbin/ods-migrate-sqlite3
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/opendnssec/
+	${INSTALL_DATA} ${WRKSRC}/{LICENSE,MIGRATION,NEWS} \
+		${PREFIX}/share/doc/opendnssec/
+	${INSTALL_DATA} ${WRKSRC}/enforcer/utils/1.4-2.0_db_convert/README.md \
+		${PREFIX}/share/doc/opendnssec/MIGRATE_1.4-2.0.md
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/opendnssec/ods-sequencer/
+	${INSTALL_DATA} ${WRKSRC}/contrib/ods-sequencer/* \
+		${PREFIX}/share/examples/opendnssec/ods-sequencer/
+	${INSTALL_DATA} ${WRKSRC}/contrib/simple-dnskey-mailer/simple-dnskey-mailer.sh \
+		${PREFIX}/share/examples/opendnssec/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/opendnssec/migration/
+	${INSTALL_DATA} ${WRKSRC}/enforcer/src/db/schema.* ${PREFIX}/share/opendnssec/
+	${INSTALL_DATA} ${WRKSRC}/enforcer/utils/1.4-2.0_db_convert/find_problematic_zones.sql \
+		${PREFIX}/share/opendnssec/migration/
+	${INSTALL_DATA} ${WRKSRC}/enforcer/utils/1.4-2.0_db_convert/sqlite_convert.sql \
+		${PREFIX}/share/opendnssec/migration/migrate-sqlite.sql
+	${INSTALL_DATA} ${WRKSRC}/enforcer/utils/1.4-2.0_db_convert/mysql_convert.sql \
+		${PREFIX}/share/opendnssec/migration/migrate-mysql.sql
 
 .include <bsd.port.mk>

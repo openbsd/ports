@@ -1,36 +1,44 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/09/04 12:46:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/01/25 08:32:02 pvk Exp $
+@conflict opendnssec-<2.1.3
+@ask-update opendnssec-<2.1.3 OpenDNSSEC enforcer database migration required
 @newgroup _opendnssec:757
 @newuser _opendnssec:757:_opendnssec:daemon:OpenDNSSEC Account:/nonexistent:/sbin/nologin
-@bin bin/ods-getconf
+@rcscript ${RCDIR}/opendnssec
 @bin bin/ods-hsmspeed
 @bin bin/ods-hsmutil
 bin/ods-kasp2html
 @bin bin/ods-kaspcheck
-@bin bin/ods-ksmutil
 @man man/man1/ods-hsmspeed.1
 @man man/man1/ods-hsmutil.1
 @man man/man1/ods-kaspcheck.1
-@man man/man1/ods-ksmutil.1
+@man man/man5/ods-kasp.5
 @man man/man5/ods-timing.5
 @man man/man7/opendnssec.7
 @man man/man8/ods-control.8
+@man man/man8/ods-enforcer-db-setup.8
+@man man/man8/ods-enforcer.8
 @man man/man8/ods-enforcerd.8
-@man man/man8/ods-getconf.8
 @man man/man8/ods-signer.8
 @man man/man8/ods-signerd.8
 sbin/ods-control
+@bin sbin/ods-enforcer
+@bin sbin/ods-enforcer-db-setup
 @bin sbin/ods-enforcerd
+@bin sbin/ods-migrate
 @bin sbin/ods-signer
 @bin sbin/ods-signerd
+share/doc/opendnssec/
+share/doc/opendnssec/LICENSE
+share/doc/opendnssec/MIGRATE_1.4-2.0.md
+share/doc/opendnssec/MIGRATION
+share/doc/opendnssec/NEWS
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/opendnssec/
 @mode 0750
 @group _opendnssec
 @sample ${SYSCONFDIR}/opendnssec/
 @mode
 @group
-share/doc/opendnssec/
-share/doc/opendnssec/LICENSE
-share/doc/pkg-readmes/${PKGSTEM}
-share/examples/opendnssec/
 share/examples/opendnssec/addns.xml
 @mode 0640
 @group _opendnssec
@@ -52,6 +60,11 @@ share/examples/opendnssec/kasp.xml
 @mode
 @group
 share/examples/opendnssec/kasp.xml.sample
+share/examples/opendnssec/ods-sequencer/
+share/examples/opendnssec/ods-sequencer/ods-sequencer
+share/examples/opendnssec/ods-sequencer/ods-sequencer-submit.sh
+share/examples/opendnssec/ods-sequencer/ods-sequencer.md
+share/examples/opendnssec/simple-dnskey-mailer.sh
 share/examples/opendnssec/zonelist.xml
 @mode 0640
 @group _opendnssec
@@ -64,27 +77,26 @@ share/opendnssec/addns.rnc
 share/opendnssec/addns.rng
 share/opendnssec/conf.rnc
 share/opendnssec/conf.rng
-%%sqlite3%%
-%%mysql%%
 share/opendnssec/enforcerstate.rnc
 share/opendnssec/enforcerstate.rng
 share/opendnssec/kasp.rnc
 share/opendnssec/kasp.rng
 share/opendnssec/kasp2html.xsl
+share/opendnssec/migration/
+share/opendnssec/migration/find_problematic_zones.sql
 share/opendnssec/signconf.rnc
 share/opendnssec/signconf.rng
-share/opendnssec/simple-dnskey-mailer.sh
 share/opendnssec/zonelist.rnc
 share/opendnssec/zonelist.rng
-@sample ${LOCALSTATEDIR}/opendnssec/
+%%sqlite3%%
+%%mysql%%
+@mode 0750
 @owner _opendnssec
 @group _opendnssec
-@sample ${LOCALSTATEDIR}/opendnssec/db/
+@sample ${LOCALSTATEDIR}/opendnssec/
+@sample ${LOCALSTATEDIR}/opendnssec/enforcer/
 @sample ${LOCALSTATEDIR}/opendnssec/signconf/
 @sample ${LOCALSTATEDIR}/opendnssec/signed/
-@sample ${LOCALSTATEDIR}/opendnssec/tmp/
+@sample ${LOCALSTATEDIR}/opendnssec/signer/
 @sample ${LOCALSTATEDIR}/opendnssec/unsigned/
-@sample ${LOCALSTATEDIR}/opendnssec/softhsm/
-@owner
-@group
-@rcscript ${RCDIR}/opendnssec
+@sample ${LOCALSTATEDIR}/run/opendnssec/

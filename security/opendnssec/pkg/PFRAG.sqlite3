@@ -1,2 +1,5 @@
-@comment $OpenBSD: PFRAG.sqlite3,v 1.1.1.1 2015/10/13 17:03:55 jca Exp $
-share/opendnssec/database_create.sqlite3
+@comment $OpenBSD: PFRAG.sqlite3,v 1.2 2019/01/25 08:32:02 pvk Exp $
+sbin/ods-convert_mysql_to_sqlite
+sbin/ods-migrate-sqlite3
+share/opendnssec/migration/migrate-sqlite.sql
+share/opendnssec/schema.sqlite

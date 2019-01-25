@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2018/09/04 12:46:21 espie Exp $
+$OpenBSD: README,v 1.4 2019/01/25 08:32:02 pvk Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -8,43 +8,172 @@ Getting started
 ===============
 This is a summary of steps needed to get OpenDNSSEC up and running in a
 basic state using SoftHSM as the key backend. Make sure you have
-installed the softhsm package before proceeding.
+installed the softhsm2 package before proceeding.
 
 Initial setup of SoftHSM
 ------------------------
-Configure SoftHSM to store its token in
-${LOCALSTATEDIR}/opendnssec/softhsm/:
-# vi ${SYSCONFDIR}/softhsm.conf
+If you plan to use SoftHSM, install softhsm2 package:
 
-Initialize the SoftHSM token (here assuming you used slot 0).
-The user PIN code has to match the <PIN> configured in
-${SYSCONFDIR}/opendnssec/conf.xml:
-# softhsm --init-token --slot 0 --label OpenDNSSEC
+    # pkg_add softhsm2
 
-Make sure the token is writeable by the _opendnssec user:
-# chown _opendnssec ${LOCALSTATEDIR}/opendnssec/softhsm/slot0.db
+Create ${LOCALSTATEDIR}/opendnssec/softhsm/ directory for tokens storage,
+instruct opendnssec to use this location:
+
+    # install -d -o _opendnssec -g _opendnssec -m 700 \
+        ${LOCALSTATEDIR}/opendnssec/softhsm/
+
+    # grep tokendir ${SYSCONFDIR}/softhsm2.conf
+    directories.tokendir = ${LOCALSTATEDIR}/opendnssec/softhsm/
+
+Choose preferred storage method, either 'file' or 'sqlite3':
+
+    # grep objectstore ${SYSCONFDIR}/softhsm2.conf
+    objectstore.backend = db
+
+Initialize the SoftHSM token (here assuming you are using slot 0):
+
+    # doas -u _opendnssec softhsm2-util --init-token --slot 0 \
+        --label OpenDNSSEC
+
+User PIN and token label must be reflected in appropriate sections
+of ${SYSCONFDIR}/opendnssec/conf.xml:
+
+    # grep PIN ${SYSCONFDIR}/opendnssec/conf.xml
+                        <PIN>MySecretUserPIN</PIN>
+
+    # grep TokenLabel ${SYSCONFDIR}/opendnssec/conf.xml
+                        <TokenLabel>OpenDNSSEC</TokenLabel>
+Verify token:
+
+	# doas -u _opendnssec softhsm2-util --show-slots
+        Available slots:
+        Slot 1557156002
+            Slot info:
+                Description:      SoftHSM slot ID 0x5cd050a2
+                Manufacturer ID:  SoftHSM project
+                Hardware version: 2.5
+                Firmware version: 2.5
+                Token present:    yes
+            Token info:
+                Manufacturer ID:  SoftHSM project
+                Model:            SoftHSM v2
+                Hardware version: 2.5
+                Firmware version: 2.5
+                Serial number:    e1a305015cd050a2
+                Initialized:      yes
+                User PIN init.:   yes
+                Label:            OpenDNSSEC
 
 Bootstrapping OpenDNSSEC
 ------------------------
+
+Check if the configuration is valid:
+
+    # doas -u _opendnssec ods-kaspcheck
+    INFO: The XML in ${SYSCONFDIR}/opendnssec/conf.xml is valid
+    ERROR: SQLite datastore (${LOCALSTATEDIR}/opendnssec/kasp.db) does not exist
+    INFO: The XML in ${SYSCONFDIR}/opendnssec/kasp.xml is valid
+    INFO: The XML in ${SYSCONFDIR}/opendnssec/zonelist.xml is valid
+
 Create an initial KASP database (if you are running the mysql flavor you
 will first need to configure mariadb-server and modify <Datastore> in
 ${SYSCONFDIR}/opendnssec/conf.xml):
-# ods-ksmutil setup
 
-Start the OpenDNSSEC system:
-# rcctl start opendnssec
+    # doas -u _opendnssec ods-enforcer-db-setup
+    *WARNING* This will erase all data in the database; are you sure? [y/N] y
+    Database setup successfully.
+
+Start OpenDNSSEC:
+
+    # rcctl start opendnssec
+
+Import policy:
+
+    # doas -u _opendnssec ods-enforcer policy import
+    Created policy default successfully
+
+Check policy:
+
+    # ods-enforcer policy list
+    Policy:                         Description:
+    default                         ECDSAP256SHA256 NSEC3 KSK1Y ZSK90D
 
 Copy an unsigned zone file into the unsigned/ directory:
-# cp <somewhere>/example.com ${LOCALSTATEDIR}/opendnssec/unsigned/
 
-Add the zone:
-# ods-ksmutil zone add --zone example.com --policy default
+    # cp <somewhere>/example.com ${LOCALSTATEDIR}/opendnssec/unsigned/
 
-Notify the enforcer of the updated database:
-# ods-control enforcer notify
+Import zones from zonelist.xml:
 
-You now have a signed version of example.com in the signed/ directory:
-# cat ${LOCALSTATEDIR}/opendnssec/signed/example.com
+    # doas -u _opendnssec ods-enforcer zonelist import
+    Zone example.com created successfully
 
-List the keys for the zone:
-# ods-ksmutil key list -v
+Or add the zone from the command line:
+
+    # doas -u _opendnssec ods-enforcer zone add --zone example.com
+    input is set to ${LOCALSTATEDIR}/opendnssec/unsigned/example.com.
+    output is set to ${LOCALSTATEDIR}/opendnssec/signed/example.com.
+    Zone example.com added successfully
+
+Check the zone:
+
+    # doas -u _opendnssec ods-enforcer zone list
+    Database set to: ${LOCALSTATEDIR}/opendnssec/kasp.db
+    Zones:
+    Zone:                           Policy:       Next change:
+    example.com                     default       Fri Nov 16 14:50:25 2018
+
+List the keys:
+
+    # ods-enforcer key list
+    Keys:
+    Zone:                           Keytype: State:    Date of next transition:
+    example.com                     KSK      publish   2018-11-16 14:50:25
+    example.com                     ZSK      ready     2018-11-16 14:50:25
+
+After the KSK state transitions to "waiting for ds-seen", export the DS record:
+
+    # doas -u _opendnssec ods-enforcer key list
+    Keys:
+    Zone:
+    example.com                     KSK      ready     waiting for ds-seen
+    example.com                     ZSK      active    2019-02-14 00:50:25
+
+    # doas -u _opendnssec ods-enforcer key export --zone example.com \
+        --keystate ready --keytype KSK --ds
+    ;ready KSK DS record (SHA256):
+    example.com.    600     IN      DS      65331 13 2 <DSKEY>
+
+Before submitting DS record to the parent zone, run:
+
+    # doas -u _opendnssec \
+        ods-enforcer key ds-submit --zone example.com --keytag 65331
+
+Then submit the DS record to the parent zone.
+
+When DS RR appears in the parent zone, activate the KSK:
+
+    # ods-enforcer key ds-seen --zone example.com --keytag 65331
+    1 KSK matches found.
+    1 KSKs changed.
+    # ods-enforcer key list -v
+    Keys:
+    Zone:                           Keytype: State:    Date of next transition:
+    example.com                     KSK      active    2018-11-17 20:07:31
+    example.com                     ZSK      active    2018-11-17 20:07:31
+
+The signed zone will appear in ${LOCALSTATEDIR}/opendnssec/signed/ directory
+or will be transferred to your authoritative DNS server, depending on the zone
+output configuration.
+
+Upgrading from version 1.4.x to 2.x
+-----------------------------------
+OpenDNSSEC enforcer database migration is required if you are upgrading from
+1.4.x to 2.x. Read ${PREFIX}/share/doc/opendnssec/MIGRATION
+for more information.
+
+Database conversion scripts
+---------------------------
+Note that OpenDNSSEC database conversion scripts are installed in
+${PREFIX}/sbin and renamed:
+    convert_mysql_to_sqlite to ods-convert_mysql_to_sqlite
+    convert_sqlite_to_mysql to ods-convert_sqlite_to_mysql

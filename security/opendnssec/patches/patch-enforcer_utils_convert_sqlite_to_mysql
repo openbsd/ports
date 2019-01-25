@@ -1,0 +1,21 @@
+$OpenBSD: patch-enforcer_utils_convert_sqlite_to_mysql,v 1.1 2019/01/25 08:32:02 pvk Exp $
+
+Index: enforcer/utils/convert_sqlite_to_mysql
+--- enforcer/utils/convert_sqlite_to_mysql.orig
++++ enforcer/utils/convert_sqlite_to_mysql
+@@ -1,11 +1,11 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ set -e
+ 
+-# This scipt converts a SQLite3 to a MySQL database. It assumes both
+-# old and new databases live on the same host and are accessable by the same 
++# This script converts a SQLite3 to a MySQL database. It assumes both
++# old and new databases live on the same host and are accessible by the same 
+ # user.
+ 
+-SCHEMA=../src/db/schema.mysql
++SCHEMA=${PREFIX}/share/opendnssec/schema.mysql
+ 
+ DB_IN=""
+ DB_OUT=""

@@ -1,6 +1,8 @@
-$OpenBSD: patch-conf_conf_xml_in,v 1.2 2016/11/19 12:25:27 sthen Exp $
---- conf/conf.xml.in.orig	Mon Oct 17 14:32:58 2016
-+++ conf/conf.xml.in	Mon Nov 14 18:41:45 2016
+$OpenBSD: patch-conf_conf_xml_in,v 1.3 2019/01/25 08:32:02 pvk Exp $
+
+Index: conf/conf.xml.in
+--- conf/conf.xml.in.orig
++++ conf/conf.xml.in
 @@ -31,7 +31,7 @@
  		<Logging>
  			<!-- Command line verbosity will overwrite configure file -->
@@ -10,41 +12,33 @@ $OpenBSD: patch-conf_conf_xml_in,v 1.2 2016/11/19 12:25:27 sthen Exp $
  		</Logging>
  		
  		<PolicyFile>@OPENDNSSEC_CONFIG_DIR@/kasp.xml</PolicyFile>
-@@ -39,19 +39,17 @@
+@@ -39,10 +39,10 @@
  	</Common>
  
  	<Enforcer>
--<!--
- 		<Privileges>
--			<User>opendnssec</User>
--			<Group>opendnssec</Group>
+-<?xmlif if condition privdrop="user|group|both"?>		<Privileges>
+-<?xmlif fi?><?xmlif if condition privdrop="user|both"?>			<User>@INSTALLATIONUSER@</User>
+-<?xmlif fi?><?xmlif if condition privdrop="group|both"?>			<Group>@INSTALLATIONGROUP@</Group>
+-<?xmlif fi?><?xmlif if condition privdrop="user|group|both"?>		</Privileges><?xmlif fi?>
++		<Privileges>
 +			<User>_opendnssec</User>
 +			<Group>_opendnssec</Group>
- 		</Privileges>
---->
- <!-- NOTE: Enforcer worker threads are not used; this option is ignored -->
- <!--
- 		<WorkerThreads>4</WorkerThreads>
- -->
++		</Privileges>
  
- 		<!-- <PidFile>@OPENDNSSEC_ENFORCER_PIDFILE@</PidFile> -->
--		<Datastore><SQLite>@OPENDNSSEC_STATE_DIR@/kasp.db</SQLite></Datastore>
-+		<Datastore><SQLite>@OPENDNSSEC_STATE_DIR@/db/kasp.db</SQLite></Datastore>
- 		<Interval>PT3600S</Interval>
+ 		<Datastore><SQLite>@OPENDNSSEC_STATE_DIR@/kasp.db</SQLite></Datastore>
  		<!-- <ManualKeyGeneration/> -->
- 		<!-- <RolloverNotification>P14D</RolloverNotification> -->
-@@ -63,12 +61,10 @@
+@@ -59,10 +59,10 @@
  	</Enforcer>
  
  	<Signer>
--<!--
- 		<Privileges>
--			<User>opendnssec</User>
--			<Group>opendnssec</Group>
+-<?xmlif if condition privdrop="user|group|both"?>		<Privileges>
+-<?xmlif fi?><?xmlif if condition privdrop="user|both"?>			<User>@INSTALLATIONUSER@</User>
+-<?xmlif fi?><?xmlif if condition privdrop="group|both"?>			<Group>@INSTALLATIONGROUP@</Group>
+-<?xmlif fi?><?xmlif if condition privdrop="user|group|both"?>		</Privileges><?xmlif fi?>
++		<Privileges>
 +			<User>_opendnssec</User>
 +			<Group>_opendnssec</Group>
- 		</Privileges>
---->
++		</Privileges>
  
- 		<!-- <PidFile>@OPENDNSSEC_SIGNER_PIDFILE@</PidFile> -->
- 		<!-- <SocketFile>@OPENDNSSEC_SIGNER_SOCKET@</SocketFile> -->
+ 		<WorkingDirectory>@OPENDNSSEC_STATE_DIR@/signer</WorkingDirectory>
+ 		<WorkerThreads>4</WorkerThreads>

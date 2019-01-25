@@ -1,0 +1,18 @@
+$OpenBSD: patch-MIGRATION,v 1.1 2019/01/25 08:32:02 pvk Exp $
+
+Index: MIGRATION
+--- MIGRATION.orig
++++ MIGRATION
+@@ -17,7 +17,8 @@ full resign of your zone when upgrading, however if yo
+ a full resign is needed.
+ 
+ The enforcer does require a full migration, as the internal database has
+-been completely revised.  See the documentation in the source tree
+-enforcer/utils/1.4-2.0_db_convert/README.md for a description.
+-Migration scripts are not installed and should be retrieved from the source
+-separately.
++been completely revised.
++See the documentation in ${PREFIX}/share/doc/opendnssec/MIGRATE_1.4-2.0.md
++for a description.
++
++Migration script is installed in ${PREFIX}/sbin/ods-migrate${FLAVOR_EXT}
