@@ -1,9 +1,9 @@
-$OpenBSD: patch-pdns_recursor_cc,v 1.1.1.1 2018/12/29 14:29:08 sthen Exp $
+$OpenBSD: patch-pdns_recursor_cc,v 1.2 2019/01/25 06:31:04 otto Exp $
 
 Index: pdns_recursor.cc
 --- pdns_recursor.cc.orig
 +++ pdns_recursor.cc
-@@ -2132,7 +2132,12 @@ static void doStats(void)
+@@ -2144,7 +2144,12 @@ static void doStats(void)
    uint64_t cacheMisses = broadcastAccFunction<uint64_t>(pleaseGetCacheMisses);
  
    if(g_stats.qcounter && (cacheHits + cacheMisses) && SyncRes::s_queries && SyncRes::s_outqueries) {
@@ -17,7 +17,7 @@ Index: pdns_recursor.cc
        broadcastAccFunction<uint64_t>(pleaseGetCacheSize)<< " cache entries, "<<
        broadcastAccFunction<uint64_t>(pleaseGetNegCacheSize)<<" negative entries, "<<
        (int)((cacheHits*100.0)/(cacheHits+cacheMisses))<<"% cache hits"<<endl;
-@@ -2142,9 +2147,9 @@ static void doStats(void)
+@@ -2154,9 +2159,9 @@ static void doStats(void)
        << broadcastAccFunction<uint64_t>(pleaseGetNsSpeedsSize)<<endl;
      L<<Logger::Notice<<"stats: outpacket/query ratio "<<(int)(SyncRes::s_outqueries*100.0/SyncRes::s_queries)<<"%";
      L<<Logger::Notice<<", "<<(int)(SyncRes::s_throttledqueries*100.0/(SyncRes::s_outqueries+SyncRes::s_throttledqueries))<<"% throttled, "

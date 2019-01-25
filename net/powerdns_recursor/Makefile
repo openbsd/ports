@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/29 14:29:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/01/25 06:31:04 otto Exp $
 
 COMMENT=		recursive nameserver
 
-V=			4.1.8
+V=			4.1.10
 DISTNAME=		pdns-recursor-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME=		powerdns-recursor-${V}
@@ -18,6 +18,7 @@ WANTLIB += ${COMPILER_LIBCXX} boost_context-mt boost_system-mt
 WANTLIB += boost_thread-mt c crypto m sodium
 
 MASTER_SITES=		https://downloads.powerdns.com/releases/
+MAINTAINER=     	Otto Moerbeek <otto@drijf.net>
 
 COMPILER =		base-clang ports-gcc
 
