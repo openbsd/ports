@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.373 2018/12/11 12:07:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.374 2019/01/25 07:41:05 giovanni Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -181,6 +181,7 @@
      SUBDIR += popclient
      SUBDIR += poppy
      SUBDIR += postfix
+     SUBDIR += postfix-policyd-spf-perl
      SUBDIR += postfwd
      SUBDIR += postgrey
      SUBDIR += procmail
