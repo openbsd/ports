@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2018/12/16 08:50:11 semarie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/01/25 16:01:54 landry Exp $
 
 COMMENT =		C bindings generator from rust code
 
 GH_ACCOUNT =		eqrion
 GH_PROJECT =		cbindgen
-GH_TAGNAME =		v0.6.7
+GH_TAGNAME =		v0.6.8
 
 CATEGORIES =		devel
 
@@ -45,7 +45,7 @@ MODCARGO_CRATES +=      serde_derive	1.0.58     	# MIT/Apache-2.0
 MODCARGO_CRATES +=      serde_json	1.0.19       	# MIT/Apache-2.0
 MODCARGO_CRATES +=      strsim	0.7.0    	# MIT
 MODCARGO_CRATES +=      syn	0.13.11     	# MIT/Apache-2.0
-MODCARGO_CRATES +=      syn	0.14.1      	# MIT/Apache-2.0
+MODCARGO_CRATES +=      syn	0.15.23      	# MIT/Apache-2.0
 MODCARGO_CRATES +=      tempfile	3.0.3  	# MIT/Apache-2.0
 MODCARGO_CRATES +=      termion	1.5.1   	# MIT
 MODCARGO_CRATES +=      textwrap	0.9.0  	# MIT
