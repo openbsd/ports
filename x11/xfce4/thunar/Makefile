@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.71 2018/06/29 22:16:36 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2019/01/25 16:22:42 landry Exp $
 
 COMMENT=	Xfce4 file manager
 
-XFCE_VERSION=	1.6.15
+XFCE_VERSION=	1.6.16
 XFCE_PROJECT=	Thunar
 # :L is here for a reason
 PKGNAME=	${DISTNAME:L}
 PORTROACH=	limitw:1,even
-REVISION =	2
 
 SHARED_LIBS=	thunarx-2	0.0
 
@@ -44,7 +43,7 @@ WANTLIB += atk-1.0 c cairo dbus-1 dbus-glib-1 exif exo-1 expat
 WANTLIB += ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread startup-notification-1
+WANTLIB += pcre pixman-1 png16 fribidi pthread startup-notification-1
 WANTLIB += xcb xcb-util xcb-render xcb-shm xfce4panel-1.0 xfce4ui-1
 WANTLIB += xfce4util z xfconf-0 harfbuzz graphite2 iconv intl
 
