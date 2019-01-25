@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2019/01/25 22:03:17 sthen Exp $
+
+Fix in perl 5.26.0+ (no . in @INC by default)
+https://rt.cpan.org/Public/Bug/Display.html?id=121730
+
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -1,4 +1,5 @@
+ use strict;
++BEGIN { push @INC, '.'; }
+ use inc::Module::Install;
+ 
+ name           'Params-Coerce';
