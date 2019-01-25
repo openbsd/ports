@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_include_OpenImageIO_simd_h,v 1.1 2019/01/25 20:09:43 naddy Exp $
+
+Fix warnings revealed on clang 7.0
+https://github.com/OpenImageIO/oiio/commit/545251d93519d8a505693a669f0d1b9f913bf29e
+
+Index: src/include/OpenImageIO/simd.h
+--- src/include/OpenImageIO/simd.h.orig
++++ src/include/OpenImageIO/simd.h
+@@ -313,6 +313,7 @@ template<typename T,int elements> struct VecType {};
+ template<> struct VecType<int,1>   { typedef int type; };
+ template<> struct VecType<float,1> { typedef float type; };
+ template<> struct VecType<int,4>   { typedef vint4 type; };
++template<> struct VecType<float,4>   { typedef vfloat4 type; };
+ template<> struct VecType<float,3> { typedef vfloat3 type; };
+ template<> struct VecType<bool,4>  { typedef vbool4 type; };
+ template<> struct VecType<int,8>   { typedef vint8 type; };
