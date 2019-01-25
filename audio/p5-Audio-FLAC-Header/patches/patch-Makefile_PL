@@ -1,7 +1,16 @@
-$OpenBSD: patch-Makefile_PL,v 1.6 2014/12/21 13:32:54 benoit Exp $
---- Makefile.PL.orig	Fri Apr 17 05:54:44 2009
-+++ Makefile.PL	Sun Dec 21 08:32:21 2014
-@@ -34,7 +34,9 @@
+$OpenBSD: patch-Makefile_PL,v 1.7 2019/01/25 22:27:50 sthen Exp $
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -3,6 +3,7 @@
+ use strict;
+ use warnings;
+ use Config;
++BEGIN { push @INC, '.'; }
+ use inc::Module::Install;
+ 
+ # Automatically select XS or PP version in case neither argument is given
+@@ -34,7 +35,9 @@ if ($do_xs) {
    if ($^O =~ /win32/i) {
      cc_lib_links('FLAC_static');
    } else {
@@ -12,7 +21,7 @@ $OpenBSD: patch-Makefile_PL,v 1.6 2014/12/21 13:32:54 benoit Exp $
      cc_optimize_flags('-Wall') if $Config::Config{'archname'} =~ /gnu/i;
    }
  
-@@ -57,12 +59,12 @@
+@@ -57,12 +60,12 @@ sub search_lib {
    my $libbase = 'lib' . substr($lib, 2) . $Config{lib_ext};
    my $libbase_so = 'lib' . substr($lib, 2) . "." . $Config{so};
  
