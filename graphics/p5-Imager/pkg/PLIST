@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2015/07/16 23:57:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/01/25 13:18:50 cwen Exp $
 @pkgpath graphics/p5-Imager,libs
 ${P5ARCH}/
 ${P5ARCH}/Imager/
@@ -70,6 +70,7 @@ ${P5ARCH}/Imager/include/imageri.h
 ${P5ARCH}/Imager/include/imconfig.h
 ${P5ARCH}/Imager/include/imdatatypes.h
 ${P5ARCH}/Imager/include/imerror.h
+${P5ARCH}/Imager/include/imexif.h
 ${P5ARCH}/Imager/include/imext.h
 ${P5ARCH}/Imager/include/imextdef.h
 ${P5ARCH}/Imager/include/imextpl.h
