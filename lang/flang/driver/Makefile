@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/01/25 20:06:48 bcallah Exp $
 
 # If you are updating to a new version
 # (e.g. 6.0->6.1 or 7.0), you need to sync
@@ -13,7 +13,7 @@ GH_COMMIT =	f90d905b99ef497cc654b4a8433f1ac35a870f11
 WANTLIB += ${COMPILER_LIBCXX} c m z
 
 # C++11
-COMPILER =	base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		lang/python
