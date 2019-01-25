@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_in,v 1.5 2019/01/25 00:03:38 cwen Exp $
+Unbreak the build with ports-gcc and --std=c89
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -1227,7 +1227,6 @@ AC_PROG_CC_ANSI
+ AC_NO_LONG_STRING_WARNINGS
+ AC_NO_MISPLACED_DECLARATIONS
+ AC_NO_OBJECTIVE_C
+-AC_NO_CPLUSPLUS_COMMENTS_IN_C_CODE
+ AC_PROG_CPP
+ AC_C_CONST
+ AC_C_INLINE

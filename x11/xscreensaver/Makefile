@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.101 2019/01/19 15:02:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.102 2019/01/25 00:03:38 cwen Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
 # XXX x11/kde4/artwork plist may need regen if an update adds a new hack.
 DISTNAME=		xscreensaver-5.42
+REVISION=		0
 
 CATEGORIES=		x11
 
-HOMEPAGE=		http://www.jwz.org/xscreensaver/
+HOMEPAGE=		https://www.jwz.org/xscreensaver/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,6 +22,8 @@ WANTLIB += jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread
 WANTLIB += util xml2 z
 
 MASTER_SITES=		${HOMEPAGE}
+
+COMPILER=		base-clang ports-gcc
 
 MODULES=		textproc/intltool
 
@@ -40,7 +43,8 @@ RUN_DEPENDS +=		devel/xdg-utils
 USE_GMAKE=		Yes
 NO_TEST=		Yes
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 CONFIGURE_ARGS=		--with-hackdir="${PREFIX}/libexec/xscreensaver" \
 			--with-x-app-defaults="${PREFIX}/lib/X11/app-defaults" \
 			--without-pam
