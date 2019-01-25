@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: conserver.rc,v 1.10 2018/06/01 17:06:21 sthen Exp $
+# $OpenBSD: conserver.rc,v 1.11 2019/01/25 11:35:54 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/conserver -d"
 daemon_flags="-n"
@@ -14,6 +14,24 @@ rc_pre() {
 	install -d -o _conserver /var/run/conserver
 	[[ -f /var/log/conserver ]] || install -o _conserver \
 	    -m 644 /dev/null /var/log/conserver
+}
+
+rc_reload() {
+        if pgrep -T "${daemon_rtable}" -q -xf 'conserver: master.*'; then
+                pkill -HUP -T "${daemon_rtable}" -xf 'conserver: master.*'
+        else
+                pkill -HUP -T "${daemon_rtable}" -xf \
+		    "(${daemon}${daemon_flags:+ ${daemon_flags}}|conserver: .*)"
+        fi
+}
+
+rc_stop() {
+        if pgrep -T "${daemon_rtable}" -q -xf 'conserver: master.*'; then
+                pkill -T "${daemon_rtable}" -xf 'conserver: master.*'
+        else
+                pkill -T "${daemon_rtable}" -xf \
+		    "(${daemon}${daemon_flags:+ ${daemon_flags}}|conserver: .*)"
+        fi
 }
 
 rc_cmd $1

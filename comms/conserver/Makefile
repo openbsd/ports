@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2018/09/04 12:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2019/01/25 11:35:54 sthen Exp $
 
 COMMENT=	manage remote serial consoles via TCP/IP
 
 V=		8.2.2
-REVISION=	1
+REVISION=	2
 DISTNAME=	conserver-$V
 CATEGORIES=	comms
 
