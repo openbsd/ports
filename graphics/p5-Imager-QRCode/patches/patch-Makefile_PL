@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2019/01/26 21:44:01 sthen Exp $
+
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -1,5 +1,6 @@
+ use strict;
+ use warnings;
++BEGIN { push @INC, '.'; }
+ use inc::Module::Install;
+ use File::Copy;
+ 
