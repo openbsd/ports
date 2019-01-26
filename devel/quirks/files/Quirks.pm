@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.708 2019/01/26 14:42:55 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.709 2019/01/26 21:50:10 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1141,6 +1141,7 @@ my $obsolete_reason = {
 	'ushare' => 3,
 	'ffmpeg2theora' => 6,
 	'p5-WWW-Google-SiteMap' => 3,
+	'p5-YAML-Perl' => 3,
 };
 
 # reasons for obsolete packages
