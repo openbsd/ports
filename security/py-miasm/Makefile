@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2018/07/01 19:13:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/01/26 06:45:20 rpointel Exp $
 
 BROKEN-i386 =	uint128_t
 
 COMMENT =	reverse engineering framework in Python
 
-MODPY_EGG_VERSION = 2.0
+MODPY_EGG_VERSION = 2.0.1.1
 DISTNAME =	miasm-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
 GH_ACCOUNT =	cea-sec
 GH_PROJECT =	miasm
-GH_COMMIT =	0adddb12a7410c4bbdd6ee79252e9bf05ca22818
+GH_COMMIT =	f7157afaccd897fb00eeb97817d124790f0ede67
 
 CATEGORIES =	security devel
 

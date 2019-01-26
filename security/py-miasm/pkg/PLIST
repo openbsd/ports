@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/27 14:32:24 rpointel Exp $
-lib/python${MODPY_VERSION}/site-packages/Miasm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+@comment $OpenBSD: PLIST,v 1.2 2019/01/26 06:45:20 rpointel Exp $
+lib/python${MODPY_VERSION}/site-packages/Miasm-2.0-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/miasm2/
 lib/python${MODPY_VERSION}/site-packages/miasm2/__init__.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/__init__.pyc
@@ -32,6 +32,8 @@ lib/python${MODPY_VERSION}/site-packages/miasm2/analysis/modularintervals.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/analysis/modularintervals.pyc
 lib/python${MODPY_VERSION}/site-packages/miasm2/analysis/sandbox.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/analysis/sandbox.pyc
+lib/python${MODPY_VERSION}/site-packages/miasm2/analysis/ssa.py
+lib/python${MODPY_VERSION}/site-packages/miasm2/analysis/ssa.pyc
 lib/python${MODPY_VERSION}/site-packages/miasm2/arch/
 lib/python${MODPY_VERSION}/site-packages/miasm2/arch/__init__.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/arch/__init__.pyc
@@ -65,6 +67,21 @@ lib/python${MODPY_VERSION}/site-packages/miasm2/arch/arm/regs.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/arch/arm/regs.pyc
 lib/python${MODPY_VERSION}/site-packages/miasm2/arch/arm/sem.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/arch/arm/sem.pyc
+lib/python${MODPY_VERSION}/site-packages/miasm2/arch/mep/
+lib/python${MODPY_VERSION}/site-packages/miasm2/arch/mep/__init__.py
+lib/python${MODPY_VERSION}/site-packages/miasm2/arch/mep/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/miasm2/arch/mep/arch.py
+lib/python${MODPY_VERSION}/site-packages/miasm2/arch/mep/arch.pyc
+lib/python${MODPY_VERSION}/site-packages/miasm2/arch/mep/disasm.py
+lib/python${MODPY_VERSION}/site-packages/miasm2/arch/mep/disasm.pyc
+lib/python${MODPY_VERSION}/site-packages/miasm2/arch/mep/ira.py
+lib/python${MODPY_VERSION}/site-packages/miasm2/arch/mep/ira.pyc
+lib/python${MODPY_VERSION}/site-packages/miasm2/arch/mep/jit.py
+lib/python${MODPY_VERSION}/site-packages/miasm2/arch/mep/jit.pyc
+lib/python${MODPY_VERSION}/site-packages/miasm2/arch/mep/regs.py
+lib/python${MODPY_VERSION}/site-packages/miasm2/arch/mep/regs.pyc
+lib/python${MODPY_VERSION}/site-packages/miasm2/arch/mep/sem.py
+lib/python${MODPY_VERSION}/site-packages/miasm2/arch/mep/sem.pyc
 lib/python${MODPY_VERSION}/site-packages/miasm2/arch/mips32/
 lib/python${MODPY_VERSION}/site-packages/miasm2/arch/mips32/__init__.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/arch/mips32/__init__.pyc
@@ -141,8 +158,6 @@ lib/python${MODPY_VERSION}/site-packages/miasm2/core/__init__.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/core/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/miasm2/core/asm_ast.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/core/asm_ast.pyc
-lib/python${MODPY_VERSION}/site-packages/miasm2/core/asmbloc.py
-lib/python${MODPY_VERSION}/site-packages/miasm2/core/asmbloc.pyc
 lib/python${MODPY_VERSION}/site-packages/miasm2/core/asmblock.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/core/asmblock.pyc
 lib/python${MODPY_VERSION}/site-packages/miasm2/core/bin_stream.py
@@ -157,6 +172,8 @@ lib/python${MODPY_VERSION}/site-packages/miasm2/core/graph.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/core/graph.pyc
 lib/python${MODPY_VERSION}/site-packages/miasm2/core/interval.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/core/interval.pyc
+lib/python${MODPY_VERSION}/site-packages/miasm2/core/locationdb.py
+lib/python${MODPY_VERSION}/site-packages/miasm2/core/locationdb.pyc
 lib/python${MODPY_VERSION}/site-packages/miasm2/core/objc.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/core/objc.pyc
 lib/python${MODPY_VERSION}/site-packages/miasm2/core/parse_asm.py
@@ -186,6 +203,8 @@ lib/python${MODPY_VERSION}/site-packages/miasm2/expression/simplifications_commo
 lib/python${MODPY_VERSION}/site-packages/miasm2/expression/simplifications_common.pyc
 lib/python${MODPY_VERSION}/site-packages/miasm2/expression/simplifications_cond.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/expression/simplifications_cond.pyc
+lib/python${MODPY_VERSION}/site-packages/miasm2/expression/simplifications_explicit.py
+lib/python${MODPY_VERSION}/site-packages/miasm2/expression/simplifications_explicit.pyc
 lib/python${MODPY_VERSION}/site-packages/miasm2/expression/smt2_helper.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/expression/smt2_helper.pyc
 lib/python${MODPY_VERSION}/site-packages/miasm2/ir/
@@ -228,6 +247,8 @@ lib/python${MODPY_VERSION}/site-packages/miasm2/jitter/arch/JitCore_aarch64.h
 lib/python${MODPY_VERSION}/site-packages/miasm2/jitter/arch/JitCore_aarch64.so
 lib/python${MODPY_VERSION}/site-packages/miasm2/jitter/arch/JitCore_arm.h
 lib/python${MODPY_VERSION}/site-packages/miasm2/jitter/arch/JitCore_arm.so
+lib/python${MODPY_VERSION}/site-packages/miasm2/jitter/arch/JitCore_mep.h
+lib/python${MODPY_VERSION}/site-packages/miasm2/jitter/arch/JitCore_mep.so
 lib/python${MODPY_VERSION}/site-packages/miasm2/jitter/arch/JitCore_mips32.h
 lib/python${MODPY_VERSION}/site-packages/miasm2/jitter/arch/JitCore_mips32.so
 lib/python${MODPY_VERSION}/site-packages/miasm2/jitter/arch/JitCore_msp430.h
@@ -239,6 +260,7 @@ lib/python${MODPY_VERSION}/site-packages/miasm2/jitter/arch/JitCore_x86.h
 lib/python${MODPY_VERSION}/site-packages/miasm2/jitter/arch/JitCore_x86.so
 lib/python${MODPY_VERSION}/site-packages/miasm2/jitter/arch/__init__.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/jitter/arch/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/miasm2/jitter/bn.h
 lib/python${MODPY_VERSION}/site-packages/miasm2/jitter/codegen.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/jitter/codegen.pyc
 lib/python${MODPY_VERSION}/site-packages/miasm2/jitter/csts.py
@@ -277,6 +299,13 @@ lib/python${MODPY_VERSION}/site-packages/miasm2/os_dep/__init__.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/os_dep/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/miasm2/os_dep/common.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/os_dep/common.pyc
+lib/python${MODPY_VERSION}/site-packages/miasm2/os_dep/linux/
+lib/python${MODPY_VERSION}/site-packages/miasm2/os_dep/linux/__init__.py
+lib/python${MODPY_VERSION}/site-packages/miasm2/os_dep/linux/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/miasm2/os_dep/linux/environment.py
+lib/python${MODPY_VERSION}/site-packages/miasm2/os_dep/linux/environment.pyc
+lib/python${MODPY_VERSION}/site-packages/miasm2/os_dep/linux/syscall.py
+lib/python${MODPY_VERSION}/site-packages/miasm2/os_dep/linux/syscall.pyc
 lib/python${MODPY_VERSION}/site-packages/miasm2/os_dep/linux_stdlib.py
 lib/python${MODPY_VERSION}/site-packages/miasm2/os_dep/linux_stdlib.pyc
 lib/python${MODPY_VERSION}/site-packages/miasm2/os_dep/win_32_structs.py
@@ -295,12 +324,16 @@ share/${MODPY_PY_PREFIX}miasm/example/asm/simple.pyc
 share/${MODPY_PY_PREFIX}miasm/example/disasm/
 share/${MODPY_PY_PREFIX}miasm/example/disasm/callback.py
 share/${MODPY_PY_PREFIX}miasm/example/disasm/callback.pyc
-share/${MODPY_PY_PREFIX}miasm/example/disasm/file.py
-share/${MODPY_PY_PREFIX}miasm/example/disasm/file.pyc
+share/${MODPY_PY_PREFIX}miasm/example/disasm/dis_binary.py
+share/${MODPY_PY_PREFIX}miasm/example/disasm/dis_binary.pyc
+share/${MODPY_PY_PREFIX}miasm/example/disasm/dis_binary_ir.py
+share/${MODPY_PY_PREFIX}miasm/example/disasm/dis_binary_ir.pyc
+share/${MODPY_PY_PREFIX}miasm/example/disasm/dis_binary_ira.py
+share/${MODPY_PY_PREFIX}miasm/example/disasm/dis_binary_ira.pyc
+share/${MODPY_PY_PREFIX}miasm/example/disasm/dis_x86_string.py
+share/${MODPY_PY_PREFIX}miasm/example/disasm/dis_x86_string.pyc
 share/${MODPY_PY_PREFIX}miasm/example/disasm/full.py
 share/${MODPY_PY_PREFIX}miasm/example/disasm/full.pyc
-share/${MODPY_PY_PREFIX}miasm/example/disasm/function.py
-share/${MODPY_PY_PREFIX}miasm/example/disasm/function.pyc
 share/${MODPY_PY_PREFIX}miasm/example/disasm/single_instr.py
 share/${MODPY_PY_PREFIX}miasm/example/disasm/single_instr.pyc
 share/${MODPY_PY_PREFIX}miasm/example/expression/
@@ -314,6 +347,8 @@ share/${MODPY_PY_PREFIX}miasm/example/expression/basic_simplification.py
 share/${MODPY_PY_PREFIX}miasm/example/expression/basic_simplification.pyc
 share/${MODPY_PY_PREFIX}miasm/example/expression/constant_propagation.py
 share/${MODPY_PY_PREFIX}miasm/example/expression/constant_propagation.pyc
+share/${MODPY_PY_PREFIX}miasm/example/expression/export_llvm.py
+share/${MODPY_PY_PREFIX}miasm/example/expression/export_llvm.pyc
 share/${MODPY_PY_PREFIX}miasm/example/expression/expr_c.py
 share/${MODPY_PY_PREFIX}miasm/example/expression/expr_c.pyc
 share/${MODPY_PY_PREFIX}miasm/example/expression/expr_grapher.py
@@ -360,6 +395,8 @@ share/${MODPY_PY_PREFIX}miasm/example/jitter/mips32.py
 share/${MODPY_PY_PREFIX}miasm/example/jitter/mips32.pyc
 share/${MODPY_PY_PREFIX}miasm/example/jitter/msp430.py
 share/${MODPY_PY_PREFIX}miasm/example/jitter/msp430.pyc
+share/${MODPY_PY_PREFIX}miasm/example/jitter/run_with_linuxenv.py
+share/${MODPY_PY_PREFIX}miasm/example/jitter/run_with_linuxenv.pyc
 share/${MODPY_PY_PREFIX}miasm/example/jitter/sandbox_call.py
 share/${MODPY_PY_PREFIX}miasm/example/jitter/sandbox_call.pyc
 share/${MODPY_PY_PREFIX}miasm/example/jitter/sandbox_elf_aarch64l.py
@@ -384,6 +421,7 @@ share/${MODPY_PY_PREFIX}miasm/example/samples/arm_sc.S
 share/${MODPY_PY_PREFIX}miasm/example/samples/arm_simple.S
 share/${MODPY_PY_PREFIX}miasm/example/samples/armt.S
 share/${MODPY_PY_PREFIX}miasm/example/samples/box_upx.exe
+share/${MODPY_PY_PREFIX}miasm/example/samples/dse_crackme
 share/${MODPY_PY_PREFIX}miasm/example/samples/dse_crackme.c
 share/${MODPY_PY_PREFIX}miasm/example/samples/human.S
 share/${MODPY_PY_PREFIX}miasm/example/samples/md5_aarch64l
@@ -391,9 +429,9 @@ share/${MODPY_PY_PREFIX}miasm/example/samples/md5_arm
 share/${MODPY_PY_PREFIX}miasm/example/samples/md5_ppc32b
 share/${MODPY_PY_PREFIX}miasm/example/samples/mips32.S
 share/${MODPY_PY_PREFIX}miasm/example/samples/msp430.S
-share/${MODPY_PY_PREFIX}miasm/example/samples/sc_connect_back.bin
 share/${MODPY_PY_PREFIX}miasm/example/samples/simple_test.bin
 share/${MODPY_PY_PREFIX}miasm/example/samples/simple_test.c
+share/${MODPY_PY_PREFIX}miasm/example/samples/test_x86_32_dis.S
 share/${MODPY_PY_PREFIX}miasm/example/samples/x86_32_automod.S
 share/${MODPY_PY_PREFIX}miasm/example/samples/x86_32_dead.S
 share/${MODPY_PY_PREFIX}miasm/example/samples/x86_32_enc.S
