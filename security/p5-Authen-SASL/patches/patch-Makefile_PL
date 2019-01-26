@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2019/01/26 21:45:43 sthen Exp $
+
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -3,6 +3,7 @@
+ use strict;
+ use warnings;
+ use 5.005;
++BEGIN { push @INC, '.'; }
+ use inc::Module::Install;
+ 
+ name		'Authen-SASL';
