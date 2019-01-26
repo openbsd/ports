@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2019/01/26 03:40:34 sthen Exp $
+
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -6,7 +6,7 @@ BEGIN {
+     if (-e '../.git') {
+         do 'tools/check_mi_mods.pl';
+     } else {
+-        unshift @INC, 'inc';
++        unshift @INC, '.', 'inc';
+         require inc::Module::Install;
+         Module::Install->import;
+     }
