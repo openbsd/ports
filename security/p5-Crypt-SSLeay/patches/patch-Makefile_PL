@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_PL,v 1.8 2015/08/31 06:58:45 bluhm Exp $
+$OpenBSD: patch-Makefile_PL,v 1.9 2019/01/26 22:30:33 sthen Exp $
 
 Devel::CheckLib is never successful for libssl on OpenBSD.  You
 must specify -lssl and -lcrypto together, but Devel::CheckLib is
@@ -7,9 +7,14 @@ if p5-Crypt-SSLeay was compiled when p5-Devel-CheckLib was installed.
 
 Use the libraries we have on OpenBSD and do not use Devel::CheckLib.
 
---- Makefile.PL.orig	Thu Apr 24 16:50:29 2014
-+++ Makefile.PL	Mon Aug 31 00:40:37 2015
-@@ -11,7 +11,7 @@ use Try::Tiny;
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -8,10 +8,11 @@ use Getopt::Long qw( GetOptionsFromArray );
+ use Path::Class;
+ use Try::Tiny;
+ 
++BEGIN { push @INC, '.'; }
  use inc::IO::Interactive::Tiny;
  
  caller
@@ -18,7 +23,7 @@ Use the libraries we have on OpenBSD and do not use Devel::CheckLib.
  
  sub run {
      my $argv = shift;
-@@ -75,8 +75,6 @@ sub run {
+@@ -75,8 +76,6 @@ sub run {
              exit 0;
          };
      }
