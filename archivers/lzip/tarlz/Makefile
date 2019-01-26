@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2018/12/20 18:50:04 juanfra Exp $
+# $OpenBSD: Makefile,v 1.7 2019/01/26 22:23:22 juanfra Exp $
 
 COMMENT =		archiver based on tar and lzip multimembers
 
-DISTNAME =		tarlz-0.8
+DISTNAME =		tarlz-0.9
 
 HOMEPAGE =		http://lzip.nongnu.org/tarlz.html
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=lzip/tarlz/}
