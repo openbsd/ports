@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2018/12/02 20:19:59 pvk Exp $
+# $OpenBSD: Makefile,v 1.20 2019/01/26 22:11:30 pvk Exp $
 
-# N.B. netty-tcnative dynamically linked with libpthread.so.25.1/amd64
 ONLY_FOR_ARCHS =	amd64
 COMMENT =		tool for managing events and logs
 
-V =			6.5.1
+V =			6.5.4
 DISTNAME =		logstash-oss-$V
 PKGNAME =		logstash-$V
 EPOCH =			0
@@ -20,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		https://artifacts.elastic.co/downloads/logstash/
 
-MASTER_SITES0 =		https://distfiles.nl/
+MASTER_SITES0 =		https://openbsd.tristero.se/distfiles/
 DISTFILES =		logstash-oss-$V.tar.gz \
 			netty-tcnative-boringssl-static-2.0.7.Final.jar:0
 EXTRACT_ONLY =		logstash-oss-$V.tar.gz
