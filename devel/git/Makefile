@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.196 2018/12/16 13:53:22 kn Exp $
+# $OpenBSD: Makefile,v 1.197 2019/01/26 11:48:18 kn Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
@@ -10,6 +10,7 @@ PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
 PKGNAME-x11 =	git-x11-${V}
 CATEGORIES =	devel
+REVISION-main =	0
 
 HOMEPAGE =	https://git-scm.com/
 
@@ -35,7 +36,9 @@ MODPY_ADJ_FILES =	contrib/hooks/multimail/git_multimail.py \
 			contrib/hooks/multimail/post-receive.example
 
 BUILD_DEPENDS =		devel/gettext-tools \
-			devel/p5-Error
+			devel/p5-Error \
+			textproc/asciidoc \
+			textproc/xmlto
 
 MULTI_PACKAGES =	-main -svn -x11
 
@@ -65,7 +68,7 @@ PKG_ARCH-x11 =		*
 UPDATE_PLIST_ARGS += -i MODPY_VERSION
 
 MAKE_FLAGS =		V=1 \
-			gitexecdir=libexec/git \
+			gitexecdir=${TRUEPREFIX}/libexec/git \
 			TCLTK_PATH=${MODTK_BIN} \
 			TCL_PATH=${MODTCL_BIN}
 MAKE_ENV =		TEST_TAR=${LOCALBASE}/bin/gtar
@@ -112,6 +115,8 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/contrib/hooks/setgitperms.perl \
 		${PREFIX}/share/git-core/templates/hooks/setgitperms.perl
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/libexec/git
+	${MAKE_ENV} ${MAKE_PROGRAM} -C ${WRKBUILD}/contrib/subtree \
+		${MAKE_FLAGS} install install-man
 	${MAKE_ENV} ${MAKE_PROGRAM} -C ${WRKBUILD}/gitweb \
 		gitwebdir=${TRUEPREFIX}/share/gitweb install
 	perl -pi -e "s|${WRKINST}||g" ${PREFIX}/share/gitweb/gitweb.cgi
