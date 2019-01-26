@@ -1,9 +1,9 @@
-$OpenBSD: patch-config_jvm_options,v 1.1 2018/09/25 08:50:49 pvk Exp $
+$OpenBSD: patch-config_jvm_options,v 1.2 2019/01/26 22:03:48 pvk Exp $
 
 Index: config/jvm.options
 --- config/jvm.options.orig
 +++ config/jvm.options
-@@ -82,7 +82,7 @@
+@@ -90,7 +90,7 @@
  -XX:HeapDumpPath=data
  
  # specify an alternative path for JVM fatal error logs
@@ -12,7 +12,7 @@ Index: config/jvm.options
  
  ## JDK 8 GC logging
  
-@@ -90,13 +90,13 @@
+@@ -98,13 +98,13 @@
  8:-XX:+PrintGCDateStamps
  8:-XX:+PrintTenuringDistribution
  8:-XX:+PrintGCApplicationStoppedTime

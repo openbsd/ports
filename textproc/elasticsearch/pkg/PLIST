@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.32 2018/12/02 20:18:38 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.33 2019/01/26 22:03:48 pvk Exp $
 @newgroup _elasticsearch:748
 @newuser _elasticsearch:748:_elasticsearch:daemon:Elasticsearch Account:/nonexistent:/sbin/nologin
-@extraunexec rm -rf ${SYSCONFDIR}/elasticsearch/{elasticsearch.keystore,x-pack/}
-@extraunexec rm -rf ${PREFIX}/elasticsearch/{bin,plugins}/x-pack/
+@extraunexec rm -rf ${SYSCONFDIR}/elasticsearch/elasticsearch.keystore
 @extraunexec rm -rf ${LOCALSTATEDIR}/elasticsearch/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/log/elasticsearch/*
 @rcscript ${RCDIR}/elasticsearch
