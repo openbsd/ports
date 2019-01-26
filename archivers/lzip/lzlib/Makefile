@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2018/10/01 21:33:47 juanfra Exp $
+# $OpenBSD: Makefile,v 1.11 2019/01/26 22:21:01 juanfra Exp $
 
 COMMENT =		lzip compression library
 
-DISTNAME =		lzlib-1.10
-REVISION =		0
+DISTNAME =		lzlib-1.11
 
 SHARED_LIBS +=		lz	1.3 # 1.9
 
