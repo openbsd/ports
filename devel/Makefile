@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1806 2019/01/23 15:16:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1807 2019/01/26 21:49:25 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1183,7 +1183,6 @@
      SUBDIR += p5-Want
      SUBDIR += p5-WeakRef
      SUBDIR += p5-YAML
-     SUBDIR += p5-YAML-Perl
      SUBDIR += p5-YAML-Shell
      SUBDIR += p5-YAML-Syck
      SUBDIR += p5-YAML-Tiny
