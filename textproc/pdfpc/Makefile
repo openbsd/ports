@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2019/01/07 19:03:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2019/01/27 15:07:15 jasper Exp $
 
 COMMENT=		presenter console with multi-monitor support
 
 GH_ACCOUNT=		pdfpc
 GH_PROJECT=		pdfpc
-GH_TAGNAME=		v4.3.0
-PKGNAME=		pdfpc-${GH_TAGNAME:S/v//:S/-/./}
+GH_TAGNAME=		v4.3.1_0
+PKGNAME=		pdfpc-${GH_TAGNAME:S/v//:S/-/./:S/_/./}
 
 CATEGORIES=		textproc
 
