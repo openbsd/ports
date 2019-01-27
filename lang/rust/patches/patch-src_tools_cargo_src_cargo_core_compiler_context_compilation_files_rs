@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_tools_cargo_src_cargo_core_compiler_context_compilation_files_rs,v 1.1 2019/01/27 05:25:29 semarie Exp $
+Try to be more clever with rustc binary to avoid too much free raising dice on PLIST.
+Use an environment variable to override the verbose_version from rustc with choosen string.
+Index: src/tools/cargo/src/cargo/core/compiler/context/compilation_files.rs
+--- src/tools/cargo/src/cargo/core/compiler/context/compilation_files.rs.orig
++++ src/tools/cargo/src/cargo/core/compiler/context/compilation_files.rs
+@@ -464,7 +464,11 @@ fn compute_metadata<'a, 'cfg>(
+     unit.target.name().hash(&mut hasher);
+     unit.target.kind().hash(&mut hasher);
+ 
+-    bcx.rustc.verbose_version.hash(&mut hasher);
++    if let Ok(port_version) = env::var("OPENBSD_PORTS_LANG_RUST_VERSION") {
++        port_version.hash(&mut hasher);
++    } else {
++        bcx.rustc.verbose_version.hash(&mut hasher);
++    }
+ 
+     // Seed the contents of __CARGO_DEFAULT_LIB_METADATA to the hasher if present.
+     // This should be the release channel, to get a different hash for each channel.
