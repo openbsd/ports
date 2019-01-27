@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2018/10/17 14:15:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2019/01/27 20:00:50 sthen Exp $
 
 COMMENT=		web-based front end for the nfdump netflow tools
 
@@ -39,7 +39,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${WWWDIR}/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nfsen
 	${INSTALL_DATA_DIR} ${PREFIX}/${P5SITE}/NfSen/installer-items
-	cd ${WRKSRC} && INSTPREFIX=${WRKINST}/ ./install.pl etc/nfsen-dist.conf copy < /dev/null
+	cd ${WRKSRC} && INSTPREFIX=${WRKINST}/ ./install.pl ./etc/nfsen-dist.conf copy < /dev/null
 	${INSTALL_DATA} ${WRKINST}/etc/nfsen.conf ${PREFIX}/share/examples/nfsen
 	rm ${WRKINST}/etc/nfsen*
 	${INSTALL_SCRIPT} ${WRKSRC}/install.pl ${PREFIX}/bin/install-nfsen.pl
