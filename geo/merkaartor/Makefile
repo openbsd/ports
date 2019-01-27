@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2018/12/23 14:23:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2019/01/27 13:19:54 landry Exp $
 
 COMMENT =	OpenStreetMap editor
 
 GH_ACCOUNT =	openstreetmap
 GH_PROJECT =	merkaartor
 GH_TAGNAME =	0.18.3
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	geo x11
 
@@ -16,23 +16,29 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 NO_TEST =	Yes
-MODULES =	devel/qmake x11/qt4
+MODULES =	devel/qmake x11/qt5
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 # spatialite is marked as non-working
 LIB_DEPENDS =	devel/proj \
+		x11/qt5/qtwebkit \
+		x11/qt5/qtsvg \
+		archivers/quazip,qt5 \
 		geo/gdal
 
-WANTLIB += QtGui QtNetwork QtSvg QtWebKit QtXml c iconv intl m proj pthread gdal
-WANTLIB += ${COMPILER_LIBCXX} z ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
+MODQMAKE_ARGS = SYSTEM_QUAZIP=1 SYSTEM_QUAZIP_LDFLAGS=-lquazip5
+
+WANTLIB += GL Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Svg Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
+WANTLIB += c gdal m proj quazip5 z ${COMPILER_LIBCXX}
 
 # C++11
 COMPILER =		base-clang ports-gcc
 
 #generate the .qm files from the .ts files before configure runs
 pre-configure:
-	cd ${WRKSRC} && lrelease4 src/src.pro
+	cd ${WRKSRC} && lrelease-qt5 src/src.pro
 
 .include <bsd.port.mk>
 
