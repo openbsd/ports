@@ -1,7 +1,8 @@
-$OpenBSD: patch-cowsay_1,v 1.1.1.1 2002/06/18 17:11:33 naddy Exp $
---- cowsay.1.orig	Thu Jun 13 23:33:42 2002
-+++ cowsay.1	Thu Jun 13 23:39:13 2002
-@@ -44,7 +44,7 @@ after all the switches have been process
+$OpenBSD: patch-cowsay_1,v 1.2 2019/01/27 19:54:39 tj Exp $
+Index: cowsay.1
+--- cowsay.1.orig
++++ cowsay.1
+@@ -44,7 +44,7 @@ after all the switches have been processed.
  .PP
  The
  .B \-W
@@ -19,7 +20,7 @@ $OpenBSD: patch-cowsay_1,v 1.1.1.1 2002/06/18 17:11:33 naddy Exp $
  directory, or at least a directory with a file called 
  .B default.cow
  in it.
-@@ -165,4 +165,4 @@ Tony Monroe (tony@nog.net), with suggest
+@@ -165,4 +165,4 @@ Tony Monroe (tony@nog.net), with suggestions from Shan
  Appel (appel@CSUA.Berkeley.EDU) and contributions from Anthony Polito
  (aspolito@CSUA.Berkeley.EDU).
  .SH SEE ALSO

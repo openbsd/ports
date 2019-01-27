@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.9 2018/04/12 07:25:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/01/27 19:54:39 tj Exp $
 
 COMMENT=		speaking ascii cow
 
-DISTNAME=		cowsay-3.03
-REVISION=		0
+GH_ACCOUNT = tnalpgge
+GH_PROJECT = rank-amateur-cowsay
+GH_COMMIT = d66b866cf136502054e081b8714b09f7e43cd39f
+
+DISTNAME=		cowsay-3.04
 
 CATEGORIES=		games
 
 HOMEPAGE=		https://web.archive.org/web/20071026043648/http://www.nog.net/~tony/warez/cowsay.shtml
 
-# perl
+# perl (we're using the commit before the change to GPLv3)
 PERMIT_PACKAGE_CDROM=	Yes
-
-MASTER_SITES=		https://spacehopper.org/mirrors/
 
 NO_TEST=		Yes
 NO_BUILD=		Yes
@@ -28,7 +29,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/cowsay.1 ${PREFIX}/man/man1
 	ln -s cowsay.1 ${PREFIX}/man/man1/cowthink.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/cows
-	${INSTALL_DATA} ${WRKSRC}/cows/* ${FILESDIR}/blowfish.cow \
-		${PREFIX}/share/cows
+	${INSTALL_DATA} ${WRKSRC}/cows/* ${PREFIX}/share/cows
 
 .include <bsd.port.mk>
