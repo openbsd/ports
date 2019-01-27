@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_Plagger_FeedParser_pm,v 1.1 2019/01/27 23:11:35 cwen Exp $
+Fix Plagger runtime with p5-XML-Feed>=0.55
+Index: lib/Plagger/FeedParser.pm
+--- lib/Plagger/FeedParser.pm.orig
++++ lib/Plagger/FeedParser.pm
+@@ -4,7 +4,7 @@ use strict;
+ use Feed::Find;
+ use XML::Atom;
+ use XML::Feed;
+-use XML::Feed::RSS;
++use XML::Feed::Format::RSS;
+ $XML::Feed::RSS::PREFERRED_PARSER = "XML::RSS::LibXML";
+ $XML::Atom::ForceUnicode = 1;
+ 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_Plagger_Plugin_Publish_Feed_pm,v 1.1 2019/01/27 23:11:35 cwen Exp $
+Fix Plagger runtime with p5-XML-Feed>=0.55
+Index: lib/Plagger/Plugin/Publish/Feed.pm
+--- lib/Plagger/Plugin/Publish/Feed.pm.orig
++++ lib/Plagger/Plugin/Publish/Feed.pm
+@@ -5,7 +5,7 @@ use base qw( Plagger::Plugin );
+ 
+ use XML::Feed;
+ use XML::Feed::Entry;
+-use XML::Feed::RSS; # load explicitly to force LibXML
++use XML::Feed::Format::RSS; # load explicitly to force LibXML
+ use XML::RSS::LibXML;
+ use File::Spec;
+ 
