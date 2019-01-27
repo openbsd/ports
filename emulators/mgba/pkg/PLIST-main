@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2017/08/03 08:49:44 bentley Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2019/01/27 09:48:29 bentley Exp $
 @bin bin/mgba
 include/mgba/
 include/mgba/flags.h
@@ -6,7 +6,12 @@ include/mgba/flags.h
 @man man/man6/mgba.6
 share/doc/mGBA/
 share/doc/mGBA/CHANGES
+share/doc/mGBA/LICENSE
 share/doc/mGBA/README.md
+share/doc/mGBA/README_DE.md
+share/doc/mGBA/licenses/
+share/doc/mGBA/licenses/blip_buf.txt
+share/doc/mGBA/licenses/inih.txt
 share/mgba/
 share/mgba/nointro.dat
 share/mgba/shaders/
