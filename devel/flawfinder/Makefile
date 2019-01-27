@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2018/10/19 19:25:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2019/01/27 14:48:15 jasper Exp $
 
 COMMENT=		C/C++ source code auditing tool
 
-DISTNAME=		flawfinder-2.0.7
+DISTNAME=		flawfinder-2.0.8
 CATEGORIES=		devel security
 
 HOMEPAGE=		https://www.dwheeler.com/flawfinder/
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		${HOMEPAGE}
 
 MODULES=		lang/python
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 MODPY_ADJ_FILES=	flawfinder
 
