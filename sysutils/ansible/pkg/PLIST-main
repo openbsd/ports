@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2019/01/08 19:03:42 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2019/01/27 15:08:12 jasper Exp $
 @pkgpath sysutils/ansible
 bin/ansible
 bin/ansible-config
@@ -6771,6 +6771,7 @@ share/doc/ansible/html/vmware/vmware_concepts.html
 share/doc/ansible/html/vmware/vmware_external_doc_links.html
 share/doc/ansible/html/vmware/vmware_getting_started.html
 share/doc/ansible/html/vmware/vmware_intro.html
+share/doc/ansible/html/vmware/vmware_inventory.html
 share/doc/ansible/html/vmware/vmware_module_reference.html
 share/doc/ansible/html/vmware/vmware_requirements.html
 share/doc/ansible/html/vmware/vmware_scenario_1.html
