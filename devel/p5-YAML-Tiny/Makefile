@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.13 2017/12/04 17:56:27 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/01/27 19:32:22 sthen Exp $
 
 COMMENT =	read/write YAML files with as little code as possible
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	YAML-Tiny-1.70
+DISTNAME =	YAML-Tiny-1.73
 CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS=	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
 
-TEST_DEPENDS =	devel/p5-YAML \
-			devel/p5-YAML-Perl \
+TEST_DEPENDS =		converters/p5-JSON-MaybeXS \
+			devel/p5-YAML \
 			devel/p5-YAML-Syck \
 			devel/p5-YAML-XS
 
