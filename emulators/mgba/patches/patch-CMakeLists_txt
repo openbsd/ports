@@ -1,0 +1,46 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2019/01/27 11:11:20 bentley Exp $
+
+Add option to drop privileges with pledge().
+From https://github.com/mgba-emu/mgba/pull/1271.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -23,6 +23,7 @@ if (NOT WIN32)
+ 	set(USE_EDITLINE ON CACHE BOOL "Whether or not to enable the CLI-mode debugger")
+ endif()
+ set(USE_GDB_STUB ON CACHE BOOL "Whether or not to enable the GDB stub ARM debugger")
++set(USE_PLEDGE_UNVEIL OFF CACHE BOOL "Whether or not to drop privileges with pledge and unveil")
+ set(USE_FFMPEG ON CACHE BOOL "Whether or not to enable FFmpeg support")
+ set(USE_ZLIB ON CACHE BOOL "Whether or not to enable zlib support")
+ set(USE_MINIZIP ON CACHE BOOL "Whether or not to enable external minizip support")
+@@ -475,6 +476,10 @@ find_feature(USE_SQLITE3 "sqlite3")
+ find_feature(USE_ELF "libelf")
+ find_feature(ENABLE_PYTHON "PythonLibs")
+ 
++if(USE_PLEDGE_UNVEIL)
++	set(USE_EPOXY OFF)
++endif()
++
+ if(USE_FFMPEG)
+ 	set(USE_LIBAVRESAMPLE ON)
+ 	set(USE_LIBSWRESAMPLE ON)
+@@ -515,6 +520,10 @@ if(USE_GDB_STUB)
+ endif()
+ source_group("Debugger" FILES ${DEBUGGER_SRC})
+ 
++if(USE_PLEDGE_UNVEIL)
++	list(APPEND FEATURES PLEDGE_UNVEIL)
++endif()
++
+ if(USE_FFMPEG)
+ 	list(APPEND FEATURES FFMPEG)
+ 	if(USE_LIBSWRESAMPLE)
+@@ -1229,6 +1238,7 @@ if(NOT QUIET)
+ 		message(STATUS "	CLI debugger: ${USE_EDITLINE}")
+ 	endif()
+ 	message(STATUS "	GDB stub: ${USE_GDB_STUB}")
++	message(STATUS "	pledge/unveil: ${USE_PLEDGE_UNVEIL}")
+ 	message(STATUS "	Video recording: ${USE_FFMPEG}")
+ 	message(STATUS "	GIF recording: ${USE_MAGICK}")
+ 	message(STATUS "	Screenshot/advanced savestate support: ${USE_PNG}")
