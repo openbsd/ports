@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/29 22:16:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/01/27 12:50:25 landry Exp $
 bin/catfish
 lib/python${MODPY_VERSION}/site-packages/catfish/
 lib/python${MODPY_VERSION}/site-packages/catfish-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -16,6 +16,7 @@ lib/python${MODPY_VERSION}/site-packages/catfish_lib/AboutDialog.py
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/Builder.py
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/CatfishSettings.py
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/SudoDialog.py
+lib/python${MODPY_VERSION}/site-packages/catfish_lib/Thumbnailer.py
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/Window.py
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/${MODPY_PYCACHE}/
@@ -23,6 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/catfish_lib/${MODPY_PYCACHE}AboutDialog
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/${MODPY_PYCACHE}Builder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/${MODPY_PYCACHE}CatfishSettings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/${MODPY_PYCACHE}SudoDialog.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/catfish_lib/${MODPY_PYCACHE}Thumbnailer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/${MODPY_PYCACHE}Window.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/${MODPY_PYCACHE}catfishconfig.${MODPY_PYC_MAGIC_TAG}pyc
@@ -30,12 +32,8 @@ lib/python${MODPY_VERSION}/site-packages/catfish_lib/${MODPY_PYCACHE}helpers.${M
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/catfishconfig.py
 lib/python${MODPY_VERSION}/site-packages/catfish_lib/helpers.py
 @man man/man1/catfish.1
-share/appdata/
-share/appdata/catfish.appdata.xml
-share/applications/catfish.desktop
+share/applications/org.xfce.Catfish.desktop
 share/catfish/
-share/catfish/appdata/
-share/catfish/appdata/catfish.appdata.xml.in
 share/catfish/ui/
 share/catfish/ui/AboutCatfishDialog.ui
 share/catfish/ui/CatfishWindow.ui
@@ -44,11 +42,13 @@ share/catfish/ui/catfish_window.xml
 share/doc/catfish/
 share/doc/catfish/README
 share/icons/hicolor/scalable/apps/catfish.svg
+share/locale/af/LC_MESSAGES/catfish.mo
 share/locale/ar/LC_MESSAGES/catfish.mo
 share/locale/be/LC_MESSAGES/catfish.mo
 share/locale/bg/LC_MESSAGES/catfish.mo
 share/locale/ca/LC_MESSAGES/catfish.mo
 share/locale/cs/LC_MESSAGES/catfish.mo
+share/locale/da/LC_MESSAGES/catfish.mo
 share/locale/de/LC_MESSAGES/catfish.mo
 share/locale/el/LC_MESSAGES/catfish.mo
 share/locale/en_AU/
@@ -59,6 +59,8 @@ share/locale/es/LC_MESSAGES/catfish.mo
 share/locale/eu/LC_MESSAGES/catfish.mo
 share/locale/fi/LC_MESSAGES/catfish.mo
 share/locale/fr/LC_MESSAGES/catfish.mo
+share/locale/gl/LC_MESSAGES/catfish.mo
+share/locale/he/LC_MESSAGES/catfish.mo
 share/locale/hr/LC_MESSAGES/catfish.mo
 share/locale/hu/LC_MESSAGES/catfish.mo
 share/locale/id/LC_MESSAGES/catfish.mo
@@ -66,21 +68,29 @@ share/locale/is/LC_MESSAGES/catfish.mo
 share/locale/it/LC_MESSAGES/catfish.mo
 share/locale/ja/LC_MESSAGES/catfish.mo
 share/locale/ko/LC_MESSAGES/catfish.mo
+share/locale/ku/LC_MESSAGES/catfish.mo
 share/locale/lt/LC_MESSAGES/catfish.mo
 share/locale/lv/LC_MESSAGES/catfish.mo
 share/locale/ml/LC_MESSAGES/catfish.mo
+share/locale/ms/LC_MESSAGES/catfish.mo
+share/locale/nb/LC_MESSAGES/catfish.mo
 share/locale/nl/LC_MESSAGES/catfish.mo
+share/locale/nn/LC_MESSAGES/catfish.mo
 share/locale/pl/LC_MESSAGES/catfish.mo
 share/locale/pt/LC_MESSAGES/catfish.mo
 share/locale/pt_BR/LC_MESSAGES/catfish.mo
 share/locale/ru/LC_MESSAGES/catfish.mo
 share/locale/si/LC_MESSAGES/catfish.mo
 share/locale/sk/LC_MESSAGES/catfish.mo
+share/locale/sq/LC_MESSAGES/catfish.mo
 share/locale/sr/LC_MESSAGES/catfish.mo
 share/locale/sv/LC_MESSAGES/catfish.mo
+share/locale/th/LC_MESSAGES/catfish.mo
 share/locale/tr/LC_MESSAGES/catfish.mo
 share/locale/uk/LC_MESSAGES/catfish.mo
 share/locale/zh_CN/LC_MESSAGES/catfish.mo
 share/locale/zh_TW/LC_MESSAGES/catfish.mo
+share/metainfo/
+share/metainfo/catfish.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

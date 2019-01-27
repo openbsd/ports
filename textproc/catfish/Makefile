@@ -1,23 +1,21 @@
-# $OpenBSD: Makefile,v 1.28 2018/06/29 22:16:21 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2019/01/27 12:50:25 landry Exp $
 
 COMMENT =	versatile file searching tool
 
-MODPY_EGG_VERSION =	1.4.2
-DISTNAME =	catfish-${MODPY_EGG_VERSION}
+XFCE_GOODIE =	catfish
+XFCE_VERSION =	1.4.7
+MODPY_EGG_VERSION =	${XFCE_VERSION}
 CATEGORIES =	textproc
-EXTRACT_SUFX =	.tar.bz2
-REVISION =	2
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
-HOMEPAGE =	http://smdavis.us/projects/catfish/
+HOMEPAGE =	https://bluesabre.org/projects/catfish/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES =	https://launchpad.net/catfish-search/${MODPY_EGG_VERSION:C/..$//}/${MODPY_EGG_VERSION}/+download/
-
 MODULES=	lang/python \
+		x11/xfce4 \
 		textproc/intltool
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES=bin/catfish

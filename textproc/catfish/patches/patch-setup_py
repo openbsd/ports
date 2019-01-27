@@ -1,12 +1,13 @@
-$OpenBSD: patch-setup_py,v 1.1 2016/04/26 15:31:31 landry Exp $
---- setup.py.orig	Tue Apr 26 16:41:29 2016
-+++ setup.py	Tue Apr 26 16:41:41 2016
-@@ -216,7 +216,7 @@ DistUtilsExtra.auto.setup(
+$OpenBSD: patch-setup_py,v 1.2 2019/01/27 12:50:25 landry Exp $
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -209,7 +209,7 @@ DistUtilsExtra.auto.setup(
                       'needs by using several command line options.',
-     url='https://launchpad.net/catfish-search',
+     url='https://docs.xfce.org/apps/catfish/start',
      data_files=[
 -        ('share/man/man1', ['catfish.1']),
 +        ('man/man1', ['catfish.1']),
-         ('share/appdata/', ['data/appdata/catfish.appdata.xml'])
+         ('share/metainfo/', ['data/metainfo/catfish.appdata.xml'])
      ],
      cmdclass={'install': InstallAndUpdateDataDirectory}
