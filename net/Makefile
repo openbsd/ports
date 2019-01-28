@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1106 2019/01/23 15:16:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1107 2019/01/28 14:38:21 cwen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -71,6 +71,7 @@
      SUBDIR += dnscrypt-proxy
      SUBDIR += dnsdist
      SUBDIR += dnsmasq
+     SUBDIR += dnsperf
      SUBDIR += dnsreflector
      SUBDIR += dnstop
      SUBDIR += dnstracer
