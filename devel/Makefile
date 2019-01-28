@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1807 2019/01/26 21:49:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.1808 2019/01/28 19:10:57 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1554,6 +1554,7 @@
      SUBDIR += py-ruamel.ordereddict
      SUBDIR += py-ruledispatch
      SUBDIR += py-send2trash
+     SUBDIR += py-send2trash,python3
      SUBDIR += py-serial
      SUBDIR += py-serial,python3
      SUBDIR += py-setproctitle
