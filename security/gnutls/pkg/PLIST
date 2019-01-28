@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2018/12/19 08:35:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.47 2019/01/28 06:33:34 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/danetool
 @bin bin/gnutls-cli
@@ -143,6 +143,8 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_certificate_set_ocsp_status_request_mem.3
 @man man/man3/gnutls_certificate_set_params_function.3
 @man man/man3/gnutls_certificate_set_pin_function.3
+@man man/man3/gnutls_certificate_set_rawpk_key_file.3
+@man man/man3/gnutls_certificate_set_rawpk_key_mem.3
 @man man/man3/gnutls_certificate_set_retrieve_function.3
 @man man/man3/gnutls_certificate_set_retrieve_function2.3
 @man man/man3/gnutls_certificate_set_retrieve_function3.3
@@ -394,6 +396,8 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_pcert_export_x509.3
 @man man/man3/gnutls_pcert_import_openpgp.3
 @man man/man3/gnutls_pcert_import_openpgp_raw.3
+@man man/man3/gnutls_pcert_import_rawpk.3
+@man man/man3/gnutls_pcert_import_rawpk_raw.3
 @man man/man3/gnutls_pcert_import_x509.3
 @man man/man3/gnutls_pcert_import_x509_list.3
 @man man/man3/gnutls_pcert_import_x509_raw.3
