@@ -1,25 +1,25 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/01/28 15:30:27 cwen Exp $
 
 COMMENT=		the Illicit Love Child of Moose and POE
 
-DISTNAME=		MooseX-POE-0.213
+DISTNAME=		MooseX-POE-0.215
 
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*
 
-RUN_DEPENDS=		devel/p5-Moose \
-			devel/p5-POE
+RUN_DEPENDS=		devel/p5-Moose>=2.0002 \
+			devel/p5-POE>=1.310
 
-TEST_DEPENDS=		devel/p5-Class-Load \
-			devel/p5-Devel-GlobalDestruction \
-			devel/p5-Test-Fatal \
-			devel/p5-Module-Runtime \
+TEST_DEPENDS=		devel/p5-MooseX-Daemonize \
 			devel/p5-MooseX-Declare>=0.35 \
-			devel/p5-MRO-Compat
+			devel/p5-Test-Fatal
+
+MAKE_ENV=		TEST_POD=1
+TEST_ENV=		RELEASE_TESTING=1
 
 .include <bsd.port.mk>
