@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2018/08/23 18:54:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2019/01/28 19:43:24 jasper Exp $
 
 COMMENT =		wrapper for Borg to create and prune backups
 
-MODPY_EGG_VERSION =	1.2.2
+MODPY_EGG_VERSION =	1.2.15
 DISTNAME =		borgmatic-${MODPY_EGG_VERSION}
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -30,5 +30,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/borgmatic/
 	${INSTALL_DATA} ${FILESDIR}/config.yaml.dist \
 		${PREFIX}/share/examples/borgmatic/
+	rm -r ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/tests/
 
 .include <bsd.port.mk>
