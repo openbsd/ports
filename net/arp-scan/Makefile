@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2018/12/05 16:04:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2019/01/28 16:36:37 sthen Exp $
 
 COMMENT-main =	ARP scanning and fingerprinting tool
 COMMENT-mac =	MAC address vendor list
@@ -8,7 +8,7 @@ DISTNAME =	arp-scan-$V
 PKGNAME-main =	${DISTNAME}
 REVISION-main =	13
 
-M =		20181205
+M =		20190128
 PKGNAME-mac =	mac-vendor-$M
 
 CATEGORIES =	net
@@ -48,7 +48,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ethercodes.dat \
 	    ${PREFIX}/share/examples/arpwatch/ethercodes.dat
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mac-vendor/
-	${INSTALL_DATA} ${WRKDIR}/oui-iab/*csv ${FILESDIR}/unofficial.csv \
+	${INSTALL_DATA} ${WRKDIR}/oui-iab/*csv \
+	    ${WRKSRC}/aircrack-oui.txt ${FILESDIR}/unofficial.csv \
 	    ${PREFIX}/share/mac-vendor/
 
 # maintainer convenience target to update mac-vendor file from the databases

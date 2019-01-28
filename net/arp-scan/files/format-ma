@@ -4,6 +4,8 @@ use warnings;
 use strict;
 use Text::CSV;
 
+binmode STDIN, ':utf8';
+
 my ($errno, $lineno, $entry, $registry, $mac, $vendor, $address);
 
 my $csv = Text::CSV->new({
@@ -13,12 +15,14 @@ my $csv = Text::CSV->new({
 	eol => $/
 });
 
-open OUI, ">ieee-oui.txt" || die "Could not open ieee-oui.txt for writing";
-open IAB, ">ieee-iab.txt" || die "Could not open ieee-iab.txt for writing";
-open DAT, ">ethercodes.dat" || die "Could not open ethercodes.dat for writing";
+open OUI, ">:encoding(utf8)", "ieee-oui.txt" || die "Could not open ieee-oui.txt for writing";
+open IAB, ">:encoding(utf8)", "ieee-iab.txt" || die "Could not open ieee-iab.txt for writing";
+open DAT, ">:encoding(utf8)", "ethercodes.dat" || die "Could not open ethercodes.dat for writing";
+open AIR, ">:encoding(utf8)", "aircrack-oui.txt" || die "Could not open oui.txt for writing";
 
 $csv->bind_columns (\$registry, \$mac, \$vendor, \$address);
-while ($csv->getline (*ARGV)) {
+
+while ($csv->getline(*STDIN)) {
 	$lineno++;
 	next if ($mac eq 'Assignment');
 	$entry++;
@@ -30,12 +34,25 @@ while ($csv->getline (*ARGV)) {
 		print STDERR "Unknown registry on line $lineno\n";
 		$errno++;
 	}
+
+	# skip >24-bit vendors for aircrack-ng and arpwatch
+	next if (length($mac) ne 6);
+
+	printf AIR "%s-%s-%s   (hex)\t\t%s\n", substr($mac,0,2), substr($mac,2,2), substr($mac,4,2), $vendor;
+
+	# arpwatch doesn't want a leading 0
 	$mac = lc($mac);
-	$mac =~ s/..\K\B/:/g;
-	print DAT "$mac\t$vendor\n";
+	print DAT substr($mac,0,1) unless substr($mac,0,1) eq '0';
+	print DAT substr($mac,1,1), ':';
+	print DAT substr($mac,2,1) unless substr($mac,2,1) eq '0';
+	print DAT substr($mac,3,1), ':';
+	print DAT substr($mac,4,1) unless substr($mac,4,1) eq '0';
+	print DAT substr($mac,5,1);
+	print DAT "\t$vendor\n";
 }
 
 close OUI;
 close IAB;
 close DAT;
+close AIR;
 print STDERR "$entry entries\n";
