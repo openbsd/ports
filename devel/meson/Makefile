@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/01/28 06:16:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2019/01/28 06:20:44 ajacoutot Exp $
 
 COMMENT=		next-generation build system
 
@@ -27,7 +27,7 @@ RUN_DEPENDS=		devel/ninja
 
 pre-configure:
 	sed -i "s,share/man,man," ${WRKSRC}/setup.py
-	sed -i "s,/usr/bin,${PREFIX}/bin," \
+	sed -i "s,/usr/bin,${PREFIX}/bin,g" \
 		${WRKSRC}/data/com.mesonbuild.install.policy
 
 do-test:
