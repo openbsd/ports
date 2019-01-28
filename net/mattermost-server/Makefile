@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2018/12/22 12:07:23 robert Exp $
+# $OpenBSD: Makefile,v 1.8 2019/01/28 11:45:48 pvk Exp $
 
 COMMENT =	open source Slack-alternative
 
-V =		5.6.1
+V =		5.7.0
 GH_ACCOUNT =	mattermost
 GH_PROJECT =	mattermost-server
 GH_TAGNAME =	v${V}
@@ -17,7 +17,7 @@ DISTFILES += 	${DISTNAME}${EXTRACT_SUFX} \
 CATEGORIES =	net
 HOMEPAGE =	https://mattermost.com/
 
-MAINTAINER =	Robert Nagy <robert@openbsd.org>	
+MAINTAINER =	Robert Nagy <robert@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -41,7 +41,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mattermost
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mattermost
 	cp ${WRKSRC}/config/default.json ${PREFIX}/share/examples/mattermost
-.for _d in client fonts i18n templates 
+.for _d in client fonts i18n templates
 	cp -Rp ${WRKDIR}/mattermost/${_d} ${PREFIX}/share/mattermost
 .endfor
 
