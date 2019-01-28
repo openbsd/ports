@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_MC_MCParser_AsmParser_cpp,v 1.5 2019/01/28 06:27:28 jca Exp $
+$OpenBSD: patch-lib_MC_MCParser_AsmParser_cpp,v 1.6 2019/01/28 15:34:22 jca Exp $
 
 make clang include a FILE symbol for .(s|S) files
 
@@ -11,22 +11,14 @@ a file directive.
 Index: lib/MC/MCParser/AsmParser.cpp
 --- lib/MC/MCParser/AsmParser.cpp.orig
 +++ lib/MC/MCParser/AsmParser.cpp
-@@ -858,6 +858,8 @@ bool AsmParser::Run(bool NoInitialTextSection, bool No
-   AsmCond StartingCondState = TheCondState;
-   SmallVector<AsmRewrite, 4> AsmStrRewrites;
- 
-+  StringRef Filename = getContext().getMainFileName();
-+
-   // If we are generating dwarf for assembly source files save the initial text
-   // section.  (Don't use enabledGenDwarfForAssembly() here, as we aren't
-   // emitting any actual debug info yet and haven't had a chance to parse any
-@@ -873,6 +875,9 @@ bool AsmParser::Run(bool NoInitialTextSection, bool No
-     assert(InsertResult && ".text section should not have debug info yet");
+@@ -874,6 +874,10 @@ bool AsmParser::Run(bool NoInitialTextSection, bool No
      (void)InsertResult;
    }
-+
+ 
++  StringRef Filename = getContext().getMainFileName();
 +  if (!Filename.empty() && (Filename.compare(StringRef("-")) != 0))
 +    Out.EmitFileDirective(Filename);
- 
++
    // While we have input, parse each statement.
    while (Lexer.isNot(AsmToken::Eof)) {
+     ParseStatementInfo Info(&AsmStrRewrites);

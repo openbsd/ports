@@ -1,11 +1,24 @@
-$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.11 2019/01/28 06:27:28 jca Exp $
+$OpenBSD: patch-tools_lld_ELF_Driver_cpp,v 1.12 2019/01/28 15:34:22 jca Exp $
 
-Enable PIE by default.
+- Enable PIE by default.
+- lld: add -z interpose support
 
 Index: tools/lld/ELF/Driver.cpp
 --- tools/lld/ELF/Driver.cpp.orig
 +++ tools/lld/ELF/Driver.cpp
-@@ -794,7 +794,8 @@ void LinkerDriver::readConfigs(opt::InputArgList &Args
+@@ -339,8 +339,9 @@ static bool getZFlag(opt::InputArgList &Args, StringRe
+ static bool isKnown(StringRef S) {
+   return S == "combreloc" || S == "copyreloc" || S == "defs" ||
+          S == "execstack" || S == "hazardplt" || S == "initfirst" ||
+-         S == "keep-text-section-prefix" || S == "lazy" || S == "muldefs" ||
+-         S == "nocombreloc" || S == "nocopyreloc" || S == "nodelete" ||
++         S == "interpose" || S == "keep-text-section-prefix" ||
++         S == "lazy" || S == "muldefs" || S == "nocombreloc" ||
++         S == "nocopyreloc" || S == "nodelete" ||
+          S == "nodlopen" || S == "noexecstack" ||
+          S == "nokeep-text-section-prefix" || S == "norelro" || S == "notext" ||
+          S == "now" || S == "origin" || S == "relro" || S == "retpolineplt" ||
+@@ -794,7 +795,8 @@ void LinkerDriver::readConfigs(opt::InputArgList &Args
    Config->Optimize = args::getInteger(Args, OPT_O, 1);
    Config->OrphanHandling = getOrphanHandling(Args);
    Config->OutputFile = Args.getLastArgValue(OPT_o);
@@ -15,3 +28,11 @@ Index: tools/lld/ELF/Driver.cpp
    Config->PrintIcfSections =
        Args.hasFlag(OPT_print_icf_sections, OPT_no_print_icf_sections, false);
    Config->PrintGcSections =
+@@ -844,6 +846,7 @@ void LinkerDriver::readConfigs(opt::InputArgList &Args
+   Config->ZExecstack = getZFlag(Args, "execstack", "noexecstack", false);
+   Config->ZHazardplt = hasZOption(Args, "hazardplt");
+   Config->ZInitfirst = hasZOption(Args, "initfirst");
++  Config->ZInterpose = hasZOption(Args, "interpose");
+   Config->ZKeepTextSectionPrefix = getZFlag(
+       Args, "keep-text-section-prefix", "nokeep-text-section-prefix", false);
+   Config->ZNodelete = hasZOption(Args, "nodelete");

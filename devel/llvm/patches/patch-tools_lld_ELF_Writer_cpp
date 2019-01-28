@@ -1,8 +1,11 @@
-$OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.9 2019/01/28 06:27:28 jca Exp $
+$OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.10 2019/01/28 15:34:22 jca Exp $
 
 - Merge '.openbsd.randomdata.*' sections into a single '.openbsd.randomdata'
   section when linking, as we do when using ld from binutils.
+- Generate __data_start symbol that marks the start of .data when __data_start
+  is referenced from code being linked.
 - Put .got.plt in RELRO.
+- On i386, produce binaries that are compatible with our W^X implementation.
 
 Index: tools/lld/ELF/Writer.cpp
 --- tools/lld/ELF/Writer.cpp.orig
@@ -37,13 +40,37 @@ Index: tools/lld/ELF/Writer.cpp
  
    // .dynamic section contains data for the dynamic linker, and
    // there's no need to write to it at runtime, so it's better to put
-@@ -961,6 +967,9 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
- 
+@@ -962,6 +968,9 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
    if (ElfSym::Bss)
      ElfSym::Bss->Section = findSection(".bss");
-+
+ 
 +  if (ElfSym::Data)
 +    ElfSym::Data->Section = findSection(".data");
- 
++
    // Setup MIPS _gp_disp/__gnu_local_gp symbols which should
    // be equal to the _gp symbol's value.
+   if (ElfSym::MipsGp) {
+@@ -1937,6 +1946,23 @@ template <class ELFT> void Writer<ELFT>::fixSectionAli
+         return alignTo(Script->getDot(), Config->MaxPageSize);
+       };
+   };
++
++#ifdef __OpenBSD__
++  auto NXAlign = [](OutputSection *Cmd) {
++    if (Cmd && !Cmd->AddrExpr)
++      Cmd->AddrExpr = [=] {
++        return alignTo(Script->getDot(), 0x20000000);
++      };
++  };
++
++  PhdrEntry *firstRW = nullptr;
++  for (PhdrEntry *P : Phdrs)
++    if (P->p_type == PT_LOAD && (P->p_flags & PF_W))
++      firstRW = P;
++
++  if (Config->EMachine == EM_386 && firstRW)
++    NXAlign(firstRW->FirstSec);
++#endif
+ 
+   for (const PhdrEntry *P : Phdrs)
+     if (P->p_type == PT_LOAD && P->FirstSec)

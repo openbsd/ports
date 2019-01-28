@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_cpp,v 1.7 2019/01/28 06:27:28 jca Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_OpenBSD_cpp,v 1.8 2019/01/28 15:34:22 jca Exp $
 
 Some improvements to the OpenBSD driver.
 
@@ -162,7 +162,7 @@ Index: tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
 +  case ToolChain::CST_Libcxx:
 +    CmdArgs.push_back(Profiling ? "-lc++_p" : "-lc++");
 +    CmdArgs.push_back(Profiling ? "-lc++abi_p" : "-lc++abi");
-+    CmdArgs.push_back("-lpthread");
++    CmdArgs.push_back(Profiling ? "-lpthread_p" : "-lpthread");
 +    break;
 +  case ToolChain::CST_Libstdcxx:
 +    CmdArgs.push_back("-lestdc++");
