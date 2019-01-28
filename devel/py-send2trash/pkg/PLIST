@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/01 17:45:20 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/01/28 19:10:12 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/Send2Trash-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Send2Trash-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Send2Trash-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -6,14 +6,17 @@ lib/python${MODPY_VERSION}/site-packages/Send2Trash-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/Send2Trash-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/send2trash/
 lib/python${MODPY_VERSION}/site-packages/send2trash/__init__.py
-lib/python${MODPY_VERSION}/site-packages/send2trash/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/send2trash/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/send2trash/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/send2trash/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/send2trash/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/send2trash/${MODPY_PYCACHE}plat_gio.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/send2trash/${MODPY_PYCACHE}plat_osx.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/send2trash/${MODPY_PYCACHE}plat_other.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/send2trash/${MODPY_PYCACHE}plat_win.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/send2trash/compat.py
-lib/python${MODPY_VERSION}/site-packages/send2trash/compat.pyc
+lib/python${MODPY_VERSION}/site-packages/send2trash/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/send2trash/plat_gio.py
-lib/python${MODPY_VERSION}/site-packages/send2trash/plat_gio.pyc
 lib/python${MODPY_VERSION}/site-packages/send2trash/plat_osx.py
-lib/python${MODPY_VERSION}/site-packages/send2trash/plat_osx.pyc
 lib/python${MODPY_VERSION}/site-packages/send2trash/plat_other.py
-lib/python${MODPY_VERSION}/site-packages/send2trash/plat_other.pyc
 lib/python${MODPY_VERSION}/site-packages/send2trash/plat_win.py
-lib/python${MODPY_VERSION}/site-packages/send2trash/plat_win.pyc
