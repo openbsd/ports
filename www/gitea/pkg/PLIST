@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/09/04 12:46:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/01/28 11:46:26 pvk Exp $
 @newgroup _gitea:787
 @newuser _gitea:787:_gitea:daemon:Gitea Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/gitea
@@ -30,6 +30,7 @@ share/gitea/options/gitignore/AppceleratorTitanium
 share/gitea/options/gitignore/ArchLinuxPackages
 share/gitea/options/gitignore/Archives
 share/gitea/options/gitignore/Autotools
+share/gitea/options/gitignore/Backup
 share/gitea/options/gitignore/Bazaar
 share/gitea/options/gitignore/BricxCC
 share/gitea/options/gitignore/C
@@ -55,6 +56,7 @@ share/gitea/options/gitignore/DM
 share/gitea/options/gitignore/Dart
 share/gitea/options/gitignore/DartEditor
 share/gitea/options/gitignore/Delphi
+share/gitea/options/gitignore/Diff
 share/gitea/options/gitignore/Dreamweaver
 share/gitea/options/gitignore/Dropbox
 share/gitea/options/gitignore/Drupal
@@ -82,12 +84,15 @@ share/gitea/options/gitignore/GWT
 share/gitea/options/gitignore/Gcov
 share/gitea/options/gitignore/GitBook
 share/gitea/options/gitignore/Go
+share/gitea/options/gitignore/Godot
 share/gitea/options/gitignore/Gradle
 share/gitea/options/gitignore/Grails
 share/gitea/options/gitignore/Haskell
 share/gitea/options/gitignore/IGORPro
 share/gitea/options/gitignore/Idris
+share/gitea/options/gitignore/Images
 share/gitea/options/gitignore/JDeveloper
+share/gitea/options/gitignore/JEnv
 share/gitea/options/gitignore/Java
 share/gitea/options/gitignore/Jboss
 share/gitea/options/gitignore/Jekyll
@@ -96,8 +101,9 @@ share/gitea/options/gitignore/Joomla
 share/gitea/options/gitignore/Julia
 share/gitea/options/gitignore/KDevelop4
 share/gitea/options/gitignore/Kate
-share/gitea/options/gitignore/KiCAD
+share/gitea/options/gitignore/KiCad
 share/gitea/options/gitignore/Kohana
+share/gitea/options/gitignore/Kotlin
 share/gitea/options/gitignore/LabVIEW
 share/gitea/options/gitignore/Laravel
 share/gitea/options/gitignore/Lazarus
@@ -131,8 +137,11 @@ share/gitea/options/gitignore/Opa
 share/gitea/options/gitignore/OpenCart
 share/gitea/options/gitignore/OracleForms
 share/gitea/options/gitignore/Otto
+share/gitea/options/gitignore/PSoCCreator
 share/gitea/options/gitignore/Packer
+share/gitea/options/gitignore/Patch
 share/gitea/options/gitignore/Perl
+share/gitea/options/gitignore/Perl6
 share/gitea/options/gitignore/Phalcon
 share/gitea/options/gitignore/PlayFramework
 share/gitea/options/gitignore/Plone
@@ -566,6 +575,7 @@ share/gitea/options/locale/locale_cs-CZ.ini
 share/gitea/options/locale/locale_de-DE.ini
 share/gitea/options/locale/locale_en-US.ini
 share/gitea/options/locale/locale_es-ES.ini
+share/gitea/options/locale/locale_fa-IR.ini
 share/gitea/options/locale/locale_fi-FI.ini
 share/gitea/options/locale/locale_fr-FR.ini
 share/gitea/options/locale/locale_hu-HU.ini
@@ -595,6 +605,7 @@ share/gitea/options/readme/Default
 share/gitea/public/
 share/gitea/public/css/
 share/gitea/public/css/index.css
+share/gitea/public/css/theme-arc-green.css
 share/gitea/public/img/
 share/gitea/public/img/404.png
 share/gitea/public/img/500.png
@@ -613,6 +624,8 @@ share/gitea/public/img/dingtalk.ico
 share/gitea/public/img/discord.png
 share/gitea/public/img/favicon.ico
 share/gitea/public/img/favicon.png
+share/gitea/public/img/gitea-192.png
+share/gitea/public/img/gitea-512.png
 share/gitea/public/img/gitea-lg.png
 share/gitea/public/img/gitea-safari.svg
 share/gitea/public/img/gitea-sm.png
@@ -635,10 +648,13 @@ share/gitea/public/less/_install.less
 share/gitea/public/less/_markdown.less
 share/gitea/public/less/_organization.less
 share/gitea/public/less/_repository.less
+share/gitea/public/less/_review.less
 share/gitea/public/less/_tribute.less
 share/gitea/public/less/_user.less
 share/gitea/public/less/index.less
-share/gitea/public/swagger.v1.json
+share/gitea/public/less/themes/
+share/gitea/public/less/themes/_base.less
+share/gitea/public/less/themes/arc-green.less
 share/gitea/public/vendor/
 share/gitea/public/vendor/VERSIONS
 share/gitea/public/vendor/assets/
@@ -655,6 +671,27 @@ share/gitea/public/vendor/assets/font-awesome/fonts/fontawesome-webfont.svg
 share/gitea/public/vendor/assets/font-awesome/fonts/fontawesome-webfont.ttf
 share/gitea/public/vendor/assets/font-awesome/fonts/fontawesome-webfont.woff
 share/gitea/public/vendor/assets/font-awesome/fonts/fontawesome-webfont.woff2
+share/gitea/public/vendor/assets/lato-fonts/
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-700.eot
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-700.svg
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-700.ttf
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-700.woff
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-700.woff2
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-700italic.eot
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-700italic.svg
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-700italic.ttf
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-700italic.woff
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-700italic.woff2
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-italic.eot
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-italic.svg
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-italic.ttf
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-italic.woff
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-italic.woff2
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-regular.eot
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-regular.svg
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-regular.ttf
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-regular.woff
+share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-regular.woff2
 share/gitea/public/vendor/assets/octicons/
 share/gitea/public/vendor/assets/octicons/LICENSE
 share/gitea/public/vendor/assets/octicons/octicons.eot
@@ -2010,6 +2047,8 @@ share/gitea/public/vendor/plugins/jquery.minicolors/jquery.minicolors.min.js
 share/gitea/public/vendor/plugins/jquery.minicolors/jquery.minicolors.png
 share/gitea/public/vendor/plugins/jquery/LICENSE
 share/gitea/public/vendor/plugins/jquery/jquery.min.js
+share/gitea/public/vendor/plugins/moment/
+share/gitea/public/vendor/plugins/moment/moment.min.js
 share/gitea/public/vendor/plugins/pdfjs/
 share/gitea/public/vendor/plugins/pdfjs/LICENSE
 share/gitea/public/vendor/plugins/pdfjs/build/
@@ -2121,12 +2160,22 @@ share/gitea/public/vendor/plugins/semantic/themes/basic/assets/fonts/icons.woff
 share/gitea/public/vendor/plugins/semantic/themes/default/
 share/gitea/public/vendor/plugins/semantic/themes/default/assets/
 share/gitea/public/vendor/plugins/semantic/themes/default/assets/fonts/
+share/gitea/public/vendor/plugins/semantic/themes/default/assets/fonts/brand-icons.eot
+share/gitea/public/vendor/plugins/semantic/themes/default/assets/fonts/brand-icons.svg
+share/gitea/public/vendor/plugins/semantic/themes/default/assets/fonts/brand-icons.ttf
+share/gitea/public/vendor/plugins/semantic/themes/default/assets/fonts/brand-icons.woff
+share/gitea/public/vendor/plugins/semantic/themes/default/assets/fonts/brand-icons.woff2
 share/gitea/public/vendor/plugins/semantic/themes/default/assets/fonts/icons.eot
 share/gitea/public/vendor/plugins/semantic/themes/default/assets/fonts/icons.otf
 share/gitea/public/vendor/plugins/semantic/themes/default/assets/fonts/icons.svg
 share/gitea/public/vendor/plugins/semantic/themes/default/assets/fonts/icons.ttf
 share/gitea/public/vendor/plugins/semantic/themes/default/assets/fonts/icons.woff
 share/gitea/public/vendor/plugins/semantic/themes/default/assets/fonts/icons.woff2
+share/gitea/public/vendor/plugins/semantic/themes/default/assets/fonts/outline-icons.eot
+share/gitea/public/vendor/plugins/semantic/themes/default/assets/fonts/outline-icons.svg
+share/gitea/public/vendor/plugins/semantic/themes/default/assets/fonts/outline-icons.ttf
+share/gitea/public/vendor/plugins/semantic/themes/default/assets/fonts/outline-icons.woff
+share/gitea/public/vendor/plugins/semantic/themes/default/assets/fonts/outline-icons.woff2
 share/gitea/public/vendor/plugins/semantic/themes/default/assets/images/
 share/gitea/public/vendor/plugins/semantic/themes/default/assets/images/flags.png
 share/gitea/public/vendor/plugins/semantic/themes/github/
@@ -2136,6 +2185,14 @@ share/gitea/public/vendor/plugins/semantic/themes/github/assets/fonts/octicons-l
 share/gitea/public/vendor/plugins/semantic/themes/github/assets/fonts/octicons.svg
 share/gitea/public/vendor/plugins/semantic/themes/github/assets/fonts/octicons.ttf
 share/gitea/public/vendor/plugins/semantic/themes/github/assets/fonts/octicons.woff
+share/gitea/public/vendor/plugins/semantic/themes/material/
+share/gitea/public/vendor/plugins/semantic/themes/material/assets/
+share/gitea/public/vendor/plugins/semantic/themes/material/assets/fonts/
+share/gitea/public/vendor/plugins/semantic/themes/material/assets/fonts/icons.eot
+share/gitea/public/vendor/plugins/semantic/themes/material/assets/fonts/icons.svg
+share/gitea/public/vendor/plugins/semantic/themes/material/assets/fonts/icons.ttf
+share/gitea/public/vendor/plugins/semantic/themes/material/assets/fonts/icons.woff
+share/gitea/public/vendor/plugins/semantic/themes/material/assets/fonts/icons.woff2
 share/gitea/public/vendor/plugins/simplemde/
 share/gitea/public/vendor/plugins/simplemde/LICENSE
 share/gitea/public/vendor/plugins/simplemde/simplemde.min.css
@@ -2146,6 +2203,9 @@ share/gitea/public/vendor/plugins/tribute/tribute.min.js
 share/gitea/public/vendor/plugins/u2f/
 share/gitea/public/vendor/plugins/u2f/index.js
 share/gitea/public/vendor/plugins/vue/
+share/gitea/public/vendor/plugins/vue-calendar-heatmap/
+share/gitea/public/vendor/plugins/vue-calendar-heatmap/vue-calendar-heatmap.browser.js
+share/gitea/public/vendor/plugins/vue-calendar-heatmap/vue-calendar-heatmap.css
 share/gitea/public/vendor/plugins/vue/LICENSE
 share/gitea/public/vendor/plugins/vue/vue.min.js
 share/gitea/templates/
@@ -2179,7 +2239,9 @@ share/gitea/templates/base/
 share/gitea/templates/base/alert.tmpl
 share/gitea/templates/base/delete_modal_actions.tmpl
 share/gitea/templates/base/footer.tmpl
+share/gitea/templates/base/footer_content.tmpl
 share/gitea/templates/base/head.tmpl
+share/gitea/templates/base/head_navbar.tmpl
 share/gitea/templates/base/paginate.tmpl
 share/gitea/templates/custom/
 share/gitea/templates/custom/body_inner_post.tmpl
@@ -2226,10 +2288,14 @@ share/gitea/templates/org/settings/navbar.tmpl
 share/gitea/templates/org/settings/options.tmpl
 share/gitea/templates/org/team/
 share/gitea/templates/org/team/members.tmpl
+share/gitea/templates/org/team/navbar.tmpl
 share/gitea/templates/org/team/new.tmpl
 share/gitea/templates/org/team/repositories.tmpl
 share/gitea/templates/org/team/sidebar.tmpl
 share/gitea/templates/org/team/teams.tmpl
+share/gitea/templates/pwa/
+share/gitea/templates/pwa/manifest_json.tmpl
+share/gitea/templates/pwa/serviceworker_js.tmpl
 share/gitea/templates/repo/
 share/gitea/templates/repo/activity.tmpl
 share/gitea/templates/repo/bare.tmpl
@@ -2242,8 +2308,14 @@ share/gitea/templates/repo/commits_table.tmpl
 share/gitea/templates/repo/create.tmpl
 share/gitea/templates/repo/diff/
 share/gitea/templates/repo/diff/box.tmpl
+share/gitea/templates/repo/diff/comment_form.tmpl
+share/gitea/templates/repo/diff/comment_form_datahandler.tmpl
+share/gitea/templates/repo/diff/comments.tmpl
+share/gitea/templates/repo/diff/new_comment.tmpl
+share/gitea/templates/repo/diff/new_review.tmpl
 share/gitea/templates/repo/diff/page.tmpl
 share/gitea/templates/repo/diff/section_unified.tmpl
+share/gitea/templates/repo/diff/whitespace_dropdown.tmpl
 share/gitea/templates/repo/editor/
 share/gitea/templates/repo/editor/commit_form.tmpl
 share/gitea/templates/repo/editor/delete.tmpl
@@ -2260,6 +2332,7 @@ share/gitea/templates/repo/issue/comment_tab.tmpl
 share/gitea/templates/repo/issue/label_precolors.tmpl
 share/gitea/templates/repo/issue/labels.tmpl
 share/gitea/templates/repo/issue/list.tmpl
+share/gitea/templates/repo/issue/milestone_issues.tmpl
 share/gitea/templates/repo/issue/milestone_new.tmpl
 share/gitea/templates/repo/issue/milestones.tmpl
 share/gitea/templates/repo/issue/navbar.tmpl
@@ -2321,10 +2394,14 @@ share/gitea/templates/repo/wiki/view.tmpl
 share/gitea/templates/status/
 share/gitea/templates/status/404.tmpl
 share/gitea/templates/status/500.tmpl
-share/gitea/templates/swagger.tmpl
+share/gitea/templates/swagger/
+share/gitea/templates/swagger/ui.tmpl
+share/gitea/templates/swagger/v1_json.tmpl
 share/gitea/templates/user/
 share/gitea/templates/user/auth/
 share/gitea/templates/user/auth/activate.tmpl
+share/gitea/templates/user/auth/change_passwd.tmpl
+share/gitea/templates/user/auth/change_passwd_inner.tmpl
 share/gitea/templates/user/auth/finalize_openid.tmpl
 share/gitea/templates/user/auth/forgot_passwd.tmpl
 share/gitea/templates/user/auth/link_account.tmpl

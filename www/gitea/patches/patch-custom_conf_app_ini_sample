@@ -1,4 +1,4 @@
-$OpenBSD: patch-custom_conf_app_ini_sample,v 1.2 2018/08/20 07:52:01 robert Exp $
+$OpenBSD: patch-custom_conf_app_ini_sample,v 1.3 2019/01/28 11:46:26 pvk Exp $
 
 Index: custom/conf/app.ini.sample
 --- custom/conf/app.ini.sample.orig
@@ -28,8 +28,8 @@ Index: custom/conf/app.ini.sample
  ; One or more allowed types, e.g. image/jpeg|image/png. Nothing means any file type
  ALLOWED_TYPES =
  ; Max size of each file in megabytes. Defaults to 3MB
-@@ -137,7 +137,7 @@ SSH_DOMAIN = %(DOMAIN)s
- ; THe network interface the builtin SSH server should listen on
+@@ -147,7 +147,7 @@ SSH_DOMAIN = %(DOMAIN)s
+ ; The network interface the builtin SSH server should listen on
  SSH_LISTEN_HOST =
  ; Port number to be exposed in clone URL
 -SSH_PORT = 22
@@ -37,7 +37,7 @@ Index: custom/conf/app.ini.sample
  ; The port number the builtin SSH server should listen on
  SSH_LISTEN_PORT = %(SSH_PORT)s
  ; Root path of SSH directory, default is '~/.ssh', but you have to use '/home/git/.ssh'.
-@@ -172,13 +172,13 @@ DISABLE_ROUTER_LOG = false
+@@ -185,13 +185,13 @@ DISABLE_ROUTER_LOG = false
  ; not forget to export the private key):
  ; $ openssl pkcs12 -in cert.pfx -out cert.pem -nokeys
  ; $ openssl pkcs12 -in cert.pfx -out key.pem -nocerts -nodes
@@ -53,8 +53,8 @@ Index: custom/conf/app.ini.sample
 +APP_DATA_PATH = ${LOCALSTATEDIR}/gitea/data
  ; Application level GZIP support
  ENABLE_GZIP = false
- ; Landing page, can be "home", "explore", or "organizations"
-@@ -186,7 +186,7 @@ LANDING_PAGE = home
+ ; Application profiling (memory and cpu)
+@@ -205,7 +205,7 @@ LANDING_PAGE = home
  ; Enables git-lfs support. true or false, default is false.
  LFS_START_SERVER = false
  ; Where your lfs files reside, default is data/lfs.
@@ -63,7 +63,7 @@ Index: custom/conf/app.ini.sample
  ; LFS authentication secret, change this yourself
  LFS_JWT_SECRET =
  ; LFS authentication validity period (in time.Duration), pushes taking longer than this may fail.
-@@ -201,7 +201,7 @@ DSA = 1024
+@@ -220,7 +220,7 @@ DSA = 1024
  
  [database]
  ; Either "mysql", "postgres", "mssql" or "sqlite3", it's your choice
@@ -72,16 +72,16 @@ Index: custom/conf/app.ini.sample
  HOST = 127.0.0.1:3306
  NAME = gitea
  USER = root
-@@ -210,7 +210,7 @@ PASSWD =
- ; For "postgres" only, either "disable", "require" or "verify-full"
+@@ -230,7 +230,7 @@ PASSWD =
+ ; For MySQL, either "false" (default), "true", or "skip-verify"
  SSL_MODE = disable
- ; For "sqlite3" and "tidb", use absolute path when you start gitea as service
+ ; For "sqlite3" and "tidb", use an absolute path when you start gitea as service
 -PATH = data/gitea.db
 +PATH = ${LOCALSTATEDIR}/gitea/data/gitea.db
  ; For "sqlite3" only. Query timeout
  SQLITE_TIMEOUT = 500
  ; For iterate buffer, default is 50
-@@ -219,7 +219,7 @@ ITERATE_BUFFER_SIZE = 50
+@@ -239,7 +239,7 @@ ITERATE_BUFFER_SIZE = 50
  LOG_SQL = true
  
  [indexer]
@@ -90,18 +90,18 @@ Index: custom/conf/app.ini.sample
  ; repo indexer by default disabled, since it uses a lot of disk space
  REPO_INDEXER_ENABLED = false
  REPO_INDEXER_PATH = indexers/repos.bleve
-@@ -350,8 +350,8 @@ HELO_HOSTNAME =
+@@ -386,8 +386,8 @@ HELO_HOSTNAME =
  SKIP_VERIFY =
  ; Use client certificate
  USE_CERTIFICATE = false
 -CERT_FILE = custom/mailer/cert.pem
 -KEY_FILE = custom/mailer/key.pem
-+CERT_FILE = ${LOCALSTATEDIR}/gitea/custom/mailer/cert.pem
-+KEY_FILE = ${LOCALSTATEDIR}/gitea/custom/mailer/key.pem
++CERT_FILE = ${LOCALSTATEDIR}/gitea/custom/https/cert.pem
++KEY_FILE = ${LOCALSTATEDIR}/gitea/custom/https/key.pem
+ ; Should SMTP connection use TLS
+ IS_TLS_ENABLED = false
  ; Mail from address, RFC 5322. This can be just an email address, or the `"Name" <email@example.com>` format
- FROM =
- ; Mailer user name and password
-@@ -382,13 +382,13 @@ ITEM_TTL = 16h
+@@ -420,13 +420,13 @@ ITEM_TTL = 16h
  
  [session]
  ; Either "memory", "file", or "redis", default is "memory"
@@ -117,7 +117,7 @@ Index: custom/conf/app.ini.sample
  ; Session cookie name
  COOKIE_NAME = i_like_gitea
  ; If you use session in https only, default is false
-@@ -401,7 +401,7 @@ GC_INTERVAL_TIME = 86400
+@@ -439,7 +439,7 @@ GC_INTERVAL_TIME = 86400
  SESSION_LIFE_TIME = 86400
  
  [picture]
@@ -126,7 +126,7 @@ Index: custom/conf/app.ini.sample
  ; Max Width and Height of uploaded avatars. This is to limit the amount of RAM
  ; used when resizing the image.
  AVATAR_MAX_WIDTH = 4096
-@@ -420,7 +420,7 @@ ENABLE_FEDERATED_AVATAR = false
+@@ -458,7 +458,7 @@ ENABLE_FEDERATED_AVATAR = false
  ; Whether attachments are enabled. Defaults to `true`
  ENABLED = true
  ; Path for attachments. Defaults to `data/attachments`
@@ -135,7 +135,7 @@ Index: custom/conf/app.ini.sample
  ; One or more allowed types, e.g. image/jpeg|image/png
  ALLOWED_TYPES = image/jpeg|image/png|application/zip|application/gzip
  ; Max size of each file. Defaults to 4MB
-@@ -435,14 +435,14 @@ MAX_FILES = 5
+@@ -473,14 +473,14 @@ MAX_FILES = 5
  FORMAT =
  
  [log]
@@ -153,3 +153,13 @@ Index: custom/conf/app.ini.sample
  
  ; For "console" mode only
  [log.console]
+@@ -643,6 +643,9 @@ ko-KR = ko
+ [U2F]
+ ; Two Factor authentication with security keys
+ ; https://developers.yubico.com/U2F/App_ID.html
++PROTOCOL = http
++DOMAIN = localhost
++HTTP_PORT = 3000
+ APP_ID = %(PROTOCOL)s://%(DOMAIN)s:%(HTTP_PORT)s/
+ ; Comma seperated list of truisted facets
+ TRUSTED_FACETS = %(PROTOCOL)s://%(DOMAIN)s:%(HTTP_PORT)s/
