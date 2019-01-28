@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_gui_application_cpp,v 1.12 2018/11/12 05:57:05 kirby Exp $
+$OpenBSD: patch-src_gui_application_cpp,v 1.13 2019/01/28 11:31:46 kirby Exp $
 
 Disable update check on startup.
 
 Index: src/gui/application.cpp
 --- src/gui/application.cpp.orig
 +++ src/gui/application.cpp
-@@ -316,13 +316,6 @@ Application::Application(int &argc, char **argv)
+@@ -317,13 +317,6 @@ Application::Application(int &argc, char **argv)
      connect(&_networkConfigurationManager, &QNetworkConfigurationManager::configurationChanged,
          this, &Application::slotSystemOnlineConfigurationChanged);
  
