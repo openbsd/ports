@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.8 2019/01/10 09:07:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2019/01/28 10:49:10 ajacoutot Exp $
 
 PROVIDER=		heroku
-GH_TAGNAME=		v1.7.2
+GH_TAGNAME=		v1.7.3
 
 .include <bsd.port.mk>
