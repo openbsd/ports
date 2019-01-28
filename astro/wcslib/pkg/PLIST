@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/09/09 14:33:56 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/01/28 20:22:43 naddy Exp $
 @bin bin/HPXcvt
 @bin bin/fitshdr
 @bin bin/wcsware
@@ -44,7 +44,6 @@ include/${DISTNAME}/wcstrig.h
 include/${DISTNAME}/wcsunits.h
 include/${DISTNAME}/wcsunits.inc
 include/${DISTNAME}/wcsutil.h
-@comment lib/libwcs-1.1.a
 lib/libwcs.a
 @lib lib/libwcs.so.${LIBwcs_VERSION}
 lib/pkgconfig/wcslib.pc

@@ -1,7 +1,16 @@
-$OpenBSD: patch-makedefs_in,v 1.2 2018/06/23 16:24:07 ajacoutot Exp $
+$OpenBSD: patch-makedefs_in,v 1.3 2019/01/28 20:22:43 naddy Exp $
 Index: makedefs.in
 --- makedefs.in.orig
 +++ makedefs.in
+@@ -101,7 +101,7 @@
+   FFLAGS   := @FFLAGS@
+ 
+ # Static object library.
+-  WCSLIB   := libwcs-$(LIBVER).a
++  WCSLIB   := libwcs.a
+   ARFLAGS  := @ARFLAGS@
+   RANLIB   := @RANLIB@
+ 
 @@ -132,7 +132,7 @@
  
    LIBDIR   := $(DESTDIR)@libdir@
