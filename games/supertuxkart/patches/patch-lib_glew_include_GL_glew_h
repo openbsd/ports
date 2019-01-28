@@ -1,0 +1,27 @@
+$OpenBSD: patch-lib_glew_include_GL_glew_h,v 1.1 2019/01/28 15:30:56 jsg Exp $
+
+modify embedded copy of glew.h for recent Mesa versions
+
+Mesa >= 18.2.5 has newer OpenGL headers from Khronos which change the
+include guards.
+
+Index: lib/glew/include/GL/glew.h
+--- lib/glew/include/GL/glew.h.orig
++++ lib/glew/include/GL/glew.h
+@@ -93,7 +93,7 @@
+ #if defined(__REGAL_H__)
+ #error Regal.h included before glew.h
+ #endif
+-#if defined(__glext_h_) || defined(__GLEXT_H_)
++#if defined(__glext_h_) || defined(__GLEXT_H_) || defined(__gl_glext_h_)
+ #error glext.h included before glew.h
+ #endif
+ #if defined(__gl_ATI_h_)
+@@ -108,6 +108,7 @@
+ #define __X_GL_H
+ #define __glext_h_
+ #define __GLEXT_H_
++#define __gl_glext_h_
+ #define __gl_ATI_h_
+ 
+ #if defined(_WIN32)
