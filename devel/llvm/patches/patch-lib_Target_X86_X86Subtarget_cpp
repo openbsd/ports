@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_X86_X86Subtarget_cpp,v 1.1 2019/01/14 16:08:45 jca Exp $
+$OpenBSD: patch-lib_Target_X86_X86Subtarget_cpp,v 1.2 2019/01/28 06:27:28 jca Exp $
 
 Turn on -mretpoline by default in clang on amd64.
 
 Index: lib/Target/X86/X86Subtarget.cpp
 --- lib/Target/X86/X86Subtarget.cpp.orig
 +++ lib/Target/X86/X86Subtarget.cpp
-@@ -207,6 +207,14 @@ void X86Subtarget::initSubtargetFeatures(StringRef CPU
+@@ -238,6 +238,14 @@ void X86Subtarget::initSubtargetFeatures(StringRef CPU
        FullFS = "+sahf";
    }
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_lldb_scripts_utilsOsType_py,v 1.1 2018/10/06 15:27:10 ajacoutot Exp $
+$OpenBSD: patch-tools_lldb_scripts_utilsOsType_py,v 1.2 2019/01/28 06:27:28 jca Exp $
 
 Recognize OpenBSD.
 
@@ -17,20 +17,3 @@ Index: tools/lldb/scripts/utilsOsType.py
  else:
      class EnumOsType(object):
          values = ["Unknown",
-@@ -44,6 +45,7 @@ else:
-                   "FreeBSD",
-                   "Linux",
-                   "NetBSD",
-+                  "OpenBSD",
-                   "Windows",
-                   "kFreeBSD"]
- 
-@@ -91,6 +93,8 @@ def determine_os_type():
-         eOSType = EnumOsType.Linux
-     elif strOS.startswith("netbsd"):
-         eOSType = EnumOsType.NetBSD
-+    elif strOS.startswith("openbsd"):
-+        eOSType = EnumOsType.OpenBSD
-     elif strOS == "win32":
-         eOSType = EnumOsType.Windows
-     elif strOS.startswith("gnukfreebsd"):

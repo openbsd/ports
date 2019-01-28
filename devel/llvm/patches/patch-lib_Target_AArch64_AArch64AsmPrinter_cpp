@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_AArch64_AArch64AsmPrinter_cpp,v 1.1 2018/08/21 06:56:09 ajacoutot Exp $
+$OpenBSD: patch-lib_Target_AArch64_AArch64AsmPrinter_cpp,v 1.2 2019/01/28 06:27:28 jca Exp $
 
 Add retguard for arm64.
 
 Index: lib/Target/AArch64/AArch64AsmPrinter.cpp
 --- lib/Target/AArch64/AArch64AsmPrinter.cpp.orig
 +++ lib/Target/AArch64/AArch64AsmPrinter.cpp
-@@ -708,6 +708,19 @@ void AArch64AsmPrinter::EmitInstruction(const MachineI
+@@ -683,6 +683,19 @@ void AArch64AsmPrinter::EmitInstruction(const MachineI
    case TargetOpcode::PATCHABLE_TAIL_CALL:
      LowerPATCHABLE_TAIL_CALL(*MI);
      return;

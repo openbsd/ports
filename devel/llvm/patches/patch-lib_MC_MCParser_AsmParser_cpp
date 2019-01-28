@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_MC_MCParser_AsmParser_cpp,v 1.4 2018/04/07 14:55:42 ajacoutot Exp $
+$OpenBSD: patch-lib_MC_MCParser_AsmParser_cpp,v 1.5 2019/01/28 06:27:28 jca Exp $
 
 make clang include a FILE symbol for .(s|S) files
 
@@ -11,21 +11,18 @@ a file directive.
 Index: lib/MC/MCParser/AsmParser.cpp
 --- lib/MC/MCParser/AsmParser.cpp.orig
 +++ lib/MC/MCParser/AsmParser.cpp
-@@ -835,6 +835,8 @@ bool AsmParser::Run(bool NoInitialTextSection, bool No
+@@ -858,6 +858,8 @@ bool AsmParser::Run(bool NoInitialTextSection, bool No
    AsmCond StartingCondState = TheCondState;
    SmallVector<AsmRewrite, 4> AsmStrRewrites;
  
 +  StringRef Filename = getContext().getMainFileName();
 +
    // If we are generating dwarf for assembly source files save the initial text
-   // section and generate a .file directive.
-   if (getContext().getGenDwarfForAssembly()) {
-@@ -848,8 +850,11 @@ bool AsmParser::Run(bool NoInitialTextSection, bool No
+   // section.  (Don't use enabledGenDwarfForAssembly() here, as we aren't
+   // emitting any actual debug info yet and haven't had a chance to parse any
+@@ -873,6 +875,9 @@ bool AsmParser::Run(bool NoInitialTextSection, bool No
      assert(InsertResult && ".text section should not have debug info yet");
      (void)InsertResult;
-     getContext().setGenDwarfFileNumber(getStreamer().EmitDwarfFileDirective(
--        0, StringRef(), getContext().getMainFileName()));
-+        0, StringRef(), Filename));
    }
 +
 +  if (!Filename.empty() && (Filename.compare(StringRef("-")) != 0))

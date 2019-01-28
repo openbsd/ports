@@ -1,9 +1,9 @@
-#	$OpenBSD: Makefile,v 1.13 2018/11/02 08:50:13 jsg Exp $
+#	$OpenBSD: Makefile,v 1.14 2019/01/28 06:27:28 jca Exp $
 
 COMMENT=	tool to analyse \#includes in C and C++ source files
 CATEGORIES=	devel
-DISTNAME=	include-what-you-use-0.10.src
-PKGNAME=	include-what-you-use-0.10
+DISTNAME=	include-what-you-use-0.11.src
+PKGNAME=	include-what-you-use-0.11
 
 HOMEPAGE=	http://include-what-you-use.org
 MASTER_SITES=	${HOMEPAGE}/downloads/
@@ -15,7 +15,7 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c curses execinfo form m pthread z
-BUILD_DEPENDS=	devel/llvm>=6.0.0
+BUILD_DEPENDS=	devel/llvm>=7.0.1
 LIB_DEPENDS=	devel/libexecinfo
 
 MODULES=		devel/cmake lang/python

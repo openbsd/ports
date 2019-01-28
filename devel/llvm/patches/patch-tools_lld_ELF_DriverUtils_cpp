@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_lld_ELF_DriverUtils_cpp,v 1.7 2018/04/07 14:55:42 ajacoutot Exp $
+$OpenBSD: patch-tools_lld_ELF_DriverUtils_cpp,v 1.8 2019/01/28 06:27:28 jca Exp $
 
 Handle the OpenBSD-style major/minor shared library version scheme.
 
 Index: tools/lld/ELF/DriverUtils.cpp
 --- tools/lld/ELF/DriverUtils.cpp.orig
 +++ tools/lld/ELF/DriverUtils.cpp
-@@ -199,9 +199,35 @@ Optional<std::string> elf::searchLibrary(StringRef Nam
+@@ -218,9 +218,35 @@ Optional<std::string> elf::searchLibrary(StringRef Nam
      return findFromSearchPaths(Name.substr(1));
  
    for (StringRef Dir : Config->SearchPaths) {
@@ -19,7 +19,7 @@ Index: tools/lld/ELF/DriverUtils.cpp
 +      int MaxMaj = -1, MaxMin = -1;
 +      std::error_code EC;
 +      for (fs::directory_iterator LI(Dir, EC), LE;
-+	   !EC && LI != LE; LI = LI.increment(EC)) {
++	   LI != LE; LI = LI.increment(EC)) {
 +        StringRef FilePath = LI->path();
 +	StringRef FileName = path::filename(FilePath);
 +	if (!(FileName.startswith(LibName)))

@@ -1,24 +1,23 @@
-$OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.8 2018/10/25 09:25:38 ajacoutot Exp $
+$OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.9 2019/01/28 06:27:28 jca Exp $
 
 - Merge '.openbsd.randomdata.*' sections into a single '.openbsd.randomdata'
   section when linking, as we do when using ld from binutils.
-- Keep the STT_FILE symbol in the table so that we know what file was used to compile an object.
 - Put .got.plt in RELRO.
 
 Index: tools/lld/ELF/Writer.cpp
 --- tools/lld/ELF/Writer.cpp.orig
 +++ tools/lld/ELF/Writer.cpp
-@@ -110,7 +110,8 @@ StringRef elf::getOutputSectionName(InputSectionBase *
+@@ -122,7 +122,8 @@ StringRef elf::getOutputSectionName(const InputSection
    for (StringRef V :
         {".text.", ".rodata.", ".data.rel.ro.", ".data.", ".bss.rel.ro.",
          ".bss.", ".init_array.", ".fini_array.", ".ctors.", ".dtors.", ".tbss.",
 -        ".gcc_except_table.", ".tdata.", ".ARM.exidx.", ".ARM.extab."}) {
 +        ".gcc_except_table.", ".tdata.", ".ARM.exidx.", ".ARM.extab.",
 +        ".openbsd.randomdata."}) {
-     StringRef Prefix = V.drop_back();
-     if (S->Name.startswith(V) || S->Name == Prefix)
-       return Prefix;
-@@ -219,6 +220,7 @@ void elf::addReservedSymbols() {
+     if (isSectionPrefix(V, S->Name))
+       return V.drop_back();
+   }
+@@ -239,6 +240,7 @@ void elf::addReservedSymbols() {
    };
  
    ElfSym::Bss = Add("__bss_start", 0);
@@ -26,16 +25,7 @@ Index: tools/lld/ELF/Writer.cpp
    ElfSym::End1 = Add("end", -1);
    ElfSym::End2 = Add("_end", -1);
    ElfSym::Etext1 = Add("etext", -1);
-@@ -487,7 +489,7 @@ template <class ELFT> void Writer<ELFT>::run() {
- 
- static bool shouldKeepInSymtab(SectionBase *Sec, StringRef SymName,
-                                const Symbol &B) {
--  if (B.isFile() || B.isSection())
-+  if (B.isSection())
-     return false;
- 
-   // If sym references a section in a discarded group, don't keep it.
-@@ -643,7 +645,11 @@ static bool isRelroSection(const OutputSection *Sec) {
+@@ -673,7 +675,11 @@ static bool isRelroSection(const OutputSection *Sec) {
    // However, if "-z now" is given, the lazy symbol resolution is
    // disabled, which enables us to put it into RELRO.
    if (Sec == InX::GotPlt->getParent())
@@ -47,7 +37,7 @@ Index: tools/lld/ELF/Writer.cpp
  
    // .dynamic section contains data for the dynamic linker, and
    // there's no need to write to it at runtime, so it's better to put
-@@ -914,6 +920,9 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
+@@ -961,6 +967,9 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
  
    if (ElfSym::Bss)
      ElfSym::Bss->Section = findSection(".bss");

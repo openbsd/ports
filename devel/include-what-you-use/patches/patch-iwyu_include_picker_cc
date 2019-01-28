@@ -1,4 +1,5 @@
-$OpenBSD: patch-iwyu_include_picker_cc,v 1.4 2017/08/13 10:15:23 jsg Exp $
+$OpenBSD: patch-iwyu_include_picker_cc,v 1.5 2019/01/28 06:27:28 jca Exp $
+
 Index: iwyu_include_picker.cc
 --- iwyu_include_picker.cc.orig
 +++ iwyu_include_picker.cc
@@ -33,15 +34,15 @@ Index: iwyu_include_picker.cc
    { "ssize_t", kPrivate, "<sys/types.h>", kPublic },
    { "ssize_t", kPrivate, "<unistd.h>", kPublic },
    { "ssize_t", kPrivate, "<monetary.h>", kPublic },
-@@ -180,6 +173,7 @@ const IncludeMapEntry libc_symbol_map[] = {
-   { "size_t", kPrivate, "<string.h>", kPublic },
+@@ -181,6 +174,7 @@ const IncludeMapEntry libc_symbol_map[] = {
    { "size_t", kPrivate, "<time.h>", kPublic },
+   { "size_t", kPrivate, "<uchar.h>", kPublic },
    { "size_t", kPrivate, "<wchar.h>", kPublic },
 +  { "size_t", kPrivate, "<sys/types.h>", kPublic },
    // Macros that can be defined in more than one file, don't have the
    // same __foo_defined guard that other types do, so the grep above
    // doesn't discover them.  Until I figure out a better way, I just
-@@ -194,6 +188,10 @@ const IncludeMapEntry libc_symbol_map[] = {
+@@ -195,6 +189,10 @@ const IncludeMapEntry libc_symbol_map[] = {
    { "calloc", kPrivate, "<stdlib.h>", kPublic },
    { "realloc", kPrivate, "<stdlib.h>", kPublic },
    { "free", kPrivate, "<stdlib.h>", kPublic },
@@ -52,7 +53,7 @@ Index: iwyu_include_picker.cc
    // Entries for NULL
    { "NULL", kPrivate, "<stddef.h>", kPublic },  // 'canonical' location for NULL
    { "NULL", kPrivate, "<clocale>", kPublic },
-@@ -239,7 +237,7 @@ const IncludeMapEntry libstdcpp_symbol_map[] = {
+@@ -240,7 +238,7 @@ const IncludeMapEntry libstdcpp_symbol_map[] = {
  };
  
  // Private -> public include mappings for GNU libc
@@ -61,7 +62,7 @@ Index: iwyu_include_picker.cc
    // ( cd /usr/include && grep '^ *# *include' {sys/,net/,}* | perl -nle 'm/^([^:]+).*<([^>]+)>/ && print qq@    { "<$2>", kPrivate, "<$1>", kPublic },@' | grep bits/ | sort )
    // When I saw more than one mapping for these, I typically picked
    // what I thought was the "best" one.
-@@ -442,6 +440,42 @@ const IncludeMapEntry libc_include_map[] = {
+@@ -443,6 +441,42 @@ const IncludeMapEntry libc_include_map[] = {
    { "<linux/limits.h>", kPrivate, "<limits.h>", kPublic },   // PATH_MAX
    { "<linux/prctl.h>", kPrivate, "<sys/prctl.h>", kPublic },
    { "<sys/ucontext.h>", kPrivate, "<ucontext.h>", kPublic },

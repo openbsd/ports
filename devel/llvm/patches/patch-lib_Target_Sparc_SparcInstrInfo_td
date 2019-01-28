@@ -1,11 +1,7 @@
-$OpenBSD: patch-lib_Target_Sparc_SparcInstrInfo_td,v 1.7 2018/11/14 09:07:41 ajacoutot Exp $
+$OpenBSD: patch-lib_Target_Sparc_SparcInstrInfo_td,v 1.8 2019/01/28 06:27:28 jca Exp $
 
 - [Sparc] allow tls_add/tls_call syntax in assembler parser
 - [Sparc] Add membar assembler tags
-- [Sparc] Use synthetic instruction clr to zero register instead of sethi
-
-  Using `clr reg`/`mov %g0, reg`/`or %g0, %g0, reg` to zero a register
-  looks much better than `sethi 0, reg`.
 
 Index: lib/Target/Sparc/SparcInstrInfo.td
 --- lib/Target/Sparc/SparcInstrInfo.td.orig
@@ -27,7 +23,7 @@ Index: lib/Target/Sparc/SparcInstrInfo.td
  // Branch targets have OtherVT type.
  def brtarget : Operand<OtherVT> {
    let EncoderMethod = "getBranchTargetOpValue";
-@@ -1313,7 +1323,7 @@ let Defs = [FCC0], rd = 0, isCodeGenOnly = 1 in {
+@@ -1316,7 +1326,7 @@ let Defs = [FCC0], rd = 0, isCodeGenOnly = 1 in {
  //===----------------------------------------------------------------------===//
  // Instructions for Thread Local Storage(TLS).
  //===----------------------------------------------------------------------===//
@@ -36,24 +32,12 @@ Index: lib/Target/Sparc/SparcInstrInfo.td
  def TLS_ADDrr : F3_1<2, 0b000000,
                      (outs IntRegs:$rd),
                      (ins IntRegs:$rs1, IntRegs:$rs2, TLSSym:$sym),
-@@ -1508,8 +1518,8 @@ def : Pat<(ctpop i32:$src),
+@@ -1511,7 +1521,7 @@ def : Pat<(ctpop i32:$src),
            (POPCrr (SRLri $src, 0))>;
  
  let Predicates = [HasV9], hasSideEffects = 1, rd = 0, rs1 = 0b01111 in
 - def MEMBARi : F3_2<2, 0b101000, (outs), (ins simm13Op:$simm13),
--                    "membar $simm13", []>;
-+ def MEMBARi : F3_2<2, 0b101000, (outs), (ins MembarTag:$tag),
-+                    "membar $tag", []>;
++ def MEMBARi : F3_2<2, 0b101000, (outs), (ins MembarTag:$simm13),
+                     "membar $simm13", []>;
  
  // The CAS instruction, unlike other instructions, only comes in a 
- // form which requires an ASI be provided. The ASI value hardcoded 
-@@ -1599,6 +1609,9 @@ let Predicates = [HasV9] in {
- // Non-Instruction Patterns
- //===----------------------------------------------------------------------===//
- 
-+// Zero immediate.
-+def : Pat<(i32 0),
-+          (ORrr (i32 G0), (i32 G0))>;
- // Small immediates.
- def : Pat<(i32 simm13:$val),
-           (ORri (i32 G0), imm:$val)>;

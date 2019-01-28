@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_Sparc_InstPrinter_SparcInstPrinter_cpp,v 1.3 2018/11/14 09:07:41 ajacoutot Exp $
+$OpenBSD: patch-lib_Target_Sparc_InstPrinter_SparcInstPrinter_cpp,v 1.4 2019/01/28 06:27:28 jca Exp $
 
 [Sparc] Add membar assembler tags
 
 Index: lib/Target/Sparc/InstPrinter/SparcInstPrinter.cpp
 --- lib/Target/Sparc/InstPrinter/SparcInstPrinter.cpp.orig
 +++ lib/Target/Sparc/InstPrinter/SparcInstPrinter.cpp
-@@ -195,3 +195,21 @@ bool SparcInstPrinter::printGetPCX(const MCInst *MI, u
+@@ -195,3 +195,26 @@ bool SparcInstPrinter::printGetPCX(const MCInst *MI, u
    llvm_unreachable("FIXME: Implement SparcInstPrinter::printGetPCX.");
    return true;
  }
@@ -18,6 +18,11 @@ Index: lib/Target/Sparc/InstPrinter/SparcInstPrinter.cpp
 +      "#Lookaside", "#MemIssue",  "#Sync"};
 +
 +  unsigned Imm = MI->getOperand(opNum).getImm();
++
++  if (Imm > 127) {
++    O << Imm;
++    return;
++  }
 +
 +  bool First = true;
 +  for (unsigned i = 0; i < sizeof(TagNames) / sizeof(char *); i++) {

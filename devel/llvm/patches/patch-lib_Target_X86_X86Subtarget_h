@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_X86_X86Subtarget_h,v 1.1 2019/01/14 16:08:45 jca Exp $
+$OpenBSD: patch-lib_Target_X86_X86Subtarget_h,v 1.2 2019/01/28 06:27:28 jca Exp $
 
 Turn on -mretpoline by default in clang on amd64.
 
 Index: lib/Target/X86/X86Subtarget.h
 --- lib/Target/X86/X86Subtarget.h.orig
 +++ lib/Target/X86/X86Subtarget.h
-@@ -603,6 +603,7 @@ class X86Subtarget final : public X86GenSubtargetInfo 
+@@ -699,6 +699,7 @@ class X86Subtarget final : public X86GenSubtargetInfo 
  
    bool isTargetDarwin() const { return TargetTriple.isOSDarwin(); }
    bool isTargetFreeBSD() const { return TargetTriple.isOSFreeBSD(); }

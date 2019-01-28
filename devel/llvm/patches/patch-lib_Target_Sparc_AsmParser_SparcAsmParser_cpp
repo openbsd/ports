@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_Sparc_AsmParser_SparcAsmParser_cpp,v 1.5 2018/11/14 09:07:41 ajacoutot Exp $
+$OpenBSD: patch-lib_Target_Sparc_AsmParser_SparcAsmParser_cpp,v 1.6 2019/01/28 06:27:28 jca Exp $
 
 [Sparc] Add membar assembler tags
 
@@ -14,7 +14,7 @@ Index: lib/Target/Sparc/AsmParser/SparcAsmParser.cpp
    OperandMatchResultTy parseOperand(OperandVector &Operands, StringRef Name);
  
    OperandMatchResultTy
-@@ -249,6 +251,7 @@ class SparcOperand : public MCParsedAsmOperand { (publ
+@@ -256,6 +258,7 @@ class SparcOperand : public MCParsedAsmOperand { (publ
    bool isMem() const override { return isMEMrr() || isMEMri(); }
    bool isMEMrr() const { return Kind == k_MemoryReg; }
    bool isMEMri() const { return Kind == k_MemoryImm; }
@@ -22,7 +22,7 @@ Index: lib/Target/Sparc/AsmParser/SparcAsmParser.cpp
  
    bool isIntReg() const {
      return (Kind == k_Register && Reg.Kind == rk_IntReg);
-@@ -359,6 +362,12 @@ class SparcOperand : public MCParsedAsmOperand { (publ
+@@ -366,6 +369,12 @@ class SparcOperand : public MCParsedAsmOperand { (publ
      addExpr(Inst, Expr);
    }
  
@@ -35,7 +35,7 @@ Index: lib/Target/Sparc/AsmParser/SparcAsmParser.cpp
    static std::unique_ptr<SparcOperand> CreateToken(StringRef Str, SMLoc S) {
      auto Op = make_unique<SparcOperand>(k_Token);
      Op->Tok.Data = Str.data();
-@@ -769,6 +778,46 @@ SparcAsmParser::parseMEMOperand(OperandVector &Operand
+@@ -739,6 +748,46 @@ SparcAsmParser::parseMEMOperand(OperandVector &Operand
        Offset->isImm() ? SparcOperand::MorphToMEMri(BaseReg, std::move(Offset))
                        : SparcOperand::MorphToMEMrr(BaseReg, std::move(Offset)));
  

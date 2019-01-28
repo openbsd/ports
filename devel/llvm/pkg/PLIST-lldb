@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-lldb,v 1.1 2018/12/06 21:51:01 sthen Exp $
-@conflict ${MODPY_PY_PREFIX}llvm-<${LLVM_V}p3
-@conflict llvm-<${LLVM_V}p19
+@comment $OpenBSD: PLIST-lldb,v 1.2 2019/01/28 06:27:28 jca Exp $
+@conflict ${MODPY_PY_PREFIX}llvm-<6.0.1p3
+@conflict llvm-<6.0.1p19
 @bin bin/lldb
 @bin bin/lldb-argdumper
 @bin bin/lldb-mi
@@ -74,7 +74,6 @@ include/lldb/API/SBValue.h
 include/lldb/API/SBValueList.h
 include/lldb/API/SBVariablesOptions.h
 include/lldb/API/SBWatchpoint.h
-include/lldb/API/SystemInitializerFull.h
 include/lldb/Breakpoint/
 include/lldb/Breakpoint/Breakpoint.h
 include/lldb/Breakpoint/BreakpointID.h
@@ -111,6 +110,7 @@ include/lldb/Core/Communication.h
 include/lldb/Core/Debugger.h
 include/lldb/Core/Disassembler.h
 include/lldb/Core/DumpDataExtractor.h
+include/lldb/Core/DumpRegisterValue.h
 include/lldb/Core/EmulateInstruction.h
 include/lldb/Core/Event.h
 include/lldb/Core/FileLineResolver.h
@@ -266,8 +266,6 @@ include/lldb/Host/linux/Uio.h
 include/lldb/Host/macosx/
 include/lldb/Host/macosx/HostInfoMacOSX.h
 include/lldb/Host/macosx/HostThreadMacOSX.h
-include/lldb/Host/mingw/
-include/lldb/Host/msvc/
 include/lldb/Host/netbsd/
 include/lldb/Host/netbsd/HostInfoNetBSD.h
 include/lldb/Host/openbsd/
@@ -293,14 +291,12 @@ include/lldb/Host/windows/PipeWindows.h
 include/lldb/Host/windows/PosixApi.h
 include/lldb/Host/windows/ProcessLauncherWindows.h
 include/lldb/Host/windows/editlinewin.h
-include/lldb/Host/windows/getopt/
 include/lldb/Host/windows/windows.h
 include/lldb/Initialization/
 include/lldb/Initialization/SystemInitializer.h
 include/lldb/Initialization/SystemInitializerCommon.h
 include/lldb/Initialization/SystemLifetimeManager.h
 include/lldb/Interpreter/
-include/lldb/Interpreter/Args.h
 include/lldb/Interpreter/CommandAlias.h
 include/lldb/Interpreter/CommandCompletions.h
 include/lldb/Interpreter/CommandHistory.h
@@ -310,6 +306,7 @@ include/lldb/Interpreter/CommandObjectMultiword.h
 include/lldb/Interpreter/CommandObjectRegexCommand.h
 include/lldb/Interpreter/CommandOptionValidators.h
 include/lldb/Interpreter/CommandReturnObject.h
+include/lldb/Interpreter/OptionArgParser.h
 include/lldb/Interpreter/OptionGroupArchitecture.h
 include/lldb/Interpreter/OptionGroupBoolean.h
 include/lldb/Interpreter/OptionGroupFile.h
@@ -457,8 +454,10 @@ include/lldb/Target/UnwindAssembly.h
 include/lldb/Utility/
 include/lldb/Utility/AnsiTerminal.h
 include/lldb/Utility/ArchSpec.h
+include/lldb/Utility/Args.h
 include/lldb/Utility/Baton.h
 include/lldb/Utility/CleanUp.h
+include/lldb/Utility/CompletionRequest.h
 include/lldb/Utility/Connection.h
 include/lldb/Utility/ConstString.h
 include/lldb/Utility/DataBuffer.h
@@ -468,10 +467,10 @@ include/lldb/Utility/DataEncoder.h
 include/lldb/Utility/DataExtractor.h
 include/lldb/Utility/Either.h
 include/lldb/Utility/Endian.h
+include/lldb/Utility/Environment.h
 include/lldb/Utility/FastDemangle.h
 include/lldb/Utility/FileSpec.h
 include/lldb/Utility/Flags.h
-include/lldb/Utility/History.h
 include/lldb/Utility/IOObject.h
 include/lldb/Utility/Iterable.h
 include/lldb/Utility/JSON.h
@@ -492,6 +491,7 @@ include/lldb/Utility/StreamGDBRemote.h
 include/lldb/Utility/StreamString.h
 include/lldb/Utility/StreamTee.h
 include/lldb/Utility/StringExtractor.h
+include/lldb/Utility/StringExtractorGDBRemote.h
 include/lldb/Utility/StringLexer.h
 include/lldb/Utility/StringList.h
 include/lldb/Utility/StructuredData.h
@@ -542,9 +542,11 @@ lib/liblldbPluginABISysV_s390x.a
 lib/liblldbPluginABISysV_x86_64.a
 lib/liblldbPluginAppleObjCRuntime.a
 lib/liblldbPluginArchitectureArm.a
+lib/liblldbPluginArchitecturePPC64.a
 lib/liblldbPluginCPlusPlusLanguage.a
 lib/liblldbPluginCXXItaniumABI.a
 lib/liblldbPluginDisassemblerLLVM.a
+lib/liblldbPluginDynamicLoaderDarwinKernel.a
 lib/liblldbPluginDynamicLoaderHexagonDYLD.a
 lib/liblldbPluginDynamicLoaderMacOSXDYLD.a
 lib/liblldbPluginDynamicLoaderPosixDYLD.a
@@ -557,6 +559,7 @@ lib/liblldbPluginInstructionARM.a
 lib/liblldbPluginInstructionARM64.a
 lib/liblldbPluginInstructionMIPS.a
 lib/liblldbPluginInstructionMIPS64.a
+lib/liblldbPluginInstructionPPC64.a
 lib/liblldbPluginInstrumentationRuntimeASan.a
 lib/liblldbPluginInstrumentationRuntimeMainThreadChecker.a
 lib/liblldbPluginInstrumentationRuntimeTSan.a
@@ -589,6 +592,7 @@ lib/liblldbPluginPlatformPOSIX.a
 lib/liblldbPluginPlatformWindows.a
 lib/liblldbPluginProcessElfCore.a
 lib/liblldbPluginProcessGDBRemote.a
+lib/liblldbPluginProcessMachCore.a
 lib/liblldbPluginProcessMinidump.a
 lib/liblldbPluginProcessUtility.a
 lib/liblldbPluginRenderScriptRuntime.a

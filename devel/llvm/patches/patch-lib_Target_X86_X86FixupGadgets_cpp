@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_X86FixupGadgets_cpp,v 1.1 2018/07/06 06:55:10 ajacoutot Exp $
+$OpenBSD: patch-lib_Target_X86_X86FixupGadgets_cpp,v 1.2 2019/01/28 06:27:28 jca Exp $
 
 Add a clang pass that identifies potential ROP gadgets and replaces ROP
 friendly instructions with safe alternatives. This initial commit fixes
@@ -9,7 +9,7 @@ this framework.
 Index: lib/Target/X86/X86FixupGadgets.cpp
 --- lib/Target/X86/X86FixupGadgets.cpp.orig
 +++ lib/Target/X86/X86FixupGadgets.cpp
-@@ -0,0 +1,267 @@
+@@ -0,0 +1,273 @@
 +//===-- X86FixupGadgets.cpp - Fixup Instructions that make ROP Gadgets ----===//
 +//
 +//                     The LLVM Compiler Infrastructure
@@ -203,7 +203,10 @@ Index: lib/Target/X86/X86FixupGadgets.cpp
 +  unsigned tmpReg;
 +
 +  // Swap the two registers to start
-+  BuildMI(MBB, MI, DL, TII->get(XCHG), DREG).addReg(DREG).addReg(SREG);
++  BuildMI(MBB, MI, DL, TII->get(XCHG))
++    .addReg(DREG, RegState::Define)
++    .addReg(SREG, RegState::Define)
++    .addReg(DREG).addReg(SREG);
 +
 +  switch (type) {
 +  case OneGPRegC3:
@@ -244,7 +247,10 @@ Index: lib/Target/X86/X86FixupGadgets.cpp
 +  }
 +
 +  // And swap them back to finish
-+  BuildMI(MBB, MI, DL, TII->get(XCHG), DREG).addReg(DREG).addReg(SREG);
++  BuildMI(MBB, MI, DL, TII->get(XCHG))
++    .addReg(DREG, RegState::Define)
++    .addReg(SREG, RegState::Define)
++    .addReg(DREG).addReg(SREG);
 +  // Erase original instruction
 +  MI.eraseFromParent();
 +

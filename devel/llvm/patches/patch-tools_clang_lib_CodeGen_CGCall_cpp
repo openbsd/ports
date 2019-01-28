@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_CodeGen_CGCall_cpp,v 1.1 2018/07/06 06:55:10 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_CodeGen_CGCall_cpp,v 1.2 2019/01/28 06:27:28 jca Exp $
 
 Add RETGUARD to clang for amd64. This security mechanism uses per-function
 random cookies to protect access to function return instructions, with the
@@ -21,13 +21,14 @@ remove these gadgets will continue through other mechanisms.
 Index: tools/clang/lib/CodeGen/CGCall.cpp
 --- tools/clang/lib/CodeGen/CGCall.cpp.orig
 +++ tools/clang/lib/CodeGen/CGCall.cpp
-@@ -1878,6 +1878,9 @@ void CodeGenModule::ConstructAttributeList(
+@@ -1936,6 +1936,10 @@ void CodeGenModule::ConstructAttributeList(
+ 
      FuncAttrs.addAttribute("disable-tail-calls",
                             llvm::toStringRef(DisableTailCalls));
- 
++
 +    if (CodeGenOpts.ReturnProtector)
 +      FuncAttrs.addAttribute("ret-protector");
 +
-     // Add target-cpu and target-features attributes to functions. If
-     // we have a decl for the function and it has a target attribute then
-     // parse that and add it to the feature set.
+     GetCPUAndFeaturesAttributes(TargetDecl, FuncAttrs);
+   }
+ 

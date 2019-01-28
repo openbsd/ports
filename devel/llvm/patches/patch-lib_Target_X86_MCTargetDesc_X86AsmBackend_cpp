@@ -1,70 +1,79 @@
-$OpenBSD: patch-lib_Target_X86_MCTargetDesc_X86AsmBackend_cpp,v 1.3 2018/04/07 14:55:42 ajacoutot Exp $
+$OpenBSD: patch-lib_Target_X86_MCTargetDesc_X86AsmBackend_cpp,v 1.4 2019/01/28 06:27:28 jca Exp $
 
 trapsleds
 
 Index: lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp
 --- lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp.orig
 +++ lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp
-@@ -322,48 +322,22 @@ void X86AsmBackend::relaxInstruction(const MCInst &Ins
+@@ -319,57 +319,22 @@ void X86AsmBackend::relaxInstruction(const MCInst &Ins
  /// bytes.
  /// \return - true on success, false on failure
- bool X86AsmBackend::writeNopData(uint64_t Count, MCObjectWriter *OW) const {
--  static const uint8_t Nops[10][10] = {
+ bool X86AsmBackend::writeNopData(raw_ostream &OS, uint64_t Count) const {
+-  static const char Nops[10][11] = {
 -    // nop
--    {0x90},
+-    "\x90",
 -    // xchg %ax,%ax
--    {0x66, 0x90},
+-    "\x66\x90",
 -    // nopl (%[re]ax)
--    {0x0f, 0x1f, 0x00},
+-    "\x0f\x1f\x00",
 -    // nopl 0(%[re]ax)
--    {0x0f, 0x1f, 0x40, 0x00},
+-    "\x0f\x1f\x40\x00",
 -    // nopl 0(%[re]ax,%[re]ax,1)
--    {0x0f, 0x1f, 0x44, 0x00, 0x00},
+-    "\x0f\x1f\x44\x00\x00",
 -    // nopw 0(%[re]ax,%[re]ax,1)
--    {0x66, 0x0f, 0x1f, 0x44, 0x00, 0x00},
+-    "\x66\x0f\x1f\x44\x00\x00",
 -    // nopl 0L(%[re]ax)
--    {0x0f, 0x1f, 0x80, 0x00, 0x00, 0x00, 0x00},
+-    "\x0f\x1f\x80\x00\x00\x00\x00",
 -    // nopl 0L(%[re]ax,%[re]ax,1)
--    {0x0f, 0x1f, 0x84, 0x00, 0x00, 0x00, 0x00, 0x00},
+-    "\x0f\x1f\x84\x00\x00\x00\x00\x00",
 -    // nopw 0L(%[re]ax,%[re]ax,1)
--    {0x66, 0x0f, 0x1f, 0x84, 0x00, 0x00, 0x00, 0x00, 0x00},
+-    "\x66\x0f\x1f\x84\x00\x00\x00\x00\x00",
 -    // nopw %cs:0L(%[re]ax,%[re]ax,1)
--    {0x66, 0x2e, 0x0f, 0x1f, 0x84, 0x00, 0x00, 0x00, 0x00, 0x00},
+-    "\x66\x2e\x0f\x1f\x84\x00\x00\x00\x00\x00",
 -  };
 -
 -  // This CPU doesn't support long nops. If needed add more.
--  // FIXME: Can we get this from the subtarget somehow?
 -  // FIXME: We could generated something better than plain 0x90.
--  if (!HasNopl) {
+-  if (!STI.getFeatureBits()[X86::FeatureNOPL]) {
 -    for (uint64_t i = 0; i < Count; ++i)
--      OW->write8(0x90);
+-      OS << '\x90';
 -    return true;
 -  }
 -
--  // 15 is the longest single nop instruction.  Emit as many 15-byte nops as
--  // needed, then emit a nop of the remaining length.
-+  // Write 1 or 2 byte NOP sequences, or a longer trapsled, until 
+-  // 15-bytes is the longest single NOP instruction, but 10-bytes is
+-  // commonly the longest that can be efficiently decoded.
+-  uint64_t MaxNopLength = 10;
+-  if (STI.getFeatureBits()[X86::ProcIntelSLM])
+-    MaxNopLength = 7;
+-  else if (STI.getFeatureBits()[X86::FeatureFast15ByteNOP])
+-    MaxNopLength = 15;
+-  else if (STI.getFeatureBits()[X86::FeatureFast11ByteNOP])
+-    MaxNopLength = 11;
+-
+-  // Emit as many MaxNopLength NOPs as needed, then emit a NOP of the remaining
+-  // length.
++  // Write 1 or 2 byte NOP sequences, or a longer trapsled, until
 +  // we have written Count bytes
    do {
 -    const uint8_t ThisNopLength = (uint8_t) std::min(Count, MaxNopLength);
 -    const uint8_t Prefixes = ThisNopLength <= 10 ? 0 : ThisNopLength - 10;
 -    for (uint8_t i = 0; i < Prefixes; i++)
--      OW->write8(0x66);
+-      OS << '\x66';
 -    const uint8_t Rest = ThisNopLength - Prefixes;
--    for (uint8_t i = 0; i < Rest; i++)
--      OW->write8(Nops[Rest - 1][i]);
+-    if (Rest != 0)
+-      OS.write(Nops[Rest - 1], Rest);
 +    const uint8_t ThisNopLength = (uint8_t) std::min(Count, (uint64_t)127);
 +    switch (ThisNopLength) {
 +      case 0: break;
-+      case 1: OW->write8(0x90); 
++      case 1: OS << '\x90';
 +              break;
-+      case 2: OW->write8(0x66); 
-+              OW->write8(0x90); 
++      case 2: OS << '\x66';
++              OS << '\x90';
 +              break;
-+      default: OW->write8(0xEB);
-+               OW->write8(ThisNopLength - 2);
++      default: OS << '\xEB';
++               OS << (uint8_t)(ThisNopLength - 2);
 +               for(uint8_t i = 2; i < ThisNopLength; ++i)
-+                 OW->write8(0xCC);
++                 OS << '\xCC';
 +    }
      Count -= ThisNopLength;
    } while (Count != 0);

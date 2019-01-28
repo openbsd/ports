@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.6 2018/08/21 06:56:09 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.7 2019/01/28 06:27:28 jca Exp $
 
 - Make LLVM create strict aligned code for OpenBSD/arm64.
 - Disable -fstrict-aliasing per default on OpenBSD.
@@ -31,7 +31,7 @@ $OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.6 2018/08/21 06:
 Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
 --- tools/clang/lib/Driver/ToolChains/Clang.cpp.orig
 +++ tools/clang/lib/Driver/ToolChains/Clang.cpp
-@@ -332,7 +332,7 @@ static void getTargetFeatures(const ToolChain &TC, con
+@@ -341,7 +341,7 @@ static void getTargetFeatures(const ToolChain &TC, con
      break;
    case llvm::Triple::aarch64:
    case llvm::Triple::aarch64_be:
@@ -40,7 +40,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
      break;
    case llvm::Triple::x86:
    case llvm::Triple::x86_64:
-@@ -3362,9 +3362,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -3478,9 +3478,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
    // We turn strict aliasing off by default if we're in CL mode, since MSVC
    // doesn't do any TBAA.
@@ -55,7 +55,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
      CmdArgs.push_back("-relaxed-aliasing");
    if (!Args.hasFlag(options::OPT_fstruct_path_tbaa,
                      options::OPT_fno_struct_path_tbaa))
-@@ -3950,7 +3953,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -4086,7 +4089,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                        options::OPT_fno_strict_overflow)) {
      if (A->getOption().matches(options::OPT_fno_strict_overflow))
        CmdArgs.push_back("-fwrapv");
@@ -65,7 +65,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
  
    if (Arg *A = Args.getLastArg(options::OPT_freroll_loops,
                                 options::OPT_fno_reroll_loops))
-@@ -3965,6 +3969,24 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -4101,6 +4105,24 @@ void Clang::ConstructJob(Compilation &C, const JobActi
  
    RenderSSPOptions(getToolChain(), Args, CmdArgs, KernelOrKext);
  
@@ -90,7 +90,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
    // Translate -mstackrealign
    if (Args.hasFlag(options::OPT_mstackrealign, options::OPT_mno_stackrealign,
                     false))
-@@ -4427,6 +4449,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -4579,6 +4601,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        llvm::sys::path::replace_extension(F, "opt.yaml");
        CmdArgs.push_back(Args.MakeArgString(F));
      }

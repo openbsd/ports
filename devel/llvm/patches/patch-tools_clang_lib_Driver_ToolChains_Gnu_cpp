@@ -1,31 +1,30 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Gnu_cpp,v 1.5 2018/11/14 09:07:41 ajacoutot Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Gnu_cpp,v 1.6 2019/01/28 06:27:28 jca Exp $
 
-[mips][ias] Enable IAS by default for OpenBSD / FreeBSD mips64/mips64el.
+- [mips] Enable using of integrated assembler in all cases.
+- Enable IAS for OpenBSD SPARC.
 
 Index: tools/clang/lib/Driver/ToolChains/Gnu.cpp
 --- tools/clang/lib/Driver/ToolChains/Gnu.cpp.orig
 +++ tools/clang/lib/Driver/ToolChains/Gnu.cpp
-@@ -2243,14 +2243,19 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
+@@ -2412,16 +2412,13 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
    case llvm::Triple::systemz:
    case llvm::Triple::mips:
    case llvm::Triple::mipsel:
+-    return true;
+   case llvm::Triple::mips64:
+   case llvm::Triple::mips64el:
+-    // Enabled for Debian, Android, FreeBSD and OpenBSD mips64/mipsel, as they
+-    // can precisely identify the ABI in use (Debian) or only use N64 for MIPS64
+-    // (Android). Other targets are unable to distinguish N32 from N64.
+-    if (getTriple().getEnvironment() == llvm::Triple::GNUABI64 ||
+-        getTriple().isAndroid() ||
+-        getTriple().isOSFreeBSD() ||
+-        getTriple().isOSOpenBSD())
++    return true;
 +  case llvm::Triple::sparc:
 +  case llvm::Triple::sparcel:
 +  case llvm::Triple::sparcv9:
-     return true;
-   case llvm::Triple::mips64:
-   case llvm::Triple::mips64el:
--    // Enabled for Debian and Android mips64/mipsel, as they can precisely
--    // identify the ABI in use (Debian) or only use N64 for MIPS64 (Android).
--    // Other targets are unable to distinguish N32 from N64.
-+    // Enabled for Debian, Android, FreeBSD and OpenBSD mips64/mipsel, as they
-+    // can precisely identify the ABI in use (Debian) or only use N64 for MIPS64
-+    // (Android). Other targets are unable to distinguish N32 from N64.
-     if (getTriple().getEnvironment() == llvm::Triple::GNUABI64 ||
--        getTriple().isAndroid())
-+        getTriple().isAndroid() ||
-+        getTriple().isOSFreeBSD() ||
-+        getTriple().isOSOpenBSD())
++    if (getTriple().isOSSolaris() || getTriple().isOSOpenBSD())
        return true;
      return false;
    default:

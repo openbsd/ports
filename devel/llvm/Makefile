@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.205 2019/01/14 16:08:44 jca Exp $
+# $OpenBSD: Makefile,v 1.206 2019/01/28 06:27:28 jca Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -13,16 +13,13 @@ COMMENT-main =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 COMMENT-lldb =	LLDB debugger
 COMMENT-python =	Python bindings for Clang
 
-LLVM_V =	6.0.1
+LLVM_V =	7.0.1
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	23
-REVISION-python = 5
-REVISION-lldb =	2
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
@@ -31,12 +28,12 @@ DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 MASTER_SITES =	https://www.llvm.org/releases/${LLVM_V}/
 EXTRACT_SUFX =	.tar.xz
 
-SHARED_LIBS =	clang		7.0 \
-		lldb		0.0 \
-		LTO		4.0
+SHARED_LIBS =	clang		8.0 \
+		lldb		1.0 \
+		LTO		5.0
 
 # packager notes in http://llvm.org/docs/Packaging.html
-HOMEPAGE =	http://www.llvm.org/
+HOMEPAGE =	https://www.llvm.org/
 
 MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 

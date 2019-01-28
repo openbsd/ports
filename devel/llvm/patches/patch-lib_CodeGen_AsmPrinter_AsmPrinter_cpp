@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_CodeGen_AsmPrinter_AsmPrinter_cpp,v 1.6 2018/07/06 06:55:10 ajacoutot Exp $
+$OpenBSD: patch-lib_CodeGen_AsmPrinter_AsmPrinter_cpp,v 1.7 2019/01/28 06:27:28 jca Exp $
 
 - Use int3 trap padding between functions instead of trapsleds with a leading jump.
 - Emit trap alignment between basic blocks that are unrechable via
@@ -8,7 +8,7 @@ $OpenBSD: patch-lib_CodeGen_AsmPrinter_AsmPrinter_cpp,v 1.6 2018/07/06 06:55:10 
 Index: lib/CodeGen/AsmPrinter/AsmPrinter.cpp
 --- lib/CodeGen/AsmPrinter/AsmPrinter.cpp.orig
 +++ lib/CodeGen/AsmPrinter/AsmPrinter.cpp
-@@ -637,7 +637,7 @@ void AsmPrinter::EmitFunctionHeader() {
+@@ -651,7 +651,7 @@ void AsmPrinter::EmitFunctionHeader() {
  
    EmitLinkage(&F, CurrentFnSym);
    if (MAI->hasFunctionAlignment())
@@ -17,7 +17,7 @@ Index: lib/CodeGen/AsmPrinter/AsmPrinter.cpp
  
    if (MAI->hasDotTypeDotSizeDirective())
      OutStreamer->EmitSymbolAttribute(CurrentFnSym, MCSA_ELF_TypeFunction);
-@@ -1911,6 +1911,31 @@ void AsmPrinter::EmitAlignment(unsigned NumBits, const
+@@ -2036,6 +2036,31 @@ void AsmPrinter::EmitAlignment(unsigned NumBits, const
  }
  
  //===----------------------------------------------------------------------===//
@@ -49,7 +49,7 @@ Index: lib/CodeGen/AsmPrinter/AsmPrinter.cpp
  // Constant emission.
  //===----------------------------------------------------------------------===//
  
-@@ -2657,11 +2682,15 @@ void AsmPrinter::EmitBasicBlockStart(const MachineBasi
+@@ -2803,11 +2828,15 @@ void AsmPrinter::EmitBasicBlockStart(const MachineBasi
      }
    }
  

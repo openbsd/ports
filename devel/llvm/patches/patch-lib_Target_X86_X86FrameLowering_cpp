@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_X86FrameLowering_cpp,v 1.2 2018/08/21 06:56:09 ajacoutot Exp $
+$OpenBSD: patch-lib_Target_X86_X86FrameLowering_cpp,v 1.3 2019/01/28 06:27:28 jca Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -39,7 +39,7 @@ Index: lib/Target/X86/X86FrameLowering.cpp
    // Cache a bunch of frame-related predicates for this subtarget.
    SlotSize = TRI->getSlotSize();
    Is64Bit = STI.is64Bit();
-@@ -3058,4 +3059,8 @@ void X86FrameLowering::processFunctionBeforeFrameFinal
+@@ -3153,4 +3154,8 @@ void X86FrameLowering::processFunctionBeforeFrameFinal
    addFrameReference(BuildMI(MBB, MBBI, DL, TII.get(X86::MOV64mi32)),
                      UnwindHelpFI)
        .addImm(-2);
