@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2018/12/04 15:49:34 jca Exp $
+# $OpenBSD: Makefile,v 1.32 2019/01/28 19:39:30 jasper Exp $
 
 COMMENT =		open source message queue optimised for performance
 
-V =			4.2.5
+V =			4.3.1
 DISTNAME =		zeromq-${V}
-REVISION =		1
 
-SHARED_LIBS +=  zmq                  5.0      # 6.5
+SHARED_LIBS +=  zmq                  5.1      # 7.1
 
 CATEGORIES =		net
 HOMEPAGE =		http://zeromq.org/
