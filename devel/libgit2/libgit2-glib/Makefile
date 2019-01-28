@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2018/03/04 08:24:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2019/01/28 20:49:26 jasper Exp $
 
 COMMENT=		GLib library wrapping libgit2
 
-V=			0.26.4
+V=			0.27.7
 DISTNAME=		libgit2-glib-$V
 
-SHARED_LIBS +=	git2-glib-1.0        4.0      # 0.0
+SHARED_LIBS +=	git2-glib-1.0        5.0      # 0.0
 
 SUBDIR=			sources/libgit2-glib/${V:C/^([0-9]+\.[0-9]+).*/\1/}/
 MASTER_SITES=		${MASTER_SITE_GNOME:=${SUBDIR}}
