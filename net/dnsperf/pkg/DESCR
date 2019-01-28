@@ -1,0 +1,8 @@
+dnsperf and resperf are free tools that make it simple to gather
+accurate latency and throughput metrics for Domain Name Service (DNS).
+They read input files describing DNS queries, and send those queries
+to DNS servers to measure performance.
+
+resperf-report is a script allowing to generate a report in HTML
+format, with graphs.  You will need to install the gnuplot package
+to use it.
