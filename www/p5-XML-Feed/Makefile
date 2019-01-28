@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/01/28 00:37:01 sthen Exp $
 
 COMMENT= 	interface to RSS and Atom feeds
 
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME=	XML-Feed-0.12
-REVISION=	0
+DISTNAME=	XML-Feed-0.55
 CATEGORIES=	www textproc
 CONFIGURE_STYLE=modbuild
 
@@ -21,6 +20,7 @@ RUN_DEPENDS=	devel/p5-Class-ErrorHandler \
 		devel/p5-DateTime \
 		devel/p5-DateTime-Format-Mail \
 		devel/p5-DateTime-Format-W3CDTF \
+		devel/p5-Module-Pluggable \
 		www/p5-URI-Fetch \
 		www/p5-Feed-Find \
 		www/p5-XML-Atom
