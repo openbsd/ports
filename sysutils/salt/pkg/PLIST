@@ -1,13 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.52 2018/06/14 18:58:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.53 2019/01/28 19:25:27 jasper Exp $
 @ask-update salt-<2014.1.5p0 Make sure the _salt-master user does not exist
-@comment needs a homedir to store ssh keys for GitFS
 @newgroup _salt:722
 @newuser _salt:722:722:daemon:SaltStack Daemon:${LOCALSTATEDIR}/salt:/sbin/nologin
+@comment needs a homedir to store ssh keys for GitFS
 @extraunexec rm -rf ${SYSCONFDIR}/salt/{master,minion}.d
 @extraunexec rm -f ${SYSCONFDIR}/salt/minion_id
 @extraunexec rm -rf ${SYSCONFDIR}/salt/pki
 @extraunexec rm -rf /var/cache/salt
 @extraunexec rm -rf /var/log/salt/*
+@rcscript ${RCDIR}/salt_api
+@rcscript ${RCDIR}/salt_master
+@rcscript ${RCDIR}/salt_minion
+@rcscript ${RCDIR}/salt_proxy
+@rcscript ${RCDIR}/salt_syndic
 bin/salt
 bin/salt-api
 bin/salt-call
@@ -2827,18 +2832,18 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/aggregation.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/aggregation.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/args.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/args.pyc
-lib/python${MODPY_VERSION}/site-packages/salt/utils/async.py
-lib/python${MODPY_VERSION}/site-packages/salt/utils/async.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/asynchronous.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/asynchronous.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/atomicfile.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/atomicfile.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/aws.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/aws.pyc
-lib/python${MODPY_VERSION}/site-packages/salt/utils/boto.py
-lib/python${MODPY_VERSION}/site-packages/salt/utils/boto.pyc
-lib/python${MODPY_VERSION}/site-packages/salt/utils/boto3.py
-lib/python${MODPY_VERSION}/site-packages/salt/utils/boto3.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/boto3mod.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/boto3mod.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/boto_elb_tag.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/boto_elb_tag.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/botomod.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/botomod.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/cache.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/cache.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/cloud.py
@@ -3213,10 +3218,3 @@ share/examples/salt/roster
 @mode 0755
 @group
 @sample /var/log/salt/
-@mode
-@owner
-@rcscript ${RCDIR}/salt_api
-@rcscript ${RCDIR}/salt_master
-@rcscript ${RCDIR}/salt_minion
-@rcscript ${RCDIR}/salt_proxy
-@rcscript ${RCDIR}/salt_syndic
