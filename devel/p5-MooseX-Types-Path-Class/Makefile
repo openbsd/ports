@@ -1,23 +1,26 @@
-# $OpenBSD: Makefile,v 1.13 2017/12/05 16:25:45 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/01/28 15:19:09 cwen Exp $
 
 COMMENT=		Path::Class type library for Moose
 
-DISTNAME =		MooseX-Types-Path-Class-0.07
+DISTNAME=		MooseX-Types-Path-Class-0.09
 
 CATEGORIES=		devel
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*
 
-RUN_DEPENDS=		devel/p5-Moose>=2.1204 \
-			devel/p5-MooseX-Types \
+RUN_DEPENDS=		devel/p5-MooseX-Types \
+			devel/p5-MooseX-Getopt \
 			devel/p5-Path-Class
-BUILD_DEPENDS=		${RUN_DEPENDS}
-TEST_DEPENDS =		devel/p5-Test-Pod \
-			devel/p5-Test-Pod-Coverage
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			devel/p5-Module-Build-Tiny
+TEST_DEPENDS=		devel/p5-Moose \
+			devel/p5-Test-Needs
+
+MAKE_ENV=		TEST_POD=Yes
 
 .include <bsd.port.mk>
