@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/06/27 21:03:59 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2019/01/28 15:44:30 ajacoutot Exp $
 
 COMMENT =		graphical network monitor
 
@@ -31,7 +31,8 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-BUILD_DEPENDS =		x11/gnome/doc-utils
+BUILD_DEPENDS =		devel/gettext-tools \
+			x11/gnome/doc-utils
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		x11/gtk+2 \
 			devel/libglade2 \
