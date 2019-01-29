@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.8 2019/01/23 21:04:53 sthen Exp $
+$OpenBSD: README-main,v 1.9 2019/01/29 20:25:15 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -55,16 +55,15 @@ the two; therefore bugs in php can potentially do more damage.
 Another option is to use FastCGI via php-fpm as in the above section;
 you can use mod_proxy_fcgi to interface it with Apache.
 
-If you wish to use the Apache module, enable it by creating a
-symbolic link from ${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf
-to ${MODPHP_CONFIG_PATH}/modules/php.conf. As root:
+If you wish to use the Apache module, make sure the php-apache-${PV}
+package is installed, then enable it by creating a symbolic link:
 
-    ln -sf ${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf \
+    # ln -sf ${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf \
 	${MODPHP_CONFIG_PATH}/modules/php.conf
 
 To disable:
 
-    rm -f ${MODPHP_CONFIG_PATH}/modules/php.conf
+    # rm -f ${MODPHP_CONFIG_PATH}/modules/php.conf
 
 After making either of these changes, restart Apache.
 
