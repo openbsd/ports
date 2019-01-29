@@ -1,9 +1,9 @@
-$OpenBSD: patch-src__cffi_src_openssl_x509_vfy_py,v 1.8 2018/08/10 20:13:41 sthen Exp $
+$OpenBSD: patch-src__cffi_src_openssl_x509_vfy_py,v 1.9 2019/01/29 22:44:35 sthen Exp $
 
 Index: src/_cffi_src/openssl/x509_vfy.py
 --- src/_cffi_src/openssl/x509_vfy.py.orig
 +++ src/_cffi_src/openssl/x509_vfy.py
-@@ -204,7 +204,7 @@ int sk_X509_OBJECT_num(Cryptography_STACK_OF_X509_OBJE
+@@ -212,7 +212,7 @@ int sk_X509_OBJECT_num(Cryptography_STACK_OF_X509_OBJE
  X509_OBJECT *sk_X509_OBJECT_value(Cryptography_STACK_OF_X509_OBJECT *, int);
  X509_VERIFY_PARAM *X509_STORE_get0_param(X509_STORE *);
  Cryptography_STACK_OF_X509_OBJECT *X509_STORE_get0_objects(X509_STORE *);
@@ -12,7 +12,7 @@ Index: src/_cffi_src/openssl/x509_vfy.py
  int X509_OBJECT_get_type(const X509_OBJECT *);
  
  /* added in 1.1.0 */
-@@ -220,14 +220,11 @@ static const long Cryptography_HAS_102_VERIFICATION_ER
+@@ -228,14 +228,11 @@ static const long Cryptography_HAS_102_VERIFICATION_ER
  static const long Cryptography_HAS_102_VERIFICATION_PARAMS = 1;
  #else
  static const long Cryptography_HAS_102_VERIFICATION_ERROR_CODES = 0;
@@ -30,8 +30,8 @@ Index: src/_cffi_src/openssl/x509_vfy.py
  /* These 3 defines are unavailable in LibreSSL 2.5.x, but may be added
     in the future... */
  #ifndef X509_V_ERR_HOSTNAME_MISMATCH
-@@ -240,12 +237,6 @@ static const long X509_V_ERR_EMAIL_MISMATCH = 0;
- static const long X509_V_ERR_IP_ADDRESS_MISMATCH = 0;
+@@ -263,12 +260,6 @@ static const long X509_CHECK_FLAG_MULTI_LABEL_WILDCARD
+ static const long X509_CHECK_FLAG_SINGLE_LABEL_SUBDOMAINS = 0;
  #endif
  
 -/* X509_V_FLAG_TRUSTED_FIRST is also new in 1.0.2+, but it is added separately
@@ -43,8 +43,8 @@ Index: src/_cffi_src/openssl/x509_vfy.py
  #if !CRYPTOGRAPHY_LIBRESSL_27_OR_GREATER
  int (*X509_VERIFY_PARAM_set1_host)(X509_VERIFY_PARAM *, const char *,
                                     size_t) = NULL;
-@@ -259,6 +250,19 @@ void (*X509_VERIFY_PARAM_set_hostflags)(X509_VERIFY_PA
- #endif
+@@ -291,6 +282,19 @@ static const long X509_CHECK_FLAG_NEVER_CHECK_SUBJECT 
+ static const long Cryptography_HAS_110_VERIFICATION_PARAMS = 1;
  #endif
  
 +static const long X509_V_ERR_SUITE_B_INVALID_VERSION = 0;
@@ -63,7 +63,7 @@ Index: src/_cffi_src/openssl/x509_vfy.py
  /* OpenSSL 1.0.2+ or Solaris's backport */
  #ifdef X509_V_FLAG_PARTIAL_CHAIN
  static const long Cryptography_HAS_X509_V_FLAG_PARTIAL_CHAIN = 1;
-@@ -292,7 +296,7 @@ X509 *X509_STORE_CTX_get0_cert(X509_STORE_CTX *ctx)
+@@ -324,7 +328,7 @@ X509 *X509_STORE_CTX_get0_cert(X509_STORE_CTX *ctx)
      return ctx->cert;
  }
  
