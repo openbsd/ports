@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.290 2019/01/01 23:00:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.291 2019/01/29 23:40:02 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		13.24.1
+VER=		16.1.1
 PJ_V=		2.8
-PORTROACH=	limitw:0,odd
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
@@ -26,8 +25,8 @@ WANTLIB-main += ${MODGCC4_CPPWANTLIB}
 # XXX somehow COMPILER_LIBCXX doesn't get set to gcc libs?
 WANTLIB-main += c crypto curl curses edit execinfo gsm iconv iksemel
 WANTLIB-main += jansson lzma m nghttp2 ogg portaudio pthread radcli
-WANTLIB-main += spandsp sqlite3 ssl tiff uriparser uuid vorbis
-WANTLIB-main += vorbisenc vorbisfile xml2 xslt z
+WANTLIB-main += spandsp sqlite3 ssl tiff uriparser unbound uuid
+WANTLIB-main += vorbis vorbisenc vorbisfile xml2 xslt z
 
 # Asterisk requires either nested functions (gcc extension), or -fblocks (clang).
 # However -fblocks fails:
@@ -66,6 +65,7 @@ LIB_DEPENDS-main=	${MODGCC4_CPPLIBDEP} \
 			graphics/tiff \
 			net/curl \
 			net/radcli \
+			net/libunbound \
 			sysutils/e2fsprogs \
 			telephony/spandsp \
 			textproc/iksemel \
@@ -189,7 +189,7 @@ CONFIGURE_ARGS+=	--with-gmime=no
 # ldap
 COMMENT-ldap=		LDAP support for Asterisk
 LIB_DEPENDS-ldap=	databases/openldap,-main
-WANTLIB-ldap=		ldap pthread
+WANTLIB-ldap=		ldap-2.4 pthread
 .if !${BUILD_PACKAGES:M-ldap}
 CONFIGURE_ARGS+=	--with-ldap=no
 .endif
@@ -231,7 +231,7 @@ CONFIGURE_ARGS+=	--with-snmp=no
 
 # speex
 COMMENT-speex=		Speex codec for Asterisk
-WANTLIB-speex=		m pthread speex speexdsp
+WANTLIB-speex=		m ogg pthread speex speexdsp
 LIB_DEPENDS-speex=	audio/speex>=1.2rc1
 .if !${BUILD_PACKAGES:M-speex}
 CONFIGURE_ARGS+=	--with-speex=no
@@ -298,5 +298,6 @@ post-install:
 	@mv ${WRKINST}/${SYSCONFDIR}/asterisk ${EXAMPLEDIR}/default
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLEDIR}
 	@rm -rf ${WRKINST}/{etc,var/{log,run,spool}}/asterisk
+	@rm ${PREFIX}/lib/libasterisk{pj,ssl}.so
 
 .include <bsd.port.mk>

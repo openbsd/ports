@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.42 2018/03/15 23:00:19 sthen Exp $
+$OpenBSD: patch-Makefile,v 1.43 2019/01/29 23:40:02 sthen Exp $
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -141,7 +141,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(CURDIR))
+@@ -138,7 +138,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(CURDIR))
  OVERWRITE=y
  
  # Include debug and macro symbols in the executables (-g) and profiling info (-pg)
@@ -11,7 +11,7 @@ Index: Makefile
  
  # Asterisk.conf is located in ASTETCDIR or by using the -C flag
  # when starting Asterisk
-@@ -191,7 +191,9 @@ OPTIONS=
+@@ -187,7 +187,9 @@ OPTIONS=
  
  ifeq ($(findstring -save-temps,$(_ASTCFLAGS) $(ASTCFLAGS)),)
    ifeq ($(findstring -pipe,$(_ASTCFLAGS) $(ASTCFLAGS)),)

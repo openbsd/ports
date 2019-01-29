@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.77 2018/09/04 12:46:23 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.78 2019/01/29 23:40:02 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -33,9 +33,7 @@ include/asterisk/ast_expr.h
 include/asterisk/ast_version.h
 include/asterisk/astdb.h
 include/asterisk/astmm.h
-include/asterisk/astobj.h
 include/asterisk/astobj2.h
-include/asterisk/astosp.h
 include/asterisk/audiohook.h
 include/asterisk/autochan.h
 include/asterisk/autoconfig.h
@@ -71,15 +69,25 @@ include/asterisk/compat.h
 include/asterisk/compiler.h
 include/asterisk/config.h
 include/asterisk/config_options.h
+include/asterisk/conversions.h
 include/asterisk/core_local.h
 include/asterisk/core_unreal.h
 include/asterisk/crypto.h
-include/asterisk/data.h
+include/asterisk/data_buffer.h
 include/asterisk/datastore.h
 include/asterisk/devicestate.h
 include/asterisk/dial.h
 include/asterisk/dlinkedlists.h
 include/asterisk/dns.h
+include/asterisk/dns_core.h
+include/asterisk/dns_internal.h
+include/asterisk/dns_naptr.h
+include/asterisk/dns_query_set.h
+include/asterisk/dns_recurring.h
+include/asterisk/dns_resolver.h
+include/asterisk/dns_srv.h
+include/asterisk/dns_test.h
+include/asterisk/dns_tlsa.h
 include/asterisk/dnsmgr.h
 include/asterisk/doxygen/
 include/asterisk/doxygen/architecture.h
@@ -110,10 +118,12 @@ include/asterisk/hashtab.h
 include/asterisk/heap.h
 include/asterisk/http.h
 include/asterisk/http_websocket.h
+include/asterisk/ilbc.h
 include/asterisk/image.h
 include/asterisk/indications.h
 include/asterisk/inline_api.h
 include/asterisk/io.h
+include/asterisk/iostream.h
 include/asterisk/json.h
 include/asterisk/linkedlists.h
 include/asterisk/localtime.h
@@ -122,6 +132,7 @@ include/asterisk/logger.h
 include/asterisk/manager.h
 include/asterisk/max_forwards.h
 include/asterisk/md5.h
+include/asterisk/media_cache.h
 include/asterisk/media_index.h
 include/asterisk/message.h
 include/asterisk/mixmonitor.h
@@ -131,7 +142,6 @@ include/asterisk/monitor.h
 include/asterisk/multicast_rtp.h
 include/asterisk/musiconhold.h
 include/asterisk/named_locks.h
-include/asterisk/netsock.h
 include/asterisk/netsock2.h
 include/asterisk/network.h
 include/asterisk/optional_api.h
@@ -198,6 +208,7 @@ include/asterisk/stasis_message_router.h
 include/asterisk/stasis_system.h
 include/asterisk/stasis_test.h
 include/asterisk/statsd.h
+include/asterisk/stream.h
 include/asterisk/stringfields.h
 include/asterisk/strings.h
 include/asterisk/stun.h
@@ -231,6 +242,7 @@ lib/asterisk/modules/app_agent_pool.so
 lib/asterisk/modules/app_alarmreceiver.so
 lib/asterisk/modules/app_amd.so
 lib/asterisk/modules/app_authenticate.so
+lib/asterisk/modules/app_bridgeaddchan.so
 lib/asterisk/modules/app_bridgewait.so
 lib/asterisk/modules/app_cdr.so
 lib/asterisk/modules/app_celgenuserevent.so
@@ -255,7 +267,6 @@ lib/asterisk/modules/app_forkcdr.so
 lib/asterisk/modules/app_getcpeid.so
 lib/asterisk/modules/app_ices.so
 lib/asterisk/modules/app_image.so
-lib/asterisk/modules/app_macro.so
 lib/asterisk/modules/app_milliwatt.so
 lib/asterisk/modules/app_minivm.so
 lib/asterisk/modules/app_mixmonitor.so
@@ -279,6 +290,7 @@ lib/asterisk/modules/app_softhangup.so
 lib/asterisk/modules/app_speech_utils.so
 lib/asterisk/modules/app_stack.so
 lib/asterisk/modules/app_stasis.so
+lib/asterisk/modules/app_stream_echo.so
 lib/asterisk/modules/app_system.so
 lib/asterisk/modules/app_talkdetect.so
 lib/asterisk/modules/app_test.so
@@ -303,7 +315,6 @@ lib/asterisk/modules/cdr_custom.so
 lib/asterisk/modules/cdr_manager.so
 lib/asterisk/modules/cdr_radius.so
 lib/asterisk/modules/cdr_sqlite3_custom.so
-lib/asterisk/modules/cdr_syslog.so
 lib/asterisk/modules/cel_custom.so
 lib/asterisk/modules/cel_manager.so
 lib/asterisk/modules/cel_radius.so
@@ -336,7 +347,6 @@ lib/asterisk/modules/format_gsm.so
 lib/asterisk/modules/format_h263.so
 lib/asterisk/modules/format_h264.so
 lib/asterisk/modules/format_ilbc.so
-lib/asterisk/modules/format_jpeg.so
 lib/asterisk/modules/format_ogg_vorbis.so
 lib/asterisk/modules/format_pcm.so
 lib/asterisk/modules/format_siren14.so
@@ -429,6 +439,7 @@ lib/asterisk/modules/res_format_attr_celt.so
 lib/asterisk/modules/res_format_attr_g729.so
 lib/asterisk/modules/res_format_attr_h263.so
 lib/asterisk/modules/res_format_attr_h264.so
+lib/asterisk/modules/res_format_attr_ilbc.so
 lib/asterisk/modules/res_format_attr_opus.so
 lib/asterisk/modules/res_format_attr_silk.so
 lib/asterisk/modules/res_format_attr_siren14.so
@@ -437,6 +448,7 @@ lib/asterisk/modules/res_format_attr_vp8.so
 lib/asterisk/modules/res_hep.so
 lib/asterisk/modules/res_hep_pjsip.so
 lib/asterisk/modules/res_hep_rtcp.so
+lib/asterisk/modules/res_http_media_cache.so
 lib/asterisk/modules/res_http_websocket.so
 lib/asterisk/modules/res_limit.so
 lib/asterisk/modules/res_manager_devicestate.so
@@ -491,6 +503,7 @@ lib/asterisk/modules/res_pjsip_t38.so
 lib/asterisk/modules/res_pjsip_transport_websocket.so
 lib/asterisk/modules/res_pjsip_xpidf_body_generator.so
 lib/asterisk/modules/res_realtime.so
+lib/asterisk/modules/res_resolver_unbound.so
 lib/asterisk/modules/res_rtp_asterisk.so
 lib/asterisk/modules/res_rtp_multicast.so
 lib/asterisk/modules/res_security_log.so
@@ -570,6 +583,8 @@ share/asterisk/scripts/ast_coredumper
 share/asterisk/scripts/ast_logescalator
 share/asterisk/scripts/ast_loggrabber
 share/asterisk/scripts/refcounter.py
+share/asterisk/scripts/reflocks.py
+share/asterisk/scripts/refstats.py
 share/asterisk/static-http/
 share/asterisk/static-http/ajamdemo.html
 share/asterisk/static-http/appdocsxml.xslt
@@ -581,8 +596,6 @@ share/asterisk/static-http/prototype.js
 share/asterisk/third-party/
 share/asterisk/third-party/pjproject/
 share/doc/asterisk/
-share/doc/asterisk/Asterisk-13-Reference.pdf
-share/doc/asterisk/Asterisk-Admin-Guide.pdf
 share/doc/asterisk/BUGS
 share/doc/asterisk/CHANGES
 share/doc/asterisk/COPYING
@@ -602,6 +615,9 @@ share/doc/asterisk/UPGRADE-1.8.txt
 share/doc/asterisk/UPGRADE-10.txt
 share/doc/asterisk/UPGRADE-11.txt
 share/doc/asterisk/UPGRADE-12.txt
+share/doc/asterisk/UPGRADE-13.txt
+share/doc/asterisk/UPGRADE-14.txt
+share/doc/asterisk/UPGRADE-15.txt
 share/doc/asterisk/UPGRADE.txt
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/asterisk/
@@ -622,7 +638,6 @@ share/examples/asterisk/basic-pbx/logger.conf
 share/examples/asterisk/basic-pbx/modules.conf
 share/examples/asterisk/basic-pbx/musiconhold.conf
 share/examples/asterisk/basic-pbx/pjsip.conf
-share/examples/asterisk/basic-pbx/queues.conf
 share/examples/asterisk/basic-pbx/voicemail.conf
 share/examples/asterisk/default/
 share/examples/asterisk/default/acl.conf
@@ -641,6 +656,7 @@ share/examples/asterisk/default/asterisk.conf
 share/examples/asterisk/default/calendar.conf
 share/examples/asterisk/default/ccss.conf
 share/examples/asterisk/default/cdr.conf
+share/examples/asterisk/default/cdr_beanstalkd.conf
 share/examples/asterisk/default/cdr_custom.conf
 share/examples/asterisk/default/cdr_manager.conf
 @comment share/examples/asterisk/default/cdr_mysql.conf
@@ -648,6 +664,7 @@ share/examples/asterisk/default/cdr_sqlite3_custom.conf
 share/examples/asterisk/default/cdr_syslog.conf
 @comment share/examples/asterisk/default/cdr_tds.conf
 share/examples/asterisk/default/cel.conf
+share/examples/asterisk/default/cel_beanstalkd.conf
 share/examples/asterisk/default/cel_custom.conf
 share/examples/asterisk/default/cel_sqlite3_custom.conf
 @comment share/examples/asterisk/default/cel_tds.conf
@@ -713,6 +730,7 @@ share/examples/asterisk/default/res_fax.conf
 share/examples/asterisk/default/res_parking.conf
 share/examples/asterisk/default/res_pktccops.conf
 share/examples/asterisk/default/res_stun_monitor.conf
+share/examples/asterisk/default/resolver_unbound.conf
 share/examples/asterisk/default/rtp.conf
 share/examples/asterisk/default/say.conf
 share/examples/asterisk/default/sip.conf

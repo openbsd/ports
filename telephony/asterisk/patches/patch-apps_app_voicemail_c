@@ -1,4 +1,4 @@
-$OpenBSD: patch-apps_app_voicemail_c,v 1.2 2018/12/20 17:02:24 sthen Exp $
+$OpenBSD: patch-apps_app_voicemail_c,v 1.3 2019/01/29 23:40:02 sthen Exp $
 
 From e137086163b00ce4947aa9335aae7f45956bbe75 Mon Sep 17 00:00:00 2001
 From: George Joseph <gjoseph@digium.com>
@@ -25,7 +25,7 @@ ASTERISK-28215
 Index: apps/app_voicemail.c
 --- apps/app_voicemail.c.orig
 +++ apps/app_voicemail.c
-@@ -2026,10 +2026,6 @@ static void free_user(struct ast_vm_user *vmu)
+@@ -2043,10 +2043,6 @@ static void free_user(struct ast_vm_user *vmu)
  		return;
  	}
  
@@ -36,7 +36,7 @@ Index: apps/app_voicemail.c
  	ast_free(vmu->email);
  	vmu->email = NULL;
  	ast_free(vmu->emailbody);
-@@ -2042,6 +2038,19 @@ static void free_user(struct ast_vm_user *vmu)
+@@ -2059,6 +2055,19 @@ static void free_user(struct ast_vm_user *vmu)
  	}
  }
  
@@ -56,7 +56,7 @@ Index: apps/app_voicemail.c
  static int vm_allocate_dh(struct vm_state *vms, struct ast_vm_user *vmu, int count_msg) {
  
  	int arraysize = (vmu->maxmsg > count_msg ? vmu->maxmsg : count_msg);
-@@ -13491,7 +13500,7 @@ static void free_vm_users(void)
+@@ -13540,7 +13549,7 @@ static void free_vm_users(void)
  	AST_LIST_LOCK(&users);
  	while ((current = AST_LIST_REMOVE_HEAD(&users, list))) {
  		ast_set_flag(current, VM_ALLOCED);
