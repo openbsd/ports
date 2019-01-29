@@ -1,13 +1,23 @@
-$OpenBSD: patch-desktop_source_app_app_cxx,v 1.13 2018/08/18 07:07:17 robert Exp $
+$OpenBSD: patch-desktop_source_app_app_cxx,v 1.14 2019/01/29 10:34:28 robert Exp $
 Index: desktop/source/app/app.cxx
 --- desktop/source/app/app.cxx.orig
 +++ desktop/source/app/app.cxx
-@@ -567,7 +567,7 @@ void Desktop::DeInit()
+@@ -551,6 +551,7 @@ void Desktop::InitFinished()
+ 
+ void Desktop::DeInit()
+ {
++    const CommandLineArgs& rCmdLineArgs = GetCommandLineArgs();
+     try {
+         // instead of removing of the configManager just let it commit all the changes
+         utl::ConfigManager::storeConfigItems();
+@@ -567,7 +568,9 @@ void Desktop::DeInit()
          // clear lockfile
          m_xLockfile.reset();
  
 -        RequestHandler::Disable();
-+        RequestHandler::SetDowning();
++        if ( !rCmdLineArgs.GetUnknown().isEmpty()
++                  || rCmdLineArgs.IsHelp() || rCmdLineArgs.IsVersion() )
++            RequestHandler::Disable();
          if( pSignalHandler )
              osl_removeSignalHandler( pSignalHandler );
      } catch (const RuntimeException&) {
