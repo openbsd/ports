@@ -1,0 +1,14 @@
+$OpenBSD: patch-sslsplit_1_in,v 1.1 2019/01/29 23:05:21 sthen Exp $
+
+Index: sslsplit.1.in
+--- sslsplit.1.in.orig
++++ sslsplit.1.in
+@@ -351,7 +351,7 @@ Drop privileges after opening sockets and files by set
+ effective and stored user IDs to \fIuser\fP and loading the appropriate
+ primary and ancillary groups.  If \fB-u\fP is not given, SSLsplit will drop
+ privileges to the stored UID if EUID != UID (setuid bit scenario), or to
+-\fBnobody\fP if running with full \fBroot\fP privileges (EUID == UID == 0).
++\fB_sslsplit\fP if running with full \fBroot\fP privileges (EUID == UID == 0).
+ User \fIuser\fP needs to be allowed to make outbound TCP connections, and in
+ some configurations, to also perform DNS resolution.
+ Dropping privileges enables privilege separation, which incurs latency for

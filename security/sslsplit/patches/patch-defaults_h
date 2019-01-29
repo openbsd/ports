@@ -1,10 +1,11 @@
-$OpenBSD: patch-defaults_h,v 1.2 2018/02/14 18:06:29 sthen Exp $
+$OpenBSD: patch-defaults_h,v 1.3 2019/01/29 23:05:21 sthen Exp $
+
 Index: defaults.h
 --- defaults.h.orig
 +++ defaults.h
-@@ -39,7 +39,7 @@
-  * overloading nobody with yet another use case.  Using nobody for source
-  * builds makes sense because chances are high that it exists.
+@@ -45,7 +45,7 @@
+  *
+  * Make sure to also patch the manual page if you patch this.
   */
 -#define DFLT_DROPUSER "nobody"
 +#define DFLT_DROPUSER "_sslsplit"

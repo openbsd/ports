@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2018/08/28 21:44:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/01/29 23:05:21 sthen Exp $
 
 COMMENT=	transparent and scalable SSL/TLS interception
 
-DISTNAME=	sslsplit-0.5.3
+DISTNAME=	sslsplit-0.5.4
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	security
@@ -15,19 +15,23 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto event_core event_extra event_openssl event_pthreads
-WANTLIB += pthread ssl
+WANTLIB += net pcap pthread ssl
 
 MASTER_SITES=	https://mirror.roe.ch/rel/sslsplit/
 
-LIB_DEPENDS=	devel/libevent2
-# following is expected unless MALLOC_FLAGS includes 'j':
-# "cert.t.c:65:F:cert_refcount_inc:cert_refcount_inc_01:0: refcount mismatch"
-# the test deliberately does a use-after-free
+LIB_DEPENDS=	devel/libevent2 \
+		net/libnet/1.1
 TEST_DEPENDS=	devel/check
 MAKE_FLAGS=	MANDIR=man PREFIX=${TRUEPREFIX}
 
 USE_GMAKE=	Yes
 
 MAKE_FILE=	GNUmakefile
+
+post-install:
+	mv ${PREFIX}/sslsplit ${PREFIX}/share/examples/
+	sed -i 's,/usr/local/etc/,${SYSCONFDIR}/,' \
+		${PREFIX}/share/examples/sslsplit/* \
+		${PREFIX}/man/man*/*
 
 .include <bsd.port.mk>
