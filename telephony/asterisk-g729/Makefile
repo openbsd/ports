@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2018/10/16 12:37:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/01/29 23:40:14 sthen Exp $
 
 COMMENT=	G.729a voice codec for Asterisk
 DISTNAME=	asterisk-g72x-1.4.3
+REVISION=	0
 PKGNAME=	${DISTNAME:S/g72x/g729/}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	telephony
@@ -28,21 +29,18 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/libtool # m4
-RUN_DEPENDS=	telephony/asterisk>=13.0,<=14.0
+RUN_DEPENDS=	telephony/asterisk>=16.0,<=17.0
 LIB_DEPENDS=	telephony/bcg729
 
 CONFIGURE_STYLE=  gnu
 CONFIGURE_ARGS+= --with-asterisk-includes=${LOCALBASE}/include \
-		--with-asterisk130 \
+		--with-asterisk160 \
 		--with-bcg729
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+LIBTOOL_FLAGS=	--tag=disable-static
 
-post-patch:
-	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
-
-post-install:
-	rm ${PREFIX}/lib/asterisk/modules/codec_g729.a # pointless
+do-gen:
+	cd ${WRKSRC}; ${AUTOCONF_ENV} ./autogen.sh
 
 # to build astconv (when fixed for ast13+ API):
 # cd ${WRKSRC}; ${MAKE_PROGRAM} astconv CPPFLAGS=-I${LOCALBASE}/include \
