@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2015/02/16 22:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/01/29 11:43:09 sthen Exp $
 
 COMMENT=	number theory-oriented computer algebra system
 
 DISTNAME=	pari-2.1.7
+REVISION=	0
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	math
 
@@ -25,6 +26,10 @@ CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/pari \
 			--host=${ARCH}
 
 TEST_TARGET=		dobench
+
+.if ${MACHINE_ARCH} == i386
+CFLAGS+=		-Wl,-znotext
+.endif
 
 post-install:
 	mv ${PREFIX}/share/pari/doc ${PREFIX}/share/doc/pari
