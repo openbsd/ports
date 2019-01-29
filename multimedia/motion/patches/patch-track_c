@@ -1,8 +1,8 @@
-$OpenBSD: patch-track_c,v 1.4 2018/03/29 19:31:00 sthen Exp $
+$OpenBSD: patch-track_c,v 1.5 2019/01/29 22:40:53 sthen Exp $
 Index: track.c
 --- track.c.orig
 +++ track.c
-@@ -9,7 +9,11 @@
+@@ -10,7 +10,11 @@
  #include "motion.h"
  
  #ifdef HAVE_V4L2

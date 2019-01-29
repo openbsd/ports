@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2018/03/29 19:31:00 sthen Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2019/01/29 22:40:53 sthen Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -103,7 +103,7 @@ pre-mobject-info:
+@@ -129,7 +129,7 @@ pre-mobject-info:
  ################################################################################
  %.o: @top_srcdir@/%.c
  	@echo -e "\tCompiling $< into $@..."
@@ -12,7 +12,7 @@ Index: Makefile.in
  
  ################################################################################
  # Include the dependency file if it exists.                                    #
-@@ -122,7 +122,7 @@ endif
+@@ -148,7 +148,7 @@ endif
  ################################################################################
  $(DEPEND_FILE): *.h $(SRC)
  	@echo "Generating dependencies, please wait..."

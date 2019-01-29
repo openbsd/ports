@@ -1,9 +1,9 @@
-$OpenBSD: patch-event_c,v 1.1 2018/03/29 19:31:00 sthen Exp $
+$OpenBSD: patch-event_c,v 1.2 2019/01/29 22:40:53 sthen Exp $
 
 Index: event.c
 --- event.c.orig
 +++ event.c
-@@ -353,7 +353,7 @@ static void event_stream_put(struct context *cnt,
+@@ -474,7 +474,7 @@ static void event_stream_put(struct context *cnt,
  }
  
  
@@ -12,7 +12,7 @@ Index: event.c
  static void event_vlp_putpipe(struct context *cnt,
              motion_event type ATTRIBUTE_UNUSED,
              struct image_data *img_data, char *dummy ATTRIBUTE_UNUSED, void *devpipe,
-@@ -1022,7 +1022,7 @@ struct event_handlers event_handlers[] = {
+@@ -1239,7 +1239,7 @@ struct event_handlers event_handlers[] = {
      EVENT_IMAGE_SNAPSHOT,
      event_image_snapshot
      },

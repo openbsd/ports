@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.20 2018/11/05 17:23:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/01/29 22:40:53 sthen Exp $
 
-V=		4.1.1
-REVISION=	2
+V=		4.2.1
 COMMENT=	motion detection software for video
 
 GH_ACCOUNT=	Motion-Project
@@ -18,7 +17,8 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPL (according to source files, v2 only. website says v2+).
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += avcodec avdevice avformat avutil c jpeg m pthread sqlite3 swscale
+WANTLIB += avcodec avdevice avformat avutil c intl jpeg m microhttpd
+WANTLIB += pthread sqlite3 swscale webp webpmux
 
 FLAVOR?=
 FLAVORS=		mysql pgsql
@@ -28,10 +28,13 @@ SUBST_VARS=		FLAVOR_COMMA
 
 LIB_DEPENDS=		databases/sqlite3 \
 			graphics/jpeg \
-			graphics/ffmpeg
+			graphics/ffmpeg \
+			graphics/libwebp \
+			www/libmicrohttpd
 
 FAKE_FLAGS=		docdir=${PREFIX}/share/doc/motion \
-			examplesdir=${PREFIX}/share/examples/motion
+			examplesdir=${PREFIX}/share/examples/motion \
+			sysconfdir=${PREFIX}/share/examples
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf
