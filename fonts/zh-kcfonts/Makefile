@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/31 09:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2019/01/29 09:13:54 kevlo Exp $
 
 COMMENT=	extra chinese fonts
 
@@ -8,7 +8,7 @@ CATEGORIES=     fonts chinese x11
 
 PERMIT_PACKAGE_CDROM=   Yes
 
-MASTER_SITES=	http://cle.linux.org.tw/fonts/bitmap/KCFONTS/
+MASTER_SITES=	https://ftp.kh.edu.tw/Linux/CLE/fonts/bitmap/KCFONTS/
 DIST_SUBDIR=    zh-kcfonts
 DISTFILES=	${FONTS}
 
