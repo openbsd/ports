@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/01/28 20:47:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2019/01/29 21:07:28 jasper Exp $
 
 COMMENT =		best practices checker for ansible
 
@@ -14,6 +14,7 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
 
+BUILD_DEPENDS =		devel/py-setuptools_scm
 RUN_DEPENDS =		sysutils/ansible
 PORTHOME =		${WRKDIR}
 
