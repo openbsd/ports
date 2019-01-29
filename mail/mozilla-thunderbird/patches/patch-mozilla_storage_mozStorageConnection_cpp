@@ -1,9 +1,9 @@
-$OpenBSD: patch-mozilla_storage_mozStorageConnection_cpp,v 1.3 2018/10/03 06:43:10 landry Exp $
+$OpenBSD: patch-mozilla_storage_mozStorageConnection_cpp,v 1.4 2019/01/29 20:56:22 landry Exp $
 
 Index: storage/mozStorageConnection.cpp
 --- storage/mozStorageConnection.cpp.orig
 +++ storage/mozStorageConnection.cpp
-@@ -839,6 +839,13 @@ Connection::initializeInternal()
+@@ -754,6 +754,13 @@ nsresult Connection::initializeInternal() {
      return convertResultCode(srv);
    }
  
