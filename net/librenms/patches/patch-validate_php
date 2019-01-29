@@ -1,4 +1,4 @@
-$OpenBSD: patch-validate_php,v 1.17 2018/04/23 11:00:08 sthen Exp $
+$OpenBSD: patch-validate_php,v 1.18 2019/01/29 22:20:37 sthen Exp $
 
 - files installed from packages should only be updated via packages so
 it's safer if they are owned by root; adjust the ownership check so that
@@ -9,7 +9,7 @@ it's safer if they are owned by root; adjust the ownership check so that
 Index: validate.php
 --- validate.php.orig
 +++ validate.php
-@@ -76,7 +76,7 @@ if (!file_exists('config.php')) {
+@@ -80,7 +80,7 @@ if (!file_exists('config.php')) {
  }
  
  $pre_checks_failed = false;
@@ -18,7 +18,7 @@ Index: validate.php
  if (!str_contains($syntax_check, 'No syntax errors detected')) {
      print_fail('Syntax error in config.php');
      echo $syntax_check;
-@@ -103,7 +103,7 @@ if (!file_exists('vendor/autoload.php')) {
+@@ -107,7 +107,7 @@ if (!file_exists('vendor/autoload.php')) {
  require_once 'vendor/autoload.php';
  
  
