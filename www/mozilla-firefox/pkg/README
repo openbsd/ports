@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.22 2018/11/03 21:45:52 landry Exp $
+$OpenBSD: README,v 1.23 2019/01/29 21:03:19 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -63,6 +63,17 @@ videos, install the "ffmpeg" package. It will be used at runtime if
 firefox finds it.
 
 # pkg_add ffmpeg
+
+WebRTC support
+==============
+For WebRTC to properly work, it is required to enable audio recording:
+
+# sysctl kern.audio.record=1
+
+It is also required to change the ownership of the video(4) device so that your
+regular user can access the webcam device.
+
+# chown youruser /dev/video0
 
 KerberosV support
 =================

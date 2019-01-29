@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.369 2019/01/10 08:00:47 landry Exp $
+# $OpenBSD: Makefile,v 1.370 2019/01/29 21:03:19 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	64.0.2
+MOZILLA_VERSION =	65.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	81.0
+SO_VERSION =	82.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs
@@ -34,8 +34,6 @@ MODCLANG_ARCHS =	amd64 i386
 MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 # firefox >= 46 defaults to gtk+3
 MOZILLA_USE_GTK3 = Yes
-# 56 requires 59.1
-MOZILLA_USE_BUNDLED_ICU =	Yes
 # 59 is broken with system cairo and the option is being dropped
 MOZILLA_USE_BUNDLED_CAIRO = Yes
 # #1460600
