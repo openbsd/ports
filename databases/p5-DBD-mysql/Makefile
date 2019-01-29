@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.53 2018/05/17 09:20:07 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2019/01/29 18:08:40 giovanni Exp $
 
 COMMENT=		MySQL drivers for the Perl DBI
-DISTNAME=		DBD-mysql-4.042
-REVISION =		0
+DISTNAME=		DBD-mysql-4.050
 
 CATEGORIES=		databases
 
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 MODULES=		cpan databases/mariadb
-CPAN_AUTHOR=		MICHIELB
+CPAN_AUTHOR=		DVEEDEN
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

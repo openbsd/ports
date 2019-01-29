@@ -1,0 +1,15 @@
+$OpenBSD: patch-t_10connect_t,v 1.1 2019/01/29 18:08:40 giovanni Exp $
+
+Index: t/10connect.t
+--- t/10connect.t.orig
++++ t/10connect.t
+@@ -71,7 +70,9 @@ ok($dbh->disconnect(), 'Disconnected');
+ eval {$dbh= DBI->connect($test_dsn, $test_user, $test_password,
+    { RaiseError => 1, PrintError => 1, AutoCommit => 0,
+      Username => '4yZ73s9qeECdWi', Password => '64heUGwAsVoNqo' });};
++SKIP: { skip "Our mariadb test runs with --skip-grant-tables", 1;
+ ok($@, 'Username and Password attributes override');
++}
+ 
+ eval {$dbh= DBI->connect($test_dsn, '4yZ73s9qeECdWi', '64heUGwAsVoNqo',
+    { RaiseError => 1, PrintError => 1, AutoCommit => 0,

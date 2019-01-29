@@ -1,0 +1,34 @@
+$OpenBSD: patch-dbdimp_c,v 1.4 2019/01/29 18:08:40 giovanni Exp $
+
+backport fix for issue 
+https://github.com/perl5-dbi/DBD-mysql/issues/78
+
+Index: dbdimp.c
+--- dbdimp.c.orig
++++ dbdimp.c
+@@ -4447,8 +4447,7 @@ process:
+           if (!(fields[i].flags & ZEROFILL_FLAG))
+           {
+             /* Coerce to double and set scalar as NV */
+-            (void) SvNV(sv);
+-            SvNOK_only(sv);
++            sv_setnv(sv, SvNV(sv));
+           }
+           break;
+ 
+@@ -4459,13 +4458,11 @@ process:
+             /* Coerce to integer and set scalar as UV resp. IV */
+             if (fields[i].flags & UNSIGNED_FLAG)
+             {
+-              (void) SvUV(sv);
+-              SvIOK_only_UV(sv);
++              sv_setuv(sv, SvUV(sv));
+             }
+             else
+             {
+-              (void) SvIV(sv);
+-              SvIOK_only(sv);
++              sv_setiv(sv, SvIV(sv));
+             }
+           }
+           break;
