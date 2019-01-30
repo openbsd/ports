@@ -1,0 +1,14 @@
+The PRECIS framework makes internationalized user names and passwords safer for
+use by applications. PRECIS profiles transform unicode strings into a canonical
+form, suitable for comparison.
+
+This Python module implements the PRECIS framework as described in:
+
+- PRECIS Framework: Preparation, Enforcement, and Comparison of
+  Internationalized Strings in Application Protocols (RFC 8264)
+
+- Preparation, Enforcement, and Comparison of Internationalized Strings
+  Representing Usernames and Passwords (RFC 8265)
+
+- Preparation, Enforcement, and Comparison of Internationalized Strings
+  Representing Nicknames (RFC 8266)
