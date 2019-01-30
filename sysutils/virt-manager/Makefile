@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/07/06 06:04:43 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2019/01/30 09:02:36 ajacoutot Exp $
 
 COMMENT=		GUI for managing virtual machines through libvirt
 
@@ -32,6 +32,7 @@ RUN_DEPENDS=		devel/libvirt-glib \
 RUN_DEPENDS +=		x11/gtk+3
 
 NO_BUILD=		Yes
+MODPY_BUILDDEP=		Yes
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
 			x11/gtk+3,-guic
