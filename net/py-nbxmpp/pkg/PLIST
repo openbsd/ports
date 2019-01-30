@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/05/14 17:20:37 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/01/30 17:05:36 feinerer Exp $
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/
 lib/python${MODPY_VERSION}/site-packages/nbxmpp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}auth_nb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}bosh.${MODPY_PYC_MAGIC_TAG}pyc

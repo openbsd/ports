@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2018/05/20 10:41:47 feinerer Exp $
+# $OpenBSD: Makefile,v 1.5 2019/01/30 17:05:36 feinerer Exp $
 
 COMMENT =		Python XMPP and Jabber implementation
 
-MODPY_EGG_VERSION =	0.6.6
+MODPY_EGG_VERSION =	0.6.9
 DISTNAME =		nbxmpp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net devel
