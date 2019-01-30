@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1808 2019/01/28 19:10:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.1809 2019/01/30 08:04:07 yasuoka Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -65,6 +65,7 @@
      SUBDIR += check
      SUBDIR += chmlib
      SUBDIR += cil
+     SUBDIR += cjose
      SUBDIR += cln
      SUBDIR += cmake
      SUBDIR += cmocka
