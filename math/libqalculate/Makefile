@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.15 2018/11/14 20:48:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/01/30 19:05:43 cwen Exp $
 
-BROKEN-macppc =	libqalculate/Calculator.cc:7030: internal compiler error
 COMMENT =	applied math library
 CATEGORIES =	math devel
 DISTNAME =	libqalculate-0.9.7
