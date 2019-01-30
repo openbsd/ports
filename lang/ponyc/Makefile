@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2019/01/11 22:49:01 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2019/01/30 00:30:09 bcallah Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386
+BROKEN =		needs updating for llvm-7.0.1, working on it
 
 COMMENT =	actor-model, capabilities-secure, high performance language
 DISTNAME =	${GH_PROJECT}-0.25.0

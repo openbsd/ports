@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.4 2018/08/03 05:47:35 bcallah Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2019/01/30 00:30:09 bcallah Exp $
 
 # Also ppc64le
 ONLY_FOR_ARCHS =	amd64 arm64
-BROKEN-arm64 =		see flang issue 557, temporary
+BROKEN =		needs updating for llvm-7.0.1, being worked on
+#BROKEN-arm64 =		see flang issue 557, temporary
 
 CATEGORIES ?=	lang
 
