@@ -1,0 +1,45 @@
+$OpenBSD: patch_i386-engine_Makefile_in,v 1.1 2019/01/30 19:13:35 jasper Exp $
+
+clang cannot compile these files at the default optimization level
+
+Index: engine/Makefile.in
+--- engine/Makefile.in.orig
++++ engine/Makefile.in
+@@ -163,13 +163,13 @@ gforth-fi$(OPT)$(EC)$(EXE):	$(OBJECTS_FI) $(AOBJECTS) 
+ 	$(GCCLD) $(LDFLAGS) $(OBJECTS_FI) $(AOBJECTS) $(LDLIBS) -o $@
+ 
+ engine.s:	$(ENGINE_FAST_DEPS)
+-		$(GCC) $(CFLAGS2) $(CPPFLAGS) $(ENGINE_FLAGS) -S $(srcdir)/engine.c
++		$(GCC) $(CFLAGS2) $(CPPFLAGS) -O0 $(ENGINE_FLAGS) -S $(srcdir)/engine.c
+ 
+ engine$(OPT).o:	$(ENGINE_DEPS)
+-		$(GCC) $(CFLAGS2) $(CPPFLAGS) $(ENGINE_FLAGS) -DGFORTH_DEBUGGING -o $@ -c $(srcdir)/engine.c
++		$(GCC) $(CFLAGS2) $(CPPFLAGS) -O0 $(ENGINE_FLAGS) -DGFORTH_DEBUGGING -o $@ -c $(srcdir)/engine.c
+ 
+ engine2$(OPT).o:	$(ENGINE_DEPS)
+-		$(GCC) $(CFLAGS2) $(CPPFLAGS) $(ENGINE_FLAGS) -DGFORTH_DEBUGGING -DENGINE=2 -o $@ -c $(srcdir)/engine.c
++		$(GCC) $(CFLAGS2) $(CPPFLAGS) -O0 $(ENGINE_FLAGS) -DGFORTH_DEBUGGING -DENGINE=2 -o $@ -c $(srcdir)/engine.c
+ 
+ engine-native$(OPT).o:$(ENGINE_FAST_DEPS)
+ 		$(GCC) $(CFLAGS2) $(CPPFLAGS) $(ENGINE_FLAGS) -DNO_IP -o $@ -c $(srcdir)/engine.c
+@@ -181,16 +181,16 @@ engine-native3$(OPT).o:$(ENGINE_FAST_DEPS)
+ 		$(GCC) $(CFLAGS2) $(CPPFLAGS) $(ENGINE_FLAGS) -DNO_IP -DENGINE=3 -o $@ -c $(srcdir)/engine.c
+ 
+ engine-fast$(OPT).o:	$(ENGINE_FAST_DEPS)
+-		$(GCC) $(CFLAGS2) $(CPPFLAGS) $(ENGINE_FLAGS) -o $@ -c $(srcdir)/engine.c
++		$(GCC) $(CFLAGS2) $(CPPFLAGS) -O0 $(ENGINE_FLAGS) -o $@ -c $(srcdir)/engine.c
+ 
+ engine-fast2$(OPT).o:	$(ENGINE_FAST_DEPS)
+-		$(GCC) $(CFLAGS2) $(CPPFLAGS) $(ENGINE_FLAGS) -DENGINE=2 -o $@ -c $(srcdir)/engine.c
++		$(GCC) $(CFLAGS2) $(CPPFLAGS) -O0 $(ENGINE_FLAGS) -DENGINE=2 -o $@ -c $(srcdir)/engine.c
+ 
+ engine-itc$(OPT).o:	$(ENGINE_DEPS)
+-		$(GCC) $(CFLAGS2) $(CPPFLAGS) $(ENGINE_FLAGS) -DINDIRECT_THREADED -DGFORTH_DEBUGGING -o $@ -c $(srcdir)/engine.c
++		$(GCC) $(CFLAGS2) $(CPPFLAGS) -O0 $(ENGINE_FLAGS) -DINDIRECT_THREADED -DGFORTH_DEBUGGING -o $@ -c $(srcdir)/engine.c
+ 
+ engine-ditc$(OPT).o:	$(ENGINE_DEPS)
+-		$(GCC) $(CFLAGS2) $(CPPFLAGS) $(ENGINE_FLAGS) -DDOUBLY_INDIRECT -o $@ -c $(srcdir)/engine.c
++		$(GCC) $(CFLAGS2) $(CPPFLAGS) -O0 $(ENGINE_FLAGS) -DDOUBLY_INDIRECT -o $@ -c $(srcdir)/engine.c
+ 
+ engine-prof$(OPT).o:	$(ENGINE_DEPS)
+ 		$(GCC) $(CFLAGS2) $(CPPFLAGS) $(ENGINE_FLAGS) -DVM_PROFILING -o $@ -c $(srcdir)/engine.c

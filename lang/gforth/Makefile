@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2018/05/30 11:29:29 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2019/01/30 19:13:35 jasper Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 mips64 mips64el powerpc sparc64
-
-BROKEN-i386 =		clang 5.0.0 ICE
 
 USE_WXNEEDED =		Yes
 
@@ -38,6 +36,11 @@ FAKE_FLAGS+=		DESTDIR="${WRKINST}"
 
 KERNEL = 		kernl${WORDSIZE}${ENDIAN}.fi
 SUBST_VARS +=		KERNEL V
+
+# On i386 LLVM runs crashes/runs out of memory compiling engine.c
+.if ${MACHINE_ARCH} == "i386"
+PATCH_LIST =		patch-* patch_i386-*
+.endif
 
 .include <bsd.port.arch.mk>
 
