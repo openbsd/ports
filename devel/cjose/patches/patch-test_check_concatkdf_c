@@ -1,0 +1,23 @@
+$OpenBSD: patch-test_check_concatkdf_c,v 1.1.1.1 2019/01/30 07:58:19 yasuoka Exp $
+
+Index: test/check_concatkdf.c
+--- test/check_concatkdf.c.orig
++++ test/check_concatkdf.c
+@@ -60,14 +60,9 @@ _create_otherinfo_header_finish:
+ 
+ static bool _cmp_uint32(uint8_t **actual, uint32_t expected)
+ {
+-    uint32_t value = htonl(expected);
+-    uint8_t expectedData[] = {
+-        (value >> 0) & 0xff,
+-        (value >> 8) & 0xff,
+-        (value >> 16) & 0xff,
+-        (value >> 24) & 0xff
+-    };
+-    bool result = (0 == memcmp(*actual, expectedData, 4));
++    uint32_t big_endian_int32 = htonl(expected);
++
++    bool result = (0 == memcmp(*actual, &big_endian_int32, 4));
+     (*actual) += 4;
+     return result;
+ }

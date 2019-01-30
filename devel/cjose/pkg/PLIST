@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/01/30 07:58:19 yasuoka Exp $
+include/cjose/
+include/cjose/base64.h
+include/cjose/cjose.h
+include/cjose/error.h
+include/cjose/header.h
+include/cjose/jwe.h
+include/cjose/jwk.h
+include/cjose/jws.h
+include/cjose/util.h
+include/cjose/version.h
+lib/libcjose.a
+lib/libcjose.la
+@lib lib/libcjose.so.${LIBcjose_VERSION}
+lib/pkgconfig/cjose.pc

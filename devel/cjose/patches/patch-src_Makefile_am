@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1.1.1 2019/01/30 07:58:19 yasuoka Exp $
+
+Index: src/Makefile.am
+--- src/Makefile.am.orig
++++ src/Makefile.am
+@@ -1,4 +1,4 @@
+-AM_CFLAGS =-std=gnu99 --pedantic -Wall -Werror -g -O2 -I$(top_builddir)/include
++AM_CFLAGS =-std=gnu99 --pedantic -Wall -I$(top_builddir)/include
+ 
+ lib_LTLIBRARIES=libcjose.la
+ libcjose_la_CPPFLAGS= -I$(topdir)/include

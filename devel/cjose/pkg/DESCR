@@ -1,0 +1,4 @@
+cjose is a library implementing Javascript Object Signing and Encryption
+(JOSE).  JOSE consists of JSON Web Signature (JWS, RFC 7515), JSON Web
+Encryption (JWE, RFC 7516) and JSON Web Key (JWK, RFC 7517), and is used
+in protocols such as OAUTH, OpenID Connect or XMPP.
