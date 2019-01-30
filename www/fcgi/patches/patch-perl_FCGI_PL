@@ -1,7 +1,17 @@
-$OpenBSD: patch-perl_FCGI_PL,v 1.2 2011/03/28 23:04:42 simon Exp $
---- perl/FCGI.PL.orig	Sun Dec 15 21:02:48 2002
-+++ perl/FCGI.PL	Wed Mar  9 13:41:41 2011
-@@ -291,7 +291,7 @@ sub Request(;***$*$) {
+$OpenBSD: patch-perl_FCGI_PL,v 1.3 2019/01/30 14:55:06 cwen Exp $
+Index: perl/FCGI.PL
+--- perl/FCGI.PL.orig
++++ perl/FCGI.PL
+@@ -1,6 +1,8 @@
+ use Config;
+ use ExtUtils::MakeMaker;
+ 
++BEGIN { push @INC, '.'; }
++
+ do 'FCGI.cfg' or die "no FCGI.cfg";
+ 
+ open OUT, ">FCGI.pm";
+@@ -291,7 +293,7 @@ sub Request(;***$*$) {
  
  sub accept() {
      warn "accept called as a method; you probably wanted to call Accept" if @_;
@@ -10,7 +20,7 @@ $OpenBSD: patch-perl_FCGI_PL,v 1.2 2011/03/28 23:04:42 simon Exp $
  	%ENV = %FCGI::ENV;
      } else {
  	%FCGI::ENV = %ENV;
-@@ -310,7 +310,7 @@ sub accept() {
+@@ -310,7 +312,7 @@ sub accept() {
  
  sub finish() {
      warn "finish called as a method; you probably wanted to call Finish" if @_;
@@ -19,7 +29,7 @@ $OpenBSD: patch-perl_FCGI_PL,v 1.2 2011/03/28 23:04:42 simon Exp $
  
      # not SFIO
      if (tied (*STDIN)) {
-@@ -393,7 +393,7 @@ sub OPEN {
+@@ -393,7 +395,7 @@ sub OPEN {
  # Apparently some use fileno to determine if a filehandle is open,
  # so we might want to return a defined, but meaningless value.
  # An alternative would be to return the fcgi stream fd.
