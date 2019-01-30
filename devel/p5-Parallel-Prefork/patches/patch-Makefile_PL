@@ -1,0 +1,10 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2019/01/30 15:00:23 cwen Exp $
+Fix for perl 5.26.0+ (no . in @inc by default)
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -1,3 +1,4 @@
++BEGIN { push @INC, '.'; }
+ use inc::Module::Install;
+ 
+ all_from 'lib/Parallel/Prefork.pm';
