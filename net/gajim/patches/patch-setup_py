@@ -1,11 +1,11 @@
-$OpenBSD: patch-setup_py,v 1.1 2018/05/21 06:10:43 feinerer Exp $
+$OpenBSD: patch-setup_py,v 1.2 2019/01/30 17:09:17 feinerer Exp $
 
 Use correct location and do not compress man pages.
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -113,11 +113,11 @@ def build_man(build_cmd):
+@@ -111,11 +111,11 @@ def build_man(build_cmd):
  def install_man(install_cmd):
      data_files = install_cmd.distribution.data_files
      man_dir = os.path.join(build_dir, 'man')
