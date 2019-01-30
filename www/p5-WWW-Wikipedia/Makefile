@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:57:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/01/30 15:14:05 cwen Exp $
 
 COMMENT=		automated interface to the Wikipedia encyclopedia
 
-DISTNAME=		WWW-Wikipedia-2.01
+DISTNAME=		WWW-Wikipedia-2.05
 CATEGORIES=		www
 
 MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		textproc/p5-Text-Autoformat \
+			www/p5-LWP-Protocol-https \
 			www/p5-libwww \
 			www/p5-URI
 TEST_DEPENDS=	devel/p5-Test-Exception

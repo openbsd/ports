@@ -1,0 +1,10 @@
+$OpenBSD: patch-Makefile_PL,v 1.1 2019/01/30 15:14:05 cwen Exp $
+Fix in perl 5.26.0+ (no . in @inc by default)
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -1,3 +1,4 @@
++BEGIN { push @INC, '.'; }
+ use inc::Module::Install 1.00;
+ 
+ if ( -e 'MANIFEST.SKIP' ) {
