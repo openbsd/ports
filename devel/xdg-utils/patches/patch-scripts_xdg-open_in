@@ -1,6 +1,11 @@
-$OpenBSD: patch-scripts_xdg-open_in,v 1.5 2018/05/11 05:47:28 ajacoutot Exp $
+$OpenBSD: patch-scripts_xdg-open_in,v 1.6 2019/01/30 06:11:18 ajacoutot Exp $
 
 Fix sed(1) usage (i.e. !GNU sed).
+
+From 31525d3855f876ddf2e29091b2e8d376f923e09e Mon Sep 17 00:00:00 2001
+From: Rex Dieter <rdieter@gmail.com>
+Date: Thu, 24 May 2018 14:40:53 -0500
+Subject: xdg-open: better pcmanfm check (BR106636,BR106161)
 
 Index: scripts/xdg-open.in
 --- scripts/xdg-open.in.orig
@@ -23,3 +28,12 @@ Index: scripts/xdg-open.in
          fi
      fi
  
+@@ -451,7 +451,7 @@ open_lxde()
+ {
+ 
+     # pcmanfm only knows how to handle file:// urls and filepaths, it seems.
+-    if pcmanfm --help >/dev/null 2>&1 -a is_file_url_or_path "$1"; then
++    if pcmanfm --help >/dev/null 2>&1 && is_file_url_or_path "$1"; then
+         local file="$(file_url_to_path "$1")"
+ 
+         # handle relative paths
