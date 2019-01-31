@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.96 2019/01/28 06:22:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.97 2019/01/31 07:58:49 ajacoutot Exp $
 bin/bq
 bin/gcloud
 bin/git-credential-gcloud.sh
@@ -1967,6 +1967,7 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/run/pretty_print.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/pretty_print.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/resource_args.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/resource_args.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/run/resources.yaml
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/serverless_operations.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/serverless_operations.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/source_ref.py
@@ -4669,8 +4670,7 @@ google-cloud-sdk/lib/surface/compute/disks/remove_resource_policies.py
 google-cloud-sdk/lib/surface/compute/disks/remove_resource_policies.pyc
 google-cloud-sdk/lib/surface/compute/disks/resize.py
 google-cloud-sdk/lib/surface/compute/disks/resize.pyc
-google-cloud-sdk/lib/surface/compute/disks/set_iam_policy.py
-google-cloud-sdk/lib/surface/compute/disks/set_iam_policy.pyc
+google-cloud-sdk/lib/surface/compute/disks/set_iam_policy.yaml
 google-cloud-sdk/lib/surface/compute/disks/snapshot.py
 google-cloud-sdk/lib/surface/compute/disks/snapshot.pyc
 google-cloud-sdk/lib/surface/compute/disks/update.py
@@ -4801,8 +4801,7 @@ google-cloud-sdk/lib/surface/compute/images/packages/list.pyc
 google-cloud-sdk/lib/surface/compute/images/remove_iam_policy_binding.yaml
 google-cloud-sdk/lib/surface/compute/images/remove_labels.py
 google-cloud-sdk/lib/surface/compute/images/remove_labels.pyc
-google-cloud-sdk/lib/surface/compute/images/set_iam_policy.py
-google-cloud-sdk/lib/surface/compute/images/set_iam_policy.pyc
+google-cloud-sdk/lib/surface/compute/images/set_iam_policy.yaml
 google-cloud-sdk/lib/surface/compute/images/update.py
 google-cloud-sdk/lib/surface/compute/images/update.pyc
 google-cloud-sdk/lib/surface/compute/images/vulnerabilities/
@@ -5223,8 +5222,8 @@ google-cloud-sdk/lib/surface/compute/reset_windows_password.pyc
 google-cloud-sdk/lib/surface/compute/resource_policies/
 google-cloud-sdk/lib/surface/compute/resource_policies/__init__.py
 google-cloud-sdk/lib/surface/compute/resource_policies/__init__.pyc
-google-cloud-sdk/lib/surface/compute/resource_policies/create_backup_schedule.py
-google-cloud-sdk/lib/surface/compute/resource_policies/create_backup_schedule.pyc
+google-cloud-sdk/lib/surface/compute/resource_policies/create_snapshot_schedule.py
+google-cloud-sdk/lib/surface/compute/resource_policies/create_snapshot_schedule.pyc
 google-cloud-sdk/lib/surface/compute/resource_policies/create_vm_maintenance.py
 google-cloud-sdk/lib/surface/compute/resource_policies/create_vm_maintenance.pyc
 google-cloud-sdk/lib/surface/compute/resource_policies/delete.py
@@ -7406,6 +7405,7 @@ google-cloud-sdk/lib/surface/resources/list.pyc
 google-cloud-sdk/lib/surface/run/
 google-cloud-sdk/lib/surface/run/__init__.py
 google-cloud-sdk/lib/surface/run/__init__.pyc
+google-cloud-sdk/lib/surface/run/add_iam_policy_binding.yaml
 google-cloud-sdk/lib/surface/run/build.py
 google-cloud-sdk/lib/surface/run/build.pyc
 google-cloud-sdk/lib/surface/run/configurations/
@@ -7424,6 +7424,8 @@ google-cloud-sdk/lib/surface/run/domain_mappings/__init__.py
 google-cloud-sdk/lib/surface/run/domain_mappings/__init__.pyc
 google-cloud-sdk/lib/surface/run/domain_mappings/list.py
 google-cloud-sdk/lib/surface/run/domain_mappings/list.pyc
+google-cloud-sdk/lib/surface/run/get_iam_policy.yaml
+google-cloud-sdk/lib/surface/run/remove_iam_policy_binding.yaml
 google-cloud-sdk/lib/surface/run/revisions/
 google-cloud-sdk/lib/surface/run/revisions/__init__.py
 google-cloud-sdk/lib/surface/run/revisions/__init__.pyc
@@ -7449,6 +7451,7 @@ google-cloud-sdk/lib/surface/run/services/describe.py
 google-cloud-sdk/lib/surface/run/services/describe.pyc
 google-cloud-sdk/lib/surface/run/services/list.py
 google-cloud-sdk/lib/surface/run/services/list.pyc
+google-cloud-sdk/lib/surface/run/set_iam_policy.yaml
 google-cloud-sdk/lib/surface/runtime_config/
 google-cloud-sdk/lib/surface/runtime_config/__init__.py
 google-cloud-sdk/lib/surface/runtime_config/__init__.pyc
