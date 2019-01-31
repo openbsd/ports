@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.103 2018/12/21 13:44:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2019/01/31 19:44:08 ajacoutot Exp $
 
 BROKEN-hppa=		no atomic primitives
 
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-V=			2.3.0
+V=			2.3.1
 DISTNAME=		harfbuzz-${V}
 EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		harfbuzz-${V}
 PKGNAME-icu=		harfbuzz-icu-${V}
 
-SHARED_LIBS +=  harfbuzz             14.2     # 20300.0
-SHARED_LIBS +=  harfbuzz-icu         1.0      # 20300.0
-SHARED_LIBS +=  harfbuzz-gobject     0.1      # 20300.0
-SHARED_LIBS +=  harfbuzz-subset      0.0      # 20300.0
+SHARED_LIBS +=  harfbuzz             14.2     # 20301.0
+SHARED_LIBS +=  harfbuzz-icu         1.0      # 20301.0
+SHARED_LIBS +=  harfbuzz-gobject     0.1      # 20301.0
+SHARED_LIBS +=  harfbuzz-subset      0.0      # 20301.0
 
 CATEGORIES=		devel graphics textproc
 
@@ -26,7 +26,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += freetype glib-2.0 graphite2 iconv intl m pcre pthread
+WANTLIB += freetype glib-2.0 graphite2 iconv intl m pthread
 WANTLIB += ${COMPILER_LIBCXX} z
 
 MASTER_SITES=		http://www.freedesktop.org/software/harfbuzz/release/
@@ -40,7 +40,7 @@ COMPILER=		base-clang ports-gcc ports-clang
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += X11 Xext Xrender c cairo expat fontconfig pixman-1
-WANTLIB-main += png xcb xcb-render xcb-shm ffi gobject-2.0
+WANTLIB-main += png16 xcb xcb-render xcb-shm ffi gobject-2.0 pcre
 
 WANTLIB-icu += ${WANTLIB}
 WANTLIB-icu += harfbuzz icudata icuuc

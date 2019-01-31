@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.27 2018/12/21 13:44:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.28 2019/01/31 19:44:08 ajacoutot Exp $
 @pkgpath devel/harfbuzz
 @bin bin/hb-ot-shape-closure
 @bin bin/hb-shape
@@ -55,6 +55,8 @@ lib/pkgconfig/harfbuzz-subset.pc
 lib/pkgconfig/harfbuzz.pc
 share/gir-1.0/
 share/gir-1.0/HarfBuzz-0.0.gir
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/harfbuzz/
 share/gtk-doc/html/harfbuzz/HarfBuzz.png
 share/gtk-doc/html/harfbuzz/HarfBuzz.svg
@@ -171,3 +173,4 @@ share/gtk-doc/html/harfbuzz/what-harfbuzz-doesnt-do.html
 share/gtk-doc/html/harfbuzz/what-is-harfbuzz.html
 share/gtk-doc/html/harfbuzz/why-do-i-need-a-shaping-engine.html
 share/gtk-doc/html/harfbuzz/why-is-it-called-harfbuzz.html
+share/gtk-doc/html/harfbuzz/working-with-harfbuzz-clusters.html
