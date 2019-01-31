@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2018/11/09 23:23:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/01/31 20:11:23 sthen Exp $
 
 COMMENT=	create and manage certificates, CSRs, keys, etc
 
-V=		2.1.1
+V=		2.1.2
 DISTNAME=	xca-$V
-REVISION=	0
 CATEGORIES=	security x11
 
 HOMEPAGE=	https://hohnstaedt.de/xca/

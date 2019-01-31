@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/09/10 21:03:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/01/31 20:11:23 sthen Exp $
 @ask-update xca-<2 .xdb format changes in XCA 2.x. Upgrade is automatic, but backup your old files.
 @bin bin/xca
 @man man/man1/xca.1
@@ -34,6 +34,8 @@ share/xca/xca_de.qm
 share/xca/xca_es.qm
 share/xca/xca_fr.qm
 share/xca/xca_hr.qm
+share/xca/xca_pl.qm
+share/xca/xca_pt_BR.qm
 share/xca/xca_ru.qm
 share/xca/xca_sk.qm
 share/xca/xca_tr.qm
