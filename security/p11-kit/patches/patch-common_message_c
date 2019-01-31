@@ -1,0 +1,16 @@
+$OpenBSD: patch-common_message_c,v 1.1 2019/01/31 18:53:37 ajacoutot Exp $
+
+Set proper version to have the "locale_t" identifier.
+
+Index: common/message.c
+--- common/message.c.orig
++++ common/message.c
+@@ -41,7 +41,7 @@
+  * Oh god. glibc is nasty. Changes behavior and definitions of POSIX
+  * functions to completely different signatures depending on defines
+  */
+-#define _POSIX_C_SOURCE 200112L
++#define _POSIX_C_SOURCE 200809L
+ 
+ #include "compat.h"
+ #define P11_DEBUG_FLAG P11_DEBUG_LIB

@@ -1,0 +1,17 @@
+$OpenBSD: patch-common_unix-peer_c,v 1.1 2019/01/31 18:53:37 ajacoutot Exp $
+
+Index: common/unix-peer.c
+--- common/unix-peer.c.orig
++++ common/unix-peer.c
+@@ -55,7 +55,11 @@ p11_get_upeer_id (int cfd, uid_t *uid, uid_t *gid, pid
+ {
+ 	int ret;
+ #if defined(SO_PEERCRED)
++#ifndef __OpenBSD__
+ 	struct ucred cr;
++#else
++	struct sockpeercred cr;
++#endif
+ 	socklen_t cr_len;
+ 
+ 	cr_len = sizeof (cr);
