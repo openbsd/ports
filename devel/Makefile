@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1809 2019/01/30 08:04:07 yasuoka Exp $
+# $OpenBSD: Makefile,v 1.1810 2019/01/31 17:47:55 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1566,6 +1566,8 @@
      SUBDIR += py-setuptools_git,python3
      SUBDIR += py-setuptools_scm
      SUBDIR += py-setuptools_scm,python3
+     SUBDIR += py-setuptools_scm_git_archive
+     SUBDIR += py-setuptools_scm_git_archive,python3
      SUBDIR += py-setuptools_trial
      SUBDIR += py-setuptools_trial,python3
      SUBDIR += py-sh
