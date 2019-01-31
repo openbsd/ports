@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/11/20 22:19:57 sthen Exp $
-
-BROKEN-i386=	undefined reference to __guard_local
+# $OpenBSD: Makefile,v 1.5 2019/01/31 22:04:40 sthen Exp $
 
 PORTROACH=	limit:^1\.1\.
 V=		1.1.1a
