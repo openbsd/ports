@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/06/29 22:16:13 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2019/01/31 11:14:33 bentley Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -18,7 +18,8 @@ WANTLIB =  ${MODLUA_WANTLIB}
 WANTLIB += GL SDL SDL_gfx SDL_image SDL_mixer X11 c execinfo iconv intl
 WANTLIB += jpeg m ogg png pthread vorbis z
 
-MASTER_SITES =	ftp://ftp.osuosl.org/pub/freedroid/${DISTNAME:R}/
+MASTER_SITES =	https://ftp.osuosl.org/pub/freedroid/${DISTNAME:R}/ \
+		ftp://ftp.osuosl.org/pub/freedroid/${DISTNAME:R}/
 
 WRKDIST =	${WRKDIR}/${DISTNAME:L}
 

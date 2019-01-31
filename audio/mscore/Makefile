@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/01/21 17:00:02 bcallah Exp $
+# $OpenBSD: Makefile,v 1.39 2019/01/31 11:14:33 bentley Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 
@@ -22,7 +22,7 @@ WANTLIB += Qt5Xml Qt5XmlPatterns c freetype m ogg portaudio pthread
 WANTLIB += sndfile vorbis vorbisfile z
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES =	http://ftp.osuosl.org/pub/musescore/releases/MuseScore-${V}/
+MASTER_SITES =	https://ftp.osuosl.org/pub/musescore/releases/MuseScore-${V}/
 
 MODULES =	devel/cmake \
 		x11/qt5

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/01/31 11:14:33 bentley Exp $
 
 COMMENT=	x bust a move clone
 
@@ -13,8 +13,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=  X11 c iconv intl m png>=2 xcb z
 
-MASTER_SITES=		ftp://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/distfiles/ \
-			http://gentoo.osuosl.org/distfiles/
+MASTER_SITES=		https://gentoo.osuosl.org/distfiles/ \
+			ftp://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/distfiles/
+			
 
 LIB_DEPENDS=		devel/gettext \
 			graphics/png
