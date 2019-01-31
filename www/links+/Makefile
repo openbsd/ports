@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.63 2018/09/23 20:12:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2019/01/31 11:37:09 edd Exp $
 
 COMMENT=	graphics and text browser
-VER=		2.17
+VER=		2.18
 DISTNAME=	links-${VER}
 PKGNAME=	links+-${VER}
 CATEGORIES=	www
@@ -32,7 +32,7 @@ LIB_DEPENDS+=	graphics/jpeg \
 		x11/gnome/librsvg \
 		graphics/tiff
 CONFIGURE_ARGS+= --with-x --enable-graphics
-WANTLIB+=	X11 jpeg>=62 m png>=2 tiff>=35
+WANTLIB+=	X11 jpeg>=62 m png16 tiff>=35
 WANTLIB+=	cairo event fontconfig gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB+=	gobject-2.0 intl rsvg-2
 
