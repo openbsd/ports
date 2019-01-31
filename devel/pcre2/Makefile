@@ -1,21 +1,23 @@
-# $OpenBSD: Makefile,v 1.7 2018/11/14 20:48:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/01/31 17:40:30 jca Exp $
 
 COMMENT =	perl-compatible regular expression library, version 2
 
-DISTNAME =	pcre2-10.31
-REVISION =	0
+DISTNAME =	pcre2-10.32
 
-SHARED_LIBS +=  pcre2-16                  0.1 # 3.0
-SHARED_LIBS +=  pcre2-32                  0.1 # 3.0
-SHARED_LIBS +=  pcre2-8                   0.2 # 3.0
-SHARED_LIBS +=  pcre2-posix               0.1 # 0.1
+SHARED_LIBS +=  pcre2-16                  0.2 # 7.1
+SHARED_LIBS +=  pcre2-32                  0.2 # 7.1
+SHARED_LIBS +=  pcre2-8                   0.3 # 7.1
+SHARED_LIBS +=  pcre2-posix               0.2 # 2.1
 
 CATEGORIES =	devel
 
-MASTER_SITES =	http://ftp.csx.cam.ac.uk/pub/software/programming/pcre/ \
+MASTER_SITES =	https://ftp.pcre.org/pub/pcre/ \
+		${MASTER_SITE_SOURCEFORGE:=pcre/} \
+		http://ftp.csx.cam.ac.uk/pub/software/programming/pcre/ \
 		ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/
 
-HOMEPAGE =	http://www.pcre.org/
+HOMEPAGE =	https://www.pcre.org/
+MAINTAINER =	Nam Nguyen <namn@berkeley.edu>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
