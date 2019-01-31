@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/01/31 17:46:32 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive/
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-0-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-0-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-0-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-0-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-0-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-0-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm_git_archive/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
