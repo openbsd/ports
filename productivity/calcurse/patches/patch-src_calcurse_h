@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_calcurse_h,v 1.1 2018/03/22 23:15:29 fcambus Exp $
+$OpenBSD: patch-src_calcurse_h,v 1.2 2019/02/01 22:56:46 sthen Exp $
 
 Fix date display in calendar, the %-* format string is a GNU libc
 extension which is not supported by strftime(3) on OpenBSD.
@@ -14,3 +14,4 @@ Index: src/calcurse.h
 +#define DAY_HEADING_DEFAULT "%B %d, %Y"
  
  struct date {
+ 	unsigned dd;
