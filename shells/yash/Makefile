@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/02/24 21:23:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/02/01 21:26:29 naddy Exp $
 
 COMMENT=	POSIX-compliant command line shell
 
-DISTNAME=	yash-2.44
-RELEASE=	66984
-REVISION=	0
+DISTNAME=	yash-2.48
+RELEASE=	70439
 CATEGORIES=	shells
 HOMEPAGE=	https://yash.osdn.jp/index.html.en
 
@@ -24,5 +23,12 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--mandir="${PREFIX}/man"
 CONFIGURE_ENV=	CPPFLAGS="-std=c99 -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# The test script fails if none of LC_ALL, LC_CTYPE, or LANG is set
+TEST_ENV=       LC_CTYPE=C
+
+# Expected test failures due to differences between BSD and GNU utilities:
+# input-p:  head(1) consumes all input
+# printf-y: wc(1) pads its output with spaces
 
 .include <bsd.port.mk>

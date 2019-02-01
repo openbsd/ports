@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/02/24 21:23:38 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/02/01 21:26:29 naddy Exp $
 @shell bin/yash
 man/ja/
 man/ja/man1/
@@ -139,6 +139,7 @@ share/yash/completion/kill
 share/yash/completion/ksh
 share/yash/completion/less
 share/yash/completion/ln
+share/yash/completion/local
 share/yash/completion/locale
 share/yash/completion/ls
 share/yash/completion/make
@@ -160,6 +161,7 @@ share/yash/completion/paste
 share/yash/completion/patch
 share/yash/completion/pathchk
 share/yash/completion/pgawk
+share/yash/completion/ping
 share/yash/completion/popd
 share/yash/completion/pr
 share/yash/completion/printf
