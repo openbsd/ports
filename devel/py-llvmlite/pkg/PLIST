@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/25 05:58:54 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/02/01 13:12:55 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/llvmlite/
 lib/python${MODPY_VERSION}/site-packages/llvmlite-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/llvmlite/__init__.py
@@ -14,6 +14,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/${MODP
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/${MODPY_PYCACHE}analysis.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/${MODPY_PYCACHE}dylib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/${MODPY_PYCACHE}executionengine.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/${MODPY_PYCACHE}ffi.${MODPY_PYC_MAGIC_TAG}pyc
@@ -28,6 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/${MODPY_PYCACHE}transf
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/${MODPY_PYCACHE}value.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/analysis.py
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/common.py
+lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/context.py
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/dylib.py
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/executionengine.py
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/ffi.py
