@@ -1,0 +1,16 @@
+$OpenBSD: patch-discovery_wfuzz_search_py,v 1.1 2019/02/01 20:40:44 jasper Exp $
+
+Fix path to wordlists
+
+Index: discovery/wfuzz_search.py
+--- discovery/wfuzz_search.py.orig
++++ discovery/wfuzz_search.py
+@@ -12,7 +12,7 @@ class search_wfuzz:
+     def do_search(self):
+         print("elo")
+         try:
+-            for r in wfuzz.fuzz(url="https://"+self.host+"/FUZZ", hc=[404], payloads=[("file",dict(fn="wordlists/general/common.txt"))]):
++            for r in wfuzz.fuzz(url="https://"+self.host+"/FUZZ", hc=[404], payloads=[("file",dict(fn="${PREFIX}/share/theharvester/wordlists/general/common.txt"))]):
+                 print(r)
+                 self.results += r
+         except Exception as e:

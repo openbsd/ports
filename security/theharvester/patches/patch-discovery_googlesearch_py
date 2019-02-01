@@ -1,0 +1,16 @@
+$OpenBSD: patch-discovery_googlesearch_py,v 1.1 2019/02/01 20:40:44 jasper Exp $
+
+Fix path to wordlists
+
+Index: discovery/googlesearch.py
+--- discovery/googlesearch.py.orig
++++ discovery/googlesearch.py
+@@ -94,7 +94,7 @@ class search_google:
+ 
+     def append_dorks(self):
+         try:  # wrap in try-except incase filepaths are messed up
+-            with open('wordlists/dorks.txt', mode='r') as fp:
++            with open('${PREFIX}/share/theharvester/wordlists/dorks.txt', mode='r') as fp:
+                 self.dorks = [dork.strip() for dork in fp]
+         except IOError as error:
+             print(error)

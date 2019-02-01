@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2018/12/31 09:35:40 rpointel Exp $
+# $OpenBSD: Makefile,v 1.7 2019/02/01 20:40:43 jasper Exp $
 
 COMMENT =	information gathering suite
 
 VERSION =	3.0.6
 DISTNAME =	theharvester-${VERSION}
+REVISION =	0
 
 GH_ACCOUNT =	laramies
 GH_PROJECT =	theHarvester
@@ -32,11 +33,16 @@ NO_BUILD =	Yes
 
 INSTDIR =	${PREFIX}/share/theharvester
 
+pre-configure:
+.for f in dnssearch googlesearch wfuzz_search
+	${SUBST_CMD} ${WRKSRC}/discovery/$f.py
+.endfor
+
 do-test:
 	cd ${WRKSRC} && PYTHONPATH=. ${MODPY_BIN} tests/myparser_test.py
 
 do-install:
-	rm ${WRKDIST}/.gitignore
+	rm ${WRKDIST}/.gitignore ${WRKSRC}/discovery/*.{orig,beforesubst}
 	cp -r ${WRKDIST} ${INSTDIR}
 	chmod 755 ${INSTDIR}/theHarvester.py
 	ln -s ${TRUEPREFIX}/share/theharvester/theHarvester.py ${PREFIX}/bin/theHarvester

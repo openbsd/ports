@@ -1,0 +1,16 @@
+$OpenBSD: patch-discovery_dnssearch_py,v 1.1 2019/02/01 20:40:44 jasper Exp $
+
+Fix path to wordlists
+
+Index: discovery/dnssearch.py
+--- discovery/dnssearch.py.orig
++++ discovery/dnssearch.py
+@@ -63,7 +63,7 @@ class dns_force():
+     def __init__(self, domain, dnsserver, verbose=False):
+         self.domain = domain
+         self.nameserver = dnsserver
+-        self.file = "wordlists/dns-big.txt"
++        self.file = "${PREFIX}/share/theharvester/wordlists/dns-big.txt"
+         #self.file = "wordlists/dns-names.txt"
+         self.subdo = False
+         self.verbose = verbose
