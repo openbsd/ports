@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2019/01/14 16:13:05 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2019/02/01 16:24:59 jeremy Exp $
 @option no-default-conflict
 @conflict ruby->=2.6,<2.7
 bin/bundle26
@@ -42,7 +42,7 @@ include/ruby-${REV}/ruby/util.h
 include/ruby-${REV}/ruby/version.h
 include/ruby-${REV}/ruby/vm.h
 include/ruby-${REV}/${SUB}/
-include/ruby-${REV}/${SUB}/rb_mjit_min_header-2.6.0.h
+include/ruby-${REV}/${SUB}/rb_mjit_min_header-2.6.1.h
 include/ruby-${REV}/${SUB}/ruby/
 include/ruby-${REV}/${SUB}/ruby/config.h
 lib/libruby26.so
@@ -1674,8 +1674,8 @@ lib/ruby/gems/${REV}/specifications/default/
 lib/ruby/gems/${REV}/specifications/default/bigdecimal-1.4.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/bundler-1.17.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/cmath-1.0.0.gemspec
-lib/ruby/gems/${REV}/specifications/default/csv-3.0.2.gemspec
-lib/ruby/gems/${REV}/specifications/default/date-1.0.0.gemspec
+lib/ruby/gems/${REV}/specifications/default/csv-3.0.4.gemspec
+lib/ruby/gems/${REV}/specifications/default/date-2.0.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/dbm-1.0.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/e2mmap-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/etc-1.0.1.gemspec

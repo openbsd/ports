@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.1.1.1 2019/01/14 16:13:06 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.2 2019/02/01 16:25:00 jeremy Exp $
 share/ri/
 share/ri/${REV}/
 share/ri/${REV}/system/
@@ -3396,6 +3396,7 @@ share/ri/${REV}/system/CSV/Parser/skip_lines-i.ri
 share/ri/${REV}/system/CSV/Parser/skip_needless_lines-i.ri
 share/ri/${REV}/system/CSV/Parser/start_row-i.ri
 share/ri/${REV}/system/CSV/Parser/unconverted_fields%3f-i.ri
+share/ri/${REV}/system/CSV/Parser/use_headers%3f-i.ri
 share/ri/${REV}/system/CSV/Row/
 share/ri/${REV}/system/CSV/Row/%3c%3c-i.ri
 share/ri/${REV}/system/CSV/Row/%3d%3d-i.ri
@@ -3466,6 +3467,8 @@ share/ri/${REV}/system/CSV/Writer/prepare-i.ri
 share/ri/${REV}/system/CSV/Writer/prepare_format-i.ri
 share/ri/${REV}/system/CSV/Writer/prepare_header-i.ri
 share/ri/${REV}/system/CSV/Writer/prepare_output-i.ri
+share/ri/${REV}/system/CSV/Writer/quote-i.ri
+share/ri/${REV}/system/CSV/Writer/quote_field-i.ri
 share/ri/${REV}/system/CSV/Writer/rewind-i.ri
 share/ri/${REV}/system/CSV/add_row-i.ri
 share/ri/${REV}/system/CSV/build_fields_converter-i.ri
