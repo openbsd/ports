@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/01/20 20:11:23 juanfra Exp $
+# $OpenBSD: Makefile,v 1.31 2019/02/01 21:30:00 juanfra Exp $
 
 COMMENT =		optimising static compiler for Python and Cython
 
@@ -24,6 +24,8 @@ TEST_DEPENDS =		math/py-numpy${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
+
+PORTHOME =		${WRKDIR}
 
 TEST_TARGET =		test
 

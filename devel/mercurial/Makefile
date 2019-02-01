@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2019/01/15 23:21:47 juanfra Exp $
+# $OpenBSD: Makefile,v 1.93 2019/02/01 21:30:00 juanfra Exp $
 
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
@@ -55,6 +55,8 @@ PKG_ARCH-x11 =		*
 
 # This is needed for the development versions
 WRKDIST =		${WRKDIR}/${DISTNAME:C/pre20.*$//}
+
+PORTHOME =		${WRKDIR}
 
 MODPY_ADJ_FILES =	hgweb.cgi \
 			contrib/dumprevlog \
