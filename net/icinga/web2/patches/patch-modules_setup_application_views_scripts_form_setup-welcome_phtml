@@ -1,8 +1,10 @@
-$OpenBSD: patch-modules_setup_application_views_scripts_form_setup-welcome_phtml,v 1.4 2018/11/22 22:20:12 sthen Exp $
+$OpenBSD: patch-modules_setup_application_views_scripts_form_setup-welcome_phtml,v 1.5 2019/02/01 11:32:02 sthen Exp $
 
 Minimal patches to avoid showing confusing path to users in the welcome
 screen (PHP is normally run chroot'ed on OpenBSD), and use group "_icingaweb2"
 as per OpenBSD standard naming for groups from packages.
+
+We don't have head -c / base64, use an alternative.
 
 Index: modules/setup/application/views/scripts/form/setup-welcome.phtml
 --- modules/setup/application/views/scripts/form/setup-welcome.phtml.orig
@@ -42,7 +44,7 @@ Index: modules/setup/application/views/scripts/form/setup-welcome.phtml
        <p><?= $this->translate('In case the IcingaCLI is missing you can create the token manually:'); ?></p>
        <div class="code">
 -        <span>su <?= $phpUser ?: $this->translate('<your-webserver-user>'); ?> -s /bin/sh -c "mkdir -m 2770 <?= dirname($setupTokenPath); ?>; chgrp icingaweb2 <?= dirname($setupTokenPath); ?>; head -c 12 /dev/urandom | base64 | tee <?= $setupTokenPath; ?>; chmod 0660 <?= $setupTokenPath; ?>;";</span>
-+        <span>su <?= $phpUser ?: $this->translate('<your-webserver-user>'); ?> -s /bin/sh -c "mkdir -m 2770 <?= dirname($setupTokenPath); ?>; chgrp _icingaweb2 <?= dirname($setupTokenPath); ?>; dd status=none if=/dev/urandom bs=1 count=12 | perl -MMIME::Base64 -0777 -ne 'print encode_base64($_)' | tee <?= $setupTokenPath; ?>; chmod 0660 <?= $setupTokenPath; ?>;";</span>
++        <span>su <?= $phpUser ?: $this->translate('<your-webserver-user>'); ?> -s /bin/sh -c "mkdir -m 2770 <?= dirname($setupTokenPath); ?>; chgrp _icingaweb2 <?= dirname($setupTokenPath); ?>; openssl rand -base64 12 | tee <?= $setupTokenPath; ?>; chmod 0660 <?= $setupTokenPath; ?>;";</span>
        </div>
        <p><?= sprintf(
          $this->translate('Please see the %s for an extensive description on how to access and use this wizard.'),
