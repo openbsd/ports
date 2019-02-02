@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2018/11/17 21:33:11 juanfra Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2019/02/02 15:26:07 juanfra Exp $
 @pkgpath devel/mercurial
 @bin bin/chg
 bin/hg
@@ -964,6 +964,12 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/zstd.so
 @man man/man1/hg.1
 @man man/man5/hgignore.5
 @man man/man5/hgrc.5
+share/examples/mercurial/
+@sample ${SYSCONFDIR}/mercurial/
+share/examples/mercurial/hgrc.d/
+@sample ${SYSCONFDIR}/mercurial/hgrc.d/
+share/examples/mercurial/hgrc.d/openbsd-security.rc
+@sample ${SYSCONFDIR}/mercurial/hgrc.d/openbsd-security.rc
 share/mercurial/
 share/mercurial/bash_completion
 share/mercurial/dumprevlog

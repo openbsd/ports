@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2019/02/01 21:30:00 juanfra Exp $
+# $OpenBSD: Makefile,v 1.94 2019/02/02 15:26:07 juanfra Exp $
 
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
@@ -6,6 +6,7 @@ COMMENT-x11 =		graphical tooling for mercurial
 # Keep in sync with:
 #   devel/tortoisehg
 MODPY_EGG_VERSION =	4.8.2
+REVISION =		0
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 
@@ -96,6 +97,10 @@ post-install:
 .	endfor
 	# hgk needs to be in the path for 'hg view' to work
 	ln -s ${TRUEPREFIX}/share/mercurial/hgk ${PREFIX}/bin/hgk
+	# With this file we can disable dangerous features
+	mkdir -p ${PREFIX}/share/examples/mercurial/hgrc.d
+	echo '[subrepos]'    >> ${PREFIX}/share/examples/mercurial/hgrc.d/openbsd-security.rc
+	echo 'allowed=false' >> ${PREFIX}/share/examples/mercurial/hgrc.d/openbsd-security.rc
 
 do-test:
 	@echo "Running the tests with ${MAKE_JOBS} jobs."
