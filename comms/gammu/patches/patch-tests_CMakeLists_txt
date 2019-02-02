@@ -1,8 +1,8 @@
-$OpenBSD: patch-tests_CMakeLists_txt,v 1.3 2017/10/20 06:46:02 kirby Exp $
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.4 2019/02/02 15:25:29 kirby Exp $
 Index: tests/CMakeLists.txt
 --- tests/CMakeLists.txt.orig
 +++ tests/CMakeLists.txt
-@@ -67,10 +67,11 @@ if (HAVE_MYSQL_MYSQL_H OR LIBDBI_FOUND OR HAVE_POSTGRE
+@@ -70,10 +70,11 @@ if (HAVE_MYSQL_MYSQL_H OR LIBDBI_FOUND OR HAVE_POSTGRE
          include_directories (${POSTGRES_INCLUDE_DIR})
      endif (POSTGRES_FOUND)
  
@@ -18,7 +18,7 @@ Index: tests/CMakeLists.txt
  endif (HAVE_MYSQL_MYSQL_H OR LIBDBI_FOUND OR HAVE_POSTGRESQL_LIBPQ_FE_H)
  
  # Backup comments
-@@ -960,11 +961,12 @@ if (WITH_ATGEN)
+@@ -978,11 +979,12 @@ if (WITH_ATGEN)
      target_link_libraries(at-charset libGammu ${LIBINTL_LIBRARIES})
      add_test(at-charset "${GAMMU_TEST_PATH}/at-charset${CMAKE_EXECUTABLE_SUFFIX}")
  
