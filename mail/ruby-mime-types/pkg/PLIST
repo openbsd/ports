@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/11/02 19:31:33 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/02/02 02:01:28 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/Code-of-Conduct.rdoc
-${GEM_LIB}/gems/${DISTNAME}/Contributing.rdoc
-${GEM_LIB}/gems/${DISTNAME}/History.rdoc
-${GEM_LIB}/gems/${DISTNAME}/Licence.rdoc
+${GEM_LIB}/gems/${DISTNAME}/Code-of-Conduct.md
+${GEM_LIB}/gems/${DISTNAME}/Contributing.md
+${GEM_LIB}/gems/${DISTNAME}/History.md
+${GEM_LIB}/gems/${DISTNAME}/Licence.md
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
