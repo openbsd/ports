@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/11/02 19:29:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2019/02/02 02:02:43 jeremy Exp $
 
 COMMENT=		MIME types data for Ruby
 
-DISTNAME=		mime-types-data-3.2016.0521
+DISTNAME=		mime-types-data-3.2018.0812
 CATEGORIES=		mail
 
 HOMEPAGE=		https://github.com/mime-types/mime-types-data/
