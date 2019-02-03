@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/12/11 18:33:23 juanfra Exp $
+# $OpenBSD: Makefile,v 1.5 2019/02/03 18:32:50 juanfra Exp $
 
 # Gambit doesn't have thread-local storage support on GCC platforms
 ONLY_FOR_ARCHS = ${CLANG_ARCHS}
@@ -7,7 +7,7 @@ COMMENT =	dialect of Scheme designed for systems programming
 
 GH_ACCOUNT =	vyzo
 GH_PROJECT =	gerbil
-GH_TAGNAME =	v0.14
+GH_TAGNAME =	v0.15
 
 CATEGORIES =	lang
 
@@ -31,7 +31,7 @@ RUN_DEPENDS =	devel/git \
 
 MAKE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib \
-		GERBIL_PATH=${LOCALBASE}/gerbil \
+		GERBIL_PATH=${WRKINST}${PREFIX}/gerbil \
 		GAMBCOMP_VERBOSE=1
 
 NO_TEST =	Yes
@@ -39,7 +39,7 @@ NO_TEST =	Yes
 GERBIL_ROOT =	${PREFIX}/gerbil
 
 do-build:
-	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ./build.sh
+	cd ${WRKSRC}/src && ulimit -n 1024 && ${SETENV} ${MAKE_ENV} ./build.sh
 
 do-install:
 	${INSTALL_DATA_DIR} ${GERBIL_ROOT}
