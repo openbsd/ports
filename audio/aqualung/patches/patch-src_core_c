@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_core_c,v 1.5 2016/11/19 18:28:40 jeremy Exp $
+$OpenBSD: patch-src_core_c,v 1.6 2019/02/03 03:58:35 bentley Exp $
 
 Reinit sndio if there is a audio(4) error.  Without this, aqualung is
 unusable after an audio(4) error until it is closed and reopened.
 
---- src/core.c.orig	Sun Jul 26 12:13:53 2015
-+++ src/core.c	Fri Nov 18 20:42:22 2016
+Index: src/core.c
+--- src/core.c.orig
++++ src/core.c
 @@ -119,6 +119,10 @@ GSList * saved_pconns_L = NULL;
  GSList * saved_pconns_R = NULL;
  #endif /* HAVE_JACK */
@@ -33,13 +34,11 @@ unusable after an audio(4) error until it is closed and reopened.
  	}
   sndio_finish:
  	return 0;
-@@ -1234,8 +1245,8 @@ jack_info_shutdown(jack_status_t code, const char * re
-  * -1 : device busy
+@@ -1235,7 +1246,7 @@ jack_info_shutdown(jack_status_t code, const char * re
   * -N : unable to start with given params
   */
--int
+ int
 -sndio_init(thread_info_t * info, int verbose, gboolean realtime, int priority) {
-+int
 +sndio_reinit(thread_info_t * info, int verbose) {
  
  	struct sio_hdl * sndio_hdl;
