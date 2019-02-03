@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/03 15:33:04 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2019/02/03 12:43:40 sthen Exp $
+
+BROKEN-i386 =	needs fixing for LLD
 
 # May also support aarch64 and arm?
 ONLY_FOR_ARCHS =	amd64 i386
