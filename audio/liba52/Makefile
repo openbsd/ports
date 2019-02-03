@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/03/11 19:59:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/02/03 12:30:10 sthen Exp $
 
 COMMENT =	free library for decoding ATSC A/52 streams, aka AC-3
 
@@ -8,7 +8,7 @@ DISTNAME =	a52dec-snapshot
 PKGNAME =	liba52-${V}
 REVISION =	2
 CATEGORIES =	audio
-MASTER_SITES =	http://comstyle.com/source/
+MASTER_SITES =	https://comstyle.com/source/
 
 SHARED_LIBS =	a52	1.0
 
