@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2018/07/01 09:02:41 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2019/02/03 12:54:45 sthen Exp $
 
 COMMENT=	LaTeX to HTML converter
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=support/latex2html/}
 
+PATCHORIG=	.pat.orig
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	graphics/netpbm \
 		print/ghostscript/gnu \
@@ -21,6 +22,8 @@ RUN_DEPENDS=	graphics/netpbm \
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--shlibdir=${PREFIX}/share/latex2html \
 		--with-texpath=${PREFIX}/share/texmf-local/tex/latex/html
+CONFIGURE_ENV=	PERL_USE_UNSAFE_INC=1
+MAKE_ENV=	PERL_USE_UNSAFE_INC=1
 
 PKG_ARCH=	*
 
