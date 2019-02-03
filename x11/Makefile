@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.627 2019/01/23 15:16:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.628 2019/02/03 15:47:28 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -137,6 +137,7 @@
      SUBDIR += isomaster
      SUBDIR += itk
      SUBDIR += iwidgets
+     SUBDIR += jgmenu
      SUBDIR += jwm
      SUBDIR += kde
      SUBDIR += kde-applications
