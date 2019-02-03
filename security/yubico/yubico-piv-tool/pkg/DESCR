@@ -1,0 +1,8 @@
+This package provides a tool and library for interacting with the PIV
+("Personal Identity Verification") application on some YubiKey devices.
+This application provides the public key functionality.
+
+The tool allows you to generate keys on the device, import keys and
+certificates, create certificate requests, and perform other operations.
+
+See https://developers.yubico.com/PIV/ for more information.

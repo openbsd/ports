@@ -1,0 +1,23 @@
+$OpenBSD: patch-tool_yubico-piv-tool_c,v 1.1.1.1 2019/02/03 21:24:08 benno Exp $
+
+Index: tool/yubico-piv-tool.c
+--- tool/yubico-piv-tool.c.orig
++++ tool/yubico-piv-tool.c
+@@ -751,7 +751,7 @@ static bool request_certificate(ykpiv_state *state, en
+       fprintf(stderr, "Failed signing request.\n");
+       goto request_out;
+     }
+-    M_ASN1_BIT_STRING_set(req->signature, signature, sig_len);
++    ASN1_BIT_STRING_set(req->signature, signature, sig_len);
+     /* mark that all bits should be used. */
+     req->signature->flags = ASN1_STRING_FLAG_BITS_LEFT;
+   }
+@@ -955,7 +955,7 @@ static bool selfsign_certificate(ykpiv_state *state, e
+       fprintf(stderr, "Failed signing certificate.\n");
+       goto selfsign_out;
+     }
+-    M_ASN1_BIT_STRING_set(x509->signature, signature, sig_len);
++    ASN1_BIT_STRING_set(x509->signature, signature, sig_len);
+     /* setting flags to ASN1_STRING_FLAG_BITS_LEFT here marks that no bits
+      * should be subtracted from the bit string, thus making sure that the
+      * certificate can be validated. */

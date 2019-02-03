@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/03 21:24:08 benno Exp $
+@bin bin/yubico-piv-tool
+include/ykpiv/
+include/ykpiv/ykpiv-version.h
+include/ykpiv/ykpiv.h
+lib/libykcs11.a
+lib/libykcs11.la
+@lib lib/libykcs11.so.${LIBykcs11_VERSION}
+lib/libykpiv.a
+lib/libykpiv.la
+@lib lib/libykpiv.so.${LIBykpiv_VERSION}
+lib/pkgconfig/ykcs11.pc
+lib/pkgconfig/ykpiv.pc
+@man man/man1/yubico-piv-tool.1
