@@ -1,0 +1,23 @@
+$OpenBSD: README,v 1.1.1.1 2019/02/03 15:47:09 bcallah Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+jgmenu options
+==============
+
+This jgmenu port can generate an X11 application menu three different ways:
+  1) 'jgmenu_run lx' using additional packages menu-cache and gnome(mate)-menus
+  2) 'jgmenu_run ob' from an existing openbox menu.xml file
+  3) 'jgmenu_run pmenu' with python3 text parsing
+
+For those running Openbox, the first method provides automatic, FreeDesktop
+compliant, menu generation.  The second method will source a manually edited
+menu.xml file.  If no ~/.config/openbox/menu.xml file exists,
+/etc/xdg/openbox/menu.xml will be used.  Pmenu does not require additional
+packages but has roughly four times the latency.
+
+For other Window managers, pmenu, lx/menu-cache/gnome(mate)-menus will work.
+
+More details are provided in jgmenu(4) and jgmenututorial(7).

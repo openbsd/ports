@@ -1,0 +1,14 @@
+$OpenBSD: patch-docs_manual_Makefile,v 1.1.1.1 2019/02/03 15:47:09 bcallah Exp $
+
+Index: docs/manual/Makefile
+--- docs/manual/Makefile.orig
++++ docs/manual/Makefile
+@@ -11,7 +11,7 @@ man7pages  = jgmenututorial.7
+ manpages   = $(man1pages) $(man7pages)
+ 
+ prefix ?= /usr/local
+-mandir ?= $(prefix)/share/man
++mandir ?= $(prefix)/man
+ man1dir = $(mandir)/man1
+ man7dir = $(mandir)/man7
+ 

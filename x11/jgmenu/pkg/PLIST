@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/03 15:47:09 bcallah Exp $
+@bin bin/jgmenu
+bin/jgmenu_run
+lib/jgmenu/
+@bin lib/jgmenu/jgmenu
+lib/jgmenu/jgmenu-config.py
+@bin lib/jgmenu/jgmenu-greeneye
+@bin lib/jgmenu/jgmenu-i18n
+lib/jgmenu/jgmenu-init--append.sh
+lib/jgmenu/jgmenu-init--bunsenlabs.sh
+lib/jgmenu/jgmenu-init--neon.sh
+lib/jgmenu/jgmenu-init--prepend.sh
+lib/jgmenu/jgmenu-init.sh
+@bin lib/jgmenu/jgmenu-lx
+@bin lib/jgmenu/jgmenu-ob
+lib/jgmenu/jgmenu-pmenu.py
+@bin lib/jgmenu/jgmenu-socket
+lib/jgmenu/jgmenu-unity-hack.py
+lib/jgmenu/jgmenu_run
+lib/jgmenu/jgmenurc
+lib/jgmenu/jgmenurc.archlabs_1803
+lib/jgmenu/jgmenurc.bunsenlabs_helium
+lib/jgmenu/jgmenurc.bunsenlabs_hydrogen
+lib/jgmenu/jgmenurc.neon
+@man man/man1/jgmenu-config.1
+@man man/man1/jgmenu-lx.1
+@man man/man1/jgmenu-ob.1
+@man man/man1/jgmenu-pmenu.1
+@man man/man1/jgmenu.1
+@man man/man1/jgmenu_run.1
+@man man/man7/jgmenututorial.7
+share/applications/jgmenu.desktop
+share/doc/pkg-readmes/${PKGSTEM}
+share/icons/hicolor/scalable/apps/jgmenu.svg
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

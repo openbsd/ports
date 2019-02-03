@@ -1,0 +1,4 @@
+jgmenu is a stand-alone, simple and highly configurable menu application
+for Linux and BSD.  Although originally written to be used with openbox
+and tint2, it is not in any way dependent on these and can be used with
+other panels and window managers.
