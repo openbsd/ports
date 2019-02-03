@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/01/31 17:40:30 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2019/02/03 22:40:38 jca Exp $
 
 COMMENT =	perl-compatible regular expression library, version 2
 
@@ -25,6 +25,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += bz2 c curses readline z
 
 LIB_DEPENDS =		archivers/bzip2
+TEST_DEPENDS =		textproc/gsed
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-pcre2-16 \
