@@ -4,3 +4,10 @@ verifying whether a certificate is valid for the intended purposes.
 In the simplest case, this means host name verification.  However,
 service_identity implements RFC 6125 fully and plans to add other
 relevant RFCs too.
+
+Use this package if:
+
+- you use pyOpenSSL and don’t want to be MITMed
+
+- you want to verify that a PyCA cryptography certificate is valid
+for a certain hostname or IP address

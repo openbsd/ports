@@ -1,11 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/05/06 09:48:44 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2019/02/04 19:38:55 sthen Exp $
 
-COMMENT =		service identity verification for pyOpenSSL
+COMMENT =		service identity verification for pyOpenSSL/py-cryptography
 
-MODPY_EGG_VERSION =	16.0.0
-
+MODPY_EGG_VERSION =	18.1.0
 DISTNAME =		service_identity-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+
+# also on pypi, but no tests present
+GH_ACCOUNT =		pyca
+GH_PROJECT =		service_identity
+GH_TAGNAME =		${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
 
@@ -13,16 +17,17 @@ CATEGORIES =		security
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
-MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR} \
 			devel/py-asn1-modules${MODPY_FLAVOR} \
 			devel/py-attrs${MODPY_FLAVOR} \
 			net/py-idna${MODPY_FLAVOR} \
+			security/py-cryptography${MODPY_FLAVOR} \
 			security/py-openssl${MODPY_FLAVOR}
 
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/py-test${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
