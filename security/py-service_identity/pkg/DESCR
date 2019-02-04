@@ -7,7 +7,7 @@ relevant RFCs too.
 
 Use this package if:
 
-- you use pyOpenSSL and don’t want to be MITMed
+- you use pyOpenSSL and don't want to be MITMed
 
 - you want to verify that a PyCA cryptography certificate is valid
 for a certain hostname or IP address
