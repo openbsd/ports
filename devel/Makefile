@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1810 2019/01/31 17:47:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.1811 2019/02/04 23:36:27 jca Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -315,7 +315,6 @@
      SUBDIR += libdvdread
      SUBDIR += libdwarf
      SUBDIR += libee
-     SUBDIR += libelf
      SUBDIR += libestr
      SUBDIR += libev
      SUBDIR += libevent2
