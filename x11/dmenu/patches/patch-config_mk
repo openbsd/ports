@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_mk,v 1.13 2018/03/29 21:27:48 kn Exp $
+$OpenBSD: patch-config_mk,v 1.14 2019/02/04 21:36:55 kn Exp $
 Index: config.mk
 --- config.mk.orig
 +++ config.mk
@@ -6,19 +6,19 @@ Index: config.mk
  FREETYPELIBS = -lfontconfig -lXft
  FREETYPEINC = /usr/include/freetype2
  # OpenBSD (uncomment)
--#FREETYPEINC = ${X11INC}/freetype2
-+FREETYPEINC = ${X11INC}/freetype2
+-#FREETYPEINC = $(X11INC)/freetype2
++FREETYPEINC = $(X11INC)/freetype2
  
  # includes and libs
- INCS = -I${X11INC} -I${FREETYPEINC}
-@@ -24,8 +24,8 @@ LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIB
+ INCS = -I$(X11INC) -I$(FREETYPEINC)
+@@ -24,8 +24,8 @@ LIBS = -L$(X11LIB) -lX11 $(XINERAMALIBS) $(FREETYPELIB
  
  # flags
- CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_XOPEN_SOURCE=700 -D_POSIX_C_SOURCE=200809L -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
--CFLAGS   = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
--LDFLAGS  = -s ${LIBS}
-+CFLAGS  += -std=c99 -pedantic -Wall ${INCS} ${CPPFLAGS}
-+LDFLAGS += -s ${LIBS}
+ CPPFLAGS = -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_XOPEN_SOURCE=700 -D_POSIX_C_SOURCE=200809L -DVERSION=\"$(VERSION)\" $(XINERAMAFLAGS)
+-CFLAGS   = -std=c99 -pedantic -Wall -Os $(INCS) $(CPPFLAGS)
+-LDFLAGS  = $(LIBS)
++CFLAGS  += -std=c99 -pedantic -Wall $(INCS) $(CPPFLAGS)
++LDFLAGS += $(LIBS)
  
  # compiler and linker
  CC = cc

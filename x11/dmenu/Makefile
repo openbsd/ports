@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2018/03/29 21:27:48 kn Exp $
+# $OpenBSD: Makefile,v 1.24 2019/02/04 21:36:55 kn Exp $
 
 COMMENT=		dynamic menu for X11
 
-V=			4.8
+V=			4.9
 DISTNAME=		dmenu-${V}
 
 CATEGORIES=		x11
@@ -14,6 +14,7 @@ MAINTAINER=		Klemens Nanni <kn@openbsd.org>
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
 
+# uses pledge()
 WANTLIB=		X11 Xft Xinerama c fontconfig
 
 MASTER_SITES=		https://dl.suckless.org/tools/
