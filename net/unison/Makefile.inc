@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.27 2018/04/26 21:34:23 bket Exp $
+# $OpenBSD: Makefile.inc,v 1.28 2019/02/04 18:55:08 bket Exp $
 
 COMMENT=	multi-platform file synchronization tool
 
@@ -50,6 +50,8 @@ ALL_TARGET=	unison
 TEST_TARGET=	selftest
 
 PORTHOME=	${WRKDIR}
+
+WRKDIST=	${WRKDIR}/${DISTNAME}/src
 
 DOCS=		BUGS.txt NEWS README
 
