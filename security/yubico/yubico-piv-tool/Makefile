@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/03 21:24:08 benno Exp $
+# $OpenBSD: Makefile,v 1.2 2019/02/04 15:46:37 jasper Exp $
 
 COMMENT=	Yubico Personal Identity Verification (PIV) Tool
 
@@ -14,7 +14,8 @@ CATEGORIES=	sysutils
 
 WANTLIB +=	c pthread crypto pcsclite
 
-BUILD_DEPENDS=	devel/check
+BUILD_DEPENDS=	devel/check \
+		devel/help2man
 LIB_DEPENDS=	security/pcsc-lite
 
 USE_GMAKE=	Yes
