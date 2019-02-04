@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2018/06/29 22:16:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.33 2019/02/04 17:05:42 ajacoutot Exp $
 @pkgpath editors/abiword,gnome
 @bin bin/abiword
 include/abiword-${MAJORVER}/
@@ -15,6 +15,11 @@ lib/abiword-${MAJORVER}/plugins/pdf.so
 lib/girepository-1.0/Abi-${MAJORVER}.typelib
 lib/libabiword-${MAJORVER}.so
 lib/pkgconfig/abiword-${MAJORVER}.pc
+lib/python${MODPY_VERSION}/site-packages/gi/
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/Abi.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/Abi.pyc
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/Abi.${MODPY_PYOEXTENSION}
 @man man/man1/abiword.1
 share/abiword-${MAJORVER}/
 share/abiword-${MAJORVER}/clipart/
