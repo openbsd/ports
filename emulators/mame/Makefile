@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/12/26 11:29:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.20 2019/02/04 10:12:52 fcambus Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
@@ -6,7 +6,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	Multiple Arcade Machine Emulator
 
-V =		205
+V =		206
 DISTNAME =	mame0${V}s
 PKGNAME =	mame-0.${V}
 
@@ -76,6 +76,8 @@ post-extract:
 		${WRKSRC}/3rdparty/genie/build/gmake.bsd
 	@sed -i 's,"lua","lua${MODLUA_VERSION}",g' ${WRKSRC}/scripts/extlib.lua
 	@mv ${WRKSRC}/src/lib/util/png.h ${WRKSRC}/src/lib/util/localpng.h
+	@sed -i 's,"util/png.h","png.h",' \
+		${WRKSRC}/src/frontend/mame/ui/icorender.cpp
 	@grep -Rl '"png\.h"' ${WRKSRC}/src | \
 		xargs sed -i 's|"png.h"|"localpng.h"|'
 	@perl -pi -e 's/\r//g' ${WRKSRC}/makefile ${WRKSRC}/scripts/genie.lua \
