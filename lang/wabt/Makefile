@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/16 13:32:32 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/02/04 14:13:04 rapha Exp $
 
 COMMENT =	WebAssembly binary toolkit
 
 GH_ACCOUNT =	WebAssembly
 GH_PROJECT =	wabt
-GH_TAGNAME =	1.0.5
+GH_TAGNAME =	1.0.8
 
 CATEGORIES =	lang
 

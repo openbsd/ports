@@ -1,11 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/16 13:32:32 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/02/04 14:13:04 rapha Exp $
 @bin bin/spectest-interp
 @bin bin/wasm-interp
 @bin bin/wasm-objdump
 @bin bin/wasm-opcodecnt
+@bin bin/wasm-strip
 @bin bin/wasm-validate
 @bin bin/wasm2c
 @bin bin/wasm2wat
 @bin bin/wast2json
 @bin bin/wat-desugar
 @bin bin/wat2wasm
+@man man/man1/spectest-interp.1
+@man man/man1/wasm-interp.1
+@man man/man1/wasm-objdump.1
+@man man/man1/wasm-opcodecnt.1
+@man man/man1/wasm-strip.1
+@man man/man1/wasm-validate.1
+@man man/man1/wasm2c.1
+@man man/man1/wasm2wat.1
+@man man/man1/wast2json.1
+@man man/man1/wat-desugar.1
+@man man/man1/wat2wasm.1

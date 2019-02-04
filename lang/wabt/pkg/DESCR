@@ -20,3 +20,19 @@ wat-desugar:
 
 wasm2c:
    convert a WebAssembly binary file to a C source and header
+
+wasm-strip:
+   remove sections of a WebAssembly binary file
+
+wasm-validate:
+   validate a file in the WebAssembly binary format
+
+wast2json:
+   convert a file in the wasm spec test format to a JSON file and associated
+   wasm binary files
+
+wasm-opcodecnt:
+   count opcode usage for instructions
+
+spectest-interp:
+   read a Spectest JSON file, and run its tests in the interpreter
