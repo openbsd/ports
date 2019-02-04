@@ -947,7 +947,8 @@ SnackGetOutputDevices(char **arr, int n)
 int
 SnackGetInputDevices(char **arr, int n)
 {
-  int i, j = 0;
+  size_t i;
+  int j = 0;
   glob_t globt;
   
   glob("/dev/audio*", 0, NULL, &globt);

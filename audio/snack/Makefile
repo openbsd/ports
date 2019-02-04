@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/05/28 05:27:15 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/02/04 18:50:56 jasper Exp $
 
 COMMENT-main =	Tcl/Tk snack sound toolkit
 COMMENT-python = Python bindings for Tcl/Tk snack sound toolkit
@@ -9,7 +9,7 @@ PKGNAME-main =  snack-${MODPY_EGG_VERSION}
 PKGNAME-python = py-snack-${MODPY_EGG_VERSION}
 CATEGORIES =	audio
 
-REVISION-main = 5
+REVISION-main = 6
 REVISION-python =2
 
 HOMEPAGE = 	http://www.speech.kth.se/snack
