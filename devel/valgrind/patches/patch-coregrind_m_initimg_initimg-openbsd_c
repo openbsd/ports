@@ -1,0 +1,14 @@
+$OpenBSD: patch-coregrind_m_initimg_initimg-openbsd_c,v 1.1 2019/02/04 23:34:10 jca Exp $
+
+Index: coregrind/m_initimg/initimg-openbsd.c
+--- coregrind/m_initimg/initimg-openbsd.c.orig
++++ coregrind/m_initimg/initimg-openbsd.c
+@@ -57,7 +57,7 @@
+ #define _GNU_SOURCE
+ #define _FILE_OFFSET_BITS 64
+ /* This is for ELF types etc, and also the AT_ constants. */
+-#include <libelf/gelf.h>
++#include <gelf.h>
+ /* --- !!! --- EXTERNAL HEADERS end --- !!! --- */
+ 
+ 

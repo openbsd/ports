@@ -1,4 +1,4 @@
-$OpenBSD: patch-coregrind_m_main_c,v 1.1 2017/05/26 22:07:16 sthen Exp $
+$OpenBSD: patch-coregrind_m_main_c,v 1.2 2019/02/04 23:34:10 jca Exp $
 
 https://bugs.kde.org/show_bug.cgi?id=357833
 https://bitbucket.org/uebayasi/valgrind-openbsd/issues/40/mmap-failure-cannot-allocate-memory-on
@@ -16,3 +16,12 @@ Index: coregrind/m_main.c
  
     // Get the current process stack rlimit.
     VG_(getrlimit)(VKI_RLIMIT_STACK, &VG_(client_rlimit_stack));
+@@ -3233,7 +3235,7 @@ __asm(" .section \".note.openbsd.ident\", \"a\"\n"
+ #if !defined(VGO_openbsd)
+ #include <elf.h>
+ #else
+-#include <libelf/gelf.h>
++#include <gelf.h>
+ #endif
+ /* --- !!! --- EXTERNAL HEADERS end --- !!! --- */
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/26 22:07:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/02/04 23:34:10 jca Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 
 V =			3.10.1
 PV =			20160331
-REVISION =		11
+REVISION =		12
 DISTNAME =		valgrind-${V}
 EXTRACT_SUFX =		.tar.bz2
 
@@ -32,8 +32,7 @@ USE_GMAKE =		Yes
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libelf
+			${MODGNU_AUTOMAKE_DEPENDS}
 
 
 pre-configure:

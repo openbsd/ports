@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/11 20:50:55 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/02/04 23:34:10 jca Exp $
 
 BROKEN-alpha =		error "ISA not supported"
 
 COMMENT =		collection of CTF tools
 
 DISTNAME =		ctftools-0.1
-REVISION =		5
+REVISION =		6
 GH_ACCOUNT =		jasperla
 GH_PROJECT =		ctftools
 GH_COMMIT =		c4a72ae4266a97407916728689568c7f747d0e4b
@@ -16,10 +16,9 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # CDDL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c dwarf elf pthread z
+WANTLIB +=		c dwarf elf>=2 pthread z
 
-LIB_DEPENDS =		devel/libelf \
-			devel/libdwarf>=20160613p0
+LIB_DEPENDS =		devel/libdwarf>=20161124p0
 
 WRKDIST =		${WRKDIR}/ctftools-${GH_COMMIT}
 WRKSRC =		${WRKDIR}/ctftools-${GH_COMMIT}/cddl

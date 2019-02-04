@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2017/02/28 21:40:03 edd Exp $
+# $OpenBSD: Makefile,v 1.6 2019/02/04 23:34:10 jca Exp $
 #
 # Note that this may not build if an older libdwarf is already installed.
 
 COMMENT=		library to access the DWARF debugging file format
 
 V=			20161124
+REVISION=		0
 DISTNAME=		libdwarf-${V}
 WRKDIST=		${WRKDIR}/dwarf-${V}
 
@@ -19,21 +20,13 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # GPLv2 - LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c elf z
+WANTLIB += c elf>=2 z
 
 MASTER_SITES=		https://www.prevanders.net/
 
-LIB_DEPENDS=		devel/libelf
-
 NO_TEST=		Yes
 
-FLAGS=			$$(pkg-config --cflags libelf)
-CFLAGS=			${FLAGS}
-CXXFLAGS=		${FLAGS}
-
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="${FLAGS}" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--enable-shared
 
 pre-configure:

@@ -1,0 +1,14 @@
+$OpenBSD: patch-coregrind_m_debuginfo_readelf_c,v 1.1 2019/02/04 23:34:10 jca Exp $
+
+Index: coregrind/m_debuginfo/readelf.c
+--- coregrind/m_debuginfo/readelf.c.orig
++++ coregrind/m_debuginfo/readelf.c
+@@ -57,7 +57,7 @@
+ #if !defined(VGO_openbsd)
+ #include <elf.h>
+ #else
+-#include <libelf/gelf.h>
++#include <gelf.h>
+ #endif
+ /* --- !!! --- EXTERNAL HEADERS end --- !!! --- */
+ 

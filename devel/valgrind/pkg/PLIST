@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/06/22 05:44:06 uebayasi Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/02/04 23:34:10 jca Exp $
 bin/callgrind_annotate
 bin/callgrind_control
 bin/cg_annotate
@@ -245,7 +245,7 @@ lib/valgrind/vgpreload_exp-dhat-${MACHINE_ARCH}-openbsd.so
 lib/valgrind/vgpreload_exp-sgcheck-${MACHINE_ARCH}-openbsd.so
 lib/valgrind/vgpreload_helgrind-${MACHINE_ARCH}-openbsd.so
 lib/valgrind/vgpreload_massif-${MACHINE_ARCH}-openbsd.so
-@bin lib/valgrind/vgpreload_memcheck-${MACHINE_ARCH}-openbsd.so
+lib/valgrind/vgpreload_memcheck-${MACHINE_ARCH}-openbsd.so
 @man man/man1/callgrind_annotate.1
 @man man/man1/callgrind_control.1
 @man man/man1/cg_annotate.1

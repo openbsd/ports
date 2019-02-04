@@ -1,0 +1,14 @@
+$OpenBSD: patch-coregrind_m_ume_elf_c,v 1.1 2019/02/04 23:34:10 jca Exp $
+
+Index: coregrind/m_ume/elf.c
+--- coregrind/m_ume/elf.c.orig
++++ coregrind/m_ume/elf.c
+@@ -54,7 +54,7 @@
+ #if !defined(VGO_openbsd)
+ #include <elf.h>
+ #else
+-#include <libelf/gelf.h>
++#include <gelf.h>
+ #endif
+ /* --- !!! --- EXTERNAL HEADERS end --- !!! --- */
+ 

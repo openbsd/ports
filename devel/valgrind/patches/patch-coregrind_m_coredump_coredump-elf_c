@@ -1,0 +1,14 @@
+$OpenBSD: patch-coregrind_m_coredump_coredump-elf_c,v 1.1 2019/02/04 23:34:10 jca Exp $
+
+Index: coregrind/m_coredump/coredump-elf.c
+--- coregrind/m_coredump/coredump-elf.c.orig
++++ coregrind/m_coredump/coredump-elf.c
+@@ -57,7 +57,7 @@
+ #if !defined(VGO_openbsd)
+ #include <elf.h>
+ #else
+-#include <libelf/gelf.h>
++#include <gelf.h>
+ #endif
+ #ifndef NT_PRXFPREG
+ #define NT_PRXFPREG    0x46e62b7f /* copied from gdb5.1/include/elf/common.h */

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.292 2019/01/23 10:06:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.293 2019/02/04 23:34:10 jca Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -8,8 +8,8 @@ COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
 GNOME_VERSION=		2.58.3
+REVISION=		2
 PKGNAME=		${DISTNAME:S/glib/glib2/}
-REVISION=		1
 
 CATEGORIES=		devel
 
@@ -31,7 +31,7 @@ SHARED_LIBS +=  gio-2.0              4200.8   # 0.5800.3
 PERMIT_PACKAGE_CDROM=	Yes
 
 # uses pledge()
-WANTLIB += c elf ffi iconv intl pcre pthread z
+WANTLIB += c elf>=2 ffi iconv intl pcre pthread z
 
 MODULES=		devel/meson \
 			lang/python \
@@ -45,7 +45,6 @@ BUILD_DEPENDS +=	shells/bash
 
 LIB_DEPENDS=		devel/gettext \
 			devel/pcre \
-			devel/libelf \
 			devel/libffi
 
 # need X11 because DBus is used in the GDBus test cases;
