@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/04 12:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/02/04 16:23:30 jca Exp $
 
 VER=		2.48.15
 REV=		v3
-REVISION=	1
 GH_TAGNAME=	v${VER}${REV}
-DISTNAME=	${GH_PROJECT}-${VER}
+PKGNAME=	unison-${VER}${REV:S/^v/pl/}
 
 PORTROACH=	limit:^2\.4
 
-WRKDIST=	${WRKDIR}/${PKGNAME}${REV}/src
+WRKDIST=	${WRKDIR}/${DISTNAME}/src
 
 .include <bsd.port.mk>
