@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.300 2019/01/07 14:52:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.301 2019/02/04 17:00:42 ajacoutot Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.30.4
+GNOME_VERSION=		3.30.5
 
 CATEGORIES=		mail
 
@@ -23,14 +23,16 @@ SHARED_LIBS +=		${_lib} ${SO_VERSION}
 # GPLv2+ - LGPLv2+ - OpenLDAP license - GFDL 1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += atk-1.0 c cairo cairo-gobject camel-1.2 canberra canberra-gtk3
-WANTLIB += ebook-1.2 ebook-contacts-1.2 ecal-1.2 edataserver-1.2
-WANTLIB += edataserverui-1.2 enchant gailutil-3 gcr-base-3 gcr-ui-3
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0
+WANTLIB += X11 archive atk-1.0 c cairo cairo-gobject camel-1.2
+WANTLIB += canberra canberra-gtk3 ebackend-1.2 ebook-1.2 ebook-contacts-1.2
+WANTLIB += ecal-1.2 edata-book-1.2 edataserver-1.2 edataserverui-1.2
+WANTLIB += enchant gailutil-3 gck-1 gcr-base-3 gcr-ui-3 gdk-3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0
 WANTLIB += gnome-autoar-gtk-0 gnome-desktop-3 gobject-2.0 gtk-3
-WANTLIB += gtkspell3-3 gweather-3 ical icalvcal intl ldap-2.4
-WANTLIB += m notify nspr4 nss3 pango-1.0 pangocairo-1.0 pst secret-1
-WANTLIB += smime3 soup-2.4 sqlite3 webkit2gtk-4.0 xml2 ytnef
+WANTLIB += gtkspell3-3 gweather-3 ical icalvcal iconv intl javascriptcoregtk-4.0
+WANTLIB += lber-2.4 ldap-2.4 m notify nspr4 nss3 nssutil3 p11-kit
+WANTLIB += pango-1.0 pangocairo-1.0 plc4 plds4 pst pthread secret-1
+WANTLIB += smime3 soup-2.4 sqlite3 ssl3 webkit2gtk-4.0 xml2 ytnef
 
 MODULES=		devel/cmake \
 			devel/dconf \
