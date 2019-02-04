@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/07/01 18:33:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/02/04 21:26:06 fcambus Exp $
 bin/atari-convert-dir
 @bin bin/gst2ascii
 @bin bin/hatari
-bin/hatari_profile.py
+bin/hatari-prg-args
+bin/hatari_profile
 @bin bin/hmsa
 bin/zip2st
 @man man/man1/atari-convert-dir.1
 @man man/man1/gst2ascii.1
+@man man/man1/hatari-prg-args.1
 @man man/man1/hatari.1
 @man man/man1/hatari_profile.1
 @man man/man1/hconsole.1

@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2018/02/11 13:25:38 fcambus Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2019/02/04 21:26:06 fcambus Exp $
 
 Make PortAudio and CAPSImage detection conditional and disabled by default,
 and disable building the Python GTK+2 user interface.
@@ -6,7 +6,7 @@ and disable building the Python GTK+2 user interface.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -34,6 +34,12 @@ set(ENABLE_SMALL_MEM 0
+@@ -57,6 +57,12 @@ set(ENABLE_SMALL_MEM 0
      CACHE BOOL "Enable to use less memory - at the expense of emulation speed")
  set(ENABLE_WINUAE_CPU 1
      CACHE BOOL "Enable WinUAE CPU core")
@@ -19,7 +19,7 @@ Index: CMakeLists.txt
  
  # Run-time checks with GCC "mudflap" etc features:
  # - stack protection
-@@ -121,20 +127,24 @@ if (NOT ENABLE_OSX_BUNDLE)
+@@ -144,20 +150,24 @@ if (NOT ENABLE_OSX_BUNDLE)
  	endif(X11_FOUND)
  endif()
  
@@ -52,8 +52,8 @@ Index: CMakeLists.txt
  
  find_package(Udev)
  if(UDEV_FOUND)
-@@ -301,10 +311,12 @@ add_subdirectory(src)
- add_subdirectory(doc)
+@@ -338,10 +348,12 @@ add_subdirectory(doc)
+ add_subdirectory(tests)
  add_subdirectory(tools)
  
 -include(FindPythonInterp)
@@ -69,7 +69,7 @@ Index: CMakeLists.txt
  
  if(UNIX AND NOT ENABLE_OSX_BUNDLE)
  	add_subdirectory(share)
-@@ -351,11 +363,13 @@ else()
+@@ -389,11 +401,13 @@ else()
    message( "  - png :\tnot found, install it to compress screenshot/avi files using png" )
  endif(PNG_FOUND)
  
@@ -88,7 +88,7 @@ Index: CMakeLists.txt
  
  if(PORTMIDI_FOUND)
    message( "  - portmidi :\tfound, required for (non-Linux) MIDI support" )
-@@ -363,11 +377,13 @@ else()
+@@ -401,11 +415,13 @@ else()
    message( "  - portmidi :\tnot found, install it for MIDI support on Windows / OSX" )
  endif(PORTMIDI_FOUND)
  

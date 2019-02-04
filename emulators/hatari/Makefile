@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2018/11/14 20:48:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/02/04 21:26:06 fcambus Exp $
 
 ONLY_FOR_ARCHS = i386 amd64 powerpc arm
 
 COMMENT =	Atari ST/STE/TT/Falcon emulator
 
-V =		2.1.0
+V =		2.2.0
 DISTNAME =	hatari-${V}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	3
 
 CATEGORIES =	emulators
 
@@ -18,7 +17,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	ICE SDL2 SM X11 Xext c curses m png pthread readline z
+WANTLIB +=	ICE SDL2 SM X11 Xext c m png16 pthread readline z
 
 MASTER_SITES =	https://download.tuxfamily.org/hatari/$V/
 
