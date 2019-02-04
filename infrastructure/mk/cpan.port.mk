@@ -1,4 +1,4 @@
-# $OpenBSD: cpan.port.mk,v 1.20 2016/03/20 19:56:44 naddy Exp $
+# $OpenBSD: cpan.port.mk,v 1.21 2019/02/04 20:53:09 sthen Exp $
 
 PKGNAME ?=	p5-${DISTNAME}
 .if !defined(CPAN_AUTHOR)
@@ -23,6 +23,11 @@ TEST_DEPENDS +=	${RUN_DEPENDS}
 TEST_DEPENDS +=	devel/p5-Test-Pod \
 		 	devel/p5-Test-Pod-Coverage
 .endif
+
+# perl 5.26+ no longer has "." in @INC by default, but it's widely required in
+# build/test systems. set it locally, as is also done in the upstream cpan tool.
+CONFIGURE_ENV += PERL_USE_UNSAFE_INC=1
+TEST_ENV += PERL_USE_UNSAFE_INC=1
 
 MODCPAN_POST_INSTALL = ${INSTALL_DATA_DIR} ${MODCPAN_EXAMPLES_DIR}; \
 	cd ${WRKSRC}/${MODCPAN_EXAMPLES_DIST}/ && pax -rw . ${MODCPAN_EXAMPLES_DIR};\
