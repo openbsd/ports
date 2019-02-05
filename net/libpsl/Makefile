@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/11/28 13:45:43 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2019/02/05 13:19:11 jca Exp $
 
 COMMENT =		public suffix list library
 
@@ -23,11 +23,11 @@ MODULES =		lang/python
 
 MODPY_RUNDEP =		No
 
+BUILD_DEPENDS =		devel/gettext-tools \
+			sysutils/coreutils
 LIB_DEPENDS =		converters/libunistring \
 			devel/gettext \
 			devel/libidn2
-
-BUILD_DEPENDS =		sysutils/coreutils
 
 CONFIGURE_STYLE = gnu
 
