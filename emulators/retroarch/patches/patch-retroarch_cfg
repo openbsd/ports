@@ -1,8 +1,8 @@
-$OpenBSD: patch-retroarch_cfg,v 1.3 2018/11/11 00:48:36 bentley Exp $
+$OpenBSD: patch-retroarch_cfg,v 1.4 2019/02/05 07:54:16 bentley Exp $
 Index: retroarch.cfg
 --- retroarch.cfg.orig
 +++ retroarch.cfg
-@@ -767,7 +767,7 @@
+@@ -777,7 +777,7 @@
  # rgui_browser_directory =
  
  # Core directory for libretro core implementations.
