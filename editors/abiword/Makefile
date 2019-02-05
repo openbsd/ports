@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2019/02/04 17:05:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2019/02/05 08:47:37 ajacoutot Exp $
 
 # XXX error: 'nullptr' was not declared in this scope
 CXXFLAGS +=	-std=c++11
@@ -104,6 +104,10 @@ CONFIGURE_ARGS += \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_prog_VALGRIND=
+
+pre-configure:
+	sed -i "s,python -c,python${MODPY_VERSION} -c,g" \
+		${WRKSRC}/src/gi-overrides/Makefile.in
 
 post-install:
 	rm ${PREFIX}/lib/libabiword-${MAJORVER}*.{a,la}
