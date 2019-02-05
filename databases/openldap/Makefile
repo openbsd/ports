@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2019/01/07 23:10:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.167 2019/02/05 11:54:55 bentley Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -8,6 +8,8 @@ COMMENT-server =	open-source LDAP software (server)
 DISTNAME =		openldap-2.4.47
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
+REVISION-main =		0
+REVISION-server =	0
 
 # overwrite -main pkgname/path to strip FLAVOR, aci only affects the server
 FULLPKGNAME-main =	${DISTNAME:S/-/-client-/}${FLAVOR_EXT:S/-aci//}
@@ -23,7 +25,7 @@ SHARED_LIBS +=	ldap_r-2.4           13.1
 
 CATEGORIES =	databases net
 
-HOMEPAGE =	http://www.openldap.org/
+HOMEPAGE =	https://www.openldap.org/
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
@@ -32,7 +34,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c crypto ssl
 
-MASTER_SITES =	http://mirror.switch.ch/ftp/mirror/OpenLDAP/openldap-release/ \
+MASTER_SITES =	https://openldap.org/software/download/OpenLDAP/openldap-release/ \
+		http://mirror.switch.ch/ftp/mirror/OpenLDAP/openldap-release/ \
 		http://mirror.aarnet.edu.au/pub/openldap/openldap-release/ \
 		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/ \
 		http://ftp.ntua.gr/mirror/OpenLDAP/openldap-release/
