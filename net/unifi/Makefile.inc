@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2018/06/29 11:24:49 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2019/02/05 14:38:47 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
@@ -31,6 +31,10 @@ PERMIT_DISTFILES_FTP=	http://www.ubnt.com/eula/
 MODULES=	java
 MODJAVA_VER=	1.8+
 MODJAVA_JRERUN=	yes
+
+# mongodb is amd64-only (and even if that weren't the case,
+# building snappy-java for i386 is a pain)
+ONLY_FOR_ARCHS=	amd64
 
 RUN_DEPENDS=	databases/mongodb<3.6.0 \
 		java/javaPathHelper
