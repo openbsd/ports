@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_network_network_cc,v 1.1 2019/02/05 13:27:25 jca Exp $
+
+Ambiguous bind(2) call.
+
+Index: src/network/network.cc
+--- src/network/network.cc.orig
++++ src/network/network.cc
+@@ -335,7 +335,7 @@ bool Connection::try_bind( const char *addr, int port_
+       }
+     }
+ 
+-    if ( bind( sock(), &local_addr.sa, local_addr_len ) == 0 ) {
++    if ( ::bind( sock(), &local_addr.sa, local_addr_len ) == 0 ) {
+       set_MTU( local_addr.sa.sa_family );
+       return true;
+     } else if ( i == search_high ) { /* last port to search */

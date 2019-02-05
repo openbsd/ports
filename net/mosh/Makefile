@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2018/07/10 10:51:36 tb Exp $
+# $OpenBSD: Makefile,v 1.17 2019/02/05 13:27:25 jca Exp $
 
 COMMENT =		mobile shell
 
 DISTNAME =		mosh-1.3.2
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net
 
