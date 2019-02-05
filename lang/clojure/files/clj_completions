@@ -68,11 +68,14 @@
 ?
 Coercions
 CollReduce
+Datafiable
 EMPTY-NODE
 IKVReduce
 IOFactory
 Inst
 InternalReduce
+Navigable
+PrintWriter-on
 Spec
 Specize
 StackTraceElement->vec
@@ -81,6 +84,7 @@ abbrev
 accessor
 aclone
 add-classpath
+add-tap
 add-watch
 agent
 agent-error
@@ -222,6 +226,7 @@ counted?
 create-ns
 create-struct
 cycle
+datafy
 dec
 dec'
 decimal?
@@ -295,8 +300,12 @@ every-impl
 every-kv
 every-pred
 every?
+ex-cause
 ex-data
 ex-info
+ex-message
+ex-str
+ex-triage
 exercise
 exercise-fn
 explain
@@ -411,6 +420,7 @@ into-array
 ints
 invalid?
 io!
+io-prepl
 isa?
 iterate
 iterator-seq
@@ -495,6 +505,7 @@ name
 namespace
 namespace-munge
 nat-int?
+nav
 neg-int?
 neg?
 newline
@@ -555,6 +566,7 @@ pr
 pr-str
 prefer-method
 prefers
+prepl
 prewalk
 prewalk-demo
 prewalk-replace
@@ -600,6 +612,7 @@ re-pattern
 re-quote-replacement
 re-seq
 read
+read+string
 read-instant-calendar
 read-instant-date
 read-instant-timestamp
@@ -628,11 +641,14 @@ registry
 reify
 release-pending-sends
 rem
+remote-prepl
 remove
 remove-all-methods
 remove-method
 remove-ns
+remove-tap
 remove-watch
+renumbering-read
 rep+impl
 rep-impl
 repeat
@@ -648,6 +664,7 @@ replace
 replace-first
 replicate
 require
+requiring-resolve
 reset!
 reset-meta!
 reset-vals!
@@ -749,6 +766,7 @@ take
 take-last
 take-nth
 take-while
+tap>
 test
 the-ns
 thread-bound?
