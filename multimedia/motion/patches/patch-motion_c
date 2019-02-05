@@ -1,9 +1,9 @@
-$OpenBSD: patch-motion_c,v 1.4 2019/01/29 22:40:53 sthen Exp $
+$OpenBSD: patch-motion_c,v 1.5 2019/02/05 15:10:33 sthen Exp $
 
 Index: motion.c
 --- motion.c.orig
 +++ motion.c
-@@ -1393,7 +1393,7 @@ static int motion_init(struct context *cnt)
+@@ -1394,7 +1394,7 @@ static int motion_init(struct context *cnt)
      /* create a reference frame */
      alg_update_reference_frame(cnt, RESET_REF_FRAME);
  
