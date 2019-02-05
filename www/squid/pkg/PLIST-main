@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2018/09/04 12:46:27 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2019/02/05 23:03:16 sthen Exp $
 @pkgpath www/squid/snapshot,-main
 @pkgpath www/squid/stable,-main
 @newgroup _squid:515
@@ -14,29 +14,25 @@ libexec/squid/basic_db_auth
 @bin libexec/squid/basic_ncsa_auth
 libexec/squid/basic_pop3_auth
 @bin libexec/squid/basic_radius_auth
-@comment @bin libexec/squid/basic_smb_auth
-@comment libexec/squid/basic_smb_auth.sh
-@bin libexec/squid/basic_smb_lm_auth
 @bin libexec/squid/cachemgr.cgi
-libexec/squid/cert_valid.pl
 @bin libexec/squid/digest_file_auth
 @bin libexec/squid/diskd
 @bin libexec/squid/ext_file_userip_acl
 libexec/squid/ext_sql_session_acl
 @bin libexec/squid/ext_time_quota_acl
 @bin libexec/squid/ext_unix_group_acl
-@comment libexec/squid/ext_wbinfo_group_acl
-libexec/squid/helper-mux.pl
+libexec/squid/helper-mux
 libexec/squid/log_db_daemon
 @bin libexec/squid/log_file_daemon
 @bin libexec/squid/negotiate_wrapper_auth
-@comment @bin libexec/squid/ntlm_fake_auth
-@comment @bin libexec/squid/ntlm_smb_lm_auth
-@bin libexec/squid/ssl_crtd
+libexec/squid/security_fake_certverify
+@bin libexec/squid/security_file_certgen
 libexec/squid/storeid_file_rewrite
 @bin libexec/squid/unlinkd
 @bin libexec/squid/url_fake_rewrite
 libexec/squid/url_fake_rewrite.sh
+libexec/squid/url_lfs_rewrite
+@man man/man1/purge.1
 @man man/man1/squidclient.1
 @man man/man8/basic_db_auth.8
 @man man/man8/basic_ncsa_auth.8
@@ -48,11 +44,13 @@ libexec/squid/url_fake_rewrite.sh
 @man man/man8/ext_sql_session_acl.8
 @man man/man8/ext_time_quota_acl.8
 @man man/man8/ext_unix_group_acl.8
-@comment @man man/man8/ext_wbinfo_group_acl.8
+@man man/man8/helper-mux.8
 @man man/man8/log_db_daemon.8
+@man man/man8/security_fake_certverify.8
+@man man/man8/security_file_certgen.8
 @man man/man8/squid.8
-@man man/man8/ssl_crtd.8
 @man man/man8/storeid_file_rewrite.8
+@man man/man8/url_lfs_rewrite.8
 @bin sbin/squid
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/squid/
@@ -114,6 +112,7 @@ share/squid/errors/af/ERR_LIFETIME_EXP
 share/squid/errors/af/ERR_NO_RELAY
 share/squid/errors/af/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/af/ERR_PRECONDITION_FAILED
+share/squid/errors/af/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/af/ERR_READ_ERROR
 share/squid/errors/af/ERR_READ_TIMEOUT
 share/squid/errors/af/ERR_SECURE_CONNECT_FAIL
@@ -173,6 +172,7 @@ share/squid/errors/ar/ERR_LIFETIME_EXP
 share/squid/errors/ar/ERR_NO_RELAY
 share/squid/errors/ar/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/ar/ERR_PRECONDITION_FAILED
+share/squid/errors/ar/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/ar/ERR_READ_ERROR
 share/squid/errors/ar/ERR_READ_TIMEOUT
 share/squid/errors/ar/ERR_SECURE_CONNECT_FAIL
@@ -217,6 +217,7 @@ share/squid/errors/az/ERR_LIFETIME_EXP
 share/squid/errors/az/ERR_NO_RELAY
 share/squid/errors/az/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/az/ERR_PRECONDITION_FAILED
+share/squid/errors/az/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/az/ERR_READ_ERROR
 share/squid/errors/az/ERR_READ_TIMEOUT
 share/squid/errors/az/ERR_SECURE_CONNECT_FAIL
@@ -261,6 +262,7 @@ share/squid/errors/bg/ERR_LIFETIME_EXP
 share/squid/errors/bg/ERR_NO_RELAY
 share/squid/errors/bg/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/bg/ERR_PRECONDITION_FAILED
+share/squid/errors/bg/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/bg/ERR_READ_ERROR
 share/squid/errors/bg/ERR_READ_TIMEOUT
 share/squid/errors/bg/ERR_SECURE_CONNECT_FAIL
@@ -274,6 +276,7 @@ share/squid/errors/bg/ERR_WRITE_ERROR
 share/squid/errors/bg/ERR_ZERO_SIZE_OBJECT
 share/squid/errors/bg/error-details.txt
 share/squid/errors/ca/
+share/squid/errors/ca-es
 share/squid/errors/ca/ERR_ACCESS_DENIED
 share/squid/errors/ca/ERR_ACL_TIME_QUOTA_EXCEEDED
 share/squid/errors/ca/ERR_AGENT_CONFIGURE
@@ -304,6 +307,7 @@ share/squid/errors/ca/ERR_LIFETIME_EXP
 share/squid/errors/ca/ERR_NO_RELAY
 share/squid/errors/ca/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/ca/ERR_PRECONDITION_FAILED
+share/squid/errors/ca/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/ca/ERR_READ_ERROR
 share/squid/errors/ca/ERR_READ_TIMEOUT
 share/squid/errors/ca/ERR_SECURE_CONNECT_FAIL
@@ -348,6 +352,7 @@ share/squid/errors/cs/ERR_LIFETIME_EXP
 share/squid/errors/cs/ERR_NO_RELAY
 share/squid/errors/cs/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/cs/ERR_PRECONDITION_FAILED
+share/squid/errors/cs/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/cs/ERR_READ_ERROR
 share/squid/errors/cs/ERR_READ_TIMEOUT
 share/squid/errors/cs/ERR_SECURE_CONNECT_FAIL
@@ -392,6 +397,7 @@ share/squid/errors/da/ERR_LIFETIME_EXP
 share/squid/errors/da/ERR_NO_RELAY
 share/squid/errors/da/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/da/ERR_PRECONDITION_FAILED
+share/squid/errors/da/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/da/ERR_READ_ERROR
 share/squid/errors/da/ERR_READ_TIMEOUT
 share/squid/errors/da/ERR_SECURE_CONNECT_FAIL
@@ -440,6 +446,7 @@ share/squid/errors/de/ERR_LIFETIME_EXP
 share/squid/errors/de/ERR_NO_RELAY
 share/squid/errors/de/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/de/ERR_PRECONDITION_FAILED
+share/squid/errors/de/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/de/ERR_READ_ERROR
 share/squid/errors/de/ERR_READ_TIMEOUT
 share/squid/errors/de/ERR_SECURE_CONNECT_FAIL
@@ -484,6 +491,7 @@ share/squid/errors/el/ERR_LIFETIME_EXP
 share/squid/errors/el/ERR_NO_RELAY
 share/squid/errors/el/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/el/ERR_PRECONDITION_FAILED
+share/squid/errors/el/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/el/ERR_READ_ERROR
 share/squid/errors/el/ERR_READ_TIMEOUT
 share/squid/errors/el/ERR_SECURE_CONNECT_FAIL
@@ -500,6 +508,7 @@ share/squid/errors/en/
 share/squid/errors/en-au
 share/squid/errors/en-bz
 share/squid/errors/en-ca
+share/squid/errors/en-cn
 share/squid/errors/en-gb
 share/squid/errors/en-ie
 share/squid/errors/en-in
@@ -542,6 +551,7 @@ share/squid/errors/en/ERR_LIFETIME_EXP
 share/squid/errors/en/ERR_NO_RELAY
 share/squid/errors/en/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/en/ERR_PRECONDITION_FAILED
+share/squid/errors/en/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/en/ERR_READ_ERROR
 share/squid/errors/en/ERR_READ_TIMEOUT
 share/squid/errors/en/ERR_SECURE_CONNECT_FAIL
@@ -575,6 +585,7 @@ share/squid/errors/es-sv
 share/squid/errors/es-us
 share/squid/errors/es-uy
 share/squid/errors/es-ve
+share/squid/errors/es-xl
 share/squid/errors/es/ERR_ACCESS_DENIED
 share/squid/errors/es/ERR_ACL_TIME_QUOTA_EXCEEDED
 share/squid/errors/es/ERR_AGENT_CONFIGURE
@@ -605,6 +616,7 @@ share/squid/errors/es/ERR_LIFETIME_EXP
 share/squid/errors/es/ERR_NO_RELAY
 share/squid/errors/es/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/es/ERR_PRECONDITION_FAILED
+share/squid/errors/es/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/es/ERR_READ_ERROR
 share/squid/errors/es/ERR_READ_TIMEOUT
 share/squid/errors/es/ERR_SECURE_CONNECT_FAIL
@@ -649,6 +661,7 @@ share/squid/errors/et/ERR_LIFETIME_EXP
 share/squid/errors/et/ERR_NO_RELAY
 share/squid/errors/et/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/et/ERR_PRECONDITION_FAILED
+share/squid/errors/et/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/et/ERR_READ_ERROR
 share/squid/errors/et/ERR_READ_TIMEOUT
 share/squid/errors/et/ERR_SECURE_CONNECT_FAIL
@@ -694,6 +707,7 @@ share/squid/errors/fa/ERR_LIFETIME_EXP
 share/squid/errors/fa/ERR_NO_RELAY
 share/squid/errors/fa/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/fa/ERR_PRECONDITION_FAILED
+share/squid/errors/fa/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/fa/ERR_READ_ERROR
 share/squid/errors/fa/ERR_READ_TIMEOUT
 share/squid/errors/fa/ERR_SECURE_CONNECT_FAIL
@@ -738,6 +752,7 @@ share/squid/errors/fi/ERR_LIFETIME_EXP
 share/squid/errors/fi/ERR_NO_RELAY
 share/squid/errors/fi/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/fi/ERR_PRECONDITION_FAILED
+share/squid/errors/fi/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/fi/ERR_READ_ERROR
 share/squid/errors/fi/ERR_READ_TIMEOUT
 share/squid/errors/fi/ERR_SECURE_CONNECT_FAIL
@@ -787,6 +802,7 @@ share/squid/errors/fr/ERR_LIFETIME_EXP
 share/squid/errors/fr/ERR_NO_RELAY
 share/squid/errors/fr/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/fr/ERR_PRECONDITION_FAILED
+share/squid/errors/fr/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/fr/ERR_READ_ERROR
 share/squid/errors/fr/ERR_READ_TIMEOUT
 share/squid/errors/fr/ERR_SECURE_CONNECT_FAIL
@@ -831,6 +847,7 @@ share/squid/errors/he/ERR_LIFETIME_EXP
 share/squid/errors/he/ERR_NO_RELAY
 share/squid/errors/he/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/he/ERR_PRECONDITION_FAILED
+share/squid/errors/he/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/he/ERR_READ_ERROR
 share/squid/errors/he/ERR_READ_TIMEOUT
 share/squid/errors/he/ERR_SECURE_CONNECT_FAIL
@@ -875,6 +892,7 @@ share/squid/errors/hu/ERR_LIFETIME_EXP
 share/squid/errors/hu/ERR_NO_RELAY
 share/squid/errors/hu/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/hu/ERR_PRECONDITION_FAILED
+share/squid/errors/hu/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/hu/ERR_READ_ERROR
 share/squid/errors/hu/ERR_READ_TIMEOUT
 share/squid/errors/hu/ERR_SECURE_CONNECT_FAIL
@@ -920,6 +938,7 @@ share/squid/errors/hy/ERR_LIFETIME_EXP
 share/squid/errors/hy/ERR_NO_RELAY
 share/squid/errors/hy/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/hy/ERR_PRECONDITION_FAILED
+share/squid/errors/hy/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/hy/ERR_READ_ERROR
 share/squid/errors/hy/ERR_READ_TIMEOUT
 share/squid/errors/hy/ERR_SECURE_CONNECT_FAIL
@@ -964,6 +983,7 @@ share/squid/errors/id/ERR_LIFETIME_EXP
 share/squid/errors/id/ERR_NO_RELAY
 share/squid/errors/id/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/id/ERR_PRECONDITION_FAILED
+share/squid/errors/id/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/id/ERR_READ_ERROR
 share/squid/errors/id/ERR_READ_TIMEOUT
 share/squid/errors/id/ERR_SECURE_CONNECT_FAIL
@@ -1009,6 +1029,7 @@ share/squid/errors/it/ERR_LIFETIME_EXP
 share/squid/errors/it/ERR_NO_RELAY
 share/squid/errors/it/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/it/ERR_PRECONDITION_FAILED
+share/squid/errors/it/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/it/ERR_READ_ERROR
 share/squid/errors/it/ERR_READ_TIMEOUT
 share/squid/errors/it/ERR_SECURE_CONNECT_FAIL
@@ -1053,6 +1074,7 @@ share/squid/errors/ja/ERR_LIFETIME_EXP
 share/squid/errors/ja/ERR_NO_RELAY
 share/squid/errors/ja/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/ja/ERR_PRECONDITION_FAILED
+share/squid/errors/ja/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/ja/ERR_READ_ERROR
 share/squid/errors/ja/ERR_READ_TIMEOUT
 share/squid/errors/ja/ERR_SECURE_CONNECT_FAIL
@@ -1097,6 +1119,7 @@ share/squid/errors/ka/ERR_LIFETIME_EXP
 share/squid/errors/ka/ERR_NO_RELAY
 share/squid/errors/ka/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/ka/ERR_PRECONDITION_FAILED
+share/squid/errors/ka/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/ka/ERR_READ_ERROR
 share/squid/errors/ka/ERR_READ_TIMEOUT
 share/squid/errors/ka/ERR_SECURE_CONNECT_FAIL
@@ -1142,6 +1165,7 @@ share/squid/errors/ko/ERR_LIFETIME_EXP
 share/squid/errors/ko/ERR_NO_RELAY
 share/squid/errors/ko/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/ko/ERR_PRECONDITION_FAILED
+share/squid/errors/ko/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/ko/ERR_READ_ERROR
 share/squid/errors/ko/ERR_READ_TIMEOUT
 share/squid/errors/ko/ERR_SECURE_CONNECT_FAIL
@@ -1186,6 +1210,7 @@ share/squid/errors/lt/ERR_LIFETIME_EXP
 share/squid/errors/lt/ERR_NO_RELAY
 share/squid/errors/lt/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/lt/ERR_PRECONDITION_FAILED
+share/squid/errors/lt/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/lt/ERR_READ_ERROR
 share/squid/errors/lt/ERR_READ_TIMEOUT
 share/squid/errors/lt/ERR_SECURE_CONNECT_FAIL
@@ -1230,6 +1255,7 @@ share/squid/errors/lv/ERR_LIFETIME_EXP
 share/squid/errors/lv/ERR_NO_RELAY
 share/squid/errors/lv/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/lv/ERR_PRECONDITION_FAILED
+share/squid/errors/lv/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/lv/ERR_READ_ERROR
 share/squid/errors/lv/ERR_READ_TIMEOUT
 share/squid/errors/lv/ERR_SECURE_CONNECT_FAIL
@@ -1274,6 +1300,7 @@ share/squid/errors/ms/ERR_LIFETIME_EXP
 share/squid/errors/ms/ERR_NO_RELAY
 share/squid/errors/ms/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/ms/ERR_PRECONDITION_FAILED
+share/squid/errors/ms/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/ms/ERR_READ_ERROR
 share/squid/errors/ms/ERR_READ_TIMEOUT
 share/squid/errors/ms/ERR_SECURE_CONNECT_FAIL
@@ -1318,6 +1345,7 @@ share/squid/errors/nl/ERR_LIFETIME_EXP
 share/squid/errors/nl/ERR_NO_RELAY
 share/squid/errors/nl/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/nl/ERR_PRECONDITION_FAILED
+share/squid/errors/nl/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/nl/ERR_READ_ERROR
 share/squid/errors/nl/ERR_READ_TIMEOUT
 share/squid/errors/nl/ERR_SECURE_CONNECT_FAIL
@@ -1361,6 +1389,7 @@ share/squid/errors/oc/ERR_LIFETIME_EXP
 share/squid/errors/oc/ERR_NO_RELAY
 share/squid/errors/oc/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/oc/ERR_PRECONDITION_FAILED
+share/squid/errors/oc/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/oc/ERR_READ_ERROR
 share/squid/errors/oc/ERR_READ_TIMEOUT
 share/squid/errors/oc/ERR_SECURE_CONNECT_FAIL
@@ -1405,6 +1434,7 @@ share/squid/errors/pl/ERR_LIFETIME_EXP
 share/squid/errors/pl/ERR_NO_RELAY
 share/squid/errors/pl/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/pl/ERR_PRECONDITION_FAILED
+share/squid/errors/pl/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/pl/ERR_READ_ERROR
 share/squid/errors/pl/ERR_READ_TIMEOUT
 share/squid/errors/pl/ERR_SECURE_CONNECT_FAIL
@@ -1449,6 +1479,7 @@ share/squid/errors/pt-br/ERR_LIFETIME_EXP
 share/squid/errors/pt-br/ERR_NO_RELAY
 share/squid/errors/pt-br/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/pt-br/ERR_PRECONDITION_FAILED
+share/squid/errors/pt-br/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/pt-br/ERR_READ_ERROR
 share/squid/errors/pt-br/ERR_READ_TIMEOUT
 share/squid/errors/pt-br/ERR_SECURE_CONNECT_FAIL
@@ -1463,6 +1494,7 @@ share/squid/errors/pt-br/ERR_ZERO_SIZE_OBJECT
 share/squid/errors/pt-br/error-details.txt
 share/squid/errors/pt-bz
 share/squid/errors/pt-pt
+share/squid/errors/pt-xl
 share/squid/errors/pt/ERR_ACCESS_DENIED
 share/squid/errors/pt/ERR_ACL_TIME_QUOTA_EXCEEDED
 share/squid/errors/pt/ERR_AGENT_CONFIGURE
@@ -1493,6 +1525,7 @@ share/squid/errors/pt/ERR_LIFETIME_EXP
 share/squid/errors/pt/ERR_NO_RELAY
 share/squid/errors/pt/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/pt/ERR_PRECONDITION_FAILED
+share/squid/errors/pt/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/pt/ERR_READ_ERROR
 share/squid/errors/pt/ERR_READ_TIMEOUT
 share/squid/errors/pt/ERR_SECURE_CONNECT_FAIL
@@ -1538,6 +1571,7 @@ share/squid/errors/ro/ERR_LIFETIME_EXP
 share/squid/errors/ro/ERR_NO_RELAY
 share/squid/errors/ro/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/ro/ERR_PRECONDITION_FAILED
+share/squid/errors/ro/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/ro/ERR_READ_ERROR
 share/squid/errors/ro/ERR_READ_TIMEOUT
 share/squid/errors/ro/ERR_SECURE_CONNECT_FAIL
@@ -1582,6 +1616,7 @@ share/squid/errors/ru/ERR_LIFETIME_EXP
 share/squid/errors/ru/ERR_NO_RELAY
 share/squid/errors/ru/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/ru/ERR_PRECONDITION_FAILED
+share/squid/errors/ru/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/ru/ERR_READ_ERROR
 share/squid/errors/ru/ERR_READ_TIMEOUT
 share/squid/errors/ru/ERR_SECURE_CONNECT_FAIL
@@ -1626,6 +1661,7 @@ share/squid/errors/sk/ERR_LIFETIME_EXP
 share/squid/errors/sk/ERR_NO_RELAY
 share/squid/errors/sk/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/sk/ERR_PRECONDITION_FAILED
+share/squid/errors/sk/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/sk/ERR_READ_ERROR
 share/squid/errors/sk/ERR_READ_TIMEOUT
 share/squid/errors/sk/ERR_SECURE_CONNECT_FAIL
@@ -1670,6 +1706,7 @@ share/squid/errors/sl/ERR_LIFETIME_EXP
 share/squid/errors/sl/ERR_NO_RELAY
 share/squid/errors/sl/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/sl/ERR_PRECONDITION_FAILED
+share/squid/errors/sl/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/sl/ERR_READ_ERROR
 share/squid/errors/sl/ERR_READ_TIMEOUT
 share/squid/errors/sl/ERR_SECURE_CONNECT_FAIL
@@ -1717,6 +1754,7 @@ share/squid/errors/sr-cyrl/ERR_LIFETIME_EXP
 share/squid/errors/sr-cyrl/ERR_NO_RELAY
 share/squid/errors/sr-cyrl/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/sr-cyrl/ERR_PRECONDITION_FAILED
+share/squid/errors/sr-cyrl/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/sr-cyrl/ERR_READ_ERROR
 share/squid/errors/sr-cyrl/ERR_READ_TIMEOUT
 share/squid/errors/sr-cyrl/ERR_SECURE_CONNECT_FAIL
@@ -1763,6 +1801,7 @@ share/squid/errors/sr-latn/ERR_LIFETIME_EXP
 share/squid/errors/sr-latn/ERR_NO_RELAY
 share/squid/errors/sr-latn/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/sr-latn/ERR_PRECONDITION_FAILED
+share/squid/errors/sr-latn/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/sr-latn/ERR_READ_ERROR
 share/squid/errors/sr-latn/ERR_READ_TIMEOUT
 share/squid/errors/sr-latn/ERR_SECURE_CONNECT_FAIL
@@ -1810,6 +1849,7 @@ share/squid/errors/sv/ERR_LIFETIME_EXP
 share/squid/errors/sv/ERR_NO_RELAY
 share/squid/errors/sv/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/sv/ERR_PRECONDITION_FAILED
+share/squid/errors/sv/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/sv/ERR_READ_ERROR
 share/squid/errors/sv/ERR_READ_TIMEOUT
 share/squid/errors/sv/ERR_SECURE_CONNECT_FAIL
@@ -1853,6 +1893,7 @@ share/squid/errors/templates/ERR_LIFETIME_EXP
 share/squid/errors/templates/ERR_NO_RELAY
 share/squid/errors/templates/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/templates/ERR_PRECONDITION_FAILED
+share/squid/errors/templates/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/templates/ERR_READ_ERROR
 share/squid/errors/templates/ERR_READ_TIMEOUT
 share/squid/errors/templates/ERR_SECURE_CONNECT_FAIL
@@ -1897,6 +1938,7 @@ share/squid/errors/th/ERR_LIFETIME_EXP
 share/squid/errors/th/ERR_NO_RELAY
 share/squid/errors/th/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/th/ERR_PRECONDITION_FAILED
+share/squid/errors/th/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/th/ERR_READ_ERROR
 share/squid/errors/th/ERR_READ_TIMEOUT
 share/squid/errors/th/ERR_SECURE_CONNECT_FAIL
@@ -1941,6 +1983,7 @@ share/squid/errors/tr/ERR_LIFETIME_EXP
 share/squid/errors/tr/ERR_NO_RELAY
 share/squid/errors/tr/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/tr/ERR_PRECONDITION_FAILED
+share/squid/errors/tr/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/tr/ERR_READ_ERROR
 share/squid/errors/tr/ERR_READ_TIMEOUT
 share/squid/errors/tr/ERR_SECURE_CONNECT_FAIL
@@ -1985,6 +2028,7 @@ share/squid/errors/uk/ERR_LIFETIME_EXP
 share/squid/errors/uk/ERR_NO_RELAY
 share/squid/errors/uk/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/uk/ERR_PRECONDITION_FAILED
+share/squid/errors/uk/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/uk/ERR_READ_ERROR
 share/squid/errors/uk/ERR_READ_TIMEOUT
 share/squid/errors/uk/ERR_SECURE_CONNECT_FAIL
@@ -2028,6 +2072,7 @@ share/squid/errors/uz/ERR_LIFETIME_EXP
 share/squid/errors/uz/ERR_NO_RELAY
 share/squid/errors/uz/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/uz/ERR_PRECONDITION_FAILED
+share/squid/errors/uz/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/uz/ERR_READ_ERROR
 share/squid/errors/uz/ERR_READ_TIMEOUT
 share/squid/errors/uz/ERR_SECURE_CONNECT_FAIL
@@ -2072,6 +2117,7 @@ share/squid/errors/vi/ERR_LIFETIME_EXP
 share/squid/errors/vi/ERR_NO_RELAY
 share/squid/errors/vi/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/vi/ERR_PRECONDITION_FAILED
+share/squid/errors/vi/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/vi/ERR_READ_ERROR
 share/squid/errors/vi/ERR_READ_TIMEOUT
 share/squid/errors/vi/ERR_SECURE_CONNECT_FAIL
@@ -2118,6 +2164,7 @@ share/squid/errors/zh-hans/ERR_LIFETIME_EXP
 share/squid/errors/zh-hans/ERR_NO_RELAY
 share/squid/errors/zh-hans/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/zh-hans/ERR_PRECONDITION_FAILED
+share/squid/errors/zh-hans/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/zh-hans/ERR_READ_ERROR
 share/squid/errors/zh-hans/ERR_READ_TIMEOUT
 share/squid/errors/zh-hans/ERR_SECURE_CONNECT_FAIL
@@ -2164,6 +2211,7 @@ share/squid/errors/zh-hant/ERR_LIFETIME_EXP
 share/squid/errors/zh-hant/ERR_NO_RELAY
 share/squid/errors/zh-hant/ERR_ONLY_IF_CACHED_MISS
 share/squid/errors/zh-hant/ERR_PRECONDITION_FAILED
+share/squid/errors/zh-hant/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/zh-hant/ERR_READ_ERROR
 share/squid/errors/zh-hant/ERR_READ_TIMEOUT
 share/squid/errors/zh-hant/ERR_SECURE_CONNECT_FAIL

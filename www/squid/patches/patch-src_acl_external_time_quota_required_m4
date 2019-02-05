@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_acl_external_time_quota_required_m4,v 1.1 2019/02/05 23:03:16 sthen Exp $
+
+Index: src/acl/external/time_quota/required.m4
+--- src/acl/external/time_quota/required.m4.orig
++++ src/acl/external/time_quota/required.m4
+@@ -7,7 +7,9 @@
+ 
+ AC_CHECK_HEADERS(db_185.h,[BUILD_HELPER="time_quota"],[
+   AC_CHECK_HEADERS(db.h,[
+-    AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <db.h>]],[[
++    AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <db.h>
++#include <stdio.h>
++#include <sys/fcntl.h>]],[[
+       DB *db = dbopen("/tmp", O_CREAT | O_RDWR, 0666, DB_BTREE, NULL);
+     ]])],[
+       BUILD_HELPER="time_quota"

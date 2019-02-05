@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_store_swapout_cc,v 1.1 2019/02/05 23:03:16 sthen Exp $
+
+proposed fix from https://bugs.squid-cache.org/show_bug.cgi?id=4823
+see e.g. comment 36 for description
+
+Index: src/store_swapout.cc
+--- src/store_swapout.cc.orig
++++ src/store_swapout.cc
+@@ -304,8 +304,9 @@ storeSwapOutFileClosed(void *data, int errflag, StoreI
+             storeConfigure();
+         }
+ 
+-        e->disk().finalizeSwapoutFailure(*e);
+         e->releaseRequest(); // TODO: Keep the memory entry (if any)
++        e->swap_status = SWAPOUT_FAILED;
++        e->disk().finalizeSwapoutFailure(*e);
+     } else {
+         /* swapping complete */
+         debugs(20, 3, "storeSwapOutFileClosed: SwapOut complete: '" << e->url() << "' to " <<

@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.211 2018/10/30 15:41:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.212 2019/02/05 23:03:15 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
-V=		3.5.28
+V=		4.5
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
 PKGNAME-ntlm=	squid-ntlm-$V
-REVISION-main=	3
 
 CATEGORIES=	www
 
@@ -23,12 +22,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m nettle pthread
 
-cWANTLIB=	${WANTLIB} ${COMPILER_LIBCXX} ffi gmp gnutls hogweed iconv
-cWANTLIB+=	idn2 intl p11-kit tasn1 unistring z
+cWANTLIB=	${WANTLIB} ${COMPILER_LIBCXX} ffi gmp gnutls hogweed
+cWANTLIB+=	iconv idn2 intl p11-kit tasn1 unistring
 
 # repo at https://github.com/squid-cache/squid
-MASTER_SITES=	${HOMEPAGE}Versions/v${V:C/^([0-9]).*/\1/}/${V:C/([0-9.]{3}).*/\1/}/ \
-		http://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/archive/${V:C/([0-9.]{3}).*/\1/}/
+MASTER_SITES=	${HOMEPAGE}Versions/v${V:R}/ \
+		https://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/archive/${V:R}/
 
 # C++11
 COMPILER =	base-clang ports-gcc
@@ -48,12 +47,13 @@ CONFIGURE_ARGS=	--disable-strict-error-checking \
 EXTERNAL_ACL=	SQL_session file_userip time_quota \
 		unix_group wbinfo_group # kerberos_ldap_group (sasl/gssapi)
 
-WANTLIB-main +=	${cWANTLIB} crypto db ssl
+WANTLIB-main +=	${cWANTLIB} crypto db expat lzma ssl xml2 z
 
 LIB_DEPENDS-main += ${LIB_DEPENDS} \
 		databases/db/v4 \
 		devel/gettext \
-		security/libnettle
+		security/libnettle \
+		textproc/libxml
 
 SYSCONFDIR=	${BASESYSCONFDIR}/squid
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/squid
@@ -70,6 +70,7 @@ CONFIGURE_ARGS+= --datadir="${PREFIX}/share/squid" \
 		--enable-arp-acl \
 		--enable-auth \
 		--enable-delay-pools \
+		--enable-digest \
 		--enable-follow-x-forwarded-for \
 		--enable-forw-via-db \
 		--enable-http-violations \

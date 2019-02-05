@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_acl_external_eDirectory_userip_ext_edirectory_userip_acl_cc,v 1.1 2019/02/05 23:03:16 sthen Exp $
+
+Index: src/acl/external/eDirectory_userip/ext_edirectory_userip_acl.cc
+--- src/acl/external/eDirectory_userip/ext_edirectory_userip_acl.cc.orig
++++ src/acl/external/eDirectory_userip/ext_edirectory_userip_acl.cc
+@@ -69,6 +69,9 @@
+ #ifdef HAVE_NETDB_H
+ #include <netdb.h>
+ #endif
++#ifdef HAVE_SYS_SOCKET_H
++#include <sys/socket.h>
++#endif
+ 
+ #ifdef HELPER_INPUT_BUFFER
+ #define EDUI_MAXLEN     HELPER_INPUT_BUFFER
