@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/12/19 09:59:45 lum Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/02/05 20:57:44 sthen Exp $
 @conflict linkchecker->=7.1,<7.1p1
 lib/python${MODPY_VERSION}/site-packages/dns/
 lib/python${MODPY_VERSION}/site-packages/dns/__init__.py
@@ -141,6 +141,12 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}TXT.${M
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}URI.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}X25.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/CH/
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/CH/A.py
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/CH/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/CH/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/CH/${MODPY_PYCACHE}A.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/CH/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/A.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/IN/AAAA.py
