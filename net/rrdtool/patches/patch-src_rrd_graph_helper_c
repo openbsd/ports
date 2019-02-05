@@ -1,16 +1,20 @@
-$OpenBSD: patch-src_rrd_graph_helper_c,v 1.4 2017/05/18 13:51:42 sthen Exp $
+$OpenBSD: patch-src_rrd_graph_helper_c,v 1.5 2019/02/05 16:10:05 sthen Exp $
 
 Correctly print time_t.
 
 Index: src/rrd_graph_helper.c
 --- src/rrd_graph_helper.c.orig
 +++ src/rrd_graph_helper.c
-@@ -1455,7 +1455,7 @@ static int parse_shift(enum gf_en gf,parsedargs_t* pa,
+@@ -1459,11 +1459,7 @@ static int parse_shift(enum gf_en gf,parsedargs_t* pa,
    if (gdp->shidx>=0) {
      dprintf("SHIFTBY : %s (%i)\n",im->gdes[gdp->shidx].vname,gdp->shidx);
    } else {
+-#if defined _WIN32 && SIZEOF_TIME_T == 8    /* in case of __MINGW64__, _WIN64 and _MSC_VER >= 1400 (ifndef _USE_32BIT_TIME_T) */
+-    dprintf("SHIFTBY : %lli\n",gdp->shval); /* argument 3 has type 'time_t {aka long long int}' */
+-#else
 -    dprintf("SHIFTBY : %li\n",gdp->shval);
-+    dprintf("SHIFTBY : %lld\n", (long long)gdp->shval);
+-#endif
++    dprintf("SHIFTBY : %lli\n",(long long)gdp->shval); /* argument 3 has type 'time_t {aka long long int}' */
    }
    dprintf("=================================\n");
    /* and return */

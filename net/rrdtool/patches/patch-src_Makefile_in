@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_Makefile_in,v 1.16 2017/05/18 13:51:42 sthen Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.17 2019/02/05 16:10:05 sthen Exp $
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -545,7 +545,7 @@ include_HEADERS = rrd.h rrd_format.h rrd_client.h
+@@ -548,7 +548,7 @@ include_HEADERS = rrd.h rrd_format.h rrd_client.h
  rrdcgi_SOURCES = rrd_cgi.c
  rrdcgi_LDADD = librrd.la librrdupd.la
  rrdupdate_SOURCES = rrdupdate.c

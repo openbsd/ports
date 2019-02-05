@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2018/09/04 12:46:18 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2019/02/05 16:10:05 sthen Exp $
 @conflict p5-RRD-*
 @pkgpath net/rrdtool,-perl
 @newgroup _rrdcached:726
 @newuser _rrdcached:726:_rrdcached:daemon:rrdcached user:/nonexistent:/sbin/nologin
 @extraunexec rm -f /var/db/rrd/*.rrd /var/db/rrd/journal/*
+@rcscript ${RCDIR}/rrdcached
 @bin bin/rrdcached
 @bin bin/rrdcgi
 @bin bin/rrdtool
@@ -24,6 +25,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/RRDs/RRDs.so
 @man man/man1/cdeftutorial.1
 @man man/man1/rpntutorial.1
 @man man/man1/rrd-beginners.1
+@man man/man1/rrd_pdpcalc.1
 @man man/man1/rrdbuild.1
 @man man/man1/rrdcached.1
 @man man/man1/rrdcgi.1
@@ -67,13 +69,10 @@ share/examples/rrdtool/rrdcached/rrdcached-size.pl
 share/examples/rrdtool/rrdtool-chroot
 share/examples/rrdtool/shared-demo.pl
 share/examples/rrdtool/stripes.pl
+share/locale/fr/LC_MESSAGES/rrdtool.mo
 share/locale/hu/LC_MESSAGES/rrdtool.mo
 @mode 770
 @owner _rrdcached
 @group _rrdcached
 @sample /var/db/rrd/
 @sample /var/db/rrd/journal/
-@mode
-@owner
-@group
-@rcscript ${RCDIR}/rrdcached

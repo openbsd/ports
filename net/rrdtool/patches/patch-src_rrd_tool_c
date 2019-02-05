@@ -1,30 +1,42 @@
-$OpenBSD: patch-src_rrd_tool_c,v 1.4 2017/05/18 13:51:42 sthen Exp $
+$OpenBSD: patch-src_rrd_tool_c,v 1.5 2019/02/05 16:10:05 sthen Exp $
 
 Correctly print time_t.
 
 Index: src/rrd_tool.c
 --- src/rrd_tool.c.orig
 +++ src/rrd_tool.c
-@@ -716,11 +716,11 @@ static int HandleInputLine(
+@@ -717,19 +717,11 @@ static int HandleInputLine(
      else if (strcmp("resize", argv[1]) == 0)
          rrd_resize(argc - 1, &argv[1]);
      else if (strcmp("last", argv[1]) == 0)
+-#if defined _WIN32 && SIZEOF_TIME_T == 8    /* in case of __MINGW64__, _WIN64 and _MSC_VER >= 1400 (ifndef _USE_32BIT_TIME_T) */
+-        printf("%lld\n", rrd_last(argc - 1, &argv[1]));
+-#else
 -        printf("%ld\n", rrd_last(argc - 1, &argv[1]));
+-#endif
 +        printf("%lld\n", (long long)rrd_last(argc - 1, &argv[1]));
      else if (strcmp("lastupdate", argv[1]) == 0) {
          rrd_lastupdate(argc - 1, &argv[1]);
      } else if (strcmp("first", argv[1]) == 0)
+-#if defined _WIN32 && SIZEOF_TIME_T == 8    /* in case of __MINGW64__, _WIN64 and _MSC_VER >= 1400 (ifndef _USE_32BIT_TIME_T) */
+-        printf("%lld\n", rrd_first(argc - 1, &argv[1]));
+-#else
 -        printf("%ld\n", rrd_first(argc - 1, &argv[1]));
+-#endif
 +        printf("%lld\n", (long long)rrd_first(argc - 1, &argv[1]));
      else if (strcmp("update", argv[1]) == 0)
          rrd_update(argc - 1, &argv[1]);
      else if (strcmp("fetch", argv[1]) == 0) {
-@@ -738,7 +738,7 @@ static int HandleInputLine(
+@@ -747,11 +739,7 @@ static int HandleInputLine(
                  printf("%20s", ds_namv[i]);
              printf("\n\n");
              for (ti = start + step; ti <= end; ti += step) {
+-#if defined _WIN32 && SIZEOF_TIME_T == 8    /* in case of __MINGW64__, _WIN64 and _MSC_VER >= 1400 (ifndef _USE_32BIT_TIME_T) */
+-                printf("%10llu:", ti);
+-#else
 -                printf("%10lu:", ti);
-+                printf("%10lld:", (long long)ti);
+-#endif
++                printf("%10llu:", (long long)ti);
                  for (ii = 0; ii < ds_cnt; ii++)
                      printf(" %0.10e", *(datai++));
                  printf("\n");

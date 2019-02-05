@@ -1,16 +1,20 @@
-$OpenBSD: patch-src_rrd_lastupdate_c,v 1.2 2017/05/18 13:51:42 sthen Exp $
+$OpenBSD: patch-src_rrd_lastupdate_c,v 1.3 2019/02/05 16:10:05 sthen Exp $
 
 Correctly print time_t.
 
 Index: src/rrd_lastupdate.c
 --- src/rrd_lastupdate.c.orig
 +++ src/rrd_lastupdate.c
-@@ -73,7 +73,7 @@ int rrd_lastupdate (int argc, char **argv)
+@@ -77,11 +77,7 @@ int rrd_lastupdate (int argc, char **argv)
          printf(" %s", ds_names[i]);
      printf ("\n\n");
  
+-#if defined _WIN32 && SIZEOF_TIME_T == 8    /* in case of __MINGW64__, _WIN64 and _MSC_VER >= 1400 (ifndef _USE_32BIT_TIME_T) */
+-    printf ("%10llu:", last_update);        /* argument 2 has type 'time_t {aka long long int} */
+-#else
 -    printf ("%10lu:", last_update);
-+    printf ("%10lld:", (long long)last_update);
+-#endif
++    printf ("%10llu:", (long long)last_update);        /* argument 2 has type 'time_t {aka long long int} */
      for (i = 0; i < ds_count; i++) {
          printf(" %s", last_ds[i]);
          free(last_ds[i]);
