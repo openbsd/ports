@@ -1,0 +1,18 @@
+$OpenBSD: patch-3rdparty_asio_include_asio_detail_config_hpp,v 1.1 2019/02/06 13:09:09 sthen Exp $
+
+libc++ 7.x moved string_view out of experimental
+
+Index: 3rdparty/asio/include/asio/detail/config.hpp
+--- 3rdparty/asio/include/asio/detail/config.hpp.orig
++++ 3rdparty/asio/include/asio/detail/config.hpp
+@@ -708,9 +708,8 @@
+ # if !defined(ASIO_DISABLE_STD_STRING_VIEW)
+ #  if defined(__clang__)
+ #   if (__cplusplus >= 201103)
+-#    if __has_include(<experimental/string_view>)
++#    if __has_include(<string_view>)
+ #     define ASIO_HAS_STD_STRING_VIEW 1
+-#     define ASIO_HAS_STD_EXPERIMENTAL_STRING_VIEW 1
+ #    endif // __has_include(<experimental/string_view>)
+ #   endif // (__cplusplus >= 201103)
+ #  endif // defined(__clang__)

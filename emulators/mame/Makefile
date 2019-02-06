@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/02/04 10:12:52 fcambus Exp $
+# $OpenBSD: Makefile,v 1.21 2019/02/06 13:09:09 sthen Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
@@ -82,6 +82,7 @@ post-extract:
 		xargs sed -i 's|"png.h"|"localpng.h"|'
 	@perl -pi -e 's/\r//g' ${WRKSRC}/makefile ${WRKSRC}/scripts/genie.lua \
 		${WRKSRC}/3rdparty/genie/build/gmake.bsd/genie.make \
+		${WRKSRC}/3rdparty/asio/include/asio/detail/config.hpp \
 		${WRKSRC}/docs/man/* ${WRKSRC}/keymaps/*
 
 do-install:
