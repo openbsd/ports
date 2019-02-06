@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1811 2019/02/04 23:36:27 jca Exp $
+# $OpenBSD: Makefile,v 1.1812 2019/02/06 15:06:27 cwen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -919,6 +919,7 @@
      SUBDIR += p5-MooseX-Types-DateTime
      SUBDIR += p5-MooseX-Types-LoadableClass
      SUBDIR += p5-MooseX-Types-Path-Class
+     SUBDIR += p5-MooseX-Types-Stringlike
      SUBDIR += p5-MooseX-Types-Structured
      SUBDIR += p5-Mouse
      SUBDIR += p5-MouseX-Types
