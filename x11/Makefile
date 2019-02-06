@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.628 2019/02/03 15:47:28 bcallah Exp $
+# $OpenBSD: Makefile,v 1.629 2019/02/06 11:35:00 kn Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -165,6 +165,7 @@
      SUBDIR += lxrandr
      SUBDIR += mate
      SUBDIR += menu-cache
+     SUBDIR += menumaker
      SUBDIR += mlterm
      SUBDIR += moka-icon-theme
      SUBDIR += mono-gtk2
