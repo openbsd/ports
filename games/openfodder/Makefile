@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/02/06 02:13:06 bcallah Exp $
 
 COMMENT =	open source port of Cannon Fodder game
-DISTNAME =	openfodder-1.4.0
+DISTNAME =	openfodder-1.4.1
 CATEGORIES =	games x11
-REVISION =	1
 
 HOMEPAGE =	http://openfodder.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -14,10 +13,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_mixer c m
 
 # Upstream tarball is incomplete
-MASTER_SITES =	https://devio.us/~bcallah/source/
+MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
 
 # C++14
-COMPILER =	base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS =	devel/sdl2-mixer
 
