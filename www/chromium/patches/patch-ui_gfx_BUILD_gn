@@ -1,10 +1,10 @@
-$OpenBSD: patch-ui_gfx_BUILD_gn,v 1.4 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-ui_gfx_BUILD_gn,v 1.5 2019/02/06 16:41:55 robert Exp $
 
 Index: ui/gfx/BUILD.gn
 --- ui/gfx/BUILD.gn.orig
 +++ ui/gfx/BUILD.gn
-@@ -542,7 +542,7 @@ jumbo_source_set("memory_buffer_sources") {
-     deps += [ "//third_party/libdrm" ]
+@@ -533,7 +533,7 @@ jumbo_source_set("memory_buffer_sources") {
+     deps += [ "//build/config/linux/libdrm" ]
    }
  
 -  if (is_linux || is_android) {

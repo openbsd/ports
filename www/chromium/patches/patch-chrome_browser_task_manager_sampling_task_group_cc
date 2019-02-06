@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_cc,v 1.10 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_cc,v 1.11 2019/02/06 16:41:55 robert Exp $
 
 Index: chrome/browser/task_manager/sampling/task_group.cc
 --- chrome/browser/task_manager/sampling/task_group.cc.orig
 +++ chrome/browser/task_manager/sampling/task_group.cc
-@@ -35,7 +35,7 @@ const int kBackgroundRefreshTypesMask =
+@@ -33,7 +33,7 @@ const int kBackgroundRefreshTypesMask =
  #if defined(OS_WIN)
      REFRESH_TYPE_START_TIME | REFRESH_TYPE_CPU_TIME |
  #endif  // defined(OS_WIN)
@@ -30,7 +30,7 @@ Index: chrome/browser/task_manager/sampling/task_group.cc
          base::Bind(&TaskGroup::OnOpenFdCountRefreshDone,
                     weak_ptr_factory_.GetWeakPtr()),
  #endif  // defined(OS_LINUX)
-@@ -291,7 +291,7 @@ void TaskGroup::OnRefreshNaClDebugStubPortDone(int nac
+@@ -296,7 +296,7 @@ void TaskGroup::OnRefreshNaClDebugStubPortDone(int nac
  }
  #endif  // BUILDFLAG(ENABLE_NACL)
  

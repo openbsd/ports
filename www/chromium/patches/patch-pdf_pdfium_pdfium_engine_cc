@@ -1,4 +1,4 @@
-$OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.30 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.31 2019/02/06 16:41:55 robert Exp $
 
 Index: pdf/pdfium/pdfium_engine.cc
 --- pdf/pdfium/pdfium_engine.cc.orig
@@ -12,7 +12,7 @@ Index: pdf/pdfium/pdfium_engine.cc
  
  PP_Instance g_last_instance_id;
  
-@@ -637,7 +637,7 @@ bool InitializeSDK() {
+@@ -665,7 +665,7 @@ bool InitializeSDK() {
    config.m_v8EmbedderSlot = gin::kEmbedderPDFium;
    FPDF_InitLibraryWithConfig(&config);
  
@@ -21,7 +21,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    // Font loading doesn't work in the renderer sandbox in Linux.
    FPDF_SetSystemFontInfo(&g_font_info);
  #else
-@@ -662,7 +662,7 @@ bool InitializeSDK() {
+@@ -690,7 +690,7 @@ bool InitializeSDK() {
  
  void ShutdownSDK() {
    FPDF_DestroyLibrary();
@@ -30,7 +30,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    delete g_font_info;
  #endif
    TearDownV8();
-@@ -686,7 +686,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client, 
+@@ -714,7 +714,7 @@ PDFiumEngine::PDFiumEngine(PDFEngine::Client* client, 
    IFSDK_PAUSE::user = nullptr;
    IFSDK_PAUSE::NeedToPauseNow = Pause_NeedToPauseNow;
  
@@ -39,7 +39,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    // PreviewModeClient does not know its pp::Instance.
    pp::Instance* instance = client_->GetPluginInstance();
    if (instance)
-@@ -1150,7 +1150,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPdf(
+@@ -1178,7 +1178,7 @@ pp::Buffer_Dev PDFiumEngine::PrintPagesAsRasterPdf(
  
    KillFormFocus();
  
@@ -48,7 +48,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
  
-@@ -2938,7 +2938,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
+@@ -2971,7 +2971,7 @@ bool PDFiumEngine::ContinuePaint(int progressive_index
    DCHECK(image_data);
  
    last_progressive_start_time_ = base::Time::Now();
@@ -57,7 +57,7 @@ Index: pdf/pdfium/pdfium_engine.cc
    g_last_instance_id = client_->GetPluginInstance()->pp_instance();
  #endif
  
-@@ -3415,7 +3415,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
+@@ -3448,7 +3448,7 @@ void PDFiumEngine::SetCurrentPage(int index) {
      FORM_DoPageAAction(old_page, form(), FPDFPAGE_AACTION_CLOSE);
    }
    most_visible_page_ = index;

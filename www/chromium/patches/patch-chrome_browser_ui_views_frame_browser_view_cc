@@ -1,23 +1,32 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_cc,v 1.15 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_cc,v 1.16 2019/02/06 16:41:55 robert Exp $
 
 Index: chrome/browser/ui/views/frame/browser_view.cc
 --- chrome/browser/ui/views/frame/browser_view.cc.orig
 +++ chrome/browser/ui/views/frame/browser_view.cc
-@@ -1205,7 +1205,7 @@ void BrowserView::RotatePaneFocus(bool forwards) {
+@@ -1255,7 +1255,7 @@ void BrowserView::RotatePaneFocus(bool forwards) {
  }
  
  void BrowserView::DestroyBrowser() {
 -#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+#if defined(OS_WIN) || ((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS))
-   if (browser_->SupportsWindowFeature(Browser::FEATURE_TOOLBAR)) {
++#if defined(OS_WIN) || defined(OS_BSD) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
+   if (quit_instruction_bubble_controller_) {
      GetWidget()->GetNativeView()->RemovePreTargetHandler(
-         QuitInstructionBubbleController::GetInstance());
-@@ -2393,7 +2393,7 @@ void BrowserView::InitViews() {
+         quit_instruction_bubble_controller_.get());
+@@ -2089,7 +2089,7 @@ views::View* BrowserView::CreateOverlayView() {
+ }
+ 
+ void BrowserView::OnWidgetDestroying(views::Widget* widget) {
+-#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if defined(OS_WIN) || defined(OS_BSD) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
+   if (quit_instruction_bubble_controller_) {
+     GetWidget()->GetNativeView()->RemovePreTargetHandler(
+         quit_instruction_bubble_controller_.get());
+@@ -2435,7 +2435,7 @@ void BrowserView::InitViews() {
    GetWidget()->SetNativeWindowProperty(Profile::kProfileKey,
                                         browser_->profile());
  
 -#if defined(OS_WIN) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+#if defined(OS_WIN) || ((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS))
++#if defined(OS_WIN) || defined(OS_BSD) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
    if (browser_->SupportsWindowFeature(Browser::FEATURE_TOOLBAR)) {
-     GetWidget()->GetNativeView()->AddPreTargetHandler(
-         QuitInstructionBubbleController::GetInstance());
+     quit_instruction_bubble_controller_ =
+         QuitInstructionBubbleController::GetInstance();

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.48 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.49 2019/02/06 16:41:55 robert Exp $
 
 Index: chrome/browser/about_flags.cc
 --- chrome/browser/about_flags.cc.orig
 +++ chrome/browser/about_flags.cc
-@@ -884,7 +884,7 @@ const FeatureEntry::FeatureVariation kAutofillPreviewS
+@@ -832,7 +832,7 @@ const FeatureEntry::FeatureVariation kAutofillPreviewS
      {"(Black on GoogleYellow050)", kAutofillPreviewStyleBlackOnYellow050,
       base::size(kAutofillPreviewStyleBlackOnYellow050), nullptr}};
  
@@ -12,7 +12,7 @@ Index: chrome/browser/about_flags.cc
  const FeatureEntry::FeatureParam kAutofillPrimaryInfoStyleMedium[] = {
      {autofill::kAutofillForcedFontWeightParameterName,
       autofill::kAutofillForcedFontWeightParameterMedium},
-@@ -2609,7 +2609,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2497,7 +2497,7 @@ const FeatureEntry kFeatureEntries[] = {
      {"force-text-direction", flag_descriptions::kForceTextDirectionName,
       flag_descriptions::kForceTextDirectionDescription, kOsAll,
       MULTI_VALUE_TYPE(kForceTextDirectionChoices)},
@@ -21,7 +21,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-input-ime-api", flag_descriptions::kEnableInputImeApiName,
       flag_descriptions::kEnableInputImeApiDescription, kOsWin | kOsLinux,
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableInputImeAPI,
-@@ -2813,7 +2813,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2696,7 +2696,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(
           password_manager::features::kPasswordsKeyboardAccessory)},
  #endif  // OS_ANDROID
@@ -30,7 +30,7 @@ Index: chrome/browser/about_flags.cc
      {"passwords-migrate-linux-to-login-db",
       flag_descriptions::kPasswordsMigrateLinuxToLoginDBName,
       flag_descriptions::kPasswordsMigrateLinuxToLoginDBDescription, kOsLinux,
-@@ -3225,7 +3225,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3127,7 +3127,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kLeftToRightUrlsDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kLeftToRightUrls)},
  
@@ -39,7 +39,7 @@ Index: chrome/browser/about_flags.cc
      {"omnibox-new-answer-layout",
       flag_descriptions::kOmniboxNewAnswerLayoutName,
       flag_descriptions::kOmniboxNewAnswerLayoutDescription, kOsDesktop,
-@@ -3566,7 +3566,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3449,7 +3449,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kClickToOpenPDFDescription, kOsAll,
       FEATURE_VALUE_TYPE(features::kClickToOpenPDFPlaceholder)},
  
@@ -48,7 +48,7 @@ Index: chrome/browser/about_flags.cc
      {"direct-manipulation-stylus",
       flag_descriptions::kDirectManipulationStylusName,
       flag_descriptions::kDirectManipulationStylusDescription,
-@@ -4021,7 +4021,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3897,7 +3897,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kAutofillCacheQueryResponsesDescription, kOsAll,
       FEATURE_VALUE_TYPE(autofill::features::kAutofillCacheQueryResponses)},
  
@@ -57,9 +57,9 @@ Index: chrome/browser/about_flags.cc
      {"autofill-primary-info-style",
       flag_descriptions::kAutofillPrimaryInfoStyleExperimentName,
       flag_descriptions::kAutofillPrimaryInfoStyleExperimentDescription,
-@@ -4082,7 +4082,7 @@ const FeatureEntry kFeatureEntries[] = {
-      FEATURE_VALUE_TYPE(ash::features::kOverviewSwipeToClose)},
- #endif  // OS_CHROMEOS
+@@ -4001,7 +4001,7 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kExperimentalProductivityFeaturesDescription, kOsAll,
+      FEATURE_VALUE_TYPE(features::kExperimentalProductivityFeatures)},
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)

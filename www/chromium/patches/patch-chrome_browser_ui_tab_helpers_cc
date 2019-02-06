@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_tab_helpers_cc,v 1.18 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_tab_helpers_cc,v 1.19 2019/02/06 16:41:55 robert Exp $
 Index: chrome/browser/ui/tab_helpers.cc
 --- chrome/browser/ui/tab_helpers.cc.orig
 +++ chrome/browser/ui/tab_helpers.cc
-@@ -116,7 +116,7 @@
+@@ -117,7 +117,7 @@
  #include "components/zoom/zoom_controller.h"
  #endif  // defined(OS_ANDROID)
  
@@ -11,7 +11,7 @@ Index: chrome/browser/ui/tab_helpers.cc
  #include "chrome/browser/ui/blocked_content/framebust_block_tab_helper.h"
  #include "chrome/browser/ui/hats/hats_helper.h"
  #endif
-@@ -310,7 +310,7 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
+@@ -311,11 +311,11 @@ void TabHelpers::AttachTabHelpers(WebContents* web_con
  #endif
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
@@ -20,3 +20,8 @@ Index: chrome/browser/ui/tab_helpers.cc
    metrics::DesktopSessionDurationObserver::CreateForWebContents(web_contents);
  #endif
  
+-#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+   if (base::FeatureList::IsEnabled(
+           features::kHappinessTrackingSurveysForDesktop)) {
+     HatsHelper::CreateForWebContents(web_contents);

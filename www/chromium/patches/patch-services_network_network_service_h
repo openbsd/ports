@@ -1,14 +1,14 @@
-$OpenBSD: patch-services_network_network_service_h,v 1.3 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-services_network_network_service_h,v 1.4 2019/02/06 16:41:55 robert Exp $
 
 Index: services/network/network_service.h
 --- services/network/network_service.h.orig
 +++ services/network/network_service.h
-@@ -148,7 +148,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
-       mojom::NetworkService::GetTotalNetworkUsagesCallback callback) override;
-   void UpdateSignedTreeHead(const net::ct::SignedTreeHead& sth) override;
+@@ -174,7 +174,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
+ #endif  // !BUILDFLAG(IS_CT_SUPPORTED)
    void UpdateCRLSet(base::span<const uint8_t> crl_set) override;
+   void OnCertDBChanged() override;
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if defined(OS_BSD) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
    void SetCryptConfig(mojom::CryptConfigPtr crypt_config) override;
  #endif
  #if defined(OS_MACOSX) && !defined(OS_IOS)

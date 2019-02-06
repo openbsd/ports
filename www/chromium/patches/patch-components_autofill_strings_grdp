@@ -1,11 +1,11 @@
-$OpenBSD: patch-components_autofill_strings_grdp,v 1.8 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-components_autofill_strings_grdp,v 1.9 2019/02/06 16:41:55 robert Exp $
 
 Index: components/autofill_strings.grdp
 --- components/autofill_strings.grdp.orig
 +++ components/autofill_strings.grdp
-@@ -198,7 +198,7 @@
-   <message name="IDS_AUTOFILL_SAVE_CARD_PROMPT_TITLE_LOCAL" desc="Title text for the Autofill save card prompt when the card is to be saved locally. The prompt can be either a bubble or an infobar.">
-     Save card?
+@@ -205,7 +205,7 @@
+   <message name="IDS_AUTOFILL_NAME_FIX_FLOW_PROMPT_SAVE_CARD" desc="Text to show for the Autofill save credit card prompt card holder name fix flow button.">
+     Save card
    </message>
 -  <if expr="is_linux and not chromeos">
 +  <if expr="is_posix and not chromeos">

@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_services_font_font_service_app_cc,v 1.1 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-components_services_font_font_service_app_cc,v 1.2 2019/02/06 16:41:55 robert Exp $
 
 Index: components/services/font/font_service_app.cc
 --- components/services/font/font_service_app.cc.orig
 +++ components/services/font/font_service_app.cc
-@@ -21,7 +21,7 @@
+@@ -20,7 +20,7 @@
  #include "components/services/font/ppapi_fontconfig_matching.h"  // nogncheck
  #endif
  

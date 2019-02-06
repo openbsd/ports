@@ -1,4 +1,4 @@
-$OpenBSD: patch-mojo_public_c_system_thunks_cc,v 1.1 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-mojo_public_c_system_thunks_cc,v 1.2 2019/02/06 16:41:55 robert Exp $
 
 Index: mojo/public/c/system/thunks.cc
 --- mojo/public/c/system/thunks.cc.orig
@@ -21,7 +21,7 @@ Index: mojo/public/c/system/thunks.cc
  PROTECTED_MEMORY_SECTION
  base::ProtectedMemory<MojoGetSystemThunksFunction> g_get_thunks;
  #endif
-@@ -63,7 +63,7 @@ namespace mojo {
+@@ -65,7 +65,7 @@ namespace mojo {
  class CoreLibraryInitializer {
   public:
    CoreLibraryInitializer(const MojoInitializeOptions* options) {
@@ -30,7 +30,7 @@ Index: mojo/public/c/system/thunks.cc
      bool application_provided_path = false;
      base::Optional<base::FilePath> library_path;
      if (options && options->struct_size >= sizeof(*options) &&
-@@ -82,7 +82,7 @@ class CoreLibraryInitializer {
+@@ -84,7 +84,7 @@ class CoreLibraryInitializer {
  
      if (!library_path) {
        // Default to looking for the library in the current working directory.
@@ -39,7 +39,7 @@ Index: mojo/public/c/system/thunks.cc
        const base::FilePath::CharType kDefaultLibraryPathValue[] =
            FILE_PATH_LITERAL("./libmojo_core.so");
  #elif defined(OS_WIN)
-@@ -132,7 +132,7 @@ class CoreLibraryInitializer {
+@@ -147,7 +147,7 @@ class CoreLibraryInitializer {
    ~CoreLibraryInitializer() = default;
  
   private:

@@ -1,28 +1,19 @@
-$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_cc,v 1.7 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_cc,v 1.8 2019/02/06 16:41:55 robert Exp $
 
 Index: content/ppapi_plugin/ppapi_blink_platform_impl.cc
 --- content/ppapi_plugin/ppapi_blink_platform_impl.cc.orig
 +++ content/ppapi_plugin/ppapi_blink_platform_impl.cc
-@@ -40,7 +40,7 @@ namespace content {
+@@ -36,7 +36,7 @@ typedef struct CGFont* CGFontRef;
+ 
+ namespace content {
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
  
  class PpapiBlinkPlatformImpl::SandboxSupport : public WebSandboxSupport {
   public:
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
-   explicit SandboxSupport(sk_sp<font_service::FontLoader> font_loader)
-       : font_loader_(std::move(font_loader)) {}
+@@ -118,7 +118,7 @@ void PpapiBlinkPlatformImpl::SandboxSupport::
  #endif
-@@ -48,7 +48,7 @@ class PpapiBlinkPlatformImpl::SandboxSupport : public 
- 
- #if defined(OS_MACOSX)
-   bool LoadFont(CTFontRef srcFont, CGFontRef* out, uint32_t* fontID) override;
--#elif defined(OS_LINUX)
-+#elif defined(OS_LINUX) || defined(OS_BSD)
-   SandboxSupport();
-   void GetFallbackFontForCharacter(
-       WebUChar32 character,
-@@ -140,7 +140,7 @@ void PpapiBlinkPlatformImpl::SandboxSupport::
- #endif  // !defined(OS_ANDROID) && !defined(OS_WIN)
  
  PpapiBlinkPlatformImpl::PpapiBlinkPlatformImpl() {
 -#if defined(OS_LINUX)
@@ -30,3 +21,21 @@ Index: content/ppapi_plugin/ppapi_blink_platform_impl.cc
    font_loader_ =
        sk_make_sp<font_service::FontLoader>(ChildThread::Get()->GetConnector());
    SkFontConfigInterface::SetGlobal(font_loader_);
+@@ -134,7 +134,7 @@ PpapiBlinkPlatformImpl::~PpapiBlinkPlatformImpl() {
+ }
+ 
+ void PpapiBlinkPlatformImpl::Shutdown() {
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+   // SandboxSupport contains a map of OutOfProcessFont objects, which hold
+   // WebStrings and WebVectors, which become invalidated when blink is shut
+   // down. Hence, we need to clear that map now, just before blink::shutdown()
+@@ -144,7 +144,7 @@ void PpapiBlinkPlatformImpl::Shutdown() {
+ }
+ 
+ blink::WebSandboxSupport* PpapiBlinkPlatformImpl::GetSandboxSupport() {
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+   return sandbox_support_.get();
+ #else
+   return nullptr;

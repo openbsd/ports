@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_scheduler_responsiveness_native_event_observer_cc,v 1.2 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-content_browser_scheduler_responsiveness_native_event_observer_cc,v 1.3 2019/02/06 16:41:55 robert Exp $
 
 Index: content/browser/scheduler/responsiveness/native_event_observer.cc
 --- content/browser/scheduler/responsiveness/native_event_observer.cc.orig
 +++ content/browser/scheduler/responsiveness/native_event_observer.cc
-@@ -17,7 +17,7 @@
+@@ -15,7 +15,7 @@
  
  #include "ui/events/platform/platform_event_source.h"
  
@@ -12,16 +12,7 @@ Index: content/browser/scheduler/responsiveness/native_event_observer.cc
  #include "ui/aura/env.h"
  #include "ui/events/event.h"
  #endif
-@@ -29,7 +29,7 @@
- namespace content {
- namespace responsiveness {
- 
--#if defined(OS_WIN) || (defined(OS_LINUX) && defined(USE_X11))
-+#if defined(OS_WIN) || ((defined(OS_BSD) || defined(OS_LINUX)) && defined(USE_X11))
- 
- namespace {
- 
-@@ -64,7 +64,7 @@ NativeEventObserver::~NativeEventObserver() {
+@@ -39,7 +39,7 @@ NativeEventObserver::~NativeEventObserver() {
    DeregisterObserver();
  }
  

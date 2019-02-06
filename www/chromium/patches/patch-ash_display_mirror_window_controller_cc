@@ -1,8 +1,8 @@
-$OpenBSD: patch-ash_display_mirror_window_controller_cc,v 1.21 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-ash_display_mirror_window_controller_cc,v 1.22 2019/02/06 16:41:55 robert Exp $
 Index: ash/display/mirror_window_controller.cc
 --- ash/display/mirror_window_controller.cc.orig
 +++ ash/display/mirror_window_controller.cc
-@@ -252,7 +252,11 @@ void MirrorWindowController::UpdateWindow(
+@@ -274,7 +274,11 @@ void MirrorWindowController::UpdateWindow(
                           return info.id() == iter->first;
                         }) == display_info_list.end()) {
          CloseAndDeleteHost(iter->second, true);

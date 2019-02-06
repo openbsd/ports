@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_extensions_bookmark_app_helper_cc,v 1.26 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_bookmark_app_helper_cc,v 1.27 2019/02/06 16:41:55 robert Exp $
 
 Index: chrome/browser/extensions/bookmark_app_helper.cc
 --- chrome/browser/extensions/bookmark_app_helper.cc.orig
 +++ chrome/browser/extensions/bookmark_app_helper.cc
-@@ -616,7 +616,7 @@ void BookmarkAppHelper::FinishInstallation(const Exten
+@@ -497,7 +497,7 @@ void BookmarkAppHelper::FinishInstallation(const Exten
    if (create_shortcuts_) {
  #if !defined(OS_CHROMEOS)
      web_app::ShortcutLocations creation_locations;

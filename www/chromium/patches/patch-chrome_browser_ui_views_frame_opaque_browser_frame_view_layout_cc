@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_layout_cc,v 1.13 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_layout_cc,v 1.14 2019/02/06 16:41:55 robert Exp $
 
 Index: chrome/browser/ui/views/frame/opaque_browser_frame_view_layout.cc
 --- chrome/browser/ui/views/frame/opaque_browser_frame_view_layout.cc.orig
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view_layout.cc
-@@ -18,7 +18,7 @@ namespace {
+@@ -22,7 +22,7 @@ namespace {
  
  constexpr int kCaptionButtonHeight = 18;
  

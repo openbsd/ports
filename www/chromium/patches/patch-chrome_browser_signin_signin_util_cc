@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_signin_signin_util_cc,v 1.1 2019/02/06 16:41:55 robert Exp $
+
+Index: chrome/browser/signin/signin_util.cc
+--- chrome/browser/signin/signin_util.cc.orig
++++ chrome/browser/signin/signin_util.cc
+@@ -40,7 +40,7 @@ namespace {
+ 
+ constexpr char kSignoutSettingKey[] = "signout_setting";
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+ #define CAN_DELETE_PROFILE
+ #endif
+ 

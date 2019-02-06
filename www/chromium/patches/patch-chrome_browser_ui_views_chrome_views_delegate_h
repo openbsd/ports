@@ -1,7 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_h,v 1.12 2017/04/28 14:21:00 robert Exp $
---- chrome/browser/ui/views/chrome_views_delegate.h.orig.port	Fri Apr 28 07:29:28 2017
-+++ chrome/browser/ui/views/chrome_views_delegate.h	Fri Apr 28 07:29:40 2017
-@@ -43,7 +43,7 @@ class ChromeViewsDelegate : public views::ViewsDelegat
+$OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_h,v 1.13 2019/02/06 16:41:55 robert Exp $
+Index: chrome/browser/ui/views/chrome_views_delegate.h
+--- chrome/browser/ui/views/chrome_views_delegate.h.orig
++++ chrome/browser/ui/views/chrome_views_delegate.h
+@@ -44,7 +44,7 @@ class ChromeViewsDelegate : public views::ViewsDelegat
    HICON GetSmallWindowIcon() const override;
    int GetAppbarAutohideEdges(HMONITOR monitor,
                               const base::Closure& callback) override;

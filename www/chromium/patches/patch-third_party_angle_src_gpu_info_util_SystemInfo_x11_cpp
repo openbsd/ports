@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_angle_src_gpu_info_util_SystemInfo_x11_cpp,v 1.1 2017/06/25 21:53:56 robert Exp $
+$OpenBSD: patch-third_party_angle_src_gpu_info_util_SystemInfo_x11_cpp,v 1.2 2019/02/06 16:41:55 robert Exp $
 
 Index: third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp
 --- third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp.orig
@@ -13,7 +13,7 @@ Index: third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp
  
  #include "common/debug.h"
 @@ -18,8 +20,40 @@
- #error SystemInfo_x11.cpp compiled without GPU_INFO_USE_X11
+ #    error SystemInfo_x11.cpp compiled without GPU_INFO_USE_X11
  #endif
  
 +#define GLX_RENDERER_VENDOR_ID_MESA	0x8183

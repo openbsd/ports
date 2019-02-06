@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.405 2019/01/30 22:47:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.406 2019/02/06 16:41:55 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -11,9 +11,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			71.0.3578.98
-
-REVISION=		2
+V=			72.0.3626.81
 
 DISTNAME=		chromium-${V}
 
@@ -64,10 +62,11 @@ WANTLIB += Xcomposite Xdamage
 WANTLIB += EGL Xau Xdmcp Xinerama Xxf86vm atspi cairo-gobject
 WANTLIB += drm epoxy fontconfig freetype fribidi gmodule-2.0 graphite2
 WANTLIB += gthread-2.0 intl pangoft2-1.0 pcre pixman-1
-WANTLIB += plc4 plds4 png util xcb-dri2 xcb-glx xcb-render xcb-shm
+WANTLIB += plc4 plds4 util xcb-dri2 xcb-glx xcb-render xcb-shm
 WANTLIB += xml2 z
 WANTLIB += uuid
 WANTLIB += harfbuzz 
+WANTLIB += ffi png16
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -80,7 +79,6 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gperf \
 		devel/bison \
 		lang/node \
-		devel/yasm \
 		shells/bash \
 		sysutils/flock \
 		sysutils/pciutils \
@@ -96,6 +94,12 @@ LIB_DEPENDS=	devel/harfbuzz \
 		x11/gtk+3 \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}
+
+.if ${MACHINE_ARCH} == amd64
+# they can make better javascript with java ...
+JAVA_HOME=	${LOCALBASE}/jdk-1.8.0
+BUILD_DEPENDS+=	jdk->=1.8v0,<1.9v0:devel/jdk/1.8
+.endif
 
 .include <bsd.own.mk>
 
@@ -119,8 +123,7 @@ BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 # removes them from the bundled third_party directory and replaces them
 # with hooks to use them from the system.
 GN_SYSTEM_LIBS=	libevent \
-		libxslt \
-		yasm
+		libxslt
 
 GN_ARGS=	enable_nacl=false \
 		is_debug=false \
@@ -139,7 +142,7 @@ GN_ARGS=	enable_nacl=false \
 		fieldtrial_testing_like_official_build=true \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\"
 
-.if ${MACHINE_ARCH} == i386
+.if ${MACHINE_ARCH} == "i386"
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memory\"
 .else
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
@@ -174,6 +177,9 @@ GN_ARGS+=	is_official_build=true \
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+.if ${MACHINE_ARCH} == amd64
+	@ln -sf ${JAVA_HOME}/bin/java ${WRKDIR}/bin/java
+.endif
 .for _arch in x64 ia32 arm64
 .  for _dir in avcodec avformat avutil
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \

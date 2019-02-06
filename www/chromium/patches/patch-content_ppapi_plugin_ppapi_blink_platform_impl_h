@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_h,v 1.7 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_h,v 1.8 2019/02/06 16:41:55 robert Exp $
 
 Index: content/ppapi_plugin/ppapi_blink_platform_impl.h
 --- content/ppapi_plugin/ppapi_blink_platform_impl.h.orig
@@ -12,12 +12,17 @@ Index: content/ppapi_plugin/ppapi_blink_platform_impl.h
  #include "components/services/font/public/cpp/font_loader.h"
  #include "third_party/skia/include/core/SkRefCnt.h"
  #endif
-@@ -47,7 +47,7 @@ class PpapiBlinkPlatformImpl : public BlinkPlatformImp
-   std::unique_ptr<SandboxSupport> sandbox_support_;
+@@ -42,11 +42,11 @@ class PpapiBlinkPlatformImpl : public BlinkPlatformImp
+                          bool sync_dir) override;
+ 
+  private:
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+   std::unique_ptr<blink::WebSandboxSupport> sandbox_support_;
  #endif
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
+   class SandboxSupport;
    sk_sp<font_service::FontLoader> font_loader_;
  #endif
- 

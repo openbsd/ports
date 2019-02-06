@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_browser_child_process_host_impl_cc,v 1.5 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-content_browser_browser_child_process_host_impl_cc,v 1.6 2019/02/06 16:41:55 robert Exp $
 
 Index: content/browser/browser_child_process_host_impl.cc
 --- content/browser/browser_child_process_host_impl.cc.orig
 +++ content/browser/browser_child_process_host_impl.cc
-@@ -252,6 +252,7 @@ void BrowserChildProcessHostImpl::Launch(
+@@ -316,6 +316,7 @@ void BrowserChildProcessHostImpl::LaunchWithoutExtraCo
        switches::kDisableBackgroundTasks,
        switches::kDisableLogging,
        switches::kEnableLogging,

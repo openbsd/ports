@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.8 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-content_gpu_gpu_sandbox_hook_linux_cc,v 1.9 2019/02/06 16:41:55 robert Exp $
 
 Index: content/gpu/gpu_sandbox_hook_linux.cc
 --- content/gpu/gpu_sandbox_hook_linux.cc.orig
@@ -14,7 +14,7 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
  void AddV4L2GpuWhitelist(
      std::vector<BrokerFilePermission>* permissions,
      const service_manager::SandboxSeccompBPF::Options& options) {
-@@ -265,8 +266,10 @@ std::vector<BrokerFilePermission> FilePermissionsForGp
+@@ -277,8 +278,10 @@ std::vector<BrokerFilePermission> FilePermissionsForGp
    AddStandardGpuWhiteList(&permissions);
    return permissions;
  }
@@ -25,7 +25,7 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
    // Preload the Mali library.
    if (UseChromecastSandboxWhitelist()) {
      for (const char* path : kWhitelistedChromecastPaths) {
-@@ -281,6 +284,7 @@ void LoadArmGpuLibraries() {
+@@ -293,6 +296,7 @@ void LoadArmGpuLibraries() {
      // Preload the Tegra V4L2 (video decode acceleration) library.
      dlopen(kLibTegraPath, dlopen_flag);
    }
@@ -33,7 +33,7 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
  }
  
  bool LoadAmdGpuLibraries() {
-@@ -336,6 +340,7 @@ bool LoadLibrariesForGpu(
+@@ -348,6 +352,7 @@ bool LoadLibrariesForGpu(
    return true;
  }
  
@@ -41,7 +41,7 @@ Index: content/gpu/gpu_sandbox_hook_linux.cc
  sandbox::syscall_broker::BrokerCommandSet CommandSetForGPU(
      const service_manager::SandboxLinux::Options& options) {
    sandbox::syscall_broker::BrokerCommandSet command_set;
-@@ -356,13 +361,18 @@ bool BrokerProcessPreSandboxHook(
+@@ -368,13 +373,18 @@ bool BrokerProcessPreSandboxHook(
    service_manager::SetProcessTitleFromCommandLine(nullptr);
    return true;
  }

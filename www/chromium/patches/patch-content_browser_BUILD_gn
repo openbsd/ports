@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_BUILD_gn,v 1.20 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-content_browser_BUILD_gn,v 1.21 2019/02/06 16:41:55 robert Exp $
 
 Index: content/browser/BUILD.gn
 --- content/browser/BUILD.gn.orig
 +++ content/browser/BUILD.gn
-@@ -1889,11 +1889,6 @@ jumbo_source_set("browser") {
+@@ -1902,11 +1902,6 @@ jumbo_source_set("browser") {
        "tracing/cros_tracing_agent.h",
      ]
      deps += [ "//chromeos/resources" ]

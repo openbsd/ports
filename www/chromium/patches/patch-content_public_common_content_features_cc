@@ -1,0 +1,14 @@
+$OpenBSD: patch-content_public_common_content_features_cc,v 1.1 2019/02/06 16:41:55 robert Exp $
+
+Index: content/public/common/content_features.cc
+--- content/public/common/content_features.cc.orig
++++ content/public/common/content_features.cc
+@@ -596,7 +596,7 @@ const base::Feature kWebRtcHideLocalIpsWithMdns{
+ 
+ // Controls whether the WebUSB API is enabled:
+ // https://wicg.github.io/webusb
+-const base::Feature kWebUsb{"WebUSB", base::FEATURE_ENABLED_BY_DEFAULT};
++const base::Feature kWebUsb{"WebUSB", base::FEATURE_DISABLED_BY_DEFAULT};
+ 
+ // Controls whether WebVR VSync-aligned render loop timing is enabled.
+ const base::Feature kWebVrVsyncAlign{"WebVrVsyncAlign",

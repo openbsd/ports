@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_browser_window_h,v 1.1 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_browser_window_h,v 1.2 2019/02/06 16:41:55 robert Exp $
 
 Index: chrome/browser/ui/browser_window.h
 --- chrome/browser/ui/browser_window.h.orig
 +++ chrome/browser/ui/browser_window.h
-@@ -405,7 +405,7 @@ class BrowserWindow : public ui::BaseWindow {
+@@ -423,7 +423,7 @@ class BrowserWindow : public ui::BaseWindow {
        bool is_source_keyboard) = 0;
  
  #if defined(OS_CHROMEOS) || defined(OS_MACOSX) || defined(OS_WIN) || \

@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.25 2018/12/15 10:08:08 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.26 2019/02/06 16:41:55 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
@@ -30,7 +30,7 @@ Index: build/config/compiler/BUILD.gn
        # Explicitly pass --build-id to ld. Compilers used to always pass this
        # implicitly but don't any more (in particular clang when built without
        # ENABLE_LINKER_BUILD_ID=ON). The crash infrastructure does need a build
-@@ -387,18 +387,14 @@ config("compiler") {
+@@ -386,18 +386,13 @@ config("compiler") {
      }
  
      ldflags += [
@@ -39,10 +39,10 @@ Index: build/config/compiler/BUILD.gn
        "-Wl,-z,now",
        "-Wl,-z,relro",
      ]
- 
+-
 -    # Compiler instrumentation can introduce dependencies in DSOs to symbols in
 -    # the executable they are loaded into, so they are unresolved at link-time.
--    if (!using_sanitizer && !is_safestack) {
+-    if (!using_sanitizer) {
 -      ldflags += [
 -        "-Wl,-z,defs",
 -        "-Wl,--as-needed",
@@ -52,7 +52,7 @@ Index: build/config/compiler/BUILD.gn
      }
    }
  
-@@ -502,7 +498,7 @@ config("compiler") {
+@@ -501,7 +496,7 @@ config("compiler") {
      }
    }
  
@@ -61,7 +61,7 @@ Index: build/config/compiler/BUILD.gn
      cflags += [
        # TODO(hans): Remove this once Clang generates better optimized debug info
        # by default. https://crbug.com/765793
-@@ -793,7 +789,7 @@ config("compiler_cpu_abi") {
+@@ -808,7 +803,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -70,21 +70,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1498,13 +1494,6 @@ config("default_warnings") {
-         cflags += [
-           # TODO(thakis): https://crbug.com/753973
-           "-Wno-enum-compare-switch",
--
--          # Ignore warnings about MSVC optimization pragmas.
--          # TODO(thakis): Only for no_chromium_code? http://crbug.com/505314
--          "-Wno-ignored-pragma-optimize",
--
--          # TODO(hans): https://crbug.com/890307
--          "-Wno-defaulted-function-deleted",
-         ]
-       }
-     }
-@@ -1691,7 +1680,7 @@ config("thin_archive") {
+@@ -1684,7 +1679,7 @@ config("thin_archive") {
    # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
    # have a "thin archive" mode (it does accept -T, but it means truncating
    # archive names to 16 characters, which is not what we want).
@@ -93,12 +79,12 @@ Index: build/config/compiler/BUILD.gn
      arflags = [ "-T" ]
    }
  }
-@@ -2264,7 +2253,7 @@ config("symbols") {
-         # [1] crrev.com/a81d5ade0b043208e06ad71a38bcf9c348a1a52f
-         cflags += [ "-gdwarf-3" ]
+@@ -2269,7 +2264,7 @@ config("symbols") {
+       # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
+       # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
+       if (!is_nacl || is_clang) {
+-        cflags += [ "-g2" ]
++        cflags += [ "-g0" ]
        }
--      cflags += [ "-g2" ]
-+      cflags += [ "-g0" ]
      }
      if (use_debug_fission && !is_nacl && !is_android) {
-       # NOTE: Some Chrome OS builds globally set |use_debug_fission| to true,

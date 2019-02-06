@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_BUILD_gn,v 1.20 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-net_BUILD_gn,v 1.21 2019/02/06 16:41:55 robert Exp $
 Index: net/BUILD.gn
 --- net/BUILD.gn.orig
 +++ net/BUILD.gn
@@ -11,12 +11,19 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -2016,6 +2016,16 @@ component("net") {
-         "url_request/url_request_file_job.cc",
-         "url_request/url_request_file_job.h",
+@@ -1854,7 +1854,7 @@ component("net") {
+     }
+ 
+     # Use getifaddrs() on POSIX platforms, except Linux and Android.
+-    if (is_posix && !is_linux && !is_android) {
++    if (is_posix && !is_android) {
+       sources += [
+         "base/network_interfaces_getifaddrs.cc",
+         "base/network_interfaces_getifaddrs.h",
+@@ -2045,6 +2045,15 @@ component("net") {
        ]
-+    }
-+
+     }
+ 
 +    if (is_openbsd) {
 +      sources -= [
 +        "base/address_tracker_linux.cc",
@@ -24,7 +31,17 @@ Index: net/BUILD.gn
 +        "base/network_change_notifier_linux.cc",
 +        "base/network_interfaces_linux.cc",
 +      ]
-+      sources += [ "base/network_interfaces_openbsd.cc" ]
-     }
- 
++    }
++
      if (!disable_ftp_support) {
+       sources += [
+         "ftp/ftp_auth_cache.cc",
+@@ -5593,7 +5602,7 @@ test("net_unittests") {
+   }
+ 
+   # Use getifaddrs() on POSIX platforms, except Linux and Android.
+-  if (is_posix && !is_linux && !is_android) {
++  if (is_posix && !is_android) {
+     sources += [ "base/network_interfaces_getifaddrs_unittest.cc" ]
+   }
+ 

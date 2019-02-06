@@ -1,4 +1,4 @@
-$OpenBSD: patch-headless_lib_browser_headless_request_context_manager_cc,v 1.1 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-headless_lib_browser_headless_request_context_manager_cc,v 1.2 2019/02/06 16:41:55 robert Exp $
 
 Index: headless/lib/browser/headless_request_context_manager.cc
 --- headless/lib/browser/headless_request_context_manager.cc.orig
@@ -8,16 +8,16 @@ Index: headless/lib/browser/headless_request_context_manager.cc
  namespace {
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
++#if defined(OS_BSD) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
  static char kProductName[] = "HeadlessChrome";
  #endif
  
-@@ -252,7 +252,7 @@ HeadlessRequestContextManager::CreateSystemContext(
-       command_line->GetSwitchValueASCII(switches::kAuthServerWhitelist);
-   network_service->ConfigureHttpAuthPrefs(std::move(auth_params));
- 
+@@ -367,7 +367,7 @@ void HeadlessRequestContextManager::MaybeSetUpOSCrypt(
+     return;
+   if (user_data_path_.empty())
+     return;
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
-   if (manager->user_data_path_.empty()) {
-     ::network::mojom::CryptConfigPtr config =
-         ::network::mojom::CryptConfig::New();
++#if defined(OS_BSD) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
+   ::network::mojom::CryptConfigPtr config =
+       ::network::mojom::CryptConfig::New();
+   config->store = base::CommandLine::ForCurrentProcess()->GetSwitchValueASCII(

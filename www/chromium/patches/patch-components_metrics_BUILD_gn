@@ -1,8 +1,8 @@
-$OpenBSD: patch-components_metrics_BUILD_gn,v 1.13 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-components_metrics_BUILD_gn,v 1.14 2019/02/06 16:41:55 robert Exp $
 Index: components/metrics/BUILD.gn
 --- components/metrics/BUILD.gn.orig
 +++ components/metrics/BUILD.gn
-@@ -119,6 +119,10 @@ jumbo_static_library("metrics") {
+@@ -120,6 +120,10 @@ jumbo_static_library("metrics") {
      "//third_party/zlib/google:compression_utils",
    ]
  
