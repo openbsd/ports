@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.139 2018/12/12 20:41:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.140 2019/02/06 18:14:05 naddy Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
-DISTNAME=	curl-7.63.0
-SHARED_LIBS=	curl                 25.19    # 9.0
+DISTNAME=	curl-7.64.0
+SHARED_LIBS=	curl                 25.20    # 9.0
 CATEGORIES=	net
 HOMEPAGE=	https://curl.haxx.se/
 
@@ -36,5 +36,8 @@ CONFIGURE_ENV+= \
 
 # Note:
 # use ulimit -p 256 for test
+
+# runsshserver: sshserver.pl --user=$USER
+TEST_ENV=	USER=$$USER
 
 .include <bsd.port.mk>
