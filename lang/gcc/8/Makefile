@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2019/01/13 11:59:18 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2019/02/06 23:09:53 sthen Exp $
+
+BROKEN-i386 = ld: error: cp-demangle.c:(.debug_info+0x30115): has non-ABS relocation R_386_GOTOFF against symbol '.LC60'
 
 ONLY_FOR_ARCHS = \
 	aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc sparc64
