@@ -236,6 +236,7 @@ sndioThread(void *arg)
  failed:
 	s->active = 0;
 	DPR("sndioThread: done\n");
+	return NULL;
 }
 
 static PaError
