@@ -1,21 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/03/22 14:05:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/02/06 16:14:42 cwen Exp $
 ${P5SITE}/MooseX/
 ${P5SITE}/MooseX/Role/
+${P5SITE}/MooseX/Role/Parameterised.pm
 ${P5SITE}/MooseX/Role/Parameterized/
 ${P5SITE}/MooseX/Role/Parameterized.pm
-${P5SITE}/MooseX/Role/Parameterized/Extending.pod
 ${P5SITE}/MooseX/Role/Parameterized/Meta/
 ${P5SITE}/MooseX/Role/Parameterized/Meta/Role/
-${P5SITE}/MooseX/Role/Parameterized/Meta/Role/Parameterizable.pm
 ${P5SITE}/MooseX/Role/Parameterized/Meta/Role/Parameterized.pm
 ${P5SITE}/MooseX/Role/Parameterized/Meta/Trait/
+${P5SITE}/MooseX/Role/Parameterized/Meta/Trait/Parameterizable.pm
 ${P5SITE}/MooseX/Role/Parameterized/Meta/Trait/Parameterized.pm
 ${P5SITE}/MooseX/Role/Parameterized/Parameters.pm
-${P5SITE}/MooseX/Role/Parameterized/Tutorial.pod
+@man man/man3p/MooseX::Role::Parameterised.3p
 @man man/man3p/MooseX::Role::Parameterized.3p
 @man man/man3p/MooseX::Role::Parameterized::Extending.3p
-@man man/man3p/MooseX::Role::Parameterized::Meta::Role::Parameterizable.3p
 @man man/man3p/MooseX::Role::Parameterized::Meta::Role::Parameterized.3p
+@man man/man3p/MooseX::Role::Parameterized::Meta::Trait::Parameterizable.3p
 @man man/man3p/MooseX::Role::Parameterized::Meta::Trait::Parameterized.3p
 @man man/man3p/MooseX::Role::Parameterized::Parameters.3p
 @man man/man3p/MooseX::Role::Parameterized::Tutorial.3p
