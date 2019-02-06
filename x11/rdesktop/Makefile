@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.43 2016/08/28 10:17:13 jca Exp $
+# $OpenBSD: Makefile,v 1.44 2019/02/06 14:22:39 sthen Exp $
 
 COMMENT=	open source client for Windows Terminal Server
-DISTNAME =	rdesktop-1.8.3
-REVISION=	0
+
+V=		1.8.4
+DISTNAME=	rdesktop-$V
+
 CATEGORIES=	x11 net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rdesktop/}
+
+MASTER_SITES=	https://github.com/rdesktop/rdesktop/releases/download/v$V/
 
 HOMEPAGE=	http://www.rdesktop.org/
 
