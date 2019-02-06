@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.710 2019/02/04 23:36:28 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.711 2019/02/06 14:23:35 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1312,6 +1312,7 @@ my $cve = {
 	'www/ruby-rack,ruby25' => 'ruby25-rack-<2.0.6',
 	'www/webkitgtk4' => 'webkitgtk4-<2.20.5',
 	'x11/gnome/gdm' => 'gdm-<3.28.3',
+	'x11/rdesktop' => 'rdesktop-<1.8.4',
 };
 # please maintain sort order in above $cve list, future updates need to
 # replace existing entries
