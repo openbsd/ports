@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.66 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2019/02/06 06:14:15 otto Exp $
 
 COMMENT-main=		modular authoritative nameserver (with database support)
 COMMENT-mysql=		MySQL database access module for PowerDNS
 COMMENT-pgsql=		PostgreSQL database access module for PowerDNS
 
-V=			4.1.5
+V=			4.1.6
 DISTNAME=		pdns-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME-main=		powerdns-${V}
@@ -30,6 +30,7 @@ WANTLIB-main += ${WANTLIB}
 WANTLIB-main += boost_program_options-mt c crypto sodium sqlite3 z
 
 MASTER_SITES=		https://downloads.powerdns.com/releases/
+MAINTAINER=		Otto Moerbeek <otto@drijf.net>
 
 COMPILER =		base-clang ports-gcc
 
@@ -56,7 +57,6 @@ CONFIGURE_ARGS+=	--disable-shared \
 			--disable-hardening \
 			--without-protobuf \
 			--enable-tools
-CONFIGURE_ARGS+=	--without-ldap
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
@@ -78,11 +78,10 @@ WANTLIB-mysql+=		${WANTLIB} crypto lib/mysql/mysqlclient ssl z
 
 # PostgreSQL
 .if ${BUILD_PACKAGES:M-pgsql}
-CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE} \
-			--with-pgsql-includes=${LOCALBASE}/include/postgresql
+CONFIGURE_ARGS+=	--with-pg-config=${LOCALBASE}/bin/pg_config
 BACKENDS+=		gpgsql
 .else
-CONFIGURE_ARGS+=	--without-pgsql
+CONFIGURE_ARGS+=	--without-pg-config
 .endif
 LIB_DEPENDS-pgsql=	${LIB_DEPENDS} \
 			databases/postgresql,-main
