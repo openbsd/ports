@@ -1,0 +1,16 @@
+$OpenBSD: README,v 1.1.1.1 2019/02/06 09:32:21 solene Exp $
+
+You will need an IWAD for gzdoom to be fully functional.  An IWAD is
+the main data file containing the graphics and levels for Doom.  If
+you have a copy of one of the original Doom games, simply copy your
+Doom, Doom 2, Ultimate Doom, or Final Doom IWAD (doom.wad, doom2.wad,
+tnt.wad, and plutonia.wad respectively) to ${PREFIX}/share/doom/.
+If you do not possess any of those, you can use the shareware IWAD
+which is available at:
+
+ftp://ftp.fu-berlin.de/pc/msdos/games/idgames/idstuff/doom/doom-1.8.wad.gz
+SHA256 (doom-1.8.wad.gz) = WM9qVjtjGkdWFjCvpidthTwnB5NC95aewwBpZdqFV6E=
+
+Install it to ${PREFIX}/share/doom as "doom.wad".
+
+In case fluidsynth backend is needed the user needs to setup soundfont for it.

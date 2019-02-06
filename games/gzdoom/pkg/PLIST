@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/06 09:32:21 solene Exp $
+@bin bin/gzdoom
+share/doc/gzdoom/
+share/doc/gzdoom/console.css
+share/doc/gzdoom/console.html
+share/doc/gzdoom/licenses/
+share/doc/gzdoom/licenses/README.TXT
+share/doc/gzdoom/licenses/bsd.txt
+share/doc/gzdoom/licenses/bzip2.txt
+share/doc/gzdoom/licenses/cephes.txt
+share/doc/gzdoom/licenses/dumb.txt
+share/doc/gzdoom/licenses/fxaa.txt
+share/doc/gzdoom/licenses/gdtoa.txt
+share/doc/gzdoom/licenses/gpl.txt
+share/doc/gzdoom/licenses/lgpl.txt
+share/doc/gzdoom/rh-log.txt
+share/doc/pkg-readmes/${PKGSTEM}
+share/games/
+share/games/doom/
+share/games/doom/brightmaps.pk3
+share/games/doom/gzdoom.pk3
+share/games/doom/lights.pk3
+share/games/doom/zd_extra.pk3
