@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/06 11:33:45 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2019/02/06 11:36:26 kn Exp $
 
 COMMENT =	menu generation utility for X window managers
 DISTNAME =	menumaker-0.99.10
@@ -21,7 +21,6 @@ MAKE_FLAGS =		PYTHON=${MODPY_BIN}
 
 NO_TEST =		Yes
 
-#
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 	    ${PREFIX}/share/menumaker
