@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.67 2019/01/28 06:36:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.68 2019/02/06 11:27:07 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -608,6 +608,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ce/get-reservation-cove
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ce/get-reservation-purchase-recommendation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ce/get-reservation-utilization.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ce/get-tags.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/update-account-settings.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/chime/update-user.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloud9/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloud9/create-environment-ec2.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloud9/create-environment-membership.rst
