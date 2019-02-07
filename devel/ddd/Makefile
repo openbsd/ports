@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.77 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2019/02/07 14:32:45 jca Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
 DISTNAME=	ddd-3.3.12
-REVISION =	13
+REVISION =	14
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=ddd/}
 
@@ -12,9 +12,9 @@ HOMEPAGE=	https://www.gnu.org/software/ddd/
 # GPLv2 / LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	ICE SM X11 Xaw Xau Xdmcp Xext Xmu Xpm Xt c m z ${COMPILER_LIBCXX} \
-		Xft Xrender expat fontconfig freetype iconv ncurses \
-		xcb jpeg png Xm
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xft
+WANTLIB += Xm Xmu Xpm Xrender Xt c curses expat fontconfig
+WANTLIB += freetype iconv jpeg m png16 xcb z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -33,9 +33,9 @@ MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
 # needed for is_ppc_file() in ddd/filetype.C
 .if ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-LIB_DEPENDS+=	devel/libelf
 WANTLIB +=	elf
+.else
+CONFIGURE_ENV += ac_cv_lib_elf_elf_version=no
 .endif
 
 SEPARATE_BUILD=	Yes
