@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2019/02/06 11:43:35 jca Exp $
+# $OpenBSD: Makefile,v 1.82 2019/02/07 13:53:28 jca Exp $
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
@@ -9,7 +9,7 @@ VERSION=	1.66.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME-main=	boost-${VERSION}
 PKGNAME-md=	boost-md-${VERSION}
-REVISION-main=	3
+REVISION-main=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 EXTRACT_SUFX=	.tar.bz2
