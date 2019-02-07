@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/11/21 03:04:56 danj Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/02/07 21:31:32 danj Exp $
 @pkgpath net/${MODPY_PY_PREFIX}slixmpp
 lib/python${MODPY_VERSION}/site-packages/slixmpp/
 lib/python${MODPY_VERSION}/site-packages/slixmpp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -776,6 +776,14 @@ lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0334/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0334/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0334/hints.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0334/stanza.py
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0335/
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0335/__init__.py
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0335/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0335/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0335/${MODPY_PYCACHE}json_containers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0335/${MODPY_PYCACHE}stanza.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0335/json_containers.py
+lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0335/stanza.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0352/
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0352/__init__.py
 lib/python${MODPY_VERSION}/site-packages/slixmpp/plugins/xep_0352/${MODPY_PYCACHE}/
