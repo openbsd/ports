@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.56 2018/09/04 12:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2019/02/07 15:25:42 bluhm Exp $
 
 COMMENT =	perl binding for libxml2
 
-DISTNAME =	XML-LibXML-2.0132
+DISTNAME =	XML-LibXML-2.0133
 EPOCH =		0
-REVISION =	0
 
 CATEGORIES =	textproc
 
@@ -13,7 +12,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c iconv lzma m perl xml2 z
+WANTLIB =		c iconv lzma m perl pthread xml2 z
 
 MODULES =		cpan
 RUN_DEPENDS =		textproc/p5-XML-NamespaceSupport>=1.07 \
