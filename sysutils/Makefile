@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.512 2019/01/23 15:16:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.513 2019/02/07 20:52:57 phessler Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -11,7 +11,6 @@
      SUBDIR += apcd
      SUBDIR += apcupsd
      SUBDIR += arm-trusted-firmware
-     SUBDIR += atf-allwinner
      SUBDIR += augeas
      SUBDIR += autossh
      SUBDIR += awless
@@ -357,7 +356,6 @@
      SUBDIR += ttyplot
      SUBDIR += u-boot
      SUBDIR += u-boot,aarch64
-     SUBDIR += u-boot-pinebook
      SUBDIR += uefitool
      SUBDIR += udfclient
      SUBDIR += upower
