@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/07 09:45:09 sebastia Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/.travis.yml
+${GEM_LIB}/gems/${DISTNAME}/FAQ.txt
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/History.txt
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/optimist.rb
+${GEM_LIB}/gems/${DISTNAME}/optimist.gemspec
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/optimist/
+${GEM_LIB}/gems/${DISTNAME}/test/optimist/command_line_error_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/optimist/help_needed_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/optimist/parser_educate_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/optimist/parser_opt_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/optimist/parser_parse_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/optimist/parser_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/optimist/version_needed_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/optimist_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/support/
+${GEM_LIB}/gems/${DISTNAME}/test/support/assert_helpers.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
