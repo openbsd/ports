@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.891 2019/01/26 14:42:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.892 2019/02/07 19:50:02 danj Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -438,7 +438,6 @@
      SUBDIR += py-multidict
      SUBDIR += py-ndg-httpsclient
      SUBDIR += py-ndg-httpsclient,python3
-     SUBDIR += py-nevow
      SUBDIR += py-paste
      SUBDIR += py-paste-deploy
      SUBDIR += py-paste-script
