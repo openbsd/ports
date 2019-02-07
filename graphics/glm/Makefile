@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2017/10/23 06:28:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2019/02/07 21:31:59 kirby Exp $
 
 COMMENT=	C++ mathematics header-only library for OpenGL software
 
 GH_TAGNAME=	0.9.8.5
 GH_PROJECT=	glm
 GH_ACCOUNT=	g-truc
-DISTNAME=	${GH_PROJECT}-${GH_TAGNAME}
 
 CATEGORIES=	graphics math
 
