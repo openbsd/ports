@@ -1,0 +1,13 @@
+$OpenBSD: patch-certs_makefile,v 1.1 2019/02/07 19:23:39 danj Exp $
+
+Index: certs/makefile
+--- certs/makefile.orig
++++ certs/makefile
+@@ -14,5 +14,7 @@ keysize=2048
+ ${.TARGETS:M*.crt}: 
+ 	openssl req -new -x509 -newkey rsa:$(keysize) -nodes -keyout ${.TARGET:R}.key \
+ 		-days 365 -sha256 -out $@ -utf8 -subj /CN=${.TARGET:R}
++	@chown _prosody $@ || \
++		echo "***WARNING***: You will need to 'chown _prosody $@'"
+ 
+ .SUFFIXES: .key .crt

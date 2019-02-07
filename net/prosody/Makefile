@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.51 2018/09/04 12:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2019/02/07 19:23:39 danj Exp $
 
 COMMENT=	communications server for Jabber/XMPP written in Lua
-DISTNAME=	prosody-0.10.2
-REVISION=	1
+DISTNAME=	prosody-0.11.2
 CATEGORIES=	net
 MASTER_SITES=	http://prosody.im/downloads/source/
 
@@ -13,7 +12,7 @@ MAINTAINER=	Henrik Friedrichsen <henrik@diff.cc>
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-USE_GMAKE=	Yes
+MAKE_FILE=	makefile
 MODULES=	lang/lua
 LIB_DEPENDS=	devel/libidn
 MODLUA_RUN_DEPENDS+= archivers/luazlib \
@@ -25,7 +24,7 @@ MODLUA_RUN_DEPENDS+= archivers/luazlib \
 TEST_DEPENDS =	${MODLUA_RUN_DEPENDS}
 WANTLIB+=	crypto idn
 
-SUBST_VARS+=	FLAVOR MAKE_PROGRAM
+SUBST_VARS+=	FLAVOR
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+=--prefix="${PREFIX}" \
@@ -41,18 +40,17 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 FAKE_FLAGS+=	CONFIG=${DESTDIR}${PREFIX}/share/examples/prosody
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/certs/Makefile
 	cd ${WRKSRC}; sed -i -e 's,^#!/usr/bin/env lua,#!${MODLUA_BIN},' -e \
-		's,^lua ,${MODLUA_BIN} ,' prosody prosodyctl tests/run_tests.sh
+		's,^lua ,${MODLUA_BIN} ,' prosody prosodyctl
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/prosody
 	${INSTALL_DATA} ${WRKSRC}/README \
 		${PREFIX}/share/doc/prosody
+	${INSTALL_DATA} ${WRKSRC}/certs/makefile \
+		${PREFIX}/share/examples/prosody/certs/Makefile
+	${INSTALL_DATA} ${WRKSRC}/certs/openssl.cnf \
+		 ${PREFIX}/share/examples/prosody/certs
 	touch ${PREFIX}/share/examples/prosody/prosody.log
-	rm -f ${PREFIX}/share/examples/prosody/certs/Makefile.*
-
-do-test:
-	cd ${WRKSRC}/tests && sh run_tests.sh 0
 
 .include <bsd.port.mk>
