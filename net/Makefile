@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1107 2019/01/28 14:38:21 cwen Exp $
+# $OpenBSD: Makefile,v 1.1108 2019/02/07 07:30:07 giovanni Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -440,6 +440,7 @@
      SUBDIR += p5-Nmap-Scanner
      SUBDIR += p5-OSPF-LSDB
      SUBDIR += p5-POE-Component-Client-DNS
+     SUBDIR += p5-POE-Component-Client-DNS-Recursive
      SUBDIR += p5-POE-Component-Client-HTTP
      SUBDIR += p5-POE-Component-Client-Keepalive
      SUBDIR += p5-POE-Component-IRC
@@ -447,7 +448,9 @@
      SUBDIR += p5-POE-Component-Jabber
      SUBDIR += p5-POE-Component-Pcap
      SUBDIR += p5-POE-Component-Resolver
+     SUBDIR += p5-POE-Component-Server-DNS
      SUBDIR += p5-POE-Component-Server-FTP
+     SUBDIR += p5-POE-Filter-DNS-TCP
      SUBDIR += p5-POE-Filter-IRCD
      SUBDIR += p5-PlRPC
      SUBDIR += p5-RPC-XML
