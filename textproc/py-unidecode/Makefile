@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2017/02/25 17:58:33 shadchin Exp $
+# $OpenBSD: Makefile,v 1.12 2019/02/07 12:28:41 sthen Exp $
 
 COMMENT =		US-ASCII transliterations of Unicode text
 
-MODPY_EGG_VERSION =	0.4.20
-DISTNAME =		Unidecode-0.04.20
+MODPY_EGG_VERSION =	1.0.23
+DISTNAME =		Unidecode-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 
 CATEGORIES =		textproc devel
@@ -13,12 +13,9 @@ HOMEPAGE =		https://pypi.python.org/pypi/Unidecode
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-# MODPY_PI doesn't work because DISTNAME version number is different
-# from MODPY_EGG_VERSION, as we want the latter to be substituted in
-# the PLIST
-MASTER_SITES =		${MASTER_SITE_PYPI:=U/Unidecode/}
-
 MODULES =		lang/python
+
+MODPY_PI = 		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
