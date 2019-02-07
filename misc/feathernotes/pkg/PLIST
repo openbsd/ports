@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/01/23 15:24:28 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/02/07 23:27:34 bcallah Exp $
 @bin bin/feathernotes
 share/applications/feathernotes.desktop
 share/feathernotes/
@@ -8,7 +8,10 @@ share/feathernotes/translations/feathernotes_de.qm
 share/feathernotes/translations/feathernotes_eo.qm
 share/feathernotes/translations/feathernotes_es.qm
 share/feathernotes/translations/feathernotes_lt.qm
+share/feathernotes/translations/feathernotes_nl.qm
 share/feathernotes/translations/feathernotes_pl.qm
+share/feathernotes/translations/feathernotes_pt_BR.qm
+share/feathernotes/translations/feathernotes_ru.qm
 share/icons/hicolor/scalable/apps/feathernotes.svg
 share/icons/hicolor/scalable/mimetypes/text-feathernotes-fnx.svg
 share/mime/packages/feathernotes.xml
