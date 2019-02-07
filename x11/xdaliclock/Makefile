@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2015/04/19 12:42:48 rpe Exp $
+# $OpenBSD: Makefile,v 1.26 2019/02/07 12:26:24 sthen Exp $
 
 COMMENT=	rather neat animated clock
 
-DISTNAME=	xdaliclock-2.43
+DISTNAME=	xdaliclock-2.44
 CATEGORIES=	x11
 
-HOMEPAGE=	http://www.jwz.org/xdaliclock/
+HOMEPAGE=	https://www.jwz.org/xdaliclock/
 
 # License: BSD
 PERMIT_PACKAGE_CDROM=	Yes
