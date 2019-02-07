@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.713 2019/02/07 19:53:28 danj Exp $
+# $OpenBSD: Quirks.pm,v 1.714 2019/02/07 20:50:18 phessler Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -318,6 +318,8 @@ my $stem_extensions = {
 	'zh-bg5ps' => 'bg5ps',
 	'zh-bg5pdf' => 'bg5pdf',
 	'wxWidgets-gtk2' => 'wxWidgets-gtk3',
+	'atf-allwinner' => 'arm-trusted-firmware',
+	'u-boot-pinebook' => 'u-boot-aarch64',
 };
 
 my $obsolete_reason = {

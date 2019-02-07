@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.50 2019/02/07 07:29:04 patrick Exp $
+#	$OpenBSD: Makefile,v 1.51 2019/02/07 20:50:18 phessler Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -7,7 +7,7 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2019.01
-REVISION=	3
+REVISION=	4
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
