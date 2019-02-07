@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1814 2019/02/07 09:47:57 sebastia Exp $
+# $OpenBSD: Makefile,v 1.1815 2019/02/07 18:17:52 cwen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -602,6 +602,7 @@
      SUBDIR += p5-Class-XPath
      SUBDIR += p5-Class-XSAccessor
      SUBDIR += p5-Clone
+     SUBDIR += p5-Clone-Choose
      SUBDIR += p5-Clone-PP
      SUBDIR += p5-Config-Any
      SUBDIR += p5-Config-Auto
