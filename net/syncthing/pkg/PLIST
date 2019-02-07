@@ -1,7 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/09/04 12:46:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/02/07 15:50:09 edd Exp $
 @newgroup _syncthing:768
 @newuser _syncthing:768:_syncthing:daemon:Syncthing user:${VARBASE}/syncthing:/sbin/nologin
+@rcscript ${RCDIR}/syncthing
+@owner _syncthing
+@group _syncthing
+@sample ${VARBASE}/syncthing/
+@extraunexec rm -rf ${VARBASE}/syncthing/{.,}*
+@owner
+@group
 @bin bin/syncthing
+@bin bin/stcli
 @man man/man1/stdiscosrv.1
 @man man/man1/strelaysrv.1
 @man man/man1/syncthing.1
@@ -19,8 +27,3 @@
 @man man/man7/syncthing-security.7
 @man man/man7/syncthing-versioning.7
 share/doc/pkg-readmes/${PKGSTEM}
-@rcscript ${RCDIR}/syncthing
-@owner _syncthing
-@group _syncthing
-@sample ${VARBASE}/syncthing/
-@extraunexec rm -rf ${VARBASE}/syncthing/{.,}*

@@ -1,8 +1,29 @@
-$OpenBSD: patch-build_go,v 1.6 2018/02/24 10:14:24 bket Exp $
+$OpenBSD: patch-build_go,v 1.7 2019/02/07 15:50:09 edd Exp $
 Index: build.go
 --- build.go.orig
 +++ build.go
-@@ -461,7 +461,7 @@ func appendParameters(args []string, tags []string, ta
+@@ -186,6 +186,20 @@ var targets = map[string]target{
+ 			{src: "AUTHORS", dst: "deb/usr/share/doc/syncthing-relaypoolsrv/AUTHORS.txt", perm: 0644},
+ 		},
+ 	},
++	"stcli": {
++		name:        "stcli",
++		debname:     "stcli",
++		debdeps:     []string{"libc6"},
++		description: "Syncthing Commandline Interface",
++		buildPkg:    "github.com/syncthing/syncthing/cmd/stcli",
++		binaryName:  "stcli", // .exe will be added automatically for Windows builds
++		archiveFiles: []archiveFile{
++			{src: "{{binary}}", dst: "{{binary}}", perm: 0755},
++		},
++		installationFiles: []archiveFile{
++			{src: "{{binary}}", dst: "deb/usr/bin/{{binary}}", perm: 0755},
++		},
++	},
+ }
+ 
+ func init() {
+@@ -490,7 +504,7 @@ func appendParameters(args []string, tags []string, ta
  
  	if !debugBinary {
  		// Regular binaries get version tagged and skip some debug symbols
