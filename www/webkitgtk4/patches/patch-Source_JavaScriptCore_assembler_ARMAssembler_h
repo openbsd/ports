@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_JavaScriptCore_assembler_ARMAssembler_h,v 1.4 2018/09/04 07:12:47 ajacoutot Exp $
+$OpenBSD: patch-Source_JavaScriptCore_assembler_ARMAssembler_h,v 1.5 2019/02/07 08:03:56 ajacoutot Exp $
 
 Index: Source/JavaScriptCore/assembler/ARMAssembler.h
 --- Source/JavaScriptCore/assembler/ARMAssembler.h.orig
@@ -7,7 +7,7 @@ Index: Source/JavaScriptCore/assembler/ARMAssembler.h
                  linuxPageFlush(current, current + page);
  
              linuxPageFlush(current, end);
-+#elif CPU(ARM_TRADITIONAL) && (OS(FREEBSD) || OS(OPENBSD))
++#elif CPU(ARM_TRADITIONAL) && (OS(FREEBSD) || OS(OPENBSD)) && COMPILER(CLANG)
 +	__clear_cache(code, reinterpret_cast<char*>(code) + size);
  #else
  #error "The cacheFlush support is missing on this platform."
