@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.394 2018/12/08 09:41:36 solene Exp $
+# $OpenBSD: Makefile,v 1.395 2019/02/07 07:49:48 solene Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -138,6 +138,7 @@
      SUBDIR += gtetrinet
      SUBDIR += gti
      SUBDIR += gtkballs
+     SUBDIR += gzdoom
      SUBDIR += hackdata
      SUBDIR += hedgewars
      SUBDIR += heroes
