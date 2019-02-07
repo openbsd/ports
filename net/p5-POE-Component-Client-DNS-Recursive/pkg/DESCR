@@ -1,0 +1,8 @@
+POE::Component::Client::DNS::Recursive is a POE component that
+implements a recursive DNS client.
+POE sessions and components can spawn a
+POE::Component::Client::DNS::Recursive instance to perform a DNS query.
+The component will perform its task and return the results to the
+requesting session.
+One may also enable tracing of the delegation path from the root name
+servers for the name being looked up.
