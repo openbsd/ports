@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.49 2019/01/20 11:51:02 jsg Exp $
+#	$OpenBSD: Makefile,v 1.50 2019/02/07 07:29:04 patrick Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -7,7 +7,7 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2019.01
-REVISION=	2
+REVISION=	3
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -39,11 +39,10 @@ MAKE_ENV=	KBUILD_VERBOSE=1 \
 .if "${FLAVOR}" == "aarch64"
 BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro,aarch64 \
 		devel/py-elftools \
-		sysutils/arm-trusted-firmware \
-		sysutils/atf-allwinner
+		sysutils/arm-trusted-firmware
 MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-"
 RK3399_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/rk3399-bl31.elf"
-SUNXI_BL31=	"${LOCALBASE}/share/atf-allwinner/bl31.bin"
+SUNXI_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/sun50i_a64-bl31.bin"
 .elif "${FLAVOR}" == "arm"
 BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro
 MAKE_ENV+=	CROSS_COMPILE="arm-none-eabi-"
