@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2019/01/29 22:20:37 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.52 2019/02/07 22:47:43 sthen Exp $
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:${INSTDIR}:/sbin/nologin
 librenms/
@@ -8959,7 +8959,7 @@ librenms/vendor/amenadiel/jpgraph/Examples/examples_tables/no_test_table_howto3.
 librenms/vendor/amenadiel/jpgraph/Examples/examples_tables/no_test_table_howto4.php
 librenms/vendor/amenadiel/jpgraph/Examples/examples_tables/no_test_table_howto5.php
 librenms/vendor/amenadiel/jpgraph/Examples/examples_tables/no_test_table_howto6.php
-librenms/vendor/amenadiel/jpgraph/Examples/examples_tables/no_test_table_howto${MODPHP_VERSION}.php
+librenms/vendor/amenadiel/jpgraph/Examples/examples_tables/no_test_table_howto7.1.php
 librenms/vendor/amenadiel/jpgraph/Examples/examples_tables/no_test_table_howto7.2.php
 librenms/vendor/amenadiel/jpgraph/Examples/examples_tables/no_test_table_howto7.php
 librenms/vendor/amenadiel/jpgraph/Examples/examples_tables/no_test_table_howto8.php
@@ -9013,7 +9013,7 @@ librenms/vendor/amenadiel/jpgraph/Examples/examples_windrose/windrose_ex3.php
 librenms/vendor/amenadiel/jpgraph/Examples/examples_windrose/windrose_ex4.php
 librenms/vendor/amenadiel/jpgraph/Examples/examples_windrose/windrose_ex6.1.php
 librenms/vendor/amenadiel/jpgraph/Examples/examples_windrose/windrose_ex6.php
-librenms/vendor/amenadiel/jpgraph/Examples/examples_windrose/windrose_ex${MODPHP_VERSION}.php
+librenms/vendor/amenadiel/jpgraph/Examples/examples_windrose/windrose_ex7.1.php
 librenms/vendor/amenadiel/jpgraph/Examples/examples_windrose/windrose_ex7.php
 librenms/vendor/amenadiel/jpgraph/Examples/examples_windrose/windrose_ex8.1.php
 librenms/vendor/amenadiel/jpgraph/Examples/examples_windrose/windrose_ex8.php
