@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2019/02/05 08:47:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.123 2019/02/07 14:41:45 ajacoutot Exp $
 
 # XXX error: 'nullptr' was not declared in this scope
 CXXFLAGS +=	-std=c++11
@@ -11,7 +11,7 @@ COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	3.0.2
 DISTNAME=	abiword-${VERSION}
-REVISION=	6
+REVISION=	7
 
 
 MASTER_SITES0=		https://gitlab.gnome.org/World/AbiWord/commit/
@@ -67,12 +67,14 @@ CFLAGS +=	-O0
 
 USE_GMAKE=	Yes
 
-BUILD_DEPENDS=	devel/gobject-introspection
+BUILD_DEPENDS=	devel/gobject-introspection \
+		devel/py-gobject3
 
 # plugins/openxml.so
 BUILD_DEPENDS +=devel/boost
 
 RUN_DEPENDS=	devel/desktop-file-utils \
+		devel/py-gobject3 \
 		x11/gtk+3,-guic
 
 LIB_DEPENDS=	devel/fribidi \
