@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/04 12:46:21 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/02/07 18:31:00 solene Exp $
 
 COMMENT =	protect against brute force attacks on sshd(8)
 
-DISTNAME =	sshlockout-0.20170726
-REVISION =	1
+DISTNAME =	sshlockout-0.20190130
 
 CATEGORIES =	security
 
@@ -17,7 +16,7 @@ WANTLIB += c
 
 # snapshot of
 # https://github.com/DragonFlyBSD/DragonFlyBSD/tree/master/usr.sbin/sshlockout
-MASTER_SITES =	http://wxcvbn.org/~jca/distfiles/
+MASTER_SITES =	http://distfiles-openbsd.perso.pw/
 
 FAKE_FLAGS =	BINDIR=${PREFIX}/sbin \
 		MANDIR=${PREFIX}/man/man
@@ -26,6 +25,6 @@ CFLAGS +=	-std=c99
 NO_TEST =	Yes
 
 do-configure:
-	sed -i 's,/usr/sbin,${PREFIX}/sbin,g' ${WRKSRC}/sshlockout.8
+	${SUBST_CMD} ${WRKSRC}/sshlockout.8
 
 .include <bsd.port.mk>

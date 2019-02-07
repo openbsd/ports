@@ -1,17 +1,64 @@
-$OpenBSD: patch-sshlockout_c,v 1.1.1.1 2017/07/27 00:08:17 jca Exp $
+$OpenBSD: patch-sshlockout_c,v 1.2 2019/02/07 18:31:00 solene Exp $
+
+- add pledge
+- remove some ipfw code in order to make sshlock compile
 
 Index: sshlockout.c
 --- sshlockout.c.orig
 +++ sshlockout.c
-@@ -199,6 +199,11 @@ main(int ac, char **av)
+@@ -56,7 +56,6 @@
+ #include <arpa/inet.h>
+ #include <netinet/in.h>
+ #include <net/if.h>
+-#include <net/ipfw/ip_fw.h>
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -108,8 +107,6 @@ static void delete_iph(iphist_t *ip);
+ static void
+ block_ip(const char *ips)
+ {
+-	struct ipfw_ioc_tblcont ent;
+-	struct ipfw_ioc_tblent *te;
+ 	char buf[128];
+ 	int r = 0;
+ 
+@@ -124,26 +121,6 @@ block_ip(const char *ips)
+ 			"ipfw add %s deny tcp from %s to me 22",
+ 			args.arg1, ips);
+ 		break;
+-
+-	case FW_IS_IPFWTBL:
+-		memset(&ent, 0, sizeof(ent));
+-		ent.tableid = args.arg2;
+-		ent.entcnt = 1;
+-		te = &ent.ent[0];
+-
+-		r = inet_pton(AF_INET, ips, &te->key.sin_addr);
+-		if (r <= 0)
+-			break;
+-		te->key.sin_family = AF_INET;
+-		te->key.sin_len = sizeof(struct sockaddr_in);
+-
+-		if (setsockopt(ipfw_sock, IPPROTO_IP, IP_FW_TBL_ADD,
+-		    &ent, sizeof(ent)) < 0) {
+-			r = -1;
+-			break;
+-		}
+-		/* Done */
+-		return;
+ 	}
+ 
+ 	if (r > 0 && (int)strlen(buf) == r) {
+@@ -245,6 +222,11 @@ main(int ac, char **av)
+ 	syslog(LOG_ERR, "sshlockout starting up");
  	freopen("/dev/null", "w", stdout);
  	freopen("/dev/null", "w", stderr);
- 
++
 +	if (pledge("stdio proc exec", NULL) == -1) {
 +		syslog(LOG_ERR, "sshlockout: pledge: %m");
 +		return(1);
 +	}
-+
+ 
  	while (fgets(buf, sizeof(buf), stdin) != NULL) {
  		if (strstr(buf, "sshd") == NULL)
- 			continue;

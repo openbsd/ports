@@ -1,0 +1,101 @@
+$OpenBSD: patch-sshlockout_8,v 1.1 2019/02/07 18:31:00 solene Exp $
+
+Remove ipfw references
+
+Index: sshlockout.8
+--- sshlockout.8.orig
++++ sshlockout.8
+@@ -44,33 +44,19 @@
+ 
+ # in /etc/pf.conf
+ #
+-table <lockout> persist { }
++table <lockout> persist
+ 
+ # and later in /etc/pf.conf - see below
+ #
+-block in quick on $ext_if proto tcp from <lockout> to any port 22
++block in quick on egress proto tcp from <lockout> to port ssh
+ 
+ # in /etc/syslog.conf
+ #
+-auth.info;authpriv.info          |exec /usr/sbin/sshlockout -pf "lockout"
++auth.info;authpriv.info | exec /usr/bin/doas -n ${TRUEPREFIX}/sbin/sshlockout -pf "lockout"
+ 
+ # in root's crontab
+ #
+ 3 3 * * *       pfctl -tlockout -T expire 86400
+-
+-#
+-# ipfw(8) configuration.
+-#
+-ipfw table 0 create
+-ipfw add deny ip from '<0>' to any
+-
+-# in /etc/syslog.conf
+-#
+-auth.info;authpriv.info         |exec /usr/sbin/sshlockout -ipfwtbl 0
+-
+-# in root's crontab
+-#
+-3 3 * * *       ipfw -fq table 0 expire 86400
+ .Ed
+ .Sh DESCRIPTION
+ This program is generally installed in
+@@ -81,31 +67,22 @@ demons error log in realtime.
+ In addition, a root crontab entry should generally be created to clean
+ out stale entries in the
+ .Xr pf 4
+-or
+-.Xr ipfw 8
+ .Ar table
+ at least once a day.
+ Using expire instead of flush will maintain a rolling window of locked out
+ IPs.
+-The
+ .Xr pf 4
+-or
+-.Xr ipfw 8
+-module must be loaded and running with the table and rules properly
++must be loaded and running with the table and rules properly
+ configured.
+ .Pp
+ This program will monitor the ssh syslog output and keep track of attempts
+ to login to unknown users as well as preauth failures.
+ If 5 attempts fail in any one hour period, a permanent entry is added to the
+ .Xr pf 4
+-or
+-.Xr ipfw 8
+ .Ar table
+ for the associated IP address.
+ You still have to add a rule to
+ .Xr pf.conf 5
+-or use
+-.Xr ipfw 8
+ to block IP addresses listed in this table.
+ The cron entry you create cleans the block list out typically once a day.
+ .Pp
+@@ -114,15 +91,11 @@ via ssh.
+ .Pp
+ When setting up the
+ .Xr pf 4
+-or
+-.Xr ipfw 8
+ rules,
+ note that the table will be filled based on failed ssh connections destined
+ to that particular machine.
+ If the machine is acting as a router you can decide whether you want the
+ .Xr pf 4
+-or
+-.Xr ipfw 8
+ rule to lockout that suspect IP to just the machine,
+ or to everything it routes to.
+ We usually recommend an unconditional blocking rule.
+@@ -132,7 +105,6 @@ This program is still a work in progress.
+ .Xr ssh 1 ,
+ .Xr pf 4 ,
+ .Xr syslog.conf 5 ,
+-.Xr ipfw 8 ,
+ .Xr sshd 8
+ .Sh HISTORY
+ The
