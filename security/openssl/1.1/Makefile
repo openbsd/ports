@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2019/02/01 12:36:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/02/08 20:35:07 sthen Exp $
 
-PORTROACH=	limit:^1\.1\. skipv:1.1.1
+PORTROACH=	limit:^1\.1\.[0-9][a-z] skipb:0 skipv:1.1.1
 V=		1.1.1a
 
 SHLIBVER=	11.1
