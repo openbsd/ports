@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2018/12/02 14:15:58 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2019/02/08 14:24:02 fcambus Exp $
 
 COMMENT =	monospaced bitmap fonts for consoles and terminals
 
-V =		1.0.3
-DISTNAME =	spleen-$V
+V =		1.0.4
+DISTNAME =	spleen-${V}
 
 CATEGORIES =	fonts
 
@@ -12,7 +12,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM = Yes
 
-MASTER_SITES =	https://github.com/fcambus/spleen/releases/download/$V/
+MASTER_SITES =	https://github.com/fcambus/spleen/releases/download/${V}/
 
 NO_TEST =	Yes
 USE_X11 =	Yes
@@ -20,11 +20,6 @@ USE_X11 =	Yes
 FONTDIR =	${PREFIX}/share/fonts/spleen
 
 do-build:
-	cd ${WRKSRC}; \
-	for file in *.bdf; do \
-		font=`basename $$file .bdf`; \
-		${X11BASE}/bin/bdftopcf -t -o $$font.pcf $$font.bdf; \
-	done
 	${GZIP_CMD} ${WRKSRC}/*.pcf
 
 do-install:
