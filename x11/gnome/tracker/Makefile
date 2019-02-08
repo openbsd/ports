@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.236 2019/01/04 08:56:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.237 2019/02/08 10:57:22 ajacoutot Exp $
 
 COMMENT=		metadata database and search tool
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		2.1.6
-REVISION=		0
+GNOME_VERSION=		2.1.7
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
@@ -21,9 +20,9 @@ SUBST_VARS=		TRACKER_API
 
 SHARED_LIBS +=  tracker-common       4.0      # unknown
 SHARED_LIBS +=  tracker-data         4.0      # unknown
-SHARED_LIBS +=  tracker-sparql-2.0   0.0      # 106.0
-SHARED_LIBS +=  tracker-miner-2.0    0.0      # 106.0
-SHARED_LIBS +=  tracker-control-2.0  0.0      # 106.0
+SHARED_LIBS +=  tracker-sparql-2.0   0.0      # 107.0
+SHARED_LIBS +=  tracker-miner-2.0    0.0      # 107.0
+SHARED_LIBS +=  tracker-control-2.0  0.0      # 107.0
 
 # GPLv2+ - LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
