@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2019/02/01 12:57:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.82 2019/02/08 10:18:49 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
@@ -50,6 +50,7 @@ PKG_ARCH =	*
 PREFIX =	/var/www
 INSTDIR =	${PREFIX}/librenms
 SUBST_VARS =	INSTDIR MODPHP_BIN
+UPDATE_PLIST_ARGS += -i MODPHP_VERSION
 
 R =	s,^\#!( )?(/usr/bin/env |/bin/)bash,\#!${LOCALBASE}/bin/bash,;
 R +=	s,^\#!( )?/usr/bin/(env )?python.*,\#!${MODPY_BIN},;
