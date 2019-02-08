@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.43 2018/05/15 19:17:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2019/02/08 18:58:59 jasper Exp $
 
 COMMENT=	network monitoring library with TCP/IP reassembly
 
 DISTNAME=	libnids-1.24
 SHARED_LIBS=	nids 0.1
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	net
 
-HOMEPAGE=	http://www.packetfactory.net/projects/libnids/
+HOMEPAGE=	http://libnids.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
