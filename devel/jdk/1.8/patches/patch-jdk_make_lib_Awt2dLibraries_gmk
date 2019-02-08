@@ -1,0 +1,26 @@
+$OpenBSD: patch-jdk_make_lib_Awt2dLibraries_gmk,v 1.1 2019/02/08 20:36:44 kurt Exp $
+
+Index: jdk/make/lib/Awt2dLibraries.gmk
+--- jdk/make/lib/Awt2dLibraries.gmk.orig
++++ jdk/make/lib/Awt2dLibraries.gmk
+@@ -1236,6 +1236,11 @@ ifndef BUILD_HEADLESS_ONLY
+     LIBSPLASHSCREEN_splashscreen_png.c_CFLAGS := -x objective-c -O0
+     LIBSPLASHSCREEN_splashscreen_sys.m_CFLAGS := -O0
+ 
++  else ifeq ($(OPENJDK_TARGET_OS), bsd)
++    LIBSPLASHSCREEN_CFLAGS += -DWITH_X11 $(X_CFLAGS) -I$(PACKAGE_PATH)/include
++    ifneq ($(OPENJDK_TARGET_OS_VENDOR), openbsd)
++      LIBSPLASHSCREEN_CFLAGS += -DLIBICONV_PLUG
++    endif
+   else ifeq ($(OPENJDK_TARGET_OS), windows)
+     LIBSPLASHSCREEN_CFLAGS += -DWITH_WIN32
+   else
+@@ -1255,6 +1260,8 @@ ifndef BUILD_HEADLESS_ONLY
+         -framework Foundation \
+         -framework Cocoa \
+         -framework JavaNativeFoundation
++  else ifeq ($(OPENJDK_TARGET_OS), bsd)
++    LIBSPLASHSCREEN_LDFLAGS_SUFFIX += $(X_LIBS) -lX11 -lXext $(LIBM) -L$(PACKAGE_PATH)/lib -liconv -pthread
+   else ifeq ($(OPENJDK_TARGET_OS), windows)
+     LIBSPLASHSCREEN_LDFLAGS_SUFFIX += kernel32.lib user32.lib gdi32.lib delayimp.lib -DELAYLOAD:user32.dll
+   else	# .. all other Unixes can use X_LIBS
