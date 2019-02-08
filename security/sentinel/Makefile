@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.22 2015/06/10 11:05:02 jca Exp $
+# $OpenBSD: Makefile,v 1.23 2019/02/08 19:07:21 jasper Exp $
 
 COMMENT=		remote promiscuous mode detection tool
 
 DISTNAME=		sentinel-1.0
-REVISION =		2
+REVISION =		3
 CATEGORIES=    		security net
 
-HOMEPAGE=		http://www.packetfactory.net/projects/sentinel/
+HOMEPAGE=		http://packetfactory.openwall.net/projects/sentinel/
 
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
 PERMIT_DISTFILES_FTP=	no license
 WANTLIB=		c pcap pthread lib/libnet-1.0/net=0
 
-MASTER_SITES=		http://www.packetfactory.net/projects/sentinel/ \
+MASTER_SITES=		http://packetfactory.openwall.net/projects/sentinel/ \
 			${MASTER_SITE_PACKETSTORM:=UNIX/IDS/sentinel/}
 
 LIB_DEPENDS=		net/libnet/1.0

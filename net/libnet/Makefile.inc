@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.5 2016/03/11 18:13:19 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2019/02/08 19:07:21 jasper Exp $
 
 COMMENT=	raw IP packet construction library
 
 DISTNAME=	libnet-${VERSION}
 CATEGORIES=	net
 
-HOMEPAGE=	http://www.packetfactory.net/projects/libnet/
+HOMEPAGE=	http://packetfactory.openwall.net/projects/libnet/
 
 
 PERMIT_PACKAGE_CDROM=	Yes
