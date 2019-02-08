@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2017/09/07 16:03:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/02/08 09:40:31 sthen Exp $
 
 COMMENT=		addressbook program with mutt support
 
 DISTNAME=		abook-0.6.1
-REVISION=		0
+REVISION=		1
 CATEGORIES=		mail
 
 HOMEPAGE=		http://abook.sourceforge.net/
