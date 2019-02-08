@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/06/27 02:50:18 william Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/02/08 13:15:13 sthen Exp $
 @newgroup _postfwd:715
 @newuser _postfwd:715:715:daemon:Postfwd Daemon:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/postfwd2
 bin/postfwd-client.pl
 bin/rblcheck.pl
 @man man/man8/postfwd2.8
@@ -21,4 +22,3 @@ share/examples/postfwd/plugins/
 share/examples/postfwd/plugins/postfwd.plugins.sample
 share/examples/postfwd/postfwd.cf.sample
 @sample ${SYSCONFDIR}/postfix/postfwd2.cf
-@rcscript ${RCDIR}/postfwd2

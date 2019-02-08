@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.8 2018/01/11 19:27:03 rpe Exp $
+# $OpenBSD: Makefile,v 1.9 2019/02/08 13:15:13 sthen Exp $
 
 COMMENT =	Postfix policy server
 
-DISTNAME =	postfwd-1.35
-REVISION =	5
+DISTNAME =	postfwd-1.39
+WRKDIST =	${WRKDIR}/postfwd
+
 CATEGORIES =	mail
 
-HOMEPAGE =	http://www.postfwd.org/
+HOMEPAGE =	https://www.postfwd.org/
 
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =Yes
+PERMIT_PACKAGE_CDROM = Yes
 
 MASTER_SITES =	${HOMEPAGE}
 
 RUN_DEPENDS =	devel/p5-Net-Server \
 		devel/p5-IO-Multiplex \
-		net/p5-Net-DNS 
+		net/p5-Net-DNS
 
 PKG_ARCH =	*
 NO_BUILD =	Yes
