@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/08/28 16:53:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/02/08 21:33:40 remi Exp $
 
 COMMENT =		config backup and policy check for network devices
 
-DISTNAME =		netshot_0.8.1
-REVISION =		0
+V =			0.11.0
+DISTNAME =		netshot_${V}
 PKGNAME =		${DISTNAME:S/_/-/}
 WRKDIST =		${WRKDIR}
 
@@ -16,7 +16,7 @@ MAINTAINER =		Remi Locherer <remi@openbsd.org>
 # GPLv3+ (included libraries: Apache1+2 BSD GPLv2 LGPL2.1 MIT)
 PERMIT_PACKAGE_CDROM =	YES
 
-MASTER_SITES =		http://www.netfishers.onl/downloads/
+MASTER_SITES =		https://github.com/netfishers-onl/Netshot/releases/download/v${V}/
 
 EXTRACT_SUFX =		.zip
 
