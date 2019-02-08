@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2018/08/30 07:53:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2019/02/08 20:08:10 jasper Exp $
 
 COMMENT =	monitoring and metric analytics dashboards
 
 GH_ACCOUNT =	grafana
 GH_PROJECT =	grafana
-GH_TAGNAME =	v5.2.3
+GH_TAGNAME =	v5.4.3
 
 CATEGORIES =	sysutils
 
