@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2019/02/08 09:40:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/02/08 09:50:21 sthen Exp $
 
 COMMENT=		addressbook program with mutt support
 
 DISTNAME=		abook-0.6.1
-REVISION=		1
+REVISION=		2
 CATEGORIES=		mail
 
 HOMEPAGE=		http://abook.sourceforge.net/
@@ -11,7 +11,7 @@ HOMEPAGE=		http://abook.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB+=		c iconv intl ncursesw readline
+WANTLIB += c curses iconv intl readline
 
 MASTER_SITES=		http://abook.sourceforge.net/devel/
 
@@ -23,14 +23,13 @@ CONFIGURE_STYLE=	gnu
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/gettext-tools
-AUTOCONF_VERSION= 	2.69
-AUTOMAKE_VERSION= 	1.14
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.14
 
 EXAMPLEDIR=		${PREFIX}/share/examples/abook/
 
-pre-configure:
-	@cd ${WRKSRC}; env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -i
+do-gen:
+	@cd ${WRKSRC}; ${AUTOCONF_ENV} autoreconf -i
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
