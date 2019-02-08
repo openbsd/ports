@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_FDM_UIUCModel_uiuc_parsefile_h,v 1.1 2019/02/08 18:53:42 jasper Exp $
+
+Fix build with libc++7: error: reference to 'stack' is ambiguous
+
+Index: src/FDM/UIUCModel/uiuc_parsefile.h
+--- src/FDM/UIUCModel/uiuc_parsefile.h.orig
++++ src/FDM/UIUCModel/uiuc_parsefile.h
+@@ -23,7 +23,7 @@ class ParseFile
+ {
+         private:
+                 
+-                stack commands;
++                ::stack commands;
+                 ifstream file;
+                 void readFile();
+ 
+@@ -37,7 +37,7 @@ class ParseFile
+                 void removeComments(string& inputLine);
+                 string getToken(string inputLine, int tokenNo);
+                 void storeCommands(string inputLine);
+-                stack getCommands();
++                ::stack getCommands();
+ };
+ 
+ #endif  // _PARSE_FILE_H_

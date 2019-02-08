@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_FDM_UIUCModel_uiuc_recorder_cpp,v 1.1 2019/02/08 18:53:42 jasper Exp $
+
+Fix build with libc++7: error: reference to 'stack' is ambiguous
+
+Index: src/FDM/UIUCModel/uiuc_recorder.cpp
+--- src/FDM/UIUCModel/uiuc_recorder.cpp.orig
++++ src/FDM/UIUCModel/uiuc_recorder.cpp
+@@ -102,7 +102,7 @@ using std::endl;                // -dw
+ 
+ void uiuc_recorder( double dt )
+ {
+-  stack command_list;
++  ::stack command_list;
+   string linetoken;
+   // static int init = 0;
+   static int recordStep = 0;
