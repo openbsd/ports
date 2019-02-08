@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_lqt_quicktime_c,v 1.1 2019/02/08 10:57:01 sthen Exp $
+
+CVE-2017-9122, CVE-2017-9123, CVE-2017-9124, CVE-2017-9125, CVE-2017-9126,
+CVE-2017-9127, CVE-2017-9128
+
+Index: src/lqt_quicktime.c
+--- src/lqt_quicktime.c.orig
++++ src/lqt_quicktime.c
+@@ -1788,8 +1788,8 @@ int quicktime_read_info(quicktime_t *file)
+                 quicktime_set_position(file, start_position);
+                 free(temp);
+ 
+-                quicktime_read_moov(file, &file->moov, &leaf_atom);
+-                got_header = 1;
++                if(!quicktime_read_moov(file, &file->moov, &leaf_atom))
++                  got_header = 1;
+                 }
+               else
+                 quicktime_atom_skip(file, &leaf_atom);

@@ -1,0 +1,83 @@
+$OpenBSD: patch-src_util_c,v 1.1 2019/02/08 10:57:01 sthen Exp $
+
+- Integer overflow in the quicktime_read_pascal function
+  CVE-2016-2399
+- CVE-2017-9122, CVE-2017-9123, CVE-2017-9124, CVE-2017-9125, CVE-2017-9126,
+  CVE-2017-9127, CVE-2017-9128
+
+Index: src/util.c
+--- src/util.c.orig
++++ src/util.c
+@@ -340,9 +340,14 @@ int64_t quicktime_byte_position(quicktime_t *file)
+ 
+ void quicktime_read_pascal(quicktime_t *file, char *data)
+ {
+-	char len = quicktime_read_char(file);
+-	quicktime_read_data(file, (uint8_t*)data, len);
+-	data[(int)len] = 0;
++       int len = quicktime_read_char(file);
++       if ((len > 0) && (len < 256)) {
++          /* data[] is expected to be 256 bytes long */
++          quicktime_read_data(file, (uint8_t*)data, len);
++          data[len] = 0;
++        } else {
++          data[0] = 0;
++        }
+ }
+ 
+ void quicktime_write_pascal(quicktime_t *file, char *data)
+@@ -642,10 +647,10 @@ int quicktime_write_fixed16(quicktime_t *file, float n
+ 	return quicktime_write_data(file, data, 2);
+ }
+ 
+-unsigned long quicktime_read_uint32(quicktime_t *file)
++uint32_t quicktime_read_uint32(quicktime_t *file)
+ {
+-	unsigned long result;
+-	unsigned long a, b, c, d;
++	uint32_t result;
++	uint32_t a, b, c, d;
+ 	uint8_t data[4];
+ 
+ 	quicktime_read_data(file, data, 4);
+@@ -658,10 +663,10 @@ unsigned long quicktime_read_uint32(quicktime_t *file)
+ 	return result;
+ }
+ 
+-long quicktime_read_int32(quicktime_t *file)
++int32_t quicktime_read_int32(quicktime_t *file)
+ {
+-	unsigned long result;
+-	unsigned long a, b, c, d;
++	uint32_t result;
++	uint32_t a, b, c, d;
+ 	uint8_t data[4];
+ 
+ 	quicktime_read_data(file, data, 4);
+@@ -671,13 +676,13 @@ long quicktime_read_int32(quicktime_t *file)
+ 	d = data[3];
+ 
+ 	result = (a << 24) | (b << 16) | (c << 8) | d;
+-	return (long)result;
++	return (int32_t)result;
+ }
+ 
+-long quicktime_read_int32_le(quicktime_t *file)
++int32_t quicktime_read_int32_le(quicktime_t *file)
+ {
+-	unsigned long result;
+-	unsigned long a, b, c, d;
++	uint32_t result;
++	uint32_t a, b, c, d;
+ 	uint8_t data[4];
+ 
+ 	quicktime_read_data(file, data, 4);
+@@ -687,7 +692,7 @@ long quicktime_read_int32_le(quicktime_t *file)
+ 	d = data[3];
+ 
+ 	result = (d << 24) | (c << 16) | (b << 8) | a;
+-	return (long)result;
++	return (int32_t)result;
+ }
+ 
+ int64_t quicktime_read_int64(quicktime_t *file)

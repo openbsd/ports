@@ -1,0 +1,21 @@
+$OpenBSD: patch-include_lqt_funcprotos_h,v 1.1 2019/02/08 10:57:01 sthen Exp $
+
+CVE-2017-9122, CVE-2017-9123, CVE-2017-9124, CVE-2017-9125, CVE-2017-9126,
+CVE-2017-9127, CVE-2017-9128
+
+Index: include/lqt_funcprotos.h
+--- include/lqt_funcprotos.h.orig
++++ include/lqt_funcprotos.h
+@@ -1345,9 +1345,9 @@ int quicktime_write_int32_le(quicktime_t *file, long v
+ int quicktime_write_char32(quicktime_t *file, char *string);
+ float quicktime_read_fixed16(quicktime_t *file);
+ int quicktime_write_fixed16(quicktime_t *file, float number);
+-unsigned long quicktime_read_uint32(quicktime_t *file);
+-long quicktime_read_int32(quicktime_t *file);
+-long quicktime_read_int32_le(quicktime_t *file);
++uint32_t quicktime_read_uint32(quicktime_t *file);
++int32_t quicktime_read_int32(quicktime_t *file);
++int32_t quicktime_read_int32_le(quicktime_t *file);
+ int64_t quicktime_read_int64(quicktime_t *file);
+ int64_t quicktime_read_int64_le(quicktime_t *file);
+ long quicktime_read_int24(quicktime_t *file);

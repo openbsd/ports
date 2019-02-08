@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_moov_c,v 1.1 2019/02/08 10:57:01 sthen Exp $
+
+CVE-2017-9122, CVE-2017-9123, CVE-2017-9124, CVE-2017-9125, CVE-2017-9126,
+CVE-2017-9127, CVE-2017-9128
+
+Index: src/moov.c
+--- src/moov.c.orig
++++ src/moov.c
+@@ -218,7 +218,8 @@ int quicktime_read_moov(quicktime_t *file, quicktime_m
+ 		if(quicktime_atom_is(&leaf_atom, "trak"))
+ 		{
+ 			quicktime_trak_t *trak = quicktime_add_trak(file);
+-			quicktime_read_trak(file, trak, &leaf_atom);
++			if(quicktime_read_trak(file, trak, &leaf_atom))
++                          return 1;
+ 		}
+ 		else
+ 		if(quicktime_atom_is(&leaf_atom, "udta"))

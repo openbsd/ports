@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_atom_c,v 1.1 2019/02/08 10:57:01 sthen Exp $
+
+CVE-2017-9122, CVE-2017-9123, CVE-2017-9124, CVE-2017-9125, CVE-2017-9126,
+CVE-2017-9127, CVE-2017-9128
+
+Index: src/atom.c
+--- src/atom.c.orig
++++ src/atom.c
+@@ -131,6 +131,9 @@ int quicktime_atom_read_header(quicktime_t *file, quic
+ 			atom->size = read_size64(header);
+ 			atom->end = atom->start + atom->size;
+ 		}
++/* Avoid broken files */
++        if(atom->end > file->total_length)
++          result = 1;
+ 	}
+ 
+ 

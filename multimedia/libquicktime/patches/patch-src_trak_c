@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_trak_c,v 1.1 2019/02/08 10:57:01 sthen Exp $
+
+CVE-2017-9122, CVE-2017-9123, CVE-2017-9124, CVE-2017-9125, CVE-2017-9126,
+CVE-2017-9127, CVE-2017-9128
+
+Index: src/trak.c
+--- src/trak.c.orig
++++ src/trak.c
+@@ -269,6 +269,14 @@ int quicktime_read_trak(quicktime_t *file, quicktime_t
+     else quicktime_atom_skip(file, &leaf_atom);
+     } while(quicktime_position(file) < trak_atom->end);
+ 
++  /* Do some sanity checks to prevent later crashes */
++  if(trak->mdia.minf.is_video || trak->mdia.minf.is_video)
++    {
++    if(!trak->mdia.minf.stbl.stsc.table ||
++       !trak->mdia.minf.stbl.stco.table)
++      return 1;
++    }
++
+ #if 1 
+   if(trak->mdia.minf.is_video &&
+      quicktime_match_32(trak->mdia.minf.stbl.stsd.table[0].format, "drac"))
