@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2019/02/06 13:09:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/02/08 10:39:27 sthen Exp $
 
+BROKEN-i386 =	broken on 32-bit; enum in src/frontend/mame/ui/videoopt.h starting at 0x80000000
 ONLY_FOR_ARCHS = amd64 i386
 
 USE_WXNEEDED =	Yes
