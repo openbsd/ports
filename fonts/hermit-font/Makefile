@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/16 03:33:09 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2019/02/09 17:49:54 abieber Exp $
 
 COMMENT=	clear, readable monospaced font
 
 TYPEFACE=	hermit
-VERSION=	1.21
+VERSION=	2.0
 DISTNAME=	otf-hermit-${VERSION}
 PKGNAME=	hermit-font-${VERSION}
 CATEGORIES=	fonts x11
-REVISION=	1
 
 # SIL OFL 1.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
 HOMEPAGE=	https://pcaro.es/p/hermit/
-MASTER_SITES=	https://pcaro.es/d/
+MASTER_SITES=	https://deftly.net/dist/
 EXTRACT_SUFX=	.tar.gz
 
 MODULES=	font
