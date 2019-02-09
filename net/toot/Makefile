@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2018/12/02 01:07:45 kn Exp $
+# $OpenBSD: Makefile,v 1.6 2019/02/09 22:48:59 kn Exp $
 
 COMMENT =		interact with Mastodon social networks from the command line
 
-MODPY_EGG_VERSION =	0.19.0
+MODPY_EGG_VERSION =	0.20.0
 DISTNAME =		toot-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		net
 
@@ -29,13 +28,8 @@ TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
 			devel/py-test-cov${MODPY_FLAVOR}>=2.4.0
 
 MAKE_ENV =		LC_CTYPE=C.UTF-8
-TEST_ENV =		PATH=${PORTPATH}
-
-pre-test:
-	ln -sf ${LOCALBASE}/bin/py.test${MODPY_BIN_SUFFIX} \
-	    ${WRKDIR}/bin/py.test
 
 do-test:
-	${TEST_ENV} ${MAKE_PROGRAM} -C ${WRKSRC} coverage
+	cd ${WRKSRC} && py.test${MODPY_BIN_SUFFIX} --cov=toot tests/
 
 .include <bsd.port.mk>
