@@ -1,9 +1,9 @@
-$OpenBSD: patch-oox_Library_oox_mk,v 1.6 2018/12/19 20:43:17 robert Exp $
+$OpenBSD: patch-oox_Library_oox_mk,v 1.7 2019/02/09 15:23:07 robert Exp $
 
 Index: oox/Library_oox.mk
 --- oox/Library_oox.mk.orig
 +++ oox/Library_oox.mk
-@@ -289,7 +289,6 @@ $(eval $(call gb_Library_add_exception_objects,oox,\
+@@ -286,7 +286,6 @@ $(eval $(call gb_Library_add_exception_objects,oox,\
      oox/source/shape/WpsContext \
      oox/source/token/namespacemap \
      oox/source/token/propertynames \
@@ -11,11 +11,11 @@ Index: oox/Library_oox.mk
      oox/source/token/relationship \
      oox/source/vml/vmldrawing \
      oox/source/vml/vmldrawingfragment \
-@@ -302,18 +301,20 @@ $(eval $(call gb_Library_add_exception_objects,oox,\
+@@ -299,18 +298,20 @@ $(eval $(call gb_Library_add_exception_objects,oox,\
      oox/source/vml/vmltextbox \
  ))
  
--ifeq ($(OS),IOS)
+-ifeq ($(OS),iOS)
 +ifeq ($(OS),OPENBSD)
  # Either a compiler bug in Xcode 5.1.1 or some hard-to-spot undefined
  # behaviour in the source code... Compiling this source file with

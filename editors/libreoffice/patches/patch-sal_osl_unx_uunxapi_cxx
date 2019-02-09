@@ -1,0 +1,16 @@
+$OpenBSD: patch-sal_osl_unx_uunxapi_cxx,v 1.1 2019/02/09 15:23:07 robert Exp $
+
+Index: sal/osl/unx/uunxapi.cxx
+--- sal/osl/unx/uunxapi.cxx.orig
++++ sal/osl/unx/uunxapi.cxx
+@@ -599,8 +599,10 @@ std::string UnixErrnoString(int nErrno)
+ #endif
+         case EPROTO:
+             return "EPROTO";
++#ifdef EMULTIHOP
+         case EMULTIHOP:
+             return "EMULTIHOP";
++#endif
+ #ifdef EDOTDOT
+         case EDOTDOT:
+             return "EDOTDOT";

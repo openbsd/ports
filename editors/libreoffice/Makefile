@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.195 2019/01/29 10:34:28 robert Exp $
+# $OpenBSD: Makefile,v 1.196 2019/02/09 15:23:07 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -9,12 +9,12 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
-SHARED_LIBS +=  orcus-0.13                0.0 # 0.0
-SHARED_LIBS +=  orcus-parser-0.13         0.0 # 0.0
+SHARED_LIBS +=  orcus-0.14                0.0 # 0.0
+SHARED_LIBS +=  orcus-parser-0.14         0.0 # 0.0
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 
-BV=		6.1
-VERSION=	${BV}.4.2
+BV=		6.2
+VERSION=	${BV}.0.3
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -23,8 +23,6 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde4
-
-REVISION-main=	0
 
 EPOCH=		0
 
@@ -36,6 +34,7 @@ MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/${VERSION:C
 		http://humppa.hu/libreoffice/ \
 		http://download.go-oo.org/src/
 MASTER_SITES0=	http://dev-www.libreoffice.org/src/ \
+		http://dev-www.libreoffice.org/extern/ \
 		http://hg.services.openoffice.org/binaries/ \
 		http://download.go-oo.org/src/ \
 		http://download.go-oo.org/extern/ \
@@ -55,7 +54,10 @@ EXTRACT_ONLY=	${EDISTFILES:C/:[0-9]$//}
 
 DISTFILES += ${EDISTFILES}
 DISTFILES += 0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz:0
-DISTFILES += 134d8262145fc793c6af494dcace3e71-liberation-fonts-ttf-1.07.4.tar.gz:0
+DISTFILES += liberation-fonts-ttf-2.00.4.tar.gz:0
+DISTFILES += liberation-narrow-fonts-ttf-1.07.6.tar.gz:0
+DISTFILES += source-serif-font-2.007R.tar.gz:0
+DISTFILES += 49a64f3bcf20a7909ba2751349231d6652ded9cd2840e961b5164d09de3ffa63-opens___.ttf:0
 DISTFILES += 1725634df4bb3dcb1b2c91a6175f8789-GentiumBasic_1102.zip:0
 DISTFILES += 17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:0
 DISTFILES += 26b3e95ddf3d9c077c480ea45874b3b8-lp_solve_5.5.tar.gz:0
@@ -69,7 +71,7 @@ DISTFILES += 5ade6ae2a99bc1e9e57031ca88d36dad-hyphen-2.8.8.tar.gz:0
 DISTFILES += 5c781723a0d9ed6188960defba8e91cf-liberation-fonts-ttf-2.00.1.tar.gz:0
 DISTFILES += 798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:0
 DISTFILES += 7a15edea7d415ac5150ea403e27401fd-open-sans-font-ttf-1.10.tar.gz:0
-DISTFILES += xmlsec1-1.2.25.tar.gz:0
+DISTFILES += xmlsec1-1.2.27.tar.gz:0
 DISTFILES += lxml-4.1.1.tgz:0
 DISTFILES += 8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:0
 DISTFILES += 907d6e99f241876695c19ff3db0b8923-source-code-pro-2.030R-ro-1.050R-it.tar.gz:0
@@ -94,12 +96,12 @@ DISTFILES += eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0
 DISTFILES += f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0
 DISTFILES += language-subtag-registry-2018-04-23.tar.bz2:0
 DISTFILES += libabw-0.1.2.tar.xz:0
-DISTFILES += libcdr-0.1.4.tar.xz:0
+DISTFILES += libcdr-0.1.5.tar.xz:0
 DISTFILES += libcdr-0.1.3.tar.bz2:0
-DISTFILES += libcmis-0.5.1.tar.gz:0
+DISTFILES += libcmis-0.5.2.tar.xz:0
 DISTFILES += libe-book-0.1.3.tar.xz:0
 DISTFILES += libepubgen-0.1.1.tar.xz:0
-DISTFILES += libetonyek-0.1.8.tar.xz:0
+DISTFILES += libetonyek-0.1.9.tar.xz:0
 DISTFILES += libexttextcat-3.4.5.tar.xz:0
 DISTFILES += libfreehand-0.1.2.tar.xz:0
 DISTFILES += libgltf-0.0.2.tar.bz2:1
@@ -107,22 +109,22 @@ DISTFILES += liblangtag-0.6.2.tar.bz2:0
 DISTFILES += libmspub-0.1.4.tar.xz:0
 DISTFILES += libmwaw-0.3.14.tar.xz:0
 DISTFILES += libodfgen-0.1.6.tar.bz2:0
-DISTFILES += liborcus-0.13.4.tar.gz:0
+DISTFILES += liborcus-0.14.1.tar.gz:0
 DISTFILES += libre-hebrew-1.0.tar.gz:0
 DISTFILES += ttf-kacst_2.01+mry.tar.gz:0
 DISTFILES += culmus-0.131.tar.gz:0
 DISTFILES += libpagemaker-0.0.4.tar.xz:0
-DISTFILES += libqxp-0.0.1.tar.xz:0
+DISTFILES += libqxp-0.0.2.tar.xz:0
 DISTFILES += librevenge-0.0.4.tar.bz2:0
 DISTFILES += libstaroffice-0.0.6.tar.xz:0
 DISTFILES += libvisio-0.1.6.tar.xz:0
-DISTFILES += libwpd-0.10.2.tar.xz:0
-DISTFILES += libwpg-0.3.2.tar.xz:0
-DISTFILES += libwps-0.4.9.tar.xz:0
+DISTFILES += libwpd-0.10.3.tar.xz:0
+DISTFILES += libwpg-0.3.3.tar.xz:0
+DISTFILES += libwps-0.4.10.tar.xz:0
 DISTFILES += libwps-0.4.8.tar.xz:0
 DISTFILES += libzmf-0.0.2.tar.xz:0
-DISTFILES += mdds-1.3.1.tar.bz2:0
-DISTFILES += pdfium-3426.tar.bz2:0
+DISTFILES += mdds-1.4.3.tar.bz2:0
+DISTFILES += pdfium-3550.tar.bz2:0
 DISTFILES += noto-fonts-20171024.tar.gz:0
 DISTFILES += ReemKufi-0.7.zip:0
 DISTFILES += Scheherazade-2.100.zip:0
@@ -192,6 +194,7 @@ MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 LIB_DEPENDS-main=x11/gtk+2 \
 		${MODPY_LIB_DEPENDS} \
 		databases/openldap \
+		databases/mariadb \
 		databases/postgresql \
 		devel/boost \
 		devel/harfbuzz,-icu \
@@ -224,8 +227,7 @@ WANTLIB-main+=	${MODPY_WANTLIB}
 WANTLIB-main+=	clucene-contribs-lib clucene-core clucene-shared
 WANTLIB-main+=	cups exslt lcms2
 WANTLIB-main+=	nspr4 nss3 nssutil3 plc4 plds4 smime3 ssl3
-WANTLIB-main+=	png raptor2
-WANTLIB-main+=	lber ldap
+WANTLIB-main+=	raptor2
 WANTLIB-main+=	harfbuzz harfbuzz-icu
 WANTLIB-main+=	lzma
 WANTLIB-main+=	cairo-gobject gmodule-2.0
@@ -235,7 +237,8 @@ WANTLIB-main+=	bz2 graphite2
 WANTLIB-main+=	boost_filesystem boost_filesystem-mt boost_iostreams-mt
 WANTLIB-main+=	boost_system boost_system-mt boost_date_time-mt
 WANTLIB-main+=	boost_locale-mt
-WANTLIB-main+=	epoxy
+WANTLIB-main+=	epoxy mysqlclient_r
+WANTLIB-main+=	lber-2.4 ldap-2.4 png16
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/libexecinfo \
@@ -332,6 +335,7 @@ CONFIGURE_ARGS+=\
 		--with-system-jpeg \
 		--with-system-lcms2 \
 		--with-system-libpng \
+		--with-system-mariadb \
 		--with-system-neon \
 		--with-system-nss \
 		--with-system-openldap \

@@ -1,9 +1,9 @@
-$OpenBSD: patch-solenv_gbuild_platform_unxgcc_mk,v 1.6 2018/02/05 17:15:05 robert Exp $
+$OpenBSD: patch-solenv_gbuild_platform_unxgcc_mk,v 1.7 2019/02/09 15:23:07 robert Exp $
 
 Index: solenv/gbuild/platform/unxgcc.mk
 --- solenv/gbuild/platform/unxgcc.mk.orig
 +++ solenv/gbuild/platform/unxgcc.mk
-@@ -151,8 +151,7 @@ $(call gb_Helper_abbreviate_dirs,\
+@@ -152,8 +152,7 @@ $(call gb_Helper_abbreviate_dirs,\
  	$(if $(SOVERSIONSCRIPT),&& ln -sf ../../program/$(notdir $(1)) $(ILIBTARGET)))
  	$(if $(filter Library,$(TARGETTYPE)), $(call gb_Helper_abbreviate_dirs,\
  		$(READELF) -d $(1) | grep SONAME > $(WORKDIR)/LinkTarget/$(2).exports.tmp; \

@@ -1,8 +1,8 @@
-$OpenBSD: patch-vcl_Library_vclplug_gen_mk,v 1.4 2018/02/05 17:15:05 robert Exp $
+$OpenBSD: patch-vcl_Library_vclplug_gen_mk,v 1.5 2019/02/09 15:23:07 robert Exp $
 Index: vcl/Library_vclplug_gen.mk
 --- vcl/Library_vclplug_gen.mk.orig
 +++ vcl/Library_vclplug_gen.mk
-@@ -143,10 +143,10 @@ $(eval $(call gb_Library_add_libs,vclplug_gen,\
+@@ -142,10 +142,10 @@ $(eval $(call gb_Library_add_libs,vclplug_gen,\
  endif
  endif # USE_XINERAMA
  
