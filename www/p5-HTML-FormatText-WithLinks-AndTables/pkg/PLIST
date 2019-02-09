@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/14 17:36:29 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/02/09 17:09:49 sthen Exp $
 ${P5SITE}/HTML/
 ${P5SITE}/HTML/FormatText/
 ${P5SITE}/HTML/FormatText/WithLinks/
 ${P5SITE}/HTML/FormatText/WithLinks/AndTables.pm
-${P5SITE}/HTML/FormatText/WithLinks/README.pod
 @man man/man3p/HTML::FormatText::WithLinks::AndTables.3p
-@man man/man3p/HTML::FormatText::WithLinks::README.3p
