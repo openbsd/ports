@@ -1,0 +1,16 @@
+$OpenBSD: patch-plugins_ffmpeg_params_h,v 1.1 2019/02/09 19:31:43 kn Exp $
+
+Deal with newer FFmpeg API.
+
+Index: plugins/ffmpeg/params.h
+--- plugins/ffmpeg/params.h.orig
++++ plugins/ffmpeg/params.h
+@@ -149,7 +149,7 @@ the reference. Unused for constant quantizer encoding"
+     .type =        LQT_PARAMETER_INT, \
+     .val_default = { .val_int = 0 }, \
+     .val_min =     { .val_int = 0 }, \
+-    .val_max =     { .val_int = FF_MAX_B_FRAMES }, \
++    .val_max =     { .val_int = 16 }, \
+     .help_string = TRS("Maximum number of B-frames between non B-frames") \
+   }
+ 

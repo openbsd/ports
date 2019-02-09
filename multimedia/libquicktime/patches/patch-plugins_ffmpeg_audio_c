@@ -1,9 +1,10 @@
-$OpenBSD: patch-plugins_ffmpeg_audio_c,v 1.1 2014/04/06 20:24:01 brad Exp $
+$OpenBSD: patch-plugins_ffmpeg_audio_c,v 1.2 2019/02/09 19:31:43 kn Exp $
 
 Deal with newer FFmpeg API.
 
---- plugins/ffmpeg/audio.c.orig	Thu Mar 27 17:06:49 2014
-+++ plugins/ffmpeg/audio.c	Thu Mar 27 17:08:00 2014
+Index: plugins/ffmpeg/audio.c
+--- plugins/ffmpeg/audio.c.orig
++++ plugins/ffmpeg/audio.c
 @@ -45,6 +45,11 @@
  #define ENCODE_AUDIO 1
  #endif
@@ -16,3 +17,157 @@ Deal with newer FFmpeg API.
  /* The following code was ported from gmerlin_avdecoder (http://gmerlin.sourceforge.net) */
  
  /* MPEG Audio header parsing code */
+@@ -540,7 +545,7 @@ static int decode_chunk_vbr(quicktime_t * file, int tr
+ 
+ #if DECODE_AUDIO3 || DECODE_AUDIO4
+     codec->pkt.data = codec->chunk_buffer;
+-    codec->pkt.size = packet_size + FF_INPUT_BUFFER_PADDING_SIZE;
++    codec->pkt.size = packet_size + AV_INPUT_BUFFER_PADDING_SIZE;
+ 
+ #if DECODE_AUDIO4
+     frame_bytes = avcodec_decode_audio4(codec->avctx, &f,
+@@ -578,7 +583,7 @@ static int decode_chunk_vbr(quicktime_t * file, int tr
+                                          (codec->sample_buffer_end - codec->sample_buffer_start)],
+                   &bytes_decoded,
+                   codec->chunk_buffer,
+-                  packet_size + FF_INPUT_BUFFER_PADDING_SIZE);
++                  packet_size + AV_INPUT_BUFFER_PADDING_SIZE);
+     if(frame_bytes < 0)
+       {
+       lqt_log(file, LQT_LOG_ERROR, LOG_DOMAIN, "avcodec_decode_audio2 error");
+@@ -626,7 +631,7 @@ static int decode_chunk(quicktime_t * file, int track)
+     {
+     /* If the codec is mp3, make sure to decode the very last frame */
+ 
+-    if((codec->avctx->codec_id == CODEC_ID_MP3) &&
++    if((codec->avctx->codec_id == AV_CODEC_ID_MP3) &&
+        (codec->bytes_in_chunk_buffer >= 4))
+       {
+       if(!mpa_decode_header(&mph, codec->chunk_buffer, (const mpa_header*)0))
+@@ -640,13 +645,13 @@ static int decode_chunk(quicktime_t * file, int track)
+         return 0;
+         }
+ 
+-      if(codec->chunk_buffer_alloc < mph.frame_bytes + FF_INPUT_BUFFER_PADDING_SIZE)
++      if(codec->chunk_buffer_alloc < mph.frame_bytes + AV_INPUT_BUFFER_PADDING_SIZE)
+         {
+-        codec->chunk_buffer_alloc = mph.frame_bytes + FF_INPUT_BUFFER_PADDING_SIZE;
++        codec->chunk_buffer_alloc = mph.frame_bytes + AV_INPUT_BUFFER_PADDING_SIZE;
+         codec->chunk_buffer = realloc(codec->chunk_buffer, codec->chunk_buffer_alloc);
+         }
+       memset(codec->chunk_buffer + codec->bytes_in_chunk_buffer, 0,
+-             mph.frame_bytes - codec->bytes_in_chunk_buffer + FF_INPUT_BUFFER_PADDING_SIZE);
++             mph.frame_bytes - codec->bytes_in_chunk_buffer + AV_INPUT_BUFFER_PADDING_SIZE);
+       num_samples = mph.samples_per_frame;
+       codec->bytes_in_chunk_buffer = mph.frame_bytes;
+       }
+@@ -690,12 +695,12 @@ static int decode_chunk(quicktime_t * file, int track)
+     {
+ 
+         
+-    /* BIG NOTE: We pass extra FF_INPUT_BUFFER_PADDING_SIZE for the buffer size
++    /* BIG NOTE: We pass extra AV_INPUT_BUFFER_PADDING_SIZE for the buffer size
+        because we know, that lqt_read_audio_chunk allocates 16 extra bytes for us */
+     
+     /* Some really broken mp3 files have the header bytes split across 2 chunks */
+ 
+-    if(codec->avctx->codec_id == CODEC_ID_MP3)
++    if(codec->avctx->codec_id == AV_CODEC_ID_MP3)
+       {
+       if(codec->bytes_in_chunk_buffer < 4)
+         {
+@@ -756,7 +761,7 @@ static int decode_chunk(quicktime_t * file, int track)
+ 
+ #if DECODE_AUDIO3 || DECODE_AUDIO4
+     codec->pkt.data = &codec->chunk_buffer[bytes_used];
+-    codec->pkt.size = codec->bytes_in_chunk_buffer + FF_INPUT_BUFFER_PADDING_SIZE;
++    codec->pkt.size = codec->bytes_in_chunk_buffer + AV_INPUT_BUFFER_PADDING_SIZE;
+ 
+ #if DECODE_AUDIO4
+     
+@@ -793,7 +798,7 @@ static int decode_chunk(quicktime_t * file, int track)
+                                                   (codec->sample_buffer_end - codec->sample_buffer_start)],
+                             &bytes_decoded,
+                             &codec->chunk_buffer[bytes_used],
+-                            codec->bytes_in_chunk_buffer + FF_INPUT_BUFFER_PADDING_SIZE);
++                            codec->bytes_in_chunk_buffer + AV_INPUT_BUFFER_PADDING_SIZE);
+ #endif
+     if(frame_bytes < 0)
+       {
+@@ -806,7 +811,7 @@ static int decode_chunk(quicktime_t * file, int track)
+     
+     if(bytes_decoded < 0)
+       {
+-      if(codec->avctx->codec_id == CODEC_ID_MP3)
++      if(codec->avctx->codec_id == AV_CODEC_ID_MP3)
+         {
+         /* For mp3, bytes_decoded < 0 means, that the frame should be muted */
+         memset(&codec->sample_buffer[track_map->channels * (codec->sample_buffer_end -
+@@ -833,7 +838,7 @@ static int decode_chunk(quicktime_t * file, int track)
+         }
+       }
+     
+-    /* This happens because ffmpeg adds FF_INPUT_BUFFER_PADDING_SIZE to the bytes returned */
++    /* This happens because ffmpeg adds AV_INPUT_BUFFER_PADDING_SIZE to the bytes returned */
+     
+     if(codec->bytes_in_chunk_buffer < 0)
+       codec->bytes_in_chunk_buffer = 0;
+@@ -866,8 +871,8 @@ static void init_compression_info(quicktime_t *file, i
+   quicktime_audio_map_t *track_map = &file->atracks[track];
+   quicktime_ffmpeg_audio_codec_t *codec = track_map->codec->priv;
+ 
+-  if((codec->decoder->id == CODEC_ID_MP2) ||
+-     (codec->decoder->id == CODEC_ID_MP3))
++  if((codec->decoder->id == AV_CODEC_ID_MP2) ||
++     (codec->decoder->id == AV_CODEC_ID_MP3))
+     {
+     mpa_header h;
+     uint32_t header;
+@@ -909,7 +914,7 @@ static void init_compression_info(quicktime_t *file, i
+     else
+       track_map->ci.bitrate = h.bitrate;
+     }
+-  else if(codec->decoder->id == CODEC_ID_AC3)
++  else if(codec->decoder->id == AV_CODEC_ID_AC3)
+     {
+     a52_header h;
+     uint8_t * ptr;
+@@ -986,7 +991,7 @@ static int lqt_ffmpeg_decode_audio(quicktime_t *file, 
+ #endif
+     /* Some codecs need extra stuff */
+ 
+-    if(codec->decoder->id == CODEC_ID_ALAC)
++    if(codec->decoder->id == AV_CODEC_ID_ALAC)
+       {
+       header = quicktime_wave_get_user_atom(track_map->track, "alac", &header_len);
+       if(header)
+@@ -995,7 +1000,7 @@ static int lqt_ffmpeg_decode_audio(quicktime_t *file, 
+         codec->avctx->extradata_size = header_len;
+         }
+       }
+-    if(codec->decoder->id == CODEC_ID_QDM2)
++    if(codec->decoder->id == AV_CODEC_ID_QDM2)
+       {
+       header = quicktime_wave_get_user_atom(track_map->track, "QDCA", &header_len);
+       if(header)
+@@ -1261,7 +1266,7 @@ static int lqt_ffmpeg_encode_audio(quicktime_t *file, 
+     pkt.data = codec->chunk_buffer;
+     pkt.size = codec->chunk_buffer_alloc;
+ 
+-    avcodec_get_frame_defaults(&f);
++    av_frame_unref(&f);
+     f.nb_samples = codec->avctx->frame_size;
+     
+     avcodec_fill_audio_frame(&f, channels, codec->avctx->sample_fmt,
+@@ -1495,9 +1500,9 @@ void quicktime_init_audio_codec_ffmpeg(quicktime_codec
+     codec_base->decode_audio = lqt_ffmpeg_decode_audio;
+   codec_base->set_parameter = set_parameter;
+ 
+-  if((decoder->id == CODEC_ID_MP3) || (decoder->id == CODEC_ID_MP2))
++  if((decoder->id == AV_CODEC_ID_MP3) || (decoder->id == AV_CODEC_ID_MP2))
+     codec_base->read_packet = read_packet_mpa;
+-  else if(decoder->id == CODEC_ID_AC3)
++  else if(decoder->id == AV_CODEC_ID_AC3)
+     {
+     codec_base->write_packet = write_packet_ac3;
+     codec_base->read_packet = read_packet_ac3;
