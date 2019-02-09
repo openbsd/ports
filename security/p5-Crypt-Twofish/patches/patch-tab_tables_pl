@@ -1,0 +1,14 @@
+$OpenBSD: patch-tab_tables_pl,v 1.1 2019/02/09 17:03:00 sthen Exp $
+
+Index: tab/tables.pl
+--- tab/tables.pl.orig
++++ tab/tables.pl
+@@ -3,7 +3,7 @@
+ # Copyright 2001 Abhijit Menon-Sen <ams@wiw.org>
+ 
+ use strict;
+-require 'tab/misc.pl';
++require './tab/misc.pl';
+ 
+ my ($qtab, $mtab) = ([], []);
+ 
