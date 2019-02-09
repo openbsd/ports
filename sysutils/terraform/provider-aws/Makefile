@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2019/02/03 08:37:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2019/02/09 10:05:46 ajacoutot Exp $
 
 PROVIDER=		aws
-GH_TAGNAME=		v1.49.0
+GH_TAGNAME=		v1.50.0
 
 .include <bsd.port.mk>
