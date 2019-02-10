@@ -1,37 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/04/26 07:38:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/02/10 12:54:45 jasper Exp $
 @conflict gupnp-vala-<=0.10.3p0
 @bin bin/gssdp-device-sniffer
-include/gssdp-1.0/
-include/gssdp-1.0/libgssdp/
-include/gssdp-1.0/libgssdp/gssdp-client.h
-include/gssdp-1.0/libgssdp/gssdp-error.h
-include/gssdp-1.0/libgssdp/gssdp-resource-browser.h
-include/gssdp-1.0/libgssdp/gssdp-resource-group.h
-include/gssdp-1.0/libgssdp/gssdp.h
-lib/girepository-1.0/GSSDP-1.0.typelib
-lib/libgssdp-1.0.a
-lib/libgssdp-1.0.la
-@lib lib/libgssdp-1.0.so.${LIBgssdp-1.0_VERSION}
-lib/pkgconfig/gssdp-1.0.pc
-share/gir-1.0/GSSDP-1.0.gir
-share/gssdp/
-share/gssdp/gssdp-device-sniffer.ui
-share/gtk-doc/html/gssdp/
-share/gtk-doc/html/gssdp/GSSDPClient.html
-share/gtk-doc/html/gssdp/GSSDPResourceBrowser.html
-share/gtk-doc/html/gssdp/GSSDPResourceGroup.html
-share/gtk-doc/html/gssdp/annotation-glossary.html
-share/gtk-doc/html/gssdp/ch01.html
-share/gtk-doc/html/gssdp/gssdp-Error-codes.html
-share/gtk-doc/html/gssdp/gssdp.devhelp2
-share/gtk-doc/html/gssdp/home.png
-share/gtk-doc/html/gssdp/index.html
-share/gtk-doc/html/gssdp/left-insensitive.png
-share/gtk-doc/html/gssdp/left.png
-share/gtk-doc/html/gssdp/right-insensitive.png
-share/gtk-doc/html/gssdp/right.png
-share/gtk-doc/html/gssdp/style.css
-share/gtk-doc/html/gssdp/up-insensitive.png
-share/gtk-doc/html/gssdp/up.png
-share/vala/vapi/gssdp-1.0.deps
-share/vala/vapi/gssdp-1.0.vapi
+include/gssdp-1.2/
+include/gssdp-1.2/libgssdp/
+include/gssdp-1.2/libgssdp/gssdp-client.h
+include/gssdp-1.2/libgssdp/gssdp-enums.h
+include/gssdp-1.2/libgssdp/gssdp-error.h
+include/gssdp-1.2/libgssdp/gssdp-resource-browser.h
+include/gssdp-1.2/libgssdp/gssdp-resource-group.h
+include/gssdp-1.2/libgssdp/gssdp.h
+lib/girepository-1.0/GSSDP-1.2.typelib
+@lib lib/libgssdp-1.2.so.${LIBgssdp-1.2_VERSION}
+lib/pkgconfig/gssdp-1.2.pc
+share/gir-1.0/GSSDP-1.2.gir
+share/vala/vapi/gssdp-1.2.deps
+share/vala/vapi/gssdp-1.2.vapi
