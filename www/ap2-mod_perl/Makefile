@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/01/26 22:40:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2019/02/10 21:08:58 sthen Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache2
 
@@ -21,6 +21,7 @@ LIB_DEPENDS=		converters/libiconv \
 			devel/apr-util
 RUN_DEPENDS=		www/apache-httpd
 BUILD_DEPENDS=		${RUN_DEPENDS}
+USE_GMAKE=		Yes
 
 PORTHOME=		${WRKDIR}
 
