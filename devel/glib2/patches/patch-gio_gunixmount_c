@@ -1,4 +1,4 @@
-$OpenBSD: patch-gio_gunixmount_c,v 1.17 2019/02/10 13:02:46 ajacoutot Exp $
+$OpenBSD: patch-gio_gunixmount_c,v 1.18 2019/02/10 14:42:38 ajacoutot Exp $
 
 Index: gio/gunixmount.c
 --- gio/gunixmount.c.orig
@@ -50,7 +50,7 @@ Index: gio/gunixmount.c
  
    eject_unmount_do (mount, cancellable, callback, user_data, argv);
  }
-@@ -356,12 +383,30 @@ g_unix_mount_eject (GMount             *mount,
+@@ -356,12 +383,29 @@ g_unix_mount_eject (GMount             *mount,
                      gpointer             user_data)
  {
    GUnixMount *unix_mount = G_UNIX_MOUNT (mount);
@@ -59,7 +59,7 @@ Index: gio/gunixmount.c
 +  char *argv[] = {"eject", NULL, NULL, NULL};
 +  mntbase = g_path_get_dirname (unix_mount->mount_path);
 +  /* eject(1) on OpenBSD does not try to unmount first and requires a device */
-+  g_unix_mount_unmount (mount, flags, cancellable, callback, user_data);
++  g_unix_mount_unmount (mount, flags, cancellable, NULL, user_data);
 +  if ((getuid() != 0) &&
 +      ((pkexec = g_find_program_in_path ("pkexec")) != NULL) &&
 +      (g_access (mntbase, X_OK) != -1))
@@ -70,7 +70,6 @@ Index: gio/gunixmount.c
 +    }
 +  g_free (mntbase);
 +#else
-+
    char *argv[] = {"eject", NULL, NULL};
  
    if (unix_mount->mount_path != NULL)
