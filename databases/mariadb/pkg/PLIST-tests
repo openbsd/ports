@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.34 2018/11/24 08:54:46 landry Exp $
+@comment $OpenBSD: PLIST-tests,v 1.35 2019/02/10 21:23:00 sthen Exp $
 @conflict mysql-client-*
 @pkgpath databases/mysql,-tests
 @bin bin/mysql_client_test
@@ -4428,6 +4428,7 @@ share/mysql-test/suite/innodb/include/innodb_stats.inc
 share/mysql-test/suite/innodb/include/restart_and_reinit.inc
 share/mysql-test/suite/innodb/r/
 share/mysql-test/suite/innodb/r/add_constraint.result
+share/mysql-test/suite/innodb/r/alter_candidate_key.result
 share/mysql-test/suite/innodb/r/alter_inplace_perfschema.result
 share/mysql-test/suite/innodb/r/alter_key_block_size-11757.result
 share/mysql-test/suite/innodb/r/alter_partitioned_xa.result
@@ -4514,6 +4515,7 @@ share/mysql-test/suite/innodb/r/innodb-wl5522.result
 share/mysql-test/suite/innodb/r/innodb-wl5980-alter.result
 share/mysql-test/suite/innodb/r/innodb-xa.result
 share/mysql-test/suite/innodb/r/innodb.result
+share/mysql-test/suite/innodb/r/innodb_28867993.result
 share/mysql-test/suite/innodb/r/innodb_autoinc_lock_mode_zero.result
 share/mysql-test/suite/innodb/r/innodb_blob_unrecoverable_crash.result
 share/mysql-test/suite/innodb/r/innodb_bug11754376.result
@@ -4631,6 +4633,7 @@ share/mysql-test/suite/innodb/r/undo_log.result
 share/mysql-test/suite/innodb/r/xa_recovery.result
 share/mysql-test/suite/innodb/t/
 share/mysql-test/suite/innodb/t/add_constraint.test
+share/mysql-test/suite/innodb/t/alter_candidate_key.test
 share/mysql-test/suite/innodb/t/alter_inplace_perfschema.opt
 share/mysql-test/suite/innodb/t/alter_inplace_perfschema.test
 share/mysql-test/suite/innodb/t/alter_key_block_size-11757.test
@@ -4744,6 +4747,7 @@ share/mysql-test/suite/innodb/t/innodb-wl5980-alter.opt
 share/mysql-test/suite/innodb/t/innodb-wl5980-alter.test
 share/mysql-test/suite/innodb/t/innodb-xa.test
 share/mysql-test/suite/innodb/t/innodb.test
+share/mysql-test/suite/innodb/t/innodb_28867993.test
 share/mysql-test/suite/innodb/t/innodb_autoinc_lock_mode_zero-master.opt
 share/mysql-test/suite/innodb/t/innodb_autoinc_lock_mode_zero.test
 share/mysql-test/suite/innodb/t/innodb_blob_unrecoverable_crash.test
@@ -6860,6 +6864,8 @@ share/mysql-test/suite/roles/drop_routines.result
 share/mysql-test/suite/roles/drop_routines.test
 share/mysql-test/suite/roles/flush_roles-12366.result
 share/mysql-test/suite/roles/flush_roles-12366.test
+share/mysql-test/suite/roles/flush_roles-17898.result
+share/mysql-test/suite/roles/flush_roles-17898.test
 share/mysql-test/suite/roles/grant-5771.result
 share/mysql-test/suite/roles/grant-5771.test
 share/mysql-test/suite/roles/grant_empty.result
@@ -7190,6 +7196,8 @@ share/mysql-test/suite/rpl/r/rpl_row_basic_11bugs.result
 share/mysql-test/suite/rpl/r/rpl_row_basic_2myisam.result
 share/mysql-test/suite/rpl/r/rpl_row_basic_3innodb.result
 share/mysql-test/suite/rpl/r/rpl_row_basic_8partition.result
+share/mysql-test/suite/rpl/r/rpl_row_big_table_id_32bit.result
+share/mysql-test/suite/rpl/r/rpl_row_big_table_id_64bit.result
 share/mysql-test/suite/rpl/r/rpl_row_binlog_max_cache_size.result
 share/mysql-test/suite/rpl/r/rpl_row_blob_innodb.result
 share/mysql-test/suite/rpl/r/rpl_row_blob_myisam.result
@@ -7692,6 +7700,9 @@ share/mysql-test/suite/rpl/t/rpl_row_basic_11bugs.test
 share/mysql-test/suite/rpl/t/rpl_row_basic_2myisam.test
 share/mysql-test/suite/rpl/t/rpl_row_basic_3innodb.test
 share/mysql-test/suite/rpl/t/rpl_row_basic_8partition.test
+share/mysql-test/suite/rpl/t/rpl_row_big_table_id.inc
+share/mysql-test/suite/rpl/t/rpl_row_big_table_id_32bit.test
+share/mysql-test/suite/rpl/t/rpl_row_big_table_id_64bit.test
 share/mysql-test/suite/rpl/t/rpl_row_binlog_max_cache_size.test
 share/mysql-test/suite/rpl/t/rpl_row_blob_innodb.test
 share/mysql-test/suite/rpl/t/rpl_row_blob_myisam.test

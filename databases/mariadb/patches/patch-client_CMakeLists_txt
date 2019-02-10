@@ -1,4 +1,4 @@
-$OpenBSD: patch-client_CMakeLists_txt,v 1.8 2018/11/02 00:19:32 sthen Exp $
+$OpenBSD: patch-client_CMakeLists_txt,v 1.9 2019/02/10 21:23:00 sthen Exp $
 Index: client/CMakeLists.txt
 --- client/CMakeLists.txt.orig
 +++ client/CMakeLists.txt
@@ -15,8 +15,8 @@ Index: client/CMakeLists.txt
  
  MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc COMPONENT Test)
  SET_SOURCE_FILES_PROPERTIES(mysqltest.cc PROPERTIES COMPILE_FLAGS "-DTHREADS")
--TARGET_LINK_LIBRARIES(mysqltest mysqlclient pcre pcreposix)
-+TARGET_LINK_LIBRARIES(mysqltest clientlib libmysql mysys pcre pcreposix ${SSL_LIBRARIES})
+-TARGET_LINK_LIBRARIES(mysqltest mysqlclient pcreposix pcre)
++TARGET_LINK_LIBRARIES(mysqltest clientlib libmysql mysys pcreposix pcre ${SSL_LIBRARIES})
  SET_TARGET_PROPERTIES(mysqltest PROPERTIES ENABLE_EXPORTS TRUE)
  
  

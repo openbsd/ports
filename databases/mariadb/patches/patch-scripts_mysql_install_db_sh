@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.10 2018/08/09 10:58:52 sthen Exp $
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.11 2019/02/10 21:23:00 sthen Exp $
 Index: scripts/mysql_install_db.sh
 --- scripts/mysql_install_db.sh.orig
 +++ scripts/mysql_install_db.sh
@@ -12,7 +12,7 @@ Index: scripts/mysql_install_db.sh
  
  force=0
  in_rpm=0
-@@ -127,6 +128,8 @@ parse_arguments()
+@@ -130,6 +131,8 @@ parse_arguments()
          # as 'user' (crucial e.g. if log-bin=/some_other_path/
          # where a chown of datadir won't help)
          user=`parse_arg "$arg"` ;;
@@ -21,7 +21,7 @@ Index: scripts/mysql_install_db.sh
        --skip-name-resolve) ip_only=1 ;;
        --verbose) verbose=1 ;; # Obsolete
        --rpm) in_rpm=1 ;;
-@@ -401,11 +404,11 @@ do
+@@ -410,11 +413,11 @@ do
    fi
    if test -n "$user"
    then
@@ -36,7 +36,7 @@ Index: scripts/mysql_install_db.sh
        exit 1
      fi
    fi
-@@ -489,10 +492,6 @@ fi
+@@ -498,10 +501,6 @@ fi
  # the screen.
  if test "$cross_bootstrap" -eq 0 && test -z "$srcdir"
  then
@@ -47,7 +47,7 @@ Index: scripts/mysql_install_db.sh
    echo
    echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !"
    echo "To do so, start the server, then issue the following commands:"
-@@ -514,10 +513,7 @@ then
+@@ -523,10 +522,7 @@ then
    then
      echo
      echo "You can start the MariaDB daemon with:"
