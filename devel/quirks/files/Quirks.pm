@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.716 2019/02/08 15:01:08 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.717 2019/02/10 12:24:22 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1147,6 +1147,7 @@ my $obsolete_reason = {
 	'p5-WWW-Google-SiteMap' => 3,
 	'p5-YAML-Perl' => 3,
 	'py-nevow' => 5,
+	'gupnp-ui' => 3,
 };
 
 # reasons for obsolete packages
