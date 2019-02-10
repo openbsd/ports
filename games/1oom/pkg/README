@@ -1,0 +1,37 @@
+$OpenBSD: README,v 1.1.1.1 2019/02/10 14:04:02 bcallah Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Game Files
+==========
+
+To run 1oom, you need the original files of Master of Orion 1. If you
+have a CD version, you can simply copy them to your hard drive. If you
+bought the game on GOG, download its Windows installer and unpack it
+using the innoextract package. You will find the required files in the
+'app' directory.
+
+On the first start, you need to tell 1oom where to find the game files:
+
+	1oom -data /path/to/moo/files/
+
+The location will be remembered for future starts.
+
+Bugfixes and Improvements
+=========================
+
+By default, 1oom tries to recreate the behavior of version 1.3, the last
+official version of the game, including bugs. Bugfixes can be enabled
+with the '-file ${TRUEPREFIX}/share/1oom/fixbugs.pbx' option.
+
+Additional UI features can be enabled with the -uiextra flag, and the UI
+can be scaled using the -uiscale option. Passing a value larger than 1
+displays a larger portion of the map at once than the original game.
+
+AI improvements can be enabled by selecting 'AI:Classic+' when setting
+up a new game. This requires running the game with the uiextra flag.
+
+The package contains several tools to modify the game. For further
+documentation, see the files in ${TRUEPREFIX}/share/doc/1oom.

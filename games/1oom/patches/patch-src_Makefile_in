@@ -1,0 +1,58 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2019/02/10 14:04:02 bcallah Exp $
+
+Make default executable name 1oom.
+And default lbx viewer executable name 1oom_lbxview.
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -93,11 +93,11 @@ bin_PROGRAMS = $(am__EXEEXT_1) $(am__EXEEXT_2) $(am__E
+ 	$(am__EXEEXT_7) $(am__EXEEXT_8)
+ @COMPILE_UICMDLINE_TRUE@am__append_1 = 1oom_cmdline
+ @COMPILE_UICLASSIC_SDL1_TRUE@@COMPILE_UICLASSIC_TRUE@am__append_2 = 1oom_classic_sdl1
+-@COMPILE_UICLASSIC_SDL2_TRUE@@COMPILE_UICLASSIC_TRUE@am__append_3 = 1oom_classic_sdl2
++@COMPILE_UICLASSIC_SDL2_TRUE@@COMPILE_UICLASSIC_TRUE@am__append_3 = 1oom
+ @COMPILE_UICLASSIC_ALLEG4_TRUE@@COMPILE_UICLASSIC_TRUE@am__append_4 = 1oom_classic_alleg4
+ @COMPILE_TOOLS_TRUE@am__append_5 = 1oom_pbxdump 1oom_pbxmake 1oom_gfxconv 1oom_saveconv 1oom_lbxedit
+ @COMPILE_TOOLS_SDL1_TRUE@@COMPILE_TOOLS_TRUE@am__append_6 = 1oom_lbxview_sdl1
+-@COMPILE_TOOLS_SDL2_TRUE@@COMPILE_TOOLS_TRUE@am__append_7 = 1oom_lbxview_sdl2
++@COMPILE_TOOLS_SDL2_TRUE@@COMPILE_TOOLS_TRUE@am__append_7 = 1oom_lbxview
+ @COMPILE_TOOLS_ALLEG4_TRUE@@COMPILE_TOOLS_TRUE@am__append_8 = 1oom_lbxview_alleg4
+ subdir = src
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -111,7 +111,7 @@ CONFIG_CLEAN_FILES =
+ CONFIG_CLEAN_VPATH_FILES =
+ @COMPILE_UICMDLINE_TRUE@am__EXEEXT_1 = 1oom_cmdline$(EXEEXT)
+ @COMPILE_UICLASSIC_SDL1_TRUE@@COMPILE_UICLASSIC_TRUE@am__EXEEXT_2 = 1oom_classic_sdl1$(EXEEXT)
+-@COMPILE_UICLASSIC_SDL2_TRUE@@COMPILE_UICLASSIC_TRUE@am__EXEEXT_3 = 1oom_classic_sdl2$(EXEEXT)
++@COMPILE_UICLASSIC_SDL2_TRUE@@COMPILE_UICLASSIC_TRUE@am__EXEEXT_3 = 1oom$(EXEEXT)
+ @COMPILE_UICLASSIC_ALLEG4_TRUE@@COMPILE_UICLASSIC_TRUE@am__EXEEXT_4 = 1oom_classic_alleg4$(EXEEXT)
+ @COMPILE_TOOLS_TRUE@am__EXEEXT_5 = 1oom_pbxdump$(EXEEXT) \
+ @COMPILE_TOOLS_TRUE@	1oom_pbxmake$(EXEEXT) \
+@@ -119,7 +119,7 @@ CONFIG_CLEAN_VPATH_FILES =
+ @COMPILE_TOOLS_TRUE@	1oom_saveconv$(EXEEXT) \
+ @COMPILE_TOOLS_TRUE@	1oom_lbxedit$(EXEEXT)
+ @COMPILE_TOOLS_SDL1_TRUE@@COMPILE_TOOLS_TRUE@am__EXEEXT_6 = 1oom_lbxview_sdl1$(EXEEXT)
+-@COMPILE_TOOLS_SDL2_TRUE@@COMPILE_TOOLS_TRUE@am__EXEEXT_7 = 1oom_lbxview_sdl2$(EXEEXT)
++@COMPILE_TOOLS_SDL2_TRUE@@COMPILE_TOOLS_TRUE@am__EXEEXT_7 = 1oom_lbxview$(EXEEXT)
+ @COMPILE_TOOLS_ALLEG4_TRUE@@COMPILE_TOOLS_TRUE@am__EXEEXT_8 = 1oom_lbxview_alleg4$(EXEEXT)
+ am__installdirs = "$(DESTDIR)$(bindir)"
+ PROGRAMS = $(bin_PROGRAMS)
+@@ -650,7 +650,7 @@ clean-binPROGRAMS:
+ 	@rm -f 1oom_classic_sdl1$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(1oom_classic_sdl1_OBJECTS) $(1oom_classic_sdl1_LDADD) $(LIBS)
+ 
+-1oom_classic_sdl2$(EXEEXT): $(1oom_classic_sdl2_OBJECTS) $(1oom_classic_sdl2_DEPENDENCIES) $(EXTRA_1oom_classic_sdl2_DEPENDENCIES) 
++1oom$(EXEEXT): $(1oom_classic_sdl2_OBJECTS) $(1oom_classic_sdl2_DEPENDENCIES) $(EXTRA_1oom_classic_sdl2_DEPENDENCIES) 
+ 	@rm -f 1oom_classic_sdl2$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(1oom_classic_sdl2_OBJECTS) $(1oom_classic_sdl2_LDADD) $(LIBS)
+ 
+@@ -674,7 +674,7 @@ clean-binPROGRAMS:
+ 	@rm -f 1oom_lbxview_sdl1$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(1oom_lbxview_sdl1_OBJECTS) $(1oom_lbxview_sdl1_LDADD) $(LIBS)
+ 
+-1oom_lbxview_sdl2$(EXEEXT): $(1oom_lbxview_sdl2_OBJECTS) $(1oom_lbxview_sdl2_DEPENDENCIES) $(EXTRA_1oom_lbxview_sdl2_DEPENDENCIES) 
++1oom_lbxview$(EXEEXT): $(1oom_lbxview_sdl2_OBJECTS) $(1oom_lbxview_sdl2_DEPENDENCIES) $(EXTRA_1oom_lbxview_sdl2_DEPENDENCIES) 
+ 	@rm -f 1oom_lbxview_sdl2$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(1oom_lbxview_sdl2_OBJECTS) $(1oom_lbxview_sdl2_LDADD) $(LIBS)
+ 

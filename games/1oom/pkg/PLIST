@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/10 14:04:02 bcallah Exp $
+@bin bin/1oom
+@bin bin/1oom_cmdline
+@bin bin/1oom_gfxconv
+@bin bin/1oom_lbxedit
+@bin bin/1oom_lbxview
+@bin bin/1oom_pbxdump
+@bin bin/1oom_pbxmake
+@bin bin/1oom_saveconv
+share/1oom/
+share/1oom/fixbugs.pbx
+share/doc/1oom/
+share/doc/1oom/format_gam.txt
+share/doc/1oom/format_lbx.txt
+share/doc/1oom/format_moo.txt
+share/doc/1oom/format_pbx.txt
+share/doc/1oom/format_save.txt
+share/doc/1oom/lbxmd5.txt
+share/doc/1oom/list_gamediff.txt
+share/doc/1oom/list_pbxnum.txt
+share/doc/1oom/pbxin_example.txt
+share/doc/1oom/pbxin_fixbugs.txt
+share/doc/1oom/usage_classic.txt
+share/doc/1oom/usage_cmdline.txt
+share/doc/1oom/usage_common.txt
+share/doc/1oom/usage_gfxconv.txt
+share/doc/1oom/usage_lbxedit.txt
+share/doc/1oom/usage_lbxview.txt
+share/doc/1oom/usage_pbxdump.txt
+share/doc/1oom/usage_pbxmake.txt
+share/doc/1oom/usage_saveconv.txt
+share/doc/pkg-readmes/${PKGSTEM}
