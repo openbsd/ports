@@ -1,0 +1,18 @@
+$OpenBSD: patch-meson_build,v 1.1 2019/02/10 12:56:05 jasper Exp $
+
+https://github.com/GNOME/gupnp-tools/commit/41feb3168d3870e0d017c248f20cbe85bc5acde7
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -7,8 +7,8 @@ if host_machine.system() == 'windows'
+     win = import('windows')
+ endif
+ 
+-gssdp = dependency('gssdp-1.0', version: '>= 0.13.3')
+-gupnp = dependency('gupnp-1.0', version: '>= 0.20.14')
++gssdp = dependency('gssdp-1.2', version: '>= 1.1')
++gupnp = dependency('gupnp-1.2', version: '>= 1.1')
+ soup = dependency('libsoup-2.4', version: '>= 2.42')
+ gupnp_av = dependency('gupnp-av-1.0', version: '>= 0.5.5', required: false)
+ gtk = dependency('gtk+-3.0', version: '>= 3.10')

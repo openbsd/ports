@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_discover_gssdp-discover_c,v 1.1 2019/02/10 12:56:05 jasper Exp $
+
+https://github.com/GNOME/gupnp-tools/commit/41feb3168d3870e0d017c248f20cbe85bc5acde7
+
+Index: src/discover/gssdp-discover.c
+--- src/discover/gssdp-discover.c.orig
++++ src/discover/gssdp-discover.c
+@@ -102,7 +102,7 @@ int main (int argc, char *argv[]) {
+ 
+         g_option_context_free (context);
+ 
+-        discover.client = gssdp_client_new (NULL, interface, &error);
++        discover.client = gssdp_client_new (interface, &error);
+         if (error != NULL) {
+                 g_warning ("Failed to create GSSDP client: %s", error->message);
+                 g_error_free (error);
