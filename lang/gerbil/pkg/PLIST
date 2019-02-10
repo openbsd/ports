@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/02/03 18:32:50 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/02/10 18:01:30 juanfra Exp $
 gerbil/
 gerbil/CHANGELOG.md
 gerbil/LICENSE-APACHE-2.0.txt
@@ -366,7 +366,6 @@ gerbil/lib/scheme/ilist.ssxi.ss
 @bin gerbil/lib/scheme/ilist__rt.o1
 gerbil/lib/scheme/inexact-impl.ssi
 gerbil/lib/scheme/inexact-impl.ssxi.ss
-@bin gerbil/lib/scheme/inexact-impl__0.o1
 @bin gerbil/lib/scheme/inexact-impl__rt.o1
 gerbil/lib/scheme/inexact.ssi
 gerbil/lib/scheme/inexact.ssxi.ss
