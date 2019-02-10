@@ -1,0 +1,14 @@
+$OpenBSD: patch-Datum_pm,v 1.1 2019/02/10 16:49:32 cwen Exp $
+"defined %hash" is an error in perl 5.22+
+Index: Datum.pm
+--- Datum.pm.orig
++++ Datum.pm
+@@ -315,7 +315,7 @@ sub DTRACE {
+ 		TRC_NOTICE()	=> [\&logsay, undef],
+ 		TRC_INFO()		=> [\&logtrc, 'info'],
+ 		TRC_DEBUG()		=> [\&logtrc, 'debug'],
+-	) unless defined %Carp::Datum::logmap;
++	) unless %Carp::Datum::logmap;
+ 
+ 	my $entry = $Carp::Datum::logmap{$level};
+ 
