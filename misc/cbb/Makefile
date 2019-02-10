@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2014/08/30 21:54:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2019/02/10 15:01:40 sthen Exp $
 
 COMMENT=	checkbook balancing tool
 
 DISTNAME=	cbb-0.73
-REVISION=	6
+REVISION=	7
 CATEGORIES=	misc
 HOMEPAGE=	http://gna.org/projects/cbb/
 MAINTAINER=	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -22,8 +22,6 @@ NO_TEST=	Yes
 PKG_ARCH=	*
 
 pre-configure:
-	@mv ${WRKSRC}/install.pl ${WRKSRC}/install.pl.in
-	@sed -e "s:/usr/local:${PREFIX}:"  -e "s:lib/cbb:share/cbb:" \
-		${WRKSRC}/install.pl.in > ${WRKSRC}/install.pl
+	${SUBST_CMD} ${WRKSRC}/install.pl
 
 .include <bsd.port.mk>

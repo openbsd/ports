@@ -1,7 +1,89 @@
-$OpenBSD: patch-install_pl,v 1.1 2007/07/30 15:30:27 steven Exp $
---- install.pl.orig	Wed May  7 03:17:45 1997
-+++ install.pl	Sat Jul 28 12:55:51 2007
-@@ -500,12 +500,12 @@ if ( ! -e "$dest_libdir/docs/cbb-man/icons" || 
+$OpenBSD: patch-install_pl,v 1.2 2019/02/10 15:01:40 sthen Exp $
+Index: install.pl
+--- install.pl.orig
++++ install.pl
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#!/usr/bin/perl
+ #  install.pl - the CBB install utility
+ #              This script installs CBB
+ #
+@@ -26,6 +26,7 @@
+ 
+ package CBB;
+ 
++BEGIN { push @INC, '.'; }
+ require "common.pl";
+ 
+ 
+@@ -100,18 +101,18 @@ $home_base = &file_basename($HOME);
+ $def_perlpath = "";
+ $perlpath = "";
+ 
+-@perl_poss = ("/usr/local/bin/perl", "/usr/bin/perl");
++@perl_poss = ("/usr/bin/perl");
+ 
+ $def_wishpath = "";
+ $wishpath = "";
+ 
+-@wish_poss = ("/usr/local/bin/wish4.2", "/usr/bin/wish4.2", 
+-	      "/usr/bin/X11/wish4.2", "/usr/local/bin/wish4.1", 
++@wish_poss = ("${LOCALBASE}/bin/wish4.2", "/usr/bin/wish4.2", 
++	      "/usr/bin/X11/wish4.2", "${LOCALBASE}/bin/wish4.1", 
+               "/usr/bin/wish4.1",
+-              "/usr/bin/X11/wish4.1", "/usr/local/bin/wish4.0",
++              "/usr/bin/X11/wish4.1", "${LOCALBASE}/bin/wish4.0",
+               "/usr/bin/wish4.0", "/usr/bin/X11/wish4.0",
+               "/usr/bin/wish", "/usr/bin/X11/wish",
+-              "/usr/local/bin/wish");
++              "${LOCALBASE}/bin/wish");
+ 
+ $bindir = "";
+ $libdir = "";
+@@ -122,7 +123,7 @@ $def_bindir = &which("cbb");
+ $pos = rindex($def_bindir, "/");
+ $def_bindir = substr($def_bindir, 0, $pos);
+ if ( $def_bindir eq "" ) {
+-    $def_bindir = "/usr/local/bin";
++    $def_bindir = "${LOCALBASE}/bin";
+ }
+ $def_bindir .= "/";
+ 
+@@ -160,7 +161,7 @@ if ( defined($ENV{"PREFIX"}) ) {
+     $prefix = $ENV{"PREFIX"};
+     print "PREFIX=$prefix\n";
+     $bindir = "$prefix/bin";
+-    $libdir = "$prefix/lib/cbb";
++    $libdir = "$prefix/share/cbb";
+ }
+ 
+ if ( defined($ENV{"DESTDIR"}) ) {
+@@ -200,13 +201,13 @@ while ($arg = shift(@ARGV)) {
+ 
+ if ( defined($prefix) ) {
+     $bindir = "$prefix/bin" if ($bindir eq "");
+-    $libdir = "$prefix/lib/cbb" if ($libdir eq "");
++    $libdir = "$prefix/share/cbb" if ($libdir eq "");
+ 
+     if ( !defined($destdir) ) {
+ 	$destdir = $prefix;
+     }
+     $dest_bindir = "$destdir/bin";
+-    $dest_libdir = "$destdir/lib/cbb";
++    $dest_libdir = "$destdir/share/cbb";
+ }
+ 
+ 
+@@ -375,7 +376,7 @@ if ( substr($tmp, length($tmp) - 1) eq "/" ) {
+     chop($tmp);
+ }
+ 
+-$def_libdir = &file_dirname($tmp) . "lib/cbb/";
++$def_libdir = &file_dirname($tmp) . "share/cbb/";
+ 
+ while ( $libdir eq "" ) {
+     print "Where should the support files be installed? [$def_libdir] ";
+@@ -500,12 +501,12 @@ if ( ! -e "$dest_libdir/docs/cbb-man/icons" || 
  
  print "    Installing to $dest_bindir\n";
  print "    Installing to $dest_libdir\n";
