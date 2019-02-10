@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2019/01/24 16:38:41 jca Exp $
+# $OpenBSD: Makefile,v 1.108 2019/02/10 18:53:49 jca Exp $
 
 COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
@@ -211,3 +211,6 @@ post-install:
 
 .include <bsd.port.mk>
 
+.if ${CHOSEN_COMPILER} == "ports-gcc"
+CXXFLAGS +=	-std=gnu++11
+.endif
