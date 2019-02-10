@@ -1,18 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/11 14:50:55 chrisz Exp $
+# $OpenBSD: Makefile,v 1.2 2019/02/10 18:38:35 jca Exp $
 
-BROKEN =		in preparation for OCaml 4.06
 COMMENT =		OCaml build system
 
 CATEGORIES =		sysutils devel
 
-V =			1.0+beta20
 GH_ACCOUNT =		ocaml
 GH_PROJECT =		dune
-GH_TAGNAME =		${V}
-DISTNAME =		${GH_PROJECT}-${V}
-WRKDIST =		${WRKDIR}/dune-1.0-beta20
-
-PKGNAME =		dune-${V}
+GH_TAGNAME =		1.6.3
 
 HOMEPAGE =		https://github.com/ocaml/dune
 
@@ -30,19 +24,17 @@ BUILD_DEPENDS =		sysutils/findlib
 CONFIGURE_STYLE =	simple
 
 USE_GMAKE =		Yes
-
+MAKE_FLAGS =		DUNE_FLAGS="--display verbose -j ${MAKE_JOBS}"
 ALL_TARGET =		release
 INSTALL_TARGET =	install
-TEST_TARGET =		tests
 
-idir =			${WRKSRC}/_build/install/default
+idir =			${WRKSRC}/_build_bootstrap/install/default
 docdir =		${PREFIX}/share/doc/dune
-
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dune
 	${INSTALL_DATA} \
-		${idir}/doc/jbuilder/{CHANGES,README,LICENSE}.md \
+		${idir}/doc/dune/{CHANGES,README,LICENSE}.md \
 		${PREFIX}/share/doc/dune
 	${INSTALL_MAN} ${idir}/man/man1/* ${PREFIX}/man/man1/
 	${INSTALL_MAN} ${idir}/man/man5/* ${PREFIX}/man/man5/
