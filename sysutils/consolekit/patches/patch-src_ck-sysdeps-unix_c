@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.14 2019/02/10 17:40:28 ajacoutot Exp $
+
+https://github.com/ConsoleKit2/ConsoleKit2/pull/118
+
+Index: src/ck-sysdeps-unix.c
+--- src/ck-sysdeps-unix.c.orig
++++ src/ck-sysdeps-unix.c
+@@ -259,9 +259,15 @@ ck_open_a_console (char *fnam)
+ again:
+ #endif /* __linux__ */
+ 
++/* OpenBSD only allows change-setting ioctls when FWRITE is set on the fd */
++#ifdef __OpenBSD__
++        fd = open (fnam, O_WRONLY | O_NOCTTY);
++#else
+         fd = open (fnam, O_RDONLY | O_NOCTTY);
+         if (fd < 0 && errno == EACCES)
+                 fd = open (fnam, O_WRONLY | O_NOCTTY);
++#endif
++
+ #ifdef __linux__
+ 	if (fd < 0 && errno == EIO) {
+ 		/* Linux can return EIO if the tty is currently closing,
