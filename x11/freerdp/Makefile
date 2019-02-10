@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.35 2018/12/11 11:12:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/02/10 20:47:51 sthen Exp $
 
 # Also:  __sync_fetch_and_add_4 __sync_add_and_fetch_4 __sync_sub_and_fetch_4
 BROKEN-hppa =		undefined reference to __sync_val_compare_and_swap_4
 
-COMMENT =		open source client for Windows Terminal Server
+COMMENT =		client for Microsoft RDP (remote desktop protocol)
 DISTNAME =		freerdp-2.0.0-rc1
 PKGNAME =		freerdp-2.0.0rc1
-REVISION =		2
+REVISION =		3
 CATEGORIES =		x11 net
 
 SHARED_LIBS +=  freerdp-client2           0.0 # 2.0
@@ -37,7 +37,8 @@ LIB_DEPENDS =		devel/libexecinfo \
 			print/cups,-libs \
 			graphics/ffmpeg
 
-CONFIGURE_ARGS +=	-DWITH_CUPS=ON \
+CONFIGURE_ARGS +=	-DBUILD_TESTING=ON \
+			-DWITH_CUPS=ON \
 			-DWITH_DIRECTFB=OFF \
 			-DWITH_GSTREAMER_0_10=OFF \
 			-DWITH_GSTREAMER_1_0=OFF \
@@ -45,8 +46,6 @@ CONFIGURE_ARGS +=	-DWITH_CUPS=ON \
 			-DWITH_PCSC=ON \
 			-DWITH_LIBSYSTEMD=OFF \
 			-DWITH_OSS=OFF
-
-NO_TEST =		Yes
 
 pre-configure:
 	${SUBST_CMD}	${WRKSRC}/winpr/libwinpr/CMakeLists.txt
