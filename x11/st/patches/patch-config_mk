@@ -1,28 +1,19 @@
-$OpenBSD: patch-config_mk,v 1.10 2018/03/17 13:28:39 kn Exp $
+$OpenBSD: patch-config_mk,v 1.11 2019/02/10 21:55:24 feinerer Exp $
 Index: config.mk
 --- config.mk.orig
 +++ config.mk
-@@ -11,17 +11,14 @@ X11INC = /usr/X11R6/include
- X11LIB = /usr/X11R6/lib
+@@ -26,10 +26,10 @@ STCFLAGS = $(INCS) $(STCPPFLAGS) $(CPPFLAGS) $(CFLAGS)
+ STLDFLAGS = $(LIBS) $(LDFLAGS)
  
- # includes and libs
--INCS = -I$(X11INC) \
--       `pkg-config --cflags fontconfig` \
--       `pkg-config --cflags freetype2`
--LIBS = -L$(X11LIB) -lm -lrt -lX11 -lutil -lXft \
--       `pkg-config --libs fontconfig` \
--       `pkg-config --libs freetype2`
-+INCS != pkg-config --cflags fontconfig
-+LIBS = -lm -lX11 -lutil -lXft
-+LIBS +!= pkg-config --libs fontconfig
- 
- # flags
--CPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600
--STCFLAGS = $(INCS) $(CPPFLAGS) $(CFLAGS)
--STLDFLAGS = $(LIBS) $(LDFLAGS)
-+CPPFLAGS = -DVERSION=\"${VERSION}\" -D_XOPEN_SOURCE=600 -D_BSD_SOURCE
-+STCFLAGS += -std=c99 ${INCS} ${CPPFLAGS} ${CFLAGS}
-+STLDFLAGS += ${LIBS} ${LDFLAGS}
+ # OpenBSD:
+-#CPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600 -D_BSD_SOURCE
+-#LIBS = -L$(X11LIB) -lm -lX11 -lutil -lXft \
+-#       `pkg-config --libs fontconfig` \
+-#       `pkg-config --libs freetype2`
++CPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600 -D_BSD_SOURCE
++LIBS = -L$(X11LIB) -lm -lX11 -lutil -lXft \
++       `pkg-config --libs fontconfig` \
++       `pkg-config --libs freetype2`
  
  # compiler and linker
  # CC = c99
