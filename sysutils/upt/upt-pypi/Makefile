@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/28 20:41:51 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2019/02/11 19:02:58 danj Exp $
 
 COMMENT =		PyPI frontend for upt
 
-MODPY_EGG_VERSION =	0.2.1
+MODPY_EGG_VERSION =	0.3
 DISTNAME =		upt-pypi-${MODPY_EGG_VERSION}
 
 HOMEPAGE =		https://framagit.org/upt/upt-pypi
