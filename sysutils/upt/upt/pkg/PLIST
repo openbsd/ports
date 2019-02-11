@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/25 20:55:41 danj Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/02/11 19:02:02 danj Exp $
 bin/upt
 lib/python${MODPY_VERSION}/site-packages/upt/
 lib/python${MODPY_VERSION}/site-packages/upt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -11,10 +11,12 @@ lib/python${MODPY_VERSION}/site-packages/upt-${MODPY_EGG_VERSION}-py${MODPY_VERS
 lib/python${MODPY_VERSION}/site-packages/upt/__init__.py
 lib/python${MODPY_VERSION}/site-packages/upt/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/upt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/upt/${MODPY_PYCACHE}checksum.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt/${MODPY_PYCACHE}licenses.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt/${MODPY_PYCACHE}upt.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/upt/checksum.py
 lib/python${MODPY_VERSION}/site-packages/upt/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/upt/licenses.py
 lib/python${MODPY_VERSION}/site-packages/upt/log.py
@@ -22,9 +24,11 @@ lib/python${MODPY_VERSION}/site-packages/upt/tests/
 lib/python${MODPY_VERSION}/site-packages/upt/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/upt/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/upt/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/upt/tests/${MODPY_PYCACHE}test_checksum.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt/tests/${MODPY_PYCACHE}test_licenses.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt/tests/${MODPY_PYCACHE}test_log.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt/tests/${MODPY_PYCACHE}test_upt.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/upt/tests/test_checksum.py
 lib/python${MODPY_VERSION}/site-packages/upt/tests/test_licenses.py
 lib/python${MODPY_VERSION}/site-packages/upt/tests/test_log.py
 lib/python${MODPY_VERSION}/site-packages/upt/tests/test_upt.py
