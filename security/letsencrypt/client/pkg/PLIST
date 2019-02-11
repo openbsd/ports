@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.21 2018/11/08 18:00:20 sthen Exp $
-@extraunexec rm -rf /var/log/certbot/*
+@comment $OpenBSD: PLIST,v 1.22 2019/02/11 09:41:24 sthen Exp $
+@extraunexec rm -rf /var/log/certbot/* /var/lib/certbot/*
 bin/certbot
 bin/letsencrypt
 lib/python${MODPY_VERSION}/site-packages/certbot/
@@ -237,7 +237,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/util.py
 share/examples/certbot/
 @mode 750
 @sample ${SYSCONFDIR}/letsencrypt/
-@sample ${LOCALSTATEDIR}/db/letsencrypt/
+@sample ${LOCALSTATEDIR}/lib/letsencrypt/
 @sample ${LOCALSTATEDIR}/log/letsencrypt/
 @mode
 share/examples/certbot/cli.ini

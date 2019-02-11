@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/22 00:03:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/02/11 09:41:24 sthen Exp $
 @pkgpath security/py-acme${MODPY_FLAVOR}
 lib/python${MODPY_VERSION}/site-packages/acme/
 lib/python${MODPY_VERSION}/site-packages/acme-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -20,6 +20,7 @@ lib/python${MODPY_VERSION}/site-packages/acme/${MODPY_PYCACHE}errors.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/acme/${MODPY_PYCACHE}errors_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/acme/${MODPY_PYCACHE}fields.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/acme/${MODPY_PYCACHE}fields_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/acme/${MODPY_PYCACHE}jose_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/acme/${MODPY_PYCACHE}jws.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/acme/${MODPY_PYCACHE}jws_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/acme/${MODPY_PYCACHE}magic_typing.${MODPY_PYC_MAGIC_TAG}pyc
@@ -41,6 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/acme/errors.py
 lib/python${MODPY_VERSION}/site-packages/acme/errors_test.py
 lib/python${MODPY_VERSION}/site-packages/acme/fields.py
 lib/python${MODPY_VERSION}/site-packages/acme/fields_test.py
+lib/python${MODPY_VERSION}/site-packages/acme/jose_test.py
 lib/python${MODPY_VERSION}/site-packages/acme/jws.py
 lib/python${MODPY_VERSION}/site-packages/acme/jws_test.py
 lib/python${MODPY_VERSION}/site-packages/acme/magic_typing.py
