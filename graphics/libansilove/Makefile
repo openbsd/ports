@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/01/18 11:36:25 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/02/11 09:48:40 fcambus Exp $
 
 COMMENT =	library for converting ANSI, ASCII, and other formats to PNG
 
-V =		1.1.0
+V =		1.1.1
 DISTNAME =	libansilove-${V}
 
 SHARED_LIBS +=	ansilove	0.0 # 1.1
@@ -24,8 +24,5 @@ LIB_DEPENDS =	graphics/gd
 
 MODULES =	devel/cmake
 NO_TEST =	Yes
-
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/libansilove.3 ${PREFIX}/man/man3
 
 .include <bsd.port.mk>
