@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_common_list_c,v 1.1 2019/02/11 13:07:51 kirby Exp $
+
+Index: src/common/list.c
+--- src/common/list.c.orig
++++ src/common/list.c
+@@ -16,7 +16,6 @@
+     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ ****************************************************************************/
+ #include <stdlib.h>
+-#include <malloc.h>
+ #include "misc.h"
+ #include "list.h"
+ 

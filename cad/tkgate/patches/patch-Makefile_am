@@ -1,0 +1,27 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2019/02/11 13:07:51 kirby Exp $
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -82,21 +82,6 @@ dist-hook:
+ tests:
+ 	cd test/verga;./runtests.sh
+ 
+-#
+-# Make sure the libexec directory has symbolic links to the 'tkgate' and 'verga' executables.
+-#
+-install-exec-hook:
+-	@echo Creating symbolic links in libexec...
+-	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/libexec
+-	dir2=$(DESTDIR)$(bindir) ; \
+-	dir1=$(DESTDIR)$(pkgdatadir)/libexec ; \
+-	$(am__relativize) ; relpath=$$reldir ; \
+-	for p in tkgate verga; do \
+-	   f=`echo "$$p" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
+-	   rm -f $(DESTDIR)$(pkgdatadir)/libexec/$$p; \
+-	   $(LN_S) $$relpath/$$f $(DESTDIR)$(pkgdatadir)/libexec/$$p; \
+-	done
+-#
+ # Copy all the data files we need
+ #
+ install-data-hook:

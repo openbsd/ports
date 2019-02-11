@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2018/06/27 21:03:38 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/02/11 13:07:51 kirby Exp $
 
 COMMENT =		Tcl/Tk based digital circuit editor and simulator
 
-DISTNAME =		tkgate-2.0-rc3
-PKGNAME = 		tkgate-2.0rc3
-REVISION =              1
+DISTNAME =		tkgate-2.1
 
 CATEGORIES =		cad x11
 
@@ -15,16 +13,24 @@ MASTER_SITES =		https://bitbucket.org/starling13/tkgate/downloads/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE SM X11 c iconv m pthread ${MODTK_WANTLIB}
+WANTLIB += ICE SM X11 Xft Xrender c expat fontconfig freetype
+WANTLIB += fribidi glib-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += harfbuzz iconv intl m pango-1.0 pangoft2-1.0 pangoxft-1.0
+WANTLIB += pthread tcl85 tk85 xcb z ${MODTK_WANTLIB}
+
 
 MODULES =		x11/tk
 
-LIB_DEPENDS =		converters/libiconv
-BUILD_DEPENDS = 	${MODTK_BUILD_DEPENDS}
+LIB_DEPENDS =		converters/libiconv \
+			devel/pango
+BUILD_DEPENDS = 	${MODTK_BUILD_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			${MODGNU_AUTOCONF_DEPENDS}
 RUN_DEPENDS = 		${MODTK_RUN_DEPENDS} \
 			devel/desktop-file-utils
 
 SEPARATE_BUILD = 	Yes
+USE_LIBTOOL = 		gnu
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV += 	TKGATE_LIBDIRS="${MODTCL_LIBDIR} ${MODTK_LIBDIR} \
 				${LOCALBASE}/lib ${X11BASE}/lib" \
@@ -32,20 +38,18 @@ CONFIGURE_ENV += 	TKGATE_LIBDIRS="${MODTCL_LIBDIR} ${MODTK_LIBDIR} \
 				${LOCALBASE}/include ${X11BASE}/include" \
 			TKGATE_TCLTK_VERSIONS=${MODTK_VERSION}
 
+AUTOCONF_VERSION = 	2.69
+AUTOMAKE_VERSION = 	1.9
+
 post-extract:
-	rm ${WRKSRC}/src/gmac/luthor.c
-	rm ${WRKSRC}/src/verga/luthor.c
-	rm ${WRKSRC}/src/verga/vgrammar.c
-	rm ${WRKSRC}/src/verga/vgrammar.h
-	rm ${WRKSRC}/src/tkgate/luthor.c
-	rm ${WRKSRC}/src/tkgate/vgrammar.c
-	rm ${WRKSRC}/src/tkgate/vgrammar.h
+	mkdir ${WRKSRC}/m4
+
+do-gen:
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/scripts/parms.tcl ${WRKSRC}/src/tkgate/verilog_out.c
 	${MODTCL_WISH_ADJ} ${WRKSRC}/scripts/tree.tcl
-
-post-install:
-	rm ${PREFIX}/share/tkgate/scripts/parms.tcl.*
 
 .include <bsd.port.mk>
