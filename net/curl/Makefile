@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2019/02/06 18:14:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.141 2019/02/11 20:34:39 naddy Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
@@ -18,7 +18,8 @@ EXTRACT_SUFX=	.tar.xz
 LIB_DEPENDS=	www/nghttp2
 WANTLIB=	c crypto pthread nghttp2 ssl z
 
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=2.69
+CONFIGURE_STYLE=autoconf
 # Beware of circular dependency curl -> brotli -> cmake -> curl
 CONFIGURE_ARGS=	--with-ca-bundle=/etc/ssl/cert.pem \
 		--without-brotli \

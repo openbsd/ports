@@ -1,0 +1,35 @@
+$OpenBSD: patch-m4_curl-compilers_m4,v 1.1 2019/02/11 20:34:39 naddy Exp $
+
+The curl configure script wants to take control of the compiler
+flags for optimization and debugging.  The actual interactions are
+more complex, but the gist is that the flags are stripped from
+CFLAGS, and if --enable-optimize or --enable-debug are specified,
+an approved optimization or debugging flag is added.
+
+Do not strip debugging flags (-g).
+
+Do not override optimization flags in CFLAGS.
+
+Index: m4/curl-compilers.m4
+--- m4/curl-compilers.m4.orig
++++ m4/curl-compilers.m4
+@@ -737,8 +737,8 @@ AC_DEFUN([CURL_SET_COMPILER_DEBUG_OPTS], [
+     tmp_options=""
+     tmp_CFLAGS="$CFLAGS"
+     tmp_CPPFLAGS="$CPPFLAGS"
+-    CURL_VAR_STRIP([tmp_CFLAGS],[$flags_dbg_all])
+-    CURL_VAR_STRIP([tmp_CPPFLAGS],[$flags_dbg_all])
++#   CURL_VAR_STRIP([tmp_CFLAGS],[$flags_dbg_all])
++#   CURL_VAR_STRIP([tmp_CPPFLAGS],[$flags_dbg_all])
+     #
+     if test "$want_debug" = "yes"; then
+       AC_MSG_CHECKING([if compiler accepts debug enabling options])
+@@ -791,7 +791,7 @@ AC_DEFUN([CURL_SET_COMPILER_OPTIMIZE_OPTS], [
+     tmp_options=""
+     tmp_CFLAGS="$CFLAGS"
+     tmp_CPPFLAGS="$CPPFLAGS"
+-    honor_optimize_option="yes"
++    honor_optimize_option="no"
+     #
+     dnl If optimization request setting has not been explicitly specified,
+     dnl it has been derived from the debug setting and initially assumed.
