@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.718 2019/02/10 21:23:43 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.719 2019/02/11 16:50:33 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1319,6 +1319,8 @@ my $cve = {
 	'www/webkitgtk4' => 'webkitgtk4-<2.20.5',
 	'x11/gnome/gdm' => 'gdm-<3.28.3',
 	'x11/rdesktop' => 'rdesktop-<1.8.4',
+	'www/py-django/stable' => 'py-django-<2.1.6',
+	'www/py-django/lts' => 'py-django-lts-<1.11.19',
 };
 # please maintain sort order in above $cve list, future updates need to
 # replace existing entries
