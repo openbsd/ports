@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2018/09/04 12:46:18 espie Exp $
+$OpenBSD: README,v 1.7 2019/02/12 22:19:52 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -28,9 +28,9 @@ to the correct directory:
 
 * Official Snort rules (replace <oinkcode> with yours):
 
-    ftp -o snortrules-snapshot-${V}.tar.gz \
-      https://www.snort.org/rules/snortrules-snapshot-${V}.tar.gz?oinkcode=<oinkcode>
-    tar -C /etc/snort -xzf snortrules-snapshot-${V}.tar.gz rules preproc_rules
+    ftp -o snortrules-snapshot-${RULESV}.tar.gz \
+      https://www.snort.org/rules/snortrules-snapshot-${RULESV}.tar.gz?oinkcode=<oinkcode>
+    tar -C /etc/snort -xzf snortrules-snapshot-${RULESV}.tar.gz rules preproc_rules
 
 * Emerging Threats rules:
 

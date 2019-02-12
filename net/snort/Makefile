@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.100 2018/09/04 12:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.101 2019/02/12 22:19:52 sthen Exp $
 
 COMMENT =		highly flexible sniffer/NIDS
 
-VERSION =		2.9.11.1
-DISTNAME =		snort-${VERSION}
+DISTNAME =		snort-2.9.12
+RULESV =		29120
+SUBST_VARS =		RULESV
 
 CATEGORIES =		net security
 
@@ -14,7 +15,7 @@ MAINTAINER =		Markus Lude <markus.lude@gmx.de>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c crypto daq dnet lzma m nghttp2 pcap pcre pthread z
+WANTLIB =		c crypto daq dnet luajit-5.1 lzma m nghttp2 pcap pcre pthread z
 
 MASTER_SITES =		https://www.snort.org/downloads/snort/
 
@@ -25,6 +26,7 @@ CONFIGURE_ARGS +=	--disable-static-daq \
 
 LIB_DEPENDS =		archivers/xz \
 			devel/pcre \
+			lang/luajit \
 			net/daq \
 			net/libdnet \
 			www/nghttp2
@@ -37,12 +39,8 @@ PREPROC =		decoder.rules preprocessor.rules
 DOCS =			AUTHORS CREDITS README README.* *.pdf TODO USAGE \
 			WISHLIST
 
-V =			${VERSION:S/.//g}
-SUBST_VARS +=		V
-REVISION =		0
-
 pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/etc/snort.conf
+	@cd ${WRKSRC}; ${SUBST_CMD} etc/snort.conf tools/appid_detector_builder.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/snort

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_dynamic-preprocessors_appid_Makefile_in,v 1.1 2019/02/12 22:19:52 sthen Exp $
+
+Index: src/dynamic-preprocessors/appid/Makefile.in
+--- src/dynamic-preprocessors/appid/Makefile.in.orig
++++ src/dynamic-preprocessors/appid/Makefile.in
+@@ -583,7 +583,7 @@ APPID_SOURCES = $(APPID_SRC_DIR)/commonAppMatcher.c \
+ 	$(APPID_SRC_DIR)/util/sfutil.c $(APPID_SRC_DIR)/util/sfutil.h
+ dynamicpreprocessordir = ${libdir}/snort_dynamicpreprocessor
+ dynamicpreprocessor_LTLIBRARIES = libsf_appid_preproc.la
+-libsf_appid_preproc_la_LDFLAGS = -export-dynamic -module @XCCFLAGS@
++libsf_appid_preproc_la_LDFLAGS = -export-dynamic -module -avoid-version @XCCFLAGS@
+ @SO_WITH_STATIC_LIB_FALSE@libsf_appid_preproc_la_LIBADD = $(LUA_LIBS)
+ @SO_WITH_STATIC_LIB_TRUE@libsf_appid_preproc_la_LIBADD = ../libsf_dynamic_preproc.la ../libsf_dynamic_utils.la $(LUA_LIBS)
+ @SO_WITH_STATIC_LIB_FALSE@nodist_libsf_appid_preproc_la_SOURCES = \

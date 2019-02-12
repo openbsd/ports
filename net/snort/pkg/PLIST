@@ -1,16 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.31 2018/09/04 12:46:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.32 2019/02/12 22:19:52 sthen Exp $
 @pkgpath net/snort[,flexresp][,mysql][,prelude][,postgresql]
 @newgroup _snort:557
 @newuser _snort:557:_snort:daemon:Snort Account:/nonexistent:/sbin/nologin
+bin/appid_detector_builder.sh
 @bin bin/snort
 @bin bin/u2boat
+@bin bin/u2openappid
 @bin bin/u2spewfoo
+@bin bin/u2streamer
 lib/pkgconfig/snort.pc
 lib/snort_dynamicengine/
 lib/snort_dynamicengine/libsf_engine.a
 @comment lib/snort_dynamicengine/libsf_engine.la
 lib/snort_dynamicengine/libsf_engine.so
 lib/snort_dynamicpreprocessor/
+lib/snort_dynamicpreprocessor/libsf_appid_preproc.a
+lib/snort_dynamicpreprocessor/libsf_appid_preproc.la
+lib/snort_dynamicpreprocessor/libsf_appid_preproc.so
 lib/snort_dynamicpreprocessor/libsf_dce2_preproc.a
 @comment lib/snort_dynamicpreprocessor/libsf_dce2_preproc.la
 lib/snort_dynamicpreprocessor/libsf_dce2_preproc.so

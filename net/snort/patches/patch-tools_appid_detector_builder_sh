@@ -1,0 +1,11 @@
+$OpenBSD: patch-tools_appid_detector_builder_sh,v 1.1 2019/02/12 22:19:52 sthen Exp $
+
+Index: tools/appid_detector_builder.sh
+--- tools/appid_detector_builder.sh.orig
++++ tools/appid_detector_builder.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${LOCALBASE}/bin/bash
+ ##
+ ## Copyright (C) 2015 Cisco and/or its affiliates. All rights reserved.
+ ##
