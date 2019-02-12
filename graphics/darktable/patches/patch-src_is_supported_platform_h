@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_is_supported_platform_h,v 1.1 2019/02/12 12:52:01 kirby Exp $
+
+https://github.com/darktable-org/darktable/issues/2093
+
+Index: src/is_supported_platform.h
+--- src/is_supported_platform.h.orig
++++ src/is_supported_platform.h
+@@ -31,7 +31,7 @@
+ #define DT_SUPPORTED_X86 0
+ #endif
+ 
+-#if defined(__aarch64__) && defined(__ARM_64BIT_STATE) && defined(__ARM_ARCH) && defined(__ARM_ARCH_8A)
++#if defined(__aarch64__)
+ #define DT_SUPPORTED_ARMv8A 1
+ #else
+ #define DT_SUPPORTED_ARMv8A 0
