@@ -1,0 +1,12 @@
+With this module one can validate DKIM Signatures in mails and also
+create DKIM signatures for mails.
+
+The main difference to Mail::DKIM is that the validation can be
+done iterative, that is the mail can be streamed into the object
+and if DNS lookups are necessary their results can be added to the
+DKIM object asynchronously. There are no blocking operation or
+waiting for input, everything is directly driven by the user/application
+feeding the DKIM object with data.
+
+This module implements only DKIM according to RFC 6376. It does not
+support the historic DomainKeys standard (RFC 4870).

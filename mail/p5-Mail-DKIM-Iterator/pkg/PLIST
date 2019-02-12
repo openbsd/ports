@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/12 13:17:01 bluhm Exp $
+${P5SITE}/Mail/
+${P5SITE}/Mail/DKIM/
+${P5SITE}/Mail/DKIM/Iterator.pm
+@man man/man3p/Mail::DKIM::Iterator.3p
