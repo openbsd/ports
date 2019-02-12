@@ -1,0 +1,2 @@
+This module provides helper routines for using Sub::Exporter to
+build methods.
