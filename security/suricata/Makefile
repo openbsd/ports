@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2018/09/04 12:46:21 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2019/02/12 09:27:16 gonzalo Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
-DISTNAME =	suricata-4.0.5
+DISTNAME =	suricata-4.1.2
 CATEGORIES =	security
 SHARED_LIBS +=  htp                       0.0 # 2.0
-REVISION =	0
 
 HOMEPAGE =	https://suricata-ids.org/
 
@@ -22,7 +21,8 @@ WANTLIB += pcre plc4 plds4 pthread smime3 ssl3 yaml-0 z
 
 MODULES =	lang/python
 
-BUILD_DEPENDS =	textproc/py-sphinx
+BUILD_DEPENDS = textproc/py-sphinx \
+		textproc/py-yaml
 
 LIB_DEPENDS =	converters/libiconv \
 		devel/jansson \

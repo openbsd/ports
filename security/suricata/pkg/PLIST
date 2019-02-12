@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/09/04 12:46:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/02/12 09:27:16 gonzalo Exp $
+@conflict suricata-update-*
+@pkgpath security/suricata-update
 @newgroup _suricata:800
 @newuser _suricata:800:_suricata:daemon:Suricata Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/suricata
 @bin bin/suricata
+bin/suricata-update
+bin/suricatactl
 bin/suricatasc
 include/htp/
 include/htp/bstr.h
@@ -25,12 +29,107 @@ lib/libhtp.a
 lib/libhtp.la
 @lib lib/libhtp.so.${LIBhtp_VERSION}
 lib/pkgconfig/htp.pc
+lib/python${MODPY_VERSION}/site-packages/suricata/
+lib/python${MODPY_VERSION}/site-packages/suricata-4.1.2-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/suricata/__init__.py
+lib/python${MODPY_VERSION}/site-packages/suricata/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/config/
+lib/python${MODPY_VERSION}/site-packages/suricata/config/__init__.py
+lib/python${MODPY_VERSION}/site-packages/suricata/config/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/config/defaults.py
+lib/python${MODPY_VERSION}/site-packages/suricata/config/defaults.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/ctl/
+lib/python${MODPY_VERSION}/site-packages/suricata/ctl/__init__.py
+lib/python${MODPY_VERSION}/site-packages/suricata/ctl/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/ctl/filestore.py
+lib/python${MODPY_VERSION}/site-packages/suricata/ctl/filestore.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/ctl/loghandler.py
+lib/python${MODPY_VERSION}/site-packages/suricata/ctl/loghandler.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/ctl/main.py
+lib/python${MODPY_VERSION}/site-packages/suricata/ctl/main.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/ctl/test_filestore.py
+lib/python${MODPY_VERSION}/site-packages/suricata/ctl/test_filestore.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/sc/
+lib/python${MODPY_VERSION}/site-packages/suricata/sc/__init__.py
+lib/python${MODPY_VERSION}/site-packages/suricata/sc/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/sc/suricatasc.py
+lib/python${MODPY_VERSION}/site-packages/suricata/sc/suricatasc.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/
+lib/python${MODPY_VERSION}/site-packages/suricata/update/__init__.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/
+lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/__init__.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/addsource.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/addsource.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/disablesource.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/disablesource.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/enablesource.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/enablesource.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/listenabledsources.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/listenabledsources.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/listsources.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/listsources.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/removesource.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/removesource.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/updatesources.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/commands/updatesources.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/compat/
+lib/python${MODPY_VERSION}/site-packages/suricata/update/compat/__init__.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/compat/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/compat/argparse/
+lib/python${MODPY_VERSION}/site-packages/suricata/update/compat/argparse/__init__.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/compat/argparse/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/compat/argparse/argparse.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/compat/argparse/argparse.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/compat/ordereddict.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/compat/ordereddict.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/config.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/config.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/configs/
+lib/python${MODPY_VERSION}/site-packages/suricata/update/configs/__init__.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/configs/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/configs/disable.conf
+lib/python${MODPY_VERSION}/site-packages/suricata/update/configs/drop.conf
+lib/python${MODPY_VERSION}/site-packages/suricata/update/configs/enable.conf
+lib/python${MODPY_VERSION}/site-packages/suricata/update/configs/modify.conf
+lib/python${MODPY_VERSION}/site-packages/suricata/update/configs/threshold.in
+lib/python${MODPY_VERSION}/site-packages/suricata/update/configs/update.yaml
+lib/python${MODPY_VERSION}/site-packages/suricata/update/data/
+lib/python${MODPY_VERSION}/site-packages/suricata/update/data/__init__.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/data/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/data/index.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/data/index.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/data/update.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/data/update.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/engine.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/engine.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/exceptions.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/extract.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/extract.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/loghandler.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/loghandler.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/main.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/main.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/maps.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/maps.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/net.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/net.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/notes.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/notes.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/rule.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/rule.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/sources.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/sources.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/util.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/util.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata/update/version.py
+lib/python${MODPY_VERSION}/site-packages/suricata/update/version.pyc
+lib/python${MODPY_VERSION}/site-packages/suricata_update-1.0.3-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/suricatasc/
-lib/python${MODPY_VERSION}/site-packages/suricatasc-0.9-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/suricatasc/__init__.py
 lib/python${MODPY_VERSION}/site-packages/suricatasc/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/suricatasc/suricatasc.py
-lib/python${MODPY_VERSION}/site-packages/suricatasc/suricatasc.pyc
 @man man/man1/suricata.1
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/suricata/
@@ -58,12 +157,15 @@ share/examples/suricata/rules/files.rules
 @sample ${SYSCONFDIR}/suricata/rules/files.rules
 share/examples/suricata/rules/http-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/http-events.rules
+share/examples/suricata/rules/ipsec-events.rules
+share/examples/suricata/rules/kerberos-events.rules
 share/examples/suricata/rules/modbus-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/modbus-events.rules
 share/examples/suricata/rules/nfs-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/nfs-events.rules
 share/examples/suricata/rules/ntp-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/ntp-events.rules
+share/examples/suricata/rules/smb-events.rules
 share/examples/suricata/rules/smtp-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/smtp-events.rules
 share/examples/suricata/rules/stream-events.rules
@@ -79,3 +181,22 @@ share/examples/suricata/threshold.config
 @sample /var/suricata/
 @sample /var/suricata/log/
 @sample /var/log/suricata/
+@owner
+@group
+share/suricata/
+share/suricata/rules/
+share/suricata/rules/app-layer-events.rules
+share/suricata/rules/decoder-events.rules
+share/suricata/rules/dnp3-events.rules
+share/suricata/rules/dns-events.rules
+share/suricata/rules/files.rules
+share/suricata/rules/http-events.rules
+share/suricata/rules/ipsec-events.rules
+share/suricata/rules/kerberos-events.rules
+share/suricata/rules/modbus-events.rules
+share/suricata/rules/nfs-events.rules
+share/suricata/rules/ntp-events.rules
+share/suricata/rules/smb-events.rules
+share/suricata/rules/smtp-events.rules
+share/suricata/rules/stream-events.rules
+share/suricata/rules/tls-events.rules

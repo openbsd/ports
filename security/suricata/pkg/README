@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2018/09/04 12:46:21 espie Exp $
+$OpenBSD: README,v 1.6 2019/02/12 09:27:16 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -36,18 +36,19 @@ every 24h.
 suricata-update
 ---------------
 
-The recommended new way of updating rules is with suricata-update which
-is installed with:
+suricata-update is the recommended way to install and update rules for
+suricata. By default it will download the new rules into
+${VARBASE}/suricata/rules/ .
 
-# pkg_add suricata-update
+Modify ${SYSCONFDIR}/suricata/suricata.yaml like this:
 
-Run `suricata-update` to download and install the new rules into
-${VARBASE}/suricata/rules/ . Next update the suricata configuration
-in ${SYSCONFIDR}/suricata/suricata.yaml to use these rules instead:
+    default-rule-path: ${VARBASE}/suricata/rules/
+    rule-files:
+      - suricata.rules
 
-default-rule-path: ${VARBASE}/suricata/rules/
-rule-files:
-    - suricata.rules
+And restart suricata:
+
+# rcctl restart suricata
 
 Oinkmaster
 ----------
@@ -67,7 +68,8 @@ https://rules.emergingthreats.net/open/suricata/emerging.rules.tar.gz
 
 And you can download as follow:
 
-# cd /etc && oinkmaster -C ${SYSCONFDIR}/oinkmaster.conf -o ${SYSCONFDIR}/suricata/rules
+# cd /etc && oinkmaster -C ${SYSCONFDIR}/oinkmaster.conf \
+	-o ${SYSCONFDIR}/suricata/rules
 
 Inline mode (IPS)
 ==================
