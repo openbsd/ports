@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2018/12/10 19:26:27 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2019/02/12 21:11:40 bcallah Exp $
 
 COMMENT =	tiny embeddable httpd library written in C
-DISTNAME =	libmicrohttpd-0.9.62
+DISTNAME =	libmicrohttpd-0.9.63
 CATEGORIES =	www
 
 SHARED_LIBS +=	microhttpd                0.3 # 61.0
@@ -13,7 +13,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ffi gmp gnutls hogweed iconv idn2 intl nettle p11-kit
-WANTLIB += pthread tasn1 unistring z
+WANTLIB += pthread tasn1 unistring
 
 MASTER_SITES =	${MASTER_SITE_GNU:=libmicrohttpd/}
 
