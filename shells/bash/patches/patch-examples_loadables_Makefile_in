@@ -1,0 +1,14 @@
+$OpenBSD: patch-examples_loadables_Makefile_in,v 1.1 2019/02/12 22:48:42 naddy Exp $
+
+Index: examples/loadables/Makefile.in
+--- examples/loadables/Makefile.in.orig
++++ examples/loadables/Makefile.in
+@@ -76,7 +76,7 @@ INTL_BUILDDIR = ${LIBBUILD}/intl
+ INTL_INC = @INTL_INC@
+ LIBINTL_H = @LIBINTL_H@
+ 
+-CCFLAGS = $(DEFS) $(LOCAL_DEFS) $(LOCAL_CFLAGS) $(CFLAGS)
++CCFLAGS = $(DEFS) $(LOCAL_DEFS) $(LOCAL_CFLAGS) $(CPPFLAGS) $(CFLAGS)
+ 
+ #
+ # These values are generated for configure by ${topdir}/support/shobj-conf.
