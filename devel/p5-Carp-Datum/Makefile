@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/02/10 16:49:32 cwen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/02/12 18:11:31 cwen Exp $
 
 COMMENT=	debugging and tracing ultimate module
 
@@ -6,7 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Carp-Datum-0.1.3
 REVISION=	4
-CATEGORIES=	devel perl5
+CATEGORIES=	devel
 FIX_EXTRACT_PERMISSIONS=	Yes
 
 # Artistic License
