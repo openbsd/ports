@@ -1,11 +1,11 @@
-$OpenBSD: patch-tests_util_CMakeLists_txt,v 1.1.1.1 2018/01/14 21:49:14 sthen Exp $
+$OpenBSD: patch-tests_util_CMakeLists_txt,v 1.2 2019/02/12 02:26:40 jsg Exp $
 
 account for OpenBSD
 
 Index: tests/util/CMakeLists.txt
 --- tests/util/CMakeLists.txt.orig
 +++ tests/util/CMakeLists.txt
-@@ -119,7 +119,7 @@ else()
+@@ -124,7 +124,7 @@ else()
  	)
  endif()
  
@@ -14,8 +14,8 @@ Index: tests/util/CMakeLists.txt
  	# One needs to have at least one hardware driver present, otherwise
  	# there is no point compiling just the dispatcher.
  	if(PIGLIT_BUILD_DMA_BUF_TESTS)
-@@ -158,6 +158,6 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
- 		list(APPEND UTIL_GL_LIBS ${WAYLAND_LIBRARIES})
+@@ -163,6 +163,6 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ 		list(APPEND UTIL_GL_LIBS ${WAYLAND_LDFLAGS})
          endif()
  
 -endif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")

@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_egl_CMakeLists_gl_txt,v 1.1.1.1 2018/01/14 21:49:14 sthen Exp $
+$OpenBSD: patch-tests_egl_CMakeLists_gl_txt,v 1.2 2019/02/12 02:26:40 jsg Exp $
 
 account for OpenBSD
 
@@ -14,7 +14,7 @@ Index: tests/egl/CMakeLists.gl.txt
  	piglit_add_executable (egl-nok-swap-region egl-util.c egl-nok-swap-region.c)
  	target_link_libraries(egl-nok-swap-region pthread ${X11_X11_LIB})
  	piglit_add_executable (egl-nok-texture-from-pixmap egl-util.c egl-nok-texture-from-pixmap.c)
-@@ -33,6 +33,6 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+@@ -35,6 +35,6 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
  	target_link_libraries(egl-invalid-attr pthread)
  	piglit_add_executable (egl-context-priority egl-context-priority.c)
  	target_link_libraries(egl-context-priority pthread)

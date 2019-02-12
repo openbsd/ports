@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/02/12 02:26:40 jsg Exp $
 
 COMMENT =	automated OpenGL and OpenCL testsuite
 ONLY_FOR_ARCHS =	amd64 i386
 
-DISTNAME =	piglit-20180108
-REVISION =	0
+DISTNAME =	piglit-20190208
 
 GH_ACCOUNT =	mesa3d
 GH_PROJECT =	piglit
-GH_COMMIT =	8eefd87ed7a7be9b181bbe7d12a6f6c54921d522
+GH_COMMIT =	5d4935e2378a5f3b950bfcbcb6c396ad7e882952
 
 CATEGORIES =	graphics
 
@@ -18,9 +17,9 @@ CATEGORIES =	graphics
 PERMIT_PACKAGE_CDROM =	No comment on selling by 3Dlabs license
 PERMIT_PACKAGE_FTP =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} EGL GL X11 Xrender c drm drm_intel
+WANTLIB += ${COMPILER_LIBCXX} EGL GL X11 Xrender c drm drm_intel gbm
 WANTLIB += m xcb xcb-dri2 z
-WANTLIB += png waffle-1
+WANTLIB += png16 waffle-1
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -29,10 +28,11 @@ MODULES =		devel/cmake \
 
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
 
-BUILD_DEPENDS =		www/py-mako \
-			graphics/waffle \
-			devel/py-six \
-			math/py-numpy
+RUN_DEPENDS =		devel/py-six \
+			devel/py-subprocess32 \
+			math/py-numpy \
+			www/py-mako
+BUILD_DEPENDS =		${RUN_DEPENDS}
 
 LIB_DEPENDS =		graphics/waffle \
 			graphics/png
