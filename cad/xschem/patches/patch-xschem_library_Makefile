@@ -1,22 +1,26 @@
-$OpenBSD: patch-xschem_library_Makefile,v 1.1.1.1 2019/01/04 20:35:47 kn Exp $
+$OpenBSD: patch-xschem_library_Makefile,v 1.2 2019/02/12 17:17:24 kn Exp $
 
-Remove GNUism from cp.
+Put examples into right place
 
 Index: xschem_library/Makefile
 --- xschem_library/Makefile.orig
 +++ xschem_library/Makefile
-@@ -4,10 +4,10 @@ include ../Makefile.conf
+@@ -5,13 +5,13 @@ all:
+ include ../Makefile.conf
  
  install: FORCE
- 	mkdir -p $(XSHAREDIR)/xschem_library
--	cp -ru mylib $(XSHAREDIR)/xschem_library
--	cp -ru devices $(XSHAREDIR)/xschem_library
--	cp -ru examples $(XSHAREDIR)/xschem_library
--	cp -ru pcb $(XSHAREDIR)/xschem_library
-+	cp -R mylib $(XSHAREDIR)/xschem_library
-+	cp -R devices $(XSHAREDIR)/xschem_library
-+	cp -R examples $(XSHAREDIR)/xschem_library
-+	cp -R pcb $(XSHAREDIR)/xschem_library
+-	$(SCCBOX) mkdir -p $(system_library_dir) $(XDOCDIR)/examples $(XDOCDIR)/pcb
++	$(SCCBOX) mkdir -p $(system_library_dir) $(XEXAMPLESDIR)/pcb
+ 	$(SCCBOX) install -f -d devices/*.sym $(system_library_dir)
+ 	$(SCCBOX) install -f -d devices/*.sch $(system_library_dir)
+-	$(SCCBOX) install -f -d examples/*.sym $(XDOCDIR)/examples
+-	$(SCCBOX) install -f -d examples/*.sch $(XDOCDIR)/examples
+-	$(SCCBOX) install -f -d pcb/*.sym $(XDOCDIR)/pcb
+-	$(SCCBOX) install -f -d pcb/*.sch $(XDOCDIR)/pcb
++	$(SCCBOX) install -f -d examples/*.sym $(XEXAMPLESDIR)
++	$(SCCBOX) install -f -d examples/*.sch $(XEXAMPLESDIR)
++	$(SCCBOX) install -f -d pcb/*.sym $(XEXAMPLESDIR)/pcb
++	$(SCCBOX) install -f -d pcb/*.sch $(XEXAMPLESDIR)/pcb
  
  uninstall: FORCE
- 	rm -rf $(XDOCDIR)/doc
+ 	$(SCCBOX) rm -f $(system_library_dir)/* $(XDOCDIR)/examples/* $(XDOCDIR)/pcb/*
