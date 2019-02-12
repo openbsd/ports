@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/27 00:33:37 jim Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/02/12 18:03:02 cwen Exp $
 ${P5SITE}/MooseX/
 ${P5SITE}/MooseX/Params/
+${P5SITE}/MooseX/Params/Validate/
 ${P5SITE}/MooseX/Params/Validate.pm
+${P5SITE}/MooseX/Params/Validate/Exception/
+${P5SITE}/MooseX/Params/Validate/Exception/ValidationFailedForTypeConstraint.pm
 @man man/man3p/MooseX::Params::Validate.3p
+@man man/man3p/MooseX::Params::Validate::Exception::ValidationFailedForTypeConstraint.3p
