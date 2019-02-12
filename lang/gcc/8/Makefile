@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/02/06 23:09:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/02/12 18:37:17 otto Exp $
 
 BROKEN-i386 = ld: error: cp-demangle.c:(.debug_info+0x30115): has non-ABS relocation R_386_GOTOFF against symbol '.LC60'
 
@@ -13,7 +13,7 @@ DPB_PROPERTIES = parallel
 V = 8.2.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 0
+REVISION = 1
 
 ADASTRAP_LIBC-amd64 = 93.0
 ADASTRAP_LIBM-amd64 = 10.1
