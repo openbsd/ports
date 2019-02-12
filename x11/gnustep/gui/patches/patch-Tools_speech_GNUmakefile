@@ -1,13 +1,18 @@
-$OpenBSD: patch-Tools_speech_GNUmakefile,v 1.3 2016/06/03 11:45:43 sebastia Exp $
+$OpenBSD: patch-Tools_speech_GNUmakefile,v 1.4 2019/02/12 19:16:17 sebastia Exp $
 
---- Tools/speech/GNUmakefile.orig	Sat Aug 15 23:28:10 2009
-+++ Tools/speech/GNUmakefile	Wed May 18 22:18:19 2016
-@@ -25,7 +25,7 @@ GSSpeechServer_INCLUDE_DIRS += -I/usr/local/include/fl
- 	-I../../Headers/Additions
- GSSpeechServer_LIB_DIRS += -L../../Source/$(GNUSTEP_OBJ_DIR) \
- 	-L/usr/local/lib -lgnustep-gui -lflite_cmu_us_kal \
--	-lflite_usenglish -lflite_cmulex -lflite
-+	-lflite_usenglish -lflite_cmulex -lflite -lsndio
- endif
+use register_cmu_us_kal instead of register_cmu_us_kal16
+
+Index: Tools/speech/GNUmakefile
+--- Tools/speech/GNUmakefile.orig
++++ Tools/speech/GNUmakefile
+@@ -21,8 +21,8 @@ GSSpeechServer_OBJC_FILES = \
  
- GSSpeechServer_OBJCFLAGS = -std=c99 -g -Werror
+ 
+ ifeq ($(GSSPEECHENGINE), Flite)
+-FLITE_BASE_LIBS = -lflite_usenglish -lflite_cmulex -lflite
+-FLITE_EXTRA_LIBS = -lflite_cmu_us_kal16
++FLITE_BASE_LIBS = -lflite_usenglish -lflite_cmulex -lflite -lsndio
++FLITE_EXTRA_LIBS = -lflite_cmu_us_kal
+ 
+ GSSpeechServer_OBJC_FILES += FliteSpeechEngine.m
+ GSSpeechServer_INCLUDE_DIRS += -I/usr/local/include/flite -I../../Headers \

@@ -1,8 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.4 2018/01/05 08:00:09 sebastia Exp $
+$OpenBSD: patch-configure_ac,v 1.5 2019/02/12 19:16:17 sebastia Exp $
+
+use register_cmu_us_kal instead of register_cmu_us_kal16
+
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -524,12 +524,17 @@ AC_ARG_ENABLE(speech, 
+@@ -526,17 +526,22 @@ AC_ARG_ENABLE(speech, 
  BUILD_SPEECH=
  
  # has flite, for speech synthesis.
@@ -10,9 +13,17 @@ Index: configure.ac
 +orig_LDFLAGS="${LDFLAGS}"
 +LDFLAGS="-L${TRUEPREFIX}/lib -lsndio"
  AC_CHECK_LIB(flite, new_utterance, have_speech=yes, have_speech=no)
- AC_CHECK_HEADERS(flite/flite.h)
- if test $have_speech = yes -a $enable_speech = yes; then
+ AC_CHECK_HEADERS(flite/flite.h, have_flite=yes, have_flite=no)
+ if test $have_flite = yes -a $have_speech = yes -a $enable_speech = yes; then
     BUILD_SPEECH="speech say"
+-   FLITE_BASE_LIBS="-lflite_usenglish -lflite_cmulex -lflite"
+-   AC_CHECK_LIB(flite_cmu_us_kal16, register_cmu_us_kal16, have_kal16=yes, have_kal16=no, $FLITE_BASE_LIBS)
+-   if test $have_kal16 = no; then
++   FLITE_BASE_LIBS="-lflite_usenglish -lflite_cmulex -lflite -lsndio"
++   AC_CHECK_LIB(flite_cmu_us_kal, register_cmu_us_kal, have_kal=yes, have_kal=no, $FLITE_BASE_LIBS)
++   if test $have_kal = no; then
+       BUILD_SPEECH=
+    fi
  fi
  AC_SUBST(BUILD_SPEECH)
 +CPPFLAGS="${orig_CPPFLAGS}"

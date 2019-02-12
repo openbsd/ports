@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/01/05 08:00:09 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/02/12 19:16:17 sebastia Exp $
 bin/GSSpeechServer
 @bin bin/gclose
 @bin bin/gcloseall
@@ -559,10 +559,14 @@ ${LIBDIR}/Resources/German.lproj/Localizable.strings
 ${LIBDIR}/Resources/Info-gnustep.plist
 ${LIBDIR}/Resources/Italian.lproj/
 ${LIBDIR}/Resources/Italian.lproj/Localizable.strings
+${LIBDIR}/Resources/Japanese.lproj/
+${LIBDIR}/Resources/Japanese.lproj/Localizable.strings
 ${LIBDIR}/Resources/Korean.lproj/
 ${LIBDIR}/Resources/Korean.lproj/Localizable.strings
 ${LIBDIR}/Resources/Lojban.lproj/
 ${LIBDIR}/Resources/Lojban.lproj/Localizable.strings
+${LIBDIR}/Resources/Polish.lproj/
+${LIBDIR}/Resources/Polish.lproj/Localizable.strings
 ${LIBDIR}/Resources/Spanish.lproj/
 ${LIBDIR}/Resources/Spanish.lproj/GSDataLinkPanel.gorm/
 ${LIBDIR}/Resources/Spanish.lproj/GSDataLinkPanel.gorm/data.classes

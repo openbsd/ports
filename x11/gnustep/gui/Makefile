@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.51 2018/11/26 14:17:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.52 2019/02/12 19:16:17 sebastia Exp $
 
 COMMENT=	GNUstep gui library
 
-DISTNAME =	gnustep-gui-0.26.2
-REVISION =	0
+DISTNAME =	gnustep-gui-0.27.0
 
 CATEGORIES=	devel
 
 # needs to follow gnustep-back backend versioning
 # cf. gnustep_backend_bundle() in ${WRKSRC}/Source/NSApplication.m
-SHARED_LIBS =	gnustep-gui 0.28
+SHARED_LIBS =	gnustep-gui 0.29
 
 HOMEPAGE=	http://www.gnustep.org/
 
 WANTLIB += ao aspell cups flite flite_cmu_us_kal flite_cmulex
-WANTLIB += flite_usenglish gif jpeg png sndfile sndio
+WANTLIB += flite_usenglish gif jpeg png16 sndfile sndio
 WANTLIB += ${LIBCXX} tiff c icudata icui18n icuuc z
 
 MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
@@ -36,7 +35,8 @@ AUTOCONF_VERSION = 2.69
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lstdc++ -lm"
-CONFIGURE_ARGS=	--with-x
+CONFIGURE_ARGS=	--with-x \
+		--enable-speech
 
 LIBDIR =	lib/GNUstep/Libraries/gnustep-gui/Versions/${LIBgnustep-gui_VERSION}
 SUBST_VARS +=	LIBDIR
