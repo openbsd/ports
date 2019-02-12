@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.58 2018/09/20 04:29:51 bket Exp $
+# $OpenBSD: Makefile,v 1.59 2019/02/12 21:57:35 juanfra Exp $
 
 COMMENT =		secure webserver
-DISTNAME =		hiawatha-10.8.3
+DISTNAME =		hiawatha-10.8.4
 CATEGORIES =		www net
 
 HOMEPAGE =		https://www.hiawatha-webserver.org/
