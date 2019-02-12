@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.291 2019/01/29 23:40:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.292 2019/02/12 22:56:35 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -7,6 +7,7 @@ PJ_V=		2.8
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
+REVISION=	0
 
 CATEGORIES=	telephony
 
@@ -64,8 +65,8 @@ LIB_DEPENDS-main=	${MODGCC4_CPPLIBDEP} \
 			devel/jansson \
 			graphics/tiff \
 			net/curl \
-			net/radcli \
 			net/libunbound \
+			net/radcli \
 			sysutils/e2fsprogs \
 			telephony/spandsp \
 			textproc/iksemel \
