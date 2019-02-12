@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_cpp_CMakeLists_txt,v 1.3 2018/06/03 14:20:43 jasper Exp $
+$OpenBSD: patch-lib_cpp_CMakeLists_txt,v 1.4 2019/02/12 19:18:41 jasper Exp $
 
 Index: lib/cpp/CMakeLists.txt
 --- lib/cpp/CMakeLists.txt.orig
 +++ lib/cpp/CMakeLists.txt
-@@ -39,7 +39,7 @@ endif (${WITH_STATIC_LIBRARIES} STREQUAL ON)
+@@ -39,7 +39,7 @@ endif (WITH_STATIC_LIBRARIES)
  
  install(FILES mosquittopp.h DESTINATION "${INCLUDEDIR}")
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.7 2019/01/07 18:36:44 jasper Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.8 2019/02/12 19:18:41 jasper Exp $
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
@@ -12,9 +12,9 @@ Index: src/CMakeLists.txt
      elseif(QNX)
          set(MOSQ_LIBS ${MOSQ_LIBS} m socket)
      else(APPLE)
-@@ -156,14 +158,22 @@ if (${WITH_WEBSOCKETS} STREQUAL ON)
- 	endif (${STATIC_WEBSOCKETS} STREQUAL ON)
- endif (${WITH_WEBSOCKETS} STREQUAL ON)
+@@ -156,14 +158,22 @@ if (WITH_WEBSOCKETS)
+ 	endif (STATIC_WEBSOCKETS)
+ endif (WITH_WEBSOCKETS)
  
 +# DCE 1.1 RPC uuid functions
 +include(CheckSymbolExists)
@@ -40,14 +40,12 @@ Index: src/CMakeLists.txt
  
  add_executable(mosquitto ${MOSQ_SRCS})
  target_link_libraries(mosquitto ${MOSQ_LIBS})
-@@ -185,8 +195,8 @@ if (${WITH_TLS} STREQUAL ON)
+@@ -185,6 +195,6 @@ if (WITH_TLS)
  	install(TARGETS mosquitto_passwd RUNTIME DESTINATION "${BINDIR}" LIBRARY DESTINATION "${LIBDIR}")
- endif (${WITH_TLS} STREQUAL ON)
+ endif (WITH_TLS)
  
 -if (UNIX AND NOT APPLE)
 +if (UNIX AND NOT APPLE AND NOT (CMAKE_SYSTEM_NAME MATCHES "OpenBSD"))
  	install(CODE "EXEC_PROGRAM(/sbin/ldconfig)")
 -endif (UNIX AND NOT APPLE)
 +endif (UNIX AND NOT APPLE AND NOT (CMAKE_SYSTEM_NAME MATCHES "OpenBSD"))
- 
- 

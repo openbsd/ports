@@ -1,4 +1,4 @@
-$OpenBSD: patch-mosquitto_conf,v 1.4 2018/06/03 14:20:43 jasper Exp $
+$OpenBSD: patch-mosquitto_conf,v 1.5 2019/02/12 19:18:41 jasper Exp $
 Index: mosquitto.conf
 --- mosquitto.conf.orig
 +++ mosquitto.conf
@@ -20,7 +20,7 @@ Index: mosquitto.conf
  
  # The maximum number of QoS 1 and 2 messages currently inflight per 
  # client.
-@@ -157,7 +157,7 @@
+@@ -170,7 +170,7 @@
  # given, the default listener will not be bound to a specific 
  # address and so will be accessible to all network interfaces.
  # bind_address ip-address/host name
@@ -29,7 +29,7 @@ Index: mosquitto.conf
  
  # Port to use for the default listener.
  #port 1883
-@@ -494,7 +494,7 @@
+@@ -507,7 +507,7 @@
  # Note that if the broker is running as a Windows service it will default to
  # "log_dest none" and neither stdout nor stderr logging is available.
  # Use "log_dest none" if you wish to disable logging.
