@@ -1,21 +1,22 @@
-$OpenBSD: patch-dwm_1,v 1.2 2016/10/24 22:46:54 czarkoff Exp $
---- dwm.1.orig	Wed Nov 11 09:50:32 2015
-+++ dwm.1	Wed Nov 11 09:51:25 2015
-@@ -57,7 +57,7 @@ click on a tag label adds/removes that tag to/from the
+$OpenBSD: patch-dwm_1,v 1.3 2019/02/12 17:05:03 kn Exp $
+Index: dwm.1
+--- dwm.1.orig
++++ dwm.1
+@@ -58,7 +58,7 @@ click on a tag label adds/removes that tag to/from the
  .TP
  .B Mod1\-Shift\-Return
  Start
 -.BR st(1).
 +.BR xterm (1).
  .TP
- .B Mod1\-,
- Focus previous screen, if any.
-@@ -151,7 +151,7 @@ dwm is customized by creating a custom config.h and (r
+ .B Mod1\-p
+ Spawn
+@@ -157,7 +157,7 @@ dwm is customized by creating a custom config.h and (r
  code. This keeps it fast, secure and simple.
  .SH SEE ALSO
  .BR dmenu (1),
 -.BR st (1)
 +.BR xterm (1)
- .SH BUGS
+ .SH ISSUES
  Java applications which use the XToolkit/XAWT backend may draw grey windows
  only. The XToolkit/XAWT backend breaks ICCCM-compliance in recent JDK 1.5 and early

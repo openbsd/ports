@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2019/02/05 20:02:29 kn Exp $
+# $OpenBSD: Makefile,v 1.32 2019/02/12 17:05:03 kn Exp $
 
 COMMENT=		dynamic window manager
 
-V=			6.1
+V=			6.2
 DISTNAME=		dwm-${V}
-REVISION=		3
 
 CATEGORIES=		x11
 
