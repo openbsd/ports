@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/06 09:32:21 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2019/02/12 18:07:11 solene Exp $
 
 COMMENT =		OpenGL engine for idTech 1 games like doom,hexen,heretic...
 
 V =			3.7.1
 PKGNAME =		gzdoom-${V}
 DISTNAME =		gzdoom-src-g${V}
+REVISION =		0
 
 CATEGORIES=		games
 
