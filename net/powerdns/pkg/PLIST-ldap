@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-ldap,v 1.4 2019/02/12 08:10:12 otto Exp $
+@bin bin/zone2ldap
+lib/pdns/libldapbackend.so
+@man man/man1/zone2ldap.1
+share/doc/pdns/dnsdomain2.schema
+share/doc/pdns/pdns-domaininfo.schema

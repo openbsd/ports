@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.68 2019/02/08 20:08:57 otto Exp $
+# $OpenBSD: Makefile,v 1.69 2019/02/12 08:10:12 otto Exp $
 
 COMMENT-main=		modular authoritative nameserver (with database support)
 COMMENT-mysql=		MySQL database access module for PowerDNS
 COMMENT-pgsql=		PostgreSQL database access module for PowerDNS
+COMMENT-ldap=		LDAP database access module for PowerDNS
 
 V=			4.1.6
 DISTNAME=		pdns-${V}
@@ -11,15 +12,17 @@ PKGNAME-main=		powerdns-${V}
 PKGSPEC-main=		powerdns-=${V}
 PKGNAME-mysql=		powerdns-mysql-${V}
 PKGNAME-pgsql=		powerdns-pgsql-${V}
+PKGNAME-ldap=		powerdns-ldap-${V}
 REVISION-main=		1
 REVISION-mysql=		1
 REVISION-pgsql=		1
+REVISION-ldap=		1
 
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.powerdns.com/
 
-MULTI_PACKAGES=		-main -mysql -pgsql
+MULTI_PACKAGES=		-main -mysql -pgsql -ldap
 
 # GPLv2 only, OpenSSL exemption
 PERMIT_PACKAGE_CDROM=	Yes
@@ -41,7 +44,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/boost \
 			security/libsodium
 
-PSEUDO_FLAVORS+=	no_mysql no_pgsql
+PSEUDO_FLAVORS+=	no_mysql no_pgsql no_ldap
 FLAVOR?=
 
 BACKENDS=		gsqlite3
@@ -87,6 +90,22 @@ LIB_DEPENDS-pgsql=	${LIB_DEPENDS} \
 			databases/postgresql,-main
 RUN_DEPENDS-pgsql=	net/powerdns
 WANTLIB-pgsql=		${WANTLIB} crypto pq>=2 ssl
+
+# LDAP
+.if ${BUILD_PACKAGES:M-ldap}
+BACKENDS+=		ldap
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/heimdal/include" \
+			KRB5_LIBS="-L${LOCALBASE}/heimdal/lib -lkrb5"
+.endif
+LIB_DEPENDS-ldap=	${LIB_DEPENDS} \
+			databases/openldap,-main \
+			security/heimdal,-libs
+RUN_DEPENDS-ldap=	net/powerdns
+WANTLIB-ldap=		${WANTLIB} ldap_r
+WANTLIB-ldap+=          c com_err crypto lber-2.4 ldap_r-2.4 sasl2 ssl util
+WANTLIB-ldap+=          heimdal/lib/asn1 heimdal/lib/hcrypto heimdal/lib/heimbase
+WANTLIB-ldap+=          heimdal/lib/heimsqlite heimdal/lib/hx509 heimdal/lib/krb5
+WANTLIB-ldap+=          heimdal/lib/roken heimdal/lib/wind
 
 EXAMPLE_DIR=		${PREFIX}/share/examples/pdns/
 

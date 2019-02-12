@@ -1,0 +1,7 @@
+The PowerDNS daemon is a versatile nameserver which supports
+a large number of backends. These backends can either be plain
+zonefiles or be more dynamic in nature. Additionally, through
+use of clever programming techniques, PowerDNS offers very high
+domain resolution performance.
+
+This package contains the LDAP backend.
