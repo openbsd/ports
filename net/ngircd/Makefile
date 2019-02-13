@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2018/01/11 19:27:07 rpe Exp $
+# $OpenBSD: Makefile,v 1.17 2019/02/13 16:09:40 tsg Exp $
 
 COMMENT =	lightweight irc server
 
-DISTNAME =	ngircd-24
-REVISION =	0
+DISTNAME =	ngircd-25
 
 CATEGORIES =	net
 
-HOMEPAGE =	http://ngircd.barton.de/
+HOMEPAGE =	https://ngircd.barton.de/
 
 MAINTAINER =	Giannis Tsaraias <tsg@openbsd.org>
 

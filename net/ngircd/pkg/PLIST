@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/04/28 13:35:46 tsg Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/02/13 16:09:40 tsg Exp $
 @newgroup _ngircd:703
 @newuser _ngircd:703:703:daemon:ngircd account:/var/ngircd:/sbin/nologin
+@rcscript ${RCDIR}/ngircd
 @man man/man5/ngircd.conf.5
 @man man/man8/ngircd.8
 @bin sbin/ngircd
@@ -37,7 +38,3 @@ share/examples/ngircd/sample-ngircd.conf
 @sample ${SYSCONFDIR}/ngircd.conf
 @mode 700
 @sample /var/ngircd/
-@mode
-@owner
-@group
-@rcscript ${RCDIR}/ngircd

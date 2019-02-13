@@ -1,6 +1,7 @@
-$OpenBSD: patch-doc_sample-ngircd_conf_tmpl,v 1.4 2014/12/03 10:32:18 jasper Exp $
---- doc/sample-ngircd.conf.tmpl.orig	Mon Jul 14 13:26:07 2014
-+++ doc/sample-ngircd.conf.tmpl	Tue Dec  2 20:05:31 2014
+$OpenBSD: patch-doc_sample-ngircd_conf_tmpl,v 1.5 2019/02/13 16:09:40 tsg Exp $
+Index: doc/sample-ngircd.conf.tmpl
+--- doc/sample-ngircd.conf.tmpl.orig
++++ doc/sample-ngircd.conf.tmpl
 @@ -77,14 +77,14 @@
  	# Group ID under which the ngIRCd should run; you can use the name
  	# of the group or the numerical ID. ATTENTION: For this to work the
@@ -18,7 +19,7 @@ $OpenBSD: patch-doc_sample-ngircd_conf_tmpl,v 1.4 2014/12/03 10:32:18 jasper Exp
  
  [Limits]
  	# Define some limits and timeouts for this ngIRCd instance. Default
-@@ -149,7 +149,7 @@
+@@ -155,7 +155,7 @@
  	# binary. By default ngIRCd won't use the chroot() feature.
  	# ATTENTION: For this to work the server must have been started
  	# with root privileges!
@@ -27,7 +28,7 @@ $OpenBSD: patch-doc_sample-ngircd_conf_tmpl,v 1.4 2014/12/03 10:32:18 jasper Exp
  
  	# Set this hostname for every client instead of the real one.
  	# Use %x to add the hashed value of the original hostname.
-@@ -252,7 +252,7 @@
+@@ -267,7 +267,7 @@
  	# So don't forget to remove the ";" above if this is the case ...
  
  	# SSL Server Key Certificate
@@ -36,8 +37,8 @@ $OpenBSD: patch-doc_sample-ngircd_conf_tmpl,v 1.4 2014/12/03 10:32:18 jasper Exp
  
  	# Select cipher suites allowed for SSL/TLS connections. This defaults
  	# to HIGH:!aNULL:@STRENGTH (OpenSSL) or SECURE128 (GnuTLS).
-@@ -264,10 +264,10 @@
- 	;CipherList = SECURE128
+@@ -279,10 +279,10 @@
+ 	;CipherList = SECURE128:-VERS-SSL3.0
  
  	# Diffie-Hellman parameters
 -	;DHFile = :ETCDIR:/ssl/dhparams.pem

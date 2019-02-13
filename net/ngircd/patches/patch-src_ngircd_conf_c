@@ -1,7 +1,17 @@
-$OpenBSD: patch-src_ngircd_conf_c,v 1.5 2014/12/03 10:32:18 jasper Exp $
---- src/ngircd/conf.c.orig	Fri Aug  1 23:40:50 2014
-+++ src/ngircd/conf.c	Tue Dec  2 20:05:31 2014
-@@ -755,7 +755,7 @@ Set_Defaults(bool InitServers)
+$OpenBSD: patch-src_ngircd_conf_c,v 1.6 2019/02/13 16:09:40 tsg Exp $
+Index: src/ngircd/conf.c
+--- src/ngircd/conf.c.orig
++++ src/ngircd/conf.c
+@@ -388,7 +388,7 @@ Conf_Test( void )
+ 	printf("  MaxConnectionsIP = %d\n", Conf_MaxConnectionsIP);
+ 	printf("  MaxJoins = %d\n", Conf_MaxJoins > 0 ? Conf_MaxJoins : -1);
+ 	printf("  MaxNickLength = %u\n", Conf_MaxNickLength - 1);
+-	printf("  MaxPenaltyTime = %ld\n", Conf_MaxPenaltyTime);
++	printf("  MaxPenaltyTime = %lld\n", (long long)Conf_MaxPenaltyTime);
+ 	printf("  MaxListSize = %d\n", Conf_MaxListSize);
+ 	printf("  PingTimeout = %d\n", Conf_PingTimeout);
+ 	printf("  PongTimeout = %d\n", Conf_PongTimeout);
+@@ -757,7 +757,7 @@ Set_Defaults(bool InitServers)
  	strlcat(Conf_HelpFile, HELP_FILE, sizeof(Conf_HelpFile));
  	strcpy(Conf_ServerPwd, "");
  	strlcpy(Conf_PidFile, PID_FILE, sizeof(Conf_PidFile));
@@ -10,3 +20,23 @@ $OpenBSD: patch-src_ngircd_conf_c,v 1.5 2014/12/03 10:32:18 jasper Exp $
  
  	/* Limits */
  	Conf_ConnectRetry = 60;
+@@ -1644,7 +1644,7 @@ Handle_LIMITS(const char *File, int Line, char *Var, c
+ 		return;
+ 	}
+ 	if (strcasecmp(Var, "MaxPenaltyTime") == 0) {
+-		Conf_MaxPenaltyTime = atol(Arg);
++		Conf_MaxPenaltyTime = atoll(Arg);
+ 		if (Conf_MaxPenaltyTime < -1)
+ 			Conf_MaxPenaltyTime = -1;	/* "unlimited" */
+ 		return;
+@@ -2291,8 +2291,8 @@ Validate_Config(bool Configtest, bool Rehash)
+ 
+ 	if (Conf_MaxPenaltyTime != -1)
+ 		Config_Error(LOG_WARNING,
+-			     "Maximum penalty increase ('MaxPenaltyTime') is set to %ld, this is not recommended!",
+-			     Conf_MaxPenaltyTime);
++			     "Maximum penalty increase ('MaxPenaltyTime') is set to %lld, this is not recommended!",
++			     (long long)Conf_MaxPenaltyTime);
+ 
+ #ifdef DEBUG
+ 	servers = servers_once = 0;
