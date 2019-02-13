@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2018/11/13 22:31:03 jcs Exp $
+# $OpenBSD: Makefile,v 1.5 2019/02/13 13:20:54 jca Exp $
+
+BROKEN =	does not build with LLVM 7
 
 # Hopefully ${CLANG_ARCHS} at some point.
 ONLY_FOR_ARCHS=	amd64
