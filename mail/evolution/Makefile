@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.301 2019/02/04 17:00:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.302 2019/02/13 12:16:36 ajacoutot Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		3.30.5
+REVISION=		0
 
 CATEGORIES=		mail
 
@@ -65,6 +66,6 @@ CONFIGURE_ARGS=		-DWITH_BOGOFILTER="${LOCALBASE}/bin/bogofilter" \
 			-DWITH_SPAMASSASSIN="${LOCALBASE}/bin/spamassassin" \
 			-DWITH_OPENLDAP=${LOCALBASE} \
 			-DVERSION_SUBSTRING=" (OpenBSD Ports)" \
-			-DCMAKE_C_FLAGS="-I${LOCALBASE}/include"
+			-DCMAKE_C_FLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include"
 
 .include <bsd.port.mk>
