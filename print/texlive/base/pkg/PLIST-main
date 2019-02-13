@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2019/01/24 16:38:41 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2019/02/13 18:14:12 edd Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
@@ -322,7 +322,6 @@ bin/splitindex
 bin/srcredact
 bin/sty2dtx
 bin/svn-multi
-@bin bin/synctex
 @bin bin/t1dotlessj
 @bin bin/t1lint
 @bin bin/t1rawafm
@@ -409,10 +408,6 @@ bin/yplan
 include/ptexenc/
 include/ptexenc/ptexenc.h
 include/ptexenc/unicode.h
-include/synctex/
-include/synctex/synctex_parser.h
-include/synctex/synctex_parser_utils.h
-include/synctex/synctex_version.h
 include/texlua52/
 include/texlua52/lauxlib.h
 include/texlua52/lua.h
@@ -428,9 +423,6 @@ include/texlua53/lualib.h
 lib/libptexenc.a
 lib/libptexenc.la
 @lib lib/libptexenc.so.${LIBptexenc_VERSION}
-lib/libsynctex.a
-lib/libsynctex.la
-@lib lib/libsynctex.so.${LIBsynctex_VERSION}
 lib/libtexlua52.a
 lib/libtexlua52.la
 @lib lib/libtexlua52.so.${LIBtexlua52_VERSION}
@@ -438,7 +430,6 @@ lib/libtexlua53.a
 lib/libtexlua53.la
 @lib lib/libtexlua53.so.${LIBtexlua53_VERSION}
 lib/pkgconfig/ptexenc.pc
-lib/pkgconfig/synctex.pc
 lib/pkgconfig/texlua52.pc
 @tag mktexlsr
 @unexec-delete rm -f %D/share/texmf-dist/ls-R

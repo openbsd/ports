@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.108 2019/02/10 18:53:49 jca Exp $
+# $OpenBSD: Makefile,v 1.109 2019/02/13 18:14:12 edd Exp $
 
 COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
+COMMENT-synctex =	synctex for TeXLive typesetting distribution
 
 DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
 
-REVISION-main =		0
+REVISION-main =		1
 
-MULTI_PACKAGES = -main -mktexlsr
+MULTI_PACKAGES =	-main -mktexlsr -synctex
 PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
 PKGNAME-main =		${PKGNAME}
+PKGNAME-synctex =	texlive_synctex-${V}
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
@@ -27,13 +29,14 @@ WANTLIB-main += Xmu Xpm Xrender Xt avahi-client avahi-common c cairo
 WANTLIB-main += cups cupsimage dbus-1 expat ffi fontconfig freetype
 WANTLIB-main += gd glib-2.0 gmp gnutls graphite2 gs harfbuzz harfbuzz-icu
 WANTLIB-main += hogweed iconv icudata icui18n icuio icuuc idn2 ijs
-WANTLIB-main += intl jbig2dec jpeg lcms2 m nettle p11-kit paper pcre
-WANTLIB-main += pixman-1 png potrace tasn1 tiff unistring webp xcb
+WANTLIB-main += intl jbig2dec jpeg lcms2 m nettle p11-kit paper
+WANTLIB-main += pixman-1 png16 potrace tasn1 tiff unistring webp xcb
 WANTLIB-main += xcb-render xcb-shm z zzip
-
 WANTLIB-main += kpathsea
 
 WANTLIB-mktexlsr = c
+
+WANTLIB-synctex = c m z
 
 RUN_DEPENDS-main =	print/ghostscript/gnu \
 			print/detex \
@@ -42,7 +45,8 @@ RUN_DEPENDS-main =	print/ghostscript/gnu \
 			print/psutils \
 			print/t1utils \
 			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset \
-			devel/desktop-file-utils
+			devel/desktop-file-utils \
+			${BASE_PKGPATH},-synctex
 
 LIB_DEPENDS-main =	converters/libiconv \
 			graphics/png \

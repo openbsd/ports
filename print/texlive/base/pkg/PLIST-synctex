@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST-synctex,v 1.1 2019/02/13 18:14:12 edd Exp $
+@conflict texlive_base-<2018p1
+@bin bin/synctex
+include/synctex/
+include/synctex/synctex_parser.h
+include/synctex/synctex_parser_utils.h
+include/synctex/synctex_version.h
+lib/libsynctex.a
+lib/libsynctex.la
+@lib lib/libsynctex.so.${LIBsynctex_VERSION}
+lib/pkgconfig/synctex.pc
