@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2019/01/06 13:54:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.167 2019/02/13 18:15:55 edd Exp $
 
 COMMENT=		GNOME document viewer
 
@@ -7,6 +7,8 @@ GNOME_VERSION=		3.30.2
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
+
+REVISION =		0
 
 SHARED_LIBS +=  evdocument3               0.2 # 4.0
 SHARED_LIBS +=  evview3                   0.0 # 3.0
@@ -28,7 +30,7 @@ WANTLIB += gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += iconv intl jpeg lcms2 lzma m openjp2 orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png16 poppler
 WANTLIB += poppler-glib secret-1 tiff xcb xcb-render xcb-shm xml2
-WANTLIB += z aspell enchant-2 gspell-1
+WANTLIB += z aspell enchant-2 gspell-1 synctex
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -44,7 +46,8 @@ LIB_DEPENDS=		multimedia/gstreamer1/plugins-base \
 			print/poppler \
 			textproc/gspell \
 			x11/gnome/libsecret \
-			x11/gtk+3
+			x11/gtk+3 \
+			print/texlive/base,-synctex
 
 RUN_DEPENDS=		archivers/unrar \
 			archivers/unzip \
