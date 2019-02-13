@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.20 2017/06/16 05:48:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.21 2019/02/13 22:18:40 sthen Exp $
 
 COMMENT=		minimalist window manager for the X Window System
 
 DISTNAME=		evilwm-1.1.1
+REVISION=		0
 CATEGORIES=		x11
 
-HOMEPAGE=		http://www.6809.org.uk/evilwm/
+HOMEPAGE=		https://www.6809.org.uk/evilwm/
 
 # 9wm license
 PERMIT_PACKAGE_CDROM=	Yes
+
 WANTLIB=		X11 Xext Xrandr c
 
 MASTER_SITES=		${HOMEPAGE}
