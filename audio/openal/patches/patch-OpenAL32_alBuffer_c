@@ -1,10 +1,11 @@
-$OpenBSD: patch-OpenAL32_alBuffer_c,v 1.2 2017/11/15 13:02:42 sthen Exp $
+$OpenBSD: patch-OpenAL32_alBuffer_c,v 1.3 2019/02/13 16:10:38 bcallah Exp $
+
 Index: OpenAL32/alBuffer.c
 --- OpenAL32/alBuffer.c.orig
 +++ OpenAL32/alBuffer.c
-@@ -1209,7 +1209,7 @@ static ALboolean DecomposeFormat(ALenum format, enum F
-         { AL_FORMAT_BFORMAT3D_16,      FmtBFormat3D, FmtShort },
-         { AL_FORMAT_BFORMAT3D_FLOAT32, FmtBFormat3D, FmtFloat },
+@@ -1118,7 +1118,7 @@ static ALboolean DecomposeUserFormat(ALenum format, en
+         { AL_FORMAT_BFORMAT3D_FLOAT32, UserFmtBFormat3D, UserFmtFloat },
+         { AL_FORMAT_BFORMAT3D_MULAW,   UserFmtBFormat3D, UserFmtMulaw },
      };
 -    ALuint i;
 +    volatile ALuint i;

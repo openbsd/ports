@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/11/15 13:02:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/02/13 16:10:38 bcallah Exp $
 @bin bin/altonegen
-@bin bin/bsincgen
 @bin bin/makehrtf
 @bin bin/openal-info
 include/AL/
@@ -10,6 +9,10 @@ include/AL/alext.h
 include/AL/efx-creative.h
 include/AL/efx-presets.h
 include/AL/efx.h
+lib/cmake/
+lib/cmake/OpenAL/
+lib/cmake/OpenAL/OpenALConfig-openbsd.cmake
+lib/cmake/OpenAL/OpenALConfig.cmake
 @lib lib/libopenal.so.${LIBopenal_VERSION}
 lib/pkgconfig/openal.pc
 share/examples/openal/
@@ -20,3 +23,11 @@ share/openal/
 share/openal/hrtf/
 share/openal/hrtf/default-44100.mhr
 share/openal/hrtf/default-48000.mhr
+share/openal/presets/
+share/openal/presets/3D7.1.ambdec
+share/openal/presets/hexagon.ambdec
+share/openal/presets/itu5.1-nocenter.ambdec
+share/openal/presets/itu5.1.ambdec
+share/openal/presets/presets.txt
+share/openal/presets/rectangle.ambdec
+share/openal/presets/square.ambdec

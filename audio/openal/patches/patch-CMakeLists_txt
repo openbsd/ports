@@ -1,34 +1,14 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.7 2017/11/15 13:02:42 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.8 2019/02/13 16:10:38 bcallah Exp $
+
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -843,17 +843,14 @@ ENDIF()
- 
- # Check SndIO backend
- OPTION(ALSOFT_REQUIRE_SNDIO "Require SndIO backend" OFF)
--FIND_PACKAGE(SoundIO)
--IF(SOUNDIO_FOUND)
-+FIND_LIBRARY(SNDIOLIB NAMES sndio)
-+IF(NOT SNDIOLIB-NOTFOUND)
-     OPTION(ALSOFT_BACKEND_SNDIO "Enable SndIO backend" ON)
-     IF(ALSOFT_BACKEND_SNDIO)
-         SET(HAVE_SNDIO 1)
-         SET(BACKENDS  "${BACKENDS} SndIO (linked),")
-         SET(ALC_OBJS  ${ALC_OBJS} Alc/backends/sndio.c)
--        SET(EXTRA_LIBS ${SOUNDIO_LIBRARIES} ${EXTRA_LIBS})
--        IF(CMAKE_VERSION VERSION_LESS "2.8.8")
--            INCLUDE_DIRECTORIES(${SOUNDIO_INCLUDE_DIRS})
--        ENDIF()
-+        SET(EXTRA_LIBS ${SNDIOLIB} ${EXTRA_LIBS})
-     ENDIF()
- ENDIF()
- IF(ALSOFT_REQUIRE_SNDIO AND NOT HAVE_SNDIO)
-@@ -1207,7 +1204,7 @@ ENDIF()
+@@ -1536,7 +1536,7 @@ endif()
  # Install alsoft.conf configuration file
  IF(ALSOFT_CONFIG)
      INSTALL(FILES alsoftrc.sample
--            DESTINATION ${SHARE_INSTALL_DIR}/openal
-+            DESTINATION ${SHARE_INSTALL_DIR}/examples/openal
+-            DESTINATION ${CMAKE_INSTALL_DATADIR}/openal
++            DESTINATION ${CMAKE_INSTALL_DATADIR}/examples/openal
      )
      MESSAGE(STATUS "Installing sample configuration")
      MESSAGE(STATUS "")

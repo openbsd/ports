@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.51 2018/08/09 20:50:47 ratchov Exp $
+# $OpenBSD: Makefile,v 1.52 2019/02/13 16:10:38 bcallah Exp $
 
 BROKEN-hppa =	undefined reference to __sync atomic ops
 
 COMMENT =	cross-platform 3D audio API
 
-V =		1.17.2
+V =		1.19.1
 EPOCH =		0
 DISTNAME =	openal-soft-$V
 PKGNAME =	openal-$V
 CATEGORIES =	audio
-SHARED_LIBS =	openal	3.0
-REVISION =	1
+SHARED_LIBS =	openal	3.1
 
 HOMEPAGE =	http://kcat.strangesoft.net/openal.html
 
@@ -19,7 +18,7 @@ MAINTAINER =	David Carlier <devnexen@gmail.com>
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	c m pthread sndio ${COMPILER_LIBCXX}
+WANTLIB +=	c m pthread sndio
 
 MASTER_SITES =	${HOMEPAGE:S,.html,-releases/,}
 EXTRACT_SUFX =	.tar.bz2
@@ -30,6 +29,7 @@ CONFIGURE_ARGS =-DCMAKE_BUILD_TYPE=OpenBSD \
 		-DALSOFT_UTILS=On \
 		-DALSOFT_EXAMPLES=Off \
 		-DALSOFT_REQUIRE_SNDIO=On \
+		-DALSOFT_BACKEND_DSOUND=Off \
 		-DALSOFT_BACKEND_WAVE=Off \
 		-DALSOFT_CPUEXT_SSE=Off \
 		-DALSOFT_CPUEXT_SSE2=Off \
@@ -42,21 +42,16 @@ CONFIGURE_ARGS =-DCMAKE_BUILD_TYPE=OpenBSD \
 		-DCMAKE_DISABLE_FIND_PACKAGE_PortAudio:Bool=Yes \
 		-DCMAKE_DISABLE_FIND_PACKAGE_PulseAudio:Bool=Yes \
 		-DCMAKE_DISABLE_FIND_PACKAGE_QSA:Bool=Yes \
+		-DCMAKE_DISABLE_FIND_PACKAGE_SDL2:Bool=Yes \
 		-DALSOFT_NO_CONFIG_UTIL=On
 
 MODULES =	devel/cmake
 
-COMPILER =		base-clang ports-clang ports-gcc
+COMPILER =	base-clang ports-clang ports-gcc
 
-SEPARATE_BUILD =Yes
 NO_TEST =	Yes
 
 pre-build:
-	@${SUBST_CMD} ${WRKSRC}/Alc/alcConfig.c ${WRKSRC}/alsoftrc.sample
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openal
-	${INSTALL_DATA} ${WRKSRC}/alsoftrc.sample \
-		${PREFIX}/share/examples/openal
+	@${SUBST_CMD} ${WRKSRC}/Alc/alconfig.c ${WRKSRC}/alsoftrc.sample
 
 .include <bsd.port.mk>
