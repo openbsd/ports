@@ -1,0 +1,3 @@
+yabitrot is a bitrot detection utility using the
+Adler-32 checksum algorithm and taking account of
+hardlinks.
