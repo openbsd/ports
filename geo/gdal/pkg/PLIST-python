@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.14 2018/12/28 08:53:59 landry Exp $
+@comment $OpenBSD: PLIST-python,v 1.15 2019/02/13 12:46:42 landry Exp $
 bin/epsg_tr${MODPY_BIN_SUFFIX}.py
 bin/esri2wkt${MODPY_BIN_SUFFIX}.py
 bin/gcps2vec${MODPY_BIN_SUFFIX}.py
@@ -78,3 +78,53 @@ lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}osr.${MODPY_PYC_MAGIC_T
 @man man/man1/ogrmerge${MODPY_BIN_SUFFIX}.1
 @man man/man1/pct2rgb${MODPY_BIN_SUFFIX}.1
 @man man/man1/rgb2pct${MODPY_BIN_SUFFIX}.1
+share/examples/${MODPY_PY_PREFIX}gdal/
+share/examples/${MODPY_PY_PREFIX}gdal/assemblepoly.py
+share/examples/${MODPY_PY_PREFIX}gdal/attachpct.py
+share/examples/${MODPY_PY_PREFIX}gdal/build_jp2_from_xml.py
+share/examples/${MODPY_PY_PREFIX}gdal/classify.py
+share/examples/${MODPY_PY_PREFIX}gdal/crs2crs2grid.py
+share/examples/${MODPY_PY_PREFIX}gdal/densify.py
+share/examples/${MODPY_PY_PREFIX}gdal/dump_jp2.py
+share/examples/${MODPY_PY_PREFIX}gdal/fft.py
+share/examples/${MODPY_PY_PREFIX}gdal/fix_gpkg.py
+share/examples/${MODPY_PY_PREFIX}gdal/gcps2ogr.py
+share/examples/${MODPY_PY_PREFIX}gdal/gdal2grd.py
+share/examples/${MODPY_PY_PREFIX}gdal/gdal_cp.py
+share/examples/${MODPY_PY_PREFIX}gdal/gdal_ls.py
+share/examples/${MODPY_PY_PREFIX}gdal/gdal_lut.py
+share/examples/${MODPY_PY_PREFIX}gdal/gdal_mkdir.py
+share/examples/${MODPY_PY_PREFIX}gdal/gdal_rm.py
+share/examples/${MODPY_PY_PREFIX}gdal/gdal_rmdir.py
+share/examples/${MODPY_PY_PREFIX}gdal/gdal_vrtmerge.py
+share/examples/${MODPY_PY_PREFIX}gdal/gdal_zip.py
+share/examples/${MODPY_PY_PREFIX}gdal/gdalcopyproj.py
+share/examples/${MODPY_PY_PREFIX}gdal/gdalfilter.py
+share/examples/${MODPY_PY_PREFIX}gdal/gdalinfo.py
+share/examples/${MODPY_PY_PREFIX}gdal/gdalpythonserver.py
+share/examples/${MODPY_PY_PREFIX}gdal/get_soundg.py
+share/examples/${MODPY_PY_PREFIX}gdal/histrep.py
+share/examples/${MODPY_PY_PREFIX}gdal/hsv_merge.py
+share/examples/${MODPY_PY_PREFIX}gdal/jpeg_in_tiff_extract.py
+share/examples/${MODPY_PY_PREFIX}gdal/load2odbc.py
+share/examples/${MODPY_PY_PREFIX}gdal/loslas2ntv2.py
+share/examples/${MODPY_PY_PREFIX}gdal/magphase.py
+share/examples/${MODPY_PY_PREFIX}gdal/make_fuzzer_friendly_archive.py
+share/examples/${MODPY_PY_PREFIX}gdal/ogr2ogr.py
+share/examples/${MODPY_PY_PREFIX}gdal/ogr2vrt.py
+share/examples/${MODPY_PY_PREFIX}gdal/ogr_build_junction_table.py
+share/examples/${MODPY_PY_PREFIX}gdal/ogr_dispatch.py
+share/examples/${MODPY_PY_PREFIX}gdal/ogr_layer_algebra.py
+share/examples/${MODPY_PY_PREFIX}gdal/ogrinfo.py
+share/examples/${MODPY_PY_PREFIX}gdal/ogrupdate.py
+share/examples/${MODPY_PY_PREFIX}gdal/rel.py
+share/examples/${MODPY_PY_PREFIX}gdal/tigerpoly.py
+share/examples/${MODPY_PY_PREFIX}gdal/tolatlong.py
+share/examples/${MODPY_PY_PREFIX}gdal/val_at_coord.py
+share/examples/${MODPY_PY_PREFIX}gdal/val_repl.py
+share/examples/${MODPY_PY_PREFIX}gdal/validate_cloud_optimized_geotiff.py
+share/examples/${MODPY_PY_PREFIX}gdal/validate_gpkg.py
+share/examples/${MODPY_PY_PREFIX}gdal/validate_jp2.py
+share/examples/${MODPY_PY_PREFIX}gdal/vec_tr.py
+share/examples/${MODPY_PY_PREFIX}gdal/vec_tr_spat.py
+share/examples/${MODPY_PY_PREFIX}gdal/wcs_virtds_params.py

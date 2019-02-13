@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2019/01/17 07:57:54 landry Exp $
+# $OpenBSD: Makefile,v 1.74 2019/02/13 12:46:41 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
@@ -15,6 +15,7 @@ FULLPKGNAME-python =	py-${DISTNAME}
 FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
 FULLPKGNAME-perl =	p5-Geo-GDAL-${V}
 FULLPKGPATH-perl =	geo/gdal,-perl
+REVISION-python = 0
 
 SHARED_LIBS =	gdal 34.0 #25.0
 CATEGORIES =	geo devel
@@ -86,7 +87,7 @@ TEST_ENV =		GDAL_DOWNLOAD_TEST_DATA=1 GDAL_RUN_SLOW_TESTS=yes
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_EGG_VERSION =	${V:C/beta.//}
-MODPY_ADJ_FILES =	swig/python/scripts/*.py
+MODPY_ADJ_FILES =	swig/python/scripts/*.py swig/python/samples/*.py
 
 MAKE_FILE =	GNUmakefile
 MAKE_FLAGS =	LIBTOOL_FINISH=:
@@ -142,6 +143,8 @@ post-install:
 .for b in ${PYBINS}
 	mv -f ${PREFIX}/bin/$b.py ${PREFIX}/bin/$b${MODPY_BIN_SUFFIX}.py
 .endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}gdal
+	cp ${WRKSRC}/swig/python/samples/*.py ${PREFIX}/share/examples/${MODPY_PY_PREFIX}gdal
 
 do-test:
 	cd ${WRKSRC}/autotest && env ${TEST_ENV} ${MODPY_BIN} -m pytest
