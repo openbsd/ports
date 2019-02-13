@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_Mail_DMARC_Iterator_pm,v 1.1.1.1 2019/02/13 19:59:05 bluhm Exp $
+
+Remove Prototype mismatch ($) vs none
+
+Index: lib/Mail/DMARC/Iterator.pm
+--- lib/Mail/DMARC/Iterator.pm.orig
++++ lib/Mail/DMARC/Iterator.pm
+@@ -52,7 +52,7 @@ sub import {
+ 
+ 
+ # defined at the end, based on the public suffix module we have installed
+-sub organizational_domain($);
++sub organizational_domain;
+ 
+ sub new {
+     my ($class,%args) = @_;

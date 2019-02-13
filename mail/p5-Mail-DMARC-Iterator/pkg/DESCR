@@ -1,0 +1,11 @@
+This module can be used to validate mails against DMARC policies
+like specified in RFC 7208.  The main difference to Mail::DMARC is
+that it does no blocking operations.  Instead it implements a state
+machine where user input is fed into and instructions what the
+machine wants is returned.  The state machine only wants the data
+from the mail and the result of specific DNS lookups.  With each
+new data fed into the machine it will provide new information what
+it needs next, until it finally has enough input and returns the
+final result.  Because of this design the DMARC policy validation
+can be easily integrated into event-driven programs or coupled with
+a specific DNS resolver.
