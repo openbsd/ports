@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_translations_cpp,v 1.3 2018/12/03 08:43:56 kirby Exp $
+$OpenBSD: patch-src_translations_cpp,v 1.4 2019/02/13 12:24:44 kirby Exp $
 
 Index: src/translations.cpp
 --- src/translations.cpp.orig
 +++ src/translations.cpp
-@@ -190,7 +190,7 @@ void set_language()
+@@ -195,7 +195,7 @@ void set_language()
      auto env = getenv( "LANGUAGE" );
      locale_dir = std::string( FILENAMES["base_path"] + "lang/mo/" + ( env ? env : "none" ) +
                                "/LC_MESSAGES/cataclysm-dda.mo" );

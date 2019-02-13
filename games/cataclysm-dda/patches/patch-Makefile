@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.7 2018/12/03 08:43:56 kirby Exp $
+$OpenBSD: patch-Makefile,v 1.8 2019/02/13 12:24:44 kirby Exp $
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -84,7 +84,6 @@
+@@ -86,7 +86,6 @@
  # RELEASE is flags for release builds, this disables some debugging flags and
  # enforces build failure when warnings are encountered.
  # We want to error on everything to make sure we don't check in code with new warnings.
@@ -11,7 +11,7 @@ Index: Makefile
  WARNINGS = -Wall -Wextra
  # Uncomment below to disable warnings
  #WARNINGS = -w
-@@ -254,7 +253,6 @@ ifdef RELEASE
+@@ -276,7 +275,6 @@ ifdef RELEASE
        OPTLEVEL = -O3
      endif
    endif
@@ -19,16 +19,16 @@ Index: Makefile
  
    ifdef LTO
      LDFLAGS += -fuse-ld=gold
-@@ -295,7 +293,7 @@ endif
+@@ -317,7 +315,7 @@ endif
  ifeq ($(shell sh -c 'uname -o 2>/dev/null || echo not'),Cygwin)
-     OTHERS += -std=gnu++11
-   else
--    OTHERS += -std=c++11
-+    OTHERS += -std=c++11 -I${LOCALBASE}/include
+   OTHERS += -std=gnu++11
+ else
+-  OTHERS += -std=c++11
++  OTHERS += -std=c++11 -I${LOCALBASE}/include
  endif
  
  CXXFLAGS += $(WARNINGS) $(DEBUG) $(DEBUGSYMS) $(PROFILE) $(OTHERS) -MMD -MP
-@@ -440,11 +438,6 @@ ifdef MAPSIZE
+@@ -462,11 +460,6 @@ ifdef MAPSIZE
      CXXFLAGS += -DMAPSIZE=$(MAPSIZE)
  endif
  
@@ -40,7 +40,7 @@ Index: Makefile
  PKG_CONFIG = $(CROSS)pkg-config
  SDL2_CONFIG = $(CROSS)sdl2-config
  
-@@ -754,7 +747,7 @@ ifdef LTO
+@@ -780,7 +773,7 @@ ifdef LTO
    endif
  endif
  
@@ -49,7 +49,7 @@ Index: Makefile
  	@
  
  $(TARGET): $(OBJS)
-@@ -773,7 +766,6 @@ $(BUILD_PREFIX)$(TARGET_NAME).a: $(OBJS)
+@@ -799,7 +792,6 @@ $(BUILD_PREFIX)$(TARGET_NAME).a: $(OBJS)
  .PHONY: version json-verify
  version:
  	@( VERSION_STRING=$(VERSION) ; \
@@ -57,7 +57,7 @@ Index: Makefile
              [ -e "$(SRC_DIR)/version.h" ] && OLDVERSION=$$(grep VERSION $(SRC_DIR)/version.h|cut -d '"' -f2) ; \
              if [ "x$$VERSION_STRING" != "x$$OLDVERSION" ]; then echo "#define VERSION \"$$VERSION_STRING\"" | tee $(SRC_DIR)/version.h ; fi \
           )
-@@ -827,36 +819,36 @@ distclean:
+@@ -853,36 +845,36 @@ distclean:
  bindist: $(BINDIST)
  
  ifeq ($(TARGETSYSTEM), LINUX)
@@ -114,14 +114,14 @@ Index: Makefile
  	mkdir -p $(LOCALE_DIR)
  ifdef LANGUAGES
  	LOCALE_DIR=$(LOCALE_DIR) lang/compile_mo.sh $(LANGUAGES)
-@@ -1029,11 +1021,6 @@ astyle: $(ASTYLED_WHITELIST)
+@@ -1055,11 +1047,6 @@ astyle: $(ASTYLED_WHITELIST)
  astyle-all: $(SOURCES) $(HEADERS) $(TESTSRC) $(TESTHDR) $(TOOLSRC)
  	$(ASTYLE_BINARY) --options=.astylerc -n $(SOURCES) $(HEADERS)
  	$(ASTYLE_BINARY) --options=.astylerc -n $(TESTSRC) $(TESTHDR)
 -
 -# Test whether the system has a version of astyle that supports --dry-run
 -ifeq ($(shell if $(ASTYLE_BINARY) -Q -X --dry-run src/game.h > /dev/null; then echo foo; fi),foo)
--ASTYLE_CHECK=$(shell LC_ALL=C $(ASTYLE_BINARY) --options=.astylerc --dry-run -X -Q $(ASTYLED_WHITELIST))
+-  ASTYLE_CHECK=$(shell LC_ALL=C $(ASTYLE_BINARY) --options=.astylerc --dry-run -X -Q $(ASTYLED_WHITELIST))
 -endif
  
  astyle-check:

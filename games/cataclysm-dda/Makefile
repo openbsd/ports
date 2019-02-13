@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2018/12/03 08:43:56 kirby Exp $
+# $OpenBSD: Makefile,v 1.8 2019/02/13 12:24:44 kirby Exp $
 
 COMMENT=		rogue-like zombie survival game
-DISTNAME=		cataclysm-dda-2018.11.01
+DISTNAME=		cataclysm-dda-2019.02.08
 CATEGORIES=		games
 
 GH_ACCOUNT=		CleverRaven
 GH_PROJECT=		Cataclysm-DDA
-GH_COMMIT=		473c84e270095e8095d5e00d8af8ddba012d9286
+GH_COMMIT=		4fd9499fed5caf477fb9abe0eaf0e76ba0323487
 
 HOMEPAGE=		http://en.cataclysmdda.com
 MAINTAINER=		Tim Meunier <trondd@kagu-tsuchi.com>
@@ -18,7 +18,7 @@ FLAVORS=		no_x11
 FLAVOR?=
 
 WANTLIB=		${COMPILER_LIBCXX} ${MODLUA_WANTLIB} c \
-			iconv intl m pthread
+			execinfo iconv intl m pthread
 
 COMPILER=		base-clang ports-gcc
 
@@ -29,7 +29,8 @@ MODLUA_SA=		Yes
 
 BUILD_DEPENDS=		devel/libexecinfo
 
-LIB_DEPENDS=		devel/gettext
+LIB_DEPENDS=		devel/gettext \
+			devel/libexecinfo
 
 MAKE_ENV=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 

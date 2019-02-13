@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.3 2018/07/03 14:32:48 bcallah Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.4 2019/02/13 12:24:44 kirby Exp $
 @bin bin/cataclysm-tiles
 @man man/man6/cataclysm-tiles.6
 share/cataclysm-dda/gfx/
@@ -46,6 +46,26 @@ share/cataclysm-dda/gfx/HoderTileset/
 share/cataclysm-dda/gfx/HoderTileset/hodertiles.png
 share/cataclysm-dda/gfx/HoderTileset/tile_config.json
 share/cataclysm-dda/gfx/HoderTileset/tileset.txt
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/10_xfiles_32x32_22052-22195.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/11_tiles_kawaiimaidmod_32x32_22196-22291.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/12_tiles_kawaiimaidmod_offset_32x32_22292-22339.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/13_tiles_kawaiimaidmod_64x48-22340-22364.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/14_tiles2_32x32_22365-27564.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/15_tiles-connected_variants_32x32_27565-32764.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/16_tiles_trees_64x80_32765-33165.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/17_top_hats_32x32.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/1_tiles_32x32_0-5199.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/2_expan_32x32_5200-5391.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/3_tree_64x80_5392-5471.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/4_fallback_5472-9567.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/5_tiles_character_customization_32x32_9568-11567.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/6_tiles_wide_monsters_160x128_11568-11603.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/7_expan2_32x32_11604-11651.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/8_tiles-monster-variants_32x32_11652-16851.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/9_tiles-connected_32x32_16852-22051.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/tile_config.json
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/tileset.txt
 share/cataclysm-dda/gfx/MShock24TilesetModded/
 share/cataclysm-dda/gfx/MShock24TilesetModded/fallback.png
 share/cataclysm-dda/gfx/MShock24TilesetModded/tile_config.json
@@ -66,6 +86,7 @@ share/cataclysm-dda/gfx/MshockXotto+/tileset.txt
 share/cataclysm-dda/gfx/MshockXotto+/tree.png
 share/cataclysm-dda/gfx/MshockXotto+/treeO.png
 share/cataclysm-dda/gfx/RetroASCIITileset/
+share/cataclysm-dda/gfx/RetroASCIITileset/fallback.png
 share/cataclysm-dda/gfx/RetroASCIITileset/retroasciitiles.png
 share/cataclysm-dda/gfx/RetroASCIITileset/tile_config.json
 share/cataclysm-dda/gfx/RetroASCIITileset/tileset.txt
@@ -73,6 +94,7 @@ share/cataclysm-dda/gfx/RetroDaysTileset/
 share/cataclysm-dda/gfx/RetroDaysTileset/fallback.png
 share/cataclysm-dda/gfx/RetroDaysTileset/tile_config.json
 share/cataclysm-dda/gfx/RetroDaysTileset/tiles.png
+share/cataclysm-dda/gfx/RetroDaysTileset/tiles_20x20.png
 share/cataclysm-dda/gfx/RetroDaysTileset/tileset.txt
 share/cataclysm-dda/gfx/ThuztorTileset@/
 share/cataclysm-dda/gfx/ThuztorTileset@/thuztortiles@.png
