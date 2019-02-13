@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/10/31 11:19:08 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2019/02/13 07:31:58 solene Exp $
 
 COMMENT =	system monitoring and alert notifier
-DISTNAME =	reed-alert-v1.03
+DISTNAME =	reed-alert-v1.04
 PKGNAME =	${DISTNAME:S/-v/-/}
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	sysutils
