@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/05/19 22:32:59 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/02/14 07:28:27 pvk Exp $
 @conflict py-elasticsearch-curator-*
 bin/curator
 bin/curator_cli
@@ -6,7 +6,7 @@ bin/es_repo_mgr
 lib/python${MODPY_VERSION}/site-packages/curator/
 lib/python${MODPY_VERSION}/site-packages/curator/__init__.py
 lib/python${MODPY_VERSION}/site-packages/curator/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/curator/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/curator/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/curator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
@@ -26,7 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/curator/actions.py
 lib/python${MODPY_VERSION}/site-packages/curator/cli.py
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/__init__.py
-lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}
+lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}alias.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/cli_singletons/${MODPY_PYCACHE}allocation.${MODPY_PYC_MAGIC_TAG}pyc
@@ -60,7 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/curator/config_utils.py
 lib/python${MODPY_VERSION}/site-packages/curator/curator_cli.py
 lib/python${MODPY_VERSION}/site-packages/curator/defaults/
 lib/python${MODPY_VERSION}/site-packages/curator/defaults/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/curator/defaults/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/curator/defaults/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/curator/defaults/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/defaults/${MODPY_PYCACHE}client_defaults.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/defaults/${MODPY_PYCACHE}filter_elements.${MODPY_PYC_MAGIC_TAG}pyc
@@ -81,7 +81,7 @@ lib/python${MODPY_VERSION}/site-packages/curator/snapshotlist.py
 lib/python${MODPY_VERSION}/site-packages/curator/utils.py
 lib/python${MODPY_VERSION}/site-packages/curator/validators/
 lib/python${MODPY_VERSION}/site-packages/curator/validators/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/curator/validators/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/curator/validators/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/curator/validators/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/validators/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/validators/${MODPY_PYCACHE}config_file.${MODPY_PYC_MAGIC_TAG}pyc
