@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2018/11/14 15:26:59 jca Exp $
+# $OpenBSD: Makefile,v 1.37 2019/02/14 12:54:23 jca Exp $
 
 COMMENT =		authoritative DNS server
 
@@ -44,7 +44,9 @@ CONFIGURE_ARGS +=	--with-storage=${LOCALSTATEDIR}/db/knot \
 CONFIGURE_ARGS +=	--enable-fastparser=force
 
 CONFIGURE_ENV =		ac_cv_path_PDFLATEX="false" \
-			ac_cv_path_SPHINXBUILD="false"
+			ac_cv_path_SPHINXBUILD="false" \
+			CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
 .if ${MACHINE_ARCH} == "i386"
 CFLAGS += -march=i586
