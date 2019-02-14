@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2019/02/14 09:55:40 jca Exp $
+
+Use a fixed location for locale files, getProcessPath() doesn't work on
+OpenBSD.
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -211,7 +211,7 @@ if( EXIV2_ENABLE_NLS )
+     target_link_libraries(exiv2lib PRIVATE ${Intl_LIBRARIES})
+     target_include_directories(exiv2lib PRIVATE ${Intl_INCLUDE_DIRS})
+     # Definition needed for translations
+-    target_compile_definitions(exiv2lib PUBLIC EXV_LOCALEDIR="/../${CMAKE_INSTALL_LOCALEDIR}")
++    target_compile_definitions(exiv2lib PUBLIC EXV_LOCALEDIR="${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LOCALEDIR}")
+ endif()
+ 
+ if( ICONV_FOUND )

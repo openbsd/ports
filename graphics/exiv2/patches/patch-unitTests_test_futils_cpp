@@ -1,0 +1,25 @@
+$OpenBSD: patch-unitTests_test_futils_cpp,v 1.1 2019/02/14 09:55:40 jca Exp $
+
+getProcessPath() doesn't work on OpenBSD.
+
+Index: unitTests/test_futils.cpp
+--- unitTests/test_futils.cpp.orig
++++ unitTests/test_futils.cpp
+@@ -153,17 +153,3 @@ TEST(AUri, parsesAndDecoreUrl)
+ 
+     Uri::Decode(uri);
+ }
+-
+-TEST(getProcessPath, obtainPathOfUnitTestsExecutable)
+-{
+-#ifdef _WIN32
+-    const std::string expectedName("bin");
+-#else
+-    const std::string expectedName("bin");
+-#endif
+-    const std::string path = getProcessPath();
+-
+-    ASSERT_FALSE(path.empty());
+-    const size_t idxStart = path.size() - expectedName.size();
+-    ASSERT_EQ(expectedName, path.substr(idxStart, expectedName.size()));
+-}

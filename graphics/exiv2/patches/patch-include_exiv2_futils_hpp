@@ -1,0 +1,16 @@
+$OpenBSD: patch-include_exiv2_futils_hpp,v 1.1 2019/02/14 09:55:40 jca Exp $
+
+getProcessPath() doesn't work on OpenBSD, don't export it.
+
+Index: include/exiv2/futils.hpp
+--- include/exiv2/futils.hpp.orig
++++ include/exiv2/futils.hpp
+@@ -176,7 +176,7 @@ namespace Exiv2
+     EXIV2API std::string strError();
+ 
+     //! @brief Return the path of the current process.
+-    EXIV2API std::string getProcessPath();
++    //EXIV2API std::string getProcessPath();
+ 
+     /*!
+       @brief A container for URL components. It also provides the method to parse a
