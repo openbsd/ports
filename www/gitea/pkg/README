@@ -1,18 +1,51 @@
-$OpenBSD: README,v 1.2 2018/09/04 12:46:24 espie Exp $
+$OpenBSD: README,v 1.3 2019/02/14 10:08:53 pvk Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-Gitea can be setup to serve HTTP requests on its own, or can run behind
-HTTP proxy like relayd(8) or nginx(8). Another option is to let OpenBSD
-httpd(8) serve HTTP requests and pass it to Gitea via FastCGI protocol.
+Initial configuration
+=====================
+By default gitea listens on all configured IP addresses, TCP port 3000.
+If this is not wanted behavior, either adjust your pf(4) rules or change
+HTTP_ADDR/HTTP_PORT in ${SYSCONFDIR}/gitea/app.ini.
 
-Example configuration for httpd(8) and Gitea communicating via FastCGI
-======================================================================
+To complete inital configuration, point your browser to
+http://gitea.example.com:3000 and press "Sign In". Usually you'll need to
+configure SSH Server Domain/Port, Gitea HTTP Listen Port/Base URL, E-Mail
+Settings and Administrator Account Settings.
+
+On OpenBSD, initial gitea configuration has the following restrictions:
+
+ - Self-Registration is disabled
+ - Sign-In is required to view the content
+ - E-Mail addresses are not shown
+ - Server runs in "offline" mode, which means that external services such as
+   Gravatar/OpenID are not used
+ - New repositories have "private" checkbox checked by default
+
+Adjust these configuration settings according to your requirements.
+
+Running gitea with PostsgreSQL
+==============================
+If you want to use gitea with PostgreSQL as backend database, please note
+that pq library used by gitea does not support SCRAM authentication yet.
+If your PostgreSQL server uses SCRAM authentication by default, consider making
+an exception for _gitea user by forcing it to use either MD5 or peer
+authentication. Adjust pg_hba.conf accordingly.
+
+Configuring HTTP access
+=======================
+By default gitea serves HTTP requests on its own.
+It can also be configured to run behind HTTP proxy like relayd(8) or nginx(8).
+
+Another option is to let OpenBSD httpd(8) serve HTTP(S) requests and pass it
+to gitea via FastCGI protocol:
+
+Example configuration for httpd(8) and gitea communicating via FastCGI
+----------------------------------------------------------------------
 
 Relevant configuration directives in ${SYSCONFDIR}/httpd.conf:
------------------------------------------------------
 
 	# An HTTPS server using SSL/TLS
 	server "gitea.example.com" {
@@ -20,11 +53,10 @@ Relevant configuration directives in ${SYSCONFDIR}/httpd.conf:
 		tls certificate "/etc/ssl/gitea.example.com.pem"
 		tls key "/etc/ssl/private/gitea.example.com.key"
 		connection { max requests 500, timeout 3600 }
-		location "/*" { fastcgi socket ":10787" }
+		location "*" { fastcgi socket ":10787" }
 	}
 
-Relevant configuration directives in ${SYSCONFDIR}/gitea/conf/app.ini:
--------------------------------------------------------------
+Relevant configuration directives in ${SYSCONFDIR}/gitea/app.ini:
 
 	[server]
 	PROTOCOL               = fcgi
@@ -33,3 +65,8 @@ Relevant configuration directives in ${SYSCONFDIR}/gitea/conf/app.ini:
 	HTTP_ADDR              = 127.0.0.1
 	HTTP_PORT              = 10787
 	LOCAL_ROOT_URL         = https://gitea.example.com/
+
+Customizing gitea
+=================
+For custom public files, templates, gitignores, labels, licenses and READMEs,
+please use ${LOCALSTATEDIR}/gitea/custom directory.

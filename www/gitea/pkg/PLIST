@@ -1,20 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/01/28 11:46:26 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/02/14 10:08:53 pvk Exp $
 @newgroup _gitea:787
-@newuser _gitea:787:_gitea:daemon:Gitea Account:/nonexistent:/sbin/nologin
+@newuser _gitea:787:_gitea:daemon:Gitea Account:/var/gitea:/bin/sh
 @rcscript ${RCDIR}/gitea
 @bin sbin/gitea
 share/doc/pkg-readmes/${PKGSTEM}
 share/gitea/
 share/gitea/conf/
+@mode 750
 @owner _gitea
 @group _gitea
-@sample ${SYSCONFDIR}/gitea/conf/
+@sample ${SYSCONFDIR}/gitea/
+@mode
 @owner
 @group
 share/gitea/conf/app.ini.sample
+@mode 640
 @owner _gitea
 @group _gitea
-@sample ${SYSCONFDIR}/gitea/conf/app.ini
+@sample ${SYSCONFDIR}/gitea/app.ini
+@mode
 @owner
 @group
 share/gitea/options/
@@ -2451,4 +2455,6 @@ share/gitea/templates/user/settings/twofa_enroll.tmpl
 @mode 750
 @owner _gitea
 @group _gitea
-@sample /var/gitea/
+@sample ${LOCALSTATEDIR}/gitea/
+@sample ${LOCALSTATEDIR}/gitea/custom/
+@sample ${LOCALSTATEDIR}/log/gitea/

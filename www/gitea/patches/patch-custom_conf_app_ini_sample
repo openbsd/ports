@@ -1,9 +1,9 @@
-$OpenBSD: patch-custom_conf_app_ini_sample,v 1.3 2019/01/28 11:46:26 pvk Exp $
+$OpenBSD: patch-custom_conf_app_ini_sample,v 1.4 2019/02/14 10:08:53 pvk Exp $
 
 Index: custom/conf/app.ini.sample
 --- custom/conf/app.ini.sample.orig
 +++ custom/conf/app.ini.sample
-@@ -7,12 +7,12 @@
+@@ -7,19 +7,19 @@
  ; App name that shows in every page title
  APP_NAME = Gitea: Git with a cup of tea
  ; Change it if you run locally
@@ -15,10 +15,19 @@ Index: custom/conf/app.ini.sample
  
  [repository]
 -ROOT =
+-SCRIPT_TYPE = bash
 +ROOT = ${LOCALSTATEDIR}/gitea/gitea-repositories
- SCRIPT_TYPE = bash
++SCRIPT_TYPE = sh
  ; Default ANSI charset
  ANSI_CHARSET =
+ ; Force every new repository to be private
+ FORCE_PRIVATE = false
+ ; Default privacy setting when creating a new repository, allowed values: last, private, public. Default is last which means the last setting used.
+-DEFAULT_PRIVATE = last
++DEFAULT_PRIVATE = private
+ ; Global limit of repositories per user, applied at creation time. -1 means no limit
+ MAX_CREATION_LIMIT = -1
+ ; Mirror sync queue length, increase if mirror syncing starts hanging
 @@ -52,7 +52,7 @@ LOCAL_WIKI_PATH = tmp/local-wiki
  ; Whether repository file uploads are enabled. Defaults to `true`
  ENABLED = true
@@ -28,15 +37,33 @@ Index: custom/conf/app.ini.sample
  ; One or more allowed types, e.g. image/jpeg|image/png. Nothing means any file type
  ALLOWED_TYPES =
  ; Max size of each file in megabytes. Defaults to 3MB
+@@ -82,7 +82,7 @@ THEME_COLOR_META_TAG = `#6cc644`
+ ; Max size of files to be displayed (default is 8MiB)
+ MAX_DISPLAY_FILE_SIZE = 8388608
+ ; Whether the email of the user should be shown in the Explore Users page
+-SHOW_USER_EMAIL = true
++SHOW_USER_EMAIL = false
+ ; Set the default theme for the Gitea install
+ DEFAULT_THEME = gitea
+ 
 @@ -147,7 +147,7 @@ SSH_DOMAIN = %(DOMAIN)s
  ; The network interface the builtin SSH server should listen on
  SSH_LISTEN_HOST =
  ; Port number to be exposed in clone URL
 -SSH_PORT = 22
-+SSH_PORT = 2222
++SSH_PORT =
  ; The port number the builtin SSH server should listen on
  SSH_LISTEN_PORT = %(SSH_PORT)s
  ; Root path of SSH directory, default is '~/.ssh', but you have to use '/home/git/.ssh'.
+@@ -176,7 +176,7 @@ SSH_EXPOSE_ANONYMOUS = false
+ ; Indicate whether to check minimum key size with corresponding type
+ MINIMUM_KEY_SIZE_CHECK = false
+ ; Disable CDN even in "prod" mode
+-OFFLINE_MODE = false
++OFFLINE_MODE = true
+ DISABLE_ROUTER_LOG = false
+ ; Generate steps:
+ ; $ ./gitea cert -ca=true -duration=8760h0m0s -host=myhost.example.com
 @@ -185,13 +185,13 @@ DISABLE_ROUTER_LOG = false
  ; not forget to export the private key):
  ; $ openssl pkcs12 -in cert.pfx -out cert.pem -nokeys
@@ -72,7 +99,7 @@ Index: custom/conf/app.ini.sample
  HOST = 127.0.0.1:3306
  NAME = gitea
  USER = root
-@@ -230,7 +230,7 @@ PASSWD =
+@@ -230,16 +230,16 @@ PASSWD =
  ; For MySQL, either "false" (default), "true", or "skip-verify"
  SSL_MODE = disable
  ; For "sqlite3" and "tidb", use an absolute path when you start gitea as service
@@ -81,8 +108,10 @@ Index: custom/conf/app.ini.sample
  ; For "sqlite3" only. Query timeout
  SQLITE_TIMEOUT = 500
  ; For iterate buffer, default is 50
-@@ -239,7 +239,7 @@ ITERATE_BUFFER_SIZE = 50
- LOG_SQL = true
+ ITERATE_BUFFER_SIZE = 50
+ ; Show the database generated SQL
+-LOG_SQL = true
++LOG_SQL = false
  
  [indexer]
 -ISSUE_INDEXER_PATH = indexers/issues.bleve
@@ -90,7 +119,70 @@ Index: custom/conf/app.ini.sample
  ; repo indexer by default disabled, since it uses a lot of disk space
  REPO_INDEXER_ENABLED = false
  REPO_INDEXER_PATH = indexers/repos.bleve
-@@ -386,8 +386,8 @@ HELO_HOSTNAME =
+@@ -248,7 +248,7 @@ MAX_FILE_SIZE = 1048576
+ 
+ [admin]
+ ; Disallow regular (non-admin) users from creating organizations.
+-DISABLE_REGULAR_ORG_CREATION = false
++DISABLE_REGULAR_ORG_CREATION = true
+ 
+ [security]
+ ; Whether the installer is disabled
+@@ -288,7 +288,7 @@ DISABLE_GIT_HOOKS = false
+ ;  - <username>.livejournal.com
+ ;
+ ; Whether to allow signin in via OpenID
+-ENABLE_OPENID_SIGNIN = true
++ENABLE_OPENID_SIGNIN = false
+ ; Whether to allow registering via OpenID
+ ; Do not include to rely on rhw DISABLE_REGISTRATION setting
+ ;ENABLE_OPENID_SIGNUP = true
+@@ -314,11 +314,11 @@ REGISTER_EMAIL_CONFIRM = false
+ ; gitea.io,example.com
+ EMAIL_DOMAIN_WHITELIST=
+ ; Disallow registration, only allow admins to create accounts.
+-DISABLE_REGISTRATION = false
++DISABLE_REGISTRATION = true
+ ; Allow registration only using third-party services, it works only when DISABLE_REGISTRATION is false
+ ALLOW_ONLY_EXTERNAL_REGISTRATION = false
+ ; User must sign in to view anything.
+-REQUIRE_SIGNIN_VIEW = false
++REQUIRE_SIGNIN_VIEW = true
+ ; Mail notification
+ ENABLE_NOTIFY_MAIL = false
+ ; More detail: https://github.com/gogits/gogs/issues/165
+@@ -335,10 +335,10 @@ RECAPTCHA_SECRET  =
+ RECAPTCHA_SITEKEY =
+ ; Default value for KeepEmailPrivate
+ ; Each new user will get the value of this setting copied into their profile
+-DEFAULT_KEEP_EMAIL_PRIVATE = false
++DEFAULT_KEEP_EMAIL_PRIVATE = true
+ ; Default value for AllowCreateOrganization
+ ; Every new user will have rights set to create organizations depending on this setting
+-DEFAULT_ALLOW_CREATE_ORGANIZATION = true
++DEFAULT_ALLOW_CREATE_ORGANIZATION = false
+ ; Default value for EnableDependencies
+ ; Repositories will use dependencies by default depending on this setting
+ DEFAULT_ENABLE_DEPENDENCIES = true
+@@ -355,7 +355,7 @@ DEFAULT_ALLOW_ONLY_CONTRIBUTORS_TO_TRACK_TIME = true
+ ; Default value for the domain part of the user's email address in the git log
+ ; if he has set KeepEmailPrivate to true. The user's email will be replaced with a
+ ; concatenation of the user name in lower case, "@" and NO_REPLY_ADDRESS.
+-NO_REPLY_ADDRESS = noreply.example.org
++NO_REPLY_ADDRESS = noreply.example.com
+ 
+ [webhook]
+ ; Hook task queue length, increase if webhook shooting starts hanging
+@@ -377,7 +377,7 @@ SUBJECT = %(APP_NAME)s
+ ; Gmail: smtp.gmail.com:587
+ ; QQ: smtp.qq.com:465
+ ; Note, if the port ends with "465", SMTPS will be used. Using STARTTLS on port 587 is recommended per RFC 6409. If the server supports STARTTLS it will always be used.
+-HOST =
++HOST = localhost:25
+ ; Disable HELO operation when hostnames are different.
+ DISABLE_HELO =
+ ; Custom hostname for HELO operation, if no value is provided, one is retrieved from system.
+@@ -386,18 +386,18 @@ HELO_HOSTNAME =
  SKIP_VERIFY =
  ; Use client certificate
  USE_CERTIFICATE = false
@@ -101,6 +193,18 @@ Index: custom/conf/app.ini.sample
  ; Should SMTP connection use TLS
  IS_TLS_ENABLED = false
  ; Mail from address, RFC 5322. This can be just an email address, or the `"Name" <email@example.com>` format
+-FROM =
++FROM = gitea@example.com
+ ; Mailer user name and password
+ USER =
+ ; Use PASSWD = `your password` for quoting if you use special characters in the password.
+ PASSWD =
+ ; Send mails as plain text
+-SEND_AS_PLAIN_TEXT = false
++SEND_AS_PLAIN_TEXT = true
+ ; Enable sendmail (override SMTP)
+ USE_SENDMAIL = false
+ ; Specify an alternative sendmail binary
 @@ -420,13 +420,13 @@ ITEM_TTL = 16h
  
  [session]
@@ -126,6 +230,15 @@ Index: custom/conf/app.ini.sample
  ; Max Width and Height of uploaded avatars. This is to limit the amount of RAM
  ; used when resizing the image.
  AVATAR_MAX_WIDTH = 4096
+@@ -448,7 +448,7 @@ AVATAR_MAX_HEIGHT = 3072
+ ; or a custom avatar source, like: http://cn.gravatar.com/avatar/
+ GRAVATAR_SOURCE = gravatar
+ ; This value will always be true in offline mode.
+-DISABLE_GRAVATAR = false
++DISABLE_GRAVATAR = true
+ ; Federated avatar lookup uses DNS to discover avatar associated
+ ; with emails, see https://www.libravatar.org
+ ; This value will always be false in offline mode or when Gravatar is disabled.
 @@ -458,7 +458,7 @@ ENABLE_FEDERATED_AVATAR = false
  ; Whether attachments are enabled. Defaults to `true`
  ENABLED = true
@@ -135,12 +248,16 @@ Index: custom/conf/app.ini.sample
  ; One or more allowed types, e.g. image/jpeg|image/png
  ALLOWED_TYPES = image/jpeg|image/png|application/zip|application/gzip
  ; Max size of each file. Defaults to 4MB
-@@ -473,14 +473,14 @@ MAX_FILES = 5
- FORMAT =
+@@ -470,17 +470,17 @@ MAX_FILES = 5
+ ; Specifies the format for fully outputted dates. Defaults to RFC1123
+ ; Special supported values are ANSIC, UnixDate, RubyDate, RFC822, RFC822Z, RFC850, RFC1123, RFC1123Z, RFC3339, RFC3339Nano, Kitchen, Stamp, StampMilli, StampMicro and StampNano
+ ; For more information about the format see http://golang.org/pkg/time/#pkg-constants
+-FORMAT =
++FORMAT = RFC1123Z
  
  [log]
 -ROOT_PATH =
-+ROOT_PATH = ${LOCALSTATEDIR}/gitea/log
++ROOT_PATH = ${LOCALSTATEDIR}/log/gitea
  ; Either "console", "file", "conn", "smtp" or "database", default is "console"
  ; Use comma to separate multiple modes, e.g. "console, file"
 -MODE = console
@@ -153,13 +270,34 @@ Index: custom/conf/app.ini.sample
  
  ; For "console" mode only
  [log.console]
-@@ -643,6 +643,9 @@ ko-KR = ko
- [U2F]
+@@ -640,12 +640,15 @@ sr-SP = sr
+ sv-SE = sv
+ ko-KR = ko
+ 
+-[U2F]
++;[U2F]
  ; Two Factor authentication with security keys
  ; https://developers.yubico.com/U2F/App_ID.html
-+PROTOCOL = http
-+DOMAIN = localhost
-+HTTP_PORT = 3000
- APP_ID = %(PROTOCOL)s://%(DOMAIN)s:%(HTTP_PORT)s/
+-APP_ID = %(PROTOCOL)s://%(DOMAIN)s:%(HTTP_PORT)s/
++;PROTOCOL = http
++;DOMAIN = localhost
++;HTTP_PORT = 3000
++;APP_ID = %(PROTOCOL)s://%(DOMAIN)s:%(HTTP_PORT)s/
  ; Comma seperated list of truisted facets
- TRUSTED_FACETS = %(PROTOCOL)s://%(DOMAIN)s:%(HTTP_PORT)s/
+-TRUSTED_FACETS = %(PROTOCOL)s://%(DOMAIN)s:%(HTTP_PORT)s/
++;TRUSTED_FACETS = %(PROTOCOL)s://%(DOMAIN)s:%(HTTP_PORT)s/
+ 
+ ; Extension mapping to highlight class
+ ; e.g. .toml=ini
+@@ -654,9 +657,9 @@ TRUSTED_FACETS = %(PROTOCOL)s://%(DOMAIN)s:%(HTTP_PORT
+ [other]
+ SHOW_FOOTER_BRANDING = false
+ ; Show version information about Gitea and Go in the footer
+-SHOW_FOOTER_VERSION = true
++SHOW_FOOTER_VERSION = false
+ ; Show template execution time in the footer
+-SHOW_FOOTER_TEMPLATE_LOAD_TIME = true
++SHOW_FOOTER_TEMPLATE_LOAD_TIME = false
+ 
+ [markup.asciidoc]
+ ENABLED = false

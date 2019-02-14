@@ -1,0 +1,10 @@
+If you are upgrading from ${PKGSTEM}-<1.7.1, please note the following changes:
+
+* Configuration file location has changed from ${SYSCONFDIR}/${PKGSTEM}/conf/app.ini
+  to ${SYSCONFDIR}/${PKGSTEM}/app.ini
+
+* GITEA_CUSTOM directory location has changed from ${SYSCONFDIR}/${PKGSTEM}
+  to ${LOCALSTATEDIR}/${PKGSTEM}/custom
+
+* Default ROOT_PATH for logs has changed from ${LOCALSTATEDIR}/${PKGSTEM}/log
+  to ${LOCALSTATEDIR}/log/${PKGSTEM}

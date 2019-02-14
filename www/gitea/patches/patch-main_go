@@ -1,11 +1,11 @@
-$OpenBSD: patch-main_go,v 1.4 2019/01/28 11:46:26 pvk Exp $
+$OpenBSD: patch-main_go,v 1.5 2019/02/14 10:08:53 pvk Exp $
 
 Gets shown in the footer.
 
 Index: main.go
 --- main.go.orig
 +++ main.go
-@@ -23,7 +23,7 @@ import (
+@@ -24,7 +24,7 @@ import (
  )
  
  // Version holds the current Gitea version

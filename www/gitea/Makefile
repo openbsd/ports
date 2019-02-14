@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2019/01/28 11:46:26 pvk Exp $
+# $OpenBSD: Makefile,v 1.16 2019/02/14 10:08:53 pvk Exp $
 
 COMMENT =		compact self-hosted Git service
 
-VERSION =		1.7.0
+VERSION =		1.7.1
 GH_ACCOUNT =		go-gitea
 GH_PROJECT =		gitea
 GH_TAGNAME =		v${VERSION}
@@ -23,8 +23,7 @@ MODULES =		lang/go
 MODGO_ENV =		PATH="${PORTPATH}" CFLAGS="${CFLAGS}"
 MODGO_FLAGS +=		-tags "sqlite cert"
 
-RUN_DEPENDS =		devel/git \
-			shells/bash
+RUN_DEPENDS =		devel/git
 
 ALL_TARGET =		code.gitea.io/${GH_PROJECT}
 WRKSRC =		${MODGO_WORKSPACE}/src/${ALL_TARGET}
