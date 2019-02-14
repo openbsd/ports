@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2018/08/15 06:10:20 rpointel Exp $
+# $OpenBSD: Makefile,v 1.7 2019/02/14 22:13:45 mariani Exp $
 
 COMMENT =		refactoring library
 
-MODPY_EGG_VERSION =	0.11.0
+MODPY_EGG_VERSION =	0.12.0
 DISTNAME =		rope-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
