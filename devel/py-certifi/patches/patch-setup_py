@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_py,v 1.4 2018/05/19 22:26:22 pvk Exp $
+$OpenBSD: patch-setup_py,v 1.5 2019/02/14 06:35:04 pvk Exp $
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
@@ -12,4 +12,4 @@ Index: setup.py
 -    include_package_data=True,
      zip_safe=False,
      license='MPL-2.0',
-     classifiers=(
+     classifiers=[

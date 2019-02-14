@@ -1,8 +1,8 @@
-$OpenBSD: patch-certifi_core_py,v 1.4 2018/05/19 22:26:22 pvk Exp $
+$OpenBSD: patch-certifi_core_py,v 1.5 2019/02/14 06:35:04 pvk Exp $
 Index: certifi/core.py
 --- certifi/core.py.orig
 +++ certifi/core.py
-@@ -19,9 +19,7 @@ class DeprecatedBundleWarning(DeprecationWarning):
+@@ -11,9 +11,7 @@ import os
  
  
  def where():
@@ -12,4 +12,4 @@ Index: certifi/core.py
 +    return '/etc/ssl/cert.pem'
  
  
- def old_where():
+ if __name__ == '__main__':
