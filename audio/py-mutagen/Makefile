@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2018/08/12 13:24:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/02/14 12:27:48 sthen Exp $
 
 COMMENT =	Python module to handle audio metadata
 
-MODPY_EGG_VERSION = 1.41.1
+MODPY_EGG_VERSION = 1.42.0
 DISTNAME =	mutagen-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	audio
