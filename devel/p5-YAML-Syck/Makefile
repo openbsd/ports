@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.20 2017/12/04 17:56:27 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/02/14 12:26:57 bluhm Exp $
 
-COMMENT=	YAML and JSON for perl, optimized C
+COMMENT =	YAML and JSON for perl, optimized C
 
-MODULES=	cpan
+DISTNAME =	YAML-Syck-1.31
 
-DISTNAME =	YAML-Syck-1.30
-CATEGORIES=	devel
-FIX_EXTRACT_PERMISSIONS=Yes
+CATEGORIES =	devel
+
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c perl
+WANTLIB =		c perl
+
+MODULES =		cpan
 
 .include <bsd.port.mk>
