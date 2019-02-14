@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/15 22:38:58 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/02/14 22:23:44 mariani Exp $
 lib/python${MODPY_VERSION}/site-packages/parso/
 lib/python${MODPY_VERSION}/site-packages/parso-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/parso-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/parso-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/parso-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/parso-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/parso-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/parso/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/parso/${MODPY_PYCACHE}/
@@ -49,6 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/parso/python/grammar34.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/grammar35.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/grammar36.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/grammar37.txt
+lib/python${MODPY_VERSION}/site-packages/parso/python/grammar38.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/parser.py
 lib/python${MODPY_VERSION}/site-packages/parso/python/pep8.py
 lib/python${MODPY_VERSION}/site-packages/parso/python/prefix.py

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/15 22:38:58 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2019/02/14 22:23:44 mariani Exp $
 
 COMMENT =		python parser
 
-MODPY_EGG_VERSION =	0.3.1
+MODPY_EGG_VERSION =	0.3.4
 DISTNAME =		parso-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -20,7 +20,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
+			devel/py-docopt${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
