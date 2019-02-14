@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.29 2019/02/14 09:55:40 jca Exp $
+# $OpenBSD: Makefile,v 1.30 2019/02/14 16:03:34 jca Exp $
 
 COMMENT=	manipulate image meta-data such as exif and ipct
 
-DISTNAME=	exiv2-0.27.0-Source
-PKGNAME=	exiv2-0.27.0
+DISTNAME=	exiv2-0.26-trunk
+PKGNAME=	exiv2-0.26
 CATEGORIES=	graphics devel
+EPOCH=		0
+REVISION=	0
 
-SHARED_LIBS +=  exiv2                10.0      # 14.0
+SHARED_LIBS +=  exiv2                11.0      # 14.0
 
 HOMEPAGE=	http://www.exiv2.org/
 
@@ -19,34 +21,18 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	http://www.exiv2.org/builds/
 
-MODULES=	devel/cmake
+USE_GMAKE=	Yes
 
-CFLAGS +=	-I${LOCALBASE}/include
-CXXFLAGS +=	-I${LOCALBASE}/include
+CONFIGURE_STYLE=gnu
 
-BUILD_DEPENDS=	devel/gettext-tools \
-		devel/gtest
+BUILD_DEPENDS=	devel/gettext-tools
 
 LIB_DEPENDS=	devel/gettext
 
-TEST_DEPENDS=	converters/dos2unix \
-		shells/bash
+CONFIGURE_ARGS=	--enable-static
 
-CONFIGURE_ARGS += -DEXIV2_BUILD_UNIT_TESTS=ON
-CONFIGURE_ARGS += -DEXIV2_BUILD_PO=ON
+NO_TEST=	Yes
 
-TEST_TARGET =	tests
-
-# dos line-endings in file needing patch
-post-extract:
-	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' ${WRKSRC}/cmake/compilerFlags.cmake
-
-post-install:
-	find ${WRKINST} -name '._*' -delete
-	rm ${PREFIX}/include/exiv2/*.orig
-	rm ${PREFIX}/lib/libxmp.a
-
-pre-test:
-	@sed -Ei 's,!/bin/(ba)?sh,!/usr/bin/env bash,g' ${WRKSRC}/test/*.sh
+WRKDIST=		${WRKDIR}/exiv2-trunk
 
 .include <bsd.port.mk>
