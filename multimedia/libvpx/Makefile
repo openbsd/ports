@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.37 2018/10/17 08:22:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2019/02/14 09:44:26 jca Exp $
 
 COMMENT=	Google VP8/VP9 video codec
 
-VER=		1.7.0
+VER=		1.8.0
 CATEGORIES=	multimedia
-REVISION=	0
 EPOCH=		0
 GH_ACCOUNT=	webmproject
 GH_PROJECT=	libvpx
 GH_TAGNAME=	v${VER}
 
-SHARED_LIBS=	vpx	11.0
+SHARED_LIBS=	vpx	12.0
 
 HOMEPAGE=	https://www.webmproject.org/
 
