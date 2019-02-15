@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/02/15 22:31:08 sthen Exp $
 
 COMMENT-main=	multimedia communication library (SIP, RTP, ICE, etc)
 COMMENT-pjsua=	lightweight sip client
 
-V=		2.4.5
-REVISION=	3
+V=		2.8
 DISTNAME=	pjproject-$V
 PKGNAME-main=	pjsip-$V
 PKGNAME-pjsua=	pjsua-$V
@@ -29,19 +28,19 @@ SHARED_LIBS +=	resample                  ${LIBVER}
 
 CATEGORIES=	telephony
 
-HOMEPAGE=	http://www.pjsip.org/
-MASTER_SITES=	${HOMEPAGE}release/$V/
+HOMEPAGE=	https://www.pjsip.org/
+MASTER_SITES=	https://www.pjsip.org/release/$V/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += crypto gsm m opencore-amrnb opencore-amrwb portaudio pthread
-WANTLIB += speex speexdsp ssl
+WANTLIB += bcg729 crypto gsm m opencore-amrnb opencore-amrwb opus
+WANTLIB += portaudio speex speexdsp srtp2 ssl
 
 WANTLIB-pjsua += ${WANTLIB}
 WANTLIB-pjsua += c g7221codec ilbccodec pj pjlib-util pjmedia pjmedia-audiodev
 WANTLIB-pjsua += pjmedia-codec pjmedia-videodev pjnath pjsip pjsip-simple
-WANTLIB-pjsua += pjsip-ua pjsua resample
+WANTLIB-pjsua += pjsip-ua pjsua pthread resample
 
 WANTLIB-main = ${WANTLIB} ${COMPILER_LIBCXX}
 
@@ -49,20 +48,22 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MULTI_PACKAGES=	-main -pjsua
 
-LIB_DEPENDS-main= audio/gsm \
+LIB_DEPENDS-main= \
+		audio/gsm \
 		audio/opencore-amr \
+		audio/opus \
 		audio/portaudio-svn \
-		audio/speex
+		audio/speex \
+		security/libsrtp \
+		telephony/bcg729
 
 LIB_DEPENDS-pjsua= telephony/pjsua,-main \
 		audio/portaudio-svn
 
-# statically linked
-BUILD_DEPENDS=	security/libsrtp
-
 CONFIGURE_STYLE= autoconf no-autoheader
 AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS=	--enable-shared \
+		--disable-libwebrtc \
 		--disable-oss \
 		--disable-video \
 		--with-external-gsm \
