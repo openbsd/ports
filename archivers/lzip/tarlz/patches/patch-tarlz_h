@@ -1,0 +1,14 @@
+$OpenBSD: patch-tarlz_h,v 1.1 2019/02/15 17:06:52 juanfra Exp $
+
+Index: tarlz.h
+--- tarlz.h.orig
++++ tarlz.h
+@@ -15,6 +15,8 @@
+     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+ 
++#include <pthread.h>
++
+ enum { header_size = 512 };
+ typedef uint8_t Tar_header[header_size];
+ 
