@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/01/18 13:16:49 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/02/15 05:06:45 afresh1 Exp $
 ${P5SITE}/Net/Amazon/
 ${P5SITE}/Net/Amazon.pm
 ${P5SITE}/Net/Amazon/Attribute/
@@ -38,7 +38,6 @@ ${P5SITE}/Net/Amazon/Request/Sort.pm
 ${P5SITE}/Net/Amazon/Request/TextStream.pm
 ${P5SITE}/Net/Amazon/Request/Title.pm
 ${P5SITE}/Net/Amazon/Request/UPC.pm
-${P5SITE}/Net/Amazon/Request/Wishlist.pm
 ${P5SITE}/Net/Amazon/Response/
 ${P5SITE}/Net/Amazon/Response.pm
 ${P5SITE}/Net/Amazon/Response/ASIN.pm
@@ -63,7 +62,6 @@ ${P5SITE}/Net/Amazon/Response/Similar.pm
 ${P5SITE}/Net/Amazon/Response/TextStream.pm
 ${P5SITE}/Net/Amazon/Response/Title.pm
 ${P5SITE}/Net/Amazon/Response/UPC.pm
-${P5SITE}/Net/Amazon/Response/Wishlist.pm
 ${P5SITE}/Net/Amazon/Result/
 ${P5SITE}/Net/Amazon/Result/Seller/
 ${P5SITE}/Net/Amazon/Result/Seller.pm
@@ -172,6 +170,20 @@ ${P5SITE}/Net/Amazon/Validate/ItemSearch/de/VHS.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/de/Video.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/de/VideoGames.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/de/Watches.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/es/
+${P5SITE}/Net/Amazon/Validate/ItemSearch/es/Books.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/es/DVD.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/es/EAN.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/es/Electronics.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/es/ForeignBooks.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/es/Keywords.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/es/KindleStore.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/es/Kitchen.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/es/Music.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/es/Software.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/es/Toys.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/es/VideoGames.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/es/Watches.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Actor.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Artist.pm
@@ -226,6 +238,23 @@ ${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/VHS.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Video.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/VideoGames.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/fr/Watches.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/it/
+${P5SITE}/Net/Amazon/Validate/ItemSearch/it/Baby.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/it/Books.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/it/DVD.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/it/EAN.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/it/Electronics.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/it/ForeignBooks.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/it/Keywords.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/it/KindleStore.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/it/Kitchen.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/it/Lighting.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/it/Music.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/it/Shoes.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/it/Software.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/it/Toys.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/it/VideoGames.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/it/Watches.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/Actor.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/jp/Apparel.pm
@@ -364,6 +393,7 @@ ${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Conductor.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Count.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/us/DVD.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Director.pm
+${P5SITE}/Net/Amazon/Validate/ItemSearch/us/EAN.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Electronics.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/us/Format.pm
 ${P5SITE}/Net/Amazon/Validate/ItemSearch/us/GourmetFood.pm
@@ -476,7 +506,6 @@ ${P5SITE}/Net/Amazon/Validate/Type/VehicleSearch.pm
 @man man/man3p/Net::Amazon::Request::TextStream.3p
 @man man/man3p/Net::Amazon::Request::Title.3p
 @man man/man3p/Net::Amazon::Request::UPC.3p
-@man man/man3p/Net::Amazon::Request::Wishlist.3p
 @man man/man3p/Net::Amazon::Response.3p
 @man man/man3p/Net::Amazon::Result::Seller.3p
 @man man/man3p/Net::Amazon::Result::Seller::Listing.3p
@@ -580,6 +609,19 @@ ${P5SITE}/Net/Amazon/Validate/Type/VehicleSearch.pm
 @man man/man3p/Net::Amazon::Validate::ItemSearch::de::Video.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::de::VideoGames.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::de::Watches.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::es::Books.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::es::DVD.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::es::EAN.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::es::Electronics.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::es::ForeignBooks.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::es::Keywords.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::es::KindleStore.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::es::Kitchen.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::es::Music.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::es::Software.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::es::Toys.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::es::VideoGames.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::es::Watches.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Actor.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Artist.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::fr::AudienceRating.3p
@@ -633,6 +675,22 @@ ${P5SITE}/Net/Amazon/Validate/Type/VehicleSearch.pm
 @man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Video.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::fr::VideoGames.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::fr::Watches.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::it::Baby.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::it::Books.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::it::DVD.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::it::EAN.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::it::Electronics.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::it::ForeignBooks.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::it::Keywords.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::it::KindleStore.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::it::Kitchen.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::it::Lighting.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::it::Music.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::it::Shoes.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::it::Software.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::it::Toys.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::it::VideoGames.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::it::Watches.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::jp::Actor.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::jp::Apparel.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::jp::Artist.3p
@@ -768,6 +826,7 @@ ${P5SITE}/Net/Amazon/Validate/Type/VehicleSearch.pm
 @man man/man3p/Net::Amazon::Validate::ItemSearch::us::Count.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::us::DVD.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::us::Director.3p
+@man man/man3p/Net::Amazon::Validate::ItemSearch::us::EAN.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::us::Electronics.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::us::Format.3p
 @man man/man3p/Net::Amazon::Validate::ItemSearch::us::GourmetFood.3p
@@ -861,4 +920,3 @@ share/examples/p5-Net-Amazon/similar2
 share/examples/p5-Net-Amazon/textstream
 share/examples/p5-Net-Amazon/title
 share/examples/p5-Net-Amazon/upc
-share/examples/p5-Net-Amazon/wishlist
