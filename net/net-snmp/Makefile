@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.102 2018/07/17 13:53:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.103 2019/02/15 20:15:17 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
 
 V=		5.8
+REVISION-main=	0
 
 DISTNAME=	net-snmp-$V
 MULTI_PACKAGES=	-main -tkmib
@@ -61,6 +62,9 @@ CONFIGURE_ARGS=   --enable-ipv6 \
 	--with-logfile="/var/log/snmpd" \
 	--with-persistent-directory="/var/net-snmp"
 CONFIGURE_ENV=	ac_cv_IFNET_NEEDS_KERNEL=no
+# nlist is in libc, but net-snmp tries to detect it in libelf first.
+# disable to avoid linking that unnecessarily:
+CONFIGURE_ENV+=	ac_cv_lib_elf_nlist=false
 TEST_TARGET=	test
 
 .if ${FLAVOR:Mreadonly}
