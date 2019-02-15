@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/01/22 12:13:22 edd Exp $
+# $OpenBSD: Makefile,v 1.46 2019/02/15 21:10:44 sthen Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -13,7 +13,7 @@ PKGNAME-main =		texworks-${V}
 PKGNAME-lua =		texworks-lua-${V}
 PKGNAME-python =	texworks-python-${V}
 
-REVISION-main =		1
+REVISION-main =		2
 
 EPOCH =			0
 
@@ -49,15 +49,16 @@ MULTI_PACKAGES =	-main -lua -python
 LIB_DEPENDS =		${MODQT5_LIB_DEPENDS} \
 			x11/qt5/qtscript
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			textproc/hunspell \
-			print/texlive/base>=2018 \
-			print/poppler,,-qt5
+			print/poppler,,-qt5 \
+			print/texlive/base,-synctex \
+			textproc/hunspell
 LIB_DEPENDS-lua =	${LIB_DEPENDS} \
 			${MODLUA_LIB_DEPENDS}
 LIB_DEPENDS-python =	${LIB_DEPENDS} \
 			${MODPY_LIB_DEPENDS}
 
-RUN_DEPENDS-main = 	devel/desktop-file-utils
+RUN_DEPENDS-main =	devel/desktop-file-utils \
+			print/texlive/base>=2018
 RUN_DEPENDS-lua =	editors/texworks,-main
 RUN_DEPENDS-python =	editors/texworks,-main
 
