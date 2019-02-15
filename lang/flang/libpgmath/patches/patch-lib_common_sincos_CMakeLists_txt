@@ -1,8 +1,17 @@
-$OpenBSD: patch-lib_common_sincos_CMakeLists_txt,v 1.2 2018/07/25 21:08:47 bcallah Exp $
+$OpenBSD: patch-lib_common_sincos_CMakeLists_txt,v 1.3 2019/02/15 17:51:10 bcallah Exp $
 
 Index: lib/common/sincos/CMakeLists.txt
 --- lib/common/sincos/CMakeLists.txt.orig
 +++ lib/common/sincos/CMakeLists.txt
+@@ -18,7 +18,7 @@
+ get_property(DEFINITIONS GLOBAL PROPERTY "DEFINITIONS_L1")
+ get_property(FLAGS GLOBAL PROPERTY "FLAGS_L1")
+ 
+-if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
++if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64" AND NOT ${LIBPGMATH_WITH_GENERIC})
+   set(SRCS gsincos.cpp)
+   set_property(SOURCE ${SRCS} APPEND_STRING PROPERTY COMPILE_FLAGS "-std=c++11 ")
+ else()
 @@ -26,8 +26,8 @@ else()
  endif()
  
@@ -14,3 +23,12 @@ Index: lib/common/sincos/CMakeLists.txt
      libmath_add_object_library("${SRCS}" "${FLAGS}" "${DEFINITIONS}" "gssincos4")
      set_property(TARGET gssincos4 APPEND PROPERTY COMPILE_DEFINITIONS SINCOS=__mth_sincos PRECSIZE=4 VLEN=4)
      libmath_add_object_library("${SRCS}" "${FLAGS}" "${DEFINITIONS}" "gdsincos2")
+@@ -135,7 +135,7 @@ elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "ppc64le")
+ 
+   libmath_add_object_library("${SRCS}" "${FLAGS}" "${DEFINITIONS}" "gdsincos2")
+   set_property(TARGET gdsincos2 APPEND PROPERTY COMPILE_DEFINITIONS SINCOS=sincosf PRECSIZE=4 VLEN=4)
+-elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
++elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64" AND NOT ${LIBPGMATH_WITH_GENERIC})
+   libmath_add_object_library("${SRCS}" "${FLAGS}" "${DEFINITIONS}" "gssincos4")
+   set_property(TARGET gssincos4 APPEND PROPERTY COMPILE_DEFINITIONS SINCOS=sincos PRECSIZE=8 VLEN=2)
+ 

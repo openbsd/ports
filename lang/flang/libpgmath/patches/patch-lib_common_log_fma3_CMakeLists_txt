@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_common_log_fma3_CMakeLists_txt,v 1.2 2018/07/31 03:34:42 bcallah Exp $
+$OpenBSD: patch-lib_common_log_fma3_CMakeLists_txt,v 1.3 2019/02/15 17:51:10 bcallah Exp $
 
 Index: lib/common/log/fma3/CMakeLists.txt
 --- lib/common/log/fma3/CMakeLists.txt.orig
@@ -14,6 +14,15 @@ Index: lib/common/log/fma3/CMakeLists.txt
      set(SRCS
        fdlog1.cpp
        fdlog2.cpp
+@@ -64,7 +64,7 @@ elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "ppc64le")
+   set_property(SOURCE ${INT_SRCS} APPEND PROPERTY COMPILE_DEFINITIONS VINT=)
+   set_property(SOURCE ${LONG_SRCS} APPEND PROPERTY COMPILE_DEFINITIONS VINT=long)
+   libmath_add_object_library("${SRCS}" "${FLAGS}" "${DEFINITIONS}" "")
+-elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
++elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64" AND NOT ${LIBPGMATH_WITH_GENERIC})
+   set(INT_SRCS
+     fslog1.cpp
+     fslog4.cpp
 @@ -78,6 +78,6 @@ elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
      ${LONG_SRCS})
    set_property(SOURCE ${INT_SRCS} APPEND PROPERTY COMPILE_DEFINITIONS VINT=)

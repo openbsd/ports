@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_common_CMakeLists_txt,v 1.6 2018/12/26 17:37:14 bcallah Exp $
+$OpenBSD: patch-lib_common_CMakeLists_txt,v 1.7 2019/02/15 17:51:10 bcallah Exp $
 
 Index: lib/common/CMakeLists.txt
 --- lib/common/CMakeLists.txt.orig
@@ -23,9 +23,12 @@ Index: lib/common/CMakeLists.txt
      add_subdirectory("sincosf")
      add_subdirectory("tanf")
  
-@@ -134,8 +134,8 @@ elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "ppc64le")
+@@ -132,10 +132,10 @@ elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "ppc64le")
+     kidnnt.c
+     sincos.c
      sincosf.c)
- elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
+-elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
++elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64" AND NOT ${LIBPGMATH_WITH_GENERIC})
    set_property(SOURCE dispatch.c APPEND_STRING PROPERTY COMPILE_FLAGS "-fno-builtin")
 -  set_property(SOURCE mth_xintrinsics.c APPEND_STRING PROPERTY COMPILE_FLAGS "-mcpu=${LLVM_FLANG_CPU_TARGET} ")
 -  set_property(SOURCE mth_128defs.c mth_128defs_init.c mth_128defs_stats.c APPEND_STRING PROPERTY COMPILE_FLAGS "-mcpu=${LLVM_FLANG_CPU_TARGET} ")
@@ -104,3 +107,12 @@ Index: lib/common/CMakeLists.txt
      set_property(SOURCE ${TARGET_NAME}.c APPEND_STRING PROPERTY COMPILE_FLAGS "-mtune=knl -march=knl")
    elseif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
      set_property(SOURCE ${TARGET_NAME}.c APPEND_STRING PROPERTY COMPILE_FLAGS "-mavx512f -mfma")
+@@ -382,7 +382,7 @@ elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "ppc64le")
+   add_custom_target(${TARGET_NAME} ALL DEPENDS "${TARGET_NAME}.c")
+   libmath_add_object_library("${TARGET_NAME}.c" "${FLAGS}" "${DEFINITIONS}" "${TARGET_NAME}_build")
+   add_dependencies("${TARGET_NAME}_build" ${TARGET_NAME})
+-elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
++elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64" AND NOT ${LIBPGMATH_WITH_GENERIC})
+   # Generate mth_128mask.cpp
+   set(TARGET_NAME "mth_128mask")
+   add_custom_command(OUTPUT ${TARGET_NAME}.cpp DEPENDS ${LIBPGMATH_TOOLS_DIR}/mth_mask.awk PRE_BUILD

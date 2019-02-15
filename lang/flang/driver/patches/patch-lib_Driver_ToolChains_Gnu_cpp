@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_Driver_ToolChains_Gnu_cpp,v 1.2 2018/05/09 22:27:41 bcallah Exp $
+$OpenBSD: patch-lib_Driver_ToolChains_Gnu_cpp,v 1.3 2019/02/15 17:51:09 bcallah Exp $
 
 Index: lib/Driver/ToolChains/Gnu.cpp
 --- lib/Driver/ToolChains/Gnu.cpp.orig
 +++ lib/Driver/ToolChains/Gnu.cpp
-@@ -2253,6 +2253,9 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
+@@ -2422,6 +2422,9 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
    case llvm::Triple::systemz:
    case llvm::Triple::mips:
    case llvm::Triple::mipsel:
@@ -13,13 +13,3 @@ Index: lib/Driver/ToolChains/Gnu.cpp
      return true;
    case llvm::Triple::mips64:
    case llvm::Triple::mips64el:
-@@ -2260,7 +2263,8 @@ bool Generic_GCC::IsIntegratedAssemblerDefault() const
-     // identify the ABI in use (Debian) or only use N64 for MIPS64 (Android).
-     // Other targets are unable to distinguish N32 from N64.
-     if (getTriple().getEnvironment() == llvm::Triple::GNUABI64 ||
--        getTriple().isAndroid())
-+        getTriple().isAndroid() ||
-+        getTriple().isOSOpenBSD())
-       return true;
-     return false;
-   default:

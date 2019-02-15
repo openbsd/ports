@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_common_log_CMakeLists_txt,v 1.1 2019/02/15 17:51:10 bcallah Exp $
+
+Index: lib/common/log/CMakeLists.txt
+--- lib/common/log/CMakeLists.txt.orig
++++ lib/common/log/CMakeLists.txt
+@@ -22,7 +22,7 @@ get_property(FLAGS GLOBAL PROPERTY "FLAGS_L1")
+ 
+ set(SRCS)
+ 
+-if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
++if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64" AND NOT ${LIBPGMATH_WITH_GENERIC})
+   set(SRCS gslog4.c gdlog2.c)
+   libmath_add_object_library("${SRCS}" "${FLAGS}" "${DEFINITIONS}" "")
+ endif()

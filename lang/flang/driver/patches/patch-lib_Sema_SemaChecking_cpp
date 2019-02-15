@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_Sema_SemaChecking_cpp,v 1.2 2018/05/09 22:27:41 bcallah Exp $
+$OpenBSD: patch-lib_Sema_SemaChecking_cpp,v 1.3 2019/02/15 17:51:09 bcallah Exp $
 
 Index: lib/Sema/SemaChecking.cpp
 --- lib/Sema/SemaChecking.cpp.orig
 +++ lib/Sema/SemaChecking.cpp
-@@ -5136,7 +5136,7 @@ checkFormatStringExpr(Sema &S, const Expr *E, ArrayRef
+@@ -6431,7 +6431,7 @@ checkFormatStringExpr(Sema &S, const Expr *E, ArrayRef
  Sema::FormatStringType Sema::GetFormatStringType(const FormatAttr *Format) {
    return llvm::StringSwitch<FormatStringType>(Format->getType()->getName())
        .Case("scanf", FST_Scanf)
@@ -12,7 +12,7 @@ Index: lib/Sema/SemaChecking.cpp
        .Cases("NSString", "CFString", FST_NSString)
        .Case("strftime", FST_Strftime)
        .Case("strfmon", FST_Strfmon)
-@@ -5233,6 +5233,7 @@ bool Sema::CheckFormatArguments(ArrayRef<const Expr *>
+@@ -6528,6 +6528,7 @@ bool Sema::CheckFormatArguments(ArrayRef<const Expr *>
      case FST_Kprintf:
      case FST_FreeBSDKPrintf:
      case FST_Printf:
@@ -20,7 +20,7 @@ Index: lib/Sema/SemaChecking.cpp
        Diag(FormatLoc, diag::note_format_security_fixit)
          << FixItHint::CreateInsertion(FormatLoc, "\"%s\", ");
        break;
-@@ -6777,8 +6778,9 @@ static void CheckFormatString(Sema &S, const FormatStr
+@@ -8079,8 +8080,9 @@ static void CheckFormatString(Sema &S, const FormatStr
    }
  
    if (Type == Sema::FST_Printf || Type == Sema::FST_NSString ||
@@ -32,7 +32,7 @@ Index: lib/Sema/SemaChecking.cpp
      CheckPrintfHandler H(
          S, FExpr, OrigFormatExpr, Type, firstDataArg, numDataArgs,
          (Type == Sema::FST_NSString || Type == Sema::FST_OSTrace), Str,
-@@ -6788,7 +6790,7 @@ static void CheckFormatString(Sema &S, const FormatStr
+@@ -8090,7 +8092,7 @@ static void CheckFormatString(Sema &S, const FormatStr
      if (!analyze_format_string::ParsePrintfString(H, Str, Str + StrLen,
                                                    S.getLangOpts(),
                                                    S.Context.getTargetInfo(),

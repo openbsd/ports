@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2019/01/25 20:06:48 bcallah Exp $
+# $OpenBSD: Makefile,v 1.14 2019/02/15 17:51:09 bcallah Exp $
 
 # If you are updating to a new version
-# (e.g. 6.0->6.1 or 7.0), you need to sync
+# (e.g. 7.0->7.1 or 8.0), you need to sync
 # patches with devel/llvm
 COMMENT =	LLVM Fortran compiler driver
-DISTNAME =	flang-driver-6.0.0.20181012
-REVISION =	0
+DISTNAME =	flang-driver-7.0.1.20181218
 
 GH_PROJECT =	flang-driver
-GH_COMMIT =	f90d905b99ef497cc654b4a8433f1ac35a870f11
+GH_COMMIT =	24bd54da5c41af04838bbe7b68f830840d47fc03
 
 WANTLIB += ${COMPILER_LIBCXX} c m z
 
@@ -21,8 +20,16 @@ MODULES =	devel/cmake \
 BUILD_DEPENDS =	devel/llvm \
 		textproc/libxml
 
+CONFIGURE_ARGS =	-DLIBCLANG_BUILD_STATIC=On
+
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/lib/Driver/ToolChains/OpenBSD.cpp
+
+# Don't use the LLVM shared library.
+post-configure:
+	sed -i \
+	's,-lLLVM-7,`llvm-config --libs all --link-static --ignore-libllvm` -lz,g' \
+	${WRKBUILD}/build.ninja
 
 # We don't want yet another copy of clang and its utilities on the system.
 # Doubly true since flang is statically linked to its clang libs.
