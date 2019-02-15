@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2016/11/29 13:57:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/02/15 22:30:23 sthen Exp $
+
+SHARED_LIBS +=  srtp2                     0.0 # 0.0
 
 COMMENT=	secure RTP library
 
 GH_ACCOUNT=	cisco
 GH_PROJECT=	libsrtp
-GH_TAGNAME=	v1.5.4
-REVISION=	0
+GH_TAGNAME=	v2.2.0
 
 CATEGORIES=	security telephony
 
@@ -16,9 +17,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE=	gnu
 
-CFLAGS+=		-fPIC
+MAKE_FLAGS=	SHAREDLIBVERSION=${LIBsrtp2_VERSION}
 
 USE_GMAKE=	Yes
+ALL_TARGET=	all shared_library
 TEST_TARGET=	runtest
+
+post-install:
+	rm ${PREFIX}/lib/libsrtp2.so
 
 .include <bsd.port.mk>
