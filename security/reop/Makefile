@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2015/07/29 17:39:49 jturner Exp $
+# $OpenBSD: Makefile,v 1.5 2019/02/15 02:15:57 jturner Exp $
 
 COMMENT =		create and verify cryptographic signatures
 
-VERSION =		2.1.0
-REVISION =		0
+VERSION =		2.1.1
 DISTNAME =		reop-${VERSION}
 CATEGORIES =		security sysutils
 
