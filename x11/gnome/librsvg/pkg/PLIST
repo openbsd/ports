@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.37 2018/07/12 08:46:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2019/02/16 07:56:27 ajacoutot Exp $
 %%old%%
 %%stable%%
 @bin bin/rsvg-convert
 include/librsvg-2.0/
 include/librsvg-2.0/librsvg/
-include/librsvg-2.0/librsvg/librsvg-enum-types.h
 include/librsvg-2.0/librsvg/librsvg-features.h
 include/librsvg-2.0/librsvg/rsvg-cairo.h
 include/librsvg-2.0/librsvg/rsvg.h

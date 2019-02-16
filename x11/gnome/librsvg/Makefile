@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.146 2019/02/08 19:47:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.147 2019/02/16 07:56:27 ajacoutot Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
 GNOME_PROJECT=		librsvg
-STABLE_VERSION=		2.44.12
+STABLE_VERSION=		2.44.13
 OLD_VERSION=		2.40.20
 DISTFILES=		librsvg-${STABLE_VERSION}${EXTRACT_SUFX}:0 \
 			librsvg-${OLD_VERSION}${EXTRACT_SUFX}:1
@@ -15,14 +15,14 @@ MASTER_SITES1=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${OLD_VERSION:C/^(
 
 ### stable
 .if ${PROPERTIES:Mrust}
-SHARED_LIBS +=  rsvg-2               39.0     # 46.12
+SHARED_LIBS +=  rsvg-2               39.0     # 46.13
 GNOME_VERSION=		${STABLE_VERSION}
 BUILD_DEPENDS=		lang/rust
 PKG_ARGS=		-Dold=0 -Dstable=1
 MAKE_ENV+=		CARGO_BUILD_JOBS=${MAKE_JOBS}
 .else
 ### old
-REVISION=		1
+REVISION=		2
 SHARED_LIBS +=  rsvg-2               38.2     # 42.20
 GNOME_VERSION=		${OLD_VERSION}
 PATCH_LIST=		old-patch-*
