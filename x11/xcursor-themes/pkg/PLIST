@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/05/01 11:46:34 matthieu Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/02/16 08:40:15 matthieu Exp $
 lib/X11/icons/
 lib/X11/icons/handhelds/
 lib/X11/icons/handhelds/cursors/
@@ -113,6 +113,7 @@ lib/X11/icons/whiteglass/cursors/circle
 lib/X11/icons/whiteglass/cursors/cross
 lib/X11/icons/whiteglass/cursors/cross_reverse
 lib/X11/icons/whiteglass/cursors/crosshair
+lib/X11/icons/whiteglass/cursors/dnd-none
 lib/X11/icons/whiteglass/cursors/dot
 lib/X11/icons/whiteglass/cursors/dot_box_mask
 lib/X11/icons/whiteglass/cursors/double_arrow
@@ -121,7 +122,9 @@ lib/X11/icons/whiteglass/cursors/draft_small
 lib/X11/icons/whiteglass/cursors/draped_box
 lib/X11/icons/whiteglass/cursors/exchange
 lib/X11/icons/whiteglass/cursors/fleur
+lib/X11/icons/whiteglass/cursors/grab
 lib/X11/icons/whiteglass/cursors/gumby
+lib/X11/icons/whiteglass/cursors/hand
 lib/X11/icons/whiteglass/cursors/hand1
 lib/X11/icons/whiteglass/cursors/hand2
 lib/X11/icons/whiteglass/cursors/left_ptr
@@ -133,6 +136,7 @@ lib/X11/icons/whiteglass/cursors/lr_angle
 lib/X11/icons/whiteglass/cursors/pencil
 lib/X11/icons/whiteglass/cursors/pirate
 lib/X11/icons/whiteglass/cursors/plus
+lib/X11/icons/whiteglass/cursors/pointer
 lib/X11/icons/whiteglass/cursors/question_arrow
 lib/X11/icons/whiteglass/cursors/right_ptr
 lib/X11/icons/whiteglass/cursors/right_side

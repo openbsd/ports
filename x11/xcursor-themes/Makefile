@@ -1,7 +1,7 @@
-#	$OpenBSD: Makefile,v 1.14 2018/05/01 11:46:34 matthieu Exp $
+#	$OpenBSD: Makefile,v 1.15 2019/02/16 08:40:15 matthieu Exp $
 
 COMMENT =	X11 Cursors themes
-DISTNAME =	xcursor-themes-1.0.5
+DISTNAME =	xcursor-themes-1.0.6
 CATEGORIES =	x11
 
 HOMEPAGE =	http://wiki.X.Org/
