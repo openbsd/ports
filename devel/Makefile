@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1818 2019/02/14 22:48:39 mariani Exp $
+# $OpenBSD: Makefile,v 1.1819 2019/02/16 13:18:59 fcambus Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -833,6 +833,7 @@
      SUBDIR += p5-Iterator
      SUBDIR += p5-Iterator-Util
      SUBDIR += p5-Lchown
+     SUBDIR += p5-List-AllUtils
      SUBDIR += p5-List-Compare
      SUBDIR += p5-List-Cycle
      SUBDIR += p5-List-MoreUtils
