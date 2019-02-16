@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2019/01/23 06:00:27 martijn Exp $
+$OpenBSD: README,v 1.7 2019/02/16 22:17:13 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -16,7 +16,9 @@ details, database schema, etc.
 The majority of Icinga Web 2 configuration is web-based and simple,
 but a few things will need to be setup FIRST.
 
-- If using PostgreSQL, install php-pgsql and php-pdo_pgsql.
+- Consult PHP package documentation to configure PHP and enable modules.
+
+- If using PostgreSQL, install and enable php-pgsql and php-pdo_pgsql.
 
 - If using php-fpm, configure it to run scripts as the _icingaweb2
 user, and set the /tmp directory. You may add this to ${SYSCONFDIR}/php-fpm.conf:
