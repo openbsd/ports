@@ -1,9 +1,10 @@
-#	$OpenBSD: Makefile,v 1.14 2019/01/28 06:27:28 jca Exp $
+#	$OpenBSD: Makefile,v 1.15 2019/02/16 12:06:23 jsg Exp $
 
 COMMENT=	tool to analyse \#includes in C and C++ source files
 CATEGORIES=	devel
 DISTNAME=	include-what-you-use-0.11.src
 PKGNAME=	include-what-you-use-0.11
+REVISION=	0
 
 HOMEPAGE=	http://include-what-you-use.org
 MASTER_SITES=	${HOMEPAGE}/downloads/
@@ -15,13 +16,14 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c curses execinfo form m pthread z
-BUILD_DEPENDS=	devel/llvm>=7.0.1
+LLVM_V=		7.0.1
+BUILD_DEPENDS=	devel/llvm>=${LLVM_V}
+RUN_DEPENDS=	devel/llvm>=${LLVM_V}
 LIB_DEPENDS=	devel/libexecinfo
 
 MODULES=		devel/cmake lang/python
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c++
-CONFIGURE_ARGS=		-DIWYU_LLVM_ROOT_PATH=${LOCALBASE}
 
 MODPY_ADJ_FILES = fix_includes.py iwyu_tool.py
 
