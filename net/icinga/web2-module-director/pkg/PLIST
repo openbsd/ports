@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/12/10 20:40:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/02/16 11:35:48 sthen Exp $
 icinga-web2/modules/director/
 icinga-web2/modules/director/.github/
 icinga-web2/modules/director/.github/ISSUE_TEMPLATE.md
@@ -78,6 +78,7 @@ icinga-web2/modules/director/application/controllers/PhperrorController.php
 icinga-web2/modules/director/application/controllers/SchemaController.php
 icinga-web2/modules/director/application/controllers/SelfServiceController.php
 icinga-web2/modules/director/application/controllers/ServiceController.php
+icinga-web2/modules/director/application/controllers/ServiceapplyrulesController.php
 icinga-web2/modules/director/application/controllers/ServicegroupController.php
 icinga-web2/modules/director/application/controllers/ServicegroupsController.php
 icinga-web2/modules/director/application/controllers/ServicesController.php
@@ -1057,6 +1058,7 @@ icinga-web2/modules/director/schema/pgsql-migrations/upgrade_154.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_155.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_156.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_157.sql
+icinga-web2/modules/director/schema/pgsql-migrations/upgrade_158.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_77.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_78.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_79.sql
