@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/02/16 17:18:35 cwen Exp $
 
 COMMENT = 	logging Role with easy interface for Moose
 
-DISTNAME =	MooseX-Log-Log4perl-0.42
-REVISION =	1
+DISTNAME =	MooseX-Log-Log4perl-0.47
 CATEGORIES =	devel
 MODULES =	cpan
 PKG_ARCH =	*
@@ -11,13 +10,13 @@ PKG_ARCH =	*
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS =	devel/p5-Moose \
-		devel/p5-Log-Log4perl \
-		devel/p5-IO-stringy
-BUILD_DEPENDS = ${RUN_DEPENDS}
-TEST_DEPENDS =	devel/p5-Class-Load \
-		devel/p5-Devel-GlobalDestruction \
-		devel/p5-Module-Runtime \
-		devel/p5-MRO-Compat
+CONFIGURE_STYLE =	modinst
+
+RUN_DEPENDS =		devel/p5-Log-Log4perl>=1.13 \
+			devel/p5-Moo>=1.000007
+BUILD_DEPENDS =		devel/p5-IO-stringy \
+			${RUN_DEPENDS}
+
+MAKE_ENV +=		TEST_POD=Yes
 
 .include <bsd.port.mk>
