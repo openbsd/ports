@@ -1,0 +1,69 @@
+$OpenBSD: patch-etc_config_keycodes,v 1.1.1.1 2019/02/16 10:09:57 sthen Exp $
+
+Fix keycodes for the "Left", "Down", "Up" and "Right" keys: they're
+different between Linux and OpenBSD.
+
+Index: etc/config.keycodes
+--- etc/config.keycodes.orig
++++ etc/config.keycodes
+@@ -29,13 +29,13 @@ font pango:monospace 8
+ floating_modifier $mod
+ 
+ # start a terminal
+-bindcode $mod+36 exec i3-sensible-terminal
++bindcode $mod+36 exec ${X11BASE}/bin/xterm
+ 
+ # kill focused window
+ bindcode $mod+Shift+24 kill
+ 
+ # start dmenu (a program launcher)
+-bindcode $mod+40 exec dmenu_run
++bindcode $mod+40 exec ${LOCALBASE}/bin/dmenu_run
+ # There also is the (new) i3-dmenu-desktop which only displays applications
+ # shipping a .desktop file. It is a wrapper around dmenu, so you need that
+ # installed.
+@@ -48,10 +48,10 @@ bindcode $mod+46 focus up
+ bindcode $mod+47 focus right
+ 
+ # alternatively, you can use the cursor keys:
+-bindcode $mod+113 focus left
+-bindcode $mod+116 focus down
+-bindcode $mod+111 focus up
+-bindcode $mod+114 focus right
++bindcode $mod+100 focus left
++bindcode $mod+104 focus down
++bindcode $mod+98 focus up
++bindcode $mod+102 focus right
+ 
+ # move focused window
+ bindcode $mod+Shift+44 move left
+@@ -60,10 +60,10 @@ bindcode $mod+Shift+46 move up
+ bindcode $mod+Shift+47 move right
+ 
+ # alternatively, you can use the cursor keys:
+-bindcode $mod+Shift+113 move left
+-bindcode $mod+Shift+116 move down
+-bindcode $mod+Shift+111 move up
+-bindcode $mod+Shift+114 move right
++bindcode $mod+Shift+100 move left
++bindcode $mod+Shift+104 move down
++bindcode $mod+Shift+98 move up
++bindcode $mod+Shift+102 move right
+ 
+ # split in horizontal orientation
+ bindcode $mod+43 split h
+@@ -149,10 +149,10 @@ mode "resize" {
+         bindcode 47 resize grow width 10 px or 10 ppt
+ 
+         # same bindings, but for the arrow keys
+-        bindcode 113 resize shrink width 10 px or 10 ppt
+-        bindcode 116 resize grow height 10 px or 10 ppt
+-        bindcode 111 resize shrink height 10 px or 10 ppt
+-        bindcode 114 resize grow width 10 px or 10 ppt
++        bindcode 100 resize shrink width 10 px or 10 ppt
++        bindcode 104 resize grow height 10 px or 10 ppt
++        bindcode 98 resize shrink height 10 px or 10 ppt
++        bindcode 102 resize grow width 10 px or 10 ppt
+ 
+         # back to normal: Enter or Escape or $mod+r
+         bindcode 36 mode "default"

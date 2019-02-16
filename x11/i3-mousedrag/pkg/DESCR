@@ -1,0 +1,7 @@
+i3 is an improved dynamic, tiling window manager originally inspired
+by wmii.
+
+This fork adds support for dragging tiled windows using the mouse.
+Hopefully it will be merged to the main branch at some point (see
+https://github.com/i3/i3/pull/3085) and this separate package will
+no longer be necessary.

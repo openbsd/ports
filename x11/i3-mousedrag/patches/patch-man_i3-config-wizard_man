@@ -1,0 +1,22 @@
+$OpenBSD: patch-man_i3-config-wizard_man,v 1.1.1.1 2019/02/16 10:09:57 sthen Exp $
+Index: man/i3-config-wizard.man
+--- man/i3-config-wizard.man.orig
++++ man/i3-config-wizard.man
+@@ -27,7 +27,7 @@ Display a short help message and exit.
+ 
+ == FILES
+ 
+-=== /etc/i3/config.keycodes
++=== ${SYSCONFDIR}/i3/config.keycodes
+ 
+ This file contains the default configuration with keycodes. All the bindcode
+ lines will be transformed to bindsym and the user-specified modifier will be
+@@ -37,7 +37,7 @@ used.
+ 
+ i3-config-wizard is started by i3 in its default config, unless ~/.i3/config
+ exists. i3-config-wizard creates a keysym based i3 config file (based on
+-/etc/i3/config.keycodes) in ~/.i3/config.
++${SYSCONFDIR}/i3/config.keycodes) in ~/.i3/config.
+ 
+ The advantage of using keysyms is that the config file is easy to read,
+ understand and modify. However, if we shipped with a keysym based default

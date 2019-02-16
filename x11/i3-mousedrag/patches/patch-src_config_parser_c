@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_config_parser_c,v 1.1.1.1 2019/02/16 10:09:57 sthen Exp $
+Index: src/config_parser.c
+--- src/config_parser.c.orig
++++ src/config_parser.c
+@@ -791,8 +791,8 @@ static char *migrate_config(char *input, off_t size) {
+  */
+ void start_config_error_nagbar(const char *configpath, bool has_errors) {
+     char *editaction, *pageraction;
+-    sasprintf(&editaction, "i3-sensible-editor \"%s\" && i3-msg reload\n", configpath);
+-    sasprintf(&pageraction, "i3-sensible-pager \"%s\"\n", errorfilename);
++    sasprintf(&editaction, "/usr/bin/vi \"%s\" && i3-msg reload\n", configpath);
++    sasprintf(&pageraction, "/usr/bin/less \"%s\"\n", errorfilename);
+     char *argv[] = {
+         NULL, /* will be replaced by the executable path */
+         "-f",
