@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/12/05 20:19:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/02/17 22:17:41 sthen Exp $
 
 COMMENT =	console audio player
 DISTNAME =	moc-2.5.2
@@ -7,7 +7,7 @@ HOMEPAGE =	http://moc.daper.net/
 MASTER_SITES =	http://ftp.daper.net/pub/soft/moc/stable/ \
 		https://distfiles.nl/
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	4
+REVISION =	5
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM = Yes

@@ -1,0 +1,36 @@
+$OpenBSD: patch-decoder_plugins_ffmpeg_ffmpeg_c,v 1.1 2019/02/17 22:17:41 sthen Exp $
+
+Maint: Migrate to FFmpeg/LibAV's AV_-prefixed #defines.
+
+Index: decoder_plugins/ffmpeg/ffmpeg.c
+--- decoder_plugins/ffmpeg/ffmpeg.c.orig
++++ decoder_plugins/ffmpeg/ffmpeg.c
+@@ -984,7 +984,7 @@ static void *ffmpeg_open (const char *file)
+ 	 * FFmpeg/LibAV in use.  For some versions this will be caught in
+ 	 * *_find_stream_info() above and misreported as an unfound codec
+ 	 * parameters error. */
+-	if (data->codec->capabilities & CODEC_CAP_EXPERIMENTAL) {
++	if (data->codec->capabilities & AV_CODEC_CAP_EXPERIMENTAL) {
+ 		decoder_error (&data->error, ERROR_FATAL, 0,
+ 				"The codec is experimental and may damage MOC: %s",
+ 				data->codec->name);
+@@ -993,8 +993,8 @@ static void *ffmpeg_open (const char *file)
+ #endif
+ 
+ 	set_downmixing (data);
+-	if (data->codec->capabilities & CODEC_CAP_TRUNCATED)
+-		data->enc->flags |= CODEC_FLAG_TRUNCATED;
++	if (data->codec->capabilities & AV_CODEC_CAP_TRUNCATED)
++		data->enc->flags |= AV_CODEC_FLAG_TRUNCATED;
+ 
+ #ifdef HAVE_AVCODEC_OPEN2
+ 	if (avcodec_open2 (data->enc, data->codec, NULL) < 0)
+@@ -1025,7 +1025,7 @@ static void *ffmpeg_open (const char *file)
+ 
+ 	data->sample_width = sfmt_Bps (data->fmt);
+ 
+-	if (data->codec->capabilities & CODEC_CAP_DELAY)
++	if (data->codec->capabilities & AV_CODEC_CAP_DELAY)
+ 		data->delay = true;
+ 	data->seek_broken = is_seek_broken (data);
+ 	data->timing_broken = is_timing_broken (data->ic);
