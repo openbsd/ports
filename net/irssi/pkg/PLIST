@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.25 2018/01/28 17:47:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.26 2019/02/17 19:25:43 kn Exp $
+@pkgpath net/irssi-otr
 @bin bin/irssi
 include/irssi/
 include/irssi/irssi-config
@@ -96,10 +97,18 @@ include/irssi/src/fe-common/irc/notifylist/
 include/irssi/src/fe-common/irc/notifylist/module-formats.h
 include/irssi/src/fe-common/irc/notifylist/module.h
 include/irssi/src/fe-text/
+include/irssi/src/fe-text/gui-printtext.h
+include/irssi/src/fe-text/gui-windows.h
+include/irssi/src/fe-text/mainwindows.h
 include/irssi/src/fe-text/statusbar-item.h
+include/irssi/src/fe-text/statusbar.h
+include/irssi/src/fe-text/term.h
+include/irssi/src/fe-text/textbuffer-view.h
+include/irssi/src/fe-text/textbuffer.h
 include/irssi/src/irc/
 include/irssi/src/irc/core/
 include/irssi/src/irc/core/bans.h
+include/irssi/src/irc/core/channel-events.h
 include/irssi/src/irc/core/channel-rejoin.h
 include/irssi/src/irc/core/ctcp.h
 include/irssi/src/irc/core/irc-cap.h
@@ -143,6 +152,8 @@ lib/irssi/
 lib/irssi/modules/
 lib/irssi/modules/libirc_proxy.la
 lib/irssi/modules/libirc_proxy.so
+lib/irssi/modules/libotr_core.la
+lib/irssi/modules/libotr_core.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi.pm
@@ -161,6 +172,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.so
 @man man/man1/irssi.1
 share/doc/irssi/
 share/doc/irssi/capsicum.txt
+share/doc/irssi/design.html
 share/doc/irssi/design.txt
 share/doc/irssi/faq.html
 share/doc/irssi/faq.txt
@@ -275,6 +287,7 @@ share/irssi/help/notice
 share/irssi/help/notify
 share/irssi/help/op
 share/irssi/help/oper
+share/irssi/help/otr
 share/irssi/help/part
 share/irssi/help/ping
 share/irssi/help/query
