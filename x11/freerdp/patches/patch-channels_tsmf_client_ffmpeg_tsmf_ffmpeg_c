@@ -1,0 +1,18 @@
+$OpenBSD: patch-channels_tsmf_client_ffmpeg_tsmf_ffmpeg_c,v 1.1 2019/02/17 21:34:01 sthen Exp $
+
+Fix future ffmpeg support
+
+Index: channels/tsmf/client/ffmpeg/tsmf_ffmpeg.c
+--- channels/tsmf/client/ffmpeg/tsmf_ffmpeg.c.orig
++++ channels/tsmf/client/ffmpeg/tsmf_ffmpeg.c
+@@ -207,8 +207,8 @@ static BOOL tsmf_ffmpeg_init_stream(ITSMFDecoder* deco
+ 		}
+ 	}
+ 
+-	if (mdecoder->codec->capabilities & CODEC_CAP_TRUNCATED)
+-		mdecoder->codec_context->flags |= CODEC_FLAG_TRUNCATED;
++	if (mdecoder->codec->capabilities & AV_CODEC_CAP_TRUNCATED)
++		mdecoder->codec_context->flags |= AV_CODEC_FLAG_TRUNCATED;
+ 	return TRUE;
+ }
+ 
