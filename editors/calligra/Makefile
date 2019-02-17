@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/10/22 20:30:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.32 2019/02/17 20:39:35 kili Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra.org
@@ -115,7 +115,7 @@ LIB_DEPENDS +=	x11/qt5/qtdeclarative \
 		graphics/kdiagram \
 		devel/gsl \
 		graphics/lcms2 \
-		print/poppler,-qt5 \
+		print/poppler,,-qt5 \
 		security/qca-qt5
 
 # Stuff we don't have ATM. Do not bother about CreateResources, it's
