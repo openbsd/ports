@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2019/02/05 21:25:47 sebastia Exp $
+# $OpenBSD: Makefile,v 1.14 2019/02/18 10:16:34 sebastia Exp $
 
 PORTROACH=		limit:^5
 
 VERSION=		5.5.10
+REVISION =		0
 
 RUN_DEPENDS+=		databases/ruby-hiera3,${MODRUBY_FLAVOR} \
 			devel/ruby-gettext-setup,${MODRUBY_FLAVOR}>=0.28,<1 \
@@ -10,9 +11,12 @@ RUN_DEPENDS+=		databases/ruby-hiera3,${MODRUBY_FLAVOR} \
 			devel/ruby-rgen,${MODRUBY_FLAVOR} \
 			sysutils/facter
 
+SUBST_VARS +=	MODPY_DEFAULT_VERSION_2 MODPY_DEFAULT_VERSION_3
+
 pre-install:
 	${SUBST_CMD} ${WRKDIST}/lib/puppet/provider/package/gem.rb \
 		${WRKDIST}/lib/puppet/provider/package/pip.rb \
+		${WRKDIST}/lib/puppet/provider/package/pip3.rb \
 		${WRKSRC}/lib/puppet/reference/configuration.rb \
 		${WRKSRC}/lib/puppet/util/run_mode.rb \
 		${WRKSRC}/lib/puppet/defaults.rb \
