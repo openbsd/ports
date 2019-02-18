@@ -1,5 +1,5 @@
 /*
- * $OpenBSD: 00-openbsd-consolekit.rules,v 1.1 2019/01/19 01:50:49 ajacoutot Exp $
+ * $OpenBSD: 00-openbsd-consolekit.rules,v 1.2 2019/02/18 11:48:31 ajacoutot Exp $
  *
  * These rules try to match OpenBSD default behavior
  */
@@ -16,7 +16,7 @@ polkit.addRule(function(action, subject) {
             if (subject.local && subject.active && subject.isInGroup("operator")) {
                 return polkit.Result.YES;
             } else {
-                return polkit.Result.AUTH_ADMIN_KEEP;
+                return polkit.Result.AUTH_ADMIN;
             }
         }
 });
