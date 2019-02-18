@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/02/18 06:09:30 pamela Exp $
 
 COMMENT=	OCR program for pnm files
 
-DISTNAME=	ocrad-0.26
-REVISION=	0
+DISTNAME=	ocrad-0.27
 
 CATEGORIES=	graphics
 EXTRACT_SUFX=	.tar.lz
@@ -22,6 +21,8 @@ CONFIGURE_STYLE=simple
 MAKE_FLAGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 FAKE_FLAGS=	infodir="${PREFIX}/info" \
 		mandir="${PREFIX}/man"
+
+TEST_TARGET =	check
 
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/doc/ocrad.1 ${PREFIX}/man/man1
