@@ -1,0 +1,3 @@
+This module provides an alternative API to NetAddr::IP that aims to address
+the biggest problems with that module's API, as well as adding some additional
+features.

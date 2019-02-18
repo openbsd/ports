@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/18 11:26:00 fcambus Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/Works/
+${P5SITE}/Net/Works.pm
+${P5SITE}/Net/Works/Address.pm
+${P5SITE}/Net/Works/Network.pm
+${P5SITE}/Net/Works/Role/
+${P5SITE}/Net/Works/Role/IP.pm
+${P5SITE}/Net/Works/Types.pm
+${P5SITE}/Net/Works/Util.pm
+@man man/man3p/Net::Works.3p
+@man man/man3p/Net::Works::Address.3p
+@man man/man3p/Net::Works::Network.3p
+@man man/man3p/Net::Works::Util.3p
