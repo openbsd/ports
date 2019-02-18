@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.45 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2019/02/18 19:43:45 jasper Exp $
 
 COMMENT =		SMTP plugin for MUAs
 
 DISTNAME =		msmtp-1.6.6
 CATEGORIES =		mail
-REVISION =		0
+REVISION =		1
 
-HOMEPAGE =		http://msmtp.sourceforge.net/
+HOMEPAGE =		https://marlam.de/msmtp/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB =  c crypto iconv idn intl ssl
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=msmtp/}
+MASTER_SITES =		https://marlam.de/msmtp/releases/
 EXTRACT_SUFX =		.tar.xz
 
 LIB_DEPENDS =		devel/libidn
