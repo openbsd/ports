@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2018/08/30 10:27:05 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.7 2019/02/18 19:51:23 jasper Exp $
 
 - pre-generated parser.c is used
 - fixes parallel build with our make
@@ -6,7 +6,7 @@ $OpenBSD: patch-Makefile_in,v 1.6 2018/08/30 10:27:05 jasper Exp $
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -2382,8 +2382,6 @@ uninstall-am: uninstall-libLTLIBRARIES uninstall-local
+@@ -2583,8 +2583,6 @@ uninstall-am: uninstall-libLTLIBRARIES uninstall-local
  .PRECIOUS: Makefile
  
  
