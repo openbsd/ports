@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2018/08/30 10:26:58 rpointel Exp $
+# $OpenBSD: Makefile,v 1.5 2019/02/18 21:49:14 rpointel Exp $
 
 COMMENT =	dex to java decompiler
 
-VERSION =	0.8.0
+VERSION =	0.9.0
 DISTNAME =	jadx-${VERSION}
 
 CATEGORIES =	devel security
