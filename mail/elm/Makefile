@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/04/19 13:40:16 jca Exp $
+# $OpenBSD: Makefile,v 1.29 2019/02/18 14:27:25 espie Exp $
 
 COMMENT=	once-popular mail user agent
 
@@ -18,6 +18,7 @@ CONFIGURE_SCRIPT= Configure
 CONFIGURE_ARGS+= -S -d
 CONFIGURE_ENV+=	PREFIX='$${DESTDIR}${PREFIX}' \
 		LOCALBASE='${LOCALBASE}'
+FIX_EXTRACT_PERMISSIONS = Yes
 
 MAKE_FLAGS=	CC="${CC}"
 
@@ -33,6 +34,7 @@ post-configure:
 	@perl -pi.bak -e 's,\$${DESTDIR},,g;' \
 		${WRKBUILD}/config.h ${WRKBUILD}/hdrs/sysdefs.h \
 		${WRKBUILD}/utils/{checkalias,listalias,messages,printmail}
+	@perl -pi.bak -e 's,-..MAKEFLAGS..,,g;' ${WRKBUILD}/Makefile
 
 NO_TEST=	Yes
 
