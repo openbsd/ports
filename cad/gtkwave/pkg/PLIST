@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/10/26 04:01:02 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/02/18 10:47:40 ajacoutot Exp $
 @bin bin/evcd2vcd
 @bin bin/fst2vcd
 @bin bin/fstminer
@@ -13,7 +13,6 @@
 @bin bin/vcd2lxt
 @bin bin/vcd2lxt2
 @bin bin/vcd2vzt
-@bin bin/vermin
 @bin bin/vzt2vcd
 @bin bin/vztminer
 @bin bin/xml2stems
@@ -31,7 +30,6 @@
 @man man/man1/vcd2lxt.1
 @man man/man1/vcd2lxt2.1
 @man man/man1/vcd2vzt.1
-@man man/man1/vermin.1
 @man man/man1/vzt2vcd.1
 @man man/man1/vztminer.1
 @man man/man1/xml2stems.1
