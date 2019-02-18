@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_mediaenc_ffmpeg_cpp,v 1.3 2019/02/18 00:27:34 bentley Exp $
+
+Index: src/mediaenc_ffmpeg.cpp
+--- src/mediaenc_ffmpeg.cpp.orig
++++ src/mediaenc_ffmpeg.cpp
+@@ -223,7 +223,7 @@ bool wxFfmpegMediaEncoder::addAudioStream(int codecId)
+ 	c->time_base = (AVRational){ 1, c->sample_rate };
+ 	// some formats want stream headers to be separate
+ 	if(m_outputCtx->oformat->flags & AVFMT_GLOBALHEADER)
+-	    c->flags |= CODEC_FLAG_GLOBAL_HEADER;
++	    c->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+ 	
+ 	return true;
+ }
