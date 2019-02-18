@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2019/02/17 19:25:43 kn Exp $
+# $OpenBSD: Makefile,v 1.79 2019/02/18 18:35:57 kn Exp $
 
 COMMENT =	modular IRC client with many features (ipv6,socks,proxy)
 
@@ -36,7 +36,8 @@ CONFIGURE_ARGS =	--with-otr=module \
 			--with-pic \
 			--with-proxy
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			ac_cv_lib_utf8proc_utf8proc_version=no
 
 .if ${FLAVOR:Msocks}
 CONFIGURE_ARGS +=	--with-socks
