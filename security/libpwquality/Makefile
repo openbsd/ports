@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2018/05/29 16:00:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2019/02/18 08:02:04 ajacoutot Exp $
 
-COMMENT =		library to generate, and check strenght of passwords
+COMMENT =		library to generate, and check strengh of passwords
 
 V =			1.4.0
 SUBST_VARS =		V
@@ -8,7 +8,7 @@ GH_PROJECT =		libpwquality
 GH_ACCOUNT =		libpwquality
 GH_TAGNAME =		libpwquality-${V}
 DISTNAME =		libpwquality-${V}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  pwquality            1.0      # 1.2
 
