@@ -1,0 +1,24 @@
+$OpenBSD: patch-filter_filter_resample_c,v 1.3 2019/02/18 10:05:39 ajacoutot Exp $
+
+Update for newer FFmpeg API.
+
+Index: filter/filter_resample.c
+--- filter/filter_resample.c.orig
++++ filter/filter_resample.c
+@@ -37,6 +37,7 @@
+ #include "libtc/optstr.h"
+ #include "libtc/tcavcodec.h"
+ #include "libtc/tcmodule-plugin.h"
++#include <libavresample/avresample.h>
+ 
+ 
+ typedef struct {
+@@ -45,7 +46,7 @@ typedef struct {
+ 
+     int bytes_per_sample;
+ 
+-    ReSampleContext *resample_ctx;
++    AVAudioResampleContext *resample_ctx;
+ } ResamplePrivateData;
+ 
+ static const char resample_help[] = ""

@@ -1,21 +1,27 @@
-$OpenBSD: patch-src_player_c,v 1.22 2017/08/24 09:06:10 dcoppa Exp $
+$OpenBSD: patch-src_player_c,v 1.23 2019/02/18 10:05:39 ajacoutot Exp $
 
-XXX Revert:
-commit f3dff6792232d1e3f2deb8baf21dc1fa81581090
-Author: Lars-Dominik Braun <lars@6xq.net>
-Date:   Fri Mar 24 10:02:27 2017
+- XXX Revert:
+  commit f3dff6792232d1e3f2deb8baf21dc1fa81581090
+  Author: Lars-Dominik Braun <lars@6xq.net>
+  Date:   Fri Mar 24 10:02:27 2017
 
-Replace deprecated avcodec_decode_audio4
+  Replace deprecated avcodec_decode_audio4
 
-Use new send_packet/receive_frame API.
-
-Bumps libav and ffmpeg version requirements. Revert this commit if
-you need an older version.
+  Use new send_packet/receive_frame API.
+- Remove deprecated header avfiltergraph.h
 
 Index: src/player.c
 --- src/player.c.orig
 +++ src/player.c
-@@ -166,23 +166,16 @@ static bool openStream (player_t * const player) {
+@@ -36,7 +36,6 @@ THE SOFTWARE.
+ #include <libavcodec/avcodec.h>
+ #include <libavutil/avutil.h>
+ #include <libavfilter/avfilter.h>
+-#include <libavfilter/avfiltergraph.h>
+ #include <libavfilter/buffersink.h>
+ #include <libavfilter/buffersrc.h>
+ #ifdef HAVE_LIBAVFILTER_AVCODEC_H
+@@ -166,23 +165,16 @@ static bool openStream (player_t * const player) {
  	}
  
  	player->st = player->fctx->streams[player->streamIdx];
@@ -42,7 +48,7 @@ Index: src/player.c
  		softfail ("codec_open2");
  	}
  
-@@ -203,7 +196,7 @@ static bool openFilter (player_t * const player) {
+@@ -203,7 +195,7 @@ static bool openFilter (player_t * const player) {
  	/* filter setup */
  	char strbuf[256];
  	int ret = 0;
@@ -51,7 +57,7 @@ Index: src/player.c
  
  	if ((player->fgraph = avfilter_graph_alloc ()) == NULL) {
  		softfail ("graph_alloc");
-@@ -212,11 +205,17 @@ static bool openFilter (player_t * const player) {
+@@ -212,11 +204,17 @@ static bool openFilter (player_t * const player) {
  	/* abuffer */
  	AVRational time_base = player->st->time_base;
  
@@ -72,7 +78,7 @@ Index: src/player.c
  	if ((ret = avfilter_graph_create_filter (&player->fabuf,
  			avfilter_get_by_name ("abuffer"), NULL, strbuf, NULL,
  			player->fgraph)) < 0) {
-@@ -264,14 +263,14 @@ static bool openFilter (player_t * const player) {
+@@ -264,14 +262,14 @@ static bool openFilter (player_t * const player) {
  /*	setup libao
   */
  static bool openDevice (player_t * const player) {
@@ -90,7 +96,7 @@ Index: src/player.c
  	aoFmt.byte_format = AO_FMT_NATIVE;
  
  	int driver = ao_default_driver_id ();
-@@ -289,7 +288,6 @@ static int play (player_t * const player) {
+@@ -289,7 +287,6 @@ static int play (player_t * const player) {
  	assert (player != NULL);
  
  	AVPacket pkt;
@@ -98,7 +104,7 @@ Index: src/player.c
  	av_init_packet (&pkt);
  	pkt.data = NULL;
  	pkt.size = 0;
-@@ -300,28 +298,18 @@ static int play (player_t * const player) {
+@@ -300,28 +297,18 @@ static int play (player_t * const player) {
  	filteredFrame = av_frame_alloc ();
  	assert (filteredFrame != NULL);
  
@@ -137,7 +143,7 @@ Index: src/player.c
  		/* pausing */
  		pthread_mutex_lock (&player->pauseMutex);
  		if (player->doPause) {
-@@ -333,50 +321,54 @@ static int play (player_t * const player) {
+@@ -333,50 +320,54 @@ static int play (player_t * const player) {
  		}
  		pthread_mutex_unlock (&player->pauseMutex);
  
@@ -221,7 +227,7 @@ Index: src/player.c
  }
  
  static void finish (player_t * const player) {
-@@ -386,9 +378,9 @@ static void finish (player_t * const player) {
+@@ -386,9 +377,9 @@ static void finish (player_t * const player) {
  		avfilter_graph_free (&player->fgraph);
  		player->fgraph = NULL;
  	}
