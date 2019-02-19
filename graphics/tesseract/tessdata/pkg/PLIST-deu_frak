@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST-deu_frak,v 1.3 2018/09/17 10:13:09 espie Exp $
-share/tessdata/
-@conflict tesseract-<3.02.02
-@pkgpath graphics/tesseract,-deu_frak
-@pkgpath graphics/tesseract-langs/deu_frak
-share/tessdata/deu_frak.traineddata

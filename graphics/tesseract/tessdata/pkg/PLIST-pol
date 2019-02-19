@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-pol,v 1.3 2018/09/17 10:13:09 espie Exp $
-share/tessdata/
+@comment $OpenBSD: PLIST-pol,v 1.4 2019/02/19 08:55:34 rapha Exp $
 @conflict tesseract-<3.02.02
 @pkgpath graphics/tesseract,-pol
 @pkgpath graphics/tesseract-langs/pol
+share/tessdata/
 share/tessdata/pol.traineddata

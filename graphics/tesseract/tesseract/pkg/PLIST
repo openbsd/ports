@@ -1,65 +1,69 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/09/04 12:46:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/02/19 08:55:34 rapha Exp $
 @pkgpath graphics/tesseract,-main
 @pkgpath graphics/tesseract
 @bin bin/ambiguous_words
 @bin bin/classifier_tester
 @bin bin/cntraining
+@bin bin/combine_lang_model
 @bin bin/combine_tessdata
 @bin bin/dawg2wordlist
+bin/language-specific.sh
+@bin bin/lstmeval
+@bin bin/lstmtraining
+@bin bin/merge_unicharsets
 @bin bin/mftraining
 @bin bin/set_unicharset_properties
 @bin bin/shapeclustering
 @bin bin/tesseract
+bin/tesstrain.sh
+bin/tesstrain_utils.sh
 @bin bin/text2image
 @bin bin/unicharset_extractor
 @bin bin/wordlist2dawg
 include/tesseract/
 include/tesseract/apitypes.h
 include/tesseract/baseapi.h
-include/tesseract/basedir.h
 include/tesseract/capi.h
-include/tesseract/errcode.h
-include/tesseract/fileerr.h
 include/tesseract/genericvector.h
 include/tesseract/helpers.h
 include/tesseract/host.h
 include/tesseract/ltrresultiterator.h
-include/tesseract/memry.h
-include/tesseract/ndminx.h
 include/tesseract/ocrclass.h
 include/tesseract/osdetect.h
 include/tesseract/pageiterator.h
-include/tesseract/params.h
 include/tesseract/platform.h
 include/tesseract/publictypes.h
 include/tesseract/renderer.h
 include/tesseract/resultiterator.h
 include/tesseract/serialis.h
 include/tesseract/strngs.h
+include/tesseract/tess_version.h
 include/tesseract/tesscallback.h
 include/tesseract/thresholder.h
 include/tesseract/unichar.h
-include/tesseract/unicharmap.h
-include/tesseract/unicharset.h
 lib/libtesseract.a
 lib/libtesseract.la
 @lib lib/libtesseract.so.${LIBtesseract_VERSION}
 lib/pkgconfig/tesseract.pc
 @man man/man1/ambiguous_words.1
+@man man/man1/classifier_tester.1
 @man man/man1/cntraining.1
+@man man/man1/combine_lang_model.1
 @man man/man1/combine_tessdata.1
 @man man/man1/dawg2wordlist.1
+@man man/man1/lstmeval.1
+@man man/man1/lstmtraining.1
+@man man/man1/merge_unicharsets.1
 @man man/man1/mftraining.1
+@man man/man1/set_unicharset_properties.1
 @man man/man1/shapeclustering.1
 @man man/man1/tesseract.1
+@man man/man1/text2image.1
 @man man/man1/unicharset_extractor.1
 @man man/man1/wordlist2dawg.1
 @man man/man5/unicharambigs.5
 @man man/man5/unicharset.5
 share/doc/pkg-readmes/${PKGSTEM}
-share/examples/tesseract/
-share/examples/tesseract/eurotext.tif
-share/examples/tesseract/phototest.tif
 share/tessdata/configs/
 share/tessdata/configs/ambigs.train
 share/tessdata/configs/api_config
@@ -72,6 +76,8 @@ share/tessdata/configs/inter
 share/tessdata/configs/kannada
 share/tessdata/configs/linebox
 share/tessdata/configs/logfile
+share/tessdata/configs/lstm.train
+share/tessdata/configs/lstmdebug
 share/tessdata/configs/makebox
 share/tessdata/configs/pdf
 share/tessdata/configs/quiet
