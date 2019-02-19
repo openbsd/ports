@@ -1,9 +1,9 @@
-$OpenBSD: patch-lang_qt_tests_Makefile_in,v 1.1 2019/02/04 13:49:07 jca Exp $
+$OpenBSD: patch-lang_qt_tests_Makefile_in,v 1.2 2019/02/19 16:04:43 sthen Exp $
 
 Index: lang/qt/tests/Makefile.in
 --- lang/qt/tests/Makefile.in.orig
 +++ lang/qt/tests/Makefile.in
-@@ -499,7 +499,7 @@ moc_files = t-keylist.moc t-keylocate.moc t-ownertrust
+@@ -500,7 +500,7 @@ moc_files = t-keylist.moc t-keylocate.moc t-ownertrust
  AM_LDFLAGS = -no-install
  LDADD = ../../cpp/src/libgpgmepp.la ../src/libqgpgme.la \
          ../../../src/libgpgme.la @GPGME_QT_LIBS@ @GPG_ERROR_LIBS@ \

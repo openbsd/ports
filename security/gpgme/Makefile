@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.46 2018/10/09 13:40:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.47 2019/02/19 16:04:43 sthen Exp $
 
 COMMENT-main =		GnuPG Made Easy
 COMMENT-qt =		Qt bindings for GPGme
 
-VERSION =		1.10.0
-REVISION =		2
+VERSION =		1.12.0
 DISTNAME =		gpgme-${VERSION}
 PKGNAME-main =		gpgme-${VERSION}
 PKGNAME-qt =		gpgme-qt-${VERSION}
 
 CATEGORIES =		security devel
 
-SHARED_LIBS +=  gpgme                     21.0# 29.0
-SHARED_LIBS +=  gpgmepp                   0.0 # 11.0
-SHARED_LIBS +=  qgpgme                    0.0 # 10.0
+SHARED_LIBS +=  gpgme                21.1     # 32.0
+SHARED_LIBS +=  gpgmepp              0.0      # 14.0
+SHARED_LIBS +=  qgpgme               0.0      # 10.2
 
 HOMEPAGE =		https://www.gnupg.org/software/gpgme/index.html
 
@@ -24,7 +23,7 @@ EXTRACT_SUFX =		.tar.bz2
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB = assuan gpg-error iconv intl
-WANTLIB-main = ${WANTLIB} c
+WANTLIB-main = ${WANTLIB} c m
 WANTLIB-qt = ${COMPILER_LIBCXX} ${WANTLIB} Qt5Core execinfo glib-2.0
 WANTLIB-qt += gthread-2.0 icudata icui18n icuuc m pcre pcre2-16 z gpgme
 
@@ -60,7 +59,7 @@ MODULES +=		x11/qt5
 CONFIGURE_ARGS +=	--enable-languages='cpp qt'
 CXXFLAGS +=		"-std=c++11"
 LIB_DEPENDS-qt +=	${LIB_DEPENDS} \
-			${BUILD_PKGPATH},-main
+			gpgme-=${VERSION}:${BUILD_PKGPATH},-main
 .else
 COMPILER_LANGS =	c
 CONFIGURE_ARGS +=	--enable-languages=''
