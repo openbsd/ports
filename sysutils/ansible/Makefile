@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2019/01/27 15:08:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.99 2019/02/19 18:58:18 jasper Exp $
 
 COMMENT-main =		ssh based config management framework
 COMMENT-html =		offline Ansible documentation in HTML format
@@ -7,6 +7,8 @@ MODPY_EGG_VERSION =	2.7.6
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-html =		ansible-html-${MODPY_EGG_VERSION}
+
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -23,13 +25,14 @@ MASTER_SITES =		https://releases.ansible.com/ansible/
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-BUILD_DEPENDS =		textproc/py-sphinx
-RUN_DEPENDS =		security/py-cryptodome \
-			security/py-paramiko \
-			security/py-passlib \
-			textproc/py-yaml \
-			www/py-jinja2
+BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
+RUN_DEPENDS =		security/py-cryptodome${MODPY_FLAVOR} \
+			security/py-paramiko${MODPY_FLAVOR} \
+			security/py-passlib${MODPY_FLAVOR} \
+			textproc/py-yaml${MODPY_FLAVOR} \
+			www/py-jinja2${MODPY_FLAVOR}
 RUN_DEPENDS-html =	${BUILD_PKGPATH},-main
 
 PKG_ARCH-html =		*
@@ -50,7 +53,7 @@ pre-configure:
 # "_build" to be revisited in case SEPARATE_BUILD is changed
 post-build:
 	cd ${WRKSRC}/docs/docsite; \
-	${LOCALBASE}/bin/sphinx-build -M html rst _build -j ${MAKE_JOBS}
+	${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX} -M html rst _build -j ${MAKE_JOBS}
 	# Ansible misses this file in distribution?
 	ln ${WRKSRC}/docs/docsite/_build/html/_static/css/theme.css \
 	      ${WRKSRC}/docs/docsite/_build/html/_static/css/theme.min.css
