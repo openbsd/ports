@@ -1,11 +1,29 @@
-$OpenBSD: patch-drivers_freetds_dbd_freetds_c,v 1.2 2017/06/03 16:24:05 steven Exp $
+$OpenBSD: patch-drivers_freetds_dbd_freetds_c,v 1.3 2019/02/19 21:16:29 sthen Exp $
 
-From FreeBSD.
+Hunk #1:
+
+Patch to fallback to FreeTDS 0.95-ish define to unbreak build with newer FreeTDS.
+Learn about the 8.0 mess in http://www.freetds.org/userguide/choosingtdsprotocol.htm
+
+Some? of the others: From FreeBSD.
+
 
 Index: drivers/freetds/dbd_freetds.c
 --- drivers/freetds/dbd_freetds.c.orig
 +++ drivers/freetds/dbd_freetds.c
-@@ -474,6 +474,7 @@ dbi_result_t *dbd_list_tables(dbi_conn_t * conn, const
+@@ -233,7 +233,11 @@ int dbd_connect(dbi_conn_t * conn)
+ 	switch (str[0]) {
+ //      We can use it if "CS_TDS_80" will be add to ct_con_props() by CS_SET action
+ 	case '8':
++#ifdef CS_TDS_80
+ 	    num = CS_TDS_80;
++#else
++	    num = CS_TDS_71;
++#endif
+ 	    break;
+ 	case '7':
+ 	    num = CS_TDS_70;
+@@ -474,6 +478,7 @@ dbi_result_t *dbd_list_tables(dbi_conn_t * conn, const
  {
      dbi_result_t *res;
      char *sql_cmd;
@@ -13,7 +31,7 @@ Index: drivers/freetds/dbd_freetds.c
  
      if (db == NULL || db[0] == '\0') {
  	/* Use current database */
-@@ -481,7 +482,6 @@ dbi_result_t *dbd_list_tables(dbi_conn_t * conn, const
+@@ -481,7 +486,6 @@ dbi_result_t *dbd_list_tables(dbi_conn_t * conn, const
  	return res;
      }
  
@@ -21,7 +39,7 @@ Index: drivers/freetds/dbd_freetds.c
      if (conn->current_db)
  	/* Reserved current DB name */
  	current_db = strdup(conn->current_db);
-@@ -529,9 +529,9 @@ size_t dbd_quote_string(dbi_driver_t * driver, const c
+@@ -529,9 +533,9 @@ size_t dbd_quote_string(dbi_driver_t * driver, const c
  {
      /* foo's -> 'foo''s' */
      size_t len;
@@ -32,7 +50,7 @@ Index: drivers/freetds/dbd_freetds.c
  
      len = _dbd_freetds_escape_chars(dest + 1, orig, strlen(orig), escaped);
  
-@@ -580,6 +580,8 @@ dbi_result_t *dbd_query(dbi_conn_t * conn, const char 
+@@ -580,6 +584,8 @@ dbi_result_t *dbd_query(dbi_conn_t * conn, const char 
       * everything else will be filled in by DBI */
  
      unsigned int idx = 0;
@@ -41,7 +59,7 @@ Index: drivers/freetds/dbd_freetds.c
      dbi_result_t *result = NULL;
      dbi_row_t *row = NULL;
      FREETDSCON *tdscon = (FREETDSCON *) conn->connection;
-@@ -649,9 +651,6 @@ dbi_result_t *dbd_query(dbi_conn_t * conn, const char 
+@@ -649,9 +655,6 @@ dbi_result_t *dbd_query(dbi_conn_t * conn, const char 
  		    return NULL;
  		}
  
@@ -51,7 +69,7 @@ Index: drivers/freetds/dbd_freetds.c
  		_translate_freetds_type(datafmt[idx], &type, &attribs);
  		/* Fill fields value in result */
  		_dbd_result_add_field(result, idx, datafmt[idx]->name, type, attribs);
-@@ -976,6 +975,7 @@ dbi_row_t *_dbd_freetds_buffers_binding(dbi_conn_t * c
+@@ -976,6 +979,7 @@ dbi_row_t *_dbd_freetds_buffers_binding(dbi_conn_t * c
      dbi_row_t *row = NULL;
      unsigned int idx = 0;
      void *addr = NULL;
@@ -59,7 +77,7 @@ Index: drivers/freetds/dbd_freetds.c
  
      FREETDSCON *tdscon = (FREETDSCON *) conn->connection;
  
-@@ -1003,8 +1003,7 @@ dbi_row_t *_dbd_freetds_buffers_binding(dbi_conn_t * c
+@@ -1003,8 +1007,7 @@ dbi_row_t *_dbd_freetds_buffers_binding(dbi_conn_t * c
  		    dstfmt.format = CS_FMT_UNUSED;
  
  		    addr = malloc(sizeof(CS_NUMERIC_TYPE));

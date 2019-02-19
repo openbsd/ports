@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.34 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/02/19 21:16:29 sthen Exp $
 
 V =			0.9.0
+REVISION =		2
 COMMENT-main =		mysql driver for libdbi
 COMMENT-pgsql =		pgsql driver for libdbi
 COMMENT-sqlite =	sqlite driver for libdbi
@@ -12,12 +13,8 @@ PKGNAME-pgsql =		libdbi-drivers-pgsql-${V:S/-/./}
 PKGNAME-sqlite =	libdbi-drivers-sqlite-${V:S/-/./}
 PKGNAME-sqlite3 =	libdbi-drivers-sqlite3-${V:S/-/./}
 PKGNAME-freetds =	libdbi-drivers-freetds-${V:S/-/./}
+
 CATEGORIES =		databases
-REVISION-freetds =	1
-REVISION-main =		1
-REVISION-pgsql =	1
-REVISION-sqlite =	1
-REVISION-sqlite3 =	1
 
 HOMEPAGE =		http://libdbi-drivers.sourceforge.net/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libdbi-drivers/}
@@ -63,7 +60,7 @@ LIB_DEPENDS-sqlite =	databases/sqlite \
 			databases/libdbi
 RUN_DEPENDS-sqlite =
 
-WANTLIB-sqlite3 =	m pthread sqlite3 dbi
+WANTLIB-sqlite3 =	m pthread sqlite3 dbi z
 LIB_DEPENDS-sqlite3 =	databases/libdbi \
 			databases/sqlite3
 RUN_DEPENDS-sqlite3 =
@@ -75,8 +72,8 @@ WANTLIB-freetds +=	unistring
 LIB_DEPENDS-freetds =	databases/freetds \
 			databases/libdbi
 
-TEST_IS_INTERACTIVE =Yes
-TEST_DEPENDS =	databases/libdbi-drivers,-main \
+TEST_IS_INTERACTIVE =	Yes
+TEST_DEPENDS =		databases/libdbi-drivers,-main \
 			databases/libdbi-drivers,-pgsql \
 			databases/libdbi-drivers,-sqlite \
 			databases/libdbi-drivers,-sqlite3 \
@@ -85,7 +82,7 @@ TEST_DEPENDS =	databases/libdbi-drivers,-main \
 			databases/postgresql,-server
 
 pre-configure:
-	chmod +x ${WRKSRC}/tests/test_freetds.sh	
+	chmod +x ${WRKSRC}/tests/test_freetds.sh
 
 post-install:
 .for d in mysql pgsql sqlite sqlite3
