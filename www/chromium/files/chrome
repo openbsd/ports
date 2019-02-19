@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: chrome,v 1.15 2017/12/16 15:34:39 robert Exp $
+# $OpenBSD: chrome,v 1.16 2019/02/19 14:57:53 robert Exp $
 
 DATASIZE="716800"
 OPENFILES="400"
@@ -55,5 +55,9 @@ else
 	LD_LIBRARY_PATH="${TRUEPREFIX}/chrome:${TRUEPREFIX}/chrome/lib"
 fi
 export LD_LIBRARY_PATH
+
+[ -d ~/.config ] || mkdir -m 0700 ~/.config
+[ -f ~/.config/user-dirs.dirs ] || \
+	echo 'XDG_DOWNLOAD_DIR="$HOME/Downloads"' > ~/.config/user-dirs.dirs
 
 LANG=${_l} exec "${TRUEPREFIX}/chrome/chrome" "${@}"

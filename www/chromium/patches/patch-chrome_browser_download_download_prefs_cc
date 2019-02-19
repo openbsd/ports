@@ -1,9 +1,26 @@
-$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.15 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.16 2019/02/19 14:57:53 robert Exp $
 
 Index: chrome/browser/download/download_prefs.cc
 --- chrome/browser/download/download_prefs.cc.orig
 +++ chrome/browser/download/download_prefs.cc
-@@ -62,7 +62,7 @@ namespace {
+@@ -11,6 +11,7 @@
+ 
+ #include "base/bind.h"
+ #include "base/bind_helpers.h"
++#include "base/command_line.h"
+ #include "base/feature_list.h"
+ #include "base/files/file_util.h"
+ #include "base/logging.h"
+@@ -52,6 +53,8 @@
+ #include "chrome/browser/ui/pdf/adobe_reader_info_win.h"
+ #endif
+ 
++#include "services/service_manager/sandbox/switches.h"
++
+ using content::BrowserContext;
+ using content::BrowserThread;
+ using content::DownloadManager;
+@@ -62,7 +65,7 @@ namespace {
  // Consider downloads 'dangerous' if they go to the home directory on Linux and
  // to the desktop on any platform.
  bool DownloadPathIsDangerous(const base::FilePath& download_path) {
@@ -12,7 +29,7 @@ Index: chrome/browser/download/download_prefs.cc
    base::FilePath home_dir = base::GetHomeDir();
    if (download_path == home_dir) {
      return true;
-@@ -145,7 +145,7 @@ DownloadPrefs::DownloadPrefs(Profile* profile) : profi
+@@ -145,7 +148,7 @@ DownloadPrefs::DownloadPrefs(Profile* profile) : profi
                                  GetDefaultDownloadDirectoryForProfile()));
  #endif  // defined(OS_CHROMEOS)
  
@@ -21,7 +38,7 @@ Index: chrome/browser/download/download_prefs.cc
    should_open_pdf_in_system_reader_ =
        prefs->GetBoolean(prefs::kOpenPdfDownloadInSystemReader);
  #endif
-@@ -242,7 +242,7 @@ void DownloadPrefs::RegisterProfilePrefs(
+@@ -242,7 +245,7 @@ void DownloadPrefs::RegisterProfilePrefs(
                                   default_download_path);
    registry->RegisterFilePathPref(prefs::kSaveFileDefaultDirectory,
                                   default_download_path);
@@ -30,7 +47,7 @@ Index: chrome/browser/download/download_prefs.cc
    registry->RegisterBooleanPref(prefs::kOpenPdfDownloadInSystemReader, false);
  #endif
  #if defined(OS_ANDROID)
-@@ -344,7 +344,7 @@ bool DownloadPrefs::IsDownloadPathManaged() const {
+@@ -344,7 +347,7 @@ bool DownloadPrefs::IsDownloadPathManaged() const {
  }
  
  bool DownloadPrefs::IsAutoOpenUsed() const {
@@ -39,7 +56,7 @@ Index: chrome/browser/download/download_prefs.cc
    if (ShouldOpenPdfInSystemReader())
      return true;
  #endif
-@@ -358,7 +358,7 @@ bool DownloadPrefs::IsAutoOpenEnabledBasedOnExtension(
+@@ -358,7 +361,7 @@ bool DownloadPrefs::IsAutoOpenEnabledBasedOnExtension(
      return false;
    DCHECK(extension[0] == base::FilePath::kExtensionSeparator);
    extension.erase(0, 1);
@@ -48,7 +65,7 @@ Index: chrome/browser/download/download_prefs.cc
    if (base::FilePath::CompareEqualIgnoreCase(extension,
                                               FILE_PATH_LITERAL("pdf")) &&
        ShouldOpenPdfInSystemReader())
-@@ -395,7 +395,7 @@ void DownloadPrefs::DisableAutoOpenBasedOnExtension(
+@@ -395,7 +398,7 @@ void DownloadPrefs::DisableAutoOpenBasedOnExtension(
    SaveAutoOpenState();
  }
  
@@ -57,7 +74,7 @@ Index: chrome/browser/download/download_prefs.cc
  void DownloadPrefs::SetShouldOpenPdfInSystemReader(bool should_open) {
    if (should_open_pdf_in_system_reader_ == should_open)
      return;
-@@ -416,7 +416,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
+@@ -416,7 +419,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
  #endif
  
  void DownloadPrefs::ResetAutoOpen() {
@@ -66,3 +83,18 @@ Index: chrome/browser/download/download_prefs.cc
    SetShouldOpenPdfInSystemReader(false);
  #endif
    auto_open_.clear();
+@@ -477,7 +480,13 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
+   // Fall back to the default download directory for all other paths.
+   return profile_download_dir;
+ #endif
+-  return path;
++  // If unveil(2) is used, force the file dialog directory to something we
++  // know is available.
++  base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
++  if (!command_line->HasSwitch(service_manager::switches::kDisableUnveil))
++    return GetDefaultDownloadDirectoryForProfile();
++  else
++    return path;
+ }
+ 
+ bool DownloadPrefs::AutoOpenCompareFunctor::operator()(
