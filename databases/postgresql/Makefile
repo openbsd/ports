@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.247 2018/12/05 12:12:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.248 2019/02/19 05:09:18 jeremy Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -7,8 +7,8 @@ COMMENT-contrib=PostgreSQL RDBMS contributions
 COMMENT-plpython=Python procedural language for PostgreSQL
 COMMENT-pg_upgrade=Support for upgrading PostgreSQL data from previous version
 
-VERSION=	10.6
-PREV_MAJOR=	9.6
+VERSION=	11.1
+PREV_MAJOR=	10
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
@@ -17,7 +17,6 @@ PKGNAME-contrib=postgresql-contrib-${VERSION}
 PKGNAME-plpython=postgresql-plpython-${VERSION}
 PKGNAME-pg_upgrade=postgresql-pg_upgrade-${VERSION}
 
-REVISION=	1
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.9 \
@@ -32,7 +31,7 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto curses m readline ssl z
+WANTLIB += c curses crypto m readline ssl z
 
 MASTER_SITES=	https://ftp.postgresql.org/pub/source/v${VERSION}/ \
 		ftp://ftp.postgresql.org/pub/source/v${VERSION}/

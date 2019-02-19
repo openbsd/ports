@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.29 2018/08/09 15:32:36 pea Exp $
+@comment $OpenBSD: PLIST-main,v 1.30 2019/02/19 05:09:18 jeremy Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -107,7 +107,9 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man1/psql.1
 @man man/man1/reindexdb.1
 @man man/man1/vacuumdb.1
+@man man/man3/SPI_commit.3
 @man man/man3/SPI_connect.3
+@man man/man3/SPI_connect_ext.3
 @man man/man3/SPI_copytuple.3
 @man man/man3/SPI_cursor_close.3
 @man man/man3/SPI_cursor_fetch.3
@@ -147,10 +149,13 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man3/SPI_register_relation.3
 @man man/man3/SPI_register_trigger_data.3
 @man man/man3/SPI_repalloc.3
+@man man/man3/SPI_result_code_string.3
 @man man/man3/SPI_returntuple.3
+@man man/man3/SPI_rollback.3
 @man man/man3/SPI_saveplan.3
 @man man/man3/SPI_scroll_cursor_fetch.3
 @man man/man3/SPI_scroll_cursor_move.3
+@man man/man3/SPI_start_transaction.3
 @man man/man3/SPI_unregister_relation.3
 @man man/man3/dblink.3
 @man man/man3/dblink_build_sql_delete.3
@@ -192,8 +197,10 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/ALTER_OPERATOR_CLASS.7
 @man man/man7/ALTER_OPERATOR_FAMILY.7
 @man man/man7/ALTER_POLICY.7
+@man man/man7/ALTER_PROCEDURE.7
 @man man/man7/ALTER_PUBLICATION.7
 @man man/man7/ALTER_ROLE.7
+@man man/man7/ALTER_ROUTINE.7
 @man man/man7/ALTER_RULE.7
 @man man/man7/ALTER_SCHEMA.7
 @man man/man7/ALTER_SEQUENCE.7
@@ -214,6 +221,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/ALTER_VIEW.7
 @man man/man7/ANALYZE.7
 @man man/man7/BEGIN.7
+@man man/man7/CALL.7
 @man man/man7/CHECKPOINT.7
 @man man/man7/CLOSE.7
 @man man/man7/CLUSTER.7
@@ -241,6 +249,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/CREATE_OPERATOR_CLASS.7
 @man man/man7/CREATE_OPERATOR_FAMILY.7
 @man man/man7/CREATE_POLICY.7
+@man man/man7/CREATE_PROCEDURE.7
 @man man/man7/CREATE_PUBLICATION.7
 @man man/man7/CREATE_ROLE.7
 @man man/man7/CREATE_RULE.7
@@ -288,8 +297,10 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/DROP_OPERATOR_FAMILY.7
 @man man/man7/DROP_OWNED.7
 @man man/man7/DROP_POLICY.7
+@man man/man7/DROP_PROCEDURE.7
 @man man/man7/DROP_PUBLICATION.7
 @man man/man7/DROP_ROLE.7
+@man man/man7/DROP_ROUTINE.7
 @man man/man7/DROP_RULE.7
 @man man/man7/DROP_SCHEMA.7
 @man man/man7/DROP_SEQUENCE.7
