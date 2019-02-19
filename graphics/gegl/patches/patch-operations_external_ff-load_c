@@ -1,0 +1,27 @@
+$OpenBSD: patch-operations_external_ff-load_c,v 1.7 2019/02/19 23:40:49 sthen Exp $
+
+Update for newer FFmpeg API.
+
+Index: operations/external/ff-load.c
+--- operations/external/ff-load.c.orig
++++ operations/external/ff-load.c
+@@ -309,8 +309,8 @@ prepare (GeglOperation *operation)
+           g_warning ("codec not found");
+         }
+ 
+-      if (p->codec->capabilities & CODEC_CAP_TRUNCATED)
+-        p->enc->flags |= CODEC_FLAG_TRUNCATED;
++      if (p->codec->capabilities & AV_CODEC_CAP_TRUNCATED)
++        p->enc->flags |= AV_CODEC_FLAG_TRUNCATED;
+ 
+       if (avcodec_open2 (p->enc, p->codec, NULL) < 0)
+         {
+@@ -321,7 +321,7 @@ prepare (GeglOperation *operation)
+       p->width = p->enc->width;
+       p->height = p->enc->height;
+       p->frames = 10000000;
+-      p->lavc_frame = avcodec_alloc_frame ();
++      p->lavc_frame = av_frame_alloc ();
+ 
+       if (p->fourcc)
+         g_free (p->fourcc);

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/04/23 22:47:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2019/02/19 23:40:49 sthen Exp $
 
 COMMENT =		visual novel engine
 
@@ -6,7 +6,7 @@ V =			6.17.7
 MODPY_EGG_VERSION =	${V}.521
 DISTNAME =		renpy-${V}-source
 PKGNAME =		${DISTNAME:S/-source//}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games
 
