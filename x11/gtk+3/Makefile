@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.206 2019/02/05 08:58:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.207 2019/02/19 14:54:22 robert Exp $
 
 # XXX add support for libcloudproviders?
 
@@ -20,6 +20,8 @@ PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
+
+REVISION-main=		0
 
 CATEGORIES=		x11 devel
 

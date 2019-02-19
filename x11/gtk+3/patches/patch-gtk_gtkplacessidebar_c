@@ -1,0 +1,48 @@
+$OpenBSD: patch-gtk_gtkplacessidebar_c,v 1.1 2019/02/19 14:54:22 robert Exp $
+
+If home_uri or mount_uri (which is the Desktop) does not
+exist, exclude them from the sidebar.
+
+Index: gtk/gtkplacessidebar.c
+--- gtk/gtkplacessidebar.c.orig
++++ gtk/gtkplacessidebar.c
+@@ -1088,6 +1088,11 @@ update_places (GtkPlacesSidebar *sidebar)
+ 
+   /* home folder */
+   home_uri = get_home_directory_uri ();
++#if defined(__OpenBSD__)
++  if (!g_file_test (home_uri, G_FILE_TEST_IS_DIR))
++    goto skip_home;
++#endif
++
+   start_icon = g_themed_icon_new_with_default_fallbacks (ICON_NAME_HOME);
+   add_place (sidebar, PLACES_BUILT_IN,
+              SECTION_COMPUTER,
+@@ -1097,10 +1102,17 @@ update_places (GtkPlacesSidebar *sidebar)
+   g_object_unref (start_icon);
+   g_free (home_uri);
+ 
++#if defined(__OpenBSD__)
++skip_home:
++#endif
+   /* desktop */
+   if (sidebar->show_desktop)
+     {
+       mount_uri = get_desktop_directory_uri ();
++#if defined(__OpenBSD__)
++      if (!g_file_test (mount_uri, G_FILE_TEST_IS_DIR))
++        goto skip_desktop;
++#endif
+       if (mount_uri)
+         {
+           start_icon = g_themed_icon_new_with_default_fallbacks (ICON_NAME_DESKTOP);
+@@ -1114,6 +1126,9 @@ update_places (GtkPlacesSidebar *sidebar)
+         }
+     }
+ 
++#if defined(__OpenBSD__)
++skip_desktop:
++#endif
+   /* XDG directories */
+   add_special_dirs (sidebar);
+ 
