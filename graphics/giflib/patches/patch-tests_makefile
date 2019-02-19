@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_makefile,v 1.2 2015/03/27 11:34:23 sthen Exp $
+$OpenBSD: patch-tests_makefile,v 1.3 2019/02/19 17:57:04 sthen Exp $
 
 #1, gmake-ism
 
@@ -8,10 +8,11 @@ value isn't read in the original order; same on Linux
 #3, "head --bytes=-20" means "display most of the file, but trim last 20 bytes"
 which isn't easily replicable with base tools, so just use ghead from coreutils
 
---- tests/makefile.orig	Wed May 14 19:17:54 2014
-+++ tests/makefile	Tue Dec 30 14:41:31 2014
+Index: tests/makefile
+--- tests/makefile.orig
++++ tests/makefile
 @@ -27,12 +27,12 @@ rebuild: render-rebuild \
- UTILS = ../util
+ UTILS = ..
  PICS = ../pic
  
 -GIFS := $(shell ls ../pic/*.gif)
