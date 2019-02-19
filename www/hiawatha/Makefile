@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2019/02/12 21:57:35 juanfra Exp $
+# $OpenBSD: Makefile,v 1.60 2019/02/19 19:19:56 juanfra Exp $
 
 COMMENT =		secure webserver
 DISTNAME =		hiawatha-10.8.4
+REVISION =		0
 CATEGORIES =		www net
 
 HOMEPAGE =		https://www.hiawatha-webserver.org/
-
-MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
