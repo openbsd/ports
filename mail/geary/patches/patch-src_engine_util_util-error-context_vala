@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_engine_util_util-error-context_vala,v 1.1 2019/02/19 13:28:35 landry Exp $
+
+remove dependency on libunwind
+
+Index: src/engine/util/util-error-context.vala
+--- src/engine/util/util-error-context.vala.orig
++++ src/engine/util/util-error-context.vala
+@@ -27,16 +27,6 @@ public class Geary.ErrorContext : BaseObject {
+         /** Name of the function being called. */
+         public string name = "unknown";
+ 
+-
+-        internal StackFrame(Unwind.Cursor frame) {
+-            uint8 proc_name[256];
+-            int ret = -frame.get_proc_name(proc_name);
+-			if (ret == Unwind.Error.SUCCESS ||
+-                ret == Unwind.Error.NOMEM) {
+-                this.name = (string) proc_name;
+-            }
+-        }
+-
+         public string to_string() {
+             return this.name;
+         }
+@@ -56,14 +46,6 @@ public class Geary.ErrorContext : BaseObject {
+     public ErrorContext(GLib.Error thrown) {
+         this.thrown = thrown;
+ 
+-        Unwind.Context trace = Unwind.Context();
+-        Unwind.Cursor cursor = Unwind.Cursor.local(trace);
+-
+-        // This misses the first frame, but that's this
+-        // constructor call, so we don't really care.
+-        while (cursor.step() != 0) {
+-            this.backtrace.add(new StackFrame(cursor));
+-        }
+     }
+ 
+     /** Returns a string representation of the error type, for debugging. */
