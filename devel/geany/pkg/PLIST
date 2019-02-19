@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2018/06/29 22:16:10 espie Exp $
+@comment $OpenBSD: PLIST,v 1.28 2019/02/19 11:06:52 giovanni Exp $
 @pkgpath devel/geany,vte
 @bin bin/geany
 include/geany/
@@ -239,6 +239,7 @@ share/locale/be/LC_MESSAGES/geany.mo
 share/locale/bg/LC_MESSAGES/geany.mo
 share/locale/ca/LC_MESSAGES/geany.mo
 share/locale/cs/LC_MESSAGES/geany.mo
+share/locale/da/LC_MESSAGES/geany.mo
 share/locale/de/LC_MESSAGES/geany.mo
 share/locale/el/LC_MESSAGES/geany.mo
 share/locale/en_GB/LC_MESSAGES/geany.mo

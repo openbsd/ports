@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2018/10/01 20:45:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2019/02/19 11:06:52 giovanni Exp $
 
 COMMENT=	small and lightweight IDE
 
-DISTNAME =	geany-1.33
+DISTNAME =	geany-1.34.1
 SHARED_LIBS +=  geany                     0.0 # 0.0
-REVISION =	1
 
 CATEGORIES=	devel
 
@@ -25,12 +24,12 @@ MODULES=	textproc/intltool
 USE_GMAKE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
+WANTLIB += c cairo cairo-gobject epoxy expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread ${COMPILER_LIBCXX} xcb xcb-render xcb-shm
+WANTLIB += png16 pthread ${COMPILER_LIBCXX} xcb xcb-render xcb-shm
 WANTLIB += z fribidi
 
 LIB_DEPENDS=	x11/gtk+3
