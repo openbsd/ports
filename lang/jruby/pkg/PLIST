@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2018/12/10 15:23:21 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.43 2019/02/19 05:23:53 jeremy Exp $
 bin/jruby
 jruby/
 jruby/bin/
@@ -410,7 +410,7 @@ jruby/lib/ruby/gems/1.8/specifications/default/jar-dependencies-0.4.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/jruby-openssl-0.10.1-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/jruby-readline-1.3.7-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/json-2.1.0-java.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/psych-3.0.3-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/psych-3.1.0-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rake-ant-1.0.4.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rdoc-6.0.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/scanf-1.0.0.gemspec
@@ -433,6 +433,7 @@ jruby/lib/ruby/stdlib/ant.rb
 jruby/lib/ruby/stdlib/base64.rb
 jruby/lib/ruby/stdlib/benchmark.rb
 jruby/lib/ruby/stdlib/bigdecimal/
+jruby/lib/ruby/stdlib/bigdecimal.rb
 jruby/lib/ruby/stdlib/bigdecimal/jacobian.rb
 jruby/lib/ruby/stdlib/bigdecimal/ludcmp.rb
 jruby/lib/ruby/stdlib/bigdecimal/math.rb
@@ -442,12 +443,16 @@ jruby/lib/ruby/stdlib/cgi/
 jruby/lib/ruby/stdlib/cgi.rb
 jruby/lib/ruby/stdlib/cgi/cookie.rb
 jruby/lib/ruby/stdlib/cgi/core.rb
+jruby/lib/ruby/stdlib/cgi/escape.rb
 jruby/lib/ruby/stdlib/cgi/html.rb
 jruby/lib/ruby/stdlib/cgi/session/
 jruby/lib/ruby/stdlib/cgi/session.rb
 jruby/lib/ruby/stdlib/cgi/session/pstore.rb
 jruby/lib/ruby/stdlib/cgi/util.rb
 jruby/lib/ruby/stdlib/cmath.rb
+jruby/lib/ruby/stdlib/complex.rb
+jruby/lib/ruby/stdlib/continuation.rb
+jruby/lib/ruby/stdlib/coverage.rb
 jruby/lib/ruby/stdlib/csv.rb
 jruby/lib/ruby/stdlib/date/
 jruby/lib/ruby/stdlib/date.rb
@@ -460,8 +465,10 @@ jruby/lib/ruby/stdlib/debug.rb
 jruby/lib/ruby/stdlib/delegate.rb
 jruby/lib/ruby/stdlib/digest/
 jruby/lib/ruby/stdlib/digest.rb
-jruby/lib/ruby/stdlib/digest/digest/
-jruby/lib/ruby/stdlib/digest/digest/bubblebabble.rb
+jruby/lib/ruby/stdlib/digest/bubblebabble.rb
+jruby/lib/ruby/stdlib/digest/md5.rb
+jruby/lib/ruby/stdlib/digest/rmd160.rb
+jruby/lib/ruby/stdlib/digest/sha1.rb
 jruby/lib/ruby/stdlib/digest/sha2.rb
 jruby/lib/ruby/stdlib/drb/
 jruby/lib/ruby/stdlib/drb.rb
@@ -477,8 +484,11 @@ jruby/lib/ruby/stdlib/drb/ssl.rb
 jruby/lib/ruby/stdlib/drb/timeridconv.rb
 jruby/lib/ruby/stdlib/drb/unix.rb
 jruby/lib/ruby/stdlib/e2mmap.rb
+jruby/lib/ruby/stdlib/enumerator.rb
 jruby/lib/ruby/stdlib/erb.rb
+jruby/lib/ruby/stdlib/etc.rb
 jruby/lib/ruby/stdlib/expect.rb
+jruby/lib/ruby/stdlib/fcntl.rb
 jruby/lib/ruby/stdlib/ffi/
 jruby/lib/ruby/stdlib/ffi.rb
 jruby/lib/ruby/stdlib/ffi/autopointer.rb
@@ -556,6 +566,7 @@ jruby/lib/ruby/stdlib/io/console/size.rb
 jruby/lib/ruby/stdlib/io/console/stty_console.rb
 jruby/lib/ruby/stdlib/io/console/stub_console.rb
 jruby/lib/ruby/stdlib/io/nonblock.rb
+jruby/lib/ruby/stdlib/io/wait.rb
 jruby/lib/ruby/stdlib/ipaddr.rb
 jruby/lib/ruby/stdlib/irb/
 jruby/lib/ruby/stdlib/irb.rb
@@ -626,6 +637,7 @@ jruby/lib/ruby/stdlib/jars/settings.xml
 jruby/lib/ruby/stdlib/jars/setup.rb
 jruby/lib/ruby/stdlib/jars/version.rb
 jruby/lib/ruby/stdlib/java/
+jruby/lib/ruby/stdlib/java.rb
 jruby/lib/ruby/stdlib/java/inspect.rb
 jruby/lib/ruby/stdlib/jline/
 jruby/lib/ruby/stdlib/jline/jline/
@@ -681,6 +693,7 @@ jruby/lib/ruby/stdlib/jopenssl23/openssl/pkey.rb
 jruby/lib/ruby/stdlib/jopenssl23/openssl/ssl.rb
 jruby/lib/ruby/stdlib/jopenssl23/openssl/x509.rb
 jruby/lib/ruby/stdlib/jruby/
+jruby/lib/ruby/stdlib/jruby.rb
 jruby/lib/ruby/stdlib/jruby/compiler/
 jruby/lib/ruby/stdlib/jruby/compiler.rb
 jruby/lib/ruby/stdlib/jruby/compiler/extending.rb
@@ -697,8 +710,10 @@ jruby/lib/ruby/stdlib/jruby/open3_windows.rb
 jruby/lib/ruby/stdlib/jruby/profiler/
 jruby/lib/ruby/stdlib/jruby/profiler.rb
 jruby/lib/ruby/stdlib/jruby/profiler/shutdown_hook.rb
+jruby/lib/ruby/stdlib/jruby/serialization.rb
 jruby/lib/ruby/stdlib/jruby/synchronized.rb
 jruby/lib/ruby/stdlib/jruby/thread_dump.rb
+jruby/lib/ruby/stdlib/jruby/util.rb
 jruby/lib/ruby/stdlib/jruby/vm.rb
 jruby/lib/ruby/stdlib/jruby/win32ole/
 jruby/lib/ruby/stdlib/jruby/win32ole/stub.rb
@@ -757,6 +772,7 @@ jruby/lib/ruby/stdlib/net/imap.rb
 jruby/lib/ruby/stdlib/net/pop.rb
 jruby/lib/ruby/stdlib/net/protocol.rb
 jruby/lib/ruby/stdlib/net/smtp.rb
+jruby/lib/ruby/stdlib/nkf.rb
 jruby/lib/ruby/stdlib/objspace.rb
 jruby/lib/ruby/stdlib/observer.rb
 jruby/lib/ruby/stdlib/open-uri.rb
@@ -870,7 +886,9 @@ jruby/lib/ruby/stdlib/rake/ant/target.rb
 jruby/lib/ruby/stdlib/rake/ant/tasks/
 jruby/lib/ruby/stdlib/rake/ant/tasks/raketasks.rb
 jruby/lib/ruby/stdlib/rake/ant/version.rb
+jruby/lib/ruby/stdlib/rational.rb
 jruby/lib/ruby/stdlib/rbconfig/
+jruby/lib/ruby/stdlib/rbconfig.rb
 jruby/lib/ruby/stdlib/rbconfig/sizeof.rb
 jruby/lib/ruby/stdlib/rdoc/
 jruby/lib/ruby/stdlib/rdoc.rb
@@ -1410,11 +1428,14 @@ jruby/lib/ruby/stdlib/shell/version.rb
 jruby/lib/ruby/stdlib/shellwords.rb
 jruby/lib/ruby/stdlib/singleton.rb
 jruby/lib/ruby/stdlib/socket.rb
+jruby/lib/ruby/stdlib/stringio.rb
+jruby/lib/ruby/stdlib/strscan.rb
 jruby/lib/ruby/stdlib/sync.rb
 jruby/lib/ruby/stdlib/syslog/
 jruby/lib/ruby/stdlib/syslog.rb
 jruby/lib/ruby/stdlib/syslog/logger.rb
 jruby/lib/ruby/stdlib/tempfile.rb
+jruby/lib/ruby/stdlib/thread.rb
 jruby/lib/ruby/stdlib/thwait.rb
 jruby/lib/ruby/stdlib/time.rb
 jruby/lib/ruby/stdlib/timeout.rb
@@ -1483,6 +1504,7 @@ jruby/lib/ruby/stdlib/win32/registry.rb
 jruby/lib/ruby/stdlib/win32/resolv.rb
 jruby/lib/ruby/stdlib/win32/resolv9x.rb
 jruby/lib/ruby/stdlib/win32/sspi.rb
+jruby/lib/ruby/stdlib/win32ole.rb
 jruby/lib/ruby/stdlib/yaml/
 jruby/lib/ruby/stdlib/yaml.rb
 jruby/lib/ruby/stdlib/yaml/dbm.rb
