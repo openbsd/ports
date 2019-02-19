@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/19 09:02:35 fcambus Exp $
+${P5SITE}/MaxMind/
+${P5SITE}/MaxMind/DB/
+${P5SITE}/MaxMind/DB/Common.pm
+${P5SITE}/MaxMind/DB/Metadata.pm
+${P5SITE}/MaxMind/DB/Role/
+${P5SITE}/MaxMind/DB/Role/Debugs.pm
+${P5SITE}/MaxMind/DB/Types.pm
+${P5SITE}/Test/MaxMind/
+${P5SITE}/Test/MaxMind/DB/
+${P5SITE}/Test/MaxMind/DB/Common/
+${P5SITE}/Test/MaxMind/DB/Common/Data.pm
+${P5SITE}/Test/MaxMind/DB/Common/Util.pm
+@man man/man3p/MaxMind::DB::Common.3p
+@man man/man3p/MaxMind::DB::Metadata.3p
