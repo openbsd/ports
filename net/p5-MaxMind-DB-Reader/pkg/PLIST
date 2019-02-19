@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/19 09:05:32 fcambus Exp $
+bin/mmdb-dump-metadata
+bin/mmdb-dump-search-tree
+${P5SITE}/MaxMind/DB/Reader/
+${P5SITE}/MaxMind/DB/Reader.pm
+${P5SITE}/MaxMind/DB/Reader/Data/
+${P5SITE}/MaxMind/DB/Reader/Data/Container.pm
+${P5SITE}/MaxMind/DB/Reader/Data/EndMarker.pm
+${P5SITE}/MaxMind/DB/Reader/Decoder.pm
+${P5SITE}/MaxMind/DB/Reader/PP.pm
+${P5SITE}/MaxMind/DB/Reader/Role/
+${P5SITE}/MaxMind/DB/Reader/Role/HasDecoder.pm
+${P5SITE}/MaxMind/DB/Reader/Role/HasMetadata.pm
+${P5SITE}/MaxMind/DB/Reader/Role/NodeReader.pm
+${P5SITE}/MaxMind/DB/Reader/Role/Reader.pm
+${P5SITE}/MaxMind/DB/Reader/Role/Sysreader.pm
+@man man/man3p/MaxMind::DB::Reader.3p
