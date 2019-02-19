@@ -1,0 +1,27 @@
+$OpenBSD: patch-include_private_qsqlextension_p_h,v 1.1 2019/02/19 05:13:37 jeremy Exp $
+
+Fix build with PostgreSQL 11+.
+
+Index: include/private/qsqlextension_p.h
+--- include/private/qsqlextension_p.h.orig
++++ include/private/qsqlextension_p.h
+@@ -67,8 +67,8 @@
+ #define QM_TEMPLATE_EXTERN_SQL Q_TEMPLATE_EXTERN
+ #endif
+ 
+-struct Param {
+-    Param( const QVariant& v = QVariant(), QSql::ParameterType t = QSql::In ): value( v ), typ( t ) {}
++struct QParam {
++    QParam( const QVariant& v = QVariant(), QSql::ParameterType t = QSql::In ): value( v ), typ( t ) {}
+     QVariant value;
+     QSql::ParameterType typ;
+     Q_DUMMY_COMPARISON_OPERATOR(Param)
+@@ -110,7 +110,7 @@ class QM_EXPORT_SQL QSqlExtension { (public)
+     int bindCount;
+ 
+     QMap<int, QString> index;
+-    typedef QMap<QString, Param> ValueMap;
++    typedef QMap<QString, QParam> ValueMap;
+     ValueMap values;
+ 
+     // convenience container for QSqlQuery

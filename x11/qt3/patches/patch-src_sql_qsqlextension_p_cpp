@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_sql_qsqlextension_p_cpp,v 1.1 2019/02/19 05:13:37 jeremy Exp $
+
+Fix build with PostgreSQL 11+.
+
+Index: src/sql/qsqlextension_p.cpp
+--- src/sql/qsqlextension_p.cpp.orig
++++ src/sql/qsqlextension_p.cpp
+@@ -64,7 +64,7 @@ void QSqlExtension::bindValue( const QString& placehol
+     if ( index.contains( (int)values.count() ) ) {
+ 	index[ (int)values.count() ] = placeholder;
+     }
+-    values[ placeholder ] = Param( val, tp );
++    values[ placeholder ] = QParam( val, tp );
+ }
+ 
+ void QSqlExtension::bindValue( int pos, const QVariant& val, QSql::ParameterType tp )
+@@ -72,7 +72,7 @@ void QSqlExtension::bindValue( int pos, const QVariant
+     bindm = BindByPosition;
+     index[ pos ] = QString::number( pos );
+     QString nm = QString::number( pos );
+-    values[ nm ] = Param( val, tp );
++    values[ nm ] = QParam( val, tp );
+ }
+ 
+ void QSqlExtension::addBindValue( const QVariant& val, QSql::ParameterType tp )
+@@ -126,7 +126,7 @@ QVariant QSqlExtension::boundValue( int pos ) const
+ 
+ QMap<QString, QVariant> QSqlExtension::boundValues() const
+ {
+-    QMap<QString, Param>::ConstIterator it;
++    QMap<QString, QParam>::ConstIterator it;
+     QMap<QString, QVariant> m;
+     if ( bindm == BindByName ) {
+ 	for ( it = values.begin(); it != values.end(); ++it )
