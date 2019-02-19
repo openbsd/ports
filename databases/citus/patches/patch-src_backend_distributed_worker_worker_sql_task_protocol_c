@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_backend_distributed_worker_worker_sql_task_protocol_c,v 1.1 2019/02/19 05:14:54 jeremy Exp $
+
+Needed for S_IRUSR and S_IWUSR.
+
+Index: src/backend/distributed/worker/worker_sql_task_protocol.c
+--- src/backend/distributed/worker/worker_sql_task_protocol.c.orig
++++ src/backend/distributed/worker/worker_sql_task_protocol.c
+@@ -9,6 +9,7 @@
+  *-------------------------------------------------------------------------
+  */
+ 
++#include <sys/stat.h>
+ #include "postgres.h"
+ #include "funcapi.h"
+ #include "pgstat.h"
