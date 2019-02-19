@@ -1,0 +1,47 @@
+$OpenBSD: patch-shm_dconf-shm_c,v 1.5 2019/02/19 14:35:54 robert Exp $
+
+Try to open the dconf cache directly instead of always trying
+to create the directory path first.
+
+Index: shm/dconf-shm.c
+--- shm/dconf-shm.c.orig
++++ shm/dconf-shm.c
+@@ -52,23 +52,29 @@ dconf_shm_open (const gchar *name)
+   gchar *filename;
+   void *memory;
+   gint fd;
++  gint flags = O_RDWR | O_CREAT;
++  gint mode = 0600;
+ 
+   shmdir = dconf_shm_get_shmdir ();
+   filename = g_build_filename (shmdir, name, NULL);
+   memory = NULL;
+   fd = -1;
+ 
+-  if (g_mkdir_with_parents (shmdir, 0700) != 0)
+-    {
+-      g_critical ("unable to create directory '%s': %s.  dconf will not work properly.", shmdir, g_strerror (errno));
+-      goto out;
+-    }
+-
+-  fd = open (filename, O_RDWR | O_CREAT, 0600);
++  fd = open (filename, flags, mode);
+   if (fd == -1)
+     {
+-      g_critical ("unable to create file '%s': %s.  dconf will not work properly.", filename, g_strerror (errno));
+-      goto out;
++      if (g_mkdir_with_parents (shmdir, 0700) != 0)
++        {
++          g_critical ("unable to create directory '%s': %s.  dconf will not work properly.", shmdir, g_strerror (errno));
++          goto out;
++        }
++
++      fd = open (filename, flags, mode);
++      if (fd == -1)
++        {
++          g_critical ("unable to create file '%s': %s.  dconf will not work properly.", filename, g_strerror (errno));
++          goto out;
++        }
+     }
+ 
+   /* ftruncate(fd, 1) is not sufficient because it does not actually
