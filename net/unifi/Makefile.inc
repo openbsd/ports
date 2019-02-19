@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2019/02/05 14:38:47 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2019/02/19 22:44:40 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
@@ -24,9 +24,9 @@ HOMEPAGE=	http://wiki.ubnt.com/UniFi_FAQ
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # at least the firmware files are restricted, if not more
-PERMIT_PACKAGE_CDROM=	http://www.ubnt.com/eula/
-PERMIT_PACKAGE_FTP=	http://www.ubnt.com/eula/
-PERMIT_DISTFILES_FTP=	http://www.ubnt.com/eula/
+PERMIT_PACKAGE_CDROM=	https://www.ui.com/eula/
+PERMIT_PACKAGE_FTP=	https://www.ui.com/eula/
+PERMIT_DISTFILES_FTP=	https://www.ui.com/eula/
 
 MODULES=	java
 MODJAVA_VER=	1.8+
@@ -47,8 +47,17 @@ INSTDIR=	${PREFIX}/share/unifi/
 VERSION?=	$V.0
 SUBST_VARS=	VERSION
 
+pre-extract:
+.if ${FETCH_PACKAGES:L} != yes
+	@if ! [ -r ${LOCALBASE}/bin/mongo ]; then echo; \
+	    echo "*** To avoid long jdk/mongodb builds, it is recommended that you"; sleep .7; \
+	    echo "*** use 'make FETCH_PACKAGES=Yes install' to fetch binary packages"; sleep .7; \
+	    echo "*** for the dependencies."; echo; sleep 5; \
+	fi
+.endif
+
 post-extract:
-	cp ${FULLDISTDIR}/unifi_sh_api-$V ${WRKSRC}/unifi_sh_api
+	@cp ${FULLDISTDIR}/unifi_sh_api-$V ${WRKSRC}/unifi_sh_api
 
 do-configure:
 	@if ! [ -r ${WRKSRC}/lib/snappy-java-${SNAPPY_V}.jar ]; then echo "** Version mismatch in snappy-java"; ls -l ${WRKSRC}/lib/snappy-java*; exit 1; fi
