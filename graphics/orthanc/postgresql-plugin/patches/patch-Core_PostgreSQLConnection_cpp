@@ -1,11 +1,21 @@
-$OpenBSD: patch-Core_PostgreSQLConnection_cpp,v 1.2 2017/08/25 18:39:28 jasper Exp $
+$OpenBSD: patch-Core_PostgreSQLConnection_cpp,v 1.3 2019/02/19 05:13:02 jeremy Exp $
 
 https://bitbucket.org/sjodogne/orthanc-postgresql/commits/11c4f0a4b64711dc8feefb22e8e73c28a639ffcc
+
+Fix build with PostgreSQL 11.
 
 Index: Core/PostgreSQLConnection.cpp
 --- Core/PostgreSQLConnection.cpp.orig
 +++ Core/PostgreSQLConnection.cpp
-@@ -79,8 +79,18 @@ namespace OrthancPlugins
+@@ -30,6 +30,7 @@
+ // PostgreSQL includes
+ #include <libpq-fe.h>
+ #include <c.h>
++#include <postgresql/server/postgres.h>
+ #include <catalog/pg_type.h>
+ 
+ 
+@@ -79,8 +80,18 @@ namespace OrthancPlugins
    {
      if (uri_.empty())
      {

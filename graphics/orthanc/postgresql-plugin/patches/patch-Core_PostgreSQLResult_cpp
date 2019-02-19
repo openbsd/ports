@@ -1,0 +1,15 @@
+$OpenBSD: patch-Core_PostgreSQLResult_cpp,v 1.1 2019/02/19 05:13:02 jeremy Exp $
+
+Fix build with PostgreSQL 11.
+
+Index: Core/PostgreSQLResult.cpp
+--- Core/PostgreSQLResult.cpp.orig
++++ Core/PostgreSQLResult.cpp
+@@ -28,6 +28,7 @@
+ // PostgreSQL includes
+ #include <libpq-fe.h>
+ #include <c.h>
++#include <postgresql/server/postgres.h>
+ #include <catalog/pg_type.h>
+ 
+ #if defined(__FreeBSD__)
