@@ -1,6 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/04/06 22:11:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/02/20 17:58:04 sthen Exp $
 @newgroup _mongodb:670
 @newuser _mongodb:670:670:daemon:MongoDB Account:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/mongod
+@mode 750
+@owner _mongodb
+@group _mongodb
+@sample /var/mongodb/
+@sample /var/mongodb/data/
+@sample /var/log/mongodb/
+@mode
+@owner
+@group
 @bin bin/mongo
 @bin bin/mongobridge
 @bin bin/mongod
@@ -15,10 +25,3 @@
 share/examples/mongodb/
 share/examples/mongodb/mongodb.conf
 @sample ${SYSCONFDIR}/mongodb.conf
-@rcscript ${RCDIR}/mongod
-@mode 750
-@owner _mongodb
-@group _mongodb
-@sample /var/mongodb/
-@sample /var/mongodb/data/
-@sample /var/log/mongodb/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/01/14 11:46:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/02/20 17:58:04 sthen Exp $
 
 PORTROACH =	limitw:1,even
 USE_WXNEEDED =	Yes
@@ -9,10 +9,9 @@ DPB_PROPERTIES = parallel
 
 COMMENT =	scalable, high-performance document-oriented database
 
-DISTNAME =	mongodb-src-r3.2.13
+DISTNAME =	mongodb-src-r3.2.22
 PKGNAME =	${DISTNAME:S/src-r//}
 CATEGORIES =	databases
-REVISION =	4
 
 HOMEPAGE =	https://www.mongodb.com/
 
