@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2019/02/19 22:49:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.89 2019/02/20 17:15:29 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -24,13 +24,6 @@ WANTLIB += c ffi gcrypt gmp gnutls gpg-error hogweed iconv idn2 intl
 WANTLIB += iodbc iodbcinst ncurses nettle p11-kit pthread readline tasn1
 WANTLIB += unistring z
 
-AUTOCONF_VERSION= 2.65
-AUTOMAKE_VERSION= 1.11
-BUILD_DEPENDS+=	devel/gettext \
-		devel/libtool \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
-
 LIB_DEPENDS=	converters/libiconv \
 		databases/iodbc,-main \
 		security/gnutls \
@@ -52,8 +45,7 @@ CONFIGURE_ENV+=	ac_cv_header_com_err_h=no
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/freetds
 
-do-gen:
-	cd ${WRKSRC}; ${AUTOCONF_ENV} NOCONFIGURE=1 ./autogen.sh
+pre-configure:
 	sed -i 's,/etc/odbc.ini,${SYSCONFDIR}/iodbc/odbc.ini,' \
 		${WRKSRC}/src/odbc/connectparams.c
 
