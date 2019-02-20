@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.722 2019/02/12 21:57:34 juanfra Exp $
+# $OpenBSD: Quirks.pm,v 1.723 2019/02/20 15:49:02 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1157,7 +1157,7 @@ my $obsolete_reason = {
 # reasons for obsolete packages
 my @msg = (
 	"ancient software that doesn't work", #0
-	"web application with no benefit being packaged", #1
+	"no benefit to being packaged", #1
 	"no longer maintained and full of security holes", #2
 	"no longer maintained upstream", #3
 	"superseded by base component", #4
