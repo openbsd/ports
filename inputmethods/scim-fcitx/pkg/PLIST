@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/29 02:24:17 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/02/20 06:16:07 kevlo Exp $
+@conflict fcitx-*
 @bin bin/createPYMB
 @bin bin/mb2txt
 @bin bin/txt2mb

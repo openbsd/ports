@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/02/20 06:16:07 kevlo Exp $
 
 COMMENT-main =	flexible input method framework
 COMMENT-gtk3 = 	fcitx for GTK+3
 COMMENT-qt4 =	fcitx for QT4
 
-V =		4.2.9.5
+V =		4.2.9.6
 DISTNAME = 	fcitx-$V
 PKGNAME-main =	fcitx-$V
 PKGNAME-gtk3 =	fcitx-gtk3-$V
 PKGNAME-qt4 =	fcitx-qt4-$V
-REVISION =	3
 
 SHARED_LIBS +=	fcitx-config	0.0 # 4.1
 SHARED_LIBS +=	fcitx-core	0.0 # 0.3
@@ -30,13 +29,15 @@ MULTI_PACKAGES =	-main -gtk3 -qt4
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-WANTLIB-common =	c iconv intl kvm xkbcommon
+WANTLIB-common =	execinfo iconv intl kvm xkbcommon
 
 WANTLIB-main +=		${WANTLIB-common}
-WANTLIB-main +=		X11 Xext Xfixes Xinerama Xrender c cairo dbus-1 \
-			execinfo gdk-x11-2.0 gettextpo gio-2.0 glib-2.0 \
+WANTLIB-main +=		ICE X11 Xcomposite Xcursor Xdamage Xext Xfixes \
+			Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 \
+			execinfo fontconfig freetype gdk_pixbuf-2.0 \
+			gdk-x11-2.0 gettextpo gio-2.0 glib-2.0 \
 			gobject-2.0 gtk-x11-2.0 pango-1.0 pangocairo-1.0 \
-			pthread uuid xkbfile xml2
+			pangoft2-1.0 pthread uuid xkbcommon xkbfile xml2 z
 
 BUILD_DEPENDS =		devel/gettext-tools \
 			devel/gobject-introspection \
@@ -44,26 +45,35 @@ BUILD_DEPENDS =		devel/gettext-tools \
 			devel/kf5/extra-cmake-modules \
 			shells/bash
 RUN_DEPENDS-main =	devel/desktop-file-utils \
-			shells/bash
+			misc/shared-mime-info \
+			shells/bash \
+			x11/gtk+3,-guic
 LIB_DEPENDS-main =	devel/gettext-tools \
 			devel/libexecinfo \
 			sysutils/e2fsprogs \
+			textproc/libxml \
 			x11/dbus \
 			x11/gtk+2 \
 			x11/xkbcommon
 
-WANTLIB-gtk3 +=		fcitx-gclient fcitx-utils gdk-3 glib-2.0 gobject-2.0
-WANTLIB-gtk3 +=		gtk-3 pango-1.0 xkbcommon
+WANTLIB-gtk3 +=		${WANTLIB-common}
+WANTLIB-gtk3 +=		atk-1.0 cairo cairo-gobject dbus-1 gdk_pixbuf-2.0 \
+			gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3 pango-1.0 \
+			pangocairo-1.0
 
 RUN_DEPENDS-gtk3 =	inputmethods/fcitx,-main
-LIB_DEPENDS-gtk3 =	x11/gtk+3
+LIB_DEPENDS-gtk3 =	devel/libexecinfo \
+			x11/gtk+3 \
+			x11/xkbcommon
 
 WANTLIB-qt4 +=		${WANTLIB-common}
-WANTLIB-qt4 +=		${COMPILER_LIBCXX} ICE QtCore QtDBus QtGui SM X11 \
-			Xext execinfo fcitx-config fcitx-utils m
+WANTLIB-qt4 +=		${COMPILER_LIBCXX} c ICE QtCore QtDBus QtGui SM X11 \
+			Xext m
 
-LIB_DEPENDS-qt4 =	inputmethods/fcitx,-main \
-			${MODQT4_LIB_DEPENDS}
+RUN_DEPENDS-qt4 =	inputmethods/fcitx,-main
+LIB_DEPENDS-qt4 =	${MODQT4_LIB_DEPENDS} \
+			devel/libexecinfo \
+			x11/xkbcommon
 
 MASTER_SITES =	https://download.fcitx-im.org/fcitx/
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX}

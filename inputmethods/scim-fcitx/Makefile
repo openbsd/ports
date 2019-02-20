@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/02/20 06:16:07 kevlo Exp $
 
 COMMENT=	scim input method module for fcitx
 
 V=		3.1.1
 DISTNAME=	scim-fcitx.$V
 PKGNAME=	scim-fcitx-$V
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	inputmethods chinese
 
