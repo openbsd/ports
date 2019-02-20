@@ -1,0 +1,74 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/20 08:46:06 fcambus Exp $
+bin/web-service-request
+${P5SITE}/GeoIP2/
+${P5SITE}/GeoIP2.pm
+${P5SITE}/GeoIP2/Database/
+${P5SITE}/GeoIP2/Database/Reader.pm
+${P5SITE}/GeoIP2/Error/
+${P5SITE}/GeoIP2/Error/Generic.pm
+${P5SITE}/GeoIP2/Error/HTTP.pm
+${P5SITE}/GeoIP2/Error/IPAddressNotFound.pm
+${P5SITE}/GeoIP2/Error/Type.pm
+${P5SITE}/GeoIP2/Error/WebService.pm
+${P5SITE}/GeoIP2/Model/
+${P5SITE}/GeoIP2/Model/ASN.pm
+${P5SITE}/GeoIP2/Model/AnonymousIP.pm
+${P5SITE}/GeoIP2/Model/City.pm
+${P5SITE}/GeoIP2/Model/ConnectionType.pm
+${P5SITE}/GeoIP2/Model/Country.pm
+${P5SITE}/GeoIP2/Model/Domain.pm
+${P5SITE}/GeoIP2/Model/Enterprise.pm
+${P5SITE}/GeoIP2/Model/ISP.pm
+${P5SITE}/GeoIP2/Model/Insights.pm
+${P5SITE}/GeoIP2/Record/
+${P5SITE}/GeoIP2/Record/City.pm
+${P5SITE}/GeoIP2/Record/Continent.pm
+${P5SITE}/GeoIP2/Record/Country.pm
+${P5SITE}/GeoIP2/Record/Location.pm
+${P5SITE}/GeoIP2/Record/MaxMind.pm
+${P5SITE}/GeoIP2/Record/Postal.pm
+${P5SITE}/GeoIP2/Record/RepresentedCountry.pm
+${P5SITE}/GeoIP2/Record/Subdivision.pm
+${P5SITE}/GeoIP2/Record/Traits.pm
+${P5SITE}/GeoIP2/Role/
+${P5SITE}/GeoIP2/Role/Error/
+${P5SITE}/GeoIP2/Role/Error/HTTP.pm
+${P5SITE}/GeoIP2/Role/HasIPAddress.pm
+${P5SITE}/GeoIP2/Role/HasLocales.pm
+${P5SITE}/GeoIP2/Role/Model/
+${P5SITE}/GeoIP2/Role/Model.pm
+${P5SITE}/GeoIP2/Role/Model/Flat.pm
+${P5SITE}/GeoIP2/Role/Model/HasSubdivisions.pm
+${P5SITE}/GeoIP2/Role/Model/Location.pm
+${P5SITE}/GeoIP2/Role/Record/
+${P5SITE}/GeoIP2/Role/Record/Country.pm
+${P5SITE}/GeoIP2/Role/Record/HasNames.pm
+${P5SITE}/GeoIP2/Types.pm
+${P5SITE}/GeoIP2/WebService/
+${P5SITE}/GeoIP2/WebService/Client.pm
+@man man/man3p/GeoIP2.3p
+@man man/man3p/GeoIP2::Database::Reader.3p
+@man man/man3p/GeoIP2::Error::Generic.3p
+@man man/man3p/GeoIP2::Error::HTTP.3p
+@man man/man3p/GeoIP2::Error::IPAddressNotFound.3p
+@man man/man3p/GeoIP2::Error::Type.3p
+@man man/man3p/GeoIP2::Error::WebService.3p
+@man man/man3p/GeoIP2::Model::ASN.3p
+@man man/man3p/GeoIP2::Model::AnonymousIP.3p
+@man man/man3p/GeoIP2::Model::City.3p
+@man man/man3p/GeoIP2::Model::ConnectionType.3p
+@man man/man3p/GeoIP2::Model::Country.3p
+@man man/man3p/GeoIP2::Model::Domain.3p
+@man man/man3p/GeoIP2::Model::Enterprise.3p
+@man man/man3p/GeoIP2::Model::ISP.3p
+@man man/man3p/GeoIP2::Model::Insights.3p
+@man man/man3p/GeoIP2::Record::City.3p
+@man man/man3p/GeoIP2::Record::Continent.3p
+@man man/man3p/GeoIP2::Record::Country.3p
+@man man/man3p/GeoIP2::Record::Location.3p
+@man man/man3p/GeoIP2::Record::MaxMind.3p
+@man man/man3p/GeoIP2::Record::Postal.3p
+@man man/man3p/GeoIP2::Record::RepresentedCountry.3p
+@man man/man3p/GeoIP2::Record::Subdivision.3p
+@man man/man3p/GeoIP2::Record::Traits.3p
+@man man/man3p/GeoIP2::WebService::Client.3p
