@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2018/05/15 07:28:15 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/02/20 06:24:30 bentley Exp $
+
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 COMMENT =	Game Boy development system
 
-V =		0.3.7
+V =		0.3.8
 DISTNAME =	rgbds-$V
 
 CATEGORIES =	devel
