@@ -1,0 +1,34 @@
+$OpenBSD: patch-tools_lldb_source_Plugins_UnwindAssembly_x86_x86AssemblyInspectionEngine_cpp,v 1.1 2019/02/20 00:24:11 jca Exp $
+
+Skip retguard instructions in prologue detection.
+
+Index: tools/lldb/source/Plugins/UnwindAssembly/x86/x86AssemblyInspectionEngine.cpp
+--- tools/lldb/source/Plugins/UnwindAssembly/x86/x86AssemblyInspectionEngine.cpp.orig
++++ tools/lldb/source/Plugins/UnwindAssembly/x86/x86AssemblyInspectionEngine.cpp
+@@ -593,6 +593,18 @@ bool x86AssemblyInspectionEngine::ret_pattern_p() {
+   return false;
+ }
+ 
++// movq $0x????????(%rip), $reg [(0x4c || 0x48) 0x8b ?? ?? ?? ?? ??]
++// xorq $off(%rsp), $reg        [(0x4c || 0x48) 0x33 ?? 0x24]
++bool x86AssemblyInspectionEngine::retguard_prologue_p(size_t offset, int insn_len) {
++  uint8_t *p = m_cur_insn;
++  if (offset == 0 && insn_len == 7)
++    return (*p == 0x48 || *p == 0x4c) && (*(p + 1) == 0x8b);
++  else if (offset == 7 && insn_len == 4)
++    return (*p == 0x48 || *p == 0x4c) && (*(p + 1) == 0x33) && (*(p + 3) == 0x24);
++
++  return false;
++}
++
+ uint32_t x86AssemblyInspectionEngine::extract_4(uint8_t *b) {
+   uint32_t v = 0;
+   for (int i = 3; i >= 0; i--)
+@@ -1214,6 +1226,7 @@ bool x86AssemblyInspectionEngine::FindFirstNonPrologue
+     if (push_rbp_pattern_p() || mov_rsp_rbp_pattern_p() ||
+         sub_rsp_pattern_p(scratch) || push_reg_p(regno) ||
+         mov_reg_to_local_stack_frame_p(regno, scratch) ||
++        retguard_prologue_p(offset, insn_len) ||
+         (lea_rsp_pattern_p(scratch) && offset == 0)) {
+       offset += insn_len;
+       continue;
