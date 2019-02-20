@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/01/21 22:00:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/02/20 09:13:12 ajacoutot Exp $
 share/osinfo/
 share/osinfo/LICENSE
 share/osinfo/VERSION
@@ -96,6 +96,9 @@ share/osinfo/device/xen.org/xen-vkbd.xml
 share/osinfo/device/xen.org/xen-vscsi.xml
 share/osinfo/device/xen.org/xen-vtpm.xml
 share/osinfo/install-script/
+share/osinfo/install-script/centos.org/
+share/osinfo/install-script/centos.org/centos-kickstart-desktop.xml
+share/osinfo/install-script/centos.org/centos-kickstart-jeos.xml
 share/osinfo/install-script/debian.org/
 share/osinfo/install-script/debian.org/debian-preseed-desktop.xml
 share/osinfo/install-script/debian.org/debian-preseed-jeos.xml
@@ -151,6 +154,8 @@ share/osinfo/os/apple.com/macosx-10.4.xml
 share/osinfo/os/apple.com/macosx-10.5.xml
 share/osinfo/os/apple.com/macosx-10.6.xml
 share/osinfo/os/apple.com/macosx-10.7.xml
+share/osinfo/os/archlinux.org/
+share/osinfo/os/archlinux.org/archlinux-rolling.xml
 share/osinfo/os/asianux.com/
 share/osinfo/os/asianux.com/asianux-4.6.xml
 share/osinfo/os/asianux.com/asianux-4.7.xml
@@ -352,6 +357,8 @@ share/osinfo/os/freebsd.org/freebsd-9.2.xml
 share/osinfo/os/freebsd.org/freebsd-9.3.xml
 share/osinfo/os/freedos.org/
 share/osinfo/os/freedos.org/freedos-1.2.xml
+share/osinfo/os/gentoo.org/
+share/osinfo/os/gentoo.org/gentoo-rolling.xml
 share/osinfo/os/gnome.org/
 share/osinfo/os/gnome.org/gnome-3.6.xml
 share/osinfo/os/gnome.org/gnome-3.8.xml
@@ -500,6 +507,8 @@ share/osinfo/os/opensuse.org/opensuse-tumbleweed.xml
 share/osinfo/os/opensuse.org/opensuse-unknown.xml
 share/osinfo/os/oracle.com/
 share/osinfo/os/oracle.com/solaris-11.xml
+share/osinfo/os/pureos.net/
+share/osinfo/os/pureos.net/pureos-8.xml
 share/osinfo/os/redhat.com/
 share/osinfo/os/redhat.com/rhel-2.1.1.xml
 share/osinfo/os/redhat.com/rhel-2.1.2.xml
@@ -668,6 +677,8 @@ share/osinfo/os/ubuntu.com/ubuntu-8.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-8.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-9.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-9.10.xml
+share/osinfo/os/voidlinux.org/
+share/osinfo/os/voidlinux.org/voidlinux-rolling.xml
 share/osinfo/platform/
 share/osinfo/platform/linux-kvm.org/
 share/osinfo/platform/linux-kvm.org/qemu-kvm-1.0.1.xml
