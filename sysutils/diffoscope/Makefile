@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2019/02/12 21:15:57 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2019/02/20 02:48:46 bcallah Exp $
 
-MODPY_EGG_VERSION =	111
+MODPY_EGG_VERSION =	112
 COMMENT =	in-depth comparison of files, archives, and directories
 DISTNAME =	diffoscope-${MODPY_EGG_VERSION}
 CATEGORIES =	sysutils devel

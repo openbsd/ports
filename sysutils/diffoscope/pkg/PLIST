@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/01/15 22:45:49 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/02/20 02:48:46 bcallah Exp $
 bin/diffoscope
 lib/python${MODPY_VERSION}/site-packages/diffoscope/
 lib/python${MODPY_VERSION}/site-packages/diffoscope-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -50,6 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}docx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}dtb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}elf.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}ffprobe.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}fontconfig.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}fonts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}fsimage.${MODPY_PYC_MAGIC_TAG}pyc
@@ -113,6 +114,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/directory.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/docx.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/dtb.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/elf.py
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/ffprobe.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/fontconfig.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/fonts.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/fsimage.py
