@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.30 2019/01/11 21:31:52 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.31 2019/02/20 17:10:45 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 include/poppler/
@@ -78,6 +78,7 @@ include/poppler/UnicodeTypeTable.h
 include/poppler/ViewerPreferences.h
 include/poppler/XRef.h
 include/poppler/cpp/
+include/poppler/cpp/poppler-destination.h
 include/poppler/cpp/poppler-document.h
 include/poppler/cpp/poppler-embedded-file.h
 include/poppler/cpp/poppler-font.h

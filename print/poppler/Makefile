@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.136 2019/01/11 21:31:52 kili Exp $
+# $OpenBSD: Makefile,v 1.137 2019/02/20 17:10:45 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt5=	Qt5 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
-V=		0.73.0
+V=		0.74.0
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
@@ -13,10 +13,10 @@ PKGNAME-qt5=	poppler-qt5-$V
 
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS +=	poppler              48.0     # 84.0
+SHARED_LIBS +=	poppler              49.0     # 85.0
 SHARED_LIBS +=	poppler-glib         19.1     # 8.12
-SHARED_LIBS +=	poppler-qt5          7.0      # 1.18
-SHARED_LIBS +=	poppler-cpp          10.1     # 0.6
+SHARED_LIBS +=	poppler-qt5          7.1      # 1.19
+SHARED_LIBS +=	poppler-cpp          10.2     # 0.7
 
 HOMEPAGE=	https://poppler.freedesktop.org/
 
@@ -74,7 +74,7 @@ LIB_DEPENDS-utils=${MODGCC4_CPPLIBDEP} \
 
 WANTLIB-main=	${cWANTLIB} Xext ffi gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 pixman-1 openjp2 X11 Xrender cairo pcre \
-		png xcb xcb-render lcms2 xcb-shm \
+		png16 xcb xcb-render lcms2 xcb-shm \
 		iconv intl ${COMPILER_LIBCXX}
 
 WANTLIB-qt5=	${cWANTLIB} $(COMPILER_LIBCXX) \
@@ -82,10 +82,10 @@ WANTLIB-qt5=	${cWANTLIB} $(COMPILER_LIBCXX) \
 		Xdamage Xext Xfixes Xxf86vm drm execinfo glapi \
 		glib-2.0 graphite2 gthread-2.0 harfbuzz \
 		iconv icudata icui18n icuuc intl lcms2 openjp2 pcre \
-		pcre2-16 png poppler xcb xcb-dri2 xcb-glx
+		pcre2-16 png16 poppler xcb xcb-dri2 xcb-glx
 
 WANTLIB-utils=	X11 Xext Xrender c cairo fontconfig lcms2 m pixman-1 \
-		png ${COMPILER_LIBCXX} xcb xcb-render xcb-shm openjp2 \
+		png16 ${COMPILER_LIBCXX} xcb xcb-render xcb-shm openjp2 \
 		poppler z ${cWANTLIB}
 
 CONFIGURE_ARGS+=-DENABLE_UNSTABLE_API_ABI_HEADERS=True \

@@ -1,9 +1,9 @@
-$OpenBSD: patch-glib_CMakeLists_txt,v 1.1 2019/01/11 21:31:52 kili Exp $
+$OpenBSD: patch-glib_CMakeLists_txt,v 1.2 2019/02/20 17:10:45 kili Exp $
 
 Index: glib/CMakeLists.txt
 --- glib/CMakeLists.txt.orig
 +++ glib/CMakeLists.txt
-@@ -130,7 +130,9 @@ if (HAVE_INTROSPECTION AND BUILD_SHARED_LIBS)
+@@ -134,7 +134,9 @@ if (HAVE_INTROSPECTION AND BUILD_SHARED_LIBS)
    set(Poppler_0_18_gir_INCLUDES GObject-2.0 Gio-2.0 cairo-1.0)
    get_directory_property(_tmp_includes INCLUDE_DIRECTORIES)
    _list_prefix(_includes _tmp_includes "-I")
