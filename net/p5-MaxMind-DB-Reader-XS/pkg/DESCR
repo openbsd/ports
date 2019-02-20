@@ -1,0 +1,2 @@
+This module causes MaxMind::DB::Reader to use the XS implementation, which
+is much faster than the Perl implementation.

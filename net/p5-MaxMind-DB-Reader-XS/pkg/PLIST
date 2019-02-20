@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/20 09:04:33 fcambus Exp $
+${P5ARCH}/MaxMind/
+${P5ARCH}/MaxMind/DB/
+${P5ARCH}/MaxMind/DB/Reader/
+${P5ARCH}/MaxMind/DB/Reader/XS.pm
+${P5ARCH}/auto/MaxMind/
+${P5ARCH}/auto/MaxMind/DB/
+${P5ARCH}/auto/MaxMind/DB/Reader/
+${P5ARCH}/auto/MaxMind/DB/Reader/XS/
+${P5ARCH}/auto/MaxMind/DB/Reader/XS/XS.bs
+${P5ARCH}/auto/MaxMind/DB/Reader/XS/XS.so
+@man man/man3p/MaxMind::DB::Reader::XS.3p
