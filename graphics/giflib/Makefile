@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/02/19 17:57:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/02/20 10:15:20 sthen Exp $
 
 COMMENT=	tools and library routines for working with GIF images
 
@@ -24,7 +24,7 @@ CFLAGS+=	-DHAVE_REALLOCARRAY
 MAKE_FLAGS=	CC="${CC}" OFLAGS="${CFLAGS}" LIBVER="${LIBgif_VERSION}"
 FAKE_FLAGS=	MANDIR="${PREFIX}/man/man1" LIBVER="${LIBgif_VERSION}"
 
-BUILD_DEPENDS=	textproc/xmlto
+BUILD_DEPENDS+=	textproc/xmlto
 TEST_DEPENDS=	sysutils/coreutils
 TEST_TARGET=	check
 
