@@ -1,18 +1,6 @@
-$OpenBSD: patch-scapy_arch_bpf_consts_py,v 1.1 2018/07/30 14:27:37 bluhm Exp $
+$OpenBSD: patch-scapy_arch_bpf_consts_py,v 1.2 2019/02/20 13:58:24 bluhm Exp $
 
-https://github.com/secdev/scapy/pull/1538
-
-commit e5ed0aab5a2028d8807b98e444c2e04cd29ba7b6 (origin/ioctl-sizeof, ioctl-sizeof)
-Author: Alexander Bluhm <alexander.bluhm@gmx.net>
-Date:   Thu Jul 26 16:52:36 2018 +0200
-
-    Calculate BIOCSETF ioctl constant for 32 bit architectures.
-    
-    The size of the ioctl(2) argument is embeded in the constant.  Struct
-    bpf_program is 16 bytes on 64 bit architectures but only 8 bytes
-    on 32 bit architectures.  Use ctypes to calculate the size dynamically
-    in Python and adjust BIOCSETF.  Fixes sniff(filter="ip") on
-    OpenBSD/i386.
+https://github.com/secdev/scapy/commit/e5ed0aab5a2028d8807b98e444c2e04cd29ba7b6
 
 Index: scapy/arch/bpf/consts.py
 --- scapy/arch/bpf/consts.py.orig

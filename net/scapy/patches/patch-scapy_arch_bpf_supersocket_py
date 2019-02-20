@@ -1,0 +1,18 @@
+$OpenBSD: patch-scapy_arch_bpf_supersocket_py,v 1.1 2019/02/20 13:58:24 bluhm Exp $
+
+https://github.com/secdev/scapy/commit/ea094511f7a4dc56af8554060488d713fc0f6137
+
+Index: scapy/arch/bpf/supersocket.py
+--- scapy/arch/bpf/supersocket.py.orig
++++ scapy/arch/bpf/supersocket.py
+@@ -218,7 +218,9 @@ class _L2bpfSocket(SuperSocket):
+ class L2bpfListenSocket(_L2bpfSocket):
+     """"Scapy L2 BPF Listen Super Socket"""
+ 
+-    received_frames = []
++    def __init__(self, *args, **kwargs):
++        self.received_frames = []
++        super(L2bpfListenSocket, self).__init__(*args, **kwargs)
+ 
+     def buffered_frames(self):
+         """Return the number of frames in the buffer"""
