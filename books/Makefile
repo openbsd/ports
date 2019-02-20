@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/02/12 09:59:43 sebastia Exp $
+# $OpenBSD: Makefile,v 1.27 2019/02/20 21:21:35 sebastia Exp $
 
      SUBDIR =
      SUBDIR += AsteriskGuide
@@ -11,7 +11,6 @@
      SUBDIR += diveintopython
      SUBDIR += diveintopython3
      SUBDIR += docbook-guide
-     SUBDIR += exploitdb-papers
      SUBDIR += grokking-the-gimp
      SUBDIR += haskell-report
      SUBDIR += man-pages-posix
