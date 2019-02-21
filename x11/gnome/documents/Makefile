@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.102 2019/01/18 20:29:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2019/02/21 17:08:50 ajacoutot Exp $
 
 COMMENT=		document and e-books manager for GNOME
 
 GNOME_PROJECT=		gnome-documents
 GNOME_VERSION=		3.30.1
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += cairo cairo-gobject evdocument3 evview3 gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gnome-desktop-3 gobject-2.0 gtk-3
-WANTLIB += intl m pango-1.0 pangocairo-1.0
+WANTLIB += atk-1.0 cairo cairo-gobject evdocument3 evview3 gdk-3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0
+WANTLIB += gnome-desktop-3 gobject-2.0 gtk-3 intl javascriptcoregtk-4.0
+WANTLIB += m pango-1.0 pangocairo-1.0 pthread soup-2.4 tracker-sparql-2.0
 
 MODULES=		devel/dconf \
 			devel/meson \

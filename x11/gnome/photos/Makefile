@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.73 2019/01/06 13:19:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2019/02/21 17:08:50 ajacoutot Exp $
 
 BROKEN-powerpc=		undefined reference to __sync_add_and_fetch_8
-
-TRACKER_API=		2.0
 
 COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		3.30.1
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -25,12 +24,11 @@ WANTLIB += gtk-3 harfbuzz iconv icudata icui18n icuuc idn2 intl
 WANTLIB += jpeg json-glib-1.0 kvm lzma m nghttp2 nspr4 nss3 nssutil3
 WANTLIB += oauth p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png16 psl rest-0.7 smime3
-WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 ssl ssl3 unistring
-WANTLIB += uuid xcb xcb-render xcb-shm xml2 z
-WANTLIB += tracker-control-${TRACKER_API}
-WANTLIB += tracker-sparql-${TRACKER_API}
-WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
-WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
+WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 ssl ssl3 tracker-control-2.0
+WANTLIB += tracker-sparql-2.0 unistring uuid xcb xcb-render xcb-shm
+WANTLIB += xml2 z
+WANTLIB += lib/tracker-2.0/tracker-data
+WANTLIB += lib/tracker-2.0/tracker-common
 
 MODULES=		devel/dconf \
 			x11/gnome

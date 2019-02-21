@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2019/01/06 14:12:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2019/02/21 17:08:50 ajacoutot Exp $
 @bin bin/bijiben
 @bin libexec/bijiben-shell-search-provider
 share/applications/org.gnome.bijiben.desktop
@@ -337,6 +337,5 @@ share/metainfo/org.gnome.bijiben.appdata.xml
 share/mime/packages/org.gnome.bijiben.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-@tag gtk-update-icon-cache %D/share/icons/HighContrast
 @tag glib-compile-schemas
 @tag update-mime-database
