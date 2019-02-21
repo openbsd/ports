@@ -1,49 +1,45 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/07/06 06:04:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/02/21 17:08:28 ajacoutot Exp $
 @conflict meta-tracker-<2.0
-lib/systemd/user/tracker-extract.service
-lib/systemd/user/tracker-miner-apps.service
-lib/systemd/user/tracker-miner-fs.service
-lib/systemd/user/tracker-writeback.service
-lib/tracker-miners-${TRACKER_API}/
-lib/tracker-miners-${TRACKER_API}/extract-modules/
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-abw.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-bmp.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-dummy.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-dvi.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-epub.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-gif.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-gstreamer.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-html.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-icon.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-iso.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-jpeg.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-mp3.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-msoffice-xml.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-msoffice.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-oasis.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-pdf.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-playlist.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-png.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-ps.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-raw.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-text.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-tiff.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-xmp.so
-lib/tracker-miners-${TRACKER_API}/extract-modules/libextract-xps.so
-lib/tracker-miners-${TRACKER_API}/libtracker-extract.a
-lib/tracker-miners-${TRACKER_API}/libtracker-extract.la
-@lib lib/tracker-miners-${TRACKER_API}/libtracker-extract.so.${LIBtracker-extract_VERSION}
-lib/tracker-miners-${TRACKER_API}/writeback-modules/
-lib/tracker-miners-${TRACKER_API}/writeback-modules/libwriteback-taglib.so
-lib/tracker-miners-${TRACKER_API}/writeback-modules/libwriteback-xmp.so
+lib/tracker-miners-2.0/
+lib/tracker-miners-2.0/extract-modules/
+lib/tracker-miners-2.0/extract-modules/libextract-abw.so
+lib/tracker-miners-2.0/extract-modules/libextract-bmp.so
+lib/tracker-miners-2.0/extract-modules/libextract-desktop.so
+lib/tracker-miners-2.0/extract-modules/libextract-dummy.so
+lib/tracker-miners-2.0/extract-modules/libextract-dvi.so
+lib/tracker-miners-2.0/extract-modules/libextract-epub.so
+lib/tracker-miners-2.0/extract-modules/libextract-flac.so
+lib/tracker-miners-2.0/extract-modules/libextract-gif.so
+lib/tracker-miners-2.0/extract-modules/libextract-gstreamer.so
+lib/tracker-miners-2.0/extract-modules/libextract-html.so
+lib/tracker-miners-2.0/extract-modules/libextract-icon.so
+lib/tracker-miners-2.0/extract-modules/libextract-iso.so
+lib/tracker-miners-2.0/extract-modules/libextract-jpeg.so
+lib/tracker-miners-2.0/extract-modules/libextract-mp3.so
+lib/tracker-miners-2.0/extract-modules/libextract-msoffice-xml.so
+lib/tracker-miners-2.0/extract-modules/libextract-msoffice.so
+lib/tracker-miners-2.0/extract-modules/libextract-oasis.so
+lib/tracker-miners-2.0/extract-modules/libextract-pdf.so
+lib/tracker-miners-2.0/extract-modules/libextract-playlist.so
+lib/tracker-miners-2.0/extract-modules/libextract-png.so
+lib/tracker-miners-2.0/extract-modules/libextract-ps.so
+lib/tracker-miners-2.0/extract-modules/libextract-raw.so
+lib/tracker-miners-2.0/extract-modules/libextract-text.so
+lib/tracker-miners-2.0/extract-modules/libextract-tiff.so
+lib/tracker-miners-2.0/extract-modules/libextract-vorbis.so
+lib/tracker-miners-2.0/extract-modules/libextract-xmp.so
+lib/tracker-miners-2.0/extract-modules/libextract-xps.so
+@lib lib/tracker-miners-2.0/libtracker-extract.so.${LIBtracker-extract_VERSION}
+lib/tracker-miners-2.0/libtracker-miners-common.so
+lib/tracker-miners-2.0/writeback-modules/
+lib/tracker-miners-2.0/writeback-modules/libwriteback-taglib.so
+lib/tracker-miners-2.0/writeback-modules/libwriteback-xmp.so
 @bin libexec/tracker-extract
-@bin libexec/tracker-miner-apps
 @bin libexec/tracker-miner-fs
 @bin libexec/tracker-writeback
 @man man/man1/tracker-extract.1
 @man man/man1/tracker-miner-fs.1
 @man man/man1/tracker-writeback.1
-share/dbus-1/services/org.freedesktop.Tracker1.Miner.Applications.service
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.Extract.service
 share/dbus-1/services/org.freedesktop.Tracker1.Miner.Files.service
 share/dbus-1/services/org.freedesktop.Tracker1.Writeback.service
@@ -52,14 +48,12 @@ share/examples/tracker-miners/xdg/
 share/examples/tracker-miners/xdg/autostart/
 share/examples/tracker-miners/xdg/autostart/tracker-extract.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/tracker-extract.desktop
-share/examples/tracker-miners/xdg/autostart/tracker-miner-apps.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/tracker-miner-apps.desktop
 share/examples/tracker-miners/xdg/autostart/tracker-miner-fs.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/tracker-miner-fs.desktop
-share/glib-${TRACKER_API}/schemas/org.freedesktop.Tracker.Extract.gschema.xml
-share/glib-${TRACKER_API}/schemas/org.freedesktop.Tracker.Miner.Files.gschema.xml
-share/glib-${TRACKER_API}/schemas/org.freedesktop.Tracker.Writeback.gschema.xml
-share/glib-${TRACKER_API}/schemas/org.freedesktop.TrackerMiners.enums.xml
+share/glib-2.0/schemas/org.freedesktop.Tracker.Extract.gschema.xml
+share/glib-2.0/schemas/org.freedesktop.Tracker.Miner.Files.gschema.xml
+share/glib-2.0/schemas/org.freedesktop.Tracker.Writeback.gschema.xml
+share/glib-2.0/schemas/org.freedesktop.TrackerMiners.enums.xml
 share/locale/ar/LC_MESSAGES/tracker-miners.mo
 share/locale/as/LC_MESSAGES/tracker-miners.mo
 share/locale/be@latin/LC_MESSAGES/tracker-miners.mo
@@ -123,9 +117,11 @@ share/tracker-miners/extract-rules/
 share/tracker-miners/extract-rules/10-abw.rule
 share/tracker-miners/extract-rules/10-bmp.rule
 share/tracker-miners/extract-rules/10-comics.rule
+share/tracker-miners/extract-rules/10-desktop.rule
 share/tracker-miners/extract-rules/10-dvi.rule
 share/tracker-miners/extract-rules/10-ebooks.rule
 share/tracker-miners/extract-rules/10-epub.rule
+share/tracker-miners/extract-rules/10-flac.rule
 share/tracker-miners/extract-rules/10-gif.rule
 share/tracker-miners/extract-rules/10-html.rule
 share/tracker-miners/extract-rules/10-ico.rule
@@ -139,6 +135,7 @@ share/tracker-miners/extract-rules/10-ps.rule
 share/tracker-miners/extract-rules/10-raw.rule
 share/tracker-miners/extract-rules/10-svg.rule
 share/tracker-miners/extract-rules/10-tiff.rule
+share/tracker-miners/extract-rules/10-vorbis.rule
 share/tracker-miners/extract-rules/10-xmp.rule
 share/tracker-miners/extract-rules/10-xps.rule
 share/tracker-miners/extract-rules/11-iso.rule
@@ -150,10 +147,7 @@ share/tracker-miners/extract-rules/90-gstreamer-audio-generic.rule
 share/tracker-miners/extract-rules/90-gstreamer-image-generic.rule
 share/tracker-miners/extract-rules/90-gstreamer-video-generic.rule
 share/tracker-miners/extract-rules/90-text-generic.rule
-share/tracker-tests/
-share/tracker-tests/01-writeback.py
 share/tracker/miners/
-share/tracker/miners/org.freedesktop.Tracker1.Miner.Applications.service
 share/tracker/miners/org.freedesktop.Tracker1.Miner.Extract.service
 share/tracker/miners/org.freedesktop.Tracker1.Miner.Files.service
 @tag glib-compile-schemas
