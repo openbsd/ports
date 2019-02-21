@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_openvpn_tun_c,v 1.16 2018/03/04 19:03:00 jca Exp $
+$OpenBSD: patch-src_openvpn_tun_c,v 1.17 2019/02/21 23:41:12 jca Exp $
 
 - no need for link0 any more, we have separate tap interfaces
+- fix memory leak (gc is unused)
 
 Index: src/openvpn/tun.c
 --- src/openvpn/tun.c.orig
@@ -38,3 +39,11 @@ Index: src/openvpn/tun.c
                          IFCONFIG_PATH,
                          actual,
                          ifconfig_local,
+@@ -2615,7 +2620,6 @@ close_tun(struct tuntap *tt)
+     }
+     else if (tt)
+     {
+-        struct gc_arena gc = gc_new();
+         struct argv argv = argv_new();
+ 
+         /* setup command, close tun dev (clears tt->actual_name!), run command
