@@ -1,0 +1,2 @@
+Yet another implementation of Term::Size.  Now in pure Perl, with
+the exception of a C probe run on build time.

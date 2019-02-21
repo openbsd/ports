@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/21 14:23:48 bluhm Exp $
+${P5SITE}/Term/
+${P5SITE}/Term/Size/
+${P5SITE}/Term/Size/Perl/
+${P5SITE}/Term/Size/Perl.pm
+${P5SITE}/Term/Size/Perl/Params.pm
+@man man/man3p/Term::Size::Params.3p
+@man man/man3p/Term::Size::Perl.3p
