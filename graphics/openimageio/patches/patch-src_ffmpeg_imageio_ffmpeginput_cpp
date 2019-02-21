@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_ffmpeg_imageio_ffmpeginput_cpp,v 1.1 2019/02/21 22:01:30 sthen Exp $
+
+Update for newer FFmpeg API.
+
+Index: src/ffmpeg.imageio/ffmpeginput.cpp
+--- src/ffmpeg.imageio/ffmpeginput.cpp.orig
++++ src/ffmpeg.imageio/ffmpeginput.cpp
+@@ -330,7 +330,7 @@ FFmpegInput::open (const std::string &name, ImageSpec 
+         !strcmp (m_codec_context->codec->name, "dvvideo")) {
+         m_offset_time = false;
+     }
+-    m_codec_cap_delay = (bool) (m_codec_context->codec->capabilities & CODEC_CAP_DELAY);
++    m_codec_cap_delay = (bool) (m_codec_context->codec->capabilities & AV_CODEC_CAP_DELAY);
+ 
+     AVStream *stream = m_format_context->streams[m_video_stream];
+     if (stream->r_frame_rate.num != 0 && stream->r_frame_rate.den != 0) {
