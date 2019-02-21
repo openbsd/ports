@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/27 11:57:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/02/21 23:28:26 sthen Exp $
 
 COMMENT =	KDE FFmpeg-based thumbnail generator for video files
 CATEGORIES =	multimedia
 DISTNAME =	ffmpegthumbs-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 WANTLIB =  m pthread
 WANTLIB += ${COMPILER_LIBCXX}
@@ -12,6 +12,6 @@ WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio
 WANTLIB += avcodec avformat avutil swscale
 
-RUN_DEPENDS =	graphics/ffmpeg
+LIB_DEPENDS =	graphics/ffmpeg
 
 .include <bsd.port.mk>
