@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1823 2019/02/21 14:26:22 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1824 2019/02/21 23:21:01 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1066,6 +1066,7 @@
      SUBDIR += p5-Term-Shell
      SUBDIR += p5-Term-ShellUI
      SUBDIR += p5-Term-Size
+     SUBDIR += p5-Term-Size-Any
      SUBDIR += p5-Term-Size-Perl
      SUBDIR += p5-Term-Table
      SUBDIR += p5-Test-Assertions
@@ -1137,8 +1138,8 @@
      SUBDIR += p5-Test-TrailingSpace
      SUBDIR += p5-Test-Trap
      SUBDIR += p5-Test-URI
-     SUBDIR += p5-Test-UseAllModules
      SUBDIR += p5-Test-Unit
+     SUBDIR += p5-Test-UseAllModules
      SUBDIR += p5-Test-WWW-Mechanize
      SUBDIR += p5-Test-WWW-Mechanize-Catalyst
      SUBDIR += p5-Test-Warn
