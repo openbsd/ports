@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.159 2019/02/06 10:20:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.160 2019/02/21 17:13:20 ajacoutot Exp $
 
 COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 # sync with meta/gnome "V" variable
 GNOME_VERSION=		3.30.2.1
+REVISION=		0
 
 SHARED_LIBS +=  gnome-desktop-3      2.2      # 14.1
 
@@ -30,11 +31,12 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=674799
-# convenience dependency for gnome-desktop consumers (gnome-shell, mutter...);
+# convenience dependencies for gnome-desktop consumers (gnome-shell, mutter...);
 # defaults set in gsettings-desktop-schema:
 #     org.gnome.desktop.background.gschema.xml
 #     org.gnome.desktop.interface.gschema.xml
-RUN_DEPENDS +=		fonts/cantarell-fonts \
+RUN_DEPENDS +=		fonts/adobe-fonts/source-code-pro \
+			fonts/cantarell-fonts \
 			x11/gnome/backgrounds
 
 LIB_DEPENDS=		x11/gtk+3
