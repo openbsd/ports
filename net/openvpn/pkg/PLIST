@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.24 2018/09/04 12:46:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.25 2019/02/21 23:32:23 jca Exp $
 @newgroup _openvpn:577
 @newuser _openvpn:577:_openvpn:daemon:OpenVPN Daemon:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/openvpn
 include/openvpn/
 include/openvpn/openvpn-msg.h
 include/openvpn/openvpn-plugin.h
@@ -63,4 +64,3 @@ share/examples/openvpn/sample-scripts/bridge-start
 share/examples/openvpn/sample-scripts/bridge-stop
 share/examples/openvpn/sample-scripts/ucn.pl
 share/examples/openvpn/sample-scripts/verify-cn
-@rcscript ${RCDIR}/openvpn
