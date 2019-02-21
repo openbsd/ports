@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/02/19 05:09:58 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/02/21 13:08:25 sthen Exp $
 
 COMMENT=	PostgreSQL RDBMS (previous version, for pg_upgrade)
 
@@ -62,6 +62,14 @@ CONFIGURE_ARGS=	--with-openssl=/usr \
 .if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "alpha"
 CONFIGURE_ARGS+=--disable-spinlocks
 .endif
+
+# To avoid problems with missed floating point overflow checks.
+# pgsql 10.6+ refuses to build on i386 clang unless -msse2 is set.
+# If clang gains "-fexcess-precision=standard" support then this
+# should be removed.
+MODULES+=	gcc4
+MODGCC4_ARCHS=	i386
+MODGCC4_LANGS=	c
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 
