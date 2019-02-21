@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2016/04/05 12:21:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/02/21 10:25:48 cwen Exp $
 
 COMMENT=	perl tools for bioinformatics
 
 DISTNAME=	BioPerl-1.6.924
-REVISION=	0
+REVISION=	1
 PKGNAME=	${DISTNAME:L}# No p5-prefix here.
 CATEGORIES=	biology
 
-HOMEPAGE=	http://bioperl.org/
+HOMEPAGE=	https://bioperl.org/
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,7 +19,7 @@ PKG_ARCH=		*
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIR=	${PREFIX}/share/examples/bioperl/
 
-CONFIGURE_STYLE=modbuild
+CONFIGURE_STYLE=	modbuild
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	biology/AcePerl \
@@ -55,6 +55,10 @@ RUN_DEPENDS=	biology/AcePerl \
 		www/p5-SOAP-Lite \
 		www/p5-URI \
 		www/p5-libwww
+TEST_DEPENDS=	devel/p5-Test-Most \
+		www/p5-HTML-TableExtract
+
+MAKE_ENV +=	TEST_POD=Yes
 
 # Optional (not ported) dependencies:
 # Postscript-TextBlock
