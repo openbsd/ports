@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2019/02/21 22:37:58 sthen Exp $
 
 COMMENT =		audio player daemon with library management
 BROKEN-sparc64 =	waf build goes into an infinite loop
@@ -6,7 +6,7 @@ BROKEN-sparc64 =	waf build goes into an infinite loop
 V =			0.8
 DISTNAME =		xmms2-${V}DrO_o
 PKGNAME =		xmms2-${V}
-REVISION =		11
+REVISION =		12
 
 SHARED_LIBS +=		xmmsclient++		2.0 # 4.0.0
 SHARED_LIBS +=		xmmsclient++-glib	1.0 # 1.0.0
@@ -44,7 +44,7 @@ BUILD_DEPENDS =		devel/pyrex \
 
 LIB_DEPENDS =		devel/glib2 \
 			databases/sqlite3 \
-			graphics/ffmpeg>=20130319 \
+			graphics/ffmpeg \
 			audio/libao \
 			audio/jack \
 			textproc/libxml \

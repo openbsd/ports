@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.88 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.89 2019/02/21 22:37:58 sthen Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT =	3D creation software
 
 DISTNAME =	blender-2.79
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	graphics
 
@@ -52,7 +52,7 @@ LIB_DEPENDS =	graphics/png \
 		devel/boost \
 		audio/openal \
 		graphics/openjpeg \
-		graphics/ffmpeg>=20111126 \
+		graphics/ffmpeg \
 		graphics/openimageio \
 		${MODPY_LIB_DEPENDS}
 RUN_DEPENDS =	devel/desktop-file-utils \

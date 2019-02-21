@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.75 2019/01/03 13:35:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2019/02/21 22:37:58 sthen Exp $
 
 COMMENT =		input and output plugins for Audacious
 
 V =			3.9
 DISTNAME =		audacious-plugins-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		audio multimedia
 
@@ -49,7 +49,7 @@ LIB_DEPENDS =		audio/faad>=2.7 \
 			audio/mpg123 \
 			audio/wavpack \
 			devel/libnotify>=0.7.2 \
-			graphics/ffmpeg>=20121026 \
+			graphics/ffmpeg \
 			multimedia/libmms \
 			net/curl \
 			net/neon \

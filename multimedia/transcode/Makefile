@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.73 2019/02/18 10:05:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2019/02/21 22:37:58 sthen Exp $
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.7
-REVISION=	15
+REVISION=	16
 CATEGORIES=	multimedia
 
 HOMEPAGE=	https://bitbucket.org/achurch_/transcode/
@@ -45,7 +45,7 @@ LIB_DEPENDS=	audio/lame \
 		audio/libvorbis \
 		devel/libdvdread \
 		devel/sdl \
-		graphics/ffmpeg>=20121026 \
+		graphics/ffmpeg \
 		graphics/jpeg \
 		graphics/libmpeg2 \
 		multimedia/libdv \

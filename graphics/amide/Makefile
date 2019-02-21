@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.53 2019/02/17 22:52:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2019/02/21 22:37:58 sthen Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
 DISTNAME =	amide-1.0.5
 CATEGORIES =	graphics
-REVISION =	10
+REVISION =	11
 
 HOMEPAGE =	http://amide.sourceforge.net/
 
@@ -41,7 +41,7 @@ USE_GMAKE=	Yes
 LIB_DEPENDS =	devel/gsl>=1.6 \
 		x11/gnome/libgnomecanvas \
 		graphics/xmedcon \
-		graphics/ffmpeg>=20121026 \
+		graphics/ffmpeg \
 		devel/gconf2
 
 AUTOCONF_VERSION =	2.69

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/02/18 10:05:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2019/02/21 22:37:58 sthen Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -6,7 +6,7 @@ COMMENT-tcl=	IAX client library, tcl bindings
 DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-REVISION=	23
+REVISION=	24
 
 CATEGORIES=	telephony
 SHARED_LIBS=	tcliaxclient02 0.0 \
@@ -45,7 +45,7 @@ BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS}
 LIB_DEPENDS=	audio/gsm \
 		audio/portaudio-svn \
 		audio/speex \
-		graphics/ffmpeg>=20130319 \
+		graphics/ffmpeg \
 		graphics/libvidcap \
 		multimedia/libtheora
 

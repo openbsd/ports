@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2019/02/09 19:31:42 kn Exp $
+# $OpenBSD: Makefile,v 1.61 2019/02/21 22:37:58 sthen Exp $
 
 COMMENT=	library for reading and writing QuickTime files
 
 DISTNAME=	libquicktime-1.2.4
-REVISION=	14
+REVISION=	15
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libquicktime/}
 
@@ -31,7 +31,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 LIB_DEPENDS=	audio/faad \
 		audio/lame \
 		audio/libvorbis \
-		graphics/ffmpeg>=20100512 \
+		graphics/ffmpeg \
 		graphics/jpeg \
 		graphics/png \
 		multimedia/libdv \

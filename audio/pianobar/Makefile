@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.85 2017/08/31 09:12:36 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.86 2019/02/21 22:37:58 sthen Exp $
 
 COMMENT =	command-line client for Pandora Internet Radio
 
 DISTNAME =	pianobar-2017.08.30
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
@@ -22,7 +23,7 @@ WANTLIB =	ao avcodec avfilter avformat avutil c curl \
 
 LIB_DEPENDS =	audio/libao \
 		devel/json-c \
-		graphics/ffmpeg>=20140412 \
+		graphics/ffmpeg \
 		net/curl \
 		security/libgcrypt
 
