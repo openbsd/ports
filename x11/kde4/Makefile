@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2019/01/04 14:56:07 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.65 2019/02/21 08:07:46 ajacoutot Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -253,8 +253,8 @@ SUBDIR += dev-utils
 SUBDIR += dolphin-plugins
 SUBDIR += kapptemplate
 SUBDIR += kcachegrind
-SUBDIR += kompare
-SUBDIR += libkomparediff2
+#SUBDIR += kompare			x11/kde-applications
+#SUBDIR += libkomparediff2		x11/kde-applications
 SUBDIR += lokalize
 #SUBDIR += okteta			x11/kde-applications
 SUBDIR += poxml
