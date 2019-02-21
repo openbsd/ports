@@ -1,0 +1,11 @@
+Janet is a functional and imperative programming language. The entire
+language (core library, interpreter, compiler, assembler) is about
+200-300 kB and should run on many constrained systems.
+
+Janet makes a good system scripting language or a language to embed in
+other programs, similar Lua or Guile. Janet also can be used for rapid
+prototying, dynamic systems, and other domains where lisp shines.
+
+Features include first class closures, garbage collection, lisp macros,
+a REPL, the ability to directly interoperate with C including
+dynamically loading C libraries, and an extensive core library.
