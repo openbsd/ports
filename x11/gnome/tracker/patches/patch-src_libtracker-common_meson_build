@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_libtracker-common_meson_build,v 1.1 2019/02/21 17:08:13 ajacoutot Exp $
+
+https://gitlab.gnome.org/GNOME/tracker/merge_requests/64
+
+Index: src/libtracker-common/meson.build
+--- src/libtracker-common/meson.build.orig
++++ src/libtracker-common/meson.build
+@@ -30,8 +30,12 @@ else
+   tracker_common_sources += 'tracker-parser-libunistring.c'
+ endif
+ 
+-# FIXME: need to link against -lkvm on OpenBSD, see configure.ac
+ tracker_common_dependencies = [glib, gio, gio_unix, libmath, libstemmer]
++
++if build_machine.system() == 'openbsd'
++  libkvm = meson.get_compiler('c').find_library('kvm')
++  tracker_common_dependencies += libkvm
++endif
+ 
+ libtracker_common = library('tracker-common',
+   tracker_common_sources,

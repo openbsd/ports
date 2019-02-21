@@ -1,40 +1,30 @@
-# $OpenBSD: Makefile,v 1.237 2019/02/08 10:57:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.238 2019/02/21 17:08:13 ajacoutot Exp $
 
 COMMENT=		metadata database and search tool
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		2.1.7
+GNOME_VERSION=		2.2.0
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
 PKGNAME=		meta-tracker-${VERSION}
 
-# NOTE: when TRACKER_API changes, increment accordingly and bump:
-# x11/gnome/grilo-plugins
-# x11/gnome/nautilus
-# x11/gnome/online-miners
-# x11/gnome/photos
-# x11/gnome/tracker-miners
-TRACKER_API=		2.0
-SUBST_VARS=		TRACKER_API
-
 SHARED_LIBS +=  tracker-common       4.0      # unknown
 SHARED_LIBS +=  tracker-data         4.0      # unknown
-SHARED_LIBS +=  tracker-sparql-2.0   0.0      # 107.0
-SHARED_LIBS +=  tracker-miner-2.0    0.0      # 107.0
-SHARED_LIBS +=  tracker-control-2.0  0.0      # 107.0
+SHARED_LIBS +=  tracker-sparql-2.0   0.1      # 0.200.0
+SHARED_LIBS +=  tracker-miner-2.0    0.0      # 0.200.0
+SHARED_LIBS +=  tracker-control-2.0  0.0      # 0.200.0
 
 # GPLv2+ - LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 iconv icudata icui18n icuuc idn2 intl json-glib-1.0
-WANTLIB += kvm lzma m pcre psl soup-2.4 sqlite3 unistring uuid
-WANTLIB += xml2 z
+WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 icudata icui18n icuuc
+WANTLIB += intl json-glib-1.0 kvm m soup-2.4 sqlite3 uuid xml2
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		devel/dconf \
+			devel/meson \
 			lang/python \
 			x11/gnome
 
@@ -45,23 +35,13 @@ LIB_DEPENDS=		devel/json-glib \
 
 MODGNOME_TOOLS=		gobject-introspection vala
 
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
-MODPY_RUNDEP=		No
-
-CONFIGURE_STYLE=	gnu
-
-CONFIGURE_ARGS=		--disable-network-manager
+CONFIGURE_ARGS=		-Dnetwork_manager=disabled
 
 # needs libstemmer
-CONFIGURE_ARGS +=	--disable-libstemmer
+CONFIGURE_ARGS +=	-Dstemmer=disabled
 
-FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/meta-tracker/
-
-TEST_DEPENDS=		lang/python/${MODPY_DEFAULT_VERSION_2}
-do-test:
-	sed -i "1 s|^.*$$|#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_2}|" \
-		${WRKSRC}/utils/data-generators/cc/generate
-	cd ${WRKBUILD}/tests/functional-tests && ${MAKE_PROGRAM} || true
-	cd ${WRKBUILD}/tests/functional-tests && ${MAKE_PROGRAM} functional-test
+post-install:                                                                   
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/meta-tracker
+	mv ${WRKINST}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/meta-tracker
 
 .include <bsd.port.mk>

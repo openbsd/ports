@@ -1,57 +1,46 @@
-@comment $OpenBSD: PLIST,v 1.45 2018/07/06 06:04:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.46 2019/02/21 17:08:13 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @conflict tracker-*
 @pkgpath x11/gnome/tracker,-evolution
 @pkgpath x11/gnome/tracker,-nautilus
 @bin bin/tracker
-include/tracker-${TRACKER_API}/
-include/tracker-${TRACKER_API}/libtracker-control/
-include/tracker-${TRACKER_API}/libtracker-control/tracker-control.h
-include/tracker-${TRACKER_API}/libtracker-control/tracker-miner-manager.h
-include/tracker-${TRACKER_API}/libtracker-miner/
-include/tracker-${TRACKER_API}/libtracker-miner/tracker-data-provider.h
-include/tracker-${TRACKER_API}/libtracker-miner/tracker-decorator-fs.h
-include/tracker-${TRACKER_API}/libtracker-miner/tracker-decorator.h
-include/tracker-${TRACKER_API}/libtracker-miner/tracker-indexing-tree.h
-include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner-enum-types.h
-include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner-enums.h
-include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner-fs.h
-include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner-object.h
-include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner-online.h
-include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner-proxy.h
-include/tracker-${TRACKER_API}/libtracker-miner/tracker-miner.h
-include/tracker-${TRACKER_API}/libtracker-sparql/
-include/tracker-${TRACKER_API}/libtracker-sparql/tracker-generated.h
-include/tracker-${TRACKER_API}/libtracker-sparql/tracker-namespace-manager.h
-include/tracker-${TRACKER_API}/libtracker-sparql/tracker-notifier.h
-include/tracker-${TRACKER_API}/libtracker-sparql/tracker-ontologies.h
-include/tracker-${TRACKER_API}/libtracker-sparql/tracker-resource.h
-include/tracker-${TRACKER_API}/libtracker-sparql/tracker-sparql.h
-include/tracker-${TRACKER_API}/libtracker-sparql/tracker-version.h
-lib/girepository-1.0/Tracker-${TRACKER_API}.typelib
-lib/girepository-1.0/TrackerControl-${TRACKER_API}.typelib
-lib/girepository-1.0/TrackerMiner-${TRACKER_API}.typelib
-lib/libtracker-control-${TRACKER_API}.a
-lib/libtracker-control-${TRACKER_API}.la
-@lib lib/libtracker-control-${TRACKER_API}.so.${LIBtracker-control-${TRACKER_API}_VERSION}
-lib/libtracker-miner-${TRACKER_API}.a
-lib/libtracker-miner-${TRACKER_API}.la
-@lib lib/libtracker-miner-${TRACKER_API}.so.${LIBtracker-miner-${TRACKER_API}_VERSION}
-lib/libtracker-sparql-${TRACKER_API}.a
-lib/libtracker-sparql-${TRACKER_API}.la
-@lib lib/libtracker-sparql-${TRACKER_API}.so.${LIBtracker-sparql-${TRACKER_API}_VERSION}
-lib/pkgconfig/tracker-control-${TRACKER_API}.pc
-lib/pkgconfig/tracker-miner-${TRACKER_API}.pc
-lib/pkgconfig/tracker-sparql-${TRACKER_API}.pc
-lib/systemd/user/tracker-store.service
-lib/tracker-${TRACKER_API}/
-lib/tracker-${TRACKER_API}/libtracker-common.a
-lib/tracker-${TRACKER_API}/libtracker-common.la
-@lib lib/tracker-${TRACKER_API}/libtracker-common.so.${LIBtracker-common_VERSION}
-lib/tracker-${TRACKER_API}/libtracker-data.a
-lib/tracker-${TRACKER_API}/libtracker-data.la
-@lib lib/tracker-${TRACKER_API}/libtracker-data.so.${LIBtracker-data_VERSION}
+include/tracker-2.0/
+include/tracker-2.0/libtracker-control/
+include/tracker-2.0/libtracker-control/tracker-control.h
+include/tracker-2.0/libtracker-control/tracker-miner-manager.h
+include/tracker-2.0/libtracker-miner/
+include/tracker-2.0/libtracker-miner/tracker-data-provider.h
+include/tracker-2.0/libtracker-miner/tracker-decorator-fs.h
+include/tracker-2.0/libtracker-miner/tracker-decorator.h
+include/tracker-2.0/libtracker-miner/tracker-indexing-tree.h
+include/tracker-2.0/libtracker-miner/tracker-miner-enum-types.h
+include/tracker-2.0/libtracker-miner/tracker-miner-enums.h
+include/tracker-2.0/libtracker-miner/tracker-miner-fs.h
+include/tracker-2.0/libtracker-miner/tracker-miner-object.h
+include/tracker-2.0/libtracker-miner/tracker-miner-online.h
+include/tracker-2.0/libtracker-miner/tracker-miner-proxy.h
+include/tracker-2.0/libtracker-miner/tracker-miner.h
+include/tracker-2.0/libtracker-sparql/
+include/tracker-2.0/libtracker-sparql/tracker-generated.h
+include/tracker-2.0/libtracker-sparql/tracker-namespace-manager.h
+include/tracker-2.0/libtracker-sparql/tracker-notifier.h
+include/tracker-2.0/libtracker-sparql/tracker-ontologies.h
+include/tracker-2.0/libtracker-sparql/tracker-resource.h
+include/tracker-2.0/libtracker-sparql/tracker-sparql.h
+include/tracker-2.0/libtracker-sparql/tracker-version.h
+lib/girepository-1.0/Tracker-2.0.typelib
+lib/girepository-1.0/TrackerControl-2.0.typelib
+lib/girepository-1.0/TrackerMiner-2.0.typelib
+@lib lib/libtracker-control-2.0.so.${LIBtracker-control-2.0_VERSION}
+@lib lib/libtracker-miner-2.0.so.${LIBtracker-miner-2.0_VERSION}
+@lib lib/libtracker-sparql-2.0.so.${LIBtracker-sparql-2.0_VERSION}
+lib/pkgconfig/tracker-control-2.0.pc
+lib/pkgconfig/tracker-miner-2.0.pc
+lib/pkgconfig/tracker-sparql-2.0.pc
+lib/tracker-2.0/
+@lib lib/tracker-2.0/libtracker-common.so.${LIBtracker-common_VERSION}
+@lib lib/tracker-2.0/libtracker-data.so.${LIBtracker-data_VERSION}
 @bin libexec/tracker-store
 @man man/man1/tracker-daemon.1
 @man man/man1/tracker-index.1
@@ -72,132 +61,14 @@ share/examples/meta-tracker/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/meta-tracker/xdg/autostart/tracker-store.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/tracker-store.desktop
-share/gir-1.0/Tracker-${TRACKER_API}.gir
-share/gir-1.0/TrackerControl-${TRACKER_API}.gir
-share/gir-1.0/TrackerMiner-${TRACKER_API}.gir
-share/glib-${TRACKER_API}/schemas/org.freedesktop.Tracker.DB.gschema.xml
-share/glib-${TRACKER_API}/schemas/org.freedesktop.Tracker.FTS.gschema.xml
-share/glib-${TRACKER_API}/schemas/org.freedesktop.Tracker.Store.gschema.xml
-share/glib-${TRACKER_API}/schemas/org.freedesktop.Tracker.enums.xml
-share/glib-${TRACKER_API}/schemas/org.freedesktop.Tracker.gschema.xml
-share/gtk-doc/html/libtracker-control/
-share/gtk-doc/html/libtracker-control/TrackerMinerManager.html
-share/gtk-doc/html/libtracker-control/annotation-glossary.html
-share/gtk-doc/html/libtracker-control/ch01.html
-share/gtk-doc/html/libtracker-control/home.png
-share/gtk-doc/html/libtracker-control/index.html
-share/gtk-doc/html/libtracker-control/left-insensitive.png
-share/gtk-doc/html/libtracker-control/left.png
-share/gtk-doc/html/libtracker-control/libtracker-control.devhelp2
-share/gtk-doc/html/libtracker-control/libtracker-miner-reference.html
-share/gtk-doc/html/libtracker-control/right-insensitive.png
-share/gtk-doc/html/libtracker-control/right.png
-share/gtk-doc/html/libtracker-control/style.css
-share/gtk-doc/html/libtracker-control/tracker-migrating-1-to-2.html
-share/gtk-doc/html/libtracker-control/up-insensitive.png
-share/gtk-doc/html/libtracker-control/up.png
-share/gtk-doc/html/libtracker-miner/
-share/gtk-doc/html/libtracker-miner/TrackerDataProvider.html
-share/gtk-doc/html/libtracker-miner/TrackerDecorator.html
-share/gtk-doc/html/libtracker-miner/TrackerDecoratorFS.html
-share/gtk-doc/html/libtracker-miner/TrackerIndexingTree.html
-share/gtk-doc/html/libtracker-miner/TrackerMiner.html
-share/gtk-doc/html/libtracker-miner/TrackerMinerFS.html
-share/gtk-doc/html/libtracker-miner/TrackerMinerOnline.html
-share/gtk-doc/html/libtracker-miner/TrackerMinerProxy.html
-share/gtk-doc/html/libtracker-miner/annotation-glossary.html
-share/gtk-doc/html/libtracker-miner/ch02.html
-share/gtk-doc/html/libtracker-miner/ch03.html
-share/gtk-doc/html/libtracker-miner/ch04.html
-share/gtk-doc/html/libtracker-miner/ch05s02.html
-share/gtk-doc/html/libtracker-miner/ch05s03.html
-share/gtk-doc/html/libtracker-miner/ch05s04.html
-share/gtk-doc/html/libtracker-miner/ch05s05.html
-share/gtk-doc/html/libtracker-miner/ch05s06.html
-share/gtk-doc/html/libtracker-miner/ch05s07.html
-share/gtk-doc/html/libtracker-miner/home.png
-share/gtk-doc/html/libtracker-miner/index.html
-share/gtk-doc/html/libtracker-miner/left-insensitive.png
-share/gtk-doc/html/libtracker-miner/left.png
-share/gtk-doc/html/libtracker-miner/libtracker-miner-Enumerations.html
-share/gtk-doc/html/libtracker-miner/libtracker-miner-TrackerFileDataProvider.html
-share/gtk-doc/html/libtracker-miner/libtracker-miner-reference.html
-share/gtk-doc/html/libtracker-miner/libtracker-miner.devhelp2
-share/gtk-doc/html/libtracker-miner/right-insensitive.png
-share/gtk-doc/html/libtracker-miner/right.png
-share/gtk-doc/html/libtracker-miner/style.css
-share/gtk-doc/html/libtracker-miner/tracker-migrating-1-to-2.html
-share/gtk-doc/html/libtracker-miner/tracker-overview-compiling.html
-share/gtk-doc/html/libtracker-miner/tracker-overview.html
-share/gtk-doc/html/libtracker-miner/up-insensitive.png
-share/gtk-doc/html/libtracker-miner/up.png
-share/gtk-doc/html/libtracker-sparql/
-share/gtk-doc/html/libtracker-sparql/TrackerNotifier.html
-share/gtk-doc/html/libtracker-sparql/TrackerResource.html
-share/gtk-doc/html/libtracker-sparql/TrackerSparqlBuilder.html
-share/gtk-doc/html/libtracker-sparql/TrackerSparqlConnection.html
-share/gtk-doc/html/libtracker-sparql/TrackerSparqlCursor.html
-share/gtk-doc/html/libtracker-sparql/accompanying-metadata.html
-share/gtk-doc/html/libtracker-sparql/annotation-glossary.html
-share/gtk-doc/html/libtracker-sparql/base-ontology.html
-share/gtk-doc/html/libtracker-sparql/ch18s02.html
-share/gtk-doc/html/libtracker-sparql/ch18s03.html
-share/gtk-doc/html/libtracker-sparql/creating-ontology.html
-share/gtk-doc/html/libtracker-sparql/dc-ontology.html
-share/gtk-doc/html/libtracker-sparql/defining-cardinality.html
-share/gtk-doc/html/libtracker-sparql/defining-classes.html
-share/gtk-doc/html/libtracker-sparql/defining-fts-indexes.html
-share/gtk-doc/html/libtracker-sparql/defining-indexes.html
-share/gtk-doc/html/libtracker-sparql/defining-properties.html
-share/gtk-doc/html/libtracker-sparql/defining-uniqueness.html
-share/gtk-doc/html/libtracker-sparql/home.png
-share/gtk-doc/html/libtracker-sparql/index.html
-share/gtk-doc/html/libtracker-sparql/left-insensitive.png
-share/gtk-doc/html/libtracker-sparql/left.png
-share/gtk-doc/html/libtracker-sparql/libtracker-sparql-TrackerNamespaceManager.html
-share/gtk-doc/html/libtracker-sparql/libtracker-sparql-Utilities.html
-share/gtk-doc/html/libtracker-sparql/libtracker-sparql-Version-Information.html
-share/gtk-doc/html/libtracker-sparql/libtracker-sparql-reference.html
-share/gtk-doc/html/libtracker-sparql/libtracker-sparql.devhelp2
-share/gtk-doc/html/libtracker-sparql/nao-Tag.html
-share/gtk-doc/html/libtracker-sparql/nao-ontology.html
-share/gtk-doc/html/libtracker-sparql/nrl-InverseFunctionalProperty.html
-share/gtk-doc/html/libtracker-sparql/nrl-ontology.html
-share/gtk-doc/html/libtracker-sparql/predefined-elements.html
-share/gtk-doc/html/libtracker-sparql/private-daemons.html
-share/gtk-doc/html/libtracker-sparql/rdf-Property.html
-share/gtk-doc/html/libtracker-sparql/rdf-ontology.html
-share/gtk-doc/html/libtracker-sparql/rdfs-Class.html
-share/gtk-doc/html/libtracker-sparql/rdfs-Literal.html
-share/gtk-doc/html/libtracker-sparql/rdfs-Resource.html
-share/gtk-doc/html/libtracker-sparql/recommendations.html
-share/gtk-doc/html/libtracker-sparql/right-insensitive.png
-share/gtk-doc/html/libtracker-sparql/right.png
-share/gtk-doc/html/libtracker-sparql/style.css
-share/gtk-doc/html/libtracker-sparql/tracker-Namespace.html
-share/gtk-doc/html/libtracker-sparql/tracker-Ontology.html
-share/gtk-doc/html/libtracker-sparql/tracker-examples-builder.html
-share/gtk-doc/html/libtracker-sparql/tracker-examples-readonly.html
-share/gtk-doc/html/libtracker-sparql/tracker-examples-writeonly-with-blank-nodes.html
-share/gtk-doc/html/libtracker-sparql/tracker-examples-writeonly.html
-share/gtk-doc/html/libtracker-sparql/tracker-examples.html
-share/gtk-doc/html/libtracker-sparql/tracker-migrating-1-to-2.html
-share/gtk-doc/html/libtracker-sparql/tracker-ontologies.html
-share/gtk-doc/html/libtracker-sparql/tracker-overview-compiling.html
-share/gtk-doc/html/libtracker-sparql/tracker-overview-connection-methods.html
-share/gtk-doc/html/libtracker-sparql/tracker-overview-environment-variables.html
-share/gtk-doc/html/libtracker-sparql/tracker-overview.html
-share/gtk-doc/html/libtracker-sparql/tracker-private-store.html
-share/gtk-doc/html/libtracker-sparql/up-insensitive.png
-share/gtk-doc/html/libtracker-sparql/up.png
-share/gtk-doc/html/libtracker-sparql/updating-ontology.html
-share/gtk-doc/html/libtracker-sparql/xsd-boolean.html
-share/gtk-doc/html/libtracker-sparql/xsd-date.html
-share/gtk-doc/html/libtracker-sparql/xsd-dateTime.html
-share/gtk-doc/html/libtracker-sparql/xsd-double.html
-share/gtk-doc/html/libtracker-sparql/xsd-integer.html
-share/gtk-doc/html/libtracker-sparql/xsd-ontology.html
-share/gtk-doc/html/libtracker-sparql/xsd-string.html
+share/gir-1.0/Tracker-2.0.gir
+share/gir-1.0/TrackerControl-2.0.gir
+share/gir-1.0/TrackerMiner-2.0.gir
+share/glib-2.0/schemas/org.freedesktop.Tracker.DB.gschema.xml
+share/glib-2.0/schemas/org.freedesktop.Tracker.FTS.gschema.xml
+share/glib-2.0/schemas/org.freedesktop.Tracker.Store.gschema.xml
+share/glib-2.0/schemas/org.freedesktop.Tracker.enums.xml
+share/glib-2.0/schemas/org.freedesktop.Tracker.gschema.xml
 share/locale/ar/LC_MESSAGES/tracker.mo
 share/locale/as/LC_MESSAGES/tracker.mo
 share/locale/be@latin/LC_MESSAGES/tracker.mo
@@ -313,10 +184,10 @@ share/tracker/tracker-miner.xml
 share/tracker/tracker-resources.xml
 share/tracker/tracker-statistics.xml
 share/tracker/tracker-status.xml
-share/vala/vapi/tracker-control-${TRACKER_API}.deps
-share/vala/vapi/tracker-control-${TRACKER_API}.vapi
-share/vala/vapi/tracker-miner-${TRACKER_API}.deps
-share/vala/vapi/tracker-miner-${TRACKER_API}.vapi
-share/vala/vapi/tracker-sparql-${TRACKER_API}.deps
-share/vala/vapi/tracker-sparql-${TRACKER_API}.vapi
+share/vala/vapi/tracker-control-2.0.deps
+share/vala/vapi/tracker-control-2.0.vapi
+share/vala/vapi/tracker-miner-2.0.deps
+share/vala/vapi/tracker-miner-2.0.vapi
+share/vala/vapi/tracker-sparql-2.0.deps
+share/vala/vapi/tracker-sparql-2.0.vapi
 @tag glib-compile-schemas
