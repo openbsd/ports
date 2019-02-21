@@ -1,0 +1,6 @@
+a command line tool which executes commands on remote servers. Define
+tasks in Perl and execute them on remote servers or groups of servers.
+Rex can be used to:
+  _ Deploy web applications to servers sequentially or in parallel.
+  _ Automate common tasks.
+  _ Provision servers using Rex's builtin tools.

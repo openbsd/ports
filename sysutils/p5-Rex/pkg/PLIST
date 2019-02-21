@@ -1,0 +1,480 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/21 04:54:50 afresh1 Exp $
+bin/rex
+bin/rexify
+${P5SITE}/Rex/
+${P5SITE}/Rex.pm
+${P5SITE}/Rex/Args/
+${P5SITE}/Rex/Args.pm
+${P5SITE}/Rex/Args/Integer.pm
+${P5SITE}/Rex/Args/Single.pm
+${P5SITE}/Rex/Args/String.pm
+${P5SITE}/Rex/Batch.pm
+${P5SITE}/Rex/Box/
+${P5SITE}/Rex/Box.pm
+${P5SITE}/Rex/Box/Amazon.pm
+${P5SITE}/Rex/Box/Base.pm
+${P5SITE}/Rex/Box/Docker.pm
+${P5SITE}/Rex/Box/KVM.pm
+${P5SITE}/Rex/Box/VBox.pm
+${P5SITE}/Rex/CLI.pm
+${P5SITE}/Rex/CMDB/
+${P5SITE}/Rex/CMDB.pm
+${P5SITE}/Rex/CMDB/Base.pm
+${P5SITE}/Rex/CMDB/YAML.pm
+${P5SITE}/Rex/Cloud/
+${P5SITE}/Rex/Cloud.pm
+${P5SITE}/Rex/Cloud/Amazon.pm
+${P5SITE}/Rex/Cloud/Base.pm
+${P5SITE}/Rex/Cloud/Jiffybox.pm
+${P5SITE}/Rex/Cloud/OpenStack.pm
+${P5SITE}/Rex/Commands/
+${P5SITE}/Rex/Commands.pm
+${P5SITE}/Rex/Commands/Augeas.pm
+${P5SITE}/Rex/Commands/Box.pm
+${P5SITE}/Rex/Commands/Cloud.pm
+${P5SITE}/Rex/Commands/Cron.pm
+${P5SITE}/Rex/Commands/DB.pm
+${P5SITE}/Rex/Commands/Download.pm
+${P5SITE}/Rex/Commands/File.pm
+${P5SITE}/Rex/Commands/Fs.pm
+${P5SITE}/Rex/Commands/Gather.pm
+${P5SITE}/Rex/Commands/Host.pm
+${P5SITE}/Rex/Commands/Inventory.pm
+${P5SITE}/Rex/Commands/Iptables.pm
+${P5SITE}/Rex/Commands/JobControl.pm
+${P5SITE}/Rex/Commands/Kernel.pm
+${P5SITE}/Rex/Commands/LVM.pm
+${P5SITE}/Rex/Commands/MD5.pm
+${P5SITE}/Rex/Commands/Mkfs.pm
+${P5SITE}/Rex/Commands/Network.pm
+${P5SITE}/Rex/Commands/Notify.pm
+${P5SITE}/Rex/Commands/Partition.pm
+${P5SITE}/Rex/Commands/Pkg.pm
+${P5SITE}/Rex/Commands/PkgConf.pm
+${P5SITE}/Rex/Commands/Process.pm
+${P5SITE}/Rex/Commands/Rsync.pm
+${P5SITE}/Rex/Commands/Run.pm
+${P5SITE}/Rex/Commands/SCM.pm
+${P5SITE}/Rex/Commands/Service.pm
+${P5SITE}/Rex/Commands/SimpleCheck.pm
+${P5SITE}/Rex/Commands/Sync.pm
+${P5SITE}/Rex/Commands/Sysctl.pm
+${P5SITE}/Rex/Commands/Tail.pm
+${P5SITE}/Rex/Commands/Upload.pm
+${P5SITE}/Rex/Commands/User.pm
+${P5SITE}/Rex/Commands/Virtualization.pm
+${P5SITE}/Rex/Commands/templates/
+${P5SITE}/Rex/Commands/templates/append_if_no_such_line.tpl.pl
+${P5SITE}/Rex/Config.pm
+${P5SITE}/Rex/Constants.pm
+${P5SITE}/Rex/Cron/
+${P5SITE}/Rex/Cron.pm
+${P5SITE}/Rex/Cron/Base.pm
+${P5SITE}/Rex/Cron/FreeBSD.pm
+${P5SITE}/Rex/Cron/Linux.pm
+${P5SITE}/Rex/Cron/SunOS.pm
+${P5SITE}/Rex/Exporter.pm
+${P5SITE}/Rex/FS/
+${P5SITE}/Rex/FS/File.pm
+${P5SITE}/Rex/File/
+${P5SITE}/Rex/File/Parser/
+${P5SITE}/Rex/File/Parser/Data.pm
+${P5SITE}/Rex/File/Parser/Ini.pm
+${P5SITE}/Rex/Fork/
+${P5SITE}/Rex/Fork/Manager.pm
+${P5SITE}/Rex/Fork/Task.pm
+${P5SITE}/Rex/Group/
+${P5SITE}/Rex/Group.pm
+${P5SITE}/Rex/Group/Entry/
+${P5SITE}/Rex/Group/Entry/Server.pm
+${P5SITE}/Rex/Group/Lookup/
+${P5SITE}/Rex/Group/Lookup/Command.pm
+${P5SITE}/Rex/Group/Lookup/DBI.pm
+${P5SITE}/Rex/Group/Lookup/File.pm
+${P5SITE}/Rex/Group/Lookup/INI.pm
+${P5SITE}/Rex/Group/Lookup/XML.pm
+${P5SITE}/Rex/Group/Lookup/YAML.pm
+${P5SITE}/Rex/Hardware/
+${P5SITE}/Rex/Hardware.pm
+${P5SITE}/Rex/Hardware/Host.pm
+${P5SITE}/Rex/Hardware/Kernel.pm
+${P5SITE}/Rex/Hardware/Memory.pm
+${P5SITE}/Rex/Hardware/Network/
+${P5SITE}/Rex/Hardware/Network.pm
+${P5SITE}/Rex/Hardware/Network/Darwin.pm
+${P5SITE}/Rex/Hardware/Network/FreeBSD.pm
+${P5SITE}/Rex/Hardware/Network/Linux.pm
+${P5SITE}/Rex/Hardware/Network/NetBSD.pm
+${P5SITE}/Rex/Hardware/Network/OpenBSD.pm
+${P5SITE}/Rex/Hardware/Network/Solaris.pm
+${P5SITE}/Rex/Hardware/Swap.pm
+${P5SITE}/Rex/Hardware/VirtInfo.pm
+${P5SITE}/Rex/Helper/
+${P5SITE}/Rex/Helper/Array.pm
+${P5SITE}/Rex/Helper/DBI.pm
+${P5SITE}/Rex/Helper/Encode.pm
+${P5SITE}/Rex/Helper/File/
+${P5SITE}/Rex/Helper/File/Spec.pm
+${P5SITE}/Rex/Helper/File/Stat/
+${P5SITE}/Rex/Helper/File/Stat.pm
+${P5SITE}/Rex/Helper/File/Stat/Unix.pm
+${P5SITE}/Rex/Helper/File/Stat/Win32.pm
+${P5SITE}/Rex/Helper/Hash.pm
+${P5SITE}/Rex/Helper/INI.pm
+${P5SITE}/Rex/Helper/IP.pm
+${P5SITE}/Rex/Helper/Misc.pm
+${P5SITE}/Rex/Helper/Path.pm
+${P5SITE}/Rex/Helper/Rexfile/
+${P5SITE}/Rex/Helper/Rexfile/ParamLookup.pm
+${P5SITE}/Rex/Helper/Run.pm
+${P5SITE}/Rex/Helper/SSH2/
+${P5SITE}/Rex/Helper/SSH2.pm
+${P5SITE}/Rex/Helper/SSH2/Expect.pm
+${P5SITE}/Rex/Helper/System.pm
+${P5SITE}/Rex/Helper/URI.pm
+${P5SITE}/Rex/Helper/UserAgent.pm
+${P5SITE}/Rex/Hook.pm
+${P5SITE}/Rex/Interface/
+${P5SITE}/Rex/Interface/Cache/
+${P5SITE}/Rex/Interface/Cache.pm
+${P5SITE}/Rex/Interface/Cache/Base.pm
+${P5SITE}/Rex/Interface/Cache/YAML.pm
+${P5SITE}/Rex/Interface/Connection/
+${P5SITE}/Rex/Interface/Connection.pm
+${P5SITE}/Rex/Interface/Connection/Base.pm
+${P5SITE}/Rex/Interface/Connection/Fake.pm
+${P5SITE}/Rex/Interface/Connection/HTTP.pm
+${P5SITE}/Rex/Interface/Connection/HTTPS.pm
+${P5SITE}/Rex/Interface/Connection/Local.pm
+${P5SITE}/Rex/Interface/Connection/OpenSSH.pm
+${P5SITE}/Rex/Interface/Connection/SSH.pm
+${P5SITE}/Rex/Interface/Exec/
+${P5SITE}/Rex/Interface/Exec.pm
+${P5SITE}/Rex/Interface/Exec/Base.pm
+${P5SITE}/Rex/Interface/Exec/HTTP.pm
+${P5SITE}/Rex/Interface/Exec/IOReader.pm
+${P5SITE}/Rex/Interface/Exec/Local.pm
+${P5SITE}/Rex/Interface/Exec/OpenSSH.pm
+${P5SITE}/Rex/Interface/Exec/SSH.pm
+${P5SITE}/Rex/Interface/Exec/Sudo.pm
+${P5SITE}/Rex/Interface/Executor/
+${P5SITE}/Rex/Interface/Executor.pm
+${P5SITE}/Rex/Interface/Executor/Base.pm
+${P5SITE}/Rex/Interface/Executor/Default.pm
+${P5SITE}/Rex/Interface/File/
+${P5SITE}/Rex/Interface/File.pm
+${P5SITE}/Rex/Interface/File/Base.pm
+${P5SITE}/Rex/Interface/File/HTTP.pm
+${P5SITE}/Rex/Interface/File/Local.pm
+${P5SITE}/Rex/Interface/File/OpenSSH.pm
+${P5SITE}/Rex/Interface/File/SSH.pm
+${P5SITE}/Rex/Interface/File/Sudo.pm
+${P5SITE}/Rex/Interface/Fs/
+${P5SITE}/Rex/Interface/Fs.pm
+${P5SITE}/Rex/Interface/Fs/Base.pm
+${P5SITE}/Rex/Interface/Fs/HTTP.pm
+${P5SITE}/Rex/Interface/Fs/Local.pm
+${P5SITE}/Rex/Interface/Fs/OpenSSH.pm
+${P5SITE}/Rex/Interface/Fs/SSH.pm
+${P5SITE}/Rex/Interface/Fs/Sudo.pm
+${P5SITE}/Rex/Interface/Shell/
+${P5SITE}/Rex/Interface/Shell.pm
+${P5SITE}/Rex/Interface/Shell/Ash.pm
+${P5SITE}/Rex/Interface/Shell/Base.pm
+${P5SITE}/Rex/Interface/Shell/Bash.pm
+${P5SITE}/Rex/Interface/Shell/Csh.pm
+${P5SITE}/Rex/Interface/Shell/Default.pm
+${P5SITE}/Rex/Interface/Shell/Idrac.pm
+${P5SITE}/Rex/Interface/Shell/Ksh.pm
+${P5SITE}/Rex/Interface/Shell/Sh.pm
+${P5SITE}/Rex/Interface/Shell/Tcsh.pm
+${P5SITE}/Rex/Interface/Shell/Zsh.pm
+${P5SITE}/Rex/Inventory/
+${P5SITE}/Rex/Inventory.pm
+${P5SITE}/Rex/Inventory/Bios.pm
+${P5SITE}/Rex/Inventory/DMIDecode/
+${P5SITE}/Rex/Inventory/DMIDecode.pm
+${P5SITE}/Rex/Inventory/DMIDecode/BaseBoard.pm
+${P5SITE}/Rex/Inventory/DMIDecode/Bios.pm
+${P5SITE}/Rex/Inventory/DMIDecode/CPU.pm
+${P5SITE}/Rex/Inventory/DMIDecode/Memory.pm
+${P5SITE}/Rex/Inventory/DMIDecode/MemoryArray.pm
+${P5SITE}/Rex/Inventory/DMIDecode/Section.pm
+${P5SITE}/Rex/Inventory/DMIDecode/SystemInformation.pm
+${P5SITE}/Rex/Inventory/HP/
+${P5SITE}/Rex/Inventory/HP/ACU.pm
+${P5SITE}/Rex/Inventory/Hal/
+${P5SITE}/Rex/Inventory/Hal.pm
+${P5SITE}/Rex/Inventory/Hal/Object/
+${P5SITE}/Rex/Inventory/Hal/Object.pm
+${P5SITE}/Rex/Inventory/Hal/Object/Net.pm
+${P5SITE}/Rex/Inventory/Hal/Object/Storage.pm
+${P5SITE}/Rex/Inventory/Hal/Object/Volume.pm
+${P5SITE}/Rex/Inventory/Proc/
+${P5SITE}/Rex/Inventory/Proc.pm
+${P5SITE}/Rex/Inventory/Proc/Cpuinfo.pm
+${P5SITE}/Rex/Inventory/SMBios/
+${P5SITE}/Rex/Inventory/SMBios.pm
+${P5SITE}/Rex/Inventory/SMBios/BaseBoard.pm
+${P5SITE}/Rex/Inventory/SMBios/Bios.pm
+${P5SITE}/Rex/Inventory/SMBios/CPU.pm
+${P5SITE}/Rex/Inventory/SMBios/Memory.pm
+${P5SITE}/Rex/Inventory/SMBios/MemoryArray.pm
+${P5SITE}/Rex/Inventory/SMBios/Section.pm
+${P5SITE}/Rex/Inventory/SMBios/SystemInformation.pm
+${P5SITE}/Rex/Logger.pm
+${P5SITE}/Rex/Notify.pm
+${P5SITE}/Rex/Output/
+${P5SITE}/Rex/Output.pm
+${P5SITE}/Rex/Output/Base.pm
+${P5SITE}/Rex/Output/JUnit.pm
+${P5SITE}/Rex/Pkg/
+${P5SITE}/Rex/Pkg.pm
+${P5SITE}/Rex/Pkg/ALT.pm
+${P5SITE}/Rex/Pkg/Arch.pm
+${P5SITE}/Rex/Pkg/Base.pm
+${P5SITE}/Rex/Pkg/Debian.pm
+${P5SITE}/Rex/Pkg/FreeBSD.pm
+${P5SITE}/Rex/Pkg/Gentoo.pm
+${P5SITE}/Rex/Pkg/Mageia.pm
+${P5SITE}/Rex/Pkg/NetBSD.pm
+${P5SITE}/Rex/Pkg/OpenBSD.pm
+${P5SITE}/Rex/Pkg/OpenWrt.pm
+${P5SITE}/Rex/Pkg/Redhat.pm
+${P5SITE}/Rex/Pkg/SuSE.pm
+${P5SITE}/Rex/Pkg/SunOS/
+${P5SITE}/Rex/Pkg/SunOS.pm
+${P5SITE}/Rex/Pkg/SunOS/OpenCSW.pm
+${P5SITE}/Rex/Pkg/SunOS/pkg.pm
+${P5SITE}/Rex/Pkg/Ubuntu.pm
+${P5SITE}/Rex/PkgConf/
+${P5SITE}/Rex/PkgConf.pm
+${P5SITE}/Rex/PkgConf/Base.pm
+${P5SITE}/Rex/PkgConf/Debian.pm
+${P5SITE}/Rex/Profiler.pm
+${P5SITE}/Rex/Report/
+${P5SITE}/Rex/Report.pm
+${P5SITE}/Rex/Report/Base.pm
+${P5SITE}/Rex/Report/YAML.pm
+${P5SITE}/Rex/Require.pm
+${P5SITE}/Rex/Resource/
+${P5SITE}/Rex/Resource.pm
+${P5SITE}/Rex/Resource/Common.pm
+${P5SITE}/Rex/Resource/firewall/
+${P5SITE}/Rex/Resource/firewall.pm
+${P5SITE}/Rex/Resource/firewall/Provider/
+${P5SITE}/Rex/Resource/firewall/Provider/base.pm
+${P5SITE}/Rex/Resource/firewall/Provider/iptables.pm
+${P5SITE}/Rex/Resource/firewall/Provider/ufw.pm
+${P5SITE}/Rex/RunList.pm
+${P5SITE}/Rex/SCM/
+${P5SITE}/Rex/SCM/Git.pm
+${P5SITE}/Rex/SCM/Subversion.pm
+${P5SITE}/Rex/Service/
+${P5SITE}/Rex/Service.pm
+${P5SITE}/Rex/Service/ALT/
+${P5SITE}/Rex/Service/ALT.pm
+${P5SITE}/Rex/Service/ALT/systemd.pm
+${P5SITE}/Rex/Service/Arch/
+${P5SITE}/Rex/Service/Arch/systemd.pm
+${P5SITE}/Rex/Service/Base.pm
+${P5SITE}/Rex/Service/Debian/
+${P5SITE}/Rex/Service/Debian.pm
+${P5SITE}/Rex/Service/Debian/systemd.pm
+${P5SITE}/Rex/Service/FreeBSD.pm
+${P5SITE}/Rex/Service/Gentoo/
+${P5SITE}/Rex/Service/Gentoo.pm
+${P5SITE}/Rex/Service/Gentoo/systemd.pm
+${P5SITE}/Rex/Service/Mageia/
+${P5SITE}/Rex/Service/Mageia.pm
+${P5SITE}/Rex/Service/Mageia/systemd.pm
+${P5SITE}/Rex/Service/NetBSD.pm
+${P5SITE}/Rex/Service/OpenBSD.pm
+${P5SITE}/Rex/Service/OpenWrt.pm
+${P5SITE}/Rex/Service/Redhat/
+${P5SITE}/Rex/Service/Redhat.pm
+${P5SITE}/Rex/Service/Redhat/systemd.pm
+${P5SITE}/Rex/Service/SuSE/
+${P5SITE}/Rex/Service/SuSE.pm
+${P5SITE}/Rex/Service/SuSE/systemd.pm
+${P5SITE}/Rex/Service/SunOS/
+${P5SITE}/Rex/Service/SunOS.pm
+${P5SITE}/Rex/Service/SunOS/svcadm.pm
+${P5SITE}/Rex/Service/Ubuntu.pm
+${P5SITE}/Rex/Shared/
+${P5SITE}/Rex/Shared/Var/
+${P5SITE}/Rex/Shared/Var.pm
+${P5SITE}/Rex/Shared/Var/Array.pm
+${P5SITE}/Rex/Shared/Var/Common.pm
+${P5SITE}/Rex/Shared/Var/Hash.pm
+${P5SITE}/Rex/Shared/Var/Scalar.pm
+${P5SITE}/Rex/Sudo/
+${P5SITE}/Rex/Sudo/File.pm
+${P5SITE}/Rex/Task.pm
+${P5SITE}/Rex/TaskList/
+${P5SITE}/Rex/TaskList.pm
+${P5SITE}/Rex/TaskList/Base.pm
+${P5SITE}/Rex/TaskList/Parallel_ForkManager.pm
+${P5SITE}/Rex/Template/
+${P5SITE}/Rex/Template.pm
+${P5SITE}/Rex/Template/NG.pm
+${P5SITE}/Rex/Test/
+${P5SITE}/Rex/Test.pm
+${P5SITE}/Rex/Test/Base/
+${P5SITE}/Rex/Test/Base.pm
+${P5SITE}/Rex/Test/Base/has_content.pm
+${P5SITE}/Rex/Test/Base/has_cron.pm
+${P5SITE}/Rex/Test/Base/has_cron_env.pm
+${P5SITE}/Rex/Test/Base/has_dir.pm
+${P5SITE}/Rex/Test/Base/has_file.pm
+${P5SITE}/Rex/Test/Base/has_file_content.pm
+${P5SITE}/Rex/Test/Base/has_output.pm
+${P5SITE}/Rex/Test/Base/has_output_matching.pm
+${P5SITE}/Rex/Test/Base/has_package.pm
+${P5SITE}/Rex/Test/Base/has_service_running.pm
+${P5SITE}/Rex/Test/Base/has_service_stopped.pm
+${P5SITE}/Rex/Test/Base/has_stat.pm
+${P5SITE}/Rex/Transaction.pm
+${P5SITE}/Rex/User/
+${P5SITE}/Rex/User.pm
+${P5SITE}/Rex/User/Base.pm
+${P5SITE}/Rex/User/FreeBSD.pm
+${P5SITE}/Rex/User/Linux.pm
+${P5SITE}/Rex/User/NetBSD.pm
+${P5SITE}/Rex/User/OpenBSD.pm
+${P5SITE}/Rex/User/OpenWrt.pm
+${P5SITE}/Rex/User/SunOS.pm
+${P5SITE}/Rex/Value.pm
+${P5SITE}/Rex/Virtualization/
+${P5SITE}/Rex/Virtualization.pm
+${P5SITE}/Rex/Virtualization/Base.pm
+${P5SITE}/Rex/Virtualization/Docker/
+${P5SITE}/Rex/Virtualization/Docker.pm
+${P5SITE}/Rex/Virtualization/Docker/create.pm
+${P5SITE}/Rex/Virtualization/Docker/daemon.pm
+${P5SITE}/Rex/Virtualization/Docker/delete.pm
+${P5SITE}/Rex/Virtualization/Docker/destroy.pm
+${P5SITE}/Rex/Virtualization/Docker/guestinfo.pm
+${P5SITE}/Rex/Virtualization/Docker/images.pm
+${P5SITE}/Rex/Virtualization/Docker/import.pm
+${P5SITE}/Rex/Virtualization/Docker/info.pm
+${P5SITE}/Rex/Virtualization/Docker/list.pm
+${P5SITE}/Rex/Virtualization/Docker/reboot.pm
+${P5SITE}/Rex/Virtualization/Docker/shutdown.pm
+${P5SITE}/Rex/Virtualization/Docker/start.pm
+${P5SITE}/Rex/Virtualization/Docker/status.pm
+${P5SITE}/Rex/Virtualization/LibVirt/
+${P5SITE}/Rex/Virtualization/LibVirt.pm
+${P5SITE}/Rex/Virtualization/LibVirt/blklist.pm
+${P5SITE}/Rex/Virtualization/LibVirt/clone.pm
+${P5SITE}/Rex/Virtualization/LibVirt/create.pm
+${P5SITE}/Rex/Virtualization/LibVirt/delete.pm
+${P5SITE}/Rex/Virtualization/LibVirt/destroy.pm
+${P5SITE}/Rex/Virtualization/LibVirt/dumpxml.pm
+${P5SITE}/Rex/Virtualization/LibVirt/guestinfo.pm
+${P5SITE}/Rex/Virtualization/LibVirt/hypervisor.pm
+${P5SITE}/Rex/Virtualization/LibVirt/iflist.pm
+${P5SITE}/Rex/Virtualization/LibVirt/import.pm
+${P5SITE}/Rex/Virtualization/LibVirt/info.pm
+${P5SITE}/Rex/Virtualization/LibVirt/list.pm
+${P5SITE}/Rex/Virtualization/LibVirt/option.pm
+${P5SITE}/Rex/Virtualization/LibVirt/reboot.pm
+${P5SITE}/Rex/Virtualization/LibVirt/shutdown.pm
+${P5SITE}/Rex/Virtualization/LibVirt/start.pm
+${P5SITE}/Rex/Virtualization/LibVirt/status.pm
+${P5SITE}/Rex/Virtualization/LibVirt/vncdisplay.pm
+${P5SITE}/Rex/Virtualization/Lxc/
+${P5SITE}/Rex/Virtualization/Lxc.pm
+${P5SITE}/Rex/Virtualization/Lxc/attach.pm
+${P5SITE}/Rex/Virtualization/Lxc/copy.pm
+${P5SITE}/Rex/Virtualization/Lxc/create.pm
+${P5SITE}/Rex/Virtualization/Lxc/destroy.pm
+${P5SITE}/Rex/Virtualization/Lxc/info.pm
+${P5SITE}/Rex/Virtualization/Lxc/list.pm
+${P5SITE}/Rex/Virtualization/Lxc/start.pm
+${P5SITE}/Rex/Virtualization/Lxc/stop.pm
+${P5SITE}/Rex/Virtualization/VBox/
+${P5SITE}/Rex/Virtualization/VBox.pm
+${P5SITE}/Rex/Virtualization/VBox/bridge.pm
+${P5SITE}/Rex/Virtualization/VBox/create.pm
+${P5SITE}/Rex/Virtualization/VBox/delete.pm
+${P5SITE}/Rex/Virtualization/VBox/destroy.pm
+${P5SITE}/Rex/Virtualization/VBox/forward_port.pm
+${P5SITE}/Rex/Virtualization/VBox/guestinfo.pm
+${P5SITE}/Rex/Virtualization/VBox/import.pm
+${P5SITE}/Rex/Virtualization/VBox/info.pm
+${P5SITE}/Rex/Virtualization/VBox/list.pm
+${P5SITE}/Rex/Virtualization/VBox/option.pm
+${P5SITE}/Rex/Virtualization/VBox/reboot.pm
+${P5SITE}/Rex/Virtualization/VBox/share_folder.pm
+${P5SITE}/Rex/Virtualization/VBox/shutdown.pm
+${P5SITE}/Rex/Virtualization/VBox/start.pm
+${P5SITE}/Rex/Virtualization/VBox/status.pm
+@man man/man1/rex.1
+@man man/man1/rexify.1
+@man man/man3p/Rex.3p
+@man man/man3p/Rex::Box::Amazon.3p
+@man man/man3p/Rex::Box::Base.3p
+@man man/man3p/Rex::Box::Docker.3p
+@man man/man3p/Rex::Box::KVM.3p
+@man man/man3p/Rex::Box::VBox.3p
+@man man/man3p/Rex::CMDB.3p
+@man man/man3p/Rex::Commands.3p
+@man man/man3p/Rex::Commands::Augeas.3p
+@man man/man3p/Rex::Commands::Box.3p
+@man man/man3p/Rex::Commands::Cloud.3p
+@man man/man3p/Rex::Commands::Cron.3p
+@man man/man3p/Rex::Commands::DB.3p
+@man man/man3p/Rex::Commands::Download.3p
+@man man/man3p/Rex::Commands::File.3p
+@man man/man3p/Rex::Commands::Fs.3p
+@man man/man3p/Rex::Commands::Gather.3p
+@man man/man3p/Rex::Commands::Host.3p
+@man man/man3p/Rex::Commands::Inventory.3p
+@man man/man3p/Rex::Commands::Iptables.3p
+@man man/man3p/Rex::Commands::Kernel.3p
+@man man/man3p/Rex::Commands::LVM.3p
+@man man/man3p/Rex::Commands::MD5.3p
+@man man/man3p/Rex::Commands::Mkfs.3p
+@man man/man3p/Rex::Commands::Network.3p
+@man man/man3p/Rex::Commands::Notify.3p
+@man man/man3p/Rex::Commands::Partition.3p
+@man man/man3p/Rex::Commands::Pkg.3p
+@man man/man3p/Rex::Commands::PkgConf.3p
+@man man/man3p/Rex::Commands::Process.3p
+@man man/man3p/Rex::Commands::Rsync.3p
+@man man/man3p/Rex::Commands::Run.3p
+@man man/man3p/Rex::Commands::SCM.3p
+@man man/man3p/Rex::Commands::Service.3p
+@man man/man3p/Rex::Commands::SimpleCheck.3p
+@man man/man3p/Rex::Commands::Sync.3p
+@man man/man3p/Rex::Commands::Sysctl.3p
+@man man/man3p/Rex::Commands::Tail.3p
+@man man/man3p/Rex::Commands::Upload.3p
+@man man/man3p/Rex::Commands::User.3p
+@man man/man3p/Rex::Commands::Virtualization.3p
+@man man/man3p/Rex::Config.3p
+@man man/man3p/Rex::FS::File.3p
+@man man/man3p/Rex::Group::Lookup::Command.3p
+@man man/man3p/Rex::Group::Lookup::DBI.3p
+@man man/man3p/Rex::Group::Lookup::File.3p
+@man man/man3p/Rex::Group::Lookup::INI.3p
+@man man/man3p/Rex::Group::Lookup::XML.3p
+@man man/man3p/Rex::Group::Lookup::YAML.3p
+@man man/man3p/Rex::Hardware.3p
+@man man/man3p/Rex::Helper::Rexfile::ParamLookup.3p
+@man man/man3p/Rex::Helper::SSH2::Expect.3p
+@man man/man3p/Rex::Logger.3p
+@man man/man3p/Rex::Resource::Common.3p
+@man man/man3p/Rex::Resource::firewall.3p
+@man man/man3p/Rex::Shared::Var.3p
+@man man/man3p/Rex::Task.3p
+@man man/man3p/Rex::Template.3p
+@man man/man3p/Rex::Test::Base.3p
+@man man/man3p/Rex::Transaction.3p
+@man man/man3p/Rex::Virtualization::Docker.3p
+@man man/man3p/Rex::Virtualization::LibVirt.3p
+@man man/man3p/Rex::Virtualization::Lxc.3p
+@man man/man3p/Rex::Virtualization::VBox.3p
+share/examples/p5-Rex/
+share/examples/p5-Rex/example1.pl
