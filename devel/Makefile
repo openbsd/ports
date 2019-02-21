@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1822 2019/02/21 04:48:22 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.1823 2019/02/21 14:26:22 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1066,6 +1066,7 @@
      SUBDIR += p5-Term-Shell
      SUBDIR += p5-Term-ShellUI
      SUBDIR += p5-Term-Size
+     SUBDIR += p5-Term-Size-Perl
      SUBDIR += p5-Term-Table
      SUBDIR += p5-Test-Assertions
      SUBDIR += p5-Test-Base
