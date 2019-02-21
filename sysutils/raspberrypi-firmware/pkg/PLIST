@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/01/22 02:48:09 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/02/21 01:46:53 jsg Exp $
 share/raspberrypi-firmware/
 share/raspberrypi-firmware/boot/
 @comment share/raspberrypi-firmware/boot/COPYING.linux
@@ -19,6 +19,7 @@ share/raspberrypi-firmware/boot/fixup_x.dat
 @comment share/raspberrypi-firmware/boot/kernel.img
 @comment share/raspberrypi-firmware/boot/kernel7.img
 share/raspberrypi-firmware/boot/overlays/
+share/raspberrypi-firmware/boot/overlays/3dlab-nano-player.dtbo
 share/raspberrypi-firmware/boot/overlays/README
 share/raspberrypi-firmware/boot/overlays/adau1977-adc.dtbo
 share/raspberrypi-firmware/boot/overlays/adau7002-simple.dtbo
@@ -38,6 +39,7 @@ share/raspberrypi-firmware/boot/overlays/at86rf233.dtbo
 share/raspberrypi-firmware/boot/overlays/audioinjector-addons.dtbo
 share/raspberrypi-firmware/boot/overlays/audioinjector-ultra.dtbo
 share/raspberrypi-firmware/boot/overlays/audioinjector-wm8731-audio.dtbo
+share/raspberrypi-firmware/boot/overlays/audiosense-pi.dtbo
 share/raspberrypi-firmware/boot/overlays/audremap.dtbo
 share/raspberrypi-firmware/boot/overlays/balena-fin.dtbo
 share/raspberrypi-firmware/boot/overlays/bmp085_i2c-sensor.dtbo
@@ -96,6 +98,7 @@ share/raspberrypi-firmware/boot/overlays/mcp2515-can0.dtbo
 share/raspberrypi-firmware/boot/overlays/mcp2515-can1.dtbo
 share/raspberrypi-firmware/boot/overlays/mcp3008.dtbo
 share/raspberrypi-firmware/boot/overlays/mcp3202.dtbo
+share/raspberrypi-firmware/boot/overlays/mcp342x.dtbo
 share/raspberrypi-firmware/boot/overlays/media-center.dtbo
 share/raspberrypi-firmware/boot/overlays/midi-uart0.dtbo
 share/raspberrypi-firmware/boot/overlays/midi-uart1.dtbo
@@ -152,11 +155,13 @@ share/raspberrypi-firmware/boot/overlays/spi1-3cs.dtbo
 share/raspberrypi-firmware/boot/overlays/spi2-1cs.dtbo
 share/raspberrypi-firmware/boot/overlays/spi2-2cs.dtbo
 share/raspberrypi-firmware/boot/overlays/spi2-3cs.dtbo
+share/raspberrypi-firmware/boot/overlays/ssd1306.dtbo
 share/raspberrypi-firmware/boot/overlays/superaudioboard.dtbo
 share/raspberrypi-firmware/boot/overlays/sx150x.dtbo
 share/raspberrypi-firmware/boot/overlays/tc358743-audio.dtbo
 share/raspberrypi-firmware/boot/overlays/tc358743.dtbo
 share/raspberrypi-firmware/boot/overlays/tinylcd35.dtbo
+share/raspberrypi-firmware/boot/overlays/tpm-slb9670.dtbo
 share/raspberrypi-firmware/boot/overlays/uart0.dtbo
 share/raspberrypi-firmware/boot/overlays/uart1.dtbo
 share/raspberrypi-firmware/boot/overlays/upstream-aux-interrupt.dtbo
