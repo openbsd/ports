@@ -1,23 +1,26 @@
-# $OpenBSD: Makefile,v 1.75 2018/05/07 10:37:59 gsoares Exp $
+# $OpenBSD: Makefile,v 1.76 2019/02/21 22:32:31 sthen Exp $
 
 COMMENT =	retrieve files from the web via HTTP, HTTPS and FTP
 
-DISTNAME =	wget-1.19.5
+DISTNAME =	wget-1.20.1
 CATEGORIES =	net
 
 HOMEPAGE =	https://www.gnu.org/software/wget/
+MAINTAINER =	Nam Nguyen <namn@berkeley.edu>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c crypto iconv idn2 intl pcre psl ssl unistring z
+WANTLIB += c crypto iconv idn2 intl pcre2-8 psl ssl unistring z
 
-BUILD_DEPENDS =		devel/gettext-tools
+BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/gettext-tools
 
 LIB_DEPENDS =		converters/libunistring \
 			devel/gettext \
 			devel/libidn2 \
-			devel/pcre \
+			devel/pcre2 \
 			net/libpsl
 
 MASTER_SITES =		${MASTER_SITE_GNU:=wget/}
@@ -36,6 +39,8 @@ FAKE_FLAGS =		sysconfdir="${PREFIX}/share/examples/wget"
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-ssl=openssl
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.16
 # hack to avoid depending on python3 at build time
 CONFIGURE_ARGS +=	PYTHON="" \
 			am_cv_pathless_PYTHON="${MODPY_BIN}"
