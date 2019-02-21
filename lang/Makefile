@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.233 2019/01/10 17:54:14 jca Exp $
+# $OpenBSD: Makefile,v 1.234 2019/02/21 00:36:27 jturner Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -55,6 +55,7 @@
      SUBDIR += intel2gas
      SUBDIR += iverilog
      SUBDIR += jamvm
+     SUBDIR += janet
      SUBDIR += jikes
      SUBDIR += jimtcl
      SUBDIR += jruby
