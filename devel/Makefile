@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1821 2019/02/18 13:05:07 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1822 2019/02/21 04:48:22 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1136,6 +1136,7 @@
      SUBDIR += p5-Test-TrailingSpace
      SUBDIR += p5-Test-Trap
      SUBDIR += p5-Test-URI
+     SUBDIR += p5-Test-UseAllModules
      SUBDIR += p5-Test-Unit
      SUBDIR += p5-Test-WWW-Mechanize
      SUBDIR += p5-Test-WWW-Mechanize-Catalyst
