@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/09 16:36:22 pascal Exp $
+# $OpenBSD: Makefile,v 1.14 2019/02/21 22:34:56 sthen Exp $
 
 PORTROACH =		limitw:1,even
 
@@ -9,6 +9,7 @@ GH_ACCOUNT =		openscenegraph
 GH_PROJECT =		OpenSceneGraph
 GH_TAGNAME =		OpenSceneGraph-$V
 DISTNAME =		openscenegraph-${V}
+REVISION =		1
 
 SUBST_VARS +=		V
 
@@ -50,7 +51,8 @@ WANTLIB += tiff z
 
 MODULES =		devel/cmake \
 			x11/qt5
-LIB_DEPENDS =		graphics/openexr \
+LIB_DEPENDS =		devel/sdl \
+			graphics/openexr \
 			graphics/ffmpeg \
 			graphics/gdk-pixbuf2 \
 			graphics/giflib \
