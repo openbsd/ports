@@ -1,0 +1,2 @@
+This module is a wrapper around File::ShareDir functions, transforming
+their return value to Path::Class objects.
