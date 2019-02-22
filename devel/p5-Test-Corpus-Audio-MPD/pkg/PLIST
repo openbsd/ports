@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/29 17:17:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/02/22 21:12:19 cwen Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/Corpus/
 ${P5SITE}/Test/Corpus/Audio/
@@ -11,6 +11,7 @@ ${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/music/dir1/title-artist-album.og
 ${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/music/dir1/title-artist.ogg
 ${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/music/dir2/
 ${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/music/dir2/album.ogg
+${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/music/title-artist-album-genre.ogg
 ${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/music/title.ogg
 ${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/playlists/
 ${P5SITE}/auto/share/dist/Test-Corpus-Audio-MPD/playlists/test.m3u
