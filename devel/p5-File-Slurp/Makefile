@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/01/06 21:10:39 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.13 2019/02/22 03:26:51 afresh1 Exp $
 
 COMMENT=	efficient reading/writing of complete files
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	File-Slurp-9999.25
+DISTNAME=	File-Slurp-9999.26
 CATEGORIES=	devel
 
 # Perl
