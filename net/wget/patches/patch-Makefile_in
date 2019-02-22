@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2019/02/22 11:18:48 jca Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -1460,7 +1460,7 @@ distuninstallcheck_listfiles = find . -type f | \
+ ACLOCAL_AMFLAGS = -I m4
+ 
+ # subdirectories in the distribution
+-SUBDIRS = lib src doc po util fuzz tests testenv
++SUBDIRS = lib src doc po util tests testenv
+ EXTRA_DIST = MAILING-LIST \
+              msdos/config.h msdos/Makefile.DJ \
+              msdos/Makefile.WC ABOUT-NLS \

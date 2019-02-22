@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2019/02/22 08:40:37 jca Exp $
+# $OpenBSD: Makefile,v 1.78 2019/02/22 11:18:48 jca Exp $
 
 COMMENT =	retrieve files from the web via HTTP, HTTPS and FTP
 
@@ -46,8 +46,5 @@ MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/build-aux
 
 pre-build:
 	@${SUBST_CMD} ${WRKSRC}/doc/wget.texi ${WRKSRC}/doc/sample.wgetrc
-
-pre-test:
-	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python3
 
 .include <bsd.port.mk>
