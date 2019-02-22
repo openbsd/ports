@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/22 10:58:40 landry Exp $
+lib/python${MODPY_VERSION}/site-packages/affine/
+lib/python${MODPY_VERSION}/site-packages/affine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/affine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/affine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/affine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/affine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/affine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/affine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/affine/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/affine/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/affine/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/affine/tests/
+lib/python${MODPY_VERSION}/site-packages/affine/tests/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/affine/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/affine/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/affine/tests/${MODPY_PYCACHE}test_pickle.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/affine/tests/${MODPY_PYCACHE}test_rotation.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/affine/tests/${MODPY_PYCACHE}test_transform.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/affine/tests/test_pickle.py
+lib/python${MODPY_VERSION}/site-packages/affine/tests/test_rotation.py
+lib/python${MODPY_VERSION}/site-packages/affine/tests/test_transform.py
