@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/01/30 11:28:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/02/22 13:03:46 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/SSL.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/__init__.py
@@ -7,11 +7,13 @@ lib/python${MODPY_VERSION}/site-packages/OpenSSL/${MODPY_PYCACHE}SSL.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/${MODPY_PYCACHE}crypto.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/${MODPY_PYCACHE}rand.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/${MODPY_PYCACHE}tsafe.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/_util.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/crypto.py
+lib/python${MODPY_VERSION}/site-packages/OpenSSL/debug.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/rand.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/tsafe.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/version.py
