@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2019/02/19 13:28:35 landry Exp $
+# $OpenBSD: Makefile,v 1.48 2019/02/22 09:11:37 landry Exp $
 
 COMMENT =	lightweight mail user agent
 
 GNOME_PROJECT =	geary
-GNOME_VERSION =	0.13.0
+GNOME_VERSION =	0.13.1
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail
@@ -17,7 +17,8 @@ MODULES =	devel/meson devel/dconf x11/gnome
 MODGNOME_TOOLS += desktop-file-utils gobject-introspection
 MODGNOME_TOOLS += gtk-update-icon-cache vala yelp
 
-CONFIGURE_ARGS =-Diso_639_xml=${LOCALBASE}/share/xml/iso-codes/iso_639.xml \
+CONFIGURE_ARGS =-Dlibunwind_optional=true \
+		-Diso_639_xml=${LOCALBASE}/share/xml/iso-codes/iso_639.xml \
 		-Diso_3166_xml=${LOCALBASE}/share/xml/iso-codes/iso_3166.xml
 
 RUN_DEPENDS =	devel/iso-codes
