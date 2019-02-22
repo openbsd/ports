@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_libtracker-common_meson_build,v 1.1 2019/02/21 17:08:13 ajacoutot Exp $
+$OpenBSD: patch-src_libtracker-common_meson_build,v 1.2 2019/02/22 10:41:31 ajacoutot Exp $
 
-https://gitlab.gnome.org/GNOME/tracker/merge_requests/64
+From 46175210daba1c99ed5fb51a106bb451a2e06e96 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Thu, 21 Feb 2019 18:03:57 +0100
+Subject: [PATCH] libtracker-common: fix build on OpenBSD
 
 Index: src/libtracker-common/meson.build
 --- src/libtracker-common/meson.build.orig
