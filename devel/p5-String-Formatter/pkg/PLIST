@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/22 21:40:24 cwen Exp $
+${P5SITE}/String/
+${P5SITE}/String/Formatter/
+${P5SITE}/String/Formatter.pm
+${P5SITE}/String/Formatter/Cookbook.pm
+@comment ${P5SITE}/String/bench.pl
+@man man/man3p/String::Formatter.3p
+@man man/man3p/String::Formatter::Cookbook.3p
