@@ -1,0 +1,8 @@
+Rasterio's goal is a raster data library, expressing GDAL's data model
+using fewer non-idiomatic extension classes and more idiomatic Python
+types and protocols, while performing as fast as GDAL's Python bindings.
+
+Geographic information systems use GeoTIFF and other formats to organize
+and store gridded raster datasets such as satellite imagery and terrain
+models. Rasterio reads and writes these formats and provides a Python
+API based on Numpy N-dimensional arrays and GeoJSON.

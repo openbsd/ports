@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_test_rio_main_py,v 1.1.1.1 2019/02/22 13:52:26 landry Exp $
+
+Use the correct path for packaging/version in setuptools
+
+Index: tests/test_rio_main.py
+--- tests/test_rio_main.py.orig
++++ tests/test_rio_main.py
+@@ -2,7 +2,7 @@ import logging
+ import sys
+ 
+ from click.testing import CliRunner
+-from packaging.version import parse
++from pkg_resources._vendor.packaging.version import parse
+ import pytest
+ 
+ from rasterio.rio.main import main_group
