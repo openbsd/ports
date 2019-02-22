@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/22 11:11:19 landry Exp $
+lib/python${MODPY_VERSION}/site-packages/snuggs/
+lib/python${MODPY_VERSION}/site-packages/snuggs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/snuggs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/snuggs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/snuggs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/snuggs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/snuggs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/snuggs-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/snuggs/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/snuggs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/snuggs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
