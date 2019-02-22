@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2018/12/13 09:37:16 kn Exp $
+# $OpenBSD: Makefile,v 1.157 2019/02/22 11:12:27 landry Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -108,6 +108,8 @@
      SUBDIR += prover9
      SUBDIR += pspp
      SUBDIR += py-Numeric
+     SUBDIR += py-affine
+     SUBDIR += py-affine,python3
      SUBDIR += py-bottleneck
      SUBDIR += py-bottleneck,python3
      SUBDIR += py-gnuplot
@@ -126,6 +128,8 @@
      SUBDIR += py-probstat
      SUBDIR += py-scipy
      SUBDIR += py-scipy,python3
+     SUBDIR += py-snuggs
+     SUBDIR += py-snuggs,python3
      SUBDIR += py-statistics
      SUBDIR += py-sympy
      SUBDIR += py-sympy,python3
