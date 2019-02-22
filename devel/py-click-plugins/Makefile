@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/02/25 13:08:47 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2019/02/22 11:04:57 landry Exp $
 
 COMMENT =		register CLI commands via setuptools entry-points
 
-MODPY_EGG_VERSION =	1.0.2
+MODPY_EGG_VERSION =	1.0.4
 DISTNAME =		click-plugins-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
