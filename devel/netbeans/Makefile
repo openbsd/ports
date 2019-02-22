@@ -1,24 +1,22 @@
-# $OpenBSD: Makefile,v 1.33 2018/09/04 12:46:11 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2019/02/22 13:37:56 giovanni Exp $
 
 COMMENT=		NetBeans Java IDE
 
-V=			8.2
-DISTNAME=		netbeans-${V}
+V=			10.0
+DISTNAME=		incubating-netbeans-${V}-bin
+PKGNAME=		netbeans-${V}
 CATEGORIES=		devel
-REVISION=		2
 
 HOMEPAGE=		https://www.netbeans.org/
 
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org> \
 			Rafael Sadowski <rsadowski@openbsd.org>
 
-# CDDL and GPLv2 dual-licensed
-# See:
-# https://netbeans.org/about/legal/index.html
+# Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://download.netbeans.org/netbeans/${V}/final/zip/
-EXTRACT_SUFX=		-201609300101.zip
+MASTER_SITES=		${MASTER_SITE_APACHE:=incubator/netbeans/incubating-netbeans/incubating-${V}/}
+EXTRACT_SUFX=		.zip
 
 MODULES=		java
 MODJAVA_VER=		1.8+
@@ -43,7 +41,6 @@ do-install:
 		-o -name "*.orig" | xargs rm
 	@${SUBST_PROGRAM} ${FILESDIR}/netbeans ${PREFIX}/bin/netbeans
 	@${INSTALL_DATA_DIR} ${NB}/cnd/bin
-	@${INSTALL_SCRIPT} ${WRKDIST}/cnd/bin/dorun.sh ${NB}/cnd/bin/
 	@${INSTALL_DATA_DIR} ${NB}/ide/bin/nativeexecution
 	@${INSTALL_SCRIPT} ${WRKDIST}/ide/bin/nativeexecution/hostinfo.sh \
 		${NB}/ide/bin/nativeexecution/
