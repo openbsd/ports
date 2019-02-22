@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/02/09 05:53:53 rpointel Exp $
+# $OpenBSD: Makefile,v 1.4 2019/02/22 06:42:02 rpointel Exp $
 
 COMMENT =	formatter for Python code
 
-MODPY_EGG_VERSION =	0.25.0
+MODPY_EGG_VERSION =	0.26.0
 DISTNAME =	yapf-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
