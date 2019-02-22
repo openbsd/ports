@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1824 2019/02/21 23:21:01 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1825 2019/02/22 13:01:36 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1395,6 +1395,8 @@
      SUBDIR += py-faulthandler
      SUBDIR += py-filebytes
      SUBDIR += py-filebytes,python3
+     SUBDIR += py-flaky
+     SUBDIR += py-flaky,python3
      SUBDIR += py-flexmock
      SUBDIR += py-flexmock,python3
      SUBDIR += py-fpconst
