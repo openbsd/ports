@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2018/12/21 06:58:38 solene Exp $
+# $OpenBSD: Makefile,v 1.65 2019/02/22 13:53:23 landry Exp $
 
      SUBDIR =
      SUBDIR += foxtrotgps
@@ -62,6 +62,8 @@
      SUBDIR += py-planet,python3
      SUBDIR += py-proj
      SUBDIR += py-proj,python3
+     SUBDIR += py-rasterio
+     SUBDIR += py-rasterio,python3
      SUBDIR += py-shapely
      SUBDIR += py-shapely,python3
      SUBDIR += qgis
