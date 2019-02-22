@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.532 2019/02/14 07:19:11 pvk Exp $
+# $OpenBSD: Makefile,v 1.533 2019/02/22 03:25:10 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -224,6 +224,7 @@
      SUBDIR += p5-IO-Socket-SSL
      SUBDIR += p5-MD5
      SUBDIR += p5-Module-Signature
+     SUBDIR += p5-Mojolicious-Plugin-Authentication
      SUBDIR += p5-Mozilla-CA-Fake
      SUBDIR += p5-Net-SSL-ExpireDate
      SUBDIR += p5-Net-SSLGlue
