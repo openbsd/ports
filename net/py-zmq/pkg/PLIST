@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/10/31 12:27:23 bket Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/02/23 18:09:47 mariani Exp $
 lib/python${MODPY_VERSION}/site-packages/pyzmq-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/zmq/
 lib/python${MODPY_VERSION}/site-packages/zmq/__init__.py
@@ -63,6 +63,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/${MO
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/_device.so
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/_poll.so
+lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/_proxy_steerable.so
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/_version.so
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/checkrc.pxd
 lib/python${MODPY_VERSION}/site-packages/zmq/backend/cython/constant_enums.pxi
@@ -87,12 +88,14 @@ lib/python${MODPY_VERSION}/site-packages/zmq/devices/${MODPY_PYCACHE}basedevice.
 lib/python${MODPY_VERSION}/site-packages/zmq/devices/${MODPY_PYCACHE}monitoredqueue.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/devices/${MODPY_PYCACHE}monitoredqueuedevice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/devices/${MODPY_PYCACHE}proxydevice.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zmq/devices/${MODPY_PYCACHE}proxysteerabledevice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/devices/basedevice.py
 lib/python${MODPY_VERSION}/site-packages/zmq/devices/monitoredqueue.pxd
 lib/python${MODPY_VERSION}/site-packages/zmq/devices/monitoredqueue.py
 lib/python${MODPY_VERSION}/site-packages/zmq/devices/monitoredqueue.so
 lib/python${MODPY_VERSION}/site-packages/zmq/devices/monitoredqueuedevice.py
 lib/python${MODPY_VERSION}/site-packages/zmq/devices/proxydevice.py
+lib/python${MODPY_VERSION}/site-packages/zmq/devices/proxysteerabledevice.py
 lib/python${MODPY_VERSION}/site-packages/zmq/error.py
 lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/
 lib/python${MODPY_VERSION}/site-packages/zmq/eventloop/__init__.py
@@ -212,6 +215,7 @@ lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_monqueue
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_multipart.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_pair.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_poll.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_proxy_steerable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_pubsub.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_reqrep.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/${MODPY_PYCACHE}test_retry_eintr.${MODPY_PYC_MAGIC_TAG}pyc
@@ -250,6 +254,7 @@ lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_monqueue.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_multipart.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_pair.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_poll.py
+lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_proxy_steerable.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_pubsub.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_reqrep.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_retry_eintr.py
