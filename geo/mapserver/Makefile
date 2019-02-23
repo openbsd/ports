@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2018/12/09 09:28:19 landry Exp $
+# $OpenBSD: Makefile,v 1.60 2019/02/23 09:00:19 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -perl -python
 
@@ -8,7 +8,7 @@ COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 COMMENT-python=	Python Mapscript binding
 
-V =		7.2.1
+V =		7.2.2
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
@@ -16,11 +16,6 @@ PKGNAME-php=	php-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
 PKGNAME-python=	py3-mapscript-${V}
 SHARED_LIBS +=	mapserver 3.0
-REVISION-main=	0
-REVISION-perl=	0
-REVISION-php=	0
-REVISION-python=0
-REVISION-utils=	0
 
 CATEGORIES=	geo www
 
@@ -57,7 +52,7 @@ LIB_DEPENDS=	devel/proj \
 		graphics/giflib \
 		www/fcgi
 
-WANTLIB += curl freetype jpeg m png pq xml2 z proj
+WANTLIB += curl freetype jpeg m png16 pq xml2 z proj
 WANTLIB += gdal geos_c cairo fribidi gif harfbuzz protobuf-c
 
 LIB_DEPENDS-utils =	STEM->=${V}:${BUILD_PKGPATH},-main
