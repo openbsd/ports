@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.238 2019/02/21 17:08:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.239 2019/02/23 15:46:40 ajacoutot Exp $
 
 COMMENT=		metadata database and search tool
 
@@ -27,6 +27,8 @@ MODULES=		devel/dconf \
 			devel/meson \
 			lang/python \
 			x11/gnome
+
+BUILD_DEPENDS=		x11/dbus
 
 LIB_DEPENDS=		devel/json-glib \
 			devel/libsoup \
