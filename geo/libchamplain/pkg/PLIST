@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/02/21 08:30:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/02/23 13:40:12 jasper Exp $
 @pkgpath geo/libchamplain/libchamplain-gtk
 @pkgpath geo/libchamplain/core
 include/champlain-${API_VERSION}/
 include/champlain-${API_VERSION}/champlain/
 include/champlain-${API_VERSION}/champlain-gtk/
-include/champlain-${API_VERSION}/champlain-gtk/champlain-gtk-enum-types.h
-include/champlain-${API_VERSION}/champlain-gtk/champlain-gtk-marshal.h
 include/champlain-${API_VERSION}/champlain-gtk/champlain-gtk.h
 include/champlain-${API_VERSION}/champlain-gtk/gtk-champlain-embed.h
 include/champlain-${API_VERSION}/champlain/champlain-adjustment.h
@@ -31,7 +29,6 @@ include/champlain-${API_VERSION}/champlain/champlain-map-source-factory.h
 include/champlain-${API_VERSION}/champlain/champlain-map-source.h
 include/champlain-${API_VERSION}/champlain/champlain-marker-layer.h
 include/champlain-${API_VERSION}/champlain/champlain-marker.h
-include/champlain-${API_VERSION}/champlain/champlain-marshal.h
 include/champlain-${API_VERSION}/champlain/champlain-memory-cache.h
 include/champlain-${API_VERSION}/champlain/champlain-network-bbox-tile-source.h
 include/champlain-${API_VERSION}/champlain/champlain-network-tile-source.h
