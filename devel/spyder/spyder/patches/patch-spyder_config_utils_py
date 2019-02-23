@@ -1,9 +1,9 @@
-$OpenBSD: patch-spyder_config_utils_py,v 1.1.1.1 2018/08/29 23:17:16 sthen Exp $
+$OpenBSD: patch-spyder_config_utils_py,v 1.2 2019/02/23 17:57:43 mariani Exp $
 
 Index: spyder/config/utils.py
 --- spyder/config/utils.py.orig
 +++ spyder/config/utils.py
-@@ -159,7 +159,7 @@ def get_edit_extensions():
+@@ -162,7 +162,7 @@ def get_edit_extensions():
  #==============================================================================
  def is_ubuntu():
      """Detect if we are running in an Ubuntu-based distribution"""
@@ -12,7 +12,7 @@ Index: spyder/config/utils.py
          release_info = open('/etc/lsb-release').read()
          if 'Ubuntu' in release_info:
              return True
-@@ -171,7 +171,7 @@ def is_ubuntu():
+@@ -174,7 +174,7 @@ def is_ubuntu():
  
  def is_gtk_desktop():
      """Detect if we are running in a Gtk-based desktop"""
@@ -21,7 +21,7 @@ Index: spyder/config/utils.py
          xdg_desktop = os.environ.get('XDG_CURRENT_DESKTOP', '')
          if xdg_desktop:
              gtk_desktops = ['Unity', 'GNOME', 'XFCE']
-@@ -187,7 +187,7 @@ def is_gtk_desktop():
+@@ -190,7 +190,7 @@ def is_gtk_desktop():
  
  def is_kde_desktop():
      """Detect if we are running in a KDE desktop"""

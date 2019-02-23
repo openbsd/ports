@@ -1,9 +1,9 @@
-$OpenBSD: patch-spyder_app_mainwindow_py,v 1.1.1.1 2018/08/29 23:17:16 sthen Exp $
+$OpenBSD: patch-spyder_app_mainwindow_py,v 1.2 2019/02/23 17:57:43 mariani Exp $
 
 Index: spyder/app/mainwindow.py
 --- spyder/app/mainwindow.py.orig
 +++ spyder/app/mainwindow.py
-@@ -1019,7 +1019,7 @@ class MainWindow(QMainWindow):
+@@ -1037,7 +1037,7 @@ class MainWindow(QMainWindow):
          add_actions(web_resources, webres_actions)
          self.help_menu_actions.append(web_resources)
          # Qt assistant link

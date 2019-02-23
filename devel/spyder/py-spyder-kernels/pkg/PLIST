@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/29 23:17:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/02/23 17:57:43 mariani Exp $
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder_kernels-${MODPY_EGG_VERSION}-py$
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder_kernels/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder_kernels/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/${MODPY_PYCACHE}py3compat.${MODPY_PYC_MAGIC_TAG}pyc
@@ -15,7 +15,7 @@ lib/python${MODPY_VERSION}/site-packages/spyder_kernels/_version.py
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/__init__.py
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/__main__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/${MODPY_PYCACHE}kernel.${MODPY_PYC_MAGIC_TAG}pyc
@@ -24,30 +24,22 @@ lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/kernel.py
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/console/start.py
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/customize/
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/customize/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder_kernels/customize/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder_kernels/customize/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/customize/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/customize/${MODPY_PYCACHE}spydercustomize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/customize/spydercustomize.py
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/py3compat.py
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/${MODPY_PYCACHE}dochelpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/${MODPY_PYCACHE}iofuncs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/${MODPY_PYCACHE}nsview.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/${MODPY_PYCACHE}test_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/dochelpers.py
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/iofuncs.py
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/misc.py
 lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/nsview.py
-lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/tests/
-lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/tests/${MODPY_PYCACHE}
-lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/tests/${MODPY_PYCACHE}test_dochelpers.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/tests/${MODPY_PYCACHE}test_iofuncs.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/tests/${MODPY_PYCACHE}test_nsview.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/tests/test_dochelpers.py
-lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/tests/test_iofuncs.py
-lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/tests/test_nsview.py
+lib/python${MODPY_VERSION}/site-packages/spyder_kernels/utils/test_utils.py
