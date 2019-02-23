@@ -1,12 +1,16 @@
-$OpenBSD: patch-src_airodump-ng_h,v 1.1 2011/05/21 11:19:24 fgsch Exp $
---- src/airodump-ng.h.orig	Sun May  8 22:39:39 2011
-+++ src/airodump-ng.h	Sun May  8 22:42:37 2011
-@@ -111,7 +111,7 @@ static uchar ZERO[32] =
- "\x00\x00\x00\x00\x00\x00\x00\x00"
- "\x00\x00\x00\x00\x00\x00\x00\x00";
+$OpenBSD: patch-src_airodump-ng_h,v 1.2 2019/02/23 22:23:25 sebastia Exp $
+
+use the mac-vendors OUI file
+
+Index: src/airodump-ng.h
+--- src/airodump-ng.h.orig
++++ src/airodump-ng.h
+@@ -124,7 +124,7 @@ extern const unsigned long int crc_tbl[256];
+ extern const unsigned char crc_chop_tbl[256][4];
  
--#define OUI_PATH "/usr/local/etc/aircrack-ng/airodump-ng-oui.txt"
-+#define OUI_PATH "${PREFIX}/share/aircrack-ng/airodump-ng-oui.txt"
- #define MIN_RAM_SIZE_LOAD_OUI_RAM 32768
- 
- int read_pkts=0;
+ const char * OUI_PATHS[] = {"./airodump-ng-oui.txt",
+-							"/etc/aircrack-ng/airodump-ng-oui.txt",
++							"${PREFIX}/share/mac-vendor/aircrack-oui.txt",
+ 							"/usr/local/etc/aircrack-ng/airodump-ng-oui.txt",
+ 							"/usr/share/aircrack-ng/airodump-ng-oui.txt",
+ 							"/var/lib/misc/oui.txt",
