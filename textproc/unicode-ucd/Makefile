@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/01 15:03:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2019/02/23 07:32:15 bentley Exp $
 
 COMMENT =		Unicode Character Database (UCD)
 
-V =			10.0.0
+V =			11.0.0
 DISTNAME =		UCD
 PKGNAME =		unicode-ucd-$V
 CATEGORIES =		textproc
 
-HOMEPAGE =		http://www.unicode.org/ucd/
+HOMEPAGE =		https://www.unicode.org/ucd/
 
-# http://www.unicode.org/copyright.html
+# https://www.unicode.org/copyright.html
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://www.unicode.org/Public/zipped/$V/
+MASTER_SITES =		https://www.unicode.org/Public/zipped/$V/
 DIST_SUBDIR =		ucd/$V
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			Unihan${EXTRACT_SUFX}
