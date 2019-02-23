@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/02/21 17:08:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2019/02/23 14:09:40 ajacoutot Exp $
 
 COMMENT=		tracker miners and metadata extractors
 
 GNOME_PROJECT=		tracker-miners
 GNOME_VERSION=		2.2.0
+REVISION=		0
 
 SHARED_LIBS +=  tracker-extract           1.1 # 0.0
 
@@ -44,6 +45,9 @@ LIB_DEPENDS=		audio/flac \
 
 # needs libgrss
 CONFIGURE_ARGS +=	-Dminer_rss=false
+
+# XXX https://gitlab.gnome.org/GNOME/tracker-miners/issues/7
+CFLAGS +=		-O0
 
 post-install:                                                                   
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/tracker-miners
