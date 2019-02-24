@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2019/02/02 15:26:07 juanfra Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2019/02/24 18:06:42 juanfra Exp $
 @pkgpath devel/mercurial
 @bin bin/chg
 bin/hg
@@ -26,6 +26,8 @@ lib/python${MODPY_VERSION}/site-packages/hgext/beautifygraph.py
 lib/python${MODPY_VERSION}/site-packages/hgext/beautifygraph.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/blackbox.py
 lib/python${MODPY_VERSION}/site-packages/hgext/blackbox.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/bookflow.py
+lib/python${MODPY_VERSION}/site-packages/hgext/bookflow.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/bugzilla.py
 lib/python${MODPY_VERSION}/site-packages/hgext/bugzilla.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/censor.py
@@ -172,8 +174,6 @@ lib/python${MODPY_VERSION}/site-packages/hgext/largefiles/reposetup.py
 lib/python${MODPY_VERSION}/site-packages/hgext/largefiles/reposetup.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/largefiles/storefactory.py
 lib/python${MODPY_VERSION}/site-packages/hgext/largefiles/storefactory.pyc
-lib/python${MODPY_VERSION}/site-packages/hgext/largefiles/uisetup.py
-lib/python${MODPY_VERSION}/site-packages/hgext/largefiles/uisetup.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/largefiles/wirestore.py
 lib/python${MODPY_VERSION}/site-packages/hgext/largefiles/wirestore.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/lfs/
@@ -224,6 +224,49 @@ lib/python${MODPY_VERSION}/site-packages/hgext/releasenotes.py
 lib/python${MODPY_VERSION}/site-packages/hgext/releasenotes.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/relink.py
 lib/python${MODPY_VERSION}/site-packages/hgext/relink.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/__init__.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/basepack.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/basepack.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/basestore.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/basestore.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/connectionpool.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/connectionpool.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/constants.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/constants.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/contentstore.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/contentstore.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/datapack.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/datapack.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/debugcommands.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/debugcommands.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/extutil.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/extutil.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/fileserverclient.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/fileserverclient.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/historypack.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/historypack.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/metadatastore.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/metadatastore.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/remotefilectx.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/remotefilectx.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/remotefilelog.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/remotefilelog.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/remotefilelogserver.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/remotefilelogserver.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/repack.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/repack.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/shallowbundle.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/shallowbundle.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/shallowrepo.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/shallowrepo.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/shallowstore.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/shallowstore.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/shallowutil.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/shallowutil.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/shallowverifier.py
+lib/python${MODPY_VERSION}/site-packages/hgext/remotefilelog/shallowverifier.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/remotenames.py
 lib/python${MODPY_VERSION}/site-packages/hgext/remotenames.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/schemes.py
@@ -360,6 +403,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/exchangev2.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/exchangev2.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/extensions.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/extensions.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/exthelper.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/exthelper.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/fancyopts.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/fancyopts.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/filelog.py
@@ -404,6 +449,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/help/internals/cbor.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/internals/censor.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/internals/changegroups.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/internals/config.txt
+lib/python${MODPY_VERSION}/site-packages/mercurial/help/internals/extensions.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/internals/linelog.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/internals/requirements.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/internals/revlogs.txt
@@ -499,6 +545,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/logcmdutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/logcmdutil.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/logexchange.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/logexchange.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/loggingutil.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/loggingutil.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/lsprof.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/lsprof.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/lsprofcalltree.py
@@ -572,6 +620,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/registrar.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/registrar.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/repair.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/repair.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/repocache.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/repocache.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/repository.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/repository.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/repoview.py
@@ -843,20 +893,6 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/attr/filters.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/attr/filters.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/attr/validators.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/attr/validators.pyc
-lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/cbor/
-lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/cbor/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/cbor/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/cbor/cbor2/
-lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/cbor/cbor2/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/cbor/cbor2/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/cbor/cbor2/compat.py
-lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/cbor/cbor2/compat.pyc
-lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/cbor/cbor2/decoder.py
-lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/cbor/cbor2/decoder.pyc
-lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/cbor/cbor2/encoder.py
-lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/cbor/cbor2/encoder.pyc
-lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/cbor/cbor2/types.py
-lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/cbor/cbor2/types.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/concurrent/
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/concurrent/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/thirdparty/concurrent/__init__.pyc
