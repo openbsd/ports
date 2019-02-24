@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/11/17 21:33:39 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.19 2019/02/24 18:07:10 juanfra Exp $
 bin/thg
 lib/nautilus/
 lib/nautilus/extensions-3.0/
@@ -108,6 +108,10 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/p4pending.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/p4pending.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/pbranch.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/pbranch.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/phabreview.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/phabreview.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/phabreview_ui.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/phabreview_ui.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/postreview.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/postreview.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/postreview_ui.py
@@ -472,6 +476,7 @@ share/pixmaps/tortoisehg/icons/scalable/apps/
 share/pixmaps/tortoisehg/icons/scalable/apps/help-browser.svg
 share/pixmaps/tortoisehg/icons/scalable/apps/help-readme.svg
 share/pixmaps/tortoisehg/icons/scalable/apps/hg.svg
+share/pixmaps/tortoisehg/icons/scalable/apps/phabricator.svg
 share/pixmaps/tortoisehg/icons/scalable/apps/preferences-desktop-font.svg
 share/pixmaps/tortoisehg/icons/scalable/apps/system-file-manager.svg
 share/pixmaps/tortoisehg/icons/scalable/apps/thg.svg
