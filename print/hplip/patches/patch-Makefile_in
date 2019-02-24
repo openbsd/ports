@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.54 2018/12/14 07:42:00 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.55 2019/02/24 10:40:43 ajacoutot Exp $
 
 https://sources.debian.org/src/hplip/3.18.10+dfsg0-1/debian/patches/0025-Remove-all-ImageProcessor-functionality-which-is-clo.patch/
 
@@ -41,7 +41,7 @@ Index: Makefile.in
  	installer/text_install.py data/localization/hplip_de.ts \
  	data/localization/hplip_es.ts data/localization/hplip_fr.ts \
  	data/localization/hplip_it.ts data/localization/hplip_pt.ts \
-@@ -4278,7 +4277,7 @@ dist_unrel_DATA = 
+@@ -4211,7 +4210,7 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	scan/sane/orblitei.h scan/sane/orblite.h scan/sane/orblite.c \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	scan/sane/OrbliteScan/LinuxCommon.h scan/sane/OrbliteScan/MacCommon.h
  
@@ -50,7 +50,7 @@ Index: Makefile.in
  @DARWIN_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LDFLAGS = -module -framework CoreFoundation -version-info 1:0:0
  # The following is a interlibrary dependency that must be compiled first.
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LIBADD = libhpip.la \
-@@ -4286,7 +4285,6 @@ dist_unrel_DATA = 
+@@ -4219,7 +4218,6 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	libhpipp.la \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	$(DBUS_LIBS) \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	-lcups \
@@ -58,7 +58,7 @@ Index: Makefile.in
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	$(am__append_1)
  #libsane_hpaio_la_CFLAGS = -DWITH_NONAMESPACES -DSOAP_DEBUG
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_CFLAGS = $(DBUS_CFLAGS) \
-@@ -4307,7 +4305,6 @@ dist_unrel_DATA = 
+@@ -4240,7 +4238,6 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@libhpmud_la_LDFLAGS =  \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	-version-info \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	0:6:0 -lpthread \
@@ -66,7 +66,7 @@ Index: Makefile.in
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	$(am__append_6) \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	$(am__append_9) \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	$(am__append_11)
-@@ -4361,7 +4358,7 @@ dist_unrel_DATA = 
+@@ -4294,7 +4291,7 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@pstotiff_SCRIPTS = fax/filters/pstotiff
  
  # hplip.state
@@ -75,7 +75,7 @@ Index: Makefile.in
  @HPLIP_BUILD_TRUE@dist_hplip_state_DATA = 
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@dist_hplip_SCRIPTS = hpssd.py __init__.py hpdio.py
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@cmddir = $(hplipdir)
-@@ -4561,7 +4558,7 @@ dist_unrel_DATA = 
+@@ -4494,7 +4491,7 @@ dist_unrel_DATA = 
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_SOURCES = prnt/hpijs/PrinterProperties.cpp prnt/hpijs/PrinterProperties.h prnt/hpijs/bug.h
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_CFLAGS = $(libapdk_la_CFLAGS)
@@ -84,7 +84,7 @@ Index: Makefile.in
  
  # hplip.desktop
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@hplip_desktopdir = $(icondir)
-@@ -4630,8 +4627,8 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -4563,8 +4560,8 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  
  @HPIJS_INSTALL_TRUE@hpijs_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  @HPIJS_INSTALL_TRUE@hpijs_CFLAGS = $(libapdk_la_CFLAGS)
@@ -95,7 +95,7 @@ Index: Makefile.in
  
  # hpcups
  #if NEW_HPCUPS
-@@ -4675,7 +4672,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -4608,7 +4605,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  @HPCUPS_INSTALL_TRUE@	prnt/hpcups/ImageProcessor.h
  
  @HPCUPS_INSTALL_TRUE@hpcups_CXXFLAGS = $(APDK_ENDIAN_FLAG) $(DBUS_CFLAGS)
@@ -104,7 +104,7 @@ Index: Makefile.in
  #else
  #hpcupsdir = $(cupsfilterdir)
  #hpcups_PROGRAMS = hpcups
-@@ -4683,15 +4680,15 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -4616,15 +4613,15 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  #hpcups_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  #hpcups_CFLAGS = $(libapdk_la_CFLAGS)
  #if HPCUPS_ONLY_BUILD
@@ -123,7 +123,7 @@ Index: Makefile.in
  dat2drvdir = $(hplipdir)
  dat2drv_SOURCES = Common.h  Dat2drv.cpp  Dat2drv.h Normalize.cpp  Normalize.h
  @GCC_GE_47_TRUE@dat2drv_CXXFLAGS = -std=c++11
-@@ -9386,16 +9383,6 @@ uninstall-am: uninstall-apparmor_abstractionDATA \
+@@ -9319,16 +9316,6 @@ uninstall-am: uninstall-apparmor_abstractionDATA \
  
  
  install-data-hook:
