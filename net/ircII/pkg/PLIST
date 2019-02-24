@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2015/12/02 21:52:16 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.28 2019/02/24 12:41:47 kn Exp $
 bin/irc
 @bin bin/irc-${VERSION}
 bin/ircbug
@@ -125,6 +125,7 @@ share/irc/help/exec
 share/irc/help/exit
 share/irc/help/expressions
 share/irc/help/flush
+share/irc/help/for
 share/irc/help/foreach
 share/irc/help/help
 share/irc/help/history
@@ -137,7 +138,11 @@ share/irc/help/input
 share/irc/help/intro
 share/irc/help/invite
 share/irc/help/ircii/
+share/irc/help/ircii/command_line_args
 share/irc/help/ircii/copyright
+share/irc/help/ircii/environment_vars
+share/irc/help/ircii/programming
+share/irc/help/ircii/server_lists
 share/irc/help/ison
 share/irc/help/join
 share/irc/help/kick
@@ -300,11 +305,9 @@ share/irc/help/on/send_dcc_chat
 share/irc/help/on/send_msg
 share/irc/help/on/send_notice
 share/irc/help/on/send_public
-share/irc/help/on/send_talk
 share/irc/help/on/serial_numbers
 share/irc/help/on/server_notice
 share/irc/help/on/signoff
-share/irc/help/on/talk
 share/irc/help/on/timer
 share/irc/help/on/topic
 share/irc/help/on/wall

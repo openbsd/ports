@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_names_c,v 1.1 2018/03/17 20:41:01 otto Exp $
+$OpenBSD: patch-source_names_c,v 1.2 2019/02/24 12:41:47 kn Exp $
 
 Index: source/names.c
 --- source/names.c.orig
@@ -10,4 +10,4 @@ Index: source/names.c
 +		new->window = NULL;
  		do_add = 1;
  		full_list = server_get_chan_list(server);
- 		add_to_list((List **)(void *)&full_list, (List *) new);
+ 		if ((new->window = is_bound(channel, server)) == NULL)
