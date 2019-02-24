@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/24 20:51:18 landry Exp $
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo/
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rio_cogeo/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo/${MODPY_PYCACHE}cogeo.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo/${MODPY_PYCACHE}profiles.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo/cogeo.py
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo/profiles.py
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo/scripts/
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo/scripts/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rio_cogeo/scripts/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo/scripts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo/scripts/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rio_cogeo/scripts/cli.py

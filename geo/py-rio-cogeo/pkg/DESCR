@@ -1,0 +1,8 @@
+rio-cogeo is a rasterio plugin dedicated to CloudOptimized GeoTIFF (COGEO)
+creation.
+By default the following profiles are available:
+* JPEG
+* ZSTD
+* LZW
+* DEFLATE
+Profiles can be extended by providing GDAL -co options on the command line.
