@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2018/10/17 14:43:35 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.37 2019/02/24 07:29:35 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -63,6 +63,7 @@ share/highlight/langDefs/csharp.lang
 share/highlight/langDefs/css.lang
 share/highlight/langDefs/d.lang
 share/highlight/langDefs/dart.lang
+share/highlight/langDefs/delphi.lang
 share/highlight/langDefs/diff.lang
 share/highlight/langDefs/docker.lang
 share/highlight/langDefs/dts.lang
@@ -72,6 +73,7 @@ share/highlight/langDefs/ebnf2.lang
 share/highlight/langDefs/eiffel.lang
 share/highlight/langDefs/elixir.lang
 share/highlight/langDefs/email.lang
+share/highlight/langDefs/erb.lang
 share/highlight/langDefs/erlang.lang
 share/highlight/langDefs/euphoria.lang
 share/highlight/langDefs/excel.lang
@@ -131,6 +133,7 @@ share/highlight/langDefs/matlab.lang
 share/highlight/langDefs/maya.lang
 share/highlight/langDefs/md.lang
 share/highlight/langDefs/mercury.lang
+share/highlight/langDefs/meson.lang
 share/highlight/langDefs/miranda.lang
 share/highlight/langDefs/mod2.lang
 share/highlight/langDefs/mod3.lang
@@ -203,6 +206,7 @@ share/highlight/langDefs/smalltalk.lang
 share/highlight/langDefs/sml.lang
 share/highlight/langDefs/snmp.lang
 share/highlight/langDefs/snobol.lang
+share/highlight/langDefs/solidity.lang
 share/highlight/langDefs/spec.lang
 share/highlight/langDefs/spn.lang
 share/highlight/langDefs/sql.lang
@@ -213,7 +217,9 @@ share/highlight/langDefs/swift.lang
 share/highlight/langDefs/sybase.lang
 share/highlight/langDefs/tcl.lang
 share/highlight/langDefs/tcsh.lang
+share/highlight/langDefs/terraform.lang
 share/highlight/langDefs/tex.lang
+share/highlight/langDefs/toml.lang
 share/highlight/langDefs/ts.lang
 share/highlight/langDefs/tsql.lang
 share/highlight/langDefs/tsx.lang
