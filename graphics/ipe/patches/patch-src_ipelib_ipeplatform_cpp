@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_ipelib_ipeplatform_cpp,v 1.1 2019/02/24 20:33:56 sthen Exp $
+
+Index: src/ipelib/ipeplatform.cpp
+--- src/ipelib/ipeplatform.cpp.orig
++++ src/ipelib/ipeplatform.cpp
+@@ -587,7 +587,11 @@ double Platform::toDouble(String s)
+   else
+     return strtod(s.z(), 0);
+ #else
++#ifdef __OpenBSD__
++    return strtod(s.z(), 0);
++#else
+   return strtod_l(s.z(), 0, ipeLocale);
++#endif
+ #endif
+ }
+ 

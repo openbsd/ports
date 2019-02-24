@@ -1,14 +1,13 @@
-$OpenBSD: patch-src_ipeextract_ipeextract_cpp,v 1.1 2017/05/07 20:35:07 espie Exp $
+$OpenBSD: patch-src_ipeextract_ipeextract_cpp,v 1.2 2019/02/24 20:33:56 sthen Exp $
 
 Index: src/ipeextract/ipeextract.cpp
 --- src/ipeextract/ipeextract.cpp.orig
 +++ src/ipeextract/ipeextract.cpp
-@@ -31,6 +31,8 @@
- #include "ipexml.h"
- #include "ipeutils.h"
+@@ -33,6 +33,7 @@
  #include "ipepdfparser.h"
-+#include <cstdlib>
-+using std::exit;
+ #include <cstdlib>
  
++using std::exit;
  using namespace ipe;
  
+ // ---------------------------------------------------------------------

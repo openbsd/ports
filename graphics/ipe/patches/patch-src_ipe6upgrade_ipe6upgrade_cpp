@@ -1,14 +1,13 @@
-$OpenBSD: patch-src_ipe6upgrade_ipe6upgrade_cpp,v 1.1 2017/05/07 20:35:07 espie Exp $
+$OpenBSD: patch-src_ipe6upgrade_ipe6upgrade_cpp,v 1.2 2019/02/24 20:33:56 sthen Exp $
 
 Index: src/ipe6upgrade/ipe6upgrade.cpp
 --- src/ipe6upgrade/ipe6upgrade.cpp.orig
 +++ src/ipe6upgrade/ipe6upgrade.cpp
-@@ -30,6 +30,8 @@
- 
- #include "ipexml.h"
+@@ -32,6 +32,7 @@
  #include "ipeattributes.h"
-+#include <cstdlib>
-+using std::exit;
+ #include <cstdlib>
  
++using std::exit;
  using namespace ipe;
  
+ // --------------------------------------------------------------------

@@ -1,14 +1,13 @@
-$OpenBSD: patch-src_ipetoipe_ipetoipe_cpp,v 1.1 2017/05/07 20:35:07 espie Exp $
+$OpenBSD: patch-src_ipetoipe_ipetoipe_cpp,v 1.2 2019/02/24 20:33:56 sthen Exp $
 
 Index: src/ipetoipe/ipetoipe.cpp
 --- src/ipetoipe/ipetoipe.cpp.orig
 +++ src/ipetoipe/ipetoipe.cpp
-@@ -29,6 +29,8 @@
- */
- 
+@@ -31,6 +31,7 @@
  #include "ipedoc.h"
-+#include <cstdlib>
-+using std::exit;
+ #include <cstdlib>
  
++using std::exit;
  using ipe::Document;
  using ipe::String;
+ 

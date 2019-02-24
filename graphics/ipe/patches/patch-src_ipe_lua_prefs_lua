@@ -1,15 +1,16 @@
-$OpenBSD: patch-src_ipe_lua_prefs_lua,v 1.1.1.1 2012/07/09 15:56:35 edd Exp $
+$OpenBSD: patch-src_ipe_lua_prefs_lua,v 1.2 2019/02/24 20:33:56 sthen Exp $
 
 Swapped out the default on-screen keyboard for something lightweight.
 
---- src/ipe/lua/prefs.lua.orig	Sat Jul  7 19:37:46 2012
-+++ src/ipe/lua/prefs.lua	Sat Jul  7 19:37:52 2012
-@@ -132,7 +132,7 @@ end
- 
- -- How to start onscreen keyboard
- if config.platform == "unix" then
--  prefs.keyboard = "onboard &"
-+  prefs.keyboard = "xvkbd &"
+Index: src/ipe/lua/prefs.lua
+--- src/ipe/lua/prefs.lua.orig
++++ src/ipe/lua/prefs.lua
+@@ -257,7 +257,7 @@ elseif config.platform == "apple" then
+   prefs.keyboard = "open -a KeyboardViewer -n"
  else
-   prefs.keyboard = nil
+   -- On Linux, you could use: prefs.keyboard = "onboard &"
+-  prefs.keyboard = nil
++  prefs.keyboard = "xvkbd &"
  end
+ 
+ -- Disable all snap modes in "ink" drawing mode?

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/02/24 20:33:56 sthen Exp $
 
 COMMENT =		extensible drawing editor
 
-V =			7.1.2
+V =			7.2.9
 SUBST_VARS +=		V
 DISTNAME =		ipe-${V}-src
 PKGNAME =		ipe-${V}
-REVISION =		9
 
 # their libraries would be installed as libxxx.so.${V}, overide this.
 SHLIB_VERSION =	0.0
@@ -18,26 +17,28 @@ SHARED_LIBS +=		ipelua		${SHLIB_VERSION}
 SHARED_LIBS +=		ipeui		${SHLIB_VERSION}
 
 CATEGORIES =		graphics math
-HOMEPAGE =		http://ipe7.sourceforge.net/
-MAINTAINER =		Edd Barrett <edd@openbsd.org>
+HOMEPAGE =		https://ipe.otfried.org/
+MAINTAINER =		Alessandro De Laurenzis <just22@atlantide.t28.net>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL QtGui X11 Xrender c cairo expat fontconfig freetype
-WANTLIB += glib-2.0 gobject-2.0 ${MODLUA_WANTLIB} iconv intl m pixman-1 png
-WANTLIB += pthread ${COMPILER_LIBCXX} xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} Qt5Core Qt5Gui
+WANTLIB += Qt5Widgets c cairo freetype iconv jpeg m png16 pthread z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ipe7/}
+MASTER_SITES =		https://dl.bintray.com/otfried/generic/ipe/${V:R}/
 
 # Dependencies
 MODULES =		lang/lua \
-			x11/qt4
+			x11/qt5
+
+MODLUA_VERSION =	5.3
+MODLUA_SA =		Yes
+
 LIB_DEPENDS =		${MODLUA_LIB_DEPENDS} \
-			${MODQT4_LIB_DEPENDS}
+			${MODQT5_LIB_DEPENDS}
 RUN_DEPENDS =		print/texlive/base \
 			x11/xvkbd
 
@@ -46,8 +47,11 @@ MAKE_FLAGS +=		CXX="${CXX}" \
 			IPE_USE_ICONV=-DIPE_USE_ICONV \
 			ICONV_CFLAGS=-I${LOCALBASE}/include \
 			ICONV_LIBS="-L${LOCALBASE}/lib -liconv" \
-			SHLIB_VERSION=${SHLIB_VERSION}
-MAKE_ENV +=		PKG_CONFIG_PATH=${LOCALBASE}/lib/qt4/pkgconfig
+			SHLIB_VERSION=${SHLIB_VERSION} \
+			JPEG_CFLAGS=-I${LOCALBASE}/include \
+			IPEDOCDIR=${PREFIX}/share/doc/ipe \
+			DL_LIBS=""
+MAKE_ENV +=		PKG_CONFIG_PATH=${LOCALBASE}/lib/qt5/pkgconfig
 FAKE_FLAGS +=		INSTALL_ROOT=${WRKINST} \
 			SHLIB_VERSION=${SHLIB_VERSION} \
 			IPEMANDIR=${PREFIX}/man/man1 \
@@ -55,14 +59,12 @@ FAKE_FLAGS +=		INSTALL_ROOT=${WRKINST} \
 
 USE_GMAKE =		Yes
 NO_TEST =		Yes
+UPDATE_PLIST_ARGS +=	-i MODLUA_DEP_VERSION
 
 WRKDIST = ${WRKDIR}/${PKGNAME}
 WRKSRC = ${WRKDIST}/src
 
-post-install:
-	sed -i "s,/usr/share/,${LOCALBASE}/share/," \
-		${WRKDIST}/fontmaps/texlive-fontmap.xml
-	${INSTALL_DATA} -c ${WRKDIST}/fontmaps/texlive-fontmap.xml \
-		${PREFIX}/share/ipe/7.1.2/fontmap.xml
+pre-build:
+	${SUBST_CMD} ${WRKSRC}/config.mak
 
 .include <bsd.port.mk>
