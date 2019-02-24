@@ -1,4 +1,4 @@
-$OpenBSD: patch-stats_c,v 1.9 2018/06/01 14:20:19 sthen Exp $
+$OpenBSD: patch-stats_c,v 1.10 2019/02/24 15:02:19 sthen Exp $
 
 If devinfo.type != AUDIO_MIXER_CLASS is true, xstatbar will never make
 progress and loop forever. Fix it by trying the next device.
@@ -27,19 +27,31 @@ Index: stats.c
           err(1, "sysinfo init: memory[%d] calloc failed", i);
  
        for (j = 0; j < 3; j++)
-@@ -405,9 +407,11 @@ sysinfo_update()
+@@ -372,6 +374,7 @@ sysinfo_init(int hist_size)
+ 
+    /* allocate cpu history */
+    sysinfo.cpu_raw   = calloc(sysinfo.ncpu, sizeof(uint64_t**));
++   sysinfo.cpu_online = calloc(sysinfo.ncpu, sizeof(*sysinfo.cpu_online));
+    sysinfo.cpu_pcnts = calloc(sysinfo.ncpu, sizeof(int**));
+    if (sysinfo.cpu_raw == NULL || sysinfo.cpu_pcnts == NULL)
+       err(1, "sysinfo init: cpu_raw/cpu_pcnts calloc failed");
+@@ -404,10 +407,14 @@ sysinfo_update()
+ {
     static int mib_nprocs[] = { CTL_KERN, KERN_NPROCS };
     static int mib_vm[] = { CTL_VM, VM_METER };
-    static int mib_cpus[] = { CTL_KERN, 0, 0 };
+-   static int mib_cpus[] = { CTL_KERN, 0, 0 };
++   static int mib_cpus[] = { CTL_KERN, KERN_CPTIME2, 0 };
++   static int mib_cpustats[] = { CTL_KERN, KERN_CPUSTATS, 0 };
 +   static int mib_bcstats[] = {CTL_VFS, VFS_GENERIC, VFS_BCACHESTAT};
     static int diffs[CPUSTATES] = { 0 };
     struct vmtotal vminfo;
     struct swapent *swapdev;
 +   struct bcachestats bcstats;
++   struct cpustats cpustats;
     size_t    size;
     int       cpu, state;
     int       cur, prev;
-@@ -431,9 +435,16 @@ sysinfo_update()
+@@ -431,9 +438,16 @@ sysinfo_update()
     if (sysctl(mib_vm, 2, &vminfo, &size, NULL, 0) < 0)
        err(1, "sysinfo update: VM.METER failed");
  
@@ -56,7 +68,41 @@ Index: stats.c
  
     /* get swap status */
     if ((nswaps = swapctl(SWAP_NSWAP, 0, 0)) == 0)
-@@ -509,9 +520,9 @@ int
+@@ -454,24 +468,15 @@ sysinfo_update()
+ 
+    /* get states for each cpu. note this is raw # of ticks */
+    size = CPUSTATES * sizeof(int64_t);
+-   if (sysinfo.ncpu > 1) {
+-      mib_cpus[1] = KERN_CPTIME2;
+-      for (cpu = 0; cpu < sysinfo.ncpu; cpu++) {
+-         mib_cpus[2] = cpu;
+-         if (sysctl(mib_cpus, 3, sysinfo.cpu_raw[cpu][cur], &size, NULL, 0) < 0)
+-            err(1, "sysinfo update: KERN.CPTIME2.%d failed", cpu);
+-      }
+-   } else {
+-      int i;
+-      long cpu_raw_tmp[CPUSTATES];
+-      size = sizeof(cpu_raw_tmp);
+-      mib_cpus[1] = KERN_CPTIME;
+-      
+-      if (sysctl(mib_cpus, 2, cpu_raw_tmp, &size, NULL, 0) < 0)
+-         err(1, "sysinfo update: KERN.CPTIME failed");
+-
+-      for (i = 0; i < CPUSTATES; i++)
+-         sysinfo.cpu_raw[0][cur][i] = cpu_raw_tmp[i];
++   for (cpu = 0; cpu < sysinfo.ncpu; cpu++) {
++      mib_cpus[2] = cpu;
++      if (sysctl(mib_cpus, 3, sysinfo.cpu_raw[cpu][cur], &size, NULL, 0) < 0)
++         err(1, "sysinfo update: KERN.CPTIME2.%d failed", cpu);
++      mib_cpustats[2] = cpu;
++      size = sizeof(cpustats);
++      if (sysctl(mib_cpustats, 3, &cpustats, &size, NULL, 0) < 0)
++         err(1, "sysinfo update: KERN.CPUSTATS.%d failed", cpu);
++      sysinfo.cpu_online[cpu] = (cpustats.cs_flags & CPUSTATS_ONLINE) != 0;
+    }
+ 
+    /* convert ticks to percentages */
+@@ -509,12 +514,16 @@ int
  cpu_draw(int cpu, XColor color, int x, int y)
  {
     static char  str[1000];
@@ -68,7 +114,14 @@ Index: stats.c
     };
     int state, startx, time, col, h, i;
  
-@@ -531,7 +542,7 @@ cpu_draw(int cpu, XColor color, int x, int y)
++   /* SMT CPU is offline (hw.smt=0) */
++   if(!sysinfo.cpu_online[cpu])
++      return 0;
++
+    startx = x;
+ 
+    snprintf(str, sizeof(str), "cpu%d:", cpu);
+@@ -531,7 +540,7 @@ cpu_draw(int cpu, XColor color, int x, int y)
  
        /* user time */
        h = 0;
@@ -77,7 +130,7 @@ Index: stats.c
        h = h * XINFO.height / 100;
        XSetForeground(XINFO.disp, XINFO.gc, COLOR_RED.pixel);
        XDrawLine(XINFO.disp, XINFO.buf, XINFO.gc,
-@@ -540,7 +551,7 @@ cpu_draw(int cpu, XColor color, int x, int y)
+@@ -540,7 +549,7 @@ cpu_draw(int cpu, XColor color, int x, int y)
  
        /* nice time */
        h = 0;
@@ -86,7 +139,7 @@ Index: stats.c
        h = h * XINFO.height / 100;
        XSetForeground(XINFO.disp, XINFO.gc, COLOR_BLUE.pixel);
        XDrawLine(XINFO.disp, XINFO.buf, XINFO.gc,
-@@ -549,15 +560,24 @@ cpu_draw(int cpu, XColor color, int x, int y)
+@@ -549,15 +558,24 @@ cpu_draw(int cpu, XColor color, int x, int y)
  
        /* system time */
        h = 0;
@@ -113,7 +166,7 @@ Index: stats.c
        h = h * XINFO.height / 100;
        XSetForeground(XINFO.disp, XINFO.gc, COLOR_MAGENTA.pixel);
        XDrawLine(XINFO.disp, XINFO.buf, XINFO.gc,
-@@ -594,7 +614,8 @@ mem_draw(XColor color, int x, int y)
+@@ -594,7 +612,8 @@ mem_draw(XColor color, int x, int y)
     /* determine total memory */
     total = sysinfo.memory[cur][MEM_ACT]
           + sysinfo.memory[cur][MEM_TOT]
@@ -123,7 +176,7 @@ Index: stats.c
  
     /* start drawing ... */
     x += render_text(color, x, y, "mem:") + 1;
-@@ -610,7 +631,8 @@ mem_draw(XColor color, int x, int y)
+@@ -610,7 +629,8 @@ mem_draw(XColor color, int x, int y)
  
        if ((sysinfo.memory[time][MEM_ACT] != 0)
        ||  (sysinfo.memory[time][MEM_TOT] != 0)
@@ -133,7 +186,7 @@ Index: stats.c
  
  
           /* draw yellow (total) bar */
-@@ -627,6 +649,13 @@ mem_draw(XColor color, int x, int y)
+@@ -627,6 +647,13 @@ mem_draw(XColor color, int x, int y)
           XDrawLine(XINFO.disp, XINFO.buf, XINFO.gc,
              x + col, XINFO.height - h,
              x + col, XINFO.height);
@@ -147,7 +200,7 @@ Index: stats.c
        }
  
        time = (time + 1) % sysinfo.hist_size;
-@@ -639,6 +668,8 @@ mem_draw(XColor color, int x, int y)
+@@ -639,6 +666,8 @@ mem_draw(XColor color, int x, int y)
     x += render_text(COLOR_YELLOW, x, y, fmtmem(sysinfo.memory[cur][MEM_TOT]));
     x += render_text(color, x, y, "/");
     x += render_text(COLOR_GREEN, x, y, fmtmem(sysinfo.memory[cur][MEM_FRE]));
