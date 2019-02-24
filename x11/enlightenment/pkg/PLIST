@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/06/27 21:04:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/02/24 07:42:16 feinerer Exp $
 @option is-branch
 @pkgpath x11/enlightenment
 @bin bin/e16
@@ -6,7 +6,6 @@
 @bin bin/eesh
 @bin bin/epp
 bin/starte16
-lib/e16/
 @man man/man1/e16.1
 share/applications/e16.desktop
 share/doc/e16/
@@ -2159,72 +2158,6 @@ share/e16/themes/ShinyMetal/dragbar/images/dragbar_vert_normal.png
 share/e16/themes/ShinyMetal/epplets/
 share/e16/themes/ShinyMetal/epplets/epplets.cfg
 share/e16/themes/ShinyMetal/epplets/images/
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/ar_d1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/ar_d2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/ar_d3.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/ar_l1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/ar_l2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/ar_l3.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/ar_r1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/ar_r2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/ar_r3.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/ar_u1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/ar_u2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/ar_u3.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/b1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/b2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/b3.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/bb1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/bb2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/bg_h.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/bg_v.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/close1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/close2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/close3.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/config1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/config2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/config3.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/da.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/eject1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/eject2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/eject3.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/ff1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/ff2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/ff3.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/help1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/help2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/help3.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/next1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/next2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/next3.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/pause1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/pause2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/pause3.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/pb_h.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/pb_v.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/play1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/play2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/play3.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/prev1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/prev2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/prev3.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/repeat1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/repeat2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/repeat3.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/rw1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/rw2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/rw3.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/s_h.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/s_k1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/s_k2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/s_v.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/skip1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/skip2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/skip3.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/stop1.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/stop2.png
-share/e16/themes/ShinyMetal/epplets/images/.xvpics/stop3.png
 share/e16/themes/ShinyMetal/epplets/images/ar_d1.png
 share/e16/themes/ShinyMetal/epplets/images/ar_d2.png
 share/e16/themes/ShinyMetal/epplets/images/ar_d3.png
@@ -2769,13 +2702,10 @@ share/e16/themes/winter/tooltips/tooltips.cfg
 share/gnome-session/
 share/gnome-session/sessions/
 share/gnome-session/sessions/e16-gnome.session
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/e16.mo
 share/locale/bg/LC_MESSAGES/e16.mo
-share/locale/bs/
-share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/e16.mo
+share/locale/ca/LC_MESSAGES/e16.mo
 share/locale/cs/LC_MESSAGES/e16.mo
 share/locale/csb/
 share/locale/csb/LC_MESSAGES/
@@ -2791,6 +2721,7 @@ share/locale/fo/
 share/locale/fo/LC_MESSAGES/
 share/locale/fo/LC_MESSAGES/e16.mo
 share/locale/fr/LC_MESSAGES/e16.mo
+share/locale/gl/LC_MESSAGES/e16.mo
 share/locale/hr/LC_MESSAGES/e16.mo
 share/locale/hu/LC_MESSAGES/e16.mo
 share/locale/it/LC_MESSAGES/e16.mo
@@ -2803,6 +2734,7 @@ share/locale/pt/LC_MESSAGES/e16.mo
 share/locale/pt_BR/LC_MESSAGES/e16.mo
 share/locale/ru/LC_MESSAGES/e16.mo
 share/locale/sk/LC_MESSAGES/e16.mo
+share/locale/sr/LC_MESSAGES/e16.mo
 share/locale/sv/LC_MESSAGES/e16.mo
 share/locale/tr/LC_MESSAGES/e16.mo
 share/locale/uk/LC_MESSAGES/e16.mo

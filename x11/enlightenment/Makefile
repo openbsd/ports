@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.72 2018/06/27 21:04:07 espie Exp $
+# $OpenBSD: Makefile,v 1.73 2019/02/24 07:42:16 feinerer Exp $
 
 COMMENT=	themed window manager
 
-V=		1.0.9
+V=		1.0.19
 DISTNAME=	e16-$V
 PKGNAME=	enlightenment-$V
 DOCS=		e16-docs-0.16.8.0.2
-THEMES=		e16-themes-1.0.1
-REVISION=	10
+THEMES=		e16-themes-1.0.2
 
 CATEGORIES=	x11
 
-HOMEPAGE=	http://www.enlightenment.org/
+HOMEPAGE=	https://www.enlightenment.org/e16
 
 # X11
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB =  FLAC ICE Imlib2 SM X11 Xcomposite Xdamage Xext Xfixes Xft
 WANTLIB += Xinerama Xrandr Xrender audiofile c expat ffi fontconfig
-WANTLIB += freetype glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += freetype fribidi glib-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 harfbuzz iconv intl m ogg pango-1.0 pangoft2-1.0
 WANTLIB += pangoxft-1.0 pcre pthread sndio xcb z
 
@@ -28,8 +27,8 @@ DISTFILES=	${DISTNAME}.tar.gz \
 		${DOCS}.tar.gz \
 		${THEMES}.tar.gz
 
-AUTOCONF_VERSION=	2.65
-AUTOMAKE_VERSION=	1.11
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 
@@ -45,22 +44,19 @@ SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --disable-sound_esound
+CONFIGURE_ARGS+= --enable-sound=sndio \
+		 --with-sndldr=audiofile
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 post-extract:
 	cp -f ${FILESDIR}/sound_sndio.c ${WRKSRC}/src
 
-pre-configure:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal -I m4
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoconf
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoheader
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake
+do-gen:
+	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} aclocal -I m4
+	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} autoconf
+	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} autoheader
+	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} automake
 
 post-configure:
 	@cd ${WRKDIR}/${DOCS} && ${SETENV} ${CONFIGURE_ENV} \
