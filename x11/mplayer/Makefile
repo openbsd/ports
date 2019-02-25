@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.294 2019/02/03 12:30:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.295 2019/02/25 22:42:19 sthen Exp $
 
 COMMENT=	movie player supporting many formats
 
 V=		20180916
-FFMPEG_V=	2.8.15
+FFMPEG_V=	4.1.1
 DISTNAME=	mplayer-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11 multimedia
 MASTER_SITES=	https://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -65,13 +65,6 @@ CONFDIR=	${SYSCONFDIR}/mplayer
 MAKE_ENV=	V=1
 SUBST_VARS+=	PREFIX CONFDIR
 
-.if ${MACHINE_ARCH:Marm}
-# uses ARM EABI
-MPLAYER_ARCH=	generic
-.else
-MPLAYER_ARCH=	${MACHINE_ARCH}
-.endif
-
 # Add back fast math flag since we override CFLAGS
 CFLAGS+=	-ffast-math
 
@@ -89,7 +82,7 @@ CONFIGURE_ARGS+=--confdir=${CONFDIR} \
 		--extra-ldflags="-L${LOCALBASE}/lib -ffast-math ${LDFLAGS}" \
 		--extra-libs-mplayer="-lrtunes -lcrypto" \
 		--mandir=${LOCALBASE}/man \
-		--target="${MPLAYER_ARCH}-openbsd"
+		--target="${MACHINE_ARCH}-openbsd"
 
 # CONFIGURE_ARGS that disable internal stuff
 CONFIGURE_ARGS+=--disable-alsa \
