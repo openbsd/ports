@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.239 2019/02/23 15:46:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.240 2019/02/25 09:02:08 ajacoutot Exp $
 
 COMMENT=		metadata database and search tool
 
@@ -42,7 +42,13 @@ CONFIGURE_ARGS=		-Dnetwork_manager=disabled
 # needs libstemmer
 CONFIGURE_ARGS +=	-Dstemmer=disabled
 
-post-install:                                                                   
+# XXX generate this file upfront as it may not be created in time due to ninja's
+# randomization
+pre-build:
+	exec ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ninja -C ${WRKBUILD} -v \
+		src/libtracker-sparql/tracker-generated-no-checks.h
+
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/meta-tracker
 	mv ${WRKINST}${SYSCONFDIR}/xdg ${PREFIX}/share/examples/meta-tracker
 
