@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/25 11:25:02 fcambus Exp $
+@bin bin/dfont2res
+@bin bin/fondu
+@bin bin/frombin
+@bin bin/lumper
+@bin bin/setfondname
+@bin bin/showfond
+@bin bin/tobin
+@bin bin/ufond
+@man man/man1/dfont2res.1
+@man man/man1/fondu.1
+@man man/man1/frombin.1
+@man man/man1/lumper.1
+@man man/man1/showfond.1
+@man man/man1/tobin.1
+@man man/man1/ufond.1
+share/doc/fondu/
+share/doc/fondu/README

@@ -1,0 +1,8 @@
+A set of programs to interconvert between mac font formats and pfb,
+ttf, otf and bdf files on unix.
+
+Dealing with mac fonts is hard on other operating systems because mac
+fonts are stored in the resource fork, and other operating systems do
+not support this concept. Fondu will extract the resource fork from
+either a macbinary file or a binhex file. Ufond will create a resource
+fork inside a macbinary file.
