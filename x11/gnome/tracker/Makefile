@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.240 2019/02/25 09:02:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.241 2019/02/25 12:40:18 ajacoutot Exp $
 
 COMMENT=		metadata database and search tool
 
@@ -46,7 +46,8 @@ CONFIGURE_ARGS +=	-Dstemmer=disabled
 # randomization
 pre-build:
 	exec ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ninja -C ${WRKBUILD} -v \
-		src/libtracker-sparql/tracker-generated-no-checks.h
+		src/libtracker-sparql/tracker-generated-no-checks.h \
+		src/libtracker-sparql/tracker-generated.h
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/meta-tracker
