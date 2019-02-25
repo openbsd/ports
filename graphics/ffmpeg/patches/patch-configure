@@ -1,95 +1,61 @@
-$OpenBSD: patch-configure,v 1.58 2018/09/12 19:59:04 robert Exp $
+$OpenBSD: patch-configure,v 1.59 2019/02/25 22:41:34 sthen Exp $
 
-- lavu/random_seed: use arc4random() when available
-- configure: Also try -mstack-alignment for clang
+- avcodec: libdav1d AV1 decoder wrapper.
 - section_data_rel_ro: required by NEON support
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -1755,6 +1755,7 @@ MATH_FUNCS="
- SYSTEM_FUNCS="
-     access
-     aligned_malloc
-+    arc4random
-     clock_gettime
-     closesocket
-     CommandLineToArgvW
-@@ -4307,8 +4308,9 @@ case $target_os in
+@@ -226,6 +226,7 @@ External library support:
+   --enable-libcelt         enable CELT decoding via libcelt [no]
+   --enable-libcdio         enable audio CD grabbing with libcdio [no]
+   --enable-libcodec2       enable codec2 en/decoding using libcodec2 [no]
++  --enable-libdav1d        enable AV1 decoding via libdav1d [no]
+   --enable-libdavs2        enable AVS2 decoding via libdavs2 [no]
+   --enable-libdc1394       enable IIDC-1394 grabbing using libdc1394
+                            and libraw1394 [no]
+@@ -1712,6 +1713,7 @@ EXTERNAL_LIBRARY_LIST="
+     libcaca
+     libcelt
+     libcodec2
++    libdav1d
+     libdc1394
+     libdrm
+     libflite
+@@ -3091,6 +3093,7 @@ libaom_av1_encoder_select="extract_extradata_bsf"
+ libcelt_decoder_deps="libcelt"
+ libcodec2_decoder_deps="libcodec2"
+ libcodec2_encoder_deps="libcodec2"
++libdav1d_decoder_deps="libdav1d"
+ libdavs2_decoder_deps="libdavs2"
+ libfdk_aac_decoder_deps="libfdk_aac"
+ libfdk_aac_encoder_deps="libfdk_aac"
+@@ -5147,9 +5150,10 @@ case $target_os in
          ;;
      openbsd|bitrig)
          disable symver
 +        enable section_data_rel_ro
+         striptype=""
          SHFLAGS='-shared'
 -        SLIB_INSTALL_NAME='$(SLIBNAME).$(LIBMAJOR).$(LIBMINOR)'
 +        SLIB_INSTALL_NAME='$(SLIBNAME).$(LIBVERSION)'
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -4672,7 +4674,7 @@ die_license_disabled version3 libvo_amrwbenc
+@@ -5494,7 +5498,7 @@ set_default libdir
+ set_default $PATHS_LIST
+ set_default nm
  
- enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
- 
--disabled optimizations || check_cflags -fomit-frame-pointer
+-disabled optimizations || enabled ossfuzz || check_cflags -fomit-frame-pointer
 +enabled x86_32 && check_cflags -fomit-frame-pointer
  
  enable_weak_pic() {
      disabled pic && return
-@@ -5067,6 +5069,7 @@ check_func  ${malloc_prefix}memalign            && ena
- check_func  ${malloc_prefix}posix_memalign      && enable posix_memalign
- 
- check_func  access
-+check_func  arc4random
- check_func_headers time.h clock_gettime || { check_func_headers time.h clock_gettime -lrt && add_extralibs -lrt && LIBRT="-lrt"; }
- check_func  fcntl
- check_func  fork
-@@ -5685,6 +5688,7 @@ elif enabled llvm_gcc; then
-     check_cflags -mllvm -stack-alignment=16
- elif enabled clang; then
-     check_cflags -mllvm -stack-alignment=16
-+    check_cflags -mstack-alignment=16
-     check_cflags -Qunused-arguments
-     check_cflags -Werror=implicit-function-declaration
-     check_cflags -Werror=missing-prototypes
-@@ -6220,8 +6224,8 @@ pkgconfig_generate(){
-     comment=$2
-     version=$3
-     libs=$4
--    requires=$(map 'lib_version $v' $(eval echo \$${name#lib}_deps))
--    requires=${requires%, }
-+    requires=$5
-+    linkflags=$6
-     enabled ${name#lib} || return 0
-     mkdir -p $name
-     cat <<EOF > $name/$name${build_suffix}.pc
-@@ -6236,7 +6240,7 @@ Version: $version
- Requires: $(enabled shared || echo $requires)
- Requires.private: $(enabled shared && echo $requires)
- Conflicts:
--Libs: -L\${libdir} $(enabled rpath && echo "-Wl,-rpath,\${libdir}") -l${shortname} $(enabled shared || echo $libs)
-+Libs: -L\${libdir} $(enabled rpath && echo "-Wl,-rpath,\${libdir}") -l${shortname} $(enabled shared || echo $libs) $linkflags
- Libs.private: $(enabled shared && echo $libs)
- Cflags: -I\${includedir}
- EOF
-@@ -6260,12 +6264,12 @@ Cflags: -I\${includedir}
- EOF
- }
- 
--pkgconfig_generate libavutil     "FFmpeg utility library"               "$LIBAVUTIL_VERSION"     "$LIBRT $LIBM"
--pkgconfig_generate libavcodec    "FFmpeg codec library"                 "$LIBAVCODEC_VERSION"    "$extralibs"
--pkgconfig_generate libavformat   "FFmpeg container format library"      "$LIBAVFORMAT_VERSION"   "$extralibs"
--pkgconfig_generate libavdevice   "FFmpeg device handling library"       "$LIBAVDEVICE_VERSION"   "$extralibs"
--pkgconfig_generate libavfilter   "FFmpeg audio/video filtering library" "$LIBAVFILTER_VERSION"   "$extralibs"
--pkgconfig_generate libpostproc   "FFmpeg postprocessing library"        "$LIBPOSTPROC_VERSION"   ""
--pkgconfig_generate libavresample "Libav audio resampling library"       "$LIBAVRESAMPLE_VERSION" "$LIBM"
--pkgconfig_generate libswscale    "FFmpeg image rescaling library"       "$LIBSWSCALE_VERSION"    "$LIBM"
--pkgconfig_generate libswresample "FFmpeg audio resampling library"      "$LIBSWRESAMPLE_VERSION" "$LIBM $LIBSOXR"
-+pkgconfig_generate libavutil     "FFmpeg utility library"               "$LIBAVUTIL_VERSION"     "$LIBavutil_EXTRALIBS"     "$LIBavutil_REQUIRES"     "$LIBavutil_LINKFLAGS"
-+pkgconfig_generate libavcodec    "FFmpeg codec library"                 "$LIBAVCODEC_VERSION"    "$LIBavcodec_EXTRALIBS"    "$LIBavcodec_REQUIRES"    "$LIBavcodec_LINKFLAGS"
-+pkgconfig_generate libavformat   "FFmpeg container format library"      "$LIBAVFORMAT_VERSION"   "$LIBavformat_EXTRALIBS"   "$LIBavformat_REQUIRES"   "$LIBavformat_LINKFLAGS"
-+pkgconfig_generate libavdevice   "FFmpeg device handling library"       "$LIBAVDEVICE_VERSION"   "$LIBavdevice_EXTRALIBS"   "$LIBavdevice_REQUIRES"   "$LIBavdevice_LINKFLAGS"
-+pkgconfig_generate libavfilter   "FFmpeg audio/video filtering library" "$LIBAVFILTER_VERSION"   "$LIBavfilter_EXTRALIBS"   "$LIBavfilter_REQUIRES"   "$LIBavfilter_LINKFLAGS"
-+pkgconfig_generate libpostproc   "FFmpeg postprocessing library"        "$LIBPOSTPROC_VERSION"   "$LIBpostproc_EXTRALIBS"   "$LIBpostproc_REQUIRES"   "$LIBpostproc_LINKFLAGS"
-+pkgconfig_generate libavresample "Libav audio resampling library"       "$LIBAVRESAMPLE_VERSION" "$LIBreavsample_EXTRALIBS" "$LIBavresample_REQUIRES" "$LIBavresample_LINKFLAGS"
-+pkgconfig_generate libswscale    "FFmpeg image rescaling library"       "$LIBSWSCALE_VERSION"    "$LIBswscale_EXTRALIBS"    "$LIBswscale_REQUIRES"    "$LIBswscale_LINKFLAGS"
-+pkgconfig_generate libswresample "FFmpeg audio rescaling library"       "$LIBSWRESAMPLE_VERSION" "$LIBswresample_EXTRALIBS" "$LIBswresample_REQUIRES" "$LIBswresample_LINKFLAGS"
+@@ -6069,6 +6073,7 @@ enabled libcelt           && require libcelt celt/celt
+                                die "ERROR: libcelt must be installed and version must be >= 0.11.0."; }
+ enabled libcaca           && require_pkg_config libcaca caca caca.h caca_create_canvas
+ enabled libcodec2         && require libcodec2 codec2/codec2.h codec2_create -lcodec2
++enabled libdav1d          && require_pkg_config libdav1d "dav1d >= 0.1.0" "dav1d/dav1d.h" dav1d_version
+ enabled libdavs2          && require_pkg_config libdavs2 "davs2 >= 1.5.115" davs2.h davs2_decoder_open
+ enabled libdc1394         && require_pkg_config libdc1394 libdc1394-2 dc1394/dc1394.h dc1394_new
+ enabled libdrm            && require_pkg_config libdrm libdrm xf86drm.h drmGetVersion

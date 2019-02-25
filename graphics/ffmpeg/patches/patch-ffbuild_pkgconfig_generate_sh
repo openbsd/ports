@@ -1,0 +1,35 @@
+$OpenBSD: patch-ffbuild_pkgconfig_generate_sh,v 1.1 2019/02/25 22:41:34 sthen Exp $
+
+Index: ffbuild/pkgconfig_generate.sh
+--- ffbuild/pkgconfig_generate.sh.orig
++++ ffbuild/pkgconfig_generate.sh
+@@ -12,7 +12,7 @@ shortname=$1
+ name=lib${shortname}
+ fullname=${name}${build_suffix}
+ comment=$2
+-libs=$(eval echo \$extralibs_${shortname})
++libs=$(eval echo \$${name}_extralibs)
+ deps=$(eval echo \$${shortname}_deps)
+ 
+ for dep in $deps; do
+@@ -20,9 +20,9 @@ for dep in $deps; do
+     fulldepname=${depname}${build_suffix}
+     . ${depname}/${depname}.version
+     depversion=$(eval echo \$${depname}_VERSION)
+-    requires="$requires ${fulldepname} >= ${depversion}, "
+ done
+-requires=${requires%, }
++requires=$(eval echo \$${name}_requires)
++linkflags=$(eval echo \$${name}_linkflags)
+ 
+ version=$(grep ${name}_VERSION= $name/${name}.version | cut -d= -f2)
+ 
+@@ -38,7 +38,7 @@ Version: $version
+ Requires: $($shared || echo $requires)
+ Requires.private: $($shared && echo $requires)
+ Conflicts:
+-Libs: -L\${libdir} $rpath -l${fullname#lib} $($shared || echo $libs)
++Libs: -L\${libdir} $rpath -l${fullname#lib} $($shared || echo $libs) $linkflags
+ Libs.private: $($shared && echo $libs)
+ Cflags: -I\${includedir}
+ EOF

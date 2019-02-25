@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.177 2018/12/30 12:10:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.178 2019/02/25 22:41:34 sthen Exp $
 
 COMMENT=	audio/video converter and streamer
 
-V=		2.8.15
+V=		4.1.1
 DISTNAME=	ffmpeg-${V}
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
-REVISION=	3
 EPOCH=		0
 
-SHARED_LIBS=	avcodec		22.2 \
-		avdevice	10.0 \
-		avfilter	7.3 \
-		avformat	19.4 \
-		avresample	1.0 \
-		avutil		12.4 \
-		postproc	16.1 \
-		swresample	1.2 \
-		swscale		6.1
+SHARED_LIBS=	avcodec		23.0 \
+		avdevice	11.0 \
+		avfilter	8.0 \
+		avformat	20.0 \
+		avresample	2.0 \
+		avutil		13.0 \
+		postproc	17.0 \
+		swresample	2.0 \
+		swscale		7.0
 
 HOMEPAGE=	https://ffmpeg.org/
 
@@ -28,15 +27,15 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	SDL X11 Xext Xv ass bz2 c crypto fontconfig freetype fribidi \
-		gsm m mp3lame opus pthread sndio speex ssl v4l2 vorbis \
-		vorbisenc vpx x264 x265 xcb xcb-shape xcb-shm xcb-xfixes \
-		xvidcore z
+WANTLIB=	SDL2 X11 Xext Xv ass bz2 c crypto dav1d fontconfig freetype \
+		fribidi gsm m mp3lame opus pthread sndio speex ssl v4l2 \
+		vorbis vorbisenc vpx x264 x265 xcb xcb-shape xcb-shm \
+		xcb-xfixes xvidcore z
 
 BUILD_DEPENDS=	textproc/texi2html \
 		multimedia/frei0r-plugins
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+=	devel/yasm
+BUILD_DEPENDS+=	devel/nasm
 .endif
 LIB_DEPENDS=	archivers/bzip2 \
 		audio/lame \
@@ -44,7 +43,8 @@ LIB_DEPENDS=	archivers/bzip2 \
 		audio/opus \
 		audio/speex \
 		audio/gsm \
-		devel/sdl \
+		devel/sdl2 \
+		multimedia/dav1d \
 		multimedia/libass \
 		multimedia/libv4l \
 		multimedia/libvpx \
@@ -53,13 +53,13 @@ LIB_DEPENDS=	archivers/bzip2 \
 		multimedia/xvidcore
 
 # inter-library dependencies for the current configuration
-LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lgsm -lmp3lame -lopus -lspeex -lvorbis -lvorbisenc -lvpx -lx264 -lx265 -lxvidcore -lz -pthread
-LIBavdevice_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 -lXext -lXv -lxcb-render -lxcb-shape -lxcb-shm -lxcb-xfixes -lxcb -lsndio -lv4l2
-LIBavfilter_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lass -lfontconfig -lfreetype -lfribidi
-LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lssl -lcrypto -pthread
-LIBavresample_EXTRALIBS=
+LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -ldav1d -lgsm -lmp3lame -lopus -lspeex -lvorbis -lvorbisenc -lvpx -lx264 -lx265 -lxvidcore -lm -lz -pthread
+LIBavdevice_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 -lXext -lXv -lxcb-shape -lxcb-shm -lxcb-xfixes -lxcb -lsndio -lv4l2 -lm
+LIBavfilter_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lass -lfontconfig -lfreetype -lfribidi -lm -lz -pthread
+LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lssl -lcrypto -lm -lz
+LIBavresample_EXTRALIBS=-lm
 LIBavutil_EXTRALIBS=-lm -pthread
-LIBpostproc_EXTRALIBS=
+LIBpostproc_EXTRALIBS=-lm
 LIBswresample_EXTRALIBS=-lm
 LIBswscale_EXTRALIBS=-lm
 
@@ -72,6 +72,7 @@ OPTFLAGS=	${CFLAGS}
 # until the system headers are fixed properly.
 OPTFLAGS+=	-Wno-redundant-decls
 
+FIX_EXTRACT_PERMISSIONS=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+= --enable-shared \
@@ -83,20 +84,19 @@ CONFIGURE_ARGS+= --enable-shared \
 		--disable-indev=jack \
 		--disable-indev=oss \
 		--disable-lzma \
-		--disable-mips32r5 \
-		--disable-mips64r6 \
-		--disable-mipsdspr1 \
+		--disable-mipsdsp \
 		--disable-mipsdspr2 \
 		--disable-mipsfpu \
 		--disable-mmi \
 		--disable-msa \
 		--disable-outdev=oss \
-		--disable-outdev=sdl \
+		--disable-outdev=sdl2 \
 		--enable-avresample \
 		--enable-fontconfig \
 		--enable-frei0r \
 		--enable-gpl \
 		--enable-libass \
+		--enable-libdav1d \
 		--enable-libfreetype \
 		--enable-libfribidi \
 		--enable-libgsm \
@@ -112,39 +112,42 @@ CONFIGURE_ARGS+= --enable-shared \
 		--enable-nonfree \
 		--enable-openssl \
 		--extra-cflags="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		--extra-ldlibflags="${LDLIBFLAGS}" \
 		--extra-libs="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		--extra-ldsoflags="${LDLIBFLAGS}" \
 		--mandir=${PREFIX}/man \
 		--optflags="${OPTFLAGS}"
 
-CONFIGURE_ENV+=	LIBavcodec_EXTRALIBS="${LIBavcodec_EXTRALIBS}" \
-		LIBavdevice_EXTRALIBS="${LIBavdevice_EXTRALIBS}" \
-		LIBavfilter_EXTRALIBS="${LIBavfilter_EXTRALIBS}" \
-		LIBavformat_EXTRALIBS="${LIBavformat_EXTRALIBS}" \
-		LIBavresample_EXTRALIBS="${LIBavresample_EXTRALIBS}" \
-		LIBavutil_EXTRALIBS="${LIBavutil_EXTRALIBS}" \
-		LIBpostproc_EXTRALIBS="${LIBpostproc_EXTRALIBS}" \
-		LIBswresample_EXTRALIBS="${LIBswresample_EXTRALIBS}" \
-		LIBswscale_EXTRALIBS="${LIBswscale_EXTRALIBS}" \
-		LIBavcodec_LINKFLAGS="-Wl,-rpath-link,${LOCALBASE}/lib" \
-		LIBavdevice_LINKFLAGS="-Wl,-rpath-link,${LOCALBASE}/lib:${X11BASE}/lib" \
-		LIBavfilter_LINKFLAGS="-Wl,-rpath-link,${LOCALBASE}/lib:${X11BASE}/lib" \
-		LIBavformat_LINKFLAGS="-Wl,-rpath-link,${LOCALBASE}/lib" \
-		LIBavresample_LINKFLAGS="" \
-		LIBavutil_LINKFLAGS="" \
-		LIBpostproc_LINKFLAGS="" \
-		LIBswresample_LINKFLAGS="" \
-		LIBswscale_LINKFLAGS="" \
-		LIBavcodec_REQUIRES="libavutil libswresample opus speex vpx x264 x265" \
-		LIBavdevice_REQUIRES="libavcodec libavfilter libavformat libavutil libpostproc libswresample libswscale" \
-		LIBavfilter_REQUIRES="libavcodec libavformat libavresample libavutil libpostproc libswresample libswscale" \
-		LIBavformat_REQUIRES="libavcodec libavutil libswresample" \
-		LIBavresample_REQUIRES="libavutil" \
-		LIBavutil_REQUIRES="" \
-		LIBpostproc_REQUIRES="libavutil" \
-		LIBswresample_REQUIRES="libavutil" \
-		LIBswscale_REQUIRES="libavutil" \
+CONFIGURE_ENV+=	TERM=${TERM} \
 		TMPDIR=${WRKBUILD}
+
+MAKE_ENV+=	V=1 \
+		libavcodec_extralibs="${LIBavcodec_EXTRALIBS}" \
+		libavdevice_extralibs="${LIBavdevice_EXTRALIBS}" \
+		libavfilter_extralibs="${LIBavfilter_EXTRALIBS}" \
+		libavformat_extralibs="${LIBavformat_EXTRALIBS}" \
+		libavresample_extralibs="${LIBavresample_EXTRALIBS}" \
+		libavutil_extralibs="${LIBavutil_EXTRALIBS}" \
+		libpostproc_extralibs="${LIBpostproc_EXTRALIBS}" \
+		libswresample_extralibs="${LIBswresample_EXTRALIBS}" \
+		libswscale_extralibs="${LIBswscale_EXTRALIBS}" \
+		libavcodec_linkflags="-Wl,-rpath-link,${LOCALBASE}/lib" \
+		libavdevice_linkflags="-Wl,-rpath-link,${LOCALBASE}/lib:${X11BASE}/lib" \
+		libavfilter_linkflags="-Wl,-rpath-link,${LOCALBASE}/lib:${X11BASE}/lib" \
+		libavformat_linkflags="-Wl,-rpath-link,${LOCALBASE}/lib" \
+		libavresample_linkflags="" \
+		libavutil_linkflags="" \
+		libpostproc_linkflags="" \
+		libswresample_linkflags="" \
+		libswscale_linkflags="" \
+		libavcodec_requires="libswresample libavutil" \
+		libavdevice_requires="libavfilter libswscale libpostproc libavformat libavcodec libswresample libavresample libavutil" \
+		libavfilter_requires="libswscale libpostproc libavformat libavcodec libswresample libavresample libavutil" \
+		libavformat_requires="libavcodec libswresample libavutil" \
+		libavresample_requires="libavutil" \
+		libavutil_requires="" \
+		libpostproc_requires="libavutil" \
+		libswresample_requires="libavutil" \
+		libswscale_requires="libavutil"
 
 VERSION_FLAGS=	libavcodec_VERSION=${LIBavcodec_VERSION} \
 		libavdevice_VERSION=${LIBavdevice_VERSION} \
@@ -156,13 +159,11 @@ VERSION_FLAGS=	libavcodec_VERSION=${LIBavcodec_VERSION} \
 		libswresample_VERSION=${LIBswresample_VERSION} \
 		libswscale_VERSION=${LIBswscale_VERSION}
 
-MAKE_ENV=	V=1
-
 MAKE_FLAGS=	${VERSION_FLAGS} \
-		LIBavcodec_EXTRALIBS="-lavutil -lswresample ${LIBavcodec_EXTRALIBS}" \
-		LIBavdevice_EXTRALIBS="-lavcodec -lavfilter -lavformat -lavutil -lpostproc -lswresample -lswscale ${LIBavdevice_EXTRALIBS}" \
-		LIBavfilter_EXTRALIBS="-lavcodec -lavformat -lavresample -lavutil -lpostproc -lswresample -lswscale ${LIBavfilter_EXTRALIBS}" \
-		LIBavformat_EXTRALIBS="-lavcodec -lavutil -lswresample ${LIBavformat_EXTRALIBS}" \
+		LIBavcodec_EXTRALIBS="-lswresample -lavutil ${LIBavcodec_EXTRALIBS}" \
+		LIBavdevice_EXTRALIBS="-lavfilter -lswscale -lpostproc -lavformat -lavcodec -lswresample -lavresample -lavutil ${LIBavdevice_EXTRALIBS}" \
+		LIBavfilter_EXTRALIBS="-lswscale -lpostproc -lavformat -lavcodec -lswresample -lavresample -lavutil ${LIBavfilter_EXTRALIBS}" \
+		LIBavformat_EXTRALIBS="-lavcodec -lswresample -lavutil ${LIBavformat_EXTRALIBS}" \
 		LIBavresample_EXTRALIBS="-lavutil ${LIBavresample_EXTRALIBS}" \
 		LIBavutil_EXTRALIBS="${LIBavutil_EXTRALIBS}" \
 		LIBpostproc_EXTRALIBS="-lavutil ${LIBpostproc_EXTRALIBS}" \
@@ -178,7 +179,7 @@ CONFIGURE_ARGS+=--disable-stripping
 ALL_TARGET=	all tools/qt-faststart
 TEST_TARGET=	check
 
-HTML_DOCS=	developer faq ffmpeg ffplay ffprobe ffserver general libavfilter
+HTML_DOCS=	developer faq ffmpeg ffplay ffprobe general libavfilter
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ffmpeg
@@ -187,7 +188,5 @@ post-install:
 .for doc in ${HTML_DOCS}
 	${INSTALL_DATA} ${WRKBUILD}/doc/${doc}.html ${PREFIX}/share/doc/ffmpeg
 .endfor
-	${INSTALL_DATA} ${WRKBUILD}/doc/ffserver.conf \
-		${PREFIX}/share/examples/ffmpeg
 
 .include <bsd.port.mk>

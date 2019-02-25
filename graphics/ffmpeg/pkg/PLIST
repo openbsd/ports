@@ -1,19 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.34 2018/09/04 12:46:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.35 2019/02/25 22:41:34 sthen Exp $
 @bin bin/ffmpeg
 @bin bin/ffplay
 @bin bin/ffprobe
-@bin bin/ffserver
 @bin bin/qt-faststart
 include/libavcodec/
+include/libavcodec/ac3_parser.h
+include/libavcodec/adts_parser.h
 include/libavcodec/avcodec.h
+include/libavcodec/avdct.h
 include/libavcodec/avfft.h
 include/libavcodec/d3d11va.h
+include/libavcodec/dirac.h
 include/libavcodec/dv_profile.h
 include/libavcodec/dxva2.h
-include/libavcodec/old_codec_ids.h
+include/libavcodec/jni.h
+include/libavcodec/mediacodec.h
 include/libavcodec/qsv.h
 include/libavcodec/vaapi.h
-include/libavcodec/vda.h
 include/libavcodec/vdpau.h
 include/libavcodec/version.h
 include/libavcodec/videotoolbox.h
@@ -23,10 +26,7 @@ include/libavdevice/
 include/libavdevice/avdevice.h
 include/libavdevice/version.h
 include/libavfilter/
-include/libavfilter/asrc_abuffer.h
-include/libavfilter/avcodec.h
 include/libavfilter/avfilter.h
-include/libavfilter/avfiltergraph.h
 include/libavfilter/buffersink.h
 include/libavfilter/buffersrc.h
 include/libavfilter/version.h
@@ -40,9 +40,9 @@ include/libavresample/version.h
 include/libavutil/
 include/libavutil/adler32.h
 include/libavutil/aes.h
+include/libavutil/aes_ctr.h
 include/libavutil/attributes.h
 include/libavutil/audio_fifo.h
-include/libavutil/audioconvert.h
 include/libavutil/avassert.h
 include/libavutil/avconfig.h
 include/libavutil/avstring.h
@@ -58,9 +58,11 @@ include/libavutil/channel_layout.h
 include/libavutil/common.h
 include/libavutil/cpu.h
 include/libavutil/crc.h
+include/libavutil/des.h
 include/libavutil/dict.h
 include/libavutil/display.h
 include/libavutil/downmix_info.h
+include/libavutil/encryption_info.h
 include/libavutil/error.h
 include/libavutil/eval.h
 include/libavutil/ffversion.h
@@ -69,6 +71,16 @@ include/libavutil/file.h
 include/libavutil/frame.h
 include/libavutil/hash.h
 include/libavutil/hmac.h
+include/libavutil/hwcontext.h
+include/libavutil/hwcontext_cuda.h
+include/libavutil/hwcontext_d3d11va.h
+include/libavutil/hwcontext_drm.h
+include/libavutil/hwcontext_dxva2.h
+include/libavutil/hwcontext_mediacodec.h
+include/libavutil/hwcontext_qsv.h
+include/libavutil/hwcontext_vaapi.h
+include/libavutil/hwcontext_vdpau.h
+include/libavutil/hwcontext_videotoolbox.h
 include/libavutil/imgutils.h
 include/libavutil/intfloat.h
 include/libavutil/intreadwrite.h
@@ -76,12 +88,12 @@ include/libavutil/lfg.h
 include/libavutil/log.h
 include/libavutil/lzo.h
 include/libavutil/macros.h
+include/libavutil/mastering_display_metadata.h
 include/libavutil/mathematics.h
 include/libavutil/md5.h
 include/libavutil/mem.h
 include/libavutil/motion_vector.h
 include/libavutil/murmur3.h
-include/libavutil/old_pix_fmts.h
 include/libavutil/opt.h
 include/libavutil/parseutils.h
 include/libavutil/pixdesc.h
@@ -89,17 +101,20 @@ include/libavutil/pixelutils.h
 include/libavutil/pixfmt.h
 include/libavutil/random_seed.h
 include/libavutil/rational.h
+include/libavutil/rc4.h
 include/libavutil/replaygain.h
 include/libavutil/ripemd.h
 include/libavutil/samplefmt.h
 include/libavutil/sha.h
 include/libavutil/sha512.h
+include/libavutil/spherical.h
 include/libavutil/stereo3d.h
 include/libavutil/tea.h
 include/libavutil/threadmessage.h
 include/libavutil/time.h
 include/libavutil/timecode.h
 include/libavutil/timestamp.h
+include/libavutil/tree.h
 include/libavutil/twofish.h
 include/libavutil/version.h
 include/libavutil/xtea.h
@@ -154,8 +169,6 @@ lib/pkgconfig/libswscale.pc
 @man man/man1/ffplay.1
 @man man/man1/ffprobe-all.1
 @man man/man1/ffprobe.1
-@man man/man1/ffserver-all.1
-@man man/man1/ffserver.1
 @man man/man3/libavcodec.3
 @man man/man3/libavdevice.3
 @man man/man3/libavfilter.3
@@ -182,8 +195,6 @@ share/doc/ffmpeg/ffplay-all.html
 share/doc/ffmpeg/ffplay.html
 share/doc/ffmpeg/ffprobe-all.html
 share/doc/ffmpeg/ffprobe.html
-share/doc/ffmpeg/ffserver-all.html
-share/doc/ffmpeg/ffserver.html
 share/doc/ffmpeg/general.html
 share/doc/ffmpeg/git-howto.html
 share/doc/ffmpeg/libavcodec.html
@@ -193,24 +204,28 @@ share/doc/ffmpeg/libavformat.html
 share/doc/ffmpeg/libavutil.html
 share/doc/ffmpeg/libswresample.html
 share/doc/ffmpeg/libswscale.html
+share/doc/ffmpeg/mailing-list-faq.html
 share/doc/ffmpeg/nut.html
 share/doc/ffmpeg/platform.html
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/ffmpeg/
-share/examples/ffmpeg/ffserver.conf
 share/ffmpeg/
 share/ffmpeg/examples/
 share/ffmpeg/examples/Makefile
 share/ffmpeg/examples/README
 share/ffmpeg/examples/avio_dir_cmd.c
 share/ffmpeg/examples/avio_reading.c
-share/ffmpeg/examples/decoding_encoding.c
+share/ffmpeg/examples/decode_audio.c
+share/ffmpeg/examples/decode_video.c
 share/ffmpeg/examples/demuxing_decoding.c
+share/ffmpeg/examples/encode_audio.c
+share/ffmpeg/examples/encode_video.c
 share/ffmpeg/examples/extract_mvs.c
 share/ffmpeg/examples/filter_audio.c
 share/ffmpeg/examples/filtering_audio.c
 share/ffmpeg/examples/filtering_video.c
 share/ffmpeg/examples/http_multiclient.c
+share/ffmpeg/examples/hw_decode.c
 share/ffmpeg/examples/metadata.c
 share/ffmpeg/examples/muxing.c
 share/ffmpeg/examples/qsvdec.c
@@ -219,6 +234,8 @@ share/ffmpeg/examples/resampling_audio.c
 share/ffmpeg/examples/scaling_video.c
 share/ffmpeg/examples/transcode_aac.c
 share/ffmpeg/examples/transcoding.c
+share/ffmpeg/examples/vaapi_encode.c
+share/ffmpeg/examples/vaapi_transcode.c
 share/ffmpeg/ffprobe.xsd
 share/ffmpeg/libvpx-1080p.ffpreset
 share/ffmpeg/libvpx-1080p50_60.ffpreset
