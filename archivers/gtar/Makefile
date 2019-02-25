@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.81 2019/01/13 15:34:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.82 2019/02/25 21:01:58 naddy Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
-DISTNAME=	tar-1.31
+DISTNAME=	tar-1.32
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.gnu.org/software/tar/
@@ -44,13 +44,6 @@ WANTLIB+=	iconv intl
 LIB_DEPENDS+=	devel/gettext
 LDSTATIC=
 .endif
-
-# autom4te
-TEST_DEPENDS=	devel/autoconf/2.69
-TEST_ENV=	AUTOCONF_VERSION=2.69
-# without GNU m4, commands with leading parenthesis are mis-expanded
-TEST_DEPENDS+=	devel/m4
-TEST_ENV+=	M4=${LOCALBASE}/bin/gm4
 
 # do not rebuild tar.info
 post-patch:
