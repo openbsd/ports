@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.171 2018/11/19 13:52:09 espie Exp $
+# $OpenBSD: update-plist,v 1.172 2019/02/25 20:48:09 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -261,11 +261,13 @@ sub figure_out_dependencies
 {
 	my ($self, $cache, $portsdir) = @_;
 	my @solve = ();
+	my %solve = ();
 	my $register = $self->{directory_register};
 	# compute initial list of dependencies
 	for my $full (keys %{$self->{state}{dependencies}}) {
 		next unless $full =~ m/^(.*?):/;
 		push(@solve, $1);
+		$solve{$1} = 1;
 	}
 
 	# and do the walk
@@ -287,7 +289,10 @@ sub figure_out_dependencies
 				delete $register->{$dir};
 			}
 		}
-		push(@solve, keys %{$cache->{$pkgpath}{pkgpath}});
+		for my $k (keys %{$cache->{$pkgpath}{pkgpath}}) {
+			push(@solve, $k) unless defined $solve{$k};
+			$solve{$k} = 1;
+		}
 	}
 }
 
