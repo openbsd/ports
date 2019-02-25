@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2018/12/18 09:34:05 bentley Exp $
+# $OpenBSD: Makefile,v 1.98 2019/02/25 11:25:38 fcambus Exp $
 
     SUBDIR =
     SUBDIR += base64
@@ -7,6 +7,7 @@
     SUBDIR += d1489
     SUBDIR += dos2unix
     SUBDIR += enca
+    SUBDIR += fondu
     SUBDIR += html2text
     SUBDIR += html2wml
     SUBDIR += ish
