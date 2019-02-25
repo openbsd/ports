@@ -1,7 +1,8 @@
-$OpenBSD: patch-waftools_detections_compiler_py,v 1.1 2016/07/10 15:27:55 czarkoff Exp $
---- waftools/detections/compiler.py.orig	Fri Jul  8 14:14:10 2016
-+++ waftools/detections/compiler.py	Fri Jul  8 14:14:33 2016
-@@ -41,9 +41,7 @@ def __add_generic_flags__(ctx):
+$OpenBSD: patch-waftools_detections_compiler_py,v 1.2 2019/02/25 22:43:46 sthen Exp $
+Index: waftools/detections/compiler.py
+--- waftools/detections/compiler.py.orig
++++ waftools/detections/compiler.py
+@@ -42,9 +42,7 @@ def __add_generic_flags__(ctx):
  def __add_gcc_flags__(ctx):
      ctx.env.CFLAGS += ["-Wall", "-Wundef", "-Wmissing-prototypes", "-Wshadow",
                         "-Wno-switch", "-Wparentheses", "-Wpointer-arith",
