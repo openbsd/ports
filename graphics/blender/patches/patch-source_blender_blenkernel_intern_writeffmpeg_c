@@ -1,0 +1,60 @@
+$OpenBSD: patch-source_blender_blenkernel_intern_writeffmpeg_c,v 1.1 2019/02/25 22:22:13 sthen Exp $
+
+https://svnweb.freebsd.org/ports/head/graphics/blender/files/patch-ffmpeg4
+
+Index: source/blender/blenkernel/intern/writeffmpeg.c
+--- source/blender/blenkernel/intern/writeffmpeg.c.orig
++++ source/blender/blenkernel/intern/writeffmpeg.c
+@@ -605,8 +605,6 @@ static AVStream *alloc_video_stream(FFMpegContext *con
+ 	c->rc_buffer_aggressivity = 1.0;
+ #endif
+ 
+-	c->me_method = ME_EPZS;
+-	
+ 	codec = avcodec_find_encoder(c->codec_id);
+ 	if (!codec)
+ 		return NULL;
+@@ -668,14 +666,14 @@ static AVStream *alloc_video_stream(FFMpegContext *con
+ 	    )
+ 	{
+ 		PRINT("Using global header\n");
+-		c->flags |= CODEC_FLAG_GLOBAL_HEADER;
++		c->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+ 	}
+ 	
+ 	/* Determine whether we are encoding interlaced material or not */
+ 	if (rd->mode & R_FIELDS) {
+ 		PRINT("Encoding interlaced video\n");
+-		c->flags |= CODEC_FLAG_INTERLACED_DCT;
+-		c->flags |= CODEC_FLAG_INTERLACED_ME;
++		c->flags |= AV_CODEC_FLAG_INTERLACED_DCT;
++		c->flags |= AV_CODEC_FLAG_INTERLACED_ME;
+ 	}
+ 
+ 	/* xasp & yasp got float lately... */
+@@ -764,7 +762,7 @@ static AVStream *alloc_audio_stream(FFMpegContext *con
+ 	}
+ 
+ 	if (of->oformat->flags & AVFMT_GLOBALHEADER) {
+-		c->flags |= CODEC_FLAG_GLOBAL_HEADER;
++		c->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+ 	}
+ 
+ 	set_ffmpeg_properties(rd, c, "audio", &opts);
+@@ -783,14 +781,14 @@ static AVStream *alloc_audio_stream(FFMpegContext *con
+ 	st->codec->time_base.den = st->codec->sample_rate;
+ 
+ #ifndef FFMPEG_HAVE_ENCODE_AUDIO2
+-	context->audio_outbuf_size = FF_MIN_BUFFER_SIZE;
++	context->audio_outbuf_size = AV_INPUT_BUFFER_MIN_SIZE;
+ #endif
+ 
+ 	if (c->frame_size == 0)
+ 		// used to be if ((c->codec_id >= CODEC_ID_PCM_S16LE) && (c->codec_id <= CODEC_ID_PCM_DVD))
+ 		// not sure if that is needed anymore, so let's try out if there are any
+ 		// complaints regarding some ffmpeg versions users might have
+-		context->audio_input_samples = FF_MIN_BUFFER_SIZE * 8 / c->bits_per_coded_sample / c->channels;
++		context->audio_input_samples = AV_INPUT_BUFFER_MIN_SIZE * 8 / c->bits_per_coded_sample / c->channels;
+ 	else {
+ 		context->audio_input_samples = c->frame_size;
+ #ifndef FFMPEG_HAVE_ENCODE_AUDIO2
