@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2019/02/14 06:26:03 pvk Exp $
+# $OpenBSD: Makefile,v 1.10 2019/02/25 20:37:11 pvk Exp $
 
 COMMENT =	open source Slack-alternative
 
-V =		5.7.1
+V =		5.8.0
 GH_ACCOUNT =	mattermost
 GH_PROJECT =	mattermost-server
 GH_TAGNAME =	v${V}
@@ -30,19 +30,20 @@ MODGO_LDFLAGS =	-X github.com/mattermost/mattermost-server/model.BuildNumber=${V
 NO_TEST =	Yes
 
 pre-configure:
-	${SUBST_CMD} ${WRKDIST}/config/default.json
+	${SUBST_CMD} ${WRKDIST}/config/default.json ${WRKDIST}/utils/fileutils/fileutils.go \
+		${WRKDIST}/cmd/mattermost/commands/logs.go
 
 do-build:
 	cd ${WRKSRC}/cmd/mattermost && \
 		${MODGO_BUILD_CMD}
 
 do-install:
-	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/mattermost ${PREFIX}/sbin/mattermost-server
-	${INSTALL_DATA_DIR} ${PREFIX}/share/mattermost
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mattermost
-	cp ${WRKSRC}/config/default.json ${PREFIX}/share/examples/mattermost
+	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/mattermost ${PREFIX}/bin/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/mattermost/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mattermost/
+	cp ${WRKSRC}/config/default.json ${PREFIX}/share/examples/mattermost/
 .for _d in client fonts i18n templates
-	cp -Rp ${WRKDIR}/mattermost/${_d} ${PREFIX}/share/mattermost
+	cp -Rp ${WRKDIR}/mattermost/${_d} ${PREFIX}/share/mattermost/
 .endfor
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-$OpenBSD: patch-config_default_json,v 1.2 2018/08/25 13:52:25 robert Exp $
+$OpenBSD: patch-config_default_json,v 1.3 2019/02/25 20:37:11 pvk Exp $
 
 Index: config/default.json
 --- config/default.json.orig
 +++ config/default.json
-@@ -121,7 +121,7 @@
+@@ -123,7 +123,7 @@
      },
      "SqlSettings": {
          "DriverName": "mysql",
@@ -12,7 +12,7 @@ Index: config/default.json
          "DataSourceReplicas": [],
          "DataSourceSearchReplicas": [],
          "MaxIdleConns": 20,
-@@ -132,13 +132,13 @@
+@@ -134,13 +134,13 @@
          "QueryTimeout": 30
      },
      "LogSettings": {
@@ -29,7 +29,7 @@ Index: config/default.json
          "EnableWebhookDebugging": true,
          "EnableDiagnostics": true
      },
-@@ -155,7 +155,7 @@
+@@ -157,7 +157,7 @@
          "EnableMobileDownload": true,
          "MaxFileSize": 52428800,
          "DriverName": "local",
@@ -38,7 +38,7 @@ Index: config/default.json
          "EnablePublicLink": false,
          "PublicLinkSalt": "",
          "InitialFont": "nunito-bold.ttf",
-@@ -182,8 +182,8 @@
+@@ -184,8 +184,8 @@
          "EnableSMTPAuth": false,
          "SMTPUsername": "",
          "SMTPPassword": "",
@@ -48,8 +48,8 @@ Index: config/default.json
 +        "SMTPPort": "25",
          "ConnectionSecurity": "",
          "InviteSalt": "",
-         "SendPushNotifications": false,
-@@ -296,7 +296,7 @@
+         "SendPushNotifications": true,
+@@ -297,7 +297,7 @@
      },
      "ComplianceSettings": {
          "Enable": false,
@@ -58,8 +58,8 @@ Index: config/default.json
          "EnableDaily": false
      },
      "LocalizationSettings": {
-@@ -370,7 +370,7 @@
-         "TurnSharedKey": ""
+@@ -365,7 +365,7 @@
+         "MaxUsersForStatistics": 2500
      },
      "ElasticsearchSettings": {
 -        "ConnectionUrl": "http://dockerhost:9200",
@@ -67,7 +67,7 @@ Index: config/default.json
          "Username": "elastic",
          "Password": "changeme",
          "EnableIndexing": false,
-@@ -412,8 +412,8 @@
+@@ -407,8 +407,8 @@
      "PluginSettings": {
          "Enable": true,
          "EnableUploads": false,
@@ -77,4 +77,4 @@ Index: config/default.json
 +        "ClientDirectory": "${LOCALSTATEDIR}/mattermost/client/plugins",
          "Plugins": {},
          "PluginStates": {}
-     }
+     },
