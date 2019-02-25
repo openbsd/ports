@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2018/12/05 20:19:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/02/25 22:44:14 sthen Exp $
 
-COMMENT=	lightweight headless squeezebox emulator
+COMMENT=	lightweight headless squeezebox player
 
-V=		1.8
-REVISION=	7
-DISTNAME=	squeezelite-v$V
-PKGNAME=	squeezelite-$V
+V=		1.9.0.1120
+GH_ACCOUNT=	ralph-irving
+GH_PROJECT=	squeezelite
+GH_COMMIT=	59697689cb09f9899c96b3769da0dee4fc9c3508
+DISTNAME=	squeezelite-$V
 
 CATEGORIES=	audio
 
@@ -15,10 +16,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += FLAC avcodec avformat avutil c faad m mad mpg123 portaudio
-WANTLIB += pthread soxr vorbis vorbisfile
-
-# https://squeezelite.googlecode.com/archive
-MASTER_SITES=	https://spacehopper.org/mirrors/
+WANTLIB += pthread soxr vorbisfile
 
 LIB_DEPENDS=	audio/faad \
 		audio/flac \
@@ -28,12 +26,11 @@ LIB_DEPENDS=	audio/faad \
 		audio/mpg123 \
 		audio/portaudio-svn \
 		graphics/ffmpeg
-LDFLAGS+=	-L${LOCALBASE}/lib -lm -lportaudio -lpthread -lFLAC -lmpg123
-LDFLAGS+=	-lvorbis -lvorbisfile -lsoxr -lmad -lavcodec -lavformat -lfaad
-LDFLAGS+=	-lavutil
 
-MAKE_FLAGS=	CFLAGS="-Wall -fPIC -DFFMPEG -DRESAMPLE -DLINKALL ${CFLAGS}" \
-		CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
+MAKE_FLAGS=	CFLAGS="-Wall -fPIC ${CFLAGS}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		OPTS="-DLINKALL -DFFMPEG -DRESAMPLE -DPORTAUDIO"
+MAKE_ENV=	LDADD="-L${LOCALBASE}/lib -lpthread -lm -lportaudio"
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes

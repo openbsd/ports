@@ -1,7 +1,8 @@
-$OpenBSD: patch-squeezelite_h,v 1.1.1.1 2016/03/21 22:28:24 sthen Exp $
---- squeezelite.h.orig	Fri Feb 13 23:14:05 2015
-+++ squeezelite.h	Fri Feb 13 23:14:08 2015
-@@ -46,7 +46,7 @@
+$OpenBSD: patch-squeezelite_h,v 1.2 2019/02/25 22:44:14 sthen Exp $
+Index: squeezelite.h
+--- squeezelite.h.orig
++++ squeezelite.h
+@@ -59,7 +59,7 @@
  #define OSX       0
  #define WIN       1
  #define FREEBSD   0

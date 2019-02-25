@@ -1,11 +1,11 @@
-$OpenBSD: README,v 1.2 2018/09/04 12:46:09 espie Exp $
+$OpenBSD: README,v 1.3 2019/02/25 22:44:14 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 Squeezelite is a software program emulating a Squeezebox music player.
-It requires a running Squeezebox Server on your network to control it
+It requires a running Logitech Media Server on your network to control it
 and stream music to it.
 
 It can normally auto-detect the server's address, but in more complicated
