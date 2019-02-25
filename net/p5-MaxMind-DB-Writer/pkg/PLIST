@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/25 10:01:19 fcambus Exp $
+${P5ARCH}/MaxMind/
+${P5ARCH}/MaxMind/DB/
+${P5ARCH}/MaxMind/DB/Writer/
+${P5ARCH}/MaxMind/DB/Writer.pm
+${P5ARCH}/MaxMind/DB/Writer/Serializer.pm
+${P5ARCH}/MaxMind/DB/Writer/Tree/
+${P5ARCH}/MaxMind/DB/Writer/Tree.pm
+${P5ARCH}/MaxMind/DB/Writer/Tree/Processor/
+${P5ARCH}/MaxMind/DB/Writer/Tree/Processor/VisualizeTree.pm
+${P5ARCH}/MaxMind/DB/Writer/Util.pm
+${P5ARCH}/auto/MaxMind/
+${P5ARCH}/auto/MaxMind/DB/
+${P5ARCH}/auto/MaxMind/DB/Writer/
+${P5ARCH}/auto/MaxMind/DB/Writer/Tree/
+${P5ARCH}/auto/MaxMind/DB/Writer/Tree/Tree.bs
+${P5ARCH}/auto/MaxMind/DB/Writer/Tree/Tree.so
+@man man/man3p/MaxMind::DB::Writer.3p
+@man man/man3p/MaxMind::DB::Writer::Tree.3p

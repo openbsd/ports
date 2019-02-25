@@ -1,0 +1,14 @@
+$OpenBSD: patch-Build_PL,v 1.1.1.1 2019/02/25 10:01:19 fcambus Exp $
+
+Index: Build.PL
+--- Build.PL.orig
++++ Build.PL
+@@ -100,7 +100,7 @@ $mb->create_build_script();
+ sub _cc_flags {
+     my $mb = shift;
+ 
+-    my %unique = map { $_ => 1 } qw( -std=c99 -fms-extensions -Wall -g ),
++    my %unique = map { $_ => 1 } qw( -std=c99 -Wall -g ),
+         @{ $mb->extra_compiler_flags || [] },
+         _int64_define(),
+         _int128_define();
