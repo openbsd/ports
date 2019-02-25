@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2017/12/24 18:20:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2019/02/25 17:54:46 sthen Exp $
 
 COMMENT=		count lines of code
 
-V=			1.74
+V=			1.80
 DISTNAME=		cloc-${V}
 
 CATEGORIES=		textproc devel
 
-HOMEPAGE=		http://cloc.sourceforge.net/
+HOMEPAGE=		https://github.com/AlDanial/cloc
 
 MAINTAINER=		Joerg Jung <jung@openbsd.org>
 
@@ -19,7 +19,9 @@ MASTER_SITES=		https://github.com/AlDanial/cloc/releases/download/${V}/
 NO_BUILD=		Yes
 PKG_ARCH=		*
 
-RUN_DEPENDS=		devel/p5-Algorithm-Diff textproc/p5-Regexp-Common
+RUN_DEPENDS=		devel/p5-Algorithm-Diff \
+			devel/p5-Parallel-ForkManager \
+			textproc/p5-Regexp-Common
 BUILD_DEPENDS+=		${RUN_DEPENDS}
 
 FAKE_FLAGS=		prefix="${PREFIX}" \
