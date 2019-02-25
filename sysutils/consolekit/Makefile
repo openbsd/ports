@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.69 2019/02/18 11:48:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2019/02/25 17:52:31 ajacoutot Exp $
 
 COMMENT=		framework for defining and tracking users, sessions & seats
 
 PKGNAME=		${DISTNAME:L}
-REVISION=		4
+REVISION=		5
 
 GH_TAGNAME=		1.2.1
 GH_ACCOUNT=		ConsoleKit2
@@ -59,7 +59,7 @@ post-install:
 	rm -r ${WRKINST}/${SYSCONFDIR}/X11/xinit/xinitrc.d \
 		${PREFIX}/share/examples/consolekit/logrotate.d
 	${INSTALL_DATA_DIR} ${PREFIX}/share/polkit-1/rules.d
-	${INSTALL_DATA} ${FILESDIR}/00-openbsd-consolekit.rules \
+	${INSTALL_DATA} ${FILESDIR}/10-openbsd-consolekit.rules \
 		${PREFIX}/share/polkit-1/rules.d
 
 .include <bsd.port.mk>

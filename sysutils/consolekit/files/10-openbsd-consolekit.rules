@@ -1,5 +1,5 @@
 /*
- * $OpenBSD: 00-openbsd-consolekit.rules,v 1.2 2019/02/18 11:48:31 ajacoutot Exp $
+ * $OpenBSD: 10-openbsd-consolekit.rules,v 1.1 2019/02/25 17:52:31 ajacoutot Exp $
  *
  * These rules try to match OpenBSD default behavior
  */

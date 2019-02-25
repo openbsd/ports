@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/01/19 01:50:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2019/02/25 17:52:31 ajacoutot Exp $
 @conflict consolekit-*
 @extra /var/log/ConsoleKit/history
 @bin bin/ck-history
@@ -66,5 +66,5 @@ share/locale/es_419/LC_MESSAGES/
 share/locale/es_419/LC_MESSAGES/ConsoleKit2.mo
 share/locale/ru/LC_MESSAGES/ConsoleKit2.mo
 share/polkit-1/actions/org.freedesktop.consolekit.policy
-share/polkit-1/rules.d/00-openbsd-consolekit.rules
+share/polkit-1/rules.d/10-openbsd-consolekit.rules
 @sample /var/log/ConsoleKit/
