@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2018/12/31 18:42:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2019/02/25 07:48:55 phessler Exp $
 
 # XXX
 # sndio: what to do with (channel) map
@@ -100,7 +100,7 @@ CONFIGURE_ARGS=		--disable-atomic-arm-linux-helpers \
 			--disable-orc \
 			--disable-gsettings
 
-.if ${MACHINE_ARCH} == "aarch64"
+.if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "arm"
 CONFIGURE_ARGS+=	--disable-neon-opt
 .endif
 
