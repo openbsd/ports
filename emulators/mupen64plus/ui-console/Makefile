@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2016/08/20 00:14:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.15 2019/02/26 22:10:55 bentley Exp $
 
 COMMENT =		n64 emulator command-line ui plugin
-REVISION =		4
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -15,5 +14,8 @@ MAKE_FLAGS +=		MANDIR=${PREFIX}/man \
 			PIE=1
 
 USE_WXNEEDED =		Yes
+
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+3,-guic
 
 .include <bsd.port.mk>

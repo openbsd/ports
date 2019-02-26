@@ -1,15 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2018/11/26 18:57:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/02/26 22:10:55 bentley Exp $
 
 COMMENT =		n64 emulator video plugin
-REVISION =		6
-
-# XXX upstream was inconsistent with numbering this release (2.0 vs 2.0.0)
-VERSION =		2.0.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-
-WRKDIST =		${WRKDIR}/mupen64plus-${MUPEN64PLUS_MOD}
 
 WANTLIB =		GL c m pthread ${COMPILER_LIBCXX}
 

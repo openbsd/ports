@@ -1,7 +1,8 @@
-$OpenBSD: patch-projects_unix_Makefile,v 1.1 2015/05/11 09:40:40 bentley Exp $
---- projects/unix/Makefile.orig	Wed Apr 29 02:17:34 2015
-+++ projects/unix/Makefile	Wed Apr 29 02:17:39 2015
-@@ -636,7 +636,6 @@ install: $(TARGET)
+$OpenBSD: patch-projects_unix_Makefile,v 1.2 2019/02/26 22:10:54 bentley Exp $
+Index: projects/unix/Makefile
+--- projects/unix/Makefile.orig
++++ projects/unix/Makefile
+@@ -735,7 +735,6 @@ install: $(TARGET)
  	$(INSTALL) -d "$(DESTDIR)$(INCDIR)"
  	$(INSTALL) -m 0644 ../../src/api/m64p_*.h "$(DESTDIR)$(INCDIR)"
  	-$(LDCONFIG) "$(DESTDIR)$(LIBDIR)"

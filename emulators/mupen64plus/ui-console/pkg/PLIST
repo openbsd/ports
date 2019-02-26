@@ -1,3 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/26 13:38:27 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/02/26 22:10:55 bentley Exp $
 @bin bin/mupen64plus
 @man man/man6/mupen64plus.6
+share/applications/mupen64plus.desktop
+share/icons/hicolor/48x48/apps/mupen64plus.png
+share/icons/hicolor/scalable/apps/mupen64plus.svg
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

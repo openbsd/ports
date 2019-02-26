@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.14 2018/11/26 18:57:27 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.15 2019/02/26 22:10:54 bentley Exp $
 
-ONLY_FOR_ARCHS ?=	amd64 i386 powerpc
-VERSION ?= 		2.5
+ONLY_FOR_ARCHS ?=	amd64 i386 powerpc arm arm64
+VERSION ?= 		2.5.9
 DISTNAME ?=		mupen64plus-${MUPEN64PLUS_MOD}-src-${VERSION}
 PKGNAME ?= 		mupen64plus-${MUPEN64PLUS_MOD}-${VERSION}
-HOMEPAGE ?=		http://mupen64plus.org/
+HOMEPAGE ?=		https://mupen64plus.org/
 CATEGORIES ?=		emulators games
 MASTER_SITES ?=		https://github.com/mupen64plus/mupen64plus-${MUPEN64PLUS_MOD}/releases/download/${VERSION}/
 MAINTAINER ?=		Anthony J. Bentley <anthony@anjbe.name>
@@ -22,7 +22,7 @@ FAKE_FLAGS ?=		PREFIX=${PREFIX} LDCONFIG=true
 
 .if ${MUPEN64PLUS_MOD} != "core"
 MAKE_FLAGS += 		APIDIR=${LOCALBASE}/include/mupen64plus
-BUILD_DEPENDS +=	emulators/mupen64plus/core>=2.5
+BUILD_DEPENDS +=	emulators/mupen64plus/core>=2.5.9
 .endif
 
 WRKBUILD ?=		${WRKDIST}/projects/unix
