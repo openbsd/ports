@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/01/02 12:38:46 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/02/26 16:35:32 sebastia Exp $
 ${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -34,6 +34,7 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/git/providers.mkd
 ${GEM_LIB}/gems/${DISTNAME}/doc/puppetfile.mkd
 ${GEM_LIB}/gems/${DISTNAME}/doc/updating-your-puppetfile.mkd
 ${GEM_LIB}/gems/${DISTNAME}/docker/
+${GEM_LIB}/gems/${DISTNAME}/docker/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/docker/.rspec
 ${GEM_LIB}/gems/${DISTNAME}/docker/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/docker/Makefile
@@ -42,6 +43,9 @@ ${GEM_LIB}/gems/${DISTNAME}/docker/ci/build.ps1
 ${GEM_LIB}/gems/${DISTNAME}/docker/distelli-manifest.yml
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/Dockerfile
+${GEM_LIB}/gems/${DISTNAME}/docker/r10k/docker-entrypoint.d/
+${GEM_LIB}/gems/${DISTNAME}/docker/r10k/docker-entrypoint.d/10-analytics.sh
+${GEM_LIB}/gems/${DISTNAME}/docker/r10k/docker-entrypoint.sh
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/dockerfile_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/fixtures/
