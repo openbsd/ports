@@ -1,7 +1,19 @@
-$OpenBSD: patch-console_console_c,v 1.7 2018/05/29 13:54:05 sthen Exp $
+$OpenBSD: patch-console_console_c,v 1.8 2019/02/26 15:31:17 sthen Exp $
+
+- don't use @SECLEVEL=0
+
 Index: console/console.c
 --- console/console.c.orig
 +++ console/console.c
+@@ -121,7 +121,7 @@ SetupSSL(void)
+ # if defined(REQ_SERVER_CERT)
+ 	    ciphers = "ALL:!LOW:!EXP:!MD5:!aNULL:@STRENGTH";
+ # else
+-	    ciphers = "ALL:aNULL:!LOW:!EXP:!MD5:@STRENGTH" CIPHER_SEC0;
++	    ciphers = "ALL:aNULL:!LOW:!EXP:!MD5:@STRENGTH";
+ # endif
+ 	}
+ 	SSL_CTX_set_verify(ctx, SSL_VERIFY_PEER, SSLVerifyCallback);
 @@ -693,7 +693,7 @@ C2Raw(void)
  	Bye(EX_UNAVAILABLE);
      }
