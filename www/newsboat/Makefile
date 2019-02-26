@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2019/02/11 09:57:52 fcambus Exp $
+# $OpenBSD: Makefile,v 1.8 2019/02/26 09:44:08 fcambus Exp $
 
 COMMENT =	RSS/Atom feed reader for text terminals
 
-V =		2.14
+V =		2.14.1
 DISTNAME =	newsboat-$V
 
 CATEGORIES =	www
@@ -93,6 +93,7 @@ MODCARGO_CRATES +=	time	0.1.41	# MIT/Apache-2.0
 MODCARGO_CRATES +=	ucd-util	0.1.3	# MIT/Apache-2.0
 MODCARGO_CRATES +=	unicode-bidi	0.3.4	# MIT / Apache-2.0
 MODCARGO_CRATES +=	unicode-normalization	0.1.7	# MIT/Apache-2.0
+MODCARGO_CRATES +=	unicode-width	0.1.5	# MIT/Apache-2.0
 MODCARGO_CRATES +=	unicode-xid	0.1.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	unreachable	1.0.0	# MIT / Apache-2.0
 MODCARGO_CRATES +=	url	1.7.2	# MIT/Apache-2.0

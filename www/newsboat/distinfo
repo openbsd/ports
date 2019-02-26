@@ -61,6 +61,7 @@ SHA256 (cargo/time-0.1.41.tar.gz) = hH2kZ78NsFiCqeI3WTSopVz/3J2w0SivFRggAmC6H2w=
 SHA256 (cargo/ucd-util-0.1.3.tar.gz) = U1wgTuTYQ0R4WTSAuPhqtF7JquDoPFaMqBq/D9Doj4Y=
 SHA256 (cargo/unicode-bidi-0.3.4.tar.gz) = SfK9DGRoqCMOHbIpz/gCkhfPYjx2fqXWC/vUJynqVNU=
 SHA256 (cargo/unicode-normalization-0.1.7.tar.gz) = agGAvGH8Wphwgr+hEfTMlcTK/3+XmfPkbfCRY6k3qiU=
+SHA256 (cargo/unicode-width-0.1.5.tar.gz) = iCOGIxxF30cAsnXH/1W282mHgKZQAmOA5y2r52+kZSY=
 SHA256 (cargo/unicode-xid-0.1.0.tar.gz) = /HIwR5bQgY41fq1OAA0ZycF0qyPcEQk6yRkFTSCmp/w=
 SHA256 (cargo/unreachable-1.0.0.tar.gz) = OCgQh3/kSJkd/H8N1uOuXVgIj9DqXjUYllX4TmgU+lY=
 SHA256 (cargo/url-1.7.2.tar.gz) = 3U58DVMSZjaVGaSqTzmddIvTcEOwC94eT/H2ChILNVo=
@@ -70,7 +71,7 @@ SHA256 (cargo/void-1.0.2.tar.gz) = agLkiF7TvA8t6Q6m3UXry7ZtrP/gNUf627DuridwiH0=
 SHA256 (cargo/winapi-0.3.6.tar.gz) = ksHrM2QeJ2z6IUoFIqytV75cVrEMs0izxRF9t186xLA=
 SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/VFvMu7NPO+Cf9vtqtRt7Y=
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
-SHA256 (newsboat-2.14.tar.xz) = Z7y6rD6+1c6geu5QKAM2SgHntFoCLIhpMswY1bnlbY0=
+SHA256 (newsboat-2.14.1.tar.xz) = S9DTsZAaP8fg73O4AFh8KBgaV7F1w2tUfb2EY2Mw32Y=
 SIZE (cargo/aho-corasick-0.6.9.tar.gz) = 25979
 SIZE (cargo/argon2rs-0.2.5.tar.gz) = 353096
 SIZE (cargo/arrayvec-0.4.9.tar.gz) = 26103
@@ -134,6 +135,7 @@ SIZE (cargo/time-0.1.41.tar.gz) = 29991
 SIZE (cargo/ucd-util-0.1.3.tar.gz) = 25897
 SIZE (cargo/unicode-bidi-0.3.4.tar.gz) = 32228
 SIZE (cargo/unicode-normalization-0.1.7.tar.gz) = 330545
+SIZE (cargo/unicode-width-0.1.5.tar.gz) = 15761
 SIZE (cargo/unicode-xid-0.1.0.tar.gz) = 16000
 SIZE (cargo/unreachable-1.0.0.tar.gz) = 6355
 SIZE (cargo/url-1.7.2.tar.gz) = 68597
@@ -143,4 +145,4 @@ SIZE (cargo/void-1.0.2.tar.gz) = 2356
 SIZE (cargo/winapi-0.3.6.tar.gz) = 1029391
 SIZE (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SIZE (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SIZE (newsboat-2.14.tar.xz) = 496256
+SIZE (newsboat-2.14.1.tar.xz) = 500096
