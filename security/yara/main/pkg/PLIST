@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/08/16 09:58:47 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/02/26 09:09:17 rpointel Exp $
 @bin bin/yara
 @bin bin/yarac
 include/yara/
@@ -26,6 +26,7 @@ include/yara/rules.h
 include/yara/scan.h
 include/yara/scanner.h
 include/yara/sizedstr.h
+include/yara/stack.h
 include/yara/stopwatch.h
 include/yara/stream.h
 include/yara/strutils.h

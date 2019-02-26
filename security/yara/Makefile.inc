@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.10 2018/08/17 07:49:58 rpointel Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2019/02/26 09:09:17 rpointel Exp $
 
-VERSION ?=		3.8.1
+VERSION ?=		3.9.0
 
 CATEGORIES =		security
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/08/16 09:58:47 rpointel Exp $
+# $OpenBSD: Makefile,v 1.6 2019/02/26 09:09:17 rpointel Exp $
 
 COMMENT = Python extension that gives access to YARA
 
@@ -24,7 +24,7 @@ pre-configure:
 BUILD_DEPENDS = security/yara/main>=${VERSION}
 RUN_DEPENDS = 	security/yara/main>=${VERSION}
 
-TEST_DEPENDS =	security/yara/python
+TEST_DEPENDS =	security/yara/python${MODPY_FLAVOR}=${VERSION}
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} ./tests.py
