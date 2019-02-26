@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2016/09/10 13:29:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2019/02/26 08:15:13 ajacoutot Exp $
 @bin bin/dbus-binding-tool
 include/dbus-1.0/dbus/dbus-glib-bindings.h
 include/dbus-1.0/dbus/dbus-glib-lowlevel.h
@@ -16,6 +16,8 @@ share/examples/dbus-glib/bash_completion.d/
 @sample ${SYSCONFDIR}/bash_completion.d/
 share/examples/dbus-glib/bash_completion.d/dbus-bash-completion.sh
 @sample ${SYSCONFDIR}/bash_completion.d/dbus-bash-completion.sh
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/dbus-glib/
 share/gtk-doc/html/dbus-glib/api-index-full.html
 share/gtk-doc/html/dbus-glib/ch01.html

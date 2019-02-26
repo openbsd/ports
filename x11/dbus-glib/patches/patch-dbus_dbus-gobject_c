@@ -1,0 +1,73 @@
+$OpenBSD: patch-dbus_dbus-gobject_c,v 1.5 2019/02/26 08:15:13 ajacoutot Exp $
+
+From 0e4c62b0000640ab46adc02bc4f774454bace4ad Mon Sep 17 00:00:00 2001
+From: Simon McVittie <simon.mcvittie@collabora.co.uk>
+Date: Mon, 15 Sep 2014 15:54:29 +0100
+Subject: gerror_to_dbus_error_message: add support for remaining members of DBusGError
+
+From 850459e0793e3bb1d3ca6a1c51735fa195ccc4f8 Mon Sep 17 00:00:00 2001
+From: Simon McVittie <simon.mcvittie@collabora.co.uk>
+Date: Mon, 15 Sep 2014 15:55:39 +0100
+Subject: invoke_object_method: when demarshalling fails, use the right error
+
+Index: dbus/dbus-gobject.c
+--- dbus/dbus-gobject.c.orig
++++ dbus/dbus-gobject.c
+@@ -1623,6 +1623,48 @@ gerror_to_dbus_error_message (const DBusGObjectInfo *o
+             case DBUS_GERROR_FILE_NOT_FOUND:
+               name = DBUS_ERROR_FILE_NOT_FOUND;
+               break;
++            case DBUS_GERROR_FILE_EXISTS:
++              name = DBUS_ERROR_FILE_EXISTS;
++              break;
++            case DBUS_GERROR_UNKNOWN_METHOD:
++              name = DBUS_ERROR_UNKNOWN_METHOD;
++              break;
++            case DBUS_GERROR_TIMED_OUT:
++              name = DBUS_ERROR_TIMED_OUT;
++              break;
++            case DBUS_GERROR_MATCH_RULE_NOT_FOUND:
++              name = DBUS_ERROR_MATCH_RULE_NOT_FOUND;
++              break;
++            case DBUS_GERROR_MATCH_RULE_INVALID:
++              name = DBUS_ERROR_MATCH_RULE_INVALID;
++              break;
++            case DBUS_GERROR_SPAWN_EXEC_FAILED:
++              name = DBUS_ERROR_SPAWN_EXEC_FAILED;
++              break;
++            case DBUS_GERROR_SPAWN_FORK_FAILED:
++              name = DBUS_ERROR_SPAWN_FORK_FAILED;
++              break;
++            case DBUS_GERROR_SPAWN_CHILD_EXITED:
++              name = DBUS_ERROR_SPAWN_CHILD_EXITED;
++              break;
++            case DBUS_GERROR_SPAWN_CHILD_SIGNALED:
++              name = DBUS_ERROR_SPAWN_CHILD_SIGNALED;
++              break;
++            case DBUS_GERROR_SPAWN_FAILED:
++              name = DBUS_ERROR_SPAWN_FAILED;
++              break;
++            case DBUS_GERROR_UNIX_PROCESS_ID_UNKNOWN:
++              name = DBUS_ERROR_UNIX_PROCESS_ID_UNKNOWN;
++              break;
++            case DBUS_GERROR_INVALID_SIGNATURE:
++              name = DBUS_ERROR_INVALID_SIGNATURE;
++              break;
++            case DBUS_GERROR_INVALID_FILE_CONTENT:
++              name = DBUS_ERROR_INVALID_FILE_CONTENT;
++              break;
++            case DBUS_GERROR_SELINUX_SECURITY_CONTEXT_UNKNOWN:
++              name = DBUS_ERROR_SELINUX_SECURITY_CONTEXT_UNKNOWN;
++              break;
+             case DBUS_GERROR_REMOTE_EXCEPTION:
+               name = dbus_g_error_get_name ((GError*) error);
+               break;
+@@ -1746,7 +1788,7 @@ invoke_object_method (GObject         *object,
+       {
+ 	g_free (in_signature); 
+ 	g_array_free (types_array, TRUE);
+-        reply = error_or_die (message, "org.freedesktop.DBus.GLib.ErrorError", error->message);
++        reply = gerror_to_dbus_error_message (object_info, message, error);
+         connection_send_or_die (connection, reply);
+ 	dbus_message_unref (reply);
+ 	g_error_free (error);

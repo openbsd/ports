@@ -1,0 +1,24 @@
+$OpenBSD: patch-dbus_dbus-binding-tool-glib_c,v 1.1 2019/02/26 08:15:13 ajacoutot Exp $
+
+From 9c038151b491dead7b9f9ca2d1a70c16417966a0 Mon Sep 17 00:00:00 2001
+From: x00292102 <xiezhipeng1@huawei.com>
+Date: Tue, 10 Apr 2018 11:46:38 +0800
+Subject: Fix double free for data.channel
+
+Index: dbus/dbus-binding-tool-glib.c
+--- dbus/dbus-binding-tool-glib.c.orig
++++ dbus/dbus-binding-tool-glib.c
+@@ -870,11 +870,13 @@ dbus_binding_tool_output_glib_server (BaseInfo *info, 
+       ret = FALSE;
+       g_io_channel_shutdown (data.channel, TRUE, error);
+       g_io_channel_unref (data.channel);
++      data.channel = NULL;
+       goto io_lose;
+     }
+ 
+   g_io_channel_shutdown (data.channel, TRUE, error);
+   g_io_channel_unref (data.channel);
++  data.channel = NULL;
+   
+   /* Now spawn glib-genmarshal to insert all our required marshallers */
+   argv = g_ptr_array_new ();
