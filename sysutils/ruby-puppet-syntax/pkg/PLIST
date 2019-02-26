@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/06/30 08:21:18 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/02/26 16:34:48 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
-${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/HISTORY.md
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/appveyor.yml
 ${GEM_LIB}/gems/${DISTNAME}/jenkins.sh
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-syntax/
@@ -29,6 +29,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/data/hiera_2.eyaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/data/test/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/data/test/hiera_3.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/data/test/hiera_4.eyaml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_bad.eyaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_bad.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_bad_18.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_badkey.yaml
