@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2019/02/12 18:07:11 solene Exp $
+# $OpenBSD: Makefile,v 1.3 2019/02/26 18:26:06 jca Exp $
+
+# asmjit only supported on Windows and Linux
+NOT_FOR_ARCHS =		arm arm64
 
 COMMENT =		OpenGL engine for idTech 1 games like doom,hexen,heretic...
 
