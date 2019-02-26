@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.87 2019/01/26 11:48:18 kn Exp $
+@comment $OpenBSD: PLIST-main,v 1.88 2019/02/26 09:10:34 kn Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
@@ -123,7 +123,6 @@ libexec/git/git-quiltimport
 libexec/git/git-rebase--am
 libexec/git/git-rebase--common
 @bin libexec/git/git-rebase--interactive
-libexec/git/git-rebase--merge
 libexec/git/git-rebase--preserve-merges
 @bin libexec/git/git-receive-pack
 @bin libexec/git/git-reflog
@@ -417,6 +416,7 @@ share/gitweb/static/gitweb.js
 share/locale/bg/LC_MESSAGES/git.mo
 share/locale/ca/LC_MESSAGES/git.mo
 share/locale/de/LC_MESSAGES/git.mo
+share/locale/el/LC_MESSAGES/git.mo
 share/locale/es/LC_MESSAGES/git.mo
 share/locale/fr/LC_MESSAGES/git.mo
 share/locale/is/
