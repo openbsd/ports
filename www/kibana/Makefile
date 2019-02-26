@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2019/01/24 06:07:04 pvk Exp $
+# $OpenBSD: Makefile,v 1.29 2019/02/26 07:59:41 pvk Exp $
 
 COMMENT=	browser based analytics/search interface to ElasticSearch
 
-V =		6.5.4
+V =		6.6.1
 PKGNAME =	kibana-${V}
 DISTNAME =	kibana-oss-${V}-darwin-x86_64
 
@@ -10,7 +10,7 @@ CATEGORIES =	www
 
 HOMEPAGE =	https://www.elastic.co/products/kibana
 
-MAINTAINER =	Pavel Korovin <p@tristero.se>
+MAINTAINER =	Pavel Korovin <pvk@openbsd.org>
 
 # Apache
 PERMIT_PACKAGE_CDROM =	Yes

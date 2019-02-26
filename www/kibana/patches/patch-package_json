@@ -1,13 +1,13 @@
-$OpenBSD: patch-package_json,v 1.2 2019/01/23 11:50:23 pvk Exp $
+$OpenBSD: patch-package_json,v 1.3 2019/02/26 07:59:41 pvk Exp $
 
 Index: package.json
 --- package.json.orig
 +++ package.json
-@@ -22,6 +22,6 @@
+@@ -23,6 +23,6 @@
      "url": "https://github.com/elastic/kibana.git"
    },
    "engines": {
--    "node": "8.14.0"
+-    "node": "10.15.1"
 +    "node": "10.15.0"
    }
 -}
