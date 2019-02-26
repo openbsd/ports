@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2018/10/17 08:48:34 benoit Exp $
+# $OpenBSD: Makefile,v 1.37 2019/02/26 20:14:23 benoit Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT =	maze game resembling boulderdash
 
-DISTNAME =	rocksndiamonds-4.1.1.0
+DISTNAME =	rocksndiamonds-4.1.2.0
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://www.artsoft.org/rocksndiamonds/
@@ -14,13 +14,13 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	SDL c m pthread SDL_mixer SDL_image SDL_net
+WANTLIB =	SDL2 c m SDL2_mixer SDL2_image SDL2_net z
 
 MASTER_SITES =	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/
 
-LIB_DEPENDS =	devel/sdl-mixer \
-		devel/sdl-image \
-		devel/sdl-net>=1.2.7
+LIB_DEPENDS =	devel/sdl2-mixer \
+		devel/sdl2-image \
+		devel/sdl2-net
 RUN_DEPENDS =	devel/desktop-file-utils
 
 USE_GMAKE =	Yes
@@ -28,7 +28,7 @@ MAKE_FLAGS =	CC="${CC}" MAKE="${MAKE_PROGRAM}" X11_PATH="${X11BASE}" \
 		RO_GAME_DIR="${PREFIX}/share/rocksndiamonds" \
 		RW_GAME_DIR="/var/games/rocksndiamonds"
 
-ALL_TARGET =	sdl
+ALL_TARGET =	sdl2
 
 NO_TEST =	Yes
 
