@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/11 09:35:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/02/26 22:11:26 bentley Exp $
 
 COMMENT-main=	n64 emulator (default plugins)
 COMMENT-extra=	n64 emulator (all plugins)
 
-V=		2.5
+V=		2.5.9
 PKGNAME=	mupen64plus-$V
-REVISION=	1
 
 PKGNAME-main=	mupen64plus-$V
 PKGNAME-extra=	mupen64plus-extra-$V
 
-HOMEPAGE=	http://mupen64plus.org/
+HOMEPAGE=	https://mupen64plus.org/
 
 MAINTAINER=	Anthony J. Bentley <anthony@anjbe.name>
 
@@ -31,6 +30,7 @@ RUN_DEPENDS-main +=	\
 # extra plugins
 RUN_DEPENDS-extra +=	\
 		STEM-=${V}:${BASE_PKGPATH},-main \
+		emulators/mupen64plus/rsp-cxd4 \
 		emulators/mupen64plus/rsp-z64 \
 		emulators/mupen64plus/video-arachnoid \
 		emulators/mupen64plus/video-glide64 \
