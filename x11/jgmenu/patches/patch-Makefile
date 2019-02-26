@@ -1,0 +1,44 @@
+$OpenBSD: patch-Makefile,v 1.1 2019/02/26 16:16:05 sthen Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -24,7 +24,7 @@ else
+ datarootdir= $(prefix)/share
+ endif
+ 
+-CFLAGS  += -g -Wall -Os -std=gnu89
++CFLAGS  += -Wall -std=gnu89
+ CFLAGS  += -Wextra -Wdeclaration-after-statement -Wno-format-zero-length \
+ 	   -Wold-style-definition -Woverflow -Wpointer-arith \
+ 	   -Wstrict-prototypes -Wunused -Wvla -Wunused-result
+@@ -100,18 +100,18 @@ $(DEPDIR)/%.d: ;
+ .PRECIOUS: $(DEPDIR)/%.d
+ 
+ install: checkdeps $(PROGS)
+-	@install -d $(DESTDIR)$(bindir)
+-	@install -m755 jgmenu src/jgmenu_run $(DESTDIR)$(bindir)
+-	@install -d $(DESTDIR)$(libexecdir)
+-	@install -m755 $(PROGS_LIBEXEC) $(SCRIPTS_LIBEXEC) $(DESTDIR)$(libexecdir)
+-	@./scripts/set-exec-path.sh $(DESTDIR)$(bindir)/jgmenu_run $(libexecdir)
+-	@$(MAKE) --no-print-directory -C docs/manual/ prefix=$(prefix) install
+-	@install -d $(DESTDIR)$(datarootdir)/icons/hicolor/scalable/apps/
+-	@install -d $(DESTDIR)$(datarootdir)/applications/
+-	@install -m644 ./data/jgmenu.svg $(DESTDIR)$(datarootdir)/icons/hicolor/scalable/apps/
+-	@install -m644 ./data/jgmenu.desktop $(DESTDIR)$(datarootdir)/applications/
++	install -d $(DESTDIR)$(bindir)
++	install -m755 jgmenu src/jgmenu_run $(DESTDIR)$(bindir)
++	install -d $(DESTDIR)$(libexecdir)
++	install -m755 $(PROGS_LIBEXEC) $(SCRIPTS_LIBEXEC) $(DESTDIR)$(libexecdir)
++	./scripts/set-exec-path.sh $(DESTDIR)$(bindir)/jgmenu_run $(libexecdir)
++	$(MAKE) --no-print-directory -C docs/manual/ prefix=$(prefix) install
++	install -d $(DESTDIR)$(datarootdir)/icons/hicolor/scalable/apps/
++	install -d $(DESTDIR)$(datarootdir)/applications/
++	install -m644 ./data/jgmenu.svg $(DESTDIR)$(datarootdir)/icons/hicolor/scalable/apps/
++	install -m644 ./data/jgmenu.desktop $(DESTDIR)$(datarootdir)/applications/
+ ifeq ($(NO_LX),1)
+-	@echo "info: lx module not included as libmenu-cache >=1.1.0 not found"
++	echo "info: lx module not included as libmenu-cache >=1.1.0 not found"
+ endif
+ 
+ # We are not brave enough to uninstall in /usr/, /usr/local/ etc

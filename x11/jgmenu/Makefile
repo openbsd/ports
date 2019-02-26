@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/03 15:47:09 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/02/26 16:16:05 sthen Exp $
 
 COMMENT =	freedesktop-compliant menu for openbox and tint2
 CATEGORIES =	x11
 
 GH_ACCOUNT =	johanmalm
 GH_PROJECT =	jgmenu
-GH_TAGNAME =	v2.0
+GH_TAGNAME =	v2.1
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
