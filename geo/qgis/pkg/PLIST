@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2019/01/22 08:22:00 landry Exp $
+@comment $OpenBSD: PLIST,v 1.47 2019/02/26 08:15:08 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -701,6 +701,7 @@ include/qgis/qgsprocessingcontext.h
 include/qgis/qgsprocessingfeedback.h
 include/qgis/qgsprocessinggui.h
 include/qgis/qgsprocessingguiregistry.h
+include/qgis/qgsprocessingmatrixparameterdialog.h
 include/qgis/qgsprocessingmodelalgorithm.h
 include/qgis/qgsprocessingmodelchildalgorithm.h
 include/qgis/qgsprocessingmodelchildparametersource.h
@@ -1810,6 +1811,7 @@ share/qgis/python/plugins/processing/algs/grass7/description/v.select.txt
 share/qgis/python/plugins/processing/algs/grass7/description/v.split.txt
 share/qgis/python/plugins/processing/algs/grass7/description/v.surf.bspline.txt
 share/qgis/python/plugins/processing/algs/grass7/description/v.surf.idw.txt
+share/qgis/python/plugins/processing/algs/grass7/description/v.surf.rst.cvdev.txt
 share/qgis/python/plugins/processing/algs/grass7/description/v.surf.rst.txt
 share/qgis/python/plugins/processing/algs/grass7/description/v.to.3d.txt
 share/qgis/python/plugins/processing/algs/grass7/description/v.to.lines.txt
