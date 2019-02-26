@@ -1,19 +1,23 @@
-This program provides a convenient way to manage many remote serial
-consoles for machines.  A server (conserver(1)) runs on each server
-machine and it connects to the specified serial port.  It can log,
-provide shared access to remote consoles, etc.  If there are multiple
-machines running conserver(1), a master conserver(1) can be run to
-connect to all the slave servers, providing a single point of access
-to the entire cluster.
+This program provides a convenient way to manage remote consoles.
 
-This is very handy for remote unattended OpenBSD servers. It can
-send serial break signals (if the driver supports it, cy(4) does not!)
-which is useful for breaking into DDB on hung machines.
+The conserver(8) daemon maintains persistent connections to consoles,
+either to a local serial port, via a network connection to a terminal
+server, via a UNIX domain socket, by running a command, or (with the
+"ipmi" flavor) via IPMI serial-over-lan. It can also write logfiles,
+and restrict access based on user/group (read, read/write, none).
+
+User access is done with console(1) - this allows standard terminal
+commands including sending BREAK signals, and can replay output from
+before you connected.
+
+By default conserver<>console connections are done via a unix-domain
+socket, but in a larger installation, the "net" flavor can be used
+to do this over a TCP+TLS connection to another host - in that case,
+conserver(8) instances on multiple servers can be clustered.
 
 Flavors:
 
-net - use network sockets rather than unix domain sockets
-(as was previously the default). This is mainly useful when
-the conserver server is on a separate machine to the client.
+net - use network sockets for conserver<>console and to allow
+conserver<>conserver connections.
 
 ipmi - build with internal support for IPMI serial-over-lan
