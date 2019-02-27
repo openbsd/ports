@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/09/20 11:16:29 robert Exp $
+# $OpenBSD: Makefile,v 1.14 2019/02/27 08:01:20 ajacoutot Exp $
 
 COMMENT=		panel component for MATE
 
@@ -33,8 +33,6 @@ LIB_DEPENDS=		devel/libwnck3 \
 			x11/mate/desktop \
 			x11/mate/libmateweather \
 			x11/mate/menus
-
-BUILD_DEPENDS=		textproc/itstool
 
 RUN_DEPENDS=		x11/mate/settings-daemon \
 			x11/mate/screensaver
