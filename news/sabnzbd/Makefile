@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2019/01/16 10:51:35 bket Exp $
+# $OpenBSD: Makefile,v 1.17 2019/02/27 04:34:59 bket Exp $
 
 COMMENT =			retrieve and process nzb-files via web interface
 VERSION =			2.3.7
+REVISION =			0
 DISTNAME =			SABnzbd-${VERSION}
 PKGNAME =			sabnzbd-${VERSION}
 CATEGORIES =			news
@@ -22,7 +23,7 @@ RUN_DEPENDS =			archivers/par2cmdline \
 				archivers/unzip \
 				devel/py-cheetah \
 				devel/py-notify \
-				news/py-yenc \
+				news/py-sabyenc \
 				security/py-cryptography \
 				security/py-openssl
 
