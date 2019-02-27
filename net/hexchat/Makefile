@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2018/10/24 14:28:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/02/27 23:34:05 jca Exp $
 
 COMMENT =		GTK+2 IRC Client
 DISTNAME =		hexchat-2.12.3
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net x11
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		http://hexchat.github.io/
 MAINTAINER =		Florian Stinglmayr <florian@n0la.org>
@@ -54,6 +54,7 @@ CONFIGURE_ARGS +=	--enable-ipv6 \
 			--disable-libcanberra
 CONFIGURE_ENV =		CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib \
+			OBJC="${CC}" \
 			LUA=${MODLUA_FLAVOR}
 
 LIBTOOL_FLAGS =		--tag=disable-static
