@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2019/02/26 18:26:06 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2019/02/27 23:35:17 jca Exp $
 
 # asmjit only supported on Windows and Linux
 NOT_FOR_ARCHS =		arm arm64
 
 COMMENT =		OpenGL engine for idTech 1 games like doom,hexen,heretic...
 
-V =			3.7.1
+V =			3.7.2
 PKGNAME =		gzdoom-${V}
 DISTNAME =		gzdoom-src-g${V}
-REVISION =		0
 
 CATEGORIES=		games
 
