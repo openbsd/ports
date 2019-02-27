@@ -1,0 +1,23 @@
+$OpenBSD: patch-pango_break-thai_c,v 1.1 2019/02/27 15:51:20 ajacoutot Exp $
+
+From 6a6afb9415922cec4b4c66691a24f23a5c2ea77d Mon Sep 17 00:00:00 2001
+From: Jehan <jehan@girinstud.io>
+Date: Tue, 13 Nov 2018 14:51:35 +0100
+Subject: [PATCH] pango: th_brk_new() may return NULL.
+
+Index: pango/break-thai.c
+--- pango/break-thai.c.orig
++++ pango/break-thai.c
+@@ -85,7 +85,11 @@ break_thai (const char          *text,
+ #ifdef HAVE_TH_BRK_FIND_BREAKS
+   brk = th_brk_new(NULL);
+   len = th_brk_find_breaks(brk, tis_text, brk_pnts, cnt);
+-  th_brk_delete(brk);
++  if (brk)
++    th_brk_delete(brk);
++  else
++    g_warning ("%s: failed to load the default Thai word-breaker.",
++               G_STRLOC);
+ #else
+   G_LOCK (th_brk);
+   len = th_brk (tis_text, brk_pnts, cnt);
