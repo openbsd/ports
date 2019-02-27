@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/04/27 12:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2019/02/27 16:07:17 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += atril
@@ -19,6 +19,7 @@
      SUBDIR += notification-daemon
      SUBDIR += panel
      SUBDIR += pluma
+     SUBDIR += polkit
      SUBDIR += power-manager
      SUBDIR += screensaver
      SUBDIR += session-manager
