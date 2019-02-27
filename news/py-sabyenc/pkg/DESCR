@@ -1,0 +1,4 @@
+yEnc Module for Python modified for SABnzbd. This is a modified version for
+use within SABnzbd. The module was extended to do header parsing and full yEnc
+decoding from a Python list of chunks, the way in which data is retrieved from
+usenet.
