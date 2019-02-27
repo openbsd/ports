@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/10 15:31:33 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2019/02/27 16:08:21 ajacoutot Exp $
 
 COMMENT-main =		MATE desktop meta-package (base installation)
 COMMENT-extras =	MATE desktop meta-package (full installation)
@@ -11,6 +11,8 @@ PKGNAME =		mate-${V}
 PKGNAME-main =		mate-${V}
 PKGNAME-extras =	mate-extras-${V}
 
+REVISION-main =		0
+
 MULTI_PACKAGES =	-main -extras
 
 RUN_DEPENDS-main += \
@@ -19,6 +21,7 @@ RUN_DEPENDS-main += \
 		x11/mate/marco \
 		x11/mate/menus \
 		x11/mate/panel \
+		x11/mate/polkit \
 		x11/mate/session-manager \
 		x11/mate/settings-daemon \
 		sysutils/consolekit \
