@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.271 2019/02/08 13:34:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.272 2019/02/27 21:49:58 sthen Exp $
 
 COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication / dictionary support for Dovecot
@@ -7,6 +7,7 @@ COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 
 V_MAJOR=	2.3
 V_DOVECOT=	2.3.4.1
+REVISION=	0
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
@@ -54,9 +55,6 @@ LIB_DEPENDS-postgresql= databases/postgresql
 RUN_DEPENDS-postgresql= ${BASE_PKGPATH}
 
 CONFIGURE_STYLE= gnu
-# XXX linking test-ssl-iostream fails with base libtool; problem is probably
-#     in Dovecot's Makefile as it does still warn with GNU libtool.
-USE_LIBTOOL=	gnu
 CONFIGURE_ARGS=	--with-rundir=/var/dovecot \
 		--with-sql=plugin \
 		--with-sqlite \
