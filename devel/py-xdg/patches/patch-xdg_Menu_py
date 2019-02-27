@@ -1,12 +1,14 @@
-$OpenBSD: patch-xdg_Menu_py,v 1.7 2013/03/14 19:50:54 ajacoutot Exp $
---- xdg/Menu.py.orig	Tue Nov  6 00:41:29 2012
-+++ xdg/Menu.py	Thu Mar 14 20:48:43 2013
-@@ -558,7 +558,7 @@ def parse(filename=None):
-         filename = __getFileName(candidate)
-         
-     if not filename:
--        raise ParsingError('File not found', "/etc/xdg/menus/%s" % candidate)
-+        raise ParsingError('File not found', "${SYSCONFDIR}/xdg/menus/%s" % candidate)
- 
-     # check if it is a .menu file
-     if not os.path.splitext(filename)[1] == ".menu":
+$OpenBSD: patch-xdg_Menu_py,v 1.8 2019/02/27 03:59:57 ajacoutot Exp $
+
+Index: xdg/Menu.py
+--- xdg/Menu.py.orig
++++ xdg/Menu.py
+@@ -614,7 +614,7 @@ class XMLMenuBuilder(object):
+             candidate = os.environ.get('XDG_MENU_PREFIX', '') + "applications.menu"
+             filename = _get_menu_file_path(candidate)
+         if not filename:
+-            raise ParsingError('File not found', "/etc/xdg/menus/%s" % candidate)
++            raise ParsingError('File not found', "${SYSCONFDIR}/xdg/menus/%s" % candidate)
+         # check if it is a .menu file
+         if not filename.endswith(".menu"):
+             raise ParsingError('Not a .menu file', filename)
