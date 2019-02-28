@@ -1,0 +1,14 @@
+$OpenBSD: patch-idl_source_objects_types_cxx,v 1.1 2019/02/28 22:09:41 robert Exp $
+
+Index: idl/source/objects/types.cxx
+--- idl/source/objects/types.cxx.orig
++++ idl/source/objects/types.cxx
+@@ -251,7 +251,7 @@ void SvMetaType::WriteSfxItem(
+ 
+     // write the implementation part
+     rOutStm.WriteCharPtr( "#ifdef SFX_TYPEMAP" ) << endl;
+-    rOutStm.WriteCharPtr( "#if !defined(_WIN32) && ((defined(DISABLE_DYNLOADING) && (defined(ANDROID) || defined(IOS) || defined(LINUX))) || STATIC_LINKING)" ) << endl;
++    rOutStm.WriteCharPtr( "#if !defined(_WIN32) && ((defined(DISABLE_DYNLOADING) && (defined(ANDROID) || defined(IOS) || defined(LINUX) || defined(OPENBSD))) || STATIC_LINKING)" ) << endl;
+     rOutStm.WriteCharPtr( "__attribute__((__weak__))" ) << endl;
+     rOutStm.WriteCharPtr( "#endif" ) << endl;
+     rOutStm.WriteOString( aTypeName ).WriteOString( aVarName )

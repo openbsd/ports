@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.196 2019/02/09 15:23:07 robert Exp $
+# $OpenBSD: Makefile,v 1.197 2019/02/28 22:09:41 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -23,6 +23,8 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde4
+
+REVISION-main=	0
 
 EPOCH=		0
 
