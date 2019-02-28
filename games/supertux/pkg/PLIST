@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/02/04 10:02:07 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/02/28 17:42:53 thfr Exp $
 @bin bin/supertux2
 share/applications/supertux2.desktop
 share/doc/supertux2/
@@ -6,10 +6,6 @@ share/doc/supertux2/INSTALL.md
 share/doc/supertux2/LICENSE.txt
 share/doc/supertux2/NEWS.md
 share/doc/supertux2/README.md
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/supertux2.svg
 share/metainfo/
 share/metainfo/supertux2.appdata.xml

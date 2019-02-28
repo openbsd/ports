@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.18 2019/02/04 10:02:07 pascal Exp $
+# $OpenBSD: Makefile,v 1.19 2019/02/28 17:42:53 thfr Exp $
 
 COMMENT =		jump 'n' run game
 
 V =			0.6.0
 DISTNAME =		SuperTux-v${V}-Source
 PKGNAME =		supertux-$V
+REVISION =		0
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://supertux.lethargik.org/
+HOMEPAGE =		https://www.supertux.org/
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
@@ -17,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU SDL2 SDL2_image boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_locale-mt boost_system-mt
-WANTLIB += c curl freetype m ogg openal png vorbis vorbisfile
+WANTLIB += c curl freetype m ogg openal png16 vorbis vorbisfile
 WANTLIB += z
 
 MASTER_SITES =		https://github.com/SuperTux/supertux/releases/download/v${V}/
