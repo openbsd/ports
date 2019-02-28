@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2019/02/07 13:53:28 jca Exp $
+# $OpenBSD: Makefile,v 1.83 2019/02/28 20:20:03 phessler Exp $
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
@@ -89,7 +89,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		textproc/icu4c
 
 .include <bsd.port.arch.mk>
-.if !(${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "arm")
+.if !(${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "arm")
 BUILD_PACKAGES=	${MULTI_PACKAGES:N-md}
 .endif
 
