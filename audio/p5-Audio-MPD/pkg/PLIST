@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/09/29 17:19:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/02/28 17:31:57 cwen Exp $
+bin/mpd-dump-ratings
 bin/mpd-dynamic
 bin/mpd-rate
 ${P5SITE}/Audio/MPD.pm
 ${P5SITE}/Audio/MPD/Collection.pm
 ${P5SITE}/Audio/MPD/Playlist.pm
 ${P5SITE}/Audio/MPD/Types.pm
+@man man/man1/mpd-dump-ratings.1
 @man man/man1/mpd-dynamic.1
 @man man/man1/mpd-rate.1
 @man man/man3p/Audio::MPD.3p
