@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-tests,v 1.8 2019/01/07 06:43:00 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.9 2019/02/28 09:11:28 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests->=3.6,<3.7
+@conflict python->=3.6,<3.6.8p0
 @pkgpath lang/python3/3.6,-tests
 lib/python3.6/test/
 lib/python3.6/test/Sine-1000Hz-300ms.aif
@@ -1735,6 +1736,9 @@ lib/python3.6/test/libregrtest/__pycache__/save_env.cpython-36.pyc
 lib/python3.6/test/libregrtest/__pycache__/setup.cpython-36.opt-1.pyc
 lib/python3.6/test/libregrtest/__pycache__/setup.cpython-36.opt-2.pyc
 lib/python3.6/test/libregrtest/__pycache__/setup.cpython-36.pyc
+lib/python3.6/test/libregrtest/__pycache__/utils.cpython-36.opt-1.pyc
+lib/python3.6/test/libregrtest/__pycache__/utils.cpython-36.opt-2.pyc
+lib/python3.6/test/libregrtest/__pycache__/utils.cpython-36.pyc
 lib/python3.6/test/libregrtest/cmdline.py
 lib/python3.6/test/libregrtest/main.py
 lib/python3.6/test/libregrtest/refleak.py
@@ -1742,6 +1746,7 @@ lib/python3.6/test/libregrtest/runtest.py
 lib/python3.6/test/libregrtest/runtest_mp.py
 lib/python3.6/test/libregrtest/save_env.py
 lib/python3.6/test/libregrtest/setup.py
+lib/python3.6/test/libregrtest/utils.py
 lib/python3.6/test/list_tests.py
 lib/python3.6/test/lock_tests.py
 lib/python3.6/test/mailcap.txt
