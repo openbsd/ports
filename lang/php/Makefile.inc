@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.129 2019/01/05 23:19:26 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.130 2019/02/28 01:29:26 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -385,7 +385,7 @@ LIB_DEPENDS-zip=	# empty
 WANTLIB-zip=		pthread z
 
 # some variables to substitute
-SUBST_VARS+=	MODPHP_CONFIG_PATH SV PV MV
+SUBST_VARS+=	CHROOT_DIR MODPHP_CONFIG_PATH SV PV MV
 UPDATE_PLIST_ARGS+= -i MV
 PHP_VERSION=	${V}
 MV=		${PV:R}
