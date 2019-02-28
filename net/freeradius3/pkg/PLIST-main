@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2018/04/19 20:48:31 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2019/02/28 18:46:49 sthen Exp $
 @option is-branch
 @conflict freeradius-*
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @newgroup _freeradius:559
 @newuser _freeradius:559:559:daemon:Freeradius:/nonexistent:/sbin/nologin
-@extraunexec rm -rf ${SYSCONFDIR}/raddb/*
+@extraunexec rm -rf ${FREERADIUS_ETC}/*
 @extraunexec rm -rf /var/log/radius/*
+@rcscript ${RCDIR}/freeradius
 @bin bin/dhcpclient
 @bin bin/map_unit
 bin/rad_counter
@@ -24,6 +25,7 @@ bin/radzap
 @bin bin/smbencrypt
 include/freeradius/
 include/freeradius/attributes.h
+include/freeradius/autoconf.h
 include/freeradius/base64.h
 include/freeradius/build.h
 include/freeradius/conf.h
@@ -48,6 +50,7 @@ include/freeradius/radiusd.h
 include/freeradius/radpaths.h
 include/freeradius/radutmp.h
 include/freeradius/realms.h
+include/freeradius/regex.h
 include/freeradius/rfc2865.h
 include/freeradius/rfc2866.h
 include/freeradius/rfc2867.h
@@ -80,9 +83,12 @@ include/freeradius/rfc7155.h
 include/freeradius/rfc7268.h
 include/freeradius/rfc7499.h
 include/freeradius/rfc7930.h
+include/freeradius/rfc8045.h
 include/freeradius/sha1.h
 include/freeradius/stats.h
 include/freeradius/sysutmp.h
+include/freeradius/tcp.h
+include/freeradius/threads.h
 include/freeradius/tls.h
 include/freeradius/token.h
 include/freeradius/udpfromto.h
@@ -638,6 +644,8 @@ share/examples/freeradius/policy.d/moonshot-targeted-ids
 @sample ${FREERADIUS_ETC}/policy.d/moonshot-targeted-ids
 share/examples/freeradius/policy.d/operator-name
 @sample ${FREERADIUS_ETC}/policy.d/operator-name
+share/examples/freeradius/policy.d/rfc7542
+@sample ${FREERADIUS_ETC}/policy.d/rfc7542
 share/examples/freeradius/proxy.conf
 @sample ${FREERADIUS_ETC}/proxy.conf
 share/examples/freeradius/radiusd.conf
@@ -735,6 +743,7 @@ share/freeradius/dictionary.audiocodes
 share/freeradius/dictionary.avaya
 share/freeradius/dictionary.azaire
 share/freeradius/dictionary.bay
+share/freeradius/dictionary.bigswitch
 share/freeradius/dictionary.bintec
 share/freeradius/dictionary.bluecoat
 share/freeradius/dictionary.boingo
@@ -793,6 +802,7 @@ share/freeradius/dictionary.hp
 share/freeradius/dictionary.huawei
 share/freeradius/dictionary.iana
 share/freeradius/dictionary.iea
+share/freeradius/dictionary.infinera
 share/freeradius/dictionary.infoblox
 share/freeradius/dictionary.infonet
 share/freeradius/dictionary.ipunplugged
@@ -871,6 +881,7 @@ share/freeradius/dictionary.rfc7155
 share/freeradius/dictionary.rfc7268
 share/freeradius/dictionary.rfc7499
 share/freeradius/dictionary.rfc7930
+share/freeradius/dictionary.rfc8045
 share/freeradius/dictionary.riverbed
 share/freeradius/dictionary.riverstone
 share/freeradius/dictionary.roaringpenguin
@@ -903,6 +914,7 @@ share/freeradius/dictionary.usr
 share/freeradius/dictionary.usr.illegal
 share/freeradius/dictionary.utstarcom
 share/freeradius/dictionary.valemount
+share/freeradius/dictionary.verizon
 share/freeradius/dictionary.versanet
 share/freeradius/dictionary.vqp
 share/freeradius/dictionary.walabi
@@ -928,5 +940,3 @@ share/freeradius/dictionary.zyxel
 @comment .... copy in the default symlinks at installation time
 @exec-add [[ -d ${FREERADIUS_ETC}/mods-enabled ]] || cp -R %D/share/examples/freeradius/mods-enabled ${FREERADIUS_ETC}/
 @exec-add [[ -d ${FREERADIUS_ETC}/sites-enabled ]] || cp -R %D/share/examples/freeradius/sites-enabled ${FREERADIUS_ETC}/
-@owner
-@rcscript ${RCDIR}/freeradius

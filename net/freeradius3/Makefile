@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2018/11/14 20:48:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/02/28 18:46:49 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -11,8 +11,7 @@ COMMENT-mysql=	freeradius mysql rlm addon
 COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python=	freeradius python rlm addon
 
-V=		3.0.17
-REVISION=	1
+V=		3.0.18
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -81,7 +80,7 @@ LIB_DEPENDS-main=	databases/gdbm \
 			devel/pcre \
 			net/curl
 
-WANTLIB-main += c crypto curl curses execinfo gdbm hiredis json-c m nghttp2
+WANTLIB-main += c crypto curl execinfo gdbm hiredis json-c m nghttp2
 WANTLIB-main += pcap pcre perl pthread readline sqlite3 ssl talloc
 WANTLIB-main += ykclient yubikey z
 
@@ -107,7 +106,7 @@ CONFIGURE_ARGS+=	--with-ldap-include-dir=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--without-rlm_ldap
 .endif
 LIB_DEPENDS-ldap=	databases/openldap
-WANTLIB-ldap=		ldap
+WANTLIB-ldap=		ldap-2.4
 RUN_DEPENDS-ldap=	#empty
 
 # rlm_sql_freetds
