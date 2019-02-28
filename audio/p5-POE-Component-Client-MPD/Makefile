@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/02/28 17:45:26 cwen Exp $
 
 COMMENT=		complete MPD client library
 
-DISTNAME=		POE-Component-Client-MPD-0.9.2
-REVISION=		2
+DISTNAME=		POE-Component-Client-MPD-2.001
 CATEGORIES=		audio
 
 # perl
@@ -12,16 +11,29 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=		cpan
 PKG_ARCH=		*
 MODCPAN_EXAMPLES=	Yes
-MODCPAN_EXAMPLES_DIST=	bin
+MODCPAN_EXAMPLES_DIST=	examples
 
-RUN_DEPENDS=		audio/p5-Audio-MPD-Common>=0.1.4 \
-			devel/p5-Class-Accessor \
-			devel/p5-List-MoreUtils \
+RUN_DEPENDS=		audio/p5-Audio-MPD-Common \
+			devel/p5-List-AllUtils \
+			devel/p5-Moose>=0.92 \
+			devel/p5-MooseX-Has-Sugar \
+			devel/p5-MooseX-POE \
+			devel/p5-MooseX-SemiAffordanceAccessor \
+			devel/p5-MooseX-Types \
 			devel/p5-POE \
-			devel/p5-Readonly
+			devel/p5-Readonly \
+			devel/p5-Sub-Exporter \
+			devel/p5-Test-Corpus-Audio-MPD>=1.120990
 
 PORTHOME=		${WRKDIR}
 
+# It would require Pod::Coverage::TrustPod that we don't ship
+TEST_ENV +=		AUTHOR_TESTING=
+
 CONFIGURE_STYLE=	modbuild
+
+# Tests need to find mpd.
+pre-test:
+	@ln -sf ${LOCALBASE}/sbin/mpd ${WRKDIR}/bin/mpd
 
 .include <bsd.port.mk>

@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_POE_Component_Client_MPD_Connection_pm,v 1.1 2019/02/28 17:45:26 cwen Exp $
+Accounting a change in the MPD protocol
+see https://rt.cpan.org/Public/Bug/Display.html?id=122469
+Index: lib/POE/Component/Client/MPD/Connection.pm
+--- lib/POE/Component/Client/MPD/Connection.pm.orig
++++ lib/POE/Component/Client/MPD/Connection.pm
+@@ -217,6 +217,10 @@ sub _got_data {
+         my ($k,$v) = split /:\s+/, $input, 2;
+         $k = lc $k;
+         $k =~ s/-/_/;
++        if ( $k eq 'duration' ) {
++            $k = 'time';
++            $v = int($v + 0.5);
++        }
+ 
+         if ( $k eq 'file' || $k eq 'directory' || $k eq 'playlist' ) {
+             # build a new amc-item

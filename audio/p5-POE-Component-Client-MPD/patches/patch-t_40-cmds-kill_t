@@ -1,0 +1,22 @@
+$OpenBSD: patch-t_40-cmds-kill_t,v 1.1 2019/02/28 17:45:26 cwen Exp $
+Hunk #1: Fix "ps: unknown option -- f" by using pgrep(1) instead
+Hunk #2: restart test MPD before exiting, see RT#126902
+Index: t/40-cmds-kill.t
+--- t/40-cmds-kill.t.orig
++++ t/40-cmds-kill.t
+@@ -22,8 +22,7 @@ use warnings;
+         POE::Kernel->delay_set( kill => 0.5 );  # FIXME: use connected event to start tests in pococm-test
+     }
+     event check => sub {
+-        my @procs = grep { /\smpd\s/ } grep { !/grep/ } qx{ ps -ef };
+-        is( scalar @procs, 0, 'kill shuts down mpd' );
++        isnt( system( "pgrep mpd" ), 0 );
+     };
+     event kill => sub {
+         POE::Kernel->delay_set( check => 1 );
+@@ -47,4 +46,5 @@ plan tests => 1;
+ POE::Component::Client::MPD->spawn;
+ My::Session->new;
+ POE::Kernel->run;
++start_test_mpd();
+ exit;

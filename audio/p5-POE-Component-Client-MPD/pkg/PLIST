@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/13 11:40:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/02/28 17:45:26 cwen Exp $
 ${P5SITE}/POE/Component/Client/MPD/
 ${P5SITE}/POE/Component/Client/MPD.pm
 ${P5SITE}/POE/Component/Client/MPD/Collection.pm
@@ -7,6 +7,7 @@ ${P5SITE}/POE/Component/Client/MPD/Connection.pm
 ${P5SITE}/POE/Component/Client/MPD/Message.pm
 ${P5SITE}/POE/Component/Client/MPD/Playlist.pm
 ${P5SITE}/POE/Component/Client/MPD/Test.pm
+${P5SITE}/POE/Component/Client/MPD/Types.pm
 @man man/man3p/POE::Component::Client::MPD.3p
 @man man/man3p/POE::Component::Client::MPD::Collection.3p
 @man man/man3p/POE::Component::Client::MPD::Commands.3p
@@ -14,5 +15,6 @@ ${P5SITE}/POE/Component/Client/MPD/Test.pm
 @man man/man3p/POE::Component::Client::MPD::Message.3p
 @man man/man3p/POE::Component::Client::MPD::Playlist.3p
 @man man/man3p/POE::Component::Client::MPD::Test.3p
+@man man/man3p/POE::Component::Client::MPD::Types.3p
 share/examples/p5-POE-Component-Client-MPD/
 share/examples/p5-POE-Component-Client-MPD/client.pl
