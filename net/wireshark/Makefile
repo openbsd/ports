@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2019/01/09 17:14:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.82 2019/02/28 23:31:08 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
@@ -6,7 +6,7 @@ COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 COMMENT-gtk =	graphical network protocol analyzer, Gtk+3 user-interface
 
-V =		2.6.6
+V =		2.6.7
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
@@ -28,7 +28,9 @@ EXTRACT_SUFX =	.tar.xz
 # tools/pidl is GPLv3 or later. See COPYING.
 PERMIT_PACKAGE_CDROM =	Yes
 
-cWANTLIB +=	c glib-2.0 gmodule-2.0 m pcap z
+cWANTLIB += ${MODLUA_WANTLIB}
+cWANTLIB += bcg729 c cares gcrypt glib-2.0 gmodule-2.0 gnutls gpg-error
+cWANTLIB += intl lz4 m nghttp2 pcap smi snappy spandsp xml2 z
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
@@ -52,18 +54,19 @@ MODLUA_SA =	Yes
 MODLUA_RUNDEP =	No
 MODPY_RUNDEP =	No
 
-WANTLIB-text =	${cWANTLIB} ${MODLUA_WANTLIB}
-WANTLIB-text += bcg729 cares gcrypt gnutls lz4
-WANTLIB-text += maxminddb nghttp2 smi spandsp snappy ssh xml2
+WANTLIB-text =	${cWANTLIB} maxminddb ssh
 
 WANTLIB-main =	${cWANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-main += wireshark wiretap wscodecs wsutil
-WANTLIB-main += Qt5Core Qt5Gui Qt5Multimedia Qt5PrintSupport Qt5Widgets
+# XXX the above are incorrectly listed as "Extra", cmake internal
+# linkages are done with .so symlinks present, so the soname is wrong
+WANTLIB-main += Qt5Core Qt5Gui Qt5Multimedia Qt5Network Qt5PrintSupport Qt5Widgets
 
 WANTLIB-gtk =	${cWANTLIB}
-WANTLIB-gtk +=  wireshark wiretap wscodecs wsutil
-WANTLIB-gtk +=  cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 gobject-2.0 gtk-3
-WANTLIB-gtk +=  pango-1.0 pangocairo-1.0
+WANTLIB-gtk +=	wireshark wiretap wscodecs wsutil
+WANTLIB-gtk +=	atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB-gtk +=	gobject-2.0 gtk-3 pango-1.0 pangocairo-1.0
+
 
 MASTER_SITES =		http://www.wireshark.org/download/src/all-versions/ \
 			http://www.wireshark.org/download/automated/src/
