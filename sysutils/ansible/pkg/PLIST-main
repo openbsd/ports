@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2019/02/19 18:58:18 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2019/02/28 18:02:10 jasper Exp $
 @pkgpath sysutils/ansible
 bin/ansible
 bin/ansible-config
@@ -6992,6 +6992,8 @@ share/doc/ansible/html/dev_guide/module_lifecycle.html
 share/doc/ansible/html/dev_guide/testing/sanity/changelog.html
 share/doc/ansible/html/dev_guide/testing/sanity/symlinks.html
 share/doc/ansible/html/dev_guide/testing_documentation.html
+share/doc/ansible/html/network/getting_started/network_resources.html
+share/doc/ansible/html/network/getting_started/network_roles.html
 share/doc/ansible/html/network/user_guide/platform_cnos.html
 share/doc/ansible/html/network/user_guide/platform_enos.html
 share/doc/ansible/html/network/user_guide/platform_exos.html
