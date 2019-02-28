@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/01/10 20:34:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/02/28 00:55:00 sthen Exp $
 
 COMMENT=	small and fast AV1 decoder
 
@@ -30,7 +30,8 @@ BUILD_DEPENDS+=	devel/nasm
 
 CONFIGURE_STYLE=meson
 
-.if ${MACHINE_ARCH} == "i386"
+# aarch64 has assembly issues with clang - temporarily disable
+.if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=-Dbuild_asm=false
 .endif
 
