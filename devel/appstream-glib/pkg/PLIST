@@ -1,10 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/06/05 08:01:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/02/28 19:20:51 ajacoutot Exp $
 @bin bin/appstream-builder
 @bin bin/appstream-compose
 @bin bin/appstream-util
-include/libappstream-builder/
-include/libappstream-builder/appstream-builder.h
-include/libappstream-builder/asb-app.h
 include/libappstream-glib/
 include/libappstream-glib/appstream-glib.h
 include/libappstream-glib/as-agreement-section.h
@@ -44,11 +41,8 @@ lib/asb-plugins-5/libasb_plugin_gettext.so
 lib/asb-plugins-5/libasb_plugin_hardcoded.so
 lib/asb-plugins-5/libasb_plugin_icon.so
 lib/asb-plugins-5/libasb_plugin_shell_extension.so
-lib/girepository-1.0/AppStreamBuilder-1.0.typelib
 lib/girepository-1.0/AppStreamGlib-1.0.typelib
-@lib lib/libappstream-builder.so.${LIBappstream-builder_VERSION}
 @lib lib/libappstream-glib.so.${LIBappstream-glib_VERSION}
-lib/pkgconfig/appstream-builder.pc
 lib/pkgconfig/appstream-glib.pc
 @man man/man1/appstream-builder.1
 @man man/man1/appstream-compose.1
@@ -59,7 +53,6 @@ share/bash-completion/completions/appstream-builder
 share/bash-completion/completions/appstream-util
 share/gettext/its/appdata.its
 share/gettext/its/appdata.loc
-share/gir-1.0/AppStreamBuilder-1.0.gir
 share/gir-1.0/AppStreamGlib-1.0.gir
 share/installed-tests/
 share/installed-tests/appstream-glib/
