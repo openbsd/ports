@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.274 2018/07/17 07:02:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.275 2019/02/28 09:58:58 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += adwaita-icon-theme
@@ -77,7 +77,6 @@
      SUBDIR += music
      SUBDIR += mutter
      SUBDIR += nautilus
-     SUBDIR += nautilus-sendto
      SUBDIR += ocrfeeder
      SUBDIR += online-accounts
      SUBDIR += online-miners
