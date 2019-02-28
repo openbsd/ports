@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/21 12:09:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2019/02/28 16:37:01 jasper Exp $
 
 COMMENT =		GitHub Flavored Markdown extension
 
 MODPY_EGG_VERSION =	0.1.4
 DISTNAME =		py-gfm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/py-/py/}
+REVISION =		0
 
 CATEGORIES =		textproc
+
+HOMEPAGE =		https://github.com/zopieux/py-gfm
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -21,6 +24,7 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-RUN_DEPENDS =		textproc/py-markdown${MODPY_FLAVOR}
+# For now py-pygfm is not compatible with py-markdown>=3.0.0
+RUN_DEPENDS =		textproc/py-markdown${MODPY_FLAVOR}<3.0.0
 
 .include <bsd.port.mk>
