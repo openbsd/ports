@@ -1,0 +1,44 @@
+$OpenBSD: patch-doc_nedit_pod,v 1.1 2019/02/28 23:00:47 sthen Exp $
+
+Index: doc/nedit.pod
+--- doc/nedit.pod.orig
++++ doc/nedit.pod
+@@ -48,15 +48,15 @@ Go to line number I<n>.
+ =item  B<-server> 
+ 
+ Designate this session as an NEdit server, for processing commands from the
+-L<nc(1)> program. L<nc(1)> can be used to interface NEdit to code development
++L<ncl(1)> program. L<ncl(1)> can be used to interface NEdit to code development
+ environments, mailers, etc., or just as a quick way to open files from the
+ shell command line without starting a new NEdit session.
+ 
+ =item  B<-do> I<command> 
+ 
+ Execute an NEdit macro or action on the file following the -do argument on the
+-command line. B<-do> is particularly useful from the L<nc(1)> program, where
+-`nc -do' can remotely execute commands in an nedit B<-server> session.
++command line. B<-do> is particularly useful from the L<ncl(1)> program, where
++`ncl -do' can remotely execute commands in an nedit B<-server> session.
+ 
+ =item  B<-tags> I<file> 
+ 
+@@ -145,7 +145,7 @@ Set the value of an X resource to override a default v
+ =item  B<-svrname> I<name> 
+ 
+ When starting nedit in server mode, name the server, such that it responds to
+-requests only when L<nc(1)> is given a corresponding B<-svrname> argument. By
++requests only when L<ncl(1)> is given a corresponding B<-svrname> argument. By
+ naming servers, you can run several simultaneously, and direct files and
+ commands specifically to any one. Specifying a non-empty name automatically
+ designates this session as an NEdit server, as though B<-server> were specified.
+@@ -263,6 +263,10 @@ distribution kit.
+ 
+ NEdit sources, executables, additional documentation, and contributed software
+ are available from the NEdit web site at http://nedit.org.
++
++In the original distribution, the client program is named "nc".
++It has been renamed in this package to avoid a conflict with nc(1).
++
+ 
+ =head1 SEE ALSO
+ 

@@ -1,7 +1,8 @@
-$OpenBSD: patch-source_file_c,v 1.6 2007/06/26 19:54:53 jasper Exp $
---- source/file.c.orig	Tue Aug 24 11:37:24 2004
-+++ source/file.c	Fri Jun 22 17:30:03 2007
-@@ -1314,7 +1314,12 @@ void PrintWindow(WindowInfo *window, int selectedOnly)
+$OpenBSD: patch-source_file_c,v 1.7 2019/02/28 23:00:47 sthen Exp $
+Index: source/file.c
+--- source/file.c.orig
++++ source/file.c
+@@ -1376,7 +1376,12 @@ void PrintWindow(WindowInfo *window, int selectedOnly)
  */
  void PrintString(const char *string, int length, Widget parent, const char *jobName)
  {
@@ -14,7 +15,7 @@ $OpenBSD: patch-source_file_c,v 1.6 2007/06/26 19:54:53 jasper Exp $
      FILE *fp;
      int fd;
  
-@@ -1325,6 +1330,10 @@ void PrintString(const char *string, int length, Widge
+@@ -1387,6 +1392,10 @@ void PrintString(const char *string, int length, Widge
  	    1. Create a filename
  	    2. Open the file with the O_CREAT|O_EXCL flags
  	So all an attacker can do is a DoS on the print function. */
@@ -25,7 +26,7 @@ $OpenBSD: patch-source_file_c,v 1.6 2007/06/26 19:54:53 jasper Exp $
      tmpnam(tmpFileName);
  
      /* open the temporary file */
-@@ -1333,6 +1342,7 @@ void PrintString(const char *string, int length, Widge
+@@ -1395,6 +1404,7 @@ void PrintString(const char *string, int length, Widge
  #else
      if ((fd = open(tmpFileName, O_CREAT|O_EXCL|O_WRONLY, S_IRUSR | S_IWUSR)) < 0 || (fp = fdopen(fd, "w")) == NULL)
  #endif /* VMS */

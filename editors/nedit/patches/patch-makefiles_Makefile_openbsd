@@ -1,8 +1,8 @@
-$OpenBSD: patch-makefiles_Makefile_openbsd,v 1.9 2010/04/24 20:18:39 naddy Exp $
---- makefiles/Makefile.openbsd.orig	Sat Nov 22 06:03:39 2003
-+++ makefiles/Makefile.openbsd	Sat Oct 27 07:31:57 2007
-@@ -1,6 +1,6 @@
- # $Id: patch-makefiles_Makefile_openbsd,v 1.9 2010/04/24 20:18:39 naddy Exp $
+$OpenBSD: patch-makefiles_Makefile_openbsd,v 1.10 2019/02/28 23:00:47 sthen Exp $
+Index: makefiles/Makefile.openbsd
+--- makefiles/Makefile.openbsd.orig
++++ makefiles/Makefile.openbsd
+@@ -2,5 +2,5 @@
 -CC=cc
 -AR=ar
 +CC?=cc

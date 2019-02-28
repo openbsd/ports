@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.78 2018/09/04 12:46:11 espie Exp $
+# $OpenBSD: Makefile,v 1.79 2019/02/28 23:00:47 sthen Exp $
 
-COMMENT=		X11/Motif GUI text editor
+COMMENT=		a fast, compact Motif/X11 plain text editor
 
-DISTNAME=		nedit-5.5
+DISTNAME=		nedit-5.7
 P_V=			0.5
-REVISION=		23
 EPOCH=			0
 DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX} \
 			nedit_patterns-${P_V}.tgz:0
-PATCHFILES=		wrapmark.diff:0
+
 CATEGORIES=		editors x11
+HOMEPAGE =		https://sourceforge.net/projects/nedit/
+MAINTAINER =		Alessandro De Laurenzis <just22@atlantide.t28.net>
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nedit/}
 MASTER_SITES0=		http://distfiles.nl/
@@ -25,14 +26,14 @@ WANTLIB += c expat fontconfig freetype iconv m z Xm
 LIB_DEPENDS+=		converters/libiconv \
 			x11/motif
 
-ALL_TARGET=		openbsd
+ALL_TARGET=		openbsd docs
 
 NO_TEST=		Yes
 
-CFLAGS+=		-DBUILD_UNTESTED_NEDIT
-MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
+MAKE_ENV+=		MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
 do-install:
+	sed -i "s/^\.TH NC/&L/" ${WRKSRC}/doc/nc.man
 	${INSTALL_PROGRAM} ${WRKBUILD}/source/nedit ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKBUILD}/source/nc ${PREFIX}/bin/ncl
 	${INSTALL_MAN} ${WRKSRC}/doc/nedit.man ${PREFIX}/man/man1/nedit.1
