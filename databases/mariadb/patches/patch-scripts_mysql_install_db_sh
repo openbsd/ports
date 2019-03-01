@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.11 2019/02/10 21:23:00 sthen Exp $
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.12 2019/03/01 15:27:05 sthen Exp $
 Index: scripts/mysql_install_db.sh
 --- scripts/mysql_install_db.sh.orig
 +++ scripts/mysql_install_db.sh
@@ -21,6 +21,15 @@ Index: scripts/mysql_install_db.sh
        --skip-name-resolve) ip_only=1 ;;
        --verbose) verbose=1 ;; # Obsolete
        --rpm) in_rpm=1 ;;
+@@ -314,7 +317,7 @@ then
+ elif test -n "$dirname0" -a -x "$dirname0/@INSTALL_SBINDIR@/mysqld"
+ then
+   basedir="$dirname0"
+-  bindir="$basedir/@INSTALL_SBINDIR@"
++  bindir="$basedir/@INSTALL_BINDIR@"
+   resolveip="$bindir/resolveip"
+   mysqld="$basedir/@INSTALL_SBINDIR@/mysqld"
+   pkgdatadir="$basedir/@INSTALL_MYSQLSHAREDIR@"
 @@ -410,11 +413,11 @@ do
    fi
    if test -n "$user"
