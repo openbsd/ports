@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2019/02/19 22:42:42 jsg Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/01 13:50:52 jca Exp $
 
 COMMENT =	automated OpenGL and OpenCL testsuite
 ONLY_FOR_ARCHS =	amd64 i386
 
 DISTNAME =	piglit-20190208
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	mesa3d
 GH_PROJECT =	piglit
@@ -41,7 +41,7 @@ LIB_DEPENDS =		graphics/waffle \
 CONFIGURE_ARGS =	-DPIGLIT_BUILD_CL_TESTS:BOOL=OFF \
 			-DCMAKE_POLICY_DEFAULT_CMP0056:STRING=NEW \
 			-DHAVE_LIBCACA:BOOL=FALSE
-CONFIGURE_ENV =		CFLAGS="-I${X11BASE}/include"
+CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include"
 
 NO_TEST =		Yes
 
