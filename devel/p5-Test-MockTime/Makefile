@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/03/01 08:39:23 benoit Exp $
 
 COMMENT =	replaces actual time with simulated time
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Test-MockTime-0.15
+DISTNAME =	Test-MockTime-0.17
 CATEGORIES =	devel
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
