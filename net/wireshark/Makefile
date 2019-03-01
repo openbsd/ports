@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2019/03/01 18:06:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.84 2019/03/01 21:12:20 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
@@ -120,8 +120,6 @@ MODULES +=	x11/qt5
 .else
 CONFIGURE_ARGS +=	-DBUILD_wireshark=false
 .endif
-
-NO_TEST =	Yes
 
 .if ${MACHINE_ARCH:Mpowerpc}
 CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
