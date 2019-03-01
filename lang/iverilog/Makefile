@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/03/01 12:47:26 jca Exp $
 
 COMMENT=		Verilog simulation and synthesis tool
 
@@ -6,7 +6,7 @@ V=			10.2
 DISTNAME=		verilog-$V
 PKGNAME=		iverilog-$V
 CATEGORIES=		lang devel
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://iverilog.icarus.com/
 
@@ -15,18 +15,21 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		ftp://ftp.icarus.com/pub/eda/verilog/v10/
 
-WANTLIB += c m pthread readline ${COMPILER_LIBCXX} termcap z
+WANTLIB += ${COMPILER_LIBCXX} bz2 c curses m readline z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 USE_GMAKE=		Yes
 
 BUILD_DEPENDS=		devel/bison
+LIB_DEPENDS =		archivers/bzip2
 YACC=			bison
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-suffix
-CFLAGS+=		-fPIC
+CONFIGURE_ENV+=		CFLAGS="-fPIC ${CFLAGS}" \
+			CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
 VVP_DOCS=		README.txt opcodes.txt
 DOC_DIR=		${PREFIX}/share/doc/iverilog
