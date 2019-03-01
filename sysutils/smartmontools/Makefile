@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2019/03/01 19:35:34 cwen Exp $
 
 COMMENT=		control and monitor storage systems using SMART
 
 # XXX at update time check whether C++11 is actually needed
-DISTNAME=		smartmontools-6.6
+DISTNAME=		smartmontools-7.0
 CATEGORIES=		sysutils
-REVISION=		1
 
 HOMEPAGE=		https://www.smartmontools.org/
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
