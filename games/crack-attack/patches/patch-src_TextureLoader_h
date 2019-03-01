@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_TextureLoader_h,v 1.1 2019/03/01 20:01:27 cwen Exp $
+Fix for ports-gcc:
+error: 'strncpy' was not declared in this scope
+Index: src/TextureLoader.h
+--- src/TextureLoader.h.orig
++++ src/TextureLoader.h
+@@ -28,6 +28,7 @@
+ #define TEXTURELOADER_H
+ 
+ #include <GL/glut.h>
++#include <string.h>
+ 
+ #include "glext.h"
+ #include "sstream.h"
