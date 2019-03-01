@@ -1,22 +1,20 @@
-# $OpenBSD: Makefile,v 1.82 2019/02/28 23:31:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2019/03/01 18:06:46 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
 COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
-COMMENT-gtk =	graphical network protocol analyzer, Gtk+3 user-interface
 
-V =		2.6.7
+V =		3.0.0
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
 PKGNAME-text =	tshark-$V
-PKGNAME-gtk =	wireshark-gtk-$V
 
-SHARED_LIBS +=	wscodecs             0.0      # 0.0
-SHARED_LIBS +=	wsutil               3.0      # 5.0
-SHARED_LIBS +=	wiretap              3.0      # 4.5
-SHARED_LIBS +=	wireshark            3.0      # 5.5
+SHARED_LIBS +=	wscodecs             1.0
+SHARED_LIBS +=	wsutil               4.0
+SHARED_LIBS +=	wiretap              4.0
+SHARED_LIBS +=	wireshark            4.0
 
 CATEGORIES =	net security x11
 
@@ -28,14 +26,13 @@ EXTRACT_SUFX =	.tar.xz
 # tools/pidl is GPLv3 or later. See COPYING.
 PERMIT_PACKAGE_CDROM =	Yes
 
-cWANTLIB += ${MODLUA_WANTLIB}
-cWANTLIB += bcg729 c cares gcrypt glib-2.0 gmodule-2.0 gnutls gpg-error
-cWANTLIB += intl lz4 m nghttp2 pcap smi snappy spandsp xml2 z
+cWANTLIB +=	bcg729 c gcrypt glib-2.0 gmodule-2.0 gnutls gpg-error
+cWANTLIB +=	m pcap spandsp z
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
-MULTI_PACKAGES = -text -main -gtk
-PSEUDO_FLAVORS = no_x11 no_gtk no_qt
+MULTI_PACKAGES = -text -main
+PSEUDO_FLAVORS = no_x11 no_qt
 # sync with devel/spidermonkey52: qt -> polkit -> mozjs17
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
     ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "hppa" || \
@@ -54,7 +51,8 @@ MODLUA_SA =	Yes
 MODLUA_RUNDEP =	No
 MODPY_RUNDEP =	No
 
-WANTLIB-text =	${cWANTLIB} maxminddb ssh
+WANTLIB-text =	${cWANTLIB} ${MODLUA_WANTLIB}
+WANTLIB-text += cares lz4 maxminddb nghttp2 smi snappy ssh xml2
 
 WANTLIB-main =	${cWANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-main += wireshark wiretap wscodecs wsutil
@@ -62,16 +60,10 @@ WANTLIB-main += wireshark wiretap wscodecs wsutil
 # linkages are done with .so symlinks present, so the soname is wrong
 WANTLIB-main += Qt5Core Qt5Gui Qt5Multimedia Qt5Network Qt5PrintSupport Qt5Widgets
 
-WANTLIB-gtk =	${cWANTLIB}
-WANTLIB-gtk +=	wireshark wiretap wscodecs wsutil
-WANTLIB-gtk +=	atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB-gtk +=	gobject-2.0 gtk-3 pango-1.0 pangocairo-1.0
-
-
 MASTER_SITES =		http://www.wireshark.org/download/src/all-versions/ \
 			http://www.wireshark.org/download/automated/src/
 
-WVER =			${V:C/..$//}
+WVER =			${V:C/^(...).*/\1/}
 SUBST_VARS =		WVER
 
 BUILD_DEPENDS +=	devel/bison \
@@ -112,12 +104,6 @@ LIB_DEPENDS-main +=	${LIB_DEPENDS} \
 # an "Extra" (that may later change to a real WANTLIB) than failing builds.
 WANTLIB-main +=		Qt5Svg
 
-LIB_DEPENDS-gtk +=	tshark-$V:${BUILD_PKGPATH:S/,$//},-text \
-			x11/gtk+3
-# XXX gtk build still picks this up even though it doesn't show in symbols
-# or objdump. problem will magically vanish when upstream remove gtk support!
-BUILD_DEPENDS +=	audio/portaudio-svn
-
 MODULES +=		devel/cmake
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS +=	-DDUMPCAP_INST_VALS=suid \
@@ -127,13 +113,7 @@ CONFIGURE_ARGS +=	-DDUMPCAP_INST_VALS=suid \
 .include <bsd.port.arch.mk>
 
 .if ${FLAVOR:Mno_x11}
-BUILD_PACKAGES := ${BUILD_PACKAGES:N-main:N-gtk}
-.endif
-.if ${FLAVOR:Mno_qt}
 BUILD_PACKAGES := ${BUILD_PACKAGES:N-main}
-.endif
-.if ${BUILD_PACKAGES:M-gtk}
-CONFIGURE_ARGS +=	-DBUILD_wireshark_gtk=true
 .endif
 .if ${BUILD_PACKAGES:M-main}
 MODULES +=	x11/qt5

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-text,v 1.9 2018/07/19 10:31:58 sthen Exp $
+@comment $OpenBSD: PLIST-text,v 1.10 2019/03/01 18:06:46 sthen Exp $
 @newgroup _wireshark:735
 @bin bin/capinfos
 @bin bin/captype
@@ -19,6 +19,7 @@
 @bin bin/tshark
 include/wireshark/
 include/wireshark/cfile.h
+include/wireshark/cli_main.h
 include/wireshark/codecs/
 include/wireshark/codecs/codecs.h
 include/wireshark/epan/
@@ -58,7 +59,7 @@ include/wireshark/epan/diam_dict.h
 include/wireshark/epan/disabled_protos.h
 include/wireshark/epan/dissector_filters.h
 include/wireshark/epan/dissectors/
-include/wireshark/epan/dissectors/dissectors.h
+include/wireshark/epan/dissectors/file-rbm.h
 include/wireshark/epan/dissectors/packet-6lowpan.h
 include/wireshark/epan/dissectors/packet-a21.h
 include/wireshark/epan/dissectors/packet-acp133.h
@@ -102,7 +103,6 @@ include/wireshark/epan/dissectors/packet-charging_ase.h
 include/wireshark/epan/dissectors/packet-chdlc.h
 include/wireshark/epan/dissectors/packet-cip.h
 include/wireshark/epan/dissectors/packet-cipsafety.h
-include/wireshark/epan/dissectors/packet-clearcase.h
 include/wireshark/epan/dissectors/packet-cmip.h
 include/wireshark/epan/dissectors/packet-cmp.h
 include/wireshark/epan/dissectors/packet-cms.h
@@ -162,7 +162,6 @@ include/wireshark/epan/dissectors/packet-fcels.h
 include/wireshark/epan/dissectors/packet-fcfcs.h
 include/wireshark/epan/dissectors/packet-fcfzs.h
 include/wireshark/epan/dissectors/packet-fclctl.h
-include/wireshark/epan/dissectors/packet-fcp.h
 include/wireshark/epan/dissectors/packet-fcsb3.h
 include/wireshark/epan/dissectors/packet-fcswils.h
 include/wireshark/epan/dissectors/packet-ff.h
@@ -170,11 +169,11 @@ include/wireshark/epan/dissectors/packet-fix.h
 include/wireshark/epan/dissectors/packet-fmp.h
 include/wireshark/epan/dissectors/packet-frame.h
 include/wireshark/epan/dissectors/packet-ftam.h
+include/wireshark/epan/dissectors/packet-geonw.h
 include/wireshark/epan/dissectors/packet-giop.h
 include/wireshark/epan/dissectors/packet-gluster.h
 include/wireshark/epan/dissectors/packet-gmr1_common.h
 include/wireshark/epan/dissectors/packet-gmr1_rr.h
-include/wireshark/epan/dissectors/packet-gnutella.h
 include/wireshark/epan/dissectors/packet-gprscdr.h
 include/wireshark/epan/dissectors/packet-gre.h
 include/wireshark/epan/dissectors/packet-gsm_a_common.h
@@ -193,6 +192,7 @@ include/wireshark/epan/dissectors/packet-h245.h
 include/wireshark/epan/dissectors/packet-h248.h
 include/wireshark/epan/dissectors/packet-h263.h
 include/wireshark/epan/dissectors/packet-h264.h
+include/wireshark/epan/dissectors/packet-h265.h
 include/wireshark/epan/dissectors/packet-h323.h
 include/wireshark/epan/dissectors/packet-h450-ros.h
 include/wireshark/epan/dissectors/packet-hpext.h
@@ -203,6 +203,7 @@ include/wireshark/epan/dissectors/packet-iax2.h
 include/wireshark/epan/dissectors/packet-icmp.h
 include/wireshark/epan/dissectors/packet-idmp.h
 include/wireshark/epan/dissectors/packet-idp.h
+include/wireshark/epan/dissectors/packet-ieee1609dot2.h
 include/wireshark/epan/dissectors/packet-ieee80211-radio.h
 include/wireshark/epan/dissectors/packet-ieee80211-radiotap-defs.h
 include/wireshark/epan/dissectors/packet-ieee80211-radiotap-iter.h
@@ -223,11 +224,13 @@ include/wireshark/epan/dissectors/packet-isis-clv.h
 include/wireshark/epan/dissectors/packet-isis.h
 include/wireshark/epan/dissectors/packet-isl.h
 include/wireshark/epan/dissectors/packet-isup.h
+include/wireshark/epan/dissectors/packet-its.h
 include/wireshark/epan/dissectors/packet-iwarp-ddp-rdmap.h
 include/wireshark/epan/dissectors/packet-juniper.h
 include/wireshark/epan/dissectors/packet-jxta.h
 include/wireshark/epan/dissectors/packet-kerberos.h
-include/wireshark/epan/dissectors/packet-klm.h
+include/wireshark/epan/dissectors/packet-knxip.h
+include/wireshark/epan/dissectors/packet-knxip_decrypt.h
 include/wireshark/epan/dissectors/packet-l2tp.h
 include/wireshark/epan/dissectors/packet-lapdm.h
 include/wireshark/epan/dissectors/packet-lbm.h
@@ -238,6 +241,7 @@ include/wireshark/epan/dissectors/packet-lcsap.h
 include/wireshark/epan/dissectors/packet-ldap.h
 include/wireshark/epan/dissectors/packet-ldp.h
 include/wireshark/epan/dissectors/packet-link16.h
+include/wireshark/epan/dissectors/packet-lisp.h
 include/wireshark/epan/dissectors/packet-llc.h
 include/wireshark/epan/dissectors/packet-lnet.h
 include/wireshark/epan/dissectors/packet-logotypecertextn.h
@@ -253,7 +257,6 @@ include/wireshark/epan/dissectors/packet-mms.h
 include/wireshark/epan/dissectors/packet-mount.h
 include/wireshark/epan/dissectors/packet-mp4ves.h
 include/wireshark/epan/dissectors/packet-mpeg-descriptor.h
-include/wireshark/epan/dissectors/packet-mpeg-pmt.h
 include/wireshark/epan/dissectors/packet-mpeg-sect.h
 include/wireshark/epan/dissectors/packet-mpls.h
 include/wireshark/epan/dissectors/packet-mq.h
@@ -269,6 +272,7 @@ include/wireshark/epan/dissectors/packet-ndps.h
 include/wireshark/epan/dissectors/packet-netbios.h
 include/wireshark/epan/dissectors/packet-netlink.h
 include/wireshark/epan/dissectors/packet-nfs.h
+include/wireshark/epan/dissectors/packet-ngap.h
 include/wireshark/epan/dissectors/packet-nisplus.h
 include/wireshark/epan/dissectors/packet-nlm.h
 include/wireshark/epan/dissectors/packet-nr-rrc.h
@@ -277,6 +281,7 @@ include/wireshark/epan/dissectors/packet-ntlmssp.h
 include/wireshark/epan/dissectors/packet-ntp.h
 include/wireshark/epan/dissectors/packet-nvme.h
 include/wireshark/epan/dissectors/packet-ocsp.h
+include/wireshark/epan/dissectors/packet-oer.h
 include/wireshark/epan/dissectors/packet-opensafety.h
 include/wireshark/epan/dissectors/packet-oscore.h
 include/wireshark/epan/dissectors/packet-osi-options.h
@@ -288,6 +293,7 @@ include/wireshark/epan/dissectors/packet-p772.h
 include/wireshark/epan/dissectors/packet-pcap_pktdata.h
 include/wireshark/epan/dissectors/packet-pcnfsd.h
 include/wireshark/epan/dissectors/packet-pdcp-lte.h
+include/wireshark/epan/dissectors/packet-pdcp-nr.h
 include/wireshark/epan/dissectors/packet-per.h
 include/wireshark/epan/dissectors/packet-pkcs1.h
 include/wireshark/epan/dissectors/packet-pkcs12.h
@@ -298,7 +304,6 @@ include/wireshark/epan/dissectors/packet-pkixac.h
 include/wireshark/epan/dissectors/packet-pkixproxy.h
 include/wireshark/epan/dissectors/packet-pkixqualified.h
 include/wireshark/epan/dissectors/packet-pkixtsp.h
-include/wireshark/epan/dissectors/packet-pktc.h
 include/wireshark/epan/dissectors/packet-portmap.h
 include/wireshark/epan/dissectors/packet-ppi-geolocation-common.h
 include/wireshark/epan/dissectors/packet-ppp.h
@@ -325,7 +330,6 @@ include/wireshark/epan/dissectors/packet-rohc.h
 include/wireshark/epan/dissectors/packet-ros.h
 include/wireshark/epan/dissectors/packet-rpc.h
 include/wireshark/epan/dissectors/packet-rpcrdma.h
-include/wireshark/epan/dissectors/packet-rquota.h
 include/wireshark/epan/dissectors/packet-rrc.h
 include/wireshark/epan/dissectors/packet-rsvp.h
 include/wireshark/epan/dissectors/packet-rtcp.h
@@ -334,7 +338,6 @@ include/wireshark/epan/dissectors/packet-rtp.h
 include/wireshark/epan/dissectors/packet-rtps.h
 include/wireshark/epan/dissectors/packet-rtse.h
 include/wireshark/epan/dissectors/packet-rtsp.h
-include/wireshark/epan/dissectors/packet-rwall.h
 include/wireshark/epan/dissectors/packet-rx.h
 include/wireshark/epan/dissectors/packet-s1ap.h
 include/wireshark/epan/dissectors/packet-s5066sis.h
@@ -366,14 +369,12 @@ include/wireshark/epan/dissectors/packet-smrse.h
 include/wireshark/epan/dissectors/packet-snmp.h
 include/wireshark/epan/dissectors/packet-socketcan.h
 include/wireshark/epan/dissectors/packet-spice.h
-include/wireshark/epan/dissectors/packet-spray.h
 include/wireshark/epan/dissectors/packet-sprt.h
 include/wireshark/epan/dissectors/packet-sscop.h
-include/wireshark/epan/dissectors/packet-ssl-utils.h
-include/wireshark/epan/dissectors/packet-ssl.h
 include/wireshark/epan/dissectors/packet-stat-notify.h
 include/wireshark/epan/dissectors/packet-stat.h
 include/wireshark/epan/dissectors/packet-sv.h
+include/wireshark/epan/dissectors/packet-syslog.h
 include/wireshark/epan/dissectors/packet-t124.h
 include/wireshark/epan/dissectors/packet-t30.h
 include/wireshark/epan/dissectors/packet-t38.h
@@ -381,7 +382,8 @@ include/wireshark/epan/dissectors/packet-tacacs.h
 include/wireshark/epan/dissectors/packet-tcap.h
 include/wireshark/epan/dissectors/packet-tcp.h
 include/wireshark/epan/dissectors/packet-tetra.h
-include/wireshark/epan/dissectors/packet-tftp.h
+include/wireshark/epan/dissectors/packet-tls-utils.h
+include/wireshark/epan/dissectors/packet-tls.h
 include/wireshark/epan/dissectors/packet-tn3270.h
 include/wireshark/epan/dissectors/packet-tn5250.h
 include/wireshark/epan/dissectors/packet-tpkt.h
@@ -493,6 +495,7 @@ include/wireshark/epan/req_resp_hdrs.h
 include/wireshark/epan/rtd_table.h
 include/wireshark/epan/rtp_pt.h
 include/wireshark/epan/sctpppids.h
+include/wireshark/epan/secrets.h
 include/wireshark/epan/show_exception.h
 include/wireshark/epan/slow_protocol_subtypes.h
 include/wireshark/epan/sminmpec.h
@@ -538,27 +541,27 @@ include/wireshark/epan/xdlc.h
 include/wireshark/file.h
 include/wireshark/globals.h
 include/wireshark/log.h
+include/wireshark/version_info.h
 include/wireshark/wiretap/
 include/wireshark/wiretap/file_wrappers.h
 include/wireshark/wiretap/merge.h
 include/wireshark/wiretap/pcap-encap.h
 include/wireshark/wiretap/pcapng_module.h
+include/wireshark/wiretap/secrets-types.h
 include/wireshark/wiretap/wtap.h
 include/wireshark/wiretap/wtap_opttypes.h
 include/wireshark/ws_attributes.h
 include/wireshark/ws_compiler_tests.h
 include/wireshark/ws_diag_control.h
 include/wireshark/ws_symbol_export.h
+include/wireshark/ws_version.h
 include/wireshark/wsutil/
 include/wireshark/wsutil/adler32.h
 include/wireshark/wsutil/base32.h
-include/wireshark/wsutil/base64.h
 include/wireshark/wsutil/bits_count_ones.h
 include/wireshark/wsutil/bits_ctz.h
 include/wireshark/wsutil/bitswap.h
 include/wireshark/wsutil/buffer.h
-include/wireshark/wsutil/clopts_common.h
-include/wireshark/wsutil/cmdarg_err.h
 include/wireshark/wsutil/color.h
 include/wireshark/wsutil/copyright_info.h
 include/wireshark/wsutil/cpu_info.h
@@ -571,16 +574,19 @@ include/wireshark/wsutil/crc32.h
 include/wireshark/wsutil/crc6.h
 include/wireshark/wsutil/crc7.h
 include/wireshark/wsutil/crc8.h
+include/wireshark/wsutil/curve25519.h
 include/wireshark/wsutil/eax.h
 include/wireshark/wsutil/filesystem.h
 include/wireshark/wsutil/frequency-utils.h
 include/wireshark/wsutil/g711.h
-include/wireshark/wsutil/glib-compat.h
 include/wireshark/wsutil/inet_addr.h
+include/wireshark/wsutil/inet_ipv4.h
 include/wireshark/wsutil/inet_ipv6.h
 include/wireshark/wsutil/interface.h
 include/wireshark/wsutil/jsmn.h
+include/wireshark/wsutil/json_dumper.h
 include/wireshark/wsutil/mpeg-audio.h
+include/wireshark/wsutil/netlink.h
 include/wireshark/wsutil/nstime.h
 include/wireshark/wsutil/os_version_info.h
 include/wireshark/wsutil/pint.h
@@ -605,7 +611,7 @@ include/wireshark/wsutil/ws_mempbrk.h
 include/wireshark/wsutil/ws_mempbrk_int.h
 include/wireshark/wsutil/ws_pipe.h
 include/wireshark/wsutil/ws_printf.h
-include/wireshark/wsutil/wsjsmn.h
+include/wireshark/wsutil/wsjson.h
 include/wireshark/wsutil/xtea.h
 @lib lib/libwireshark.so.${LIBwireshark_VERSION}
 @lib lib/libwiretap.so.${LIBwiretap_VERSION}
@@ -613,14 +619,16 @@ include/wireshark/wsutil/xtea.h
 @lib lib/libwsutil.so.${LIBwsutil_VERSION}
 lib/pkgconfig/wireshark.pc
 lib/wireshark/
-lib/wireshark/FindGLIB2.cmake
-lib/wireshark/FindWSWinLibs.cmake
-lib/wireshark/FindWireshark.cmake
-lib/wireshark/LocatePythonModule.cmake
-lib/wireshark/UseAsn2Wrs.cmake
-lib/wireshark/UseMakePluginReg.cmake
-lib/wireshark/WiresharkConfig.cmake
-lib/wireshark/WiresharkConfigVersion.cmake
+lib/wireshark/cmake/
+lib/wireshark/cmake/FindGLIB2.cmake
+lib/wireshark/cmake/FindWSWinLibs.cmake
+lib/wireshark/cmake/LocatePythonModule.cmake
+lib/wireshark/cmake/UseAsn2Wrs.cmake
+lib/wireshark/cmake/UseMakePluginReg.cmake
+lib/wireshark/cmake/WiresharkConfig.cmake
+lib/wireshark/cmake/WiresharkConfigVersion.cmake
+lib/wireshark/cmake/WiresharkTargets${MODCMAKE_BUILD_SUFFIX}
+lib/wireshark/cmake/WiresharkTargets.cmake
 lib/wireshark/extcap/
 @bin lib/wireshark/extcap/androiddump
 @bin lib/wireshark/extcap/ciscodump
@@ -681,7 +689,6 @@ share/wireshark/diameter/
 share/wireshark/diameter/AlcatelLucent.xml
 share/wireshark/diameter/Cisco.xml
 share/wireshark/diameter/CiscoSystems.xml
-share/wireshark/diameter/Custom.make
 share/wireshark/diameter/Custom.xml
 share/wireshark/diameter/Ericsson.xml
 share/wireshark/diameter/HP.xml
@@ -728,11 +735,12 @@ share/wireshark/help/
 share/wireshark/help/capture_filters.txt
 share/wireshark/help/capturing.txt
 share/wireshark/help/display_filters.txt
-share/wireshark/help/faq.txt
+share/wireshark/help/faq.py
 share/wireshark/help/getting_started.txt
 share/wireshark/help/overview.txt
 share/wireshark/help/toc
 share/wireshark/init.lua
+share/wireshark/ipmap.html
 share/wireshark/manuf
 share/wireshark/mergecap.html
 share/wireshark/mmdbresolve.html
@@ -743,8 +751,9 @@ share/wireshark/profiles/Bluetooth/colorfilters
 share/wireshark/profiles/Bluetooth/preferences
 share/wireshark/profiles/Classic/
 share/wireshark/profiles/Classic/colorfilters
+share/wireshark/profiles/No Reassembly/
+share/wireshark/profiles/No Reassembly/preferences
 share/wireshark/radius/
-share/wireshark/radius/Custom.make
 share/wireshark/radius/README.radius_dictionary
 share/wireshark/radius/custom.includes
 share/wireshark/radius/dictionary
@@ -934,6 +943,7 @@ share/wireshark/radius/dictionary.unix
 share/wireshark/radius/dictionary.usr
 share/wireshark/radius/dictionary.utstarcom
 share/wireshark/radius/dictionary.valemount
+share/wireshark/radius/dictionary.verizon
 share/wireshark/radius/dictionary.versanet
 share/wireshark/radius/dictionary.vqp
 share/wireshark/radius/dictionary.walabi

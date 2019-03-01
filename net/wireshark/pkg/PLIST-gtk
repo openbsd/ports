@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-gtk,v 1.4 2018/06/27 21:04:00 espie Exp $
-@bin bin/wireshark-gtk
-share/applications/wireshark-gtk.desktop
-@tag update-desktop-database
