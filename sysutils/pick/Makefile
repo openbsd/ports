@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2018/04/11 06:55:15 anton Exp $
+# $OpenBSD: Makefile,v 1.10 2019/03/01 06:54:21 anton Exp $
 
 COMMENT =	fuzzy select anything
 
-V =		2.0.2
+V =		3.0.0
 DISTNAME =	pick-${V}
 
 CATEGORIES =	sysutils
@@ -19,7 +19,6 @@ WANTLIB +=	c curses
 
 MASTER_SITES =	https://github.com/mptre/pick/releases/download/v${V}/
 
-SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	simple
 
 .include <bsd.port.mk>
