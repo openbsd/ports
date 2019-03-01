@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.78 2017/05/13 20:11:24 espie Exp $
+# $OpenBSD: Makefile,v 1.79 2019/03/01 09:39:37 sthen Exp $
 
 COMMENT=		PDP, IBM 1401, Nova and other CPUs simulator
 
 DISTNAME=		simhv39-0
 PKGNAME=		simh-3.9.0
-REVISION=		1
+REVISION=		2
 CATEGORIES=		emulators
 MASTER_SITES=		${HOMEPAGE}/sources/
 EXTRACT_SUFX=		.zip
