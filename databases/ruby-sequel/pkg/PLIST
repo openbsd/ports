@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2018/09/25 18:08:05 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.30 2019/03/01 14:30:11 jeremy Exp $
 ${GEM_BIN}/sequel${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -86,6 +86,12 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.1.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.10.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.11.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.12.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.13.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.14.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.15.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.16.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.17.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.18.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.2.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.3.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.4.0.txt
@@ -204,6 +210,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/caller_logging.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/columns_introspection.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/connection_expiration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/connection_validator.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/constant_sql_override.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/constraint_validations.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/core_extensions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/core_refinements.rb
@@ -345,6 +352,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/subclasses.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/subset_conditions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/table_select.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/tactical_eager_loading.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/throw_failures.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/timestamps.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/touch.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/tree.rb
@@ -416,6 +424,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/columns_updated_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/composition_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/connection_expiration_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/connection_validator_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/extensions/constant_sql_override_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/constraint_validations_plugin_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/constraint_validations_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/core_refinements_spec.rb
@@ -523,6 +532,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/synchronize_sql_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/table_select_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/tactical_eager_loading_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/thread_local_timezones_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/extensions/throw_failures_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/timestamps_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/to_dot_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/touch_spec.rb
