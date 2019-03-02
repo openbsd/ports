@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/02/20 09:13:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/03/02 08:41:54 ajacoutot Exp $
 share/osinfo/
 share/osinfo/LICENSE
 share/osinfo/VERSION
@@ -120,6 +120,7 @@ share/osinfo/install-script/redhat.com/
 share/osinfo/install-script/redhat.com/rhel-kickstart-desktop.xml
 share/osinfo/install-script/redhat.com/rhel-kickstart-jeos.xml
 share/osinfo/install-script/ubuntu.com/
+share/osinfo/install-script/ubuntu.com/ubuntu-preseed-desktop.xml
 share/osinfo/install-script/ubuntu.com/ubuntu-preseed-jeos.xml
 share/osinfo/os/
 share/osinfo/os/alpinelinux.org/
@@ -420,6 +421,7 @@ share/osinfo/os/microsoft.com/win-2k.xml
 share/osinfo/os/microsoft.com/win-2k12.xml
 share/osinfo/os/microsoft.com/win-2k12r2.xml
 share/osinfo/os/microsoft.com/win-2k16.xml
+share/osinfo/os/microsoft.com/win-2k19.xml
 share/osinfo/os/microsoft.com/win-2k3.xml
 share/osinfo/os/microsoft.com/win-2k3r2.xml
 share/osinfo/os/microsoft.com/win-2k8.xml
