@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2019/01/09 15:04:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/02 22:41:24 sthen Exp $
 
-DISTNAME=	bird-2.0.3
+DISTNAME=	bird-2.0.4
 
 WANTLIB=	c curses pthread readline ssh
 
