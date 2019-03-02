@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_rand_h,v 1.1 2019/03/02 20:00:27 cwen Exp $
+ports-gcc fix: error: 'srand' was not declared in this scope
+Also, the seed value comes from savefiles, we need to use 
+the deterministic algorithm.
+Index: src/rand.h
+--- src/rand.h.orig
++++ src/rand.h
+@@ -1,12 +1,14 @@
+ #ifndef _RAND_H_
+ #define _RAND_H_
+ 
++#include <stdlib.h>
++
+ class Rand {
+ public:
+   static int seedvalue;
+   static int roll(int n, bool store=true);
+   static int simpleroll(int n);
+-  static void setSeed(int s) {seedvalue=s; srand(s);}
++  static void setSeed(int s) {seedvalue=s; srand_deterministic(s);}
+ };
+ 
+ #endif
