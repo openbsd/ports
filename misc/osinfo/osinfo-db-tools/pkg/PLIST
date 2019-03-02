@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/09 15:25:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/03/02 17:25:41 ajacoutot Exp $
 @conflict libosinfo-<1.0.0
 @bin bin/osinfo-db-export
 @bin bin/osinfo-db-import
@@ -85,8 +85,6 @@ share/locale/kw@uccor/LC_MESSAGES/osinfo-db-tools.mo
 share/locale/kw_GB/
 share/locale/kw_GB/LC_MESSAGES/
 share/locale/kw_GB/LC_MESSAGES/osinfo-db-tools.mo
-share/locale/ky/
-share/locale/ky/LC_MESSAGES/
 share/locale/ky/LC_MESSAGES/osinfo-db-tools.mo
 share/locale/lt/LC_MESSAGES/osinfo-db-tools.mo
 share/locale/lv/LC_MESSAGES/osinfo-db-tools.mo

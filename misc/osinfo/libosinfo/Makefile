@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.5 2019/01/31 20:06:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/02 17:25:40 ajacoutot Exp $
 
 COMMENT=		library for managing information about operating systems
 
 DISTNAME=		libosinfo-${V}
 
-SHARED_LIBS +=  osinfo-1.0           1.1      # 1003.0
+SHARED_LIBS +=  osinfo-1.0           1.2      # 1004.0
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv
 WANTLIB += intl lzma m pcre pthread xml2 xslt z
 
-MODULES=		textproc/intltool \
-			x11/gnome
+MODULES=		x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection vala
+
+BUILD_DEPENDS=		devel/gettext-tools
 
 # needed for test
 BUILD_DEPENDS +=	devel/check \
