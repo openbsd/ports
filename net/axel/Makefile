@@ -1,40 +1,37 @@
-# $OpenBSD: Makefile,v 1.11 2019/01/06 14:50:49 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/03/02 18:41:17 ajacoutot Exp $
 
 COMMENT=	tiny download accelerator
-DISTNAME=	axel-2.4
-REVISION=	1
+
+V=		2.16.1
+DISTNAME=	axel-$V
+
 CATEGORIES=	net
 
 HOMEPAGE=	https://github.com/axel-download-accelerator/axel
 
-MAINTAINER=	Girish Venkatachalam <girish1729@gmail.com>
-
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	https://alioth-archive.debian.org/releases/pcsclite/ccid/
+MASTER_SITES=	https://github.com/axel-download-accelerator/axel/releases/download/v${V}/
 
-WANTLIB=	c iconv intl pthread
+WANTLIB=	c crypto iconv intl pthread ssl
 
 LIB_DEPENDS=	devel/gettext
 
 BUILD_DEPENDS=	devel/gettext-tools
 
 USE_GMAKE=	Yes
-NO_TEST=	Yes
 
-CONFIGURE_STYLE=simple
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--etcdir=${SYSCONFDIR} \
-		--mandir=${PREFIX}/man \
-		--i18n=1
-
-MAKE_FLAGS=	CC=${CC} \
-		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LFLAGS="-L${LOCALBASE}/lib -pthread -lintl -liconv"
-FAKE_FLAGS=	ETCDIR=${PREFIX}/share/examples/axel
+CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
+		LDFLAGS=-L${LOCALBASE}/lib
 
 pre-configure:
-	@sed -i 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/axel.1
+	@sed -i 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/man/axel.1
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/axel
+	${INSTALL_DATA} ${WRKSRC}/doc/axelrc.example \
+		${PREFIX}/share/examples/axel/
 
 .include <bsd.port.mk>
