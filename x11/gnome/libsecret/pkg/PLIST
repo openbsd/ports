@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/03/30 07:21:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/03/02 09:16:37 ajacoutot Exp $
 @bin bin/secret-tool
 include/libsecret-1/
 include/libsecret-1/libsecret/
@@ -25,6 +25,8 @@ lib/pkgconfig/libsecret-unstable.pc
 @man man/man1/secret-tool.1
 share/gir-1.0/
 share/gir-1.0/Secret-1.gir
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/libsecret-1/
 share/gtk-doc/html/libsecret-1/SecretCollection.html
 share/gtk-doc/html/libsecret-1/SecretItem.html

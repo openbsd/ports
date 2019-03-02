@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2018/12/29 09:33:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2019/03/02 09:16:37 ajacoutot Exp $
 
 COMMENT=		library for storing and retrieving passwords and secrets
 
 GNOME_PROJECT=		libsecret
-GNOME_VERSION=		0.18.7
+GNOME_VERSION=		0.18.8
 
-SHARED_LIBS +=  secret-1             1.0      # 0.0
+SHARED_LIBS +=  secret-1             2.0      # 0.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
