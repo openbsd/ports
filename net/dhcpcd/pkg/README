@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2018/10/01 19:52:41 naddy Exp $
+$OpenBSD: README,v 1.8 2019/03/02 00:24:07 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -16,6 +16,7 @@ pppoe0 interface and assigning it to multiple local networks.
 
 -- -- -- -- -- --
 ipv6only
+noipv6rs
 duid
 persistent
 option rapid_commit
@@ -24,15 +25,16 @@ require dhcp_server_identifier
 # disable running any hooks; not typically required for simple DHCPv6-PD setup
 script /usr/bin/true
 
-# Disable dhcpcd's own router solicitation support; allow slaacd
-# to do this instead by setting "inet6 autoconf" in hostname.pppoe0
-noipv6rs
-
 # List interfaces explicitly so that dhcpcd doesn't touch others
 allowinterfaces pppoe0 em0 vlan3 vlan5
 
 interface pppoe0
-	# request prefix delegation for downstream interfaces.
+	# the following two lines tell dhcpcd to do router solicitation
+	# itself. don't use them if using "inet6 autoconf" (slaacd)
+	ipv6rs
+	ia_na 1
+
+	# request prefixes from the provider to use for downstream networks
 	ia_pd 2 em0/1 vlan3/2 vlan5/3
 -- -- -- -- -- --
 
