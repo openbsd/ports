@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/10/17 10:08:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/03/02 09:11:32 ajacoutot Exp $
 include/gegl-${API_VERSION}/
 include/gegl-${API_VERSION}/gegl-apply.h
 include/gegl-${API_VERSION}/gegl-audio-fragment.h
@@ -6,8 +6,8 @@ include/gegl-${API_VERSION}/gegl-buffer-backend.h
 include/gegl-${API_VERSION}/gegl-buffer-cl-iterator.h
 include/gegl-${API_VERSION}/gegl-buffer-enums.h
 include/gegl-${API_VERSION}/gegl-buffer-iterator.h
-include/gegl-${API_VERSION}/gegl-buffer-iterator2.h
 include/gegl-${API_VERSION}/gegl-buffer-matrix2.h
+include/gegl-${API_VERSION}/gegl-buffer-swap.h
 include/gegl-${API_VERSION}/gegl-buffer.h
 include/gegl-${API_VERSION}/gegl-color.h
 include/gegl-${API_VERSION}/gegl-cpuaccel.h
@@ -18,15 +18,18 @@ include/gegl-${API_VERSION}/gegl-graph-debug.h
 include/gegl-${API_VERSION}/gegl-init.h
 include/gegl-${API_VERSION}/gegl-lookup.h
 include/gegl-${API_VERSION}/gegl-matrix.h
+include/gegl-${API_VERSION}/gegl-memory.h
 include/gegl-${API_VERSION}/gegl-node.h
 include/gegl-${API_VERSION}/gegl-op.h
 include/gegl-${API_VERSION}/gegl-operations-util.h
+include/gegl-${API_VERSION}/gegl-parallel.h
 include/gegl-${API_VERSION}/gegl-paramspecs.h
 include/gegl-${API_VERSION}/gegl-path.h
 include/gegl-${API_VERSION}/gegl-plugin.h
 include/gegl-${API_VERSION}/gegl-processor.h
 include/gegl-${API_VERSION}/gegl-random.h
 include/gegl-${API_VERSION}/gegl-rectangle.h
+include/gegl-${API_VERSION}/gegl-scratch.h
 include/gegl-${API_VERSION}/gegl-tile-backend.h
 include/gegl-${API_VERSION}/gegl-tile-handler.h
 include/gegl-${API_VERSION}/gegl-tile-source.h
@@ -82,6 +85,7 @@ include/gegl-${API_VERSION}/sc/sc-context.h
 include/gegl-${API_VERSION}/sc/sc-outline.h
 include/gegl-${API_VERSION}/sc/sc-sample.h
 lib/gegl-${API_VERSION}/
+lib/gegl-${API_VERSION}/gegl-common-cxx.so
 lib/gegl-${API_VERSION}/gegl-common-gpl3.so
 lib/gegl-${API_VERSION}/gegl-common.so
 lib/gegl-${API_VERSION}/gegl-core.so
@@ -95,6 +99,7 @@ lib/gegl-${API_VERSION}/lcms-from-profile.so
 lib/gegl-${API_VERSION}/npd.so
 lib/gegl-${API_VERSION}/npy-save.so
 lib/gegl-${API_VERSION}/path.so
+lib/gegl-${API_VERSION}/pdf-load.so
 lib/gegl-${API_VERSION}/pixbuf.so
 lib/gegl-${API_VERSION}/png-load.so
 lib/gegl-${API_VERSION}/png-save.so
