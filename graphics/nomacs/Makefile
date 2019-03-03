@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2018/09/08 06:56:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.20 2019/03/03 08:49:57 rsadowski Exp $
 
 COMMENT =	small and fast Qt image viewer
 
 GH_ACCOUNT =	nomacs
 GH_PROJECT =	nomacs
 GH_TAGNAME =	3.10.2
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 
@@ -25,7 +25,8 @@ WANTLIB += opencv_imgproc quazip5 raw tiff
 MODULES =		devel/cmake \
 			x11/qt5 \
 
-RUN_DEPENDS =		devel/desktop-file-utils
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/qt5/qtimageformats
 
 LIB_DEPENDS =		archivers/quazip,qt5 \
 			graphics/exiv2 \
@@ -35,9 +36,8 @@ LIB_DEPENDS =		archivers/quazip,qt5 \
 			graphics/tiff \
 			x11/qt5/qtsvg
 
-CONFIGURE_ARGS =	-DUSE_SYSTEM_QUAZIP:Bool=ON \
-			-DDISABLE_QT_DEBUG:Bool=ON \
-			-DENABLE_TRANSLATIONS:Bool=ON
+CONFIGURE_ARGS =	-DUSE_SYSTEM_QUAZIP=ON \
+			-DENABLE_TRANSLATIONS=ON
 
 WRKDIST =		${WRKDIR}/${PKGNAME}/ImageLounge
 
