@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2018/09/23 16:05:03 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.41 2019/03/03 08:03:03 kirby Exp $
 @pkgpath games/wesnoth,tinygui
 @pkgpath games/wesnoth,lite
 @newgroup _wesnothd:708
@@ -20,7 +20,6 @@ man/en_GB/man6/
 @man man/en_GB/man6/wesnothd.6
 man/es/
 man/es/man6/
-@man man/es/man6/wesnoth.6
 @man man/es/man6/wesnothd.6
 man/et/
 man/et/man6/
@@ -30,11 +29,9 @@ man/fi/man6/
 @man man/fi/man6/wesnothd.6
 man/fr/
 man/fr/man6/
-@man man/fr/man6/wesnoth.6
 @man man/fr/man6/wesnothd.6
 man/gl/
 man/gl/man6/
-@man man/gl/man6/wesnoth.6
 @man man/gl/man6/wesnothd.6
 man/hu/
 man/hu/man6/
@@ -48,10 +45,10 @@ man/it/man6/
 @man man/it/man6/wesnothd.6
 man/ja/
 man/ja/man6/
-@man man/ja/man6/wesnoth.6
 @man man/ja/man6/wesnothd.6
 man/lt/
 man/lt/man6/
+@man man/lt/man6/wesnoth.6
 @man man/lt/man6/wesnothd.6
 @man man/man6/wesnoth.6
 @man man/man6/wesnothd.6
@@ -712,6 +709,8 @@ share/wesnoth/data/campaigns/Descent_Into_Darkness/images/units/dark-mage-magic-
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/units/dark-mage-sword-1.png
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/units/dark-mage-sword-2.png
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/units/dark-mage.png
+share/wesnoth/data/campaigns/Descent_Into_Darkness/images/units/icons/
+share/wesnoth/data/campaigns/Descent_Into_Darkness/images/units/icons/icon-lich.png
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/units/neutral-outlaw-princess-attack-sling1.png
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/units/neutral-outlaw-princess-attack-sling2.png
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/units/neutral-outlaw-princess-attack-staff1.png
@@ -1740,6 +1739,7 @@ share/wesnoth/data/campaigns/Secrets_of_the_Ancients/images/units/dwarves/miner-
 share/wesnoth/data/campaigns/Secrets_of_the_Ancients/images/units/dwarves/miner-defend-2.png
 share/wesnoth/data/campaigns/Secrets_of_the_Ancients/images/units/dwarves/miner.png
 share/wesnoth/data/campaigns/Secrets_of_the_Ancients/images/units/icons/
+share/wesnoth/data/campaigns/Secrets_of_the_Ancients/images/units/icons/icon-bat.png
 share/wesnoth/data/campaigns/Secrets_of_the_Ancients/images/units/icons/icon-lich.png
 share/wesnoth/data/campaigns/Secrets_of_the_Ancients/images/units/icons/icon-skeleton.png
 share/wesnoth/data/campaigns/Secrets_of_the_Ancients/images/units/icons/icon-skeleton_archer.png
@@ -2514,6 +2514,7 @@ share/wesnoth/data/campaigns/The_South_Guard/utils/
 share/wesnoth/data/campaigns/The_South_Guard/utils/bigmap.cfg
 share/wesnoth/data/campaigns/The_South_Guard/utils/sg_deaths.cfg
 share/wesnoth/data/campaigns/The_South_Guard/utils/sg_help.cfg
+share/wesnoth/data/campaigns/The_South_Guard/utils/sg_help_NEW.cfg
 share/wesnoth/data/campaigns/The_South_Guard/utils/sg_story.cfg
 share/wesnoth/data/campaigns/The_South_Guard/utils/sg_utils.cfg
 share/wesnoth/data/campaigns/Two_Brothers/
@@ -2763,6 +2764,7 @@ share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/units/quenoth/archer.
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/units/quenoth/champion-defend1.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/units/quenoth/champion-defend2.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/units/quenoth/champion.png
+share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/units/quenoth/corrupted-elf-defeated.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/units/quenoth/corrupted-elf.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/units/quenoth/druid-defend1.png
 share/wesnoth/data/campaigns/Under_the_Burning_Suns/images/units/quenoth/druid-defend2.png
@@ -15011,6 +15013,7 @@ share/wesnoth/data/test/scenarios/order_of_nested_events.cfg
 share/wesnoth/data/test/scenarios/prestart_settings.cfg
 share/wesnoth/data/test/scenarios/readme.txt
 share/wesnoth/data/test/scenarios/recruit_facing.cfg
+share/wesnoth/data/test/scenarios/scatter_units.cfg
 share/wesnoth/data/test/scenarios/sighted_events.cfg
 share/wesnoth/data/test/scenarios/store_locations.cfg
 share/wesnoth/data/test/scenarios/swarm_disables_upgrades.cfg
