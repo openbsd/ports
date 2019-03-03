@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2018/07/01 11:52:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2019/03/03 19:40:03 rsadowski Exp $
 
 COMMENT =	console based XMPP client
-DISTNAME =	profanity-0.5.1
+DISTNAME =	profanity-0.6.0
 CATEGORIES =	net
-REVISION =	1
 
 HOMEPAGE =	http://www.profanity.im/
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
@@ -13,44 +12,55 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	http://www.profanity.im/
 
-WANTLIB += assuan c crypto curl ereadline expat ffi gcrypt gdk_pixbuf-2.0
+WANTLIB += assuan c crypto curl curses ereadline expat ffi gcrypt
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
-WANTLIB += gpgme iconv intl m ncursesw nghttp2 notify otr
-WANTLIB += pcre png pthread ssl strophe util z ${MODPY_WANTLIB}
-MODULES =	lang/python
+WANTLIB += gpgme iconv intl m mesode nghttp2 otr pcre pthread
+WANTLIB += ${MODPY_WANTLIB} ssl util z
+
+MODULES +=	lang/python
+
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 
 LIB_DEPENDS +=	devel/glib2 \
-		devel/libnotify \
-		devel/readline>=6.1p2 \
-		graphics/gdk-pixbuf2 \
+		devel/readline \
 		net/curl \
-		net/libstrophe>=0.9.1 \
+		net/libmesode \
 		security/gpgme \
 		security/libotr
 
-TEST_DEPENDS =	devel/cmocka
+# Only needed for tests, but cannot be a TEST_DEPENDS.
+# Check must be present at build time for tests to work.
+BUILD_DEPENDS +=	devel/cmocka
 
 CONFIGURE_STYLE = autoconf
+
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-CONFIGURE_ARGS =	--with-xscreensaver=no \
+CONFIGURE_ARGS +=	--with-xscreensaver=no \
 			--enable-icons=no \
-			--enable-notifications=yes \
+			--enable-plugins=yes \
 			--enable-otr=yes
 
-MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_FLAGS =	CC="${CC}" \
+		CFLAGS="${CFLAGS}"
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
+
+SEPARATE_BUILD =	Yes
 
 # there is no stub_ui.h and is not needed
 post-patch:
 	find ${WRKSRC} -type f -name "*.c" \
 		-exec sed -i '/stub\_ui.h/d' "{}" \;
 	sed -i s,${TRUEPREFIX},${LOCALBASE}, ${WRKSRC}/configure.ac
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/profanity/
+	${INSTALL_DATA} ${WRKSRC}/profrc.example ${PREFIX}/share/examples/profanity/
 
 .include <bsd.port.mk>
