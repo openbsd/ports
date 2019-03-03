@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2018/12/27 19:14:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2019/03/03 08:18:45 rsadowski Exp $
 
 COMMENT=		Python IDE based on IntelliJ IDEA
 
-V=			2018.3.2
+V=			2018.3.5
 DISTNAME=		pycharm-community-${V}
 PKGNAME=		pycharm-${V}
 CATEGORIES=		devel
@@ -40,6 +40,7 @@ do-install:
 	@rm -rf ${PC}/jre
 	@rm -rf ${PC}/jre64
 	@rm -rf ${PC}/plugins/android
+	@rm -rf ${PC}/lib/pty4j-native
 	@rm -rf ${PC}/plugins/gradle/lib/native-platform-{freebsd,linux,osx,windows}*.jar
 	@${SUBST_PROGRAM} ${FILESDIR}/pycharm ${PREFIX}/bin/pycharm
 	@chmod ${BINMODE} ${PREFIX}/bin/pycharm

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/12/27 19:14:15 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/03/03 08:18:45 rsadowski Exp $
 bin/pycharm
 @man man/man1/pycharm.1
 pycharm/
@@ -1744,7 +1744,7 @@ pycharm/lib/commons-httpclient-3.1-patched.jar
 pycharm/lib/commons-imaging-1.0-RC-1.jar
 pycharm/lib/commons-lang-2.4.jar
 pycharm/lib/commons-logging-1.2.jar
-pycharm/lib/delight-nashorn-sandbox-0.1.16.jar
+pycharm/lib/delight-rhino-sandbox-0.0.9.jar
 pycharm/lib/eddsa-0.2.0.jar
 pycharm/lib/error_prone_annotations-2.3.1.jar
 pycharm/lib/extensions.jar
@@ -1793,8 +1793,8 @@ pycharm/lib/lz4-1.3.0.jar
 pycharm/lib/markdown4j-2.2-cj-1.1.jar
 pycharm/lib/markdownj-core-0.4.2-SNAPSHOT.jar
 pycharm/lib/microba.jar
-pycharm/lib/miglayout-core-5.1.jar
-pycharm/lib/miglayout-swing-5.1.jar
+pycharm/lib/miglayout-core-5.2.jar
+pycharm/lib/miglayout-swing-5.2.jar
 pycharm/lib/mutability-annotations-compat.jar
 pycharm/lib/nanoxml-2.2.3.jar
 pycharm/lib/netty-buffer-4.1.30.Final.jar
@@ -1810,13 +1810,14 @@ pycharm/lib/oro-2.0.8.jar
 pycharm/lib/picocontainer-1.2.jar
 pycharm/lib/platform-api.jar
 pycharm/lib/platform-impl.jar
-pycharm/lib/proxy-vole-1.0.5.jar
+pycharm/lib/proxy-vole-1.0.6.jar
 pycharm/lib/pty4j-0.8.6.jar
 pycharm/lib/purejavacomm-0.0.11.1.jar
 pycharm/lib/pycharm-pydev.jar
 pycharm/lib/pycharm.jar
 pycharm/lib/resources.jar
 pycharm/lib/resources_en.jar
+pycharm/lib/rhino-1.7.10.jar
 pycharm/lib/rngom-20051226-patched.jar
 pycharm/lib/serviceMessages.jar
 pycharm/lib/slf4j-api-1.7.25.jar
