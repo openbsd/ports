@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.69 2019/02/08 14:50:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.70 2019/03/03 10:40:53 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -516,6 +516,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/describe-scaling-activities.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/describe-scaling-policies.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/put-scaling-policy.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/put-scheduled-action.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/register-scalable-target.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/autoscaling/attach-instances.rst
