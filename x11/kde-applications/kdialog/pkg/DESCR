@@ -1,0 +1,2 @@
+kdialog allows you to display dialog boxes from shell scripts.  The syntax is
+very much inspired from the "dialog" command (which shows text mode dialogs).
