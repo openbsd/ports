@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/09/04 12:46:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/03/03 01:20:31 afresh1 Exp $
 @conflict p5-Mojo-*
 bin/hypnotoad
 bin/mojo
@@ -26,6 +26,7 @@ ${P5SITE}/Mojo/DOM.pm
 ${P5SITE}/Mojo/DOM/CSS.pm
 ${P5SITE}/Mojo/DOM/HTML.pm
 ${P5SITE}/Mojo/Date.pm
+${P5SITE}/Mojo/DynamicMethods.pm
 ${P5SITE}/Mojo/EventEmitter.pm
 ${P5SITE}/Mojo/Exception.pm
 ${P5SITE}/Mojo/File.pm
@@ -88,22 +89,22 @@ ${P5SITE}/Mojolicious/
 ${P5SITE}/Mojolicious.pm
 ${P5SITE}/Mojolicious/Command/
 ${P5SITE}/Mojolicious/Command.pm
+${P5SITE}/Mojolicious/Command/Author/
+${P5SITE}/Mojolicious/Command/Author/cpanify.pm
+${P5SITE}/Mojolicious/Command/Author/generate/
+${P5SITE}/Mojolicious/Command/Author/generate.pm
+${P5SITE}/Mojolicious/Command/Author/generate/app.pm
+${P5SITE}/Mojolicious/Command/Author/generate/lite_app.pm
+${P5SITE}/Mojolicious/Command/Author/generate/makefile.pm
+${P5SITE}/Mojolicious/Command/Author/generate/plugin.pm
+${P5SITE}/Mojolicious/Command/Author/inflate.pm
 ${P5SITE}/Mojolicious/Command/cgi.pm
-${P5SITE}/Mojolicious/Command/cpanify.pm
 ${P5SITE}/Mojolicious/Command/daemon.pm
 ${P5SITE}/Mojolicious/Command/eval.pm
-${P5SITE}/Mojolicious/Command/generate/
-${P5SITE}/Mojolicious/Command/generate.pm
-${P5SITE}/Mojolicious/Command/generate/app.pm
-${P5SITE}/Mojolicious/Command/generate/lite_app.pm
-${P5SITE}/Mojolicious/Command/generate/makefile.pm
-${P5SITE}/Mojolicious/Command/generate/plugin.pm
 ${P5SITE}/Mojolicious/Command/get.pm
-${P5SITE}/Mojolicious/Command/inflate.pm
 ${P5SITE}/Mojolicious/Command/prefork.pm
 ${P5SITE}/Mojolicious/Command/psgi.pm
 ${P5SITE}/Mojolicious/Command/routes.pm
-${P5SITE}/Mojolicious/Command/test.pm
 ${P5SITE}/Mojolicious/Command/version.pm
 ${P5SITE}/Mojolicious/Commands.pm
 ${P5SITE}/Mojolicious/Controller.pm
@@ -127,7 +128,6 @@ ${P5SITE}/Mojolicious/Plugin/EPRenderer.pm
 ${P5SITE}/Mojolicious/Plugin/HeaderCondition.pm
 ${P5SITE}/Mojolicious/Plugin/JSONConfig.pm
 ${P5SITE}/Mojolicious/Plugin/Mount.pm
-${P5SITE}/Mojolicious/Plugin/PODRenderer.pm
 ${P5SITE}/Mojolicious/Plugin/TagHelpers.pm
 ${P5SITE}/Mojolicious/Plugins.pm
 ${P5SITE}/Mojolicious/Renderer.pm
@@ -149,25 +149,23 @@ ${P5SITE}/Mojolicious/resources/public/mojo/
 ${P5SITE}/Mojolicious/resources/public/mojo/failraptor.png
 ${P5SITE}/Mojolicious/resources/public/mojo/jquery/
 ${P5SITE}/Mojolicious/resources/public/mojo/jquery/jquery.js
-${P5SITE}/Mojolicious/resources/public/mojo/logo-black.png
 ${P5SITE}/Mojolicious/resources/public/mojo/logo-black-2x.png
-${P5SITE}/Mojolicious/resources/public/mojo/logo-white.png
+${P5SITE}/Mojolicious/resources/public/mojo/logo-black.png
 ${P5SITE}/Mojolicious/resources/public/mojo/logo-white-2x.png
+${P5SITE}/Mojolicious/resources/public/mojo/logo-white.png
+${P5SITE}/Mojolicious/resources/public/mojo/logo.png
 ${P5SITE}/Mojolicious/resources/public/mojo/noraptor.png
 ${P5SITE}/Mojolicious/resources/public/mojo/notfound.png
 ${P5SITE}/Mojolicious/resources/public/mojo/pinstripe-dark.png
 ${P5SITE}/Mojolicious/resources/public/mojo/pinstripe-light.png
 ${P5SITE}/Mojolicious/resources/public/mojo/prettify/
 ${P5SITE}/Mojolicious/resources/public/mojo/prettify/prettify-mojo-dark.css
-${P5SITE}/Mojolicious/resources/public/mojo/prettify/prettify-mojo-light.css
 ${P5SITE}/Mojolicious/resources/public/mojo/prettify/run_prettify.js
 ${P5SITE}/Mojolicious/resources/templates/
 ${P5SITE}/Mojolicious/resources/templates/mojo/
 ${P5SITE}/Mojolicious/resources/templates/mojo/debug.html.ep
 ${P5SITE}/Mojolicious/resources/templates/mojo/exception.html.ep
-${P5SITE}/Mojolicious/resources/templates/mojo/menubar.html.ep
 ${P5SITE}/Mojolicious/resources/templates/mojo/not_found.html.ep
-${P5SITE}/Mojolicious/resources/templates/mojo/perldoc.html.ep
 ${P5SITE}/Test/
 ${P5SITE}/Test/Mojo.pm
 ${P5SITE}/ojo.pm
@@ -192,6 +190,7 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojo::DOM::CSS.3p
 @man man/man3p/Mojo::DOM::HTML.3p
 @man man/man3p/Mojo::Date.3p
+@man man/man3p/Mojo::DynamicMethods.3p
 @man man/man3p/Mojo::EventEmitter.3p
 @man man/man3p/Mojo::Exception.3p
 @man man/man3p/Mojo::File.3p
@@ -214,6 +213,7 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojo::Message::Response.3p
 @man man/man3p/Mojo::Parameters.3p
 @man man/man3p/Mojo::Path.3p
+@man man/man3p/Mojo::Promise.3p
 @man man/man3p/Mojo::Reactor.3p
 @man man/man3p/Mojo::Reactor::EV.3p
 @man man/man3p/Mojo::Reactor::Poll.3p
@@ -241,21 +241,20 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojo::WebSocket.3p
 @man man/man3p/Mojolicious.3p
 @man man/man3p/Mojolicious::Command.3p
+@man man/man3p/Mojolicious::Command::Author::cpanify.3p
+@man man/man3p/Mojolicious::Command::Author::generate.3p
+@man man/man3p/Mojolicious::Command::Author::generate::app.3p
+@man man/man3p/Mojolicious::Command::Author::generate::lite_app.3p
+@man man/man3p/Mojolicious::Command::Author::generate::makefile.3p
+@man man/man3p/Mojolicious::Command::Author::generate::plugin.3p
+@man man/man3p/Mojolicious::Command::Author::inflate.3p
 @man man/man3p/Mojolicious::Command::cgi.3p
-@man man/man3p/Mojolicious::Command::cpanify.3p
 @man man/man3p/Mojolicious::Command::daemon.3p
 @man man/man3p/Mojolicious::Command::eval.3p
-@man man/man3p/Mojolicious::Command::generate.3p
-@man man/man3p/Mojolicious::Command::generate::app.3p
-@man man/man3p/Mojolicious::Command::generate::lite_app.3p
-@man man/man3p/Mojolicious::Command::generate::makefile.3p
-@man man/man3p/Mojolicious::Command::generate::plugin.3p
 @man man/man3p/Mojolicious::Command::get.3p
-@man man/man3p/Mojolicious::Command::inflate.3p
 @man man/man3p/Mojolicious::Command::prefork.3p
 @man man/man3p/Mojolicious::Command::psgi.3p
 @man man/man3p/Mojolicious::Command::routes.3p
-@man man/man3p/Mojolicious::Command::test.3p
 @man man/man3p/Mojolicious::Command::version.3p
 @man man/man3p/Mojolicious::Commands.3p
 @man man/man3p/Mojolicious::Controller.3p
@@ -277,7 +276,6 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojolicious::Plugin::HeaderCondition.3p
 @man man/man3p/Mojolicious::Plugin::JSONConfig.3p
 @man man/man3p/Mojolicious::Plugin::Mount.3p
-@man man/man3p/Mojolicious::Plugin::PODRenderer.3p
 @man man/man3p/Mojolicious::Plugin::TagHelpers.3p
 @man man/man3p/Mojolicious::Plugins.3p
 @man man/man3p/Mojolicious::Renderer.3p
