@@ -1,4 +1,4 @@
-$OpenBSD: patch-dateutil_test_test_parser_py,v 1.1 2018/09/07 11:22:25 sthen Exp $
+$OpenBSD: patch-dateutil_test_test_parser_py,v 1.2 2019/03/03 08:28:31 kn Exp $
 
 our strftime doesn't error out with %-d but just outputs -d rather
 than doing whatever this test wants
@@ -6,12 +6,12 @@ than doing whatever this test wants
 Index: dateutil/test/test_parser.py
 --- dateutil/test/test_parser.py.orig
 +++ dateutil/test/test_parser.py
-@@ -27,6 +27,8 @@ try:
- except ValueError:
-     PLATFORM_HAS_DASH_D = False
+@@ -91,6 +91,8 @@ PARSER_TEST_CASES = [
+     ('December.0031.30', datetime(31, 12, 30), "BYd corner case (GH#687)")
+ ]
  
 +if sys.platform.startswith('openbsd'):
 +    PLATFORM_HAS_DASH_D = False
  
- class TestFormat(unittest.TestCase):
- 
+ @pytest.mark.parametrize("parsable_text,expected_datetime,assertion_message", PARSER_TEST_CASES)
+ def test_parser(parsable_text, expected_datetime, assertion_message):
