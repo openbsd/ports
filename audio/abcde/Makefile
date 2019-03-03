@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.28 2018/08/31 08:48:12 landry Exp $
+# $OpenBSD: Makefile,v 1.29 2019/03/03 21:07:16 cwen Exp $
 
 COMMENT=	command-line utility to rip and encode audio cds
 
-DISTNAME=	abcde-2.9.2
+DISTNAME=	abcde-2.9.3
 EPOCH=		0
 CATEGORIES=	audio
 
 HOMEPAGE=	https://abcde.einval.com/
 
-MAINTAINER=	Charlene Wendling <julianaito@posteo.jp>
+MAINTAINER=	Charlene Wendling <cwen@openbsd.org>
 
 # Artistic or GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
