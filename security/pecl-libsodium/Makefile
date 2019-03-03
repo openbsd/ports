@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2018/12/27 15:33:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/03/03 15:43:42 sthen Exp $
 
 COMMENT =	low-level encryption extension for PHP
 
-DISTNAME =	libsodium-2.0.20
+DISTNAME =	libsodium-2.0.21
 DIST_SUBDIR =	pecl
 
 CATEGORIES =	security
