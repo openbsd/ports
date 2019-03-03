@@ -1,0 +1,15 @@
+$OpenBSD: patch-gstreamer_CMakeLists_txt,v 1.5 2019/03/03 17:02:25 rsadowski Exp $
+
+LibXml2 is not needed to compile the gstreamer backend for Phonon
+
+Index: gstreamer/CMakeLists.txt
+--- gstreamer/CMakeLists.txt.orig
++++ gstreamer/CMakeLists.txt
+@@ -20,7 +20,6 @@ include_directories(
+       ${GSTREAMER_PLUGIN_AUDIO_INCLUDE_DIR}
+       ${GSTREAMER_PLUGIN_PBUTILS_INCLUDE_DIR}
+       ${GLIB2_INCLUDE_DIR}
+-      ${LIBXML2_INCLUDE_DIR}
+       ${X11_X11_INCLUDE_PATH})
+ 
+ if(${PHONON_VERSION} VERSION_GREATER "4.6.49") # Pre-release 4.7 starts at 4.6.50

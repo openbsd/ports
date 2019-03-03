@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/10/19 20:53:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.23 2019/03/03 17:02:24 rsadowski Exp $
 
 COMMENT-main =	GStreamer-based Phonon backend
 COMMENT-icons =	GStreamer-based Phonon backend icons
@@ -12,6 +12,7 @@ MASTER_SITES =		https://download.kde.org/stable/phonon/phonon-backend-gstreamer/
 
 FULLPKGNAME-main =	${PKGNAME}
 FULLPKGPATH-main =	${PKGPATH},${FLAVOR},-main
+REVISION-main =		0
 
 # deconflict Qt4 and Qt5 versions by extracting common data
 MULTI_PACKAGES =	-main -icons
@@ -27,7 +28,6 @@ RUN_DEPENDS-main =	multimedia/gstreamer1/plugins-good \
 
 LIB_DEPENDS-icons =
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			textproc/libxml \
 			multimedia/gstreamer1/core \
 			multimedia/gstreamer1/plugins-base
 
