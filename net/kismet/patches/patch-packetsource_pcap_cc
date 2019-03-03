@@ -1,0 +1,16 @@
+$OpenBSD: patch-packetsource_pcap_cc,v 1.1 2019/03/03 23:11:04 sebastia Exp $
+
+Index: packetsource_pcap.cc
+--- packetsource_pcap.cc.orig
++++ packetsource_pcap.cc
+@@ -60,6 +60,10 @@ extern "C" {
+ #include <netinet/if_ether.h>
+ #include <dev/ic/if_wi_ieee.h>
+ 
++#ifndef IEEE80211_CHAN_TURBO
++#define IEEE80211_CHAN_TURBO 0x0010
++#endif
++
+ #ifdef HAVE_RADIOTAP
+ #include <net80211/ieee80211.h>
+ #include <net80211/ieee80211_ioctl.h>

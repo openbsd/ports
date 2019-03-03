@@ -1,25 +1,22 @@
-# $OpenBSD: Makefile,v 1.47 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2019/03/03 23:11:04 sebastia Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
-COMMENT-main=	802.11 layer2 wireless network detector, sniffer, and IDS
-COMMENT-gpsmap=	reads GPS and Network XML datafiles and plots networks
+COMMENT=	802.11 layer2 wireless network detector, sniffer, and IDS
 
 # No wireless capabilities
 NOT_FOR_ARCHS=	m88k
 
-V=		2008-05-R1
+V=		2016-07-R1
 DISTNAME=	kismet-${V}
-REVISION-main =	10
-REVISION-gpsmap= 12
-PKGNAME-main=	kismet-${V:S,-,,g}
-PKGNAME-gpsmap=	kismet-gpsmap-${V:S,-,,g}
+PKGNAME=	kismet-${V:S,-,,g}
 CATEGORIES=	net security
 
 HOMEPAGE=	http://www.kismetwireless.net/
 MASTER_SITES=	${HOMEPAGE}code/
+EXTRACT_SUFX=	.tar.xz
 
-MAINTAINER=	Matthias Kilian <kili@openbsd.org>
+MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -34,7 +31,7 @@ SUBST_VARS+=		CONFDIR
 
 CONFIGURE_ARGS=		--sysconfdir=${CONFDIR} \
 			--mandir=${PREFIX}/man \
-			--disable-dbus
+			--with-suidgroup=_kismet
 
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
@@ -47,37 +44,21 @@ FAKE_FLAGS+=		ETC=${SAMPLES_DIR}
 # They don't have tests.
 NO_TEST=		Yes
 
-PSEUDO_FLAVORS=         no_gpsmap
-FLAVOR?=
-
-MULTI_PACKAGES=		-main -gpsmap
-
-WANTLIB-main=		c m ncurses panel pcap ${COMPILER_LIBCXX}
-WANTLIB-gpsmap=		c expat m pthread ${COMPILER_LIBCXX} z \
-			MagickCore-6.Q16 gmp>=6
-LIB_DEPENDS-gpsmap=	graphics/ImageMagick \
-			devel/gmp
+WANTLIB+=		c m panel pcap ${COMPILER_LIBCXX} curses util pcre
+LIB_DEPENDS=		devel/pcre
+RUN_DEPENDS=		net/wireshark,-text
 
 .include <bsd.port.arch.mk>
 
-.if !${BUILD_PACKAGES:M-gpsmap}
-CONFIGURE_ARGS+=	--disable-gpsmap
-.endif
-
 post-configure:
-	@cd ${WRKSRC} && ${GMAKE} depend
-
-post-patch:
-	@perl -pi -e \
-		's,/usr/local/etc(/kismet.conf),${CONFDIR}$$1,' \
-		${WRKSRC}/man/kismet.conf.5
-	@perl -pi -e \
-		's,/usr/local/etc(/kismet.conf),${CONFDIR}$$1,' \
-		${WRKSRC}/man/kismet_drone.conf.5
+	${SUBST_CMD} ${WRKSRC}/conf/kismet.conf \
+			${WRKSRC}/man/kismet_drone.conf.5
+	cd ${WRKSRC} && ${GMAKE} depend
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/kismet
 	${INSTALL_DATA} ${WRKSRC}/README \
 			${PREFIX}/share/doc/kismet
+	@cd ${WRKSRC} && ${GMAKE} binsuidinstall
 
 .include <bsd.port.mk>

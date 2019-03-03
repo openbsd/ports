@@ -1,58 +1,46 @@
-$OpenBSD: patch-conf_kismet_conf_in,v 1.6 2007/11/10 21:10:42 kili Exp $
---- conf/kismet.conf.in.orig	Sun Oct  7 17:48:51 2007
-+++ conf/kismet.conf.in	Sun Oct  7 17:51:25 2007
-@@ -10,7 +10,7 @@ version=2007.09.R1
- servername=Kismet
+$OpenBSD: patch-conf_kismet_conf_in,v 1.7 2019/03/03 23:11:04 sebastia Exp $
+
+Index: conf/kismet.conf.in
+--- conf/kismet.conf.in.orig
++++ conf/kismet.conf.in
+@@ -11,7 +11,7 @@ version=2009-newcore
+ # servername=Kismet Server
  
- # User to setid to (should be your normal user)
--suiduser=your_user_here
-+suiduser=_kismet
+ # Prefix of where we log (as used in the logtemplate later)
+-# logprefix=/some/path/to/logs
++logprefix=${LOCALSTATEDIR}/log/kismet
  
- # Do we try to put networkmanager to sleep?  If you use NM, this is probably
- # what you want to do, so that it will leave the interfaces alone while
-@@ -24,6 +24,10 @@ networkmanagersleep=true
- # The initial channel is optional, if hopping is not enabled it can be used
- # to set the channel the interface listens on.
- # YOU MUST CHANGE THIS TO BE THE SOURCE YOU WANT TO USE
-+# OpenBSD examples:
-+# a/b:		source=radiotap_bsd_ab,ath0,radiotap_bsd_ab
-+# b:		source=radiotap_bsd_b,ipw0,radiotap_bsd_b
-+# b (wi(4))	source=prism2_openbsd,wi0,prism2_openbsd
- source=none,none,addme
+ # Do we process the contents of data frames?  If this is enabled, data
+ # frames will be truncated to the headers only immediately after frame type
+@@ -30,6 +30,8 @@ allowplugins=true
+ # ncsource=wlan0
+ # ncsource=wifi0:type=madwifi
+ # ncsource=wlan0:name=intel,hop=false,channel=11
++# Generic OpenBSD example
++# ncsource=rum0:type=radiotap_bsd
  
  # Comma-separated list of sources to enable.  This is only needed if you defined
-@@ -206,7 +210,7 @@ trackivs=false
- # server itself will play sound.  Primarily for headless or automated systems.
- sound=false
- # Path to sound player
--soundplay=/usr/bin/play
-+soundplay=/usr/local/bin/play
- # Optional parameters to pass to the player
- # soundopts=--volume=.3
- # New network found
-@@ -264,7 +268,7 @@ metric=false
- # recent versions of GPSDrive's native support of Kismet.
- waypoints=false
- # GPSDrive waypoint file.  This WILL be truncated.
--waypointdata=%h/.gpsdrive/way_kismet.txt
-+waypointdata=/var/log/kismet/way_kismet.txt
- # Do we want ESSID or BSSID as the waypoint name ?
- waypoint_essid=false
+ # multiple sources and only want to enable some of them.  By default, all defined
+@@ -122,10 +124,7 @@ maxbacklog=5000
+ # OUI file, expected format 00:11:22<tab>manufname
+ # IEEE OUI file used to look up manufacturer info.  We default to the
+ # wireshark one since most people have that.
+-ouifile=/etc/manuf
+-ouifile=/usr/share/wireshark/wireshark/manuf
+-ouifile=/usr/share/wireshark/manuf
+-ouifile=/Applications/Wireshark.app/Contents/Resources/share/wireshark/manuf
++ouifile=${LOCALBASE}/share/wireshark/manuf
  
-@@ -362,14 +366,14 @@ logdefault=Kismet
- # crypt/Pok-Dec-20-01-1
- # and so on.  The "dump", "crypt", etc, dirs must exist before kismet is run
- # in this case.
--logtemplate=%n-%d-%i.%l
-+logtemplate=/var/log/kismet/%n-%d-%i.%l
+ # Do we have a GPS?
+ gps=true
+@@ -278,8 +277,8 @@ alertbacklog=50
+ logtypes=pcapdump,gpsxml,netxml,nettxt,alert
  
- # Where do we store the pid file of the server?
- piddir=/var/run/
+ # Format of the pcap dump (PPI or 80211)
+-pcapdumpformat=ppi
+-# pcapdumpformat=80211
++# pcapdumpformat=ppi
++pcapdumpformat=80211
  
- # Where state info, etc, is stored.  You shouldnt ever need to change this.
- # This is a directory.
--configdir=%h/.kismet/
-+configdir=/var/log/kismet/
- 
- # cloaked SSID file.  You shouldn't ever need to change this.
- ssidmap=ssid_map
+ # Default log title
+ logdefault=Kismet

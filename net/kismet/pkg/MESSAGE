@@ -1,0 +1,5 @@
+${PREFIX}/bin/kismet_capture has been installed setuid root, with read/execute
+access granted only to users in the _kismet group. For normal interactive
+use of Kismet, add your username to this group:
+
+  usermod -G _kismet username

@@ -1,0 +1,39 @@
+$OpenBSD: patch-packetsource_bsdrt_cc,v 1.1 2019/03/03 23:11:04 sebastia Exp $
+
+
+IFM_MAKEMODE is not defined on OpenBSD, just copying it from Linux
+doesn't help, since our IFM_MSHIFT etc. operate on ULL, but mode
+apparently only is of type int
+
+Index: packetsource_bsdrt.cc
+--- packetsource_bsdrt.cc.orig
++++ packetsource_bsdrt.cc
+@@ -138,7 +138,7 @@ int Radiotap_BSD_Controller::GetMediaOpt(int& options,
+ int Radiotap_BSD_Controller::SetMediaOpt(int options, int mode) {
+ 	struct ifmediareq ifmr;
+ 	struct ifreq ifr;
+-	int *mwords;
++	uint64_t *mwords;
+ 
+ 	if (CheckSocket() == 0)
+ 		return 0;
+@@ -160,7 +160,7 @@ int Radiotap_BSD_Controller::SetMediaOpt(int options, 
+ 		return 0;
+ 	}
+ 
+-	mwords = new int[ifmr.ifm_count];
++	mwords = new uint64_t[ifmr.ifm_count];
+ 	if (mwords == NULL) {
+ 		_MSG("BSD interface control cannot malloc interface array, out of "
+ 			 "memory or other badness.", MSGFLAG_PRINTERROR);
+@@ -179,6 +179,10 @@ int Radiotap_BSD_Controller::SetMediaOpt(int options, 
+ 	memset(&ifr, 0, sizeof(ifr));
+ 	strncpy(ifr.ifr_name, dev.c_str(), sizeof(ifr.ifr_name));
+ 	ifr.ifr_media = (ifmr.ifm_current &~ IFM_OMASK) | options;
++#ifndef IFM_MAKEMODE
++#define IFM_MAKEMODE(mode) \
++	((((unsigned long long)mode) << IFM_MSHIFT) & IFM_MMASK)
++#endif
+ 	ifr.ifr_media = (ifr.ifr_media &~ IFM_MMASK) | IFM_MAKEMODE(mode);
+ 
+ 	if (ioctl(sock, SIOCSIFMEDIA, (caddr_t) &ifr) < 0) {

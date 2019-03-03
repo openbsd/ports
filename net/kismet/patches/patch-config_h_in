@@ -1,13 +1,15 @@
-$OpenBSD: patch-config_h_in,v 1.1 2017/05/17 16:03:32 espie Exp $
+$OpenBSD: patch-config_h_in,v 1.2 2019/03/03 23:11:04 sebastia Exp $
+
+shut up:
+warning: using directive refers to implicitly-defined namespace 'std'
 
 Index: config.h.in
 --- config.h.in.orig
 +++ config.h.in
-@@ -291,6 +291,8 @@
+@@ -317,6 +317,7 @@
  
  /* Namespace (on non-obj-c files) */
  #ifndef __IN_OBJC_FILE__
-+/* prevent clang from complaining about premature namespace */
 +#include <iosfwd>
  using namespace std;
  #define __STL_USE_NAMESPACES

@@ -1,0 +1,14 @@
+$OpenBSD: patch-unixdomainserver_cc,v 1.1 2019/03/03 23:11:04 sebastia Exp $
+
+Index: unixdomainserver.cc
+--- unixdomainserver.cc.orig
++++ unixdomainserver.cc
+@@ -64,7 +64,7 @@ int UnixDomainServer::EnableServer() {
+     }
+ 
+     // Bind the socket
+-    if (bind(serv_fd, (struct sockaddr *) &serv_sock, sizeof(serv_sock)) < 0) {
++    if (::bind(serv_fd, (struct sockaddr *) &serv_sock, sizeof(serv_sock)) < 0) {
+         _MSG("Unix domain server bind() failed: " + string(strerror(errno)),
+              MSGFLAG_ERROR);
+         return -1;

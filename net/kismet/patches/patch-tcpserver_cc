@@ -1,23 +1,14 @@
-$OpenBSD: patch-tcpserver_cc,v 1.4 2018/04/12 17:55:08 jasper Exp $
+$OpenBSD: patch-tcpserver_cc,v 1.5 2019/03/03 23:11:04 sebastia Exp $
 
 Index: tcpserver.cc
 --- tcpserver.cc.orig
 +++ tcpserver.cc
-@@ -86,7 +86,7 @@ int TcpServer::Setup(unsigned int in_max_clients, stri
+@@ -84,7 +84,7 @@ int TcpServer::EnableServer() {
+     }
  
-     // Bind the named socket
-     // Debug("Server::Setup calling bind()");
+     // Bind the socket
 -    if (bind(serv_fd, (struct sockaddr *) &serv_sock, sizeof(serv_sock)) < 0) {
 +    if (::bind(serv_fd, (struct sockaddr *) &serv_sock, sizeof(serv_sock)) < 0) {
-         snprintf(errstr, 1024, "TcpServer bind() failed: %s", strerror(errno));
-         return (-5);
-     }
-@@ -567,7 +567,7 @@ int TcpServer::SendMainProtocols(int in_fd, int in_ref
-     return SendToClient(in_fd, in_ref, (void *) &protocol_map);
- }
- 
--int TcpServer::RegisterProtocol(string in_header, int in_required, char **in_fields,
-+int TcpServer::RegisterProtocol(string in_header, int in_required, const char **in_fields,
-                                 int (*in_printer)(PROTO_PARMS),
-                                 void (*in_enable)(int)) {
-     // First, see if we're already registered and return a -1 if we are.  You can't
+         snprintf(errstr, STATUS_MAX, "TCP server bind() failed: %s",
+                  strerror(errno));
+         globalreg->messagebus->InjectMessage(errstr, MSGFLAG_ERROR);

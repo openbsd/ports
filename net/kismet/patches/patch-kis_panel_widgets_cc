@@ -1,0 +1,16 @@
+$OpenBSD: patch-kis_panel_widgets_cc,v 1.1 2019/03/03 23:11:04 sebastia Exp $
+
+explicitly cast
+
+Index: kis_panel_widgets.cc
+--- kis_panel_widgets.cc.orig
++++ kis_panel_widgets.cc
+@@ -2582,7 +2582,7 @@ int Kis_Single_Input::KeyPress(int in_key) {
+ 	// and if we have room, insert it and scroll to the right
+ 	if ((int) text.length() < max_len && 
+ 		filter_map.find(in_key) != filter_map.end()) {
+-		char ins[2] = { in_key, 0 };
++		char ins[2] = { (char)in_key, 0 };
+ 		text.insert(inp_pos, ins);
+ 		inp_pos++;
+ 

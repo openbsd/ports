@@ -1,0 +1,18 @@
+$OpenBSD: patch-netracker_h,v 1.1 2019/03/03 23:11:04 sebastia Exp $
+
+
+it's forward declared twice
+
+Index: netracker.h
+--- netracker.h.orig
++++ netracker.h
+@@ -306,9 +306,6 @@ class Netracker { (public)
+ 		int dirty;
+ 	};
+ 
+-	// Fwd def for our map
+-	class tracked_client;
+-
+ 	class ssid_alert_data {
+ 	public:
+ 		ssid_alert_data() {

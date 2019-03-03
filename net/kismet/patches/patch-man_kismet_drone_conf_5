@@ -1,0 +1,14 @@
+$OpenBSD: patch-man_kismet_drone_conf_5,v 1.1 2019/03/03 23:11:04 sebastia Exp $
+
+Index: man/kismet_drone.conf.5
+--- man/kismet_drone.conf.5.orig
++++ man/kismet_drone.conf.5
+@@ -6,7 +6,7 @@
+ .SH DESCRIPTION
+ kismet_drone uses a minimalized configuration file, similar in options to the
+ main kismet server configuration file.  By default, the drone config is in
+-/usr/local/etc/kismet.conf.  A default configuration is included with Kismet but
++${SYSCONFDIR}/kismet/kismet.conf.  A default configuration is included with Kismet but
+ it is likely you will need to modify it to suit your hardware and preferences.
+ .SH CONFIGURATION FILE FORMAT
+ All entries are of the format directive = value

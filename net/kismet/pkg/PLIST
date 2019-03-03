@@ -1,8 +1,16 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2008/06/27 22:10:14 kili Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/03/03 23:11:04 sebastia Exp $
 @pkgpath net/kismet
+@pkgpath net/kismet,-main
+@pkgpath net/kismet,-gpsmap
+@conflict kismet-gpsmap-*
 @newgroup _kismet:547
 @newuser _kismet:547:_kismet:daemon:Kismet WLAN detector:/nonexistent:/sbin/nologin
-@bin bin/kismet
+bin/kismet
+@mode 4550
+@group _kismet
+@bin bin/kismet_capture
+@mode
+@group
 @bin bin/kismet_client
 @bin bin/kismet_drone
 @bin bin/kismet_server
@@ -10,30 +18,28 @@
 @man man/man1/kismet_drone.1
 @man man/man5/kismet.conf.5
 @man man/man5/kismet_drone.conf.5
-@man man/man5/kismet_ui.conf.5
 share/doc/kismet/
 share/doc/kismet/README
 share/examples/kismet/
-share/examples/kismet/ap_manuf
 @mode 770
 @sample ${CONFDIR}/
 @mode
-@sample ${CONFDIR}/ap_manuf
-share/examples/kismet/client_manuf
-@sample ${CONFDIR}/client_manuf
 share/examples/kismet/kismet.conf
 @sample ${CONFDIR}/kismet.conf
 share/examples/kismet/kismet_drone.conf
 @sample ${CONFDIR}/kismet_drone.conf
-share/examples/kismet/kismet_ui.conf
-@sample ${CONFDIR}/kismet_ui.conf
 share/kismet/
 share/kismet/wav/
 share/kismet/wav/alert.wav
-share/kismet/wav/junk_traffic.wav
-share/kismet/wav/new_network.wav
-share/kismet/wav/traffic.wav
 @mode 770
 @owner _kismet
 @group _kismet
 @sample /var/log/kismet/
+@mode
+@owner
+@group
+share/kismet/wav/gpslock.wav
+share/kismet/wav/gpslost.wav
+share/kismet/wav/new.wav
+share/kismet/wav/packet.wav
+@extraunexec rm -rf ${LOCALSTATEDIR}/log/kismet
