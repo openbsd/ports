@@ -1,0 +1,14 @@
+$OpenBSD: patch-interfaces_CMakeLists_txt,v 1.1.1.1 2019/03/03 10:52:30 rsadowski Exp $
+
+Index: interfaces/CMakeLists.txt
+--- interfaces/CMakeLists.txt.orig
++++ interfaces/CMakeLists.txt
+@@ -11,7 +11,7 @@ target_link_libraries(kompareinterface
+         Qt5::Core
+ )
+ 
+-set_target_properties(kompareinterface PROPERTIES VERSION ${KOMPARE_LIB_VERSION} SOVERSION ${KOMPARE_LIB_SOVERSION} )
++set_target_properties(kompareinterface PROPERTIES VERSION ${LIBkompareinterface_VERSION} SOVERSION ${KOMPARE_LIB_SOVERSION} )
+ install(TARGETS kompareinterface ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+ install(FILES kompareinterface.h DESTINATION ${KDE_INSTALL_INCLUDEDIR}/kompare COMPONENT Devel)
+ 
