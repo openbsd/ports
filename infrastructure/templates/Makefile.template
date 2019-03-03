@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.78 2018/07/09 15:00:06 jca Exp $
+# $OpenBSD: Makefile.template,v 1.79 2019/03/03 23:18:37 sthen Exp $
 #
 # Replace ??? with appropriate values
 # Remove extraneous comments before commit
@@ -12,7 +12,7 @@
 #BROKEN =		reason
 
 #
-# Very short description of the package, 60 chars max
+# Very short description of the package (<=60 chars, usually starts lower-case)
 #		|----------------------------------------------------------|
 COMMENT =	???
 # COMMENT-foo =	???	for multi packages
@@ -110,6 +110,11 @@ MASTER_SITES =		???
 #FAKE_FLAGS =		???
 #TEST_FLAGS =		???
 
+# For ports using C++, except in special cases you should use a compiler
+# with the same standard library as used in other ports. Remove entries
+# from the COMPILER list if they're known to not work.
+#COMPILER =		base-clang ports-gcc base-gcc
+
 # build/configuration variables
 #
 #SEPARATE_BUILD =	Yes (build in a directory other than WRKSRC)
@@ -122,16 +127,19 @@ MASTER_SITES =		???
 # in that case use "BUILD_DEPENDS=devel/libtool" instead.
 #USE_LIBTOOL=		gnu
 # Set CONFIGURE_STYLE to value corresponding to some standard configuration
-# 	  perl [modbuild]: perl's MakeMaker Makefile.PL (modbuild: perl's
+#	  perl [modbuild]: perl's MakeMaker Makefile.PL (modbuild: perl's
 #	  Module::Build Build.PL)
-# 	  gnu [autoconf] [old] [dest]: gnu style configure (old: no
-# 	  sysconfdir), (dest: add DESTDIR, does not handle it),
-# 	  (autoconf: needed by port, implies gnu)
-# 	XXX: cygnus products do NOT use autoconf for making the main
-# 		configure from configure.in
-# 	  imake [noman]: port uses imake for configuration.
+#	  gnu [autoconf] [old] [dest]: gnu style configure (old: no
+#	  sysconfdir), (dest: add DESTDIR, does not handle it),
+#	  autoconf: run autoconf to regenerate configure script. implies gnu.
+#	            (see also "do-gen" target below).
+#	XXX: cygnus products do NOT use autoconf for making the main
+#		configure from configure.in
+#	  imake [noman]: port uses imake for configuration.
 #	  (noman: no man page installation)
-# 	  simple: port has its own configure script
+#	  simple: port has its own configure script
+#	  none: override default CONFIGURE_STYLE coming from a module
+#	        (needed for some ports using lang/python, etc.)
 #CONFIGURE_STYLE =	
 #CONFIGURE_SCRIPT =	??? (if other than configure)
 #CONFIGURE_ARGS =	???
@@ -194,5 +202,16 @@ MASTER_SITES =		???
 #ALL_TARGET =		???
 #INSTALL_TARGET =	???
 #TEST_TARGET =		???
+
+# For ports that use a script or autoreconf to generate autoconf/automake
+# files (where "CONFIGURE_STYLE=autoconf" isn't enough), use some/all of these
+# dependencies, and add a do-gen target:
+# 
+#BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
+#			${MODGNU_AUTOMAKE_DEPENDS} \
+#			devel/libtool
+#
+#do-gen:
+#        cd ${WRKSRC}; ${AUTOCONF_ENV} ./autogen.sh
 
 .include <bsd.port.mk>
