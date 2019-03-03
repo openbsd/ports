@@ -1,9 +1,9 @@
-$OpenBSD: patch-sslscan_c,v 1.9 2018/08/30 17:05:21 jsing Exp $
+$OpenBSD: patch-sslscan_c,v 1.10 2019/03/03 15:14:49 sthen Exp $
 
 Index: sslscan.c
 --- sslscan.c.orig
 +++ sslscan.c
-@@ -90,9 +90,7 @@
+@@ -97,9 +97,7 @@
  #include <openssl/x509.h>
  #include <openssl/x509v3.h>
  #include <openssl/ocsp.h>
@@ -14,7 +14,7 @@ Index: sslscan.c
  #ifndef OPENSSL_NO_COMP
    #include <openssl/comp.h>
  #endif
-@@ -488,18 +486,10 @@ int tcpConnect(struct sslCheckOptions *options)
+@@ -513,18 +511,10 @@ int tcpConnect(struct sslCheckOptions *options)
          if (!readOrLogAndClose(socketDescriptor, buffer, BUFFERSIZE, options))
              return 0;
  
@@ -33,7 +33,7 @@ Index: sslscan.c
              printf_error("%sSTARTLS LDAP connection to %s:%d failed with '%s'.%s\n",
                           COL_RED, options->host, options->port, unsupported, RESET);
              return 0;
-@@ -2010,13 +2000,13 @@ int checkCertificate(struct sslCheckOptions *options, 
+@@ -2034,13 +2024,13 @@ int checkCertificate(struct sslCheckOptions *options, 
                                                  printf("Altnames: ");
                                                  if (!X509V3_EXT_print(stdoutBIO, extension, X509_FLAG_COMPAT, 0))
                                                  {
@@ -49,7 +49,7 @@ Index: sslscan.c
                                                  }
                                                  printf_xml("]]></altnames>\n");
                                                  printf("\n");
-@@ -2798,12 +2788,12 @@ int showCertificate(struct sslCheckOptions *options)
+@@ -2822,12 +2812,12 @@ int showCertificate(struct sslCheckOptions *options)
                                              if (!X509V3_EXT_print(stdoutBIO, extension, X509_FLAG_COMPAT, 8))
                                              {
                                                  printf("        ");

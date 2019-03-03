@@ -1,9 +1,9 @@
-$OpenBSD: patch-sslscan_h,v 1.1 2018/08/30 17:05:21 jsing Exp $
+$OpenBSD: patch-sslscan_h,v 1.2 2019/03/03 15:14:49 sthen Exp $
 
 Index: sslscan.h
 --- sslscan.h.orig
 +++ sslscan.h
-@@ -103,7 +103,7 @@ struct sslCipher
+@@ -104,7 +104,7 @@ struct sslCipher
  {
      // Cipher Properties...
      const char *name;

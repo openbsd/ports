@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.8 2018/11/20 16:46:36 naddy Exp $
+$OpenBSD: patch-Makefile,v 1.9 2019/03/03 15:14:49 sthen Exp $
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -25,8 +25,10 @@ DEFINES   = -DVERSION=\"$(GIT_VERSION)\"
+@@ -34,8 +34,10 @@ DEFINES   = -DVERSION=\"$(GIT_VERSION)\"
  # for dynamic linking
  LIBS      = -lssl -lcrypto
  ifneq ($(OS), FreeBSD)
@@ -13,7 +13,7 @@ Index: Makefile
  ifeq ($(OS), SunOS)
  	CFLAGS += -m64
  	LIBS   += -lsocket -lnsl
-@@ -35,14 +37,16 @@ endif
+@@ -44,17 +46,19 @@ endif
  # Enable checks for buffer overflows, add stack protectors, generate position
  # independent code, mark the relocation table read-only, and mark the global
  # offset table read-only.
@@ -24,14 +24,17 @@ Index: Makefile
  ifneq ($(OS), Darwin)
  ifneq ($(OS), SunOS)
 +ifneq ($(OS), OpenBSD)
- 	LDFLAGS += -pie -z relro -z now
+ # Cygwin's linker does not support -z option.
+ ifneq ($(findstring CYGWIN,$(OS)),CYGWIN)
+ 	LDFLAGS += -pie -Wl,-z,relro -Wl,-z,now
+ endif
  endif
  endif
 +endif
  
  # for static linking
  ifeq ($(STATIC_BUILD), TRUE)
-@@ -51,8 +55,10 @@ LDFLAGS      += -L${PWD}/
+@@ -63,8 +67,10 @@ LDFLAGS      += -L${PWD}/
  CFLAGS       += -I${PWD}/include/ -I${PWD}/
  LIBS         = -lssl -lcrypto -lz
  ifneq ($(OS), FreeBSD)
@@ -42,7 +45,7 @@ Index: Makefile
  ifeq ($(OS), SunOS)
  	LIBS += -lsocket -lnsl
  endif
-@@ -114,7 +120,7 @@ openssl/Makefile: .openssl.is.fresh
+@@ -126,7 +132,7 @@ openssl/Makefile: .openssl.is.fresh
  # Any other *NIX platform
  else
  openssl/Makefile: .openssl.is.fresh
