@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/02/08 20:35:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/03/03 15:42:55 sthen Exp $
 
 PORTROACH=	limit:^1\.1\.[0-9][a-z] skipb:0 skipv:1.1.1
-V=		1.1.1a
+V=		1.1.1b
 
-SHLIBVER=	11.1
+SHLIBVER=	11.2
 SHARED_LIBS=	crypto ${SHLIBVER} \
 		ssl ${SHLIBVER}
 
@@ -14,6 +14,7 @@ CONFIGURE_SCRIPT=	config
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--openssldir=${PREFIX}/share/eopenssl11 \
 			no-threads no-rc5 no-ssl3 \
+			disable-devcryptoeng \
 			shared
 
 # install to unusual directory name - this port is *not* intended to be

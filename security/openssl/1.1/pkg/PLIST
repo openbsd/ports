@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/20 22:19:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/03/03 15:42:55 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict openssl->=1.1.0,openssl-<1.2
@@ -2017,6 +2017,8 @@ lib/eopenssl11/man/man3/
 @man lib/eopenssl11/man/man3/OPENSSL_INIT_free.3
 @man lib/eopenssl11/man/man3/OPENSSL_INIT_new.3
 @man lib/eopenssl11/man/man3/OPENSSL_INIT_set_config_appname.3
+@man lib/eopenssl11/man/man3/OPENSSL_INIT_set_config_file_flags.3
+@man lib/eopenssl11/man/man3/OPENSSL_INIT_set_config_filename.3
 @man lib/eopenssl11/man/man3/OPENSSL_LH_COMPFUNC.3
 @man lib/eopenssl11/man/man3/OPENSSL_LH_DOALL_FUNC.3
 @man lib/eopenssl11/man/man3/OPENSSL_LH_HASHFUNC.3
