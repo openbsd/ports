@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/10 06:58:22 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/03/03 10:35:30 ajacoutot Exp $
 bin/gnuradio-companion
 @bin bin/gnuradio-config-info
 bin/gr-ctrlport-monitor
@@ -2351,6 +2351,8 @@ share/doc/gnuradio/README.hacking
 share/doc/gnuradio/README.md
 share/doc/gnuradio/README.qtgui
 share/doc/gnuradio/README.vocoder
+share/doc/gnuradio/html/
+share/doc/gnuradio/html/gr-trellis.html
 share/doc/gnuradio/xml/
 share/doc/gnuradio/xml/test_tcm.py.xml
 share/doc/gnuradio/xml/test_viterbi_equalization1.py.xml

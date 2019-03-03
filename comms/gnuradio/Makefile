@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2018/12/13 19:53:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/03 10:35:30 ajacoutot Exp $
 
 COMMENT =	signal-processing toolkit for SDR (software-defined radio)
 
 DISTNAME =	gnuradio-3.7.13.4
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  gnuradio-analog           0.0 # 3.7
 SHARED_LIBS +=  gnuradio-atsc             0.0 # 3.7
@@ -58,6 +58,7 @@ BUILD_DEPENDS =	${RUN_DEPENDS} \
 		devel/swig \
 		devel/xdg-utils \
 		net/cppzmq \
+		textproc/xmlto \
 		www/py-mako
 
 RUN_DEPENDS =	devel/desktop-file-utils \
