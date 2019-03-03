@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2018/04/28 19:00:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2019/03/03 13:36:33 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		Foomatic PPD data
 
-V=			20180228
+V=			20190128
 DISTNAME=		foomatic-db-4.0-${V}
 PKGNAME=		foomatic-db-4.0.${V}
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 # tarballs are only available for a 24 hour period
 #MASTER_SITES=		http://www.openprinting.org/download/foomatic/
-MASTER_SITES=		http://pkgs.fedoraproject.org/repo/extras/foomatic-db/foomatic-db-4.0-${V}${EXTRACT_SUFX}/sha512/22cc0ae229fe3636942fb46e0096b3134d3a5977f18177c89fe949948b23ac9c6c57a0a79672b26b5b073aa682839130ea776f7badcfd967cdeed897b4742097/
+MASTER_SITES=		http://pkgs.fedoraproject.org/repo/extras/foomatic-db/foomatic-db-4.0-${V}${EXTRACT_SUFX}/sha512/8961b4e0e0f7232a74b83a4261510102cb9c9793b49bb528cdfac8d16fb96a77d5878ad24ed12387099493b52858bfc340cdb0af83a1256018ae9b8bea3ff8c9/
 
 BUILD_DEPENDS=		print/cups,-libs
 
@@ -39,7 +39,7 @@ pre-configure:
 		xargs grep -l "<driver>splix"|xargs -r rm
 	rm ${WRKSRC}/db/source/driver/splix.xml
 # foo2zjs
-.for x in zjs zjs-z1 zjs-z2 zjs-z3 oak oak-z1 hp qpdl lava kyo xqx slx hiperc hbpl2 hiperc-z1
+.for x in zjs zjs-z1 zjs-z2 zjs-z3 oak oak-z1 hp qpdl lava kyo xqx slx hiperc hiperc-z1 hbpl2
 	find ${WRKSRC}/db/source/printer -name '*.xml' | \
 		xargs grep -l "<driver>foo2${x}" | xargs -r rm
 	find ${WRKSRC}/db/source/printer -name '*.xml' | \
