@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1116 2019/02/25 10:01:51 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1117 2019/03/03 19:40:44 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -197,6 +197,7 @@
      SUBDIR += libktorrent
      SUBDIR += libkvkontakte
      SUBDIR += libmaxminddb
+     SUBDIR += libmesode
      SUBDIR += libmygpo-qt
      SUBDIR += libnet
      SUBDIR += libnids
@@ -211,7 +212,6 @@
      SUBDIR += libshout
      SUBDIR += libsmi
      SUBDIR += libst
-     SUBDIR += libstrophe
      SUBDIR += libtorrent
      SUBDIR += libtorrent-rasterbar
      SUBDIR += libunbound
