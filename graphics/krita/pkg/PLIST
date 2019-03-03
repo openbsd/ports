@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/10/22 20:30:43 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/03/03 09:51:01 rsadowski Exp $
 @conflict calligra-<=2.9.11
 @bin bin/krita
 lib/kritaplugins/
@@ -169,6 +169,7 @@ lib/kritaplugins/kritaxcfimport.so
 @lib lib/libkritaversion.so.${LIBkritaversion_VERSION}
 @lib lib/libkritawidgets.so.${LIBkritawidgets_VERSION}
 @lib lib/libkritawidgetutils.so.${LIBkritawidgetutils_VERSION}
+lib/qt5/qml/org/
 lib/qt5/qml/org/krita/
 lib/qt5/qml/org/krita/draganddrop/
 lib/qt5/qml/org/krita/draganddrop/libdraganddropplugin.so
