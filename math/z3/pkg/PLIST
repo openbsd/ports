@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/12/15 12:43:40 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/03/03 09:16:17 rsadowski Exp $
 @bin bin/z3
 include/z3++.h
 include/z3.h
@@ -14,27 +14,21 @@ include/z3_rcf.h
 include/z3_spacer.h
 include/z3_v1.h
 include/z3_version.h
+lib/cmake/
+lib/cmake/z3/
+lib/cmake/z3/Z3Config.cmake
+lib/cmake/z3/Z3Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/z3/Z3Targets.cmake
 @lib lib/libz3.so.${LIBz3_VERSION}
 lib/python${MODPY_VERSION}/site-packages/z3/
 lib/python${MODPY_VERSION}/site-packages/z3/__init__.py
-lib/python${MODPY_VERSION}/site-packages/z3/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/z3/lib/
-@lib lib/python${MODPY_VERSION}/site-packages/z3/lib/libz3.so.${LIBz3_VERSION}
 lib/python${MODPY_VERSION}/site-packages/z3/z3.py
-lib/python${MODPY_VERSION}/site-packages/z3/z3.pyc
 lib/python${MODPY_VERSION}/site-packages/z3/z3consts.py
-lib/python${MODPY_VERSION}/site-packages/z3/z3consts.pyc
 lib/python${MODPY_VERSION}/site-packages/z3/z3core.py
-lib/python${MODPY_VERSION}/site-packages/z3/z3core.pyc
 lib/python${MODPY_VERSION}/site-packages/z3/z3num.py
-lib/python${MODPY_VERSION}/site-packages/z3/z3num.pyc
 lib/python${MODPY_VERSION}/site-packages/z3/z3poly.py
-lib/python${MODPY_VERSION}/site-packages/z3/z3poly.pyc
 lib/python${MODPY_VERSION}/site-packages/z3/z3printer.py
-lib/python${MODPY_VERSION}/site-packages/z3/z3printer.pyc
 lib/python${MODPY_VERSION}/site-packages/z3/z3rcf.py
-lib/python${MODPY_VERSION}/site-packages/z3/z3rcf.pyc
+lib/python${MODPY_VERSION}/site-packages/z3/z3test.py
 lib/python${MODPY_VERSION}/site-packages/z3/z3types.py
-lib/python${MODPY_VERSION}/site-packages/z3/z3types.pyc
 lib/python${MODPY_VERSION}/site-packages/z3/z3util.py
-lib/python${MODPY_VERSION}/site-packages/z3/z3util.pyc

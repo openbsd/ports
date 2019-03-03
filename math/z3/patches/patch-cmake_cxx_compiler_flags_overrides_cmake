@@ -1,0 +1,13 @@
+$OpenBSD: patch-cmake_cxx_compiler_flags_overrides_cmake,v 1.1 2019/03/03 09:16:17 rsadowski Exp $
+
+Index: cmake/cxx_compiler_flags_overrides.cmake
+--- cmake/cxx_compiler_flags_overrides.cmake.orig
++++ cmake/cxx_compiler_flags_overrides.cmake
+@@ -9,6 +9,6 @@ if (("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang") OR ("
+   set(CMAKE_CXX_FLAGS_INIT "")
+   set(CMAKE_CXX_FLAGS_DEBUG_INIT "-g -O0")
+   set(CMAKE_CXX_FLAGS_MINSIZEREL_INIT "-Os -DNDEBUG")
+-  set(CMAKE_CXX_FLAGS_RELEASE_INIT "-O3 -DNDEBUG")
++  set(CMAKE_CXX_FLAGS_RELEASE_INIT "-DNDEBUG")
+   set(CMAKE_CXX_FLAGS_RELWITHDEBINFO_INIT "-O2 -g -DNDEBUG")
+ endif()

@@ -1,9 +1,9 @@
-$OpenBSD: patch-scripts_mk_util_py,v 1.2 2018/11/24 00:57:15 naddy Exp $
+$OpenBSD: patch-scripts_mk_util_py,v 1.3 2019/03/03 09:16:17 rsadowski Exp $
 
 Index: scripts/mk_util.py
 --- scripts/mk_util.py.orig
 +++ scripts/mk_util.py
-@@ -49,7 +49,7 @@ C_COMPILERS=['gcc', 'clang']
+@@ -50,7 +50,7 @@ C_COMPILERS=['gcc', 'clang']
  CSC_COMPILERS=['csc', 'mcs']
  JAVAC=None
  JAR=None
@@ -12,7 +12,7 @@ Index: scripts/mk_util.py
  BUILD_DIR='build'
  REV_BUILD_DIR='..'
  SRC_DIR='src'
-@@ -2494,7 +2494,6 @@ def mk_config():
+@@ -2801,7 +2801,6 @@ def mk_config():
              EXAMP_DEBUG_FLAG = '-g'
              CPPFLAGS     = '%s -DZ3DEBUG -D_DEBUG' % CPPFLAGS
          else:
@@ -20,7 +20,7 @@ Index: scripts/mk_util.py
              if GPROF:
                  CXXFLAGS     += '-fomit-frame-pointer'
              CPPFLAGS     = '%s -DNDEBUG -D_EXTERNAL_RELEASE' % CPPFLAGS
-@@ -2528,7 +2527,7 @@ def mk_config():
+@@ -2836,7 +2835,7 @@ def mk_config():
          elif sysname == 'OpenBSD':
              CXXFLAGS       = '%s -D_OPENBSD_' % CXXFLAGS
              OS_DEFINES     = '-D_OPENBSD_'
@@ -29,7 +29,7 @@ Index: scripts/mk_util.py
              SLIBFLAGS      = '-shared'
          elif sysname.startswith('CYGWIN'):
              CXXFLAGS       = '%s -D_CYGWIN' % CXXFLAGS
-@@ -2544,9 +2543,9 @@ def mk_config():
+@@ -2852,9 +2851,9 @@ def mk_config():
              LIB_EXT        = '.lib'
          else:
              raise MKException('Unsupported platform: %s' % sysname)
@@ -38,6 +38,6 @@ Index: scripts/mk_util.py
          if is64():
 -            if not sysname.startswith('CYGWIN') and not sysname.startswith('MSYS') and not sysname.startswith('MINGW'):
 -                CXXFLAGS     = '%s -fPIC' % CXXFLAGS
-             CPPFLAGS     = '%s -D_AMD64_' % CPPFLAGS
              if sysname == 'Linux':
                  CPPFLAGS = '%s -D_USE_THREAD_LOCAL' % CPPFLAGS
+         elif not LINUX_X64:

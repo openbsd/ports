@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2018/12/15 12:43:40 rpointel Exp $
+# $OpenBSD: Makefile,v 1.11 2019/03/03 09:16:17 rsadowski Exp $
 
 COMMENT =	Z3 theorem prover
 
-VERSION =	4.8.3
+VERSION =	4.8.4
 DISTNAME =	z3-${VERSION}
 
 GH_ACCOUNT =	Z3Prover
@@ -17,19 +17,21 @@ WANTLIB +=	c m pthread ${COMPILER_LIBCXX}
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-CONFIGURE_STYLE =	simple
-
-CONFIGURE_ARGS +=	--prefix=${PREFIX} \
-			--python
-
 # c++11
 COMPILER =	base-clang ports-gcc
 
-MODULES =	lang/python
+MODULES =	devel/cmake \
+		lang/python
+
+CONFIGURE_ARGS +=	-DENABLE_EXAMPLE_TARGETS=ON \
+			-DINCLUDE_GIT_HASH=OFF \
+			-DINCLUDE_GIT_DESCRIBE=OFF \
+			-DBUILD_PYTHON_BINDINGS=ON \
+			-DUSE_LIB_GMP=OFF
 
 WRKDIST =	${WRKDIR}/z3-${DISTNAME}
-WRKCONF =	${WRKSRC}
-WRKBUILD =	${WRKSRC}/build
+
+NO_TEST =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/scripts/mk_util.py
