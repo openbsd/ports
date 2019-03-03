@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/03 19:14:28 rsadowski Exp $
+include/mesode.h
+lib/libmesode.a
+lib/libmesode.la
+@lib lib/libmesode.so.${LIBmesode_VERSION}
+lib/pkgconfig/libmesode.pc

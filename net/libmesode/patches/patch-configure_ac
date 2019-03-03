@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2019/03/03 19:14:28 rsadowski Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -18,11 +18,11 @@ AS_CASE([$host_os],
+                    [PLATFORM="nix"])
+ 
+ PKG_CHECK_MODULES([expat], [expat >= 2.0.0],
+-                  [PC_REQUIRES+=(expat)],
++                  [PC_REQUIRES="expat"],
+                   [AC_CHECK_HEADER([expat.h],
+                                    [
+                                     expat_LIBS="-lexpat"
+-                                    PC_LIBS+=($expat_LIBS)
++                                    PC_LIBS="${expat_LIBS}"
+                                    ],
+                                    [AC_MSG_ERROR([expat not found; expat required.])]
+                                   )
