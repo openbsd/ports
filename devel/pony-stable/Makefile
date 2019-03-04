@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/10/26 14:59:55 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/04 04:32:39 bcallah Exp $
 
 # Requires ponyc
-ONLY_FOR_ARCHS =	${LLVM_ARCHS}
+ONLY_FOR_ARCHS =	aarch64 amd64 arm i386
 
 COMMENT =	simple dependency manager for the Pony language
-DISTNAME =	${GH_PROJECT}-0.1.6.1
 CATEGORIES =	devel
 
-# Move to GH_TAGNAME next release.
 GH_ACCOUNT =	ponylang
 GH_PROJECT =	pony-stable
-#GH_TAGNAME =	0.1.7
-GH_COMMIT =	263b285eb76202eb18cce9d449bb1560111f254d
+GH_TAGNAME =	0.2.0
 
 HOMEPAGE =	https://www.ponylang.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -19,7 +16,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-#WANTLIB += ${COMPILER_LIBCXX} c m
+WANTLIB += ${COMPILER_LIBCXX} c execinfo m
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
