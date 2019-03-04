@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_src_facts_resolvers_virtualization_resolver_cc,v 1.5 2019/03/04 11:34:59 sebastia Exp $
+
+newer versions seem to report VMM as the HW_PRODUCT
+when running as VM in VMM
+
+Index: lib/src/facts/resolvers/virtualization_resolver.cc
+--- lib/src/facts/resolvers/virtualization_resolver.cc.orig
++++ lib/src/facts/resolvers/virtualization_resolver.cc
+@@ -84,7 +84,7 @@ namespace facter { namespace facts { namespace resolve
+             make_tuple("oVirt Node",        string(vm::ovirt)),
+             make_tuple("HVM domU",          string(vm::xen_hardware)),
+             make_tuple("Bochs",             string(vm::bochs)),
+-            make_tuple("OpenBSD",           string(vm::vmm)),
++            make_tuple("VMM",               string(vm::vmm)),
+             make_tuple("BHYVE",             string(vm::bhyve)),
+         };
+ 
