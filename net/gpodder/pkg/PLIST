@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/07/09 12:47:04 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/03/04 22:28:12 sthen Exp $
 bin/gpo
 bin/gpodder
 bin/gpodder-migrate2tres
@@ -22,6 +22,8 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}dbsqlite.${MODP
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}dbsqlite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}dbusproxy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}dbusproxy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}deviceplaylist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}deviceplaylist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}directory.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}directory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}download.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -56,6 +58,8 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}services.${MODP
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}services.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}sync.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}sync.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}syncui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}syncui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}unittests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}unittests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -75,6 +79,7 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/core.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/coverart.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/dbsqlite.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/dbusproxy.py
+lib/python${MODPY_VERSION}/site-packages/gpodder/deviceplaylist.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/directory.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/download.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/escapist_videos.py
@@ -117,24 +122,21 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}_
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}channel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}channel.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}deviceplaylist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}deviceplaylist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}episodeselector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}episodeselector.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}exportlocal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}exportlocal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}podcastdirectory.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}podcastdirectory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}preferences.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}preferences.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}sync.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}sync.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}welcome.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/${MODPY_PYCACHE}welcome.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/channel.py
-lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/deviceplaylist.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/episodeselector.py
+lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/exportlocal.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/podcastdirectory.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/preferences.py
-lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/sync.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktop/welcome.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/desktopfile.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/gtkui/download.py
@@ -184,6 +186,7 @@ lib/python${MODPY_VERSION}/site-packages/gpodder/query.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/schema.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/services.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/sync.py
+lib/python${MODPY_VERSION}/site-packages/gpodder/syncui.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/test/
 lib/python${MODPY_VERSION}/site-packages/gpodder/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gpodder/test/${MODPY_PYCACHE}/
@@ -277,6 +280,7 @@ share/gpodder/ui/gtk/gpodderaddpodcast.ui
 share/gpodder/ui/gtk/gpodderchannel.ui
 share/gpodder/ui/gtk/gpodderconfigeditor.ui
 share/gpodder/ui/gtk/gpodderepisodeselector.ui
+share/gpodder/ui/gtk/gpodderexporttolocalfolder.ui
 share/gpodder/ui/gtk/gpodderpodcastdirectory.ui
 share/gpodder/ui/gtk/gpodderpreferences.ui
 share/gpodder/ui/gtk/gpodderwelcome.ui
@@ -344,3 +348,5 @@ share/locale/uk/LC_MESSAGES/gpodder.mo
 share/locale/zh_CN/LC_MESSAGES/gpodder.mo
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/metainfo/
+share/metainfo/org.gpodder.gpodder.appdata.xml
