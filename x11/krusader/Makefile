@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2018/10/22 20:30:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.36 2019/03/04 16:21:04 rsadowski Exp $
 
 COMMENT=	twin panel file manager for KDE
 
 VERSION=	2.7.1
 DISTNAME=	krusader-${VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11
 
@@ -28,10 +28,11 @@ WANTLIB += Qt5Widgets Qt5Xml c m z
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/krusader/${VERSION}/}
 EXTRACT_SUFX=	.tar.xz
 
-MODULES=	devel/kf5
+MODULES =	devel/kf5
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
-		x11/gtk+3,-guic
+		x11/gtk+3,-guic \
+		x11/kde-applications/kompare
 
 BUILD_DEPENDS +=devel/kf5/kdoctools \
 		devel/gettext-tools
