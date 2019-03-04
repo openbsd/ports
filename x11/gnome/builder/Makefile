@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2019/01/13 09:21:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2019/03/04 09:06:58 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
@@ -65,7 +65,7 @@ CONFIGURE_ARGS=		-Dwith_valgrind=false \
 			-Dwith_flatpak=false \
 			-Dwith_sysprof=false
 
-# XXX C library 'libclang' not found
+# XXX https://gitlab.gnome.org/GNOME/gnome-builder/issues/840
 CONFIGURE_ARGS +=	-Dwith_clang=false
 
 MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
