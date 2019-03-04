@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/19 05:36:01 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/03/04 21:43:45 mariani Exp $
 bin/runxlrd${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/xlrd/
 lib/python${MODPY_VERSION}/site-packages/xlrd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/xlrd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/xlrd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/xlrd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/xlrd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/xlrd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/xlrd/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xlrd/${MODPY_PYCACHE}/
@@ -23,11 +22,6 @@ lib/python${MODPY_VERSION}/site-packages/xlrd/${MODPY_PYCACHE}xlsx.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/xlrd/biffh.py
 lib/python${MODPY_VERSION}/site-packages/xlrd/book.py
 lib/python${MODPY_VERSION}/site-packages/xlrd/compdoc.py
-lib/python${MODPY_VERSION}/site-packages/xlrd/examples/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xlrd/examples/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/xlrd/examples/${MODPY_PYCACHE}xlrdnameAPIdemo.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/xlrd/examples/namesdemo.xls
-lib/python${MODPY_VERSION}/site-packages/xlrd/examples/xlrdnameAPIdemo.py
 lib/python${MODPY_VERSION}/site-packages/xlrd/formatting.py
 lib/python${MODPY_VERSION}/site-packages/xlrd/formula.py
 lib/python${MODPY_VERSION}/site-packages/xlrd/info.py
