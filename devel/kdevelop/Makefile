@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2018/11/28 19:29:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.20 2019/03/04 16:23:16 rsadowski Exp $
 
 # Qt5Webkit
 USE_WXNEEDED =		Yes
 
 COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 
-VERSION =	5.3.0
+VERSION =	5.3.1
 DISTNAME =	kdevelop-${VERSION}
 
 HOMEPAGE =	https://www.kdevelop.org/
@@ -100,9 +100,13 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		x11/qt5/qttools \
 		x11/qt5/qtwebkit
 
-CONFIGURE_ARGS+=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngineWidgets:BOOL=true
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngineWidgets=true
 
 TEST_IS_INTERACTIVE =	X11
+
+TEST_DEPENDS =		${BUILD_PKGPATH}
+
+TEST_ENV +=	QT_PLUGIN_PATH="${PREFIX}/lib/qt5/plugins"
 
 pre-configure:
 	ln -sf ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
