@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/09/16 04:55:44 bket Exp $
+@comment $OpenBSD: PLIST,v 1.15 2019/03/04 19:26:17 bket Exp $
 bin/git-cola
 bin/git-dag
 lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -33,6 +33,7 @@ share/git-cola/icons/dark/circle-slash-red.svg
 share/git-cola/icons/dark/circle-slash.svg
 share/git-cola/icons/dark/desktop-download.svg
 share/git-cola/icons/dark/diff.svg
+share/git-cola/icons/dark/document-save-symbolic.svg
 share/git-cola/icons/dark/edit-copy.svg
 share/git-cola/icons/dark/edit-select-all.svg
 share/git-cola/icons/dark/edit-undo.svg
@@ -81,6 +82,7 @@ share/git-cola/icons/dark/zoom-in.svg
 share/git-cola/icons/dark/zoom-out.svg
 share/git-cola/icons/desktop-download.svg
 share/git-cola/icons/diff.svg
+share/git-cola/icons/document-save-symbolic.svg
 share/git-cola/icons/edit-copy.svg
 share/git-cola/icons/edit-select-all.svg
 share/git-cola/icons/edit-undo.svg
@@ -137,6 +139,8 @@ share/git-cola/lib/cola/actions.py
 share/git-cola/lib/cola/actions.pyc
 share/git-cola/lib/cola/app.py
 share/git-cola/lib/cola/app.pyc
+share/git-cola/lib/cola/cmd.py
+share/git-cola/lib/cola/cmd.pyc
 share/git-cola/lib/cola/cmds.py
 share/git-cola/lib/cola/cmds.pyc
 share/git-cola/lib/cola/compat.py
@@ -291,6 +295,8 @@ share/git-cola/lib/cola/widgets/stash.py
 share/git-cola/lib/cola/widgets/stash.pyc
 share/git-cola/lib/cola/widgets/status.py
 share/git-cola/lib/cola/widgets/status.pyc
+share/git-cola/lib/cola/widgets/submodules.py
+share/git-cola/lib/cola/widgets/submodules.pyc
 share/git-cola/lib/cola/widgets/text.py
 share/git-cola/lib/cola/widgets/text.pyc
 share/git-cola/lib/cola/widgets/toolbar.py
