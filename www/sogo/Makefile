@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.78 2018/11/26 14:20:17 sebastia Exp $
+# $OpenBSD: Makefile,v 1.79 2019/03/04 08:19:45 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
-VERSION =	4.0.2
-REVISION =	0
+VERSION =	4.0.5
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}
 
@@ -46,7 +45,8 @@ MAKE_FLAGS +=		libGDLContentStore_INTERFACE_VERSION=${LIBGDLContentStore_VERSION
 			libNGCards_INTERFACE_VERSION=${LIBNGCards_VERSION} \
 			libOGoContentStore_INTERFACE_VERSION=${LIBOGoContentStore_VERSION} \
 			libSOGoUI_INTERFACE_VERSION=${LIBSOGoUI_VERSION} \
-			SOGo_INTERFACE_VERSION=${LIBSOGo_VERSION}
+			SOGo_INTERFACE_VERSION=${LIBSOGo_VERSION} \
+			LDFLAGS="-fuse-ld=bfd"
 
 SOGOLIBDIR =	lib/GNUstep/Frameworks/SOGo.framework/Versions/${LIBSOGo_VERSION}
 SUBST_VARS +=	SOGOLIBDIR VARBASE

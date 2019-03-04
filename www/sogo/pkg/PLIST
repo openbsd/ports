@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2018/09/26 13:15:37 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.40 2019/03/04 08:19:45 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:${VARBASE}/sogo:/bin/sh
 @rcscript ${RCDIR}/sogod
@@ -2312,6 +2312,7 @@ lib/GNUstep/SOGo/WebServerResources/js/Scheduler/sgCalendarListEvent.directive.j
 lib/GNUstep/SOGo/WebServerResources/js/Scheduler/sgCalendarListItem.directive.js
 lib/GNUstep/SOGo/WebServerResources/js/Scheduler/sgCalendarMonthDay.directive.js
 lib/GNUstep/SOGo/WebServerResources/js/Scheduler/sgCalendarMonthEvent.directive.js
+lib/GNUstep/SOGo/WebServerResources/js/Scheduler/sgCalendarPrintStylesheet.directive.js
 lib/GNUstep/SOGo/WebServerResources/js/Scheduler/sgCalendarScrollView.directive.js
 lib/GNUstep/SOGo/WebServerResources/js/Scheduler/sgCategoryStylesheet.directive.js
 lib/GNUstep/SOGo/WebServerResources/js/Scheduler/sgDraggableCalendarBlock.directive.js
@@ -2382,6 +2383,7 @@ lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/lang/no.js
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/lang/pl.js
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/lang/pt-br.js
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/lang/pt.js
+lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/lang/ro.js
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/lang/ru.js
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/lang/sk.js
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/lang/sl.js
@@ -2403,6 +2405,9 @@ lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/base64image/LICEN
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/base64image/README.md
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/base64image/dialogs/
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/base64image/dialogs/base64image.js
+lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/clipboard/
+lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/clipboard/dialogs/
+lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/clipboard/dialogs/paste.js
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/colordialog/
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/colordialog/dialogs/
 lib/GNUstep/SOGo/WebServerResources/js/vendor/ckeditor/plugins/colordialog/dialogs/colordialog.css
