@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/04 04:28:56 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/04 05:04:21 jsg Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386
 
@@ -29,7 +29,8 @@ LIB_DEPENDS =	devel/libexecinfo
 RUN_DEPENDS =	devel/llvm>=7.0,<7.1
 
 USE_GMAKE =	Yes
-MAKE_ENV =	verbose=true default_pic=true
+MAKE_ENV =	verbose=true default_pic=true \
+		LLVM_CONFIG="${LOCALBASE}/bin/llvm-config"
 
 .if ${MACHINE_ARCH:Marm} || ${MACHINE_ARCH:Mi386}
 MAKE_ENV +=	bits=32
