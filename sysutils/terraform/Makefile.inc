@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.3 2018/05/27 10:56:33 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2019/03/04 17:12:32 ajacoutot Exp $
 
 DIST_SUBDIR=		terraform
 
 CATEGORIES=		sysutils net
 
-HOMEPAGE=		https://www.terraform.io/
+HOMEPAGE ?=		https://www.terraform.io/
 
 MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
