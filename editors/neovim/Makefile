@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/03/04 14:22:25 cwen Exp $
 
 COMMENT =	continuation and extension of Vim
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
 GH_TAGNAME =	v0.3.1
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	editors devel
 HOMEPAGE =	http://neovim.org
@@ -15,7 +15,7 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c iconv intl ${MODLUA_WANTLIB} m msgpackc pthread termkey
-WANTLIB += unibilium util uv vterm ${COMPILER_LIBCXX}
+WANTLIB += unibilium util uv vterm
 
 COMPILER =		base-clang ports-gcc base-gcc
 
