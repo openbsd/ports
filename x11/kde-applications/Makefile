@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/01/04 14:57:02 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.43 2019/03/04 16:20:03 rsadowski Exp $
 
      SUBDIR =
 
@@ -148,7 +148,7 @@
      #SUBDIR += kde-dev-utils
      #SUBDIR += kdesdk-kioslaves
      #SUBDIR += kdesdk-thumbnailers
-     #SUBDIR += kompare
+     SUBDIR += kompare
      #SUBDIR += lokalize
      #SUBDIR += poxml
      SUBDIR += umbrello
