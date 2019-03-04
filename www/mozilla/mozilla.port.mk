@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.122 2019/01/29 20:45:53 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.123 2019/03/04 07:03:54 jsg Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -167,7 +167,8 @@ SUBST_VARS +=	MOZILLA_PROJECT MOZILLA_VER MOZILLA_VERSION
 
 MAKE_ENV +=	MOZILLA_OFFICIAL=1 \
 		SHELL=/bin/sh \
-		SO_VERSION="${SO_VERSION}"
+		SO_VERSION="${SO_VERSION}" \
+		LLVM_CONFIG="${LOCALBASE}/bin/llvm-config"
 
 CONFIGURE_ENV +=	${MAKE_ENV}
 # ensure libffi's configure doesnt pick gsed/gmkdir/gawk
