@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/09/19 09:35:32 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/03/04 14:46:21 jca Exp $
 @conflict zathura-<=0.0.8.5p1
 @pkgpath textproc/zathura
 @bin bin/zathura
@@ -15,10 +15,18 @@ lib/zathura/
 @man man/man1/zathura.1
 @man man/man5/zathurarc.5
 share/applications/org.pwmt.zathura.desktop
+share/bash-completion/completions/zathura
 share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.pwmt.zathura.xml
 share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/128x128/apps/org.pwmt.zathura.png
+share/icons/hicolor/16x16/apps/org.pwmt.zathura.png
+share/icons/hicolor/256x256/apps/org.pwmt.zathura.png
+share/icons/hicolor/32x32/apps/org.pwmt.zathura.png
+share/icons/hicolor/64x64/apps/org.pwmt.zathura.png
+share/icons/scalable/
+share/icons/scalable/apps/
+share/icons/scalable/apps/org.pwmt.zathura.svg
 share/locale/ca/LC_MESSAGES/zathura.mo
 share/locale/cs/LC_MESSAGES/zathura.mo
 share/locale/de/LC_MESSAGES/zathura.mo
@@ -42,6 +50,7 @@ share/locale/no/LC_MESSAGES/zathura.mo
 share/locale/pl/LC_MESSAGES/zathura.mo
 share/locale/pt_BR/LC_MESSAGES/zathura.mo
 share/locale/ru/LC_MESSAGES/zathura.mo
+share/locale/sv/LC_MESSAGES/zathura.mo
 share/locale/ta_IN/
 share/locale/ta_IN/LC_MESSAGES/
 share/locale/ta_IN/LC_MESSAGES/zathura.mo
@@ -51,5 +60,9 @@ share/locale/uk_UA/LC_MESSAGES/
 share/locale/uk_UA/LC_MESSAGES/zathura.mo
 share/metainfo/
 share/metainfo/org.pwmt.zathura.appdata.xml
+share/zsh/
+share/zsh/vendor-completions/
+share/zsh/vendor-completions/_zathura
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/scalable
 @tag update-desktop-database

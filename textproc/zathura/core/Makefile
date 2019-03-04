@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.21 2018/09/19 09:35:32 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2019/03/04 14:46:21 jca Exp $
 
-V =			0.4.0
+V =			0.4.3
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
 DISTNAME =		zathura-${V}
 CATEGORIES =		textproc x11
 EXTRACT_SUFX =		.tar.xz
 
-HOMEPAGE =		http://pwmt.org/projects/zathura/
+HOMEPAGE =		https://pwmt.org/projects/zathura/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://pwmt.org/projects/zathura/download/
+MASTER_SITES =	https://pwmt.org/projects/zathura/download/
 
 MODULES=	devel/meson
 BUILD_DEPENDS =	textproc/py-docutils \
@@ -21,15 +21,18 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 LIB_DEPENDS =	databases/sqlite3 \
 		devel/libmagic \
-		x11/girara>=0.2.9
+		x11/girara>=0.3.2 \
+		print/texlive/base,-synctex
 
-WANTLIB += c cairo gdk-3 gio-2.0 girara-gtk3 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gtk-3 intl magic pango-1.0 sqlite3
+WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 girara-gtk3 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gtk-3 intl m magic pango-1.0 pangocairo-1.0 pthread
+WANTLIB += sqlite3 synctex
 
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c
 CONFIGURE_ENV +=	LDFLAGS=-L${LOCALBASE}/lib
-CONFIGURE_ARGS +=	-Denable-synctex=false
+CONFIGURE_ARGS +=	-Dsynctex=enabled
 
 TEST_DEPENDS =	devel/check
 TEST_TARGET =	test
