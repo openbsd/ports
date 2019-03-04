@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2019/01/30 00:30:09 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2019/03/04 04:28:56 bcallah Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386
-BROKEN =		needs updating for llvm-7.0.1, working on it
 
 COMMENT =	actor-model, capabilities-secure, high performance language
-DISTNAME =	${GH_PROJECT}-0.25.0
 CATEGORIES =	lang
 
 GH_ACCOUNT =	ponylang
 GH_PROJECT =	ponyc
-GH_TAGNAME =	0.25.0
+GH_TAGNAME =	0.27.0
 
 HOMEPAGE =	https://www.ponylang.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -17,7 +15,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-# Also links -lLLVM-6.0
+# Also links -lLLVM-7.0
 WANTLIB += ${COMPILER_LIBCXX} c curses execinfo m z
 
 # C11, clang only
@@ -28,7 +26,7 @@ BUILD_DEPENDS =	${RUN_DEPENDS} \
 
 LIB_DEPENDS =	devel/libexecinfo
 
-RUN_DEPENDS =	devel/llvm>=6.0,<6.1
+RUN_DEPENDS =	devel/llvm>=7.0,<7.1
 
 USE_GMAKE =	Yes
 MAKE_ENV =	verbose=true default_pic=true

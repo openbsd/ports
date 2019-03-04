@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/10/16 14:58:36 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/03/04 04:28:57 bcallah Exp $
 bin/ponyc
 include/pony/
 include/pony.h
@@ -33,7 +33,7 @@ lib/pony/${GH_TAGNAME}/packages/buffered/buffered.pony
 lib/pony/${GH_TAGNAME}/packages/buffered/reader.pony
 lib/pony/${GH_TAGNAME}/packages/buffered/writer.pony
 lib/pony/${GH_TAGNAME}/packages/builtin/
-lib/pony/${GH_TAGNAME}/packages/builtin/_partial_arithmetic.pony
+lib/pony/${GH_TAGNAME}/packages/builtin/_arithmetic.pony
 lib/pony/${GH_TAGNAME}/packages/builtin/_to_string.pony
 lib/pony/${GH_TAGNAME}/packages/builtin/ambient_auth.pony
 lib/pony/${GH_TAGNAME}/packages/builtin/any.pony
@@ -42,6 +42,7 @@ lib/pony/${GH_TAGNAME}/packages/builtin/asio_event.pony
 lib/pony/${GH_TAGNAME}/packages/builtin/bool.pony
 lib/pony/${GH_TAGNAME}/packages/builtin/builtin.pony
 lib/pony/${GH_TAGNAME}/packages/builtin/compare.pony
+lib/pony/${GH_TAGNAME}/packages/builtin/disposable_actor.pony
 lib/pony/${GH_TAGNAME}/packages/builtin/do_not_optimise.pony
 lib/pony/${GH_TAGNAME}/packages/builtin/env.pony
 lib/pony/${GH_TAGNAME}/packages/builtin/float.pony
@@ -82,6 +83,7 @@ lib/pony/${GH_TAGNAME}/packages/collections/
 lib/pony/${GH_TAGNAME}/packages/collections/_test.pony
 lib/pony/${GH_TAGNAME}/packages/collections/flag.pony
 lib/pony/${GH_TAGNAME}/packages/collections/hashable.pony
+lib/pony/${GH_TAGNAME}/packages/collections/heap.pony
 lib/pony/${GH_TAGNAME}/packages/collections/list.pony
 lib/pony/${GH_TAGNAME}/packages/collections/list_node.pony
 lib/pony/${GH_TAGNAME}/packages/collections/map.pony
@@ -202,6 +204,8 @@ lib/pony/${GH_TAGNAME}/packages/ponytest/test_helper.pony
 lib/pony/${GH_TAGNAME}/packages/ponytest/test_list.pony
 lib/pony/${GH_TAGNAME}/packages/ponytest/unit_test.pony
 lib/pony/${GH_TAGNAME}/packages/process/
+lib/pony/${GH_TAGNAME}/packages/process/_pipe.pony
+lib/pony/${GH_TAGNAME}/packages/process/_process.pony
 lib/pony/${GH_TAGNAME}/packages/process/_test.pony
 lib/pony/${GH_TAGNAME}/packages/process/auth.pony
 lib/pony/${GH_TAGNAME}/packages/process/process_monitor.pony
