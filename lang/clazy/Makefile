@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/10/16 14:31:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/04 01:09:39 jsg Exp $
 
 COMMENT =	static source code analyzer for Qt5-based C++
 
@@ -25,7 +25,8 @@ BUILD_DEPENDS =		devel/llvm
 RUN_DEPENDS =		devel/llvm
 
 CONFIGURE_ARGS =	-DCLAZY_BUILD_UTILS_LIB:Bool=ON \
-			-DMAN_INSTALL_DIR="${PREFIX}/man/man1"
+			-DMAN_INSTALL_DIR="${PREFIX}/man/man1" \
+			-DLLVM_ROOT="${LOCALBASE}"
 
 NO_TEST =		Yes
 
