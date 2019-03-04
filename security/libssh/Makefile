@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2018/10/23 19:28:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2019/03/04 08:29:59 rpointel Exp $
 
 COMMENT =		C library implementing server and client side
-DISTNAME =		libssh-0.8.4
+DISTNAME =		libssh-0.8.7
 
-SHARED_LIBS +=  	ssh		4.0 # 4.5
+SHARED_LIBS +=  	ssh		4.0 # 4.7
 
 CATEGORIES =		security devel
 
@@ -16,7 +16,7 @@ MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 # LGPL v2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += crypto pthread z
+WANTLIB += crypto z
 
 MODULES =		devel/cmake
 
