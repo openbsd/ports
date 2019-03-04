@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/06/25 15:10:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2019/03/04 17:06:10 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += provider-alicloud
@@ -23,6 +23,7 @@
      SUBDIR += provider-dnsimple
      SUBDIR += provider-docker
      SUBDIR += provider-dyn
+     SUBDIR += provider-exoscale
      SUBDIR += provider-external
      SUBDIR += provider-fastly
      SUBDIR += provider-github
