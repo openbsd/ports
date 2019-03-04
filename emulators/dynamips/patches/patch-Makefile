@@ -1,6 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2008/01/18 09:09:48 sthen Exp $
---- Makefile.orig	Sun Oct 14 09:43:07 2007
-+++ Makefile	Tue Jan 15 19:44:12 2008
+$OpenBSD: patch-Makefile,v 1.2 2019/03/04 13:30:44 jca Exp $
+Index: Makefile
+--- Makefile.orig
++++ Makefile
 @@ -35,8 +35,8 @@ LEX=flex
  MIPS64_ARCH_INC_FILE=\"mips64_$(DYNAMIPS_ARCH)_trans.h\"
  PPC32_ARCH_INC_FILE=\"ppc32_$(DYNAMIPS_ARCH)_trans.h\"
@@ -12,22 +13,20 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2008/01/18 09:09:48 sthen Exp $
  	-DMIPS64_ARCH_INC_FILE=$(MIPS64_ARCH_INC_FILE) \
  	-DPPC32_ARCH_INC_FILE=$(PPC32_ARCH_INC_FILE) \
  	-DDYNAMIPS_VERSION=\"$(VERSION)\" \
-@@ -47,6 +47,14 @@ CFLAGS+=-g -Wall -O3 -fomit-frame-pointer \
+@@ -47,6 +47,12 @@ CFLAGS+=-g -Wall -O3 -fomit-frame-pointer \
  #PCAP_LIB=/usr/local/lib/libpcap.a
  PCAP_LIB=-lpcap
  
 +ifeq ($(shell uname), OpenBSD)
 +   PTHREAD_LIBS?=-pthread
 +   PCAP_LIB=-lpcap
-+   LOCALBASE?=/usr/local
-+   CFLAGS+=-I${LOCALBASE}/include -I${LOCALBASE}/include/libelf $(PTHREAD_CFLAGS) \
-+         -D_FILE_OFFSET_BITS=64
-+   LIBS=-L/usr/local/lib -L. -lelf $(PTHREAD_LIBS)
++   CFLAGS+=$(PTHREAD_CFLAGS)
++   LIBS=-L. -lelf $(PTHREAD_LIBS)
 +else
  ifeq ($(shell uname), FreeBSD)
     PTHREAD_LIBS?=-pthread
     LOCALBASE?=/usr/local
-@@ -85,6 +93,7 @@ endif
+@@ -85,6 +91,7 @@ endif
  endif
  endif
  endif
@@ -35,7 +34,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2008/01/18 09:09:48 sthen Exp $
  
  PROG=dynamips$(BIN_EXT)
  PACKAGE=$(PROG)-$(VERSION)
-@@ -217,20 +226,20 @@ all: $(PROG) nvram_export
+@@ -217,20 +224,20 @@ all: $(PROG) nvram_export
  
  $(PROG): mips64_microcode_dump.inc ppc32_microcode_dump.inc \
  	$(LEX_C) $(C_OBJS) $(A_OBJS)
@@ -64,7 +63,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2008/01/18 09:09:48 sthen Exp $
  
  mips64_microcode_dump.inc: rom2c$(BIN_EXT) mips64_microcode
  	@./rom2c mips64_microcode mips64_microcode_dump.inc 0xbfc00000
-@@ -239,24 +248,24 @@ ppc32_microcode_dump.inc: rom2c$(BIN_EXT) ppc32_microc
+@@ -239,24 +246,24 @@ ppc32_microcode_dump.inc: rom2c$(BIN_EXT) ppc32_microc
  	@./rom2c ppc32_microcode ppc32_microcode_dump.inc 0xfff00000
  
  asmdefs$(BIN_EXT): asmdefs.c mips64.h
@@ -99,7 +98,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2008/01/18 09:09:48 sthen Exp $
  # install -m644 example         $(DESTDIR)/etc/dynamips
  
  
-@@ -281,12 +290,12 @@ packdev:
+@@ -281,12 +288,12 @@ packdev:
  .SUFFIXES: .c .h .S .l .y .o
  
  .S.o:
