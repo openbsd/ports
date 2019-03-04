@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/02/16 20:39:46 bcallah Exp $
+# $OpenBSD: Makefile,v 1.16 2019/03/04 01:07:22 jsg Exp $
 
 # If you are updating to a new version
 # (e.g. 7.0->7.1 or 8.0), you need to sync
@@ -20,7 +20,8 @@ MODULES =	devel/cmake \
 BUILD_DEPENDS =	devel/llvm \
 		textproc/libxml
 
-CONFIGURE_ARGS =	-DLIBCLANG_BUILD_STATIC=On
+CONFIGURE_ARGS =	-DLIBCLANG_BUILD_STATIC=On \
+			-DLLVM_CONFIG="${LOCALBASE}/bin/llvm-config"
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/lib/Driver/ToolChains/OpenBSD.cpp
@@ -28,7 +29,7 @@ pre-configure:
 # Don't use the LLVM shared library.
 post-configure:
 	sed -i \
-	's,-lLLVM-7,`llvm-config --libs all --link-static --ignore-libllvm` -lz,g' \
+	's,-lLLVM-7,`${LOCALBASE}/bin/llvm-config --libs all --link-static --ignore-libllvm` -lz,g' \
 	${WRKBUILD}/build.ninja
 
 # We don't want yet another copy of clang and its utilities on the system.
