@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2018/11/26 14:20:17 sebastia Exp $
+# $OpenBSD: Makefile,v 1.75 2019/03/04 08:18:53 sebastia Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
-VERSION =		4.0.2
-REVISION =		0
+VERSION =		4.0.5
 DISTNAME =		SOPE-${VERSION}
 PKGNAME-main =		sope-${VERSION}
 PKGNAME-mysql =		sope-mysql-${VERSION}
@@ -34,9 +33,9 @@ MODGNUSTEP_NEEDS_GUI=	No
 
 BUILD_DEPENDS =		shells/bash
 
-WANTLIB-main = 		c crypto ssl iconv lber ldap lzma xml2 z \
+WANTLIB-main = 		c crypto ssl iconv lber-2.4 ldap-2.4 lzma xml2 z \
 			${COMPILER_LIBCXX} ${MODGNUSTEP_WANTLIB}
-WANTLIB-mysql = 	GDLAccess mysqlclient crypto ssl z \
+WANTLIB-mysql = 	GDLAccess mysqlclient crypto ssl \
 			${COMPILER_LIBCXX} ${MODGNUSTEP_WANTLIB}
 WANTLIB-postgres = 	GDLAccess EOControl pq ${COMPILER_LIBCXX} \
 			${MODGNUSTEP_WANTLIB}
@@ -58,6 +57,7 @@ MAKE_ENV+=	OBJC_INCLUDE_PATH="${LOCALBASE}/include/postgresql;${LOCALBASE}/inclu
 		SBJson_INTERFACE_VERSION=${LIBSBJson_VERSION}
 MAKE_FLAGS+=	MAJOR_VERSION=${SO_MAJOR} MINOR_VERSION=${SO_MINOR}
 MAKE_FLAGS+=	SOPE_MAJOR_VERSION=4 SOPE_MINOR_VERSION=9
+MAKE_FLAGS+=	LDFLAGS="-fuse-ld=bfd"
 CONFIGURE_ENV+=	${MAKE_ENV}
 NO_TEST=	Yes
 
