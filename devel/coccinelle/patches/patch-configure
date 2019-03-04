@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.6 2019/03/04 12:51:12 chrisz Exp $
+
+This does not set a default options as suggested in configure.ac,
+but overrides the user-provided setting.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -14416,7 +14416,6 @@ fi
+ 
+ fi
+ 
+-enable_opt="yes"
+ 
+ 
+ if test "x$enable_opt" = xyes; then :

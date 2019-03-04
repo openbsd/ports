@@ -1,0 +1,20 @@
+$OpenBSD: patch-parsing_c_Makefile,v 1.1 2019/03/04 12:51:12 chrisz Exp $
+
+Some future version of coccinelle will hopefully configure for unbundled num
+or use Zarith instead.
+
+Index: parsing_c/Makefile
+--- parsing_c/Makefile.orig
++++ parsing_c/Makefile
+@@ -42,9 +42,9 @@ LIBS=../commons/commons.cma ../globals/globals.cma \
+ INCLUDESDEP= -I ../commons -I ../commons/ocamlextra \
+   -I ../globals -I  ../parsing_cocci
+ 
+-INCLUDES=$(INCLUDESDEP) $(TARZANINCLUDE)
++INCLUDES=$(INCLUDESDEP) $(TARZANINCLUDE) -I +num
+ 
+-SYSLIBS= str.cma unix.cma num.cma
++SYSLIBS= str.cma unix.cma nums.cma
+ 
+ ##############################################################################
+ # Generic variables

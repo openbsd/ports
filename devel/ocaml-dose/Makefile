@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2017/12/24 19:06:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2019/03/04 12:51:13 chrisz Exp $
 
 COMMENT =		software repository analysis in OCaml
 CATEGORIES =		devel
 
-VERSION =		3.3
+VERSION =		5.0.1
 DISTNAME =		dose3-${VERSION}
 PKGNAME =		ocaml-dose-${VERSION}
-REVISION =		5
 
 HOMEPAGE =		http://dose.gforge.inria.fr/
 
@@ -15,35 +14,29 @@ MAINTAINER =		Christopher Zimmermann <chrisz@openbsd.org>
 # LGPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://gforge.inria.fr/frs/download.php/file/34277/
+MASTER_SITES =		https://gforge.inria.fr/frs/download.php/file/36063/
 
 MODULES =		lang/ocaml
 
-WANTLIB =		c m
-BUILD_DEPENDS =		sysutils/findlib \
-			lang/ocaml-camlp4 \
+WANTLIB =		c m pthread
+BUILD_DEPENDS =		devel/ocaml-cppo>=1.1.2 \
+			sysutils/findlib \
 			devel/ounit \
 			devel/cudf,-ocaml \
-			devel/ocaml-extlib \
+			devel/ocaml-extlib>=1.7.0 \
 			devel/ocaml-graph>=1.8.7 \
-			devel/ocaml-pcre \
-			devel/cudf,-main \
-			devel/ocaml-re \
-			devel/ocaml-ocamlbuild
+			devel/ocaml-ocamlbuild \
+			devel/ocaml-re
 
-
-FAKE_FLAGS =		BINDIR=${WRKINST}/${PREFIX}/bin
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--with-ocamlgraph --with-oUnit
+CONFIGURE_ARGS =	--with-oUnit
+FAKE_FLAGS =		${DESTDIRNAME}=${DESTDIR}${TRUEPREFIX}
 
 #doc seems broken, needs texlive_texmf-full, graphviz and hevea
 ALL_TARGET =		all
 
-
-post-extract:
-	#rm ${WRKSRC}/doseparse/boilerplateNoRpm.ml
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/manpages/*.1 ${PREFIX}/man/man1

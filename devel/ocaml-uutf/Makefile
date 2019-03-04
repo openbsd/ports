@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2016/06/23 19:23:53 krw Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/04 12:51:14 chrisz Exp $
 
 COMMENT =	non-blocking streaming unicode codec
 CATEGORIES =	devel
 
-V =		0.9.4
+V =		1.0.1
 NAME =		uutf
 DISTNAME =	${NAME}-${V}
 EXTRACT_SUFX =	.tbz
@@ -31,7 +31,8 @@ ALL_TARGET +=	${NAME}.cmxs
 
 
 do-build:
-	cd ${WRKSRC} && ocamlbuild ${ALL_TARGET}
+	cd ${WRKSRC} && ocamlbuild -use-ocamlfind \
+		${ALL_TARGET} doc/api.docdir/index.html
 
 do-install:
 	env -i ${MAKE_ENV} ocamlfind install ${NAME} \
@@ -39,9 +40,11 @@ do-install:
 		${ALL_TARGET:S|^|${WRKSRC}/_build/src/|}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-${NAME}/api
 	${INSTALL_DATA} \
-		${WRKDIST}/{README,CHANGES}.md \
+		${WRKSRC}/*.md \
 		${PREFIX}/share/doc/ocaml-${NAME}/
-	${INSTALL_DATA} ${WRKDIST}/doc/* ${PREFIX}/share/doc/ocaml-${NAME}/api/
+	${INSTALL_DATA} \
+		${WRKSRC}/_build/doc/api.docdir/* \
+		${PREFIX}/share/doc/ocaml-${NAME}/api/
 
 
 .include <bsd.port.mk>

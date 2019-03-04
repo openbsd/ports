@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2016/06/23 19:23:53 krw Exp $
+# $OpenBSD: Makefile,v 1.12 2019/03/04 12:51:14 chrisz Exp $
 
 COMMENT =	unit test framework for OCaml
 CATEGORIES =	devel
 
-DISTNAME =	ounit-2.0.0
-REVISION =	2
+DISTNAME =	ounit-2.0.8
 
 # The last url component (the number) changes every release, too.
-MASTER_SITES =	http://forge.ocamlcore.org/frs/download.php/1258/
+MASTER_SITES =	http://forge.ocamlcore.org/frs/download.php/1749/
 
 HOMEPAGE =	http://ounit.forge.ocamlcore.org/
 MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
@@ -18,8 +17,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 MODULES =		lang/ocaml
 
 BUILD_DEPENDS +=	sysutils/findlib \
-			devel/ocaml-ocamlbuild \
-			lang/ocaml-camlp4
+			devel/ocaml-ocamlbuild
 
 CONFIGURE_STYLE =	oasis
 

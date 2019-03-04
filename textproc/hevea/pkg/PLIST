@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/04/25 08:14:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/03/04 12:51:16 chrisz Exp $
 @bin bin/bibhva
 @bin bin/esponja
 @bin bin/hacha
@@ -17,6 +17,7 @@ lib/hevea/cleveref.hva
 lib/hevea/comment.hva
 lib/hevea/compat.hva
 lib/hevea/contents_motif.gif
+lib/hevea/contents_motif.svg
 lib/hevea/crlang.hva
 lib/hevea/czech.hva
 lib/hevea/deepcut.hva
@@ -47,11 +48,14 @@ lib/hevea/html/gif.hva
 lib/hevea/html/graphics.hva
 lib/hevea/html/graphicx.hva
 lib/hevea/html/hevea.hva
+lib/hevea/html/mathjax.hva
+lib/hevea/html/mathjaxauto.hva
 lib/hevea/html/mathpartir.hva
 lib/hevea/html/natbib.hva
 lib/hevea/html/png.hva
 lib/hevea/html/report.hva
 lib/hevea/html/seminar.hva
+lib/hevea/html/svg.hva
 lib/hevea/html/sword.hva
 lib/hevea/html/symb-eng.hva
 lib/hevea/html/symb-ent.hva
@@ -114,16 +118,19 @@ lib/hevea/mappings/windows-1250.map
 lib/hevea/mappings/windows-1251.map
 lib/hevea/mappings/windows-1252.map
 lib/hevea/mappings/windows-1257.map
+lib/hevea/mathjax.sty
 lib/hevea/mathop.hva
 lib/hevea/moreverb.hva
 lib/hevea/multibib.hva
 lib/hevea/multind.hva
 lib/hevea/natbib-common.hva
 lib/hevea/next_motif.gif
+lib/hevea/next_motif.svg
 lib/hevea/packages.hva
 lib/hevea/plain.hva
 lib/hevea/portuguese.hva
 lib/hevea/previous_motif.gif
+lib/hevea/previous_motif.svg
 lib/hevea/program.hva
 lib/hevea/ragged2e.hva
 lib/hevea/spaces.hva
@@ -154,8 +161,9 @@ lib/hevea/xxcharset.exe
 lib/hevea/xxdate.exe
 share/doc/hevea/
 share/doc/hevea/browser.html
-share/doc/hevea/contents_motif.gif
+share/doc/hevea/contents_motif.svg
 share/doc/hevea/cutname.html
+share/doc/hevea/extras.html
 share/doc/hevea/fddl.html
 share/doc/hevea/index.html
 share/doc/hevea/manual-packages.html
@@ -210,7 +218,6 @@ share/doc/hevea/manual034.html
 share/doc/hevea/manual035.html
 share/doc/hevea/manual036.html
 share/doc/hevea/manual037.html
-share/doc/hevea/manual038.html
 share/doc/hevea/manual040.html
 share/doc/hevea/manual041.html
 share/doc/hevea/manual043.html
@@ -219,8 +226,8 @@ share/doc/hevea/manual045.html
 share/doc/hevea/manual046.html
 share/doc/hevea/manual047.html
 share/doc/hevea/manual048.html
-share/doc/hevea/next_motif.gif
-share/doc/hevea/previous_motif.gif
+share/doc/hevea/next_motif.svg
+share/doc/hevea/previous_motif.svg
 share/doc/hevea/sectioning.html
 share/doc/hevea/thaihevea.haux
 share/doc/hevea/thaihevea.html

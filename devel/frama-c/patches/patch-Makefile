@@ -1,0 +1,26 @@
+$OpenBSD: patch-Makefile,v 1.1 2019/03/04 12:51:12 chrisz Exp $
+
+don't try to install cmx* files on bytecode builds.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1863,14 +1863,16 @@ install:: install-lib
+ 	if [ -d "$(FRAMAC_PLUGIN)" ]; then \
+ 	  $(CP)  $(PLUGIN_DYN_CMI_LIST) $(PLUGIN_META_LIST) \
+ 		 $(FRAMAC_PLUGINDIR); \
+-	  $(CP)  $(PLUGIN_DYN_CMO_LIST) $(PLUGIN_DYN_CMX_LIST) \
++	  $(CP)  $(PLUGIN_DYN_CMO_LIST) \
++		 $(if $(filter opt, $(OCAMLBEST)), $(PLUGIN_DYN_CMX_LIST),) \
+ 		 $(FRAMAC_PLUGINDIR)/top; \
+ 	fi
+ 	$(PRINT_INSTALL) gui plug-ins
+ 	if [ -d "$(FRAMAC_PLUGIN_GUI)" -a "$(PLUGIN_DYN_GUI_EXISTS)" = "yes" ]; \
+ 	then \
+ 	  $(CP) $(patsubst %.cma,%.cmi,$(PLUGIN_DYN_GUI_CMO_LIST:.cmo=.cmi)) \
+-		$(PLUGIN_DYN_GUI_CMO_LIST) $(PLUGIN_DYN_GUI_CMX_LIST) \
++		$(PLUGIN_DYN_GUI_CMO_LIST) \
++		$(if $(filter opt, $(OCAMLBEST)), $(PLUGIN_DYN_GUI_CMX_LIST),) \
+ 		$(FRAMAC_PLUGINDIR)/gui; \
+ 	fi
+ 	$(PRINT_INSTALL) man pages

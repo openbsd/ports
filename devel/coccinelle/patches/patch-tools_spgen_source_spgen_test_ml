@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_spgen_source_spgen_test_ml,v 1.1 2019/03/04 12:51:12 chrisz Exp $
+
+Index: tools/spgen/source/spgen_test.ml
+--- tools/spgen/source/spgen_test.ml.orig
++++ tools/spgen/source/spgen_test.ml
+@@ -42,7 +42,7 @@ let score_ext = "score" (* marshalling format used by 
+  *  -B: ignore changes in blank lines
+  *)
+ let get_diff filename1 filename2 =
+-  let com = spf "diff -u -b -B %s %s" filename1 filename2 in
++  let com = spf "gdiff -u -b -B %s %s" filename1 filename2 in
+   let xs = Common.cmd_to_list com in
+ 
+   (* get rid of the --- and +++ lines *)

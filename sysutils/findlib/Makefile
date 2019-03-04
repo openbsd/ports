@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2016/07/06 17:49:32 krw Exp $
+# $OpenBSD: Makefile,v 1.35 2019/03/04 12:51:16 chrisz Exp $
 
 COMMENT=	OCaml package manager
 CATEGORIES=	sysutils
-DISTNAME=	findlib-1.6.2
-REVISION=	2
+DISTNAME=	findlib-1.8.0
 
 MASTER_SITES=	http://download.camlcity.org/download/
 
@@ -16,8 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES+=		x11/tk
 
 WANTLIB +=		c m
-RUN_DEPENDS +=		lang/ocaml lang/ocaml-camlp4
-BUILD_DEPENDS +=	lang/ocaml lang/ocaml-camlp4
+RUN_DEPENDS +=		lang/ocaml
+BUILD_DEPENDS +=	lang/ocaml,-graphics
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS= -no-custom \
@@ -49,5 +48,11 @@ post-install:
 	mv \
 	  ${WRKINST}${SYSCONFDIR}/findlib.conf \
 	  ${PREFIX}/share/examples/findlib/
+#	Since our OCaml is >=4.03, declare uchar availability according to
+#	D. Bünzli's compatibility package. https://github.com/ocaml/uchar.
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/uchar
+	${INSTALL_DATA} \
+	  ${FILESDIR}/META.uchar \
+	  ${PREFIX}/lib/ocaml/uchar/META
 
 .include <bsd.port.mk>

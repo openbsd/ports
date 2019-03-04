@@ -1,0 +1,10 @@
+$OpenBSD: patch-_tags,v 1.1 2019/03/04 12:51:12 chrisz Exp $
+
+Index: _tags
+--- _tags.orig
++++ _tags
+@@ -4,3 +4,4 @@
+ "test": not_hygienic
+ # build every cmo in debug mode (for cil.cma)
+ <**/*.cmo>: debug
++true: unsafe_string

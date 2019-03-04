@@ -1,10 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1 2016/06/23 13:54:26 krw Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/03/04 12:51:13 chrisz Exp $
 %%native%%
 @bin bin/cppo
 lib/ocaml/cppo_ocamlbuild/
 lib/ocaml/cppo_ocamlbuild/META
-lib/ocaml/cppo_ocamlbuild/ocamlbuild_cppo.cma
+lib/ocaml/cppo_ocamlbuild/cppo_ocamlbuild.cma
 lib/ocaml/cppo_ocamlbuild/ocamlbuild_cppo.cmi
-share/doc/ocaml-cppo/
-share/doc/ocaml-cppo/Changes
-share/doc/ocaml-cppo/README.md
+lib/ocaml/cppo_ocamlbuild/ocamlbuild_cppo.cmt
+lib/ocaml/cppo_ocamlbuild/ocamlbuild_cppo.cmti
+lib/ocaml/cppo_ocamlbuild/ocamlbuild_cppo.ml
+lib/ocaml/cppo_ocamlbuild/ocamlbuild_cppo.mli
+share/doc/cppo/
+share/doc/cppo/LICENSE.md
+share/doc/cppo/README.md

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/05/06 15:45:06 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/03/04 12:51:15 chrisz Exp $
 %%native%%
 bin/camlp5
 bin/camlp5o
@@ -8,6 +8,8 @@ bin/mkcamlp5
 bin/ocpp5
 lib/ocaml/camlp5/
 lib/ocaml/camlp5/META
+lib/ocaml/camlp5/ast2pt.cmi
+lib/ocaml/camlp5/ast2pt.mli
 lib/ocaml/camlp5/camlp5.cma
 lib/ocaml/camlp5/camlp5_top.cma
 lib/ocaml/camlp5/camlp5o.cma

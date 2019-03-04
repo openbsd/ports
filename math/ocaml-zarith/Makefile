@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.2 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/04 12:51:15 chrisz Exp $
 
-BROKEN =	in preparation for OCaml 4.06
 COMMENT =	arbitrary precision integer and rational arithmetic
 CATEGORIES =	math
 

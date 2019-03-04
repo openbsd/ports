@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2019/02/22 11:12:27 landry Exp $
+# $OpenBSD: Makefile,v 1.158 2019/03/04 12:51:15 chrisz Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -62,6 +62,8 @@
      SUBDIR += nonogram
      SUBDIR += nonolib
      SUBDIR += ntl
+     SUBDIR += ocaml-num
+     SUBDIR += ocaml-zarith
      SUBDIR += octave
      SUBDIR += openfst
      SUBDIR += p5-AI-FANN

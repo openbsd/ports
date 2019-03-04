@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.17 2016/07/06 17:49:32 krw Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/03/04 12:51:16 chrisz Exp $
 %%native%%
 @bin bin/ocamlfind
-bin/safe_camlp4
 lib/ocaml/bigarray/
 lib/ocaml/bigarray/META
 lib/ocaml/bytes/
@@ -29,16 +28,10 @@ lib/ocaml/findlib/fl_package_base.cmi
 lib/ocaml/findlib/fl_package_base.mli
 lib/ocaml/findlib/topfind.cmi
 lib/ocaml/findlib/topfind.mli
+@comment will be installed by devel/ocaml-ocamlbuild
 lib/ocaml/graphics/
 lib/ocaml/graphics/META
-lib/ocaml/num/
-lib/ocaml/num-top/
-lib/ocaml/num-top/META
-lib/ocaml/num-top/num_top.cma
-lib/ocaml/num-top/num_top.cmi
-lib/ocaml/num-top/num_top_printers.cmi
-lib/ocaml/num/META
-@comment will be installed by devel/ocaml-ocamlbuild
+@comment lib/ocaml/ocamlbuild/
 @comment lib/ocaml/ocamlbuild/META
 lib/ocaml/ocamldoc/META
 lib/ocaml/stdlib/
@@ -47,6 +40,8 @@ lib/ocaml/str/
 lib/ocaml/str/META
 lib/ocaml/threads/META
 lib/ocaml/topfind
+lib/ocaml/uchar/
+lib/ocaml/uchar/META
 lib/ocaml/unix/
 lib/ocaml/unix/META
 @man man/man1/ocamlfind.1

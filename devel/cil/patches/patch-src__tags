@@ -1,0 +1,14 @@
+$OpenBSD: patch-src__tags,v 1.1 2019/03/04 12:51:12 chrisz Exp $
+
+link to num, which is no longer shipped with OCaml.
+
+Index: src/_tags
+--- src/_tags.orig
++++ src/_tags
+@@ -2,4 +2,5 @@
+ "ext": include
+ "frontc": include
+ 
+-<main.{byte,native}>: use_unix, use_str, use_nums, use_cil
++<cilint.*>: package(num)
++<main.{byte,native}>: package(unix), package(str), package(num), use_cil

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2016/06/24 15:59:12 krw Exp $
+# $OpenBSD: Makefile,v 1.8 2019/03/04 12:51:15 chrisz Exp $
 
 COMMENT =	OCaml Preprocessor and Pretty-Printer
 CATEGORIES =	lang
 
-V =		4.03+1
+V =		4.07+1
 GH_ACCOUNT =	ocaml
 GH_PROJECT =	camlp4
 GH_TAGNAME =	${V}
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/ocaml
 
-WANTLIB +=		c m
+WANTLIB +=		c m pthread
 
 USE_GMAKE =		Yes
 

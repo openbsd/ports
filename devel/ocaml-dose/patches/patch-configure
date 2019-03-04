@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.1 2019/03/04 12:51:13 chrisz Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -6554,4 +6554,4 @@ $as_echo "$as_me: WARNING: unrecognized options: $ac_u
+ fi
+ 
+ 
+-make printconf
++$MAKE printconf

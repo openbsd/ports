@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/08/19 00:06:31 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/03/04 12:51:14 chrisz Exp $
 @conflict osh-*
-@bin bin/cvs_realclean
-bin/ocamldep-omake
 @bin bin/omake
 bin/osh
 lib/omake/
@@ -20,35 +18,29 @@ lib/omake/configure/Configure.om
 lib/omake/configure/X.om
 lib/omake/configure/fam.om
 lib/omake/configure/fs_case_sensitive.om
+lib/omake/configure/moncontrol.om
 lib/omake/configure/ncurses.om
+lib/omake/configure/posix_spawn.om
 lib/omake/configure/readline.om
 lib/omake/configure/snprintf.om
 lib/omake/parse/
 lib/omake/parse/C/
 lib/omake/parse/C/Lex.om
 lib/omake/parse/C/Parse.om
+lib/omake/parse/LaTeX/
+lib/omake/parse/LaTeX/Lex.om
+lib/omake/parse/LaTeX/Macros.om
+lib/omake/parse/LaTeX/Parse.om
+lib/omake/parse/LaTeX/Spell.om
+lib/omake/web/
+lib/omake/web/simple-xml.om
 share/doc/omake/
-share/doc/omake/CHANGELOG.txt
+share/doc/omake/ChangeLog
+share/doc/omake/ChangeLog_old.txt
 share/doc/omake/LICENSE
 share/doc/omake/LICENSE.OMake
-share/doc/omake/LICENSE.ocamldep-omake
 share/doc/omake/html/
-share/doc/omake/html/announce.txt
-share/doc/omake/html/changelog.html
-share/doc/omake/html/contents_motif.gif
-share/doc/omake/html/download.html
-share/doc/omake/html/images/
-share/doc/omake/html/images/announce.ps
-share/doc/omake/html/images/announce.tex
-share/doc/omake/html/images/grid.ai
-share/doc/omake/html/images/omake-manual.ai
-share/doc/omake/html/images/omake-manual.gif
-share/doc/omake/html/images/omake.ai
-share/doc/omake/html/images/omake.eps
-share/doc/omake/html/images/omake.gif
-share/doc/omake/html/images/omake.psd
 share/doc/omake/html/index.html
-share/doc/omake/html/next_motif.gif
 share/doc/omake/html/omake-all-index.html
 share/doc/omake/html/omake-autoconf.html
 share/doc/omake/html/omake-base.html
@@ -76,11 +68,6 @@ share/doc/omake/html/omake-target-index.html
 share/doc/omake/html/omake-toc.html
 share/doc/omake/html/omake-var-index.html
 share/doc/omake/html/omake.html
-share/doc/omake/html/omake_lists.html
-share/doc/omake/html/omake_papers.html
-share/doc/omake/html/omake_users.html
 share/doc/omake/html/osh.html
-share/doc/omake/html/previous_motif.gif
 share/doc/omake/omake-doc.pdf
-share/doc/omake/omake-doc.ps
 share/doc/omake/omake-doc.txt

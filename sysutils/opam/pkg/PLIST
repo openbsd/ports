@@ -1,0 +1,59 @@
+@comment $OpenBSD: PLIST,v 1.1 2019/03/04 12:51:16 chrisz Exp $
+@pkgpath sysutils/opam,-main
+@bin bin/opam
+@bin bin/opam-installer
+doc/
+@man man/man1/opam-admin-cache.1
+@man man/man1/opam-admin-filter.1
+@man man/man1/opam-admin-index.1
+@man man/man1/opam-admin-lint.1
+@man man/man1/opam-admin-list.1
+@man man/man1/opam-admin-upgrade.1
+@man man/man1/opam-admin.1
+@man man/man1/opam-clean.1
+@man man/man1/opam-config.1
+@man man/man1/opam-env.1
+@man man/man1/opam-exec.1
+@man man/man1/opam-help.1
+@man man/man1/opam-info.1
+@man man/man1/opam-init.1
+@man man/man1/opam-install.1
+@man man/man1/opam-installer.1
+@man man/man1/opam-lint.1
+@man man/man1/opam-list.1
+@man man/man1/opam-pin.1
+@man man/man1/opam-reinstall.1
+@man man/man1/opam-remote.1
+@man man/man1/opam-remove.1
+@man man/man1/opam-repository.1
+@man man/man1/opam-search.1
+@man man/man1/opam-show.1
+@man man/man1/opam-source.1
+@man man/man1/opam-switch.1
+@man man/man1/opam-uninstall.1
+@man man/man1/opam-unpin.1
+@man man/man1/opam-update.1
+@man man/man1/opam-upgrade.1
+@man man/man1/opam-var.1
+@man man/man1/opam.1
+share/doc/opam/
+share/doc/opam-installer/
+share/doc/opam-installer/CHANGES
+share/doc/opam-installer/LICENSE
+share/doc/opam-installer/README.md
+share/doc/opam/CHANGES
+share/doc/opam/README.md
+share/doc/opam/depexts-plugins
+share/doc/opam/depopts-and-features
+share/doc/opam/pages/
+share/doc/opam/pages/About.md
+share/doc/opam/pages/External_solvers.md
+share/doc/opam/pages/FAQ.md
+share/doc/opam/pages/Install.md
+share/doc/opam/pages/Manual.md
+share/doc/opam/pages/Packaging.md
+share/doc/opam/pages/Specifying_Solver_Preferences.md
+share/doc/opam/pages/Tricks.md
+share/doc/opam/pages/Upgrade_guide.md
+share/doc/opam/pages/Usage.md
+share/doc/opam/provides.md

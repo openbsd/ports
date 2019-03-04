@@ -1,0 +1,21 @@
+$OpenBSD: patch-parsing_c_unparse_c_ml,v 1.1 2019/03/04 12:51:12 chrisz Exp $
+
+just two simple occurences of string modification. Great!
+
+Index: parsing_c/unparse_c.ml
+--- parsing_c/unparse_c.ml.orig
++++ parsing_c/unparse_c.ml
+@@ -2362,11 +2362,11 @@ let start_mark = function
+ *)
+ module String = struct
+   let init n f =
+-    let s = String.make n ' ' in
++    let s = Bytes.make n ' ' in
+     for i = 0 to n - 1 do
+       s.[i] <- f i
+     done;
+-    s
++    Bytes.unsafe_to_string s
+ 
+   let map f s =
+     init (String.length s) (fun i -> f s.[i])

@@ -1,6 +1,7 @@
---- configure.make.orig	Fri Jun 10 15:45:34 2016
-+++ configure.make	Fri Jun 10 15:46:12 2016
-@@ -17,13 +17,8 @@
+Index: configure.make
+--- configure.make.orig
++++ configure.make
+@@ -18,16 +18,9 @@ OCAML_MANDIR = $(MANDIR)
  # OCAMLBUILD_* variables.
  
  OCAMLBUILD_PREFIX ?= $(PREFIX)
@@ -10,9 +11,13 @@
 -OCAMLBUILD_LIBDIR ?= \
 -  $(or $(shell opam config var lib 2>/dev/null),\
 -       $(shell ocamlfind printconf destdir 2>/dev/null),\
--       $(LIBDIR))
+-       $(OCAML_LIBDIR))
+-OCAMLBUILD_MANDIR ?= \
+-  $(or $(shell opam config var man 2>/dev/null),\
+-       $(OCAML_MANDIR))
 +OCAMLBUILD_BINDIR ?= $(BINDIR)
 +OCAMLBUILD_LIBDIR ?= $(LIBDIR)
++OCAMLBUILD_MANDIR ?= $(MANDIR)
  
  # It is important to distinguish OCAML_LIBDIR, which points to the
  # directory of the ocaml compiler distribution, and OCAMLBUILD_LIBDIR,

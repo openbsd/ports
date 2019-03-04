@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/02/11 05:49:27 jca Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/03/04 12:51:12 chrisz Exp $
 @pkgpath sysutils/dune
 @bin bin/dune
 @bin bin/jbuilder
 @man man/man1/dune-build.1
 @man man/man1/dune-clean.1
+@man man/man1/dune-compute.1
 @man man/man1/dune-exec.1
 @man man/man1/dune-external-lib-deps.1
+@man man/man1/dune-format-dune-file.1
 @man man/man1/dune-help.1
 @man man/man1/dune-install.1
 @man man/man1/dune-installed-libraries.1
@@ -15,7 +17,7 @@
 @man man/man1/dune-runtest.1
 @man man/man1/dune-subst.1
 @man man/man1/dune-uninstall.1
-@man man/man1/dune-unstable-fmt.1
+@man man/man1/dune-upgrade.1
 @man man/man1/dune-utop.1
 @man man/man1/dune.1
 @man man/man5/dune-config.5
@@ -23,3 +25,7 @@ share/doc/dune/
 share/doc/dune/CHANGES.md
 share/doc/dune/LICENSE.md
 share/doc/dune/README.md
+share/emacs/
+share/emacs/site-lisp/
+share/emacs/site-lisp/dune-flymake.el
+share/emacs/site-lisp/dune.el

@@ -1,7 +1,36 @@
-$OpenBSD: patch-config_Makefile_in,v 1.5 2014/10/31 08:19:39 dcoppa Exp $
---- config/Makefile.in.orig	Sun Jul  1 19:47:41 2012
-+++ config/Makefile.in	Tue Aug  7 07:54:39 2012
-@@ -633,6 +633,8 @@ uninstall::
+$OpenBSD: patch-config_Makefile_in,v 1.6 2019/03/04 12:51:16 chrisz Exp $
+Index: config/Makefile.in
+--- config/Makefile.in.orig
++++ config/Makefile.in
+@@ -13,6 +13,9 @@ changequote([[, ]])
+ 
+ include config/Makefile.config
+ 
++OCAMLC:=$(OCAMLC) -unsafe-string
++OCAMLOPT:=$(OCAMLOPT) -unsafe-string
++
+ ifneq ("$(GLIBC_VERSION)" , "")
+   GLIBC_VERSION_ARCH = "_glibc-"$(GLIBC_VERSION)
+ endif
+@@ -93,7 +96,7 @@ SRC_FILETP=src/networks/fileTP
+ SUBDIRS=$(EXTLIB) $(CDK) $(BITSTRING) $(LIB) $(RSS) $(XML) $(NET) tools \
+    $(COMMON) $(DRIVER) $(MP3) src/config/$(OS_FILES)
+ 
+-INCLUDES += $(foreach file, $(SUBDIRS), -I $(file)) -I +camlp4
++INCLUDES += $(foreach file, $(SUBDIRS), -I $(file)) -I +camlp4 -I +num
+ 
+ CFLAGS:=$(CFLAGS) $(CONFIG_INCLUDES) $(GTKCFLAGS) $(GD_CFLAGS)
+ 
+@@ -124,7 +127,7 @@ endif
+ 
+ #######################################################################
+ 
+-LIBS_flags += -ccopt "$(LDFLAGS) $(CPPFLAGS)" -cclib "$(LIBS)"
++LIBS_flags += -ccopt "$(LDFLAGS) $(CPPFLAGS)" -cclib "$(LIBS)" -I +num
+ 
+ ifeq ("$(OS_FILES2)", "mingw")
+   LIBS_flags += -cclib "-lws2_32 -lgdi32 -luser32 -ladvapi32 -lwsock32 -limm32 -lshell32 -lole32 resfile.o"
+@@ -633,6 +636,8 @@ uninstall::
  	rm -f $(BINDIR)/mlnet
  	rm -f $(BINDIR)/mlgui
  
@@ -10,12 +39,12 @@ $OpenBSD: patch-config_Makefile_in,v 1.5 2014/10/31 08:19:39 dcoppa Exp $
  install:: opt 
  	mkdir -p $(DESTDIR)$(prefix)/bin
  	if test -f mlnet; then \
-@@ -652,6 +654,21 @@ install:: opt 
+@@ -652,7 +657,22 @@ install:: opt 
               done; \
           fi
  
 +else
-+
+ 
 +install::
 +	cp -f mlnet.byte $(DESTDIR)$(prefix)/bin/mlnet
 +	for link in mlslsk mldonkey mlgnut mldc mlbt; do \
@@ -29,6 +58,18 @@ $OpenBSD: patch-config_Makefile_in,v 1.5 2014/10/31 08:19:39 dcoppa Exp $
 +	done
 +
 +endif
- 
++
  ifneq ("$(GUI)" , "no")
    ifeq ("$(GUI)", "newgui2")
+     SUBDIRS += $(SRC_GUI) $(SRC_GUI)/x11 $(SRC_GUI)/win32 $(ICONS_CHOICE) +lablgtk2
+@@ -1547,8 +1567,8 @@ $(ZOGSOURCES): pa_zog.cma
+ $(MLTSOURCES): $(OCAMLPP)
+ #$(TMPSOURCES): $(OCAMLPP)
+ 
+-#ocamlpp.byte: tools/ocamlpp.ml
+-#	$(OCAMLC) str.cma -o ocamlpp.byte tools/ocamlpp.ml
++ocamlpp.byte: tools/ocamlpp.ml
++	$(OCAMLC) str.cma -o ocamlpp.byte tools/ocamlpp.ml
+ 
+ ifeq ("$(GUI_CODE)", "OLDGUI")
+ 

@@ -1,0 +1,39 @@
+$OpenBSD: patch-myocamlbuild_ml,v 1.1 2019/03/04 12:51:12 chrisz Exp $
+
+respect MAKE environment variable.
+Use ocamlfind
+
+Index: myocamlbuild.ml
+--- myocamlbuild.ml.orig
++++ myocamlbuild.ml
+@@ -21,22 +21,25 @@ let cil_version =
+   with Not_found -> "" ;;
+ 
+ dispatch begin function
++| Before_options ->
++    Options.use_ocamlfind := true
+ | After_rules ->
+     (* the main CIL library *)
+     ocaml_lib "src/cil";
+ 
+     (* residual reliance on make to build some OCaml source files *)
+     let make target =
++      let make = try Sys.getenv "MAKE" with Not_found -> "make" in
+       let basename = Pathname.basename target in
+       rule ("make " ^ target)
+       ~dep: "Makefile"
+       ~prod: basename
+       (fun _ _ -> Cmd (S
+-        [A "make"; A "-C"; P ".."; P ("_build" / target)]))
+-      in
+-      make "cilversion.ml";
+-      make "feature_config.ml";
+-      make "machdep.ml";
++        [A make; A "-C"; P ".."; P ("_build" / target)]))
++    in
++    make "cilversion.ml";
++    make "feature_config.ml";
++    make "machdep.ml";
+ 
+     (* Build an list of files to install with ocamlfind *)
+     rule "%.mllib -> %.libfiles"

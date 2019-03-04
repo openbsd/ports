@@ -1,7 +1,8 @@
-$OpenBSD: patch-cocci_ml,v 1.7 2015/10/27 14:43:07 sthen Exp $
---- cocci.ml.orig	Mon Oct 26 16:22:50 2015
-+++ cocci.ml	Tue Oct 27 14:33:27 2015
-@@ -245,8 +245,8 @@ let show_or_not_diff2 cfile outfile =
+$OpenBSD: patch-cocci_ml,v 1.8 2019/03/04 12:51:12 chrisz Exp $
+Index: cocci.ml
+--- cocci.ml.orig
++++ cocci.ml
+@@ -249,8 +249,8 @@ let show_or_not_diff2 cfile outfile =
  
        let line =
  	match !Flag_parsing_c.diff_lines with
@@ -12,7 +13,7 @@ $OpenBSD: patch-cocci_ml,v 1.7 2015/10/27 14:43:07 sthen Exp $
        let res = Common.cmd_to_list line in
        (match res with
  	[] -> ()
-@@ -524,7 +524,7 @@ let worth_trying2 cfiles (tokens,_,query,_) =
+@@ -528,7 +528,7 @@ let worth_trying2 cfiles (tokens,_,query,_) =
  
        ) in
        let com =
@@ -21,7 +22,7 @@ $OpenBSD: patch-cocci_ml,v 1.7 2015/10/27 14:43:07 sthen Exp $
  	  (String.concat "|" tokens) (String.concat " " cfiles) in
        (match Sys.command com with
        | 0 (* success *) -> true
-@@ -2293,7 +2293,7 @@ let check_duplicate_modif2 xs =
+@@ -2222,7 +2222,7 @@ let check_duplicate_modif2 xs =
                match res2 with
                | None -> false
                | Some res2 ->

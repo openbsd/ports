@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_jbuild,v 1.1 2019/03/04 12:51:14 chrisz Exp $
+
+only needed for OCaml < 4.07
+
+Index: lib/jbuild
+--- lib/jbuild.orig
++++ lib/jbuild
+@@ -3,5 +3,4 @@
+ (library
+  ((name re)
+   (synopsis "Pure OCaml regular expression library")
+-  (libraries (seq))
+   (public_name re)))

@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2016/06/26 14:15:26 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2019/03/04 12:51:14 chrisz Exp $
 
 COMMENT =	OCaml parallel map primitive for multicores
 CATEGORIES =	devel
 
-V =		1.0-rc7
+V =		1.0-rc9
 NAME =		ocaml-parmap
 DISTNAME =	ocaml-parmap-$V
 DISTFILES =	${DISTNAME}{$V}.tar.gz
 WRKDIST =	${WRKDIR}/parmap-$V
 PKGNAME =	ocaml-parmap-${V:S/-//}
-REVISION =	2
 MASTER_SITES =	https://github.com/rdicosmo/parmap/archive/
 
 HOMEPAGE =	https://github.com/rdicosmo/parmap
@@ -28,7 +27,5 @@ FAKE_FLAGS =	DESTDIR=${WRKINST}${TRUEPREFIX}
 TEST_TARGET =	tests
 TEST_DEPENDS =	${BASE_PKGPATH}
 
-post-patch:
-	cp ${WRKSRC}/setcore.mli ${WRKSRC}/setcore.ml
 
 .include <bsd.port.mk>

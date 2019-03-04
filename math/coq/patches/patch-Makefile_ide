@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_ide,v 1.1 2019/03/04 12:51:15 chrisz Exp $
+
+Index: Makefile.ide
+--- Makefile.ide.orig
++++ Makefile.ide
+@@ -149,7 +149,7 @@ endif
+ ifeq ($(HASCOQIDE),no)
+ install-coqide-byte: install-ide-toploop-byte
+ else
+-install-coqide-byte: install-ide-toploop-byte install-ide-byte
++install-coqide-byte: install-ide-byte install-ide-bin install-ide-toploop-byte install-ide-files install-ide-info install-ide-devfiles
+ endif
+ 
+ # Apparently, coqide.byte is not meant to be installed

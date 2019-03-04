@@ -1,0 +1,27 @@
+$OpenBSD: patch-bundles_pyml_Makefile,v 1.1 2019/03/04 12:51:12 chrisz Exp $
+
+our builtin test/[ doesn't support the < comparator.
+
+Index: bundles/pyml/Makefile
+--- bundles/pyml/Makefile.orig
++++ bundles/pyml/Makefile
+@@ -14,7 +14,7 @@ LIBRARY=pyml
+ SRC_DIR=$(PACKAGE_DIR)
+ 
+ PYML_COMPAT=$(shell \
+-	if [ "$(OCAMLVERSION)" "<" 4.03.0 ]; then \
++	if /bin/\[ "$(OCAMLVERSION)" "<" 4.03.0 ]; then \
+ 	  echo pyml_compat312.ml; \
+ 	else \
+ 	  echo pyml_compat403.ml; \
+@@ -52,8 +52,8 @@ $(SRC_DIR)/pyml_compat.cmx: $(SRC_DIR)/pyml_compat.ml 
+ $(SRC_DIR)/pyml_compat.cmo: $(SRC_DIR)/pyml_compat.ml $(SRC_DIR)/pyml_compat.cmi
+ 	$(OCAMLC_CMD) -c $< -o $@
+ 
+-$(SRC_DIR)/generate: $(SRC_DIR)/pyml_compat.cmx $(SRC_DIR)/generate.cmx
+-	$(OCAMLOPT) $^ -o $@
++$(SRC_DIR)/generate: $(SRC_DIR)/pyml_compat.cmo $(SRC_DIR)/generate.cmo
++	$(OCAMLC_CMD) $^ -o $@
+ 
+ $(SRC_DIR)/generate.cmx: $(SRC_DIR)/generate.ml $(SRC_DIR)/pyml_compat.cmx
+ 	$(OCAMLOPT_CMD) -c $< -o $@

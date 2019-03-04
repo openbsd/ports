@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2018/12/15 20:16:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/03/04 12:51:15 chrisz Exp $
 
 COMMENT =	e-donkey client
 
 VER =		3.1.6
 DISTNAME =	mldonkey-${VER}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	net
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
@@ -16,10 +16,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 bz2 c cairo charset fontconfig
-WANTLIB += freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-x11-2.0 iconv intl jpeg m magic miniupnpc
-WANTLIB += natpmp pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread
-WANTLIB += rsvg-2 ${COMPILER_LIBCXX} tiff webp z
+WANTLIB += freetype fribidi gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 gtk-x11-2.0 iconv intl jpeg m magic
+WANTLIB += miniupnpc natpmp pango-1.0 pangocairo-1.0 pangoft2-1.0 png
+WANTLIB += pthread rsvg-2 ${COMPILER_LIBCXX} tiff webp z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -47,7 +47,7 @@ WRKCONF =			${WRKSRC}/config
 
 USE_GMAKE =	Yes
 MODULES =	lang/ocaml
-BUILD_DEPENDS =	lang/ocaml-camlp4 x11/lablgtk2
+BUILD_DEPENDS =	lang/ocaml-camlp4 x11/lablgtk2 math/ocaml-num
 LIB_DEPENDS =	archivers/bzip2 \
 		devel/gettext \
 		devel/libmagic \
@@ -56,6 +56,8 @@ LIB_DEPENDS =	archivers/bzip2 \
 		net/miniupnp/miniupnpc>=1.9 \
 		x11/gnome/librsvg \
 		x11/gtk+2
+
+ALL_TARGET =	depend all
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mocaml_native}

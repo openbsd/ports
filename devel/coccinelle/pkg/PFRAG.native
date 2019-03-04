@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.native,v 1.3 2019/03/04 12:51:12 chrisz Exp $
+%%dynlink%%
+@bin lib/coccinelle/spgen/spgen.opt
+lib/coccinelle/ocaml/yes_prepare_ocamlcocci.cmi

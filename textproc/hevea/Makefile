@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/09/03 10:12:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/03/04 12:51:16 chrisz Exp $
 
 COMMENT=	LaTeX to html translator
 
@@ -6,10 +6,9 @@ CATEGORIES=	textproc print
 
 # Q Licence 1.0 + LGPL for parts of the runtime
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c m
+WANTLIB=		c m pthread
 
-DISTNAME =	hevea-2.23
-REVISION = 	0
+DISTNAME =	hevea-2.32
 MASTER_SITES =	http://para.inria.fr/~maranget/hevea/distri/ \
 		https://spacehopper.org/mirrors/
 

@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/11 15:10:47 chrisz Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/04 12:51:15 chrisz Exp $
 
-BROKEN =	in preparation for OCaml 4.06
 COMMENT =	library for arithmetic on big integers and rationals
 CATEGORIES =	math
 

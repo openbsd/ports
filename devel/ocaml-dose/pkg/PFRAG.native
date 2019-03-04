@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.2 2015/08/30 15:56:12 avsm Exp $
+@comment $OpenBSD: PFRAG.native,v 1.3 2019/03/04 12:51:13 chrisz Exp $
 %%dynlink%%
 lib/ocaml/dose3/algo.a
 lib/ocaml/dose3/algo.cmxa
@@ -8,11 +8,15 @@ lib/ocaml/dose3/csw.a
 lib/ocaml/dose3/csw.cmxa
 lib/ocaml/dose3/debian.a
 lib/ocaml/dose3/debian.cmxa
-lib/ocaml/dose3/eclipse.a
-lib/ocaml/dose3/eclipse.cmxa
-lib/ocaml/dose3/cv.cmxa
-lib/ocaml/dose3/cv.a
-lib/ocaml/dose3/doseparse.cmxa
 lib/ocaml/dose3/doseparse.a
-lib/ocaml/dose3/doseparseNoRpm.cmxa
+lib/ocaml/dose3/doseparse.cmxa
 lib/ocaml/dose3/doseparseNoRpm.a
+lib/ocaml/dose3/doseparseNoRpm.cmxa
+lib/ocaml/dose3/npm.a
+lib/ocaml/dose3/npm.cmxa
+lib/ocaml/dose3/opam.a
+lib/ocaml/dose3/opam.cmxa
+lib/ocaml/dose3/pef.a
+lib/ocaml/dose3/pef.cmxa
+lib/ocaml/dose3/versioning.a
+lib/ocaml/dose3/versioning.cmxa

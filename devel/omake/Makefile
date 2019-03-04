@@ -1,19 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2015/08/30 16:24:09 avsm Exp $
+# $OpenBSD: Makefile,v 1.17 2019/03/04 12:51:14 chrisz Exp $
 
 COMMENT=	build system designed for scalability and portability
 CATEGORIES=	devel
 
-V=		0.9.8.5
-VEXTRA=		3
-DISTNAME=	omake-${V}-${VEXTRA}
-PKGNAME=	omake-${V}pl${VEXTRA}
-REVISION =	7
-WRKDIST=	${WRKDIR}/omake-${V}
-MASTER_SITES=	http://omake.metaprl.org/downloads/ \
-		http://www.ocaml-programming.de/godi-backup/
+V=		0.10.3
+DISTNAME=	omake-${V}
+MASTER_SITES=	http://download.camlcity.org/download/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
-HOMEPAGE=	http://omake.metaprl.org/
+HOMEPAGE=	http://projects.camlcity.org/projects/omake.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,13 +17,16 @@ MODULES=	lang/ocaml
 NO_TEST=	Yes
 DESTDIRNAME=	INSTALL_ROOT
 
+BUILD_DEPENDS=	textproc/hevea
+
+CONFIGURE_STYLE=simple
+
 MAKE_ENV=	MAN_ENABLED=Yes
-WANTLIB=	curses m pthread readline ncurses c
+WANTLIB=	curses m pthread readline c
 
 DOC_DIR=	${PREFIX}/share/doc/omake
-DOC_FILES=	LICENSE LICENSE.OMake doc/txt/omake-doc.txt doc/ps/omake-doc.ps \
-		doc/ps/omake-doc.pdf CHANGELOG.txt ocamldep/LICENSE.ocamldep-omake \
-		doc/html
+DOC_FILES=	LICENSE LICENSE.OMake doc/txt/omake-doc.txt \
+		doc/ps/omake-doc.pdf ChangeLog ChangeLog_old.txt doc/html
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR}

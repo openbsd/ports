@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/12/15 16:25:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/03/04 12:51:12 chrisz Exp $
 
 MULTI_PACKAGES =	-ocaml -main
 
@@ -11,7 +11,7 @@ VERSION =		0.9
 DISTNAME =		cudf-${VERSION}
 PKGNAME-ocaml =		ocaml-cudf-${VERSION}
 PKGNAME-main =		libcudf-${VERSION}
-REVISION =		0
+REVISION =		1
 
 MASTER_SITES =		https://gforge.inria.fr/frs/download.php/file/36602/
 
@@ -24,7 +24,6 @@ WANTLIB =		c m
 
 MODULES =		lang/ocaml
 BUILD_DEPENDS =		devel/ocaml-extlib \
-			lang/ocaml-camlp4 \
 			sysutils/findlib \
 			devel/ocaml-ocamlbuild \
 			devel/glib2

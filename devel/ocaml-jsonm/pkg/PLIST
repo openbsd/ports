@@ -1,25 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/25 17:01:23 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/03/04 12:51:13 chrisz Exp $
 %%native%%
-@bin bin/jsontrip
-@bin bin/ocamltweets
 lib/ocaml/jsonm/
 lib/ocaml/jsonm/META
 lib/ocaml/jsonm/jsonm.cma
 lib/ocaml/jsonm/jsonm.cmi
 lib/ocaml/jsonm/jsonm.mli
 share/doc/ocaml-jsonm/
-share/doc/ocaml-jsonm/CHANGES
-share/doc/ocaml-jsonm/README
+share/doc/ocaml-jsonm/CHANGES.md
+share/doc/ocaml-jsonm/LICENSE.md
+share/doc/ocaml-jsonm/README.md
+share/doc/ocaml-jsonm/TODO.md
 share/doc/ocaml-jsonm/api/
 share/doc/ocaml-jsonm/api/Jsonm.Manual.html
 share/doc/ocaml-jsonm/api/Jsonm.Uncut.html
 share/doc/ocaml-jsonm/api/Jsonm.html
-share/doc/ocaml-jsonm/api/api.odocl
+share/doc/ocaml-jsonm/api/html.stamp
 share/doc/ocaml-jsonm/api/index.html
 share/doc/ocaml-jsonm/api/index_attributes.html
 share/doc/ocaml-jsonm/api/index_class_types.html
 share/doc/ocaml-jsonm/api/index_classes.html
 share/doc/ocaml-jsonm/api/index_exceptions.html
+share/doc/ocaml-jsonm/api/index_extensions.html
 share/doc/ocaml-jsonm/api/index_methods.html
 share/doc/ocaml-jsonm/api/index_module_types.html
 share/doc/ocaml-jsonm/api/index_modules.html

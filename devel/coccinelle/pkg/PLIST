@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.12 2016/06/24 15:59:11 krw Exp $
-%%dynlink%%
+@comment $OpenBSD: PLIST,v 1.13 2019/03/04 12:51:12 chrisz Exp $
+%%native%%
 bin/pycocci
 bin/spatch
-bin/spatch.byte
+bin/spgen
 lib/coccinelle/
 lib/coccinelle/ocaml/
 lib/coccinelle/ocaml/ast0_cocci.cmi
@@ -12,6 +12,7 @@ lib/coccinelle/ocaml/coccilib.cmi
 lib/coccinelle/ocaml/common.cmi
 lib/coccinelle/ocaml/config.cmi
 lib/coccinelle/ocaml/exposed_modules.cmi
+lib/coccinelle/ocaml/externalanalysis.cmi
 lib/coccinelle/ocaml/flag.cmi
 lib/coccinelle/ocaml/iteration.cmi
 lib/coccinelle/ocaml/lexer_c.cmi
@@ -23,7 +24,6 @@ lib/coccinelle/ocaml/prepare_ocamlcocci.cmi
 lib/coccinelle/ocaml/pretty_print_c.cmi
 lib/coccinelle/ocaml/regexp.cmi
 lib/coccinelle/ocaml/run_ocamlcocci.cmi
-lib/coccinelle/ocaml/type_cocci.cmi
 lib/coccinelle/ocaml/visitor_c.cmi
 lib/coccinelle/python/
 lib/coccinelle/python/coccilib/
@@ -39,24 +39,26 @@ lib/coccinelle/python/coccilib/coccigui/vimcom.py
 lib/coccinelle/python/coccilib/coccigui/vimeditor.py
 lib/coccinelle/python/coccilib/coccigui/vimembed.py
 lib/coccinelle/python/coccilib/elems.py
+lib/coccinelle/python/coccilib/iteration.py
 lib/coccinelle/python/coccilib/org.py
 lib/coccinelle/python/coccilib/output.py
 lib/coccinelle/python/coccilib/report.py
 lib/coccinelle/python/coccilib/trac.py
 lib/coccinelle/python/coccilib/xml_firehose.py
-@bin lib/coccinelle/spatch
+lib/coccinelle/spgen/
+@bin lib/coccinelle/spgen/spgen
 lib/coccinelle/standard.h
 lib/coccinelle/standard.iso
-lib/ocaml/stublibs/dllpycaml_stubs.so
+lib/ocaml/stublibs/dllpyml_stubs.so
 @man man/man1/pycocci.1
 @man man/man1/spatch.1
+@man man/man1/spgen.1
 @man man/man3/Coccilib.3
 share/doc/coccinelle/
 share/doc/coccinelle/contents_motif.gif
 share/doc/coccinelle/index.html
 share/doc/coccinelle/main_grammar.css
 share/doc/coccinelle/main_grammar.html
-share/doc/coccinelle/main_grammar.pdf
 share/doc/coccinelle/main_grammar001.html
 share/doc/coccinelle/main_grammar002.html
 share/doc/coccinelle/main_grammar003.html
@@ -72,7 +74,7 @@ share/doc/coccinelle/main_grammar012.html
 share/doc/coccinelle/main_grammar013.html
 share/doc/coccinelle/main_grammar014.html
 share/doc/coccinelle/main_grammar015.html
-share/doc/coccinelle/manual.pdf
+share/doc/coccinelle/main_grammar016.html
+share/doc/coccinelle/main_grammar017.html
 share/doc/coccinelle/next_motif.gif
-share/doc/coccinelle/options.pdf
 share/doc/coccinelle/previous_motif.gif

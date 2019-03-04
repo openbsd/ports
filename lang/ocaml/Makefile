@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2018/11/28 18:23:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.82 2019/03/04 12:51:14 chrisz Exp $
 
 MULTI_PACKAGES = -graphics -main
 
@@ -7,9 +7,7 @@ COMMENT-graphics = OCaml Graphics library providing basic drawing primitives
 
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them.
-# Don't forget to bump version in ocaml.port.mk, too!
-VERSION=		4.03.0
-REVISION=		4
+VERSION=		4.07.1
 
 PKGNAME-main =		ocaml-${VERSION}
 PKGNAME-graphics =	ocaml-graphics-${VERSION}
@@ -49,7 +47,7 @@ LDFLAGS+=		-Wl,-znotext
 USE_GMAKE=	Yes
 
 RUN_DEPENDS-graphics +=	lang/ocaml
-WANTLIB-main =		c curses m pthread
+WANTLIB-main =		c m pthread
 WANTLIB-graphics =	X11
 
 # for libbfd (used by ocamlobjinfo on .cmxs files)
@@ -59,7 +57,7 @@ WANTLIB-main +=		iberty z
 .include <bsd.port.arch.mk>
 
 .if ${PROPERTIES:Mocaml_native}
-ALL_TARGET=	world bootstrap opt opt.opt
+ALL_TARGET=	world.opt
 PKG_ARGS +=	-Dnative=1
 TEST_DEPENDS +=	${BUILD_PKGPATH}
 
@@ -70,11 +68,12 @@ PKG_ARGS +=	-Ddynlink=0
 .endif
 
 .else
-ALL_TARGET=	world bootstrap
+ALL_TARGET=	world
 PKG_ARGS +=	-Dnative=0
 NO_TEST   =	yes
 .endif
 
+DPB_PROPERTIES +=	parallel
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml/html/libref
