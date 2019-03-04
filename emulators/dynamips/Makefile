@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/02/04 23:34:10 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2019/03/04 13:01:53 jca Exp $
 
 COMMENT=		cisco 3600/7200 platform emulator
 
@@ -6,7 +6,7 @@ USE_WXNEEDED=		Yes
 
 DISTNAME=		dynamips-0.2.8-RC2
 PKGNAME=		${DISTNAME:S/-RC/rc/}
-REVISION=		7
+REVISION=		8
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://www.gns3.net/dynamips/

@@ -1,6 +1,7 @@
-$OpenBSD: patch-utils_h,v 1.3 2015/05/01 14:17:37 ajacoutot Exp $
---- utils.h.orig	Sun Oct 14 09:43:07 2007
-+++ utils.h	Wed Apr  9 11:05:18 2008
+$OpenBSD: patch-utils_h,v 1.4 2019/03/04 13:01:53 jca Exp $
+Index: utils.h
+--- utils.h.orig
++++ utils.h
 @@ -14,6 +14,7 @@
  #include <netinet/in.h>
  #include <pthread.h>
@@ -27,8 +28,17 @@ $OpenBSD: patch-utils_h,v 1.3 2015/05/01 14:17:37 ajacoutot Exp $
  
  #ifndef ARCH_BYTE_ORDER
  #error Please define your architecture in utils.h!
-@@ -84,7 +89,7 @@
+@@ -80,11 +85,16 @@
+ #endif
+ 
+ /* Useful attributes for functions */
++#if defined(__i386__)
+ #define asmlinkage __attribute__((regparm(0)))
  #define fastcall   __attribute__((regparm(3)))
++#else
++#define asmlinkage
++#define fastcall
++#endif
  
  #if __GNUC__ > 2
 -#define forced_inline inline __attribute__((always_inline))
@@ -36,7 +46,7 @@ $OpenBSD: patch-utils_h,v 1.3 2015/05/01 14:17:37 ajacoutot Exp $
  #define no_inline __attribute__ ((noinline))
  #else
  #define forced_inline inline
-@@ -255,12 +260,15 @@ static inline u_int normalize_size(u_int val,u_int nb,
+@@ -255,12 +265,15 @@ static inline u_int normalize_size(u_int val,u_int nb,
     return(((val+nb-1) & ~(nb-1)) >> shift);
  }
  
@@ -52,7 +62,7 @@ $OpenBSD: patch-utils_h,v 1.3 2015/05/01 14:17:37 ajacoutot Exp $
  /* Convert a 32-bit number between little and big endian */
  static forced_inline m_uint32_t swap32(m_uint32_t value)
  {
-@@ -272,7 +280,9 @@ static forced_inline m_uint32_t swap32(m_uint32_t valu
+@@ -272,7 +285,9 @@ static forced_inline m_uint32_t swap32(m_uint32_t valu
     result |= (value & 0xff) << 24;
     return(result);
  }
@@ -62,7 +72,7 @@ $OpenBSD: patch-utils_h,v 1.3 2015/05/01 14:17:37 ajacoutot Exp $
  /* Convert a 64-bit number between little and big endian */
  static forced_inline m_uint64_t swap64(m_uint64_t value)
  {
-@@ -282,6 +292,7 @@ static forced_inline m_uint64_t swap64(m_uint64_t valu
+@@ -282,6 +297,7 @@ static forced_inline m_uint64_t swap64(m_uint64_t valu
     result |= swap32(value >> 32);
     return(result);
  }
