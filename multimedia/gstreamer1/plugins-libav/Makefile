@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2018/11/13 17:57:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2019/03/05 13:58:10 ajacoutot Exp $
 
 COMMENT=		ffmpeg elements for GStreamer
 
 DISTNAME=		gst-libav-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-libav-${V}
-REVISION=		0
+REVISION=		1
 
 # sync with graphics/ffmpeg
 PERMIT_PACKAGE_CDROM=	patents
@@ -20,7 +20,7 @@ MASTER_SITES=		${MASTER_SITE_GST:=gst-libav/}
 LIB_DEPENDS=		${P}/plugins-base=${V}
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS +=	devel/yasm
+BUILD_DEPENDS +=	devel/nasm
 .endif
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/gst-libs/ext/libav
@@ -32,9 +32,6 @@ libav_CONFIGURE_ARGS=	--arch=${MACHINE_ARCH} \
 			--disable-altivec \
 			--disable-sdl2 \
 			--disable-debug
-
-# don't pick up nasm(1)
-libav_CONFIGURE_ARGS +=	--x86asmexe=yasm
 
 CONFIGURE_ARGS=		--with-libav-extra-configure="${libav_CONFIGURE_ARGS}"
 
