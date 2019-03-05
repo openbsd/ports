@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2019/03/02 17:08:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2019/03/05 16:18:49 jca Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -91,8 +91,7 @@ CONFIGURE_ARGS +=	-DENABLE_PLUGIN_PROCESS_GTK2=OFF
 # sync with Source/JavaScriptCore/assembler/MacroAssembler.h
 .if ${MACHINE_ARCH} != "aarch64" && ${MACHINE_ARCH} != "amd64" && \
     ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "i386" && \
-    ${MACHINE_ARCH} != "mips64" && ${MACHINE_ARCH} != "mips64el" && \
-    ${MACHINE_ARCH} != "sh"
+    ${MACHINE_ARCH} != "mips64" && ${MACHINE_ARCH} != "mips64el"
 # #error "The MacroAssembler is not supported on this platform."
 CONFIGURE_ARGS +=	-DENABLE_JIT=OFF
 CONFIGURE_ARGS +=	-DENABLE_LLINT_C_LOOP=ON
