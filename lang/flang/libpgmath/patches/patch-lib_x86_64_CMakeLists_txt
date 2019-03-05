@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_x86_64_CMakeLists_txt,v 1.2 2018/12/26 17:37:14 bcallah Exp $
+$OpenBSD: patch-lib_x86_64_CMakeLists_txt,v 1.3 2019/03/05 06:47:59 bcallah Exp $
 
 Index: lib/x86_64/CMakeLists.txt
 --- lib/x86_64/CMakeLists.txt.orig
 +++ lib/x86_64/CMakeLists.txt
-@@ -95,7 +95,7 @@ list(APPEND DEFINITIONS _GNU_SOURCE _ISOC99_SOURCE)
+@@ -90,7 +90,7 @@ list(APPEND DEFINITIONS _GNU_SOURCE _ISOC99_SOURCE)
  if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
    list(APPEND DEFINITIONS _GNU_SOURCE)
  endif()
