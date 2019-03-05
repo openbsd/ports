@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2019/02/28 13:13:09 bluhm Exp $
+# $OpenBSD: Makefile,v 1.11 2019/03/05 12:38:23 bluhm Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
 DISTNAME =	suricata-4.1.2
-REVISION =	0
+REVISION =	1
 CATEGORIES =	security
 SHARED_LIBS +=  htp                       0.0 # 2.0
 
@@ -36,7 +36,8 @@ LIB_DEPENDS =	archivers/lz4 \
 		net/libnet/1.1 \
 		security/nss
 
-CONFIGURE_STYLE = gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.69
 
 CONFIGURE_ENV = ac_cv_path_HAVE_PDFLATEX= \
 		ac_cv_path_HAVE_GIT_CMD=

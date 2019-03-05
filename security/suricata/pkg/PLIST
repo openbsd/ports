@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/02/28 13:13:10 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/03/05 12:38:24 bluhm Exp $
 @conflict suricata-update-*
 @pkgpath security/suricata-update
 @newgroup _suricata:800
@@ -180,6 +180,7 @@ share/examples/suricata/threshold.config
 @group _suricata
 @sample ${VARBASE}/suricata/
 @sample ${VARBASE}/suricata/log/
+@sample ${VARBASE}/suricata/run/
 @sample ${VARBASE}/log/suricata/
 @owner
 @group

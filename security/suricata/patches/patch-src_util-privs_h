@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_util-privs_h,v 1.1 2019/03/05 12:38:24 bluhm Exp $
+
+Use setresuid/gid() directly to change user and group.  Otherwise 
+Suricata uses libcap-ng on Linux and runs as root elsewhere.
+
+Index: src/util-privs.h
+--- src/util-privs.h.orig
++++ src/util-privs.h
+@@ -93,6 +93,7 @@ void SCDropMainThreadCaps(uint32_t , uint32_t );
+ 
+ int SCGetUserID(const char *, const char *, uint32_t *, uint32_t *);
+ int SCGetGroupID(const char *, uint32_t *);
++int SCSetUserID(const uint32_t uid, const uint32_t gid);
+ 
+ #endif	/* _UTIL_PRIVS_H */
+ 
