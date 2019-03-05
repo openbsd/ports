@@ -1,0 +1,31 @@
+$OpenBSD: patch-vcl_unx_generic_app_geninst_cxx,v 1.1 2019/03/05 15:38:32 robert Exp $
+
+Index: vcl/unx/generic/app/geninst.cxx
+--- vcl/unx/generic/app/geninst.cxx.orig
++++ vcl/unx/generic/app/geninst.cxx
+@@ -35,6 +35,10 @@
+ #endif
+ #include <unx/geninst.h>
+ 
++#if defined(OPENBSD)
++#include <sys/utsname.h>
++#endif
++
+ // SalYieldMutex
+ 
+ SalYieldMutex::SalYieldMutex()
+@@ -77,6 +81,14 @@ OUString SalGenericInstance::getOSVersion()
+         }
+         fclose( pVersion );
+     }
++#elif defined(OPENBSD)
++    struct utsname uts;
++
++    if ( uname( &uts ) < 0 )
++        return aKernelVer;
++
++    aKernelVer = OUString::createFromAscii( uts.sysname ) + " " +
++        OUString::createFromAscii( uts.release );
+ #endif
+     return aKernelVer;
+ }

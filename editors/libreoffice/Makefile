@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2019/03/01 17:05:30 ian Exp $
+# $OpenBSD: Makefile,v 1.199 2019/03/05 15:38:32 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -23,7 +23,7 @@ PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde4
 
-REVISION-main=	0
+REVISION-main=	1
 
 EPOCH=		0
 
@@ -424,7 +424,7 @@ post-install:
 				${PREFIX}/share/mime/packages
 
 	for _d in calc draw impress math \
-		qstart startcenter writer; do \
+		startcenter writer; do \
 		sed -i "s,Icon=libreoffice${BV}-,Icon=libreoffice-,g" \
 			${PREFIX}/lib/libreoffice/share/xdg/$${_d}.desktop && \
 		ln -sf ${TRUEPREFIX}/lib/libreoffice/share/xdg/$${_d}.desktop \

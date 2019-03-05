@@ -1,0 +1,84 @@
+$OpenBSD: patch-sal_osl_unx_thread_cxx,v 1.1 2019/03/05 15:38:32 robert Exp $
+
+Index: sal/osl/unx/thread.cxx
+--- sal/osl/unx/thread.cxx.orig
++++ sal/osl/unx/thread.cxx
+@@ -28,6 +28,7 @@
+ #include <string.h>
+ #if defined(OPENBSD)
+ #include <sched.h>
++#include <pthread_np.h>
+ #endif
+ #include <config_options.h>
+ #include <osl/thread.h>
+@@ -250,7 +251,7 @@ static oslThread osl_thread_create_Impl (
+     short             nFlags)
+ {
+     Thread_Impl* pImpl;
+-#if defined OPENBSD || ((defined MACOSX || defined LINUX) && !ENABLE_RUNTIME_OPTIMIZATIONS)
++#if ((defined OPENBSD || defined MACOSX || defined LINUX) && !ENABLE_RUNTIME_OPTIMIZATIONS)
+     pthread_attr_t attr;
+     size_t stacksize;
+ #endif
+@@ -266,15 +267,11 @@ static oslThread osl_thread_create_Impl (
+ 
+     pthread_mutex_lock (&(pImpl->m_Lock));
+ 
+-#if defined OPENBSD || ((defined MACOSX || defined LINUX) && !ENABLE_RUNTIME_OPTIMIZATIONS)
++#if ((defined OPENBSD || defined MACOSX || defined LINUX) && !ENABLE_RUNTIME_OPTIMIZATIONS)
+     if (pthread_attr_init(&attr) != 0)
+         return nullptr;
+ 
+-#if defined OPENBSD
+-    stacksize = 262144;
+-#else
+     stacksize = 12 * 1024 * 1024; // 8MB is not enough for ASAN on x86-64
+-#endif
+     if (pthread_attr_setstacksize(&attr, stacksize) != 0) {
+         pthread_attr_destroy(&attr);
+         return nullptr;
+@@ -283,7 +280,7 @@ static oslThread osl_thread_create_Impl (
+ 
+     if ((nRet = pthread_create (
+         &(pImpl->m_hThread),
+-#if defined OPENBSD || ((defined MACOSX || defined LINUX) && !ENABLE_RUNTIME_OPTIMIZATIONS)
++#if ((defined OPENBSD || defined MACOSX || defined LINUX) && !ENABLE_RUNTIME_OPTIMIZATIONS)
+         &attr,
+ #else
+         PTHREAD_ATTR_DEFAULT,
+@@ -301,7 +298,7 @@ static oslThread osl_thread_create_Impl (
+         return nullptr;
+     }
+ 
+-#if defined OPENBSD || ((defined MACOSX || defined LINUX) && !ENABLE_RUNTIME_OPTIMIZATIONS)
++#if ((defined OPENBSD || defined MACOSX || defined LINUX) && !ENABLE_RUNTIME_OPTIMIZATIONS)
+     pthread_attr_destroy(&attr);
+ #endif
+ 
+@@ -544,6 +541,8 @@ void SAL_CALL osl_setThreadName(char const * name)
+     int err = pthread_setname_np( pthread_self(), shortname );
+     if ( 0 != err )
+         SAL_WARN("sal.osl", "pthread_setname_np failed with errno " << err);
++#elif defined __OpenBSD__
++    pthread_set_name_np( pthread_self(), name );
+ #elif defined __FreeBSD_kernel__
+     pthread_setname_np( pthread_self(), name );
+ #elif defined MACOSX || defined IOS
+@@ -567,7 +566,7 @@ static int HashSize = SAL_N_ELEMENTS(HashTable);
+ 
+ static pthread_mutex_t HashLock = PTHREAD_MUTEX_INITIALIZER;
+ 
+-#if ! ((defined LINUX && !defined __FreeBSD_kernel__) || defined MACOSX || defined IOS)
++#if ! ((defined LINUX && !defined __FreeBSD_kernel__) || defined MACOSX || defined IOS || defined OPENBSD)
+ static oslThreadIdentifier LastIdent = 0;
+ #endif
+ 
+@@ -628,6 +627,8 @@ static oslThreadIdentifier insertThreadId (pthread_t h
+         if (SAL_MAX_UINT32 < static_cast<unsigned long>(lin_tid))
+             std::abort();
+         pEntry->Ident = static_cast<pid_t>(lin_tid);
++#elif defined OPENBSD
++        pEntry->Ident = reinterpret_cast<uint64_t>(pthread_self());
+ #elif defined MACOSX || defined IOS
+         // currently the value of pthread_threadid_np is the same then
+         // syscall(SYS_thread_selfid), which returns an int as the TID.
