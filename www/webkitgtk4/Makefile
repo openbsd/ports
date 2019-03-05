@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2019/03/05 16:18:49 jca Exp $
+# $OpenBSD: Makefile,v 1.97 2019/03/05 16:24:23 jca Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -13,6 +13,7 @@ PORTROACH =		limitw:1,even
 COMMENT =		GTK+ port of the WebKit rendering engine
 
 V =			2.22.7
+REVISION =		0
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 EXTRACT_SUFX =		.tar.xz
@@ -25,7 +26,7 @@ SHARED_LIBS +=  webkit2gtk-${API}            2.5 # 37.24
 
 CATEGORIES =		www
 
-HOMEPAGE =		http://webkitgtk.org/
+HOMEPAGE =		https://webkitgtk.org/
 
 MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -42,7 +43,7 @@ WANTLIB += icui18n icuuc intl jpeg m notify pango-1.0 pangocairo-1.0
 WANTLIB += png16 secret-1 soup-2.4 sqlite3 tasn1 webp webpdemux
 WANTLIB += woff2dec xml2 xslt z
 
-MASTER_SITES =		http://webkitgtk.org/releases/
+MASTER_SITES =		https://webkitgtk.org/releases/
 
 MODULES =		devel/cmake \
 			lang/python \
