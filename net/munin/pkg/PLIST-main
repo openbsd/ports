@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2018/09/04 12:46:17 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2019/03/05 15:33:45 kirby Exp $
 @conflict munin-server-<2.0.21
 @newgroup _munin:644
 @newgroup _munin-plugin:645
@@ -47,7 +47,6 @@ libdata/perl5/site_perl/Munin/Node/Configure/Plugin.pm
 libdata/perl5/site_perl/Munin/Node/Configure/PluginList.pm
 libdata/perl5/site_perl/Munin/Node/Logger.pm
 libdata/perl5/site_perl/Munin/Node/OS.pm
-libdata/perl5/site_perl/Munin/Node/ProxySpooler.pm
 libdata/perl5/site_perl/Munin/Node/SNMPConfig.pm
 libdata/perl5/site_perl/Munin/Node/Server.pm
 libdata/perl5/site_perl/Munin/Node/Service.pm
@@ -267,7 +266,6 @@ libexec/munin/plugins/zimbra_
 @man man/man1/munin-node-configure.1
 @man man/man1/munin-node.1
 @man man/man1/munin-run.1
-@man man/man1/munin-sched.1
 @man man/man1/munindoc.1
 @man man/man3p/Munin::Common::Config.3p
 @man man/man3p/Munin::Common::Defaults.3p
@@ -296,7 +294,6 @@ libexec/munin/plugins/zimbra_
 @man man/man3p/Munin::Node::Configure::PluginList.3p
 @man man/man3p/Munin::Node::Logger.3p
 @man man/man3p/Munin::Node::OS.3p
-@man man/man3p/Munin::Node::ProxySpooler.3p
 @man man/man3p/Munin::Node::SNMPConfig.3p
 @man man/man3p/Munin::Node::Server.3p
 @man man/man3p/Munin::Node::Service.3p
@@ -314,12 +311,11 @@ libexec/munin/plugins/zimbra_
 sbin/munin-node
 sbin/munin-node-configure
 sbin/munin-run
-@sample ${SYSCONFDIR}/munin/
-sbin/munin-sched
 share/doc/munin/
 share/doc/munin/UPGRADING
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/munin/
+@sample ${SYSCONFDIR}/munin/
 share/examples/munin/munin-node.conf
 @sample ${SYSCONFDIR}/munin/munin-node.conf
 share/examples/munin/plugin-conf.d/
