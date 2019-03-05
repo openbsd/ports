@@ -1,0 +1,10 @@
+#!/bin/ksh
+#
+# $OpenBSD: dicod.rc,v 1.1.1.1 2019/03/05 03:40:52 bentley Exp $
+
+daemon="${TRUEPREFIX}/bin/dicod"
+daemon_user="_dicod"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

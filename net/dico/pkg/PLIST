@@ -1,0 +1,66 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/05 03:40:52 bentley Exp $
+@newgroup _dicod:831
+@newuser _dicod:831:831:daemon:GNU dictionary server:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/dicod
+@bin bin/dico
+@bin bin/dicod
+include/dico/
+include/dico/argcv.h
+include/dico/assoc.h
+include/dico/diag.h
+include/dico/dico.h
+include/dico/filter.h
+include/dico/list.h
+include/dico/markup.h
+include/dico/parseopt.h
+include/dico/strat.h
+include/dico/stream.h
+include/dico/tokenize.h
+include/dico/types.h
+include/dico/udb.h
+include/dico/url.h
+include/dico/utf8.h
+include/dico/util.h
+include/dico/xlat.h
+@info info/dico.info
+lib/dico/
+lib/dico/dictorg.la
+lib/dico/dictorg.so
+lib/dico/echo.la
+lib/dico/echo.so
+lib/dico/gcide.la
+lib/dico/gcide.so
+lib/dico/ldap.la
+lib/dico/ldap.so
+lib/dico/metaphone2.la
+lib/dico/metaphone2.so
+lib/dico/nprefix.la
+lib/dico/nprefix.so
+lib/dico/outline.la
+lib/dico/outline.so
+lib/dico/pam.la
+lib/dico/pam.so
+lib/dico/pcre.la
+lib/dico/pcre.so
+lib/dico/stratall.la
+lib/dico/stratall.so
+lib/dico/substr.la
+lib/dico/substr.so
+lib/dico/word.la
+lib/dico/word.so
+lib/libdico.la
+@lib lib/libdico.so.${LIBdico_VERSION}
+@bin libexec/idxgcide
+@man man/man1/dico.1
+@man man/man5/dicod.conf.5
+@man man/man8/dicod.8
+share/dico/
+share/dico/${V}/
+share/dico/${V}/include/
+share/dico/${V}/include/pp-setup
+share/examples/dico/
+share/examples/dico/dicod.conf
+@sample ${SYSCONFDIR}/dicod.conf
+@mode 775
+@group _dicod
+@sample ${LOCALSTATEDIR}/dicod/
