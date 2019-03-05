@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/05 13:03:48 fcambus Exp $
+bin/bdf2psf
+@man man/man1/bdf2psf.1
+share/bdf2psf/
+share/bdf2psf/fontsets/
+share/bdf2psf/fontsets/Arabic.512
+share/bdf2psf/fontsets/Armenian.256
+share/bdf2psf/fontsets/CyrAsia.256
+share/bdf2psf/fontsets/CyrKoi.256
+share/bdf2psf/fontsets/CyrSlav.256
+share/bdf2psf/fontsets/Ethiopian.512
+share/bdf2psf/fontsets/Georgian.256
+share/bdf2psf/fontsets/Greek.256
+share/bdf2psf/fontsets/Hebrew.256
+share/bdf2psf/fontsets/Lao.256
+share/bdf2psf/fontsets/Lat15.256
+share/bdf2psf/fontsets/Lat2.256
+share/bdf2psf/fontsets/Lat38.256
+share/bdf2psf/fontsets/Lat7.256
+share/bdf2psf/fontsets/Thai.256
+share/bdf2psf/fontsets/Uni1.512
+share/bdf2psf/fontsets/Uni2.512
+share/bdf2psf/fontsets/Uni3.512
+share/bdf2psf/fontsets/Vietnamese.512
+share/bdf2psf/standard.equivalents

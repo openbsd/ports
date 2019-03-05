@@ -1,0 +1,4 @@
+The program bdf2psf translates BDF fonts to PSF format. It accepts
+fonts with arbitrary size of the font matrix. If the width of the glyph
+matrix of the source font is 7 or 9 pixels then it generates fonts with
+width of 8 pixels.
