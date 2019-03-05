@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/17 06:58:07 bentley Exp $
+# $OpenBSD: Makefile,v 1.12 2019/03/05 05:19:31 bentley Exp $
 
 COMMENT =		rule-based machine translation platform
 
 V =			3.5
 VER =			3.5.2
 DISTNAME =		apertium-${VER}
+REVISION =		0
 
 SHARED_LIBS +=  apertium3-$V              0.0 # 0.0
 SHARED_LIBS +=  apertium3                 0.0 # 0.0
@@ -19,6 +20,8 @@ USE_GMAKE =		Yes
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
+
+# uses pledge()
 
 WANTLIB += c iconv lttoolbox3-$V lzma m pcre pcrecpp pcreposix pthread
 WANTLIB += ${COMPILER_LIBCXX} xml2 z

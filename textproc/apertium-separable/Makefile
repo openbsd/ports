@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/19 09:55:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/05 05:19:32 bentley Exp $
 
 COMMENT =		reorder separable/discontinuous multiwords
 
 V =			0.3.2
 DISTNAME =		apertium-separable-$V
+REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -13,6 +14,8 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
+
+# uses pledge()
 
 WANTLIB += ${COMPILER_LIBCXX} apertium3 c lttoolbox3 m pcre xml2 z
 

@@ -1,0 +1,25 @@
+$OpenBSD: patch-lttoolbox_lt_trim_cc,v 1.1 2019/03/05 05:19:31 bentley Exp $
+
+Index: lttoolbox/lt_trim.cc
+--- lttoolbox/lt_trim.cc.orig
++++ lttoolbox/lt_trim.cc
+@@ -25,6 +25,7 @@
+ #include <iostream>
+ #include <libgen.h>
+ #include <string>
++#include <unistd.h>
+ 
+ void endProgram(char *name)
+ {
+@@ -161,6 +162,11 @@ trim(FILE *file_mono, FILE *file_bi)
+ 
+ int main(int argc, char *argv[])
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++    wcerr << "pledge" << endl;
++    exit(EXIT_FAILURE);
++  }
++
+   if(argc != 4)
+   {
+     endProgram(argv[0]);

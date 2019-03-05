@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/03/05 05:19:32 bentley Exp $
 
 COMMENT =		module for compiling and processing lexical rules
 
 V =			0.2.1
 DISTNAME =		apertium-lex-tools-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 
@@ -14,6 +14,8 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
+
+# uses pledge()
 
 WANTLIB += apertium3 c lttoolbox3 m pcre pthread ${COMPILER_LIBCXX} xml2 z
 

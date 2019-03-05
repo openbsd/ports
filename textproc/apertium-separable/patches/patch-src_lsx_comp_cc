@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_lsx_comp_cc,v 1.1 2019/03/05 05:19:32 bentley Exp $
+
+Index: src/lsx_comp.cc
+--- src/lsx_comp.cc.orig
++++ src/lsx_comp.cc
+@@ -2,6 +2,7 @@
+ #include <cerrno>
+ #include <iostream>
+ #include <stdlib.h>
++#include <unistd.h>
+ 
+ #include <lsx_compiler.h>
+ #include <lttoolbox/lt_locale.h>
+@@ -20,6 +21,11 @@ void endProgram(char *name)
+ 
+ int main (int argc, char** argv)
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++    cerr << "pledge" << endl;
++    exit(EXIT_FAILURE);
++  }
++
+   if(argc != 4)
+   {
+     endProgram(argv[0]);

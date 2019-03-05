@@ -1,0 +1,25 @@
+$OpenBSD: patch-lttoolbox_lt_expand_cc,v 1.1 2019/03/05 05:19:31 bentley Exp $
+
+Index: lttoolbox/lt_expand.cc
+--- lttoolbox/lt_expand.cc.orig
++++ lttoolbox/lt_expand.cc
+@@ -23,6 +23,7 @@
+ #include <libgen.h>
+ #include <string>
+ #include <getopt.h>
++#include <unistd.h>
+ 
+ #ifdef _MSC_VER
+ #include <io.h>
+@@ -43,6 +44,11 @@ void endProgram(char *name)
+ 
+ int main(int argc, char *argv[])
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++    wcerr << "pledge" << endl;
++    exit(EXIT_FAILURE);
++  }
++
+   FILE *input = NULL, *output = NULL;
+   Expander e;
+ 

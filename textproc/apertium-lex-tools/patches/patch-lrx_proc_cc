@@ -1,0 +1,25 @@
+$OpenBSD: patch-lrx_proc_cc,v 1.1 2019/03/05 05:19:32 bentley Exp $
+
+Index: lrx_proc.cc
+--- lrx_proc.cc.orig
++++ lrx_proc.cc
+@@ -20,6 +20,7 @@
+ #include <getopt.h>
+ #include <iostream>
+ #include <libgen.h>
++#include <unistd.h>
+ 
+ #ifdef _MSC_VER
+ #include <io.h>
+@@ -49,6 +50,11 @@ void endProgram(char *name)
+ 
+ int main(int argc, char *argv[])
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++    wcerr << "pledge" << endl;
++    exit(EXIT_FAILURE);
++  }
++
+   LRXProcessor lrxp;
+   bool useMaxEnt = false;
+ 

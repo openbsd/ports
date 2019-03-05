@@ -1,0 +1,25 @@
+$OpenBSD: patch-apertium_apertium_tmxbuild_cc,v 1.1 2019/03/05 05:19:32 bentley Exp $
+
+Index: apertium/apertium_tmxbuild.cc
+--- apertium/apertium_tmxbuild.cc.orig
++++ apertium/apertium_tmxbuild.cc
+@@ -21,6 +21,7 @@
+ #include <string>
+ #include <cstdio>
+ #include <lttoolbox/lt_locale.h>
++#include <unistd.h>
+ 
+ #include <apertium/apertium_config.h>
+ #include <apertium/tmx_builder.h>
+@@ -61,6 +62,11 @@ void usage(char *progname)
+ 
+ int main(int argc, char *argv[])
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++    wcerr << "pledge" << endl;
++    exit(EXIT_FAILURE);
++  }
++
+   LtLocale::tryToSetLocale();
+   string output_file = "";
+   string doc1 = "", doc2 = "";

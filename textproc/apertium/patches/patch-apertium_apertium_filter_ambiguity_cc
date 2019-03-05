@@ -1,0 +1,25 @@
+$OpenBSD: patch-apertium_apertium_filter_ambiguity_cc,v 1.1 2019/03/05 05:19:32 bentley Exp $
+
+Index: apertium/apertium_filter_ambiguity.cc
+--- apertium/apertium_filter_ambiguity.cc.orig
++++ apertium/apertium_filter_ambiguity.cc
+@@ -32,6 +32,7 @@
+ #include <io.h>
+ #include <fcntl.h>
+ #endif
++#include <unistd.h>
+ 
+ using namespace Apertium;
+ using namespace std;
+@@ -63,6 +64,11 @@ FILE * open_file(char const *filename, char const *mod
+ 
+ int main(int argc, char *argv[])
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++    wcerr << "pledge" << endl;
++    exit(EXIT_FAILURE);
++  }
++
+   LtLocale::tryToSetLocale();
+ 
+   if(argc < 2 || argc > 4)

@@ -1,0 +1,25 @@
+$OpenBSD: patch-apertium_apertium_tagger_readwords_cc,v 1.1 2019/03/05 05:19:32 bentley Exp $
+
+Index: apertium/apertium_tagger_readwords.cc
+--- apertium/apertium_tagger_readwords.cc.orig
++++ apertium/apertium_tagger_readwords.cc
+@@ -31,6 +31,7 @@
+ #include <apertium/tagger_data_hmm.h>
+ #include <lttoolbox/lt_locale.h>
+ #include <iostream>
++#include <unistd.h>
+ 
+ #include <cstdlib>
+ #include <apertium/string_utils.h>
+@@ -93,6 +94,11 @@ void help(char *name) {
+ 
+ 
+ int main(int argc, char* argv[]) {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++    wcerr << "pledge" << endl;
++    exit(EXIT_FAILURE);
++  }
++
+   string tsxfile="";
+   string probfile="";
+   int corpus_length=-1;

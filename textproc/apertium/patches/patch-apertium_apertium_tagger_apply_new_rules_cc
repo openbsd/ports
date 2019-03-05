@@ -1,0 +1,17 @@
+$OpenBSD: patch-apertium_apertium_tagger_apply_new_rules_cc,v 1.1 2019/03/05 05:19:32 bentley Exp $
+
+Index: apertium/apertium_tagger_apply_new_rules.cc
+--- apertium/apertium_tagger_apply_new_rules.cc.orig
++++ apertium/apertium_tagger_apply_new_rules.cc
+@@ -57,6 +57,11 @@ void help(char *name) {
+ }
+ 
+ int main(int argc, char* argv[]) {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++    wcerr << "pledge" << endl;
++    exit(EXIT_FAILURE);
++  }
++
+   string filein="";
+   string fileout="";
+   string filetsx="";
