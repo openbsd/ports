@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib-src_lv2_suil_src_x11_in_gtk2_c,v 1.1 2019/03/05 16:36:58 jca Exp $
+
+- missing header
+
+Index: lib-src/lv2/suil/src/x11_in_gtk2.c
+--- lib-src/lv2/suil/src/x11_in_gtk2.c.orig
++++ lib-src/lv2/suil/src/x11_in_gtk2.c
+@@ -17,6 +17,7 @@
+ #include <string.h>
+ 
+ #include <gtk/gtk.h>
++#include <gtk/gtkx.h>
+ #include <gdk/gdkx.h>
+ 
+ #include "./suil_internal.h"

@@ -1,7 +1,11 @@
-$OpenBSD: patch-lib-src_libnyquist_nyquist_cmt_midifns_c,v 1.1 2013/12/05 21:58:50 naddy Exp $
---- lib-src/libnyquist/nyquist/cmt/midifns.c.orig	Mon Aug 31 12:45:45 2009
-+++ lib-src/libnyquist/nyquist/cmt/midifns.c	Thu Dec  5 22:41:35 2013
-@@ -117,7 +117,6 @@
+$OpenBSD: patch-lib-src_libnyquist_nyquist_cmt_midifns_c,v 1.2 2019/03/05 16:36:58 jca Exp $
+
+- sys/timeb.h and ftime were removed from POSIX-2008
+
+Index: lib-src/libnyquist/nyquist/cmt/midifns.c
+--- lib-src/libnyquist/nyquist/cmt/midifns.c.orig
++++ lib-src/libnyquist/nyquist/cmt/midifns.c
+@@ -118,7 +118,6 @@
  #ifdef UNIX
  #ifndef UNIX_IRIX
  #include "sys/time.h"

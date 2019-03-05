@@ -1,14 +1,18 @@
-$OpenBSD: patch-lib-src_libnyquist_Makefile_in,v 1.4 2009/10/28 18:40:13 jakemsr Exp $
---- lib-src/libnyquist/Makefile.in.orig	Sun Oct 18 15:39:32 2009
-+++ lib-src/libnyquist/Makefile.in	Sun Oct 18 15:39:06 2009
-@@ -251,8 +251,8 @@ top_build_prefix = @top_build_prefix@
+$OpenBSD: patch-lib-src_libnyquist_Makefile_in,v 1.5 2019/03/05 16:36:58 jca Exp $
+
+- don't use the bundled portaudio and sndfile libraries
+
+Index: lib-src/libnyquist/Makefile.in
+--- lib-src/libnyquist/Makefile.in.orig
++++ lib-src/libnyquist/Makefile.in
+@@ -477,8 +477,8 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
- NYQUIST = nyquist
--PORTAUDIO_CFLAGS = -I../portaudio-v19/include
--SNDFILE_CFLAGS = -I../libsndfile/src
-+PORTAUDIO_CFLAGS = 
-+SNDFILE_CFLAGS = 
+-PORTAUDIO_CFLAGS = -I${srcdir}/../portaudio-v19/include
+-SNDFILE_CFLAGS = -I${builddir}/../libsndfile/src
++PORTAUDIO_CFLAGS =
++SNDFILE_CFLAGS =
  
  # tell aclocal that extra macros can be found in autotools/m4/
  ACLOCAL_AMFLAGS = -I autotools/m4

@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.55 2019/01/02 12:44:53 jca Exp $
+# $OpenBSD: Makefile,v 1.56 2019/03/05 16:36:58 jca Exp $
 
-BROKEN=		requires old wxWidgets: http://trac.wxwidgets.org/ticket/16300
+BROKEN=		missing portmidi support
 
 COMMENT=	free audio editor
 
-V=		1.3.9
+V=		2.2.2
 DISTNAME=	audacity-minsrc-${V}
 PKGNAME=	audacity-${V}
-REVISION=	17
 CATEGORIES=	audio
 
-EXTRACT_SUFX=	.tar.bz2
-
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=audacity/}
+EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	http://audacity.sourceforge.net/
 
@@ -25,34 +23,36 @@ WANTLIB += atk-1.0 c cairo expat fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += id3tag intl m mad ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += portaudio samplerate sndfile tag vamp-hostsdk vorbis
-WANTLIB += vorbisenc vorbisfile wx_base wx_base_net wx_base_odbc
-WANTLIB += wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid
-WANTLIB += wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc
-WANTLIB += z
+# XXX wxwidgets WANTLIB
+WANTLIB += vorbisenc vorbisfile z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=	archivers/zip \
-		devel/gettext-tools
-LIB_DEPENDS=	x11/wxWidgets>=2.8.6 \
-		audio/libsamplerate \
+		devel/gettext-tools \
+		shells/bash
+LIB_DEPENDS=	x11/wxWidgets>=3.0.4 \
+		audio/libsoxr \
 		audio/flac \
 		audio/libvorbis \
 		audio/libid3tag \
 		audio/libmad \
 		audio/portaudio-svn>=1406p1 \
 		audio/soundtouch \
-		audio/vamp-plugin-sdk>=2.2.1p0 \
 		audio/taglib
+# XXX libtool/ld(1) fail to find libvamp-hostsdk.so
+#LIB_DEPENDS+=	audio/vamp-plugin-sdk>=2.2.1p0
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-			CFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-			gl_cv_cc_visibility=no
+CONFIGURE_ENV=		CC="${CC}" CXX="${CXX}" OBJCXX="${CXX}" \
+			CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+			CFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include ${CFLAGS}" \
+			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib ${LDFLAGS}"
+# Silence noisy warnings
+CONFIGURE_ENV+=		CXXFLAGS="-Wno-inconsistent-missing-override ${CXXFLAGS}"
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} \
 			${WRKSRC}/lib-src/lib-widget-extra \
@@ -67,28 +67,32 @@ CONFIGURE_ARGS=		--enable-unicode \
 			--with-lib-preferences=system \
 			--with-libsndfile=system \
 			--with-expat=system \
-			--with-libsamplerate=system \
-			--without-libresample \
+			--with-libsoxr=system \
 			--with-libvorbis=system \
 			--with-libmad=system \
 			--with-libflac=system \
 			--with-libid3tag=system \
+			--with-portaudio=system \
 			--with-soundtouch=system \
-			--with-libvamp=system \
 			--without-libtwolame \
 			--without-ffmpeg \
 			--without-redland \
 			--without-slv2 \
 			--without-liblrdf \
 			--with-portmixer=no
+# XXX libtool/ld(1) fail to find libvamp-hostsdk.so
+CONFIGURE_ARGS+= 	--with-libvamp=no
 
-MAKE_FLAGS=		CC="${CC}"
-WRKDIST=		${WRKDIR}/audacity-src-${V}
+WRKDIST=		${WRKDIR}/${DISTNAME}-rc1
 
 # Regression tests are in the source tarball but as of 2007, they have
 # not been updated for 3 years ; as they're completely out-of-sync with
 # the ongoing development, there's no point in running them 
 NO_TEST=	Yes
+
+# dummy Makefile to disable portmixer
+post-extract:
+	printf 'all:\ninstall:\n' > ${WRKSRC}/lib-src/portmixer/Makefile
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps

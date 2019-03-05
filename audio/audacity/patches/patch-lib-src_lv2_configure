@@ -1,0 +1,55 @@
+$OpenBSD: patch-lib-src_lv2_configure,v 1.1 2019/03/05 16:36:58 jca Exp $
+
+- fix bashisms (script invoked with /bin/sh .../configure ...)
+- no libdl on OpenBSD
+
+Index: lib-src/lv2/configure
+--- lib-src/lv2/configure.orig
++++ lib-src/lv2/configure
+@@ -1,13 +1,12 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ srcdir=.
+ while [ $# -gt 0 ]
+ do
+-   if [[ "$1" =~ --srcdir=.* ]]
+-   then
++   case $1 in --srcdir=*)
+       srcdir=${1#*=}
+-      break
+-   fi
++      ;;
++   esac
+    shift
+ done
+ 
+@@ -16,7 +15,7 @@ function waf
+    pkg="$1"
+    shift
+    mkdir -p ${pkg}
+-   pushd >/dev/null ${pkg}
++   (cd ${pkg} || exit 1
+ 
+    if [ ! -e "waflib" ]
+    then
+@@ -32,8 +31,9 @@ function waf
+    done
+ 
+    $(which python python2 | tail -1) waf --prefix="." --include="." $@ configure || exit 1
+-   popd >/dev/null
+ 
++)
++
+    if [ "${pkg}" == "lv2" ]
+    then
+       eval $(sed -e '/^VERSION/!d;s/ //g;s/.*VERSION/version/' ${pkg}/wscript)
+@@ -54,7 +54,7 @@ includedir=.
+ Name: ${pkg}
+ Version: ${version}
+ Description: Temporary fake config file
+-Libs: -L\${libdir} ${lib} -ldl -lm
++Libs: -L\${libdir} ${lib} -lm
+ Cflags: -I\${includedir}/${pkg}${major}
+ EOF
+ 

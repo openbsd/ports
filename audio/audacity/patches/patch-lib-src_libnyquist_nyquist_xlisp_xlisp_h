@@ -1,29 +1,29 @@
-$OpenBSD: patch-lib-src_libnyquist_nyquist_xlisp_xlisp_h,v 1.1 2009/10/28 18:40:13 jakemsr Exp $
---- lib-src/libnyquist/nyquist/xlisp/xlisp.h.orig	Sat Oct 17 15:12:12 2009
-+++ lib-src/libnyquist/nyquist/xlisp/xlisp.h	Sat Oct 17 15:18:45 2009
-@@ -152,6 +152,16 @@ extern long ptrtoabs();
- #endif
+$OpenBSD: patch-lib-src_libnyquist_nyquist_xlisp_xlisp_h,v 1.2 2019/03/05 16:36:58 jca Exp $
+
+- use endian.h and BYTE_ORDER
+  (XXX hardcodes #define HAVE_ENDIAN_H 1)
+
+Index: lib-src/libnyquist/nyquist/xlisp/xlisp.h
+--- lib-src/libnyquist/nyquist/xlisp/xlisp.h.orig
++++ lib-src/libnyquist/nyquist/xlisp/xlisp.h
+@@ -143,10 +143,17 @@ extern long ptrtoabs();
+ #define XL_BIG_ENDIAN
  #endif
  
-+/* OpenBSD gcc */
-+#if defined(__OpenBSD__)
-+#include <sys/types.h>
-+#if _BYTE_ORDER == _LITTLE_ENDIAN
-+#define XL_LITTLE_ENDIAN
-+#else
-+#define XL_BIG_ENDIAN
-+#endif
-+#endif
-+
- /* Apple CC */
- #ifdef __APPLE__
- #define NNODES 2000
-@@ -190,7 +200,7 @@ extern long ptrtoabs();
- #define LOCAL		static
- #endif
- #ifndef AFMT
--#define AFMT		"%x"
-+#define AFMT		"%lux"
- #endif
- #ifndef FIXTYPE
- #define FIXTYPE		long
+-/* Linux on Pentium */
+-#if defined(__linux__) || defined(__GLIBC__)
++/* POSIX proposal
++ * Linux, BSD, etc
++ * http://austingroupbugs.net/view.php?id=162#c665
++ * Don't hardcode XL_LITTLE_ENDIAN/XL_BIG_ENDIAN
++ */
++#define HAVE_ENDIAN_H 1
++#ifdef HAVE_ENDIAN_H
++#undef XL_LITTLE_ENDIAN
++#undef XL_BIG_ENDIAN
+ #include <endian.h>
+-#if __BYTE_ORDER == __LITTLE_ENDIAN
++#if BYTE_ORDER == LITTLE_ENDIAN
+ #define XL_LITTLE_ENDIAN
+ #else
+ #define XL_BIG_ENDIAN

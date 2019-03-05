@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_AudioIO_cpp,v 1.7 2019/03/05 16:36:58 jca Exp $
+
+- CLOCK_MONOTONIC_RAW is not portable
+- PaUtil_GetTime is a private interface, not reachable when using system portaudio
+
+Index: src/AudioIO.cpp
+--- src/AudioIO.cpp.orig
++++ src/AudioIO.cpp
+@@ -982,18 +982,17 @@ static double streamStartTime = 0; // bias system time
+ static double SystemTime(bool usingAlsa)
+ {
+ #ifdef __WXGTK__
+-   if (usingAlsa) {
++   (void)usingAlsa;
++   {
+       struct timespec now;
+       // CLOCK_MONOTONIC_RAW is unaffected by NTP or adj-time
+-      clock_gettime(CLOCK_MONOTONIC_RAW, &now);
++      clock_gettime(CLOCK_MONOTONIC, &now);
+       //return now.tv_sec + now.tv_nsec * 0.000000001;
+       return (now.tv_sec + now.tv_nsec * 0.000000001) - streamStartTime;
+    }
+ #else
+    usingAlsa;//compiler food.
+ #endif
+-
+-   return PaUtil_GetTime() - streamStartTime;
+ }
+ 
+ const int AudioIO::StandardRates[] = {

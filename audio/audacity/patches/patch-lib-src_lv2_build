@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib-src_lv2_build,v 1.1 2019/03/05 16:36:58 jca Exp $
+
+- fix path to bash
+
+Index: lib-src/lv2/build
+--- lib-src/lv2/build.orig
++++ lib-src/lv2/build
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ 
+ srcdir=.
+ while [ $# -gt 0 ]
