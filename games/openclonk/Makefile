@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2018/08/10 00:27:50 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/05 06:02:56 bcallah Exp $
+
+# Uses x86-only blake2 implementation.
+ONLY_FOR_ARCHS =	amd64 i386
 
 V =		8.1
 COMMENT =	tactical action game focusing on controlling Clonks
@@ -49,7 +52,7 @@ CONFIGURE_ARGS +=	-DFREETYPE_INCLUDE_DIRS="${X11BASE}/include/freetype2" \
 			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib"
 
 # Random, intermittent failures with Ninja during fake.
-USE_NINJA =	No
+USE_NINJA =	Samurai
 
 NO_TEST =	Yes
 
