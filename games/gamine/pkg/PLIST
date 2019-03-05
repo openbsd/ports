@@ -1,12 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/03/05 13:47:11 ajacoutot Exp $
 @bin bin/gamine
+@man man/man6/gamine.6
 share/applications/gamine.desktop
 share/doc/gamine/
+share/doc/gamine/AUTHORS
 share/doc/gamine/COPYING
 share/doc/gamine/ChangeLog
 share/doc/gamine/README
+share/doc/gamine/README.locale
 share/doc/gamine/README.pencil
 share/doc/gamine/README.sounds
+share/examples/gamine/
+share/examples/gamine/gamine.conf
+@sample ${SYSCONFDIR}/gamine.conf
 share/gamine/
 share/gamine/gamine.png
 share/gamine/pencil.png
@@ -34,15 +40,57 @@ share/gamine/sounds/receive.wav
 share/gamine/sounds/tri.ogg
 share/gamine/sounds/tuxok.wav
 share/gamine/sounds/youcannot.wav
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gamine.svg
+share/locale/ast/LC_MESSAGES/gamine.mo
+share/locale/az/LC_MESSAGES/gamine.mo
+share/locale/be/LC_MESSAGES/gamine.mo
+share/locale/bg/LC_MESSAGES/gamine.mo
+share/locale/br/LC_MESSAGES/gamine.mo
+share/locale/cs/LC_MESSAGES/gamine.mo
+share/locale/da/LC_MESSAGES/gamine.mo
+share/locale/de/LC_MESSAGES/gamine.mo
+share/locale/el/LC_MESSAGES/gamine.mo
+share/locale/eo/LC_MESSAGES/gamine.mo
+share/locale/es/LC_MESSAGES/gamine.mo
+share/locale/et/LC_MESSAGES/gamine.mo
+share/locale/eu/LC_MESSAGES/gamine.mo
+share/locale/fa/LC_MESSAGES/gamine.mo
+share/locale/fi/LC_MESSAGES/gamine.mo
+share/locale/fo/LC_MESSAGES/gamine.mo
 share/locale/fr/LC_MESSAGES/gamine.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/gamine.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
+share/locale/gl/LC_MESSAGES/gamine.mo
+share/locale/hr/LC_MESSAGES/gamine.mo
+share/locale/hu/LC_MESSAGES/gamine.mo
+share/locale/hy/LC_MESSAGES/gamine.mo
+share/locale/id/LC_MESSAGES/gamine.mo
+share/locale/is/LC_MESSAGES/gamine.mo
+share/locale/it/LC_MESSAGES/gamine.mo
+share/locale/ja/LC_MESSAGES/gamine.mo
+share/locale/lt/LC_MESSAGES/gamine.mo
+share/locale/lv/LC_MESSAGES/gamine.mo
+share/locale/mk/LC_MESSAGES/gamine.mo
+share/locale/ms/LC_MESSAGES/gamine.mo
+share/locale/nb/LC_MESSAGES/gamine.mo
+share/locale/nl/LC_MESSAGES/gamine.mo
+share/locale/oc/LC_MESSAGES/gamine.mo
+share/locale/pl/LC_MESSAGES/gamine.mo
+share/locale/pt/LC_MESSAGES/gamine.mo
+share/locale/pt_BR/LC_MESSAGES/gamine.mo
+share/locale/pt_PT/
+share/locale/pt_PT/LC_MESSAGES/
+share/locale/pt_PT/LC_MESSAGES/gamine.mo
+share/locale/ro/LC_MESSAGES/gamine.mo
+share/locale/ru/LC_MESSAGES/gamine.mo
+share/locale/sl/LC_MESSAGES/gamine.mo
+share/locale/sr/LC_MESSAGES/gamine.mo
+share/locale/sv/LC_MESSAGES/gamine.mo
+share/locale/te/LC_MESSAGES/gamine.mo
+share/locale/th/LC_MESSAGES/gamine.mo
+share/locale/tr/LC_MESSAGES/gamine.mo
+share/locale/uk/LC_MESSAGES/gamine.mo
+share/locale/vi/LC_MESSAGES/gamine.mo
+share/locale/zh_CN/LC_MESSAGES/gamine.mo
+share/locale/zh_HK/LC_MESSAGES/gamine.mo
+share/locale/zh_TW/LC_MESSAGES/gamine.mo
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

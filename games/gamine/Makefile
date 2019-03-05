@@ -1,51 +1,42 @@
-# $OpenBSD: Makefile,v 1.17 2018/06/29 22:16:13 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/03/05 13:47:11 ajacoutot Exp $
 
-COMMENT=	interactive game for young children
+COMMENT=		interactive game for young children
 
-DISTNAME=	gamine-1.1
-REVISION=	13
+DISTNAME=		gamine-1.6
 
-CATEGORIES=	games
+CATEGORIES=		games
 
-HOMEPAGE=	http://gnunux.info/projets/gamine/
-
-# DWTFYWTPL
-# (DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE)
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =  GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo drm expat
-WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gstreamer-0.10 gthread-2.0
-WANTLIB += gtk-x11-2.0 iconv intl m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pixman-1 png pthread xcb xcb-render xcb-shm xml2
-WANTLIB += z
+WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gstreamer-1.0 gtk-3 intl
+WANTLIB += m pango-1.0 pangocairo-1.0
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gamine-game/}
 
-MODULES=	devel/gconf2
+BUILD_DEPENDS=		devel/gettext-tools
 
-BUILD_DEPENDS=	devel/gettext-tools
+RUN_DEPENDS=		devel/desktop-file-utils \
+			x11/gtk+3,-guic
 
-RUN_DEPENDS=	devel/desktop-file-utils \
-		multimedia/gstreamer-0.10/plugins-good \
-		x11/gtk+3,-guic
+# sndio(7) support
+RUN_DEPENDS +=		multimedia/gstreamer1/plugins-base
 
-LIB_DEPENDS=	multimedia/gstreamer-0.10/core \
-		x11/gtk+2
+LIB_DEPENDS=		multimedia/gstreamer1/core \
+			x11/gtk+3
 
-USE_GMAKE=	Yes
-ALL_TARGET=	# empty
+USE_GMAKE=		Yes
+ALL_TARGET=		# empty
+NO_TEST=		Yes
 
-MODGCONF2_SCHEMAS_DIR= gamine
+MAKE_FLAGS=		CC=${CC} \
+			CFLAGS="${CFLAGS}" \
+			PREFIX=${PREFIX} CC=${CC} \
+			SYSCONFDIR=${SYSCONFDIR}
 
-MAKE_FLAGS=	PREFIX=${PREFIX} CC=${CC} CFLAGS="${CFLAGS}" \
-		GCONFTOOL=/usr/bin/true \
-		GCONF_SCHEMA_FILE_DIR=${LOCALBASE}/${SCHEMAS_INSTDIR} \
-		sysconfdir=${SYSCONFDIR}
-
-FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX} \
-		GCONF_SCHEMA_FILE_DIR=${WRKINST}${PREFIX}/${SCHEMAS_INSTDIR} \
-		sysconfdir=${PREFIX}/share/examples/gamine
+FAKE_FLAGS=		PREFIX=${PREFIX} \
+			MANDIR=${PREFIX}/man/man6 \
+			SYSCONFDIR=${PREFIX}/share/examples/gamine
 
 .include <bsd.port.mk>

@@ -1,0 +1,14 @@
+$OpenBSD: patch-gen_desktop_sh,v 1.1 2019/03/05 13:47:11 ajacoutot Exp $
+
+Index: gen_desktop.sh
+--- gen_desktop.sh.orig
++++ gen_desktop.sh
+@@ -3,7 +3,7 @@
+ # This script generates gamine.desktop file using gamine.desktop.in template and po files
+ 
+ rm -f gamine.desktop
+-echo `ls ./locale|grep .po|grep -v .pot|cut -d "." --fields=1` > ./locale/LINGUAS
++echo `ls ./locale|grep .po|grep -v .pot|cut -d "." -f 1` > ./locale/LINGUAS
+ msgfmt --desktop -d ./locale --template gamine.desktop.in -o gamine.desktop
+ rm -f ./locale/LINGUAS
+ # compatibility with old gettext
