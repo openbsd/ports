@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2018/12/30 14:14:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2019/03/05 14:58:49 cwen Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
@@ -61,6 +61,12 @@ RUN_DEPENDS +=		misc/findutils \
 RUN_DEPENDS +=		net/curl
 
 CONFIGURE_STYLE=	simple
+
+# Fix undefined reference to __atomic_load_8
+.if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "hppa"
+LDFLAGS +=		"-latomic"
+WANTLIB +=		atomic
+.endif
 
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib/libbind \
 				-lbind -Wl,-rpath ${LOCALBASE}/lib/libbind"
