@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2019/01/04 14:02:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2019/03/05 09:46:17 ajacoutot Exp $
 @bin bin/gnome-builder
 include/gnome-builder/
 include/gnome-builder/gstyle/
@@ -358,9 +358,11 @@ lib/gnome-builder/plugins/rustup_plugin.gresource
 lib/gnome-builder/plugins/rustup_plugin.py
 lib/gnome-builder/plugins/vala-pack.plugin
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Ide.py
+@bin libexec/gnome-builder-clang
 share/applications/org.gnome.Builder.desktop
 share/dbus-1/services/org.gnome.Builder.service
 share/glib-2.0/schemas/org.gnome.builder.build.gschema.xml
+share/glib-2.0/schemas/org.gnome.builder.clang.gschema.xml
 share/glib-2.0/schemas/org.gnome.builder.code-insight.gschema.xml
 share/glib-2.0/schemas/org.gnome.builder.editor.gschema.xml
 share/glib-2.0/schemas/org.gnome.builder.editor.language.gschema.xml
