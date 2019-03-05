@@ -1,8 +1,8 @@
-$OpenBSD: patch-config_def_h,v 1.14 2019/02/12 17:05:03 kn Exp $
+$OpenBSD: patch-config_def_h,v 1.15 2019/03/05 19:35:08 jung Exp $
 Index: config.def.h
 --- config.def.h.orig
 +++ config.def.h
-@@ -5,13 +5,13 @@ static const unsigned int borderpx  = 1;        /* bor
+@@ -5,17 +5,17 @@ static const unsigned int borderpx  = 1;        /* bor
  static const unsigned int snap      = 32;       /* snap pixel */
  static const int showbar            = 1;        /* 0 means no bar */
  static const int topbar             = 1;        /* 0 means bottom bar */
@@ -19,10 +19,15 @@ Index: config.def.h
 +static const char col_gray2[]       = "#404040";
 +static const char col_gray3[]       = "#c0c0c0";
 +static const char col_gray4[]       = "#f0f0f0";
-+static const char col_cyan[]        = "#404040";
++static const char col_cyan[]        = "#a0a0aa";
  static const char *colors[][3]      = {
  	/*               fg         bg         border   */
  	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
++	[SchemeSel]  = { col_gray4, col_gray2, col_cyan  },
+ };
+ 
+ /* tagging */
 @@ -29,6 +29,9 @@ static const Rule rules[] = {
  	/* class      instance    title       tags mask     isfloating   monitor */
  	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
