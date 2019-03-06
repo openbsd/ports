@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeModules_InstallConfig_cmake,v 1.1.1.1 2018/01/28 16:07:58 bcallah Exp $
+$OpenBSD: patch-CMakeModules_InstallConfig_cmake,v 1.2 2019/03/06 02:20:40 bcallah Exp $
 
 Index: CMakeModules/InstallConfig.cmake
 --- CMakeModules/InstallConfig.cmake.orig
@@ -14,10 +14,3 @@ Index: CMakeModules/InstallConfig.cmake
  
  # Install components
  set(JKAMPCoreComponent "JKAMPCore")
-@@ -160,4 +160,4 @@ set(CPACK_PACKAGE_DIRECTORY ${PACKAGE_DIR})
- set(CPACK_BINARY_ZIP ON) # always create at least a zip file
- set(CPACK_INCLUDE_TOPLEVEL_DIRECTORY 0) # prevent additional directory in zip
- 
--include(CPack)
-\ No newline at end of file
-+include(CPack)

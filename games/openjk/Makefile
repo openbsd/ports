@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2018/09/24 02:35:31 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/06 02:20:40 bcallah Exp $
 
 # Does not build with ports-gcc (tested on armv7)
 ONLY_FOR_ARCHS =	${CLANG_ARCHS}
 
 # Avoid future EPOCH bumps.
 COMMENT =	open source reimplementation of Jedi Academy game
-DISTNAME =	openjk-0.0.0.20180917
+DISTNAME =	openjk-0.0.0.20190221
 CATEGORIES =	games x11
 
 GH_ACCOUNT =	JACoders
 GH_PROJECT =	OpenJK
-GH_COMMIT =	cc4094c8fa989663eb8087b33d97bb2749295b9f
+GH_COMMIT =	8367be079cfb8a288152fb093b651cc2c6a56109
 
 HOMEPAGE =	https://openjk.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -18,7 +18,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL2 c jpeg m png z
+WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL2 c jpeg m png16 z
 
 # clang only
 COMPILER =	base-clang ports-clang
