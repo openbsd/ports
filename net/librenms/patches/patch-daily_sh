@@ -1,4 +1,4 @@
-$OpenBSD: patch-daily_sh,v 1.24 2018/02/27 15:17:39 sthen Exp $
+$OpenBSD: patch-daily_sh,v 1.25 2019/03/06 15:08:24 sthen Exp $
 
 Index: daily.sh
 --- daily.sh.orig
@@ -48,16 +48,7 @@ Index: daily.sh
  }
  
  #######################################
-@@ -126,7 +126,7 @@ set_notifiable_result() {
- #######################################
- check_php_ver() {
-     local branch=$(git rev-parse --abbrev-ref HEAD)
--    local ver_res=$(php -r "echo (int)version_compare(PHP_VERSION, '5.6.4', '<');")
-+    local ver_res=$(%PHP% -r "echo (int)version_compare(PHP_VERSION, '5.6.4', '<');")
-     if [[ "$branch" == "php53" ]] && [[ "$ver_res" == "0" ]]; then
-         status_run "Supported PHP version, switched back to master branch." 'git checkout master'
-         branch="master"
-@@ -178,7 +178,7 @@ main () {
+@@ -185,7 +185,7 @@ main () {
      fi
  
      if [[ -z "$arg" ]]; then
@@ -66,7 +57,7 @@ Index: daily.sh
          if [[ "$up" == "0" ]]; then
              ${DAILY_SCRIPT} no-code-update
              set_notifiable_result update 1  # make sure there are no update notifications if update is disabled
-@@ -223,7 +223,7 @@ main () {
+@@ -230,7 +230,7 @@ main () {
              no-code-update)
                  # Updates of the code are disabled, just check for schema updates
                  # and clean up the db.
@@ -75,7 +66,7 @@ Index: daily.sh
                  status_run 'Cleaning up DB' "$DAILY_SCRIPT cleanup"
              ;;
              post-pull)
-@@ -245,7 +245,7 @@ main () {
+@@ -252,7 +252,7 @@ main () {
                  fi
  
                  # List all tasks to do after pull in the order of execution
