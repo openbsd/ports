@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/03/05 06:47:59 bcallah Exp $
+# $OpenBSD: Makefile,v 1.38 2019/03/06 13:51:15 ajacoutot Exp $
 
 COMMENT =	LLVM Fortran compiler passes and runtime library
 DISTNAME =	flang-7.0.1.20190301
@@ -34,5 +34,9 @@ CONFIGURE_ARGS =	-DCMAKE_Fortran_COMPILER="${LOCALBASE}/bin/flang" \
 			-DFLANG_LIBOMP="${WRKBUILD}/lib/libompstub.a" \
 			-DLIBPGMATH="${LOCALBASE}/lib/libpgmath.a" \
 			-DWITH_WERROR=OFF
+
+# don't pick up llvm-config(1) from base
+pre-configure:
+	ln -sf ${LOCALBASE}/bin/llvm-config ${WRKDIR}/bin/llvm-config
 
 .include <bsd.port.mk>
