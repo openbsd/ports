@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/05 03:40:51 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/06 13:45:18 ajacoutot Exp $
 
 COMMENT =	GNU dictionary server
 
@@ -27,6 +27,9 @@ LIB_DEPENDS =		databases/openldap \
 			devel/pcre \
 			security/libgsasl \
 			security/openpam
+
+# soelim(1)
+BUILD_DEPENDS +=	textproc/groff
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS=-I${LOCALBASE}/include \
