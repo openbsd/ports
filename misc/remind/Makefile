@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.36 2015/08/21 14:11:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2019/03/06 18:24:43 semarie Exp $
 
 COMMENT=	scripting language for reminders, with a Tk front end
 
-DISTNAME=	remind-03.01.15
-PKGNAME=	remind-3.1.15
+DISTNAME=	remind-03.01.16
+PKGNAME=	remind-3.1.16
 CATEGORIES=	misc
 
-MASTER_SITES=	http://www.roaringpenguin.com/files/download/
+MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/
 
-HOMEPAGE=	http://www.roaringpenguin.com/penguin/open_source_remind.php
+HOMEPAGE=	https://dianne.skoll.ca/projects/remind/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
