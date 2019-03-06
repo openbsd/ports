@@ -1,0 +1,31 @@
+$OpenBSD: patch-js_ui_messageTray_js,v 1.1 2019/03/06 08:29:36 ajacoutot Exp $
+
+From 5e7a7e31a108c572da54bd2c0b2ed68a5eb529ac Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Florian=20M=C3=BCllner?= <fmuellner@gnome.org>
+Date: Thu, 22 Nov 2018 18:18:34 +0100
+Subject: [PATCH] messageTray: Re-enable unredirection when banner is destroyed
+
+Index: js/ui/messageTray.js
+--- js/ui/messageTray.js.orig
++++ js/ui/messageTray.js
+@@ -1309,10 +1309,8 @@ var MessageTray = new Lang.Class({
+         }
+ 
+         this._banner = this._notification.createBanner();
+-        this._bannerClickedId = this._banner.connect('done-displaying', () => {
+-            Meta.enable_unredirect_for_display(global.display);
+-            this._escapeTray();
+-        });
++        this._bannerClickedId = this._banner.connect('done-displaying',
++                                                     this._escapeTray.bind(this));
+         this._bannerUnfocusedId = this._banner.connect('unfocused', () => {
+             this._updateState();
+         });
+@@ -1462,6 +1460,7 @@ var MessageTray = new Lang.Class({
+ 
+         this._pointerInNotification = false;
+         this._notificationRemoved = false;
++        Meta.enable_unredirect_for_display(global.display);
+ 
+         this._banner.actor.destroy();
+         this._banner = null;
