@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2017/10/15 13:02:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2019/03/06 15:40:55 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		reference implementation of ACPI tools
-DISTNAME =		acpica-unix-20170929
+DISTNAME =		acpica-unix-20190215
 PKGNAME =		${DISTNAME:S/-unix//}
 
 CATEGORIES =		devel
@@ -21,7 +21,7 @@ MASTER_SITES =		https://acpica.org/sites/acpica/files/
 
 USE_GMAKE =		Yes
 BUILD_DEPENDS =		devel/bison
-MAKE_FLAGS =		CC="${CC}" NOOPT=true
+MAKE_FLAGS =		CC="${CC}"
 FAKE_FLAGS =		DESTDIR=
 
 do-test:
