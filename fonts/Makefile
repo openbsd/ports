@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/03/06 08:13:32 bentley Exp $
+# $OpenBSD: Makefile,v 1.55 2019/03/06 15:06:47 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -82,6 +82,7 @@
      SUBDIR += ubuntu-fonts
      SUBDIR += un-fonts
      SUBDIR += vlgothic
+     SUBDIR += work-sans
      SUBDIR += zh-arphicttf
      SUBDIR += zh-kcfonts
      SUBDIR += zh-taipeifonts
