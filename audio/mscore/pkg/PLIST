@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/01/14 08:51:03 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/03/06 01:29:13 bcallah Exp $
 @conflict mscore-*
 @bin bin/mscore
 bin/musescore
@@ -56,7 +56,6 @@ share/mscore-${MAJ_MIN}/manual/plugins/compound.html
 share/mscore-${MAJ_MIN}/manual/plugins/connectorinfo.html
 share/mscore-${MAJ_MIN}/manual/plugins/connectorinforeader.html
 share/mscore-${MAJ_MIN}/manual/plugins/connectorinfowriter.html
-share/mscore-${MAJ_MIN}/manual/plugins/cursor.html
 share/mscore-${MAJ_MIN}/manual/plugins/durationelement.html
 share/mscore-${MAJ_MIN}/manual/plugins/dynamic.html
 share/mscore-${MAJ_MIN}/manual/plugins/element.html
@@ -220,6 +219,7 @@ share/mscore-${MAJ_MIN}/templates/07-Band_and_Percussion/05-Small_Marching_Band.
 share/mscore-${MAJ_MIN}/templates/07-Band_and_Percussion/06-Battery_Percussion.mscx
 share/mscore-${MAJ_MIN}/templates/07-Band_and_Percussion/07-Large_Pit_Percussion.mscx
 share/mscore-${MAJ_MIN}/templates/07-Band_and_Percussion/08-Small_Pit_Percussion.mscx
+share/mscore-${MAJ_MIN}/templates/07-Band_and_Percussion/09-European_Concert_Band.mscx
 share/mscore-${MAJ_MIN}/templates/08-Orchestral/
 share/mscore-${MAJ_MIN}/templates/08-Orchestral/01-Classical_Orchestra.mscx
 share/mscore-${MAJ_MIN}/templates/08-Orchestral/02-Symphony_Orchestra.mscx

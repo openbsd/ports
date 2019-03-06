@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2019/01/31 11:14:33 bentley Exp $
+# $OpenBSD: Makefile,v 1.40 2019/03/06 01:29:13 bcallah Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 
-V =		3.0.1
+V =		3.0.4
 COMMENT =	WYSIWYG music notation software (MuseScore)
 DISTNAME =	MuseScore-${V}
 PKGNAME =	musescore-${V}
@@ -22,7 +22,7 @@ WANTLIB += Qt5Xml Qt5XmlPatterns c freetype m ogg portaudio pthread
 WANTLIB += sndfile vorbis vorbisfile z
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES =	https://ftp.osuosl.org/pub/musescore/releases/MuseScore-${V}/
+MASTER_SITES =	https://github.com/musescore/MuseScore/releases/download/v${V}/
 
 MODULES =	devel/cmake \
 		x11/qt5
@@ -49,7 +49,8 @@ CONFIGURE_ARGS =-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DBUILD_PULSEAUDIO=OFF \
 		-DBUILD_PCH=OFF \
 		-DBUILD_WEBENGINE=OFF \
-		-DUSE_SYSTEM_FREETYPE=ON
+		-DUSE_SYSTEM_FREETYPE=ON \
+		-DBUILD_CRASH_REPORTER=OFF
 
 NO_TEST =	Yes
 MAJ_MIN =	${V:C/^([0-9]+\.[0-9]+).*/\1/}
