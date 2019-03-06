@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.27 2019/02/04 17:44:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/03/06 21:24:37 sthen Exp $
 
 COMMENT=	text-based calendar and scheduling application
 
 DISTNAME=	calcurse-4.3.0
-REVISION=	2
+REVISION=	3
 EPOCH=		0
 
 CATEGORIES=	productivity
 
-MAINTAINER=	Frederic Culot <frederic@culot.org>
-
-HOMEPAGE=	http://calcurse.org/
+HOMEPAGE=	https://calcurse.org/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c iconv intl m ncursesw pthread
+WANTLIB += c curses iconv intl m pthread
 
 MASTER_SITES=	${HOMEPAGE}files/
 
