@@ -1,0 +1,11 @@
+Work Sans is a 9 weight typeface family based loosely on early
+Grotesques, i.e. Stephenson Blake, Miller & Richard and Bauerschen
+Giesserei. The core of the fonts are optimised for on-screen
+medium-sized text usage (14px-48px), but still can be used in print
+well. The fonts at the extreme weights are designed more for display
+use. Overall, features are simplified and optimised for screen
+resolutions, for example, diacritic marks are larger than how they
+would be in print.
+
+This port contains both desktop (OTF) and web fonts (TTF, WOFF,
+WOFF2).
