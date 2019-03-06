@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.56 2019/03/05 16:36:58 jca Exp $
+# $OpenBSD: Makefile,v 1.57 2019/03/06 20:42:12 ajacoutot Exp $
 
 BROKEN=		missing portmidi support
 
 COMMENT=	free audio editor
 
 V=		2.2.2
-DISTNAME=	audacity-minsrc-${V}
+DISTNAME=	Audacity-${V}
 PKGNAME=	audacity-${V}
 CATEGORIES=	audio
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=audacity/}
-EXTRACT_SUFX=	.tar.xz
+MASTER_SITES=	https://github.com/audacity/audacity/archive/
 
 HOMEPAGE=	http://audacity.sourceforge.net/
 
@@ -83,7 +82,7 @@ CONFIGURE_ARGS=		--enable-unicode \
 # XXX libtool/ld(1) fail to find libvamp-hostsdk.so
 CONFIGURE_ARGS+= 	--with-libvamp=no
 
-WRKDIST=		${WRKDIR}/${DISTNAME}-rc1
+WRKDIST=		${WRKDIR}/audacity-${DISTNAME}
 
 # Regression tests are in the source tarball but as of 2007, they have
 # not been updated for 3 years ; as they're completely out-of-sync with
