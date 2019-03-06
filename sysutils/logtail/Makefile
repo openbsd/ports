@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/23 15:09:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2019/03/06 11:44:51 sthen Exp $
 
 COMMENT=	mail anomalies in the system logfiles to the administrator
 
-V=		1.3.19
+V=		1.3.20
 DISTNAME=	logcheck_${V}
 PKGNAME=	logtail-${V}
 EXTRACT_SUFX=	.tar.xz
@@ -12,9 +12,10 @@ CATEGORIES=	sysutils
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://ftp.de.debian.org/debian/pool/main/l/logcheck/
+MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/l/logcheck/}
+WRKDIST=	${WRKDIR}/logcheck
+FIX_EXTRACT_PERMISSIONS= Yes
 
-WRKDIST=	${WRKDIR}/${DISTNAME:S/_/-/}
 NO_BUILD=	Yes
 DTR=		10-savelog 20-logrotate 30-logrotate-dateext
 
