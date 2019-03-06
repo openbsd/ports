@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2019/01/09 23:44:30 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2019/03/06 15:16:34 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php->=7.1,<7.2
@@ -9,7 +9,7 @@
 @mode 1700
 @owner www
 @group www
-@sample /var/www/tmp/
+@sample ${CHROOT_DIR}/tmp/
 @mode
 @owner
 @group

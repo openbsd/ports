@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.130 2019/02/28 01:29:26 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.131 2019/03/06 15:16:33 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -190,7 +190,7 @@ CONFIGURE_ARGS+=	--enable-dba=shared \
 COMMENT-gd=		image manipulation extensions for php
 LIB_DEPENDS-gd=		graphics/jpeg \
 			graphics/png
-WANTLIB-gd+=		X11 Xpm freetype jpeg m png pthread xcb z
+WANTLIB-gd+=		X11 Xpm freetype jpeg m png16 pthread xcb z
 .if ${BUILD_PACKAGES:M-gd}
 CONFIGURE_ARGS+=	--with-gd=shared \
 			--with-jpeg-dir=${LOCALBASE} \
@@ -347,8 +347,8 @@ CONFIGURE_ARGS+=	--with-sqlite3=no
 # pdo-dblib
 COMMENT-pdo_dblib=	PDO DB-LIB support for php
 LIB_DEPENDS-pdo_dblib=	databases/freetds
-WANTLIB-pdo_dblib=	ffi gcrypt gmp gnutls gpg-error hogweed iconv idn2 \
-			intl nettle p11-kit pthread sybdb tasn1 unistring z
+WANTLIB-pdo_dblib=	ffi gmp gnutls hogweed iconv idn2 intl \
+			nettle p11-kit pthread sybdb tasn1 unistring
 .if ${BUILD_PACKAGES:M-pdo_dblib}
 CONFIGURE_ARGS+=	--with-pdo-dblib=shared,${LOCALBASE}
 .endif
