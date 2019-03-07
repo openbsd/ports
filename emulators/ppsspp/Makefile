@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/11/10 17:55:30 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/07 07:22:19 bentley Exp $
 
 COMMENT =	Sony PlayStation Portable emulator
 
@@ -49,7 +49,8 @@ CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="-I${X11BASE}/include" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
 			-DUSE_SYSTEM_FFMPEG=ON \
 			-DUSE_SYSTEM_LIBZIP=ON \
-			-DUSE_SYSTEM_SNAPPY=ON
+			-DUSE_SYSTEM_SNAPPY=ON \
+			-DUSING_EGL=OFF
 
 NO_TEST =		Yes
 
