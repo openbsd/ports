@@ -1,0 +1,5 @@
+pecl-mcrypt provides bindings for the unmaintained mcrypt library.
+These were previously included in PHP itself, but as of PHP 7.2 have
+been moved to a separate distribution. They are maintained only for
+compatibility with old applications and should not be used for new
+code.
