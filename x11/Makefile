@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.630 2019/02/16 10:10:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.631 2019/03/07 19:37:27 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -125,6 +125,7 @@
      SUBDIR += hs-xmonad-contrib
      SUBDIR += human-icon-theme
      SUBDIR += i3
+     SUBDIR += i3-gaps
      SUBDIR += i3-mousedrag
      SUBDIR += i3lock
      SUBDIR += i3status
