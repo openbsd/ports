@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/03/05 12:38:23 bluhm Exp $
+# $OpenBSD: Makefile,v 1.12 2019/03/07 12:16:20 bluhm Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
@@ -42,8 +42,9 @@ AUTOCONF_VERSION =	2.69
 CONFIGURE_ENV = ac_cv_path_HAVE_PDFLATEX= \
 		ac_cv_path_HAVE_GIT_CMD=
 
-CONFIGURE_ARGS = --disable-gccmarch-native \
-		 --enable-ipfw
+CONFIGURE_ARGS =	--disable-gccmarch-native \
+			--enable-ipfw \
+			--disable-rust
 
 SUBST_VARS =	VARBASE
 
