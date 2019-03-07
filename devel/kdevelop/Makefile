@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/03/04 16:23:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.21 2019/03/07 07:12:09 ajacoutot Exp $
 
 # Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -110,5 +110,7 @@ TEST_ENV +=	QT_PLUGIN_PATH="${PREFIX}/lib/qt5/plugins"
 
 pre-configure:
 	ln -sf ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
+# don't pick up llvm-config(1) from base
+	ln -sf ${LOCALBASE}/bin/llvm-config ${WRKDIR}/bin/llvm-config
 
 .include <bsd.port.mk>
