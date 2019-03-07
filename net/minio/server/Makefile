@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2019/02/18 19:45:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2019/03/07 19:43:40 jasper Exp $
 
 COMMENT =	object storage server compatible with Amazon S3 APIs
 
-V =	 	2019-02-14T00-21-45Z
+V =	 	2019-03-06T22-47-10Z
 GH_PROJECT =	minio
 GH_TAGNAME =	RELEASE.${V}
 PKGNAME =	minio-0.${V:C/T.*//:S/-//g}
