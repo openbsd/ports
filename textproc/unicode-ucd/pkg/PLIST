@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/02/23 07:32:15 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/03/07 19:39:15 jasper Exp $
 share/unicode/
 share/unicode/ucd/
 share/unicode/ucd/ArabicShaping.txt
@@ -41,6 +41,7 @@ share/unicode/ucd/StandardizedVariants.txt
 share/unicode/ucd/TangutSources.txt
 share/unicode/ucd/USourceData.txt
 share/unicode/ucd/USourceGlyphs.pdf
+share/unicode/ucd/USourceRSChart.pdf
 share/unicode/ucd/UnicodeData.txt
 share/unicode/ucd/Unihan.zip
 share/unicode/ucd/Unihan_DictionaryIndices.txt
