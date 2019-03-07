@@ -1,9 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2019/03/06 15:16:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/03/07 21:28:43 sthen Exp $
 
 PV=		7.1
-V=		${PV}.26
-REVISION-main=	3
-REVISION-gd=	0
-REVISION-pdo_dblib= 0
+V=		${PV}.27
 
 .include <bsd.port.mk>
