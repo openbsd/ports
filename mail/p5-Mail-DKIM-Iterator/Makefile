@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/02/28 14:16:37 bluhm Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/07 10:30:00 bluhm Exp $
 
 COMMENT =	iterative DKIM validation of records or signing of mails
 
-DISTNAME =	Mail-DKIM-Iterator-1.006
+DISTNAME =	Mail-DKIM-Iterator-1.007
 
 CATEGORIES =	mail
 
