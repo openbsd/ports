@@ -1,0 +1,10 @@
+$OpenBSD: patch-libi3_get_exe_path_c,v 1.1.1.1 2019/03/07 19:34:32 rsadowski Exp $
+--- libi3/get_exe_path.c.orig	Tue Nov  8 19:54:01 2016
++++ libi3/get_exe_path.c	Thu Nov 10 18:04:35 2016
+@@ -103,5 +103,5 @@ char *get_exe_path(const char *argv0) {
+     free(tmp);
+ 
+     /* Last resort: maybe it’s in /usr/bin? */
+-    return sstrdup("/usr/bin/i3-nagbar");
++    return sstrdup("${TRUEPREFIX}/bin/i3-nagbar");
+ }

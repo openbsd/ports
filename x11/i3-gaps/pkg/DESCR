@@ -1,0 +1,4 @@
+i3 is an improved dynamic, tiling window manager originally inspired by wmii.
+
+This fork adds support for gaps, smart gaps, smart borders and hide edge
+borders.

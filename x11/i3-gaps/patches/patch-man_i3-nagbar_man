@@ -1,0 +1,13 @@
+$OpenBSD: patch-man_i3-nagbar_man,v 1.1.1.1 2019/03/07 19:34:32 rsadowski Exp $
+Index: man/i3-nagbar.man
+--- man/i3-nagbar.man.orig
++++ man/i3-nagbar.man
+@@ -50,7 +50,7 @@ after modifying the configuration file.
+ 
+ ------------------------------------------------
+ i3-nagbar -m 'You have an error in your i3 config file!' \
+--b 'edit config' 'i3-sensible-editor ~/.config/i3/config'
++-b 'edit config' '/usr/bin/vi ~/.config/i3/config'
+ ------------------------------------------------
+ 
+ == SEE ALSO
