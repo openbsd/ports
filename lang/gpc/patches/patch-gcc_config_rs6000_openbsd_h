@@ -1,0 +1,16 @@
+$OpenBSD: patch-gcc_config_rs6000_openbsd_h,v 1.1 2019/03/07 15:53:25 bcallah Exp $
+
+Default to -msecure-plt
+
+Index: gcc/config/rs6000/openbsd.h
+--- gcc/config/rs6000/openbsd.h.orig
++++ gcc/config/rs6000/openbsd.h
+@@ -131,3 +131,8 @@ Boston, MA 02111-1307, USA.  */
+ #undef TRAMPOLINE_SIZE
+ #define TRAMPOLINE_SIZE 40
+ 
++#undef TARGET_SECURE_PLT                                                                                                                                                                                                                  
++#define TARGET_SECURE_PLT	secure_plt
++
++#undef CC1_SECURE_PLT_DEFAULT_SPEC
++#define CC1_SECURE_PLT_DEFAULT_SPEC "-msecure-plt"
