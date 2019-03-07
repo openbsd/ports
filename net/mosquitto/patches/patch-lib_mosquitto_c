@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_mosquitto_c,v 1.2 2018/06/03 14:20:43 jasper Exp $
+$OpenBSD: patch-lib_mosquitto_c,v 1.3 2019/03/07 19:41:18 jasper Exp $
 
 Index: lib/mosquitto.c
 --- lib/mosquitto.c.orig
@@ -20,8 +20,8 @@ Index: lib/mosquitto.c
 +#ifndef WITH_ARC4RANDOM
  #ifdef WIN32
  	srand(GetTickCount64());
- #else
-@@ -52,6 +56,7 @@ int mosquitto_lib_init(void)
+ #elif _POSIX_TIMERS>0 && defined(_POSIX_MONOTONIC_CLOCK)
+@@ -62,6 +66,7 @@ int mosquitto_lib_init(void)
  	gettimeofday(&tv, NULL);
  	srand(tv.tv_sec*1000 + tv.tv_usec/1000);
  #endif
@@ -29,7 +29,7 @@ Index: lib/mosquitto.c
  
  	return net__init();
  }
-@@ -145,7 +150,11 @@ int mosquitto_reinitialise(struct mosquitto *mosq, con
+@@ -155,7 +160,11 @@ int mosquitto_reinitialise(struct mosquitto *mosq, con
  		mosq->id[4] = '/';
  
  		for(i=5; i<23; i++){
