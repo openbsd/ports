@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.12 2019/02/19 23:40:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/03/07 05:14:20 bentley Exp $
 
 COMMENT =		visual novel engine
 
 V =			6.17.7
 MODPY_EGG_VERSION =	${V}.521
 DISTNAME =		renpy-${V}-source
-PKGNAME =		${DISTNAME:S/-source//}
-REVISION =		2
+PKGNAME =		renpy-${V}
+REVISION =		3
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://www.renpy.org/
+HOMEPAGE =		https://www.renpy.org/
 
 # mostly MIT, some files LGPLv2.1+
 PERMIT_PACKAGE_CDROM =		Yes
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 WANTLIB +=		GLEW SDL avcodec avformat avresample avutil freetype
 WANTLIB +=		m png pthread swscale z ${MODPY_WANTLIB}
 
-MASTER_SITES =		http://www.renpy.org/dl/${V}/
+MASTER_SITES =		https://www.renpy.org/dl/${V}/
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		lang/python
