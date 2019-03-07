@@ -1,6 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/03/14 16:18:23 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/03/07 07:29:45 giovanni Exp $
 ${P5SITE}/Mail/DKIM/
 ${P5SITE}/Mail/DKIM.pm
+${P5SITE}/Mail/DKIM/ARC/
+${P5SITE}/Mail/DKIM/ARC/MessageSignature.pm
+${P5SITE}/Mail/DKIM/ARC/Seal.pm
+${P5SITE}/Mail/DKIM/ARC/Signer.pm
+${P5SITE}/Mail/DKIM/ARC/Verifier.pm
 ${P5SITE}/Mail/DKIM/Algorithm/
 ${P5SITE}/Mail/DKIM/Algorithm/Base.pm
 ${P5SITE}/Mail/DKIM/Algorithm/dk_rsa_sha1.pm
@@ -15,6 +20,7 @@ ${P5SITE}/Mail/DKIM/Canonicalization/dk_nofws.pm
 ${P5SITE}/Mail/DKIM/Canonicalization/dk_simple.pm
 ${P5SITE}/Mail/DKIM/Canonicalization/nowsp.pm
 ${P5SITE}/Mail/DKIM/Canonicalization/relaxed.pm
+${P5SITE}/Mail/DKIM/Canonicalization/seal.pm
 ${P5SITE}/Mail/DKIM/Canonicalization/simple.pm
 ${P5SITE}/Mail/DKIM/Common.pm
 ${P5SITE}/Mail/DKIM/DNS.pm
@@ -32,8 +38,11 @@ ${P5SITE}/Mail/DKIM/Signer.pm
 ${P5SITE}/Mail/DKIM/SignerPolicy.pm
 ${P5SITE}/Mail/DKIM/TextWrap.pm
 ${P5SITE}/Mail/DKIM/Verifier.pm
-@comment ${P5SITE}/Mail/sample_mime_lite.pl
 @man man/man3p/Mail::DKIM.3p
+@man man/man3p/Mail::DKIM::ARC::MessageSignature.3p
+@man man/man3p/Mail::DKIM::ARC::Seal.3p
+@man man/man3p/Mail::DKIM::ARC::Signer.3p
+@man man/man3p/Mail::DKIM::ARC::Verifier.3p
 @man man/man3p/Mail::DKIM::Algorithm::Base.3p
 @man man/man3p/Mail::DKIM::AuthorDomainPolicy.3p
 @man man/man3p/Mail::DKIM::Canonicalization::Base.3p
@@ -51,4 +60,11 @@ ${P5SITE}/Mail/DKIM/Verifier.pm
 @man man/man3p/Mail::DKIM::TextWrap.3p
 @man man/man3p/Mail::DKIM::Verifier.3p
 share/examples/p5-Mail-DKIM/
+share/examples/p5-Mail-DKIM/arcsign.pl
+share/examples/p5-Mail-DKIM/arcverify.pl
+share/examples/p5-Mail-DKIM/dkimsign.pl
+share/examples/p5-Mail-DKIM/dkimverify.pl
 share/examples/p5-Mail-DKIM/sample_mime_lite.pl
+share/examples/p5-Mail-DKIM/test_bare_rsa_sha1.pl
+share/examples/p5-Mail-DKIM/test_canonicalization.pl
+share/examples/p5-Mail-DKIM/test_nowsp_rsa_sha1.pl
