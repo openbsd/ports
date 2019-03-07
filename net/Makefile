@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1118 2019/03/05 03:41:37 bentley Exp $
+# $OpenBSD: Makefile,v 1.1119 2019/03/07 07:28:17 giovanni Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -360,6 +360,7 @@
      SUBDIR += p5-Net-DHCP
      SUBDIR += p5-Net-DNS
      SUBDIR += p5-Net-DNS-DynDNS
+     SUBDIR += p5-Net-DNS-Resolver-Mock
      SUBDIR += p5-Net-DNS-Resolver-Programmable
      SUBDIR += p5-Net-DNS-SEC
      SUBDIR += p5-Net-Daemon
