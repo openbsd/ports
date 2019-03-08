@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.405 2019/01/23 15:16:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.406 2019/03/08 16:40:58 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -171,6 +171,7 @@
      SUBDIR += p5-gnupod
      SUBDIR += p5-libvorbis
      SUBDIR += pacpl
+     SUBDIR += parlatype
      SUBDIR += paulstretch
      SUBDIR += pavucontrol
      SUBDIR += pavucontrol,gtk3
