@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/03/27 14:40:13 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/03/08 16:25:11 jeremy Exp $
 ${GEM_BIN}/unicorn${GEM_BIN_SUFFIX}
 ${GEM_BIN}/unicorn_rails${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -132,6 +132,8 @@ ${GEM_LIB}/gems/${DISTNAME}/t/t0116-client_body_buffer_size.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0116.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/t0200-rack-hijack.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0300-no-default-middleware.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0301-no-default-middleware-ignored-in-config.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0301.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/t9000-preread-input.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t9001-oob_gc.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t9002-oob_gc-path.sh

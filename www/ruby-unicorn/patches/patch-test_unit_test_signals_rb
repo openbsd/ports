@@ -1,0 +1,16 @@
+$OpenBSD: patch-test_unit_test_signals_rb,v 1.1 2019/03/08 16:25:11 jeremy Exp $
+
+Set maximum sleep time in test.
+
+Index: test/unit/test_signals.rb
+--- test/unit/test_signals.rb.orig
++++ test/unit/test_signals.rb
+@@ -96,7 +96,7 @@ class SignalsTest < Test::Unit::TestCase
+ 
+   def test_timeout_slow_response
+     pid = fork {
+-      app = lambda { |env| sleep }
++      app = lambda { |env| sleep(61) }
+       opts = @server_opts.merge(:timeout => 3)
+       redirect_test_io { HttpServer.new(app, opts).start.join }
+     }
