@@ -1,34 +1,38 @@
-# $OpenBSD: Makefile,v 1.6 2018/12/12 23:46:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/08 17:02:44 sthen Exp $
 
-BROKEN= problems picking up libcurl
+BROKEN= builds, but has problems picking up libcurl
 
 COMMENT=	extended HTTP support
 
-DISTNAME=	pecl_http-3.1.0
-REVISION=	2
+DISTNAME=	pecl_http-3.2.0
 
 HOMEPAGE=	http://pecl.php.net/package/pecl_http
 
 # PHP
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} event_core event_extra iconv icudata
-WANTLIB += icui18n icuuc idn intl m z
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += brotlicommon brotlidec brotlienc curl event_core event_extra
+WANTLIB += iconv icudata icui18n icuuc idn intl m z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	lang/php/pecl
 
 CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	 --with-http-libcurl-dir=${LOCALBASE}
+CONFIGURE_SCRIPT= ${LOCALBASE}/bin/bash configure
 
 RUN_DEPENDS+=	www/pecl-raphf${MODPHP_FLAVOR} \
 		www/pecl-propro${MODPHP_FLAVOR}
 
 TEST_DEPENDS+=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	${RUN_DEPENDS}
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	archivers/brotli \
+		devel/gettext \
 		devel/libidn \
 		devel/libevent2 \
+		net/curl \
 		textproc/icu4c
 
 TEST_EXTS+=	-d extension_dir=${LOCALBASE}/lib/php-${MODPHP_VERSION}/modules

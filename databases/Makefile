@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.374 2019/01/23 15:16:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.375 2019/03/08 17:02:43 sthen Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -127,6 +127,7 @@
      SUBDIR += p5-sybperl
      SUBDIR += pecl-redis,php71
      SUBDIR += pecl-redis,php72
+     SUBDIR += pecl-redis,php73
      SUBDIR += percona-toolkit
      SUBDIR += pg-toolbox
      SUBDIR += pg_stats_reporter

@@ -1,9 +1,9 @@
-# $OpenBSD: pecl.port.mk,v 1.13 2018/12/12 23:46:18 sthen Exp $
+# $OpenBSD: pecl.port.mk,v 1.14 2019/03/08 17:02:44 sthen Exp $
 # PHP PECL module
 
 MODULES +=	lang/php
 
-FLAVORS = php71 php72
+FLAVORS ?= php71 php72 php73
 FLAVOR ?= php71
 
 # MODPECL_DEFAULTV is used in PLISTs so that @pkgpath markers are only
@@ -15,6 +15,9 @@ MODPHP_VERSION = 7.1
 MODPECL_DEFAULTV = ""
 .elif ${FLAVOR} == php72
 MODPHP_VERSION = 7.2
+MODPECL_DEFAULTV = "@comment "
+.elif ${FLAVOR} == php73
+MODPHP_VERSION = 7.3
 MODPECL_DEFAULTV = "@comment "
 .endif
 
@@ -33,8 +36,7 @@ HOMEPAGE ?=	https://pecl.php.net/package/${_PECLMOD}
 EXTRACT_SUFX ?=	.tgz
 .endif
 
-# XXX CONFIGURE_STYLE would be nice but it can't be set here
-AUTOCONF_VERSION ?= 2.62
+AUTOCONF_VERSION ?= 2.69
 AUTOMAKE_VERSION ?= 1.9
 
 LIBTOOL_FLAGS += --tag=disable-static

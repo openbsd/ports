@@ -1,11 +1,11 @@
-$OpenBSD: patch-config9_m4,v 1.1.1.1 2018/04/26 15:02:32 sthen Exp $
+$OpenBSD: patch-config9_m4,v 1.2 2019/03/08 17:02:44 sthen Exp $
 
 don't require raphf/propro to be activated before allowing pecl-http to build
 
 Index: config9.m4
 --- config9.m4.orig
 +++ config9.m4
-@@ -146,13 +146,9 @@ if test "$PHP_HTTP" != "no"; then
+@@ -158,13 +158,9 @@ if test "$PHP_HTTP" != "no"; then
  	dnl EXTENSIONS
  	PECL_HAVE_PHP_EXT([raphf], [
  		PECL_HAVE_PHP_EXT_HEADER([raphf])

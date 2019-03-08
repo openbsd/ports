@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2018/12/12 23:46:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/03/08 17:02:44 sthen Exp $
 
 COMMENT =	PHP extension for parsing and working with rfc822/MIME mail
 
 DISTNAME =	mailparse-3.0.2
 CATEGORIES =	mail
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
@@ -13,10 +13,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c
 
-AUTOCONF_VERSION =	2.52
-AUTOMAKE_VERSION =	1.4
-
 MODULES =	lang/php/pecl
+
+# not 7.3 yet
+FLAVORS =	php71 php72
 
 CONFIGURE_STYLE = gnu
 

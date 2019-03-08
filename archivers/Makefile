@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2018/12/11 12:07:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2019/03/08 17:02:43 sthen Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -47,8 +47,10 @@
      SUBDIR += par2cmdline
      SUBDIR += pecl-lzf,php71
      SUBDIR += pecl-lzf,php72
+     SUBDIR += pecl-lzf,php73
      SUBDIR += pecl-rar,php71
      SUBDIR += pecl-rar,php72
+     #SUBDIR += pecl-rar,php73	# not supported yet
      SUBDIR += pigz
      SUBDIR += py-libarchive-c
      SUBDIR += py-libarchive-c,python3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/12/12 23:46:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/03/08 17:02:44 sthen Exp $
 
 COMMENT=	PHP interface to memcached via libmemcached
 
@@ -9,6 +9,9 @@ REVISION=	0
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c memcached memcachedutil pthread sasl2 z
+
+# no 7.3 yet
+FLAVORS=	php71 php72
 
 MODULES=	lang/php/pecl
 LIB_DEPENDS=	devel/libmemcached
