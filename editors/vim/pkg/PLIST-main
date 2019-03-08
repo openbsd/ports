@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.29 2019/01/24 09:32:15 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.30 2019/03/08 01:55:36 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -308,6 +308,7 @@ share/vim/${P}/filetype.vim
 share/vim/${P}/ftoff.vim
 share/vim/${P}/ftplugin/
 share/vim/${P}/ftplugin.vim
+share/vim/${P}/ftplugin/8th.vim
 share/vim/${P}/ftplugin/README.txt
 share/vim/${P}/ftplugin/a2ps.vim
 share/vim/${P}/ftplugin/aap.vim
@@ -428,6 +429,7 @@ share/vim/${P}/ftplugin/manconf.vim
 share/vim/${P}/ftplugin/markdown.vim
 share/vim/${P}/ftplugin/matlab.vim
 share/vim/${P}/ftplugin/mf.vim
+share/vim/${P}/ftplugin/mma.vim
 share/vim/${P}/ftplugin/modconf.vim
 share/vim/${P}/ftplugin/mp.vim
 share/vim/${P}/ftplugin/mplayerconf.vim
@@ -787,6 +789,8 @@ share/vim/${P}/pack/dist/opt/justify/
 share/vim/${P}/pack/dist/opt/justify/plugin/
 share/vim/${P}/pack/dist/opt/justify/plugin/justify.vim
 share/vim/${P}/pack/dist/opt/matchit/
+share/vim/${P}/pack/dist/opt/matchit/autoload/
+share/vim/${P}/pack/dist/opt/matchit/autoload/matchit.vim
 share/vim/${P}/pack/dist/opt/matchit/doc/
 share/vim/${P}/pack/dist/opt/matchit/doc/matchit.txt
 share/vim/${P}/pack/dist/opt/matchit/doc/tags
@@ -867,6 +871,7 @@ share/vim/${P}/spell/yi.vim
 share/vim/${P}/synmenu.vim
 share/vim/${P}/syntax/
 share/vim/${P}/syntax/2html.vim
+share/vim/${P}/syntax/8th.vim
 share/vim/${P}/syntax/README.txt
 share/vim/${P}/syntax/a2ps.vim
 share/vim/${P}/syntax/a65.vim

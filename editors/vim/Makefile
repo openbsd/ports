@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.179 2019/01/24 09:32:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.180 2019/03/08 01:55:36 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-V=		8.1.0800
+V=		8.1.0998
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
@@ -18,6 +18,8 @@ CATEGORIES=	editors
 
 HOMEPAGE=	https://www.vim.org/
 
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+
 # donation-ware
 PERMIT_PACKAGE_CDROM=	Yes
 
@@ -27,8 +29,11 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} devel/gettext
 
 MULTI_PACKAGES=	-main -lang
 
-FLAVORS=	huge gtk2 athena motif no_x11 lua perl python python3 ruby
-FLAVOR?=	gtk2
+# UI flavours (pick one only)
+FLAVORS+=	gtk2 gtk3 athena motif no_x11
+# others
+FLAVORS+=	lua perl python python3 ruby
+FLAVOR?=	gtk3
 
 .include <bsd.port.arch.mk>
 .if ${FLAVOR:Mno_x11}
@@ -49,10 +54,6 @@ BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 
 .if defined(DEBUG)
 MAKE_FLAGS+= STRIP=:
-.endif
-
-.if ${FLAVOR:Mhuge}
-CONFIGURE_ARGS+= --with-features=huge
 .endif
 
 .if ${FLAVOR:Mlua}
@@ -103,13 +104,16 @@ LIB_DEPENDS+=	${MODRUBY_LIB_DEPENDS}
 WANTLIB+=	m ${MODRUBY_WANTLIB}
 .endif
 
-.if ${FLAVOR:Mno_x11} && \
-	!${FLAVOR:Mmotif} && !${FLAVOR:Mathena} && !${FLAVOR:Mgtk2}
+# GUI options, only one is allowed
+.if ${FLAVOR:Mno_x11}
+_GUISET+=	ok
 CONFIGURE_ARGS+= --disable-gui \
 		--without-x
 WANTLIB+=	m
-.elif ${FLAVOR:Mmotif} && \
-	!${FLAVOR:Mno_x11} && !${FLAVOR:Mathena} && !${FLAVOR:Mgtk2}
+.endif
+
+.if ${FLAVOR:Mmotif}
+_GUISET+=	ok
 CONFIGURE_ARGS+= --enable-gui="motif" \
 		--enable-fontset \
 		--enable-xim \
@@ -117,30 +121,43 @@ CONFIGURE_ARGS+= --enable-gui="motif" \
 CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
 LIB_DEPENDS+=	x11/motif
 WANTLIB +=	m ICE SM X11 Xmu Xpm Xt Xm
-MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
-.elif ${FLAVOR:Mathena} && \
-	!${FLAVOR:Mno_x11} && !${FLAVOR:Mmotif} && !${FLAVOR:Mgtk2}
+MAKE_ENV+=	MOTIFLIB='-L${LOCALBASE}/lib -lXm'
+.endif
+
+.if ${FLAVOR:Mathena}
+_GUISET+=	ok
 CONFIGURE_ARGS+= --enable-gui="athena" \
 		--enable-fontset \
 		--enable-xim \
 		--with-x
 WANTLIB +=	m ICE SM X11 Xaw Xmu Xpm Xt
-.elif ${FLAVOR:Mgtk2} && \
-		!${FLAVOR:Mmotif} && !${FLAVOR:Mno_x11} && !${FLAVOR:Mathena}
+.endif
+
+.if ${FLAVOR:Mgtk2}
+_GUISET+=	ok
 LIB_DEPENDS+=	x11/gtk+2
 CONFIGURE_ARGS+= --enable-gui="gtk2" \
-		--disable-gtk-check \
-		--enable-fontset \
-		--enable-gtk2-check \
 		--enable-xim \
 		--with-x
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xpm Xrandr Xrender Xt atk-1.0 cairo
-WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pthread z
-.else
-ERRORS=		"Fatal: You must select one GUI interface: no_x11, gtk2, athena or motif"
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender Xt atk-1.0 cairo fontconfig
+WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 z
+.endif
+
+.if ${FLAVOR:Mgtk3}
+_GUISET+=	ok
+LIB_DEPENDS+=	x11/gtk+3
+CONFIGURE_ARGS+= --enable-gui="gtk3" \
+		--enable-xim \
+		--with-x
+WANTLIB += ICE SM X11 Xt atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 m pango-1.0 pangocairo-1.0
+.endif
+
+.if "${_GUISET}" != ok
+ERRORS=		"Fatal: You must select one (and only one) GUI interface: no_x11, gtk2, gtk3, athena or motif"
 .endif
 
 RUN_DEPENDS-lang=	editors/vim,-main
@@ -155,9 +172,8 @@ SUBST_VARS=	P
 ERRORS=		"Fatal: Major version was updated; sync editors/vim-spell and update this check"
 .endif
 
-# CONFIGURE_STYLE=autoconf doesn't work
-post-patch:
-	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
+do-gen:
+	cd ${WRKSRC}; ${AUTOCONF_ENV} autoconf
 
 post-configure:
 	touch ${WRKBUILD}/auto/config.mk

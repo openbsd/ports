@@ -10,19 +10,14 @@ commands are given with normal keyboard characters, so those who can type with
 ten fingers can work very fast. Additionally, function keys can be mapped to
 commands by the user, and the mouse can be used.
 
-Vim runs under MS-Windows (NT, 2000, XP, Vista, 7, 8, 10), Macintosh, VMS and
-almost all flavours of UNIX. Porting to other systems should not be very
-difficult. Older versions of Vim run on MS-DOS, MS-Windows 95/98/Me, Amiga DOS,
-Atari MiNT, BeOS, RISC OS and OS/2. These are no longer maintained.
-
 Flavors:
-	gtk2       - build using the Gtk+2 toolkit (default);
-	motif	   - build using the Motif toolkit;
-	athena	   - build using the Athena toolkit;
-	no_x11	   - build without X11 support;
-	lua	   - build with Lua support;
-	perl	   - build with Perl support;
-	python	   - build with Python support;
-	python3	   - build with Python3 support;
-	ruby	   - build with Ruby support;
-	huge	   - build with --with-features=huge.
+	gtk2       - build using the Gtk+2 toolkit
+	gtk3       - build using the Gtk+3 toolkit (default)
+	motif	   - build using the Motif toolkit
+	athena	   - build using the Athena toolkit
+	no_x11	   - build without X11 support
+	lua	   - build with Lua support
+	perl	   - build with Perl support
+	python	   - build with Python support
+	python3	   - build with Python3 support
+	ruby	   - build with Ruby support
