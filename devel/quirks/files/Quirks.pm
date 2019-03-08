@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.727 2019/03/02 18:41:12 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.728 2019/03/08 21:02:30 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1155,6 +1155,7 @@ my $obsolete_reason = {
 	'suricata-update' => 6,
 	'exploitdb-papers' => 1,
 	'nautilus-sendto' => 3,
+	'libstrophe' => 5,
 };
 
 # reasons for obsolete packages
