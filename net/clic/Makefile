@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/10 15:14:56 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/08 11:20:18 solene Exp $
 
 COMMENT =	text based gopher client
-DISTNAME =	clic-v1.01
+DISTNAME =	clic-v1.1.3
 PKGNAME =	${DISTNAME:S/-v/-/}
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	net
@@ -23,6 +23,7 @@ LIB_DEPENDS =	lang/ecl
 RUN_DEPENDS =	devel/xdg-utils
 
 NO_TEST =	Yes
+PORTHOME=	${WRKDIST}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/clic ${PREFIX}/bin
