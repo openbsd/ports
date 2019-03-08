@@ -1,0 +1,58 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/08 05:52:25 rsadowski Exp $
+@conflict bitcoin-*
+@newgroup _litecoind:832
+@newuser _litecoind:832:832:daemon:Litecoin Account:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/litecoind
+@mode 750
+@owner _litecoind
+@group _litecoind
+@sample ${VARBASE}/litecoin/
+@comment @bin bin/test_bitcoin
+@mode
+@owner
+@group
+@bin bin/bench_litecoin
+@bin bin/litecoin-cli
+@bin bin/litecoin-tx
+@bin bin/litecoind
+@bin bin/test_litecoin
+include/bitcoinconsensus.h
+include/secp256k1.h
+include/secp256k1_recovery.h
+include/univalue.h
+lib/libbitcoinconsensus.a
+lib/libbitcoinconsensus.la
+@lib lib/libbitcoinconsensus.so.${LIBbitcoinconsensus_VERSION}
+lib/libsecp256k1.a
+lib/libsecp256k1.la
+@lib lib/libsecp256k1.so.${LIBsecp256k1_VERSION}
+lib/libunivalue.a
+lib/libunivalue.la
+@lib lib/libunivalue.so.${LIBunivalue_VERSION}
+lib/pkgconfig/libbitcoinconsensus.pc
+lib/pkgconfig/libsecp256k1.pc
+lib/pkgconfig/libunivalue.pc
+@man man/man1/litecoin-cli.1
+@man man/man1/litecoin-tx.1
+@man man/man1/litecoind.1
+share/bash-completion/completions/litecoin/
+share/bash-completion/completions/litecoin/bitcoin-cli.bash-completion
+share/bash-completion/completions/litecoin/bitcoin-tx.bash-completion
+share/bash-completion/completions/litecoin/bitcoind.bash-completion
+share/doc/litecoin/
+share/doc/litecoin/assets-attribution.md
+share/doc/litecoin/benchmarking.md
+share/doc/litecoin/bips.md
+share/doc/litecoin/dnsseed-policy.md
+share/doc/litecoin/fuzzing.md
+share/doc/litecoin/reduce-traffic.md
+share/doc/litecoin/tor.md
+share/doc/litecoin/translation_process.md
+share/doc/litecoin/translation_strings_policy.md
+share/doc/pkg-readmes/${PKGSTEM}
+!%%no_x11%%
+share/examples/litecoin/
+share/examples/litecoin/litecoin.conf
+@sample ${SYSCONFDIR}/litecoin.conf
+share/litecoin/
+share/litecoin/rpcauth.py

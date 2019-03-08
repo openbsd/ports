@@ -1,0 +1,25 @@
+$OpenBSD: patch-build-aux_m4_bitcoin_find_bdb48_m4,v 1.1.1.1 2019/03/08 05:52:25 rsadowski Exp $
+
+Build with BerkeleyDB >= 4.6
+
+Index: build-aux/m4/bitcoin_find_bdb48.m4
+--- build-aux/m4/bitcoin_find_bdb48.m4.orig
++++ build-aux/m4/bitcoin_find_bdb48.m4
+@@ -22,7 +22,7 @@ AC_DEFUN([BITCOIN_FIND_BDB48],[
+       AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
+         #include <${searchpath}db_cxx.h>
+       ]],[[
+-        #if !((DB_VERSION_MAJOR == 4 && DB_VERSION_MINOR >= 8) || DB_VERSION_MAJOR > 4)
++        #if !((DB_VERSION_MAJOR == 4 && DB_VERSION_MINOR >= 6) || DB_VERSION_MAJOR > 4)
+           #error "failed to find bdb 4.8+"
+         #endif
+       ]])],[
+@@ -35,7 +35,7 @@ AC_DEFUN([BITCOIN_FIND_BDB48],[
+       AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
+         #include <${searchpath}db_cxx.h>
+       ]],[[
+-        #if !(DB_VERSION_MAJOR == 4 && DB_VERSION_MINOR == 8)
++        #if !(DB_VERSION_MAJOR == 4 && DB_VERSION_MINOR == 6)
+           #error "failed to find bdb 4.8"
+         #endif
+       ]])],[

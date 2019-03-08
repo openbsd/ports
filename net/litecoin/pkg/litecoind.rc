@@ -1,0 +1,16 @@
+#!/bin/ksh
+#
+# $OpenBSD: litecoind.rc,v 1.1.1.1 2019/03/08 05:52:25 rsadowski Exp $
+
+daemon="${TRUEPREFIX}/bin/litecoind"
+daemon_timeout="300"
+daemon_user="_litecoin"
+data_dir="${VARBASE}/litecoin"
+daemon_flags="-daemon -conf=/etc/litecoin.conf -datadir=${data_dir}"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+
+rc_cmd $1

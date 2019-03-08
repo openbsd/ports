@@ -1,0 +1,26 @@
+$OpenBSD: README,v 1.1.1.1 2019/03/08 05:52:25 rsadowski Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+RPC user and password
+=====================
+
+Change rpcuser/rpcpassword in ${SYSCONFDIR}/litecoin.conf before starting
+litecoind via rc.d(8).
+
+Run the following command to create a RPC password:
+
+${LOCALBASE}/share/litecoin/rpcauth.py USERNAME
+
+Storage requirements
+====================
+
+You may wish to reduce storage requirements by pruning (deleting) old blocks.
+Enable prune in ${SYSCONFDIR}/litecoin.conf brefore you start litecoind first
+time or enable block pruning on the command line:
+
+    -prune=N: where N is the number of MB to allot for raw block & undo data.
+
+The minimum allowed size is 550MB. See litecoind(1).

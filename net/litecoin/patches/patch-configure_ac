@@ -1,0 +1,31 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2019/03/08 05:52:25 rsadowski Exp $
+
+We already uses PIE as default. Unbreak with lld
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -559,11 +559,6 @@ else
+   AC_SEARCH_LIBS([clock_gettime],[rt])
+ fi
+ 
+-if test x$TARGET_OS != xwindows; then
+-  # All windows code is PIC, forcing it on just adds useless compile warnings
+-  AX_CHECK_COMPILE_FLAG([-fPIC],[PIC_FLAGS="-fPIC"])
+-fi
+-
+ if test x$use_hardening != xno; then
+   AX_CHECK_COMPILE_FLAG([-Wstack-protector],[HARDENED_CXXFLAGS="$HARDENED_CXXFLAGS -Wstack-protector"])
+   AX_CHECK_COMPILE_FLAG([-fstack-protector-all],[HARDENED_CXXFLAGS="$HARDENED_CXXFLAGS -fstack-protector-all"])
+@@ -580,11 +575,6 @@ if test x$use_hardening != xno; then
+   AX_CHECK_LINK_FLAG([[-Wl,--high-entropy-va]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,--high-entropy-va"])
+   AX_CHECK_LINK_FLAG([[-Wl,-z,relro]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,-z,relro"])
+   AX_CHECK_LINK_FLAG([[-Wl,-z,now]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,-z,now"])
+-
+-  if test x$TARGET_OS != xwindows; then
+-    AX_CHECK_COMPILE_FLAG([-fPIE],[PIE_FLAGS="-fPIE"])
+-    AX_CHECK_LINK_FLAG([[-pie]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -pie"])
+-  fi
+ 
+   case $host in
+     *mingw*)

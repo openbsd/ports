@@ -1,0 +1,17 @@
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.1.1.1 2019/03/08 05:52:25 rsadowski Exp $
+@conflict bitcoin-*
+@bin bin/litecoin-qt
+@bin bin/test_litecoin-qt
+@man man/man1/litecoin-qt.1
+@comment @bin bin/test_bitcoin-qt
+share/pixmaps/
+share/pixmaps/litecoin128.png
+share/pixmaps/litecoin128.xpm
+share/pixmaps/litecoin16.png
+share/pixmaps/litecoin16.xpm
+share/pixmaps/litecoin256.png
+share/pixmaps/litecoin256.xpm
+share/pixmaps/litecoin32.png
+share/pixmaps/litecoin32.xpm
+share/pixmaps/litecoin64.png
+share/pixmaps/litecoin64.xpm
