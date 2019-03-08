@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1119 2019/03/07 07:28:17 giovanni Exp $
+# $OpenBSD: Makefile,v 1.1120 2019/03/08 05:58:06 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -219,6 +219,7 @@
      SUBDIR += libupnp
      SUBDIR += libupnpp
      SUBDIR += libvncserver
+     SUBDIR += litecoin
      SUBDIR += livemedia
      SUBDIR += lldpd
      SUBDIR += lldpd,snmp
