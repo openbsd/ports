@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.25 2018/09/22 00:51:49 danj Exp $
+$OpenBSD: README-server,v 1.26 2019/03/08 11:48:00 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -155,23 +155,23 @@ faster than a dump and reload, especially for large databases.
 # mv /var/postgresql/data /var/postgresql/data-${PREV_MAJOR}
 
 4) Create a new data directory:
-# su _postgresql -c "mkdir /var/postgresql/data"
-# su _postgresql -c \
-    "initdb -D /var/postgresql/data -U postgres -A scram-sha-256 -E UTF8 -W"
+# su _postgresql -c "mkdir /var/postgresql/data; \
+    initdb -D /var/postgresql/data -U postgres -A scram-sha-256 -E UTF8 -W"
+
+(The database environment defaults to UTF-8 if your terminal is already
+in a UTF-8 locale; if that is the case and you require an ASCII database
+environment, use "initdb --locale=C /var/postgresql/data [...]").
 
 5) Restore your old pg_hba.conf and (if used) SSL certificates
-# su _postgresql -c \
-    "cp /var/postgresql/data-${PREV_MAJOR}/pg_hba.conf /var/postgresql/data/"
-# su _postgresql -c \
-    "cp /var/postgresql/data-${PREV_MAJOR}/server.{crt,key} /var/postgresql/data/"
+# cp -p /var/postgresql/data-${PREV_MAJOR}/pg_hba.conf /var/postgresql/data/
+# cp -p /var/postgresql/data-${PREV_MAJOR}/server.{crt,key} /var/postgresql/data/
 
 Some postgresql.conf settings changed or disappeared in this version.
 Examine your old file for local changes and apply them to the new version.
 
 6) Temporarily support connecting without a password for local users by
    editing pg_hba.conf to include "local all postgres trust"
-# su _postgresql -c "vi /var/postgresql/data/pg_hba.conf"
-# su _postgresql -c "vi /var/postgresql/data-${PREV_MAJOR}/pg_hba.conf"
+# vi /var/postgresql/data{,-${PREV_MAJOR}/pg_hba.conf
 
 7) Run pg_upgrade:
 # su _postgresql -c "cd /var/postgresql && \
@@ -179,7 +179,7 @@ Examine your old file for local changes and apply them to the new version.
     -U postgres -d /var/postgresql/data-${PREV_MAJOR}/ -D /var/postgresql/data"
 
 8) Remove "local all postgres trust" line from pg_hba.conf
-# su _postgresql -c "vi /var/postgresql/data/pg_hba.conf"
+# vi /var/postgresql/data{,-${PREV_MAJOR}/pg_hba.conf
 
 9) Start PostgreSQL:
 # rcctl start postgresql
