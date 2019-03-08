@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/02/21 22:34:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/03/08 20:00:46 cwen Exp $
 
 PORTROACH =		limitw:1,even
 
@@ -9,7 +9,7 @@ GH_ACCOUNT =		openscenegraph
 GH_PROJECT =		OpenSceneGraph
 GH_TAGNAME =		OpenSceneGraph-$V
 DISTNAME =		openscenegraph-${V}
-REVISION =		1
+REVISION =		2
 
 SUBST_VARS +=		V
 

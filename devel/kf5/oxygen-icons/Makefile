@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2018/10/22 20:30:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/08 20:00:43 cwen Exp $
 
 COMMENT =	KDE Oxygen-style icon theme
 DISTNAME =	oxygen-icons5-${VERSION}
 PKGNAME =	oxygen-icons-${VERSION}
+REVISION =	0
 
 WANTLIB- =
 

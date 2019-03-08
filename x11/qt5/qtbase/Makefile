@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/02/04 21:01:47 jca Exp $
+# $OpenBSD: Makefile,v 1.27 2019/03/08 20:00:39 cwen Exp $
 
 BROKEN-sparc64 =	fails to pass stltest during configure with ports-clang
 
@@ -17,8 +17,13 @@ PKGNAME-global = 	qt5-global-${VERSION}
 PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
+REVISION-global =       0
+REVISION-mysql =	0
+REVISION-psql =		0
+REVISION-sqlite2 =	0
+REVISION-tds =		0
 
-REVISION-main =		2
+REVISION-main =		3
 
 PKG_ARCH-global =	*
 PKG_ARCH-examples =	*

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2018/10/22 20:30:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2019/03/08 20:00:41 cwen Exp $
 
 COMMENT =	integration of QML and KDE workspaces
 DISTNAME =	kdeclarative-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5Declarative		4.3 # 5.17
 SHARED_LIBS +=	KF5CalendarEvents	4.3 # 5.17

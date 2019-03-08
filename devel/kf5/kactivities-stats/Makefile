@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2018/10/22 20:30:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2019/03/08 20:00:44 cwen Exp $
 
 COMMENT =	statistics for the KDE Activity concept
 DISTNAME =	kactivities-stats-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5ActivitiesStats	4.2
 

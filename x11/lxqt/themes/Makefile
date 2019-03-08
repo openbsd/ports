@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:48 cwen Exp $
 
 COMMENT =	themes, graphics and icons for LXQt
 
@@ -6,6 +6,7 @@ VERSION =	0.13.0
 
 NAME =		lxqt-themes
 DISTNAME =	${NAME}-${VERSION}
+REVISION =	0
 
 LIB_DEPENDS +=		x11/lxqt/liblxqt
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2018/12/18 09:39:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/08 20:00:51 cwen Exp $
 
 COMMENT =	Dolphin plugins
 DISTNAME =	dolphin-plugins-${VERSION}
 PKGNAME  =	dolphin-plugins-kf5-${VERSION}
 CATEGORIES =	x11
+REVISION  =	0
 
 KDE5 =		Yes
 

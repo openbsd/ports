@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2018/12/19 17:59:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2019/03/08 20:00:51 cwen Exp $
 
 COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
 PKGNAME =	dolphin-kf5-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  dolphinprivate            0.1 # 5.0
 SHARED_LIBS +=  dolphinvcs                0.1 # 5.0

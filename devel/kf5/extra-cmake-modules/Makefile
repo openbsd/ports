@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2018/01/09 21:10:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2019/03/08 20:00:40 cwen Exp $
 
 COMMENT =		CMake modules required by KDE5
 DISTNAME =		extra-cmake-modules-${VERSION}
 HOMEPAGE =		https://projects.kde.org/projects/kdesupport/extra-cmake-modules
+REVISION =		0
 
 WANTLIB- =
 

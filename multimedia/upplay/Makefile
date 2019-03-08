@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/01/04 14:44:11 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:50 cwen Exp $
 
 COMMENT =		UPnP audio control point
 
 DISTNAME =		upplay-1.3.1
+REVISION =		0
 
 CATEGORIES =		multimedia net
 

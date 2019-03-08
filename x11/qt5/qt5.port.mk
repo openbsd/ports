@@ -1,4 +1,4 @@
-# $OpenBSD: qt5.port.mk,v 1.23 2019/03/08 12:43:29 cwen Exp $
+# $OpenBSD: qt5.port.mk,v 1.24 2019/03/08 20:00:56 cwen Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt3/qt4/qt5 in a port.
@@ -126,7 +126,7 @@ MAKE_FLAGS +=	${_MODQT5_SETUP}
 
 MODQT5_USE_CXX11 ?=	Yes
 .if ${MODQT5_USE_CXX11:L} == "yes"
-COMPILER ?= base-clang ports-clang ports-gcc
+COMPILER ?= base-clang ports-gcc
 ONLY_FOR_ARCHS ?= ${CXX11_ARCHS}
 # useful?
 _MODQT5_SETUP +=	CC=${CC} CXX=${CXX}

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:52 cwen Exp $
 
 COMMENT =	library for reading and writing vocabulary
 DISTNAME =	libkeduvocdocument-${VERSION}
 CATEGORIES =	education x11
+REVISION =	0
 
 KDE5 =		Yes
 

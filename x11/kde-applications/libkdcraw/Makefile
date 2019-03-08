@@ -4,6 +4,7 @@ COMMENT =	KDE wrapper around the LibRaw library
 DISTNAME =	libkdcraw-${VERSION}
 PKGNAME =	libkdcraw-kf5-${VERSION}
 CATEGORIES =	devel graphics
+REVISION =	0
 
 KDE5 =		Yes
 

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2018/10/22 20:30:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2019/03/08 20:00:44 cwen Exp $
 
 COMMENT =	KDE Plasma integration support for Qt-based apps
 DISTNAME =	frameworkintegration-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5Style		4.2
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/29 22:16:12 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/03/08 20:00:46 cwen Exp $
 
 COMMENT =		traditional top-down car racing game
 
 PKGNAME =		dustrac-${GH_TAGNAME}
-REVISION =		1
+REVISION =		2
 
 GH_ACCOUNT =		juzzlin
 GH_PROJECT =		DustRacing2D

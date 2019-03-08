@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2017/10/24 10:12:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/08 20:00:49 cwen Exp $
 
 QT5NAME =		QtDataVis3D
 COMMENT-main =		Qt5 3D data visualization components
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -examples
 

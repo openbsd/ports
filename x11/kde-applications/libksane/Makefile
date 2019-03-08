@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:55 cwen Exp $
 
 COMMENT =	KDE SANE (scanner) wrapper library
 DISTNAME =	libksane-${VERSION}
 PKGNAME =	libksane-kf5-${VERSION}
 CATEGORIES =	graphics devel
+REVISION =	0
 
 KDE5 =		Yes
 

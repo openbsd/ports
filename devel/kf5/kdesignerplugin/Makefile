@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2018/10/22 20:30:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2019/03/08 20:00:44 cwen Exp $
 
 COMMENT =		integrating KDE 5 widgets with Qt Designer
 DISTNAME =		kdesignerplugin-${VERSION}
+REVISION =		0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Bookmarks KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

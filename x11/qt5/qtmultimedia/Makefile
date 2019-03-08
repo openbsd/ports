@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2017/10/24 10:12:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/08 20:00:39 cwen Exp $
 
 QT5NAME =		QtMultimedia
 COMMENT-main =		Qt5 multimedia components
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -examples
 

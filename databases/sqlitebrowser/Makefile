@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2018/06/29 22:16:10 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2019/03/08 20:00:41 cwen Exp $
 
 COMMENT=	graphical interface to sqlite databases
 
 GH_ACCOUNT =	sqlitebrowser
 GH_PROJECT =	sqlitebrowser
 GH_TAGNAME =	v3.10.1
-REVISION =	2
+REVISION =	3
 
 CATEGORIES=	databases x11
 

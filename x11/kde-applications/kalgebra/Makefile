@@ -5,6 +5,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	scientific calculator for KDE
 DISTNAME =	kalgebra-${VERSION}
 CATEGORIES =	education
+REVISION =	0
 
 KDE5 =		Yes
 

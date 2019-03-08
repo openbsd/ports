@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:56 cwen Exp $
 
 COMMENT =	core utility library for all LXQt components
 
@@ -6,6 +6,7 @@ VERSION =	0.13.0
 
 NAME =		liblxqt
 DISTNAME =	${NAME}-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  lxqt                      0.0 # 0.13
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:54 cwen Exp $
 
 COMMENT =	KPart for viewing SVGs
 DISTNAME =	svgpart-${VERSION}
 CATEGORIES =	graphics
+REVISION =	0
 
 KDE5 =		Yes
 

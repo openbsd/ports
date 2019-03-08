@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/18 19:19:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:51 cwen Exp $
 
 COMMENT =	KDE mouse clicker for accessibility users
 DISTNAME =	kmousetool-${VERSION}
 CATEGORIES =	x11 inputmethods
+REVISION =	0
 
 KDE5 =		Yes
 

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2017/10/24 10:12:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/08 20:00:49 cwen Exp $
 
 QT5NAME =		QtGraphicalEffects
 COMMENT =		UI effects library for Qt Quick
+REVISION =		0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Qml
 WANTLIB += Qt5Quick m

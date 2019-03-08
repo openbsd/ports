@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2019/03/04 16:21:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.37 2019/03/08 20:00:55 cwen Exp $
 
 COMMENT=	twin panel file manager for KDE
 
 VERSION=	2.7.1
 DISTNAME=	krusader-${VERSION}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11
 

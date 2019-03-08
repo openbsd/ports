@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2018/10/22 20:30:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.33 2019/03/08 20:00:56 cwen Exp $
 
 COMMENT =	drop-down terminal emulator based on KDE Konsole
 
 VERSION =	3.0.5
 DISTNAME =	yakuake-${VERSION}
 EPOCH =		0
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	x11 sysutils
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/22 20:30:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2019/03/08 20:00:42 cwen Exp $
 
 COMMENT =	Open Collaboration Services API implementation
 DISTNAME =	attica-${VERSION}
 PKGNAME =	kf5-${DISTNAME}
+REVISION =	0
 
 SHARED_LIBS =	KF5Attica		3.2
 

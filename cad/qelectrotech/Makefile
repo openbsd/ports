@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/03 15:02:32 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:40 cwen Exp $
 
 COMMENT=	electric diagrams drawing tool
 
 DISTNAME =	qelectrotech-0.61-src
 PKGNAME = 	${DISTNAME:S/-src//}
 CATEGORIES =	cad graphics
+REVISION =      0
 
 HOMEPAGE =	https://qelectrotech.org/
 MASTER_SITES =	https://download.tuxfamily.org/qet/tags/20180823/

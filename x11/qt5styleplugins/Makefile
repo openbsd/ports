@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/28 14:42:50 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:56 cwen Exp $
 
 COMMENT =	Qt5 style plugins
 
@@ -6,6 +6,7 @@ GH_ACCOUNT =	qt
 GH_PROJECT =	qtstyleplugins
 GH_COMMIT =	335dbece103e2cbf6c7cf819ab6672c2956b17b3
 DISTNAME =	qtstyleplugins-5.0.0.20170311
+REVISION =	0
 
 CATEGORIES =	x11
 

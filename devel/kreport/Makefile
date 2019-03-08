@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2018/05/21 10:51:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2019/03/08 20:00:41 cwen Exp $
 
 COMMENT =	framework for generation of reports in multiple formats
 
 VERSION =	3.1.0
 DISTNAME =	kreport-${VERSION}
+REVISION =	0
 
 CATEGORIES =	devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/12/28 22:04:59 juanfra Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/08 20:00:45 cwen Exp $
 
 COMMENT =		games cataloging tool and emulator launcher
 
@@ -6,6 +6,7 @@ GH_ACCOUNT =		Monthy
 GH_PROJECT =		gr-lida
 DISTNAME =		gr-lida-0.11.1pre20180927
 GH_COMMIT =		30c338b352096d94a92006d572d3b7f0062cafe1
+REVISION =		0
 
 CATEGORIES =		emulators
 

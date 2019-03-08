@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2018/10/22 20:30:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2019/03/08 20:00:43 cwen Exp $
 
 COMMENT =		highlighting engine for structured text and code
 DISTNAME =		syntax-highlighting-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5SyntaxHighlighting	5.2 # 5.29
 

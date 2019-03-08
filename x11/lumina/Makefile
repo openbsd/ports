@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/07/09 15:09:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2019/03/08 20:00:55 cwen Exp $
 
 COMMENT=		Lumina Desktop Environment
 
@@ -6,7 +6,7 @@ GH_ACCOUNT=		trueos
 GH_PROJECT=		lumina
 GH_TAGNAME=		v1.4.0-p1
 PKGNAME=		lumina-1.4.0pl1
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		x11
 

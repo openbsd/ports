@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2018/10/22 20:30:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/08 20:00:40 cwen Exp $
 
 COMMENT =	KDE Breeze-style light and dark icon themes
 DISTNAME =	breeze-icons-${VERSION}
+REVISION =	0
 
 WANTLIB- =
 

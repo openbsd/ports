@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2018/05/21 10:51:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:41 cwen Exp $
 
 COMMENT =	property editing framework with editor widget
 
 VERSION =	3.1.0
 DISTNAME =	kproperty-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KPropertyCore3            1.0 # 3.0
 SHARED_LIBS +=  KPropertyWidgets3         1.0 # 3.0

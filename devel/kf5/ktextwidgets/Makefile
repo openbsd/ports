@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/04 20:25:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2019/03/08 20:00:41 cwen Exp $
 
 COMMENT =		text editing widgets for KDE
 DISTNAME =		ktextwidgets-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5TextWidgets		4.1
 

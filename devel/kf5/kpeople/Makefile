@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2018/10/22 20:30:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2019/03/08 20:00:43 cwen Exp $
 
 COMMENT =		KDE framework for aggregating and accessing people contacts
 DISTNAME =		kpeople-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =   	KF5People		4.2 # 5.17
 SHARED_LIBS +=  	KF5PeopleBackend	4.2 # 5.17

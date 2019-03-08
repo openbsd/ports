@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/01/18 20:13:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/03/08 20:00:46 cwen Exp $
 
 BROKEN-i386 =		Could NOT find GLEW (missing: GLEW_LIBRARY GLEW_INCLUDE_DIR)
 
@@ -14,6 +14,8 @@ V =			$R
 DISTNAME =		hedgewars-src-$V
 PKGNAME-main =		hedgewars-$V
 PKGNAME-server =	hedgewars-server-$V
+REVISION-main =		0
+REVISION-server =	0
 
 CATEGORIES =		games
 

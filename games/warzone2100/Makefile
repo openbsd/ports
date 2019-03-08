@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/10/22 20:04:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2019/03/08 20:00:46 cwen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -8,7 +8,7 @@ DISTNAME=	warzone2100-3.2.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=warzone2100/}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	https://wz2100.net/
 

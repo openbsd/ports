@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2018/04/22 05:08:17 bket Exp $
+# $OpenBSD: Makefile,v 1.27 2019/03/08 20:00:56 cwen Exp $
 
 COMMENT=	two-dimensional molecule drawing program
 
 DISTNAME=	xdrawchem-1.10.2
 CATEGORIES=	x11 biology
+REVISION=	0
 
 HOMEPAGE=	https://www.woodsidelabs.com/chemistry/xdrawchem.php
 

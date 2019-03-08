@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/02/21 22:01:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/03/08 20:00:47 cwen Exp $
 
 BROKEN-powerpc =	undefined reference to __atomic_fetch_add_8
 BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
@@ -10,7 +10,7 @@ GH_PROJECT = 		oiio
 V =			1.8.6
 GH_TAGNAME =		Release-$V
 DISTNAME =		openimageio-${V}
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=		OpenImageIO		5.0 # 1.0
 SHARED_LIBS +=  	OpenImageIO_Util	2.0 # 1.5

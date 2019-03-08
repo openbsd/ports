@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:48 cwen Exp $
 
 COMMENT =	lightweight Qt terminal emulator based on QTermWidget
 
@@ -6,6 +6,7 @@ VERSION =	0.9.0
 
 NAME =		qterminal
 DISTNAME =	${NAME}-${VERSION}
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB += Qt5X11Extras X11 c m qtermwidget5 util

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2018/09/04 12:46:25 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2019/03/08 20:00:51 cwen Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
 GH_ACCOUNT =	flaviotordini
 GH_PROJECT =	minitube
 GH_TAGNAME =	2.8
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	www multimedia
 

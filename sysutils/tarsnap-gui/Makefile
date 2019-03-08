@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2018/09/04 12:46:23 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/03/08 20:00:51 cwen Exp $
 
 COMMENT =		frontend to the popular Tarsnap backup service
 
 GH_ACCOUNT =		Tarsnap
 GH_PROJECT =		tarsnap-gui
 GH_TAGNAME =		v1.0.1
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 

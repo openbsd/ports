@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2018/10/22 20:30:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2019/03/08 20:00:44 cwen Exp $
 
 COMMENT =	speed up for applications inside KDE workspaces
 DISTNAME =	kinit-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kdeinit5_klauncher	4.2
 

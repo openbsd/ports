@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2018/06/27 21:03:44 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/08 20:00:46 cwen Exp $
 
 COMMENT =		free chess database and analyzer
 DISTNAME =		chessx-1.4.6
 CATEGORIES =		games
 HOMEPAGE =		http://chessx.sourceforge.net/
 MAINTAINER =		Roman Yakovlev <obsd@51t.ru>
-REVISION =		1
+REVISION =		2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

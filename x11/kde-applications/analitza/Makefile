@@ -3,6 +3,7 @@
 COMMENT =	KDE mathematical features
 DISTNAME =	analitza-${VERSION}
 CATEGORIES =	devel math
+REVISION =	0
 
 KDE5 =		Yes
 

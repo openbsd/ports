@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/18 20:14:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:54 cwen Exp $
 
 COMMENT =	connect the dots to create squares game
 DISTNAME =	ksquares-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/ksquares
 

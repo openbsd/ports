@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/21 13:14:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:44 cwen Exp $
 
 COMMENT =		QtQuickControls 2 style for painting
 DISTNAME =		qqc2-desktop-style-${VERSION}
 PKGNAME =		kf5-qqc2-desktop-style-${VERSION}
+REVISION =		0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5IconThemes

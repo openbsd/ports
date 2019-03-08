@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/14 15:17:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:48 cwen Exp $
 
 COMMENT =	policy kit agent for LXQt
 
@@ -6,6 +6,7 @@ VERSION =	0.13.0
 
 NAME =		lxqt-policykit
 DISTNAME =	${NAME}-${VERSION}
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5WindowSystem Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xdg Qt5XdgIconLoader

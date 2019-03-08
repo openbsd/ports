@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2018/07/21 19:52:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.29 2019/03/08 20:00:50 cwen Exp $
 
 COMMENT=	generate and manipulate maps of your thoughts
 
 DISTNAME=	vym-2.6.0
 CATEGORIES=	productivity x11
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.insilmaril.de/vym/
 

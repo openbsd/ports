@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2018/12/18 09:39:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/08 20:00:55 cwen Exp $
 
 COMMENT =	archiving Tool
 DISTNAME =	ark-${VERSION}
 CATEGORIES =	archivers
+REVISION =	0
 
 KDE5 =		Yes
 

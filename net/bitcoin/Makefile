@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2018/12/27 10:32:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2019/03/08 20:00:50 cwen Exp $
 
 COMMENT =		P2P payment system
 
 GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
 GH_TAGNAME =		v0.17.1
+REVISION =		0
 
 SHARED_LIBS +=  bitcoinconsensus          1.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.0 # 0.0

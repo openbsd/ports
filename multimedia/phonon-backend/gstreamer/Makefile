@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/03/03 17:02:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.24 2019/03/08 20:00:56 cwen Exp $
 
 COMMENT-main =	GStreamer-based Phonon backend
 COMMENT-icons =	GStreamer-based Phonon backend icons
@@ -6,13 +6,14 @@ VERSION =	4.9.0
 DISTNAME =	phonon-backend-gstreamer-${VERSION}
 PKGNAME-main =	${PKGNAME}
 PKGNAME-icons =	phonon-gstreamer-icons-${VERSION}
+REVISION-icons =0
 
 # Mirrors out of sync
 MASTER_SITES =		https://download.kde.org/stable/phonon/phonon-backend-gstreamer/${VERSION}/
 
 FULLPKGNAME-main =	${PKGNAME}
 FULLPKGPATH-main =	${PKGPATH},${FLAVOR},-main
-REVISION-main =		0
+REVISION-main =		1
 
 # deconflict Qt4 and Qt5 versions by extracting common data
 MULTI_PACKAGES =	-main -icons

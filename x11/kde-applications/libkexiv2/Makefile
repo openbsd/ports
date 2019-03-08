@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2018/12/18 09:39:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/08 20:00:54 cwen Exp $
 
 COMMENT =	EXIV2 Library interface for KDE
 DISTNAME =	libkexiv2-${VERSION}
 PKGNAME =	libkexiv2-kf5-${VERSION}
 CATEGORIES =	graphics devel
+REVISION =	0
 
 KDE5 =		Yes
 

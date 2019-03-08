@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/01/25 15:02:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/08 20:00:42 cwen Exp $
 
 COMMENT-html =		HTML documentation for Qt5
 COMMENT-qch =		qdoc-compiled documentation for Qt5
@@ -6,6 +6,8 @@ COMMENT-qch =		qdoc-compiled documentation for Qt5
 PKGNAME =		qt5-docs-${QT5_VERSION}
 PKGNAME-html =		qt5-html-${QT5_VERSION}
 PKGNAME-qch =		qt5-qch-${QT5_VERSION}
+REVISION-html =		1
+REVISION-qch =		1
 
 MULTI_PACKAGES =	-html -qch
 SUBPACKAGE ?=		-html

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:55 cwen Exp $
 
 COMMENT =	data files for KDE education applications
 DISTNAME =	kdeedu-data-${VERSION}
 CATEGORIES =	devel education
+REVISION =	0
 
 KDE5 =		Yes
 

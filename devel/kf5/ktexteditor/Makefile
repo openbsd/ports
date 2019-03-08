@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2018/10/22 20:30:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2019/03/08 20:00:41 cwen Exp $
 
 COMMENT =		fully featured text editor component
 DISTNAME =		ktexteditor-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5TextEditor		5.2
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2018/12/18 09:39:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/08 20:00:52 cwen Exp $
 
 COMMENT =	KDE geometric constructions explorer
 DISTNAME =	kig-${VERSION}
 CATEGORIES =	education geo
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

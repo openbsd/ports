@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/18 09:39:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:51 cwen Exp $
 
 COMMENT =	KDE dialog boxes from shell scripts
 DISTNAME =	kfind-${VERSION}
 CATEGORIES =	x11
+REVISION =	0
 
 KDE5 =		Yes
 

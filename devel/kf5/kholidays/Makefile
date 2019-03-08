@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2018/10/22 20:30:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/08 20:00:43 cwen Exp $
 
 COMMENT =		holiday calculation library
 DISTNAME =		kholidays-${VERSION}
+REVISION =		0
 
 SHARED_LIBS +=  KF5Holidays               0.2 # 5.43
 

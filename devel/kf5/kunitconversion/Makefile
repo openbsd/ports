@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2018/10/22 20:30:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2019/03/08 20:00:43 cwen Exp $
 
 COMMENT =	KDE framework for converting physical units
 DISTNAME =	kunitconversion-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5UnitConversion	3.2
 

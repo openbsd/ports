@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2017/10/24 10:12:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/08 20:00:49 cwen Exp $
 
 QT5NAME =		QtWebChannel
 COMMENT-main =		Qt5 seamless HTML/JavaScript integration
+REVISION-main =		0
 
 SHARED_LIBS =		Qt5WebChannel		1.2
 

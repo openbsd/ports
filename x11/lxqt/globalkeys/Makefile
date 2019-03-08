@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:48 cwen Exp $
 
 COMMENT =	daemon used to register global keyboard shortcuts
 
@@ -6,6 +6,7 @@ VERSION =	0.13.0
 
 NAME =		lxqt-globalkeys
 DISTNAME =	${NAME}-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  lxqt-globalkeys-ui        0.0 # 0.13
 SHARED_LIBS +=  lxqt-globalkeys           0.0 # 0.13

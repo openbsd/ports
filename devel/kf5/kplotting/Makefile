@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2018/10/22 20:30:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2019/03/08 20:00:42 cwen Exp $
 
 COMMENT =	KDE data plotting framework
 DISTNAME =	kplotting-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5Plotting		4.2
 
