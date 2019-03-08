@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/21 21:51:23 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/08 18:37:22 sthen Exp $
 
 COMMENT =		count lines of codes in many languages
 
@@ -25,6 +25,7 @@ WRKDIST =		${WRKDIR}/${DISTNAME}-8c629ffb306e04d8bbcd89366f8328040daa0fde
 BUILD_DEPENDS =		lang/go \
 			textproc/asciidoc
 
+MAKE_ENV =		GOCACHE=${WRKDIR}/go-cache
 ALL_TARGET =		loccount loccount.1
 TEST_TARGET =		check
 

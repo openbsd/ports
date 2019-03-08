@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/04/14 22:53:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/08 18:37:22 sthen Exp $
 
 COMMENT =		controller for fleet, the distributed init system
 
@@ -22,7 +22,7 @@ BUILD_DEPENDS =		shells/bash
 NO_TEST =		Yes
 
 do-build:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/bash build
+	cd ${WRKSRC} && env GOCACHE=${MODGO_GOCACHE} ${LOCALBASE}/bin/bash build
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/fleetctl ${PREFIX}/bin/

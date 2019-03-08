@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/14 22:53:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/08 18:37:22 sthen Exp $
 
 COMMENT =		systems monitoring and alerting toolkit
 
@@ -25,7 +25,8 @@ USE_GMAKE = 		Yes
 MODULES=		lang/go
 
 do-build:
-	cd ${WRKSRC} && GOPATH=${MODGO_WORKSPACE} ${MAKE_PROGRAM} \
+	cd ${WRKSRC} && GOMAXPROCS=${MAKE_JOBS} GOCACHE=${MODGO_GOCACHE} \
+	    GOPATH=${MODGO_WORKSPACE} ${MAKE_PROGRAM} \
 	    PROMU="${LOCALBASE}/bin/promu -v" build
 
 do-install:

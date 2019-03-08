@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/01/31 20:20:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2019/03/08 18:37:22 sthen Exp $
 
 # i386: pty_openbsd.go:24:10: undefined: ptmget
 ONLY_FOR_ARCHS=		amd64
@@ -29,7 +29,7 @@ ALL_TARGET=		build-openbsd-386
 .endif
 
 USE_GMAKE=		Yes
-MAKE_ENV=		SKIP_CHECKSTYLE=Yes
+MAKE_ENV=		SKIP_CHECKSTYLE=Yes GOCACHE=${WRKDIR}/go-cache
 MAKE_FILE=		makefile
 
 WRKSRC=			${WRKDIR}/src/github.com/aws/amazon-ssm-agent
