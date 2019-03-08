@@ -1,4 +1,4 @@
-# $OpenBSD: qt5.port.mk,v 1.22 2018/08/26 11:14:15 rsadowski Exp $
+# $OpenBSD: qt5.port.mk,v 1.23 2019/03/08 12:43:29 cwen Exp $
 
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt3/qt4/qt5 in a port.
@@ -17,6 +17,12 @@ _MODQT5_SETUP =	MOC=${MODQT5_MOC} \
 		MODQT_LIBDIR=${MODQT5_LIBDIR}
 .if ${MODQT5_OVERRIDE_UIC:L} == "yes"
 _MODQT5_SETUP +=UIC=${MODQT5_UIC}
+.endif
+
+# .qmlc and .jsc files cannot be generated on non-x86 archs.
+MODQT5_COMMENT = "@comment "
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" 
+MODQT5_COMMENT = 
 .endif
 
 # may be needed to find plugins
@@ -125,6 +131,8 @@ ONLY_FOR_ARCHS ?= ${CXX11_ARCHS}
 # useful?
 _MODQT5_SETUP +=	CC=${CC} CXX=${CXX}
 .endif
+
+SUBST_VARS +=	MODQT5_COMMENT
 
 .include "Makefile.version"
 
