@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2018/09/04 12:46:23 espie Exp $
+$OpenBSD: README,v 1.3 2019/03/08 14:04:24 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -21,14 +21,22 @@ TLS
 
 By default the server uses HTTP protocol. This is not very secure since with
 Basic Authentication, username and passwords will travel in cleartext in every
-request. In order to enable TLS support just add the -tls argument and add a
-private and public key at the root of your persistence directory. You may also
-specify private and public keys by --tls-cert and --tls-key
+request. In order to enable TLS support, add the --tls argument. By default
+the server will read files named "public_key" and "private_key" at the root
+of your persistence directory. The location can be changed with the flags
+--tls-cert and --tls-key (they must be readable by the _restic user).
 
-Signed certificate is required by the restic backend, but if you just want to
-test the feature you can generate unsigned keys with the following commands:
+The above arguments can be set by using rcctl(8):
+
+  rcctl enable restic_rest_server
+  rcctl set restic_rest_server flags --tls --path ${VARBASE}/restic
+
+You can either use a certificate signed by a standard CA, or generate a
+self-signed certificate with the following commands:
 
   openssl genrsa -out private_key 4096
   openssl req -new -x509 -key private_key -out public_key -days 365
 
-The above arguments can be set by using rcctl(8).
+The restic backend normally validates certificates using the system
+CA store in /etc/ssl/cert.pem; if using a self-signed certificate, point
+the restic backend at a copy of the certificate using the --cacert option.
