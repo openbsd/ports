@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/08 03:11:18 bentley Exp $
+include/wslay/
+include/wslay/wslay.h
+include/wslay/wslayver.h
+lib/libwslay.a
+lib/libwslay.la
+@lib lib/libwslay.so.${LIBwslay_VERSION}
+lib/pkgconfig/libwslay.pc
+@man man/man3/wslay_event_config_set_callbacks.3
+@man man/man3/wslay_event_config_set_max_recv_msg_length.3
+@man man/man3/wslay_event_config_set_no_buffering.3
+@man man/man3/wslay_event_context_client_init.3
+@man man/man3/wslay_event_context_free.3
+@man man/man3/wslay_event_context_server_init.3
+@man man/man3/wslay_event_get_close_received.3
+@man man/man3/wslay_event_get_close_sent.3
+@man man/man3/wslay_event_get_queued_msg_count.3
+@man man/man3/wslay_event_get_queued_msg_length.3
+@man man/man3/wslay_event_get_read_enabled.3
+@man man/man3/wslay_event_get_status_code_received.3
+@man man/man3/wslay_event_get_status_code_sent.3
+@man man/man3/wslay_event_get_write_enabled.3
+@man man/man3/wslay_event_queue_close.3
+@man man/man3/wslay_event_queue_fragmented_msg.3
+@man man/man3/wslay_event_queue_msg.3
+@man man/man3/wslay_event_recv.3
+@man man/man3/wslay_event_send.3
+@man man/man3/wslay_event_set_error.3
+@man man/man3/wslay_event_shutdown_read.3
+@man man/man3/wslay_event_shutdown_write.3
+@man man/man3/wslay_event_want_read.3
+@man man/man3/wslay_event_want_write.3
