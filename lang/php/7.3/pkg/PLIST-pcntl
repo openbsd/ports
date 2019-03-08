@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-pcntl,v 1.1 2019/03/08 02:13:05 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-pcntl->=7.3,<7.4
+lib/php-${PV}/modules/pcntl.so
+share/examples/php-${PV}/pcntl.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/pcntl.ini

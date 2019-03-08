@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-curl,v 1.1 2019/03/08 02:13:05 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-curl->=7.3,<7.4
+lib/php-${PV}/modules/curl.so
+share/examples/php-${PV}/curl.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/curl.ini

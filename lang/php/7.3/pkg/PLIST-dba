@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-dba,v 1.1 2019/03/08 02:13:05 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-dba->=7.3,<7.4
+lib/php-${PV}/modules/dba.so
+share/examples/php-${PV}/dba.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/dba.ini

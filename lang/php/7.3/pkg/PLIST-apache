@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-apache,v 1.1 2019/03/08 02:13:05 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-apache->=7.3,<7.4
+lib/php-${PV}/libphp7.so
+@sample ${MODPHP_CONFIG_PATH}/modules.sample/
+share/examples/php-${PV}/modphp.conf
+@sample ${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf

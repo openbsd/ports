@@ -1,0 +1,104 @@
+$OpenBSD: patch-sapi_fpm_fpm_fpm_atomic_h,v 1.1 2019/03/08 02:13:05 sthen Exp $
+
+Add support for mips
+Fix types for sparc64
+
+Index: sapi/fpm/fpm/fpm_atomic.h
+--- sapi/fpm/fpm/fpm_atomic.h.orig
++++ sapi/fpm/fpm/fpm_atomic.h
+@@ -75,10 +75,10 @@ static inline atomic_uint_t atomic_cmp_set(atomic_t *l
+ }
+ /* }}} */
+ 
+-#if (__GNUC__) && (__GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ < 2))
+-
+ #elif ( __arm__ || __arm ) /* W-Mark Kubacki */
+ 
++#if (__GNUC__) && (__GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ < 2))
++
+ #if (__arch64__ || __arch64)
+ typedef int64_t                     atomic_int_t;
+ typedef uint64_t                    atomic_uint_t;
+@@ -99,7 +99,7 @@ typedef uint32_t                    atomic_uint_t;
+ typedef uint64_t                    atomic_uint_t;
+ typedef volatile atomic_uint_t      atomic_t;
+ 
+-static inline int atomic_cas_64(atomic_t *lock, atomic_uint_t old, atomic_uint_t new) /* {{{ */
++static inline atomic_uint_t atomic_cas_64(atomic_t *lock, atomic_uint_t old, atomic_uint_t new) /* {{{ */
+ {
+ 	__asm__ __volatile__("casx [%2], %3, %0 " : "=&r"(new)  : "0"(new), "r"(lock), "r"(old): "memory");
+ 
+@@ -116,7 +116,7 @@ static inline atomic_uint_t atomic_cmp_set(atomic_t *l
+ typedef uint32_t                    atomic_uint_t;
+ typedef volatile atomic_uint_t      atomic_t;
+ 
+-static inline int atomic_cas_32(atomic_t *lock, atomic_uint_t old, atomic_uint_t new) /* {{{ */
++static inline atomic_uint_t atomic_cas_32(atomic_t *lock, atomic_uint_t old, atomic_uint_t new) /* {{{ */
+ {
+ 	__asm__ __volatile__("cas [%2], %3, %0 " : "=&r"(new)  : "0"(new), "r"(lock), "r"(old): "memory");
+ 
+@@ -134,6 +134,64 @@ static inline atomic_uint_t atomic_cmp_set(atomic_t *l
+ #else /* #if (__sparcv9 || __sparcv9__) */
+ #error Sparc v8 and predecessors are not and will not be supported (see bug report 53310)
+ #endif /* #if (__sparcv9 || __sparcv9__) */
++
++#elif ( __mips__ || __mips64__ )
++
++#if (__LP64__ || _LP64)
++typedef uint64_t                    atomic_uint_t;
++typedef volatile atomic_uint_t      atomic_t;
++
++static inline atomic_uint_t atomic_cas_64(atomic_t *lock, atomic_uint_t old, atomic_uint_t new) /* {{{ */
++{
++	atomic_uint_t v;
++
++	__asm__ __volatile__ (
++	"\t.set\tnoreorder\n"
++	"\tlld\t%0, 0(%1)\n"
++	"\tbne\t%0, %2, 1f\n"
++	"\tnop\n"
++	"\tscd\t%3, 0(%1)\n"
++	"1:\n"
++	"\t.set\treorder\n" :
++	"=r" (v) : "r" (lock), "r" (old), "r" (new) : "memory");
++
++	return v;
++}
++/* }}} */
++
++static inline atomic_uint_t atomic_cmp_set(atomic_t *lock, atomic_uint_t old, atomic_uint_t set) /* {{{ */
++{
++	return (atomic_cas_64(lock, old, set)==old);
++}
++/* }}} */
++#else
++typedef uint32_t                    atomic_uint_t;
++typedef volatile atomic_uint_t      atomic_t;
++
++static inline atomic_uint_t atomic_cas_32(atomic_t *lock, atomic_uint_t old, atomic_uint_t new) /* {{{ */
++{
++	atomic_uint_t v;
++
++	__asm__ __volatile__ (
++	"\t.set\tnoreorder\n"
++	"\tll\t%0, 0(%1)\n"
++	"\tbne\t%0, %2, 1f\n"
++	"\tnop\n"
++	"\tsc\t%3, 0(%1)\n"
++	"1:\n"
++	"\t.set\treorder\n" :
++	"=r" (v) : "r" (lock), "r" (old), "r" (new) : "memory");
++
++	return v;
++}
++/* }}} */
++
++static inline atomic_uint_t atomic_cmp_set(atomic_t *lock, atomic_uint_t old, atomic_uint_t set) /* {{{ */
++{
++	return (atomic_cas_32(lock, old, set)==old);
++}
++/* }}} */
++#endif
+ 
+ #else
+ 

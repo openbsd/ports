@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.131 2019/03/06 15:16:33 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.132 2019/03/08 02:13:05 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -151,7 +151,7 @@ WANTLIB$i +=		pthread readline ssl xml2 z
 LIB_DEPENDS$i +=	devel/gettext \
 			textproc/libxml \
 			textproc/oniguruma
-.if ${PV} == "7.2"
+.if ${PV} != "7.1"
 WANTLIB$i +=		sodium
 LIB_DEPENDS$i +=	security/libsodium
 .endif
@@ -383,6 +383,11 @@ COMMENT-zip=		zip functions for php
 CONFIGURE_ARGS+=	--enable-zip=shared,${LOCALBASE}
 LIB_DEPENDS-zip=	# empty
 WANTLIB-zip=		pthread z
+.if ${PV} == "7.3"
+LIB_DEPENDS-zip+=	archivers/bzip2 \
+			archivers/libzip
+WANTLIB-zip+=		bz2 crypto ssl zip
+.endif
 
 # some variables to substitute
 SUBST_VARS+=	CHROOT_DIR MODPHP_CONFIG_PATH SV PV MV
@@ -415,6 +420,8 @@ PKGNAME-${i}=		php-${i}-${V}
 PKGSPEC-${i}=		php-${i}->=7.1,<7.2
 .elif ${V:M7.2*}
 PKGSPEC-${i}=		php-${i}->=7.2,<7.3
+.elif ${V:M7.3*}
+PKGSPEC-${i}=		php-${i}->=7.3,<7.4
 .endif
 RUN_DEPENDS-${i}+=	php-${V}:lang/php/${PV}
 .endfor

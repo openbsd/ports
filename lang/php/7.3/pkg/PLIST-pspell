@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-pspell,v 1.1 2019/03/08 02:13:05 sthen Exp $
+@option no-default-conflict
+@option is-branch
+@conflict php-pspell->=7.3,<7.4
+lib/php-${PV}/modules/pspell.so
+share/examples/php-${PV}/pspell.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/pspell.ini
