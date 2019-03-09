@@ -1,0 +1,17 @@
+$OpenBSD: README-main,v 1.1 2019/03/09 06:18:11 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+For more information about using scan-build for the static analyser,
+look at:
+	http://clang-analyzer.llvm.org/scan-build.html
+
+For instance, the scanner on the kernel build can be launched with:
+
+	cd /usr/src/sys/arch/`uname -m`/conf && config GENERIC.MP
+	cd /usr/src/sys/arch/`uname -m`/compile/GENERIC.MP
+	make clean && scan-build make
+
+This will generate HTML reports in /tmp/scan-build-(date).

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.215 2019/02/28 01:52:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.216 2019/03/09 06:18:11 ajacoutot Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -20,7 +20,7 @@ PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	8
+REVISION-main =	9
 REVISION-lldb =	0
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
