@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2017/08/15 15:35:14 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.14 2019/03/09 23:04:58 afresh1 Exp $
 
 COMMENT=	converts simple text to web constructs
 
 DISTNAME =	Text-Textile-2.13
 CATEGORIES=	textproc
+REVISION=	0
 
 HOMEPAGE =	https://github.com/bradchoate/text-textile/
 
@@ -12,6 +13,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*
+
+# Optional dependency to better encode html entities
+RUN_DEPENDS =	www/p5-HTML-Parser
 
 # Additional depends to avoid skipping tests
 TEST_DEPENDS =	devel/p5-Test-Pod
