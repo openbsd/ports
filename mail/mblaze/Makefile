@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/02/12 14:27:35 sunil Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/09 04:59:43 sunil Exp $
 
 COMMENT =	set of Maildir utilities
 
-VERSION =	0.5
-DISTNAME =	mblaze-${VERSION}
-GH_ACCOUNT =	chneukirchen
+GH_ACCOUNT =	leahneukirchen
 GH_PROJECT =	mblaze
-GH_TAGNAME =	v${VERSION}
+GH_TAGNAME =	v0.5.1
 CATEGORIES =	mail
 
 MAINTAINER =	Sunil Nimmagadda <sunil@nimmagadda.net>
