@@ -1,4 +1,9 @@
-$OpenBSD: patch-caputils_capture-pcap-util_c,v 1.1 2019/03/01 18:06:46 sthen Exp $
+$OpenBSD: patch-caputils_capture-pcap-util_c,v 1.2 2019/03/09 14:22:47 sthen Exp $
+
+hunks 1/2: ioctl is needed on !linux
+
+hunk 3:    pcap_findalldevs() doesn't include controllers dumpable via
+           usbpcap, do a separate lookup and add to the list
 
 Index: caputils/capture-pcap-util.c
 --- caputils/capture-pcap-util.c.orig
@@ -14,12 +19,36 @@ Index: caputils/capture-pcap-util.c
  #include "ws_attributes.h"
  
  /*
-@@ -38,8 +42,6 @@
-  * end up trying SIOCGIWMODE on the device if that ioctl exists.
+@@ -39,8 +43,6 @@
   */
  #if defined(HAVE_PCAP_CREATE) && defined(__linux__)
--
--#include <sys/ioctl.h>
  
+-#include <sys/ioctl.h>
+-
  /*
   * If we're building for a Linux version that supports bonding,
+  * HAVE_BONDING will be defined.
+@@ -673,6 +675,23 @@ get_interface_list_findalldevs(int *err, char **err_st
+ 		if_info_ip(if_info, dev);
+ 	}
+ 	pcap_freealldevs(alldevs);
++
++#ifdef __OpenBSD__
++	int i, f;
++	char buf[50];
++	for (i = 0; i < 10; i++) {
++		snprintf(buf, sizeof buf, "/dev/usb%d", i);
++		f = open(buf, O_RDONLY);
++		if (f >= 0) {
++			snprintf(buf, sizeof buf, "usb%d", i);
++			if_info = if_info_new(buf, "USB", FALSE);
++			il = g_list_append(il, if_info);
++			close(f);
++		} else if (errno == ENOENT || errno == ENXIO) {
++			continue;
++		}
++	}
++#endif
+ 
+ 	return il;
+ }
