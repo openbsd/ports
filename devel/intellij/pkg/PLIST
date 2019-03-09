@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2018/12/27 11:31:22 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.37 2019/03/09 09:55:50 rsadowski Exp $
 bin/idea
 bin/intellij
 intellij/
@@ -118,9 +118,9 @@ intellij/lib/commons-net-3.6.jar
 intellij/lib/constraint-layout.jar
 intellij/lib/cucumber-core-1.2.4.jar
 intellij/lib/cucumber-java-1.2.5.jar
-intellij/lib/delight-nashorn-sandbox-0.1.16.jar
+intellij/lib/delight-rhino-sandbox-0.0.9.jar
 intellij/lib/dexlib2-2.2.1.jar
-intellij/lib/ecj-4.7.2.jar
+intellij/lib/ecj-4.10.jar
 intellij/lib/eddsa-0.2.0.jar
 intellij/lib/error_prone_annotations-2.3.1.jar
 intellij/lib/extensions.jar
@@ -199,8 +199,8 @@ intellij/lib/maven-model-3.3.9.jar
 intellij/lib/maven-model-builder-3.3.9.jar
 intellij/lib/maven-repository-metadata-3.3.9.jar
 intellij/lib/microba.jar
-intellij/lib/miglayout-core-5.1.jar
-intellij/lib/miglayout-swing-5.1.jar
+intellij/lib/miglayout-core-5.2.jar
+intellij/lib/miglayout-swing-5.2.jar
 intellij/lib/mutability-annotations-compat.jar
 intellij/lib/nanoxml-2.2.3.jar
 intellij/lib/nekohtml-1.9.22.jar
@@ -222,11 +222,18 @@ intellij/lib/plexus-component-annotations-1.6.jar
 intellij/lib/plexus-interpolation-1.21.jar
 intellij/lib/plexus-utils-3.0.22.jar
 intellij/lib/protobuf-java-3.4.0.jar
-intellij/lib/proxy-vole-1.0.5.jar
+intellij/lib/proxy-vole-1.0.6.jar
 intellij/lib/pty4j-0.8.6.jar
+intellij/lib/pty4j-native/
+intellij/lib/pty4j-native/linux/
+intellij/lib/pty4j-native/linux/x86/
+intellij/lib/pty4j-native/linux/x86/libpty.so
+intellij/lib/pty4j-native/linux/x86_64/
+intellij/lib/pty4j-native/linux/x86_64/libpty.so
 intellij/lib/purejavacomm-0.0.11.1.jar
 intellij/lib/resources.jar
 intellij/lib/resources_en.jar
+intellij/lib/rhino-1.7.10.jar
 intellij/lib/rngom-20051226-patched.jar
 intellij/lib/rt/
 intellij/lib/rt/debugger-agent.jar
@@ -749,8 +756,8 @@ intellij/plugins/xslt-debugger/lib/rmi-stubs.jar
 intellij/plugins/xslt-debugger/lib/rt/
 intellij/plugins/xslt-debugger/lib/rt/saxon.jar
 intellij/plugins/xslt-debugger/lib/rt/saxon9he.jar
-intellij/plugins/xslt-debugger/lib/rt/serializer.jar
-intellij/plugins/xslt-debugger/lib/rt/xalan.jar
+intellij/plugins/xslt-debugger/lib/rt/serializer-2.7.2.jar
+intellij/plugins/xslt-debugger/lib/rt/xalan-2.7.2.jar
 intellij/plugins/xslt-debugger/lib/rt/xslt-debugger-engine-impl.jar
 intellij/plugins/xslt-debugger/lib/xslt-debugger-engine.jar
 intellij/plugins/xslt-debugger/lib/xslt-debugger.jar
