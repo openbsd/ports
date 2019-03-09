@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.535 2019/03/08 17:02:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.536 2019/03/09 18:06:13 sebastia Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -72,6 +72,7 @@
      SUBDIR += gringotts
      SUBDIR += hashdeep
      SUBDIR += hatchet
+     SUBDIR += hcxtools
      SUBDIR += heimdal
      SUBDIR += hitch
      SUBDIR += hlfl
