@@ -1,6 +1,7 @@
-$OpenBSD: patch-configure,v 1.15 2007/12/28 17:45:04 espie Exp $
---- configure.orig	Sun Oct 28 01:16:22 2007
-+++ configure	Sun Oct 28 01:16:22 2007
+$OpenBSD: patch-configure,v 1.16 2019/03/09 11:36:44 sthen Exp $
+Index: configure
+--- configure.orig
++++ configure
 @@ -987,7 +987,7 @@ while [ "$#" -gt 0 ]; do
      v|verbose)
  	if [ "$VAL" = "yes" ]; then
@@ -10,6 +11,15 @@ $OpenBSD: patch-configure,v 1.15 2007/12/28 17:45:04 espie Exp $
              else
  		OPT_VERBOSE=yes
  	    fi
+@@ -1279,7 +1279,7 @@ QMAKE_VARS="$QMAKE_VARS \"QMAKE_MOC_SRC=$outpath/src/m
+ 
+ # find out which awk we want to use, prefer gawk, then nawk, then regular awk
+ AWK=
+-for e in gawk nawk awk; do
++for e in awk; do
+     if $WHICH $e >/dev/null 2>&1 && ( $e -f /dev/null /dev/null ) >/dev/null 2>&1; then
+ 	AWK=$e
+     	break
 @@ -1646,7 +1646,7 @@ if echo $MODULES | grep sql >/dev/null; then
      MYSQL_REQ="-lmysqlclient mysql.h"
      OCI_REQ="-lclntsh -lwtc8 oci.h"
