@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2019/02/28 00:55:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/09 06:19:39 ajacoutot Exp $
 
 COMMENT=	small and fast AV1 decoder
 
-VER=		0.1.0
+VER=		0.2.0
 DISTNAME=	dav1d-${VER}
 CATEGORIES=	multimedia
-MASTER_SITES=	https://download.videolan.org/pub/videolan/dav1d/${VER}/
-EXTRACT_SUFX=	.tar.xz
+MASTER_SITES=	https://code.videolan.org/videolan/dav1d/-/archive/${VER}/
+EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	dav1d	0.0
+SHARED_LIBS=	dav1d	1.0
 
 HOMEPAGE=	https://code.videolan.org/videolan/dav1d/
 
@@ -30,8 +30,7 @@ BUILD_DEPENDS+=	devel/nasm
 
 CONFIGURE_STYLE=meson
 
-# aarch64 has assembly issues with clang - temporarily disable
-.if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "i386"
+.if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=-Dbuild_asm=false
 .endif
 

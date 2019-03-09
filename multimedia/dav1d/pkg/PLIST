@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/01/10 20:34:32 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/03/09 06:19:40 ajacoutot Exp $
 @bin bin/dav1d
 include/dav1d/
 include/dav1d/common.h
@@ -6,5 +6,6 @@ include/dav1d/data.h
 include/dav1d/dav1d.h
 include/dav1d/headers.h
 include/dav1d/picture.h
+include/dav1d/version.h
 @lib lib/libdav1d.so.${LIBdav1d_VERSION}
 lib/pkgconfig/dav1d.pc
