@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1 2012/01/17 18:29:43 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/09 11:19:30 sthen Exp $
 
 L = tet
+REVISION =	0
 
 .include <bsd.port.mk>

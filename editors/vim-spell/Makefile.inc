@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2018/06/14 11:00:25 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2019/03/09 11:19:27 sthen Exp $
 
 LANGS =		af am bg ca cs cy da de el eo es fo fr ga gd gl he hr hu \
 		id it ku la lt lv mg mi ms nb nl nn ny pl pt ro ru rw sk \
@@ -171,8 +171,10 @@ PKGDIR =	${.CURDIR}/../pkg
 PLIST =	${PKGDIR}/PLIST-$L
 CHECKSUM_FILE =	${.CURDIR}/../distinfo
 
+# no RUN_DEPENDS on vim; the way that flavours are setup there,
+# doing so would force a particular UI flavour to be installed by
+# default
 NO_BUILD =	Yes
-RUN_DEPENDS =	editors/vim
 
 SUBST_VARS =	LANG_NAME P
 
