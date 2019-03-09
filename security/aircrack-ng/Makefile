@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2019/02/23 22:23:25 sebastia Exp $
+# $OpenBSD: Makefile,v 1.23 2019/03/09 18:02:35 sebastia Exp $
 
 COMMENT=		802.11 WEP and WPA-PSK keys cracking program
 DISTNAME=		aircrack-ng-1.5.2
+REVISION=		0
 CATEGORIES=		security
 
 HOMEPAGE=		https://www.aircrack-ng.org/
@@ -27,7 +28,10 @@ LIB_DEPENDS=		databases/sqlite3 \
 RUN_DEPENDS+=		net/arp-scan,-mac>=20190128
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
+.if ${MACHINE_ARCH} == "i386"
+# ld: error: undefined symbol: __i686.get_pc_thunk.bx
+USE_LLD=		No
+.endif
 LIBTOOL_FLAGS=		--tag=disable-static
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
