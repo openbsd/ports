@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2019/03/09 14:22:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.88 2019/03/09 18:04:28 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
@@ -6,7 +6,7 @@ COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
 V =		3.0.0
-REVISION =	2
+REVISION =	3
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
@@ -107,8 +107,8 @@ WANTLIB-main +=		Qt5Svg
 
 MODULES +=		devel/cmake
 CONFIGURE_STYLE =	cmake
-CONFIGURE_ARGS +=	-DDUMPCAP_INST_VALS=suid \
-			-DCMAKE_INSTALL_MANDIR=${TRUEPREFIX}/man \
+CONFIGURE_ENV +=	WIRESHARK_VERSION_EXTRA=" from OpenBSD packages"
+CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR=${TRUEPREFIX}/man \
 			-DCOMPILER_CAN_HANDLE_SSE4_2=false
 
 .include <bsd.port.arch.mk>

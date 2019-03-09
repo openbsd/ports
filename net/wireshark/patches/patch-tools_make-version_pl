@@ -1,0 +1,16 @@
+$OpenBSD: patch-tools_make-version_pl,v 1.1 2019/03/09 18:04:28 sthen Exp $
+
+avoid ugly "Git Rev Unknown from Unknown"
+
+Index: tools/make-version.pl
+--- tools/make-version.pl.orig
++++ tools/make-version.pl
+@@ -57,7 +57,7 @@ my $script_dir = dirname(__FILE__);
+ my $src_dir = "$script_dir/..";
+ my $verbose = 0;
+ my $devnull = File::Spec->devnull();
+-my $enable_vcsversion = 1;
++my $enable_vcsversion = 0;
+ 
+ # Ensure we run with correct locale
+ $ENV{LANG} = "C";
