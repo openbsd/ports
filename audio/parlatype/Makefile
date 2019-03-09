@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/08 16:40:39 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/09 15:51:53 ajacoutot Exp $
 
 V =		1.5.6
 COMMENT =	minimal audio player for manual speech transcription
 DISTNAME =	parlatype-${V}
 CATEGORIES =	audio x11
+REVISION =	0
 
 SHARED_LIBS +=	parlatype                 0.0 # 1.6
 
@@ -24,21 +25,17 @@ WANTLIB += xcb-shm z
 
 MASTER_SITES =	https://github.com/gkarsay/parlatype/releases/download/v${V}/
 
-MODULES =	devel/dconf
-
-BUILD_DEPENDS =	devel/gettext-tools \
-		devel/gobject-introspection \
+MODULES =	devel/dconf \
 		textproc/intltool \
-		x11/gnome/yelp-tools
+		x11/gnome
+
+MODGNOME_TOOLS=	desktop-file-utils gobject-introspection \
+		gtk-update-icon-cache yelp
 
 LIB_DEPENDS =	multimedia/gstreamer1/plugins-base \
 		x11/gtk+3
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/gsettings-desktop-schemas \
-		multimedia/gstreamer1/plugins-good \
-		x11/gnome/yelp \
-		x11/gtk+3,-guic
+RUN_DEPENDS =	multimedia/gstreamer1/plugins-good
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--without-libreoffice
