@@ -1,4 +1,4 @@
-$OpenBSD: patch-rijndael_cpp,v 1.4 2017/06/21 21:19:05 naddy Exp $
+$OpenBSD: patch-rijndael_cpp,v 1.5 2019/03/09 22:57:53 naddy Exp $
 Index: rijndael.cpp
 --- rijndael.cpp.orig
 +++ rijndael.cpp
@@ -55,7 +55,7 @@ Index: rijndael.cpp
  #ifdef USE_SSE
    // Check SSE here instead of constructor, so if object is a part of some
    // structure memset'ed before use, this variable is not lost.
-@@ -111,6 +135,7 @@ void Rijndael::Init(bool Encrypt,const byte *key,uint 
+@@ -114,6 +138,7 @@ void Rijndael::Init(bool Encrypt,const byte *key,uint 
  
    if(!Encrypt)
      keyEncToDec();
@@ -63,7 +63,7 @@ Index: rijndael.cpp
  }
  
  void Rijndael::blockEncrypt(const byte *input,size_t inputLen,byte *outBuffer)
-@@ -118,6 +143,11 @@ void Rijndael::blockEncrypt(const byte *input,size_t i
+@@ -121,6 +146,11 @@ void Rijndael::blockEncrypt(const byte *input,size_t i
    if (inputLen <= 0)
      return;
  
@@ -75,7 +75,7 @@ Index: rijndael.cpp
    size_t numBlocks = inputLen/16;
  #ifdef USE_SSE
    if (AES_NI)
-@@ -176,6 +206,7 @@ void Rijndael::blockEncrypt(const byte *input,size_t i
+@@ -179,6 +209,7 @@ void Rijndael::blockEncrypt(const byte *input,size_t i
      input += 16;
    }
    Copy128(m_initVector,prevBlock);
@@ -83,7 +83,7 @@ Index: rijndael.cpp
  }
  
  
-@@ -217,6 +248,11 @@ void Rijndael::blockDecrypt(const byte *input, size_t 
+@@ -220,6 +251,11 @@ void Rijndael::blockDecrypt(const byte *input, size_t 
    if (inputLen <= 0)
      return;
  
@@ -95,7 +95,7 @@ Index: rijndael.cpp
    size_t numBlocks=inputLen/16;
  #ifdef USE_SSE
    if (AES_NI)
-@@ -279,6 +315,7 @@ void Rijndael::blockDecrypt(const byte *input, size_t 
+@@ -282,6 +318,7 @@ void Rijndael::blockDecrypt(const byte *input, size_t 
    }
  
    memcpy(m_initVector,iv,16);
@@ -103,7 +103,7 @@ Index: rijndael.cpp
  }
  
  
-@@ -315,6 +352,7 @@ void Rijndael::blockDecryptSSE(const byte *input, size
+@@ -318,6 +355,7 @@ void Rijndael::blockDecryptSSE(const byte *input, size
  #endif
  
  
@@ -111,7 +111,7 @@ Index: rijndael.cpp
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  // ALGORITHM
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@@ -455,6 +493,7 @@ void Rijndael::GenerateTables()
+@@ -458,6 +496,7 @@ void Rijndael::GenerateTables()
    }
  }
  
