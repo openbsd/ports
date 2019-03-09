@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.180 2019/03/08 01:55:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.181 2019/03/09 22:34:09 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
 V=		8.1.0998
+REVISION-main=	0
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
@@ -33,6 +34,7 @@ MULTI_PACKAGES=	-main -lang
 FLAVORS+=	gtk2 gtk3 athena motif no_x11
 # others
 FLAVORS+=	lua perl python python3 ruby
+# bump deps if changing (RUN_DEPENDS in dependent ports picks this up)
 FLAVOR?=	gtk3
 
 .include <bsd.port.arch.mk>
@@ -76,7 +78,7 @@ CONFIGURE_ENV+=	vi_cv_path_python=${MODPY_BIN}
 CONFIGURE_ARGS+= --enable-pythoninterp=yes --enable-python3interp=no \
 	--with-python-config-dir=${MODPY_LIBDIR}/config
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
-WANTLIB+=	m ${MODPY_WANTLIB}
+WANTLIB+=	m pthread util ${MODPY_WANTLIB}
 .endif
 
 .if ${FLAVOR:Mpython3}
@@ -86,7 +88,7 @@ CONFIGURE_ENV+=	vi_cv_path_python3=${MODPY_BIN}
 CONFIGURE_ARGS+= --enable-python3interp=yes --enable-pythoninterp=no \
 	--with-python3-config-dir=${MODPY_LIBDIR}/config-${MODPY_VERSION}m
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
-WANTLIB+=	m ${MODPY_WANTLIB}
+WANTLIB+=	m pthread util ${MODPY_WANTLIB}
 .endif
 
 # Some parts of vim (like python autocompletion) require a version of vim
