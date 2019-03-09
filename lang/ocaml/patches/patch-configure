@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.23 2019/03/04 12:51:14 chrisz Exp $
+$OpenBSD: patch-configure,v 1.24 2019/03/09 12:29:56 chrisz Exp $
 Index: configure
 --- configure.orig
 +++ configure
@@ -25,7 +25,7 @@ Index: configure
      |*-*-openbsd*|*-*-netbsd*|*-*-dragonfly*|*-*-gnu*|*-*-haiku*)
        sharedcccompopts="-fPIC"
 -      mksharedlib="$cc -shared"
-+      mksharedlib="$cc $common_cflags -shared"
++      mksharedlib="$cc $common_cflags $ldflags -shared"
        ldflags="$ldflags -Wl,-E"
 +      mkexe="$cc $ldflags"
        rpath="-Wl,-rpath,"
