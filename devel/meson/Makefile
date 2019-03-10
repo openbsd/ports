@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2019/03/10 14:50:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2019/03/10 17:46:33 ajacoutot Exp $
 
 COMMENT=		next-generation build system
 
@@ -30,13 +30,7 @@ pre-configure:
 	sed -i "s,/usr/bin,${PREFIX}/bin,g" \
 		${WRKSRC}/data/com.mesonbuild.install.policy
 
-# can't use MODPY_BIN:
-# AssertionError: "meso[32 chars]thon3', '/hack/objdirs/pobj/meson-0.49.2/meson[14 chars]py']" != "meso[32 chars]thon3.6', '/hack/objdirs/pobj/meson-0.49.2/mes[16 chars]py']"
-# - meson_command is ['/usr/local/bin/python3', '/hack/objdirs/pobj/meson-0.49.2/meson-0.49.2/meson.py']
-# + meson_command is ['/usr/local/bin/python3.6', '/hack/objdirs/pobj/meson-0.49.2/meson-0.49.2/meson.py']
 do-test:
-	ln -sf ${LOCALBASE}/clang ${WRKDIR}/bin/clang-objc
-	cd ${WRKSRC} && ${LOCALBASE}/bin/python${MODPY_MAJOR_VERSION} \
-		./run_tests.py --failfast
+	cd ${WRKSRC} && ./run_tests.py --failfast
 
 .include <bsd.port.mk>
