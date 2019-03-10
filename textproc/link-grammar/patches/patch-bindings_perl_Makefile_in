@@ -1,9 +1,9 @@
-$OpenBSD: patch-bindings_perl_Makefile_in,v 1.1 2018/06/16 11:13:30 ajacoutot Exp $
+$OpenBSD: patch-bindings_perl_Makefile_in,v 1.2 2019/03/10 12:17:39 ajacoutot Exp $
 
 Index: bindings/perl/Makefile.in
 --- bindings/perl/Makefile.in.orig
 +++ bindings/perl/Makefile.in
-@@ -430,7 +430,7 @@ clinkgrammar_la_CPPFLAGS = \
+@@ -431,7 +431,7 @@ clinkgrammar_la_CPPFLAGS = \
     -I$(top_srcdir)         \
     -I$(top_builddir)
  

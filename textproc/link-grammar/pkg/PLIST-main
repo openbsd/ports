@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.34 2018/09/16 06:56:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.35 2019/03/10 12:17:39 ajacoutot Exp $
 @bin bin/link-parser
 include/link-grammar/
 include/link-grammar/dict-api.h
@@ -148,6 +148,10 @@ share/link-grammar/en/words/words.v.10.1
 share/link-grammar/en/words/words.v.10.2
 share/link-grammar/en/words/words.v.10.3
 share/link-grammar/en/words/words.v.10.4
+share/link-grammar/en/words/words.v.11.1
+share/link-grammar/en/words/words.v.11.2
+share/link-grammar/en/words/words.v.11.3
+share/link-grammar/en/words/words.v.11.4
 share/link-grammar/en/words/words.v.2.1
 share/link-grammar/en/words/words.v.2.2
 share/link-grammar/en/words/words.v.2.3

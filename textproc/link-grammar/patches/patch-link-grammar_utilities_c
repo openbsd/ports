@@ -1,0 +1,16 @@
+$OpenBSD: patch-link-grammar_utilities_c,v 1.1 2019/03/10 12:17:39 ajacoutot Exp $
+
+Needs strtod_l / xlocale.h
+
+Index: link-grammar/utilities.c
+--- link-grammar/utilities.c.orig
++++ link-grammar/utilities.c
+@@ -688,7 +688,7 @@ bool strtodC(const char *s, double *r)
+ {
+ 	char *err;
+ 
+-#ifdef HAVE_LOCALE_T
++#if defined(HAVE_LOCALE_T) && ! defined(__OpenBSD__)
+ 	double val = strtod_l(s, &err, get_C_LC_NUMERIC());
+ #else
+ 	/* dictionary_setup_locale() invokes setlocale(LC_NUMERIC, "C") */
