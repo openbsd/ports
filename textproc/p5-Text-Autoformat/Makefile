@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/03/10 21:30:10 afresh1 Exp $
 
-COMMENT=		perl module for formatting plaintext
+COMMENT=		automatic text wrapping and reformatting
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME =		Text-Autoformat-1.669002
+DISTNAME=		Text-Autoformat-1.74
 CATEGORIES=		textproc
-
-MAINTAINER=		Sam Smith <s@msmith.net>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=  		textproc/p5-Text-Reform
+RUN_DEPENDS=		textproc/p5-Text-Reform
 
 DOT_FILES=		${FILESDIR}/dot.emacs ${FILESDIR}/dot.vimrc
 SAMPLE_DIR=		${PREFIX}/share/examples/p5-Text-Autoformat
