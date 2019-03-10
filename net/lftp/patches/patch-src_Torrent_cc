@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_Torrent_cc,v 1.1 2019/03/10 18:24:48 jca Exp $
+
+- In MaySendUDP() handle case when socket may not be available yet
+  Upstream commit 66426abe60ef0f8a1be905f171b1281c6b59d138
+
+Index: src/Torrent.cc
+--- src/Torrent.cc.orig
++++ src/Torrent.cc
+@@ -3904,6 +3905,8 @@ bool TorrentListener::MaySendUDP()
+       last_sent_udp_count=0;
+       last_sent_udp=now;
+    }
++   if (sock==-1)
++      return false;
+    // check if output buffer is available
+    struct pollfd pfd;
+    pfd.fd=sock;
