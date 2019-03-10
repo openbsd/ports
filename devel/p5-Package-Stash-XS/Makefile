@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/03/10 00:29:26 afresh1 Exp $
 
 COMMENT =	faster and more correct implementation of Package::Stash
-DISTNAME =	Package-Stash-XS-0.28
+DISTNAME =	Package-Stash-XS-0.29
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
