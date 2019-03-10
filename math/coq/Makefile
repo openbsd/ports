@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/03/04 12:51:15 chrisz Exp $
+# $OpenBSD: Makefile,v 1.37 2019/03/10 20:16:54 chrisz Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
@@ -56,6 +56,12 @@ DPB_PROPERTIES +=	parallel
 
 # Order is important!
 TEST_TARGET=		check
+
+do-build:
+	ulimit -Ss 8192 && \
+	cd ${WRKSRC} && \
+	env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
+		-f ${MAKE_FILE} ${ALL_TARGET}
 
 post-install:
 	${INSTALL_DATA_DIR} \
