@@ -1,10 +1,9 @@
-$OpenBSD: patch-glib_gfileutils_c,v 1.3 2019/02/19 14:53:17 robert Exp $
+$OpenBSD: patch-glib_gfileutils_c,v 1.4 2019/03/10 09:00:29 ajacoutot Exp $
 
-Try to create the complete path right away and fall back
-to creating all path elements one by one.
+Try to create the complete path right away and fall back to creating all path
+elements one by one.
 
-Ignore ENOENT errors up until the last element to help programs
-using unveil(2)
+Ignore ENOENT errors up until the last element to help programs using unveil(2).
 
 Index: glib/gfileutils.c
 --- glib/gfileutils.c.orig

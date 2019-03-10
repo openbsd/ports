@@ -1,7 +1,7 @@
-$OpenBSD: patch-shm_dconf-shm_c,v 1.5 2019/02/19 14:35:54 robert Exp $
+$OpenBSD: patch-shm_dconf-shm_c,v 1.6 2019/03/10 09:00:29 ajacoutot Exp $
 
-Try to open the dconf cache directly instead of always trying
-to create the directory path first.
+Try to open the dconf cache directly instead of always trying to create the
+directory path first.
 
 Index: shm/dconf-shm.c
 --- shm/dconf-shm.c.orig

@@ -1,9 +1,10 @@
-$OpenBSD: patch-glib_gutils_c,v 1.6 2019/02/19 14:53:17 robert Exp $
+$OpenBSD: patch-glib_gutils_c,v 1.7 2019/03/10 09:00:29 ajacoutot Exp $
 
-/usr/share is not a valid data directory on OpenBSD for xdg/glib purposes
+pledge(2)
+- /usr/share is not a valid data directory on OpenBSD for xdg/glib purposes
 
-Check if the XDG directories actually exist before adding them to the list
-which is specially important for programs using unveil(2).
+Check if the XDG directories actually exist before adding them to the list which
+is specially important for programs using unveil(2).
 
 Index: glib/gutils.c
 --- glib/gutils.c.orig
