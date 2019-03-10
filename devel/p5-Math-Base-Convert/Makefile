@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2017/06/12 10:57:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/10 00:18:21 afresh1 Exp $
 
 COMMENT =	very fast base to base conversion
-DISTNAME =	Math-Base-Convert-0.08
+DISTNAME =	Math-Base-Convert-0.11
 CATEGORIES =	devel
-REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
