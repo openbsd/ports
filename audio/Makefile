@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.406 2019/03/08 16:40:58 bcallah Exp $
+# $OpenBSD: Makefile,v 1.407 2019/03/10 11:54:35 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -174,7 +174,6 @@
      SUBDIR += parlatype
      SUBDIR += paulstretch
      SUBDIR += pavucontrol
-     SUBDIR += pavucontrol,gtk3
      SUBDIR += pianobar
      SUBDIR += picard
      SUBDIR += pithos

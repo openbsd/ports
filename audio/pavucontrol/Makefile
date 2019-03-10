@@ -1,18 +1,22 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/27 21:03:36 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/03/10 11:54:35 ajacoutot Exp $
 
-# XXX check if still needed at next update
-CXXFLAGS +=		-std=c++11
+COMMENT =		PulseAudio volume mixer
 
-COMMENT =		Pulseaudio volume mixer
-
-DISTNAME =		pavucontrol-3.0
+DISTNAME =		pavucontrol-4.0
 HOMEPAGE =		http://freedesktop.org/software/pulseaudio/pavucontrol/
-MASTER_SITES =		http://freedesktop.org/software/pulseaudio/pavucontrol/
+
 CATEGORIES =		audio
-REVISION =		4
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += ${COMPILER_LIBCXX} X11 atk-1.0 atkmm-1.6 c cairo cairo-gobject
+WANTLIB += cairomm-1.0 canberra canberra-gtk3 gdk-3 gdk_pixbuf-2.0
+WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gobject-2.0
+WANTLIB += gtk-3 gtkmm-3.0 intl m pango-1.0 pangocairo-1.0 pangomm-1.4
+WANTLIB += pulse pulse-mainloop-glib sigc-2.0
+
+MASTER_SITES =		http://freedesktop.org/software/pulseaudio/pavucontrol/
 
 MODULES =		textproc/intltool
 
@@ -23,36 +27,14 @@ USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-
-FLAVORS =		gtk3
-FLAVOR ?=
+			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 BUILD_DEPENDS =		www/lynx
 
-RUN_DEPENDS +=		devel/desktop-file-utils
-LIB_DEPENDS +=		audio/pulseaudio
+RUN_DEPENDS =		devel/desktop-file-utils
 
-.if ${FLAVOR:Mgtk3}
-CONFIGURE_ENV +=	LDFLAGS="-L${X11BASE}/lib"
-LIB_DEPENDS +=		x11/gtk3mm \
-			audio/libcanberra,-gtk3
-WANTLIB += cairo-gobject canberra-gtk3 gdk-3 gdkmm-3.0 gtk-3 gtkmm-3.0
-.else
-CONFIGURE_ARGS +=	--disable-gtk3
-LIB_DEPENDS +=		x11/gtk2mm \
-			audio/libcanberra,-gtk
-WANTLIB += Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender canberra-gtk gdk-x11-2.0
-WANTLIB += gdkmm-2.4 gtk-x11-2.0 gtkmm-2.4 freetype z
-WANTLIB += fontconfig pangoft2-1.0
-.endif
-
-WANTLIB += X11 atk-1.0 atkmm-1.6 c cairo cairomm-1.0
-WANTLIB += canberra gdk_pixbuf-2.0
-WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gobject-2.0
-WANTLIB += intl m pango-1.0 pangocairo-1.0 pangomm-1.4
-WANTLIB += pthread pulse pulse-mainloop-glib sigc-2.0
-WANTLIB += ${COMPILER_LIBCXX}
+LIB_DEPENDS =		audio/libcanberra,-gtk3 \
+			audio/pulseaudio \
+			x11/gtk3mm
 
 .include <bsd.port.mk>
