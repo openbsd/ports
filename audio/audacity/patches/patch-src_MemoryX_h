@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_MemoryX_h,v 1.1 2019/03/05 16:36:58 jca Exp $
+$OpenBSD: patch-src_MemoryX_h,v 1.2 2019/03/10 11:45:50 ajacoutot Exp $
 
 Index: src/MemoryX.h
 --- src/MemoryX.h.orig
 +++ src/MemoryX.h
-@@ -1171,7 +1171,7 @@ namespace std
-    namespace tr1
-    {
- #endif
--      template<typename T> struct hash;
-+//      template<typename T> struct hash;
-       template<> struct hash< wxString > {
-          size_t operator () (const wxString &str) const // noexcept
-          {
+@@ -628,7 +628,7 @@ make_iterator_range( const Container &container )
+ // For using std::unordered_map on wxString
+ namespace std
+ {
+-   template<typename T> struct hash;
++//   template<typename T> struct hash;
+    template<> struct hash< wxString > {
+       size_t operator () (const wxString &str) const // noexcept
+       {

@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib-src_libnyquist_nyquist_xlisp_xlisp_h,v 1.2 2019/03/05 16:36:58 jca Exp $
+$OpenBSD: patch-lib-src_libnyquist_nyquist_xlisp_xlisp_h,v 1.3 2019/03/10 11:45:50 ajacoutot Exp $
 
 - use endian.h and BYTE_ORDER
   (XXX hardcodes #define HAVE_ENDIAN_H 1)
@@ -6,7 +6,7 @@ $OpenBSD: patch-lib-src_libnyquist_nyquist_xlisp_xlisp_h,v 1.2 2019/03/05 16:36:
 Index: lib-src/libnyquist/nyquist/xlisp/xlisp.h
 --- lib-src/libnyquist/nyquist/xlisp/xlisp.h.orig
 +++ lib-src/libnyquist/nyquist/xlisp/xlisp.h
-@@ -143,10 +143,17 @@ extern long ptrtoabs();
+@@ -150,10 +150,17 @@ extern long ptrtoabs();
  #define XL_BIG_ENDIAN
  #endif
  
