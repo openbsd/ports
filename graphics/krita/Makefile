@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2019/03/08 20:00:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/03/10 10:52:57 rsadowski Exp $
 
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	4.1.7.101
+VERSION =	4.1.8
 DISTNAME =	krita-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  kritabasicflakes          1.0 # 16.0
 SHARED_LIBS +=  kritacolord               1.0 # 16.0
@@ -54,7 +53,7 @@ WANTLIB += Qt5Xml SM X11 Xext Xi boost_system-mt c exiv2 fftw3
 WANTLIB += gif gsl gslcblas jpeg lcms2 m png16 poppler poppler-qt5
 WANTLIB += raw tiff xcb xcb-util z
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION:S/.101//}/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION}/}
 EXTRACT_SUFX =	.tar.gz
 
 MODULES =	devel/kf5 \
