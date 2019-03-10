@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/03/04 16:20:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.44 2019/03/10 22:33:30 rsadowski Exp $
 
      SUBDIR =
 
@@ -31,7 +31,7 @@
      SUBDIR += kalzium
      SUBDIR += kanagram
      SUBDIR += kbruch
-     #SUBDIR += kgeography
+     SUBDIR += kgeography
      SUBDIR += khangman
      SUBDIR += kig
      SUBDIR += kiten
