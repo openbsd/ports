@@ -1,6 +1,6 @@
-# $OpenBSD: meson.port.mk,v 1.31 2019/03/05 09:32:26 ajacoutot Exp $
+# $OpenBSD: meson.port.mk,v 1.32 2019/03/10 12:38:57 ajacoutot Exp $
 
-BUILD_DEPENDS +=	devel/meson>=0.49.2p0v0
+BUILD_DEPENDS +=	devel/meson>=0.49.2p1v0
 SEPARATE_BUILD ?=	Yes
 
 MODMESON_WANTCOLOR ?=	No
@@ -19,11 +19,6 @@ CONFIGURE_STYLE=	meson
 .if ! empty(INSTALL_STRIP)
 CONFIGURE_ARGS +=	--strip
 .endif
-
-# don't use "-Wl,--no-undefined" nor "-zdefs" when linking"; OpenBSD does not
-# link libc into shared-libraries by default to avoid binding libraries to
-# specific libc majors, so those options have always suffered false positives
-CONFIGURE_ARGS +=	-Db_lundef=false
 
 # from ${LOCALBASE}/bin/meson:
 # Warn if the locale is not UTF-8. This can cause various unfixable issues
