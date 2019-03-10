@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.47 2018/11/28 16:36:05 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.48 2019/03/10 18:08:05 jca Exp $
 @conflict samba-<ldb-1.3.6p5
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main
@@ -927,6 +927,7 @@ lib/samba/libcli-smb-common-samba4.so
 lib/samba/libcli-spoolss-samba4.so
 lib/samba/libcliauth-samba4.so
 lib/samba/libcluster-samba4.so
+lib/samba/libcmdline-contexts-samba4.so
 lib/samba/libcmdline-credentials-samba4.so
 @lib lib/samba/libcom_err-samba4.so.${LIBcom_err-samba4_VERSION}
 lib/samba/libcommon-auth-samba4.so
@@ -975,6 +976,7 @@ lib/samba/libnpa-tstream-samba4.so
 lib/samba/libnss-info-samba4.so
 lib/samba/libntvfs-samba4.so
 lib/samba/libpac-samba4.so
+lib/samba/libpopt-samba3-cmdline-samba4.so
 lib/samba/libpopt-samba3-samba4.so
 lib/samba/libposix-eadb-samba4.so
 lib/samba/libprinting-migrate-samba4.so
@@ -1056,6 +1058,7 @@ lib/samba/vfs/extd_audit.so
 lib/samba/vfs/fake_perms.so
 lib/samba/vfs/fruit.so
 lib/samba/vfs/full_audit.so
+lib/samba/vfs/glusterfs_fuse.so
 lib/samba/vfs/linux_xfs_sgid.so
 lib/samba/vfs/media_harmony.so
 lib/samba/vfs/netatalk.so
@@ -1201,6 +1204,7 @@ libexec/samba/
 @man man/man8/vfs_fruit.8
 @man man/man8/vfs_full_audit.8
 @man man/man8/vfs_glusterfs.8
+@man man/man8/vfs_glusterfs_fuse.8
 @man man/man8/vfs_gpfs.8
 @man man/man8/vfs_linux_xfs_sgid.8
 @man man/man8/vfs_media_harmony.8

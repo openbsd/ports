@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.268 2019/01/23 01:46:19 jca Exp $
+# $OpenBSD: Makefile,v 1.269 2019/03/10 18:08:05 jca Exp $
 
-VERSION =		4.8.7
+VERSION =		4.8.9
 DISTNAME =		samba-${VERSION}
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
@@ -20,9 +20,8 @@ PKG_ARCH-docs =		*
 LDB_V =			1.3.6
 TEVENT_V =		0.9.36
 
-REVISION-main =		3
-REVISION-ldb =		5
-REVISION-tevent =	4
+REVISION-ldb =		6
+REVISION-tevent =	5
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
@@ -54,14 +53,14 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			samba-util		3.2 \
 			samdb			0.1 \
 			smbclient		4.2 \
-			smbconf			4.1 \
+			smbconf			5.0 \
 			smbldap			0.1 \
 			tevent			0.4 \
 			tevent-util		1.0 \
 			wbclient		3.2 \
 			wind-samba4		0.0 \
-			replace			7.0 \
-			util-setid		7.0
+			replace			8.0 \
+			util-setid		8.0
 
 CATEGORIES =		net sysutils security
 
@@ -81,17 +80,17 @@ UTIL_WANTLIB =		${UTIL_LIBS:S@^@lib/samba/@}
 WANTLIB-common =	c pthread
 
 WANTLIB-main =		${WANTLIB-common} ${MODPY_WANTLIB}
-WANTLIB-main +=		z
+WANTLIB-main +=		crypto curses m util z
 WANTLIB-main +=		avahi-client avahi-common cups dbus-1 execinfo fam
 WANTLIB-main +=		iconv intl jansson lber ldap pam popt gnutls
 WANTLIB-main +=		ldb pyldb-util pytalloc-util readline tdb talloc tevent
 WANTLIB-main +=		${UTIL_WANTLIB}
 
 WANTLIB-ldb =		${WANTLIB-common} ${MODPY_WANTLIB}
-WANTLIB-ldb +=		lber ldap popt talloc tdb tevent
+WANTLIB-ldb +=		lber ldap popt m talloc tdb tevent util
 
 WANTLIB-tevent =	${WANTLIB-common} ${MODPY_WANTLIB}
-WANTLIB-tevent +=	talloc
+WANTLIB-tevent +=	m talloc util
 
 WANTLIB-util =		${WANTLIB-common}
 
