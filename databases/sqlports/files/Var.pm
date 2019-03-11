@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.55 2019/01/12 13:57:41 espie Exp $
+# $OpenBSD: Var.pm,v 1.56 2019/03/11 13:29:21 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -1099,7 +1099,7 @@ sub subselect
 	return (Sql::Column::View->new('FullPkgPath'),
 	    Sql::Column::View::WithExtra->new("Value")->join(Sql::Join->new($k)
 		->add(Sql::Equal->new("KeyRef", "Value"))),
-	    Sql::Order->new("Value"));
+	    Sql::Order->new("FullPkgPath"), Sql::Order->new("Value"));
 }
 
 sub select
