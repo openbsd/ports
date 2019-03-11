@@ -1,43 +1,21 @@
-$OpenBSD: patch-Makefile,v 1.5 2018/12/08 22:11:40 ajacoutot Exp $
---- Makefile.orig	Fri Jan 31 14:57:23 2014
-+++ Makefile	Mon Feb  3 12:26:26 2014
-@@ -55,7 +55,7 @@ ifeq (SunOS, $(OS))
- endif
- 
- # APIVERSION is used to build SONAME
--APIVERSION = 10
-+APIVERSION ?= 10
- 
- SRCS = igd_desc_parse.c miniupnpc.c minixml.c minisoap.c miniwget.c \
-        upnpc.c upnpcommands.c upnpreplyparse.c testminixml.c \
-@@ -123,7 +123,7 @@ INSTALLPREFIX ?= $(PREFIX)/usr
+$OpenBSD: patch-Makefile,v 1.6 2019/03/11 04:07:15 bket Exp $ Index: Makefile
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -149,7 +149,7 @@ endif
  INSTALLDIRINC = $(INSTALLPREFIX)/include/miniupnpc
  INSTALLDIRLIB = $(INSTALLPREFIX)/$(LIBDIR)
  INSTALLDIRBIN = $(INSTALLPREFIX)/bin
 -INSTALLDIRMAN = $(INSTALLPREFIX)/share/man
 +INSTALLDIRMAN = $(INSTALLPREFIX)/man
+ PKGCONFIGDIR = $(INSTALLDIRLIB)/pkgconfig
  
  FILESTOINSTALL = $(LIBRARY) $(EXECUTABLES)
- ifneq ($(OS), AmigaOS)
-@@ -144,11 +144,11 @@ check:	validateminixml validateminiwget validateupnpre
- everything:	all $(EXECUTABLES_ADDTESTS)
- 
- pythonmodule:	$(LIBRARY) miniupnpcmodule.c setup.py
--	python setup.py build
-+	${MODPY_BIN} setup.py build
- 	touch $@
- 
- installpythonmodule:	pythonmodule
--	python setup.py install
-+	${MODPY_BIN} setup.py install --prefix=$(PREFIX)
- 
- pythonmodule3:	$(LIBRARY) miniupnpcmodule.c setup.py
- 	python3 setup.py build
-@@ -195,7 +195,6 @@ install:	updateversion $(FILESTOINSTALL)
+@@ -238,7 +238,6 @@ install:	updateversion $(FILESTOINSTALL)
  	$(INSTALL) -m 644 $(LIBRARY) $(DESTDIR)$(INSTALLDIRLIB)
- ifneq ($(OS), AmigaOS)
+ ifeq (, $(findstring amiga, $(OS)))
  	$(INSTALL) -m 644 $(SHAREDLIBRARY) $(DESTDIR)$(INSTALLDIRLIB)/$(SONAME)
 -	ln -fs $(SONAME) $(DESTDIR)$(INSTALLDIRLIB)/$(SHAREDLIBRARY)
+ 	$(INSTALL) -d $(DESTDIR)$(PKGCONFIGDIR)
+ 	$(INSTALL) -m 644 miniupnpc.pc $(DESTDIR)$(PKGCONFIGDIR)
  endif
- 	$(INSTALL) -d $(DESTDIR)$(INSTALLDIRBIN)
- ifeq ($(OS), AmigaOS)
