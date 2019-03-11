@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2018/06/27 21:03:55 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2019/03/11 11:16:05 bentley Exp $
 @pkgpath inputmethods/uim
 @pkgpath inputmethods/uim,-gnome
 @bin bin/uim-el-agent
@@ -9,7 +9,6 @@
 @bin bin/uim-module-manager
 @bin bin/uim-sh
 @bin bin/uim-xim
-include/gcroots.h
 include/uim/
 include/uim/dynlib.h
 include/uim/uim-custom.h
@@ -22,9 +21,6 @@ include/uim/uim-scm.h
 include/uim/uim-util.h
 include/uim/uim.h
 include/uim/version.h
-lib/libgcroots.a
-lib/libgcroots.la
-@lib lib/libgcroots.so.${LIBgcroots_VERSION}
 lib/libuim-custom.a
 lib/libuim-custom.la
 @lib lib/libuim-custom.so.${LIBuim-custom_VERSION}
@@ -34,19 +30,21 @@ lib/libuim-scm.la
 lib/libuim.a
 lib/libuim.la
 @lib lib/libuim.so.${LIBuim_VERSION}
-lib/pkgconfig/gcroots.pc
 lib/pkgconfig/uim.pc
 lib/uim/
 lib/uim/plugin/
 lib/uim/plugin/libuim-anthy-utf8.so
 lib/uim/plugin/libuim-anthy.so
 lib/uim/plugin/libuim-custom-enabler.so
+lib/uim/plugin/libuim-editline.so
 lib/uim/plugin/libuim-fileio.so
 lib/uim/plugin/libuim-lolevel.so
 lib/uim/plugin/libuim-look.so
 lib/uim/plugin/libuim-process.so
 lib/uim/plugin/libuim-skk.so
 lib/uim/plugin/libuim-socket.so
+lib/uim/plugin/libuim-sqlite3.so
+lib/uim/plugin/libuim-xkb.so
 @bin libexec/uim-helper-server
 @man man/man1/uim-xim.1
 share/applications/uim.desktop
@@ -298,8 +296,6 @@ share/uim/pixmaps/skk.png
 share/uim/pixmaps/skk.svg
 share/uim/pixmaps/skk_dark_background.png
 share/uim/pixmaps/skk_dark_background.svg
-share/uim/pixmaps/social-ime.png
-share/uim/pixmaps/social-ime.svg
 share/uim/pixmaps/tcode.png
 share/uim/pixmaps/tcode.svg
 share/uim/pixmaps/tcode_dark_background.png
@@ -352,7 +348,6 @@ share/uim/pyload.scm
 share/uim/pyunihan.scm
 share/uim/rk.scm
 share/uim/romaja.scm
-share/uim/scim.scm
 share/uim/sj3-custom.scm
 share/uim/sj3-key-custom.scm
 share/uim/sj3.scm
@@ -362,9 +357,6 @@ share/uim/skk-dialog.scm
 share/uim/skk-editor.scm
 share/uim/skk-key-custom.scm
 share/uim/skk.scm
-share/uim/social-ime-custom.scm
-share/uim/social-ime-key-custom.scm
-share/uim/social-ime.scm
 share/uim/socket.scm
 share/uim/sqlite3.scm
 share/uim/sxml-tools.scm
@@ -396,6 +388,7 @@ share/uim/wlos.scm
 share/uim/wnn-custom.scm
 share/uim/wnn-key-custom.scm
 share/uim/wnn.scm
+share/uim/xkb.scm
 share/uim/xmload.scm
 share/uim/yahoo-jp-custom.scm
 share/uim/yahoo-jp-key-custom.scm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2019/03/11 11:16:05 bentley Exp $
 
 DPB_PROPERTIES=		tag:kde3
 
@@ -11,7 +11,7 @@ COMMENT-qt4=		uim for QT4
 
 CATEGORIES=		inputmethods japanese chinese
 
-V=			1.8.6
+V=			1.8.8
 DISTNAME=		uim-$V
 PKGNAME-main=		uim-$V
 PKGNAME-gtk=		uim-gtk-$V
@@ -19,14 +19,12 @@ PKGNAME-gtk3=		uim-gtk3-$V
 PKGNAME-kde=		uim-kde-$V
 PKGNAME-qt=		uim-qt-$V
 PKGNAME-qt4=		uim-qt4-$V
-REVISION=		8
 
-MASTER_SITES=		https://github.com/uim/uim/releases/download/uim-$V/
+MASTER_SITES=		https://github.com/uim/uim/releases/download/$V/
 HOMEPAGE=		https://github.com/uim/uim
 
-SHARED_LIBS +=	gcroots              0.0      # .1.0
 SHARED_LIBS +=	uim-scm              0.0      # .0.0
-SHARED_LIBS +=	uim                  1.0      # .6.0
+SHARED_LIBS +=	uim                  1.1      # .6.0
 SHARED_LIBS +=	uim-custom           0.0      # .2.0
 
 # BSD
@@ -46,11 +44,12 @@ USE_GMAKE=		Yes
 
 RUN_DEPENDS-main=	devel/desktop-file-utils
 
-WANTLIB-main += ${cWANTLIB}
-WANTLIB-main += Xft anthy anthydic c curses expat ${COMPILER_LIBCXX}
-WANTLIB-main += util xcb z
+WANTLIB-main += ${cWANTLIB} ${COMPILER_LIBCXX}
+WANTLIB-main += Xft anthy anthydic c curses edit expat gcroots
+WANTLIB-main += sqlite3 util xcb z
 
-LIB_DEPENDS-main=	inputmethods/anthy
+LIB_DEPENDS-main=	inputmethods/anthy \
+			devel/libgcroots
 
 
 WANTLIB-gtk += ${cWANTLIB}
@@ -58,7 +57,7 @@ WANTLIB-gtk += Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr
 WANTLIB-gtk += atk-1.0 c cairo expat ffi gcroots gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-gtk += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB-gtk += gthread-2.0 gtk-x11-2.0 harfbuzz pango-1.0 pangocairo-1.0
-WANTLIB-gtk += pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB-gtk += pangoft2-1.0 pcre pixman-1 png pthread fribidi
 WANTLIB-gtk += uim uim-custom uim-scm xcb xcb-render xcb-shm z
 
 LIB_DEPENDS-gtk=	inputmethods/uim \
@@ -66,11 +65,11 @@ LIB_DEPENDS-gtk=	inputmethods/uim \
 
 WANTLIB-gtk3 += ${cWANTLIB}
 WANTLIB-gtk3 += Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
-WANTLIB-gtk3 += Xrandr Xtst atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
+WANTLIB-gtk3 += Xrandr atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
 WANTLIB-gtk3 += dbus-1 expat ffi gcroots gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB-gtk3 += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB-gtk3 += gtk-3 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-gtk3 += pcre pixman-1 png pthread uim uim-custom
+WANTLIB-gtk3 += pcre pixman-1 png pthread uim uim-custom fribidi
 WANTLIB-gtk3 += uim-scm xcb xcb-render xcb-shm z epoxy
 
 LIB_DEPENDS-gtk3=	inputmethods/uim \
@@ -81,6 +80,7 @@ WANTLIB-kde += DCOP GL ICE SM X11-xcb Xcursor Xdamage Xfixes
 WANTLIB-kde += Xft Xi Xinerama Xmu Xrandr Xt Xxf86vm art_lgpl_2 drm
 WANTLIB-kde += expat gcroots glapi idn jpeg kdefx lcms mng png pthread
 WANTLIB-kde += qt-mt ${COMPILER_LIBCXX} uim uim-scm util xcb xcb-dri2
+WANTLIB-kde += xcb-dri3 xcb-present xcb-sync xcb-xfixes xshmfence
 WANTLIB-kde += xcb-glx z
 
 LIB_DEPENDS-kde=	inputmethods/uim \
@@ -91,6 +91,7 @@ WANTLIB-qt += GL ICE SM X11-xcb Xcursor Xdamage Xfixes
 WANTLIB-qt += Xft Xi Xinerama Xmu Xrandr Xt Xxf86vm c drm expat gcroots
 WANTLIB-qt += glapi jpeg lcms mng png pthread ${COMPILER_LIBCXX}
 WANTLIB-qt += uim uim-custom uim-scm xcb xcb-dri2 xcb-glx z
+WANTLIB-qt += xcb-dri3 xcb-present xcb-sync xcb-xfixes xshmfence
 
 LIB_DEPENDS-qt=		${MODQT3_LIB_DEPENDS} \
 			inputmethods/uim
@@ -102,7 +103,7 @@ WANTLIB-qt4 += uim-custom uim-scm
 LIB_DEPENDS-qt4=	${MODQT4_LIB_DEPENDS} \
 			inputmethods/uim
 
-AUTOCONF_VERSION=	2.68
+AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf
 
 CONFIGURE_ENV=		CPPFLAGS='-I${MODQT3_INCDIR} -I${LOCALBASE}/include -I${X11BASE}/include' \
@@ -114,7 +115,8 @@ CONFIGURE_ARGS=		--with-qt \
 			--with-qt-immodule \
 			--with-qt4 \
 			--with-qt4-immodule \
-			--with-anthy-utf8
+			--with-anthy-utf8 \
+			--with-libgcroots
 
 post-install:
 	rm ${PREFIX}/lib/uim/plugin/*.{a,la}
