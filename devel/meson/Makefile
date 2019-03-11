@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/03/11 09:29:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2019/03/11 11:35:09 ajacoutot Exp $
 
 COMMENT=		next-generation build system
 
@@ -25,12 +25,35 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS=		devel/ninja
 
+# XXX hand rolled patch (space file names)
+# patch-test_cases_common_137_get_define_meson_build
+BUILD_DEPENDS +=	devel/gpatch
+PATCH=			gpatch
+
+# test_objc_cpp_detection (__main__.FailureTests) ... skipped "objc and objcpp found, can't test detection failure"
+# test_cs_compiler (__main__.NativeFileTests) ... skipped 'No cs compiler found.'
+# test_d_compiler (__main__.NativeFileTests) ... skipped 'No d compiler found.'
+# test_fortran_compiler (__main__.NativeFileTests) ... skipped 'No fortran compiler found.'
+# test_java_compiler (__main__.NativeFileTests) ... skipped 'No java compiler found.'
+# test_swift_compiler (__main__.NativeFileTests) ... skipped 'No swift compiler found.'
+TEST_DEPENDS=		${RUN_DEPENDS}
+#			devel/git \
+#			devel/mercurial \
+#			devel/sdl2 \
+#			devel/valgrind \
+#			lang/rust \
+#			lang/vala \
+#			shells/bash \
+#			x11/wxWidgets
+
 pre-configure:
 	sed -i "s,share/man,man," ${WRKSRC}/setup.py
 	sed -i "s,/usr/bin,${PREFIX}/bin,g" \
 		${WRKSRC}/data/com.mesonbuild.install.policy
 
 do-test:
-	cd ${WRKSRC} && ./run_tests.py --failfast
+# "test cases/unit/46 native file binary"
+	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+	cd ${WRKSRC} && PATH=${PORTPATH} ./run_tests.py --failfast
 
 .include <bsd.port.mk>
