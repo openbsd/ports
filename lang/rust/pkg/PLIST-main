@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2018/12/16 09:19:57 semarie Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2019/03/11 19:13:40 semarie Exp $
 @conflict cargo-<0.20.0
 @pkgpath devel/cargo
 @bin bin/cargo
@@ -19,9 +19,12 @@ lib/rustlib/etc/debugger_pretty_printers_common.pyc
 @man man/man1/cargo-clean.1
 @man man/man1/cargo-doc.1
 @man man/man1/cargo-fetch.1
+@man man/man1/cargo-fix.1
 @man man/man1/cargo-generate-lockfile.1
+@man man/man1/cargo-help.1
 @man man/man1/cargo-init.1
 @man man/man1/cargo-install.1
+@man man/man1/cargo-locate-project.1
 @man man/man1/cargo-login.1
 @man man/man1/cargo-metadata.1
 @man man/man1/cargo-new.1
@@ -36,6 +39,7 @@ lib/rustlib/etc/debugger_pretty_printers_common.pyc
 @man man/man1/cargo-test.1
 @man man/man1/cargo-uninstall.1
 @man man/man1/cargo-update.1
+@man man/man1/cargo-verify-project.1
 @man man/man1/cargo-version.1
 @man man/man1/cargo-yank.1
 @man man/man1/cargo.1

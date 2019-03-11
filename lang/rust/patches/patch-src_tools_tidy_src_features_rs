@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_tools_tidy_src_features_rs,v 1.1 2019/03/11 19:13:40 semarie Exp $
+src/tools is build using 1.33.0, whereas upstream expects it to be build with 1.32.0.
+and trim_left_matches is deprecated.
+Index: src/tools/tidy/src/features.rs
+--- src/tools/tidy/src/features.rs.orig
++++ src/tools/tidy/src/features.rs
+@@ -188,7 +188,7 @@ pub fn collect_lang_features(base_src_path: &Path, bad
+             }
+ 
+             let mut parts = line.split(',');
+-            let level = match parts.next().map(|l| l.trim().trim_left_matches('(')) {
++            let level = match parts.next().map(|l| l.trim().trim_start_matches('(')) {
+                 Some("active") => Status::Unstable,
+                 Some("removed") => Status::Removed,
+                 Some("accepted") => Status::Stable,

@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_bootstrap_bin_rustc_rs,v 1.7 2019/01/22 04:47:48 semarie Exp $
+$OpenBSD: patch-src_bootstrap_bin_rustc_rs,v 1.8 2019/03/11 19:13:40 semarie Exp $
 try to reduce memory usage on aarch64:
  - reduce memory use by retaining fewer names within compilation artifacts
 Index: src/bootstrap/bin/rustc.rs
 --- src/bootstrap/bin/rustc.rs.orig
 +++ src/bootstrap/bin/rustc.rs
-@@ -189,6 +189,11 @@ fn main() {
+@@ -179,6 +179,11 @@ fn main() {
              cmd.arg("-C").arg(format!("codegen-units={}", s));
          }
  
