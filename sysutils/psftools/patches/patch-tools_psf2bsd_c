@@ -1,10 +1,19 @@
-$OpenBSD: patch-tools_psf2bsd_c,v 1.1 2018/12/02 06:40:32 jsg Exp $
+$OpenBSD: patch-tools_psf2bsd_c,v 1.2 2019/03/11 11:15:39 fcambus Exp $
 
 Adjust for OpenBSD struct wsdisplay_font.
 
 Index: tools/psf2bsd.c
 --- tools/psf2bsd.c.orig
 +++ tools/psf2bsd.c
+@@ -110,7 +110,7 @@ void dumpbyte(FILE *fp, psf_byte value)
+ 
+ 	for (mask = 0x80; mask != 0; mask = mask >> 1)
+ 	{
+-		fprintf(fp, "%c", (value & mask) ? '#' : '-');
++		fprintf(fp, "%c", (value & mask) ? '*' : '.');
+ 	}
+ }
+ 
 @@ -151,8 +151,9 @@ char *cnv_execute(FILE *infile, FILE *outfile)
  
  	stride = (psf.psf_width + 7) / 8;
