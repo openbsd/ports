@@ -1,7 +1,8 @@
-$OpenBSD: patch-upnpredirect_c,v 1.1 2016/09/10 13:03:42 ajacoutot Exp $
---- upnpredirect.c.orig	Sat Sep 10 12:02:08 2016
-+++ upnpredirect.c	Sat Sep 10 12:02:15 2016
-@@ -9,6 +9,7 @@
+$OpenBSD: patch-upnpredirect_c,v 1.2 2019/03/11 04:06:37 bket Exp $
+Index: upnpredirect.c
+--- upnpredirect.c.orig
++++ upnpredirect.c
+@@ -10,6 +10,7 @@
  #include <string.h>
  #include <syslog.h>
  #include <sys/types.h>

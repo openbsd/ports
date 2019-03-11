@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2018/09/04 12:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/03/11 04:06:37 bket Exp $
 
 COMMENT=	UPnP IGD daemon
 
-DISTNAME=	miniupnpd-1.9
-REVISION=	4
+DISTNAME=	miniupnpd-2.1
 
 WANTLIB += c crypto kvm ssl
 
@@ -11,6 +10,9 @@ MAKE_FLAGS=	INSTALLETCDIR=${PREFIX}/share/examples/miniupnpd \
 		INSTALLMANDIR=${PREFIX}/man/man8
 
 FAKE_FLAGS=	PREFIX=${TRUEPREFIX}
+
+CONFIGURE_STYLE=	simple
+CONFIGURE_SCRIPT=	genconfig.sh
 
 post-install:
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man8
