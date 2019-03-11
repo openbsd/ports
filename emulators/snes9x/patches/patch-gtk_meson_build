@@ -1,0 +1,16 @@
+$OpenBSD: patch-gtk_meson_build,v 1.1 2019/03/11 11:18:02 fcambus Exp $
+
+Index: gtk/meson.build
+--- gtk/meson.build.orig
++++ gtk/meson.build
+@@ -50,10 +50,8 @@ deps += gtk_dep
+ 
+ x11_dep = c_compiler.find_library('X11')
+ xext_dep = c_compiler.find_library('Xext')
+-dl_dep = c_compiler.find_library('dl')
+ deps += x11_dep
+ deps += xext_dep
+-deps += dl_dep
+ 
+ xrandr_dep = dependency('xrandr')
+ deps += xrandr_dep
