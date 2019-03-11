@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2019/03/10 22:33:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.60 2019/03/11 21:57:08 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -32,9 +32,9 @@ REVISION-sdk = 3
 REVISION-edu = 5
 REVISION-multimedia = 0
 REVISION-extras = 9
-REVISION-main =		20
+REVISION-main =		21
 REVISION-admin =	0
-REVISION-graphics =	1
+REVISION-graphics =	2
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -92,7 +92,6 @@ KDE4-graphics = \
 	${MODKDE4_DEP_DIR}/graphics-mobipocket	\
 	${MODKDE4_DEP_DIR}/graphics-strigi-analyzer \
 	${MODKDE4_DEP_DIR}/graphics-thumbnailers \
-	${MODKDE4_DEP_DIR}/gwenview		\
 	${MODKDE4_DEP_DIR}/kamera		\
 	${MODKDE4_DEP_DIR}/kcolorchooser	\
 	${MODKDE4_DEP_DIR}/kgamma		\

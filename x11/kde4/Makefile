@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/03/10 22:33:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.67 2019/03/11 21:57:09 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -205,7 +205,7 @@ SUBDIR += picmi
 SUBDIR += graphics-mobipocket
 SUBDIR += graphics-strigi-analyzer
 SUBDIR += graphics-thumbnailers
-SUBDIR += gwenview
+#SUBDIR += gwenview		x11/kde-applications
 SUBDIR += kamera
 SUBDIR += kcolorchooser
 SUBDIR += kgamma

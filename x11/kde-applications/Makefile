@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/03/10 22:33:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.45 2019/03/11 21:57:09 rsadowski Exp $
 
      SUBDIR =
 
@@ -90,7 +90,7 @@
      #SUBDIR += picmi
 
      # graphics
-     #SUBDIR += gwenview
+     SUBDIR += gwenview
      #SUBDIR += kamera
      #SUBDIR += kcolorchooser
      SUBDIR += kdegraphics-mobipocket
