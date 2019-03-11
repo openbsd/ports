@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/12/25 00:32:55 bentley Exp $
+# $OpenBSD: Makefile,v 1.28 2019/03/11 04:11:57 bket Exp $
 
 # XXX fix build with icu >=5.9.1 (remove at next update?)
 CXXFLAGS +=		-DU_USING_ICU_NAMESPACE=1
@@ -7,6 +7,7 @@ COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
 PKGNAME =		0ad-${V}
+REVISION =		0
 
 USE_WXNEEDED =		Yes
 

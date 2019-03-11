@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/10 10:40:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/11 04:11:57 bket Exp $
 
 # Uses x86-only blake2 implementation.
 ONLY_FOR_ARCHS =	amd64 i386
@@ -7,7 +7,7 @@ V =		8.1
 COMMENT =	tactical action game focusing on controlling Clonks
 DISTNAME =	openclonk-${V}-src
 PKGNAME =	openclonk-${V}
-REVISION =	2
+REVISION =	3
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	games x11
 

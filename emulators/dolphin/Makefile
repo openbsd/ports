@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/01/06 21:26:02 thfr Exp $
+# $OpenBSD: Makefile,v 1.5 2019/03/11 04:11:57 bket Exp $
 
 USE_WXNEEDED =		Yes
 ONLY_FOR_ARCHS =	amd64
@@ -10,8 +10,8 @@ V =			5.0.0.20180901
 DISTNAME =		dolphin-emu-${V}
 PKGNAME-main =		dolphin-${V}
 PKGNAME-nogui =		dolphin-nogui-${V}
-REVISION-main =		1
-REVISION-nogui =	1
+REVISION-main =		2
+REVISION-nogui =	2
 
 MULTI_PACKAGES =	-main -nogui
 

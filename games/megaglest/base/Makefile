@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2019/01/02 12:44:06 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2019/03/11 04:11:57 bket Exp $
 
 COMMENT =		3D real-time strategy game
 GH_PROJECT =		megaglest-source
 PKGNAME =		megaglest-${GH_TAGNAME}
-REVISION =		3
+REVISION =		4
 
 WANTLIB += GL GLEW GLU ICE SDL2 SM X11 Xext c crypto curl fontconfig
 WANTLIB += freetype fribidi ftgl glib-2.0 intl ircclient jpeg
