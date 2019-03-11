@@ -1,0 +1,48 @@
+$OpenBSD: patch-build_lua,v 1.1.1.1 2019/03/11 03:48:45 bentley Exp $
+
+Index: build.lua
+--- build.lua.orig
++++ build.lua
+@@ -90,7 +90,6 @@ function build_wordgrinder_binary(exe, luapackage, fro
+ 
+     local cflags = {
+         "$CFLAGS",
+-        "-g",
+         "-DVERSION='\""..VERSION.."\"'",
+         "-DFILEFORMAT="..FILEFORMAT,
+         "-DNOUNCRYPT",
+@@ -107,7 +106,6 @@ function build_wordgrinder_binary(exe, luapackage, fro
+         "$LDFLAGS",
+         "-lz",
+         "-lm",
+-        "-g",
+     }
+     local objs = {}
+ 
+@@ -126,12 +124,6 @@ function build_wordgrinder_binary(exe, luapackage, fro
+         cflags[#cflags+1] = "-DEMULATED_WCWIDTH"
+     end
+ 
+-    if buildstyle == "debug" then
+-        cflags[#cflags+1] = "-O0"
+-    else
+-        cflags[#cflags+1] = "-Os"
+-    end
+-
+     if luapackage == "builtin" then
+         cflags[#cflags+1] = "-Isrc/c/emu/lua-5.1.5"
+         cflags[#cflags+1] = "-DLUA_USE_MKSTEMP"
+@@ -405,9 +397,11 @@ if want_frontend("curses") then
+ end
+ if want_frontend("x11") then
+     emit("X11_CFLAGS = ", package_flags("freetype2", "--cflags"),
+-	" ", package_flags(XFT_PACKAGE, "--cflags"))
++	" ", package_flags(XFT_PACKAGE, "--cflags"), " ",
++	package_flags("x11", "--cflags"))
+     emit("X11_LDFLAGS = ", package_flags("freetype2", "--libs"),
+-	" ",  package_flags(XFT_PACKAGE, "--libs"))
++	" ",  package_flags(XFT_PACKAGE, "--libs"), " ",
++	package_flags("x11", "--libs"))
+ end
+ emit("LUA_INTERPRETER = ", LUA_INTERPRETER)
+ emit("WINDRES = ", WINDRES)
