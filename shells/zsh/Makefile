@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.89 2018/09/17 10:50:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.90 2019/03/11 09:15:54 pea Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
-V=		5.6.2
+V=		5.7.1
 DISTNAME=	zsh-$V
 CATEGORIES=	shells
 
@@ -23,8 +23,7 @@ WANTLIB=	c curses iconv m pcre
 LIB_DEPENDS=	converters/libiconv \
 		devel/pcre
 
-AUTOCONF_VERSION=2.69
-CONFIGURE_STYLE=autoconf
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -39,25 +38,16 @@ CONFIGURE_ARGS=	--enable-zsh-mem \
 
 SUBST_VARS=	V
 
-# required for regression tests
-PORTHOME=	${WRKDIR}
-TEST_FLAGS=	INSTALL_PROGRAM="install -c -s -m 555" \
-		INSTALL_DATA="install -c -m 444" \
-		INSTALL="install -c" \
-		TMPPREFIX=${WRKBUILD}/tmp \
-		TERM=xterm
-
-EXTFILES=	Functions/Misc/checkmail Functions/Misc/run-help \
-		Functions/Misc/run-help-ip Functions/Misc/sticky-note \
-		Functions/Misc/zcalc Functions/Misc/zed Functions/Misc/zkbd \
-		Functions/Calendar/calendar_add Functions/Example/cat \
-		Functions/Example/zless Test/ztst.zsh Test/runtests.zsh \
-		Util/reporter Util/check-tmux-state Doc/zsh.texi
+EXTFILES=	Calendar/calendar_add Example/cat Example/zless \
+		Misc/checkmail Misc/run-help \
+		Misc/run-help-ip \
+		Misc/sticky-note Misc/zcalc \
+		Misc/zed Misc/zkbd
 
 pre-configure:
 .for i in ${EXTFILES}
 	sed -i -e "s,/bin/zsh,${TRUEPREFIX}/bin/zsh,g" \
-		${WRKSRC}/${i}
+		${WRKSRC}/Functions/${i}
 .endfor
 
 .include <bsd.port.mk>
