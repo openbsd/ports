@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.10 2018/12/09 14:06:26 ajacoutot Exp $
+$OpenBSD: README,v 1.11 2019/03/11 12:59:57 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -28,7 +28,7 @@ The HTTP server must be able to resolve hostnames:
 The configuration of an SQLite database path is set relatively to the chroot in
 Nextcloud which will break background jobs run by cron(8) (see below).
 A symlink can be created to workaround this issue:
-    # ln -f ${TINSTDIR) /nextcloud
+    # ln -f ${INSTDIR) /nextcloud
 
 OpenBSD HTTP daemon
 -------------------
@@ -49,26 +49,22 @@ server "domain.tld" {
 	}
 
 	# First deny access to the specified files
-	location "/db_structure.xml"    { block }
-	location "/.ht*"                { block }
-	location "/README"              { block }
-	location "/data*"               { block }
-	location "/config*"             { block }
-	location "/build*"              { block }
-	location "/tests*"              { block }
-	location "/config*"             { block }
-	location "/lib*"                { block }
-	location "/3rdparty*"           { block }
-	location "/templates*"          { block }
-	location "/data*"               { block }
 	location "/.ht*"                { block }
 	location "/.user*"              { block }
+	location "/3rdparty*"           { block }
+	location "/README"              { block }
 	location "/autotest*"           { block }
-	location "/occ*"                { block }
-	location "/issue*"              { block }
-	location "/indie*"              { block }
-	location "/db_*"                { block }
+	location "/build*"              { block }
+	location "/config*"             { block }
 	location "/console*"            { block }
+	location "/data*"               { block }
+	location "/db_*"                { block }
+	location "/indie*"              { block }
+	location "/issue*"              { block }
+	location "/lib*"                { block }
+	location "/occ*"                { block }
+	location "/templates*"          { block }
+	location "/tests*"              { block }
 
 	location "/*.php*" {
 		root "/nextcloud"
