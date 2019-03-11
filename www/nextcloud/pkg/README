@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.11 2019/03/11 12:59:57 gonzalo Exp $
+$OpenBSD: README,v 1.12 2019/03/11 15:43:46 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -28,7 +28,7 @@ The HTTP server must be able to resolve hostnames:
 The configuration of an SQLite database path is set relatively to the chroot in
 Nextcloud which will break background jobs run by cron(8) (see below).
 A symlink can be created to workaround this issue:
-    # ln -f ${INSTDIR) /nextcloud
+    # ln -f ${INSTDIR} /nextcloud
 
 OpenBSD HTTP daemon
 -------------------
@@ -96,8 +96,8 @@ ${SYSCONFDIR}/apache2/httpd2.conf:
 PHP
 ---
 Default PHP values for Apache are set under:
-    ${TINSTDIR}/.htaccess
-    ${TINSTDIR}/config/.htaccess
+    ${INSTDIR}/.htaccess
+    ${INSTDIR}/config/.htaccess
 
 OpenBSD HTTP daemon users can match these .htaccess file values by editing
 ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini or ${SYSCONFDIR}/php-fpm.conf.
@@ -130,7 +130,7 @@ Configuration file
 Configuration is done under:
     ${INSTDIR}/config/config.php
 and the default "datadirectory" is set to:
-    ${TINSTDIR}/data
+    ${INSTDIR}/data
 When running chrooted, ${PREFIX} must be stripped from the paths.
 
 Cron job
