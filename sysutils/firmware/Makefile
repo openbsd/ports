@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/01/07 11:27:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/03/11 05:02:53 jsg Exp $
 
 # XXX
 #
@@ -15,6 +15,7 @@
 
      SUBDIR =
      SUBDIR += acx
+     SUBDIR += amdgpu
      SUBDIR += athn
      SUBDIR += bwfm
      SUBDIR += bwi
