@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.44 2019/01/03 13:36:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.45 2019/03/11 16:34:14 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 include/gvfs-client/
 include/gvfs-client/gvfs/
@@ -53,7 +53,6 @@ share/gvfs/mounts/network.mount
 share/gvfs/mounts/recent.mount
 share/gvfs/mounts/sftp.mount
 share/gvfs/mounts/trash.mount
-share/gvfs/remote-volume-monitors/
 share/locale/af/LC_MESSAGES/gvfs.mo
 share/locale/ar/LC_MESSAGES/gvfs.mo
 share/locale/as/LC_MESSAGES/gvfs.mo

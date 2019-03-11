@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2019/01/12 07:56:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.187 2019/03/11 16:34:14 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -7,19 +7,13 @@ COMMENT-nfs=		GVFS mount module for NFS
 COMMENT-google=		GVFS mount module for Google Drive
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.38.1
+GNOME_VERSION=		1.38.2
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 PKGNAME-google=		${GNOME_PROJECT}-google-${GNOME_VERSION}
-
-REVISION-main=		0
-REVISION-smb=		0
-REVISION-goa=		0
-REVISION-nfs=		0
-REVISION-google=	0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -32,8 +26,9 @@ MODULES=		devel/dconf \
 WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 intl
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += archive avahi-client avahi-common avahi-glib gcr-base-3
-WANTLIB-main += gcrypt secret-1 soup-2.4 util xml2
+WANTLIB-main += archive avahi-client avahi-common avahi-glib gck-1
+WANTLIB-main += gcr-base-3 gcrypt gpg-error p11-kit pthread secret-1
+WANTLIB-main += soup-2.4 util xml2
 
 WANTLIB-smb += ${WANTLIB}
 WANTLIB-smb += smbclient
@@ -45,7 +40,7 @@ WANTLIB-nfs += ${WANTLIB}
 WANTLIB-nfs += nfs
 
 WANTLIB-google += ${WANTLIB}
-WANTLIB-google += gdata goa-1.0
+WANTLIB-google += gdata goa-1.0 json-glib-1.0 soup-2.4 xml2
 
 MODGNOME_TOOLS=		docbook
 
