@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2019/01/29 22:50:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/03/11 23:21:23 sthen Exp $
 
 COMMENT=	IPMI library and tools (in- and out-of-band)
 
 DISTNAME=	freeipmi-1.6.3
+REVISION=	0
 
 SHARED_LIBS +=	freeipmi             6.5      # 19.2
 SHARED_LIBS +=	ipmiconsole          3.1      # 5.5

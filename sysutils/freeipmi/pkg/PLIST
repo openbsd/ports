@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/07/25 08:38:26 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/03/11 23:21:24 sthen Exp $
 include/freeipmi/
 include/freeipmi/api/
 include/freeipmi/api/ipmi-api.h
@@ -431,7 +431,7 @@ share/doc/freeipmi/freeipmi-libraries.txt
 share/doc/freeipmi/freeipmi-oem-documentation-requirements.txt
 share/doc/freeipmi/freeipmi-testing.txt
 share/examples/freeipmi/
-@sample /var/db/freeipmi/
+@sample ${SYSCONFDIR}/freeipmi/
 share/examples/freeipmi/freeipmi.conf
 @sample ${SYSCONFDIR}/freeipmi/freeipmi.conf
 share/examples/freeipmi/freeipmi_interpret_sel.conf
@@ -450,6 +450,6 @@ share/examples/freeipmi/libipmiconsole.conf
 @sample ${SYSCONFDIR}/freeipmi/libipmiconsole.conf
 @sample /var/cache/ipmimonitoringsdrcache/
 @sample /var/cache/ipmiseld/
+@sample /var/db/freeipmi/
 @sample /var/log/freeipmi/
 @sample /var/log/ipmiconsole/
-@sample ${SYSCONFDIR}/freeipmi/
