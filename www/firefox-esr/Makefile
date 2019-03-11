@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2019/02/22 19:36:21 landry Exp $
+# $OpenBSD: Makefile,v 1.91 2019/03/11 19:04:37 semarie Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 i386
@@ -57,7 +57,8 @@ CONFIGURE_ARGS +=	--with-app-name=firefox-esr
 # bug 857628
 CONFIGURE_ARGS +=	--enable-pie
 CONFIGURE_ARGS +=	--enable-release #1386371
-CONFIGURE_ARGS +=	--enable-rust-simd #1261841
+# rust-simd doesn't work with lang/rust>=1.33
+#CONFIGURE_ARGS +=	--enable-rust-simd #1261841
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	--disable-debug-symbols
 MAKE_ENV +=		RUSTFLAGS="-C target-cpu=pentium4 --cfg target_feature=\"sse2\""

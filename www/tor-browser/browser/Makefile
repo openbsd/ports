@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2018/10/08 15:28:05 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2019/03/11 19:04:38 semarie Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -78,7 +78,8 @@ RUN_DEPENDS +=		net/tor>=0.3.4.8
 # bug 857628
 CONFIGURE_ARGS +=	--enable-pie
 CONFIGURE_ARGS +=	--enable-release #1386371
-CONFIGURE_ARGS +=	--enable-rust-simd #1261841
+# rust-simd doesn't work with lang/rust>=1.33
+#CONFIGURE_ARGS +=	--enable-rust-simd #1261841
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	--disable-debug-symbols
 MAKE_ENV +=		RUSTFLAGS="-C target-cpu=pentium4 --cfg target_feature=\"sse2\""

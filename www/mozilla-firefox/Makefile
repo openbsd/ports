@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.371 2019/02/13 12:33:40 landry Exp $
+# $OpenBSD: Makefile,v 1.372 2019/03/11 19:04:37 semarie Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
@@ -60,7 +60,8 @@ CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1"
 
 CONFIGURE_ARGS +=	--enable-release #1386371
-CONFIGURE_ARGS +=	--enable-rust-simd #1261841
+# rust-simd doesn't work with lang/rust>=1.33
+#CONFIGURE_ARGS +=	--enable-rust-simd #1261841
 CONFIGURE_ARGS +=	--enable-webrender=build
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	--disable-debug-symbols
