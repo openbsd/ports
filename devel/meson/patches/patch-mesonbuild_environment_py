@@ -1,6 +1,9 @@
-$OpenBSD: patch-mesonbuild_environment_py,v 1.4 2019/03/11 09:29:23 ajacoutot Exp $
+$OpenBSD: patch-mesonbuild_environment_py,v 1.5 2019/03/11 15:23:58 ajacoutot Exp $
 
-https://github.com/mesonbuild/meson/pull/5052
+From 7bc04996c0d98797be1516643b833f2206e61151 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Mon, 11 Mar 2019 10:26:14 +0100
+Subject: [PATCH] environment: support OpenBSD in detect_objc_compiler
 
 Index: mesonbuild/environment.py
 --- mesonbuild/environment.py.orig

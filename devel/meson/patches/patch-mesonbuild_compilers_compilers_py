@@ -1,6 +1,14 @@
-$OpenBSD: patch-mesonbuild_compilers_compilers_py,v 1.9 2019/03/10 14:50:51 ajacoutot Exp $
+$OpenBSD: patch-mesonbuild_compilers_compilers_py,v 1.10 2019/03/11 15:23:58 ajacoutot Exp $
 
-https://github.com/mesonbuild/meson/pull/5041
+From d952e5ac4d5dee037df80633ceedbad1bfc8eabb Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Sun, 10 Mar 2019 13:37:12 +0100
+Subject: [PATCH] GnuLikeCompiler: don't set b_lundef by default on OpenBSD
+
+From 28b54c1b660dda5e01401b54554dc2df10afcf79 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Sun, 10 Mar 2019 15:49:18 +0100
+Subject: [PATCH] Fix indent to please codestyle.
 
 Index: mesonbuild/compilers/compilers.py
 --- mesonbuild/compilers/compilers.py.orig
