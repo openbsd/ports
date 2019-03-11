@@ -1,0 +1,7 @@
+The libgcroots library abstracts the architecture-dependent part of garbage
+collector roots acquisition such as register windows of SPARC and register
+stack backing store of IA-64. The main code is based on Boehm GC 7.0.
+
+With this library, one can easily write a garbage collector with goals such
+as a small footprint, some application-specific optimizations, learning, or
+to test experimental ideas.
