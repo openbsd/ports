@@ -1,6 +1,9 @@
-$OpenBSD: patch-test_cases_common_137_get_define_meson_build,v 1.1 2019/03/11 11:35:09 ajacoutot Exp $
+$OpenBSD: patch-test_cases_common_137_get_define_meson_build,v 1.2 2019/03/11 16:08:26 ajacoutot Exp $
 
-https://github.com/mesonbuild/meson/pull/5053
+From 85ca6adfb46da24254073d69a2ffeadd879973fa Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Mon, 11 Mar 2019 12:33:40 +0100
+Subject: [PATCH] test: fix "get define" on OpenBSD
 
 Index: test cases/common/137 get define/meson.build
 --- "test cases/common/137 get define/meson.build.orig"

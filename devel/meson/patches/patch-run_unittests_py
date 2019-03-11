@@ -1,4 +1,4 @@
-$OpenBSD: patch-run_unittests_py,v 1.3 2019/03/11 15:23:58 ajacoutot Exp $
+$OpenBSD: patch-run_unittests_py,v 1.4 2019/03/11 16:08:26 ajacoutot Exp $
 
 From c1c699eda4ed4f8778e621e5d635e31264400053 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -10,7 +10,7 @@ XXX set b_sanitize=false by default instead on OpenBSD?
 Index: run_unittests.py
 --- run_unittests.py.orig
 +++ run_unittests.py
-@@ -646,7 +646,7 @@ class InternalTests(unittest.TestCase):
+@@ -734,7 +734,7 @@ class InternalTests(unittest.TestCase):
          unix_static = ('lib{}.a', '{}.a')
          msvc_static = ('lib{}.a', 'lib{}.lib', '{}.a', '{}.lib')
          # This is the priority list of pattern matching for library searching
@@ -19,7 +19,7 @@ Index: run_unittests.py
                                  'static': unix_static},
                      'linux': {'shared': ('lib{}.so', '{}.so'),
                                'static': unix_static},
-@@ -671,15 +671,13 @@ class InternalTests(unittest.TestCase):
+@@ -759,15 +759,13 @@ class InternalTests(unittest.TestCase):
                  self._test_all_naming(cc, env, patterns, 'windows-msvc')
              else:
                  self._test_all_naming(cc, env, patterns, 'windows-mingw')
@@ -39,7 +39,7 @@ Index: run_unittests.py
                  self._test_all_naming(cc, env, patterns, 'openbsd')
              with PatchModule(mesonbuild.compilers.c.for_darwin,
                               'mesonbuild.compilers.c.for_darwin', true):
-@@ -3690,6 +3688,8 @@ class LinuxlikeTests(BasePlatformTests):
+@@ -4237,6 +4235,8 @@ class LinuxlikeTests(BasePlatformTests):
      def test_generate_gir_with_address_sanitizer(self):
          if is_cygwin():
              raise unittest.SkipTest('asan not available on Cygwin')
