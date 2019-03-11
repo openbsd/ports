@@ -1,0 +1,14 @@
+$OpenBSD: patch-Portroach_SQL_pm,v 1.3 2019/03/11 08:15:31 espie Exp $
+
+Index: Portroach/SQL.pm
+--- Portroach/SQL.pm.orig
++++ Portroach/SQL.pm
+@@ -311,7 +311,7 @@ $sql{portdata_fullpkgpaths} =
+ 	FROM portdata);
+ 
+ $sql{sqlports_check_fullpkgpath} =
+-    q(SELECT FULLPKGPATH FROM Ports WHERE FULLPKGPATH like ?);
++    q(SELECT FULLPKGPATH FROM _Paths WHERE FULLPKGPATH like ?);
+ 
+ # Misc.
+ 
