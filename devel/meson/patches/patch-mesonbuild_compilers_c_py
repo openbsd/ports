@@ -1,6 +1,9 @@
-$OpenBSD: patch-mesonbuild_compilers_c_py,v 1.1 2019/03/05 09:32:26 ajacoutot Exp $
+$OpenBSD: patch-mesonbuild_compilers_c_py,v 1.2 2019/03/11 06:54:52 ajacoutot Exp $
 
-https://github.com/mesonbuild/meson/pull/5021
+From 03c0c3a8f41e7d9eaff582dbdf680154671a6263 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Tue, 5 Mar 2019 10:29:53 +0100
+Subject: [PATCH] Fix _get_patterns on OpenBSD
 
 Index: mesonbuild/compilers/c.py
 --- mesonbuild/compilers/c.py.orig
