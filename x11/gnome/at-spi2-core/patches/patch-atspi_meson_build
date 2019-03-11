@@ -1,0 +1,16 @@
+$OpenBSD: patch-atspi_meson_build,v 1.1 2019/03/11 20:29:02 ajacoutot Exp $
+
+Fix for meson >=0.50.0
+
+Index: atspi/meson.build
+--- atspi/meson.build.orig
++++ atspi/meson.build
+@@ -57,7 +57,7 @@ atspi_headers = [
+ 
+ atspi_includedir = join_paths(get_option('prefix'), get_option('includedir'), 'at-spi-2.0', 'atspi')
+ 
+-install_headers(atspi_headers, subdir: atspi_includedir)
++install_headers(atspi_headers, subdir: join_paths('at-spi-2.0', 'atspi'))
+ 
+ atspi_enums = gnome.mkenums('atspi-enum-types',
+                             sources: [ 'atspi-constants.h', 'atspi-types.h' ],
