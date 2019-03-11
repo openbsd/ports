@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1828 2019/02/22 21:41:18 cwen Exp $
+# $OpenBSD: Makefile,v 1.1829 2019/03/11 11:14:28 bentley Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -328,6 +328,7 @@
      SUBDIR += libfmt
      SUBDIR += libftdi
      SUBDIR += libftdi1
+     SUBDIR += libgcroots
      SUBDIR += libgdata
      SUBDIR += libgee
      SUBDIR += libgit2
