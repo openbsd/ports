@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2016/12/17 22:44:53 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.37 2019/03/12 02:26:50 afresh1 Exp $
 
 COMMENT =	perl module to validate function/method parameters
 
-DISTNAME =	Params-Validate-1.26
+DISTNAME =	Params-Validate-1.29
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
