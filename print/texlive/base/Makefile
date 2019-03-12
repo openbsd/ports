@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2019/02/13 18:14:12 edd Exp $
+# $OpenBSD: Makefile,v 1.110 2019/03/12 21:19:29 cwen Exp $
 
 COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
@@ -8,7 +8,7 @@ DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
 
-REVISION-main =		1
+REVISION-main =		2
 
 MULTI_PACKAGES =	-main -mktexlsr -synctex
 PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
