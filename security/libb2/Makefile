@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/05/14 20:03:04 bket Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/12 04:21:56 bket Exp $
 
 COMMENT =	library providing BLAKE2b, BLAKE2s, BLAKE2bp, BLAKE2sp
 
-V =		0.98
+V =		0.98.1
 DISTNAME =	libb2-${V}
 EPOCH =		0
 

@@ -1,15 +1,15 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2018/01/01 15:40:55 bcallah Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2019/03/12 04:21:56 bket Exp $
 
 Do not hardcode optimization flags.
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -58,7 +58,6 @@ AC_HELP_STRING([--enable-native],
+@@ -60,7 +60,6 @@ AC_HELP_STRING([--enable-native],
                 [enable_native=yes]
  )
  
 -AX_CHECK_COMPILE_FLAG([-O3], [CFLAGS=-O3])
  dnl Not all architectures support -march=native
- AX_CHECK_COMPILE_FLAG([-march=native], [], [enable_native=no])
- 
+ if test $enable_native == "yes"; then
+   AX_CHECK_COMPILE_FLAG([-march=native], [], [enable_native=no])

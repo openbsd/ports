@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/01 15:40:55 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/03/12 04:21:56 bket Exp $
 include/blake2.h
 lib/libb2.a
 lib/libb2.la
 @lib lib/libb2.so.${LIBb2_VERSION}
+lib/pkgconfig/libb2.pc
