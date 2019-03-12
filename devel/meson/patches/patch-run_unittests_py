@@ -1,11 +1,11 @@
-$OpenBSD: patch-run_unittests_py,v 1.4 2019/03/11 16:08:26 ajacoutot Exp $
+$OpenBSD: patch-run_unittests_py,v 1.5 2019/03/12 18:05:22 ajacoutot Exp $
 
 From c1c699eda4ed4f8778e621e5d635e31264400053 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@openbsd.org>
 Date: Sun, 10 Mar 2019 14:37:25 +0100
 Subject: [PATCH] Fix unit test: test_find_library_patterns
 
-XXX set b_sanitize=false by default instead on OpenBSD?
+https://github.com/mesonbuild/meson/pull/5067
 
 Index: run_unittests.py
 --- run_unittests.py.orig
