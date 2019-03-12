@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_meson_build,v 1.1 2019/03/12 16:30:35 ajacoutot Exp $
+
+Fix for meson >=0.50.0
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -86,7 +86,7 @@ headers = files(
+ 
+ install_headers(
+   headers,
+-  subdir: join_paths(totem_includedir, totem_api_path)
++  subdir: join_paths('totem', '1.0')
+ )
+ 
+ libtotem_player_sources = files(
