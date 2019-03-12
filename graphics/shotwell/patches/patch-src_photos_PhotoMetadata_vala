@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_photos_PhotoMetadata_vala,v 1.1 2019/03/12 19:07:46 ajacoutot Exp $
+
+From c6443546beaec0aacbef7b6c092b4472a1f48f7b Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Sun, 18 Nov 2018 11:40:29 +0100
+Subject: [PATCH] Adapt to gexiv2 master
+ 
+Index: src/photos/PhotoMetadata.vala
+--- src/photos/PhotoMetadata.vala.orig
++++ src/photos/PhotoMetadata.vala
+@@ -276,8 +276,8 @@ public class PhotoMetadata : MediaMetadata {
+         exiv2 = new GExiv2.Metadata();
+         exif = null;
+         
+-        exiv2.open_buf(buffer, length);
+-        exif = Exif.Data.new_from_data(buffer, length);
++        exiv2.open_buf(buffer[0:length]);
++        exif = Exif.Data.new_from_data(buffer[0:length]);
+         source_name = "<memory buffer %d bytes>".printf(length);
+     }
+     
+@@ -285,8 +285,8 @@ public class PhotoMetadata : MediaMetadata {
+         exiv2 = new GExiv2.Metadata();
+         exif = null;
+         
+-        exiv2.from_app1_segment(buffer.get_data(), (long) buffer.get_size());
+-        exif = Exif.Data.new_from_data(buffer.get_data(), buffer.get_size());
++        exiv2.from_app1_segment(buffer.get_data());
++        exif = Exif.Data.new_from_data(buffer.get_data());
+         source_name = "<app1 segment %zu bytes>".printf(buffer.get_size());
+     }
+     
