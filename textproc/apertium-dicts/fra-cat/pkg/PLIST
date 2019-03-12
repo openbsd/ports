@@ -1,16 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/19 10:22:05 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/03/12 02:28:06 bentley Exp $
 @pkgpath textproc/apertium-dicts/fr-ca
 share/apertium/apertium-fra-cat/
 share/apertium/apertium-fra-cat/apertium-fra-cat.cat-fra.t1x
+share/apertium/apertium-fra-cat/apertium-fra-cat.cat-fra.t4x
 share/apertium/apertium-fra-cat/apertium-fra-cat.fra-cat.t1x
+share/apertium/apertium-fra-cat/apertium-fra-cat.fra-cat.t4x
 share/apertium/apertium-fra-cat/cat-fra.autobil.bin
 share/apertium/apertium-fra-cat/cat-fra.autogen.bin
 share/apertium/apertium-fra-cat/cat-fra.autolex.bin
 share/apertium/apertium-fra-cat/cat-fra.automorf.bin
 share/apertium/apertium-fra-cat/cat-fra.autopgen.bin
+share/apertium/apertium-fra-cat/cat-fra.autosep.bin
 share/apertium/apertium-fra-cat/cat-fra.prob
 share/apertium/apertium-fra-cat/cat-fra.rlx.bin
 share/apertium/apertium-fra-cat/cat-fra.t1x.bin
+share/apertium/apertium-fra-cat/cat-fra.t4x.bin
 share/apertium/apertium-fra-cat/fra-cat.autobil.bin
 share/apertium/apertium-fra-cat/fra-cat.autogen.bin
 share/apertium/apertium-fra-cat/fra-cat.autolex.bin
@@ -20,5 +24,6 @@ share/apertium/apertium-fra-cat/fra-cat.autosep.bin
 share/apertium/apertium-fra-cat/fra-cat.prob
 share/apertium/apertium-fra-cat/fra-cat.rlx.bin
 share/apertium/apertium-fra-cat/fra-cat.t1x.bin
+share/apertium/apertium-fra-cat/fra-cat.t4x.bin
 share/apertium/modes/cat-fra.mode
 share/apertium/modes/fra-cat.mode
