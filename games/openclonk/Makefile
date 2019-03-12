@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/03/11 04:11:57 bket Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/12 14:43:09 bcallah Exp $
 
 # Uses x86-only blake2 implementation.
 ONLY_FOR_ARCHS =	amd64 i386
@@ -52,7 +52,7 @@ CONFIGURE_ARGS +=	-DFREETYPE_INCLUDE_DIRS="${X11BASE}/include/freetype2" \
 			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib"
 
 # Random, intermittent failures with Ninja during fake.
-USE_NINJA =	Samurai
+USE_NINJA =	No
 
 NO_TEST =	Yes
 
