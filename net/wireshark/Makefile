@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2019/03/09 18:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.89 2019/03/12 03:55:25 bentley Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
@@ -6,7 +6,7 @@ COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
 V =		3.0.0
-REVISION =	3
+REVISION =	4
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
@@ -19,7 +19,7 @@ SHARED_LIBS +=	wireshark            4.0
 
 CATEGORIES =	net security x11
 
-HOMEPAGE =	http://www.wireshark.org/
+HOMEPAGE =	https://www.wireshark.org/
 
 EXTRACT_SUFX =	.tar.xz
 
@@ -61,8 +61,8 @@ WANTLIB-main += wireshark wiretap wscodecs wsutil
 # linkages are done with .so symlinks present, so the soname is wrong
 WANTLIB-main += Qt5Core Qt5Gui Qt5Multimedia Qt5Network Qt5PrintSupport Qt5Widgets
 
-MASTER_SITES =		http://www.wireshark.org/download/src/all-versions/ \
-			http://www.wireshark.org/download/automated/src/
+MASTER_SITES =		https://www.wireshark.org/download/src/all-versions/ \
+			https://www.wireshark.org/download/automated/src/
 
 WVER =			${V:C/^(...).*/\1/}
 SUBST_VARS =		WVER
