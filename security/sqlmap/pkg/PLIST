@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/02/13 12:53:45 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/03/12 14:00:27 gonzalo Exp $
 bin/sqlmap
 share/sqlmap/
 share/sqlmap/.github/
@@ -1076,8 +1076,12 @@ share/sqlmap/waf/watchguard.py
 share/sqlmap/waf/watchguard.pyc
 share/sqlmap/waf/webknight.py
 share/sqlmap/waf/webknight.pyc
+share/sqlmap/waf/webseal.py
+share/sqlmap/waf/webseal.pyc
 share/sqlmap/waf/wordfence.py
 share/sqlmap/waf/wordfence.pyc
+share/sqlmap/waf/wts.py
+share/sqlmap/waf/wts.pyc
 share/sqlmap/waf/yundun.py
 share/sqlmap/waf/yundun.pyc
 share/sqlmap/waf/yunsuo.py
