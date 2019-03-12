@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/07/08 20:57:55 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/03/12 13:56:56 gonzalo Exp $
 @group wheel
 bin/lynis
 @man man/man8/lynis.8
@@ -34,6 +34,7 @@ share/lynis/db/languages/he
 share/lynis/db/languages/hu
 share/lynis/db/languages/it
 share/lynis/db/languages/ja
+share/lynis/db/languages/ko
 share/lynis/db/languages/nb-NO
 share/lynis/db/languages/nl
 share/lynis/db/languages/nl-BE
@@ -42,10 +43,12 @@ share/lynis/db/languages/pl
 share/lynis/db/languages/pt
 share/lynis/db/languages/ru
 share/lynis/db/languages/se
+share/lynis/db/languages/sk
 share/lynis/db/languages/tr
 share/lynis/db/malware-susp.db
 share/lynis/db/malware.db
 share/lynis/db/sbl.db
+share/lynis/db/software-eol.db
 share/lynis/db/tests.db
 @mode 0755
 share/lynis/include/

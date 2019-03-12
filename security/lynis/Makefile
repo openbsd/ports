@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2018/11/01 14:22:42 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.33 2019/03/12 13:56:56 gonzalo Exp $
 
 COMMENT=	security auditing tool
 
-DISTNAME =	lynis-2.7.0
+DISTNAME =	lynis-2.7.2
 
 CATEGORIES=	security
 
@@ -13,7 +13,7 @@ MAINTAINER=	Gonzalo L. R. <gonzalo@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	https://downloads.cisofy.com/lynis/	
+MASTER_SITES=	https://downloads.cisofy.com/lynis/
 
 PKG_ARCH=	*
 
