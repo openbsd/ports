@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2017/05/25 00:05:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/03/12 18:54:35 cwen Exp $
 
 COMMENT =	tool to indent and reformat perl scripts
 
-V =	 	20170521
+V =	 	20181120
 DISTNAME =	Perl-Tidy-$V
 PKGNAME =	perltidy-$V
 CATEGORIES =	devel
@@ -11,14 +11,14 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=perltidy/}
 
 HOMEPAGE =	http://perltidy.sourceforge.net/
 
-# GPLv2+
+# GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
 CONFIGURE_STYLE =	perl
 
 PKG_ARCH =	*
 
-DOCS =		tutorial.pod testfile.pl stylekey.pod
+DOCS =		tutorial.html stylekey.html
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/perltidy

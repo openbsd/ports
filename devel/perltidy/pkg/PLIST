@@ -1,14 +1,33 @@
-@comment $OpenBSD: PLIST,v 1.11 2017/05/25 00:05:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/03/12 18:54:35 cwen Exp $
 bin/perltidy
 ${P5SITE}/Perl/
+${P5SITE}/Perl/Tidy/
 ${P5SITE}/Perl/Tidy.pm
 ${P5SITE}/Perl/Tidy.pod
+${P5SITE}/Perl/Tidy/Debugger.pm
+${P5SITE}/Perl/Tidy/DevNull.pm
+${P5SITE}/Perl/Tidy/Diagnostics.pm
+${P5SITE}/Perl/Tidy/FileWriter.pm
+${P5SITE}/Perl/Tidy/Formatter.pm
+${P5SITE}/Perl/Tidy/HtmlWriter.pm
+${P5SITE}/Perl/Tidy/IOScalar.pm
+${P5SITE}/Perl/Tidy/IOScalarArray.pm
+${P5SITE}/Perl/Tidy/IndentationItem.pm
+${P5SITE}/Perl/Tidy/LineBuffer.pm
+${P5SITE}/Perl/Tidy/LineSink.pm
+${P5SITE}/Perl/Tidy/LineSource.pm
+${P5SITE}/Perl/Tidy/Logger.pm
+${P5SITE}/Perl/Tidy/Tokenizer.pm
+${P5SITE}/Perl/Tidy/VerticalAligner/
+${P5SITE}/Perl/Tidy/VerticalAligner.pm
+${P5SITE}/Perl/Tidy/VerticalAligner/Alignment.pm
+${P5SITE}/Perl/Tidy/VerticalAligner/Line.pm
 @man man/man1/perltidy.1
 @man man/man3p/Perl::Tidy.3p
+@man man/man3p/Perl::Tidy::Formatter.3p
 share/doc/perltidy/
-share/doc/perltidy/stylekey.pod
-share/doc/perltidy/testfile.pl
-share/doc/perltidy/tutorial.pod
+share/doc/perltidy/stylekey.html
+share/doc/perltidy/tutorial.html
 share/examples/perltidy/
 share/examples/perltidy/README
 share/examples/perltidy/bbtidy.pl
