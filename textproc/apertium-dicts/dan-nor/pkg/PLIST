@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/01/09 05:42:59 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/03/12 02:57:24 bentley Exp $
 share/apertium/apertium-dan-nor/
 share/apertium/apertium-dan-nor/apertium-dan-nor.dan-nno.t1x
 share/apertium/apertium-dan-nor/apertium-dan-nor.dan-nno.t2x
@@ -13,6 +13,7 @@ share/apertium/apertium-dan-nor/dan-nno.autobil.bin
 share/apertium/apertium-dan-nor/dan-nno.autogen.bin
 share/apertium/apertium-dan-nor/dan-nno.autolex.bin
 share/apertium/apertium-dan-nor/dan-nno.automorf.bin
+share/apertium/apertium-dan-nor/dan-nno.autopgen.bin
 share/apertium/apertium-dan-nor/dan-nno.t1x.bin
 share/apertium/apertium-dan-nor/dan-nno.t2x.bin
 share/apertium/apertium-dan-nor/dan-nno.t3x.bin

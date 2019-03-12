@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/03/12 02:57:24 bentley Exp $
 share/apertium/apertium-dan/
 share/apertium/apertium-dan/apertium-dan.dan.dix
 share/apertium/apertium-dan/apertium-dan.dan.rlx
@@ -10,4 +10,7 @@ share/apertium/apertium-dan/dan.automorf.bin
 share/apertium/apertium-dan/dan.autopgen.bin
 share/apertium/apertium-dan/dan.prob
 share/apertium/apertium-dan/dan.rlx.bin
+share/apertium/modes/dan-disam.mode
+share/apertium/modes/dan-gener.mode
+share/apertium/modes/dan-morph.mode
 share/pkgconfig/apertium-dan.pc
