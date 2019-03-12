@@ -1,55 +1,41 @@
-$OpenBSD: patch-spampd_pl,v 1.1 2018/08/24 19:16:36 sthen Exp $
+$OpenBSD: patch-spampd_pl,v 1.2 2019/03/12 16:08:01 sthen Exp $
 
 Index: spampd.pl
 --- spampd.pl.orig
 +++ spampd.pl
-@@ -798,7 +798,13 @@ sub mylog($$$) {
-     $self->log($level, $msg);
- }
- 
-+# Override Net::Server's HUP handling - just gracefully restart all the children.
-+sub sig_hup {
-+      my $self = shift;
-+      $self->hup_children;
-+}
- 
-+
- ##################   SETUP   ######################
- 
- 
-@@ -816,8 +822,8 @@ my $childtimeout = 6*60; # child process per-command t
- my $satimeout = 285; # SpamAssassin timeout in seconds (15s less than Postfix 
-                      # default for smtp_data_done_timeout)
- my $pidfile = '/var/run/spampd.pid'; # write pid to file
--my $user = 'mail'; # user to run as
--my $group = 'mail'; # group to run as
-+my $user = '_spampd'; # user to run as
-+my $group = '_spampd'; # group to run as
- my $tagall = 0; # mark-up all msgs with SA, not just spam
- my $maxsize = 64; # max. msg size to scan with SA, in KB.
- my $rh = 0; # log which rules were hit
-@@ -1078,9 +1084,9 @@ Options:
+@@ -775,8 +775,8 @@ my $childtimeout    = 6 * 60;                         
+ my $satimeout       = 285;                               # SpamAssassin timeout in seconds (15s less than Postfix
+                                                          #   default for smtp_data_done_timeout)
+ my $pidfile         = '/var/run/spampd.pid';             # write pid to file
+-my $user            = 'mail';                            # user to run as
+-my $group           = 'mail';                            # group to run as
++my $user            = '_spampd';                         # user to run as
++my $group           = '_spampd';                         # group to run as
+ my $tagall          = 0;                                 # mark-up all msgs with SA, not just spam
+ my $maxsize         = 64;                                # max. msg size to scan with SA, in KB.
+ my $rh              = 0;                                 # log which rules were hit
+@@ -998,9 +998,9 @@ Options:
    --pid=filename           Store the daemon's process ID in this file. 
-                                Default is /var/run/spampd.pid
+     or -p filename           Default is /var/run/spampd.pid
    --user=username          Specifies the user that the daemon runs as.
--                               Default is mail.
-+                               Default is _spampd.
+-    or -u username           Default is mail.
++    or -u username           Default is _spampd.
    --group=groupname        Specifies the group that the daemon runs as.
--                               Default is mail.
-+                               Default is _spampd.
-   --nodetach               Don't detach from the console and fork into
-                                background. Useful for some daemon control
-                                tools or when running as a win32 service
-@@ -1414,7 +1420,7 @@ Spevifies what UNIX socket spampd will relay to. If th
- =item B<--group=groupname> or  B<--g=groupname>
+-    or -g groupname          Default is mail.
++    or -g groupname          Default is _spampd.
  
- Specifies the user and group that the proxy will run as. Default is
+   --nodetach               Don't detach from the console and fork into
+                              background. Useful for some daemon control
+@@ -1337,7 +1337,7 @@ Specifies what UNIX socket spampd will relay to. If th
+ =item B<--group=groupname> or  B<-g=groupname>
+ 
+ Specifies the user and/or group that the proxy will run as. Default is
 -I<mail>/I<mail>.
 +I<_spampd>/I<_spampd>.
  
- =item B<--children=n> or B<--c=n>
+ =item B<--children=n> or B<-c=n>
  
-@@ -1553,7 +1559,7 @@ Things like the auto-whitelist and other plugin (razor
+@@ -1482,7 +1482,7 @@ Things like the auto-whitelist and other plugin (razor
  written to here.
  Defaul is /var/spool/spamassassin/spampd.  A good place for this is in the same
  place your bayes_path SA config setting points to (if any).  Make sure this

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2018/08/24 19:16:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/03/12 16:08:01 sthen Exp $
 
 COMMENT=		SMTP/LMTP proxy for Spamassassin
 
 GH_ACCOUNT=		mpaperno
 GH_PROJECT=		spampd
-GH_TAGNAME=		2.51
+GH_TAGNAME=		2.53
 
 CATEGORIES=		mail
 
