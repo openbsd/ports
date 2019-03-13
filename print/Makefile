@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2018/12/26 10:05:37 bentley Exp $
+# $OpenBSD: Makefile,v 1.128 2019/03/13 07:12:28 bentley Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -25,7 +25,6 @@
     SUBDIR += foomatic-db-engine
     SUBDIR += freetype
     SUBDIR += ghostscript
-    SUBDIR += ghostview
     SUBDIR += gl2ps
     SUBDIR += gtklp
     SUBDIR += gutenprint
