@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2019/03/04 12:51:12 chrisz Exp $
+# $OpenBSD: Makefile,v 1.12 2019/03/13 09:34:42 sthen Exp $
+
+BROKEN-i386 =	ld: error: undefined symbol: ml_as_z_pred, etc
 
 COMMENT =		an extensible platform for analysis of C software
 
