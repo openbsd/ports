@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_eventloop_cpp,v 1.1.1.1 2019/03/13 10:52:51 stsp Exp $
+Fix build failure due to non-standard PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP.
+Fix excessive CPU usage due to unhandled POLLOUT events, and fix off-by-one.
+Index: src/eventloop.cpp
+--- src/eventloop.cpp.orig
++++ src/eventloop.cpp
+@@ -85,8 +85,10 @@ DefaultMutex::DefaultMutex(bool recursive)
+ {
+   if (recursive)
+   {
+-    pthread_mutex_t recmutex = PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP;
+-    _mutex = recmutex;
++    pthread_mutexattr_t attr;
++    pthread_mutexattr_init(&attr);
++    pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
++    pthread_mutex_init(&_mutex, &attr);
+   }
+   else
+   {
+@@ -175,13 +177,14 @@ void DefaultMainLoop::dispatch()
+   if (_fdunlock)
+   {
+     fds[nfd].fd = _fdunlock[0];
+-    fds[nfd].events = POLLIN | POLLOUT | POLLPRI ;
++    fds[nfd].events = POLLIN | POLLPRI;
+     fds[nfd].revents = 0;
+ 
+     nfd++;
+     fds[nfd].fd = _fdunlock[1];
+-    fds[nfd].events = POLLIN | POLLOUT | POLLPRI ;
++    fds[nfd].events = POLLIN | POLLPRI;
+     fds[nfd].revents = 0;
++    nfd++;
+   }
+ 
+   _mutex_w.unlock();

@@ -1,0 +1,19 @@
+$OpenBSD: patch-include_dbus-c++_dispatcher_h,v 1.1.1.1 2019/03/13 10:52:51 stsp Exp $
+Fix compilation failure due to mismatching function signatures.
+Index: include/dbus-c++/dispatcher.h
+--- include/dbus-c++/dispatcher.h.orig
++++ include/dbus-c++/dispatcher.h
+@@ -229,13 +229,8 @@ class DXXAPI CondVar (protected)
+ typedef Mutex *(*MutexNewFn)();
+ typedef void (*MutexUnlockFn)(Mutex *mx);
+ 
+-#ifndef DBUS_HAS_RECURSIVE_MUTEX
+-typedef bool (*MutexFreeFn)(Mutex *mx);
+-typedef bool (*MutexLockFn)(Mutex *mx);
+-#else
+ typedef void (*MutexFreeFn)(Mutex *mx);
+ typedef void (*MutexLockFn)(Mutex *mx);
+-#endif//DBUS_HAS_RECURSIVE_MUTEX
+ 
+ typedef CondVar *(*CondVarNewFn)();
+ typedef void (*CondVarFreeFn)(CondVar *cv);
