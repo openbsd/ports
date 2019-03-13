@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.207 2019/02/19 14:54:22 robert Exp $
+# $OpenBSD: Makefile,v 1.208 2019/03/13 06:57:14 ajacoutot Exp $
 
 # XXX add support for libcloudproviders?
 
@@ -14,19 +14,17 @@ COMMENT-cloudprint=	gtk+3 Google Cloud Print backend
 COMMENT-guic=		gtk+ icon theme caching utility
 
 GNOME_PROJECT=		gtk+
-GNOME_VERSION=		3.24.5
+GNOME_VERSION=		3.24.6
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
-REVISION-main=		0
-
 CATEGORIES=		x11 devel
 
-SHARED_LIBS +=  gdk-3                2201.0   # 2404.1
-SHARED_LIBS +=  gtk-3                2201.0   # 2404.1
+SHARED_LIBS +=  gdk-3                2201.1   # 2404.2
+SHARED_LIBS +=  gtk-3                2201.0   # 2404.2
 SHARED_LIBS +=  gailutil-3           0.0      # 0.0
 
 HOMEPAGE=		http://www.gtk.org/
