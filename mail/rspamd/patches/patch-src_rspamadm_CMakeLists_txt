@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_rspamadm_CMakeLists_txt,v 1.9 2018/06/16 13:47:22 sthen Exp $
+$OpenBSD: patch-src_rspamadm_CMakeLists_txt,v 1.10 2019/03/13 14:46:10 sthen Exp $
 Index: src/rspamadm/CMakeLists.txt
 --- src/rspamadm/CMakeLists.txt.orig
 +++ src/rspamadm/CMakeLists.txt
-@@ -28,9 +28,9 @@ TARGET_LINK_LIBRARIES(rspamadm rspamd-server)
- TARGET_LINK_LIBRARIES(rspamadm ${RSPAMD_REQUIRED_LIBRARIES})
- TARGET_LINK_LIBRARIES(rspamadm rspamd-linenoise)
+@@ -26,9 +26,9 @@ ENDIF()
+ ADD_EXECUTABLE(rspamadm ${RSPAMADMSRC})
+ TARGET_LINK_LIBRARIES(rspamadm rspamd-server)
  
 -IF (NOT DEBIAN_BUILD)
 +IF (NOT DEBIAN_BUILD AND NOT OPENBSD_BUILD)
@@ -12,5 +12,5 @@ Index: src/rspamadm/CMakeLists.txt
 -ENDIF (NOT DEBIAN_BUILD)
 +ENDIF (NOT DEBIAN_BUILD AND NOT OPENBSD_BUILD)
  
- IF (ENABLE_FANN MATCHES "ON")
-     TARGET_LINK_LIBRARIES(rspamadm fann)
+ IF(USE_CXX_LINKER)
+     SET_TARGET_PROPERTIES(rspamadm PROPERTIES LINKER_LANGUAGE CXX)
