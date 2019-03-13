@@ -1,4 +1,4 @@
-$OpenBSD: patch-run_unittests_py,v 1.6 2019/03/13 07:00:38 ajacoutot Exp $
+$OpenBSD: patch-run_unittests_py,v 1.7 2019/03/13 13:57:00 ajacoutot Exp $
 
 From c1c699eda4ed4f8778e621e5d635e31264400053 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -9,6 +9,11 @@ From f7af1a628514d4f0ab061db449a30b3079f59834 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@openbsd.org>
 Date: Tue, 12 Mar 2019 19:03:54 +0100
 Subject: [PATCH] compilers: -fsanitize is not supported on OpenBSD
+
+From 5d3e20984dadefb122e9e4fae584b40d936844e8 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Wed, 13 Mar 2019 09:36:05 +0100
+Subject: [PATCH] compilers: -fsanitize is not supported on OpenBSD (second pass)
 
 Index: run_unittests.py
 --- run_unittests.py.orig
@@ -51,3 +56,12 @@ Index: run_unittests.py
  
          testdir = os.path.join(self.framework_test_dir, '7 gnome')
          self.init(testdir, ['-Db_sanitize=address', '-Db_lundef=false'])
+@@ -4702,6 +4702,8 @@ class LinuxlikeTests(BasePlatformTests):
+     def test_pch_with_address_sanitizer(self):
+         if is_cygwin():
+             raise unittest.SkipTest('asan not available on Cygwin')
++        if is_openbsd():
++            raise unittest.SkipTest('-fsanitize=address is not supported on OpenBSD')
+ 
+         testdir = os.path.join(self.common_test_dir, '13 pch')
+         self.init(testdir, ['-Db_sanitize=address'])
