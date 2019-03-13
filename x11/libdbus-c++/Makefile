@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/13 10:52:50 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/13 15:58:44 naddy Exp $
 
 COMMENT =	C++ API for dbus
 DISTNAME =	libdbus-c++-0.9.0
@@ -26,7 +26,7 @@ CONFIGURE_ARGS =	--disable-ecore \
 			--without-build-libdbus-cxx
 COMPILER =		base-clang ports-gcc base-gcc
 USE_GMAKE =		Yes
-SEPERATE_BUILD =	Yes
+SEPARATE_BUILD =	Yes
 
 do-test:
 	${WRKBUILD}/test/functional/Test1/TestApp
