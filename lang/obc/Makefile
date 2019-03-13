@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2016/08/30 11:02:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2019/03/13 09:33:09 sthen Exp $
 
+BROKEN=		broken by ocaml update: Error: This expression has type string but an expression was expected of type bytes
 # "i386 architecture of input file is incompatible with i386:x86-64 output"
 ONLY_FOR_ARCHS= i386
 USE_WXNEEDED =	Yes
