@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/03/13 21:28:23 rsadowski Exp $
 @conflict kde-runtime-<4.13
-@conflict kf5-baloo-*
 @bin bin/akonadi_baloo_indexer
 @bin bin/baloo_file
 @bin bin/baloo_file_cleaner

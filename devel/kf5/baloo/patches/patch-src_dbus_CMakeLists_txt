@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_dbus_CMakeLists_txt,v 1.1 2019/03/13 21:28:22 rsadowski Exp $
+
+This subdirectory only installs org.kde.baloo.file.indexer.xml, which is not
+needed as we don't have plasma-desktop (see
+https://github.com/KDE/baloo/commit/5cb3e97675370aab3d49c7b9b8381c3233177f0f)
+and conflicts with kde4-baloo
+
+Index: src/dbus/CMakeLists.txt
+--- src/dbus/CMakeLists.txt.orig
++++ src/dbus/CMakeLists.txt
+@@ -51,4 +51,4 @@ add_custom_target(
+ 
+ install(FILES ${dbus_interface_xmls} DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR})
+ 
+-add_subdirectory(fake)
++#add_subdirectory(fake)

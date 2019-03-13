@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/10/22 20:30:41 rsadowski Exp $
-@conflict baloo-*
+@comment $OpenBSD: PLIST,v 1.9 2019/03/13 21:28:22 rsadowski Exp $
 include/KF5/Baloo/
 include/KF5/Baloo/Baloo/
 include/KF5/Baloo/Baloo/File
@@ -33,13 +32,11 @@ lib/qt5/qml/org/kde/baloo/experimental/libbaloomonitorplugin.so
 lib/qt5/qml/org/kde/baloo/experimental/qmldir
 lib/qt5/qml/org/kde/baloo/libbalooplugin.so
 lib/qt5/qml/org/kde/baloo/qmldir
-share/dbus-1/interfaces/org.kde.baloo.file.indexer.xml
 share/dbus-1/interfaces/org.kde.baloo.fileindexer.xml
 share/dbus-1/interfaces/org.kde.baloo.main.xml
 share/dbus-1/interfaces/org.kde.baloo.scheduler.xml
 share/examples/kf5-baloo/
 share/examples/kf5-baloo/xdg/
-@sample ${SYSCONFDIR}/xdg/
 share/examples/kf5-baloo/xdg/baloo.categories
 @sample ${SYSCONFDIR}/xdg/baloo.categories
 share/icons/hicolor/128x128/apps/baloo.png
@@ -230,6 +227,9 @@ share/locale/he/LC_MESSAGES/kio5_timeline.mo
 share/locale/hu/LC_MESSAGES/baloo_file5.mo
 share/locale/hu/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/hu/LC_MESSAGES/balooctl5.mo
+share/locale/hu/LC_MESSAGES/baloodb5.mo
+share/locale/hu/LC_MESSAGES/balooengine5.mo
+share/locale/hu/LC_MESSAGES/baloomonitorplugin.mo
 share/locale/hu/LC_MESSAGES/baloosearch5.mo
 share/locale/hu/LC_MESSAGES/balooshow5.mo
 share/locale/hu/LC_MESSAGES/kio5_baloosearch.mo

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2019/03/08 20:00:44 cwen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/03/13 21:28:22 rsadowski Exp $
 
 COMMENT =	KDE file search and metadata handling framework
 DISTNAME =	baloo-${VERSION}
 PKGNAME =	kf5-${DISTNAME}
 EPOCH =		0
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =   KF5Baloo                  2.1
 SHARED_LIBS +=  KF5BalooXapian            2.1
