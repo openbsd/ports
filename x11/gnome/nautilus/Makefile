@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2019/02/21 17:08:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.188 2019/03/13 07:26:43 landry Exp $
 
 COMMENT=		GNOME file manager
 
@@ -17,6 +17,9 @@ WANTLIB += X11 archive atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gexiv2 gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0
 WANTLIB += gobject-2.0 gtk-3 intl m pango-1.0 pangocairo-1.0 pthread
 WANTLIB += tracker-sparql-2.0 xml2
+
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 MODULES=		devel/dconf \
 			devel/meson \
