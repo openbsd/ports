@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2019/03/04 08:19:45 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.41 2019/03/13 08:58:31 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:${VARBASE}/sogo:/bin/sh
 @rcscript ${RCDIR}/sogod
@@ -2186,6 +2186,7 @@ lib/GNUstep/SOGo/WebServerResources/img/sogo-compact.svg
 lib/GNUstep/SOGo/WebServerResources/img/sogo-full.svg
 lib/GNUstep/SOGo/WebServerResources/img/sogo-logo.png
 lib/GNUstep/SOGo/WebServerResources/img/sogo.ico
+lib/GNUstep/SOGo/WebServerResources/img/voice_over_off.svg
 lib/GNUstep/SOGo/WebServerResources/js/
 lib/GNUstep/SOGo/WebServerResources/js/Administration/
 lib/GNUstep/SOGo/WebServerResources/js/Administration.js
@@ -2297,6 +2298,7 @@ lib/GNUstep/SOGo/WebServerResources/js/Scheduler.js
 lib/GNUstep/SOGo/WebServerResources/js/Scheduler.js.map
 lib/GNUstep/SOGo/WebServerResources/js/Scheduler.services.js
 lib/GNUstep/SOGo/WebServerResources/js/Scheduler.services.js.map
+lib/GNUstep/SOGo/WebServerResources/js/Scheduler/Attendees.service.js
 lib/GNUstep/SOGo/WebServerResources/js/Scheduler/Calendar.service.js
 lib/GNUstep/SOGo/WebServerResources/js/Scheduler/CalendarController.js
 lib/GNUstep/SOGo/WebServerResources/js/Scheduler/CalendarListController.js
