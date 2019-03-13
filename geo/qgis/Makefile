@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.100 2019/03/08 20:00:46 cwen Exp $
+# $OpenBSD: Makefile,v 1.101 2019/03/13 19:46:15 landry Exp $
 
 COMMENT =	desktop geographical information system
 
-DISTNAME =	qgis-3.4.5
+DISTNAME =	qgis-3.6.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
-REVISION =	0
 
-SHARED_LIBS =	qgis_core	29.0 \
-		qgis_app	14.1 \
-		qgis_gui	23.0 \
-		qgis_analysis	12.1 \
-		qgis_server	9.0 \
+SHARED_LIBS =	qgis_core	30.0 \
+		qgis_app	15.0 \
+		qgis_gui	24.0 \
+		qgis_analysis	12.2 \
+		qgis_server	9.1 \
 		qgispython	6.0 \
-		qgis_3d		3.1 \
-		qgis_native	0.2
+		qgis_3d		4.0 \
+		qgis_native	0.3
 
 HOMEPAGE =	http://www.qgis.org/
 
@@ -68,13 +67,14 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		geo/geos \
 		geo/spatialite/libspatialite \
 		geo/spatialindex \
+		graphics/exiv2 \
 		devel/gsl \
 		databases/postgresql
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Sql Qt5Svg
 WANTLIB += Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
-WANTLIB += c expat fcgi gdal geos_c gsl gslcblas m pq proj ${MODPY_WANTLIB}
+WANTLIB += c exiv2 expat fcgi gdal geos_c gsl gslcblas m pq proj ${MODPY_WANTLIB}
 WANTLIB += qca-qt5 qscintilla2_qt5 qt5keychain qwt-qt5 spatialindex
 WANTLIB += spatialite sqlite3 util zip
 WANTLIB += Qt53DCore Qt53DExtras Qt53DInput Qt53DLogic

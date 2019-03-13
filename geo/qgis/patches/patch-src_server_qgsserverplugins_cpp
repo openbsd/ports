@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_server_qgsserverplugins_cpp,v 1.1 2018/04/09 12:40:34 landry Exp $
+$OpenBSD: patch-src_server_qgsserverplugins_cpp,v 1.2 2019/03/13 19:46:15 landry Exp $
 
 Index: src/server/qgsserverplugins.cpp
 --- src/server/qgsserverplugins.cpp.orig
 +++ src/server/qgsserverplugins.cpp
-@@ -41,7 +41,7 @@ QStringList &QgsServerPlugins::serverPlugins()
+@@ -39,7 +39,7 @@ QStringList &QgsServerPlugins::serverPlugins()
  bool QgsServerPlugins::initPlugins( QgsServerInterface *interface )
  {
    QString pythonlibName( QStringLiteral( "qgispython" ) );
