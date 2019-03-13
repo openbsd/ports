@@ -1,45 +1,58 @@
-# $OpenBSD: Makefile,v 1.33 2018/10/28 07:31:29 bentley Exp $ 
+# $OpenBSD: Makefile,v 1.34 2019/03/13 20:27:40 sthen Exp $
 
-BROKEN-powerpc=	fails to build
-BROKEN-hppa =	fails to configure
+# let's give it a chance?
+#BROKEN-powerpc=	fails to build
+#BROKEN-hppa =	fails to configure
 
 COMMENT=	library for machine-independent, array-oriented data access
 
-DISTNAME=	netcdf-3.6.2
-REVISION =	7
+V=		4.6.3
+NAME=		netcdf
+DISTNAME=	${NAME}-c-${V}
+PKGNAME=	${NAME}-${V}
+
 CATEGORIES=	math
 
-SHARED_LIBS=	netcdf		4.0 \
-		netcdff		4.0 \
-		netcdf_c++	4.0
+SHARED_LIBS=	netcdf		5.0 # 4.0
 
 HOMEPAGE=	http://www.unidata.ucar.edu/software/netcdf/
 
-MAINTAINER=	Tom Knienieder <tom@knienieder.com>
-MODULES =	fortran
-MODFORTRAN_COMPILER = g77
-BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS}
+MAINTAINER=	Martin Reindl <martin@catai.org>
 
-# BSD-like
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m ${COMPILER_LIBCXX}
+WANTLIB=		c m z pthread
+WANTLIB+=		curl crypto nghttp2 ssl
+WANTLIB+=		hdf5 hdf5_hl
+
+LIB_DEPENDS =		net/curl \
+			math/hdf5
+
+TEST_DEPENDS=		shells/bash \
+			textproc/gdiff
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		ftp://ftp.unidata.ucar.edu/pub/netcdf/
 
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ENV=		CPPFLAGS="-Df2cFortran"
+CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib" \
+			CPPFLAGS="-I${LOCALBASE}/include"
+
 CONFIGURE_ARGS+=	--enable-shared \
-			--disable-f90
+			--disable-doxygen \
+			--enable-netcdf-4 \
+			--enable-dap \
+			--prefix=${PREFIX}
 
 USE_GMAKE=		Yes
 SEPARATE_BUILD=		Yes
 
+# https://github.com/Unidata/netcdf-c/issues/1347#issuecomment-467633543
+# "Actually, I did not intend the .so files in netcdf-c/plugins to be
+# installed. They are intended only for testing and examples"
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/netcdf
-	@cd ${WRKSRC}/man && ${INSTALL_DATA} *.txt *.pdf \
-		${PREFIX}/share/doc/netcdf
+	rm ${PREFIX}/lib/lib{bzip2,misc}.{a,la,so}
 
 .include <bsd.port.mk>

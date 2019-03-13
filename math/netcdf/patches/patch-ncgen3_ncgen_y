@@ -1,0 +1,14 @@
+$OpenBSD: patch-ncgen3_ncgen_y,v 1.1 2019/03/13 20:27:40 sthen Exp $
+
+Index: ncgen3/ncgen.y
+--- ncgen3/ncgen.y.orig
++++ ncgen3/ncgen.y
+@@ -19,8 +19,6 @@ static char SccsId[] = "$Id: ncgen.y,v 1.34 2010/03/31
+ #include        "ncgen.h"
+ #include	"genlib.h"	/* for grow_darray() et al */
+ 
+-extern int fileno(FILE*);
+-
+ typedef struct Symbol {		/* symbol table entry */
+ 	char    	*name;
+ 	struct Symbol   *next;

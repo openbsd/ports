@@ -1,0 +1,11 @@
+$OpenBSD: patch-ncdap_test_tst_remote3_sh,v 1.1 2019/03/13 20:27:40 sthen Exp $
+
+Index: ncdap_test/tst_remote3.sh
+--- ncdap_test/tst_remote3.sh.orig
++++ ncdap_test/tst_remote3.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ 
+ if test "x$SETX" = x1 ; then set -x ; fi
+ 

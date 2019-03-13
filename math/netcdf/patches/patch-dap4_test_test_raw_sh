@@ -1,0 +1,27 @@
+$OpenBSD: patch-dap4_test_test_raw_sh,v 1.1 2019/03/13 20:27:40 sthen Exp $
+
+Index: dap4_test/test_raw.sh
+--- dap4_test/test_raw.sh.orig
++++ dap4_test/test_raw.sh
+@@ -51,8 +51,8 @@ for f in $F ; do
+         failure "${URL}"
+     fi
+     if test "x${TEST}" = x1 ; then
+-	if ! diff -wBb ${BASELINERAW}/${f}.dmp ${builddir}/results_test_raw/${f}.dmp ; then
+-	    failure "diff ${f}.dmp"
++	if ! gdiff -wBb ${BASELINERAW}/${f}.dmp ${builddir}/results_test_raw/${f}.dmp ; then
++	    failure "gdiff ${f}.dmp"
+ 	fi
+     elif test "x${RESET}" = x1 ; then
+ 	echo "${f}:"
+@@ -60,8 +60,8 @@ for f in $F ; do
+     elif test "x${DIFF}" = x1 ; then
+ 	echo "hdrtest: ${f}"
+ 	baseclean
+-        if ! diff -wBb ${BASELINERAW}/${f}.dmp ${BASELINE}/${f}.ncdump ; then
+-          failure diff -wBb ${BASELINERAW}/${f}.dmp ${BASELINE}/${f}.ncdump
++        if ! gdiff -wBb ${BASELINERAW}/${f}.dmp ${BASELINE}/${f}.ncdump ; then
++          failure gdiff -wBb ${BASELINERAW}/${f}.dmp ${BASELINE}/${f}.ncdump
+ 	fi
+     fi
+ done

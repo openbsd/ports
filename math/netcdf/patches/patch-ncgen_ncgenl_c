@@ -1,0 +1,14 @@
+$OpenBSD: patch-ncgen_ncgenl_c,v 1.1 2019/03/13 20:27:40 sthen Exp $
+
+Index: ncgen/ncgenl.c
+--- ncgen/ncgenl.c.orig
++++ ncgen/ncgenl.c
+@@ -1420,8 +1420,6 @@ char *yytext;
+ #include "ncgen.h"
+ #include "ncgeny.h"
+ 
+-EXTERNL int fileno(FILE*);
+-
+ #define FILL_STRING "_"
+ #define XDR_INT32_MIN (-2147483647-1)
+ #define XDR_INT32_MAX 2147483647

@@ -1,0 +1,16 @@
+$OpenBSD: patch-dap4_test_test_remote_sh,v 1.1 2019/03/13 20:27:40 sthen Exp $
+
+Index: dap4_test/test_remote.sh
+--- dap4_test/test_remote.sh.orig
++++ dap4_test/test_remote.sh
+@@ -77,8 +77,8 @@ for f in $F ; do
+         failure "${URL}"
+     fi
+     if test "x${TEST}" = x1 ; then
+-	if ! diff -wBb "${BASELINEREM}/${f}.dmp" "${builddir}/results_test_remote/${f}.dmp" ; then
+-	    failure "diff ${f}.dmp"
++	if ! gdiff -wBb "${BASELINEREM}/${f}.dmp" "${builddir}/results_test_remote/${f}.dmp" ; then
++	    failure "gdiff ${f}.dmp"
+ 	fi
+     elif test "x${RESET}" = x1 ; then
+ 	echo "${f}:" 

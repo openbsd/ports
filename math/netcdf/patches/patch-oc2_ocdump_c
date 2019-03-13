@@ -1,0 +1,14 @@
+$OpenBSD: patch-oc2_ocdump_c,v 1.1 2019/03/13 20:27:40 sthen Exp $
+
+Index: oc2/ocdump.c
+--- oc2/ocdump.c.orig
++++ oc2/ocdump.c
+@@ -10,8 +10,6 @@
+ #include <sys/stat.h>
+ #endif
+ 
+-extern int fileno(FILE*);
+-
+ #include "ocinternal.h"
+ #include "ocdebug.h"
+ 

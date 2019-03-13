@@ -1,36 +1,27 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/03/16 18:07:50 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/03/13 20:27:40 sthen Exp $
+bin/nc-config
+@bin bin/nccopy
 @bin bin/ncdump
 @bin bin/ncgen
-include/ncvalues.h
+@bin bin/ncgen3
 include/netcdf.h
-include/netcdf.hh
-include/netcdf.inc
-include/netcdfcpp.h
+include/netcdf_aux.h
+include/netcdf_filter.h
+include/netcdf_mem.h
+include/netcdf_meta.h
+@comment lib/libbzip2.a
+@comment lib/libbzip2.la
+@comment lib/libbzip2.so
+@comment lib/libmisc.a
+@comment lib/libmisc.la
+@comment lib/libmisc.so
 lib/libnetcdf.a
 lib/libnetcdf.la
+lib/libnetcdf.settings
 @lib lib/libnetcdf.so.${LIBnetcdf_VERSION}
-lib/libnetcdf_c++.a
-lib/libnetcdf_c++.la
-@lib lib/libnetcdf_c++.so.${LIBnetcdf_c++_VERSION}
-lib/libnetcdff.a
-lib/libnetcdff.la
-@lib lib/libnetcdff.so.${LIBnetcdff_VERSION}
+lib/pkgconfig/netcdf.pc
+@man man/man1/nccopy.1
 @man man/man1/ncdump.1
 @man man/man1/ncgen.1
+@man man/man1/ncgen3.1
 @man man/man3/netcdf.3
-@man man/man3/netcdf_f77.3
-share/doc/netcdf/
-share/doc/netcdf/netcdf-c.pdf
-share/doc/netcdf/netcdf-c.txt
-share/doc/netcdf/netcdf-cxx.pdf
-share/doc/netcdf/netcdf-cxx.txt
-share/doc/netcdf/netcdf-f77.pdf
-share/doc/netcdf/netcdf-f77.txt
-share/doc/netcdf/netcdf-f90.pdf
-share/doc/netcdf/netcdf-f90.txt
-share/doc/netcdf/netcdf-install.pdf
-share/doc/netcdf/netcdf-install.txt
-share/doc/netcdf/netcdf-tutorial.pdf
-share/doc/netcdf/netcdf-tutorial.txt
-share/doc/netcdf/netcdf.pdf
-share/doc/netcdf/netcdf.txt

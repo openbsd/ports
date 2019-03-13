@@ -1,0 +1,32 @@
+$OpenBSD: patch-dap4_test_test_meta_sh,v 1.1 2019/03/13 20:27:40 sthen Exp $
+
+Index: dap4_test/test_meta.sh
+--- dap4_test/test_meta.sh.orig
++++ dap4_test/test_meta.sh
+@@ -34,8 +34,8 @@ for f in ${F} ; do
+     fi
+     ${NCDUMP} ${DUMPFLAGS} -h ./results_test_meta/${f} > ./results_test_meta/${f}.d4m
+     if test "x${TEST}" = x1 ; then
+-	if ! diff -wBb ${BASELINE}/${f}.d4m ./results_test_meta/${f}.d4m ; then
+-	    failure "diff -wBb ${BASELINE}/${f}.ncdump ./results_test_meta/${f}.d4m"
++	if ! gdiff -wBb ${BASELINE}/${f}.d4m ./results_test_meta/${f}.d4m ; then
++	    failure "gdiff -wBb ${BASELINE}/${f}.ncdump ./results_test_meta/${f}.d4m"
+ 	fi
+     elif test "x${RESET}" = x1 ; then
+ 	echo "${f}:" 
+@@ -45,12 +45,12 @@ done
+ 
+ if test "x${CDLDIFF}" = x1 ; then
+   for f in $CDL ; do
+-    echo "diff -wBb ${CDLTESTFILES}/${f}.cdl ./results_test_meta/${f}.d4m"
++    echo "gdiff -wBb ${CDLTESTFILES}/${f}.cdl ./results_test_meta/${f}.d4m"
+     rm -f ./tmp
+     cat ${CDLTESTFILES}/${f}.cdl \
+     cat >./tmp
+-    echo diff -wBbu ./tmp ./results_test_meta/${f}.d4m
+-    if ! diff -wBbu ./tmp ./results_test_meta/${f}.d4m ; then
++    echo gdiff -wBbu ./tmp ./results_test_meta/${f}.d4m
++    if ! gdiff -wBbu ./tmp ./results_test_meta/${f}.d4m ; then
+ 	failure "${f}" 
+     fi
+   done

@@ -1,0 +1,14 @@
+$OpenBSD: patch-ncgen3_ncgenyy_c,v 1.1 2019/03/13 20:27:40 sthen Exp $
+
+Index: ncgen3/ncgenyy.c
+--- ncgen3/ncgenyy.c.orig
++++ ncgen3/ncgenyy.c
+@@ -865,8 +865,6 @@ char *ncgtext;
+    We include lexical definitions for all three, but use the second version.
+ */
+ 
+-extern int fileno(FILE*);
+-
+ /* lex specification for tokens for ncgen */
+ 
+ /* Fill value used by ncdump from version 2.4 and later.  Should match
