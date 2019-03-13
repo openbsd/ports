@@ -1,11 +1,14 @@
-$OpenBSD: patch-run_unittests_py,v 1.5 2019/03/12 18:05:22 ajacoutot Exp $
+$OpenBSD: patch-run_unittests_py,v 1.6 2019/03/13 07:00:38 ajacoutot Exp $
 
 From c1c699eda4ed4f8778e621e5d635e31264400053 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@openbsd.org>
 Date: Sun, 10 Mar 2019 14:37:25 +0100
 Subject: [PATCH] Fix unit test: test_find_library_patterns
 
-https://github.com/mesonbuild/meson/pull/5067
+From f7af1a628514d4f0ab061db449a30b3079f59834 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Tue, 12 Mar 2019 19:03:54 +0100
+Subject: [PATCH] compilers: -fsanitize is not supported on OpenBSD
 
 Index: run_unittests.py
 --- run_unittests.py.orig
