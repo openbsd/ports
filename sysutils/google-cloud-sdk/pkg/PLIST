@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.102 2019/03/07 07:19:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.103 2019/03/14 06:20:53 ajacoutot Exp $
 bin/bq
 bin/gcloud
 bin/git-credential-gcloud.sh
@@ -531,6 +531,11 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/dns/transaction_util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/dns/transaction_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/dns/util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/dns/util.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/edge/
+google-cloud-sdk/lib/googlecloudsdk/api_lib/edge/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/edge/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/edge/util.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/edge/util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/endpoints/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/endpoints/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/endpoints/__init__.pyc
@@ -1811,12 +1816,21 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/edge/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/edge/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/edge/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/edge/containers/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/edge/containers/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/edge/containers/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/edge/containers/flags.yaml
+google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/edge/flags.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/edge/flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/edge/flags.yaml
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/edge/resources.yaml
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/edge/topic_bridge/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/edge/topic_bridge/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/edge/topic_bridge/__init__.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/edge/topic_bridge/util.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/edge/topic_bridge/util.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/edge/util.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/edge/util.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/flags.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/iot/resource_args.py
@@ -6782,6 +6796,8 @@ google-cloud-sdk/lib/surface/iam/service_accounts/delete.py
 google-cloud-sdk/lib/surface/iam/service_accounts/delete.pyc
 google-cloud-sdk/lib/surface/iam/service_accounts/describe.py
 google-cloud-sdk/lib/surface/iam/service_accounts/describe.pyc
+google-cloud-sdk/lib/surface/iam/service_accounts/disable.yaml
+google-cloud-sdk/lib/surface/iam/service_accounts/enable.yaml
 google-cloud-sdk/lib/surface/iam/service_accounts/get_iam_policy.py
 google-cloud-sdk/lib/surface/iam/service_accounts/get_iam_policy.pyc
 google-cloud-sdk/lib/surface/iam/service_accounts/identity_bindings/
@@ -6908,9 +6924,11 @@ google-cloud-sdk/lib/surface/iot/edge/__init__.pyc
 google-cloud-sdk/lib/surface/iot/edge/containers/
 google-cloud-sdk/lib/surface/iot/edge/containers/__init__.py
 google-cloud-sdk/lib/surface/iot/edge/containers/__init__.pyc
+google-cloud-sdk/lib/surface/iot/edge/containers/create.yaml
 google-cloud-sdk/lib/surface/iot/edge/containers/delete.yaml
 google-cloud-sdk/lib/surface/iot/edge/containers/describe.yaml
 google-cloud-sdk/lib/surface/iot/edge/containers/list.yaml
+google-cloud-sdk/lib/surface/iot/edge/containers/update.yaml
 google-cloud-sdk/lib/surface/iot/edge/devices/
 google-cloud-sdk/lib/surface/iot/edge/devices/__init__.py
 google-cloud-sdk/lib/surface/iot/edge/devices/__init__.pyc
@@ -7094,6 +7112,8 @@ google-cloud-sdk/lib/surface/logging/buckets/describe.py
 google-cloud-sdk/lib/surface/logging/buckets/describe.pyc
 google-cloud-sdk/lib/surface/logging/buckets/list.py
 google-cloud-sdk/lib/surface/logging/buckets/list.pyc
+google-cloud-sdk/lib/surface/logging/buckets/update.py
+google-cloud-sdk/lib/surface/logging/buckets/update.pyc
 google-cloud-sdk/lib/surface/logging/logs/
 google-cloud-sdk/lib/surface/logging/logs/__init__.py
 google-cloud-sdk/lib/surface/logging/logs/__init__.pyc
@@ -7531,6 +7551,7 @@ google-cloud-sdk/lib/surface/redis/instances/__init__.pyc
 google-cloud-sdk/lib/surface/redis/instances/create.yaml
 google-cloud-sdk/lib/surface/redis/instances/delete.yaml
 google-cloud-sdk/lib/surface/redis/instances/describe.yaml
+google-cloud-sdk/lib/surface/redis/instances/failover.yaml
 google-cloud-sdk/lib/surface/redis/instances/list.yaml
 google-cloud-sdk/lib/surface/redis/instances/update.yaml
 google-cloud-sdk/lib/surface/redis/operations/
