@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.123 2019/02/07 14:41:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2019/03/14 10:13:31 ajacoutot Exp $
+
+BROKEN=		Abort trap on startup (pango related?)
 
 # XXX error: 'nullptr' was not declared in this scope
 CXXFLAGS +=	-std=c++11
