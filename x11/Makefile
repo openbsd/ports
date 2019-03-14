@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.632 2019/03/13 10:55:25 stsp Exp $
+# $OpenBSD: Makefile,v 1.633 2019/03/14 14:49:18 stsp Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -289,6 +289,7 @@
      SUBDIR += tango-icon-theme
      SUBDIR += tango-icon-theme-extras
      SUBDIR += terminator
+     SUBDIR += textsuggest
      SUBDIR += thewidgetfactory
      SUBDIR += tilda
      SUBDIR += tint2
