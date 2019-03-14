@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2019/02/28 18:46:49 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2019/03/14 01:33:14 sthen Exp $
 @option is-branch
 @conflict freeradius-*
 @conflict radiusd-cistron-*
@@ -344,15 +344,21 @@ share/examples/freeradius/
 @mode
 share/examples/freeradius/README.rst
 share/examples/freeradius/certs/
-@mode 750
+@mode 700
+@owner _freeradius
+@group wheel
 @sample ${FREERADIUS_ETC}/certs/
+@owner
+@group _freeradius
 @mode
 share/examples/freeradius/certs/Makefile
 @sample ${FREERADIUS_ETC}/certs/Makefile
 share/examples/freeradius/certs/README
 @sample ${FREERADIUS_ETC}/certs/README
 share/examples/freeradius/certs/bootstrap
+@mode 555
 @sample ${FREERADIUS_ETC}/certs/bootstrap
+@mode
 share/examples/freeradius/certs/ca.cnf
 @sample ${FREERADIUS_ETC}/certs/ca.cnf
 share/examples/freeradius/certs/client.cnf
@@ -931,12 +937,10 @@ share/freeradius/dictionary.yubico
 share/freeradius/dictionary.zeus
 share/freeradius/dictionary.zte
 share/freeradius/dictionary.zyxel
+@mode 555
+share/freeradius/freeradius-enable.sh
+@mode
 @owner _freeradius
 @sample /var/log/radius/
 @sample /var/log/radius/radacct/
-@exec-add [[ -e ${FREERADIUS_ETC}/hints ]] || ln -s mods-config/preprocess/hints ${FREERADIUS_ETC}/hints
-@exec-add [[ -e ${FREERADIUS_ETC}/huntgroups ]] || ln -s mods-config/preprocess/huntgroups ${FREERADIUS_ETC}/huntgroups
-@exec-add [[ -e ${FREERADIUS_ETC}/users ]] || ln -s mods-config/files/authorize ${FREERADIUS_ETC}/users
-@comment .... copy in the default symlinks at installation time
-@exec-add [[ -d ${FREERADIUS_ETC}/mods-enabled ]] || cp -R %D/share/examples/freeradius/mods-enabled ${FREERADIUS_ETC}/
-@exec-add [[ -d ${FREERADIUS_ETC}/sites-enabled ]] || cp -R %D/share/examples/freeradius/sites-enabled ${FREERADIUS_ETC}/
+@exec-add %D/share/freeradius/freeradius-enable.sh firstrun

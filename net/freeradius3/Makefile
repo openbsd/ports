@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/02/28 18:46:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/03/14 01:33:14 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -12,6 +12,7 @@ COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python=	freeradius python rlm addon
 
 V=		3.0.18
+REVISION-main=	0
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -184,5 +185,7 @@ post-install:
 	rm ${PREFIX}/lib/freeradius/*.*a
 	rm -r ${PREFIX}/share/examples/freeradius/mods-config/sql/*/oracle
 	chmod -R u+rwX,og+rX ${PREFIX}/share/examples/freeradius/
+	${SUBST_CMD} -c -m 555 ${FILESDIR}/freeradius-enable.sh \
+	    ${PREFIX}/share/freeradius/freeradius-enable.sh
 
 .include <bsd.port.mk>
