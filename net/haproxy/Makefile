@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2019/01/14 18:18:59 jca Exp $
+# $OpenBSD: Makefile,v 1.56 2019/03/14 21:37:20 cwen Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
@@ -37,6 +37,12 @@ EXAMPLES =	acl-content-sw content-sw-sample option-http_proxy
 
 DOCSDIR =	${PREFIX}/share/doc/haproxy
 EXAMPLESDIR =	${PREFIX}/share/examples/haproxy
+
+# Fix undefined reference to __atomic_*
+.if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "hppa"
+LDFLAGS +=		"-latomic"
+WANTLIB +=		atomic
+.endif
 
 
 pre-install:
