@@ -1,0 +1,19 @@
+$OpenBSD: patch-textsuggest_processors_command_cpp,v 1.1.1.1 2019/03/14 14:47:07 stsp Exp $
+Adjust to match our changes in subprocess.hpp.
+Index: textsuggest/processors/command.cpp
+--- textsuggest/processors/command.cpp.orig
++++ textsuggest/processors/command.cpp
+@@ -31,10 +31,10 @@ int main(int argc, char ** argv) {
+ 			shell = env_shell;
+ 		}
+ 		sp::popen proc (shell, {"-c", "--", text});
+-		std::cout << proc.stdout().rdbuf();
++		std::cout << &proc.get_stdout();
+ 
+ 	}
+ 	
+ 	return 0;
+ 
+-}
+\ No newline at end of file
++}

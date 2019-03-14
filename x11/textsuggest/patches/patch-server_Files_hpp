@@ -1,0 +1,30 @@
+$OpenBSD: patch-server_Files_hpp,v 1.1.1.1 2019/03/14 14:47:07 stsp Exp $
+Adjust hard-coded paths.
+Index: server/Files.hpp
+--- server/Files.hpp.orig
++++ server/Files.hpp
+@@ -42,7 +42,7 @@ class Files { (public)
+ 		mkdir_p(config_dir);
+ 		mkdir_p(path_join({config_dir, "processors"}));
+ 
+-		dictionaries_dir = "/usr/share/textsuggest/dictionaries";
++		dictionaries_dir = "${PREFIX}/share/textsuggest/dictionaries";
+ 
+ 		runtime_dir = get_env_var("XDG_RUNTIME_DIR");
+ 		if (runtime_dir == "") {
+@@ -59,7 +59,7 @@ class Files { (public)
+ 		ignore_list_file = path_join({config_dir, "ignore.json"});
+ 
+ 		processor_dirs.push_back(path_join({config_dir, "processors"}));
+-		processor_dirs.push_back("/usr/share/textsuggest/processors");
++		processor_dirs.push_back("${PREFIX}/libexec/textsuggest/processors");
+ 
+ 		for (std::string dict_file : Files::list_dir(dictionaries_dir)) {
+ 			std::pair<std::string, std::string> entry;
+@@ -195,4 +195,4 @@ class Files { (public)
+ 
+ };
+ 
+-#endif // FILES_H
+\ No newline at end of file
++#endif // FILES_H

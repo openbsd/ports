@@ -1,0 +1,3 @@
+TextSuggest is a program that shows completions for the word selected
+or currently being typed. It is generally bound to a keyboard shortcut.
+TextSuggest is compatible with any X11 application.

@@ -1,0 +1,37 @@
+$OpenBSD: patch-server_TextSuggestServer_cpp,v 1.1.1.1 2019/03/14 14:47:07 stsp Exp $
+Adjust to match our changes in subprocess.hpp.
+Index: server/TextSuggestServer.cpp
+--- server/TextSuggestServer.cpp.orig
++++ server/TextSuggestServer.cpp
+@@ -347,10 +347,10 @@ class TextSuggestServer (public)
+ 
+ 		sp::popen proc ("xdotool", {"getwindowfocus"});
+ 		proc.wait();
+-		std::string stdout (std::istreambuf_iterator<char>(proc.stdout()), {});
+-		stdout.erase(stdout.find_last_not_of(" \n\r\t")+1);
++		std::string output (std::istreambuf_iterator<char>(proc.get_stdout()), {});
++		output.erase(output.find_last_not_of(" \n\r\t")+1);
+ 
+-		return stdout;
++		return output;
+ 
+ 	};
+ 
+@@ -425,8 +425,8 @@ class TextSuggestServer (public)
+ 
+ 		sp::popen proc ("setxkbmap", {"-print"});
+ 		proc.wait();
+-		std::string stdout (std::istreambuf_iterator<char>(proc.stdout()), {});
+-		std::stringstream stdout_stream (stdout);
++		std::string output (std::istreambuf_iterator<char>(proc.get_stdout()), {});
++		std::stringstream stdout_stream (output);
+ 
+ 		std::string line;
+ 		std::vector<std::string> line_split;
+@@ -456,4 +456,4 @@ class TextSuggestServer (public)
+ 
+ private:
+ 	
+-};
+\ No newline at end of file
++};

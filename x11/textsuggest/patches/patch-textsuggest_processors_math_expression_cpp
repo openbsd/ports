@@ -1,0 +1,18 @@
+$OpenBSD: patch-textsuggest_processors_math_expression_cpp,v 1.1.1.1 2019/03/14 14:47:07 stsp Exp $
+Adjust to match our changes in subprocess.hpp.
+Index: textsuggest/processors/math_expression.cpp
+--- textsuggest/processors/math_expression.cpp.orig
++++ textsuggest/processors/math_expression.cpp
+@@ -24,9 +24,9 @@ int main(int argc, char ** argv) {
+ 		std::string python_cmd = "from math import *;print(";
+ 		python_cmd += text + ")";
+ 		sp::popen proc ("python3", {"-c", python_cmd});
+-		std::cout << proc.stdout().rdbuf();
++		std::cout << &proc.get_stdout();
+ 	}
+ 	
+ 	return 0;
+ 
+-}
+\ No newline at end of file
++}

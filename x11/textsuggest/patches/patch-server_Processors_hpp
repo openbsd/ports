@@ -1,0 +1,21 @@
+$OpenBSD: patch-server_Processors_hpp,v 1.1.1.1 2019/03/14 14:47:07 stsp Exp $
+Adjust to match our changes in subprocess.hpp.
+Index: server/Processors.hpp
+--- server/Processors.hpp.orig
++++ server/Processors.hpp
+@@ -59,7 +59,7 @@ bool matches(std::string processor_file, std::string t
+ std::string process(std::string processor_file, std::string text) {
+ 
+ 	sp::popen proc (processor_file, {"process", text});
+-	std::string result (std::istreambuf_iterator<char>(proc.stdout()), {});
++	std::string result (std::istreambuf_iterator<char>(proc.get_stdout()), {});
+ 
+ 	if (result.substr(result.length()-1, result.length()) == "\n") {
+ 		result.pop_back();
+@@ -70,4 +70,4 @@ std::string process(std::string processor_file, std::s
+ 
+ }
+ 
+-#endif // PROCESSORS_H
+\ No newline at end of file
++#endif // PROCESSORS_H

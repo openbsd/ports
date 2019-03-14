@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/14 14:47:07 stsp Exp $
+@bin bin/textsuggest
+@bin bin/textsuggest-server
+libexec/textsuggest/
+@bin libexec/textsuggest/command
+@bin libexec/textsuggest/math_expression
+share/textsuggest/
+share/textsuggest/dictionaries/
+share/textsuggest/dictionaries/English.txt

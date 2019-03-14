@@ -1,0 +1,23 @@
+$OpenBSD: patch-ui_TextSuggest-C++_pro,v 1.1.1.1 2019/03/14 14:47:07 stsp Exp $
+Fix hard-coded paths and cxxflags for qmake.
+Index: ui/TextSuggest-C++.pro
+--- ui/TextSuggest-C++.pro.orig
++++ ui/TextSuggest-C++.pro
+@@ -5,7 +5,7 @@
+ TEMPLATE = app
+ TARGET = textsuggest
+ INCLUDEPATH += .
+-INCLUDEPATH += /usr/include/dbus-c++-1
++INCLUDEPATH += ${LOCALBASE}/include/dbus-c++-1
+ LIBS += -ldbus-c++-1
+ 
+ QT += core
+@@ -13,7 +13,7 @@ QT += widgets
+ 
+ #CONFIG += debug
+ 
+-QMAKE_CXXFLAGS += -Ofast -ggdb3 -fstack-protector-all -fno-omit-frame-pointer -std=c++14
++QMAKE_CXXFLAGS += -std=c++11
+ 
+ # The following define makes your compiler warn you if you use any
+ # feature of Qt which has been marked as deprecated (the exact warnings
