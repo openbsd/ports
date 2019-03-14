@@ -1,0 +1,19 @@
+$OpenBSD: patch-mdal_CMakeLists_txt,v 1.1.1.1 2019/03/14 18:33:08 landry Exp $
+
+version the .so
+
+Index: mdal/CMakeLists.txt
+--- mdal/CMakeLists.txt.orig
++++ mdal/CMakeLists.txt
+@@ -89,6 +89,11 @@ TARGET_INCLUDE_DIRECTORIES(mdal
+   $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
+ )
+ 
++set_target_properties(mdal PROPERTIES
++  VERSION ${LIBmdal_VERSION}
++  SOVERSION ${LIBmdal_VERSION}
++)
++
+ IF(HDF5_FOUND)
+   TARGET_INCLUDE_DIRECTORIES(mdal PRIVATE ${HDF5_INCLUDE_DIRS})
+   TARGET_LINK_LIBRARIES(mdal PUBLIC ${HDF5_C_LIBRARIES} )
