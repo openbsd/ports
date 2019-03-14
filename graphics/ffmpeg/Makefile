@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2019/02/25 22:41:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.179 2019/03/14 06:27:55 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
@@ -7,6 +7,7 @@ DISTNAME=	ffmpeg-${V}
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 EPOCH=		0
 
 SHARED_LIBS=	avcodec		23.0 \
@@ -27,7 +28,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	SDL2 X11 Xext Xv ass bz2 c crypto dav1d fontconfig freetype \
+WANTLIB=	SDL2 X11 Xext Xv ass bz2 c crypto dav1d>=2.0 fontconfig freetype \
 		fribidi gsm m mp3lame opus pthread sndio speex ssl v4l2 \
 		vorbis vorbisenc vpx x264 x265 xcb xcb-shape xcb-shm \
 		xcb-xfixes xvidcore z
@@ -44,7 +45,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		audio/speex \
 		audio/gsm \
 		devel/sdl2 \
-		multimedia/dav1d \
+		multimedia/dav1d>=0.2.1 \
 		multimedia/libass \
 		multimedia/libv4l \
 		multimedia/libvpx \
