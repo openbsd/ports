@@ -1,0 +1,14 @@
+$OpenBSD: patch-man_icewm-preferences_pod,v 1.1 2019/03/14 13:48:23 bcallah Exp $
+
+Index: man/icewm-preferences.pod
+--- man/icewm-preferences.pod.orig
++++ man/icewm-preferences.pod
+@@ -898,7 +898,7 @@ B<WM_CLASS> to allow B<runonce> for B<CPUStatusCommand
+ 
+ Combine all CPUs to one.
+ 
+-=item B<NetStatusCommand>="xterm -name netstat -title 'Network Status' -e netstat -c"
++=item B<NetStatusCommand>="xterm -name netstat -title 'Network Status' -e netstat -w 1"
+ 
+ Command to run on Net status.
+ 

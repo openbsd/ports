@@ -1,35 +1,41 @@
-# $OpenBSD: Makefile,v 1.64 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2019/03/14 13:48:23 bcallah Exp $
 
+V=		1.5.2
 COMMENT=	small and fast window manager
-
-DISTNAME=	icewm-1.3.8
-REVISION=	6
+DISTNAME=	icewm-${V}
+EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	x11
 
-HOMEPAGE=	http://www.icewm.org/
+HOMEPAGE=	https://www.ice-wm.org/
+MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
-# LGPLv2
+# LGPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xext Xft Xinerama Xrandr Xrender c fontconfig
-WANTLIB += freetype gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 iconv intl m pthread ${COMPILER_LIBCXX}
-WANTLIB += z
+WANTLIB += ${COMPILER_LIBCXX} FLAC ICE SM X11 Xext Xft Xinerama
+WANTLIB += Xrandr Xrender ao c expat ffi fontconfig freetype fribidi
+WANTLIB += gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 iconv intl m ogg pcre sndfile
+WANTLIB += vorbis vorbisenc xcb z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=icewm/}
+MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${V}/
 
-BUILD_DEPENDS=	devel/gettext-tools
-LIB_DEPENDS=	graphics/gdk-pixbuf2
+BUILD_DEPENDS=	devel/gettext-tools \
+		textproc/asciidoc
+
+LIB_DEPENDS=	audio/libao \
+		audio/libsndfile \
+		devel/fribidi \
+		graphics/gdk-pixbuf2
+
+RUN_DEPENDS=	devel/desktop-file-utils
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-docdir=${PREFIX}/share/doc \
-		--with-libdir=${PREFIX}/share/icewm \
+CONFIGURE_ARGS=	--with-libdir=${PREFIX}/share/icewm \
 		--with-cfgdir=${SYSCONFDIR}/icewm \
-		--with-kdedatadir=${LOCALBASE}/share \
 		--with-x \
-		--enable-shaped-decorations \
 		--enable-corefonts \
 		--enable-i18n
 
@@ -39,18 +45,16 @@ CONFIGURE_ARGS=	--with-docdir=${PREFIX}/share/doc \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.arch.mk>
+# make: don't know how to make %.html: (prerequisite of: icewm.html)
+USE_GMAKE=	Yes
 
-# XXX rendering bug on big-endian systems
-.if ${PROPERTIES:Mle}
-CONFIGURE_ARGS+= --enable-gradients
-.endif
+.include <bsd.port.arch.mk>
 
 .if ${PROPERTIES:Mapm}
 PATCH_LIST=	patch-* apm-*
 .endif
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/doc/icewm-7.html
+	${SUBST_CMD} ${WRKSRC}/doc/icewm.adoc
 
 .include <bsd.port.mk>

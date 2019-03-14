@@ -1,21 +1,22 @@
-$OpenBSD: patch-src_default_h,v 1.14 2014/04/11 15:25:24 giovanni Exp $
---- src/default.h.orig	Sun Nov 17 17:54:39 2013
-+++ src/default.h	Sat Apr  5 23:20:25 2014
-@@ -38,7 +38,7 @@ XIV(bool, showTaskBar,                          true)
+$OpenBSD: patch-src_default_h,v 1.15 2019/03/14 13:48:23 bcallah Exp $
+Index: src/default.h
+--- src/default.h.orig
++++ src/default.h
+@@ -37,7 +37,7 @@ XIV(bool, showTaskBar,                          true)
  XIV(bool, taskBarAtTop,                         false)
  XIV(bool, taskBarKeepBelow,                     false)
  XIV(bool, taskBarShowClock,                     true)
 -XIV(bool, taskBarShowApm,                       false)
 +XIV(bool, taskBarShowApm,                       true)
- XIV(bool, taskBarShowApmTime,                   true) // mschy
- XIV(bool, taskBarShowApmGraph,                  true) // hatred
- XIV(bool, taskBarShowMailboxStatus,             true)
-@@ -162,10 +162,10 @@ XSV(const char *, acpiIgnoreBatteries,          0)
- #endif
+ XIV(bool, taskBarShowApmAuto,                   true)
+ XIV(bool, taskBarShowApmTime,                   true)
+ XIV(bool, taskBarShowApmGraph,                  true)
+@@ -171,10 +171,10 @@ XIV(int, netWorkAreaBehaviour,                  0)
  
+ XSV(const char *, acpiIgnoreBatteries,          0)
  XSV(const char *, mailBoxPath,                  0)
--XSV(const char *, mailCommand,                  "xterm -name pine -title PINE -e pine")
--XSV(const char *, mailClassHint,                "pine.XTerm")
+-XSV(const char *, mailCommand,                  "xterm -name mutt -e mutt")
+-XSV(const char *, mailClassHint,                "mutt.XTerm")
 +XSV(const char *, mailCommand,                  "xterm -name mail -title MAIL -e mail")
 +XSV(const char *, mailClassHint,                "mail.XTerm")
  XSV(const char *, newMailCommand,               0)
@@ -24,3 +25,12 @@ $OpenBSD: patch-src_default_h,v 1.14 2014/04/11 15:25:24 giovanni Exp $
  XSV(const char *, clockCommand,                 "xclock -name icewm -title Clock")
  XSV(const char *, clockClassHint,               "icewm.XClock")
  XSV(const char *, runDlgCommand,                0)
+@@ -204,7 +204,7 @@ XIV(bool, cpuCombine,                           true)
+ XSV(const char *, netCommand,                   "xterm -name 'ss' -title 'Socket Statistics' -hold -e sh -c 'which ss > /dev/null && watch -t ss -putswl || netstat -c'")
+ XSV(const char *, netClassHint,                 "ss.XTerm")
+ #else
+-XSV(const char *, netCommand,                   "xterm -name netstat -title 'Network Status' -hold -e netstat -c")
++XSV(const char *, netCommand,                   "xterm -name netstat -title 'Network Status' -hold -e netstat -w 1")
+ XSV(const char *, netClassHint,                 "netstat.XTerm")
+ #endif
+ 

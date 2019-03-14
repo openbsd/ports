@@ -1,7 +1,9 @@
-$OpenBSD: apm-patch-src_aapm_cc,v 1.4 2014/01/04 09:05:24 ajacoutot Exp $
---- src/aapm.cc.orig	Sun Nov 17 17:54:39 2013
-+++ src/aapm.cc	Sat Jan  4 09:34:02 2014
-@@ -38,7 +38,7 @@
+$OpenBSD: apm-patch-src_aapm_cc,v 1.5 2019/03/14 13:48:23 bcallah Exp $
+
+Index: src/aapm.cc
+--- src/aapm.cc.orig
++++ src/aapm.cc
+@@ -32,12 +32,11 @@
  #include <dev/acpica/acpiio.h>
  #endif
  
@@ -10,7 +12,13 @@ $OpenBSD: apm-patch-src_aapm_cc,v 1.4 2014/01/04 09:05:24 ajacoutot Exp $
  #include <sys/file.h>
  #include <sys/ioctl.h>
  #include <sys/types.h>
-@@ -73,7 +73,7 @@ static YColor *taskBarBg = 0;
+-#include <dev/apm/apmbios.h>
+-#include <dev/apm/apmio.h>
++#include <machine/apmvar.h>
+ #endif
+ 
+ #include <math.h>
+@@ -62,7 +61,7 @@ extern YColorName taskBarBg;
  void YApm::ApmStr(char *s, bool Tool) {
  #if (defined(__FreeBSD__) || defined(__FreeBSD_kernel__)) && defined(i386)
      struct apm_info ai;
@@ -18,11 +26,11 @@ $OpenBSD: apm-patch-src_aapm_cc,v 1.4 2014/01/04 09:05:24 ajacoutot Exp $
 +#elif defined __NetBSD__ || defined __OpenBSD__
      struct apm_power_info ai;
  #else
-     char buf[80];
-@@ -114,7 +114,7 @@ void YApm::ApmStr(char *s, bool Tool) {
+     char buf[APM_LINE_LEN];
+@@ -103,7 +102,7 @@ void YApm::ApmStr(char *s, bool Tool) {
      BATlife = ai.ai_batt_life;
      BATtime = ai.ai_batt_time == 0 ? -1 : ai.ai_batt_time;
-     strcpy(units, "sec");
+     strlcpy(units, "sec", sizeof units);
 -#elif defined __NetBSD__
 +#elif defined __NetBSD__ || defined __OpenBSD__
      memset(&ai, 0, sizeof(ai));
