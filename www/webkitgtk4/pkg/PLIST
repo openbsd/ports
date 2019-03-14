@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/09/04 07:12:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/03/14 09:48:29 ajacoutot Exp $
 @bin bin/WebKitWebDriver
 include/webkitgtk-${API}/
 include/webkitgtk-${API}/JavaScriptCore/
@@ -16,6 +16,7 @@ include/webkitgtk-${API}/jsc/JSCClass.h
 include/webkitgtk-${API}/jsc/JSCContext.h
 include/webkitgtk-${API}/jsc/JSCDefines.h
 include/webkitgtk-${API}/jsc/JSCException.h
+include/webkitgtk-${API}/jsc/JSCOptions.h
 include/webkitgtk-${API}/jsc/JSCValue.h
 include/webkitgtk-${API}/jsc/JSCVersion.h
 include/webkitgtk-${API}/jsc/JSCVirtualMachine.h
@@ -36,6 +37,7 @@ include/webkitgtk-${API}/webkit2/WebKitContextMenuItem.h
 include/webkitgtk-${API}/webkit2/WebKitCookieManager.h
 include/webkitgtk-${API}/webkit2/WebKitCredential.h
 include/webkitgtk-${API}/webkit2/WebKitDefines.h
+include/webkitgtk-${API}/webkit2/WebKitDeviceInfoPermissionRequest.h
 include/webkitgtk-${API}/webkit2/WebKitDownload.h
 include/webkitgtk-${API}/webkit2/WebKitEditingCommands.h
 include/webkitgtk-${API}/webkit2/WebKitEditorState.h
@@ -73,7 +75,9 @@ include/webkitgtk-${API}/webkit2/WebKitSettings.h
 include/webkitgtk-${API}/webkit2/WebKitURIRequest.h
 include/webkitgtk-${API}/webkit2/WebKitURIResponse.h
 include/webkitgtk-${API}/webkit2/WebKitURISchemeRequest.h
+include/webkitgtk-${API}/webkit2/WebKitURIUtilities.h
 include/webkitgtk-${API}/webkit2/WebKitUserContent.h
+include/webkitgtk-${API}/webkit2/WebKitUserContentFilterStore.h
 include/webkitgtk-${API}/webkit2/WebKitUserContentManager.h
 include/webkitgtk-${API}/webkit2/WebKitUserMediaPermissionRequest.h
 include/webkitgtk-${API}/webkit2/WebKitVersion.h
@@ -222,7 +226,6 @@ lib/webkit2gtk-${API}/injected-bundle/libwebkit2gtkinjectedbundle.so
 libexec/webkit2gtk-${API}/
 @bin libexec/webkit2gtk-${API}/WebKitNetworkProcess
 @bin libexec/webkit2gtk-${API}/WebKitPluginProcess
-@bin libexec/webkit2gtk-${API}/WebKitStorageProcess
 @bin libexec/webkit2gtk-${API}/WebKitWebProcess
 @bin libexec/webkit2gtk-${API}/jsc
 share/gir-1.0/JavaScriptCore-${API}.gir

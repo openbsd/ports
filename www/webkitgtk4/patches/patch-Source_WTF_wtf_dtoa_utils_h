@@ -1,14 +1,14 @@
-$OpenBSD: patch-Source_WTF_wtf_dtoa_utils_h,v 1.4 2018/03/19 08:13:15 ajacoutot Exp $
+$OpenBSD: patch-Source_WTF_wtf_dtoa_utils_h,v 1.5 2019/03/14 09:48:28 ajacoutot Exp $
 
 Index: Source/WTF/wtf/dtoa/utils.h
 --- Source/WTF/wtf/dtoa/utils.h.orig
 +++ Source/WTF/wtf/dtoa/utils.h
-@@ -49,7 +49,7 @@
- defined(__ARMEL__) || \
- defined(_MIPS_ARCH_MIPS32R2)
- #define DOUBLE_CONVERSION_CORRECT_DOUBLE_OPERATIONS 1
--#elif CPU(MIPS) || CPU(MIPS64) || CPU(PPC) || CPU(PPC64) || CPU(PPC64LE) || CPU(ARM64)
-+#elif CPU(MIPS) || CPU(MIPS64) || CPU(PPC) || CPU(PPC64) || CPU(PPC64LE) || CPU(ARM64) || CPU(SPARC64)
- #define DOUBLE_CONVERSION_CORRECT_DOUBLE_OPERATIONS 1
- #elif defined(_M_IX86) || defined(__i386__)
- #if defined(_WIN32)
+@@ -86,7 +86,7 @@ int main(int argc, char** argv) {
+     defined(__powerpc__) || defined(__ppc__) || defined(__ppc64__) || \
+     defined(_POWER) || defined(_ARCH_PPC) || defined(_ARCH_PPC64) || \
+     defined(__sparc__) || defined(__sparc) || defined(__s390__) || \
+-    defined(__SH4__) || defined(__alpha__) || \
++    defined(__SH4__) || defined(__alpha__) || defined(__sparc64__) || \
+     defined(_MIPS_ARCH_MIPS32R2) || \
+     defined(__AARCH64EL__) || defined(__aarch64__) || defined(__AARCH64EB__) || \
+     defined(__riscv) || \

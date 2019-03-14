@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2019/03/05 16:24:23 jca Exp $
+# $OpenBSD: Makefile,v 1.98 2019/03/14 09:48:28 ajacoutot Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -12,8 +12,7 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.22.7
-REVISION =		0
+V =			2.24.0
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 EXTRACT_SUFX =		.tar.xz
@@ -21,8 +20,8 @@ API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=  javascriptcoregtk-${API}     2.5 # 18.6
-SHARED_LIBS +=  webkit2gtk-${API}            2.5 # 37.24
+SHARED_LIBS +=  javascriptcoregtk-${API}     3.0 # 18.13.3
+SHARED_LIBS +=  webkit2gtk-${API}            3.0 # 37.37.2
 
 CATEGORIES =		www
 
@@ -40,8 +39,8 @@ WANTLIB += gmodule-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gtk-3 harfbuzz harfbuzz-icu hyphen icudata
 WANTLIB += icui18n icuuc intl jpeg m notify pango-1.0 pangocairo-1.0
-WANTLIB += png16 secret-1 soup-2.4 sqlite3 tasn1 webp webpdemux
-WANTLIB += woff2dec xml2 xslt z
+WANTLIB += openjp2 png16 secret-1 soup-2.4 sqlite3 tasn1 webp
+WANTLIB += webpdemux woff2dec xml2 xslt z
 
 MASTER_SITES =		https://webkitgtk.org/releases/
 
@@ -75,6 +74,7 @@ LIB_DEPENDS =		archivers/woff2 \
 			devel/libnotify \
 			devel/libsoup \
 			graphics/libwebp \
+			graphics/openjp2 \
 			multimedia/gstreamer1/plugins-base \
 			textproc/enchant2 \
 			textproc/hyphen \

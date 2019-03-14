@@ -1,26 +1,24 @@
-$OpenBSD: patch-Source_WTF_wtf_RAMSize_cpp,v 1.3 2019/03/05 16:20:30 jca Exp $
+$OpenBSD: patch-Source_WTF_wtf_RAMSize_cpp,v 1.4 2019/03/14 09:48:28 ajacoutot Exp $
 
 Index: Source/WTF/wtf/RAMSize.cpp
 --- Source/WTF/wtf/RAMSize.cpp.orig
 +++ Source/WTF/wtf/RAMSize.cpp
-@@ -32,8 +32,10 @@
+@@ -32,7 +32,9 @@
  #if OS(WINDOWS)
  #include <windows.h>
  #elif defined(USE_SYSTEM_MALLOC) && USE_SYSTEM_MALLOC
--#if OS(UNIX)
--#include <sys/sysinfo.h>
+-#if OS(LINUX)
 +#if OS(OPENBSD)
 +#include <sys/sysctl.h>
-+#elif OS(UNIX)
-+#include <sysinfo.h>
- #endif // OS(UNIX)
++#elif OS(LINUX)
+ #include <sys/sysinfo.h>
+ #endif // OS(LINUX)
  #else
- #include <bmalloc/bmalloc.h>
 @@ -55,7 +57,14 @@ static size_t computeRAMSize()
          return ramSizeGuess;
      return status.ullTotalPhys;
  #elif defined(USE_SYSTEM_MALLOC) && USE_SYSTEM_MALLOC
--#if OS(UNIX)
+-#if OS(LINUX)
 +#if OS(OPENBSD)
 +    int mib[] = { CTL_HW, HW_USERMEM64 };
 +    int64_t mem;
@@ -28,7 +26,7 @@ Index: Source/WTF/wtf/RAMSize.cpp
 +    if (sysctl(mib, 2, &mem, &len, NULL, 0) == -1)
 +        return 512 * MB; // guess
 +    return mem;
-+#elif OS(UNIX)
++#elif OS(LINUX)
      struct sysinfo si;
      sysinfo(&si);
      return si.totalram * si.mem_unit;

@@ -1,11 +1,11 @@
-$OpenBSD: patch-Source_JavaScriptCore_assembler_ARM64Assembler_h,v 1.3 2018/09/04 07:12:47 ajacoutot Exp $
+$OpenBSD: patch-Source_JavaScriptCore_assembler_ARM64Assembler_h,v 1.4 2019/03/14 09:48:28 ajacoutot Exp $
 
 Index: Source/JavaScriptCore/assembler/ARM64Assembler.h
 --- Source/JavaScriptCore/assembler/ARM64Assembler.h.orig
 +++ Source/JavaScriptCore/assembler/ARM64Assembler.h
-@@ -2863,6 +2863,8 @@ class ARM64Assembler { (public)
+@@ -2874,6 +2874,8 @@ class ARM64Assembler { (public)
      {
- #if OS(IOS)
+ #if OS(IOS_FAMILY)
          sys_cache_control(kCacheFunctionPrepareForExecution, code, size);
 +#elif OS(FREEBSD) || OS(NETBSD) || OS(OPENBSD)
 +        __clear_cache(code, reinterpret_cast<char*>(code) + size);

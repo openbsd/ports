@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_cmake_WebKitCompilerFlags_cmake,v 1.3 2018/09/04 07:12:47 ajacoutot Exp $
+$OpenBSD: patch-Source_cmake_WebKitCompilerFlags_cmake,v 1.4 2019/03/14 09:48:28 ajacoutot Exp $
 
 Index: Source/cmake/WebKitCompilerFlags.cmake
 --- Source/cmake/WebKitCompilerFlags.cmake.orig
 +++ Source/cmake/WebKitCompilerFlags.cmake
-@@ -182,9 +182,9 @@ if (NOT MSVC)
+@@ -187,9 +187,9 @@ if (NOT MSVC)
      string(REGEX MATCHALL "-fsanitize=[^ ]*" ENABLED_COMPILER_SANITIZERS ${CMAKE_CXX_FLAGS})
  endif ()
  
