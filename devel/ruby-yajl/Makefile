@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/03/14 07:38:48 sebastia Exp $
 
 COMMENT=	Ruby bindings for the Yajl JSON library
 
-DISTNAME=	yajl-ruby-1.3.0
-REVISION =	0
+DISTNAME=	yajl-ruby-1.4.1
 
 CATEGORIES=	devel
 

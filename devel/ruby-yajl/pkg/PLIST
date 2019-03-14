@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/11/06 21:25:18 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/03/14 07:38:48 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.codeclimate.yml
@@ -149,6 +149,9 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/parsing/fixtures/pass3.json
 ${GEM_LIB}/gems/${DISTNAME}/spec/parsing/fixtures_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/parsing/large_number_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/parsing/one_off_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/projection/
+${GEM_LIB}/gems/${DISTNAME}/spec/projection/project_file.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/projection/projection.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rcov.opts
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/tasks/
