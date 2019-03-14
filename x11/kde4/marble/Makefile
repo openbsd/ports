@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2018/07/01 18:33:38 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2019/03/14 15:58:44 cwen Exp $
 
 COMMENT =	world maps
 DISTNAME =	marble-${MODKDE4_VERSION}
-REVISION =	6
+REVISION =	7
 
 SHARED_LIBS =	marblewidget		52.0 # 0.12
 SHARED_LIBS +=	astro			 1.0 # 0.17
@@ -68,3 +68,10 @@ post-install:
 	done
 
 .include <bsd.port.mk>
+
+# fix error: #error Must have C++11 or newer.
+# XXX this should be retried once moving to ports-gcc>=8
+.if ${CHOSEN_COMPILER} == "ports-gcc"
+CONFIGURE_ENV +=     CXXFLAGS="${CXXFLAGS} -std=c++11"
+.endif
+
