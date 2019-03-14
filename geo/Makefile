@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/02/24 20:52:25 landry Exp $
+# $OpenBSD: Makefile,v 1.67 2019/03/14 18:33:36 landry Exp $
 
      SUBDIR =
      SUBDIR += foxtrotgps
@@ -23,6 +23,7 @@
      SUBDIR += mapcache
      SUBDIR += mapproxy
      SUBDIR += mapserver
+     SUBDIR += mdal
      SUBDIR += merkaartor
      SUBDIR += openbsd-developers
      SUBDIR += osm-gps-map
