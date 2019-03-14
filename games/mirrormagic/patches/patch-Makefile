@@ -1,36 +1,34 @@
-$OpenBSD: patch-Makefile,v 1.2 2010/05/23 01:05:38 espie Exp $
---- Makefile.orig	Tue Mar 19 02:59:43 2002
-+++ Makefile	Sat May 22 16:33:12 2010
-@@ -8,19 +8,19 @@
- #-----------------------------------------------------------------------------#
+$OpenBSD: patch-Makefile,v 1.3 2019/03/14 13:58:56 bcallah Exp $
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -15,25 +15,25 @@
  
- # specify your favorite ANSI C compiler
+ # command name of your favorite ANSI C compiler
+ # (this must be set to "cc" for some systems)
 -CC = gcc
 +#CC = gcc
  
- # specify path to X11 on your system
- # if undefined, use system defaults (works with Linux/gcc/libc5)
--X11_PATH = /usr/X11
-+X11_PATH = ${X11BASE}
- 
- # specify directory for read-only game data (like graphics, sounds, levels)
- # default is '.', so you can play without installing game data somewhere
--# RO_GAME_DIR = /usr/games
-+RO_GAME_DIR = ${PREFIX}/share/mirrormagic
- 
- # specify directory for writable game data (like highscore files)
- # default is '.', so you can play without installing game data somewhere
--# RW_GAME_DIR = /var/games
-+RW_GAME_DIR = /var/games/mirrormagic
- 
- # uncomment this if your system has no joystick include file
- # JOYSTICK = -DNO_JOYSTICK
-@@ -42,7 +42,7 @@ CROSS_PATH_WIN32=/usr/local/cross-tools/i386-mingw32ms
- 
- .EXPORT_ALL_VARIABLES:
- 
+ # command name of GNU make on your system
+ # (this must be set to "gmake" for some systems)
 -MAKE = make
 +#MAKE = make
  
- SRC_DIR = src
- MAKE_CMD = $(MAKE) -C $(SRC_DIR)
+ # directory for read-only game data (like graphics, sounds, levels)
+ # (this directory is usually the game's installation directory)
+ # default is '.' to be able to run program without installation
+ # RO_GAME_DIR = .
+ # use the following setting for Debian / Ubuntu installations:
+-# RO_GAME_DIR = /usr/share/games/rocksndiamonds
++RO_GAME_DIR = ${PREFIX}/share/mirrormagic
+ 
+ # directory for writable game data (like highscore files)
+ # (if no "scores" directory exists, scores are saved in user data directory)
+ # default is '.' to be able to run program without installation
+ # RW_GAME_DIR = .
+ # use the following setting for Debian / Ubuntu installations:
+-# RW_GAME_DIR = /var/games/rocksndiamonds
++RW_GAME_DIR = /var/games/mirrormagic
+ 
+ # uncomment if system has no joystick include file
+ # JOYSTICK = -DNO_JOYSTICK

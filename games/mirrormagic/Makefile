@@ -1,31 +1,40 @@
-# $OpenBSD: Makefile,v 1.10 2017/10/23 17:10:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/03/14 13:58:56 bcallah Exp $
 
 COMMENT=	game like Deflektor (C64) / Mindbender (Amiga)
-DISTNAME=	mirrormagic-2.0.2
-REVISION =	3
+DISTNAME=	mirrormagic-3.0.0
 CATEGORIES=	games x11
-MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/mirrormagic/
 
-HOMEPAGE=	http://www.artsoft.org/mirrormagic/
+HOMEPAGE=	https://www.artsoft.org/mirrormagic/
 
-# GPL
+# GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		SDL X11 Xext c m pthread usbhid xcb \
-			SDL_mixer SDL_image
 
-LIB_DEPENDS=	devel/sdl-mixer \
-		devel/sdl-image
+WANTLIB += SDL2 SDL2_image SDL2_mixer SDL2_net c m
+
+MASTER_SITES=	https://www.artsoft.org/RELEASES/unix/mirrormagic/
+
+LIB_DEPENDS=	devel/sdl2-image \
+		devel/sdl2-mixer \
+		devel/sdl2-net
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
-ALL_TARGET=	sdl
+ALL_TARGET=	sdl2
+MAKE_FLAGS=	OPTIONS="${CFLAGS}"
 
-N=mirrormagic
+# Upstream left from .orig files behind.
+post-extract:
+	@rm -f ${WRKSRC}/levels/Classic_Games/classic_mindbender/*.orig
+
+# Upstream named the binary incorrectly.
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/${N} ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/${N}
-	@cp -R ${WRKSRC}/{graphics,levels,music,sounds} ${PREFIX}/share/${N}
-	@chmod a+r ${PREFIX}/share/$N/music/mod.*
+	${INSTALL_PROGRAM} ${WRKSRC}/rocksndiamonds \
+		${PREFIX}/bin/mirrormagic
+	${INSTALL_DATA_DIR} ${PREFIX}/share/mirrormagic
+	@cp -R ${WRKSRC}/{graphics,levels,music,sounds} \
+		${PREFIX}/share/mirrormagic
+	@chmod a+r \
+		${PREFIX}/share/mirrormagic/music/mus_{classic,mirrormagic}/mod.*
 
 .include <bsd.port.mk>
