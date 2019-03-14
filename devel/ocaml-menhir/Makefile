@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2019/03/04 12:51:13 chrisz Exp $
+# $OpenBSD: Makefile,v 1.13 2019/03/14 20:43:50 jca Exp $
 
 COMMENT =		OCaml parser generator for LR(1) grammars
 
 V =			20181113
+REVISION =		0
 DISTNAME =		menhir-${V}
 PKGNAME =		ocaml-${DISTNAME}
 
@@ -18,6 +19,7 @@ MODULES =		lang/ocaml
 
 WANTLIB =		c m pthread
 BUILD_DEPENDS =		sysutils/findlib devel/ocaml-ocamlbuild
+RUN_DEPENDS =		sysutils/findlib
 
 USE_GMAKE =		Yes
 MAKE_FLAGS =		docdir='${WRKINST}${PREFIX}/share/doc/ocaml-menhir' \
