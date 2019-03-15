@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.118 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.119 2019/03/15 07:22:13 ajacoutot Exp $
 
 PORTROACH=		limitw:1,even
 
 COMMENT=		Cyrus IMAP server
 
-V=			3.0.8
+V=			3.0.9
 DISTNAME=		cyrus-imapd-${V}
-REVISION=		1
 
 SHARED_LIBS +=	cyrus                     0.0 # 0.0
 SHARED_LIBS +=	cyrus_imap                0.0 # 0.0
@@ -51,7 +50,6 @@ CONFIGURE_ARGS=		--bindir=${PREFIX}/cyrus/bin \
 			--libexec=${PREFIX}/cyrus/libexec \
 			--sbindir=${PREFIX}/cyrus/sbin \
 			--with-sasl=${LOCALBASE} \
-			--with-cyrus-group=_cyrus \
 			--with-cyrus-user=_cyrus \
 			--with-syslogfacility=MAIL \
 			--disable-gssapi \
