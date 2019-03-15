@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2018/06/29 22:16:15 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/15 08:26:59 bentley Exp $
 
 COMMENT =		2D mission-based space shooter
 
-V =			1.3
-DISTNAME =		tbftss-$V-1555.src
+V =			1.5.0
+DISTNAME =		tbftss-$V.src
 PKGNAME =		tbftss-$V
-REVISION =		2
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://www.battleforthesolarsystem.com/games/pw/
+HOMEPAGE =		https://www.battleforthesolarsystem.com/games/pw/
 
 # code GPLv2+, data CC BY-NC-SA 3.0 or freer
 PERMIT_PACKAGE_CDROM =	Non-commercial
@@ -17,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB += SDL2 SDL2_image SDL2_mixer SDL2_ttf c m
 
-MASTER_SITES =		http://www.battleforthesolarsystem.com/downloads/
+MASTER_SITES =		https://www.battleforthesolarsystem.com/downloads/
 
 LIB_DEPENDS =		devel/sdl2-image \
 			devel/sdl2-mixer \
@@ -29,7 +28,7 @@ MAKE_FLAGS =		CC="${CC}" \
 			CXXFLAGS="${CFLAGS} `sdl2-config --cflags` \
 			-DDATA_DIR=\\\"${PREFIX}/share/tbftss\\\" \
 			-DLOCALE_DIR=\\\"${PREFIX}/share/tbftss/locale\\\" \
-			-DVERSION=$V" \
+			-DVERSION=\\\"${V:R}\\\"" \
 			DATA_DIR=${PREFIX}/share/tbftss \
 			PREFIX="${PREFIX}"
 
