@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2019/03/11 04:11:57 bket Exp $
+# $OpenBSD: Makefile,v 1.13 2019/03/15 14:53:43 bcallah Exp $
 
 COMMENT =	collaborative drawing program
-DISTNAME =	drawpile-2.0.11
+DISTNAME =	drawpile-2.1.2
 CATEGORIES =	graphics x11
-REVISION =	2
 
 HOMEPAGE =	https://drawpile.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -13,12 +12,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5DNSSD Qt5Core Qt5Gui
 WANTLIB += Qt5Multimedia Qt5Network Qt5Sql Qt5Svg Qt5Widgets c
-WANTLIB += gif m microhttpd miniupnpc sodium
+WANTLIB += gif m microhttpd miniupnpc sodium vpx
 
 MASTER_SITES =	https://drawpile.net/files/src/
 
 # C++11
-COMPILER =	base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		x11/qt5
@@ -26,6 +25,7 @@ MODULES =	devel/cmake \
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kdnssd \
 		graphics/giflib \
+		multimedia/libvpx \
 		net/miniupnp/miniupnpc \
 		security/libsodium \
 		www/libmicrohttpd \
@@ -33,19 +33,11 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		x11/qt5/qtsvg
 
 RUN_DEPENDS =	devel/desktop-file-utils \
+		misc/shared-mime-info \
 		x11/gtk+3,-guic
 
 CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
 
 NO_TEST =	Yes
-
-# Install .desktop and icon files (CMake does it wrong)
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/desktop/drawpile.desktop \
-		${PREFIX}/share/applications
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/256x256/apps
-	${INSTALL_DATA} ${WRKSRC}/desktop/drawpile-256x256.png \
-		${PREFIX}/share/icons/hicolor/256x256/apps
 
 .include <bsd.port.mk>

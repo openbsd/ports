@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/08/15 23:44:34 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/03/15 14:53:43 bcallah Exp $
 bin/drawpile
-@bin bin/drawpile-2.0.11
+@bin bin/drawpile-2.1.2
 @bin bin/drawpile-srv
 @man man/man1/drawpile-srv.1
-share/appdata/
-share/appdata/drawpile.appdata.xml
-share/applications/drawpile.desktop
+share/applications/net.drawpile.drawpile.desktop
 share/doc/drawpile/
 share/doc/drawpile/COPYING
 share/doc/drawpile/ChangeLog
@@ -23,6 +21,7 @@ share/drawpile/drawpile/i18n/drawpile_de.qm
 share/drawpile/drawpile/i18n/drawpile_fi.qm
 share/drawpile/drawpile/i18n/drawpile_ja.qm
 share/drawpile/drawpile/i18n/drawpile_ru.qm
+share/drawpile/drawpile/i18n/drawpile_vi.qm
 share/drawpile/drawpile/i18n/drawpile_zh.qm
 share/drawpile/drawpile/palettes/
 share/drawpile/drawpile/palettes/Breeze.gpl
@@ -103,11 +102,15 @@ share/drawpile/drawpile/theme/dark/object-flip-vertical.svg
 share/drawpile/drawpile/theme/dark/object-locked.svg
 share/drawpile/drawpile/theme/dark/object-rotate-left.svg
 share/drawpile/drawpile/theme/dark/object-rotate-right.svg
+share/drawpile/drawpile/theme/dark/security-high.svg
+share/drawpile/drawpile/theme/dark/security-medium.svg
 share/drawpile/drawpile/theme/dark/select-rectangular.svg
 share/drawpile/drawpile/theme/dark/transform-rotate.svg
+share/drawpile/drawpile/theme/dark/window-pin.svg
 share/drawpile/drawpile/theme/dark/zoom-in.svg
 share/drawpile/drawpile/theme/dark/zoom-original.svg
 share/drawpile/drawpile/theme/dark/zoom-out.svg
+share/drawpile/drawpile/theme/dark/zoom-select.svg
 share/drawpile/drawpile/theme/icons.txt
 share/drawpile/drawpile/theme/light/
 share/drawpile/drawpile/theme/light/application-exit.svg
@@ -172,11 +175,32 @@ share/drawpile/drawpile/theme/light/object-flip-vertical.svg
 share/drawpile/drawpile/theme/light/object-locked.svg
 share/drawpile/drawpile/theme/light/object-rotate-left.svg
 share/drawpile/drawpile/theme/light/object-rotate-right.svg
+share/drawpile/drawpile/theme/light/security-high.svg
+share/drawpile/drawpile/theme/light/security-medium.svg
 share/drawpile/drawpile/theme/light/select-rectangular.svg
 share/drawpile/drawpile/theme/light/transform-rotate.svg
+share/drawpile/drawpile/theme/light/window-pin.svg
 share/drawpile/drawpile/theme/light/zoom-in.svg
 share/drawpile/drawpile/theme/light/zoom-original.svg
 share/drawpile/drawpile/theme/light/zoom-out.svg
-share/icons/hicolor/256x256/apps/drawpile-256x256.png
+share/drawpile/drawpile/theme/light/zoom-select.svg
+share/icons/hicolor/128x128/apps/drawpile.png
+share/icons/hicolor/128x128/mimetypes/application-x-drawpile-recording.png
+share/icons/hicolor/16x16/apps/drawpile.png
+share/icons/hicolor/16x16/mimetypes/application-x-drawpile-recording.png
+share/icons/hicolor/256x256/apps/drawpile.png
+share/icons/hicolor/256x256/mimetypes/application-x-drawpile-recording.png
+share/icons/hicolor/32x32/apps/drawpile.png
+share/icons/hicolor/32x32/mimetypes/application-x-drawpile-recording.png
+share/icons/hicolor/48x48/apps/drawpile.png
+share/icons/hicolor/48x48/mimetypes/application-x-drawpile-recording.png
+share/icons/hicolor/64x64/apps/drawpile.png
+share/icons/hicolor/64x64/mimetypes/application-x-drawpile-recording.png
+share/icons/hicolor/scalable/apps/drawpile.svgz
+share/icons/hicolor/scalable/mimetypes/application-x-drawpile-recording.svgz
+share/metainfo/
+share/metainfo/net.drawpile.drawpile.appdata.xml
+share/mime/packages/x-drawpile.xml
+@tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
