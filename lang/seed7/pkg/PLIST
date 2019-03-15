@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2018/07/14 17:44:36 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.26 2019/03/15 16:36:23 bcallah Exp $
 @bin bin/make7
 @bin bin/s7
 @bin bin/s7c
@@ -93,6 +93,7 @@ lib/seed7/lib/console.s7i
 lib/seed7/lib/crc32.s7i
 lib/seed7/lib/cronos16.s7i
 lib/seed7/lib/cronos27.s7i
+lib/seed7/lib/csv.s7i
 lib/seed7/lib/deflate.s7i
 lib/seed7/lib/des.s7i
 lib/seed7/lib/dialog.s7i
@@ -239,6 +240,7 @@ share/examples/seed7/addup.sd7
 share/examples/seed7/bas7.sd7
 share/examples/seed7/bifurk.sd7
 share/examples/seed7/blue.dna
+share/examples/seed7/brainf7.sd7
 share/examples/seed7/calc7.sd7
 share/examples/seed7/carddemo.sd7
 share/examples/seed7/castle.dat
@@ -268,6 +270,7 @@ share/examples/seed7/clock2.sd7
 share/examples/seed7/clock3.sd7
 share/examples/seed7/cmpfil.sd7
 share/examples/seed7/comanche.sd7
+share/examples/seed7/confval.sd7
 share/examples/seed7/db7.sd7
 share/examples/seed7/diff7.sd7
 share/examples/seed7/dirtst.sd7
@@ -293,6 +296,7 @@ share/examples/seed7/hamu.sd7
 share/examples/seed7/hanoi.sd7
 share/examples/seed7/hd.sd7
 share/examples/seed7/hello.sd7
+share/examples/seed7/hilbert.sd7
 share/examples/seed7/ide7.sd7
 share/examples/seed7/indigo.dna
 share/examples/seed7/kbd.sd7
@@ -314,6 +318,7 @@ share/examples/seed7/prime.sd7
 share/examples/seed7/printpi1.sd7
 share/examples/seed7/printpi2.sd7
 share/examples/seed7/printpi3.sd7
+share/examples/seed7/queen.sd7
 share/examples/seed7/rand.sd7
 share/examples/seed7/raytrace.sd7
 share/examples/seed7/red.dna
@@ -326,6 +331,7 @@ share/examples/seed7/shisen.sd7
 share/examples/seed7/sl.sd7
 share/examples/seed7/snake.sd7
 share/examples/seed7/sokoban.sd7
+share/examples/seed7/spigotpi.sd7
 share/examples/seed7/sql7.sd7
 share/examples/seed7/startrek.sd7
 share/examples/seed7/sudoku7.sd7
