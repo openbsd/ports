@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2018/09/23 15:24:22 rpointel Exp $
+# $OpenBSD: Makefile,v 1.18 2019/03/15 10:49:42 rpointel Exp $
 
 COMMENT =		tool for reverse engineering Android apk files
 
-DISTNAME =		apktool_2.3.4
+DISTNAME =		apktool_2.4.0
 PKGNAME =		${DISTNAME:S/_/-/}
 
 CATEGORIES =		devel security java
@@ -24,7 +24,7 @@ INSTALL_DIR =		${PREFIX}/share/apktool/
 SUBST_VARS +=		DISTNAME
 
 MODULES =		java
-MODJAVA_VER =		1.7+
+MODJAVA_VER =		1.8+
 MODJAVA_JRERUN =	yes
 
 RUN_DEPENDS =		java/javaPathHelper
