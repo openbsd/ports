@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/12/31 14:09:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/03/15 07:32:16 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
@@ -6,7 +6,6 @@ ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/addressable.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/data/
 ${GEM_LIB}/gems/${DISTNAME}/data/unicode.data
 ${GEM_LIB}/gems/${DISTNAME}/lib/
