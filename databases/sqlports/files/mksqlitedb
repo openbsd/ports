@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.53 2019/01/08 19:42:45 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.54 2019/03/15 11:29:53 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -96,16 +96,29 @@ sub handle_path
 }
 
 package main;
+use Digest::SHA;
+use MIME::Base64;
 
-our ($opt_v, $opt_q, $opt_p);
+sub digest
+{
+	my $filename = shift;
+
+	my $d = Digest::SHA->new(256);
+	$d->addfile($filename);
+	return encode_base64($d->digest, '');
+}
+
+our ($opt_v, $opt_q, $opt_p, $opt_V);
 
 Trace->setup(\%SIG);
-getopts('vq:p:');
+getopts('vq:p:V:');
 my $dbname;
-if (@ARGV > 0) {
+if (@ARGV == 1) {
 	$dbname = shift;
-} else {
+} elsif (@ARGV == 0) {
 	$dbname = 'sqlports';
+} else {
+	exit 1;
 }
 
 my $db = DBI->connect("dbi:SQLite:dbname=$dbname", '', '', {AutoCommit => 0});
@@ -131,6 +144,8 @@ for my $p (sort keys %{$walker->{equivs}}) {
 	$walker->inserter->add_path($p, $a);
 }
 
+$walker->inserter->commit_to_db;
+$walker->inserter->insert("Meta", $opt_V, digest($dbname));
 $walker->inserter->commit_to_db;
 
 while (my ($k, $v) = each %$Info::unknown) {

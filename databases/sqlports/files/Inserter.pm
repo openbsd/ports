@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.38 2019/01/22 16:55:22 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.39 2019/03/15 11:29:53 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -68,6 +68,7 @@ sub create_tables
 
 	$v->sort;
 	$v->prepend(AnyVar->pathref);
+	$self->create_meta;
 	$self->create_schema;
 	print '-'x50, "\n" if $self->{verbose};
 }
@@ -257,9 +258,15 @@ sub adjust
 	return $self->{adjust} //= $self->prepare("UPDATE _Paths set Canonical=? where Id=?");
 }
 
+sub create_meta
+{
+	Sql::Create::Table->new("Meta")->add(
+	    Sql::Column::Text->new("SchemaVersion"),
+	    Sql::Column::Text->new("Hash"));
+}
+
 sub create_path_table
 {
-	my $self = shift;
 	my $t = "_Paths";
 	my $v = "Paths";
 	Sql::Create::Table->new($t)->add(

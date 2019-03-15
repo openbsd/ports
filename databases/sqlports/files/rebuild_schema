@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: rebuild_schema,v 1.2 2019/01/08 19:42:45 espie Exp $
+# $OpenBSD: rebuild_schema,v 1.3 2019/03/15 11:29:53 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -35,15 +35,17 @@ use Trace;
 
 package main;
 
-our ($opt_v, $opt_q, $opt_p);
+our ($opt_v, $opt_q, $opt_p, $opt_V);
 
 Trace->setup(\%SIG);
-getopts('vq:p:');
+getopts('vq:p:V:');
 my $dbname;
-if (@ARGV > 0) {
+if (@ARGV == 1) {
 	$dbname = shift;
-} else {
+} elsif (@ARGV == 0) {
 	$dbname = 'sqlports';
+} else {
+	exit 1;
 }
 
 my $db = DBI->connect("dbi:SQLite:dbname=$dbname", '', '', {AutoCommit => 0});
@@ -51,4 +53,8 @@ my $inserter = Inserter->new($db, 1000, $opt_v, 0);
 
 
 $inserter->create_tables($Info::vars);
+
+my $stmt = $db->prepare("UPDATE Meta set SchemaVersion=?");
+$stmt->execute($opt_V);
+
 $inserter->commit_to_db;
