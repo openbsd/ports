@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/01/05 13:07:47 jsing Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/16 13:38:58 jsing Exp $
 
 COMMENT =	Go package for low-level operating system interaction
-DISTNAME =	go-sys-20181220
+DISTNAME =	go-sys-20190226
 GH_ACCOUNT =	golang
 GH_PROJECT =	sys
-GH_COMMIT =	97b4c2a9293883a2418b8bba5485dc86b24460f7
+GH_COMMIT =	cc5685c2db1239775905f3911f0067c0fa74762f
 CATEGORIES =	devel
 
 HOMEPAGE =	https://godoc.org/golang.org/x/sys
@@ -21,7 +21,8 @@ MODULES =	lang/go
 MODGO_TYPE =	lib
 
 _MAIN =		golang.org/x/sys
-_SUBPKGS =	unix
+_SUBPKGS =	cpu \
+		unix
 
 ALL_TARGET =	${_SUBPKGS:%=${_MAIN}/%}
 WRKSRC =	${MODGO_WORKSPACE}/src/${_MAIN}
