@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_bin_Makefile_in,v 1.1 2019/03/16 20:08:00 pvk Exp $
+
+Index: src/bin/Makefile.in
+--- src/bin/Makefile.in.orig
++++ src/bin/Makefile.in
+@@ -372,7 +372,7 @@ softhsm_LDADD = @BOTAN_LIBS@ @SQLITE3_LIBS@ @YIELD_LIB
+ softhsm_keyconv_SOURCES = softhsm-keyconv.cpp softhsm-keyconv.h \
+  				base64.c
+ 
+-softhsm_keyconv_LDADD = @BOTAN_LIBS@ -lstdc++
++softhsm_keyconv_LDADD = @BOTAN_LIBS@
+ EXTRA_DIST = $(srcdir)/softhsm.1.in
+ all: all-am
+

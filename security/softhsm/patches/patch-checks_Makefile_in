@@ -1,12 +1,24 @@
-$OpenBSD: patch-checks_Makefile_in,v 1.1 2017/03/14 23:40:35 bluhm Exp $
---- checks/Makefile.in.orig	Mon Nov 14 10:37:59 2016
-+++ checks/Makefile.in	Mon Mar 13 01:56:07 2017
+$OpenBSD: patch-checks_Makefile_in,v 1.2 2019/03/16 20:08:00 pvk Exp $
+Index: checks/Makefile.in
+--- checks/Makefile.in.orig
++++ checks/Makefile.in
+@@ -115,8 +115,8 @@ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+ am__v_lt_0 = --silent
+ am__v_lt_1 = 
+-checks_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+-	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
++checks_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
++	$(LIBTOOLFLAGS) --mode=link $(CXX) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(checks_LDFLAGS) $(LDFLAGS) -o $@
+ AM_V_P = $(am__v_P_@AM_V@)
+ am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 @@ -317,7 +317,7 @@ AM_CPPFLAGS = -I$(srcdir)/../src/lib/cryptoki_compat \
  EXTRA_DIST = $(srcdir)/*.h \
  		$(srcdir)/softhsm.conf
  
 -checks_LDADD = ../src/lib/libsofthsm.la -lstdc++
-+checks_LDADD = ../src/lib/libsofthsm.la -lstdc++ -lbz2 -lgmp
++checks_LDADD = ../src/lib/libsofthsm.la -lbz2 -lgmp
  checks_LDFLAGS = -no-install -static -shared-libgcc
  all: all-am
  

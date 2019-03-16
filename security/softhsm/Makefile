@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/03/16 20:08:00 pvk Exp $
 
 PORTROACH=	limit:^1\.
 PORTROACH_COMMENT=	the 2.x version has a different user interface
@@ -6,13 +6,13 @@ PORTROACH_COMMENT=	the 2.x version has a different user interface
 COMMENT=	software PKCS\#11 cryptographic token
 
 DISTNAME=	softhsm-1.3.8
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.opendnssec.org/softhsm/
 
-MAINTAINER=	Patrik Lundin <patrik@sigterm.se>
+MAINTAINER=	Pavel Korovin <pvk@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
