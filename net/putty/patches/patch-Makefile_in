@@ -1,4 +1,5 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2017/04/30 22:29:53 sthen Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2019/03/16 22:09:30 sthen Exp $
+Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
 @@ -97,7 +97,7 @@ POST_UNINSTALL = :
@@ -9,4 +10,4 @@ $OpenBSD: patch-Makefile_in,v 1.1 2017/04/30 22:29:53 sthen Exp $
 +@HAVE_GTK_TRUE@	pterm$(EXEEXT) putty$(EXEEXT) \
  @HAVE_GTK_TRUE@	puttytel$(EXEEXT)
  @HAVE_GTK_FALSE@noinst_PROGRAMS = cgtest$(EXEEXT) fuzzterm$(EXEEXT) \
- @HAVE_GTK_FALSE@	osxlaunch$(EXEEXT) testbn$(EXEEXT)
+ @HAVE_GTK_FALSE@	osxlaunch$(EXEEXT) testcrypt$(EXEEXT) \
