@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/10/27 01:16:42 daniel Exp $
-
-BROKEN=			An update of coq >= 8.6.1 is required to unbreak
+# $OpenBSD: Makefile,v 1.4 2019/03/16 18:33:15 jca Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -34,7 +32,7 @@ CONFIGURE_ARGS  = -prefix ${WRKINST}${PREFIX} \
 
 BUILD_DEPENDS =	lang/ocaml>=4.02 \
 		math/coq>=8.6.1 \
-		devel/ocaml-menhir>=20171212
+		devel/ocaml-menhir>=20181113p0
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/compcert
