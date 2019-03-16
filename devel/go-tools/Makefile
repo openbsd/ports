@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2018/09/23 17:23:38 jsing Exp $
+# $OpenBSD: Makefile,v 1.21 2019/03/16 13:42:06 jsing Exp $
 
 COMMENT =		various tools for the Go programming language
 GH_ACCOUNT =		golang
 GH_PROJECT =		tools
-GH_COMMIT = 		ff6c8c104af2168da09d225428803f855a80b1ce
-DISTNAME =		go-tools-1.11.20180825
+GH_COMMIT = 		f727befe758c04ce68d52abc6e69ad111e2c6797
+DISTNAME =		go-tools-1.12.20190226
 CATEGORIES =		devel
 HOMEPAGE =		https://godoc.org/golang.org/x/tools
 
@@ -17,7 +17,7 @@ WANTLIB +=		c pthread
 
 MODULES =		lang/go
 MODGO_ENV =		PATH="${PORTPATH}"
-MODGO_TYPE =		bin lib
+MODGO_TYPE =		bin
 
 BUILD_DEPENDS =		net/go-net
 RUN_DEPENDS =		${MODGO_RUN_DEPENDS}
@@ -36,11 +36,11 @@ _SUBPKGS =		benchcmp \
 			godex \
 			goimports \
 			gomvpkg \
+			gopls \
 			gorename \
 			gotype \
 			goyacc \
 			guru \
-			heapview \
 			html2article \
 			present \
 			ssadump \
