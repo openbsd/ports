@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_os_signal_signal_cgo_test_go,v 1.1 2018/04/05 18:38:38 jsing Exp $
+$OpenBSD: patch-src_os_signal_signal_cgo_test_go,v 1.2 2019/03/16 13:37:29 jsing Exp $
 
 Index: src/os/signal/signal_cgo_test.go
 --- src/os/signal/signal_cgo_test.go.orig
@@ -10,8 +10,8 @@ Index: src/os/signal/signal_cgo_test.go
 +	"runtime"
  	"strconv"
  	"strings"
- 	"syscall"
-@@ -28,6 +29,9 @@ import (
+ 	"sync"
+@@ -29,6 +30,9 @@ import (
  )
  
  func TestTerminalSignal(t *testing.T) {
