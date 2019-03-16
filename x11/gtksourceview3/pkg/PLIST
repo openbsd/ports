@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2018/09/06 19:48:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.25 2019/03/16 11:53:03 jasper Exp $
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/completion-providers/
@@ -48,7 +48,7 @@ include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourceview.h
 lib/girepository-1.0/GtkSource-${MAJOR_VERSION}.typelib
 lib/libgtksourceview-${MAJOR_VERSION}.a
 lib/libgtksourceview-${MAJOR_VERSION}.la
-@lib lib/libgtksourceview-${MAJOR_VERSION}.so.${LIBgtksourceview-3.0_VERSION}
+@lib lib/libgtksourceview-${MAJOR_VERSION}.so.${LIBgtksourceview-${MAJOR_VERSION}_VERSION}
 lib/pkgconfig/gtksourceview-${MAJOR_VERSION}.pc
 share/gir-1.0/GtkSource-${MAJOR_VERSION}.gir
 share/gtk-doc/html/gtksourceview-${MAJOR_VERSION}/
@@ -222,6 +222,7 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/php.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/pig.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/pkgconfig.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/po.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/powershell.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/prolog.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/protobuf.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/puppet.lang
