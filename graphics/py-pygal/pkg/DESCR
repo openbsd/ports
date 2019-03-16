@@ -1,0 +1,17 @@
+pygal is a dynamic SVG charting library written in python.
+
+pygal provides various kinds of charts:
+- Line
+- Bar
+- Histogram
+- XY
+- Pie
+- Radar
+- Box
+- Dot
+- Funnel
+- SolidGauge
+- Gauge
+- Pyramid
+- Treemap
+- Maps

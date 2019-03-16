@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2019/03/16 06:17:50 semarie Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -27,7 +27,7 @@ from setuptools.command.test import test as TestComman
+ class PyTest(TestCommand):
+     def finalize_options(self):
+         TestCommand.finalize_options(self)
+-        self.test_args = ['-x', 'build/lib/pygal']
++        self.test_args = ['-x', 'lib/pygal']
+         self.test_suite = True
+ 
+     def run_tests(self):
