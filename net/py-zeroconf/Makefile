@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/19 22:23:58 jung Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/16 08:03:23 ajacoutot Exp $
 
 COMMENT =		pure Python Multicast DNS Service Discovery Library
 
-MODPY_EGG_VERSION =	0.19.1
+MODPY_EGG_VERSION =	0.21.3
 DISTNAME =		zeroconf-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -17,17 +17,8 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-FLAVORS =		python3
-FLAVOR ?=
-
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
-			net/py-netifaces${MODPY_FLAVOR}
-
-.if ! ${FLAVOR:Mpython3}
-RUN_DEPENDS+=		devel/py-enum34
-.endif
-
-NO_TEST =		Yes
+RUN_DEPENDS =		net/py-ifaddr${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
