@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.101 2019/03/13 19:46:15 landry Exp $
+# $OpenBSD: Makefile,v 1.102 2019/03/16 07:03:31 landry Exp $
 
 COMMENT =	desktop geographical information system
 
 DISTNAME =	qgis-3.6.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
+REVISION =	0
 
 SHARED_LIBS =	qgis_core	30.0 \
 		qgis_app	15.0 \
@@ -64,6 +65,7 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		x11/qt5/qt3d \
 		qwt-*-qt5:x11/qwt,qt5 \
 		geo/gdal \
+		geo/mdal \
 		geo/geos \
 		geo/spatialite/libspatialite \
 		geo/spatialindex \
@@ -74,7 +76,7 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Sql Qt5Svg
 WANTLIB += Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
-WANTLIB += c exiv2 expat fcgi gdal geos_c gsl gslcblas m pq proj ${MODPY_WANTLIB}
+WANTLIB += c exiv2 expat fcgi gdal geos_c gsl gslcblas m mdal pq proj ${MODPY_WANTLIB}
 WANTLIB += qca-qt5 qscintilla2_qt5 qt5keychain qwt-qt5 spatialindex
 WANTLIB += spatialite sqlite3 util zip
 WANTLIB += Qt53DCore Qt53DExtras Qt53DInput Qt53DLogic
@@ -85,6 +87,7 @@ CONFIGURE_ENV+=	VERBOSE=1
 CONFIGURE_ARGS =-DPYTHON_EXECUTABLE=${MODPY_BIN} \
 		-DPYUIC_PROGRAM=${LOCALBASE}/bin/pyuic5-3 \
 		-DPYRCC_PROGRAM=${LOCALBASE}/bin/pyrcc5-3 \
+		-DWITH_INTERNAL_MDAL=FALSE \
 		-DWITH_3D=TRUE \
 		-DWITH_SERVER=TRUE -DWITH_SERVER_PLUGINS=TRUE -DWITH_QSPATIALITE=TRUE
 
