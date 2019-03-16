@@ -1,9 +1,0 @@
-Index: config.mk
---- config.mk.orig
-+++ config.mk
-@@ -29,4 +29,4 @@ LDFLAGS = -s ${LIBS}
- CPPFLAGS = -D_XOPEN_SOURCE=700 -D_DEFAULT_SOURCE -D_BSD_SOURCE ${INCS}
- 
- # OpenBSD 5.9+: use pledge(2)
--#CPPFLAGS = -D_XOPEN_SOURCE=700 -D_DEFAULT_SOURCE -D_BSD_SOURCE -DUSE_PLEDGE ${INCS}
-+CPPFLAGS += -DUSE_PLEDGE

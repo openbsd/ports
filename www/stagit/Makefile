@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2018/04/10 23:27:51 kn Exp $
+# $OpenBSD: Makefile,v 1.8 2019/03/16 20:20:02 kn Exp $
 
 COMMENT =		static git page generator
 
-DISTNAME =		stagit-0.8
+DISTNAME =		stagit-0.9.1
 
 CATEGORIES =		www
 
-HOMEPAGE =		https://git.2f30.org/stagit/
+HOMEPAGE =		https://codemadness.org/
 
 # MIT/X Consortium License
 PERMIT_PACKAGE_CDROM =	Yes
@@ -16,14 +16,19 @@ WANTLIB =		c git2
 
 LIB_DEPENDS =		devel/libgit2/libgit2>=0.22
 
-MASTER_SITES =		https://dl.2f30.org/releases/
+MASTER_SITES =		https://codemadness.org/releases/stagit/
 
-MAKE_FLAGS=		CC='${CC}' \
-			CFLAGS='${CFLAGS}' \
-			COMPATOBJ='' \
-			GITINC=${LOCALBASE}/include \
-			GITLIB=${LOCALBASE}/lib
+MAKE_FLAGS =		CC='${CC}' \
+			CFLAGS='${CFLAGS} -I${LOCALBASE}/include' \
+			LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib -lgit2' \
+			COMPATOBJ=''
 
 NO_TEST =		Yes
+
+EXAMPLESDIR =		${PREFIX}/share/examples/stagit
+
+post-install:
+	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/
+	mv ${PREFIX}/share/doc/stagit/example_*.sh ${EXAMPLESDIR}/
 
 .include <bsd.port.mk>

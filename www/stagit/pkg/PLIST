@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/08/13 18:51:53 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/03/16 20:20:02 kn Exp $
 @bin bin/stagit
 @bin bin/stagit-index
 @man man/man1/stagit-index.1
 @man man/man1/stagit.1
-share/stagit/
-share/stagit/README
-share/stagit/example_create.sh
-share/stagit/example_post-receive.sh
-share/stagit/favicon.png
-share/stagit/logo.png
-share/stagit/style.css
+share/doc/stagit/
+share/doc/stagit/README
+share/doc/stagit/favicon.png
+share/doc/stagit/logo.png
+share/doc/stagit/style.css
+share/examples/stagit/
+share/examples/stagit/example_create.sh
+share/examples/stagit/example_post-receive.sh
