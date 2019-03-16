@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2018/09/16 16:46:28 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2019/03/16 08:09:45 landry Exp $
 
 BROKEN-hppa =	undefined reference to 'std::auto_ptr<geos::geom::Envelope>::~auto_ptr()'
 COMMENT=	2d geometry and topology engine
-DISTNAME=	geos-3.7.0
+DISTNAME=	geos-3.7.1
 CATEGORIES=	geo
 
 SHARED_LIBS=	geos	12.0 \
