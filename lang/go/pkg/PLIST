@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2019/03/16 13:37:29 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.32 2019/03/16 15:01:30 jsing Exp $
 bin/go
 bin/gofmt
 go/
@@ -468,6 +468,11 @@ go/misc/cgo/test/sigprocmask.go
 go/misc/cgo/test/test22906.go
 go/misc/cgo/test/test26213.go
 go/misc/cgo/test/test27660.go
+go/misc/cgo/test/testdata/
+go/misc/cgo/test/testdata/issue30527/
+go/misc/cgo/test/testdata/issue30527.go
+go/misc/cgo/test/testdata/issue30527/a.go
+go/misc/cgo/test/testdata/issue30527/b.go
 go/misc/cgo/test/twoargs.go
 go/misc/cgo/testasan/
 go/misc/cgo/testasan/main.go
@@ -2286,6 +2291,7 @@ go/src/cmd/go/testdata/script/cache_unix.txt
 go/src/cmd/go/testdata/script/cgo_syso_issue29253.txt
 go/src/cmd/go/testdata/script/clean_testcache.txt
 go/src/cmd/go/testdata/script/cover_atomic_pkgall.txt
+go/src/cmd/go/testdata/script/cover_pkgall_multiple_mains.txt
 go/src/cmd/go/testdata/script/cover_pkgall_runtime.txt
 go/src/cmd/go/testdata/script/cpu_profile_twice.txt
 go/src/cmd/go/testdata/script/fileline.txt
@@ -9451,6 +9457,9 @@ go/test/fixedbugs/issue29919.go
 go/test/fixedbugs/issue29943.go
 go/test/fixedbugs/issue30041.go
 go/test/fixedbugs/issue30061.go
+go/test/fixedbugs/issue30476.go
+go/test/fixedbugs/issue30566a.go
+go/test/fixedbugs/issue30566b.go
 go/test/fixedbugs/issue3552.dir/
 go/test/fixedbugs/issue3552.dir/one.go
 go/test/fixedbugs/issue3552.dir/two.go
