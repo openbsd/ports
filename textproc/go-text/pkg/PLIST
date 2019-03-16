@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/09/23 17:20:21 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/03/16 13:39:34 jsing Exp $
 @bin bin/colcmp
 go-pkg/
 go-pkg/pkg/
@@ -38,6 +38,7 @@ ${MODGO_PACKAGES}/golang.org/x/text/internal/cldrtree.a
 ${MODGO_PACKAGES}/golang.org/x/text/internal/colltab.a
 ${MODGO_PACKAGES}/golang.org/x/text/internal/export/
 ${MODGO_PACKAGES}/golang.org/x/text/internal/export/idna.a
+${MODGO_PACKAGES}/golang.org/x/text/internal/export/unicode.a
 ${MODGO_PACKAGES}/golang.org/x/text/internal/format.a
 ${MODGO_PACKAGES}/golang.org/x/text/internal/gen/
 ${MODGO_PACKAGES}/golang.org/x/text/internal/gen.a
@@ -291,6 +292,8 @@ ${MODGO_SOURCES}/golang.org/x/text/feature/plural/plural.go
 ${MODGO_SOURCES}/golang.org/x/text/feature/plural/plural_test.go
 ${MODGO_SOURCES}/golang.org/x/text/feature/plural/tables.go
 ${MODGO_SOURCES}/golang.org/x/text/gen.go
+${MODGO_SOURCES}/golang.org/x/text/go.mod
+${MODGO_SOURCES}/golang.org/x/text/go.sum
 ${MODGO_SOURCES}/golang.org/x/text/internal/
 ${MODGO_SOURCES}/golang.org/x/text/internal/catmsg/
 ${MODGO_SOURCES}/golang.org/x/text/internal/catmsg/catmsg.go
@@ -357,6 +360,9 @@ ${MODGO_SOURCES}/golang.org/x/text/internal/export/idna/tables10.0.0.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/export/idna/tables9.0.0.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/export/idna/trie.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/export/idna/trieval.go
+${MODGO_SOURCES}/golang.org/x/text/internal/export/unicode/
+${MODGO_SOURCES}/golang.org/x/text/internal/export/unicode/doc.go
+${MODGO_SOURCES}/golang.org/x/text/internal/export/unicode/gen.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/format/
 ${MODGO_SOURCES}/golang.org/x/text/internal/format/format.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/format/parser.go
@@ -466,6 +472,7 @@ ${MODGO_SOURCES}/golang.org/x/text/language/go1_2.go
 ${MODGO_SOURCES}/golang.org/x/text/language/httpexample_test.go
 ${MODGO_SOURCES}/golang.org/x/text/language/language.go
 ${MODGO_SOURCES}/golang.org/x/text/language/language_test.go
+${MODGO_SOURCES}/golang.org/x/text/language/lookup_test.go
 ${MODGO_SOURCES}/golang.org/x/text/language/match.go
 ${MODGO_SOURCES}/golang.org/x/text/language/match_test.go
 ${MODGO_SOURCES}/golang.org/x/text/language/parse.go
