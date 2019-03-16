@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/09/23 17:22:13 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/03/16 13:40:22 jsing Exp $
 go-pkg/
 go-pkg/pkg/
 ${MODGO_PACKAGES}/
@@ -200,6 +200,8 @@ ${MODGO_SOURCES}/golang.org/x/crypto/hkdf/hkdf.go
 ${MODGO_SOURCES}/golang.org/x/crypto/hkdf/hkdf_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/internal/
 ${MODGO_SOURCES}/golang.org/x/crypto/internal/chacha20/
+${MODGO_SOURCES}/golang.org/x/crypto/internal/chacha20/asm_arm64.s
+${MODGO_SOURCES}/golang.org/x/crypto/internal/chacha20/chacha_arm64.go
 ${MODGO_SOURCES}/golang.org/x/crypto/internal/chacha20/chacha_generic.go
 ${MODGO_SOURCES}/golang.org/x/crypto/internal/chacha20/chacha_noasm.go
 ${MODGO_SOURCES}/golang.org/x/crypto/internal/chacha20/chacha_s390x.go
@@ -251,6 +253,7 @@ ${MODGO_SOURCES}/golang.org/x/crypto/openpgp/elgamal/elgamal_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/openpgp/errors/
 ${MODGO_SOURCES}/golang.org/x/crypto/openpgp/errors/errors.go
 ${MODGO_SOURCES}/golang.org/x/crypto/openpgp/keys.go
+${MODGO_SOURCES}/golang.org/x/crypto/openpgp/keys_data_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/openpgp/keys_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/openpgp/packet/
 ${MODGO_SOURCES}/golang.org/x/crypto/openpgp/packet/compressed.go
@@ -420,6 +423,7 @@ ${MODGO_SOURCES}/golang.org/x/crypto/ssh/terminal/
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/terminal/terminal.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/terminal/terminal_test.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/terminal/util.go
+${MODGO_SOURCES}/golang.org/x/crypto/ssh/terminal/util_aix.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/terminal/util_bsd.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/terminal/util_linux.go
 ${MODGO_SOURCES}/golang.org/x/crypto/ssh/terminal/util_plan9.go
