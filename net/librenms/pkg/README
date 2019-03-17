@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.11 2018/09/04 12:46:17 espie Exp $
+$OpenBSD: README,v 1.12 2019/03/17 22:44:22 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -184,3 +184,10 @@ configuration" above. In particular, pdo_mysql is now required.
 
 It may also be necessary to raise max_connections in ${SYSCONFDIR}/my.cnf;
 see https://community.librenms.org/t/new-requirements-for-1-40/4057
+
+The alerting system is now using Laravel templates requiring that old
+alert templates are updated. If you do not do this, alert messages
+will show keywords (like %title, %severity) instead of the actual values.
+A built-in converter is available which works well in most cases - go to
+Alert Templates in the Alerts menu and edit each template in turn; click
+"convert" and "update".
