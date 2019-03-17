@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2018/12/13 12:14:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/17 14:07:29 cwen Exp $
 
 COMMENT =	D-Bus menu implementation for Gtk
 DISTNAME =	libdbusmenu-16.04.0
+REVISION =	0
 CATEGORIES =	x11 devel
 SHARED_LIBS +=  dbusmenu-glib             0.0 # 4.12
 SHARED_LIBS +=  dbusmenu-gtk3             0.0 # 4.12
@@ -16,9 +17,6 @@ MASTER_SITES =	https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/
 
 CONFIGURE_STYLE = gnu
 USE_GMAKE= yes
-
-# allows tests to build, but they try to spawn dbus-test-runner and are broken
-CONFIGURE_ENV=CPPFLAGS=-Wno-error=gnu-designator
 
 MODULES =	textproc/intltool
 
@@ -40,5 +38,12 @@ WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += gtk-x11-2.0 harfbuzz iconv intl json-glib-1.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += xcb xcb-render xcb-shm z
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+# allows tests to build, but they try to spawn dbus-test-runner and are broken
+# this option is only available for clang
+CONFIGURE_ENV=CPPFLAGS=-Wno-error=gnu-designator
+.endif
 
 .include <bsd.port.mk>
