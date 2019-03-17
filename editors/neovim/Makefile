@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2019/03/04 14:22:25 cwen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/03/17 13:13:40 edd Exp $
 
 COMMENT =	continuation and extension of Vim
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_TAGNAME =	v0.3.1
-REVISION =	2
+GH_TAGNAME =	v0.3.4
 
 CATEGORIES =	editors devel
 HOMEPAGE =	http://neovim.org
@@ -54,6 +53,9 @@ TEST_DEPENDS =	shells/bash \
 
 # These are the "old tests". There is also a new suite, but we would need the
 # "busted" test suite for Lua, which is not yet ported.
+#
+# There is currently one (minor) test failure:
+# https://github.com/neovim/neovim/issues/9704
 do-test:
 	cd ${WRKSRC} && env LC_CTYPE=en_US.UTF-8 ${MAKE_PROGRAM} \
 		-C src/nvim/testdir NVIM_PRG=${WRKBUILD}/bin/nvim ${MAKE_FLAGS}
