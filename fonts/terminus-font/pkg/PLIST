@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/08/04 16:59:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/03/17 15:24:15 sthen Exp $
 @pkgpath x11/terminus-font
+share/doc/pkg-readmes/${PKGSTEM}
 share/fonts/
 @fontdir share/fonts/terminus/
 share/fonts/terminus/fonts.alias-terminus
@@ -255,3 +256,23 @@ share/fonts/terminus/ter-x28b.pcf.gz
 share/fonts/terminus/ter-x28n.pcf.gz
 share/fonts/terminus/ter-x32b.pcf.gz
 share/fonts/terminus/ter-x32n.pcf.gz
+share/misc/pcvtfonts/
+share/misc/pcvtfonts/ter-112n
+share/misc/pcvtfonts/ter-114b
+share/misc/pcvtfonts/ter-114n
+share/misc/pcvtfonts/ter-114v
+share/misc/pcvtfonts/ter-116b
+share/misc/pcvtfonts/ter-116n
+share/misc/pcvtfonts/ter-116v
+share/misc/pcvtfonts/ter-118b
+share/misc/pcvtfonts/ter-118n
+share/misc/pcvtfonts/ter-120b
+share/misc/pcvtfonts/ter-120n
+share/misc/pcvtfonts/ter-122b
+share/misc/pcvtfonts/ter-122n
+share/misc/pcvtfonts/ter-124b
+share/misc/pcvtfonts/ter-124n
+share/misc/pcvtfonts/ter-128b
+share/misc/pcvtfonts/ter-128n
+share/misc/pcvtfonts/ter-132b
+share/misc/pcvtfonts/ter-132n

@@ -1,0 +1,46 @@
+$OpenBSD: patch-Makefile,v 1.1 2019/03/17 15:24:15 sthen Exp $
+
+Build raw files for wsfontload.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -4,6 +4,7 @@ BIN = ./bin
+ 
+ UCS2ANY = $(INT) $(BIN)/ucstoany.$(EXT)
+ BDF2PSF = $(INT) $(BIN)/bdftopsf.$(EXT)
++BDF2RAW = $(INT) $(BIN)/bdftopsf.$(EXT) -r
+ UCS2X11	= $(INT) $(BIN)/ucstoany.$(EXT) -f
+ BDF2PCF	= bdftopcf
+ 
+@@ -56,6 +57,11 @@ PSF_VGAW_KOI8_UV = ter-u14v.psf ter-u16v.psf
+ PSF_VGAW_XOS4_2  = ter-v14v.psf ter-v16v.psf
+ PSF_VGAW = $(PSF_VGAW_8859_1) $(PSF_VGAW_8859_2) $(PSF_VGAW_8859_7) $(PSF_VGAW_8859_9) $(PSF_VGAW_MS_1251) $(PSF_VGAW_8859_13) $(PSF_VGAW_8859_16) $(PSF_VGAW_IBM_437) $(PSF_VGAW_KOI8_RV) $(PSF_VGAW_BG_MIK) $(PSF_VGAW_PT_154) $(PSF_VGAW_KOI8_UV) $(PSF_VGAW_XOS4_2)
+ 
++RAW_8859_1  = $(subst .psf,.raw,$(PSF_8859_1))
++RAW_VGAW_8859_1  = $(subst .psf,.raw,$(PSF_VGAW_8859_1))
++RAW = $(RAW_8859_1)
++RAW_VGAW = $(RAW_VGAW_8859_1)
++
+ PCF_8859_1  = ter-112n.pcf ter-112b.pcf ter-114n.pcf ter-114b.pcf ter-116n.pcf ter-116b.pcf ter-118n.pcf ter-118b.pcf ter-120n.pcf ter-120b.pcf ter-122n.pcf ter-122b.pcf ter-124n.pcf ter-124b.pcf ter-128n.pcf ter-128b.pcf ter-132n.pcf ter-132b.pcf
+ PCF_8859_2  = ter-212n.pcf ter-212b.pcf ter-214n.pcf ter-214b.pcf ter-216n.pcf ter-216b.pcf ter-218n.pcf ter-218b.pcf ter-220n.pcf ter-220b.pcf ter-222n.pcf ter-222b.pcf ter-224n.pcf ter-224b.pcf ter-228n.pcf ter-228b.pcf ter-232n.pcf ter-232b.pcf
+ PCF_8859_5  = ter-512n.pcf ter-512b.pcf ter-514n.pcf ter-514b.pcf ter-516n.pcf ter-516b.pcf ter-518n.pcf ter-518b.pcf ter-520n.pcf ter-520b.pcf ter-522n.pcf ter-522b.pcf ter-524n.pcf ter-524b.pcf ter-528n.pcf ter-528b.pcf ter-532n.pcf ter-532b.pcf
+@@ -131,6 +137,9 @@ DUP_KOI8_UV = dup/cntrl.dup dup/ascii-h.dup dup/koi8.d
+ DUP_KOI8_U  = dup/cntrl.dup dup/ascii-h.dup dup/koi8.dup
+ DUP_XOS4_2  = dup/vgagr.dup dup/xos4-2.dup
+ 
++$(RAW_8859_1) $(RAW_VGAW_8859_1): ter-1%.raw : ter-u%.bdf $(VGA_8859_1) $(DUP_8859_1)
++	$(UCS2ANY) $< $(REG_8859_1) $(VGA_8859_1) | $(BDF2RAW) -o $@ $(DUP_8859_1)
++
+ $(PSF_8859_1) $(PSF_VGAW_8859_1): ter-1%.psf : ter-u%.bdf $(VGA_8859_1) $(DUP_8859_1)
+ 	$(UCS2ANY) $< $(REG_8859_1) $(VGA_8859_1) | $(BDF2PSF) -o $@ $(DUP_8859_1)
+ 
+@@ -202,6 +211,8 @@ install-psf-ref: README
+ 
+ uninstall-psf-ref:
+ 	rm -f $(DESTDIR)$(psfref)
++
++raw: $(RAW) $(RAW_VGAW)
+ 
+ # X11 Window System
+ 

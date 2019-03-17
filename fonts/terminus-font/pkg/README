@@ -1,0 +1,28 @@
+$OpenBSD: README,v 1.1 2019/03/17 15:24:15 sthen Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Use with wscons(4)
+==================
+Raw versions of some Terminus fonts are included; these can be loaded with
+wsfontload(8) for use in OpenBSD's wscons(4) text-mode console.
+
+For consoles on a drm(4) device, a font may only be loaded if it matches
+the size of the current console font. For displays with a width above
+1920 and below 3840 pixels, rasops(9) will select a 16x32 font which
+can be replaced with one of the "ter-132*" fonts. (Terminus does not
+have a 32x64 font to match the size used by default on wider displays).
+
+This can be loaded and configured like so:
+
+$ wsfontload -N ter-132n -w 16 -h 32 ${TRUEPREFIX}/share/misc/pcvtfonts/ter-132n
+$ wsconsctl display.font=ter-132n
+
+To return to the default console font:
+
+$ wsconsctl display.font="Spleen 16x32"
+
+The final letter of the filename relates to the weight; n=normal, b=bold,
+v="VGA weight".

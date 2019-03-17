@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/16 03:33:09 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2019/03/17 15:24:15 sthen Exp $
 
 COMMENT =		fixed width fonts especially for long hacking sessions
 
-DISTNAME =		terminus-font-4.46
+DISTNAME =		terminus-font-4.47
 CATEGORIES =		fonts x11
 
 HOMEPAGE =		http://terminus-font.sourceforge.net/
@@ -23,7 +23,7 @@ CONFIGURE_STYLE =	simple
 NO_TEST =		Yes
 USE_X11 =		Yes
 
-ALL_TARGET =		pcf pcf-8bit
+ALL_TARGET =		pcf pcf-8bit raw
 
 FONTDIR =		${PREFIX}/share/fonts/terminus
 
@@ -50,5 +50,11 @@ do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${FONTDIR}
 	${INSTALL_DATA} ${WRKBUILD}/fonts.alias ${FONTDIR}/fonts.alias-terminus
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/misc/pcvtfonts
+	${INSTALL_DATA} ${WRKBUILD}/fonts.alias ${FONTDIR}/fonts.alias-terminus
+	cd ${WRKSRC}; for i in *.raw; do \
+		${INSTALL_DATA} $$i ${PREFIX}/share/misc/pcvtfonts/$${i%.raw}; \
+	done
 
 .include <bsd.port.mk>
