@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.106 2019/02/21 20:04:33 tb Exp $
+# $OpenBSD: Makefile,v 1.107 2019/03/17 07:16:32 feinerer Exp $
 
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-3.5.2
-REVISION=	0
+DISTNAME=	R-3.5.3
 
 SO_VERSION=	34.2
 .for _lib in R Rblas Rlapack
@@ -20,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ${COMPILER_LIBCXX} ${MODTK_WANTLIB}
 WANTLIB += ICE SM X11 Xext Xmu Xss Xt bz2 c cairo crypto curl
 WANTLIB += glib-2.0 gobject-2.0 iconv icui18n icuuc intl jpeg lzma m
-WANTLIB += nghttp2 pango-1.0 pangocairo-1.0 pcre pcre2-8 png readline ssl tiff z
+WANTLIB += nghttp2 pango-1.0 pangocairo-1.0 pcre pcre2-8 png16 readline ssl tiff z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
