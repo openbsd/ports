@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2019/03/11 15:25:02 landry Exp $
+# $OpenBSD: Makefile,v 1.51 2019/03/17 18:10:57 landry Exp $
 
 COMMENT =	lightweight mail user agent
 
 GNOME_PROJECT =	geary
-GNOME_VERSION =	0.13.3
+GNOME_VERSION =	3.32.0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail
@@ -24,6 +24,7 @@ CONFIGURE_ARGS =-Dlibunwind_optional=true \
 RUN_DEPENDS =	devel/iso-codes
 BUILD_DEPENDS =	devel/iso-codes
 LIB_DEPENDS =	mail/gmime \
+		net/telepathy/folks \
 		x11/gnome/online-accounts \
 		security/p11-kit \
 		databases/sqlite3 \
@@ -33,7 +34,7 @@ LIB_DEPENDS =	mail/gmime \
 		devel/libgee \
 		textproc/enchant2
 
-WANTLIB += atk-1.0 c cairo cairo-gobject canberra enchant-2 goa-1.0 gck-1
+WANTLIB += atk-1.0 c cairo cairo-gobject canberra enchant-2 folks goa-1.0 gck-1
 WANTLIB += gcr-base-3 gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0
 WANTLIB += glib-2.0 gmime-2.6 gobject-2.0 json-glib-1.0
 WANTLIB += gtk-3 intl javascriptcoregtk-4.0 m notify p11-kit pango-1.0
