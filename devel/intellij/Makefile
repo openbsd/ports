@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2019/03/09 09:55:50 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.59 2019/03/17 15:56:54 kn Exp $
 
 COMMENT=		IntelliJ IDEA Java IDE
 
@@ -36,14 +36,13 @@ do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${IJ}
-	@tar -czf - -C ${WRKDIST} . | tar xzf - -C ${IJ}
+	cd ${WRKDIST} && pax -rw . ${IJ}
 	@rm -rf ${IJ}/bin/libdbm64.so
 	@rm -rf ${IJ}/jre
 	@rm -rf ${IJ}/jre64
 	@rm -rf ${IJ}/plugins/android
 	@rm -rf ${IJ}/plugins/gradle/lib/native-platform-{freebsd,linux,osx,windows}*.jar
 	@${SUBST_PROGRAM} ${FILESDIR}/idea ${PREFIX}/bin/idea
-	@chmod ${BINMODE} ${PREFIX}/bin/idea
 	@ln -s ${TRUEPREFIX}/bin/idea ${PREFIX}/bin/intellij
 	${INSTALL_MAN} ${FILESDIR}/idea.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
