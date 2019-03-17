@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.115 2019/01/18 11:34:20 giovanni Exp $
+# $OpenBSD: Makefile,v 1.116 2019/03/17 13:46:41 giovanni Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
-DISTNAME =	i3-4.16
-REVISION = 	0
+DISTNAME =	i3-4.16.1
 
 CATEGORIES =	x11
 
@@ -46,12 +45,14 @@ FAKE_FLAGS =	i3confdir="${PREFIX}/share/examples/i3/"
 SEPARATE_BUILD =Yes
 USE_GMAKE =	Yes
 CONFIGURE_STYLE =gnu
-CONFIGURE_ARGS =--enable-builddir=${WRKBUILD} \
-		--enable-debug=no
 CONFIGURE_ENV =	CPPFLAGS="-I${X11BASE}/include \
 			  -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib \
 			 -L${LOCALBASE}/lib"
+
+.if defined(DEBUG)
+CONFIGURE_ARGS +=--enable-debug
+.endif
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/etc/config \
