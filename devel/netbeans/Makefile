@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/02/22 13:37:56 giovanni Exp $
+# $OpenBSD: Makefile,v 1.35 2019/03/17 16:11:22 kn Exp $
 
 COMMENT=		NetBeans Java IDE
 
@@ -33,12 +33,12 @@ NB=			${PREFIX}/netbeans
 
 do-install:
 	${INSTALL_DATA_DIR} ${NB}
-	@tar -czf - -C ${WRKDIST} . | tar xzf - -C ${NB}
+	cd ${WRKDIST} && pax -rw . ${NB}
 	@rm -rf ${NB}/profiler ${NB}/{ide,cnd,dlight}/bin \
 		${NB}/platform/modules/lib/{i386,amd64,x86}
-	@find ${NB} -name "*.dll" -o -name "*.exe" -o -name "*.cmd" \
+	@find ${NB} -type f \( -name "*.dll" -o -name "*.exe" -o -name "*.cmd" \
 		-o -name "*.bat" -o -name ".lastModified" \
-		-o -name "*.orig" | xargs rm
+		-o -name "*.orig" \) -delete
 	@${SUBST_PROGRAM} ${FILESDIR}/netbeans ${PREFIX}/bin/netbeans
 	@${INSTALL_DATA_DIR} ${NB}/cnd/bin
 	@${INSTALL_DATA_DIR} ${NB}/ide/bin/nativeexecution
