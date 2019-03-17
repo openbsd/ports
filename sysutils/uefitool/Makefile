@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/08 20:00:51 cwen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/03/17 13:03:48 kn Exp $
 
 COMMENT =		parse, extract and modify UEFI firmware images
 
 GH_ACCOUNT =		LongSoft
 GH_PROJECT =		UEFITool
-GH_TAGNAME =		0.25.1
-REVISION =		0
+GH_TAGNAME =		0.26.0
 
 CATEGORIES =		sysutils
 
@@ -22,8 +21,6 @@ MODULES =		devel/qmake \
 MODQMAKE_PROJECTS =	. \
 			UEFIPatch \
 			UEFIReplace
-
-LIB_DEPENDS =		${MODQT5_LIB_DEPENDS}
 
 NO_TEST =		Yes
 
