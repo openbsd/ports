@@ -1,8 +1,8 @@
-$OpenBSD: patch-conserver_consent_c,v 1.6 2018/05/29 13:54:05 sthen Exp $
+$OpenBSD: patch-conserver_consent_c,v 1.7 2019/03/17 23:39:59 sthen Exp $
 Index: conserver/consent.c
 --- conserver/consent.c.orig
 +++ conserver/consent.c
-@@ -519,7 +519,8 @@ SetupTty(CONSENT *pCE, int fd)
+@@ -527,7 +527,8 @@ SetupTty(CONSENT *pCE, int fd)
      if (0 != tcgetattr(1, &n_tio)) {
  	exit(EX_OSERR);
      }
@@ -12,7 +12,7 @@ Index: conserver/consent.c
      n_tio.c_iflag |= ICRNL;
      if (pCE->ixon == FLAGTRUE)
  	n_tio.c_iflag |= IXON;
-@@ -527,10 +528,8 @@ SetupTty(CONSENT *pCE, int fd)
+@@ -535,10 +536,8 @@ SetupTty(CONSENT *pCE, int fd)
  	n_tio.c_iflag |= IXANY;
      if (pCE->ixoff == FLAGTRUE)
  	n_tio.c_iflag |= IXOFF;

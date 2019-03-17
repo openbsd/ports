@@ -1,4 +1,8 @@
-$OpenBSD: patch-configure_in,v 1.6 2018/05/29 13:54:05 sthen Exp $
+$OpenBSD: patch-configure_in,v 1.7 2019/03/17 23:39:59 sthen Exp $
+
+- support SO_PEERCRED as well as ucred
+- use pkgconfig for freeipmi bits
+
 --- configure.in.orig	Thu Apr 17 22:55:38 2014
 +++ configure.in	Thu Jul 30 16:52:11 2015
 @@ -413,14 +413,14 @@ AC_ARG_WITH(uds,

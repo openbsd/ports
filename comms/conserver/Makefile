@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.67 2019/02/26 15:31:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2019/03/17 23:39:59 sthen Exp $
 
 COMMENT=	manage remote serial consoles via TCP/IP
 
-V=		8.2.2
-REVISION=	5
+V=		8.2.3
 DISTNAME=	conserver-$V
 CATEGORIES=	comms
 
@@ -21,7 +20,7 @@ FLAVOR?=
 
 MASTER_SITES=	https://github.com/conserver/conserver/releases/download/v$V/
 
-AUTOCONF_VERSION= 2.68
+AUTOCONF_VERSION= 2.69
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--with-master=localhost \
 		--with-pidfile=${LOCALSTATEDIR}/run/conserver/conserver.pid
