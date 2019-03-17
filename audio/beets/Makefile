@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/09/29 19:53:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/03/17 23:39:40 sthen Exp $
 
 COMMENT =	CLI tools to manage music collections
 
@@ -19,8 +19,6 @@ MODPY_SETUPTOOLS = Yes
 MODPY_PI =	Yes
 
 MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3}
-# needed if using py2 instead:
-# RUN_DEPENDS+=	devel/py-enum34>=1.0.4
 
 RUN_DEPENDS+=	audio/py-discogs-client${MODPY_FLAVOR}>=2.0.2 \
 		audio/py-last${MODPY_FLAVOR} \
@@ -41,11 +39,9 @@ post-install:
 TEST_DEPENDS=	${RUN_DEPENDS} \
 		audio/py-mpd2${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR} \
+		devel/py-pathlib${MODPY_FLAVOR} \
 		devel/py-xdg${MODPY_FLAVOR} \
 		www/py-beautifulsoup4${MODPY_FLAVOR} \
 		www/py-flask${MODPY_FLAVOR}
-
-do-test:
-	${MODPY_TEST_TARGET}
 
 .include <bsd.port.mk>
