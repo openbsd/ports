@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/17 11:26:38 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/17 11:34:32 kn Exp $
 
 COMMENT =	auto-complete and text expansion in X11
 
@@ -23,10 +23,11 @@ MODULES =		x11/qt5
 RUN_DEPENDS =		x11/xdotool
 LIB_DEPENDS =		x11/libdbus-c++
 
-CXXFLAGS = 		-std=c++11 \
+CXXFLAGS +=		-std=c++11 \
 			-I${X11BASE}/include \
 			-I${LOCALBASE}/include/dbus-c++-1
-LDFLAGS = 		-L${X11BASE}/lib -L${PREFIX}/lib -lxcb -ldbus-c++-1
+LDFLAGS +=		-L${X11BASE}/lib -lxcb \
+			-L${PREFIX}/lib -ldbus-c++-1
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/server/Files.hpp
@@ -45,13 +46,10 @@ do-build:
 	cd ${WRKBUILD}/ui && ${SETENV} ${MAKE_ENV} \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} -f ${MAKE_FILE} ${ALL_TARGET}
 	cd ${WRKBUILD}/server && ${SETENV} ${MAKE_ENV} \
-		${CXX} ${CFLAGS} ${CXXFLAGS} ${LDFLAGS} \
-		${TEXTSUGGEST_SERVER_SRC} -o textsuggest-server
+		${LINK.cc} -o textsuggest-server ${TEXTSUGGEST_SERVER_SRC}
 .for processor in ${PROCESSORS}
-	cd ${WRKBUILD}/textsuggest/processors/ && \
-		${SETENV} ${MAKE_ENV} \
-		${CXX} ${CFLAGS} ${CXXFLAGS} ${LDFLAGS} \
-		${processor}.cpp -o ${processor}
+	cd ${WRKBUILD}/textsuggest/processors/ && ${SETENV} ${MAKE_ENV} \
+		${LINK.cc} -o ${processor} ${processor}.cpp
 .endfor
 
 do-install:
