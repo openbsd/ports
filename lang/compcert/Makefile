@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/16 18:33:15 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2019/03/17 03:26:53 bcallah Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		high assurance C compiler
 
-V=			3.4
+V=			3.5
 GH_ACCOUNT =		AbsInt
 GH_PROJECT =		CompCert
 GH_TAGNAME =		v${V}
