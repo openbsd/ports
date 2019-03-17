@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/04/24 16:59:43 danj Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/03/17 20:22:46 kn Exp $
 bin/coveralls
 lib/python${MODPY_VERSION}/site-packages/coveralls/
 lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -10,12 +10,16 @@ lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/coveralls/__init__.py
 lib/python${MODPY_VERSION}/site-packages/coveralls/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/coveralls/__main__.py
+lib/python${MODPY_VERSION}/site-packages/coveralls/__main__.pyc
 lib/python${MODPY_VERSION}/site-packages/coveralls/api.py
 lib/python${MODPY_VERSION}/site-packages/coveralls/api.pyc
 lib/python${MODPY_VERSION}/site-packages/coveralls/cli.py
 lib/python${MODPY_VERSION}/site-packages/coveralls/cli.pyc
 lib/python${MODPY_VERSION}/site-packages/coveralls/exception.py
 lib/python${MODPY_VERSION}/site-packages/coveralls/exception.pyc
+lib/python${MODPY_VERSION}/site-packages/coveralls/git.py
+lib/python${MODPY_VERSION}/site-packages/coveralls/git.pyc
 lib/python${MODPY_VERSION}/site-packages/coveralls/reporter.py
 lib/python${MODPY_VERSION}/site-packages/coveralls/reporter.pyc
 lib/python${MODPY_VERSION}/site-packages/coveralls/version.py
