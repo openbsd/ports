@@ -1,4 +1,4 @@
-$OpenBSD: patch-test_conftest_py,v 1.1 2018/07/01 14:21:36 edd Exp $
+$OpenBSD: patch-test_conftest_py,v 1.2 2019/03/17 13:15:34 edd Exp $
 
 Although this file is present in the upstream source tree, it was not
 included when the release tarball was created.  This file is needed to
@@ -13,15 +13,15 @@ Index: test/conftest.py
 +import os
 +import textwrap
 +
-+import neovim
++import pynvim
 +import pytest
 +
-+neovim.setup_logging("test")
++pynvim.setup_logging("test")
 +
 +
 +@pytest.fixture(autouse=True)
 +def cleanup_func(vim):
-+    fun = textwrap.dedent(''':function BeforeEachTest()
++    fun = textwrap.dedent('''function! BeforeEachTest()
 +        set all&
 +        redir => groups
 +        silent augroup
@@ -58,7 +58,7 @@ Index: test/conftest.py
 +        comclear
 +        endfunction
 +    ''')
-+    vim.input(fun)
++    vim.command(fun)
 +    vim.command('call BeforeEachTest()')
 +    assert len(vim.tabpages) == len(vim.windows) == len(vim.buffers) == 1
 +
@@ -71,8 +71,8 @@ Index: test/conftest.py
 +        child_argv = '["nvim", "-u", "NONE", "--embed"]'
 +
 +    if child_argv is not None:
-+        editor = neovim.attach('child', argv=json.loads(child_argv))
++        editor = pynvim.attach('child', argv=json.loads(child_argv))
 +    else:
-+        editor = neovim.attach('socket', path=listen_address)
++        editor = pynvim.attach('socket', path=listen_address)
 +
 +    return editor
