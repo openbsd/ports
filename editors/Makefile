@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2019/03/11 03:49:17 bentley Exp $
+# $OpenBSD: Makefile,v 1.135 2019/03/18 15:13:16 sthen Exp $
 
      SUBDIR =
      SUBDIR += abiword
@@ -68,10 +68,11 @@
      SUBDIR += tweak
      SUBDIR += uemacs
      SUBDIR += vile
-     SUBDIR += vim
+     SUBDIR += vim,gtk2
      SUBDIR += vim,gtk2,lua
      SUBDIR += vim,gtk2,perl,python,ruby
      SUBDIR += vim,gtk2,perl,python3,ruby
+     SUBDIR += vim,gtk3
      SUBDIR += vim,gtk3,lua
      SUBDIR += vim,gtk3,perl,python,ruby
      SUBDIR += vim,gtk3,perl,python3,ruby
