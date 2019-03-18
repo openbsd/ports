@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2018/01/13 20:12:47 jung Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/18 10:38:40 jung Exp $
 
 COMMENT =		parser/generator of iCalendar files
 
-MODPY_EGG_VERSION =	4.0.0
+MODPY_EGG_VERSION =	4.0.3
 DISTNAME =		icalendar-${MODPY_EGG_VERSION}
 PKGNAME =		py-icalendar-${MODPY_EGG_VERSION}
 
@@ -29,5 +29,10 @@ TEST_DEPENDS =		${RUN_DEPENDS} \
 
 FLAVORS =		python3
 FLAVOR ?=
+
+post-install:
+	for i in ${PREFIX}/bin/*; do \
+		mv $${i} $${i}${MODPY_BIN_SUFFIX} ;\
+	done
 
 .include <bsd.port.mk>

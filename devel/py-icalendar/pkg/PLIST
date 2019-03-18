@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/01/13 20:12:47 jung Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/03/18 10:38:40 jung Exp $
+bin/icalendar${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/icalendar/
 lib/python${MODPY_VERSION}/site-packages/icalendar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/icalendar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/icalendar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/icalendar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/icalendar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/icalendar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/icalendar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/icalendar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
@@ -12,6 +14,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}cal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}caselessdict.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}parser_tools.${MODPY_PYC_MAGIC_TAG}pyc
@@ -21,6 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}tools.${MODPY
 lib/python${MODPY_VERSION}/site-packages/icalendar/${MODPY_PYCACHE}windows_to_olson.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/icalendar/cal.py
 lib/python${MODPY_VERSION}/site-packages/icalendar/caselessdict.py
+lib/python${MODPY_VERSION}/site-packages/icalendar/cli.py
 lib/python${MODPY_VERSION}/site-packages/icalendar/compat.py
 lib/python${MODPY_VERSION}/site-packages/icalendar/parser.py
 lib/python${MODPY_VERSION}/site-packages/icalendar/parser_tools.py
