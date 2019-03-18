@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/13 15:15:15 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/18 22:16:06 sebastia Exp $
 
 COMMENT=	redirect programs through one or more proxies
 
-VERSION=	4.13
+VERSION=	4.14
 DISTNAME=	proxychains-ng-${VERSION}
 CATEGORIES=	net security
 GH_ACCOUNT=	rofl0r
