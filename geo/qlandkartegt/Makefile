@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/03/18 13:09:28 cwen Exp $
 
 COMMENT =	garmin GPS map management tool
 
 DISTNAME =	qlandkartegt-1.8.1
 CATEGORIES =	geo x11
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://www.qlandkarte.org/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qlandkartegt/}
@@ -39,3 +39,9 @@ post-extract:
 	@rm ${WRKSRC}/cmake/Modules/FindJPEG.cmake
 
 .include <bsd.port.mk>
+
+# fix error: #error Must have C++11 or newer.
+# XXX this should be retried once moving to ports-gcc>=8
+.if ${CHOSEN_COMPILER} == "ports-gcc"
+CONFIGURE_ENV +=     CXXFLAGS="${CXXFLAGS} -std=c++11"
+.endif
