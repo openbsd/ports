@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/03/05 12:38:24 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/03/18 17:54:33 jasper Exp $
 @conflict suricata-update-*
 @pkgpath security/suricata-update
 @newgroup _suricata:800
@@ -30,7 +30,7 @@ lib/libhtp.la
 @lib lib/libhtp.so.${LIBhtp_VERSION}
 lib/pkgconfig/htp.pc
 lib/python${MODPY_VERSION}/site-packages/suricata/
-lib/python${MODPY_VERSION}/site-packages/suricata-4.1.2-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/suricata-${SURICATA_V}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/suricata/__init__.py
 lib/python${MODPY_VERSION}/site-packages/suricata/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/config/
@@ -126,7 +126,7 @@ lib/python${MODPY_VERSION}/site-packages/suricata/update/util.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/util.pyc
 lib/python${MODPY_VERSION}/site-packages/suricata/update/version.py
 lib/python${MODPY_VERSION}/site-packages/suricata/update/version.pyc
-lib/python${MODPY_VERSION}/site-packages/suricata_update-1.0.3-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/suricata_update-${SUPDATE_V}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/suricatasc/
 lib/python${MODPY_VERSION}/site-packages/suricatasc/__init__.py
 lib/python${MODPY_VERSION}/site-packages/suricatasc/__init__.pyc
