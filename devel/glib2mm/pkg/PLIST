@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2018/06/01 07:23:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.43 2019/03/18 07:15:52 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -462,6 +462,8 @@ share/doc/glibmm-${V}/reference/
 share/doc/glibmm-${V}/reference/glibmm-${V}.tag
 share/doc/glibmm-${V}/reference/html/
 share/doc/glibmm-${V}/reference/html/annotated.html
+share/doc/glibmm-${V}/reference/html/arrowdown.png
+share/doc/glibmm-${V}/reference/html/arrowright.png
 share/doc/glibmm-${V}/reference/html/bc_s.png
 share/doc/glibmm-${V}/reference/html/bdwn.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1Action-members.html
@@ -1318,8 +1320,12 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1ustring__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classes.html
 share/doc/glibmm-${V}/reference/html/closed.png
 share/doc/glibmm-${V}/reference/html/deprecated.html
-share/doc/glibmm-${V}/reference/html/dir_02fef2a40270467d72a7f717cf991d8a.html
-share/doc/glibmm-${V}/reference/html/dir_98c789a82e29670547769c353b486e1a.html
+share/doc/glibmm-${V}/reference/html/dir_0d2691912fd762e2b528a8cc6b96bd78.html
+share/doc/glibmm-${V}/reference/html/dir_309d22380aeba2b08200eea06b7c925d.html
+share/doc/glibmm-${V}/reference/html/dir_3270a2bce89e65012453509eed7a019b.html
+share/doc/glibmm-${V}/reference/html/dir_8d20701407f8ddcf49535780d6c7a3e5.html
+share/doc/glibmm-${V}/reference/html/dir_a9c7e55702c8c113819db7d8357ce40a.html
+share/doc/glibmm-${V}/reference/html/dir_fb0a09406158440eb85baf9306c8ef82.html
 share/doc/glibmm-${V}/reference/html/doc.png
 share/doc/glibmm-${V}/reference/html/doxygen-extra.css
 share/doc/glibmm-${V}/reference/html/doxygen.css
@@ -1569,8 +1575,6 @@ share/doc/glibmm-${V}/reference/html/inherit_graph_98.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_99.png
 share/doc/glibmm-${V}/reference/html/inherits.html
 share/doc/glibmm-${V}/reference/html/jquery.js
-share/doc/glibmm-${V}/reference/html/menu.js
-share/doc/glibmm-${V}/reference/html/menudata.js
 share/doc/glibmm-${V}/reference/html/modules.html
 share/doc/glibmm-${V}/reference/html/namespaceGio.html
 share/doc/glibmm-${V}/reference/html/namespaceGio_1_1DBus.html
