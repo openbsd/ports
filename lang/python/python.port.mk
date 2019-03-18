@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.101 2019/03/18 21:19:18 remi Exp $
+# $OpenBSD: python.port.mk,v 1.102 2019/03/18 21:30:48 remi Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -164,6 +164,10 @@ MODPY_CMD =	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 MODPY_TEST_CMD = cd ${WRKSRC} && ${SETENV} ${ALL_TEST_ENV} \
 			${MODPY_BIN} ./${MODPY_SETUP} \
 			${MODPY_SETUP_ARGS}
+
+MODPY_TEST_LOCALE ?=	LC_CTYPE=en_US.UTF-8
+
+TEST_ENV +=		${MODPY_TEST_LOCALE}
 
 SUBST_VARS :=	MODPY_PYCACHE MODPY_COMMENT MODPY_ABI3SO MODPY_PYC_MAGIC_TAG \
 		MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION MODPY_BIN_SUFFIX \
