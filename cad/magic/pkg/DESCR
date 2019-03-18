@@ -1,0 +1,15 @@
+Magic is an interactive system for creating and modifying VLSI
+circuit layouts. It is used to design basic cells and to combine
+them hierarchically into large structures.
+
+Magic understands quite a bit about the nature of circuits. It has
+built-in knowledge of layout rules; during editing, it continuously
+checks for rule violations. Magic also knows about connectivity and
+transistors, and contains a built-in hierarchical circuit extractor.
+It has a plow operation that permits to stretch or compact cells.
+Lastly, Magic has routing tools to make the circuit interconnections.
+
+Magic is based on the Mead-Conway style of design: it uses simplified
+design rules and circuit structures that make it easier layout drawing
+and permit Magic to provide powerful assistance, at the cost of
+slightly less dense circuits.

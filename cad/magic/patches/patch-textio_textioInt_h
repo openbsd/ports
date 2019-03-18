@@ -1,0 +1,14 @@
+$OpenBSD: patch-textio_textioInt_h,v 1.1.1.1 2019/03/18 08:35:35 bentley Exp $
+
+Index: textio/textioInt.h
+--- textio/textioInt.h.patch.orig
++++ textio/textioInt.h
+@@ -41,7 +41,7 @@ typedef struct {
+ #define TX_CMD_PROMPT	":"
+ 
+ /* all of the state associated with a tty terminal */
+-#if !defined(SYSV) && !defined(CYGWIN)
++#if !defined(SYSV) && !defined(CYGWIN) && !defined(__OpenBSD__)
+ typedef struct {
+     struct sgttyb tx_i_sgtty;
+     struct tchars tx_i_tchars;

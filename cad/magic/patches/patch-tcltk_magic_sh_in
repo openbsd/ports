@@ -1,0 +1,11 @@
+$OpenBSD: patch-tcltk_magic_sh_in,v 1.1.1.1 2019/03/18 08:35:35 bentley Exp $
+
+Index: tcltk/magic.sh.in
+--- tcltk/magic.sh.in.patch.orig
++++ tcltk/magic.sh.in
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ #
+ # For installation, put this file (magic.sh) in a known executable path.
+ # Put startup script "magic.tcl", shared library "tclmagic.so", and

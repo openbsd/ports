@@ -1,0 +1,39 @@
+$OpenBSD: patch-utils_paths_h,v 1.1.1.1 2019/03/18 08:35:35 bentley Exp $
+
+Index: utils/paths.h
+--- utils/paths.h.patch.orig
++++ utils/paths.h
+@@ -28,20 +28,20 @@
+  *
+  */
+ 
+-#define	EXT_PATH	"$CAD_ROOT/magic/%s $CAD_ROOT/magic/tutorial"
++#define	EXT_PATH	"$CAD_ROOT/magic/%s ${TRUEPREFIX}/share/examples/magic/tutorial"
+ #define DOT_MAGIC_PATH	"$CAD_ROOT/magic/sys ~ ."
+ 
+ /*
+  * Paths used by 'magic'.
+  *
+  */
+-#define MAGIC_CMOS_PATH	"$CAD_ROOT/magic/cmos $CAD_ROOT/magic/tutorial"
+-#define MAGIC_NMOS_PATH	"$CAD_ROOT/magic/nmos $CAD_ROOT/magic/tutorial"
++#define MAGIC_CMOS_PATH	"$CAD_ROOT/magic/cmos ${TRUEPREFIX}/share/examples/magic/tutorial"
++#define MAGIC_NMOS_PATH	"$CAD_ROOT/magic/nmos ${TRUEPREFIX}/share/examples/magic/tutorial"
+ #define MAGIC_SYS_PATH	". $CAD_ROOT/magic/sys $CAD_ROOT/magic/sys/current"
+ #define MAGIC_SYS_DOT	"$CAD_ROOT/magic/sys/.magicrc"
+ #define MAGIC_PRE_DOT	"$CAD_ROOT/magic/sys/.initrc"
+ #define MAGIC_LIB_PATH_FORMAT	"$CAD_ROOT/magic/%s"
+-#define MAGIC_LIB_PATH_DEFAULT	"$CAD_ROOT/magic/sys/current $CAD_ROOT/magic/tutorial"
++#define MAGIC_LIB_PATH_DEFAULT	"$CAD_ROOT/magic/sys/current ${TRUEPREFIX}/share/examples/magic/tutorial"
+ #define HELPER_PATH	". BIN_DIR"		/* Used by graphics drivers */
+ 
+ /*
+@@ -58,7 +58,7 @@
+ #  endif
+ # endif
+ #else
+-# if defined(linux) || defined(__FreeBSD__)
++# if defined(linux) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #  define PAGERDIR "/usr/bin/more"
+ # elif defined(CYGWIN)
+ #  define PAGERDIR "./less"

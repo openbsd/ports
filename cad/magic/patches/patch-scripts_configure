@@ -1,0 +1,53 @@
+$OpenBSD: patch-scripts_configure,v 1.1.1.1 2019/03/18 08:35:35 bentley Exp $
+
+Index: scripts/configure
+--- scripts/configure.patch.orig
++++ scripts/configure
+@@ -830,7 +830,7 @@ pdfdir='${docdir}'
+ psdir='${docdir}'
+ libdir='${exec_prefix}/lib'
+ localedir='${datarootdir}/locale'
+-mandir='${datarootdir}/man'
++mandir='${prefix}/man'
+ 
+ ac_prev=
+ ac_dashdash=
+@@ -7884,7 +7884,7 @@ fi
+       CFLAGS="${CFLAGS} -l/usr/X11R6/include"
+       ;;
+ 
+-    *-netbsd*|*-openbsd*)
++    *-netbsd*)
+       # Not available on all versions:  check for include file.
+       ac_fn_c_check_header_mongrel "$LINENO" "dlfcn.h" "ac_cv_header_dlfcn_h" "$ac_includes_default"
+ if test "x$ac_cv_header_dlfcn_h" = xyes; then :
+@@ -7900,6 +7900,12 @@ fi
+       fi
+       ;;
+ 
++    *-openbsd*)
++      SHLIB_CFLAGS="-fPIC"
++      LDDL_FLAGS="-shared ${LIB_SPEC}"
++      CFLAGS="${CFLAGS} -I${X11BASE}/include"
++      ;;
++
+     *-nextstep*)
+       LDDL_FLAGS="-nostdlib -r"
+       ;;
+@@ -9298,16 +9304,5 @@ else
+      echo
+    fi
+ fi
+-
+-echo "-----------------------------------------------------------"
+-echo
+-
+-echo "Use 'make' to compile and 'make install' to install."
+-echo
+-echo "Errors may not be printed to stdout:  see files 'make.log' "
+-echo "  and 'install.log' for complete error summary."
+-echo
+-echo "-----------------------------------------------------------"
+-echo
+ 
+ cp defs.mak ..
