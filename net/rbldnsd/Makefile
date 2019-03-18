@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.14 2018/09/04 12:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2019/03/18 16:29:49 giovanni Exp $
 
 COMMENT=	small daemon for DNSBLs
 
-DISTNAME=	rbldnsd-0.998.20171115
+DISTNAME=	rbldnsd-0.998.20180516
 GH_ACCOUNT=	spamhaus
 GH_PROJECT=	rbldnsd
-GH_COMMIT=	6111aba2a76423a0a05030c1bb8ca697a24877bb
-REVISION=	1
+GH_COMMIT=	cfb7e80ffa690861b1b79772328aa274d1d5446a
 
 CATEGORIES=	net
 
 HOMEPAGE=	https://rbldnsd.io
+MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
