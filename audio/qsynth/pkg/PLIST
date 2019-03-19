@@ -1,14 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/07/26 12:16:34 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/03/19 20:12:10 cwen Exp $
 @bin bin/qsynth
+man/fr/
+man/fr/man1/
+@man man/fr/man1/qsynth.1
+@man man/man1/qsynth.1
 share/applications/qsynth.desktop
-share/pixmaps/
-share/pixmaps/qsynth.png
+share/icons/hicolor/32x32/apps/qsynth.png
+share/metainfo/
+share/metainfo/qsynth.appdata.xml
 share/qsynth/
 share/qsynth/translations/
 share/qsynth/translations/qsynth_cs.qm
 share/qsynth/translations/qsynth_de.qm
-share/qsynth/translations/qsynth_es.qm
 share/qsynth/translations/qsynth_fr.qm
 share/qsynth/translations/qsynth_ru.qm
 share/qsynth/translations/qsynth_sr.qm
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

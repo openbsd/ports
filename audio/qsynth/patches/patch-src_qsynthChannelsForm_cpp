@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_qsynthChannelsForm_cpp,v 1.1 2019/03/19 20:12:10 cwen Exp $
+
+Index: src/qsynthChannelsForm.cpp
+--- src/qsynthChannelsForm.cpp.orig
++++ src/qsynthChannelsForm.cpp
+@@ -290,10 +290,12 @@ void qsynthChannelsForm::updateChannel ( int iChan )
+ 		pItem->setText(QSYNTH_CHANNELS_PROG,
+ 			QString::number(iProg));
+ 		pItem->setText(QSYNTH_CHANNELS_NAME, sName);
++	#ifdef CONFIG_FLUID_BANK_OFFSET
+ 		pItem->setText(QSYNTH_CHANNELS_SFID,
+ 			QString::number(iSFID));
+ 		pItem->setText(QSYNTH_CHANNELS_SFNAME,
+ 			QFileInfo(sSFName).baseName());
++	#endif
+ 		// Make this a dirty-operation.
+ 		m_iDirtyCount++;
+ 	}

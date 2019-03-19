@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/03/08 20:00:40 cwen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/19 20:12:10 cwen Exp $
 
 COMMENT =		Qt GUI Interface for FluidSynth
 
-DISTNAME =		qsynth-0.5.4
-REVISION =		0
+DISTNAME =		qsynth-0.5.5
 
 CATEGORIES =		audio
 
@@ -16,22 +15,26 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qsynth/}
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets X11 c
-WANTLIB += m fluidsynth Qt5X11Extras
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets c
+WANTLIB += m fluidsynth GL Qt5Network curses readline
 
-MODULES =		devel/cmake \
-			x11/qt5
+.if ${MACHINE_ARCH} == "powerpc"
+WANTLIB += atomic
+.endif
 
-LIB_DEPENDS +=		audio/fluidsynth \
-			x11/qt5/qtx11extras
+MODULES =		x11/qt5
+
+LIB_DEPENDS +=		audio/fluidsynth
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
+			x11/gtk+3,-guic
 
+USE_GMAKE =		Yes
 NO_TEST =		Yes
 
-BUILD_DEPENDS =		audio/fluidsynth
+CONFIGURE_STYLE = 	gnu
 
-post-build:
-	cp ${WRKSRC}/src/qsynth.desktop ${WRKBUILD}/src/
+CONFIGURE_ENV +=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .include <bsd.port.mk>
