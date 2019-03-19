@@ -1,0 +1,14 @@
+$OpenBSD: patch-v8_src_heap_spaces_h,v 1.1 2019/03/19 08:48:23 robert Exp $
+
+Index: v8/src/heap/spaces.h
+--- v8/src/heap/spaces.h.orig
++++ v8/src/heap/spaces.h
+@@ -1904,7 +1904,7 @@ class V8_EXPORT_PRIVATE FreeList {
+   static const size_t kTinyListMax = 0x1f * kPointerSize;
+   static const size_t kSmallListMax = 0xff * kPointerSize;
+   static const size_t kMediumListMax = 0x7ff * kPointerSize;
+-  static const size_t kLargeListMax = 0x3fff * kPointerSize;
++  static const size_t kLargeListMax = 0x2fff * kPointerSize;
+   static const size_t kTinyAllocationMax = kTiniestListMax;
+   static const size_t kSmallAllocationMax = kTinyListMax;
+   static const size_t kMediumAllocationMax = kSmallListMax;
