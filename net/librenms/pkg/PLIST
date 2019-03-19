@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.53 2019/03/06 15:08:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.54 2019/03/19 13:55:47 sthen Exp $
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:${INSTDIR}:/sbin/nologin
 librenms/
@@ -534,7 +534,13 @@ librenms/bootstrap/cache/
 librenms/bootstrap/cache/.gitignore
 librenms/build-base.php
 librenms/build.sql
+@mode 775
+@owner _librenms
+@group www
 librenms/cache/
+@mode
+@owner
+@group
 librenms/cache/.gitignore
 librenms/check-services.php
 librenms/composer.json
