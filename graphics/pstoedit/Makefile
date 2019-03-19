@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2019/01/05 10:08:33 steven Exp $
+# $OpenBSD: Makefile,v 1.28 2019/03/19 12:45:39 cwen Exp $
 
 COMMENT=	translate PostScript/PDF graphics to other vector formats
 
 DISTNAME=	pstoedit-3.73
 SHARED_LIBS=	pstoedit 3.0
 CATEGORIES=	graphics
+REVISION=	0
 
 HOMEPAGE=	http://www.pstoedit.net/
 
@@ -26,7 +27,11 @@ CONFIGURE_ARGS=	--without-libplot	\
 		--without-magick
 WANTLIB=	c ${COMPILER_LIBCXX} m
 
-COMPILER =		base-clang ports-gcc base-gcc
+# c++11
+COMPILER =	base-clang ports-gcc base-gcc
+
+# This should be reviewed once moving to ports-gcc>=8
+CXXFLAGS +=	-std=c++11
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/pstoedit.1 ${PREFIX}/man/man1
