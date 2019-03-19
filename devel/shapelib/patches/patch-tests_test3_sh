@@ -1,0 +1,11 @@
+$OpenBSD: patch-tests_test3_sh,v 1.1 2019/03/19 19:45:08 landry Exp $
+
+Index: tests/test3.sh
+--- tests/test3.sh.orig
++++ tests/test3.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ #
+ #	Use example programs to create a very simple dataset that

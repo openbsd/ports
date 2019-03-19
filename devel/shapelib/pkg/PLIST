@@ -1,6 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:45 naddy Exp $
-include/libshp/
-include/libshp/shapefil.h
+@comment $OpenBSD: PLIST,v 1.5 2019/03/19 19:45:08 landry Exp $
+@bin bin/Shape_PointInPoly
+@bin bin/dbfadd
+@bin bin/dbfcat
+@bin bin/dbfcreate
+@bin bin/dbfdump
+@bin bin/dbfinfo
+@bin bin/shpadd
+@bin bin/shpcat
+@bin bin/shpcentrd
+@bin bin/shpcreate
+@bin bin/shpdata
+@bin bin/shpdump
+@bin bin/shpdxf
+@bin bin/shpfix
+@bin bin/shpinfo
+@bin bin/shprewind
+@bin bin/shpsort
+@bin bin/shptreedump
+@bin bin/shputils
+@bin bin/shpwkb
+include/shapefil.h
 lib/libshp.a
+lib/libshp.la
 @lib lib/libshp.so.${LIBshp_VERSION}
-lib/libshp_p.a
+lib/pkgconfig/shapelib.pc

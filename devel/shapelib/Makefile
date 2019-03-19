@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/03/16 18:07:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/03/19 19:45:08 landry Exp $
 
 COMMENT=	shapefile manipulation library
 
-DISTNAME=	shapelib-1.2.10
-REVISION =	3
-SHARED_LIBS=	shp 1.2
+DISTNAME=	shapelib-1.5.0
+SHARED_LIBS=	shp 2.0
 CATEGORIES=    	devel
 
 HOMEPAGE=	http://shapelib.maptools.org/
@@ -12,14 +11,9 @@ HOMEPAGE=	http://shapelib.maptools.org/
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://dl.maptools.org/dl/shapelib/
+MASTER_SITES=	http://download.osgeo.org/shapelib/
 
-MAKE_ENV=	SHLIB_MAJOR=${LIBshp_VERSION:R} \
-		SHLIB_MINOR=${LIBshp_VERSION:E}
-FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/include/libshp
-	${INSTALL_DATA} ${WRKSRC}/shapefil.h ${PREFIX}/include/libshp
+CONFIGURE_STYLE=gnu
+WANTLIB +=	${COMPILER_LIBCXX} c m
 
 .include <bsd.port.mk>
