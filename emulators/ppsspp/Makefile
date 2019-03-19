@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2019/03/07 07:22:19 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2019/03/19 08:10:32 bentley Exp $
 
 COMMENT =	Sony PlayStation Portable emulator
 
 GH_ACCOUNT =	hrydgard
 GH_PROJECT =	ppsspp
-GH_TAGNAME =	v1.7.1
+GH_TAGNAME =	v1.8.0
 
-GLSLANG =	29619b2312f7bc862221749f3f4d37c3e6a0dee2
-PPSSPP_LANG =	f60be494a43a49fd7ff61603e132c1e24c160d88
+GLSLANG =	9983f99e87ab0b6608b236ea59bcf873f90e1435
+PPSSPP_LANG =	18e0d460e187556e9510e2e9b5ae85fa435cefd9
 SPIRV_CROSS =	be7425ef70231ab82930331959ab487d605d0482
-ARMIPS =	9efe3367284d2d1eeb14fc302a2c12c36e3e255e
+ARMIPS =	7885552b208493a6a0f21663770c446c3ba65576
 
 MASTER_SITES0 =	https://github.com/hrydgard/glslang/archive/
 MASTER_SITES1 =	https://github.com/hrydgard/ppsspp-lang/archive/
@@ -50,6 +50,7 @@ CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="-I${X11BASE}/include" \
 			-DUSE_SYSTEM_FFMPEG=ON \
 			-DUSE_SYSTEM_LIBZIP=ON \
 			-DUSE_SYSTEM_SNAPPY=ON \
+			-DUSE_DISCORD=OFF \
 			-DUSING_EGL=OFF
 
 NO_TEST =		Yes
