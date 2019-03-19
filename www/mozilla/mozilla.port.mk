@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.123 2019/03/04 07:03:54 jsg Exp $
+# $OpenBSD: mozilla.port.mk,v 1.124 2019/03/19 19:22:42 landry Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -54,7 +54,7 @@ MODMOZ_BUILD_DEPENDS =	devel/autoconf/2.13 \
 			archivers/zip>=2.3
 
 .if !defined(MOZILLA_USE_BUNDLED_NSS)
-MODMOZ_LIB_DEPENDS +=	security/nss>=3.41.1
+MODMOZ_LIB_DEPENDS +=	security/nss>=3.42
 MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
 CONFIGURE_ARGS +=	--with-system-nss
 .endif
