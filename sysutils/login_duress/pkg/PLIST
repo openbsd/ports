@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/20 17:38:41 jcs Exp $
+@mode 0750
+@group auth
+libexec/auth/
+@bin libexec/auth/login_-duress
+@mode 4555
+@owner root
+@sample /usr/libexec/auth/login_-duress
+@mode
+@owner
+@group
+@man man/man8/login_duress.8
+share/doc/login_duress/
+share/doc/login_duress/README.md
