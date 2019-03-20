@@ -1,11 +1,15 @@
-# $OpenBSD: Makefile,v 1.25 2019/01/06 10:25:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2019/03/20 11:47:45 ajacoutot Exp $
 
 COMMENT=	lightweight DLNA/UPnP-AV media server (aka ReadyMedia)
 
+GH_ACCOUNT=	glebius
+GH_PROJECT=	minidlna
+GH_TAGNAME=	43573257e45728e070a5f30bd74648c86537e625
 V=		1.2.1
-DISTNAME=	minidlna-$V
-PKGNAME=	minidlna-$V
-REVISION=	3
+DISTNAME=	minidlna-${V}-glebius
+PKGNAME=	minidlna-${V}
+
+REVISION=	4
 
 CATEGORIES=	multimedia
 
@@ -16,12 +20,13 @@ HOMEPAGE=	http://sourceforge.net/projects/minidlna/
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =  FLAC avformat avutil c exif iconv id3tag intl jpeg ogg
-WANTLIB += pthread sqlite3 vorbis
+WANTLIB += FLAC avformat avutil c exif iconv id3tag intl jpeg
+WANTLIB += ogg pthread sqlite3 vorbis
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=minidlna/}
+# use the github fork, see this link for more information:
+# https://svnweb.freebsd.org/ports?view=revision&revision=489641
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=minidlna/}
 
-AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf
 
 CONFIGURE_ARGS= --with-log-path=/var/log/minidlna \
@@ -38,7 +43,14 @@ LIB_DEPENDS=	audio/flac \
 		graphics/jpeg \
 		graphics/libexif
 
-NO_TEST=	Yes
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.16
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
+
+do-gen:
+	cd ${WRKSRC} && env -i ${AUTOCONF_ENV} autoreconf -fi
+ 
 E=		${PREFIX}/share/examples/minidlna
 
 post-install:

@@ -1,0 +1,13 @@
+$OpenBSD: patch-kqueue_c,v 1.1 2019/03/20 11:47:45 ajacoutot Exp $
+
+Index: kqueue.c
+--- kqueue.c.orig
++++ kqueue.c
+@@ -28,6 +28,7 @@
+ 
+ #include <sys/types.h>
+ #include <sys/event.h>
++#include <sys/time.h>
+ #include <assert.h>
+ #include <errno.h>
+ #include <stdlib.h>

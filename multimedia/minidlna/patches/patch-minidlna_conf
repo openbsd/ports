@@ -1,26 +1,26 @@
-$OpenBSD: patch-minidlna_conf,v 1.7 2019/01/06 10:25:57 ajacoutot Exp $
-
-default directories
+$OpenBSD: patch-minidlna_conf,v 1.8 2019/03/20 11:47:46 ajacoutot Exp $
 
 Index: minidlna.conf
 --- minidlna.conf.orig
 +++ minidlna.conf
-@@ -1,11 +1,12 @@
+@@ -1,11 +1,13 @@
  # port for HTTP (descriptions, SOAP, media transfer) traffic
 +# if firewalling, this TCP port, as well as UDP port 1900, must be open.
  port=8200
  
- # network interfaces to serve, comma delimited
+ # network interfaces to serve, comma delimited (8 interfaces max)
 -#network_interface=eth0
 +#network_interface=em0
  
- # specify the user account name or uid to run as
+-# specify the user account name or uid to run as
 -#user=jmaggard
++# specify the user account name or uid to run as;
++# usually handled by daemon_user variable in the rc.d(8) script
 +#user=_minidlna
  
  # set this to the directory you want scanned.
  # * if you want multiple directories, you can have multiple media_dir= lines
-@@ -15,7 +16,7 @@ port=8200
+@@ -15,7 +17,7 @@ port=8200
  #   + "V" for video  (eg. media_dir=V,/home/jmaggard/Videos)
  #   + "P" for images (eg. media_dir=P,/home/jmaggard/Pictures)
  #   + "PV" for pictures and video (eg. media_dir=PV,/home/jmaggard/digital_camera)
@@ -29,7 +29,7 @@ Index: minidlna.conf
  
  # set this to merge all media_dir base contents into the root container
  # note: the default is no
-@@ -25,20 +26,20 @@ media_dir=/opt
+@@ -25,20 +27,20 @@ media_dir=/opt
  #friendly_name=My DLNA Server
  
  # set this if you would like to specify the directory where you want MiniDLNA to store its database and album art cache
@@ -54,13 +54,14 @@ Index: minidlna.conf
  # note: the default is yes
  inotify=yes
  
-@@ -64,6 +65,10 @@ notify_interval=900
+@@ -64,6 +66,11 @@ notify_interval=900
  # in its XML description
  serial=12345678
  model_number=1
 +
-+# specify fixed uuid, rather than generating a fresh one at startup.
-+# helps some clients at restart time. see uuid(1) or uuidgen(1).
++# specify fixed uuid, rather than generating a fresh one at startup;
++# helps some clients at restart time and allow running multiple instances;
++# see uuid(1) or uuidgen(1).
 +#uuid=abc12345-5678-9abc-def0-123456789abc
  
  # specify the path to the MiniSSDPd socket

@@ -1,3 +1,6 @@
 ReadyMedia (formerly known as MiniDLNA) is simple media server software,
 written in C, with the aim of being fully compliant with DLNA/UPnP-AV clients
 (televisions, tablets, etc).
+
+This is Gleb Smirnoff's fork of original project by Justin Maggard, created
+temporarily due to low activity of main project.

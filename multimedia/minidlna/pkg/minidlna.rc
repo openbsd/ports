@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: minidlna.rc,v 1.3 2018/01/11 19:27:04 rpe Exp $
+# $OpenBSD: minidlna.rc,v 1.4 2019/03/20 11:47:46 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/minidlnad"
 daemon_user="_minidlna"
@@ -10,7 +10,7 @@ daemon_user="_minidlna"
 rc_reload=NO
 
 rc_pre() {
-	install -d -o _minidlna /var/run/minidlna
+	install -d -o ${daemon_user} /var/run/minidlna
 }
 
 rc_cmd $1

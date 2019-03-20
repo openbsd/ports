@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/01/06 10:09:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/03/20 11:47:46 ajacoutot Exp $
 @newgroup _minidlna:705
 @newuser _minidlna:705:_minidlna:daemon:minidlna user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/db/minidlna/*
@@ -7,13 +7,10 @@
 @man man/man5/minidlna.conf.5
 @man man/man8/minidlnad.8
 @bin sbin/minidlnad
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/minidlna/
 share/examples/minidlna/minidlna.conf
 @sample ${SYSCONFDIR}/minidlna.conf
-@owner _minidlna
-@sample /var/db/minidlna/
-@sample /var/log/minidlna/
-@owner
 share/locale/da/LC_MESSAGES/minidlna.mo
 share/locale/de/LC_MESSAGES/minidlna.mo
 share/locale/es/LC_MESSAGES/minidlna.mo
@@ -27,3 +24,6 @@ share/locale/pl/LC_MESSAGES/minidlna.mo
 share/locale/ru/LC_MESSAGES/minidlna.mo
 share/locale/sl/LC_MESSAGES/minidlna.mo
 share/locale/sv/LC_MESSAGES/minidlna.mo
+@owner _minidlna
+@sample /var/db/minidlna/
+@sample /var/log/minidlna/
