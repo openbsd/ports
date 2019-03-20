@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.79 2019/01/06 10:37:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2019/03/20 16:52:59 ajacoutot Exp $
 
 BROKEN-hppa=		libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
 COMMENT=		H.323 gatekeeper
 
-V=			5.1
+V=			5.2
 GH_ACCOUNT=		willamowius
 GH_PROJECT=		gnugk
 GH_TAGNAME=		v${V:S/./_/}
@@ -21,7 +21,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL c crypto curl expat h323 kvm
 WANTLIB += lber-2.4 ldap-2.4 ldap_r-2.4 lua5.2 m maxminddb netsnmp
-WANTLIB += netsnmpagent netsnmpmibs nghttp2 pt sasl2 ssh ssl z
+WANTLIB += netsnmpagent netsnmpmibs nghttp2 pt rabbitmq sasl2
+WANTLIB += ssh ssl z
 
 COMPILER=		base-clang ports-gcc base-gcc
 
@@ -37,6 +38,7 @@ LIB_DEPENDS=		net/curl \
 			net/h323plus \
 			net/libmaxminddb \
 			net/net-snmp \
+			net/rabbitmq-c \
 			security/libssh \
 			www/nghttp2
 
@@ -57,6 +59,7 @@ CONFIGURE_ARGS=		--disable-sqlite \
 			--with-pgsql-include-dir=${LOCALBASE}/include/postgresql \
 			--with-lua-include-dir=${MODLUA_INCL_DIR} \
 			--with-lua-lib-dir=${LOCALBASE}/lib
+
 # http://www.tandberg.com/collateral/tandberg-ITU-license.pdf
 # H.460.23/.24. Contact consulting@h323plus.org for licensing terms.
 # (sync with net/h323plus)
