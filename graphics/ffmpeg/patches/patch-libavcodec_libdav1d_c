@@ -1,11 +1,11 @@
-$OpenBSD: patch-libavcodec_libdav1d_c,v 1.2 2019/03/14 06:27:55 ajacoutot Exp $
+$OpenBSD: patch-libavcodec_libdav1d_c,v 1.3 2019/03/20 15:50:31 ajacoutot Exp $
 
 avcodec: libdav1d AV1 decoder wrapper.
 
 Index: libavcodec/libdav1d.c
 --- libavcodec/libdav1d.c.orig
 +++ libavcodec/libdav1d.c
-@@ -0,0 +1,356 @@
+@@ -0,0 +1,346 @@
 +/*
 + * Copyright (c) 2018 Ronald S. Bultje <rsbultje gmail com>
 + * Copyright (c) 2018 James Almer <jamrial gmail com>
@@ -80,8 +80,10 @@ Index: libavcodec/libdav1d.c
 +        av_buffer_pool_uninit(&dav1d->pool);
 +        // Use twice the amount of required padding bytes for aligned_ptr below.
 +        dav1d->pool = av_buffer_pool_init(ret + DAV1D_PICTURE_ALIGNMENT * 2, NULL);
-+        if (!dav1d->pool)
++        if (!dav1d->pool) {
++            dav1d->pool_size = 0;
 +            return AVERROR(ENOMEM);
++        }
 +        dav1d->pool_size = ret;
 +    }
 +    buf = av_buffer_pool_get(dav1d->pool);
@@ -155,18 +157,11 @@ Index: libavcodec/libdav1d.c
 +    av_buffer_unref(&buf);
 +}
 +
-+static void libdav1d_frame_free(void *opaque, uint8_t *data) {
-+    Dav1dPicture *p = opaque;
-+
-+    dav1d_picture_unref(p);
-+    av_free(p);
-+}
-+
 +static int libdav1d_receive_frame(AVCodecContext *c, AVFrame *frame)
 +{
 +    Libdav1dContext *dav1d = c->priv_data;
 +    Dav1dData *data = &dav1d->data;
-+    Dav1dPicture *p;
++    Dav1dPicture pic = { 0 }, *p = &pic;
 +    int res;
 +
 +    if (!data->sz) {
@@ -200,10 +195,6 @@ Index: libavcodec/libdav1d.c
 +            return res;
 +    }
 +
-+    p = av_mallocz(sizeof(*p));
-+    if (!p)
-+        return AVERROR(ENOMEM);
-+
 +    res = dav1d_get_picture(dav1d->c, p);
 +    if (res < 0) {
 +        if (res == AVERROR(EINVAL))
@@ -211,17 +202,15 @@ Index: libavcodec/libdav1d.c
 +        else if (res == AVERROR(EAGAIN) && c->internal->draining)
 +            res = AVERROR_EOF;
 +
-+        av_free(p);
 +        return res;
 +    }
 +
 +    av_assert0(p->data[0] != NULL);
 +
-+    frame->buf[0] = av_buffer_create(NULL, 0, libdav1d_frame_free,
-+                                     p, AV_BUFFER_FLAG_READONLY);
++    // This requires the custom allocator above
++    frame->buf[0] = av_buffer_ref(p->allocator_data);
 +    if (!frame->buf[0]) {
 +        dav1d_picture_unref(p);
-+        av_free(p);
 +        return AVERROR(ENOMEM);
 +    }
 +
@@ -316,6 +305,7 @@ Index: libavcodec/libdav1d.c
 +
 +    res = 0;
 +fail:
++    dav1d_picture_unref(p);
 +    if (res < 0)
 +        av_frame_unref(frame);
 +    return res;
