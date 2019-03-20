@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.89 2019/02/20 17:15:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.90 2019/03/20 18:12:18 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
-DISTNAME=	freetds-1.00.111
-# when moving to 1.1, drop --with-tdsver (default is then auto,
-# which is improved in 1.1).
+DISTNAME=	freetds-1.1.1
 
 SHARED_LIBS +=  ct                   6.1      # 4.0
-SHARED_LIBS +=  sybdb                8.0      # 6.0
+SHARED_LIBS +=  sybdb                8.1      # 6.0
 SHARED_LIBS +=  tdsodbc              2.0      # unknown
 
 CATEGORIES=	databases
@@ -20,14 +18,12 @@ MASTER_SITES=	http://www.freetds.org/files/stable/ \
 # LGPLv2+ (most things) GPLv2+ (fisql, tdspool) FDL (docs)
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ffi gcrypt gmp gnutls gpg-error hogweed iconv idn2 intl
-WANTLIB += iodbc iodbcinst ncurses nettle p11-kit pthread readline tasn1
-WANTLIB += unistring z
+WANTLIB += c curses ffi gmp gnutls hogweed iconv idn2 intl iodbc
+WANTLIB += iodbcinst nettle p11-kit pthread readline tasn1 unistring
 
 LIB_DEPENDS=	converters/libiconv \
 		databases/iodbc,-main \
-		security/gnutls \
-		security/libgcrypt
+		security/gnutls
 
 # requires database server
 TEST_IS_INTERACTIVE= Yes
@@ -37,8 +33,7 @@ CONFIGURE_ENV=	ac_cv_prog_DOXYGEN=
 CONFIGURE_ARGS=	--enable-static \
 		--with-iodbc="${LOCALBASE}" \
 		--with-libiconv-prefix="${LOCALBASE}" \
-		--with-gnutls \
-		--with-tdsver=7.3
+		--with-gnutls
 
 # picks up com_err.h from e2fsprogs for gssapi support
 CONFIGURE_ENV+=	ac_cv_header_com_err_h=no

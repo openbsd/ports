@@ -1,0 +1,15 @@
+$OpenBSD: patch-include_tds_sysdep_public_h_in,v 1.1 2019/03/20 18:12:18 sthen Exp $
+
+Index: include/tds_sysdep_public.h.in
+--- include/tds_sysdep_public.h.in.orig
++++ include/tds_sysdep_public.h.in
+@@ -25,7 +25,8 @@
+  * MUST not include config.h
+  */
+ 
+-#if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 199901L
++/* avoid conflicting definition; __STDC_VERSION__ is not defined with ports gcc */
++#if defined(__OpenBSD__) || (defined(__STDC_VERSION__) && __STDC_VERSION__ >= 199901L)
+ #  include <stdint.h>
+ #else
+ typedef   signed char      int8_t;	/* 8-bit int */
