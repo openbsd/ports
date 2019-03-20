@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2018/04/03 11:46:17 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.19 2019/03/20 16:26:01 gonzalo Exp $
 
 COMMENT=		SSH monitoring
 
-DISTNAME=		autossh-1.4f
+DISTNAME=		autossh-1.4g
 CATEGORIES=		sysutils
 
 MASTER_SITES=		${HOMEPAGE}
 
-HOMEPAGE=		http://www.harding.motd.ca/autossh/
+HOMEPAGE=		https://www.harding.motd.ca/autossh/
 
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 
