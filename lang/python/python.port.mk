@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.104 2019/03/20 22:40:00 remi Exp $
+# $OpenBSD: python.port.mk,v 1.105 2019/03/20 22:45:26 remi Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -226,8 +226,8 @@ do-install:
 .  endif
 
 # setuptools supports regress testing from setup.py using a standard target
-.  if !target(do-test) && (${MODPY_SETUPUTILS:L} == "yes" || \
-      ${MODPY_PYTEST:L} == "yes")
+.  if !target(do-test) && \
+      (${MODPY_SETUPUTILS:L} == "yes" || ${MODPY_PYTEST:L} == "yes")
 do-test:
 	@${MODPY_TEST_TARGET}
 .  endif
