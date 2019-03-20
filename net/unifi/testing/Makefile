@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2019/02/26 21:56:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/03/20 16:40:44 sthen Exp $
 
-V=		5.10.19
+V=		5.10.20
 SNAPPY_V=	1.1.7.2
 
 # for stable-candidate versions
