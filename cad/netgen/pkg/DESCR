@@ -1,0 +1,10 @@
+Netgen is a tool for comparing netlists, a process known as LVS (Layout
+vs. Schematic). This is an important step in the VLSI IC design flow,
+ensuring that the geometry that has been laid out matches the expected
+circuit.
+
+Netgen is considered complete and competitive with commercial-grade
+tools. Code was added to handle device properties and to resolve
+parallel combinations of devices whether individually instantiated
+or implied through the use of the "M" property. Serial and parallel
+networks of passive devices are analyzed and compared between networks.

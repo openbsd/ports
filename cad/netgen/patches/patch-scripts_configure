@@ -1,0 +1,43 @@
+$OpenBSD: patch-scripts_configure,v 1.1.1.1 2019/03/20 10:05:10 bentley Exp $
+
+Index: scripts/configure
+--- scripts/configure.orig
++++ scripts/configure
+@@ -6416,7 +6416,7 @@ fi
+       CFLAGS="${CFLAGS} -l/usr/X11R6/include"
+       ;;
+ 
+-    *-netbsd*|*-openbsd*)
++    *-netbsd*)
+       # Not available on all versions:  check for include file.
+       ac_fn_c_check_header_mongrel "$LINENO" "dlfcn.h" "ac_cv_header_dlfcn_h" "$ac_includes_default"
+ if test "x$ac_cv_header_dlfcn_h" = xyes; then :
+@@ -6432,6 +6432,11 @@ fi
+       fi
+       ;;
+ 
++    *-openbsd*)
++      SHLIB_CFLAGS="-fPIC"
++      LDDL_FLAGS="-shared ${LIB_SPEC}"
++      ;;
++
+     *-nextstep*)
+       LDDL_FLAGS="-nostdlib -r"
+       ;;
+@@ -7791,16 +7796,5 @@ else
+    echo "   on your system."
+    echo
+ fi
+-
+-echo "-----------------------------------------------------------"
+-echo
+-
+-echo "Use 'make' to compile and 'make install' to install."
+-echo
+-echo "Errors may not be printed to stdout:  see files 'make.log' "
+-echo "   and 'install.log' for a complete error summary."
+-echo
+-echo "-----------------------------------------------------------"
+-echo
+ 
+ cp defs.mak ..

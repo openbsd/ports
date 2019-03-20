@@ -1,0 +1,11 @@
+$OpenBSD: patch-tcltk_netgen_sh_in,v 1.1.1.1 2019/03/20 10:05:10 bentley Exp $
+
+Index: tcltk/netgen.sh.in
+--- tcltk/netgen.sh.in.orig
++++ tcltk/netgen.sh.in
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ #
+ # For installation, put this file (netgen.sh) in a standard executable path.
+ # Put startup script "netgen.tcl" and shared library "tclnetgen.so"
