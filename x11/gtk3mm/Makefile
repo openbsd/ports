@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2019/01/01 11:38:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2019/03/20 17:33:28 ajacoutot Exp $
 
 COMMENT=		C++ interface for gtk3+
 
 GNOME_PROJECT=		gtkmm
-GNOME_VERSION=		3.24.0
+GNOME_VERSION=		3.24.1
 PKGNAME=		gtk3mm-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
