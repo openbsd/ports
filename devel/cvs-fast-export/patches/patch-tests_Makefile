@@ -1,0 +1,20 @@
+$OpenBSD: patch-tests_Makefile,v 1.1 2019/03/20 14:06:21 sthen Exp $
+
+Index: tests/Makefile
+--- tests/Makefile.orig
++++ tests/Makefile
+@@ -161,12 +161,12 @@ z_rebuild:
+ 
+ z2_regress:
+ 	setpython python2
+-	make z_regress
++	${MAKE_PROGRAM} z_regress
+ 	setpython python
+ 
+ z3_regress:
+ 	setpython python3
+-	make z_regress
++	${MAKE_PROGRAM} z_regress
+ 	setpython python
+ 
+ clean:

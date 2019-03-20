@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/05 10:22:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/03/20 14:06:21 sthen Exp $
 
 COMMENT=	export an RCS or CVS history as a fast-import stream
 
-DISTNAME=	cvs-fast-export-1.43
-REVISION=	0
+DISTNAME=	cvs-fast-export-1.46
 
 CATEGORIES=	devel
 
@@ -25,7 +24,7 @@ BUILD_DEPENDS=	devel/bison \
 
 ALL_TARGET=	cvs-fast-export
 TEST_TARGET=	check
-TEST_FLAGS=	HOME=${WRKDIR}
+TEST_FLAGS=	HOME=${WRKDIR} MAKE_PROGRAM=${MAKE_PROGRAM}
 MODPY_ADJ_FILES= cvsconvert cvssync
 
 post-install:
