@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.517 2019/02/22 16:43:27 abieber Exp $
+# $OpenBSD: Makefile,v 1.518 2019/03/20 17:47:34 jcs Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -157,6 +157,7 @@
      SUBDIR += lockfile
      SUBDIR += logfmon
      SUBDIR += login_duo
+     SUBDIR += login_duress
      SUBDIR += login_fingerprint
      SUBDIR += login_krb5
      SUBDIR += login_ldap
