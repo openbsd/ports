@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/03/18 08:36:20 bentley Exp $
+# $OpenBSD: Makefile,v 1.32 2019/03/20 10:05:57 bentley Exp $
 
      SUBDIR =
      SUBDIR += abc
@@ -13,6 +13,7 @@
      SUBDIR += klogic
      SUBDIR += magic
      SUBDIR += necpp
+     SUBDIR += netgen
      SUBDIR += ngspice
      SUBDIR += openscad
      SUBDIR += pcb
