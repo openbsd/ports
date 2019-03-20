@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.102 2019/03/18 21:30:48 remi Exp $
+# $OpenBSD: python.port.mk,v 1.103 2019/03/20 22:19:53 remi Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -63,12 +63,19 @@ MODPY_PYOEXTENSION =	pyo
 MODPY_PYOEXTENSION ?=	opt-1.pyc
 .endif
 
-MODPY_WANTLIB = python${MODPY_VERSION}${MODPY_LIB_SUFFIX}
+MODPY_PYTEST ?=		No
+
+MODPY_WANTLIB = 	python${MODPY_VERSION}${MODPY_LIB_SUFFIX}
 
 MODPY_RUN_DEPENDS =	lang/python/${MODPY_VERSION}
 MODPY_LIB_DEPENDS =	lang/python/${MODPY_VERSION}
 _MODPY_BUILD_DEPENDS =	lang/python/${MODPY_VERSION}
-MODPY_TEST_DEPENDS =	# empty, appended by MODPY_PYTEST
+
+.if ${MODPY_PYTEST:L} == "yes"
+MODPY_TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR}
+.else
+MODPY_TEST_DEPENDS =	# Leave blank for now for non-pytest
+.endif
 
 .if ${NO_BUILD:L} == "no"
 MODPY_BUILDDEP ?=	Yes
@@ -161,9 +168,12 @@ MODPY_CMD =	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 			${MODPY_BIN} ./${MODPY_SETUP} \
 			${MODPY_SETUP_ARGS}
 
-MODPY_TEST_CMD = cd ${WRKSRC} && ${SETENV} ${ALL_TEST_ENV} \
-			${MODPY_BIN} ./${MODPY_SETUP} \
-			${MODPY_SETUP_ARGS}
+MODPY_TEST_CMD = cd ${WRKSRC} && ${SETENV} ${ALL_TEST_ENV} ${MODPY_BIN}
+.if ${MODPY_PYTEST:L} == "yes"
+MODPY_TEST_CMD +=	-m pytest
+.else
+MODPY_TEST_CMD +=	./${MODPY_SETUP} ${MODPY_SETUP_ARGS}
+.endif
 
 MODPY_TEST_LOCALE ?=	LC_CTYPE=en_US.UTF-8
 
@@ -192,8 +202,15 @@ MODPY_BUILD_TARGET = ${_MODPY_PRE_BUILD_STEPS}; \
 MODPY_INSTALL_TARGET = \
 	${MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS} \
 		${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
-MODPY_TEST_TARGET = \
-	${MODPY_TEST_CMD} ${TEST_TARGET}
+
+MODPY_PYTEST_ARGS ?=
+
+MODPY_TEST_TARGET =	${MODPY_TEST_CMD}
+.if ${MODPY_PYTEST:L} == "yes"
+MODPY_TEST_TARGET +=	${MODPY_PYTEST_ARGS}
+.elif ${MODPY_SETUPUTILS:L} == "yes"
+MODPY_TEST_TARGET +=	${TEST_TARGET}
+.endif
 
 # dirty way to do it with no modifications in bsd.port.mk
 .if empty(CONFIGURE_STYLE)
@@ -209,7 +226,8 @@ do-install:
 .  endif
 
 # setuptools supports regress testing from setup.py using a standard target
-.  if !target(do-test) && ${MODPY_SETUPUTILS:L} == "yes"
+.  if !target(do-test) && (${MODPY_SETUPUTILS:L} == "yes" || \
+				${MODPY_PYTEST:L} == "yes")
 do-test:
 	@${MODPY_TEST_TARGET}
 .  endif
