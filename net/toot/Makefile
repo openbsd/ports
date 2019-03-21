@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/02/09 22:48:59 kn Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/21 19:09:31 kn Exp $
 
 COMMENT =		interact with Mastodon social networks from the command line
 
-MODPY_EGG_VERSION =	0.20.0
+MODPY_EGG_VERSION =	0.21.0
 DISTNAME =		toot-${MODPY_EGG_VERSION}
 
 CATEGORIES =		net
@@ -21,6 +21,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/py-future${MODPY_FLAVOR}>=0.16 \
+			devel/py-wcwidth${MODPY_FLAVOR}>=0.1.7,<2.0 \
 			www/py-beautifulsoup4${MODPY_FLAVOR}>=4.5.0,<5.0 \
 			www/py-requests${MODPY_FLAVOR}>=2.13,<3.0
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \

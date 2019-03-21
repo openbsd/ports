@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/12 13:12:33 kn Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/03/21 19:09:31 kn Exp $
+@comment Makefile
 bin/toot
 lib/python${MODPY_VERSION}/site-packages/toot/
 lib/python${MODPY_VERSION}/site-packages/toot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -22,6 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}http.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}output.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}wcstring.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/api.py
 lib/python${MODPY_VERSION}/site-packages/toot/auth.py
 lib/python${MODPY_VERSION}/site-packages/toot/commands.py
@@ -43,3 +45,4 @@ lib/python${MODPY_VERSION}/site-packages/toot/ui/app.py
 lib/python${MODPY_VERSION}/site-packages/toot/ui/parsers.py
 lib/python${MODPY_VERSION}/site-packages/toot/ui/utils.py
 lib/python${MODPY_VERSION}/site-packages/toot/utils.py
+lib/python${MODPY_VERSION}/site-packages/toot/wcstring.py
