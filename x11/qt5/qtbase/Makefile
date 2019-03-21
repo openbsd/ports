@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/03/08 20:00:39 cwen Exp $
-
-BROKEN-sparc64 =	fails to pass stltest during configure with ports-clang
+# $OpenBSD: Makefile,v 1.28 2019/03/21 15:59:11 jca Exp $
 
 DISTNAME =		qtbase-opensource-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
