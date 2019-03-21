@@ -1,4 +1,4 @@
-$OpenBSD: patch-bin_solr,v 1.4 2018/12/30 21:58:00 sthen Exp $
+$OpenBSD: patch-bin_solr,v 1.5 2019/03/21 13:15:35 sthen Exp $
 
 Index: bin/solr
 --- bin/solr.orig
@@ -12,7 +12,7 @@ Index: bin/solr
  fi
  
  if [ -z "$SOLR_STOP_WAIT" ]; then
-@@ -2130,14 +2130,12 @@ function start_solr() {
+@@ -2143,14 +2143,12 @@ function start_solr() {
  	echo "RNG might not work properly. To check for the amount of available entropy, use 'cat /proc/sys/kernel/random/entropy_avail'."
  	echo ""
      fi
@@ -28,7 +28,7 @@ Index: bin/solr
          if [ -z "$running" ]; then
  	  slept=$((loops * 2))
            if [ $slept -lt $SOLR_STOP_WAIT ]; then
-@@ -2155,13 +2153,6 @@ function start_solr() {
+@@ -2168,13 +2166,6 @@ function start_solr() {
          fi
        done) &
        spinner $!
