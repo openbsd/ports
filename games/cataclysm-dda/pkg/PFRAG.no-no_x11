@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.4 2019/02/13 12:24:44 kirby Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.5 2019/03/21 09:28:18 sthen Exp $
 @bin bin/cataclysm-tiles
 @man man/man6/cataclysm-tiles.6
 share/cataclysm-dda/gfx/
@@ -44,6 +44,8 @@ share/cataclysm-dda/gfx/HitButton_iso/tile_config.json
 share/cataclysm-dda/gfx/HitButton_iso/tileset.txt
 share/cataclysm-dda/gfx/HoderTileset/
 share/cataclysm-dda/gfx/HoderTileset/hodertiles.png
+share/cataclysm-dda/gfx/HoderTileset/hodertiles_fallback.png
+share/cataclysm-dda/gfx/HoderTileset/hodertiles_oversized.png
 share/cataclysm-dda/gfx/HoderTileset/tile_config.json
 share/cataclysm-dda/gfx/HoderTileset/tileset.txt
 share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/
@@ -53,8 +55,8 @@ share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/12_tiles_kawaiimaidmod_offset_32x
 share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/13_tiles_kawaiimaidmod_64x48-22340-22364.png
 share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/14_tiles2_32x32_22365-27564.png
 share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/15_tiles-connected_variants_32x32_27565-32764.png
-share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/16_tiles_trees_64x80_32765-33165.png
-share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/17_top_hats_32x32.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/16_tiles_trees_64x80_32765-33164.png
+share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/17_top_hats_32x32-33165-35756.png
 share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/1_tiles_32x32_0-5199.png
 share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/2_expan_32x32_5200-5391.png
 share/cataclysm-dda/gfx/MSX++DeadPeopleEdition/3_tree_64x80_5392-5471.png

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/02/13 12:24:44 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/03/21 09:28:18 sthen Exp $
 %%no_x11%%
 !%%no_x11%%
 share/cataclysm-dda/
@@ -498,6 +498,7 @@ share/cataclysm-dda/json/mapgen/pawn_shop.json
 share/cataclysm-dda/json/mapgen/petstore.json
 share/cataclysm-dda/json/mapgen/pharmacy.json
 share/cataclysm-dda/json/mapgen/pizza_parlor.json
+share/cataclysm-dda/json/mapgen/police_station.json
 share/cataclysm-dda/json/mapgen/pond_fishing.json
 share/cataclysm-dda/json/mapgen/pond_public.json
 share/cataclysm-dda/json/mapgen/ponds.json
@@ -731,10 +732,12 @@ share/cataclysm-dda/json/npcs/talk_tags.json
 share/cataclysm-dda/json/overmap/
 share/cataclysm-dda/json/overmap/multitile_buildings_terrain.json
 share/cataclysm-dda/json/overmap/multitile_city_buildings.json
+share/cataclysm-dda/json/overmap/overmap_land_use_codes.json
 share/cataclysm-dda/json/overmap/special_locations.json
 share/cataclysm-dda/json/overmap/specials.json
 share/cataclysm-dda/json/overmap_connections.json
 share/cataclysm-dda/json/overmap_terrain.json
+share/cataclysm-dda/json/overmap_terrain_abstract.json
 share/cataclysm-dda/json/player_activities.json
 share/cataclysm-dda/json/professions.json
 share/cataclysm-dda/json/recipes/
@@ -2436,7 +2439,12 @@ share/cataclysm-dda/title/en.halloween
 share/cataclysm-dda/title/en.title
 share/cataclysm-dda/title/ru.title
 share/cataclysm-dda/title/zh_CN.title
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/cataclysm-dda.mo
+share/locale/da/LC_MESSAGES/cataclysm-dda.mo
 share/locale/de/LC_MESSAGES/cataclysm-dda.mo
+share/locale/el/LC_MESSAGES/cataclysm-dda.mo
 share/locale/es_AR/
 share/locale/es_AR/LC_MESSAGES/
 share/locale/es_AR/LC_MESSAGES/cataclysm-dda.mo
@@ -2445,9 +2453,23 @@ share/locale/es_ES/LC_MESSAGES/
 share/locale/es_ES/LC_MESSAGES/cataclysm-dda.mo
 share/locale/fr/LC_MESSAGES/cataclysm-dda.mo
 share/locale/hu/LC_MESSAGES/cataclysm-dda.mo
+share/locale/is/
+share/locale/is/LC_MESSAGES/
+share/locale/is/LC_MESSAGES/cataclysm-dda.mo
+share/locale/it_IT/
+share/locale/it_IT/LC_MESSAGES/
+share/locale/it_IT/LC_MESSAGES/cataclysm-dda.mo
 share/locale/ja/LC_MESSAGES/cataclysm-dda.mo
 share/locale/ko/LC_MESSAGES/cataclysm-dda.mo
+share/locale/nb/LC_MESSAGES/cataclysm-dda.mo
+share/locale/nl/LC_MESSAGES/cataclysm-dda.mo
 share/locale/pl/LC_MESSAGES/cataclysm-dda.mo
+share/locale/pt_BR/LC_MESSAGES/cataclysm-dda.mo
 share/locale/ru/LC_MESSAGES/cataclysm-dda.mo
+share/locale/sr/LC_MESSAGES/cataclysm-dda.mo
+share/locale/tr/LC_MESSAGES/cataclysm-dda.mo
+share/locale/uk_UA/
+share/locale/uk_UA/LC_MESSAGES/
+share/locale/uk_UA/LC_MESSAGES/cataclysm-dda.mo
 share/locale/zh_CN/LC_MESSAGES/cataclysm-dda.mo
 share/locale/zh_TW/LC_MESSAGES/cataclysm-dda.mo
