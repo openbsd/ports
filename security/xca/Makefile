@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2019/03/08 20:00:51 cwen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/03/21 13:17:43 sthen Exp $
 
 COMMENT=	create and manage certificates, CSRs, keys, etc
 
 V=		2.1.2
 DISTNAME=	xca-$V
+PORTROACH=	skipv:RELEASE.$V
 CATEGORIES=	security x11
 REVISION=	0
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Sql Qt5Widgets c crypto ltdl m
 
-MASTER_SITES=	https://github.com/chris2511/xca/releases/download/RELEASE.${V}/
+MASTER_SITES=	https://github.com/chris2511/xca/releases/download/RELEASE.$V/
 
 MODULES=	x11/qt5
 
