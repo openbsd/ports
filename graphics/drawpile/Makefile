@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/17 14:16:30 bcallah Exp $
+# $OpenBSD: Makefile,v 1.15 2019/03/21 00:28:43 bcallah Exp $
 
 COMMENT =	collaborative drawing program
 DISTNAME =	drawpile-2.1.3
+REVISION =	0
 CATEGORIES =	graphics x11
 
 HOMEPAGE =	https://drawpile.net/
@@ -21,6 +22,8 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		x11/qt5
+
+BUILD_DEPENDS =	devel/kf5/extra-cmake-modules
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kdnssd \
