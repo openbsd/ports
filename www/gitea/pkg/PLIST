@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/02/14 10:08:53 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/03/21 11:34:15 pvk Exp $
 @newgroup _gitea:787
 @newuser _gitea:787:_gitea:daemon:Gitea Account:/var/gitea:/bin/sh
 @rcscript ${RCDIR}/gitea
@@ -2027,6 +2027,8 @@ share/gitea/public/vendor/plugins/emojify/images/yum.png
 share/gitea/public/vendor/plugins/emojify/images/zap.png
 share/gitea/public/vendor/plugins/emojify/images/zero.png
 share/gitea/public/vendor/plugins/emojify/images/zzz.png
+share/gitea/public/vendor/plugins/es6-promise/
+share/gitea/public/vendor/plugins/es6-promise/es6-promise.auto.min.js
 share/gitea/public/vendor/plugins/gitgraph/
 share/gitea/public/vendor/plugins/gitgraph/LICENSE
 share/gitea/public/vendor/plugins/gitgraph/gitgraph.css
