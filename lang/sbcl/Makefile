@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2019/02/23 18:23:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2019/03/21 22:06:53 sthen Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
-BROKEN-i386 =		persistent "Some of the contrib modules did not build successfully or pass their self-tests"
 USE_WXNEEDED =		Yes
+REVISION =		0
 
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 

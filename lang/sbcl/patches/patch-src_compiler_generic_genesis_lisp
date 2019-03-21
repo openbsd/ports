@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_compiler_generic_genesis_lisp,v 1.1 2019/03/21 22:06:54 sthen Exp $
+
+Fix build on i386 when the text segment is more than 2GB from the dynamic space,
+such as when linked with lld.
+
+Index: src/compiler/generic/genesis.lisp
+--- src/compiler/generic/genesis.lisp.orig
++++ src/compiler/generic/genesis.lisp
+@@ -2118,9 +2118,12 @@ core and return a descriptor to it."
+               ;; Never record it. (FIXME: this is a problem for relocatable heap)
+               nil)
+              (:relative ; (used for arguments to X86 relative CALL instruction)
+-              (setf (bvref-32 gspace-data gspace-byte-offset)
+-                    (the (signed-byte 32)
+-                      (- addr (+ gspace-base gspace-byte-offset 4)))) ; 4 = size of rel32off
++              (let ((difference (- addr (+ gspace-base gspace-byte-offset 4)))) ; 4 = size of rel32off
++                (setf (bvref-32 gspace-data gspace-byte-offset)
++                      (the (signed-byte 32)
++                        (if (< difference #x-80000000)
++                            (ldb (byte 32 0) difference)
++                            difference))))
+               ;; Relative fixups are recorded if without the object.
+               ;; Except that read-only space contains calls to asm routines,
+               ;; and we don't record those fixups.

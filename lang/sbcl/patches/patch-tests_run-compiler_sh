@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_run-compiler_sh,v 1.1 2019/03/21 22:06:54 sthen Exp $
+
+Tests must be built with -fPIC to pass on i386
+
+Index: tests/run-compiler.sh
+--- tests/run-compiler.sh.orig
++++ tests/run-compiler.sh
+@@ -35,6 +35,7 @@ while [ $# -gt 0 ]; do
+                 Linux-PowerPC)   new=-fPIC ;;
+                 NetBSD-PowerPC)  new=-fPIC ;;
+                 NetBSD-X86-64)   new=-fPIC ;;
++                OpenBSD-X86)     new=-fPIC ;;
+                 OpenBSD-PowerPC) new=-fPIC ;;
+                 OpenBSD-X86-64)  new=-fPIC ;;
+                 SunOS-SPARC)     new=-fPIC ;;
