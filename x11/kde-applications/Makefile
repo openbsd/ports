@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/03/11 21:57:09 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.46 2019/03/22 22:09:55 rsadowski Exp $
 
      SUBDIR =
 
@@ -247,8 +247,8 @@
      #SUBDIR += syndication
 
      # KDE4
-     SUBDIR += libkface
-     SUBDIR += libkgeomap
+     #SUBDIR += libkface
+     #SUBDIR += libkgeomap
 
      # Former projects under the hat of KDE Applications
      SUBDIR += okteta
