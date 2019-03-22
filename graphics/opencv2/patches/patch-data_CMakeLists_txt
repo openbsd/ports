@@ -1,0 +1,23 @@
+$OpenBSD: patch-data_CMakeLists_txt,v 1.1.1.1 2019/03/22 20:39:06 rsadowski Exp $
+
+Index: data/CMakeLists.txt
+--- data/CMakeLists.txt.orig
++++ data/CMakeLists.txt
+@@ -5,8 +5,8 @@ if(ANDROID)
+   install(FILES ${HAAR_CASCADES} DESTINATION sdk/etc/haarcascades COMPONENT libs)
+   install(FILES ${LBP_CASCADES}  DESTINATION sdk/etc/lbpcascades  COMPONENT libs)
+ else()
+-  install(FILES ${HAAR_CASCADES} DESTINATION share/OpenCV/haarcascades COMPONENT libs)
+-  install(FILES ${LBP_CASCADES}  DESTINATION share/OpenCV/lbpcascades  COMPONENT libs)
++  install(FILES ${HAAR_CASCADES} DESTINATION share/OpenCV2/haarcascades COMPONENT libs)
++  install(FILES ${LBP_CASCADES}  DESTINATION share/OpenCV2/lbpcascades  COMPONENT libs)
+ endif()
+ 
+ if(INSTALL_TESTS AND OPENCV_TEST_DATA_PATH)
+@@ -51,4 +51,4 @@ if(INSTALL_TESTS AND OPENCV_TEST_DATA_PATH)
+       install(FILES ${DATAFILES_CASCADES} DESTINATION share/OpenCV/testdata/data/haarcascades COMPONENT tests)
+     endif()
+   endif()
+-endif()
+\ No newline at end of file
++endif()
