@@ -1,0 +1,14 @@
+$OpenBSD: patch-extra_kipi-plugins_cmake_modules_MacroOpenCV_cmake,v 1.1 2019/03/22 22:09:37 rsadowski Exp $
+
+Index: extra/kipi-plugins/cmake/modules/MacroOpenCV.cmake
+--- extra/kipi-plugins/cmake/modules/MacroOpenCV.cmake.orig
++++ extra/kipi-plugins/cmake/modules/MacroOpenCV.cmake
+@@ -24,7 +24,7 @@ macro(DETECT_OPENCV OPENCV_MIN_VERSION)
+     set(OPENCV_REQUIRED_COMPONENTS "${ARGN}" )
+ 
+     message(STATUS "First try at finding OpenCV...")
+-    find_package(OpenCV COMPONENTS ${OPENCV_REQUIRED_COMPONENTS})
++    find_package(OpenCV 2.4.13.4 EXACT REQUIRED  COMPONENTS ${OPENCV_REQUIRED_COMPONENTS})
+ 
+     if(NOT OpenCV_LIBRARIES AND NOT OpenCV_LIBS)
+ 

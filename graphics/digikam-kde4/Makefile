@@ -1,26 +1,31 @@
-# $OpenBSD: Makefile,v 1.30 2018/06/29 22:16:16 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2019/03/22 22:09:37 rsadowski Exp $
 
-COMMENT-kipi =		KDE image plugins collection
-COMMENT-main =		KDE photo management utility
-COMMENT-mediawiki =	KIPI interface for MediaWiki
+COMMENT-face =		face detection library for KDE4
+COMMENT-geomap =	library for mapping photos on maps for KDE4
+COMMENT-kipi =		KDE4 image plugins collection
+COMMENT-main =		KDE4 photo management utility
+COMMENT-mediawiki =	KIPI4 interface for MediaWiki
 
 CATEGORIES =		graphics
-HOMEPAGE =		http://www.digikam.org/
+HOMEPAGE =		https://www.digikam.org/
 VERSION =		4.13.0
 DISTNAME =		digikam-${VERSION}
 
 PKGSPEC-main =		digikam->=1
 PKGSPEC-kipi =		kipi-plugins->=1
 
+PKGNAME =		digikam-kde4-${VERSION}
+PKGNAME-face =		libkface-15.08.3
+PKGNAME-geomap =	libkgeomap-15.08.3
 PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 
-REVISION-main =		5
-REVISION-kipi =		6
-REVISION-mediawiki =	6
-
-EXTRACT_SUFX =		.tar.bz2
+REVISION-main =		6
+REVISION-kipi =		7
+REVISION-mediawiki =	7
+REVISION-face=		3
+REVISION-geomap=	4
 
 # LGPL, GPL and many others
 PERMIT_PACKAGE_CDROM =		Yes
@@ -29,11 +34,13 @@ SHARED_LIBS =	kipiplugins		0.1
 SHARED_LIBS +=  digikamcore		0.1
 SHARED_LIBS +=  digikamdatabase		0.1
 SHARED_LIBS +=  mediawiki		0.1
+SHARED_LIBS +=  kface                     0.1 # 3.0
+SHARED_LIBS +=  kgeomap                   0.1 # 2.1
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/digikam/} \
-		${MASTER_SITE_KDE:=Attic/digikam/}
+MULTI_PACKAGES =	-main -face -geomap -kipi -mediawiki
 
-MULTI_PACKAGES =	-main -kipi -mediawiki
+MASTER_SITES =	${MASTER_SITE_KDE:=Attic/digikam/}
+EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		x11/kde4 multimedia/phonon
 
@@ -55,10 +62,11 @@ WANTLIB-kipi += ${KDE4LIB}/kio ${KDE4LIB}/kipi ${KDE4LIB}/kjs ${KDE4LIB}/kparts
 WANTLIB-kipi += ${KDE4LIB}/ksane
 WANTLIB-kipi += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
 WANTLIB-kipi += ${KDE4LIB}/threadweaver
-WANTLIB-kipi += opencv_core opencv_highgui opencv_imgproc opencv_objdetect
+WANTLIB-kipi += lib/opencv2/opencv_core lib/opencv2/opencv_highgui
+WANTLIB-kipi += lib/opencv2/opencv_imgproc lib/opencv2/opencv_objdetect
 WANTLIB-kipi += exslt gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpod
 WANTLIB-kipi += gthread-2.0 intl jpeg
-WANTLIB-kipi += qjson kgeomap kqoauth kvkontakte mediawiki png qca soprano
+WANTLIB-kipi += qjson kqoauth kvkontakte png16 qca soprano
 WANTLIB-kipi += tiff xml2 xslt MagickCore-6.Q16
 WANTLIB-kipi += QtGLib-2.0 QtGStreamer-1.0 QtGStreamerUtils-1.0
 
@@ -76,14 +84,35 @@ WANTLIB-main += ${KDE4LIB}/kpimutils ${KDE4LIB}/kprintutils
 WANTLIB-main += ${KDE4LIB}/kresources ${KDE4LIB}/kutils
 WANTLIB-main += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB-main += ${KDE4LIB}/solid ${KDE4LIB}/threadweaver
-WANTLIB-main += opencv_calib3d opencv_contrib opencv_core opencv_features2d
-WANTLIB-main += opencv_flann opencv_gpu opencv_highgui opencv_imgproc
-WANTLIB-main += opencv_legacy opencv_ml opencv_nonfree opencv_objdetect
-WANTLIB-main += opencv_ocl opencv_photo opencv_video
 WANTLIB-main += akonadi-contact akonadi-kde baloocore baloofiles baloopim
-WANTLIB-main += balooqueryparser exif gphoto2 gphoto2_port jasper jpeg
-WANTLIB-main += kface kgeomap lcms2 lensfun lqr-1 pgf png qca soprano
+WANTLIB-main += balooqueryparser gphoto2 gphoto2_port jasper jpeg
+WANTLIB-main += lcms2 lensfun lqr-1 pgf png16 soprano
 WANTLIB-main += sqlite tiff usb
+WANTLIB-main += lib/opencv2/opencv_calib3d lib/opencv2/opencv_contrib
+WANTLIB-main += lib/opencv2/opencv_core lib/opencv2/opencv_features2d
+WANTLIB-main += lib/opencv2/opencv_flann lib/opencv2/opencv_gpu
+WANTLIB-main += lib/opencv2/opencv_highgui lib/opencv2/opencv_imgproc
+WANTLIB-main += lib/opencv2/opencv_legacy lib/opencv2/opencv_ml
+WANTLIB-main += lib/opencv2/opencv_nonfree lib/opencv2/opencv_objdetect
+WANTLIB-main += lib/opencv2/opencv_ocl lib/opencv2/opencv_photo
+WANTLIB-main += lib/opencv2/opencv_video
+
+WANTLIB-face += ${COMPILER_LIBCXX} QtDBus QtGui QtSql QtSvg QtXml kdeui
+WANTLIB-face += m  QtCore kdecore
+WANTLIB-face += lib/opencv2/opencv_calib3d lib/opencv2/opencv_contrib
+WANTLIB-face += lib/opencv2/opencv_core lib/opencv2/opencv_features2d
+WANTLIB-face += lib/opencv2/opencv_flann lib/opencv2/opencv_gpu
+WANTLIB-face += lib/opencv2/opencv_highgui lib/opencv2/opencv_imgproc
+WANTLIB-face += lib/opencv2/opencv_legacy lib/opencv2/opencv_ml
+WANTLIB-face += lib/opencv2/opencv_nonfree lib/opencv2/opencv_objdetect
+WANTLIB-face += lib/opencv2/opencv_ocl lib/opencv2/opencv_photo
+WANTLIB-face += lib/opencv2/opencv_video
+
+WANTLIB-geomap += ${COMPILER_LIBCXX} QtDBus QtGui QtNetwork QtSvg QtXml
+WANTLIB-geomap += c ${KDE4LIB}/kdeui ${KDE4LIB}/khtml ${KDE4LIB}/kio
+WANTLIB-geomap += ${KDE4LIB}/kjs ${KDE4LIB}/kparts m ${KDE4LIB}/nepomuk
+WANTLIB-geomap += ${KDE4LIB}/nepomukutils soprano QtCore kdecore phonon_s
+WANTLIB-geomap += ${KDE4LIB}/kexiv2 ${KDE4LIB}/marblewidget
 
 WANTLIB-mediawiki =  ${WANTLIB-common}
 WANTLIB-mediawiki += lib/qt4/QtNetwork lib/qt4/QtXml
@@ -115,30 +144,34 @@ LIBS_DEPENDS-common =	${MODQT4_LIB_DEPENDS} \
 
 LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 			${MODPHONON_LIB_DEPENDS} \
-			${BASE_PKGPATH},-mediawiki \
 			audio/libgpod \
-			devel/glib2 \
 			devel/qjson>=0.7 \
 			graphics/gdk-pixbuf2 \
 			graphics/ImageMagick \
-			graphics/opencv>=2.4.9 \
+			graphics/opencv2 \
 			graphics/png \
 			graphics/tiff \
 			multimedia/qt-gstreamer \
 			net/libkvkontakte \
 			security/qca \
 			security/kqoauth \
-			x11/kde-applications/libkgeomap>=15.04.3 \
 			${MODKDE4_DEP_DIR}/libkdcraw \
 			${MODKDE4_DEP_DIR}/libkexiv2 \
 			${MODKDE4_DEP_DIR}/libkipi \
 			${MODKDE4_DEP_DIR}/libksane \
 			${MODKDE4_DEP_DIR}/pimlibs
 
+LIB_DEPENDS-face =	${LIB_DEPENDS-common} \
+			graphics/opencv2
+
+LIB_DEPENDS-geomap =	${LIB_DEPENDS-common} \
+			${MODKDE4_DEP_DIR}/libkexiv2 \
+			${MODKDE4_DEP_DIR}/marble
+
+
 LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
 			${MODPHONON_LIB_DEPENDS} \
 			databases/sqlite \
-			devel/glib2 \
 			devel/libusb-compat \
 			graphics/jasper \
 			graphics/lcms2 \
@@ -146,11 +179,9 @@ LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
 			graphics/libgphoto2 \
 			graphics/liblqr \
 			graphics/libpgf \
-			graphics/opencv>=2.4.9 \
+			graphics/opencv2 \
 			graphics/png \
 			graphics/tiff \
-			x11/kde-applications/libkface>=15.04.3 \
-			x11/kde-applications/libkgeomap>=15.04.3 \
 			${MODKDE4_DEP_DIR}/baloo \
 			${MODKDE4_DEP_DIR}/libkdcraw>=4.13 \
 			${MODKDE4_DEP_DIR}/libkexiv2>=4.13 \
@@ -159,12 +190,17 @@ LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
 
 LIB_DEPENDS-mediawiki =	${LIB_DEPENDS-common}
 
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Hupnp:Bool=Yes \
-			-DCMAKE_DISABLE_FIND_PACKAGE_QtSoap:Bool=Yes \
-			-DENABLE_INTERNALMYSQL:Bool=No \
-			-DENABLE_KDEPIMLIBSSUPPORT:Bool=Yes \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:Bool=Yes \
-			-DENABLE_LCMS2:Bool=Yes
+RUN_DEPENDS-main =	${BASE_PKGPATH},-geomap \
+			${BASE_PKGPATH},-face
+
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=Yes \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Hupnp=Yes \
+			-DCMAKE_DISABLE_FIND_PACKAGE_QtSoap=Yes \
+			-DDIGIKAMSC_COMPILE_LIBKFACE=Yes \
+			-DDIGIKAMSC_COMPILE_LIBKGEOMAP=Yes \
+			-DENABLE_INTERNALMYSQL=No \
+			-DENABLE_KDEPIMLIBSSUPPORT=Yes \
+			-DENABLE_LCMS2=Yes
 
 # no official release yet
 CONFIGURE_ARGS +=	-DDIGIKAMSC_COMPILE_LIBMEDIAWIKI=Yes
@@ -178,11 +214,7 @@ TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.arch.mk>
 
-#.if ${ARCH} == "i386"
 CONFIGURE_ENV =		CXXFLAGS="${CXXFLAGS} -DOPENBSD_LIBKDCRAW_NO_CRASH=0"
-#.else
-#CONFIGURE_ENV =		CXXFLAGS="${CXXFLAGS} -DOPENBSD_LIBKDCRAW_NO_CRASH=1"
-#.endif
 
 post-extract:
 	# use our Kexiv2Config.cmake instead

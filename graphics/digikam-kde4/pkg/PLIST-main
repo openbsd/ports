@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2018/06/29 22:16:16 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2019/03/22 22:09:37 rsadowski Exp $
 @conflict digikam-doc-*
 bin/cleanup_digikamdb
 @bin bin/digikam
@@ -531,8 +531,6 @@ share/apps/showfoto/data/banner-showfoto.png
 share/apps/showfoto/data/logo-showfoto.png
 share/apps/showfoto/data/splash-showfoto.png
 share/apps/showfoto/showfotoui.rc
-share/apps/solid/
-share/apps/solid/actions/
 share/apps/solid/actions/digikam-opencamera.desktop
 share/config.kcfg/photolayoutseditor.kcfg
 share/doc/HTML/en/digikam/
@@ -973,3 +971,4 @@ share/locale/zh_CN/LC_MESSAGES/digikam.mo
 share/locale/zh_TW/LC_MESSAGES/digikam.mo
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag gtk-update-icon-cache %D/share/icons/oxygen

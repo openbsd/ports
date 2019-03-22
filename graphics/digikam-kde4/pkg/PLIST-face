@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST-face,v 1.3 2019/03/22 22:09:37 rsadowski Exp $
+@pkgpath x11/kde-applications/libkface
+lib/cmake/Kface-3.5.0/
+lib/cmake/Kface-3.5.0/Kface-export${MODKDE4_CMAKE_PREFIX}.cmake
+lib/cmake/Kface-3.5.0/Kface-export.cmake
+lib/cmake/Kface-3.5.0/kface-config-version.cmake
+lib/cmake/Kface-3.5.0/kface-config.cmake
+@lib lib/libkface.so.${LIBkface_VERSION}
+share/apps/libkface/
+share/apps/libkface/alignment-congealing/
+share/apps/libkface/alignment-congealing/face-funnel.data
+share/apps/libkface/database/
+share/apps/libkface/database/dbconfig.xml
+share/apps/libkface/haarcascades/
+share/apps/libkface/haarcascades/haarcascade_frontalface_alt.xml
+share/apps/libkface/haarcascades/haarcascade_frontalface_alt2.xml
+share/apps/libkface/haarcascades/haarcascade_frontalface_alt_tree.xml
+share/apps/libkface/haarcascades/haarcascade_frontalface_default.xml
+share/apps/libkface/haarcascades/haarcascade_mcs_lefteye.xml
+share/apps/libkface/haarcascades/haarcascade_mcs_mouth.xml
+share/apps/libkface/haarcascades/haarcascade_mcs_nose.xml
+share/apps/libkface/haarcascades/haarcascade_mcs_righteye.xml
+share/apps/libkface/haarcascades/haarcascade_profileface.xml

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-kipi,v 1.5 2018/06/29 22:16:16 espie Exp $
+@comment $OpenBSD: PLIST-kipi,v 1.6 2019/03/22 22:09:37 rsadowski Exp $
+@option no-default-conflict
 @conflict digikam-<3
 @conflict kipi-plugins-*
 @bin bin/dngconverter
@@ -410,11 +411,23 @@ share/icons/hicolor/scalable/apps/kipi-piwigo.svgz
 share/icons/hicolor/scalable/apps/kipi-smugmug.svgz
 share/icons/hicolor/scalable/apps/kipi-wikimedia.svgz
 share/icons/hicolor/scalable/apps/kipi-zooomr.svgz
+share/icons/oxygen/128x128/
+share/icons/oxygen/128x128/apps/
 share/icons/oxygen/128x128/apps/rawconverter.png
+share/icons/oxygen/16x16/
+share/icons/oxygen/16x16/apps/
 share/icons/oxygen/16x16/apps/rawconverter.png
+share/icons/oxygen/22x22/
+share/icons/oxygen/22x22/apps/
 share/icons/oxygen/22x22/apps/rawconverter.png
+share/icons/oxygen/32x32/
+share/icons/oxygen/32x32/apps/
 share/icons/oxygen/32x32/apps/rawconverter.png
+share/icons/oxygen/48x48/
+share/icons/oxygen/48x48/apps/
 share/icons/oxygen/48x48/apps/rawconverter.png
+share/icons/oxygen/64x64/
+share/icons/oxygen/64x64/apps/
 share/icons/oxygen/64x64/apps/rawconverter.png
 share/icons/oxygen/scalable/
 share/icons/oxygen/scalable/apps/
