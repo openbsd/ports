@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/12/04 08:51:16 rpointel Exp $
+# $OpenBSD: Makefile,v 1.21 2019/03/22 18:06:57 ajacoutot Exp $
 
 COMMENT =		source code beautifier
 
@@ -19,7 +19,10 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=uncrustify/}
 
 COMPILER =	base-clang ports-clang ports-gcc
 
-MODULES =	devel/cmake
+MODULES =	devel/cmake \
+		lang/python
+
+MODPY_RUNDEP =	No
 
 WRKDIST =	${WRKDIR}
 
