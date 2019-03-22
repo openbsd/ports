@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2019/01/20 13:36:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/03/22 11:23:50 kirby Exp $
 
 COMMENT =		realtime console web log analyzer
 
 DISTNAME =		goaccess-1.3
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
@@ -14,7 +14,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c curses intl maxminddb pthread
+WANTLIB += c crypto curses intl maxminddb pthread ssl
 
 MASTER_SITES =		https://tar.goaccess.io/
 
@@ -24,6 +24,7 @@ LIB_DEPENDS =		devel/gettext \
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-geoip=mmdb \
 			--enable-utf8 \
+			--with-openssl \
 			--with-libiconv-prefix
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
