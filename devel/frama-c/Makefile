@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2019/03/23 10:30:02 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2019/03/23 10:31:17 jca Exp $
 
 BROKEN-i386 =	ld: error: undefined symbol: ml_as_z_pred, etc
+
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 COMMENT =		an extensible platform for analysis of C software
 
