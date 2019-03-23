@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/03/23 10:54:59 jca Exp $
+# $OpenBSD: Makefile,v 1.39 2019/03/23 10:55:51 jca Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
@@ -47,12 +47,12 @@ CONFIGURE_ARGS=	-emacslib ${PREFIX}/share/emacs/site-lisp \
 ALL_TARGET=		world
 INSTALL_TARGET=		install
 .else
+# Order is important!
 ALL_TARGET=		byte coq documentation \
 			bin/coqide coqide-files theories/Init/Prelude.vo
 INSTALL_TARGET=		install-coq install-byte install-meta
 .endif
 
-# Order is important!
 TEST_TARGET=		check
 
 do-build:
