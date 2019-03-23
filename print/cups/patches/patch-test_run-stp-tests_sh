@@ -1,4 +1,4 @@
-$OpenBSD: patch-test_run-stp-tests_sh,v 1.21 2018/11/10 13:02:52 ajacoutot Exp $
+$OpenBSD: patch-test_run-stp-tests_sh,v 1.22 2019/03/23 12:19:54 ajacoutot Exp $
 
 Index: test/run-stp-tests.sh
 --- test/run-stp-tests.sh.orig
@@ -12,7 +12,7 @@ Index: test/run-stp-tests.sh
  
  #
  # Solaris has a non-POSIX grep in /bin...
-@@ -578,7 +578,7 @@ else
+@@ -586,7 +586,7 @@ else
  	LD_LIBRARY_PATH="$root/cups:$root/filter:$LD_LIBRARY_PATH"
  fi
  
