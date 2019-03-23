@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/03/23 10:31:17 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2019/03/23 10:54:59 jca Exp $
 
 BROKEN-i386 =	ld: error: undefined symbol: ml_as_z_pred, etc
 
@@ -45,7 +45,5 @@ CONFIGURE_STYLE =	gnu autoconf no-autoheader
 AUTOCONF_VERSION =	2.69
 CONFIGURE_ARGS +=	MAKE=${MAKE_PROGRAM} \
 			--docdir=${PREFIX}/share/doc/frama-c/
-
-DPB_PROPERTIES +=	parallel
 
 .include <bsd.port.mk>

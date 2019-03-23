@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/03/10 20:16:54 chrisz Exp $
+# $OpenBSD: Makefile,v 1.38 2019/03/23 10:54:59 jca Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
@@ -51,8 +51,6 @@ ALL_TARGET=		byte coq documentation \
 			bin/coqide coqide-files theories/Init/Prelude.vo
 INSTALL_TARGET=		install-coq install-byte install-meta
 .endif
-
-DPB_PROPERTIES +=	parallel
 
 # Order is important!
 TEST_TARGET=		check
