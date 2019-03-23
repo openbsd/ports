@@ -1,13 +1,11 @@
-$OpenBSD: patch-cmake_Unix_cmake,v 1.6 2018/09/06 16:20:52 rsadowski Exp $
+$OpenBSD: patch-cmake_Unix_cmake,v 1.7 2019/03/23 07:28:45 rsadowski Exp $
 
 - Avoid forced linkage with libstdc++.
-- drop CMake calls to QT5_WRAP_CPP()
--- https://github.com/nomacs/nomacs/pull/187
 
 Index: cmake/Unix.cmake
 --- cmake/Unix.cmake.orig
 +++ cmake/Unix.cmake
-@@ -66,6 +66,7 @@ if(ENABLE_RAW)
+@@ -67,6 +67,7 @@ if(ENABLE_RAW)
  	if(NOT LIBRAW_FOUND)
  		message(FATAL_ERROR "libraw not found. It's mandatory when used with ENABLE_RAW enabled")
  	else()
@@ -15,12 +13,3 @@ Index: cmake/Unix.cmake
  		add_definitions(-DWITH_LIBRAW)
  	endif()
  endif(ENABLE_RAW)
-@@ -103,7 +104,7 @@ if(ENABLE_QUAZIP)
-   if(USE_SYSTEM_QUAZIP)
-     SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
- 
--    find_package(QuaZIP REQUIRED)
-+    find_package(QuaZip5 REQUIRED)
-     if(NOT QUAZIP_FOUND)
- 	    message(FATAL_ERROR "QUAZIP not found. It's mandatory when used with ENABLE_QUAZIP enabled, you can also disable USE_SYSTEM_QUAZIP")
-     else()

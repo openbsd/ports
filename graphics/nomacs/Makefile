@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2019/03/08 20:00:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/03/23 07:28:45 rsadowski Exp $
 
 COMMENT =	small and fast Qt image viewer
 
 GH_ACCOUNT =	nomacs
 GH_PROJECT =	nomacs
-GH_TAGNAME =	3.10.2
-REVISION =	2
+GH_TAGNAME =	3.12
 
 CATEGORIES =	graphics
 
@@ -13,7 +12,7 @@ HOMEPAGE =	https://nomacs.org
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-SHARED_LIBS +=  nomacsCore                3.0 # 3.3
+SHARED_LIBS +=  nomacsCore                4.0 # 3.3
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -40,6 +39,8 @@ CONFIGURE_ARGS =	-DUSE_SYSTEM_QUAZIP=ON \
 			-DENABLE_TRANSLATIONS=ON
 
 WRKDIST =		${WRKDIR}/${PKGNAME}/ImageLounge
+
+NO_TEST =		Yes
 
 pre-configure:
 	find ${WRKSRC} -type f -name "*.cpp" -exec \
