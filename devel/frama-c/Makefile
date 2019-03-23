@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/03/23 10:11:00 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2019/03/23 10:12:53 jca Exp $
 
 BROKEN-i386 =	ld: error: undefined symbol: ml_as_z_pred, etc
 
@@ -6,6 +6,7 @@ COMMENT =		an extensible platform for analysis of C software
 
 DISTNAME =		frama-c-18.0-Argon
 PKGNAME =		frama-c-18.0
+REVISION =		0
 CATEGORIES =		devel
 HOMEPAGE =		http://www.frama-c.com/
 
@@ -29,7 +30,8 @@ BUILD_DEPENDS =		x11/lablgtk2 \
 			sysutils/findlib
 RUN_DEPENDS =		x11/lablgtk2 \
 			math/graphviz \
-			math/ocaml-zarith
+			math/ocaml-zarith \
+			sysutils/findlib
 
 LIB_DEPENDS =		x11/gnome/libgnomecanvas \
 			x11/gtksourceview
