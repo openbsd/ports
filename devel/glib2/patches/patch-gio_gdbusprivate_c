@@ -1,0 +1,43 @@
+$OpenBSD: patch-gio_gdbusprivate_c,v 1.1 2019/03/23 08:51:15 stsp Exp $
+Fix use-after-free triggered by gnome-session-binary when Gnome restarts.
+
+ostream_flush_cb() was calling flush_data_list_complete() with a single
+element list with an item that had already been freed:
+
+#2  0x00000e3c0104577a in flush_data_list_complete (flushers=0xe3bd8300340, 
+    error=0x0) at ../glib-2.58.3/gio/gdbusprivate.c:1156
+1156          g_mutex_lock (&f->mutex);
+(gdb) p /x *f
+$74 = {mutex = {p = 0xdfdfdfdfdfdfdfdf, i = {0xdfdfdfdf, 0xdfdfdfdf}}, cond = {
+    p = 0xdfdfdfdfdfdfdfdf, i = {0xdfdfdfdf, 0xdfdfdfdf}}, 
+  number_to_wait_for = 0xdfdfdfdfdfdfdfdf, error = 0x0}
+
+This happened because the thread freeing the element didn't properly wait
+for the asynchronous flush operation to finish.
+Gnome's developer docs say: "g_cond_wait() must always be used in a loop"
+https://developer.gnome.org/glib/stable/glib-Threads.html#g-cond-wait
+
+Index: gio/gdbusprivate.c
+--- gio/gdbusprivate.c.orig
++++ gio/gdbusprivate.c
+@@ -1788,10 +1788,17 @@ _g_dbus_worker_flush_sync (GDBusWorker    *worker,
+ 
+   if (data != NULL)
+     {
+-      g_cond_wait (&data->cond, &data->mutex);
+-      g_mutex_unlock (&data->mutex);
++      /* Wait for flush operations to finish. */
++      g_mutex_lock (&worker->write_lock);
++      while (worker->write_num_messages_flushed < data->number_to_wait_for)
++        {
++          g_mutex_unlock (&worker->write_lock);
++          g_cond_wait (&data->cond, &data->mutex);
++          g_mutex_lock (&worker->write_lock);
++        }
++      g_mutex_unlock (&worker->write_lock);
+ 
+-      /* note:the element is removed from worker->write_pending_flushes in flush_cb() above */
++      g_mutex_unlock (&data->mutex);
+       g_cond_clear (&data->cond);
+       g_mutex_clear (&data->mutex);
+       if (data->error != NULL)
