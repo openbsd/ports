@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/03/23 13:09:40 semarie Exp $
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 bin/boobank${MODPY_BIN_SUFFIX}
@@ -10,6 +10,7 @@ bin/boobmsg${MODPY_BIN_SUFFIX}
 bin/boobooks${MODPY_BIN_SUFFIX}
 bin/boobsize${MODPY_BIN_SUFFIX}
 bin/boobtracker${MODPY_BIN_SUFFIX}
+bin/boomoney${MODPY_BIN_SUFFIX}
 bin/cineoob${MODPY_BIN_SUFFIX}
 bin/comparoob${MODPY_BIN_SUFFIX}
 bin/cookboob${MODPY_BIN_SUFFIX}
@@ -23,9 +24,11 @@ bin/parceloob${MODPY_BIN_SUFFIX}
 bin/pastoob${MODPY_BIN_SUFFIX}
 bin/qbooblyrics${MODPY_BIN_SUFFIX}
 bin/qboobmsg${MODPY_BIN_SUFFIX}
+bin/qboobtracker${MODPY_BIN_SUFFIX}
 bin/qcineoob${MODPY_BIN_SUFFIX}
 bin/qcookboob${MODPY_BIN_SUFFIX}
 bin/qflatboob${MODPY_BIN_SUFFIX}
+bin/qgalleroob${MODPY_BIN_SUFFIX}
 bin/qhandjoob${MODPY_BIN_SUFFIX}
 bin/qhavedate${MODPY_BIN_SUFFIX}
 bin/qvideoob${MODPY_BIN_SUFFIX}
@@ -114,6 +117,11 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weboob/applications/boo
 lib/python${MODPY_VERSION}/site-packages/weboob/applications/boobtracker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/applications/boobtracker/${MODPY_PYCACHE}boobtracker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/applications/boobtracker/boobtracker.py
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/boomoney/
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/boomoney/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weboob/applications/boomoney/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/boomoney/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/boomoney/boomoney.py
 lib/python${MODPY_VERSION}/site-packages/weboob/applications/cineoob/
 lib/python${MODPY_VERSION}/site-packages/weboob/applications/cineoob/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weboob/applications/cineoob/${MODPY_PYCACHE}/
@@ -222,6 +230,24 @@ lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobmsg/ui/${MODPY
 lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobmsg/ui/${MODPY_PYCACHE}messages_manager_ui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobmsg/ui/main_window_ui.py
 lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobmsg/ui/messages_manager_ui.py
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobtracker/
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobtracker/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobtracker/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobtracker/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobtracker/${MODPY_PYCACHE}details.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobtracker/${MODPY_PYCACHE}main_window.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobtracker/${MODPY_PYCACHE}qboobtracker.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobtracker/details.py
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobtracker/main_window.py
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobtracker/qboobtracker.py
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobtracker/ui/
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobtracker/ui/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobtracker/ui/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobtracker/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobtracker/ui/${MODPY_PYCACHE}details_ui.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobtracker/ui/${MODPY_PYCACHE}main_window_ui.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobtracker/ui/details_ui.py
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/qboobtracker/ui/main_window_ui.py
 lib/python${MODPY_VERSION}/site-packages/weboob/applications/qcineoob/
 lib/python${MODPY_VERSION}/site-packages/weboob/applications/qcineoob/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weboob/applications/qcineoob/${MODPY_PYCACHE}/
@@ -316,9 +342,11 @@ lib/python${MODPY_VERSION}/site-packages/weboob/applications/qgalleroob/
 lib/python${MODPY_VERSION}/site-packages/weboob/applications/qgalleroob/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weboob/applications/qgalleroob/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/weboob/applications/qgalleroob/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/qgalleroob/${MODPY_PYCACHE}bookmarks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/applications/qgalleroob/${MODPY_PYCACHE}main_window.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/applications/qgalleroob/${MODPY_PYCACHE}qgalleroob.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/applications/qgalleroob/${MODPY_PYCACHE}viewer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weboob/applications/qgalleroob/bookmarks.py
 lib/python${MODPY_VERSION}/site-packages/weboob/applications/qgalleroob/main_window.py
 lib/python${MODPY_VERSION}/site-packages/weboob/applications/qgalleroob/qgalleroob.py
 lib/python${MODPY_VERSION}/site-packages/weboob/applications/qgalleroob/ui/
@@ -514,7 +542,10 @@ lib/python${MODPY_VERSION}/site-packages/weboob/browser/${MODPY_PYCACHE}exceptio
 lib/python${MODPY_VERSION}/site-packages/weboob/browser/${MODPY_PYCACHE}nss.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/browser/${MODPY_PYCACHE}pages.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/browser/${MODPY_PYCACHE}profiles.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weboob/browser/${MODPY_PYCACHE}retry.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weboob/browser/${MODPY_PYCACHE}selenium.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/browser/${MODPY_PYCACHE}sessions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weboob/browser/${MODPY_PYCACHE}switch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/browser/${MODPY_PYCACHE}url.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/browser/browsers.py
 lib/python${MODPY_VERSION}/site-packages/weboob/browser/cache.py
@@ -538,7 +569,10 @@ lib/python${MODPY_VERSION}/site-packages/weboob/browser/filters/standard.py
 lib/python${MODPY_VERSION}/site-packages/weboob/browser/nss.py
 lib/python${MODPY_VERSION}/site-packages/weboob/browser/pages.py
 lib/python${MODPY_VERSION}/site-packages/weboob/browser/profiles.py
+lib/python${MODPY_VERSION}/site-packages/weboob/browser/retry.py
+lib/python${MODPY_VERSION}/site-packages/weboob/browser/selenium.py
 lib/python${MODPY_VERSION}/site-packages/weboob/browser/sessions.py
+lib/python${MODPY_VERSION}/site-packages/weboob/browser/switch.py
 lib/python${MODPY_VERSION}/site-packages/weboob/browser/tests/
 lib/python${MODPY_VERSION}/site-packages/weboob/browser/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weboob/browser/tests/${MODPY_PYCACHE}/
@@ -562,6 +596,7 @@ lib/python${MODPY_VERSION}/site-packages/weboob/capabilities/${MODPY_PYCACHE}bas
 lib/python${MODPY_VERSION}/site-packages/weboob/capabilities/${MODPY_PYCACHE}bill.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/capabilities/${MODPY_PYCACHE}bugtracker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/capabilities/${MODPY_PYCACHE}calendar.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weboob/capabilities/${MODPY_PYCACHE}captcha.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/capabilities/${MODPY_PYCACHE}chat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/capabilities/${MODPY_PYCACHE}cinema.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/capabilities/${MODPY_PYCACHE}collection.${MODPY_PYC_MAGIC_TAG}pyc
@@ -600,6 +635,7 @@ lib/python${MODPY_VERSION}/site-packages/weboob/capabilities/base.py
 lib/python${MODPY_VERSION}/site-packages/weboob/capabilities/bill.py
 lib/python${MODPY_VERSION}/site-packages/weboob/capabilities/bugtracker.py
 lib/python${MODPY_VERSION}/site-packages/weboob/capabilities/calendar.py
+lib/python${MODPY_VERSION}/site-packages/weboob/capabilities/captcha.py
 lib/python${MODPY_VERSION}/site-packages/weboob/capabilities/chat.py
 lib/python${MODPY_VERSION}/site-packages/weboob/capabilities/cinema.py
 lib/python${MODPY_VERSION}/site-packages/weboob/capabilities/collection.py
@@ -648,34 +684,6 @@ lib/python${MODPY_VERSION}/site-packages/weboob/core/ouiboube.py
 lib/python${MODPY_VERSION}/site-packages/weboob/core/repositories.py
 lib/python${MODPY_VERSION}/site-packages/weboob/core/requests.py
 lib/python${MODPY_VERSION}/site-packages/weboob/core/scheduler.py
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/${MODPY_PYCACHE}browser.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/${MODPY_PYCACHE}firefox_cookies.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/browser.py
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/decorators.py
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/firefox_cookies.py
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/parsers/
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/parsers/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/parsers/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/parsers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/parsers/${MODPY_PYCACHE}csvparser.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/parsers/${MODPY_PYCACHE}iparser.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/parsers/${MODPY_PYCACHE}jsonparser.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/parsers/${MODPY_PYCACHE}lxmlparser.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/parsers/${MODPY_PYCACHE}lxmlsoupparser.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/parsers/csvparser.py
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/parsers/iparser.py
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/parsers/jsonparser.py
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/parsers/lxmlparser.py
-lib/python${MODPY_VERSION}/site-packages/weboob/deprecated/browser/parsers/lxmlsoupparser.py
 lib/python${MODPY_VERSION}/site-packages/weboob/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/__init__.py
@@ -704,12 +712,14 @@ lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/${MODPY_PYCACHE}captcha.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/${MODPY_PYCACHE}javascript.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/${MODPY_PYCACHE}media_player.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/${MODPY_PYCACHE}repl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/${MODPY_PYCACHE}results.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/base.py
+lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/captcha.py
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/console.py
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/formatters/
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/formatters/__init__.py
@@ -747,12 +757,14 @@ lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/qt5/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/qt5/${MODPY_PYCACHE}qt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/qt5/${MODPY_PYCACHE}reposdlg_ui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/qt5/${MODPY_PYCACHE}search_history.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/qt5/${MODPY_PYCACHE}thumbnails.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/qt5/backendcfg.py
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/qt5/backendcfg_ui.py
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/qt5/models.py
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/qt5/qt.py
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/qt5/reposdlg_ui.py
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/qt5/search_history.py
+lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/qt5/thumbnails.py
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/repl.py
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/application/results.py
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/backend.py
@@ -761,6 +773,7 @@ lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/${MODPY_PYCACHE}paste.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/${MODPY_PYCACHE}recipe.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/${MODPY_PYCACHE}streaminfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/audio/
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/audio/__init__.py
@@ -780,29 +793,16 @@ lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/bank/iban.py
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/bank/investments.py
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/bank/test.py
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/bank/transactions.py
-lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/gallery/
-lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/gallery/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/gallery/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/gallery/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/gallery/${MODPY_PYCACHE}genericcomicreader.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/gallery/${MODPY_PYCACHE}genericcomicreadertest.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/gallery/genericcomicreader.py
-lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/gallery/genericcomicreadertest.py
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/housing/
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/housing/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/housing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/housing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/housing/${MODPY_PYCACHE}housing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/housing/${MODPY_PYCACHE}housing_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/housing/housing.py
-lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/messages/
-lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/messages/GenericModule.py
-lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/messages/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/messages/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/messages/${MODPY_PYCACHE}GenericModule.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/messages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/messages/${MODPY_PYCACHE}genericArticle.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/messages/genericArticle.py
+lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/housing/housing_test.py
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/paste.py
+lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/recipe.py
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/streaminfo.py
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/video/
 lib/python${MODPY_VERSION}/site-packages/weboob/tools/capabilities/video/__init__.py
@@ -852,6 +852,7 @@ lib/python${MODPY_VERSION}/site-packages/weboob/tools/value.py
 @man man/man1/boobooks${MODPY_BIN_SUFFIX}.1
 @man man/man1/boobsize${MODPY_BIN_SUFFIX}.1
 @man man/man1/boobtracker${MODPY_BIN_SUFFIX}.1
+@man man/man1/boomoney${MODPY_BIN_SUFFIX}.1
 @man man/man1/cineoob${MODPY_BIN_SUFFIX}.1
 @man man/man1/comparoob${MODPY_BIN_SUFFIX}.1
 @man man/man1/cookboob${MODPY_BIN_SUFFIX}.1
@@ -865,9 +866,11 @@ lib/python${MODPY_VERSION}/site-packages/weboob/tools/value.py
 @man man/man1/pastoob${MODPY_BIN_SUFFIX}.1
 @man man/man1/qbooblyrics${MODPY_BIN_SUFFIX}.1
 @man man/man1/qboobmsg${MODPY_BIN_SUFFIX}.1
+@man man/man1/qboobtracker${MODPY_BIN_SUFFIX}.1
 @man man/man1/qcineoob${MODPY_BIN_SUFFIX}.1
 @man man/man1/qcookboob${MODPY_BIN_SUFFIX}.1
 @man man/man1/qflatboob${MODPY_BIN_SUFFIX}.1
+@man man/man1/qgalleroob${MODPY_BIN_SUFFIX}.1
 @man man/man1/qhandjoob${MODPY_BIN_SUFFIX}.1
 @man man/man1/qhavedate${MODPY_BIN_SUFFIX}.1
 @man man/man1/qvideoob${MODPY_BIN_SUFFIX}.1
@@ -887,7 +890,9 @@ lib/python${MODPY_VERSION}/site-packages/weboob/tools/value.py
 @man man/man1/weboob-repos${MODPY_BIN_SUFFIX}.1
 @man man/man1/weboorrents${MODPY_BIN_SUFFIX}.1
 @man man/man1/wetboobs${MODPY_BIN_SUFFIX}.1
+share/applications/qbooblyrics${MODPY_BIN_SUFFIX}.desktop
 share/applications/qboobmsg${MODPY_BIN_SUFFIX}.desktop
+share/applications/qboobtracker${MODPY_BIN_SUFFIX}.desktop
 share/applications/qcineoob${MODPY_BIN_SUFFIX}.desktop
 share/applications/qcookboob${MODPY_BIN_SUFFIX}.desktop
 share/applications/qflatboob${MODPY_BIN_SUFFIX}.desktop
@@ -917,6 +922,7 @@ share/icons/hicolor/64x64/apps/parceloob${MODPY_BIN_SUFFIX}.png
 share/icons/hicolor/64x64/apps/pastoob${MODPY_BIN_SUFFIX}.png
 share/icons/hicolor/64x64/apps/qbooblyrics${MODPY_BIN_SUFFIX}.png
 share/icons/hicolor/64x64/apps/qboobmsg${MODPY_BIN_SUFFIX}.png
+share/icons/hicolor/64x64/apps/qboobtracker${MODPY_BIN_SUFFIX}.png
 share/icons/hicolor/64x64/apps/qcineoob${MODPY_BIN_SUFFIX}.png
 share/icons/hicolor/64x64/apps/qcookboob${MODPY_BIN_SUFFIX}.png
 share/icons/hicolor/64x64/apps/qflatboob${MODPY_BIN_SUFFIX}.png
