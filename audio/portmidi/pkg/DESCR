@@ -1,0 +1,3 @@
+PortMidi is a computer library for real time input and output of MIDI data.
+It is designed to be portable to many different operating systems. PortMidi is
+part of the PortMusic project.

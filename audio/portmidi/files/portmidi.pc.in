@@ -1,0 +1,11 @@
+prefix=@DEST_DIR@
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libportmidi
+Description: Portable midi I/O
+Version: 217
+
+Libs: -L${libdir} -lportmidi
+Cflags: -I${includedir}

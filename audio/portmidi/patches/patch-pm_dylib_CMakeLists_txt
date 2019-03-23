@@ -1,0 +1,39 @@
+$OpenBSD: patch-pm_dylib_CMakeLists_txt,v 1.1.1.1 2019/03/23 13:30:08 rapha Exp $
+
+Index: pm_dylib/CMakeLists.txt
+--- pm_dylib/CMakeLists.txt.orig
++++ pm_dylib/CMakeLists.txt
+@@ -62,30 +62,11 @@ if(UNIX)
+     set(INSTALL_NAME_DIR "/usr/local/lib")
+     message(STATUS "SYSROOT: " ${CMAKE_OSX_SYSROOT})
+   else(APPLE)
+-    # LINUX settings...
+-    include(FindJNI)
+-    # message(STATUS "JAVA_JVM_LIB_PATH is " ${JAVA_JVM_LIB_PATH})
+-    # message(STATUS "JAVA_INCLUDE_PATH is " ${JAVA_INCLUDE_PATH})
+-    # note: should use JAVA_JVM_LIB_PATH, but it is not set properly
+-    # note: user might need to set JAVA_INCLUDE_PATH manually
+-    #
+-    # this will probably break on BSD and other Unix systems; the fix
+-    # depends on whether FindJNI can find Java or not. If yes, then
+-    # we should try to rely on automatically set JAVA_INCLUDE_PATH and
+-    # JAVA_INCLUDE_PATH2; if no, then we need to make both JAVA_INCLUDE_PATH
+-    # and JAVA_INCLUDE_PATH2 set by user (will need clear documentation
+-    # because JAVA_INCLUDE_PATH2 is pretty obscure)
+-    set(JAVA_INCLUDE_PATH  ${JAVA_INCLUDE_PATH-UNKNOWN}
+-        CACHE STRING "where to find Java SDK include directory")
+-    set(JAVA_INCLUDE_PATHS ${JAVA_INCLUDE_PATH} ${JAVA_INCLUDE_PATH}/linux)
+-    # libjvm.so is found relative to JAVA_INCLUDE_PATH:
+-    set(JAVAVM_LIB ${JAVA_INCLUDE_PATH}/../jre/lib/i386/client/libjvm.so)
+-
+-    set(LINUXSRC pmlinuxalsa pmlinux finddefault)
+-    prepend_path(LIBSRC ../pm_linux/ ${LINUXSRC})
++    set(LINUXSRC pmsndio)
++    prepend_path(LIBSRC ../pm_sndio/ ${LINUXSRC})
+     list(APPEND LIBSRC ../porttime/ptlinux)
+ 
+-    set(PM_NEEDED_LIBS pthread asound)
++    set(PM_NEEDED_LIBS pthread sndio)
+   endif(APPLE)
+ else(UNIX)
+   if(WIN32)

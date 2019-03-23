@@ -1,0 +1,18 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2019/03/23 13:30:08 rapha Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -73,5 +73,11 @@ add_subdirectory(pm_test)
+ add_subdirectory(pm_dylib)
+ 
+ # Cannot figure out how to make an xcode Java application with CMake
+-add_subdirectory(pm_java)
++#add_subdirectory(pm_java)
+ 
++set(DEST_DIR "${CMAKE_INSTALL_PREFIX}")
++CONFIGURE_FILE("portmidi.pc.in" "portmidi.pc" @ONLY)
++install(FILES
++  "${CMAKE_CURRENT_BINARY_DIR}/portmidi.pc"
++  DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig"
++)
