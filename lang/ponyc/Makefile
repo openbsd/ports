@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/03/04 05:04:21 jsg Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/23 13:52:06 bcallah Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386
 
@@ -7,7 +7,7 @@ CATEGORIES =	lang
 
 GH_ACCOUNT =	ponylang
 GH_PROJECT =	ponyc
-GH_TAGNAME =	0.27.0
+GH_TAGNAME =	0.28.0
 
 HOMEPAGE =	https://www.ponylang.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
