@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/23 10:12:53 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2019/03/23 10:30:02 jca Exp $
 
 BROKEN-i386 =	ld: error: undefined symbol: ml_as_z_pred, etc
 
@@ -6,9 +6,9 @@ COMMENT =		an extensible platform for analysis of C software
 
 DISTNAME =		frama-c-18.0-Argon
 PKGNAME =		frama-c-18.0
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
-HOMEPAGE =		http://www.frama-c.com/
+HOMEPAGE =		https://frama-c.com/
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
