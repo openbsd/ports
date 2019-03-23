@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/03/13 09:34:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/03/23 10:11:00 jca Exp $
 
 BROKEN-i386 =	ld: error: undefined symbol: ml_as_z_pred, etc
 
@@ -22,9 +22,14 @@ MASTER_SITES =		https://frama-c.com/download/
 
 MODULES =		lang/ocaml
 
-BUILD_DEPENDS =		x11/lablgtk2 devel/ocaml-graph \
-			math/graphviz math/ocaml-zarith sysutils/findlib
-RUN_DEPENDS =		x11/lablgtk2 math/graphviz math/ocaml-zarith
+BUILD_DEPENDS =		x11/lablgtk2 \
+			devel/ocaml-graph \
+			math/graphviz \
+			math/ocaml-zarith \
+			sysutils/findlib
+RUN_DEPENDS =		x11/lablgtk2 \
+			math/graphviz \
+			math/ocaml-zarith
 
 LIB_DEPENDS =		x11/gnome/libgnomecanvas \
 			x11/gtksourceview
