@@ -1,17 +1,13 @@
-$OpenBSD: patch-cmake_OpenCVPCHSupport_cmake,v 1.2 2017/11/04 12:39:30 rsadowski Exp $
+$OpenBSD: patch-cmake_OpenCVPCHSupport_cmake,v 1.3 2019/03/23 07:26:56 rsadowski Exp $
 Index: cmake/OpenCVPCHSupport.cmake
 --- cmake/OpenCVPCHSupport.cmake.orig
 +++ cmake/OpenCVPCHSupport.cmake
-@@ -15,7 +15,11 @@
- IF(CMAKE_COMPILER_IS_GNUCXX)
+@@ -15,7 +15,7 @@
+ IF(CV_GCC)
  
      IF(NOT CMAKE_CXX_COMPILER_VERSION VERSION_LESS "4.2.0")
 -        SET(PCHSupport_FOUND TRUE)
-+        IF(${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
-+            SET(PCHSupport_FOUND FALSE)
-+        ELSE(${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
-+            SET(PCHSupport_FOUND TRUE)
-+        ENDIF()
++        SET(PCHSupport_FOUND FALSE)
      ENDIF()
  
      SET(_PCH_include_prefix "-I")

@@ -1,0 +1,18 @@
+$OpenBSD: patch-cmake_OpenCVFindLibsGrfmt_cmake,v 1.1 2019/03/23 07:26:56 rsadowski Exp $
+Index: cmake/OpenCVFindLibsGrfmt.cmake
+--- cmake/OpenCVFindLibsGrfmt.cmake.orig
++++ cmake/OpenCVFindLibsGrfmt.cmake
+@@ -185,12 +185,7 @@ if(WITH_PNG)
+     include(FindPNG)
+     if(PNG_FOUND)
+       include(CheckIncludeFile)
+-      check_include_file("${PNG_PNG_INCLUDE_DIR}/libpng/png.h" HAVE_LIBPNG_PNG_H)
+-      if(HAVE_LIBPNG_PNG_H)
+-        ocv_parse_header("${PNG_PNG_INCLUDE_DIR}/libpng/png.h" PNG_VERSION_LINES PNG_LIBPNG_VER_MAJOR PNG_LIBPNG_VER_MINOR PNG_LIBPNG_VER_RELEASE)
+-      else()
+-        ocv_parse_header("${PNG_PNG_INCLUDE_DIR}/png.h" PNG_VERSION_LINES PNG_LIBPNG_VER_MAJOR PNG_LIBPNG_VER_MINOR PNG_LIBPNG_VER_RELEASE)
+-      endif()
++      ocv_parse_header("${PNG_PNG_INCLUDE_DIR}/png.h" PNG_VERSION_LINES PNG_LIBPNG_VER_MAJOR PNG_LIBPNG_VER_MINOR PNG_LIBPNG_VER_RELEASE)
+     endif()
+   endif()
+ 
