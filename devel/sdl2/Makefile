@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2019/01/03 17:55:08 thfr Exp $
+# $OpenBSD: Makefile,v 1.25 2019/03/23 05:27:32 jsg Exp $
 
 COMMENT=	cross-platform multimedia library
 BROKEN-hppa=	src/atomic/SDL_spinlock.c:101:2: error: \
 		#error Please implement for your platform.
 
 V=		2.0.9
+REVISION=	0
 DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
 CATEGORIES=	devel
