@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/04 12:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/24 22:24:12 sthen Exp $
 
 COMMENT =		manage SQL database schemas via config files
 
@@ -7,21 +7,21 @@ DISTNAME =		liquibase-${VERSION}-bin
 PKGNAME =		liquibase-${VERSION}
 WRKDIST =		${WRKDIR}
 CATEGORIES =		databases
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://liquibase.org/
-MAINTAINER =            Bryan Everly <bryan@bceassociates.com>
+MAINTAINER =		Bryan Everly <bryan@bceassociates.com>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_CDROM=	Yes
 
 RUN_DEPENDS =		java/javaPathHelper
 
 MASTER_SITES =		https://github.com/liquibase/liquibase/releases/download/liquibase-parent-${VERSION}/
 
 MODULES =		java
-MODJAVA_VER = 		1.8
-MODJAVA_JRERUN =	yes
+# XXX when updating please confirm if this is 1.8 only or if 11 is also ok (in which case, switch to 1.8+)
+MODJAVA_VER =		1.8
 
 NO_BUILD =		Yes
 NO_TEST =		Yes

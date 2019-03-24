@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/02/26 07:58:48 pvk Exp $
+# $OpenBSD: Makefile,v 1.22 2019/03/24 22:24:14 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64
 COMMENT =		tool for managing events and logs
@@ -6,6 +6,7 @@ COMMENT =		tool for managing events and logs
 V =			6.6.1
 DISTNAME =		logstash-oss-$V
 PKGNAME =		logstash-$V
+REVISION =		0
 EPOCH =			0
 
 CATEGORIES =		sysutils
@@ -26,7 +27,6 @@ EXTRACT_ONLY =		logstash-oss-$V.tar.gz
 
 MODULES =		java
 MODJAVA_VER =		1.8+
-MODJAVA_JRERUN =	Yes
 
 RUN_DEPENDS =		java/javaPathHelper \
 			lang/jruby \

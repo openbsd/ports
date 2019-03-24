@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2018/04/27 18:04:21 solene Exp $
+# $OpenBSD: Makefile,v 1.13 2019/03/24 22:24:13 sthen Exp $
 
 COMMENT =		Common Lisp dialect for the Java Virtual Machine
 V =			1.5.0
 DISTNAME =		abcl-src-${V}
-REVISION =		0
+REVISION =		1
 PKGNAME =		abcl-${V}
 PKG_ARCH =		*
 
@@ -19,10 +19,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		${HOMEPAGE}/releases/$V/
 
 MODULES =		java
-MODJAVA_VER =		1.6+
-MODJAVA_BUILD = 	ant
+MODJAVA_VER =		1.8+
+MODJAVA_BUILD =		ant
 MODJAVA_BUILD_TARGET_NAME =	abcl.jar
-MODJAVA_JRERUN = 	Yes
 
 RUN_DEPENDS =		java/javaPathHelper \
 			misc/rlwrap

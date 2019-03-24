@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/07/30 14:07:30 rpointel Exp $
+# $OpenBSD: Makefile,v 1.26 2019/03/24 22:24:14 sthen Exp $
 
 COMMENT =		tool for testing security of web applications
 
@@ -18,11 +18,11 @@ PERMIT_DISTFILES_FTP=   https://portswigger.net/burp/eula-free.html
 
 MASTER_SITES =		https://portswigger.net/Burp/Releases/
 
-EXTRACT_ONLY =		
+EXTRACT_ONLY =
 EXTRACT_SUFX =		.jar
 
 MODULES =		java
-MODJAVA_VER = 		1.7+
+MODJAVA_VER =		1.8+
 MODJAVA_JRERUN =	yes
 
 RUN_DEPENDS =		java/javaPathHelper

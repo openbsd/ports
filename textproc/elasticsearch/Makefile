@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.61 2019/02/26 07:58:18 pvk Exp $
+# $OpenBSD: Makefile,v 1.62 2019/03/24 22:24:14 sthen Exp $
 
 COMMENT =		distributed RESTful search and analytics
 
 V =			6.6.1
+REVISION =		0
 DISTNAME =		elasticsearch-oss-$V
 PKGNAME =		elasticsearch-$V
 CATEGORIES =		textproc
@@ -18,7 +19,6 @@ MASTER_SITES =		https://artifacts.elastic.co/downloads/elasticsearch/
 
 MODULES =		java
 MODJAVA_VER =		1.8+
-MODJAVA_JRERUN =	Yes
 
 RUN_DEPENDS =		java/javaPathHelper \
 			shells/bash

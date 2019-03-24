@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2017/04/21 13:27:47 kurt Exp $
+# $OpenBSD: Makefile,v 1.9 2019/03/24 22:24:13 sthen Exp $
 
 COMMENT =	desktop bugzilla browser
 
 DISTNAME =	deskzilla-lite-2_1
 PKGNAME =	${DISTNAME:S/_/./}
-REVISION =	3
+REVISION =	4
 EXTRACT_SUFX=	.zip
 
 PKG_ARCH =	*
@@ -19,7 +19,7 @@ MASTER_SITES =	http://d1.almworks.com/.files/
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	java
-MODJAVA_VER =	1.7+
+MODJAVA_VER =	1.8+
 
 RUN_DEPENDS =	java/javaPathHelper
 NO_TEST =	Yes

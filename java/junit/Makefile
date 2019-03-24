@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2017/04/21 13:27:46 kurt Exp $
+# $OpenBSD: Makefile,v 1.31 2019/03/24 22:24:13 sthen Exp $
 
 COMMENT=	regression testing utility for use with the Java language
 
 VERSION=	4.9
 DISTNAME=	junit${VERSION}
-REVISION=	2
+REVISION=	3
 PKGNAME=	junit-${VERSION}
 
 CATEGORIES=	devel
@@ -23,8 +23,7 @@ MASTER_SITES=	https://distfiles.nl/
 EXTRACT_SUFX=	.zip
 
 MODULES=	java
-MODJAVA_VER=	1.6+
-MODJAVA_JRERUN=	yes
+MODJAVA_VER=	1.8+
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

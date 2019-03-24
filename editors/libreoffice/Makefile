@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2019/03/24 09:17:45 robert Exp $
+# $OpenBSD: Makefile,v 1.202 2019/03/24 22:24:12 sthen Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -23,6 +23,7 @@ PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde4
 
+REVISION-java=	0
 EPOCH=		0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -265,8 +266,7 @@ WANTLIB-kde+=		harfbuzz
 
 .if ${BUILD_PACKAGES:M-java}
 MODULES+=		java
-MODJAVA_VER=		1.7+
-MODJAVA_JRERUN=		Yes
+MODJAVA_VER=		1.8+
 .endif
 LIB_DEPENDS-java=	${MODGCC4_CPPLIBDEP}
 RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \

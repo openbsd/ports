@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2018/06/27 21:03:56 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2019/03/24 22:24:13 sthen Exp $
 
 COMMENT=		language/IDE for images, animations and interactions
 
 V=			1.5.1
 DISTNAME=		processing-$V-linux
 PKGNAME=		${DISTNAME:S/-linux//}
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		lang graphics
 
@@ -21,7 +21,7 @@ EXTRACT_SUFX=		.tgz
 RUN_DEPENDS=		devel/desktop-file-utils
 
 MODULES=		java
-MODJAVA_VER=		1.6+
+MODJAVA_VER=		1.8+
 
 WRKDIST= 		${WRKDIR}/${DISTNAME:S/-linux//}
 

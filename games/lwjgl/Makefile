@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/04/21 13:27:46 kurt Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/24 22:24:13 sthen Exp $
 
 COMMENT=	lightweight game library for java
 
@@ -8,7 +8,7 @@ GH_PROJECT=	lwjgl
 GH_TAGNAME=	${GH_PROJECT}${V}
 DISTNAME=	lwjgl${V}
 PKGNAME=	lwjgl-${V}
-REVISION=	0
+REVISION=	1
 
 .if ${MACHINE_ARCH} == "i386"
 M_ARCH=		""
@@ -31,9 +31,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 WANTLIB += GL X11 Xcursor Xext Xrandr Xxf86vm m pthread
 
 MODULES=	java
-MODJAVA_VER=	1.6+
+MODJAVA_VER=	1.8+
 MODJAVA_BUILD=	ant
-MODJAVA_JRERUN=	Yes
 
 BUILD_DEPENDS=	audio/openal \
 		devel/apache-ant

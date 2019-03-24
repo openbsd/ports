@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/11/11 21:25:27 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/24 22:24:14 sthen Exp $
 
 COMMENT =	HTML5 validator
 
 V =		18.11.5
+REVISION =	0
 DISTNAME =	vnu.jar_$V
 PKGNAME =	vnu-$V
 
@@ -21,7 +22,6 @@ EXTRACT_SUFX =		.zip
 
 MODULES =		java
 MODJAVA_VER =		1.8+
-MODJAVA_JRERUN =	Yes
 RUN_DEPENDS =		java/javaPathHelper
 
 NO_BUILD =		Yes

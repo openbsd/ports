@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2018/06/02 12:38:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2019/03/24 22:24:13 sthen Exp $
 
 COMMENT=		open source alternative to Microsoft Project
 
 DISTNAME=		projectlibre-1.8.0
+REVISION=		0
 CATEGORIES=		productivity
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -15,8 +16,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=projectlibre/}
 
 MODULES=	java
-MODJAVA_VER=	1.6+
-MODJAVA_JRERUN=	Yes
+MODJAVA_VER=	1.8+
 
 RUN_DEPENDS=	java/javaPathHelper
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2018/11/17 21:16:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/03/24 22:24:14 sthen Exp $
 
 COMMENT=	pdf swiss army knife
 GL_COMMIT=	61981721cab4dc6adfecaa4342479c6232cf59f3
 DISTNAME=	pdftk-3.0.1
+REVISION=	0
 EXTRACT_ONLY=	pdftk-${GL_COMMIT}.tar.bz2 \
 		commons-lang3-3.8.1-bin.tar.gz
 
@@ -24,7 +25,7 @@ DISTFILES =	pdftk-${GL_COMMIT}.tar.bz2 \
 		bcprov-jdk15on-160.jar:1
 
 MODULES =	java
-MODJAVA_VER =	1.7+
+MODJAVA_VER =	1.8+
 MODJAVA_BUILD =	ant
 
 RUN_DEPENDS +=	java/javaPathHelper

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/04/21 13:27:46 kurt Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/24 22:24:12 sthen Exp $
 
 COMMENT =		online help system for java platform applications
 
@@ -8,14 +8,13 @@ DISTNAME =		javahelp${VERSION}
 DISTFILES =		javahelp${VERSION_}.zip
 PKGNAME =		javahelp-${VERSION}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://javahelp.java.net/
 MAINTAINER =		Bryan Everly <bryan@bceassociates.com>
 
 MODULES =		java
-MODJAVA_VER =		1.7+
-MODJAVA_JRERUN =	Yes
+MODJAVA_VER =		1.8+
 
 RUN_DEPENDS =		java/javaPathHelper
 

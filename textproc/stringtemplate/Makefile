@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2017/04/21 13:27:47 kurt Exp $
+# $OpenBSD: Makefile,v 1.9 2019/03/24 22:24:14 sthen Exp $
 
 COMMENT=	Java template engine for generating source code, etc
 
 V=		4.0.4
 DISTNAME=	ST-$V
-REVISION=	2
+REVISION=	3
 PKGNAME=	stringtemplate-$V
 CATEGORIES=	textproc java
 
@@ -23,7 +23,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 
 MODULES=	java
-MODJAVA_VER=	1.6+
+MODJAVA_VER=	1.8+
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODJAVA_JAR_DIR}

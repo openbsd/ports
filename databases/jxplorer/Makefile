@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2017/04/21 13:27:46 kurt Exp $
+# $OpenBSD: Makefile,v 1.17 2019/03/24 22:24:12 sthen Exp $
 
 COMMENT=	standards compliant LDAP browser
 
 V=		3.2
 DISTNAME=	JXv${V}deploy
 PKGNAME=	jxplorer-${V}
-REVISION=	10
+REVISION=	11
 EXTRACT_SUFX=	.zip
 CATEGORIES=	databases net
 
@@ -18,7 +18,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jxplorer/}
 WRKDIST=	${WRKDIR}/jxplorer
 
 MODULES=	java
-MODJAVA_VER=	1.5+
+MODJAVA_VER=	1.8+
 
 RUN_DEPENDS=	java/javaPathHelper
 

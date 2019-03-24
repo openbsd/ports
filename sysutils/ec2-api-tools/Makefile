@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2018/09/16 06:55:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/24 22:24:14 sthen Exp $
 
 COMMENT=		API tools for Amazon EC2 web service
 
 DISTNAME=		ec2-api-tools-1.7.5.1
-REVISION=		3
+REVISION=		4
 
 EXTRACT_SUFX=		.zip
 
@@ -22,7 +22,6 @@ MASTER_SITES=		http://s3.amazonaws.com/ec2-downloads/
 
 MODULES=		java
 MODJAVA_VER=		1.8+
-MODJAVA_JRERUN=		Yes
 
 RUN_DEPENDS=		java/javaPathHelper \
 			shells/bash

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/04/21 13:27:46 kurt Exp $
+# $OpenBSD: Makefile,v 1.15 2019/03/24 22:24:13 sthen Exp $
 
 COMMENT =	brick shooter reflexion game
 
@@ -7,14 +7,13 @@ GH_PROJECT=	jbrickshooter
 GH_COMMIT=	0445d9171cc46462970ae8eb08f0c7294c5707df
 DISTNAME=	${GH_PROJECT}-1.6.0
 CATEGORIES=	games
-REVISION=	0
+REVISION=	1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	java
-MODJAVA_VER=	1.7+
-MODJAVA_JRERUN= Yes
+MODJAVA_VER=	1.8+
 
 BUILD_DEPENDS=	devel/apache-ant
 RUN_DEPENDS=	java/javaPathHelper

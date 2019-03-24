@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2017/04/21 13:27:47 kurt Exp $
+# $OpenBSD: Makefile,v 1.18 2019/03/24 22:24:13 sthen Exp $
 
 COMMENT=	collecting and processing thoughts according to GTD
 
 V=		2.2.1
 DISTNAME=	tr-$V
 PKGNAME=	thinkingrock-${V}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	productivity
 
 HOMEPAGE=	http://www.trgtd.com.au/
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=thinkingrock/}
 
 MODULES=	java
-MODJAVA_VER=	1.6+
-MODJAVA_JRERUN= Yes
+MODJAVA_VER=	1.8+
 
 RUN_DEPENDS=	java/javaPathHelper \
 		devel/xdg-utils

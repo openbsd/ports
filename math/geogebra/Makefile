@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2018/07/01 18:33:36 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/03/24 22:24:13 sthen Exp $
 
 COMMENT=	educational mathematical software
 
 V=		4.2.60.0
 DISTNAME=	GeoGebra-Unixlike-Installer-${V}
 PKGNAME=	geogebra-${V}
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	math java
 
@@ -23,8 +23,7 @@ PERMIT_DISTFILE_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=geogebra/}
 
 MODULES=		java
-MODJAVA_VER=		1.7+
-MODJAVA_JRERUN=		Yes
+MODJAVA_VER=		1.8+
 
 RUN_DEPENDS=		java/javaPathHelper \
 			devel/desktop-file-utils \

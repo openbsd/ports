@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/02/08 21:33:40 remi Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/24 22:24:14 sthen Exp $
 
 COMMENT =		config backup and policy check for network devices
 
 V =			0.11.0
+REVISION =		0
 DISTNAME =		netshot_${V}
 PKGNAME =		${DISTNAME:S/_/-/}
 WRKDIST =		${WRKDIR}
@@ -22,7 +23,6 @@ EXTRACT_SUFX =		.zip
 
 MODULES =		java
 MODJAVA_VER =		1.8+
-MODJAVA_JRERUN =	YES
 
 RUN_DEPENDS =		java/javaPathHelper
 

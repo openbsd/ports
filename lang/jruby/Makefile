@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2019/02/19 05:23:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.76 2019/03/24 22:24:13 sthen Exp $
 
 # Runtime failures on i386 in IO#pos and IO#rewind
 ONLY_FOR_ARCHS = amd64
@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS = amd64
 COMMENT =	pure-Java implementation of the Ruby language
 
 V =		9.2.6.0
+REVISION =	0
 DISTNAME =	jruby-dist-${V}-bin
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
@@ -26,7 +27,6 @@ MASTER_SITES1 =	${MASTER_SITE_RUBYGEMS}
 
 MODULES =	java
 MODJAVA_VER =	1.8+
-MODJAVA_JRERUN = Yes
 USE_GMAKE =	Yes
 
 WANTLIB =	c m pthread ${COMPILER_LIBCXX}

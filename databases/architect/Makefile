@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/09/04 12:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2019/03/24 22:24:12 sthen Exp $
 
 PKG_ARCH=		*
 
@@ -11,7 +11,7 @@ PKGNAME=		architect-${V}
 CATEGORIES=		databases
 WRKDIST=		${WRKDIR}/architect-${V}
 
-REVISION=		6
+REVISION=		7
 
 HOMEPAGE=		http://www.sqlpower.ca/page/architect
 
@@ -21,7 +21,7 @@ MAINTAINER=		Ian Darwin <ian@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		java
-MODJAVA_VER =		1.6+
+MODJAVA_VER =		1.8+
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

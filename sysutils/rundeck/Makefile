@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2018/04/26 16:25:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2019/03/24 22:24:14 sthen Exp $
 
 COMMENT=		job scheduler and runbook automation
 
 V=			2.6.11
 DISTNAME=		rundeck-launcher-${V}
 PKGNAME=		rundeck-${V}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		sysutils
 
@@ -19,8 +19,7 @@ EXTRACT_SUFX=		.jar
 EXTRACT_ONLY=		# empty
 
 MODULES=		java
-MODJAVA_VER=		1.7+
-MODJAVA_JRERUN=		Yes
+MODJAVA_VER=		1.8+
 
 RUN_DEPENDS=		java/javaPathHelper
 

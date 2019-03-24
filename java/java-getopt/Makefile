@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2017/04/21 13:27:46 kurt Exp $
+# $OpenBSD: Makefile,v 1.9 2019/03/24 22:24:13 sthen Exp $
 
 COMMENT=	Java port of GNU getopt family functions
 
 DISTNAME=	java-getopt-1.0.14
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.urbanophile.com/arenn/hacking/download.html
 
@@ -16,7 +16,7 @@ MASTER_SITES=	${HOMEPAGE:=/../getopt/}
 WRKDIST=	${WRKDIR}
 
 MODULES=	java
-MODJAVA_VER=	1.6+
+MODJAVA_VER=	1.8+
 MODJAVA_BUILD=	ant
 
 post-extract:

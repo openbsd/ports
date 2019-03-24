@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/04/21 13:27:46 kurt Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/24 22:24:13 sthen Exp $
 
 COMMENT=	BCrypt library for Java
 
 DISTNAME=	jBCrypt-0.4
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	security
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://www.mindrot.org/files/jBCrypt/
 
 MODULES=		java
-MODJAVA_VER=		1.6+
-MODJAVA_JRERUN=		yes
+MODJAVA_VER=		1.8+
 MODJAVA_BUILD=		ant
 
 # JUnit tests exist but unsure how to handle non-ascii chars

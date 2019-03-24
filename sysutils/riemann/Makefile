@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2018/11/11 08:29:42 pvk Exp $
+# $OpenBSD: Makefile,v 1.13 2019/03/24 22:24:14 sthen Exp $
 
 COMMENT =	network event stream processing system
 
 V =		0.3.1
+REVISION =	0
 DISTNAME =	riemann-${V}
 CATEGORIES =	sysutils
 
@@ -20,7 +21,6 @@ EXTRACT_SUFX =	.tar.bz2
 
 MODULES =	java
 MODJAVA_VER =	1.8+
-MODJAVA_JRERUN = yes
 
 RUN_DEPENDS =	java/javaPathHelper \
 		lang/clojure

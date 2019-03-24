@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2017/04/21 13:27:46 kurt Exp $
+# $OpenBSD: Makefile,v 1.28 2019/03/24 22:24:13 sthen Exp $
 
-COMMENT=		Java interface to GeoIP database
+COMMENT=		Java interface to (legacy, no-longer-updated) GeoIP database
 DISTNAME=		jeoip-0.5
-REVISION=		15
+REVISION=		16
 CATEGORIES=		geo net
 PKG_ARCH=		*
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		http://www.darwinsys.com/freeware/
 
 MODULES=		java
-MODJAVA_VER=		1.6+
-MODJAVA_JRERUN=		Yes
+MODJAVA_VER=		1.8+
 MODJAVA_BUILD=		ant
 MODJAVA_BUILD_TARGET_NAME =	jar docs
 
@@ -25,7 +24,7 @@ BUILD_DEPENDS=		java/junit
 TEST_DEPENDS=		net/GeoIP,-db \
 			java/junit
 RUN_DEPENDS=		net/GeoIP,-db \
- 			java/javaPathHelper
+			java/javaPathHelper
 MAKE_ENV=		CLASSPATH=${LOCALBASE}/share/java/classes/junit/junit.jar
 
 WRKDIST=		${WRKDIR}/jeoip

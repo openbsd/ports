@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2018/10/26 16:16:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/03/24 22:24:14 sthen Exp $
 
 COMMENT-main =	KDE bindings for running interpreters
 COMMENT-java =	KDE Java bindings
 DISTNAME =	kross-interpreters-${MODKDE4_VERSION}
 PKGNAME-main =	${PKGNAME}
 PKGNAME-java =	${PKGNAME:C/interpreters/java/}
-REVISION-java =	2
+REVISION-java =	3
 REVISION-main =	6
 
 MULTI_PACKAGES =	-main -java
@@ -36,8 +36,7 @@ CONFIGURE_ARGS +=	-DRUBY_EXECUTABLE=${RUBY}
 CONFIGURE_ARGS +=	-DBUILD_java:Bool=No
 .else
 MODULES +=		java
-MODJAVA_VER =		1.6+
-MODJAVA_JRERUN =	Yes
+MODJAVA_VER =		1.8+
 .endif
 
 LIB_DEPENDS-main =	${LIB_DEPENDS}

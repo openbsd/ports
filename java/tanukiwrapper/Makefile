@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2018/11/22 16:04:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/03/24 22:24:13 sthen Exp $
 
 COMMENT=	Tanuki Java Service Wrapper
 
 SVN_REV=	1780
 DISTNAME=	wrapper-code-${SVN_REV}-trunk
 PKGNAME=	java-tanukiwrapper-3.5.19.1
-REVISION=	4
+REVISION=	5
 CATEGORIES=	java
 
 HOMEPAGE=	http://wrapper.tanukisoftware.com/
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 EXTRACT_SUFX=	.zip
 
 MODULES=	java
-MODJAVA_VER=	1.6+
+MODJAVA_VER=	1.8+
 MODJAVA_BUILD=	ant
 
 .include <bsd.port.arch.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2017/08/19 18:42:19 rpointel Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/24 22:24:12 sthen Exp $
 
 COMMENT =	tools to work with android .dex and java .class files
 
 DISTNAME =	dex2jar-2.0
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel security
 
@@ -19,8 +19,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=dex2jar/}
 EXTRACT_SUFX =	.zip
 
 MODULES =	java
-MODJAVA_VER =	1.7+
-MODJAVA_JRERUN =Yes
+MODJAVA_VER =	1.8+
 
 RUN_DEPENDS =	java/javaPathHelper
 
