@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2018/06/13 12:15:47 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.32 2019/03/24 08:57:03 rpointel Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -151,6 +151,7 @@ ${P5SITE}/Image/ExifTool/Ogg.pm
 ${P5SITE}/Image/ExifTool/Olympus.pm
 ${P5SITE}/Image/ExifTool/OpenEXR.pm
 ${P5SITE}/Image/ExifTool/Opus.pm
+${P5SITE}/Image/ExifTool/PCX.pm
 ${P5SITE}/Image/ExifTool/PDF.pm
 ${P5SITE}/Image/ExifTool/PGF.pm
 ${P5SITE}/Image/ExifTool/PICT.pm
@@ -330,6 +331,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Olympus.3p
 @man man/man3p/Image::ExifTool::OpenEXR.3p
 @man man/man3p/Image::ExifTool::Opus.3p
+@man man/man3p/Image::ExifTool::PCX.3p
 @man man/man3p/Image::ExifTool::PDF.3p
 @man man/man3p/Image::ExifTool::PGF.3p
 @man man/man3p/Image::ExifTool::PICT.3p
