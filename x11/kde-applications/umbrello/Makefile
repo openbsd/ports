@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/03/08 20:00:55 cwen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/03/24 11:57:04 rsadowski Exp $
 
 COMMENT =	UML Modeller
 DISTNAME =	umbrello-${VERSION}
@@ -7,7 +7,6 @@ REVISION =	0
 
 HOMEPAGE =	https://umbrello.kde.org/
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:52 cwen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/24 11:57:02 rsadowski Exp $
 
 COMMENT =	QtQuick plugin to render interactive charts
 DISTNAME =	kqtquickcharts-${VERSION}
 CATEGORIES =	devel
 REVISION =	0
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Qml
 WANTLIB += Qt5Quick m

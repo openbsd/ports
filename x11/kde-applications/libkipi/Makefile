@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2019/03/08 20:00:55 cwen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/24 11:57:03 rsadowski Exp $
 
 COMMENT =	interface to use kipi-plugins from a KDE application
 DISTNAME =	libkipi-${VERSION}
 CATEGORIES =	devel graphics
 REVISION =	0
 
-KDE5 = 		Yes
 
 SHARED_LIBS +=  KF5Kipi                   0.0 # 5.2
 

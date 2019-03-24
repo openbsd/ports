@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/08 20:00:51 cwen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/24 11:57:00 rsadowski Exp $
 
 COMMENT =	KDE help center
 DISTNAME =	khelpcenter-${VERSION}
 CATEGORIES =	x11
 REVISION =	0
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
 WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore

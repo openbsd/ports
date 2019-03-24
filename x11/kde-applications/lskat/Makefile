@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:54 cwen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/24 11:57:04 rsadowski Exp $
 
 COMMENT =	Lieutnant Skat - from German Offiziersskat
 DISTNAME =	lskat-${VERSION}
@@ -7,7 +7,6 @@ REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/lskat
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash

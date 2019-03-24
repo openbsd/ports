@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/03/08 20:00:52 cwen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/24 11:56:58 rsadowski Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
@@ -7,7 +7,6 @@ REVISION =	0
 
 SHARED_LIBS +=  cantorlibs                51.0 # 17.08
 
-KDE5 =		Yes
 
 WANTLIB = ${COMPILER_LIBCXX} Analitza AnalitzaGui KF5Archive
 WANTLIB += KF5Attica KF5Auth KF5Bookmarks KF5Codecs KF5Completion

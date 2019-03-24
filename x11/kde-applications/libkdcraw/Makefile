@@ -6,7 +6,6 @@ PKGNAME =	libkdcraw-kf5-${VERSION}
 CATEGORIES =	devel graphics
 REVISION =	0
 
-KDE5 =		Yes
 
 SHARED_LIBS +=  KF5KDcraw                 0.0 # 0.0
 

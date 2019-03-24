@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:56 cwen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/24 11:57:02 rsadowski Exp $
 
 COMMENT =	file compare utility for KDE
 DISTNAME =	kompare-${VERSION}
 CATEGORIES =	textproc devel
 REVISION =	0
 
-KDE5 =		Yes
 
 SHARED_LIBS +=  komparedialogpages  0.0 # 0.0
 SHARED_LIBS +=  kompareinterface    0.0 # 0.0

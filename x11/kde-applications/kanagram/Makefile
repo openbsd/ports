@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:52 cwen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/24 11:56:59 rsadowski Exp $
 
 USE_WXNEEDED =	Yes
 
@@ -9,7 +9,6 @@ REVISION =	0
 
 HOMEPAGE =	https://edu.kde.org/kanagram/
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KEduVocDocument KF5Attica KF5Auth
 WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

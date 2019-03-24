@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/08 20:00:54 cwen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/03/24 11:57:02 rsadowski Exp $
 
 COMMENT =	world domination strategy game
 DISTNAME =	ksirk-${VERSION}
@@ -7,7 +7,6 @@ REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/ksirk
 
-KDE5 =		Yes
 
 SHARED_LIBS +=  iris_ksirk                0.0 # 2.0
 

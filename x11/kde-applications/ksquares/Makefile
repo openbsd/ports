@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:54 cwen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/24 11:57:03 rsadowski Exp $
 
 COMMENT =	connect the dots to create squares game
 DISTNAME =	ksquares-${VERSION}
@@ -7,7 +7,6 @@ REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/ksquares
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

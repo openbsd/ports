@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2019/03/08 20:00:52 cwen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/24 11:57:03 rsadowski Exp $
 
 COMMENT =	KDE typing learning tool
 DISTNAME =	ktouch-${VERSION}
 CATEGORIES =	education
 REVISION =	0
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

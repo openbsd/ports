@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/03/08 20:00:41 cwen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/03/24 11:56:59 rsadowski Exp $
 
 COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${VERSION}
@@ -7,7 +7,6 @@ REVISION =	0
 
 HOMEPAGE =	https://kate-editor.org/
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Attica KF5Auth
 WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore

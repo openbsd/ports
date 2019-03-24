@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/08 20:00:53 cwen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/03/24 11:57:00 rsadowski Exp $
 
 COMMENT =	three-in-a-row game
 DISTNAME =	kdiamond-${VERSION}
@@ -7,7 +7,6 @@ REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kdiamond
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash

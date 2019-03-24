@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:52 cwen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/24 11:56:58 rsadowski Exp $
 
 COMMENT =	pronunciation trainer
 DISTNAME =	artikulate-${VERSION}
 CATEGORIES =	education
 REVISION =	0
 
-KDE5 =		Yes
 
 SHARED_LIBS +=  artikulatecore            0.0 # 0.0
 SHARED_LIBS +=  artikulatelearnerprofile  0.0 # 0.0

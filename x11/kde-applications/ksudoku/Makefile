@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:54 cwen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/24 11:57:03 rsadowski Exp $
 
 COMMENT =	sudoku game
 DISTNAME =	ksudoku-${VERSION}
@@ -7,7 +7,6 @@ REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/ksudoku
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU KF5Archive KF5Auth KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:52 cwen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/24 11:57:04 rsadowski Exp $
 
 COMMENT =	KDE interactive physics simulator
 DISTNAME =	step-${VERSION}
@@ -7,7 +7,6 @@ REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/education/step
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

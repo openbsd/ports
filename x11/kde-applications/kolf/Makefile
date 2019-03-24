@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/08 20:00:54 cwen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/03/24 11:57:02 rsadowski Exp $
 
 COMMENT =	miniature golf
 DISTNAME =	kolf-${VERSION}
@@ -7,7 +7,6 @@ REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kolf
 
-KDE5 =		Yes
 
 SHARED_LIBS +=  kolfprivate               0.0 # 5.0
 

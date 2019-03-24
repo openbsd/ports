@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/08 20:00:52 cwen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/03/24 11:57:00 rsadowski Exp $
 
 COMMENT =	KDE geometric constructions explorer
 DISTNAME =	kig-${VERSION}
@@ -14,7 +14,6 @@ WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Svg
 WANTLIB += Qt5Widgets Qt5Xml Qt5XmlPatterns boost_python-mt c
 WANTLIB += m ${MODPY_WANTLIB}
 
-KDE5 =		Yes
 
 MODULES +=	x11/kde-applications \
 		lang/python

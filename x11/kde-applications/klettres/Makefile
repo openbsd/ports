@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:52 cwen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/24 11:57:01 rsadowski Exp $
 
 COMMENT =	alphabet learning application for KDE
 DISTNAME =	klettres-${VERSION}
 CATEGORIES =	education
 REVISION =	0
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

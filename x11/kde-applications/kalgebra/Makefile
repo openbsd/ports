@@ -7,7 +7,6 @@ DISTNAME =	kalgebra-${VERSION}
 CATEGORIES =	education
 REVISION =	0
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Analitza AnalitzaGui AnalitzaPlot
 WANTLIB += KF5CoreAddons KF5I18n Qt5Core Qt5Gui Qt5Network Qt5PrintSupport

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/11 07:02:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/24 11:57:03 rsadowski Exp $
 
 COMMENT =	certificate manager for KDE
 DISTNAME =	libkleo-${VERSION}
 CATEGORIES =	security devel
 
-KDE5 =		Yes
 
 SHARED_LIBS +=  KF5Libkleo                0.0 # 5.10
 

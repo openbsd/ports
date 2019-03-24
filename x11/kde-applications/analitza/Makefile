@@ -5,7 +5,6 @@ DISTNAME =	analitza-${VERSION}
 CATEGORIES =	devel math
 REVISION =	0
 
-KDE5 =		Yes
 
 SHARED_LIBS +=  Analitza                  0.1 # 8.0
 SHARED_LIBS +=  AnalitzaGui               0.1 # 8.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/11 07:00:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/24 11:57:00 rsadowski Exp $
 
 COMMENT =	KDE pim identities
 DISTNAME =	kidentitymanagement-${VERSION}
@@ -6,7 +6,6 @@ CATEGORIES =	devel mail
 
 SHARED_LIBS +=  KF5IdentityManagement     0.0 # 5.10
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

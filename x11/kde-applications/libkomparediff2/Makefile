@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/08 20:00:42 cwen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/24 11:57:04 rsadowski Exp $
 
 COMMENT =	library to compare files and strings
 DISTNAME =	libkomparediff2-${VERSION}
@@ -14,7 +14,6 @@ WANTLIB += KF5KIOCore KF5Service KF5WidgetsAddons KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
 WANTLIB += m
 
-KDE5 =		Yes
 
 MODKDE5_TRANSLATIONS = yes
 

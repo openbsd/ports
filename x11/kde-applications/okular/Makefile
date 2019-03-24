@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:45 cwen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/24 11:57:04 rsadowski Exp $
 
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${VERSION}
@@ -7,7 +7,6 @@ REVISION =	0
 
 HOMEPAGE =	https://okular.kde.org/
 
-KDE5 =		Yes
 
 SHARED_LIBS +=  Okular5Core               0.0 # 9.0
 

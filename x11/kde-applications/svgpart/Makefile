@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:54 cwen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/24 11:57:04 rsadowski Exp $
 
 COMMENT =	KPart for viewing SVGs
 DISTNAME =	svgpart-${VERSION}
 CATEGORIES =	graphics
 REVISION =	0
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

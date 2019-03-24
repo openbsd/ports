@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/07 20:17:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/24 11:57:00 rsadowski Exp $
 
 COMMENT =	geography learning tool for KDE
 DISTNAME =	kgeography-${VERSION}
 CATEGORIES =	geo
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash

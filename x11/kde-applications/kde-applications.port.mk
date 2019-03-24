@@ -1,4 +1,4 @@
-# $OpenBSD: kde-applications.port.mk,v 1.1 2018/12/18 09:39:17 rsadowski Exp $
+# $OpenBSD: kde-applications.port.mk,v 1.2 2019/03/24 11:56:57 rsadowski Exp $
 
 # Module for KDE applications related ports, divided into 16 categories:
 # - accessibility
@@ -17,6 +17,10 @@
 # - development environment
 # - KDE4
 # - Former projects under the hat of KDE Applications
+
+MODULES :=		devel/kf5 ${MODULES}
+VERSION ?=		18.12.0
+MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/applications/${VERSION}/src/}
 
 # Set to 'yes' if there are .desktop files under share/applications/.
 .if defined(MODKDE5_DESKTOP_FILE) && ${MODKDE5_DESKTOP_FILE:L} == "yes"
@@ -37,17 +41,6 @@ MODKDE5_BUILD_DEPENDS +=	devel/gettext-tools
 .if defined(MODKDE5_DOCS) && ${MODKDE5_DOCS:L} == "yes"
 MODKDE5_BUILD_DEPENDS +=	devel/kf5/kdoctools
 MODKDE5_RUN_DEPENDS +=		devel/kf5/kdoctools
-.endif
-
-KDE5 ?=			No
-.if ${KDE5:L} == "yes"
-MODULES :=		devel/kf5 ${MODULES}
-VERSION ?=		18.12.0
-MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/applications/${VERSION}/src/}
-.else
-MODULES :=		x11/kde4 ${MODULES}
-VERSION ?=		15.08.3
-MASTER_SITES ?=		${MASTER_SITE_KDE:=Attic/applications/${VERSION}/src/}
 .endif
 
 RUN_DEPENDS+=	${MODKDE5_RUN_DEPENDS}

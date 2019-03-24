@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/03 11:58:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/24 11:57:00 rsadowski Exp $
 
 COMMENT =	KDE dialog boxes from shell scripts
 DISTNAME =	kdialog-${VERSION}
 CATEGORIES =	x11
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes KF5JobWidgets

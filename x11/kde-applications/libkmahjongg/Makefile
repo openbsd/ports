@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:53 cwen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/24 11:57:03 rsadowski Exp $
 
 COMMENT =	common sets for games using Mahjongg tiles
 DISTNAME =	libkmahjongg-${VERSION}
@@ -7,7 +7,6 @@ REVISION =	0
 
 SHARED_LIBS +=  KF5KMahjongglib           0.0 # 5.0
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

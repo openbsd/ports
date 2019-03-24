@@ -20,7 +20,6 @@ WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Qml Qt5Quick Qt5Script Qt5Svg Qt5WebKit Qt5WebKitWidgets
 WANTLIB += Qt5Widgets Qt5Xml c m mlt mlt++
 
-KDE5 =		Yes
 
 MODULES +=	x11/kde-applications
 

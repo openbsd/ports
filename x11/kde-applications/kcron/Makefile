@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/03 11:40:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/24 11:56:59 rsadowski Exp $
 
 COMMENT =	KDE-based GUI for cron task scheduler
 DISTNAME =	kcron-${VERSION}
 PKGNAME =	kcron-kf5-${VERSION}
 CATEGORIES =	x11
 
-KDE5 =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
