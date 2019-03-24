@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2018/05/24 16:04:35 bket Exp $
+# $OpenBSD: Makefile,v 1.16 2019/03/24 16:27:12 bket Exp $
 
 COMMENT =	LastPass command line interface tool
 
-V =		1.3.1
-DISTNAME =	lastpass-cli-${V}
+GH_ACCOUNT =	lastpass
+GH_PROJECT =	lastpass-cli
+GH_TAGNAME =	v1.3.2
 
 CATEGORIES =	security
-
-HOMEPAGE =	https://github.com/lastpass/lastpass-cli
 
 MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
@@ -15,8 +14,6 @@ MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	c crypto curl kvm ssl xml2
-
-MASTER_SITES =	https://github.com/lastpass/lastpass-cli/releases/download/v${V}/
 
 MODULES =	devel/cmake
 BUILD_DEPENDS =	textproc/asciidoc
