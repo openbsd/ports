@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.43 2019/03/24 10:18:19 ajacoutot Exp $
+$OpenBSD: README-main,v 1.44 2019/03/24 13:32:49 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -70,16 +70,17 @@ GNOME. The default "datasize" must be bumped. There are several ways to do this:
 
 - bump the "default" class "datasize-cur" to 1024M (*not* recommended)
 - add users to the "staff" class (*not* recommended)
-- create a "gnome" login class and add users to it:
-    # cat <<'EOF' >>/etc/login.conf
-
-gnome:\
-        :datasize-cur=1024M:\
-        :tc=default:
-EOF
+- create a "gnome" login class and add users to it (recommended, see below)
 
 Cheat sheet
 ===========
+# cat <<'EOF' >>/etc/login.conf
+
+gnome:\
+	:datasize-cur=1024M:\
+	:tc=default:
+EOF
+# usermod -L gnome ${username}
 # rcctl disable xenodm
 # rcctl enable multicast messagebus avahi_daemon gdm
 # reboot
