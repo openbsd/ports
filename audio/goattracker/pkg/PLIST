@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/09/03 10:44:38 fcambus Exp $
-@bin bin/betaconv
+@comment $OpenBSD: PLIST,v 1.2 2019/03/24 13:56:59 fcambus Exp $
 @bin bin/goattrk2
 @bin bin/gt2reloc
 @bin bin/ins2snd2
