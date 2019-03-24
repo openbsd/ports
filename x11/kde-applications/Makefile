@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/03/22 22:09:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.47 2019/03/24 11:23:00 rsadowski Exp $
 
      SUBDIR =
 
@@ -87,7 +87,7 @@
      SUBDIR += kubrick
      SUBDIR += lskat
      SUBDIR += palapeli
-     #SUBDIR += picmi
+     #SUBDIR += picmi (Qt5WebEngineWidgets mssing)
 
      # graphics
      SUBDIR += gwenview
@@ -116,7 +116,7 @@
      #SUBDIR += kdenetwork-filesharing
      #SUBDIR += kget
      SUBDIR += kio-extras
-     #SUBDIR += kmailtransport
+     #SUBDIR += kmailtransport (KF5Akonadi)
      #SUBDIR += kopete
      #SUBDIR += krdc
      #SUBDIR += krfb
@@ -245,10 +245,6 @@
      #SUBDIR += pimcommon
      #SUBDIR += signon-kwallet-extension
      #SUBDIR += syndication
-
-     # KDE4
-     #SUBDIR += libkface
-     #SUBDIR += libkgeomap
 
      # Former projects under the hat of KDE Applications
      SUBDIR += okteta
