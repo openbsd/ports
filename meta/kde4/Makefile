@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2019/03/11 21:57:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.61 2019/03/24 13:45:20 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -31,8 +31,8 @@ REVISION-games = 3
 REVISION-sdk = 3
 REVISION-edu = 5
 REVISION-multimedia = 0
-REVISION-extras = 9
-REVISION-main =		21
+REVISION-extras = 10
+REVISION-main =		22
 REVISION-admin =	0
 REVISION-graphics =	2
 

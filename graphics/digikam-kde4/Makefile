@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/03/22 22:09:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.32 2019/03/24 13:45:20 rsadowski Exp $
 
 COMMENT-face =		face detection library for KDE4
 COMMENT-geomap =	library for mapping photos on maps for KDE4
@@ -11,7 +11,7 @@ HOMEPAGE =		https://www.digikam.org/
 VERSION =		4.13.0
 DISTNAME =		digikam-${VERSION}
 
-PKGSPEC-main =		digikam->=1
+PKGSPEC-main =		digikam-kde4->=1
 PKGSPEC-kipi =		kipi-plugins->=1
 
 PKGNAME =		digikam-kde4-${VERSION}
@@ -21,11 +21,11 @@ PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 
-REVISION-main =		6
-REVISION-kipi =		7
-REVISION-mediawiki =	7
-REVISION-face=		3
-REVISION-geomap=	4
+REVISION-main =		7
+REVISION-kipi =		8
+REVISION-mediawiki =	8
+REVISION-face=		4
+REVISION-geomap=	5
 
 # LGPL, GPL and many others
 PERMIT_PACKAGE_CDROM =		Yes
