@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_ia32_config_asm,v 1.30 2019/03/24 12:24:45 robert Exp $
+$OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_ia32_config_asm,v 1.31 2019/03/24 13:05:34 robert Exp $
 Index: third_party/ffmpeg/chromium/config/Chrome/openbsd/ia32/config.asm
 --- third_party/ffmpeg/chromium/config/Chrome/openbsd/ia32/config.asm.orig
 +++ third_party/ffmpeg/chromium/config/Chrome/openbsd/ia32/config.asm
@@ -26,8 +26,8 @@ Index: third_party/ffmpeg/chromium/config/Chrome/openbsd/ia32/config.asm
 +%define ARCH_TILEPRO 0
 +%define ARCH_TOMI 0
 +%define ARCH_X86 1
-+%define ARCH_X86_32 0
-+%define ARCH_X86_64 1
++%define ARCH_X86_32 1
++%define ARCH_X86_64 0
 +%define HAVE_ARMV5TE 0
 +%define HAVE_ARMV6 0
 +%define HAVE_ARMV6T2 0
@@ -59,7 +59,7 @@ Index: third_party/ffmpeg/chromium/config/Chrome/openbsd/ia32/config.asm
 +%define HAVE_SSE42 1
 +%define HAVE_SSSE3 1
 +%define HAVE_XOP 1
-+%define HAVE_CPUNOP 1
++%define HAVE_CPUNOP 0
 +%define HAVE_I686 1
 +%define HAVE_MIPSFPU 0
 +%define HAVE_MIPS32R2 0
@@ -92,7 +92,7 @@ Index: third_party/ffmpeg/chromium/config/Chrome/openbsd/ia32/config.asm
 +%define HAVE_AMD3DNOWEXT_EXTERNAL 1
 +%define HAVE_AVX_EXTERNAL 1
 +%define HAVE_AVX2_EXTERNAL 1
-+%define HAVE_AVX512_EXTERNAL 0
++%define HAVE_AVX512_EXTERNAL 1
 +%define HAVE_FMA3_EXTERNAL 1
 +%define HAVE_FMA4_EXTERNAL 1
 +%define HAVE_MMX_EXTERNAL 1
@@ -163,10 +163,10 @@ Index: third_party/ffmpeg/chromium/config/Chrome/openbsd/ia32/config.asm
 +%define HAVE_LOONGSON2_INLINE 0
 +%define HAVE_LOONGSON3_INLINE 0
 +%define HAVE_MMI_INLINE 0
-+%define HAVE_ALIGNED_STACK 1
-+%define HAVE_FAST_64BIT 1
++%define HAVE_ALIGNED_STACK 0
++%define HAVE_FAST_64BIT 0
 +%define HAVE_FAST_CLZ 1
-+%define HAVE_FAST_CMOV 1
++%define HAVE_FAST_CMOV 0
 +%define HAVE_LOCAL_ALIGNED 1
 +%define HAVE_SIMD_ALIGN_16 1
 +%define HAVE_SIMD_ALIGN_32 1
@@ -174,7 +174,7 @@ Index: third_party/ffmpeg/chromium/config/Chrome/openbsd/ia32/config.asm
 +%define HAVE_ATOMIC_CAS_PTR 0
 +%define HAVE_MACHINE_RW_BARRIER 0
 +%define HAVE_MEMORYBARRIER 0
-+%define HAVE_MM_EMPTY 1
++%define HAVE_MM_EMPTY 0
 +%define HAVE_RDTSC 0
 +%define HAVE_SEM_TIMEDWAIT 1
 +%define HAVE_SYNC_VAL_COMPARE_AND_SWAP 1
@@ -256,7 +256,7 @@ Index: third_party/ffmpeg/chromium/config/Chrome/openbsd/ia32/config.asm
 +%define HAVE_DOS_PATHS 0
 +%define HAVE_LIBC_MSVCRT 0
 +%define HAVE_MMAL_PARAMETER_VIDEO_MAX_NUM_CALLBACKS 0
-+%define HAVE_SECTION_DATA_REL_RO 0
++%define HAVE_SECTION_DATA_REL_RO 1
 +%define HAVE_THREADS 1
 +%define HAVE_UWP 0
 +%define HAVE_WINRT 0
