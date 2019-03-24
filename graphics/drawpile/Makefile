@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2019/03/21 00:28:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.16 2019/03/24 20:43:34 cwen Exp $
 
 COMMENT =	collaborative drawing program
 DISTNAME =	drawpile-2.1.3
-REVISION =	0
+REVISION =	1
 CATEGORIES =	graphics x11
 
 HOMEPAGE =	https://drawpile.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+
+# Override kf5.port.mk
+EXTRACT_SUFX =	.tar.gz
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -17,13 +20,8 @@ WANTLIB += gif m microhttpd miniupnpc sodium vpx
 
 MASTER_SITES =	https://drawpile.net/files/src/
 
-# C++11
-COMPILER =	base-clang ports-gcc
-
 MODULES =	devel/cmake \
-		x11/qt5
-
-BUILD_DEPENDS =	devel/kf5/extra-cmake-modules
+		devel/kf5
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kdnssd \
