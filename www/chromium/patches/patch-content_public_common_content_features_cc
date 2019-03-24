@@ -1,9 +1,18 @@
-$OpenBSD: patch-content_public_common_content_features_cc,v 1.1 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-content_public_common_content_features_cc,v 1.2 2019/03/24 12:24:45 robert Exp $
 
 Index: content/public/common/content_features.cc
 --- content/public/common/content_features.cc.orig
 +++ content/public/common/content_features.cc
-@@ -596,7 +596,7 @@ const base::Feature kWebRtcHideLocalIpsWithMdns{
+@@ -493,7 +493,7 @@ const base::Feature kWebAssemblyThreads{"WebAssemblyTh
+                                         base::FEATURE_DISABLED_BY_DEFAULT};
+ 
+ // Enable WebAssembly trap handler.
+-#if defined(OS_LINUX) && defined(ARCH_CPU_X86_64)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && defined(ARCH_CPU_X86_64)
+ const base::Feature kWebAssemblyTrapHandler{"WebAssemblyTrapHandler",
+                                             base::FEATURE_ENABLED_BY_DEFAULT};
+ #else
+@@ -594,7 +594,7 @@ const base::Feature kWebRtcHideLocalIpsWithMdns{
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb

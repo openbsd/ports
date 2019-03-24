@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.48 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.49 2019/03/24 12:24:44 robert Exp $
 
 Index: chrome/browser/browser_resources.grd
 --- chrome/browser/browser_resources.grd.orig
 +++ chrome/browser/browser_resources.grd
-@@ -650,7 +650,7 @@
+@@ -679,7 +679,7 @@
          <include name="IDR_WELCOME_WIN10_PIN_WEBP" file="resources\welcome\pin.webp" type="BINDATA" />
        </if>
        <include name="IDR_SSL_ERROR_ASSISTANT_PB" file="${root_gen_dir}/chrome/browser/resources/ssl/ssl_error_assistant/ssl_error_assistant.pb" use_base_dir="false" type="BINDATA" />

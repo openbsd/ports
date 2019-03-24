@@ -1,4 +1,5 @@
-$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_sampler_cc,v 1.3 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_sampler_cc,v 1.4 2019/03/24 12:24:45 robert Exp $
+
 Index: chrome/browser/task_manager/sampling/task_group_sampler.cc
 --- chrome/browser/task_manager/sampling/task_group_sampler.cc.orig
 +++ chrome/browser/task_manager/sampling/task_group_sampler.cc
@@ -6,19 +7,19 @@ Index: chrome/browser/task_manager/sampling/task_group_sampler.cc
      const OnCpuRefreshCallback& on_cpu_refresh,
      const OnSwappedMemRefreshCallback& on_swapped_mem_refresh,
      const OnIdleWakeupsCallback& on_idle_wakeups,
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
      const OnOpenFdCountCallback& on_open_fd_count,
- #endif  // defined(OS_LINUX)
+ #endif  // defined(OS_LINUX) || defined(OS_MACOSX)
      const OnProcessPriorityCallback& on_process_priority)
 @@ -52,7 +52,7 @@ TaskGroupSampler::TaskGroupSampler(
        on_cpu_refresh_callback_(on_cpu_refresh),
        on_swapped_mem_refresh_callback_(on_swapped_mem_refresh),
        on_idle_wakeups_callback_(on_idle_wakeups),
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
        on_open_fd_count_callback_(on_open_fd_count),
- #endif  // defined(OS_LINUX)
+ #endif  // defined(OS_LINUX) || defined(OS_MACOSX)
        on_process_priority_callback_(on_process_priority) {
 @@ -85,7 +85,7 @@ void TaskGroupSampler::Refresh(int64_t refresh_flags) 
          on_swapped_mem_refresh_callback_);
@@ -33,8 +34,8 @@ Index: chrome/browser/task_manager/sampling/task_group_sampler.cc
    }
  #endif  // defined(OS_MACOSX) || defined(OS_LINUX)
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
    if (TaskManagerObserver::IsResourceRefreshEnabled(REFRESH_TYPE_FD_COUNT,
                                                      refresh_flags)) {
      base::PostTaskAndReplyWithResult(
@@ -42,8 +43,8 @@ Index: chrome/browser/task_manager/sampling/task_group_sampler.cc
    return process_metrics_->GetIdleWakeupsPerSecond();
  }
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
  int TaskGroupSampler::RefreshOpenFdCount() {
    DCHECK(worker_pool_sequenced_checker_.CalledOnValidSequence());
  

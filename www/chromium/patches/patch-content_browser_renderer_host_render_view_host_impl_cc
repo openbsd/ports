@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_browser_renderer_host_render_view_host_impl_cc,v 1.12 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_view_host_impl_cc,v 1.13 2019/03/24 12:24:45 robert Exp $
 Index: content/browser/renderer_host/render_view_host_impl.cc
 --- content/browser/renderer_host/render_view_host_impl.cc.orig
 +++ content/browser/renderer_host/render_view_host_impl.cc
-@@ -156,7 +156,7 @@ void GetPlatformSpecificPrefs(RendererPreferences* pre
+@@ -161,7 +161,7 @@ void GetPlatformSpecificPrefs(RendererPreferences* pre
        display::win::ScreenWin::GetSystemMetricsInDIP(SM_CYVSCROLL);
    prefs->arrow_bitmap_width_horizontal_scroll_bar_in_dips =
        display::win::ScreenWin::GetSystemMetricsInDIP(SM_CXHSCROLL);

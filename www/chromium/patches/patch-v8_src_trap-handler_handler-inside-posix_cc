@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_src_trap-handler_handler-inside-posix_cc,v 1.1 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-v8_src_trap-handler_handler-inside-posix_cc,v 1.2 2019/03/24 12:24:46 robert Exp $
 
 Index: v8/src/trap-handler/handler-inside-posix.cc
 --- v8/src/trap-handler/handler-inside-posix.cc.orig
@@ -27,7 +27,7 @@ Index: v8/src/trap-handler/handler-inside-posix.cc
  }
  
  class SigUnmaskStack {
-@@ -109,6 +115,8 @@ bool TryHandleSignal(int signum, siginfo_t* info, void
+@@ -112,6 +118,8 @@ bool TryHandleSignal(int signum, siginfo_t* info, void
      auto* context_rip = &uc->uc_mcontext.gregs[REG_RIP];
  #elif V8_OS_MACOSX
      auto* context_rip = &uc->uc_mcontext->__ss.__rip;

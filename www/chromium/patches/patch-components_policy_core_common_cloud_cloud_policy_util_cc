@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_util_cc,v 1.1 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-components_policy_core_common_cloud_cloud_policy_util_cc,v 1.2 2019/03/24 12:24:45 robert Exp $
 
 Index: components/policy/core/common/cloud/cloud_policy_util.cc
 --- components/policy/core/common/cloud/cloud_policy_util.cc.orig
@@ -21,7 +21,7 @@ Index: components/policy/core/common/cloud/cloud_policy_util.cc
  #include <limits.h>  // For HOST_NAME_MAX
  #endif
  
-@@ -51,7 +51,7 @@
+@@ -52,7 +52,7 @@
  #include "base/system/sys_info.h"
  #endif
  
@@ -30,7 +30,7 @@ Index: components/policy/core/common/cloud/cloud_policy_util.cc
  #include "base/system/sys_info.h"
  #endif
  
-@@ -60,7 +60,7 @@ namespace policy {
+@@ -61,7 +61,7 @@ namespace policy {
  namespace em = enterprise_management;
  
  std::string GetMachineName() {
@@ -39,7 +39,7 @@ Index: components/policy/core/common/cloud/cloud_policy_util.cc
    char hostname[HOST_NAME_MAX];
    if (gethostname(hostname, HOST_NAME_MAX) == 0)  // Success.
      return hostname;
-@@ -110,7 +110,7 @@ std::string GetMachineName() {
+@@ -111,7 +111,7 @@ std::string GetMachineName() {
  }
  
  std::string GetOSVersion() {
@@ -48,7 +48,7 @@ Index: components/policy/core/common/cloud/cloud_policy_util.cc
    return base::SysInfo::OperatingSystemVersion();
  #elif defined(OS_WIN)
    base::win::OSInfo::VersionNumber version_number =
-@@ -133,7 +133,7 @@ std::string GetOSArchitecture() {
+@@ -134,7 +134,7 @@ std::string GetOSArchitecture() {
  }
  
  std::string GetOSUsername() {

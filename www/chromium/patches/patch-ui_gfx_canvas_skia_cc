@@ -1,8 +1,8 @@
-$OpenBSD: patch-ui_gfx_canvas_skia_cc,v 1.14 2018/03/12 13:48:34 robert Exp $
+$OpenBSD: patch-ui_gfx_canvas_skia_cc,v 1.15 2019/03/24 12:24:46 robert Exp $
 Index: ui/gfx/canvas_skia.cc
 --- ui/gfx/canvas_skia.cc.orig
 +++ ui/gfx/canvas_skia.cc
-@@ -208,7 +208,7 @@ void Canvas::DrawStringRectWithFlags(const base::strin
+@@ -209,7 +209,7 @@ void Canvas::DrawStringRectWithFlags(const base::strin
      Range range = StripAcceleratorChars(flags, &adjusted_text);
      bool elide_text = ((flags & NO_ELLIPSIS) == 0);
  

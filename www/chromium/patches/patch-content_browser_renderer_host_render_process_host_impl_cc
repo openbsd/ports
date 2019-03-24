@@ -1,13 +1,13 @@
-$OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_cc,v 1.22 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_cc,v 1.23 2019/03/24 12:24:45 robert Exp $
 
 Index: content/browser/renderer_host/render_process_host_impl.cc
 --- content/browser/renderer_host/render_process_host_impl.cc.orig
 +++ content/browser/renderer_host/render_process_host_impl.cc
-@@ -3012,6 +3012,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3114,6 +3114,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
      switches::kEnableMediaSuspend,
      switches::kEnableLCDText,
      switches::kEnableLogging,
 +    switches::kDisableUnveil,
      switches::kEnableNetworkInformationDownlinkMax,
      switches::kEnableOopRasterization,
-     switches::kEnablePluginPlaceholderTesting,
+     switches::kEnablePassthroughRasterDecoder,

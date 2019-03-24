@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.22 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.23 2019/03/24 12:24:44 robert Exp $
 
 Index: chrome/browser/browser_process_impl.h
 --- chrome/browser/browser_process_impl.h.orig
 +++ chrome/browser/browser_process_impl.h
-@@ -367,7 +367,7 @@ class BrowserProcessImpl : public BrowserProcess,
+@@ -361,7 +361,7 @@ class BrowserProcessImpl : public BrowserProcess,
    std::unique_ptr<ChromeResourceDispatcherHostDelegate>
        resource_dispatcher_host_delegate_;
  

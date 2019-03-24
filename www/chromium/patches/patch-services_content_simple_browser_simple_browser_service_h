@@ -1,18 +1,18 @@
-$OpenBSD: patch-services_content_simple_browser_simple_browser_service_h,v 1.1 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-services_content_simple_browser_simple_browser_service_h,v 1.2 2019/03/24 12:24:45 robert Exp $
 
 Index: services/content/simple_browser/simple_browser_service.h
 --- services/content/simple_browser/simple_browser_service.h.orig
 +++ services/content/simple_browser/simple_browser_service.h
-@@ -14,7 +14,7 @@
- #include "services/content/public/cpp/buildflags.h"
- #include "services/service_manager/public/cpp/service.h"
+@@ -16,7 +16,7 @@
+ #include "services/service_manager/public/cpp/service_binding.h"
+ #include "services/service_manager/public/mojom/service.mojom.h"
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
  #include "components/services/font/public/cpp/font_loader.h"  // nogncheck
  #endif
  
-@@ -47,7 +47,7 @@ class COMPONENT_EXPORT(SIMPLE_BROWSER) SimpleBrowserSe
+@@ -50,7 +50,7 @@ class COMPONENT_EXPORT(SIMPLE_BROWSER) SimpleBrowserSe
    // service_manager::Service:
    void OnStart() override;
  

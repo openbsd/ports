@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_posix_cc,v 1.19 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-base_process_process_posix_cc,v 1.20 2019/03/24 12:24:44 robert Exp $
 
 Index: base/process/process_posix.cc
 --- base/process/process_posix.cc.orig
@@ -9,9 +9,9 @@ Index: base/process/process_posix.cc
  #include <sys/wait.h>
 +#include <signal.h>
  
+ #include "base/clang_coverage_buildflags.h"
  #include "base/debug/activity_tracker.h"
- #include "base/files/scoped_file.h"
-@@ -25,6 +26,9 @@
+@@ -26,6 +27,9 @@
  
  namespace {
  
@@ -21,7 +21,7 @@ Index: base/process/process_posix.cc
  #if !defined(OS_NACL_NONSFI)
  
  bool WaitpidWithTimeout(base::ProcessHandle handle,
-@@ -263,12 +267,10 @@ Process Process::DeprecatedGetProcessFromHandle(Proces
+@@ -264,12 +268,10 @@ Process Process::DeprecatedGetProcessFromHandle(Proces
    return Process(handle);
  }
  
@@ -35,7 +35,7 @@ Index: base/process/process_posix.cc
  
  // static
  void Process::TerminateCurrentProcessImmediately(int exit_code) {
-@@ -358,25 +360,33 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
+@@ -359,25 +361,33 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
  
  void Process::Exited(int exit_code) const {}
  

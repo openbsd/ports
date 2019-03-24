@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_libjingle_xmpp_task_runner_taskrunner_cc,v 1.1 2017/07/20 19:36:44 robert Exp $
+$OpenBSD: patch-third_party_libjingle_xmpp_task_runner_taskrunner_cc,v 1.2 2019/03/24 12:24:45 robert Exp $
 
 Index: third_party/libjingle_xmpp/task_runner/taskrunner.cc
 --- third_party/libjingle_xmpp/task_runner/taskrunner.cc.orig
 +++ third_party/libjingle_xmpp/task_runner/taskrunner.cc
-@@ -95,7 +95,7 @@ void TaskRunner::InternalRunTasks(bool in_destructor) 
+@@ -80,7 +80,7 @@ void TaskRunner::InternalRunTasks(bool in_destructor) 
    std::vector<Task *>::iterator it;
    it = std::remove(tasks_.begin(),
                     tasks_.end(),
@@ -11,4 +11,4 @@ Index: third_party/libjingle_xmpp/task_runner/taskrunner.cc
 +                   nullptr);
  
    tasks_.erase(it, tasks_.end());
- 
+   tasks_running_ = false;

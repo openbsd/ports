@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_closure_compiler_js_binary_py,v 1.1 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-third_party_closure_compiler_js_binary_py,v 1.2 2019/03/24 12:24:45 robert Exp $
 
 Index: third_party/closure_compiler/js_binary.py
 --- third_party/closure_compiler/js_binary.py.orig
@@ -16,9 +16,9 @@ Index: third_party/closure_compiler/js_binary.py
      compiler_args += ['--checks-only']
      open(args.output, 'w').close()
  
--  returncode, errors = compile2.Checker().run_jar(args.compiler, compiler_args)
+-  returncode, errors = compiler.Compiler().run_jar(args.compiler, compiler_args)
 +  if platform.machine() == 'amd64':
-+    returncode, errors = compile2.Checker().run_jar(args.compiler, compiler_args)
++    returncode, errors = compiler.Compiler().run_jar(args.compiler, compiler_args)
 +  else:
 +    shell_command = " ".join(["cat"] + sources + [">"] + [args.output])
 +    print("Running: %s" % shell_command)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.87 2019/02/06 16:41:55 robert Exp $
+@comment $OpenBSD: PLIST,v 1.88 2019/03/24 12:24:46 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 @bin bin/chromedriver
@@ -127,9 +127,9 @@ chrome/resources.pak
 chrome/resources/inspector/
 chrome/resources/inspector/.htaccess
 chrome/resources/inspector/Images/
-chrome/resources/inspector/Images/accelerometer-back.png
+chrome/resources/inspector/Images/accelerometer-back.svg
 chrome/resources/inspector/Images/accelerometer-bottom.png
-chrome/resources/inspector/Images/accelerometer-front.png
+chrome/resources/inspector/Images/accelerometer-front.svg
 chrome/resources/inspector/Images/accelerometer-left.png
 chrome/resources/inspector/Images/accelerometer-right.png
 chrome/resources/inspector/Images/accelerometer-top.png
@@ -146,7 +146,6 @@ chrome/resources/inspector/Images/chromeMiddle.png
 chrome/resources/inspector/Images/chromeRight.png
 chrome/resources/inspector/Images/chromeSelect.png
 chrome/resources/inspector/Images/chromeSelect_2x.png
-chrome/resources/inspector/Images/deleteIcon.png
 chrome/resources/inspector/Images/errorWave.png
 chrome/resources/inspector/Images/errorWave_2x.png
 chrome/resources/inspector/Images/ic_info_black_18dp.svg

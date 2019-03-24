@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_service_manager_embedder_main_cc,v 1.1 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-services_service_manager_embedder_main_cc,v 1.2 2019/03/24 12:24:45 robert Exp $
 
 Index: services/service_manager/embedder/main.cc
 --- services/service_manager/embedder/main.cc.orig
 +++ services/service_manager/embedder/main.cc
-@@ -331,7 +331,7 @@ int Main(const MainParams& params) {
+@@ -320,7 +320,7 @@ int Main(const MainParams& params) {
  #endif
      base::EnableTerminationOnOutOfMemory();
  

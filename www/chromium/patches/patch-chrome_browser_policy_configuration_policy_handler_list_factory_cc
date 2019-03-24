@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.1 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.2 2019/03/24 12:24:45 robert Exp $
 
 Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
 --- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
-@@ -104,7 +104,7 @@
+@@ -107,7 +107,7 @@
  #include "chrome/browser/policy/browser_signin_policy_handler.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
-@@ -928,7 +928,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -939,7 +939,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      prefs::kEnterpriseHardwarePlatformAPIEnabled,
      base::Value::Type::BOOLEAN },
  

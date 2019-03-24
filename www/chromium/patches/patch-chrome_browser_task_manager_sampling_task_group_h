@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_h,v 1.8 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_h,v 1.9 2019/03/24 12:24:45 robert Exp $
 
 Index: chrome/browser/task_manager/sampling/task_group.h
 --- chrome/browser/task_manager/sampling/task_group.h.orig
@@ -7,26 +7,26 @@ Index: chrome/browser/task_manager/sampling/task_group.h
    int nacl_debug_stub_port() const { return nacl_debug_stub_port_; }
  #endif  // BUILDFLAG(ENABLE_NACL)
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
    int open_fd_count() const { return open_fd_count_; }
- #endif  // defined(OS_LINUX)
+ #endif  // defined(OS_LINUX) || defined(OS_MACOSX)
  
 @@ -121,7 +121,7 @@ class TaskGroup {
    void RefreshNaClDebugStubPort(int child_process_unique_id);
    void OnRefreshNaClDebugStubPortDone(int port);
  #endif
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
    void OnOpenFdCountRefreshDone(int open_fd_count);
- #endif  // defined(OS_LINUX)
+ #endif  // defined(OS_LINUX) || defined(OS_MACOSX)
  
 @@ -191,7 +191,7 @@ class TaskGroup {
  #if BUILDFLAG(ENABLE_NACL)
    int nacl_debug_stub_port_;
  #endif  // BUILDFLAG(ENABLE_NACL)
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
    // The number of file descriptors currently open by the process.
    int open_fd_count_;
- #endif  // defined(OS_LINUX)
+ #endif  // defined(OS_LINUX) || defined(OS_MACOSX)

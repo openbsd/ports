@@ -1,13 +1,14 @@
-$OpenBSD: patch-chrome_browser_ui_task_manager_task_manager_columns_cc,v 1.8 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_task_manager_task_manager_columns_cc,v 1.9 2019/03/24 12:24:45 robert Exp $
+
 Index: chrome/browser/ui/task_manager/task_manager_columns.cc
 --- chrome/browser/ui/task_manager/task_manager_columns.cc.orig
 +++ chrome/browser/ui/task_manager/task_manager_columns.cc
 @@ -93,7 +93,7 @@ const TableColumnData kColumns[] = {
-      arraysize("100000") * kCharWidth, -1, true, false, false},
+      base::size("100000") * kCharWidth, -1, true, false, false},
  #endif
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
      {IDS_TASK_MANAGER_OPEN_FD_COUNT_COLUMN, ui::TableColumn::RIGHT, -1, 0,
-      arraysize("999") * kCharWidth, -1, true, false, false},
- #endif  // defined(OS_LINUX)
+      base::size("999") * kCharWidth, -1, true, false, false},
+ #endif  // defined(OS_LINUX) || defined(OS_MACOSX)

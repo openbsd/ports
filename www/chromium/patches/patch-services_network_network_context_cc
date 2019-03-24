@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_network_network_context_cc,v 1.3 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-services_network_network_context_cc,v 1.4 2019/03/24 12:24:45 robert Exp $
 
 Index: services/network/network_context.cc
 --- services/network/network_context.cc.orig
 +++ services/network/network_context.cc
-@@ -131,7 +131,7 @@
+@@ -132,7 +132,7 @@
  #endif  // defined(USE_NSS_CERTS)
  
  #if defined(OS_ANDROID) || defined(OS_FUCHSIA) || \
@@ -12,7 +12,7 @@ Index: services/network/network_context.cc
  #include "net/cert/cert_net_fetcher.h"
  #include "net/cert_net/cert_net_fetcher_impl.h"
  #endif
-@@ -608,7 +608,7 @@ NetworkContext::~NetworkContext() {
+@@ -610,7 +610,7 @@ NetworkContext::~NetworkContext() {
  #endif
  
  #if defined(OS_ANDROID) || defined(OS_FUCHSIA) || \
@@ -21,7 +21,7 @@ Index: services/network/network_context.cc
      net::ShutdownGlobalCertNetFetcher();
  #endif
    }
-@@ -1653,7 +1653,7 @@ URLRequestContextOwner NetworkContext::ApplyContextPar
+@@ -1700,7 +1700,7 @@ URLRequestContextOwner NetworkContext::ApplyContextPar
  
      net::CookieCryptoDelegate* crypto_delegate = nullptr;
      if (params_->enable_encrypted_cookies) {
@@ -30,7 +30,7 @@ Index: services/network/network_context.cc
        DCHECK(network_service_->os_crypt_config_set())
            << "NetworkService::SetCryptConfig must be called before creating a "
               "NetworkContext with encrypted cookies.";
-@@ -1967,7 +1967,7 @@ URLRequestContextOwner NetworkContext::ApplyContextPar
+@@ -2015,7 +2015,7 @@ URLRequestContextOwner NetworkContext::ApplyContextPar
      net::SetURLRequestContextForNSSHttpIO(result.url_request_context.get());
  #endif
  #if defined(OS_ANDROID) || defined(OS_FUCHSIA) || \

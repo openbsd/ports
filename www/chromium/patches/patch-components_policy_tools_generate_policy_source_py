@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_policy_tools_generate_policy_source_py,v 1.14 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-components_policy_tools_generate_policy_source_py,v 1.15 2019/03/24 12:24:45 robert Exp $
 
 Index: components/policy/tools/generate_policy_source.py
 --- components/policy/tools/generate_policy_source.py.orig
 +++ components/policy/tools/generate_policy_source.py
-@@ -83,7 +83,7 @@ class PolicyDetails:
+@@ -84,7 +84,7 @@ class PolicyDetails:
          raise RuntimeError(
              'is_device_only is only allowed for Chrome OS: "%s"' % p)
        if platform not in [
@@ -12,7 +12,7 @@ Index: components/policy/tools/generate_policy_source.py
            'chrome.win', 'chrome.linux', 'chrome.mac', 'chrome.fuchsia',
            'chrome.*'
        ]:
-@@ -104,7 +104,7 @@ class PolicyDetails:
+@@ -105,7 +105,7 @@ class PolicyDetails:
        if platform.startswith('chrome.'):
          platform_sub = platform[7:]
          if platform_sub == '*':

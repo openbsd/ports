@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.17 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_frame_cc,v 1.18 2019/03/24 12:24:45 robert Exp $
 
 Index: chrome/browser/ui/views/frame/browser_frame.cc
 --- chrome/browser/ui/views/frame/browser_frame.cc.orig
 +++ chrome/browser/ui/views/frame/browser_frame.cc
-@@ -38,7 +38,7 @@
+@@ -37,7 +37,7 @@
  #include "components/user_manager/user_manager.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/views/frame/browser_frame.cc
  #include "chrome/browser/ui/views/frame/browser_command_handler_linux.h"
  #endif
  
-@@ -93,7 +93,7 @@ void BrowserFrame::InitBrowserFrame() {
+@@ -104,7 +104,7 @@ void BrowserFrame::InitBrowserFrame() {
      non_client_view()->set_context_menu_controller(this);
    }
  

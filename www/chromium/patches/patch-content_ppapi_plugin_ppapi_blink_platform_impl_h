@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_h,v 1.8 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-content_ppapi_plugin_ppapi_blink_platform_impl_h,v 1.9 2019/03/24 12:24:45 robert Exp $
 
 Index: content/ppapi_plugin/ppapi_blink_platform_impl.h
 --- content/ppapi_plugin/ppapi_blink_platform_impl.h.orig
@@ -23,6 +23,6 @@ Index: content/ppapi_plugin/ppapi_blink_platform_impl.h
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-   class SandboxSupport;
    sk_sp<font_service::FontLoader> font_loader_;
  #endif
+ 

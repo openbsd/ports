@@ -1,18 +1,18 @@
-$OpenBSD: patch-chrome_browser_profiles_profile_io_data_cc,v 1.5 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-chrome_browser_profiles_profile_io_data_cc,v 1.6 2019/03/24 12:24:45 robert Exp $
 
 Index: chrome/browser/profiles/profile_io_data.cc
 --- chrome/browser/profiles/profile_io_data.cc.orig
 +++ chrome/browser/profiles/profile_io_data.cc
-@@ -167,7 +167,7 @@
- #include "net/reporting/reporting_service.h"
- #endif  // BUILDFLAG(ENABLE_REPORTING)
+@@ -161,7 +161,7 @@
+ #include "net/ssl/client_cert_store_mac.h"
+ #endif  // defined(OS_MACOSX)
  
 -#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX) || defined(OS_BSD)
  #include "chrome/browser/net/trial_comparison_cert_verifier.h"
  #include "net/cert/cert_verify_proc_builtin.h"
  #endif
-@@ -1019,7 +1019,7 @@ void ProfileIOData::Init(
+@@ -982,7 +982,7 @@ void ProfileIOData::Init(
              std::make_unique<net::MultiThreadedCertVerifier>(
                  verify_proc.get()));
        }

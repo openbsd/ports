@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_autofill_core_browser_autofill_experiments_cc,v 1.19 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-components_autofill_core_browser_autofill_experiments_cc,v 1.20 2019/03/24 12:24:45 robert Exp $
 
 Index: components/autofill/core/browser/autofill_experiments.cc
 --- components/autofill/core/browser/autofill_experiments.cc.orig
@@ -9,48 +9,21 @@ Index: components/autofill/core/browser/autofill_experiments.cc
  
 -#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
- namespace {
- // Returns the font weight corresponding to the value of param
- // kAutofillForcedFontWeightParameterName, or kDefault if the param is not
-@@ -48,7 +48,7 @@ ForcedFontWeight GetFontWeightFromParam() {
- }  // namespace
- #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
- 
--#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
  const base::Feature kAutofillDropdownLayoutExperiment{
      "AutofillDropdownLayout", base::FEATURE_DISABLED_BY_DEFAULT};
  const char kAutofillDropdownLayoutParameterName[] = "variant";
-@@ -58,7 +58,7 @@ const char kAutofillDropdownLayoutParameterTwoLinesLea
-     "two-lines-leading-icon";
- #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
- 
--#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
- const base::Feature kAutofillPrimaryInfoStyleExperiment{
-     "AutofillPrimaryInfoStyleExperiment", base::FEATURE_DISABLED_BY_DEFAULT};
- const char kAutofillForcedFontWeightParameterName[] = "font_weight";
-@@ -168,7 +168,7 @@ bool IsAutofillNoLocalSaveOnUploadSuccessExperimentEna
+@@ -143,7 +143,7 @@ bool IsAutofillNoLocalSaveOnUploadSuccessExperimentEna
  }
  
- bool OfferStoreUnmaskedCards() {
+ bool OfferStoreUnmaskedCards(bool is_off_the_record) {
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
    // The checkbox can be forced on with a flag, but by default we don't store
    // on Linux due to lack of system keychain integration. See crbug.com/162735
    return base::CommandLine::ForCurrentProcess()->HasSwitch(
-@@ -201,7 +201,7 @@ bool ShouldUseActiveSignedInAccount() {
+@@ -181,7 +181,7 @@ bool ShouldUseActiveSignedInAccount() {
               features::kAutofillGetPaymentsIdentityFromSync);
  }
- 
--#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
- ForcedFontWeight GetForcedFontWeight() {
-   if (!base::FeatureList::IsEnabled(kAutofillPrimaryInfoStyleExperiment))
-     return ForcedFontWeight::kDefault;
-@@ -212,7 +212,7 @@ ForcedFontWeight GetForcedFontWeight() {
- }
- #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
  
 -#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)

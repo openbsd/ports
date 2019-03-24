@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_test_BUILD_gn,v 1.3 2019/03/24 12:24:45 robert Exp $
+
+Index: chrome/test/BUILD.gn
+--- chrome/test/BUILD.gn.orig
++++ chrome/test/BUILD.gn
+@@ -5232,7 +5232,7 @@ test("chrome_app_unittests") {
+     "//components/crash/core/common",
+     "//components/flags_ui:switches",
+   ]
+-  if (!is_fuchsia) {
++  if (!is_fuchsia && !is_openbsd) {
+     # TODO(crbug.com/753619): Enable crash reporting on Fuchsia.
+     deps += [ "//third_party/breakpad:client" ]
+   }

@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_system_sys_info_openbsd_cc,v 1.1 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-base_system_sys_info_openbsd_cc,v 1.2 2019/03/24 12:24:44 robert Exp $
 
 Index: base/system/sys_info_openbsd.cc
 --- base/system/sys_info_openbsd.cc.orig
@@ -37,7 +37,7 @@ Index: base/system/sys_info_openbsd.cc
 -  int mib[] = {CTL_KERN, KERN_SHMINFO, KERN_SHMINFO_SHMMAX};
 -  size_t limit;
 -  size_t size = sizeof(limit);
--  if (sysctl(mib, arraysize(mib), &limit, &size, NULL, 0) < 0) {
+-  if (sysctl(mib, base::size(mib), &limit, &size, NULL, 0) < 0) {
 -    NOTREACHED();
 -    return 0;
 -  }
