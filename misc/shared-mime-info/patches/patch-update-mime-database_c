@@ -1,4 +1,4 @@
-$OpenBSD: patch-update-mime-database_c,v 1.7 2018/09/25 19:07:11 jasper Exp $
+$OpenBSD: patch-update-mime-database_c,v 1.8 2019/03/25 15:49:22 robert Exp $
 
 - unveil: unveil the provided mime_dir
 - pledge: https://bugs.freedesktop.org/show_bug.cgi?id=104368
@@ -6,20 +6,56 @@ $OpenBSD: patch-update-mime-database_c,v 1.7 2018/09/25 19:07:11 jasper Exp $
 Index: update-mime-database.c
 --- update-mime-database.c.orig
 +++ update-mime-database.c
-@@ -3683,6 +3683,16 @@ int main(int argc, char **argv)
+@@ -2164,6 +2164,11 @@ static void check_in_path_xdg_data(const char *mime_pa
+ 
+ 	path = g_path_get_dirname(mime_path);
+ 
++	if (unveil(path, "r") == -1) {
++		g_warning("Can't unveil '%s' directory: %s",
++			  path, g_strerror(errno));
++	}
++
+ 	if (stat(path, &path_info))
+ 	{
+ 		g_warning("Can't stat '%s' directory: %s",
+@@ -2188,12 +2193,23 @@ static void check_in_path_xdg_data(const char *mime_pa
+ 	
+ 	for (i = 0; i < n; i++)
+ 	{
++		if (unveil(dirs[i], "r") == -1) {
++			g_warning("Can't unveil '%s' directory: %s",
++				  dirs[i], g_strerror(errno));
++			goto out;
++		}
++
+ 		if (stat(dirs[i], &dir_info) == 0 &&
+ 		    dir_info.st_ino == path_info.st_ino &&
+ 		    dir_info.st_dev == path_info.st_dev)
+ 			break;
+ 	}
+ 
++	if (unveil(NULL, NULL) == -1) {
++		g_warning(_("unveil"));
++		goto out;
++	}
++
+ 	if (i == n)
+ 	{
+ 		g_printerr(_("\nNote that '%s' is not in the search path\n"
+@@ -3682,6 +3698,16 @@ int main(int argc, char **argv)
+ 	LIBXML_TEST_VERSION;
  
  	mime_dir = argv[optind];
- 
++
 +	if (unveil(mime_dir, "rwc") == -1) {
 +		g_warning(_("unveil"));
 +		return EXIT_FAILURE;
 +	}
 +
-+	if (pledge("stdio rpath wpath cpath getpw", NULL) == -1) {
++	if (pledge("stdio rpath wpath cpath getpw unveil", NULL) == -1) {
 +		g_warning(_("pledge"));
 +		return EXIT_FAILURE;
 +	}
-+
+ 
  	/* Strip trailing / characters */
  	{
- 		int l = strlen(mime_dir);
