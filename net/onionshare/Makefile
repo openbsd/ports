@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/27 21:04:00 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/25 12:17:44 bentley Exp $
 
 COMMENT-main =		secure and anonymous file-sharing over Tor
 COMMENT-gui =		graphical user interface for onionshare based on Qt
@@ -6,11 +6,10 @@ COMMENT-gui =		graphical user interface for onionshare based on Qt
 GH_ACCOUNT =		micahflee
 GH_PROJECT =		onionshare
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
-MODPY_EGG_VERSION =	1.3
+MODPY_EGG_VERSION =	2.0
 
 PKGNAME-main =		onionshare-${MODPY_EGG_VERSION}
 PKGNAME-gui =		onionshare-gui-${MODPY_EGG_VERSION}
-REVISION-gui =		0
 
 CATEGORIES =		net
 
@@ -33,6 +32,7 @@ RUN_DEPENDS =		devel/py-sip${MODPY_FLAVOR} \
 RUN_DEPENDS-gui =	${RUN_DEPENDS} \
 			devel/desktop-file-utils \
 			net/onionshare=${MODPY_EGG_VERSION} \
+			net/py-socks${MODPY_FLAVOR} \
 			x11/py-qt5${MODPY_FLAVOR}
 
 # XXX: not yet working
