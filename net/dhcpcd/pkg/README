@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2019/03/02 00:24:07 sthen Exp $
+$OpenBSD: README,v 1.9 2019/03/25 14:34:08 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -23,7 +23,7 @@ option rapid_commit
 require dhcp_server_identifier
 
 # disable running any hooks; not typically required for simple DHCPv6-PD setup
-script /usr/bin/true
+script ""
 
 # List interfaces explicitly so that dhcpcd doesn't touch others
 allowinterfaces pppoe0 em0 vlan3 vlan5
