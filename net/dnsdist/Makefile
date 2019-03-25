@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2018/12/09 12:05:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2019/03/25 16:10:04 otto Exp $
 
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
-DISTNAME=		dnsdist-1.3.2
+DISTNAME=		dnsdist-1.3.3
 EXTRACT_SUFX=		.tar.bz2
 REVISION=		0
 
@@ -10,7 +10,7 @@ CATEGORIES=		net
 
 HOMEPAGE=		https://dnsdist.org/
 
-MAINTAINER=		Peter van Dijk <peter.van.dijk@powerdns.com>
+MAINTAINER=		Otto Moerbeek <otto@drijf.net>
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,7 +29,8 @@ CONFIGURE_ARGS+=	--disable-gnutls \
 			--with-lua=lua${MODLUA_VERSION:S/.//} \
 			--without-net-snmp \
 			--enable-dns-over-tls \
-			--enable-dnscrypt
+			--enable-dnscrypt \
+			--disable-fstrm
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBEDIT_LIBS='-ledit -lcurses' \
