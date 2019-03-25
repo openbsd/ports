@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/25 05:50:52 bentley Exp $
+share/apertium/apertium-pol/
+share/apertium/apertium-pol/apertium-pol.pol.dix
+share/apertium/apertium-pol/apertium-pol.pol.rlx
+share/apertium/apertium-pol/apertium-pol.post-pol.dix
+share/apertium/apertium-pol/pol.autogen.att.gz
+share/apertium/apertium-pol/pol.autogen.bin
+share/apertium/apertium-pol/pol.automorf.att.gz
+share/apertium/apertium-pol/pol.automorf.bin
+share/apertium/apertium-pol/pol.autopgen.bin
+share/apertium/apertium-pol/pol.prob
+share/apertium/apertium-pol/pol.rlx.bin
+share/pkgconfig/apertium-pol.pc
