@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/03/24 22:24:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/03/25 03:15:03 sthen Exp $
 
 COMMENT=	Ubiquiti mfi wireless controller
 
@@ -6,7 +6,7 @@ DISTFILES=	mFi-$V{mFi.unix}.zip
 V=		2.1.2
 FW_VER=		2.1.2.1297
 PKGNAME=	mfi-$V
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	net
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	http://www.ubnt.com/eula/
 MASTER_SITES=	http://dl.ubnt.com/mfi/$V/
 
 MODULES=	java
-MODJAVA_VER=	1.8+
+MODJAVA_VER=	1.8
 
 RUN_DEPENDS=	databases/mongodb \
 		java/javaPathHelper
