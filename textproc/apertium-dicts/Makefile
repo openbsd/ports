@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/03/25 05:55:58 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/25 06:13:44 bentley Exp $
 
      SUBDIR += af-nl
      SUBDIR += arg
@@ -63,7 +63,6 @@
      SUBDIR += swe
      SUBDIR += swe-dan
      SUBDIR += swe-nor
-     SUBDIR += sv-da
      SUBDIR += szl
      SUBDIR += rus-ukr
      SUBDIR += tur

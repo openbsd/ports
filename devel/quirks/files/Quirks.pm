@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.732 2019/03/22 22:09:48 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.733 2019/03/25 06:13:44 bentley Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -325,6 +325,7 @@ my $stem_extensions = {
 	'wireshark-gtk' => 'wireshark',
 	'py-zeroconf' => 'py3-zeroconf',
 	'digikam' => 'digikam-kde4',
+	'apertium-sv-da' => 'apertium-swe-dan',
 };
 
 my $obsolete_reason = {
