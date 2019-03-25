@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/25 09:33:32 bentley Exp $
+include/cudd.h
+lib/libcudd.a
+lib/libcudd.la
+@lib lib/libcudd.so.${LIBcudd_VERSION}
+share/doc/cudd/
+share/doc/cudd/cudd.pdf
+share/doc/cudd/phase.pdf

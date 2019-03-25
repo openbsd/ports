@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2019/03/25 09:33:32 bentley Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -880,7 +880,7 @@ cudd_libcudd_la_CPPFLAGS = -I$(top_srcdir)/cudd -I$(to
+   -I$(top_srcdir)/epd -I$(top_srcdir)/mtr -I$(top_srcdir)/util
+ 
+ @OBJ_TRUE@cudd_libcudd_la_LIBTOOLFLAGS = --tag=CXX
+-cudd_libcudd_la_LDFLAGS = -release @PACKAGE_VERSION@ -version-info 0:0:0 \
++cudd_libcudd_la_LDFLAGS = -version-info 0:0:0 \
+   -no-undefined
+ 
+ cudd_testcudd_SOURCES = cudd/testcudd.c
