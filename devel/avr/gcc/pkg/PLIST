@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/09/07 20:11:08 jasper Exp $
-@conflict riscv-elf-gcc-*
+@comment $OpenBSD: PLIST,v 1.9 2019/03/25 12:58:45 jca Exp $
 @bin bin/avr-c++
 @bin bin/avr-cpp
 @bin bin/avr-g++
