@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/25 05:51:22 bentley Exp $
+share/apertium/apertium-swe/
+share/apertium/apertium-swe/apertium-swe.post-swe.dix
+share/apertium/apertium-swe/apertium-swe.swe.dix
+share/apertium/apertium-swe/apertium-swe.swe.rlx
+share/apertium/apertium-swe/swe.autogen.att.gz
+share/apertium/apertium-swe/swe.autogen.bin
+share/apertium/apertium-swe/swe.automorf.att.gz
+share/apertium/apertium-swe/swe.automorf.bin
+share/apertium/apertium-swe/swe.autopgen.bin
+share/apertium/apertium-swe/swe.prob
+share/apertium/apertium-swe/swe.rlx.bin
+share/apertium/modes/swe-disam.mode
+share/apertium/modes/swe-gener.mode
+share/apertium/modes/swe-morph.mode
+share/apertium/modes/swe-tagger.mode
+share/pkgconfig/apertium-swe.pc
