@@ -1,4 +1,4 @@
-$OpenBSD: patch-yubiserve_py,v 1.8 2018/06/02 12:01:59 jasper Exp $
+$OpenBSD: patch-yubiserve_py,v 1.9 2019/03/25 01:29:42 sthen Exp $
 
 sqlite3 support from
 http://code.google.com/p/yubico-yubiserve/source/list r39
@@ -38,7 +38,7 @@ Index: yubiserve.py
  		cur = self.con.cursor()
  		cur.execute("SELECT counter, secret FROM oathtokens WHERE publicname = '" + publicID + "' AND active = '1'")
 -		if (cur.rowcount != 1):
-+		if cur:
++		if not cur:
  			validationResult = self.status['BAD_OTP']
  			return validationResult
  		(actualcounter, key) = cur.fetchone()
@@ -146,16 +146,26 @@ Index: yubiserve.py
  						api_key = cur.fetchone()[0]
  						otp_hmac = hmac.new(api_key, msg=orderedResult, digestmod=hashlib.sha1).hexdigest().decode('hex').encode('base64').strip()
  			except KeyError:
-@@ -264,7 +274,7 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
+@@ -258,15 +268,16 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
+ 					self.end_headers()
+ 					iso_time = time.strftime("%Y-%m-%dT%H:%M:%S")
+ 					result = 'otp=' + getData['otp'] + '\r\nstatus=' + [k for k, v in oathvalidation.status.iteritems() if v == validation][0] + '\r\nt=' + iso_time
++					orderedResult = 'otp=' + getData['otp'] + '&status=' + [k for k, v in oathvalidation.status.iteritems() if v == validation][0] + '&t=' + iso_time
+ 					otp_hmac = ''
+ 					try:
+ 						if (getData['id'] != None):
  							apiID = re.escape(getData['id'])
  							cur = self.con.cursor()
  							cur.execute("SELECT secret from apikeys WHERE id = '" + apiID + "'")
 -							if cur.rowcount != 0:
 +							if cur:
  								api_key = cur.fetchone()[0]
- 								otp_hmac = hmac.new(api_key, msg=result, digestmod=hashlib.sha1).hexdigest().decode('hex').encode('base64').strip()
+-								otp_hmac = hmac.new(api_key, msg=result, digestmod=hashlib.sha1).hexdigest().decode('hex').encode('base64').strip()
++								otp_hmac = hmac.new(str(api_key), msg=str(orderedResult), digestmod=hashlib.sha1).hexdigest().decode('hex').encode('base64').strip()
  							else:
-@@ -285,7 +295,7 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
+ 								result = 'otp=' + getData['otp'] + '\r\nstatus=NO_CLIENT\r\nt=' + iso_time
+ 					except KeyError:
+@@ -285,7 +296,7 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
  							apiID = re.escape(getData['id'])
  							cur = self.con.cursor()
  							cur.execute("SELECT secret from apikeys WHERE id = '" + apiID + "'")
@@ -164,7 +174,7 @@ Index: yubiserve.py
  								api_key = cur.fetchone()[0]
  								otp_hmac = hmac.new(api_key, msg=result, digestmod=hashlib.sha1).hexdigest().decode('hex').encode('base64').strip()
  					except KeyError:
-@@ -305,7 +315,7 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
+@@ -305,7 +316,7 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
  					apiID = re.escape(getData['id'])
  					cur = self.con.cursor()
  					cur.execute("SELECT secret from apikeys WHERE id = '" + apiID + "'")
@@ -173,7 +183,7 @@ Index: yubiserve.py
  						api_key = cur.fetchone()[0]
  						otp_hmac = hmac.new(api_key, msg=result, digestmod=hashlib.sha1).hexdigest().decode('hex').encode('base64').strip()
  			except KeyError:
-@@ -322,9 +332,10 @@ class SecureHTTPServer(BaseHTTPServer.HTTPServer):
+@@ -322,9 +333,10 @@ class SecureHTTPServer(BaseHTTPServer.HTTPServer):
  	def __init__(self, server_address, HandlerClass):
  		BaseHTTPServer.HTTPServer.__init__(self, server_address, HandlerClass)
  		ctx = SSL.Context(SSL.SSLv23_METHOD)
