@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/14 14:47:07 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/03/25 11:16:36 stsp Exp $
 @bin bin/textsuggest
 @bin bin/textsuggest-server
 libexec/textsuggest/
 @bin libexec/textsuggest/command
 @bin libexec/textsuggest/math_expression
+share/applications/textsuggest-server.desktop
+share/icons/hicolor/scalable/apps/TextSuggest.svg
 share/textsuggest/
 share/textsuggest/dictionaries/
 share/textsuggest/dictionaries/English.txt
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

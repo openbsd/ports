@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/17 11:34:32 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/25 11:16:36 stsp Exp $
 
 COMMENT =	auto-complete and text expansion in X11
 
 V =		4.2.0
+REVISION =	0
 DISTNAME =	TextSuggest-v${V}
 PKGNAME =	textsuggest-${V}
 CATEGORIES =	x11
@@ -64,5 +65,11 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/textsuggest/dictionaries
 	ln -s /usr/share/dict/words \
 		${PREFIX}/share/textsuggest/dictionaries/English.txt
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKBUILD}/img/TextSuggest.svg \
+		${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${FILESDIR}/textsuggest-server.desktop \
+		${PREFIX}/share/applications
 
 .include <bsd.port.mk>

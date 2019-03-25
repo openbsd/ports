@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=TextSuggest Server
+Comment=auto-complete and text expansion
+GenericName=TextSuggest Server
+Exec=textsuggest-server
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=TextSuggest
+Categories=Application;System
