@@ -1,0 +1,18 @@
+$OpenBSD: patch-mcs_class_System_System_Net_NetworkInformation_NetworkInterface_cs,v 1.1 2019/03/25 13:05:39 thfr Exp $
+
+Initialize network interface for OpenBSD like for FreeBSD to address issue
+https://github.com/mono/mono/issues/8168
+Pull Request: https://github.com/mono/mono/pull/13633
+
+Index: mcs/class/System/System.Net.NetworkInformation/NetworkInterface.cs
+--- mcs/class/System/System.Net.NetworkInformation/NetworkInterface.cs.orig
++++ mcs/class/System/System.Net.NetworkInformation/NetworkInterface.cs
+@@ -526,7 +526,7 @@ namespace System.Net.NetworkInformation {
+ 			bool runningOnUnix = (Environment.OSVersion.Platform == PlatformID.Unix);
+ 
+ 			if (runningOnUnix) {
+-				if (Platform.IsMacOS || Platform.IsFreeBSD)
++				if (Platform.IsMacOS || Platform.IsFreeBSD || Platform.IsOpenBSD)
+ 					return new MacOsNetworkInterfaceAPI ();
+ 					
+ 				return new LinuxNetworkInterfaceAPI ();
