@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/14 22:34:18 mariani Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/25 14:29:52 kn Exp $
 
 COMMENT =		capture c-level output in context managers
 
@@ -19,10 +19,11 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	test.py
 
 TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-mock${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR}
+			devel/py-mock${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -30,8 +31,5 @@ FLAVOR ?=
 pre-configure:
 	cd ${WRKDIR}; ${CC} ${CFLAGS} ${FILESDIR}/getsize.c -o getsize; \
 	sed -i "s,SIZE_OF_FILE,$$(./getsize),g" ${WRKSRC}/wurlitzer.py
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest test.py
 
 .include <bsd.port.mk>

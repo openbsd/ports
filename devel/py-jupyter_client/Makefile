@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/12/29 11:53:38 mariani Exp $
+# $OpenBSD: Makefile,v 1.8 2019/03/25 14:29:51 kn Exp $
 
 COMMENT =		Jupyter protocol implementation and client libraries
 
@@ -19,6 +19,9 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	jupyter_client
+PORTHOME =		${WRKDIR}
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -31,7 +34,6 @@ RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/ipython${MODPY_FLAVOR}>=5.1.0 \
 			devel/py-ipykernel${MODPY_FLAVOR}>=4.5.2 \
-			devel/py-test${MODPY_FLAVOR} \
 			shells/bash
 
 .if !${FLAVOR:Mpython3}
@@ -42,8 +44,5 @@ post-install:
 	mv ${PREFIX}/bin/jupyter-kernel{,${MODPY_BIN_SUFFIX}}
 	mv ${PREFIX}/bin/jupyter-kernelspec{,${MODPY_BIN_SUFFIX}}
 	mv ${PREFIX}/bin/jupyter-run{,${MODPY_BIN_SUFFIX}}
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest jupyter_client
 
 .include <bsd.port.mk>

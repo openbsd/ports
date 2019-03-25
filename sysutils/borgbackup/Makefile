@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/02/11 11:58:31 bket Exp $
+# $OpenBSD: Makefile,v 1.27 2019/03/25 14:29:52 kn Exp $
 
 COMMENT =		deduplicating backup program
 
@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	--ignore lib*
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 WANTLIB +=		${MODPY_WANTLIB} b2 crypto lz4 pthread zstd
@@ -26,9 +28,12 @@ LIB_DEPENDS +=		${MODPY_LIB_DEPENDS} \
 BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS +=		net/py-msgpack${MODPY_FLAVOR}
 TEST_DEPENDS +=		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR} \
 			devel/py-test-benchmark${MODPY_FLAVOR} \
 			devel/py-test-xdist${MODPY_FLAVOR}
+
+TEST_ENV +=		PATH=${WRKINST}/usr/local/bin:${PATH} \
+			PYTHONPATH=${WRKSRC}/src
+PORTHOME =		${WRKDIR}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/man/*.1 ${PREFIX}/man/man1/
@@ -37,9 +42,6 @@ pre-test:
 	${MODPY_CMD} build_ext --inplace
 
 do-test: fake
-	cd ${WRKSRC}; \
-		PATH=${WRKINST}/usr/local/bin:${PATH} \
-		PYTHONPATH=${WRKSRC}/src \
-		${MODPY_BIN} -m pytest --ignore lib*
+	@${MODPY_TEST_TARGET}
 
 .include <bsd.port.mk>

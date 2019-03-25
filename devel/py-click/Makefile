@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/04/15 17:25:39 sebastia Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/25 14:29:50 kn Exp $
 
 COMMENT=	command line library for Python
 
@@ -20,13 +20,9 @@ MODPY_PI =	Yes
 MODULES=	lang/python
 
 MODPY_SETUPTOOLS= Yes
+MODPY_PYTEST=	Yes
 
 FLAVORS=	python3
 FLAVOR?=
-
-TEST_DEPENDS=	devel/py-test${MODPY_FLAVOR}
-
-do-test:
-	@cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

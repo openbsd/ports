@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/10/24 05:53:09 benoit Exp $
+# $OpenBSD: Makefile,v 1.29 2019/03/25 14:29:50 kn Exp $
 
 COMMENT =	ASN.1 library for Python
 
@@ -18,15 +18,15 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 MODULES =		lang/python
 FLAVORS =		python3
 FLAVOR ?=
 
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
+TEST_ENV +=		PYTHONPATH=${WRKINST}/${MODPY_SITEPKG}
 
 do-test: fake
-	@cd ${WRKSRC} && env PYTHONPATH=${WRKINST}/${MODPY_SITEPKG} \
-		${MODPY_BIN} -m pytest
+	@${MODPY_TEST_TARGET}
 
 .include <bsd.port.mk>

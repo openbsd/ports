@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/08/16 21:37:55 remi Exp $
+# $OpenBSD: Makefile,v 1.8 2019/03/25 14:29:52 kn Exp $
 
 COMMENT =		synchronize calendars and contacts
 
@@ -20,6 +20,8 @@ MODULES =		lang/python
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	tests/
 
 BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR} \
 			devel/py-setuptools_scm${MODPY_FLAVOR} \
@@ -37,6 +39,9 @@ TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
 			www/py-urllib3${MODPY_FLAVOR} \
 			${RUN_DEPENDS}
 
+TEST_ENV +=		DAV_SERVER=skip \
+			DETERMINISTIC_TESTS=true
+
 post-build:
 	cd ${WRKSRC}/docs; ${MAKE_ENV} PYTHONPATH=${WRKSRC} \
 		sphinx-build${MODPY_BIN_SUFFIX} \
@@ -52,9 +57,5 @@ post-install:
 		pax -rw * ${PREFIX}/share/doc/vdirsyncer
 	${INSTALL_DATA} ${WRKSRC}/config.example \
 		${PREFIX}/share/examples/vdirsyncer
-
-do-test:
-	cd ${WRKSRC}; DAV_SERVER=skip DETERMINISTIC_TESTS=true \
-		${MODPY_BIN} -m pytest tests/
 
 .include <bsd.port.mk>

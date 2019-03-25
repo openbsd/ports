@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/04/23 09:15:28 shadchin Exp $
+# $OpenBSD: Makefile,v 1.24 2019/03/25 14:29:50 kn Exp $
 
 COMMENT=		I18N/L10N tools for Python
 
@@ -16,20 +16,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/python
 
-MODPY_PI =		Yes
+MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST=		Yes
 
 RUN_DEPENDS=		devel/py-tz${MODPY_FLAVOR}
-TEST_DEPENDS=		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS=		${RUN_DEPENDS}
 
 FLAVORS=		python3
 FLAVOR?=
 
 post-install:
 	mv ${PREFIX}/bin/pybabel{,${MODPY_BIN_SUFFIX}}
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

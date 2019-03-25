@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/05/31 07:41:09 rpointel Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/25 14:29:50 kn Exp $
 
 COMMENT =		rapid multi-Python deployment
 
@@ -19,14 +19,12 @@ FLAVOR ?=
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	testing
 
 RUN_DEPENDS +=		devel/py-apipkg${MODPY_FLAVOR}
 BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
 TEST_DEPENDS +=		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR} \
 			${FULLPKGNAME}:${FULLPKGPATH}
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest testing
 
 .include <bsd.port.mk>

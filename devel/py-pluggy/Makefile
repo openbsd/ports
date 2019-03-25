@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/04/28 10:46:35 pvk Exp $
+# $OpenBSD: Makefile,v 1.5 2019/03/25 14:29:51 kn Exp $
 
 COMMENT =		plugin and hook calling mechanisms for Python
 
@@ -16,13 +16,9 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
-
-do-test:
-	@cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

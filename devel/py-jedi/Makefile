@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/12/29 11:45:58 mariani Exp $
+# $OpenBSD: Makefile,v 1.8 2019/03/25 14:29:50 kn Exp $
 
 COMMENT =		autocompletion tool for Python
 
@@ -19,18 +19,16 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	jedi test
 
 RUN_DEPENDS =		devel/py-parso${MODPY_FLAVOR}
 
 TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR} \
 			devel/py-docopt${MODPY_FLAVOR} \
 			devel/py-colorama${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest ${TEST_ARGS} jedi test
 
 .include <bsd.port.mk>

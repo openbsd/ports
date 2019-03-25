@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/11/12 12:14:29 danj Exp $
+# $OpenBSD: Makefile,v 1.22 2019/03/25 14:29:52 kn Exp $
 
 COMMENT=		implements an XML/HTML/XHTML markup safe string
 
@@ -18,13 +18,9 @@ MODULES=		lang/python
 WANTLIB+=		${MODPY_WANTLIB} pthread
 
 MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS=		python3
 FLAVOR?=
-
-TEST_DEPENDS = 		devel/py-test${MODPY_FLAVOR}
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

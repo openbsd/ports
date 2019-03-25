@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/04/22 18:02:15 shadchin Exp $
+# $OpenBSD: Makefile,v 1.9 2019/03/25 14:29:51 kn Exp $
 
 COMMENT =		thin-wrapper around mock package for easier use with pytest
 
@@ -18,21 +18,18 @@ MODULES =		lang/python
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			${BASE_PKGPATH}
+TEST_DEPENDS =		${BASE_PKGPATH}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
 
+# One test fail if py3-mock installed
 .if !${FLAVOR:Mpython3}
 RUN_DEPENDS +=		devel/py-mock
 .endif
-
-# One test fail if py3-mock installed
-do-test:
-	@cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/02/18 21:23:44 jung Exp $
+# $OpenBSD: Makefile,v 1.26 2019/03/25 14:29:52 kn Exp $
 
 COMMENT =		fast, optionally sandboxed, Python template engine
 
@@ -21,15 +21,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
 RUN_DEPENDS =		textproc/py-MarkupSafe${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =		${RUN_DEPENDS}
 
 FLAVORS =		python3
 FLAVOR ?=
 
 MODPY_SETUPTOOLS =	Yes
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
+MODPY_PYTEST =		Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/03/17 07:48:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/25 14:29:52 kn Exp $
 
 COMMENT =		utility belt for advanced users of python-requests
 
@@ -19,15 +19,12 @@ RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
 
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
-			devel/py-mock${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			www/py-betamax${MODPY_FLAVOR}
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

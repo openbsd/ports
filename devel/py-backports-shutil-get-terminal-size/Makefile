@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/02/27 21:47:38 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/25 14:29:50 kn Exp $
 
 COMMENT =		backport of the get_terminal_size function from shutil
 
@@ -17,12 +17,8 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/py-backports
-
-TEST_DEPENDS =		devel/py-test
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

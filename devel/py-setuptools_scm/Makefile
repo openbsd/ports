@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/04/28 10:45:08 pvk Exp $
+# $OpenBSD: Makefile,v 1.10 2019/03/25 14:29:51 kn Exp $
 
 COMMENT =		plugin to manage your versions by scm tags
 
@@ -16,17 +16,17 @@ MODULES =		lang/python
 
 TEST_DEPENDS =		devel/git \
 			devel/mercurial \
-			devel/py-pip${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR}
+			devel/py-pip${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
 
 do-test:
 	@rm ${WRKSRC}/testing/test_setuptools_support.py
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
+	@${MODPY_TEST_TARGET}
 
 .include <bsd.port.mk>

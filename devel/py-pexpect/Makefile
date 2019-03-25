@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/01/03 19:19:49 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2019/03/25 14:29:51 kn Exp $
 
 COMMENT=		pure Python Expect-like module
 
@@ -16,6 +16,7 @@ MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODPY_PI =		Yes
+MODPY_PYTEST =		Yes
 
 MODULES=		lang/python
 
@@ -23,7 +24,6 @@ RUN_DEPENDS =		devel/py-ptyprocess${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			textproc/py-sphinx${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR} \
 			shells/bash
 
 FLAVORS =		python3
@@ -52,8 +52,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	cd ${WRKSRC}/doc/_build/html && pax -rw * ${DOCDIR}
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

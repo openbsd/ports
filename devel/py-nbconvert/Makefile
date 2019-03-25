@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/25 11:45:25 shadchin Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/25 14:29:51 kn Exp $
 
 COMMENT =		converting Jupyter notebooks
 
@@ -19,6 +19,8 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	nbconvert
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -39,13 +41,9 @@ TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
 			${RUN_DEPENDS} \
 			devel/ipython${MODPY_FLAVOR}>=5.1.0 \
 			devel/py-ipykernel${MODPY_FLAVOR}>=4.5.2 \
-			devel/py-nose${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR}
+			devel/py-nose${MODPY_FLAVOR}
 
 post-install:
 	mv ${PREFIX}/bin/jupyter-nbconvert{,${MODPY_BIN_SUFFIX}}
-
-do-test:
-	cd ${WRKSRC} && LC_CTYPE=en_US.UTF-8 ${MODPY_BIN} -m pytest nbconvert
 
 .include <bsd.port.mk>

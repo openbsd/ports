@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/02/14 22:23:44 mariani Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/25 14:29:51 kn Exp $
 
 COMMENT =		python parser
 
@@ -19,14 +19,12 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	parso test
 
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
-			devel/py-docopt${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-docopt${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest ${TEST_ARGS} parso test
 
 .include <bsd.port.mk>

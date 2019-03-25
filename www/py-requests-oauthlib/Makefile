@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/14 05:56:19 remi Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/25 14:29:52 kn Exp $
 
 COMMENT =		OAuth library support for python-requests
 
@@ -19,21 +19,18 @@ RUN_DEPENDS =		security/py-oauthlib${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR} \
 			www/py-requests-mock${MODPY_FLAVOR} \
 			${RUN_DEPENDS}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+# the tests make connections to http://httpbin.org
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
 
 pre-test:
 	rm -rf ${WRKSRC}/tests/__pycache__
-
-# the tests make connections to http://httpbin.org
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

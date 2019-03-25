@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/01/03 19:27:52 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2019/03/25 14:29:52 kn Exp $
 
 COMMENT =		Python library for approximate and phonetic string matching
 
@@ -20,11 +20,11 @@ WANTLIB += ${MODPY_WANTLIB} pthread
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	jellyfish/test.py
 
 FLAVORS =		python3
 FLAVOR ?=
-
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
 
 .if !${FLAVOR:Mpython3}
 NO_TEST =		Yes # requires unicodecsv for py<=3
@@ -32,8 +32,5 @@ NO_TEST =		Yes # requires unicodecsv for py<=3
 
 pre-test:
 	@${MODPY_CMD} build_ext --inplace
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest jellyfish/test.py
 
 .include <bsd.port.mk>

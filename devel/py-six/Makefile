@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/02/27 03:23:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/03/25 14:29:51 kn Exp $
 
 COMMENT =	Python 2 and 3 compatibility library
 MODPY_EGG_VERSION =	1.12.0
@@ -17,14 +17,12 @@ MODPY_PI =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	-v
 
-TEST_DEPENDS =	devel/py-py${MODPY_FLAVOR} \
-		devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-py${MODPY_FLAVOR}
 
 FLAVORS =	python3
 FLAVOR ?=
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest -v
 
 .include <bsd.port.mk>

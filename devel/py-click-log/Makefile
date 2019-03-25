@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/08/11 09:26:32 remi Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/25 14:29:50 kn Exp $
 
 COMMENT =		logging integration for Python click
 
@@ -16,20 +16,15 @@ MAINTAINER =		Remi Locherer <remi@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 RUN_DEPENDS =		devel/py-click${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
-			${RUN_DEPENDS}
+TEST_DEPENDS =		${RUN_DEPENDS}
 
 MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
-
-TEST_ENV =		LC_CTYPE=C.UTF-8
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

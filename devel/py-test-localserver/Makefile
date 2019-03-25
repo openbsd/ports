@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/10/16 21:05:44 remi Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/25 14:29:51 kn Exp $
 
 COMMENT =		py.test plugin to test server connections locally
 
@@ -14,18 +14,16 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 			www/py-werkzeug${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR} \
-			${RUN_DEPENDS}
+			www/py-werkzeug${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

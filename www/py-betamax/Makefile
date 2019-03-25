@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/11/08 16:21:58 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/25 14:29:52 kn Exp $
 
 COMMENT =		VCR imitation for python-requests
 
@@ -15,16 +15,13 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
 
 RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR}
 
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
-			devel/py-mock${MODPY_FLAVOR}
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
+TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

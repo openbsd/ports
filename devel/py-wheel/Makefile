@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/04/26 14:14:48 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/25 14:29:51 kn Exp $
 
 COMMENT =		built-package format for Python
 
@@ -14,6 +14,8 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	wheel
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -21,13 +23,9 @@ FLAVOR ?=
 TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
 			devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-jsonschema${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR}
 
 post-install:
 	mv ${PREFIX}/bin/wheel{,${MODPY_BIN_SUFFIX}}
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest wheel
 
 .include <bsd.port.mk>

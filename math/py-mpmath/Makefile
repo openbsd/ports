@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/19 19:02:43 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/25 14:29:52 kn Exp $
 
 COMMENT =		library for arbitrary-precision floating-point arithmetic
 
@@ -16,14 +16,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
 
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
-
 MODPY_PI =		Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	mpmath
 
 FLAVORS =		python3
 FLAVOR ?=
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest mpmath
 
 .include <bsd.port.mk>

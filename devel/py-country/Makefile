@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/02/17 20:22:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/03/25 14:29:50 kn Exp $
 
 COMMENT =		country, language, currency and scripts definitions
 
@@ -17,14 +17,12 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	src
 
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
-			${BASE_PKGPATH}=${MODPY_EGG_VERSION}
+TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION}
 
 FLAVORS =		python3
 FLAVOR ?=
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest src
 
 .include <bsd.port.mk>

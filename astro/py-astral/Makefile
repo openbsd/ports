@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/01/20 20:00:58 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/25 14:29:49 kn Exp $
 
 COMMENT =		calculations for the position of the sun and the moon
 
@@ -20,16 +20,13 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 BUILD_DEPENDS =		devel/py-tz${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-tz${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =		${RUN_DEPENDS}
 
 FLAVORS =		python3
 FLAVOR ?=
-
-do-test:
-			cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

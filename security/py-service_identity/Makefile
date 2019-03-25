@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/02/04 22:03:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/25 14:29:52 kn Exp $
 
 COMMENT =		service identity verification for pyOpenSSL/py-cryptography
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR} \
 			devel/py-asn1-modules${MODPY_FLAVOR} \
@@ -27,15 +28,11 @@ RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR} \
 			security/py-cryptography${MODPY_FLAVOR} \
 			security/py-openssl${MODPY_FLAVOR}
 
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =		${RUN_DEPENDS}
 
 FLAVORS =		python3
 FLAVOR ?=
 
 TEST_ENV +=		PYTHONPATH=${WRKSRC}/lib
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

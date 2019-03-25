@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/20 19:50:37 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2019/03/25 14:29:52 kn Exp $
 
 COMMENT =	high-level API and CLI on top of OGR
 
@@ -21,7 +21,9 @@ FLAVOR ?=
 COMPILER =	base-clang ports-gcc
 
 MODPY_SETUPTOOLS =	Yes
-MODPY_PI =	Yes
+MODPY_PI =		Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	tests
 
 BUILD_DEPENDS +=${RUN_DEPENDS} \
 		math/py-numpy${MODPY_FLAVOR} \
@@ -37,14 +39,11 @@ RUN_DEPENDS =	geo/py-cligj${MODPY_FLAVOR} \
 
 TEST_DEPENDS =	${RUN_DEPENDS} \
 		devel/py-nose${MODPY_FLAVOR} \
-		net/py-boto3${MODPY_FLAVOR} \
-		devel/py-test${MODPY_FLAVOR}
+		net/py-boto3${MODPY_FLAVOR}
 
 WANTLIB += ${COMPILER_LIBCXX} gdal m ${MODPY_WANTLIB}
 
 post-install:
 	mv ${PREFIX}/bin/fio{,${MODPY_BIN_SUFFIX}}
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest tests
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/08/27 08:32:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/25 14:29:51 kn Exp $
 
 # !!! do not update blindly: sysutils/aws-shell requires a specific version
 PORTROACH=		ignore:1
@@ -22,18 +22,16 @@ MODULES=		lang/python
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST=		Yes
+PORTHOME=		${WRKDIR}
 
 RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR} \
 			devel/py-wcwidth${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR}
 
-TEST_DEPENDS=		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS=		${RUN_DEPENDS}
 
 FLAVORS=		python3
 FLAVOR ?=
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

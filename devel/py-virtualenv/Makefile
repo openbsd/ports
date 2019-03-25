@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/09/09 17:02:11 danj Exp $
+# $OpenBSD: Makefile,v 1.24 2019/03/25 14:29:51 kn Exp $
 
 COMMENT =		virtual Python environment builder
 
@@ -22,6 +22,8 @@ TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR}
 
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	tests
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -37,8 +39,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${DOCS}
 	cd ${DOCSRC}/_build/html && pax -rw * ${DOCS}
 	mv ${PREFIX}/bin/virtualenv{,${MODPY_BIN_SUFFIX}}
-
-do-test:
-	cd ${WRKSRC}/tests && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

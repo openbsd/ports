@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/02/23 14:28:44 shadchin Exp $
+# $OpenBSD: Makefile,v 1.10 2019/03/25 14:29:51 kn Exp $
 
 COMMENT =		configuration system for Python applications
 
@@ -20,10 +20,11 @@ MODULES =		lang/python
 RUN_DEPENDS =		devel/py-ipython_genutils${MODPY_FLAVOR} \
 			devel/py-decorator${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =		${RUN_DEPENDS}
 
 MODPY_PI =		Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	traitlets
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -32,8 +33,5 @@ FLAVOR ?=
 RUN_DEPENDS +=		devel/py-enum34
 TEST_DEPENDS +=		devel/py-mock
 .endif
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest traitlets
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/01/03 19:19:48 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/25 14:29:50 kn Exp $
 
 COMMENT =	namespace control and lazy-import mechanism for Python
 
@@ -20,9 +20,6 @@ FLAVOR ?=
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
+MODPY_PYTEST =		Yes
 
 .include <bsd.port.mk>

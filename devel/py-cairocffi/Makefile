@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/19 19:11:58 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/25 14:29:50 kn Exp $
 
 COMMENT =		cffi-based cairo bindings for Python
 
@@ -18,16 +18,14 @@ MODULES =		lang/python
 
 RUN_DEPENDS =		devel/py-cffi${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =		${RUN_DEPENDS}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	lib/cairocffi
 
 FLAVORS =		python3
 FLAVOR ?=
-
-do-test:
-	cd ${WRKSRC}/lib && LC_CTYPE=en_US.UTF-8 ${MODPY_BIN} -m pytest cairocffi
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/25 14:29:52 kn Exp $
 
 COMMENT =		data analysis and manipulation library
 
@@ -22,6 +22,8 @@ FLAVOR ?=
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	pandas
 
 WANTLIB +=		${COMPILER_LIBCXX} m ${MODPY_WANTLIB}
 
@@ -41,7 +43,6 @@ TEST_DEPENDS +=		${RUN_DEPENDS} \
 			devel/py-html5lib${MODPY_FLAVOR} \
 			devel/py-ipykernel${MODPY_FLAVOR} \
 			devel/py-pathlib${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR} \
 			devel/py-xlsxwriter${MODPY_FLAVOR} \
 			graphics/py-matplotlib${MODPY_FLAVOR} \
 			math/py-bottleneck${MODPY_FLAVOR} \
@@ -55,8 +56,10 @@ TEST_DEPENDS +=		${RUN_DEPENDS} \
 			www/py-jinja2${MODPY_FLAVOR} \
 			x11/xclip
 
+TEST_ENV +=		TZ=UTC
+
 do-test:
 	cd ${WRKSRC} && ${MODPY_CMD} build_ext --inplace
-	cd ${WRKSRC} && env TZ=UTC ${MODPY_BIN} -m pytest pandas
+	@${MODPY_TEST_TARGET}
 
 .include <bsd.port.mk>

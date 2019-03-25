@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/06/06 08:56:56 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/25 14:29:52 kn Exp $
 
 COMMENT =		markdown to reStructuredText converter
 
@@ -17,12 +17,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODPY_PI =		Yes
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		textproc/py-mistune${MODPY_FLAVOR} \
 			textproc/py-docutils${MODPY_FLAVOR}
 
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =		${RUN_DEPENDS}
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -33,8 +33,5 @@ TEST_DEPENDS +=         devel/py-mock${MODPY_FLAVOR}
 
 post-install:
 	mv ${PREFIX}/bin/m2r{,${MODPY_BIN_SUFFIX}}
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

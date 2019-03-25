@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/04 21:43:44 mariani Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/25 14:29:52 kn Exp $
 
 COMMENT =	extract data from xls and xlsx spreadsheet files
 
@@ -19,16 +19,13 @@ MODULES =	lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS = 	Yes
+MODPY_PYTEST =		Yes
+PORTHOME =		${WRKDIR}
 
 FLAVORS =	python3
 FLAVOR ?=
 
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
-
 post-install:
 	mv ${PREFIX}/bin/runxlrd.py ${PREFIX}/bin/runxlrd${MODPY_BIN_SUFFIX}
-
-do-test:
-	@cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

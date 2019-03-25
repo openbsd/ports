@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/03/05 18:18:24 shadchin Exp $
+# $OpenBSD: Makefile,v 1.8 2019/03/25 14:29:50 kn Exp $
 
 COMMENT =		implementation of JSON Schema validation for Python
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	jsonschema
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -25,13 +27,9 @@ BUILD_DEPENDS =		devel/py-vcversioner${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-functools32
 .endif
 TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR}
 
 post-install:
 	mv ${PREFIX}/bin/jsonschema{,${MODPY_BIN_SUFFIX}}
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest jsonschema
 
 .include <bsd.port.mk>

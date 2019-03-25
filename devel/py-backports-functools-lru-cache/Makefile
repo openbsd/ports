@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/13 08:51:57 shadchin Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/25 14:29:50 kn Exp $
 
 COMMENT =		backport of the lru_cache from functools
 
@@ -18,12 +18,9 @@ RUN_DEPENDS =		devel/py-backports
 
 BUILD_DEPENDS =		devel/py-setuptools_scm
 
-TEST_DEPENDS =		devel/py-test
-
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest tests
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	tests
 
 .include <bsd.port.mk>

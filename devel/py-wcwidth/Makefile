@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/01/03 19:19:49 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2019/03/25 14:29:51 kn Exp $
 
 COMMENT=		measures number of terminal column cells of wide-char code
 
@@ -16,15 +16,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/python
 
-TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR}
-
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	wcwidth
 
 FLAVORS=		python3
 FLAVOR ?=
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest wcwidth
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/12/29 11:50:34 mariani Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/25 14:29:51 kn Exp $
 
 COMMENT =		Jupyter core package
 
@@ -15,8 +15,7 @@ MAINTAINER =		Elias M. Mariani <marianielias@gmail.com>
 RUN_DEPENDS =		devel/py-traitlets${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/ipython${MODPY_FLAVOR}>=5.1.0 \
-			devel/py-ipykernel${MODPY_FLAVOR}>=4.5.2 \
-			devel/py-test${MODPY_FLAVOR}
+			devel/py-ipykernel${MODPY_FLAVOR}>=4.5.2
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -25,6 +24,9 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	jupyter_core
+PORTHOME =		${WRKDIR}
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -37,8 +39,5 @@ post-install:
 	mv ${PREFIX}/bin/jupyter{,${MODPY_BIN_SUFFIX}}
 	mv ${PREFIX}/bin/jupyter-migrate{,${MODPY_BIN_SUFFIX}}
 	mv ${PREFIX}/bin/jupyter-troubleshoot{,${MODPY_BIN_SUFFIX}}
-
-do-test:
-	cd ${WRKSRC} && LC_CTYPE=en_US.UTF-8 ${MODPY_BIN} -m pytest jupyter_core
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/02/28 18:46:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/03/25 14:29:51 kn Exp $
 
 COMMENT=		cross-python path, ini-parsing, io, code, log facilities
 
@@ -15,17 +15,11 @@ MODULES=		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS=		python3
 FLAVOR?=
 
 BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
-TEST_DEPENDS +=		devel/py-test${MODPY_FLAVOR}
-
-TEST_ENV +=		LC_CTYPE=C.UTF-8
-
-do-test:
-	cd ${WRKSRC} && exec ${SETENV} ${MAKE_ENV} ${TEST_ENV} \
-		${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

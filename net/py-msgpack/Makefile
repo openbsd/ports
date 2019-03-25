@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/03/25 14:29:52 kn Exp $
 
 COMMENT =		messagepack (de)serializer
 
@@ -26,13 +26,9 @@ COMPILER =		base-clang ports-gcc base-gcc
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
+MODPY_PYTEST =		Yes
 
 FLAVORS=		python3
 FLAVOR?=
-
-do-test:
-	@cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

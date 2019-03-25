@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/11 18:45:11 shadchin Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/25 14:29:51 kn Exp $
 
 COMMENT =		fast and thorough lazy object proxy
 
@@ -20,14 +20,12 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	--ignore=src
 
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
-			devel/py-test-benchmark${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test-benchmark${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
-
-do-test:
-	@cd ${WRKSRC} && LC_CTYPE=C.UTF-8 ${MODPY_BIN} -m pytest --ignore=src
 
 .include <bsd.port.mk>

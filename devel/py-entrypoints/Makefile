@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/06/18 20:52:50 shadchin Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/25 14:29:50 kn Exp $
 
 COMMENT =		discover and load entry points from installed packages
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -26,8 +25,5 @@ FLAVOR ?=
 .if !${FLAVOR:Mpython3}
 RUN_DEPENDS +=		devel/py-configparser
 .endif
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest
 
 .include <bsd.port.mk>

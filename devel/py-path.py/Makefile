@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/22 17:23:54 shadchin Exp $
+# $OpenBSD: Makefile,v 1.12 2019/03/25 14:29:51 kn Exp $
 
 COMMENT =		os.path wrapper for Python
 
@@ -19,15 +19,13 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	--ignore=lib
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-appdirs${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-appdirs${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
-
-do-test:
-	cd ${WRKSRC} && LC_CTYPE=C.UTF-8 ${MODPY_BIN} -m pytest --ignore=lib
 
 .include <bsd.port.mk>

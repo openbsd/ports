@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/03 22:32:16 pvk Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/25 14:29:52 kn Exp $
 
 COMMENT =		pure-Python implementation of immutable URLs
 
@@ -15,14 +15,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	lib/hyperlink/test
 
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
-			net/py-idna${MODPY_FLAVOR}
+TEST_DEPENDS =		net/py-idna${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest lib/hyperlink/test
 
 .include <bsd.port.mk>

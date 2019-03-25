@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/01/03 19:19:49 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/25 14:29:51 kn Exp $
 
 COMMENT =		fixture for benchmarking code
 
@@ -21,10 +21,11 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	tests
 
 RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			${FULLPKGNAME}:${FULLPKGPATH}
+TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH}
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -32,8 +33,5 @@ FLAVOR ?=
 .if !${FLAVOR:Mpython3}
 RUN_DEPENDS +=		math/py-statistics
 .endif
-
-do-test:
-	@cd ${WRKSRC} && ${MODPY_BIN} -m pytest tests
 
 .include <bsd.port.mk>

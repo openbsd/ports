@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/09/06 15:50:41 danj Exp $
+# $OpenBSD: Makefile,v 1.8 2019/03/25 14:29:52 kn Exp $
 
 COMMENT =		console XMPP client
 
@@ -17,10 +17,14 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	-v test/
 
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 MODPY_DISTUTILS_BUILD =	build_ext --inplace
+
+
 
 BUILD_DEPENDS =		lang/cython
 # py-slixmpp is python3 only
@@ -29,10 +33,6 @@ RUN_DEPENDS =		net/py-aiodns${MODPY_FLAVOR} \
 			net/py-slixmpp
 
 TEST_DEPENDS =		${RUN_DEPENDS} \
-			${FULLPKGNAME}:${BUILD_PKGPATH} \
-			devel/py-test${MODPY_FLAVOR}
-
-do-test:
-	@cd ${WRKSRC} && ${MODPY_BIN} -m pytest -v test/
+			${FULLPKGNAME}:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>
