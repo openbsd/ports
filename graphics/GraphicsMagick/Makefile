@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.57 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2019/03/25 08:10:49 ajacoutot Exp $
 
 COMMENT=	image processing tools with stable ABI
 
-DISTNAME=	GraphicsMagick-1.3.30
+DISTNAME=	GraphicsMagick-1.3.31
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=graphicsmagick/}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 SHARED_LIBS=	GraphicsMagick		7.0 \
 		GraphicsMagick++	5.2 \
@@ -52,9 +51,8 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--with-perl \
 			--with-quantum-depth=16 \
 			--without-dps \
-			--without-fpx \
-			--without-gslib \
 			--without-trio \
+			--without-zstd \
 			--disable-ltdl-install \
 			--disable-openmp
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
