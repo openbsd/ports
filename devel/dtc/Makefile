@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/25 08:10:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2019/03/25 13:28:34 ajacoutot Exp $
 
 COMMENT=		Device Tree Compiler
 
 DISTNAME=		dtc-1.5.0
+REVISION=		0
 CATEGORIES=		sysutils devel
 MASTER_SITES=		http://www.kernel.org/pub/software/utils/dtc/
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS=		fdt	4.0
+SHARED_LIBS=		fdt	4.1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

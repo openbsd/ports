@@ -1,0 +1,20 @@
+$OpenBSD: patch-libfdt_version_lds,v 1.1 2019/03/25 13:28:34 ajacoutot Exp $
+
+Yet again, we've added several functions to libfdt that were supposed
+to be exported, but forgotten to add them to the versio.lds script.
+This adds them.
+
+Index: libfdt/version.lds
+--- libfdt/version.lds.orig
++++ libfdt/version.lds
+@@ -66,6 +66,10 @@ LIBFDT_1.2 {
+ 		fdt_resize;
+ 		fdt_overlay_apply;
+ 		fdt_get_string;
++		fdt_get_max_phandle;
++		fdt_check_full;
++		fdt_setprop_placeholder;
++		fdt_property_placeholder;
+ 	local:
+ 		*;
+ };
