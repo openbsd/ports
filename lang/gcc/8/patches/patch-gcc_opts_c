@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_opts_c,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
+$OpenBSD: patch-gcc_opts_c,v 1.2 2019/03/25 20:17:47 pascal Exp $
 Index: gcc/opts.c
 --- gcc/opts.c.orig
 +++ gcc/opts.c
@@ -28,7 +28,7 @@ Index: gcc/opts.c
      { OPT_LEVELS_3_PLUS, OPT_ftree_loop_distribute_patterns, NULL, 1 },
      { OPT_LEVELS_3_PLUS, OPT_ftree_loop_distribution, NULL, 1 },
      { OPT_LEVELS_3_PLUS, OPT_floop_interchange, NULL, 1 },
-@@ -807,6 +810,8 @@ finish_options (struct gcc_options *opts, struct gcc_o
+@@ -816,6 +819,8 @@ finish_options (struct gcc_options *opts, struct gcc_o
  	opts->x_flag_pic = 0;
        if (opts->x_flag_pic && !opts->x_flag_pie)
  	opts->x_flag_shlib = 1;
@@ -37,7 +37,7 @@ Index: gcc/opts.c
        opts->x_flag_opts_finished = true;
      }
  
-@@ -2068,6 +2073,11 @@ common_handle_option (struct gcc_options *opts,
+@@ -2077,6 +2082,11 @@ common_handle_option (struct gcc_options *opts,
      case OPT_Wframe_larger_than_:
        opts->x_frame_larger_than_size = value;
        opts->x_warn_frame_larger_than = value != -1;

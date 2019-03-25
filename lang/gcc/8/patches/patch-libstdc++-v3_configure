@@ -1,11 +1,11 @@
-$OpenBSD: patch-libstdc++-v3_configure,v 1.1.1.1 2019/01/04 15:50:40 pascal Exp $
+$OpenBSD: patch-libstdc++-v3_configure,v 1.2 2019/03/25 20:17:47 pascal Exp $
 
 *-openbsd* required for cross compiling libstdc++
 
 Index: libstdc++-v3/configure
 --- libstdc++-v3/configure.orig
 +++ libstdc++-v3/configure
-@@ -11013,7 +11013,7 @@ openbsd*)
+@@ -11015,7 +11015,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -14,7 +14,7 @@ Index: libstdc++-v3/configure
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -14697,7 +14697,7 @@ openbsd*)
+@@ -14699,7 +14699,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'

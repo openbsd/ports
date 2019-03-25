@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/03/24 16:47:48 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2019/03/25 20:17:46 pascal Exp $
 
 BROKEN-i386 = ld: error: cp-demangle.c:(.debug_info+0x30115): has non-ABS relocation R_386_GOTOFF against symbol '.LC60'
 
@@ -10,27 +10,26 @@ ONLY_FOR_ARCHS-ada = amd64 hppa i386 mips64 powerpc
 
 DPB_PROPERTIES = parallel
 
-V = 8.2.0
+V = 8.3.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 3
 
-ADASTRAP_LIBC-amd64 = 93.0
+ADASTRAP_LIBC-amd64 = 95.0
 ADASTRAP_LIBM-amd64 = 10.1
 ADASTRAP-amd64 = adastrap-amd64-$V-0.tar.xz
 ADASTRAP_LIBC-arm = 88.0
 ADASTRAP_LIBM-arm = 9.0
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
-ADASTRAP_LIBC-hppa = 93.0
+ADASTRAP_LIBC-hppa = 95.0
 ADASTRAP_LIBM-hppa = 10.1
 ADASTRAP-hppa = adastrap-hppa-$V-0.tar.xz
 ADASTRAP_LIBC-i386 = 93.0
 ADASTRAP_LIBM-i386 = 10.1
-ADASTRAP-i386 = adastrap-i386-$V-0.tar.xz
+ADASTRAP-i386 = adastrap-i386-8.2.0-0.tar.xz
 ADASTRAP_LIBC-mips64 = 93.0
 ADASTRAP_LIBM-mips64 = 10.1
-ADASTRAP-mips64 = adastrap-mips64-$V-0.tar.xz
-ADASTRAP_LIBC-powerpc = 93.0
+ADASTRAP-mips64 = adastrap-mips64-8.2.0-0.tar.xz
+ADASTRAP_LIBC-powerpc = 95.0
 ADASTRAP_LIBM-powerpc = 10.1
 ADASTRAP-powerpc = adastrap-powerpc-$V-0.tar.xz
 ADASTRAP_LIBC-sparc64 = 93.0

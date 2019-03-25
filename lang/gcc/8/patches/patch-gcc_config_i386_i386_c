@@ -1,10 +1,10 @@
 Backport: https://gcc.gnu.org/git/?p=gcc.git;a=commitdiff;h=b44e9be23d38be8997ae64d7509ac22cb4c556d6
 
-$OpenBSD: patch-gcc_config_i386_i386_c,v 1.1.1.1 2019/01/04 15:50:40 pascal Exp $
+$OpenBSD: patch-gcc_config_i386_i386_c,v 1.2 2019/03/25 20:17:47 pascal Exp $
 Index: gcc/config/i386/i386.c
 --- gcc/config/i386/i386.c.orig
 +++ gcc/config/i386/i386.c
-@@ -11672,6 +11672,7 @@ ix86_compute_frame_layout (void)
+@@ -11716,6 +11716,7 @@ ix86_compute_frame_layout (void)
  	}
      }
  
@@ -12,7 +12,7 @@ Index: gcc/config/i386/i386.c
    frame->nregs = ix86_nsaved_regs ();
    frame->nsseregs = ix86_nsaved_sseregs ();
  
-@@ -13731,6 +13732,9 @@ ix86_expand_prologue (void)
+@@ -13783,6 +13784,9 @@ ix86_expand_prologue (void)
  	  RTX_FRAME_RELATED_P (insn) = 1;
  	}
      }

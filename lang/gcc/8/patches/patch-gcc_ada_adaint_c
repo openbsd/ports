@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_ada_adaint_c,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
+$OpenBSD: patch-gcc_ada_adaint_c,v 1.2 2019/03/25 20:17:47 pascal Exp $
 Index: gcc/ada/adaint.c
 --- gcc/ada/adaint.c.orig
 +++ gcc/ada/adaint.c
@@ -13,7 +13,7 @@ Index: gcc/ada/adaint.c
  #if defined (__vxworks)
  
  /* Code to implement __gnat_set_file_time_name for these systems.  */
-@@ -3494,3 +3495,9 @@ void __gnat_killprocesstree (int pid, int sig_num)
+@@ -3502,3 +3503,9 @@ void __gnat_killprocesstree (int pid, int sig_num)
  #ifdef __cplusplus
  }
  #endif
