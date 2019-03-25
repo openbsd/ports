@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/03/12 22:12:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/03/25 03:13:32 sthen Exp $
 @option is-branch
 @pkgpath net/unifi
 @pkgpath net/unifi/5.7
@@ -29,6 +29,7 @@ share/unifi/dl/firmware/bundles.json
 @owner
 share/unifi/lib/
 share/unifi/lib/ace.jar
+share/unifi/lib/activation.jar
 share/unifi/lib/animal-sniffer-annotations-1.17.jar
 share/unifi/lib/annotations-3.0.1.jar
 share/unifi/lib/apache-cassandra-clientutil-1.2.15.jar

@@ -1,16 +1,25 @@
-# $OpenBSD: Makefile.inc,v 1.5 2019/02/19 22:44:40 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2019/03/25 03:13:32 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
 MASTER_SITES?=	http://dl.ubnt.com/unifi/${V}${BUILD_V}/
 
+JAF=		jaf-1_1_1.zip
 DISTFILES=	unifi-$V{UniFi.unix}.zip \
 		unifi_sh_api-$V{unifi_sh_api} \
 		snappy-java-${SNAPPY_V}.jar:0 \
 		UBNT-MIB:1 \
-		UBNT-UniFi-MIB:1
-EXTRACT_ONLY=	unifi-$V.zip
+		UBNT-UniFi-MIB:1 \
+		${JAF}
+EXTRACT_ONLY=	unifi-$V.zip ${JAF}
 PKGNAME=	unifi-$V
+
+# see https://community.ubnt.com/t5/UniFi-Wireless/Running-Unifi-Controller-on-Java-9-10-and-11/td-p/2532928
+# sorry about the manual fetch, hopefully ubnt will add it themselves sometime
+FETCH_MANUALLY+= "${JAF} must be fetched manually and placed in ${FULLDISTDIR}."
+FETCH_MANUALLY+= "Open https://www.oracle.com/technetwork/java/jaf11-139815.html,"
+FETCH_MANUALLY+= "click Download, find \"JavaBeans Activation Framework 1.1.1\","
+FETCH_MANUALLY+= "agree to the license and click the download link."
 
 # newer unifi uses newer snappy-java, but upstream stopped distributing
 # openbsd .so's. use a locally built one to replace.
@@ -62,6 +71,8 @@ post-extract:
 do-configure:
 	@if ! [ -r ${WRKSRC}/lib/snappy-java-${SNAPPY_V}.jar ]; then echo "** Version mismatch in snappy-java"; ls -l ${WRKSRC}/lib/snappy-java*; exit 1; fi
 	cp ${FULLDISTDIR}/snappy-java-${SNAPPY_V}.jar ${WRKSRC}/lib/
+	@if [ -r ${WRKSRC}/lib/activation.jar ]; then echo "** Check activation.jar, did upstream start including it?"; ls -l ${WRKSRC}/lib/activation.jar ${WRKSRC}/lib/activation.jar; exit 1; fi
+	cp ${WRKDIR}/jaf-1.1.1/activation.jar ${WRKSRC}/lib/
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}{,/backup,/data,/run,/work}
