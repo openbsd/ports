@@ -1,5 +1,6 @@
-$OpenBSD: patch-gio_gdbusprivate_c,v 1.1 2019/03/23 08:51:15 stsp Exp $
+$OpenBSD: patch-gio_gdbusprivate_c,v 1.2 2019/03/25 09:18:54 stsp Exp $
 Fix use-after-free triggered by gnome-session-binary when Gnome restarts.
+https://gitlab.gnome.org/GNOME/glib/merge_requests/741/
 
 ostream_flush_cb() was calling flush_data_list_complete() with a single
 element list with an item that had already been freed:
@@ -20,7 +21,45 @@ https://developer.gnome.org/glib/stable/glib-Threads.html#g-cond-wait
 Index: gio/gdbusprivate.c
 --- gio/gdbusprivate.c.orig
 +++ gio/gdbusprivate.c
-@@ -1788,10 +1788,17 @@ _g_dbus_worker_flush_sync (GDBusWorker    *worker,
+@@ -1190,13 +1190,6 @@ ostream_flush_cb (GObject      *source_object,
+         }
+     }
+ 
+-  g_assert (data->flushers != NULL);
+-  flush_data_list_complete (data->flushers, error);
+-  g_list_free (data->flushers);
+-
+-  if (error != NULL)
+-    g_error_free (error);
+-
+   /* Make sure we tell folks that we don't have additional
+      flushes pending */
+   g_mutex_lock (&data->worker->write_lock);
+@@ -1205,6 +1198,12 @@ ostream_flush_cb (GObject      *source_object,
+   data->worker->output_pending = PENDING_NONE;
+   g_mutex_unlock (&data->worker->write_lock);
+ 
++  g_assert (data->flushers != NULL);
++  flush_data_list_complete (data->flushers, error);
++  g_list_free (data->flushers);
++  if (error != NULL)
++    g_error_free (error);
++
+   /* OK, cool, finally kick off the next write */
+   continue_writing (data->worker);
+ 
+@@ -1373,6 +1372,10 @@ iostream_close_cb (GObject      *source_object,
+   g_assert (worker->output_pending == PENDING_CLOSE);
+   worker->output_pending = PENDING_NONE;
+ 
++  /* Ensure threads waiting for pending flushes to finish will be unblocked. */
++  worker->write_num_messages_flushed =
++    worker->write_num_messages_written + g_list_length(pending_flush_attempts);
++
+   g_mutex_unlock (&worker->write_lock);
+ 
+   while (pending_close_attempts != NULL)
+@@ -1788,10 +1791,17 @@ _g_dbus_worker_flush_sync (GDBusWorker    *worker,
  
    if (data != NULL)
      {
