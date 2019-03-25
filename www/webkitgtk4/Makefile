@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2019/03/14 09:48:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2019/03/25 14:03:49 cwen Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -13,6 +13,7 @@ PORTROACH =		limitw:1,even
 COMMENT =		GTK+ port of the WebKit rendering engine
 
 V =			2.24.0
+REVISION =		0
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 EXTRACT_SUFX =		.tar.xz
@@ -110,6 +111,12 @@ LDFLAGS +=		-Wl,--no-keep-memory
 .if ${MACHINE_ARCH} == "i386"
 CFLAGS +=		-march=i686
 CXXFLAGS +=		-march=i686
+.endif
+
+.if ${MACHINE_ARCH} == "powerpc"
+CFLAGS +=		-mlongcall
+CXXFLAGS +=		-mlongcall
+LDFLAGS +=		-Wl,--relax
 .endif
 
 post-extract:
