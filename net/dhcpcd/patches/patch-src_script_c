@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_script_c,v 1.1 2019/03/25 14:41:55 sthen Exp $
+
+script: Fix not running when empty string or /dev/null
+17480d3e1 and 97bb6029
+
+Index: src/script.c
+--- src/script.c.orig
++++ src/script.c
+@@ -704,9 +704,7 @@ script_runreason(const struct interface *ifp, const ch
+ 	int status = 0;
+ 	struct fd_list *fd;
+ 
+-	if (ifp->options->script &&
+-	    (ifp->options->script[0] == '\0' ||
+-	    strcmp(ifp->options->script, "/dev/null") == 0) &&
++	if (ifp->options->script == NULL &&
+ 	    TAILQ_FIRST(&ifp->ctx->control_fds) == NULL)
+ 		return 0;
+ 
+@@ -717,9 +715,7 @@ script_runreason(const struct interface *ifp, const ch
+ 		return -1;
+ 	}
+ 
+-	if (ifp->options->script &&
+-	    (ifp->options->script[0] == '\0' ||
+-	    strcmp(ifp->options->script, "/dev/null") == 0))
++	if (ifp->options->script == NULL)
+ 		goto send_listeners;
+ 
+ 	argv[0] = ifp->options->script ? ifp->options->script : UNCONST(SCRIPT);

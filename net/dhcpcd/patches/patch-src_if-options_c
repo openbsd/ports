@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_if-options_c,v 1.1 2019/03/25 14:41:55 sthen Exp $
+
+script: Fix not running when empty string or /dev/null
+17480d3e1
+
+Index: src/if-options.c
+--- src/if-options.c.orig
++++ src/if-options.c
+@@ -709,6 +709,10 @@ parse_option(struct dhcpcd_ctx *ctx, const char *ifnam
+ 	case 'c':
+ 		ARG_REQUIRED;
+ 		free(ifo->script);
++		if (*arg == '\0' || strcmp(arg, "/dev/null") == 0) {
++			ifo->script = NULL;
++			break;
++		}
+ 		ifo->script = strdup(arg);
+ 		if (ifo->script == NULL)
+ 			logerr(__func__);
