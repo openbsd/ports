@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.6 2018/10/17 08:27:44 ajacoutot Exp $
+$OpenBSD: patch-Makefile,v 1.7 2019/03/25 08:10:00 ajacoutot Exp $
 
 Index: Makefile
 --- Makefile.orig
@@ -14,7 +14,7 @@ Index: Makefile
  
  BISON = bison
  LEX = flex
-@@ -50,7 +50,7 @@ SHAREDLIB_LDFLAGS = -shared -Wl,--version-script=$(LIB
+@@ -65,7 +65,7 @@ SHAREDLIB_LDFLAGS = -shared -Wl,--version-script=$(LIB
  else
  SHAREDLIB_EXT     = so
  SHAREDLIB_CFLAGS  = -fPIC
@@ -23,25 +23,25 @@ Index: Makefile
  endif
  
  #
-@@ -135,7 +135,7 @@ all: $(BIN) libfdt
+@@ -150,7 +150,7 @@ all: $(BIN) libfdt
  check_python_deps = \
- 	if $(PKG_CONFIG) --cflags python2 >/dev/null 2>&1; then \
+ 	if $(PKG_CONFIG) --cflags $(PYTHON) >/dev/null 2>&1; then \
  		if which swig >/dev/null 2>&1; then \
 -			can_build=yes; \
 +			can_build=no; \
  		fi; \
  	fi; \
  	if [ "$${can_build}" = "yes" ]; then \
-@@ -170,7 +170,7 @@ endif
- LIBFDT_objdir = libfdt
- LIBFDT_srcdir = libfdt
- LIBFDT_archive = $(LIBFDT_objdir)/libfdt.a
--LIBFDT_lib = $(LIBFDT_objdir)/libfdt-$(DTC_VERSION).$(SHAREDLIB_EXT)
-+LIBFDT_lib = $(LIBFDT_objdir)/libfdt.$(SHAREDLIB_EXT).${libfdt_ltversion}
- LIBFDT_include = $(addprefix $(LIBFDT_srcdir)/,$(LIBFDT_INCLUDES))
- LIBFDT_version = $(addprefix $(LIBFDT_srcdir)/,$(LIBFDT_VERSION))
+@@ -184,7 +184,7 @@ endif
+ #
+ LIBFDT_dir = libfdt
+ LIBFDT_archive = $(LIBFDT_dir)/libfdt.a
+-LIBFDT_lib = $(LIBFDT_dir)/libfdt-$(DTC_VERSION).$(SHAREDLIB_EXT)
++LIBFDT_lib = $(LIBFDT_dir)/libfdt.$(SHAREDLIB_EXT).${libfdt_ltversion}
+ LIBFDT_include = $(addprefix $(LIBFDT_dir)/,$(LIBFDT_INCLUDES))
+ LIBFDT_version = $(addprefix $(LIBFDT_dir)/,$(LIBFDT_VERSION))
  
-@@ -206,8 +206,6 @@ install-lib: all
+@@ -215,8 +215,6 @@ install-lib: all
  	@$(VECHO) INSTALL-LIB
  	$(INSTALL) -d $(DESTDIR)$(LIBDIR)
  	$(INSTALL_LIB) $(LIBFDT_lib) $(DESTDIR)$(LIBDIR)
@@ -50,22 +50,7 @@ Index: Makefile
  	$(INSTALL_DATA) $(LIBFDT_archive) $(DESTDIR)$(LIBDIR)
  
  install-includes:
-@@ -321,12 +319,12 @@ clean: libfdt_clean pylibfdt_clean tests_clean
- # Generic compile rules
- #
- %: %.o
--	@$(VECHO) LD $@
-+	@$(VECHO) LD $(LDFLAGS) $@
- 	$(LINK.c) -o $@ $^
- 
- %.o: %.c
- 	@$(VECHO) CC $@
--	$(CC) $(CPPFLAGS) $(CFLAGS) -o $@ -c $<
-+	$(CC) $(CPPFLAGS) $(LDFLAGS) $(CFLAGS) -o $@ -c $<
- 
- %.o: %.S
- 	@$(VECHO) AS $@
-@@ -354,7 +352,7 @@ clean: libfdt_clean pylibfdt_clean tests_clean
+@@ -358,7 +356,7 @@ clean: libfdt_clean pylibfdt_clean tests_clean
  
  $(LIBFDT_lib):
  	@$(VECHO) LD $@

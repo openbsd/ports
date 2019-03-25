@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2018/10/17 08:27:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2019/03/25 08:10:00 ajacoutot Exp $
 
 COMMENT=		Device Tree Compiler
 
-DISTNAME=		dtc-1.4.7
+DISTNAME=		dtc-1.5.0
 CATEGORIES=		sysutils devel
 MASTER_SITES=		http://www.kernel.org/pub/software/utils/dtc/
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS=		fdt	3.0
+SHARED_LIBS=		fdt	4.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,11 +17,11 @@ WANTLIB += c
 BUILD_DEPENDS=		devel/bison
 
 MAKE_ENV+=		V=1
-MAKE_FLAGS+=		PREFIX="${PREFIX}" LIBDL=""
+MAKE_FLAGS+=		PREFIX="${PREFIX}" LIBDL="" NO_VALGRIND="1" NO_YAML="1"
 
 USE_GMAKE=		Yes
 
-TEST_TARGET= 		check
+NO_TEST=		Yes
 
 post-extract:
 	@perl -pi -e 's,#! /bin/bash,#!${LOCALBASE}/bin/bash,' \
