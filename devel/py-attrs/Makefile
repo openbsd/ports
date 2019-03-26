@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/25 14:29:50 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/26 00:57:16 danj Exp $
 
 COMMENT =		classes without boilerplate
 
-MODPY_EGG_VERSION =	17.4.0
+MODPY_EGG_VERSION =	18.2.0
 
 DISTNAME =		attrs-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
