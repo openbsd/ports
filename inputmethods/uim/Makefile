@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2019/03/11 11:16:05 bentley Exp $
+# $OpenBSD: Makefile,v 1.64 2019/03/26 17:04:25 jca Exp $
 
 DPB_PROPERTIES=		tag:kde3
 
@@ -116,7 +116,8 @@ CONFIGURE_ARGS=		--with-qt \
 			--with-qt4 \
 			--with-qt4-immodule \
 			--with-anthy-utf8 \
-			--with-libgcroots
+			--with-libgcroots \
+			--without-m17nlib
 
 post-install:
 	rm ${PREFIX}/lib/uim/plugin/*.{a,la}
