@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2016/09/08 12:54:14 dcoppa Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2019/03/26 15:20:34 sthen Exp $
 
 COMMENT-main ?=	Java servlet and Java server pages server
 COMMENT-examples =example applications and full documentation
@@ -23,8 +23,7 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 MULTI_PACKAGES = -main -examples
 
 MODULES =	java
-MODJAVA_VER =	1.6+
-MODJAVA_JRERUN =Yes
+MODJAVA_VER =	1.8+
 
 RUN_DEPENDS =	java/javaPathHelper
 
