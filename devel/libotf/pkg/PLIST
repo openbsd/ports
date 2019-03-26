@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/26 16:44:12 sthen Exp $
+bin/libotf-config
+@bin bin/otfdump
+@bin bin/otflist
+@bin bin/otftobdf
+include/otf.h
+lib/libotf.a
+lib/libotf.la
+@lib lib/libotf.so.${LIBotf_VERSION}
+lib/pkgconfig/libotf.pc
