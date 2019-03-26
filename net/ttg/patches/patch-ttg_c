@@ -1,7 +1,8 @@
-$OpenBSD: patch-ttg_c,v 1.2 2014/03/25 01:45:27 sthen Exp $
---- ttg.c.orig	Tue Mar 25 01:40:21 2014
-+++ ttg.c	Tue Mar 25 01:41:22 2014
-@@ -126,15 +126,6 @@ int main(int argc, char **argv) {
+$OpenBSD: patch-ttg_c,v 1.3 2019/03/26 21:33:52 sthen Exp $
+Index: ttg.c
+--- ttg.c.orig
++++ ttg.c
+@@ -127,15 +127,6 @@ int main(int argc, char **argv) {
      if((argc-optind)!=3)
          usage();
  
@@ -17,19 +18,19 @@ $OpenBSD: patch-ttg_c,v 1.2 2014/03/25 01:45:27 sthen Exp $
      S_MB=S_KB*S_KB;
      S_GB=S_KB*S_KB*S_KB;
  
-@@ -610,7 +601,7 @@ void version(void) {
+@@ -646,7 +637,7 @@ void version(void) {
          "SNMP Text Traffic Grapher\n"
-         "Copyright (c) 2005 - 2012 by Antoni Sawicki\n" 
+         "Released under MIT License\n" 
          "Version %s [Build: %s, %s]\n"
 -        "NET-SNMP Libraries=%s Headers=%s\n"
 +        "NET-SNMP Libraries=%s\n"
          "GCC Version %s\n"
          "Kilo=%d (default)\n"
-         "Homepage: http://www.tenox.tc/out#ttg\n"
-@@ -620,7 +611,7 @@ void version(void) {
-         "  mike@mk.tc\n"
-         "  tommy@ntinternals.net\n"
-         "  piston@otel.net\n",
+         "Homepage: http://www.tenox.net/out#ttg\n"
+@@ -656,7 +647,7 @@ void version(void) {
+         "  Tomasz Nowak <tommy@ntinternals.net>\n"
+         "  S.Ivanov <piston@otel.net>\n"
+         "  Petr Laznovsky <lazna@volny.cz>\n",
 -        VERSION, __DATE__, __TIME__, netsnmp_get_version(), PACKAGE_VERSION, __VERSION__, (int)S_KB);
 +        VERSION, __DATE__, __TIME__, netsnmp_get_version(), __VERSION__, (int)S_KB);
      exit(0);

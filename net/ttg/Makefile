@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2015/12/03 21:24:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/03/26 21:33:52 sthen Exp $
 
 COMMENT=	live CLI display of interface bandwidth, using SNMP
 
-DISTNAME=	ttg-2.1
+GH_ACCOUNT=	tenox7
+GH_PROJECT=	ttg
+GH_TAGNAME=	2.2
 
 CATEGORIES=	net
 
@@ -14,9 +16,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c netsnmp
-
-# Mirrored from http://www.tenox.tc/out/ttg.c
-MASTER_SITES=	https://spacehopper.org/mirrors/
 
 LIB_DEPENDS=	net/net-snmp
 
