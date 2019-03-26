@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib-src_FileDialog_Makefile_am,v 1.1 2019/03/26 18:26:45 rapha Exp $
+
+- do not build a shared library
+
+Index: lib-src/FileDialog/Makefile.am
+--- lib-src/FileDialog/Makefile.am.orig
++++ lib-src/FileDialog/Makefile.am
+@@ -1,6 +1,6 @@
+ ACLOCAL_AMFLAGS = -I m4
+ 
+-lib_LTLIBRARIES = libFileDialog.la
++noinst_LTLIBRARIES = libFileDialog.la
+ 
+ libFileDialog_la_LIBTOOLFLAGS = --tag=CXX
+ libFileDialog_la_CPPFLAGS = $(WX_CXXFLAGS) -Wno-deprecated-declarations

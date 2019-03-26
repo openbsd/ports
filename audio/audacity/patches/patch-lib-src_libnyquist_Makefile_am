@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib-src_libnyquist_Makefile_am,v 1.1 2019/03/26 18:26:45 rapha Exp $
+
+- don't use the bundled portaudio and sndfile libraries
+
+Index: lib-src/libnyquist/Makefile.am
+--- lib-src/libnyquist/Makefile.am.orig
++++ lib-src/libnyquist/Makefile.am
+@@ -2,9 +2,6 @@
+ # Makefile(.in) for libnyquist using Autotools (but not libtool).
+ # Written by Richard Ash following Gary Vaughan's Autobook
+ 
+-PORTAUDIO_CFLAGS = -I${srcdir}/../portaudio-v19/include
+-SNDFILE_CFLAGS = -I${builddir}/../libsndfile/src
+-
+ # tell aclocal that extra macros can be found in autotools/m4/
+ ACLOCAL_AMFLAGS = -I autotools/m4
+ 

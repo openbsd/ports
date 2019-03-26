@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2019/03/10 11:45:50 ajacoutot Exp $
-
-BROKEN=		missing portmidi support
+# $OpenBSD: Makefile,v 1.59 2019/03/26 18:26:45 rapha Exp $
 
 COMMENT=	free audio editor
 
@@ -11,40 +9,60 @@ CATEGORIES=	audio
 
 MASTER_SITES=	https://github.com/audacity/audacity/archive/
 
-HOMEPAGE=	http://audacity.sourceforge.net/
+HOMEPAGE=	https://www.audacityteam.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 
-# XXX WANTLIB
+WANTLIB += ${COMPILER_LIBCXX} FLAC FLAC++ ICE SDL2 SM SoundTouch
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender Xxf86vm atk-1.0 atk-bridge-2.0 c cairo
+WANTLIB += cairo-gobject epoxy expat ffi fontconfig freetype fribidi
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv id3tag intl
+WANTLIB += jpeg m mad mspack notify ogg pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png16 portaudio portmidi
+WANTLIB += samplerate sndfile sndio soxr tiff usbhid vorbis vorbisenc
+WANTLIB += vorbisfile wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
+WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0 wx_gtk3u_html-3.0
+WANTLIB += wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0 xcb xcb-render xcb-shm
+WANTLIB += z db jack
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-BUILD_DEPENDS=	archivers/zip \
+MODULES=	lang/python
+MODPY_RUNDEP=	No
+
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		archivers/zip \
 		devel/gettext-tools \
+		devel/libtool \
 		shells/bash
 LIB_DEPENDS=	x11/wxWidgets>=3.0.4 \
+		audio/jack \
 		audio/libsoxr \
 		audio/flac \
 		audio/libvorbis \
 		audio/libid3tag \
 		audio/libmad \
 		audio/portaudio-svn>=1406p1 \
-		audio/soundtouch \
-		audio/taglib
-# XXX libtool/ld(1) fail to find libvamp-hostsdk.so
-#LIB_DEPENDS+=	audio/vamp-plugin-sdk>=2.2.1p0
+		audio/portmidi \
+		audio/soundtouch
 RUN_DEPENDS=	devel/desktop-file-utils \
-		misc/shared-mime-info
+		misc/shared-mime-info \
+		x11/gtk+3,-guic
+
+SEPARATE_BUILD= No
 
 USE_GMAKE=		Yes
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CC="${CC}" CXX="${CXX}" OBJCXX="${CXX}" \
 			CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			CFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include ${CFLAGS}" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib ${LDFLAGS}"
-# Silence noisy warnings
-CONFIGURE_ENV+=		CXXFLAGS="-Wno-inconsistent-missing-override ${CXXFLAGS}"
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} \
 			${WRKSRC}/lib-src/lib-widget-extra \
@@ -64,27 +82,29 @@ CONFIGURE_ARGS=		--enable-unicode \
 			--with-libmad=system \
 			--with-libflac=system \
 			--with-libid3tag=system \
+			--with-lv2=local \
+			--with-midi=yes \
 			--with-portaudio=system \
+			--with-portmidi=system \
 			--with-soundtouch=system \
 			--without-libtwolame \
 			--without-ffmpeg \
 			--without-redland \
-			--without-slv2 \
 			--without-liblrdf \
 			--without-portmixer
 # XXX libtool/ld(1) fail to find libvamp-hostsdk.so
-CONFIGURE_ARGS+= 	--with-libvamp=no
+CONFIGURE_ARGS+= 	--without-libvamp
 
 WRKDIST=		${WRKDIR}/audacity-${DISTNAME}
 
-# Regression tests are in the source tarball but as of 2007, they have
-# not been updated for 3 years ; as they're completely out-of-sync with
-# the ongoing development, there's no point in running them 
 NO_TEST=	Yes
 
 # dummy Makefile to disable portmixer
 post-extract:
 	printf 'all:\ninstall:\n' > ${WRKSRC}/lib-src/portmixer/Makefile
+
+do-gen:
+	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} autoreconf -fi
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps

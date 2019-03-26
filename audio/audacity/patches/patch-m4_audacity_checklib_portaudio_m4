@@ -1,0 +1,18 @@
+$OpenBSD: patch-m4_audacity_checklib_portaudio_m4,v 1.1 2019/03/26 18:26:45 rapha Exp $
+
+- force-disable check for Pa_GetStreamHostApiType, likely not needed
+  anyway. (Seems only used in portmixer, which we disable.) We want to
+  try to use audio/portaudio instead.
+
+Index: m4/audacity_checklib_portaudio.m4
+--- m4/audacity_checklib_portaudio.m4.orig
++++ m4/audacity_checklib_portaudio.m4
+@@ -16,7 +16,7 @@ AC_DEFUN([AUDACITY_CHECKLIB_PORTAUDIO], [
+ 
+    if test "$PORTAUDIO_SYSTEM_AVAILABLE" = "yes"; then
+       AC_EGREP_HEADER([Pa_GetStreamHostApiType], [portaudio.h],
+-                      [have_portaudio_support=yes], [have_portaudio_support=no])
++                      [have_portaudio_support=yes], [have_portaudio_support=yes])
+ 
+       if test "$have_portaudio_support" = "yes"; then
+          PORTAUDIO_SYSTEM_AVAILABLE="yes"

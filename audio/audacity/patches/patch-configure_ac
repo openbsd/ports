@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure_ac,v 1.1 2019/03/26 18:26:45 rapha Exp $
+
+- do not use -latomic with clang
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -208,9 +208,6 @@ dnl Check if $CXX is clang by evaluating the version s
+ dnl $ax_cv_cxx_compiler_vendor seems not to work (it is either "gnu" or just empty).
+ dnl If $CXX is clang (string is found), grep returns 0 and the if is executed.
+ dnl Use /dev/null to suppress grep output to shell.
+-if ($CXX --version | grep 'clang version' > /dev/null); then
+-    LDFLAGS="${LDFLAGS} -latomic"
+-fi
+ 
+ if test x$enable_sse = xyes; then
+ 

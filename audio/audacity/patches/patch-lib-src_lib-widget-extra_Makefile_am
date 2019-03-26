@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib-src_lib-widget-extra_Makefile_am,v 1.1 2019/03/26 18:26:45 rapha Exp $
+
+- do not build a shared library
+
+Index: lib-src/lib-widget-extra/Makefile.am
+--- lib-src/lib-widget-extra/Makefile.am.orig
++++ lib-src/lib-widget-extra/Makefile.am
+@@ -5,7 +5,7 @@ EXTRA_DIST = libwidgetextra.pc.in
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = libwidgetextra.pc
+ 
+-lib_LTLIBRARIES = libwidgetextra.la
++noinst_LTLIBRARIES = libwidgetextra.la
+ 
+ libwidgetextra_la_CPPFLAGS = $(WX_CXXFLAGS) -Wno-deprecated-declarations
+ libwidgetextra_la_LIBADD = $(WX_LIBS)
