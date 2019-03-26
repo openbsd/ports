@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: unifi.rc,v 1.3 2019/03/25 03:13:32 sthen Exp $
+# $OpenBSD: unifi.rc,v 1.4 2019/03/26 21:27:37 sthen Exp $
 
 daemon="${TRUEPREFIX}/share/unifi/lib/ace.jar"
 daemon_user="_unifi"
@@ -15,7 +15,7 @@ rc_reload=NO
 
 rc_start() {
 	cd ${LOCALBASE}/share/unifi
-	${rcexec} "${java} ${daemon_flags} -cp 'lib/*' com/ubnt/ace/Launcher ui"
+	${rcexec} "${java} ${daemon_flags} -cp 'lib/*' com/ubnt/ace/Launcher start"
 }
 
 rc_cmd $1
