@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.44 2019/03/24 13:32:49 ajacoutot Exp $
+$OpenBSD: README-main,v 1.45 2019/03/26 18:22:04 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -34,9 +34,6 @@ GDM greeter language and character set is configured in:
     ${SYSCONFDIR}/gdm/locale.conf
 Note that the variables set in this file will be inherited by the user session.
 They can be unset/overriden in the user's .profile file.
-
-It is *not* possible to change the GDM greeter keyboard input layout due to the
-lack of systemd-localed support on OpenBSD.
 
 Alternative (non-GDM) GNOME startup
 -----------------------------------
