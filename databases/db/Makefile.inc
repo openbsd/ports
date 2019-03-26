@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.37 2016/03/12 16:45:57 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.38 2019/03/26 15:18:27 sthen Exp $
 
 COMMENT-main=	Berkeley DB package, revision ${REV}
 COMMENT-tcl=	TCL bindings for Berkeley DB, revision ${REV}
@@ -67,8 +67,7 @@ NO_TEST=	Yes
 .if ${BUILD_PACKAGES:M-java}
 CONFIGURE_ARGS+=--enable-java
 MODULES+=	java
-MODJAVA_VER=	1.4+
-MODJAVA_JRERUN=	Yes
+MODJAVA_VER=	1.8+
 CONFIGURE_ENV+=	JAVAC=${JAVA_HOME}/bin/javac \
 		JAR=${JAVA_HOME}/bin/jar \
 		JAVA=${JAVA_HOME}/bin/java
