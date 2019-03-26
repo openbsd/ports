@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2019/02/13 12:46:41 landry Exp $
+# $OpenBSD: Makefile,v 1.75 2019/03/26 06:39:00 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 COMMENT-perl =	perl bindings for GDAL
 
-V =		2.4.0
+V =		2.4.1
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
@@ -15,7 +15,6 @@ FULLPKGNAME-python =	py-${DISTNAME}
 FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
 FULLPKGNAME-perl =	p5-Geo-GDAL-${V}
 FULLPKGPATH-perl =	geo/gdal,-perl
-REVISION-python = 0
 
 SHARED_LIBS =	gdal 34.0 #25.0
 CATEGORIES =	geo devel
@@ -81,8 +80,8 @@ WANTLIB-perl += pq pthread qhull spatialite sqlite3 ssl tiff xml2 webp z zstd
 
 BUILD_DEPENDS +=	${RUN_DEPENDS} math/py-numpy${MODPY_FLAVOR} devel/swig
 
-TEST_DEPENDS +=		devel/py-test${MODPY_FLAVOR} \
-			${FULLPKGNAME-python}:${FULLPKGPATH-python}
+MODPY_PYTEST =		Yes
+TEST_DEPENDS +=		${FULLPKGNAME-python}:${FULLPKGPATH-python}
 TEST_ENV =		GDAL_DOWNLOAD_TEST_DATA=1 GDAL_RUN_SLOW_TESTS=yes
 
 MODPY_SETUPTOOLS =	Yes
@@ -148,5 +147,7 @@ post-install:
 
 do-test:
 	cd ${WRKSRC}/autotest && env ${TEST_ENV} ${MODPY_BIN} -m pytest
+#	doesnt work, pytest needs to be run from within the tests dir
+#	${MODPY_TEST_TARGET}
 
 .include <bsd.port.mk>
