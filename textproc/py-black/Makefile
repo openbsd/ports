@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/18 02:11:32 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/26 01:02:47 danj Exp $
 
 COMMENT =		python code formatter
 
-MODPY_EGG_VERSION =	18.9b0
+MODPY_EGG_VERSION =	19.3b0
 DISTNAME =		black-${MODPY_EGG_VERSION}
 PKGNAME =		py-black-${MODPY_EGG_VERSION:S/b/beta/}
 
