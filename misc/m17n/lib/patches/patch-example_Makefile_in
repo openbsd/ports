@@ -1,0 +1,14 @@
+$OpenBSD: patch-example_Makefile_in,v 1.1.1.1 2019/03/26 16:46:59 sthen Exp $
+
+Index: example/Makefile.in
+--- example/Makefile.in.orig
++++ example/Makefile.in
+@@ -500,7 +500,7 @@ m17n_conv_SOURCES = mconv.c
+ m17n_conv_LDADD = ${common_ldflags}
+ X_LD_FLAGS = ${X_PRE_LIBS} ${X_LIBS} @XAW_LD_FLAGS@ @X11_LD_FLAGS@ ${X_EXTRA_LIBS}
+ m17n_edit_SOURCES = medit.c
+-m17n_edit_LDADD = ${X_LD_FLAGS} ${common_ldflags_gui} -ldl
++m17n_edit_LDADD = ${X_LD_FLAGS} ${common_ldflags_gui}
+ m17n_view_SOURCES = mview.c
+ m17n_view_LDADD = ${X_LD_FLAGS} ${common_ldflags_gui}
+ m17n_dump_SOURCES = mdump.c

@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/26 16:46:59 sthen Exp $
+@bin bin/m17n-conv
+@bin bin/m17n-date
+@bin bin/m17n-dump
+@bin bin/m17n-edit
+@bin bin/m17n-view
+include/m17n-X.h
+include/m17n-core.h
+include/m17n-flt.h
+include/m17n-gui.h
+include/m17n-misc.h
+include/m17n.h
+lib/libm17n-core.la
+@lib lib/libm17n-core.so.${LIBm17n-core_VERSION}
+lib/libm17n-flt.la
+@lib lib/libm17n-flt.so.${LIBm17n-flt_VERSION}
+lib/libm17n-gui.la
+@lib lib/libm17n-gui.so.${LIBm17n-gui_VERSION}
+lib/libm17n.la
+@lib lib/libm17n.so.${LIBm17n_VERSION}
+lib/m17n/
+lib/m17n/1.0/
+lib/m17n/1.0/libm17n-X.la
+lib/m17n/1.0/libm17n-X.so
+lib/m17n/1.0/libm17n-gd.la
+lib/m17n/1.0/libm17n-gd.so
+lib/m17n/1.0/libmimx-anthy.la
+lib/m17n/1.0/libmimx-anthy.so
+lib/m17n/1.0/libmimx-ispell.la
+lib/m17n/1.0/libmimx-ispell.so
+lib/pkgconfig/m17n-core.pc
+lib/pkgconfig/m17n-flt.pc
+lib/pkgconfig/m17n-gui.pc
+lib/pkgconfig/m17n-shell.pc
