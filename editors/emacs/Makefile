@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2018/11/27 13:53:29 jca Exp $
+# $OpenBSD: Makefile,v 1.83 2019/03/26 16:19:36 jca Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
@@ -52,6 +52,10 @@ SUBST_VARS=		GCCARCH VERSION
 
 LIB_DEPENDS=		security/gnutls \
 			textproc/libxml
+
+# XXX enable for graphical flavors?
+CONFIGURE_ARGS+=	--without-libotf \
+			--without-m17n-flt
 
 .if ${FLAVOR} == "no_x11"
 CONFIGURE_ARGS+=	--without-x \
