@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/03/04 14:34:32 jca Exp $
+# $OpenBSD: Makefile,v 1.19 2019/03/27 23:28:00 ajacoutot Exp $
 
 COMMENT =	user interface library from pwmt
 DISTNAME =	girara-0.3.2
@@ -22,11 +22,12 @@ BUILD_DEPENDS =	devel/gettext-tools
 LIB_DEPENDS =	x11/gtk+3 \
 		devel/json-c
 
+CONFIGURE_ARGS +=	-Ddocs=disabled \
+			-Dtests=disabled
+
 # c11
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
-
-LDFLAGS=	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 TEST_TARGET =	test
 TEST_DEPENDS =	devel/check

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/03/04 14:46:21 jca Exp $
+# $OpenBSD: Makefile,v 1.23 2019/03/27 23:27:59 ajacoutot Exp $
 
 V =			0.4.3
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
@@ -32,7 +32,9 @@ WANTLIB += sqlite3 synctex
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c
 CONFIGURE_ENV +=	LDFLAGS=-L${LOCALBASE}/lib
-CONFIGURE_ARGS +=	-Dsynctex=enabled
+CONFIGURE_ARGS +=	-Dsynctex=enabled \
+			-Dseccomp=disabled \
+			-Dtests=disabled
 
 TEST_DEPENDS =	devel/check
 TEST_TARGET =	test

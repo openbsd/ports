@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2019/03/12 19:40:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2019/03/27 23:28:00 ajacoutot Exp $
 
 COMMENT=		framework for creating UPnP devices and control points
 
@@ -17,8 +17,6 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS += gobject-introspection vala
 
 LIB_DEPENDS=		net/gssdp>=1.1.3
-
-MODPY_ADJ_FILES=	tools/gupnp-binding-tool
 
 # Makefile.inc overrides
 CONFIGURE_ENV =

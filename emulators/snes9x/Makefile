@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/03/11 11:18:01 fcambus Exp $
+# $OpenBSD: Makefile,v 1.47 2019/03/27 23:28:00 ajacoutot Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 BROKEN-alpha =	ICE/failure on filter/hq2x.cpp
@@ -36,7 +36,7 @@ MODULES =	devel/meson \
 
 COMPILER =	base-clang ports-gcc
 
-LDFLAGS +=	"-L${X11BASE}/lib"
+CONFIGURE_ENV =	LDFLAGS="-L${X11BASE}/lib"
 
 CONFIGURE_ARGS = -Dportaudio=false \
 		 -Doss=false \

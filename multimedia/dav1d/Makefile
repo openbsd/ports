@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/15 06:11:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/27 23:28:00 ajacoutot Exp $
 
 COMMENT=	small and fast AV1 decoder
 
@@ -28,8 +28,6 @@ COMPILER_LANGS=	c
 .if ${MACHINE_ARCH} == "amd64"
 BUILD_DEPENDS+=	devel/nasm
 .endif
-
-CONFIGURE_STYLE=meson
 
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=-Dbuild_asm=false

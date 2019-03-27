@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/01/02 21:29:01 landry Exp $
+# $OpenBSD: Makefile,v 1.29 2019/03/27 23:28:00 ajacoutot Exp $
 
 COMMENT=		command line client for mpd
 
@@ -24,6 +24,6 @@ MASTER_SITES=		https://www.musicpd.org/download/mpc/${VER:R}/
 
 MODULES=		devel/meson
 
-LDFLAGS=		-L${LOCALBASE}/lib -liconv
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
 .include <bsd.port.mk>
