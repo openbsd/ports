@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/27 09:14:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/27 09:23:51 sthen Exp $
 
 COMMENT =	Parallax Static Timing Analyzer
 
@@ -28,7 +28,7 @@ LIB_DEPENDS =	${MODTCL_LIB_DEPENDS} \
 
 BUILD_DEPENDS =	devel/bison \
 		devel/swig \
-		${MODTK_BUILD_DEPENDS}
+		${MODTCL_BUILD_DEPENDS}
 
 CONFIGURE_ARGS = -DTCL_HEADER=${MODTCL_INCDIR}/tcl.h \
 		 -DCUDD=${LOCALBASE}
