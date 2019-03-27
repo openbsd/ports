@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2019/03/27 12:41:16 jca Exp $
+# $OpenBSD: Makefile,v 1.61 2019/03/27 16:19:55 jca Exp $
 
 COMMENT=	free audio editor
 
 V=		2.3.1
+REVISION=	0
 DISTNAME=	Audacity-${V}
 PKGNAME=	audacity-${V}
 CATEGORIES=	audio
@@ -26,7 +27,7 @@ WANTLIB += samplerate sndfile sndio soxr tiff usbhid vorbis vorbisenc
 WANTLIB += vorbisfile wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
 WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0 wx_gtk3u_html-3.0
 WANTLIB += wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0 xcb xcb-render xcb-shm
-WANTLIB += z db jack
+WANTLIB += z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -35,12 +36,10 @@ MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
-		archivers/zip \
 		devel/gettext-tools \
 		devel/libtool \
 		shells/bash
 LIB_DEPENDS=	x11/wxWidgets>=3.0.4 \
-		audio/jack \
 		audio/libsoxr \
 		audio/flac \
 		audio/libvorbis \
