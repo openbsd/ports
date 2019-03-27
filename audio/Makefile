@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.407 2019/03/10 11:54:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.408 2019/03/27 15:44:35 jca Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -179,6 +179,7 @@
      SUBDIR += pithos
      SUBDIR += pms
      SUBDIR += portaudio-svn
+     SUBDIR += portmidi
      SUBDIR += potamus
      SUBDIR += puddletag
      SUBDIR += pulseaudio
