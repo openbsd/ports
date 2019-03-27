@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2019/03/26 18:26:45 rapha Exp $
+# $OpenBSD: Makefile,v 1.60 2019/03/27 12:41:16 jca Exp $
 
 COMMENT=	free audio editor
 
@@ -94,6 +94,10 @@ CONFIGURE_ARGS=		--enable-unicode \
 			--without-portmixer
 # XXX libtool/ld(1) fail to find libvamp-hostsdk.so
 CONFIGURE_ARGS+= 	--without-libvamp
+
+.if ${MACHINE_ARCH} != "amd64"
+CONFIGURE_ARGS+=	--disable-sse
+.endif
 
 WRKDIST=		${WRKDIR}/audacity-${DISTNAME}
 
