@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.68 2019/03/17 23:39:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2019/03/27 10:14:03 sthen Exp $
 
 COMMENT=	manage remote serial consoles via TCP/IP
 
-V=		8.2.3
+V=		8.2.4
 DISTNAME=	conserver-$V
 CATEGORIES=	comms
 
@@ -24,6 +24,8 @@ AUTOCONF_VERSION= 2.69
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--with-master=localhost \
 		--with-pidfile=${LOCALSTATEDIR}/run/conserver/conserver.pid
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${FLAVOR:Mnet}
 # not yet using experimental IPv6 support added in 8.2.0; investigate
@@ -39,7 +41,7 @@ CONFIGURE_ARGS+= --with-uds=${LOCALSTATEDIR}/run/conserver \
 .if ${FLAVOR:Mipmi}
 CONFIGURE_ARGS+= --with-freeipmi=yes
 LIB_DEPENDS+=	sysutils/freeipmi
-WANTLIB+=	freeipmi ipmiconsole
+WANTLIB+=	ipmiconsole
 .endif
 
 post-install:
