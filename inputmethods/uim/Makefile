@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2019/03/26 17:04:25 jca Exp $
+# $OpenBSD: Makefile,v 1.65 2019/03/27 10:11:35 sthen Exp $
 
 DPB_PROPERTIES=		tag:kde3
 
@@ -116,8 +116,10 @@ CONFIGURE_ARGS=		--with-qt \
 			--with-qt4 \
 			--with-qt4-immodule \
 			--with-anthy-utf8 \
-			--with-libgcroots \
-			--without-m17nlib
+			--with-libgcroots
+# XXX should also either be neutering m17nlib (--without-m17nlib) or
+# explicitly building it, but this breaks autoconf (it is then unable
+# to find libgcroots).
 
 post-install:
 	rm ${PREFIX}/lib/uim/plugin/*.{a,la}
