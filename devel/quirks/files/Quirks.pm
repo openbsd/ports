@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.734 2019/03/26 18:10:14 chrisz Exp $
+# $OpenBSD: Quirks.pm,v 1.735 2019/03/27 22:55:25 chrisz Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1170,6 +1170,7 @@ my $obsolete_reason = {
         'ocaml-re' => 7,
         'omake' => 7,
         'ounit' => 7,
+        'obc' => 5,
 };
 
 # reasons for obsolete packages

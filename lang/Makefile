@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.234 2019/02/21 00:36:27 jturner Exp $
+# $OpenBSD: Makefile,v 1.235 2019/03/27 22:55:25 chrisz Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -77,7 +77,6 @@
      SUBDIR += nim
      SUBDIR += node
      SUBDIR += nqp
-     SUBDIR += obc
      SUBDIR += ocaml
      SUBDIR += ocaml-camlp4
      SUBDIR += ocaml-camlp5
