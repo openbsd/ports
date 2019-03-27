@@ -1,4 +1,5 @@
-$OpenBSD: patch-conserver_group_c,v 1.8 2018/05/29 13:54:05 sthen Exp $
+$OpenBSD: patch-conserver_group_c,v 1.9 2019/03/27 10:37:09 sthen Exp $
+
 Index: conserver/group.c
 --- conserver/group.c.orig
 +++ conserver/group.c

@@ -1,7 +1,6 @@
-$OpenBSD: patch-conserver_main_c,v 1.5 2019/03/27 10:14:03 sthen Exp $
+$OpenBSD: patch-conserver_main_c,v 1.6 2019/03/27 10:37:10 sthen Exp $
 
 - enable "setproctitle" option by default, for more information in ps listings
-- libressl doesn't support @SECLEVEL=0
 
 Index: conserver/main.c
 --- conserver/main.c.orig
@@ -15,12 +14,3 @@ Index: conserver/main.c
  #endif
  #if HAVE_OPENSSL
  	, (char *)0, FLAGTRUE, FLAGFALSE, (char *)0
-@@ -369,7 +369,7 @@ SetupSSL(void)
- 	    }
- 	    ciphers = "ALL:!LOW:!EXP:!MD5:!aNULL:@STRENGTH";
- 	} else {
--	    ciphers = "ALL:aNULL:!LOW:!EXP:!MD5:@STRENGTH" CIPHER_SEC0;
-+	    ciphers = "ALL:aNULL:!LOW:!EXP:!MD5:@STRENGTH";
- 	}
- 	if (config->sslcacertificatefile != (char *)0) {
- 	    STACK_OF(X509_NAME) * cert_names;

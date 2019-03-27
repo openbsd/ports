@@ -1,16 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/09/04 12:46:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/03/27 10:37:10 sthen Exp $
 @newgroup _conserver:736
 @newuser _conserver:736:_conserver:daemon:Serial console server:/nonexistent:/sbin/nologin
 @extra /var/log/conserver
 @extraunexec rm -rf /var/consoles/*
 @rcscript ${RCDIR}/conserver
 @bin bin/console
+lib/conserver/
+@bin lib/conserver/convert
 @man man/man1/console.1
 @man man/man5/conserver.cf.5
 @man man/man5/conserver.passwd.5
 @man man/man8/conserver.8
 @bin sbin/conserver
-@bin sbin/conserver-convert
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/conserver/
 share/examples/conserver/README
@@ -21,6 +22,7 @@ share/examples/conserver/conserver.cf
 @sample ${SYSCONFDIR}/conserver.cf
 share/examples/conserver/conserver.passwd
 @sample ${SYSCONFDIR}/conserver.passwd
+@comment share/examples/conserver/conserver.rc
 share/examples/conserver/console.cf
 @sample ${SYSCONFDIR}/console.cf
 share/examples/conserver/simple.cf
