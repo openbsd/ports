@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2019/03/27 23:29:06 ajacoutot Exp $
 
 COMMENT =		library for reading RAW files
 
 DISTNAME =		LibRaw-0.18.13
-REVISION =		0
+REVISION =		1
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		graphics
 

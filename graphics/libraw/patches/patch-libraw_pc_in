@@ -1,0 +1,14 @@
+$OpenBSD: patch-libraw_pc_in,v 1.1 2019/03/27 23:29:06 ajacoutot Exp $
+
+Do not hardcode -lstdc++ (symbol mismatch with libc++abi).
+
+Index: libraw.pc.in
+--- libraw.pc.in.orig
++++ libraw.pc.in
+@@ -7,5 +7,5 @@ Name: libraw
+ Description: Raw image decoder library (non-thread-safe)
+ Requires: @PACKAGE_REQUIRES@
+ Version: @PACKAGE_VERSION@
+-Libs: -L${libdir} -lraw -lstdc++@PC_OPENMP@
++Libs: -L${libdir} -lraw @PC_OPENMP@
+ Cflags: -I${includedir}/libraw

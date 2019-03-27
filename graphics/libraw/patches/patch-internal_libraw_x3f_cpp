@@ -1,7 +1,8 @@
-$OpenBSD: patch-internal_libraw_x3f_cpp,v 1.6 2018/05/18 06:04:33 rsadowski Exp $
+$OpenBSD: patch-internal_libraw_x3f_cpp,v 1.7 2019/03/27 23:29:06 ajacoutot Exp $
 
 fix non-constant-expression cannot be narrowed from type 'int' to 'int16_t'
 (aka 'short') with clang6
+
 Index: internal/libraw_x3f.cpp
 --- internal/libraw_x3f.cpp.orig
 +++ internal/libraw_x3f.cpp
