@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.3 2018/02/10 15:07:16 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2019/03/27 18:13:36 robert Exp $
 
 DIST_SUBDIR =		mate
 
-MATE_VERSION ?=		1.20.0
+MATE_VERSION ?=		1.22.0
 MAINTAINER ?=		Robert Nagy <robert@openbsd.org>

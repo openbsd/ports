@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2018/09/20 11:15:26 robert Exp $
+# $OpenBSD: Makefile,v 1.11 2019/03/27 18:13:37 robert Exp $
 
 COMMENT=		MATE calculator
 
 MATE_PROJECT=		mate-calc
-MATE_VERSION=		1.20.2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

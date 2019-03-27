@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2018/09/20 11:15:34 robert Exp $
+# $OpenBSD: Makefile,v 1.10 2019/03/27 18:13:37 robert Exp $
 
 COMMENT=		components for the MATE desktop
 
 SHARED_LIBS+=		mate-desktop-2		0.0 # 18.4
 
 MATE_PROJECT=		mate-desktop
-MATE_VERSION=		1.20.3
 
 CATEGORIES=		x11
 
@@ -17,9 +16,9 @@ WANTLIB += Xinerama Xrandr Xrender c dconf epoxy expat ffi fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += iconv intl m pcre pixman-1 pthread xcb
 WANTLIB += xcb-render xcb-shm z fribidi
-WANTLIB += harfbuzz gtk-3 atk-1.0 atk-bridge-2.0 atspi cairo
-WANTLIB += cairo-gobject dbus-1 gdk-3 gdk_pixbuf-2.0 graphite2
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png
+WANTLIB += harfbuzz gtk-3 atk-1.0 atk-bridge-2.0 cairo
+WANTLIB += cairo-gobject gdk-3 gdk_pixbuf-2.0 graphite2
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png16
 WANTLIB += X11-xcb xcb-util startup-notification-1
 
 MODULES=		devel/dconf \

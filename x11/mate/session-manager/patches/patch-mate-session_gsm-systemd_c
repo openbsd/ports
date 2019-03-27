@@ -1,0 +1,23 @@
+$OpenBSD: patch-mate-session_gsm-systemd_c,v 1.1 2019/03/27 18:13:39 robert Exp $
+
+Index: mate-session/gsm-systemd.c
+--- mate-session/gsm-systemd.c.orig
++++ mate-session/gsm-systemd.c
+@@ -424,6 +424,7 @@ emit_stop_complete (GsmSystemd *manager,
+ gboolean
+ gsm_systemd_is_last_session_for_user (GsmSystemd *manager)
+ {
++#ifdef HAVE_SYSTEMD
+         char **sessions = NULL;
+         char *session = NULL;
+         gboolean is_last_session;
+@@ -484,6 +485,9 @@ gsm_systemd_is_last_session_for_user (GsmSystemd *mana
+         free (session);
+ 
+         return is_last_session;
++#else
++	return FALSE;
++#endif
+ }
+ 
+ void

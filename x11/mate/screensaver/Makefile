@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2018/12/23 11:44:51 robert Exp $
+# $OpenBSD: Makefile,v 1.13 2019/03/27 18:13:38 robert Exp $
 
 COMMENT=		MATE screensaver
 
 MATE_PROJECT=		mate-screensaver
-MATE_VERSION=		1.20.3
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -12,15 +11,16 @@ WANTLIB += GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xss Xxf86vm
 WANTLIB += c dconf drm epoxy expat ffi fontconfig freetype gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += iconv intl lzma m pcre pixman-1 png pthread
+WANTLIB += iconv intl lzma m pcre pixman-1 pthread
 WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xkbfile xml2
 WANTLIB += z
-WANTLIB += atk-1.0 atk-bridge-2.0 atspi cairo-gobject cairo dbus-1
+WANTLIB += atk-1.0 atk-bridge-2.0 cairo-gobject cairo dbus-1
 WANTLIB += dbus-glib-1 gdk-3 graphite2 gtk-3 harfbuzz mate-desktop-2
 WANTLIB += mate-menu matekbd matekbdui notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 xklavier
 WANTLIB += startup-notification-1 xcb-util
 WANTLIB += fribidi xcb-dri3 xcb-present xcb-sync xshmfence
+WANTLIB += png16 xcb-xfixes
 
 MODULES=		devel/dconf \
 			x11/gnome

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/09/20 11:15:22 robert Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/03/27 18:13:37 robert Exp $
 @bin bin/caja-sendto
 include/caja-sendto/
 include/caja-sendto/caja-sendto-plugin.h
@@ -107,9 +107,7 @@ share/locale/es/LC_MESSAGES/caja-extensions.mo
 share/locale/es_AR/LC_MESSAGES/caja-extensions.mo
 share/locale/es_CL/LC_MESSAGES/caja-extensions.mo
 share/locale/es_CO/LC_MESSAGES/caja-extensions.mo
-share/locale/es_ES/LC_MESSAGES/caja-extensions.mo
 share/locale/es_MX/LC_MESSAGES/caja-extensions.mo
-share/locale/es_PR/LC_MESSAGES/caja-extensions.mo
 share/locale/et/LC_MESSAGES/caja-extensions.mo
 share/locale/eu/LC_MESSAGES/caja-extensions.mo
 share/locale/fa/LC_MESSAGES/caja-extensions.mo
@@ -134,6 +132,9 @@ share/locale/is/LC_MESSAGES/caja-extensions.mo
 share/locale/it/LC_MESSAGES/caja-extensions.mo
 share/locale/ja/LC_MESSAGES/caja-extensions.mo
 share/locale/ka/LC_MESSAGES/caja-extensions.mo
+share/locale/kab/
+share/locale/kab/LC_MESSAGES/
+share/locale/kab/LC_MESSAGES/caja-extensions.mo
 share/locale/kk/LC_MESSAGES/caja-extensions.mo
 share/locale/kn/LC_MESSAGES/caja-extensions.mo
 share/locale/ko/LC_MESSAGES/caja-extensions.mo
@@ -149,9 +150,6 @@ share/locale/ml/LC_MESSAGES/caja-extensions.mo
 share/locale/mn/LC_MESSAGES/caja-extensions.mo
 share/locale/mr/LC_MESSAGES/caja-extensions.mo
 share/locale/ms/LC_MESSAGES/caja-extensions.mo
-share/locale/nah/
-share/locale/nah/LC_MESSAGES/
-share/locale/nah/LC_MESSAGES/caja-extensions.mo
 share/locale/nb/LC_MESSAGES/caja-extensions.mo
 share/locale/nds/LC_MESSAGES/caja-extensions.mo
 share/locale/ne/LC_MESSAGES/caja-extensions.mo

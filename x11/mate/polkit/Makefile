@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/27 16:06:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/27 18:13:38 robert Exp $
 
 COMMENT=		PolicyKit authentication agent for MATE
 
 MATE_PROJECT=		mate-polkit
-MATE_VERSION=		1.20.2
 
 CATEGORIES=		x11 sysutils
 
