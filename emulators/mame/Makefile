@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/02/28 12:20:33 fcambus Exp $
+# $OpenBSD: Makefile,v 1.24 2019/03/27 22:13:46 fcambus Exp $
 
 BROKEN-i386 =	broken on 32-bit; enum in src/frontend/mame/ui/videoopt.h starting at 0x80000000
 ONLY_FOR_ARCHS = amd64 i386
@@ -7,7 +7,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	Multiple Arcade Machine Emulator
 
-V =		207
+V =		208
 DISTNAME =	mame0${V}s
 PKGNAME =	mame-0.${V}
 
@@ -25,9 +25,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${COMPILER_LIBCXX} FLAC GL SDL2 SDL2_ttf X11 Xinerama
 WANTLIB += c expat fontconfig freetype jpeg lua5.3 m sqlite3 util z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mame/}
+MASTER_SITES =	https://github.com/mamedev/mame/releases/download/mame0${V}/
 
 EXTRACT_SUFX =	.zip
 
