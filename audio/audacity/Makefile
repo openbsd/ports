@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.61 2019/03/27 16:19:55 jca Exp $
+# $OpenBSD: Makefile,v 1.62 2019/03/27 20:25:11 jca Exp $
 
 COMMENT=	free audio editor
 
 V=		2.3.1
-REVISION=	0
+REVISION=	1
 DISTNAME=	Audacity-${V}
 PKGNAME=	audacity-${V}
 CATEGORIES=	audio
@@ -90,6 +90,7 @@ CONFIGURE_ARGS=		--enable-unicode \
 			--without-ffmpeg \
 			--without-redland \
 			--without-liblrdf \
+			--without-lame \
 			--without-portmixer
 # XXX libtool/ld(1) fail to find libvamp-hostsdk.so
 CONFIGURE_ARGS+= 	--without-libvamp
