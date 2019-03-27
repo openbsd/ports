@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/25 12:17:44 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/27 10:09:19 bentley Exp $
 
 COMMENT-main =		secure and anonymous file-sharing over Tor
 COMMENT-gui =		graphical user interface for onionshare based on Qt
@@ -7,6 +7,8 @@ GH_ACCOUNT =		micahflee
 GH_PROJECT =		onionshare
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	2.0
+REVISION-main =		0
+REVISION-gui =		0
 
 PKGNAME-main =		onionshare-${MODPY_EGG_VERSION}
 PKGNAME-gui =		onionshare-gui-${MODPY_EGG_VERSION}
@@ -28,7 +30,8 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 RUN_DEPENDS =		devel/py-sip${MODPY_FLAVOR} \
 			www/py-flask${MODPY_FLAVOR} \
 			net/py-stem${MODPY_FLAVOR} \
-			net/tor
+			net/tor \
+			security/py-cryptodome${MODPY_FLAVOR}
 RUN_DEPENDS-gui =	${RUN_DEPENDS} \
 			devel/desktop-file-utils \
 			net/onionshare=${MODPY_EGG_VERSION} \
