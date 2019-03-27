@@ -1,6 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2019/03/27 10:14:03 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2019/03/27 23:38:19 sthen Exp $
 
-- support SO_PEERCRED as well as ucred
+From 956a6181147df7d3bb310e86a2b52e54a68cb08f Mon Sep 17 00:00:00 2001
+From: Stuart Henderson <stu@spacehopper.org>
+Date: Wed, 27 Mar 2019 10:40:31 +0000
+Subject: [PATCH] support SO_PEERCRED as well as ucred
 
 Index: configure.ac
 --- configure.ac.orig
