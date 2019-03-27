@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.53 2019/01/07 14:51:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.54 2019/03/27 17:48:31 ajacoutot Exp $
 include/evolution-data-server/
 include/evolution-data-server/camel/
 include/evolution-data-server/camel/camel-address.h
@@ -418,7 +418,7 @@ share/evolution-data-server/evolutionperson.schema
 share/examples/evolution-data-server/
 share/examples/evolution-data-server/autostart/
 share/examples/evolution-data-server/autostart/org.gnome.Evolution-alarm-notify.desktop
-@sample ${SYSCONFDIR}/xdg/org.gnome.Evolution-alarm-notify.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/org.gnome.Evolution-alarm-notify.desktop
 share/gir-1.0/Camel-1.2.gir
 share/gir-1.0/EBook-1.2.gir
 share/gir-1.0/EBookContacts-1.2.gir
