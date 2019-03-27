@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/27 08:45:25 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/27 09:14:44 sthen Exp $
 
 COMMENT =	Parallax Static Timing Analyzer
 
@@ -21,7 +21,7 @@ WANTLIB =	${COMPILER_LIBCXX} ${MODTCL_WANTLIB} c m z cudd
 COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake \
-		x11/tk
+		lang/tcl
 
 LIB_DEPENDS =	${MODTCL_LIB_DEPENDS} \
 		devel/cudd
@@ -36,7 +36,7 @@ CONFIGURE_ARGS = -DTCL_HEADER=${MODTCL_INCDIR}/tcl.h \
 NO_TEST =	Yes
 
 pre-configure:
-	cd ${WRKSRC}/etc && ${MODTCL_WISH_ADJ} TclEncode.tcl SwigCleanup.tcl
+	cd ${WRKSRC}/etc && ${MODTCL_TCLSH_ADJ} TclEncode.tcl SwigCleanup.tcl
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/opensta
