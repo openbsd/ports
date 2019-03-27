@@ -1,7 +1,14 @@
-$OpenBSD: patch-src_script_c,v 1.1 2019/03/25 14:41:55 sthen Exp $
+$OpenBSD: patch-src_script_c,v 1.2 2019/03/27 23:47:21 sthen Exp $
 
-script: Fix not running when empty string or /dev/null
-17480d3e1 and 97bb6029
+From f17480d3e1e914d03fea0c054a028fe979742950 Mon Sep 17 00:00:00 2001
+From: Roy Marples <roy@marples.name>
+Date: Mon, 25 Mar 2019 12:17:07 +0000
+Subject: script: Fix not running when empty string or /dev/null
+
+From 97bb60296dc42a29a054ebf9347ac31a7d787393 Mon Sep 17 00:00:00 2001
+From: Roy Marples <roy@marples.name>
+Date: Mon, 25 Mar 2019 12:20:45 +0000
+Subject: script: Fix prior when we have listeners but no script
 
 Index: src/script.c
 --- src/script.c.orig

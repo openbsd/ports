@@ -1,19 +1,43 @@
-$OpenBSD: patch-src_if-options_c,v 1.1 2019/03/25 14:41:55 sthen Exp $
+$OpenBSD: patch-src_if-options_c,v 1.2 2019/03/27 23:47:21 sthen Exp $
 
-script: Fix not running when empty string or /dev/null
-17480d3e1
+From f17480d3e1e914d03fea0c054a028fe979742950 Mon Sep 17 00:00:00 2001
+From: Roy Marples <roy@marples.name>
+Date: Mon, 25 Mar 2019 12:17:07 +0000
+Subject: script: Fix not running when empty string or /dev/null
+
+From 7a7ab5ba647e229a99ba154950a5eae1a5b63ccd Mon Sep 17 00:00:00 2001
+From: Roy Marples <roy@marples.name>
+Date: Wed, 27 Mar 2019 17:33:03 +0000
+Subject: script: Parse argument as a string
+
+This allows "" to equal /dev/null.
 
 Index: src/if-options.c
 --- src/if-options.c.orig
 +++ src/if-options.c
-@@ -709,6 +709,10 @@ parse_option(struct dhcpcd_ctx *ctx, const char *ifnam
+@@ -709,9 +709,23 @@ parse_option(struct dhcpcd_ctx *ctx, const char *ifnam
  	case 'c':
  		ARG_REQUIRED;
  		free(ifo->script);
-+		if (*arg == '\0' || strcmp(arg, "/dev/null") == 0) {
+-		ifo->script = strdup(arg);
+-		if (ifo->script == NULL)
++		s = parse_string(NULL, 0, arg);
++		if (s == 0) {
 +			ifo->script = NULL;
 +			break;
 +		}
- 		ifo->script = strdup(arg);
- 		if (ifo->script == NULL)
++		dl = (size_t)s;
++		if (s == -1 || (ifo->script = malloc(dl)) == NULL) {
  			logerr(__func__);
++			return -1;
++		}
++		parse_string(ifo->script, dl, arg);
++		if (ifo->script[0] == '\0' ||
++		    strcmp(ifo->script, "/dev/null") == 0)
++		{
++			free(ifo->script);
++			ifo->script = NULL;
++		}
+ 		break;
+ 	case 'd':
+ 		ifo->options |= DHCPCD_DEBUG;
