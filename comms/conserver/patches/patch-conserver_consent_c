@@ -1,6 +1,6 @@
-$OpenBSD: patch-conserver_consent_c,v 1.8 2019/03/27 10:37:09 sthen Exp $
+$OpenBSD: patch-conserver_consent_c,v 1.9 2019/03/27 23:39:59 sthen Exp $
 
-XXX review
+XXX probably not needed; review
 
 Index: conserver/consent.c
 --- conserver/consent.c.orig
