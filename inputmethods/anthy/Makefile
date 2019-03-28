@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/06/05 11:02:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/03/28 02:00:43 jca Exp $
 
 COMMENT-main =	japanese input method
 COMMENT-emacs =	emacs files for anthy
@@ -39,7 +39,7 @@ MULTI_PACKAGES = -main -emacs
 .include <bsd.port.arch.mk>
 
 .if ${BUILD_PACKAGES:M-emacs}
-BUILD_DEPENDS =	emacs->=24:editors/emacs
+BUILD_DEPENDS =	emacs->=24:editors/emacs,no_x11
 .else
 CONFIGURE_ENV += EMACS=no
 .endif
