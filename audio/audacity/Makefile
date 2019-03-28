@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.65 2019/03/28 19:56:07 jca Exp $
+# $OpenBSD: Makefile,v 1.66 2019/03/28 20:09:48 jca Exp $
 
 COMMENT=	free audio editor
 
 V=		2.3.1
-REVISION=	3
+REVISION=	4
 DISTNAME=	Audacity-${V}
 PKGNAME=	audacity-${V}
 CATEGORIES=	audio
