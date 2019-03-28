@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2019/03/11 21:57:09 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.68 2019/03/28 19:28:47 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -211,12 +211,12 @@ SUBDIR += kcolorchooser
 SUBDIR += kgamma
 SUBDIR += kolourpaint
 SUBDIR += kruler
-SUBDIR += ksaneplugin
+#SUBDIR += ksaneplugin		libksane is gone
 SUBDIR += ksnapshot
-SUBDIR += libkdcraw
+#SUBDIR += libkdcraw		x11/kde-application
 SUBDIR += libkexiv2
-SUBDIR += libkipi
-SUBDIR += libksane
+#SUBDIR += libkipi		x11/kde-application
+#SUBDIR += libksane		x11/kde-application
 #SUBDIR += okular		x11/kde-applications
 SUBDIR += svgpart
 

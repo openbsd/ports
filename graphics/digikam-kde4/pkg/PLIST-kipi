@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-kipi,v 1.6 2019/03/22 22:09:37 rsadowski Exp $
+@comment $OpenBSD: PLIST-kipi,v 1.7 2019/03/28 19:28:47 rsadowski Exp $
 @option no-default-conflict
 @conflict digikam-<3
 @conflict kipi-plugins-*
@@ -56,6 +56,10 @@ share/apps/gpssync/
 share/apps/gpssync/bookmarks-marker.png
 share/apps/gpssync/searchmarker-normal.png
 share/apps/gpssync/searchmarker-selected.png
+share/apps/kipi/data/
+share/apps/kipi/data/kipi-icon.svg
+share/apps/kipi/data/kipi-logo.svg
+share/apps/kipi/data/kipi-plugins_logo.png
 share/apps/kipi/kipiplugin_acquireimagesui.rc
 share/apps/kipi/kipiplugin_advancedslideshowui.rc
 share/apps/kipi/kipiplugin_batchprocessimagesui.rc
@@ -80,6 +84,7 @@ share/apps/kipi/kipiplugin_jpeglosslessui.rc
 share/apps/kipi/kipiplugin_kioexportimportui.rc
 share/apps/kipi/kipiplugin_kmlexportui.rc
 share/apps/kipi/kipiplugin_kopeteui.rc
+share/apps/kipi/kipiplugin_kxmlhelloworldui.rc
 share/apps/kipi/kipiplugin_metadataeditui.rc
 share/apps/kipi/kipiplugin_panoramaui.rc
 share/apps/kipi/kipiplugin_photolayoutseditorui.rc

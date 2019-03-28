@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2019/03/24 13:45:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.33 2019/03/28 19:28:47 rsadowski Exp $
 
 COMMENT-face =		face detection library for KDE4
 COMMENT-geomap =	library for mapping photos on maps for KDE4
+COMMENT-libkipi =	KDE4 image plugins infrastructure
 COMMENT-kipi =		KDE4 image plugins collection
+COMMENT-dcraw =		KDE4 RAW picture decoding C++ library
+COMMENT-sane =		KDE4 SANE (scanner) wrapper library
 COMMENT-main =		KDE4 photo management utility
 COMMENT-mediawiki =	KIPI4 interface for MediaWiki
 
@@ -13,19 +16,28 @@ DISTNAME =		digikam-${VERSION}
 
 PKGSPEC-main =		digikam-kde4->=1
 PKGSPEC-kipi =		kipi-plugins->=1
+PKGSPEC-libkipi =	libkipi-${MODKDE4_SPEC}
+PKGSPEC-dcraw =		libkdcraw-${MODKDE4_SPEC}
 
 PKGNAME =		digikam-kde4-${VERSION}
 PKGNAME-face =		libkface-15.08.3
 PKGNAME-geomap =	libkgeomap-15.08.3
+PKGNAME-libkipi =	libkipi-${MODKDE4_VERSION}
+PKGNAME-dcraw =		libkdcraw-${MODKDE4_VERSION}
+PKGNAME-sane =		libksane-${MODKDE4_VERSION}
 PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 
-REVISION-main =		7
-REVISION-kipi =		8
+REVISION-main =		8
+REVISION-kipi =		9
+REVISION-libkface =	3
+REVISION-dcraw =	3
+REVISION-libkipi =	3
+REVISION-sane =		4
 REVISION-mediawiki =	8
-REVISION-face=		4
-REVISION-geomap=	5
+REVISION-face =		4
+REVISION-geomap =	5
 
 # LGPL, GPL and many others
 PERMIT_PACKAGE_CDROM =		Yes
@@ -36,8 +48,11 @@ SHARED_LIBS +=  digikamdatabase		0.1
 SHARED_LIBS +=  mediawiki		0.1
 SHARED_LIBS +=  kface                     0.1 # 3.0
 SHARED_LIBS +=  kgeomap                   0.1 # 2.1
+SHARED_LIBS +=  kdcraw                    51.0 # 23.0
+SHARED_LIBS +=  kipi                      51.0 # 11.1
+SHARED_LIBS +=  ksane                     51.0 # 0.2
 
-MULTI_PACKAGES =	-main -face -geomap -kipi -mediawiki
+MULTI_PACKAGES =	-main -face -sane -dcraw -libkipi -geomap -kipi -mediawiki
 
 MASTER_SITES =	${MASTER_SITE_KDE:=Attic/digikam/}
 EXTRACT_SUFX =		.tar.bz2
@@ -56,10 +71,9 @@ WANTLIB-kipi += ${MODPHONON_WANTLIB}
 WANTLIB-kipi += c GL GLU ICE SM X11 Xext Xrandr expat z
 WANTLIB-kipi += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtXmlPatterns
 WANTLIB-kipi += lib/qt4/QtTest lib/qt4/QtXml
-WANTLIB-kipi += ${KDE4LIB}/kcalcore ${KDE4LIB}/kdcraw ${KDE4LIB}/kexiv2
+WANTLIB-kipi += ${KDE4LIB}/kcalcore ${KDE4LIB}/kexiv2
 WANTLIB-kipi += ${KDE4LIB}/kfile ${KDE4LIB}/khtml
-WANTLIB-kipi += ${KDE4LIB}/kio ${KDE4LIB}/kipi ${KDE4LIB}/kjs ${KDE4LIB}/kparts
-WANTLIB-kipi += ${KDE4LIB}/ksane
+WANTLIB-kipi += ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/kparts
 WANTLIB-kipi += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
 WANTLIB-kipi += ${KDE4LIB}/threadweaver
 WANTLIB-kipi += lib/opencv2/opencv_core lib/opencv2/opencv_highgui
@@ -75,10 +89,10 @@ WANTLIB-main += c ICE SM X11 Xext z
 WANTLIB-main += lib/qt4/QtNetwork lib/qt4/QtSql
 WANTLIB-main += lib/qt4/QtTest lib/qt4/QtXml
 WANTLIB-main += ${KDE4LIB}/kabc ${KDE4LIB}/kcalcore ${KDE4LIB}/kcmutils
-WANTLIB-main += ${KDE4LIB}/kdcraw ${KDE4LIB}/kemoticons
+WANTLIB-main += ${KDE4LIB}/kemoticons
 WANTLIB-main += ${KDE4LIB}/kexiv2 ${KDE4LIB}/kfile
 WANTLIB-main += ${KDE4LIB}/khtml ${KDE4LIB}/kidletime ${KDE4LIB}/kio
-WANTLIB-main += ${KDE4LIB}/kipi ${KDE4LIB}/kjs ${KDE4LIB}/kmime
+WANTLIB-main += ${KDE4LIB}/kjs ${KDE4LIB}/kmime
 WANTLIB-main += ${KDE4LIB}/knotifyconfig ${KDE4LIB}/kparts
 WANTLIB-main += ${KDE4LIB}/kpimutils ${KDE4LIB}/kprintutils
 WANTLIB-main += ${KDE4LIB}/kresources ${KDE4LIB}/kutils
@@ -108,15 +122,27 @@ WANTLIB-face += lib/opencv2/opencv_nonfree lib/opencv2/opencv_objdetect
 WANTLIB-face += lib/opencv2/opencv_ocl lib/opencv2/opencv_photo
 WANTLIB-face += lib/opencv2/opencv_video
 
-WANTLIB-geomap += ${COMPILER_LIBCXX} QtDBus QtGui QtNetwork QtSvg QtXml
-WANTLIB-geomap += c ${KDE4LIB}/kdeui ${KDE4LIB}/khtml ${KDE4LIB}/kio
-WANTLIB-geomap += ${KDE4LIB}/kjs ${KDE4LIB}/kparts m ${KDE4LIB}/nepomuk
+
+WANTLIB-geomap += ${WANTLIB-common} ${COMPILER_LIBCXX} QtNetwork QtXml
+WANTLIB-geomap += c ${KDE4LIB}/khtml ${KDE4LIB}/kio
+WANTLIB-geomap += ${KDE4LIB}/kjs ${KDE4LIB}/kparts ${KDE4LIB}/nepomuk
 WANTLIB-geomap += ${KDE4LIB}/nepomukutils soprano QtCore kdecore phonon_s
 WANTLIB-geomap += ${KDE4LIB}/kexiv2 ${KDE4LIB}/marblewidget
 
 WANTLIB-mediawiki =  ${WANTLIB-common}
 WANTLIB-mediawiki += lib/qt4/QtNetwork lib/qt4/QtXml
 WANTLIB-mediawiki += ${KDE4LIB}/kio
+
+WANTLIB-sane += ${WANTLIB-common} sane QtCore ${KDE4LIB}/kdecore
+
+WANTLIB-dcraw += ${WANTLIB-common} QtNetwork QtXml
+WANTLIB-dcraw += ${KDE4LIB}/kio raw_r ${KDE4LIB}/solid
+WANTLIB-dcraw += ${KDE4LIB}/threadweaver QtCore ${KDE4LIB}/kdecore
+
+WANTLIB-libkipi += ${WANTLIB-common} QtNetwork QtXml
+WANTLIB-libkipi += c ${KDE4LIB}/kfile ${KDE4LIB}/kio
+WANTLIB-libkipi += ${KDE4LIB}/kparts  ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
+WANTLIB-libkipi += QtCore ${KDE4LIB}/kdecore soprano
 
 # Define dependencies manually per subpackage
 # TODO: fix kde4.port.mk to allow such grained tuning
@@ -155,10 +181,7 @@ LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 			net/libkvkontakte \
 			security/qca \
 			security/kqoauth \
-			${MODKDE4_DEP_DIR}/libkdcraw \
 			${MODKDE4_DEP_DIR}/libkexiv2 \
-			${MODKDE4_DEP_DIR}/libkipi \
-			${MODKDE4_DEP_DIR}/libksane \
 			${MODKDE4_DEP_DIR}/pimlibs
 
 LIB_DEPENDS-face =	${LIB_DEPENDS-common} \
@@ -183,14 +206,23 @@ LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
 			graphics/png \
 			graphics/tiff \
 			${MODKDE4_DEP_DIR}/baloo \
-			${MODKDE4_DEP_DIR}/libkdcraw>=4.13 \
 			${MODKDE4_DEP_DIR}/libkexiv2>=4.13 \
-			${MODKDE4_DEP_DIR}/libkipi>=4.13 \
 			${MODKDE4_DEP_DIR}/pimlibs
+
+LIB_DEPENDS-libkipi=	${LIB_DEPENDS-common}
+
+LIB_DEPENDS-sane =	${LIB_DEPENDS-common} \
+			graphics/sane-backends
+
+LIB_DEPENDS-dcraw =	${LIB_DEPENDS-common} \
+			graphics/libraw
 
 LIB_DEPENDS-mediawiki =	${LIB_DEPENDS-common}
 
 RUN_DEPENDS-main =	${BASE_PKGPATH},-geomap \
+			${BASE_PKGPATH},-libkipi \
+			${BASE_PKGPATH},-sane \
+			${BASE_PKGPATH},-dcraw \
 			${BASE_PKGPATH},-face
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=Yes \
@@ -198,6 +230,9 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_QtSoap=Yes \
 			-DDIGIKAMSC_COMPILE_LIBKFACE=Yes \
 			-DDIGIKAMSC_COMPILE_LIBKGEOMAP=Yes \
+			-DDIGIKAMSC_COMPILE_LIBKSANE=Yes \
+			-DDIGIKAMSC_COMPILE_LIBKIPI=Yes \
+			-DDIGIKAMSC_COMPILE_LIBKDCRAW=Yes \
 			-DENABLE_INTERNALMYSQL=No \
 			-DENABLE_KDEPIMLIBSSUPPORT=Yes \
 			-DENABLE_LCMS2=Yes

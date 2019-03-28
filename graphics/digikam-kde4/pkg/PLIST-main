@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2019/03/22 22:09:37 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2019/03/28 19:28:47 rsadowski Exp $
 @conflict digikam-doc-*
 bin/cleanup_digikamdb
 @bin bin/digikam
@@ -18,7 +18,6 @@ lib/kde4/kio_digikamtags.so
 @lib lib/libdigikamdatabase.so.${LIBdigikamdatabase_VERSION}
 @man man/man1/cleanup_digikamdb.1
 @man man/man1/digitaglinktree.1
-share/appdata/
 share/appdata/digiKam-ImagePlugin_Color.metainfo.xml
 share/appdata/digiKam-ImagePlugin_Decorate.metainfo.xml
 share/appdata/digiKam-ImagePlugin_Enhance.metainfo.xml
