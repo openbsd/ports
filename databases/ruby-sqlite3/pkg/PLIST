@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/11/04 21:30:37 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/03/28 04:33:31 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.gemtest
+${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/API_CHANGES.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog.cvs
@@ -9,6 +11,7 @@ ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/appveyor.yml
 ${GEM_LIB}/gems/${DISTNAME}/faq/
 ${GEM_LIB}/gems/${DISTNAME}/faq/faq.rb
 ${GEM_LIB}/gems/${DISTNAME}/faq/faq.yml
@@ -25,21 +28,24 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/statement.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/translator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/value.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/version.rb
+${GEM_LIB}/gems/${DISTNAME}/rakelib/
+${GEM_LIB}/gems/${DISTNAME}/rakelib/faq.rake
+${GEM_LIB}/gems/${DISTNAME}/rakelib/gem.rake
+${GEM_LIB}/gems/${DISTNAME}/rakelib/native.rake
+${GEM_LIB}/gems/${DISTNAME}/rakelib/vendor_sqlite3.rake
 ${GEM_LIB}/gems/${DISTNAME}/setup.rb
-${GEM_LIB}/gems/${DISTNAME}/tasks/
-${GEM_LIB}/gems/${DISTNAME}/tasks/faq.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/gem.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/native.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/vendor_sqlite3.rake
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_backup.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_collation.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_database.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_database_flags.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_database_readonly.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_database_readwrite.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_deprecated.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_encoding.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_integration.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_integration_aggregate.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_integration_open_close.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_integration_pending.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_integration_resultset.rb

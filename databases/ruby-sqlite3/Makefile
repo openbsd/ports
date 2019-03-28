@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.42 2019/03/28 04:33:30 jeremy Exp $
 
 COMMENT=	access a SQLite3 database from ruby
 
-DISTNAME=	sqlite3-1.3.13
-REVISION=	1
+DISTNAME=	sqlite3-1.4.0
 CATEGORIES=	databases
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
@@ -25,7 +24,7 @@ TEST_DEPENDS=	devel/ruby-mocha,${MODRUBY_FLAVOR} \
 			${FULLPKGNAME}:${BUILD_PKGPATH}
 
 do-test:
-	cd ${WRKSRC}/test && ${RUBY} -I . -rubygems -e \
+	cd ${WRKSRC}/test && ${RUBY} -I . -e \
 		"require 'sqlite3'; Dir['test_*.rb'].each{|f| load(f)}"
 
 .include <bsd.port.mk>
