@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2019/03/28 00:34:14 jca Exp $
+# $OpenBSD: Makefile,v 1.65 2019/03/28 19:56:07 jca Exp $
 
 COMMENT=	free audio editor
 
 V=		2.3.1
-REVISION=	2
+REVISION=	3
 DISTNAME=	Audacity-${V}
 PKGNAME=	audacity-${V}
 CATEGORIES=	audio
@@ -28,6 +28,8 @@ WANTLIB += vorbisfile wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
 WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0 wx_gtk3u_html-3.0
 WANTLIB += wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0 xcb xcb-render xcb-shm
 WANTLIB += z
+# dlopened
+WANTLIB += mp3lame
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -45,6 +47,7 @@ BUILD_DEPENDS+=	x11/gtk+2
 LIB_DEPENDS=	x11/wxWidgets>=3.0.4 \
 		audio/libsoxr \
 		audio/flac \
+		audio/lame \
 		audio/libvorbis \
 		audio/libid3tag \
 		audio/libmad \
@@ -79,6 +82,7 @@ CONFIGURE_ARGS=		--enable-unicode \
 			--with-lib-preferences=system \
 			--with-libsndfile=system \
 			--with-expat=system \
+			--with-lame=system \
 			--with-libsoxr=system \
 			--with-libvorbis=system \
 			--with-libmad=system \
@@ -95,7 +99,6 @@ CONFIGURE_ARGS=		--enable-unicode \
 			--without-ffmpeg \
 			--without-redland \
 			--without-liblrdf \
-			--without-lame \
 			--without-portmixer
 # XXX libtool/ld(1) fail to find libvamp-hostsdk.so
 CONFIGURE_ARGS+= 	--without-libvamp
