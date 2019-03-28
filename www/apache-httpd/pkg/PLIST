@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2018/10/24 13:23:59 sthen Exp $
-@pkgpath www/apache-httpd${FLAVOR_COMMA}
-@pkgpath www/apache-httpd-openbsd
+@comment $OpenBSD: PLIST,v 1.29 2019/03/28 12:38:15 sthen Exp $
+@pkgpath www/apache-httpd,-main${FLAVOR_COMMA}
+@pkgpath www/apache-httpd,-common
+@conflict apache-httpd-common-*
 @rcscript ${RCDIR}/apache2
 @bin bin/ab
 bin/dbmmanage
@@ -1383,8 +1384,16 @@ share/doc/apache2/vhosts/name-based.html.ko.euc-kr
 share/doc/apache2/vhosts/name-based.html.tr.utf8
 share/examples/apache2/
 share/examples/apache2/cgi-bin/
+share/examples/apache2/cgi-bin/printenv
+@mode 000
+@sample /var/www/cgi-bin/printenv
+@mode
 share/examples/apache2/cgi-bin/printenv.vbs
 share/examples/apache2/cgi-bin/printenv.wsf
+share/examples/apache2/cgi-bin/test-cgi
+@mode 000
+@sample /var/www/cgi-bin/test-cgi
+@mode
 share/examples/apache2/conf/
 @sample ${CONFDIR}/
 share/examples/apache2/conf/extra/
@@ -1485,4 +1494,488 @@ share/examples/apache2/error/include/top.html
 share/examples/apache2/htdocs/
 share/examples/apache2/htdocs/index.html
 @sample /var/www/htdocs/index.html
+share/examples/apache2/icons/
+@sample /var/www/icons/
+share/examples/apache2/icons/README
+@sample /var/www/icons/README
+share/examples/apache2/icons/README.html
+@sample /var/www/icons/README.html
+share/examples/apache2/icons/a.gif
+@sample /var/www/icons/a.gif
+share/examples/apache2/icons/a.png
+@sample /var/www/icons/a.png
+share/examples/apache2/icons/alert.black.gif
+@sample /var/www/icons/alert.black.gif
+share/examples/apache2/icons/alert.black.png
+@sample /var/www/icons/alert.black.png
+share/examples/apache2/icons/alert.red.gif
+@sample /var/www/icons/alert.red.gif
+share/examples/apache2/icons/alert.red.png
+@sample /var/www/icons/alert.red.png
+share/examples/apache2/icons/apache_pb.gif
+@sample /var/www/icons/apache_pb.gif
+share/examples/apache2/icons/apache_pb.png
+@sample /var/www/icons/apache_pb.png
+share/examples/apache2/icons/apache_pb.svg
+@sample /var/www/icons/apache_pb.svg
+share/examples/apache2/icons/apache_pb2.gif
+@sample /var/www/icons/apache_pb2.gif
+share/examples/apache2/icons/apache_pb2.png
+@sample /var/www/icons/apache_pb2.png
+share/examples/apache2/icons/back.gif
+@sample /var/www/icons/back.gif
+share/examples/apache2/icons/back.png
+@sample /var/www/icons/back.png
+share/examples/apache2/icons/ball.gray.gif
+@sample /var/www/icons/ball.gray.gif
+share/examples/apache2/icons/ball.gray.png
+@sample /var/www/icons/ball.gray.png
+share/examples/apache2/icons/ball.red.gif
+@sample /var/www/icons/ball.red.gif
+share/examples/apache2/icons/ball.red.png
+@sample /var/www/icons/ball.red.png
+share/examples/apache2/icons/binary.gif
+@sample /var/www/icons/binary.gif
+share/examples/apache2/icons/binary.png
+@sample /var/www/icons/binary.png
+share/examples/apache2/icons/binhex.gif
+@sample /var/www/icons/binhex.gif
+share/examples/apache2/icons/binhex.png
+@sample /var/www/icons/binhex.png
+share/examples/apache2/icons/blank.gif
+@sample /var/www/icons/blank.gif
+share/examples/apache2/icons/blank.png
+@sample /var/www/icons/blank.png
+share/examples/apache2/icons/bomb.gif
+@sample /var/www/icons/bomb.gif
+share/examples/apache2/icons/bomb.png
+@sample /var/www/icons/bomb.png
+share/examples/apache2/icons/box1.gif
+@sample /var/www/icons/box1.gif
+share/examples/apache2/icons/box1.png
+@sample /var/www/icons/box1.png
+share/examples/apache2/icons/box2.gif
+@sample /var/www/icons/box2.gif
+share/examples/apache2/icons/box2.png
+@sample /var/www/icons/box2.png
+share/examples/apache2/icons/broken.gif
+@sample /var/www/icons/broken.gif
+share/examples/apache2/icons/broken.png
+@sample /var/www/icons/broken.png
+share/examples/apache2/icons/burst.gif
+@sample /var/www/icons/burst.gif
+share/examples/apache2/icons/burst.png
+@sample /var/www/icons/burst.png
+share/examples/apache2/icons/c.gif
+@sample /var/www/icons/c.gif
+share/examples/apache2/icons/c.png
+@sample /var/www/icons/c.png
+share/examples/apache2/icons/comp.blue.gif
+@sample /var/www/icons/comp.blue.gif
+share/examples/apache2/icons/comp.blue.png
+@sample /var/www/icons/comp.blue.png
+share/examples/apache2/icons/comp.gray.gif
+@sample /var/www/icons/comp.gray.gif
+share/examples/apache2/icons/comp.gray.png
+@sample /var/www/icons/comp.gray.png
+share/examples/apache2/icons/compressed.gif
+@sample /var/www/icons/compressed.gif
+share/examples/apache2/icons/compressed.png
+@sample /var/www/icons/compressed.png
+share/examples/apache2/icons/continued.gif
+@sample /var/www/icons/continued.gif
+share/examples/apache2/icons/continued.png
+@sample /var/www/icons/continued.png
+share/examples/apache2/icons/dir.gif
+@sample /var/www/icons/dir.gif
+share/examples/apache2/icons/dir.png
+@sample /var/www/icons/dir.png
+share/examples/apache2/icons/diskimg.gif
+@sample /var/www/icons/diskimg.gif
+share/examples/apache2/icons/diskimg.png
+@sample /var/www/icons/diskimg.png
+share/examples/apache2/icons/down.gif
+@sample /var/www/icons/down.gif
+share/examples/apache2/icons/down.png
+@sample /var/www/icons/down.png
+share/examples/apache2/icons/dvi.gif
+@sample /var/www/icons/dvi.gif
+share/examples/apache2/icons/dvi.png
+@sample /var/www/icons/dvi.png
+share/examples/apache2/icons/f.gif
+@sample /var/www/icons/f.gif
+share/examples/apache2/icons/f.png
+@sample /var/www/icons/f.png
+share/examples/apache2/icons/folder.gif
+@sample /var/www/icons/folder.gif
+share/examples/apache2/icons/folder.open.gif
+@sample /var/www/icons/folder.open.gif
+share/examples/apache2/icons/folder.open.png
+@sample /var/www/icons/folder.open.png
+share/examples/apache2/icons/folder.png
+@sample /var/www/icons/folder.png
+share/examples/apache2/icons/folder.sec.gif
+@sample /var/www/icons/folder.sec.gif
+share/examples/apache2/icons/folder.sec.png
+@sample /var/www/icons/folder.sec.png
+share/examples/apache2/icons/forward.gif
+@sample /var/www/icons/forward.gif
+share/examples/apache2/icons/forward.png
+@sample /var/www/icons/forward.png
+share/examples/apache2/icons/generic.gif
+@sample /var/www/icons/generic.gif
+share/examples/apache2/icons/generic.png
+@sample /var/www/icons/generic.png
+share/examples/apache2/icons/generic.red.gif
+@sample /var/www/icons/generic.red.gif
+share/examples/apache2/icons/generic.red.png
+@sample /var/www/icons/generic.red.png
+share/examples/apache2/icons/generic.sec.gif
+@sample /var/www/icons/generic.sec.gif
+share/examples/apache2/icons/generic.sec.png
+@sample /var/www/icons/generic.sec.png
+share/examples/apache2/icons/hand.right.gif
+@sample /var/www/icons/hand.right.gif
+share/examples/apache2/icons/hand.right.png
+@sample /var/www/icons/hand.right.png
+share/examples/apache2/icons/hand.up.gif
+@sample /var/www/icons/hand.up.gif
+share/examples/apache2/icons/hand.up.png
+@sample /var/www/icons/hand.up.png
+share/examples/apache2/icons/icon.sheet.gif
+@sample /var/www/icons/icon.sheet.gif
+share/examples/apache2/icons/icon.sheet.png
+@sample /var/www/icons/icon.sheet.png
+share/examples/apache2/icons/image1.gif
+@sample /var/www/icons/image1.gif
+share/examples/apache2/icons/image1.png
+@sample /var/www/icons/image1.png
+share/examples/apache2/icons/image2.gif
+@sample /var/www/icons/image2.gif
+share/examples/apache2/icons/image2.png
+@sample /var/www/icons/image2.png
+share/examples/apache2/icons/image3.gif
+@sample /var/www/icons/image3.gif
+share/examples/apache2/icons/image3.png
+@sample /var/www/icons/image3.png
+share/examples/apache2/icons/index.gif
+@sample /var/www/icons/index.gif
+share/examples/apache2/icons/index.png
+@sample /var/www/icons/index.png
+share/examples/apache2/icons/layout.gif
+@sample /var/www/icons/layout.gif
+share/examples/apache2/icons/layout.png
+@sample /var/www/icons/layout.png
+share/examples/apache2/icons/left.gif
+@sample /var/www/icons/left.gif
+share/examples/apache2/icons/left.png
+@sample /var/www/icons/left.png
+share/examples/apache2/icons/link.gif
+@sample /var/www/icons/link.gif
+share/examples/apache2/icons/link.png
+@sample /var/www/icons/link.png
+share/examples/apache2/icons/movie.gif
+@sample /var/www/icons/movie.gif
+share/examples/apache2/icons/movie.png
+@sample /var/www/icons/movie.png
+share/examples/apache2/icons/odf6odb.png
+@sample /var/www/icons/odf6odb.png
+share/examples/apache2/icons/odf6odc.png
+@sample /var/www/icons/odf6odc.png
+share/examples/apache2/icons/odf6odf.png
+@sample /var/www/icons/odf6odf.png
+share/examples/apache2/icons/odf6odg.png
+@sample /var/www/icons/odf6odg.png
+share/examples/apache2/icons/odf6odi.png
+@sample /var/www/icons/odf6odi.png
+share/examples/apache2/icons/odf6odm.png
+@sample /var/www/icons/odf6odm.png
+share/examples/apache2/icons/odf6odp.png
+@sample /var/www/icons/odf6odp.png
+share/examples/apache2/icons/odf6ods.png
+@sample /var/www/icons/odf6ods.png
+share/examples/apache2/icons/odf6odt.png
+@sample /var/www/icons/odf6odt.png
+share/examples/apache2/icons/odf6otc.png
+@sample /var/www/icons/odf6otc.png
+share/examples/apache2/icons/odf6otf.png
+@sample /var/www/icons/odf6otf.png
+share/examples/apache2/icons/odf6otg.png
+@sample /var/www/icons/odf6otg.png
+share/examples/apache2/icons/odf6oth.png
+@sample /var/www/icons/odf6oth.png
+share/examples/apache2/icons/odf6oti.png
+@sample /var/www/icons/odf6oti.png
+share/examples/apache2/icons/odf6otp.png
+@sample /var/www/icons/odf6otp.png
+share/examples/apache2/icons/odf6ots.png
+@sample /var/www/icons/odf6ots.png
+share/examples/apache2/icons/odf6ott.png
+@sample /var/www/icons/odf6ott.png
+share/examples/apache2/icons/p.gif
+@sample /var/www/icons/p.gif
+share/examples/apache2/icons/p.png
+@sample /var/www/icons/p.png
+share/examples/apache2/icons/patch.gif
+@sample /var/www/icons/patch.gif
+share/examples/apache2/icons/patch.png
+@sample /var/www/icons/patch.png
+share/examples/apache2/icons/pdf.gif
+@sample /var/www/icons/pdf.gif
+share/examples/apache2/icons/pdf.png
+@sample /var/www/icons/pdf.png
+share/examples/apache2/icons/pie0.gif
+@sample /var/www/icons/pie0.gif
+share/examples/apache2/icons/pie0.png
+@sample /var/www/icons/pie0.png
+share/examples/apache2/icons/pie1.gif
+@sample /var/www/icons/pie1.gif
+share/examples/apache2/icons/pie1.png
+@sample /var/www/icons/pie1.png
+share/examples/apache2/icons/pie2.gif
+@sample /var/www/icons/pie2.gif
+share/examples/apache2/icons/pie2.png
+@sample /var/www/icons/pie2.png
+share/examples/apache2/icons/pie3.gif
+@sample /var/www/icons/pie3.gif
+share/examples/apache2/icons/pie3.png
+@sample /var/www/icons/pie3.png
+share/examples/apache2/icons/pie4.gif
+@sample /var/www/icons/pie4.gif
+share/examples/apache2/icons/pie4.png
+@sample /var/www/icons/pie4.png
+share/examples/apache2/icons/pie5.gif
+@sample /var/www/icons/pie5.gif
+share/examples/apache2/icons/pie5.png
+@sample /var/www/icons/pie5.png
+share/examples/apache2/icons/pie6.gif
+@sample /var/www/icons/pie6.gif
+share/examples/apache2/icons/pie6.png
+@sample /var/www/icons/pie6.png
+share/examples/apache2/icons/pie7.gif
+@sample /var/www/icons/pie7.gif
+share/examples/apache2/icons/pie7.png
+@sample /var/www/icons/pie7.png
+share/examples/apache2/icons/pie8.gif
+@sample /var/www/icons/pie8.gif
+share/examples/apache2/icons/pie8.png
+@sample /var/www/icons/pie8.png
+share/examples/apache2/icons/portal.gif
+@sample /var/www/icons/portal.gif
+share/examples/apache2/icons/portal.png
+@sample /var/www/icons/portal.png
+share/examples/apache2/icons/ps.gif
+@sample /var/www/icons/ps.gif
+share/examples/apache2/icons/ps.png
+@sample /var/www/icons/ps.png
+share/examples/apache2/icons/quill.gif
+@sample /var/www/icons/quill.gif
+share/examples/apache2/icons/quill.png
+@sample /var/www/icons/quill.png
+share/examples/apache2/icons/right.gif
+@sample /var/www/icons/right.gif
+share/examples/apache2/icons/right.png
+@sample /var/www/icons/right.png
+share/examples/apache2/icons/screw1.gif
+@sample /var/www/icons/screw1.gif
+share/examples/apache2/icons/screw1.png
+@sample /var/www/icons/screw1.png
+share/examples/apache2/icons/screw2.gif
+@sample /var/www/icons/screw2.gif
+share/examples/apache2/icons/screw2.png
+@sample /var/www/icons/screw2.png
+share/examples/apache2/icons/script.gif
+@sample /var/www/icons/script.gif
+share/examples/apache2/icons/script.png
+@sample /var/www/icons/script.png
+share/examples/apache2/icons/small/
+@sample /var/www/icons/small/
+share/examples/apache2/icons/small/back.gif
+@sample /var/www/icons/small/back.gif
+share/examples/apache2/icons/small/back.png
+@sample /var/www/icons/small/back.png
+share/examples/apache2/icons/small/binary.gif
+@sample /var/www/icons/small/binary.gif
+share/examples/apache2/icons/small/binary.png
+@sample /var/www/icons/small/binary.png
+share/examples/apache2/icons/small/binhex.gif
+@sample /var/www/icons/small/binhex.gif
+share/examples/apache2/icons/small/binhex.png
+@sample /var/www/icons/small/binhex.png
+share/examples/apache2/icons/small/blank.gif
+@sample /var/www/icons/small/blank.gif
+share/examples/apache2/icons/small/blank.png
+@sample /var/www/icons/small/blank.png
+share/examples/apache2/icons/small/broken.gif
+@sample /var/www/icons/small/broken.gif
+share/examples/apache2/icons/small/broken.png
+@sample /var/www/icons/small/broken.png
+share/examples/apache2/icons/small/burst.gif
+@sample /var/www/icons/small/burst.gif
+share/examples/apache2/icons/small/burst.png
+@sample /var/www/icons/small/burst.png
+share/examples/apache2/icons/small/comp1.gif
+@sample /var/www/icons/small/comp1.gif
+share/examples/apache2/icons/small/comp1.png
+@sample /var/www/icons/small/comp1.png
+share/examples/apache2/icons/small/comp2.gif
+@sample /var/www/icons/small/comp2.gif
+share/examples/apache2/icons/small/comp2.png
+@sample /var/www/icons/small/comp2.png
+share/examples/apache2/icons/small/compressed.gif
+@sample /var/www/icons/small/compressed.gif
+share/examples/apache2/icons/small/compressed.png
+@sample /var/www/icons/small/compressed.png
+share/examples/apache2/icons/small/continued.gif
+@sample /var/www/icons/small/continued.gif
+share/examples/apache2/icons/small/continued.png
+@sample /var/www/icons/small/continued.png
+share/examples/apache2/icons/small/doc.gif
+@sample /var/www/icons/small/doc.gif
+share/examples/apache2/icons/small/doc.png
+@sample /var/www/icons/small/doc.png
+share/examples/apache2/icons/small/folder.gif
+@sample /var/www/icons/small/folder.gif
+share/examples/apache2/icons/small/folder.png
+@sample /var/www/icons/small/folder.png
+share/examples/apache2/icons/small/folder2.gif
+@sample /var/www/icons/small/folder2.gif
+share/examples/apache2/icons/small/folder2.png
+@sample /var/www/icons/small/folder2.png
+share/examples/apache2/icons/small/forward.gif
+@sample /var/www/icons/small/forward.gif
+share/examples/apache2/icons/small/forward.png
+@sample /var/www/icons/small/forward.png
+share/examples/apache2/icons/small/generic.gif
+@sample /var/www/icons/small/generic.gif
+share/examples/apache2/icons/small/generic.png
+@sample /var/www/icons/small/generic.png
+share/examples/apache2/icons/small/generic2.gif
+@sample /var/www/icons/small/generic2.gif
+share/examples/apache2/icons/small/generic2.png
+@sample /var/www/icons/small/generic2.png
+share/examples/apache2/icons/small/generic3.gif
+@sample /var/www/icons/small/generic3.gif
+share/examples/apache2/icons/small/generic3.png
+@sample /var/www/icons/small/generic3.png
+share/examples/apache2/icons/small/image.gif
+@sample /var/www/icons/small/image.gif
+share/examples/apache2/icons/small/image.png
+@sample /var/www/icons/small/image.png
+share/examples/apache2/icons/small/image2.gif
+@sample /var/www/icons/small/image2.gif
+share/examples/apache2/icons/small/image2.png
+@sample /var/www/icons/small/image2.png
+share/examples/apache2/icons/small/index.gif
+@sample /var/www/icons/small/index.gif
+share/examples/apache2/icons/small/index.png
+@sample /var/www/icons/small/index.png
+share/examples/apache2/icons/small/key.gif
+@sample /var/www/icons/small/key.gif
+share/examples/apache2/icons/small/key.png
+@sample /var/www/icons/small/key.png
+share/examples/apache2/icons/small/movie.gif
+@sample /var/www/icons/small/movie.gif
+share/examples/apache2/icons/small/movie.png
+@sample /var/www/icons/small/movie.png
+share/examples/apache2/icons/small/patch.gif
+@sample /var/www/icons/small/patch.gif
+share/examples/apache2/icons/small/patch.png
+@sample /var/www/icons/small/patch.png
+share/examples/apache2/icons/small/ps.gif
+@sample /var/www/icons/small/ps.gif
+share/examples/apache2/icons/small/ps.png
+@sample /var/www/icons/small/ps.png
+share/examples/apache2/icons/small/rainbow.gif
+@sample /var/www/icons/small/rainbow.gif
+share/examples/apache2/icons/small/rainbow.png
+@sample /var/www/icons/small/rainbow.png
+share/examples/apache2/icons/small/sound.gif
+@sample /var/www/icons/small/sound.gif
+share/examples/apache2/icons/small/sound.png
+@sample /var/www/icons/small/sound.png
+share/examples/apache2/icons/small/sound2.gif
+@sample /var/www/icons/small/sound2.gif
+share/examples/apache2/icons/small/sound2.png
+@sample /var/www/icons/small/sound2.png
+share/examples/apache2/icons/small/tar.gif
+@sample /var/www/icons/small/tar.gif
+share/examples/apache2/icons/small/tar.png
+@sample /var/www/icons/small/tar.png
+share/examples/apache2/icons/small/text.gif
+@sample /var/www/icons/small/text.gif
+share/examples/apache2/icons/small/text.png
+@sample /var/www/icons/small/text.png
+share/examples/apache2/icons/small/transfer.gif
+@sample /var/www/icons/small/transfer.gif
+share/examples/apache2/icons/small/transfer.png
+@sample /var/www/icons/small/transfer.png
+share/examples/apache2/icons/small/unknown.gif
+@sample /var/www/icons/small/unknown.gif
+share/examples/apache2/icons/small/unknown.png
+@sample /var/www/icons/small/unknown.png
+share/examples/apache2/icons/small/uu.gif
+@sample /var/www/icons/small/uu.gif
+share/examples/apache2/icons/small/uu.png
+@sample /var/www/icons/small/uu.png
+share/examples/apache2/icons/sound1.gif
+@sample /var/www/icons/sound1.gif
+share/examples/apache2/icons/sound1.png
+@sample /var/www/icons/sound1.png
+share/examples/apache2/icons/sound2.gif
+@sample /var/www/icons/sound2.gif
+share/examples/apache2/icons/sound2.png
+@sample /var/www/icons/sound2.png
+share/examples/apache2/icons/sphere1.gif
+@sample /var/www/icons/sphere1.gif
+share/examples/apache2/icons/sphere1.png
+@sample /var/www/icons/sphere1.png
+share/examples/apache2/icons/sphere2.gif
+@sample /var/www/icons/sphere2.gif
+share/examples/apache2/icons/sphere2.png
+@sample /var/www/icons/sphere2.png
+share/examples/apache2/icons/svg.png
+@sample /var/www/icons/svg.png
+share/examples/apache2/icons/tar.gif
+@sample /var/www/icons/tar.gif
+share/examples/apache2/icons/tar.png
+@sample /var/www/icons/tar.png
+share/examples/apache2/icons/tex.gif
+@sample /var/www/icons/tex.gif
+share/examples/apache2/icons/tex.png
+@sample /var/www/icons/tex.png
+share/examples/apache2/icons/text.gif
+@sample /var/www/icons/text.gif
+share/examples/apache2/icons/text.png
+@sample /var/www/icons/text.png
+share/examples/apache2/icons/transfer.gif
+@sample /var/www/icons/transfer.gif
+share/examples/apache2/icons/transfer.png
+@sample /var/www/icons/transfer.png
+share/examples/apache2/icons/unknown.gif
+@sample /var/www/icons/unknown.gif
+share/examples/apache2/icons/unknown.png
+@sample /var/www/icons/unknown.png
+share/examples/apache2/icons/up.gif
+@sample /var/www/icons/up.gif
+share/examples/apache2/icons/up.png
+@sample /var/www/icons/up.png
+share/examples/apache2/icons/uu.gif
+@sample /var/www/icons/uu.gif
+share/examples/apache2/icons/uu.png
+@sample /var/www/icons/uu.png
+share/examples/apache2/icons/uuencoded.gif
+@sample /var/www/icons/uuencoded.gif
+share/examples/apache2/icons/uuencoded.png
+@sample /var/www/icons/uuencoded.png
+share/examples/apache2/icons/world1.gif
+@sample /var/www/icons/world1.gif
+share/examples/apache2/icons/world1.png
+@sample /var/www/icons/world1.png
+share/examples/apache2/icons/world2.gif
+@sample /var/www/icons/world2.gif
+share/examples/apache2/icons/world2.png
+@sample /var/www/icons/world2.png
+share/examples/apache2/icons/xml.png
+@sample /var/www/icons/xml.png
 %%ldap%%
