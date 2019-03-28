@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_spf_h,v 1.1 2019/03/28 12:48:09 sthen Exp $
+
+Index: src/spf.h
+--- src/spf.h.orig
++++ src/spf.h
+@@ -10,10 +10,6 @@
+ 
+ #ifdef SUPPORT_SPF
+ 
+-/* Yes, we do have ns_type. spf.h redefines it if we don't set this. Doh */
+-#ifndef HAVE_NS_TYPE
+-# define HAVE_NS_TYPE
+-#endif
+ #include <spf2/spf.h>
+ 
+ #include <spf2/spf_dns_resolv.h>

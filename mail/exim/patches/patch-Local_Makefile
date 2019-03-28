@@ -1,4 +1,4 @@
-$OpenBSD: patch-Local_Makefile,v 1.1 2018/04/19 20:52:43 sthen Exp $
+$OpenBSD: patch-Local_Makefile,v 1.2 2019/03/28 12:48:09 sthen Exp $
 
 Index: Local/Makefile
 --- Local/Makefile.orig
@@ -91,7 +91,7 @@ Index: Local/Makefile
  
  # If you have content scanning you may wish to only include some of the scanner
  # interfaces.  Uncomment any of these lines to remove that code.
-@@ -635,16 +635,16 @@ FIXED_NEVER_USERS=root
+@@ -640,16 +640,16 @@ FIXED_NEVER_USERS=root
  # included in the Exim binary. You will then need to set up the run time
  # configuration to make use of the mechanism(s) selected.
  
@@ -112,7 +112,7 @@ Index: Local/Makefile
  # AUTH_TLS=yes
  
  # Heimdal through 1.5 required pkg-config 'heimdal-gssapi'; Heimdal 7.1
-@@ -689,7 +689,7 @@ HEADERS_CHARSET="ISO-8859-1"
+@@ -694,7 +694,7 @@ HEADERS_CHARSET="ISO-8859-1"
  # the Sieve filter support. For those OS where iconv() is known to be installed
  # as standard, the file in OS/Makefile-xxxx contains
  #
@@ -121,7 +121,7 @@ Index: Local/Makefile
  #
  # If you are not using one of those systems, but have installed iconv(), you
  # need to uncomment that line above. In some cases, you may find that iconv()
-@@ -758,11 +758,11 @@ HEADERS_CHARSET="ISO-8859-1"
+@@ -763,11 +763,11 @@ HEADERS_CHARSET="ISO-8859-1"
  # leave these settings commented out.
  
  # This setting is required for any TLS support (either OpenSSL or GnuTLS)
@@ -135,7 +135,7 @@ Index: Local/Makefile
  
  # Uncomment the first and either the second or the third of these if you
  # are using GnuTLS.  If you have pkg-config, then the second, else the third.
-@@ -847,7 +847,7 @@ HEADERS_CHARSET="ISO-8859-1"
+@@ -852,7 +852,7 @@ HEADERS_CHARSET="ISO-8859-1"
  # %s. This will be replaced by one of the strings "main", "panic", or "reject"
  # to form the final file names. Some installations may want something like this:
  
@@ -144,7 +144,7 @@ Index: Local/Makefile
  
  # which results in files with names /var/log/exim_mainlog, etc. The directory
  # in which the log files are placed must exist; Exim does not try to create
-@@ -919,7 +919,7 @@ ZCAT_COMMAND=/usr/bin/zcat
+@@ -924,7 +924,7 @@ ZCAT_COMMAND=/usr/bin/zcat
  # (version 5.004 or later) installed, set EXIM_PERL to perl.o. Using embedded
  # Perl costs quite a lot of resources. Only do this if you really need it.
  
@@ -153,7 +153,19 @@ Index: Local/Makefile
  
  
  #------------------------------------------------------------------------------
-@@ -1047,7 +1047,7 @@ ZCAT_COMMAND=/usr/bin/zcat
+@@ -985,9 +985,9 @@ ZCAT_COMMAND=/usr/bin/zcat
+ # installed on your system (www.libspf2.org). Depending on where it is installed
+ # you may have to edit the CFLAGS and LDFLAGS lines.
+ 
+-# SUPPORT_SPF=yes
++SUPPORT_SPF=yes
+ # CFLAGS  += -I/usr/local/include
+-# LDFLAGS += -lspf2
++LDFLAGS += -lspf2
+ 
+ 
+ #------------------------------------------------------------------------------
+@@ -1052,7 +1052,7 @@ ZCAT_COMMAND=/usr/bin/zcat
  # group. Once you have installed saslauthd, you should arrange for it to be
  # started by root at boot time.
  
@@ -162,7 +174,7 @@ Index: Local/Makefile
  
  
  #------------------------------------------------------------------------------
-@@ -1095,7 +1095,7 @@ ZCAT_COMMAND=/usr/bin/zcat
+@@ -1100,7 +1100,7 @@ ZCAT_COMMAND=/usr/bin/zcat
  # aliases). The following setting can be changed to specify a different
  # location for the system alias file.
  
@@ -171,7 +183,7 @@ Index: Local/Makefile
  
  
  #------------------------------------------------------------------------------
-@@ -1360,7 +1360,7 @@ EXIM_TMPDIR="/tmp"
+@@ -1365,7 +1365,7 @@ EXIM_TMPDIR="/tmp"
  # (process id) to a file so that it can easily be identified. The path of the
  # file can be specified here. Some installations may want something like this:
  
