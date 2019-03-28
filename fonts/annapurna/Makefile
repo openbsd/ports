@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/03/01 08:42:39 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/28 02:04:58 bentley Exp $
 
 COMMENT =		Unicode-based font for Devanagari script
 
-DISTNAME =		AnnapurnaSIL-1.203
-PKGNAME =		annapurna-1.203
+DISTNAME =		AnnapurnaSIL-1.204
+PKGNAME =		annapurna-1.204
 
 CATEGORIES =		fonts
 
