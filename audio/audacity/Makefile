@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2019/03/28 00:33:36 jca Exp $
+# $OpenBSD: Makefile,v 1.64 2019/03/28 00:34:14 jca Exp $
 
 COMMENT=	free audio editor
 
 V=		2.3.1
-REVISION=	1
+REVISION=	2
 DISTNAME=	Audacity-${V}
 PKGNAME=	audacity-${V}
 CATEGORIES=	audio
@@ -39,6 +39,9 @@ BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		devel/gettext-tools \
 		devel/libtool \
 		shells/bash
+# Used to build suild, not installed by default
+# See ${WRKSRC}/lib-src/lv2/suil and https://drobilla.net/software/suil
+BUILD_DEPENDS+=	x11/gtk+2
 LIB_DEPENDS=	x11/wxWidgets>=3.0.4 \
 		audio/libsoxr \
 		audio/flac \
