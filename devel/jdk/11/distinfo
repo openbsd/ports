@@ -1,0 +1,6 @@
+SHA256 (jdk/jdk-11.0.2+9-3.tar.gz) = A2W9PwxpGQgKj0uFUjrCyz3ZkqJuAYyr6IBOo+zziHs=
+SHA256 (jdk/openjdk-jdk11u-bootjdk-amd64-20190325.tar.gz) = uADjYEnch2TUXtDpWe9rAfgLXR7NvqOKsOrdpKH4qNY=
+SHA256 (jdk/openjdk-jdk11u-bootjdk-i386-20190325.tar.gz) = nI7/p0nVpFbiD01gpCl5QSfjtOeI/41PumOKfK/HeOA=
+SIZE (jdk/jdk-11.0.2+9-3.tar.gz) = 116742678
+SIZE (jdk/openjdk-jdk11u-bootjdk-amd64-20190325.tar.gz) = 113818989
+SIZE (jdk/openjdk-jdk11u-bootjdk-i386-20190325.tar.gz) = 101841640
