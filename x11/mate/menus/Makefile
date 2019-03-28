@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/28 14:34:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2019/03/28 15:32:14 ajacoutot Exp $
 
 COMMENT=		implementation of the FreeDesktop menu spec for MATE
 
@@ -25,14 +25,14 @@ FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/mate-menus
 
 CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.12
+AUTOMAKE_VERSION=	1.16
 
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool
 
 do-gen:
-	@cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf -fi
+	cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf -fi
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/layout/mate-applications.menu
