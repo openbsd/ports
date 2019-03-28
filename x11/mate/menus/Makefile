@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/03/27 18:13:38 robert Exp $
+# $OpenBSD: Makefile,v 1.9 2019/03/28 14:34:38 ajacoutot Exp $
 
 COMMENT=		implementation of the FreeDesktop menu spec for MATE
 
@@ -27,8 +27,14 @@ CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.12
 
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
+
+do-gen:
+	@cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf -fi
+
 pre-configure:
-	@cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf
 	${SUBST_CMD} ${WRKSRC}/layout/mate-applications.menu
 
 .include <bsd.port.mk>
