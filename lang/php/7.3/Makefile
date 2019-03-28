@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/09 12:18:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/28 12:39:03 sthen Exp $
 
 BROKEN=	many crashes at runtime.
 # basic things in CLI work but some others fail (see e.g. tests
@@ -10,5 +10,6 @@ BROKEN=	many crashes at runtime.
 
 PV=		7.3
 V=		${PV}.3
+REVISION-apache= 0
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.132 2019/03/08 02:13:05 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.133 2019/03/28 12:39:03 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -136,6 +136,7 @@ CONFIGURE_ARGS+=	--enable-cgi
 
 # apache
 COMMENT-apache=		php module for Apache httpd
+RUN_DEPENDS-apache=	www/apache-httpd
 .if ${BUILD_PACKAGES:M-apache}
 CONFIGURE_ARGS+=	--with-apxs2=${LOCALBASE}/sbin/apxs
 BUILD_DEPENDS+=		www/apache-httpd

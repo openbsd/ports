@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2018/09/04 12:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/28 12:39:02 sthen Exp $
 
 COMMENT=	Apache2 Zeroconf module
 
 DISTNAME=	mod_dnssd-0.6
 PKGNAME=	ap2-${DISTNAME}
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	www net
 

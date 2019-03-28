@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2019/01/11 15:12:26 stsp Exp $
+# $OpenBSD: Makefile,v 1.171 2019/03/28 12:39:02 sthen Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -20,6 +20,8 @@ FULLPKGNAME-ap2=	ap2-subversion-${VERSION}
 FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
+
+REVISION-ap2=		0
 
 MODRUBY_REV ?=	2.5
 # Work around for SHARED_LIBS not picking up MODRUBY_BINREV from ruby module

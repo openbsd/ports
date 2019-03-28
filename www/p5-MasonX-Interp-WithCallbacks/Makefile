@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/04/29 08:22:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/03/28 12:39:02 sthen Exp $
 
 COMMENT=	Mason callback support via Params::CallbackRequest
 
@@ -22,7 +22,7 @@ CONFIGURE_STYLE=modbuild
 MAKE_ENV =	TEST_POD=Yes
 
 # for tests
-MAKE_ENV+=	APACHE_TEST_APXS=${LOCALBASE}/sbin/apxs2 \
+MAKE_ENV+=	APACHE_TEST_APXS=${LOCALBASE}/sbin/apxs \
 		APACHE_TEST_HTTPD=${LOCALBASE}/sbin/httpd2
 PORTHOME=	${WRKDIR}
 
