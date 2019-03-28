@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/03/28 02:00:43 jca Exp $
+# $OpenBSD: Makefile,v 1.23 2019/03/28 02:03:27 jca Exp $
 
 COMMENT-main =	japanese input method
 COMMENT-emacs =	emacs files for anthy
@@ -29,7 +29,7 @@ FAKE_FLAGS =	sysconfdir=$(PREFIX)/share/examples/anthy
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV =	CPPFLAGS='-I${LOCALBASE}/include' \
-		LDFLAGS='-L${LOCALBASE}/lib' \
+		LDFLAGS='-L${LOCALBASE}/lib ${LDFLAGS}' \
 		SWIG=no
 
 PSEUDO_FLAVORS = no_emacs

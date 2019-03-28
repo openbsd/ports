@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/26 16:46:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/03/28 02:03:27 jca Exp $
 
 COMMENT =	multilingual text processing library
 
@@ -25,7 +25,7 @@ BUILD_DEPENDS =	textproc/ispell \
 		${RUN_DEPENDS}
 RUN_DEPENDS =	misc/m17n/db=${M17N_V}
 
-CONFIGURE_ENV =	LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV =	LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 LIBTOOL_FLAGS =	--tag=disable-static
 SEPARATE_BUILD = Yes
 
