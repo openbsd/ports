@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/28 18:57:34 kurt Exp $
+# $OpenBSD: Makefile,v 1.11 2019/03/28 19:02:53 sthen Exp $
 
 COMMENT=		helper script for launching java applications
 
-DISTNAME=		javaPathHelper-2.0
+GH_ACCOUNT=		bsdkurt
+GH_PROJECT=		javaPathHelper
+GH_TAGNAME=		2.0
+
 CATEGORIES=		java
 
-HOMEPAGE=		https://github.com/bsdkurt/javaPathHelper
-
 MAINTAINER=		Kurt Miller <kurt@openbsd.org>
-
-MASTER_SITES=		https://github.com/bsdkurt/javaPathHelper/archive/2.0/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
