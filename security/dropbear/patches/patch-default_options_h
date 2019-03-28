@@ -1,4 +1,4 @@
-$OpenBSD: patch-default_options_h,v 1.1 2018/03/13 03:50:48 bket Exp $
+$OpenBSD: patch-default_options_h,v 1.2 2019/03/28 14:47:11 sthen Exp $
 
 Index: default_options.h
 --- default_options.h.orig
@@ -25,7 +25,7 @@ Index: default_options.h
  
  /* Enable X11 Forwarding - server only */
  #define DROPBEAR_X11FWD 1
-@@ -239,11 +239,11 @@ Homedir is prepended unless path begins with / */
+@@ -244,11 +244,11 @@ Homedir is prepended unless path begins with / */
  
  /* The default file to store the daemon's process ID, for shutdown
     scripts etc. This can be overridden with the -P flag */
@@ -39,7 +39,7 @@ Index: default_options.h
  
  
  /* if you want to enable running an sftp server (such as the one included with
-@@ -254,7 +254,7 @@ Homedir is prepended unless path begins with / */
+@@ -259,7 +259,7 @@ Homedir is prepended unless path begins with / */
  
  /* This is used by the scp binary when used as a client binary. If you're
   * not using the Dropbear client, you'll need to change it */
@@ -48,7 +48,7 @@ Index: default_options.h
  
  /* Whether to log commands executed by a client. This only logs the 
   * (single) command sent to the server, not what a user did in a 
-@@ -290,6 +290,6 @@ be overridden at runtime with -I. 0 disables idle time
+@@ -295,6 +295,6 @@ be overridden at runtime with -I. 0 disables idle time
  #define DEFAULT_IDLE_TIMEOUT 0
  
  /* The default path. This will often get replaced by the shell */
