@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2019/03/03 01:20:31 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.33 2019/03/28 23:16:38 bluhm Exp $
 
 COMMENT =	next generation web framework for Perl
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Mojolicious-8.12
+DISTNAME =	Mojolicious-8.13
 CATEGORIES =	www
 
 MAINTAINER =	Manolis Tzanidakis <mtzanidakis@gmail.com>
@@ -23,12 +23,14 @@ TEST_DEPENDS +=	net/p5-IO-Socket-Socks \
 
 MAKE_ENV += TEST_EV=Yes
 MAKE_ENV += TEST_HYPNOTOAD=Yes
+MAKE_ENV += TEST_IPV6=YES
 MAKE_ENV += TEST_MORBO=Yes
 MAKE_ENV += TEST_POD=Yes
 MAKE_ENV += TEST_PREFORK=Yes
-MAKE_ENV += TEST_SUBPROCESS=Yes
-MAKE_ENV += TEST_UNIX=YES
 MAKE_ENV += TEST_SOCKS=YES
+MAKE_ENV += TEST_SUBPROCESS=Yes
+MAKE_ENV += TEST_TLS=YES
+MAKE_ENV += TEST_UNIX=YES
 
 # see pkg/README for certificate handling
 post-install:
