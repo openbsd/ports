@@ -1,4 +1,12 @@
-Python wrapper around a small subset of the OpenSSL library. Includes:
-SSL Context objects, SSL Connection objects, using Python sockets as
-transport layer. The Connection object wraps all the socket methods
-and can therefore be used interchangeably.
+Python wrapper around a small subset of the OpenSSL library.  Includes:
+
+- SSL.Connection objects, wrapping the methods of Python's portable sockets
+- Callbacks written in Python
+- Extensive error-handling mechanism, mirroring OpenSSL's error codes
+
+and much more.
+
+Note: The Python Cryptographic Authority strongly suggests the use of
+pyca/cryptography where possible. If you are using pyOpenSSL for anything
+other than making a TLS connection you should move to cryptography and
+drop your pyOpenSSL dependency.
