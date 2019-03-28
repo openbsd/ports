@@ -1,72 +1,50 @@
-# $OpenBSD: java.port.mk,v 1.35 2017/04/21 13:27:46 kurt Exp $
+# $OpenBSD: java.port.mk,v 1.36 2019/03/28 19:00:47 sthen Exp $
 
-# Set MODJAVA_VER to x.y or x.y+ based on the version
-# of the jdk needed for the port. x.y  means any x.y jdk.
-# x.y+ means any x.y jdk or higher version. Valid values
-# for x.y are 1.4, 1.5, 1.6, 1.7 or 1.8
+# Set MODJAVA_VER to x.y or x.y+ based on the version of the jdk needed
+# for the port. x.y means any x.y jdk. x.y+ means any x.y jdk or higher
+# version. Valid values for x.y are 1.8 or 11.
 
 MODJAVA_VER?=
+ONLY_FOR_ARCHS?= i386 amd64
 
-# Set MODJAVA_JRERUN=yes if the port can run with just
-# the jre. This will add the jre's to the RUN_DEPENDS
-# based on how MODJAVA_VER is set.
-
-MODJAVA_JRERUN?=no
-
-# Based on the MODJAVA_VER, MODJAVA_JRERUN, NO_BUILD
-# and MACHINE_ARCH, the following things will be setup:
+# Based on the MODJAVA_VER, NO_BUILD and MACHINE_ARCH, the following
+# things will be setup:
+#
 #   ONLY_FOR_ARCHS if not already set.
 #   BUILD_DEPENDS on a jdk (only if not NO_BUILD)
-#   JAVA_HOME to pass on to the port build (only if not NO_BUILD)
-#   RUN_DEPENDS for all jdk's and jre's that can run
-#   the port.
+#   JAVA_HOME to pass on to the port build
+#   RUN_DEPENDS for all jdk's that can run the port.
 #   MODJAVA_RUN_DEPENDS with same value as RUN_DEPENDS
 #   to assist with multipackages.
 #
-# NOTE: All source built java ports must properly set
-# javac -source and -target build arguments. Depending
-# on the architecture a 1.4 or 1.5 level port may be
-# built by a 1.6 jdk. The JAVA_HOME variable points to the
-# build jdk not the default RUN_DEPEND jdk, so it
-# should not be used to set a default jdk to run with.
-# The javaPathHelper port should be used to set the
-# default JAVA_HOME or JAVACMD vars for a package.
+# NOTE: All source built java ports must properly set javac -source and
+# -target build arguments. Depending on the architecture an older level
+# port may be built by a newer jdk. The JAVA_HOME variable points to the
+# build jdk not the default RUN_DEPEND jdk, so it should not be used to
+# set a default jdk to run with. The javaPathHelper port should be used
+# to set the default JAVA_HOME or JAVACMD vars for a package.
 #
 
-.if ${MODJAVA_VER} == "1.4" || ${MODJAVA_VER} == "1.5" || ${MODJAVA_VER} == "1.6" || ${MODJAVA_VER} == "1.7"
-    BROKEN=MODJAVA_VER=${MODJAVA_VER} only ports are not supported
-.elif ${MODJAVA_VER} == "1.4+" || ${MODJAVA_VER} == "1.5+" || ${MODJAVA_VER} == "1.6+" || ${MODJAVA_VER} == "1.7+"
-   ONLY_FOR_ARCHS?= i386 amd64
-.  if ${NO_BUILD:L} != "yes"
-     JAVA_HOME= ${LOCALBASE}/jdk-1.8.0
-     BUILD_DEPENDS+= jdk->=1.8v0,<1.9v0:devel/jdk/1.8
-.  endif
-.  if ${MODJAVA_JRERUN:L} == "yes"
-     MODJAVA_RUN_DEPENDS= jdk->=1.8v0|jre->=1.8v0:devel/jdk/1.8
-.  else
-     MODJAVA_RUN_DEPENDS= jdk->=1.8v0:devel/jdk/1.8
-.  endif
-.elif ${MODJAVA_VER:S/+//} == "1.8"
-   ONLY_FOR_ARCHS?= i386 amd64
-.  if ${NO_BUILD:L} != "yes"
-     JAVA_HOME= ${LOCALBASE}/jdk-1.8.0
-     BUILD_DEPENDS+= jdk->=1.8v0,<1.9v0:devel/jdk/1.8
-.  endif
-.  if ${MODJAVA_JRERUN:L} == "yes"
-     _MODJAVA_RUNDEP= jdk->=1.8v0,<1.9v0|jre->=1.8v0,<1.9v0
-.  else
-     _MODJAVA_RUNDEP= jdk->=1.8v0,<1.9v0
-.  endif
-.  if ${MODJAVA_VER} == "1.8+"
-     MODJAVA_RUN_DEPENDS= ${_MODJAVA_RUNDEP:S/,<1.9v0//g}:devel/jdk/1.8
-.  else
-     MODJAVA_RUN_DEPENDS= ${_MODJAVA_RUNDEP}:devel/jdk/1.8
-.  endif
+.if ${MODJAVA_VER:S/+//} == "1.8"
+    JAVA_HOME= ${LOCALBASE}/jdk-1.8.0
+    MODJAVA_BUILD_DEPENDS= jdk->=1.8v0,<1.9v0:devel/jdk/1.8
+.elif ${MODJAVA_VER:S/+//} == "11"
+    JAVA_HOME= ${LOCALBASE}/jdk-11
+    MODJAVA_BUILD_DEPENDS+= jdk->=11v0,<12v0:devel/jdk/11
 .else
-   ERRORS+="Fatal: MODJAVA_VER must be set to a valid value."
+    ERRORS+="Fatal: MODJAVA_VER must be set to a valid value."
 .endif
 
+.if ${MODJAVA_VER:M*+}
+    MODJAVA_RUN_DEPENDS= ${MODJAVA_BUILD_DEPENDS:C/,.*:/:/}
+.else
+    MODJAVA_RUN_DEPENDS= ${MODJAVA_BUILD_DEPENDS}
+.endif
 RUN_DEPENDS+= ${MODJAVA_RUN_DEPENDS}
+
+.if ${NO_BUILD:L} != "yes"
+    BUILD_DEPENDS+= ${MODJAVA_BUILD_DEPENDS}
+.endif
 
 # Append 'java' to the list of categories.
 CATEGORIES+=	java
