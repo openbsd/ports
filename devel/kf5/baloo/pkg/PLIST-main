@@ -1,4 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/03/13 21:28:22 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2019/03/28 20:32:42 rsadowski Exp $
+@conflict kf5-baloo-<=5.51.0p1v0
+@conflict baloo->=4
+@conflict kde-l10n-*
+@conflict kde-i18n-*
+@pkgpath devel/kf5/baloo
 include/KF5/Baloo/
 include/KF5/Baloo/Baloo/
 include/KF5/Baloo/Baloo/File
@@ -35,11 +40,10 @@ lib/qt5/qml/org/kde/baloo/qmldir
 share/dbus-1/interfaces/org.kde.baloo.fileindexer.xml
 share/dbus-1/interfaces/org.kde.baloo.main.xml
 share/dbus-1/interfaces/org.kde.baloo.scheduler.xml
-share/examples/kf5-baloo/
-share/examples/kf5-baloo/xdg/
-share/examples/kf5-baloo/xdg/baloo.categories
+share/examples/baloo/
+share/examples/baloo/xdg/
+share/examples/baloo/xdg/baloo.categories
 @sample ${SYSCONFDIR}/xdg/baloo.categories
-share/icons/hicolor/128x128/apps/baloo.png
 share/kf5/mkspecs/qt_Baloo.pri
 share/locale/ar/LC_MESSAGES/baloo_file5.mo
 share/locale/ar/LC_MESSAGES/baloo_file_extractor5.mo
@@ -495,4 +499,3 @@ share/locale/zh_TW/LC_MESSAGES/balooshow5.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_baloosearch.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_tags.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_timeline.mo
-@tag gtk-update-icon-cache %D/share/icons/hicolor
