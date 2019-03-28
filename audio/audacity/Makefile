@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2019/03/27 20:25:11 jca Exp $
+# $OpenBSD: Makefile,v 1.63 2019/03/28 00:33:36 jca Exp $
 
 COMMENT=	free audio editor
 
@@ -85,7 +85,9 @@ CONFIGURE_ARGS=		--enable-unicode \
 			--with-midi=yes \
 			--with-portaudio=system \
 			--with-portmidi=system \
+			--with-sbsms=local \
 			--with-soundtouch=system \
+			--with-widgetextra=local \
 			--without-libtwolame \
 			--without-ffmpeg \
 			--without-redland \
