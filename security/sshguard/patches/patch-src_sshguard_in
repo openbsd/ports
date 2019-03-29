@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_sshguard_in,v 1.1 2019/03/29 15:54:24 sthen Exp $
+
+Index: src/sshguard.in
+--- src/sshguard.in.orig
++++ src/sshguard.in
+@@ -5,6 +5,9 @@
+ # entire process group (subshell) on exit/interrupts.
+ trap "trap - TERM && kill 0" INT TERM EXIT
+ 
++# Ignore HUP
++trap "" HUP
++
+ libexec="@libexecdir@"
+ version="@sshguardversion@"
+ 

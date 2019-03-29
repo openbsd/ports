@@ -1,6 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/09/04 12:46:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/03/29 15:54:24 sthen Exp $
 @pkgpath security/sshguard,tcpd
-@man man/man8/sshguard.8
-@bin sbin/sshguard
-share/doc/pkg-readmes/${PKGSTEM}
 @rcscript ${RCDIR}/sshguard
+@bin libexec/sshg-blocker
+libexec/sshg-fw-firewalld
+@bin libexec/sshg-fw-hosts
+libexec/sshg-fw-ipfilter
+libexec/sshg-fw-ipfw
+libexec/sshg-fw-ipset
+libexec/sshg-fw-iptables
+libexec/sshg-fw-nft-sets
+libexec/sshg-fw-null
+libexec/sshg-fw-pf
+libexec/sshg-logtail
+@bin libexec/sshg-parser
+@man man/man7/sshguard-setup.7
+@man man/man8/sshguard.8
+sbin/sshguard
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/sshguard/
+share/examples/sshguard/sshguard.conf.sample
+@sample ${SYSCONFDIR}/sshguard.conf
+share/examples/sshguard/whitelistfile.example

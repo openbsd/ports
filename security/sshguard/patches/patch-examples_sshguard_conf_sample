@@ -1,0 +1,17 @@
+$OpenBSD: patch-examples_sshguard_conf_sample,v 1.1 2019/03/29 15:54:24 sthen Exp $
+
+Index: examples/sshguard.conf.sample
+--- examples/sshguard.conf.sample.orig
++++ examples/sshguard.conf.sample
+@@ -7,9 +7,11 @@
+ #### REQUIRED CONFIGURATION ####
+ # Full path to backend executable (required, no default)
+ #BACKEND="/usr/local/libexec/sshg-fw-iptables"
++BACKEND="${TRUEPREFIX}/libexec/sshg-fw-pf"
+ 
+ # Space-separated list of log files to monitor. (optional, no default)
+ #FILES="/var/log/auth.log /var/log/authlog /var/log/maillog"
++FILES=/var/log/authlog
+ 
+ # Shell command that provides logs on standard output. (optional, no default)
+ # Example 1: ssh and sendmail from systemd journal:

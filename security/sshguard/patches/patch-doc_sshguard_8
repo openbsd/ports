@@ -1,0 +1,16 @@
+$OpenBSD: patch-doc_sshguard_8,v 1.1 2019/03/29 15:54:24 sthen Exp $
+
+Index: doc/sshguard.8
+--- doc/sshguard.8.orig
++++ doc/sshguard.8
+@@ -119,8 +119,8 @@ Set to enable verbose output from sshg\-blocker.
+ .SH FILES
+ .INDENT 0.0
+ .TP
+-.B %PREFIX%/etc/sshguard.conf
+-See sample configuration file.
++.B ${SYSCONFDIR}/sshguard.conf
++See sample configuration file in ${PREFIX}/share/examples/sshguard/sshguard.conf.sample
+ .UNINDENT
+ .SH WHITELISTING
+ .sp
