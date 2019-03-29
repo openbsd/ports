@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2019/01/12 06:24:56 bket Exp $
+# $OpenBSD: Makefile,v 1.28 2019/03/29 04:39:08 bket Exp $
 
 PORTROACH=	limit:^2\.16
 
 COMMENT=	SSL library with an intuitive API and readable source code
 
-DISTNAME=	mbedtls-2.16.0
+DISTNAME=	mbedtls-2.16.1
 EXTRACT_SUFX=	-gpl.tgz
 
 # check SOVERSION
