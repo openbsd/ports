@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/03/28 19:28:47 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.34 2019/03/29 17:20:06 ajacoutot Exp $
 
 COMMENT-face =		face detection library for KDE4
 COMMENT-geomap =	library for mapping photos on maps for KDE4
@@ -37,7 +37,7 @@ REVISION-libkipi =	3
 REVISION-sane =		4
 REVISION-mediawiki =	8
 REVISION-face =		4
-REVISION-geomap =	5
+REVISION-geomap =	6
 
 # LGPL, GPL and many others
 PERMIT_PACKAGE_CDROM =		Yes
