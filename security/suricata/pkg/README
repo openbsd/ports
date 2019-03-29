@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2019/02/12 09:27:16 gonzalo Exp $
+$OpenBSD: README,v 1.7 2019/03/29 16:53:21 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -72,9 +72,9 @@ And you can download as follow:
 	-o ${SYSCONFDIR}/suricata/rules
 
 Inline mode (IPS)
-==================
+=================
 
-In order to run suritcata "inline" in Intrusion Prevention mode, the following
+In order to run suricata "inline" in Intrusion Prevention mode, the following
 needs to be added to `/etc/pf.conf`:
 
 	pass out quick on egress inet proto tcp to port 80 divert-packet port 700
