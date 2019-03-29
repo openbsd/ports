@@ -1,0 +1,16 @@
+$OpenBSD: patch-gsearchtool_help_Makefile_in,v 1.1 2019/03/29 10:18:58 ajacoutot Exp $
+
+https://github.com/itstool/itstool/issues/36
+
+Index: gsearchtool/help/Makefile.in
+--- gsearchtool/help/Makefile.in.orig
++++ gsearchtool/help/Makefile.in
+@@ -338,7 +338,7 @@ HELP_FILES = index.docbook legal.xml
+ HELP_MEDIA = figures/mate-search-tool_window.png
+ 
+ # Add linguas to be ignored, e.g. IGNORE_HELP_LINGUAS = ca de es fr
+-IGNORE_HELP_LINGUAS = 
++IGNORE_HELP_LINGUAS = pt
+ HELP_LINGUAS = $(if $(IGNORE_HELP_LINGUAS), \
+ 	$(filter-out $(IGNORE_HELP_LINGUAS),$(subst /,,$(dir $(wildcard */*.po)))), \
+ 	$(subst /,,$(dir $(wildcard */*.po))) )

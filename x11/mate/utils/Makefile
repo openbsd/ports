@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2019/03/27 18:13:39 robert Exp $
+# $OpenBSD: Makefile,v 1.13 2019/03/29 10:18:58 ajacoutot Exp $
 
 COMMENT=		MATE support utilities
 
 SHARED_LIBS +=  matedict                  6.7 # 6.7
 
 MATE_PROJECT=		mate-utils
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
