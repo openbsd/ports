@@ -1,9 +1,9 @@
-$OpenBSD: patch-js_src_old-configure_in,v 1.1.1.1 2019/01/08 19:01:19 jasper Exp $
+$OpenBSD: patch-js_src_old-configure_in,v 1.2 2019/03/30 08:10:45 ajacoutot Exp $
 
 Index: js/src/old-configure.in
 --- js/src/old-configure.in.orig
 +++ js/src/old-configure.in
-@@ -861,12 +861,19 @@ case "$target" in
+@@ -852,12 +852,19 @@ case "$target" in
      ;;
  
  *-openbsd*)

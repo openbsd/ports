@@ -1,4 +1,4 @@
-$OpenBSD: patch-js_src_jit_ExecutableAllocator_h,v 1.1.1.1 2019/01/08 19:01:19 jasper Exp $
+$OpenBSD: patch-js_src_jit_ExecutableAllocator_h,v 1.2 2019/03/30 08:10:45 ajacoutot Exp $
 
 Index: js/src/jit/ExecutableAllocator.h
 --- js/src/jit/ExecutableAllocator.h.orig
@@ -15,4 +15,4 @@ Index: js/src/jit/ExecutableAllocator.h
 +
  #if defined(__sparc__)
  #ifdef __linux__  // bugzilla 502369
- static void sync_instruction_memory(caddr_t v, u_int len)
+ static void sync_instruction_memory(caddr_t v, u_int len) {
