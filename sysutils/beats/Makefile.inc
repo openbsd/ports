@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.9 2018/05/17 12:47:32 pvk Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2019/03/30 04:42:31 jasper Exp $
 
 PKGNAME ?=		${BEAT}-${VERSION}
 
 CATEGORIES +=		sysutils
-
-MAINTAINER ?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apachev2
 PERMIT_PACKAGE_CDROM ?=	Yes

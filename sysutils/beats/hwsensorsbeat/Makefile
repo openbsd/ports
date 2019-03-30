@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/01/11 19:27:09 rpe Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/30 04:42:31 jasper Exp $
 
 COMMENT =	lightweight shipper for hw.sensors data
 
@@ -9,6 +9,8 @@ REVISION =	4
 GH_ACCOUNT =	jasperla
 GH_PROJECT =	${BEAT}
 GH_TAGNAME =	${VERSION}
+
+MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 ELASTIC_BEAT =	No
 
