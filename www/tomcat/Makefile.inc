@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2019/03/26 15:20:34 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2019/03/30 14:46:38 sthen Exp $
 
 COMMENT-main ?=	Java servlet and Java server pages server
 COMMENT-examples =example applications and full documentation
@@ -23,7 +23,9 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 MULTI_PACKAGES = -main -examples
 
 MODULES =	java
-MODJAVA_VER =	1.8+
+# some issues seen with jdk/11; at least tomcat + lang/lucee results in 404s
+# when things work as-is with 1.8
+MODJAVA_VER ?=	1.8
 
 RUN_DEPENDS =	java/javaPathHelper
 
