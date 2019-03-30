@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2019/03/24 22:24:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/03/30 01:58:08 jasper Exp $
 
 COMMENT=		open source alternative to Microsoft Project
 
-DISTNAME=		projectlibre-1.8.0
-REVISION=		0
+DISTNAME=		projectlibre-1.9.0
 CATEGORIES=		productivity
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -26,7 +25,7 @@ NO_TEST=	Yes
 PKG_ARCH=       *
 
 do-install:
-	@${SUBST_PROGRAM} ${FILESDIR}/projectlibre \
+	${SUBST_PROGRAM} ${FILESDIR}/projectlibre \
 		${PREFIX}/bin/projectlibre
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/projectlibre/lib/
 	${INSTALL_DATA} ${WRKSRC}/projectlibre.jar ${PREFIX}/lib/projectlibre/
