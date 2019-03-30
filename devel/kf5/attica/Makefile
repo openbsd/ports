@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/03/08 20:00:42 cwen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/03/30 09:08:42 rsadowski Exp $
 
 COMMENT =	Open Collaboration Services API implementation
 DISTNAME =	attica-${VERSION}
 PKGNAME =	kf5-${DISTNAME}
-REVISION =	0
 
-SHARED_LIBS =	KF5Attica		3.2
+SHARED_LIBS =	KF5Attica		3.3
 
 WANTLIB =	${COMPILER_LIBCXX} Qt5Core Qt5Network m
 

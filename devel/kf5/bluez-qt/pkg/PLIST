@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/10/22 20:30:41 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:08:42 rsadowski Exp $
 include/KF5/
 include/KF5/BluezQt/
 include/KF5/BluezQt/BluezQt/
@@ -11,6 +11,8 @@ include/KF5/BluezQt/BluezQt/InitObexManagerJob
 include/KF5/BluezQt/BluezQt/Input
 include/KF5/BluezQt/BluezQt/Job
 include/KF5/BluezQt/BluezQt/Manager
+include/KF5/BluezQt/BluezQt/Media
+include/KF5/BluezQt/BluezQt/MediaEndpoint
 include/KF5/BluezQt/BluezQt/MediaPlayer
 include/KF5/BluezQt/BluezQt/MediaPlayerTrack
 include/KF5/BluezQt/BluezQt/ObexAgent
@@ -36,6 +38,8 @@ include/KF5/BluezQt/bluezqt/initobexmanagerjob.h
 include/KF5/BluezQt/bluezqt/input.h
 include/KF5/BluezQt/bluezqt/job.h
 include/KF5/BluezQt/bluezqt/manager.h
+include/KF5/BluezQt/bluezqt/media.h
+include/KF5/BluezQt/bluezqt/mediaendpoint.h
 include/KF5/BluezQt/bluezqt/mediaplayer.h
 include/KF5/BluezQt/bluezqt/mediaplayertrack.h
 include/KF5/BluezQt/bluezqt/obexagent.h

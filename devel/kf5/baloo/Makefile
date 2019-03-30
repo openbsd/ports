@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/03/28 20:32:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2019/03/30 09:08:42 rsadowski Exp $
 
 COMMENT-main =	KDE file search and metadata handling framework
 COMMENT-icons =	icons for baloo
@@ -6,12 +6,10 @@ DISTNAME =	baloo-${VERSION}
 PKGNAME-main =	kf5-${DISTNAME}
 PKGNAME-icons =	kf5-icons-${DISTNAME}
 EPOCH-main =	0
-REVISION-main =	2
 
-SHARED_LIBS =   KF5Baloo                  2.1
-SHARED_LIBS +=  KF5BalooXapian            2.1
-SHARED_LIBS +=  KF5BalooEngine            0.1 # 5.46
-
+SHARED_LIBS =   KF5Baloo                  2.2
+SHARED_LIBS +=  KF5BalooXapian            2.2
+SHARED_LIBS +=  KF5BalooEngine            0.2 # 5.46
 
 WANTLIB-icons =
 
@@ -20,6 +18,9 @@ WANTLIB-main += KF5I18n KF5Solid Qt5Core Qt5DBus Qt5Network Qt5Qml
 WANTLIB-main += lmdb m
 
 # split icons off main package to deconflict with KDE4's baloo
+# To avoid bulk build conflicts use it like:
+# BUILD_DEPENDS +=devel/kf5/baloo,-main
+# RUN_DEPENDS +=>-devel/kf5/baloo,-icons
 MULTI_PACKAGES =	-main -icons
 
 BUILD_DEPENDS	+=	devel/gettext-tools \
@@ -29,8 +30,7 @@ BUILD_DEPENDS	+=	devel/gettext-tools \
 
 RUN_DEPENDS-main =	devel/kf5/kidletime \
 			devel/kf5/kio \
-			devel/kf5/kcrash \
-			${BUILD_PKGPATH},-icons
+			devel/kf5/kcrash
 
 RUN_DEPENDS-icons =	x11/gtk+3,-guic
 

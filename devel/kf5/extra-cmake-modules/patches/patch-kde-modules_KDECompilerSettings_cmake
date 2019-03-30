@@ -1,4 +1,4 @@
-$OpenBSD: patch-kde-modules_KDECompilerSettings_cmake,v 1.3 2017/06/07 17:03:36 rsadowski Exp $
+$OpenBSD: patch-kde-modules_KDECompilerSettings_cmake,v 1.4 2019/03/30 09:08:42 rsadowski Exp $
 Allow KDE5 libraries to be built without having to link to libc explicitly.
 Index: kde-modules/KDECompilerSettings.cmake
 --- kde-modules/KDECompilerSettings.cmake.orig
@@ -10,7 +10,7 @@ Index: kde-modules/KDECompilerSettings.cmake
 +set(ALLOW_UNDEFINED_LIB_SYMBOLS No CACHE BOOL "allow undefined symbols in generated shared objects")
 +
  if ((CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND NOT APPLE) OR
-         (CMAKE_CXX_COMPILER_ID STREQUAL "Clang" AND NOT APPLE) OR
+         (CMAKE_CXX_COMPILER_ID MATCHES "Clang" AND NOT APPLE) OR
          (CMAKE_CXX_COMPILER_ID STREQUAL "Intel" AND NOT WIN32))
 @@ -347,9 +349,11 @@ if ((CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND NOT APPL
      set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--fatal-warnings ${CMAKE_SHARED_LINKER_FLAGS}")
