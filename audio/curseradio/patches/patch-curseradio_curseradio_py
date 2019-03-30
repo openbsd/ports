@@ -1,0 +1,14 @@
+$OpenBSD: patch-curseradio_curseradio_py,v 1.1.1.1 2019/03/30 13:50:33 bcallah Exp $
+
+Index: curseradio/curseradio.py
+--- curseradio/curseradio.py.orig
++++ curseradio/curseradio.py
+@@ -30,7 +30,7 @@ import re
+ 
+ CONFIG_DEFAULT = {
+     'opml': {'root': "http://opml.radiotime.com/"},
+-    'playback': {'command': '/usr/bin/mpv'},
++    'playback': {'command': '${LOCALBASE}/bin/mpv'},
+     'interface': {'keymap': 'default'},
+     'keymap.default': {
+         'up': 'KEY_UP',

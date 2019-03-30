@@ -1,0 +1,13 @@
+Curseradio is a curses interface for browsing and playing an OPML
+directory of internet radio streams. It is designed to use the tunein
+directory found at http://opml.radiotime.com/, but could be adapted to
+others.
+
+Key(s)		Command
+Up, Down	navigate
+PgUp, PgDn	navigate quickly
+Home, End	to top/bottom
+Enter		open/close folders, play stream
+k		stop playing stream
+q		quit
+f		toggle favourite
