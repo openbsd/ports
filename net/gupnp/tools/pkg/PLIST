@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/12/11 19:44:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/03/30 01:52:57 jasper Exp $
 @bin bin/gssdp-discover
 @bin bin/gupnp-av-cp
 @bin bin/gupnp-network-light
@@ -25,9 +25,9 @@ share/gupnp-tools/xml/
 share/gupnp-tools/xml/Dimming-scpd.xml
 share/gupnp-tools/xml/SwitchPower-scpd.xml
 share/gupnp-tools/xml/network-light-desc.xml
-share/icons/hicolor/256x256/av-cp.png
-share/icons/hicolor/256x256/network-light-256x256.png
-share/icons/hicolor/256x256/universal-cp.png
+share/icons/hicolor/256x256/apps/av-cp.png
+share/icons/hicolor/256x256/apps/network-light-256x256.png
+share/icons/hicolor/256x256/apps/universal-cp.png
 share/locale/bs/LC_MESSAGES/gupnp-tools.mo
 share/locale/cs/LC_MESSAGES/gupnp-tools.mo
 share/locale/de/LC_MESSAGES/gupnp-tools.mo
