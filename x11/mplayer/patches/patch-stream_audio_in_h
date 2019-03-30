@@ -1,6 +1,8 @@
-$OpenBSD: patch-stream_audio_in_h,v 1.2 2010/05/26 21:29:56 jakemsr Exp $
---- stream/audio_in.h.orig	Sat Jan 30 22:26:47 2010
-+++ stream/audio_in.h	Mon Mar  8 14:28:42 2010
+$OpenBSD: patch-stream_audio_in_h,v 1.3 2019/03/30 17:17:54 ajacoutot Exp $
+
+Index: stream/audio_in.h
+--- stream/audio_in.h.orig
++++ stream/audio_in.h
 @@ -21,6 +21,7 @@
  
  #define AUDIO_IN_ALSA 1

@@ -1,6 +1,8 @@
-$OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.6 2016/03/14 19:50:13 ajacoutot Exp $
---- stream/tvi_bsdbt848.c.orig	Sun Mar  6 20:23:31 2016
-+++ stream/tvi_bsdbt848.c	Sun Mar  6 20:29:00 2016
+$OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.7 2019/03/30 17:17:54 ajacoutot Exp $
+
+Index: stream/tvi_bsdbt848.c
+--- stream/tvi_bsdbt848.c.orig
++++ stream/tvi_bsdbt848.c
 @@ -53,9 +53,10 @@
  #include <signal.h>
  #include <string.h>

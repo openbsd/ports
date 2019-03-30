@@ -1,6 +1,8 @@
-$OpenBSD: patch-libmpcodecs_vf_noise_c,v 1.1 2015/12/21 01:08:17 sthen Exp $
---- libmpcodecs/vf_noise.c.orig	Mon Dec 21 00:38:47 2015
-+++ libmpcodecs/vf_noise.c	Mon Dec 21 00:39:11 2015
+$OpenBSD: patch-libmpcodecs_vf_noise_c,v 1.2 2019/03/30 17:17:54 ajacoutot Exp $
+
+Index: libmpcodecs/vf_noise.c
+--- libmpcodecs/vf_noise.c.orig
++++ libmpcodecs/vf_noise.c
 @@ -85,7 +85,7 @@ static int8_t *initNoise(FilterParam *fp){
          int8_t *noise= av_malloc(MAX_NOISE*sizeof(int8_t));
          int i, j;

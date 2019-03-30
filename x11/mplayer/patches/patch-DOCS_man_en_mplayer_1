@@ -1,4 +1,5 @@
-$OpenBSD: patch-DOCS_man_en_mplayer_1,v 1.17 2018/09/22 07:06:05 ajacoutot Exp $
+$OpenBSD: patch-DOCS_man_en_mplayer_1,v 1.18 2019/03/30 17:17:54 ajacoutot Exp $
+
 Index: DOCS/man/en/mplayer.1
 --- DOCS/man/en/mplayer.1.orig
 +++ DOCS/man/en/mplayer.1
