@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.native,v 1.2 2019/03/04 12:51:13 chrisz Exp $
-%%dynlink%%
-lib/ocaml/cppo_ocamlbuild/cppo_ocamlbuild.a
-lib/ocaml/cppo_ocamlbuild/cppo_ocamlbuild.cmxa
-lib/ocaml/cppo_ocamlbuild/ocamlbuild_cppo.cmx

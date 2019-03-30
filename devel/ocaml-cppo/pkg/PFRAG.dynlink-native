@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.2 2019/03/04 12:51:13 chrisz Exp $
-lib/ocaml/cppo_ocamlbuild/cppo_ocamlbuild.cmxs

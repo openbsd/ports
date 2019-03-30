@@ -1,6 +1,0 @@
-Dose is a library and a collection of tools to perform a large spectrum
-of analysis on package repositories.  Dose manipulates packages
-repositories from different sources such as Debian, Rpm, Eclipse/Osgi
-and OpenCSW / Solaris.  The library core does not make any assumption of
-the semantic and syntax of any specific packages systems and is based
-on the Cudf format.

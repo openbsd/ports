@@ -1,8 +1,0 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.2 2019/03/04 12:51:14 chrisz Exp $
-lib/ocaml/re/emacs/re_emacs.cmxs
-lib/ocaml/re/glob/re_glob.cmxs
-lib/ocaml/re/pcre/re_pcre.cmxs
-lib/ocaml/re/perl/re_perl.cmxs
-lib/ocaml/re/posix/re_posix.cmxs
-lib/ocaml/re/re.cmxs
-lib/ocaml/re/str/re_str.cmxs
