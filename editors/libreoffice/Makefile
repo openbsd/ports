@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.203 2019/03/30 08:09:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.204 2019/03/30 18:18:52 ajacoutot Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -427,7 +427,7 @@ post-install:
 		startcenter writer; do \
 		sed -i "s,Icon=libreoffice${BV}-,Icon=libreoffice-,g" \
 			${PREFIX}/lib/libreoffice/share/xdg/$${_d}.desktop && \
-		cp ${TRUEPREFIX}/lib/libreoffice/share/xdg/$${_d}.desktop \
+		cp ${PREFIX}/lib/libreoffice/share/xdg/$${_d}.desktop \
 			${PREFIX}/share/applications/$${_d}.desktop; done
 
 	cp -R ${WRKSRC}/sysui/desktop/icons/hicolor ${PREFIX}/share/icons
