@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/02/25 22:44:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/03/30 14:01:58 sthen Exp $
 
 COMMENT=	lightweight headless squeezebox player
 
-V=		1.9.0.1120
+V=		1.9.0.1139
 GH_ACCOUNT=	ralph-irving
 GH_PROJECT=	squeezelite
-GH_COMMIT=	59697689cb09f9899c96b3769da0dee4fc9c3508
+GH_COMMIT=	71c012ad9ba102feb95823b7b9dc17e5305689c7
 DISTNAME=	squeezelite-$V
 
 CATEGORIES=	audio
