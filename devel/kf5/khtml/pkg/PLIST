@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/10/22 20:30:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:51 rsadowski Exp $
 include/KF5/KHtml/
 include/KF5/KHtml/KHTMLPart
 include/KF5/KHtml/KHTMLSettings
@@ -81,7 +81,6 @@ share/kservices5/kmultipart.desktop
 share/locale/af/LC_MESSAGES/khtml5.mo
 share/locale/ar/LC_MESSAGES/khtml5.mo
 share/locale/as/LC_MESSAGES/khtml5.mo
-share/locale/ast/LC_MESSAGES/khtml5.mo
 share/locale/be/LC_MESSAGES/khtml5.mo
 share/locale/be@latin/LC_MESSAGES/khtml5.mo
 share/locale/bg/LC_MESSAGES/khtml5.mo

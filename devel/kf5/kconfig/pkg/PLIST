@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/06/07 17:03:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/03/30 09:13:49 rsadowski Exp $
 @bin bin/kreadconfig5
 @bin bin/kwriteconfig5
 include/KF5/
@@ -8,6 +8,7 @@ include/KF5/KConfigCore/KAuthorized
 include/KF5/KConfigCore/KConfig
 include/KF5/KConfigCore/KConfigBase
 include/KF5/KConfigCore/KConfigGroup
+include/KF5/KConfigCore/KConfigWatcher
 include/KF5/KConfigCore/KCoreConfigSkeleton
 include/KF5/KConfigCore/KDesktopFile
 include/KF5/KConfigCore/KEMailSettings
@@ -18,6 +19,7 @@ include/KF5/KConfigCore/kconfig.h
 include/KF5/KConfigCore/kconfigbase.h
 include/KF5/KConfigCore/kconfigcore_export.h
 include/KF5/KConfigCore/kconfiggroup.h
+include/KF5/KConfigCore/kconfigwatcher.h
 include/KF5/KConfigCore/kcoreconfigskeleton.h
 include/KF5/KConfigCore/kdesktopfile.h
 include/KF5/KConfigCore/kemailsettings.h
@@ -54,7 +56,6 @@ share/kf5/mkspecs/qt_KConfigCore.pri
 share/kf5/mkspecs/qt_KConfigGui.pri
 share/locale/af/LC_MESSAGES/kconfig5_qt.qm
 share/locale/ar/LC_MESSAGES/kconfig5_qt.qm
-share/locale/ast/LC_MESSAGES/kconfig5_qt.qm
 share/locale/be/LC_MESSAGES/kconfig5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kconfig5_qt.qm
 share/locale/bg/LC_MESSAGES/kconfig5_qt.qm

@@ -1,38 +1,33 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/08 20:00:42 cwen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/03/30 09:13:53 rsadowski Exp $
 
 COMMENT =	KDE configuration dialog for desktop notifications
 DISTNAME =	knotifyconfig-${VERSION}
-REVISION =	0
 
-SHARED_LIBS =	KF5NotifyConfig		4.2
+SHARED_LIBS =	KF5NotifyConfig		4.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Service
 WANTLIB += KF5WidgetsAddons Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Widgets m phonon4qt5experimental
+WANTLIB += Qt5Network Qt5Widgets m
 
 MODULES =	multimedia/phonon
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext-tools \
+		devel/kf5/kconfigwidgets \
+		devel/kf5/knotifications \
+		devel/kf5/kxmlgui
 
 LIB_DEPENDS =	devel/kf5/kcompletion \
 		devel/kf5/kconfig \
+		devel/kf5/kcoreaddons \
 		devel/kf5/ki18n \
-		devel/kf5/kio
+		devel/kf5/kio \
+		devel/kf5/kjobwidgets \
+		devel/kf5/kservice \
+		devel/kf5/kwidgetsaddons
 
-TEST_DEPENDS =	devel/kf5/kconfigwidgets \
-		devel/kf5/knotifications \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui
-
-BUILD_DEPENDS +=devel/kf5/kconfigwidgets \
-		devel/kf5/knotifications \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui
-
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5TextToSpeech=Yes
-
-# for building knotifytest application, not installed
-CONFIGURE_ARGS +=	-DBUILD_TESTING=Yes
+CONFIGURE_ARGS +=	-DBUILD_TESTING=Yes \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Qt5TextToSpeech=Yes \
+			-DPhonon4Qt5_INCLUDE_DIR="${LOCALBASE}/include/phonon4qt5/"
 
 .include <bsd.port.mk>

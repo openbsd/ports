@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2019/03/08 20:00:44 cwen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/03/30 09:13:50 rsadowski Exp $
 
 COMMENT =		legacy support for kdelibs-4.x compatibility
 DISTNAME =		kdelibs4support-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5KDELibs4Support	6.2
+SHARED_LIBS =		KF5KDELibs4Support	6.3
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5Bookmarks KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
@@ -30,7 +29,10 @@ RUN_DEPENDS =		devel/kf5/kded \
 			devel/kf5/kemoticons \
 			devel/kf5/kitemmodels
 
-LIB_DEPENDS =		devel/kf5/kcompletion \
+LIB_DEPENDS =		devel/kf5/kauth \
+			devel/kf5/kbookmarks \
+			devel/kf5/kcodecs \
+			devel/kf5/kcompletion \
 			devel/kf5/kconfig \
 			devel/kf5/kconfigwidgets \
 			devel/kf5/kcrash \
@@ -55,7 +57,7 @@ LIB_DEPENDS =		devel/kf5/kcompletion \
 IS_PORTING_AID =	Yes
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_NetworkManager=Yes
-
+# sucks
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/10/22 20:30:43 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/03/30 09:13:56 rsadowski Exp $
 @bin bin/plasmapkg2
 include/KF5/Plasma/
 include/KF5/Plasma/Applet
@@ -125,8 +125,11 @@ lib/qt5/qml/QtQuick/Controls.2/Plasma/ToolTip.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/private/
 lib/qt5/qml/QtQuick/Controls.2/Plasma/private/ButtonShadow.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/private/DefaultListItemBackground.qml
+lib/qt5/qml/QtQuick/Controls.2/Plasma/private/MobileCursor.qml
+lib/qt5/qml/QtQuick/Controls.2/Plasma/private/MobileTextActionsToolBar.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/private/RoundShadow.qml
 lib/qt5/qml/QtQuick/Controls.2/Plasma/private/TextFieldFocus.qml
+lib/qt5/qml/QtQuick/Controls.2/Plasma/private/qmldir
 lib/qt5/qml/QtQuick/Controls.2/Plasma/qmldir
 lib/qt5/qml/QtQuick/Controls/Styles/
 lib/qt5/qml/QtQuick/Controls/Styles/Plasma/
@@ -218,8 +221,11 @@ lib/qt5/qml/org/kde/plasma/components.3/ToolButton.qml
 lib/qt5/qml/org/kde/plasma/components.3/private/
 lib/qt5/qml/org/kde/plasma/components.3/private/ButtonShadow.qml
 lib/qt5/qml/org/kde/plasma/components.3/private/DefaultListItemBackground.qml
+lib/qt5/qml/org/kde/plasma/components.3/private/MobileCursor.qml
+lib/qt5/qml/org/kde/plasma/components.3/private/MobileTextActionsToolBar.qml
 lib/qt5/qml/org/kde/plasma/components.3/private/RoundShadow.qml
 lib/qt5/qml/org/kde/plasma/components.3/private/TextFieldFocus.qml
+lib/qt5/qml/org/kde/plasma/components.3/private/qmldir
 lib/qt5/qml/org/kde/plasma/components.3/qmldir
 lib/qt5/qml/org/kde/plasma/components/BusyIndicator.qml
 lib/qt5/qml/org/kde/plasma/components/Button.qml
@@ -317,7 +323,6 @@ share/kservicetypes5/plasma-service.desktop
 share/kservicetypes5/plasma-shell.desktop
 share/kservicetypes5/plasma-wallpaper.desktop
 share/locale/ar/LC_MESSAGES/libplasma5.mo
-share/locale/ast/LC_MESSAGES/libplasma5.mo
 share/locale/bs/LC_MESSAGES/libplasma5.mo
 share/locale/ca/LC_MESSAGES/libplasma5.mo
 share/locale/ca@valencia/LC_MESSAGES/libplasma5.mo

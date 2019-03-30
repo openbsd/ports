@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/08 20:00:44 cwen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/03/30 09:13:53 rsadowski Exp $
 
 COMMENT =		KDE framework for binding JavaScript object to QObjects
 DISTNAME =		kjsembed-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5JsEmbed		4.2
+SHARED_LIBS =		KF5JsEmbed		4.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5I18n KF5JS Qt5Core Qt5Gui Qt5Svg
 WANTLIB += Qt5Widgets Qt5Xml c m

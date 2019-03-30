@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/03/08 20:00:43 cwen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/03/30 09:13:48 rsadowski Exp $
 
 COMMENT =		XBEL bookmarks format support for KDE
 DISTNAME =		kbookmarks-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5Bookmarks		3.2
+SHARED_LIBS =		KF5Bookmarks		3.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5IconThemes
@@ -13,7 +12,8 @@ WANTLIB += Qt5Xml m
 
 BUILD_DEPENDS =		devel/gettext-tools
 
-LIB_DEPENDS =		devel/kf5/kcodecs \
+LIB_DEPENDS =		devel/kf5/kauth \
+			devel/kf5/kcodecs \
 			devel/kf5/kconfig \
 			devel/kf5/kconfigwidgets \
 			devel/kf5/kcoreaddons \

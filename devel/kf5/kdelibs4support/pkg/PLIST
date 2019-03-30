@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/10/22 20:30:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:50 rsadowski Exp $
 @bin bin/kdebugdialog5
 @bin bin/kf5-config
 include/KF5/KDELibs4Support/
@@ -1038,8 +1038,10 @@ share/dbus-1/interfaces/kf5_org.freedesktop.PowerManagement.xml
 share/dbus-1/interfaces/kf5_org.kde.Solid.Networking.Client.xml
 share/dbus-1/interfaces/kf5_org.kde.Solid.PowerManagement.PolicyAgent.xml
 share/doc/HTML/ca/kcontrol5/kcm_ssl/
+share/doc/HTML/ca/kcontrol5/kcm_ssl/details.png
 share/doc/HTML/ca/kcontrol5/kcm_ssl/index.cache.bz2
 share/doc/HTML/ca/kcontrol5/kcm_ssl/index.docbook
+share/doc/HTML/ca/kcontrol5/kcm_ssl/module.png
 share/doc/HTML/ca/kdebugdialog5/
 share/doc/HTML/ca/kdebugdialog5/index.cache.bz2
 share/doc/HTML/ca/kdebugdialog5/index.docbook
@@ -2117,7 +2119,6 @@ share/kservicetypes5/qimageio_plugin.desktop
 share/locale/af/LC_MESSAGES/kdelibs4support.mo
 share/locale/ar/LC_MESSAGES/kdelibs4support.mo
 share/locale/as/LC_MESSAGES/kdelibs4support.mo
-share/locale/ast/LC_MESSAGES/kdelibs4support.mo
 share/locale/be/LC_MESSAGES/kdelibs4support.mo
 share/locale/be@latin/LC_MESSAGES/kdelibs4support.mo
 share/locale/bg/LC_MESSAGES/kdelibs4support.mo

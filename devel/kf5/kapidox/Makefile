@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/08 20:00:42 cwen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/30 09:13:48 rsadowski Exp $
 
 COMMENT =	doxygen wrapper for KDE
 DISTNAME =	kapidox-${VERSION}
 FULLPKGNAME =	${PKGNAME}${FLAVOR_EXT}
-REVISION =	0
 
 WANTLIB- =
 
-MODULES =	lang/python
+MODULES +=	lang/python
 
 # used for updating port only
 FLAVORS =	python3
@@ -16,7 +15,7 @@ RUN_DEPENDS =	x11/qt5/docs,-html
 
 SUBST_VARS =	DISTNAME
 
-# TODO tests/tests  bash script
+# TODO tests/tests bash script
 NO_TEST =	Yes
 
 .include <bsd.port.mk>

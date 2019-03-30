@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/10/22 20:30:43 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/03/30 09:13:54 rsadowski Exp $
 @bin bin/kbuildsycoca5
 include/KF5/KService/
 include/KF5/KService/KAutostart
@@ -57,7 +57,6 @@ share/kservicetypes5/kplugininfo.desktop
 share/locale/af/LC_MESSAGES/kservice5.mo
 share/locale/ar/LC_MESSAGES/kservice5.mo
 share/locale/as/LC_MESSAGES/kservice5.mo
-share/locale/ast/LC_MESSAGES/kservice5.mo
 share/locale/be/LC_MESSAGES/kservice5.mo
 share/locale/be@latin/LC_MESSAGES/kservice5.mo
 share/locale/bg/LC_MESSAGES/kservice5.mo

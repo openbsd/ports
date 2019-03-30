@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/08 20:00:40 cwen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/03/30 09:13:49 rsadowski Exp $
 
 COMMENT =		text completion support for Qt-based apps
 DISTNAME =		kcompletion-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5Completion		4.2
+SHARED_LIBS =		KF5Completion		4.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5ConfigGui KF5WidgetsAddons
 WANTLIB += Qt5Core Qt5Gui Qt5Widgets Qt5Xml m

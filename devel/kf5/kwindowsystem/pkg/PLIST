@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/12/25 14:54:49 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/03/30 09:13:55 rsadowski Exp $
 include/KF5/
 include/KF5/KWindowSystem/
 include/KF5/KWindowSystem/KKeyServer
@@ -43,13 +43,16 @@ lib/qt5/plugins/kf5/
 lib/qt5/plugins/kf5/org.kde.kwindowsystem.platforms/
 lib/qt5/plugins/kf5/org.kde.kwindowsystem.platforms/KF5WindowSystemWaylandPlugin.so
 lib/qt5/plugins/kf5/org.kde.kwindowsystem.platforms/KF5WindowSystemX11Plugin.so
+share/examples/kwindowsystem/
+share/examples/kwindowsystem/xdg/
+share/examples/kwindowsystem/xdg/kwindowsystem.categories
+@sample ${SYSCONFDIR}/xdg/kwindowsystem.categories
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KWindowSystem.pri
 share/locale/af/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/ar/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/as/LC_MESSAGES/kwindowsystem5_qt.qm
-share/locale/ast/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/be/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/bg/LC_MESSAGES/kwindowsystem5_qt.qm

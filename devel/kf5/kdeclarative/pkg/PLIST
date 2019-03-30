@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/04 20:25:32 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/03/30 09:13:50 rsadowski Exp $
 @bin bin/kpackagelauncherqml
 include/KF5/KDeclarative/
 include/KF5/KDeclarative/CalendarEvents/
@@ -86,7 +86,6 @@ share/kf5/mkspecs/qt_QuickAddons.pri
 share/locale/af/LC_MESSAGES/kdeclarative5.mo
 share/locale/ar/LC_MESSAGES/kdeclarative5.mo
 share/locale/as/LC_MESSAGES/kdeclarative5.mo
-share/locale/ast/LC_MESSAGES/kdeclarative5.mo
 share/locale/be/LC_MESSAGES/kdeclarative5.mo
 share/locale/be@latin/LC_MESSAGES/kdeclarative5.mo
 share/locale/bg/LC_MESSAGES/kdeclarative5.mo

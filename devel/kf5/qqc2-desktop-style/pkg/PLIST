@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/10/22 20:30:43 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:56 rsadowski Exp $
 lib/cmake/KF5QQC2DeskopStyle/
 lib/cmake/KF5QQC2DeskopStyle/KF5QQC2DeskopStyleConfig.cmake
 lib/cmake/KF5QQC2DeskopStyle/KF5QQC2DeskopStyleConfigVersion.cmake
@@ -48,6 +48,9 @@ lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/ToolTip.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/private/
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/private/DefaultListItemBackground.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/private/FocusRect.qml
+lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/private/MobileCursor.qml
+lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/private/MobileTextActionsToolBar.qml
+lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/private/qmldir
 lib/qt5/qml/org/kde/qqc2desktopstyle/
 lib/qt5/qml/org/kde/qqc2desktopstyle/private/
 lib/qt5/qml/org/kde/qqc2desktopstyle/private/libqqc2desktopstyleplugin.so

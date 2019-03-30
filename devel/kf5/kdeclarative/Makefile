@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/03/08 20:00:41 cwen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/03/30 09:13:50 rsadowski Exp $
 
 COMMENT =	integration of QML and KDE workspaces
 DISTNAME =	kdeclarative-${VERSION}
-REVISION =	0
 
-SHARED_LIBS =	KF5Declarative		4.3 # 5.17
-SHARED_LIBS +=	KF5CalendarEvents	4.3 # 5.17
-SHARED_LIBS +=	KF5QuickAddons		4.3 # 5.17
+SHARED_LIBS =	KF5Declarative		4.4 # 5.17
+SHARED_LIBS +=	KF5CalendarEvents	4.4 # 5.17
+SHARED_LIBS +=	KF5QuickAddons		4.4 # 5.17
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5CoreAddons KF5GlobalAccel KF5I18n KF5IconThemes
@@ -16,9 +15,11 @@ WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5Widgets
 WANTLIB += Qt5Xml c epoxy m
 
 BUILD_DEPENDS =	devel/gettext-tools \
+		x11/qt5/qtquickcontrols \
 		devel/kf5/kguiaddons
 
-RUN_DEPENDS =	devel/kf5/kguiaddons
+RUN_DEPENDS =	devel/kf5/kguiaddons \
+		x11/qt5/qtquickcontrols
 
 LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kglobalaccel \

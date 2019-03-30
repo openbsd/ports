@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/10/22 20:30:43 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/03/30 09:13:54 rsadowski Exp $
 include/KF5/KTextEditor/
 include/KF5/KTextEditor/KTextEditor/
+include/KF5/KTextEditor/KTextEditor/AbstractAnnotationItemDelegate
 include/KF5/KTextEditor/KTextEditor/AnnotationInterface
 include/KF5/KTextEditor/KTextEditor/Application
 include/KF5/KTextEditor/KTextEditor/Attribute
@@ -31,6 +32,7 @@ include/KF5/KTextEditor/KTextEditor/SessionConfigInterface
 include/KF5/KTextEditor/KTextEditor/TextHintInterface
 include/KF5/KTextEditor/KTextEditor/View
 include/KF5/KTextEditor/ktexteditor/
+include/KF5/KTextEditor/ktexteditor/abstractannotationitemdelegate.h
 include/KF5/KTextEditor/ktexteditor/annotationinterface.h
 include/KF5/KTextEditor/ktexteditor/application.h
 include/KF5/KTextEditor/ktexteditor/attribute.h
@@ -81,6 +83,7 @@ share/examples/ktexteditor/dbus-1/system.d/org.kde.ktexteditor.katetextbuffer.co
 @sample ${SYSCONFDIR}/xdg/dbus-1/system.d/org.kde.ktexteditor.katetextbuffer.conf
 share/examples/ktexteditor/xdg/
 share/examples/ktexteditor/xdg/ktexteditor.categories
+@sample ${SYSCONFDIR}/xdg/ktexteditor.categories
 share/katepart5/
 share/katepart5/script/
 share/katepart5/script/README.md
@@ -91,7 +94,6 @@ share/kservicetypes5/ktexteditor.desktop
 share/kservicetypes5/ktexteditorplugin.desktop
 share/locale/af/LC_MESSAGES/ktexteditor5.mo
 share/locale/ar/LC_MESSAGES/ktexteditor5.mo
-share/locale/ast/LC_MESSAGES/ktexteditor5.mo
 share/locale/be/LC_MESSAGES/ktexteditor5.mo
 share/locale/bg/LC_MESSAGES/ktexteditor5.mo
 share/locale/bn/LC_MESSAGES/ktexteditor5.mo

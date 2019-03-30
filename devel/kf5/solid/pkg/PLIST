@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/10/22 20:30:43 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:56 rsadowski Exp $
 @bin bin/solid-hardware5
 include/KF5/
 include/KF5/Solid/
@@ -54,11 +54,11 @@ lib/qt5/qml/org/kde/solid/qmldir
 share/examples/solid/
 share/examples/solid/xdg/
 share/examples/solid/xdg/solid.categories
+@sample ${SYSCONFDIR}/xdg/solid.categories
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_Solid.pri
 share/locale/ar/LC_MESSAGES/solid5_qt.qm
-share/locale/ast/LC_MESSAGES/solid5_qt.qm
 share/locale/bg/LC_MESSAGES/solid5_qt.qm
 share/locale/bs/LC_MESSAGES/solid5_qt.qm
 share/locale/ca/LC_MESSAGES/solid5_qt.qm

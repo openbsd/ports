@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/10/22 20:30:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/03/30 09:13:53 rsadowski Exp $
 include/KF5/KNewStuff3/
 include/KF5/KNewStuff3/KNS3/
 include/KF5/KNewStuff3/KNS3/Button
@@ -16,6 +16,7 @@ include/KF5/KNewStuff3/KNSCore/Cache
 include/KF5/KNewStuff3/KNSCore/DownloadManager
 include/KF5/KNewStuff3/KNSCore/Engine
 include/KF5/KNewStuff3/KNSCore/EntryInternal
+include/KF5/KNewStuff3/KNSCore/ErrorCode
 include/KF5/KNewStuff3/KNSCore/Installation
 include/KF5/KNewStuff3/KNSCore/ItemsModel
 include/KF5/KNewStuff3/KNSCore/Provider
@@ -43,6 +44,7 @@ include/KF5/KNewStuff3/knscore/cache.h
 include/KF5/KNewStuff3/knscore/downloadmanager.h
 include/KF5/KNewStuff3/knscore/engine.h
 include/KF5/KNewStuff3/knscore/entryinternal.h
+include/KF5/KNewStuff3/knscore/errorcode.h
 include/KF5/KNewStuff3/knscore/installation.h
 include/KF5/KNewStuff3/knscore/itemsmodel.h
 include/KF5/KNewStuff3/knscore/knewstuffcore_export.h
@@ -139,7 +141,6 @@ share/kf5/mkspecs/qt_KNewStuffCore.pri
 share/locale/af/LC_MESSAGES/knewstuff5.mo
 share/locale/ar/LC_MESSAGES/knewstuff5.mo
 share/locale/as/LC_MESSAGES/knewstuff5.mo
-share/locale/ast/LC_MESSAGES/knewstuff5.mo
 share/locale/be/LC_MESSAGES/knewstuff5.mo
 share/locale/be@latin/LC_MESSAGES/knewstuff5.mo
 share/locale/bg/LC_MESSAGES/knewstuff5.mo

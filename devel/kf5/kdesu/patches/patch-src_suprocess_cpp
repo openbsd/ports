@@ -1,0 +1,71 @@
+$OpenBSD: patch-src_suprocess_cpp,v 1.1 2019/03/30 09:13:50 rsadowski Exp $
+
+use base doas(1) instead sudo(1) from ports
+
+Index: src/suprocess.cpp
+--- src/suprocess.cpp.orig
++++ src/suprocess.cpp
+@@ -25,8 +25,10 @@
+ #include <ksharedconfig.h>
+ #include <kuser.h>
+ 
+-#ifdef KDESU_USE_SUDO_DEFAULT
++#if defined(KDESU_USE_SUDO_DEFAULT)
+ #  define DEFAULT_SUPER_USER_COMMAND QStringLiteral("sudo")
++#elif defined(KDESU_USE_DOAS_DEFAULT)
++#  define DEFAULT_SUPER_USER_COMMAND QStringLiteral("doas")
+ #else
+ #  define DEFAULT_SUPER_USER_COMMAND QStringLiteral("su")
+ #endif
+@@ -51,7 +53,9 @@ SuProcess::SuProcess(const QByteArray &user, const QBy
+     KConfigGroup group(config, "super-user-command");
+     d->superUserCommand = group.readEntry("super-user-command", DEFAULT_SUPER_USER_COMMAND);
+ 
+-    if (d->superUserCommand != QLatin1String("sudo") && d->superUserCommand != QLatin1String("su")) {
++    if (d->superUserCommand != QLatin1String("sudo")
++        && d->superUserCommand != QLatin1String("doas")
++        && d->superUserCommand != QLatin1String("su")) {
+         qWarning() << "unknown super user command.";
+         d->superUserCommand = DEFAULT_SUPER_USER_COMMAND;
+     }
+@@ -69,7 +73,9 @@ QString SuProcess::superUserCommand()
+ 
+ bool SuProcess::useUsersOwnPassword()
+ {
+-    if (superUserCommand() == QLatin1String("sudo") && m_user == "root") {
++    if ((superUserCommand() == QLatin1String("sudo")
++        || superUserCommand() == QLatin1String("doas"))
++            && m_user == "root") {
+         return true;
+     }
+ 
+@@ -103,7 +109,8 @@ int SuProcess::exec(const char *password, int check)
+     }
+ 
+     QList<QByteArray> args;
+-    if (d->superUserCommand == QLatin1String("sudo")) {
++    if (d->superUserCommand == QLatin1String("sudo")
++        || d->superUserCommand == QLatin1String("doas")) {
+         args += "-u";
+     }
+ 
+@@ -138,7 +145,8 @@ int SuProcess::exec(const char *password, int check)
+     }
+     if (check == NeedPassword) {
+         if (ret == killme) {
+-            if (d->superUserCommand == QLatin1String("sudo")) {
++            if (d->superUserCommand == QLatin1String("sudo")
++                || d->superUserCommand == QLatin1String("doas")) {
+                 // sudo can not be killed, just return
+                 return ret;
+             }
+@@ -163,7 +171,8 @@ int SuProcess::exec(const char *password, int check)
+ 
+     if (ret != ok) {
+         kill(m_pid, SIGKILL);
+-        if (d->superUserCommand != QLatin1String("sudo")) {
++        if (d->superUserCommand != QLatin1String("sudo")
++            || d->superUserCommand != QLatin1String("doas") ) {
+             waitForChild();
+         }
+         return SuIncorrectPassword;

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/07/01 18:33:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:49 rsadowski Exp $
 @bin bin/desktoptojson
 include/KF5/
 include/KF5/KCoreAddons/
@@ -71,6 +71,10 @@ lib/cmake/KF5CoreAddons/KF5CoreAddonsTargets.cmake
 lib/cmake/KF5CoreAddons/KF5CoreAddonsToolingTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5CoreAddons/KF5CoreAddonsToolingTargets.cmake
 @lib lib/libKF5CoreAddons.so.${LIBKF5CoreAddons_VERSION}
+share/examples/kcoreaddons/
+share/examples/kcoreaddons/xdg/
+share/examples/kcoreaddons/xdg/kcoreaddons.categories
+@sample ${SYSCONFDIR}/xdg/kcoreaddons.categories
 share/kf5/
 share/kf5/licenses/
 share/kf5/licenses/ARTISTIC
@@ -86,7 +90,6 @@ share/kf5/mkspecs/qt_KCoreAddons.pri
 share/locale/af/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/ar/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/as/LC_MESSAGES/kcoreaddons5_qt.qm
-share/locale/ast/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/be/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/bg/LC_MESSAGES/kcoreaddons5_qt.qm

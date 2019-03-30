@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/01/09 21:10:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:50 rsadowski Exp $
 include/KF5/KDESu/
 include/KF5/KDESu/KDESu/
 include/KF5/KDESu/KDESu/Client
@@ -31,7 +31,6 @@ lib/cmake/KF5Su/KF5SuTargets.cmake
 @mode
 share/kf5/mkspecs/qt_KDESu.pri
 share/locale/ar/LC_MESSAGES/kdesud5.mo
-share/locale/ast/LC_MESSAGES/kdesud5.mo
 share/locale/bs/LC_MESSAGES/kdesud5.mo
 share/locale/ca/LC_MESSAGES/kdesud5.mo
 share/locale/ca@valencia/LC_MESSAGES/kdesud5.mo

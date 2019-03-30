@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/10/22 20:30:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/03/30 09:13:52 rsadowski Exp $
 @bin bin/kcookiejar5
 @bin bin/ktelnetservice5
 @bin bin/ktrash5
@@ -137,6 +137,7 @@ include/KF5/KIOFileWidgets/KDirSortFilterProxyModel
 include/KF5/KIOFileWidgets/KEncodingFileDialog
 include/KF5/KIOFileWidgets/KFileCopyToMenu
 include/KF5/KIOFileWidgets/KFileFilterCombo
+include/KF5/KIOFileWidgets/KFilePlaceEditDialog
 include/KF5/KIOFileWidgets/KFilePlacesModel
 include/KF5/KIOFileWidgets/KFilePlacesView
 include/KF5/KIOFileWidgets/KFilePreviewGenerator
@@ -154,6 +155,7 @@ include/KF5/KIOFileWidgets/kdirsortfilterproxymodel.h
 include/KF5/KIOFileWidgets/kencodingfiledialog.h
 include/KF5/KIOFileWidgets/kfilecopytomenu.h
 include/KF5/KIOFileWidgets/kfilefiltercombo.h
+include/KF5/KIOFileWidgets/kfileplaceeditdialog.h
 include/KF5/KIOFileWidgets/kfileplacesmodel.h
 include/KF5/KIOFileWidgets/kfileplacesview.h
 include/KF5/KIOFileWidgets/kfilepreviewgenerator.h
@@ -1052,7 +1054,6 @@ share/kservices5/searchproviders/de2en.desktop
 share/kservices5/searchproviders/de2fr.desktop
 share/kservices5/searchproviders/deb.desktop
 share/kservices5/searchproviders/dictfr.desktop
-share/kservices5/searchproviders/dmoz.desktop
 share/kservices5/searchproviders/docbook.desktop
 share/kservices5/searchproviders/doi.desktop
 share/kservices5/searchproviders/duckduckgo.desktop
@@ -1064,7 +1065,6 @@ share/kservices5/searchproviders/en2es.desktop
 share/kservices5/searchproviders/en2fr.desktop
 share/kservices5/searchproviders/en2it.desktop
 share/kservices5/searchproviders/es2en.desktop
-share/kservices5/searchproviders/ethicle.desktop
 share/kservices5/searchproviders/facebook.desktop
 share/kservices5/searchproviders/feedster.desktop
 share/kservices5/searchproviders/flickr.desktop
@@ -1090,7 +1090,6 @@ share/kservices5/searchproviders/google_shopping.desktop
 share/kservices5/searchproviders/grec.desktop
 share/kservices5/searchproviders/hyperdictionary.desktop
 share/kservices5/searchproviders/hyperdictionary_thesaurus.desktop
-share/kservices5/searchproviders/ibl.desktop
 share/kservices5/searchproviders/identica_groups.desktop
 share/kservices5/searchproviders/identica_notices.desktop
 share/kservices5/searchproviders/identica_people.desktop
@@ -1211,7 +1210,6 @@ share/kservicetypes5/searchprovider.desktop
 share/kservicetypes5/uasprovider.desktop
 share/locale/af/LC_MESSAGES/kio5.mo
 share/locale/ar/LC_MESSAGES/kio5.mo
-share/locale/ast/LC_MESSAGES/kio5.mo
 share/locale/be/LC_MESSAGES/kio5.mo
 share/locale/be@latin/LC_MESSAGES/kio5.mo
 share/locale/bg/LC_MESSAGES/kio5.mo

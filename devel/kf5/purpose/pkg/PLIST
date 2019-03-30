@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/10/22 20:30:43 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/03/30 09:13:56 rsadowski Exp $
 include/KF5/purpose/
 include/KF5/purpose/Purpose/
 include/KF5/purpose/Purpose/AlternativesModel
@@ -73,20 +73,6 @@ share/locale/ar/LC_MESSAGES/purpose_phabricator.mo
 share/locale/ar/LC_MESSAGES/purpose_saveas.mo
 share/locale/ar/LC_MESSAGES/purpose_twitter.mo
 share/locale/ar/LC_MESSAGES/purpose_youtube.mo
-share/locale/ast/LC_MESSAGES/libpurpose_quick.mo
-share/locale/ast/LC_MESSAGES/libpurpose_widgets.mo
-share/locale/ast/LC_MESSAGES/purpose-fileitemaction.mo
-share/locale/ast/LC_MESSAGES/purpose_email.mo
-share/locale/ast/LC_MESSAGES/purpose_imgur.mo
-share/locale/ast/LC_MESSAGES/purpose_kdeconnect.mo
-share/locale/ast/LC_MESSAGES/purpose_ktp-sendfile.mo
-share/locale/ast/LC_MESSAGES/purpose_nextcloud.mo
-share/locale/ast/LC_MESSAGES/purpose_pastebin.mo
-share/locale/ast/LC_MESSAGES/purpose_phabricator.mo
-share/locale/ast/LC_MESSAGES/purpose_reviewboard.mo
-share/locale/ast/LC_MESSAGES/purpose_saveas.mo
-share/locale/ast/LC_MESSAGES/purpose_twitter.mo
-share/locale/ast/LC_MESSAGES/purpose_youtube.mo
 share/locale/bg/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/ca/LC_MESSAGES/libpurpose_quick.mo
 share/locale/ca/LC_MESSAGES/libpurpose_widgets.mo
@@ -146,6 +132,7 @@ share/locale/da/LC_MESSAGES/purpose_twitter.mo
 share/locale/da/LC_MESSAGES/purpose_youtube.mo
 share/locale/de/LC_MESSAGES/libpurpose_quick.mo
 share/locale/de/LC_MESSAGES/libpurpose_widgets.mo
+share/locale/de/LC_MESSAGES/purpose-fileitemaction.mo
 share/locale/de/LC_MESSAGES/purpose_email.mo
 share/locale/de/LC_MESSAGES/purpose_imgur.mo
 share/locale/de/LC_MESSAGES/purpose_kdeconnect.mo
@@ -236,13 +223,17 @@ share/locale/fr/LC_MESSAGES/purpose_twitter.mo
 share/locale/fr/LC_MESSAGES/purpose_youtube.mo
 share/locale/gl/LC_MESSAGES/libpurpose_quick.mo
 share/locale/gl/LC_MESSAGES/libpurpose_widgets.mo
+share/locale/gl/LC_MESSAGES/purpose-fileitemaction.mo
 share/locale/gl/LC_MESSAGES/purpose_email.mo
 share/locale/gl/LC_MESSAGES/purpose_imgur.mo
+share/locale/gl/LC_MESSAGES/purpose_kdeconnect.mo
 share/locale/gl/LC_MESSAGES/purpose_ktp-sendfile.mo
 share/locale/gl/LC_MESSAGES/purpose_nextcloud.mo
 share/locale/gl/LC_MESSAGES/purpose_pastebin.mo
+share/locale/gl/LC_MESSAGES/purpose_phabricator.mo
 share/locale/gl/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/gl/LC_MESSAGES/purpose_saveas.mo
+share/locale/gl/LC_MESSAGES/purpose_twitter.mo
 share/locale/gl/LC_MESSAGES/purpose_youtube.mo
 share/locale/hu/LC_MESSAGES/libpurpose_quick.mo
 share/locale/hu/LC_MESSAGES/libpurpose_widgets.mo
@@ -253,8 +244,11 @@ share/locale/hu/LC_MESSAGES/purpose_kdeconnect.mo
 share/locale/hu/LC_MESSAGES/purpose_ktp-sendfile.mo
 share/locale/hu/LC_MESSAGES/purpose_nextcloud.mo
 share/locale/hu/LC_MESSAGES/purpose_pastebin.mo
+share/locale/hu/LC_MESSAGES/purpose_phabricator.mo
+share/locale/hu/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/hu/LC_MESSAGES/purpose_saveas.mo
 share/locale/hu/LC_MESSAGES/purpose_twitter.mo
+share/locale/hu/LC_MESSAGES/purpose_youtube.mo
 share/locale/id/LC_MESSAGES/libpurpose_quick.mo
 share/locale/id/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/id/LC_MESSAGES/purpose-fileitemaction.mo
@@ -372,6 +366,7 @@ share/locale/pt_BR/LC_MESSAGES/purpose_twitter.mo
 share/locale/pt_BR/LC_MESSAGES/purpose_youtube.mo
 share/locale/ru/LC_MESSAGES/libpurpose_quick.mo
 share/locale/ru/LC_MESSAGES/libpurpose_widgets.mo
+share/locale/ru/LC_MESSAGES/purpose-fileitemaction.mo
 share/locale/ru/LC_MESSAGES/purpose_email.mo
 share/locale/ru/LC_MESSAGES/purpose_imgur.mo
 share/locale/ru/LC_MESSAGES/purpose_kdeconnect.mo
@@ -450,11 +445,17 @@ share/locale/zh_CN/LC_MESSAGES/purpose_twitter.mo
 share/locale/zh_CN/LC_MESSAGES/purpose_youtube.mo
 share/locale/zh_TW/LC_MESSAGES/libpurpose_quick.mo
 share/locale/zh_TW/LC_MESSAGES/libpurpose_widgets.mo
+share/locale/zh_TW/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/zh_TW/LC_MESSAGES/purpose_email.mo
 share/locale/zh_TW/LC_MESSAGES/purpose_imgur.mo
+share/locale/zh_TW/LC_MESSAGES/purpose_kdeconnect.mo
 share/locale/zh_TW/LC_MESSAGES/purpose_ktp-sendfile.mo
+share/locale/zh_TW/LC_MESSAGES/purpose_nextcloud.mo
 share/locale/zh_TW/LC_MESSAGES/purpose_pastebin.mo
+share/locale/zh_TW/LC_MESSAGES/purpose_phabricator.mo
 share/locale/zh_TW/LC_MESSAGES/purpose_reviewboard.mo
 share/locale/zh_TW/LC_MESSAGES/purpose_saveas.mo
+share/locale/zh_TW/LC_MESSAGES/purpose_twitter.mo
 share/locale/zh_TW/LC_MESSAGES/purpose_youtube.mo
 share/purpose/
 share/purpose/bluetoothplugin_config.qml

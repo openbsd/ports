@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2019/03/08 20:00:44 cwen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/03/30 09:13:55 rsadowski Exp $
 
 COMMENT =	core components and tools of the Plasma Workspaces
 DISTNAME =	plasma-framework-${VERSION}
-REVISION =	0
 
-SHARED_LIBS =	KF5Plasma		5.2
-SHARED_LIBS +=	KF5PlasmaQuick		5.2
+SHARED_LIBS =	KF5Plasma		5.3
+SHARED_LIBS +=	KF5PlasmaQuick		5.3
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL ICE KF5Activities KF5Archive
 WANTLIB += KF5Auth KF5CalendarEvents KF5Codecs KF5Completion KF5ConfigCore
@@ -20,17 +19,19 @@ WANTLIB += xcb-render xcb-shape xcb-xfixes
 
 BUILD_DEPENDS =	archivers/bzip2 \
 		devel/gettext-tools \
-		devel/kf5/kirigami2 \
 		devel/kf5/kdbusaddons \
 		devel/kf5/kdesu \
 		devel/kf5/kdoctools \
+		devel/kf5/kirigami2 \
 		devel/kf5/kparts \
-		devel/kf5/solid
+		devel/kf5/solid \
+		x11/qt5/qtquickcontrols
 
 RUN_DEPENDS =	archivers/bzip2 \
 		devel/kf5/kdbusaddons \
 		devel/kf5/kdoctools \
-		devel/kf5/oxygen-icons
+		devel/kf5/oxygen-icons \
+		x11/qt5/qtquickcontrols
 
 LIB_DEPENDS =	devel/kf5/kactivities \
 		devel/kf5/karchive \
@@ -53,8 +54,8 @@ LIB_DEPENDS =	devel/kf5/kactivities \
 		x11/qt5/qtsvg \
 		x11/qt5/qtx11extras
 
-#CONFIGURE_ARGS =	-DBUILD_EXAMPLES=Yes \
-#			-DCMAKE_DISABLE_FIND_PACKAGE_KF5Wayland=Yes
+CONFIGURE_ARGS +=	-DBUILD_EXAMPLES=Yes \
+			-DCMAKE_DISABLE_FIND_PACKAGE_KF5Wayland=Yes
 
 # TODO: The following tests FAILED (some dependencies missing?):
 # 1 - plasma-dialogqmltest (Failed)

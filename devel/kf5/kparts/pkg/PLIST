@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/10/22 20:30:42 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/03/30 09:13:54 rsadowski Exp $
 include/KF5/KParts/
 include/KF5/KParts/KParts/
 include/KF5/KParts/KParts/BrowserArguments
@@ -86,7 +86,6 @@ share/kservicetypes5/krwp.desktop
 share/locale/af/LC_MESSAGES/kparts5.mo
 share/locale/ar/LC_MESSAGES/kparts5.mo
 share/locale/as/LC_MESSAGES/kparts5.mo
-share/locale/ast/LC_MESSAGES/kparts5.mo
 share/locale/be/LC_MESSAGES/kparts5.mo
 share/locale/be@latin/LC_MESSAGES/kparts5.mo
 share/locale/bg/LC_MESSAGES/kparts5.mo

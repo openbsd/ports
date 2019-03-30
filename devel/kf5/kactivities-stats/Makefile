@@ -1,19 +1,23 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/08 20:00:44 cwen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/03/30 09:13:48 rsadowski Exp $
 
 COMMENT =	statistics for the KDE Activity concept
 DISTNAME =	kactivities-stats-${VERSION}
-REVISION =	0
 
-SHARED_LIBS =	KF5ActivitiesStats	4.2
+SHARED_LIBS =	KF5ActivitiesStats	4.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5ConfigCore Qt5Core
 WANTLIB += Qt5DBus Qt5Sql m
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/boost \
+		x11/qt5/qtdeclarative \
+		x11/qt5/qtquickcontrols
+
+RUN_DEPENDS =	x11/qt5/qtquickcontrols
 
 LIB_DEPENDS =	devel/kf5/kactivities \
 		devel/kf5/kconfig
 
-CONFIGURE_ENV =	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
+# For boost
+CONFIGURE_ENV +=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
 
 .include <bsd.port.mk>

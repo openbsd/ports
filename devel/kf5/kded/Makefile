@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/08 20:00:44 cwen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/03/30 09:13:50 rsadowski Exp $
 
 COMMENT =	central daemon of KDE workspaces
 DISTNAME =	kded-${VERSION}
-REVISION =	0
 
-SHARED_LIBS =	kdeinit5_kded5		4.2
+SHARED_LIBS =	kdeinit5_kded5		4.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5Service Qt5Core Qt5DBus Qt5Gui Qt5Widgets

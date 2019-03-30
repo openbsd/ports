@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/08 20:00:42 cwen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/03/30 09:13:57 rsadowski Exp $
 
 COMMENT =	KDE helper for multithreaded programming
 DISTNAME =	threadweaver-${VERSION}
-REVISION =	0
 
-SHARED_LIBS =	KF5ThreadWeaver		4.2
+SHARED_LIBS =	KF5ThreadWeaver		4.3
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core m
 

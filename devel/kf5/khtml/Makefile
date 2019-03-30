@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/08 20:00:44 cwen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/03/30 09:13:51 rsadowski Exp $
 
 COMMENT =		original KDE HTML rendering engine
 DISTNAME =		khtml-${VERSION}
-REVISION =		0
 
-SHARED_LIBS =		KF5KHtml	4.1
+SHARED_LIBS =		KF5KHtml	4.2
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Archive KF5Auth KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
@@ -43,6 +42,8 @@ LIB_DEPENDS =		devel/kf5/karchive \
 
 IS_PORTING_AID =	Yes
 
+#The following tests FAILED:
+#1 - khtml-parttest (Child aborted)
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
 
