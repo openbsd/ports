@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.536 2019/03/09 18:06:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.537 2019/03/30 12:34:58 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
+     SUBDIR += ROPgadget
      SUBDIR += acme-client
      SUBDIR += aescrypt
      SUBDIR += aide
