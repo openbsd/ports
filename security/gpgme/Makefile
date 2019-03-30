@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/03/08 20:00:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.49 2019/03/30 15:27:45 jca Exp $
 
 COMMENT-main =		GnuPG Made Easy
 COMMENT-qt =		Qt bindings for GPGme
@@ -36,7 +36,7 @@ PSEUDO_FLAVORS =	no_qt
 FLAVOR ?=
 
 # don't depend on Qt5 on arches where it's known to fail
-NOT_FOR_ARCHS-qt =	alpha mips64 sh sparc64
+NOT_FOR_ARCHS-qt =	alpha mips64 sh
 
 CONFIGURE_STYLE =	gnu
 
