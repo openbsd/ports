@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/10/27 13:22:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/03/30 04:33:55 jasper Exp $
 @rcscript ${RCDIR}/filebeat
 @bin bin/filebeat
 share/doc/pkg-readmes/${PKGSTEM}
@@ -64,6 +64,15 @@ share/filebeat/module/elasticsearch/slowlog/config/slowlog.yml
 share/filebeat/module/elasticsearch/slowlog/ingest/
 share/filebeat/module/elasticsearch/slowlog/ingest/pipeline.json
 share/filebeat/module/elasticsearch/slowlog/manifest.yml
+share/filebeat/module/haproxy/
+share/filebeat/module/haproxy/log/
+share/filebeat/module/haproxy/log/config/
+share/filebeat/module/haproxy/log/config/file.yml
+share/filebeat/module/haproxy/log/config/syslog.yml
+share/filebeat/module/haproxy/log/ingest/
+share/filebeat/module/haproxy/log/ingest/pipeline.json
+share/filebeat/module/haproxy/log/manifest.yml
+share/filebeat/module/haproxy/module.yml
 share/filebeat/module/icinga/
 share/filebeat/module/icinga/debug/
 share/filebeat/module/icinga/debug/config/
