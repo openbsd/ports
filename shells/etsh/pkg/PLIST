@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/23 21:54:48 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/03/30 18:14:32 bcallah Exp $
 @conflict osh-*
 @pkgpath shells/osh
 @shell bin/etsh
@@ -13,6 +13,7 @@ libexec/etsh-${V}/etsh/SetV
 libexec/etsh-${V}/etsh/etshdir
 libexec/etsh-${V}/etsh/history
 libexec/etsh-${V}/etsh/history.help
+libexec/etsh-${V}/etsh/pev
 libexec/etsh-${V}/tsh/
 libexec/etsh-${V}/tsh/README
 @bin libexec/etsh-${V}/tsh/fd2
