@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/27 08:45:25 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/03/30 11:50:06 bentley Exp $
 @bin bin/sta
 include/ArcDelayCalc.hh
 include/Arnoldi.hh
@@ -129,6 +129,7 @@ include/SimpleRCDelayCalc.hh
 include/SpefNamespace.hh
 include/SpefReader.hh
 include/Sta.hh
+include/StaConfig.hh
 include/StaMain.hh
 include/StaState.hh
 include/Stats.hh

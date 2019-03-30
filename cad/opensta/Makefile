@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/27 09:23:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/30 11:50:06 bentley Exp $
 
 COMMENT =	Parallax Static Timing Analyzer
 
 # use version number from git log
-DISTNAME =	opensta-2.0.11.20190327
+DISTNAME =	opensta-2.0.12.20190329
 CATEGORIES =	cad
 
 GH_ACCOUNT =	abk-openroad
 GH_PROJECT =	OpenSTA
-GH_COMMIT =	0f735f99b73c00772103a64da8489b39d09614b4
+GH_COMMIT =	ed3ad4fb3012feb53328a80df6ad01efd477f891
 
 MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
 
