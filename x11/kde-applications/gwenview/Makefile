@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/24 11:56:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2019/03/30 09:17:05 rsadowski Exp $
 
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${VERSION}
 CATEGORIES =	graphics x11
+REVISION =	0
 
 
 SHARED_LIBS +=  gwenviewlib               53.0 # 4.97
@@ -26,7 +27,12 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
-LIB_DEPENDS +=	devel/kf5/baloo \
+RUN_DEPENDS +=	devel/kf5/kfilemetadata \
+		devel/kf5/baloo,-icons \
+		x11/kde-applications/ffmpegthumbs \
+		x11/kde-applications/kio-extras
+
+LIB_DEPENDS +=	devel/kf5/baloo,-main \
 		devel/kf5/kactivities \
 		devel/kf5/kauth \
 		devel/kf5/kbookmarks \
