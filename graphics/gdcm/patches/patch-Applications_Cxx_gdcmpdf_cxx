@@ -1,4 +1,4 @@
-$OpenBSD: patch-Applications_Cxx_gdcmpdf_cxx,v 1.1 2019/01/04 21:17:58 kili Exp $
+$OpenBSD: patch-Applications_Cxx_gdcmpdf_cxx,v 1.2 2019/03/30 03:36:15 jasper Exp $
 
 Fix for newer poppler.
 
@@ -14,41 +14,3 @@ Index: Applications/Cxx/gdcmpdf.cxx
      if (s[0] == 'D' && s[1] == ':')
        {
        s += 2;
-@@ -102,11 +102,11 @@ static std::string getInfoDate(Dict *infoDict, const c
-   return out;
- }
- 
--static std::string getInfoString(Dict *infoDict, const char *key, UnicodeMap *uMap, GBool & unicode)
-+static std::string getInfoString(Dict *infoDict, const char *key, UnicodeMap *uMap, bool & unicode)
- {
-   Object obj;
-   const GooString *s1;
--  GBool isUnicode = gFalse;
-+  bool isUnicode = false;
-   Unicode u;
-   char buf[8];
-   int i, n;
-@@ -122,12 +122,12 @@ static std::string getInfoString(Dict *infoDict, const
-     if ((s1->getChar(0) & 0xff) == 0xfe &&
-       (s1->getChar(1) & 0xff) == 0xff)
-       {
--      isUnicode = gTrue;
-+      isUnicode = true;
-       i = 2;
-       }
-     else
-       {
--      isUnicode = gFalse;
-+      isUnicode = false;
-       i = 0;
-       }
-     while (i < obj.getString()->getLength())
-@@ -398,7 +398,7 @@ http://msdn.microsoft.com/en-us/library/078sfkak(VS.80
-   std::string creationdate;
-   std::string moddate;
- 
--  GBool isUnicode = gFalse;
-+  bool isUnicode = false;
-   if (doc->isOk())
-     {
- #ifdef LIBPOPPLER_NEW_OBJECT_API

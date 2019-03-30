@@ -1,4 +1,4 @@
-$OpenBSD: patch-Applications_Cxx_gdcminfo_cxx,v 1.1 2019/01/04 21:17:58 kili Exp $
+$OpenBSD: patch-Applications_Cxx_gdcminfo_cxx,v 1.2 2019/03/30 03:36:15 jasper Exp $
 
 Fix for newer poppler.
 
@@ -14,27 +14,3 @@ Index: Applications/Cxx/gdcminfo.cxx
      if (s[0] == 'D' && s[1] == ':')
        {
        s += 2;
-@@ -258,7 +258,7 @@ static std::string getInfoString(Dict *infoDict, const
- {
-   Object obj;
-   const GooString *s1;
--  GBool isUnicode;
-+  bool isUnicode;
-   Unicode u;
-   char buf[8];
-   int i, n;
-@@ -274,12 +274,12 @@ static std::string getInfoString(Dict *infoDict, const
-     if ((s1->getChar(0) & 0xff) == 0xfe &&
-       (s1->getChar(1) & 0xff) == 0xff)
-       {
--      isUnicode = gTrue;
-+      isUnicode = true;
-       i = 2;
-       }
-     else
-       {
--      isUnicode = gFalse;
-+      isUnicode = false;
-       i = 0;
-       }
-     while (i < obj.getString()->getLength())
