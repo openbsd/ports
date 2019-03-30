@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.65 2019/03/14 13:48:23 bcallah Exp $
+# $OpenBSD: Makefile,v 1.66 2019/03/30 13:42:35 bcallah Exp $
 
-V=		1.5.2
+V=		1.5.3
 COMMENT=	small and fast window manager
 DISTNAME=	icewm-${V}
 EXTRACT_SUFX=	.tar.xz

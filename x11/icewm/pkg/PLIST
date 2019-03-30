@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/03/14 13:48:23 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/03/30 13:42:35 bcallah Exp $
 @bin bin/icehelp
 @bin bin/icesh
 @bin bin/icesound
@@ -32,7 +32,6 @@ bin/icewm-set-gnomewm
 @man man/man5/icewm-theme.5
 @man man/man5/icewm-toolbar.5
 @man man/man5/icewm-winoptions.5
-share/applications/
 share/applications/icewm-session.desktop
 share/applications/icewm.desktop
 share/doc/icewm/
