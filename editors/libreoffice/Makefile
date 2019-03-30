@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.202 2019/03/24 22:24:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.203 2019/03/30 08:09:38 ajacoutot Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -23,6 +23,7 @@ PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde4
 
+REVISION-main=	0
 REVISION-java=	0
 EPOCH=		0
 
@@ -421,11 +422,12 @@ post-install:
 				${PREFIX}/share/icons \
 				${PREFIX}/share/mime/packages
 
+	# no symlink because update-desktop-database(1) is unveil'ed
 	for _d in calc draw impress math \
 		startcenter writer; do \
 		sed -i "s,Icon=libreoffice${BV}-,Icon=libreoffice-,g" \
 			${PREFIX}/lib/libreoffice/share/xdg/$${_d}.desktop && \
-		ln -sf ${TRUEPREFIX}/lib/libreoffice/share/xdg/$${_d}.desktop \
+		cp ${TRUEPREFIX}/lib/libreoffice/share/xdg/$${_d}.desktop \
 			${PREFIX}/share/applications/$${_d}.desktop; done
 
 	cp -R ${WRKSRC}/sysui/desktop/icons/hicolor ${PREFIX}/share/icons
