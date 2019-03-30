@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/09/06 05:59:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/03/30 09:20:58 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -27,11 +27,13 @@ lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}dashcast.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}media.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}multizone.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}plex.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}spotify.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/${MODPY_PYCACHE}youtube.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/dashcast.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/media.py
+lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/multizone.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/plex.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/spotify.py
 lib/python${MODPY_VERSION}/site-packages/pychromecast/controllers/youtube.py
