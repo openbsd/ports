@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2018/08/10 10:20:21 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/03/30 23:37:29 cwen Exp $
 
 COMMENT =		convert filenames from one encoding to another
-DISTNAME =		convmv-2.03
+DISTNAME =		convmv-2.05
 CATEGORIES =		converters
-HOMEPAGE =		http://www.j3e.de/linux/convmv/
+HOMEPAGE =		https://www.j3e.de/linux/convmv/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${HOMEPAGE}
-TEST_TARGET = 		test
-MAKE_FLAGS = PREFIX='${PREFIX}'
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
