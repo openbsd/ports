@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2019/03/16 22:09:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/03/31 10:55:48 sthen Exp $
 
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
 
 V=		0.71
+REVISION=	0
 DISTNAME=	putty-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-gui=	${DISTNAME:S/putty/putty-gui/}
@@ -34,5 +35,14 @@ LIB_DEPENDS-gui=	devel/gettext \
 			x11/gtk+3
 
 NO_TEST=		Yes
+
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.16
+BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
+
+do-gen:
+	cd ${WRKDIST}; ${AUTOCONF_ENV} perl mkfiles.pl && \
+	    ${AUTOCONF_ENV} sh mkauto.sh
 
 .include <bsd.port.mk>
