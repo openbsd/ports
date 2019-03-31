@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.48 2018/06/29 22:16:13 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2019/03/31 18:19:38 thfr Exp $
+
+BROKEN=	rsvg_handle_get_dimensions: assertion 'RSVG_IS_HANDLE (handle)' failed
 
 COMMENT=		brain teaser game
 
