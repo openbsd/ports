@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2019/03/30 09:08:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2019/03/31 05:22:52 rsadowski Exp $
 
 COMMENT =	KDE Plasma integration support for Qt-based apps
 DISTNAME =	frameworkintegration-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5Style		4.3
 
@@ -12,6 +13,7 @@ WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras
 WANTLIB += Qt5Xml c m xcb
 
 BUILD_DEPENDS =	devel/gettext-tools \
+		devel/kf5/kpackage \
 		x11/qt5/qtx11extras
 
 RUN_DEPENDS =	fonts/noto/fonts
