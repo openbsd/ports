@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2019/03/14 20:19:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2019/03/31 21:06:05 sthen Exp $
 
 COMMENT-main=		LDAP client API for Python
 COMMENT-examples=	example programs for the LDAP client API for Python
 
 MODPY_EGG_VERSION =	3.2.0
+REVISION=		0
 DISTNAME=		python-ldap-${MODPY_EGG_VERSION}
 PKGNAME=		py-ldap-${MODPY_EGG_VERSION}
 
@@ -14,7 +15,7 @@ FULLPKGNAME-examples=	${MODPY_PY_PREFIX}ldap-examples-${MODPY_EGG_VERSION}
 
 CATEGORIES=		databases
 
-HOMEPAGE=		http://python-ldap.sourceforge.net/
+HOMEPAGE=		https://www.python-ldap.org/
 
 # Python
 PERMIT_PACKAGE_CDROM=	Yes
