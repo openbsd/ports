@@ -1,0 +1,16 @@
+$OpenBSD: patch-launch-dedicated_sh,v 1.1.1.1 2019/03/31 05:09:06 thfr Exp $
+
+full path for the assembly
+
+Index: launch-dedicated.sh
+--- launch-dedicated.sh.orig
++++ launch-dedicated.sh
+@@ -20,7 +20,7 @@ EnableSingleplayer="${EnableSingleplayer:-"False"}"
+ EnableSyncReports="${EnableSyncReports:-"False"}"
+ 
+ while true; do
+-     mono --debug OpenRA.Server.exe Game.Mod="$Mod" \
++     mono --debug ${PREFIX}/share/openra/OpenRA.Server.exe Game.Mod="$Mod" \
+      Server.Name="$Name" \
+      Server.ListenPort="$ListenPort" \
+      Server.AdvertiseOnline="$AdvertiseOnline" \

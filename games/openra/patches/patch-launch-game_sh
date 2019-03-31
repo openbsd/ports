@@ -1,0 +1,43 @@
+$OpenBSD: patch-launch-game_sh,v 1.1.1.1 2019/03/31 05:09:06 thfr Exp $
+
+don't use python for determining the path of the launcher
+set correct path for launching
+replace the bashism [ z"${*#*Game.Mod}" = z"$*" ] with something more portable
+
+Index: launch-game.sh
+--- launch-game.sh.orig
++++ launch-game.sh
+@@ -1,10 +1,21 @@
+ #!/bin/sh
+-MODLAUNCHER=$(python -c "import os; print(os.path.realpath('$0'))")
++MODLAUNCHER=$(readlink -f $0)
+ 
+ # Prompt for a mod to launch if one is not already specified
+ MODARG=''
+-if [ z"${*#*Game.Mod}" = z"$*" ]
+-then
++
++ARGLIST="$@"
++while [ $# -gt 0 ]; do
++	case "$1" in
++		Game.Mod=*) 
++			break
++			;;
++		*)
++			;;
++	esac
++	shift
++done
++if [ $# -eq 0 ]; then
+ 	if command -v zenity > /dev/null
+ 	then
+ 		TITLE=$(zenity --forms --add-combo="" --combo-values="Red Alert|Tiberian Dawn|Dune 2000|Tiberian Sun" --text "Select mod" --title="" || echo "cancel")
+@@ -21,7 +32,7 @@ then
+ fi
+ 
+ # Launch the engine with the appropriate arguments
+-mono OpenRA.Game.exe Engine.LaunchPath="$MODLAUNCHER" $MODARG "$@"
++mono /usr/local/share/openra/OpenRA.Game.exe Engine.LaunchPath="$MODLAUNCHER" $MODARG "$ARGLIST"
+ 
+ # Show a crash dialog if something went wrong
+ if [ $? != 0 ] && [ $? != 1 ]; then

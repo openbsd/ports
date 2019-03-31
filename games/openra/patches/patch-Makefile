@@ -1,0 +1,26 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2019/03/31 05:09:06 thfr Exp $
+
+set the installdir to PREFIX/share rather than PREFIX/lib
+don't get VERSION from git
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -64,7 +64,7 @@ datadir ?= $(datarootdir)
+ mandir ?= $(datarootdir)/man/
+ bindir ?= $(prefix)/bin
+ libdir ?= $(prefix)/lib
+-gameinstalldir ?= $(libdir)/openra
++gameinstalldir ?= $(datarootdir)/openra
+ 
+ BIN_INSTALL_DIR = $(DESTDIR)$(bindir)
+ DATA_INSTALL_DIR = $(DESTDIR)$(gameinstalldir)
+@@ -83,7 +83,7 @@ INSTALL_DATA = $(INSTALL) -m644
+ 
+ # program targets
+ CORE = pdefault game utility server
+-VERSION     = $(shell git name-rev --name-only --tags --no-undefined HEAD 2>/dev/null || echo git-`git rev-parse --short HEAD`)
++#VERSION     = $(shell git name-rev --name-only --tags --no-undefined HEAD 2>/dev/null || echo git-`git rev-parse --short HEAD`)
+ 
+ # dependencies
+ UNAME_S := $(shell uname -s)
