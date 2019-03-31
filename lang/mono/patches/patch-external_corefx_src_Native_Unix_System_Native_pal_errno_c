@@ -1,0 +1,27 @@
+$OpenBSD: patch-external_corefx_src_Native_Unix_System_Native_pal_errno_c,v 1.1 2019/03/31 18:28:39 thfr Exp $
+
+add missing errno's for the platform abstraction layer
+
+Index: external/corefx/src/Native/Unix/System.Native/pal_errno.c
+--- external/corefx/src/Native/Unix/System.Native/pal_errno.c.orig
++++ external/corefx/src/Native/Unix/System.Native/pal_errno.c
+@@ -13,6 +13,19 @@
+ #define ENODATA ENOATTR
+ #endif
+ 
++#if defined(__OpenBSD__)
++#if !defined(EMULTIHOP)
++#define EMULTIHOP 96 // outside of sys/errno.h's range to avoid conflict
++#endif
++#if !defined(ENODATA)
++#define ENODATA 97 // outside of sys/errno.h's range to avoid conflict
++#endif
++#if !defined(ENOLINK)
++#define ENOLINK 98 // outside of sys/errno.h's range to avoid conflict
++#endif
++#endif /*__OpenBSD__*/
++
++
+ #include <string.h>
+ #include <assert.h>
+ 

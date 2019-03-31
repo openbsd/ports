@@ -1,0 +1,48 @@
+$OpenBSD: patch-external_corefx_src_Native_Unix_System_Native_pal_io_c,v 1.1 2019/03/31 18:28:39 thfr Exp $
+
+include types.h and ucred.h for the struct ucred, disable assertion on DT_WHT
+not sure why HAVE_FLOCK64 is defined, but we have to bypass it
+correct the ucred member uid -> cr_uid
+
+Index: external/corefx/src/Native/Unix/System.Native/pal_io.c
+--- external/corefx/src/Native/Unix/System.Native/pal_io.c.orig
++++ external/corefx/src/Native/Unix/System.Native/pal_io.c
+@@ -2,6 +2,8 @@
+ // The .NET Foundation licenses this file to you under the MIT license.
+ // See the LICENSE file in the project root for more information.
+ 
++#include <sys/types.h>
++#include <sys/ucred.h>
+ #include "pal_compiler.h"
+ #include "pal_config.h"
+ #include "pal_errno.h"
+@@ -100,7 +102,7 @@ c_static_assert(PAL_DT_BLK == DT_BLK);
+ c_static_assert(PAL_DT_REG == DT_REG);
+ c_static_assert(PAL_DT_LNK == DT_LNK);
+ c_static_assert(PAL_DT_SOCK == DT_SOCK);
+-c_static_assert(PAL_DT_WHT == DT_WHT);
++//c_static_assert(PAL_DT_WHT == DT_WHT); // per comment, AIX doesn't do any of this anyway
+ #endif
+ 
+ // Validate that our Lock enum value are correct for the platform
+@@ -1413,7 +1415,7 @@ int32_t SystemNative_GetPeerID(intptr_t socket, uid_t*
+     socklen_t len = sizeof(creds);
+     if (getsockopt(fd, SOL_SOCKET, SO_PEERCRED, &creds, &len) == 0)
+     {
+-        *euid = creds.uid;
++        *euid = creds.cr_uid;
+         return 0;
+     }
+     return -1;
+@@ -1442,11 +1444,7 @@ int32_t SystemNative_LockFileRegion(intptr_t fd, int64
+         return -1;
+     }
+ 
+-#if HAVE_FLOCK64
+-    struct flock64 lockArgs;
+-#else
+     struct flock lockArgs;
+-#endif
+ 
+     lockArgs.l_type = lockType;
+     lockArgs.l_whence = SEEK_SET;
