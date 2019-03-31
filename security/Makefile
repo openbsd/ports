@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.537 2019/03/30 12:34:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.538 2019/03/31 00:45:50 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -406,6 +406,7 @@
      SUBDIR += volatility
      SUBDIR += vpnc
      SUBDIR += wapiti
+     SUBDIR += wesng
      SUBDIR += wpa_supplicant
      SUBDIR += wycheproof-testvectors
      SUBDIR += xca
