@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.736 2019/03/28 18:24:12 phessler Exp $
+# $OpenBSD: Quirks.pm,v 1.737 2019/03/31 01:08:28 bentley Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1160,18 +1160,19 @@ my $obsolete_reason = {
 	'nautilus-sendto' => 3,
 	'libstrophe' => 5,
 	'ghostview' => 2,
-        'libcudf' => 7,
-        'ocaml-cudf' => 7,
-        'ocaml-cmdliner' => 7,
-        'ocaml-cppo' => 7,
-        'ocaml-dose' => 7,
-        'ocaml-extlib' => 7,
-        'ocaml-jsonm' => 7,
-        'ocaml-re' => 7,
-        'omake' => 7,
-        'ounit' => 7,
-        'obc' => 5,
+	'libcudf' => 7,
+	'ocaml-cudf' => 7,
+	'ocaml-cmdliner' => 7,
+	'ocaml-cppo' => 7,
+	'ocaml-dose' => 7,
+	'ocaml-extlib' => 7,
+	'ocaml-jsonm' => 7,
+	'ocaml-re' => 7,
+	'omake' => 7,
+	'ounit' => 7,
+	'obc' => 5,
 	'mlbviewer' => 3,
+	'upsd' => 3,
 };
 
 # reasons for obsolete packages
