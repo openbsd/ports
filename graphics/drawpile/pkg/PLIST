@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/03/28 20:05:16 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/03/31 15:45:15 bcallah Exp $
 bin/drawpile
-@bin bin/drawpile-2.1.4
+@bin bin/drawpile-2.1.5
 @bin bin/drawpile-srv
 @man man/man1/drawpile-srv.1
 share/applications/net.drawpile.drawpile.desktop
