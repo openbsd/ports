@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_libstrongswan_networking_tun_device_c,v 1.1.1.1 2019/03/31 19:47:28 sthen Exp $
+
+from csszep at gmail
+
+Index: src/libstrongswan/networking/tun_device.c
+--- src/libstrongswan/networking/tun_device.c.orig
++++ src/libstrongswan/networking/tun_device.c
+@@ -58,7 +58,7 @@ tun_device_t *tun_device_create(const char *name_tmpl)
+ #elif defined(__linux__)
+ #include <linux/types.h>
+ #include <linux/if_tun.h>
+-#elif __FreeBSD__ >= 10
++#elif __FreeBSD__ >= 10 || defined(__OpenBSD__)
+ #include <net/if_tun.h>
+ #include <net/if_var.h>
+ #include <netinet/in_var.h>
+@@ -332,7 +332,7 @@ METHOD(tun_device_t, write_packet, bool,
+ {
+ 	ssize_t s;
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__OpenBSD__)
+ 	/* UTUN's expect the packets to be prepended by a 32-bit protocol number
+ 	 * instead of parsing the packet again, we assume IPv4 for now */
+ 	uint32_t proto = htonl(AF_INET);
+@@ -371,7 +371,7 @@ METHOD(tun_device_t, read_packet, bool,
+ 		return FALSE;
+ 	}
+ 	data.len = len;
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__OpenBSD__)
+ 	/* UTUN's prepend packets with a 32-bit protocol number */
+ 	data = chunk_skip(data, sizeof(uint32_t));
+ #endif

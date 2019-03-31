@@ -1,0 +1,332 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/31 19:47:28 sthen Exp $
+@bin bin/pki
+lib/ipsec/
+@lib lib/ipsec/libcharon.so.${LIBcharon_VERSION}
+@lib lib/ipsec/libipsec.so.${LIBipsec_VERSION}
+@lib lib/ipsec/libradius.so.${LIBradius_VERSION}
+@lib lib/ipsec/libstrongswan.so.${LIBstrongswan_VERSION}
+@lib lib/ipsec/libtls.so.${LIBtls_VERSION}
+@lib lib/ipsec/libvici.so.${LIBvici_VERSION}
+lib/ipsec/plugins/
+lib/ipsec/plugins/libstrongswan-aes.so
+lib/ipsec/plugins/libstrongswan-aesni.so
+lib/ipsec/plugins/libstrongswan-attr.so
+lib/ipsec/plugins/libstrongswan-botan.so
+lib/ipsec/plugins/libstrongswan-chapoly.so
+lib/ipsec/plugins/libstrongswan-cmac.so
+lib/ipsec/plugins/libstrongswan-constraints.so
+lib/ipsec/plugins/libstrongswan-counters.so
+lib/ipsec/plugins/libstrongswan-curve25519.so
+lib/ipsec/plugins/libstrongswan-des.so
+lib/ipsec/plugins/libstrongswan-dnskey.so
+lib/ipsec/plugins/libstrongswan-eap-gtc.so
+lib/ipsec/plugins/libstrongswan-eap-identity.so
+lib/ipsec/plugins/libstrongswan-eap-mschapv2.so
+lib/ipsec/plugins/libstrongswan-eap-peap.so
+lib/ipsec/plugins/libstrongswan-eap-radius.so
+lib/ipsec/plugins/libstrongswan-eap-tls.so
+lib/ipsec/plugins/libstrongswan-eap-ttls.so
+lib/ipsec/plugins/libstrongswan-fips-prf.so
+lib/ipsec/plugins/libstrongswan-gcm.so
+lib/ipsec/plugins/libstrongswan-gmp.so
+lib/ipsec/plugins/libstrongswan-hmac.so
+lib/ipsec/plugins/libstrongswan-kernel-libipsec.so
+lib/ipsec/plugins/libstrongswan-kernel-pfroute.so
+lib/ipsec/plugins/libstrongswan-md4.so
+lib/ipsec/plugins/libstrongswan-md5.so
+lib/ipsec/plugins/libstrongswan-mgf1.so
+lib/ipsec/plugins/libstrongswan-nonce.so
+lib/ipsec/plugins/libstrongswan-pem.so
+lib/ipsec/plugins/libstrongswan-pgp.so
+lib/ipsec/plugins/libstrongswan-pkcs1.so
+lib/ipsec/plugins/libstrongswan-pkcs11.so
+lib/ipsec/plugins/libstrongswan-pkcs12.so
+lib/ipsec/plugins/libstrongswan-pkcs7.so
+lib/ipsec/plugins/libstrongswan-pkcs8.so
+lib/ipsec/plugins/libstrongswan-pubkey.so
+lib/ipsec/plugins/libstrongswan-random.so
+lib/ipsec/plugins/libstrongswan-rc2.so
+lib/ipsec/plugins/libstrongswan-resolve.so
+lib/ipsec/plugins/libstrongswan-revocation.so
+lib/ipsec/plugins/libstrongswan-sha1.so
+lib/ipsec/plugins/libstrongswan-sha2.so
+lib/ipsec/plugins/libstrongswan-socket-default.so
+lib/ipsec/plugins/libstrongswan-sshkey.so
+lib/ipsec/plugins/libstrongswan-stroke.so
+lib/ipsec/plugins/libstrongswan-updown.so
+lib/ipsec/plugins/libstrongswan-vici.so
+lib/ipsec/plugins/libstrongswan-x509.so
+lib/ipsec/plugins/libstrongswan-xauth-eap.so
+lib/ipsec/plugins/libstrongswan-xauth-generic.so
+lib/ipsec/plugins/libstrongswan-xcbc.so
+libexec/ipsec/
+@bin libexec/ipsec/_copyright
+libexec/ipsec/_updown
+@bin libexec/ipsec/charon
+@bin libexec/ipsec/scepclient
+@bin libexec/ipsec/starter
+@bin libexec/ipsec/stroke
+@man man/man1/pki---acert.1
+@man man/man1/pki---dn.1
+@man man/man1/pki---gen.1
+@man man/man1/pki---issue.1
+@man man/man1/pki---keyid.1
+@man man/man1/pki---pkcs7.1
+@man man/man1/pki---print.1
+@man man/man1/pki---pub.1
+@man man/man1/pki---req.1
+@man man/man1/pki---self.1
+@man man/man1/pki---signcrl.1
+@man man/man1/pki---verify.1
+@man man/man1/pki.1
+@man man/man5/ipsec.conf.5
+@man man/man5/ipsec.secrets.5
+@man man/man5/strongswan.conf.5
+@man man/man5/swanctl.conf.5
+@man man/man8/ipsec.8
+@man man/man8/scepclient.8
+@man man/man8/swanctl.8
+sbin/ipsec
+@bin sbin/swanctl
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/strongswan/
+@sample ${SYSCONFDIR}/
+share/examples/strongswan/ipsec.conf
+@sample ${SYSCONFDIR}/ipsec.conf
+share/examples/strongswan/ipsec.d/
+@sample ${SYSCONFDIR}/ipsec.d/
+share/examples/strongswan/ipsec.d/aacerts/
+@sample ${SYSCONFDIR}/ipsec.d/aacerts/
+share/examples/strongswan/ipsec.d/acerts/
+@sample ${SYSCONFDIR}/ipsec.d/acerts/
+share/examples/strongswan/ipsec.d/cacerts/
+@sample ${SYSCONFDIR}/ipsec.d/cacerts/
+share/examples/strongswan/ipsec.d/certs/
+@sample ${SYSCONFDIR}/ipsec.d/certs/
+share/examples/strongswan/ipsec.d/crls/
+@sample ${SYSCONFDIR}/ipsec.d/crls/
+share/examples/strongswan/ipsec.d/ocspcerts/
+@sample ${SYSCONFDIR}/ipsec.d/ocspcerts/
+share/examples/strongswan/ipsec.d/private/
+@sample ${SYSCONFDIR}/ipsec.d/private/
+share/examples/strongswan/ipsec.d/reqs/
+@sample ${SYSCONFDIR}/ipsec.d/reqs/
+share/examples/strongswan/ipsec.secrets
+@mode 600
+@sample ${SYSCONFDIR}/ipsec.secrets
+@mode
+share/examples/strongswan/strongswan.conf
+@sample ${SYSCONFDIR}/strongswan.conf
+share/examples/strongswan/strongswan.d/
+@sample ${SYSCONFDIR}/strongswan.d/
+share/examples/strongswan/strongswan.d/charon/
+@sample ${SYSCONFDIR}/strongswan.d/charon/
+share/examples/strongswan/strongswan.d/charon-logging.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon-logging.conf
+share/examples/strongswan/strongswan.d/charon.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon.conf
+share/examples/strongswan/strongswan.d/charon/aes.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/aes.conf
+share/examples/strongswan/strongswan.d/charon/aesni.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/aesni.conf
+share/examples/strongswan/strongswan.d/charon/attr.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/attr.conf
+share/examples/strongswan/strongswan.d/charon/botan.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/botan.conf
+share/examples/strongswan/strongswan.d/charon/chapoly.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/chapoly.conf
+share/examples/strongswan/strongswan.d/charon/cmac.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/cmac.conf
+share/examples/strongswan/strongswan.d/charon/constraints.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/constraints.conf
+share/examples/strongswan/strongswan.d/charon/counters.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/counters.conf
+share/examples/strongswan/strongswan.d/charon/curve25519.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/curve25519.conf
+share/examples/strongswan/strongswan.d/charon/des.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/des.conf
+share/examples/strongswan/strongswan.d/charon/dnskey.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/dnskey.conf
+share/examples/strongswan/strongswan.d/charon/eap-gtc.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/eap-gtc.conf
+share/examples/strongswan/strongswan.d/charon/eap-identity.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/eap-identity.conf
+share/examples/strongswan/strongswan.d/charon/eap-mschapv2.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/eap-mschapv2.conf
+share/examples/strongswan/strongswan.d/charon/eap-peap.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/eap-peap.conf
+share/examples/strongswan/strongswan.d/charon/eap-radius.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/eap-radius.conf
+share/examples/strongswan/strongswan.d/charon/eap-tls.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/eap-tls.conf
+share/examples/strongswan/strongswan.d/charon/eap-ttls.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/eap-ttls.conf
+share/examples/strongswan/strongswan.d/charon/fips-prf.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/fips-prf.conf
+share/examples/strongswan/strongswan.d/charon/gcm.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/gcm.conf
+share/examples/strongswan/strongswan.d/charon/gmp.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/gmp.conf
+share/examples/strongswan/strongswan.d/charon/hmac.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/hmac.conf
+share/examples/strongswan/strongswan.d/charon/kernel-libipsec.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/kernel-libipsec.conf
+share/examples/strongswan/strongswan.d/charon/kernel-pfroute.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/kernel-pfroute.conf
+share/examples/strongswan/strongswan.d/charon/md4.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/md4.conf
+share/examples/strongswan/strongswan.d/charon/md5.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/md5.conf
+share/examples/strongswan/strongswan.d/charon/mgf1.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/mgf1.conf
+share/examples/strongswan/strongswan.d/charon/nonce.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/nonce.conf
+share/examples/strongswan/strongswan.d/charon/pem.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/pem.conf
+share/examples/strongswan/strongswan.d/charon/pgp.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/pgp.conf
+share/examples/strongswan/strongswan.d/charon/pkcs1.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/pkcs1.conf
+share/examples/strongswan/strongswan.d/charon/pkcs11.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/pkcs11.conf
+share/examples/strongswan/strongswan.d/charon/pkcs12.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/pkcs12.conf
+share/examples/strongswan/strongswan.d/charon/pkcs7.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/pkcs7.conf
+share/examples/strongswan/strongswan.d/charon/pkcs8.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/pkcs8.conf
+share/examples/strongswan/strongswan.d/charon/pubkey.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/pubkey.conf
+share/examples/strongswan/strongswan.d/charon/random.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/random.conf
+share/examples/strongswan/strongswan.d/charon/rc2.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/rc2.conf
+share/examples/strongswan/strongswan.d/charon/resolve.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/resolve.conf
+share/examples/strongswan/strongswan.d/charon/revocation.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/revocation.conf
+share/examples/strongswan/strongswan.d/charon/sha1.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/sha1.conf
+share/examples/strongswan/strongswan.d/charon/sha2.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/sha2.conf
+share/examples/strongswan/strongswan.d/charon/socket-default.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/socket-default.conf
+share/examples/strongswan/strongswan.d/charon/sshkey.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/sshkey.conf
+share/examples/strongswan/strongswan.d/charon/stroke.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/stroke.conf
+share/examples/strongswan/strongswan.d/charon/updown.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/updown.conf
+share/examples/strongswan/strongswan.d/charon/vici.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/vici.conf
+share/examples/strongswan/strongswan.d/charon/x509.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/x509.conf
+share/examples/strongswan/strongswan.d/charon/xauth-eap.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/xauth-eap.conf
+share/examples/strongswan/strongswan.d/charon/xauth-generic.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/xauth-generic.conf
+share/examples/strongswan/strongswan.d/charon/xcbc.conf
+@sample ${SYSCONFDIR}/strongswan.d/charon/xcbc.conf
+share/examples/strongswan/strongswan.d/pki.conf
+@sample ${SYSCONFDIR}/strongswan.d/pki.conf
+share/examples/strongswan/strongswan.d/scepclient.conf
+@sample ${SYSCONFDIR}/strongswan.d/scepclient.conf
+share/examples/strongswan/strongswan.d/starter.conf
+@sample ${SYSCONFDIR}/strongswan.d/starter.conf
+share/examples/strongswan/strongswan.d/swanctl.conf
+@sample ${SYSCONFDIR}/strongswan.d/swanctl.conf
+share/examples/strongswan/swanctl/
+@sample ${SYSCONFDIR}/swanctl/
+share/examples/strongswan/swanctl/bliss/
+@sample ${SYSCONFDIR}/swanctl/bliss/
+share/examples/strongswan/swanctl/conf.d/
+@sample ${SYSCONFDIR}/swanctl/conf.d/
+share/examples/strongswan/swanctl/ecdsa/
+@sample ${SYSCONFDIR}/swanctl/ecdsa/
+share/examples/strongswan/swanctl/pkcs12/
+@sample ${SYSCONFDIR}/swanctl/pkcs12/
+share/examples/strongswan/swanctl/pkcs8/
+@sample ${SYSCONFDIR}/swanctl/pkcs8/
+share/examples/strongswan/swanctl/private/
+@sample ${SYSCONFDIR}/swanctl/private/
+share/examples/strongswan/swanctl/pubkey/
+@sample ${SYSCONFDIR}/swanctl/pubkey/
+share/examples/strongswan/swanctl/rsa/
+@sample ${SYSCONFDIR}/swanctl/rsa/
+share/examples/strongswan/swanctl/swanctl.conf
+@sample ${SYSCONFDIR}/swanctl/swanctl.conf
+share/examples/strongswan/swanctl/x509/
+@sample ${SYSCONFDIR}/swanctl/x509/
+share/examples/strongswan/swanctl/x509aa/
+@sample ${SYSCONFDIR}/swanctl/x509aa/
+share/examples/strongswan/swanctl/x509ac/
+@sample ${SYSCONFDIR}/swanctl/x509ac/
+share/examples/strongswan/swanctl/x509ca/
+@sample ${SYSCONFDIR}/swanctl/x509ca/
+share/examples/strongswan/swanctl/x509crl/
+@sample ${SYSCONFDIR}/swanctl/x509crl/
+share/examples/strongswan/swanctl/x509ocsp/
+@sample ${SYSCONFDIR}/swanctl/x509ocsp/
+share/strongswan/
+share/strongswan/templates/
+share/strongswan/templates/config/
+share/strongswan/templates/config/plugins/
+share/strongswan/templates/config/plugins/aes.conf
+share/strongswan/templates/config/plugins/aesni.conf
+share/strongswan/templates/config/plugins/attr.conf
+share/strongswan/templates/config/plugins/botan.conf
+share/strongswan/templates/config/plugins/chapoly.conf
+share/strongswan/templates/config/plugins/cmac.conf
+share/strongswan/templates/config/plugins/constraints.conf
+share/strongswan/templates/config/plugins/counters.conf
+share/strongswan/templates/config/plugins/curve25519.conf
+share/strongswan/templates/config/plugins/des.conf
+share/strongswan/templates/config/plugins/dnskey.conf
+share/strongswan/templates/config/plugins/eap-gtc.conf
+share/strongswan/templates/config/plugins/eap-identity.conf
+share/strongswan/templates/config/plugins/eap-mschapv2.conf
+share/strongswan/templates/config/plugins/eap-peap.conf
+share/strongswan/templates/config/plugins/eap-radius.conf
+share/strongswan/templates/config/plugins/eap-tls.conf
+share/strongswan/templates/config/plugins/eap-ttls.conf
+share/strongswan/templates/config/plugins/fips-prf.conf
+share/strongswan/templates/config/plugins/gcm.conf
+share/strongswan/templates/config/plugins/gmp.conf
+share/strongswan/templates/config/plugins/hmac.conf
+share/strongswan/templates/config/plugins/kernel-libipsec.conf
+share/strongswan/templates/config/plugins/kernel-pfroute.conf
+share/strongswan/templates/config/plugins/md4.conf
+share/strongswan/templates/config/plugins/md5.conf
+share/strongswan/templates/config/plugins/mgf1.conf
+share/strongswan/templates/config/plugins/nonce.conf
+share/strongswan/templates/config/plugins/pem.conf
+share/strongswan/templates/config/plugins/pgp.conf
+share/strongswan/templates/config/plugins/pkcs1.conf
+share/strongswan/templates/config/plugins/pkcs11.conf
+share/strongswan/templates/config/plugins/pkcs12.conf
+share/strongswan/templates/config/plugins/pkcs7.conf
+share/strongswan/templates/config/plugins/pkcs8.conf
+share/strongswan/templates/config/plugins/pubkey.conf
+share/strongswan/templates/config/plugins/random.conf
+share/strongswan/templates/config/plugins/rc2.conf
+share/strongswan/templates/config/plugins/resolve.conf
+share/strongswan/templates/config/plugins/revocation.conf
+share/strongswan/templates/config/plugins/sha1.conf
+share/strongswan/templates/config/plugins/sha2.conf
+share/strongswan/templates/config/plugins/socket-default.conf
+share/strongswan/templates/config/plugins/sshkey.conf
+share/strongswan/templates/config/plugins/stroke.conf
+share/strongswan/templates/config/plugins/updown.conf
+share/strongswan/templates/config/plugins/vici.conf
+share/strongswan/templates/config/plugins/x509.conf
+share/strongswan/templates/config/plugins/xauth-eap.conf
+share/strongswan/templates/config/plugins/xauth-generic.conf
+share/strongswan/templates/config/plugins/xcbc.conf
+share/strongswan/templates/config/strongswan.conf
+share/strongswan/templates/config/strongswan.d/
+share/strongswan/templates/config/strongswan.d/charon-logging.conf
+share/strongswan/templates/config/strongswan.d/charon.conf
+share/strongswan/templates/config/strongswan.d/pki.conf
+share/strongswan/templates/config/strongswan.d/scepclient.conf
+share/strongswan/templates/config/strongswan.d/starter.conf
+share/strongswan/templates/config/strongswan.d/swanctl.conf

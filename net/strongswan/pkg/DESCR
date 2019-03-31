@@ -1,0 +1,11 @@
+strongSwan is reasonably portable open source VPN software supporting
+both IKEv1 and IKEv2. It has wide support for authentication types
+including IKEv1 XAUTH (username and password) and multiple IKEv2 EAP
+mechanisms on both server and client side.
+
+The OpenBSD port currently provides only the "kernel-libipsec" plugin.
+This operates in userland via tun(4) devices and strongSwan's own
+IPsec implementation rather than using kernel IPsec - it is suggested
+that this is only used for testing or in client situations where the
+native IPsec software (isakmpd and iked) does not support the required
+functionality.

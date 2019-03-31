@@ -1,0 +1,51 @@
+$OpenBSD: README,v 1.1.1.1 2019/03/31 19:47:28 sthen Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Caveats
+=======
+This package currently provides only the "kernel-ipsec" plugin which operates
+in userland via tun(4) devices and uses strongSwan's own IPsec implementation
+rather than OpenBSD's kernel IPsec. It is not recommended for production use
+on security gateways.
+
+To use this plugin, kernel ESP handling must be disabled:
+
+# sysctl net.inet.esp.enable=0
+# sysctl net.inet.esp.udpencap=0
+
+The kernel-pfkey plugin (which interfaces with kernel IPsec) has not yet
+been ported to OpenBSD.
+
+Example configuration
+---------------------
+This is for an IKEv2 client with EAP username/password authentication:
+
+# cat /etc/strongswan/ipsec.conf
+conn ikev2-eap-mschapv2
+    dpdaction=restart
+    dpddelay=30
+    dpdtimeout=90
+    fragmentation=yes
+    leftsourceip=%config
+    keyexchange=ikev2
+    leftauth=eap-mschapv2
+    eap_identity=username
+    rightauth=pubkey
+    right=vpn.example.net
+    rightid=@vpn.example.net
+    rightca="C=GB, ST=Cornwall, O=Example Net, CN=Example CA, E=hostmaster@example.net"
+    rightsubnet=10.71.0.0/18
+    auto=add
+
+# cat /etc/strongswan/ipsec.secrets
+username : EAP "password"
+
+# ls -l /etc/strongswan/ipsec.d/cacerts/
+total 8
+-rw-r--r--  1 root  wheel  2106 Mar 30 00:05 example-ca.pem
+
+# ipsec start
+# ipsec up ikev2-eap-mschapv2
