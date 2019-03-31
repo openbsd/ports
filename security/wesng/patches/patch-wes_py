@@ -1,0 +1,25 @@
+$OpenBSD: patch-wes_py,v 1.1.1.1 2019/03/31 00:45:19 jasper Exp $
+
+The definitions database lives in ${PREFIX}/share/wesng/
+
+Index: wes.py
+--- wes.py.orig
++++ wes.py
+@@ -219,7 +219,7 @@ def main():
+ # Load definitions.zip containing a CSV with vulnerabilities collected by the WES collector module
+ # and a file determining the minimum wes.py version the definitions are compatible with.
+ def load_definitions(definitions):
+-    with zipfile.ZipFile(definitions, 'r') as definitionszip:
++    with zipfile.ZipFile('${PREFIX}/share/wesng/' + definitions, 'r') as definitionszip:
+         files = definitionszip.namelist()
+ 
+         # Version_X.XX.txt
+@@ -638,7 +638,7 @@ def check_file_exists(value):
+ 
+ # Validate file existence for definitions file
+ def check_definitions_exists(value):
+-    if not os.path.isfile(value):
++    if not os.path.isfile('${PREFIX}/share/wesng/' + value):
+         raise argparse.ArgumentTypeError('Definitions file \'%s\' does not exist. Try running %s --update first.' % (value, FILENAME))
+ 
+     return value

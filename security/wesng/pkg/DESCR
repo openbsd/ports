@@ -1,0 +1,3 @@
+WES-NG is a tool based on the output of Windows 'systeminfo' utility
+which provides the list of vulnerabilities the OS is vulnerable to,
+including any exploits for these vulnerabilities.
