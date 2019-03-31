@@ -1,0 +1,6 @@
+use Test::More;
+use Test::More::UTF8;
+
+# now we can easily use flagged strings without warnings like "Wide character
+in print ..."
+is("\x{410}","\x{420}"); # got a failure message without warnings
