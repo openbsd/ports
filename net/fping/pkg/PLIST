@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/09/17 12:03:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/03/31 00:09:09 sthen Exp $
 @man man/man8/fping.8
-@man man/man8/fping6.8
 @mode 4555
 @bin sbin/fping
-@bin sbin/fping6
 @mode
+sbin/fping6

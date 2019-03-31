@@ -1,28 +1,29 @@
-$OpenBSD: patch-src_fping_c,v 1.6 2018/08/01 15:02:18 millert Exp $
+$OpenBSD: patch-src_fping_c,v 1.7 2019/03/31 00:09:09 sthen Exp $
 Index: src/fping.c
 --- src/fping.c.orig
 +++ src/fping.c
-@@ -354,6 +354,9 @@ int main(int argc, char** argv)
-     int tos = 0;
+@@ -352,6 +352,9 @@ int main(int argc, char** argv)
      HOST_ENTRY* cursor;
+     struct optparse optparse_state;
  
 +    if (pledge("stdio inet rpath dns id", NULL) == -1)
 +        perror("pledge");
 +
+     /* pre-parse -h/--help, so that we also can output help information
+      * without trying to open the socket, which might fail */
      prog = argv[0];
- 
-     s = open_ping_socket(ping_data_size);
-@@ -364,6 +367,9 @@ int main(int argc, char** argv)
-             perror("cannot setuid");
+@@ -376,6 +379,10 @@ int main(int argc, char** argv)
      }
  
+     optparse_init(&optparse_state, argv);
++
 +    if (pledge("stdio inet rpath dns", NULL) == -1)
 +        perror("pledge");
 +
      ident = getpid() & 0xFFFF;
      verbose_flag = 1;
      backoff_flag = 1;
-@@ -583,6 +589,11 @@ int main(int argc, char** argv)
+@@ -710,6 +717,11 @@ int main(int argc, char** argv)
          }
      }
  
@@ -33,8 +34,8 @@ Index: src/fping.c
 +
      /* validate various option settings */
  
-     if (ttl > 255) {
-@@ -798,6 +809,10 @@ int main(int argc, char** argv)
+ #ifndef IPV6
+@@ -962,6 +974,10 @@ int main(int argc, char** argv)
          exit(num_noaddress ? 2 : 1);
      }
  
@@ -42,13 +43,13 @@ Index: src/fping.c
 +    if (pledge("stdio inet", NULL) == -1)
 +        perror("pledge");
 +
-     if (src_addr_present) {
-         socket_set_src_addr(s, src_addr);
+     if (src_addr_set && socket4 >= 0) {
+         socket_set_src_addr_ipv4(socket4, &src_addr);
      }
-@@ -1667,7 +1682,7 @@ int wait_for_reply(long wait_time)
+@@ -1831,7 +1847,7 @@ int decode_icmp_ipv4(
+     struct icmp* icp;
+     int hlen = 0;
  
- #ifndef IPV6
-     ip = (struct ip*)buffer;
 -#if defined(__alpha__) && __STDC__ && !defined(__GLIBC__)
 +#if defined(__alpha__) && __STDC__ && !defined(__GLIBC__) && !defined(__OpenBSD__)
      /* The alpha headers are decidedly broken.
