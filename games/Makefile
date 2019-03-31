@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.396 2019/02/10 14:04:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.397 2019/03/31 05:14:23 thfr Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -203,6 +203,7 @@
      SUBDIR += openjk
      SUBDIR += openmw
      SUBDIR += openomf
+     SUBDIR += openra
      SUBDIR += openrct2
      SUBDIR += opensonic
      SUBDIR += openttd
