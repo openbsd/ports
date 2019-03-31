@@ -1,0 +1,41 @@
+$OpenBSD: patch-mate-session_gsm-manager_c,v 1.1 2019/03/31 14:31:48 robert Exp $
+
+https://github.com/mate-desktop/mate-session-manager/issues/189
+
+Index: mate-session/gsm-manager.c
+--- mate-session/gsm-manager.c.orig
++++ mate-session/gsm-manager.c
+@@ -424,11 +424,10 @@ quit_request_completed_consolekit (GsmConsolekit *cons
+ 
+         if (error != NULL) {
+                 mdm_set_logout_action (fallback_action);
+-        }
+-
+-        g_object_unref (consolekit);
+-
+-        gtk_main_quit ();
++        } else {
++                g_object_unref (consolekit);
++                gtk_main_quit ();
++	}
+ }
+ 
+ #ifdef HAVE_SYSTEMD
+@@ -3018,7 +3017,7 @@ request_reboot_privileges_completed_consolekit (GsmCon
+                         priv->logout_type = GSM_MANAGER_LOGOUT_REBOOT;
+                 }
+ 
+-                end_phase (manager);
++                gsm_manager_quit (manager);
+         }
+ }
+ 
+@@ -3158,7 +3157,7 @@ request_shutdown_privileges_completed_consolekit (GsmC
+                         priv->logout_type = GSM_MANAGER_LOGOUT_SHUTDOWN;
+                 }
+ 
+-                end_phase (manager);
++                gsm_manager_quit (manager);
+         }
+ }
+ 
