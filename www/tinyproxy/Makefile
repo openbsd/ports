@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.29 2018/01/11 19:27:12 rpe Exp $
+# $OpenBSD: Makefile,v 1.30 2019/03/31 03:01:14 jasper Exp $
 
 COMMENT =		lightweight HTTP/SSL proxy
 
 V =			1.8.4
 DISTNAME =		tinyproxy-$V
 CATEGORIES =		www net
-REVISION =		0
+REVISION =		1
 
-HOMEPAGE =		https://www.banu.com/tinyproxy/
+HOMEPAGE =		https://tinyproxy.github.io/
 MAINTAINER =		frantisek holop <minusf@obiit.org>
 
 # GPLv2+
