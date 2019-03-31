@@ -1,31 +1,27 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2018/01/17 20:18:53 bcallah Exp $
+$OpenBSD: patch-configure,v 1.2 2019/03/31 21:31:16 bcallah Exp $
 
-Disable broken test. Of course OpenBSD has zlib installed.
 Don't hardcode CXX or optimization flags.
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -14,11 +14,11 @@ exec tclsh "$0" ${1+"$@"}
+@@ -13,15 +13,15 @@ exec tclsh "$0" ${1+"$@"}
+ 
  # Default values for Makefile settings:
  #
- set var(BINDIR) /usr/local/bin
+-set var(BINDIR) /usr/local/bin
 -set var(COMPILE) g++
++set var(BINDIR) ${LOCALBASE}/bin
 +set var(COMPILE) ${CXX}
- set var(DEBUG) #-DASSERTIONS
+ set var(DEBUG) {-DNDEBUG}
  set var(OBJS) {$(SCIDOBJS)}
- set var(THREADS) {-std=c++11 -pthread}
--set var(OPTIMIZE) {-O3 -march=native -fno-rtti -fno-exceptions}
-+set var(OPTIMIZE) {${CXXFLAGS} -fno-rtti -fno-exceptions}
+ set var(THREADS) {-pthread}
+-set var(OPTIMIZE) {-std=c++14 -O3 -march=native -fno-rtti -fno-exceptions}
++set var(OPTIMIZE) {${CXXFLAGS} -std=c++14 -fno-rtti -fno-exceptions}
  set var(PROFILE) {}
  set var(SCIDFLAGS) {}
- set var(SHAREDIR) /usr/local/share/scid
-@@ -258,7 +258,7 @@ proc checkZlib {} {
-     global var
-     puts -nonewline "    Checking if your system already has zlib installed: "
-     flush stdout
--    if {[systemHasZlib]} {
-+    if {1} {
-         puts "yes."
-         append var(SCIDFLAGS) " -DZLIB"
-         set var(ZLIB) {-lz}
+-set var(SHAREDIR) /usr/local/share/scid
++set var(SHAREDIR) ${LOCALBASE}/share/scid
+ set var(TB) {-DSCID_USE_TB -DT41_INCLUDE}
+ set var(TCL_VERSION) $tcl_version
+ set var(WARNINGS) -Wall

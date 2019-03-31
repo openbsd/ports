@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/03/31 21:31:16 bcallah Exp $
 
+V =		4.7.0
 COMMENT =	chess database software
-DISTNAME =	scid-4.6.4
+DISTNAME =	scid-code-${V}
+PKGNAME =	scid-${V}
 EXTRACT_SUFX =	.zip
 CATEGORIES =	games x11
-REVISION =	0
 
 HOMEPAGE =	http://scid.sourceforge.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -12,7 +13,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ${MODTCL_WANTLIB} c m z
+WANTLIB += ${COMPILER_LIBCXX} ${MODTCL_WANTLIB} c m
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=scid/}
 
@@ -33,8 +34,9 @@ CONFIGURE_STYLE =	simple
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CXX="${CXX}"
 
-TEST_DEPENDS =	devel/cmake \
-		devel/gtest
+NO_TEST =	Yes
+
+WRKDIST =	${WRKDIR}/scid
 
 pre-configure:
 	@${MODTCL_TCLSH_ADJ} ${WRKSRC}/configure
