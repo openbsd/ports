@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/03/21 10:03:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/03/31 00:09:38 sthen Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -25,7 +25,7 @@ PKGNAME-snmp=	monitoring-plugins-snmp-$V
 PKGNAME-radius=	monitoring-plugins-radius-$V
 CATEGORIES=	net
 REVISION-dbi=	3
-REVISION-fping=	3
+REVISION-fping=	4
 REVISION-game=	3
 REVISION-ldap=	3
 REVISION-main=	7
@@ -62,8 +62,8 @@ CONFIGURE_ARGS+= --libexecdir=${PREFIX}/libexec/nagios \
 		--with-openssl=/usr \
 		--without-gnutls
 # can autodetect command paths, but hard-coding avoids build dependencies
-CONFIGURE_ARGS+= --with-fping-command=${LOCALBASE}/sbin/fping \
-		--with-fping6-command=${LOCALBASE}/sbin/fping6 \
+CONFIGURE_ARGS+= --with-fping-command="${LOCALBASE}/sbin/fping -4" \
+		--with-fping6-command="${LOCALBASE}/sbin/fping -6" \
 		--with-smbclient-command=${LOCALBASE}/bin/smbclient \
 		--with-snmpget-command=${LOCALBASE}/bin/snmpget \
 		--with-snmpgetnext-command=${LOCALBASE}/bin/snmpgetnext \
