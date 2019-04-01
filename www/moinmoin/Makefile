@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.33 2018/04/28 16:09:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2019/04/01 11:46:45 sthen Exp $
 
 COMMENT =	wiki engine written in python
 
-MODPY_EGG_VERSION = 1.9.9
+MODPY_EGG_VERSION = 1.9.10
 DISTNAME =	moin-${MODPY_EGG_VERSION}
 PKGNAME =	moin${DISTNAME}
 
 CATEGORIES =	www
 
-HOMEPAGE =	http://moinmo.in/
+HOMEPAGE =	https://moinmo.in/
 
 # GPLv2 and several other ones claiming compliance with GPLv2 or
 # actually being less restrictive.
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://static.moinmo.in/files/
+MASTER_SITES =	https://static.moinmo.in/files/
 
 MODULES =	lang/python
 

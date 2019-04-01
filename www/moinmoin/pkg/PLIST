@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/04/28 16:09:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2019/04/01 11:46:45 sthen Exp $
 bin/moin
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/Page.py
@@ -636,6 +636,8 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090800.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090800.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090900.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1090900.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1091000.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/1091000.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/script/migration/_conv160.py
@@ -832,6 +834,8 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/parsedatetime/pdt_loca
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/parsedatetime/pdt_locales/en_US.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/parsedatetime/pdt_locales/es.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/parsedatetime/pdt_locales/es.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/parsedatetime/pdt_locales/fr_FR.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/parsedatetime/pdt_locales/fr_FR.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/parsedatetime/pdt_locales/icu.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/parsedatetime/pdt_locales/icu.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/parsedatetime/pdt_locales/nl_NL.py
@@ -848,8 +852,6 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/_setup/
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/_setup/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/_setup/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/_setup/docdist.py
-lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/_setup/docdist.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/_setup/stamp.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/_setup/stamp.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/apache.py
@@ -873,6 +875,8 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/ext/django/uti
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/handlers/
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/handlers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/handlers/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/handlers/argon2.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/handlers/argon2.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/handlers/bcrypt.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/handlers/bcrypt.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/handlers/cisco.py
@@ -907,6 +911,8 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/handlers/round
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/handlers/roundup.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/handlers/scram.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/handlers/scram.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/handlers/scrypt.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/handlers/scrypt.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/handlers/sha1_crypt.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/handlers/sha1_crypt.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/handlers/sha2_crypt.py
@@ -921,22 +927,24 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/hosts.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/hosts.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/ifc.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/ifc.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/pwd.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/pwd.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/registry.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/registry.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/totp.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/totp.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/_blowfish/
-lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/_blowfish/__init__.py
-lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/_blowfish/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/_blowfish/_gen_files.py
-lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/_blowfish/_gen_files.pyc
-lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/_blowfish/base.py
-lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/_blowfish/base.pyc
-lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/_blowfish/unrolled.py
-lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/_blowfish/unrolled.pyc
-lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/compat.py
-lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/compat.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/binary.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/binary.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/compat/
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/compat/__init__.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/compat/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/compat/_ordered_dict.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/compat/_ordered_dict.pyc
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/decor.py
+lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/decor.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/des.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/des.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/passlib/utils/handlers.py
@@ -1375,8 +1383,6 @@ lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/werkzeug/posixemulatio
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/werkzeug/posixemulation.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/werkzeug/routing.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/werkzeug/routing.pyc
-lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/werkzeug/script.py
-lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/werkzeug/script.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/werkzeug/security.py
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/werkzeug/security.pyc
 lib/python${MODPY_VERSION}/site-packages/MoinMoin/support/werkzeug/serving.py
