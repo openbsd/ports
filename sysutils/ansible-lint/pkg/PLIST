@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/02/19 18:58:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/04/01 16:44:56 sthen Exp $
 bin/ansible-lint
 lib/python${MODPY_VERSION}/site-packages/ansible_lint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/ansible_lint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -50,10 +50,10 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/MetaVideoLinksRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/NoFormattingInWhenRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/NoTabsRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/OctalPermissionsRule.py
-lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/PackageHasRetryRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/PackageIsNotLatestRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/PlaybookExtension.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/RoleRelativePath.py
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/ShellWithoutPipefail.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/SudoRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/TaskHasNameRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/TaskNoLocalAction.py
@@ -83,10 +83,10 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}MetaV
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}NoFormattingInWhenRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}NoTabsRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}OctalPermissionsRule.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}PackageHasRetryRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}PackageIsNotLatestRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}PlaybookExtension.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}RoleRelativePath.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}ShellWithoutPipefail.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}SudoRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}TaskHasNameRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}TaskNoLocalAction.${MODPY_PYC_MAGIC_TAG}pyc

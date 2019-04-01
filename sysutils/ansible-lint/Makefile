@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2019/02/19 18:58:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2019/04/01 16:44:56 sthen Exp $
 
 COMMENT =		best practices checker for ansible
 
-MODPY_EGG_VERSION =	4.0.1
+MODPY_EGG_VERSION =	4.1.0
 DISTNAME =		ansible-lint-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -17,9 +16,11 @@ MODPY_PI =		Yes
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		devel/py-setuptools_scm_git_archive${MODPY_FLAVOR}
-RUN_DEPENDS =		sysutils/ansible
+RUN_DEPENDS =		sysutils/ansible \
+			textproc/py-ruamel.yaml${MODPY_FLAVOR}
 PORTHOME =		${WRKDIR}
 
-NO_TEST =		Yes
+# done in install anyway, but needed for tests
+MODPY_ADJ_FILES =	bin/ansible-lint
 
 .include <bsd.port.mk>
