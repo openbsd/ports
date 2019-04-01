@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/07/17 21:02:08 fcambus Exp $
+# $OpenBSD: Makefile,v 1.25 2019/04/01 04:31:33 kevlo Exp $
 
      SUBDIR =
      SUBDIR += c2t
@@ -6,6 +6,7 @@
      SUBDIR += cless
      SUBDIR += hc
      SUBDIR += libchewing
+     SUBDIR += libpinyin
      SUBDIR += libtabe
      SUBDIR += lunar
      SUBDIR += py-zhCodecs
