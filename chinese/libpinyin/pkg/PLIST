@@ -1,0 +1,43 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/04/01 04:28:06 kevlo Exp $
+@bin bin/gen_binary_files
+@bin bin/gen_unigram
+@bin bin/import_interpolation
+include/libpinyin-2.3.0/
+include/libpinyin-2.3.0/novel_types.h
+include/libpinyin-2.3.0/pinyin.h
+include/libpinyin-2.3.0/pinyin_custom2.h
+include/libpinyin-2.3.0/zhuyin.h
+include/libpinyin-2.3.0/zhuyin_custom2.h
+lib/libpinyin/
+lib/libpinyin.a
+lib/libpinyin.la
+@lib lib/libpinyin.so.${LIBpinyin_VERSION}
+lib/libpinyin/data/
+lib/libpinyin/data/addon_phrase_index.bin
+lib/libpinyin/data/addon_pinyin_index.bin
+lib/libpinyin/data/art.bin
+lib/libpinyin/data/bigram.db
+lib/libpinyin/data/culture.bin
+lib/libpinyin/data/economy.bin
+lib/libpinyin/data/gb_char.bin
+lib/libpinyin/data/gbk_char.bin
+lib/libpinyin/data/geology.bin
+lib/libpinyin/data/history.bin
+lib/libpinyin/data/life.bin
+lib/libpinyin/data/merged.bin
+lib/libpinyin/data/nature.bin
+lib/libpinyin/data/opengram.bin
+lib/libpinyin/data/people.bin
+lib/libpinyin/data/phrase_index.bin
+lib/libpinyin/data/pinyin_index.bin
+lib/libpinyin/data/science.bin
+lib/libpinyin/data/society.bin
+lib/libpinyin/data/sport.bin
+lib/libpinyin/data/table.conf
+lib/libpinyin/data/technology.bin
+lib/libzhuyin.a
+lib/libzhuyin.la
+@lib lib/libzhuyin.so.${LIBzhuyin_VERSION}
+lib/pkgconfig/libpinyin.pc
+lib/pkgconfig/libzhuyin.pc
+@man man/man1/libpinyin.1
