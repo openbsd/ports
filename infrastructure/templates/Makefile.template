@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.79 2019/03/03 23:18:37 sthen Exp $
+# $OpenBSD: Makefile.template,v 1.80 2019/04/01 07:35:45 bentley Exp $
 #
 # Replace ??? with appropriate values
 # Remove extraneous comments before commit
@@ -212,6 +212,6 @@ MASTER_SITES =		???
 #			devel/libtool
 #
 #do-gen:
-#        cd ${WRKSRC}; ${AUTOCONF_ENV} ./autogen.sh
+#	cd ${WRKSRC}; ${AUTOCONF_ENV} ./autogen.sh
 
 .include <bsd.port.mk>
