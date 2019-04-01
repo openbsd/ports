@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/04/01 06:34:37 bentley Exp $
+# $OpenBSD: Makefile,v 1.17 2019/04/01 10:11:59 ajacoutot Exp $
 
 COMMENT-main =		accurate Nintendo Entertainment System emulator
 COMMENT-libretro =	Nintendo Entertainment System core for retroarch
@@ -31,7 +31,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=nestopiaue/}
 EXTRACT_SUFX =		.tgz
 
-BUILD_DEPENDS-main =	${MODGNU_AUTOCONF_DEPENDS} \
+BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/autoconf-archive \
 			devel/libtool
