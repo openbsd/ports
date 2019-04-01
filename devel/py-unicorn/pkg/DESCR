@@ -1,0 +1,12 @@
+Unicorn is a lightweight multi-platform, multi-architecture CPU emulator
+framework.
+
+Features:
+
+- Multi-architectures: Arm, Arm64 (Armv8), M68K, Mips, Sparc, & X86
+  (including X86_64).
+- Clean/simple/lightweight/intuitive architecture-neutral API.
+- Implemented in pure C language, with bindings for various languages.
+- High performance by using Just-In-Time compiler technique.
+- Support fine-grained instrumentation at various levels.
+- Thread-safe by design.
