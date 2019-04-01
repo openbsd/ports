@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2019/03/08 20:00:45 cwen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/04/01 03:11:18 bentley Exp $
 
 COMMENT =		generic multi-emulator frontend
 
 V =			1.7.6
 DISTNAME =		RetroArch-$V
 PKGNAME =		retroarch-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		emulators
 
