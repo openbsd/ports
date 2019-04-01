@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2018/10/23 19:08:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2019/04/01 04:32:46 jasper Exp $
 
 COMMENT =		simplify Paramiko connections to network devices
 
-MODPY_EGG_VERSION =	2.3.0
+MODPY_EGG_VERSION =	2.3.3
 DISTNAME=		netmiko-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

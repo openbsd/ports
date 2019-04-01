@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/10/23 19:08:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/04/01 04:32:46 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/netmiko/
 lib/python${MODPY_VERSION}/site-packages/netmiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/netmiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -227,6 +227,12 @@ lib/python${MODPY_VERSION}/site-packages/netmiko/netapp/${MODPY_PYCACHE}__init__
 lib/python${MODPY_VERSION}/site-packages/netmiko/netapp/${MODPY_PYCACHE}netapp_cdot_ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/netmiko/netapp/netapp_cdot_ssh.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/netmiko_globals.py
+lib/python${MODPY_VERSION}/site-packages/netmiko/oneaccess/
+lib/python${MODPY_VERSION}/site-packages/netmiko/oneaccess/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/oneaccess/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/netmiko/oneaccess/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/oneaccess/${MODPY_PYCACHE}oneaccess_oneos.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/netmiko/oneaccess/oneaccess_oneos.py
 lib/python${MODPY_VERSION}/site-packages/netmiko/ovs/
 lib/python${MODPY_VERSION}/site-packages/netmiko/ovs/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netmiko/ovs/${MODPY_PYCACHE}/
