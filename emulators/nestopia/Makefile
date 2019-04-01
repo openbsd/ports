@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/04/01 06:34:37 bentley Exp $
 
 COMMENT-main =		accurate Nintendo Entertainment System emulator
 COMMENT-libretro =	Nintendo Entertainment System core for retroarch
 
-V =			1.47
+V =			1.49
 DISTNAME =		nestopia-$V
 PKGNAME-main =		nestopia-$V
 PKGNAME-libretro =	libretro-nestopia-$V
-REVISION-main =		3
-REVISION-libretro =	2
 
 MULTI_PACKAGES =	-main -libretro
 
@@ -23,8 +21,9 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB-main += SDL2 ao c gdk-3 gdk_pixbuf-2.0 glib-2.0 gobject-2.0
-WANTLIB-main += gtk-3 m pthread ${COMPILER_LIBCXX} z archive epoxy
+WANTLIB-main += ${COMPILER_LIBCXX} SDL2 ao archive atk-1.0 c cairo
+WANTLIB-main += cairo-gobject epoxy gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB-main += gobject-2.0 gtk-3 intl m pango-1.0 pangocairo-1.0 z
 WANTLIB-libretro =	${COMPILER_LIBCXX} m pthread
 
 COMPILER =		base-clang ports-gcc base-gcc
@@ -32,7 +31,12 @@ COMPILER =		base-clang ports-gcc base-gcc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=nestopiaue/}
 EXTRACT_SUFX =		.tgz
 
-RUN_DEPENDS-main =	devel/desktop-file-utils
+BUILD_DEPENDS-main =	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/autoconf-archive \
+			devel/libtool
+RUN_DEPENDS-main =	devel/desktop-file-utils \
+			x11/gtk+3,-guic
 LIB_DEPENDS-main =	archivers/libarchive \
 			audio/libao \
 			devel/sdl2 \
@@ -44,12 +48,23 @@ MAKE_FLAGS =		CC="${CC}" \
 			CFLAGS="${CFLAGS} `sdl2-config --cflags` \
 				`pkg-config --cflags gtk+-3.0`" \
 			CXXFLAGS="${CFLAGS} `sdl2-config --cflags` \
-				`pkg-config --cflags gtk+-3.0` -Wno-narrowing"
+				`pkg-config --cflags gtk+-3.0` \
+				-Ilibretro-common/include -Wno-narrowing"
 FAKE_FLAGS =		PREFIX="${WRKINST}/${TRUEPREFIX}"
+
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--enable-gui \
+			--with-ao
 
 USE_GMAKE =		Yes
 
 NO_TEST =		Yes
+
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.15
+
+do-gen:
+	cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf -fi
 
 post-build:
 	cd ${WRKSRC}/libretro && \

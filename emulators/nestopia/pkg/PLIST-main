@@ -1,16 +1,19 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2018/06/27 21:03:43 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2019/04/01 06:34:37 bentley Exp $
 @bin bin/nestopia
 share/applications/nestopia.desktop
+share/doc/nestopia/
+share/doc/nestopia/AUTHORS
+share/doc/nestopia/ChangeLog
+share/doc/nestopia/README.md
+share/doc/nestopia/readme.html
+share/icons/hicolor/128x128/apps/nestopia.png
+share/icons/hicolor/32x32/apps/nestopia.png
+share/icons/hicolor/48x48/apps/nestopia.png
+share/icons/hicolor/64x64/apps/nestopia.png
+share/icons/hicolor/96x96/apps/nestopia.png
+share/icons/hicolor/scalable/apps/nespad.svg
+share/icons/hicolor/scalable/apps/nestopia.svg
 share/nestopia/
 share/nestopia/NstDatabase.xml
-share/nestopia/icons/
-share/nestopia/icons/nespad.svg
-share/nestopia/icons/nestopia.svg
-share/nestopia/icons/nestopia128.png
-share/nestopia/icons/nestopia32.png
-share/nestopia/icons/nestopia48.png
-share/nestopia/icons/nestopia64.png
-share/nestopia/icons/nestopia96.png
-share/pixmaps/
-share/pixmaps/nestopia.svg
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
