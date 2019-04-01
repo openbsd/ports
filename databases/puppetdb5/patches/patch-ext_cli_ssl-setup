@@ -1,8 +1,8 @@
-$OpenBSD: patch-ext_cli_ssl-setup,v 1.1.1.1 2017/11/20 12:47:32 sebastia Exp $
+$OpenBSD: patch-ext_cli_ssl-setup,v 1.2 2019/04/01 11:17:33 sebastia Exp $
 Index: ext/cli/ssl-setup
 --- ext/cli/ssl-setup.orig
 +++ ext/cli/ssl-setup
-@@ -228,10 +228,10 @@ else
+@@ -235,10 +235,10 @@ else
    PATH=/opt/puppetlabs/bin:/opt/puppet/bin:$PATH
    agent_confdir=`puppet agent --configprint confdir`
    agent_vardir=`puppet agent --configprint vardir`
