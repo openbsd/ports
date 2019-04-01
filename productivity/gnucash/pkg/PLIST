@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2019/01/01 17:04:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.44 2019/04/01 14:57:36 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -261,7 +261,6 @@ lib/gnucash/scm/ccache/2.2/business-prefs.go
 lib/gnucash/scm/ccache/2.2/c-interface.go
 lib/gnucash/scm/ccache/2.2/commodity-table.go
 lib/gnucash/scm/ccache/2.2/commodity-utilities.go
-lib/gnucash/scm/ccache/2.2/config-var.go
 lib/gnucash/scm/ccache/2.2/date-utilities.go
 lib/gnucash/scm/ccache/2.2/engine-interface.go
 lib/gnucash/scm/ccache/2.2/engine-utilities.go
@@ -328,6 +327,7 @@ lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/account-piecharts.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/account-summary.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/advanced-portfolio.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/average-balance.go
+lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/balance-forecast.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/balance-sheet.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/budget-balance-sheet.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/budget-barchart.go
@@ -450,6 +450,7 @@ share/doc/gnucash/ChangeLog.2014
 share/doc/gnucash/ChangeLog.2015
 share/doc/gnucash/ChangeLog.2016
 share/doc/gnucash/ChangeLog.2017
+share/doc/gnucash/ChangeLog.2018
 share/doc/gnucash/DOCUMENTERS
 share/doc/gnucash/HACKING
 share/doc/gnucash/LICENSE
@@ -462,6 +463,7 @@ share/doc/gnucash/README
 share/doc/gnucash/README-ca.win32-bin.txt
 share/doc/gnucash/README-de.win32-bin.txt
 share/doc/gnucash/README-fr.win32-bin.txt
+share/doc/gnucash/README-hr.win32-bin.txt
 share/doc/gnucash/README-it.win32-bin.txt
 share/doc/gnucash/README-lv.win32-bin.txt
 share/doc/gnucash/README-nl.win32-bin.txt
@@ -525,10 +527,12 @@ share/gnome/help/gnucash-guide/C/ch_bus_features.xml
 share/gnome/help/gnucash-guide/C/ch_capgain.xml
 share/gnome/help/gnucash-guide/C/ch_cbook.xml
 share/gnome/help/gnucash-guide/C/ch_cc.xml
+share/gnome/help/gnucash-guide/C/ch_configuring.xml
 share/gnome/help/gnucash-guide/C/ch_currency.xml
 share/gnome/help/gnucash-guide/C/ch_dep.xml
 share/gnome/help/gnucash-guide/C/ch_expenses.xml
 share/gnome/help/gnucash-guide/C/ch_import_business_data.xml
+share/gnome/help/gnucash-guide/C/ch_importing.xml
 share/gnome/help/gnucash-guide/C/ch_invest.xml
 share/gnome/help/gnucash-guide/C/ch_loans.xml
 share/gnome/help/gnucash-guide/C/ch_oth_assets.xml
@@ -849,6 +853,23 @@ share/gnucash/accounts/fi_FI/
 share/gnucash/accounts/fi_FI/acctchrt_common.gnucash-xea
 share/gnucash/accounts/fi_FI/acctchrt_ry.gnucash-xea
 share/gnucash/accounts/fi_FI/acctchrt_sbr-xbrl.gnucash-xea
+share/gnucash/accounts/fr_BE/
+share/gnucash/accounts/fr_BE/acctchrt_brokerage.gnucash-xea
+share/gnucash/accounts/fr_BE/acctchrt_business.gnucash-xea
+share/gnucash/accounts/fr_BE/acctchrt_carloan.gnucash-xea
+share/gnucash/accounts/fr_BE/acctchrt_cdmoneymkt.gnucash-xea
+share/gnucash/accounts/fr_BE/acctchrt_childcare.gnucash-xea
+share/gnucash/accounts/fr_BE/acctchrt_common.gnucash-xea
+share/gnucash/accounts/fr_BE/acctchrt_currency.gnucash-xea
+share/gnucash/accounts/fr_BE/acctchrt_eduloan.gnucash-xea
+share/gnucash/accounts/fr_BE/acctchrt_fixedassets.gnucash-xea
+share/gnucash/accounts/fr_BE/acctchrt_homeloan.gnucash-xea
+share/gnucash/accounts/fr_BE/acctchrt_homeown.gnucash-xea
+share/gnucash/accounts/fr_BE/acctchrt_otherloan.gnucash-xea
+share/gnucash/accounts/fr_BE/acctchrt_renter.gnucash-xea
+share/gnucash/accounts/fr_BE/acctchrt_retiremt.gnucash-xea
+share/gnucash/accounts/fr_BE/acctchrt_spouseinc.gnucash-xea
+share/gnucash/accounts/fr_BE/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/fr_CA/
 share/gnucash/accounts/fr_CA/acctchrt_actifsfixes.gnucash-xea
 share/gnucash/accounts/fr_CA/acctchrt_automobile.gnucash-xea
@@ -898,6 +919,15 @@ share/gnucash/accounts/fr_FR/acctchrt_renter.gnucash-xea
 share/gnucash/accounts/fr_FR/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/fr_FR/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/fr_FR/acctchrt_spouseretire.gnucash-xea
+share/gnucash/accounts/hr/
+share/gnucash/accounts/hr/acctchrt_car.gnucash-xea
+share/gnucash/accounts/hr/acctchrt_cdmoneymkt.gnucash-xea
+share/gnucash/accounts/hr/acctchrt_checkbook.gnucash-xea
+share/gnucash/accounts/hr/acctchrt_common.gnucash-xea
+share/gnucash/accounts/hr/acctchrt_homeloan.gnucash-xea
+share/gnucash/accounts/hr/acctchrt_homeown.gnucash-xea
+share/gnucash/accounts/hr/acctchrt_otherloan.gnucash-xea
+share/gnucash/accounts/hr/acctchrt_renter.gnucash-xea
 share/gnucash/accounts/hu_HU/
 share/gnucash/accounts/hu_HU/acctchrt_brokerage.gnucash-xea
 share/gnucash/accounts/hu_HU/acctchrt_business.gnucash-xea
@@ -1295,7 +1325,6 @@ share/gnucash/scm/business-prefs.scm
 share/gnucash/scm/c-interface.scm
 share/gnucash/scm/commodity-table.scm
 share/gnucash/scm/commodity-utilities.scm
-share/gnucash/scm/config-var.scm
 share/gnucash/scm/date-utilities.scm
 share/gnucash/scm/engine-interface.scm
 share/gnucash/scm/engine-utilities.scm
@@ -1366,6 +1395,7 @@ share/gnucash/scm/gnucash/report/standard-reports/account-piecharts.scm
 share/gnucash/scm/gnucash/report/standard-reports/account-summary.scm
 share/gnucash/scm/gnucash/report/standard-reports/advanced-portfolio.scm
 share/gnucash/scm/gnucash/report/standard-reports/average-balance.scm
+share/gnucash/scm/gnucash/report/standard-reports/balance-forecast.scm
 share/gnucash/scm/gnucash/report/standard-reports/balance-sheet.scm
 share/gnucash/scm/gnucash/report/standard-reports/budget-balance-sheet.scm
 share/gnucash/scm/gnucash/report/standard-reports/budget-barchart.scm
@@ -1533,6 +1563,7 @@ share/locale/fr/LC_MESSAGES/gnucash.mo
 share/locale/gu/LC_MESSAGES/gnucash.mo
 share/locale/he/LC_MESSAGES/gnucash.mo
 share/locale/hi/LC_MESSAGES/gnucash.mo
+share/locale/hr/LC_MESSAGES/gnucash.mo
 share/locale/hu/LC_MESSAGES/gnucash.mo
 share/locale/it/LC_MESSAGES/gnucash.mo
 share/locale/ja/LC_MESSAGES/gnucash.mo
