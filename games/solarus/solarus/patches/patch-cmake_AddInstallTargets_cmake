@@ -1,0 +1,14 @@
+$OpenBSD: patch-cmake_AddInstallTargets_cmake,v 1.1 2019/04/01 05:54:31 jasper Exp $
+
+Index: cmake/AddInstallTargets.cmake
+--- cmake/AddInstallTargets.cmake.orig
++++ cmake/AddInstallTargets.cmake
+@@ -13,7 +13,7 @@ if(EXISTS '/usr/bin/apt')
+ else()
+   set(SOLARUS_EXECUTABLE_INSTALL_DESTINATION "bin" CACHE PATH "Binary install destination")
+ endif()
+-set(SOLARUS_MANUAL_INSTALL_DESTINATION "share/man" CACHE PATH "Manual install destination")
++set(SOLARUS_MANUAL_INSTALL_DESTINATION "man" CACHE PATH "Manual install destination")
+ set(SOLARUS_HEADERS_INSTALL_DESTINATION "include" CACHE PATH "Headers install destination")
+ 
+ # Files to install with make install.
