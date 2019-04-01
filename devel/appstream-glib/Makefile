@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/02/28 19:20:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2019/04/01 14:39:17 jca Exp $
 
 COMMENT=		library for AppStream metadata
 
@@ -46,6 +46,13 @@ CONFIGURE_ARGS=		-Drpm=false
 
 # requires libstemmer
 CONFIGURE_ARGS +=	-Dstemmer=false
+
+# disable meson's default of using "-Wl,--as-needed" on ld.bfd arches;
+# build failures due to undefined references are often seen.
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mlld}
+CONFIGURE_ARGS +=	-Db_asneeded=false
+.endif
 
 # needed for `make test'
 PORTHOME=		${WRKDIST}
