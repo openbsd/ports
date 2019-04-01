@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_composer_wrapper_php,v 1.2 2018/04/23 11:00:08 sthen Exp $
+$OpenBSD: patch-scripts_composer_wrapper_php,v 1.3 2019/04/01 13:52:45 sthen Exp $
 
 Index: scripts/composer_wrapper.php
 --- scripts/composer_wrapper.php.orig
@@ -12,7 +12,7 @@ Index: scripts/composer_wrapper.php
  
      // self-update
      passthru("$exec self-update -q" . $extra_args);
-@@ -87,8 +87,8 @@ if (is_file($install_dir . '/composer.phar')) {
+@@ -77,8 +77,8 @@ if (is_file($install_dir . '/composer.phar')) {
              echo "Error: Failed to download $installer_url\n";
          } elseif (@hash_file('SHA384', $dest) === $good_sha) {
              // Installer verified

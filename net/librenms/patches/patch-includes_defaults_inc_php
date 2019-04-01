@@ -1,4 +1,4 @@
-$OpenBSD: patch-includes_defaults_inc_php,v 1.36 2018/10/17 20:24:38 sthen Exp $
+$OpenBSD: patch-includes_defaults_inc_php,v 1.37 2019/04/01 13:52:45 sthen Exp $
 
 Some substitutions are done in the ports Makefile to reduce patch conflicts
 during updates.
@@ -24,7 +24,7 @@ Index: includes/defaults.inc.php
  $config['snmpbulkwalk']              = '/usr/local/bin/snmpbulkwalk';
  $config['snmptranslate']             = '/usr/local/bin/snmptranslate';
  $config['whois']          = '/usr/bin/whois';
-@@ -517,12 +518,12 @@ $config['billing']['bill_autoadd'] = 0;
+@@ -518,12 +519,12 @@ $config['billing']['bill_autoadd'] = 0;
  $config['billing']['base'] = 1000;
  // Set the base to divider bytes to kB, MB, GB ,... (1000|1024)
  // External Integration
@@ -40,7 +40,7 @@ Index: includes/defaults.inc.php
  $config['smokeping']['pings']             = 20;
  // $config['oxidized']['enabled']         = FALSE;//Set to TRUE
  // $config['oxidized']['url']             = 'http://127.0.0.1:8888';// Set the Oxidized rest URL
-@@ -530,7 +531,7 @@ $config['smokeping']['pings']             = 20;
+@@ -531,7 +532,7 @@ $config['smokeping']['pings']             = 20;
  // NFSen RRD dir.
  $config['nfsen_enable'] = 0;
  // $config['nfsen_split_char']   = "_";

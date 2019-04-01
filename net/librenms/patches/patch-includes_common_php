@@ -1,9 +1,9 @@
-$OpenBSD: patch-includes_common_php,v 1.30 2019/01/29 22:20:37 sthen Exp $
+$OpenBSD: patch-includes_common_php,v 1.31 2019/04/01 13:52:45 sthen Exp $
 
 Index: includes/common.php
 --- includes/common.php.orig
 +++ includes/common.php
-@@ -1154,6 +1154,9 @@ function version_info($remote = false)
+@@ -1155,6 +1155,9 @@ function version_info($remote = false)
          $output['local_sha']    = $local_sha;
          $output['local_date']   = $local_date;
          $output['local_branch'] = rtrim(`git rev-parse --abbrev-ref HEAD`);
@@ -13,7 +13,7 @@ Index: includes/common.php
      }
      $output['db_schema']   = vsprintf('%s (%s)', $version->database());
      $output['php_ver']     = phpversion();
-@@ -1162,7 +1165,7 @@ function version_info($remote = false)
+@@ -1163,7 +1166,7 @@ function version_info($remote = false)
          ($config['rrdtool'] ?: 'rrdtool') . ' --version |head -n1'
      )), 1, 1)));
      $output['netsnmp_ver'] = str_replace('version: ', '', rtrim(shell_exec(
