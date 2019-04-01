@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/01/28 19:43:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/04/01 04:18:38 jasper Exp $
 bin/borgmatic
 bin/generate-borgmatic-config
 bin/upgrade-borgmatic-config
@@ -56,12 +56,14 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/config/${MODPY_PYCACHE}collec
 lib/python${MODPY_VERSION}/site-packages/borgmatic/config/${MODPY_PYCACHE}convert.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/config/${MODPY_PYCACHE}generate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/config/${MODPY_PYCACHE}legacy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/config/${MODPY_PYCACHE}load.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/config/${MODPY_PYCACHE}validate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/config/checks.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/config/collect.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/config/convert.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/config/generate.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/config/legacy.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/config/load.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/config/schema.yaml
 lib/python${MODPY_VERSION}/site-packages/borgmatic/config/validate.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/signals.py
