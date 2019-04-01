@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2015/11/17 09:05:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2019/04/01 11:54:14 naddy Exp $
 
 COMMENT=		virtual keyboard for X Window System
 
-DISTNAME=		xvkbd-3.7
+DISTNAME=		xvkbd-3.9
 CATEGORIES=		x11
-HOMEPAGE=		http://homepage3.nifty.com/tsato/xvkbd/
+HOMEPAGE=		http://t-sato.in.coocan.jp/xvkbd/
 
 MAINTAINER=		Yozo TODA <yozo@v007.vaio.ne.jp>
 

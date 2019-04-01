@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/10/11 20:40:17 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/04/01 11:54:14 naddy Exp $
 @bin bin/xvkbd
 lib/X11/app-defaults/XVkbd
 lib/X11/app-defaults/XVkbd-belgian
@@ -26,5 +26,6 @@ lib/X11/app-defaults/XVkbd-strip
 lib/X11/app-defaults/XVkbd-swedish
 lib/X11/app-defaults/XVkbd-swissgerman
 lib/X11/app-defaults/XVkbd-turkish
+lib/X11/app-defaults/XVkbd-turkishF
 lib/X11/app-defaults/XVkbd-uk
 @man man/man1/xvkbd.1
