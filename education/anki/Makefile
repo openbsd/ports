@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.16 2018/07/13 22:22:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/04/01 13:27:35 sthen Exp $
 
-COMMENT	=	spaced learning system
+BROKEN =	Trace/BPT trap, cti_vm_throw() from /usr/local/lib/libQtWebKit.so.4.0
+# ...and anki-2.1.x requires QtWebEngine (not currently ported to OpenBSD)
 
-DISTNAME =	anki-2.0.48-source
-PKGNAME =	${DISTNAME:S/-source//}
-REVISION =	2
+COMMENT	=	flashcard learning system with spaced repetition
+
+DISTNAME =	anki-2.0.52
+EXTRACT_SUFX =	-source.tgz
 
 CATEGORIES =	education
 
 HOMEPAGE =	https://ankisrs.net/
 
-# AGPL3
+# AGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	https://apps.ankiweb.net/downloads/current/ \
 		https://apps.ankiweb.net/downloads/beta/
-
-EXTRACT_SUFX =	.tgz
 
 MODULES =	lang/python
 
@@ -34,10 +34,8 @@ CONFIGURE_STYLE	= none
 
 NO_TEST =	Yes
 
-WRKDIST =	${WRKDIR}/${DISTNAME:S/-source//}
-
 do-build:
-	${MODPY_BIN} -mcompileall -q ${WRKSRC}
+	${MODPY_BIN} -mcompileall ${WRKSRC}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/bin
@@ -50,14 +48,10 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	cd ${WRKSRC} && ${INSTALL_DATA} anki.xpm anki.png \
 	    ${PREFIX}/share/pixmaps
-	${INSTALL_DATA_DIR} \
-	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages
-	cd ${WRKSRC} && pax -rw anki \
-	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages
-	cd ${WRKSRC} && pax -rw locale \
-	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/anki
-	cd ${WRKSRC} && pax -rw aqt \
-	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages
-	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/anki/*.orig
+	${INSTALL_DATA_DIR} ${WRKINST}/${MODPY_SITEPKG}
+	cd ${WRKSRC} && pax -rw anki ${WRKINST}/${MODPY_SITEPKG}
+	cd ${WRKSRC} && pax -rw locale ${WRKINST}/${MODPY_SITEPKG}/anki
+	cd ${WRKSRC} && pax -rw aqt ${WRKINST}/${MODPY_SITEPKG}
+	rm ${WRKINST}/${MODPY_SITEPKG}/anki/*.orig
 
 .include <bsd.port.mk>
