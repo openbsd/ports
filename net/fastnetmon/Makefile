@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/04/01 03:53:04 jasper Exp $
 
 COMMENT =		DDoS detector with multiple packet capture engines
 
 GH_ACCOUNT =		pavel-odintsov
 GH_PROJECT =		fastnetmon
-GH_COMMIT =		611ccd8bf494d6356901a6ac7cde5998bfe061e2
-DISTNAME =		fastnetmon-1.1.3.1
-REVISION =		2
+GH_TAGNAME =		v1.1.4
 
 HOMEPAGE =		https://fastnetmon.com/guides/
 
@@ -32,7 +30,8 @@ LIB_DEPENDS =		devel/boost \
 			databases/libhiredis
 
 CONFIGURE_ARGS +=	-DENABLE_LUA_SUPPORT=Off \
-			-DDISABLE_NETMAP_SUPPORT=On \
+			-DENABLE_DPI_SUPPORT=Off \
+			-DENABLE_NETMAP_SUPPORT=Off \
 			-DLOG4CPP_INCLUDES_FOLDER="${LOCALBASE}/include/log4cpp" \
 			-DJSONC_INCLUDES_FOLDER="${LOCALBASE}/include/json-c" \
 			-DHIREDIS_INCLUDES_FOLDER="${LOCALBASE}/include/hiredis"
