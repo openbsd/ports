@@ -1,10 +1,11 @@
-$OpenBSD: patch-arch_Mips_MipsInstPrinter_c,v 1.1 2017/11/06 08:54:28 rpointel Exp $
+$OpenBSD: patch-arch_Mips_MipsInstPrinter_c,v 1.2 2019/04/01 02:28:20 jasper Exp $
 
 The 'mips' symbol is special on MIPS platforms, so rename it to prevent a
 conflict.
 
---- arch/Mips/MipsInstPrinter.c.orig	Fri May  8 11:06:59 2015
-+++ arch/Mips/MipsInstPrinter.c	Sat May  9 08:34:16 2015
+Index: arch/Mips/MipsInstPrinter.c
+--- arch/Mips/MipsInstPrinter.c.orig
++++ arch/Mips/MipsInstPrinter.c
 @@ -93,12 +93,12 @@ static void set_mem_access(MCInst *MI, bool status)
  		return;
  
@@ -38,17 +39,14 @@ conflict.
  			}
  		}
  	} else if (MCOperand_isImm(Op)) {
-@@ -219,7 +219,7 @@ static void printOperand(MCInst *MI, unsigned OpNo, SS
- 				}
+@@ -209,14 +209,14 @@ static void printOperand(MCInst *MI, unsigned OpNo, SS
+ 				printInt64(O, imm);
  			}
  			if (MI->csh->detail)
 -				MI->flat_insn->detail->mips.operands[MI->flat_insn->detail->mips.op_count].mem.disp = imm;
 +				MI->flat_insn->detail->mipsen.operands[MI->flat_insn->detail->mipsen.op_count].mem.disp = imm;
  		} else {
- 			if (imm >= 0) {
- 				if (imm > HEX_THRESHOLD)
-@@ -234,9 +234,9 @@ static void printOperand(MCInst *MI, unsigned OpNo, SS
- 			}
+ 			printInt64(O, imm);
  
  			if (MI->csh->detail) {
 -				MI->flat_insn->detail->mips.operands[MI->flat_insn->detail->mips.op_count].type = MIPS_OP_IMM;
@@ -60,9 +58,9 @@ conflict.
  			}
  		}
  	}
-@@ -259,9 +259,9 @@ static void printUnsignedImm(MCInst *MI, int opNum, SS
- 				SStream_concat(O, "-%u", (short int)-imm);
- 		}
+@@ -230,9 +230,9 @@ static void printUnsignedImm(MCInst *MI, int opNum, SS
+ 		printInt64(O, imm);
+ 
  		if (MI->csh->detail) {
 -			MI->flat_insn->detail->mips.operands[MI->flat_insn->detail->mips.op_count].type = MIPS_OP_IMM;
 -			MI->flat_insn->detail->mips.operands[MI->flat_insn->detail->mips.op_count].imm = (unsigned short int)imm;
@@ -73,7 +71,7 @@ conflict.
  		}
  	} else
  		printOperand(MI, opNum, O);
-@@ -277,9 +277,9 @@ static void printUnsignedImm8(MCInst *MI, int opNum, S
+@@ -248,9 +248,9 @@ static void printUnsignedImm8(MCInst *MI, int opNum, S
  		else
  			SStream_concat(O, "%u", imm);
  		if (MI->csh->detail) {
@@ -86,3 +84,16 @@ conflict.
  		}
  	} else
  		printOperand(MI, opNum, O);
+@@ -411,9 +411,9 @@ static void printRegisterList(MCInst *MI, int opNum, S
+ 		reg = MCOperand_getReg(MCInst_getOperand(MI, i));
+ 		printRegName(O, reg);
+ 		if (MI->csh->detail) {
+-			MI->flat_insn->detail->mips.operands[MI->flat_insn->detail->mips.op_count].type = MIPS_OP_REG;
+-			MI->flat_insn->detail->mips.operands[MI->flat_insn->detail->mips.op_count].reg = reg;
+-			MI->flat_insn->detail->mips.op_count++;
++			MI->flat_insn->detail->mipsen.operands[MI->flat_insn->detail->mipsen.op_count].type = MIPS_OP_REG;
++			MI->flat_insn->detail->mipsen.operands[MI->flat_insn->detail->mipsen.op_count].reg = reg;
++			MI->flat_insn->detail->mipsen.op_count++;
+ 		}
+ 	}
+ }

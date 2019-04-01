@@ -1,0 +1,23 @@
+$OpenBSD: patch-capstone___init___py,v 1.1 2019/04/01 02:28:20 jasper Exp $
+
+Index: capstone/__init__.py
+--- capstone/__init__.py.orig
++++ capstone/__init__.py
+@@ -275,7 +275,7 @@ if sys.platform == 'darwin':
+ elif sys.platform in ('win32', 'cygwin'):
+     _lib = "capstone.dll"
+ else:
+-    _lib = "libcapstone.so"
++    _lib = "libcapstone.so.${_SHLIB_VERSION}"
+ 
+ _found = False
+ 
+@@ -307,7 +307,7 @@ _path_list = [os.getenv('LIBCAPSTONE_PATH', None),
+               distutils.sysconfig.get_python_lib(),
+               "/usr/local/lib/" if sys.platform == 'darwin' else '/usr/lib64']
+ 
+-for _path in _path_list:
++for _path in ['${LOCALBASE}/lib']:
+     if _path is None: continue
+     _cs = _load_lib(_path)
+     if _cs is not None: break

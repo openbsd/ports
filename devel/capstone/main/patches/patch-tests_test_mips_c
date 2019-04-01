@@ -1,11 +1,12 @@
-$OpenBSD: patch-tests_test_mips_c,v 1.1 2017/11/06 08:54:28 rpointel Exp $
+$OpenBSD: patch-tests_test_mips_c,v 1.2 2019/04/01 02:28:20 jasper Exp $
 
 The 'mips' symbol is special on MIPS platforms, so rename it to prevent a
 conflict.
 
---- tests/test_mips.c.orig	Tue Feb  3 15:41:07 2015
-+++ tests/test_mips.c	Wed Feb  4 08:05:44 2015
-@@ -32,18 +32,18 @@ static void print_string_hex(char *comment, unsigned c
+Index: tests/test_mips.c
+--- tests/test_mips.c.orig
++++ tests/test_mips.c
+@@ -32,18 +32,18 @@ static void print_string_hex(const char *comment, unsi
  static void print_insn_detail(cs_insn *ins)
  {
  	int i;

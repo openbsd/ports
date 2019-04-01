@@ -1,6 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1 2017/11/06 08:54:29 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/04/01 02:28:21 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/capstone/
-lib/python${MODPY_VERSION}/site-packages/capstone-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/capstone-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/capstone-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/capstone-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/capstone-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/capstone-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/capstone-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/capstone/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -8,6 +13,12 @@ lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}arm.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}arm64.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}arm64_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}arm_const.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}evm.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}evm_const.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}m680x.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}m680x_const.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}m68k.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}m68k_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}mips.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}mips_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}ppc.${MODPY_PYC_MAGIC_TAG}pyc
@@ -16,6 +27,8 @@ lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}sparc.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}sparc_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}systemz.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}sysz_const.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}tms320c64x.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}tms320c64x_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}x86.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}x86_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/capstone/${MODPY_PYCACHE}xcore.${MODPY_PYC_MAGIC_TAG}pyc
@@ -24,6 +37,12 @@ lib/python${MODPY_VERSION}/site-packages/capstone/arm.py
 lib/python${MODPY_VERSION}/site-packages/capstone/arm64.py
 lib/python${MODPY_VERSION}/site-packages/capstone/arm64_const.py
 lib/python${MODPY_VERSION}/site-packages/capstone/arm_const.py
+lib/python${MODPY_VERSION}/site-packages/capstone/evm.py
+lib/python${MODPY_VERSION}/site-packages/capstone/evm_const.py
+lib/python${MODPY_VERSION}/site-packages/capstone/m680x.py
+lib/python${MODPY_VERSION}/site-packages/capstone/m680x_const.py
+lib/python${MODPY_VERSION}/site-packages/capstone/m68k.py
+lib/python${MODPY_VERSION}/site-packages/capstone/m68k_const.py
 lib/python${MODPY_VERSION}/site-packages/capstone/mips.py
 lib/python${MODPY_VERSION}/site-packages/capstone/mips_const.py
 lib/python${MODPY_VERSION}/site-packages/capstone/ppc.py
@@ -32,6 +51,8 @@ lib/python${MODPY_VERSION}/site-packages/capstone/sparc.py
 lib/python${MODPY_VERSION}/site-packages/capstone/sparc_const.py
 lib/python${MODPY_VERSION}/site-packages/capstone/systemz.py
 lib/python${MODPY_VERSION}/site-packages/capstone/sysz_const.py
+lib/python${MODPY_VERSION}/site-packages/capstone/tms320c64x.py
+lib/python${MODPY_VERSION}/site-packages/capstone/tms320c64x_const.py
 lib/python${MODPY_VERSION}/site-packages/capstone/x86.py
 lib/python${MODPY_VERSION}/site-packages/capstone/x86_const.py
 lib/python${MODPY_VERSION}/site-packages/capstone/xcore.py

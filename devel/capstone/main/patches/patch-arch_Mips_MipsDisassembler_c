@@ -1,0 +1,14 @@
+$OpenBSD: patch-arch_Mips_MipsDisassembler_c,v 1.1 2019/04/01 02:28:20 jasper Exp $
+
+Index: arch/Mips/MipsDisassembler.c
+--- arch/Mips/MipsDisassembler.c.orig
++++ arch/Mips/MipsDisassembler.c
+@@ -412,7 +412,7 @@ static DecodeStatus MipsDisassembler_getInstruction(in
+ 	DecodeStatus Result;
+ 
+ 	if (instr->flat_insn->detail) {
+-		memset(instr->flat_insn->detail, 0, offsetof(cs_detail, mips)+sizeof(cs_mips));
++		memset(instr->flat_insn->detail, 0, offsetof(cs_detail, mipsen)+sizeof(cs_mips));
+ 	}
+ 
+ 	if (mode & CS_MODE_MICRO) {

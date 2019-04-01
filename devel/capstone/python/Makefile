@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/27 06:10:49 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/01 02:28:20 jasper Exp $
 
 COMMENT =	Python bindings for capstone
 
-REVISION =	0
-
-MODPY_EGG_VERSION = ${VERSION}
+MODPY_EGG_VERSION = ${GH_TAGNAME}
 
 PKGNAME =	py-${DISTNAME}
 
@@ -22,6 +20,14 @@ TEST_DEPENDS =  devel/capstone/python
 TEST_TARGET = 	check
 
 MODPY_ADJ_FILES = test*.py
+MODPY_SETUPTOOLS =	Yes
+
+MAKE_ENV =	LIBCAPSTONE_PATH=${LOCALBASE}/lib/
+
+SUBST_VARS +=	_SHLIB_VERSION
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/capstone/__init__.py
 
 do-test:
 	cd ${WRKSRC} && ${MAKE_PROGRAM} ${TEST_TARGET}

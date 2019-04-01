@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/27 06:10:49 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/01 02:28:20 jasper Exp $
 
 COMMENT =	multi-platform, multi-architecture disassembly framework
 
-REVISION =	2
-
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
-SHARED_LIBS =	capstone	2.0
+SHARED_LIBS =	capstone	${_SHLIB_VERSION}
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB += 		c
+
 USE_GMAKE =		Yes
+
 FAKE_FLAGS =		PREFIX=${PREFIX}
 MAKE_ENV =		LIBcapstone_VERSION=${LIBcapstone_VERSION} \
 			INSTALL_DATA="${INSTALL_DATA}" \

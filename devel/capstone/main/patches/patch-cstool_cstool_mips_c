@@ -1,0 +1,14 @@
+$OpenBSD: patch-cstool_cstool_mips_c,v 1.1 2019/04/01 02:28:20 jasper Exp $
+
+Index: cstool/cstool_mips.c
+--- cstool/cstool_mips.c.orig
++++ cstool/cstool_mips.c
+@@ -17,7 +17,7 @@ void print_insn_detail_mips(csh handle, cs_insn *ins)
+ 	if (ins->detail == NULL)
+ 		return;
+ 
+-	mips = &(ins->detail->mips);
++	mips = &(ins->detail->mipsen);
+ 	if (mips->op_count)
+ 		printf("\top_count: %u\n", mips->op_count);
+ 
