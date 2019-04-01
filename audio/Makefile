@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.409 2019/03/30 13:50:50 bcallah Exp $
+# $OpenBSD: Makefile,v 1.410 2019/04/01 10:46:42 solene Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -254,7 +254,6 @@
      SUBDIR += tracker
      SUBDIR += twolame
      SUBDIR += umurmur
-     SUBDIR += vagalume
      SUBDIR += vamp-plugin-sdk
      SUBDIR += vgmplay
      SUBDIR += vlorb
