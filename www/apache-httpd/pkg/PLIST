@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.29 2019/03/28 12:38:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.30 2019/04/02 08:17:09 sthen Exp $
+@conflict apache-httpd-common-*
 @pkgpath www/apache-httpd,-main${FLAVOR_COMMA}
 @pkgpath www/apache-httpd,-common
-@conflict apache-httpd-common-*
 @rcscript ${RCDIR}/apache2
 @bin bin/ab
 bin/dbmmanage
@@ -176,6 +176,7 @@ lib/apache2/mod_slotmem_plain.so
 lib/apache2/mod_slotmem_shm.so
 lib/apache2/mod_socache_dbm.so
 lib/apache2/mod_socache_memcache.so
+lib/apache2/mod_socache_redis.so
 lib/apache2/mod_socache_shmcb.so
 lib/apache2/mod_speling.so
 lib/apache2/mod_ssl.so
