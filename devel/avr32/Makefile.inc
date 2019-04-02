@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.2 2015/01/22 15:34:43 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2019/04/02 12:39:29 naddy Exp $
 
 CATEGORIES =		devel
 HOMEPAGE =		http://www.atmel.com/tools/ATMELAVRTOOLCHAINFORLINUX.aspx
-CONFIGURE_STYLE ?=	autoconf no-autoheader automake
+CONFIGURE_STYLE ?=	gnu
 CONFIGURE_ARGS +=	--target=avr32 \
 			--program-prefix=avr32- \
 			--disable-shared \

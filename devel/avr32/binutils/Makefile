@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/01/17 19:54:17 stsp Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/02 12:39:29 naddy Exp $
 
 COMMENT = 	Atmel AVR 32-bit binutils
 V = 		2.23.1
@@ -11,7 +11,9 @@ WANTLIB = 		c z
 DIST_SUBDIR = 		binutils
 AUTOCONF_VERSION = 	2.64
 AUTOMAKE_VERSION = 	1.11
-BUILD_DEPENDS = 	devel/libtool
+BUILD_DEPENDS = 	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
 CONFIGURE_ARGS += 	--enable-commonbfdlib=no \
 			--with-cross-host=yes \
 			--disable-werror
@@ -19,15 +21,9 @@ WRKDIST = 		${WRKDIR}/binutils-${V}
 
 # Fix configure scripts missing configure.in patches and Makefile.in
 # files missing Makefile.am patches.
-pre-configure:
+do-gen:
 .for _subdir in bfd binutils opcodes gprof gas ld
-	cd ${WRKSRC}/${_subdir}; ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
-.endfor
-.for _subdir in gas ld
-	cd ${WRKSRC}/${_subdir}; ${SETENV} ${AUTOCONF_ENV} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal
-	cd ${WRKSRC}/${_subdir}; ${SETENV} ${AUTOCONF_ENV} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake
+	cd ${WRKSRC}/${_subdir}; ${AUTOCONF_ENV} autoreconf -fi
 .endfor
 
 post-configure:

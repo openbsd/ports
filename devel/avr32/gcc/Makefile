@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/04/02 12:39:29 naddy Exp $
 
 COMMENT = 	Atmel AVR 32-bit gcc
 V = 		4.4.7
@@ -25,7 +25,8 @@ CONFIGURE_ARGS = 	--disable-libssp \
 MAKE_ENV =		lt_cv_path_SED=/usr/bin/sed
 WRKDIST = 		${WRKDIR}/gcc-${V}
 BUILD_DEPENDS = 	devel/avr32/binutils \
-			devel/avr32/newlib
+			devel/avr32/newlib \
+			${MODGNU_AUTOCONF_DEPENDS}
 RUN_DEPENDS = 		devel/avr32/binutils \
 			devel/avr32/newlib \
 			devel/avr32/headers
@@ -42,7 +43,7 @@ post-extract:
 	rm ${WRKSRC}/gcc/config/avr32/avr32.c.orig
 
 # Fix configure scripts missing configure.in patches
-pre-configure:
+do-gen:
 	cd ${WRKSRC}/gcc; ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF}
 
 post-install:

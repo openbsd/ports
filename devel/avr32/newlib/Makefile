@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/01/19 20:58:32 stsp Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/02 12:39:29 naddy Exp $
 
 COMMENT = 	Atmel AVR 32-bit C library
 V = 		1.16.0
@@ -16,20 +16,17 @@ CONFIGURE_ARGS +=	--enable-newlib-io-long-long \
         		--enable-target-optspace
 CONFIGURE_ENV += 	CC_FOR_TARGET="${LOCALBASE}/avr32/bootstrap/bin/avr32-gcc"
 WRKDIST = 		${WRKDIR}/newlib-${V}
-BUILD_DEPENDS = 	devel/avr32/gcc-bootstrap
+BUILD_DEPENDS = 	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/avr32/gcc-bootstrap
 
 SEPARATE_BUILD = 	Yes
 
 # Fix Makefile.in files missing Makefile.am patches.
-pre-configure:
+do-gen:
 .for _subdir in newlib/libc/machine/avr32 newlib/libc/machine \
 	newlib/libc/sys/avr32 newlib/libc/sys
-	cd ${WRKSRC}/${_subdir}; ${SETENV} ${AUTOCONF_ENV} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-			aclocal -I ../.. -I ../../.. -I ../../../..
-	cd ${WRKSRC}/${_subdir}; ${SETENV} ${AUTOCONF_ENV} autoconf
-	cd ${WRKSRC}/${_subdir}; ${SETENV} ${AUTOCONF_ENV} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake
+	cd ${WRKSRC}/${_subdir}; ${AUTOCONF_ENV} autoreconf -fi
 .endfor
 
 pre-install:
