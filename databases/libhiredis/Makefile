@@ -1,24 +1,20 @@
-# $OpenBSD: Makefile,v 1.2 2015/12/21 21:53:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/02 14:04:42 sthen Exp $
 
 COMMENT=	minimalistic C client for Redis
 
-V=		0.13.3
-DISTNAME=	hiredis-$V
+GH_ACCOUNT=	redis
+GH_PROJECT=	hiredis
+GH_TAGNAME=	v0.14.0
 PKGNAME=	lib${DISTNAME}
-DISTFILES=	${DISTNAME}{v$V}.tar.gz
 
-SHARED_LIBS=	hiredis 0.0 # 0.13
+SHARED_LIBS=	hiredis 0.1 # 0.13
 
 CATEGORIES=	databases devel
-
-HOMEPAGE=	https://github.com/redis/hiredis/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-
-MASTER_SITES=	https://github.com/redis/hiredis/archive/
 
 LIBV=		HIREDIS_MAJOR=${LIBhiredis_VERSION:R} \
 		HIREDIS_MINOR=${LIBhiredis_VERSION:E} \
