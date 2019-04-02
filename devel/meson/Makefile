@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2019/04/01 15:29:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2019/04/02 12:57:23 ajacoutot Exp $
 
 COMMENT=		next-generation build system
 
@@ -7,6 +7,7 @@ GH_ACCOUNT=		mesonbuild
 GH_PROJECT=		meson
 GH_TAGNAME=		0.50.0
 EPOCH=			0
+REVISION=		0
 
 CATEGORIES=		devel
 
