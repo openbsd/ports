@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/04/01 02:24:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/02 03:12:17 jasper Exp $
 
 COMMENT =	Unicorn CPU emulator engine
 
@@ -20,8 +20,9 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-FLAVORS =		python3
-FLAVOR ?=
+# XXX: ERROR: Cannot use '/usr/local/bin/python3.6', Python 2.4 or later is required.
+#FLAVORS =		python3
+#FLAVOR ?=
 
 USE_GMAKE =		Yes
 
