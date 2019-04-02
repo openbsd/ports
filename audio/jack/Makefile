@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2018/11/14 20:48:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2019/04/02 07:27:19 naddy Exp $
 
 COMMENT =		low latency sound server
 
@@ -28,13 +28,15 @@ LIB_DEPENDS =		audio/libsndfile \
 
 
 # uses macros from libtool.m4
-BUILD_DEPENDS =		devel/libtool
+BUILD_DEPENDS =		devel/libtool \
+			${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 
 LIBTOOL_FLAGS +=	--tag=disable-static
 
 AUTOCONF_VERSION =	2.65
 AUTOMAKE_VERSION =	1.10
-CONFIGURE_STYLE =	autoconf automake
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-default-tmpdir=/var/tmp \
 			--disable-sun \
 			--disable-portaudio \
@@ -48,10 +50,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \
 CONFIGURE_ARGS +=	--enable-debug
 .endif
 
-post-patch:
-	cd ${WRKSRC} && ${AUTOCONF_ENV} aclocal
-
-pre-configure:
-	cd ${WRKSRC} && ${AUTOCONF_ENV} automake --add-missing --foreign
+do-gen:
+	cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf -fi
 
 .include <bsd.port.mk>
