@@ -1,0 +1,29 @@
+$OpenBSD: patch-src-util_anthy-dic_el,v 1.1 2019/04/02 10:13:19 yasuoka Exp $
+
+Index: src-util/anthy-dic.el
+--- src-util/anthy-dic.el.orig
++++ src-util/anthy-dic.el
+@@ -1,4 +1,4 @@
+-;; anthy-dic.el -- Anthy
++; anthy-dic.el -- Anthy
+ 
+ ;; Copyright (C) 2001 - 2005
+ ;; Author: Yusuke Tabata<yusuke@w5.dion.ne.jp>
+@@ -70,7 +70,7 @@
+ (defun anthy-dic-get-special-noun-category (word)
+   (let 
+       ((res '())
+-       (cat (string-to-int
++       (cat (string-to-number
+ 	     (read-from-minibuffer "1:人名 2:地名: "))))
+     (cond ((= cat 1)
+ 	   (setq res '(("品詞" "人名"))))
+@@ -113,7 +113,7 @@
+     (and (string= word "")
+ 	 (setq word (read-from-minibuffer "単語(語幹のみ): ")))
+     (setq yomi (read-from-minibuffer (concat "読み (" word "): ")))
+-    (setq cat (string-to-int
++    (setq cat (string-to-number
+ 	       (read-from-minibuffer
+ 		"カテゴリー 1:一般名詞 2:その他の名詞 3:形容詞 4:副詞: ")))
+     (cond ((= cat 1)
