@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/01/30 19:05:43 cwen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/04/02 09:49:04 naddy Exp $
 
 COMMENT =	applied math library
 CATEGORIES =	math devel
@@ -20,6 +20,9 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qalculate/}
 
 MODULES =	textproc/intltool
 
+BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
+
 LIB_DEPENDS =	devel/cln \
 		devel/glib2 \
 		textproc/libxml
@@ -31,7 +34,7 @@ LIB_DEPENDS =	devel/cln \
 
 USE_LIBTOOL =		gnu
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	autoconf automake
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${WRKSRC} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 AUTOCONF_VERSION =	2.67
@@ -39,10 +42,7 @@ AUTOMAKE_VERSION =	1.11
 
 SUBST_VARS +=		DISTNAME
 
-post-patch:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake
+do-gen:
+	cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf -fi
 
 .include <bsd.port.mk>
