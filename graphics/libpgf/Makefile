@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/04/02 09:23:00 naddy Exp $
 
 COMMENT =	PGF image format handling library
 V =		6.12.24
@@ -22,9 +22,11 @@ COMPILER =		base-clang ports-gcc base-gcc
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=libpgf/}
 
 # needs libtoolize
-BUILD_DEPENDS +=	devel/libtool
+BUILD_DEPENDS +=	devel/libtool \
+			${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 
-CONFIGURE_STYLE =	autoconf automake
+CONFIGURE_STYLE =	gnu
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.9
 
@@ -35,11 +37,7 @@ CONFIGURE_ENV =	ac_cv_path_DOXYGEN= ac_cv_path_DOT=
 WRKDIST =	${WRKDIR}/libpgf
 SUBST_VARS +=	PKGNAME
 
-post-patch:
-	cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		PATH=${PORTPATH} \
-		sh autogen.sh
+do-gen:
+	cd ${WRKSRC} && ${AUTOCONF_ENV} sh autogen.sh
 
 .include <bsd.port.mk>

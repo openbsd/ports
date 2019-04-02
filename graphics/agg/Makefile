@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/04/02 09:23:00 naddy Exp $
 
 COMMENT=	anti-grain geometry graphics library
 
@@ -27,12 +27,12 @@ AUTOMAKE_VERSION=	1.9
 LIB_DEPENDS=	converters/libiconv \
 		devel/sdl
 # XX needs libtoolize
-BUILD_DEPENDS=	devel/autoconf/${AUTOCONF_VERSION} \
-		devel/libtool \
-		devel/metaauto
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/libtool
 
 SEPARATE_BUILD=	Yes
-CONFIGURE_STYLE=automake
+CONFIGURE_STYLE=gnu
 
 CONFIGURE_ARGS=	--disable-gpc \
 		--disable-examples \
@@ -40,8 +40,7 @@ CONFIGURE_ARGS=	--disable-gpc \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-pre-configure:
-	@cd ${WRKSRC} && ${SETENV} AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} /bin/sh autogen.sh
+do-gen:
+	@cd ${WRKSRC} && ${AUTOCONF_ENV} sh autogen.sh
 
 .include <bsd.port.mk>
