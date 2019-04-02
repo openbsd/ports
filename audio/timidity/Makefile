@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2017/08/02 15:21:48 bcallah Exp $
+# $OpenBSD: Makefile,v 1.48 2019/04/02 06:54:05 naddy Exp $
 
 COMMENT=	MIDI to WAV renderer and player
 
@@ -23,7 +23,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c m ncurses sndio
 
-CONFIGURE_STYLE=autoconf automake
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
+
+CONFIGURE_STYLE=gnu
 AUTOCONF_VERSION = 2.59
 AUTOMAKE_VERSION = 1.9
 CONFIGURE_ARGS= --enable-audio=sndio \
@@ -66,13 +69,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 post-patch:
 	cp ${FILESDIR}/sndio_a.c \
 		${WRKSRC}/timidity/sndio_a.c
-	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal -I autoconf
 
-pre-configure:
-	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake \
-		--foreign --add-missing --copy
+do-gen:
+	cd ${WRKSRC}; ${AUTOCONF_ENV} autoreconf -fi
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/timidity/TimGM6mb
