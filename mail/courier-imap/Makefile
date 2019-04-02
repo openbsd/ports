@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2018/01/11 19:27:03 rpe Exp $
+# $OpenBSD: Makefile,v 1.117 2019/04/02 09:37:08 naddy Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -30,9 +30,8 @@ WANTLIB-pop3=		c courierauth courierauthcommon courierauthsasl
 WANTLIB-pop3+=		iconv intl idn m pcre ${COMPILER_LIBCXX}
 
 USE_GMAKE=		Yes
-CONFIGURE_STYLE=	autoconf automake
+CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
 
 # AM_PROG_LIBTOOL, aclocal is run during build
 BUILD_DEPENDS +=	devel/libtool
