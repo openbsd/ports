@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/02 03:12:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/02 13:09:12 ajacoutot Exp $
 
 COMMENT =	Unicorn CPU emulator engine
 
 MODPY_EGG_VERSION =	1.0.1
 DISTNAME =	unicorn-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -14,6 +15,8 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += m
 
 MODULES =		lang/python
 

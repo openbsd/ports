@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/04/01 02:24:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/04/02 13:09:12 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/unicorn/
 lib/python${MODPY_VERSION}/site-packages/unicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/unicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -7,18 +7,11 @@ lib/python${MODPY_VERSION}/site-packages/unicorn-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/unicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/unicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/unicorn/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}arm64_const.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}arm_const.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}m68k_const.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}mips_const.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}sparc_const.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}unicorn.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}unicorn_const.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}x86_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/unicorn/arm64_const.py
+lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}arm64_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/unicorn/arm_const.py
+lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}arm_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/unicorn/include/
 lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/
 lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/arm.h
@@ -32,8 +25,14 @@ lib/python${MODPY_VERSION}/site-packages/unicorn/lib/
 lib/python${MODPY_VERSION}/site-packages/unicorn/lib/libunicorn.a
 lib/python${MODPY_VERSION}/site-packages/unicorn/lib/libunicorn.so
 lib/python${MODPY_VERSION}/site-packages/unicorn/m68k_const.py
+lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}m68k_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/unicorn/mips_const.py
+lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}mips_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/unicorn/sparc_const.py
+lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}sparc_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/unicorn/unicorn.py
+lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}unicorn.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/unicorn/unicorn_const.py
+lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}unicorn_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/unicorn/x86_const.py
+lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}x86_const.${MODPY_PYC_MAGIC_TAG}pyc
