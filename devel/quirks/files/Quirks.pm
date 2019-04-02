@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.739 2019/04/02 06:01:55 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.740 2019/04/02 13:38:26 chrisz Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1174,6 +1174,7 @@ my $obsolete_reason = {
 	'mlbviewer' => 3,
 	'upsd' => 3,
 	'vagalume' => 0,
+	'ocaml-uutf' => 7,
 };
 
 # reasons for obsolete packages
