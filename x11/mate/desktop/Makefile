@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/27 18:13:37 robert Exp $
+# $OpenBSD: Makefile,v 1.11 2019/04/02 06:37:39 robert Exp $
 
 COMMENT=		components for the MATE desktop
 
 SHARED_LIBS+=		mate-desktop-2		0.0 # 18.4
 
 MATE_PROJECT=		mate-desktop
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -23,6 +24,9 @@ WANTLIB += X11-xcb xcb-util startup-notification-1
 
 MODULES=		devel/dconf \
 			x11/gnome
+
+BUILD_DEPENDS=		devel/iso-codes
+RUN_DEPENDS=		devel/iso-codes
 
 LIB_DEPENDS=		x11/gtk+3 \
 			devel/startup-notification
