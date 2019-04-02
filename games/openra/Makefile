@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/31 05:09:06 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/02 18:52:40 ajacoutot Exp $
 
 COMMENT =		open-source real-time strategy game engine
 V =			20190314
@@ -6,6 +6,7 @@ DISTNAME =		openra-${V}
 CATEGORIES =		games x11
 HOMEPAGE =		https://www.openra.net
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
+REVISION =		0
 
 # GPLv3 (openra)
 # MIT (StyleCopPlus, StyleCop, SharpZipLib, NUnit, NUnit.Console, Open.Nat,
@@ -20,6 +21,11 @@ EXTRACT_SUFX =		.tar.xz
 
 MODULES =		lang/lua \
 			lang/mono
+
+DLLMAP_FILES =		thirdparty/download/OpenAL-CS.dll.config \
+			thirdparty/download/SDL2-CS.dll.config \
+			thirdparty/download/SharpFont.dll.config
+
 MODLUA_VERSION =	5.1
 MODLUA_SA =		Yes
 BUILD_DEPENDS =		net/curl
