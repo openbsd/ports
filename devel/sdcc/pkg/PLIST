@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/04/16 21:09:25 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/04/02 19:49:59 bcallah Exp $
 bin/as2gbmap
 @bin bin/makebin
 @bin bin/packihx
@@ -158,6 +158,11 @@ share/sdcc/include/mcs51/at89s8253.h
 share/sdcc/include/mcs51/at89x051.h
 share/sdcc/include/mcs51/at89x51.h
 share/sdcc/include/mcs51/at89x52.h
+share/sdcc/include/mcs51/ax8052.h
+share/sdcc/include/mcs51/ax8052f131.h
+share/sdcc/include/mcs51/ax8052f142.h
+share/sdcc/include/mcs51/ax8052f143.h
+share/sdcc/include/mcs51/ax8052f151.h
 share/sdcc/include/mcs51/cc1110.h
 share/sdcc/include/mcs51/cc2430.h
 share/sdcc/include/mcs51/cc2510fx.h
@@ -719,6 +724,7 @@ share/sdcc/lib/small/liblonglong.lib
 share/sdcc/lib/small/libsdcc.lib
 share/sdcc/lib/small/mcs51.lib
 share/sdcc/lib/src/
+share/sdcc/lib/src/__assert.c
 share/sdcc/lib/src/_atof.c
 share/sdcc/lib/src/_autobaud.c
 share/sdcc/lib/src/_bp.c
@@ -809,15 +815,16 @@ share/sdcc/lib/src/acosf.c
 share/sdcc/lib/src/aligned_alloc.c
 share/sdcc/lib/src/asincosf.c
 share/sdcc/lib/src/asinf.c
-share/sdcc/lib/src/assert.c
 share/sdcc/lib/src/atan2f.c
 share/sdcc/lib/src/atanf.c
 share/sdcc/lib/src/atoi.c
 share/sdcc/lib/src/atol.c
 share/sdcc/lib/src/atoll.c
 share/sdcc/lib/src/bpx.c
+share/sdcc/lib/src/bsearch.c
 share/sdcc/lib/src/btowc.c
 share/sdcc/lib/src/c16rtomb.c
+share/sdcc/lib/src/c16stombs.c
 share/sdcc/lib/src/c32rtomb.c
 share/sdcc/lib/src/calloc.c
 share/sdcc/lib/src/ceilf.c
@@ -886,6 +893,7 @@ share/sdcc/lib/src/mbrtoc16.c
 share/sdcc/lib/src/mbrtoc32.c
 share/sdcc/lib/src/mbrtowc.c
 share/sdcc/lib/src/mbsinit.c
+share/sdcc/lib/src/mbstoc16s.c
 share/sdcc/lib/src/mbstowcs.c
 share/sdcc/lib/src/mbtowc.c
 share/sdcc/lib/src/mcs51/
@@ -7810,6 +7818,8 @@ share/sdcc/lib/src/z80/setjmp.s
 share/sdcc/lib/src/z80/strcpy.s
 share/sdcc/lib/src/z80/strlen.s
 share/sdcc/lib/stm8/
+share/sdcc/lib/stm8-large/
+share/sdcc/lib/stm8-large/stm8.lib
 share/sdcc/lib/stm8/stm8.lib
 share/sdcc/lib/tlcs90/
 share/sdcc/lib/tlcs90/crt0.rel

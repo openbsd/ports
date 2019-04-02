@@ -1,4 +1,4 @@
-$OpenBSD: patch-sim_ucsim_cmd_src_Makefile_in,v 1.1 2018/03/07 21:34:43 bcallah Exp $
+$OpenBSD: patch-sim_ucsim_cmd_src_Makefile_in,v 1.2 2019/04/02 19:49:58 bcallah Exp $
 
 Allow use of in-base yacc.
 
@@ -21,7 +21,7 @@ Index: sim/ucsim/cmd.src/Makefile.in
  
  # My rules
  # --------
-@@ -116,7 +116,7 @@ $(top_builddir)/libcmd.a: $(OBJECTS) $(LOCAL_OBJECTS)
+@@ -116,12 +116,12 @@ $(top_builddir)/libcmd.a: $(OBJECTS) $(LOCAL_OBJECTS)
  .cc.o:
  	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c $< -o $@
  
@@ -29,4 +29,10 @@ Index: sim/ucsim/cmd.src/Makefile.in
 +cmdpars.h: cmdpars.cc
  
  cmdpars.cc: cmdpars.y
- 	$(YACC) -d -o $@ $<
+ 	$(YACC) -d $<
+ 	mv y.tab.c $*.cc
+-	mv y.tab.h $*.hh
++	mv y.tab.h $*.h
+ 
+ .l.cc:
+ 	rm -f $@

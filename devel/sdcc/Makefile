@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2018/11/14 20:48:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/04/02 19:49:58 bcallah Exp $
 
 COMMENT=	Small Device C Compiler
 BROKEN-sparc64=	illegal operands building SDCCval.c
 BROKEN-alpha=	sdcc segfaults when building the device library
 BROKEN-aarch64=	*** BFD does not support target aarch64-unknown-openbsd6.2.
 
-DISTNAME=	sdcc-src-3.7.0
+DISTNAME=	sdcc-src-3.8.0
 PKGNAME=	${DISTNAME:S/-src//}
-REVISION=	1
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	devel
 
@@ -16,7 +15,8 @@ MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c curses m ${COMPILER_LIBCXX} readline z
+
+WANTLIB += ${COMPILER_LIBCXX} c m readline z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sdcc/}
 
@@ -48,6 +48,6 @@ MAKE_ENV=		AUTOCONF_VERSION="${AUTOCONF_VERSION}" \
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.11
 
-WRKDIST=		${WRKDIR}/sdcc
+WRKDIST=		${WRKDIR}/${PKGNAME}
 
 .include <bsd.port.mk>
