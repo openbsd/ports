@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/10/11 20:39:59 naddy Exp $
-@bin bin/xaniroc
-@man man/man1/xaniroc.1

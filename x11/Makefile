@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.633 2019/03/14 14:49:18 stsp Exp $
+# $OpenBSD: Makefile,v 1.634 2019/04/02 14:05:45 bentley Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -269,7 +269,6 @@
      SUBDIR += sct
      SUBDIR += sisctrl
      SUBDIR += skippy
-     SUBDIR += sliderule
      SUBDIR += slim
      SUBDIR += slim-themes
      SUBDIR += slock
@@ -282,7 +281,6 @@
      SUBDIR += stalonetray
      SUBDIR += stumpwm
      SUBDIR += swarp
-     SUBDIR += swisswatch
      SUBDIR += sxhkd
      SUBDIR += tabbed
      SUBDIR += tangerine-icon-theme
@@ -348,7 +346,6 @@
      SUBDIR += x2goclient
      SUBDIR += x2vnc
      SUBDIR += x2x
-     SUBDIR += xaniroc
      SUBDIR += xantfarm
      SUBDIR += xarchive
      SUBDIR += xarchiver
@@ -388,9 +385,7 @@
      SUBDIR += xkeycaps
      SUBDIR += xli
      SUBDIR += xloadimage
-     SUBDIR += xmascot
      SUBDIR += xmobar
-     SUBDIR += xmold
      SUBDIR += xmonad
      SUBDIR += xosd
      SUBDIR += xpad
@@ -408,9 +403,7 @@
      SUBDIR += xscribble
      SUBDIR += xsel
      SUBDIR += xsettingsd
-     SUBDIR += xsnow
      SUBDIR += xtacy
-     SUBDIR += xtattr
      SUBDIR += xtermset
      SUBDIR += xtestpicture
      SUBDIR += xtoolwait

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.740 2019/04/02 13:38:26 chrisz Exp $
+# $OpenBSD: Quirks.pm,v 1.741 2019/04/02 14:05:46 bentley Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1175,6 +1175,15 @@ my $obsolete_reason = {
 	'upsd' => 3,
 	'vagalume' => 0,
 	'ocaml-uutf' => 7,
+	'xbat' => 3,
+	'xripple' => 3,
+	'sliderule' => 3,
+	'swisswatch' => 3,
+	'xaniroc' => 3,
+	'xmascot' => 3,
+	'xmold' => 3,
+	'xsnow' => 3,
+	'xtattr' => 3,
 };
 
 # reasons for obsolete packages

@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/10/11 20:40:14 naddy Exp $
-@bin bin/xsnow
-@man man/man6/xsnow.6

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.397 2019/03/31 05:14:23 thfr Exp $
+# $OpenBSD: Makefile,v 1.398 2019/04/02 14:05:45 bentley Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -315,7 +315,6 @@
      SUBDIR += wordwarvi
      SUBDIR += wtf
      SUBDIR += xasteroids
-     SUBDIR += xbat
      SUBDIR += xbattle
      SUBDIR += xbill
      SUBDIR += xbl
@@ -352,7 +351,6 @@
      SUBDIR += xonotic
      SUBDIR += xpat2
      SUBDIR += xpilot
-     SUBDIR += xripple
      SUBDIR += xroach
      SUBDIR += xscavenger
      SUBDIR += xscrabble
