@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/04/02 09:01:55 naddy Exp $
 
 COMMENT-main =		physics-based drawing puzzle game
 COMMENT-npcomplete =	extra levels for physics-based drawing puzzle game
@@ -29,6 +29,8 @@ WANTLIB-main =		SDL SDL_image SDL_ttf X11 c m \
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 RUN_DEPENDS-main =	devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS-main =	devel/sdl \
@@ -37,7 +39,7 @@ LIB_DEPENDS-main =	devel/sdl \
 
 RUN_DEPENDS-npcomplete =${FULLPKGPATH-main}
 
-CONFIGURE_STYLE =	autoconf automake no-autoheader
+CONFIGURE_STYLE =	gnu
 AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9
 
@@ -52,14 +54,11 @@ CONFIGURE_ARGS =--disable-hildon
 
 WRKDIST =	${WRKDIR}/numptyphysics
 
-post-patch:
-	@cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal
-
 pre-configure:
-	@cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} /bin/sh ./autogen.sh
 	@${SUBST_CMD} ${WRKSRC}/Config.h
+
+do-gen:
+	cd ${WRKSRC}; ${AUTOCONF_ENV} autoreconf -fi
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/npcomplete/*.nph \
