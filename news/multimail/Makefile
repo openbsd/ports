@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/04/02 12:03:27 fcambus Exp $
 
 COMMENT =	offline mail reader for Blue Wave, QWK, OMEN, SOUP and OPX
 
-V =		0.51
+V =		0.52
 DISTNAME =	mmail-${V}
 PKGNAME =	multimail-${V}
-REVISION =	0
 
 CATEGORIES =	news
 
