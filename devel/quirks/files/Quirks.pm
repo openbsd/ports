@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.738 2019/04/01 10:48:40 solene Exp $
+# $OpenBSD: Quirks.pm,v 1.739 2019/04/02 06:01:55 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1350,6 +1350,7 @@ my $cve = {
 	'www/py-django/lts' => 'py-django-lts-<1.11.19',
 	'net/mosquitto' => 'mosquitto-<1.5.6',
 	'www/hiawatha' => 'hiawatha-<10.8.4',
+	'net/libssh2' => 'libssh2-<1.8.2',
 };
 # please maintain sort order in above $cve list, future updates need to
 # replace existing entries
