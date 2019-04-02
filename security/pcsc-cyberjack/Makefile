@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/12/01 13:03:59 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2019/04/02 10:01:56 naddy Exp $
 
 COMMENT =		REINER SCT cyberJack chipcard reader driver
 
@@ -24,7 +24,9 @@ EXTRACT_SUFX =		.tar.bz2
 # -std=c++11
 COMPILER =		base-clang ports-clang ports-gcc
 
-BUILD_DEPENDS =		devel/libtool \
+BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool \
 			security/pcsc-lite
 RUN_DEPENDS =		security/pcsc-lite
 LIB_DEPENDS =		devel/libusb1
@@ -32,7 +34,7 @@ LIB_DEPENDS =		devel/libusb1
 MAKE_FLAGS =		CPPFLAGS=-I${LOCALBASE}/include \
 			CXXFLAGS="${CXXFLAGS} -std=c++11 -Wno-c++11-narrowing"
 
-CONFIGURE_STYLE =	autoconf automake
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-xml2 \
 			--enable-release
 
@@ -44,17 +46,7 @@ post-extract:
 	cd ${WRKSRC} && perl -i -pe 's/\r$$//' cjeca32/Debug.cpp \
 		cjeca32/RSCTCriticalSection.cpp
 
-post-patch:
-	cd ${WRKSRC} && \
-		libtoolize -f --copy && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		aclocal -I m4
-
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		automake --add-missing --copy
+do-gen:
+	cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf -fi
 
 .include <bsd.port.mk>
