@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/10/25 15:36:23 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/04/02 19:47:43 bcallah Exp $
 @conflict fileutils-*
 @conflict sh-utils-*
 @conflict textutils-*
@@ -12,6 +12,7 @@
 @bin bin/gbase32
 @bin bin/gbase64
 @bin bin/gbasename
+@bin bin/gbasenc
 @bin bin/gcat
 @bin bin/gchcon
 @bin bin/gchgrp
@@ -120,6 +121,7 @@ libexec/coreutils/libstdbuf.so
 @man man/man1/gbase32.1
 @man man/man1/gbase64.1
 @man man/man1/gbasename.1
+@man man/man1/gbasenc.1
 @man man/man1/gcat.1
 @man man/man1/gchcon.1
 @man man/man1/gchgrp.1
