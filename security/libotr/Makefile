@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2019/04/02 09:53:40 naddy Exp $
 
 COMMENT=	portable OTR messaging library and toolkit
 
@@ -26,9 +26,7 @@ LIB_DEPENDS +=	security/libgpg-error
 
 USE_LIBTOOL = 		gnu
 
-AUTOCONF_VERSION = 	2.68
-AUTOMAKE_VERSION = 	1.11
-CONFIGURE_STYLE=	autoconf automake
+CONFIGURE_STYLE=	gnu
 # PIE is taken care of on a per-arch basis on OpenBSD, and stack
 # protection is enabled anyway.
 CONFIGURE_ARGS=		--disable-gcc-hardening \
