@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/16 21:19:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/04/02 07:12:44 naddy Exp $
 
 COMMENT =		LADSPA plugins from Steve Harris
 
@@ -17,22 +17,21 @@ MASTER_SITES =		${HOMEPAGE}/releases/0.4.15/ \
 			https://distfiles.nl/
 
 BUILD_DEPENDS =		audio/ladspa \
-			devel/libtool
+			devel/libtool \
+			${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS =		math/fftw3,float
 
 
 AUTOMAKE_VERSION =	1.9
 AUTOCONF_VERSION =	2.59
-CONFIGURE_STYLE =	autoconf automake
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include"
 
 CFLAGS +=		-fPIC
 
 # only "translation" is en_GB
 CONFIGURE_ARGS +=	--disable-nls
-
-AUTO_ENV =	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
 post-extract:
 	find ${WRKSRC} -type f -name '*.c' -print -execdir perl -pi \
@@ -41,9 +40,8 @@ post-extract:
 	    {} \;
 post-patch:
 	rm ${WRKSRC}/acconfig.h ${WRKSRC}/ladspa.h
-	cd ${WRKSRC}; ${AUTO_ENV} aclocal -I . -I m4
 
-pre-configure:
-	cd ${WRKSRC}; ${AUTO_ENV} automake --foreign --add-missing
+do-gen:
+	cd ${WRKSRC}; ${AUTOCONF_ENV} autoreconf -fi
 
 .include <bsd.port.mk>
