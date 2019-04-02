@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/03/27 18:13:38 robert Exp $
+# $OpenBSD: Makefile,v 1.21 2019/04/02 06:44:00 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -7,6 +7,7 @@ COMMENT=		powerful text editor for the MATE desktop
 CATEGORIES=		textproc
 
 MATE_PROJECT=		pluma
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -31,6 +32,7 @@ BUILD_DEPENDS=		devel/iso-codes
 RUN_DEPENDS=		devel/iso-codes
 
 LIB_DEPENDS=		devel/libpeas \
+			textproc/enchant2 \
 			x11/gtksourceview3
 
 MODGNOME_TOOLS=		desktop-file-utils yelp
