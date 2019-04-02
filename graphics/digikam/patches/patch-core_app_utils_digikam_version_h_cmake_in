@@ -1,0 +1,23 @@
+$OpenBSD: patch-core_app_utils_digikam_version_h_cmake_in,v 1.1 2019/04/02 09:59:39 rsadowski Exp $
+
+Index: core/app/utils/digikam_version.h.cmake.in
+--- core/app/utils/digikam_version.h.cmake.in.orig
++++ core/app/utils/digikam_version.h.cmake.in
+@@ -34,8 +34,6 @@
+ 
+ // Local includes.
+ 
+-#include "gitversion.h"
+-
+ namespace Digikam
+ {
+ 
+@@ -50,7 +48,7 @@ static inline const QString digiKamVersion()
+ 
+ static inline QString additionalInformation()
+ {
+-    QString gitVer       = QLatin1String(GITVERSION);
++    QString gitVer       = QLatin1String("");
+     QString ret          = i18n("IRC:\n"
+                                 "irc.freenode.net - #digikam\n\n"
+                                 "Feedback:\n"

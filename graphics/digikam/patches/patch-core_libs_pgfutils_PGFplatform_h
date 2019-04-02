@@ -1,0 +1,14 @@
+$OpenBSD: patch-core_libs_pgfutils_PGFplatform_h,v 1.1 2019/04/02 09:59:39 rsadowski Exp $
+error: ‘NULL’ was not declared in this scope
+Index: core/libs/pgfutils/PGFplatform.h
+--- core/libs/pgfutils/PGFplatform.h.orig
++++ core/libs/pgfutils/PGFplatform.h
+@@ -485,7 +485,7 @@ __inline int MulDiv(int nNumber, int nNumerator, int n
+ #define FSFromStart			SEEK_SET
+ #define FSFromCurrent		SEEK_CUR
+ #define FSFromEnd			SEEK_END
+-#define nullptr				NULL
++#define nullptr				0
+ 
+ //-------------------------------------------------------------------------------
+ // IO Error constants
