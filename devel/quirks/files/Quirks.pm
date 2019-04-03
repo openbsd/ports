@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.744 2019/04/03 07:29:51 bentley Exp $
+# $OpenBSD: Quirks.pm,v 1.745 2019/04/03 07:45:05 bentley Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1205,6 +1205,7 @@ my $obsolete_reason = {
 	'mirror' => 3,
 	'dclock' => 3,
 	'xfishtank' => 3,
+	'mpeg_play' => 6,
 };
 
 # reasons for obsolete packages

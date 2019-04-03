@@ -1,4 +1,0 @@
-This is mpeg_play, which will let you view mpeg movies on X window
-displays. This port is mostly here for people who want to look at
-such code. If you want an mpeg player, you're probably much better
-off with smpeg.

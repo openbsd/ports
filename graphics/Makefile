@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.474 2019/04/03 07:29:51 bentley Exp $
+# $OpenBSD: Makefile,v 1.475 2019/04/03 07:45:04 bentley Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -163,7 +163,6 @@
      SUBDIR += mojoshader
      SUBDIR += mpeg-lib
      SUBDIR += mpeg_encode
-     SUBDIR += mpeg_play
      SUBDIR += mscgen
      SUBDIR += mtpaint
      SUBDIR += mypaint-brushes
