@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.742 2019/04/03 05:04:01 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.743 2019/04/03 05:37:33 bentley Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1192,6 +1192,7 @@ my $obsolete_reason = {
 	'ruby25-savon' => 1,
 	'ruby25-sonos' => 1,
 	'ruby25-wasabi' => 1,
+	'linuxdoc' => 6,
 };
 
 # reasons for obsolete packages
