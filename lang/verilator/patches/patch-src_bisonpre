@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_bisonpre,v 1.1 2019/04/03 14:42:08 naddy Exp $
+
+Index: src/bisonpre
+--- src/bisonpre.orig
++++ src/bisonpre
+@@ -325,7 +325,7 @@ sub clean_input {
+ 	foreach my $line (@linesin) {
+ 	    $l++;
+ 	    if ($line =~ /BISONPRE_NOT/) {
+-		($line =~ s/BISONPRE_NOT\((\S+)\)\s*({[^}]+})\s*$//)
++		($line =~ s/BISONPRE_NOT\((\S+)\)\s*(\{[^}]+})\s*$//)
+ 		    or die "%Error: $filename:$l: Bad form of BISONPRE_NOT: $line\n";
+ 		my $endtok = $1;  my $action = $2;
+ 		my @endtoks = split (/,/, $endtok);
