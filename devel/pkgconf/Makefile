@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/03/11 22:34:40 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/03 08:17:15 bentley Exp $
 
 COMMENT =		package compiler and linker metadata toolkit
 
 DISTNAME =		pkgconf-1.4.2
+REVISION =		0
 
 SHARED_LIBS +=		pkgconf 0.0	# 3.0
 
@@ -23,6 +24,7 @@ TEST_DEPENDS =		devel/kyua-cli
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--with-pkg-config-dir=/usr/lib/pkgconfig:${LOCALBASE}/lib/pkgconfig:${LOCALBASE}/share/pkgconfig:${X11BASE}/lib/pkgconfig:${X11BASE}/share/pkgconfig
 
 PORTHOME =		${WRKDIR}
 
