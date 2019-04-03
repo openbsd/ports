@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2019/02/22 07:24:36 semarie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/03 06:27:29 semarie Exp $
 
-MODPY_EGG_VERSION =	5.0.2
+MODPY_EGG_VERSION =	5.0.3
 TRYTON_MODULE =		sale
 
 TRYTON_DEPENDS +=	account \
@@ -14,7 +14,7 @@ TRYTON_DEPENDS +=	account \
 			stock
 
 RUN_DEPENDS +=		databases/py-sql${MODPY_FLAVOR} \
-			devel/py-dateutil${MODPY_FLAVOR}
-#RUN_DEPENDS +=		pygal	# optional dependencies for sparklines. not ported
+			devel/py-dateutil${MODPY_FLAVOR} \
+			graphics/py-pygal${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
