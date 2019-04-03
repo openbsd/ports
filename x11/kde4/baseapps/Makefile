@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2018/12/27 20:30:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2019/04/03 13:44:08 rsadowski Exp $
 
 COMMENT =	KDE base applications
 DISTNAME =	kde-baseapps-${MODKDE4_VERSION}
-REVISION =	7
+REVISION =	8
 
 SHARED_LIBS =	konq			51.0	# 6.0
 SHARED_LIBS +=	konqsidebarplugin	51.0	# 4.0

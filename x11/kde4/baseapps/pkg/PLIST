@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/12/27 20:30:55 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/04/03 13:44:09 rsadowski Exp $
 @conflict kdeaddons-<4
 @conflict kdebase-<4
 @newgroup _kdesud:583
@@ -72,7 +72,6 @@ lib/libkdeinit4_konqueror.so
 @lib lib/libkonqsidebarplugin.so.${LIBkonqsidebarplugin_VERSION}
 @lib lib/libkonquerorprivate.so.${LIBkonquerorprivate_VERSION}
 @man man/man1/kbookmarkmerger.1
-@man man/man1/kfind.1
 share/applications/kde4/Home.desktop
 share/applications/kde4/kdepasswd.desktop
 share/applications/kde4/kfmclient.desktop
@@ -252,39 +251,6 @@ share/dbus-1/interfaces/org.kde.nsplugins.CallBack.xml
 share/dbus-1/interfaces/org.kde.nsplugins.class.xml
 share/dbus-1/interfaces/org.kde.nsplugins.instance.xml
 share/dbus-1/interfaces/org.kde.nsplugins.viewer.xml
-share/doc/HTML/en/dolphin/
-share/doc/HTML/en/dolphin/common
-share/doc/HTML/en/dolphin/default-ui.png
-share/doc/HTML/en/dolphin/grouping-view.png
-share/doc/HTML/en/dolphin/index.cache.bz2
-share/doc/HTML/en/dolphin/index.docbook
-share/doc/HTML/en/dolphin/locationbar-breadcrumb.png
-share/doc/HTML/en/dolphin/locationbar-context-menu.png
-share/doc/HTML/en/dolphin/locationbar-editable.png
-share/doc/HTML/en/dolphin/locationbar-kioslaves-menu.png
-share/doc/HTML/en/dolphin/locationbar-places-icon.png
-share/doc/HTML/en/dolphin/nepomuk-search-more-options.png
-share/doc/HTML/en/dolphin/nepomuk-search.png
-share/doc/HTML/en/dolphin/preferences-general-behavior.png
-share/doc/HTML/en/dolphin/preferences-navigation.png
-share/doc/HTML/en/dolphin/preferences-services.png
-share/doc/HTML/en/dolphin/preferences-startup.png
-share/doc/HTML/en/dolphin/preferences-trash.png
-share/doc/HTML/en/dolphin/preferences-viewmodes-icons.png
-share/doc/HTML/en/dolphin/toolbar-navigation.png
-share/doc/HTML/en/dolphin/toolbar-view-appearance.png
-share/doc/HTML/en/dolphin/toolbar.png
-share/doc/HTML/en/dolphin/viewproperties-dialog.png
-share/doc/HTML/en/kdepasswd/
-share/doc/HTML/en/kdepasswd/common
-share/doc/HTML/en/kdepasswd/index.cache.bz2
-share/doc/HTML/en/kdepasswd/index.docbook
-share/doc/HTML/en/kdepasswd/password.png
-share/doc/HTML/en/kfind/
-share/doc/HTML/en/kfind/common
-share/doc/HTML/en/kfind/index.cache.bz2
-share/doc/HTML/en/kfind/index.docbook
-share/doc/HTML/en/kfind/man-kfind.1.docbook
 share/doc/HTML/en/konqueror/
 share/doc/HTML/en/konqueror/cmndline.png
 share/doc/HTML/en/konqueror/common
@@ -346,8 +312,6 @@ share/icons/oxygen/scalable/
 share/icons/oxygen/scalable/actions/
 share/icons/oxygen/scalable/actions/htmlvalidator.svgz
 share/icons/oxygen/scalable/actions/validators.svgz
-share/kde4/
-share/kde4/services/
 share/kde4/services/ServiceMenus/
 share/kde4/services/ServiceMenus/imageconverter.desktop
 share/kde4/services/bookmarks.desktop
