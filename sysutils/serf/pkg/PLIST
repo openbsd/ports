@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/05/14 09:55:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/04/03 08:08:42 ajacoutot Exp $
 @newgroup _serf:771
 @newuser _serf:771:_serf:daemon:Serf Agent:/nonexistent:/sbin/nologin
-@bin bin/serf
 @rcscript ${RCDIR}/serf
+@bin bin/serf
