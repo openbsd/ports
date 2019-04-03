@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.589 2019/01/30 17:02:00 feinerer Exp $
+# $OpenBSD: Makefile,v 1.590 2019/04/03 02:32:16 bentley Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -387,6 +387,8 @@
      SUBDIR += py-epydoc
      SUBDIR += py-feedparser
      SUBDIR += py-feedparser,python3
+     SUBDIR += py-humanize
+     SUBDIR += py-humanize,python3
      SUBDIR += py-iso8601
      SUBDIR += py-iso8601,python3
      SUBDIR += py-jaxml
