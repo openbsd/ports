@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.58 2018/11/05 15:59:17 espie Exp $
+# $OpenBSD: gnu.port.mk,v 1.59 2019/04/03 02:17:48 naddy Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -14,13 +14,6 @@ AUTOCONF_VERSION ?= 2.13
 # missing ?= not an oversight
 AUTOCONF_ENV = PATH=${PORTPATH} AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 MAKE_ENV += AUTOMAKE_VERSION=${AUTOMAKE_VERSION} AUTOCONF_VERSION=${AUTOCONF_VERSION}
-
-.if ${CONFIGURE_STYLE:L:Mautomake}
-BUILD_DEPENDS += ${MODGNU_AUTOMAKE_DEPENDS}
-.  if ${CONFIGURE_STYLE:L:Mautoupdate}
-CONFIGURE_STYLE += autoconf
-.  endif
-.endif
 
 .if ${CONFIGURE_STYLE:L:Mautoconf}
 BUILD_DEPENDS += ${MODGNU_AUTOCONF_DEPENDS}
@@ -132,9 +125,7 @@ _MODGNU_loop += ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF};
 _MODGNU_loop += echo "Running autoheader-${AUTOCONF_VERSION} in $$d";
 _MODGNU_loop += ${SETENV} ${AUTOCONF_ENV} ${AUTOHEADER};
 .    endif
-.    if !${CONFIGURE_STYLE:L:Mautomake}
 REORDER_DEPENDENCIES += ${PORTSDIR}/infrastructure/mk/automake.dep
-.    endif
 .  endif
 .endif
 
