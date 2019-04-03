@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tkinter,v 1.5 2016/06/29 16:14:42 espie Exp $
+@comment $OpenBSD: PLIST-tkinter,v 1.6 2019/04/03 05:23:40 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tkinter->=2.7,<2.8
@@ -55,6 +55,9 @@ lib/python2.7/lib-tk/test/test_tkinter/test_images.pyo
 lib/python2.7/lib-tk/test/test_tkinter/test_loadtk.py
 lib/python2.7/lib-tk/test/test_tkinter/test_loadtk.pyc
 lib/python2.7/lib-tk/test/test_tkinter/test_loadtk.pyo
+lib/python2.7/lib-tk/test/test_tkinter/test_misc.py
+lib/python2.7/lib-tk/test/test_tkinter/test_misc.pyc
+lib/python2.7/lib-tk/test/test_tkinter/test_misc.pyo
 lib/python2.7/lib-tk/test/test_tkinter/test_text.py
 lib/python2.7/lib-tk/test/test_tkinter/test_text.pyc
 lib/python2.7/lib-tk/test/test_tkinter/test_text.pyo
