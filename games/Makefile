@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.398 2019/04/02 14:05:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.399 2019/04/03 07:29:51 bentley Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -7,7 +7,6 @@
      SUBDIR += abuse
      SUBDIR += ace
      SUBDIR += afternoonstalker
-     SUBDIR += agm
      SUBDIR += alephone
      SUBDIR += allegro
      SUBDIR += amoebax
@@ -57,7 +56,6 @@
      SUBDIR += clonekeen
      SUBDIR += cmatrix
      SUBDIR += colobot
-     SUBDIR += connect4
      SUBDIR += corewars
      SUBDIR += corsixth
      SUBDIR += cosmosmash
@@ -324,10 +322,8 @@
      SUBDIR += xbomber
      SUBDIR += xbreaky
      SUBDIR += xbubble
-     SUBDIR += xchomp
      SUBDIR += xcowsay
      SUBDIR += xcubes
-     SUBDIR += xdeblock
      SUBDIR += xdino
      SUBDIR += xevil
      SUBDIR += xgalaga-sdl
@@ -360,7 +356,6 @@
      SUBDIR += xwelltris
      SUBDIR += xwelltris,no_sdl
      SUBDIR += xye
-     SUBDIR += xzip
      SUBDIR += yquake2
      SUBDIR += zangband
      SUBDIR += zangband,no_x11

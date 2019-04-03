@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.411 2019/04/03 05:03:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.412 2019/04/03 07:29:50 bentley Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -215,7 +215,6 @@
      SUBDIR += radiotray
      SUBDIR += rgain
      SUBDIR += rhythmbox
-     SUBDIR += rsynth
      SUBDIR += rtunes
      SUBDIR += ruby-taglib,ruby24
      SUBDIR += ruby-taglib,ruby25

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.634 2019/04/02 14:05:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.635 2019/04/03 07:29:51 bentley Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -44,7 +44,6 @@
      SUBDIR += dbus-tcl
      SUBDIR += dbusmenu-qt
      SUBDIR += dbusmenu-qt,qt5
-     SUBDIR += dclock
      SUBDIR += dmenu
      SUBDIR += driconf
      SUBDIR += driftnet
@@ -376,7 +375,6 @@
      SUBDIR += xfce4
      SUBDIR += xfe
      SUBDIR += xfed
-     SUBDIR += xfishtank
      SUBDIR += xforms
      SUBDIR += xglobe
      SUBDIR += xglobe,no_map

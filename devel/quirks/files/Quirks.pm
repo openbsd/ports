@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.743 2019/04/03 05:37:33 bentley Exp $
+# $OpenBSD: Quirks.pm,v 1.744 2019/04/03 07:29:51 bentley Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1193,6 +1193,18 @@ my $obsolete_reason = {
 	'ruby25-sonos' => 1,
 	'ruby25-wasabi' => 1,
 	'linuxdoc' => 6,
+	'luna' => 3,
+	'rsynth' => 3,
+	'agm' => 3,
+	'connect4' => 3,
+	'xchomp' => 3,
+	'xdeblock' => 3,
+	'xzip' => 3,
+	'jive' => 3,
+	'compface' => 3,
+	'mirror' => 3,
+	'dclock' => 3,
+	'xfishtank' => 3,
 };
 
 # reasons for obsolete packages

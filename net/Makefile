@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1124 2019/03/31 19:48:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.1125 2019/04/03 07:29:51 bentley Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -251,7 +251,6 @@
      SUBDIR += minio
      SUBDIR += miniupnp
      SUBDIR += mirmon
-     SUBDIR += mirror
      SUBDIR += mktorrent
      SUBDIR += mldonkey
      SUBDIR += mlvpn

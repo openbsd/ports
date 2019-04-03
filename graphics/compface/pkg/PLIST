@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/10/15 20:49:58 schwarze Exp $
-@conflict faces-*
-@bin bin/compface
-@bin bin/uncompface
-bin/xbm2xface
-include/compface.h
-lib/libcompface.a
-@man man/man1/compface.1
-@man man/man3/compface.3

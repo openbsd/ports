@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2019/03/26 16:47:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.189 2019/04/03 07:29:51 bentley Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -43,7 +43,6 @@
      SUBDIR += ietf-cli
      SUBDIR += impress
      SUBDIR += insult
-     SUBDIR += jive
      SUBDIR += lfm
      SUBDIR += libdivecomputer
      SUBDIR += lifelines
