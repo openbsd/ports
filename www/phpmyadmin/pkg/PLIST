@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.66 2019/01/19 16:11:12 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.67 2019/04/03 06:49:01 giovanni Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/phpmyadmin.conf
 @group daemon
 phpMyAdmin/
@@ -1933,7 +1933,6 @@ phpMyAdmin/vendor/paragonie/constant_time_encoding/tests/RFC4648Test.php
 phpMyAdmin/vendor/paragonie/constant_time_encoding/tests/autoload.php
 phpMyAdmin/vendor/paragonie/random_compat/
 phpMyAdmin/vendor/paragonie/random_compat/LICENSE
-phpMyAdmin/vendor/paragonie/random_compat/build-phar.sh
 phpMyAdmin/vendor/paragonie/random_compat/composer.json
 phpMyAdmin/vendor/paragonie/random_compat/dist/
 phpMyAdmin/vendor/paragonie/random_compat/dist/random_compat.phar.pubkey
@@ -1949,10 +1948,6 @@ phpMyAdmin/vendor/paragonie/random_compat/lib/random_bytes_libsodium.php
 phpMyAdmin/vendor/paragonie/random_compat/lib/random_bytes_libsodium_legacy.php
 phpMyAdmin/vendor/paragonie/random_compat/lib/random_bytes_mcrypt.php
 phpMyAdmin/vendor/paragonie/random_compat/lib/random_int.php
-phpMyAdmin/vendor/paragonie/random_compat/other/
-phpMyAdmin/vendor/paragonie/random_compat/other/build_phar.php
-phpMyAdmin/vendor/paragonie/random_compat/psalm-autoload.php
-phpMyAdmin/vendor/paragonie/random_compat/psalm.xml
 phpMyAdmin/vendor/phpmyadmin/
 phpMyAdmin/vendor/phpmyadmin/motranslator/
 phpMyAdmin/vendor/phpmyadmin/motranslator/.github/
@@ -2263,10 +2258,12 @@ phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Components/Expression.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Components/ExpressionArray.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Components/FunctionCall.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Components/GroupKeyword.php
+phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Components/IndexHint.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Components/IntoKeyword.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Components/JoinKeyword.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Components/Key.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Components/Limit.php
+phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Components/LockExpression.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Components/OptionsArray.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Components/OrderKeyword.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Components/ParameterDefinition.php
@@ -2308,9 +2305,11 @@ phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Statements/DropStatement.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Statements/ExplainStatement.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Statements/InsertStatement.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Statements/LoadStatement.php
+phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Statements/LockStatement.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Statements/MaintenanceStatement.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Statements/NotImplementedStatement.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Statements/OptimizeStatement.php
+phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Statements/PurgeStatement.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Statements/RenameStatement.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Statements/RepairStatement.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Statements/ReplaceStatement.php
@@ -2633,6 +2632,7 @@ phpMyAdmin/vendor/twig/twig/lib/Twig/Node/Block.php
 phpMyAdmin/vendor/twig/twig/lib/Twig/Node/BlockReference.php
 phpMyAdmin/vendor/twig/twig/lib/Twig/Node/Body.php
 phpMyAdmin/vendor/twig/twig/lib/Twig/Node/CheckSecurity.php
+phpMyAdmin/vendor/twig/twig/lib/Twig/Node/Deprecated.php
 phpMyAdmin/vendor/twig/twig/lib/Twig/Node/Do.php
 phpMyAdmin/vendor/twig/twig/lib/Twig/Node/Embed.php
 phpMyAdmin/vendor/twig/twig/lib/Twig/Node/Expression/
@@ -2767,6 +2767,7 @@ phpMyAdmin/vendor/twig/twig/lib/Twig/TokenParser/
 phpMyAdmin/vendor/twig/twig/lib/Twig/TokenParser.php
 phpMyAdmin/vendor/twig/twig/lib/Twig/TokenParser/AutoEscape.php
 phpMyAdmin/vendor/twig/twig/lib/Twig/TokenParser/Block.php
+phpMyAdmin/vendor/twig/twig/lib/Twig/TokenParser/Deprecated.php
 phpMyAdmin/vendor/twig/twig/lib/Twig/TokenParser/Do.php
 phpMyAdmin/vendor/twig/twig/lib/Twig/TokenParser/Embed.php
 phpMyAdmin/vendor/twig/twig/lib/Twig/TokenParser/Extends.php
@@ -2834,6 +2835,7 @@ phpMyAdmin/vendor/twig/twig/src/Node/BlockNode.php
 phpMyAdmin/vendor/twig/twig/src/Node/BlockReferenceNode.php
 phpMyAdmin/vendor/twig/twig/src/Node/BodyNode.php
 phpMyAdmin/vendor/twig/twig/src/Node/CheckSecurityNode.php
+phpMyAdmin/vendor/twig/twig/src/Node/DeprecatedNode.php
 phpMyAdmin/vendor/twig/twig/src/Node/DoNode.php
 phpMyAdmin/vendor/twig/twig/src/Node/EmbedNode.php
 phpMyAdmin/vendor/twig/twig/src/Node/Expression/
@@ -2959,6 +2961,7 @@ phpMyAdmin/vendor/twig/twig/src/TokenParser/
 phpMyAdmin/vendor/twig/twig/src/TokenParser/AbstractTokenParser.php
 phpMyAdmin/vendor/twig/twig/src/TokenParser/AutoEscapeTokenParser.php
 phpMyAdmin/vendor/twig/twig/src/TokenParser/BlockTokenParser.php
+phpMyAdmin/vendor/twig/twig/src/TokenParser/DeprecatedTokenParser.php
 phpMyAdmin/vendor/twig/twig/src/TokenParser/DoTokenParser.php
 phpMyAdmin/vendor/twig/twig/src/TokenParser/EmbedTokenParser.php
 phpMyAdmin/vendor/twig/twig/src/TokenParser/ExtendsTokenParser.php
