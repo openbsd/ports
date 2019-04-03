@@ -1,13 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2019/03/15 16:46:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/04/03 17:25:25 jeremy Exp $
 
-VERSION =		2.4.5
+VERSION =		2.4.6
 SHARED_LIBS =		ruby24	2.0
 NEXTVER =		2.5
-
-REVISION =		0
-REVISION-main =		2
-REVISION-ri_docs =	1
-PATCHFILES =		7669/ruby-2.4.5-rubygems-v2.patch:0
 
 PSEUDO_FLAVORS=		no_ri_docs bootstrap
 # Do not build the RI docs on slow arches
