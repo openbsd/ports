@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/02/01 18:31:50 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/04/03 16:10:22 bcallah Exp $
 bin/streamlink
 lib/python${MODPY_VERSION}/site-packages/streamlink/
 lib/python${MODPY_VERSION}/site-packages/streamlink-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -174,7 +174,8 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}nhkw
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}nos.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}npo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}nrk.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}ok_live.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}ntv.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}okru.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}olympicchannel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}onetv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/${MODPY_PYCACHE}openrectv.${MODPY_PYC_MAGIC_TAG}pyc
@@ -354,7 +355,8 @@ lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/nhkworld.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/nos.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/npo.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/nrk.py
-lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/ok_live.py
+lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/ntv.py
+lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/okru.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/olympicchannel.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/onetv.py
 lib/python${MODPY_VERSION}/site-packages/streamlink/plugins/openrectv.py
