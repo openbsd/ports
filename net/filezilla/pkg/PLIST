@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/01/02 12:43:19 jca Exp $
+@comment $OpenBSD: PLIST,v 1.19 2019/04/03 07:08:57 giovanni Exp $
 @bin bin/filezilla
 @bin bin/fzputtygen
 @bin bin/fzsftp
@@ -801,8 +801,6 @@ share/locale/ko_KR/
 share/locale/ko_KR/LC_MESSAGES/
 share/locale/ko_KR/LC_MESSAGES/filezilla.mo
 share/locale/ku/LC_MESSAGES/filezilla.mo
-share/locale/ky/
-share/locale/ky/LC_MESSAGES/
 share/locale/ky/LC_MESSAGES/filezilla.mo
 share/locale/lo_LA/
 share/locale/lo_LA/LC_MESSAGES/
