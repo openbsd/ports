@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2019/04/02 12:57:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2019/04/03 09:52:31 ajacoutot Exp $
 
 COMMENT=		next-generation build system
 
@@ -34,7 +34,7 @@ PATCH_STRIP=		-p0 -b
 # regression tests need to run as root
 TEST_IS_INTERACTIVE=	Yes
 
-# test_objc_cpp_detection (__main__.FailureTests) ... skipped "objc and objcpp found, can't test detection failure"
+# XXX TODO ./test cases/common/190 openmp
 # test_d_compiler (__main__.NativeFileTests) ... skipped 'No d compiler found.'
 # test_swift_compiler (__main__.NativeFileTests) ... skipped 'No swift compiler found.'
 TEST_DEPENDS=		${RUN_DEPENDS} \
@@ -54,7 +54,7 @@ TEST_DEPENDS +=		devel/llvm
 
 # FAIL: test_testsetups (__main__.AllPlatformTests)
 #    self.assertTrue('TEST_ENV is set' in vg_log)
-#TEST_DEPENDS +=		devel/valgrind
+#TEST_DEPENDS +=	devel/valgrind
 
 pre-configure:
 	sed -i "s,share/man,man," ${WRKSRC}/setup.py
@@ -69,6 +69,7 @@ do-test:
 	ln -sf ${LOCALBASE}/jdk-11/bin/javac ${WRKDIR}/bin/javac
 	ln -sf ${LOCALBASE}/bin/egfortran ${WRKDIR}/bin/gfortran
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-	cd ${WRKSRC} && PATH=${PORTPATH} && ./run_tests.py --failfast
+	cd ${WRKSRC} && PATH=${PORTPATH} LC_CTYPE="en_US.UTF-8" \
+		./run_tests.py --failfast
 
 .include <bsd.port.mk>
