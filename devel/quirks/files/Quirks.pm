@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.745 2019/04/03 07:45:05 bentley Exp $
+# $OpenBSD: Quirks.pm,v 1.746 2019/04/03 11:23:13 semarie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1340,7 +1340,9 @@ my $cve = {
 	'net/haproxy' => 'haproxy-<1.8.17',
 	'net/icecast' => 'icecast-<2.4.4',
 	'net/isc-bind' => 'isc-bind-<9.11.5pl4v0',
+	'net/libssh2' => 'libssh2-<1.8.2',
 	'net/lldpd' => 'lldpd-<0.7.18p0',
+	'net/mosquitto' => 'mosquitto-<1.5.6',
 	'net/ntp' => 'ntp-<4.2.8pl7',
 	'net/openconnect' => 'openconnect-<8.01',
 	'net/powerdns,-main' => 'powerdns-<4.1.5',
@@ -1366,11 +1368,14 @@ my $cve = {
 	'www/chromium' => 'chromium-<69.0.3497.100',
 	'www/drupal7/core7' => 'drupal->=7.0,<7.60',
 	'www/drupal7/theme-newsflash' => 'drupal7-theme-newsflash-<2.5',
+	'www/hiawatha' => 'hiawatha-<10.8.4',
 	'www/iridium' => 'iridium-<2018.5.67',
 	'www/mozilla-firefox' => 'firefox-<62.0.2p0',
 	'www/nginx' => 'nginx-<1.4.1',
 	'www/p5-CGI-Application' => 'p5-CGI-Application-<4.50p0',
 	'www/p5-Catalyst-Plugin-Static-Simple' => 'p5-Catalyst-Plugin-Static-Simple-<0.36',
+	'www/py-django/lts' => 'py-django-lts-<1.11.19',
+	'www/py-django/stable' => 'py-django-<2.1.6',
 	'www/py-requests' => 'py-requests-<2.20.0',
 	'www/py-requests,python3' => 'py3-requests-<2.20.0',
 	'www/ruby-rack,ruby24' => 'ruby24-rack-<2.0.6',
@@ -1378,11 +1383,6 @@ my $cve = {
 	'www/webkitgtk4' => 'webkitgtk4-<2.20.5',
 	'x11/gnome/gdm' => 'gdm-<3.28.3',
 	'x11/rdesktop' => 'rdesktop-<1.8.4',
-	'www/py-django/stable' => 'py-django-<2.1.6',
-	'www/py-django/lts' => 'py-django-lts-<1.11.19',
-	'net/mosquitto' => 'mosquitto-<1.5.6',
-	'www/hiawatha' => 'hiawatha-<10.8.4',
-	'net/libssh2' => 'libssh2-<1.8.2',
 };
 # please maintain sort order in above $cve list, future updates need to
 # replace existing entries
