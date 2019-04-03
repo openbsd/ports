@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.590 2019/04/03 02:32:16 bentley Exp $
+# $OpenBSD: Makefile,v 1.591 2019/04/03 05:03:35 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -491,7 +491,6 @@
      SUBDIR += ruby-fast_xs,ruby24
      SUBDIR += ruby-fast_xs,ruby25
      SUBDIR += ruby-fast_xs,ruby26
-     SUBDIR += ruby-gyoku
      SUBDIR += ruby-haml
      SUBDIR += ruby-hpricot,ruby24
      SUBDIR += ruby-hpricot,ruby25
@@ -507,7 +506,6 @@
      SUBDIR += ruby-nokogiri,ruby24
      SUBDIR += ruby-nokogiri,ruby25
      SUBDIR += ruby-nokogiri,ruby26
-     SUBDIR += ruby-nori
      SUBDIR += ruby-pygments.rb
      SUBDIR += ruby-rdiscount,ruby24
      SUBDIR += ruby-rdiscount,ruby25

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.894 2019/03/08 17:02:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.895 2019/04/03 05:03:35 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -516,8 +516,6 @@
      SUBDIR += ruby-fcgi,ruby24
      SUBDIR += ruby-fcgi,ruby25
      SUBDIR += ruby-fcgi,ruby26
-     SUBDIR += ruby-httpclient
-     SUBDIR += ruby-httpi
      SUBDIR += ruby-mechanize
      SUBDIR += ruby-multipart-post
      SUBDIR += ruby-mustermann
@@ -538,7 +536,6 @@
      SUBDIR += ruby-raindrops,ruby25
      SUBDIR += ruby-raindrops,ruby26
      SUBDIR += ruby-sanitize
-     SUBDIR += ruby-savon
      SUBDIR += ruby-sinatra
      SUBDIR += ruby-thin,ruby24
      SUBDIR += ruby-thin,ruby25
@@ -547,7 +544,6 @@
      SUBDIR += ruby-unicorn,ruby25
      SUBDIR += ruby-unicorn,ruby26
      SUBDIR += ruby-vegas
-     SUBDIR += ruby-wasabi
      SUBDIR += ruby-websocket-driver,ruby24
      SUBDIR += ruby-websocket-driver,ruby25
      SUBDIR += ruby-websocket-driver,ruby26

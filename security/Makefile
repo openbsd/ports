@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.538 2019/03/31 00:45:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.539 2019/04/03 05:03:35 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -349,7 +349,6 @@
      SUBDIR += reop
      SUBDIR += rhash
      SUBDIR += routersploit
-     SUBDIR += ruby-akami
      SUBDIR += ruby-bcrypt,ruby24
      SUBDIR += ruby-bcrypt,ruby25
      SUBDIR += ruby-bcrypt,ruby26
