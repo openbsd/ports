@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.741 2019/04/02 14:05:46 bentley Exp $
+# $OpenBSD: Quirks.pm,v 1.742 2019/04/03 05:04:01 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1184,6 +1184,14 @@ my $obsolete_reason = {
 	'xmold' => 3,
 	'xsnow' => 3,
 	'xtattr' => 3,
+	'ruby25-akami' => 1,
+	'ruby25-gyoku' => 1,
+	'ruby25-httpclient' => 1,
+	'ruby25-httpi' => 1,
+	'ruby25-nori' => 1,
+	'ruby25-savon' => 1,
+	'ruby25-sonos' => 1,
+	'ruby25-wasabi' => 1,
 };
 
 # reasons for obsolete packages
