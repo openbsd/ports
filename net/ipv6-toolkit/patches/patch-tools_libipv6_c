@@ -1,0 +1,16 @@
+$OpenBSD: patch-tools_libipv6_c,v 1.1 2019/04/04 19:18:18 bluhm Exp $
+
+https://github.com/fgont/ipv6toolkit/pull/52
+
+Index: tools/libipv6.c
+--- tools/libipv6.c.orig
++++ tools/libipv6.c
+@@ -2815,7 +2815,7 @@ int sel_next_hop(struct iface_data *idata){
+ 		rtm->rtm_msglen= sizeof(struct rt_msghdr) + sizeof(struct sockaddr_in6);
+ 		rtm->rtm_version= RTM_VERSION;
+ 		rtm->rtm_type= RTM_GET;
+-		rtm->rtm_addrs= RTA_DST | RTA_IFP;
++		rtm->rtm_addrs= RTA_DST;
+ 		rtm->rtm_pid= pid= getpid();
+ 		rtm->rtm_seq= seq= random();
+ 
