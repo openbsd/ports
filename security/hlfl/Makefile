@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/11 19:59:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/04/04 03:38:12 naddy Exp $
 
 COMMENT =		high level firewall language
 
@@ -26,7 +26,7 @@ CONFIGURE_STYLE =	gnu
 NO_TEST =		Yes
 
 pre-install:
-	@perl -pi -e 's#\$${prefix}\/share\/hlfl\/services\.hlfl#${SYSCONFDIR}/services.hlfl#' ${WRKSRC}/doc/hlfl.1
-	@perl -pi -e 's#\$${prefix}\/share#${PREFIX}/share/examples#' ${WRKSRC}/doc/hlfl.1
+	@perl -pi -e 's#\$$\{prefix}\/share\/hlfl\/services\.hlfl#${SYSCONFDIR}/services.hlfl#' ${WRKSRC}/doc/hlfl.1
+	@perl -pi -e 's#\$$\{prefix}\/share#${PREFIX}/share/examples#' ${WRKSRC}/doc/hlfl.1
 
 .include <bsd.port.mk>

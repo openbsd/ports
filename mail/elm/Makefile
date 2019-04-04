@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/02/18 14:27:25 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2019/04/04 03:38:12 naddy Exp $
 
 COMMENT=	once-popular mail user agent
 
@@ -31,7 +31,7 @@ pre-configure:
 	@mv ${WRKSRC}/nls/LANGS.new ${WRKSRC}/nls/LANGS
 
 post-configure:
-	@perl -pi.bak -e 's,\$${DESTDIR},,g;' \
+	@perl -pi.bak -e 's,\$$\{DESTDIR},,g;' \
 		${WRKBUILD}/config.h ${WRKBUILD}/hdrs/sysdefs.h \
 		${WRKBUILD}/utils/{checkalias,listalias,messages,printmail}
 	@perl -pi.bak -e 's,-..MAKEFLAGS..,,g;' ${WRKBUILD}/Makefile
