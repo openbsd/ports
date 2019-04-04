@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_gimp-mkenums,v 1.1 2019/04/04 06:26:36 naddy Exp $
+
+Index: tools/gimp-mkenums
+--- tools/gimp-mkenums.orig
++++ tools/gimp-mkenums
+@@ -240,7 +240,7 @@ while (<>) {
+        \*/@@gx;
+ 	
+     if (m@^\s*typedef\s+enum\s*
+-           ({)?\s*
++           (\{)?\s*
+            (?:/\*<
+              (([^*]|\*(?!/))*)
+             >\s*\*/)?
