@@ -1,6 +1,16 @@
-$OpenBSD: patch-automake_in,v 1.5 2012/11/25 08:29:07 brad Exp $
---- automake.in.orig	Sat Nov 17 10:25:47 2012
-+++ automake.in	Sat Nov 24 23:59:01 2012
+$OpenBSD: patch-automake_in,v 1.6 2019/04/04 02:01:29 naddy Exp $
+Index: automake.in
+--- automake.in.orig
++++ automake.in
+@@ -4030,7 +4030,7 @@ sub substitute_ac_subst_variables_worker($)
+ sub substitute_ac_subst_variables ($)
+ {
+   my ($text) = @_;
+-  $text =~ s/\${([^ \t=:+{}]+)}/&substitute_ac_subst_variables_worker ($1)/ge;
++  $text =~ s/\$[{]([^ \t=:+{}]+)}/&substitute_ac_subst_variables_worker ($1)/ge;
+   return $text;
+ }
+ 
 @@ -5246,6 +5246,7 @@ sub scan_autoconf_traces ($)
  		_LT_AC_TAGCONFIG => 0,
  		m4_include => 1,
