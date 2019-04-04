@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2019/03/31 18:28:39 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.34 2019/04/04 10:00:42 ajacoutot Exp $
 bin/al
 bin/al2
 bin/caspol
@@ -3711,4 +3711,4 @@ share/mono-2.0/mono/eglib/
 share/mono-2.0/mono/eglib/eglib-config.h
 share/mono-2.0/mono/profiler/
 share/mono-2.0/mono/profiler/mono-profiler-coverage.suppression
-@exec %D/bin/cert-sync /etc/ssl/cert.pem
+@exec %D/bin/cert-sync /etc/ssl/cert.pem >/dev/null
