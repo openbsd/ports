@@ -1,0 +1,19 @@
+$OpenBSD: patch-tp_Texinfo_Parser_pm,v 1.1 2019/04/04 02:08:33 naddy Exp $
+
+Index: tp/Texinfo/Parser.pm
+--- tp/Texinfo/Parser.pm.orig
++++ tp/Texinfo/Parser.pm
+@@ -5478,11 +5478,11 @@ sub _parse_special_misc_command($$$$)
+     }
+   } elsif ($command eq 'clickstyle') {
+     # REMACRO
+-    if ($line =~ /^\s+@([[:alnum:]][[:alnum:]\-]*)({})?\s*/) {
++    if ($line =~ /^\s+@([[:alnum:]][[:alnum:]\-]*)(\{\})?\s*/) {
+       $args = ['@'.$1];
+       $self->{'clickstyle'} = $1;
+       $remaining = $line;
+-      $remaining =~ s/^\s+@([[:alnum:]][[:alnum:]\-]*)({})?\s*(\@(c|comment)((\@|\s+).*)?)?//;
++      $remaining =~ s/^\s+@([[:alnum:]][[:alnum:]\-]*)(\{\})?\s*(\@(c|comment)((\@|\s+).*)?)?//;
+       $has_comment = 1 if (defined($4));
+     } else {
+       $self->line_error (sprintf($self->__(
