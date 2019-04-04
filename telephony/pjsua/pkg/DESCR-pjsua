@@ -2,7 +2,7 @@ pjsua is an open source command line SIP user agent that is used as
 the reference implementation for PJSIP and PJMEDIA. It has many
 features, such as:
 
-    * Mutiple identities/account registrations
+    * Multiple identities/account registrations
     * Concurrent calls and conference (unlimited number, but only up
       to 254 sources can be mixed to a single destination)
     * Call features: call hold, call transfer (attended or unattended,

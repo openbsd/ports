@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/02/15 22:31:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2019/04/04 10:38:57 sthen Exp $
 
 COMMENT-main=	multimedia communication library (SIP, RTP, ICE, etc)
 COMMENT-pjsua=	lightweight sip client
@@ -7,6 +7,7 @@ V=		2.8
 DISTNAME=	pjproject-$V
 PKGNAME-main=	pjsip-$V
 PKGNAME-pjsua=	pjsua-$V
+REVISION-pjsua=	0
 EXTRACT_SUFX=	.tar.bz2
 
 LIBVER=		0.0
