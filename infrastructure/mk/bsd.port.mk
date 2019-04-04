@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1461 2019/04/03 02:17:48 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1462 2019/04/04 02:28:06 naddy Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -280,7 +280,7 @@ _ARCH_DEFINES_INCLUDED = Done
 .  include "${PORTSDIR}/infrastructure/mk/arch-defines.mk"
 .endif
 
-.if ${CONFIGURE_STYLE:L:Mautoconf} || ${CONFIGURE_STYLE:L:Mautoupdate}
+.if ${CONFIGURE_STYLE:L:Mautoconf}
 .  if !${CONFIGURE_STYLE:L:Mgnu}
 CONFIGURE_STYLE += gnu
 .  endif
