@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2014/10/20 07:52:19 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2019/04/04 06:21:04 naddy Exp $
 
 PORTROACH =		limit:^3
 
@@ -14,3 +14,5 @@ PERMIT_PACKAGE_CDROM ?=	Yes
 MODULES ?=		lang/ruby
 
 CONFIGURE_STYLE ?=	ruby gem
+
+SUBST_VARS +=		MODRUBY_PKG_PREFIX

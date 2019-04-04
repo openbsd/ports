@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/06/29 16:14:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/04/04 06:21:04 naddy Exp $
 @option no-default-conflict
 @option is-branch
-@conflict ${MODRUBY_PREFIX}-rspec-<2.0
+@conflict ${MODRUBY_PKG_PREFIX}-rspec-<2.0
 @pkgpath devel/ruby-rspec,${MODRUBY_FLAVOR}
 @comment ${GEM_BIN}/autospec${GEM_BIN_SUFFIX}
 ${GEM_BIN}/spec${GEM_BIN_SUFFIX}

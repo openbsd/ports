@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/07/04 07:35:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/04/04 06:21:04 naddy Exp $
 @option no-default-conflict
-@conflict ${MODRUBY_PREFIX}-rspec-mocks->=2,<4
+@conflict ${MODRUBY_PKG_PREFIX}-rspec-mocks->=2,<4
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.document
