@@ -1,8 +1,11 @@
-$OpenBSD: patch-run_unittests_py,v 1.8 2019/04/03 09:52:31 ajacoutot Exp $
+$OpenBSD: patch-run_unittests_py,v 1.9 2019/04/04 09:28:42 ajacoutot Exp $
 
 XXX Our pkg-config(1) output differs from GNU
 
-https://github.com/mesonbuild/meson/pull/5208
+From d4cece3b34b91ff9f726da2ffe340645ff0d7ad4 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Wed, 3 Apr 2019 10:34:06 +0200
+Subject: [PATCH] test_pkgconfig_formatting: OpenBSD, libintil is a separate library
 
 From c1c699eda4ed4f8778e621e5d635e31264400053 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@openbsd.org>
