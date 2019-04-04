@@ -1,6 +1,7 @@
-$OpenBSD: patch-texi2html_pl,v 1.2 2015/09/18 13:29:15 ajacoutot Exp $
---- texi2html.pl.orig	Thu Jul  1 00:01:27 2010
-+++ texi2html.pl	Fri Sep 18 09:26:30 2015
+$OpenBSD: patch-texi2html_pl,v 1.3 2019/04/04 02:04:45 naddy Exp $
+Index: texi2html.pl
+--- texi2html.pl.orig
++++ texi2html.pl
 @@ -1,7 +1,5 @@
  #! @PERL@ --
  # perl
@@ -18,3 +19,12 @@ $OpenBSD: patch-texi2html_pl,v 1.2 2015/09/18 13:29:15 ajacoutot Exp $
  
  # for POSIX::setlocale and File::Spec
  require 5.00405;
+@@ -5609,7 +5605,7 @@ sub common_misc_commands($$$$)
+     }
+     elsif ($command eq 'clickstyle')
+     {
+-        if ($line =~ s/^\s+@([^\s\{\}\@]+)({})?\s*//)
++        if ($line =~ s/^\s+@([^\s\{\}\@]+)(\{})?\s*//)
+         {
+             $Texi2HTML::THISDOC{$command} = $1;
+             # FIXME warn about what remains on the line?

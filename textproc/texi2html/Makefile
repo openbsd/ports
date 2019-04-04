@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2015/09/18 13:29:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2019/04/04 02:04:45 naddy Exp $
 
 COMMENT=	texinfo to HTML converter
 
 DISTNAME=	texi2html-5.0
+REVISION=	0
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.nongnu.org/texi2html/
