@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2019/02/22 11:18:48 jca Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2019/04/04 10:36:45 sthen Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -1460,7 +1460,7 @@ distuninstallcheck_listfiles = find . -type f | \
+@@ -1469,7 +1469,7 @@ distuninstallcheck_listfiles = find . -type f | \
  ACLOCAL_AMFLAGS = -I m4
  
  # subdirectories in the distribution
