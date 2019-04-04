@@ -1,22 +1,9 @@
-$OpenBSD: patch-gio_gdbusprivate_c,v 1.2 2019/03/25 09:18:54 stsp Exp $
-Fix use-after-free triggered by gnome-session-binary when Gnome restarts.
-https://gitlab.gnome.org/GNOME/glib/merge_requests/741/
+$OpenBSD: patch-gio_gdbusprivate_c,v 1.3 2019/04/04 09:28:30 ajacoutot Exp $
 
-ostream_flush_cb() was calling flush_data_list_complete() with a single
-element list with an item that had already been freed:
-
-#2  0x00000e3c0104577a in flush_data_list_complete (flushers=0xe3bd8300340, 
-    error=0x0) at ../glib-2.58.3/gio/gdbusprivate.c:1156
-1156          g_mutex_lock (&f->mutex);
-(gdb) p /x *f
-$74 = {mutex = {p = 0xdfdfdfdfdfdfdfdf, i = {0xdfdfdfdf, 0xdfdfdfdf}}, cond = {
-    p = 0xdfdfdfdfdfdfdfdf, i = {0xdfdfdfdf, 0xdfdfdfdf}}, 
-  number_to_wait_for = 0xdfdfdfdfdfdfdfdf, error = 0x0}
-
-This happened because the thread freeing the element didn't properly wait
-for the asynchronous flush operation to finish.
-Gnome's developer docs say: "g_cond_wait() must always be used in a loop"
-https://developer.gnome.org/glib/stable/glib-Threads.html#g-cond-wait
+From 052ad6098ded95418704a27f487adf7bf97e14b1 Mon Sep 17 00:00:00 2001
+From: Stefan Sperling <stsp@stsp.name>
+Date: Sat, 23 Mar 2019 12:07:47 +0100
+Subject: [PATCH] Fix use-after-free triggered by gnome-session-binary
 
 Index: gio/gdbusprivate.c
 --- gio/gdbusprivate.c.orig
