@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_jdk_management_unix_native_libmanagement_ext_OperatingSystemImpl_c,v 1.1 2019/04/05 14:41:47 pvk Exp $
+
+Index: src/jdk.management/unix/native/libmanagement_ext/OperatingSystemImpl.c
+--- src/jdk.management/unix/native/libmanagement_ext/OperatingSystemImpl.c.orig
++++ src/jdk.management/unix/native/libmanagement_ext/OperatingSystemImpl.c
+@@ -541,3 +541,18 @@ Java_com_sun_management_internal_OperatingSystemImpl_g
+     }
+     return (jlong) rlp.rlim_cur;
+ }
++
++
++JNIEXPORT jdouble JNICALL
++Java_com_sun_management_internal_OperatingSystemImpl_getSystemCpuLoad0
++  (JNIEnv *env, jobject dummy)
++{
++    return (jdouble) -1;
++}
++
++JNIEXPORT jdouble JNICALL
++Java_com_sun_management_internal_OperatingSystemImpl_getProcessCpuLoad0
++  (JNIEnv *env, jobject dummy)
++{
++    return (jdouble) -1;
++}
