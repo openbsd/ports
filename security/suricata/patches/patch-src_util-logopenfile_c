@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_util-logopenfile_c,v 1.1 2019/04/05 12:24:00 bluhm Exp $
+
+https://github.com/OISF/suricata/pull/3753/commits/26e3c07cc7fb5c480c6e776a6652f5de326e7dbb
+
+Index: src/util-logopenfile.c
+--- src/util-logopenfile.c.orig
++++ src/util-logopenfile.c
+@@ -523,7 +523,9 @@ int SCConfLogReopen(LogFileCtx *log_ctx)
+         return -1;
+     }
+ 
+-    fclose(log_ctx->fp);
++    if (log_ctx->fp != NULL) {
++        fclose(log_ctx->fp);
++    }
+ 
+     /* Reopen the file. Append is forced in case the file was not
+      * moved as part of a rotation process. */
