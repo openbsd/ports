@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2019/02/28 17:42:53 thfr Exp $
+# $OpenBSD: Makefile,v 1.20 2019/04/05 08:07:23 sthen Exp $
 
 COMMENT =		jump 'n' run game
 
 V =			0.6.0
 DISTNAME =		SuperTux-v${V}-Source
 PKGNAME =		supertux-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
@@ -44,5 +44,8 @@ NO_TEST =		Yes
 
 post-extract:
 	perl -i -pe 's/\r$$//' ${WRKDIST}/external/squirrel/CMakeLists.txt
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/supertux/main.cpp
 
 .include <bsd.port.mk>
