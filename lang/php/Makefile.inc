@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.133 2019/03/28 12:39:03 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.134 2019/04/05 07:17:35 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -123,6 +123,11 @@ PSEUDO_FLAVORS=		${PHP_EXTENSIONS:C/-(pdo_)?mysqli?//:C/-(pcntl|shmop|zip)//:C/-
 PSEUDO_FLAVORS+=	no_apache
 
 .include <bsd.port.arch.mk>
+
+# checking for Apache 2.0 handler-module support via DSO through APXS... Trace/BPT trap (core dumped)
+.if ${MACHINE_ARCH:Maarch64}
+BUILD_PACKAGES:=	${BUILD_PACKAGES:N-apache}
+.endif
 
 # sapi
 CONFIGURE_ARGS+=	--enable-cli \
