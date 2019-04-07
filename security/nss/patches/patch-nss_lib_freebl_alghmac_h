@@ -1,16 +1,21 @@
-$OpenBSD: patch-nss_lib_freebl_alghmac_h,v 1.1 2017/05/30 18:57:01 ajacoutot Exp $
+$OpenBSD: patch-nss_lib_freebl_alghmac_h,v 1.2 2019/04/07 18:48:38 sthen Exp $
 
-Prevent clashing symbol with libcrypto (bad ld.so(1)!).
+Prevent symbol conflict with libcrypto.
 
 Index: nss/lib/freebl/alghmac.h
 --- nss/lib/freebl/alghmac.h.orig
 +++ nss/lib/freebl/alghmac.h
-@@ -34,6 +34,8 @@ HMAC_Init(HMACContext *cx, const SECHashObject *hash_o
- extern void
- HMAC_Begin(HMACContext *cx);
+@@ -9,6 +9,13 @@ typedef struct HMACContextStr HMACContext;
  
+ SEC_BEGIN_PROTOS
+ 
++/*
++ * These functions are used inter-library in NSS, so must be exported, but
++ * conflict with functions in openssl libcrypto.
++ */
++#define HMAC_Init NSS_HMAC_Init
 +#define HMAC_Update NSS_HMAC_Update
 +
- /* update HMAC
-  *  cx          HMAC Context
-  *  data        the data to perform HMAC on
+ /* destroy HMAC context */
+ extern void
+ HMAC_Destroy(HMACContext *cx, PRBool freeit);
