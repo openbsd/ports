@@ -1,4 +1,8 @@
-$OpenBSD: patch-base_files_file_util_posix_cc,v 1.1 2019/03/13 17:25:14 robert Exp $
+$OpenBSD: patch-base_files_file_util_posix_cc,v 1.2 2019/04/07 10:01:46 robert Exp $
+
+- to help unveil(2) try to create the directory elements
+  by ignoring ENOENT except for the last element which we
+  actually care about
 
 Index: base/files/file_util_posix.cc
 --- base/files/file_util_posix.cc.orig
