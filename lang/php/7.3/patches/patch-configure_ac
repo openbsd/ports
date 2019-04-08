@@ -1,8 +1,45 @@
-$OpenBSD: patch-configure_ac,v 1.1 2019/03/08 02:13:05 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2019/04/08 23:24:11 sthen Exp $
+
+#1: disable avx/sse/ssse, runtime crashes in optimized b64decode
+
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1117,16 +1117,16 @@ case $php_sapi_module in
+@@ -556,33 +556,7 @@ dnl Check __builtin_ssubll_overflow
+ PHP_CHECK_BUILTIN_SSUBLL_OVERFLOW
+ dnl Check __builtin_cpu_init
+ PHP_CHECK_BUILTIN_CPU_INIT
+-dnl Check __builtin_cpu_supports
+-PHP_CHECK_BUILTIN_CPU_SUPPORTS
+ 
+-dnl Check instructions
+-PHP_CHECK_CPU_SUPPORTS([ssse3])
+-PHP_CHECK_CPU_SUPPORTS([sse4.2])
+-PHP_CHECK_CPU_SUPPORTS([avx])
+-PHP_CHECK_CPU_SUPPORTS([avx2])
+-
+-dnl The ABI of php_addslashes in PHP 7.3 is dependent on __SSE4_2__,
+-dnl which depends on target attributes. Use this check to make sure that
+-dnl SSE 4.2 availability during the PHP compilation is used, independently
+-dnl of whether extensions are compiled with SSE 4.2 support.
+-AC_MSG_CHECKING([whether __SSE4_2__ is defined])
+-AC_RUN_IFELSE([AC_LANG_SOURCE([[
+-int main() {
+-#if defined(__SSE4_2__)
+-  return 0;
+-#else
+-  return 1;
+-#endif
+-}
+-]])], [
+-  AC_MSG_RESULT([yes])
+-  AC_DEFINE(HAVE_SSE4_2_DEF, 1, [Define if __SSE4_2__ has been defined])
+-], [AC_MSG_RESULT([no])], [AC_MSG_RESULT([no])])
+-
+ dnl Check for members of the stat structure
+ AC_CHECK_MEMBERS([struct stat.st_blksize, struct stat.st_rdev])
+ dnl AC_STRUCT_ST_BLOCKS will screw QNX because fileblocks.o does not exist
+@@ -1117,16 +1091,16 @@ case $php_sapi_module in
      enable_static=no
      case $with_pic in
        yes)
@@ -22,7 +59,7 @@ Index: configure.ac
      if test -z "$PHP_MODULES" && test -z "$PHP_ZEND_EX"; then
        enable_shared=no
      fi
-@@ -1310,7 +1310,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
+@@ -1310,7 +1284,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`

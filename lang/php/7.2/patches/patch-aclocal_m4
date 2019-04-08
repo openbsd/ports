@@ -1,4 +1,4 @@
-$OpenBSD: patch-aclocal_m4,v 1.2 2019/03/06 15:16:34 sthen Exp $
+$OpenBSD: patch-aclocal_m4,v 1.3 2019/04/08 23:24:11 sthen Exp $
 Index: aclocal.m4
 --- aclocal.m4.orig
 +++ aclocal.m4
@@ -13,7 +13,7 @@ Index: aclocal.m4
      php_cxx_done=yes
    fi
  ])
-@@ -2363,7 +2365,7 @@ AC_DEFUN([PHP_SETUP_OPENSSL],[
+@@ -2359,7 +2361,7 @@ AC_DEFUN([PHP_SETUP_OPENSSL],[
  
    dnl If pkg-config is found try using it
    if test "$PHP_OPENSSL_DIR" = "yes" && test -x "$PKG_CONFIG" && $PKG_CONFIG --exists openssl; then
