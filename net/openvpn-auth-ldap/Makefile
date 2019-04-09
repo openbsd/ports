@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2018/12/11 13:27:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/04/09 11:13:09 naddy Exp $
 
 COMMENT =		LDAP authentication plugin for OpenVPN 2.x
 
 VERSION =		2.0.3
-REVISION =		10
+REVISION =		11
 DISTNAME =		auth-ldap-${VERSION}
 PKGNAME =		openvpn-${DISTNAME}
 CATEGORIES =		net security
@@ -44,7 +44,8 @@ CONFIGURE_ARGS =  --with-check=${LOCALBASE} \
 		  LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
 		  LD="${CC}" CXX=${CXX} OBJCPP="${CC} -E" OBJC=${CC}
 
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include \
+			    -I${LOCALBASE}/include/gnustep"
 
 SAMPLES_DIR =		${PREFIX}/share/examples/openvpn-auth-ldap
 
