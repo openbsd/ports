@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.26 2019/03/08 11:48:00 sthen Exp $
+$OpenBSD: README-server,v 1.27 2019/04/11 15:18:39 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -171,7 +171,7 @@ Examine your old file for local changes and apply them to the new version.
 
 6) Temporarily support connecting without a password for local users by
    editing pg_hba.conf to include "local all postgres trust"
-# vi /var/postgresql/data{,-${PREV_MAJOR}/pg_hba.conf
+# vi /var/postgresql/data{,-${PREV_MAJOR}}/pg_hba.conf
 
 7) Run pg_upgrade:
 # su _postgresql -c "cd /var/postgresql && \
@@ -179,7 +179,7 @@ Examine your old file for local changes and apply them to the new version.
     -U postgres -d /var/postgresql/data-${PREV_MAJOR}/ -D /var/postgresql/data"
 
 8) Remove "local all postgres trust" line from pg_hba.conf
-# vi /var/postgresql/data{,-${PREV_MAJOR}/pg_hba.conf
+# vi /var/postgresql/data{,-${PREV_MAJOR}}/pg_hba.conf
 
 9) Start PostgreSQL:
 # rcctl start postgresql
