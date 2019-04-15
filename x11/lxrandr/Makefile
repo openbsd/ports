@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2018/06/27 21:04:20 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/04/15 17:00:09 jasper Exp $
 
 COMMENT=	simple xrandr config tool
 
-DISTNAME=	lxrandr-0.3.1
-REVISION=	1
+DISTNAME=	lxrandr-0.3.2
 
 CATEGORIES=	x11 sysutils
 
