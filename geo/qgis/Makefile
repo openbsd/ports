@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.102 2019/03/16 07:03:31 landry Exp $
+# $OpenBSD: Makefile,v 1.103 2019/04/15 18:22:50 landry Exp $
 
 COMMENT =	desktop geographical information system
 
-DISTNAME =	qgis-3.6.0
+DISTNAME =	qgis-3.6.1
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
-REVISION =	0
 
-SHARED_LIBS =	qgis_core	30.0 \
-		qgis_app	15.0 \
-		qgis_gui	24.0 \
+SHARED_LIBS =	qgis_core	31.0 \
+		qgis_app	15.1 \
+		qgis_gui	24.1 \
 		qgis_analysis	12.2 \
 		qgis_server	9.1 \
 		qgispython	6.0 \
