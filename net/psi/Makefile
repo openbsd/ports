@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.31 2019/01/21 20:55:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2019/04/15 17:39:43 cwen Exp $
 
 COMMENT=	multiplatform Jabber client
 
 DISTNAME=	psi-0.15
-REVISION=	10
+REVISION=	11
 CATEGORIES=	net
 
-HOMEPAGE=	http://psi-im.org/
+HOMEPAGE=	https://psi-im.org/
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=psi/}
 EXTRACT_SUFX=	.tar.bz2
