@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2018/07/27 18:32:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2019/04/15 17:02:05 jasper Exp $
 
 COMMENT=		automated hinting process based on FreeType's autohinter #'
 
-V =			1.8.2
+V =			1.8.3
 DISTNAME =		ttfautohint-${V}
 SHARED_LIBS +=  ttfautohint               0.0 # 1.0
 CATEGORIES =		graphics
@@ -18,7 +18,7 @@ MASTER_SITES =		http://download.savannah.gnu.org/releases/freetype/
 
 COMPILER =		base-clang ports-gcc
 
-WANTLIB += c freetype glib-2.0 graphite2 harfbuzz iconv intl m pcre pthread
+WANTLIB += c freetype glib-2.0 graphite2 harfbuzz iconv intl m pthread
 WANTLIB += z ${COMPILER_LIBCXX}
 
 LIB_DEPENDS =		devel/harfbuzz
