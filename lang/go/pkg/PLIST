@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2019/03/16 15:01:30 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.33 2019/04/15 17:14:14 jsing Exp $
 bin/go
 bin/gofmt
 go/
@@ -2319,6 +2319,7 @@ go/src/cmd/go/testdata/script/list_test_imports.txt
 go/src/cmd/go/testdata/script/mod_bad_domain.txt
 go/src/cmd/go/testdata/script/mod_bad_filenames.txt
 go/src/cmd/go/testdata/script/mod_build_tags.txt
+go/src/cmd/go/testdata/script/mod_build_versioned.txt
 go/src/cmd/go/testdata/script/mod_case.txt
 go/src/cmd/go/testdata/script/mod_case_cgo.txt
 go/src/cmd/go/testdata/script/mod_clean_cache.txt
@@ -9460,6 +9461,9 @@ go/test/fixedbugs/issue30061.go
 go/test/fixedbugs/issue30476.go
 go/test/fixedbugs/issue30566a.go
 go/test/fixedbugs/issue30566b.go
+go/test/fixedbugs/issue30956.go
+go/test/fixedbugs/issue30956.out
+go/test/fixedbugs/issue30977.go
 go/test/fixedbugs/issue3552.dir/
 go/test/fixedbugs/issue3552.dir/one.go
 go/test/fixedbugs/issue3552.dir/two.go
