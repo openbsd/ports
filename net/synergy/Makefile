@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.34 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/04/15 17:32:47 cwen Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
 VERSION=		1.7.6
 DISTNAME=		synergy-${VERSION}
 CATEGORIES=		net x11
-REVISION=		0
+REVISION=		1
 
 GH_ACCOUNT=		symless
 GH_PROJECT=		synergy-core
 GH_TAGNAME=		v${VERSION}-stable
 
-HOMEPAGE=		http://synergy-foss.org/
+HOMEPAGE=		https://synergy-foss.org/
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,10 +27,7 @@ MODULES=		devel/cmake
 
 NO_TEST=		Yes
 
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mclang}
 CXXFLAGS +=		-std=c++03
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/synergy[cds] ${PREFIX}/bin/
