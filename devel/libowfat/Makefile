@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2018/12/19 17:59:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/04/15 16:40:59 bcallah Exp $
 
 COMMENT =	library of general purpose APIs
-BROKEN-hppa =	missing atomic ops
 
 DISTNAME =	libowfat-0.32
 EXTRACT_SUFX =	.tar.xz
