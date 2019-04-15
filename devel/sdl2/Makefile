@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2019/03/23 05:27:32 jsg Exp $
+# $OpenBSD: Makefile,v 1.26 2019/04/15 16:34:21 bcallah Exp $
 
 COMMENT=	cross-platform multimedia library
-BROKEN-hppa=	src/atomic/SDL_spinlock.c:101:2: error: \
-		#error Please implement for your platform.
 
 V=		2.0.9
 REVISION=	0
@@ -46,6 +44,10 @@ CONFIGURE_ARGS+= --disable-alsa \
 # in case devel/usb is installed, don't pick it up.
 CONFIGURE_ENV+= ac_cv_lib_usb_hid_init=no \
 		ac_cv_header_usb_h=no
+
+.if ${MACHINE_ARCH} == "hppa"
+CONFIGURE_ARGS+= --disable-atomic
+.endif
 
 NO_TEST=	Yes
 
