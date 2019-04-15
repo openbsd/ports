@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2019/03/15 16:36:23 bcallah Exp $
-
-BROKEN-hppa =	SIGILL during build
+# $OpenBSD: Makefile,v 1.71 2019/04/15 16:43:54 bcallah Exp $
 
 COMMENT =	high-level, extensible programming language
 
