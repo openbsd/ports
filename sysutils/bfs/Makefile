@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2019/02/12 21:47:11 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2019/04/15 21:04:14 bcallah Exp $
 
 COMMENT =	breadth-first version of the UNIX find command
+REVISION =	0
 CATEGORIES =	sysutils
 
 GH_ACCOUNT =	tavianator
@@ -15,6 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += c
 
 USE_GMAKE =	Yes
+MAKE_FLAGS =	CFLAGS="${CFLAGS} -DBFS_HAS_SYS_ACL=0"
 
 FAKE_FLAGS =	DESTDIR=
 
