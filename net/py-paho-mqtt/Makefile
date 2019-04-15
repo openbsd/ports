@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/28 11:55:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2019/04/15 16:59:51 jasper Exp $
 
 COMMENT =		MQTT Python client library
 
-MODPY_EGG_VERSION =	1.3.1
+MODPY_EGG_VERSION =	1.4.0
 DISTNAME =		paho-mqtt-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

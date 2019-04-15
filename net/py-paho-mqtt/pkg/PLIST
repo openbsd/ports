@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/11/28 11:55:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/04/15 16:59:51 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/paho/
 lib/python${MODPY_VERSION}/site-packages/paho/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/paho/${MODPY_PYCACHE}/
@@ -26,13 +26,17 @@ share/examples/${MODPY_PY_PREFIX}paho-mqtt/aws_iot.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_logger.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_mqtt_clear_retain.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_pub-wait.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_pub_opts.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_session_present.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_sub-class.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_sub-multiple-callback.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_sub-srv.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_sub-ws.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_sub.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_sub_opts.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/context.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/loop_asyncio.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/loop_select.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/publish_multiple.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/publish_single.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/publish_utf8-27.py
