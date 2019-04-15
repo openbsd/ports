@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_util_sys_defs_h,v 1.8 2017/11/09 21:52:09 sthen Exp $
+$OpenBSD: patch-src_util_sys_defs_h,v 1.9 2019/04/15 21:10:09 sthen Exp $
 
 Index: src/util/sys_defs.h
---- src/util/sys_defs.h.orig	Wed Feb  1 20:31:15 2017
-+++ src/util/sys_defs.h	Tue Nov  7 21:15:06 2017
-@@ -128,7 +128,7 @@
+--- src/util/sys_defs.h.orig
++++ src/util/sys_defs.h
+@@ -129,7 +129,7 @@
  #define HAS_FUTIMES			/* XXX maybe earlier */
  #endif
  

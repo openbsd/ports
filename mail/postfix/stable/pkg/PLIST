@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2016/06/29 16:14:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.38 2019/04/15 21:10:09 sthen Exp $
 @option is-branch
 @conflict postfix-*
 @pkgpath mail/postfix/stable,sqlite
@@ -29,6 +29,7 @@ libexec/postfix/post-install
 libexec/postfix/postfix-script
 libexec/postfix/postfix-tls-script
 libexec/postfix/postfix-wrapper
+@bin libexec/postfix/postlogd
 libexec/postfix/postmulti-script
 @bin libexec/postfix/postscreen
 @bin libexec/postfix/proxymap
@@ -100,6 +101,7 @@ libexec/postfix/postmulti-script
 @man man/man8/oqmgr.8
 @man man/man8/pickup.8
 @man man/man8/pipe.8
+@man man/man8/postlogd.8
 @man man/man8/postscreen.8
 @man man/man8/proxymap.8
 @man man/man8/qmgr.8
@@ -238,6 +240,7 @@ share/doc/postfix/html/postfix.1.html
 share/doc/postfix/html/postkick.1.html
 share/doc/postfix/html/postlock.1.html
 share/doc/postfix/html/postlog.1.html
+share/doc/postfix/html/postlogd.8.html
 share/doc/postfix/html/postmap.1.html
 share/doc/postfix/html/postmulti.1.html
 share/doc/postfix/html/postqueue.1.html
