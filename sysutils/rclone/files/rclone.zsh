@@ -17,17 +17,17 @@ case $state in
   ;;
   level2)
     case $words[2] in
-      help)
-        _arguments '2: :(backend backends flags)'
-      ;;
-      serve)
-        _arguments '2: :(dlna ftp http restic webdav)'
-      ;;
       config)
         _arguments '2: :(create delete dump edit file password providers show update)'
       ;;
       genautocomplete)
         _arguments '2: :(bash zsh)'
+      ;;
+      help)
+        _arguments '2: :(backend backends flags)'
+      ;;
+      serve)
+        _arguments '2: :(dlna ftp http restic webdav)'
       ;;
       *)
         _arguments '*: :_files'
