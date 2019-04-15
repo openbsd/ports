@@ -1,0 +1,18 @@
+$OpenBSD: patch-sources_tools_gcc_dwarf2out_c,v 1.1 2019/04/15 21:20:06 sthen Exp $
+
+clang fix
+
+Index: sources/tools/gcc/dwarf2out.c
+--- sources/tools/gcc/dwarf2out.c.orig
++++ sources/tools/gcc/dwarf2out.c
+@@ -5335,8 +5335,8 @@ print_die (dw_die_ref die, FILE *outfile)
+ 	  fprintf (outfile, HOST_WIDE_INT_PRINT_UNSIGNED, AT_unsigned (a));
+ 	  break;
+ 	case dw_val_class_const_double:
+-	  fprintf (outfile, "constant ("HOST_WIDE_INT_PRINT_DEC","\
+-			    HOST_WIDE_INT_PRINT_UNSIGNED")",
++	  fprintf (outfile, "constant (" HOST_WIDE_INT_PRINT_DEC ","\
++			    HOST_WIDE_INT_PRINT_UNSIGNED ")",
+ 		   a->dw_attr_val.v.val_double.high,
+ 		   a->dw_attr_val.v.val_double.low);
+ 	  break;

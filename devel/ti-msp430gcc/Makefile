@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2017/09/29 16:48:50 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2019/04/15 21:20:06 sthen Exp $
 
 BROKEN-alpha =	relocation truncated to fit: GPRELHIGH against symbol default_target_hard_regs
-# XXX base clang says: /usr/include/c++/v1/exception:267:5: error: no member named 'fancy_abort' in namespace 'std::__1'; did you mean simply 'fancy_abort'?
-COMPILER =		base-gcc
 
 COMMENT =		TI's open source compiler for MSP430 microcontrollers#'
 
 V =			3_03_04_00
-REVISION =		3
+REVISION =		4
 PKGNAME =		ti-msp430gcc-${V:S/_/./g}
 GCC_V =			4.9.1
 CATEGORIES =		devel

@@ -1,0 +1,17 @@
+$OpenBSD: patch-sources_tools_gcc_system_h,v 1.1 2019/04/15 21:20:06 sthen Exp $
+
+Fix build with clang as system compiler.
+
+/usr/include/c++/v1/exception:267:5: error: no member named 'fancy_abort' in namespace 'std::__1'; did you mean simply 'fancy_abort'?
+
+Index: sources/tools/gcc/system.h
+--- sources/tools/gcc/system.h.orig
++++ sources/tools/gcc/system.h
+@@ -203,6 +203,7 @@ extern int errno;
+ 
+ #ifdef __cplusplus
+ # include <cstring>
++# include <new>
+ #endif
+ 
+ /* Some of glibc's string inlines cause warnings.  Plus we'd rather

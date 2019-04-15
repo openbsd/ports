@@ -1,0 +1,25 @@
+$OpenBSD: patch-sources_tools_gcc_tree-ssa-reassoc_c,v 1.1 2019/04/15 21:20:06 sthen Exp $
+
+clang fix
+
+Index: sources/tools/gcc/tree-ssa-reassoc.c
+--- sources/tools/gcc/tree-ssa-reassoc.c.orig
++++ sources/tools/gcc/tree-ssa-reassoc.c
+@@ -4208,7 +4208,7 @@ attempt_builtin_powi (gimple stmt, vec<operand_entry_t
+ 		      if (elt < vec_len - 1)
+ 			fputs (" * ", dump_file);
+ 		    }
+-		  fprintf (dump_file, ")^"HOST_WIDE_INT_PRINT_DEC"\n",
++		  fprintf (dump_file, ")^" HOST_WIDE_INT_PRINT_DEC "\n",
+ 			   power);
+ 		}
+ 	    }
+@@ -4242,7 +4242,7 @@ attempt_builtin_powi (gimple stmt, vec<operand_entry_t
+ 		  if (elt < vec_len - 1)
+ 		    fputs (" * ", dump_file);
+ 		}
+-	      fprintf (dump_file, ")^"HOST_WIDE_INT_PRINT_DEC"\n", power);
++	      fprintf (dump_file, ")^" HOST_WIDE_INT_PRINT_DEC "\n", power);
+ 	    }
+ 
+ 	  reassociate_stats.pows_created++;

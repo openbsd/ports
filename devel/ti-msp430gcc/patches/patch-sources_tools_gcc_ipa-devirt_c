@@ -1,0 +1,16 @@
+$OpenBSD: patch-sources_tools_gcc_ipa-devirt_c,v 1.1 2019/04/15 21:20:06 sthen Exp $
+
+clang fix
+
+Index: sources/tools/gcc/ipa-devirt.c
+--- sources/tools/gcc/ipa-devirt.c.orig
++++ sources/tools/gcc/ipa-devirt.c
+@@ -1633,7 +1633,7 @@ dump_possible_polymorphic_call_targets (FILE *f,
+     {
+       fprintf (f, "    Contained in type:");
+       print_generic_expr (f, ctx.outer_type, TDF_SLIM);
+-      fprintf (f, " at offset "HOST_WIDE_INT_PRINT_DEC"\n",
++      fprintf (f, " at offset " HOST_WIDE_INT_PRINT_DEC "\n",
+ 	       ctx.offset);
+     }
+ 

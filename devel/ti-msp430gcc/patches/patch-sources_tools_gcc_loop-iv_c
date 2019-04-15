@@ -1,0 +1,16 @@
+$OpenBSD: patch-sources_tools_gcc_loop-iv_c,v 1.1 2019/04/15 21:20:06 sthen Exp $
+
+clang fix
+
+Index: sources/tools/gcc/loop-iv.c
+--- sources/tools/gcc/loop-iv.c.orig
++++ sources/tools/gcc/loop-iv.c
+@@ -2297,7 +2297,7 @@ determine_max_iter (struct loop *loop, struct niter_de
+   if (andmax)
+     nmax = MIN (nmax, andmax);
+   if (dump_file)
+-    fprintf (dump_file, ";; Determined upper bound "HOST_WIDEST_INT_PRINT_DEC".\n",
++    fprintf (dump_file, ";; Determined upper bound " HOST_WIDEST_INT_PRINT_DEC ".\n",
+ 	     nmax);
+   return nmax;
+ }
