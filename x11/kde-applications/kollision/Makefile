@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/24 11:57:02 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2019/04/15 17:09:18 rsadowski Exp $
 
 COMMENT =	simple ball dodging game
 DISTNAME =	kollision-${VERSION}
 CATEGORIES =	games
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.kde.org/applications/games/kollision
 
