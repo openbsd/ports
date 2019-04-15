@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2019/02/20 11:22:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/04/15 17:14:46 cwen Exp $
 
 COMMENT =	document indexer
 DISTNAME =	strigi-0.7.8
-REVISION =	0
+REVISION =	1
 CATEGORIES =	databases devel textproc sysutils
 
 HOMEPAGE =	https://www.vandenoever.info/software/strigi/
@@ -46,9 +46,7 @@ CONFIGURE_ARGS =	-DENABLE_LOG4CXX=No
 # Depends on Java
 CONFIGURE_ARGS +=	-DENABLE_REGENERATEXSD=No
 
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mclang}
-CXXFLAGS += --std=c++03
-.endif
+# Doesn't build with C++14
+CXXFLAGS += 		--std=c++03
 
 .include <bsd.port.mk>
