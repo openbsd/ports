@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2019/03/28 19:28:47 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.63 2019/04/15 18:43:35 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -26,14 +26,14 @@ PKGSPEC-network =	kdenetwork-${MODKDE4_SPEC}
 PKGSPEC-sdk =		kdesdk-${MODKDE4_SPEC}
 PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 
-REVISION-minimal =	9
+REVISION-minimal =	10
 REVISION-games = 3
 REVISION-sdk = 3
 REVISION-edu = 5
 REVISION-multimedia = 0
 REVISION-extras = 10
-REVISION-main =		23
-REVISION-admin =	0
+REVISION-main =		24
+REVISION-admin =	1
 REVISION-graphics =	3
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
@@ -58,12 +58,9 @@ KDE4_ONLY =		No
 
 KDE4-accessibility = \
 	${MODKDE4_DEP_DIR}/jovie	\
-	${MODKDE4_DEP_DIR}/kaccessible	\
-	${MODKDE4_DEP_DIR}/kmousetool	\
-	${MODKDE4_DEP_DIR}/kmouth
+	${MODKDE4_DEP_DIR}/kaccessible
 
 RUN_DEPENDS-admin = \
-	${MODKDE4_DEP_DIR}/kcron	\
 	${MODKDE4_DEP_DIR}/kuser
 
 KDE4-bindings = \

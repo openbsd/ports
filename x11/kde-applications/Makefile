@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.47 2019/03/24 11:23:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.48 2019/04/15 18:43:35 rsadowski Exp $
 
      SUBDIR =
 
      # accessibility
      SUBDIR += kmag
      SUBDIR += kmousetool
-     #SUBDIR += kmouth
+     SUBDIR += kmouth
 
      # admin
-     #SUBDIR += kcron
+     SUBDIR += kcron
      SUBDIR += ksystemlog
 
      # base
      SUBDIR += dolphin
      SUBDIR += dolphin-plugins
      SUBDIR += kate
-     #SUBDIR += kdialog
+     SUBDIR += kdialog
      SUBDIR += keditbookmarks
      SUBDIR += kfind
      SUBDIR += khelpcenter
