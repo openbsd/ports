@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/04/15 16:59:19 jasper Exp $
 
 # as error: ``operation combines symbols in different segments''
 # (known toolchain problem)
@@ -7,10 +7,9 @@ NOT_FOR_ARCHS=	m88k
 COMMENT=	XML-RPC C/C++ client-server implementation
 CATEGORIES=	net devel textproc
 
-V=		1.39.12
+V=		1.39.13
 DISTNAME=	xmlrpc-c-${V}
 FIX_EXTRACT_PERMISSIONS=Yes
-REVISION=	0
 
 EXTRACT_SUFX=	.tgz
 
