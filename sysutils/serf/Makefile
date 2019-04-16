@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/03 08:08:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2019/04/16 08:14:43 ajacoutot Exp $
 
 COMMENT=		decentralized service discovery and orchestration
 
-GH_TAGNAME=		v0.8.2
+GH_TAGNAME=		v0.8.3
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		serf
 PKGNAME=		${GH_ACCOUNT}-${DISTNAME}
