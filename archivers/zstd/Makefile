@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/12/28 19:28:37 bket Exp $
+# $OpenBSD: Makefile,v 1.23 2019/04/16 03:52:47 bcallah Exp $
 
 COMMENT =		zstandard fast real-time compression algorithm
 
@@ -30,8 +30,14 @@ MAKE_ENV =		CC="${CC}" \
 			CPPFLAGS="-I${WRKSRC}/lib -I${WRKSRC}/lib/dictBuilder -I${LOCALBASE}/include" \
 			CXX="${CXX}" \
 			CXXFLAGS="${CXXFLAGS}" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 			LIBzstd_VERSION="${LIBzstd_VERSION}"
+
+.if ${MACHINE_ARCH:Mhppa}
+WANTLIB +=		atomic
+LDFLAGS +=		-latomic
+.endif
+
 FAKE_FLAGS =		PREFIX="${PREFIX}"
 
 USE_GMAKE =		Yes
