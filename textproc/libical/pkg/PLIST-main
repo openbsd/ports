@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2018/03/01 10:52:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2019/04/16 08:08:37 ajacoutot Exp $
 @pkgpath textproc/libical
 include/libical/
 include/libical/ical.h
@@ -74,4 +74,5 @@ lib/libicalss_cxx.a
 lib/libicalvcal.a
 @lib lib/libicalvcal.so.${LIBicalvcal_VERSION}
 lib/pkgconfig/libical.pc
+share/gir-1.0/
 share/gir-1.0/libical-${V}.gir

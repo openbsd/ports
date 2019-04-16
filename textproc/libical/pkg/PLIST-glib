@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-glib,v 1.4 2018/02/18 08:53:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST-glib,v 1.5 2019/04/16 08:08:37 ajacoutot Exp $
 include/libical-glib/
 include/libical-glib/i-cal-array.h
 include/libical-glib/i-cal-attach.h
@@ -40,7 +40,6 @@ lib/girepository-1.0/ICalGLib-3.0.typelib
 lib/libical-glib.a
 @lib lib/libical-glib.so.${LIBical-glib_VERSION}
 lib/pkgconfig/libical-glib.pc
-share/gir-1.0/
 share/gir-1.0/ICalGLib-3.0.gir
 share/vala/
 share/vala/vapi/
