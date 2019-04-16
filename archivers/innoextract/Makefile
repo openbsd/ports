@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2018/12/13 19:53:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/04/16 20:19:01 sthen Exp $
 
 COMMENT=	unpack Inno Setup installers
 
 DISTNAME=	innoextract-1.7
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	archivers
 HOMEPAGE=	https://constexpr.org/innoextract/
 
 MASTER_SITES=	${HOMEPAGE}files/
-
-MAINTAINER=	Donovan Watteau <tsoomi@gmail.com>
 
 # zlib/libpng
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	boost_filesystem-mt boost_iostreams-mt boost_program_options-mt
 WANTLIB+=	c iconv lzma m pthread ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc
 
 LIB_DEPENDS=	archivers/xz \
 		converters/libiconv \

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/11 19:59:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/16 20:19:01 sthen Exp $
 
 COMMENT=	create MusicBrainz DiscIDs from audio CDs
 
 DISTNAME=	libdiscid-0.6.1
 CATEGORIES=	audio
+REVISION=	0
 
 SHARED_LIBS +=	discid 0.0      # 0.0
-
-MAINTAINER=	Donovan Watteau <tsoomi@gmail.com>
 
 HOMEPAGE=	https://musicbrainz.org/doc/libdiscid/
 

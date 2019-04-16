@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/04/16 20:19:01 sthen Exp $
 
 COMMENT=	clone of the ex/vi text editor
 
 DISTNAME=	elvis-2.2_0
 PKGNAME=	${DISTNAME:S/_/./}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	editors
 HOMEPAGE=	http://elvis.the-little-red-haired-girl.org/
-
-MAINTAINER=	Donovan Watteau <tsoomi@gmail.com>
 
 # Clarified Artistic License
 PERMIT_PACKAGE_CDROM=	Yes

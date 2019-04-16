@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/28 20:58:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/16 20:19:01 sthen Exp $
 
 COMMENT=		command-line FLAC player
 
 DISTNAME=		flac123-0.0.12
 CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=flac-tools/}
+REVISION=		0
 
 HOMEPAGE=		http://flac-tools.sourceforge.net/
-
-MAINTAINER=		Donovan Watteau <tsoomi@gmail.com>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

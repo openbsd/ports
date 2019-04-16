@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/08/21 14:43:23 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/16 20:19:02 sthen Exp $
 
 COMMENT=	check and label FAT file systems
 
 V=		4.1
 DISTNAME=	dosfstools-${V}
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 CATEGORIES=	sysutils
 HOMEPAGE=	https://github.com/dosfstools/dosfstools
-
-MAINTAINER=	Donovan Watteau <tsoomi@gmail.com>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes

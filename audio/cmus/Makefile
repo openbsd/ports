@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/12/05 20:19:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/04/16 20:19:01 sthen Exp $
 
 COMMENT-main=		ncurses-based music player
 COMMENT-ffmpeg=		ffmpeg input plugin for cmus (.aac, .mp4...)
@@ -7,7 +7,7 @@ V=			2.7.1
 DISTNAME=		cmus-${V}
 PKGNAME-main=		${PKGNAME}
 PKGNAME-ffmpeg=		cmus-ffmpeg-${V}
-REVISION=		5
+REVISION=		6
 
 GH_ACCOUNT=		cmus
 GH_PROJECT=		cmus
@@ -15,8 +15,6 @@ GH_TAGNAME=		v${V}
 
 CATEGORIES=		audio
 HOMEPAGE=		https://cmus.github.io/
-
-MAINTAINER=		Donovan Watteau <tsoomi@gmail.com>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

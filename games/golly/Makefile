@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2019/01/16 19:47:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2019/04/16 20:19:01 sthen Exp $
 
 COMMENT =	game of life simulator
 
 PKGNAME =	golly-3.2
-REVISION =	1
+REVISION =	2
 DISTNAME =	${PKGNAME}-src
 WRKSRC =	${WRKDIST}/gui-wx/configure
 CATEGORIES =	games math
-MAINTAINER =	Donovan Watteau <tsoomi@gmail.com>
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=golly/}
 
