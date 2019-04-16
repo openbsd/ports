@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2019/04/03 09:52:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2019/04/16 08:13:52 ajacoutot Exp $
 
 COMMENT=		next-generation build system
 
@@ -34,20 +34,22 @@ PATCH_STRIP=		-p0 -b
 # regression tests need to run as root
 TEST_IS_INTERACTIVE=	Yes
 
-# XXX TODO ./test cases/common/190 openmp
+# XXX https://github.com/mesonbuild/meson/issues/5218
+# test_meson_installed (__main__.CommandTests) ... warning: no directories found matching 'syntax-highlighting'
+# test_objc_cpp_detection (__main__.FailureTests) ... skipped "objc and objcpp found, can't test detection failure"
 # test_d_compiler (__main__.NativeFileTests) ... skipped 'No d compiler found.'
+# test_fortran_compiler (__main__.NativeFileTests) ... skipped 'No alternate Fortran implementation.'
+# test_coverage (__main__.LinuxlikeTests) ... skipped 'gcovr not found'
 # test_swift_compiler (__main__.NativeFileTests) ... skipped 'No swift compiler found.'
 TEST_DEPENDS=		${RUN_DEPENDS} \
 			devel/git \
 			devel/jdk/11 \
 			devel/mercurial \
-			devel/sdl2 \
 			g95->=8,<9:lang/gcc/8,-f95 \
 			lang/mono \
 			lang/rust \
 			lang/vala \
-			shells/bash \
-			x11/wxWidgets
+			shells/bash
 
 # clang-format
 TEST_DEPENDS +=		devel/llvm
