@@ -1,0 +1,10 @@
+Pixiewps is a tool written in C used to bruteforce offline the WPS PIN
+exploiting the low or non-existing entropy of some software
+implementations, the so-called "pixie-dust attack" discovered by
+Dominique Bongard in summer 2014. It is meant for educational purposes
+only.
+
+As opposed to the traditional online brute-force attack, implemented in
+tools like Reaver or Bully which aim to recover the pin in a few hours,
+this method can get the PIN in only a matter of seconds or minutes,
+depending on the target, if vulnerable.
