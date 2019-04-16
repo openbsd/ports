@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/01/02 12:44:07 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2019/04/16 20:13:09 landry Exp $
 
 COMMENT =	minimalistic GIS on top of spatialite and rasterlite
 PROJECT =	spatialite_gis
@@ -27,6 +27,8 @@ WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0
 WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
+
+MAKE_ENV =	CXXFLAGS=-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{pixmaps,applications}

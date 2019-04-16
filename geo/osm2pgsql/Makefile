@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/04/16 20:13:09 landry Exp $
 
 COMMENT =		OSM data to PostgreSQL converter
 
@@ -45,10 +45,12 @@ MODPY_ADJ_FILES =	tests/regression-test.py
 MODLUA_VERSION =	5.2
 MODLUA_SA =		Yes
 
+# https://github.com/openstreetmap/osm2pgsql/issues/922 for proj6
 CONFIGURE_ARGS =	-DBUILD_TESTS=ON \
 			-DEXTERNAL_LIBOSMIUM=ON \
 			-DEXTERNAL_PROTOZERO=ON \
 			-DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include/utfcpp \
+				-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1 \
 				${CXXFLAGS}"
 
 # bump postgresql,-server limits according to its README otherwise some

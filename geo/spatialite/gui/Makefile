@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/01/08 19:13:56 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2019/04/16 20:13:09 landry Exp $
 
 COMMENT =	GUI for spatialite
 DISTNAME =	spatialite_gui-1.7.1
@@ -28,7 +28,7 @@ WANTLIB += xcb xcb-render xcb-shm xml2 z
 COMPILER =		base-clang ports-gcc base-gcc
 
 # so that it finds all libs without rpath..
-CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 post-install:

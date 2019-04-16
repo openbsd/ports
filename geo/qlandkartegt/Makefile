@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/03/18 13:09:28 cwen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/04/16 20:13:09 landry Exp $
 
 COMMENT =	garmin GPS map management tool
 
@@ -31,7 +31,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		geo/garmindev \
 		geo/gpsbabel
 
-CONFIGURE_ARGS =	-DQK_QT5_PORT=No
+CONFIGURE_ARGS =	-DQK_QT5_PORT=No \
+			-DCMAKE_CXX_FLAGS=-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
 
 post-extract:
 	@find ${WRKDIST} -name *.orig -exec rm {} \;

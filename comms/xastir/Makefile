@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2019/04/16 20:13:09 landry Exp $
 
 COMMENT=	X amateur station tracking and info reporting
 
@@ -26,6 +26,8 @@ MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 .if ${MACHINE} == "sparc64"
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -fno-tree-ter"
 .endif
+# https://github.com/Xastir/Xastir/issues/47 proj 6
+CONFIGURE_ENV +=	CFLAGS=-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
 
 CONFIGURE_ARGS=		--with-shapelib					\
 			--with-pcre					\

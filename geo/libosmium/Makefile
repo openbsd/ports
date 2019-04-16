@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/29 08:11:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/16 20:13:09 landry Exp $
 
 COMMENT =	fast, flexible library for working with OpenStreetMap data
 
@@ -24,6 +24,9 @@ BUILD_DEPENDS =	devel/boost \
 		devel/sparsehash \
 		geo/gdal \
 		geo/geos
+
+# https://github.com/osmcode/libosmium/issues/277
+CXXFLAGS+=-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
 
 # include/osmium/io/detail/opl_parser_functions.hpp
 # #include <utf8.h>

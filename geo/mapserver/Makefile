@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2019/02/23 09:00:19 landry Exp $
+# $OpenBSD: Makefile,v 1.61 2019/04/16 20:13:09 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -perl -python
 
@@ -73,6 +73,11 @@ CONFIGURE_ARGS +=	-DPYTHON_EXECUTABLE=${MODPY_BIN} \
 			-DWITH_SOS=1 \
 			-DWITH_PYTHON=1 \
 			-DWITH_PERL=1
+
+# https://github.com/mapserver/mapserver/issues/5766
+# mapserver builds cpp and c files so both are needed..
+CFLAGS+=-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
+CXXFLAGS+=-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
 
 #CONFIGURE_ARGS += -DPHP5_CONFIG_EXECUTABLE=${LOCALBASE}/bin/php-config-${MODPHP_VERSION} \
 #			-DWITH_PHP=1
