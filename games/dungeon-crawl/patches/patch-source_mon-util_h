@@ -1,0 +1,25 @@
+$OpenBSD: patch-source_mon-util_h,v 1.1 2019/04/16 16:09:45 cwen Exp $
+
+ppc, arm: fix build where char is unsigned by default
+
+Index: source/mon-util.h
+--- source/mon-util.h.orig
++++ source/mon-util.h
+@@ -115,7 +115,7 @@ struct monsterentry
+ 
+     unsigned short charclass PACKED;     //
+ 
+-    char holiness PACKED;       // -1=holy,0=normal,1=undead,2=very very evil
++    signed char holiness PACKED;       // -1=holy,0=normal,1=undead,2=very very evil
+ 
+     short resist_magic PACKED;  // (positive is ??)
+     // max damage in a turn is total of these four?
+@@ -144,7 +144,7 @@ struct monsterentry
+     // 0=no zombie, 1=small zombie (z) 107, 2=_BIG_ zombie (Z) 108
+     char zombie_size PACKED;
+   // 0-12: see above, -1=random one of (0-7)
+-    char shouts PACKED;
++    signed char shouts PACKED;
+   // AI things?
+     char intel PACKED;          // 0=none, 1=worst...4=best
+ 

@@ -1,0 +1,18 @@
+$OpenBSD: patch-source_direct_cc,v 1.1 2019/04/16 16:09:45 cwen Exp $
+
+ppc, arm: fix the build where char is unsigned by default
+
+Index: source/direct.cc
+--- source/direct.cc.orig
++++ source/direct.cc
+@@ -44,8 +44,8 @@
+ 
+ // x and y offsets in the following order:
+ // SW, S, SE, W, E, NW, N, NE
+-static const char xcomp[9] = { -1, 0, 1, -1, 0, 1, -1, 0, 1 };
+-static const char ycomp[9] = { 1, 1, 1, 0, 0, 0, -1, -1, -1 };
++static const signed char xcomp[9] = { -1, 0, 1, -1, 0, 1, -1, 0, 1 };
++static const signed char ycomp[9] = { 1, 1, 1, 0, 0, 0, -1, -1, -1 };
+ static const char dirchars[19] = { "b1j2n3h4.5l6y7k8u9" };
+ static const char DOSidiocy[10] = { "OPQKSMGHI" };
+ static const char *aim_prompt = "Aim (move cursor or -/+/=, change mode with CTRL-F, select with . or >)";
