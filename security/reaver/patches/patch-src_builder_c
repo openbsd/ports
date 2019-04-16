@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_builder_c,v 1.1.1.1 2019/04/16 20:45:43 sebastia Exp $
+
+no need to build radio_tap_header on OpenBSD, it's 
+automatically there and just fine
+
+Index: src/builder.c
+--- src/builder.c.orig
++++ src/builder.c
+@@ -36,6 +36,8 @@
+ 
+ size_t build_radio_tap_header(struct radio_tap_header *rt_header)
+ {
++	// Seems we don't really need that
++	return 0;
+ 	memcpy(rt_header, "\0\0" "\x08\0" "\0\0\0\0", 8);
+ 	return sizeof(*rt_header);
+ }

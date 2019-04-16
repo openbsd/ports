@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_iface_c,v 1.1.1.1 2019/04/16 20:45:43 sebastia Exp $
+
+Index: src/iface.c
+--- src/iface.c.orig
++++ src/iface.c
+@@ -32,14 +32,18 @@
+  */
+ 
+ #include "iface.h"
++#ifndef __OpenBSD__
+ #include "lwe/iwlib.h"
++#else
++#include <sys/wait.h>
++#endif
+ #include "globule.h"
+ #include <net/if.h>
+ #include <netinet/in.h>
+ #include <sys/ioctl.h>
+ #include <stdlib.h>
+ 
+-#if defined(__FreeBSD__) || defined(__APPLE__)
++#if defined(__FreeBSD__) || defined(__APPLE__) || defined(__OpenBSD__)
+ #include <ifaddrs.h>
+ #include <net/if_dl.h>
+ int read_iface_mac() {
+@@ -141,7 +145,7 @@ int next_channel()
+ }
+ 
+ /* Sets the 802.11 channel for the selected interface */
+-#ifdef __APPLE__
++#if defined (__APPLE__) || defined (__OpenBSD__)
+ int change_channel(int channel)
+ {
+ 	cprintf(VERBOSE, "[+] Switching %s to channel %d\n", get_iface(), channel);

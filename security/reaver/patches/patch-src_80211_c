@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_80211_c,v 1.1.1.1 2019/04/16 20:45:43 sebastia Exp $
+
+radio_tap header is somehow automatically included in OpenBSD, so no
+need to construct and account for it
+
+Index: src/80211.c
+--- src/80211.c.orig
++++ src/80211.c
+@@ -321,7 +321,7 @@ static void deauthenticate(void)
+         dot11_frame_len = build_dot11_frame_header(&dot11_frame, FC_DEAUTHENTICATE);
+ 	packet_len = radio_tap_len + dot11_frame_len + DEAUTH_REASON_CODE_SIZE;
+ 
+-	unsigned char packet[sizeof radio_tap + sizeof dot11_frame + DEAUTH_REASON_CODE_SIZE];
++	unsigned char packet[sizeof dot11_frame + DEAUTH_REASON_CODE_SIZE];
+ 	assert(sizeof packet == packet_len);
+ 
+ 	memcpy(packet, &radio_tap, radio_tap_len);
+@@ -347,8 +347,7 @@ static void authenticate(void)
+ 
+ 	packet_len = radio_tap_len + dot11_frame_len + management_frame_len;
+ 
+-	unsigned char packet[ sizeof (struct radio_tap_header)
+-			    + sizeof (struct dot11_frame_header)
++	unsigned char packet[sizeof (struct dot11_frame_header)
+ 			    + sizeof (struct authentication_management_frame)];
+ 
+ 	assert(packet_len == sizeof packet);

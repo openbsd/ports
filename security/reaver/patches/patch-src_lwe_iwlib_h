@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_lwe_iwlib_h,v 1.1.1.1 2019/04/16 20:45:43 sebastia Exp $
+
+Index: src/lwe/iwlib.h
+--- src/lwe/iwlib.h.orig
++++ src/lwe/iwlib.h
+@@ -33,7 +33,12 @@
+ #include <string.h>
+ #include <unistd.h>
+ #include <netdb.h>		/* gethostbyname, getnetbyname */
++#ifndef __OpenBSD__
+ #include <net/ethernet.h>	/* struct ether_addr */
++#else
++#include <net/if_arp.h>
++#include <netinet/if_ether.h>	/* struct ether_addr */
++#endif
+ #include <sys/time.h>		/* struct timeval */
+ #include <unistd.h>
+ 
