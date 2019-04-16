@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.539 2019/04/03 05:03:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.540 2019/04/16 20:48:28 sebastia Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -256,6 +256,7 @@
      SUBDIR += pgpdump
      SUBDIR += pidgin-otr
      SUBDIR += pinentry,
+     SUBDIR += pixiewps
      SUBDIR += plaso
      SUBDIR += polarssl
      SUBDIR += portscanner
@@ -344,6 +345,7 @@
      SUBDIR += radiusniff
      SUBDIR += rarcrack
      SUBDIR += rdp
+     SUBDIR += reaver
      SUBDIR += recon-ng
      SUBDIR += regripper
      SUBDIR += reop
