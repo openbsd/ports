@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2019/03/31 22:27:47 phessler Exp $
+# $OpenBSD: Makefile,v 1.8 2019/04/16 07:56:26 ajacoutot Exp $
 
 COMMENT=	small and fast AV1 decoder
 
 VER=		0.2.1
 DISTNAME=	dav1d-${VER}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://code.videolan.org/videolan/dav1d/-/archive/${VER}/
 EXTRACT_SUFX=	.tar.bz2
@@ -29,7 +29,7 @@ COMPILER_LANGS=	c
 BUILD_DEPENDS+=	devel/nasm
 .endif
 
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "aarch64"
+.if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=-Dbuild_asm=false
 .endif
 
