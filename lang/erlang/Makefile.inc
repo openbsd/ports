@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.17 2018/06/02 14:03:24 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.18 2019/04/16 11:40:17 sthen Exp $
 
 COMMENT ?=	real-time, concurrent and distributed functional language
 
@@ -47,27 +47,24 @@ MAKE_ENV +=	DESTDIR=$(DESTDIR)
 NO_TEST ?=	Yes
 
 .for _n _v in ${ERL_VERSIONS}
-${_n}=${_v}
-${_n:S/_VSN//}=${_n:S/_VSN//:L}-${_v}
-SUBST_VARS+=${_n:S/_VSN//}
+${_n} =		${_v}
+ERL_${_n:S/_VSN//} = ${_n:S/_VSN//:L}-${_v}
+SUBST_VARS +=	ERL_${_n:S/_VSN//}
 .endfor
 
-# XXX COMPILER var clashes with the clang selection mechanism
-# fortunately erlang doesn't care, so just set CHOSEN_COMPILER to something
-# to avoid the mechanism entirely
-CHOSEN_COMPILER = irrelevant
+COMPILER=	base-clang ports-gcc
 
-SUBST_VARS+=SYSTEM_VSN MAJ_V
+SUBST_VARS+=	SYSTEM_VSN MAJ_V
 
 # special cases
-EI=		erl_interface-${EI_VSN}
-COSEVENT=	cosEvent-${COSEVENT_VSN}
-COSEVENTDOMAIN=	cosEventDomain-${COSEVENTDOMAIN_VSN}
-COSFILETRANSFER=cosFileTransfer-${COSFILETRANSFER_VSN}
-COSNOTIFICATION=cosNotification-${COSNOTIFICATION_VSN}
-COSPROPERTY=	cosProperty-${COSPROPERTY_VSN}
-COSTIME=	cosTime-${COSTIME_VSN}
-COSTRANSACTIONS=cosTransactions-${COSTRANSACTIONS_VSN}
+ERL_EI=			erl_interface-${EI_VSN}
+ERL_COSEVENT=		cosEvent-${COSEVENT_VSN}
+ERL_COSEVENTDOMAIN=	cosEventDomain-${COSEVENTDOMAIN_VSN}
+ERL_COSFILETRANSFER=	cosFileTransfer-${COSFILETRANSFER_VSN}
+ERL_COSNOTIFICATION=	cosNotification-${COSNOTIFICATION_VSN}
+ERL_COSPROPERTY=	cosProperty-${COSPROPERTY_VSN}
+ERL_COSTIME=		cosTime-${COSTIME_VSN}
+ERL_COSTRANSACTIONS=cosTransactions-${COSTRANSACTIONS_VSN}
 
 # Special maintainer target, scan through vsn.mk files and build 'ERL_VERSIONS'
 # list
@@ -88,10 +85,10 @@ pre-configure:
 		     ${WRKSRC}/lib/wx/configure.in
 
 post-install:
-	ln -sf ../lib/erlang${MAJ_V}/lib/${EI}/bin/erl_call ${PREFIX}/bin/erl_call${MAJ_V}
+	ln -sf ../lib/erlang${MAJ_V}/lib/${ERL_EI}/bin/erl_call ${PREFIX}/bin/erl_call${MAJ_V}
 	tar zxf ${FULLDISTDIR}/otp_doc_man_${V}.tar.gz -C ${DOC_DIR}
 	rm -r ${DOC_DIR}/man/man7/*MIB.7
 	rm -r ${DOC_DIR}/man/man7/*TM.7
-	if [ ! -x ${PREFIX}/lib/erlang${MAJ_V}/${ERTS}/bin/beam.smp ]; then \
-		cp -v ${PREFIX}/lib/erlang${MAJ_V}/${ERTS}/bin/beam \
-		${PREFIX}/lib/erlang${MAJ_V}/${ERTS}/bin/beam.smp; fi
+	if [ ! -x ${PREFIX}/lib/erlang${MAJ_V}/${ERL_ERTS}/bin/beam.smp ]; then \
+		cp -v ${PREFIX}/lib/erlang${MAJ_V}/${ERL_ERTS}/bin/beam \
+		${PREFIX}/lib/erlang${MAJ_V}/${ERL_ERTS}/bin/beam.smp; fi

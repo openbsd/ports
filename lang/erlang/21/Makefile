@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/01/02 12:44:07 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/16 11:40:18 sthen Exp $
 
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
 
@@ -7,12 +7,14 @@ COMMENT-wx=	WxWidgets bindings for Erlang
 
 V=		21.2
 MAJ_V=		21
-REVISION=	0
 EPOCH=		0
 DISTNAME=	otp_src_$V
 PKGNAME=	erlang-$V
 PKGNAME-main=	erlang-$V
 PKGNAME-wx=	erlang-wx-$V
+
+REVISION-main=	1
+REVISION-wx=	1
 
 VERSION_SPEC=	>=21v0,<22v0
 PKGSPEC-main=	erlang-${VERSION_SPEC}
