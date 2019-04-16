@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/16 00:29:26 jturner Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/16 01:56:16 bcallah Exp $
 
 COMMENT =	functional and imperative programming language
 CATEGORIES =	lang
@@ -14,6 +14,10 @@ MAINTAINER =	James Turner <james@calminferno.net>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m
+
+# Needs TLS
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	FLAGS="${CFLAGS}"
