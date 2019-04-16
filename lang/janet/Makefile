@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/13 01:14:46 jturner Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/16 00:29:26 jturner Exp $
 
 COMMENT =	functional and imperative programming language
 CATEGORIES =	lang
 
 GH_ACCOUNT =	janet-lang
 GH_PROJECT =	janet
-GH_TAGNAME =	v0.4.0
+GH_TAGNAME =	v0.4.1
 
 HOMEPAGE =	https://www.janet-lang.org/
 MAINTAINER =	James Turner <james@calminferno.net>
