@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2018/09/14 17:52:08 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2019/04/17 19:43:32 solene Exp $
 
 COMMENT=		SysV mail/BSD Mail/POSIX mailx: send and receive mail
 
-DISTNAME=		s-nail-14.9.11
+DISTNAME=		s-nail-14.9.13
 CATEGORIES=		mail
 HOMEPAGE=		https://www.sdaoden.eu/code.html\#s-mailx
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c crypto curses iconv ssl
 
 MASTER_SITES=		https://ftp.sdaoden.eu/
-MAINTAINER=		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
+MAINTAINER=		Steffen Nurpmeso <steffen@sdaoden.eu>
 
 FLAVORS=		idna
 FLAVOR?=
