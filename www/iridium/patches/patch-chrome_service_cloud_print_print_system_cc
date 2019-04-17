@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_service_cloud_print_print_system_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-chrome_service_cloud_print_print_system_cc,v 1.2 2019/04/17 11:48:53 robert Exp $
 
 Index: chrome/service/cloud_print/print_system.cc
 --- chrome/service/cloud_print/print_system.cc.orig

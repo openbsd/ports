@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_gfx_gpu_memory_buffer_h,v 1.3 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-ui_gfx_gpu_memory_buffer_h,v 1.4 2019/04/17 11:48:55 robert Exp $
 
 Index: ui/gfx/gpu_memory_buffer.h
 --- ui/gfx/gpu_memory_buffer.h.orig
 +++ ui/gfx/gpu_memory_buffer.h
-@@ -15,7 +15,7 @@
+@@ -16,7 +16,7 @@
  #include "ui/gfx/geometry/rect.h"
  #include "ui/gfx/gfx_export.h"
  
@@ -13,7 +13,7 @@ Index: ui/gfx/gpu_memory_buffer.h
  #elif defined(OS_MACOSX) && !defined(OS_IOS)
  #include "ui/gfx/mac/io_surface.h"
 @@ -65,7 +65,7 @@ struct GFX_EXPORT GpuMemoryBufferHandle {
-   base::SharedMemoryHandle handle;
+   base::UnsafeSharedMemoryRegion region;
    uint32_t offset;
    int32_t stride;
 -#if defined(OS_LINUX)

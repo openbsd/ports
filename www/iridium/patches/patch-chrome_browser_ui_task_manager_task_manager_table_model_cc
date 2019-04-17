@@ -1,31 +1,32 @@
-$OpenBSD: patch-chrome_browser_ui_task_manager_task_manager_table_model_cc,v 1.5 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_task_manager_task_manager_table_model_cc,v 1.6 2019/04/17 11:48:53 robert Exp $
+
 Index: chrome/browser/ui/task_manager/task_manager_table_model.cc
 --- chrome/browser/ui/task_manager/task_manager_table_model.cc.orig
 +++ chrome/browser/ui/task_manager/task_manager_table_model.cc
-@@ -457,7 +457,7 @@ base::string16 TaskManagerTableModel::GetText(int row,
+@@ -430,7 +430,7 @@ base::string16 TaskManagerTableModel::GetText(int row,
            ? stringifier_->backgrounded_string()
            : stringifier_->foregrounded_string();
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
      case IDS_TASK_MANAGER_OPEN_FD_COUNT_COLUMN: {
        const int fd_count = observed_task_manager()->GetOpenFdCount(tasks_[row]);
        return fd_count >= 0 ? base::FormatNumber(fd_count)
-@@ -623,7 +623,7 @@ int TaskManagerTableModel::CompareValues(int row1,
+@@ -590,7 +590,7 @@ int TaskManagerTableModel::CompareValues(int row1,
        return BooleanCompare(is_proc1_bg, is_proc2_bg);
      }
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
      case IDS_TASK_MANAGER_OPEN_FD_COUNT_COLUMN: {
        const int proc1_fd_count =
            observed_task_manager()->GetOpenFdCount(tasks_[row1]);
-@@ -797,7 +797,7 @@ void TaskManagerTableModel::UpdateRefreshTypes(int col
+@@ -760,7 +760,7 @@ void TaskManagerTableModel::UpdateRefreshTypes(int col
        type = REFRESH_TYPE_KEEPALIVE_COUNT;
        break;
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
      case IDS_TASK_MANAGER_OPEN_FD_COUNT_COLUMN:
        type = REFRESH_TYPE_FD_COUNT;
        break;

@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_libEGL_cpp,v 1.5 2018/11/20 19:10:32 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_libEGL_cpp,v 1.6 2019/04/17 11:48:55 robert Exp $
 
 Index: third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp
 --- third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp.orig

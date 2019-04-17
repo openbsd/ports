@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_corewm_tooltip_aura_cc,v 1.4 2018/05/04 07:14:58 robert Exp $
+$OpenBSD: patch-ui_views_corewm_tooltip_aura_cc,v 1.5 2019/04/17 11:48:55 robert Exp $
 --- ui/views/corewm/tooltip_aura.cc.orig.port	Fri Dec  2 00:02:39 2016
 +++ ui/views/corewm/tooltip_aura.cc	Fri Dec  2 17:44:57 2016
 @@ -34,7 +34,7 @@ const int kCursorOffsetY = 15;

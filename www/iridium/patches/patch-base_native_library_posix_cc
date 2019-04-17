@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_native_library_posix_cc,v 1.5 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-base_native_library_posix_cc,v 1.6 2019/04/17 11:48:53 robert Exp $
 Index: base/native_library_posix.cc
 --- base/native_library_posix.cc.orig
 +++ base/native_library_posix.cc

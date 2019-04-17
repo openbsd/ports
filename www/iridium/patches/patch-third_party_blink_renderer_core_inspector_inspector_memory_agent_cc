@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_core_inspector_inspector_memory_agent_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_core_inspector_inspector_memory_agent_cc,v 1.2 2019/04/17 11:48:54 robert Exp $
 
 Index: third_party/blink/renderer/core/inspector/inspector_memory_agent.cc
 --- third_party/blink/renderer/core/inspector/inspector_memory_agent.cc.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_autofill_core_browser_autofill_experiments_h,v 1.2 2018/11/20 19:10:32 robert Exp $
+$OpenBSD: patch-components_autofill_core_browser_autofill_experiments_h,v 1.3 2019/04/17 11:48:54 robert Exp $
 
 Index: components/autofill/core/browser/autofill_experiments.h
 --- components/autofill/core/browser/autofill_experiments.h.orig
@@ -12,27 +12,9 @@ Index: components/autofill/core/browser/autofill_experiments.h
  extern const base::Feature kAutofillDropdownLayoutExperiment;
  extern const char kAutofillDropdownLayoutParameterName[];
  extern const char kAutofillDropdownLayoutParameterLeadingIcon[];
-@@ -31,7 +31,7 @@ extern const char kAutofillDropdownLayoutParameterTrai
- extern const char kAutofillDropdownLayoutParameterTwoLinesLeadingIcon[];
- #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
- 
--#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
- extern const base::Feature kAutofillPrimaryInfoStyleExperiment;
- extern const char kAutofillForcedFontWeightParameterName[];
- extern const char kAutofillForcedFontWeightParameterMedium[];
-@@ -66,7 +66,7 @@ bool OfferStoreUnmaskedCards();
+@@ -59,7 +59,7 @@ bool OfferStoreUnmaskedCards(bool is_off_the_record);
  // Returns whether the account of the active signed-in user should be used.
  bool ShouldUseActiveSignedInAccount();
- 
--#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
- enum class ForcedFontWeight {
-   kDefault,  // No change to the font weight.
-   kMedium,
-@@ -80,7 +80,7 @@ enum class ForcedFontWeight {
- ForcedFontWeight GetForcedFontWeight();
- #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
  
 -#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)

@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_shell_browser_shell_browser_main_parts_cc,v 1.10 2018/11/20 19:10:32 robert Exp $
+$OpenBSD: patch-content_shell_browser_shell_browser_main_parts_cc,v 1.11 2019/04/17 11:48:54 robert Exp $
 
 Index: content/shell/browser/shell_browser_main_parts.cc
 --- content/shell/browser/shell_browser_main_parts.cc.orig

@@ -1,0 +1,13 @@
+$OpenBSD: patch-third_party_opus_BUILD_gn,v 1.1 2019/04/17 11:48:54 robert Exp $
+
+Index: third_party/opus/BUILD.gn
+--- third_party/opus/BUILD.gn.orig
++++ third_party/opus/BUILD.gn
+@@ -39,7 +39,6 @@ config("opus_private_config") {
+     # Prefer alloca() over variable length arrays which are often inefficient;
+     # the opus code will automatically handle this correctly per-platform.
+     "USE_ALLOCA",
+-    "HAVE_ALLOCA_H",
+   ]
+ 
+   include_dirs = [

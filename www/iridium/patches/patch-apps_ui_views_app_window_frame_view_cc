@@ -1,4 +1,4 @@
-$OpenBSD: patch-apps_ui_views_app_window_frame_view_cc,v 1.7 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-apps_ui_views_app_window_frame_view_cc,v 1.8 2019/04/17 11:48:53 robert Exp $
 --- apps/ui/views/app_window_frame_view.cc.orig.port	Sat Aug 22 21:01:50 2015
 +++ apps/ui/views/app_window_frame_view.cc	Wed Sep  2 07:31:54 2015
 @@ -132,7 +132,7 @@ gfx::Rect AppWindowFrameView::GetBoundsForClientView()

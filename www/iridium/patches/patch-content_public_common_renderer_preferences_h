@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_public_common_renderer_preferences_h,v 1.6 2018/11/20 19:10:32 robert Exp $
+$OpenBSD: patch-content_public_common_renderer_preferences_h,v 1.7 2019/04/17 11:48:54 robert Exp $
 Index: content/public/common/renderer_preferences.h
 --- content/public/common/renderer_preferences.h.orig
 +++ content/public/common/renderer_preferences.h

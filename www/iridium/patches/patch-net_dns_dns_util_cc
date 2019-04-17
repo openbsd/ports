@@ -1,8 +1,8 @@
-$OpenBSD: patch-net_dns_dns_util_cc,v 1.7 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-net_dns_dns_util_cc,v 1.8 2019/04/17 11:48:54 robert Exp $
 Index: net/dns/dns_util.cc
 --- net/dns/dns_util.cc.orig
 +++ net/dns/dns_util.cc
-@@ -33,6 +33,8 @@ const int kMaxLabelLength = 63;
+@@ -36,6 +36,8 @@ const uint16_t kFlagNamePointer = 0xc000;
  
  }  // namespace
  

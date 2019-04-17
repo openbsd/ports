@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_service_manager_runner_host_BUILD_gn,v 1.4 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-services_service_manager_runner_host_BUILD_gn,v 1.5 2019/04/17 11:48:54 robert Exp $
 
 Index: services/service_manager/runner/host/BUILD.gn
 --- services/service_manager/runner/host/BUILD.gn.orig
 +++ services/service_manager/runner/host/BUILD.gn
-@@ -31,7 +31,7 @@ source_set("lib") {
+@@ -30,7 +30,7 @@ source_set("lib") {
      "//mojo/public/cpp/system",
    ]
  

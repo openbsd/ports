@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_common_extensions_command_cc,v 1.8 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-chrome_common_extensions_command_cc,v 1.9 2019/04/17 11:48:53 robert Exp $
 Index: chrome/common/extensions/command.cc
 --- chrome/common/extensions/command.cc.orig
 +++ chrome/common/extensions/command.cc
-@@ -311,7 +311,7 @@ std::string Command::CommandPlatform() {
+@@ -309,7 +309,7 @@ std::string Command::CommandPlatform() {
    return values::kKeybindingPlatformMac;
  #elif defined(OS_CHROMEOS)
    return values::kKeybindingPlatformChromeOs;

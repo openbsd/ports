@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_app_shutdown_signal_handlers_posix_cc,v 1.4 2018/11/20 19:10:32 robert Exp $
+$OpenBSD: patch-chrome_app_shutdown_signal_handlers_posix_cc,v 1.5 2019/04/17 11:48:53 robert Exp $
 
 Index: chrome/app/shutdown_signal_handlers_posix.cc
 --- chrome/app/shutdown_signal_handlers_posix.cc.orig
@@ -7,9 +7,9 @@ Index: chrome/app/shutdown_signal_handlers_posix.cc
    g_pipe_pid = getpid();
    g_shutdown_pipe_read_fd = pipefd[0];
    g_shutdown_pipe_write_fd = pipefd[1];
-+#if defined(OS_OPENBSD) 
-+  // PTHREAD_STACK_MIN causes chromium to crash under FreeBSD,
-+  // we request the default pthread stack size by specifying 0 here.
++#if defined(OS_OPENBSD)
++  // PTHREAD_STACK_MIN causes chromium to crash under FreeBSD,                                                      
++  // we request the default pthread stack size by specifying 0 here.                                                
 +  const size_t kShutdownDetectorThreadStackSize = 0;
 +#else
  #if !defined(ADDRESS_SANITIZER)

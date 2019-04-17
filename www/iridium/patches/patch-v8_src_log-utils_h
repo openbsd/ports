@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_src_log-utils_h,v 1.9 2018/11/05 22:04:40 robert Exp $
+$OpenBSD: patch-v8_src_log-utils_h,v 1.10 2019/04/17 11:48:55 robert Exp $
 Index: v8/src/log-utils.h
 --- v8/src/log-utils.h.orig
 +++ v8/src/log-utils.h

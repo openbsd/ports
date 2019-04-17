@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_cache_h,v 1.2 2018/11/20 19:10:32 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_fonts_font_cache_h,v 1.3 2019/04/17 11:48:54 robert Exp $
 
 Index: third_party/blink/renderer/platform/fonts/font_cache.h
 --- third_party/blink/renderer/platform/fonts/font_cache.h.orig
@@ -21,7 +21,7 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.h
    struct PlatformFallbackFont {
      String name;
      CString filename;
-@@ -291,7 +291,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -294,7 +294,7 @@ class PLATFORM_EXPORT FontCache {
                                     const FontFaceCreationParams&,
                                     CString& name);
  
@@ -30,7 +30,7 @@ Index: third_party/blink/renderer/platform/fonts/font_cache.h
    static AtomicString GetFamilyNameForCharacter(SkFontMgr*,
                                                  UChar32,
                                                  const FontDescription&,
-@@ -327,7 +327,7 @@ class PLATFORM_EXPORT FontCache {
+@@ -330,7 +330,7 @@ class PLATFORM_EXPORT FontCache {
    bool is_test_font_mgr_ = false;
  #endif  // defined(OS_WIN)
  

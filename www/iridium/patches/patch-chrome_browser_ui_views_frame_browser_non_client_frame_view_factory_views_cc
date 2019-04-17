@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_non_client_frame_view_factory_views_cc,v 1.2 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_non_client_frame_view_factory_views_cc,v 1.3 2019/04/17 11:48:53 robert Exp $
 
 Index: chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc
 --- chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc.orig
@@ -12,8 +12,8 @@ Index: chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -34,7 +34,7 @@ BrowserNonClientFrameView* CreateBrowserNonClientFrame
- #endif
+@@ -32,7 +32,7 @@ OpaqueBrowserFrameView* CreateOpaqueBrowserFrameView(
+     BrowserView* browser_view) {
  #if BUILDFLAG(ENABLE_NATIVE_WINDOW_NAV_BUTTONS)
    std::unique_ptr<views::NavButtonProvider> nav_button_provider;
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)

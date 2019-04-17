@@ -1,22 +1,21 @@
-$OpenBSD: patch-content_public_common_content_switches_h,v 1.22 2018/11/20 19:12:31 robert Exp $
+$OpenBSD: patch-content_public_common_content_switches_h,v 1.23 2019/04/17 11:48:54 robert Exp $
 Index: content/public/common/content_switches.h
 --- content/public/common/content_switches.h.orig
 +++ content/public/common/content_switches.h
-@@ -117,6 +117,7 @@ CONTENT_EXPORT extern const char kGpuRasterizationMSAA
+@@ -118,6 +118,8 @@ CONTENT_EXPORT extern const char kGpuRasterizationMSAA
  CONTENT_EXPORT extern const char kEnableLowResTiling[];
  CONTENT_EXPORT extern const char kEnableLCDText[];
  CONTENT_EXPORT extern const char kEnableLogging[];
 +CONTENT_EXPORT extern const char kDisableUnveil[];
++CONTENT_EXPORT extern const char kTrk[];
  CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
  CONTENT_EXPORT extern const char kDisableNv12DxgiVideo[];
  CONTENT_EXPORT extern const char kEnablePinch[];
-@@ -269,7 +270,9 @@ CONTENT_EXPORT extern const char kEnableOSKOverscroll[
+@@ -270,7 +272,7 @@ CONTENT_EXPORT extern const char kEnableOSKOverscroll[
  CONTENT_EXPORT extern const char kDisablePanelFitting[];
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+CONTENT_EXPORT extern const char kTrk[];
-+
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  CONTENT_EXPORT extern const char kEnableSpeechDispatcher[];
  #endif

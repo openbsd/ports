@@ -1,4 +1,4 @@
-$OpenBSD: patch-sandbox_linux_services_init_process_reaper_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-sandbox_linux_services_init_process_reaper_cc,v 1.2 2019/04/17 11:48:54 robert Exp $
 
 Index: sandbox/linux/services/init_process_reaper.cc
 --- sandbox/linux/services/init_process_reaper.cc.orig

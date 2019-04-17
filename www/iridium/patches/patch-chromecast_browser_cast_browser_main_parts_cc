@@ -1,9 +1,9 @@
-$OpenBSD: patch-chromecast_browser_cast_browser_main_parts_cc,v 1.10 2018/11/20 19:10:32 robert Exp $
+$OpenBSD: patch-chromecast_browser_cast_browser_main_parts_cc,v 1.11 2019/04/17 11:48:54 robert Exp $
 
 Index: chromecast/browser/cast_browser_main_parts.cc
 --- chromecast/browser/cast_browser_main_parts.cc.orig
 +++ chromecast/browser/cast_browser_main_parts.cc
-@@ -73,7 +73,7 @@
+@@ -66,7 +66,7 @@
  #include "ui/compositor/compositor_switches.h"
  #include "ui/gl/gl_switches.h"
  
@@ -12,7 +12,7 @@ Index: chromecast/browser/cast_browser_main_parts.cc
  #include <fontconfig/fontconfig.h>
  #include <signal.h>
  #include <sys/prctl.h>
-@@ -246,7 +246,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
+@@ -244,7 +244,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
      {cc::switches::kDisableThreadedAnimation, ""},
  #endif  // defined(OS_ANDROID)
  #endif  // BUILDFLAG(IS_CAST_AUDIO_ONLY)

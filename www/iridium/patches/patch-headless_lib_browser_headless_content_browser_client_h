@@ -1,12 +1,12 @@
-$OpenBSD: patch-headless_lib_browser_headless_content_browser_client_h,v 1.4 2018/11/20 19:10:32 robert Exp $
+$OpenBSD: patch-headless_lib_browser_headless_content_browser_client_h,v 1.5 2019/04/17 11:48:54 robert Exp $
 
 Index: headless/lib/browser/headless_content_browser_client.h
 --- headless/lib/browser/headless_content_browser_client.h.orig
 +++ headless/lib/browser/headless_content_browser_client.h
-@@ -32,7 +32,7 @@ class HeadlessContentBrowserClient : public content::C
-       content::BrowserContext* context,
-       content::StoragePartition* partition,
+@@ -34,7 +34,7 @@ class HeadlessContentBrowserClient : public content::C
        ::storage::OptionalQuotaSettingsCallback callback) override;
+   content::GeneratedCodeCacheSettings GetGeneratedCodeCacheSettings(
+       content::BrowserContext* context) override;
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
    void GetAdditionalMappedFilesForChildProcess(

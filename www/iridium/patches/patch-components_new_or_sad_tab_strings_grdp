@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_new_or_sad_tab_strings_grdp,v 1.5 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-components_new_or_sad_tab_strings_grdp,v 1.6 2019/04/17 11:48:54 robert Exp $
 
 Index: components/new_or_sad_tab_strings.grdp
 --- components/new_or_sad_tab_strings.grdp.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_media_stream_processed_local_audio_source_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-content_renderer_media_stream_processed_local_audio_source_cc,v 1.2 2019/04/17 11:48:54 robert Exp $
 
 Index: content/renderer/media/stream/processed_local_audio_source.cc
 --- content/renderer/media/stream/processed_local_audio_source.cc.orig

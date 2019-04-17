@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_ipc_gfx_param_traits_macros_h,v 1.3 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-ui_gfx_ipc_gfx_param_traits_macros_h,v 1.4 2019/04/17 11:48:55 robert Exp $
 
 Index: ui/gfx/ipc/gfx_param_traits_macros.h
 --- ui/gfx/ipc/gfx_param_traits_macros.h.orig
@@ -13,7 +13,7 @@ Index: ui/gfx/ipc/gfx_param_traits_macros.h
  #endif
  
 @@ -51,7 +51,7 @@ IPC_STRUCT_TRAITS_BEGIN(gfx::GpuMemoryBufferHandle)
-   IPC_STRUCT_TRAITS_MEMBER(handle)
+   IPC_STRUCT_TRAITS_MEMBER(region)
    IPC_STRUCT_TRAITS_MEMBER(offset)
    IPC_STRUCT_TRAITS_MEMBER(stride)
 -#if defined(OS_LINUX)

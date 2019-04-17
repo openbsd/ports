@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_common_common_sandbox_support_linux_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-content_common_common_sandbox_support_linux_cc,v 1.2 2019/04/17 11:48:54 robert Exp $
 
 Index: content/common/common_sandbox_support_linux.cc
 --- content/common/common_sandbox_support_linux.cc.orig

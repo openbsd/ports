@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_json_schema_compiler_model_py,v 1.1 2018/05/04 07:14:58 robert Exp $
+$OpenBSD: patch-tools_json_schema_compiler_model_py,v 1.2 2019/04/17 11:48:55 robert Exp $
 
 Index: tools/json_schema_compiler/model.py
 --- tools/json_schema_compiler/model.py.orig

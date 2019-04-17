@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_base_ime_input_method_initializer_cc,v 1.9 2018/06/06 07:50:55 robert Exp $
+$OpenBSD: patch-ui_base_ime_input_method_initializer_cc,v 1.10 2019/04/17 11:48:55 robert Exp $
 
 Index: ui/base/ime/input_method_initializer.cc
 --- ui/base/ime/input_method_initializer.cc.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.14 2019/03/13 17:24:30 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_prefs_cc,v 1.15 2019/04/17 11:48:53 robert Exp $
 
 Index: chrome/browser/download/download_prefs.cc
 --- chrome/browser/download/download_prefs.cc.orig
@@ -29,7 +29,7 @@ Index: chrome/browser/download/download_prefs.cc
    base::FilePath home_dir = base::GetHomeDir();
    if (download_path == home_dir) {
      return true;
-@@ -145,7 +148,7 @@ DownloadPrefs::DownloadPrefs(Profile* profile) : profi
+@@ -155,7 +158,7 @@ DownloadPrefs::DownloadPrefs(Profile* profile) : profi
                                  GetDefaultDownloadDirectoryForProfile()));
  #endif  // defined(OS_CHROMEOS)
  
@@ -38,7 +38,7 @@ Index: chrome/browser/download/download_prefs.cc
    should_open_pdf_in_system_reader_ =
        prefs->GetBoolean(prefs::kOpenPdfDownloadInSystemReader);
  #endif
-@@ -242,7 +245,7 @@ void DownloadPrefs::RegisterProfilePrefs(
+@@ -252,7 +255,7 @@ void DownloadPrefs::RegisterProfilePrefs(
                                   default_download_path);
    registry->RegisterFilePathPref(prefs::kSaveFileDefaultDirectory,
                                   default_download_path);
@@ -47,7 +47,7 @@ Index: chrome/browser/download/download_prefs.cc
    registry->RegisterBooleanPref(prefs::kOpenPdfDownloadInSystemReader, false);
  #endif
  #if defined(OS_ANDROID)
-@@ -355,7 +358,7 @@ bool DownloadPrefs::IsDownloadPathManaged() const {
+@@ -354,7 +357,7 @@ bool DownloadPrefs::IsDownloadPathManaged() const {
  }
  
  bool DownloadPrefs::IsAutoOpenUsed() const {
@@ -56,7 +56,7 @@ Index: chrome/browser/download/download_prefs.cc
    if (ShouldOpenPdfInSystemReader())
      return true;
  #endif
-@@ -369,7 +372,7 @@ bool DownloadPrefs::IsAutoOpenEnabledBasedOnExtension(
+@@ -368,7 +371,7 @@ bool DownloadPrefs::IsAutoOpenEnabledBasedOnExtension(
      return false;
    DCHECK(extension[0] == base::FilePath::kExtensionSeparator);
    extension.erase(0, 1);
@@ -65,7 +65,7 @@ Index: chrome/browser/download/download_prefs.cc
    if (base::FilePath::CompareEqualIgnoreCase(extension,
                                               FILE_PATH_LITERAL("pdf")) &&
        ShouldOpenPdfInSystemReader())
-@@ -406,7 +409,7 @@ void DownloadPrefs::DisableAutoOpenBasedOnExtension(
+@@ -405,7 +408,7 @@ void DownloadPrefs::DisableAutoOpenBasedOnExtension(
    SaveAutoOpenState();
  }
  
@@ -74,7 +74,7 @@ Index: chrome/browser/download/download_prefs.cc
  void DownloadPrefs::SetShouldOpenPdfInSystemReader(bool should_open) {
    if (should_open_pdf_in_system_reader_ == should_open)
      return;
-@@ -427,7 +430,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
+@@ -426,7 +429,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
  #endif
  
  void DownloadPrefs::ResetAutoOpen() {
@@ -85,7 +85,7 @@ Index: chrome/browser/download/download_prefs.cc
    auto_open_.clear();
 @@ -497,7 +500,13 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
    // Fall back to the default download directory for all other paths.
-   return profile_download_dir;
+   return GetDefaultDownloadDirectoryForProfile();
  #endif
 -  return path;
 +  // If unveil(2) is used, force the file dialog directory to something we

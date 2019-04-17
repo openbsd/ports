@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_font_list_cc,v 1.4 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-ui_gfx_font_list_cc,v 1.5 2019/04/17 11:48:55 robert Exp $
 
 Index: ui/gfx/font_list.cc
 --- ui/gfx/font_list.cc.orig

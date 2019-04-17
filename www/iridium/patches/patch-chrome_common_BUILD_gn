@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_BUILD_gn,v 1.9 2018/11/20 19:10:32 robert Exp $
+$OpenBSD: patch-chrome_common_BUILD_gn,v 1.10 2019/04/17 11:48:53 robert Exp $
 Index: chrome/common/BUILD.gn
 --- chrome/common/BUILD.gn.orig
 +++ chrome/common/BUILD.gn

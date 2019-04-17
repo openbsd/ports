@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_angle_third_party_vulkan-loader_src_loader_loader_c,v 1.1 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-third_party_angle_third_party_vulkan-loader_src_loader_loader_c,v 1.2 2019/04/17 11:48:54 robert Exp $
 
 Index: third_party/angle/third_party/vulkan-loader/src/loader/loader.c
 --- third_party/angle/third_party/vulkan-loader/src/loader/loader.c.orig

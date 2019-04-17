@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_fonts_skia_font_cache_skia_cc,v 1.2 2018/11/20 19:10:32 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_fonts_skia_font_cache_skia_cc,v 1.3 2019/04/17 11:48:54 robert Exp $
 
 Index: third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc
 --- third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc.orig
 +++ third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc
-@@ -80,7 +80,7 @@ AtomicString ToAtomicString(const SkString& str) {
+@@ -60,7 +60,7 @@ AtomicString ToAtomicString(const SkString& str) {
    return AtomicString::FromUTF8(str.c_str(), str.size());
  }
  
@@ -12,7 +12,7 @@ Index: third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc
  // Android special locale for retrieving the color emoji font
  // based on the proposed changes in UTR #51 for introducing
  // an Emoji script code:
-@@ -269,7 +269,7 @@ sk_sp<SkTypeface> FontCache::CreateTypeface(
+@@ -249,7 +249,7 @@ sk_sp<SkTypeface> FontCache::CreateTypeface(
    }
  #endif
  
@@ -21,3 +21,12 @@ Index: third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc
    // On linux if the fontManager has been overridden then we should be calling
    // the embedder provided font Manager rather than calling
    // SkTypeface::CreateFromName which may redirect the call to the default font
+@@ -276,7 +276,7 @@ std::unique_ptr<FontPlatformData> FontCache::CreateFon
+   CString name;
+ 
+   sk_sp<SkTypeface> typeface;
+-#if defined(OS_ANDROID) || defined(OS_LINUX)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+   if (alternate_name == AlternateFontName::kLocalUniqueFace &&
+       RuntimeEnabledFeatures::FontSrcLocalMatchingEnabled()) {
+     typeface = CreateTypefaceFromUniqueName(creation_params, name);

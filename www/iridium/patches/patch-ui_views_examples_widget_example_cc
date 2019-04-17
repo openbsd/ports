@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_examples_widget_example_cc,v 1.8 2018/05/04 07:14:58 robert Exp $
+$OpenBSD: patch-ui_views_examples_widget_example_cc,v 1.9 2019/04/17 11:48:55 robert Exp $
 Index: ui/views/examples/widget_example.cc
 --- ui/views/examples/widget_example.cc.orig
 +++ ui/views/examples/widget_example.cc

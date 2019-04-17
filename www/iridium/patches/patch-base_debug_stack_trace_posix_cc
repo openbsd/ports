@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.14 2018/11/20 19:10:31 robert Exp $
+$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.15 2019/04/17 11:48:53 robert Exp $
 
 Index: base/debug/stack_trace_posix.cc
 --- base/debug/stack_trace_posix.cc.orig
@@ -31,12 +31,12 @@ Index: base/debug/stack_trace_posix.cc
    }
  
    // Opens all object files and caches their file descriptors.
-@@ -812,7 +817,7 @@ StackTrace::StackTrace(size_t count) {
- // NOTE: This code MUST be async-signal safe (it's used by in-process
- // stack dumping signal handler). NO malloc or stdio is allowed here.
+@@ -812,7 +817,7 @@ size_t CollectStackTrace(void** trace, size_t count) {
+   // NOTE: This code MUST be async-signal safe (it's used by in-process
+   // stack dumping signal handler). NO malloc or stdio is allowed here.
  
 -#if !defined(__UCLIBC__) && !defined(_AIX)
 +#if !defined(__UCLIBC__) && !defined(_AIX) && !defined(OS_BSD)
-   count = std::min(arraysize(trace_), count);
- 
    // Though the backtrace API man page does not list any possible negative
+   // return values, we take no chance.
+   return base::saturated_cast<size_t>(backtrace(trace, count));

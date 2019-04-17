@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_download_download_status_updater_cc,v 1.7 2018/05/04 07:14:57 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_status_updater_cc,v 1.8 2019/04/17 11:48:53 robert Exp $
 
 Index: chrome/browser/download/download_status_updater.cc
 --- chrome/browser/download/download_status_updater.cc.orig

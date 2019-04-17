@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_BUILD_gn,v 1.10 2018/11/20 19:10:31 robert Exp $
+$OpenBSD: patch-base_BUILD_gn,v 1.11 2019/04/17 11:48:53 robert Exp $
 
 Index: base/BUILD.gn
 --- base/BUILD.gn.orig
 +++ base/BUILD.gn
-@@ -1182,7 +1182,7 @@ jumbo_component("base") {
+@@ -1185,7 +1185,7 @@ jumbo_component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -12,7 +12,7 @@ Index: base/BUILD.gn
        host_toolchain != "//build/toolchain/cros:host") {
      libs += [ "atomic" ]
    }
-@@ -1208,7 +1208,7 @@ jumbo_component("base") {
+@@ -1211,7 +1211,7 @@ jumbo_component("base") {
          "allocator/allocator_shim_override_glibc_weak_symbols.h",
        ]
        deps += [ "//base/allocator:tcmalloc" ]
@@ -21,7 +21,7 @@ Index: base/BUILD.gn
        sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
      } else if (is_android && use_allocator == "none") {
        sources += [
-@@ -1740,6 +1740,29 @@ jumbo_component("base") {
+@@ -1751,6 +1751,29 @@ jumbo_component("base") {
      }
    }
  
@@ -31,7 +31,7 @@ Index: base/BUILD.gn
 +      "files/file_util_linux.cc",
 +      "process/memory_linux.cc",
 +      "process/process_linux.cc",
-+      "sys_info_linux.cc",
++      "system/sys_info_linux.cc",
 +      "process/process_iterator_linux.cc",
 +      "process/process_metrics_linux.cc",
 +      "process/process_handle_linux.cc"
@@ -41,7 +41,7 @@ Index: base/BUILD.gn
 +      "process/process_handle_openbsd.cc",
 +      "process/process_iterator_openbsd.cc",
 +      "process/process_metrics_openbsd.cc",
-+      "sys_info_openbsd.cc",
++      "system/sys_info_openbsd.cc",
 +      "files/file_path_watcher_kqueue.cc",
 +      "files/file_path_watcher_kqueue.h",
 +      "files/file_path_watcher_stub.cc",
@@ -51,7 +51,7 @@ Index: base/BUILD.gn
    # iOS
    if (is_ios) {
      set_sources_assignment_filter([])
-@@ -2781,6 +2804,8 @@ test("base_unittests") {
+@@ -2837,6 +2860,8 @@ test("base_unittests") {
        # data += [ "$root_out_dir/base_unittests.dSYM/" ]
      }
    }

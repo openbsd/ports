@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_swiftshader_src_Common_Configurator_cpp,v 1.1 2018/05/04 07:14:58 robert Exp $
+$OpenBSD: patch-third_party_swiftshader_src_Common_Configurator_cpp,v 1.2 2019/04/17 11:48:54 robert Exp $
 
 Index: third_party/swiftshader/src/Common/Configurator.cpp
 --- third_party/swiftshader/src/Common/Configurator.cpp.orig

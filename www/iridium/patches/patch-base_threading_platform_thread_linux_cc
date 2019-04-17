@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.13 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-base_threading_platform_thread_linux_cc,v 1.14 2019/04/17 11:48:53 robert Exp $
 
 Index: base/threading/platform_thread_linux.cc
 --- base/threading/platform_thread_linux.cc.orig
@@ -22,8 +22,17 @@ Index: base/threading/platform_thread_linux.cc
  const FilePath::CharType kCgroupDirectory[] =
      FILE_PATH_LITERAL("/sys/fs/cgroup");
  
-@@ -98,7 +100,7 @@ const ThreadPriorityToNiceValuePair kThreadPriorityToN
- };
+@@ -99,7 +101,7 @@ const ThreadPriorityToNiceValuePair kThreadPriorityToN
+ 
+ Optional<bool> CanIncreaseCurrentThreadPriorityForPlatform(
+     ThreadPriority priority) {
+-#if !defined(OS_NACL)
++#if !defined(OS_NACL) && !defined(OS_BSD)
+   // A non-zero soft-limit on RLIMIT_RTPRIO is required to be allowed to invoke
+   // pthread_setschedparam in SetCurrentThreadPriorityForPlatform().
+   struct rlimit rlim;
+@@ -112,7 +114,7 @@ Optional<bool> CanIncreaseCurrentThreadPriorityForPlat
+ }
  
  bool SetCurrentThreadPriorityForPlatform(ThreadPriority priority) {
 -#if !defined(OS_NACL)
@@ -31,7 +40,7 @@ Index: base/threading/platform_thread_linux.cc
    SetThreadCgroupsForThreadPriority(PlatformThread::CurrentId(), priority);
    return priority == ThreadPriority::REALTIME_AUDIO &&
           pthread_setschedparam(pthread_self(), SCHED_RR, &kRealTimePrio) == 0;
-@@ -128,7 +130,7 @@ bool GetCurrentThreadPriorityForPlatform(ThreadPriorit
+@@ -141,7 +143,7 @@ Optional<ThreadPriority> GetCurrentThreadPriorityForPl
  void PlatformThread::SetName(const std::string& name) {
    ThreadIdNameManager::GetInstance()->SetName(name);
  
@@ -40,7 +49,7 @@ Index: base/threading/platform_thread_linux.cc
    // On linux we can get the thread names to show up in the debugger by setting
    // the process name for the LWP.  We don't want to do this for the main
    // thread because that would rename the process, causing tools like killall
-@@ -157,7 +159,9 @@ void PlatformThread::SetThreadPriority(PlatformThreadI
+@@ -170,7 +172,9 @@ void PlatformThread::SetThreadPriority(PlatformThreadI
    // priority.
    CHECK_NE(thread_id, getpid());
  

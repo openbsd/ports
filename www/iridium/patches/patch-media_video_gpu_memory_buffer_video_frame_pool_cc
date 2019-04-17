@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_video_gpu_memory_buffer_video_frame_pool_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-media_video_gpu_memory_buffer_video_frame_pool_cc,v 1.2 2019/04/17 11:48:54 robert Exp $
 
 Index: media/video/gpu_memory_buffer_video_frame_pool.cc
 --- media/video/gpu_memory_buffer_video_frame_pool.cc.orig

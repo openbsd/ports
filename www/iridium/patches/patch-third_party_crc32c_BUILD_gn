@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_crc32c_BUILD_gn,v 1.1 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-third_party_crc32c_BUILD_gn,v 1.2 2019/04/17 11:48:54 robert Exp $
 
 Index: third_party/crc32c/BUILD.gn
 --- third_party/crc32c/BUILD.gn.orig
 +++ third_party/crc32c/BUILD.gn
-@@ -43,7 +43,7 @@ config("crc32c_config") {
+@@ -45,7 +45,7 @@ config("crc32c_config") {
      defines += [ "HAVE_ARM64_CRC32C=0" ]
    }
  

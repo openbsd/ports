@@ -1,4 +1,5 @@
-$OpenBSD: patch-chrome_browser_task_manager_sampling_task_manager_impl_cc,v 1.8 2018/11/20 19:10:32 robert Exp $
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_manager_impl_cc,v 1.9 2019/04/17 11:48:53 robert Exp $
+
 Index: chrome/browser/task_manager/sampling/task_manager_impl.cc
 --- chrome/browser/task_manager/sampling/task_manager_impl.cc.orig
 +++ chrome/browser/task_manager/sampling/task_manager_impl.cc
@@ -6,8 +7,8 @@ Index: chrome/browser/task_manager/sampling/task_manager_impl.cc
  }
  
  int TaskManagerImpl::GetOpenFdCount(TaskId task_id) const {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
    return GetTaskGroupByTaskId(task_id)->open_fd_count();
  #else
    return -1;

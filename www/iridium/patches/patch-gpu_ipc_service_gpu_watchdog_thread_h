@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_ipc_service_gpu_watchdog_thread_h,v 1.2 2018/11/20 19:10:32 robert Exp $
+$OpenBSD: patch-gpu_ipc_service_gpu_watchdog_thread_h,v 1.3 2019/04/17 11:48:54 robert Exp $
 
 Index: gpu/ipc/service/gpu_watchdog_thread.h
 --- gpu/ipc/service/gpu_watchdog_thread.h.orig
 +++ gpu/ipc/service/gpu_watchdog_thread.h
-@@ -190,8 +190,10 @@ class GPU_IPC_SERVICE_EXPORT GpuWatchdogThread : publi
+@@ -191,8 +191,10 @@ class GPU_IPC_SERVICE_EXPORT GpuWatchdogThread : publi
    XDisplay* display_;
    gfx::AcceleratedWidget window_;
    XAtom atom_;

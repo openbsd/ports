@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_device_time_zone_monitor_time_zone_monitor_linux_cc,v 1.4 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-services_device_time_zone_monitor_time_zone_monitor_linux_cc,v 1.5 2019/04/17 11:48:54 robert Exp $
 
 Index: services/device/time_zone_monitor/time_zone_monitor_linux.cc
 --- services/device/time_zone_monitor/time_zone_monitor_linux.cc.orig
 +++ services/device/time_zone_monitor/time_zone_monitor_linux.cc
-@@ -99,7 +99,11 @@ class TimeZoneMonitorLinuxImpl
+@@ -104,7 +104,11 @@ class TimeZoneMonitorLinuxImpl
      // false positives are harmless, assuming the false positive rate is
      // reasonable.
      const char* const kFilesToWatch[] = {
@@ -13,5 +13,5 @@ Index: services/device/time_zone_monitor/time_zone_monitor_linux.cc
          "/etc/localtime", "/etc/timezone", "/etc/TZ",
 +#endif
      };
- 
-     auto callback =
+     for (size_t index = 0; index < base::size(kFilesToWatch); ++index) {
+       file_path_watchers_.push_back(std::make_unique<base::FilePathWatcher>());

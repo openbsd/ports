@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_crashpad_crashpad_util_posix_signals_cc,v 1.1 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-third_party_crashpad_crashpad_util_posix_signals_cc,v 1.2 2019/04/17 11:48:54 robert Exp $
 
 Index: third_party/crashpad/crashpad/util/posix/signals.cc
 --- third_party/crashpad/crashpad/util/posix/signals.cc.orig
 +++ third_party/crashpad/crashpad/util/posix/signals.cc
-@@ -44,7 +44,7 @@ constexpr int kCrashSignals[] = {
+@@ -45,7 +45,7 @@ constexpr int kCrashSignals[] = {
  #if defined(SIGEMT)
      SIGEMT,
  #endif  // defined(SIGEMT)
@@ -12,7 +12,7 @@ Index: third_party/crashpad/crashpad/util/posix/signals.cc
      SIGXCPU,
      SIGXFSZ,
  #endif  // defined(OS_LINUX)
-@@ -84,7 +84,7 @@ constexpr int kTerminateSignals[] = {
+@@ -85,7 +85,7 @@ constexpr int kTerminateSignals[] = {
      SIGXCPU,
      SIGXFSZ,
  #endif  // defined(OS_MACOSX)
@@ -21,7 +21,7 @@ Index: third_party/crashpad/crashpad/util/posix/signals.cc
      SIGIO,
  #endif  // defined(OS_LINUX)
  };
-@@ -214,8 +214,12 @@ bool Signals::WillSignalReraiseAutonomously(const sigi
+@@ -216,8 +216,12 @@ bool Signals::WillSignalReraiseAutonomously(const sigi
           // remains. See 10.12.3 xnu-3789.41.3/bsd/kern/kern_sig.c
           // psignal_internal().
           (code > 0 &&

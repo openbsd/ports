@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_browser_proxy_js,v 1.1 2018/12/04 09:55:08 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_browser_proxy_js,v 1.2 2019/04/17 11:48:53 robert Exp $
 
 Index: chrome/browser/resources/settings/appearance_page/appearance_browser_proxy.js
 --- chrome/browser/resources/settings/appearance_page/appearance_browser_proxy.js.orig

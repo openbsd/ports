@@ -1,8 +1,8 @@
-$OpenBSD: patch-device_gamepad_gamepad_provider_cc,v 1.5 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-device_gamepad_gamepad_provider_cc,v 1.6 2019/04/17 11:48:54 robert Exp $
 Index: device/gamepad/gamepad_provider.cc
 --- device/gamepad/gamepad_provider.cc.orig
 +++ device/gamepad/gamepad_provider.cc
-@@ -187,7 +187,7 @@ void GamepadProvider::Initialize(std::unique_ptr<Gamep
+@@ -164,7 +164,7 @@ void GamepadProvider::Initialize(std::unique_ptr<Gamep
      monitor->AddDevicesChangedObserver(this);
  
    polling_thread_.reset(new base::Thread("Gamepad polling thread"));

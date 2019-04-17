@@ -1,4 +1,4 @@
-$OpenBSD: patch-extensions_browser_browser_context_keyed_service_factories_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-extensions_browser_browser_context_keyed_service_factories_cc,v 1.2 2019/04/17 11:48:54 robert Exp $
 
 Index: extensions/browser/browser_context_keyed_service_factories.cc
 --- extensions/browser/browser_context_keyed_service_factories.cc.orig

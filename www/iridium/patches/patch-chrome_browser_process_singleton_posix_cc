@@ -1,4 +1,5 @@
-$OpenBSD: patch-chrome_browser_process_singleton_posix_cc,v 1.16 2018/11/20 19:10:32 robert Exp $
+$OpenBSD: patch-chrome_browser_process_singleton_posix_cc,v 1.17 2019/04/17 11:48:53 robert Exp $
+
 Index: chrome/browser/process_singleton_posix.cc
 --- chrome/browser/process_singleton_posix.cc.orig
 +++ chrome/browser/process_singleton_posix.cc
@@ -12,7 +13,7 @@ Index: chrome/browser/process_singleton_posix.cc
  #endif
  
 -#if defined(TOOLKIT_VIEWS) && defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if defined(TOOLKIT_VIEWS) && (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
++#if defined(TOOLKIT_VIEWS) && (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
@@ -28,9 +29,9 @@ Index: chrome/browser/process_singleton_posix.cc
 @@ -904,7 +904,7 @@ ProcessSingleton::NotifyResult ProcessSingleton::Notif
      SendRemoteProcessInteractionResultHistogram(REMOTE_PROCESS_SHUTTING_DOWN);
      return PROCESS_NONE;
-   } else if (strncmp(buf, kACKToken, arraysize(kACKToken) - 1) == 0) {
+   } else if (strncmp(buf, kACKToken, base::size(kACKToken) - 1) == 0) {
 -#if defined(TOOLKIT_VIEWS) && defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if defined(TOOLKIT_VIEWS) && (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
++#if defined(TOOLKIT_VIEWS) && (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
      // Likely NULL in unit tests.
      views::LinuxUI* linux_ui = views::LinuxUI::instance();
      if (linux_ui)

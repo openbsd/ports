@@ -1,14 +1,14 @@
-$OpenBSD: patch-third_party_webrtc_webrtc_gni,v 1.4 2018/11/20 19:10:32 robert Exp $
+$OpenBSD: patch-third_party_webrtc_webrtc_gni,v 1.5 2019/04/17 11:48:55 robert Exp $
 
 Index: third_party/webrtc/webrtc.gni
 --- third_party/webrtc/webrtc.gni.orig
 +++ third_party/webrtc/webrtc.gni
-@@ -229,7 +229,7 @@ rtc_libvpx_dir = "//third_party/libvpx"
- rtc_opus_dir = "//third_party/opus"
+@@ -238,7 +238,7 @@ rtc_opus_dir = "//third_party/opus"
  
  # Desktop capturer is supported only on Windows, OSX and Linux.
--rtc_desktop_capture_supported = is_win || is_mac || (is_linux && rtc_use_x11)
-+rtc_desktop_capture_supported = is_win || is_mac || ((is_linux && rtc_use_x11) && !is_openbsd)
+ rtc_desktop_capture_supported = (is_win && current_os != "winuwp") || is_mac ||
+-                                (is_linux && (rtc_use_x11 || rtc_use_pipewire))
++                                ((is_linux && !is_openbsd) && (rtc_use_x11 || rtc_use_pipewire))
  
  ###############################################################################
  # Templates

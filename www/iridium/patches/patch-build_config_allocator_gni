@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_allocator_gni,v 1.6 2018/06/06 07:50:54 robert Exp $
+$OpenBSD: patch-build_config_allocator_gni,v 1.7 2019/04/17 11:48:53 robert Exp $
 
 Index: build/config/allocator.gni
 --- build/config/allocator.gni.orig

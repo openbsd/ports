@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_protobuf_src_google_protobuf_stubs_strutil_h,v 1.7 2018/05/04 07:14:58 robert Exp $
+$OpenBSD: patch-third_party_protobuf_src_google_protobuf_stubs_strutil_h,v 1.8 2019/04/17 11:48:54 robert Exp $
 Index: third_party/protobuf/src/google/protobuf/stubs/strutil.h
 --- third_party/protobuf/src/google/protobuf/stubs/strutil.h.orig
 +++ third_party/protobuf/src/google/protobuf/stubs/strutil.h

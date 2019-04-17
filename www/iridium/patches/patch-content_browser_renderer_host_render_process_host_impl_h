@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_h,v 1.6 2018/11/20 19:10:32 robert Exp $
+$OpenBSD: patch-content_browser_renderer_host_render_process_host_impl_h,v 1.7 2019/04/17 11:48:54 robert Exp $
 
 Index: content/browser/renderer_host/render_process_host_impl.h
 --- content/browser/renderer_host/render_process_host_impl.h.orig
 +++ content/browser/renderer_host/render_process_host_impl.h
-@@ -380,7 +380,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
+@@ -407,7 +407,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
      is_for_guests_only_ = is_for_guests_only;
    }
  

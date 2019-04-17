@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_download_download_commands_h,v 1.8 2018/11/20 19:10:32 robert Exp $
+$OpenBSD: patch-chrome_browser_download_download_commands_h,v 1.9 2019/04/17 11:48:53 robert Exp $
 
 Index: chrome/browser/download/download_commands.h
 --- chrome/browser/download/download_commands.h.orig
 +++ chrome/browser/download/download_commands.h
-@@ -44,7 +44,7 @@ class DownloadCommands {
+@@ -42,7 +42,7 @@ class DownloadCommands {
    bool IsCommandVisible(Command command) const;
    void ExecuteCommand(Command command);
  

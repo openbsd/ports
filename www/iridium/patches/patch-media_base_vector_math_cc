@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_base_vector_math_cc,v 1.1 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-media_base_vector_math_cc,v 1.2 2019/04/17 11:48:54 robert Exp $
 
 Index: media/base/vector_math.cc
 --- media/base/vector_math.cc.orig

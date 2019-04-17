@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_browser_child_process_launcher_helper_linux_cc,v 1.7 2018/11/05 22:04:39 robert Exp $
+$OpenBSD: patch-content_browser_child_process_launcher_helper_linux_cc,v 1.8 2019/04/17 11:48:54 robert Exp $
 
 Index: content/browser/child_process_launcher_helper_linux.cc
 --- content/browser/child_process_launcher_helper_linux.cc.orig

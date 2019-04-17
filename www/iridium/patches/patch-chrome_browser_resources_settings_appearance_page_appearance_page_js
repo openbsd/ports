@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_page_js,v 1.1 2018/12/04 09:55:08 robert Exp $
+$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_page_js,v 1.2 2019/04/17 11:48:53 robert Exp $
 
 Index: chrome/browser/resources/settings/appearance_page/appearance_page.js
 --- chrome/browser/resources/settings/appearance_page/appearance_page.js.orig
@@ -12,7 +12,7 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_page.js
      // NOTE: this pref only exists on Linux.
      'useSystemThemePrefChanged_(prefs.extensions.theme.use_system.value)',
      // </if>
-@@ -221,7 +221,7 @@ Polymer({
+@@ -223,7 +223,7 @@ Polymer({
      this.browserProxy_.useDefaultTheme();
    },
  
@@ -21,7 +21,7 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_page.js
    /**
     * @param {boolean} useSystemTheme
     * @private
-@@ -289,10 +289,10 @@ Polymer({
+@@ -292,10 +292,10 @@ Polymer({
      }
  
      let i18nId;
