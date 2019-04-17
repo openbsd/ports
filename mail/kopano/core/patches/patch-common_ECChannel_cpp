@@ -1,0 +1,17 @@
+$OpenBSD: patch-common_ECChannel_cpp,v 1.1 2019/04/17 13:01:02 robert Exp $
+
+Index: common/ECChannel.cpp
+--- common/ECChannel.cpp.orig
++++ common/ECChannel.cpp
+@@ -838,6 +838,11 @@ int ec_listen_inet(const char *szBind, uint16_t ulPort
+ 			ec_log_warn("Unable to set reuseaddr socket option: %s",
+ 				strerror(errno));
+ 
++		if (setsockopt(fd, SOL_SOCKET, SO_REUSEPORT,
++		    reinterpret_cast<const char *>(&opt), sizeof(opt)) < 0)
++			ec_log_warn("Unable to set reuseport socket option: %s",
++				strerror(errno));
++
+ 		ret = bind(fd, sock_addr->ai_addr, sock_addr->ai_addrlen);
+ 		if (ret < 0 && errno == EADDRINUSE) {
+ 			/*

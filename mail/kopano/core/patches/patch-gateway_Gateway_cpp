@@ -1,4 +1,4 @@
-$OpenBSD: patch-gateway_Gateway_cpp,v 1.8 2018/12/17 15:19:40 robert Exp $
+$OpenBSD: patch-gateway_Gateway_cpp,v 1.9 2019/04/17 13:01:02 robert Exp $
 
 Index: gateway/Gateway.cpp
 --- gateway/Gateway.cpp.orig
@@ -14,7 +14,7 @@ Index: gateway/Gateway.cpp
  /**
   * @defgroup gateway Gateway for IMAP and POP3
   * @{
-@@ -307,10 +311,10 @@ int main(int argc, char *argv[]) {
+@@ -301,10 +305,10 @@ int main(int argc, char *argv[]) {
  	const char *szConfig = ECConfig::GetDefaultPath("gateway.cfg");
  	bool exp_config = false;
  	static const configsetting_t lpDefaults[] = {

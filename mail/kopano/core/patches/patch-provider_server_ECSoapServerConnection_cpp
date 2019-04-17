@@ -1,0 +1,15 @@
+$OpenBSD: patch-provider_server_ECSoapServerConnection_cpp,v 1.1 2019/04/17 13:01:02 robert Exp $
+
+Index: provider/server/ECSoapServerConnection.cpp
+--- provider/server/ECSoapServerConnection.cpp.orig
++++ provider/server/ECSoapServerConnection.cpp
+@@ -18,6 +18,9 @@
+ #ifdef HAVE_SYS_UN_H
+ #include <sys/un.h>
+ #endif
++#ifdef OPENBSD
++#include <signal.h>
++#endif
+ #include "ECSoapServerConnection.h"
+ #include "ECServerEntrypoint.h"
+ #	include <dirent.h>

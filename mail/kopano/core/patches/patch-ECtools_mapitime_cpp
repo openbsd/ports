@@ -1,9 +1,9 @@
-$OpenBSD: patch-ECtools_mapitime_cpp,v 1.6 2018/12/17 15:19:40 robert Exp $
+$OpenBSD: patch-ECtools_mapitime_cpp,v 1.7 2019/04/17 13:01:02 robert Exp $
 
 Index: ECtools/mapitime.cpp
 --- ECtools/mapitime.cpp.orig
 +++ ECtools/mapitime.cpp
-@@ -31,6 +31,17 @@
+@@ -32,6 +32,17 @@
  using namespace KC;
  using clk = std::chrono::steady_clock;
  

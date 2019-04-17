@@ -1,0 +1,17 @@
+$OpenBSD: patch-provider_libserver_ECUserManagement_h,v 1.1 2019/04/17 13:01:02 robert Exp $
+
+revert 726a2ce26e2a93cfbe69eed34563db395865fdad
+
+Index: provider/libserver/ECUserManagement.h
+--- provider/libserver/ECUserManagement.h.orig
++++ provider/libserver/ECUserManagement.h
+@@ -133,6 +133,9 @@ class _kc_export ECUserManagement final { (private)
+ 	_kc_hidden ECRESULT GetLocalObjectIdOrCreate(const objectsignature_t &signature, unsigned int *id);
+ 	_kc_hidden ECRESULT GetLocalObjectsIdsOrCreate(const signatures_t &, std::map<objectid_t, unsigned int> *local_objids);
+ 
++	// Get a list of local object IDs in the database plus any internal objects (SYSTEM, EVERYONE)
++	_kc_hidden ECRESULT GetLocalObjectIdList(objectclass_t, unsigned int company_id, std::vector<unsigned int> &objs) const;
++
+ 	// Converts anonymous Object Detail to property. */
+ 	_kc_hidden ECRESULT ConvertAnonymousObjectDetailToProp(struct soap *, const objectdetails_t *, unsigned int tag, struct propVal *) const;
+ 	// Converts the data in user/group/company details fields into property value array for content tables and MAPI_MAILUSER and MAPI_DISTLIST objects

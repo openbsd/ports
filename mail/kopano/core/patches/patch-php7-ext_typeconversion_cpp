@@ -1,9 +1,9 @@
-$OpenBSD: patch-php7-ext_typeconversion_cpp,v 1.3 2018/12/17 15:19:40 robert Exp $
+$OpenBSD: patch-php7-ext_typeconversion_cpp,v 1.4 2019/04/17 13:01:02 robert Exp $
 
 Index: php7-ext/typeconversion.cpp
 --- php7-ext/typeconversion.cpp.orig
 +++ php7-ext/typeconversion.cpp
-@@ -7,10 +7,8 @@
+@@ -9,10 +9,8 @@
  #include <mapiutil.h>
  #include <kopano/timeutil.hpp>
  #include "php-ext/phpconfig.h"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/01/21 17:27:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/04/17 13:01:02 robert Exp $
 
 # undefined ref's to libicon*, libintl*
 USE_LLD=	Yes
@@ -52,7 +52,7 @@ WANTLIB-main += curl nghttp2 ical icalss
 WANTLIB-main += mysqlclient curses ssl xml2
 WANTLIB-main += gsoapssl++
 WANTLIB-main += ${LIBCXX}
-WANTLIB-main += icalvcal ldap_r HX jsoncpp
+WANTLIB-main += icalvcal ldap_r-2.4 HX jsoncpp
 
 # Do not substitute MODULE_NAME
 UPDATE_PLIST_ARGS+=	-i MODULE_NAME

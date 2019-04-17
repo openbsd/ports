@@ -1,9 +1,9 @@
-$OpenBSD: patch-ECtools_spamd_kopano_spamd___init___py,v 1.5 2018/08/29 16:58:30 robert Exp $
+$OpenBSD: patch-ECtools_spamd_kopano_spamd___init___py,v 1.6 2019/04/17 13:01:02 robert Exp $
 
 Index: ECtools/spamd/kopano_spamd/__init__.py
 --- ECtools/spamd/kopano_spamd/__init__.py.orig
 +++ ECtools/spamd/kopano_spamd/__init__.py
-@@ -20,12 +20,12 @@ kopano-spamd - ICS driven spam learning daemon for Kop
+@@ -18,12 +18,12 @@ kopano-spamd - ICS driven spam learning daemon for Kop
  """
  
  CONFIG = {

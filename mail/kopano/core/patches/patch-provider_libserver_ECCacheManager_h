@@ -1,0 +1,15 @@
+$OpenBSD: patch-provider_libserver_ECCacheManager_h,v 1.1 2019/04/17 13:01:02 robert Exp $
+
+revert 726a2ce26e2a93cfbe69eed34563db395865fdad
+
+Index: provider/libserver/ECCacheManager.h
+--- provider/libserver/ECCacheManager.h.orig
++++ provider/libserver/ECCacheManager.h
+@@ -264,7 +264,6 @@ class ECCacheManager final { (public)
+ 	ECRESULT GetUserObject(unsigned int ulUserId, objectid_t *lpExternId, unsigned int *lpulCompanyId, std::string *lpstrSignature);
+ 	ECRESULT GetUserObject(const objectid_t &sExternId, unsigned int *lpulUserId, unsigned int *lpulCompanyId, std::string *lpstrSignature);
+ 	ECRESULT GetUserObjects(const std::list<objectid_t> &lstExternObjIds, std::map<objectid_t, unsigned int> *lpmapLocalObjIds);
+-	ECRESULT get_all_user_objects(objectclass_t, std::map<unsigned int, ECsUserObject> &out);
+ 
+ 	// Cache user information
+ 	ECRESULT GetUserDetails(unsigned int ulUserId, objectdetails_t *details);

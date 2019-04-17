@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2018/12/22 12:17:49 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2019/04/17 13:01:02 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -202,12 +202,10 @@ lib/python${MODPY_VERSION}/site-packages/MAPI/Time.py
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/AddressBook.py
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/Generators.py
-lib/python${MODPY_VERSION}/site-packages/MAPI/Util/Iterators.py
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/${MODPY_PYCACHE}AddressBook.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/${MODPY_PYCACHE}Generators.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/MAPI/Util/${MODPY_PYCACHE}Iterators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/${MODPY_PYCACHE}codepage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/codepage.py
@@ -263,9 +261,7 @@ lib/python${MODPY_VERSION}/site-packages/kopano/${MODPY_PYCACHE}freebusy.${MODPY
 lib/python${MODPY_VERSION}/site-packages/kopano/${MODPY_PYCACHE}group.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/${MODPY_PYCACHE}ics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/${MODPY_PYCACHE}item.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano/${MODPY_PYCACHE}lockfile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano/${MODPY_PYCACHE}lru_cache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/${MODPY_PYCACHE}meetingrequest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/${MODPY_PYCACHE}notification.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano/${MODPY_PYCACHE}outofoffice.${MODPY_PYC_MAGIC_TAG}pyc
@@ -299,22 +295,6 @@ lib/python${MODPY_VERSION}/site-packages/kopano/company.py
 lib/python${MODPY_VERSION}/site-packages/kopano/compat.py
 lib/python${MODPY_VERSION}/site-packages/kopano/config.py
 lib/python${MODPY_VERSION}/site-packages/kopano/contact.py
-lib/python${MODPY_VERSION}/site-packages/kopano/daemon/
-lib/python${MODPY_VERSION}/site-packages/kopano/daemon/__init__.py
-lib/python${MODPY_VERSION}/site-packages/kopano/daemon/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/kopano/daemon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano/daemon/${MODPY_PYCACHE}daemon.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano/daemon/${MODPY_PYCACHE}pidlockfile.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano/daemon/${MODPY_PYCACHE}runner.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano/daemon/daemon.py
-lib/python${MODPY_VERSION}/site-packages/kopano/daemon/pidlockfile.py
-lib/python${MODPY_VERSION}/site-packages/kopano/daemon/runner.py
-lib/python${MODPY_VERSION}/site-packages/kopano/daemon/version/
-lib/python${MODPY_VERSION}/site-packages/kopano/daemon/version/__init__.py
-lib/python${MODPY_VERSION}/site-packages/kopano/daemon/version/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/kopano/daemon/version/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano/daemon/version/${MODPY_PYCACHE}version_info.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano/daemon/version/version_info.py
 lib/python${MODPY_VERSION}/site-packages/kopano/defs.py
 lib/python${MODPY_VERSION}/site-packages/kopano/delegation.py
 lib/python${MODPY_VERSION}/site-packages/kopano/distlist.py
@@ -324,9 +304,7 @@ lib/python${MODPY_VERSION}/site-packages/kopano/freebusy.py
 lib/python${MODPY_VERSION}/site-packages/kopano/group.py
 lib/python${MODPY_VERSION}/site-packages/kopano/ics.py
 lib/python${MODPY_VERSION}/site-packages/kopano/item.py
-lib/python${MODPY_VERSION}/site-packages/kopano/lockfile.py
 lib/python${MODPY_VERSION}/site-packages/kopano/log.py
-lib/python${MODPY_VERSION}/site-packages/kopano/lru_cache.py
 lib/python${MODPY_VERSION}/site-packages/kopano/meetingrequest.py
 lib/python${MODPY_VERSION}/site-packages/kopano/notification.py
 lib/python${MODPY_VERSION}/site-packages/kopano/outofoffice.py
@@ -411,65 +389,6 @@ lib/python${MODPY_VERSION}/site-packages/kopano_presence/${MODPY_PYCACHE}version
 lib/python${MODPY_VERSION}/site-packages/kopano_presence/plugin_spreed.py
 lib/python${MODPY_VERSION}/site-packages/kopano_presence/plugin_xmpp.py
 lib/python${MODPY_VERSION}/site-packages/kopano_presence/version.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/
-lib/python${MODPY_VERSION}/site-packages/kopano_rest-8.7.80-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/kopano_rest-8.7.80-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/kopano_rest-8.7.80-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_rest-8.7.80-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_rest-8.7.80-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/__init__.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/__main__.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/api_v1/
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/api_v1/__init__.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/api_v1/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/api_v1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/api_v1/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/api_v1/${MODPY_PYCACHE}notify.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/api_v1/${MODPY_PYCACHE}rest.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/api_v1/config.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/api_v1/notify.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/api_v1/rest.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/__init__.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/${MODPY_PYCACHE}attachment.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/${MODPY_PYCACHE}calendar.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/${MODPY_PYCACHE}contact.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/${MODPY_PYCACHE}contactfolder.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/${MODPY_PYCACHE}event.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/${MODPY_PYCACHE}folder.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/${MODPY_PYCACHE}group.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/${MODPY_PYCACHE}item.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/${MODPY_PYCACHE}mailfolder.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/${MODPY_PYCACHE}profilephoto.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/${MODPY_PYCACHE}reminder.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/${MODPY_PYCACHE}resource.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/${MODPY_PYCACHE}schema.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/${MODPY_PYCACHE}user.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/attachment.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/calendar.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/contact.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/contactfolder.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/event.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/folder.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/group.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/item.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/mailfolder.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/message.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/profilephoto.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/reminder.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/resource.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/schema.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/resource/user.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/utils.py
-lib/python${MODPY_VERSION}/site-packages/kopano_rest/version.py
 lib/python${MODPY_VERSION}/site-packages/kopano_search/
 lib/python${MODPY_VERSION}/site-packages/kopano_search-8.7.80-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/kopano_search-8.7.80-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -479,12 +398,10 @@ lib/python${MODPY_VERSION}/site-packages/kopano_search-8.7.80-py${MODPY_VERSION}
 lib/python${MODPY_VERSION}/site-packages/kopano_search/__init__.py
 lib/python${MODPY_VERSION}/site-packages/kopano_search/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/kopano_search/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_search/${MODPY_PYCACHE}magic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_search/${MODPY_PYCACHE}plaintext.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_search/${MODPY_PYCACHE}plugin_solr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_search/${MODPY_PYCACHE}plugin_xapian.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/kopano_search/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/kopano_search/magic.py
 lib/python${MODPY_VERSION}/site-packages/kopano_search/plaintext.py
 lib/python${MODPY_VERSION}/site-packages/kopano_search/plugin_solr.py
 lib/python${MODPY_VERSION}/site-packages/kopano_search/plugin_xapian.py
@@ -523,7 +440,6 @@ lib/systemd/
 lib/systemd/system/
 lib/systemd/system/kopano-dagent.service
 lib/systemd/system/kopano-gateway.service
-lib/systemd/system/kopano-grapi.service
 lib/systemd/system/kopano-ical.service
 lib/systemd/system/kopano-monitor.service
 lib/systemd/system/kopano-presence.service
@@ -537,7 +453,6 @@ lib/sysusers.d/kopano-sysusers.conf
 lib/tmpfiles.d/
 lib/tmpfiles.d/kopano-tmpfiles.conf
 libexec/kopano/
-libexec/kopano/kopano-mfr.py
 @bin libexec/kopano/kscriptrun
 @bin libexec/kopano/mapitime
 @man man/man1/kopano-fsck.1
@@ -555,6 +470,7 @@ libexec/kopano/kopano-mfr.py
 @man man/man5/kopano-ldap.cfg.5
 @man man/man5/kopano-migration-pst.cfg.5
 @man man/man5/kopano-monitor.cfg.5
+@man man/man5/kopano-msr.cfg.5
 @man man/man5/kopano-search.cfg.5
 @man man/man5/kopano-server.cfg.5
 @man man/man5/kopano-spamd.cfg.5
@@ -580,6 +496,7 @@ libexec/kopano/kopano-mfr.py
 @man man/man8/kopano-monitor.8
 @man man/man8/kopano-mr-accept.8
 @man man/man8/kopano-mr-process.8
+@man man/man8/kopano-msr.8
 @man man/man8/kopano-search.8
 @man man/man8/kopano-server.8
 @man man/man8/kopano-spamd.8
@@ -600,7 +517,6 @@ sbin/kopano-cli
 @bin sbin/kopano-dbadm
 sbin/kopano-fix-ipm-subtree
 @bin sbin/kopano-gateway
-sbin/kopano-grapi
 @bin sbin/kopano-ical
 sbin/kopano-localize-folders
 sbin/kopano-mailbox-permissions
@@ -670,7 +586,6 @@ share/examples/kopano/dagent.cfg
 @sample ${SYSCONFDIR}/kopano/dagent.cfg
 share/examples/kopano/gateway.cfg
 @sample ${SYSCONFDIR}/kopano/gateway.cfg
-share/examples/kopano/grapi.cfg
 share/examples/kopano/ical.cfg
 @sample ${SYSCONFDIR}/kopano/ical.cfg
 share/examples/kopano/kopano.m4
@@ -688,6 +603,7 @@ share/examples/kopano/migration-pst.cfg
 share/examples/kopano/monitor.cfg
 @sample ${SYSCONFDIR}/kopano/monitor.cfg
 share/examples/kopano/msr.cfg
+@sample ${SYSCONFDIR}/kopano/msr.cfg
 share/examples/kopano/presence.cfg
 @sample ${SYSCONFDIR}/kopano/presence.cfg
 share/examples/kopano/quotamail/
@@ -753,8 +669,6 @@ share/kopano-dagent/python/${MODPY_PYCACHE}pluginmanager.${MODPY_PYC_MAGIC_TAG}p
 share/kopano-dagent/python/${MODPY_PYCACHE}plugintemplates.${MODPY_PYC_MAGIC_TAG}pyc
 share/kopano-dagent/python/${MODPY_PYCACHE}wraplogger.${MODPY_PYC_MAGIC_TAG}pyc
 share/kopano-dagent/python/${MODPY_PYCACHE}zconfig.${MODPY_PYC_MAGIC_TAG}pyc
-share/kopano-dagent/python/${MODPY_PYCACHE}zinterval.${MODPY_PYC_MAGIC_TAG}pyc
-share/kopano-dagent/python/${MODPY_PYCACHE}zunit.${MODPY_PYC_MAGIC_TAG}pyc
 share/kopano-dagent/python/mapiplugin.py
 share/kopano-dagent/python/pluginmanager.py
 share/kopano-dagent/python/plugins/
@@ -770,8 +684,6 @@ share/kopano-dagent/python/plugins/movetopublic.py
 share/kopano-dagent/python/plugintemplates.py
 share/kopano-dagent/python/wraplogger.py
 share/kopano-dagent/python/zconfig.py
-share/kopano-dagent/python/zinterval.py
-share/kopano-dagent/python/zunit.py
 share/kopano-spooler/
 share/kopano-spooler/python/
 share/kopano-spooler/python/${MODPY_PYCACHE}/
@@ -780,8 +692,6 @@ share/kopano-spooler/python/${MODPY_PYCACHE}pluginmanager.${MODPY_PYC_MAGIC_TAG}
 share/kopano-spooler/python/${MODPY_PYCACHE}plugintemplates.${MODPY_PYC_MAGIC_TAG}pyc
 share/kopano-spooler/python/${MODPY_PYCACHE}wraplogger.${MODPY_PYC_MAGIC_TAG}pyc
 share/kopano-spooler/python/${MODPY_PYCACHE}zconfig.${MODPY_PYC_MAGIC_TAG}pyc
-share/kopano-spooler/python/${MODPY_PYCACHE}zinterval.${MODPY_PYC_MAGIC_TAG}pyc
-share/kopano-spooler/python/${MODPY_PYCACHE}zunit.${MODPY_PYC_MAGIC_TAG}pyc
 share/kopano-spooler/python/mapiplugin.py
 share/kopano-spooler/python/pluginmanager.py
 share/kopano-spooler/python/plugins/
@@ -791,8 +701,6 @@ share/kopano-spooler/python/plugins/disclaimer.py
 share/kopano-spooler/python/plugintemplates.py
 share/kopano-spooler/python/wraplogger.py
 share/kopano-spooler/python/zconfig.py
-share/kopano-spooler/python/zinterval.py
-share/kopano-spooler/python/zunit.py
 @sample /var/db/kopano/dagent/
 @sample /var/db/kopano/dagent/plugins/
 @sample /var/db/kopano/spooler/
