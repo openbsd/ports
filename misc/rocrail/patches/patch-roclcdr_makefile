@@ -1,8 +1,17 @@
-$OpenBSD: patch-roclcdr_makefile,v 1.1 2017/05/07 23:57:16 espie Exp $
+$OpenBSD: patch-roclcdr_makefile,v 1.2 2019/04/17 15:20:21 naddy Exp $
 
 Index: roclcdr/makefile
 --- roclcdr/makefile.orig
 +++ roclcdr/makefile
+@@ -69,7 +69,7 @@ else ifeq ($(PLATFORM),OPENBSD)
+ 	DIRPREFIX=unx
+ 	CC_EXTRA_FLAGS=-fPIC
+ 	LNK_FLAGS=-shared
+-	LNK=gcc
++	LNK=$(CC)
+ 	SHAREDSUFFIX=.so
+ else
+ 	LIBS=-lpthread -ldl
 @@ -88,9 +88,9 @@ DEBUG=-g
  DESTDIR=$(FS)opt$(FS)rocrail
  BINDIR=..$(FS)rocs$(FS)bin

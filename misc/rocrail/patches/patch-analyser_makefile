@@ -1,8 +1,17 @@
-$OpenBSD: patch-analyser_makefile,v 1.1 2017/05/07 23:57:16 espie Exp $
+$OpenBSD: patch-analyser_makefile,v 1.2 2019/04/17 15:20:21 naddy Exp $
 
 Index: analyser/makefile
 --- analyser/makefile.orig
 +++ analyser/makefile
+@@ -68,7 +68,7 @@ else ifeq ($(PLATFORM),OPENBSD)
+ 	DIRPREFIX=unx
+ 	CC_EXTRA_FLAGS=-fPIC
+ 	LNK_FLAGS=-shared
+-	LNK=gcc
++	LNK=$(CC)
+ 	SHAREDSUFFIX=.so
+ else
+ 	LIBS=-lpthread -ldl
 @@ -87,9 +87,9 @@ DEBUG=-g
  DESTDIR=$(FS)opt$(FS)rocrail
  BINDIR=..$(FS)rocs$(FS)bin
