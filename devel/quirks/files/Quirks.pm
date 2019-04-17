@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.748 2019/04/03 15:02:19 danj Exp $
+# $OpenBSD: Quirks.pm,v 1.749 2019/04/17 13:19:49 solene Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1369,6 +1369,7 @@ my $cve = {
 	'www/chromium' => 'chromium-<69.0.3497.100',
 	'www/drupal7/core7' => 'drupal->=7.0,<7.60',
 	'www/drupal7/theme-newsflash' => 'drupal7-theme-newsflash-<2.5',
+	'www/gitea' => 'gitea-<1.7.6',
 	'www/hiawatha' => 'hiawatha-<10.8.4',
 	'www/iridium' => 'iridium-<2018.5.67',
 	'www/mozilla-firefox' => 'firefox-<62.0.2p0',
