@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: iridium,v 1.4 2019/03/13 17:24:30 robert Exp $
+# $OpenBSD: iridium,v 1.5 2019/04/17 18:35:36 robert Exp $
 
 DATASIZE="716800"
 OPENFILES="400"
@@ -61,4 +61,4 @@ export LD_LIBRARY_PATH
 [ -f ~/.config/user-dirs.dirs ] || \
 	echo 'XDG_DOWNLOAD_DIR="$HOME/Downloads"' > ~/.config/user-dirs.dirs
 
-LANG=${_l} exec "/usr/local/iridium/iridium" "${@}"
+LANG=${_l} exec "/usr/local/iridium/iridium" --disable-features=WebAssembly,AsmJsToWebAssembly,WebAssemblyStreaming --js-flags=--noexpose-wasm "${@}"
