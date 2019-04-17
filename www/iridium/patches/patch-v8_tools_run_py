@@ -1,4 +1,4 @@
-$OpenBSD: patch-v8_tools_run_py,v 1.5 2019/04/17 11:48:55 robert Exp $
+$OpenBSD: patch-v8_tools_run_py,v 1.6 2019/04/17 18:29:54 robert Exp $
 
 Index: v8/tools/run.py
 --- v8/tools/run.py.orig
@@ -8,4 +8,4 @@ Index: v8/tools/run.py
  import sys
  
 -sys.exit(subprocess.call(sys.argv[1:]))
-+sys.exit(subprocess.call(sys.argv[1:], env={"LD_LIBRARY_PATH":"${WRKSRC}/out/Release"))
++sys.exit(subprocess.call(sys.argv[1:], env={"LD_LIBRARY_PATH":"${WRKSRC}/out/Release"}))
