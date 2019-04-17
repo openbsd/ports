@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/04/24 09:40:26 danj Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/04/17 22:29:10 kmos Exp $
 %%python3%%
 !%%python3%%
 @comment bin/easy_install
@@ -58,6 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/setuptools/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}_deprecation_warning.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}archive_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}build_meta.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
@@ -77,7 +78,6 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}pep425tags.$
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}py27compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}py31compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}py33compat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}py36compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}sandbox.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}site-patch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}ssl_support.${MODPY_PYC_MAGIC_TAG}pyc
@@ -85,6 +85,7 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}unicode_util
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}wheel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}windows_support.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/_deprecation_warning.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/${MODPY_PYCACHE}/
@@ -188,7 +189,6 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/pep425tags.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/py27compat.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/py31compat.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/py33compat.py
-lib/python${MODPY_VERSION}/site-packages/setuptools/py36compat.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/sandbox.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/script (dev).tmpl
 lib/python${MODPY_VERSION}/site-packages/setuptools/script.tmpl

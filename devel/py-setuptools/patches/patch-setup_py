@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_py,v 1.6 2018/04/24 09:40:26 danj Exp $
+$OpenBSD: patch-setup_py,v 1.7 2019/04/17 22:29:10 kmos Exp $
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
@@ -11,7 +11,7 @@ Index: setup.py
      not in ("", "0", "false", "no")
  )
  
-@@ -107,7 +107,7 @@ setup_params = dict(
+@@ -106,7 +106,7 @@ setup_params = dict(
      packages=setuptools.find_packages(exclude=['*.tests']),
      package_data=package_data,
      py_modules=['easy_install'],
