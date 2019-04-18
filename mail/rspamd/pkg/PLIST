@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2019/04/15 20:44:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.29 2019/04/18 16:12:15 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 !%%no_luajit%%
@@ -240,6 +240,7 @@ share/rspamd/lualib/ansicolors.lua
 share/rspamd/lualib/argparse.lua
 share/rspamd/lualib/fun.lua
 share/rspamd/lualib/global_functions.lua
+share/rspamd/lualib/lpegre.lua
 share/rspamd/lualib/lua_auth_results.lua
 share/rspamd/lualib/lua_cfg_transform.lua
 share/rspamd/lualib/lua_clickhouse.lua
@@ -248,7 +249,9 @@ share/rspamd/lualib/lua_ffi/
 share/rspamd/lualib/lua_ffi/common.lua
 share/rspamd/lualib/lua_ffi/dkim.lua
 share/rspamd/lualib/lua_ffi/init.lua
+share/rspamd/lualib/lua_ffi/spf.lua
 share/rspamd/lualib/lua_fuzzy.lua
+share/rspamd/lualib/lua_ical.lua
 share/rspamd/lualib/lua_maps.lua
 share/rspamd/lualib/lua_meta.lua
 share/rspamd/lualib/lua_nn.lua
@@ -280,6 +283,7 @@ share/rspamd/lualib/rspamadm/confighelp.lua
 share/rspamd/lualib/rspamadm/configwizard.lua
 share/rspamd/lualib/rspamadm/cookie.lua
 share/rspamd/lualib/rspamadm/corpus_test.lua
+share/rspamd/lualib/rspamadm/dns_tool.lua
 share/rspamd/lualib/rspamadm/fuzzy_convert.lua
 share/rspamd/lualib/rspamadm/fuzzy_stat.lua
 share/rspamd/lualib/rspamadm/grep.lua

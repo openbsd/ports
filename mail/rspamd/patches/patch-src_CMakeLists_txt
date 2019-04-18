@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.9 2019/03/13 14:46:10 sthen Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.10 2019/04/18 16:12:15 sthen Exp $
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -215,9 +215,9 @@ IF(USE_CXX_LINKER)
+@@ -216,9 +216,9 @@ IF(USE_CXX_LINKER)
  	SET_TARGET_PROPERTIES(rspamd PROPERTIES LINKER_LANGUAGE CXX)
  	SET_TARGET_PROPERTIES(rspamd-server PROPERTIES LINKER_LANGUAGE CXX)
  ENDIF()
