@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/03/11 16:08:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/04/18 09:55:15 ajacoutot Exp $
 bin/meson
 lib/python${MODPY_VERSION}/site-packages/meson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/meson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -54,12 +54,14 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/${MODPY_PYCACHE}ninj
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/${MODPY_PYCACHE}vs2010backend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/${MODPY_PYCACHE}vs2015backend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/${MODPY_PYCACHE}vs2017backend.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/${MODPY_PYCACHE}vs2019backend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/${MODPY_PYCACHE}xcodebackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/backends.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/ninjabackend.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/vs2010backend.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/vs2015backend.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/vs2017backend.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/vs2019backend.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/backend/xcodebackend.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/build.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/compilers/

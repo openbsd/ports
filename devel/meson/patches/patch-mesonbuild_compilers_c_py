@@ -1,4 +1,4 @@
-$OpenBSD: patch-mesonbuild_compilers_c_py,v 1.3 2019/03/11 16:08:26 ajacoutot Exp $
+$OpenBSD: patch-mesonbuild_compilers_c_py,v 1.4 2019/04/18 09:55:15 ajacoutot Exp $
 
 From 03c0c3a8f41e7d9eaff582dbdf680154671a6263 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -8,7 +8,7 @@ Subject: [PATCH] Fix _get_patterns on OpenBSD
 Index: mesonbuild/compilers/c.py
 --- mesonbuild/compilers/c.py.orig
 +++ mesonbuild/compilers/c.py
-@@ -902,7 +902,8 @@ class CCompiler(Compiler):
+@@ -904,7 +904,8 @@ class CCompiler(Compiler):
              # is expensive. It's wrong in many edge cases, but it will match
              # correctly-named libraries and hopefully no one on OpenBSD names
              # their files libfoo.so.9a.7b.1.0
