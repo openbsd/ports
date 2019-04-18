@@ -1,8 +1,8 @@
-$OpenBSD: patch-html_includes_output_capture_inc_php,v 1.3 2019/01/04 13:43:35 sthen Exp $
+$OpenBSD: patch-includes_html_output_capture_inc_php,v 1.1 2019/04/18 17:20:51 sthen Exp $
 
-Index: html/includes/output/capture.inc.php
---- html/includes/output/capture.inc.php.orig
-+++ html/includes/output/capture.inc.php
+Index: includes/html/output/capture.inc.php
+--- includes/html/output/capture.inc.php.orig
++++ includes/html/output/capture.inc.php
 @@ -35,7 +35,7 @@ $type = $_REQUEST['type'];
  
  switch ($type) {

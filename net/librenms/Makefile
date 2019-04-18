@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.86 2019/04/01 13:52:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.87 2019/04/18 17:20:51 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
-GH_TAGNAME =	1.50
+GH_TAGNAME =	1.50.1
 DISTFILES =	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH =		0
 
@@ -82,7 +82,7 @@ do-install:
 	find ${INSTDIR} -name '*.orig' -delete
 	mkdir -p ${INSTDIR}/{rrd,logs}
 	cd ${INSTDIR}; \
-	   sed -i 's,%PHP%,${MODPHP_BIN},' daily.sh *-wrapper.py *-service.py validate.php LibreNMS/Validations/Php.php html/includes/output/capture.inc.php scripts/composer_wrapper.php; \
+	   sed -i 's,%PHP%,${MODPHP_BIN},' daily.sh *-wrapper.py *-service.py validate.php LibreNMS/Validations/Php.php includes/html/output/capture.inc.php scripts/composer_wrapper.php; \
 	   sed -i 's,%LNMS_VERSION%,${DISTNAME:S/librenms-//},' includes/common.php
 	cp /usr/share/snmp/mibs/OPENBSD-* ${INSTDIR}/mibs/
 	rm -rf ${INSTDIR}/tests ${INSTDIR}/vendor/*/*/.git

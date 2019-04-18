@@ -1,8 +1,8 @@
-$OpenBSD: patch-html_pages_about_inc_php,v 1.12 2018/10/17 20:24:38 sthen Exp $
+$OpenBSD: patch-includes_html_pages_about_inc_php,v 1.1 2019/04/18 17:20:51 sthen Exp $
 
-Index: html/pages/about.inc.php
---- html/pages/about.inc.php.orig
-+++ html/pages/about.inc.php
+Index: includes/html/pages/about.inc.php
+--- includes/html/pages/about.inc.php.orig
++++ includes/html/pages/about.inc.php
 @@ -3,7 +3,7 @@
  use LibreNMS\Authentication\LegacyAuth;
  
