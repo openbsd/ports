@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2019/03/25 12:58:45 jca Exp $
+# $OpenBSD: Makefile,v 1.33 2019/04/18 17:32:33 naddy Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC #'
 
 V=		5.4.0
-REVISION=	2
+REVISION=	3
 DISTNAME =	gcc-$V
 PKGNAME=	avr-gcc-${V}
 SHARED_LIBS +=  cc1plugin                 0.0 # 0.0
@@ -35,6 +35,7 @@ CONFIGURE_ENV=	INSTALL="install -c" \
 CONFIGURE_ARGS+= --disable-libssp \
 		--enable-languages="c,c++" \
 		--enable-cpp \
+		--disable-libcc1 \
 		--with-gmp=${LOCALBASE} \
 		--with-mpfr=${LOCALBASE}
 

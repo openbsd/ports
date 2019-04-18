@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/03/25 12:58:45 jca Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/04/18 17:32:33 naddy Exp $
 @bin bin/avr-c++
 @bin bin/avr-cpp
 @bin bin/avr-g++
@@ -718,13 +718,9 @@ lib/gcc/avr/${V}/plugin/include/wide-int-print.h
 lib/gcc/avr/${V}/plugin/include/wide-int.h
 lib/gcc/avr/${V}/plugin/include/xcoff.h
 lib/gcc/avr/${V}/plugin/include/xcoffout.h
-lib/gcc/avr/${V}/plugin/libcc1plugin.la
-@lib lib/gcc/avr/${V}/plugin/libcc1plugin.so.${LIBcc1plugin_VERSION}
 lib/gcc/avr/${V}/tiny-stack/
 lib/gcc/avr/${V}/tiny-stack/libgcc.a
 lib/gcc/avr/${V}/tiny-stack/libgcov.a
-lib/libcc1.la
-@lib lib/libcc1.so.${LIBcc1_VERSION}
 libexec/gcc/
 libexec/gcc/avr/
 libexec/gcc/avr/${V}/
