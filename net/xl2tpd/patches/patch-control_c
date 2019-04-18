@@ -1,11 +1,11 @@
-$OpenBSD: patch-control_c,v 1.1 2017/11/23 16:41:06 landry Exp $
+$OpenBSD: patch-control_c,v 1.2 2019/04/18 17:30:45 sthen Exp $
 
 Disable flow control as it's broken - https://github.com/xelerance/xl2tpd/issues/133
 
 Index: control.c
 --- control.c.orig
 +++ control.c
-@@ -1503,7 +1503,7 @@ static inline int expand_payload (struct buffer *buf, 
+@@ -1506,7 +1506,7 @@ static inline int expand_payload (struct buffer *buf, 
      l2tp_log (LOG_DEBUG, "%s: payload, cid = %d, Ns = %d, Nr = %d\n", __FUNCTION__,
           c->cid, new_hdr->Ns, new_hdr->Nr);
  #endif
