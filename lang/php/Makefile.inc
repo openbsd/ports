@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.134 2019/04/05 07:17:35 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.135 2019/04/18 16:56:03 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -433,6 +433,11 @@ RUN_DEPENDS-${i}+=	php-${V}:lang/php/${PV}
 .endfor
 
 DESCR-main=		${.CURDIR}/../files/DESCR-main
+
+# shouldn't normally be needed, but sometimes file timestamps in the .tar.gz
+# have the generated file older than the source file for re2c, resulting in a
+# build failure if re2c was installed during autoconf but later junked.
+BUILD_DEPENDS+=		devel/re2c
 
 post-install:
 	${SUBST_DATA} ${.CURDIR}/../files/README-main \
