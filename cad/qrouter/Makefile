@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/19 07:45:39 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/18 05:50:55 rsadowski Exp $
 
 COMMENT =	multi-level, over-the-cell maze router for VLSI design
-DISTNAME =	qrouter-1.3.109
+DISTNAME =	qrouter-1.4.50
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	cad
 
@@ -25,6 +25,9 @@ CONFIGURE_STYLE =	autoconf no-autoheader
 AUTOCONF_VERSION =	2.60
 CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR} \
 			--with-tk=${MODTK_LIBDIR}
+
+# Not C99
+CFLAGS +=	-Wno-return-type
 
 NO_TEST =	Yes
 
