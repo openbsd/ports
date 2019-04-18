@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2017/08/14 15:59:55 ian Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2019/04/18 14:35:39 rsadowski Exp $
 
 COMMENT =		continuous integration server
 
@@ -14,7 +14,7 @@ CATEGORIES =		devel
 
 HOMEPAGE =		https://jenkins.io/
 
-MAINTAINER =		Ian Darwin <ian@openbsd.org>
+MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
 # Code under MIT license, Artwork under Creative Commons
 PERMIT_PACKAGE_CDROM =	Yes
