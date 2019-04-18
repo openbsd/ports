@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2019/03/14 01:33:14 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2019/04/18 17:27:18 sthen Exp $
 @option is-branch
 @conflict freeradius-*
 @conflict radiusd-cistron-*
@@ -84,6 +84,7 @@ include/freeradius/rfc7268.h
 include/freeradius/rfc7499.h
 include/freeradius/rfc7930.h
 include/freeradius/rfc8045.h
+include/freeradius/rfc8559.h
 include/freeradius/sha1.h
 include/freeradius/stats.h
 include/freeradius/sysutmp.h
@@ -848,6 +849,7 @@ share/freeradius/dictionary.packeteer
 share/freeradius/dictionary.paloalto
 share/freeradius/dictionary.patton
 share/freeradius/dictionary.perle
+share/freeradius/dictionary.pfsense
 share/freeradius/dictionary.propel
 share/freeradius/dictionary.prosoft
 share/freeradius/dictionary.proxim
@@ -888,6 +890,7 @@ share/freeradius/dictionary.rfc7268
 share/freeradius/dictionary.rfc7499
 share/freeradius/dictionary.rfc7930
 share/freeradius/dictionary.rfc8045
+share/freeradius/dictionary.rfc8559
 share/freeradius/dictionary.riverbed
 share/freeradius/dictionary.riverstone
 share/freeradius/dictionary.roaringpenguin

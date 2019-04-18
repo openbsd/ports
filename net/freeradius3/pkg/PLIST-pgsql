@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.5 2018/01/16 13:47:46 sthen Exp $
+@comment $OpenBSD: PLIST-pgsql,v 1.6 2019/04/18 17:27:18 sthen Exp $
 @option is-branch
 @conflict freeradius-pgsql-*
 lib/freeradius/rlm_sql_postgresql.so
@@ -27,6 +27,8 @@ share/examples/freeradius/mods-config/sql/cui/postgresql/schema.sql
 share/examples/freeradius/mods-config/sql/ippool/postgresql/
 @sample ${FREERADIUS_ETC}/mods-config/sql/ippool/postgresql/
 @mode 640
+share/examples/freeradius/mods-config/sql/ippool/postgresql/procedure.sql
+@sample ${FREERADIUS_ETC}/mods-config/sql/ippool/postgresql/procedure.sql
 share/examples/freeradius/mods-config/sql/ippool/postgresql/queries.conf
 @sample ${FREERADIUS_ETC}/mods-config/sql/ippool/postgresql/queries.conf
 share/examples/freeradius/mods-config/sql/ippool/postgresql/schema.sql
