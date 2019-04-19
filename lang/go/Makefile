@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.62 2019/04/15 17:14:14 jsing Exp $
+# $OpenBSD: Makefile,v 1.63 2019/04/19 07:15:36 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
+
+BIN_BOOTSTRAP_GOARCHS =	arm
+BIN_BOOTSTRAP_VERSION = 1.12.1
 
 COMMENT =		Go programming language
 
 VERSION =		1.12.4
-EXTRACT_SUFX =		.src.tar.gz
-DISTNAME =		go${VERSION}
+DISTNAME =		go${VERSION}.src
 PKGNAME =		go-${VERSION}
 PKGSPEC =		go-=${VERSION}
 
@@ -22,9 +24,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		c pthread
 
 MASTER_SITES =		https://golang.org/dl/
+MASTER_SITES0 =		https://download.exigere.com.au/pub/go/
 
-BUILD_DEPENDS =		lang/go-bootstrap \
-			shells/bash
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
+
+BUILD_DEPENDS =		shells/bash
 
 SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	None
@@ -38,12 +42,28 @@ INSTALL_STRIP =
 GOOS =			openbsd
 GOARCH =		unknown
 GOROOT =		${PREFIX}/go
-GOROOT_BOOTSTRAP =	${GOROOT}/bootstrap
+GOROOT_BOOTSTRAP =
 
 .if ${MACHINE_ARCH} == "amd64"
 GOARCH =		amd64
+.elif ${MACHINE_ARCH} == "arm"
+GOARCH =		arm
 .elif ${MACHINE_ARCH} == "i386"
 GOARCH =		386
+.endif
+
+.for arch in ${BIN_BOOTSTRAP_GOARCHS}
+SUPDISTFILES +=		go-openbsd-${arch}-bootstrap-${BIN_BOOTSTRAP_VERSION}${EXTRACT_SUFX}:0
+
+.if ${GOARCH} == ${arch}
+DISTFILES +=		go-openbsd-${GOARCH}-bootstrap-${BIN_BOOTSTRAP_VERSION}${EXTRACT_SUFX}:0
+GOROOT_BOOTSTRAP =	${WRKDIR}/go-openbsd-${GOARCH}-bootstrap
+.endif
+.endfor
+
+.if empty(GOROOT_BOOTSTRAP)
+BUILD_DEPENDS +=	lang/go-bootstrap
+GOROOT_BOOTSTRAP =	${GOROOT}/bootstrap
 .endif
 
 GOCFG =			/${GOOS}_${GOARCH}
@@ -57,6 +77,7 @@ do-configure:
 
 do-build:
 	@cd ${WRKSRC} && \
+		ulimit -d $$(ulimit -H -d) && \
 		CC="${CC}" \
 		CXX="${CXX}" \
 		GOROOT=${WRKDIST} \
@@ -69,7 +90,7 @@ do-build:
 # which breaks Go's (now rather fragile) os/exec tests.
 do-test:
 	@cd ${WRKSRC} && \
-		ulimit -n 256 -d 2097152 && \
+		ulimit -d $$(ulimit -H -d) -n 256 && \
 		CC="${CC}" \
 		CXX="${CXX}" \
 		PATH=${WRKDIST}/bin:${PATH} \
