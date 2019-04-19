@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makerules,v 1.19 2018/12/03 18:40:07 sthen Exp $
+$OpenBSD: patch-Makerules,v 1.20 2019/04/19 16:52:31 semarie Exp $
 Index: Makerules
 --- Makerules.orig
 +++ Makerules
@@ -24,3 +24,17 @@ Index: Makerules
  
    ifeq ($(shell pkg-config --exists freetype2 && echo yes),yes)
  	SYS_FREETYPE_CFLAGS := $(shell pkg-config --cflags freetype2)
+@@ -131,10 +131,10 @@ else ifeq ($(OS),Linux)
+ 	X11_LIBS := $(shell pkg-config --libs x11 xext)
+   endif
+ 
+-  HAVE_LIBCRYPTO := $(shell pkg-config --exists 'libcrypto >= 1.1.0' && echo yes)
++  HAVE_LIBCRYPTO := yes
+   ifeq ($(HAVE_LIBCRYPTO),yes)
+-	LIBCRYPTO_CFLAGS := $(shell pkg-config --cflags libcrypto) -DHAVE_LIBCRYPTO
+-	LIBCRYPTO_LIBS := $(shell pkg-config --libs libcrypto)
++	LIBCRYPTO_CFLAGS := -DHAVE_LIBCRYPTO
++	LIBCRYPTO_LIBS := -lcrypto
+   endif
+ 
+   HAVE_PTHREAD := yes

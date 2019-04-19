@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.83 2018/12/10 17:52:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.84 2019/04/19 16:52:31 semarie Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
 V =		1.14.0
-REVISION =	0
+REVISION =	1
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-$V
 
@@ -20,10 +20,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 # uses pledge(2)
 WANTLIB += X11 Xext c curl freetype harfbuzz jbig2dec jpeg m
-WANTLIB += openjp2 pthread z
-
-# XXX some crypto code (relating to pdf signatures) is disabled as it
-# uses openssl 1.1.0 functions not supported by libressl yet
+WANTLIB += openjp2 pthread z crypto
 
 FLAVORS=	js
 FLAVOR?=
