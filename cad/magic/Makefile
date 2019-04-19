@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/18 08:35:35 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/19 15:28:51 bentley Exp $
 
 COMMENT =	interactive system for VLSI circuit layouts
 DISTNAME =	magic-8.1.224
@@ -22,6 +22,7 @@ COMPILER_LANGS = c
 
 MODULES =	x11/tk
 
+#BUILD_DEPENDS =	devel/m4
 RUN_DEPENDS =	shells/bash
 LIB_DEPENDS =	${MODTK_LIB_DEPENDS}
 
