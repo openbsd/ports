@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2019/04/19 13:58:47 jca Exp $
+
+- fix portable linking with libintl, see info '(gettext) src/Makefile'
+- don't hardcode libdl
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -566,7 +566,7 @@ libm17n_core_la_SOURCES = \
+ 	textprop.h textprop.c \
+ 	mtext-lbrk.c mtext-wseg.c
+ 
+-libm17n_core_la_LIBADD = @XML2_LD_FLAGS@ @THAI_WORDSEG_LD_FLAGS@
++libm17n_core_la_LIBADD = @XML2_LD_FLAGS@ @THAI_WORDSEG_LD_FLAGS@ @LTLIBINTL@
+ libm17n_core_la_LDFLAGS = -export-dynamic ${VINFO}
+ libm17n_la_SOURCES = \
+ 	charset.h charset.c \
+@@ -576,7 +576,7 @@ libm17n_la_SOURCES = \
+ 	mlocale.h locale.c \
+ 	m17n.h m17n.c
+ 
+-libm17n_la_LIBADD = ${top_builddir}/src/libm17n-core.la -ldl
++libm17n_la_LIBADD = ${top_builddir}/src/libm17n-core.la
+ libm17n_la_LDFLAGS = -export-dynamic ${VINFO}
+ FLT_SOURCES = \
+ 	internal-flt.h \

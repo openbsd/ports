@@ -1,4 +1,6 @@
-$OpenBSD: patch-example_Makefile_in,v 1.1.1.1 2019/03/26 16:46:59 sthen Exp $
+$OpenBSD: patch-example_Makefile_in,v 1.2 2019/04/19 13:58:47 jca Exp $
+
+- don't hardcode libdl
 
 Index: example/Makefile.in
 --- example/Makefile.in.orig
