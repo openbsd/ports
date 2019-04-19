@@ -1,0 +1,45 @@
+$OpenBSD: patch-t_modules_Util_Table_t,v 1.1.1.1 2019/04/19 14:42:01 bluhm Exp $
+
+Test has been removed upstream, fails with our p5-Term-Table 0.013.
+https://github.com/Test-More/Test2-Suite/commit/629b08d324e3d0761f177318b2d9d659aa8a7ea8
+
+Index: t/modules/Util/Table.t
+--- t/modules/Util/Table.t.orig
++++ t/modules/Util/Table.t
+@@ -246,36 +246,6 @@ subtest no_header => sub {
+     );
+ };
+ 
+-subtest sanitize => sub {
+-    my @table = table(
+-        max_width => 60,
+-        sanitize => 1,
+-        header => [ 'data1' ],
+-        rows => [["a\t\n\r\b\a          　‌﻿\N{U+000B}bф"]],
+-    );
+-
+-    my $have_gcstring = eval { require Unicode::GCString; 1 } || 0;
+-
+-    is(
+-        \@table,
+-        [
+-            ( $have_gcstring
+-                ? ()
+-                : ("Unicode::GCString is not installed, table may not display all unicode characters properly")
+-            ),
+-            '+---------------------------------------------------+',
+-            '| data1                                             |',
+-            '+---------------------------------------------------+',
+-            '| a\t\n                                             |',
+-            '| \r\b\a\N{U+A0}\N{U+1680}\N{U+2000}\N{U+2001}\N{U+ |',
+-            '| 2002}\N{U+2003}\N{U+2004}\N{U+2008}\N{U+2028}\N{U |',
+-            '| +2029}\N{U+3000}\N{U+200C}\N{U+FEFF}\N{U+B}bф     |',
+-            '+---------------------------------------------------+',
+-        ],
+-        "Sanitized data"
+-    );
+-};
+-
+ subtest mark_tail => sub {
+     my @table = table(
+         max_width => 60,
