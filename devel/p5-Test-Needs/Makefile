@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2016/10/26 09:18:57 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/19 13:12:58 bluhm Exp $
 
 COMMENT =	skip tests when modules not available
 
-DISTNAME =	Test-Needs-0.002005
-REVISION =	0
+DISTNAME =	Test-Needs-0.002006
 
 CATEGORIES =	devel
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# perl_5
+# Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
