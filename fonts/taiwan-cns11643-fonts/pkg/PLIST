@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/04/19 05:58:22 bentley Exp $
+share/doc/taiwan-cns11643-fonts/
+share/doc/taiwan-cns11643-fonts/COPYING
+share/doc/taiwan-cns11643-fonts/README
+share/fonts/
+@fontdir share/fonts/taiwan-cns11643-fonts/
+share/fonts/taiwan-cns11643-fonts/TW-Kai-98_1.ttf
+share/fonts/taiwan-cns11643-fonts/TW-Kai-Ext-B-98_1.ttf
+share/fonts/taiwan-cns11643-fonts/TW-Kai-Plus-98_1.ttf
+share/fonts/taiwan-cns11643-fonts/TW-Sung-98_1.ttf
+share/fonts/taiwan-cns11643-fonts/TW-Sung-Ext-B-98_1.ttf
+share/fonts/taiwan-cns11643-fonts/TW-Sung-Plus-98_1.ttf

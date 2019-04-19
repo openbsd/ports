@@ -1,0 +1,13 @@
+The taiwan-cns11643-fonts package contains TrueType fonts designed by the
+Taiwanese Ministry of Education, created to be compliant with the CNS11643
+encoding standard.
+
+TW-Kai is a regular-script-style font. It consists of three files: TW-Kai,
+containing characters from Unicode's Basic Multilingual Plane; TW-Kai-Ext-B,
+containing characters from Unicode's Supplementary Ideographic Plane; and
+TW-Kai-Plus, containing characters in the Private Use Plane.
+
+TW-Sung is a Ming-style font. It consists of three files: TW-Sung, containing
+characters from Unicode's Basic Multilingual Plane; TW-Sung-Ext-B, containing
+characters from Unicode's Supplementary Ideographic Plane; and TW-Sung-Plus,
+containing characters in the Private Use Plane.
