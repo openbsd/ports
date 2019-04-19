@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/04/19 08:18:22 robert Exp $
 
 COMMENT=		SOAP/REST Web Services and XML-Based apps toolkit
 
-V=			2.8.53
-REVISION=		1
+V=			2.8.82
 DISTNAME=		gsoap_${V}
 PKGNAME=		gsoap-${V}
 EXTRACT_SUFX=		.zip

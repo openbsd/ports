@@ -1,0 +1,23 @@
+$OpenBSD: patch-gsoap_stdsoap2_cpp,v 1.1 2019/04/19 08:18:22 robert Exp $
+
+Index: gsoap/stdsoap2.cpp
+--- gsoap/stdsoap2.cpp.orig
++++ gsoap/stdsoap2.cpp
+@@ -4461,7 +4461,7 @@ ssl_auth_init(struct soap *soap)
+   /* enable all TSLv1 protocols and disable SSLv3 by default if no SSL/TLS flags are set */
+   if (!(soap->ssl_flags & SOAP_SSLv3_TLSv1))
+     soap->ssl_flags = SOAP_TLSv1;
+-#if OPENSSL_VERSION_NUMBER >= 0x10101000L
++#if (OPENSSL_VERSION_NUMBER >= 0x10101000L) && !defined(LIBRESSL_VERSION_NUMBER)
+   if ((soap->ssl_flags & SOAP_SSLv3))
+     minv = SSL3_VERSION;
+   else if ((soap->ssl_flags & SOAP_TLSv1_0))
+@@ -4490,7 +4490,7 @@ ssl_auth_init(struct soap *soap)
+   flags = SSL_OP_NO_SSLv2;
+   if (!(soap->ssl_flags & SOAP_SSLv3))
+     flags |= SSL_OP_NO_SSLv3;
+-#if OPENSSL_VERSION_NUMBER >= 0x10001000L
++#if (OPENSSL_VERSION_NUMBER >= 0x10101000L) && !defined(LIBRESSL_VERSION_NUMBER)
+   if (!(soap->ssl_flags & SOAP_TLSv1_0))
+     flags |= SSL_OP_NO_TLSv1;
+   if (!(soap->ssl_flags & SOAP_TLSv1_1))

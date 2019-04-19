@@ -1,11 +1,12 @@
-$OpenBSD: patch-gsoap_stdsoap2_h,v 1.4 2017/09/13 10:30:22 robert Exp $
+$OpenBSD: patch-gsoap_stdsoap2_h,v 1.5 2019/04/19 08:18:22 robert Exp $
+
 Index: gsoap/stdsoap2.h
 --- gsoap/stdsoap2.h.orig
 +++ gsoap/stdsoap2.h
-@@ -550,7 +550,9 @@ extern intmax_t __strtoull(const char*, char**, int);
- #  define HAVE_SSCANF
- #  define HAVE_STRTOL
+@@ -604,7 +604,9 @@ extern intmax_t __strtoull(const char*, char**, int);
  #  define HAVE_STRTOUL
+ #  define HAVE_STRTOLL
+ #  define HAVE_STRTOULL
 -#  define HAVE_SYS_TIMEB_H
 +#  ifndef __OpenBSD__
 +#    define HAVE_SYS_TIMEB_H
@@ -13,13 +14,13 @@ Index: gsoap/stdsoap2.h
  #  define HAVE_FTIME
  #  define HAVE_RAND_R
  #  define HAVE_GETHOSTBYNAME_R
-@@ -774,9 +776,6 @@ extern intmax_t __strtoull(const char*, char**, int);
- #   include <sys/types.h>
- #  endif
- #  ifndef WITH_LEAN
--#   ifdef HAVE_SYS_TIMEB_H
--#    include <sys/timeb.h>              /* for ftime() */
--#   endif
- #   include <time.h>
- #  endif
+@@ -815,9 +817,6 @@ extern intmax_t __strtoull(const char*, char**, int);
+ #  include <sys/types.h>
  # endif
+ # ifndef WITH_LEAN
+-#  ifdef HAVE_SYS_TIMEB_H
+-#   include <sys/timeb.h>              /* for ftime() */
+-#  endif
+ #  include <time.h>
+ # endif
+ #endif

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/09/13 10:30:22 robert Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/04/19 08:18:22 robert Exp $
 @bin bin/soapcpp2
 @bin bin/wsdl2h
 include/stdsoap2.h
@@ -149,7 +149,9 @@ share/gsoap/import/wsse.h
 share/gsoap/import/wsse11.h
 share/gsoap/import/wsse2.h
 share/gsoap/import/wst.h
+share/gsoap/import/wst2.h
 share/gsoap/import/wstx.h
+share/gsoap/import/wstx2.h
 share/gsoap/import/wsu.h
 share/gsoap/import/xenc.h
 share/gsoap/import/xenc2.h
@@ -183,6 +185,8 @@ share/gsoap/plugin/httpmd5.c
 share/gsoap/plugin/httpmd5.h
 share/gsoap/plugin/httpmd5test.c
 share/gsoap/plugin/httpmd5test.h
+share/gsoap/plugin/httppipe.c
+share/gsoap/plugin/httppipe.h
 share/gsoap/plugin/httppost.c
 share/gsoap/plugin/httppost.h
 share/gsoap/plugin/httpposttest.c
@@ -200,7 +204,6 @@ share/gsoap/plugin/plugin.h
 share/gsoap/plugin/sessions.c
 share/gsoap/plugin/sessions.h
 share/gsoap/plugin/smdevp.c
-@comment share/gsoap/plugin/smdevp.c.orig
 share/gsoap/plugin/smdevp.h
 share/gsoap/plugin/threads.c
 share/gsoap/plugin/threads.h
