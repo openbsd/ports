@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2019/03/09 18:44:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2019/04/19 11:38:16 ajacoutot Exp $
 
 PROVIDER=		vault
-GH_TAGNAME=		v1.6.0
+GH_TAGNAME=		v1.7.0
 
 .include <bsd.port.mk>
