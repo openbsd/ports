@@ -1,12 +1,13 @@
-$OpenBSD: patch-src_util-privs_c,v 1.1 2019/03/05 12:38:24 bluhm Exp $
+$OpenBSD: patch-src_util-privs_c,v 1.2 2019/04/19 12:22:27 bluhm Exp $
 
 Use setresuid/gid() directly to change user and group.  Otherwise 
 Suricata uses libcap-ng on Linux and runs as root elsewhere.
+https://github.com/OISF/suricata/commit/00917a0415629abbf675fd14d8752a0a27ab1ff5
 
 Index: src/util-privs.c
 --- src/util-privs.c.orig
 +++ src/util-privs.c
-@@ -235,4 +235,26 @@ int SCGetGroupID(const char *group_name, uint32_t *gid
+@@ -235,4 +235,41 @@ int SCGetGroupID(const char *group_name, uint32_t *gid
  
      return 0;
  }
@@ -31,5 +32,20 @@ Index: src/util-privs.c
 +
 +    return 0;
 +}
++
++#ifdef __OpenBSD__
++int SCPledge(void)
++{
++    int ret = pledge("stdio rpath wpath cpath fattr unix dns bpf", NULL);
++
++    if (ret != 0) {
++        SCLogError(SC_ERR_PLEDGE_FAILED, "unable to pledge,"
++                " check permissions!! ret=%i errno=%i", ret, errno);
++        exit(EXIT_FAILURE);
++    }
++
++    return 0;
++}
++#endif /* __OpenBSD__ */
 +
  #endif /* OS_WIN32 */

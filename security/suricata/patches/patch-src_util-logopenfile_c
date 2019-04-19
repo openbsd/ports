@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_util-logopenfile_c,v 1.1 2019/04/05 12:24:00 bluhm Exp $
+$OpenBSD: patch-src_util-logopenfile_c,v 1.2 2019/04/19 12:22:27 bluhm Exp $
 
-https://github.com/OISF/suricata/pull/3753/commits/26e3c07cc7fb5c480c6e776a6652f5de326e7dbb
+https://github.com/OISF/suricata/commit/4b4bb31c30339caa2c6020a7ec14bea848ba5a5d
 
 Index: src/util-logopenfile.c
 --- src/util-logopenfile.c.orig
