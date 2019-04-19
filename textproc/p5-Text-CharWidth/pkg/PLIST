@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/04/19 13:24:23 sthen Exp $
+${P5ARCH}/
+${P5ARCH}/Text/
+${P5ARCH}/Text/CharWidth.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Text/
+${P5ARCH}/auto/Text/CharWidth/
+${P5ARCH}/auto/Text/CharWidth/CharWidth.so
+@man man/man3p/Text::CharWidth.3p

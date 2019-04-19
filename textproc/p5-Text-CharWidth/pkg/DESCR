@@ -1,0 +1,7 @@
+This module allows determining the display width of strings, mostly
+useful with multibyte character encodings. It provides functionality
+equivalent to C's wcwidth(3), wcswidth(3) and mblen(3).
+
+While most characters have a width of 1, there are exceptions - many
+east Asian characters have a width of 2, and some languages use Unicode
+"combining characters" which have a zero width.
