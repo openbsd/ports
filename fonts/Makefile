@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2019/03/29 20:33:55 bcallah Exp $
+# $OpenBSD: Makefile,v 1.57 2019/04/19 05:59:55 bentley Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -74,6 +74,7 @@
      SUBDIR += sunscreen
      SUBDIR += symbola-ttf
      SUBDIR += tagmukay
+     SUBDIR += taiwan-cns11643-fonts
      SUBDIR += tamsyn-font
      SUBDIR += taviraj
      SUBDIR += terminus-font
