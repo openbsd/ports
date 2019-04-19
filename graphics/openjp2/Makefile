@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2019/01/16 22:29:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/04/19 13:29:52 sthen Exp $
 
 COMMENT=	open-source JPEG 2000 codec library
 
 GH_ACCOUNT=	uclouvain
 GH_PROJECT=	openjpeg
-GH_TAGNAME=	v2.3.0
-REVISION=	0
+GH_TAGNAME=	v2.3.1
 DISTNAME=	openjp2-${GH_TAGNAME:S/v//}
 
 SHARED_LIBS +=	openjp2                   3.1
@@ -36,7 +35,7 @@ post-install:
 
 pre-test:
 	@if [ ! -d ${WRKDIR}/data ]; then \
-		printf "\nTests require a checkout of https://github.com/uclouvain/openjpeg-data \
+		printf "\nTests require a checkout of https://github.com/uclouvain/openjpeg-data\
 		in ${WRKDIR}/data (approx 500MB).\n\n"; \
 		exit 1; \
 	fi
