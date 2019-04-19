@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2018/10/01 07:05:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2019/04/19 08:26:49 rsadowski Exp $
 
 COMMENT =		C++ toolkit for machine learning and data analysis
 
-DISTNAME =		dlib-19.16
+DISTNAME =		dlib-19.17
 
-SHARED_LIBS +=  dlib                      3.3 # 19.7
+SHARED_LIBS +=  dlib                      3.4 # 19.7
 
 CATEGORIES =		devel
 
@@ -32,12 +32,15 @@ LIB_DEPENDS =		graphics/jpeg \
 
 # XXX Disable searching for blas (cblas lacks)
 # Check after math/blas update or OpenBLAS import
-CONFIGURE_ARGS =	-DDLIB_USE_BLAS:Bool=OFF \
-			-DDLIB_USE_LAPACK:Bool=OFF \
-			-DDLIB_USE_MKL_FFT:Bool=OFF \
-			-DBUILD_SHARED_LIBS:Bool=ON
+CONFIGURE_ARGS =	-DDLIB_USE_BLAS=OFF \
+			-DDLIB_USE_LAPACK=OFF \
+			-DDLIB_USE_MKL_FFT=OFF \
+			-DBUILD_SHARED_LIBS=ON
 
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
+
+# XXX Build error, reported upstream
+NO_TEST =		Yes
 
 pre-test:
 	test -d ${WRKBUILD}/dlib/test || mkdir ${WRKBUILD}/dlib/test \
@@ -45,7 +48,7 @@ pre-test:
 	${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" \
 	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 	${CONFIGURE_ENV} ${LOCALBASE}/bin/cmake \
-	-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY:Bool=True \
+	-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=True \
 		-G ${_MODCMAKE_GEN} ${CONFIGURE_ARGS} ${WRKSRC}/dlib/test
 	cd ${WRKBUILD}/dlib/test && exec ${SETENV} ${MAKE_ENV} \
 	${NINJA} ${NINJA_FLAGS} ${ALL_TARGET}
