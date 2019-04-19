@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.749 2019/04/17 13:19:49 solene Exp $
+# $OpenBSD: Quirks.pm,v 1.750 2019/04/19 18:15:23 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -326,6 +326,10 @@ my $stem_extensions = {
 	'py-zeroconf' => 'py3-zeroconf',
 	'digikam' => 'digikam-kde4',
 	'apertium-sv-da' => 'apertium-swe-dan',
+# 6.6
+	'Xonotic' => 'xonotic',
+	'Xonotic-data' => 'xonotic-data',
+	'Xonotic-server' => 'xonotic-server',
 };
 
 my $obsolete_reason = {

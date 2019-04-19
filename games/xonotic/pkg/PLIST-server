@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-server,v 1.1.1.1 2018/12/05 15:53:53 kn Exp $
-@bin bin/Xonotic-dedicated
+@comment $OpenBSD: PLIST-server,v 1.2 2019/04/19 18:15:23 kn Exp $
+@conflict Xonotic-server-*
+@bin bin/xonotic-dedicated
 share/examples/xonotic/
 share/examples/xonotic/help.cfg
 share/examples/xonotic/server.cfg

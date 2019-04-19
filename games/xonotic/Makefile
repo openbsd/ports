@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/05 15:53:53 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/19 18:15:23 kn Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
@@ -8,12 +8,12 @@ COMMENT-server =	fast-paced first person shooter, server
 
 MULTI_PACKAGES =	-main -data -server
 
-N =			Xonotic
 V =			0.8.2
-DISTNAME =		${N:L}-${V}
-PKGNAME-main =		${N}-${V}
-PKGNAME-data =		${N}-data-${V}
-PKGNAME-server =	${N}-server-${V}
+REVISION =		0
+DISTNAME =		xonotic-${V}
+PKGNAME-main =		xonotic-${V}
+PKGNAME-data =		xonotic-data-${V}
+PKGNAME-server =	xonotic-server-${V}
 EXTRACT_SUFX =		.zip
 
 CATEGORIES =		games x11
@@ -54,14 +54,14 @@ NO_TEST =		Yes
 
 MAKE_FILE =		makefile
 PKG_ARCH-data =		*
-WRKDIST =		${WRKDIR}/${N}
+WRKDIST =		${WRKDIR}/Xonotic
 WRKSRC =		${WRKDIST}/source/darkplaces
 
 ALL_TARGET =		sdl-release sv-release
 
 do-install:
 .for p in dedicated sdl
-	${INSTALL_PROGRAM} ${WRKBUILD}/darkplaces-${p} ${PREFIX}/bin/${N}-${p}
+	${INSTALL_PROGRAM} ${WRKBUILD}/darkplaces-${p} ${PREFIX}/bin/xonotic-${p}
 .endfor
 .for d in xonotic/data examples/xonotic xonotic/server/rcon2irc
 	${INSTALL_DATA_DIR} ${PREFIX}/share/${d}/
