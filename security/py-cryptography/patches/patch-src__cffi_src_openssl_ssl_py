@@ -1,9 +1,9 @@
-$OpenBSD: patch-src__cffi_src_openssl_ssl_py,v 1.1 2019/03/19 16:50:03 jsing Exp $
+$OpenBSD: patch-src__cffi_src_openssl_ssl_py,v 1.2 2019/04/19 10:18:16 sthen Exp $
 
 Index: src/_cffi_src/openssl/ssl.py
 --- src/_cffi_src/openssl/ssl.py.orig
 +++ src/_cffi_src/openssl/ssl.py
-@@ -722,9 +722,11 @@ static const long TLS_ST_OK = 0;
+@@ -721,9 +721,11 @@ static const long TLS_ST_OK = 0;
  
  #if CRYPTOGRAPHY_OPENSSL_LESS_THAN_102
  static const long Cryptography_HAS_GENERIC_DTLS_METHOD = 0;

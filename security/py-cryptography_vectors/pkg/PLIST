@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/01/29 22:44:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/04/19 10:18:17 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -115,8 +115,20 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/ECDSA/F
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/ECDSA/SECP256K1/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/ECDSA/SECP256K1/SigGen.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed25519/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed25519/ed25519-pkcs8-enc.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed25519/ed25519-pkcs8-enc.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed25519/ed25519-pkcs8.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed25519/ed25519-pkcs8.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed25519/ed25519-pub.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed25519/ed25519-pub.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed25519/sign.input
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/ed448-pkcs8-enc.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/ed448-pkcs8-enc.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/ed448-pkcs8.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/ed448-pkcs8.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/ed448-pub.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/ed448-pub.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/Ed448/rfc8032.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/README.txt

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/01/29 22:44:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/04/19 10:18:16 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/cryptography/
 lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -41,6 +41,8 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}dh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}dsa.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}ec.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}ed25519.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}ed448.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}encode_asn1.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}hashes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}hmac.${MODPY_PYC_MAGIC_TAG}pyc
@@ -58,6 +60,8 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/de
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/dh.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/dsa.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/ec.py
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/ed25519.py
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/ed448.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/encode_asn1.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/hashes.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/hmac.py
@@ -100,6 +104,8 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetr
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/${MODPY_PYCACHE}dh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/${MODPY_PYCACHE}dsa.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/${MODPY_PYCACHE}ec.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/${MODPY_PYCACHE}ed25519.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/${MODPY_PYCACHE}ed448.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/${MODPY_PYCACHE}padding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/${MODPY_PYCACHE}rsa.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
@@ -108,6 +114,8 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetr
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/dh.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/dsa.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/ec.py
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/ed25519.py
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/ed448.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/padding.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/rsa.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/asymmetric/utils.py
