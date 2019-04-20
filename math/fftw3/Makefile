@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/04/17 18:49:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.35 2019/04/20 07:20:07 ajacoutot Exp $
 
 COMMENT-main=	C routines for computing the Discrete Fourier Transform
 COMMENT-common=	common files for the fftw3 packages
@@ -15,6 +15,9 @@ SHARED_LIBS=	fftw3	7.1 \
 		fftw3_threads	1.1 \
 		fftw3f_threads	1.1
 CATEGORIES=	math
+
+REVISION-main=		0
+REVISION-common=	0
 
 HOMEPAGE=	http://www.fftw.org/
 
