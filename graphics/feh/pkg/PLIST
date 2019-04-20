@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/06/29 22:16:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/04/20 06:24:12 tim Exp $
 @bin bin/feh
 @man man/man1/feh.1
 share/applications/feh.desktop
@@ -25,12 +25,7 @@ share/feh/fonts/yudit.ttf
 share/feh/images/
 share/feh/images/feh.png
 share/feh/images/feh.svg
-share/feh/images/menubg_aluminium.png
-share/feh/images/menubg_aqua.png
-share/feh/images/menubg_black.png
-share/feh/images/menubg_brushed.png
 share/feh/images/menubg_default.png
-share/feh/images/menubg_sky.png
 share/icons/hicolor/48x48/apps/feh.png
 share/icons/hicolor/scalable/apps/feh.svg
 @tag gtk-update-icon-cache %D/share/icons/hicolor

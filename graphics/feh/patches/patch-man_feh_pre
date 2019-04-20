@@ -1,8 +1,8 @@
-$OpenBSD: patch-man_feh_pre,v 1.43 2018/07/10 19:45:14 gonzalo Exp $
+$OpenBSD: patch-man_feh_pre,v 1.44 2019/04/20 06:24:12 tim Exp $
 Index: man/feh.pre
 --- man/feh.pre.orig
 +++ man/feh.pre
-@@ -1177,7 +1177,7 @@ which
+@@ -1250,7 +1250,7 @@ which
  defaults to
  .Pa ~/.config/feh/ .
  If the files are not found in that directory, it will also try
