@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/13 07:30:15 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/20 00:34:04 bentley Exp $
 
 COMMENT =		graphics data for OpenTTD
 
 OPENTTD_PROJECT =	opengfx
-V =			0.5.4
+V =			0.5.5
 
 post-extract:
 	cd ${WRKDIR} && ${TAR} xf opengfx-$V.tar
