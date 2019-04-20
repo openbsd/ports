@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/08/25 17:44:10 jca Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/04/20 16:48:32 jca Exp $
 @newgroup _knot:751
 @newuser _knot:751:_knot::Knot DNS Server:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/knot
@@ -18,8 +18,8 @@ include/libdnssec/key.h
 include/libdnssec/keyid.h
 include/libdnssec/keystore.h
 include/libdnssec/keytag.h
-include/libdnssec/list.h
 include/libdnssec/nsec.h
+include/libdnssec/pem.h
 include/libdnssec/random.h
 include/libdnssec/sign.h
 include/libdnssec/tsig.h
