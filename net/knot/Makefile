@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2019/02/14 12:54:23 jca Exp $
+# $OpenBSD: Makefile,v 1.38 2019/04/20 15:41:33 jca Exp $
 
 COMMENT =		authoritative DNS server
 
-DISTNAME =		knot-2.7.4
+DISTNAME =		knot-2.7.7
 
 SHARED_LIBS +=	zscanner             1.0      # .1.0
 SHARED_LIBS +=	knot                 4.0      # .7.0
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c curses edit ffi gmp gnutls hogweed iconv idn2 intl
 WANTLIB += lmdb m nettle p11-kit pthread tasn1 unistring urcu
-WANTLIB += urcu-common z
+WANTLIB += urcu-common
 
 MASTER_SITES =		https://secure.nic.cz/files/knot-dns/
 EXTRACT_SUFX =		.tar.xz
