@@ -1,0 +1,18 @@
+$OpenBSD: patch-scapy_layers_inet_py,v 1.1 2019/04/20 00:17:50 bluhm Exp $
+
+https://github.com/secdev/scapy/pull/1907/commits/d64930e3bbfeca6c04d9874d31d244a0916158e1
+
+Index: scapy/layers/inet.py
+--- scapy/layers/inet.py.orig
++++ scapy/layers/inet.py
+@@ -797,8 +797,8 @@ bind_layers( Ether,         IP,            type=2048)
+ bind_layers( CookedLinux,   IP,            proto=2048)
+ bind_layers( GRE,           IP,            proto=2048)
+ bind_layers( SNAP,          IP,            code=2048)
+-bind_layers( Loopback,      IP,            type=0)
+-bind_layers( Loopback,      IP,            type=2)
++bind_bottom_up(Loopback,    IP,            type=0)
++bind_layers( Loopback,      IP,            type=socket.AF_INET)
+ bind_layers( IPerror,       IPerror,       frag=0, proto=4)
+ bind_layers( IPerror,       ICMPerror,     frag=0, proto=1)
+ bind_layers( IPerror,       TCPerror,      frag=0, proto=6)

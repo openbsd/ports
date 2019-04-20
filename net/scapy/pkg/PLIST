@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/07/08 16:30:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/04/20 00:17:50 bluhm Exp $
 @conflict scapy6-*
 @pkgpath net/scapy6
 bin/UTscapy
@@ -9,6 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/scapy-${MODPY_EGG_VERSION}-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/scapy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/scapy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/scapy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/scapy/VERSION
 lib/python${MODPY_VERSION}/site-packages/scapy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/scapy/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/all.py
@@ -217,8 +218,6 @@ lib/python${MODPY_VERSION}/site-packages/scapy/layers/llmnr.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/llmnr.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/lltd.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/lltd.pyc
-lib/python${MODPY_VERSION}/site-packages/scapy/layers/loop.py
-lib/python${MODPY_VERSION}/site-packages/scapy/layers/loop.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/mgcp.py
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/mgcp.pyc
 lib/python${MODPY_VERSION}/site-packages/scapy/layers/mobileip.py

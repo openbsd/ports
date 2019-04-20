@@ -1,0 +1,30 @@
+$OpenBSD: patch-scapy_layers_l2_py,v 1.1 2019/04/20 00:17:50 bluhm Exp $
+
+https://github.com/secdev/scapy/commit/37e5cf1aae3f78bb75f768fca2a1d4594ff01a2a
+
+Index: scapy/layers/l2.py
+--- scapy/layers/l2.py.orig
++++ scapy/layers/l2.py
+@@ -388,9 +388,7 @@ class GRE_PPTP(GRE):
+ 
+ ### *BSD loopback layer
+ 
+-class LoIntEnumField(EnumField):
+-    def __init__(self, name, default, enum):
+-        EnumField.__init__(self, name, default, enum, "!I")
++class LoIntEnumField(IntEnumField):
+ 
+     def m2i(self, pkt, x):
+         return x >> 24
+@@ -410,7 +408,10 @@ class Loopback(Packet):
+     """*BSD loopback layer"""
+ 
+     name = "Loopback"
+-    fields_desc = [ LoIntEnumField("type", 0x2, LOOPBACK_TYPES) ]
++    if scapy.consts.OPENBSD:
++        fields_desc = [IntEnumField("type", 0x2, LOOPBACK_TYPES)]
++    else:
++        fields_desc = [LoIntEnumField("type", 0x2, LOOPBACK_TYPES)]
+     __slots__ = ["_defrag_pos"]
+ 
+ 

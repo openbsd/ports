@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2019/02/20 13:58:24 bluhm Exp $
+# $OpenBSD: Makefile,v 1.32 2019/04/20 00:17:50 bluhm Exp $
 
 COMMENT=	powerful interactive packet manipulation in python
 
 MODPY_EGG_VERSION=	2.4.0
-REVISION=		2
+REVISION=		3
 DISTNAME=		scapy-${MODPY_EGG_VERSION}
 CATEGORIES=		net
 
@@ -22,6 +22,7 @@ MODULES=	lang/python
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
+UPDATE_PLIST_ARGS=	-i MODPY_PY_PREFIX
 
 RUN_DEPENDS=	net/libdnet,-python \
 		net/py-libpcap \
