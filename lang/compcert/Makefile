@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/17 03:26:53 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2019/04/20 22:12:41 daniel Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		high assurance C compiler
 
 V=			3.5
+REVISION =		0
 GH_ACCOUNT =		AbsInt
 GH_PROJECT =		CompCert
 GH_TAGNAME =		v${V}
@@ -23,6 +24,8 @@ PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB	+= c m
 
+COMPILER	= ports-gcc
+
 USE_GMAKE	= Yes
 
 CONFIGURE_STYLE = simple
@@ -33,6 +36,11 @@ CONFIGURE_ARGS  = -prefix ${WRKINST}${PREFIX} \
 BUILD_DEPENDS =	lang/ocaml>=4.02 \
 		math/coq>=8.6.1 \
 		devel/ocaml-menhir>=20181113p0
+
+RUN_DEPENDS =	lang/gcc/${MODGCC4_VERSION}
+
+post-extract:
+	sed -i -e 's/gcc/egcc/g' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/compcert

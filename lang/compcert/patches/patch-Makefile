@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.3 2018/10/27 01:16:42 daniel Exp $
+$OpenBSD: patch-Makefile,v 1.4 2019/04/20 22:12:41 daniel Exp $
 
 Convenience test target
 
@@ -20,8 +20,8 @@ Index: Makefile
  endif
 +
 +test:
-+	$(MAKE) -C test
-+	$(MAKE) -C test test
++	env CCOMPOPTS=-Wl,-z,notext $(MAKE) -C test
++	env CCOMPOPTS=-Wl,-z,notext $(MAKE) -C test test
  
  
  clean:
