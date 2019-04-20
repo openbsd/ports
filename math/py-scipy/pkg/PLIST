@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/04/20 21:35:01 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/04/20 23:55:22 daniel Exp $
 lib/python${MODPY_VERSION}/site-packages/scipy/
 lib/python${MODPY_VERSION}/site-packages/scipy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/scipy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -1223,9 +1223,9 @@ lib/python${MODPY_VERSION}/site-packages/scipy/spatial/tests/test_hausdorff.py
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/tests/test_kdtree.py
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/tests/test_qhull.py
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/tests/test_spherical_voronoi.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scipy/spatial/transform/
+lib/python${MODPY_VERSION}/site-packages/scipy/spatial/transform/
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/transform/__init__.py
-lib/python${MODPY_VERSION}/site-packages/scipy/spatial/transform/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/scipy/spatial/transform/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/transform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/transform/${MODPY_PYCACHE}rotation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scipy/spatial/transform/${MODPY_PYCACHE}setup.${MODPY_PYC_MAGIC_TAG}pyc
