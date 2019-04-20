@@ -1,14 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2018/12/09 21:01:03 ajacoutot Exp $
-
-# XXX fix build with icu >=5.9.1 (remove at next update?)
-CXXFLAGS +=	-DU_USING_ICU_NAMESPACE=1
+# $OpenBSD: Makefile,v 1.62 2019/04/20 00:33:32 bentley Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
-V =		1.8.0
+V =		1.9.1
 DISTNAME =	openttd-$V-source
 PKGNAME =	openttd-$V
-REVISION =	4
 
 CATEGORIES=	games
 
@@ -24,7 +20,8 @@ WANTLIB += lzma lzo2 m png pthread ${COMPILER_LIBCXX} xdg-basedir z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		https://binaries.openttd.org/releases/$V/
+MASTER_SITES =		https://proxy.binaries.openttd.org/openttd-releases/$V/
+EXTRACT_SUFX =		.tar.xz
 
 DIST_SUBDIR =		openttd
 

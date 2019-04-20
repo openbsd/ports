@@ -1,9 +1,9 @@
-$OpenBSD: patch-config_lib,v 1.5 2018/06/26 06:20:41 bentley Exp $
+$OpenBSD: patch-config_lib,v 1.6 2019/04/20 00:33:32 bentley Exp $
 Don't build with -O1. The reason they add it is irrevelant to OpenBSD anyway.
 Index: config.lib
 --- config.lib.orig
 +++ config.lib
-@@ -1543,7 +1543,7 @@ make_cflags_and_ldflags() {
+@@ -1566,7 +1566,7 @@ make_cflags_and_ldflags() {
  		cc_build_is_gcc=`basename "$cc_build" | grep "gcc" 2>/dev/null`
  		if [ -n "$cc_build_is_gcc" ]; then
  			# Just add -O1 to the tools needed for building.
