@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/04/20 15:41:33 jca Exp $
+# $OpenBSD: Makefile,v 1.39 2019/04/20 16:16:40 jca Exp $
 
 COMMENT =		authoritative DNS server
 
@@ -51,11 +51,6 @@ CONFIGURE_ENV =		ac_cv_path_PDFLATEX="false" \
 .if ${MACHINE_ARCH} == "i386"
 CFLAGS += -march=i586
 .endif
-
-post-extract:
-	# Workaround symbol conflict somehow avoided by GNU libtool
-	sed -i 's/net_send/contrib_&/g' ${WRKSRC}/tests/contrib/test_net.c
-	sed -i 's/net_send/contrib_&/g' ${WRKSRC}/src/contrib/net.[ch]
 
 post-install:
 	mv ${WRKINST}/etc/knot/ ${PREFIX}/share/examples/knot/
