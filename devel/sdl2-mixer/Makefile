@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.10 2018/04/27 15:43:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2019/04/20 18:22:28 thfr Exp $
 
-V =		2.0.2
+V =		2.0.4
 COMMENT =	SDL2 multi-channel audio mixer library
 DISTNAME =	SDL2_mixer-${V}
 PKGNAME =	sdl2-mixer-${V}
 CATEGORIES =	devel audio
 
-SHARED_LIBS =	SDL2_mixer		0.0 # 0.0
+SHARED_LIBS +=  SDL2_mixer		0.1	# 2.2
 
 HOMEPAGE =	https://www.libsdl.org/projects/SDL_mixer/
+MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # zlib
 PERMIT_PACKAGE_CDROM =   Yes
 
-WANTLIB += FLAC SDL2 c m mikmod modplug ogg pthread sndio usbhid
+WANTLIB += FLAC SDL2 c m mikmod modplug ogg opus opusfile pthread sndio usbhid
 WANTLIB += vorbis vorbisfile samplerate mpg123
 
 MASTER_SITES =	https://www.libsdl.org/projects/SDL_mixer/release/
@@ -24,6 +25,7 @@ LIB_DEPENDS =	audio/flac \
 		audio/libogg \
 		audio/libvorbis \
 		audio/mpg123 \
+		audio/opusfile \
 		devel/sdl2
 
 CONFIGURE_STYLE =	gnu
