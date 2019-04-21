@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.19 2018/09/04 12:46:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.20 2019/04/21 11:31:20 solene Exp $
 @pkgpath net/bitlbee,no_ssl
 @newgroup _bitlbee:509
 @newuser _bitlbee:509:_bitlbee:daemon:Bitlbee Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${DB_DIR}/*
+@rcscript ${RCDIR}/bitlbee
 include/bitlbee/
 include/bitlbee/account.h
 include/bitlbee/arc.h
@@ -10,6 +11,7 @@ include/bitlbee/auth.h
 include/bitlbee/base64.h
 include/bitlbee/bee.h
 include/bitlbee/bitlbee.h
+include/bitlbee/canohost.h
 include/bitlbee/commands.h
 include/bitlbee/conf.h
 include/bitlbee/config.h
@@ -59,6 +61,3 @@ share/examples/bitlbee/motd.txt
 @owner _bitlbee
 @group _bitlbee
 @sample ${DB_DIR}/
-@owner
-@group
-@rcscript ${RCDIR}/bitlbee
