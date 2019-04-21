@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/08/17 18:51:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/04/21 12:40:35 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/_ruamel_yaml.so
 lib/python${MODPY_VERSION}/site-packages/ruamel/
 lib/python${MODPY_VERSION}/site-packages/ruamel.yaml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
@@ -13,6 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}anchor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}comments.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}composer.${MODPY_PYC_MAGIC_TAG}pyc
@@ -30,6 +31,7 @@ lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}parser.${MO
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}reader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}representer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}resolver.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}scalarbool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}scalarfloat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}scalarint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}scalarstring.${MODPY_PYC_MAGIC_TAG}pyc
@@ -38,6 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}serializer.
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}timestamp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}tokens.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/anchor.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/comments.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/compat.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/composer.py
@@ -55,6 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/parser.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/reader.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/representer.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/resolver.py
+lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/scalarbool.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/scalarfloat.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/scalarint.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/scalarstring.py
