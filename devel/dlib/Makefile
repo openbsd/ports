@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/19 08:26:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2019/04/21 09:43:47 rsadowski Exp $
 
 COMMENT =		C++ toolkit for machine learning and data analysis
 
 DISTNAME =		dlib-19.17
+REVISION =		0
 
 SHARED_LIBS +=  dlib                      3.4 # 19.7
 
@@ -38,9 +39,6 @@ CONFIGURE_ARGS =	-DDLIB_USE_BLAS=OFF \
 			-DBUILD_SHARED_LIBS=ON
 
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
-
-# XXX Build error, reported upstream
-NO_TEST =		Yes
 
 pre-test:
 	test -d ${WRKBUILD}/dlib/test || mkdir ${WRKBUILD}/dlib/test \
