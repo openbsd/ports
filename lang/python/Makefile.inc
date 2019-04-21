@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.127 2018/10/31 23:48:19 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.128 2019/04/21 09:32:19 sthen Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -69,8 +69,8 @@ LIB_DEPENDS-main =	${MODGCC4_CPPLIBDEP} \
 			devel/libffi \
 			devel/gettext
 RUN_DEPENDS-main =
-WANTLIB-main =		bz2 c crypto expat ffi intl m ncursesw panelw pthread \
-			readline sqlite3 ssl ${COMPILER_LIBCXX} util z
+WANTLIB-main =		bz2 c crypto expat ffi intl m curses panel pthread \
+			readline sqlite3 ssl util z
 .if ${VERSION} != "2.7"
 LIB_DEPENDS-main +=	archivers/xz
 WANTLIB-main +=		lzma
@@ -128,17 +128,18 @@ FAKE_FLAGS +=	RANLIB=:
 # and QtWebKit require W|X mappings.
 USE_WXNEEDED = Yes
 
-.if ${VERSION} == "3.6"
-ALL_TARGET =	all
-.else
+.if ${VERSION} == "2.7"
 ALL_TARGET =	all ./Lib/plat-openbsd6
+.else
+ALL_TARGET =	all
 .endif
 
 post-extract:
 	rm -r ${WRKDIST}/Modules/expat
 
-post-patch:
+do-gen:
 	${SUBST_CMD} ${WRKSRC}/configure.ac
+	${MODGNU_gen}
 
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} Makefile
