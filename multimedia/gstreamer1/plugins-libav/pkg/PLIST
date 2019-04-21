@@ -1,26 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/04/10 10:14:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/04/21 08:50:45 ajacoutot Exp $
 lib/gstreamer-${API}/libgstlibav.so
-share/gtk-doc/html/gst-libav-plugins-${API}/
-share/gtk-doc/html/gst-libav-plugins-${API}/ch01.html
-share/gtk-doc/html/gst-libav-plugins-${API}/ch02.html
-share/gtk-doc/html/gst-libav-plugins-${API}/ch03.html
-share/gtk-doc/html/gst-libav-plugins-${API}/gst-libav-plugins-${API}.devhelp2
-share/gtk-doc/html/gst-libav-plugins-${API}/gst-libav-plugins-GstFFMpegAudDec.html
-share/gtk-doc/html/gst-libav-plugins-${API}/gst-libav-plugins-GstFFMpegAudEnc.html
-share/gtk-doc/html/gst-libav-plugins-${API}/gst-libav-plugins-GstFFMpegVidDec.html
-share/gtk-doc/html/gst-libav-plugins-${API}/gst-libav-plugins-GstFFMpegVidEnc.html
-share/gtk-doc/html/gst-libav-plugins-${API}/gst-libav-plugins-gstav.html
-share/gtk-doc/html/gst-libav-plugins-${API}/gst-libav-plugins-gstavcfg.html
-share/gtk-doc/html/gst-libav-plugins-${API}/gst-libav-plugins-gstavcodecmap.html
-share/gtk-doc/html/gst-libav-plugins-${API}/gst-libav-plugins-gstavprotocol.html
-share/gtk-doc/html/gst-libav-plugins-${API}/gst-libav-plugins-gstavutils.html
-share/gtk-doc/html/gst-libav-plugins-${API}/gst-libav-plugins-plugin-libav.html
-share/gtk-doc/html/gst-libav-plugins-${API}/home.png
-share/gtk-doc/html/gst-libav-plugins-${API}/index.html
-share/gtk-doc/html/gst-libav-plugins-${API}/left-insensitive.png
-share/gtk-doc/html/gst-libav-plugins-${API}/left.png
-share/gtk-doc/html/gst-libav-plugins-${API}/right-insensitive.png
-share/gtk-doc/html/gst-libav-plugins-${API}/right.png
-share/gtk-doc/html/gst-libav-plugins-${API}/style.css
-share/gtk-doc/html/gst-libav-plugins-${API}/up-insensitive.png
-share/gtk-doc/html/gst-libav-plugins-${API}/up.png
