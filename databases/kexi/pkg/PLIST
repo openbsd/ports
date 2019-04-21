@@ -1,37 +1,40 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/04/21 10:12:01 rsadowski Exp $
 @conflict koffice-*
 @conflict calligra-<3.0.0
-@bin bin/kexi-3.1
-@lib lib/libkexicore3.1.so.${LIBkexicore3.1_VERSION}
-@lib lib/libkexidatatable3.1.so.${LIBkexidatatable3.1_VERSION}
-@lib lib/libkexidataviewcommon3.1.so.${LIBkexidataviewcommon3.1_VERSION}
-@lib lib/libkexiextendedwidgets3.1.so.${LIBkexiextendedwidgets3.1_VERSION}
-@lib lib/libkexiformutils3.1.so.${LIBkexiformutils3.1_VERSION}
-@lib lib/libkexiguiutils3.1.so.${LIBkexiguiutils3.1_VERSION}
-@lib lib/libkeximain3.1.so.${LIBkeximain3.1_VERSION}
-@lib lib/libkeximigrate3.1.so.${LIBkeximigrate3.1_VERSION}
-@lib lib/libkexirelationsview3.1.so.${LIBkexirelationsview3.1_VERSION}
-@lib lib/libkexiundo3.1.so.${LIBkexiundo3.1_VERSION}
-@lib lib/libkexiutils3.1.so.${LIBkexiutils3.1_VERSION}
-@lib lib/libkformdesigner3.1.so.${LIBkformdesigner3.1_VERSION}
+@bin bin/kexi-3.2
+@lib lib/libkexicore3.2.so.${LIBkexicore3.2_VERSION}
+@lib lib/libkexidatatable3.2.so.${LIBkexidatatable3.2_VERSION}
+@lib lib/libkexidataviewcommon3.2.so.${LIBkexidataviewcommon3.2_VERSION}
+@lib lib/libkexiextendedwidgets3.2.so.${LIBkexiextendedwidgets3.2_VERSION}
+@lib lib/libkexiformutils3.2.so.${LIBkexiformutils3.2_VERSION}
+@lib lib/libkexiguiutils3.2.so.${LIBkexiguiutils3.2_VERSION}
+@lib lib/libkeximain3.2.so.${LIBkeximain3.2_VERSION}
+@lib lib/libkeximigrate3.2.so.${LIBkeximigrate3.2_VERSION}
+@lib lib/libkexirelationsview3.2.so.${LIBkexirelationsview3.2_VERSION}
+@lib lib/libkexiundo3.2.so.${LIBkexiundo3.2_VERSION}
+@lib lib/libkexiutils3.2.so.${LIBkexiutils3.2_VERSION}
+@lib lib/libkformdesigner3.2.so.${LIBkformdesigner3.2_VERSION}
 lib/qt5/plugins/kexi/
-lib/qt5/plugins/kexi/3.1/
-lib/qt5/plugins/kexi/3.1/forms/
-lib/qt5/plugins/kexi/3.1/forms/widgets/
-lib/qt5/plugins/kexi/3.1/forms/widgets/org.kexi-project.form.widgets.main.so
-lib/qt5/plugins/kexi/3.1/forms/widgets/org.kexi-project.form.widgets.web-browser.so
-lib/qt5/plugins/kexi/3.1/kexi_csvimportexportplugin.so
-lib/qt5/plugins/kexi/3.1/kexi_formplugin.so
-lib/qt5/plugins/kexi/3.1/kexi_migrationplugin.so
-lib/qt5/plugins/kexi/3.1/kexi_queryplugin.so
-lib/qt5/plugins/kexi/3.1/kexi_reportplugin.so
-lib/qt5/plugins/kexi/3.1/kexi_tableplugin.so
-lib/qt5/plugins/kexi/3.1/migrate/
-lib/qt5/plugins/kexi/3.1/migrate/keximigrate_mdb.so
-lib/qt5/plugins/kexi/3.1/migrate/keximigrate_mysql.so
-lib/qt5/plugins/kexi/3.1/migrate/keximigrate_postgresql.so
-lib/qt5/plugins/kexi/3.1/migrate/keximigrate_tsv.so
-share/applications/org.kde.kexi-3.1.desktop
+lib/qt5/plugins/kexi/3.2/
+lib/qt5/plugins/kexi/3.2/forms/
+lib/qt5/plugins/kexi/3.2/forms/widgets/
+lib/qt5/plugins/kexi/3.2/forms/widgets/org.kexi-project.form.widgets.main.so
+lib/qt5/plugins/kexi/3.2/forms/widgets/org.kexi-project.form.widgets.web-browser.so
+lib/qt5/plugins/kexi/3.2/kexi_csvimportexportplugin.so
+lib/qt5/plugins/kexi/3.2/kexi_formplugin.so
+lib/qt5/plugins/kexi/3.2/kexi_migrationplugin.so
+lib/qt5/plugins/kexi/3.2/kexi_queryplugin.so
+lib/qt5/plugins/kexi/3.2/kexi_reportplugin.so
+lib/qt5/plugins/kexi/3.2/kexi_tableplugin.so
+lib/qt5/plugins/kexi/3.2/migrate/
+lib/qt5/plugins/kexi/3.2/migrate/keximigrate_mdb.so
+lib/qt5/plugins/kexi/3.2/migrate/keximigrate_mysql.so
+lib/qt5/plugins/kexi/3.2/migrate/keximigrate_postgresql.so
+lib/qt5/plugins/kexi/3.2/migrate/keximigrate_tsv.so
+share/applications/org.kde.kexi-3.2.desktop
+share/doc/HTML/ca/kexi/
+share/doc/HTML/ca/kexi/index.cache.bz2
+share/doc/HTML/ca/kexi/index.docbook
 share/doc/HTML/de/kexi/
 share/doc/HTML/de/kexi/index.cache.bz2
 share/doc/HTML/de/kexi/index.docbook
@@ -41,20 +44,50 @@ share/doc/HTML/it/kexi/index.docbook
 share/doc/HTML/nl/kexi/
 share/doc/HTML/nl/kexi/index.cache.bz2
 share/doc/HTML/nl/kexi/index.docbook
+share/doc/HTML/uk/kexi/
+share/doc/HTML/uk/kexi/contact-example.png
+share/doc/HTML/uk/kexi/index.cache.bz2
+share/doc/HTML/uk/kexi/index.docbook
+share/doc/HTML/uk/kexi/kexi_create_tab.png
+share/doc/HTML/uk/kexi/kexi_data_tab.png
+share/doc/HTML/uk/kexi/kexi_external_data_tab.png
+share/doc/HTML/uk/kexi/kexi_form_design_tab.png
+share/doc/HTML/uk/kexi/kexi_kexi_tab.png
+share/doc/HTML/uk/kexi/kexi_mainwindow.png
+share/doc/HTML/uk/kexi/kexi_openproject.png
+share/doc/HTML/uk/kexi/kexi_projectnavigator.png
+share/doc/HTML/uk/kexi/kexi_propertyeditor.png
+share/doc/HTML/uk/kexi/kexi_report_design_tab.png
+share/doc/HTML/uk/kexi/kexi_tabbedtoolbar.png
+share/doc/HTML/uk/kexi/kexi_tools_tab.png
+share/doc/HTML/uk/kexi/kexi_windowtabs.png
+share/doc/HTML/uk/kexi/newproject.png
+share/doc/HTML/uk/kexi/projectfilename.png
+share/doc/HTML/uk/kexi/projectstorage.png
+share/icons/hicolor/1024x1024/
+share/icons/hicolor/1024x1024/apps/
+share/icons/hicolor/1024x1024/apps/kexi-3.2.png
+share/icons/hicolor/128x128/apps/kexi-3.2.png
+share/icons/hicolor/16x16/apps/kexi-3.2.png
+share/icons/hicolor/256x256/apps/kexi-3.2.png
+share/icons/hicolor/32x32/apps/kexi-3.2.png
+share/icons/hicolor/48x48/apps/kexi-3.2.png
+share/icons/hicolor/512x512/apps/kexi-3.2.png
+share/icons/hicolor/64x64/apps/kexi-3.2.png
 share/kexi/
-share/kexi/3.1/
-share/kexi/3.1/examples/
-share/kexi/3.1/examples/Simple_Database.kexi
-share/kexi/3.1/icons/
-share/kexi/3.1/icons/kexi_breeze.rcc
-share/kexi/3.1/icons/org.kexi-project.form.widgets.main_breeze.rcc
-share/kexi/3.1/icons/org.kexi-project.form.widgets.web-browser_breeze.rcc
-share/kexi/3.1/status/
-share/kexi/3.1/status/contribution_details.ui
-share/kexi/3.1/status/contribution_help.ui
-share/kexi/3.1/status/status.rcc
-share/kexi/3.1/status/status.ui
-share/kexi/3.1/status/status_strings.ui
+share/kexi/3.2/
+share/kexi/3.2/examples/
+share/kexi/3.2/examples/Simple_Database.kexi
+share/kexi/3.2/icons/
+share/kexi/3.2/icons/kexi_breeze.rcc
+share/kexi/3.2/icons/org.kexi-project.form.widgets.main_breeze.rcc
+share/kexi/3.2/icons/org.kexi-project.form.widgets.web-browser_breeze.rcc
+share/kexi/3.2/status/
+share/kexi/3.2/status/contribution_details.ui
+share/kexi/3.2/status/contribution_help.ui
+share/kexi/3.2/status/status.rcc
+share/kexi/3.2/status/status.ui
+share/kexi/3.2/status/status_strings.ui
 share/locale/ar/LC_MESSAGES/kexi.mo
 share/locale/ast/LC_MESSAGES/kexi.mo
 share/locale/ast/LC_MESSAGES/kexiforms_mapwidgetplugin.mo
@@ -107,6 +140,7 @@ share/locale/fa/LC_MESSAGES/kexi.mo
 share/locale/fi/LC_MESSAGES/kexi.mo
 share/locale/fi/LC_MESSAGES/kexiforms_mapwidgetplugin.mo
 share/locale/fi/LC_MESSAGES/kexiforms_webbrowserwidgetplugin.mo
+share/locale/fi/LC_MESSAGES/keximigrate_mdb.mo
 share/locale/fr/LC_MESSAGES/kexi.mo
 share/locale/fr/LC_MESSAGES/kexiforms_mapwidgetplugin.mo
 share/locale/fr/LC_MESSAGES/kexiforms_webbrowserwidgetplugin.mo
@@ -218,6 +252,6 @@ share/locale/zh_TW/LC_MESSAGES/kexi.mo
 share/locale/zh_TW/LC_MESSAGES/kexiforms_mapwidgetplugin.mo
 share/locale/zh_TW/LC_MESSAGES/kexiforms_webbrowserwidgetplugin.mo
 share/locale/zh_TW/LC_MESSAGES/keximigrate_mdb.mo
-share/metainfo/
 @tag update-desktop-database
-share/metainfo/org.kde.kexi-3.1.appdata.xml
+share/metainfo/org.kde.kexi-3.2.appdata.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor

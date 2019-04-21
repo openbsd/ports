@@ -1,26 +1,25 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/08 20:00:40 cwen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/04/21 10:12:01 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
 
 COMMENT =	visual database applications creator
 
-VERSION =	3.1.0
+VERSION =	3.2.0
 DISTNAME =	kexi-${VERSION}
-REVISION =	1
 
-SHARED_LIBS +=  kexicore3.1               0.0 # 3.1
-SHARED_LIBS +=  kexidatatable3.1          0.0 # 3.1
-SHARED_LIBS +=  kexidataviewcommon3.1     0.0 # 3.1
-SHARED_LIBS +=  kexiextendedwidgets3.1    0.0 # 3.1
-SHARED_LIBS +=  kexiformutils3.1          0.0 # 3.1
-SHARED_LIBS +=  kexiguiutils3.1           0.0 # 3.1
-SHARED_LIBS +=  keximain3.1               0.0 # 3.1
-SHARED_LIBS +=  keximigrate3.1            0.0 # 3.1
-SHARED_LIBS +=  kexirelationsview3.1      0.0 # 3.1
-SHARED_LIBS +=  kexiundo3.1               0.0 # 3.1
-SHARED_LIBS +=  kexiutils3.1              0.0 # 3.1
-SHARED_LIBS +=  kformdesigner3.1          0.0 # 3.1
+SHARED_LIBS +=  kexicore3.2               0.0 # 3.2
+SHARED_LIBS +=  kexidatatable3.2          0.0 # 3.2
+SHARED_LIBS +=  kexidataviewcommon3.2     0.0 # 3.2
+SHARED_LIBS +=  kexiextendedwidgets3.2    0.0 # 3.2
+SHARED_LIBS +=  kexiformutils3.2          0.0 # 3.2
+SHARED_LIBS +=  kexiguiutils3.2           0.0 # 3.2
+SHARED_LIBS +=  keximain3.2               0.0 # 3.2
+SHARED_LIBS +=  keximigrate3.2            0.0 # 3.2
+SHARED_LIBS +=  kexirelationsview3.2      0.0 # 3.2
+SHARED_LIBS +=  kexiundo3.2               0.0 # 3.2
+SHARED_LIBS +=  kexiutils3.2              0.0 # 3.2
+SHARED_LIBS +=  kformdesigner3.2          0.0 # 3.2
 
 CATEGORIES =	databases
 
@@ -37,30 +36,31 @@ WANTLIB += KF5CoreAddons KF5Crash KF5GuiAddons KF5I18n KF5IconThemes
 WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
 WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5TextEditor KF5TextWidgets KF5WidgetsAddons KF5XmlGui
-WANTLIB += KPropertyCore3 KPropertyWidgets3 KReport3 Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Test Qt5WebKit
-WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5Xml c glib-2.0 iconv
-WANTLIB += m mysqlclient
+WANTLIB += KPropertyCore3 KPropertyWidgets3 KReport3 Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Test
+WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml c glib-2.0
+WANTLIB += iconv m mysqlclient
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/kexi/src/}}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/kexi/src/}
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =		devel/cmake \
 			lang/python \
 			devel/kf5
 
-BUILD_DEPENDS =		devel/gettext-tools \
-			devel/kf5/karchive \
+BUILD_DEPENDS =		databases/postgresql,-server \
+			devel/gettext-tools \
 			devel/kf5/breeze-icons \
-			databases/postgresql,-server \
-			x11/qt5/qtwebkit
+			devel/kf5/karchive \
+			x11/kde-applications/marble
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			devel/kf5/kservice \
 			devel/kf5/breeze-icons \
-			x11/qt5/qtwebkit
+			devel/kf5/kservice \
+			x11/kde-applications/marble
 
-LIB_DEPENDS =		devel/kf5/kcodecs \
+LIB_DEPENDS =		databases/kdb>=3.2.0 \
+			devel/kf5/kcodecs \
 			devel/kf5/kcompletion \
 			devel/kf5/kconfig \
 			devel/kf5/kconfigwidgets \
@@ -68,20 +68,20 @@ LIB_DEPENDS =		devel/kf5/kcodecs \
 			devel/kf5/kguiaddons \
 			devel/kf5/ki18n \
 			devel/kf5/kiconthemes \
-			devel/kf5/kitemviews \
 			devel/kf5/kio \
+			devel/kf5/kitemviews \
 			devel/kf5/ktexteditor \
 			devel/kf5/ktextwidgets \
 			devel/kf5/kwidgetsaddons \
 			devel/kf5/kxmlgui \
-			devel/kreport \
-			devel/kproperty \
-			databases/kdb \
+			devel/kproperty>=3.2.0 \
+			devel/kreport>=3.2.0 \
+			x11/qt5/qtwebkit
 
-CONFIGURE_ARGS =	-DBUILD_TESTING:Bool=Yes \
-			-DBUILD_EXAMPLES:Bool=Yes \
-			-DKEXI_QTGUI_RUNTIME_AVAILABLE:Bool=Yes \
-			-DKEXI_ENABLE_QTGUI_FOR_TESTS:Bool=No
+CONFIGURE_ARGS =	-DBUILD_TESTING=On \
+			-DBUILD_EXAMPLES=On \
+			-DKEXI_QTGUI_RUNTIME_AVAILABLE=On \
+			-DKEXI_ENABLE_QTGUI_FOR_TESTS=Off
 
 TEST_IS_INTERACTIVE =	X11
 
