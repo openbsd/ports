@@ -1,0 +1,17 @@
+$OpenBSD: patch-t_00-report-prereqs_t,v 1.1 2019/04/21 18:03:44 cwen Exp $
+
+Fix for:
+do "t/00-report-prereqs.dd" failed, '.' is no longer in @INC
+
+Index: t/00-report-prereqs.t
+--- t/00-report-prereqs.t.orig
++++ t/00-report-prereqs.t
+@@ -68,7 +68,7 @@ my @exclude = qw(
+ );
+ 
+ # Add static prereqs to the included modules list
+-my $static_prereqs = do 't/00-report-prereqs.dd';
++my $static_prereqs = do './t/00-report-prereqs.dd';
+ 
+ # Merge all prereqs (either with ::Prereqs or a hashref)
+ my $full_prereqs = _merge_prereqs(
