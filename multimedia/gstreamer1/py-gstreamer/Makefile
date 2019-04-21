@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/04/10 11:37:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2019/04/21 08:51:27 ajacoutot Exp $
 
 COMMENT=		overrides for the gobject-introspection-based pygst bindings
 
@@ -7,13 +7,14 @@ PKGNAME=		py-gstreamer1-${V}
 
 HOMEPAGE=		http://gstreamer.freedesktop.org/modules/gst-python.html
 
-WANTLIB += ffi glib-2.0 gmodule-2.0 gobject-2.0 gstreamer-1.0
-WANTLIB += iconv intl m pcre pthread ${MODPY_WANTLIB} util
+WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gstreamer-1.0 intl
+WANTLIB += pthread
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-python/}
 
-MODULES=		lang/python
-
+# XXX we need the meson MODULE to come first, but Makefile.inc is parsed after
+MODULES=		devel/meson lang/python
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
@@ -23,8 +24,6 @@ RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 LIB_DEPENDS=		${P}/core>=${V} \
 			${MODPY_LIB_DEPENDS}
 
-post-install:
-	rm ${PREFIX}/lib/gstreamer-${API}/*.{a,la}
-	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gi/overrides/_gi_gst.{a,la}
+CONFIGURE_ARGS=		-Dlibpython-dir=${LOCALBASE}/lib
 
 .include <bsd.port.mk>

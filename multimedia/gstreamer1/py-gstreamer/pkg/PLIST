@@ -1,9 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/04/10 11:37:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/04/21 08:51:27 ajacoutot Exp $
 lib/gstreamer-${API}/libgstpython.so
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gst.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GstPbutils.py
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Gst.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Gst.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GstPbutils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GstPbutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/_gi_gst.so
