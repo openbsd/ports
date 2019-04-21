@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.16 2017/09/18 13:01:43 espie Exp $
+# $OpenBSD: register-plist,v 1.17 2019/04/21 13:06:35 espie Exp $
 # Copyright (c) 2005,2012
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -47,9 +47,6 @@ sub forget_details
 	undef $self->{"digital-signature"};
 	undef $self->{vendor};
 	undef $self->{signer};
-	# XXX for now we forget version because it can be there or not
-	# this is not accurate, but simple
-	undef $self->{version};
 
 	my $l = $self->{items};
 	if ($l->[@$l-1]->isa('OpenBSD::PackingElement::Cwd') &&
@@ -75,6 +72,8 @@ sub forget_details
 {
 }
 
+# packing-lists in packages have more info (symlinks) that we can't
+# reproduce when we test packing-lists from source
 sub forget_more_details
 {
 }
@@ -118,6 +117,29 @@ sub find_mogrified
 package OpenBSD::PackingElement::DigitalSignature;
 sub flatten
 {
+}
+
+package OpenBSD::PackingElement::Version;
+sub compare
+{
+	my ($self, $self2) = @_;
+	if (ref($self) ne ref($self2)) {
+		return 1;
+	}
+	# no version element in #2, let's mogrify
+	if ($self2->name == -1) {
+		return 2;
+	}
+	if ($self->name == $self2->name) {
+		return 0;
+	}
+	# versions shouldn't ever go back
+	if ($self->name < $self2->name) {
+		return 1;
+	}
+	# special case: no need for further compare
+	# this is a full replacement
+	return 3;
 }
 
 package OpenBSD::PackingElement::Old;
@@ -369,9 +391,20 @@ sub compare
 
 package main;
 
+# my_compare is asymetric  $p is always the newer list
 sub my_compare
 {
 	my ($p, $p2, $state) = @_;
+	# back compatibility: if the old list doesn't have a version
+	# marker, let's put a -1 there
+	if (!defined $p2->{version}) {
+		OpenBSD::PackingElement::Version->add($p2, "-1");
+	}
+	# ... and actually put a 0 in the new one, for arch-independent
+	# packages
+	if (!defined $p->{version}) {
+		OpenBSD::PackingElement::Version->add($p, "0");
+	}
 	my $l = [];
 	my $l2 = [];
 	my $final = 0;
@@ -383,6 +416,12 @@ sub my_compare
 		my $r = $e->compare($e2);
 		if ($r == 1) {
 			return $r;
+		}
+		if ($r == 3) {
+			push(@{$state->{updates}}, [$e2, $e]);
+			# don't bother doing more comparisons, there's 
+			# no need
+			return 2;
 		}
 		if ($r == 2) {
 			push(@{$state->{updates}}, [$e2, $e]);
@@ -439,8 +478,8 @@ sub act_on_compare
 		$state->errsay("#1 was updated", $result);
 		for my $i (@{$state->{updates}}) {
 			$state->errsay("#1 -> #2",
-			    $i->[0]->stringize, 
-			    $i->[1]->stringize);
+			    $i->[0]->fullstring, 
+			    $i->[1]->fullstring);
 		}
 	}
 	return 0;
