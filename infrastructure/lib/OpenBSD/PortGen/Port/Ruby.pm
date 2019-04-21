@@ -1,4 +1,4 @@
-# $OpenBSD: Ruby.pm,v 1.1.1.1 2016/01/18 18:08:20 tsg Exp $
+# $OpenBSD: Ruby.pm,v 1.2 2019/04/21 03:47:40 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -69,6 +69,8 @@ sub fill_in_makefile
 
 	$self->set_comment( $vi->{summary} );
 	$self->set_distname("$di->{name}-$di->{version}");
+	$self->set_other( 'PKGNAME', '${DISTNAME:S/ruby-//}' )
+	    if $di->{name} =~ /^ruby-/;
 	$self->set_modules('lang/ruby');
 	$self->set_categories('ruby');
 	$self->set_other( 'HOMEPAGE', $di->{homepage_uri} );

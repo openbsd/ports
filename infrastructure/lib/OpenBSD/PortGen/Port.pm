@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.4 2017/05/02 11:30:03 tsg Exp $
+# $OpenBSD: Port.pm,v 1.5 2019/04/21 03:47:40 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -115,15 +115,7 @@ sub set_distname
 {
 	my ( $self, $distname ) = @_;
 
-	my $prefix = $self->ecosystem_prefix();
-
-	# use foo-bar instead of foo-foo-bar as PKGNAME
-	if ( $distname =~ /^$prefix/ ) {
-		$self->{PKGNAME}  = ( $distname =~ s/^$prefix//r );
-		$self->{DISTNAME} = $prefix . '${PKGNAME}';
-	} else {
-		$self->{DISTNAME} = $distname;
-	}
+	$self->{DISTNAME} = $distname;
 }
 
 sub set_license

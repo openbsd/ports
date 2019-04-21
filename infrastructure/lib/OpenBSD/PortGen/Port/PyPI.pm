@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.1.1.1 2016/01/18 18:08:20 tsg Exp $
+# $OpenBSD: PyPI.pm,v 1.2 2019/04/21 03:47:40 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -66,7 +66,8 @@ sub fill_in_makefile
 	$self->set_comment( $di->{info}{summary} );
 	$self->set_other( 'MODPY_EGG_VERSION', $di->{info}{version} );
 	$self->set_distname( "$di->{info}{name}" . '-${MODPY_EGG_VERSION}' );
-	$self->set_other( 'PKGNAME', 'py-${DISTNAME}' );
+	$self->set_other( 'PKGNAME', 'py-${DISTNAME}' )
+	    unless $di->{info}->{name} =~ /^py-/;
 	$self->set_modules('lang/python');
 	$self->set_categories('pypi');
 	$self->set_other( 'HOMEPAGE', $di->{info}{home_page} );
