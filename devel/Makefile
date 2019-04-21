@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1838 2019/04/19 14:43:55 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1839 2019/04/21 12:29:34 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1276,8 +1276,6 @@
      SUBDIR += py-asn1-modules,python3
      SUBDIR += py-astroid
      SUBDIR += py-astroid,python3
-     SUBDIR += py-async
-     SUBDIR += py-async,python3
      SUBDIR += py-async-timeout
      SUBDIR += py-atomicwrites
      SUBDIR += py-atomicwrites,python3
