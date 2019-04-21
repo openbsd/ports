@@ -1,0 +1,13 @@
+$OpenBSD: patch-meson_options_txt,v 1.1 2019/04/21 08:49:42 ajacoutot Exp $
+
+Index: meson_options.txt
+--- meson_options.txt.orig
++++ meson_options.txt
+@@ -53,6 +53,7 @@ option('volume', type : 'feature', value : 'auto')
+ 
+ # Feature options for plugins with external deps
+ option('alsa', type : 'feature', value : 'auto', description : 'ALSA audio source/sink plugin')
++option('sndio', type : 'feature', value : 'auto', description : 'SNDIO audio source/sink plugin')
+ option('cdparanoia', type : 'feature', value : 'auto', description : 'cdparanoia plugin')
+ option('libvisual', type : 'feature', value : 'auto', description : 'libvisual audio visualization plugin')
+ option('ogg', type : 'feature', value : 'auto', description : 'ogg parser, muxer, demuxer plugin')

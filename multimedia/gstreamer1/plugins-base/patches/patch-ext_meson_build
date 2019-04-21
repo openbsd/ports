@@ -1,0 +1,11 @@
+$OpenBSD: patch-ext_meson_build,v 1.1 2019/04/21 08:49:42 ajacoutot Exp $
+
+Index: ext/meson.build
+--- ext/meson.build.orig
++++ ext/meson.build
+@@ -1,4 +1,5 @@
+ subdir('alsa')
++subdir('sndio')
+ subdir('cdparanoia')
+ subdir('gl')
+ subdir('libvisual')

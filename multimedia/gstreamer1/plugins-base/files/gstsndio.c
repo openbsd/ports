@@ -60,6 +60,8 @@ gst_sndio_init (struct gstsndio *sio, GObject *obj)
   sio->obj = obj;
   sio->hdl = NULL;
   sio->device = g_strdup (SIO_DEVANY);
+  /* XXX not implemented; only used for src, not sink */
+  // sio->driver_timestamps = FALSE;
 }
 
 void

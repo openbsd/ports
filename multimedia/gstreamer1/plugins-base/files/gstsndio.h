@@ -55,6 +55,7 @@ struct gstsndio {
     guint volume;	/* volume level */
     GstCaps *cur_caps;  /* saved capabilities of opened device */
     GObject *obj;	/* for logging */
+    gboolean driver_timestamps;
 };
 
 #define GST_SNDIO_DELAY(s) ((s)->delay / (s)->bpf)

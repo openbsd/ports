@@ -54,7 +54,7 @@ static gboolean gst_sndiosrc_prepare (GstAudioSrc * asrc,
     GstAudioRingBufferSpec * spec);
 static gboolean gst_sndiosrc_unprepare (GstAudioSrc * asrc);
 static guint gst_sndiosrc_read (GstAudioSrc * asrc, gpointer data,
-    guint length);
+    guint length, GstClockTime * timestamp);
 static guint gst_sndiosrc_delay (GstAudioSrc * asrc);
 static void gst_sndiosrc_reset (GstAudioSrc * asrc);
 static void gst_sndiosrc_set_property (GObject * object, guint prop_id,
@@ -73,6 +73,8 @@ static void
 gst_sndiosrc_init (GstSndioSrc * src)
 {
   gst_sndio_init (&src->sndio, G_OBJECT(src));
+  /* XXX not implemented */
+  src->sndio.driver_timestamps = FALSE;
 }
 
 static void
@@ -125,7 +127,8 @@ gst_sndiosrc_unprepare (GstAudioSrc * asrc)
 }
 
 static guint
-gst_sndiosrc_read (GstAudioSrc * asrc, gpointer data, guint length)
+gst_sndiosrc_read (GstAudioSrc * asrc, gpointer data, guint length,
+    GstClockTime * timestamp)
 {
   GstSndioSrc *src = GST_SNDIOSRC (asrc);
   guint done;
