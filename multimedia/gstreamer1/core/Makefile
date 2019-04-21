@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.50 2018/10/03 08:19:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2019/04/21 08:49:25 ajacoutot Exp $
 
 COMMENT=		framework for streaming media
 
 DISTNAME=		gstreamer-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-${V}
 
-SHARED_LIBS +=  gstreamer-1.0        4.0      # 1404.0
-SHARED_LIBS +=  gstbase-1.0          4.0      # 1404.0
-SHARED_LIBS +=  gstcontroller-1.0    4.0      # 1404.0
-SHARED_LIBS +=  gstnet-1.0           4.0      # 1404.0
-SHARED_LIBS +=  gstcheck-1.0         4.0      # 1404.0
+SHARED_LIBS += gstreamer-1.0             5.0 # 0.1600.0
+SHARED_LIBS += gstbase-1.0               5.0 # 0.1600.0
+SHARED_LIBS += gstcheck-1.0              5.0 # 0.1600.0
+SHARED_LIBS += gstcontroller-1.0         5.0 # 0.1600.0
+SHARED_LIBS += gstnet-1.0                5.0 # 0.1600.0
 
-WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv
-WANTLIB += intl m pcre pthread z
+WANTLIB += c gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 intl m pthread
 
 MASTER_SITES=		${MASTER_SITE_GST:=gstreamer/}
 
@@ -21,13 +20,20 @@ BUILD_DEPENDS=		devel/bison \
 
 LIB_DEPENDS=		devel/glib2
 
-# do not pick-up gmp nor gdl: for now, it is only used by
-# tests/check/gst (which is not built) but better safe than sorry
-CONFIGURE_ENV +=	ac_cv_lib_gmp___gmpz_init_set_d=no \
-			ac_cv_lib_gsl_gsl_rng_uniform_int=no
+CONFIGURE_ARGS=		-Dlibunwind=disabled \
+			-Dlibdw=disabled \
+			-Ddbghelp=disabled
+
+# needs bash-completion pkg-config file
+CONFIGURE_ARGS +=	-Dbash-completion=disabled
 
 # PTP helper does not do anything on OpenBSD (functionality needs to be
 # implemented): no need to install it suid root
-CONFIGURE_ARGS +=	--with-ptp-helper-permissions=none
+# XXX the script doesn't handle the 'none' option; that's fine because we don't
+# explicitely set the setuid in PLIST
+CONFIGURE_ARGS +=	-Dptp-helper-permissions=setuid-root
+
+# XXX configure check lost in the autoconf -> meson migration
+CFLAGS +=		-DHAVE_SYS_SOCKET_H
 
 .include <bsd.port.mk>
