@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.84 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2019/04/21 15:44:04 cwen Exp $
 
 COMMENT=		send/receive faxes and share modems
 DISTNAME=		hylafax-6.0.6
-REVISION =		13
+REVISION=		14
 CATEGORIES=		comms
 
-HOMEPAGE=		http://www.HylaFAX.org/
+HOMEPAGE=		https://www.HylaFAX.org/
 
 MASTER_SITES=		http://ftp.hylafax.org/source/ \
 			ftp://ftp.hylafax.org/source/ \
@@ -21,7 +21,7 @@ FLAVOR?=
 
 WANTLIB=		c iconv intl jbig m ${COMPILER_LIBCXX} tiff util z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=		print/ghostscript/gnu
 RUN_DEPENDS=		print/ghostscript/gnu \
@@ -51,11 +51,6 @@ CONFIGURE_ENV+=		CCOMPILER="${CC}" CXXCOMPILER="${CXX}" \
 CONFIGURE_ARGS+=	--with-PAGESIZE=A4
 .endif
 
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mclang}
-CXXFLAGS +=		-std=c++03
-.endif
-
 FAKE_FLAGS=	ROOT=${WRKINST} SPOOL=${PREFIX}/libdata/hylafax
 
 NO_TEST=	Yes
@@ -64,6 +59,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure
 
 post-install:
-	echo "FontMap: ${LOCALBASE}/share/fonts/ghostscript" >${PREFIX}/libdata/hylafax/etc/hyla.conf
+	echo "FontMap: ${LOCALBASE}/share/fonts/ghostscript" \
+		>${PREFIX}/libdata/hylafax/etc/hyla.conf
 
 .include <bsd.port.mk>

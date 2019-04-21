@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2018/09/04 12:46:09 espie Exp $
+$OpenBSD: README,v 1.8 2019/04/21 15:44:05 cwen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -9,9 +9,9 @@ Post-installation steps
 Hylafax needs some manual configuration before it is usable.
 
 Make sure that you have configured HylaFAX before running faxq:
-	server: ${TRUEPREFIX}/sbin/faxsetup 
-	modems:${TRUEPREFIX}/sbin/faxaddmodem 
-	incoming calls: /etc/ttys 
+	server: ${TRUEPREFIX}/sbin/faxsetup
+	modems:${TRUEPREFIX}/sbin/faxaddmodem
+	incoming calls: /etc/ttys
 
 When you are asked to specify the name of tty device, use a tty device
 existing on your architecture instead of "ttyd1".
@@ -25,4 +25,4 @@ and send a SIGHUP to init(8).
 
 References
 ==========
-Additional documentation at http://www.hylafax.org/.
+Additional documentation at https://www.hylafax.org/.

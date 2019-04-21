@@ -1,0 +1,16 @@
+$OpenBSD: patch-libhylafax_FaxRecvInfo_c++,v 1.1 2019/04/21 15:44:05 cwen Exp $
+
+Allow building with C++14
+
+Index: libhylafax/FaxRecvInfo.c++
+--- libhylafax/FaxRecvInfo.c++.orig
++++ libhylafax/FaxRecvInfo.c++
+@@ -112,7 +112,7 @@ FaxRecvInfo::decode(const char* cp)
+     if (cp == NULL || cp[1] != ',' || cp[2] != '"')
+ 	return (false);
+     u_int i = 0;
+-    while (cp+2 != '\0') {
++    while (*(cp+2) != '\0') {
+ 	callid[i] = cp+3;		// +1 for "/+1 for ,/+1 for "
+ 	if (*cp == '\"') break;
+ 	callid[i].resize(callid[i].next(0,'"'));

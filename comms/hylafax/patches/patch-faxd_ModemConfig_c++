@@ -1,0 +1,13 @@
+$OpenBSD: patch-faxd_ModemConfig_c++,v 1.1 2019/04/21 15:44:05 cwen Exp $
+
+Allow building with C++14
+
+Index: faxd/ModemConfig.c++
+--- faxd/ModemConfig.c++.orig
++++ faxd/ModemConfig.c++
+@@ -817,4 +817,4 @@ ModemConfig::setConfigItem(const char* tag, const char
+ }
+ #undef N
+ 
+-fxIMPLEMENT_ObjArray(IDConfArray, id_config);
++fxIMPLEMENT_ObjArray(IDConfArray, id_config)
