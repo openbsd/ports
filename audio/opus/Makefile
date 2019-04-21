@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/20 17:48:16 naddy Exp $
-
-# invalid use of `restrict'
-NOT_FOR_ARCHS=	${GCC3_ARCHS}
+# $OpenBSD: Makefile,v 1.20 2019/04/21 19:38:46 naddy Exp $
 
 COMMENT=	IETF audio codec
 
-DISTNAME=	opus-1.3
-SHARED_LIBS=	opus		1.2	# 7.0
+DISTNAME=	opus-1.3.1
+SHARED_LIBS=	opus		1.3	# 8.0
 CATEGORIES=	audio
 
 HOMEPAGE=	https://opus-codec.org/
