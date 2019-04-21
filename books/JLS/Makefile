@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2019/01/06 12:57:57 ian Exp $
+# $OpenBSD: Makefile,v 1.9 2019/04/21 21:31:40 rsadowski Exp $
 
-COMMENT=	Sun's official Java Language Specification
+COMMENT=	Oracle's official Java language specification
 
-MAJOR=		8
+MAJOR=		12
 PKGNAME=	JLS-${MAJOR}.0
 DISTNAME=	jls${MAJOR}
 DISTFILES=	${DISTNAME}.pdf
-REVISION=	0
 
 CATEGORIES=	books
 
