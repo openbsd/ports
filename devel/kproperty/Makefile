@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:41 cwen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/21 10:11:48 rsadowski Exp $
 
 COMMENT =	property editing framework with editor widget
 
-VERSION =	3.1.0
+VERSION =	3.2.0
 DISTNAME =	kproperty-${VERSION}
-REVISION =	0
 
-SHARED_LIBS +=  KPropertyCore3            1.0 # 3.0
-SHARED_LIBS +=  KPropertyWidgets3         1.0 # 3.0
+SHARED_LIBS +=  KPropertyCore3            1.1 # 3.0
+SHARED_LIBS +=  KPropertyWidgets3         1.1 # 3.0
 
 CATEGORIES =	devel
 
@@ -19,8 +18,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5ConfigGui KF5GuiAddons
-WANTLIB += KF5WidgetsAddons Qt5Core Qt5Gui Qt5Widgets Qt5Xml c
-WANTLIB += m
+WANTLIB += KF5WidgetsAddons Qt5Core Qt5Gui Qt5Widgets Qt5Xml m
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kproperty/src/}}
 EXTRACT_SUFX =	.tar.xz
@@ -36,8 +34,10 @@ LIB_DEPENDS =		devel/kf5/kconfig \
 			devel/kf5/kwidgetsaddons \
 			devel/kf5/kguiaddons
 
-CONFIGURE_ARGS =	-DBUILD_TESTING:Bool=Yes \
-			-DBUILD_EXAMPLES:Bool=Yes
+CONFIGURE_ARGS =	-DBUILD_TESTING=On \
+			-DBUILD_EXAMPLES=On
+
+TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 TEST_IS_INTERACTIVE =	Yes
 
