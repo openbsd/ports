@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2018/04/25 19:54:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2019/04/21 12:25:11 sthen Exp $
 
 COMMENT=		Git object database
 
-MODPY_EGG_VERSION=	2.0.3
+MODPY_EGG_VERSION=	2.0.5
 DISTNAME=		gitdb2-${MODPY_EGG_VERSION}
 PKGNAME=		py-gitdb-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
@@ -20,8 +20,7 @@ MODPY_PI =		Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-RUN_DEPENDS=		devel/py-async${MODPY_FLAVOR} \
-			devel/py-smmap${MODPY_FLAVOR}>=0.9.0
+RUN_DEPENDS=		devel/py-smmap${MODPY_FLAVOR}>=0.9.0
 
 # tests should be run using nosetests against the appropriate tag of
 # upstream's git repo
