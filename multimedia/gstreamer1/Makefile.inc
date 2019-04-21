@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.54 2018/10/24 14:28:08 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.55 2019/04/21 08:49:11 ajacoutot Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -11,13 +11,13 @@
 # i.e. applications that use GStreamer require:
 #     gstreamer1-plugins-base and gstreamer1-plugins-good
 # audio/video support for MP3 decoding requires:
-#     gstreamer1-plugins-ugly
+#     gstreamer1-plugins-ugly or gstreamer1-plugins-libav
 # support for most video codecs is provided by
 #     gstreamer1-plugins-libav
 
 PORTROACH=		limitw:1,even
 
-V ?=			1.14.4
+V ?=			1.16.0
 API=			1.0
 SUBST_VARS +=		API
 
@@ -39,48 +39,21 @@ MASTER_SITE_GST=	http://gstreamer.freedesktop.org/src/
 EXTRACT_SUFX ?=		.tar.xz
 P=			multimedia/${GST_PKGNAME_PREFIX}
 
-.if defined(MULTI_PACKAGES)
-.for i in ${MULTI_PACKAGES}
-TEST_DEPENDS +=	${BASE_PKGPATH},${i}
-.endfor
-.else
-TEST_DEPENDS +=	${BASE_PKGPATH}
-.endif
-
-MODULES +=		lang/python
-
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=		base-clang ports-gcc base-gcc
 COMPILER_LANGS ?=	c
-MODGCC4_ARCHS =		powerpc
+MODGCC4_ARCHS=		powerpc
 
-# python is only used to generate documentation
-MODPY_RUNDEP=		No
+.if empty(CONFIGURE_STYLE)
+MODULES +=		devel/meson
+BUILD_DEPENDS +=	devel/gettext-tools # -Dnls
+CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS +=	-Dbenchmarks=disabled \
+			-Dgtk_doc=disabled \
+			-Dpackage-name="OpenBSD ${DISTNAME} package" \
+			-Dpackage-origin="https://www.openbsd.org/"
 
-USE_GMAKE ?=		Yes
-AUTOCONF_VERSION ?=	2.69
-
-CONFIGURE_STYLE ?=	autoconf
-CONFIGURE_ENV +=	CPPFLAGS="${CPPFLAGS}" \
-			LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS +=	--with-package-name="OpenBSD ${DISTNAME} package" \
-			--with-package-origin="https://www.openbsd.org/" \
-			--with-default-audiosink=sndiosink \
-			--with-default-audiosrc=sndiosrc \
-			--with-default-videosink=xvimagesink \
-			--with-default-videosrc=v4l2src \
-			--with-default-visualizer=goom \
-			--enable-introspection \
-			--disable-valgrind
-
-# BDEP on gtk+2|gtk+3
-CONFIGURE_ARGS +=	--disable-examples
-
-CPPFLAGS +=		-I${LOCALBASE}/include \
-			-I${X11BASE}/include
-LDFLAGS +=		-L${LOCALBASE}/lib \
-			-L${X11BASE}/lib
-
-.if !target(post-install)
-post-install:
-	rm ${PREFIX}/lib/gstreamer-${API}/*.{a,la}
+# some BDEP on gtk+2|gtk+3
+CONFIGURE_ARGS +=	-Dexamples=disabled
+CONFIGURE_ARGS +=	-Dtests=disabled
 .endif
