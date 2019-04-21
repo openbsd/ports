@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.2 2019/04/21 03:47:40 afresh1 Exp $
+# $OpenBSD: PyPI.pm,v 1.3 2019/04/21 21:52:20 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -74,12 +74,22 @@ sub fill_in_makefile
 	$self->set_license( $di->{info}{license} );
 	$self->set_descr( $di->{info}{summary} );
 
-	for ( @{ $di->{info}{classifiers} } ) {
-		if (/^Programming Language :: Python :: 3/) {
-			$self->set_other( 'FLAVORS', 'python3' );
-			$self->set_other( 'FLAVOR',  '' );
-			last;
-		}
+	my @versions = do {
+		my %seen;
+		sort { $a <=> $b } grep { !$seen{$_}++ } map {
+			/^Programming Language :: Python :: (\d+)/ ? $1 : ()
+		} @{ $di->{info}{classifiers} }
+	};
+
+	if ( @versions > 1 ) {
+		shift @versions; # remove default, lowest
+		$self->set_other( 'FLAVORS', "python$_" ) for @versions;
+		$self->set_other( 'FLAVOR',  '' );
+	}
+	elsif ( @versions && $versions[0] != 2 ) {
+		$self->set_other(
+		    MODPY_VERSION => "\${MODPY_DEFAULT_VERSION_$_}" )
+		        for @versions;
 	}
 }
 
