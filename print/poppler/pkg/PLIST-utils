@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-utils,v 1.4 2016/07/09 15:37:47 kili Exp $
+@comment $OpenBSD: PLIST-utils,v 1.5 2019/04/21 23:27:53 kili Exp $
 @conflict xpdf-utils-*
 @conflict poppler-<0.18.4p0
 @pkgpath textproc/xpdf,-utils
+@bin bin/pdfattach
 @comment bin/pdfdetach
 @bin bin/pdffonts
 @bin bin/pdfimages
@@ -13,6 +14,7 @@
 @bin bin/pdftops
 @bin bin/pdftotext
 @bin bin/pdfunite
+@man man/man1/pdfattach.1
 @comment man/man1/pdfdetach.1
 @man man/man1/pdffonts.1
 @man man/man1/pdfimages.1
