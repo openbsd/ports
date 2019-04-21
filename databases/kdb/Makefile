@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:40 cwen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/21 10:11:42 rsadowski Exp $
 
 COMMENT =	database connectivity and creation framework
 
-VERSION =	3.1.0
+VERSION =	3.2.0
 DISTNAME =	kdb-${VERSION}
-REVISION =	0
 
-SHARED_LIBS +=  KDb3                      1.0 # 3.0
+SHARED_LIBS +=  KDb3                      1.1 # 3.0
 
 CATEGORIES =	databases
 
@@ -25,7 +24,10 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdb/src/}}
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =		devel/cmake \
+			lang/python \
 			devel/kf5
+
+MODPY_RUNDEP =		No
 
 BUILD_DEPENDS =		shells/bash \
 			devel/gettext-tools \
@@ -37,7 +39,7 @@ LIB_DEPENDS =		devel/kf5/kcoreaddons \
 			databases/sqlite3 \
 			textproc/icu4c
 
-CONFIGURE_ARGS =	-DBUILD_TESTING:Bool=Yes \
-			-DBUILD_EXAMPLES:Bool=Yes
+CONFIGURE_ARGS +=	-DBUILD_TESTING=On \
+			-DBUILD_EXAMPLES=On
 
 .include <bsd.port.mk>

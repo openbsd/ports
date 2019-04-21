@@ -1,0 +1,48 @@
+$OpenBSD: patch-autotests_DateTimeTest_cpp,v 1.1 2019/04/21 10:11:42 rsadowski Exp $
+
+Index: autotests/DateTimeTest.cpp
+--- autotests/DateTimeTest.cpp.orig
++++ autotests/DateTimeTest.cpp
+@@ -36,13 +36,13 @@ void DateTimeTest::testYear()
+ {
+     KDbYear year("2020");
+     QVERIFY(year.isValid());
+-    QCOMPARE(year.toString(), "2020");
++    QCOMPARE(QString::fromUtf8(year.toString().data()), QString::fromUtf8("2020"));
+     QCOMPARE(year.toQDateValue(), 2020);
+     QCOMPARE(year.toIsoValue(), 2020);
+     QVariant yearVariant = QVariant::fromValue(year);
+     QVERIFY(yearVariant.isValid());
+     QCOMPARE(yearVariant.toInt(), 2020);
+-    QCOMPARE(yearVariant.toString(), "2020");
++    QCOMPARE(yearVariant.toString(), QString::fromUtf8("2020"));
+ }
+ 
+ void DateTimeTest::testDate()
+@@ -50,7 +50,7 @@ void DateTimeTest::testDate()
+     KDbYear year("2020");
+     KDbDate date(year, "2", "29");
+     QVERIFY(date.isValid());
+-    QCOMPARE(date.toString(), "2020-2-29");
++    QCOMPARE(QString::fromUtf8(date.toString().data()), QString::fromUtf8("2020-2-29"));
+     QDate qtDate(2020, 2, 29);
+     QCOMPARE(date.toQDate(), qtDate);
+     QVariant dateVariant = QVariant::fromValue(date);
+@@ -63,7 +63,7 @@ void DateTimeTest::testTime()
+ {
+     KDbTime time("1", "15", "20", "789", KDbTime::Period::Pm);
+     QVERIFY(time.isValid());
+-    QCOMPARE(time.toString(), "1:15:20.789 PM");
++    QCOMPARE(QString::fromUtf8(time.toString().data()), QString::fromUtf8("1:15:20.789 PM"));
+     QTime qtTime(13, 15, 20, 789);
+     QCOMPARE(time.toQTime(), qtTime);
+     QVariant timeVariant = QVariant::fromValue(time);
+@@ -80,7 +80,7 @@ void DateTimeTest::testDateTime()
+ 
+     KDbDateTime dateTime(date, time);
+     QVERIFY(dateTime.isValid());
+-    QCOMPARE(dateTime.toString(), "2020-2-29 1:15:20.789 PM");
++    QCOMPARE(QString::fromUtf8(dateTime.toString().data()), QString::fromUtf8("2020-2-29 1:15:20.789 PM"));
+     QTime qtTime(13, 15, 20, 789);
+     QDate qtDate(2020, 2, 29);
+     QDateTime qtDateTime(qtDate, qtTime);
