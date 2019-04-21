@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2019/02/14 09:42:26 jca Exp $
+# $OpenBSD: Makefile,v 1.62 2019/04/21 08:49:57 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -12,27 +12,18 @@ PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-good-${V}
 PKGNAME-main=		${PKGNAME}
 PKGNAME-pulse=		${GST_PKGNAME_PREFIX}-plugins-pulse-${V}
 
-REVISION-main=		0
-
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-good/}
 
-WANTLIB += ffi glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-1.0 gstbase-1.0
-WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
-WANTLIB += m orc-0.4 pcre pthread z X11 Xext xcb iconv intl execinfo
+WANTLIB += glib-2.0 gobject-2.0 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
+WANTLIB += gstvideo-1.0 intl
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += EGL FLAC GL GLESv2 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB-main += Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
-WANTLIB-main += atk-bridge-2.0 atspi bz2 cairo cairo-gobject dbus-1
-WANTLIB-main += drm epoxy expat fontconfig freetype gbm gdk-3 gdk_pixbuf-2.0
-WANTLIB-main += gio-2.0 glapi graphite2 gstallocators-1.0 gstcontroller-1.0
-WANTLIB-main += gstfft-1.0 gstgl-1.0 gstnet-1.0 gstriff-1.0 gstrtp-1.0
-WANTLIB-main += gstrtsp-1.0 gstsdp-1.0 gthread-2.0 gtk-3 harfbuzz jpeg
-WANTLIB-main += lzma mpg123 ogg ossaudio pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-main += pixman-1 png shout soup-2.4 speex sqlite3 tag theora
-WANTLIB-main += twolame v4l2 v4lconvert vorbis vpx wavpack xcb-dri2
-WANTLIB-main += xcb-glx xcb-render xcb-shm xcb-xfixes xml2 fribidi
-WANTLIB-main += xcb-dri3 xcb-present xcb-sync xshmfence
+WANTLIB-main += FLAC X11 Xdamage Xext Xfixes atk-1.0 bz2 cairo cairo-gobject
+WANTLIB-main += gdk-3 gdk_pixbuf-2.0 gio-2.0 gstallocators-1.0 gstfft-1.0
+WANTLIB-main += gstgl-1.0 gstnet-1.0 gstpbutils-1.0 gstriff-1.0 gstrtp-1.0
+WANTLIB-main += gstrtsp-1.0 gstsdp-1.0 gsttag-1.0 gtk-3 jpeg m mpg123
+WANTLIB-main += ogg orc-0.4 pango-1.0 pangocairo-1.0 png16 shout soup-2.4
+WANTLIB-main += speex tag theora twolame v4l2 vorbis vpx wavpack z
 
 # comes from multimedia/libvpx using lang/clang MODULE on i386|amd64 only
 # which includes gcc4 MODULE with adds gcc-libs in dependency scope
@@ -40,9 +31,7 @@ WANTLIB-main += xcb-dri3 xcb-present xcb-sync xshmfence
 WANTLIB-main += $(LIBECXX)
 .endif
 
-WANTLIB-pulse += ${WANTLIB}
-WANTLIB-pulse += pulse sndfile X11-xcb Xi Xtst ICE FLAC ogg
-WANTLIB-pulse += vorbis vorbisenc dbus-1 SM
+WANTLIB-pulse += ${WANTLIB} pulse
 
 MULTI_PACKAGES=		-main -pulse
 
@@ -66,18 +55,20 @@ LIB_DEPENDS-pulse=	${LIB_DEPENDS} \
 			audio/pulseaudio
 RUN_DEPENDS-pulse=	${BASE_PKGPATH},-main=${V}
 
-CONFIGURE_ARGS=		--disable-aalib \
-			--disable-directsound \
-			--disable-jack \
-			--disable-lame \
-			--disable-libcaca \
-			--disable-libdv \
-			--disable-oss4 \
-			--disable-osx_audio \
-			--disable-osx_video \
-			--disable-qt \
-			--disable-waveform \
-			--disable-dv1394
+CONFIGURE_ARGS=		-Daalib=disabled \
+			-Ddirectsound=disabled \
+			-Ddv=disabled \
+			-Ddv1394=disabled \
+			-Dwaveform=disabled \
+			-Djack=disabled \
+			-Dlame=disabled \
+			-Dlibcaca=disabled \
+			-Doss4=disabled \
+			-Dosxaudio=disabled \
+			-Dosxvideo=disabled \
+			-Dqt5=disabled \
+			-Dwaveform=disabled \
+			-Dv4l2-gudev=disabled
 
 pre-configure:
 	sed -i 's,/dev/dsp,/dev/audio,g' \
