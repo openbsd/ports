@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2019/03/08 20:00:51 cwen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/04/21 11:29:44 rsadowski Exp $
 
 COMMENT =	management tool for password and sensitive data
 
-V =		2.3.4
+V =		2.4.1
 DISTNAME =	keepassxc-${V}
-REVISION =	0
 
 CATEGORIES =	security
 
@@ -16,8 +15,8 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Widgets Qt5X11Extras X11 Xi Xtst argon2
-WANTLIB += c gcrypt gpg-error m z
+WANTLIB += Qt5Network Qt5Svg Qt5Widgets Qt5X11Extras X11 Xi Xtst
+WANTLIB += argon2 c gcrypt gpg-error m qrencode z
 
 MASTER_SITES =	https://github.com/keepassxreboot/keepassxc/releases/download/${V}/
 EXTRACT_SUFX =	-src.tar.xz
@@ -27,6 +26,8 @@ MODULES =	x11/qt5 \
 
 LIB_DEPENDS =	security/libgcrypt \
 		security/argon2 \
+		graphics/libqrencode \
+		x11/qt5/qtsvg \
 		x11/qt5/qtx11extras  # needed for auto-type
 
 RUN_DEPENDS =	devel/desktop-file-utils \
@@ -51,12 +52,10 @@ WANTLIB += yubikey ykpers-1
 .endif
 
 .if ${FLAVOR:Mbrowser}
-LIB_DEPENDS +=		net/curl \
-			security/libsodium
+LIB_DEPENDS +=		security/libsodium
 CONFIGURE_ARGS +=	-DWITH_XC_BROWSER=ON \
-			-DWITH_XC_HTTP=ON \
 			-DWITH_XC_NETWORKING=ON
-WANTLIB	+=		curl sodium
+WANTLIB	+=		sodium
 .endif
 
 post-patch:
