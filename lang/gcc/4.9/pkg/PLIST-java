@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.4 2018/07/23 10:05:35 espie Exp $
+@comment $OpenBSD: PLIST-java,v 1.5 2019/04/22 20:50:34 naddy Exp $
 @option is-branch
 bin/eaot-compile
 @bin bin/egappletviewer
@@ -4030,6 +4030,7 @@ include/c++/${V}/sun/reflect/misc/
 include/c++/${V}/sun/reflect/misc/ReflectUtil.h
 @info info/cp-tools.info
 @info info/gcj.info
+lib/gcc/${CONFIG}/${V}/include/gcj/
 lib/gcc/${CONFIG}/${V}/include/gcj/libgcj-config.h
 lib/gcc/${CONFIG}/${V}/include/jawt.h
 lib/gcc/${CONFIG}/${V}/include/jawt_md.h
