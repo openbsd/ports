@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/04/26 20:41:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/04/22 08:19:22 kmos Exp $
 
 COMMENT =		python bindings for the RIPE Atlas API
 
@@ -29,9 +29,12 @@ RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-coverage${MODPY_FLAVOR} \
-			devel/py-funcsigs${MODPY_FLAVOR} \
 			devel/py-jsonschema${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR}
+
+.if !${FLAVOR:Mpython3}
+TEST_DEPENDS +=		devel/py-funcsigs
+.endif
 
 .include <bsd.port.mk>
