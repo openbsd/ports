@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2018/11/02 12:56:52 jca Exp $
+@comment $OpenBSD: PLIST,v 1.24 2019/04/22 16:34:46 jca Exp $
 @option is-branch
 @pkgpath editors/emacs21,-el
 @pkgpath editors/emacs21,-leim
@@ -17,6 +17,7 @@ bin/emacs
 @bin bin/emacs-${VERSION}
 @bin bin/emacsclient
 @bin bin/etags
+include/emacs-module.h
 @info info/ada-mode.info
 @info info/auth.info
 @info info/autotype.info
@@ -94,8 +95,6 @@ libexec/emacs/${VERSION}/${GCCARCH}/rcs2log
 @man man/man1/emacs.1
 @man man/man1/emacsclient.1
 @man man/man1/etags.1
-share/appdata/
-share/appdata/emacs.appdata.xml
 share/doc/pkg-readmes/${PKGSTEM}
 share/emacs/
 share/emacs/${VERSION}/
@@ -4073,3 +4072,5 @@ share/emacs/${VERSION}/site-lisp/
 share/emacs/${VERSION}/site-lisp/subdirs.el
 share/emacs/site-lisp/
 share/emacs/site-lisp/subdirs.el
+share/metainfo/
+share/metainfo/emacs.appdata.xml

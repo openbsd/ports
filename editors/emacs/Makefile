@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.84 2019/03/27 13:36:00 jca Exp $
+# $OpenBSD: Makefile,v 1.85 2019/04/22 16:34:45 jca Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
-VERSION=		26.1
+VERSION=		26.2
 DISTNAME=		emacs-${VERSION}
-REVISION=		5
 
 CATEGORIES=		editors
 
@@ -18,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m curses pthread gnutls xml2 z
 
 MASTER_SITES=		${MASTER_SITE_GNU:=emacs/}
+EXTRACT_SUFX=		.tar.xz
 
 USE_GMAKE=		Yes
 
