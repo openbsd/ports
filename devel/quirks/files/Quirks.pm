@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.751 2019/04/21 12:29:34 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.752 2019/04/22 21:39:51 kmos Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1212,6 +1212,8 @@ my $obsolete_reason = {
 	'mpeg_play' => 6,
 	'py-async' => 5,
 	'py3-async' => 5,
+# 6.5
+	'py3-funcsigs' => 5,
 };
 
 # reasons for obsolete packages

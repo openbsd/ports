@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1839 2019/04/21 12:29:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.1840 2019/04/22 21:39:51 kmos Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1400,7 +1400,6 @@
      SUBDIR += py-frozendict
      SUBDIR += py-frozendict,python3
      SUBDIR += py-funcsigs
-     SUBDIR += py-funcsigs,python3
      SUBDIR += py-functools32
      SUBDIR += py-funcy
      SUBDIR += py-funcy,python3
