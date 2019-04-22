@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/04/09 20:47:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/04/22 08:19:14 ajacoutot Exp $
 @bin bin/orc-bugreport
 @bin bin/orcc
 include/orc-0.4/
@@ -47,6 +47,7 @@ lib/liborc-test-0.4.a
 lib/liborc-test-0.4.la
 @lib lib/liborc-test-0.4.so.${LIBorc-test-0.4_VERSION}
 lib/pkgconfig/orc-0.4.pc
+lib/pkgconfig/orc-test-0.4.pc
 share/aclocal/
 share/aclocal/orc.m4
 share/gtk-doc/
@@ -59,7 +60,6 @@ share/gtk-doc/html/orc/ch04.html
 share/gtk-doc/html/orc/ch05.html
 share/gtk-doc/html/orc/home.png
 share/gtk-doc/html/orc/index.html
-share/gtk-doc/html/orc/index.sgml
 share/gtk-doc/html/orc/left-insensitive.png
 share/gtk-doc/html/orc/left.png
 share/gtk-doc/html/orc/orc-ARM.html
