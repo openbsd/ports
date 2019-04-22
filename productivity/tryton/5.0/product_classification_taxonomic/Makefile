@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2019/02/22 07:24:36 semarie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/22 11:22:50 semarie Exp $
 
-MODPY_EGG_VERSION =	5.0.1
+MODPY_EGG_VERSION =	5.0.2
 TRYTON_MODULE =		product_classification_taxonomic
 
 TRYTON_DEPENDS +=	product_classification
