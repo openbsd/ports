@@ -1,0 +1,14 @@
+$OpenBSD: patch-sources_tools_etc_texi2pod_pl,v 1.1 2019/04/22 11:52:42 naddy Exp $
+
+Index: sources/tools/etc/texi2pod.pl
+--- sources/tools/etc/texi2pod.pl.orig
++++ sources/tools/etc/texi2pod.pl
+@@ -311,7 +311,7 @@ while(<$inf>) {
+ 	@columns = ();
+ 	for $column (split (/\s*\@tab\s*/, $1)) {
+ 	    # @strong{...} is used a @headitem work-alike
+-	    $column =~ s/^\@strong{(.*)}$/$1/;
++	    $column =~ s/^\@strong\{(.*)\}$/$1/;
+ 	    push @columns, $column;
+ 	}
+ 	$_ = "\n=item ".join (" : ", @columns)."\n";
