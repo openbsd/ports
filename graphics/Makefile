@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.475 2019/04/03 07:45:04 bentley Exp $
+# $OpenBSD: Makefile,v 1.476 2019/04/22 08:59:14 kn Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -18,6 +18,7 @@
      SUBDIR += barcode
      SUBDIR += birdfont
      SUBDIR += blender
+     SUBDIR += bonzomatic
      SUBDIR += cadubi
      SUBDIR += cairo
      SUBDIR += cairomm
