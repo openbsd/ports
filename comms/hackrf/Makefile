@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/22 08:46:17 cwen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/22 19:56:51 cwen Exp $
 
 COMMENT =	host software for the HackRF One SDR
 
@@ -23,11 +23,11 @@ MASTER_SITES =		https://github.com/mossmann/hackrf/releases/download/v$V/
 
 EXTRACT_SUFX =		.tar.xz
 
+COMPILER =		base-clang ports-gcc
+
 MODULES =		devel/cmake
 LIB_DEPENDS =		devel/libusb1 \
 			math/fftw3,float
-
-COMPILER =		base-clang ports-gcc
 
 CONFIGURE_ARGS =	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
