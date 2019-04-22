@@ -1,0 +1,53 @@
+$OpenBSD: patch-src_platform_glfw_Renderer_cpp,v 1.1.1.1 2019/04/22 08:55:50 kn Exp $
+
+/glBindBuffer(/s,NULL,0,
+/glUseProgram(/s,NULL,0,
+
+Index: src/platform_glfw/Renderer.cpp
+--- src/platform_glfw/Renderer.cpp.orig
++++ src/platform_glfw/Renderer.cpp
+@@ -300,7 +300,7 @@ namespace Renderer
+     glGenBuffers( 1, &glhFullscreenQuadVB );
+     glBindBuffer( GL_ARRAY_BUFFER, glhFullscreenQuadVB );
+     glBufferData( GL_ARRAY_BUFFER, sizeof(float) * 5 * 4, pFullscreenQuadVertices, GL_STATIC_DRAW );
+-    glBindBuffer( GL_ARRAY_BUFFER, NULL );
++    glBindBuffer( GL_ARRAY_BUFFER, 0 );
+ 
+     glGenVertexArrays(1, &glhFullscreenQuadVA);
+ 
+@@ -416,7 +416,7 @@ namespace Renderer
+     glBindBuffer(GL_PIXEL_PACK_BUFFER, pbo[1]);
+     glBufferData(GL_PIXEL_PACK_BUFFER, nWidth * nHeight * sizeof(unsigned int), NULL, GL_STREAM_READ);
+     //unbind buffers for now
+-    glBindBuffer(GL_PIXEL_PACK_BUFFER, NULL);
++    glBindBuffer(GL_PIXEL_PACK_BUFFER, 0);
+ 
+     glViewport(0, 0, nWidth, nHeight);
+     
+@@ -596,7 +596,7 @@ namespace Renderer
+     glDisableVertexAttribArray( texcoord );
+     glDisableVertexAttribArray( position );
+ 
+-    glUseProgram(NULL);
++    glUseProgram(0);
+   }
+ 
+   bool ReloadShader( const char * szShaderCode, int nShaderCodeSize, char * szErrorBuffer, int nErrorBufferSize )
+@@ -935,7 +935,7 @@ namespace Renderer
+     glDisableVertexAttribArray( color );
+     glDisableVertexAttribArray( position );
+ 
+-    glUseProgram(NULL);
++    glUseProgram(0);
+ 
+     glDisable(GL_BLEND);
+     glDisable(GL_SCISSOR_TEST);
+@@ -964,7 +964,7 @@ namespace Renderer
+       }
+       glUnmapBuffer(GL_PIXEL_PACK_BUFFER);
+     }
+-    glBindBuffer(GL_PIXEL_PACK_BUFFER, NULL);
++    glBindBuffer(GL_PIXEL_PACK_BUFFER, 0);
+ 
+     return true;
+   }

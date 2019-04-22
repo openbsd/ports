@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_platform_x11_Misc_cpp,v 1.1.1.1 2019/04/22 08:55:50 kn Exp $
+
+s,/usr/share,${X11BASE}/lib/X11,
+
+Index: src/platform_x11/Misc.cpp
+--- src/platform_x11/Misc.cpp.orig
++++ src/platform_x11/Misc.cpp
+@@ -40,16 +40,16 @@ const char * Misc::GetDefaultFontPath()
+   // TODO: use fonts.conf(5) or X resources or something like that
+   const char* fontPaths[] =
+   {
+-    "/usr/share/fonts/TTF/DejaVuSansMono.ttf",
+-    "/usr/share/fonts/TTF/FreeMono.ttf",
+-    "/usr/share/fonts/TTF/LiberationMono-Regular.ttf",
+-    "/usr/share/fonts/TTF/VeraMono.ttf",
+-    "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
+-    "/usr/share/fonts/truetype/freefont/FreeMono.ttf",
+-    "/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf",
+-    "/usr/share/fonts/truetype/msttcorefonts/cour.ttf",
+-    "/usr/share/fonts/truetype/ubuntu-font-family/UbuntuMono-R.ttf",
+-    "/usr/share/fonts/corefonts/cour.ttf",
++    "${X11BASE}/lib/X11/fonts/TTF/DejaVuSansMono.ttf",
++    "${X11BASE}/lib/X11/fonts/TTF/FreeMono.ttf",
++    "${X11BASE}/lib/X11/fonts/TTF/LiberationMono-Regular.ttf",
++    "${X11BASE}/lib/X11/fonts/TTF/VeraMono.ttf",
++    "${X11BASE}/lib/X11/fonts/truetype/dejavu/DejaVuSansMono.ttf",
++    "${X11BASE}/lib/X11/fonts/truetype/freefont/FreeMono.ttf",
++    "${X11BASE}/lib/X11/fonts/truetype/liberation/LiberationMono-Regular.ttf",
++    "${X11BASE}/lib/X11/fonts/truetype/msttcorefonts/cour.ttf",
++    "${X11BASE}/lib/X11/fonts/truetype/ubuntu-font-family/UbuntuMono-R.ttf",
++    "${X11BASE}/lib/X11/fonts/corefonts/cour.ttf",
+     NULL
+   };
+   for (int i = 0; fontPaths[i]; ++i)
