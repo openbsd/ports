@@ -1,0 +1,25 @@
+$OpenBSD: patch-Gemfile,v 1.1.1.1 2019/04/23 11:16:06 sebastia Exp $
+
+for the tests to run
+
+Index: Gemfile
+--- Gemfile.orig
++++ Gemfile
+@@ -19,7 +19,7 @@ group :development, :test do
+   end
+ 
+   if Gem.ruby_version >= Gem::Version.new("2.0.0")
+-    gem "mime-types", "~> 1.18"
++    gem "mime-types", "~> 3.2"
+   end
+ 
+   if Gem.ruby_version >= Gem::Version.new("2.2.0")
+@@ -31,8 +31,3 @@ group :development, :test do
+   end
+ end
+ 
+-group :perf do
+-  gem "benchmark-ips"
+-  gem "patron"
+-  gem "curb"
+-end
