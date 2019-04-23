@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.50 2019/02/06 10:20:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.51 2019/04/23 18:04:20 ajacoutot Exp $
 include/gnome-desktop-3.0/
 include/gnome-desktop-3.0/libgnome-desktop/
 include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-crossfade.h
@@ -26,6 +26,7 @@ share/gtk-doc/html/gnome-desktop3/GnomeDesktopThumbnailFactory.html
 share/gtk-doc/html/gnome-desktop3/GnomeIdleMonitor.html
 share/gtk-doc/html/gnome-desktop3/GnomeWallClock.html
 share/gtk-doc/html/gnome-desktop3/GnomeXkbInfo.html
+share/gtk-doc/html/gnome-desktop3/annotation-glossary.html
 share/gtk-doc/html/gnome-desktop3/background.html
 share/gtk-doc/html/gnome-desktop3/gnome-desktop3-Language-Utilities.html
 share/gtk-doc/html/gnome-desktop3/gnome-desktop3-gnome-bg.html
@@ -241,8 +242,6 @@ share/locale/ga/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/gd/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/gl/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/gu/LC_MESSAGES/gnome-desktop-3.0.mo
-share/locale/ha/
-share/locale/ha/LC_MESSAGES/
 share/locale/ha/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/he/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/hi/LC_MESSAGES/gnome-desktop-3.0.mo
@@ -265,8 +264,6 @@ share/locale/ko/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/ku/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/ky/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/li/LC_MESSAGES/gnome-desktop-3.0.mo
-share/locale/lo/
-share/locale/lo/LC_MESSAGES/
 share/locale/lo/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/lt/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/lv/LC_MESSAGES/gnome-desktop-3.0.mo
@@ -316,8 +313,6 @@ share/locale/vi/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/wa/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/xh/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/yi/LC_MESSAGES/gnome-desktop-3.0.mo
-share/locale/yo/
-share/locale/yo/LC_MESSAGES/
 share/locale/yo/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-desktop-3.0.mo
