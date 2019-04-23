@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2017/02/28 21:46:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/04/23 06:18:29 matthieu Exp $
 
 COMMENT =  	makefile generator
 CATEGORIES =	devel x11
-DISTNAME = 	imake-1.0.7
-REVISION =	0
+DISTNAME = 	imake-1.0.8
 MASTER_SITES = 	${MASTER_SITE_XORG:=util/}
 
 PERMIT_PACKAGE_CDROM = 		Yes
