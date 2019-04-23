@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/23 21:33:07 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/23 16:43:01 landry Exp $
 
 COMMENT =	WebSocket client & server library, WAMP real-time framework
 
-MODPY_EGG_VERSION =	17.10.1
+MODPY_EGG_VERSION =	19.3.3
 DISTNAME =	autobahn-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	www
 
@@ -22,7 +21,8 @@ MODPY_SETUPTOOLS = Yes
 FLAVORS =	python3
 FLAVOR ?=
 
-BUILD_DEPENDS =	devel/py-txaio
+BUILD_DEPENDS =	devel/py-txaio${MODPY_FLAVOR}>=18.8.1 \
+		devel/py-six${MODPY_FLAVOR}
 .if empty (FLAVOR)
 TEST_DEPENDS =	devel/py-unittest2 \
 		devel/py-trollius
