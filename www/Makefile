@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.895 2019/04/03 05:03:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.896 2019/04/23 11:20:31 sebastia Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -510,6 +510,7 @@
      SUBDIR += ruby-capybara-webkit,ruby24
      SUBDIR += ruby-capybara-webkit,ruby25
      SUBDIR += ruby-capybara-webkit,ruby26
+     SUBDIR += ruby-ethon
      SUBDIR += ruby-faraday
      SUBDIR += ruby-faraday_middleware
      SUBDIR += ruby-faraday_middleware-multi_json
@@ -540,6 +541,7 @@
      SUBDIR += ruby-thin,ruby24
      SUBDIR += ruby-thin,ruby25
      SUBDIR += ruby-thin,ruby26
+     SUBDIR += ruby-typhoeus
      SUBDIR += ruby-unicorn,ruby24
      SUBDIR += ruby-unicorn,ruby25
      SUBDIR += ruby-unicorn,ruby26
@@ -548,6 +550,7 @@
      SUBDIR += ruby-websocket-driver,ruby25
      SUBDIR += ruby-websocket-driver,ruby26
      SUBDIR += ruby-websocket-extensions
+     SUBDIR += ruby-xmlrpc
      SUBDIR += ruby-xpath
      SUBDIR += sabredav
      SUBDIR += sarg
