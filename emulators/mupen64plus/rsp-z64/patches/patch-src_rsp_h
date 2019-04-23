@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_rsp_h,v 1.1 2019/04/23 08:47:03 bentley Exp $
+
+Disable reading RDTSC. It breaks the build on non-intel architectures and
+is only used for debug output that isn't compiled in anyway.
+
+Index: src/rsp.h
+--- src/rsp.h.orig
++++ src/rsp.h
+@@ -374,7 +374,6 @@ INLINE void n64_dp_reg_w(UINT32 offset, UINT32 data, U
+     }
+ }
+ 
+-#define INTEL86
+ #if defined(INTEL86) && defined __GNUC__ && __GNUC__ >= 2
+ static __inline__ unsigned long long RDTSC(void)
+ {
