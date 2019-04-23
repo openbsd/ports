@@ -1,0 +1,2 @@
+Implementation of validators for the Ruby OptionParser lib. Mainly used
+in the CMSScanner gem to define the cli options available.
