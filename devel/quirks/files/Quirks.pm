@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.752 2019/04/22 21:39:51 kmos Exp $
+# $OpenBSD: Quirks.pm,v 1.753 2019/04/23 20:20:41 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1210,9 +1210,9 @@ my $obsolete_reason = {
 	'dclock' => 3,
 	'xfishtank' => 3,
 	'mpeg_play' => 6,
+# 6.6
 	'py-async' => 5,
 	'py3-async' => 5,
-# 6.5
 	'py3-funcsigs' => 5,
 };
 
@@ -1362,6 +1362,7 @@ my $cve = {
 	'net/transmission,-gtk' => 'transmission-gtk-<2.84',
 	'net/transmission,-main' => 'transmission-<2.84',
 	'net/transmission,-qt' => 'transmission-qt-<2.84',
+	'net/wget' => 'wget-<1.20.3',
 	'net/wireshark,-gtk' => 'wireshark-gtk-<2.6.3',
 	'net/wireshark,-main' => 'wireshark-<2.6.3',
 	'net/wireshark,-text' => 'tshark-<2.6.3',
