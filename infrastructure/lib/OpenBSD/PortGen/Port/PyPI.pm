@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.3 2019/04/21 21:52:20 afresh1 Exp $
+# $OpenBSD: PyPI.pm,v 1.4 2019/04/23 01:31:38 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -52,6 +52,7 @@ sub name_new_port
 	my ( $self, $di ) = @_;
 
 	my $name = $di->{info}{name};
+	$name =~ s/^python-/py-/;
 	$name = "py-$name" unless $name =~ /^py-/;
 
 	return "pypi/$name";
@@ -66,8 +67,13 @@ sub fill_in_makefile
 	$self->set_comment( $di->{info}{summary} );
 	$self->set_other( 'MODPY_EGG_VERSION', $di->{info}{version} );
 	$self->set_distname( "$di->{info}{name}" . '-${MODPY_EGG_VERSION}' );
-	$self->set_other( 'PKGNAME', 'py-${DISTNAME}' )
-	    unless $di->{info}->{name} =~ /^py-/;
+	my $pkgname = $di->{info}->{name};
+	if ($pkgname =~ /^python-/) {
+		$self->set_other( 'PKGNAME', '${DISTNAME:S/^python-/py-/}' );
+	}
+	elsif ($pkgname !~ /^py-/) {
+		$self->set_other( 'PKGNAME', 'py-${DISTNAME}' );
+	}
 	$self->set_modules('lang/python');
 	$self->set_categories('pypi');
 	$self->set_other( 'HOMEPAGE', $di->{info}{home_page} );
