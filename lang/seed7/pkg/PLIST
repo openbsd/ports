@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2019/03/15 16:36:23 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.27 2019/04/23 23:30:34 bcallah Exp $
 @bin bin/make7
 @bin bin/s7
 @bin bin/s7c
@@ -134,6 +134,7 @@ lib/seed7/lib/inflate.s7i
 lib/seed7/lib/inflatefile.s7i
 lib/seed7/lib/inifile.s7i
 lib/seed7/lib/integer.s7i
+lib/seed7/lib/iobuffer.s7i
 lib/seed7/lib/keybd.s7i
 lib/seed7/lib/keydescr.s7i
 lib/seed7/lib/line.s7i
@@ -145,6 +146,7 @@ lib/seed7/lib/mahjng32.s7i
 lib/seed7/lib/make.s7i
 lib/seed7/lib/makedata.s7i
 lib/seed7/lib/math.s7i
+lib/seed7/lib/mixarith.s7i
 lib/seed7/lib/modern27.s7i
 lib/seed7/lib/more.s7i
 lib/seed7/lib/msgdigest.s7i
@@ -284,6 +286,7 @@ share/examples/seed7/err.sd7
 share/examples/seed7/fannkuch.sd7
 share/examples/seed7/fib.sd7
 share/examples/seed7/find7.sd7
+share/examples/seed7/findchar.sd7
 share/examples/seed7/fractree.sd7
 share/examples/seed7/ftp7.sd7
 share/examples/seed7/ftpserv.sd7
