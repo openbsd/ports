@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.519 2019/03/31 01:05:24 bentley Exp $
+# $OpenBSD: Makefile,v 1.520 2019/04/23 11:27:38 sebastia Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -299,6 +299,7 @@
      SUBDIR += ruby-shadow,ruby24
      SUBDIR += ruby-shadow,ruby25
      SUBDIR += ruby-shadow,ruby26
+     SUBDIR += ruby-tzinfo
      SUBDIR += ruby-vlad
      SUBDIR += rundeck
      SUBDIR += runit
