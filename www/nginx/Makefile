@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2018/12/06 08:50:54 landry Exp $
+# $OpenBSD: Makefile,v 1.130 2019/04/23 06:20:37 robert Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -31,6 +31,8 @@ PKGNAME-lua=		nginx-lua-${VERSION}
 PKGNAME-headers_more=	nginx-headers-more-${VERSION}
 PKGNAME-perl=		nginx-perl-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
+
+REVISION-main=		0
 
 MASTER_SITES=	https://nginx.org/download/
 MASTER_SITES0=	https://github.com/simpl/ngx_devel_kit/archive/
@@ -147,6 +149,7 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--http-uwsgi-temp-path=${NGINX_DIR}/cache/uwsgi_temp \
 			--user=www \
 			--group=www \
+			--with-http_auth_request_module \
 			--with-http_image_filter_module=dynamic \
 			--with-http_geoip_module=dynamic \
 			--with-http_gzip_static_module \
@@ -159,7 +162,6 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--with-http_v2_module \
 			--with-http_xslt_module=dynamic \
 			--with-mail=dynamic \
-			--with-ipv6 \
 			--with-stream=dynamic \
 			--add-dynamic-module=${WRKSRC}/naxsi/naxsi_src/ \
 			--add-dynamic-module=${WRKSRC}/ngx_devel_kit \
