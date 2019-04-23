@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2018/11/19 18:46:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/04/23 17:55:31 cwen Exp $
 
 COMMENT=		c++ library for common image format
 
 DISTNAME=		FreeImage3152
 PKGNAME=		freeimage-3.15.2
-REVISION =		6
+REVISION=		7
 CATEGORIES=		graphics
 
 SHARED_LIBS+=		freeimage	2.0
@@ -31,9 +31,10 @@ MAKE_ENV=		LIBfreeimage_VERSION=${LIBfreeimage_VERSION} \
 MAKE_TARGET=		Makefile.gnu
 
 post-extract:
-	perl -pi -e 's/\015//g' ${WRKSRC}/Makefile.gnu
+	perl -pi -e 's/\015//g' ${WRKSRC}/Makefile.gnu \
+				${WRKSRC}/TestAPI/Makefile
 
 do-test:
-	cd ${WRKSRC}/TestAPI && ${MAKE_PROGRAM}
+	cd ${WRKSRC}/TestAPI && ${MAKE_PROGRAM} ${MAKE_ENV}
 
 .include <bsd.port.mk>

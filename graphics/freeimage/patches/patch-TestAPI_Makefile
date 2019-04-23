@@ -1,0 +1,14 @@
+$OpenBSD: patch-TestAPI_Makefile,v 1.1 2019/04/23 17:55:31 cwen Exp $
+
+Index: TestAPI/Makefile
+--- TestAPI/Makefile.orig
++++ TestAPI/Makefile
+@@ -2,7 +2,7 @@
+ default: all
+ 
+ all:
+-	g++ -I../Dist/ *.cpp ../Dist/libfreeimage.a -o testAPI
++	$(CXX) -I../Dist/ *.cpp ../Dist/libfreeimage.a -o testAPI
+ 
+ clean:
+ 	rm -f *.o testAPI *.png *.tif

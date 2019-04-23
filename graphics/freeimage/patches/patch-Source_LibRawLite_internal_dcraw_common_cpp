@@ -1,10 +1,21 @@
-$OpenBSD: patch-Source_LibRawLite_internal_dcraw_common_cpp,v 1.1 2018/04/07 09:07:59 rsadowski Exp $
+$OpenBSD: patch-Source_LibRawLite_internal_dcraw_common_cpp,v 1.2 2019/04/23 17:55:31 cwen Exp $
 
-fix clang 6.0 build
+Hunk #1: fix the build when char is unsigned by default (ppc, arm)
+
+fix clang>=6 build
 
 Index: Source/LibRawLite/internal/dcraw_common.cpp
 --- Source/LibRawLite/internal/dcraw_common.cpp.orig
 +++ Source/LibRawLite/internal/dcraw_common.cpp
+@@ -2368,7 +2368,7 @@ void CLASS quicktake_100_load_raw()
+ 
+ void CLASS kodak_radc_load_raw()
+ {
+-  static const char src[] = {
++  static const signed char src[] = {
+     1,1, 2,3, 3,4, 4,2, 5,7, 6,5, 7,6, 7,8,
+     1,0, 2,1, 3,3, 4,4, 5,2, 6,7, 7,6, 8,5, 8,8,
+     2,1, 2,3, 3,0, 3,2, 3,4, 4,6, 5,5, 6,7, 6,8,
 @@ -3917,7 +3917,7 @@ void CLASS lin_interpolate()
   */
  void CLASS vng_interpolate()
