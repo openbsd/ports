@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.540 2019/04/16 20:48:28 sebastia Exp $
+# $OpenBSD: Makefile,v 1.541 2019/04/23 11:46:06 sebastia Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -354,6 +354,7 @@
      SUBDIR += ruby-bcrypt,ruby24
      SUBDIR += ruby-bcrypt,ruby25
      SUBDIR += ruby-bcrypt,ruby26
+     SUBDIR += ruby-cms_scanner
      SUBDIR += ruby-gpgme,ruby24
      SUBDIR += ruby-gpgme,ruby25
      SUBDIR += ruby-gpgme,ruby26
@@ -409,6 +410,7 @@
      SUBDIR += wapiti
      SUBDIR += wesng
      SUBDIR += wpa_supplicant
+     SUBDIR += wpscan
      SUBDIR += wycheproof-testvectors
      SUBDIR += xca
      SUBDIR += xmlsec
