@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2018/12/29 09:22:55 phessler Exp $
+# $OpenBSD: Makefile,v 1.41 2019/04/23 11:50:10 sthen Exp $
 
 COMMENT=	IEEE 802.1X supplicant
 
-DISTNAME=	wpa_supplicant-2.6
-REVISION=	5
+DISTNAME=	wpa_supplicant-2.7
 CATEGORIES=	security net
 
-HOMEPAGE=	http://w1.fi/wpa_supplicant/
+HOMEPAGE=	https://w1.fi/wpa_supplicant/
 
 MAINTAINER=	David Coppa <dcoppa@openbsd.org>
 
@@ -17,7 +16,7 @@ WANTLIB += c ssl crypto pcap pcsclite pthread
 
 LIB_DEPENDS=	security/pcsc-lite
 
-MASTER_SITES=	http://w1.fi/releases/
+MASTER_SITES=	https://w1.fi/releases/
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes

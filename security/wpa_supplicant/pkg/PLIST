@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/09/04 12:46:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/04/23 11:50:11 sthen Exp $
 @comment @bin sbin/wpa_priv
+@rcscript ${RCDIR}/wpa_supplicant
 @man man/man5/wpa_supplicant.conf.5
 @man man/man8/eapol_test.8
 @man man/man8/wpa_background.8
@@ -18,4 +19,3 @@ share/examples/wpa_supplicant/wpa_supplicant.conf
 @sample ${SYSCONFDIR}/wpa_supplicant.conf
 @mode
 share/examples/wpa_supplicant/wpa_supplicant.conf.dist
-@rcscript ${RCDIR}/wpa_supplicant
