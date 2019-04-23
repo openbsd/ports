@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2019/04/20 00:17:50 bluhm Exp $
+# $OpenBSD: Makefile,v 1.33 2019/04/23 01:14:02 bluhm Exp $
 
 COMMENT=	powerful interactive packet manipulation in python
 
-MODPY_EGG_VERSION=	2.4.0
-REVISION=		3
+MODPY_EGG_VERSION=	2.4.2
 DISTNAME=		scapy-${MODPY_EGG_VERSION}
 CATEGORIES=		net
 
@@ -28,12 +27,8 @@ RUN_DEPENDS=	net/libdnet,-python \
 		net/py-libpcap \
 		security/py-cryptodome \
 		security/py-ecdsa
-TEST_DEPENDS=${RUN_DEPENDS}
 
 PKG_ARCH=	*
-
-post-extract:
-	gunzip ${WRKSRC}/doc/scapy.1.gz
 
 pre-configure:
 	sed -i "s,/etc/ethertypes,${SYSCONFDIR}/ethertypes,g" \
@@ -44,9 +39,8 @@ post-install:
 	${INSTALL_DATA} ${DISTDIR}/ethertypes-20120703 \
 		${PREFIX}/share/examples/scapy/ethertypes
 
-# some tests require root.
-do-test:
-	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
-	cd ${WRKSRC}/test; PATH=${WRKDIR}/bin:${PATH} ${WRKSRC}/test/run_tests
+# The tests are no longer included in the 2.4.2 tar.gz from pypi.org.
+# Enable them again if they come back eventually.  Some tests require root.
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

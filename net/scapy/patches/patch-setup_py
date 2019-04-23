@@ -1,24 +1,13 @@
-$OpenBSD: patch-setup_py,v 1.5 2018/07/08 16:30:57 sthen Exp $
-
-For option --single-version-externally-managed
+$OpenBSD: patch-setup_py,v 1.6 2019/04/23 01:14:02 bluhm Exp $
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -7,7 +7,7 @@ Distutils setup file for Scapy.
- 
- from distutils import archive_util
- from distutils import sysconfig
--from distutils.core import setup
-+from setuptools import setup
- from distutils.command.sdist import sdist
- import os
- 
-@@ -63,7 +63,7 @@ setup(
+@@ -80,7 +80,7 @@ setup(
          'scapy/tools',
      ],
      scripts=SCRIPTS,
--    data_files=[('share/man/man1', ["doc/scapy.1.gz"])],
+-    data_files=[('share/man/man1', ["doc/scapy.1"])],
 +    data_files=[('man/man1', ["doc/scapy.1"])],
      package_data={
          'scapy': ['VERSION'],
