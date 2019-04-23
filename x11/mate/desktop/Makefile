@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/02 06:37:39 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2019/04/23 13:44:39 robert Exp $
 
 COMMENT=		components for the MATE desktop
 
 SHARED_LIBS+=		mate-desktop-2		0.0 # 18.4
 
 MATE_PROJECT=		mate-desktop
-REVISION=		0
+MATE_VERSION=		1.22.1
 
 CATEGORIES=		x11
 

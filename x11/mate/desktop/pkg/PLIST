@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/03/27 18:13:37 robert Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/04/23 13:44:39 robert Exp $
 @bin bin/mate-about
 @bin bin/mate-color-select
 include/mate-desktop-2.0/
@@ -76,14 +76,14 @@ share/gtk-doc/html/mate-desktop/style.css
 share/gtk-doc/html/mate-desktop/thumbnail.html
 share/gtk-doc/html/mate-desktop/up-insensitive.png
 share/gtk-doc/html/mate-desktop/up.png
-share/icons/hicolor/16x16/apps/mate.png
-share/icons/hicolor/22x22/apps/mate.png
-share/icons/hicolor/24x24/apps/mate.png
-share/icons/hicolor/256x256/apps/mate.png
-share/icons/hicolor/32x32/apps/mate.png
-share/icons/hicolor/48x48/apps/mate.png
-share/icons/hicolor/scalable/apps/mate-symbolic.svg
-share/icons/hicolor/scalable/apps/mate.svg
+share/icons/hicolor/128x128/apps/mate-desktop.png
+share/icons/hicolor/16x16/apps/mate-desktop.png
+share/icons/hicolor/22x22/apps/mate-desktop.png
+share/icons/hicolor/24x24/apps/mate-desktop.png
+share/icons/hicolor/32x32/apps/mate-desktop.png
+share/icons/hicolor/48x48/apps/mate-desktop.png
+share/icons/hicolor/scalable/apps/mate-desktop-symbolic.svg
+share/icons/hicolor/scalable/apps/mate-desktop.svg
 share/locale/af/LC_MESSAGES/mate-desktop.mo
 share/locale/am/LC_MESSAGES/mate-desktop.mo
 share/locale/an/LC_MESSAGES/mate-desktop.mo
