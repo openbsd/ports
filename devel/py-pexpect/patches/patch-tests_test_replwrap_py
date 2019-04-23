@@ -1,7 +1,8 @@
-$OpenBSD: patch-tests_test_replwrap_py,v 1.2 2016/09/01 06:56:46 shadchin Exp $
---- tests/test_replwrap.py.orig	Mon Aug 22 00:57:33 2016
-+++ tests/test_replwrap.py	Sun Aug 28 17:27:51 2016
-@@ -101,7 +101,7 @@ class REPLWrapTestCase(unittest.TestCase):
+$OpenBSD: patch-tests_test_replwrap_py,v 1.3 2019/04/23 20:19:38 sthen Exp $
+Index: tests/test_replwrap.py
+--- tests/test_replwrap.py.orig
++++ tests/test_replwrap.py
+@@ -108,7 +108,7 @@ class REPLWrapTestCase(unittest.TestCase):
          if platform.python_implementation() == 'PyPy':
              raise unittest.SkipTest(skip_pypy)
  
