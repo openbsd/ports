@@ -1,0 +1,6 @@
+objgraph is a module that lets you visually explore Python object graphs.
+It can draw object reference graphs with graphviz, or can make use of
+xdot for interactive use.
+
+Its origin was in a set of functions used while hunting for memory leaks
+in a Python program.
