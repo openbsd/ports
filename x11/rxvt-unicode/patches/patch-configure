@@ -1,0 +1,53 @@
+$OpenBSD: patch-configure,v 1.1 2019/04/24 18:39:06 cwen Exp $
+
+Don't use gcc specific flags, because it causes various undefined
+reference errors with ports-gcc>=6 when -lsupc++ is used. We could
+use libesupc++ but there is not much incentive to do so.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -4493,43 +4493,6 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+ 
+ 
+ LINKER="$CXX"
+-if test x$GCC = xyes && test x$GXX = xyes; then
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for working libsupc++" >&5
+-$as_echo_n "checking for working libsupc++... " >&6; }
+-   save_CXX="$CXX"
+-   save_LIBS="$LIBS"
+-   CXX="$CC"
+-   LIBS="$LIBS -lsupc++"
+-
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-struct test { }; void f() try { throw new test; } catch (...) { throw; }
+-int
+-main ()
+-{
+-
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_cxx_try_link "$LINENO"; then :
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: ok" >&5
+-$as_echo "ok" >&6; }
+-       LINKER="$CC"
+-else
+-
+-         { $as_echo "$as_me:${as_lineno-$LINENO}: result: no, making everything bigger and slower" >&5
+-$as_echo "no, making everything bigger and slower" >&6; }
+-         LIBS="$save_LIBS"
+-
+-
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-   CXX="$save_CXX"
+-fi
+-LINKER=$LINKER
+-
+ 
+ if test -z "$orig_CXXFLAGS"; then
+   if test x$GCC = xyes && test "x$GXX" = xyes; then
