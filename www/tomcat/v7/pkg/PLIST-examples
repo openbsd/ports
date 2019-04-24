@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.39 2017/08/22 14:58:57 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.40 2019/04/24 16:31:51 sthen Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -23,6 +23,7 @@ webapps/docs/
 webapps/docs/BUILDING.txt
 webapps/docs/LICENSE
 webapps/docs/NOTICE
+webapps/docs/README.md
 webapps/docs/RELEASE-NOTES.txt
 webapps/docs/RUNNING.txt
 webapps/docs/WEB-INF/
@@ -188,6 +189,7 @@ webapps/docs/api/org/apache/catalina/core/ContainerBase.PrivilegedAddChild.html
 webapps/docs/api/org/apache/catalina/core/ContainerBase.html
 webapps/docs/api/org/apache/catalina/core/DefaultInstanceManager.html
 webapps/docs/api/org/apache/catalina/core/JasperListener.html
+webapps/docs/api/org/apache/catalina/core/JniLifecycleListener.html
 webapps/docs/api/org/apache/catalina/core/JreMemoryLeakPreventionListener.html
 webapps/docs/api/org/apache/catalina/core/NamingContextListener.html
 webapps/docs/api/org/apache/catalina/core/StandardContext.html
@@ -261,12 +263,14 @@ webapps/docs/api/org/apache/catalina/filters/FailedRequestFilter.html
 webapps/docs/api/org/apache/catalina/filters/FilterBase.html
 webapps/docs/api/org/apache/catalina/filters/HttpHeaderSecurityFilter.html
 webapps/docs/api/org/apache/catalina/filters/RemoteAddrFilter.html
+webapps/docs/api/org/apache/catalina/filters/RemoteCIDRFilter.html
 webapps/docs/api/org/apache/catalina/filters/RemoteHostFilter.html
 webapps/docs/api/org/apache/catalina/filters/RemoteIpFilter.XForwardedRequest.html
 webapps/docs/api/org/apache/catalina/filters/RemoteIpFilter.html
 webapps/docs/api/org/apache/catalina/filters/RequestDumperFilter.html
 webapps/docs/api/org/apache/catalina/filters/RequestFilter.html
 webapps/docs/api/org/apache/catalina/filters/RestCsrfPreventionFilter.html
+webapps/docs/api/org/apache/catalina/filters/SessionInitializerFilter.html
 webapps/docs/api/org/apache/catalina/filters/SetCharacterEncodingFilter.html
 webapps/docs/api/org/apache/catalina/filters/WebdavFixFilter.html
 webapps/docs/api/org/apache/catalina/filters/package-frame.html
@@ -755,6 +759,7 @@ webapps/docs/api/org/apache/catalina/util/LifecycleMBeanBase.html
 webapps/docs/api/org/apache/catalina/util/LifecycleSupport.html
 webapps/docs/api/org/apache/catalina/util/MIME2Java.html
 webapps/docs/api/org/apache/catalina/util/ManifestResource.html
+webapps/docs/api/org/apache/catalina/util/NetMask.html
 webapps/docs/api/org/apache/catalina/util/ParameterMap.html
 webapps/docs/api/org/apache/catalina/util/RequestUtil.html
 webapps/docs/api/org/apache/catalina/util/ResourceSet.html
@@ -821,6 +826,7 @@ webapps/docs/api/org/apache/catalina/valves/ExtendedAccessLogValve.html
 webapps/docs/api/org/apache/catalina/valves/JDBCAccessLogValve.html
 webapps/docs/api/org/apache/catalina/valves/PersistentValve.html
 webapps/docs/api/org/apache/catalina/valves/RemoteAddrValve.html
+webapps/docs/api/org/apache/catalina/valves/RemoteCIDRValve.html
 webapps/docs/api/org/apache/catalina/valves/RemoteHostValve.html
 webapps/docs/api/org/apache/catalina/valves/RemoteIpValve.html
 webapps/docs/api/org/apache/catalina/valves/RequestFilterValve.html
@@ -1236,12 +1242,14 @@ webapps/docs/api/org/apache/juli/package-frame.html
 webapps/docs/api/org/apache/juli/package-summary.html
 webapps/docs/api/org/apache/juli/package-tree.html
 webapps/docs/api/org/apache/naming/
+webapps/docs/api/org/apache/naming/AbstractRef.html
 webapps/docs/api/org/apache/naming/Constants.html
 webapps/docs/api/org/apache/naming/ContextAccessController.html
 webapps/docs/api/org/apache/naming/ContextBindings.html
 webapps/docs/api/org/apache/naming/EjbRef.html
 webapps/docs/api/org/apache/naming/HandlerRef.html
 webapps/docs/api/org/apache/naming/JndiPermission.html
+webapps/docs/api/org/apache/naming/LookupRef.html
 webapps/docs/api/org/apache/naming/NameParserImpl.html
 webapps/docs/api/org/apache/naming/NamingContext.html
 webapps/docs/api/org/apache/naming/NamingContextBindingsEnumeration.html
@@ -1260,6 +1268,7 @@ webapps/docs/api/org/apache/naming/factory/Constants.html
 webapps/docs/api/org/apache/naming/factory/DataSourceLinkFactory.DataSourceHandler.html
 webapps/docs/api/org/apache/naming/factory/DataSourceLinkFactory.html
 webapps/docs/api/org/apache/naming/factory/EjbFactory.html
+webapps/docs/api/org/apache/naming/factory/LookupFactory.html
 webapps/docs/api/org/apache/naming/factory/MailSessionFactory.html
 webapps/docs/api/org/apache/naming/factory/OpenEjbFactory.html
 webapps/docs/api/org/apache/naming/factory/ResourceEnvFactory.html
@@ -1298,6 +1307,7 @@ webapps/docs/api/org/apache/naming/resources/FileDirContext.FileResource.html
 webapps/docs/api/org/apache/naming/resources/FileDirContext.FileResourceAttributes.html
 webapps/docs/api/org/apache/naming/resources/FileDirContext.html
 webapps/docs/api/org/apache/naming/resources/ImmutableNameNotFoundException.html
+webapps/docs/api/org/apache/naming/resources/JrePlatform.html
 webapps/docs/api/org/apache/naming/resources/ProxyDirContext.html
 webapps/docs/api/org/apache/naming/resources/RecyclableNamingEnumeration.html
 webapps/docs/api/org/apache/naming/resources/Resource.html
@@ -1441,6 +1451,7 @@ webapps/docs/api/org/apache/tomcat/util/ExceptionUtils.html
 webapps/docs/api/org/apache/tomcat/util/IntrospectionUtils.AttributeHolder.html
 webapps/docs/api/org/apache/tomcat/util/IntrospectionUtils.PropertySource.html
 webapps/docs/api/org/apache/tomcat/util/IntrospectionUtils.html
+webapps/docs/api/org/apache/tomcat/util/MultiThrowable.html
 webapps/docs/api/org/apache/tomcat/util/MutableInteger.html
 webapps/docs/api/org/apache/tomcat/util/bcel/
 webapps/docs/api/org/apache/tomcat/util/bcel/Const.html
@@ -1472,6 +1483,7 @@ webapps/docs/api/org/apache/tomcat/util/bcel/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/bcel/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/bcel/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/buf/
+webapps/docs/api/org/apache/tomcat/util/buf/AbstractChunk.html
 webapps/docs/api/org/apache/tomcat/util/buf/Ascii.html
 webapps/docs/api/org/apache/tomcat/util/buf/B2CConverter.html
 webapps/docs/api/org/apache/tomcat/util/buf/ByteChunk.ByteInputChannel.html
@@ -1523,6 +1535,7 @@ webapps/docs/api/org/apache/tomcat/util/collections/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/compat/
 webapps/docs/api/org/apache/tomcat/util/compat/JreCompat.html
 webapps/docs/api/org/apache/tomcat/util/compat/JreVendor.html
+webapps/docs/api/org/apache/tomcat/util/compat/TLS.html
 webapps/docs/api/org/apache/tomcat/util/compat/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/compat/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/compat/package-tree.html
@@ -1660,9 +1673,11 @@ webapps/docs/api/org/apache/tomcat/util/http/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/http/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/http/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/
+webapps/docs/api/org/apache/tomcat/util/http/parser/Host.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/HttpParser.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/MediaType.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/MediaTypeCache.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/Vary.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/package-tree.html
@@ -1812,11 +1827,16 @@ webapps/docs/api/org/apache/tomcat/websocket/AsyncChannelGroupUtil.html
 webapps/docs/api/org/apache/tomcat/websocket/AsyncChannelWrapper.html
 webapps/docs/api/org/apache/tomcat/websocket/AsyncChannelWrapperNonSecure.html
 webapps/docs/api/org/apache/tomcat/websocket/AsyncChannelWrapperSecure.html
+webapps/docs/api/org/apache/tomcat/websocket/AuthenticationException.html
+webapps/docs/api/org/apache/tomcat/websocket/Authenticator.html
+webapps/docs/api/org/apache/tomcat/websocket/AuthenticatorFactory.html
 webapps/docs/api/org/apache/tomcat/websocket/BackgroundProcess.html
 webapps/docs/api/org/apache/tomcat/websocket/BackgroundProcessManager.html
+webapps/docs/api/org/apache/tomcat/websocket/BasicAuthenticator.html
 webapps/docs/api/org/apache/tomcat/websocket/CaseInsensitiveKeyMap.html
 webapps/docs/api/org/apache/tomcat/websocket/Constants.html
 webapps/docs/api/org/apache/tomcat/websocket/DecoderEntry.html
+webapps/docs/api/org/apache/tomcat/websocket/DigestAuthenticator.html
 webapps/docs/api/org/apache/tomcat/websocket/MessageHandlerResult.html
 webapps/docs/api/org/apache/tomcat/websocket/MessageHandlerResultType.html
 webapps/docs/api/org/apache/tomcat/websocket/PerMessageDeflate.html
@@ -2030,6 +2050,8 @@ webapps/docs/funcspecs/fs-jndi-realm.html
 webapps/docs/funcspecs/fs-memory-realm.html
 webapps/docs/funcspecs/index.html
 webapps/docs/funcspecs/mbean-names.html
+webapps/docs/host-manager-howto.html
+webapps/docs/html-host-manager-howto.html
 webapps/docs/html-manager-howto.html
 webapps/docs/images/
 webapps/docs/images/add.gif
@@ -2139,6 +2161,7 @@ webapps/docs/logging.html
 webapps/docs/manager-howto.html
 webapps/docs/maven-jars.html
 webapps/docs/mbeans-descriptors-howto.html
+webapps/docs/mbeans-descriptors.dtd
 webapps/docs/monitoring.html
 webapps/docs/proxy-howto.html
 webapps/docs/realm-howto.html
@@ -2380,6 +2403,8 @@ webapps/examples/WEB-INF/classes/async/Async2.class
 webapps/examples/WEB-INF/classes/async/Async2.java
 webapps/examples/WEB-INF/classes/async/Async3.class
 webapps/examples/WEB-INF/classes/async/Async3.java
+webapps/examples/WEB-INF/classes/async/AsyncStockContextListener.class
+webapps/examples/WEB-INF/classes/async/AsyncStockContextListener.java
 webapps/examples/WEB-INF/classes/async/AsyncStockServlet.class
 webapps/examples/WEB-INF/classes/async/AsyncStockServlet.java
 webapps/examples/WEB-INF/classes/async/Stockticker$Stock.class
@@ -2429,8 +2454,6 @@ webapps/examples/WEB-INF/classes/examples/FooTagExtraInfo.class
 webapps/examples/WEB-INF/classes/examples/FooTagExtraInfo.java
 webapps/examples/WEB-INF/classes/examples/LogTag.class
 webapps/examples/WEB-INF/classes/examples/LogTag.java
-webapps/examples/WEB-INF/classes/examples/ShowSource.class
-webapps/examples/WEB-INF/classes/examples/ShowSource.java
 webapps/examples/WEB-INF/classes/examples/ValuesTag.class
 webapps/examples/WEB-INF/classes/examples/ValuesTag.java
 webapps/examples/WEB-INF/classes/filters/
@@ -2763,8 +2786,6 @@ webapps/examples/jsp/snp/
 webapps/examples/jsp/snp/snoop.html
 webapps/examples/jsp/snp/snoop.jsp
 webapps/examples/jsp/snp/snoop.jsp.html
-webapps/examples/jsp/source.jsp
-webapps/examples/jsp/source.jsp.html
 webapps/examples/jsp/tagplugin/
 webapps/examples/jsp/tagplugin/choose.html
 webapps/examples/jsp/tagplugin/choose.jsp
