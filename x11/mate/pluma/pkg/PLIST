@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/03/27 18:13:38 robert Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/04/24 09:31:51 robert Exp $
 @bin bin/pluma
 include/pluma/
 include/pluma/pluma-app.h
@@ -953,18 +953,12 @@ share/locale/fr/LC_MESSAGES/pluma.mo
 share/locale/fr_CA/
 share/locale/fr_CA/LC_MESSAGES/
 share/locale/fr_CA/LC_MESSAGES/pluma.mo
-share/locale/frp/
-share/locale/frp/LC_MESSAGES/
 share/locale/frp/LC_MESSAGES/pluma.mo
 share/locale/fur/LC_MESSAGES/pluma.mo
-share/locale/fy/
-share/locale/fy/LC_MESSAGES/
 share/locale/fy/LC_MESSAGES/pluma.mo
 share/locale/ga/LC_MESSAGES/pluma.mo
 share/locale/gl/LC_MESSAGES/pluma.mo
 share/locale/gu/LC_MESSAGES/pluma.mo
-share/locale/ha/
-share/locale/ha/LC_MESSAGES/
 share/locale/ha/LC_MESSAGES/pluma.mo
 share/locale/he/LC_MESSAGES/pluma.mo
 share/locale/hi/LC_MESSAGES/pluma.mo
@@ -1044,8 +1038,6 @@ share/locale/vi/LC_MESSAGES/pluma.mo
 share/locale/wa/LC_MESSAGES/pluma.mo
 share/locale/xh/LC_MESSAGES/pluma.mo
 share/locale/yi/LC_MESSAGES/pluma.mo
-share/locale/yo/
-share/locale/yo/LC_MESSAGES/
 share/locale/yo/LC_MESSAGES/pluma.mo
 share/locale/zh_CN/LC_MESSAGES/pluma.mo
 share/locale/zh_HK/LC_MESSAGES/pluma.mo
