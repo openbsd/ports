@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/04/23 11:42:12 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/24 20:23:21 sebastia Exp $
 
 COMMENT =	framework to implement CMS scanners
 
+REVISION =	0
 DISTNAME =	cms_scanner-0.0.41.6
 CATEGORIES =	security
 
@@ -21,8 +22,7 @@ RUN_DEPENDS +=		devel/ruby-ruby-progressbar,${MODRUBY_FLAVOR},>=1.10,<1.11 \
 			devel/ruby-yajl,${MODRUBY_FLAVOR},>=1.4.1,<1.5 \
 			net/ruby-public_suffix,${MODRUBY_FLAVOR},>=3.0,<3.1 \
 			textproc/ruby-nokogiri,${MODRUBY_FLAVOR},>=1.10,<1.11 \
-			www/ruby-typhoeus,${MODRUBY_FLAVOR},>=1.3,<1.4 \
-			www/ruby-xmlrpc,${MODRUBY_FLAVOR}>=0.3,<1.0
+			www/ruby-typhoeus,${MODRUBY_FLAVOR},>=1.3,<1.4
 
 CONFIGURE_STYLE =	ruby gem
 
