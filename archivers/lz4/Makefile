@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 2018/09/24 21:01:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/04/24 10:12:54 sthen Exp $
 
-SHARED_LIBS +=	lz4                       2.1
+SHARED_LIBS +=	lz4                       3.0
 
 COMMENT=	fast BSD-licensed data compression
 
 GH_ACCOUNT=	lz4
 GH_PROJECT=	lz4
-GH_TAGNAME=	v1.8.3
+GH_TAGNAME=	v1.9.1
 
 CATEGORIES=	archivers
 
