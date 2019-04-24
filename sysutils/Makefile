@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.520 2019/04/23 11:27:38 sebastia Exp $
+# $OpenBSD: Makefile,v 1.521 2019/04/24 21:15:23 espie Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -263,6 +263,7 @@
      SUBDIR += radiusreport
      SUBDIR += radmind
      SUBDIR += rancid
+     SUBDIR += random_run
      SUBDIR += ranger
      SUBDIR += ranval
      SUBDIR += raspberrypi-firmware
