@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.11 2019/04/24 16:26:58 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2019/04/24 16:28:59 sthen Exp $
 
 COMMENT-main ?=	Java servlet and Java server pages server
 COMMENT-examples =example applications and full documentation
@@ -41,6 +41,8 @@ CONFDIR =	${SYSCONFDIR}/tomcat
 CATALINA_BASE =	/var/tomcat
 SAMPLEDIR =	${PREFIX}/share/examples/tomcat
 SUBST_VARS +=	CONFDIR CATALINA_BASE
+# conf/ is not world-readable
+FIX_EXTRACT_PERMISSIONS = Yes
 
 post-extract:
 	@rm -rf ${WRKDIST}/webapps/docs
@@ -82,4 +84,4 @@ do-install:
 		-name \*.bat -or \
 		-name \*.exe -or \
 		-name \*.dll \
-		| xargs rm
+		-delete
