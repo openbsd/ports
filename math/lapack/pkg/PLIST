@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/11/13 06:57:36 steven Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/04/24 15:30:31 steven Exp $
 lib/liblapack.a
 @lib lib/liblapack.so.${LIBlapack_VERSION}
 lib/liblapack_p.a
@@ -127,6 +127,7 @@ lib/liblapack_p.a
 @man man/man3f/cherfs.3f
 @man man/man3f/chesv.3f
 @man man/man3f/chesv_aa.3f
+@man man/man3f/chesv_aa_2stage.3f
 @man man/man3f/chesv_rk.3f
 @man man/man3f/chesv_rook.3f
 @man man/man3f/chesvx.3f
@@ -140,6 +141,7 @@ lib/liblapack_p.a
 @man man/man3f/chetrd_he2hb.3f
 @man man/man3f/chetrf.3f
 @man man/man3f/chetrf_aa.3f
+@man man/man3f/chetrf_aa_2stage.3f
 @man man/man3f/chetrf_rk.3f
 @man man/man3f/chetrf_rook.3f
 @man man/man3f/chetri.3f
@@ -152,6 +154,7 @@ lib/liblapack_p.a
 @man man/man3f/chetrs2.3f
 @man man/man3f/chetrs_3.3f
 @man man/man3f/chetrs_aa.3f
+@man man/man3f/chetrs_aa_2stage.3f
 @man man/man3f/chetrs_rook.3f
 @man man/man3f/chfrk.3f
 @man man/man3f/chgeqz.3f
@@ -343,6 +346,7 @@ lib/liblapack_p.a
 @man man/man3f/csyrfs.3f
 @man man/man3f/csysv.3f
 @man man/man3f/csysv_aa.3f
+@man man/man3f/csysv_aa_2stage.3f
 @man man/man3f/csysv_rk.3f
 @man man/man3f/csysv_rook.3f
 @man man/man3f/csysvx.3f
@@ -352,6 +356,7 @@ lib/liblapack_p.a
 @man man/man3f/csytf2_rook.3f
 @man man/man3f/csytrf.3f
 @man man/man3f/csytrf_aa.3f
+@man man/man3f/csytrf_aa_2stage.3f
 @man man/man3f/csytrf_rk.3f
 @man man/man3f/csytrf_rook.3f
 @man man/man3f/csytri.3f
@@ -364,6 +369,7 @@ lib/liblapack_p.a
 @man man/man3f/csytrs2.3f
 @man man/man3f/csytrs_3.3f
 @man man/man3f/csytrs_aa.3f
+@man man/man3f/csytrs_aa_2stage.3f
 @man man/man3f/csytrs_rook.3f
 @man man/man3f/ctbcon.3f
 @man man/man3f/ctbrfs.3f
@@ -579,7 +585,6 @@ lib/liblapack_p.a
 @man man/man3f/dlals0.3f
 @man man/man3f/dlalsa.3f
 @man man/man3f/dlalsd.3f
-@man man/man3f/dlamch.3f
 @man man/man3f/dlamrg.3f
 @man man/man3f/dlamswlq.3f
 @man man/man3f/dlamtsqr.3f
@@ -777,10 +782,6 @@ lib/liblapack_p.a
 @man man/man3f/dsbgvd.3f
 @man man/man3f/dsbgvx.3f
 @man man/man3f/dsbtrd.3f
-@man man/man3f/dsecnd_EXT_ETIME.3f
-@man man/man3f/dsecnd_EXT_ETIME_.3f
-@man man/man3f/dsecnd_INT_CPU_TIME.3f
-@man man/man3f/dsecnd_INT_ETIME.3f
 @man man/man3f/dsfrk.3f
 @man man/man3f/dsgesv.3f
 @man man/man3f/dspcon.3f
@@ -834,6 +835,7 @@ lib/liblapack_p.a
 @man man/man3f/dsyrfs.3f
 @man man/man3f/dsysv.3f
 @man man/man3f/dsysv_aa.3f
+@man man/man3f/dsysv_aa_2stage.3f
 @man man/man3f/dsysv_rk.3f
 @man man/man3f/dsysv_rook.3f
 @man man/man3f/dsysvx.3f
@@ -847,6 +849,7 @@ lib/liblapack_p.a
 @man man/man3f/dsytrd_sy2sb.3f
 @man man/man3f/dsytrf.3f
 @man man/man3f/dsytrf_aa.3f
+@man man/man3f/dsytrf_aa_2stage.3f
 @man man/man3f/dsytrf_rk.3f
 @man man/man3f/dsytrf_rook.3f
 @man man/man3f/dsytri.3f
@@ -859,6 +862,7 @@ lib/liblapack_p.a
 @man man/man3f/dsytrs2.3f
 @man man/man3f/dsytrs_3.3f
 @man man/man3f/dsytrs_aa.3f
+@man man/man3f/dsytrs_aa_2stage.3f
 @man man/man3f/dsytrs_rook.3f
 @man man/man3f/dtbcon.3f
 @man man/man3f/dtbrfs.3f
@@ -916,7 +920,6 @@ lib/liblapack_p.a
 @man man/man3f/ilaslr.3f
 @man man/man3f/ilatrans.3f
 @man man/man3f/ilauplo.3f
-@man man/man3f/ilaver.3f
 @man man/man3f/ilazlc.3f
 @man man/man3f/ilazlr.3f
 @man man/man3f/iparmq.3f
@@ -928,10 +931,6 @@ lib/liblapack_p.a
 @man man/man3f/sbdsvdx.3f
 @man man/man3f/scsum1.3f
 @man man/man3f/sdisna.3f
-@man man/man3f/second_EXT_ETIME.3f
-@man man/man3f/second_EXT_ETIME_.3f
-@man man/man3f/second_INT_CPU_TIME.3f
-@man man/man3f/second_INT_ETIME.3f
 @man man/man3f/sgbbrd.3f
 @man man/man3f/sgbcon.3f
 @man man/man3f/sgbequ.3f
@@ -1063,7 +1062,6 @@ lib/liblapack_p.a
 @man man/man3f/slals0.3f
 @man man/man3f/slalsa.3f
 @man man/man3f/slalsd.3f
-@man man/man3f/slamch.3f
 @man man/man3f/slamrg.3f
 @man man/man3f/slamswlq.3f
 @man man/man3f/slamtsqr.3f
@@ -1311,6 +1309,7 @@ lib/liblapack_p.a
 @man man/man3f/ssyrfs.3f
 @man man/man3f/ssysv.3f
 @man man/man3f/ssysv_aa.3f
+@man man/man3f/ssysv_aa_2stage.3f
 @man man/man3f/ssysv_rk.3f
 @man man/man3f/ssysv_rook.3f
 @man man/man3f/ssysvx.3f
@@ -1324,6 +1323,7 @@ lib/liblapack_p.a
 @man man/man3f/ssytrd_sy2sb.3f
 @man man/man3f/ssytrf.3f
 @man man/man3f/ssytrf_aa.3f
+@man man/man3f/ssytrf_aa_2stage.3f
 @man man/man3f/ssytrf_rk.3f
 @man man/man3f/ssytrf_rook.3f
 @man man/man3f/ssytri.3f
@@ -1336,6 +1336,7 @@ lib/liblapack_p.a
 @man man/man3f/ssytrs2.3f
 @man man/man3f/ssytrs_3.3f
 @man man/man3f/ssytrs_aa.3f
+@man man/man3f/ssytrs_aa_2stage.3f
 @man man/man3f/ssytrs_rook.3f
 @man man/man3f/stbcon.3f
 @man man/man3f/stbrfs.3f
@@ -1507,6 +1508,7 @@ lib/liblapack_p.a
 @man man/man3f/zherfs.3f
 @man man/man3f/zhesv.3f
 @man man/man3f/zhesv_aa.3f
+@man man/man3f/zhesv_aa_2stage.3f
 @man man/man3f/zhesv_rk.3f
 @man man/man3f/zhesv_rook.3f
 @man man/man3f/zhesvx.3f
@@ -1520,6 +1522,7 @@ lib/liblapack_p.a
 @man man/man3f/zhetrd_he2hb.3f
 @man man/man3f/zhetrf.3f
 @man man/man3f/zhetrf_aa.3f
+@man man/man3f/zhetrf_aa_2stage.3f
 @man man/man3f/zhetrf_rk.3f
 @man man/man3f/zhetrf_rook.3f
 @man man/man3f/zhetri.3f
@@ -1532,6 +1535,7 @@ lib/liblapack_p.a
 @man man/man3f/zhetrs2.3f
 @man man/man3f/zhetrs_3.3f
 @man man/man3f/zhetrs_aa.3f
+@man man/man3f/zhetrs_aa_2stage.3f
 @man man/man3f/zhetrs_rook.3f
 @man man/man3f/zhfrk.3f
 @man man/man3f/zhgeqz.3f
@@ -1722,6 +1726,7 @@ lib/liblapack_p.a
 @man man/man3f/zsyrfs.3f
 @man man/man3f/zsysv.3f
 @man man/man3f/zsysv_aa.3f
+@man man/man3f/zsysv_aa_2stage.3f
 @man man/man3f/zsysv_rk.3f
 @man man/man3f/zsysv_rook.3f
 @man man/man3f/zsysvx.3f
@@ -1731,6 +1736,7 @@ lib/liblapack_p.a
 @man man/man3f/zsytf2_rook.3f
 @man man/man3f/zsytrf.3f
 @man man/man3f/zsytrf_aa.3f
+@man man/man3f/zsytrf_aa_2stage.3f
 @man man/man3f/zsytrf_rk.3f
 @man man/man3f/zsytrf_rook.3f
 @man man/man3f/zsytri.3f
@@ -1743,6 +1749,7 @@ lib/liblapack_p.a
 @man man/man3f/zsytrs2.3f
 @man man/man3f/zsytrs_3.3f
 @man man/man3f/zsytrs_aa.3f
+@man man/man3f/zsytrs_aa_2stage.3f
 @man man/man3f/zsytrs_rook.3f
 @man man/man3f/ztbcon.3f
 @man man/man3f/ztbrfs.3f

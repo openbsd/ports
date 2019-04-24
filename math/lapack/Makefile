@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.27 2018/10/23 20:35:47 steven Exp $
+# $OpenBSD: Makefile,v 1.28 2019/04/24 15:30:31 steven Exp $
 
 COMMENT=	library of Fortran linear algebra subroutines
 
-VERSION=	3.7.1
+VERSION=	3.8.0
 DISTNAME=	lapack-${VERSION}
-REVISION=	0
 
-SHARED_LIBS=	lapack 6.0
+SHARED_LIBS=	lapack 7.0
 
 CATEGORIES=	math
-DISTFILES=	${DISTNAME}.tgz manpages.tgz:0
+DISTFILES=	${DISTNAME}.tar.gz manpages.tgz:0
 
 HOMEPAGE=	http://www.netlib.org/lapack/
 
@@ -21,7 +20,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://www.netlib.org/lapack/ \
 		http://www.netlib.no/netlib/lapack/
 MASTER_SITES0=	http://www.netlib.org/lapack/
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${DISTNAME}
 
 LIB_DEPENDS =	math/blas
@@ -71,12 +69,14 @@ post-install:
 		grep -v dsytrd_sb2st.f | \
 		grep -v chetrd_hb2st.f | \
 		grep -v zhetrd_hb2st.f | \
+		grep -v dlamch.f | \
 		grep -v iparam2stage.f | \
+		grep -v ilaver.f | \
+		grep -v slamch.f | \
 		grep -v lsame.f | \
 	 	grep -v xerbla.f | \
 		grep -v xerbla_array.f` ; do \
 		${INSTALL_MAN} `basename $${m%.f}.3f` ${PREFIX}/man/man3f ; done
-	@${INSTALL_MAN} ${MANSRC}/*TIME*.3f ${PREFIX}/man/man3f
 
 do-test:
 	cd ${WRKDIST}/TESTING/MATGEN && gmake ${ALL_TEST_FLAGS}

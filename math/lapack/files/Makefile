@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/13 06:57:36 steven Exp $
+# $OpenBSD: Makefile,v 1.8 2019/04/24 15:30:31 steven Exp $
 
 LIB = lapack
 
@@ -98,6 +98,7 @@ SLASRC = \
    ssytf2_rk.f ssytrf_rk.f ssytrs_3.f \
    ssytri_3.f ssytri_3x.f ssycon_3.f ssysv_rk.f \
    slasyf_aa.f ssysv_aa.f ssytrf_aa.f ssytrs_aa.f \
+   ssysv_aa_2stage.f ssytrf_aa_2stage.f ssytrs_aa_2stage.f \
    stbcon.f \
    stbrfs.f stbtrs.f stgevc.f stgex2.f stgexc.f stgsen.f \
    stgsja.f stgsna.f stgsy2.f stgsyl.f stpcon.f stprfs.f stptri.f \
@@ -149,6 +150,7 @@ CLASRC = \
    chetf2_rk.f chetrf_rk.f chetri_3.f chetri_3x.f \
    chetrs_3.f checon_3.f chesv_rk.f \
    chesv_aa.f chetrf_aa.f chetrs_aa.f clahef_aa.f \
+   chesv_aa_2stage.f chetrf_aa_2stage.f chetrs_aa_2stage.f \
    chgeqz.f chpcon.f chpev.f  chpevd.f \
    chpevx.f chpgst.f chpgv.f  chpgvd.f chpgvx.f chprfs.f chpsv.f \
    chpsvx.f \
@@ -179,6 +181,7 @@ CLASRC = \
    cstegr.f cstein.f csteqr.f \
    csycon.f csymv.f csyr.f csyrfs.f csysv.f csysvx.f \
    csytf2.f csytrf.f csytri.f csytri2.f csytri2x.f \
+   csysv_aa_2stage.f csytrf_aa_2stage.f csytrs_aa_2stage.f \
    csyswapr.f csytrs.f csytrs2.f \
    csyconv.f csyconvf.f csyconvf_rook.f \
    csytf2_rook.f csytrf_rook.f csytrs_rook.f \
@@ -268,6 +271,7 @@ DLASRC = \
    dsytf2_rk.f dsytrf_rk.f dsytrs_3.f \
    dsytri_3.f dsytri_3x.f dsycon_3.f dsysv_rk.f \
    dlasyf_aa.f dsysv_aa.f dsytrf_aa.f dsytrs_aa.f \
+   dsysv_aa_2stage.f dsytrf_aa_2stage.f dsytrs_aa_2stage.f \
    dtbcon.f dtbrfs.f dtbtrs.f dtgevc.f dtgex2.f dtgexc.f dtgsen.f \
    dtgsja.f dtgsna.f dtgsy2.f dtgsyl.f dtpcon.f dtprfs.f dtptri.f \
    dtptrs.f \
@@ -318,6 +322,7 @@ ZLASRC = \
    zhetf2_rk.f zhetrf_rk.f zhetri_3.f zhetri_3x.f \
    zhetrs_3.f zhecon_3.f zhesv_rk.f \
    zhesv_aa.f zhetrf_aa.f zhetrs_aa.f zlahef_aa.f \
+   zhesv_aa_2stage.f zhetrf_aa_2stage.f zhetrs_aa_2stage.f \
    zhgeqz.f zhpcon.f zhpev.f  zhpevd.f \
    zhpevx.f zhpgst.f zhpgv.f  zhpgvd.f zhpgvx.f zhprfs.f zhpsv.f \
    zhpsvx.f \
@@ -354,6 +359,7 @@ ZLASRC = \
    zsyconv.f zsyconvf.f zsyconvf_rook.f \
    zsytf2_rook.f zsytrf_rook.f zsytrs_rook.f zsytrs_aa.f \
    zsytri_rook.f zsycon_rook.f zsysv_rook.f \
+   zsysv_aa_2stage.f zsytrf_aa_2stage.f zsytrs_aa_2stage.f \
    zsytf2_rk.f zsytrf_rk.f zsytrf_aa.f zsytrs_3.f \
    zsytri_3.f zsytri_3x.f zsycon_3.f zsysv_rk.f zsysv_aa.f \
    ztbcon.f ztbrfs.f ztbtrs.f ztgevc.f ztgex2.f \
