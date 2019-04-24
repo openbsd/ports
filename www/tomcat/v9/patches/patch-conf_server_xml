@@ -1,0 +1,54 @@
+$OpenBSD: patch-conf_server_xml,v 1.1 2019/04/24 16:33:09 sthen Exp $
+--- conf/server.xml.orig	Mon Dec  5 21:20:27 2016
++++ conf/server.xml	Thu Dec 15 12:17:55 2016
+@@ -66,12 +66,12 @@
+          APR (HTTP/AJP) Connector: /docs/apr.html
+          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
+     -->
+-    <Connector port="8080" protocol="HTTP/1.1"
++    <Connector address="0.0.0.0" port="8080" protocol="HTTP/1.1"
+                connectionTimeout="20000"
+                redirectPort="8443" />
+     <!-- A "Connector" using the shared thread pool-->
+     <!--
+-    <Connector executor="tomcatThreadPool"
++    <Connector executor="tomcatThreadPool" address="0.0.0.0"
+                port="8080" protocol="HTTP/1.1"
+                connectionTimeout="20000"
+                redirectPort="8443" />
+@@ -85,7 +85,7 @@
+          the SSLImplementation selected. JSSE style configuration is used below.
+     -->
+     <!--
+-    <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
++    <Connector address="0.0.0.0" port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+                maxThreads="150" SSLEnabled="true">
+         <SSLHostConfig>
+             <Certificate certificateKeystoreFile="conf/localhost-rsa.jks"
+@@ -100,7 +100,7 @@
+          configuration is used below.
+     -->
+     <!--
+-    <Connector port="8443" protocol="org.apache.coyote.http11.Http11AprProtocol"
++    <Connector address="0.0.0.0" port="8443" protocol="org.apache.coyote.http11.Http11AprProtocol"
+                maxThreads="150" SSLEnabled="true" >
+         <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
+         <SSLHostConfig>
+@@ -113,7 +113,7 @@
+     -->
+ 
+     <!-- Define an AJP 1.3 Connector on port 8009 -->
+-    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" />
++    <Connector address="0.0.0.0" port="8009" protocol="AJP/1.3" redirectPort="8443" />
+ 
+ 
+     <!-- An Engine represents the entry point (within Catalina) that processes
+@@ -145,7 +145,7 @@
+                resourceName="UserDatabase"/>
+       </Realm>
+ 
+-      <Host name="localhost"  appBase="webapps"
++      <Host name="localhost"  appBase="${CATALINA_BASE}/webapps"
+             unpackWARs="true" autoDeploy="true">
+ 
+         <!-- SingleSignOn valve, share authentication between web applications
