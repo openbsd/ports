@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.7 2018/05/19 15:01:48 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2019/04/24 08:14:17 landry Exp $
 
 COMMENT =	translator library for point cloud formats
 
-DISTNAME =	PDAL-1.7.2-src
+DISTNAME =	PDAL-1.9.0-src
 PKGNAME =	${DISTNAME:L:C/-src//}
 
-SHARED_LIBS =	pdal_base 1.0 # 6.1
-SHARED_LIBS +=  pdal_util 0.1 # 6.1
+SHARED_LIBS =	pdal_base 2.0 # 6.1
+SHARED_LIBS +=  pdal_util 0.2 # 6.1
 
 CATEGORIES =	geo devel textproc
 
 HOMEPAGE =	https://pdal.io/
-MASTER_SITES =	http://download.osgeo.org/pdal/
+MASTER_SITES =	https://github.com/PDAL/PDAL/releases/download/1.9.0/
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -31,19 +31,17 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		databases/postgresql \
 		net/curl
 
-WANTLIB +=	c curl gdal geos geotiff jsoncpp m pq pthread ${MODPY_WANTLIB}
+WANTLIB +=	c curl gdal geotiff jsoncpp m pq pthread ${MODPY_WANTLIB}
 WANTLIB +=	xml2 z
 WANTLIB += ${COMPILER_LIBCXX}
 
 CONFIGURE_ARGS =	\
 	-DJSONCPP_INCLUDE_DIR=${LOCALBASE}/include/jsoncpp/ \
 	-DPDAL_PLUGIN_INSTALL_PATH=${LOCALBASE}/share/pdal/plugins \
-	-DNUMPY_INCLUDE_DIR=${MODPY_SITEPKG}/numpy/core/include/ \
-	-DNUMPY_VERSION=1.9 \
 	-DBUILD_PLUGIN_PYTHON=ON
 
-post-extract:
-	rm ${WRKSRC}/cmake/modules/FindGDAL.cmake
+#post-extract:
+#	rm ${WRKSRC}/cmake/execinfo.cmake
 
 # needs load extension
 # -DBUILD_PLUGIN_SQLITE=ON

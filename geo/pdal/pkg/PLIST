@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/04/11 07:47:09 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/04/24 08:14:17 landry Exp $
 @bin bin/pdal
 bin/pdal-config
 include/pdal/
@@ -14,7 +14,6 @@ include/pdal/EigenUtils.hpp
 include/pdal/Filter.hpp
 include/pdal/FlexWriter.hpp
 include/pdal/GDALUtils.hpp
-include/pdal/GEOSUtils.hpp
 include/pdal/Geometry.hpp
 include/pdal/KDIndex.hpp
 include/pdal/Kernel.hpp
@@ -42,22 +41,18 @@ include/pdal/QuadIndex.hpp
 include/pdal/QuickInfo.hpp
 include/pdal/Reader.hpp
 include/pdal/Scaling.hpp
-include/pdal/Segmentation.hpp
 include/pdal/SpatialReference.hpp
 include/pdal/Stage.hpp
 include/pdal/StageExtensions.hpp
 include/pdal/StageFactory.hpp
 include/pdal/StageWrapper.hpp
 include/pdal/Streamable.hpp
+include/pdal/SubcommandKernel.hpp
 include/pdal/Writer.hpp
 include/pdal/XMLSchema.hpp
 include/pdal/compression/
 include/pdal/compression/Compression.hpp
 include/pdal/compression/DeflateCompression.hpp
-include/pdal/compression/LazPerfCompression.hpp
-include/pdal/compression/LazPerfVlrCompression.hpp
-include/pdal/compression/LzmaCompression.hpp
-include/pdal/compression/ZstdCompression.hpp
 include/pdal/filters/
 include/pdal/filters/ApproximateCoplanarFilter.hpp
 include/pdal/filters/AssignFilter.hpp
@@ -67,7 +62,9 @@ include/pdal/filters/ColorInterpRamps.hpp
 include/pdal/filters/ColorinterpFilter.hpp
 include/pdal/filters/ColorizationFilter.hpp
 include/pdal/filters/CropFilter.hpp
+include/pdal/filters/DEMFilter.hpp
 include/pdal/filters/DecimationFilter.hpp
+include/pdal/filters/DelaunayFilter.hpp
 include/pdal/filters/DividerFilter.hpp
 include/pdal/filters/ELMFilter.hpp
 include/pdal/filters/EigenvaluesFilter.hpp
@@ -77,14 +74,18 @@ include/pdal/filters/GreedyProjection.hpp
 include/pdal/filters/GroupByFilter.hpp
 include/pdal/filters/HAGFilter.hpp
 include/pdal/filters/HeadFilter.hpp
+include/pdal/filters/HexBinFilter.hpp
 include/pdal/filters/IQRFilter.hpp
+include/pdal/filters/InfoFilter.hpp
 include/pdal/filters/KDistanceFilter.hpp
 include/pdal/filters/LOFFilter.hpp
 include/pdal/filters/LocateFilter.hpp
 include/pdal/filters/MADFilter.hpp
 include/pdal/filters/MergeFilter.hpp
+include/pdal/filters/MongoExpressionFilter.hpp
 include/pdal/filters/MongusFilter.hpp
 include/pdal/filters/MortonOrderFilter.hpp
+include/pdal/filters/NNDistanceFilter.hpp
 include/pdal/filters/NeighborClassifierFilter.hpp
 include/pdal/filters/NormalFilter.hpp
 include/pdal/filters/OutlierFilter.hpp
@@ -113,8 +114,9 @@ include/pdal/io/BpfHeader.hpp
 include/pdal/io/BpfReader.hpp
 include/pdal/io/BpfWriter.hpp
 include/pdal/io/BufferReader.hpp
+include/pdal/io/EptAddonWriter.hpp
+include/pdal/io/EptReader.hpp
 include/pdal/io/FauxReader.hpp
-include/pdal/io/GDALGrid.hpp
 include/pdal/io/GDALReader.hpp
 include/pdal/io/GDALWriter.hpp
 include/pdal/io/GeotiffSupport.hpp
@@ -147,7 +149,7 @@ include/pdal/io/TextReader.hpp
 include/pdal/io/TextWriter.hpp
 include/pdal/kernels/
 include/pdal/kernels/DeltaKernel.hpp
-include/pdal/kernels/DiffKernel.hpp
+include/pdal/kernels/DensityKernel.hpp
 include/pdal/kernels/GroundKernel.hpp
 include/pdal/kernels/HausdorffKernel.hpp
 include/pdal/kernels/InfoKernel.hpp
@@ -157,6 +159,7 @@ include/pdal/kernels/RandomKernel.hpp
 include/pdal/kernels/SortKernel.hpp
 include/pdal/kernels/SplitKernel.hpp
 include/pdal/kernels/TIndexKernel.hpp
+include/pdal/kernels/TileKernel.hpp
 include/pdal/kernels/TranslateKernel.hpp
 include/pdal/pdal.hpp
 include/pdal/pdal_config.hpp
@@ -167,6 +170,7 @@ include/pdal/pdal_test_main.hpp
 include/pdal/pdal_types.hpp
 include/pdal/util/
 include/pdal/util/Algorithm.hpp
+include/pdal/util/Backtrace.hpp
 include/pdal/util/Bounds.hpp
 include/pdal/util/Charbuf.hpp
 include/pdal/util/Extractor.hpp
@@ -181,22 +185,19 @@ include/pdal/util/Utils.hpp
 include/pdal/util/Uuid.hpp
 include/pdal/util/pdal_util_export.hpp
 include/pdal/util/portable_endian.hpp
-lib/libpdal_arbiter.a
+lib/cmake/PDAL/
+lib/cmake/PDAL/PDALConfig.cmake
+lib/cmake/PDAL/PDALConfigVersion.cmake
+lib/cmake/PDAL/PDALTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/PDAL/PDALTargets.cmake
 @lib lib/libpdal_base.so.${LIBpdal_base_VERSION}
-lib/libpdal_boost.a
-lib/libpdal_kazhdan.a
 @lib lib/libpdal_util.so.${LIBpdal_util_VERSION}
 lib/libpdalcpp.so
-lib/pdal/
-lib/pdal/cmake/
-lib/pdal/cmake/PDALConfig.cmake
-lib/pdal/cmake/PDALConfigVersion.cmake
-lib/pdal/cmake/PDALTargets${MODCMAKE_BUILD_SUFFIX}
-lib/pdal/cmake/PDALTargets.cmake
 lib/pkgconfig/pdal.pc
 share/pdal/
 share/pdal/plugins/
 share/pdal/plugins/libpdal_plugin_filter_python.so
+share/pdal/plugins/libpdal_plugin_kernel_fauxplugin.so
 share/pdal/plugins/libpdal_plugin_reader_numpy.so
 share/pdal/plugins/libpdal_plugin_reader_pgpointcloud.so
 share/pdal/plugins/libpdal_plugin_writer_pgpointcloud.so
