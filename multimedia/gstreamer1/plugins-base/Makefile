@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.71 2019/04/21 08:49:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2019/04/24 08:48:23 sthen Exp $
 
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
+REVISION=		0
 
 SHARED_LIBS += gsttag-1.0                5.0 # 0.1600.0
 SHARED_LIBS += gstfft-1.0                5.0 # 0.1600.0
@@ -39,6 +40,7 @@ LIB_DEPENDS=		${P}/core=${V} \
 			devel/orc \
 			devel/pango \
 			graphics/graphene \
+			graphics/jpeg \
 			multimedia/libtheora
 
 # needed for the gio plugin
