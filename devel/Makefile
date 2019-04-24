@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1844 2019/04/24 23:01:24 kmos Exp $
+# $OpenBSD: Makefile,v 1.1845 2019/04/24 23:33:49 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1733,7 +1733,6 @@
      SUBDIR += ruby-abstract
      SUBDIR += ruby-activesupport
      SUBDIR += ruby-arrayfields
-     SUBDIR += ruby-atomic,ruby24
      SUBDIR += ruby-atomic,ruby25
      SUBDIR += ruby-atomic,ruby26
      SUBDIR += ruby-bundler
@@ -1750,7 +1749,6 @@
      SUBDIR += ruby-diff-lcs
      SUBDIR += ruby-extlib
      SUBDIR += ruby-fast_gettext
-     SUBDIR += ruby-ffi,ruby24
      SUBDIR += ruby-ffi,ruby25
      SUBDIR += ruby-ffi,ruby26
      SUBDIR += ruby-flexmock
@@ -1765,10 +1763,8 @@
      SUBDIR += ruby-isolate
      SUBDIR += ruby-jeweler
      SUBDIR += ruby-json_pure
-     SUBDIR += ruby-kgio,ruby24
      SUBDIR += ruby-kgio,ruby25
      SUBDIR += ruby-kgio,ruby26
-     SUBDIR += ruby-libv8,ruby24
      SUBDIR += ruby-libv8,ruby25
      SUBDIR += ruby-libv8,ruby26
      SUBDIR += ruby-locale
@@ -1776,13 +1772,10 @@
      SUBDIR += ruby-metaclass
      SUBDIR += ruby-minitest
      SUBDIR += ruby-mocha
-     SUBDIR += ruby-narray,ruby24
      SUBDIR += ruby-narray,ruby25
      SUBDIR += ruby-narray,ruby26
-     SUBDIR += ruby-ncurses,ruby24
      SUBDIR += ruby-ncurses,ruby25
      SUBDIR += ruby-ncurses,ruby26
-     SUBDIR += ruby-nio4r,ruby24
      SUBDIR += ruby-nio4r,ruby25
      SUBDIR += ruby-nio4r,ruby26
      SUBDIR += ruby-ole
@@ -1790,18 +1783,14 @@
      SUBDIR += ruby-opt_parse_validator
      SUBDIR += ruby-optimist
      SUBDIR += ruby-polyglot
-     SUBDIR += ruby-prof,ruby24
      SUBDIR += ruby-prof,ruby25
      SUBDIR += ruby-prof,ruby26
-     SUBDIR += ruby-puppet_forge,ruby24
      SUBDIR += ruby-puppet_forge,ruby25
      SUBDIR += ruby-puppet_forge,ruby26
-     SUBDIR += ruby-racc,ruby24
      SUBDIR += ruby-racc,ruby25
      SUBDIR += ruby-racc,ruby26
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rake-remote_task
-     SUBDIR += ruby-rb-gsl,ruby24
      SUBDIR += ruby-rb-gsl,ruby25
      SUBDIR += ruby-rb-gsl,ruby26
      SUBDIR += ruby-ref
@@ -1815,11 +1804,9 @@
      SUBDIR += ruby-safe_yaml
      SUBDIR += ruby-semantic_puppet
      SUBDIR += ruby-sexp_processor
-     SUBDIR += ruby-subset_sum,ruby24
      SUBDIR += ruby-subset_sum,ruby25
      SUBDIR += ruby-subset_sum,ruby26
      SUBDIR += ruby-systemu
-     SUBDIR += ruby-therubyracer,ruby24
      SUBDIR += ruby-therubyracer,ruby25
      SUBDIR += ruby-therubyracer,ruby26
      SUBDIR += ruby-thor
@@ -1830,7 +1817,6 @@
      SUBDIR += ruby-uuid
      SUBDIR += ruby-uuidtools
      SUBDIR += ruby-xdg
-     SUBDIR += ruby-yajl,ruby24
      SUBDIR += ruby-yajl,ruby25
      SUBDIR += ruby-yajl,ruby26
      SUBDIR += ruby-zentest

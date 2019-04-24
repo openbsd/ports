@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.897 2019/04/24 20:24:38 sebastia Exp $
+# $OpenBSD: Makefile,v 1.898 2019/04/24 23:33:49 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -507,46 +507,37 @@
      SUBDIR += rt
      SUBDIR += ruby-addressable
      SUBDIR += ruby-capybara
-     SUBDIR += ruby-capybara-webkit,ruby24
      SUBDIR += ruby-capybara-webkit,ruby25
      SUBDIR += ruby-capybara-webkit,ruby26
      SUBDIR += ruby-ethon
      SUBDIR += ruby-faraday
      SUBDIR += ruby-faraday_middleware
      SUBDIR += ruby-faraday_middleware-multi_json
-     SUBDIR += ruby-fcgi,ruby24
      SUBDIR += ruby-fcgi,ruby25
      SUBDIR += ruby-fcgi,ruby26
      SUBDIR += ruby-mechanize
      SUBDIR += ruby-multipart-post
      SUBDIR += ruby-mustermann
-     SUBDIR += ruby-ntlm,ruby24
      SUBDIR += ruby-ntlm,ruby25
      SUBDIR += ruby-ntlm,ruby26
-     SUBDIR += ruby-passenger,ruby24
      SUBDIR += ruby-passenger,ruby25
      SUBDIR += ruby-passenger,ruby26
-     SUBDIR += ruby-puma,ruby24
      SUBDIR += ruby-puma,ruby25
      SUBDIR += ruby-puma,ruby26
      SUBDIR += ruby-rack
      SUBDIR += ruby-rack-protection
      SUBDIR += ruby-rack-test
      SUBDIR += ruby-rainbows
-     SUBDIR += ruby-raindrops,ruby24
      SUBDIR += ruby-raindrops,ruby25
      SUBDIR += ruby-raindrops,ruby26
      SUBDIR += ruby-sanitize
      SUBDIR += ruby-sinatra
-     SUBDIR += ruby-thin,ruby24
      SUBDIR += ruby-thin,ruby25
      SUBDIR += ruby-thin,ruby26
      SUBDIR += ruby-typhoeus
-     SUBDIR += ruby-unicorn,ruby24
      SUBDIR += ruby-unicorn,ruby25
      SUBDIR += ruby-unicorn,ruby26
      SUBDIR += ruby-vegas
-     SUBDIR += ruby-websocket-driver,ruby24
      SUBDIR += ruby-websocket-driver,ruby25
      SUBDIR += ruby-websocket-driver,ruby26
      SUBDIR += ruby-websocket-extensions

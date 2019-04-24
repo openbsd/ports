@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1125 2019/04/03 07:29:51 bentley Exp $
+# $OpenBSD: Makefile,v 1.1126 2019/04/24 23:33:49 jeremy Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -653,12 +653,10 @@
      SUBDIR += rtmpdump
      SUBDIR += rtorrent
      SUBDIR += ruby-agcaldav
-     SUBDIR += ruby-eventmachine,ruby24
      SUBDIR += ruby-eventmachine,ruby25
      SUBDIR += ruby-eventmachine,ruby26
      SUBDIR += ruby-macaddr
      SUBDIR += ruby-mfi
-     SUBDIR += ruby-msgpack,ruby24
      SUBDIR += ruby-msgpack,ruby25
      SUBDIR += ruby-msgpack,ruby26
      SUBDIR += ruby-net-dns
