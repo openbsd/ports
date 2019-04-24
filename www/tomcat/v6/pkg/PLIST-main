@@ -1,69 +1,60 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2018/09/04 12:46:27 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2019/04/24 16:31:06 sthen Exp $
 @option is-branch
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${CATALINA_BASE}/logs/* ${CATALINA_BASE}/work/*
-share/doc/pkg-readmes/${PKGSTEM}
-share/examples/tomcat/
+@rcscript ${RCDIR}/tomcat
 @owner _tomcat
 @group _tomcat
-@sample ${SYSCONFDIR}/tomcat/
+@sample ${CONFDIR}/
 @owner
 @group
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/tomcat/
 share/examples/tomcat/catalina.policy
 @owner _tomcat
 @group _tomcat
-@sample ${SYSCONFDIR}/tomcat/catalina.policy
+@sample ${CONFDIR}/catalina.policy
 @owner
 @group
 share/examples/tomcat/catalina.properties
 @owner _tomcat
 @group _tomcat
-@sample ${SYSCONFDIR}/tomcat/catalina.properties
+@sample ${CONFDIR}/catalina.properties
 @owner
 @group
 share/examples/tomcat/context.xml
 @owner _tomcat
 @group _tomcat
-@sample ${SYSCONFDIR}/tomcat/context.xml
+@sample ${CONFDIR}/context.xml
 @owner
 @group
 share/examples/tomcat/host-manager.xml
 share/examples/tomcat/logging.properties
 @owner _tomcat
 @group _tomcat
-@sample ${SYSCONFDIR}/tomcat/logging.properties
+@sample ${CONFDIR}/logging.properties
 @owner
 @group
 share/examples/tomcat/manager.xml
 share/examples/tomcat/server.xml
 @owner _tomcat
 @group _tomcat
-@sample ${SYSCONFDIR}/tomcat/server.xml
+@sample ${CONFDIR}/server.xml
 @owner
 @group
 share/examples/tomcat/tomcat-users.xml
 @mode 600
 @owner _tomcat
 @group _tomcat
-@sample ${SYSCONFDIR}/tomcat/tomcat-users.xml
+@sample ${CONFDIR}/tomcat-users.xml
 @mode
 @owner
 @group
 share/examples/tomcat/web.xml
 @owner _tomcat
 @group _tomcat
-@sample ${SYSCONFDIR}/tomcat/web.xml
-@sample ${CATALINA_BASE}/
-@sample ${CATALINA_BASE}/logs/
-@sample ${CATALINA_BASE}/shared/
-@sample ${CATALINA_BASE}/shared/classes/
-@sample ${CATALINA_BASE}/shared/lib/
-@sample ${CATALINA_BASE}/temp/
-@sample ${CATALINA_BASE}/webapps/
-@sample ${CATALINA_BASE}/work/
-@exec if [ ! -e ${CATALINA_BASE}/conf ]; then ln -sf ${CONFDIR} ${CATALINA_BASE}/conf; fi
-@unexec if [ -h ${CATALINA_BASE}/conf ]; then rm ${CATALINA_BASE}/conf; fi
+@sample ${CONFDIR}/web.xml
 @owner
 @group
 tomcat/
@@ -147,4 +138,15 @@ tomcat/webapps/manager/images/void.gif
 tomcat/webapps/manager/index.jsp
 tomcat/webapps/manager/status.xsd
 tomcat/webapps/manager/xform.xsl
-@rcscript ${RCDIR}/tomcat
+@owner _tomcat
+@group _tomcat
+@sample ${CATALINA_BASE}/
+@sample ${CATALINA_BASE}/logs/
+@sample ${CATALINA_BASE}/shared/
+@sample ${CATALINA_BASE}/shared/classes/
+@sample ${CATALINA_BASE}/shared/lib/
+@sample ${CATALINA_BASE}/temp/
+@sample ${CATALINA_BASE}/webapps/
+@sample ${CATALINA_BASE}/work/
+@exec if [ ! -e ${CATALINA_BASE}/conf ]; then ln -sf ${CONFDIR} ${CATALINA_BASE}/conf; fi
+@unexec if [ -h ${CATALINA_BASE}/conf ]; then rm ${CATALINA_BASE}/conf; fi
