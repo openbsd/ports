@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/04 12:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/24 16:26:57 sthen Exp $
 
 COMMENT =		Tkabber plugins
 
 DISTNAME =		tkabber-plugins-${VERSION}
 
-REVISION =		1
+REVISION =		2
 
 RUN_DEPENDS =		net/tkabber/base
 

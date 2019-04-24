@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2018/01/11 19:27:01 rpe Exp $
+# $OpenBSD: Makefile,v 1.11 2019/04/24 16:26:54 sthen Exp $
 
 COMMENT =	html5-powered web music server
 
 MODPY_EGG_VERSION = 0.6
 DISTNAME =	zeya_${MODPY_EGG_VERSION}.orig
 PKGNAME =	zeya-${MODPY_EGG_VERSION}
-REVISION =	4
+REVISION =	5
 CATEGORIES =	audio www
 
 HOMEPAGE =	http://web.psung.name/zeya/
 
 MASTER_SITES =	${MASTER_SITE_DEBIAN:=main/z/zeya/}
-
-MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # AGPLv3 (GNU Affero Public License)
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.14 2018/07/09 15:09:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2019/04/24 16:26:58 sthen Exp $
 
 COMMENT =		complete, colourful suite of squared icons
 
 V =			1.3
 DISTNAME =		faenza-icon-theme_${V}
 PKGNAME =		faenza-icon-theme-${V}
-REVISION =		4
+REVISION =		5
 CATEGORIES =		x11
 
 HOMEPAGE =		http://tiheum.deviantart.com/art/Faenza-Icons-173323228
 MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=faenza-icon-theme/}
 EXTRACT_SUFX =		.zip
-
-MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes

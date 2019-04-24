@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2018/01/22 21:38:37 kili Exp $
+# $OpenBSD: Makefile,v 1.33 2019/04/24 16:26:54 sthen Exp $
 
 COMMENT =		abstraction layer for SQL relational databases
 
 DISTNAME =		HDBC-2.4.0.2
-REVISION =		1
+REVISION =		2
 CATEGORIES =		databases
-
-MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes

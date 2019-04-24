@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.59 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2019/04/24 16:26:59 sthen Exp $
 
 COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-3.8.3
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS+=	mef	0.0 # 1.0
 SHARED_LIBS+=	pobl	0.0 # 1.0
@@ -10,8 +10,6 @@ SHARED_LIBS+=	pobl	0.0 # 1.0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://mlterm.sourceforge.net/
-
-MAINTAINER=	David Coppa <dcoppa@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

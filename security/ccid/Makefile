@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/01/06 14:50:49 danj Exp $
+# $OpenBSD: Makefile,v 1.29 2019/04/24 16:26:57 sthen Exp $
 
 COMMENT =	USB Chip/Smart Card Interface Devices driver
 
@@ -6,15 +6,13 @@ DISTNAME =	ccid-1.4.27
 
 CATEGORIES =	security
 
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://pcsclite.apdu.fr/
 
 MASTER_SITES =	https://alioth-archive.debian.org/releases/pcsclite/ccid/
 
 EXTRACT_SUFX =	.tar.bz2
-
-MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # LGPLv2.1+ and GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes

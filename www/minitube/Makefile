@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.57 2019/03/08 20:00:51 cwen Exp $
+# $OpenBSD: Makefile,v 1.58 2019/04/24 16:26:58 sthen Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
 GH_ACCOUNT =	flaviotordini
 GH_PROJECT =	minitube
 GH_TAGNAME =	2.8
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	www multimedia
 
 HOMEPAGE =	http://flavio.tordini.org/minitube
-
-MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =		Yes

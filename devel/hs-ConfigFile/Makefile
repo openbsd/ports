@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2018/01/22 21:40:32 kili Exp $
+# $OpenBSD: Makefile,v 1.32 2019/04/24 16:26:55 sthen Exp $
 
 COMMENT =		parser and writer for config files
 
 DISTNAME =		ConfigFile-1.1.4
-REVISION =		8
+REVISION =		9
 CATEGORIES =		devel sysutils
 HOMEPAGE =		https://github.com/jgoerzen/configfile/wiki
-
-MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes

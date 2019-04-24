@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/04/24 16:26:59 sthen Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
 DISTNAME =	rxvt-unicode-9.22
-REVISION =	7
+REVISION =	8
 CATEGORIES =	x11
 FIX_EXTRACT_PERMISSIONS=Yes
 
@@ -12,8 +12,6 @@ MASTER_SITES =	http://dist.schmorp.de/rxvt-unicode/ \
 		http://dist.schmorp.de/rxvt-unicode/Attic/
 
 HOMEPAGE =	http://software.schmorp.de/pkg/rxvt-unicode.html
-
-MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes

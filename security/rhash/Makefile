@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.3 2017/08/14 12:20:57 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/24 16:26:57 sthen Exp $
 
 COMMENT =	utility and library for computing hash sums
 
 DISTNAME =	rhash-1.3.5-src
 
 PKGNAME =	${DISTNAME:S/-src$//}
+REVISION =	0
 
 SHARED_LIBS =	rhash 0.0
 
 CATEGORIES =	security
 
 HOMEPAGE =	http://rhash.anz.ru/
-
-MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

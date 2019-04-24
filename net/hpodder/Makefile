@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2016/09/23 09:16:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/04/24 16:26:56 sthen Exp $
 
 COMMENT =		command line podcast aggregator
 
 DISTNAME =		hpodder-1.1.6
-REVISION =		14
+REVISION =		15
 CATEGORIES =		net
 HOMEPAGE =		https://github.com/jgoerzen/hpodder/wiki
-
-MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

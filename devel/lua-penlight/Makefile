@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/09/04 10:55:10 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2019/04/24 16:26:55 sthen Exp $
 
 COMMENT =	pure Lua libraries focusing on input data handling
 
@@ -7,10 +7,9 @@ GH_PROJECT =	Penlight
 GH_TAGNAME =	1.5.4
 PKGNAME =	lua-penlight-${GH_TAGNAME}
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	http://stevedonovan.github.io/Penlight/
-
-MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =Yes

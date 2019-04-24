@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.116 2019/03/17 13:46:41 giovanni Exp $
+# $OpenBSD: Makefile,v 1.117 2019/04/24 16:26:58 sthen Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
 DISTNAME =	i3-4.16.1
+REVISION =	0
 
 CATEGORIES =	x11
 
 HOMEPAGE =	https://i3wm.org/
-
-MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

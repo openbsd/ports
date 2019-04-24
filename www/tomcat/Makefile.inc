@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2019/03/30 14:46:38 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2019/04/24 16:26:58 sthen Exp $
 
 COMMENT-main ?=	Java servlet and Java server pages server
 COMMENT-examples =example applications and full documentation
@@ -17,8 +17,6 @@ MASTER_SITES =	${MASTER_SITE_APACHE:=tomcat/tomcat-${MAJ_VER}/v${VER}/bin/} \
 		http://archive.apache.org/dist/tomcat/tomcat-${MAJ_VER}/archive/v${VER}/bin/
 
 HOMEPAGE =	http://tomcat.apache.org/
-
-MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 MULTI_PACKAGES = -main -examples
 

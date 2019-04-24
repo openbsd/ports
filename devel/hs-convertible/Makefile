@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2018/01/22 21:40:32 kili Exp $
+# $OpenBSD: Makefile,v 1.30 2019/04/24 16:26:55 sthen Exp $
 
 COMMENT =		library to convert between different types
 
 DISTNAME =		convertible-1.1.1.0
-REVISION =		6
+REVISION =		7
 CATEGORIES =		devel
-
-MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes

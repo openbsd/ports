@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.22 2018/01/22 21:50:23 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2019/04/24 16:26:58 sthen Exp $
 
 COMMENT =		Haskell implementation of the D-Bus protocol
 
 DISTNAME =		dbus-0.10.13
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel x11
 
 HOMEPAGE =		https://github.com/rblaze/haskell-dbus#readme
-
-MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes

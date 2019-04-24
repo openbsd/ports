@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.108 2017/09/14 16:21:15 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.109 2019/04/24 16:26:58 sthen Exp $
 
 COMMENT=		highly configurable framework window manager
 
 VER=			4.2
 DISTNAME=		awesome-${VER}
-REVISION=		0
+REVISION=		1
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		x11
 
 HOMEPAGE=		https://awesomewm.org/
-
-MAINTAINER=		David Coppa <dcoppa@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

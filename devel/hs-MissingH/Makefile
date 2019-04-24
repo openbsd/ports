@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2018/01/22 21:40:32 kili Exp $
+# $OpenBSD: Makefile,v 1.35 2019/04/24 16:26:55 sthen Exp $
 
 COMMENT =		large library of utility functions
 
 DISTNAME =		MissingH-1.4.0.1
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/jgoerzen/missingh/wiki
-
-MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes

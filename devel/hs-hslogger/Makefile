@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2018/01/23 00:09:02 kili Exp $
+# $OpenBSD: Makefile,v 1.33 2019/04/24 16:26:55 sthen Exp $
 
 COMMENT =		versatile logging framework
 
 DISTNAME =		hslogger-1.2.10
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel sysutils
 HOMEPAGE =		https://github.com/jgoerzen/hslogger/wiki
-
-MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes

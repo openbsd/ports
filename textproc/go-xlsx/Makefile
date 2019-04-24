@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2016/08/21 14:33:51 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.9 2019/04/24 16:26:57 sthen Exp $
 
 PORTROACH =		ignore:1
 
 COMMENT =		library for reading and writing XLSX files
 DISTNAME =		go-xlsx-20160815
 CATEGORIES =		textproc converters
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
+REVISION =		0
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

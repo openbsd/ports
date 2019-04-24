@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2018/11/14 20:48:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2019/04/24 16:26:57 sthen Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 
 V=		0.19.0
-REVISION=	1
+REVISION=	2
 DISTNAME=	opensc-${V}
 SUBST_VARS +=	V
 
@@ -13,8 +13,6 @@ SHARED_LIBS +=	smm-local 3.0	# 5.0
 CATEGORIES=	security
 
 HOMEPAGE=	https://github.com/OpenSC/OpenSC/wiki
-
-MAINTAINER=	David Coppa <dcoppa@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes

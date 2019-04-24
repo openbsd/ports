@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.38 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2019/04/24 16:26:58 sthen Exp $
 
 COMMENT =	beautiful glass-like GTK+ 2.x engine and themes
 
 GNOME_VERSION =	0.98.2
 GNOME_PROJECT =	murrine
 PKGNAME =	gtk2-murrine-engine-${GNOME_VERSION}
-REVISION =	6
+REVISION =	7
 CATEGORIES =	x11
 
 HOMEPAGE =	http://cimitan.com/murrine/
-
-MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

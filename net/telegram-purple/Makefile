@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2017/12/18 11:37:46 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/24 16:26:56 sthen Exp $
 
 BROKEN-powerpc =	assertion "get_int () == TLS_SCHEMA_V2" failed: file "generate.c", line 2831, function "parse_tlo_file"
 
 V =			1.3.1
-REVISION =		0
+REVISION =		1
 COMMENT =		Telegram support for Pidgin
 DISTNAME =		telegram-purple_$V.orig
 PKGNAME =		telegram-purple-$V
 CATEGORIES =		net
-
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

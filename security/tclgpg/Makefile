@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2016/06/15 15:09:25 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.8 2019/04/24 16:26:57 sthen Exp $
 
 COMMENT =		Tcl interface to GNU Privacy Guard
 DISTNAME =		tclgpg-20160615
 CATEGORIES =		security
 HOMEPAGE =		https://chiselapp.com/user/sgolovan/repository/tclgpg/
-
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
+REVISION =		0
 
 # 2-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes

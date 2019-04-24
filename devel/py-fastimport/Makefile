@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2017/01/03 19:19:48 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/24 16:26:55 sthen Exp $
 
 COMMENT =		parser for and generator of the Git fastimport format
 DISTNAME =		fastimport-${MODPY_EGG_VERSION}
 PKGNAME =		py-fastimport-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/jelmer/python-fastimport
-REVISION =		0
-
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
+REVISION =		1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

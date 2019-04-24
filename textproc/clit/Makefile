@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/11 11:04:21 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/24 16:26:57 sthen Exp $
 
 COMMENT =		convert Microsoft Reader files to OEBPS packages
 V =			1.8
 DISTNAME =		clit${V:S/.//}src
-REVISION =		0
+REVISION =		1
 PKGNAME =		clit-1.8
 CATEGORIES =		textproc converters print
 
 HOMEPAGE =		http://www.convertlit.com/
-
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	drm (see http://www.convertlit.com/legal.php)

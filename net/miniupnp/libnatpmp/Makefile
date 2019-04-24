@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2018/12/08 22:11:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2019/04/24 16:26:56 sthen Exp $
 
 COMMENT =	NAT Port Mapping Protocol client library
 
 DISTNAME =	libnatpmp-20150609
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	natpmp 0.1
-
-MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 WANTLIB =	c
 

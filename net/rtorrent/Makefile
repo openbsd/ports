@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.63 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2019/04/24 16:26:56 sthen Exp $
 
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
 DISTNAME=		rtorrent-0.9.6
-REVISION=		5
+REVISION=		6
 EPOCH=			0
 CATEGORIES=		net
 
 HOMEPAGE=		https://rakshasa.github.io/rtorrent/
-
-MAINTAINER=		David Coppa <dcoppa@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

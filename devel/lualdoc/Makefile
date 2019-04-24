@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/11/17 09:57:51 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.19 2019/04/24 16:26:55 sthen Exp $
 
 COMMENT =	LuaDoc-compatible documentation generation system
 
@@ -7,10 +7,9 @@ GH_PROJECT =	LDoc
 GH_TAGNAME =	1.4.6
 PKGNAME =	lualdoc-${GH_TAGNAME}
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	http://stevedonovan.github.io/ldoc/
-
-MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =Yes

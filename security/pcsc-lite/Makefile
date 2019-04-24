@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2019/01/06 14:50:49 danj Exp $
+# $OpenBSD: Makefile,v 1.44 2019/04/24 16:26:57 sthen Exp $
 
 COMMENT=	resource manager for PC/SC
 
 V=		1.8.22
 DISTNAME=	pcsc-lite-${V}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	security
 
 SHARED_LIBS+=	pcsclite	1.0 # 1.0.0
@@ -15,8 +15,6 @@ HOMEPAGE=	https://salsa.debian.org/debian/pcsc-lite
 MASTER_SITES=	https://alioth-archive.debian.org/releases/pcsclite/pcsclite/1.8.22/
 
 EXTRACT_SUFX=	.tar.bz2
-
-MAINTAINER=	David Coppa <dcoppa@openbsd.org>
 
 # BSD and GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes

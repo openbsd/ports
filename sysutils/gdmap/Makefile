@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/27 21:04:03 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2019/04/24 16:26:57 sthen Exp $
 
 COMMENT =		graphical disk map
 DISTNAME =		gdmap-0.8.1
 CATEGORIES =		sysutils x11
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		http://gdmap.sourceforge.net/
-
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/27 21:03:51 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/04/24 16:26:55 sthen Exp $
 
 COMMENT =		an XBill Modification
 GH_ACCOUNT =		Xylemon
 GH_PROJECT =		xlennart
 GH_TAGNAME =		1.1.1
-REVISION =		2
+REVISION =		3
 CATEGORIES =		games x11
 HOMEPAGE =		https://github.com/Xylemon/xlennart
-
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

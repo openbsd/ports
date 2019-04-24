@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/06/08 15:50:46 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/24 16:26:56 sthen Exp $
 
 V =			1.0
 COMMENT =		QR decoder library
@@ -7,10 +7,9 @@ GH_ACCOUNT =		dlbeer
 GH_PROJECT =		quirc
 GH_TAGNAME =		v$V
 CATEGORIES =		graphics
+REVISION =		0
 
 SHARED_LIBS +=		quirc 0.0 # 1.0
-
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.44 2019/03/30 14:46:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/04/24 16:26:58 sthen Exp $
 
 COMMENT-main =	Java servlet 2.5 and Java server pages 2.1 server
-REVISION-main =	4
+REVISION =	5
 
 MAJ_VER =	6
 MIN_VER =	0

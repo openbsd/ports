@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2018/05/02 19:26:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/04/24 16:26:57 sthen Exp $
 
 COMMENT =		modular and flexible STUN and TURN Server
 
 V =			0.4.12
 DISTNAME =		restund-${V}
-REVISION =		1
+REVISION =		2
 
 WANTLIB =		c crypto mysqlclient pthread re ssl z
 LIB_DEPENDS =		telephony/baresip/re \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/04/24 16:26:54 sthen Exp $
 
 COMMENT = 	C++ library of cryptographic algorithms
 CATEGORIES = 	devel security
@@ -7,12 +7,10 @@ HOMEPAGE = 	http://www.cryptopp.com/
 MASTER_SITES = 	${HOMEPAGE}
 DISTNAME = 	cryptopp565
 PKGNAME = 	cryptopp-5.6.5
-REVISION =      3
+REVISION =      4
 
 EXTRACT_SUFX = 	.zip
 WRKDIST = 	${WRKDIR}
-
-MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # individual files are public domain
 # compilation is licensed under the Boost Software License 1.0

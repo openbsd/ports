@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2016/08/21 14:31:26 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.7 2019/04/24 16:26:55 sthen Exp $
 
 COMMENT =		testing library for the Go language
 DISTNAME =		go-check-v1-20160105
 CATEGORIES =		devel
 HOMEPAGE =		http://labix.org/gocheck
-
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
+REVISION =		0
 
 # 2-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes

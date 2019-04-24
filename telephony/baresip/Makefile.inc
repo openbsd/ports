@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.8 2016/12/26 14:53:25 czarkoff Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2019/04/24 16:26:57 sthen Exp $
 
 CATEGORIES =		telephony
 
 HOMEPAGE =		http://www.creytiv.com/
 MASTER_SITES ?=		${HOMEPAGE:=pub/}
-
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # Code is BSD-licensed, but zrtp.so module is statically linked to AGPLv3-
 # licensed libzrtp.  As a result, main baresip package is subject to AGPLv3.

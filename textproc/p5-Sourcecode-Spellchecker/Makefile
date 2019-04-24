@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/24 16:26:58 sthen Exp $
 
 COMMENT =	perl module for spell-checking source code
 
 DISTNAME =	Sourcecode-Spellchecker-0.03
+REVISION =	0
 
 CATEGORIES =	textproc devel
-
-MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

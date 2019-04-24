@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/04/24 16:26:58 sthen Exp $
 
 COMMENT =	gnome-mplayer toolkit
 DISTNAME =	gmtk-1.0.9
 EPOCH =		0
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS =	gmlib	2.0 \
 		gmtk	2.0
@@ -11,8 +11,6 @@ SHARED_LIBS =	gmlib	2.0 \
 CATEGORIES =	x11 devel
 
 HOMEPAGE =	http://kdekorte.googlepages.com/gmtk/
-
-MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

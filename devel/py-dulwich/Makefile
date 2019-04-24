@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.32 2018/12/25 12:00:08 millert Exp $
+# $OpenBSD: Makefile,v 1.33 2019/04/24 16:26:55 sthen Exp $
 
 COMMENT =		pure Python implementation of Git file formats and protocols
 
 MODPY_EGG_VERSION =	0.19.3
 DISTNAME =		dulwich-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://www.dulwich.io/
-
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

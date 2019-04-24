@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2017/11/22 06:22:24 tb Exp $
+# $OpenBSD: Makefile,v 1.17 2019/04/24 16:26:59 sthen Exp $
 
 COMMENT=		command line interface to X selections
 GH_ACCOUNT=		astrand
 GH_PROJECT=		xclip
 GH_TAGNAME=		0.13
-REVISION=		0
+REVISION=		1
 CATEGORIES=		x11
-
-MAINTAINER=		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes

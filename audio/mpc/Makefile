@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/03/27 23:28:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2019/04/24 16:26:54 sthen Exp $
 
 COMMENT=		command line client for mpd
 
@@ -6,10 +6,9 @@ VER=			0.31
 DISTNAME=		mpc-${VER}
 CATEGORIES=		audio
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 HOMEPAGE=		https://www.musicpd.org/clients/mpc/
-
-MAINTAINER=		David Coppa <dcoppa@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

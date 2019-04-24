@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.28 2019/03/11 04:11:57 bket Exp $
+# $OpenBSD: Makefile,v 1.29 2019/04/24 16:26:56 sthen Exp $
 
 COMMENT =	e-donkey client
 
 VER =		3.1.6
 DISTNAME =	mldonkey-${VER}
-REVISION =	3
+REVISION =	4
 CATEGORIES =	net
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
-
-MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/04/24 16:26:55 sthen Exp $
 
 COMMENT =		GNU Backgammon
 V =			1.05.002
@@ -6,9 +6,7 @@ DISTNAME =		gnubg-release-$V-sources
 PKGNAME =		gnubg-$V
 CATEGORIES =		games x11
 HOMEPAGE =		http://gnubg.org/
-REVISION =		4
-
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
+REVISION =		5
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
