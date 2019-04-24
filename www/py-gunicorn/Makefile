@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2018/05/04 11:37:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2019/04/24 20:14:08 sthen Exp $
 
 COMMENT =		Python WSGI HTTP server
 
-MODPY_EGG_VERSION =	19.8.1
+MODPY_EGG_VERSION =	19.9.0
 DISTNAME =		gunicorn-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www
@@ -24,8 +24,10 @@ FLAVOR ?=
 RUN_DEPENDS +=		www/py-aiohttp \
 			www/py-multidict
 .endif
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
+			devel/py-test${MODPY_FLAVOR} \
+			devel/py-test-cov${MODPY_FLAVOR} \
+			${BASE_PKGPATH}=${MODPY_EGG_VERSION}
 .if ! ${FLAVOR:Mpython3}
 TEST_DEPENDS +=		devel/py-mock
 .endif

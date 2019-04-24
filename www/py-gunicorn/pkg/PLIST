@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/05/04 11:37:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/04/24 20:14:08 sthen Exp $
 bin/gunicorn${MODPY_BIN_SUFFIX}
 bin/gunicorn_paster${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/gunicorn/
@@ -80,8 +80,8 @@ lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}_gaiohttp.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}async.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}base_async.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}gaiohttp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}geventlet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}ggevent.${MODPY_PYC_MAGIC_TAG}pyc
@@ -90,8 +90,8 @@ lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}gtorna
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}sync.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/${MODPY_PYCACHE}workertmp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/_gaiohttp.py
-lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/async.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/base.py
+lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/base_async.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/gaiohttp.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/geventlet.py
 lib/python${MODPY_VERSION}/site-packages/gunicorn/workers/ggevent.py
