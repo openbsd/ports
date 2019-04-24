@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/17 20:22:46 kn Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/04/24 20:07:11 sthen Exp $
 bin/coveralls
 lib/python${MODPY_VERSION}/site-packages/coveralls/
 lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -9,18 +9,19 @@ lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/coveralls/__init__.py
-lib/python${MODPY_VERSION}/site-packages/coveralls/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/coveralls/__main__.py
-lib/python${MODPY_VERSION}/site-packages/coveralls/__main__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/coveralls/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/coveralls/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/coveralls/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/coveralls/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/coveralls/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/coveralls/${MODPY_PYCACHE}exception.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/coveralls/${MODPY_PYCACHE}git.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/coveralls/${MODPY_PYCACHE}reporter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/coveralls/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/coveralls/api.py
-lib/python${MODPY_VERSION}/site-packages/coveralls/api.pyc
 lib/python${MODPY_VERSION}/site-packages/coveralls/cli.py
-lib/python${MODPY_VERSION}/site-packages/coveralls/cli.pyc
 lib/python${MODPY_VERSION}/site-packages/coveralls/exception.py
-lib/python${MODPY_VERSION}/site-packages/coveralls/exception.pyc
 lib/python${MODPY_VERSION}/site-packages/coveralls/git.py
-lib/python${MODPY_VERSION}/site-packages/coveralls/git.pyc
 lib/python${MODPY_VERSION}/site-packages/coveralls/reporter.py
-lib/python${MODPY_VERSION}/site-packages/coveralls/reporter.pyc
 lib/python${MODPY_VERSION}/site-packages/coveralls/version.py
-lib/python${MODPY_VERSION}/site-packages/coveralls/version.pyc
