@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.47 2019/01/16 10:29:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2019/04/24 21:04:46 sthen Exp $
 
 COMMENT =	compiler cache
 
-DISTNAME =	ccache-3.6
+V =		3.7
+DISTNAME =	ccache-$V
 CATEGORIES =	devel
 
-HOMEPAGE =	https://ccache.samba.org/
+HOMEPAGE =	https://ccache.dev/
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
@@ -14,11 +15,11 @@ PERMIT_PACKAGE_CDROM =	 Yes
 
 WANTLIB += c m z
 
-MASTER_SITES =	https://www.samba.org/ftp/ccache/
+MASTER_SITES =	https://github.com/ccache/ccache/releases/download/v$V/
 
 CONFIGURE_STYLE =	gnu
 
-# This port should not have dependencies.
+# This port should not have build/run dependencies.
 NO_CCACHE =		Yes
 
 TEST_DEPENDS =		shells/bash \
