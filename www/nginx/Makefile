@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2019/04/23 06:20:37 robert Exp $
+# $OpenBSD: Makefile,v 1.131 2019/04/25 14:56:32 landry Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -15,7 +15,7 @@ COMMENT-headers_more=	nginx module for setting/adding/clearing headers
 COMMENT-perl=		nginx perl scripting module
 COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
 
-VERSION=	1.14.2
+VERSION=	1.16.0
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
@@ -31,8 +31,6 @@ PKGNAME-lua=		nginx-lua-${VERSION}
 PKGNAME-headers_more=	nginx-headers-more-${VERSION}
 PKGNAME-perl=		nginx-perl-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
-
-REVISION-main=		0
 
 MASTER_SITES=	https://nginx.org/download/
 MASTER_SITES0=	https://github.com/simpl/ngx_devel_kit/archive/
@@ -73,7 +71,7 @@ WANTLIB-image_filter=	gd
 WANTLIB-geoip=		GeoIP
 WANTLIB-xslt=		exslt xml2 xslt
 WANTLIB-naxsi=
-WANTLIB-ldap_auth=	ldap
+WANTLIB-ldap_auth=	ldap-2.4
 WANTLIB-lua=		${MODLUA_WANTLIB} m
 WANTLIB-headers_more=
 WANTLIB-perl=		c m perl
