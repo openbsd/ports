@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2018/04/22 13:28:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2019/04/25 14:20:03 ajacoutot Exp $
 include/at-spi-2.0/
 include/at-spi-2.0/atspi/
 include/at-spi-2.0/atspi/atspi-accessible.h
@@ -45,7 +45,6 @@ share/defaults/
 share/defaults/at-spi2/
 share/defaults/at-spi2/accessibility.conf
 share/examples/at-spi2-core/
-@sample ${SYSCONFDIR}/at-spi2/
 share/examples/at-spi2-core/xdg/
 @sample ${SYSCONFDIR}/xdg/
 share/examples/at-spi2-core/xdg/autostart/
