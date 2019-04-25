@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.2 2019/03/26 01:02:47 danj Exp $
+$OpenBSD: patch-setup_py,v 1.3 2019/04/25 14:26:43 danj Exp $
 
-Disable blackd as our aiohttp (which would be required) is old
+Disable blackd as we don't have a port for aiohttp-cors
 
 Index: setup.py
 --- setup.py.orig
