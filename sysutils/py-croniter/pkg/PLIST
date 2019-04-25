@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/03/30 01:51:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/04/25 17:39:01 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/croniter/
 lib/python${MODPY_VERSION}/site-packages/croniter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/croniter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -9,15 +9,15 @@ lib/python${MODPY_VERSION}/site-packages/croniter-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/croniter/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/croniter/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/croniter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/croniter/croniter.py
 lib/python${MODPY_VERSION}/site-packages/croniter/${MODPY_PYCACHE}croniter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/croniter/croniter.py
 lib/python${MODPY_VERSION}/site-packages/croniter/tests/
 lib/python${MODPY_VERSION}/site-packages/croniter/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/croniter/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/croniter/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/croniter/tests/base.py
 lib/python${MODPY_VERSION}/site-packages/croniter/tests/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/croniter/tests/test_croniter.py
 lib/python${MODPY_VERSION}/site-packages/croniter/tests/${MODPY_PYCACHE}test_croniter.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/croniter/tests/test_speed.py
 lib/python${MODPY_VERSION}/site-packages/croniter/tests/${MODPY_PYCACHE}test_speed.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/croniter/tests/base.py
+lib/python${MODPY_VERSION}/site-packages/croniter/tests/test_croniter.py
+lib/python${MODPY_VERSION}/site-packages/croniter/tests/test_speed.py
