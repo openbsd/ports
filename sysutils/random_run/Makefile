@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/04/24 21:14:37 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/25 22:13:22 espie Exp $
 
 # TODO awaiting the gcc8 switch
 ONLY_FOR_ARCHS = ${CLANG_ARCHS}
@@ -8,7 +8,7 @@ CATEGORIES = 	sysutils
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
 
 GH_PROJECT = 	random_run
-GH_TAGNAME = 	1.1
+GH_TAGNAME = 	1.2
 GH_ACCOUNT = 	marcespie
 
 COMPILER =	base-clang ports-gcc
