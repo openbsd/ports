@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/12/17 10:09:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/04/25 19:37:23 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/lxml/
 lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -20,10 +20,14 @@ lib/python${MODPY_VERSION}/site-packages/lxml/${MODPY_PYCACHE}pyclasslookup.${MO
 lib/python${MODPY_VERSION}/site-packages/lxml/${MODPY_PYCACHE}sax.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lxml/${MODPY_PYCACHE}usedoctest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lxml/_elementpath.py
+lib/python${MODPY_VERSION}/site-packages/lxml/_elementpath.so
 lib/python${MODPY_VERSION}/site-packages/lxml/builder.py
+lib/python${MODPY_VERSION}/site-packages/lxml/builder.so
 lib/python${MODPY_VERSION}/site-packages/lxml/cssselect.py
 lib/python${MODPY_VERSION}/site-packages/lxml/doctestcompare.py
+lib/python${MODPY_VERSION}/site-packages/lxml/etree.h
 lib/python${MODPY_VERSION}/site-packages/lxml/etree.so
+lib/python${MODPY_VERSION}/site-packages/lxml/etree_api.h
 lib/python${MODPY_VERSION}/site-packages/lxml/html/
 lib/python${MODPY_VERSION}/site-packages/lxml/html/ElementSoup.py
 lib/python${MODPY_VERSION}/site-packages/lxml/html/__init__.py
@@ -46,13 +50,16 @@ lib/python${MODPY_VERSION}/site-packages/lxml/html/_html5builder.py
 lib/python${MODPY_VERSION}/site-packages/lxml/html/_setmixin.py
 lib/python${MODPY_VERSION}/site-packages/lxml/html/builder.py
 lib/python${MODPY_VERSION}/site-packages/lxml/html/clean.py
+lib/python${MODPY_VERSION}/site-packages/lxml/html/clean.so
 lib/python${MODPY_VERSION}/site-packages/lxml/html/defs.py
 lib/python${MODPY_VERSION}/site-packages/lxml/html/diff.py
+lib/python${MODPY_VERSION}/site-packages/lxml/html/diff.so
 lib/python${MODPY_VERSION}/site-packages/lxml/html/formfill.py
 lib/python${MODPY_VERSION}/site-packages/lxml/html/html5parser.py
 lib/python${MODPY_VERSION}/site-packages/lxml/html/soupparser.py
 lib/python${MODPY_VERSION}/site-packages/lxml/html/usedoctest.py
 lib/python${MODPY_VERSION}/site-packages/lxml/includes/
+lib/python${MODPY_VERSION}/site-packages/lxml/includes/__init__.pxd
 lib/python${MODPY_VERSION}/site-packages/lxml/includes/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lxml/includes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/lxml/includes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -95,6 +102,7 @@ lib/python${MODPY_VERSION}/site-packages/lxml/lxml.etree_api.h
 lib/python${MODPY_VERSION}/site-packages/lxml/objectify.so
 lib/python${MODPY_VERSION}/site-packages/lxml/pyclasslookup.py
 lib/python${MODPY_VERSION}/site-packages/lxml/sax.py
+lib/python${MODPY_VERSION}/site-packages/lxml/sax.so
 lib/python${MODPY_VERSION}/site-packages/lxml/usedoctest.py
 share/doc/${MODPY_PY_PREFIX}lxml/
 share/doc/${MODPY_PY_PREFIX}lxml/FAQ.txt
@@ -368,6 +376,7 @@ share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.common_imports.HelperTestCa
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.common_imports.LargeFileLike-class.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.common_imports.LargeFileLikeUnicode-class.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.common_imports.SillyFileLike-class.html
+share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.common_imports.skipif-class.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.dummy_http_server-module.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.dummy_http_server-pysrc.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.dummy_http_server.HTTPRequestCollector-class.html
@@ -418,6 +427,9 @@ share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_etree.ETreeXIncludeTes
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_etree.ElementIncludeTestCase-class.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_etree.XMLPullParserTest-class.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_etree._XIncludeTestCase-class.html
+share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_external_document-module.html
+share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_external_document-pysrc.html
+share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_external_document.ExternalDocumentTestCase-class.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_htmlparser-module.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_htmlparser-pysrc.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_htmlparser.HtmlParserTestCase-class.html
@@ -426,6 +438,7 @@ share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_http_io-pysrc.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_http_io.HttpIOTestCase-class.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_incremental_xmlfile-module.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_incremental_xmlfile-pysrc.html
+share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_incremental_xmlfile.AsyncXmlFileTestCase-class.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_incremental_xmlfile.BytesIOXmlFileTestCase-class.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_incremental_xmlfile.HtmlFileTestCase-class.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_incremental_xmlfile.SimpleFileLikeXmlFileTestCase-class.html
@@ -460,6 +473,8 @@ share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_relaxng.RelaxNGCompact
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_sax-module.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_sax-pysrc.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_sax.ETreeSaxTestCase-class.html
+share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_sax.NSPrefixSaxTestCase-class.html
+share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_sax.SimpleContentHandler-class.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_schematron-module.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_schematron-pysrc.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/lxml.tests.test_schematron.ETreeSchematronTestCase-class.html
@@ -539,6 +554,7 @@ share/doc/${MODPY_PY_PREFIX}lxml/html/api/toc-lxml.tests.test_elementpath-module
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/toc-lxml.tests.test_elementtree-module.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/toc-lxml.tests.test_errors-module.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/toc-lxml.tests.test_etree-module.html
+share/doc/${MODPY_PY_PREFIX}lxml/html/api/toc-lxml.tests.test_external_document-module.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/toc-lxml.tests.test_htmlparser-module.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/toc-lxml.tests.test_http_io-module.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/api/toc-lxml.tests.test_incremental_xmlfile-module.html
