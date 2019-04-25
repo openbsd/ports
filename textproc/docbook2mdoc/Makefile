@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/18 02:06:48 schwarze Exp $
+# $OpenBSD: Makefile,v 1.7 2019/04/25 12:29:28 schwarze Exp $
 
 COMMENT =		DocBook to mdoc converter
 
-DISTNAME =		docbook2mdoc-1.0.0
+DISTNAME =		docbook2mdoc-1.0.1
 
 CATEGORIES =		textproc
 
