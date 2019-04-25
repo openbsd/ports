@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2019/03/03 08:18:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2019/04/25 19:33:06 rsadowski Exp $
 
 COMMENT=		Python IDE based on IntelliJ IDEA
 
-V=			2018.3.5
+V=			2019.1.1
 DISTNAME=		pycharm-community-${V}
 PKGNAME=		pycharm-${V}
 CATEGORIES=		devel
@@ -21,11 +21,10 @@ MODJAVA_VER=		1.8+
 
 BUILD_DEPENDS=		${MODJAVA_RUN_DEPENDS}
 
-RUN_DEPENDS=		devel/desktop-file-utils
+RUN_DEPENDS=		devel/desktop-file-utils \
+			java/javaPathHelper
 
 NO_TEST=		Yes
-
-SUBST_VARS+=		JAVA_HOME
 
 PC=			${PREFIX}/pycharm
 

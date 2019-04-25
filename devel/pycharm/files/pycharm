@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: pycharm,v 1.1.1.1 2018/03/16 14:07:12 danj Exp $
+# $OpenBSD: pycharm,v 1.2 2019/04/25 19:33:06 rsadowski Exp $
 #
 # OpenBSD-specific startup script for PyCharm IDE
 
@@ -12,11 +12,12 @@ DATASIZE="2048000"
 # Determine configuration settings
 #-----------------------------------------------------------------------------
 
-export PYCHARM_JDK=${JAVA_HOME}
+export JAVA_BIN=$(javaPathHelper -c pycharm)
+export JAVA_HOME=$(javaPathHelper -h pycharm)
 
-if [ ! -x "${PYCHARM_JDK}/bin/java" ]; then
-	echo "Error: JAVA_HOME may not be defined correctly: ${PYCHARM_JDK}"
-	echo "       Unable to find Java binary ${PYCHARM_JDK}/bin/java"
+if [ ! -x "${JAVA_BIN}" ]; then
+	echo "Error: JAVA_HOME may not be defined correctly: ${JAVA_HOME}"
+	echo "       Unable to find Java binary ${JAVA_BIN}"
         exit 1
 fi
 
@@ -40,4 +41,4 @@ if [ $(ulimit -Sd) -lt ${DATASIZE} ]; then
 		[ $? -eq 0 ] || exit
 fi
 
-PATH=${PYCHARM_JDK}/bin:$PATH exec "${PYCHARM_HOME}/bin/pycharm.sh" $@
+PATH=${JAVA_HOME}/bin:$PATH exec "${PYCHARM_HOME}/bin/pycharm.sh" $@
