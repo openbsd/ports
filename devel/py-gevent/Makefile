@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/04/24 20:00:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/04/25 11:28:38 sthen Exp $
 
 COMMENT =		network library for easy and scalable concurrency
 
@@ -46,12 +46,13 @@ post-build:
 post-install:
 	rm -Rf ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/greentest
 
-# Also needs objgraph, not yet imported.
-NO_TEST =		Yes
-
-TEST_DEPENDS =		${RUN_DEPENDS} \
+# depends on self for now, but upstream intends to pass PYTHONPATH
+# to subproc's in the future which should obviate the need for this
+TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
+			${RUN_DEPENDS} \
 			devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-coveralls${MODPY_FLAVOR} \
+			devel/py-objgraph${MODPY_FLAVOR} \
 			devel/py-zopeevent${MODPY_FLAVOR} \
 			devel/py-zopeinterface${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR} \
