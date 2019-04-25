@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_keyringer_functions,v 1.3 2018/06/03 15:39:24 jca Exp $
+$OpenBSD: patch-lib_keyringer_functions,v 1.4 2019/04/25 15:04:44 jca Exp $
 
 - no mount -l/tmpfs in OpenBSD
 - use gpg2, upstream seems to rely on gpg being gpg2
@@ -19,11 +19,11 @@ Index: lib/keyringer/functions
    fi
  
    if [ ! -z "$KEYID" ]; then
--    GPG="gpg --quiet -u $KEYID"
-+    GPG="gpg2 --quiet -u $KEYID"
+-    GPG="gpg --quiet --no-encrypt-to -u $KEYID"
++    GPG="gpg2 --quiet --no-encrypt-to -u $KEYID"
    else
--    GPG="gpg --quiet"
-+    GPG="gpg2 --quiet"
+-    GPG="gpg --quiet --no-encrypt-to"
++    GPG="gpg2 --quiet --no-encrypt-to"
    fi
  
    # Check keyring config version
