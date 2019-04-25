@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2019/04/25 22:41:38 mortimer Exp $
 
 PORTROACH+=	limit:^1
 
@@ -36,6 +36,7 @@ USE_GMAKE=		Yes
 # warning: format '%ji' expects type 'intmax_t', but argument 4 has type 'scm_t_intmax'
 CONFIGURE_ARGS+=	--disable-error-on-warning
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		CFLAGS="-fno-omit-frame-pointer ${CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS=-pthread \
 		PTHREAD_LIBS=-pthread
