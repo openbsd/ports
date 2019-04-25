@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2019/03/03 08:03:03 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.42 2019/04/25 08:37:01 kirby Exp $
 @pkgpath games/wesnoth,tinygui
 @pkgpath games/wesnoth,lite
 @newgroup _wesnothd:708
@@ -229,6 +229,7 @@ share/wesnoth/data/ai/lua/retreat.lua
 share/wesnoth/data/ai/lua/stdlib.lua
 share/wesnoth/data/ai/maps/
 share/wesnoth/data/ai/maps/scenario-AI_Arena_small.map
+share/wesnoth/data/ai/maps/scenario-high_xp_attack.map
 share/wesnoth/data/ai/micro_ais/
 share/wesnoth/data/ai/micro_ais/cas/
 share/wesnoth/data/ai/micro_ais/cas/ca_assassin_move.lua
@@ -655,6 +656,8 @@ share/wesnoth/data/campaigns/Descent_Into_Darkness/
 share/wesnoth/data/campaigns/Descent_Into_Darkness/_main.cfg
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/campaign_image.png
+share/wesnoth/data/campaigns/Descent_Into_Darkness/images/items/
+share/wesnoth/data/campaigns/Descent_Into_Darkness/images/items/potion-clear.png
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/maps/
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/maps/did.png
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/maps/l10n/
@@ -671,6 +674,7 @@ share/wesnoth/data/campaigns/Descent_Into_Darkness/images/maps/l10n/pt/did--over
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/misc/
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/misc/book-icon.png
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/misc/makeshift-altar.png
+share/wesnoth/data/campaigns/Descent_Into_Darkness/images/misc/new-journey-blue.png
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/misc/weakened-ice.png
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/portraits/
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/portraits/darken_volk.png
@@ -719,6 +723,8 @@ share/wesnoth/data/campaigns/Descent_Into_Darkness/images/units/neutral-outlaw-p
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/units/neutral-outlaw-princess-defend-1-2.png
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/units/neutral-outlaw-princess-defend.png
 share/wesnoth/data/campaigns/Descent_Into_Darkness/images/units/neutral-outlaw-princess.png
+share/wesnoth/data/campaigns/Descent_Into_Darkness/lua/
+share/wesnoth/data/campaigns/Descent_Into_Darkness/lua/skip_animations.lua
 share/wesnoth/data/campaigns/Descent_Into_Darkness/maps/
 share/wesnoth/data/campaigns/Descent_Into_Darkness/maps/01_Saving_Parthyn.map
 share/wesnoth/data/campaigns/Descent_Into_Darkness/maps/02_Peaceful_Valley.map
@@ -731,7 +737,9 @@ share/wesnoth/data/campaigns/Descent_Into_Darkness/maps/08_A_Small_Favor2.map
 share/wesnoth/data/campaigns/Descent_Into_Darkness/maps/09_A_Small_Favor3.map
 share/wesnoth/data/campaigns/Descent_Into_Darkness/maps/10_Alone_at_Last.map
 share/wesnoth/data/campaigns/Descent_Into_Darkness/maps/11_Descent_into_Darkness.map
+share/wesnoth/data/campaigns/Descent_Into_Darkness/maps/11a_Descent_into_Darkness.map
 share/wesnoth/data/campaigns/Descent_Into_Darkness/maps/12_Endless_Night.map
+share/wesnoth/data/campaigns/Descent_Into_Darkness/maps/12a_Endless_Night.map
 share/wesnoth/data/campaigns/Descent_Into_Darkness/scenarios/
 share/wesnoth/data/campaigns/Descent_Into_Darkness/scenarios/01_Saving_Parthyn.cfg
 share/wesnoth/data/campaigns/Descent_Into_Darkness/scenarios/02_Peaceful_Valley.cfg
@@ -3051,6 +3059,8 @@ share/wesnoth/data/campaigns/tutorial/units/
 share/wesnoth/data/campaigns/tutorial/units/Fighter.cfg
 share/wesnoth/data/campaigns/tutorial/units/Fighteress.cfg
 share/wesnoth/data/campaigns/tutorial/units/Quintain.cfg
+share/wesnoth/data/campaigns/tutorial/units/Warrior.cfg
+share/wesnoth/data/campaigns/tutorial/units/Warrioress.cfg
 share/wesnoth/data/campaigns/tutorial/utils/
 share/wesnoth/data/campaigns/tutorial/utils/utils.cfg
 share/wesnoth/data/core/
@@ -3835,6 +3845,8 @@ share/wesnoth/data/core/images/misc/time-schedules/default/schedule-firstwatch.p
 share/wesnoth/data/core/images/misc/time-schedules/default/schedule-morning.png
 share/wesnoth/data/core/images/misc/time-schedules/default/schedule-secondwatch.png
 share/wesnoth/data/core/images/misc/time-schedules/schedule-indoors.png
+share/wesnoth/data/core/images/misc/time-schedules/schedule-midday.png
+share/wesnoth/data/core/images/misc/time-schedules/schedule-midnight.png
 share/wesnoth/data/core/images/misc/time-schedules/schedule-underground-illum.png
 share/wesnoth/data/core/images/misc/time-schedules/schedule-underground.png
 share/wesnoth/data/core/images/misc/time-schedules/tod-schedule-24hrs.png
@@ -10699,8 +10711,15 @@ share/wesnoth/data/core/images/units/elves-wood/outrider/
 share/wesnoth/data/core/images/units/elves-wood/outrider/outrider-attack1.png
 share/wesnoth/data/core/images/units/elves-wood/outrider/outrider-attack2.png
 share/wesnoth/data/core/images/units/elves-wood/outrider/outrider-defend.png
+share/wesnoth/data/core/images/units/elves-wood/outrider/outrider-defend1.png
+share/wesnoth/data/core/images/units/elves-wood/outrider/outrider-defend2.png
+share/wesnoth/data/core/images/units/elves-wood/outrider/outrider-melee-0.png
 share/wesnoth/data/core/images/units/elves-wood/outrider/outrider-melee-1.png
 share/wesnoth/data/core/images/units/elves-wood/outrider/outrider-melee-2.png
+share/wesnoth/data/core/images/units/elves-wood/outrider/outrider-melee-3.png
+share/wesnoth/data/core/images/units/elves-wood/outrider/outrider-melee-4.png
+share/wesnoth/data/core/images/units/elves-wood/outrider/outrider-melee-5.png
+share/wesnoth/data/core/images/units/elves-wood/outrider/outrider-melee-6.png
 share/wesnoth/data/core/images/units/elves-wood/outrider/outrider-moving.png
 share/wesnoth/data/core/images/units/elves-wood/outrider/outrider.png
 share/wesnoth/data/core/images/units/elves-wood/ranger+female-bow-attack1.png
@@ -10734,11 +10753,15 @@ share/wesnoth/data/core/images/units/elves-wood/rider/
 share/wesnoth/data/core/images/units/elves-wood/rider/rider-attack1.png
 share/wesnoth/data/core/images/units/elves-wood/rider/rider-attack2.png
 share/wesnoth/data/core/images/units/elves-wood/rider/rider-defend.png
+share/wesnoth/data/core/images/units/elves-wood/rider/rider-defend1.png
+share/wesnoth/data/core/images/units/elves-wood/rider/rider-defend2.png
 share/wesnoth/data/core/images/units/elves-wood/rider/rider-melee-1.png
 share/wesnoth/data/core/images/units/elves-wood/rider/rider-melee-2.png
 share/wesnoth/data/core/images/units/elves-wood/rider/rider-moving.png
 share/wesnoth/data/core/images/units/elves-wood/rider/rider.png
 share/wesnoth/data/core/images/units/elves-wood/scout/
+share/wesnoth/data/core/images/units/elves-wood/scout/scout-defend1.png
+share/wesnoth/data/core/images/units/elves-wood/scout/scout-defend2.png
 share/wesnoth/data/core/images/units/elves-wood/scout/scout-idle-1.png
 share/wesnoth/data/core/images/units/elves-wood/scout/scout-idle-10.png
 share/wesnoth/data/core/images/units/elves-wood/scout/scout-idle-11.png
@@ -10945,10 +10968,16 @@ share/wesnoth/data/core/images/units/human-loyalists/bowman-melee-defend-1.png
 share/wesnoth/data/core/images/units/human-loyalists/bowman-melee-defend-2.png
 share/wesnoth/data/core/images/units/human-loyalists/bowman.png
 share/wesnoth/data/core/images/units/human-loyalists/cavalier/
+share/wesnoth/data/core/images/units/human-loyalists/cavalier/cavalier-defend1.png
+share/wesnoth/data/core/images/units/human-loyalists/cavalier/cavalier-defend2.png
 share/wesnoth/data/core/images/units/human-loyalists/cavalier/cavalier.png
 share/wesnoth/data/core/images/units/human-loyalists/cavalryman/
+share/wesnoth/data/core/images/units/human-loyalists/cavalryman/cavalryman-defend1.png
+share/wesnoth/data/core/images/units/human-loyalists/cavalryman/cavalryman-defend2.png
 share/wesnoth/data/core/images/units/human-loyalists/cavalryman/cavalryman.png
 share/wesnoth/data/core/images/units/human-loyalists/dragoon/
+share/wesnoth/data/core/images/units/human-loyalists/dragoon/dragoon-defend1.png
+share/wesnoth/data/core/images/units/human-loyalists/dragoon/dragoon-defend2.png
 share/wesnoth/data/core/images/units/human-loyalists/dragoon/dragoon-idle-1.png
 share/wesnoth/data/core/images/units/human-loyalists/dragoon/dragoon-idle-2.png
 share/wesnoth/data/core/images/units/human-loyalists/dragoon/dragoon-idle-3.png
@@ -11021,6 +11050,8 @@ share/wesnoth/data/core/images/units/human-loyalists/general-idle-6.png
 share/wesnoth/data/core/images/units/human-loyalists/general-leading.png
 share/wesnoth/data/core/images/units/human-loyalists/general.png
 share/wesnoth/data/core/images/units/human-loyalists/grand-knight/
+share/wesnoth/data/core/images/units/human-loyalists/grand-knight/grand-knight-se-defend1.png
+share/wesnoth/data/core/images/units/human-loyalists/grand-knight/grand-knight-se-defend2.png
 share/wesnoth/data/core/images/units/human-loyalists/grand-knight/grand-knight.png
 share/wesnoth/data/core/images/units/human-loyalists/halberdier-defend.png
 share/wesnoth/data/core/images/units/human-loyalists/halberdier-idle-1.png
@@ -11307,6 +11338,11 @@ share/wesnoth/data/core/images/units/human-loyalists/knight/knight-se-slash8.png
 share/wesnoth/data/core/images/units/human-loyalists/knight/knight-se-slash9.png
 share/wesnoth/data/core/images/units/human-loyalists/knight/knight.png
 share/wesnoth/data/core/images/units/human-loyalists/lancer/
+share/wesnoth/data/core/images/units/human-loyalists/lancer/lancer-se-attack1.png
+share/wesnoth/data/core/images/units/human-loyalists/lancer/lancer-se-defend1-miss.png
+share/wesnoth/data/core/images/units/human-loyalists/lancer/lancer-se-defend1.png
+share/wesnoth/data/core/images/units/human-loyalists/lancer/lancer-se-defend2-miss.png
+share/wesnoth/data/core/images/units/human-loyalists/lancer/lancer-se-defend2.png
 share/wesnoth/data/core/images/units/human-loyalists/lancer/lancer.png
 share/wesnoth/data/core/images/units/human-loyalists/lieutenant-attack-sword-1.png
 share/wesnoth/data/core/images/units/human-loyalists/lieutenant-attack-sword-2.png
@@ -11419,6 +11455,8 @@ share/wesnoth/data/core/images/units/human-loyalists/masterbowman-melee-defend-1
 share/wesnoth/data/core/images/units/human-loyalists/masterbowman-melee-defend-2.png
 share/wesnoth/data/core/images/units/human-loyalists/masterbowman.png
 share/wesnoth/data/core/images/units/human-loyalists/paladin/
+share/wesnoth/data/core/images/units/human-loyalists/paladin/paladin-se-defend1.png
+share/wesnoth/data/core/images/units/human-loyalists/paladin/paladin-se-defend2.png
 share/wesnoth/data/core/images/units/human-loyalists/paladin/paladin.png
 share/wesnoth/data/core/images/units/human-loyalists/pikeman-attack-n.png
 share/wesnoth/data/core/images/units/human-loyalists/pikeman-attack-ne.png
@@ -12000,8 +12038,14 @@ share/wesnoth/data/core/images/units/human-peasants/woodsman-melee-1.png
 share/wesnoth/data/core/images/units/human-peasants/woodsman-melee-2.png
 share/wesnoth/data/core/images/units/human-peasants/woodsman.png
 share/wesnoth/data/core/images/units/merfolk/
+share/wesnoth/data/core/images/units/merfolk/diviner-defend1.png
+share/wesnoth/data/core/images/units/merfolk/diviner-defend2.png
 share/wesnoth/data/core/images/units/merfolk/diviner.png
+share/wesnoth/data/core/images/units/merfolk/enchantress-defend1.png
+share/wesnoth/data/core/images/units/merfolk/enchantress-defend2.png
 share/wesnoth/data/core/images/units/merfolk/enchantress.png
+share/wesnoth/data/core/images/units/merfolk/entangler-defend1.png
+share/wesnoth/data/core/images/units/merfolk/entangler-defend2.png
 share/wesnoth/data/core/images/units/merfolk/entangler.png
 share/wesnoth/data/core/images/units/merfolk/fighter-attack-1.png
 share/wesnoth/data/core/images/units/merfolk/fighter-attack-2.png
@@ -12012,6 +12056,8 @@ share/wesnoth/data/core/images/units/merfolk/fighter-attack-6.png
 share/wesnoth/data/core/images/units/merfolk/fighter-defend-1.png
 share/wesnoth/data/core/images/units/merfolk/fighter-defend-2.png
 share/wesnoth/data/core/images/units/merfolk/fighter.png
+share/wesnoth/data/core/images/units/merfolk/hoplite-defend1.png
+share/wesnoth/data/core/images/units/merfolk/hoplite-defend2.png
 share/wesnoth/data/core/images/units/merfolk/hoplite.png
 share/wesnoth/data/core/images/units/merfolk/hunter-javelin-1.png
 share/wesnoth/data/core/images/units/merfolk/hunter-javelin-2.png
@@ -12039,11 +12085,25 @@ share/wesnoth/data/core/images/units/merfolk/initiate-magic-2.png
 share/wesnoth/data/core/images/units/merfolk/initiate-staff-attack-1.png
 share/wesnoth/data/core/images/units/merfolk/initiate-staff-attack-2.png
 share/wesnoth/data/core/images/units/merfolk/initiate.png
+share/wesnoth/data/core/images/units/merfolk/javelineer-defend1.png
+share/wesnoth/data/core/images/units/merfolk/javelineer-defend2.png
 share/wesnoth/data/core/images/units/merfolk/javelineer.png
+share/wesnoth/data/core/images/units/merfolk/netcaster-defend1.png
+share/wesnoth/data/core/images/units/merfolk/netcaster-defend2.png
 share/wesnoth/data/core/images/units/merfolk/netcaster.png
+share/wesnoth/data/core/images/units/merfolk/priestess-defend1.png
+share/wesnoth/data/core/images/units/merfolk/priestess-defend2.png
 share/wesnoth/data/core/images/units/merfolk/priestess.png
+share/wesnoth/data/core/images/units/merfolk/siren-defend1.png
+share/wesnoth/data/core/images/units/merfolk/siren-defend2.png
+share/wesnoth/data/core/images/units/merfolk/siren-magic-1.png
+share/wesnoth/data/core/images/units/merfolk/siren-magic-2.png
 share/wesnoth/data/core/images/units/merfolk/siren.png
+share/wesnoth/data/core/images/units/merfolk/spearman-defend1.png
+share/wesnoth/data/core/images/units/merfolk/spearman-defend2.png
 share/wesnoth/data/core/images/units/merfolk/spearman.png
+share/wesnoth/data/core/images/units/merfolk/triton-defend1.png
+share/wesnoth/data/core/images/units/merfolk/triton-defend2.png
 share/wesnoth/data/core/images/units/merfolk/triton.png
 share/wesnoth/data/core/images/units/merfolk/warrior-attack-1.png
 share/wesnoth/data/core/images/units/merfolk/warrior-attack-2.png
