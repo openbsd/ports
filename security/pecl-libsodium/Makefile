@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/03/03 15:43:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/04/25 12:00:33 sthen Exp $
 
 COMMENT =	low-level encryption extension for PHP
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += pthread sodium
 
+# only built for 7.1; 7.2+ include sodium functions in php core
 MODULES =	lang/php/pecl
 
 MODPHP_DO_SAMPLE = sodium
