@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.3 2019/03/15 16:44:50 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.4 2019/04/26 15:46:28 jeremy Exp $
 share/ri/
 share/ri/${REV}/
 share/ri/${REV}/system/
@@ -3313,6 +3313,9 @@ share/ri/${REV}/system/CMath/tanh-c.ri
 share/ri/${REV}/system/CMath/tanh-i.ri
 share/ri/${REV}/system/CSV/
 share/ri/${REV}/system/CSV/%3c%3c-i.ri
+share/ri/${REV}/system/CSV/DeleteSuffix/
+share/ri/${REV}/system/CSV/DeleteSuffix/cdesc-DeleteSuffix.ri
+share/ri/${REV}/system/CSV/DeleteSuffix/delete_suffix-i.ri
 share/ri/${REV}/system/CSV/FieldsConverter/
 share/ri/${REV}/system/CSV/FieldsConverter/add_converter-i.ri
 share/ri/${REV}/system/CSV/FieldsConverter/cdesc-FieldsConverter.ri
@@ -3333,6 +3336,7 @@ share/ri/${REV}/system/CSV/MatchP/match%3f-i.ri
 share/ri/${REV}/system/CSV/Parser/
 share/ri/${REV}/system/CSV/Parser/InputsScanner/
 share/ri/${REV}/system/CSV/Parser/InputsScanner/cdesc-InputsScanner.ri
+share/ri/${REV}/system/CSV/Parser/InputsScanner/each_line-i.ri
 share/ri/${REV}/system/CSV/Parser/InputsScanner/eos%3f-i.ri
 share/ri/${REV}/system/CSV/Parser/InputsScanner/keep_back-i.ri
 share/ri/${REV}/system/CSV/Parser/InputsScanner/keep_drop-i.ri
@@ -3347,6 +3351,7 @@ share/ri/${REV}/system/CSV/Parser/InvalidEncoding/
 share/ri/${REV}/system/CSV/Parser/InvalidEncoding/cdesc-InvalidEncoding.ri
 share/ri/${REV}/system/CSV/Parser/Scanner/
 share/ri/${REV}/system/CSV/Parser/Scanner/cdesc-Scanner.ri
+share/ri/${REV}/system/CSV/Parser/Scanner/each_line-i.ri
 share/ri/${REV}/system/CSV/Parser/Scanner/keep_back-i.ri
 share/ri/${REV}/system/CSV/Parser/Scanner/keep_drop-i.ri
 share/ri/${REV}/system/CSV/Parser/Scanner/keep_end-i.ri
@@ -3354,6 +3359,7 @@ share/ri/${REV}/system/CSV/Parser/Scanner/keep_start-i.ri
 share/ri/${REV}/system/CSV/Parser/Scanner/new-c.ri
 share/ri/${REV}/system/CSV/Parser/UnoptimizedStringIO/
 share/ri/${REV}/system/CSV/Parser/UnoptimizedStringIO/cdesc-UnoptimizedStringIO.ri
+share/ri/${REV}/system/CSV/Parser/UnoptimizedStringIO/each_line-i.ri
 share/ri/${REV}/system/CSV/Parser/UnoptimizedStringIO/eof%3f-i.ri
 share/ri/${REV}/system/CSV/Parser/UnoptimizedStringIO/gets-i.ri
 share/ri/${REV}/system/CSV/Parser/UnoptimizedStringIO/new-c.ri
@@ -3367,6 +3373,7 @@ share/ri/${REV}/system/CSV/Parser/emit_row-i.ri
 share/ri/${REV}/system/CSV/Parser/field_size_limit-i.ri
 share/ri/${REV}/system/CSV/Parser/header_row%3f-i.ri
 share/ri/${REV}/system/CSV/Parser/headers-i.ri
+share/ri/${REV}/system/CSV/Parser/ignore_broken_line-i.ri
 share/ri/${REV}/system/CSV/Parser/last_line-i.ri
 share/ri/${REV}/system/CSV/Parser/liberal_parsing%3f-i.ri
 share/ri/${REV}/system/CSV/Parser/line-i.ri
@@ -3377,14 +3384,23 @@ share/ri/${REV}/system/CSV/Parser/parse-i.ri
 share/ri/${REV}/system/CSV/Parser/parse_column_end-i.ri
 share/ri/${REV}/system/CSV/Parser/parse_column_value-i.ri
 share/ri/${REV}/system/CSV/Parser/parse_headers-i.ri
+share/ri/${REV}/system/CSV/Parser/parse_no_quote-i.ri
+share/ri/${REV}/system/CSV/Parser/parse_quotable_loose-i.ri
+share/ri/${REV}/system/CSV/Parser/parse_quotable_robust-i.ri
 share/ri/${REV}/system/CSV/Parser/parse_quoted_column_value-i.ri
 share/ri/${REV}/system/CSV/Parser/parse_row_end-i.ri
 share/ri/${REV}/system/CSV/Parser/parse_unquoted_column_value-i.ri
 share/ri/${REV}/system/CSV/Parser/prepare-i.ri
+share/ri/${REV}/system/CSV/Parser/prepare_backslash-i.ri
 share/ri/${REV}/system/CSV/Parser/prepare_header-i.ri
 share/ri/${REV}/system/CSV/Parser/prepare_line-i.ri
 share/ri/${REV}/system/CSV/Parser/prepare_parser-i.ri
-share/ri/${REV}/system/CSV/Parser/prepare_regexp-i.ri
+share/ri/${REV}/system/CSV/Parser/prepare_quote_character-i.ri
+share/ri/${REV}/system/CSV/Parser/prepare_quoted-i.ri
+share/ri/${REV}/system/CSV/Parser/prepare_separators-i.ri
+share/ri/${REV}/system/CSV/Parser/prepare_skip_lines-i.ri
+share/ri/${REV}/system/CSV/Parser/prepare_strip-i.ri
+share/ri/${REV}/system/CSV/Parser/prepare_unquoted-i.ri
 share/ri/${REV}/system/CSV/Parser/prepare_variable-i.ri
 share/ri/${REV}/system/CSV/Parser/quote_character-i.ri
 share/ri/${REV}/system/CSV/Parser/resolve_row_separator-i.ri
@@ -3395,6 +3411,7 @@ share/ri/${REV}/system/CSV/Parser/skip_line%3f-i.ri
 share/ri/${REV}/system/CSV/Parser/skip_lines-i.ri
 share/ri/${REV}/system/CSV/Parser/skip_needless_lines-i.ri
 share/ri/${REV}/system/CSV/Parser/start_row-i.ri
+share/ri/${REV}/system/CSV/Parser/strip_value-i.ri
 share/ri/${REV}/system/CSV/Parser/unconverted_fields%3f-i.ri
 share/ri/${REV}/system/CSV/Parser/use_headers%3f-i.ri
 share/ri/${REV}/system/CSV/Row/
@@ -3471,8 +3488,11 @@ share/ri/${REV}/system/CSV/Writer/quote-i.ri
 share/ri/${REV}/system/CSV/Writer/quote_field-i.ri
 share/ri/${REV}/system/CSV/Writer/rewind-i.ri
 share/ri/${REV}/system/CSV/add_row-i.ri
+share/ri/${REV}/system/CSV/binmode%3f-i.ri
 share/ri/${REV}/system/CSV/build_fields_converter-i.ri
 share/ri/${REV}/system/CSV/build_header_fields_converter-i.ri
+share/ri/${REV}/system/CSV/build_parser_fields_converter-i.ri
+share/ri/${REV}/system/CSV/build_writer_fields_converter-i.ri
 share/ri/${REV}/system/CSV/cdesc-CSV.ri
 share/ri/${REV}/system/CSV/col_sep-i.ri
 share/ri/${REV}/system/CSV/convert-i.ri
@@ -3481,9 +3501,11 @@ share/ri/${REV}/system/CSV/converters-i.ri
 share/ri/${REV}/system/CSV/determine_encoding-i.ri
 share/ri/${REV}/system/CSV/each-i.ri
 share/ri/${REV}/system/CSV/encoding-i.ri
+share/ri/${REV}/system/CSV/eof%3f-i.ri
+share/ri/${REV}/system/CSV/eof-i.ri
 share/ri/${REV}/system/CSV/field_size_limit-i.ri
-share/ri/${REV}/system/CSV/fields_converter-i.ri
 share/ri/${REV}/system/CSV/filter-c.ri
+share/ri/${REV}/system/CSV/flock-i.ri
 share/ri/${REV}/system/CSV/force_quotes%3f-i.ri
 share/ri/${REV}/system/CSV/foreach-c.ri
 share/ri/${REV}/system/CSV/generate-c.ri
@@ -3496,6 +3518,7 @@ share/ri/${REV}/system/CSV/header_row%3f-i.ri
 share/ri/${REV}/system/CSV/headers-i.ri
 share/ri/${REV}/system/CSV/inspect-i.ri
 share/ri/${REV}/system/CSV/instance-c.ri
+share/ri/${REV}/system/CSV/ioctl-i.ri
 share/ri/${REV}/system/CSV/liberal_parsing%3f-i.ri
 share/ri/${REV}/system/CSV/line-i.ri
 share/ri/${REV}/system/CSV/lineno-i.ri
@@ -3505,7 +3528,10 @@ share/ri/${REV}/system/CSV/open-c.ri
 share/ri/${REV}/system/CSV/parse-c.ri
 share/ri/${REV}/system/CSV/parse_line-c.ri
 share/ri/${REV}/system/CSV/parser-i.ri
+share/ri/${REV}/system/CSV/parser_enumerator-i.ri
+share/ri/${REV}/system/CSV/parser_fields_converter-i.ri
 share/ri/${REV}/system/CSV/parser_options-i.ri
+share/ri/${REV}/system/CSV/path-i.ri
 share/ri/${REV}/system/CSV/puts-i.ri
 share/ri/${REV}/system/CSV/quote_char-i.ri
 share/ri/${REV}/system/CSV/raw_encoding-i.ri
@@ -3520,10 +3546,14 @@ share/ri/${REV}/system/CSV/row_sep-i.ri
 share/ri/${REV}/system/CSV/shift-i.ri
 share/ri/${REV}/system/CSV/skip_blanks%3f-i.ri
 share/ri/${REV}/system/CSV/skip_lines-i.ri
+share/ri/${REV}/system/CSV/stat-i.ri
 share/ri/${REV}/system/CSV/table-c.ri
+share/ri/${REV}/system/CSV/to_i-i.ri
+share/ri/${REV}/system/CSV/to_io-i.ri
 share/ri/${REV}/system/CSV/unconverted_fields%3f-i.ri
 share/ri/${REV}/system/CSV/write_headers%3f-i.ri
 share/ri/${REV}/system/CSV/writer-i.ri
+share/ri/${REV}/system/CSV/writer_fields_converter-i.ri
 share/ri/${REV}/system/CSV/writer_options-i.ri
 share/ri/${REV}/system/Class/
 share/ri/${REV}/system/Class/allocate-i.ri
