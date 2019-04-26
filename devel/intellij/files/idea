@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: idea,v 1.3 2017/06/16 15:25:09 sthen Exp $
+# $OpenBSD: idea,v 1.4 2019/04/26 12:38:02 rsadowski Exp $
 #
 # OpenBSD-specific startup script for IntelliJ IDE
 
@@ -12,11 +12,12 @@ DATASIZE="2048000"
 # Determine configuration settings
 #-----------------------------------------------------------------------------
 
-export IDEA_JDK=${JAVA_HOME}
+export JAVA_BIN=$(javaPathHelper -c intellij)
+export JAVA_HOME=$(javaPathHelper -h intellij)
 
-if [ ! -x "${IDEA_JDK}/bin/java" ]; then
-	echo "Error: JAVA_HOME may not be defined correctly: ${IDEA_JDK}"
-	echo "       Unable to find Java binary ${IDEA_JDK}/bin/java"
+if [ ! -x "${JAVA_BIN}" ]; then
+	echo "Error: JAVA_HOME may not be defined correctly: ${JAVA_HOME}"
+	echo "       Unable to find Java binary ${JAVA_BIN}"
         exit 1
 fi
 
@@ -39,4 +40,4 @@ if [ $(ulimit -Sd) -lt ${DATASIZE} ]; then
 		[ $? -eq 0 ] || exit
 fi
 
-PATH=${IDEA_JDK}/bin:$PATH exec "${IDEA_HOME}/bin/idea.sh" $@
+PATH=${JAVA_HOME}/bin:$PATH exec "${IDEA_HOME}/bin/idea.sh" $@
