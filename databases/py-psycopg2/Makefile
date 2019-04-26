@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2017/11/09 09:37:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2019/04/26 16:11:13 sthen Exp $
 
 COMMENT =		PostgreSQL database adapter for Python
 
-MODPY_EGG_VERSION =	2.7.3.2
+MODPY_EGG_VERSION =	2.8.2
 DISTNAME =		psycopg2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		databases
@@ -26,7 +26,7 @@ LIB_DEPENDS =		databases/postgresql
 RUN_DEPENDS =		databases/postgresql
 BUILD_DEPENDS =		textproc/py-pygments${MODPY_FLAVOR} \
 			textproc/py-sphinx${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS}
+TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -58,9 +58,6 @@ post-build:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}psycopg2
 	cd ${WRKSRC}/doc/src/_build/html && pax -rw * ${PREFIX}/share/doc/${MODPY_PY_PREFIX}psycopg2
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}psycopg2
-	${INSTALL_DATA} ${WRKSRC}/examples/* \
-		${PREFIX}/share/examples/${MODPY_PY_PREFIX}psycopg2/
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} gmake check
