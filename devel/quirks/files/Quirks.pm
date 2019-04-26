@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.753 2019/04/23 20:20:41 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.754 2019/04/26 15:10:32 semarie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1214,6 +1214,7 @@ my $obsolete_reason = {
 	'py-async' => 5,
 	'py3-async' => 5,
 	'py3-funcsigs' => 5,
+	'rust-doc' => 1,
 };
 
 # reasons for obsolete packages
