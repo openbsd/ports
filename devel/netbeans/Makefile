@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.35 2019/03/17 16:11:22 kn Exp $
+# $OpenBSD: Makefile,v 1.36 2019/04/26 12:40:31 rsadowski Exp $
 
 COMMENT=		NetBeans Java IDE
 
-V=			10.0
+V=			11.0
 DISTNAME=		incubating-netbeans-${V}-bin
 PKGNAME=		netbeans-${V}
 CATEGORIES=		devel
 
-HOMEPAGE=		https://www.netbeans.org/
+HOMEPAGE=		https://netbeans.apache.org
 
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org> \
 			Rafael Sadowski <rsadowski@openbsd.org>

@@ -1,18 +1,24 @@
 #!/bin/sh
 #
-# $OpenBSD: netbeans,v 1.1 2010/04/03 11:42:06 landry Exp $
+# $OpenBSD: netbeans,v 1.2 2019/04/26 12:40:31 rsadowski Exp $
 #
 # OpenBSD-specific startup script for NetBeans IDE
 
 NETBEANS_HOME=${TRUEPREFIX}/netbeans
 
+DATASIZE="2048000"
+[[ `arch -s` == i386 ]] && DATASIZE="1536000"
+
 #-----------------------------------------------------------------------------
 # Determine configuration settings
 #-----------------------------------------------------------------------------
 
-JAVA_HOME=`javaPathHelper -h netbeans`
+export JAVA_BIN=$(javaPathHelper -c netbeans)
+export JAVA_HOME=$(javaPathHelper -h netbeans)
 
-if [ -z "${JAVA_HOME}" ]; then
+if [ ! -x "${JAVA_BIN}" ]; then
+	echo "Error: JAVA_HOME may not be defined correctly: ${JAVA_HOME}"
+	echo "       Unable to find Java binary ${JAVA_BIN}"
         exit 1
 fi
 
@@ -21,6 +27,18 @@ if [ ! -x "${NETBEANS_HOME}/bin/netbeans" ]; then
 	echo "Error: NETBEANS_HOME is not defined correctly: ${NETBEANS_HOME}"
 	echo "       Unable to find launcher binary"
 	exit 1
+fi
+
+xm_log() {
+	echo -n "$@\nDo you want to run PyCharm anyway?\n\
+(If you don't increase these limits, PyCharm might fail to work properly.)" | \
+		${X11BASE}/bin/xmessage -file - -center -buttons yes:0,no:1 -default no
+}
+
+if [ $(ulimit -Sd) -lt ${DATASIZE} ]; then
+	ulimit -Sd ${DATASIZE} || \
+		xm_log "Cannot increase datasize-cur to at least ${DATASIZE}"
+		[ $? -eq 0 ] || exit
 fi
 
 PATH=${JAVA_HOME}/bin:$PATH exec "${NETBEANS_HOME}/bin/netbeans" --jdkhome ${JAVA_HOME} $@
