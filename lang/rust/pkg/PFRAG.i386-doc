@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.i386-doc,v 1.6 2019/04/17 06:55:59 semarie Exp $
-share/doc/rust/html/src/std/up/stdsimd/crates/std_detect/src/detect/arch/x86.rs.html
-share/doc/rust/html/src/std/up/stdsimd/crates/std_detect/src/detect/os/x86.rs.html
