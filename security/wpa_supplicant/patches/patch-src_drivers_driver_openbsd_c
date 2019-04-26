@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_drivers_driver_openbsd_c,v 1.6 2018/12/29 09:22:55 phessler Exp $
+$OpenBSD: patch-src_drivers_driver_openbsd_c,v 1.7 2019/04/26 13:32:36 sthen Exp $
 
 Fix includes and react to NWID changes and suspend/resume.
 
@@ -44,7 +44,7 @@ Index: src/drivers/driver_openbsd.c
  };
  
  
-@@ -90,10 +105,99 @@ wpa_driver_openbsd_set_key(const char *ifname, void *p
+@@ -91,10 +106,99 @@ wpa_driver_openbsd_set_key(const char *ifname, void *p
  	return 0;
  }
  
@@ -146,7 +146,7 @@ Index: src/drivers/driver_openbsd.c
  
  	drv = os_zalloc(sizeof(*drv));
  	if (drv == NULL)
-@@ -103,9 +207,26 @@ wpa_driver_openbsd_init(void *ctx, const char *ifname)
+@@ -104,9 +208,26 @@ wpa_driver_openbsd_init(void *ctx, const char *ifname)
  	if (drv->sock < 0)
  		goto fail;
  
@@ -173,7 +173,7 @@ Index: src/drivers/driver_openbsd.c
  	return drv;
  
  fail:
-@@ -119,7 +240,11 @@ wpa_driver_openbsd_deinit(void *priv)
+@@ -120,7 +241,11 @@ wpa_driver_openbsd_deinit(void *priv)
  {
  	struct openbsd_driver_data *drv = priv;
  

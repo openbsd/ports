@@ -1,11 +1,12 @@
-$OpenBSD: patch-src_utils_eloop_c,v 1.7 2016/10/07 14:44:03 dcoppa Exp $
+$OpenBSD: patch-src_utils_eloop_c,v 1.8 2019/04/26 13:32:36 sthen Exp $
 
 Don't try to access list members to free them unless already
 initialised
 
---- src/utils/eloop.c.orig	Sun Oct  2 20:51:11 2016
-+++ src/utils/eloop.c	Mon Oct  3 11:06:38 2016
-@@ -1249,6 +1249,9 @@ void eloop_destroy(void)
+Index: src/utils/eloop.c
+--- src/utils/eloop.c.orig
++++ src/utils/eloop.c
+@@ -1254,6 +1254,9 @@ void eloop_destroy(void)
  	struct eloop_timeout *timeout, *prev;
  	struct os_reltime now;
  
