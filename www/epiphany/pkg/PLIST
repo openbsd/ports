@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2019/01/06 12:59:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.47 2019/04/26 09:22:41 jasper Exp $
 @bin bin/epiphany
 lib/epiphany/
 lib/epiphany/libephymain.so
@@ -464,8 +464,6 @@ share/locale/fur/LC_MESSAGES/epiphany.mo
 share/locale/ga/LC_MESSAGES/epiphany.mo
 share/locale/gl/LC_MESSAGES/epiphany.mo
 share/locale/gu/LC_MESSAGES/epiphany.mo
-share/locale/gv/
-share/locale/gv/LC_MESSAGES/
 share/locale/gv/LC_MESSAGES/epiphany.mo
 share/locale/he/LC_MESSAGES/epiphany.mo
 share/locale/hi/LC_MESSAGES/epiphany.mo
@@ -530,8 +528,6 @@ share/locale/uz/LC_MESSAGES/epiphany.mo
 share/locale/uz@cyrillic/LC_MESSAGES/epiphany.mo
 share/locale/vi/LC_MESSAGES/epiphany.mo
 share/locale/wa/LC_MESSAGES/epiphany.mo
-share/locale/yo/
-share/locale/yo/LC_MESSAGES/
 share/locale/yo/LC_MESSAGES/epiphany.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany.mo
 share/locale/zh_HK/LC_MESSAGES/epiphany.mo
