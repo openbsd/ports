@@ -1,14 +1,14 @@
-$OpenBSD: patch-ui_base_ui_base_features_h,v 1.4 2019/03/24 12:24:46 robert Exp $
+$OpenBSD: patch-ui_base_ui_base_features_h,v 1.5 2019/04/26 09:38:20 robert Exp $
 
 Index: ui/base/ui_base_features.h
 --- ui/base/ui_base_features.h.orig
 +++ ui/base/ui_base_features.h
-@@ -46,7 +46,7 @@ UI_BASE_EXPORT bool IsUsingWMPointerForTouch();
- UI_BASE_EXPORT extern const base::Feature kEnableAutomaticUiAdjustmentsForTouch;
+@@ -63,7 +63,7 @@ COMPONENT_EXPORT(UI_BASE_FEATURES)
+ extern const base::Feature kEnableAutomaticUiAdjustmentsForTouch;
  #endif  // defined(OS_WIN) || defined(OS_CHROMEOS)
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
- UI_BASE_EXPORT extern const base::Feature kDirectManipulationStylus;
+ COMPONENT_EXPORT(UI_BASE_FEATURES)
+ extern const base::Feature kDirectManipulationStylus;
  #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
- 

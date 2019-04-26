@@ -1,0 +1,59 @@
+$OpenBSD: patch-gpu_vulkan_generate_bindings_py,v 1.1 2019/04/26 09:38:20 robert Exp $
+
+Index: gpu/vulkan/generate_bindings.py
+--- gpu/vulkan/generate_bindings.py.orig
++++ gpu/vulkan/generate_bindings.py
+@@ -232,7 +232,7 @@ struct VulkanFunctionPointers {
+   file.write("""\
+ 
+   // Device functions shared between Linux and Android.
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ """)
+ 
+   WriteFunctionDeclarations(file, device_functions_linux_or_android)
+@@ -244,7 +244,7 @@ struct VulkanFunctionPointers {
+   file.write("""\
+ 
+   // Linux-only device functions.
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ """)
+ 
+   WriteFunctionDeclarations(file, device_functions_linux)
+@@ -325,7 +325,7 @@ struct VulkanFunctionPointers {
+ 
+   file.write("""\
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ """)
+ 
+   WriteMacros(file, device_functions_linux_or_android)
+@@ -336,7 +336,7 @@ struct VulkanFunctionPointers {
+ 
+   file.write("""\
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ """)
+ 
+   WriteMacros(file, device_functions_linux)
+@@ -485,7 +485,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+ 
+   file.write("""\
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ 
+ """)
+ 
+@@ -498,7 +498,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+ 
+   file.write("""\
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ 
+ """)
+ 

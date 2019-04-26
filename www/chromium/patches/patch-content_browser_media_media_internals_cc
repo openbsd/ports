@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_browser_media_media_internals_cc,v 1.20 2019/03/24 12:24:45 robert Exp $
+$OpenBSD: patch-content_browser_media_media_internals_cc,v 1.21 2019/04/26 09:38:20 robert Exp $
 Index: content/browser/media/media_internals.cc
 --- content/browser/media/media_internals.cc.orig
 +++ content/browser/media/media_internals.cc
-@@ -763,7 +763,7 @@ void MediaInternals::UpdateVideoCaptureDeviceCapabilit
+@@ -766,7 +766,7 @@ void MediaInternals::UpdateVideoCaptureDeviceCapabilit
      device_dict->SetString("name", descriptor.GetNameAndModel());
      device_dict->Set("formats", std::move(format_list));
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \

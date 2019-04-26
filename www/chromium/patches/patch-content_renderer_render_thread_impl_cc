@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.34 2019/03/24 12:24:45 robert Exp $
+$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.35 2019/04/26 09:38:20 robert Exp $
 
 Index: content/renderer/render_thread_impl.cc
 --- content/renderer/render_thread_impl.cc.orig
@@ -25,7 +25,7 @@ Index: content/renderer/render_thread_impl.cc
  using base::ThreadRestrictions;
  using blink::WebDocument;
  using blink::WebFrame;
-@@ -926,7 +935,7 @@ void RenderThreadImpl::Init() {
+@@ -917,7 +926,7 @@ void RenderThreadImpl::Init() {
    DCHECK(parsed_num_raster_threads) << string_value;
    DCHECK_GT(num_raster_threads, 0);
  
@@ -34,7 +34,7 @@ Index: content/renderer/render_thread_impl.cc
    categorized_worker_pool_->SetBackgroundingCallback(
        main_thread_scheduler_->DefaultTaskRunner(),
        base::BindOnce(
-@@ -967,7 +976,7 @@ void RenderThreadImpl::Init() {
+@@ -958,7 +967,7 @@ void RenderThreadImpl::Init() {
    GetConnector()->BindInterface(mojom::kBrowserServiceName,
                                  mojo::MakeRequest(&storage_partition_service_));
  
@@ -43,7 +43,7 @@ Index: content/renderer/render_thread_impl.cc
    render_message_filter()->SetThreadPriority(
        ChildProcess::current()->io_thread_id(), base::ThreadPriority::DISPLAY);
  #endif
-@@ -1337,7 +1346,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1329,7 +1338,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
         gpu::kGpuFeatureStatusEnabled);
    const bool enable_gpu_memory_buffers =
        !is_gpu_compositing_disabled_ &&

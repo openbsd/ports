@@ -1,4 +1,4 @@
-$OpenBSD: patch-third_party_zlib_BUILD_gn,v 1.12 2019/03/24 12:24:46 robert Exp $
+$OpenBSD: patch-third_party_zlib_BUILD_gn,v 1.13 2019/04/26 09:38:20 robert Exp $
 
 Index: third_party/zlib/BUILD.gn
 --- third_party/zlib/BUILD.gn.orig
@@ -21,7 +21,7 @@ Index: third_party/zlib/BUILD.gn
        include_dirs = [ "." ]
  
        if (is_android) {
-@@ -306,7 +306,7 @@ static_library("minizip") {
+@@ -309,7 +309,7 @@ static_library("minizip") {
      ]
    }
  

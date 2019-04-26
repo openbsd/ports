@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_renderer_core_inspector_inspector_memory_agent_cc,v 1.1 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_core_inspector_inspector_memory_agent_cc,v 1.2 2019/04/26 09:38:20 robert Exp $
 
 Index: third_party/blink/renderer/core/inspector/inspector_memory_agent.cc
 --- third_party/blink/renderer/core/inspector/inspector_memory_agent.cc.orig
 +++ third_party/blink/renderer/core/inspector/inspector_memory_agent.cc
-@@ -171,7 +171,7 @@ InspectorMemoryAgent::GetSamplingProfileById(uint32_t 
+@@ -188,7 +188,7 @@ InspectorMemoryAgent::GetSamplingProfileById(uint32_t 
  
  std::vector<std::string> InspectorMemoryAgent::Symbolize(
      const std::vector<void*>& addresses) {

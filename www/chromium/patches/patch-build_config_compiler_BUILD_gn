@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.27 2019/03/24 12:24:44 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.28 2019/04/26 09:38:19 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
 +++ build/config/compiler/BUILD.gn
-@@ -53,7 +53,7 @@ declare_args() {
+@@ -54,7 +54,7 @@ declare_args() {
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
    linux_use_bundled_binutils =
@@ -12,7 +12,7 @@ Index: build/config/compiler/BUILD.gn
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -275,7 +275,7 @@ config("compiler") {
+@@ -279,7 +279,7 @@ config("compiler") {
      # Linker warnings.
      if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
          !(is_android && use_order_profiling) && !is_mac && !is_ios &&
@@ -21,25 +21,18 @@ Index: build/config/compiler/BUILD.gn
        # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
        # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
        # crbug.com/485542
-@@ -339,7 +339,7 @@ config("compiler") {
-       }
-     }
- 
--    if (is_official_build || force_local_build_id) {
-+    if ((is_official_build || force_local_build_id) && !is_openbsd) {
-       # Explicitly pass --build-id to ld. Compilers used to always pass this
-       # implicitly but don't any more (in particular clang when built without
-       # ENABLE_LINKER_BUILD_ID=ON). The crash infrastructure does need a build
-@@ -387,18 +387,13 @@ config("compiler") {
+@@ -371,6 +371,7 @@ config("compiler") {
      }
  
      ldflags += [
 +      "-Wl,-z,wxneeded",
        "-Wl,-z,noexecstack",
-       "-Wl,-z,now",
        "-Wl,-z,relro",
      ]
--
+@@ -379,13 +380,8 @@ config("compiler") {
+       ldflags += [ "-Wl,-z,now" ]
+     }
+ 
 -    # Compiler instrumentation can introduce dependencies in DSOs to symbols in
 -    # the executable they are loaded into, so they are unresolved at link-time.
 -    if (!using_sanitizer) {
@@ -52,7 +45,7 @@ Index: build/config/compiler/BUILD.gn
      }
    }
  
-@@ -502,7 +497,7 @@ config("compiler") {
+@@ -489,7 +485,7 @@ config("compiler") {
      }
    }
  
@@ -61,7 +54,7 @@ Index: build/config/compiler/BUILD.gn
      cflags += [
        # TODO(hans): Remove this once Clang generates better optimized debug info
        # by default. https://crbug.com/765793
-@@ -809,7 +804,7 @@ config("compiler_cpu_abi") {
+@@ -757,7 +753,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -70,7 +63,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1694,7 +1689,7 @@ config("thin_archive") {
+@@ -1707,7 +1703,7 @@ config("thin_archive") {
    # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
    # have a "thin archive" mode (it does accept -T, but it means truncating
    # archive names to 16 characters, which is not what we want).
@@ -79,7 +72,7 @@ Index: build/config/compiler/BUILD.gn
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2278,7 +2273,7 @@ config("symbols") {
+@@ -2291,7 +2287,7 @@ config("symbols") {
        # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
        # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
        if (!is_nacl || is_clang) {

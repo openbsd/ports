@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_crash_core_common_BUILD_gn,v 1.5 2019/03/24 12:24:45 robert Exp $
+$OpenBSD: patch-components_crash_core_common_BUILD_gn,v 1.6 2019/04/26 09:38:20 robert Exp $
 
 Index: components/crash/core/common/BUILD.gn
 --- components/crash/core/common/BUILD.gn.orig
@@ -12,7 +12,7 @@ Index: components/crash/core/common/BUILD.gn
  }
  
  group("common") {
-@@ -88,8 +88,6 @@ target(crash_key_target_type, "crash_key") {
+@@ -91,8 +91,6 @@ target(crash_key_target_type, "crash_key") {
          "crash_key_internal.h",
        ]
      }
@@ -21,7 +21,7 @@ Index: components/crash/core/common/BUILD.gn
    }
  }
  
-@@ -144,7 +142,7 @@ source_set("unit_tests") {
+@@ -147,7 +145,7 @@ source_set("unit_tests") {
      sources += [ "objc_zombie_unittest.mm" ]
    }
  

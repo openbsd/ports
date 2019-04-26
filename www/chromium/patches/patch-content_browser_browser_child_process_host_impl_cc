@@ -1,13 +1,13 @@
-$OpenBSD: patch-content_browser_browser_child_process_host_impl_cc,v 1.7 2019/03/24 12:24:45 robert Exp $
+$OpenBSD: patch-content_browser_browser_child_process_host_impl_cc,v 1.8 2019/04/26 09:38:20 robert Exp $
 
 Index: content/browser/browser_child_process_host_impl.cc
 --- content/browser/browser_child_process_host_impl.cc.orig
 +++ content/browser/browser_child_process_host_impl.cc
 @@ -316,6 +316,7 @@ void BrowserChildProcessHostImpl::LaunchWithoutExtraCo
-       switches::kDisableBackgroundTasks,
+       switches::kDisableBestEffortTasks,
        switches::kDisableLogging,
        switches::kEnableLogging,
 +      switches::kDisableUnveil,
+       switches::kEnablePerfetto,
        switches::kIPCConnectionTimeout,
        switches::kLogFile,
-       switches::kLoggingLevel,

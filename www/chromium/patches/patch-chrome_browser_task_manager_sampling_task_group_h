@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_h,v 1.9 2019/03/24 12:24:45 robert Exp $
+$OpenBSD: patch-chrome_browser_task_manager_sampling_task_group_h,v 1.10 2019/04/26 09:38:20 robert Exp $
 
 Index: chrome/browser/task_manager/sampling/task_group.h
 --- chrome/browser/task_manager/sampling/task_group.h.orig
 +++ chrome/browser/task_manager/sampling/task_group.h
-@@ -106,7 +106,7 @@ class TaskGroup {
+@@ -119,7 +119,7 @@ class TaskGroup {
    int nacl_debug_stub_port() const { return nacl_debug_stub_port_; }
  #endif  // BUILDFLAG(ENABLE_NACL)
  
@@ -12,7 +12,7 @@ Index: chrome/browser/task_manager/sampling/task_group.h
    int open_fd_count() const { return open_fd_count_; }
  #endif  // defined(OS_LINUX) || defined(OS_MACOSX)
  
-@@ -121,7 +121,7 @@ class TaskGroup {
+@@ -134,7 +134,7 @@ class TaskGroup {
    void RefreshNaClDebugStubPort(int child_process_unique_id);
    void OnRefreshNaClDebugStubPortDone(int port);
  #endif
@@ -21,7 +21,7 @@ Index: chrome/browser/task_manager/sampling/task_group.h
    void OnOpenFdCountRefreshDone(int open_fd_count);
  #endif  // defined(OS_LINUX) || defined(OS_MACOSX)
  
-@@ -191,7 +191,7 @@ class TaskGroup {
+@@ -205,7 +205,7 @@ class TaskGroup {
  #if BUILDFLAG(ENABLE_NACL)
    int nacl_debug_stub_port_;
  #endif  // BUILDFLAG(ENABLE_NACL)

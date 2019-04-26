@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_metrics_h,v 1.19 2019/03/24 12:24:44 robert Exp $
+$OpenBSD: patch-base_process_process_metrics_h,v 1.20 2019/04/26 09:38:19 robert Exp $
 
 Index: base/process/process_metrics.h
 --- base/process/process_metrics.h.orig
@@ -85,7 +85,7 @@ Index: base/process/process_metrics.h
  // Parse the data found in /proc/<pid>/stat and return the sum of the
  // CPU-related ticks.  Returns -1 on parse error.
  // Exposed for testing.
-@@ -547,7 +548,7 @@ class SystemMetrics {
+@@ -547,7 +548,7 @@ class BASE_EXPORT SystemMetrics {
    FRIEND_TEST_ALL_PREFIXES(SystemMetricsTest, SystemMetrics);
  
    size_t committed_memory_;

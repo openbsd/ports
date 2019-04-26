@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_renderer_core_paint_paint_layer_cc,v 1.1 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_core_paint_paint_layer_cc,v 1.2 2019/04/26 09:38:20 robert Exp $
 
 Index: third_party/blink/renderer/core/paint/paint_layer.cc
 --- third_party/blink/renderer/core/paint/paint_layer.cc.orig
 +++ third_party/blink/renderer/core/paint/paint_layer.cc
-@@ -104,7 +104,7 @@ namespace {
+@@ -103,7 +103,7 @@ namespace {
  static CompositingQueryMode g_compositing_query_mode =
      kCompositingQueriesAreOnlyAllowedInCertainDocumentLifecyclePhases;
  

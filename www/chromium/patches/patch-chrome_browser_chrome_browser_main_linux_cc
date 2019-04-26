@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_linux_cc,v 1.10 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_browser_main_linux_cc,v 1.11 2019/04/26 09:38:19 robert Exp $
 
 Index: chrome/browser/chrome_browser_main_linux.cc
 --- chrome/browser/chrome_browser_main_linux.cc.orig
 +++ chrome/browser/chrome_browser_main_linux.cc
-@@ -90,12 +90,14 @@ void ChromeBrowserMainPartsLinux::PreProfileInit() {
+@@ -91,12 +91,14 @@ void ChromeBrowserMainPartsLinux::PreProfileInit() {
  void ChromeBrowserMainPartsLinux::PostProfileInit() {
    ChromeBrowserMainPartsPosix::PostProfileInit();
  
@@ -19,7 +19,7 @@ Index: chrome/browser/chrome_browser_main_linux.cc
    bluez::BluezDBusThreadManager::Initialize();
    bluez::BluezDBusManager::Initialize();
  #endif
-@@ -104,7 +106,7 @@ void ChromeBrowserMainPartsLinux::PostMainMessageLoopS
+@@ -105,7 +107,7 @@ void ChromeBrowserMainPartsLinux::PostMainMessageLoopS
  }
  
  void ChromeBrowserMainPartsLinux::PostDestroyThreads() {

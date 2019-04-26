@@ -1,0 +1,23 @@
+$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_cc,v 1.1 2019/04/26 09:38:20 robert Exp $
+
+Index: gpu/vulkan/vulkan_function_pointers.cc
+--- gpu/vulkan/vulkan_function_pointers.cc.orig
++++ gpu/vulkan/vulkan_function_pointers.cc
+@@ -310,7 +310,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+ 
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+ 
+   vkGetSemaphoreFdKHRFn = reinterpret_cast<PFN_vkGetSemaphoreFdKHR>(
+       vkGetDeviceProcAddrFn(vk_device, "vkGetSemaphoreFdKHR"));
+@@ -319,7 +319,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+ 
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ 
+   vkGetMemoryFdKHRFn = reinterpret_cast<PFN_vkGetMemoryFdKHR>(
+       vkGetDeviceProcAddrFn(vk_device, "vkGetMemoryFdKHR"));

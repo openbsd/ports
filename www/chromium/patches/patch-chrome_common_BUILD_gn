@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_common_BUILD_gn,v 1.20 2019/03/24 12:24:45 robert Exp $
+$OpenBSD: patch-chrome_common_BUILD_gn,v 1.21 2019/04/26 09:38:20 robert Exp $
 Index: chrome/common/BUILD.gn
 --- chrome/common/BUILD.gn.orig
 +++ chrome/common/BUILD.gn
-@@ -300,6 +300,10 @@ static_library("common") {
+@@ -298,6 +298,10 @@ static_library("common") {
      public_deps += [ "//ppapi/shared_impl" ]
    }
  

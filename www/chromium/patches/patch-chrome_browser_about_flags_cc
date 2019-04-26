@@ -1,18 +1,18 @@
-$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.50 2019/03/24 12:24:44 robert Exp $
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.51 2019/04/26 09:38:19 robert Exp $
 
 Index: chrome/browser/about_flags.cc
 --- chrome/browser/about_flags.cc.orig
 +++ chrome/browser/about_flags.cc
-@@ -749,7 +749,7 @@ const FeatureEntry::FeatureVariation kAutofillPreviewS
-     {"(Black on GoogleYellow050)", kAutofillPreviewStyleBlackOnYellow050,
-      base::size(kAutofillPreviewStyleBlackOnYellow050), nullptr}};
- 
--#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
- const FeatureEntry::FeatureParam kPedalSuggestionInSuggestion[] = {
-     {OmniboxFieldTrial::kPedalSuggestionModeParam, "in_suggestion"}};
- const FeatureEntry::FeatureParam kPedalSuggestionDedicated[] = {
-@@ -2362,7 +2362,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -1615,7 +1615,7 @@ const FeatureEntry kFeatureEntries[] = {
+      SINGLE_VALUE_TYPE(
+          spellcheck::switches::kEnableSpellingFeedbackFieldTrial)},
+ #endif  // ENABLE_SPELLCHECK
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+     {"enable-webgl2-compute-context",
+      flag_descriptions::kWebGL2ComputeContextName,
+      flag_descriptions::kWebGL2ComputeContextDescription,
+@@ -2128,7 +2128,7 @@ const FeatureEntry kFeatureEntries[] = {
      {"force-text-direction", flag_descriptions::kForceTextDirectionName,
       flag_descriptions::kForceTextDirectionDescription, kOsAll,
       MULTI_VALUE_TYPE(kForceTextDirectionChoices)},
@@ -21,7 +21,7 @@ Index: chrome/browser/about_flags.cc
      {"enable-input-ime-api", flag_descriptions::kEnableInputImeApiName,
       flag_descriptions::kEnableInputImeApiDescription, kOsWin | kOsLinux,
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableInputImeAPI,
-@@ -2562,7 +2562,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -2321,7 +2321,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(chrome::android::kAndroidNightMode)},
  #endif  // BUILDFLAG(ENABLE_ANDROID_NIGHT_MODE)
  #endif  // OS_ANDROID
@@ -30,16 +30,16 @@ Index: chrome/browser/about_flags.cc
      {"passwords-migrate-linux-to-login-db",
       flag_descriptions::kPasswordsMigrateLinuxToLoginDBName,
       flag_descriptions::kPasswordsMigrateLinuxToLoginDBDescription, kOsLinux,
-@@ -3001,7 +3001,7 @@ const FeatureEntry kFeatureEntries[] = {
-      FEATURE_VALUE_TYPE(omnibox::kOmniboxNewAnswerLayout)},
- #endif  // defined(OS_ANDROID)
+@@ -2685,7 +2685,7 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kOmniboxRichEntitySuggestionsDescription, kOsAll,
+      FEATURE_VALUE_TYPE(omnibox::kOmniboxRichEntitySuggestions)},
  
 -#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
 +#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
-     {"omnibox-reverse-answers", flag_descriptions::kOmniboxReverseAnswersName,
-      flag_descriptions::kOmniboxReverseAnswersDescription, kOsDesktop,
-      FEATURE_VALUE_TYPE(omnibox::kOmniboxReverseAnswers)},
-@@ -3342,7 +3342,7 @@ const FeatureEntry kFeatureEntries[] = {
+     {"omnibox-experimental-keyword-mode",
+      flag_descriptions::kOmniboxExperimentalKeywordModeName,
+      flag_descriptions::kOmniboxExperimentalKeywordModeDescription, kOsDesktop,
+@@ -3040,7 +3040,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kClickToOpenPDFDescription, kOsAll,
       FEATURE_VALUE_TYPE(features::kClickToOpenPDFPlaceholder)},
  
@@ -48,7 +48,7 @@ Index: chrome/browser/about_flags.cc
      {"direct-manipulation-stylus",
       flag_descriptions::kDirectManipulationStylusName,
       flag_descriptions::kDirectManipulationStylusDescription,
-@@ -4280,7 +4280,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3940,7 +3940,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(features::kForceEnableSystemAec)},
  #endif  // defined(OS_MACOSX) || defined(OS_CHROMEOS)
  
@@ -57,7 +57,7 @@ Index: chrome/browser/about_flags.cc
      {"autofill-always-show-server-cards-in-sync-transport",
       flag_descriptions::kAutofillAlwaysShowServerCardsInSyncTransportName,
       flag_descriptions::
-@@ -4333,7 +4333,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -3993,7 +3993,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(features::kCrostiniAppSearch)},
  #endif  // OS_CHROMEOS
  

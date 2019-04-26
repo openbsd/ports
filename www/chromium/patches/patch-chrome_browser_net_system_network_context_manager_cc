@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_net_system_network_context_manager_cc,v 1.4 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-chrome_browser_net_system_network_context_manager_cc,v 1.5 2019/04/26 09:38:20 robert Exp $
 
 Index: chrome/browser/net/system_network_context_manager.cc
 --- chrome/browser/net/system_network_context_manager.cc.orig
 +++ chrome/browser/net/system_network_context_manager.cc
-@@ -69,7 +69,7 @@
+@@ -70,7 +70,7 @@
  #include "chrome/browser/chromeos/policy/browser_policy_connector_chromeos.h"
  #endif  // defined(OS_CHROMEOS)
  
@@ -12,7 +12,7 @@ Index: chrome/browser/net/system_network_context_manager.cc
  #include "chrome/common/chrome_paths_internal.h"
  #include "chrome/common/chrome_switches.h"
  #include "chrome/grit/chromium_strings.h"
-@@ -519,7 +519,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
+@@ -535,7 +535,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
    content::GetNetworkService()->ConfigureStubHostResolver(
        stub_resolver_enabled, std::move(dns_over_https_servers));
  

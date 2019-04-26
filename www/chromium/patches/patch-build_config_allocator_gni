@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_allocator_gni,v 1.8 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-build_config_allocator_gni,v 1.9 2019/04/26 09:38:19 robert Exp $
 
 Index: build/config/allocator.gni
 --- build/config/allocator.gni.orig
@@ -15,9 +15,9 @@ Index: build/config/allocator.gni
 @@ -17,7 +17,7 @@ if (is_android || is_mac || is_ios || is_asan || is_ls
  # against the debug CRT with "is_nacl=false".
  if ((is_linux || is_android || is_mac ||
-      (is_win && !is_component_build && !is_debug)) && !is_asan && !is_lsan &&
--    !is_tsan && !is_msan) {
-+    !is_tsan && !is_msan && !is_openbsd) {
+      (is_win && !is_component_build && !is_debug)) && !is_asan && !is_hwasan &&
+-    !is_lsan && !is_tsan && !is_msan) {
++    !is_lsan && !is_tsan && !is_msan && !is_openbsd) {
    _default_use_allocator_shim = true
  } else {
    _default_use_allocator_shim = false

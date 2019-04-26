@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_heap_thread_state_cc,v 1.5 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-third_party_blink_renderer_platform_heap_thread_state_cc,v 1.6 2019/04/26 09:38:20 robert Exp $
 
 Index: third_party/blink/renderer/platform/heap/thread_state.cc
 --- third_party/blink/renderer/platform/heap/thread_state.cc.orig
 +++ third_party/blink/renderer/platform/heap/thread_state.cc
-@@ -77,7 +77,7 @@
+@@ -79,7 +79,7 @@
  #include <sanitizer/msan_interface.h>
  #endif
  

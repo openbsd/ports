@@ -1,4 +1,4 @@
-$OpenBSD: patch-components_crash_content_app_BUILD_gn,v 1.15 2019/03/24 12:24:45 robert Exp $
+$OpenBSD: patch-components_crash_content_app_BUILD_gn,v 1.16 2019/04/26 09:38:20 robert Exp $
 
 Index: components/crash/content/app/BUILD.gn
 --- components/crash/content/app/BUILD.gn.orig
@@ -27,7 +27,7 @@ Index: components/crash/content/app/BUILD.gn
      deps += [
        "//third_party/crashpad/crashpad/client",
        "//third_party/crashpad/crashpad/util",
-@@ -79,7 +79,7 @@ static_library("app") {
+@@ -82,7 +82,7 @@ static_library("app") {
        "//third_party/crashpad/crashpad/snapshot",
      ]
  

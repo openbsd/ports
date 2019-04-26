@@ -1,8 +1,8 @@
-$OpenBSD: patch-base_process_launch_h,v 1.14 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-base_process_launch_h,v 1.15 2019/04/26 09:38:19 robert Exp $
 Index: base/process/launch.h
 --- base/process/launch.h.orig
 +++ base/process/launch.h
-@@ -175,7 +175,7 @@ struct BASE_EXPORT LaunchOptions {
+@@ -179,7 +179,7 @@ struct BASE_EXPORT LaunchOptions {
    FileHandleMappingVector fds_to_remap;
  #endif  // defined(OS_WIN)
  
