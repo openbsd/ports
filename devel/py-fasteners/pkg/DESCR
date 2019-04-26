@@ -22,5 +22,3 @@ Generic helpers
     given lock and provide back whether the attempt passed or failed (if
     it passes, then further code in the context manager will be ran with
     the lock acquired).
-
-
