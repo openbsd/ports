@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.24 2017/08/27 21:47:43 nigel Exp $
+# $OpenBSD: Makefile,v 1.25 2019/04/26 13:36:28 sebastia Exp $
 
 COMMENT =	web and CGI vulnerability scanner with SSL support
 
 GH_ACCOUNT =	sullo
 GH_PROJECT =	nikto
 GH_TAGNAME =	2.1.6
+REVISION =	0
 
 EPOCH = 	0
 CATEGORIES =	security www
 
-HOMEPAGE =	http://www.cirt.net/nikto2
+HOMEPAGE =	https://www.cirt.net/nikto2
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
@@ -25,7 +26,8 @@ PKG_ARCH =	*
 pre-configure:
 	sed -i 's%# EXECDIR=.*%EXECDIR=${PREFIX}/share/nikto%; \
 		s%# DOCDIR=.*%DOCDIR=${PREFIX}/share/doc/nikto%; \
-		s%# DBDIR=.*%DBDIR=/var/db/nikto/databases%' \
+		s%# DBDIR=.*%DBDIR=/var/db/nikto/databases%; \
+		s%NIKTODTD=.*%NIKTODTD=${PREFIX}/share/doc/nikto/nikto.dtd%' \
 		${WRKSRC}/program/nikto.conf
 
 do-install:
