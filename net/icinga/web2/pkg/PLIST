@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/11/22 22:20:12 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/04/26 13:23:06 sthen Exp $
 @newgroup _icingaweb2:762
 @newuser _icingaweb2:762:_icingaweb2:daemon:Icinga-web2 user:${PREFIX}/icinga-web2:/sbin/nologin
 @extraunexec rm -rf %D/etc/icingaweb2/*
@@ -537,6 +537,7 @@ icinga-web2/library/Icinga/Util/ConfigAwareFactory.php
 icinga-web2/library/Icinga/Util/Dimension.php
 icinga-web2/library/Icinga/Util/DirectoryIterator.php
 icinga-web2/library/Icinga/Util/EnumeratingFilterIterator.php
+icinga-web2/library/Icinga/Util/Environment.php
 icinga-web2/library/Icinga/Util/File.php
 icinga-web2/library/Icinga/Util/Format.php
 icinga-web2/library/Icinga/Util/GlobFilter.php
@@ -2897,6 +2898,7 @@ icinga-web2/public/js/vendor/jquery.sparkline.min.js
 icinga-web2/public/js/vendor/jquery.tipsy.js
 icinga-web2/public/js/vendor/jquery.tipsy.min.js
 icinga-web2/test/
+icinga-web2/test/check-syntax.php
 icinga-web2/test/php/
 icinga-web2/test/php/application/
 icinga-web2/test/php/application/forms/
@@ -2953,6 +2955,7 @@ icinga-web2/test/php/library/Icinga/UserTest.php
 icinga-web2/test/php/library/Icinga/Util/
 icinga-web2/test/php/library/Icinga/Util/ASN1Test.php
 icinga-web2/test/php/library/Icinga/Util/DimensionTest.php
+icinga-web2/test/php/library/Icinga/Util/EnvironmentTest.php
 icinga-web2/test/php/library/Icinga/Util/FileTest.php
 icinga-web2/test/php/library/Icinga/Util/GlobFilterTest.php
 icinga-web2/test/php/library/Icinga/Util/StringHelperTest.php
