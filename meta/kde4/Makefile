@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2019/04/15 18:43:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.64 2019/04/26 13:43:52 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -28,11 +28,11 @@ PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 
 REVISION-minimal =	10
 REVISION-games = 3
-REVISION-sdk = 3
+REVISION-sdk = 4
 REVISION-edu = 5
 REVISION-multimedia = 0
 REVISION-extras = 10
-REVISION-main =		24
+REVISION-main =		25
 REVISION-admin =	1
 REVISION-graphics =	3
 
@@ -123,7 +123,6 @@ RUN_DEPENDS-network = \
 RUN_DEPENDS-sdk = \
 	${MODKDE4_DEP_DIR}/dev-scripts		\
 	${MODKDE4_DEP_DIR}/dev-utils		\
-	${MODKDE4_DEP_DIR}/dolphin-plugins	\
 	${MODKDE4_DEP_DIR}/kapptemplate		\
 	${MODKDE4_DEP_DIR}/kcachegrind		\
 	${MODKDE4_DEP_DIR}/lokalize		\

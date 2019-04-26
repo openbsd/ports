@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2019/04/15 18:43:35 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.70 2019/04/26 13:43:52 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -250,7 +250,7 @@ SUBDIR += zeroconf-ioslave
 #SUBDIR += cervisia			x11/kde-applications
 SUBDIR += dev-scripts
 SUBDIR += dev-utils
-SUBDIR += dolphin-plugins
+#SUBDIR += dolphin-plugins		x11/kde-applications
 SUBDIR += kapptemplate
 SUBDIR += kcachegrind
 #SUBDIR += kompare			x11/kde-applications
