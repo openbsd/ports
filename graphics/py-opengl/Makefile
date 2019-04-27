@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2017/06/19 18:26:30 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2019/04/27 14:02:39 sthen Exp $
 
 COMMENT =		Python bindings for OpenGL
-MODPY_EGG_VERSION =	3.1.0
+MODPY_EGG_VERSION =	3.1.3b2
 DISTNAME =		PyOpenGL-${MODPY_EGG_VERSION}
 PKGNAME =		py-opengl-${MODPY_EGG_VERSION}
 
@@ -21,17 +21,8 @@ MODPY_SETUPTOOLS =	Yes
 
 LIB_DEPENDS =		graphics/freeglut
 
-.if ${FLAVOR:Mpython3}
+# multi version py2+3 test infrastructure using virtualenv,
+# not handled in this port yet
 NO_TEST =	Yes
-.else
-TEST_IS_INTERACTIVE =	 X11
-
-TEST_DEPENDS =		${BASE_PKGPATH} \
-			devel/pygame \
-			math/py-numpy
-
-do-test:
-	${MODPY_BIN} ${WRKSRC}/tests/tests.py
-.endif
 
 .include <bsd.port.mk>

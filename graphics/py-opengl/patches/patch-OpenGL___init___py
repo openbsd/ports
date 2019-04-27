@@ -1,14 +1,15 @@
-$OpenBSD: patch-OpenGL___init___py,v 1.4 2017/06/19 18:26:30 landry Exp $
+$OpenBSD: patch-OpenGL___init___py,v 1.5 2019/04/27 14:02:39 sthen Exp $
 Index: OpenGL/__init__.py
 --- OpenGL/__init__.py.orig
 +++ OpenGL/__init__.py
-@@ -203,6 +203,9 @@ MODULE_ANNOTATIONS = False
+@@ -212,6 +212,10 @@ TYPE_ANNOTATIONS = False
  from OpenGL.plugins import PlatformPlugin, FormatHandler
  PlatformPlugin( 'nt', 'OpenGL.platform.win32.Win32Platform' )
  PlatformPlugin( 'linux2', 'OpenGL.platform.glx.GLXPlatform' )
 +PlatformPlugin( 'openbsd4', 'OpenGL.platform.glx.GLXPlatform' )
 +PlatformPlugin( 'openbsd5', 'OpenGL.platform.glx.GLXPlatform' )
 +PlatformPlugin( 'openbsd6', 'OpenGL.platform.glx.GLXPlatform' )
++PlatformPlugin( 'openbsd7', 'OpenGL.platform.glx.GLXPlatform' )
  PlatformPlugin( 'darwin', 'OpenGL.platform.darwin.DarwinPlatform' )
  PlatformPlugin( 'posix', 'OpenGL.platform.glx.GLXPlatform' )
  PlatformPlugin( 'osmesa', 'OpenGL.platform.osmesa.OSMesaPlatform')
