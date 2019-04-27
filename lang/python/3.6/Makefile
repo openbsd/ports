@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/04/21 09:32:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/04/27 21:28:30 sthen Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -10,8 +10,7 @@ PATCHLEVEL =		.8
 SHARED_LIBS =		python3.6m 0.0
 VERSION_SPEC =		>=3.6,<3.7
 
-REVISION-main =		1
-REVISION =		0
+REVISION =		2
 
 CONFIGURE_ARGS +=	--with-ensurepip=no
 CONFIGURE_ARGS +=	--enable-loadable-sqlite-extensions

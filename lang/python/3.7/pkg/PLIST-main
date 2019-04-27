@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2019/04/21 09:33:32 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2019/04/27 21:28:30 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python->=3.7,<3.8
-@pkgpath lang/python3/3.7,-main
+@conflict python->=3,<3.6.8p2
 @comment bin/2to3
 bin/2to3-3.7
-@comment bin/pydoc3
+bin/pydoc3
 bin/pydoc3.7
-@comment bin/python3
-@comment bin/python3-config
+bin/python3
+bin/python3-config
 @bin bin/python3.7
 bin/python3.7-config
 @bin bin/python3.7m
@@ -133,7 +133,7 @@ include/python3.7m/weakrefobject.h
 @comment lib/libpython3.so
 lib/pkgconfig/python-3.7.pc
 lib/pkgconfig/python-3.7m.pc
-@comment lib/pkgconfig/python3.pc
+lib/pkgconfig/python3.pc
 lib/python3.7/
 lib/python3.7/LICENSE.txt
 lib/python3.7/__future__.py

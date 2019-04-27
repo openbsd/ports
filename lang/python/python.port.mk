@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.107 2019/04/23 12:30:47 kmos Exp $
+# $OpenBSD: python.port.mk,v 1.108 2019/04/27 21:28:30 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -7,7 +7,7 @@ CATEGORIES +=		lang/python
 
 # define the default versions
 MODPY_DEFAULT_VERSION_2 = 2.7
-MODPY_DEFAULT_VERSION_3 = 3.6
+MODPY_DEFAULT_VERSION_3 = 3.7
 
 .if !defined(MODPY_VERSION)
 

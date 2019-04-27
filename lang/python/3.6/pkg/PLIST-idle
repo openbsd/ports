@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-idle,v 1.7 2019/02/28 09:11:28 rpointel Exp $
+@comment $OpenBSD: PLIST-idle,v 1.8 2019/04/27 21:28:30 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-idle->=3.6,<3.7
 @conflict python->=3.6,<3.6.8p0
 @pkgpath lang/python3/3.6,-idle
-bin/idle3
+@comment bin/idle3
 bin/idle3.6
 lib/python3.6/idlelib/
 lib/python3.6/idlelib/CREDITS.txt
