@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/07/11 12:18:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/04/27 08:08:42 ajacoutot Exp $
 @comment Error switching to user _polkitd: Error changing to home directory /nonexistent
 @newgroup _polkitd:701
 @newuser _polkitd:701:_polkitd:daemon:Polkit Daemon User:/var/empty:/sbin/nologin
@@ -94,6 +94,7 @@ share/locale/de/LC_MESSAGES/polkit-1.mo
 share/locale/hr/LC_MESSAGES/polkit-1.mo
 share/locale/hu/LC_MESSAGES/polkit-1.mo
 share/locale/id/LC_MESSAGES/polkit-1.mo
+share/locale/it/LC_MESSAGES/polkit-1.mo
 share/locale/pl/LC_MESSAGES/polkit-1.mo
 share/locale/pt_BR/LC_MESSAGES/polkit-1.mo
 share/locale/sk/LC_MESSAGES/polkit-1.mo
