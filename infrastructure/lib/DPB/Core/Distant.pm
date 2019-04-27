@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.21 2018/07/21 07:38:46 espie Exp $
+# $OpenBSD: Distant.pm,v 1.22 2019/04/27 20:26:43 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -150,7 +150,7 @@ sub new
 {
 	my ($class, $host) = @_;
 	$TMPDIR //= $ENV{PKG_TMPDIR} || '/var/tmp';
-	my $timeout = 60;
+	my $timeout = 10;
 	my $socket = "$TMPDIR/ssh-$host-$$";
 	my $o = $class->SUPER::new(DPB::Task::SshMaster->new($socket,
 	    $timeout, $host), "ssh master for $host");
