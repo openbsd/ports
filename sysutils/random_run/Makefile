@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/25 22:13:22 espie Exp $
-
-# TODO awaiting the gcc8 switch
-ONLY_FOR_ARCHS = ${CLANG_ARCHS}
+# $OpenBSD: Makefile,v 1.3 2019/04/27 21:31:18 espie Exp $
 
 COMMENT =	run command with randomized parameters
 CATEGORIES = 	sysutils
