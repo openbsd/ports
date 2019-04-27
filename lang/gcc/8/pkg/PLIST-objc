@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-objc,v 1.1.1.1 2019/01/04 15:50:40 pascal Exp $
+@comment $OpenBSD: PLIST-objc,v 1.2 2019/04/27 21:26:35 naddy Exp $
 @option is-branch
+@conflict gobjc-<9
+@pkgpath lang/gcc/4.9,-objc
 lib/gcc/${CONFIG}/${V}/include/objc/
 lib/gcc/${CONFIG}/${V}/include/objc/NXConstStr.h
 lib/gcc/${CONFIG}/${V}/include/objc/Object.h

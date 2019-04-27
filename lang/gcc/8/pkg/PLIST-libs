@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-libs,v 1.1.1.1 2019/01/04 15:50:40 pascal Exp $
+@comment $OpenBSD: PLIST-libs,v 1.2 2019/04/27 21:26:35 naddy Exp $
 @option no-default-conflict
 @option is-branch
-@conflict gcc-libs->=8,<9
+@conflict gcc-libs-<9
+@pkgpath lang/gcc/4.9,-libs
 lib/libatomic.la
 @lib lib/libatomic.so.${LIBatomic_VERSION}
 lib/libestdc++.la

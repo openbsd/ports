@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.216 2019/03/09 06:18:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.217 2019/04/27 21:26:34 naddy Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -20,7 +20,7 @@ PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	9
+REVISION-main =	10
 REVISION-lldb =	0
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
@@ -114,7 +114,7 @@ PKG_ARGS +=		-Dpowerpc=0
 TEST_TARGET =		check
 
 # XXX sync
-GCC_VER =		4.9.4
+GCC_VER =		8.3.0
 .if ${MACHINE_ARCH} == "amd64"
 GCC_CONFIG =		x86_64-unknown-openbsd${OSREV}
 .else
