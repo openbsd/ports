@@ -1,4 +1,4 @@
-# $OpenBSD: xfce4.port.mk,v 1.26 2018/11/10 12:39:11 landry Exp $
+# $OpenBSD: xfce4.port.mk,v 1.27 2019/04/27 16:08:56 landry Exp $
 
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
@@ -80,8 +80,8 @@ DISTNAME =	${DISTNAME_GIT}
 MASTER_SITES =	${MASTER_SITES_GIT}
 EXTRACT_SUFX =	.tar.gz
 CONFIGURE_ARGS +=	--enable-maintainer-mode --enable-debug
-AUTOMAKE_VERSION =	1.12
-AUTOCONF_VERSION =	2.65
+AUTOMAKE_VERSION =	1.14
+AUTOCONF_VERSION =	2.69
 MODXFCE4_gen =	cd ${WRKSRC} && env NOCONFIGURE=yes \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		./autogen.sh
