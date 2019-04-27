@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.77 2018/07/15 11:56:43 espie Exp $
+# $OpenBSD: Config.pm,v 1.78 2019/04/27 09:42:26 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -183,11 +183,11 @@ sub parse_command_line
 		"PORTSDIR", "PORTSDIR_PATH", "PACKAGE_REPOSITORY", 
 		"MACHINE_ARCH", "DISTDIR", "LOCALBASE", "MASTER_SITE_BACKUP");
 
-	$state->{backup_sites} = [AddList->make_list($backup)];
-
     	if (!defined $state->{portspath}) {
 		$state->usage("Can't obtain vital information from the ports tree");
 	}
+	$state->{backup_sites} = [AddList->make_list($backup)];
+
 	$state->{portspath} = [ map {$state->anchor($_)} split(/:/, $state->{portspath}) ];
 	$state->{realports} = $state->anchor($state->{ports});
 	$state->{realdistdir} = $state->anchor($state->{distdir});
