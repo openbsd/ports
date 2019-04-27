@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/03/24 11:56:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2019/04/27 14:38:54 sthen Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
@@ -17,7 +17,8 @@ WANTLIB += KF5NewStuffCore KF5Parts KF5Pty KF5Service KF5Solid
 WANTLIB += KF5SonnetUi KF5TextEditor KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml Qt5XmlPatterns c
-WANTLIB += cln m python2.7 python3.6m qalculate spectre
+# XXX should use MODPY_WANTLIB, but difficult with the mix of py2+py3
+WANTLIB += cln m python2.7 python${MODPY_DEFAULT_VERSION_3}m qalculate spectre
 WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
 WANTLIB += luajit-${MODLUA_DEFAULT_VERSION} KF5SyntaxHighlighting
 
