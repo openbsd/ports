@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/08/19 09:00:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2019/04/27 23:55:04 sthen Exp $
 
 COMMENT =		birthday reminder with tray notification
 
@@ -24,8 +24,6 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 NO_TEST =		Yes
 
 MODPY_ADJ_FILES += 	src/gb
-
-PKG_ARCH = 		*
 
 NO_BUILD =		Yes
 MODPY_BUILDDEP =	Yes

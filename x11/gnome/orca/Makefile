@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.103 2019/02/01 10:52:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2019/04/27 23:55:04 sthen Exp $
 
 # XXX could use brltty and brlapi (with python bindinds) -- not ported yet
-
-PKG_ARCH=		*
 
 COMMENT=		assistive screen reader
 

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/01/06 14:03:48 ajacoutot Exp $
-
-PKG_ARCH=		*
+# $OpenBSD: Makefile,v 1.7 2019/04/27 23:55:05 sthen Exp $
 
 COMMENT=		customize advanced GNOME 3 options
 

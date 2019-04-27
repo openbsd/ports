@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/01/01 11:37:46 ajacoutot Exp $
-
-PKG_ARCH=		*
+# $OpenBSD: Makefile,v 1.34 2019/04/27 23:55:05 sthen Exp $
 
 COMMENT=		python bindings for at-spi2
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2018/07/01 18:33:36 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2019/04/27 23:55:04 sthen Exp $
 
 COMMENT=	gtk2 comic book viewer
 
@@ -43,7 +43,5 @@ do-install:
 		${INSTALL_DATA_DIR} ${WRKINST}/${LOCALBASE}/${SCHEMAS_INSTDIR}/
 		${INSTALL_DATA} ${WRKSRC}/mime/comicbook.schemas \
 			${WRKINST}/${LOCALBASE}/${SCHEMAS_INSTDIR}/
-
-PKG_ARCH=	*
 
 .include <bsd.port.mk>

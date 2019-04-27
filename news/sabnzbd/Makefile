@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/03/20 05:58:17 bket Exp $
+# $OpenBSD: Makefile,v 1.19 2019/04/27 23:55:04 sthen Exp $
 
 COMMENT =			retrieve and process nzb-files via web interface
 VERSION =			2.3.8
@@ -28,7 +28,6 @@ RUN_DEPENDS =			archivers/par2cmdline \
 
 NO_BUILD =			Yes
 NO_TEST =			Yes
-PKG_ARCH =			*
 
 do-install:
 	${INSTALL_DATA_DIR} \

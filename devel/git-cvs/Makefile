@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/12/29 07:24:49 florian Exp $
+# $OpenBSD: Makefile,v 1.9 2019/04/27 23:55:04 sthen Exp $
 
 COMMENT =	import changesets from CVS into Git
 
@@ -27,8 +27,6 @@ RUN_DEPENDS=	devel/git \
 		devel/py-rcsparse
 TEST_DEPENDS=	${BUILD_DEPENDS} \
 		${RUN_DEPENDS}
-
-PKG_ARCH =	*
 
 # for regression tests:
 # cvs(1) insists on doing a chdir(2) to HOME before checkout

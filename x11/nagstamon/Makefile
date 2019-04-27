@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/12/31 08:35:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2019/04/27 23:55:05 sthen Exp $
 
 COMMENT=		nagios status monitor for the Desktop
 
@@ -17,8 +17,6 @@ MAINTAINER=		Nicolas P. M. Legrand <nlegrand@ethelred.fr>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		https://nagstamon.ifw-dresden.de/files/stable/
-
-PKG_ARCH=		*
 
 MODULES=		lang/python
 

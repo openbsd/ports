@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/07/31 11:39:50 kirby Exp $
+# $OpenBSD: Makefile,v 1.9 2019/04/27 23:55:04 sthen Exp $
 
 COMMENT =		Gnu All Mobile Management Utilities GUI
 
@@ -25,7 +25,5 @@ RUN_DEPENDS =		comms/py-gammu \
 			x11/py-wxPython
 
 NO_TEST = 		Yes
-
-PKG_ARCH = 		*
 
 .include <bsd.port.mk>

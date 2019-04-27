@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/01/06 17:18:08 solene Exp $
+# $OpenBSD: Makefile,v 1.10 2019/04/27 23:55:04 sthen Exp $
 
 COMMENT =	mail client with encryption and privacy features
 PKGNAME =	${DISTNAME:L}
@@ -26,8 +26,6 @@ RUN_DEPENDS =	devel/py-fasteners \
 
 TEST_DEPENDS =	shells/bash \
 		${RUN_DEPENDS}
-
-PKG_ARCH =	*
 
 INSTDIR =	${PREFIX}/share/mailpile
 

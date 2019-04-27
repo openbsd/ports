@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2019/04/24 08:04:06 bentley Exp $
+# $OpenBSD: Makefile,v 1.186 2019/04/27 23:55:04 sthen Exp $
 
 COMMENT =	CLI program to download videos from YouTube and other sites
 
@@ -32,8 +32,6 @@ pre-test:
 
 do-test:
 	${TEST_ENV} ${MAKE_PROGRAM} -C ${WRKSRC} ${TEST_TARGET}
-
-PKG_ARCH =	*
 
 WRKDIST =	${WRKDIR}/youtube-dl
 

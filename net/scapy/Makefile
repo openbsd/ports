@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/04/24 21:27:26 bluhm Exp $
+# $OpenBSD: Makefile,v 1.36 2019/04/27 23:55:04 sthen Exp $
 
 COMMENT=	powerful interactive packet manipulation in python
 
@@ -28,8 +28,6 @@ RUN_DEPENDS=	net/libdnet,-python \
 		net/py-libpcap \
 		security/py-cryptodome \
 		security/py-ecdsa
-
-PKG_ARCH=	*
 
 pre-configure:
 	sed -i "s,/etc/ethertypes,${SYSCONFDIR}/ethertypes,g" \

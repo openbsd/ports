@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/06/27 21:03:50 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/04/27 23:55:04 sthen Exp $
 
 COMMENT =	data files for vegastrike
 
@@ -7,8 +7,6 @@ REVISION = 	2
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
-
-PKG_ARCH =	*
 
 EXTRACT_ONLY =
 

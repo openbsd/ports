@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/06/27 21:03:36 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/04/27 23:55:04 sthen Exp $
 
 COMMENT=		frontend to mpd written in Python
 
@@ -20,7 +20,6 @@ BUILD_DEPENDS=		x11/py-gtk2
 RUN_DEPENDS=		x11/py-gtk2 \
 			devel/desktop-file-utils
 
-PKG_ARCH=		*
 NO_TEST=		Yes
 
 do-configure:

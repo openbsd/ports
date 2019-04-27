@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/03/12 14:00:26 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.17 2019/04/27 23:55:04 sthen Exp $
 
 COMMENT =		penetration testing tool to detect/exploit SQL injection
 
@@ -24,7 +24,6 @@ BUILD_DEPENDS +=	${_MODPY_BUILD_DEPENDS}
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
-PKG_ARCH =		*
 
 INSTDIR =		${PREFIX}/share/sqlmap
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2019/04/18 17:20:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.88 2019/04/27 23:55:04 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
@@ -44,8 +44,6 @@ RUN_DEPENDS =	databases/py-mysql${MODPY_FLAVOR} \
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
-
-PKG_ARCH =	*
 
 PREFIX =	/var/www
 INSTDIR =	${PREFIX}/librenms

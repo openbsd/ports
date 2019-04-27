@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2018/10/17 14:15:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2019/04/27 23:55:04 sthen Exp $
 
 COMMENT=		open source web analytics software program
 
@@ -18,7 +18,6 @@ WRKDIST=		${WRKDIR}/piwik
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
-PKG_ARCH=		*
 
 PREFIX=			${VARBASE}/www
 INSTDIR=		${PREFIX}/piwik/

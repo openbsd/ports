@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/05/01 09:16:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2019/04/27 23:55:04 sthen Exp $
 
 COMMENT=	graphical network simulator
 
@@ -22,7 +22,6 @@ RUN_DEPENDS=	x11/py-qt4 \
 
 WRKDIST=	${WRKDIR}/gns3-legacy-GNS3-${MODPY_EGG_VERSION}
 NO_TEST=	Yes
-PKG_ARCH=	*
 
 MODPY_ADJ_FILES = qemuwrapper/qemuwrapper.py
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/06/27 06:31:42 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2019/04/27 23:55:04 sthen Exp $
 
 COMMENT=	collection of educational activities for young children
 
@@ -24,7 +24,6 @@ RUN_DEPENDS=	databases/py-sqlalchemy \
 		devel/pygame \
 		x11/py-gtk2
 
-PKG_ARCH=	*
 NO_TEST=	Yes
 NO_BUILD=	Yes
 

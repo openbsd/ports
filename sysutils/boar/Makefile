@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/08/19 09:00:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/27 23:55:04 sthen Exp $
 
 COMMENT=	version control system for large binary files
 
@@ -21,7 +21,6 @@ MODPY_BUILDDEP=	Yes
 NO_TEST=	Yes
 
 WRKDIST=	${WRKDIR}/boar
-PKG_ARCH=	*
 
 INSTDIR=	${PREFIX}/share/boar
 
