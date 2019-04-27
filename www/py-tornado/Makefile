@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.18 2017/05/17 11:34:17 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2019/04/27 14:32:21 sthen Exp $
 
 COMMENT =		scalable, non-blocking web server
 
-MODPY_EGG_VERSION =	4.4.2
+# 5.x is the last major release which support both py2+3, 6.x is py3-only
+MODPY_EGG_VERSION =	5.1.1
 DISTNAME =		tornado-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		www
 
-HOMEPAGE =		http://www.tornadoweb.org/
+HOMEPAGE =		https://www.tornadoweb.org/
 
 # Apache v2
 PERMIT_PACKAGE_CDROM =	Yes

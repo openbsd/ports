@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/01/03 18:58:52 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/04/27 14:32:22 sthen Exp $
 !%%python3%%
 lib/python${MODPY_VERSION}/site-packages/tornado/
 lib/python${MODPY_VERSION}/site-packages/tornado-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -29,6 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/tornado/${MODPY_PYCACHE}netutil.${MODPY
 lib/python${MODPY_VERSION}/site-packages/tornado/${MODPY_PYCACHE}options.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/${MODPY_PYCACHE}process.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/${MODPY_PYCACHE}queues.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tornado/${MODPY_PYCACHE}routing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/${MODPY_PYCACHE}simple_httpclient.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/${MODPY_PYCACHE}stack_context.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/${MODPY_PYCACHE}tcpclient.${MODPY_PYC_MAGIC_TAG}pyc
@@ -85,6 +86,7 @@ lib/python${MODPY_VERSION}/site-packages/tornado/platform/twisted.py
 lib/python${MODPY_VERSION}/site-packages/tornado/platform/windows.py
 lib/python${MODPY_VERSION}/site-packages/tornado/process.py
 lib/python${MODPY_VERSION}/site-packages/tornado/queues.py
+lib/python${MODPY_VERSION}/site-packages/tornado/routing.py
 lib/python${MODPY_VERSION}/site-packages/tornado/simple_httpclient.py
 lib/python${MODPY_VERSION}/site-packages/tornado/speedups.so
 lib/python${MODPY_VERSION}/site-packages/tornado/stack_context.py
@@ -99,6 +101,7 @@ lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}__init__.$
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}asyncio_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}auth_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}autoreload_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}concurrent_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}curl_httpclient_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}escape_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -118,6 +121,7 @@ lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}options_te
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}process_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}queues_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}resolve_test_helper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}routing_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}runtests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}simple_httpclient_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}stack_context_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -134,6 +138,7 @@ lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}windows_te
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}wsgi_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/asyncio_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/auth_test.py
+lib/python${MODPY_VERSION}/site-packages/tornado/test/autoreload_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/concurrent_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/csv_translations/
 lib/python${MODPY_VERSION}/site-packages/tornado/test/csv_translations/fr_FR.csv
@@ -158,9 +163,12 @@ lib/python${MODPY_VERSION}/site-packages/tornado/test/log_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/netutil_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/options_test.cfg
 lib/python${MODPY_VERSION}/site-packages/tornado/test/options_test.py
+lib/python${MODPY_VERSION}/site-packages/tornado/test/options_test_types.cfg
+lib/python${MODPY_VERSION}/site-packages/tornado/test/options_test_types_str.cfg
 lib/python${MODPY_VERSION}/site-packages/tornado/test/process_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/queues_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/resolve_test_helper.py
+lib/python${MODPY_VERSION}/site-packages/tornado/test/routing_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/runtests.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/simple_httpclient_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/stack_context_test.py
