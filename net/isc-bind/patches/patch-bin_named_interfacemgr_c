@@ -1,0 +1,32 @@
+$OpenBSD: patch-bin_named_interfacemgr_c,v 1.1 2019/04/27 22:26:55 sthen Exp $
+
+From ef49780d30d3ddc5735cfc32561b678a634fa72f Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ond=C5=99ej=20Sur=C3=BD?= <ondrej@sury.org>
+Date: Wed, 17 Apr 2019 15:22:27 +0200
+Subject: [PATCH] Replace atomic operations in bin/named/client.c with
+ isc_refcount reference counting
+
+Index: bin/named/interfacemgr.c
+--- bin/named/interfacemgr.c.orig
++++ bin/named/interfacemgr.c
+@@ -386,8 +386,8 @@ ns_interface_create(ns_interfacemgr_t *mgr, isc_sockad
+ 	 * connections will be handled in parallel even though there is
+ 	 * only one client initially.
+ 	 */
+-	ifp->ntcpaccepting = 0;
+-	ifp->ntcpactive = 0;
++	isc_refcount_init(&ifp->ntcpaccepting, 0);
++	isc_refcount_init(&ifp->ntcpactive, 0);
+ 
+ 	ifp->nudpdispatch = 0;
+ 
+@@ -617,6 +617,9 @@ ns_interface_destroy(ns_interface_t *ifp) {
+ 	DESTROYLOCK(&ifp->lock);
+ 
+ 	ns_interfacemgr_detach(&ifp->mgr);
++
++	isc_refcount_destroy(&ifp->ntcpactive);
++	isc_refcount_destroy(&ifp->ntcpaccepting);
+ 
+ 	ifp->magic = 0;
+ 	isc_mem_put(mctx, ifp, sizeof(*ifp));
