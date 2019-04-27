@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.31 2018/06/27 21:03:43 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2019/04/27 13:24:42 edd Exp $
 # Original from: Robert Ruehlmann
 
 COMMENT=		rogue-like game with X11 support
 COMMENT-no_x11=		rogue-like game
 
-V =			3.3.2
+V =			4.1.3
 V_DLDIR =		${V:C/\.[0-9]$//}
-DISTNAME=		angband-v${V}
-PKGNAME=		angband-${V}
+DISTNAME=		angband-${V}
 CATEGORIES=     	games
-REVISION=		2
 
 HOMEPAGE=		http://rephial.org
 
@@ -17,27 +15,32 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # Multi license, including GPLv2, angband license, CC, freeware...
 # The angband license contains the line "other copyrights may also apply"
+# See ${WRKSRC}/copying.txt for a list.
 PERMIT_PACKAGE_CDROM=	unclear license
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=		c m ncurses
+WANTLIB=		c m curses
 
 MASTER_SITES =		${HOMEPAGE}/downloads/${V_DLDIR}/
 
 CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.15
+
 CONFIGURE_ENV +=	"LDFLAGS=-L${LOCALBASE}/lib"
 CONFIGURE_ARGS +=	--with-setgid=games \
 			--with-varpath=/var/games/angband \
-			--with-configpath=${PREFIX}/share/angband \
 			--bindir=${PREFIX}/bin
 
-CONFIGURE_ENV=          TRUEPREFIX="${TRUEPREFIX}"
 USE_GMAKE =		Yes
 
 FLAVORS=		no_x11 sdl
 FLAVOR?=
 
 RUN_DEPENDS =		devel/desktop-file-utils
+BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			textproc/py-docutils
 
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=	--without-x
@@ -47,13 +50,15 @@ WANTLIB+=		ICE SM X11
 .endif
 
 .if ${FLAVOR:Msdl}	# funky graphical mode and sounds
+# Sound is currently broken:
+# http://trac.rephial.org/ticket/1977
 CONFIGURE_ARGS +=	--enable-sdl \
-			--enable-sdl-mixer
+			--disable-sdl-mixer \
+			--with-sdl-prefix=/usr/local
 PKG_ARGS +=		-Dsdl=1
-LIB_DEPENDS +=		devel/sdl-mixer \
-			devel/sdl-image \
+LIB_DEPENDS +=		devel/sdl-image \
 			devel/sdl-ttf
-WANTLIB +=		SDL SDL_image SDL_mixer SDL_ttf pthread	
+WANTLIB +=		SDL SDL_image SDL_ttf pthread
 .else
 CONFIGURE_ARGS +=	--disable-sdl-mixer	# defaults to ON
 PKG_ARGS +=		-Dsdl=0
@@ -63,12 +68,22 @@ NO_TEST =		Yes
 
 pre-configure:
 	@perl -pi -e "s,/usr/share,${TRUEPREFIX}/share," \
-		${WRKSRC}/lib/xtra/icon/angband*.desktop
+		${WRKSRC}/lib/icons/angband-*.desktop
+
+do-gen:
+	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} autoreconf -fi
+
+# Looks like upstream forgot to include a version file.
+# `cat: ../version: No such file or directory`
+pre-build:
+	echo ${V} > ${WRKSRC}/version
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	mv ${PREFIX}/share/angband/xtra/icon/*.desktop \
+	mv ${PREFIX}/share/angband/icons/*.desktop \
 		${PREFIX}/share/applications
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/
+	mv ${WRKINST}/etc/angband ${PREFIX}/share/examples/
 	chmod -R u+rwX ${WRKINST}/var
 
 .include <bsd.port.mk>

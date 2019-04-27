@@ -1,53 +1,266 @@
-@comment $OpenBSD: PFRAG.sdl,v 1.2 2012/04/11 16:16:33 edd Exp $
-share/angband/xtra/angband.glade
-share/angband/xtra/font/
-share/angband/xtra/font/10x14x.fon
-share/angband/xtra/font/10x14xb.fon
-share/angband/xtra/font/10x20x.fon
-share/angband/xtra/font/12x18x.fon
-share/angband/xtra/font/12x24x.fon
-share/angband/xtra/font/16x16x.fon
-share/angband/xtra/font/16x24x.fon
-share/angband/xtra/font/5x8x.fon
-share/angband/xtra/font/6x10x.fon
-share/angband/xtra/font/6x12x.fon
-share/angband/xtra/font/6x13x.fon
-share/angband/xtra/font/6x13xb.fon
-share/angband/xtra/font/7x13x.fon
-share/angband/xtra/font/7x13xb.fon
-share/angband/xtra/font/8x12x.fon
-share/angband/xtra/font/8x12xb.fon
-share/angband/xtra/font/8x13x.fon
-share/angband/xtra/font/8x16x.fon
-share/angband/xtra/font/8x8x.fon
-share/angband/xtra/font/8x8xb.fon
-share/angband/xtra/font/9x15x.fon
-share/angband/xtra/font/9x15xb.fon
-share/angband/xtra/graf/
-share/angband/xtra/graf/16x16.png
-share/angband/xtra/graf/32x32.png
-share/angband/xtra/graf/8x16.png
-share/angband/xtra/graf/8x8.png
-share/angband/xtra/sound/
-share/angband/xtra/sound/breath.wav
-share/angband/xtra/sound/clunk.wav
-share/angband/xtra/sound/death.wav
-share/angband/xtra/sound/destroy.wav
-share/angband/xtra/sound/drop.wav
-share/angband/xtra/sound/eat.wav
-share/angband/xtra/sound/flee.wav
-share/angband/xtra/sound/hallu.wav
-share/angband/xtra/sound/hit.wav
-share/angband/xtra/sound/hit1.wav
-share/angband/xtra/sound/kill.wav
-share/angband/xtra/sound/kill1.wav
-share/angband/xtra/sound/level.wav
-share/angband/xtra/sound/miss.wav
-share/angband/xtra/sound/miss1.wav
-share/angband/xtra/sound/money.wav
-share/angband/xtra/sound/opendoor.wav
-share/angband/xtra/sound/shutdoor.wav
-share/angband/xtra/sound/sound.cfg
-share/angband/xtra/sound/thump.wav
-share/angband/xtra/sound/vomit.wav
-share/applications/angband-sdl.desktop
+@comment $OpenBSD: PFRAG.sdl,v 1.3 2019/04/27 13:24:42 edd Exp $
+share/angband/fonts/
+share/angband/fonts/10x14x.fon
+share/angband/fonts/10x14xb.fon
+share/angband/fonts/10x20x.fon
+share/angband/fonts/12x18x.fon
+share/angband/fonts/12x24x.fon
+share/angband/fonts/16x16x.fon
+share/angband/fonts/16x24x.fon
+share/angband/fonts/5x8x.fon
+share/angband/fonts/6x10x.fon
+share/angband/fonts/6x12x.fon
+share/angband/fonts/6x13x.fon
+share/angband/fonts/6x13xb.fon
+share/angband/fonts/7x13x.fon
+share/angband/fonts/7x13xb.fon
+share/angband/fonts/8x12x.fon
+share/angband/fonts/8x12xb.fon
+share/angband/fonts/8x13x.fon
+share/angband/fonts/8x16x.fon
+share/angband/fonts/8x8x.fon
+share/angband/fonts/8x8xb.fon
+share/angband/fonts/9x15x.fon
+share/angband/fonts/9x15xb.fon
+@comment share/angband/sounds/
+@comment share/angband/sounds/amb_bell_metal1.mp3
+@comment share/angband/sounds/amb_bell_metal2.mp3
+@comment share/angband/sounds/amb_bell_tibet1.mp3
+@comment share/angband/sounds/amb_bell_tibet2.mp3
+@comment share/angband/sounds/amb_bell_tibet3.mp3
+@comment share/angband/sounds/amb_door_doom.mp3
+@comment share/angband/sounds/amb_door_iron.mp3
+@comment share/angband/sounds/amb_dungeon_echo.mp3
+@comment share/angband/sounds/amb_dungeon_echowet.mp3
+@comment share/angband/sounds/amb_gong_chinese.mp3
+@comment share/angband/sounds/amb_gong_low.mp3
+@comment share/angband/sounds/amb_gong_strike.mp3
+@comment share/angband/sounds/amb_gong_undertone.mp3
+@comment share/angband/sounds/amb_guitar_chord.mp3
+@comment share/angband/sounds/amb_pulse_low.mp3
+@comment share/angband/sounds/amb_thunder_rain.mp3
+@comment share/angband/sounds/amb_thunder_roll.mp3
+@comment share/angband/sounds/id_bad_aww.mp3
+@comment share/angband/sounds/id_bad_dang.mp3
+@comment share/angband/sounds/id_bad_hmm.mp3
+@comment share/angband/sounds/id_bad_hmph.mp3
+@comment share/angband/sounds/id_bad_ohh.mp3
+@comment share/angband/sounds/id_ego_whoa.mp3
+@comment share/angband/sounds/id_ego_woohoo.mp3
+@comment share/angband/sounds/id_ego_yeah.mp3
+@comment share/angband/sounds/id_ego_yeah2.mp3
+@comment share/angband/sounds/id_ego_yes.mp3
+@comment share/angband/sounds/id_good_hey.mp3
+@comment share/angband/sounds/id_good_hey2.mp3
+@comment share/angband/sounds/id_good_hmm.mp3
+@comment share/angband/sounds/id_good_huh.mp3
+@comment share/angband/sounds/id_good_ooh.mp3
+@comment share/angband/sounds/id_good_ooo.mp3
+@comment share/angband/sounds/id_good_wow.mp3
+@comment share/angband/sounds/mco_attack_breath.mp3
+@comment share/angband/sounds/mco_attack_spray.mp3
+@comment share/angband/sounds/mco_bite_chew.mp3
+@comment share/angband/sounds/mco_bite_chomp.mp3
+@comment share/angband/sounds/mco_bite_dainty.mp3
+@comment share/angband/sounds/mco_bite_gnash.mp3
+@comment share/angband/sounds/mco_bite_hard.mp3
+@comment share/angband/sounds/mco_bite_long.mp3
+@comment share/angband/sounds/mco_bite_munch.mp3
+@comment share/angband/sounds/mco_bite_regular.mp3
+@comment share/angband/sounds/mco_bite_short.mp3
+@comment share/angband/sounds/mco_bite_small.mp3
+@comment share/angband/sounds/mco_bite_soft.mp3
+@comment share/angband/sounds/mco_card_shuffle.mp3
+@comment share/angband/sounds/mco_castanet_trill.mp3
+@comment share/angband/sounds/mco_ceramic_trill.mp3
+@comment share/angband/sounds/mco_click_vibra.mp3
+@comment share/angband/sounds/mco_creature_choking.mp3
+@comment share/angband/sounds/mco_creature_groan.mp3
+@comment share/angband/sounds/mco_creature_yelp.mp3
+@comment share/angband/sounds/mco_cuica_rubbing.mp3
+@comment share/angband/sounds/mco_dino_low.mp3
+@comment share/angband/sounds/mco_dino_slur.mp3
+@comment share/angband/sounds/mco_dino_talk.mp3
+@comment share/angband/sounds/mco_dino_yawn.mp3
+@comment share/angband/sounds/mco_dub_wobble.mp3
+@comment share/angband/sounds/mco_frog_trill.mp3
+@comment share/angband/sounds/mco_hit_whip.mp3
+@comment share/angband/sounds/mco_howl_croak.mp3
+@comment share/angband/sounds/mco_howl_deep.mp3
+@comment share/angband/sounds/mco_howl_distressed.mp3
+@comment share/angband/sounds/mco_howl_high.mp3
+@comment share/angband/sounds/mco_howl_long.mp3
+@comment share/angband/sounds/mco_liquid_squirt.mp3
+@comment share/angband/sounds/mco_man_mumble.mp3
+@comment share/angband/sounds/mco_mouse_squeaks.mp3
+@comment share/angband/sounds/mco_rubber_thud.mp3
+@comment share/angband/sounds/mco_scurry_dry.mp3
+@comment share/angband/sounds/mco_shake_roll.mp3
+@comment share/angband/sounds/mco_snarl_short.mp3
+@comment share/angband/sounds/mco_spray_long.mp3
+@comment share/angband/sounds/mco_squish_hit.mp3
+@comment share/angband/sounds/mco_squish_snap.mp3
+@comment share/angband/sounds/mco_strange_music.mp3
+@comment share/angband/sounds/mco_strange_thwoink.mp3
+@comment share/angband/sounds/mco_thoing_backwards.mp3
+@comment share/angband/sounds/mco_thoing_deep.mp3
+@comment share/angband/sounds/mco_thud_crash.mp3
+@comment share/angband/sounds/mco_tube_hit.mp3
+@comment share/angband/sounds/plc_bell_warn.mp3
+@comment share/angband/sounds/plc_die_laugh.mp3
+@comment share/angband/sounds/plc_hit_anvil.mp3
+@comment share/angband/sounds/plc_hit_anvil2.mp3
+@comment share/angband/sounds/plc_hit_arrow.mp3
+@comment share/angband/sounds/plc_hit_body.mp3
+@comment share/angband/sounds/plc_hit_groan.mp3
+@comment share/angband/sounds/plc_hit_grunt.mp3
+@comment share/angband/sounds/plc_hit_grunt2.mp3
+@comment share/angband/sounds/plc_hit_hay.mp3
+@comment share/angband/sounds/plc_miss_arrow.mp3
+@comment share/angband/sounds/plc_miss_arrow2.mp3
+@comment share/angband/sounds/plc_miss_swish.mp3
+@comment share/angband/sounds/plm_aim_wand.mp3
+@comment share/angband/sounds/plm_bang_ceramic.mp3
+@comment share/angband/sounds/plm_bang_dumpster.mp3
+@comment share/angband/sounds/plm_bang_metal.mp3
+@comment share/angband/sounds/plm_book_pageturn.mp3
+@comment share/angband/sounds/plm_bottle_clinks.mp3
+@comment share/angband/sounds/plm_break_canister.mp3
+@comment share/angband/sounds/plm_break_glass.mp3
+@comment share/angband/sounds/plm_break_glass2.mp3
+@comment share/angband/sounds/plm_break_plates.mp3
+@comment share/angband/sounds/plm_break_shatter.mp3
+@comment share/angband/sounds/plm_break_smash.mp3
+@comment share/angband/sounds/plm_break_wood.mp3
+@comment share/angband/sounds/plm_cabinet_open.mp3
+@comment share/angband/sounds/plm_cabinet_shut.mp3
+@comment share/angband/sounds/plm_chain_light.mp3
+@comment share/angband/sounds/plm_chest_latch.mp3
+@comment share/angband/sounds/plm_chest_unlatch.mp3
+@comment share/angband/sounds/plm_chimes_jangle.mp3
+@comment share/angband/sounds/plm_click_dry.mp3
+@comment share/angband/sounds/plm_click_switch.mp3
+@comment share/angband/sounds/plm_click_switch2.mp3
+@comment share/angband/sounds/plm_click_switch3.mp3
+@comment share/angband/sounds/plm_click_wood.mp3
+@comment share/angband/sounds/plm_close_hatch.mp3
+@comment share/angband/sounds/plm_coins_dump.mp3
+@comment share/angband/sounds/plm_coins_light.mp3
+@comment share/angband/sounds/plm_coins_pour.mp3
+@comment share/angband/sounds/plm_coins_shake.mp3
+@comment share/angband/sounds/plm_cork_pop.mp3
+@comment share/angband/sounds/plm_cork_squeak.mp3
+@comment share/angband/sounds/plm_door_bolt.mp3
+@comment share/angband/sounds/plm_door_creak.mp3
+@comment share/angband/sounds/plm_door_creakshut.mp3
+@comment share/angband/sounds/plm_door_dungeon.mp3
+@comment share/angband/sounds/plm_door_echolock.mp3
+@comment share/angband/sounds/plm_door_entrance.mp3
+@comment share/angband/sounds/plm_door_knob.mp3
+@comment share/angband/sounds/plm_door_latch.mp3
+@comment share/angband/sounds/plm_door_open.mp3
+@comment share/angband/sounds/plm_door_opening.mp3
+@comment share/angband/sounds/plm_door_rusty.mp3
+@comment share/angband/sounds/plm_door_shut.mp3
+@comment share/angband/sounds/plm_door_slam.mp3
+@comment share/angband/sounds/plm_door_squeaky.mp3
+@comment share/angband/sounds/plm_door_wooden.mp3
+@comment share/angband/sounds/plm_drop_boot.mp3
+@comment share/angband/sounds/plm_eat_bite.mp3
+@comment share/angband/sounds/plm_floor_creak.mp3
+@comment share/angband/sounds/plm_floor_creak2.mp3
+@comment share/angband/sounds/plm_glass_break.mp3
+@comment share/angband/sounds/plm_glass_breaking.mp3
+@comment share/angband/sounds/plm_glass_smashing.mp3
+@comment share/angband/sounds/plm_jar_ding.mp3
+@comment share/angband/sounds/plm_levelup.mp3
+@comment share/angband/sounds/plm_lock_case.mp3
+@comment share/angband/sounds/plm_lock_distant.mp3
+@comment share/angband/sounds/plm_metal_clank.mp3
+@comment share/angband/sounds/plm_metal_sharpen.mp3
+@comment share/angband/sounds/plm_open_case.mp3
+@comment share/angband/sounds/plm_spell1.mp3
+@comment share/angband/sounds/plm_spell2.mp3
+@comment share/angband/sounds/plm_spell3.mp3
+@comment share/angband/sounds/plm_use_staff.mp3
+@comment share/angband/sounds/plm_wood_thud.mp3
+@comment share/angband/sounds/plm_zap_rod.mp3
+@comment share/angband/sounds/pls_bell_bowl.mp3
+@comment share/angband/sounds/pls_bell_chime_new.mp3
+@comment share/angband/sounds/pls_bell_glass.mp3
+@comment share/angband/sounds/pls_bell_hibell_soft.mp3
+@comment share/angband/sounds/pls_bell_mute.mp3
+@comment share/angband/sounds/pls_bell_sustain.mp3
+@comment share/angband/sounds/pls_breathe_in.mp3
+@comment share/angband/sounds/pls_man_argoh.mp3
+@comment share/angband/sounds/pls_man_gulp_new.mp3
+@comment share/angband/sounds/pls_man_oooh.mp3
+@comment share/angband/sounds/pls_man_scream2.mp3
+@comment share/angband/sounds/pls_man_sigh.mp3
+@comment share/angband/sounds/pls_man_sniff.mp3
+@comment share/angband/sounds/pls_man_sob.mp3
+@comment share/angband/sounds/pls_man_spit.mp3
+@comment share/angband/sounds/pls_man_ugh.mp3
+@comment share/angband/sounds/pls_man_yell.mp3
+@comment share/angband/sounds/pls_tone_blurk.mp3
+@comment share/angband/sounds/pls_tone_clave6.mp3
+@comment share/angband/sounds/pls_tone_clavelo8.mp3
+@comment share/angband/sounds/pls_tone_conk.mp3
+@comment share/angband/sounds/pls_tone_elec.mp3
+@comment share/angband/sounds/pls_tone_goblet.mp3
+@comment share/angband/sounds/pls_tone_guiro.mp3
+@comment share/angband/sounds/pls_tone_headstock.mp3
+@comment share/angband/sounds/pls_tone_scrape.mp3
+@comment share/angband/sounds/pls_tone_stick.mp3
+@comment share/angband/sounds/sound.cfg
+@comment share/angband/sounds/sto_bell_desk.mp3
+@comment share/angband/sounds/sto_bell_ding.mp3
+@comment share/angband/sounds/sto_bell_dingaling.mp3
+@comment share/angband/sounds/sto_bell_jingles.mp3
+@comment share/angband/sounds/sto_bell_register1.mp3
+@comment share/angband/sounds/sto_bell_register2.mp3
+@comment share/angband/sounds/sto_bell_ringing.mp3
+@comment share/angband/sounds/sto_bell_shop.mp3
+@comment share/angband/sounds/sto_coins_countertop.mp3
+@comment share/angband/sounds/sto_man_haha.mp3
+@comment share/angband/sounds/sto_man_hey.mp3
+@comment share/angband/sounds/sto_man_whoohaha.mp3
+@comment share/angband/sounds/sum_angel_song.mp3
+@comment share/angband/sounds/sum_bell_crystal.mp3
+@comment share/angband/sounds/sum_bell_hand.mp3
+@comment share/angband/sounds/sum_bell_tone.mp3
+@comment share/angband/sounds/sum_chime_jangle.mp3
+@comment share/angband/sounds/sum_ghost_moan.mp3
+@comment share/angband/sounds/sum_ghost_oooo.mp3
+@comment share/angband/sounds/sum_ghost_wail.mp3
+@comment share/angband/sounds/sum_gong_temple.mp3
+@comment share/angband/sounds/sum_laugh_evil2.mp3
+@comment share/angband/sounds/sum_lion_growl.mp3
+@comment share/angband/sounds/sum_piano_scrape.mp3
+share/angband/tiles/
+share/angband/tiles/adam-bolt/
+share/angband/tiles/adam-bolt/16x16.png
+share/angband/tiles/adam-bolt/flvr-new.prf
+share/angband/tiles/adam-bolt/graf-new.prf
+share/angband/tiles/adam-bolt/xtra-new.prf
+share/angband/tiles/gervais/
+share/angband/tiles/gervais/32x32.png
+share/angband/tiles/gervais/flvr-dvg.prf
+share/angband/tiles/gervais/graf-dvg.prf
+share/angband/tiles/gervais/xtra-dvg.prf
+share/angband/tiles/list.txt
+share/angband/tiles/nomad/
+share/angband/tiles/nomad/8x16.png
+share/angband/tiles/nomad/flvr-nmd.prf
+share/angband/tiles/nomad/graf-nmd.prf
+share/angband/tiles/nomad/xtra-nmd.prf
+share/angband/tiles/old/
+share/angband/tiles/old/8x8.png
+share/angband/tiles/old/flvr-xxx.prf
+share/angband/tiles/old/graf-xxx.prf
+share/angband/tiles/old/xtra-xxx.prf
+share/angband/tiles/shockbolt/
+share/angband/tiles/shockbolt/64x64.png
+share/angband/tiles/shockbolt/flvr-shb.prf
+share/angband/tiles/shockbolt/graf-shb.prf
+share/angband/tiles/shockbolt/xtra-shb.prf
