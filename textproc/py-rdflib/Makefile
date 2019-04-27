@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/01/03 19:27:52 landry Exp $
-
-PKG_ARCH =	*
+# $OpenBSD: Makefile,v 1.8 2019/04/27 23:24:02 sthen Exp $
 
 COMMENT=	library to manipulate RDF data
 

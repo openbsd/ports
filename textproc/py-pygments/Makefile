@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/01/03 19:27:52 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2019/04/27 23:24:01 sthen Exp $
 
 COMMENT=	Python syntax highlighter
 
@@ -6,12 +6,10 @@ MODPY_EGG_VERSION = 2.1.3
 
 DISTNAME=	Pygments-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L:S/^/py-/}
-CATEGORIES=    	textproc devel
+CATEGORIES=	textproc devel
 REVISION=	0
 
 HOMEPAGE=	http://pygments.org/
-
-PKG_ARCH=	*
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

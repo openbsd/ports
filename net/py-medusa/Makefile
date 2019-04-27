@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2019/04/27 23:24:01 sthen Exp $
 
 COMMENT=		Python framework for async socket-based servers
 
@@ -15,8 +15,6 @@ MASTER_SITES=		http://www.amk.ca/files/python/
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/python
-
-PKG_ARCH=		*
 
 EXAMPLESDIR=		${PREFIX}/share/examples/py-medusa
 EXAMPLEDIRS=		demo test thread

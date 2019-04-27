@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/08/29 07:36:18 benoit Exp $
+# $OpenBSD: Makefile,v 1.25 2019/04/27 23:24:01 sthen Exp $
 
 COMMENT =	Python module to access NOAA's METAR weather reports
 
@@ -19,7 +19,6 @@ MASTER_SITES =	http://www.schwarzvogel.de/pkgs/
 MODULES =	lang/python
 
 NO_TEST =	Yes
-PKG_ARCH =	*
 
 pre-build:
 	cp ${WRKSRC}/bin/pymetar ${WRKSRC}/bin/pymet

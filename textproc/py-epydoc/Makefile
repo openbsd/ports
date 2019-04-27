@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/02/16 22:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/04/27 23:24:01 sthen Exp $
 
 COMMENT=		python module API documentation generation tool
 
@@ -21,7 +21,6 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=epydoc/}
 MODULES=		lang/python
 
 NO_TEST=		Yes
-PKG_ARCH=		*
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/* ${PREFIX}/man/man1	

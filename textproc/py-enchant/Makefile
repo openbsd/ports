@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/12/30 09:05:23 ajacoutot Exp $
-
-PKG_ARCH=		*
+# $OpenBSD: Makefile,v 1.13 2019/04/27 23:24:01 sthen Exp $
 
 COMMENT=		spellchecking library for Python
 

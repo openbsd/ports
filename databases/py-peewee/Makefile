@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.13 2017/01/03 19:17:24 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2019/04/27 23:24:01 sthen Exp $
 
-PKG_ARCH=		*
 COMMENT=		small expressive ORM
 
 MODPY_EGG_VERSION=	2.8.3
