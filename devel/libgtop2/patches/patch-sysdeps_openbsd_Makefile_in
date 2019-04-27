@@ -1,4 +1,4 @@
-$OpenBSD: patch-sysdeps_openbsd_Makefile_in,v 1.1 2017/11/03 11:22:11 jasper Exp $
+$OpenBSD: patch-sysdeps_openbsd_Makefile_in,v 1.2 2019/04/27 13:45:24 jasper Exp $
 
 Index: sysdeps/openbsd/Makefile.in
 --- sysdeps/openbsd/Makefile.in.orig
@@ -12,7 +12,16 @@ Index: sysdeps/openbsd/Makefile.in
  libgtop_sysdeps_suid_2_0_la_OBJECTS =  \
  	$(am_libgtop_sysdeps_suid_2_0_la_OBJECTS)
  libgtop_sysdeps_suid_2_0_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
-@@ -431,7 +431,8 @@ libgtop_sysdeps_suid_2_0_la_LIBADD = $(KVM_LIBS)
+@@ -169,7 +169,7 @@ am__depfiles_remade = ./$(DEPDIR)/close.Plo ./$(DEPDIR
+ 	./$(DEPDIR)/sem_limits.Plo ./$(DEPDIR)/shm_limits.Plo \
+ 	./$(DEPDIR)/siglist.Plo ./$(DEPDIR)/suid_open.Plo \
+ 	./$(DEPDIR)/swap.Plo ./$(DEPDIR)/sysinfo.Plo \
+-	./$(DEPDIR)/uptime.Plo
++	./$(DEPDIR)/uptime.Plo ./$(DEPDIR)/procio.Plo
+ am__mv = mv -f
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+@@ -448,7 +448,8 @@ libgtop_sysdeps_suid_2_0_la_LIBADD = $(KVM_LIBS)
  libgtop_sysdeps_suid_2_0_la_SOURCES = suid_open.c close.c swap.c \
  	proclist.c procstate.c procuid.c proctime.c procmem.c \
  	procsignal.c prockernel.c procsegment.c procargs.c procmap.c \
@@ -22,11 +31,11 @@ Index: sysdeps/openbsd/Makefile.in
  libgtop_sysdeps_suid_2_0_la_LDFLAGS = $(LT_VERSION_INFO)
  libgtopinclude_HEADERS = glibtop_server.h glibtop_machine.h \
  				  glibtop_suid.h glibtop_private.h
-@@ -510,6 +511,7 @@ distclean-compile:
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/procaffinity.Plo@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/procargs.Plo@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/prockernel.Plo@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/procio.Plo@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/proclist.Plo@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/procmap.Plo@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/procmem.Plo@am__quote@
+@@ -526,6 +527,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ppp.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/procaffinity.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/procargs.Plo@am__quote@ # am--include-marker
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/procio.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/prockernel.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/proclist.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/procmap.Plo@am__quote@ # am--include-marker

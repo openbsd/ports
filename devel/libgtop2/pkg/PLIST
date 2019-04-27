@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2017/11/03 11:22:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.33 2019/04/27 13:45:24 jasper Exp $
 @bin bin/libgtop_daemon2
 @mode 2555
 @group kmem
@@ -59,6 +59,8 @@ lib/libgtop-2.0.la
 lib/pkgconfig/libgtop-2.0.pc
 share/gir-1.0/
 share/gir-1.0/GTop-2.0.gir
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/libgtop/
 share/gtk-doc/html/libgtop/home.png
 share/gtk-doc/html/libgtop/index.html

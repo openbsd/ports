@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure,v 1.25 2016/08/21 09:49:41 jasper Exp $
---- configure.orig	Sat Aug 20 16:04:11 2016
-+++ configure	Sun Aug 21 11:47:24 2016
-@@ -19006,8 +19006,8 @@ else
+$OpenBSD: patch-configure,v 1.26 2019/04/27 13:45:24 jasper Exp $
+Index: configure
+--- configure.orig
++++ configure
+@@ -19007,8 +19007,8 @@ else
  /* end confdefs.h.  */
  
  #include <sys/types.h>
