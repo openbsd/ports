@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_pref_names_h,v 1.50 2019/04/26 09:38:20 robert Exp $
+$OpenBSD: patch-chrome_common_pref_names_h,v 1.51 2019/04/27 12:12:05 robert Exp $
 
 Index: chrome/common/pref_names.h
 --- chrome/common/pref_names.h.orig
@@ -30,3 +30,12 @@ Index: chrome/common/pref_names.h
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
  #if defined(OS_ANDROID)
+@@ -689,7 +689,7 @@ extern const char kGSSAPILibraryName[];
+ extern const char kAuthAndroidNegotiateAccountType[];
+ extern const char kAllowCrossOriginAuthPrompt[];
+ 
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ extern const char kAuthNegotiateDelegateByKdcPolicy[];
+ #endif  // defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_CHROMEOS)
+ 

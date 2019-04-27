@@ -1,4 +1,4 @@
-$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.17 2019/04/26 09:38:20 robert Exp $
+$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.18 2019/04/27 12:12:05 robert Exp $
 
 Index: gpu/ipc/service/gpu_init.cc
 --- gpu/ipc/service/gpu_init.cc.orig
@@ -30,3 +30,21 @@ Index: gpu/ipc/service/gpu_init.cc
    // On Chrome OS ARM Mali, GPU driver userspace creates threads when
    // initializing a GL context, so start the sandbox early.
    // TODO(zmo): Need to collect OS version before this.
+@@ -300,7 +300,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+   InitializeDirectCompositionOverlaySupport(&gpu_info_);
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Driver may create a compatibility profile context when collect graphics
+   // information on Linux platform. Try to collect graphics information
+   // based on core profile context after disabling platform extensions.
+@@ -486,7 +486,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+   InitializeDirectCompositionOverlaySupport(&gpu_info_);
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Driver may create a compatibility profile context when collect graphics
+   // information on Linux platform. Try to collect graphics information
+   // based on core profile context after disabling platform extensions.

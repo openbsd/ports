@@ -1,0 +1,23 @@
+$OpenBSD: patch-chrome_browser_media_webrtc_webrtc_logging_handler_host_h,v 1.1 2019/04/27 12:12:05 robert Exp $
+
+Index: chrome/browser/media/webrtc/webrtc_logging_handler_host.h
+--- chrome/browser/media/webrtc/webrtc_logging_handler_host.h.orig
++++ chrome/browser/media/webrtc/webrtc_logging_handler_host.h
+@@ -153,7 +153,7 @@ class WebRtcLoggingHandlerHost : public content::Brows
+                          size_t web_app_id,
+                          const StartEventLoggingCallback& callback);
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   // Ensures that the WebRTC Logs directory exists and then grants render
+   // process access to the 'WebRTC Logs' directory, and invokes |callback| with
+   // the ids necessary to create a DirectoryEntry object.
+@@ -226,7 +226,7 @@ class WebRtcLoggingHandlerHost : public content::Brows
+       bool success,
+       const std::string& error_message);
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   // Grants the render process access to the 'WebRTC Logs' directory, and
+   // invokes |callback| with the ids necessary to create a DirectoryEntry
+   // object. If the |logs_path| couldn't be created or found, |error_callback|
