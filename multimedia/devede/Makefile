@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2018/06/27 21:03:57 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2019/04/27 23:43:47 sthen Exp $
 
 COMMENT=		video DVDs and CDs creation tool
 
@@ -33,7 +33,6 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=		x11/gtk+3
 
-PKG_ARCH=		*
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
