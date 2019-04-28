@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/07/06 06:04:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/04/28 06:31:31 ajacoutot Exp $
 @conflict dconf-<0.22.0
 @pkgpath devel/dconf,-editor
 @bin bin/dconf-editor
@@ -14,7 +14,10 @@ share/icons/hicolor/256x256/apps/ca.desrt.dconf-editor.png
 share/icons/hicolor/32x32/apps/ca.desrt.dconf-editor.png
 share/icons/hicolor/48x48/apps/ca.desrt.dconf-editor.png
 share/icons/hicolor/64x64/apps/ca.desrt.dconf-editor.png
+share/icons/hicolor/scalable/actions/ca.desrt.dconf-editor.big-rows-symbolic.svg
+share/icons/hicolor/scalable/actions/ca.desrt.dconf-editor.small-rows-symbolic.svg
 share/icons/hicolor/scalable/apps/ca.desrt.dconf-editor-symbolic.svg
+share/locale/af/LC_MESSAGES/dconf-editor.mo
 share/locale/an/LC_MESSAGES/dconf-editor.mo
 share/locale/ar/LC_MESSAGES/dconf-editor.mo
 share/locale/as/LC_MESSAGES/dconf-editor.mo
