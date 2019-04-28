@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.299 2019/03/27 12:54:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.300 2019/04/28 06:28:17 ajacoutot Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -7,9 +7,8 @@ INSTALL_STRIP=		# empty
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
-GNOME_VERSION=		2.58.3
+GNOME_VERSION=		2.60.1
 PKGNAME=		${DISTNAME:S/glib/glib2/}
-REVISION=		8
 
 CATEGORIES=		devel
 
@@ -21,11 +20,11 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # would trigger an abort():
 # GLib-GObject:ERROR:gvaluetypes.c:457:_g_value_types_init:
 # assertion failed: (type == G_TYPE_CHAR)
-SHARED_LIBS +=  glib-2.0             4201.1   # 0.5800.3
-SHARED_LIBS +=  gmodule-2.0          4200.8   # 0.5800.3
-SHARED_LIBS +=  gthread-2.0          4200.8   # 0.5800.3
-SHARED_LIBS +=  gobject-2.0          4200.8   # 0.5800.3
-SHARED_LIBS +=  gio-2.0              4200.8   # 0.5800.3
+SHARED_LIBS +=  glib-2.0             4201.2   # 0.6000.1
+SHARED_LIBS +=  gmodule-2.0          4200.9   # 0.6000.1
+SHARED_LIBS +=  gthread-2.0          4200.9   # 0.6000.1
+SHARED_LIBS +=  gobject-2.0          4200.9   # 0.6000.1
+SHARED_LIBS +=  gio-2.0              4200.9   # 0.6000.1
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -55,15 +54,10 @@ TEST_DEPENDS=		devel/desktop-file-utils \
 			x11/dbus
 
 CONFIGURE_ARGS=		-Diconv=gnu \
-			-Dselinux=false \
+			-Dselinux=disabled \
 			-Dxattr=false \
 			-Dlibmount=false \
 			-Dman=true
-
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mgcc3}
-PATCH_LIST=	patch-* gcc3-*
-.endif
 
 pre-configure:
 	sed -i -e "s,/usr/local,${LOCALBASE},g;" \

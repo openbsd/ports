@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.71 2019/01/21 21:52:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.72 2019/04/28 06:28:17 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -282,6 +282,7 @@ include/glib-2.0/gobject/gbinding.h
 include/glib-2.0/gobject/gboxed.h
 include/glib-2.0/gobject/gclosure.h
 include/glib-2.0/gobject/genums.h
+include/glib-2.0/gobject/glib-enumtypes.h
 include/glib-2.0/gobject/glib-types.h
 include/glib-2.0/gobject/gmarshal.h
 include/glib-2.0/gobject/gobject-autocleanups.h
@@ -349,8 +350,8 @@ share/gdb/auto-load/
 share/gdb/auto-load/usr/
 share/gdb/auto-load/${PREFIX}/
 share/gdb/auto-load/${PREFIX}/lib/
-share/gdb/auto-load/${PREFIX}/lib/libglib-2.0.so.0.5800.3-gdb.py
-share/gdb/auto-load/${PREFIX}/lib/libgobject-2.0.so.0.5800.3-gdb.py
+share/gdb/auto-load/${PREFIX}/lib/libglib-2.0.so.0.6000.1-gdb.py
+share/gdb/auto-load/${PREFIX}/lib/libgobject-2.0.so.0.6000.1-gdb.py
 share/gettext/its/
 share/gettext/its/gschema.its
 share/gettext/its/gschema.loc
