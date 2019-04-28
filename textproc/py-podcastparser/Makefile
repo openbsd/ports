@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/09/23 20:56:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:56 sthen Exp $
 
 COMMENT=	simple, fast and efficient podcast parser
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	0.6.4
 DISTNAME=	podcastparser-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
+REVISION=	0
 
 MAINTAINER=	Tim Meunier <trondd@kagu-tsuchi.com>
 

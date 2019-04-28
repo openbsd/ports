@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/02/11 19:02:02 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:54 sthen Exp $
 
 COMMENT =		package software from any package manager to any OS
 
 MODPY_EGG_VERSION =	0.6
 DISTNAME =		upt-${MODPY_EGG_VERSION}
+REVISION =		0
 
 HOMEPAGE =		https://framagit.org/upt/upt
 

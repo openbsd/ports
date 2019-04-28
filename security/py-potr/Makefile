@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/06/02 12:01:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:52 sthen Exp $
 
 COMMENT =		pure Python Off-The-Record encryption
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	1.0.1
 DISTNAME =		python-potr-${MODPY_EGG_VERSION}
 PKGNAME =		py-potr-${MODPY_EGG_VERSION}
 CATEGORIES =		security net
-REVISION =		2
+REVISION =		3
 
 MAINTAINER =		Daniel Jakots <obsd@chown.me>
 

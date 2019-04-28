@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/18 21:19:15 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:55 sthen Exp $
 
 COMMENT=		parser for the CommonMark markdown spec
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	0.7.5
 DISTNAME=		CommonMark-${MODPY_EGG_VERSION}
 PKGNAME=		py-commonmark-${MODPY_EGG_VERSION}
 CATEGORIES=		textproc
+REVISION=		0
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 

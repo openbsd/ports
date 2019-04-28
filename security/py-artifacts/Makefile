@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2018/05/30 09:11:39 rpointel Exp $
+# $OpenBSD: Makefile,v 1.11 2019/04/28 20:51:51 sthen Exp $
 
 COMMENT =	ForensicArtifacts.com Artifact Repository
 
 MODPY_EGG_VERSION = 20180505
 DISTNAME =	artifacts-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	security
 

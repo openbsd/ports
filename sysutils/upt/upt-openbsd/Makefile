@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/02/11 18:52:07 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:54 sthen Exp $
 
 COMMENT =		OpenBSD backend for upt
 
 MODPY_EGG_VERSION =	0.4
 DISTNAME =		upt-openbsd-${MODPY_EGG_VERSION}
-REVISION = 2
+REVISION = 3
 
 HOMEPAGE =		https://framagit.org/upt/upt-openbsd
 

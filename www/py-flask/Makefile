@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2019/03/25 14:29:52 kn Exp $
+# $OpenBSD: Makefile,v 1.28 2019/04/28 20:51:59 sthen Exp $
 
 COMMENT =		microframework based on Werkzeug and Jinja 2
 
 MODPY_EGG_VERSION =	0.12.3
 DISTNAME =		Flask-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www devel
 

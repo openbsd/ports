@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2017/03/26 10:55:08 shadchin Exp $
+# $OpenBSD: Makefile,v 1.10 2019/04/28 20:51:46 sthen Exp $
 
 COMMENT =		Python module for working with SOCKS proxies
 
 MODPY_EGG_VERSION =	1.6.7
 DISTNAME =		PySocks-${MODPY_EGG_VERSION}
 PKGNAME =		py-socks-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		net
 

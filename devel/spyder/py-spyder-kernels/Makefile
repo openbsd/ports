@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/02/23 17:57:43 mariani Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:39 sthen Exp $
 
 COMMENT=		kernels used by spyder on its ipython console
 
 MODPY_EGG_VERSION=	0.4.2
 DISTNAME=		spyder-kernels-${MODPY_EGG_VERSION}
 PKGNAME=		${MODPY_PY_PREFIX}${DISTNAME}
+REVISION=		0
 
 PORTROACH=		limit:^0
 

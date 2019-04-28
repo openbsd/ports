@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2019/03/25 14:29:50 kn Exp $
+# $OpenBSD: Makefile,v 1.9 2019/04/28 20:51:34 sthen Exp $
 
 COMMENT =		implementation of JSON Schema validation for Python
 
 MODPY_EGG_VERSION =	2.6.0
 DISTNAME =		jsonschema-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

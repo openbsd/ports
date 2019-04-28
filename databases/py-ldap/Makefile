@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2019/03/31 21:06:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2019/04/28 20:51:27 sthen Exp $
 
 COMMENT-main=		LDAP client API for Python
 COMMENT-examples=	example programs for the LDAP client API for Python
 
 MODPY_EGG_VERSION =	3.2.0
-REVISION=		0
+REVISION=		1
 DISTNAME=		python-ldap-${MODPY_EGG_VERSION}
 PKGNAME=		py-ldap-${MODPY_EGG_VERSION}
 

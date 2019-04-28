@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2018/10/31 12:37:33 bket Exp $
+# $OpenBSD: Makefile,v 1.48 2019/04/28 20:51:29 sthen Exp $
 
 COMMENT=		enhanced interactive Python shell
 
@@ -50,6 +50,7 @@ RUN_DEPENDS +=		devel/py-backports-shutil-get-terminal-size \
 			devel/py-pathlib2
 TEST_DEPENDS +=		devel/py-mock
 .endif
+REVISION =		0
 
 # Despite the fact that setupbase.py defines paths for examples to
 # be installed into, we still have to do it manually for some reason.

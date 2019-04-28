@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/03/26 15:39:20 shadchin Exp $
+# $OpenBSD: Makefile,v 1.22 2019/04/28 20:51:34 sthen Exp $
 
 COMMENT=		common low-level libraries for logilab projects
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.4.0
 DISTNAME=		logilab-common-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		https://www.logilab.org/project/logilab-common
 

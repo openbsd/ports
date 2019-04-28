@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/24 10:08:11 danj Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:57 sthen Exp $
 
 COMMENT =		SPDX license list query tool
 
 MODPY_EGG_VERSION =	0.3.2
 DISTNAME =		spdx-lookup-${MODPY_EGG_VERSION}
 PKGNAME =		py-spdx-lookup-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		textproc
 

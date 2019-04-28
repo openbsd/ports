@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/03/25 14:29:50 kn Exp $
+# $OpenBSD: Makefile,v 1.7 2019/04/28 20:51:31 sthen Exp $
 
 COMMENT=	command line library for Python
 
 MODPY_EGG_VERSION=6.7
 DISTNAME=	click-${MODPY_EGG_VERSION}
 PKGNAME=	py-click-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	devel
 

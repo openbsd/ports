@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/07/11 11:29:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2019/04/28 20:51:28 sthen Exp $
 
 COMMENT =		Python interface to Redis
 
@@ -7,7 +7,7 @@ MODPY_EGG_VERSION =	2.10.6
 GH_ACCOUNT =		andymccurdy
 GH_PROJECT =		redis-py
 GH_TAGNAME =		${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 DISTNAME =		${GH_PROJECT}-${MODPY_EGG_VERSION}
 PKGNAME =		py-redis-${MODPY_EGG_VERSION}

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/06/05 20:41:53 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:52:00 sthen Exp $
 
 COMMENT =		small addon for python-requests HTTP library
 
 MODPY_EGG_VERSION =	0.9.7
 DISTNAME =		requests-futures-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

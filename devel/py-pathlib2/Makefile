@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/19 23:50:42 mariani Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:35 sthen Exp $
 
 COMMENT =		object-oriented filesystem paths
 
 MODPY_EGG_VERSION =	2.3.3
 DISTNAME =		pathlib2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

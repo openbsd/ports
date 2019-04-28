@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/07/01 06:28:12 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2019/04/28 20:51:52 sthen Exp $
 
 COMMENT =	Python library for OAuth
 
@@ -9,6 +9,7 @@ GH_PROJECT =	oauthlib
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 
 PKGNAME =	py-oauthlib-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	security
 MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>

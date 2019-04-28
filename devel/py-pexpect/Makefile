@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/04/23 20:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/04/28 20:51:35 sthen Exp $
 
 COMMENT=		pure Python Expect-like module
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	4.7.0
 DISTNAME=		pexpect-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		https://pexpect.readthedocs.io/
 

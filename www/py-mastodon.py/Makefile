@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2018/11/15 21:29:51 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:52:00 sthen Exp $
 
 COMMENT =		python wrapper for the Mastodon API
 
 MODPY_EGG_VERSION =	1.3.1
 DISTNAME =		Mastodon.py-${MODPY_EGG_VERSION}
 PKGNAME =		py-mastodon.py-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		www
 

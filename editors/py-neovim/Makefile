@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/17 13:15:34 edd Exp $
+# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:39 sthen Exp $
 
 COMMENT =	Python plugin support for Neovim
 
 MODPY_EGG_VERSION =	0.3.2
 DISTNAME =		pynvim-${MODPY_EGG_VERSION}
 PKGNAME =		py-neovim-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =	editors devel
 HOMEPAGE =	https://github.com/neovim/python-client

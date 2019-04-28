@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/26 07:29:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:32 sthen Exp $
 
 COMMENT =		python package that provides useful locks
 
 MODPY_EGG_VERSION =	0.14.1
 DISTNAME =		fasteners-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

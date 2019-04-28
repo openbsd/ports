@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2017/06/17 07:07:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2019/04/28 20:51:32 sthen Exp $
 
 COMMENT =		curses-like terminal wrapper
 
 MODPY_EGG_VERSION =	0.2.11
 DISTNAME =		curtsies-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 # MIT

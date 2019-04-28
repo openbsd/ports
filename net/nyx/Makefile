@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2019/01/13 15:19:20 pascal Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:43 sthen Exp $
 
 COMMENT =		terminal status monitor for Tor
 
 MODPY_EGG_VERSION =	2.1.0
 DISTNAME =		nyx-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		net
 

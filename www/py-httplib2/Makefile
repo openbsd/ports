@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2017/02/11 17:49:56 shadchin Exp $
+# $OpenBSD: Makefile,v 1.18 2019/04/28 20:51:59 sthen Exp $
 
 COMMENT =		Python HTTP client library
 
 MODPY_EGG_VERSION =	0.10.3
 DISTNAME =		httplib2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www net
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2017/01/03 19:28:49 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/28 20:52:00 sthen Exp $
 
 COMMENT =		terminals served to term.js using Tornado websockets
 
 MODPY_EGG_VERSION =	0.6
 DISTNAME =		terminado-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/02/17 14:06:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:30 sthen Exp $
 
 COMMENT =		better dates and times for Python
 
 MODPY_EGG_VERSION =	0.13.1
 DISTNAME =		arrow-${MODPY_EGG_VERSION}
 PKGNAME =		py-arrow-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 

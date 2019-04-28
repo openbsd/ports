@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/03/08 09:17:04 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:35 sthen Exp $
 
 COMMENT =	a generic plug-in system for python
 
 MODPY_EGG_VERSION =	0.5.3
 DISTNAME =	plugnplay-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

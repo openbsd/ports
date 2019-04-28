@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/24 21:51:36 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:42 sthen Exp $
 
 COMMENT =		Python package for describing statistical models
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.4.1
 DISTNAME =		patsy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
+REVISION =		0
 
 MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 

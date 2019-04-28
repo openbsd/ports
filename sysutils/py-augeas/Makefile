@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2017/08/23 07:48:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2019/04/28 20:51:53 sthen Exp $
 
 COMMENT =		Python bindings for Augeas
 
 MODPY_EGG_VERSION = 	1.0.3
 DISTNAME =		python-augeas-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/python-/py-/}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

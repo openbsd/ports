@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/23 16:43:01 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:58 sthen Exp $
 
 COMMENT =	WebSocket client & server library, WAMP real-time framework
 
 MODPY_EGG_VERSION =	19.3.3
 DISTNAME =	autobahn-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	www
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2017/01/03 19:28:48 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:59 sthen Exp $
 
 COMMENT =		HTTP request and response service
 
 MODPY_EGG_VERSION =	0.5.0
 DISTNAME =		httpbin-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 

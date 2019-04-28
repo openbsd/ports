@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2019/04/15 16:58:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2019/04/28 20:51:29 sthen Exp $
 
 COMMENT=	lists of the country, language and currency iso names
 
@@ -6,6 +6,7 @@ V =		4.2
 DISTNAME=	iso-codes-iso-codes-$V
 PKGNAME =	iso-codes-$V
 CATEGORIES=	devel
+REVISION =	0
 
 HOMEPAGE=	https://salsa.debian.org/iso-codes-team/iso-codes
 

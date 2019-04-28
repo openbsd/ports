@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/25 14:29:50 kn Exp $
+# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:32 sthen Exp $
 
 COMMENT =		discover and load entry points from installed packages
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.2.3
 DISTNAME =		entrypoints-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://github.com/takluyver/entrypoints
 

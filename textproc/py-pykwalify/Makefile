@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2017/08/20 11:07:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:57 sthen Exp $
 
 COMMENT =		lib/cli for JSON/YAML schema validation
 
 MODPY_EGG_VERSION =	1.6.0
-REVISION =		0
+REVISION =		1
 DISTNAME =		pykwalify-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2018/12/11 20:54:45 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:59 sthen Exp $
 
 COMMENT =		user session management for flask
 
 MODPY_EGG_VERSION =	0.4.1
 DISTNAME =		Flask-Login-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
+REVISION =		0
 
 CATEGORIES =		www
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/12/04 03:43:39 danj Exp $
+# $OpenBSD: Makefile,v 1.8 2019/04/28 20:51:56 sthen Exp $
 
 COMMENT=		text-to-HTML conversion tool
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	2.6.11
 DISTNAME=		Markdown-${MODPY_EGG_VERSION}
 PKGNAME=		py-markdown-${MODPY_EGG_VERSION}
 CATEGORIES=		textproc
-REVISION=		0
+REVISION=		1
 
 MAINTAINER=		Daniel Jakots <obsd@chown.me>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/01/03 19:19:48 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2019/04/28 20:51:34 sthen Exp $
 
 COMMENT=		python mocking and patching library for testing
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	2.0.0
 DISTNAME=		mock-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://www.voidspace.org.uk/python/mock/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/05/20 20:08:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:51 sthen Exp $
 
 COMMENT =	fast ASN.1 parser and serializer
 
@@ -7,6 +7,7 @@ GH_TAGNAME =	${MODPY_EGG_VERSION}
 GH_ACCOUNT =	wbond
 GH_PROJECT =	asn1crypto
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	security
 

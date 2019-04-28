@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/27 06:23:50 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:30 sthen Exp $
 
 COMMENT =		lightweight Python package to check if a file is binary
 
 MODPY_EGG_VERSION =	0.4.4
 DISTNAME =		binaryornot-${MODPY_EGG_VERSION}
 PKGNAME =		py-binaryornot-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 

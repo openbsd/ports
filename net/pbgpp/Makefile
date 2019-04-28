@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2018/07/15 08:57:59 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:44 sthen Exp $
 
 COMMENT =	pcap bgp parser
 
 MODPY_EGG_VERSION =	0.2.18
 DISTNAME =	pbgpp-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	net
 

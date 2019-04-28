@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/24 14:07:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/04/28 20:51:27 sthen Exp $
 
 COMMENT =	Python driver for mongodb
 
 MODPY_EGG_VERSION = 3.4.0
 DISTNAME =	pymongo-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
+REVISION =	0
 
 CATEGORIES =	databases devel
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2017/06/11 14:41:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:29 sthen Exp $
 
 COMMENT =	munkres algorithm for the Assignment Problem
 
 MODPY_EGG_VERSION = 1.0.10
 DISTNAME =	munkres-${MODPY_EGG_VERSION}
 PKGNAME = 	py-algorithm-${DISTNAME}
+REVISION =      0
 
 CATEGORIES =	devel
 

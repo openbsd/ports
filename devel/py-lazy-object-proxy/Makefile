@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/25 14:29:51 kn Exp $
+# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:34 sthen Exp $
 
 COMMENT =		fast and thorough lazy object proxy
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.3.1
 DISTNAME =		lazy-object-proxy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://python-lazy-object-proxy.readthedocs.org
 

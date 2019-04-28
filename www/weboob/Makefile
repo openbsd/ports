@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/23 13:09:40 semarie Exp $
+# $OpenBSD: Makefile,v 1.11 2019/04/28 20:52:01 sthen Exp $
 
 COMMENT =	web out of browsers
 
@@ -54,6 +54,7 @@ PKGNAME =	weboob${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
 .else
 RUN_DEPENDS +=	devel/py-futures
 .endif
+REVISION =	0
 
 MAKE_ENV +=	PYUIC5_EXECUTABLE=${LOCALBASE}/bin/pyuic5${MODPY_BIN_SUFFIX}
 

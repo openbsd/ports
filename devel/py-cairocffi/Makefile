@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/25 14:29:50 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:31 sthen Exp $
 
 COMMENT =		cffi-based cairo bindings for Python
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.8.0
 DISTNAME =		cairocffi-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://github.com/Kozea/cairocffi
 

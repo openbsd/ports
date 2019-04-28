@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/08/10 19:49:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:39 sthen Exp $
 
 COMMENT=	component architecture from Zope
 
@@ -7,7 +7,7 @@ MODPY_EGG_VERSION=	4.2.2
 DISTNAME=	zope.component-${MODPY_EGG_VERSION}
 PKGNAME=	py-zopecomponent-${MODPY_EGG_VERSION}
 CATEGORIES=	devel
-REVISION=	2
+REVISION=	3
 
 # Zope Public License
 PERMIT_PACKAGE_CDROM=	Yes

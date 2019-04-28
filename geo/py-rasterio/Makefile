@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/22 13:52:26 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:40 sthen Exp $
 
 COMMENT =	geospatial raster data API and CLI
 
 MODPY_EGG_VERSION =	1.0.18
 DISTNAME =	rasterio-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	geo
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/07/13 01:29:40 danj Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:34 sthen Exp $
 
 COMMENT =		implementation of time.monotonic()
 
 MODPY_EGG_VERSION =	1.3
 DISTNAME =		monotonic-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

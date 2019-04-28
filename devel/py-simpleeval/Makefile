@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2018/10/28 13:46:43 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:37 sthen Exp $
 
 COMMENT =	simple, safe single expression evaluator library
 
 MODPY_EGG_VERSION = 0.9.8
 DISTNAME =	simpleeval-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

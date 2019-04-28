@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/02/23 12:37:15 shadchin Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:52:02 sthen Exp $
 
 COMMENT =		FontAwesome icons in PyQt and PySide applications
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.4.4
 DISTNAME =		QtAwesome-${MODPY_EGG_VERSION}
 PKGNAME =		py-qtawesome-${MODPY_EGG_VERSION}
 CATEGORIES =		x11
+REVISION =		0
 
 HOMEPAGE =		https://github.com/spyder-ide/qtawesome
 

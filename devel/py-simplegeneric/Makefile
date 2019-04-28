@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/02/27 21:47:38 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/04/28 20:51:37 sthen Exp $
 
 COMMENT =		simple generic functions
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.8.1
 DISTNAME =		simplegeneric-${MODPY_EGG_VERSION}
 EXTRACT_SUFX =		.zip
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 

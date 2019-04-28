@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/08/08 22:10:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:32 sthen Exp $
 
 COMMENT =	Pythonic argument parser
 
@@ -7,7 +7,7 @@ DISTNAME =	docopt-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
 MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://docopt.org
 

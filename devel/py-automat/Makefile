@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/25 14:29:50 kn Exp $
+# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:30 sthen Exp $
 
 COMMENT =		finite-state machines in Python
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.6.0
 
 DISTNAME =		Automat-${MODPY_EGG_VERSION}
 PKGNAME =		py-automat-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 

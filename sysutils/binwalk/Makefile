@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/06 09:26:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2019/04/28 20:51:53 sthen Exp $
 
 COMMENT =	tool for reverse-engineering and analysing firmware blobs
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION = 2.1.1
 GH_ACCOUNT =	devttys0
 GH_PROJECT =	binwalk
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	sysutils
 

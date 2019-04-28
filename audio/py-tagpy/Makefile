@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2018/12/13 19:53:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/04/28 20:51:26 sthen Exp $
 
 COMMENT=		Python bindings to TagLib audio file tag library
 
 MODPY_EGG_VERSION =	2013.1
 DISTNAME =		tagpy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		9
+REVISION =		10
 
 CATEGORIES =		audio devel
 

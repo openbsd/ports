@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/30 13:50:33 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:26 sthen Exp $
 
 MODPY_EGG_VERSION =	0.2
 COMMENT =	curses interface for browsing and playing radio streams
 DISTNAME =	curseradio-${MODPY_EGG_VERSION}
 CATEGORIES =	audio
+REVISION =	0
 
 GH_ACCOUNT =	chronitis
 GH_PROJECT =	curseradio

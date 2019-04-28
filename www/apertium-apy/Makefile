@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/20 10:56:21 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:58 sthen Exp $
 
 COMMENT =	apertium text translation API in Python
 
 DISTNAME =	apertium-apy-${MODPY_EGG_VERSION}
 
 MODPY_EGG_VERSION =	0.11.5
+REVISION =		0
 
 CATEGORIES =	www
 

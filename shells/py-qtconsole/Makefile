@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/17 20:32:37 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:53 sthen Exp $
 
 COMMENT =		Jupyter Qt console
 
@@ -7,7 +7,7 @@ DISTNAME =		qtconsole-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		shells
 
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 

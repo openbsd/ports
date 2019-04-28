@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/25 14:19:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:44 sthen Exp $
 
 COMMENT =		library to manage IOS-XR devices
 
 MODPY_EGG_VERSION =	0.53
 DISTNAME =		pyIOSXR-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/py//}
+REVISION =		0
 
 CATEGORIES =		net
 

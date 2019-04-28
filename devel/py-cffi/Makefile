@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/04/25 13:28:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2019/04/28 20:51:31 sthen Exp $
 
 # XXX: Check _cffi__ hashes of dependent ports if updating.
 # e.g. devel/libgit2/py-git2
@@ -9,6 +9,7 @@ MODPY_EGG_VERSION=	1.11.5
 DISTNAME=		cffi-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
+REVISION=		0
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

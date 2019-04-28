@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2018/06/12 09:32:03 rpointel Exp $
+# $OpenBSD: Makefile,v 1.19 2019/04/28 20:51:28 sthen Exp $
 
 COMMENT =		Object Relational Manager
 
 MODPY_EGG_VERSION =	3.7.0
 DISTNAME =		SQLObject-${MODPY_EGG_VERSION}
 PKGNAME =		py-sqlobject-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		databases
 

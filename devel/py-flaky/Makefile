@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/22 13:01:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:33 sthen Exp $
 
 COMMENT =	nose/pytest plugin to automatically rerun flaky tests
 
 MODPY_EGG_VERSION = 3.5.3
 DISTNAME =	flaky-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

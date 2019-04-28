@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/15 06:36:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:45 sthen Exp $
 
 COMMENT =		Python module for managing PF
 
@@ -7,6 +7,7 @@ GH_COMMIT =		28bfaef413dc206773cb93251cb6ee9740596911
 GH_ACCOUNT =		dotpy
 GH_PROJECT =		py-pf
 DISTNAME =		py-pf-${MODPY_EGG_VERSION}
+REVISION =		0
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

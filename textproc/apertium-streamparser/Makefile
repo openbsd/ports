@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/20 10:54:34 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:54 sthen Exp $
 
 COMMENT =	apertium stream format parser
 
 DISTNAME =	apertium-streamparser-${MODPY_EGG_VERSION}
 
 MODPY_EGG_VERSION =	5.0.2
+REVISION =		0
 
 CATEGORIES =	textproc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/06/18 20:44:03 shadchin Exp $
+# $OpenBSD: Makefile,v 1.16 2019/04/28 20:51:38 sthen Exp $
 
 COMMENT =		Python cross-version byte-code deparser
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	2.11.0
 DISTNAME =		uncompyle6-${MODPY_EGG_VERSION}
 PKGNAME =		py-uncompyle6-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://github.com/rocky/python-uncompyle6/
 

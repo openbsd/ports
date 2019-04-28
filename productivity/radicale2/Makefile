@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/11/06 14:29:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:46 sthen Exp $
 
 COMMENT =	simple CalDAV calendar server
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION = 2.1.11
 DISTNAME =	Radicale-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	productivity net
+REVISION =	0
 
 HOMEPAGE =	https://radicale.org/
 

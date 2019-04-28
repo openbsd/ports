@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/25 14:29:52 kn Exp $
+# $OpenBSD: Makefile,v 1.10 2019/04/28 20:51:56 sthen Exp $
 
 COMMENT =		Python library for approximate and phonetic string matching
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.5.6
 DISTNAME =		jellyfish-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =   		textproc
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/sunlightlabs/jellyfish
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/04/14 13:21:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:52 sthen Exp $
 
 COMMENT=	Javascript Object Signing and Encryption (JOSE)
 
@@ -7,6 +7,7 @@ CATEGORIES=	security devel
 MODPY_EGG_VERSION= 1.1.0
 DISTNAME=	josepy-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 FLAVORS=	python3
 FLAVOR?=

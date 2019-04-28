@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/02/25 13:13:05 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:34 sthen Exp $
 
 COMMENT =		dot-accessible dictionary (a la JavaScript objects)
 
 MODPY_EGG_VERSION =	2.2.0
 DISTNAME =		munch-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

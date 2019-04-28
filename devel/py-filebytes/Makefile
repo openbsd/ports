@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2018/10/19 13:59:59 rpointel Exp $
+# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:33 sthen Exp $
 
 COMMENT =	python module to read and write ELF, PE, MachO or OAT
 
 MODPY_EGG_VERSION =	0.9.18
 DISTNAME =	filebytes-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel security
 

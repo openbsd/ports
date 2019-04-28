@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/19 09:38:49 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:46 sthen Exp $
 
 COMMENT =		command line gopher client
 
 MODPY_EGG_VERSION =	0.0.10
 DISTNAME =		VF-1-${MODPY_EGG_VERSION}
 PKGNAME =		vf1-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		net
 

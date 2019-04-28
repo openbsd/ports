@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/22 11:11:19 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:42 sthen Exp $
 
 COMMENT =		snuggs are s-expressions for numpy
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.4.2
 DISTNAME =		snuggs-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
+REVISION =		0
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

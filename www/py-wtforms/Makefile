@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/02 09:29:37 sebastia Exp $
+# $OpenBSD: Makefile,v 1.11 2019/04/28 20:52:01 sthen Exp $
 
 COMMENT=	flexible forms validation and rendering library
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=2.1
 DISTNAME=	WTForms-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L}
 CATEGORIES=	www
+REVISION=	0
 
 HOMEPAGE=	http://wtforms.simplecodes.com/
 

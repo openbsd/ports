@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/19 05:34:31 bket Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:27 sthen Exp $
 
 COMMENT =		Python client for interacting with InfluxDB
 
 MODPY_EGG_VERSION =	5.2.2
 DISTNAME =		influxdb-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		databases
 

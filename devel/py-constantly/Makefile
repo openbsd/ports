@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/05/03 12:07:02 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:31 sthen Exp $
 
 COMMENT =		symbolic constants in Python
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	15.1.0
 
 DISTNAME =		constantly-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/16 13:12:26 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2019/04/28 20:51:44 sthen Exp $
 
 COMMENT =		simple DNS resolver for asyncio
 
@@ -7,7 +7,7 @@ MODPY_EGG_VERSION =	1.2.0
 DISTNAME =		aiodns-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 

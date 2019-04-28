@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2018/08/19 07:54:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2019/04/28 20:51:29 sthen Exp $
 
 COMMENT=	braille translator, back-translator and formatter
 
 V=		3.6.0
 DISTNAME=	liblouis-${V}
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  louis                7.2      # 16.0
 

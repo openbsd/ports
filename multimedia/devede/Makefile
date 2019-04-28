@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2019/04/27 23:43:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2019/04/28 20:51:43 sthen Exp $
 
 COMMENT=		video DVDs and CDs creation tool
 
 MODPY_EGG_VERSION=	${GH_TAGNAME}
 DISTNAME=		devede-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 GH_TAGNAME=		4.8.9
 GH_ACCOUNT=		rastersoft

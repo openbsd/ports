@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2018/05/31 05:51:57 rpointel Exp $
+# $OpenBSD: Makefile,v 1.15 2019/04/28 20:51:32 sthen Exp $
 
 COMMENT =		automation tool
 
 MODPY_EGG_VERSION =	0.31.1
 DISTNAME =		doit-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		http://pydoit.org/
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/03/08 02:42:34 danj Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:31 sthen Exp $
 
 COMMENT =		multithreading in Python click
 
 MODPY_EGG_VERSION =	0.4.3
 DISTNAME =		click-threading-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

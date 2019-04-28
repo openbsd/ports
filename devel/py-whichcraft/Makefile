@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/10/19 00:05:29 danj Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:39 sthen Exp $
 
 COMMENT =		cross-platform, cross-python, shutil.which functionality
 
 MODPY_EGG_VERSION =	0.4.1
 DISTNAME =		whichcraft-${MODPY_EGG_VERSION}
 PKGNAME =		py-whichcraft-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel sysutils
 

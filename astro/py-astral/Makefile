@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/25 14:29:49 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:26 sthen Exp $
 
 COMMENT =		calculations for the position of the sun and the moon
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.4
 DISTNAME =		astral-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 EXTRACT_SUFX =		.zip
+REVISION =		0
 
 CATEGORIES =		astro
 

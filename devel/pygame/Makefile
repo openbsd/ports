@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/04/01 09:27:43 landry Exp $
+# $OpenBSD: Makefile,v 1.34 2019/04/28 20:51:39 sthen Exp $
 
 COMMENT=	set of Python modules designed for writing games
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.9.3
 DISTNAME=	pygame-${MODPY_EGG_VERSION}
 PKGNAME =	py-game-${MODPY_EGG_VERSION}
 CATEGORIES=	devel games
+REVISION =	0
 
 HOMEPAGE=	http://www.pygame.org/
 

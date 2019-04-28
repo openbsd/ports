@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/03/08 09:08:11 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:37 sthen Exp $
 
 COMMENT =	pretty-print tabular data
 
 MODPY_EGG_VERSION =	0.8.2
 DISTNAME =	tabulate-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

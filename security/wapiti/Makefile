@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2018/05/30 14:53:35 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:53 sthen Exp $
 
 COMMENT =	web-application vulnerability scanner
 
 MODPY_EGG_VERSION =	3.0.1
 DISTNAME =	wapiti3-${MODPY_EGG_VERSION}
 PKGNAME =	wapiti-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	security www
 

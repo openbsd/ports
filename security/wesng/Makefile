@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/15 17:04:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:53 sthen Exp $
 
 COMMENT =	Windows Exploit Suggester - Next Generation
 
@@ -7,7 +7,7 @@ GH_COMMIT =	444cb9c1549503db9c0740951c417c832696a8a8
 GH_PROJECT =	wesng
 GH_ACCOUNT =	bitsadmin
 DISTNAME =	wesng-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 

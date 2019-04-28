@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/08 04:25:26 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:35 sthen Exp $
 
 V =		0.2.2
 COMMENT =	access to parallel port from Python
 DISTNAME =	pyparallel-${V}
 PKGNAME =	py-parallel-${V}
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	https://github.com/pyserial/pyparallel
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

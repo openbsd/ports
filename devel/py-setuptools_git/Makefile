@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2018/07/30 14:01:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:36 sthen Exp $
 
 COMMENT=		setuptools revision control system plugin for Git
 
 MODPY_EGG_VERSION=	1.2
 DISTNAME=		setuptools-git-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		devel
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/22 08:19:22 kmos Exp $
+# $OpenBSD: Makefile,v 1.11 2019/04/28 20:51:45 sthen Exp $
 
 COMMENT =		python bindings for the RIPE Atlas API
 
 MODPY_EGG_VERSION =	1.4.2
 DISTNAME =		ripe.atlas.cousteau-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		net
 

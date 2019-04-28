@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/01 09:10:26 semarie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:56 sthen Exp $
 
 COMMENT =	parser for the Open Financial Exchange file format
 
 MODPY_EGG_VERSION = 0.20
 DISTNAME =	ofxparse-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	textproc
 

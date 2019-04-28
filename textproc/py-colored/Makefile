@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/20 15:40:23 kmos Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:55 sthen Exp $
 
 COMMENT =		simple library for color and formatting in terminal
 
 MODPY_EGG_VERSION =	1.3.93
 DISTNAME =		colored-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 

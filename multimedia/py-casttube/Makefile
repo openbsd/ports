@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/01/19 02:42:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:43 sthen Exp $
 
 COMMENT=		interact with Youtube Chromecast api
 
 MODPY_EGG_VERSION=	0.2.0
 DISTNAME=		casttube-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		multimedia net
 

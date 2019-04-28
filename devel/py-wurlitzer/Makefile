@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/25 14:29:52 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:39 sthen Exp $
 
 COMMENT =		capture c-level output in context managers
 
 MODPY_EGG_VERSION =	1.0.2
 DISTNAME =		wurlitzer-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

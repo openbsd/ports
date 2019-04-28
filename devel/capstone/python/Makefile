@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/01 02:28:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:28 sthen Exp $
 
 COMMENT =	Python bindings for capstone
 
 MODPY_EGG_VERSION = ${GH_TAGNAME}
 
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 MODULES =	lang/python
 USE_GMAKE =	Yes

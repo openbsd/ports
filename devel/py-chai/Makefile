@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/23 17:15:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:31 sthen Exp $
 
 COMMENT =		easy to use mocking, stubbing, and spying framework
 
 MODPY_EGG_VERSION =	1.1.2
 DISTNAME =		chai-${MODPY_EGG_VERSION}
 PKGNAME =		py-chai-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 

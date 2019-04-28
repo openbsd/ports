@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2018/06/12 04:45:07 rpointel Exp $
+# $OpenBSD: Makefile,v 1.23 2019/04/28 20:51:59 sthen Exp $
 
 COMMENT =		HTML form validation, generation, and conversion
 
 MODPY_EGG_VERSION =	1.3.1
 DISTNAME =		FormEncode-${MODPY_EGG_VERSION}
 PKGNAME =		py-formencode-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		www
 

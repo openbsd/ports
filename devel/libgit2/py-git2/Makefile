@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/01/28 20:36:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2019/04/28 20:51:29 sthen Exp $
 
 COMMENT=		libgit2 bindings in Python
 
@@ -9,6 +9,7 @@ MODULES=		lang/python
 MODPY_EGG_VERSION=	0.27.4
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
+REVISION=		0
 
 WANTLIB += 		git2 pthread ${MODPY_WANTLIB}
 

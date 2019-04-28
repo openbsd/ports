@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/01/22 11:18:53 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:35 sthen Exp $
 
 COMMENT =	utility for gitignore style pattern matching of file paths
 
 MODPY_EGG_VERSION = 0.5.9
 DISTNAME =	pathspec-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

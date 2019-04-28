@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/02/20 11:05:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:51 sthen Exp $
 
 COMMENT =		pure-Python implementation of AES block-cipher
 
 MODPY_EGG_VERSION =	1.6.1
 DISTNAME =		pyaes-${MODPY_EGG_VERSION}
 PKGNAME =		py-aes-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		security
 

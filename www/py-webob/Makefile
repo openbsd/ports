@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2017/05/12 07:58:48 shadchin Exp $
+# $OpenBSD: Makefile,v 1.13 2019/04/28 20:52:01 sthen Exp $
 
 COMMENT =	wsgi request and response object
 
 MODPY_EGG_VERSION = 1.7.2
 DISTNAME =	WebOb-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
+REVISION =	0
 
 CATEGORIES =	www devel
 

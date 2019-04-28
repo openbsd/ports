@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/06/20 11:33:20 feinerer Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:51 sthen Exp $
 
 COMMENT =		Python curve25519 library with ed25519 signatures
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	0.4.1
 POST =			2
 DISTNAME =		python-axolotl-curve25519-${MODPY_EGG_VERSION}.post${POST}
 PKGNAME =		py-axolotl-curve25519-${MODPY_EGG_VERSION}pl${POST}
+REVISION =		0
 
 CATEGORIES =		security
 

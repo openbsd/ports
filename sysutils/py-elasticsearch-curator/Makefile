@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2019/02/14 07:28:27 pvk Exp $
+# $OpenBSD: Makefile,v 1.19 2019/04/28 20:51:53 sthen Exp $
 
 COMMENT=	manage Elasticsearch indices
 
 MODPY_EGG_VERSION=5.6.0
 DISTNAME=	elasticsearch-curator-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}elasticsearch-curator-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	sysutils
 

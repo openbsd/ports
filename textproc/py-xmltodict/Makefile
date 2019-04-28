@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/05/04 11:40:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:58 sthen Exp $
 
 COMMENT =		makes working with XML feel like orking with JSON
 
 MODPY_EGG_VERSION =	0.11.0
 DISTNAME = 		xmltodict-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 

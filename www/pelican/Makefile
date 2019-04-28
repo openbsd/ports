@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2018/11/25 19:57:14 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2019/04/28 20:51:58 sthen Exp $
 
 COMMENT =		static site generator written in Python
 
 MODPY_EGG_VERSION =	${GH_TAGNAME}
 DISTNAME =		pelican-${MODPY_EGG_VERSION}
+REVISION =		0
 
 GH_ACCOUNT =		getpelican
 GH_PROJECT =		pelican

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/25 14:29:52 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/28 20:52:00 sthen Exp $
 
 COMMENT =		OAuth library support for python-requests
 
 MODPY_EGG_VERSION =	1.0.0
 DISTNAME =		requests-oauthlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

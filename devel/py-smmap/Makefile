@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/04/25 19:54:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2019/04/28 20:51:37 sthen Exp $
 
 COMMENT=		pure Python implementation of an SMM manager
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	2.0.3
 DISTNAME=		smmap2-${MODPY_EGG_VERSION}
 PKGNAME=		py-smmap-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
+REVISION=		0
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

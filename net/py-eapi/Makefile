@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/25 14:20:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:44 sthen Exp $
 
 COMMENT =		Python client for Arista eAPI
 
 MODPY_EGG_VERSION =	0.8.2
 DISTNAME =		pyeapi-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/py//}
+REVISION =		0
 
 CATEGORIES =		net
 

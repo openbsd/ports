@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/07/07 17:05:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:33 sthen Exp $
 
 COMMENT =		testing library for Python
 
 MODPY_EGG_VERSION =	0.10.2
 DISTNAME =		flexmock-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

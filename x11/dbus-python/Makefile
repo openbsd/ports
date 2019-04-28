@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2018/05/05 09:05:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2019/04/28 20:52:01 sthen Exp $
 
 PORTROACH=		limitw:2,even
 
@@ -11,6 +11,7 @@ DISTNAME =		dbus-python-${V}
 PKGNAME-main =		py-dbus-${V}
 FULLPKGNAME-common =	py-dbus-common-${V}
 FULLPKGPATH-common =	x11/dbus-python,-common
+REVISION-common =	0
 
 CATEGORIES =		x11
 
@@ -40,6 +41,7 @@ USE_GMAKE=		Yes
 FULLPKGNAME-main=	${PKGNAME-main:S/^py-/py3-/}
 FULLPKGPATH-main=	x11/dbus-python,-main${MODPY_FLAVOR}
 .endif
+REVISION-main=		0
 
 LIB_DEPENDS-main =	devel/glib2 \
 			x11/dbus
