@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2019/04/24 16:26:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/04/28 07:35:19 landry Exp $
 
 COMMENT=		curses based frontend for mpd
 
-VER=			0.33
+VER=			0.34
 DISTNAME=		ncmpc-${VER}
 EPOCH=			0
 CATEGORIES=		audio
-REVISION=		2
 
 HOMEPAGE=		https://www.musicpd.org/clients/ncmpc/
 
