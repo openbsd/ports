@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/01/01 11:35:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/04/28 09:13:36 ajacoutot Exp $
 @bin bin/dazzle-list-counters
 include/libdazzle-1.0/
 include/libdazzle-1.0/actions/
@@ -10,6 +10,7 @@ include/libdazzle-1.0/actions/dzl-widget-action-group.h
 include/libdazzle-1.0/animation/
 include/libdazzle-1.0/animation/dzl-animation.h
 include/libdazzle-1.0/animation/dzl-box-theatric.h
+include/libdazzle-1.0/animation/dzl-frame-source.h
 include/libdazzle-1.0/app/
 include/libdazzle-1.0/app/dzl-application-window.h
 include/libdazzle-1.0/app/dzl-application.h
@@ -95,6 +96,7 @@ include/libdazzle-1.0/shortcuts/dzl-shortcut-phase.h
 include/libdazzle-1.0/shortcuts/dzl-shortcut-simple-label.h
 include/libdazzle-1.0/shortcuts/dzl-shortcut-theme-editor.h
 include/libdazzle-1.0/shortcuts/dzl-shortcut-theme.h
+include/libdazzle-1.0/shortcuts/dzl-shortcut-tooltip.h
 include/libdazzle-1.0/shortcuts/dzl-shortcuts-group.h
 include/libdazzle-1.0/shortcuts/dzl-shortcuts-section.h
 include/libdazzle-1.0/shortcuts/dzl-shortcuts-shortcut.h
