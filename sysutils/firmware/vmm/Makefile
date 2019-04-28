@@ -1,30 +1,24 @@
-# $OpenBSD: Makefile,v 1.19 2019/01/19 12:34:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/04/28 14:29:29 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
+
 USE_LLD=	No
+COMPILER=	ports-gcc
+COMPILER_LANGS=	c
 
 # XXX errors with clang - same with/without integrated assembler
 # error: invalid output size for constraint '=Qi'
 # error: invalid input size for constraint 'Q'
 # etc. in various files, coming from __GET_VAR / __SET_VAR.
 #
-# XXX errors with ports-gcc and ld.bfd -
-# ld: Relocatable linking with relocations from format elf64-x86-64 (out/ccode16.o) to format elf32-i386 (out/code16.o) is not supported
-#
 # XXX fails self-check with LLD -
 # The version of LD on this system (ld -nopie -znorelro) does not properly handle
 # alignments.  As a result, this project can not be built.
-#
-# FreeBSD are building this with ld.bfd and GCC (currently 8, but many versions
-# previously) with apparently no special patches.
-# https://svnweb.freebsd.org/ports/head/misc/seabios/Makefile?view=markup
-
-CC =		/usr/bin/gcc
 
 FW_DRIVER=	vmm
 FW_VER=		1.11.0
 SB_VER=		20100422
-REVISION=	1
+REVISION=	2
 DISTNAME=	seabios-${FW_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 	sgabios-20100422{23d474943dcd55d0550a3d20b3d30e9040a4f15b}.tar.gz:0
