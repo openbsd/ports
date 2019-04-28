@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2019/01/21 17:35:34 kirby Exp $
+# $OpenBSD: Makefile,v 1.63 2019/04/28 11:58:12 kirby Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
 COMMENT =	panorama image stitcher
 
-DISTNAME =	hugin-2018.0.0
+DISTNAME =	hugin-2019.0.0
 EXTRACT_SUFX =	.tar.bz2
 
 # not needed for releases, but makes RCs/betas easier to work with
@@ -30,7 +30,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU Half Iex IlmImf IlmThread
 WANTLIB += Imath X11 boost_filesystem-mt boost_system-mt c exiv2
-WANTLIB += fftw3 jpeg lcms2 m pano13 png python2.7 sqlite3 tiff
+WANTLIB += fftw3 jpeg lcms2 m pano13 png16 python2.7 sqlite3 tiff
 WANTLIB += vigraimpex wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
 WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0
 WANTLIB += wx_gtk3u_gl-3.0 wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0
