@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2018/09/06 06:25:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2019/04/28 06:31:54 ajacoutot Exp $
 
 COMMENT=		collection of shared GSettings schemas
 
 GNOME_PROJECT=		gsettings-desktop-schemas
-GNOME_VERSION=		3.28.1
+GNOME_VERSION=		3.32.0
 
 CATEGORIES=		devel
 
@@ -13,11 +13,10 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		devel/dconf \
+			devel/meson \
 			x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection
-
-CONFIGURE_STYLE=	gnu
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/*.gschema.override \
