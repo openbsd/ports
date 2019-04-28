@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2019/04/16 20:13:09 landry Exp $
+# $OpenBSD: Makefile,v 1.38 2019/04/28 22:35:40 naddy Exp $
 
 COMMENT =	OpenStreetMap editor
 
 GH_ACCOUNT =	openstreetmap
 GH_PROJECT =	merkaartor
 GH_TAGNAME =	0.18.3
-REVISION =	7
+REVISION =	8
 
 CATEGORIES =	geo x11
 
@@ -45,8 +45,3 @@ pre-configure:
 	cd ${WRKSRC} && lrelease-qt5 src/src.pro
 
 .include <bsd.port.mk>
-
-# ports-gcc 4.9 requires explicit -std=c++11 for the gdal headers
-.if ${CHOSEN_COMPILER} == "ports-gcc"
-CXXFLAGS+=	-std=c++11
-.endif
