@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2018/11/23 12:41:47 stsp Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2019/04/28 13:38:28 stsp Exp $
 @conflict subversion-*-gnome_keyring
 @pkgpath devel/subversion,no_bindings
 @pkgpath devel/subversion,-main,gnome_keyring
@@ -56,6 +56,7 @@ include/subversion-1/svn_md5.h
 include/subversion-1/svn_mergeinfo.h
 include/subversion-1/svn_nls.h
 include/subversion-1/svn_opt.h
+include/subversion-1/svn_opt_impl.h
 include/subversion-1/svn_path.h
 include/subversion-1/svn_pools.h
 include/subversion-1/svn_props.h
@@ -68,6 +69,7 @@ include/subversion-1/svn_string.h
 include/subversion-1/svn_subst.h
 include/subversion-1/svn_time.h
 include/subversion-1/svn_types.h
+include/subversion-1/svn_types_impl.h
 include/subversion-1/svn_user.h
 include/subversion-1/svn_utf.h
 include/subversion-1/svn_version.h
