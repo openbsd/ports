@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/05/27 21:17:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/04/28 08:29:50 rsadowski Exp $
 include/matroska/
 include/matroska/FileKax.h
 include/matroska/KaxAttached.h
@@ -30,7 +30,11 @@ include/matroska/KaxVersion.h
 include/matroska/c/
 include/matroska/c/libmatroska.h
 include/matroska/c/libmatroska_t.h
+lib/cmake/matroska/
+lib/cmake/matroska/MatroskaConfig.cmake
+lib/cmake/matroska/MatroskaConfigVersion.cmake
+lib/cmake/matroska/MatroskaTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/matroska/MatroskaTargets.cmake
 lib/libmatroska.a
-lib/libmatroska.la
 @lib lib/libmatroska.so.${LIBmatroska_VERSION}
 lib/pkgconfig/libmatroska.pc
