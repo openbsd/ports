@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.22 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/04/28 08:29:45 rsadowski Exp $
 
 COMMENT=	Extensible Binary Meta Language library
 
-DISTNAME=	libebml-1.3.5
+DISTNAME=	libebml-1.3.7
 CATEGORIES=	textproc
 MASTER_SITES=	https://dl.matroska.org/downloads/libebml/
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
-SHARED_LIBS=	ebml	3.1
+SHARED_LIBS=	ebml	3.2
 
 HOMEPAGE=	http://www.matroska.org/
 
@@ -17,10 +16,12 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	m ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} m
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-CONFIGURE_STYLE=	gnu
+MODULES +=	devel/cmake
+
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
