@@ -1,8 +1,8 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.9 2018/12/23 19:13:20 kirby Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.10 2019/04/28 09:03:13 kirby Exp $
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -508,7 +508,7 @@ install(FILES RELEASE_NOTES.txt DESTINATION "${CREDITS
+@@ -518,7 +518,7 @@ install(FILES RELEASE_NOTES.txt DESTINATION "${CREDITS
  if(BUILD_BUNDLE)
      install(FILES "${PROJECT_SOURCE_DIR}/doc/manpage/rawtherapee.1" DESTINATION "${DATADIR}/share/man/man1")
  else()
