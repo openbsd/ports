@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/05 19:38:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/28 00:03:51 bcallah Exp $
 
 COMMENT =	HolyC transcompiler
 
 MODPY_EGG_VERSION =	0.0.1.post7
 DISTNAME =	secularize-${MODPY_EGG_VERSION}
-PKGNAME =	${DISTNAME:S/post//}}
+PKGNAME =	${DISTNAME:S/post//}
+EPOCH =		0
 
 CATEGORIES =	lang
 
