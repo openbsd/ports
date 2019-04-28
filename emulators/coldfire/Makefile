@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:06:03 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/28 21:09:17 sthen Exp $
 
 COMMENT=	Motorola Coldfire emulator
 
 DISTNAME=	coldfire-0.3.1
+REVISION=	1
 CATEGORIES=	emulators
 HOMEPAGE=	http://www.slicer.ca/coldfire/
-
-MAINTAINER=	Martin Reindl <martin@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/files/
 
-WANTLIB=		c ncurses pthread readline
+WANTLIB=		c curses pthread readline
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
