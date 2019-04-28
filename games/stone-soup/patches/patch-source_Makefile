@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_Makefile,v 1.4 2017/05/27 16:41:41 espie Exp $
+$OpenBSD: patch-source_Makefile,v 1.5 2019/04/28 18:35:42 kirby Exp $
 Index: source/Makefile
 --- source/Makefile.orig
 +++ source/Makefile
@@ -14,10 +14,10 @@ Index: source/Makefile
  	STRIP := strip -x
 @@ -325,11 +322,8 @@ endif
  #
- ifndef NO_APPLE_GCC
+ ifndef NO_APPLE_PLATFORM
  ifeq ($(uname_S),Darwin)
 -ifneq ($(shell gcc -v 2>&1 | grep Apple),)
--APPLE_GCC = YesPlease
+-APPLE_PLATFORM = YesPlease
  endif
  endif
 -endif
@@ -40,39 +40,6 @@ Index: source/Makefile
  
  ifneq ($(FORCE_CC),)
  GCC := $(FORCE_CC)
-@@ -639,9 +625,9 @@ ifndef BUILD_LUA
-       BUILD_LUA = yes
-     endif
-   else
--    ifneq ($(shell $(PKGCONFIG) lua5.1 --exists || echo no),)
--      ifneq ($(shell $(PKGCONFIG) lua-5.1 --exists || echo no),)
--        ifneq ($(shell $(PKGCONFIG) lua --exists || echo no),)
-+    ifneq ($(shell $(PKGCONFIG) lua --exists || echo no),)
-+      ifneq ($(shell $(PKGCONFIG) lua${MODLUA_DEP_VERSION} --exists || echo no),)
-+        ifneq ($(shell $(PKGCONFIG) lua${MODLUA_DEP_VERSION} --exists || echo no),)
-           BUILD_LUA = yes
-         else
-           ifeq ($(shell $(PKGCONFIG) lua --modversion | head -c 3),5.1)
-@@ -651,16 +637,16 @@ ifndef BUILD_LUA
-           endif
-         endif
-       else
--        LUA_PACKAGE = lua-5.1
-+        LUA_PACKAGE = lua${MODLUA_DEP_VERSION}
-       endif
-     else
--      LUA_PACKAGE = lua5.1
-+      LUA_PACKAGE = lua${MODLUA_DEP_VERSION}
-     endif
-   endif
- endif
- ifndef BUILD_LUA
-   ifndef LUA_PACKAGE
--    LUA_PACKAGE = lua5.1
-+    LUA_PACKAGE = lua${MODLUA_DEP_VERSION}
-   endif
-   INCLUDES_L += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-I | sed -e 's/-I/-isystem /')
-   CFLAGS_L  += $(shell $(PKGCONFIG) $(LUA_PACKAGE) --cflags-only-other)
 @@ -673,7 +659,7 @@ endif
  
  ifndef BUILD_SQLITE

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2018/06/27 21:03:49 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2019/04/28 18:35:42 kirby Exp $
 
 BROKEN-hppa =	ICE on dgn-shoals.cc:638
 
@@ -7,11 +7,10 @@ CATEGORIES = 	games
 
 HOMEPAGE = 	http://crawl.develz.org/
 MASTER_SITES = 	https://crawl.develz.org/release/${VERSION:R}/
-VERSION = 	0.18.1
+VERSION = 	0.23.2
 DISTNAME=	stone_soup-${VERSION}-nodeps
 EXTRACT_SUFX=	.tar.xz
 PKGNAME=	stone-soup-${VERSION}
-REVISION=	1
 
 WRKDIST = 	${WRKDIR}/stone_soup-${VERSION}
 WRKSRC = 	${WRKDIST}/source
@@ -29,13 +28,19 @@ MAKE_FLAGS = 	CC="${CC}" GCC="${GCC}" GXX="${CXX}" \
 		SAVEDIR="~/.crawl" \
 		NO_YACC=1 V=1
 
-MAKE_ENV +=	MODLUA_DEP_VERSION=${MODLUA_DEP_VERSION}
 COMPILER =	base-clang ports-gcc
-MODULES = 	lang/lua
+MODULES = 	lang/python \
+		lang/lua
 MODLUA_VERSION = 	5.1
 WANTLIB = 	c m ${MODLUA_WANTLIB} sqlite3 ${COMPILER_LIBCXX}
 
-BUILD_DEPENDS = graphics/pngcrush
+MODPY_RUN_DEPENDS = 	No
+CONFIGURE_STYLE = none
+MODPY_ADJ_FILES = util/species-gen.py
+
+BUILD_DEPENDS = graphics/pngcrush \
+		textproc/py-yaml${MODPY_FLAVOR}
+
 LIB_DEPENDS = 	databases/sqlite3
 
 # License GPLv2+
