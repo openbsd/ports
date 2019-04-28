@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2019/04/24 15:30:31 steven Exp $
+# $OpenBSD: Makefile,v 1.29 2019/04/28 21:08:27 naddy Exp $
 
 COMMENT=	library of Fortran linear algebra subroutines
 
 VERSION=	3.8.0
 DISTNAME=	lapack-${VERSION}
+REVISION=	0
 
 SHARED_LIBS=	lapack 7.0
 

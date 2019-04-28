@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 13:38:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/04/28 21:08:26 naddy Exp $
 
 BROKEN-i386 =	needs fixing for LLD
 
@@ -9,7 +9,7 @@ V =		1.05.0
 COMMENT =	open-source, multi-platform BASIC compiler
 DISTNAME =	FreeBASIC-${V}-source-openbsd
 PKGNAME =	freebasic-${V}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	lang
 
 HOMEPAGE =	https://www.freebasic.net/

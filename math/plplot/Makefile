@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2019/04/28 21:08:27 naddy Exp $
 
 BROKEN-powerpc = Error: Kind -2 not supported for type INTEGER at (1)
 
@@ -18,9 +18,9 @@ SHARED_LIBS =	csirocsa	4.0	\
 PKGNAME-main =	${DISTNAME}
 PKGNAME-c++ =	plplot-c++-${VERSION}
 PKGNAME-fortran =	plplot-fortran-${VERSION}
-REVISION-c++ =	0
-REVISION-fortran =	0
-REVISION-main =	0
+REVISION-c++ =	1
+REVISION-fortran =	1
+REVISION-main =	1
 
 CATEGORIES =	math graphics
 

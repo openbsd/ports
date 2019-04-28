@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2018/10/23 20:35:47 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2019/04/28 21:08:26 naddy Exp $
 
 COMMENT=	solve large scale eigenvalue problems
 
 DISTNAME=	arpack96
 PKGNAME=	arpack-96
-REVISION=	6
+REVISION=	7
 SHARED_LIBS=	arpack 1.0
 CATEGORIES=	math
 

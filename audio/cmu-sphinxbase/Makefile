@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2018/02/10 09:19:48 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2019/04/28 21:08:26 naddy Exp $
 
 COMMENT=	common libraries for the CMU speech recognition engines
 
 VERSION=	0.6
 DISTNAME=	sphinxbase-${VERSION}
 PKGNAME=	cmu-sphinxbase-${VERSION}
-REVISION=	5
+REVISION=	6
 CATEGORIES=	audio
 SHARED_LIBS= 	sphinxbase	1.0 \
 		sphinxad	1.0
