@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2019/04/24 16:26:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2019/04/28 02:01:30 cwen Exp $
 
 COMMENT=		BitTorrent library written in C++
 
@@ -10,7 +10,7 @@ NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 DISTNAME=		libtorrent-0.13.6
 EPOCH=			0
-REVISION=		6
+REVISION=		7
 SHARED_LIBS +=  	torrent 22.1	# .18.0
 CATEGORIES=		net devel
 
@@ -36,14 +36,10 @@ CONFIGURE_ARGS=		--enable-static \
 			--disable-mincore \
 			--disable-debug
 
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mclang}
+CXXFLAGS +=		-std=c++11
+
 # this patches *only* files containing tr1 to no longer refer to tr1
 # we do it pre-patch, because autoconf passes right after us
 pre-patch:
 	find ${WRKDIST} -type f|xargs fgrep -lw tr1|xargs sed -i.bak -e 's,<tr1/,<,' -e 's/std::tr1/std/g'
-CXXFLAGS +=	-std=c++11
-# some patches involve the tr1 stuff
-PATCH_LIST =	patch-* clangpatch-*
-.endif
 .include <bsd.port.mk>
