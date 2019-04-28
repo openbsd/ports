@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/02/03 12:43:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/04/28 13:38:06 naddy Exp $
 
 BROKEN-i386 =	needs fixing for LLD
 
@@ -9,6 +9,7 @@ V =		1.05.0
 COMMENT =	open-source, multi-platform BASIC compiler
 DISTNAME =	FreeBASIC-${V}-source-openbsd
 PKGNAME =	freebasic-${V}
+REVISION =	0
 CATEGORIES =	lang
 
 HOMEPAGE =	https://www.freebasic.net/
@@ -35,7 +36,7 @@ BUILD_DEPENDS =	devel/libffi
 # Use ports-gcc as the backend runtime compiler, since we know FreeBASIC
 # will generate C files with GNU C extensions that clang doesn't like.
 RUN_DEPENDS =	devel/libffi \
-		lang/gcc/4.9,-main # Something else?
+		lang/gcc/${MODGCC4_VERSION},-main # Something else?
 
 USE_GMAKE =	Yes
 MAKE_FILE =	makefile
