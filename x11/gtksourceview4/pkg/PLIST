@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/09/06 08:21:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/04/28 17:52:19 jasper Exp $
 include/gtksourceview-4/
 include/gtksourceview-4/gtksourceview/
 include/gtksourceview-4/gtksourceview/completion-providers/
@@ -149,6 +149,7 @@ share/gtksourceview-4/language-specs/css.lang
 share/gtksourceview-4/language-specs/csv.lang
 share/gtksourceview-4/language-specs/cuda.lang
 share/gtksourceview-4/language-specs/d.lang
+share/gtksourceview-4/language-specs/dart.lang
 share/gtksourceview-4/language-specs/def.lang
 share/gtksourceview-4/language-specs/desktop.lang
 share/gtksourceview-4/language-specs/diff.lang
@@ -166,6 +167,7 @@ share/gtksourceview-4/language-specs/fortran.lang
 share/gtksourceview-4/language-specs/fsharp.lang
 share/gtksourceview-4/language-specs/gap.lang
 share/gtksourceview-4/language-specs/gdb-log.lang
+share/gtksourceview-4/language-specs/gdscript.lang
 share/gtksourceview-4/language-specs/genie.lang
 share/gtksourceview-4/language-specs/glsl.lang
 share/gtksourceview-4/language-specs/go.lang
@@ -227,6 +229,7 @@ share/gtksourceview-4/language-specs/php.lang
 share/gtksourceview-4/language-specs/pig.lang
 share/gtksourceview-4/language-specs/pkgconfig.lang
 share/gtksourceview-4/language-specs/po.lang
+share/gtksourceview-4/language-specs/powershell.lang
 share/gtksourceview-4/language-specs/prolog.lang
 share/gtksourceview-4/language-specs/protobuf.lang
 share/gtksourceview-4/language-specs/puppet.lang
@@ -242,6 +245,7 @@ share/gtksourceview-4/language-specs/scilab.lang
 share/gtksourceview-4/language-specs/scss.lang
 share/gtksourceview-4/language-specs/sh.lang
 share/gtksourceview-4/language-specs/sml.lang
+share/gtksourceview-4/language-specs/solidity.lang
 share/gtksourceview-4/language-specs/sparql.lang
 share/gtksourceview-4/language-specs/sql.lang
 share/gtksourceview-4/language-specs/sweave.lang
