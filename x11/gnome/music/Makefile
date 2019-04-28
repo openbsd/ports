@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.59 2019/01/08 13:38:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2019/04/28 09:15:03 ajacoutot Exp $
 
 COMMENT=		GNOME music playing application
 
 GNOME_PROJECT=		gnome-music
 GNOME_VERSION=		3.30.2
-REVISION=		2
+REVISION=		3
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-3 m pango-1.0 pangocairo-1.0
+WANTLIB += gobject-2.0 gtk-3 m pango-1.0 pangocairo-1.0 atk-1.0 intl
 
 MODULES=		devel/dconf \
 			devel/meson \
