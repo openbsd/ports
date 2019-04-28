@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2018/09/04 12:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/04/28 21:46:35 stsp Exp $
 
 COMMENT =		a simple, safe, and minimal CalDAV server
 
-DISTNAME =		kcaldav-0.1.7
+DISTNAME =		kcaldav-0.1.9
 CATEGORIES =		www
-REVISION =		0
 
 HOMEPAGE =		https://kristaps.bsd.lv/kcaldav/
 MAINTAINER =		Aaron Poffenberger <akp@hypernote.com>
@@ -27,9 +26,9 @@ CONFIGURE_ARGS =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS =		PREFIX=${WRKINST}${TRUEPREFIX} \
-			HTDOCSPREFIX=${WRKINST}/${VARBASE}/www/htdocs/kcaldav \
-			CGIPREFIX=${WRKINST}/${VARBASE}/www/cgi-bin \
-			CALPREFIX=${WRKINST}/${VARBASE}/www/caldav
+			HTDOCSPREFIX=${VARBASE}/www/htdocs/kcaldav \
+			CGIPREFIX=${VARBASE}/www/cgi-bin \
+			CALPREFIX=${VARBASE}/www/caldav
 
 # no doc on how to run tests
 NO_TEST =		Yes
