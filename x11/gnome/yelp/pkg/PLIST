@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2018/07/06 06:04:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.46 2019/04/28 06:38:26 ajacoutot Exp $
 bin/gnome-help
 @bin bin/yelp
 include/libyelp/
@@ -49,6 +49,8 @@ share/gtk-doc/html/libyelp/right.png
 share/gtk-doc/html/libyelp/style.css
 share/gtk-doc/html/libyelp/up-insensitive.png
 share/gtk-doc/html/libyelp/up.png
+share/icons/hicolor/scalable/apps/org.gnome.Yelp.svg
+share/icons/hicolor/symbolic/apps/org.gnome.Yelp-symbolic.svg
 share/locale/af/LC_MESSAGES/yelp.mo
 share/locale/am/LC_MESSAGES/yelp.mo
 share/locale/an/LC_MESSAGES/yelp.mo
@@ -444,3 +446,4 @@ share/yelp/xslt/man2html.xsl
 share/yelp/xslt/yelp-common.xsl
 @tag glib-compile-schemas
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
