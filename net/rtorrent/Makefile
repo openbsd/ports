@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2019/04/24 16:26:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2019/04/28 02:13:31 cwen Exp $
 
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
 DISTNAME=		rtorrent-0.9.6
-REVISION=		6
+REVISION=		7
 EPOCH=			0
 CATEGORIES=		net
 
@@ -19,13 +19,6 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		https://rtorrent.net/downloads/
 
-MODULES=		gcc4
-
-# SIGBUS during startup on sparc64 when built using gcc 4.2.1
-# https://github.com/rakshasa/rtorrent/issues/28
-MODGCC4_ARCHS=		sparc64
-MODGCC4_LANGS=		c++
-
 BUILD_DEPENDS=		devel/cppunit
 LIB_DEPENDS=		net/libtorrent>=0.13.4 \
 			net/curl
@@ -35,18 +28,17 @@ AUTOCONF_VERSION=	2.69
 CONFIGURE_ENV +=	LDFLAGS=-pthread
 CONFIGURE_ARGS=		--disable-debug
 
+CXXFLAGS +=		-std=c++11
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/rtorrent
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rtorrent
 	${INSTALL_DATA} ${WRKSRC}/doc/rtorrent.rc \
 		${PREFIX}/share/examples/rtorrent/rtorrent.rc
 
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mclang}
 # this patches *only* files containing tr1 to no longer refer to tr1
 # we do it pre-patch, because autoconf passes right after us
 pre-patch:
 	find ${WRKDIST} -type f|xargs fgrep -lw tr1|xargs sed -i.bak -e 's,<tr1/,<,' -e 's/std::tr1/std/g' -e 's/tr1::placeholders::/std::placeholders::/g' -e 's/tr1::bind/std::bind/g'
-CXXFLAGS +=	-std=c++11
-.endif
+
 .include <bsd.port.mk>
