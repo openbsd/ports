@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/04/28 01:30:18 cwen Exp $
 
 COMMENT =		software able to hide data in various kind of files
 
 DISTNAME =		steghide-0.5.1
-REVISION =		6
+REVISION =		7
 CATEGORIES =		security
 HOMEPAGE =		http://steghide.sf.net/
 
@@ -28,9 +28,6 @@ AUTOCONF_VERSION =	2.57
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
 
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mclang}
 CXXFLAGS +=		-std=c++03
-.endif
 
 .include <bsd.port.mk>

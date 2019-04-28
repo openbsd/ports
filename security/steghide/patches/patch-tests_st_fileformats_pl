@@ -1,0 +1,13 @@
+$OpenBSD: patch-tests_st_fileformats_pl,v 1.1 2019/04/28 01:30:18 cwen Exp $
+
+Fix test with Perl 5.26+ (no . in @INC)
+
+Index: tests/st_fileformats.pl
+--- tests/st_fileformats.pl.orig
++++ tests/st_fileformats.pl
+@@ -1,4 +1,5 @@
+ #!/usr/bin/perl -w
++BEGIN { push @INC, '.'; }
+ use STSupport;
+ 
+ use constant EMPTY => {e => "none", Z => "", K => "", "-check" => ""} ;
