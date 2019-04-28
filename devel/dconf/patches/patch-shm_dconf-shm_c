@@ -1,12 +1,12 @@
-$OpenBSD: patch-shm_dconf-shm_c,v 1.6 2019/03/10 09:00:29 ajacoutot Exp $
+$OpenBSD: patch-shm_dconf-shm_c,v 1.7 2019/04/28 06:31:11 ajacoutot Exp $
 
 Try to open the dconf cache directly instead of always trying to create the
-directory path first.
+directory path first (unveil).
 
 Index: shm/dconf-shm.c
 --- shm/dconf-shm.c.orig
 +++ shm/dconf-shm.c
-@@ -52,23 +52,29 @@ dconf_shm_open (const gchar *name)
+@@ -53,23 +53,29 @@ dconf_shm_open (const gchar *name)
    gchar *filename;
    void *memory;
    gint fd;

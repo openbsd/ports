@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.79 2019/02/19 14:35:54 robert Exp $
-
-# -fvisibility
-NOT_FOR_ARCHS=		${GCC3_ARCHS}
+# $OpenBSD: Makefile,v 1.80 2019/04/28 06:31:11 ajacoutot Exp $
 
 COMMENT=		configuration backend system
 
 GNOME_PROJECT=		dconf
-GNOME_VERSION=		0.30.1
-REVISION=		1
+GNOME_VERSION=		0.32.0
 
-SHARED_LIBS +=		dconf        1.1 # 1.0.0
+SHARED_LIBS +=		dconf        1.2 # 1.0.0
 
 CATEGORIES=		devel
 
@@ -19,7 +15,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 intl
 
 MODULES=		devel/meson \
 			x11/gnome
