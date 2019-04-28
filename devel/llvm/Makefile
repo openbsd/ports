@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.217 2019/04/27 21:26:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.218 2019/04/28 11:00:08 rsadowski Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -8,9 +8,10 @@ ONLY_FOR_ARCHS = ${LLVM_ARCHS}
 
 DPB_PROPERTIES = parallel
 
-MULTI_PACKAGES =	-main -python -lldb
+MULTI_PACKAGES =	-main -python -lldb -extras
 COMMENT-main =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 COMMENT-lldb =	LLDB debugger
+COMMENT-extras =	Clang extra tools
 COMMENT-python =	Python bindings for Clang
 
 LLVM_V =	7.0.1
@@ -20,14 +21,16 @@ PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	10
-REVISION-lldb =	0
+PKGNAME-extras =	clang-tools-extra-${LLVM_V}
+REVISION-main =	11
+REVISION-lldb =	1
 CATEGORIES =	devel
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
 		lld-${LLVM_V}.src${EXTRACT_SUFX} \
-		lldb-${LLVM_V}.src${EXTRACT_SUFX}
-MASTER_SITES =	https://www.llvm.org/releases/${LLVM_V}/
+		lldb-${LLVM_V}.src${EXTRACT_SUFX} \
+		clang-tools-extra-${LLVM_V}.src${EXTRACT_SUFX}
+MASTER_SITES =	https://releases.llvm.org/${LLVM_V}/
 EXTRACT_SUFX =	.tar.xz
 
 SHARED_LIBS =	clang		8.0 \
@@ -42,10 +45,9 @@ MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	${COMPILER_LIBCXX} c curses edit form m panel pthread \
-		${MODPY_WANTLIB} z
+WANTLIB =	${COMPILER_LIBCXX} c edit m pthread z
 
-PSEUDO_FLAVORS = no_lldb
+PSEUDO_FLAVORS = no_lldb no_extras
 FLAVOR ?=
 NOT_FOR_ARCHS-lldb = ${GCC4_ARCHS}
 
@@ -72,12 +74,16 @@ WANTLIB-python =	clang
 RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-python =	${BUILD_PKGPATH},-main
 
-WANTLIB-lldb =		clang
+WANTLIB-lldb =		${COMPILER_LIBCXX} ${MODPY_WANTLIB}
+WANTLIB-lldb +=		c curses edit form m panel
 LIB_DEPENDS-lldb =	${BUILD_PKGPATH},-main
 RUN_DEPENDS-lldb =	${MODPY_RUN_DEPENDS} \
 			devel/py-six
 
-SEPARATE_BUILD =	Yes
+WANTLIB-extras =	${COMPILER_LIBCXX} c m
+LIB_DEPENDS-extras =	${BUILD_PKGPATH},-main
+RUN_DEPENDS-extras =	${MODPY_RUN_DEPENDS}
+
 CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 			-DLLVM_ENABLE_TERMINFO:Bool=False \
 			-DLLVM_ENABLE_RTTI:Bool=True \
@@ -111,7 +117,7 @@ PKG_ARGS +=		-Dpowerpc=1
 PKG_ARGS +=		-Dpowerpc=0
 .endif
 
-TEST_TARGET =		check
+TEST_TARGET =		check check-clang check-clang-tools
 
 # XXX sync
 GCC_VER =		8.3.0
@@ -127,12 +133,16 @@ post-extract:
 	mv ${WRKDIR}/cfe-${LLVM_V}.src ${WRKSRC}/tools/clang
 	mv ${WRKDIR}/lld-${LLVM_V}.src ${WRKSRC}/tools/lld
 	mv ${WRKDIR}/lldb-${LLVM_V}.src ${WRKSRC}/tools/lldb
+	mv ${WRKDIR}/clang-tools-extra-${LLVM_V}.src ${WRKSRC}/tools/clang/tools/extra
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
 	-@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 .if !${BUILD_PACKAGES:M-lldb}
 	rm -r ${WRKSRC}/tools/lldb
+.endif
+.if !${BUILD_PACKAGES:M-extras}
+	rm -r ${WRKSRC}/tools/clang/tools/extra
 .endif
 
 post-build:
