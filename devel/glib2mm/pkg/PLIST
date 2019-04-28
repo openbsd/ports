@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2019/03/18 07:15:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.44 2019/04/28 06:37:10 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -294,6 +294,7 @@ include/glibmm-${V}/glibmm/enums.h
 include/glibmm-${V}/glibmm/error.h
 include/glibmm-${V}/glibmm/exception.h
 include/glibmm-${V}/glibmm/exceptionhandler.h
+include/glibmm-${V}/glibmm/extraclassinit.h
 include/glibmm-${V}/glibmm/fileutils.h
 include/glibmm-${V}/glibmm/helperlist.h
 include/glibmm-${V}/glibmm/i18n-lib.h
@@ -925,6 +926,9 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1Error__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Exception-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Exception.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Exception__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1ExtraClassInit-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1ExtraClassInit.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1ExtraClassInit__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1FileError-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1FileError.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1FileError__inherit__graph.png
@@ -1156,6 +1160,9 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1ValueBase__Object__inherit__gr
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ValueBase__String-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ValueBase__String.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ValueBase__String__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1ValueBase__Variant-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1ValueBase__Variant.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1ValueBase__Variant__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ValueBase__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01T_01_4_01_4-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01T_01_4_01_4.html
@@ -1199,6 +1206,12 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01signed_01char_01_4__
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01std_1_1string_01_4-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01std_1_1string_01_4.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01std_1_1string_01_4__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01std_1_1vector_3_01Glib_1_1ustring_01_4_01_4-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01std_1_1vector_3_01Glib_1_1ustring_01_4_01_4.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01std_1_1vector_3_01Glib_1_1ustring_01_4_01_4__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01std_1_1vector_3_01std_1_1string_01_4_01_4-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01std_1_1vector_3_01std_1_1string_01_4_01_4.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01std_1_1vector_3_01std_1_1string_01_4_01_4__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01unsigned_01char_01_4-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01unsigned_01char_01_4.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01unsigned_01char_01_4__inherit__graph.png
@@ -1226,6 +1239,9 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1Value__Flags__inherit__graph.p
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value__Pointer-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value__Pointer.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value__Pointer__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Value__RefPtrBoxed-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Value__RefPtrBoxed.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Value__RefPtrBoxed__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Variant-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Variant.html
@@ -1320,12 +1336,8 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1ustring__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classes.html
 share/doc/glibmm-${V}/reference/html/closed.png
 share/doc/glibmm-${V}/reference/html/deprecated.html
-share/doc/glibmm-${V}/reference/html/dir_0d2691912fd762e2b528a8cc6b96bd78.html
-share/doc/glibmm-${V}/reference/html/dir_309d22380aeba2b08200eea06b7c925d.html
-share/doc/glibmm-${V}/reference/html/dir_3270a2bce89e65012453509eed7a019b.html
-share/doc/glibmm-${V}/reference/html/dir_8d20701407f8ddcf49535780d6c7a3e5.html
-share/doc/glibmm-${V}/reference/html/dir_a9c7e55702c8c113819db7d8357ce40a.html
-share/doc/glibmm-${V}/reference/html/dir_fb0a09406158440eb85baf9306c8ef82.html
+share/doc/glibmm-${V}/reference/html/dir_02fef2a40270467d72a7f717cf991d8a.html
+share/doc/glibmm-${V}/reference/html/dir_98c789a82e29670547769c353b486e1a.html
 share/doc/glibmm-${V}/reference/html/doc.png
 share/doc/glibmm-${V}/reference/html/doxygen-extra.css
 share/doc/glibmm-${V}/reference/html/doxygen.css
@@ -1680,6 +1692,7 @@ share/doc/glibmm-${V}/reference/html/since_2_52.html
 share/doc/glibmm-${V}/reference/html/since_2_54.html
 share/doc/glibmm-${V}/reference/html/since_2_56.html
 share/doc/glibmm-${V}/reference/html/since_2_6.html
+share/doc/glibmm-${V}/reference/html/since_2_60.html
 share/doc/glibmm-${V}/reference/html/since_2_8.html
 share/doc/glibmm-${V}/reference/html/splitbar.png
 share/doc/glibmm-${V}/reference/html/structGlib_1_1Container__Helpers_1_1TypeTraits-members.html
