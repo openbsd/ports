@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/02/23 21:36:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/04/28 18:34:40 jasper Exp $
 bin/readelf.py${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/elftools/
 lib/python${MODPY_VERSION}/site-packages/elftools/__init__.py
@@ -100,7 +100,11 @@ lib/python${MODPY_VERSION}/site-packages/elftools/elf/relocation.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/sections.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/segments.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/structs.py
-lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 share/examples/${MODPY_PY_PREFIX}elftools/
 share/examples/${MODPY_PY_PREFIX}elftools/dwarf_decode_address.py
 share/examples/${MODPY_PY_PREFIX}elftools/dwarf_die_tree.py
