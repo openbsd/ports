@@ -1,18 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/01/01 16:56:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/04/28 09:22:14 ajacoutot Exp $
 @bin bin/gnome-usage
 share/applications/org.gnome.Usage.desktop
 share/glib-2.0/schemas/org.gnome.Usage.gschema.xml
-share/icons/hicolor/16x16/apps/org.gnome.Usage.png
-share/icons/hicolor/22x22/apps/org.gnome.Usage.png
-share/icons/hicolor/24x24/apps/org.gnome.Usage.png
-share/icons/hicolor/32x32/apps/org.gnome.Usage.png
-share/icons/hicolor/48x48/apps/org.gnome.Usage.png
-share/icons/hicolor/512x512/apps/org.gnome.Usage.png
+share/icons/hicolor/scalable/apps/org.gnome.Usage.svg
 share/locale/ca/LC_MESSAGES/gnome-usage.mo
 share/locale/cs/LC_MESSAGES/gnome-usage.mo
+share/locale/da/LC_MESSAGES/gnome-usage.mo
 share/locale/de/LC_MESSAGES/gnome-usage.mo
 share/locale/en_GB/LC_MESSAGES/gnome-usage.mo
 share/locale/es/LC_MESSAGES/gnome-usage.mo
+share/locale/eu/LC_MESSAGES/gnome-usage.mo
 share/locale/fi/LC_MESSAGES/gnome-usage.mo
 share/locale/fr/LC_MESSAGES/gnome-usage.mo
 share/locale/fur/LC_MESSAGES/gnome-usage.mo
