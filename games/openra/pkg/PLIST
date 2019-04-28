@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/31 05:09:06 thfr Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/04/28 03:34:17 thfr Exp $
 bin/openra
 bin/openra-cnc
 bin/openra-cnc-server
@@ -35,7 +35,6 @@ share/openra/COPYING
 share/openra/Eluant.dll
 share/openra/Eluant.dll.config
 share/openra/FuzzyLogicLibrary.dll
-share/openra/GeoLite2-Country.mmdb.gz
 share/openra/ICSharpCode.SharpZipLib.dll
 share/openra/MaxMind.Db.dll
 share/openra/Open.Nat.dll

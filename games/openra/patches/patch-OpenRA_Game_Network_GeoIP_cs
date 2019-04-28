@@ -1,0 +1,27 @@
+$OpenBSD: patch-OpenRA_Game_Network_GeoIP_cs,v 1.1 2019/04/28 03:34:16 thfr Exp $
+
+get geoip from the net/libmaxminddb,-db port per sthen@'s recommendation
+
+Index: OpenRA.Game/Network/GeoIP.cs
+--- OpenRA.Game/Network/GeoIP.cs.orig
++++ OpenRA.Game/Network/GeoIP.cs
+@@ -55,9 +55,9 @@ namespace OpenRA.Network
+ 		{
+ 			try
+ 			{
+-				using (var fileStream = new FileStream("GeoLite2-Country.mmdb.gz", FileMode.Open, FileAccess.Read))
+-					using (var gzipStream = new GZipInputStream(fileStream))
+-						database = new Reader(gzipStream);
++				using (var fileStream = new FileStream("${LOCALSTATEDIR}/db/GeoIP/GeoLite2-Country.mmdb", FileMode.Open, FileAccess.Read))
++					//using (var gzipStream = new GZipInputStream(fileStream))
++						database = new Reader(fileStream);
+ 			}
+ 			catch (Exception e)
+ 			{
+@@ -84,4 +84,4 @@ namespace OpenRA.Network
+ 			}
+ 		}
+ 	}
+-}
+\ No newline at end of file
++}

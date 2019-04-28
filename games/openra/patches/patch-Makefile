@@ -1,7 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2019/03/31 05:09:06 thfr Exp $
+$OpenBSD: patch-Makefile,v 1.2 2019/04/28 03:34:16 thfr Exp $
 
 set the installdir to PREFIX/share rather than PREFIX/lib
 don't get VERSION from git
+disable fetch-geoip-db.sh which is not compatible with building without network
+access
 
 Index: Makefile
 --- Makefile.orig
@@ -24,3 +26,12 @@ Index: Makefile
  
  # dependencies
  UNAME_S := $(shell uname -s)
+@@ -314,7 +314,7 @@ osx-dependencies: cli-dependencies geoip-dependencies
+ 	@ $(CP_R) thirdparty/download/osx/*.dll.config .
+ 
+ geoip-dependencies:
+-	@./thirdparty/fetch-geoip-db.sh
++#	@./thirdparty/fetch-geoip-db.sh
+ 	@ $(CP) thirdparty/download/GeoLite2-Country.mmdb.gz .
+ 
+ dependencies: $(os-dependencies)
