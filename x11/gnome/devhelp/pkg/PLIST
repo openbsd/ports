@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2018/07/17 07:03:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2019/04/28 08:17:09 ajacoutot Exp $
 @bin bin/devhelp
 include/devhelp-3/
 include/devhelp-3/devhelp/
@@ -63,6 +63,9 @@ share/help/hu/
 share/help/hu/devhelp/
 share/help/hu/devhelp/index.page
 share/help/hu/devhelp/search.page
+share/help/it/devhelp/
+share/help/it/devhelp/index.page
+share/help/it/devhelp/search.page
 share/help/pl/
 share/help/pl/devhelp/
 share/help/pl/devhelp/index.page
@@ -73,12 +76,7 @@ share/help/pt_BR/devhelp/search.page
 share/help/sv/devhelp/
 share/help/sv/devhelp/index.page
 share/help/sv/devhelp/search.page
-share/icons/hicolor/16x16/apps/org.gnome.Devhelp.png
-share/icons/hicolor/22x22/apps/org.gnome.Devhelp.png
-share/icons/hicolor/24x24/apps/org.gnome.Devhelp.png
-share/icons/hicolor/256x256/apps/org.gnome.Devhelp.png
-share/icons/hicolor/32x32/apps/org.gnome.Devhelp.png
-share/icons/hicolor/48x48/apps/org.gnome.Devhelp.png
+share/icons/hicolor/scalable/apps/org.gnome.Devhelp.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Devhelp-symbolic.svg
 share/locale/am/LC_MESSAGES/devhelp.mo
 share/locale/ar/LC_MESSAGES/devhelp.mo
