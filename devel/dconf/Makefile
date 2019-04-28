@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2019/04/28 06:31:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2019/04/28 07:35:18 ajacoutot Exp $
 
 COMMENT=		configuration backend system
 
@@ -28,11 +28,6 @@ LIB_DEPENDS=		devel/glib2
 
 # needs the bash-completion package
 CONFIGURE_ARGS +=	-Dbash_completion=false
-
-# XXX the gtk-doc dependency chain includes py-numpy which breaks on arm as it
-# requires fortran (lang/gcc/4.9,-f95)
-#BUILD_DEPENDS +=	textproc/gtk-doc
-#CONFIGURE_ARGS +=	-Dgtk_doc
 
 # needs a running DBus
 TEST_IS_INTERACTIVE=	Yes
