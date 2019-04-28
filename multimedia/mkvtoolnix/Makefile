@@ -2,8 +2,7 @@
 
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-31.0.0
-REVISION=	0
+DISTNAME=	mkvtoolnix-33.0.0
 
 CATEGORIES=	multimedia x11
 
@@ -14,9 +13,9 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} FLAC boost_filesystem-mt
-WANTLIB += boost_regex-mt boost_system-mt c cmark ebml iconv intl
-WANTLIB += m magic matroska ogg vorbis z
+WANTLIB += ${COMPILER_LIBCXX} FLAC boost_filesystem-mt boost_regex-mt
+WANTLIB += boost_system-mt c cmark ebml iconv intl m magic matroska
+WANTLIB += ogg vorbis z
 
 MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/
 
@@ -42,8 +41,8 @@ LIB_DEPENDS=	audio/flac \
 		textproc/cmark \
 		devel/gettext \
 		devel/libmagic \
-		multimedia/libmatroska>=1.4.5 \
-		textproc/libebml>=1.3.4
+		multimedia/libmatroska>=1.5.0 \
+		textproc/libebml>=1.3.7
 
 MAKE_ENV+=	V=1
 
