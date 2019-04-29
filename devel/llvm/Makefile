@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.220 2019/04/29 11:56:40 jca Exp $
-
-# XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
-# updating this port.
+# $OpenBSD: Makefile,v 1.221 2019/04/29 12:37:52 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
 
 DPB_PROPERTIES = parallel
 
-MULTI_PACKAGES =	-main -python -lldb -extras
 COMMENT-main =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 COMMENT-lldb =	LLDB debugger
 COMMENT-extras =	Clang extra tools
 COMMENT-python =	Python bindings for Clang
 
+# XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
+# updating this port.
 LLVM_V =	7.0.1
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
@@ -24,14 +22,8 @@ PKGNAME-lldb =	lldb-${LLVM_V}
 PKGNAME-extras =	clang-tools-extra-${LLVM_V}
 REVISION-main =	12
 REVISION-lldb =	1
+
 CATEGORIES =	devel
-DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
-		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
-		lld-${LLVM_V}.src${EXTRACT_SUFX} \
-		lldb-${LLVM_V}.src${EXTRACT_SUFX} \
-		clang-tools-extra-${LLVM_V}.src${EXTRACT_SUFX}
-MASTER_SITES =	https://releases.llvm.org/${LLVM_V}/
-EXTRACT_SUFX =	.tar.xz
 
 SHARED_LIBS =	clang		8.0 \
 		lldb		1.0 \
@@ -47,15 +39,23 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	${COMPILER_LIBCXX} c edit m pthread z
 
+MASTER_SITES =	https://releases.llvm.org/${LLVM_V}/
+EXTRACT_SUFX =	.tar.xz
+DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
+		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
+		lld-${LLVM_V}.src${EXTRACT_SUFX} \
+		lldb-${LLVM_V}.src${EXTRACT_SUFX} \
+		clang-tools-extra-${LLVM_V}.src${EXTRACT_SUFX}
+
+MULTI_PACKAGES = -main -python -lldb -extras
 PSEUDO_FLAVORS = no_lldb no_extras
 # XXX enabling -extras changes the content of the -main subpackage
 FLAVOR ?=	no_extras
 NOT_FOR_ARCHS-lldb = ${GCC4_ARCHS}
 
-MODULES =	devel/cmake \
-		lang/python
-
-COMPILER =	base-clang ports-gcc
+COMPILER =		base-clang ports-gcc
+MODULES =		devel/cmake \
+			lang/python
 
 TEST_DEPENDS =		devel/dejagnu \
 			shells/bash
@@ -85,6 +85,7 @@ WANTLIB-extras =	${COMPILER_LIBCXX} c m
 LIB_DEPENDS-extras =	${BUILD_PKGPATH},-main
 RUN_DEPENDS-extras =	${MODPY_RUN_DEPENDS}
 
+CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 			-DLLVM_ENABLE_TERMINFO:Bool=False \
 			-DLLVM_ENABLE_RTTI:Bool=True \
