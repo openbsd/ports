@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2019/04/24 16:26:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2019/04/29 08:24:06 kn Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -6,7 +6,7 @@ COMMENT-daemon =stand-alone daemon/cmdline for amule
 
 V =		2.3.2
 DISTNAME =	aMule-$V
-REVISION =	13
+REVISION =	14
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.amule.org/
@@ -33,8 +33,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 BUILD_DEPENDS =		devel/bison \
 			devel/gettext-tools
 
-commonLIB_DEPENDS =	x11/wxWidgets>=3.0.4 \
-			net/libupnp>=1.6.6
+commonLIB_DEPENDS =	x11/wxWidgets>=3.0.4
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
 			converters/libiconv \
@@ -51,7 +50,7 @@ LIB_DEPENDS-web =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/desktop-file-utils
 
-commonWANTLIB =		c ixml m pthread ${COMPILER_LIBCXX} threadutil upnp \
+commonWANTLIB =		c ixml m pthread ${COMPILER_LIBCXX} \
 			z wx_baseu-3.0 wx_baseu_net-3.0
 WANTLIB-main =		${WANTLIB} ${commonWANTLIB} \
 			GeoIP X11 cryptopp fontconfig tiff webp \
@@ -71,6 +70,7 @@ AUTOCONF_VERSION =	2.65
 CONFIGURE_ARGS =	--disable-optimize \
 			--disable-profile \
 			--disable-plasmamule \
+			--disable-upnp \
 			--disable-xas \
 			--enable-alc \
 			--enable-alcc \
