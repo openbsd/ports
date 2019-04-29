@@ -1,0 +1,18 @@
+$OpenBSD: patch-deja-dup_AssistantRestore_vala,v 1.1 2019/04/29 18:15:47 jasper Exp $
+
+Index: deja-dup/AssistantRestore.vala
+--- deja-dup/AssistantRestore.vala.orig
++++ deja-dup/AssistantRestore.vala
+@@ -29,11 +29,7 @@ public class AssistantRestore : AssistantOperation
+       return this._restore_files;
+     }
+     set {
+-      foreach (File f in this._restore_files)
+-        f.unref();
+-      this._restore_files = value.copy();
+-      foreach (File f in this._restore_files)
+-        f.ref();
++      this._restore_files = value.copy_deep ((CopyFunc) Object.ref);
+     }
+   }
+   
