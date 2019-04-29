@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.153 2019/03/28 14:53:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.154 2019/04/29 14:28:57 naddy Exp $
 
 COMMENT=		GNU Transport Layer Security library
 
 V=			3.6.7
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 CATEGORIES=		security
 
@@ -72,8 +73,3 @@ pre-test:
 		${WRKSRC}/tests/*.c
 
 .include <bsd.port.mk>
-
-# gcc 4.9: match visibility of max_align_t between CC and CXX
-.if ${CHOSEN_COMPILER} == "ports-gcc"
-CFLAGS += -std=gnu11
-.endif
