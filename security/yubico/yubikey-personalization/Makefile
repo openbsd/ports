@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/03 14:45:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/04/29 16:27:26 sthen Exp $
 
 COMMENT=	library and tools to program YubiKeys
 
@@ -8,6 +8,8 @@ DISTNAME=	ykpers-1.19.3
 SHARED_LIBS +=	ykpers-1                  0.7 # 20.0
 
 CATEGORIES=	sysutils
+
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 WANTLIB += c json-c pthread usb-1.0 yubikey
 
