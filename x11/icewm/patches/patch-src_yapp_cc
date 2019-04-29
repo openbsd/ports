@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_yapp_cc,v 1.6 2019/03/14 13:48:23 bcallah Exp $
+$OpenBSD: patch-src_yapp_cc,v 1.7 2019/04/29 16:12:28 bcallah Exp $
 
 Index: src/yapp.cc
 --- src/yapp.cc.orig
 +++ src/yapp.cc
-@@ -262,7 +262,7 @@ int YApplication::mainLoop() {
+@@ -265,7 +265,7 @@ int YApplication::mainLoop() {
              // This is irrelevant when using monotonic clocks:
              // if time travel to past, decrease the timeouts
              if (diff < zerotime()) {

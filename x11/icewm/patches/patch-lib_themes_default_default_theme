@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_themes_default_default_theme,v 1.1 2019/04/29 16:12:28 bcallah Exp $
+
+The default wallpaper is a Linux one, use background color instead.
+
+Index: lib/themes/default/default.theme
+--- lib/themes/default/default.theme.orig
++++ lib/themes/default/default.theme
+@@ -48,5 +48,5 @@ ColorScrollBarButtonArrow="rgb:C0/C0/C0"
+ 
+ DesktopBackgroundCenter=1
+ DesktopBackgroundScaled=1
+-#DesktopBackgroundColor="#3a6ea5"
+-DesktopBackgroundImage="default.png"
++DesktopBackgroundColor="#3a6ea5"
++#DesktopBackgroundImage="default.png"
