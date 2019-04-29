@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_equation-parser_vala,v 1.1 2019/04/29 17:57:33 jasper Exp $
+
+https://github.com/GNOME/gnome-calculator/commit/d89466a7e90d95b8a34fc0a3db6007599b243788
+
+Index: lib/equation-parser.vala
+--- lib/equation-parser.vala.orig
++++ lib/equation-parser.vala
+@@ -76,7 +76,7 @@ public class ParseNode : Object
+     public ParseNode.WithList (Parser parser, List<LexerToken> token_list, uint precedence, Associativity associativity, string? value = null)
+     {
+         this.parser = parser;
+-        this.token_list = token_list.copy();
++        this.token_list = token_list.copy_deep((CopyFunc) Object.ref);
+         this.precedence = precedence;
+         this.associativity = associativity;
+         this.value = value;
