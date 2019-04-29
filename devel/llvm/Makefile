@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.218 2019/04/28 11:00:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.219 2019/04/29 11:44:01 jca Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -48,7 +48,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =	${COMPILER_LIBCXX} c edit m pthread z
 
 PSEUDO_FLAVORS = no_lldb no_extras
-FLAVOR ?=
+# XXX enabling -extras changes the content of the -main subpackage
+FLAVOR ?=	no_extras
 NOT_FOR_ARCHS-lldb = ${GCC4_ARCHS}
 
 MODULES =	devel/cmake \
