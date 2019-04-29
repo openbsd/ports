@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/01/16 22:30:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/04/29 15:55:20 sthen Exp $
 @bin bin/convertfilestopdf
 @bin bin/convertfilestops
 @bin bin/convertformat
@@ -7,6 +7,7 @@
 @bin bin/converttopdf
 @bin bin/converttops
 @bin bin/fileinfo
+@bin bin/imagetops.leptonica
 @bin bin/xtractprotos
 include/leptonica/
 include/leptonica/allheaders.h

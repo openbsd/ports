@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2019/01/16 22:30:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/04/29 15:55:20 sthen Exp $
 
 COMMENT=	image processing and analysis library
 
-DISTNAME=	leptonica-1.77.0
+DISTNAME=	leptonica-1.78.0
 
 SHARED_LIBS +=  lept                 3.0      # 5.3
 
@@ -28,5 +28,9 @@ CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.69
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lm -lz"
+
+# conflict with x11/kde/libs3,-main:/usr/local/bin/imagetops
+post-install:
+	mv ${PREFIX}/bin/imagetops ${PREFIX}/bin/imagetops.leptonica
 
 .include <bsd.port.mk>
