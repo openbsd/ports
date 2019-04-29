@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2019/04/25 14:56:32 landry Exp $
+# $OpenBSD: Makefile,v 1.132 2019/04/29 00:42:09 jeremy Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -31,6 +31,8 @@ PKGNAME-lua=		nginx-lua-${VERSION}
 PKGNAME-headers_more=	nginx-headers-more-${VERSION}
 PKGNAME-perl=		nginx-perl-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
+
+REVISION-passenger=	0
 
 MASTER_SITES=	https://nginx.org/download/
 MASTER_SITES0=	https://github.com/simpl/ngx_devel_kit/archive/

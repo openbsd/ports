@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/04/23 11:44:25 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/29 00:42:09 jeremy Exp $
 
 COMMENT =	WordPress security scanner
 
 DISTNAME =	wpscan-3.4.5
+REVISION =	0
 CATEGORIES =	security
 
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>

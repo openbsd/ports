@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2019/01/04 14:56:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.25 2019/04/29 00:42:09 jeremy Exp $
 
 COMMENT =	KDE bindings for Ruby
 DISTNAME =	korundum-${MODKDE4_VERSION}
-REVISION =	10
+REVISION =	11
 
 WANTLIB =  ${MODRUBY_WANTLIB}
 WANTLIB += ${COMPILER_LIBCXX}
