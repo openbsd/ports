@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.108 2019/04/28 21:08:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.109 2019/04/29 08:52:47 feinerer Exp $
 
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-3.5.3
-REVISION=	0
+DISTNAME=	R-3.6.0
 
-SO_VERSION=	34.2
+SO_VERSION=	35.0
 .for _lib in R Rblas Rlapack
 SHARED_LIBS +=	${_lib} ${SO_VERSION}
 .endfor
@@ -80,14 +79,13 @@ CONFIGURE_ARGS= --disable-java \
 		--with-tcl-config=${MODTCL_CONFIG} \
 		--with-tk-config=${MODTK_CONFIG}
 
-CONFIGURE_ENV=	F77="${MODFORTRAN_COMPILER}" \
-		FC="${MODFORTRAN_COMPILER}" \
+CONFIGURE_ENV=	FC="${MODFORTRAN_COMPILER}" \
 		FFLAGS="${FFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -Wl,-R${LOCALBASE}/lib/R/lib" \
 		LIBnn=lib \
-		MAKEINFO="${LOCALBASE}/bin/gtexi2any" \
 		R_DYLIB_VERSION=${SO_VERSION} \
+		TEXI2ANY="${LOCALBASE}/bin/gtexi2any" \
 		TEXI2DVI="${LOCALBASE}/bin/gtexi2dvi" \
 		rdocdir="${PREFIX}/share/doc/R"
 

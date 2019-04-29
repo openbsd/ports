@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2018/12/23 08:03:45 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.42 2019/04/29 08:52:48 feinerer Exp $
 bin/R
 @bin bin/Rscript
 lib/R/
@@ -25,7 +25,6 @@ lib/R/bin/check
 lib/R/bin/config
 lib/R/bin/exec/
 @bin lib/R/bin/exec/R
-lib/R/bin/f77_f2c
 lib/R/bin/javareconf
 lib/R/bin/libtool
 lib/R/bin/mkinstalldirs
@@ -1168,6 +1167,8 @@ lib/R/library/rpart/doc/usercode.pdf
 lib/R/library/rpart/help/
 lib/R/library/rpart/help/AnIndex
 lib/R/library/rpart/help/aliases.rds
+lib/R/library/rpart/help/figures/
+lib/R/library/rpart/help/figures/rpart.png
 lib/R/library/rpart/help/paths.rds
 lib/R/library/rpart/help/rpart.rdb
 lib/R/library/rpart/help/rpart.rdx
@@ -1399,6 +1400,9 @@ lib/R/library/survival/doc/population.pdf
 lib/R/library/survival/doc/splines.R
 lib/R/library/survival/doc/splines.Rnw
 lib/R/library/survival/doc/splines.pdf
+lib/R/library/survival/doc/survival.R
+lib/R/library/survival/doc/survival.Rnw
+lib/R/library/survival/doc/survival.pdf
 lib/R/library/survival/doc/tests.R
 lib/R/library/survival/doc/tests.Rnw
 lib/R/library/survival/doc/tests.pdf
@@ -1414,6 +1418,8 @@ lib/R/library/survival/doc/validate.pdf
 lib/R/library/survival/help/
 lib/R/library/survival/help/AnIndex
 lib/R/library/survival/help/aliases.rds
+lib/R/library/survival/help/figures/
+lib/R/library/survival/help/figures/logo.png
 lib/R/library/survival/help/paths.rds
 lib/R/library/survival/help/survival.rdb
 lib/R/library/survival/help/survival.rdx
