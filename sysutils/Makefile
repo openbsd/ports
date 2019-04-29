@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.522 2019/04/24 23:33:49 jeremy Exp $
+# $OpenBSD: Makefile,v 1.523 2019/04/29 13:05:57 bket Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -250,6 +250,8 @@
      SUBDIR += py-metlog
      SUBDIR += py-parallel-ssh
      SUBDIR += py-parallel-ssh,python3
+     SUBDIR += py-prometheus_client
+     SUBDIR += py-prometheus_client,python3
      SUBDIR += py-psutil
      SUBDIR += py-psutil,python3
      SUBDIR += py-pynetbox
