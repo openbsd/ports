@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.163 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.164 2019/04/29 15:55:42 sthen Exp $
+
+# if this port is removed, please rename imagetops back to the normal
+# filename in graphics/leptonica
 
 BROKEN-alpha =		.got subsegment exceeds 64K
 BROKEN-mips64 =		.got subsegment exceeds 64K
