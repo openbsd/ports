@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2018/11/26 16:41:20 juanfra Exp $
+# $OpenBSD: Makefile,v 1.157 2019/04/29 19:33:38 cwen Exp $
 
 USE_WXNEEDED =		Yes # QtWebKit
 
@@ -25,39 +25,39 @@ PKGNAME-main =		qt4-${PKGVERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
-REVISION-main =		18
-REVISION-mysql =	5
-REVISION-postgresql =	5
-REVISION-sqlite2 =	5
-REVISION-tds =		5
-REVISION-debug =	2
-REVISION-examples =	6
-REVISION-html =		2
+REVISION-main =		19
+REVISION-mysql =	6
+REVISION-postgresql =	6
+REVISION-sqlite2 =	6
+REVISION-tds =		6
+REVISION-debug =	3
+REVISION-examples =	7
+REVISION-html =		3
 
 # XXX qmake include parser is bogus
 DPB_PROPERTIES =	parallel	nojunk
 
-SHARED_LIBS =	Qt3Support 8.0 \
-		QtCore 9.0 \
-		QtDesigner 7.0 \
-		QtDesignerComponents 7.0 \
-		QtGui 10.1 \
-		QtNetwork 10.0 \
-		QtOpenGL 7.0 \
-		QtSql 8.0 \
-		QtXml 8.0 \
-		QtSvg 7.0 \
-		QtTest 7.0 \
-		QtDBus 2.0 \
-		QtMultimedia 0.0 \
-		QtScript 2.0 \
-		QtCLucene 0.0 \
-		QtHelp 1.0 \
-		QtXmlPatterns 0.0 \
-		QtScriptTools 0.0 \
-		QtWebKit 4.0 \
-		phonon 4.1 \
-		QtDeclarative 0.0
+SHARED_LIBS =	Qt3Support 9.0 \
+		QtCore 10.0 \
+		QtDesigner 8.0 \
+		QtDesignerComponents 8.0 \
+		QtGui 11.0 \
+		QtNetwork 11.0 \
+		QtOpenGL 8.0 \
+		QtSql 9.0 \
+		QtXml 9.0 \
+		QtSvg 8.0 \
+		QtTest 8.0 \
+		QtDBus 3.0 \
+		QtMultimedia 1.0 \
+		QtScript 3.0 \
+		QtCLucene 1.0 \
+		QtHelp 2.0 \
+		QtXmlPatterns 1.0 \
+		QtScriptTools 1.0 \
+		QtWebKit 5.0 \
+		phonon 5.0 \
+		QtDeclarative 1.0
 
 
 VERSION =	4.8.7
@@ -67,7 +67,7 @@ DISTNAME =	qt-everywhere-opensource-src-${VERSION}
 CATEGORIES =	x11
 MASTER_SITES =  https://download.qt.io/archive/qt/4.8/${VERSION}/
 
-HOMEPAGE =	http://www.qt.io/
+HOMEPAGE = 	https://www.qt.io/
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
@@ -248,6 +248,8 @@ DESTDIRNAME =	INSTALL_ROOT
 CONFIGURE_ARGS +=	-platform openbsd-clang
 .else
 CONFIGURE_ARGS +=	-platform openbsd-g++4
+# Using gcc 4.9 default standard with gcc>=6.
+CXXFLAGS +=		-std=gnu++98
 .endif
 
 pre-patch:

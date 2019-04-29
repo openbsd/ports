@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_xmlpatterns_api_qcoloroutput_p_h,v 1.1 2019/04/29 19:33:38 cwen Exp $
+Fix a shift overflow with ports-gcc>=6
+Index: src/xmlpatterns/api/qcoloroutput_p.h
+--- src/xmlpatterns/api/qcoloroutput_p.h.orig
++++ src/xmlpatterns/api/qcoloroutput_p.h
+@@ -70,8 +70,8 @@ namespace QPatternist
+             ForegroundShift = 10,
+             BackgroundShift = 20,
+             SpecialShift    = 20,
+-            ForegroundMask  = ((1 << ForegroundShift) - 1) << ForegroundShift,
+-            BackgroundMask  = ((1 << BackgroundShift) - 1) << BackgroundShift
++            ForegroundMask  = 0x1f << ForegroundShift,
++            BackgroundMask  = 0x7 << BackgroundShift
+         };
+ 
+     public:
