@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.3 2019/02/08 11:16:25 phessler Exp $
+# $OpenBSD: gcc4.port.mk,v 1.4 2019/04/29 15:27:01 naddy Exp $
 
 MODGCC4_ARCHS ?= ${GCC49_ARCHS}
 MODGCC4_LANGS ?=
@@ -10,11 +10,7 @@ MODGCC4_LANGS +=	c
 _MODGCC4_OKAY = c c++ fortran
 .for _l in ${MODGCC4_LANGS:L}
 .  if !${_MODGCC4_OKAY:M${_l}}
-.    if "${_l}" == "java"
-BROKEN += "${_l} does not exist for gcc 8"
-.    else
 ERRORS += "Fatal: unknown language ${_l}"
-.    endif
 .  endif
 .endfor
 
