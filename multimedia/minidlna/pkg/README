@@ -1,11 +1,19 @@
-$OpenBSD: README,v 1.1 2019/03/20 11:47:46 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2019/04/29 08:25:23 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-minidlnad(8) provides realtime kqueue(2) monitoring up to the open file
-descriptors limit. When handling large directories, the kern.maxfiles
-sysctl(8) should be increased by adding an entry in sysctl.conf(5) and
-the user's login(1) class modified accordingly by bumping the "cur" and
-"max" openfiles limit in login.conf(5).
+minidlnad(8) provides realtime kqueue(2) monitoring up to the openfiles
+descriptors limit in login.conf(5). When handling large directories, it should
+be bumped accordingly. Optionally the kern.maxfiles sysctl(8) can also be
+increased by adding an entry in sysctl.conf(5) to bump maximum number of file
+descriptors on the system.
+
+e.g. login.conf:
+minidlna:\
+	:openfiles=4096:\
+	:tc=daemon:
+
+Or else, to disable kqueue(2) monitoring, change the "inotify" value to "no" in
+${SYSCONFDIR}/minidlna.conf.
