@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2018/08/09 23:25:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/29 11:46:07 cwen Exp $
 
 COMMENT =		Tox client library
 
 V =			0.2.3
-REVISION =		0
+REVISION =		1
 DISTNAME =		toxcore-$V
 
 GH_ACCOUNT =		TokTok
@@ -18,8 +18,10 @@ HOMEPAGE =		https://tox.chat/
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-
 WANTLIB = c config m opus pthread sodium vpx
+
+# "-Wno-c99-extensions" isn't recognized by base-gcc
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
