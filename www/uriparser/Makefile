@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/01/06 09:47:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2019/04/29 13:38:05 ajacoutot Exp $
 
 COMMENT =		URI parsing library
 
-DISTNAME =		uriparser-0.9.1
+DISTNAME =		uriparser-0.9.3
 WRKDIST =		${WRKDIR}/uriparser-${DISTNAME}
 
-SHARED_LIBS +=  uriparser                 2.0 # 1.23
+SHARED_LIBS +=  uriparser                 3.0 # 1.0
 
 CATEGORIES =		www
 
@@ -18,20 +18,12 @@ WANTLIB += c
 
 MASTER_SITES =		https://github.com/uriparser/uriparser/archive/
 
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--disable-doc
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
+MODULES =		devel/cmake
 
-# requires Google test (gtest)
-CONFIGURE_ARGS +=	--disable-test
+CONFIGURE_ARGS =	-DURIPARSER_BUILD_DOCS=off
 
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.15
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
-
-pre-configure:
-	cd ${WRKSRC} && env -i ${AUTOCONF_ENV} autoreconf -fi
+# requires googletest
+CONFIGURE_ARGS +=	-DURIPARSER_BUILD_TESTS=off
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
