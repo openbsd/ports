@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/10/26 16:13:50 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/04/29 00:40:35 jeremy Exp $
 @conflict kdebindings-<4
 @conflict ruby19-qt4-*
 @conflict ruby20-qt4-*
@@ -7,6 +7,7 @@
 @conflict ruby23-qt4-*
 @conflict ruby24-qt4-*
 @conflict ruby25-qt4-*
+@conflict ruby26-qt4-*
 @pkgpath x11/ruby-qt4,${MODRUBY_FLAVOR}
 bin/rbqtapi
 @bin bin/rbrcc
