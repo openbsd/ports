@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2019/04/28 20:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.103 2019/04/29 21:09:48 sthen Exp $
 
 COMMENT-main =		ssh based config management framework
 COMMENT-html =		offline Ansible documentation in HTML format
@@ -8,7 +8,7 @@ DISTNAME =		ansible-${MODPY_EGG_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-html =		ansible-html-${MODPY_EGG_VERSION}
 REVISION-html =		0
-REVISION-main =		0
+REVISION-main =		1
 
 CATEGORIES =		sysutils
 
@@ -28,7 +28,8 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
-RUN_DEPENDS =		security/py-cryptodome${MODPY_FLAVOR} \
+RUN_DEPENDS =		net/py-netaddr${MODPY_FLAVOR} \
+			security/py-cryptodome${MODPY_FLAVOR} \
 			security/py-paramiko${MODPY_FLAVOR} \
 			security/py-passlib${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
