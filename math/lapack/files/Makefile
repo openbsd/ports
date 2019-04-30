@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/24 15:30:31 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2019/04/30 20:44:32 jca Exp $
 
 LIB = lapack
 
 TIMER = INT_ETIME
 
-ALLAUX = ilaenv.f ieeeck.f lsamen.f xerbla.f xerbla_array.f iparmq.f \
-   iparam2stage.f ilaprec.f ilatrans.f ilauplo.f iladiag.f chla_transtype.f \
+ALLAUX = ilaenv.f ilaenv2stage.f ieeeck.f lsamen.f xerbla.f xerbla_array.f \
+   iparmq.f iparam2stage.f \
+   ilaprec.f ilatrans.f ilauplo.f iladiag.f chla_transtype.f \
    ../INSTALL/ilaver.f ../INSTALL/lsame.f ../INSTALL/slamch.f
 
 SCLAUX = \
