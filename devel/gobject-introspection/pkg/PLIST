@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2019/01/02 19:11:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2019/04/30 17:43:15 jasper Exp $
 bin/g-ir-annotation-tool
 @bin bin/g-ir-compiler
 @bin bin/g-ir-generate
@@ -24,6 +24,7 @@ include/gobject-introspection-1.0/gitypeinfo.h
 include/gobject-introspection-1.0/gitypelib.h
 include/gobject-introspection-1.0/gitypes.h
 include/gobject-introspection-1.0/giunioninfo.h
+include/gobject-introspection-1.0/giversion.h
 include/gobject-introspection-1.0/giversionmacros.h
 include/gobject-introspection-1.0/givfuncinfo.h
 lib/girepository-1.0/
@@ -47,65 +48,6 @@ lib/girepository-1.0/xrandr-1.3.typelib
 lib/gobject-introspection/
 lib/gobject-introspection/giscanner/
 lib/gobject-introspection/giscanner/__init__.py
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}/
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}annotationmain.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}annotationmain.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}annotationparser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}annotationparser.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}ast.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}ast.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}cachestore.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}cachestore.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}ccompiler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}ccompiler.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}codegen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}codegen.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}docmain.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}docmain.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}docwriter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}docwriter.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}dumper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}dumper.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}gdumpparser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}gdumpparser.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}girparser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}girparser.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}girwriter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}girwriter.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}introspectablepass.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}introspectablepass.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}libtoolimporter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}libtoolimporter.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}maintransformer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}maintransformer.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}mdextensions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}mdextensions.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}msvccompiler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}msvccompiler.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}pkgconfig.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}pkgconfig.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}scannermain.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}scannermain.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}sectionparser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}sectionparser.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}shlibs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}shlibs.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}sourcescanner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}sourcescanner.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}testcodegen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}testcodegen.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}transformer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}transformer.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}xmlwriter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/gobject-introspection/giscanner/${MODPY_PYCACHE}xmlwriter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gobject-introspection/giscanner/_giscanner.so
 lib/gobject-introspection/giscanner/_version.py
 lib/gobject-introspection/giscanner/annotationmain.py
@@ -133,6 +75,7 @@ lib/gobject-introspection/giscanner/doctemplates/devdocs/Gjs/default.tmpl
 lib/gobject-introspection/giscanner/doctemplates/devdocs/Gjs/enum.tmpl
 lib/gobject-introspection/giscanner/doctemplates/devdocs/Gjs/function.tmpl
 lib/gobject-introspection/giscanner/doctemplates/devdocs/Gjs/interface.tmpl
+lib/gobject-introspection/giscanner/doctemplates/devdocs/Gjs/method.tmpl
 lib/gobject-introspection/giscanner/doctemplates/devdocs/Gjs/namespace.tmpl
 lib/gobject-introspection/giscanner/doctemplates/mallard/
 lib/gobject-introspection/giscanner/doctemplates/mallard/C/
@@ -203,8 +146,6 @@ lib/gobject-introspection/giscanner/testcodegen.py
 lib/gobject-introspection/giscanner/transformer.py
 lib/gobject-introspection/giscanner/utils.py
 lib/gobject-introspection/giscanner/xmlwriter.py
-lib/libgirepository-1.0.a
-lib/libgirepository-1.0.la
 @lib lib/libgirepository-1.0.so.${LIBgirepository-1.0_VERSION}
 lib/pkgconfig/gobject-introspection-1.0.pc
 lib/pkgconfig/gobject-introspection-no-export-1.0.pc

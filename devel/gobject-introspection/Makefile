@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.95 2019/04/28 20:51:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2019/04/30 17:43:15 jasper Exp $
 
 COMMENT=		GObject Introspection
 
-GNOME_VERSION=		1.58.3
+GNOME_VERSION=		1.60.1
 GNOME_PROJECT=		gobject-introspection
-REVISION=		0
 
 CATEGORIES=		devel
 
@@ -17,11 +16,12 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # Tools: GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=		lang/python \
+MODULES=		devel/meson \
+			lang/python \
 			x11/gnome
 
-WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv
-WANTLIB += intl m pcre pthread z
+WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += intl m pthread
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
@@ -36,13 +36,6 @@ RUN_DEPENDS=		graphics/cairo \
 
 # XXX: tests/scanner/test_transformer.py fails otherwise
 TEST_DEPENDS+=		textproc/gsed
-
-YACC=			bison
-
-CONFIGURE_STYLE =	gnu
-
-post-install:
-	rm ${PREFIX}/lib/gobject-introspection/giscanner/*.{a,la}
 
 # XXX: tidy-up some GNU-isms; see above.
 pre-test:
