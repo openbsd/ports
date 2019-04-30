@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/14 18:33:08 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2019/04/30 17:37:29 landry Exp $
 
 COMMENT =	mesh data abstration library
 
 GH_ACCOUNT=	lutraconsulting
 GH_PROJECT =	MDAL
-GH_TAGNAME =	0.2.0
+GH_TAGNAME =	0.3.1
 
 PKGNAME =	${GH_PROJECT:L}-${GH_TAGNAME}
 
@@ -30,6 +30,6 @@ LIB_DEPENDS =	math/netcdf>=4 \
 
 BUILD_DEPENDS =	devel/gtest
 
-WANTLIB += ${COMPILER_LIBCXX} c gdal hdf5 m netcdf z
+WANTLIB += ${COMPILER_LIBCXX} c gdal hdf5 m netcdf xml2 z
 
 .include <bsd.port.mk>
