@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2019/04/24 08:42:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.169 2019/04/30 14:04:53 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
@@ -9,6 +9,8 @@ PKGNAME=		gnome-${V}
 
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
+
+REVISION-extras=	0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -102,7 +104,6 @@ RUN_DEPENDS-extras +=	inputmethods/ibus-anthy \
 			net/gupnp/igd \
 			x11/gnome/bijiben \
 			x11/gnome/builder \
-			x11/gnome/code-assistance \
 			x11/gnome/dconf-editor \
 			x11/gnome/devel-docs \
 			x11/gnome/devhelp \
