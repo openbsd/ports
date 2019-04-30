@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/04/23 08:51:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/04/30 17:42:31 jasper Exp $
 bin/gjs
 @bin bin/gjs-console
 include/gjs-1.0/
@@ -7,6 +7,7 @@ include/gjs-1.0/gjs/context.h
 include/gjs-1.0/gjs/coverage.h
 include/gjs-1.0/gjs/gjs.h
 include/gjs-1.0/gjs/macros.h
+include/gjs-1.0/gjs/mem.h
 include/gjs-1.0/gjs/profiler.h
 include/gjs-1.0/util/
 include/gjs-1.0/util/error.h
