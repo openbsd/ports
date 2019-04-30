@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2018/10/16 14:55:02 bket Exp $
+$OpenBSD: README,v 1.2 2019/04/30 08:51:13 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -7,20 +7,36 @@ $OpenBSD: README,v 1.1 2018/10/16 14:55:02 bket Exp $
 dnscrypt-proxy listens for DNS queries on a local address and forwards
 them to a DNSCrypt resolver over an encrypted channel.
 
-To use this package, two things are required.
+To use this package, several things are required.
 
-Firstly, validate that ${SYSCONFDIR}/dnscrypt-proxy.toml fits your needs,
-and start the daemon:
+First, ensure that ${SYSCONFDIR}/dnscrypt-proxy.toml fits your needs.
+
+Uncomment 'server_names' to have a smaller set of public resolvers to be
+used for load balancing. If this line is commented, all registered
+servers matching the require_* filters will be used for load balancing.
+
+Note the load balancing strategy, controlled by 'lb_strategy'. It can be
+set to one of the following values:
+  - 'fastest' (always pick the fastest server in the list)
+  - 'p2' (randomly choose between the top two fastest servers)
+  - 'ph' (randomly choose between the top fastest half of all servers)
+  - 'random' (just pick any random server from the list)
+
+'p2' is the default option, and you may change this. For more
+information, see
+https://github.com/jedisct1/dnscrypt-proxy/wiki/Load-Balancing-Options
+
+Second, start the daemon:
 
 # rcctl enable dnscrypt_proxy
 # rcctl start dnscrypt_proxy
 
-Secondly, set /etc/resolv.conf to perform queries from dnscrypt-proxy:
+Finally, set /etc/resolv.conf to perform queries from dnscrypt-proxy:
 
 nameserver 127.0.0.1
 lookup file bind
 
-Note: If fetching your IP address dynamically, dhclient(8) will normally
+Note: If your IP address is dynamically fetched, dhclient(8) will normally
 update resolv.conf with network-provided DNS servers. This can be avoided
 by using "ignore domain-name, domain-name-servers;" in /etc/dhclient.conf.
 
