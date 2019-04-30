@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/03 08:17:15 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/30 05:35:01 bentley Exp $
 
 COMMENT =		package compiler and linker metadata toolkit
 
-DISTNAME =		pkgconf-1.4.2
-REVISION =		0
+DISTNAME =		pkgconf-1.6.0
 
 SHARED_LIBS +=		pkgconf 0.0	# 3.0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		https://github.com/pkgconf/pkgconf
+HOMEPAGE =		https://git.dereferenced.org/pkgconf/pkgconf
 
 MAINTAINER =		Adam Steen <adam@adamsteen.com.au>
 
