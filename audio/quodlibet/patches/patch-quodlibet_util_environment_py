@@ -1,9 +1,9 @@
-$OpenBSD: patch-quodlibet_util_environment_py,v 1.1 2018/06/28 10:10:16 sthen Exp $
+$OpenBSD: patch-quodlibet_util_environment_py,v 1.2 2019/04/30 21:52:44 sthen Exp $
 
 Index: quodlibet/util/environment.py
 --- quodlibet/util/environment.py.orig
 +++ quodlibet/util/environment.py
-@@ -57,6 +57,12 @@ def is_linux():
+@@ -56,6 +56,12 @@ def is_linux():
      return not is_windows() and not is_osx()
  
  

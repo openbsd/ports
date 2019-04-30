@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2019/04/28 20:51:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/04/30 21:52:44 sthen Exp $
 
 COMMENT=	audio player and tagger for GTK+ with regex support
 
-MODPY_EGG_VERSION= 4.1.0
+MODPY_EGG_VERSION= 4.2.1
 DISTNAME=	quodlibet-${MODPY_EGG_VERSION}
 PORTROACH=	skipv:release-${MODPY_EGG_VERSION}
-REVISION=	3
 
 CATEGORIES=	audio
 
@@ -18,8 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	https://github.com/quodlibet/quodlibet/releases/download/release-${MODPY_EGG_VERSION}/
 
-MODULES=	lang/python \
-		textproc/intltool
+MODULES=	lang/python
 
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 RUN_DEPENDS=	audio/py-mutagen${MODPY_FLAVOR}>=1.34 \
@@ -37,7 +35,9 @@ RUN_DEPENDS+=	devel/desktop-file-utils \
 		x11/gtksourceview3 \
 		x11/gtk+3,-guic
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		devel/gettext \
+		devel/gettext-tools
 MODPY_ADJ_FILES= *py
 
 MODPY_DISTUTILS_INSTALLARGS= --mandir=${PREFIX}/man

@@ -1,4 +1,4 @@
-$OpenBSD: patch-quodlibet_player_gstbe_util_py,v 1.1 2018/06/28 10:10:16 sthen Exp $
+$OpenBSD: patch-quodlibet_player_gstbe_util_py,v 1.2 2019/04/30 21:52:44 sthen Exp $
 
 Fallback to autoaudiosink etc., I would use sndiosink directly here but
 had some issues with sigsegv when doing that.
@@ -13,9 +13,9 @@ Index: quodlibet/player/gstbe/util.py
 -from quodlibet.util import is_linux, is_windows
 +from quodlibet.util import is_linux, is_openbsd, is_windows
  from quodlibet.player import PlayerError
- from quodlibet.compat import text_type, number_types, xrange
  
-@@ -83,7 +83,7 @@ def find_audio_sink():
+ 
+@@ -82,7 +82,7 @@ def find_audio_sink():
          sinks = [
              "directsoundsink",
          ]

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/06/29 22:16:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/04/30 21:52:44 sthen Exp $
 bin/exfalso
 bin/operon
 bin/quodlibet
@@ -13,7 +13,6 @@ lib/python${MODPY_VERSION}/site-packages/quodlibet/${MODPY_PYCACHE}_main.${MODPY
 lib/python${MODPY_VERSION}/site-packages/quodlibet/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/${MODPY_PYCACHE}commands.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/quodlibet/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/${MODPY_PYCACHE}const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/${MODPY_PYCACHE}exfalso.${MODPY_PYC_MAGIC_TAG}pyc
@@ -108,7 +107,6 @@ lib/python${MODPY_VERSION}/site-packages/quodlibet/browsers/soundcloud/util.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/build.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/cli.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/commands.py
-lib/python${MODPY_VERSION}/site-packages/quodlibet/compat.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/config.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/const.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/errorreport/
@@ -337,9 +335,11 @@ lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/query/__init__.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/query/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/query/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/query/${MODPY_PYCACHE}conditional.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/query/${MODPY_PYCACHE}missing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/query/${MODPY_PYCACHE}pythonexpression.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/query/${MODPY_PYCACHE}savedsearch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/query/conditional.py
+lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/query/missing.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/query/pythonexpression.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/query/savedsearch.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/ext/songsmenu/
@@ -804,7 +804,6 @@ lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}renamefi
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}scanbox.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}searchbar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}seekbutton.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}shortcuts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}showfiles.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/${MODPY_PYCACHE}songlist.${MODPY_PYC_MAGIC_TAG}pyc
@@ -863,7 +862,6 @@ lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/renamefiles.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/scanbox.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/searchbar.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/seekbutton.py
-lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/session.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/shortcuts.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/showfiles.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/qltk/songlist.py
@@ -892,6 +890,20 @@ lib/python${MODPY_VERSION}/site-packages/quodlibet/query/_match.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/query/_parser.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/query/_query.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/remote.py
+lib/python${MODPY_VERSION}/site-packages/quodlibet/session/
+lib/python${MODPY_VERSION}/site-packages/quodlibet/session/__init__.py
+lib/python${MODPY_VERSION}/site-packages/quodlibet/session/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/quodlibet/session/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/quodlibet/session/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/quodlibet/session/${MODPY_PYCACHE}_xsmp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/quodlibet/session/${MODPY_PYCACHE}gnome.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/quodlibet/session/${MODPY_PYCACHE}xfce.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/quodlibet/session/${MODPY_PYCACHE}xsmp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/quodlibet/session/_base.py
+lib/python${MODPY_VERSION}/site-packages/quodlibet/session/_xsmp.py
+lib/python${MODPY_VERSION}/site-packages/quodlibet/session/gnome.py
+lib/python${MODPY_VERSION}/site-packages/quodlibet/session/xfce.py
+lib/python${MODPY_VERSION}/site-packages/quodlibet/session/xsmp.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/unisearch/
 lib/python${MODPY_VERSION}/site-packages/quodlibet/unisearch/__init__.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/unisearch/${MODPY_PYCACHE}/
@@ -908,7 +920,6 @@ lib/python${MODPY_VERSION}/site-packages/quodlibet/util/${MODPY_PYCACHE}__init__
 lib/python${MODPY_VERSION}/site-packages/quodlibet/util/${MODPY_PYCACHE}atomic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/util/${MODPY_PYCACHE}collection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/util/${MODPY_PYCACHE}collections.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/quodlibet/util/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/util/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/util/${MODPY_PYCACHE}copool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/quodlibet/util/${MODPY_PYCACHE}dbusutils.${MODPY_PYC_MAGIC_TAG}pyc
@@ -941,7 +952,6 @@ lib/python${MODPY_VERSION}/site-packages/quodlibet/util/${MODPY_PYCACHE}winpipe.
 lib/python${MODPY_VERSION}/site-packages/quodlibet/util/atomic.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/util/collection.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/util/collections.py
-lib/python${MODPY_VERSION}/site-packages/quodlibet/util/compat.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/util/config.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/util/copool.py
 lib/python${MODPY_VERSION}/site-packages/quodlibet/util/cover/
