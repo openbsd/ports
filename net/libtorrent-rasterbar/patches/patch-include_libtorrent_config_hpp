@@ -1,8 +1,8 @@
-$OpenBSD: patch-include_libtorrent_config_hpp,v 1.1.1.1 2018/02/08 06:30:34 bentley Exp $
+$OpenBSD: patch-include_libtorrent_config_hpp,v 1.2 2019/04/30 16:45:26 tj Exp $
 Index: include/libtorrent/config.hpp
 --- include/libtorrent/config.hpp.orig
 +++ include/libtorrent/config.hpp
-@@ -563,6 +563,10 @@ int snprintf(char* buf, int len, char const* fmt, ...)
+@@ -562,6 +562,10 @@ int snprintf(char* buf, int len, char const* fmt, ...)
  #define TORRENT_USE_UNC_PATHS 0
  #endif
  

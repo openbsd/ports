@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/04/30 16:45:26 tj Exp $
 
 COMMENT =		C++ library implementing a BitTorrent client
 
-MODPY_EGG_VERSION =	1.1.11
+MODPY_EGG_VERSION =	1.1.13
 DISTNAME =		libtorrent-rasterbar-${MODPY_EGG_VERSION}
-REVISION =		0
 
 SHARED_LIBS +=  	torrent-rasterbar 1.0	# 9.0.0
 
@@ -19,7 +18,7 @@ WANTLIB += boost_chrono-mt boost_python boost_random-mt boost_system-mt
 WANTLIB += crypto m ssl
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 
-MASTER_SITES =		https://github.com/arvidn/libtorrent/releases/download/libtorrent_${MODPY_EGG_VERSION:S/./_/g}/
+MASTER_SITES =		https://github.com/arvidn/libtorrent/releases/download/libtorrent-${MODPY_EGG_VERSION:S/./_/g}/
 
 MODULES =		lang/python
 

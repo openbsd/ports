@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/04/12 04:40:41 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/04/30 16:45:26 tj Exp $
 include/libtorrent/
 include/libtorrent/ConvertUTF.h
 include/libtorrent/add_torrent_params.hpp
@@ -7,7 +7,6 @@ include/libtorrent/alert.hpp
 include/libtorrent/alert_manager.hpp
 include/libtorrent/alert_types.hpp
 include/libtorrent/alloca.hpp
-include/libtorrent/allocator.hpp
 include/libtorrent/announce_entry.hpp
 include/libtorrent/assert.hpp
 include/libtorrent/aux_/
