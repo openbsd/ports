@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.118 2019/04/25 17:48:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.119 2019/04/30 17:40:35 jasper Exp $
 
 COMMENT-main=		compiler for the GObject type system
 COMMENT-valadoc=	Vala documentation generator
 
 GNOME_PROJECT=		vala
-GNOME_VERSION=		0.42.7
+GNOME_VERSION=		0.44.3
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-valadoc=	valadoc-${GNOME_VERSION}
 
 # !!! XXX API_V is used by x11/gnome/(builder,code-assistance,libgda} 
-API_V=			0.42
+API_V=			0.44
 SHARED_LIBS +=  vala-${API_V}               0.0      # 0.0
 SHARED_LIBS +=  valadoc-${API_V}            0.0      # 0.0
 
@@ -25,7 +25,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c ffi glib-2.0 gmodule-2.0 gobject-2.0 iconv intl pcre pthread
 
 WANTLIB-valadoc += ${WANTLIB}
-WANTLIB-valadoc += cdt cgraph expat gvc ltdl m pathplan vala-0.42 xdot
+WANTLIB-valadoc += cdt cgraph expat gvc ltdl m pathplan vala-0.44 xdot
 WANTLIB-valadoc += z
 
 MODULES=		x11/gnome
@@ -37,14 +37,13 @@ MULTI_PACKAGES=		-main -valadoc
 LIB_DEPENDS-main=	devel/glib2
 
 LIB_DEPENDS-valadoc=	${BASE_PKGPATH},-main=${GNOME_VERSION} \
-		math/graphviz
+			math/graphviz
 
 TEST_DEPENDS=		shells/bash
 
 SUBST_VARS+=		API_V
 
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE =	gnu
 
 # multiple dep loops like:
 # lang/vala -> math/graphviz -> x11/gnome/librsvg -> lang/vala
@@ -55,6 +54,7 @@ FLAVOR?=		no_valadoc bootstrap
 
 .if !${BUILD_PACKAGES:M-valadoc}
 PATCH_LIST=		patch-* no_valadoc-*
+CONFIGURE_ARGS +=	--disable-valadoc
 .endif
 
 post-install:

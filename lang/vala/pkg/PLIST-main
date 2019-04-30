@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2019/04/25 17:48:07 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2019/04/30 17:40:35 jasper Exp $
 @pkgpath lang/vala
 bin/vala
 bin/vala-${API_V}
@@ -24,8 +24,6 @@ lib/vala-${API_V}/libvalaccodegen.so
 @man man/man1/vala-gen-introspect.1
 @man man/man1/valac-${API_V}.1
 @man man/man1/valac.1
-@man man/man1/valadoc-${API_V}.1
-@man man/man1/valadoc.1
 @man man/man1/vapigen-${API_V}.1
 @man man/man1/vapigen.1
 share/aclocal/vala.m4
@@ -130,6 +128,8 @@ share/vala-${API_V}/vapi/gnome-vfs-2.0.vapi
 share/vala-${API_V}/vapi/gnutls.vapi
 share/vala-${API_V}/vapi/gobject-2.0.vapi
 share/vala-${API_V}/vapi/gobject-introspection-1.0.vapi
+share/vala-${API_V}/vapi/goocanvas-2.0.deps
+share/vala-${API_V}/vapi/goocanvas-2.0.vapi
 share/vala-${API_V}/vapi/goocanvas.deps
 share/vala-${API_V}/vapi/goocanvas.vapi
 share/vala-${API_V}/vapi/graphene-1.0.deps
@@ -180,14 +180,14 @@ share/vala-${API_V}/vapi/gtk+-2.0.deps
 share/vala-${API_V}/vapi/gtk+-2.0.vapi
 share/vala-${API_V}/vapi/gtk+-3.0.deps
 share/vala-${API_V}/vapi/gtk+-3.0.vapi
-share/vala-${API_V}/vapi/gtk+-4.0.deps
-share/vala-${API_V}/vapi/gtk+-4.0.vapi
 share/vala-${API_V}/vapi/gtk+-unix-print-2.0.deps
 share/vala-${API_V}/vapi/gtk+-unix-print-2.0.vapi
 share/vala-${API_V}/vapi/gtk+-unix-print-3.0.deps
 share/vala-${API_V}/vapi/gtk+-unix-print-3.0.vapi
-share/vala-${API_V}/vapi/gtk+-unix-print-4.0.deps
-share/vala-${API_V}/vapi/gtk+-unix-print-4.0.vapi
+share/vala-${API_V}/vapi/gtk4-unix-print.deps
+share/vala-${API_V}/vapi/gtk4-unix-print.vapi
+share/vala-${API_V}/vapi/gtk4.deps
+share/vala-${API_V}/vapi/gtk4.vapi
 share/vala-${API_V}/vapi/gtkmozembed.deps
 share/vala-${API_V}/vapi/gtkmozembed.vapi
 share/vala-${API_V}/vapi/gtksourceview-2.0.deps
