@@ -1,22 +1,35 @@
-# $OpenBSD: Makefile,v 1.35 2019/04/28 18:35:42 kirby Exp $
+# $OpenBSD: Makefile,v 1.36 2019/04/30 12:50:29 kirby Exp $
 
 BROKEN-hppa =	ICE on dgn-shoals.cc:638
 
 COMMENT = 	dungeon crawl stone soup
-CATEGORIES = 	games
 
-HOMEPAGE = 	http://crawl.develz.org/
-MASTER_SITES = 	https://crawl.develz.org/release/${VERSION:R}/
 VERSION = 	0.23.2
 DISTNAME=	stone_soup-${VERSION}-nodeps
-EXTRACT_SUFX=	.tar.xz
 PKGNAME=	stone-soup-${VERSION}
+REVISION=	0
 
-WRKDIST = 	${WRKDIR}/stone_soup-${VERSION}
-WRKSRC = 	${WRKDIST}/source
-USE_GMAKE = 	Yes
-CFLAGS += 	-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL2
-CXXFLAGS += 	-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL2
+CATEGORIES = 	games
+
+HOMEPAGE = 	https://crawl.develz.org/
+
+# GPLv2+
+PERMIT_PACKAGE_CDROM =	 Yes
+
+WANTLIB = 	c m ${MODLUA_WANTLIB} sqlite3 ${COMPILER_LIBCXX}
+
+MASTER_SITES = 	https://crawl.develz.org/release/${VERSION:R}/
+EXTRACT_SUFX=	.tar.xz
+
+COMPILER =	base-clang ports-gcc
+MODULES = 	lang/python \
+		lang/lua
+MODLUA_VERSION = 	5.1
+
+BUILD_DEPENDS = graphics/pngcrush \
+		textproc/py-yaml${MODPY_FLAVOR}
+LIB_DEPENDS = 	databases/sqlite3
+
 MAKE_FLAGS = 	CC="${CC}" GCC="${GCC}" GXX="${CXX}" \
 		CXX="${CXX}" HOSTCXX="${CXX}" \
 		LUA_INCLUDE_DIR=${MODLUA_INCL_DIR} \
@@ -28,23 +41,11 @@ MAKE_FLAGS = 	CC="${CC}" GCC="${GCC}" GXX="${CXX}" \
 		SAVEDIR="~/.crawl" \
 		NO_YACC=1 V=1
 
-COMPILER =	base-clang ports-gcc
-MODULES = 	lang/python \
-		lang/lua
-MODLUA_VERSION = 	5.1
-WANTLIB = 	c m ${MODLUA_WANTLIB} sqlite3 ${COMPILER_LIBCXX}
+USE_GMAKE = 	Yes
+CONFIGURE_STYLE = none
 
 MODPY_RUN_DEPENDS = 	No
-CONFIGURE_STYLE = none
 MODPY_ADJ_FILES = util/species-gen.py
-
-BUILD_DEPENDS = graphics/pngcrush \
-		textproc/py-yaml${MODPY_FLAVOR}
-
-LIB_DEPENDS = 	databases/sqlite3
-
-# License GPLv2+
-PERMIT_PACKAGE_CDROM =	 Yes
 
 FLAVORS = 	no_x11
 FLAVOR ?=
@@ -67,6 +68,14 @@ LIB_DEPENDS += 	devel/sdl2 \
 		graphics/png
 .endif
 
+NO_TEST =	Yes
+
+CFLAGS += 	-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL2
+CXXFLAGS += 	-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL2
+
+WRKDIST = 	${WRKDIR}/stone_soup-${VERSION}
+WRKSRC = 	${WRKDIST}/source
+
 post-install:
 	mv ${PREFIX}/bin/crawl ${PREFIX}/bin/crawl-ss
 	chmod 755 ${PREFIX}/bin/crawl-ss
@@ -79,7 +88,5 @@ post-install:
 	${INSTALL_DATA} ${WRKDIST}/source/debian/crawl-tiles.desktop \
 		${PREFIX}/share/applications
 .endif
-
-NO_TEST=Yes
 
 .include <bsd.port.mk>
