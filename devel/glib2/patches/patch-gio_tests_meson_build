@@ -1,6 +1,9 @@
-$OpenBSD: patch-gio_tests_meson_build,v 1.1 2019/04/28 06:28:17 ajacoutot Exp $
+$OpenBSD: patch-gio_tests_meson_build,v 1.2 2019/04/30 07:15:06 ajacoutot Exp $
 
-https://gitlab.gnome.org/GNOME/glib/merge_requests/802
+From c14ac90ed2347ef050ccc83ef6b7b183cec6d0e4 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sat, 27 Apr 2019 18:45:45 +0200
+Subject: [PATCH] gio: tests, don't check for libdl on OpenBSD
 
 Index: gio/tests/meson.build
 --- gio/tests/meson.build.orig
