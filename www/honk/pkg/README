@@ -1,0 +1,108 @@
+$OpenBSD: README,v 1.1.1.1 2019/04/30 07:58:17 bentley Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Initial configuration
+=====================
+
+honk expects to be fronted by a TLS terminating reverse proxy.
+
+acme-client(1)
+--------------
+
+# acme-client.conf(5)
+domain honk.example.com {
+  domain key "/etc/ssl/private/honk.example.com.key"
+  domain certificate "/etc/ssl/honk.example.com.crt"
+  domain full chain certificate "/etc/ssl/honk.example.com.fullchain.pem"
+  sign with letsencrypt
+}
+
+httpd(8)
+--------
+
+# httpd.conf(5)
+server "honk.example.com" {
+  listen on * port http
+  location "/.well-known/acme-challenge/*" {
+    root "/acme"
+    request strip 2
+  }
+  location "*" {
+    block return 302 "https://honk.example.com$REQUEST_URI"
+  }
+}
+
+honk# rcctl enable httpd
+honk# rcctl start httpd
+honk# acme-client -ADv honk.example.com
+
+relayd(8)
+---------
+
+# relayd.conf(5)
+ext_addr="203.0.113.1"
+ext_addr6="2001:0db8::1"
+honk_port="31337"
+table <honk> { 127.0.0.1 }
+table <honk6> { ::1 }
+
+http protocol https {
+  match request header append "X-Forwarded-For" value "$REMOTE_ADDR"
+  match request header append "X-Forwarded-By" \
+    value "$SERVER_ADDR:$SERVER_PORT"
+  match request header set "Connection" value "close"
+
+  tcp { sack, backlog 128 }
+}
+
+relay wwwtls {
+  listen on $ext_addr port https tls
+  protocol https
+
+  forward to <honk> port $honk_port check tcp
+}
+
+relay wwwtls6 {
+  listen on $ext_addr6 port https tls
+  protocol https
+
+  forward to <honk6> port $honk_port check tcp
+}
+
+honk# cd /etc/ssl
+honk# ln -s honk.example.com.fullchain.pem 203.0.113.1.crt
+honk# ln -s honk.example.com.fullchain.pem 2001:0db8::1.crt
+honk# cd /etc/ssl/private
+honk# ln -s honk.example.com.key 203.0.113.1.key
+honk# ln -s honk.example.com.key 2001:0db8::1.key
+
+honk# rcctl enable relayd
+honk# rcctl start relayd
+
+
+pf(4)
+-----
+
+# pf.conf(5)
+anchor "relayd/*"
+
+honk# pfctl -f /etc/pf.conf
+
+Usage
+=====
+
+Please see /usr/local/share/doc/honk
+
+honk# cd /var/honk && honk init
+listenaddr: localhost:31337
+servername: honk.example.com
+honk# touch /var/honk/savedinbox.json
+honk# chmod 660 honk.db savedinbox.json
+
+honk# rcctl enable honk
+honk# rcctl start honk
+
+Honk at https://honk.example.com

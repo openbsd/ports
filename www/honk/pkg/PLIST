@@ -1,0 +1,41 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/04/30 07:58:17 bentley Exp $
+@newgroup _honk:833
+@newuser _honk:833:_honk:daemon:Honk User:${VARBASE}/honk:/sbin/nologin
+@rcscript ${RCDIR}/honk
+@bin bin/honk
+share/doc/honk/
+share/doc/honk/README
+share/doc/honk/manual.txt
+share/doc/honk/ping.txt
+share/doc/honk/security.txt
+share/doc/honk/spec.txt
+share/doc/pkg-readmes/${PKGSTEM}
+@mode 770
+@owner _honk
+@group _honk
+@sample ${VARBASE}/honk/
+@mode 750
+@sample ${VARBASE}/honk/views/
+@mode
+@owner
+@group
+share/examples/honk/
+share/examples/honk/schema.sql
+@sample ${VARBASE}/honk/schema.sql
+share/examples/honk/views/
+share/examples/honk/views/header.html
+@sample ${VARBASE}/honk/views/header.html
+share/examples/honk/views/honk.html
+@sample ${VARBASE}/honk/views/honk.html
+share/examples/honk/views/honkers.html
+@sample ${VARBASE}/honk/views/honkers.html
+share/examples/honk/views/honkform.html
+@sample ${VARBASE}/honk/views/honkform.html
+share/examples/honk/views/honkpage.html
+@sample ${VARBASE}/honk/views/honkpage.html
+share/examples/honk/views/login.html
+@sample ${VARBASE}/honk/views/login.html
+share/examples/honk/views/style.css
+@sample ${VARBASE}/honk/views/style.css
+share/examples/honk/views/zonkers.html
+@sample ${VARBASE}/honk/views/zonkers.html
