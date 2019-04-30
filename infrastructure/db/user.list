@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.339 2019/03/07 20:59:29 rsadowski Exp $
+$OpenBSD: user.list,v 1.340 2019/04/30 07:28:32 bentley Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -341,3 +341,4 @@ id  user		group		port options
 830 _pdns_recursor	_pdns_recursor	net/powerdns_recursor
 831 _dicod		_dicod		net/dico
 832 _litecoind		_litecoind	net/litecoin
+833 _honk		_honk		www/honk
