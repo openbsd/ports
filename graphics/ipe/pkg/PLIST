@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/02/24 20:33:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/04/30 06:44:29 bentley Exp $
 @bin bin/ipe
 @bin bin/ipe6upgrade
 @bin bin/ipeextract
+@bin bin/ipepresenter
 @bin bin/iperender
 @bin bin/ipescript
 @bin bin/ipetoipe
@@ -28,6 +29,9 @@ include/ipepage.h
 include/ipepainter.h
 include/ipepath.h
 include/ipepdfparser.h
+include/ipepdfview.h
+include/ipepdfview_qt.h
+include/ipepdfview_win.h
 include/ipepdfwriter.h
 include/ipepswriter.h
 include/ipereference.h
@@ -50,6 +54,7 @@ lib/ipe/${V}/ipelets/euclid.lua
 lib/ipe/${V}/ipelets/goodies.lua
 lib/ipe/${V}/ipelets/move.lua
 lib/ipe/${V}/ipelets/search-replace.lua
+lib/ipe/${V}/ipelets/selectby.lua
 lib/ipe/${V}/ipelets/symbols.lua
 @lib lib/libipe.so.${LIBipe_VERSION}
 @lib lib/libipecairo.so.${LIBipecairo_VERSION}
@@ -92,8 +97,6 @@ share/doc/ipe/classipe_1_1_bezier-members.html
 share/doc/ipe/classipe_1_1_bezier.html
 share/doc/ipe/classipe_1_1_bitmap-members.html
 share/doc/ipe/classipe_1_1_bitmap.html
-share/doc/ipe/classipe_1_1_bitmap_1_1_m_render_data-members.html
-share/doc/ipe/classipe_1_1_bitmap_1_1_m_render_data.html
 share/doc/ipe/classipe_1_1_bitmap_finder-members.html
 share/doc/ipe/classipe_1_1_bitmap_finder.html
 share/doc/ipe/classipe_1_1_buffer-members.html
@@ -180,6 +183,8 @@ share/doc/ipe/classipe_1_1_pdf_dict-members.html
 share/doc/ipe/classipe_1_1_pdf_dict.html
 share/doc/ipe/classipe_1_1_pdf_file-members.html
 share/doc/ipe/classipe_1_1_pdf_file.html
+share/doc/ipe/classipe_1_1_pdf_file_resources-members.html
+share/doc/ipe/classipe_1_1_pdf_file_resources.html
 share/doc/ipe/classipe_1_1_pdf_name-members.html
 share/doc/ipe/classipe_1_1_pdf_name.html
 share/doc/ipe/classipe_1_1_pdf_null-members.html
@@ -194,10 +199,18 @@ share/doc/ipe/classipe_1_1_pdf_parser-members.html
 share/doc/ipe/classipe_1_1_pdf_parser.html
 share/doc/ipe/classipe_1_1_pdf_ref-members.html
 share/doc/ipe/classipe_1_1_pdf_ref.html
+share/doc/ipe/classipe_1_1_pdf_resource_base-members.html
+share/doc/ipe/classipe_1_1_pdf_resource_base.html
 share/doc/ipe/classipe_1_1_pdf_resources-members.html
 share/doc/ipe/classipe_1_1_pdf_resources.html
 share/doc/ipe/classipe_1_1_pdf_string-members.html
 share/doc/ipe/classipe_1_1_pdf_string.html
+share/doc/ipe/classipe_1_1_pdf_thumbnail-members.html
+share/doc/ipe/classipe_1_1_pdf_thumbnail.html
+share/doc/ipe/classipe_1_1_pdf_view-members.html
+share/doc/ipe/classipe_1_1_pdf_view.html
+share/doc/ipe/classipe_1_1_pdf_view_base-members.html
+share/doc/ipe/classipe_1_1_pdf_view_base.html
 share/doc/ipe/classipe_1_1_pdf_writer-members.html
 share/doc/ipe/classipe_1_1_pdf_writer.html
 share/doc/ipe/classipe_1_1_platform-members.html
@@ -212,6 +225,8 @@ share/doc/ipe/classipe_1_1_reference-members.html
 share/doc/ipe/classipe_1_1_reference.html
 share/doc/ipe/classipe_1_1_repository-members.html
 share/doc/ipe/classipe_1_1_repository.html
+share/doc/ipe/classipe_1_1_save_flag-members.html
+share/doc/ipe/classipe_1_1_save_flag.html
 share/doc/ipe/classipe_1_1_segment-members.html
 share/doc/ipe/classipe_1_1_segment.html
 share/doc/ipe/classipe_1_1_select_tool-members.html
@@ -327,6 +342,7 @@ share/doc/ipe/functions_vars_p.html
 share/doc/ipe/functions_vars_s.html
 share/doc/ipe/functions_vars_t.html
 share/doc/ipe/functions_vars_v.html
+share/doc/ipe/functions_vars_w.html
 share/doc/ipe/functions_vars_x.html
 share/doc/ipe/functions_vars_y.html
 share/doc/ipe/functions_vars_z.html
@@ -434,6 +450,8 @@ share/doc/ipe/nav_f.png
 share/doc/ipe/nav_g.png
 share/doc/ipe/nav_h.png
 share/doc/ipe/next.png
+share/doc/ipe/onepage.html
+share/doc/ipe/onepage_2.html
 share/doc/ipe/open.png
 share/doc/ipe/pages.html
 share/doc/ipe/polygon.pdf

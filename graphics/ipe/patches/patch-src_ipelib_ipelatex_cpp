@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ipelib_ipelatex_cpp,v 1.2 2019/02/24 20:33:56 sthen Exp $
+$OpenBSD: patch-src_ipelib_ipelatex_cpp,v 1.3 2019/04/30 06:44:29 bentley Exp $
 
 Index: src/ipelib/ipelatex.cpp
 --- src/ipelib/ipelatex.cpp.orig
@@ -7,8 +7,8 @@ Index: src/ipelib/ipelatex.cpp
  */
  int Latex::createLatexSource(Stream &stream, String preamble)
  {
--  bool ancient = (getenv("IPEANCIENTPDFTEX") != 0);
-+  bool ancient = (std::getenv("IPEANCIENTPDFTEX") != 0);
+-  bool ancient = (getenv("IPEANCIENTPDFTEX") != nullptr);
++  bool ancient = (std::getenv("IPEANCIENTPDFTEX") != nullptr);
    int count = 0;
    stream << "\\nonstopmode\n";
    if (!iXetex) {

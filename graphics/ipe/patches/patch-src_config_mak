@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_config_mak,v 1.3 2019/02/24 20:33:56 sthen Exp $
+$OpenBSD: patch-src_config_mak,v 1.4 2019/04/30 06:44:29 bentley Exp $
 Index: src/config.mak
 --- src/config.mak.orig
 +++ src/config.mak
-@@ -16,7 +16,7 @@
- # The name of the Lua package (it could be "lua", "lua52", or "lua5.2")
- # Lua 5.3 works as well.
+@@ -15,7 +15,7 @@
+ #
+ # The name of the Lua package (it could be "lua", "lua53", or "lua5.3")
  #
 -LUA_PACKAGE   ?= lua5.3
 +LUA_PACKAGE   ?= lua${MODLUA_DEP_VERSION}

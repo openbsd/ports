@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2019/03/08 20:00:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/04/30 06:44:29 bentley Exp $
 
 COMMENT =		extensible drawing editor
 
-V =			7.2.9
+V =			7.2.11
 SUBST_VARS +=		V
 DISTNAME =		ipe-${V}-src
 PKGNAME =		ipe-${V}
-REVISION =		0
 
-# their libraries would be installed as libxxx.so.${V}, overide this.
+# Upstream libraries would be installed as libxxx.so.${V}
 SHLIB_VERSION =	0.0
 
 SHARED_LIBS +=		ipe		${SHLIB_VERSION}
@@ -31,7 +30,6 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		https://dl.bintray.com/otfried/generic/ipe/${V:R}/
 
-# Dependencies
 MODULES =		lang/lua \
 			x11/qt5
 
