@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.92 2019/04/19 13:26:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2019/04/30 14:41:35 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
-DISTNAME=	freetds-1.1.5
+DISTNAME=	freetds-1.1.6
 
 SHARED_LIBS +=  ct                   6.1      # 4.0
 SHARED_LIBS +=  sybdb                8.1      # 6.0
@@ -11,6 +11,8 @@ SHARED_LIBS +=  tdsodbc              2.0      # unknown
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.freetds.org/
+
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 MASTER_SITES=	http://www.freetds.org/files/stable/ \
 		ftp://ftp.freetds.org/pub/freetds/stable/
