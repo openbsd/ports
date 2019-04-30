@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/11/20 08:20:39 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/04/30 08:51:25 fcambus Exp $
 @bin bin/gxemul
 @man man/man1/gxemul.1
 share/doc/gxemul/
@@ -32,10 +32,6 @@ share/doc/gxemul/20050427-netbsd-hpcmips-2.png
 share/doc/gxemul/20050427-netbsd-hpcmips-2_small.png
 share/doc/gxemul/20050617-openbsd-sgi.png
 share/doc/gxemul/20050617-openbsd-sgi_small.png
-share/doc/gxemul/20050817-sgi-o2-success-7.png
-share/doc/gxemul/20050817-sgi-o2-success-7_small.png
-share/doc/gxemul/20050817-sgi-o2-success-8.png
-share/doc/gxemul/20050817-sgi-o2-success-8_small.png
 share/doc/gxemul/20051007-netbsd-cats-installed.png
 share/doc/gxemul/20051007-netbsd-cats-installed_small.png
 share/doc/gxemul/20051007-openbsd-cats-installed.png
@@ -100,6 +96,9 @@ share/doc/gxemul/20140803-serial-upload-slave-small.png
 share/doc/gxemul/20140803-serial-upload-slave.png
 share/doc/gxemul/20180220-openbsd-luna88k-5.4-small.png
 share/doc/gxemul/20180220-openbsd-luna88k-5.4.png
+share/doc/gxemul/20180910-sgiip32prom-4.13.png
+share/doc/gxemul/20181018-openbsd-sgi-o2-small.png
+share/doc/gxemul/20181018-openbsd-sgi-o2.png
 share/doc/gxemul/RELEASE.html
 share/doc/gxemul/TODO.html
 share/doc/gxemul/configfiles.html
