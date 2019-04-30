@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2018/12/10 17:06:01 edd Exp $
+# $OpenBSD: Makefile,v 1.7 2019/04/30 12:16:46 edd Exp $
 
 COMMENT =		Vala bindings for Radare2
 
-V =			3.1.0
+V =			3.4.1
 SUBST_VARS +=		V
 
 BUILD_DEPENDS =		devel/radare2/main>=${V}
