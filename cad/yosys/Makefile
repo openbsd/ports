@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 22:35:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/04/30 07:21:58 bentley Exp $
 
 COMMENT =	framework for Verilog RTL synthesis
 
@@ -6,7 +6,7 @@ GH_ACCOUNT =	YosysHQ
 GH_PROJECT =	yosys
 GH_TAGNAME =	yosys-0.8
 DISTNAME =	${GH_TAGNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	cad
 
@@ -31,6 +31,7 @@ BUILD_DEPENDS =	devel/bison \
 
 RUN_DEPENDS =	cad/abc \
 		math/graphviz \
+		graphics/xdot \
 		shells/bash
 
 LIB_DEPENDS =	${MODTCL_LIB_DEPENDS} \
@@ -58,7 +59,7 @@ FAKE_FLAGS =	PREFIX="${TRUEPREFIX}"
 
 do-configure:
 	@${SUBST_CMD} ${WRKSRC}/kernel/yosys.cc
-	@cd ${WRKBUILD} && exec ${MAKE_PROGRAM} config-gcc
+	@cd ${WRKBUILD} && exec env -i ${MAKE_ENV} ${MAKE_PROGRAM} config-gcc
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
