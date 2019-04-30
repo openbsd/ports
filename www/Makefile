@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.898 2019/04/24 23:33:49 jeremy Exp $
+# $OpenBSD: Makefile,v 1.899 2019/04/30 08:00:14 bentley Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -54,6 +54,7 @@
      SUBDIR += haserl,static
      SUBDIR += havp
      SUBDIR += hiawatha
+     SUBDIR += honk
      SUBDIR += hs-html
      SUBDIR += http_load
      SUBDIR += http_ping
