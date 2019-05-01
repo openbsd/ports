@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/01 13:49:52 kmos Exp $
 
 COMMENT =		backport of the 'collections.abc' module
 
 MODPY_EGG_VERSION =	0.5
 DISTNAME =		backports_abc-${MODPY_EGG_VERSION}
 PKGNAME =		py-backports-abc-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -19,8 +19,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-FLAVORS =		python3
-FLAVOR ?=
+# No python3 FLAVOR - port backports functionality to python 2.x
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} -m unittest discover
