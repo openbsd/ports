@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/01/07 09:59:09 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/05/01 00:32:16 cwen Exp $
 bin/tab2graph
 bin/tablify
 bin/tabmerge
-${P5SITE}/Text/
 ${P5SITE}/Text/RecordParser/
 ${P5SITE}/Text/RecordParser.pm
 ${P5SITE}/Text/RecordParser/Object.pm
