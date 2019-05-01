@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2019/03/27 18:13:38 robert Exp $
+# $OpenBSD: Makefile,v 1.16 2019/05/01 10:07:53 ajacoutot Exp $
 
 COMMENT=		panel component for MATE
 
 SHARED_LIBS +=  mate-panel-applet-4       1.1 # 1.1
 
 MATE_PROJECT=		mate-panel
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -29,6 +30,7 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 LIB_DEPENDS=		devel/libwnck3 \
+			devel/startup-notification \
 			x11/mate/desktop \
 			x11/mate/libmateweather \
 			x11/mate/menus
