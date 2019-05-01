@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2016/10/24 21:10:45 jung Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/05/01 19:21:57 landry Exp $
+@rcscript ${RCDIR}/monit
 @bin bin/monit
 @man man/man1/monit.1
 share/doc/monit/
@@ -9,4 +10,3 @@ share/examples/monit/monitrc
 @sample ${SYSCONFDIR}/monitrc
 @mode
 @sample ${LOCALSTATEDIR}/monit/
-@rcscript ${RCDIR}/monit
