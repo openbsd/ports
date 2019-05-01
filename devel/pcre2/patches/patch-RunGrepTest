@@ -1,16 +1,19 @@
-$OpenBSD: patch-RunGrepTest,v 1.1 2019/02/03 22:40:38 jca Exp $
+$OpenBSD: patch-RunGrepTest,v 1.2 2019/05/01 21:47:27 jca Exp $
 
 Our sed(1) doesn't cope with NUL bytes and \x00-style notation.
 
 Index: RunGrepTest
 --- RunGrepTest.orig
 +++ RunGrepTest
-@@ -723,7 +723,7 @@ printf '%c--------------------------- Test N7 --------
+@@ -723,9 +723,9 @@ $valgrind $vjs $pcre2grep -n --newline=anycrlf "^(abc|
+ printf '%c--------------------------- Test N7 ------------------------------\r\n' - >>testtrygrep
  uname=`uname`
- if [ "$uname" != "SunOS" -a "$uname" != "Darwin" ] ; then
-   printf 'abc\0def' >testNinputgrep
--  $valgrind $vjs $pcre2grep -na --newline=nul "^(abc|def)" testNinputgrep | sed 's/\x00/ZERO/' >>testtrygrep
-+  $valgrind $vjs $pcre2grep -na --newline=nul "^(abc|def)" testNinputgrep | gsed 's/\x00/ZERO/' >>testtrygrep
-   echo "" >>testtrygrep
- else
-   echo '1:abcZERO2:def' >>testtrygrep
+ case $uname in
+-  Linux)
++  OpenBSD)
+     printf 'abc\0def' >testNinputgrep
+-    $valgrind $vjs $pcre2grep -na --newline=nul "^(abc|def)" testNinputgrep | sed 's/\x00/ZERO/' >>testtrygrep
++    $valgrind $vjs $pcre2grep -na --newline=nul "^(abc|def)" testNinputgrep | gsed 's/\x00/ZERO/' >>testtrygrep
+     echo "" >>testtrygrep
+     ;;
+   *)
