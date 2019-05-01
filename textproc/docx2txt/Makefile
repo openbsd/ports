@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2014/10/07 11:48:33 schwarze Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/01 16:07:04 danj Exp $
 
 COMMENT =		command line converter from Microsoft docx to ASCII text
 DISTNAME =		docx2txt-1.4
 CATEGORIES =		textproc
 HOMEPAGE =		http://docx2txt.sourceforge.net/
-MAINTAINER =		Ingo Schwarze <schwarze@openbsd.org>
+REVISION =		0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
