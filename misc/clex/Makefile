@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/11 23:50:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/01 19:57:07 sthen Exp $
 
 COMMENT=		commandline shell and file manager
 
 DISTNAME=		clex-3.15
 CATEGORIES=		misc
+REVISION=		0
 
 HOMEPAGE=		http://www.clex.sk/
-
-MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

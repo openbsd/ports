@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2015/01/22 21:17:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/05/01 19:57:07 sthen Exp $
 
 COMMENT=		commandline screen capture util
 
 DISTNAME=		scrot-0.8
-REVISION =		3
+REVISION =		4
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://www.linuxbrit.co.uk/scrot/
-
-MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

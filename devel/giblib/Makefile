@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.21 2017/06/14 21:21:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2019/05/01 19:57:06 sthen Exp $
 
 COMMENT=		utility library including a imlib2 wrapper
 
 DISTNAME=		giblib-1.2.4
-REVISION =		7
+REVISION =		8
 SHARED_LIBS=		giblib	1.6	# .1.6
 
 CATEGORIES=		devel
-
-MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

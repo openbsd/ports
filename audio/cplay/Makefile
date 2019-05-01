@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2015/12/03 21:24:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/05/01 19:57:06 sthen Exp $
 
 COMMENT=		curses front-end for various audio players
 
 DISTNAME=		cplay-1.49
-REVISION =		8
+REVISION =		9
 CATEGORIES=		audio
-
-MAINTAINER=		Victor Sahlstedt <salan@legonet.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

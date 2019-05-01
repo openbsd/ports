@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/01 19:57:07 sthen Exp $
 
 COMMENT =		minimal try/catch with proper preservation of $$@
 
@@ -6,8 +6,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Try-Tiny-0.22
 CATEGORIES =		devel
-
-MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

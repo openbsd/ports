@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/01 19:57:07 sthen Exp $
 
 COMMENT =		utility functions dealing with signals
 
@@ -6,8 +6,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Signal-Mask-0.008
 CATEGORIES =		devel
-
-MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

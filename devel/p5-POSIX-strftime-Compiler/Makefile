@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/01 19:57:07 sthen Exp $
 
 COMMENT =	gnu C library compatible strftime for loggers and servers
 
@@ -6,8 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	POSIX-strftime-Compiler-0.41
 CATEGORIES =	devel
-
-MAINTAINER =	Cesare Gargano <gar@plusiagamma.org>
+REVISION =	0
 
 CONFIGURE_STYLE =	modbuild
 

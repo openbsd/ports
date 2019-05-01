@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/12/31 17:50:21 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/01 19:57:06 sthen Exp $
 
 COMMENT =		various utility functions
 
@@ -6,8 +6,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Data-Munge-0.097
 CATEGORIES =		devel
-
-MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

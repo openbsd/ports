@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:24 naddy Exp $ $
+# $OpenBSD: Makefile,v 1.6 2019/05/01 19:57:06 sthen Exp $ $
 
 COMMENT =		flatten/unflatten complex data hashes
 
@@ -6,8 +6,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Hash-Flatten-1.19
 CATEGORIES =		devel
-
-MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
+REVISION =		0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
