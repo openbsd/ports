@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/20 16:36:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/01 20:12:52 danj Exp $
 
 COMMENT=	access to PostgreSQL databases perl
 
 VERSION=	1.9.0
 DISTNAME=	pgsql_perl5-${VERSION}
 PKGNAME=	p5-pgsql-${VERSION}
-REVISION=	5
+REVISION=	6
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Pg/}
 
 LIB_DEPENDS =	databases/postgresql
-
-MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 

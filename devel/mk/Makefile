@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2017/05/08 10:42:18 schwarze Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/01 20:12:52 danj Exp $
 
 COMMENT=	Streamlined replacement for make
 
 VERSION=	2.0
 DISTNAME=	mk-${VERSION}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel plan9
 MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://pdos.lcs.mit.edu/~rsc/software/
-MAINTAINER=	Markus Friedl <markus@openbsd.org>
 EXTRACT_SUFX=	.tgz
 
 BUILD_DEPENDS=	devel/libfmt \

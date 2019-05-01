@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2019/03/24 22:24:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/01 20:12:51 danj Exp $
 
 COMMENT=	pdf swiss army knife
 GL_COMMIT=	61981721cab4dc6adfecaa4342479c6232cf59f3
 DISTNAME=	pdftk-3.0.1
-REVISION=	0
+REVISION=	1
 EXTRACT_ONLY=	pdftk-${GL_COMMIT}.tar.bz2 \
 		commons-lang3-3.8.1-bin.tar.gz
 
 CATEGORIES=	textproc
-
-MAINTAINER=	Christopher Zimmermann <chrisz@openbsd.org>
 
 # GPLv2+ (main program), see ${WRKDIST}/license_gpl_pdftk/ for libraries
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2018/08/10 11:21:19 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/01 20:12:52 danj Exp $
 
 COMMENT=	Extensible formatted print C library
 
 VERSION=	2.0
 DISTNAME=	libfmt-${VERSION}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel plan9
 MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://pdos.lcs.mit.edu/~rsc/software/
-MAINTAINER=	Markus Friedl <markus@openbsd.org>
 EXTRACT_SUFX=	.tgz
 
 BUILD_DEPENDS=	devel/libutf

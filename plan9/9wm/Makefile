@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.33 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/05/01 20:12:52 danj Exp $
 
 COMMENT=	8 1/2-like Window Manager for X11
 
 DISTNAME=	pre-9wm-1.2
 PKGNAME=	9wm-1.2pre
-REVISION =	4
+REVISION =	5
 CATEGORIES=	plan9
 
 MASTER_SITES=	http://www.plig.org/xwinman/archive/9wm/
 EXTRACT_SUFX=	.shar.gz
 EXTRACT_CASES=	*.shar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | /bin/sh;;
-
-MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
 # nonstandard license
 PERMIT_PACKAGE_CDROM =	No

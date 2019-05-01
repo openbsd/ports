@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/05/01 20:12:51 danj Exp $
 
 # requires nvram(4) device
 ONLY_FOR_ARCHS=	amd64 i386
@@ -6,13 +6,11 @@ ONLY_FOR_ARCHS=	amd64 i386
 COMMENT=	utility to use ibm thinkpad(tm) special keys
 
 DISTNAME=	tpb-0.6.4
-REVISION=	5
+REVISION=	6
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.nongnu.org/tpb/
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=tpb/}
-
-MAINTAINER=	joshua stein <jcs@openbsd.org>
 
 # gpl
 PERMIT_PACKAGE_CDROM=	yes

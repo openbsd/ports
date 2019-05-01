@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/08 10:42:18 schwarze Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/01 20:12:52 danj Exp $
 
 COMMENT=	UTF8 support library from Plan 9
 
 VERSION=	2.0
 DISTNAME=	libutf-${VERSION}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel plan9
 MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://pdos.lcs.mit.edu/~rsc/software/
-MAINTAINER=	Markus Friedl <markus@openbsd.org>
 EXTRACT_SUFX=	.tgz
 
 PERMIT_PACKAGE_CDROM=	Yes
