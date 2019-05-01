@@ -1,0 +1,45 @@
+$OpenBSD: patch-testing_unit_test_exc_py,v 1.1 2019/05/01 10:20:24 ajacoutot Exp $
+
+Fix for unicode issue:
+https://src.fedoraproject.org/rpms/duplicity/blob/master/f/duplicity-unicode.patch
+
+Index: testing/unit/test_exc.py
+--- testing/unit/test_exc.py.orig
++++ testing/unit/test_exc.py
+@@ -0,0 +1,36 @@
++#
++# This file is part of duplicity.
++#
++# Duplicity is free software; you can redistribute it and/or modify it
++# under the terms of the GNU General Public License as published by the
++# Free Software Foundation; either version 2 of the License, or (at your
++# option) any later version.
++#
++# Duplicity is distributed in the hope that it will be useful, but
++# WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++# General Public License for more details.
++#
++# You should have received a copy of the GNU General Public License
++# along with duplicity; if not, write to the Free Software Foundation,
++# Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
++
++import unittest
++
++import duplicity
++
++class TestExc(unittest.TestCase):
++
++    def test_uexc(self):
++
++        e = Exception('test')
++        msg = duplicity.util.uexc(e)
++        self.assertEqual(msg, 'test')
++
++        e = Exception(b'\xe3\x83\x86\xe3\x82\xb9\xe3\x83\x88')
++        msg = duplicity.util.uexc(e)
++        self.assertEqual(msg, u'\u30c6\u30b9\u30c8')
++
++
++if __name__ == '__main__':
++    unittest.main()

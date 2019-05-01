@@ -1,5 +1,5 @@
-$OpenBSD: patch-bin_duplicity_1,v 1.7 2018/04/04 20:29:49 danj Exp $
-Document the ssh backend change from paramiko to pexpect.
+$OpenBSD: patch-bin_duplicity_1,v 1.8 2019/05/01 10:20:24 ajacoutot Exp $
+
 Index: bin/duplicity.1
 --- bin/duplicity.1.orig
 +++ bin/duplicity.1

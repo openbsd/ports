@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2018/10/23 01:03:17 danj Exp $
+# $OpenBSD: Makefile,v 1.50 2019/05/01 10:20:24 ajacoutot Exp $
 
 # optional dependencies
 # py-pyrax
 
 COMMENT =	encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION = 0.7.18.2
+MODPY_EGG_VERSION = 0.7.19
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
 
 CATEGORIES =	sysutils
@@ -35,6 +35,7 @@ RUN_DEPENDS +=	devel/py-fasteners \
 TEST_DEPENDS =	archivers/gtar \
 		archivers/par2cmdline \
 		devel/py-mock \
+		devel/py-monotonic \
 		devel/py-pexpect \
 		sysutils/py-lockfile
 
@@ -48,8 +49,5 @@ MODPY_ADJ_FILES =	bin/duplicity bin/rdiffdir \
 			testing/overrides/bin/ncftpls \
 			testing/overrides/bin/ncftpput \
 			testing/overrides/bin/tahoe
-
-post-extract:
-	chmod 644 ${WRKSRC}/bin/*.1
 
 .include <bsd.port.mk>

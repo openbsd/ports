@@ -1,4 +1,5 @@
-$OpenBSD: patch-setup_py,v 1.7 2016/01/17 05:30:31 shadchin Exp $
+$OpenBSD: patch-setup_py,v 1.8 2019/05/01 10:20:24 ajacoutot Exp $
+
 --- setup.py.orig	Mon Dec  7 13:03:39 2015
 +++ setup.py	Tue Dec 15 21:14:11 2015
 @@ -47,15 +47,9 @@ if os.name == 'posix':
