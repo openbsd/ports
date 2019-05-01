@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2019/01/31 00:00:49 juanfra Exp $
-
-PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
-PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
+# $OpenBSD: Makefile,v 1.56 2019/05/01 21:42:53 juanfra Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc sparc64
 
