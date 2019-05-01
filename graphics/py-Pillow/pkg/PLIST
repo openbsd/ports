@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/01/10 19:43:11 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/05/01 17:27:46 sthen Exp $
 @conflict py-Imaging-*
 @pkgpath graphics/py-Pillow,-main${MODPY_FLAVOR}
 @pkgpath graphics/py-Imaging,-bin[,python2.4][,python2.5][,python2.6][,python2.7]
@@ -67,7 +67,6 @@ lib/python${MODPY_VERSION}/site-packages/PIL/MicImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/MpegImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/MpoImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/MspImagePlugin.py
-lib/python${MODPY_VERSION}/site-packages/PIL/OleFileIO.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PSDraw.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PaletteFile.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PalmImagePlugin.py
@@ -155,7 +154,6 @@ lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}MicImagePlugin.${MO
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}MpegImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}MpoImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}MspImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}OleFileIO.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}PSDraw.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}PaletteFile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}PalmImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
