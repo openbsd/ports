@@ -1,18 +1,20 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/22 17:47:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/01 19:56:13 sthen Exp $
 
 COMMENT=	report network interface statistics
 
 DISTNAME=	tcpstat-1.5
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.frenchfries.net/paul/tcpstat/
 
 HOMEPAGE=	http://www.frenchfries.net/paul/tcpstat/
-MAINTAINER=	Mark Lumsden <mark@cyodesigns.com>
+
+MAINTAINER=	Mark Lumsden <lum@openbsd.org>
 
 # BSD license
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c m pcap 
+
+WANTLIB=		c m pcap
 
 CONFIGURE_STYLE= gnu
 
