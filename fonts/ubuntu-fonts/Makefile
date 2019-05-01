@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/30 05:48:53 bentley Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/01 21:10:05 danj Exp $
 
 COMMENT =		unicode sans-serif/monospace TrueType fonts from Ubuntu
 
 V =			0.83
 DISTNAME =		fad7939b-ubuntu-font-family-$V
 PKGNAME =		ubuntu-fonts-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		fonts
 
 HOMEPAGE =		https://design.ubuntu.com/font/
-
-MAINTAINER =		Tim van der Molen <tim@openbsd.org>
 
 # Ubuntu Font Licence 1.0
 # https://www.ubuntu.com/legal/font-licence
