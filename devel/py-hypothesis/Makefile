@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2019/04/28 20:51:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/01 01:26:32 kmos Exp $
 
 COMMENT =		library for property based testing
 
-MODPY_EGG_VERSION =	3.55.1
+MODPY_EGG_VERSION =	4.15.0
 DISTNAME =		hypothesis-${MODPY_EGG_VERSION}
 PKGNAME =		py-hypothesis-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-REVISION =		0
 
-HOMEPAGE =		http://hypothesis.works/
+HOMEPAGE =		https://hypothesis.works/
 
 MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
@@ -26,6 +25,7 @@ FLAVOR ?=
 RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-coverage${MODPY_FLAVOR}
 
+# Primary author is completely uninterested in supplying tests via PyPI
 NO_TEST =		Yes
 
 .if !${FLAVOR:Mpython3}
