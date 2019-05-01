@@ -1,11 +1,15 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/01 20:12:51 danj Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/01 20:24:00 sthen Exp $
 
 COMMENT=	pdf swiss army knife
-GL_COMMIT=	61981721cab4dc6adfecaa4342479c6232cf59f3
-DISTNAME=	pdftk-3.0.1
-REVISION=	1
-EXTRACT_ONLY=	pdftk-${GL_COMMIT}.tar.bz2 \
+
+https://gitlab.com/pdftk-java/pdftk/-/archive/v3.0.3/pdftk-v3.0.3.tar.gz
+V=		v3.0.3
+DISTNAME=	pdftk-$V
+PKGNAME=	${DISTNAME:S/-v/-/}
+EXTRACT_ONLY=	pdftk-$V.tar.gz \
 		commons-lang3-3.8.1-bin.tar.gz
+
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 CATEGORIES=	textproc
 
@@ -14,11 +18,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 HOMEPAGE =	https://gitlab.com/pdftk-java/
 
-MASTER_SITES =	https://gitlab.com/pdftk-java/pdftk/-/archive/${GL_COMMIT}/
+MASTER_SITES =	https://gitlab.com/pdftk-java/pdftk/-/archive/$V/
 MASTER_SITES0 =	${MASTER_SITE_APACHE:=commons/lang/binaries/}
 MASTER_SITES1 =	https://www.bouncycastle.org/download/
-WRKDIST =	${WRKDIR}/pdftk-${GL_COMMIT}
-DISTFILES =	pdftk-${GL_COMMIT}.tar.bz2 \
+DISTFILES =	pdftk-$V.tar.gz \
 		commons-lang3-3.8.1-bin.tar.gz:0 \
 		bcprov-jdk15on-160.jar:1
 
