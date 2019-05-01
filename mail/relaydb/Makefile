@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2017/04/19 17:00:29 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2019/05/01 19:29:43 sthen Exp $
 
 COMMENT=	spam relay database
 
 DISTNAME=	relaydb-1.7
-REVISION=	1
+REVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.ch/
 
 HOMEPAGE=	http://www.benzedrine.ch/relaydb.html
-
-MAINTAINER=	Daniel Hartmeier <dhartmei@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

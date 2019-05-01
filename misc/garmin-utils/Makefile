@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/01 19:29:43 sthen Exp $
 
 COMMENT=	Garmin GPS upload/download utilities
 
 DISTNAME=	garmin-utils-2.4
-REVISION=	1
+REVISION=	2
 CATEGORIES=	misc geo
-MASTER_SITES=	ftp://ftp.snafu.org/pub/
 
-MAINTAINER=	Marco S Hyman <marc@openbsd.org>
+MASTER_SITES=	ftp://ftp.snafu.org/pub/
 
 PERMIT_PACKAGE_CDROM=	Yes
 

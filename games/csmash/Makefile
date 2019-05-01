@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/01 19:29:43 sthen Exp $
 
 COMMENT=	Cannon Smash 3D table tennis
 
 DISTNAME=	csmash-0.6.6
-REVISION=	9
+REVISION=	10
 CATEGORIES=	games
 HOMEPAGE=	http://cannonsmash.sourceforge.net/
-
-MAINTAINER=	Jason Dixon <jdixon@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
