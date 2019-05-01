@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/01 16:04:26 danj Exp $
 
 COMMENT=	perl interface to the sync() system functions
 
 MODULES=	cpan
 V=		0.09
 DISTNAME=	File-Sync-${V}
-REVISION=	5
+REVISION=	6
 CATEGORIES=	devel
-
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

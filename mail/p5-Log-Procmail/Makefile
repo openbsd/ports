@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/01 16:04:26 danj Exp $
 
 COMMENT=		perl module for reading procmail logs
 
 DISTNAME=		Log-Procmail-0.12
 CATEGORIES=		mail textproc
-
-MAINTAINER=		Anil Madhavapeddy <avsm@openbsd.org>
+REVISION=		0
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes

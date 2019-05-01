@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/12/03 21:24:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/01 16:04:26 danj Exp $
 
 COMMENT=	the definite guide to DocBook
 
@@ -7,11 +7,11 @@ DISTNAME=	tdg-en-html-${V}
 PKGNAME=	docbook-guide-${V}
 EXTRACT_SUFX=	.zip
 CATEGORIES=	books
+REVISION=	0
 
 MASTER_SITES=	http://docbook.org/tdg/en/ \
 		https://spacehopper.org/mirrors/
 HOMEPAGE=	http://docbook.org/tdg/en/
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # GNU Free Documentation License
 PERMIT_PACKAGE_CDROM=	Yes

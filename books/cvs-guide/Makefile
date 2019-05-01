@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/10 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/01 16:04:26 danj Exp $
 
 COMMENT=	the definitive guide to CVS
 
 V=		1.21
 DISTNAME=	cvsbook-${V}-all
 PKGNAME=	cvs-guide-${V}
+REVISION=	0
 CATEGORIES=	books
 MASTER_SITES=	http://cvsbook.red-bean.com/
 
 HOMEPAGE=	http://cvsbook.red-bean.com/
-MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
