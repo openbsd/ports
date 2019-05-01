@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2018/07/06 06:04:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.27 2019/05/01 17:43:15 jasper Exp $
 @conflict folks-meta-tracker-*
 @pkgpath net/telepathy/folks,-main
 @pkgpath net/telepathy/folks,-tracker
@@ -24,23 +24,14 @@ lib/girepository-1.0/Folks-0.6.typelib
 lib/girepository-1.0/FolksDummy-0.6.typelib
 lib/girepository-1.0/FolksEds-0.6.typelib
 lib/girepository-1.0/FolksTelepathy-0.6.typelib
-lib/libfolks-dummy.a
-lib/libfolks-dummy.la
 @lib lib/libfolks-dummy.so.${LIBfolks-dummy_VERSION}
-lib/libfolks-eds.a
-lib/libfolks-eds.la
 @lib lib/libfolks-eds.so.${LIBfolks-eds_VERSION}
-lib/libfolks-telepathy.a
-lib/libfolks-telepathy.la
 @lib lib/libfolks-telepathy.so.${LIBfolks-telepathy_VERSION}
-lib/libfolks.a
-lib/libfolks.la
 @lib lib/libfolks.so.${LIBfolks_VERSION}
 lib/pkgconfig/folks-dummy.pc
 lib/pkgconfig/folks-eds.pc
 lib/pkgconfig/folks-telepathy.pc
 lib/pkgconfig/folks.pc
-share/GConf/gsettings/folks.convert
 share/gir-1.0/Folks-0.6.gir
 share/gir-1.0/FolksDummy-0.6.gir
 share/gir-1.0/FolksEds-0.6.gir
@@ -83,6 +74,7 @@ share/locale/lv/LC_MESSAGES/folks.mo
 share/locale/ml/LC_MESSAGES/folks.mo
 share/locale/mr/LC_MESSAGES/folks.mo
 share/locale/nb/LC_MESSAGES/folks.mo
+share/locale/ne/LC_MESSAGES/folks.mo
 share/locale/nl/LC_MESSAGES/folks.mo
 share/locale/oc/LC_MESSAGES/folks.mo
 share/locale/or/LC_MESSAGES/folks.mo
