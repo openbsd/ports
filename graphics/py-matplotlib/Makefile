@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2019/04/28 20:51:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2019/05/01 11:38:52 bket Exp $
 
 COMMENT=	Python charting and plotting API
 
-MODPY_EGG_VERSION =	2.0.2
+MODPY_EGG_VERSION =	2.2.4
 DISTNAME =		matplotlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		graphics devel math
 
@@ -31,6 +30,7 @@ MODPY_SETUPTOOLS =	Yes
 
 COMMON_DEPENDS=	devel/py-tz${MODPY_FLAVOR} \
 		devel/py-dateutil${MODPY_FLAVOR} \
+		devel/py-kiwisolver${MODPY_FLAVOR} \
 		devel/py-parsing${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR} \
 		math/py-numpy${MODPY_FLAVOR} \
@@ -38,11 +38,12 @@ COMMON_DEPENDS=	devel/py-tz${MODPY_FLAVOR} \
 		graphics/py-cycler${MODPY_FLAVOR} \
 		${MODPY_TKINTER_DEPENDS}
 
-BUILD_DEPENDS=	${COMMON_DEPENDS}
+BUILD_DEPENDS=	${COMMON_DEPENDS} \
+		textproc/py-sphinx${MODPY_FLAVOR}
 RUN_DEPENDS=	${COMMON_DEPENDS}
 LIB_DEPENDS=	graphics/png
 TEST_DEPENDS =	${RUN_DEPENDS} \
-		devel/py-nose${MODPY_FLAVOR}
+		devel/py-test${MODPY_FLAVOR}
 
 
 .if ${FLAVOR:Mpython3}
@@ -58,6 +59,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gtk-x11-2.0
 WANTLIB += harfbuzz intl pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 xcb xcb-render xcb-shm
 COMMON_DEPENDS +=	x11/py-gtk2 \
+			devel/py-backports-functools-lru-cache \
 			devel/py-functools32 \
 			devel/py-subprocess32
 LIB_DEPENDS +=		x11/gtk+2
@@ -74,7 +76,6 @@ post-patch:
 pre-configure:
 	@find ${WRKSRC}/examples -name \*.py | xargs ${MODPY_BIN_ADJ}
 	${SUBST_CMD} ${WRKSRC}/setupext.py
-	${SUBST_CMD} ${WRKSRC}/lib/matplotlib/sphinxext/tests/test_tinypages.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
