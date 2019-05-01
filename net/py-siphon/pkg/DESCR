@@ -1,0 +1,4 @@
+Siphon is a collection of Python utilities for downloading data
+from remote data services. Much of Siphon's current functionality
+focuses on access to data hosted on a THREDDS Data Server. It also
+provides clients to a variety of simple web services.
