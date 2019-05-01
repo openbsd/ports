@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2015/04/27 12:17:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2019/05/01 03:51:17 kmos Exp $
 
 COMMENT=	DVD navigation library
 
-VER=		5.0.3
+VER=		6.0.0
 DISTNAME=	libdvdnav-${VER}
 EPOCH=		0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.videolan.org/pub/videolan/libdvdnav/${VER}/
+MASTER_SITES=	https://download.videolan.org/pub/videolan/libdvdnav/${VER}/
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS=	dvdnav		7.1
@@ -16,9 +16,9 @@ HOMEPAGE=	http://dvdnav.mplayerhq.hu/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	dvdread>=6.1 pthread
+WANTLIB=	dvdread>=7.0 pthread
 
-LIB_DEPENDS=	devel/libdvdread>=5.0.3
+LIB_DEPENDS=	devel/libdvdread>=6.0.1
 
 CONFIGURE_STYLE= gnu
 

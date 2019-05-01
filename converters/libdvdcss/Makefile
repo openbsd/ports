@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.28 2018/05/02 19:35:14 solene Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/01 03:51:17 kmos Exp $
 
 COMMENT=	descramble scrambled DVDs
 
 VER=		1.4.2
+REVISION=	0
 DISTNAME=	libdvdcss-${VER}
 CATEGORIES=	converters
-MASTER_SITES=	http://download.videolan.org/pub/videolan/libdvdcss/${VER}/
+MASTER_SITES=	https://download.videolan.org/pub/videolan/libdvdcss/${VER}/
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS=	dvdcss	4.1
 
-HOMEPAGE=	http://www.videolan.org/developers/libdvdcss.html
+HOMEPAGE=	https://www.videolan.org/developers/libdvdcss.html
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Free speech issue
