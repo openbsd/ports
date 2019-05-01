@@ -1,10 +1,17 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/01 11:53:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/01 12:12:24 sthen Exp $
 
 ONLY_FOR_ARCHS = \
 	aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 
 # XXX: sparc64
 ONLY_FOR_ARCHS-ada = amd64 hppa i386 mips64 powerpc
+
+# XXX workaround for "ld: error: cp-demangle.c:(.debug_info+0x30115): has
+# non-ABS relocation R_386_GOTOFF against symbol '.LC60'".
+# If fixing, re-check telephony/asterisk math/py-scipy which had same issue
+.if ${MACHINE_ARCH:Mi386}
+USE_LLD = No
+.endif
 
 DPB_PROPERTIES = parallel
 
@@ -191,12 +198,6 @@ PKG_ARGS += -DITM=0
 PKG_ARGS += -DQUADMATH=1
 .else
 PKG_ARGS += -DQUADMATH=0
-.endif
-
-# XXX quick workaround for "ld: error: cp-demangle.c:(.debug_info+0x30115): has
-# non-ABS relocation R_386_GOTOFF against symbol '.LC60'".
-.if ${MACHINE_ARCH:Mi386}
-USE_LLD = No
 .endif
 
 RUN_DEPENDS +=		${BUILD_PKGPATH},-main
