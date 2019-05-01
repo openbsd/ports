@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/30 13:15:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/01 11:53:03 sthen Exp $
 
 ONLY_FOR_ARCHS = \
 	aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc sparc64
@@ -195,8 +195,6 @@ PKG_ARGS += -DQUADMATH=0
 
 # XXX quick workaround for "ld: error: cp-demangle.c:(.debug_info+0x30115): has
 # non-ABS relocation R_386_GOTOFF against symbol '.LC60'".
-#
-# figuring out how to pass through -Wl,-znotext would be a better fix.
 .if ${MACHINE_ARCH:Mi386}
 USE_LLD = No
 .endif
