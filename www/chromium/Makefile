@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.421 2019/04/27 12:12:05 robert Exp $
+# $OpenBSD: Makefile,v 1.422 2019/05/01 10:58:37 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -11,8 +11,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			74.0.3729.108
-REVISION=		0
+V=			74.0.3729.131
 
 DISTNAME=		chromium-${V}
 
@@ -246,7 +245,7 @@ do-install:
 .endif
 
 .if ${FLAVOR:Mcomponent}
-	cp -Rp ${BUILDDIR}/*.so ${PREFIX}/chrome/
+	cp -Rp ${BUILDDIR}/*.so ${BUILDDIR}/*.so.[0-9] ${PREFIX}/chrome/
 .endif
 
 .for s in 22 24 48 64 128 256
