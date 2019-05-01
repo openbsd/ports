@@ -13,8 +13,6 @@ commands by the user, and the mouse can be used.
 Flavors:
 	gtk2       - build using the Gtk+2 toolkit
 	gtk3       - build using the Gtk+3 toolkit (default)
-	motif	   - build using the Motif toolkit
-	athena	   - build using the Athena toolkit
 	no_x11	   - build without X11 support
 	lua	   - build with Lua support
 	perl	   - build with Perl support
