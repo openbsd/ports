@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/23 17:55:38 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/02 11:43:10 feinerer Exp $
 @newgroup _turnserver:795
 @newuser _turnserver:795:795:daemon:TURN Server user:/var/empty:/sbin/nologin
 @bin bin/turnadmin
@@ -92,6 +92,7 @@ share/examples/turnserver/scripts/mobile/mobile_tcp_client.sh
 share/examples/turnserver/scripts/mobile/mobile_tls_client_c2c_tcp_relay.sh
 share/examples/turnserver/scripts/mobile/mobile_udp_client.sh
 share/examples/turnserver/scripts/oauth.sh
+share/examples/turnserver/scripts/pack.sh
 share/examples/turnserver/scripts/peer.sh
 share/examples/turnserver/scripts/readme.txt
 share/examples/turnserver/scripts/restapi/
