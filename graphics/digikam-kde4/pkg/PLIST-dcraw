@@ -1,8 +1,8 @@
-@comment $OpenBSD:
+@comment $OpenBSD: PLIST-dcraw,v 1.2 2019/05/02 16:40:42 rsadowski Exp $
+@conflict kde4-libkdcraw-icons-<=4.14.3p3
 @pkgpath x11/kde4/libkdcraw,-main
 @pkgpath x11/kde4/libkdcraw,-icons
 @pkgpath x11/kde4/libkdcraw
-@conflict kde4-libkdcraw-icons-<=4.14.3p3
 @lib lib/libkdcraw.so.${LIBkdcraw_VERSION}
 share/apps/libkdcraw/
 share/apps/libkdcraw/profiles/

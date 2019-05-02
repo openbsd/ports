@@ -1,8 +1,8 @@
-@comment $OpenBSD:
+@comment $OpenBSD: PLIST-libkipi,v 1.2 2019/05/02 16:40:42 rsadowski Exp $
+@conflict kde4-libkipi-icons-<=4.14.3p3
 @pkgpath x11/kde4/libkipi
 @pkgpath x11/kde4/libkipi,-main
 @pkgpath x11/kde4/libkipi,-icons
-@conflict kde4-libkipi-icons-<=4.14.3p3
 @bin bin/kxmlkipicmd
 @lib lib/libkipi.so.${LIBkipi_VERSION}
 share/apps/kipi/

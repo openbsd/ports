@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-kipi,v 1.7 2019/03/28 19:28:47 rsadowski Exp $
+@comment $OpenBSD: PLIST-kipi,v 1.8 2019/05/02 16:40:42 rsadowski Exp $
 @option no-default-conflict
 @conflict digikam-<3
 @conflict kipi-plugins-*
@@ -20,7 +20,6 @@ lib/kde4/kipiplugin_flashexport.so
 lib/kde4/kipiplugin_flickrexport.so
 lib/kde4/kipiplugin_galleryexport.so
 lib/kde4/kipiplugin_googleservices.so
-lib/kde4/kipiplugin_gpssync.so
 lib/kde4/kipiplugin_htmlexport.so
 lib/kde4/kipiplugin_imageshackexport.so
 lib/kde4/kipiplugin_imageviewer.so
@@ -52,10 +51,6 @@ share/applications/kde4/dngconverter.desktop
 share/applications/kde4/expoblending.desktop
 share/applications/kde4/kipiplugins.desktop
 share/applications/kde4/panoramagui.desktop
-share/apps/gpssync/
-share/apps/gpssync/bookmarks-marker.png
-share/apps/gpssync/searchmarker-normal.png
-share/apps/gpssync/searchmarker-selected.png
 share/apps/kipi/data/
 share/apps/kipi/data/kipi-icon.svg
 share/apps/kipi/data/kipi-logo.svg
@@ -73,7 +68,6 @@ share/apps/kipi/kipiplugin_flashexportui.rc
 share/apps/kipi/kipiplugin_flickrexportui.rc
 share/apps/kipi/kipiplugin_galleryexportui.rc
 share/apps/kipi/kipiplugin_googleservicesui.rc
-share/apps/kipi/kipiplugin_gpssyncui.rc
 share/apps/kipi/kipiplugin_htmlexportui.rc
 share/apps/kipi/kipiplugin_imageshackexportui.rc
 share/apps/kipi/kipiplugin_imageviewerui.rc
@@ -311,7 +305,6 @@ share/icons/hicolor/16x16/apps/kipi-flash.png
 share/icons/hicolor/16x16/apps/kipi-flickr.png
 share/icons/hicolor/16x16/apps/kipi-gallery.png
 share/icons/hicolor/16x16/apps/kipi-googledrive.png
-share/icons/hicolor/16x16/apps/kipi-gpsimagetag.png
 share/icons/hicolor/16x16/apps/kipi-hq.png
 share/icons/hicolor/16x16/apps/kipi-imgur.png
 share/icons/hicolor/16x16/apps/kipi-jalbum.png
@@ -362,7 +355,6 @@ share/icons/hicolor/32x32/apps/kipi-flash.png
 share/icons/hicolor/32x32/apps/kipi-flickr.png
 share/icons/hicolor/32x32/apps/kipi-gallery.png
 share/icons/hicolor/32x32/apps/kipi-googledrive.png
-share/icons/hicolor/32x32/apps/kipi-gpsimagetag.png
 share/icons/hicolor/32x32/apps/kipi-hq.png
 share/icons/hicolor/32x32/apps/kipi-imageshack.png
 share/icons/hicolor/32x32/apps/kipi-imgur.png
@@ -450,7 +442,6 @@ share/kde4/services/kipiplugin_flashexport.desktop
 share/kde4/services/kipiplugin_flickrexport.desktop
 share/kde4/services/kipiplugin_galleryexport.desktop
 share/kde4/services/kipiplugin_googleservices.desktop
-share/kde4/services/kipiplugin_gpssync.desktop
 share/kde4/services/kipiplugin_htmlexport.desktop
 share/kde4/services/kipiplugin_imageshackexport.desktop
 share/kde4/services/kipiplugin_imageviewer.desktop

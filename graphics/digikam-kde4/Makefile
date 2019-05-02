@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.34 2019/03/29 17:20:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2019/05/02 16:40:42 rsadowski Exp $
 
 COMMENT-face =		face detection library for KDE4
-COMMENT-geomap =	library for mapping photos on maps for KDE4
 COMMENT-libkipi =	KDE4 image plugins infrastructure
 COMMENT-kipi =		KDE4 image plugins collection
 COMMENT-dcraw =		KDE4 RAW picture decoding C++ library
@@ -21,7 +20,6 @@ PKGSPEC-dcraw =		libkdcraw-${MODKDE4_SPEC}
 
 PKGNAME =		digikam-kde4-${VERSION}
 PKGNAME-face =		libkface-15.08.3
-PKGNAME-geomap =	libkgeomap-15.08.3
 PKGNAME-libkipi =	libkipi-${MODKDE4_VERSION}
 PKGNAME-dcraw =		libkdcraw-${MODKDE4_VERSION}
 PKGNAME-sane =		libksane-${MODKDE4_VERSION}
@@ -29,7 +27,7 @@ PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 
-REVISION-main =		8
+REVISION-main =		9
 REVISION-kipi =		9
 REVISION-libkface =	3
 REVISION-dcraw =	3
@@ -37,7 +35,6 @@ REVISION-libkipi =	3
 REVISION-sane =		4
 REVISION-mediawiki =	8
 REVISION-face =		4
-REVISION-geomap =	6
 
 # LGPL, GPL and many others
 PERMIT_PACKAGE_CDROM =		Yes
@@ -47,12 +44,11 @@ SHARED_LIBS +=  digikamcore		0.1
 SHARED_LIBS +=  digikamdatabase		0.1
 SHARED_LIBS +=  mediawiki		0.1
 SHARED_LIBS +=  kface                     0.1 # 3.0
-SHARED_LIBS +=  kgeomap                   0.1 # 2.1
 SHARED_LIBS +=  kdcraw                    51.0 # 23.0
 SHARED_LIBS +=  kipi                      51.0 # 11.1
 SHARED_LIBS +=  ksane                     51.0 # 0.2
 
-MULTI_PACKAGES =	-main -face -sane -dcraw -libkipi -geomap -kipi -mediawiki
+MULTI_PACKAGES =	-main -face -sane -dcraw -libkipi -kipi -mediawiki
 
 MASTER_SITES =	${MASTER_SITE_KDE:=Attic/digikam/}
 EXTRACT_SUFX =		.tar.bz2
@@ -122,13 +118,6 @@ WANTLIB-face += lib/opencv2/opencv_nonfree lib/opencv2/opencv_objdetect
 WANTLIB-face += lib/opencv2/opencv_ocl lib/opencv2/opencv_photo
 WANTLIB-face += lib/opencv2/opencv_video
 
-
-WANTLIB-geomap += ${WANTLIB-common} ${COMPILER_LIBCXX} QtNetwork QtXml
-WANTLIB-geomap += c ${KDE4LIB}/khtml ${KDE4LIB}/kio
-WANTLIB-geomap += ${KDE4LIB}/kjs ${KDE4LIB}/kparts ${KDE4LIB}/nepomuk
-WANTLIB-geomap += ${KDE4LIB}/nepomukutils soprano QtCore kdecore phonon_s
-WANTLIB-geomap += ${KDE4LIB}/kexiv2 ${KDE4LIB}/marblewidget
-
 WANTLIB-mediawiki =  ${WANTLIB-common}
 WANTLIB-mediawiki += lib/qt4/QtNetwork lib/qt4/QtXml
 WANTLIB-mediawiki += ${KDE4LIB}/kio
@@ -187,11 +176,6 @@ LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 LIB_DEPENDS-face =	${LIB_DEPENDS-common} \
 			graphics/opencv2
 
-LIB_DEPENDS-geomap =	${LIB_DEPENDS-common} \
-			${MODKDE4_DEP_DIR}/libkexiv2 \
-			${MODKDE4_DEP_DIR}/marble
-
-
 LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
 			${MODPHONON_LIB_DEPENDS} \
 			databases/sqlite \
@@ -219,8 +203,7 @@ LIB_DEPENDS-dcraw =	${LIB_DEPENDS-common} \
 
 LIB_DEPENDS-mediawiki =	${LIB_DEPENDS-common}
 
-RUN_DEPENDS-main =	${BASE_PKGPATH},-geomap \
-			${BASE_PKGPATH},-libkipi \
+RUN_DEPENDS-main =	${BASE_PKGPATH},-libkipi \
 			${BASE_PKGPATH},-sane \
 			${BASE_PKGPATH},-dcraw \
 			${BASE_PKGPATH},-face
@@ -229,7 +212,7 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Hupnp=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_QtSoap=Yes \
 			-DDIGIKAMSC_COMPILE_LIBKFACE=Yes \
-			-DDIGIKAMSC_COMPILE_LIBKGEOMAP=Yes \
+			-DDIGIKAMSC_COMPILE_LIBKGEOMAP=No \
 			-DDIGIKAMSC_COMPILE_LIBKSANE=Yes \
 			-DDIGIKAMSC_COMPILE_LIBKIPI=Yes \
 			-DDIGIKAMSC_COMPILE_LIBKDCRAW=Yes \

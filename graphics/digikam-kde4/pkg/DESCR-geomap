@@ -1,6 +1,0 @@
-Libkgeomap is a wrapper around different world-map components, to browse and
-arrange photos over a map.  Currently supported map engine are:
-  - Marble,
-  - OpenstreetMap (via Marble),
-  - GoogleMap,
-This library is used by kipi-plugins, digiKam and other Kipi host programs.
