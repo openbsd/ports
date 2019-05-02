@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/02 01:53:26 afresh1 Exp $
 
 COMMENT=		ensure that a platform has weaken support
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME =		Task-Weaken-1.04
+DISTNAME=		Task-Weaken-1.06
 CATEGORIES=		devel
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-CPAN_AUTHOR=		ADAMK
+FIX_EXTRACT_PERMISSIONS=	Yes
 
 .include <bsd.port.mk>
