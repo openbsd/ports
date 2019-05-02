@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2018/12/08 19:17:13 semarie Exp $
+# $OpenBSD: Makefile,v 1.84 2019/05/02 15:54:06 kmos Exp $
 
      SUBDIR =
      SUBDIR += akonadi
@@ -27,6 +27,7 @@
      SUBDIR += libkfbapi
      SUBDIR += libkgapi
      SUBDIR += librcps
+     SUBDIR += mcds
      SUBDIR += osmo
      SUBDIR += p5-Business-Tax-VAT-Validation
      SUBDIR += projectlibre
