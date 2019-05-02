@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/04/30 07:58:17 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/02 05:03:07 bentley Exp $
+
+NO_CCACHE =		Yes
 
 COMMENT =		federated status updater
 
-DISTNAME =		honk-0.3.0
+DISTNAME =		honk-0.4.0
 CATEGORIES =		www
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/honk
