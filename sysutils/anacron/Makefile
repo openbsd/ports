@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/02 14:51:49 danj Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/02 19:38:36 danj Exp $
 
 COMMENT=	periodic command scheduler
 
@@ -6,7 +6,9 @@ V=		2.5.3
 DISTNAME=	anacron.$V
 PKGNAME=	anacron-$V
 CATEGORIES=	sysutils
-REVISION=	3
+REVISION=	4
+
+MAINTAINER=	Andreas Kusalananda Kahari <andreas.kahari@abc.se>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
