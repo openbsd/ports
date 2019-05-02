@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/02 13:24:30 bcallah Exp $
+@bin bin/ebc
+bin/edc
+@man man/man1/ebc.1
+@man man/man1/edc.1
+share/locale/
+share/locale/de_AT.UTF-8/
+share/locale/de_AT.UTF-8/ebc
+share/locale/de_CH.UTF-8/
+share/locale/de_CH.UTF-8/ebc
+share/locale/de_DE.UTF-8/
+share/locale/de_DE.UTF-8/ebc
+share/locale/en_AU.UTF-8/
+share/locale/en_AU.UTF-8/ebc
+share/locale/en_CA.UTF-8/
+share/locale/en_CA.UTF-8/ebc
+share/locale/en_GB.UTF-8/
+share/locale/en_GB.UTF-8/ebc
+share/locale/en_US/
+share/locale/en_US.UTF-8/
+share/locale/en_US.UTF-8/ebc
+share/locale/en_US/ebc
+share/locale/fr_BE.UTF-8/
+share/locale/fr_BE.UTF-8/ebc
+share/locale/fr_CA.UTF-8/
+share/locale/fr_CA.UTF-8/ebc
+share/locale/fr_CH.UTF-8/
+share/locale/fr_CH.UTF-8/ebc
+share/locale/fr_FR.UTF-8/
+share/locale/fr_FR.UTF-8/ebc
