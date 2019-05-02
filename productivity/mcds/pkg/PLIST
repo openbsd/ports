@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/02 15:52:58 kmos Exp $
+@bin bin/mcds
+@man man/man1/mcds.1
