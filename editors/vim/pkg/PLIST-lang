@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lang,v 1.15 2018/08/21 16:55:08 sthen Exp $
+@comment $OpenBSD: PLIST-lang,v 1.16 2019/05/02 01:03:11 sthen Exp $
 @conflict vim-<7.4
 man/da/
 man/da.ISO8859-1/
@@ -389,6 +389,10 @@ share/vim/${P}/lang/menu_hu.iso_8859-2.vim
 share/vim/${P}/lang/menu_hu.utf-8.vim
 share/vim/${P}/lang/menu_hu_hu.iso_8859-2.vim
 share/vim/${P}/lang/menu_hu_hu.utf-8.vim
+share/vim/${P}/lang/menu_is.latin1.vim
+share/vim/${P}/lang/menu_is.utf-8.vim
+share/vim/${P}/lang/menu_is_is.latin1.vim
+share/vim/${P}/lang/menu_is_is.utf-8.vim
 share/vim/${P}/lang/menu_it.latin1.vim
 share/vim/${P}/lang/menu_it.utf-8.vim
 share/vim/${P}/lang/menu_it_it.latin1.vim

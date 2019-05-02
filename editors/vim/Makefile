@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.187 2019/05/01 22:05:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.188 2019/05/02 01:03:11 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-V=		8.1.1048
+V=		8.1.1244
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
@@ -15,8 +15,6 @@ FULLPKGNAME-lang= vim-lang-$T
 FULLPKGPATH-lang= ${PKGPATH},-lang
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
-REVISION-lang=    0
-REVISION-main=	3
 
 HOMEPAGE=	https://www.vim.org/
 
@@ -27,7 +25,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB +=	c curses iconv intl m
 
-LIB_DEPENDS-main= ${LIB_DEPENDS} devel/gettext
+LIB_DEPENDS-main= ${LIB_DEPENDS} \
+		devel/gettext
 
 MULTI_PACKAGES=	-main -lang
 
@@ -44,6 +43,7 @@ BUILD_PACKAGES := ${BUILD_PACKAGES:N-lang}
 .endif
 
 CONFIGURE_STYLE=gnu
+USE_GMAKE=	Yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_lib_elf_main=no
@@ -63,7 +63,8 @@ MAKE_FLAGS+= STRIP=:
 MODULES+=	lang/lua
 MODLUA_VERSION=	5.1
 CONFIGURE_ENV+=	vi_cv_path_plain_lua=${MODLUA_BIN}
-CONFIGURE_ARGS+= --enable-luainterp --with-lua-prefix=${LOCALBASE}
+CONFIGURE_ARGS+= --enable-luainterp \
+		--with-lua-prefix=${LOCALBASE}
 LIB_DEPENDS+=	${MODLUA_LIB_DEPENDS}
 WANTLIB+=	${MODLUA_WANTLIB}
 .endif
@@ -76,8 +77,9 @@ WANTLIB+=	perl util
 .if ${FLAVOR:Mpython}
 MODULES+=	lang/python
 CONFIGURE_ENV+=	vi_cv_path_python=${MODPY_BIN}
-CONFIGURE_ARGS+= --enable-pythoninterp=yes --enable-python3interp=no \
-	--with-python-config-dir=${MODPY_LIBDIR}/config
+CONFIGURE_ARGS+= --enable-pythoninterp=yes \
+		--enable-python3interp=no \
+		--with-python-config-dir=${MODPY_LIBDIR}/config
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
 WANTLIB+=	pthread util ${MODPY_WANTLIB}
 .endif
@@ -86,8 +88,9 @@ WANTLIB+=	pthread util ${MODPY_WANTLIB}
 MODULES+=	lang/python
 MODPY_MAJOR_VERSION = 3
 CONFIGURE_ENV+=	vi_cv_path_python3=${MODPY_BIN}
-CONFIGURE_ARGS+= --enable-python3interp=yes --enable-pythoninterp=no \
-	--with-python3-config-dir=${MODPY_LIBDIR}/config-${MODPY_VERSION}m
+CONFIGURE_ARGS+= --enable-python3interp=yes \
+		--enable-pythoninterp=no \
+		--with-python3-config-dir=${MODPY_LIBDIR}/config-${MODPY_VERSION}m
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
 WANTLIB+=	pthread util ${MODPY_WANTLIB}
 .endif
@@ -102,7 +105,8 @@ ERRORS=		"Fatal: You only can select one python flavor"
 
 .if ${FLAVOR:Mruby}
 MODULES+=	lang/ruby
-CONFIGURE_ARGS+= --enable-rubyinterp --with-ruby-command=${RUBY}
+CONFIGURE_ARGS+= --enable-rubyinterp \
+		--with-ruby-command=${RUBY}
 LIB_DEPENDS+=	${MODRUBY_LIB_DEPENDS}
 WANTLIB+=	${MODRUBY_WANTLIB}
 .endif
