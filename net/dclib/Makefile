@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.25 2018/10/24 14:28:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/05/02 19:43:20 danj Exp $
 
 COMMENT=	Library for direct-connect protocol
 
 DISTNAME=	dclib-0.3.7
-REVISION=	9
+REVISION=	10
 CATEGORIES=	net
 SHARED_LIBS=	dc	1.0
 
 HOMEPAGE=	http://wxdcgui.sourceforge.net/
-
-MAINTAINER=	Andrew Sveikauskas <asveikau@mail.rochester.edu>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
