@@ -1,6 +1,8 @@
-$OpenBSD: patch-doc_mkcert_sh,v 1.8 2016/12/04 21:36:02 sthen Exp $
---- doc/mkcert.sh.orig	Tue Nov 29 17:35:50 2016
-+++ doc/mkcert.sh	Tue Nov 29 20:53:21 2016
+$OpenBSD: patch-doc_mkcert_sh,v 1.9 2019/05/02 22:06:13 sthen Exp $
+
+Index: doc/mkcert.sh
+--- doc/mkcert.sh.orig
++++ doc/mkcert.sh
 @@ -6,19 +6,13 @@
  umask 077
  OPENSSL=${OPENSSL-openssl}

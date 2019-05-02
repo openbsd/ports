@@ -1,4 +1,5 @@
-$OpenBSD: patch-doc_example-config_Makefile_in,v 1.19 2019/03/06 21:53:07 sthen Exp $
+$OpenBSD: patch-doc_example-config_Makefile_in,v 1.20 2019/05/02 22:06:13 sthen Exp $
+
 Index: doc/example-config/Makefile.in
 --- doc/example-config/Makefile.in.orig
 +++ doc/example-config/Makefile.in
