@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:57:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/02 17:52:31 danj Exp $
 
 COMMENT =		simple wrapper for PDF::API2 module
 
@@ -7,8 +7,7 @@ PKG_ARCH =		*
 DISTNAME =		PDF-API2-Simple-1.1.4u
 PKGNAME =		p5-${DISTNAME:S/u$//}
 CATEGORIES =		textproc
-
-MAINTAINER =		Anibal Ezau Limon Belmares <limon.anibal@gmail.com>
+REVISION =		0
 
 # public domain
 PERMIT_PACKAGE_CDROM =	Yes
