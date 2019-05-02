@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/03/27 08:45:54 bentley Exp $
+# $OpenBSD: Makefile,v 1.34 2019/05/02 03:35:24 bentley Exp $
 
      SUBDIR =
      SUBDIR += abc
@@ -22,6 +22,7 @@
      SUBDIR += qelectrotech
      SUBDIR += qrouter
      SUBDIR += qucs
+     SUBDIR += qucs-s
      SUBDIR += tkgate
      SUBDIR += xcircuit
      SUBDIR += xnecview
