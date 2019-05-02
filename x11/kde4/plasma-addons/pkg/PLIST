@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/07/01 18:33:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/05/02 05:13:05 rsadowski Exp $
 @bin bin/lancelot
 include/kde4/KDE/Lancelot/
 include/kde4/KDE/Lancelot/ActionListModel
@@ -198,7 +198,6 @@ lib/kde4/plasma_potd_wcpotdprovider.so
 lib/kde4/plasma_runner_datetime.so
 lib/kde4/plasma_runner_events.so
 lib/kde4/plasma_wallpaper_mandelbrot.so
-lib/kde4/plasma_wallpaper_marble.so
 lib/kde4/plasma_wallpaper_pattern.so
 lib/kde4/plasma_wallpaper_potd.so
 lib/kde4/plasma_wallpaper_qml.so
@@ -672,7 +671,6 @@ share/kde4/services/plasma-runner-wikipedia.desktop
 share/kde4/services/plasma-runner-wikitravel.desktop
 share/kde4/services/plasma-runner-youtube.desktop
 share/kde4/services/plasma-wallpaper-mandelbrot.desktop
-share/kde4/services/plasma-wallpaper-marble.desktop
 share/kde4/services/plasma-wallpaper-pattern.desktop
 share/kde4/services/plasma-wallpaper-potd.desktop
 share/kde4/services/plasma-wallpaper-qml.desktop

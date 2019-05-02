@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2018/07/01 18:33:38 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/02 05:13:05 rsadowski Exp $
 
 COMMENT =	extra KDE plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE4_VERSION}
-REVISION =	9
+REVISION =	10
 
 SHARED_LIBS =	lancelot-datamodels		51.1 # 1.7
 SHARED_LIBS +=	lancelot			51.1 # 1.9
@@ -27,7 +27,7 @@ WANTLIB += ${KDE4LIB}/kfile ${KDE4LIB}/kmime ${KDE4LIB}/knewstuff3
 WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/kpimutils ${KDE4LIB}/kprintutils
 WANTLIB += ${KDE4LIB}/kresources
 WANTLIB += ${KDE4LIB}/krosscore ${KDE4LIB}/kunitconversion ${KDE4LIB}/kutils
-WANTLIB += ${KDE4LIB}/kworkspace ${KDE4LIB}/marblewidget ${KDE4LIB}/nepomuk
+WANTLIB += ${KDE4LIB}/kworkspace  ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
 WANTLIB += ${KDE4LIB}/plasmaclock ${KDE4LIB}/solid
 WANTLIB += ${KDE4LIB}/taskmanager
@@ -56,7 +56,6 @@ LIB_DEPENDS =	devel/qjson \
 		security/qoauth \
 		x11/dbusmenu-qt \
 		qwt-*-!qt5:x11/qwt \
-		${MODKDE4_DEP_DIR}/libkexiv2>=${MODKDE4_DEP_VERSION} \
-		${MODKDE4_DEP_DIR}/marble>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/libkexiv2>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>
