@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2019/05/01 17:43:15 jasper Exp $
-
-# XXX: PORTROACH set below to override the value from gnome.port.mk
+# $OpenBSD: Makefile,v 1.112 2019/05/02 07:45:16 ajacoutot Exp $
 
 COMMENT=		people aggregation library
 
@@ -53,5 +51,3 @@ CONFIGURE_ARGS += 	-Dofono_backend=false
 CONFIGURE_ARGS +=	-Dbluez_backend=false
 
 .include <bsd.port.mk>
-
-PORTROACH=	# empty
