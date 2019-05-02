@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_libtomcrypt_src_headers_tomcrypt_cfg_h,v 1.1 2019/05/02 19:58:53 bcallah Exp $
+
+Index: src/libtomcrypt/src/headers/tomcrypt_cfg.h
+--- src/libtomcrypt/src/headers/tomcrypt_cfg.h.orig
++++ src/libtomcrypt/src/headers/tomcrypt_cfg.h
+@@ -101,6 +101,17 @@ LTC_EXPORT int   LTC_CALL XSTRCMP(const char *s1, cons
+   #endif
+ #endif
+ 
++/* detect arm64 and arm */
++#if defined(__OpenBSD__)
++  #if defined(__aarch64__)
++    #define ENDIAN_LITTLE
++    #define ENDIAN_64BITWORD
++  #elif defined(__arm__)
++    #define ENDIAN_LITTLE
++    #define ENDIAN_32BITWORD
++  #endif
++#endif
++
+ 
+ #ifdef LTC_NO_FAST
+    #ifdef LTC_FAST
