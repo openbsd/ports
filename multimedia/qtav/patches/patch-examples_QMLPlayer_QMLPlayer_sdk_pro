@@ -1,0 +1,14 @@
+$OpenBSD: patch-examples_QMLPlayer_QMLPlayer_sdk_pro,v 1.1.1.1 2019/05/02 12:26:15 rsadowski Exp $
+
+Index: examples/QMLPlayer/QMLPlayer_sdk.pro
+--- examples/QMLPlayer/QMLPlayer_sdk.pro.orig
++++ examples/QMLPlayer/QMLPlayer_sdk.pro
+@@ -32,7 +32,7 @@ target.path = $$[QT_INSTALL_BINS]
+ 
+ 
+ desktopfile.files = $$PWD/../../qtc_packaging/debian_generic/QMLPlayer.desktop
+-desktopfile.path = /usr/share/applications
++desktopfile.path = $$(TRUEPREFIX)/share/applications
+ 
+ # Please do not modify the following two lines. Required for deployment.
+ include(qtquick2applicationviewer/qtquick2applicationviewer.pri)

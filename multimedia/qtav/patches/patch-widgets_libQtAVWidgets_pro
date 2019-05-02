@@ -1,0 +1,15 @@
+$OpenBSD: patch-widgets_libQtAVWidgets_pro,v 1.1.1.1 2019/05/02 12:26:15 rsadowski Exp $
+
+Index: widgets/libQtAVWidgets.pro
+--- widgets/libQtAVWidgets.pro.orig
++++ widgets/libQtAVWidgets.pro
+@@ -99,7 +99,8 @@ config_direct2d {
+ config_xv {
+   DEFINES *= QTAV_HAVE_XV=1
+   SOURCES += XVRenderer.cpp
+-  LIBS *= -lXv -lX11 -lXext
++  LIBS *= -L$$QMAKE_LIBDIR_X11 -lXv -lX11 -lXext
++  INCLUDEPATH += $$QMAKE_INCDIR_X11
+ }
+ config_x11 {
+   DEFINES *= QTAV_HAVE_X11=1

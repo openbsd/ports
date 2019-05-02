@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_filter_LibAVFilter_cpp,v 1.1.1.1 2019/05/02 12:26:15 rsadowski Exp $
+
+Index: src/filter/LibAVFilter.cpp
+--- src/filter/LibAVFilter.cpp.orig
++++ src/filter/LibAVFilter.cpp
+@@ -120,7 +120,10 @@ class LibAVFilter::Private (public)
+         // pixel_aspect==sar, pixel_aspect is more compatible
+         QString buffersrc_args = args;
+         qDebug("buffersrc_args=%s", buffersrc_args.toUtf8().constData());
+-        AVFilter *buffersrc  = avfilter_get_by_name(video ? "buffer" : "abuffer");
++#if LIBAVFILTER_VERSION_INT >= AV_VERSION_INT(7,0,0)
++        const
++#endif
++        AVFilter *buffersrc = avfilter_get_by_name(video ? "buffer" : "abuffer");
+         Q_ASSERT(buffersrc);
+         AV_ENSURE_OK(avfilter_graph_create_filter(&in_filter_ctx,
+                                                buffersrc,
+@@ -128,6 +131,9 @@ class LibAVFilter::Private (public)
+                                                filter_graph)
+                      , false);
+         /* buffer video sink: to terminate the filter chain. */
++#if LIBAVFILTER_VERSION_INT >= AV_VERSION_INT(7,0,0)
++        const
++#endif
+         AVFilter *buffersink = avfilter_get_by_name(video ? "buffersink" : "abuffersink");
+         Q_ASSERT(buffersink);
+         AV_ENSURE_OK(avfilter_graph_create_filter(&out_filter_ctx, buffersink, "out",

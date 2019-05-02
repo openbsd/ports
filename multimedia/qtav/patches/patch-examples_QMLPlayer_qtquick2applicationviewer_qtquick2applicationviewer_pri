@@ -1,0 +1,24 @@
+$OpenBSD: patch-examples_QMLPlayer_qtquick2applicationviewer_qtquick2applicationviewer_pri,v 1.1.1.1 2019/05/02 12:26:15 rsadowski Exp $
+
+Index: examples/QMLPlayer/qtquick2applicationviewer/qtquick2applicationviewer.pri
+--- examples/QMLPlayer/qtquick2applicationviewer/qtquick2applicationviewer.pri.orig
++++ examples/QMLPlayer/qtquick2applicationviewer/qtquick2applicationviewer.pri
+@@ -104,14 +104,14 @@ android-no-sdk {
+ } else:unix {
+     maemo5 {
+         desktopfile.files = $${TARGET}.desktop
+-        desktopfile.path = /usr/share/applications/hildon
++        desktopfile.path = $$(TRUEPREFIX)/share/applications/hildon
+         icon.files = $${TARGET}64.png
+-        icon.path = /usr/share/icons/hicolor/64x64/apps
++        icon.path = $$(TRUEPREFIX)/share/icons/hicolor/64x64/apps
+     } else:!isEmpty(MEEGO_VERSION_MAJOR) {
+         desktopfile.files = $${TARGET}_harmattan.desktop
+-        desktopfile.path = /usr/share/applications
++        desktopfile.path = $$(TRUEPREFIX)/share/applications
+         icon.files = $${TARGET}80.png
+-        icon.path = /usr/share/icons/hicolor/80x80/apps
++        icon.path = $$(TRUEPREFIX)/share/icons/hicolor/80x80/apps
+     } else { # Assumed to be a Desktop Unix
+         copyCommand =
+         for(deploymentfolder, DEPLOYMENTFOLDERS) {

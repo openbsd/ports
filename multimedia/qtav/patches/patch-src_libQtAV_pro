@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_libQtAV_pro,v 1.1.1.1 2019/05/02 12:26:15 rsadowski Exp $
+The Unix world is slightly larger than Linux and OS X.
+Index: src/libQtAV.pro
+--- src/libQtAV.pro.orig
++++ src/libQtAV.pro
+@@ -129,6 +129,12 @@ config_x11 {
+   SOURCES *= filter/X11FilterContext.cpp
+   LIBS *= -lX11
+ }
++config_xv {
++  DEFINES += QTAV_HAVE_X11=1
++  SOURCES *= filter/X11FilterContext.cpp
++  LIBS *= -L$$QMAKE_LIBDIR_X11 -lXv -lX11
++  INCLUDEPATH += $$QMAKE_INCDIR_X11
++}
+ config_swresample {
+     DEFINES += QTAV_HAVE_SWRESAMPLE=1
+     SOURCES += AudioResamplerFF.cpp

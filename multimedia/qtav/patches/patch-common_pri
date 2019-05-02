@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_pri,v 1.1.1.1 2019/05/02 12:26:15 rsadowski Exp $
+Fix dependency chains.
+Index: common.pri
+--- common.pri.orig
++++ common.pri
+@@ -172,6 +172,8 @@ defineReplace(qtSharedLib) {
+ 	unset(LIB_FULLNAME)
+ 	LIB_FULLNAME = $$qtLibName($$1, $$2)
+         LIB_FULLNAME = $${QMAKE_PREFIX_SHLIB}$$member(LIB_FULLNAME, 0).$${QMAKE_EXTENSION_SHLIB} #default_post.prf
++	eval(OPENBSD_LIBVER = \$\$(LIB$${1}_VERSION))
++	!isEmpty(OPENBSD_LIBVER): LIB_FULLNAME = $${LIB_FULLNAME}.$${OPENBSD_LIBVER}
+ 	return($$LIB_FULLNAME)
+ }
+ 

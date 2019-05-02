@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_codec_video_VideoEncoderFFmpeg_cpp,v 1.1.1.1 2019/05/02 12:26:15 rsadowski Exp $
+
+Index: src/codec/video/VideoEncoderFFmpeg.cpp
+--- src/codec/video/VideoEncoderFFmpeg.cpp.orig
++++ src/codec/video/VideoEncoderFFmpeg.cpp
+@@ -245,7 +245,7 @@ bool VideoEncoderFFmpegPrivate::open()
+     applyOptionsForContext();
+     AV_ENSURE_OK(avcodec_open2(avctx, codec, &dict), false);
+     // from mpv ao_lavc
+-    const int buffer_size = qMax<int>(qMax<int>(width*height*6+200, FF_MIN_BUFFER_SIZE), sizeof(AVPicture));//??
++    const int buffer_size = qMax<int>(qMax<int>(width*height*6+200, AV_INPUT_BUFFER_MIN_SIZE), sizeof(AVPicture));//??
+     buffer.resize(buffer_size);
+     return true;
+ }

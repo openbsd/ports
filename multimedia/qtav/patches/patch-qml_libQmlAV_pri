@@ -1,0 +1,14 @@
+$OpenBSD: patch-qml_libQmlAV_pri,v 1.1.1.1 2019/05/02 12:26:15 rsadowski Exp $
+Fix installation paths.
+Index: qml/libQmlAV.pri
+--- qml/libQmlAV.pri.orig
++++ qml/libQmlAV.pri
+@@ -132,7 +132,7 @@ DEPENDPATH *= $$PROJECT_SRCPATH
+ 		maemo5 {
+ 			target.path = /opt/usr/lib
+ 		} else {
+-			target.path = /usr/lib
++			target.path = $$(TRUEPREFIX)/lib
+ 		}
+ 		INSTALLS += target
+ 	}

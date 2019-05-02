@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_codec_audio_AudioEncoderFFmpeg_cpp,v 1.1.1.1 2019/05/02 12:26:15 rsadowski Exp $
+
+Index: src/codec/audio/AudioEncoderFFmpeg.cpp
+--- src/codec/audio/AudioEncoderFFmpeg.cpp.orig
++++ src/codec/audio/AudioEncoderFFmpeg.cpp
+@@ -153,8 +153,8 @@ bool AudioEncoderFFmpegPrivate::open()
+     } else {
+         buffer_size = frame_size*format_used.bytesPerSample()*format_used.channels()*2+200;
+     }
+-    if (buffer_size < FF_MIN_BUFFER_SIZE)
+-        buffer_size = FF_MIN_BUFFER_SIZE;
++    if (buffer_size < AV_INPUT_BUFFER_MIN_SIZE)
++        buffer_size = AV_INPUT_BUFFER_MIN_SIZE;
+     buffer.resize(buffer_size);
+     return true;
+ }

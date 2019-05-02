@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_QtAV_private_AVCompat_h,v 1.1.1.1 2019/05/02 12:26:15 rsadowski Exp $
+
+Index: src/QtAV/private/AVCompat.h
+--- src/QtAV/private/AVCompat.h.orig
++++ src/QtAV/private/AVCompat.h
+@@ -59,6 +59,7 @@ extern "C"
+ #include <libavutil/parseutils.h>
+ #include <libavutil/pixdesc.h>
+ #include <libavutil/avstring.h>
++#include <libavfilter/version.h>
+ 
+ #if !FFMPEG_MODULE_CHECK(LIBAVUTIL, 51, 73, 101)
+ #include <libavutil/channel_layout.h>
+@@ -79,8 +80,11 @@ extern "C"
+ #endif //QTAV_HAVE(AVRESAMPLE)
+ 
+ #if QTAV_HAVE(AVFILTER)
++#if LIBAVFILTER_VERSION_INT < AV_VERSION_INT(3,8,0)
+ #include <libavfilter/avfiltergraph.h> /*code is here for old version*/
++#else
+ #include <libavfilter/avfilter.h>
++#endif
+ #include <libavfilter/buffersink.h>
+ #include <libavfilter/buffersrc.h>
+ #endif //QTAV_HAVE(AVFILTER)
+@@ -456,3 +460,15 @@ const char *get_codec_long_name(AVCodecID id);
+      } } while(0)
+ 
+ #endif //QTAV_COMPAT_H
++
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(56,33,0)
++#define AV_CODEC_FLAG_GLOBAL_HEADER CODEC_FLAG_GLOBAL_HEADER
++#endif
++
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(56,56,100)
++#define AV_INPUT_BUFFER_MIN_SIZE FF_MIN_BUFFER_SIZE
++#endif
++
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(56,56,100)
++#define AV_INPUT_BUFFER_PADDING_SIZE FF_INPUT_BUFFER_PADDING_SIZE
++#endif
