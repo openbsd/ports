@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.43 2019/04/27 23:55:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2019/05/02 16:15:47 sthen Exp $
 
 COMMENT=	gtk2 comic book viewer
 
 DISTNAME=	comix-4.0.4
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	graphics
 
+# XXX consider replacing with more active fork, 
+# https://sourceforge.net/projects/mcomix/ ?
 HOMEPAGE=	http://comix.sourceforge.net/
 
 # GPLv2

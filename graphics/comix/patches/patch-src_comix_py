@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_comix_py,v 1.4 2014/04/06 21:10:30 sthen Exp $
+$OpenBSD: patch-src_comix_py,v 1.5 2019/05/02 16:15:48 sthen Exp $
 
 point python to where comix modules are installed
 
---- src/comix.py.orig	Fri Mar  6 16:54:01 2009
-+++ src/comix.py	Sun Apr  6 18:23:29 2014
+Index: src/comix.py
+--- src/comix.py.orig
++++ src/comix.py
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env python
 +#!${MODPY_BIN}
@@ -20,12 +21,14 @@ point python to where comix modules are installed
  #Check for PyGTK and PIL dependencies.
  try:
      import pygtk
-@@ -49,7 +52,7 @@ except ImportError:
+@@ -49,8 +52,8 @@ except ImportError:
      sys.exit(1)
  
  try:
 -    import Image
+-    assert Image.VERSION >= '1.1.5'
 +    from PIL import Image
-     assert Image.VERSION >= '1.1.5'
++    assert Image.__version__ >= '1.1.5'
  except AssertionError:
      print "You don't have the required version of the Python Imaging",
+     print 'Library (PIL) installed.'

@@ -1,10 +1,11 @@
-$OpenBSD: patch-install_py,v 1.4 2014/04/06 21:10:30 sthen Exp $
+$OpenBSD: patch-install_py,v 1.5 2019/05/02 16:15:47 sthen Exp $
 
 install files in the right place, and don't try to run
 update-mime-database and gconftool-2, will be done in fake.
 
---- install.py.orig	Sat Feb 14 11:09:21 2009
-+++ install.py	Sun Apr  6 18:22:10 2014
+Index: install.py
+--- install.py.orig
++++ install.py
 @@ -35,7 +35,8 @@ TRANSLATIONS = ('ca', 'cs', 'es', 'fr', 'hr', 'hu', 'i
  # 'de', 'it', 'nl', 'el', 'fa'
  
@@ -38,15 +39,17 @@ update-mime-database and gconftool-2, will be done in fake.
                ('mime/comix.xml', 'share/mime/packages'),
                ('mime/icons/16x16/application-x-cbz.png',
                  'share/icons/hicolor/16x16/mimetypes'),
-@@ -240,7 +238,7 @@ def check_dependencies():
+@@ -240,8 +238,8 @@ def check_dependencies():
          print '    !!! PyGTK .................... Not found'
          required_found = False
      try:
 -        import Image
+-        assert Image.VERSION >= '1.1.5'
 +        from PIL import Image
-         assert Image.VERSION >= '1.1.5'
++        assert Image.__version__ >= '1.1.5'
          print '    Python Imaging Library ....... OK'
      except ImportError:
+         print '    !!! Python Imaging Library ... Not found'
 @@ -304,26 +302,11 @@ if args == ['install']:
      for lang in TRANSLATIONS:
          install(os.path.join('messages', lang, 'LC_MESSAGES/comix.mo'),
