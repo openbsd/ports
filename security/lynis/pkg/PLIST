@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/03/12 13:56:56 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.19 2019/05/02 09:27:09 gonzalo Exp $
 @group wheel
 bin/lynis
 @man man/man8/lynis.8
@@ -60,6 +60,7 @@ share/lynis/include/data_upload
 share/lynis/include/functions
 share/lynis/include/helper_audit_dockerfile
 share/lynis/include/helper_configure
+share/lynis/include/helper_generate
 share/lynis/include/helper_show
 share/lynis/include/helper_system_remote_scan
 share/lynis/include/helper_update
