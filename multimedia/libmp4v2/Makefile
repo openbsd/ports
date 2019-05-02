@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/04/29 11:38:17 cwen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/02 20:10:47 cwen Exp $
 
 COMMENT =		read and manipulate the MP4 container format
 
@@ -27,6 +27,9 @@ USE_GMAKE =		Yes
 MAKE_FILE =		GNUmakefile
 CONFIGURE_STYLE =	gnu
 
+# As of mp4v2-1.9.1, the code is written for c++03, using c++>=11 causes too
+# many narrowing to int issues in a roll-your-own options management, among
+# others.
 CXXFLAGS +=		-std=c++03
 
 .include <bsd.port.mk>
