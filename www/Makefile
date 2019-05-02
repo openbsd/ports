@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.899 2019/04/30 08:00:14 bentley Exp $
+# $OpenBSD: Makefile,v 1.900 2019/05/02 22:01:00 kmos Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -571,6 +571,7 @@
      SUBDIR += tidyp
      SUBDIR += tinyproxy
      SUBDIR += tomcat
+     SUBDIR += tootstream
      SUBDIR += tor-browser
      SUBDIR += trac
      SUBDIR += trac-ldapplugin
