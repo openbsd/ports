@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2019/05/02 13:13:08 rsadowski Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -4768,7 +4768,7 @@ esac
+ # Darwin uses gcc (=cc), but needs different flags (see above)
+ if test "x$EXT" != xdarwin && test "x$EXT" != xcygwin && test "x$EXT" != xmingw32; then
+   if test "x$GCC" = xyes; then
+-    SHLIB_LD="$CC -shared -Wl,-soname,lib\${PACKAGE}\${SHLIB_SUFFIX}.\${CFITSIO_SONAME}"
++    SHLIB_LD="$CC -shared -Wl,-soname,lib\${PACKAGE}\${SHLIB_SUFFIX}"
+     lhea_shlib_cflags='-fPIC'
+   fi
+ fi

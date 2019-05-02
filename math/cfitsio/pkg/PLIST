@@ -1,17 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:49 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/05/02 13:13:08 rsadowski Exp $
 @bin bin/fitscopy
+@bin bin/fpack
+@bin bin/funpack
 @bin bin/imcopy
-@bin bin/listhead
 include/drvrsmem.h
 include/fitsio.h
 include/fitsio2.h
+include/fpack.h
 include/longnam.h
 lib/libcfitsio.a
 @lib lib/libcfitsio.so.${LIBcfitsio_VERSION}
 share/doc/cfitsio/
 share/doc/cfitsio/License.txt
 share/doc/cfitsio/README
-share/doc/cfitsio/cfitsio.doc
 share/doc/cfitsio/cfortran.doc
 share/doc/cfitsio/cookbook.c
 share/doc/cfitsio/fitsio.doc
