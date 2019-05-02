@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2019/04/28 01:30:18 cwen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/02 14:51:49 danj Exp $
 
 COMMENT =		software able to hide data in various kind of files
 
 DISTNAME =		steghide-0.5.1
-REVISION =		7
+REVISION =		8
 CATEGORIES =		security
 HOMEPAGE =		http://steghide.sf.net/
-
-MAINTAINER =		Giovanni Bechis <giovanni@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

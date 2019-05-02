@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/04/25 09:47:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/02 14:51:49 danj Exp $
 
 PKG_ARCH=	*
 
@@ -6,12 +6,10 @@ COMMENT=	image viewer and organizer
 
 DISTNAME=	mapivi097
 PKGNAME=	mapivi-0.97
-REVISION=	3
+REVISION=	4
 CATEGORIES=	graphics x11
 
 HOMEPAGE=	http://mapivi.de.vu/
-
-MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

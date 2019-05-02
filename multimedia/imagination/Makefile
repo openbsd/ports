@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2018/06/29 22:16:18 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/02 14:51:49 danj Exp $
 
 COMMENT =		lightweight and simple DVD slide show maker
 DISTNAME =		imagination-3.0
-REVISION =		9
+REVISION =		10
 
 CATEGORIES =		multimedia
 
 HOMEPAGE =		http://imagination.sf.net
-
-MAINTAINER =		Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes

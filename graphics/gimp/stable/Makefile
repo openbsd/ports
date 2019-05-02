@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.121 2018/06/29 22:16:16 espie Exp $
+# $OpenBSD: Makefile,v 1.122 2019/05/02 14:51:49 danj Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME=	gimp-2.8.22
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS+=	gimp-2.0	272.0	# 800.0
 SHARED_LIBS+=	gimpbase-2.0	272.0	# 800.0
@@ -16,7 +16,6 @@ SHARED_LIBS+=	gimpui-2.0	272.0	# 800.0
 SHARED_LIBS+=	gimpwidgets-2.0	272.0	# 800.0
 
 CATEGORIES=	graphics
-MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 DIR=		gimp/v2.8
 MASTER_SITES=	https://download.gimp.org/pub/${DIR}/ \

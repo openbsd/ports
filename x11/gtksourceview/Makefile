@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2017/11/21 00:13:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.60 2019/05/02 14:51:49 danj Exp $
 
 PORTROACH=		limit:^2
 
@@ -7,7 +7,7 @@ COMMENT=		text widget that extends GTK2's GtkTextView widget#'
 MAJOR_VERSION=		2.0
 GNOME_PROJECT=		gtksourceview
 GNOME_VERSION=		2.10.5
-REVISION=		5
+REVISION=		6
 
 SHARED_LIBS +=	gtksourceview-2.0    5.0      # .0.0
 
@@ -16,8 +16,6 @@ CATEGORIES=		x11
 SUBST_VARS=		MAJOR_VERSION
 
 HOMEPAGE=		http://gtksourceview.sourceforge.net/
-
-MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2/LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
