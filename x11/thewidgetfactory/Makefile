@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2017/10/23 17:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/05/02 19:34:40 danj Exp $
 
 COMMENT=	showcase for GTK+ 2 widgets
 
 DISTNAME=	thewidgetfactory-0.2.1
-REVISION=	8
+REVISION=	9
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.stellingwerff.com/?page_id=10
-
-MAINTAINER=	Andres Delfino <adelfino@gmail.com>
 
 # GPL v2
 PERMIT_PACKAGE_CDROM=	Yes
