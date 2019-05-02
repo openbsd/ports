@@ -1,0 +1,14 @@
+$OpenBSD: patch-qucs-attenuator_CMakeLists_txt,v 1.1.1.1 2019/05/02 03:34:39 bentley Exp $
+
+Index: qucs-attenuator/CMakeLists.txt
+--- qucs-attenuator/CMakeLists.txt.orig
++++ qucs-attenuator/CMakeLists.txt
+@@ -105,7 +105,7 @@ INSTALL(TARGETS ${PROJECT_NAME}
+ 
+ # man pages
+ IF(NOT WITH_SPICE)
+-INSTALL( FILES qucsattenuator.1 DESTINATION share/man/man1 )
++INSTALL( FILES qucsattenuator.1 DESTINATION man/man1 )
+ ENDIF()
+ 
+ 

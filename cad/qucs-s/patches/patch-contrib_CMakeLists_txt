@@ -1,0 +1,11 @@
+$OpenBSD: patch-contrib_CMakeLists_txt,v 1.1.1.1 2019/05/02 03:34:39 bentley Exp $
+
+Index: contrib/CMakeLists.txt
+--- contrib/CMakeLists.txt.orig
++++ contrib/CMakeLists.txt
+@@ -2,4 +2,4 @@
+ # Netlist preprocessor script and man page
+ INSTALL( FILES ps2sp DESTINATION bin/ )
+ 
+-INSTALL( FILES ps2sp.1 DESTINATION share/man/man1 )
++INSTALL( FILES ps2sp.1 DESTINATION man/man1 )

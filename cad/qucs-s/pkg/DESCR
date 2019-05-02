@@ -1,0 +1,8 @@
+Qucs-S is a spin-off of the Qucs cross-platform circuit simulator (which
+uses its own simulation kernel Qucsator). "S" letter indicates SPICE.
+
+The purpose of the Qucs-S subproject is to use free SPICE circuit
+simulation kernels with the Qucs GUI.
+
+Qucs-S is not a simulator by itself, but it requires to use a simulation
+backend (Ngspice is recommended).
