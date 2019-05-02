@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.61 2019/02/24 07:29:34 benoit Exp $
+# $OpenBSD: Makefile,v 1.62 2019/05/02 09:16:45 benoit Exp $
 
 COMMENT =		convert source code to markup formats
 
-DISTNAME =		highlight-3.49
+DISTNAME =		highlight-3.50
 CATEGORIES =		textproc converters
 
 HOMEPAGE =		http://www.andre-simon.de/
@@ -36,9 +36,6 @@ MAKE_FLAGS =		CXX=${CXX} \
 			LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
 
 NO_TEST =		Yes
-
-post-extract:
-	gunzip ${WRKSRC}/man/highlight.1.gz
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/makefile ${WRKSRC}/man/highlight.1 \
