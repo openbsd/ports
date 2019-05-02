@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2019/01/01 18:01:20 danj Exp $
+# $OpenBSD: Makefile,v 1.119 2019/05/02 22:02:31 danj Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -13,6 +13,8 @@ PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
+
+REVISION=		0
 
 CATEGORIES=		mail news
 
@@ -102,6 +104,7 @@ CONFIGURE_ARGS+=	--disable-acpi_notifier-plugin \
 			--disable-fancy-plugin \
 			--disable-geolocation-plugin \
 			--disable-python-plugin \
+			--disable-tnef_parse-plugin \
 			--enable-new-addrbook
 
 USE_GMAKE=		Yes
