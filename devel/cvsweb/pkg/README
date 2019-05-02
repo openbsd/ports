@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.17 2018/09/04 12:46:10 espie Exp $
+# $OpenBSD: README,v 1.18 2019/05/02 18:58:38 naddy Exp $
 # 
 # +-----------------------------------------------------------------------
 # | Running ${PKGSTEM} on OpenBSD
@@ -22,7 +22,7 @@ cd /var/www/usr
 mkdir -p bin lib libdata/perl5 libexec
 
 cd /var/www/usr/libdata/perl5
-mkdir -p File IPC Time warnings `arch -s`-openbsd/auto/Fcntl unicore
+mkdir -p File IPC Time warnings `arch -s`-openbsd/auto/{Cwd,Fcntl} unicore
 
 # The "annotate" function requires this empty file:
 #
@@ -54,7 +54,7 @@ cp -p /usr/libexec/ld.so .
 # And finally, the perl modules:
 
 cd /var/www/usr/libdata/perl5
-cp -p /usr/libdata/perl5/{Carp,Exporter,Symbol,base,integer}.pm .
+cp -p /usr/libdata/perl5/{Carp,Exporter,Symbol,base,integer,parent}.pm .
 cp -p /usr/libdata/perl5/{strict,warnings,vars,constant,utf8}.pm .
 cp -p /usr/libdata/perl5/utf8_heavy.pl .
 cp -p /usr/libdata/perl5/unicore/Heavy.pl ./unicore/
@@ -65,8 +65,10 @@ cp -p /usr/libdata/perl5/warnings/register.pm ./warnings/
 cp -p /usr/libdata/perl5/XSLoader.pm .
 
 cd /var/www/usr/libdata/perl5/`arch -s`-openbsd
-cp -p /usr/libdata/perl5/`arch -s`-openbsd/{Config,Cwd}.pm .
+cp -p /usr/libdata/perl5/`arch -s`-openbsd/Config.pm .
 cp -p /usr/libdata/perl5/`arch -s`-openbsd/Config_{git,heavy}.pl .
+cp -p /usr/libdata/perl5/`arch -s`-openbsd/Cwd.pm .
+cp -p /usr/libdata/perl5/`arch -s`-openbsd/auto/Cwd/Cwd.so ./auto/Cwd/
 cp -p /usr/libdata/perl5/`arch -s`-openbsd/DynaLoader.pm .
 cp -p /usr/libdata/perl5/`arch -s`-openbsd/Fcntl.pm .
 cp -p /usr/libdata/perl5/`arch -s`-openbsd/auto/Fcntl/Fcntl.so ./auto/Fcntl/
