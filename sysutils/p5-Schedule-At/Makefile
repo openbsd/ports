@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/20 19:57:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/03 16:59:10 danj Exp $
 
 COMMENT =	Perl interface for the system 'at' command
 
@@ -6,8 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Schedule-At-1.15
 CATEGORIES =	sysutils
-
-MAINTAINER =	Eric Olsen <herolsen@alumni.upenn.edu>
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE_CDROM =  Yes

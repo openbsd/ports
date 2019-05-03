@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2019/02/28 01:52:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/03 16:59:10 danj Exp $
 
 COMMENT =	portable C compiler
 
 PCCVER =	1.0.0
 DISTNAME =	pcc-${PCCVER}
-REVISION =	13
+REVISION =	14
 EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	lang
 
 HOMEPAGE =	http://pcc.ludd.ltu.se/
-
-MAINTAINER =	Eric Radman <ericshane@eradman.com>
 
 # Other architectures not fully supported yet
 ONLY_FOR_ARCHS = i386 amd64

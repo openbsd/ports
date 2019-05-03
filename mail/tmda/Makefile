@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.40 2016/08/03 13:06:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2019/05/03 16:59:10 danj Exp $
 
 COMMENT=		reduce the amount of SPAM/UCE (junk-mail)
 
 DISTNAME=		tmda-1.0.3
-REVISION =		8
+REVISION =		9
 CATEGORIES=		mail
 
 HOMEPAGE=		http://tmda.net/
-MAINTAINER=		Dave Steinberg <dave@redterror.net>
 
 # BSD-style
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2019/01/01 15:19:51 kn Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/03 16:59:10 danj Exp $
 
 COMMENT =	run arbitrary commands when files change
 
 DISTNAME =	entr-4.1
+REVISION =	0
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://entrproject.org/
-
-MAINTAINER =	Eric Radman <ericshane@eradman.com>
 
 # ISC
 PERMIT_PACKAGE_CDROM = Yes
