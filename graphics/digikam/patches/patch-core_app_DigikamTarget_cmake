@@ -1,0 +1,13 @@
+$OpenBSD: patch-core_app_DigikamTarget_cmake,v 1.1 2019/05/03 06:26:38 rsadowski Exp $
+
+Index: core/app/DigikamTarget.cmake
+--- core/app/DigikamTarget.cmake.orig
++++ core/app/DigikamTarget.cmake
+@@ -34,6 +34,7 @@ target_link_libraries(digikam
+ 
+                       digikamcore
+                       digikamgui
++                      digikamdatabase
+ 
+                       Qt5::Core
+                       Qt5::Gui
