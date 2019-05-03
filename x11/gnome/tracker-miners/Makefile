@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/07 10:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/03 07:59:23 ajacoutot Exp $
 
 COMMENT=		tracker miners and metadata extractors
 
 GNOME_PROJECT=		tracker-miners
-GNOME_VERSION=		2.2.1
+GNOME_VERSION=		2.2.2
 
 SHARED_LIBS +=  tracker-extract           1.1 # 0.0
 
@@ -11,11 +11,12 @@ SHARED_LIBS +=  tracker-extract           1.1 # 0.0
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += FLAC archive c cairo cue exempi exif gexiv2 gif gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gsf-1 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gxps icudata icui18n icuuc intl iptcdata
-WANTLIB += jpeg m osinfo-1.0 png16 poppler-glib pthread tag tag_c
-WANTLIB += tiff totem-plparser tracker-miner-2.0 tracker-sparql-2.0
-WANTLIB += upower-glib vorbisfile xml2 z
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gsf-1 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gstvideo-1.0
+WANTLIB += gxps icudata icui18n icuuc intl iptcdata jpeg m osinfo-1.0
+WANTLIB += png poppler-glib pthread tag tag_c tiff totem-plparser
+WANTLIB += tracker-miner-2.0 tracker-sparql-2.0 upower-glib vorbisfile
+WANTLIB += xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
