@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.122 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.123 2019/05/03 13:47:01 danj Exp $
 
 COMMENT =		lightweight and user-friendly e-mail client
 
 DISTNAME =		sylpheed-3.7.0
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS += 	 	sylph-0                   4.1 # 4.0
 SHARED_LIBS += 		sylpheed-plugin-0         4.0 # 4.0
 
 CATEGORIES =		mail news x11
 HOMEPAGE =		http://sylpheed.sraoss.jp/en
-MAINTAINER =		Amit Kulkarni <amitkulz@gmail.com>
+MAINTAINER =		Amit Kulkarni <amit.obsd@gmail.com>
 
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
