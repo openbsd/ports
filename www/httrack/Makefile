@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/29 22:16:21 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/03 07:59:37 kirby Exp $
 
 COMMENT =		offline browser
 DISTNAME =		httrack-3.48.21
-REVISION =		1
+REVISION =		2
 
 # "main" application libraries
 SHARED_LIBS +=  htsjava                   0.0 # 2.48
@@ -22,7 +22,7 @@ SHARED_LIBS +=  simple                    0.0 # 1.0
 
 CATEGORIES =		www
 
-HOMEPAGE =		http://www.httrack.com/
+HOMEPAGE =		https://www.httrack.com/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
