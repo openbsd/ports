@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/02 12:26:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/03 08:18:03 ajacoutot Exp $
 
 COMMENT =	FFmpeg-based Qt multimedia framework
 
@@ -42,6 +42,6 @@ MODQMAKE_ENV +=		TRUEPREFIX=${TRUEPREFIX}
 # so don't install them.
 MODQMAKE_ARGS +=	CONFIG+=no-examples
 
-NO_TESTS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
