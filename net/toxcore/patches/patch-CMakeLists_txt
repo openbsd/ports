@@ -1,0 +1,16 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2019/05/03 15:08:03 cwen Exp $
+
+Allow building with base-gcc that doesn't recognise this option
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -171,7 +171,7 @@ if(NOT MSVC)
+     # Comma at end of enum is supported everywhere we run.
+     add_cxxflag("-Wno-c++98-compat-pedantic")
+     # TODO(iphydf): Stop using flexible array members.
+-    add_cxxflag("-Wno-c99-extensions")
++    #add_cxxflag("-Wno-c99-extensions")
+     # We're C-compatible, so use C style casts.
+     add_cxxflag("-Wno-old-style-cast")
+ 
