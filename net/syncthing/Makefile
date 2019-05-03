@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2019/02/07 15:50:09 edd Exp $
+# $OpenBSD: Makefile,v 1.25 2019/05/03 12:58:59 edd Exp $
 
 COMMENT =	open decentralized synchronization utility
 
-V =		1.0.1
+V =		1.1.1
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
@@ -37,8 +37,7 @@ do-test:
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go test
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/syncthing ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/stcli ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin/
 .for sec in 1 5 7
 	${INSTALL_MAN} ${WRKSRC}/man/*.${sec} ${PREFIX}/man/man${sec}/
 .endfor

@@ -1,8 +1,8 @@
-$OpenBSD: patch-build_go,v 1.7 2019/02/07 15:50:09 edd Exp $
+$OpenBSD: patch-build_go,v 1.8 2019/05/03 12:58:59 edd Exp $
 Index: build.go
 --- build.go.orig
 +++ build.go
-@@ -186,6 +186,20 @@ var targets = map[string]target{
+@@ -188,6 +188,20 @@ var targets = map[string]target{
  			{src: "AUTHORS", dst: "deb/usr/share/doc/syncthing-relaypoolsrv/AUTHORS.txt", perm: 0644},
  		},
  	},
@@ -22,8 +22,8 @@ Index: build.go
 +	},
  }
  
- func init() {
-@@ -490,7 +504,7 @@ func appendParameters(args []string, tags []string, ta
+ // These are repos we need to clone to run "go generate"
+@@ -435,7 +449,7 @@ func appendParameters(args []string, tags []string, ta
  
  	if !debugBinary {
  		// Regular binaries get version tagged and skip some debug symbols
