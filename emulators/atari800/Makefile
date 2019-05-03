@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2018/12/21 12:13:49 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/03 12:13:33 fcambus Exp $
 
 COMMENT =	Atari 8-bit computer systems and 5200 game console emulator
 
-DISTNAME =	atari800-4.0.0
-REVISION =	0
+V =		4.1.0
+DISTNAME =	atari800-${V}-src
+PKGNAME =	${DISTNAME:S/-src//}
+EXTRACT_SUFX=	.tgz
 
 CATEGORIES =	emulators
 
@@ -20,7 +22,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=atari800/}
 
 LIB_DEPENDS =	devel/sdl
 
-WRKSRC =	${WRKDIST}/src
+WRKDIST =	${WRKDIR}/atari800-${V}
 
 CONFIGURE_STYLE = gnu
 
@@ -34,7 +36,7 @@ USE_GMAKE =	Yes
 NO_TEST =	Yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/atari800 ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/atari800.man ${PREFIX}/man/man1/atari800.1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/atari800 ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/src/atari800.man ${PREFIX}/man/man1/atari800.1
 
 .include <bsd.port.mk>
