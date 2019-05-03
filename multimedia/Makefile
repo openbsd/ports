@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2019/03/28 18:24:12 phessler Exp $
+# $OpenBSD: Makefile,v 1.115 2019/05/03 05:18:04 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += assimp
@@ -68,6 +68,7 @@
      SUBDIR += py-chromecast
      SUBDIR += py-pafy
      SUBDIR += qt-gstreamer
+     SUBDIR += qtav
      SUBDIR += regionset
      SUBDIR += sfml
      SUBDIR += shrip
