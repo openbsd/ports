@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.221 2019/04/29 12:37:52 jca Exp $
+# $OpenBSD: Makefile,v 1.222 2019/05/03 20:20:05 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -20,7 +20,7 @@ PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
 PKGNAME-extras =	clang-tools-extra-${LLVM_V}
-REVISION-main =	12
+REVISION-main =	13
 REVISION-lldb =	1
 
 CATEGORIES =	devel
@@ -47,10 +47,10 @@ DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		lldb-${LLVM_V}.src${EXTRACT_SUFX} \
 		clang-tools-extra-${LLVM_V}.src${EXTRACT_SUFX}
 
-MULTI_PACKAGES = -main -python -lldb -extras
-PSEUDO_FLAVORS = no_lldb no_extras
 # XXX enabling -extras changes the content of the -main subpackage
-FLAVOR ?=	no_extras
+MULTI_PACKAGES = -main -python -lldb # -extras
+PSEUDO_FLAVORS = no_lldb
+FLAVOR ?=
 NOT_FOR_ARCHS-lldb = ${GCC4_ARCHS}
 
 COMPILER =		base-clang ports-gcc
