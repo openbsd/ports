@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.762 2019/05/03 06:00:58 feinerer Exp $
+# $OpenBSD: Quirks.pm,v 1.763 2019/05/03 15:27:28 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1338,6 +1338,7 @@ my $cve = {
 	'devel/mercurial,-x11' => 'mercurial-x11-<4.5.3p1',
 	'devel/pcre' => 'pcre-<8.38',
 	'devel/sdl2-image' => 'sdl2-image-<2.0.4',
+	'graphics/png' => 'png-<1.6.37',
 	'graphics/tiff' => 'tiff-<4.0.4beta',
 	'lang/php/5.6,-main' => 'php-<5.6.38',
 	'lang/php/7.0,-main' => 'php->7.0,<7.0.32',
