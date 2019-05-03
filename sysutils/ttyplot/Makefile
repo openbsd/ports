@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/30 21:19:30 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/03 10:03:48 fcambus Exp $
 
 COMMENT =	realtime plotting utility for terminals
 
 GH_ACCOUNT =	tenox7
 GH_PROJECT =	ttyplot
-GH_TAGNAME =	1.2
+GH_TAGNAME =	1.4
 
 CATEGORIES =	sysutils
 
