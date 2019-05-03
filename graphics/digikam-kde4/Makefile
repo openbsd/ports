@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/05/02 16:40:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.36 2019/05/03 15:48:33 ajacoutot Exp $
 
 COMMENT-face =		face detection library for KDE4
 COMMENT-libkipi =	KDE4 image plugins infrastructure
@@ -32,7 +32,7 @@ REVISION-kipi =		9
 REVISION-libkface =	3
 REVISION-dcraw =	3
 REVISION-libkipi =	3
-REVISION-sane =		4
+REVISION-sane =		5
 REVISION-mediawiki =	8
 REVISION-face =		4
 
