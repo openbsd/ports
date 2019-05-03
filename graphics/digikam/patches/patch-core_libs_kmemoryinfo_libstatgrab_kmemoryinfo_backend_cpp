@@ -1,0 +1,24 @@
+$OpenBSD: patch-core_libs_kmemoryinfo_libstatgrab_kmemoryinfo_backend_cpp,v 1.1 2019/05/03 06:17:52 rsadowski Exp $
+
+Index: core/libs/kmemoryinfo/libstatgrab/kmemoryinfo_backend.cpp
+--- core/libs/kmemoryinfo/libstatgrab/kmemoryinfo_backend.cpp.orig
++++ core/libs/kmemoryinfo/libstatgrab/kmemoryinfo_backend.cpp
+@@ -79,7 +79,8 @@ static int fillMemoryInfo(Digikam::KMemoryInfo::KMemor
+ #include <sys/param.h>
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
+-#include <sys/unistd.h>
++#include <sys/vmmeter.h>
++#include <unistd.h>
+ #endif
+ #ifdef Q_OS_HPUX
+ #include <sys/param.h>
+@@ -543,7 +544,7 @@ int get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoDat
+ #if defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+ #include <sys/param.h>
+ #include <sys/time.h>
+-#include <uvm/uvm.h>
++#include <sys/vmmeter.h>
+ #include <unistd.h>
+ #endif
+ #ifdef Q_OS_HPUX
