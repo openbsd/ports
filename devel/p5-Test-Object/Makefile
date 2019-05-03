@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/04/28 14:14:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/03 11:59:52 cwen Exp $
 
 COMMENT=	thoroughly testing objects via registered handlers
 
@@ -7,6 +7,8 @@ PKG_ARCH=	*
 
 DISTNAME=	Test-Object-0.08
 CATEGORIES=	devel
+
+FIX_EXTRACT_PERMISSIONS=	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
