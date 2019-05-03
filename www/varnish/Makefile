@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.41 2018/12/14 21:22:38 kn Exp $
+# $OpenBSD: Makefile,v 1.42 2019/05/03 11:06:26 gonzalo Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
-DISTNAME =		varnish-6.1.1
-REVISION =		1
+DISTNAME =		varnish-6.2.0
 
 CATEGORIES =		www
 
-SHARED_LIBS =		varnishapi	1.0	# 1.6
+SHARED_LIBS =		varnishapi      2.0     # 2.2
 
 HOMEPAGE =		https://www.varnish-cache.org/
 
@@ -24,7 +23,7 @@ EXTRACT_SUFX =		.tgz
 WANTLIB += c curses execinfo m pcre pthread readline
 
 MODULES =		lang/python
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	lib/libvcc/{vsc,vmod}tool.py
 
@@ -32,7 +31,7 @@ BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool \
 			textproc/py-docutils${MODPY_FLAVOR} \
-			textproc/py-sphinx
+			textproc/py-sphinx${MODPY_FLAVOR}
 LIB_DEPENDS =		devel/pcre
 # The internal backtrace implementation fails to build with -Werror on arm/hppa
 LIB_DEPENDS +=		devel/libexecinfo
