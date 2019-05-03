@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.9 2019/05/03 07:35:59 bket Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -189,7 +189,7 @@ class develop_with_jquery(DevelopCommand):
+ 
+ 
+ cmdclass['sdist'] = sdist_with_jquery
+-cmdclass['install_lib'] = install_lib_with_jquery
++#cmdclass['install_lib'] = install_lib_with_jquery
+ cmdclass['develop'] = develop_with_jquery
+ 
+ 
