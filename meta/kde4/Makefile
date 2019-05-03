@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2019/05/02 16:51:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.66 2019/05/03 16:35:03 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -29,10 +29,10 @@ PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 REVISION-minimal =	10
 REVISION-games = 3
 REVISION-sdk = 4
-REVISION-edu = 6
+REVISION-edu = 7
 REVISION-multimedia = 0
 REVISION-extras = 10
-REVISION-main =		26
+REVISION-main =		27
 REVISION-admin =	1
 REVISION-graphics =	3
 
@@ -76,7 +76,6 @@ KDE4-bindings = \
 	${MODKDE4_DEP_DIR}/kimono
 
 KDE4-edu = \
-	${MODKDE4_DEP_DIR}/kstars	\
 	${MODKDE4_DEP_DIR}/kturtle	\
 	${MODKDE4_DEP_DIR}/kwordquiz	\
 	${MODKDE4_DEP_DIR}/libkdeedu	\
