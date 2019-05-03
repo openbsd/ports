@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2017/04/15 14:11:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/03 13:45:29 danj Exp $
 
 COMMENT =		menu-based Usenet newsreader
 DISTNAME =		nn-6.7.3
-REVISION =		3
+REVISION =		4
 CATEGORIES =		news
 HOMEPAGE =		http://www.nndev.org
-
-MAINTAINER =		Aaron W. Hsu <arcfide@sacrideo.us>
 
 # 4 point NN License a la BSD but with GPL Source Restriction and Freeware
 # Requirement
