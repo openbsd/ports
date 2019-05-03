@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/03 05:13:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/03 05:32:41 rsadowski Exp $
 
 COMMENT =	CommonMark parsing and rendering library and program in C
 
 GH_ACCOUNT =	commonmark
 GH_PROJECT =	cmark
-GH_TAGNAME =	0.28.3
+GH_TAGNAME =	0.29.0
 
-SHARED_LIBS +=	cmark                     0.0 # 0.28
+SHARED_LIBS +=	cmark                     0.0 # 0.29
 
 CATEGORIES =	textproc
 
