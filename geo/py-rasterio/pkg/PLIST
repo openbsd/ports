@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/22 13:52:26 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/03 16:33:25 landry Exp $
 bin/rio${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/rasterio/
 lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -44,7 +44,6 @@ lib/python${MODPY_VERSION}/site-packages/rasterio/_example.so
 lib/python${MODPY_VERSION}/site-packages/rasterio/_features.so
 lib/python${MODPY_VERSION}/site-packages/rasterio/_fill.so
 lib/python${MODPY_VERSION}/site-packages/rasterio/_io.so
-lib/python${MODPY_VERSION}/site-packages/rasterio/_shim.so
 lib/python${MODPY_VERSION}/site-packages/rasterio/_warp.so
 lib/python${MODPY_VERSION}/site-packages/rasterio/compat.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/control.py
