@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/05/01 11:38:52 bket Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/05/03 06:59:58 ajacoutot Exp $
 !%%python3%%
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pylab.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/
@@ -242,7 +242,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/blocking_input.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/category.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/cbook/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/cbook/__init__.py
-lib/python${MODPY_VERSION}/site-packages/matplotlib/cbook/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/cbook/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/cbook/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/cbook/${MODPY_PYCACHE}_backports.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/cbook/${MODPY_PYCACHE}deprecation.${MODPY_PYC_MAGIC_TAG}pyc
@@ -560,7 +560,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/${MODPY_PYCACHE}exce
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/${MODPY_PYCACHE}noseclasses.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/__init__.py
-lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
@@ -568,7 +568,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/decorators.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/plugins/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/plugins/__init__.py
-lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/plugins/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/plugins/${MODPY_PYCACHE}knownfailure.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/testing/_nose/plugins/${MODPY_PYCACHE}performgc.${MODPY_PYC_MAGIC_TAG}pyc

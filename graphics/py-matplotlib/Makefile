@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.75 2019/05/01 11:38:52 bket Exp $
+# $OpenBSD: Makefile,v 1.76 2019/05/03 06:59:58 ajacoutot Exp $
 
 COMMENT=	Python charting and plotting API
 
 MODPY_EGG_VERSION =	2.2.4
 DISTNAME =		matplotlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		graphics devel math
 
