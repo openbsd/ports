@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.761 2019/05/02 22:10:57 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.762 2019/05/03 06:00:58 feinerer Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1382,6 +1382,7 @@ my $cve = {
 	'sysutils/ansible,-main' => 'ansible-<2.7.1',
 	'sysutils/mcollective' => 'mcollective-<2.5.3',
 	'telephony/asterisk,-main' => 'asterisk-<13.23.1',
+	'telephony/coturn' => 'turnserver-<4.5.1.1',
 	'www/apache-httpd,-main' => 'apache-httpd-<2.4.35',
 	'www/bozohttpd' => 'bozohttpd-<20130711p0',
 	'www/chromium' => 'chromium-<69.0.3497.100',
