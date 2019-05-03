@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/03 11:09:55 kn Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/03 12:35:00 solene Exp $
 
 COMMENT =		static git page generator
 
 DISTNAME =		stagit-0.9.2
+REVISION =		0
 
 CATEGORIES =		www
 
 HOMEPAGE =		https://codemadness.org/
+
+MAINTAINER =		Hiltjo Posthuma <hiltjo@codemadness.org>
 
 # MIT/X Consortium License
 PERMIT_PACKAGE_CDROM =	Yes
