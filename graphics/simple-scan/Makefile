@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.53 2019/01/02 08:25:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2019/05/04 12:02:39 ajacoutot Exp $
 
 COMMENT=		simple scanning utility
 
 GNOME_PROJECT=		simple-scan
-GNOME_VERSION=		3.30.2
-REVISION=		0
+GNOME_VERSION=		3.32.2
 
 CATEGORIES=		graphics
 
@@ -15,8 +14,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c cairo colord gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-3 intl m sane webp webpmux z
+WANTLIB += atk-1.0 c cairo cairo-gobject colord colordprivate
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3
+WANTLIB += intl m pango-1.0 pangocairo-1.0 sane webp webpmux z
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -30,7 +30,7 @@ LIB_DEPENDS=		graphics/libwebp \
 # xdg-email(1)
 RUN_DEPENDS +=		devel/xdg-utils
 
-MODGNOME_TOOLS=		desktop-file-utils yelp
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 # patch-src_simple-scan_vala
 MODGNOME_TOOLS +=	vala

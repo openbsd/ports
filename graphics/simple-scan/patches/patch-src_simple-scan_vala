@@ -1,7 +1,6 @@
-$OpenBSD: patch-src_simple-scan_vala,v 1.7 2019/04/29 18:01:13 jasper Exp $
+$OpenBSD: patch-src_simple-scan_vala,v 1.8 2019/05/04 12:02:40 ajacoutot Exp $
 
 - No gusb on OpenBSD.
-- https://github.com/GNOME/simple-scan/commit/14af80a9e87e71711358c340f45248e9a6d76941
 
 Index: src/simple-scan.vala
 --- src/simple-scan.vala.orig
@@ -32,7 +31,7 @@ Index: src/simple-scan.vala
          if (default_device != null)
          {
              List<ScanDevice> device_list = null;
-@@ -99,13 +87,12 @@ public class SimpleScan : Gtk.Application
+@@ -99,7 +87,6 @@ public class SimpleScan : Gtk.Application
          base.shutdown ();
          book = null;
          app = null;
@@ -40,13 +39,6 @@ Index: src/simple-scan.vala
          scanner.free ();
      }
  
-     private void update_scan_devices_cb (Scanner scanner, List<ScanDevice> devices)
-     {
--        var devices_copy = devices.copy ();
-+        var devices_copy = devices.copy_deep ((CopyFunc) Object.ref);
- 
-         /* If the default device is not detected add it to the list */
-         if (default_device != null)
 @@ -184,34 +171,8 @@ public class SimpleScan : Gtk.Application
  
      public string? suggest_driver ()

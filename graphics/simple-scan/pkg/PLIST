@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/01/01 16:47:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/05/04 12:02:40 ajacoutot Exp $
 @bin bin/simple-scan
 @man man/man1/simple-scan.1
 share/applications/simple-scan.desktop
@@ -624,6 +624,8 @@ share/help/zh_TW/simple-scan/rotate.page
 share/help/zh_TW/simple-scan/save.page
 share/help/zh_TW/simple-scan/scanner.page
 share/help/zh_TW/simple-scan/scanning.page
+share/icons/hicolor/scalable/apps/org.gnome.SimpleScan.svg
+share/icons/hicolor/symbolic/apps/org.gnome.SimpleScan-symbolic.svg
 share/locale/af/LC_MESSAGES/simple-scan.mo
 share/locale/am/LC_MESSAGES/simple-scan.mo
 share/locale/ar/LC_MESSAGES/simple-scan.mo
@@ -636,8 +638,6 @@ share/locale/bo/LC_MESSAGES/
 share/locale/bo/LC_MESSAGES/simple-scan.mo
 share/locale/ca/LC_MESSAGES/simple-scan.mo
 share/locale/ca@valencia/LC_MESSAGES/simple-scan.mo
-share/locale/ce/
-share/locale/ce/LC_MESSAGES/
 share/locale/ce/LC_MESSAGES/simple-scan.mo
 share/locale/cs/LC_MESSAGES/simple-scan.mo
 share/locale/da/LC_MESSAGES/simple-scan.mo
@@ -659,6 +659,7 @@ share/locale/hr/LC_MESSAGES/simple-scan.mo
 share/locale/hu/LC_MESSAGES/simple-scan.mo
 share/locale/hy/LC_MESSAGES/simple-scan.mo
 share/locale/id/LC_MESSAGES/simple-scan.mo
+share/locale/is/LC_MESSAGES/simple-scan.mo
 share/locale/it/LC_MESSAGES/simple-scan.mo
 share/locale/ja/LC_MESSAGES/simple-scan.mo
 share/locale/kk/LC_MESSAGES/simple-scan.mo
@@ -668,9 +669,8 @@ share/locale/ku/LC_MESSAGES/simple-scan.mo
 share/locale/ky/LC_MESSAGES/simple-scan.mo
 share/locale/lt/LC_MESSAGES/simple-scan.mo
 share/locale/lv/LC_MESSAGES/simple-scan.mo
-share/locale/mhr/
-share/locale/mhr/LC_MESSAGES/
 share/locale/mhr/LC_MESSAGES/simple-scan.mo
+share/locale/ml/LC_MESSAGES/simple-scan.mo
 share/locale/ms/LC_MESSAGES/simple-scan.mo
 share/locale/my/LC_MESSAGES/simple-scan.mo
 share/locale/nb/LC_MESSAGES/simple-scan.mo
@@ -683,8 +683,6 @@ share/locale/pt/LC_MESSAGES/simple-scan.mo
 share/locale/pt_BR/LC_MESSAGES/simple-scan.mo
 share/locale/ro/LC_MESSAGES/simple-scan.mo
 share/locale/ru/LC_MESSAGES/simple-scan.mo
-share/locale/sd/
-share/locale/sd/LC_MESSAGES/
 share/locale/sd/LC_MESSAGES/simple-scan.mo
 share/locale/se/
 share/locale/se/LC_MESSAGES/
@@ -711,26 +709,6 @@ share/locale/zh_CN/LC_MESSAGES/simple-scan.mo
 share/locale/zh_HK/LC_MESSAGES/simple-scan.mo
 share/locale/zh_TW/LC_MESSAGES/simple-scan.mo
 share/metainfo/simple-scan.appdata.xml
-share/simple-scan/
-share/simple-scan/icons/
-share/simple-scan/icons/hicolor/
-share/simple-scan/icons/hicolor/16x16/
-share/simple-scan/icons/hicolor/16x16/actions/
-share/simple-scan/icons/hicolor/16x16/actions/object-crop.png
-share/simple-scan/icons/hicolor/22x22/
-share/simple-scan/icons/hicolor/22x22/actions/
-share/simple-scan/icons/hicolor/22x22/actions/object-crop.png
-share/simple-scan/icons/hicolor/24x24/
-share/simple-scan/icons/hicolor/24x24/actions/
-share/simple-scan/icons/hicolor/24x24/actions/object-crop.png
-share/simple-scan/icons/hicolor/32x32/
-share/simple-scan/icons/hicolor/32x32/actions/
-share/simple-scan/icons/hicolor/32x32/actions/object-crop.png
-share/simple-scan/icons/hicolor/48x48/
-share/simple-scan/icons/hicolor/48x48/actions/
-share/simple-scan/icons/hicolor/48x48/actions/object-crop.png
-share/simple-scan/icons/hicolor/scalable/
-share/simple-scan/icons/hicolor/scalable/actions/
-share/simple-scan/icons/hicolor/scalable/actions/object-crop.svg
 @tag glib-compile-schemas
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
