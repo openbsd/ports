@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/01 04:04:03 kmos Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/04 19:02:49 kmos Exp $
 
 COMMENT=	download data from remote data services (such as THREDDS)
 
@@ -6,8 +6,9 @@ MODPY_EGG_VERSION=	0.8.0
 DISTNAME=		siphon-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
+REVISION=		0
 
-HOMEPAGE=		http://unidata.github.io/cftime/
+HOMEPAGE=		https://unidata.github.io/siphon/
 
 MAINTAINER=		Martin Reindl <martin@catai.org>
 
