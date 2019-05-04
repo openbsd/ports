@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_tcp_c,v 1.1 2019/05/04 20:16:42 remi Exp $
+
+LibreSSL has no support for @SECLEVEL
+
+Index: src/tcp.c
+--- src/tcp.c.orig
++++ src/tcp.c
+@@ -1183,14 +1183,8 @@ relpTcpTLSSetPrio_ossl(relpTcp_t *const pThis)
+ 	/* Compute priority string (in simple cases where the user does not care...) */
+ 	if(pThis->pristring == NULL) {
+ 		if (pThis->authmode == eRelpAuthMode_None) {
+-			#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+-			 /* NOTE: do never use: +eNULL, it DISABLES encryption! */
+-			strncpy(pristringBuf, "ALL:+COMPLEMENTOFDEFAULT:+ADH:+ECDH:+aNULL@SECLEVEL=0",
+-				sizeof(pristringBuf));
+-			#else
+ 			strncpy(pristringBuf, "ALL:+COMPLEMENTOFDEFAULT:+ADH:+ECDH:+aNULL",
+ 				sizeof(pristringBuf));
+-			#endif
+ 		} else {
+ 			strncpy(pristringBuf, "DEFAULT", sizeof(pristringBuf));
+ 		}
