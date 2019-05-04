@@ -1,9 +1,10 @@
-$OpenBSD: patch-include_driver_Platform_unix_h,v 1.1.1.1 2016/02/01 18:57:59 feinerer Exp $
---- include/driver/Platform_unix.h.orig	Wed Dec 30 14:56:29 2015
-+++ include/driver/Platform_unix.h	Wed Dec 30 14:57:47 2015
-@@ -39,7 +39,7 @@
- #include <ctype.h>
+$OpenBSD: patch-include_driver_Platform_unix_h,v 1.2 2019/05/04 09:10:11 feinerer Exp $
+Index: include/driver/Platform_unix.h
+--- include/driver/Platform_unix.h.orig
++++ include/driver/Platform_unix.h
+@@ -40,7 +40,7 @@
  #include <string.h>
+ #include <stdint.h>
  
 -#ifndef OS_DARWIN
 +#if !defined(OS_DARWIN) && !defined(OS_OPENBSD)

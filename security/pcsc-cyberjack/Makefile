@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/02 10:01:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/04 09:10:10 feinerer Exp $
 
 COMMENT =		REINER SCT cyberJack chipcard reader driver
 
-DISTNAME =		pcsc-cyberjack-3.99.5final.SP11
+DISTNAME =		pcsc-cyberjack_3.99.5final.SP13
+PKGNAME =		${DISTNAME:S/_/-/}
 
 SHARED_LIBS =		ifd-cyberjack		0.0 # 6.0
 
@@ -17,9 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m usb-1.0
 
-MASTER_SITES =		http://support.reiner-sct.de/downloads/LINUX/V3.99.5_SP11/
-
-EXTRACT_SUFX =		.tar.bz2
+MASTER_SITES =		https://support.reiner-sct.de/downloads/LINUX/V3.99.5_SP13/
 
 # -std=c++11
 COMPILER =		base-clang ports-clang ports-gcc
@@ -40,6 +39,8 @@ CONFIGURE_ARGS +=	--disable-xml2 \
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
+
+WRKDIST =		${WRKDIR}/${DISTNAME:S/_/-/}
 
 # Remove MSDOS line endings in files needing a patch
 post-extract:

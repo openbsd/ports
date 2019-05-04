@@ -1,7 +1,8 @@
-$OpenBSD: patch-cjeca32_Debug_cpp,v 1.1.1.1 2016/02/01 18:57:59 feinerer Exp $
---- cjeca32/Debug.cpp.orig	Sun Jan 31 09:23:12 2016
-+++ cjeca32/Debug.cpp	Sun Jan 31 09:23:32 2016
-@@ -139,7 +139,7 @@ CDebug Debug(0xffffffff);
+$OpenBSD: patch-cjeca32_Debug_cpp,v 1.2 2019/05/04 09:10:11 feinerer Exp $
+Index: cjeca32/Debug.cpp
+--- cjeca32/Debug.cpp.orig
++++ cjeca32/Debug.cpp
+@@ -141,7 +141,7 @@ CDebug Debug(0xffffffff);
  
  
  
