@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2019/04/24 16:26:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/05/04 21:46:16 sthen Exp $
 
 COMMENT =		various tools for the Go programming language
 GH_ACCOUNT =		golang
 GH_PROJECT =		tools
-GH_COMMIT = 		f727befe758c04ce68d52abc6e69ad111e2c6797
+GH_COMMIT =		f727befe758c04ce68d52abc6e69ad111e2c6797
 DISTNAME =		go-tools-1.12.20190226
 CATEGORIES =		devel
 HOMEPAGE =		https://godoc.org/golang.org/x/tools
@@ -15,13 +15,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=		c pthread
 
 MODULES =		lang/go
-MODGO_ENV =		PATH="${PORTPATH}"
 MODGO_TYPE =		bin
 
 BUILD_DEPENDS =		net/go-net
 RUN_DEPENDS =		${MODGO_RUN_DEPENDS}
 
-GODOC_TARGET = 		golang.org/x/tools/cmd/godoc
+GODOC_TARGET =		golang.org/x/tools/cmd/godoc
 
 _MAIN =			golang.org/x/tools
 _SUBPKGS =		benchcmp \

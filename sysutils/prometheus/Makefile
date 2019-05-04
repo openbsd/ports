@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/08 18:37:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/04 21:46:17 sthen Exp $
 
 COMMENT =		systems monitoring and alerting toolkit
 
@@ -20,13 +20,14 @@ WANTLIB =		c pthread
 
 BUILD_DEPENDS =		devel/promu
 
-USE_GMAKE = 		Yes
+USE_GMAKE =		Yes
 
 MODULES=		lang/go
+MODGO_GOPATH=		${MODGO_WORKSPACE}
 
+# promu doesn't like the default PREFIX
 do-build:
-	cd ${WRKSRC} && GOMAXPROCS=${MAKE_JOBS} GOCACHE=${MODGO_GOCACHE} \
-	    GOPATH=${MODGO_WORKSPACE} ${MAKE_PROGRAM} \
+	cd ${WRKSRC} && ${MAKE_ENV} GOMAXPROCS=${MAKE_JOBS} PREFIX=. ${MAKE_PROGRAM} \
 	    PROMU="${LOCALBASE}/bin/promu -v" build
 
 do-install:
@@ -47,6 +48,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/NOTICE ${PREFIX}/share/doc/prometheus/
 
 do-test:
-	cd ${WRKSRC} && GOPATH=${MODGO_WORKSPACE} ${MAKE_PROGRAM} test
+	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} test
 
 .include <bsd.port.mk>

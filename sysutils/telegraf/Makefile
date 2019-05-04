@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/25 22:40:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/04 21:46:17 sthen Exp $
 
 COMMENT =	plugin-driven server agent for collecting metrics
 
@@ -40,8 +40,8 @@ tarball: clean distclean
 	mkdir -p ${WRKDIR}/go/src/github.com/influxdata/
 	ftp -o ${WRKDIR}/${DISTFILES} https://github.com/influxdata/telegraf/archive/${GH_TAGNAME}/${DISTFILES}
 	tar -C ${WRKDIR}/go/src/github.com/influxdata/ -xzf ${WRKDIR}/${DISTFILES}
-	${SETENV} ${MODGO_ENV} go get github.com/golang/dep/cmd/dep
-	cd ${WRKDIR}/go/src/github.com/influxdata/${DISTNAME} && ${SETENV} ${MODGO_ENV} ${WRKDIR}/go/bin/dep ensure
+	${SETENV} ${MAKE_ENV} go get github.com/golang/dep/cmd/dep
+	cd ${WRKDIR}/go/src/github.com/influxdata/${DISTNAME} && ${SETENV} ${MAKE_ENV} ${WRKDIR}/go/bin/dep ensure
 	rm -Rf ${WRKDIR}/go/{bin,pkg} ${WRKDIR}/go/src/github.com/influxdata/${DISTNAME}/vendor/github.com/influxdata/telegraf ${WRKDIR}/${DISTFILES}
 	cd ${WRKDIR}/go/src/github.com/influxdata/ && tar -czf /usr/ports/distfiles/${DISTFILES} ${DISTNAME}
 

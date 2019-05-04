@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/01/23 00:56:46 abieber Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/04 21:46:17 sthen Exp $
 
 COMMENT =	pass compatible password manager written in go
 
@@ -26,7 +26,7 @@ RUN_DEPENDS =	devel/git \
 
 ALL_TARGET =	github.com/gopasspw/gopass
 
-# Tests require MODGO_ENV, but break in weird ways when it is set.
-NO_TEST =	Yes
+# for tests; some still fail
+PORTHOME =	${WRKDIR}
 
 .include <bsd.port.mk>

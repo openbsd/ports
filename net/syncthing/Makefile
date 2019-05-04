@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/03 12:58:59 edd Exp $
+# $OpenBSD: Makefile,v 1.26 2019/05/04 21:46:17 sthen Exp $
 
 COMMENT =	open decentralized synchronization utility
 
@@ -24,7 +24,6 @@ SUBST_VARS +=		VARBASE
 
 MODULES =		lang/go
 MODGO_TYPE =		bin
-MODGO_ENV =		PATH="${PORTPATH}" HOME="${PORTHOME}"
 
 do-build:
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go \

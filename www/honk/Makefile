@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/02 05:03:07 bentley Exp $
-
-NO_CCACHE =		Yes
+# $OpenBSD: Makefile,v 1.3 2019/05/04 21:46:17 sthen Exp $
 
 COMMENT =		federated status updater
 

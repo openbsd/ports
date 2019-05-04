@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/04/17 13:19:49 solene Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/04 21:46:17 sthen Exp $
 
 COMMENT =		compact self-hosted Git service
 
@@ -20,7 +20,6 @@ WANTLIB +=		c pthread
 
 MODULES =		lang/go
 
-MODGO_ENV =		PATH="${PORTPATH}" CFLAGS="${CFLAGS}"
 MODGO_FLAGS +=		-tags "sqlite cert"
 
 RUN_DEPENDS =		devel/git

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/04/14 22:53:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/04 21:46:16 sthen Exp $
 
 COMMENT =		wraps git in order to extend it with extra features
 
@@ -19,8 +19,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += c pthread
 
 MODULES =		lang/go
-
-MODGO_ENV=		PATH="${PORTPATH}" CFLAGS="${CFLAGS}"
 
 RUN_DEPENDS =		devel/git
 

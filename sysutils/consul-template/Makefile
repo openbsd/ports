@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/09/04 12:46:22 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/04 21:46:17 sthen Exp $
 
 COMMENT=		template rendering and notifications with Consul
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c pthread
 
 MODULES=		lang/go
+TEST_DEPENDS=		sysutils/consul
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/consul-template

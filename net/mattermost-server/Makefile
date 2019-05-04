@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/03/21 11:36:24 pvk Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/04 21:46:17 sthen Exp $
 
 COMMENT =	open source Slack-alternative
 
@@ -11,7 +11,7 @@ MASTER_SITES0 =	https://releases.mattermost.com/${V}/
 
 DISTNAME =	mattermost-server-${V}
 
-DISTFILES += 	${DISTNAME}${EXTRACT_SUFX} \
+DISTFILES +=	${DISTNAME}${EXTRACT_SUFX} \
 		mattermost-${V}-linux-amd64${EXTRACT_SUFX}:0
 
 CATEGORIES =	net
@@ -25,7 +25,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += c pthread
 
 MODULES =	lang/go
-MODGO_ENV =	PATH="${PORTPATH}" HOME="${PORTHOME}"
 MODGO_LDFLAGS =	-X github.com/mattermost/mattermost-server/model.BuildNumber=${V}
 NO_TEST =	Yes
 

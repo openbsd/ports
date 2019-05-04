@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/04/30 08:51:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2019/05/04 21:46:17 sthen Exp $
 
 COMMENT =	flexible DNS proxy with support for encrypted DNS protocols
 
@@ -19,7 +19,7 @@ WANTLIB =	c pthread
 
 MODULES =	lang/go
 MODGO_TYPE =	bin
-MODGO_ENV =	PATH="${PORTPATH}" HOME="${PORTHOME}"
+NO_TEST =	Yes
 
 INSTDIR =	${PREFIX}/share/examples/dnscrypt-proxy
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/14 22:53:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/04 21:46:16 sthen Exp $
 
 COMMENT =	modern and intuitive terminal-based text editor
 
@@ -22,7 +22,6 @@ MODULES =		lang/go
 MODGO_TYPE =            bin
 WRKDIST =		${WRKDIR}/micro
 
-MAKE_ENV +=		MODGO_CMD="${MODGO_CMD}"
 do-build:
 	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE} build-quick ${MAKE_FLAGS}
 

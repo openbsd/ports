@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/12/20 14:13:17 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/04 21:46:17 sthen Exp $
 
 # go-ps only supports amd64 on OpenBSD
 # ../vendor/github.com/keybase/go-ps/process.go:39: undefined: processes
@@ -31,7 +31,6 @@ WRKSRC =		${WRKDIR}/go/src/github.com/keybase/client
 
 MODULES =		lang/go
 MODGO_TYPE =		bin
-MODGO_ENV =		PATH="${PORTPATH}" HOME="${PORTHOME}"
 
 NO_TEST =		Yes
 

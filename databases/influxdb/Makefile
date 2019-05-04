@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/03/30 11:16:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/04 21:46:16 sthen Exp $
 
 COMMENT =	time-series datastore for metrics, events, and analytics
 
@@ -36,6 +36,8 @@ WRKDIST =	${WRKSRC}
 USE_GMAKE =	Yes
 SUBST_VARS =	VARBASE
 
+NO_TEST =	Yes
+
 do-build:
 	cd ${WRKSRC} && ${MODGO_BUILD_CMD} ./...
 	cd ${WRKSRC}/man && ${MAKE_PROGRAM}
@@ -53,7 +55,7 @@ tarball: clean distclean
 	ftp -o ${WRKDIR}/gpm https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm
 	ftp -o ${WRKDIR}/${DISTFILES} https://github.com/influxdata/influxdb/archive/v${V}/${DISTFILES}
 	tar -s /influxdb-${V}/influxdb/ -C ${WRKDIR}/go/src/github.com/influxdata/ -xzf ${WRKDIR}/${DISTFILES}
-	${SETENV} ${MODGO_ENV} bash ${WRKDIR}/gpm get ${WRKSRC}/Godeps
+	${SETENV} ${MAKE_ENV} bash ${WRKDIR}/gpm get ${WRKSRC}/Godeps
 	find ${WRKDIR}/go -name .git -type d | xargs rm -Rf
 	cd ${WRKDIR} && tar -czf /usr/ports/distfiles/${DISTFILES} go
 
