@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2019/03/11 16:34:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.188 2019/05/04 13:12:02 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -7,7 +7,7 @@ COMMENT-nfs=		GVFS mount module for NFS
 COMMENT-google=		GVFS mount module for Google Drive
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.38.2
+GNOME_VERSION=		1.40.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
@@ -117,10 +117,6 @@ CONFIGURE_ARGS +=	-Dgoogle=false
 
 # test_polkitd.py, gvfs-test
 TEST_DEPENDS=		devel/py-gobject3
-
-# XXX see patches
-pre-build:
-	chmod +x ${WRKSRC}/codegen.py
 
 # -Dadmin=false
 post-install:
