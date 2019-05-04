@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2015/03/31 09:44:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/04 00:17:11 danj Exp $
 
 COMMENT=	IBM 3270 terminal emulator for the X Window System
 
 DISTNAME=	x3270-3.3.6
-REVISION=	4
+REVISION=	5
 CATEGORIES=    	comms
 
 HOMEPAGE=	http://x3270.bgp.nu/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=x3270/}
 EXTRACT_SUFX=	.tgz
-
-MAINTAINER=	Claudio Correa <correa@pucpcaldas.br>
 
 # BSD, MIT
 PERMIT_PACKAGE_CDROM=	Yes
