@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2019/04/28 20:51:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2019/05/04 11:07:45 jasper Exp $
 
 COMMENT=		GLib library wrapping libgit2
 
-V=			0.27.8
+V=			0.28.0.1
 DISTNAME=		libgit2-glib-$V
-REVISION=		0
 
-SHARED_LIBS +=	git2-glib-1.0        5.0      # 0.0
+SHARED_LIBS +=	git2-glib-1.0        5.1      # 0.0
 
 SUBDIR=			sources/libgit2-glib/${V:C/^([0-9]+\.[0-9]+).*/\1/}/
 MASTER_SITES=		${MASTER_SITE_GNOME:=${SUBDIR}}
@@ -23,12 +22,10 @@ MODPY_VERSION=          ${MODPY_DEFAULT_VERSION_3}
 BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 # MODPY_LIBDIR/gi/overrides/
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
-LIB_DEPENDS=		devel/libgit2/libgit2>=0.26.0
+LIB_DEPENDS=		devel/libgit2/libgit2>=0.28.0
 
 USE_GMAKE=		Yes
 
-WANTLIB += crypto curl ffi gio-2.0 git2 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 iconv intl nghttp2 pcre pthread
-WANTLIB += ssh2 ssl z
+WANTLIB += gio-2.0 git2 glib-2.0 gobject-2.0 intl
 
 .include <bsd.port.mk>
