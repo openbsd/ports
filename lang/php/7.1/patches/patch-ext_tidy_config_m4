@@ -1,4 +1,5 @@
-$OpenBSD: patch-ext_tidy_config_m4,v 1.1 2018/09/28 22:22:03 sthen Exp $
+$OpenBSD: patch-ext_tidy_config_m4,v 1.2 2019/05/04 08:00:59 sthen Exp $
+
 Index: ext/tidy/config.m4
 --- ext/tidy/config.m4.orig
 +++ ext/tidy/config.m4

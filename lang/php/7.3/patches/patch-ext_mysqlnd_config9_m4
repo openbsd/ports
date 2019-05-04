@@ -1,4 +1,5 @@
-$OpenBSD: patch-ext_mysqlnd_config9_m4,v 1.1 2019/03/08 02:13:05 sthen Exp $
+$OpenBSD: patch-ext_mysqlnd_config9_m4,v 1.2 2019/05/04 08:00:59 sthen Exp $
+
 Index: ext/mysqlnd/config9.m4
 --- ext/mysqlnd/config9.m4.orig
 +++ ext/mysqlnd/config9.m4

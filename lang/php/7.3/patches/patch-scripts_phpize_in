@@ -1,6 +1,8 @@
-$OpenBSD: patch-scripts_phpize_in,v 1.1 2019/03/08 02:13:05 sthen Exp $
---- scripts/phpize.in.orig.port	Sat Jul 27 18:47:01 2013
-+++ scripts/phpize.in	Sat Jul 27 18:47:19 2013
+$OpenBSD: patch-scripts_phpize_in,v 1.2 2019/05/04 08:00:59 sthen Exp $
+
+Index: scripts/phpize.in
+--- scripts/phpize.in.orig
++++ scripts/phpize.in
 @@ -1,11 +1,11 @@
  #!/bin/sh
  

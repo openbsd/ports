@@ -1,4 +1,5 @@
-$OpenBSD: patch-sapi_fpm_www_conf_in,v 1.1 2019/03/08 02:13:05 sthen Exp $
+$OpenBSD: patch-sapi_fpm_www_conf_in,v 1.2 2019/05/04 08:00:59 sthen Exp $
+
 Index: sapi/fpm/www.conf.in
 --- sapi/fpm/www.conf.in.orig
 +++ sapi/fpm/www.conf.in

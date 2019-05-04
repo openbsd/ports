@@ -1,6 +1,8 @@
-$OpenBSD: patch-scripts_php-config_in,v 1.1 2019/03/08 02:13:05 sthen Exp $
---- scripts/php-config.in.orig.port	Thu Jul 18 16:37:33 2013
-+++ scripts/php-config.in	Sun Jul 28 11:30:20 2013
+$OpenBSD: patch-scripts_php-config_in,v 1.2 2019/05/04 08:00:59 sthen Exp $
+
+Index: scripts/php-config.in
+--- scripts/php-config.in.orig
++++ scripts/php-config.in
 @@ -1,12 +1,12 @@
  #! /bin/sh
  
