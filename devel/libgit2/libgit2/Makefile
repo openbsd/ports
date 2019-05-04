@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.41 2019/01/28 20:39:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2019/05/04 11:07:35 jasper Exp $
 
 COMMENT=		the Git library, take 2
 
 GH_ACCOUNT =		libgit2
 GH_PROJECT =		libgit2
-GH_TAGNAME =		v0.27.8
+GH_TAGNAME =		v0.28.1
 
-SHARED_LIBS +=  git2                      11.0 # 0.25
+SHARED_LIBS +=  git2                      12.0 # 0.28
 
 MODULES=		devel/cmake \
 			lang/python
@@ -18,11 +18,9 @@ COMPILER_LANGS=		c
 # for atomic builtins
 MODGCC4_ARCHS=		hppa
 
-# bundles https://github.com/nodejs/http-parser
-LIB_DEPENDS=		net/curl \
-			security/libssh2
+LIB_DEPENDS=		security/libssh2
 
-WANTLIB += crypto curl pthread ssh2 ssl z
+WANTLIB += crypto pthread ssh2 ssl z
 
 CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="-I${LOCALBASE}/include" \
 			-DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib" \
