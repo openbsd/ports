@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.900 2019/05/02 22:01:00 kmos Exp $
+# $OpenBSD: Makefile,v 1.901 2019/05/04 01:41:27 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -281,6 +281,8 @@
      SUBDIR += p5-Maypole
      SUBDIR += p5-Maypole-Authentication-UserSessionCookie
      SUBDIR += p5-Mojo
+     SUBDIR += p5-Mojolicious-Plugin-AccessLog
+     SUBDIR += p5-Mojolicious-Plugin-Thumbnail
      SUBDIR += p5-MojoX-Session
      SUBDIR += p5-Object-eBay
      SUBDIR += p5-PHP-Serialization
