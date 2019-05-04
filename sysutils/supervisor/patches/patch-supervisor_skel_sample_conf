@@ -1,4 +1,4 @@
-$OpenBSD: patch-supervisor_skel_sample_conf,v 1.5 2017/11/15 16:38:14 landry Exp $
+$OpenBSD: patch-supervisor_skel_sample_conf,v 1.6 2019/05/04 15:08:44 edd Exp $
 Index: supervisor/skel/sample.conf
 --- supervisor/skel/sample.conf.orig
 +++ supervisor/skel/sample.conf
@@ -42,17 +42,17 @@ Index: supervisor/skel/sample.conf
 +;startsecs=10                  ; # of secs prog must stay up to be running (def. 1)
  ;startretries=3                ; max # of serial start failures when starting (default 3)
  ;autorestart=unexpected        ; when to restart if exited after running (def: unexpected)
- ;exitcodes=0,2                 ; 'expected' exit codes used with autorestart (default 0,2)
-@@ -93,7 +93,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
- ;stderr_logfile_backups=10     ; # of stderr logfile backups (0 means none, default 10)
+ ;exitcodes=0                   ; 'expected' exit codes used with autorestart (default 0)
+@@ -95,7 +95,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
  ;stderr_capture_maxbytes=1MB   ; number of bytes in 'capturemode' (default 0)
  ;stderr_events_enabled=false   ; emit events on stderr writes (default false)
+ ;stderr_syslog=false           ; send stderr to syslog with process name (default false)
 -;environment=A="1",B="2"       ; process environment additions (def no adds)
 +;environment=A=1,B=2           ; process environment additions (def no adds)
  ;serverurl=AUTO                ; override serverurl computation (childutils)
  
  ; The sample eventlistener section below shows all possible eventlistener
-@@ -110,7 +110,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
+@@ -112,7 +112,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
  ;umask=022                     ; umask for process (default None)
  ;priority=-1                   ; the relative start priority (default -1)
  ;autostart=true                ; start at supervisord start (default: true)
@@ -60,17 +60,17 @@ Index: supervisor/skel/sample.conf
 +;startsecs=10                  ; # of secs prog must stay up to be running (def. 1)
  ;startretries=3                ; max # of serial start failures when starting (default 3)
  ;autorestart=unexpected        ; autorestart if exited after running (def: unexpected)
- ;exitcodes=0,2                 ; 'expected' exit codes used with autorestart (default 0,2)
-@@ -128,7 +128,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
- ;stderr_logfile_maxbytes=1MB   ; max # logfile bytes b4 rotation (default 50MB)
+ ;exitcodes=0                   ; 'expected' exit codes used with autorestart (default 0)
+@@ -132,7 +132,7 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
  ;stderr_logfile_backups=10     ; # of stderr logfile backups (0 means none, default 10)
  ;stderr_events_enabled=false   ; emit events on stderr writes (default false)
+ ;stderr_syslog=false           ; send stderr to syslog with process name (default false)
 -;environment=A="1",B="2"       ; process environment additions
 +;environment=A=1,B=2           ; process environment additions
  ;serverurl=AUTO                ; override serverurl computation (childutils)
  
  ; The sample group section below shows all possible group values.  Create one
-@@ -144,5 +144,5 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
+@@ -148,5 +148,5 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// 
  ; interpreted as relative to this file.  Included files *cannot*
  ; include files themselves.
  
