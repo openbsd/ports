@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/04/25 13:28:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/05/04 10:49:11 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/_cffi_backend.so
 lib/python${MODPY_VERSION}/site-packages/cffi/
 lib/python${MODPY_VERSION}/site-packages/cffi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -21,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}error.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}ffiplatform.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}lock.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}model.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}pkgconfig.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}recompiler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}setuptools_ext.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cffi/${MODPY_PYCACHE}vengine_cpy.${MODPY_PYC_MAGIC_TAG}pyc
@@ -39,6 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/cffi/ffiplatform.py
 lib/python${MODPY_VERSION}/site-packages/cffi/lock.py
 lib/python${MODPY_VERSION}/site-packages/cffi/model.py
 lib/python${MODPY_VERSION}/site-packages/cffi/parse_c_type.h
+lib/python${MODPY_VERSION}/site-packages/cffi/pkgconfig.py
 lib/python${MODPY_VERSION}/site-packages/cffi/recompiler.py
 lib/python${MODPY_VERSION}/site-packages/cffi/setuptools_ext.py
 lib/python${MODPY_VERSION}/site-packages/cffi/vengine_cpy.py
