@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/04 01:18:58 danj Exp $
 
 COMMENT=		produce sprite animations using ASCII art
 
 DISTNAME=		Term-Animation-2.6
 CATEGORIES=		misc
-
-MAINTAINER=		Girish Venkatachalam <girish1729@gmail.com>
+REVISION=		0
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

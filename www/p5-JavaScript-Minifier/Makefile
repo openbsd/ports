@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/20 19:57:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/04 01:18:59 danj Exp $
 
 COMMENT=	Perl extension for minifying JavaScript code
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	JavaScript-Minifier-1.05
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
-
-MAINTAINER=	Girish Venkatachalam <girish1729@gmail.com>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

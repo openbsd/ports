@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/04 01:18:58 danj Exp $
 
 COMMENT =		cut and cat MP3 files
 
@@ -7,10 +7,8 @@ PKG_ARCH =		*
 # strip -p5 from PKGNAME (added by the cpan MODULE)
 DISTNAME =		mp3cut-1.13
 PKGNAME =		${DISTNAME}
-REVISION =		0
+REVISION =		1
 CATEGORIES =		audio
-
-MAINTAINER =		Girish Venkatachalam <girish1729@gmail.com>
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/04 01:18:58 danj Exp $
 
 COMMENT =		parse a CDDB/freedb data file
 
 MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		CDDB-File-1.05
-REVISION =		0
+REVISION =		1
 CATEGORIES =		audio
-
-MAINTAINER =		Girish Venkatachalam <girish1729@gmail.com>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

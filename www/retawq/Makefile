@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/11 23:51:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/04 01:18:59 danj Exp $
 
 COMMENT =		interactive, multi-threaded text mode web browser
 
 DISTNAME =		retawq-0.2.6c
-REVISION = 		2
+REVISION = 		3
 CATEGORIES =		www
 
 HOMEPAGE =		http://retawq.sourceforge.net
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=retawq/}
-
-MAINTAINER =		Girish Venkatachalam <girish1729@gmail.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
