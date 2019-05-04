@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.764 2019/05/04 14:12:39 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.765 2019/05/04 22:01:12 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1341,10 +1341,9 @@ my $cve = {
 	'devel/sdl2-image' => 'sdl2-image-<2.0.4',
 	'graphics/png' => 'png-<1.6.37',
 	'graphics/tiff' => 'tiff-<4.0.4beta',
-	'lang/php/5.6,-main' => 'php-<5.6.38',
-	'lang/php/7.0,-main' => 'php->7.0,<7.0.32',
-	'lang/php/7.1,-main' => 'php->7.1,<7.1.22',
-	'lang/php/7.2,-main' => 'php->7.2,<7.2.10',
+	'lang/php/7.1,-main' => 'php->7.1,<7.1.29',
+	'lang/php/7.2,-main' => 'php->7.2,<7.2.18',
+	'lang/php/7.3,-main' => 'php->7.3,<7.3.5',
 	'lang/python/2.7,-main' => 'python->2.7,<2.7.16',
 	'lang/ruby/2.3,-main' => 'ruby-<2.3.8',
 	'lang/ruby/2.4,-main' => 'ruby->2.4,<2.4.5p2',
@@ -1357,6 +1356,7 @@ my $cve = {
 	'math/hdf5' => 'hdf5-<1.8.21',
 	'multimedia/libquicktime' => 'libquicktime-<1.2.4p13',
 	'net/curl' => 'curl-<7.64.0',
+	'net/dhcpcd' => 'dhcpcd-<7.2.2',
 	'net/haproxy' => 'haproxy-<1.8.17',
 	'net/icecast' => 'icecast-<2.4.4',
 	'net/isc-bind' => 'isc-bind-<9.11.5pl4v0',
