@@ -1,4 +1,5 @@
-$OpenBSD: patch-php_ini-production,v 1.2 2019/02/07 22:48:37 sthen Exp $
+$OpenBSD: patch-php_ini-production,v 1.3 2019/05/04 07:57:00 sthen Exp $
+
 Index: php.ini-production
 --- php.ini-production.orig
 +++ php.ini-production

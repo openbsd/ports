@@ -1,4 +1,5 @@
-$OpenBSD: patch-php_ini-development,v 1.4 2019/04/08 23:24:11 sthen Exp $
+$OpenBSD: patch-php_ini-development,v 1.5 2019/05/04 07:57:00 sthen Exp $
+
 Index: php.ini-development
 --- php.ini-development.orig
 +++ php.ini-development
