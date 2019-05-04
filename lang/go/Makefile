@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2019/04/19 07:15:36 jsing Exp $
+# $OpenBSD: Makefile,v 1.64 2019/05/04 15:03:15 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -82,6 +82,7 @@ do-build:
 		CXX="${CXX}" \
 		GOROOT=${WRKDIST} \
 		GOBIN=${WRKDIST}/bin \
+		GOCACHE=${WRKDIST}/go-cache \
 		GOROOT_FINAL=${GOROOT} \
 		GOROOT_BOOTSTRAP=${GOROOT_BOOTSTRAP} \
 		    ./make.bash --no-banner
