@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.763 2019/05/03 15:27:28 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.764 2019/05/04 14:12:39 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1223,6 +1223,7 @@ my $obsolete_reason = {
 	'gedit-code-assistance' => 3,
 	'py3-backports-abc' => 5,
 	'libkgeomap' => 0,
+	'piwik' => 1,
 };
 
 # reasons for obsolete packages
