@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/01/09 15:51:02 afresh1 Exp $
-bin/package-stash-conflicts
+@comment $OpenBSD: PLIST,v 1.5 2019/05/04 01:27:58 afresh1 Exp $
+@comment bin/package-stash-conflicts
 ${P5SITE}/Package/
 ${P5SITE}/Package/Stash/
 ${P5SITE}/Package/Stash.pm
-${P5SITE}/Package/Stash/Conflicts.pm
+@comment ${P5SITE}/Package/Stash/Conflicts.pm
 ${P5SITE}/Package/Stash/PP.pm
-@man man/man1/package-stash-conflicts.1
+@comment @man man/man1/package-stash-conflicts.1
 @man man/man3p/Package::Stash.3p
 @man man/man3p/Package::Stash::PP.3p
