@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/03 16:59:10 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/04 14:29:48 sthen Exp $
 
 COMMENT =	run arbitrary commands when files change
 
-DISTNAME =	entr-4.1
-REVISION =	0
+DISTNAME =	entr-4.2
 
 CATEGORIES =	sysutils
 
@@ -20,7 +19,10 @@ MASTER_SITES =	http://entrproject.org/code/ \
 MAKE_FILE =	Makefile.bsd
 MAKE_FLAGS =	CC="${CC}" \
 		LDFLAGS="${LDFLAGS}"
-WRKDIST =	${WRKDIR}/eradman-entr-*
+WRKDIST =	${WRKDIR}/eradman-entr
 FAKE_FLAGS =	DESTDIR=""
+
+post-extract:
+	mv ${WRKDIR}/eradman-entr-* ${WRKDIST}
 
 .include <bsd.port.mk>
