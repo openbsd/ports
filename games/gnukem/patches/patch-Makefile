@@ -1,0 +1,32 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2019/05/04 02:00:17 bcallah Exp $
+
+Fix up Makefile.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -8,8 +8,8 @@
+ # 2017-07-29: Remove obsolete standalone-editor-related stuff, and add new thing_monsters.o
+ #
+ 
+-CPP = g++
+-CC = gcc
++CPP ?= g++
++CC ?= gcc
+ 
+ 
+ # dj2016-10 Add L -I/usr/local/include/SDL in process of getting this working on Mac OS X - not sure if this is 'bad' to just have both /usr/include and /usr/local/include??
+@@ -21,11 +21,11 @@ INCLUDEDIRS= -I/usr/include/SDL -I/usr/local/include/S
+ # If you don't -DDATA_DIR to a valid dir, then data files will be assumed
+ # to be in current directory
+ #CCFLAGS = -Wall -I/usr/local/include -DHAVE_SOUND -DDEBUG -O -m486
+-CCFLAGS = -Wall -Wno-switch -DDEBUG $(INCLUDEDIRS)
++CCFLAGS = ${CXXFLAGS} -Wall -Wno-switch -I${LOCALBASE}/include/SDL
+ #Release version:
+ #CCFLAGS = -O -Wall -I/usr/local/include -DHAVE_SOUND $(INCLUDEDIRS)
+ 
+-LIBS = -lSDL -lSDLmain -lSDL_mixer -lpthread 
++LIBS = -L${LOCALBASE}/lib -lSDL -lSDLmain -lSDL_mixer -lpthread 
+ BIN = davegnukem
+ 
+ 

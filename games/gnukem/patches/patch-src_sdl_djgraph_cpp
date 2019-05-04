@@ -1,0 +1,23 @@
+OpenBSD$
+
+Revert commit/a94bae1f70b9110431f8a21f0118141c25a343d8
+
+Index: src/sdl/djgraph.cpp
+--- src/sdl/djgraph.cpp.orig
++++ src/sdl/djgraph.cpp
+@@ -600,15 +600,10 @@ bool djCreateImageHWSurface( djImage* pImage/*, djVisu
+ 		pImage->Height(),
+ 		32,
+ 		pImage->Pitch(),
+-		// R,G,B,A masks (dj2018-03 specify different masks here on PPC etc. - see https://github.com/davidjoffe/dave_gnukem/issues/100 - thanks to @BeWorld2018 for report and patch suggestion)
+-		#if SDL_BYTEORDER==SDL_BIG_ENDIAN
+-		0x0000FF00, 0X00FF0000, 0xFF000000, 0x000000FF
+-		#else
+ 		0xFF0000,
+ 		0xFF00,
+ 		0xFF,
+ 		0xFF000000
+-		#endif
+ 	);
+ 	g_SurfaceMap[ pImage ] = pSurfaceFoo;
+ 

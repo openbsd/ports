@@ -1,0 +1,57 @@
+$OpenBSD: patch-src_djimage_cpp,v 1.1.1.1 2019/05/04 02:00:17 bcallah Exp $
+
+Fix big endian issue
+
+Index: src/djimage.cpp
+--- src/djimage.cpp.orig
++++ src/djimage.cpp
+@@ -264,8 +264,13 @@ int djImage::LoadTGA( const char * szFilename )
+ 					for ( unsigned int j=0; j<nWidth; j++ )
+ 					{
+ 						// reverse endianness from file
++						#if SDL_BYTEORDER==SDL_BIG_ENDIAN
++						m_pData[iOffset+j*2+1] = pBuf[j*2+1];
++						m_pData[iOffset+j*2+0] = pBuf[j*2+0];
++						#else
+ 						m_pData[iOffset+j*2+0] = pBuf[j*2+1];
+ 						m_pData[iOffset+j*2+1] = pBuf[j*2+0];
++						#endif
+ 					}
+ 				}
+ 				djDELV(pBuf);
+@@ -285,10 +290,17 @@ int djImage::LoadTGA( const char * szFilename )
+ 					for ( unsigned int j=0; j<nWidth; j++ )
+ 					{
+ 						// A,B,G,R
++						#if SDL_BYTEORDER==SDL_BIG_ENDIAN
++						m_pData[iOffset + j*4+3] = pBuf[j*3+0];
++						m_pData[iOffset + j*4+2] = pBuf[j*3+1];
++						m_pData[iOffset + j*4+1] = pBuf[j*3+2];
++						m_pData[iOffset + j*4+0] = 0xFF;
++						#else
+ 						m_pData[iOffset + j*4+0] = pBuf[j*3+0];
+ 						m_pData[iOffset + j*4+1] = pBuf[j*3+1];
+ 						m_pData[iOffset + j*4+2] = pBuf[j*3+2];
+ 						m_pData[iOffset + j*4+3] = 0xFF;
++						#endif
+ 					}
+ 				}
+ 				djDELV(pBuf);
+@@ -314,10 +326,17 @@ int djImage::LoadTGA( const char * szFilename )
+ 						// FIXME: Interesting "problem" .. it seems the VNC server
+ 						// inverts the ordering of some of this stuff! So while doing
+ 						// the remote thing I had everything confused!
++						#if SDL_BYTEORDER==SDL_BIG_ENDIAN
++						m_pData[iOffset + j*4+3] = pBuf[j*4+0];
++						m_pData[iOffset + j*4+2] = pBuf[j*4+1];
++						m_pData[iOffset + j*4+1] = pBuf[j*4+2];
++						m_pData[iOffset + j*4+0] = pBuf[j*4+3];
++						#else
+ 						m_pData[iOffset + j*4+0] = pBuf[j*4+0];
+ 						m_pData[iOffset + j*4+1] = pBuf[j*4+1];
+ 						m_pData[iOffset + j*4+2] = pBuf[j*4+2];
+ 						m_pData[iOffset + j*4+3] = pBuf[j*4+3];
++						#endif
+ 					}
+ //					memcpy(m_pData+(bFlipY?(nHeight-i-1):i)*Pitch(), pBuf, nWidth*4);
+ 				}
