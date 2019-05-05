@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/17 19:52:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/05 22:40:36 danj Exp $
 
 COMMENT=		simple hostname scanner
 
 DISTNAME=		plushs-1.2
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=plushs/}
 
 HOMEPAGE=		http://plushs.sourceforge.net
-
-MAINTAINER=		Jose Jimenez Garcia <pluf@wanadoo.es>
 
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
