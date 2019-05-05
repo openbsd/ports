@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.108 2019/04/01 14:57:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.109 2019/05/05 05:08:26 bentley Exp $
 
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
 GNOME_VERSION =		3.5
 EXTRACT_SUFX =		.tar.bz2
+REVISION =		1
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			gnucash-docs-${GNOME_VERSION}.tar.gz
@@ -17,7 +18,7 @@ SHARED_LIBS +=  gnc-gnome            1.0      # unknown
 
 CATEGORIES =		productivity
 
-HOMEPAGE =		http://www.gnucash.org/
+HOMEPAGE =		https://www.gnucash.org/
 
 MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
