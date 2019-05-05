@@ -1,0 +1,17 @@
+$OpenBSD: patch-t_06_pod_ok_t,v 1.1 2019/05/05 22:37:22 cwen Exp $
+
+Fix:
+Can't stat bin: No such file or directory at
+/usr/local/libdata/perl5/site_perl/Test/Pod.pm line 223.
+
+We let Test::Pod check in blib or lib instead.
+
+Index: t/06_pod_ok.t
+--- t/06_pod_ok.t.orig
++++ t/06_pod_ok.t
+@@ -1,4 +1,4 @@
+ use Test::More;
+ eval "use Test::Pod 1.00";
+ plan skip_all => "Test::Pod 1.00 required for testing POD" if $@;
+-all_pod_files_ok( all_pod_files(qw/bin lib/) );
++all_pod_files_ok( all_pod_files() );
