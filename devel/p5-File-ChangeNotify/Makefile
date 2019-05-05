@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2018/04/29 13:03:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/05 22:15:54 cwen Exp $
 
 COMMENT =	watch for changes to files, cross-platform style
 
-DISTNAME =	File-ChangeNotify-0.28
+DISTNAME =	File-ChangeNotify-0.31
 
 CATEGORIES =	devel
 
@@ -11,16 +11,15 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
 
-RUN_DEPENDS =		devel/p5-Class-Load \
-			devel/p5-Module-Pluggable \
+RUN_DEPENDS =		devel/p5-Module-Pluggable \
 			devel/p5-Module-Runtime \
-			devel/p5-Moo \
+			devel/p5-Moo>=1.006 \
 			devel/p5-Type-Tiny \
 			devel/p5-namespace-autoclean
 
-TEST_DEPENDS =		devel/p5-Test-Exception \
-			devel/p5-Test-Requires \
-			devel/p5-Test-Without-Module
+TEST_DEPENDS =		devel/p5-Test-Requires \
+			devel/p5-Test-Without-Module \
+			devel/p5-Test2-Suite
 
 PKG_ARCH =		*
 
