@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.478 2019/04/25 06:05:43 bentley Exp $
+# $OpenBSD: Makefile,v 1.479 2019/05/05 18:54:30 denis Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -57,6 +57,7 @@
      SUBDIR += feh
      SUBDIR += ffmpeg
      SUBDIR += ffmpegthumbnailer
+     SUBDIR += flameshot
      SUBDIR += fotowall
      SUBDIR += freeglut
      SUBDIR += freeimage
