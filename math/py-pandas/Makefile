@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/05 15:44:13 danj Exp $
 
 COMMENT =		data analysis and manipulation library
 
 MODPY_EGG_VERSION =	0.23.4
 DISTNAME =		pandas-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		math
 
 HOMEPAGE =		https://pandas.pydata.org/
-
-MAINTAINER =		Elias M. Mariani <marianielias@gmail.com>
 
 # BSD 3-Clause
 PERMIT_PACKAGE_CDROM =	Yes

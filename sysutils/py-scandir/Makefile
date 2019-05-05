@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/05 15:44:13 danj Exp $
 
 COMMENT =		improved directory iterator and faster os.walk()
 
 MODPY_EGG_VERSION =	1.10.0
 DISTNAME =		scandir-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://github.com/benhoyt/scandir
-
-MAINTAINER =		Elias M. Mariani <marianielias@gmail.com>
 
 # BSD 3-Clause
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/28 20:51:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/05 15:44:12 danj Exp $
 
 COMMENT =		Jupyter protocol implementation and client libraries
 
 MODPY_EGG_VERSION =	5.2.4
 DISTNAME =		jupyter_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://jupyter.org/
-
-MAINTAINER =		Elias M. Mariani <marianielias@gmail.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

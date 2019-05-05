@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2019/01/02 12:44:07 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/05 15:44:12 danj Exp $
 
 COMMENT =	multiplatform vector graphics editor
 
 VERSION =	2.0rc3
 DISTNAME =	sk1-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://sk1project.net/
-
-MAINTAINER =	Elias M. Mariani <marianielias@gmail.com>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =  Yes

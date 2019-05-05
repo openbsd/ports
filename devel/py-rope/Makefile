@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/28 20:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/05 15:44:12 danj Exp $
 
 COMMENT =		refactoring library
 
 MODPY_EGG_VERSION =	0.12.0
 DISTNAME =		rope-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/python-rope/rope
-
-MAINTAINER =		Elias M. Mariani <marianielias@gmail.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

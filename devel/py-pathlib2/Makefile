@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/05 15:44:12 danj Exp $
 
 COMMENT =		object-oriented filesystem paths
 
 MODPY_EGG_VERSION =	2.3.3
 DISTNAME =		pathlib2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/mcmtroffaes/pathlib2
-
-MAINTAINER =		Elias M. Mariani <marianielias@gmail.com>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

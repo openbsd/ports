@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.87 2019/03/08 20:00:50 cwen Exp $
+# $OpenBSD: Makefile,v 1.88 2019/05/05 15:44:13 danj Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
 DISTNAME=	lyx-2.3.2
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	print editors
 
 HOMEPAGE=	https://www.lyx.org/
-
-MAINTAINER =	Elias M. Mariani <marianielias@gmail.com>
 
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/2.3.x/ \
 		ftp://ftp.ntua.gr/pub/X11/LyX/stable/2.3.x/ \

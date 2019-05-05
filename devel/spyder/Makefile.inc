@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2018/08/29 23:17:16 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/05/05 15:44:12 danj Exp $
 
 DIST_SUBDIR=	spyder
 
 CATEGORIES ?=	devel/spyder
-
-MAINTAINER ?=	Elias M. Mariani <marianielias@gmail.com>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
