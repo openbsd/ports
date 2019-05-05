@@ -1,4 +1,4 @@
-$OpenBSD: patch-nzbget_conf,v 1.2 2018/06/07 15:30:59 bket Exp $
+$OpenBSD: patch-nzbget_conf,v 1.3 2019/05/05 08:14:11 bket Exp $
 
 Index: nzbget.conf
 --- nzbget.conf.orig
@@ -12,7 +12,7 @@ Index: nzbget.conf
  
  # Destination directory for downloaded files.
  #
-@@ -301,7 +301,7 @@ Server1.Notes=
+@@ -294,7 +294,7 @@ Server1.Notes=
  # NOTE: NZBGet also supports listening on Unix domain sockets instead of TCP/IP
  # sockets. To activate this mode set option <ControlIP> to a local path
  # (e. g. "ControlIP=/var/sock").
@@ -21,12 +21,12 @@ Index: nzbget.conf
  
  # Port which NZBGet server and remote client use (1-65535).
  #
-@@ -452,7 +452,7 @@ UpdateCheck=stable
+@@ -447,7 +447,7 @@ UpdateCheck=stable
  # NOTE: This option has effect only if the program was started from
  # root-account, otherwise it is ignored and the daemon runs under
  # current user id.
 -DaemonUsername=root
 +DaemonUsername=_nzbget
  
- # Specify default umask (affects file permissions) for newly created
- # files, POSIX only (000-1000).
+ # Specify default umask, POSIX only (000-1000).
+ #

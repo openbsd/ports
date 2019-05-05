@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/07 15:30:59 bket Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/05 08:14:11 bket Exp $
 
 COMMENT =	binary newsreader supporting NZB files
 
-VERSION =	20.0
+VERSION =	21.0
 DISTNAME =	nzbget-${VERSION}
 
 CATEGORIES =	news
