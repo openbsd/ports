@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2015/06/20 09:47:30 bentley Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/05 22:34:40 danj Exp $
 
 COMMENT=	set of programs to enhance firewall security
 
 DISTNAME=	proxy-suite-1.9
-REVISION=	0
+REVISION=	1
 HOMEPAGE=	http://www.suse.com/en/whitepapers/proxy_suite/
 CATEGORIES=    	net security
-
-MAINTAINER=	Camiel Dobbelaar <cd@sentia.nl>
 
 MASTER_SITES= 	http://ftp.suse.com/pub/projects/proxy-suite/src/ \
 		ftp://ftp.suse.com/pub/projects/proxy-suite/src/

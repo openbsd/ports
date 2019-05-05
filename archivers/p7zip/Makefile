@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2018/10/24 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2019/05/05 22:34:40 danj Exp $
 
 COMMENT-main=	file archiver with high compression ratio
 COMMENT-rar=	rar modules for p7zip
 
 V=		16.02
-REVISION-main=	5
-REVISION-rar=	2
+REVISION-main=	6
+REVISION-rar=	3
 DISTNAME=	p7zip_${V}_src_all
 PKGNAME=	p7zip-${V}
 PKGNAME-main=	p7zip-${V}
@@ -14,8 +14,6 @@ CATEGORIES=	archivers
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 HOMEPAGE=	http://sourceforge.net/projects/p7zip/
-
-MAINTAINER=	Josh Grosse <josh@jggimi.net>
 
 # LGPL, except unRar plugin which is licensed as Freeware
 PERMIT_PACKAGE_CDROM-rar=	no fee
