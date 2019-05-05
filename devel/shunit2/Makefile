@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2017/08/21 19:43:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/05 16:06:34 danj Exp $
 
 COMMENT =		unit test framework for Bourne based shell scripts
 
 DISTNAME =		shunit2-2.1.6
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/kward/shunit2
-
-MAINTAINER =		Robert Peichaer <rpe@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes

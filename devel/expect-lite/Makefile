@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/02 16:02:01 rpe Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/05 16:06:34 danj Exp $
 
 COMMENT =		mature, quick and easy command line automation tool
 
 DISTNAME =		expect-lite_4.9.0
 PKGNAME =		${DISTNAME:S/_/-/}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://expect-lite.sourceforge.net/
-
-MAINTAINER =		Robert Peichaer <rpe@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

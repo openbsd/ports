@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2018/06/16 15:52:46 rpe Exp $
+# $OpenBSD: Makefile,v 1.16 2019/05/05 16:06:34 danj Exp $
 
 COMMENT =		Simple Revision Control
 
 DISTNAME =		src-1.18
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.catb.org/~esr/src/
-
-MAINTAINER =		Robert Peichaer <rpe@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2016/04/27 16:28:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/05/05 16:06:34 danj Exp $
 
 COMMENT=	GNU getopt(1) utility
 
 DISTNAME=	getopt-1.1.6
 PKGNAME=	gnu${DISTNAME}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	misc
 
 HOMEPAGE=	http://software.frodo.looijaard.name/getopt/
-
-MAINTAINER=	Robert Peichaer <rpe@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

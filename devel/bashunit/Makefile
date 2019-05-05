@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/03 15:25:24 rpe Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/05 16:06:34 danj Exp $
 
 COMMENT =		Bash unit testing framework based on xUnit principles
 
@@ -7,10 +7,9 @@ DISTNAME =		bashunit-20140327
 GH_ACCOUNT =		djui
 GH_PROJECT =		bashunit
 GH_COMMIT =		deacbc814120cd086df760f135587eaa86ee4e3a
+REVISION =		0
 
 CATEGORIES =		devel
-
-MAINTAINER =		Robert Peichaer <rpe@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

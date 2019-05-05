@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2018/09/04 12:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/05 16:06:34 danj Exp $
 
 COMMENT=		free real-time logfile analyzer
 
 DISTNAME=		awstats-7.7
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		www
 
 HOMEPAGE=		http://awstats.sourceforge.net/
-
-MAINTAINER=		Robert Peichaer <rpe@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
