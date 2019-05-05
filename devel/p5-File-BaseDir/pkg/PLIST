@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/18 19:54:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/05 22:10:55 cwen Exp $
 ${P5SITE}/File/
 ${P5SITE}/File/BaseDir.pm
+${P5SITE}/File/IconTheme.pm
+${P5SITE}/File/UserDirs.pm
 @man man/man3p/File::BaseDir.3p
+@man man/man3p/File::IconTheme.3p
+@man man/man3p/File::UserDirs.3p
