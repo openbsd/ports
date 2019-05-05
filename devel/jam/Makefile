@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2014/01/25 13:17:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/05 22:29:50 danj Exp $
 
 COMMENT=		build utility like make
 
 DISTNAME=		jam-2.5
-REVISION =		2
+REVISION =		3
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.perforce.com/jam/jam.html
-
-MAINTAINER=		Jonathan Auer <jda@auerfamily.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
