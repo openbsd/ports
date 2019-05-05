@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1128 2019/05/01 23:34:17 juanfra Exp $
+# $OpenBSD: Makefile,v 1.1129 2019/05/05 06:55:06 bentley Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -211,6 +211,7 @@
      SUBDIR += librest
      SUBDIR += librsync
      SUBDIR += libshout
+     SUBDIR += libsignal-protocol-c
      SUBDIR += libsmi
      SUBDIR += libst
      SUBDIR += libtorrent
