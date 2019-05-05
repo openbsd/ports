@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2018/03/16 21:44:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2019/05/05 04:31:21 bentley Exp $
 
 COMMENT=	audio compression codec library
 
@@ -14,7 +14,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
+MASTER_SITES=	https://downloads.xiph.org/releases/vorbis/
 EXTRACT_SUFX=	.tar.xz
 
 WANTLIB=	m ogg

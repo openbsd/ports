@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/11 15:26:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/05 04:31:21 bentley Exp $
 
 COMMENT=	CDDA reading utility with extra data verification features
 
 DISTNAME=	cdparanoia-III-alpha9.8
 PKGNAME=	cdparanoia-3.a9.8
-REVISION=	3
+REVISION=	4
 CATEGORIES=	audio
 SHARED_LIBS=	cdda_interface	0.0 \
 		cdda_paranoia	0.0
 
-HOMEPAGE=	http://www.xiph.org/paranoia/
+HOMEPAGE=	https://www.xiph.org/paranoia/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c m
 
-MASTER_SITES=	${HOMEPAGE}download/
+MASTER_SITES=	https://www.xiph.org/paranoia/download/
 EXTRACT_SUFX=	.src.tgz
 
 CONFIGURE_STYLE=	autoconf autoheader

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2018/11/20 17:32:36 jca Exp $
+# $OpenBSD: Makefile,v 1.66 2019/05/05 04:31:22 bentley Exp $
 
 COMMENT=	server for streaming various media formats
 CATEGORIES=	net audio
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB =  c crypto curl>=2 iconv intl lzma m nghttp2 ogg pthread
 WANTLIB += speex>=3 ssl theora>=1 vorbis>=3 xml2 xslt>=3 z
 
-MASTER_SITES=	http://downloads.xiph.org/releases/icecast/
+MASTER_SITES=	https://downloads.xiph.org/releases/icecast/
 
 
 CONFIGURE_STYLE= gnu

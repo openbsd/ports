@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/09/02 17:33:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/05/05 04:31:22 bentley Exp $
 
 COMMENT=	library for communicating with an icecast server
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += m ogg pthread speex theora>=1 vorbis>=4
 
-MASTER_SITES=	http://downloads.xiph.org/releases/libshout/
+MASTER_SITES=	https://downloads.xiph.org/releases/libshout/
 
 LIB_DEPENDS=	audio/libvorbis \
 		audio/speex \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2016/03/13 22:55:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.57 2019/05/05 04:31:21 bentley Exp $
 
 COMMENT=	portable audio output library
 
@@ -13,7 +13,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://downloads.xiph.org/releases/ao/
+MASTER_SITES=	https://downloads.xiph.org/releases/ao/
 
 WANTLIB=	sndio
 

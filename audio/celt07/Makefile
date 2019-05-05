@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/11 20:28:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/05 04:31:21 bentley Exp $
 
 # Warning: CELT is experimental software. Neither the API/ABI, nor
 # the bit-stream are stable. Compatibility between different releases
@@ -19,7 +19,7 @@ SHARED_LIBS +=  celt07 0.0	# 0.0
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://downloads.xiph.org/releases/celt/
+MASTER_SITES =		https://downloads.xiph.org/releases/celt/
 
 WANTLIB =		c m ogg sndio
 

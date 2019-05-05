@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2018/09/02 17:33:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2019/05/05 04:31:22 bentley Exp $
 
 PORTROACH=	limit:^0
 PORTROACH_COMMENT=	ices2 is a different port
@@ -18,7 +18,7 @@ WANTLIB =	c iconv m ogg perl pthread theora util vorbis vorbisfile z
 WANTLIB += 	${MODPY_WANTLIB}
 WANTLIB += 	mp3lame shout>=3 speex>=4 FLAC>=5 lzma xml2>=7
 
-MASTER_SITES=	http://downloads.xiph.org/releases/ices/
+MASTER_SITES=	https://downloads.xiph.org/releases/ices/
 
 AUTOCONF_VERSION=2.59
 CONFIGURE_STYLE=autoconf

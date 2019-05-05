@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/08/15 01:02:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/05 04:31:22 bentley Exp $
 
 COMMENT=	speech processing DSP library
 
@@ -12,7 +12,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://downloads.xiph.org/releases/speex/
+MASTER_SITES=	https://downloads.xiph.org/releases/speex/
 
 WANTLIB=	m
 

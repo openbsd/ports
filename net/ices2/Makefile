@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/09/02 17:33:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2019/05/05 04:31:22 bentley Exp $
 
 COMMENT=	icecast source for streaming Ogg Vorbis
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c iconv lzma m ogg pthread shout sndio speex theora vorbis
 WANTLIB += vorbisenc xml2 z
 
-MASTER_SITES=	http://downloads.xiph.org/releases/ices/
+MASTER_SITES=	https://downloads.xiph.org/releases/ices/
 
 # Needs AC_PROG_LIBTOOL
 BUILD_DEPENDS += 	devel/libtool \

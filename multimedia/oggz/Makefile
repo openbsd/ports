@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/09/26 15:58:21 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/05 04:31:22 bentley Exp $
 
 COMMENT =	inspect, edit and validate Ogg files
 
@@ -6,15 +6,15 @@ V =		1.1.1
 PKGNAME =	oggz-${V}
 DISTNAME =	liboggz-${V}
 CATEGORIES =	multimedia
-HOMEPAGE =	http://www.xiph.org/oggz/
-REVISION =	2
+HOMEPAGE =	https://www.xiph.org/oggz/
+REVISION =	3
 
 SHARED_LIBS =	oggz	0.0
 
 # BSD
 PERMIT_PACKAGE_CDROM =		Yes
 
-MASTER_SITES =	http://downloads.xiph.org/releases/liboggz/
+MASTER_SITES =	https://downloads.xiph.org/releases/liboggz/
 
 WANTLIB =	c ogg m
 

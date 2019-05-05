@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/11/11 20:21:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2019/05/05 04:31:21 bentley Exp $
 
 COMMENT=	Ogg bitstream library
 
@@ -12,7 +12,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://downloads.xiph.org/releases/ogg/
+MASTER_SITES=	https://downloads.xiph.org/releases/ogg/
 EXTRACT_SUFX=	.tar.xz
 
 CONFIGURE_STYLE=gnu
