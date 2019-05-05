@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/05 10:21:30 cwen Exp $
 
 COMMENT =	calling UNIVERSAL::can as a function
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	UNIVERSAL-can-1.16
-PKGNAME =	p5-Universal-can-1.16
-REVISION =	0
+
+V =		1.20140328
+DISTNAME =	UNIVERSAL-can-${V}
+PKGNAME =	p5-Universal-can-${V}
+
 CATEGORIES =	devel
 
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
-
-CONFIGURE_STYLE=modbuild
 
 .include <bsd.port.mk>
