@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2018/10/24 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2019/05/05 05:07:45 bentley Exp $
 
 COMMENT=	free lossless audio codec
 
@@ -14,7 +14,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://downloads.xiph.org/releases/flac/ \
+MASTER_SITES=	https://downloads.xiph.org/releases/flac/ \
 		https://ftp.osuosl.org/pub/xiph/releases/flac/
 EXTRACT_SUFX=	.tar.xz
 
