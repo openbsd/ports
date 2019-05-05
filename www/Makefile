@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.902 2019/05/04 14:12:39 jca Exp $
+# $OpenBSD: Makefile,v 1.903 2019/05/05 18:11:20 jca Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -596,7 +596,6 @@
      SUBDIR += webkitgtk4
      SUBDIR += weboob
      SUBDIR += weboob,python3
-     SUBDIR += wml
      SUBDIR += wp-cli
      SUBDIR += wslay
      SUBDIR += www6to4
