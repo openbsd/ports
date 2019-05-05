@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2018/08/04 05:11:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2019/05/05 20:29:41 sthen Exp $
 
 COMMENT=	advanced IRC bouncer
 
-DISTNAME=	znc-1.7.1
+DISTNAME=	znc-1.7.3
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}releases/
 

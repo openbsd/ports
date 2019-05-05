@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/08/04 05:11:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/05/05 20:29:41 sthen Exp $
 @bin bin/znc
 bin/znc-buildmod
 include/znc/
@@ -163,6 +163,7 @@ share/znc/modules/webadmin/tmpl/traffic.tmpl
 share/znc/translations/
 share/znc/translations/de-DE
 share/znc/translations/es-ES
+share/znc/translations/fr-FR
 share/znc/translations/id-ID
 share/znc/translations/nl_NL
 share/znc/translations/ru-RU
