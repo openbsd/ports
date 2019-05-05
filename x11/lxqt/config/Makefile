@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:48 cwen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/05 17:09:07 naddy Exp $
 
 COMMENT =	tools to configure LXQt and the underlying operating system
 
@@ -6,7 +6,7 @@ VERSION =	0.13.0
 
 NAME =		lxqt-config
 DISTNAME =	${NAME}-${VERSION}
-REVISION =	0
+REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5WindowSystem Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras

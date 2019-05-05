@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:56 cwen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/05 17:09:07 naddy Exp $
 
 VERSION =	0.13.0
 
@@ -37,9 +37,10 @@ PKGNAME-pavucontrol-qt = pavucontrol-qt-l10n-${VERSION}
 PKGNAME-pcmanfm-qt = pcmanfm-qt-l10n-${VERSION}
 PKGNAME-qterminal = qterminal-l10n-${VERSION}
 PKGNAME-qtermwidget = qtermwidget-l10n-${VERSION}
-REVISION-main =0
-REVISION-qterminal =0
-REVISION-qtermwidget =0
+REVISION =0
+REVISION-main =1
+REVISION-qterminal =1
+REVISION-qtermwidget =1
 
 BUILD_DEPENDS +=	x11/lxqt/build-tools
 

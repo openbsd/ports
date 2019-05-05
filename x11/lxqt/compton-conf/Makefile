@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:56 cwen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/05 17:09:07 naddy Exp $
 
 COMMENT =	configuration tool for compton X composite manager
 
@@ -6,7 +6,7 @@ VERSION =	0.4.0
 
 NAME =		compton-conf
 DISTNAME =	${NAME}-${VERSION}
-REVISION =	0
+REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB += c config m

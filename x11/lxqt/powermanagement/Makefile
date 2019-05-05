@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:48 cwen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/05 17:09:07 naddy Exp $
 
 COMMENT =	power management module for LXQt
 
 VERSION =	0.13.0
-REVISION =	1
+REVISION =	2
 
 NAME =		lxqt-powermanagement
 DISTNAME =	${NAME}-${VERSION}

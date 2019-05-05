@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/05/05 17:09:07 naddy Exp $
 
 DIST_SUBDIR =	lxqt
 
@@ -8,8 +8,6 @@ CATEGORIES ?=	x11/lxqt
 
 MODULES +=	x11/qt5 \
 		devel/cmake
-
-MAINTAINER ?=	Elias M. Mariani <marianielias@gmail.com>
 
 # Mostly LGPLv2.1, some GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
