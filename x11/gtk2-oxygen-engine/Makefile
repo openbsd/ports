@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/05 15:15:45 danj Exp $
 COMMENT =		KDE Oxygen widget theme for GTK
 
 V =			1.4.5
 DISTNAME =		oxygen-gtk2-${V}
 PKGNAME =		gtk2-oxygen-engine-${V}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		x11
 HOMEPAGE =		https://projects.kde.org/projects/playground/artwork/oxygen-gtk/
-
-MAINTAINER =		Fabian Raetz <fabian.raetz@gmail.com>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes

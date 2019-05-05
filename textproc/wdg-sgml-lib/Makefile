@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/05 15:15:45 danj Exp $
 
 COMMENT=	collection of HTML, XHTML, ISO-HTML, WML and MathML DTDs
 
 DISTNAME=	wdg-sgml-lib-1.1.4
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.htmlhelp.com/tools/validator/offline/
-
-MAINTAINER=	Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
 
 # custom
 PERMIT_PACKAGE_CDROM=	Yes

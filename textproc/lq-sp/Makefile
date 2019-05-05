@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/05 15:15:45 danj Exp $
 
 COMMENT=	SGML parser and entity manager
 
 DISTNAME=	lq-sp-1.3.4.12
-REVISION =	3
+REVISION =	4
 CATEGORIES=	textproc
 HOMEPAGE=	http://www.htmlhelp.com/tools/validator/offline/
-
-MAINTAINER=	Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes

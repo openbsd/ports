@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2015/10/09 12:23:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/05 15:15:45 danj Exp $
 
 COMMENT=		HTML, XHTML validator
 
 DISTNAME=		validate-1.2.2
-REVISION=		0
+REVISION=		1
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.htmlhelp.com/tools/validator/offline/
-MAINTAINER=		Gerardo Santana Gomez Garrido <gerardo.santana@gmail.com>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
