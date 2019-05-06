@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/10/11 23:49:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/06 09:50:45 kili Exp $
 
 COMMENT=	display the currently lighted face of Earth in ASCII
 
-DISTNAME=	globe_26mar1994
-PKGNAME=	globe-19940326
+DISTNAME=	globe_14Aug2014
+PKGNAME=	globe-20140814
 CATEGORIES=	geo
 
 HOMEPAGE=	http://www.acme.com/software/globe/
