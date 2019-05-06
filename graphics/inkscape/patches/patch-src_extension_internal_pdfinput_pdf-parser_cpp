@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_extension_internal_pdfinput_pdf-parser_cpp,v 1.15 2019/05/06 21:22:16 kili Exp $
+
+Fix build with poppler-0.76. From archlinux.
+
+Index: src/extension/internal/pdfinput/pdf-parser.cpp
+--- src/extension/internal/pdfinput/pdf-parser.cpp.orig
++++ src/extension/internal/pdfinput/pdf-parser.cpp
+@@ -426,7 +426,7 @@ void PdfParser::parse(Object *obj, GBool topLevel) {
+ 	error(errInternal, -1, "Weird page contents");
+     	return;
+   }
+-  parser = new Parser(xref, new Lexer(xref, obj), gFalse);
++  parser = new Parser(xref, obj, gFalse);
+   go(topLevel);
+   delete parser;
+   parser = NULL;

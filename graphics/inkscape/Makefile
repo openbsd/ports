@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2019/01/22 06:40:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.74 2019/05/06 21:22:16 kili Exp $
 
 COMMENT =	SVG vector drawing application
 
@@ -81,11 +81,8 @@ AUTOMAKE_VERSION =	1.11
 
 CONFIGURE_ARGS =	-without-gnome-vfs
 
-# the -DPOPPLER_NEW_OBJECT_API bit should be removed after the next
-# update of this port.
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include/ImageMagick \
-			-I${LOCALBASE}/include -I${X11BASE}/include \
-			-DPOPPLER_NEW_OBJECT_API" \
+			-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 # As discussed on the ports mailing list, remove internationalised manual
