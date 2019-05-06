@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2017/03/26 19:25:17 benoit Exp $
+# $OpenBSD: Makefile,v 1.30 2019/05/06 15:40:06 benoit Exp $
 
 COMMENT =	perl module for getting image information
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Image-Info-1.40
+DISTNAME =	Image-Info-1.41
 CATEGORIES =	graphics
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
