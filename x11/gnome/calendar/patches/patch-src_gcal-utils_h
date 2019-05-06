@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_gcal-utils_h,v 1.1 2019/05/06 18:13:26 ajacoutot Exp $
+
+From e6d248699ead1c60e487c4adfc2c7536a0cc6cf8 Mon Sep 17 00:00:00 2001
+From: Michael Catanzaro <mcatanzaro@igalia.com>
+Date: Mon, 14 Jan 2019 12:47:24 -0600
+Subject: [PATCH] Fix build against new eds
+
+Index: src/gcal-utils.h
+--- src/gcal-utils.h.orig
++++ src/gcal-utils.h
+@@ -34,9 +34,12 @@
+ #define gcal_clear_datetime(dt) g_clear_pointer (dt, g_date_time_unref)
+ #define gcal_clear_timeout(pp) { if (pp && *pp) { g_source_remove (*pp); *pp = 0; } }
+ 
++#if !EDS_CHECK_VERSION (3, 31, 90)
+ /* Add autoptr support for libecal */
+ G_DEFINE_AUTOPTR_CLEANUP_FUNC (ECalComponent, g_object_unref)
+ G_DEFINE_AUTOPTR_CLEANUP_FUNC (ESource, g_object_unref)
++#endif
++
+ G_DEFINE_AUTOPTR_CLEANUP_FUNC (GWeatherLocation, gweather_location_unref)
+ 
+ GType                icaltime_get_type                           (void)            G_GNUC_CONST;
