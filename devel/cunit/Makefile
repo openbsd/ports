@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.9 2015/03/16 18:07:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/06 19:51:38 danj Exp $
 
 COMMENT =		c unit testing framework
 
 VER =			2.1-2
 DISTNAME =		CUnit-${VER}
 PKGNAME =		cunit-${VER:S/-/./}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		cunit	1.0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://cunit.sourceforge.net/
-
-MAINTAINER =		Markus Bergkvist <markus.bergkvist@telia.com>
 
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes

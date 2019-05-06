@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2018/07/29 03:48:43 bcallah Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/05/06 19:51:38 danj Exp $
 
 CATEGORIES ?=	games x11
 
 HOMEPAGE ?=	https://www.gnu.org/software/freedink/
-MAINTAINER ?=	Mitchell Wodach <mtwobs@gmail.com>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
