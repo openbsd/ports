@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:50 cwen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/06 16:34:44 kn Exp $
 
 COMMENT =		UPnP audio control point
 
-DISTNAME =		upplay-1.3.1
-REVISION =		0
+DISTNAME =		upplay-1.3.3
 
 CATEGORIES =		multimedia net
 
@@ -20,13 +19,16 @@ WANTLIB += m upnpp
 
 MASTER_SITES =		https://www.lesbonscomptes.com/upplay/downloads/
 
+# C++11
+COMPILER =		base-clang ports-gcc
+
 USE_WXNEEDED =		Yes
 MODULES =		devel/qmake \
 			x11/qt5
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		devel/jsoncpp \
-			net/libupnpp \
+			net/libupnpp>=0.17.1 \
 			x11/qt5/qtscript \
 			x11/qt5/qtwebkit
 
