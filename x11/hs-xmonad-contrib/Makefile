@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2018/01/22 22:08:03 kili Exp $
+# $OpenBSD: Makefile,v 1.35 2019/05/06 16:01:32 danj Exp $
 
 COMMENT =		third party xmonad extensions
 
 DISTNAME =		xmonad-contrib-0.13
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
-
-MAINTAINER =		Jona Joachim <jona@joachim.cc>
+REVISION =		0
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes

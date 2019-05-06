@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2018/05/15 11:35:22 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2019/05/06 16:01:32 danj Exp $
 
 COMMENT =		minimalistic text based status bar
 
 DISTNAME =		xmobar-0.24.3
-REVISION =		3
+REVISION =		4
 CATEGORIES =		x11
 HOMEPAGE =		http://projects.haskell.org/xmobar
-
-MAINTAINER =		Jona Joachim <jona@joachim.cc>
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
