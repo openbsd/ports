@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.302 2019/02/13 12:16:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.303 2019/05/06 18:12:28 ajacoutot Exp $
 
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.30.5
-REVISION=		0
+GNOME_VERSION=		3.32.2
 
 CATEGORIES=		mail
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SO_VERSION=		15.0 # 0.0
+SO_VERSION=		15.1 # 0.0
 .for _lib in \
 eabutil econtacteditor econtactlisteditor email-engine essmime \
 evolution-addressbook-importers evolution-calendar-importers \
@@ -66,6 +65,7 @@ CONFIGURE_ARGS=		-DWITH_BOGOFILTER="${LOCALBASE}/bin/bogofilter" \
 			-DWITH_SPAMASSASSIN="${LOCALBASE}/bin/spamassassin" \
 			-DWITH_OPENLDAP=${LOCALBASE} \
 			-DVERSION_SUBSTRING=" (OpenBSD Ports)" \
-			-DCMAKE_C_FLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include"
+			-DCMAKE_C_FLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
+			-DMAN_INSTALL_DIR="${PREFIX}/man"
 
 .include <bsd.port.mk>

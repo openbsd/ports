@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.53 2019/01/03 07:12:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.54 2019/05/06 18:12:29 ajacoutot Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -626,6 +626,7 @@ lib/pkgconfig/libemail-engine.pc
 libexec/evolution/
 @bin libexec/evolution/evolution-backup
 @bin libexec/evolution/killev
+@man man/man1/evolution.1
 share/GConf/gsettings/evolution.convert
 share/applications/org.gnome.Evolution.desktop
 share/evolution/
@@ -753,6 +754,9 @@ share/evolution/etspec/message-list.etspec
 share/evolution/filtertypes.xml
 share/evolution/icons/
 share/evolution/icons/hicolor/
+share/evolution/icons/hicolor/128x128/
+share/evolution/icons/hicolor/128x128/apps/
+share/evolution/icons/hicolor/128x128/apps/contact-editor.png
 share/evolution/icons/hicolor/16x16/
 share/evolution/icons/hicolor/16x16/actions/
 share/evolution/icons/hicolor/16x16/actions/folder-copy.png
