@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2019/04/16 20:19:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/06 14:58:54 cwen Exp $
 
 COMMENT-main=		ncurses-based music player
 COMMENT-ffmpeg=		ffmpeg input plugin for cmus (.aac, .mp4...)
 
-V=			2.7.1
+V=			2.8.0
 DISTNAME=		cmus-${V}
 PKGNAME-main=		${PKGNAME}
 PKGNAME-ffmpeg=		cmus-ffmpeg-${V}
-REVISION=		6
 
 GH_ACCOUNT=		cmus
 GH_PROJECT=		cmus
@@ -21,12 +20,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MULTI_PACKAGES=		-main -ffmpeg
 
-WANTLIB-main+=		c cdio cdio_cdda cue curses discid FLAC iconv m mad
-WANTLIB-main+=		ogg opusfile pthread sndio vorbis vorbisfile wavpack
+WANTLIB-main+=		c cdio cdio_cdda curses discid FLAC iconv m mad
+WANTLIB-main+=		opusfile pthread sndio vorbisfile wavpack
 
+# Seen as EXTRAs but should be kept as cmus dlopen(3)'s its modules for
+# input and output, so cmus needs an update if one of those are bumped
+WANTLIB-main+=		ogg vorbis
+
+# C11
+COMPILER=		base-clang ports-gcc
 LIB_DEPENDS-main=	audio/flac \
 			audio/libcdio \
-			audio/libcue \
 			audio/libdiscid \
 			audio/libmad \
 			audio/libogg \
@@ -42,7 +46,8 @@ RUN_DEPENDS-ffmpeg=	audio/cmus
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	simple
-CONFIGURE_ENV=		HOSTCC="${CC}" HOSTLD="${CC}" HOST_CFLAGS="${CFLAGS}"
+CONFIGURE_ENV=		HOSTCC="${CC}" HOSTLD="${CC}" \
+			HOST_CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 CFLAGS+=		-Wno-system-headers
 # Note: We're explicitly disabling CONFIG_CDDB as it gets undef'd in cdio.c
 CONFIGURE_ARGS=		prefix=${PREFIX} \
@@ -68,6 +73,13 @@ CONFIGURE_ARGS=		prefix=${PREFIX} \
 			CONFIG_VTX=n
 
 NO_TEST=		Yes
+
+#  undefined reference to `__atomic_fetch_add_8'
+.if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "hppa"
+WANTLIB-main += atomic
+WANTLIB-ffmpeg += atomic
+LDFLAGS += -latomic
+.endif
 
 pre-build:
 	sed -i s,/usr,${LOCALBASE}, ${WRKSRC}/Doc/cmus.txt

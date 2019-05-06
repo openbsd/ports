@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2016/01/17 01:16:38 juanfra Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2019/05/06 14:58:54 cwen Exp $
 @conflict cmus-<2.7.1
 @pkgpath audio/cmus,-flac
 @pkgpath audio/cmus,-wavpack
@@ -22,9 +22,13 @@ lib/cmus/op/sndio.so
 share/cmus/
 share/cmus/cyan.theme
 share/cmus/default.theme
+share/cmus/dracula.theme
 share/cmus/gray-88.theme
 share/cmus/green-mono-88.theme
 share/cmus/green.theme
+share/cmus/gruvbox-alt.theme
+share/cmus/gruvbox.theme
+share/cmus/jellybeans.theme
 share/cmus/night.theme
 share/cmus/rc
 share/cmus/solarized-dark.theme
