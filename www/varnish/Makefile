@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/05/03 11:06:26 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.43 2019/05/06 09:23:15 kn Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
@@ -47,9 +47,8 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 
 TEST_TARGET =		check
 
-pre-configure:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
+do-gen:
+	cd ${WRKSRC} && ${AUTOCONF_ENV} ./autogen.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/varnish
