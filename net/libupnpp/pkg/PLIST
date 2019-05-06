@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/01/04 14:30:12 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/06 16:34:44 kn Exp $
 include/libupnpp/
 include/libupnpp/base64.hxx
 include/libupnpp/conf_post.h
@@ -33,7 +33,6 @@ include/libupnpp/soaphelp.hxx
 include/libupnpp/upnpavutils.hxx
 include/libupnpp/upnpplib.hxx
 include/libupnpp/upnpputils.hxx
-include/libupnpp/workqueue.h
 lib/libupnpp.a
 lib/libupnpp.la
 @lib lib/libupnpp.so.${LIBupnpp_VERSION}
