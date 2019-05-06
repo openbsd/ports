@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.109 2019/04/28 21:08:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.110 2019/05/06 21:09:52 steven Exp $
 
 COMMENT =	high-level language for numerical computations
 
-VERSION =	4.4.1
+VERSION =	5.1.0
 DISTNAME =	octave-${VERSION}
-REVISION =	2
 CATEGORIES =	math
 
-SHARED_LIBS +=	octave		11.0
-SHARED_LIBS +=	octgui		5.0
-SHARED_LIBS +=	octinterp	10.0
+SHARED_LIBS +=	octave		12.0
+SHARED_LIBS +=	octgui		6.0
+SHARED_LIBS +=	octinterp	11.0
 
 HOMEPAGE =	https://www.gnu.org/software/octave/
 
@@ -21,7 +20,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${MODFORTRAN_WANTLIB}
 WANTLIB += FLAC GL GLU GraphicsMagick GraphicsMagick++ ICE
 WANTLIB += Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport Qt5Widgets Qt5Core
-WANTLIB += Qt5Help Qt5Sql qscintilla2_qt5
+WANTLIB += Qt5Help Qt5Xml Qt5Sql qscintilla2_qt5
 WANTLIB += SM X11 X11-xcb Xdamage
 WANTLIB += Xext Xfixes Xi Xmu Xrandr Xrender Xt Xxf86vm amd
 WANTLIB += arpack blas btf bz2 c camd ccolamd cholmod colamd crypto curl
@@ -29,7 +28,7 @@ WANTLIB += curses cxsparse drm ereadline expat fftw3 fftw3_threads fftw3f
 WANTLIB += execinfo glib-2.0 graphite2 gthread-2.0 harfbuzz icudata
 WANTLIB += fftw3f_threads fontconfig freetype gl2ps glapi glpk glut
 WANTLIB += gmp hdf5 iconv icui18n icuuc intl klu lapack lcms2 ltdl lzma
-WANTLIB += m nghttp2 ogg pcre pcre2-16 png png16 portaudio pthread qhull
+WANTLIB += m nghttp2 ogg pcre pcre2-16 png portaudio pthread qhull
 WANTLIB += qrupdate sndfile sndio ssl ${COMPILER_LIBCXX} suitesparseconfig
 WANTLIB += umfpack util vorbis vorbisenc xcb xcb-dri2 xcb-dri3 xcb-glx
 WANTLIB += xcb-present xcb-sync xcb-xfixes xshmfence z

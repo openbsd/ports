@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2019/01/13 22:43:59 steven Exp $
+@comment $OpenBSD: PLIST,v 1.26 2019/05/06 21:09:52 steven Exp $
 bin/mkoctfile
 @bin bin/mkoctfile-${VERSION}
 bin/octave
@@ -135,7 +135,6 @@ include/octave-${VERSION}/octave/graphics-handle.h
 include/octave-${VERSION}/octave/graphics-props.cc
 include/octave-${VERSION}/octave/graphics-toolkit.h
 include/octave-${VERSION}/octave/graphics.h
-include/octave-${VERSION}/octave/gripes.h
 include/octave-${VERSION}/octave/gsvd.h
 include/octave-${VERSION}/octave/gtk-manager.h
 include/octave-${VERSION}/octave/help.h
@@ -159,11 +158,9 @@ include/octave-${VERSION}/octave/liboctinterp-build-info.h
 include/octave-${VERSION}/octave/lo-amos-proto.h
 include/octave-${VERSION}/octave/lo-arpack-proto.h
 include/octave-${VERSION}/octave/lo-array-errwarn.h
-include/octave-${VERSION}/octave/lo-array-gripes.h
 include/octave-${VERSION}/octave/lo-blas-proto.h
 include/octave-${VERSION}/octave/lo-cutils.h
 include/octave-${VERSION}/octave/lo-error.h
-include/octave-${VERSION}/octave/lo-fftpack-proto.h
 include/octave-${VERSION}/octave/lo-hash.h
 include/octave-${VERSION}/octave/lo-ieee.h
 include/octave-${VERSION}/octave/lo-lapack-proto.h
@@ -636,6 +633,7 @@ include/octave-${VERSION}/octave/pr-output.h
 include/octave-${VERSION}/octave/procstream.h
 include/octave-${VERSION}/octave/profiler.h
 include/octave-${VERSION}/octave/pt-all.h
+include/octave-${VERSION}/octave/pt-anon-scopes.h
 include/octave-${VERSION}/octave/pt-arg-list.h
 include/octave-${VERSION}/octave/pt-array-list.h
 include/octave-${VERSION}/octave/pt-assign.h
@@ -675,6 +673,7 @@ include/octave-${VERSION}/octave/randgamma.h
 include/octave-${VERSION}/octave/randmtzig.h
 include/octave-${VERSION}/octave/randpoisson.h
 include/octave-${VERSION}/octave/schur.h
+include/octave-${VERSION}/octave/settings.h
 include/octave-${VERSION}/octave/sighandlers.h
 include/octave-${VERSION}/octave/singleton-cleanup.h
 include/octave-${VERSION}/octave/smx-bm-sbm.h
@@ -704,10 +703,12 @@ include/octave-${VERSION}/octave/sparse-xdiv.h
 include/octave-${VERSION}/octave/sparse-xpow.h
 include/octave-${VERSION}/octave/str-vec.h
 include/octave-${VERSION}/octave/svd.h
+include/octave-${VERSION}/octave/syminfo.h
 include/octave-${VERSION}/octave/symrec.h
 include/octave-${VERSION}/octave/symscope.h
 include/octave-${VERSION}/octave/symtab.h
 include/octave-${VERSION}/octave/sysdep.h
+include/octave-${VERSION}/octave/text-engine.h
 include/octave-${VERSION}/octave/text-renderer.h
 include/octave-${VERSION}/octave/token.h
 include/octave-${VERSION}/octave/toplev.h
@@ -762,8 +763,8 @@ lib/octave/${VERSION}/__fltk_uigetfile__.a
 lib/octave/${VERSION}/__glpk__.a
 lib/octave/${VERSION}/__init_fltk__.a
 lib/octave/${VERSION}/__init_gnuplot__.a
+lib/octave/${VERSION}/__init_qt__.a
 lib/octave/${VERSION}/__ode15__.a
-lib/octave/${VERSION}/__osmesa_print__.a
 lib/octave/${VERSION}/__voronoi__.a
 lib/octave/${VERSION}/amd.a
 lib/octave/${VERSION}/audiodevinfo.a
@@ -793,8 +794,8 @@ lib/octave/${VERSION}/oct/${GNU_ARCH}/PKG_ADD
 @bin lib/octave/${VERSION}/oct/${GNU_ARCH}/__glpk__.oct
 @bin lib/octave/${VERSION}/oct/${GNU_ARCH}/__init_fltk__.oct
 @bin lib/octave/${VERSION}/oct/${GNU_ARCH}/__init_gnuplot__.oct
+@bin lib/octave/${VERSION}/oct/${GNU_ARCH}/__init_qt__.oct
 @bin lib/octave/${VERSION}/oct/${GNU_ARCH}/__ode15__.oct
-@bin lib/octave/${VERSION}/oct/${GNU_ARCH}/__osmesa_print__.oct
 @bin lib/octave/${VERSION}/oct/${GNU_ARCH}/__voronoi__.oct
 @bin lib/octave/${VERSION}/oct/${GNU_ARCH}/amd.oct
 @bin lib/octave/${VERSION}/oct/${GNU_ARCH}/audiodevinfo.oct
@@ -817,21 +818,24 @@ lib/octave/${VERSION}/symbfact.a
 lib/octave/${VERSION}/symrcm.a
 lib/octave/site/
 lib/octave/site/oct/
-lib/octave/site/oct/api-v52/
-lib/octave/site/oct/api-v52/${GNU_ARCH}/
+lib/octave/site/oct/api-v53/
+lib/octave/site/oct/api-v53/${GNU_ARCH}/
 lib/octave/site/oct/${GNU_ARCH}/
+lib/pkgconfig/octave.pc
+lib/pkgconfig/octinterp.pc
 libexec/octave/
 libexec/octave/${VERSION}/
 libexec/octave/${VERSION}/exec/
 libexec/octave/${VERSION}/exec/${GNU_ARCH}/
 @bin libexec/octave/${VERSION}/exec/${GNU_ARCH}/octave-gui
+@bin libexec/octave/${VERSION}/exec/${GNU_ARCH}/octave-svgconvert
 libexec/octave/${VERSION}/site/
 libexec/octave/${VERSION}/site/exec/
 libexec/octave/${VERSION}/site/exec/${GNU_ARCH}/
-libexec/octave/api-v52/
-libexec/octave/api-v52/site/
-libexec/octave/api-v52/site/exec/
-libexec/octave/api-v52/site/exec/${GNU_ARCH}/
+libexec/octave/api-v53/
+libexec/octave/api-v53/site/
+libexec/octave/api-v53/site/exec/
+libexec/octave/api-v53/site/exec/${GNU_ARCH}/
 libexec/octave/site/
 libexec/octave/site/exec/
 libexec/octave/site/exec/${GNU_ARCH}/
@@ -942,10 +946,15 @@ share/octave/${VERSION}/etc/tests/fixed/bug-41723/class_bug41723.m
 share/octave/${VERSION}/etc/tests/fixed/bug-44940/
 share/octave/${VERSION}/etc/tests/fixed/bug-44940/bug-44940.tst
 share/octave/${VERSION}/etc/tests/fixed/bug-44940/class_bug44940.m
+share/octave/${VERSION}/etc/tests/fixed/bug-45969.tst
+share/octave/${VERSION}/etc/tests/fixed/bug-45972.tst
 share/octave/${VERSION}/etc/tests/fixed/bug-46330.tst
 share/octave/${VERSION}/etc/tests/fixed/bug-46660/
 share/octave/${VERSION}/etc/tests/fixed/bug-46660/bug-46660.tst
 share/octave/${VERSION}/etc/tests/fixed/bug-46660/class_bug46660.m
+share/octave/${VERSION}/etc/tests/fixed/bug-49379/
+share/octave/${VERSION}/etc/tests/fixed/bug-49379/bug-49379.tst
+share/octave/${VERSION}/etc/tests/fixed/bug-49379/class_bug49379.m
 share/octave/${VERSION}/etc/tests/fixed/bug-49904.tst
 share/octave/${VERSION}/etc/tests/fixed/bug-50014/
 share/octave/${VERSION}/etc/tests/fixed/bug-50014/bug-50014.tst
@@ -996,8 +1005,22 @@ share/octave/${VERSION}/etc/tests/fixed/bug-53027/gtest53027.m
 share/octave/${VERSION}/etc/tests/fixed/bug-53027/ntest53027a.m
 share/octave/${VERSION}/etc/tests/fixed/bug-53027/ntest53027b.m
 share/octave/${VERSION}/etc/tests/fixed/bug-53027/ntest53027c.m
+share/octave/${VERSION}/etc/tests/fixed/bug-53468/
+share/octave/${VERSION}/etc/tests/fixed/bug-53468/bug-53468.tst
+share/octave/${VERSION}/etc/tests/fixed/bug-53468/ofig403.ofig
+share/octave/${VERSION}/etc/tests/fixed/bug-53468/ofig421.ofig
+share/octave/${VERSION}/etc/tests/fixed/bug-53468/ofig51.ofig
 share/octave/${VERSION}/etc/tests/fixed/bug-53579.tst
 share/octave/${VERSION}/etc/tests/fixed/bug-53599.tst
+share/octave/${VERSION}/etc/tests/fixed/bug-54490.tst
+share/octave/${VERSION}/etc/tests/fixed/bug-54995/
+share/octave/${VERSION}/etc/tests/fixed/bug-54995/@testclass54995/
+share/octave/${VERSION}/etc/tests/fixed/bug-54995/@testclass54995/subsref.m
+share/octave/${VERSION}/etc/tests/fixed/bug-54995/@testclass54995/testclass54995.m
+share/octave/${VERSION}/etc/tests/fixed/bug-54995/bug-54995.tst
+share/octave/${VERSION}/etc/tests/fixed/bug-55308.tst
+share/octave/${VERSION}/etc/tests/fixed/bug-55321.tst
+share/octave/${VERSION}/etc/tests/fixed/bug-55322.tst
 share/octave/${VERSION}/etc/tests/fixed/class-concat/
 share/octave/${VERSION}/etc/tests/fixed/class-concat/@foo/
 share/octave/${VERSION}/etc/tests/fixed/class-concat/@foo/foo.m
@@ -1012,6 +1035,7 @@ share/octave/${VERSION}/etc/tests/fixed/classdef-multiple-inheritance/classdef-m
 share/octave/${VERSION}/etc/tests/fixed/classdef/classdef.tst
 share/octave/${VERSION}/etc/tests/fixed/classdef/foo_method_changes_property_size.m
 share/octave/${VERSION}/etc/tests/fixed/classdef/foo_static_method_constant_property.m
+share/octave/${VERSION}/etc/tests/fixed/classdef/foo_subsref_subsasgn.m
 share/octave/${VERSION}/etc/tests/fixed/classdef/foo_value_class.m
 share/octave/${VERSION}/etc/tests/fixed/classdef/plist_t1.m
 share/octave/${VERSION}/etc/tests/fixed/classdef/plist_t2.m
@@ -1026,12 +1050,18 @@ share/octave/${VERSION}/etc/tests/fixed/classes/@Blork/get.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@Blork/set.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@CPrecedenceTester1/
 share/octave/${VERSION}/etc/tests/fixed/classes/@CPrecedenceTester1/CPrecedenceTester1.m
+share/octave/${VERSION}/etc/tests/fixed/classes/@CPrecedenceTester1/double.m
+share/octave/${VERSION}/etc/tests/fixed/classes/@CPrecedenceTester1/plus.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@CPrecedenceTester1/tattack.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@CPrecedenceTester2/
 share/octave/${VERSION}/etc/tests/fixed/classes/@CPrecedenceTester2/CPrecedenceTester2.m
+share/octave/${VERSION}/etc/tests/fixed/classes/@CPrecedenceTester2/double.m
+share/octave/${VERSION}/etc/tests/fixed/classes/@CPrecedenceTester2/plus.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@CPrecedenceTester2/tattack.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@CPrecedenceTester3/
 share/octave/${VERSION}/etc/tests/fixed/classes/@CPrecedenceTester3/CPrecedenceTester3.m
+share/octave/${VERSION}/etc/tests/fixed/classes/@CPrecedenceTester3/double.m
+share/octave/${VERSION}/etc/tests/fixed/classes/@CPrecedenceTester3/plus.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@CPrecedenceTester3/tattack.m
 share/octave/${VERSION}/etc/tests/fixed/classes/@Cork/
 share/octave/${VERSION}/etc/tests/fixed/classes/@Cork/Cork.m
@@ -1162,6 +1192,7 @@ share/octave/${VERSION}/etc/tests/fixed/func.tst
 share/octave/${VERSION}/etc/tests/fixed/global.tst
 share/octave/${VERSION}/etc/tests/fixed/if.tst
 share/octave/${VERSION}/etc/tests/fixed/index.tst
+share/octave/${VERSION}/etc/tests/fixed/integer.tst
 share/octave/${VERSION}/etc/tests/fixed/io.tst
 share/octave/${VERSION}/etc/tests/fixed/jit.tst
 share/octave/${VERSION}/etc/tests/fixed/leftdiv.tst
@@ -1190,6 +1221,23 @@ share/octave/${VERSION}/etc/tests/fixed/nest/varg_nest.m
 share/octave/${VERSION}/etc/tests/fixed/nest/varg_nest2.m
 share/octave/${VERSION}/etc/tests/fixed/null-assign.tst
 share/octave/${VERSION}/etc/tests/fixed/parser.tst
+share/octave/${VERSION}/etc/tests/fixed/pkg/
+share/octave/${VERSION}/etc/tests/fixed/pkg/mfile_basic_test/
+share/octave/${VERSION}/etc/tests/fixed/pkg/mfile_basic_test/COPYING
+share/octave/${VERSION}/etc/tests/fixed/pkg/mfile_basic_test/DESCRIPTION
+share/octave/${VERSION}/etc/tests/fixed/pkg/mfile_basic_test/INDEX
+share/octave/${VERSION}/etc/tests/fixed/pkg/mfile_basic_test/NEWS
+share/octave/${VERSION}/etc/tests/fixed/pkg/mfile_basic_test/doc/
+share/octave/${VERSION}/etc/tests/fixed/pkg/mfile_basic_test/doc/example-package.txi
+share/octave/${VERSION}/etc/tests/fixed/pkg/mfile_basic_test/doc/macros.texi
+share/octave/${VERSION}/etc/tests/fixed/pkg/mfile_basic_test/inst/
+share/octave/${VERSION}/etc/tests/fixed/pkg/mfile_basic_test/inst/example_mfile.m
+share/octave/${VERSION}/etc/tests/fixed/pkg/mfile_minimal_test/
+share/octave/${VERSION}/etc/tests/fixed/pkg/mfile_minimal_test/COPYING
+share/octave/${VERSION}/etc/tests/fixed/pkg/mfile_minimal_test/DESCRIPTION
+share/octave/${VERSION}/etc/tests/fixed/pkg/mfile_minimal_test/inst/
+share/octave/${VERSION}/etc/tests/fixed/pkg/mfile_minimal_test/inst/example_mfile.m
+share/octave/${VERSION}/etc/tests/fixed/pkg/pkg.tst
 share/octave/${VERSION}/etc/tests/fixed/prefer.tst
 share/octave/${VERSION}/etc/tests/fixed/publish/
 share/octave/${VERSION}/etc/tests/fixed/publish/publish.tst
@@ -1283,9 +1331,9 @@ share/octave/${VERSION}/etc/tests/libinterp/corefcn/regexp.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/corefcn/schur.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/corefcn/sighandlers.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/corefcn/sparse-xpow.cc-tst
+share/octave/${VERSION}/etc/tests/libinterp/corefcn/sparse.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/corefcn/spparms.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/corefcn/sqrtm.cc-tst
-share/octave/${VERSION}/etc/tests/libinterp/corefcn/str2double.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/corefcn/strfind.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/corefcn/strfns.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/corefcn/sub2ind.cc-tst
@@ -1308,12 +1356,12 @@ share/octave/${VERSION}/etc/tests/libinterp/dldfcn/__fltk_uigetfile__.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/dldfcn/__glpk__.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/dldfcn/__init_fltk__.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/dldfcn/__init_gnuplot__.cc-tst
-share/octave/${VERSION}/etc/tests/libinterp/dldfcn/__osmesa_print__.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/dldfcn/__voronoi__.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/dldfcn/amd.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/dldfcn/audiodevinfo.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/dldfcn/audioread.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/dldfcn/chol.cc-tst
+share/octave/${VERSION}/etc/tests/libinterp/dldfcn/colamd.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/dldfcn/convhulln.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/dldfcn/dmperm.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/dldfcn/fftw.cc-tst
@@ -1339,12 +1387,12 @@ share/octave/${VERSION}/etc/tests/libinterp/octave-value/ov.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/octave.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/parse-tree/
 share/octave/${VERSION}/etc/tests/libinterp/parse-tree/lex.ll-tst
-share/octave/${VERSION}/etc/tests/libinterp/parse-tree/oct-parse.in.yy-tst
+share/octave/${VERSION}/etc/tests/libinterp/parse-tree/oct-parse.yy-tst
 share/octave/${VERSION}/etc/tests/libinterp/parse-tree/pt-assign.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/parse-tree/pt-eval.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/parse-tree/pt-fcn-handle.cc-tst
 share/octave/${VERSION}/etc/tests/libinterp/parse-tree/pt-idx.cc-tst
-share/octave/${VERSION}/etc/tests/libinterp/parse-tree/pt-mat.cc-tst
+share/octave/${VERSION}/etc/tests/libinterp/parse-tree/pt-tm-const.cc-tst
 share/octave/${VERSION}/etc/tests/liboctave/
 share/octave/${VERSION}/etc/tests/liboctave/array/
 share/octave/${VERSION}/etc/tests/liboctave/array/Array.cc-tst
@@ -1378,6 +1426,7 @@ share/octave/${VERSION}/locale/eu_ES.qm
 share/octave/${VERSION}/locale/fr_FR.qm
 share/octave/${VERSION}/locale/it_IT.qm
 share/octave/${VERSION}/locale/ja_JP.qm
+share/octave/${VERSION}/locale/lt_LT.qm
 share/octave/${VERSION}/locale/nl_NL.qm
 share/octave/${VERSION}/locale/pt_BR.qm
 share/octave/${VERSION}/locale/pt_PT.qm
@@ -1387,6 +1436,10 @@ share/octave/${VERSION}/locale/zh_CN.qm
 share/octave/${VERSION}/m/
 share/octave/${VERSION}/m/+containers/
 share/octave/${VERSION}/m/+containers/Map.m
+share/octave/${VERSION}/m/+matlab/
+share/octave/${VERSION}/m/+matlab/+lang/
+share/octave/${VERSION}/m/+matlab/+lang/makeUniqueStrings.m
+share/octave/${VERSION}/m/+matlab/+lang/makeValidName.m
 share/octave/${VERSION}/m/@ftp/
 share/octave/${VERSION}/m/@ftp/ascii.m
 share/octave/${VERSION}/m/@ftp/binary.m
@@ -1441,25 +1494,15 @@ share/octave/${VERSION}/m/audio/record.m
 share/octave/${VERSION}/m/audio/sound.m
 share/octave/${VERSION}/m/audio/soundsc.m
 share/octave/${VERSION}/m/deprecated/
-share/octave/${VERSION}/m/deprecated/bitmax.m
 share/octave/${VERSION}/m/deprecated/chop.m
 share/octave/${VERSION}/m/deprecated/comma.m
 share/octave/${VERSION}/m/deprecated/desktop.m
-share/octave/${VERSION}/m/deprecated/isstr.m
 share/octave/${VERSION}/m/deprecated/java2mat.m
-share/octave/${VERSION}/m/deprecated/mahalanobis.m
-share/octave/${VERSION}/m/deprecated/md5sum.m
-share/octave/${VERSION}/m/deprecated/octave_config_info.m
-share/octave/${VERSION}/m/deprecated/onenormest.m
+share/octave/${VERSION}/m/deprecated/output_max_field_width.m
 share/octave/${VERSION}/m/deprecated/paren.m
 share/octave/${VERSION}/m/deprecated/semicolon.m
-share/octave/${VERSION}/m/deprecated/setstr.m
-share/octave/${VERSION}/m/deprecated/sleep.m
 share/octave/${VERSION}/m/deprecated/tmpnam.m
 share/octave/${VERSION}/m/deprecated/toascii.m
-share/octave/${VERSION}/m/deprecated/usleep.m
-share/octave/${VERSION}/m/deprecated/wavread.m
-share/octave/${VERSION}/m/deprecated/wavwrite.m
 share/octave/${VERSION}/m/elfun/
 share/octave/${VERSION}/m/elfun/acosd.m
 share/octave/${VERSION}/m/elfun/acot.m
@@ -1509,7 +1552,6 @@ share/octave/${VERSION}/m/general/deg2rad.m
 share/octave/${VERSION}/m/general/del2.m
 share/octave/${VERSION}/m/general/divergence.m
 share/octave/${VERSION}/m/general/flip.m
-share/octave/${VERSION}/m/general/flipdim.m
 share/octave/${VERSION}/m/general/fliplr.m
 share/octave/${VERSION}/m/general/flipud.m
 share/octave/${VERSION}/m/general/gradient.m
@@ -1578,6 +1620,7 @@ share/octave/${VERSION}/m/gui/helpdlg.m
 share/octave/${VERSION}/m/gui/inputdlg.m
 share/octave/${VERSION}/m/gui/isappdata.m
 share/octave/${VERSION}/m/gui/listdlg.m
+share/octave/${VERSION}/m/gui/movegui.m
 share/octave/${VERSION}/m/gui/msgbox.m
 share/octave/${VERSION}/m/gui/private/
 share/octave/${VERSION}/m/gui/private/__file_filter__.m
@@ -1601,6 +1644,7 @@ share/octave/${VERSION}/m/gui/uipanel.m
 share/octave/${VERSION}/m/gui/uipushtool.m
 share/octave/${VERSION}/m/gui/uiputfile.m
 share/octave/${VERSION}/m/gui/uiresume.m
+share/octave/${VERSION}/m/gui/uitable.m
 share/octave/${VERSION}/m/gui/uitoggletool.m
 share/octave/${VERSION}/m/gui/uitoolbar.m
 share/octave/${VERSION}/m/gui/uiwait.m
@@ -1662,6 +1706,7 @@ share/octave/${VERSION}/m/image/ind2rgb.m
 share/octave/${VERSION}/m/image/iscolormap.m
 share/octave/${VERSION}/m/image/jet.m
 share/octave/${VERSION}/m/image/lines.m
+share/octave/${VERSION}/m/image/movie.m
 share/octave/${VERSION}/m/image/ocean.m
 share/octave/${VERSION}/m/image/pink.m
 share/octave/${VERSION}/m/image/prism.m
@@ -1693,8 +1738,6 @@ share/octave/${VERSION}/m/io/dlmwrite.m
 share/octave/${VERSION}/m/io/fileread.m
 share/octave/${VERSION}/m/io/importdata.m
 share/octave/${VERSION}/m/io/is_valid_file_id.m
-share/octave/${VERSION}/m/io/strread.m
-share/octave/${VERSION}/m/io/textread.m
 share/octave/${VERSION}/m/java/
 share/octave/${VERSION}/m/java/javaArray.m
 share/octave/${VERSION}/m/java/java_get.m
@@ -1705,6 +1748,17 @@ share/octave/${VERSION}/m/java/javaclasspath.m
 share/octave/${VERSION}/m/java/javamem.m
 share/octave/${VERSION}/m/java/javarmpath.m
 share/octave/${VERSION}/m/java/usejava.m
+share/octave/${VERSION}/m/legacy/
+share/octave/${VERSION}/m/legacy/findstr.m
+share/octave/${VERSION}/m/legacy/flipdim.m
+share/octave/${VERSION}/m/legacy/genvarname.m
+share/octave/${VERSION}/m/legacy/isdir.m
+share/octave/${VERSION}/m/legacy/isequalwithequalnans.m
+share/octave/${VERSION}/m/legacy/isstr.m
+share/octave/${VERSION}/m/legacy/setstr.m
+share/octave/${VERSION}/m/legacy/strmatch.m
+share/octave/${VERSION}/m/legacy/strread.m
+share/octave/${VERSION}/m/legacy/textread.m
 share/octave/${VERSION}/m/linear-algebra/
 share/octave/${VERSION}/m/linear-algebra/bandwidth.m
 share/octave/${VERSION}/m/linear-algebra/commutation_matrix.m
@@ -1731,6 +1785,7 @@ share/octave/${VERSION}/m/linear-algebra/normest.m
 share/octave/${VERSION}/m/linear-algebra/normest1.m
 share/octave/${VERSION}/m/linear-algebra/null.m
 share/octave/${VERSION}/m/linear-algebra/ols.m
+share/octave/${VERSION}/m/linear-algebra/ordeig.m
 share/octave/${VERSION}/m/linear-algebra/orth.m
 share/octave/${VERSION}/m/linear-algebra/planerot.m
 share/octave/${VERSION}/m/linear-algebra/qzhess.m
@@ -1745,6 +1800,7 @@ share/octave/${VERSION}/m/miscellaneous/bug_report.m
 share/octave/${VERSION}/m/miscellaneous/bunzip2.m
 share/octave/${VERSION}/m/miscellaneous/cast.m
 share/octave/${VERSION}/m/miscellaneous/citation.m
+share/octave/${VERSION}/m/miscellaneous/clearvars.m
 share/octave/${VERSION}/m/miscellaneous/compare_versions.m
 share/octave/${VERSION}/m/miscellaneous/computer.m
 share/octave/${VERSION}/m/miscellaneous/copyfile.m
@@ -1757,7 +1813,6 @@ share/octave/${VERSION}/m/miscellaneous/fieldnames.m
 share/octave/${VERSION}/m/miscellaneous/fileattrib.m
 share/octave/${VERSION}/m/miscellaneous/fileparts.m
 share/octave/${VERSION}/m/miscellaneous/fullfile.m
-share/octave/${VERSION}/m/miscellaneous/genvarname.m
 share/octave/${VERSION}/m/miscellaneous/getfield.m
 share/octave/${VERSION}/m/miscellaneous/grabcode.m
 share/octave/${VERSION}/m/miscellaneous/gunzip.m
@@ -1765,7 +1820,8 @@ share/octave/${VERSION}/m/miscellaneous/info.m
 share/octave/${VERSION}/m/miscellaneous/inputParser.m
 share/octave/${VERSION}/m/miscellaneous/inputname.m
 share/octave/${VERSION}/m/miscellaneous/isdeployed.m
-share/octave/${VERSION}/m/miscellaneous/isdir.m
+share/octave/${VERSION}/m/miscellaneous/isfile.m
+share/octave/${VERSION}/m/miscellaneous/isfolder.m
 share/octave/${VERSION}/m/miscellaneous/ismac.m
 share/octave/${VERSION}/m/miscellaneous/ispc.m
 share/octave/${VERSION}/m/miscellaneous/isunix.m
@@ -2086,6 +2142,7 @@ share/octave/${VERSION}/m/plot/util/linkprop.m
 share/octave/${VERSION}/m/plot/util/meshgrid.m
 share/octave/${VERSION}/m/plot/util/ndgrid.m
 share/octave/${VERSION}/m/plot/util/newplot.m
+share/octave/${VERSION}/m/plot/util/openfig.m
 share/octave/${VERSION}/m/plot/util/pan.m
 share/octave/${VERSION}/m/plot/util/print.m
 share/octave/${VERSION}/m/plot/util/printd.m
@@ -2109,6 +2166,7 @@ share/octave/${VERSION}/m/plot/util/refreshdata.m
 share/octave/${VERSION}/m/plot/util/rotate.m
 share/octave/${VERSION}/m/plot/util/rotate3d.m
 share/octave/${VERSION}/m/plot/util/saveas.m
+share/octave/${VERSION}/m/plot/util/savefig.m
 share/octave/${VERSION}/m/plot/util/shg.m
 share/octave/${VERSION}/m/plot/util/struct2hdl.m
 share/octave/${VERSION}/m/plot/util/subplot.m
@@ -2171,6 +2229,7 @@ share/octave/${VERSION}/m/set/setxor.m
 share/octave/${VERSION}/m/set/union.m
 share/octave/${VERSION}/m/set/unique.m
 share/octave/${VERSION}/m/signal/
+share/octave/${VERSION}/m/signal/__parse_movargs__.m
 share/octave/${VERSION}/m/signal/arch_fit.m
 share/octave/${VERSION}/m/signal/arch_rnd.m
 share/octave/${VERSION}/m/signal/arch_test.m
@@ -2192,6 +2251,8 @@ share/octave/${VERSION}/m/signal/hamming.m
 share/octave/${VERSION}/m/signal/hanning.m
 share/octave/${VERSION}/m/signal/hurst.m
 share/octave/${VERSION}/m/signal/ifftshift.m
+share/octave/${VERSION}/m/signal/movfun.m
+share/octave/${VERSION}/m/signal/movslice.m
 share/octave/${VERSION}/m/signal/periodogram.m
 share/octave/${VERSION}/m/signal/private/
 share/octave/${VERSION}/m/signal/private/rectangle_lw.m
@@ -2306,6 +2367,15 @@ share/octave/${VERSION}/m/statistics/meansq.m
 share/octave/${VERSION}/m/statistics/median.m
 share/octave/${VERSION}/m/statistics/mode.m
 share/octave/${VERSION}/m/statistics/moment.m
+share/octave/${VERSION}/m/statistics/movmad.m
+share/octave/${VERSION}/m/statistics/movmax.m
+share/octave/${VERSION}/m/statistics/movmean.m
+share/octave/${VERSION}/m/statistics/movmedian.m
+share/octave/${VERSION}/m/statistics/movmin.m
+share/octave/${VERSION}/m/statistics/movprod.m
+share/octave/${VERSION}/m/statistics/movstd.m
+share/octave/${VERSION}/m/statistics/movsum.m
+share/octave/${VERSION}/m/statistics/movvar.m
 share/octave/${VERSION}/m/statistics/prctile.m
 share/octave/${VERSION}/m/statistics/quantile.m
 share/octave/${VERSION}/m/statistics/range.m
@@ -2328,7 +2398,6 @@ share/octave/${VERSION}/m/strings/dec2base.m
 share/octave/${VERSION}/m/strings/dec2bin.m
 share/octave/${VERSION}/m/strings/dec2hex.m
 share/octave/${VERSION}/m/strings/erase.m
-share/octave/${VERSION}/m/strings/findstr.m
 share/octave/${VERSION}/m/strings/hex2dec.m
 share/octave/${VERSION}/m/strings/index.m
 share/octave/${VERSION}/m/strings/isletter.m
@@ -2344,7 +2413,6 @@ share/octave/${VERSION}/m/strings/strcat.m
 share/octave/${VERSION}/m/strings/strchr.m
 share/octave/${VERSION}/m/strings/strjoin.m
 share/octave/${VERSION}/m/strings/strjust.m
-share/octave/${VERSION}/m/strings/strmatch.m
 share/octave/${VERSION}/m/strings/strsplit.m
 share/octave/${VERSION}/m/strings/strtok.m
 share/octave/${VERSION}/m/strings/strtrim.m
@@ -2389,8 +2457,8 @@ share/octave/${VERSION}/m/time/weekday.m
 share/octave/${VERSION}/site/
 share/octave/${VERSION}/site/m/
 share/octave/site/
-share/octave/site/api-v52/
-share/octave/site/api-v52/m/
+share/octave/site/api-v53/
+share/octave/site/api-v53/m/
 share/octave/site/m/
 share/octave/site/m/startup/
 share/octave/site/m/startup/octaverc
