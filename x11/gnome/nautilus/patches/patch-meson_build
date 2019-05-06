@@ -1,0 +1,40 @@
+$OpenBSD: patch-meson_build,v 1.1 2019/05/06 09:55:37 ajacoutot Exp $
+
+From 08c6d9e6cdd903ae67c496ffd7ae3de4619c6f40 Mon Sep 17 00:00:00 2001
+From: Emmanuele Bassi <ebassi@gnome.org>
+Date: Sun, 14 Apr 2019 13:28:06 +0100
+Subject: [PATCH] Define symbol needed for gnome-desktop
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -137,6 +137,8 @@ tracker_sparql = dependency('tracker-sparql-2.0')
+ x11 = dependency('x11')
+ xml = dependency('libxml-2.0', version: '>= 2.7.8')
+ 
++fontconfig = dependency('fontconfig', required: false)
++
+ ####################
+ # End dependencies #
+ ####################
+@@ -159,6 +161,12 @@ endif
+ 
+ application_id = 'org.gnome.Nautilus' + profile
+ 
++if fontconfig.found()
++  fontconfig_cache_path = fontconfig.get_pkgconfig_variable('cachedir')
++else
++  fontconfig_cache_path = join_paths(libdir, 'fontconfig/cache')
++endif
++
+ conf.set_quoted('APPLICATION_ID', application_id)
+ conf.set_quoted('GETTEXT_PACKAGE', 'nautilus')
+ conf.set_quoted('INSTALL_PREFIX', prefix)
+@@ -169,6 +177,7 @@ conf.set_quoted('NAUTILUS_EXTENSIONDIR', join_paths(pr
+ conf.set_quoted('PACKAGE_VERSION', meson.project_version())
+ conf.set_quoted('PROFILE', profile)
+ conf.set_quoted('VERSION', '@0@-@VCS_TAG@'.format(meson.project_version()))
++conf.set_quoted('FONTCONFIG_CACHE_PATH', fontconfig_cache_path)
+ 
+ ###################################################
+ # gnome-desktop macros for thumbnailer sandboxing #

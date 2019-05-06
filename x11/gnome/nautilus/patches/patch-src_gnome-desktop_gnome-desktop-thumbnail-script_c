@@ -1,0 +1,96 @@
+$OpenBSD: patch-src_gnome-desktop_gnome-desktop-thumbnail-script_c,v 1.1 2019/05/06 09:55:37 ajacoutot Exp $
+
+(CVE-2019-11461) Incomplete fix for CVE-2017-5226
+From 031b814d526895c612fae98ac75379e60469161b Mon Sep 17 00:00:00 2001
+From: Ernestas Kulik <ekulik@redhat.com>
+Date: Sun, 14 Apr 2019 10:44:32 +0200
+Subject: [PATCH] Update gnome-desktop code
+
+Index: src/gnome-desktop/gnome-desktop-thumbnail-script.c
+--- src/gnome-desktop/gnome-desktop-thumbnail-script.c.orig
++++ src/gnome-desktop/gnome-desktop-thumbnail-script.c
+@@ -343,7 +343,7 @@ setup_seccomp (GPtrArray  *argv_array,
+     {SCMP_SYS (clone), &SCMP_A0 (SCMP_CMP_MASKED_EQ, CLONE_NEWUSER, CLONE_NEWUSER)},
+ 
+     /* Don't allow faking input to the controlling tty (CVE-2017-5226) */
+-    {SCMP_SYS (ioctl), &SCMP_A1(SCMP_CMP_EQ, (int)TIOCSTI)},
++    {SCMP_SYS (ioctl), &SCMP_A1(SCMP_CMP_MASKED_EQ, 0xFFFFFFFFu, (int)TIOCSTI)},
+   };
+ 
+   struct
+@@ -507,21 +507,71 @@ setup_seccomp (GPtrArray  *argv_array,
+ 
+ #ifdef HAVE_BWRAP
+ static gboolean
++path_is_usrmerged (const char *dir)
++{
++  /* does /dir point to /usr/dir? */
++  g_autofree char *target = NULL;
++  GStatBuf stat_buf_src, stat_buf_target;
++
++  if (g_stat (dir, &stat_buf_src) < 0)
++    return FALSE;
++
++  target = g_strdup_printf ("/usr/%s", dir);
++
++  if (g_stat (target, &stat_buf_target) < 0)
++    return FALSE;
++
++  return (stat_buf_src.st_dev == stat_buf_target.st_dev) &&
++         (stat_buf_src.st_ino == stat_buf_target.st_ino);
++}
++
++static gboolean
+ add_bwrap (GPtrArray   *array,
+ 	   ScriptExec  *script)
+ {
++  const char * const usrmerged_dirs[] = { "bin", "lib64", "lib", "sbin" };
++  int i;
++
+   g_return_val_if_fail (script->outdir != NULL, FALSE);
+   g_return_val_if_fail (script->s_infile != NULL, FALSE);
+ 
+   add_args (array,
+ 	    "bwrap",
+ 	    "--ro-bind", "/usr", "/usr",
+-	    "--ro-bind", "/lib", "/lib",
+-	    "--ro-bind", "/lib64", "/lib64",
++	    "--ro-bind", "/etc/ld.so.cache", "/etc/ld.so.cache",
++	    NULL);
++
++  /* These directories might be symlinks into /usr/... */
++  for (i = 0; i < G_N_ELEMENTS (usrmerged_dirs); i++)
++    {
++      g_autofree char *absolute_dir = g_strdup_printf ("/%s", usrmerged_dirs[i]);
++
++      if (!g_file_test (absolute_dir, G_FILE_TEST_EXISTS))
++        continue;
++
++      if (path_is_usrmerged (absolute_dir))
++        {
++          g_autofree char *symlink_target = g_strdup_printf ("/usr/%s", absolute_dir);
++
++          add_args (array,
++                    "--symlink", symlink_target, absolute_dir,
++                    NULL);
++        }
++      else
++        {
++          add_args (array,
++                    "--ro-bind", absolute_dir, absolute_dir,
++                    NULL);
++        }
++    }
++
++  /* fontconfig cache if necessary */
++  if (!g_str_has_prefix (FONTCONFIG_CACHE_PATH, "/usr/"))
++    add_args (array, "--ro-bind-try", FONTCONFIG_CACHE_PATH, FONTCONFIG_CACHE_PATH, NULL);
++
++  add_args (array,
+ 	    "--proc", "/proc",
+ 	    "--dev", "/dev",
+-	    "--symlink", "usr/bin", "/bin",
+-	    "--symlink", "usr/sbin", "/sbin",
+ 	    "--chdir", "/",
+ 	    "--setenv", "GIO_USE_VFS", "local",
+ 	    "--unshare-all",

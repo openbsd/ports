@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_gnome-desktop_gnome-desktop-thumbnail_c,v 1.1 2019/05/06 09:55:37 ajacoutot Exp $
+
+(CVE-2019-11461) Incomplete fix for CVE-2017-5226
+From 031b814d526895c612fae98ac75379e60469161b Mon Sep 17 00:00:00 2001
+From: Ernestas Kulik <ekulik@redhat.com>
+Date: Sun, 14 Apr 2019 10:44:32 +0200
+Subject: [PATCH] Update gnome-desktop code
+
+Index: src/gnome-desktop/gnome-desktop-thumbnail.c
+--- src/gnome-desktop/gnome-desktop-thumbnail.c.orig
++++ src/gnome-desktop/gnome-desktop-thumbnail.c
+@@ -969,6 +969,8 @@ get_preview_thumbnail (const char *uri,
+ 
+     object = g_file_info_get_attribute_object (file_info,
+                                                G_FILE_ATTRIBUTE_PREVIEW_ICON);
++    if (object)
++        g_object_ref (object);
+     g_object_unref (file_info);
+ 
+     if (!object)
