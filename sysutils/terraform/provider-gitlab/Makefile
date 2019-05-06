@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2019/02/20 09:40:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/06 19:52:08 ajacoutot Exp $
 
 PROVIDER=		gitlab
-GH_TAGNAME=		v1.2.0
+GH_TAGNAME=		v1.3.0
 
 .include <bsd.port.mk>
