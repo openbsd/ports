@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.54 2019/03/27 17:48:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.55 2019/05/06 18:12:07 ajacoutot Exp $
 include/evolution-data-server/
 include/evolution-data-server/camel/
 include/evolution-data-server/camel/camel-address.h
 include/evolution-data-server/camel/camel-async-closure.h
+include/evolution-data-server/camel/camel-autocleanups.h
 include/evolution-data-server/camel/camel-block-file.h
 include/evolution-data-server/camel/camel-certdb.h
 include/evolution-data-server/camel/camel-charset-map.h
@@ -127,6 +128,7 @@ include/evolution-data-server/camel/camel-vtrash-folder.h
 include/evolution-data-server/camel/camel-weak-ref-group.h
 include/evolution-data-server/camel/camel.h
 include/evolution-data-server/libebackend/
+include/evolution-data-server/libebackend/e-backend-autocleanups.h
 include/evolution-data-server/libebackend/e-backend-enums.h
 include/evolution-data-server/libebackend/e-backend-enumtypes.h
 include/evolution-data-server/libebackend/e-backend-factory.h
@@ -234,13 +236,13 @@ include/evolution-data-server/libedataserver/e-client.h
 include/evolution-data-server/libedataserver/e-collator.h
 include/evolution-data-server/libedataserver/e-credentials.h
 include/evolution-data-server/libedataserver/e-data-server-util.h
+include/evolution-data-server/libedataserver/e-dataserver-autocleanups.h
 include/evolution-data-server/libedataserver/e-debug-log.h
 include/evolution-data-server/libedataserver/e-extensible.h
 include/evolution-data-server/libedataserver/e-extension.h
 include/evolution-data-server/libedataserver/e-flag.h
 include/evolution-data-server/libedataserver/e-free-form-exp.h
 include/evolution-data-server/libedataserver/e-gdata-oauth2-authorizer.h
-include/evolution-data-server/libedataserver/e-gdbus-templates.h
 include/evolution-data-server/libedataserver/e-iterator.h
 include/evolution-data-server/libedataserver/e-list-iterator.h
 include/evolution-data-server/libedataserver/e-list.h
