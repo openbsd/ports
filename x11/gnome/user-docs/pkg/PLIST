@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2019/04/28 08:03:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2019/05/06 22:00:12 ajacoutot Exp $
 @conflict gnome2-user-docs-*
 @pkgpath x11/gnome/users-guide
 share/help/
@@ -34,6 +34,7 @@ share/help/C/gnome-help/backup-what.page
 share/help/C/gnome-help/backup-where.page
 share/help/C/gnome-help/backup-why.page
 share/help/C/gnome-help/bluetooth-connect-device.page
+share/help/C/gnome-help/bluetooth-device-specific-pairing.page
 share/help/C/gnome-help/bluetooth-problem-connecting.page
 share/help/C/gnome-help/bluetooth-remove-connection.page
 share/help/C/gnome-help/bluetooth-send-file.page
@@ -493,6 +494,7 @@ share/help/as/gnome-help/backup-what.page
 share/help/as/gnome-help/backup-where.page
 share/help/as/gnome-help/backup-why.page
 share/help/as/gnome-help/bluetooth-connect-device.page
+share/help/as/gnome-help/bluetooth-device-specific-pairing.page
 share/help/as/gnome-help/bluetooth-problem-connecting.page
 share/help/as/gnome-help/bluetooth-remove-connection.page
 share/help/as/gnome-help/bluetooth-send-file.page
@@ -893,6 +895,7 @@ share/help/ca/gnome-help/backup-what.page
 share/help/ca/gnome-help/backup-where.page
 share/help/ca/gnome-help/backup-why.page
 share/help/ca/gnome-help/bluetooth-connect-device.page
+share/help/ca/gnome-help/bluetooth-device-specific-pairing.page
 share/help/ca/gnome-help/bluetooth-problem-connecting.page
 share/help/ca/gnome-help/bluetooth-remove-connection.page
 share/help/ca/gnome-help/bluetooth-send-file.page
@@ -1293,6 +1296,7 @@ share/help/cs/gnome-help/backup-what.page
 share/help/cs/gnome-help/backup-where.page
 share/help/cs/gnome-help/backup-why.page
 share/help/cs/gnome-help/bluetooth-connect-device.page
+share/help/cs/gnome-help/bluetooth-device-specific-pairing.page
 share/help/cs/gnome-help/bluetooth-problem-connecting.page
 share/help/cs/gnome-help/bluetooth-remove-connection.page
 share/help/cs/gnome-help/bluetooth-send-file.page
@@ -1752,6 +1756,7 @@ share/help/da/gnome-help/backup-what.page
 share/help/da/gnome-help/backup-where.page
 share/help/da/gnome-help/backup-why.page
 share/help/da/gnome-help/bluetooth-connect-device.page
+share/help/da/gnome-help/bluetooth-device-specific-pairing.page
 share/help/da/gnome-help/bluetooth-problem-connecting.page
 share/help/da/gnome-help/bluetooth-remove-connection.page
 share/help/da/gnome-help/bluetooth-send-file.page
@@ -2152,6 +2157,7 @@ share/help/de/gnome-help/backup-what.page
 share/help/de/gnome-help/backup-where.page
 share/help/de/gnome-help/backup-why.page
 share/help/de/gnome-help/bluetooth-connect-device.page
+share/help/de/gnome-help/bluetooth-device-specific-pairing.page
 share/help/de/gnome-help/bluetooth-problem-connecting.page
 share/help/de/gnome-help/bluetooth-remove-connection.page
 share/help/de/gnome-help/bluetooth-send-file.page
@@ -2611,6 +2617,7 @@ share/help/el/gnome-help/backup-what.page
 share/help/el/gnome-help/backup-where.page
 share/help/el/gnome-help/backup-why.page
 share/help/el/gnome-help/bluetooth-connect-device.page
+share/help/el/gnome-help/bluetooth-device-specific-pairing.page
 share/help/el/gnome-help/bluetooth-problem-connecting.page
 share/help/el/gnome-help/bluetooth-remove-connection.page
 share/help/el/gnome-help/bluetooth-send-file.page
@@ -3011,6 +3018,7 @@ share/help/es/gnome-help/backup-what.page
 share/help/es/gnome-help/backup-where.page
 share/help/es/gnome-help/backup-why.page
 share/help/es/gnome-help/bluetooth-connect-device.page
+share/help/es/gnome-help/bluetooth-device-specific-pairing.page
 share/help/es/gnome-help/bluetooth-problem-connecting.page
 share/help/es/gnome-help/bluetooth-remove-connection.page
 share/help/es/gnome-help/bluetooth-send-file.page
@@ -3470,6 +3478,7 @@ share/help/fi/gnome-help/backup-what.page
 share/help/fi/gnome-help/backup-where.page
 share/help/fi/gnome-help/backup-why.page
 share/help/fi/gnome-help/bluetooth-connect-device.page
+share/help/fi/gnome-help/bluetooth-device-specific-pairing.page
 share/help/fi/gnome-help/bluetooth-problem-connecting.page
 share/help/fi/gnome-help/bluetooth-remove-connection.page
 share/help/fi/gnome-help/bluetooth-send-file.page
@@ -3870,6 +3879,7 @@ share/help/fr/gnome-help/backup-what.page
 share/help/fr/gnome-help/backup-where.page
 share/help/fr/gnome-help/backup-why.page
 share/help/fr/gnome-help/bluetooth-connect-device.page
+share/help/fr/gnome-help/bluetooth-device-specific-pairing.page
 share/help/fr/gnome-help/bluetooth-problem-connecting.page
 share/help/fr/gnome-help/bluetooth-remove-connection.page
 share/help/fr/gnome-help/bluetooth-send-file.page
@@ -4270,6 +4280,7 @@ share/help/gl/gnome-help/backup-what.page
 share/help/gl/gnome-help/backup-where.page
 share/help/gl/gnome-help/backup-why.page
 share/help/gl/gnome-help/bluetooth-connect-device.page
+share/help/gl/gnome-help/bluetooth-device-specific-pairing.page
 share/help/gl/gnome-help/bluetooth-problem-connecting.page
 share/help/gl/gnome-help/bluetooth-remove-connection.page
 share/help/gl/gnome-help/bluetooth-send-file.page
@@ -4729,6 +4740,7 @@ share/help/gu/gnome-help/backup-what.page
 share/help/gu/gnome-help/backup-where.page
 share/help/gu/gnome-help/backup-why.page
 share/help/gu/gnome-help/bluetooth-connect-device.page
+share/help/gu/gnome-help/bluetooth-device-specific-pairing.page
 share/help/gu/gnome-help/bluetooth-problem-connecting.page
 share/help/gu/gnome-help/bluetooth-remove-connection.page
 share/help/gu/gnome-help/bluetooth-send-file.page
@@ -5129,6 +5141,7 @@ share/help/he/gnome-help/backup-what.page
 share/help/he/gnome-help/backup-where.page
 share/help/he/gnome-help/backup-why.page
 share/help/he/gnome-help/bluetooth-connect-device.page
+share/help/he/gnome-help/bluetooth-device-specific-pairing.page
 share/help/he/gnome-help/bluetooth-problem-connecting.page
 share/help/he/gnome-help/bluetooth-remove-connection.page
 share/help/he/gnome-help/bluetooth-send-file.page
@@ -5529,6 +5542,7 @@ share/help/hi/gnome-help/backup-what.page
 share/help/hi/gnome-help/backup-where.page
 share/help/hi/gnome-help/backup-why.page
 share/help/hi/gnome-help/bluetooth-connect-device.page
+share/help/hi/gnome-help/bluetooth-device-specific-pairing.page
 share/help/hi/gnome-help/bluetooth-problem-connecting.page
 share/help/hi/gnome-help/bluetooth-remove-connection.page
 share/help/hi/gnome-help/bluetooth-send-file.page
@@ -5929,6 +5943,7 @@ share/help/hr/gnome-help/backup-what.page
 share/help/hr/gnome-help/backup-where.page
 share/help/hr/gnome-help/backup-why.page
 share/help/hr/gnome-help/bluetooth-connect-device.page
+share/help/hr/gnome-help/bluetooth-device-specific-pairing.page
 share/help/hr/gnome-help/bluetooth-problem-connecting.page
 share/help/hr/gnome-help/bluetooth-remove-connection.page
 share/help/hr/gnome-help/bluetooth-send-file.page
@@ -6329,6 +6344,7 @@ share/help/hu/gnome-help/backup-what.page
 share/help/hu/gnome-help/backup-where.page
 share/help/hu/gnome-help/backup-why.page
 share/help/hu/gnome-help/bluetooth-connect-device.page
+share/help/hu/gnome-help/bluetooth-device-specific-pairing.page
 share/help/hu/gnome-help/bluetooth-problem-connecting.page
 share/help/hu/gnome-help/bluetooth-remove-connection.page
 share/help/hu/gnome-help/bluetooth-send-file.page
@@ -6788,6 +6804,7 @@ share/help/id/gnome-help/backup-what.page
 share/help/id/gnome-help/backup-where.page
 share/help/id/gnome-help/backup-why.page
 share/help/id/gnome-help/bluetooth-connect-device.page
+share/help/id/gnome-help/bluetooth-device-specific-pairing.page
 share/help/id/gnome-help/bluetooth-problem-connecting.page
 share/help/id/gnome-help/bluetooth-remove-connection.page
 share/help/id/gnome-help/bluetooth-send-file.page
@@ -7188,6 +7205,7 @@ share/help/it/gnome-help/backup-what.page
 share/help/it/gnome-help/backup-where.page
 share/help/it/gnome-help/backup-why.page
 share/help/it/gnome-help/bluetooth-connect-device.page
+share/help/it/gnome-help/bluetooth-device-specific-pairing.page
 share/help/it/gnome-help/bluetooth-problem-connecting.page
 share/help/it/gnome-help/bluetooth-remove-connection.page
 share/help/it/gnome-help/bluetooth-send-file.page
@@ -7588,6 +7606,7 @@ share/help/ja/gnome-help/backup-what.page
 share/help/ja/gnome-help/backup-where.page
 share/help/ja/gnome-help/backup-why.page
 share/help/ja/gnome-help/bluetooth-connect-device.page
+share/help/ja/gnome-help/bluetooth-device-specific-pairing.page
 share/help/ja/gnome-help/bluetooth-problem-connecting.page
 share/help/ja/gnome-help/bluetooth-remove-connection.page
 share/help/ja/gnome-help/bluetooth-send-file.page
@@ -7988,6 +8007,7 @@ share/help/kn/gnome-help/backup-what.page
 share/help/kn/gnome-help/backup-where.page
 share/help/kn/gnome-help/backup-why.page
 share/help/kn/gnome-help/bluetooth-connect-device.page
+share/help/kn/gnome-help/bluetooth-device-specific-pairing.page
 share/help/kn/gnome-help/bluetooth-problem-connecting.page
 share/help/kn/gnome-help/bluetooth-remove-connection.page
 share/help/kn/gnome-help/bluetooth-send-file.page
@@ -8448,6 +8468,7 @@ share/help/lv/gnome-help/backup-what.page
 share/help/lv/gnome-help/backup-where.page
 share/help/lv/gnome-help/backup-why.page
 share/help/lv/gnome-help/bluetooth-connect-device.page
+share/help/lv/gnome-help/bluetooth-device-specific-pairing.page
 share/help/lv/gnome-help/bluetooth-problem-connecting.page
 share/help/lv/gnome-help/bluetooth-remove-connection.page
 share/help/lv/gnome-help/bluetooth-send-file.page
@@ -8848,6 +8869,7 @@ share/help/mr/gnome-help/backup-what.page
 share/help/mr/gnome-help/backup-where.page
 share/help/mr/gnome-help/backup-why.page
 share/help/mr/gnome-help/bluetooth-connect-device.page
+share/help/mr/gnome-help/bluetooth-device-specific-pairing.page
 share/help/mr/gnome-help/bluetooth-problem-connecting.page
 share/help/mr/gnome-help/bluetooth-remove-connection.page
 share/help/mr/gnome-help/bluetooth-send-file.page
@@ -9248,6 +9270,7 @@ share/help/nl/gnome-help/backup-what.page
 share/help/nl/gnome-help/backup-where.page
 share/help/nl/gnome-help/backup-why.page
 share/help/nl/gnome-help/bluetooth-connect-device.page
+share/help/nl/gnome-help/bluetooth-device-specific-pairing.page
 share/help/nl/gnome-help/bluetooth-problem-connecting.page
 share/help/nl/gnome-help/bluetooth-remove-connection.page
 share/help/nl/gnome-help/bluetooth-send-file.page
@@ -9648,6 +9671,7 @@ share/help/pa/gnome-help/backup-what.page
 share/help/pa/gnome-help/backup-where.page
 share/help/pa/gnome-help/backup-why.page
 share/help/pa/gnome-help/bluetooth-connect-device.page
+share/help/pa/gnome-help/bluetooth-device-specific-pairing.page
 share/help/pa/gnome-help/bluetooth-problem-connecting.page
 share/help/pa/gnome-help/bluetooth-remove-connection.page
 share/help/pa/gnome-help/bluetooth-send-file.page
@@ -10048,6 +10072,7 @@ share/help/pl/gnome-help/backup-what.page
 share/help/pl/gnome-help/backup-where.page
 share/help/pl/gnome-help/backup-why.page
 share/help/pl/gnome-help/bluetooth-connect-device.page
+share/help/pl/gnome-help/bluetooth-device-specific-pairing.page
 share/help/pl/gnome-help/bluetooth-problem-connecting.page
 share/help/pl/gnome-help/bluetooth-remove-connection.page
 share/help/pl/gnome-help/bluetooth-send-file.page
@@ -10448,6 +10473,7 @@ share/help/pt/gnome-help/backup-what.page
 share/help/pt/gnome-help/backup-where.page
 share/help/pt/gnome-help/backup-why.page
 share/help/pt/gnome-help/bluetooth-connect-device.page
+share/help/pt/gnome-help/bluetooth-device-specific-pairing.page
 share/help/pt/gnome-help/bluetooth-problem-connecting.page
 share/help/pt/gnome-help/bluetooth-remove-connection.page
 share/help/pt/gnome-help/bluetooth-send-file.page
@@ -10848,6 +10874,7 @@ share/help/pt_BR/gnome-help/backup-what.page
 share/help/pt_BR/gnome-help/backup-where.page
 share/help/pt_BR/gnome-help/backup-why.page
 share/help/pt_BR/gnome-help/bluetooth-connect-device.page
+share/help/pt_BR/gnome-help/bluetooth-device-specific-pairing.page
 share/help/pt_BR/gnome-help/bluetooth-problem-connecting.page
 share/help/pt_BR/gnome-help/bluetooth-remove-connection.page
 share/help/pt_BR/gnome-help/bluetooth-send-file.page
@@ -11307,6 +11334,7 @@ share/help/ro/gnome-help/backup-what.page
 share/help/ro/gnome-help/backup-where.page
 share/help/ro/gnome-help/backup-why.page
 share/help/ro/gnome-help/bluetooth-connect-device.page
+share/help/ro/gnome-help/bluetooth-device-specific-pairing.page
 share/help/ro/gnome-help/bluetooth-problem-connecting.page
 share/help/ro/gnome-help/bluetooth-remove-connection.page
 share/help/ro/gnome-help/bluetooth-send-file.page
@@ -11707,6 +11735,7 @@ share/help/ru/gnome-help/backup-what.page
 share/help/ru/gnome-help/backup-where.page
 share/help/ru/gnome-help/backup-why.page
 share/help/ru/gnome-help/bluetooth-connect-device.page
+share/help/ru/gnome-help/bluetooth-device-specific-pairing.page
 share/help/ru/gnome-help/bluetooth-problem-connecting.page
 share/help/ru/gnome-help/bluetooth-remove-connection.page
 share/help/ru/gnome-help/bluetooth-send-file.page
@@ -12107,6 +12136,7 @@ share/help/sl/gnome-help/backup-what.page
 share/help/sl/gnome-help/backup-where.page
 share/help/sl/gnome-help/backup-why.page
 share/help/sl/gnome-help/bluetooth-connect-device.page
+share/help/sl/gnome-help/bluetooth-device-specific-pairing.page
 share/help/sl/gnome-help/bluetooth-problem-connecting.page
 share/help/sl/gnome-help/bluetooth-remove-connection.page
 share/help/sl/gnome-help/bluetooth-send-file.page
@@ -12507,6 +12537,7 @@ share/help/sr/gnome-help/backup-what.page
 share/help/sr/gnome-help/backup-where.page
 share/help/sr/gnome-help/backup-why.page
 share/help/sr/gnome-help/bluetooth-connect-device.page
+share/help/sr/gnome-help/bluetooth-device-specific-pairing.page
 share/help/sr/gnome-help/bluetooth-problem-connecting.page
 share/help/sr/gnome-help/bluetooth-remove-connection.page
 share/help/sr/gnome-help/bluetooth-send-file.page
@@ -12907,6 +12938,7 @@ share/help/sr@latin/gnome-help/backup-what.page
 share/help/sr@latin/gnome-help/backup-where.page
 share/help/sr@latin/gnome-help/backup-why.page
 share/help/sr@latin/gnome-help/bluetooth-connect-device.page
+share/help/sr@latin/gnome-help/bluetooth-device-specific-pairing.page
 share/help/sr@latin/gnome-help/bluetooth-problem-connecting.page
 share/help/sr@latin/gnome-help/bluetooth-remove-connection.page
 share/help/sr@latin/gnome-help/bluetooth-send-file.page
@@ -13307,6 +13339,7 @@ share/help/sv/gnome-help/backup-what.page
 share/help/sv/gnome-help/backup-where.page
 share/help/sv/gnome-help/backup-why.page
 share/help/sv/gnome-help/bluetooth-connect-device.page
+share/help/sv/gnome-help/bluetooth-device-specific-pairing.page
 share/help/sv/gnome-help/bluetooth-problem-connecting.page
 share/help/sv/gnome-help/bluetooth-remove-connection.page
 share/help/sv/gnome-help/bluetooth-send-file.page
@@ -13766,6 +13799,7 @@ share/help/ta/gnome-help/backup-what.page
 share/help/ta/gnome-help/backup-where.page
 share/help/ta/gnome-help/backup-why.page
 share/help/ta/gnome-help/bluetooth-connect-device.page
+share/help/ta/gnome-help/bluetooth-device-specific-pairing.page
 share/help/ta/gnome-help/bluetooth-problem-connecting.page
 share/help/ta/gnome-help/bluetooth-remove-connection.page
 share/help/ta/gnome-help/bluetooth-send-file.page
@@ -14166,6 +14200,7 @@ share/help/te/gnome-help/backup-what.page
 share/help/te/gnome-help/backup-where.page
 share/help/te/gnome-help/backup-why.page
 share/help/te/gnome-help/bluetooth-connect-device.page
+share/help/te/gnome-help/bluetooth-device-specific-pairing.page
 share/help/te/gnome-help/bluetooth-problem-connecting.page
 share/help/te/gnome-help/bluetooth-remove-connection.page
 share/help/te/gnome-help/bluetooth-send-file.page
@@ -14566,6 +14601,7 @@ share/help/vi/gnome-help/backup-what.page
 share/help/vi/gnome-help/backup-where.page
 share/help/vi/gnome-help/backup-why.page
 share/help/vi/gnome-help/bluetooth-connect-device.page
+share/help/vi/gnome-help/bluetooth-device-specific-pairing.page
 share/help/vi/gnome-help/bluetooth-problem-connecting.page
 share/help/vi/gnome-help/bluetooth-remove-connection.page
 share/help/vi/gnome-help/bluetooth-send-file.page
@@ -14966,6 +15002,7 @@ share/help/zh_CN/gnome-help/backup-what.page
 share/help/zh_CN/gnome-help/backup-where.page
 share/help/zh_CN/gnome-help/backup-why.page
 share/help/zh_CN/gnome-help/bluetooth-connect-device.page
+share/help/zh_CN/gnome-help/bluetooth-device-specific-pairing.page
 share/help/zh_CN/gnome-help/bluetooth-problem-connecting.page
 share/help/zh_CN/gnome-help/bluetooth-remove-connection.page
 share/help/zh_CN/gnome-help/bluetooth-send-file.page
