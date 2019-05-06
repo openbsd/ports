@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2018/04/11 13:23:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/06 16:34:44 kn Exp $
 
 COMMENT=	Universal Plug and Play SDK
 
-DISTNAME=	libupnp-1.6.22
+DISTNAME=	libupnp-1.8.4
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	net devel
 
-SHARED_LIBS +=  ixml                 0.2      # 2.8
-SHARED_LIBS +=  threadutil           1.1      # 6.4
-SHARED_LIBS +=  upnp                 1.1      # 9.3
+SHARED_LIBS +=  ixml                 1.0      # 10.1.0
+SHARED_LIBS +=  upnp                 2.0      # 13.0.0
 
 HOMEPAGE=	http://pupnp.sourceforge.net/
 
@@ -20,10 +19,12 @@ WANTLIB += pthread
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pupnp/}
 
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 # HAVE_COMPAT does not do anything
 CONFIGURE_ENV=	ac_cv_cflags_gcc_option__Os=no \
 		ac_cv_lib_compat_ftime=no
+CONFIGURE_ARGS=	--enable-reuseaddr
 
 .ifdef DEBUG
 CONFIGURE_ARGS+= --enable-debug

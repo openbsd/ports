@@ -1,9 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/05/22 11:31:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/05/06 16:34:44 kn Exp $
 include/upnp/
-include/upnp/FreeList.h
-include/upnp/LinkedList.h
-include/upnp/ThreadPool.h
-include/upnp/TimerThread.h
+include/upnp/ActionComplete.h
+include/upnp/ActionRequest.h
+include/upnp/Callback.h
+include/upnp/Discovery.h
+include/upnp/Event.h
+include/upnp/EventSubscribe.h
+include/upnp/FileInfo.h
+include/upnp/StateVarComplete.h
+include/upnp/StateVarRequest.h
+include/upnp/SubscriptionRequest.h
+include/upnp/TemplateInclude.h
+include/upnp/TemplateSource.h
+include/upnp/TemplateUndef.h
 include/upnp/UpnpGlobal.h
 include/upnp/UpnpInet.h
 include/upnp/UpnpIntTypes.h
@@ -13,6 +22,8 @@ include/upnp/UpnpUniStd.h
 include/upnp/ithread.h
 include/upnp/ixml.h
 include/upnp/ixmldebug.h
+include/upnp/list.h
+include/upnp/poison.h
 include/upnp/upnp.h
 include/upnp/upnpconfig.h
 include/upnp/upnpdebug.h
@@ -20,9 +31,6 @@ include/upnp/upnptools.h
 lib/libixml.a
 lib/libixml.la
 @lib lib/libixml.so.${LIBixml_VERSION}
-lib/libthreadutil.a
-lib/libthreadutil.la
-@lib lib/libthreadutil.so.${LIBthreadutil_VERSION}
 lib/libupnp.a
 lib/libupnp.la
 @lib lib/libupnp.so.${LIBupnp_VERSION}
