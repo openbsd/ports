@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:59 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/05/06 10:38:26 sebastia Exp $
 include/itk/
 include/itk/itk.h
 include/itk/itkDecls.h
-@lib lib/libitk33.so.${LIBitk33_VERSION}
 lib/tcl/itk/
 lib/tcl/itk/Archetype.itk
 lib/tcl/itk/Toplevel.itk
 lib/tcl/itk/Widget.itk
 lib/tcl/itk/itk.tcl
+@lib lib/tcl/itk/libitk33.so.${LIBitk33_VERSION}
 lib/tcl/itk/pkgIndex.tcl
 lib/tcl/itk/tclIndex
 @man man/mann/Archetype.n

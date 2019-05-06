@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/11 20:28:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/06 10:38:26 sebastia Exp $
 
 COMMENT=	build mega-widgets using the Itcl object system
 
 VERSION=	3.3
 DISTNAME=	itk${VERSION}
 PKGNAME=	itk-${VERSION}
-REVISION=	4
+REVISION=	5
 SHARED_LIBS=	itk33	0.0
 
 CATEGORIES=	x11 devel
