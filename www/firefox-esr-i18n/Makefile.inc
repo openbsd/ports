@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.71 2019/03/23 08:05:16 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.72 2019/05/06 09:51:39 landry Exp $
 
 # Unversioned distfiles
 PORTROACH =	ignore:1
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 PKG_ARCH =	*
 
-FV =		60.6.1
+FV =		60.6.2
 V =		${FV:C/b.$//}
 NAME =		firefox-esr-i18n
 
@@ -21,8 +21,8 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # Mozilla public license
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${FV}esr/linux-i686/xpi/ \
-		http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FV}esr/linux-i686/xpi/
+MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/firefox/releases/60.6.1esr/linux-i686/xpi/ \
+		http://releases.mozilla.org/pub/mozilla.org/firefox/releases/60.6.1esr/linux-i686/xpi/
 
 LANGUAGES =	ach af an ar as ast az bg bn-BD bn-IN br bs ca cs cy da de dsb el en-GB en-US en-ZA eo \
 		es-AR es-CL es-ES es-MX et eu fa ff fi fr fy-NL ga-IE gd gl gn gu-IN he \
