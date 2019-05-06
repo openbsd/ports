@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/06 19:36:30 danj Exp $
 
 COMMENT=	use HTML Templates which allows expressions
 
@@ -6,10 +6,9 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	HTML-Template-Expr-0.07
 CATEGORIES=	www
+REVISION=	0
 
 HOMEPAGE=	http://sourceforge.net/projects/html-template/
-
-MAINTAINER=	Jim Dew <jdew@yggdrasil.ca>
 
 # GPL/Artistic license
 PERMIT_PACKAGE_CDROM=	Yes
