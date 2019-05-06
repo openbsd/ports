@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.31 2019/02/20 17:10:45 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.32 2019/05/06 21:17:19 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 include/poppler/
@@ -117,7 +117,6 @@ include/poppler/goo/
 include/poppler/goo/FixedPoint.h
 include/poppler/goo/GooCheckedOps.h
 include/poppler/goo/GooLikely.h
-include/poppler/goo/GooList.h
 include/poppler/goo/GooString.h
 include/poppler/goo/GooTimer.h
 include/poppler/goo/ImgWriter.h

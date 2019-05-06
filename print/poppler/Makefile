@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.138 2019/04/21 23:27:53 kili Exp $
+# $OpenBSD: Makefile,v 1.139 2019/05/06 21:17:19 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt5=	Qt5 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
-V=		0.75.0
+V=		0.76.0
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
@@ -13,10 +13,10 @@ PKGNAME-qt5=	poppler-qt5-$V
 
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS +=	poppler              50.0     # 86.0
+SHARED_LIBS +=	poppler              51.0     # 87.0
 SHARED_LIBS +=	poppler-glib         19.1     # 8.12
 SHARED_LIBS +=	poppler-qt5          7.1      # 1.19
-SHARED_LIBS +=	poppler-cpp          10.2     # 0.7
+SHARED_LIBS +=	poppler-cpp          11.0     # 0.7
 
 HOMEPAGE=	https://poppler.freedesktop.org/
 
