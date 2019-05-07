@@ -1,7 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2016/05/15 13:20:43 landry Exp $
+$OpenBSD: patch-Makefile_in,v 1.10 2019/05/07 19:39:32 jca Exp $
 javaws/itweb-settings/policyeditor are scripts not programs..
---- Makefile.in.orig	Wed Feb  3 14:49:10 2016
-+++ Makefile.in	Sun May 15 14:39:50 2016
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
 @@ -901,9 +901,9 @@ install-exec-local:
  	${INSTALL_DATA} $(NETX_DIR)/lib/classes.jar $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/netx.jar
  	${INSTALL_DATA} $(NETX_SRCDIR)/javaws_splash.png $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/javaws_splash.png
@@ -28,22 +29,3 @@ javaws/itweb-settings/policyeditor are scripts not programs..
  	  export LANG=$$LANG_ID; \
  	  mkdir "$$HTML_DOCS_TARGET_DIR/$$ID" ; \
  	  echo "<li><a href='$$ID/icedtea-web.html'>$$LANG_ID</a></li>"  >> "$$HTML_DOCS_INDEX" ; \
-@@ -1201,14 +1201,15 @@ stamps/netx.stamp: netx-source-files.txt stamps/netx-h
- 		$(call composeclasspath, $(TAGSOUP_JAR) $(RHINO_JAR)) \
- 	    @netx-source-files.txt
- 	(cd $(NETX_RESOURCE_DIR); \
-+	 install -d $(NETX_DIR)/net/sourceforge/jnlp/resources/ ; \
- 	 for files in $$(find . -type f); \
- 	 do \
--	   ${INSTALL_DATA} -D $${files} \
-+	   install -c -m 644 $${files} \
- 	   $(NETX_DIR)/net/sourceforge/jnlp/resources/$${files}; \
- 	 done)
--	cp -a $(NETX_SRCDIR)/net/sourceforge/jnlp/runtime/pac-funcs.js \
-+	cp $(NETX_SRCDIR)/net/sourceforge/jnlp/runtime/pac-funcs.js \
- 	  $(NETX_DIR)/net/sourceforge/jnlp/runtime
--	cp -a build.properties $(NETX_DIR)/net/sourceforge/jnlp/
-+	cp build.properties $(NETX_DIR)/net/sourceforge/jnlp/
- 	mkdir -p stamps
- 	touch $@
- 
