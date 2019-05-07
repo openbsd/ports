@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/06 16:34:44 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/07 07:58:50 kn Exp $
 
 COMMENT =		UPnP client library
 
@@ -27,7 +27,5 @@ LIB_DEPENDS =		net/curl \
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
-
-NO_TEST =		Yes
 
 .include <bsd.port.mk>
