@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2018/09/04 12:46:21 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/07 02:31:03 danj Exp $
 
 COMMENT=	logfile auditing tool
 
 DISTNAME=	logcheck-1.1.1
 PKGNAME=	logsentry-1.1.1
-REVISION = 	7
+REVISION = 	8
 CATEGORIES=	security
-
-MAINTAINER=	Markus Lude <markus.lude@gmx.de>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=  	Yes
