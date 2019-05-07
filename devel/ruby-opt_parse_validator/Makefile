@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/04/23 11:29:35 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/07 13:56:06 sebastia Exp $
 
 COMMENT=		validators for Ruby OptionParser lib
 
-DISTNAME=		opt_parse_validator-0.0.17.0
+DISTNAME=		opt_parse_validator-1.7.2
 CATEGORIES=		devel
 
 HOMEPAGE=		https://github.com/wpscanteam/OptParseValidator
