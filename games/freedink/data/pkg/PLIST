@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/29 03:48:43 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/07 15:27:47 bcallah Exp $
 share/dink/
 share/dink/dink/
 share/dink/dink/Dink.dat
@@ -18,9 +18,11 @@ share/dink/dink/Sound/2.mid
 share/dink/dink/Sound/5.ogg
 share/dink/dink/Sound/7.mid
 share/dink/dink/Sound/arrow.wav
+share/dink/dink/Sound/axe.wav
 share/dink/dink/Sound/bhit.wav
 share/dink/dink/Sound/bird1.wav
 share/dink/dink/Sound/bow1.wav
+share/dink/dink/Sound/burn.wav
 share/dink/dink/Sound/dance.mid
 share/dink/dink/Sound/denube.ogg
 share/dink/dink/Sound/fire.wav
@@ -33,8 +35,10 @@ share/dink/dink/Sound/intro.wav
 share/dink/dink/Sound/lively.mid
 share/dink/dink/Sound/love.mid
 share/dink/dink/Sound/lovin.ogg
+share/dink/dink/Sound/nono.wav
 share/dink/dink/Sound/open.wav
 share/dink/dink/Sound/punch.wav
+share/dink/dink/Sound/save.wav
 share/dink/dink/Sound/secret.wav
 share/dink/dink/Sound/sel1.wav
 share/dink/dink/Sound/stairs.wav
@@ -990,4 +994,8 @@ share/dink/dink/l10n/sv/
 share/dink/dink/l10n/sv.po
 share/dink/dink/l10n/sv/LC_MESSAGES/
 share/dink/dink/l10n/sv/LC_MESSAGES/dink.mo
+share/dink/dink/l10n/tr/
+share/dink/dink/l10n/tr.po
+share/dink/dink/l10n/tr/LC_MESSAGES/
+share/dink/dink/l10n/tr/LC_MESSAGES/dink.mo
 share/dink/dink/preview.bmp

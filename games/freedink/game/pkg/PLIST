@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/29 03:48:43 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/07 15:27:47 bcallah Exp $
 bin/dink
 bin/dinkedit
 @bin bin/freedink
@@ -7,14 +7,17 @@ bin/dinkedit
 @man man/man6/dinkedit.6
 @man man/man6/freedink.6
 @man man/man6/freedinkedit.6
-share/appdata/
-share/appdata/freedink.appdata.xml
 share/applications/freedink.desktop
 share/applications/freedinkedit.desktop
 share/freedink/
 share/freedink/LiberationSans-Regular.ttf
 share/freedink/jump.wav
 share/freedink/stop.wav
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/freedink.svg
 share/locale/af/LC_MESSAGES/freedink-gnulib.mo
 share/locale/be/LC_MESSAGES/freedink-gnulib.mo
 share/locale/bg/LC_MESSAGES/freedink-gnulib.mo
@@ -39,6 +42,7 @@ share/locale/fi/LC_MESSAGES/freedink-gnulib.mo
 share/locale/fi/LC_MESSAGES/freedink.mo
 share/locale/fr/LC_MESSAGES/freedink-gnulib.mo
 share/locale/fr/LC_MESSAGES/freedink.mo
+share/locale/fur/LC_MESSAGES/freedink.mo
 share/locale/ga/LC_MESSAGES/freedink-gnulib.mo
 share/locale/gl/LC_MESSAGES/freedink-gnulib.mo
 share/locale/hr/LC_MESSAGES/freedink.mo
@@ -75,6 +79,9 @@ share/locale/vi/LC_MESSAGES/freedink-gnulib.mo
 share/locale/vi/LC_MESSAGES/freedink.mo
 share/locale/zh_CN/LC_MESSAGES/freedink-gnulib.mo
 share/locale/zh_TW/LC_MESSAGES/freedink-gnulib.mo
+share/metainfo/
+share/metainfo/freedink.appdata.xml
 share/pixmaps/
 share/pixmaps/freedink.png
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/06 19:51:38 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/07 15:27:47 bcallah Exp $
 
 COMMENT =	game data for FreeDink
-DISTNAME =	freedink-data-1.08.20170409
-REVISION =	0
+DISTNAME =	freedink-data-1.08.20190120
 
 # various free-distribution licenses
 # see README.txt and README-REPLACEMENTS.txt in the distribution

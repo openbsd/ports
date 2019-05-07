@@ -1,28 +1,28 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/06 19:51:38 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/07 15:27:47 bcallah Exp $
 
 COMMENT =	free clone of Dink Smallwood game
-DISTNAME =	freedink-108.4
-PKGNAME =	freedink-1.08.4
-REVISION =	0
+DISTNAME =	freedink-109.6
 
-WANTLIB += SDL SDL_gfx SDL_image SDL_mixer SDL_ttf c fontconfig
-WANTLIB += freetype iconv intl m pthread z zip zzip
+WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_gfx-1.0 SDL2_image SDL2_mixer
+WANTLIB += SDL2_ttf c fontconfig freetype iconv intl m z
 
 BUILD_DEPENDS =	archivers/zip \
 		devel/help2man \
 		devel/check
 
-LIB_DEPENDS =	archivers/libzip \
-		archivers/zziplib \
-		devel/gettext \
-		devel/sdl-image \
-		devel/sdl-mixer \
-		devel/sdl-gfx \
-		devel/sdl-ttf
+LIB_DEPENDS =	devel/gettext \
+		devel/sdl2-image \
+		devel/sdl2-mixer \
+		devel/sdl2-gfx \
+		devel/sdl2-ttf
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		games/freedink/data
+		games/freedink/data \
+		x11/gtk+3,-guic
 
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--disable-tests
+CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/SDL2" \
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
