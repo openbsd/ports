@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/04/27 14:21:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/07 19:38:46 ian Exp $
 
      SUBDIR =
      SUBDIR += jBCrypt
@@ -6,7 +6,6 @@
      SUBDIR += javaPathHelper
      SUBDIR += jlint
      SUBDIR += jna
-     SUBDIR += junit
      SUBDIR += tanukiwrapper
 
 .include <bsd.port.subdir.mk>
