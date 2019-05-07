@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/01 16:04:26 danj Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/07 20:28:06 cwen Exp $
 
 COMMENT=	perl interface to the sync() system functions
 
-MODULES=	cpan
-V=		0.09
-DISTNAME=	File-Sync-${V}
-REVISION=	6
+DISTNAME=	File-Sync-0.11
+
 CATEGORIES=	devel
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c perl
+WANTLIB+=	c perl
+
+MODULES=	cpan
 
 .include <bsd.port.mk>
