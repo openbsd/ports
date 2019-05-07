@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2019/03/01 15:27:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2019/05/07 08:29:28 sthen Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS-server=	alpha aarch64 amd64 arm i386 mips64 mips64el powerpc sparc64
@@ -13,18 +13,20 @@ DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests=	mariadb-tests-${VERSION}
-REVISION-server=0
+REVISION-main=	0
+REVISION-server=1
+REVISION-tests=	0
 EPOCH=		1
 
 CATEGORIES=	databases
-MASTER_SITES=	http://mariadb.mirror.iweb.com//${DISTNAME}/source/ \
+MASTER_SITES=	https://downloads.mariadb.com/MariaDB/${DISTNAME}/source/ \
 		https://ftp.osuosl.org/pub/mariadb/${DISTNAME}/source/ \
 
 LIB_VERSION=	27
 SHARED_LIBS=	mysqlclient_r	${LIB_VERSION}.0 \
 		mysqlclient	${LIB_VERSION}.0
 
-HOMEPAGE=	http://mariadb.org/
+HOMEPAGE=	https://mariadb.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 

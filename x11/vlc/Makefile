@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.222 2019/02/21 22:38:48 jca Exp $
+# $OpenBSD: Makefile,v 1.223 2019/05/07 08:29:28 sthen Exp $
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
@@ -10,12 +10,12 @@ PKGNAME-jack=	vlc-jack-${V}
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS=	vlc	3.0 \
 		vlccore	3.0
 
-HOMEPAGE=	http://www.videolan.org/vlc/
+HOMEPAGE=	https://www.videolan.org/vlc/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
