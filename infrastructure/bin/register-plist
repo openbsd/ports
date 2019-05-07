@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.18 2019/05/07 10:50:13 espie Exp $
+# $OpenBSD: register-plist,v 1.19 2019/05/07 12:54:54 espie Exp $
 # Copyright (c) 2005,2012
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -447,35 +447,51 @@ sub more_mogrified
 	$p1->find_mogrified($state);
 }
 
+sub error_blurb
+{
+	my $state = shift;
+	$state->errsay("Error: change in plist");
+	$state->errsay("| Assuming the old and new builds were done correctly");
+	$state->errsay("| (fully up-to-date ports tree including relevant MODULES),");
+	$state->errsay("| then someone probably forgot to bump a REVISION.");
+	$state->errsay("| (see bsd.port.mk(5), PACKAGE_REPOSITORY)");
+}
+
+
+sub write_out_diff
+{
+	my ($p1, $p2, $result, $state) = @_;
+	my $t = "$result-new";
+	# try to actually write the bad file
+	# and run a physical diff
+	my $fh;
+	my $pipe;
+	if (open($fh, '>', $t)) {
+		$pipe = 0;
+	} else {
+		open($fh, "|-", OpenBSD::Paths->diff, 
+		    '-L', $result, '-L', $t,
+		    '-u', $result, '-');
+	    	$pipe = 1;
+	}
+	# XXX we "reverse tweak" the new file
+	# to remove the parts that don't warrant the error
+	$p1->write_mogrified($fh, $state);
+	close($fh);
+	if (!$pipe) {
+		system {OpenBSD::Paths->diff} ('diff', 
+		    '-L', $result, '-L', $t, '-u', $result, $t);
+	}
+}
+
 sub act_on_compare
 {
 	my ($r, $p1, $p2, $result, $state) = @_;
 
 	if ($r == 1) {
-		my $t = "$result-new";
 		more_mogrified($p1, $p2, $state);
-		$state->errsay("Error: change in plist");
-		$state->errsay("| If the old and new builds were done correctly");
-		$state->errsay("| (fully up-to-date ports tree including relevant MODULES)");
-		$state->errsay("| then someone probably forgot to bump a REVISION.");
-		$state->errsay("| (see bsd.port.mk(5), PACKAGE_REPOSITORY)");
-		# try to actually write the bad file
-		# and run a physical diff
-		if (open(my $fh, '>', $t)) {
-			# XXX we "reverse tweak" the new file
-			# to remove the parts that don't warrant the error
-			$p1->write_mogrified($fh, $state);
-			close($fh);
-			system {OpenBSD::Paths->diff} ('diff', 
-			    '-L', $result, '-L', $t, '-u', $result, $t);
-		} else {
-			# well, we can't write it, so just do a diff on a pipe
-			open(my $fh, "|-", OpenBSD::Paths->diff, 
-			    '-L', $result, '-L', $t,
-			    '-u', $result, '-');
-			$p1->write_mogrified($fh, $state);
-			close($fh);
-		}
+		error_blurb($state);
+		write_out_diff($p1, $p2, $result, $state);
 		return 1;
 	}
 	if ($r == 2) {
