@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.19 2019/05/07 12:54:54 espie Exp $
+# $OpenBSD: register-plist,v 1.20 2019/05/07 13:20:06 espie Exp $
 # Copyright (c) 2005,2012
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -31,6 +31,15 @@ use OpenBSD::State;
 use OpenBSD::PackageInfo;
 use OpenBSD::PackingList;
 use OpenBSD::Paths;
+
+package Result;
+use constant {
+	Equal => 0,
+	Different => 1,
+	Older => 1,
+	Updatable => 2,
+	StopCompare => 3
+};
 
 package OpenBSD::PackingList;
 
@@ -87,6 +96,16 @@ sub flatten
 sub compare
 {
 	my ($self, $self2) = @_;
+	if (ref($self) ne ref($self2)) {
+		return Result::Different;
+	} else {
+		return $self->compare_more($self2);
+	}
+}
+
+sub compare_more
+{
+	my ($self, $self2) = @_;
 	my ($data, $data2);
 	open(my $fh, '>',  \$data);
 	open(my $fh2, '>',  \$data2);
@@ -95,9 +114,9 @@ sub compare
 	close($fh);
 	close($fh2);
 	if ($data ne $data2) {
-		return 1;
+		return Result::Different;
 	} else {
-		return 0;
+		return Result::Equal;
 	}
 }
 
@@ -120,26 +139,23 @@ sub flatten
 }
 
 package OpenBSD::PackingElement::Version;
-sub compare
+sub compare_more
 {
 	my ($self, $self2) = @_;
-	if (ref($self) ne ref($self2)) {
-		return 1;
-	}
 	# no version element in #2, let's mogrify
 	if ($self2->name == -1) {
-		return 2;
+		return Result::Updatable;
 	}
 	if ($self->name == $self2->name) {
-		return 0;
+		return Result::Equal;
 	}
 	# versions shouldn't ever go back
 	if ($self->name < $self2->name) {
-		return 1;
+		return Result::Older;
 	}
 	# special case: no need for further compare
 	# this is a full replacement
-	return 3;
+	return Result::StopCompare;
 }
 
 package OpenBSD::PackingElement::Old;
@@ -178,26 +194,23 @@ sub forget_details
 	undef $self->{size};
 }
 
-sub compare
+sub compare_more
 {
 	my ($self, $self2) = @_;
-	if (ref($self) ne ref($self2)) {
-		return 1;
-	}
 	if ($self->{name} ne $self2->{name}) {
-		return 1;
+		return Result::Different;
 	}
 	if (defined $self->{d} && defined $self2->{d}) {
 		if (ref($self->{d}) ne ref($self2->{d})) {
-			return 1;
+			return Result::Different;
 		}
 		if ($self->{d}->equals($self2->{d})) {
-			return 0;
+			return Result::Equal;
 		} else {
-			return 1;
+			return Result::Different;
 		}
 	} elsif (!defined $self->{d} && !defined $self2->{d}) {
-		return 0;
+		return Result::Equal;
 	}
 	return 2;
 }
@@ -219,26 +232,32 @@ sub find_mogrified
 	}
 }
 
+package OpenBSD::PackingElement::Depend;
+sub make_result
+{
+	my ($self, $c) = @_;
+	if (!defined $c) {
+		return Result::Different;
+	} elsif ($c < 0) {
+		return Result::Older;
+	} elsif ($c == 0) {
+		return Result::Equal;
+	} else {
+		return Result::Updatable;
+	}
+}
+
 package OpenBSD::PackingElement::Dependency;
-sub compare
+sub compare_more
 {
 	my ($self, $self2) = @_;
-	if (ref($self) ne ref($self2)) {
-		return 1;
-	}
 	if ($self->{pkgpath} ne $self2->{pkgpath}) {
-		return 1;
+		return Result::Different;
 	}
 
-	my $c = OpenBSD::PackageName->from_string($self->{def})->compare(
-	    OpenBSD::PackageName->from_string($self2->{def}));
-	if (!defined $c || $c < 0) {
-		return 1;
-	}
-	if ($c == 0) {
-		return 0;
-	}
-	return 2;
+	return $self->make_result(
+	    OpenBSD::PackageName->from_string($self->{def})->compare(
+	    OpenBSD::PackageName->from_string($self2->{def})));
 }
 
 sub forgetful_key
@@ -250,20 +269,11 @@ sub forgetful_key
 
 package OpenBSD::PackingElement::Wantlib;
 
-sub compare
+sub compare_more
 {
 	my ($self, $self2) = @_;
-	if (ref($self) ne ref($self2)) {
-		return 1;
-	}
-	my $c = $self->spec->compare($self2->spec);
-	if (!defined $c || $c < 0) {
-		return 1;
-	}
-	if ($c == 0) {
-		return 0;
-	}
-	return 2;
+	my $c = 
+	return $self->make_result($self->spec->compare($self2->spec));
 }
 
 sub forgetful_key
@@ -295,20 +305,17 @@ sub forget_details
 	$self->{name} =~ s/^(\$$openbsd: .*,v).*/$1\$/;
 }
 
-sub compare
+sub compare_more
 {
 	my ($self, $self2) = @_;
-	if (ref($self) ne ref($self2)) {
-		return 1;
-	}
 	if ($self->{name} eq $self2->{name}) {
-		return 0;
+		return Result::Equal;
 	}
 	if ($self->{name} eq "\$$openbsd\$" or 
 	    $self2->{name} eq "\$$openbsd\$") {
-		return 2;
+		return Result::Updatable;
 	}
-	return 1;
+	return Result::Different;
 }
 
 package OpenBSD::PackingElement::InfoFile;
@@ -339,54 +346,46 @@ sub remove_auxiliary
 	return 0;
 }
 
-sub compare
+sub compare_more
 {
 	my ($self, $self2) = @_;
 
-	# both elements must be manpages
-	if (ref($self) ne ref($self2)) {
-		return 1;
-	}
-
 	# identical
 	if ($self->{name} eq $self2->{name}) {
-		return 0;
+		return Result::Equal;
 	}
 
 	# one is the conversion of the other
 	if ($self->is_source && $self->source_to_dest eq $self2->{name}) {
-		return 2;
+		return Result::Updatable;
 	}
 	if ($self2->is_source && $self2->source_to_dest eq $self->{name}) {
-		return 2;
+		return Result::Updatable;
 	}
 
 	# or they're different beasts.
-	return 1;
+	return Result::Different;
 }
 
 package OpenBSD::PackingElement::ExtraInfo;
 
-sub compare
+sub compare_more
 {
 	my ($self, $self2) = @_;
-	if (ref($self) ne ref($self2)) {
-		return 1;
-	}
 	if ($self->{ftp} ne $self2->{ftp} or 
 	    $self->{cdrom} ne $self2->{cdrom}) {
-		return 1;
+		return Result::Different;
 	}
 	if ($self->{subdir} eq $self2->{subdir}) {
-		return 0;
+		return Result::Equal;
 	}
 	if ($self->{subdir} =~ m/^mystuff\// && $self2->{subdir} eq $') {
-		return 2;
+		return Result::Updatable;
 	}
 	if ($self2->{subdir} =~ m/^mystuff\// && $self->{subdir} eq $') {
-		return 2;
+		return Result::Updatable;
 	}
-	return 1;
+	return Result::Different;
 }
 
 package main;
@@ -407,34 +406,34 @@ sub my_compare
 	}
 	my $l = [];
 	my $l2 = [];
-	my $final = 0;
+	my $final = Result::Equal;
 	$p->flatten($l);
 	$p2->flatten($l2);
 	while (my $e = shift @$l) {
 		my $e2 = shift @$l2;
-		return 1 unless defined $e2;
+		return Result::Different unless defined $e2;
 		my $r = $e->compare($e2);
-		if ($r == 1) {
+		if ($r == Result::Different) {
 			return $r;
 		}
-		if ($r == 3) {
+		if ($r == Result::StopCompare) {
 			push(@{$state->{updates}}, [$e2, $e]);
 			# don't bother doing more comparisons, there's 
 			# no need
-			return 2;
+			return Result::Updatable;
 		}
-		if ($r == 2) {
+		if ($r == Result::Updatable) {
 			push(@{$state->{updates}}, [$e2, $e]);
 			$state->{mogrified}{$e} = $e2;
-			$final = 2;
+			$final = $r;
 		}
 		# zap extra info-* files and man pages
 		if ($e->remove_auxiliary($l) != $e2->remove_auxiliary($l2)) {
-			$final = 2;
+			$final = Result::Updatable;
 		}
 	}
 	if (@$l2 > 0) {
-		return 1;
+		return Result::Different;
 	}
 	return $final;
 }
@@ -488,13 +487,13 @@ sub act_on_compare
 {
 	my ($r, $p1, $p2, $result, $state) = @_;
 
-	if ($r == 1) {
+	if ($r == Result::Different) {
 		more_mogrified($p1, $p2, $state);
 		error_blurb($state);
 		write_out_diff($p1, $p2, $result, $state);
 		return 1;
 	}
-	if ($r == 2) {
+	if ($r == Result::Updatable) {
 		$p1->tofile($result);
 		$state->errsay("#1 was updated", $result);
 		for my $i (@{$state->{updates}}) {
