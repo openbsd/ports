@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/27 18:36:31 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/07 16:52:34 danj Exp $
 
 COMMENT =	lua bindings for OpenBSD functions
 
 V =		v0.2
 DISTNAME =	lua-openbsd-${V}
 PKGNAME =	${DISTNAME:S/v//}
+REVISION =	0
 
 CATEGORIES =	devel
-
-MAINTAINER =	Florian Stinglmayr <florian@n0la.org>
 
 #MIT
 PERMIT_PACKAGE_CDROM =	Yes

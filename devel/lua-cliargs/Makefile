@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2016/10/17 15:17:12 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/07 16:52:34 danj Exp $
 
 COMMENT =	command line parser for Lua
 
 V =		3.0-1
 PKGNAME = 	lua-cliargs-${V:S/-/./g}
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	amireh
 GH_PROJECT =	lua_cliargs
 GH_TAGNAME =	v${V}
 
 CATEGORIES =	devel
-
-MAINTAINER =	Florian Stinglmayr <florian@n0la.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

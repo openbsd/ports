@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2016/10/16 23:21:23 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/07 16:52:35 danj Exp $
 
 COMMENT =	terminal library for Lua
 
 GH_ACCOUNT =	hoelzro
 GH_PROJECT =	lua-term
 GH_TAGNAME =	0.07
+REVISION =	0
 
 CATEGORIES =	devel
-
-MAINTAINER =	Florian Stinglmayr <florian@n0la.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

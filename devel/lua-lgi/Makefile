@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/11/16 22:23:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2019/05/07 16:52:34 danj Exp $
 
 COMMENT=	lua bindings to libraries using GObject-Introspection
 
@@ -7,10 +7,8 @@ GH_PROJECT=	lgi
 GH_TAGNAME=	0.9.1
 
 PKGNAME=	lua-${DISTNAME}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
-
-MAINTAINER=	Florian Stinglmayr <florian@n0la.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

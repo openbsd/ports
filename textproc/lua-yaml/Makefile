@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2016/11/14 22:33:07 jsg Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/07 16:52:35 danj Exp $
 
 COMMENT =	Lua library for parsing and emitting YAML
 V =		6.1
 
 PKGNAME =	lua-yaml-${V}
+REVISION =	0
 
 GH_ACCOUNT =	gvvaughan
 GH_PROJECT =	lyaml
 GH_TAGNAME =	release-v${V}
 
 CATEGORIES =	textproc
-
-MAINTAINER =	Florian Stinglmayr <florian@n0la.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

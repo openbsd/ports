@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2019/01/04 00:25:47 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/07 16:52:35 danj Exp $
 
 COMMENT =	manual tiling window manager
 DISTNAME =	herbstluftwm-0.7.1
 CATEGORIES =	x11
+REVISION =	0
 
 HOMEPAGE =	http://herbstluftwm.org/
-
-MAINTAINER =	Florian Stinglmayr <florian@n0la.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
