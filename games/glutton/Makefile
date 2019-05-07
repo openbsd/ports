@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2017/10/23 17:10:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/07 17:07:29 danj Exp $
 
 COMMENT= 	Pac-Man clone
 
 DISTNAME=	glutton-0.0.5
-REVISION =	1
+REVISION =	2
 CATEGORIES= 	games	
 HOMEPAGE=	http://kokido.sourceforge.net/glutton.html
-
-MAINTAINER=	Olivier Racine <darkroot@darkroot.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=  	Yes

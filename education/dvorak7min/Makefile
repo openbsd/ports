@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2015/11/24 09:11:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/07 17:07:29 danj Exp $
 
 COMMENT=	typing tutor for dvorak keyboards
 
 DISTNAME=	dvorak7min-1.6.1
-REVISION=	0
+REVISION=	1
 CATEGORIES=	education
-
-MAINTAINER=    Pieter-Augustijn Van Malleghem <geekassault@planetinternet.be>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
