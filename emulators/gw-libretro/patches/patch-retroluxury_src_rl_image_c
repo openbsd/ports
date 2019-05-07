@@ -1,0 +1,20 @@
+$OpenBSD: patch-retroluxury_src_rl_image_c,v 1.1.1.1 2019/05/07 08:36:19 bentley Exp $
+
+Fix invalid memory issues.
+From upstream 9a924cea028f17d3be3499f1530abc14d9071983.
+
+Index: retroluxury/src/rl_image.c
+--- retroluxury/src/rl_image.c.orig
++++ retroluxury/src/rl_image.c
+@@ -26,7 +26,10 @@ rl_image_t* rl_image_create( const void* data, size_t 
+   // rows array size
+   mem += height * sizeof( uint32_t );
+   // rle size
+-  size -= 2 * sizeof( uint16_t ) /* width & height */ + height * sizeof( uint32_t ) /* row pointers */;
++  size -= 2 * sizeof( uint16_t ) /* width & height */
++          + sizeof(uint32_t) /* used */
++          + height * sizeof( uint32_t ) /* row pointers */;
++
+   mem += size;
+   
+   rl_image_t* image = (rl_image_t*)rl_malloc( mem );

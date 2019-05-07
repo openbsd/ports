@@ -1,0 +1,20 @@
+$OpenBSD: patch-gwlua_functions_c,v 1.1.1.1 2019/05/07 08:36:19 bentley Exp $
+
+Fix invalid memory issues.
+From upstream 9a924cea028f17d3be3499f1530abc14d9071983.
+
+Index: gwlua/functions.c
+--- gwlua/functions.c.orig
++++ gwlua/functions.c
+@@ -148,6 +148,11 @@ static int l_playsound( lua_State* L )
+         break;
+       }
+     }
++
++    if ( channel == -1 )
++    {
++      return 0;
++    }
+   }
+   else if ( channels[ channel ] != -1 )
+   {
