@@ -1,17 +1,8 @@
-$OpenBSD: patch-scripts_mailpile-test_py,v 1.1.1.1 2018/04/26 20:20:08 solene Exp $
+$OpenBSD: patch-scripts_mailpile-test_py,v 1.2 2019/05/07 17:51:52 jca Exp $
 
 Index: scripts/mailpile-test.py
 --- scripts/mailpile-test.py.orig
 +++ scripts/mailpile-test.py
-@@ -116,7 +116,7 @@ def do_setup():
-     # Copy the test Maildir...
-     for mailbox in ('Maildir', 'Maildir2'):
-         path = os.path.join(mailpile_home, mailbox)
--        os.system('cp -a %s/Maildir %s' % (mailpile_test, path))
-+        os.system('cp -RP %s/Maildir %s' % (mailpile_test, path))
- 
-     # Add the test mailboxes
-     for mailbox in ('tests.mbx', ):
 @@ -149,7 +149,7 @@ def test_load_save_rescan():
  
      # Rescan AGAIN, so we can test for the presence of duplicates and
