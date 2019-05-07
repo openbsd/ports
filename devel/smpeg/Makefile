@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.50 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2019/05/07 17:04:58 danj Exp $
 
 COMMENT=	MPEG video player library with sound support
 
 DISTNAME=	smpeg-0.4.4
-REVISION=	16
+REVISION=	17
 CATEGORIES=	devel graphics
 MASTER_SITES=	https://distfiles.nl/
 
 SHARED_LIBS=	smpeg	2.0
 
 HOMEPAGE=	http://icculus.org/smpeg/
-
-MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes

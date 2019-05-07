@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2019/05/07 17:04:58 danj Exp $
 
 COMMENT=	graphically improved game of yore
 
@@ -7,7 +7,7 @@ DATAVERSION=	1.5
 SOUNDVERSION=	1.0
 MUSICVERSION=	1.0
 DISTNAME=	heroes-${VERSION}
-REVISION =	5
+REVISION =	6
 CATEGORIES=	games x11
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -17,8 +17,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	heroes
 
 HOMEPAGE=	http://heroes.sourceforge.net/
-
-MAINTAINER=	Peter Valchev <pvalchev@sightly.net>
 
 PERMIT_PACKAGE_CDROM=   Yes
 
