@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/04/23 11:44:25 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/07 13:57:40 sebastia Exp $
 ${GEM_BIN}/wpscan
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -217,6 +217,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/finders/finder/
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/finders/finder/wp_version/
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/finders/finder/wp_version/smart_url_checker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/helper.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/parsed_cli.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/references.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/target/
 ${GEM_LIB}/gems/${DISTNAME}/lib/wpscan/target.rb

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/29 00:42:09 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/07 13:57:40 sebastia Exp $
 
 COMMENT =	WordPress security scanner
 
-DISTNAME =	wpscan-3.4.5
-REVISION =	0
+DISTNAME =	wpscan-3.5.3
 CATEGORIES =	security
 
+HOMEPAGE =	https://wpscan.org/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # https://github.com/wpscanteam/wpscan/issues/1304
@@ -13,7 +13,7 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
-RUN_DEPENDS +=		security/ruby-cms_scanner,${MODRUBY_FLAVOR},>=0.0.41.4,<0.0.42
+RUN_DEPENDS +=		security/ruby-cms_scanner,${MODRUBY_FLAVOR},>=0.5.1,<0.6
 
 
 MODULES =	lang/ruby
