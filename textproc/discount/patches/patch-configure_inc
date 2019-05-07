@@ -1,0 +1,35 @@
+$OpenBSD: patch-configure_inc,v 1.1 2019/05/07 19:44:30 landry Exp $
+
+Index: configure.inc
+--- configure.inc.orig
++++ configure.inc
+@@ -1419,7 +1419,8 @@ eval \`awk -F. '{ printf "MAJOR=%d\n", \$1;
+ shift
+ 
+ LIBNAME=\$LIBRARY.so
+-FULLNAME=\$LIBNAME.\$VERSION
++MAJOR=\${libmarkdown_ltversion}
++FULLNAME=\$LIBNAME.\$MAJOR
+ 
+ case "\$ACTION" in
+ make)   FLAGS="$AC_CFLAGS -shared"
+@@ -1428,18 +1429,13 @@ make)   FLAGS="$AC_CFLAGS -shared"
+ 
+ 	rm -f \$LIBRARY \$LIBNAME \$LIBNAME.\$MAJOR
+ 	if $AC_CC \$FLAGS \$VFLAGS -o \$FULLNAME "\$@"; then
+-	    $PROG_LN_S \$FULLNAME \$LIBRARY
+-	    $PROG_LN_S \$FULLNAME \$LIBNAME
+-	    $PROG_LN_S \$FULLNAME \$LIBNAME.\$MAJOR
++		echo "yes"
+ 	fi
+ 	;;
+ files)  echo "\$FULLNAME" "\$LIBNAME" "\$LIBNAME.\$MAJOR"
+ 	;;
+ install)$PROG_INSTALL -c \$FULLNAME "\$1"
+-	$PROG_LN_S -f \$FULLNAME \$1/\$LIBNAME.\$MAJOR
+-	$PROG_LN_S -f \$FULLNAME \$1/\$LIBNAME
+ EOF
+-    test "$LDCONFIG" && echo '	'$LDCONFIG '"$1"' >> librarian.sh
+     cat >> librarian.sh << EOF
+ 	;;
+ esac
