@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2019/04/19 05:59:55 bentley Exp $
+# $OpenBSD: Makefile,v 1.58 2019/05/07 08:39:12 bentley Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -64,6 +64,7 @@
      SUBDIR += pkfonts
      SUBDIR += powerline-fonts
      SUBDIR += profont
+     SUBDIR += public-sans
      SUBDIR += roboto-fonts
      SUBDIR += ru-pscyr
      SUBDIR += ru-ptsans
