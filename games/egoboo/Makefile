@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/11 20:50:55 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/07 20:32:32 jca Exp $
 
 COMMENT =		dungeon-crawling action-RPG adventure
 
 DISTNAME =		egoboo-2.7.4
+REVISION =		0
 CATEGORIES =		games
 
 MAINTAINER =		Peter Hessler <phessler@openbsd.org>
@@ -27,7 +28,6 @@ EGOBOO_SHARED =		${PREFIX}/share/egoboo
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/egoboo.sh
-	@perl -pi -e 's,cp -a,cp, -RP,' ${WRKSRC}/egoboo.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/egoboo ${PREFIX}/libexec/

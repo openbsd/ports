@@ -1,11 +1,12 @@
-$OpenBSD: patch-game_egoboo_sh,v 1.1.1.1 2009/10/11 14:01:39 phessler Exp $
---- game/egoboo.sh.orig	Sat Apr 25 10:32:14 2009
-+++ game/egoboo.sh	Sun Oct 11 15:34:16 2009
+$OpenBSD: patch-game_egoboo_sh,v 1.2 2019/05/07 20:32:32 jca Exp $
+Index: game/egoboo.sh
+--- game/egoboo.sh.orig
++++ game/egoboo.sh
 @@ -1,6 +1,6 @@
  #!/bin/sh
  
 -EGOBOO_PREFIX=${HOME}/.local
-+EGOBOO_PREFIX="/usr/local"
++EGOBOO_PREFIX="${TRUEPREFIX}"
  EGOBOO_SHARED="${EGOBOO_PREFIX}/share/egoboo"
  
  # exit on any error
