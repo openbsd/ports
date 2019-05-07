@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/07 19:53:08 danj Exp $
 
 COMMENT=		put clickable icons on the desktop
 
-MAINTAINER=		D. Adam Karim <adam@akarsoft.com>
-
 DISTNAME=		idesk-0.7.5
-REVISION =		6
+REVISION =		7
 CATEGORIES=		x11
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=idesk/}
