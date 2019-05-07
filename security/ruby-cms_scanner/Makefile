@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/24 20:23:21 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/07 13:56:51 sebastia Exp $
 
 COMMENT =	framework to implement CMS scanners
 
-REVISION =	0
-DISTNAME =	cms_scanner-0.0.41.6
+DISTNAME =	cms_scanner-0.5.1
 CATEGORIES =	security
 
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
@@ -18,7 +17,7 @@ NO_TEST =	Yes
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 RUN_DEPENDS +=		devel/ruby-ruby-progressbar,${MODRUBY_FLAVOR},>=1.10,<1.11 \
-			devel/ruby-opt_parse_validator,${MODRUBY_FLAVOR}>=0.0.17,<0.0.18 \
+			devel/ruby-opt_parse_validator,${MODRUBY_FLAVOR}>=1.7.2,<1.8 \
 			devel/ruby-yajl,${MODRUBY_FLAVOR},>=1.4.1,<1.5 \
 			net/ruby-public_suffix,${MODRUBY_FLAVOR},>=3.0,<3.1 \
 			textproc/ruby-nokogiri,${MODRUBY_FLAVOR},>=1.10,<1.11 \

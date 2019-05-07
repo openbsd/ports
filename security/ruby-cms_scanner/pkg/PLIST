@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/04/23 11:42:12 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/07 13:56:51 sebastia Exp $
 @conflict ruby-arirang-*
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -7,13 +7,11 @@ ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/app/
 ${GEM_LIB}/gems/${DISTNAME}/app/app.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/controllers/
-${GEM_LIB}/gems/${DISTNAME}/app/controllers.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/controllers/core/
 ${GEM_LIB}/gems/${DISTNAME}/app/controllers/core.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/controllers/core/cli_options.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/controllers/interesting_findings.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/
-${GEM_LIB}/gems/${DISTNAME}/app/finders.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/interesting_findings/
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/interesting_findings.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/interesting_findings/fantastico_fileslist.rb
@@ -22,13 +20,11 @@ ${GEM_LIB}/gems/${DISTNAME}/app/finders/interesting_findings/robots_txt.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/interesting_findings/search_replace_db_2.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/finders/interesting_findings/xml_rpc.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/formatters/
-${GEM_LIB}/gems/${DISTNAME}/app/formatters.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/formatters/cli.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/formatters/cli_no_color.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/formatters/cli_no_colour.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/formatters/json.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/models/
-${GEM_LIB}/gems/${DISTNAME}/app/models.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/models/fantastico_fileslist.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/models/headers.rb
 ${GEM_LIB}/gems/${DISTNAME}/app/models/interesting_finding.rb
@@ -73,6 +69,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/cache/typhoeus.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/controller.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/controllers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/errors/
+${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/errors.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/errors/http.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/errors/scan.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/exit_code.rb
@@ -100,10 +97,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/formatter/buffer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/numeric.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/parsed_cli.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/progressbar_null_output.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/public_suffix/
 ${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/public_suffix/domain.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/references.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/scan.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/target/
 ${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/target.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/cms_scanner/target/hashes.rb
