@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/01/06 14:31:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/05/08 01:44:12 jasper Exp $
 bin/gnome-characters
 lib/org.gnome.Characters/
 lib/org.gnome.Characters/girepository-1.0/
@@ -11,12 +11,8 @@ share/glib-2.0/schemas/org.gnome.Characters.gschema.xml
 share/gnome-shell/
 share/gnome-shell/search-providers/
 share/gnome-shell/search-providers/org.gnome.Characters.search-provider.ini
-share/icons/hicolor/16x16/apps/gnome-characters.png
-share/icons/hicolor/22x22/apps/gnome-characters.png
-share/icons/hicolor/256x256/apps/gnome-characters.png
-share/icons/hicolor/32x32/apps/gnome-characters.png
-share/icons/hicolor/48x48/apps/gnome-characters.png
-share/icons/hicolor/symbolic/apps/gnome-characters-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.Characters.svg
+share/icons/hicolor/symbolic/apps/org.gnome.Characters-symbolic.svg
 share/locale/af/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ar/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/be/LC_MESSAGES/org.gnome.Characters.mo
@@ -67,6 +63,7 @@ share/locale/sl/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/sr/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/sr@latin/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/sv/LC_MESSAGES/org.gnome.Characters.mo
+share/locale/ta/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/tg/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/tr/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/uk/LC_MESSAGES/org.gnome.Characters.mo
