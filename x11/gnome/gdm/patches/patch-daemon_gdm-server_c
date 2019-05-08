@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-server_c,v 1.11 2019/05/08 21:32:35 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-server_c,v 1.12 2019/05/08 21:58:04 ajacoutot Exp $
 
 REVERT - OpenBSD lacks sigwaitinfo(2)
 From 956d7d1c7a0cfbf2beacdb9e88e645e15ad32047 Mon Sep 17 00:00:00 2001
@@ -39,7 +39,7 @@ Index: daemon/gdm-server.c
  
          gboolean is_initial;
  };
-@@ -114,90 +117,75 @@ static void     gdm_server_finalize     (GObject      
+@@ -114,90 +117,74 @@ static void     gdm_server_finalize     (GObject      
  
  G_DEFINE_TYPE (GdmServer, gdm_server, G_TYPE_OBJECT)
  
@@ -50,12 +50,12 @@ Index: daemon/gdm-server.c
  {
 -        /* systemd finds the display device out on its own based on the display */
 -        return NULL;
+-}
 +        char    *out;
 +        char    *command;
 +        int      status;
 +        gboolean res;
 +        GError  *error;
- }
  
 -static void
 -gdm_server_ready (GdmServer *server)
@@ -69,7 +69,7 @@ Index: daemon/gdm-server.c
 -                        server->auth_file);
 +        error = NULL;
 +        command = g_strdup_printf (CONSOLEKIT_DIR "/ck-get-x11-display-device --display %s",
-+                                   server->priv->display_name);
++                                   server->display_name);
  
 -        g_signal_emit (server, signals[READY], 0);
 -}
@@ -144,14 +144,14 @@ Index: daemon/gdm-server.c
 -                        continue;
 -
 -                g_idle_add (got_sigusr1, GUINT_TO_POINTER (info.si_pid));
-+        if (server->priv->display_device == NULL) {
-+                server->priv->display_device =
++        if (server->display_device == NULL) {
++                server->display_device =
 +                    _gdm_server_query_ck_for_display_device (server);
 +                g_object_notify (G_OBJECT (server), "display-device");
          }
  
 -        return NULL;
-+        return g_strdup (server->priv->display_device);
++        return g_strdup (server->display_device);
  }
  
 -static void
@@ -172,16 +172,16 @@ Index: daemon/gdm-server.c
 -                g_mutex_unlock (&sigusr1_thread_mutex);
 -        }
 +        gdm_run_script (GDMCONFDIR "/Init", GDM_USERNAME,
-+                        server->priv->display_name,
++                        server->display_name,
 +                        NULL, /* hostname */
-+                        server->priv->auth_file);
++                        server->auth_file);
 +
 +        g_signal_emit (server, signals[READY], 0);
 +        return FALSE;
  }
  
  static void
-@@ -218,8 +206,10 @@ gdm_server_init_command (GdmServer *server)
+@@ -218,8 +205,10 @@ gdm_server_init_command (GdmServer *server)
                  debug_options = "";
          }
  
@@ -193,7 +193,7 @@ Index: daemon/gdm-server.c
          /* This is a temporary hack to work around the fact that XOrg
           * currently lacks support for multi-seat hotplugging for
           * display devices. This bit should be removed as soon as XOrg
-@@ -234,6 +224,10 @@ gdm_server_init_command (GdmServer *server)
+@@ -234,6 +223,10 @@ gdm_server_init_command (GdmServer *server)
           * wasn't booted using systemd, or b) the wrapper tool is
           * missing, or c) we are running for the main seat 'seat0'. */
  
@@ -204,18 +204,17 @@ Index: daemon/gdm-server.c
  #ifdef ENABLE_SYSTEMD_JOURNAL
          /* For systemd, we don't have a log file but instead log to stdout,
             so set it to the xserver's built-in default verbosity */
-@@ -256,8 +250,8 @@ gdm_server_init_command (GdmServer *server)
+@@ -256,8 +249,8 @@ gdm_server_init_command (GdmServer *server)
          return;
  
  fallback:
--        server->command = g_strdup_printf (X_SERVER X_SERVER_ARG_FORMAT, verbosity, debug_options);
--
 +#endif
-+        server->priv->command = g_strdup_printf (X_SERVER X_SERVER_ARG_FORMAT, verbosity, debug_options);
+         server->command = g_strdup_printf (X_SERVER X_SERVER_ARG_FORMAT, verbosity, debug_options);
+-
  }
  
  static gboolean
-@@ -307,10 +301,12 @@ gdm_server_resolve_command_line (GdmServer  *server,
+@@ -307,10 +300,12 @@ gdm_server_resolve_command_line (GdmServer  *server,
                  argv[len++] = g_strdup (server->auth_file);
          }
  
@@ -229,7 +228,7 @@ Index: daemon/gdm-server.c
  
          /* If we were compiled with Xserver >= 1.17 we need to specify
           * '-listen tcp' as the X server dosen't listen on tcp sockets
-@@ -655,12 +651,6 @@ server_child_watch (GPid       pid,
+@@ -655,12 +650,6 @@ server_child_watch (GPid       pid,
          g_object_unref (server);
  }
  
@@ -242,7 +241,7 @@ Index: daemon/gdm-server.c
  static gboolean
  gdm_server_spawn (GdmServer    *server,
                    const char   *vtarg,
-@@ -698,15 +688,6 @@ gdm_server_spawn (GdmServer    *server,
+@@ -698,15 +687,6 @@ gdm_server_spawn (GdmServer    *server,
          g_debug ("GdmServer: Starting X server process: %s", freeme);
          g_free (freeme);
  
@@ -258,7 +257,7 @@ Index: daemon/gdm-server.c
          if (!g_spawn_async_with_pipes (NULL,
                                         argv,
                                         (char **)env->pdata,
-@@ -1043,6 +1024,10 @@ gdm_server_init (GdmServer *server)
+@@ -1043,6 +1023,10 @@ gdm_server_init (GdmServer *server)
          server->pid = -1;
  
          server->log_dir = g_strdup (LOGDIR);
@@ -269,7 +268,7 @@ Index: daemon/gdm-server.c
  }
  
  static void
-@@ -1054,6 +1039,9 @@ gdm_server_finalize (GObject *object)
+@@ -1054,6 +1038,9 @@ gdm_server_finalize (GObject *object)
          g_return_if_fail (GDM_IS_SERVER (object));
  
          server = GDM_SERVER (object);

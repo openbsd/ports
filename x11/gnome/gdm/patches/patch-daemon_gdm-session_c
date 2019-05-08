@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-session_c,v 1.19 2019/05/08 21:32:35 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-session_c,v 1.20 2019/05/08 21:58:04 ajacoutot Exp $
 
 REVERT - OpenBSD does not have a systemd implementation (we need ConsoleKit)
 From 9be58c9ec9a3a411492a5182ac4b0d51fdc3a323 Mon Sep 17 00:00:00 2001
@@ -41,7 +41,7 @@ Index: daemon/gdm-session.c
 +
 +        g_debug ("GdmSession: selecting session type '%s'", text);
 +
-+        g_hash_table_iter_init (&iter, self->priv->conversations);
++        g_hash_table_iter_init (&iter, self->conversations);
 +        while (g_hash_table_iter_next (&iter, &key, &value)) {
 +                GdmSessionConversation *conversation;
 +
