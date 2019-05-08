@@ -1,20 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/07/06 06:04:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2019/05/08 01:57:02 ajacoutot Exp $
 bin/gnome-weather
-share/appdata/
-share/appdata/org.gnome.Weather.appdata.xml
-share/applications/org.gnome.Weather.Application.desktop
-share/dbus-1/services/org.gnome.Weather.Application.service
+share/applications/org.gnome.Weather.desktop
 share/dbus-1/services/org.gnome.Weather.BackgroundService.service
-share/glib-2.0/schemas/org.gnome.Weather.Application.gschema.xml
+share/dbus-1/services/org.gnome.Weather.service
+share/glib-2.0/schemas/org.gnome.Weather.gschema.xml
 share/gnome-shell/
 share/gnome-shell/search-providers/
-share/gnome-shell/search-providers/org.gnome.Weather.Application.search-provider.ini
-share/icons/hicolor/16x16/apps/org.gnome.Weather.png
-share/icons/hicolor/22x22/apps/org.gnome.Weather.png
-share/icons/hicolor/256x256/apps/org.gnome.Weather.png
-share/icons/hicolor/32x32/apps/org.gnome.Weather.png
-share/icons/hicolor/48x48/apps/org.gnome.Weather.png
+share/gnome-shell/search-providers/org.gnome.Weather.search-provider.ini
+share/icons/hicolor/scalable/apps/org.gnome.Weather.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Weather-symbolic.svg
+share/locale/af/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/an/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/ar/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/as/LC_MESSAGES/org.gnome.Weather.mo
@@ -76,13 +71,15 @@ share/locale/vi/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/zh_CN/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/zh_HK/LC_MESSAGES/org.gnome.Weather.mo
 share/locale/zh_TW/LC_MESSAGES/org.gnome.Weather.mo
+share/metainfo/
+share/metainfo/org.gnome.Weather.appdata.xml
 share/org.gnome.Weather/
-share/org.gnome.Weather/org.gnome.Weather.Application
-share/org.gnome.Weather/org.gnome.Weather.Application.data.gresource
-share/org.gnome.Weather/org.gnome.Weather.Application.src.gresource
+share/org.gnome.Weather/org.gnome.Weather
 share/org.gnome.Weather/org.gnome.Weather.BackgroundService
 share/org.gnome.Weather/org.gnome.Weather.BackgroundService.data.gresource
 share/org.gnome.Weather/org.gnome.Weather.BackgroundService.src.gresource
+share/org.gnome.Weather/org.gnome.Weather.data.gresource
+share/org.gnome.Weather/org.gnome.Weather.src.gresource
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.38 2018/07/06 06:04:47 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2019/05/08 01:57:02 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		weather application for GNOME
 
 GNOME_PROJECT=		gnome-weather
-GNOME_VERSION=		3.26.0
-REVISION=		2
+GNOME_VERSION=		3.32.2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		devel/dconf \
+			devel/meson \
 			lang/python \
 			x11/gnome
 
@@ -33,7 +33,5 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache
 
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS}
-
-CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
