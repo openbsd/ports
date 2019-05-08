@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/08 15:44:46 danj Exp $
 
 COMMENT=	perl module for manipulating PDF files
 
@@ -6,8 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	PDF-Reuse-0.36
 CATEGORIES=	textproc
-
-MAINTAINER=	Sam Smith <S@mSmith.net>
+REVISION =	0
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

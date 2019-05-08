@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/08 15:44:45 danj Exp $
 
 COMMENT=	base class to treat unhandled method calls as errors
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Class-WhiteHole-0.04
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
-
-MAINTAINER=	Sam Smith <S@msmith.net>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

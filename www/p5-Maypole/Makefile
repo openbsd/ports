@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2016/04/28 16:20:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/08 15:44:46 danj Exp $
 
 COMMENT=	Perl MVC for web applications
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Maypole-1.4
-REVISION=	2
+REVISION=	3
 CATEGORIES=	www
-
-MAINTAINER=	Sam Smith <S@msmith.net>
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes

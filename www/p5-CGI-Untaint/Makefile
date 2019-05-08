@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/08 15:44:46 danj Exp $
 
 COMMENT=	taint checking and input validation from web forms
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	CGI-Untaint-1.26
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
-
-MAINTAINER=	Sam Smith <S@msmith.net>
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes

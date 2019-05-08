@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/08 15:44:46 danj Exp $
 
 COMMENT=		perl module to formating plaintext
 
@@ -6,8 +6,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		Text-Reform-1.20
 CATEGORIES=		textproc
-
-MAINTAINER=		Sam Smith <s@msmith.net>
+REVISION=		0
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/08 15:44:46 danj Exp $
 
 COMMENT=	efficiently fetch RSS feeds
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	XML-RSS-TimingBot-2.03
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
-
-MAINTAINER=	Sam Smith <s@msmith.net>
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes

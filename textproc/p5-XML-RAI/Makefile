@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:57:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/08 15:44:46 danj Exp $
 
 COMMENT=	RSS Abstraction Interface
 
@@ -6,8 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	XML-RAI-1.3031
 CATEGORIES=	textproc
-
-MAINTAINER=	Sam Smith <s@msmith.net>
+REVISION =	0
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

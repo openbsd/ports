@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/08 15:44:46 danj Exp $
 
 COMMENT=	pure Perl HTTP proxy
 
@@ -6,8 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	HTTP-Proxy-0.304
 CATEGORIES=	www
-
-MAINTAINER=	Sam Smith <s@msmith.net>
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

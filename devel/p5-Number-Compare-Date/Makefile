@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/08 15:44:45 danj Exp $
 
 COMMENT=	Compare Dates
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Number-Compare-Date-0.02
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
-
-MAINTAINER=	Sam Smith <S@msmith.net>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/08 15:44:45 danj Exp $
 
 COMMENT=	pager utility for Class::DBI
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Class-DBI-Pager-0.08
-REVISION=	1
+REVISION=	2
 CATEGORIES=	databases
-
-MAINTAINER=	Sam Smith <S@msmith.net>
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes

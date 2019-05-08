@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/08 15:44:45 danj Exp $
 
 COMMENT=	dynamic definition of Class::DBI sub classes
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Class-DBI-Loader-0.32
-REVISION=	0
+REVISION=	1
 CATEGORIES=	databases
-
-MAINTAINER=	Sam Smith <S@msmith.net>
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes

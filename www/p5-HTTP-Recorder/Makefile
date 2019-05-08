@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/08 15:44:46 danj Exp $
 
 COMMENT=	record interaction with websites
 
@@ -6,8 +6,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	HTTP-Recorder-0.07
 CATEGORIES=	www
-
-MAINTAINER=	Sam Smith <s@msmith.net>
+REVISION =	0
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

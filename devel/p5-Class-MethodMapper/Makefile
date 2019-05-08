@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/08 15:44:45 danj Exp $
 
 COMMENT=	Abstract class wrapper for Autoloader
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Class-MethodMapper-1.0
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
-
-MAINTAINER=	Sam Smith <S@msmith.net>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
