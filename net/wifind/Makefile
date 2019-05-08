@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2017/09/16 23:32:03 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/08 19:08:58 danj Exp $
 
 COMMENT=		wifi automagic connector
 
 GH_ACCOUNT=		raylai
 GH_PROJECT=		wifind
 GH_TAGNAME=		0.7
+REVISION=		0
 
 CATEGORIES=		net
-
-MAINTAINER=		Ray Lai <ray@raylai.com>
 
 # Unlicense
 PERMIT_PACKAGE_CDROM=	Yes
