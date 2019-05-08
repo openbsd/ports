@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.39 2019/01/01 17:17:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.40 2019/05/08 16:42:28 ajacoutot Exp $
 @bin bin/seahorse
 libexec/seahorse/
 @bin libexec/seahorse/ssh-askpass
 @bin libexec/seahorse/xloadimage
 @man man/man1/seahorse.1
-share/applications/seahorse.desktop
+share/applications/org.gnome.seahorse.Application.desktop
 share/dbus-1/services/org.gnome.seahorse.Application.service
 share/glib-2.0/schemas/org.gnome.seahorse.gschema.xml
 share/glib-2.0/schemas/org.gnome.seahorse.manager.gschema.xml
@@ -520,17 +520,12 @@ share/help/sv/seahorse/subkeys-add.page
 share/help/sv/seahorse/subkeys-examine.page
 share/help/sv/seahorse/subkeys-revoke.page
 share/icons/hicolor/16x16/apps/seahorse-preferences.png
-share/icons/hicolor/16x16/apps/seahorse.png
 share/icons/hicolor/22x22/apps/seahorse-preferences.png
-share/icons/hicolor/22x22/apps/seahorse.png
 share/icons/hicolor/24x24/apps/seahorse-preferences.png
-share/icons/hicolor/24x24/apps/seahorse.png
-share/icons/hicolor/256x256/apps/seahorse.png
 share/icons/hicolor/32x32/apps/seahorse-preferences.png
-share/icons/hicolor/32x32/apps/seahorse.png
 share/icons/hicolor/48x48/apps/seahorse-preferences.png
-share/icons/hicolor/48x48/apps/seahorse.png
-share/icons/hicolor/symbolic/apps/seahorse-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.seahorse.Application.svg
+share/icons/hicolor/symbolic/apps/org.gnome.seahorse.Application-symbolic.svg
 share/locale/ar/LC_MESSAGES/seahorse.mo
 share/locale/as/LC_MESSAGES/seahorse.mo
 share/locale/ast/LC_MESSAGES/seahorse.mo
@@ -614,7 +609,7 @@ share/locale/vi/LC_MESSAGES/seahorse.mo
 share/locale/zh_CN/LC_MESSAGES/seahorse.mo
 share/locale/zh_HK/LC_MESSAGES/seahorse.mo
 share/locale/zh_TW/LC_MESSAGES/seahorse.mo
-share/metainfo/seahorse.appdata.xml
+share/metainfo/org.gnome.seahorse.Application.appdata.xml
 share/seahorse/
 share/seahorse/icons/
 share/seahorse/icons/hicolor/
@@ -623,7 +618,6 @@ share/seahorse/icons/hicolor/22x22/apps/
 share/seahorse/icons/hicolor/22x22/apps/seahorse-key-personal.png
 share/seahorse/icons/hicolor/22x22/apps/seahorse-key-ssh.png
 share/seahorse/icons/hicolor/22x22/apps/seahorse-key.png
-share/seahorse/icons/hicolor/22x22/apps/seahorse-person.png
 share/seahorse/icons/hicolor/22x22/status/
 share/seahorse/icons/hicolor/22x22/status/seahorse-sign-bad.png
 share/seahorse/icons/hicolor/22x22/status/seahorse-sign-ok.png
@@ -633,7 +627,6 @@ share/seahorse/icons/hicolor/48x48/apps/
 share/seahorse/icons/hicolor/48x48/apps/seahorse-key-personal.png
 share/seahorse/icons/hicolor/48x48/apps/seahorse-key-ssh.png
 share/seahorse/icons/hicolor/48x48/apps/seahorse-key.png
-share/seahorse/icons/hicolor/48x48/apps/seahorse-person.png
 share/seahorse/icons/hicolor/48x48/status/
 share/seahorse/icons/hicolor/48x48/status/seahorse-sign-bad.png
 share/seahorse/icons/hicolor/48x48/status/seahorse-sign-ok.png

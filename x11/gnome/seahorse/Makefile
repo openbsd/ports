@@ -1,18 +1,20 @@
-# $OpenBSD: Makefile,v 1.114 2019/01/01 17:17:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.115 2019/05/08 16:42:28 ajacoutot Exp $
 
 COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
-GNOME_VERSION=		3.30.1.1
+GNOME_VERSION=		3.32.1
 
 CATEGORIES=		security
 
 # GPLv2/GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += atk-1.0 avahi-client avahi-common avahi-glib c gck-1
-WANTLIB += gcr-base-3 gcr-ui-3 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gpgme gtk-3 intl ldap-2.4 secret-1 soup-2.4
+WANTLIB += atk-1.0 avahi-client avahi-common avahi-glib c cairo
+WANTLIB += cairo-gobject gck-1 gcr-base-3 gcr-ui-3 gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpgme gtk-3
+WANTLIB += intl lber-2.4 ldap-2.4 p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pthread pwquality secret-1 soup-2.4
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -24,6 +26,7 @@ LIB_DEPENDS=		databases/openldap \
 			devel/libsoup \
 			net/avahi \
 			security/gpgme \
+			security/libpwquality \
 			x11/gnome/gcr \
 			x11/gnome/libsecret
 
