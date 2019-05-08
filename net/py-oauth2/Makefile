@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/05 06:57:50 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/08 13:49:47 danj Exp $
 
 COMMENT =	Python library for OAuth
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION = 1.9.0.post1
 DISTNAME =	oauth2-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	net
-MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>
+REVISION =	0
 
 HOMEPAGE =	http://github.com/simplegeo/python-oauth2
 

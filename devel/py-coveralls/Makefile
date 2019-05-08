@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2019/04/28 20:51:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/08 13:49:47 danj Exp $
 
 COMMENT =	display coverage stats online via coveralls.io
 
 MODPY_EGG_VERSION =	1.6.0
 DISTNAME =	coveralls-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
-MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>
 
 HOMEPAGE =	https://github.com/coagulant/coveralls-python
 

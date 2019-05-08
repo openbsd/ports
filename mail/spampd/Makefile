@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/12 16:08:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/08 13:49:47 danj Exp $
 
 COMMENT=		SMTP/LMTP proxy for Spamassassin
 
 GH_ACCOUNT=		mpaperno
 GH_PROJECT=		spampd
 GH_TAGNAME=		2.53
+REVISION=		0
 
 CATEGORIES=		mail
 
 HOMEPAGE=		http://www.worlddesign.com/index.cfm/page/rd/mta/spampd.htm
-MAINTAINER=		Henrik Friedrichsen <henrik@diff.cc>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=   Yes
