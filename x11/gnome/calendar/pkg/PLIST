@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/01/06 12:29:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/05/08 01:28:15 jasper Exp $
 @conflict california-*
 @pkgpath x11/gnome/california
 @bin bin/gnome-calendar
@@ -9,14 +9,9 @@ share/glib-2.0/schemas/org.gnome.calendar.gschema.xml
 share/gnome-shell/
 share/gnome-shell/search-providers/
 share/gnome-shell/search-providers/org.gnome.Calendar.search-provider.ini
-share/icons/hicolor/16x16/apps/org.gnome.Calendar.png
-share/icons/hicolor/22x22/apps/org.gnome.Calendar.png
-share/icons/hicolor/24x24/apps/org.gnome.Calendar.png
-share/icons/hicolor/256x256/apps/org.gnome.Calendar.png
-share/icons/hicolor/32x32/apps/org.gnome.Calendar.png
-share/icons/hicolor/48x48/apps/org.gnome.Calendar.png
-share/icons/hicolor/512x512/apps/org.gnome.Calendar.png
+share/icons/hicolor/scalable/apps/org.gnome.Calendar.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Calendar-symbolic.svg
+share/locale/af/LC_MESSAGES/gnome-calendar.mo
 share/locale/an/LC_MESSAGES/gnome-calendar.mo
 share/locale/ar/LC_MESSAGES/gnome-calendar.mo
 share/locale/be/LC_MESSAGES/gnome-calendar.mo
