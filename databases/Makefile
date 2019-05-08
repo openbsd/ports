@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.376 2019/04/24 23:33:48 jeremy Exp $
+# $OpenBSD: Makefile,v 1.377 2019/05/08 22:29:13 jca Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -39,7 +39,6 @@
      SUBDIR += mysql-utilities
      SUBDIR += mysql-zrm
      SUBDIR += mysql2pgsql
-     SUBDIR += mysqlcc
      SUBDIR += mytop
      SUBDIR += openldap
      SUBDIR += openldap,aci
