@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2019/05/06 00:47:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.42 2019/05/08 21:25:53 bcallah Exp $
 
 COMMENT =	LLVM Fortran compiler passes and runtime library
 DISTNAME =	flang-7.0.1.20190503
+REVISION =	0
 
 SHARED_LIBS +=	flang                     1.5 # 6.0
 SHARED_LIBS +=	flangrti                  3.0 # 6.0
@@ -38,5 +39,12 @@ CONFIGURE_ARGS =	-DCMAKE_Fortran_COMPILER="${LOCALBASE}/bin/flang" \
 # don't pick up llvm-config(1) from base
 pre-configure:
 	ln -sf ${LOCALBASE}/bin/llvm-config ${WRKDIR}/bin/llvm-config
+
+# Don't use the LLVM shared library.
+post-configure:
+	sed -i \
+	"s,-lLLVM-7,`${LOCALBASE}/bin/llvm-config --libs all --link-static --ignore-libllvm` -lz,g" \
+	${WRKBUILD}/tools/flang1/flang1exe/CMakeFiles/flang1.dir/link.txt \
+	${WRKBUILD}/tools/flang2/flang2exe/CMakeFiles/flang2.dir/link.txt
 
 .include <bsd.port.mk>
