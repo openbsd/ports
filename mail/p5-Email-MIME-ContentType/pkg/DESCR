@@ -1,2 +1,4 @@
-This module is responsible for parsing email content type
-headers according to section 5.1 of RFC 2045.
+Parses email content type headers according to section 5.1 of RFC
+2045 and also RFC 2231 (Character Set and Parameter Continuations)
+as well as email Content-Disposition headers according to RFC 2183
+and RFC 2231.
