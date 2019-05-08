@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.7 2019/03/27 21:20:57 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2019/05/08 11:20:57 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
-MASTER_SITES?=	http://dl.ubnt.com/unifi/${V}${BUILD_V}/
+MASTER_SITES?=	http://dl.ubnt.com/unifi/${V}${BUILD_V:C/^([1-9a-f])/-\1/}/
 
 JAF=		1.1.1
 DISTFILES=	unifi-$V{UniFi.unix}.zip \
@@ -74,8 +74,8 @@ do-install:
 	ln -fs ${LOCALBASE}/bin/mongod ${INSTDIR}/bin/mongod
 	ln -s /var/log/unifi ${INSTDIR}/logs
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-	find ${INSTDIR} -type f|xargs chmod ${SHAREMODE}
-	find ${INSTDIR} -type d|xargs chmod ${DIRMODE}
+	find ${INSTDIR} -type f -exec chmod ${SHAREMODE} {} +
+	find ${INSTDIR} -type d -exec chmod ${DIRMODE} {} +
 	${SUBST_CMD} -c -m 555 -o ${BINOWN} -g ${BINGRP} \
 		${FILESDIR}/unifi.sh ${PREFIX}/bin/unifi
 	ln -s unifi ${PREFIX}/bin/unifi-discover
