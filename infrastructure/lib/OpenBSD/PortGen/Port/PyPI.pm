@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.4 2019/04/23 01:31:38 afresh1 Exp $
+# $OpenBSD: PyPI.pm,v 1.5 2019/05/08 14:55:20 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -22,6 +22,7 @@ use warnings;
 use parent 'OpenBSD::PortGen::Port';
 
 use OpenBSD::PortGen::Dependency;
+use OpenBSD::PortGen::Utils qw( module_in_ports );
 
 sub ecosystem_prefix
 {
@@ -51,7 +52,7 @@ sub name_new_port
 {
 	my ( $self, $di ) = @_;
 
-	my $name = $di->{info}{name};
+	my $name = ref $di ? $di->{info}{name} : $di;
 	$name =~ s/^python-/py-/;
 	$name = "py-$name" unless $name =~ /^py-/;
 
@@ -111,6 +112,73 @@ sub postextract
 
 sub get_deps
 {
+	my ( $self, $di, $wrksrc ) = @_;
+	my $deps = OpenBSD::PortGen::Dependency->new();
+
+	# This, especially the os detection, may need additional
+	# work to be reliable, but I don't really know what PyPI returns.
+	# https://www.python.org/dev/peps/pep-0508/
+	foreach ( @{ $di->{info}->{requires_dist} || [] } ) {
+		my $phase = 'run';
+
+		#https://packaging.python.org/specifications/core-metadata/#name
+		my $name;
+		if ( s/^([A-Z0-9]|[A-Z0-9][A-Z0-9._-]*[A-Z0-9])\b//i ) {
+			$name = $1;
+		}
+		next unless $name;
+
+		# remove comma separated "extra" inside []
+		if ( s/^ \s* \[ ( [^]]* ) \] \s*//x ) {
+			$phase = $1;
+		}
+
+		my ( $req, $meta ) = split /\s*;\s*/;
+		$req =~ s/^\s+//;
+		$req ||= ">=0";
+		$req =~ s/^.*( [(] ) (.*?) (?(1) [)] ).*/$2/x;
+
+		$meta ||= '';
+		while ( $meta =~ /\bextra \s* == \s* (['"])? (.+?) \1 /gx ) {
+			$phase = $2;
+		}
+
+		my @plat;
+		while ( $meta =~ /
+			(?:sys_platform|os_name) \s* == \s* (['"]) (.+?) \1
+		/gx ) {
+			push @plat, $2;
+		}
+
+		next if @plat and join( " ", @plat ) !~ /OpenBSD/i;
+
+		my $port = module_in_ports( $name, 'py-' )
+		    || $self->name_new_port($name);
+
+		$port .= '${MODPY_FLAVOR}';
+
+		if ( $phase eq 'build' ) {
+			$deps->add_build( $port, $req );
+		} elsif ( $phase eq 'test' ) {
+			$deps->add_test( $port, $req );
+		} elsif ( $phase eq 'dev' ) {
+			# switch this to "ne 'run'" to avoid optional deps
+			warn "Not adding '$phase' dep on $port\n";
+			next;
+		} else {
+			warn "Adding '$phase' dep on $port as run dep\n"
+				unless $phase eq 'run';
+			$deps->add_run( $port, $req );
+		}
+
+		# don't have it in tree, port it
+		if ( $port =~ m{^pypi/} ) {
+			my $o = OpenBSD::PortGen::Port::PyPI->new();
+			$o->port($name);
+		}
+	}
+
+	return $deps->format;
 }
 
 sub get_config_style
