@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/12/05 16:25:45 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/08 21:36:07 danj Exp $
 
 COMMENT =	import packages into other packages
 
@@ -7,10 +7,9 @@ PKG_ARCH =	*
 DISTNAME =	Import-Into-1.002005
 CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION =	0
 
 CPAN_AUTHOR =	HAARG
-
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

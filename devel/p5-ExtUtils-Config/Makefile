@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/08 21:36:07 danj Exp $
 
 COMMENT =	wrapper for perl's configuration
 
@@ -6,8 +6,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	ExtUtils-Config-0.008
 CATEGORIES =	devel
-
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+REVISION =	0
 
 CPAN_AUTHOR =	LEONT
 

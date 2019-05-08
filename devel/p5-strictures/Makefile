@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/11/12 15:55:19 solene Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/08 21:36:07 danj Exp $
 
 FIX_EXTRACT_PERMISSIONS = Yes
 
@@ -8,8 +8,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	strictures-2.000005
 CATEGORIES =	devel
-
-MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
+REVISION =	0
 
 CPAN_AUTHOR =	ETHER
 
