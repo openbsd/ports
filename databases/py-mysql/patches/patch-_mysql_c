@@ -1,7 +1,20 @@
-$OpenBSD: patch-_mysql_c,v 1.4 2014/09/03 13:43:39 benoit Exp $
---- _mysql.c.orig	Thu Jan  2 13:52:50 2014
-+++ _mysql.c	Wed Sep  3 13:57:17 2014
-@@ -2079,7 +2079,7 @@
+$OpenBSD: patch-_mysql_c,v 1.5 2019/05/08 22:33:32 jca Exp $
+Index: _mysql.c
+--- _mysql.c.orig
++++ _mysql.c
+@@ -2002,7 +2002,10 @@ _mysql_ConnectionObject_ping(
+ 	int r, reconnect = -1;
+ 	if (!PyArg_ParseTuple(args, "|I", &reconnect)) return NULL;
+ 	check_connection(self);
+-	if ( reconnect != -1 ) self->connection.reconnect = reconnect;
++	if (reconnect != -1) {
++		my_bool recon = reconnect;
++		mysql_options(&self->connection, MYSQL_OPT_RECONNECT, &recon);
++	}
+ 	Py_BEGIN_ALLOW_THREADS
+ 	r = mysql_ping(&(self->connection));
+ 	Py_END_ALLOW_THREADS
+@@ -2079,7 +2082,7 @@ _mysql_ConnectionObject_shutdown(
  	check_connection(self);
  	Py_BEGIN_ALLOW_THREADS
  	r = mysql_shutdown(&(self->connection)

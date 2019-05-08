@@ -1,9 +1,11 @@
-$OpenBSD: patch-ext_mysql_api_mysql_c,v 1.2 2017/01/07 18:09:28 jeremy Exp $
+$OpenBSD: patch-ext_mysql_api_mysql_c,v 1.3 2019/05/08 22:33:32 jca Exp $
 
 Allow building with ruby 2.4+.
+Allow building with recent mariadb releases.
 
---- ext/mysql_api/mysql.c.orig	Wed Dec 31 16:00:00 1969
-+++ ext/mysql_api/mysql.c	Sat Jan  7 10:06:36 2017
+Index: ext/mysql_api/mysql.c
+--- ext/mysql_api/mysql.c.orig
++++ ext/mysql_api/mysql.c
 @@ -3,6 +3,11 @@
   */
  
@@ -16,7 +18,63 @@ Allow building with ruby 2.4+.
  #ifndef RSTRING_PTR
  #define RSTRING_PTR(str) RSTRING(str)->ptr
  #endif
-@@ -1317,7 +1322,11 @@ static VALUE stmt_bind_result(int argc, VALUE *argv, V
+@@ -234,6 +239,7 @@ static VALUE real_connect(int argc, VALUE* argv, VALUE
+     unsigned int pp, f;
+     struct mysql* myp;
+     VALUE obj;
++    my_bool reconnect;
+ 
+ #if MYSQL_VERSION_ID >= 32200
+     rb_scan_args(argc, argv, "07", &host, &user, &passwd, &db, &port, &sock, &flag);
+@@ -273,7 +279,8 @@ static VALUE real_connect(int argc, VALUE* argv, VALUE
+     rb_thread_start_timer();
+ #endif
+ 
+-    myp->handler.reconnect = 0;
++    reconnect = 0;
++    mysql_options(&myp->handler, MYSQL_OPT_RECONNECT, &reconnect);
+     myp->connection = Qtrue;
+     myp->query_with_result = Qtrue;
+     rb_obj_call_init(obj, argc, argv);
+@@ -326,6 +333,7 @@ static VALUE real_connect2(int argc, VALUE* argv, VALU
+     char *h, *u, *p, *d, *s;
+     unsigned int pp, f;
+     MYSQL* m = GetHandler(obj);
++    my_bool reconnect;
+     rb_scan_args(argc, argv, "07", &host, &user, &passwd, &db, &port, &sock, &flag);
+     d = NILorSTRING(db);
+     f = NILorINT(flag);
+@@ -347,7 +355,8 @@ static VALUE real_connect2(int argc, VALUE* argv, VALU
+ #ifdef HAVE_RB_THREAD_START_TIMER
+     rb_thread_start_timer();
+ #endif
+-    m->reconnect = 0;
++    reconnect = 0;
++    mysql_options(&m, MYSQL_OPT_RECONNECT, &reconnect);
+     GetMysqlStruct(obj)->connection = Qtrue;
+ 
+     return obj;
+@@ -917,13 +926,17 @@ static VALUE query_with_result_set(VALUE obj, VALUE fl
+ /*	reconnect()	*/
+ static VALUE reconnect(VALUE obj)
+ {
+-    return GetHandler(obj)->reconnect ? Qtrue : Qfalse;
++    my_bool reconnect;
++    if (mysql_get_option(GetHandler(obj), MYSQL_OPT_RECONNECT, &reconnect))
++	    reconnect = 0;
++    return reconnect ? Qtrue : Qfalse;
+ }
+ 
+ /*	reconnect=(flag)	*/
+ static VALUE reconnect_set(VALUE obj, VALUE flag)
+ {
+-    GetHandler(obj)->reconnect = (flag == Qnil || flag == Qfalse) ? 0 : 1;
++    my_bool reconnect = (flag == Qnil || flag == Qfalse) ? 0 : 1;
++    mysql_options(GetHandler(obj), MYSQL_OPT_RECONNECT, &reconnect);
+     return flag;
+ }
+ 
+@@ -1317,7 +1330,11 @@ static VALUE stmt_bind_result(int argc, VALUE *argv, V
  	}
  	else if (argv[i] == rb_cString)
  	    s->result.bind[i].buffer_type = MYSQL_TYPE_STRING;
