@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/08 23:04:57 afresh1 Exp $
 
 COMMENT=	expiry plug-in for Memoize that adds LRU cache expiration
 
-DISTNAME=	Memoize-ExpireLRU-0.55
-REVISION=	0
+DISTNAME=	Memoize-ExpireLRU-0.56
 CATEGORIES=	devel
 
 MAINTAINER=	Andrew Fresh <afresh1@openbsd.org>
