@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.636 2019/04/24 23:33:49 jeremy Exp $
+# $OpenBSD: Makefile,v 1.637 2019/05/08 14:34:10 jasper Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -156,6 +156,7 @@
      SUBDIR += libdnd
      SUBDIR += libfm
      SUBDIR += libgdiplus
+     SUBDIR += libhandy
      SUBDIR += libkscreen
      SUBDIR += libqaccessibilityclient
      SUBDIR += libxdg-basedir

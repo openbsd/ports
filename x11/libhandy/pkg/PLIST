@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/08 14:32:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/08 14:34:10 jasper Exp $
 include/libhandy-0.0/
 include/libhandy-0.0/handy.h
 include/libhandy-0.0/hdy-action-row.h
@@ -25,7 +25,6 @@ include/libhandy-0.0/hdy-version.h
 include/libhandy-0.0/hdy-view-switcher-bar.h
 include/libhandy-0.0/hdy-view-switcher.h
 lib/girepository-1.0/Handy-0.0.typelib
-lib/libhandy-0.0.so
 @lib lib/libhandy-0.0.so.${LIBhandy-0.0_VERSION}
 lib/pkgconfig/libhandy-0.0.pc
 share/gir-1.0/Handy-0.0.gir
