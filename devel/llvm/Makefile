@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.223 2019/05/08 21:48:20 jca Exp $
+# $OpenBSD: Makefile,v 1.224 2019/05/08 21:53:20 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -7,7 +7,6 @@ DPB_PROPERTIES = parallel
 
 COMMENT-main =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 COMMENT-lldb =	LLDB debugger
-COMMENT-extras =	Clang extra tools
 COMMENT-python =	Python bindings for Clang
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
@@ -19,7 +18,6 @@ PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-PKGNAME-extras =	clang-tools-extra-${LLVM_V}
 REVISION-main =	13
 REVISION-lldb =	1
 
@@ -44,11 +42,9 @@ EXTRACT_SUFX =	.tar.xz
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX} \
 		lld-${LLVM_V}.src${EXTRACT_SUFX} \
-		lldb-${LLVM_V}.src${EXTRACT_SUFX} \
-		clang-tools-extra-${LLVM_V}.src${EXTRACT_SUFX}
+		lldb-${LLVM_V}.src${EXTRACT_SUFX}
 
-# XXX enabling -extras changes the content of the -main subpackage
-MULTI_PACKAGES = -main -python -lldb # -extras
+MULTI_PACKAGES = -main -python -lldb
 
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
@@ -77,10 +73,6 @@ WANTLIB-lldb +=		c curses edit form m panel
 LIB_DEPENDS-lldb =	${BUILD_PKGPATH},-main
 RUN_DEPENDS-lldb =	${MODPY_RUN_DEPENDS} \
 			devel/py-six
-
-WANTLIB-extras =	${COMPILER_LIBCXX} c m
-LIB_DEPENDS-extras =	${BUILD_PKGPATH},-main
-RUN_DEPENDS-extras =	${MODPY_RUN_DEPENDS}
 
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
@@ -132,14 +124,10 @@ post-extract:
 	mv ${WRKDIR}/cfe-${LLVM_V}.src ${WRKSRC}/tools/clang
 	mv ${WRKDIR}/lld-${LLVM_V}.src ${WRKSRC}/tools/lld
 	mv ${WRKDIR}/lldb-${LLVM_V}.src ${WRKSRC}/tools/lldb
-	mv ${WRKDIR}/clang-tools-extra-${LLVM_V}.src ${WRKSRC}/tools/clang/tools/extra
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
 	-@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
-.if !${BUILD_PACKAGES:M-extras}
-	rm -r ${WRKSRC}/tools/clang/tools/extra
-.endif
 
 post-build:
 	cd ${WRKSRC}/docs && make -f Makefile.sphinx man
