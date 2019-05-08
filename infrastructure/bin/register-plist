@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.20 2019/05/07 13:20:06 espie Exp $
+# $OpenBSD: register-plist,v 1.21 2019/05/08 13:03:06 espie Exp $
 # Copyright (c) 2005,2012
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -38,7 +38,8 @@ use constant {
 	Different => 1,
 	Older => 1,
 	Updatable => 2,
-	StopCompare => 3
+	StopCompare => 3,
+	UpdatableButShowDiff => 4
 };
 
 package OpenBSD::PackingList;
@@ -158,6 +159,17 @@ sub compare_more
 	return Result::StopCompare;
 }
 
+# special version, avoids writing synthetic version into plist_db
+sub write_mogrified
+{
+	my ($self, $fh, $state) = @_;
+	if ($state->{mogrified}{$self}) {
+		return if $state->{mogrified}{$self}->name == -1;
+		$state->{mogrified}{$self}->write($fh);
+	} else {
+		$self->write($fh);
+	}
+}
 package OpenBSD::PackingElement::Old;
 sub flatten
 {
@@ -390,6 +402,18 @@ sub compare_more
 
 package main;
 
+sub combine
+{
+	my ($comparison_result, $seen_stop) = @_;
+	if (!$seen_stop) {
+		return $comparison_result;
+	} elsif ($comparison_result == Result::Different) {
+		return Result::UpdatableButShowDiff;
+	} else {
+		return Result::Updatable;
+	}
+}
+
 # my_compare is asymetric  $p is always the newer list
 sub my_compare
 {
@@ -406,21 +430,22 @@ sub my_compare
 	}
 	my $l = [];
 	my $l2 = [];
+	my $seen_stop = Result::Equal;
 	my $final = Result::Equal;
 	$p->flatten($l);
 	$p2->flatten($l2);
 	while (my $e = shift @$l) {
 		my $e2 = shift @$l2;
-		return Result::Different unless defined $e2;
+		if (!defined $e2) {
+			return combine(Result::Different, $seen_stop);
+		}
 		my $r = $e->compare($e2);
 		if ($r == Result::Different) {
-			return $r;
+			return combine($r, $seen_stop);
 		}
 		if ($r == Result::StopCompare) {
 			push(@{$state->{updates}}, [$e2, $e]);
-			# don't bother doing more comparisons, there's 
-			# no need
-			return Result::Updatable;
+			$seen_stop = $r;
 		}
 		if ($r == Result::Updatable) {
 			push(@{$state->{updates}}, [$e2, $e]);
@@ -433,9 +458,9 @@ sub my_compare
 		}
 	}
 	if (@$l2 > 0) {
-		return Result::Different;
+		return combine(Result::Different, $seen_stop);
 	}
-	return $final;
+	return combine($final, $seen_stop);
 }
 
 sub more_mogrified
@@ -448,12 +473,17 @@ sub more_mogrified
 
 sub error_blurb
 {
-	my $state = shift;
+	my ($state, $p) = @_;
 	$state->errsay("Error: change in plist");
 	$state->errsay("| Assuming the old and new builds were done correctly");
 	$state->errsay("| (fully up-to-date ports tree including relevant MODULES),");
 	$state->errsay("| then someone probably forgot to bump a REVISION.");
 	$state->errsay("| (see bsd.port.mk(5), PACKAGE_REPOSITORY)");
+
+	return if defined $p->{version} && $p->{version}->name != -1;
+	$state->errsay("|");
+	$state->errsay("| Note that registered plist doesn't have \@version info");
+	$state->errsay("| So we can't know anything about \@version bumps");
 }
 
 
@@ -489,7 +519,7 @@ sub act_on_compare
 
 	if ($r == Result::Different) {
 		more_mogrified($p1, $p2, $state);
-		error_blurb($state);
+		error_blurb($state, $p2);
 		write_out_diff($p1, $p2, $result, $state);
 		return 1;
 	}
@@ -501,6 +531,11 @@ sub act_on_compare
 			    $i->[0]->fullstring, 
 			    $i->[1]->fullstring);
 		}
+	}
+	if ($r == Result::UpdatableButShowDiff) {
+		$state->errsay("#1 was updated", $result);
+		write_out_diff($p1, $p2, $result, $state);
+		$p1->tofile($result);
 	}
 	return 0;
 }
@@ -591,8 +626,8 @@ if ($state->opt('p')) {
 			$plist2->forget_details;
 			$plist2->forget_more_details;
 			my $r = my_compare($plist, $plist2, $state);
-			if ($r == 2) {
-				$r = 0;
+			if ($r == Result::Updatable) {
+				$r = Result::Equal;
 			}
 			exit(act_on_compare($r, $plist, $plist2, $result, 
 			    $state));
