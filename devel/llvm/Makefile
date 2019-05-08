@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.222 2019/05/03 20:20:05 jca Exp $
+# $OpenBSD: Makefile,v 1.223 2019/05/08 21:48:20 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -49,9 +49,6 @@ DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 
 # XXX enabling -extras changes the content of the -main subpackage
 MULTI_PACKAGES = -main -python -lldb # -extras
-PSEUDO_FLAVORS = no_lldb
-FLAVOR ?=
-NOT_FOR_ARCHS-lldb = ${GCC4_ARCHS}
 
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
@@ -140,9 +137,6 @@ post-extract:
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
 	-@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
-.if !${BUILD_PACKAGES:M-lldb}
-	rm -r ${WRKSRC}/tools/lldb
-.endif
 .if !${BUILD_PACKAGES:M-extras}
 	rm -r ${WRKSRC}/tools/clang/tools/extra
 .endif
@@ -165,9 +159,7 @@ post-install:
 	# lit and FileCheck are not installed
 	@rm ${PREFIX}/man/man1/lit.1
 	@rm ${PREFIX}/man/man1/FileCheck.1
-.if ${BUILD_PACKAGES:M-lldb}
 	ln -fs ${TRUEPREFIX}/lib/liblldb.so.${LIBlldb_VERSION} \
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/lldb/_lldb.so
-.endif
 
 .include <bsd.port.mk>
