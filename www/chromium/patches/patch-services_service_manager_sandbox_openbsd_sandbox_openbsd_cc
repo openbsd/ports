@@ -1,7 +1,7 @@
 Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 --- services/service_manager/sandbox/openbsd/sandbox_openbsd.cc.orig
 +++ services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,313 @@
+@@ -0,0 +1,323 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -61,6 +61,9 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +#include "crypto/nss_util.h"
 +#endif
 +
++#include "ui/gfx/x/x11_types.h"
++#include "ui/gfx/x/x11.h"
++
 +#define MAXTOKENS        3
 +#define _UNVEIL_MAIN     "/etc/chromium/unveil.main";
 +#define _UNVEIL_RENDERER "/etc/chromium/unveil.renderer";
@@ -110,6 +113,13 @@ Index: services/service_manager/sandbox/openbsd/sandbox_openbsd.cc
 +  if (process_type.empty())
 +    crypto::EnsureNSSInit();
 +#endif
++
++  // cache the XErrorDB by forcing a read on it
++  {
++    XDisplay* display = gfx::GetXDisplay();
++    char buf[1];
++    XGetErrorDatabaseText(display, "XProtoError", "0", "",  buf, base::size(buf));
++  }
 +
 +  if (process_type.empty()) {
 +    base::FilePath cache_directory, local_directory;
