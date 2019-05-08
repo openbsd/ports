@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2019/04/04 10:00:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2019/05/08 12:34:00 robert Exp $
 bin/al
 bin/al2
 bin/caspol
@@ -131,6 +131,7 @@ include/mono-2.0/mono/utils/
 include/mono-2.0/mono/utils/mono-counters.h
 include/mono-2.0/mono/utils/mono-dl-fallback.h
 include/mono-2.0/mono/utils/mono-error.h
+include/mono-2.0/mono/utils/mono-forward.h
 include/mono-2.0/mono/utils/mono-jemalloc.h
 include/mono-2.0/mono/utils/mono-logger.h
 include/mono-2.0/mono/utils/mono-publib.h
@@ -162,9 +163,6 @@ lib/libmono-profiler-log-static.la
 lib/libmono-profiler-log.a
 lib/libmono-profiler-log.la
 @lib lib/libmono-profiler-log.so.${LIBmono-profiler-log_VERSION}
-lib/libmono-system-native.a
-lib/libmono-system-native.la
-@lib lib/libmono-system-native.so.${LIBmono-system-native_VERSION}
 lib/libmonoboehm-2.0.a
 lib/libmonoboehm-2.0.la
 @lib lib/libmonoboehm-2.0.so.${LIBmonoboehm-2.0_VERSION}
@@ -2803,9 +2801,9 @@ lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/
 lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/Mono.Cairo.dll
 lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/Mono.Cairo.pdb
 lib/mono/gac/Mono.Cecil/
-lib/mono/gac/Mono.Cecil/0.10.0.0__0738eb9f132ed756/
-lib/mono/gac/Mono.Cecil/0.10.0.0__0738eb9f132ed756/Mono.Cecil.dll
-lib/mono/gac/Mono.Cecil/0.10.0.0__0738eb9f132ed756/Mono.Cecil.pdb
+lib/mono/gac/Mono.Cecil/0.10.3.0__0738eb9f132ed756/
+lib/mono/gac/Mono.Cecil/0.10.3.0__0738eb9f132ed756/Mono.Cecil.dll
+lib/mono/gac/Mono.Cecil/0.10.3.0__0738eb9f132ed756/Mono.Cecil.pdb
 lib/mono/gac/Mono.Cecil/0.9.5.0__0738eb9f132ed756/
 lib/mono/gac/Mono.Cecil/0.9.5.0__0738eb9f132ed756/Mono.Cecil.dll
 lib/mono/gac/Mono.Cecil/0.9.5.0__0738eb9f132ed756/Mono.Cecil.pdb

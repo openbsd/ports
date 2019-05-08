@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.126 2019/04/04 10:00:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.127 2019/05/08 12:34:00 robert Exp $
 
 USE_WXNEEDED=	Yes
 
 COMMENT=	cross platform, open source .NET developement framework
 
-V=		5.18.1.0
-REVISION=	0
+V=		5.20.1.19
 
 DISTNAME=	mono-${V}
 
@@ -15,7 +14,6 @@ CATEGORIES=	lang devel
 SHARED_LIBS +=  mono-2.0		1.0	# .0.0
 SHARED_LIBS +=  monoboehm-2.0           1.0     # .1.0
 SHARED_LIBS +=  monosgen-2.0            1.0	# .0.0
-SHARED_LIBS +=  mono-system-native	0.0	# 0.0
 
 SHARED_LIBS +=  mono-profiler-aot	1.0	# .0.0
 SHARED_LIBS +=  mono-profiler-coverage	0.0	# .0.0
