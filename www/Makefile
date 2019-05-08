@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.903 2019/05/05 18:11:20 jca Exp $
+# $OpenBSD: Makefile,v 1.904 2019/05/08 13:45:44 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -350,7 +350,7 @@
      SUBDIR += pecl-geoip,php73
      SUBDIR += pecl-memcached,php71
      SUBDIR += pecl-memcached,php72
-     #SUBDIR += pecl-memcached,php73		# no 7.3 yet
+     SUBDIR += pecl-memcached,php73
      SUBDIR += pecl-pecl_http,php71
      SUBDIR += pecl-pecl_http,php72
      SUBDIR += pecl-pecl_http,php73
