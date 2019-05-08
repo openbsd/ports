@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2019/04/30 17:41:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.132 2019/05/08 22:04:51 ajacoutot Exp $
 
 PORTROACH=		skipv:5.90.1
 
@@ -9,7 +9,7 @@ COMMENT-pgsql=		PostgreSQL backend for libgda
 COMMENT-ui=		GTK+ extension and tools for libgda
 
 GNOME_PROJECT=		libgda
-GNOME_VERSION=		5.2.8
+GNOME_VERSION=		5.2.9
 
 GDA_MAJOR=		5.0
 SUBST_VARS=		GDA_MAJOR
@@ -19,8 +19,6 @@ PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
 PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
-
-REVISION-main=		1
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -42,7 +40,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += m pcre z gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 lzma
 WANTLIB += gthread-2.0 xml2 gcrypt secret-1 gpg-error ffi pthread
-WANTLIB += iconv intl
+WANTLIB += iconv intl sqlite3
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -93,11 +91,12 @@ MULTI_PACKAGES=		-main -ui -mysql -pgsql -ldap
 
 ### -main
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += c curses gcrypt gpg-error sqlite3
-WANTLIB-main += readline soup-2.4 crypto gdk_pixbuf-2.0 png xslt
+WANTLIB-main += c curses gcrypt gpg-error idn2 psl unistring
+WANTLIB-main += readline soup-2.4 crypto gdk_pixbuf-2.0 xslt
 
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS}
-LIB_DEPENDS-main=	devel/libsoup \
+LIB_DEPENDS-main=	databases/sqlite3 \
+			devel/libsoup \
 			textproc/libxslt \
 			graphics/gdk-pixbuf2 \
 			x11/gnome/libsecret
@@ -109,10 +108,9 @@ WANTLIB-ui += Xi Xinerama Xrandr Xrender atk-1.0 c cairo atk-bridge-2.0
 WANTLIB-ui += cairo-gobject expat fontconfig freetype gda-${GDA_MAJOR}
 WANTLIB-ui += gdk-3 gdk_pixbuf-2.0 goocanvas-2.0 gtk-3 gtksourceview-3.0
 WANTLIB-ui += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB-ui += xcb xcb-render xcb-shm epoxy atspi harfbuzz dbus-1 fribidi
+WANTLIB-ui += xcb xcb-render xcb-shm epoxy harfbuzz fribidi
 
 LIB_DEPENDS-ui=		graphics/goocanvas2 \
-			x11/dbus \
 			x11/gnome/libgda \
 			x11/gtksourceview3
 RUN_DEPENDS-ui=		${RUN_DEPENDS} \

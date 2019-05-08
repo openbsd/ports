@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ui,v 1.30 2018/12/07 14:06:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST-ui,v 1.31 2019/05/08 22:04:51 ajacoutot Exp $
 @conflict libgda-<5.1.2p4v2
 @bin bin/gda-browser-${GDA_MAJOR}
 @bin bin/gda-control-center-${GDA_MAJOR}
@@ -46,6 +46,9 @@ share/appdata/gda-browser-${GDA_MAJOR}.appdata.xml
 share/applications/gda-browser-${GDA_MAJOR}.desktop
 share/applications/gda-control-center-${GDA_MAJOR}.desktop
 share/gtk-doc/html/gda-browser/
+share/gtk-doc/html/gda-browser/annotation-glossary.html
+share/gtk-doc/html/gda-browser/api-deprecated.html
+share/gtk-doc/html/gda-browser/api-index-full.html
 share/gtk-doc/html/gda-browser/BrowserConnection.html
 share/gtk-doc/html/gda-browser/BrowserCore.html
 share/gtk-doc/html/gda-browser/BrowserPerspective.html
