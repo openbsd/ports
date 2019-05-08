@@ -1,7 +1,8 @@
-$OpenBSD: patch-pwnlib_elf_elf_py,v 1.1.1.1 2019/05/08 21:15:44 jasper Exp $
+$OpenBSD: patch-pwnlib_elf_elf_py,v 1.2 2019/05/08 21:27:29 jasper Exp $
 
-Adjust to intervaltree 3.0 API
-https://github.com/Gallopsled/pwntools/issues/1238
+- Adjust to intervaltree 3.0 API
+  https://github.com/Gallopsled/pwntools/issues/1238
+- Add support for checking for retguard
 
 Index: pwnlib/elf/elf.py
 --- pwnlib/elf/elf.py.orig
@@ -15,3 +16,30 @@ Index: pwnlib/elf/elf.py
  
          # Create a new view of memory, for just what we need
          memory = intervaltree.IntervalTree(overlap)
+@@ -1497,6 +1497,15 @@ class ELF(ELFFile):
+     aslr=pie
+ 
+     @property
++    def retguard(self):
++        """:class:`bool`: Whether the current binary was compiled with retguard."""
++        s_randomdata = self.get_section_by_name('.openbsd.randomdata')
++        if s_randomdata and len(s_randomdata.data()) >= 48:
++            return True
++
++        return False
++
++    @property
+     def rpath(self):
+         """:class:`bool`: Whether the current binary has an ``RPATH``."""
+         dt_rpath = self.dynamic_by_tag('DT_RPATH')
+@@ -1554,6 +1563,10 @@ class ELF(ELFFile):
+                 True: green("PIE enabled"),
+                 False: red("No PIE (%#x)" % self.address)
+             }[self.pie],
++            "Retguard:".ljust(10) + {
++                True: green("Retguard found"),
++                False: red("No retguard found"),
++            }[self.retguard],
+         ])
+ 
+         # Execstack may be a thing, even with NX enabled, because of glibc
