@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1850 2019/05/08 16:36:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.1851 2019/05/08 20:42:57 jca Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -469,7 +469,6 @@
      SUBDIR += msp430
      SUBDIR += mspdebug
      SUBDIR += mygui
-     SUBDIR += mysql++
      SUBDIR += nagelfar
      SUBDIR += naken430asm
      SUBDIR += nasm
