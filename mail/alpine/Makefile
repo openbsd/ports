@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.41 2018/09/04 12:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2019/05/08 22:50:07 ajacoutot Exp $
+
+# XXX consider moving to https://repo.or.cz/alpine.git
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -25,10 +27,13 @@ PKGNAME-imap=		imap-uw-${V}
 PKGNAME-mailutil=	mailutil-uw-${V}
 PKGNAME-pico=		pico-${PICO_V}
 PKGNAME-pilot=		pilot-${PILOT_V}
-REVISION-imap=		0
-REVISION-main=		0
 
-REVISION-pilot=		17
+REVISION-main=		1
+REVISION-c-client=	1
+REVISION-imap=		1
+REVISION-mailutil=	1
+REVISION-pico=		18
+REVISION-pilot=		18
 
 EPOCH-c-client=		0
 EPOCH-imap=		0
@@ -40,13 +45,12 @@ CATEGORIES-c-client=	devel mail
 CATEGORIES-pico=	editors
 CATEGORIES-pilot=	sysutils
 
-HOMEPAGE=		http://patches.freeiz.com/alpine/
+HOMEPAGE=		http://alpine.x10host.com/
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://patches.freeiz.com/alpine/release/src/ \
-			https://www.mpeters.org/mirror/
+MASTER_SITES=		http://alpine.x10host.com/alpine/release/
 
 MULTI_PACKAGES=		-main -c-client -imap -mailutil -pico -pilot
 
