@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.543 2019/04/27 17:24:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.544 2019/05/08 21:16:54 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -262,6 +262,7 @@
      SUBDIR += portsentry
      SUBDIR += ppgen
      SUBDIR += pwgen
+     SUBDIR += pwntools
      SUBDIR += pwsafe
      SUBDIR += pwsafe,no_x11
      SUBDIR += py-M2Crypto
