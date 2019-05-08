@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2019/03/18 15:13:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.136 2019/05/08 07:27:36 bentley Exp $
 
      SUBDIR =
      SUBDIR += abiword
@@ -55,6 +55,7 @@
      SUBDIR += scintilla
      SUBDIR += scite
      SUBDIR += se
+     SUBDIR += sigil
      SUBDIR += subtitleeditor
      SUBDIR += tea
      SUBDIR += teaqt
