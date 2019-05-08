@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2019/02/21 17:08:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2019/05/08 14:09:07 jasper Exp $
 
 COMMENT=		simple note editor
 
 GNOME_PROJECT=		bijiben
-GNOME_VERSION=		3.30.3
-REVISION=		0
+GNOME_VERSION=		3.32.1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
