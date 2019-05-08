@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2019/04/23 18:04:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.52 2019/05/08 01:31:29 ajacoutot Exp $
 include/gnome-desktop-3.0/
 include/gnome-desktop-3.0/libgnome-desktop/
 include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-crossfade.h
@@ -13,43 +13,12 @@ include/gnome-desktop-3.0/libgnome-desktop/gnome-rr.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-wall-clock.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-xkb-info.h
 lib/girepository-1.0/GnomeDesktop-3.0.typelib
-lib/libgnome-desktop-3.a
-lib/libgnome-desktop-3.la
 @lib lib/libgnome-desktop-3.so.${LIBgnome-desktop-3_VERSION}
 lib/pkgconfig/gnome-desktop-3.0.pc
 @bin libexec/gnome-rr-debug
 share/gir-1.0/GnomeDesktop-3.0.gir
 share/gnome/
 share/gnome/gnome-version.xml
-share/gtk-doc/html/gnome-desktop3/
-share/gtk-doc/html/gnome-desktop3/GnomeDesktopThumbnailFactory.html
-share/gtk-doc/html/gnome-desktop3/GnomeIdleMonitor.html
-share/gtk-doc/html/gnome-desktop3/GnomeWallClock.html
-share/gtk-doc/html/gnome-desktop3/GnomeXkbInfo.html
-share/gtk-doc/html/gnome-desktop3/annotation-glossary.html
-share/gtk-doc/html/gnome-desktop3/background.html
-share/gtk-doc/html/gnome-desktop3/gnome-desktop3-Language-Utilities.html
-share/gtk-doc/html/gnome-desktop3/gnome-desktop3-gnome-bg.html
-share/gtk-doc/html/gnome-desktop3/gnome-desktop3-gnome-pnp-ids.html
-share/gtk-doc/html/gnome-desktop3/gnome-desktop3-gnome-rr-config.html
-share/gtk-doc/html/gnome-desktop3/gnome-desktop3-gnome-rr.html
-share/gtk-doc/html/gnome-desktop3/gnome-desktop3.devhelp2
-share/gtk-doc/html/gnome-desktop3/home.png
-share/gtk-doc/html/gnome-desktop3/idle-monitor.html
-share/gtk-doc/html/gnome-desktop3/index.html
-share/gtk-doc/html/gnome-desktop3/intro.html
-share/gtk-doc/html/gnome-desktop3/languages.html
-share/gtk-doc/html/gnome-desktop3/left-insensitive.png
-share/gtk-doc/html/gnome-desktop3/left.png
-share/gtk-doc/html/gnome-desktop3/randr.html
-share/gtk-doc/html/gnome-desktop3/right-insensitive.png
-share/gtk-doc/html/gnome-desktop3/right.png
-share/gtk-doc/html/gnome-desktop3/style.css
-share/gtk-doc/html/gnome-desktop3/thumbnail.html
-share/gtk-doc/html/gnome-desktop3/up-insensitive.png
-share/gtk-doc/html/gnome-desktop3/up.png
-share/gtk-doc/html/gnome-desktop3/wall-clock.html
-share/gtk-doc/html/gnome-desktop3/xkb-info.html
 share/help/
 share/help/C/
 share/help/C/fdl/

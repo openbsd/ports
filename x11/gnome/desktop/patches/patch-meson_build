@@ -1,0 +1,16 @@
+$OpenBSD: patch-meson_build,v 1.1 2019/05/08 01:31:29 ajacoutot Exp $
+
+XXX fix+push upstream
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -30,7 +30,7 @@ prefix = get_option('prefix')
+ datadir = join_paths(prefix, get_option('datadir'))
+ libexecdir = join_paths(prefix, get_option('libexecdir'))
+ 
+-liblocaledir = join_paths(get_option('prefix'), 'lib', 'locale')
++liblocaledir = join_paths('/usr', 'share', 'locale')
+ localedir = join_paths(datadir, 'locale')
+ test_metadir = join_paths(datadir, 'installed-tests', meson.project_name())
+ test_execdir = join_paths(libexecdir, 'installed-tests', meson.project_name())
