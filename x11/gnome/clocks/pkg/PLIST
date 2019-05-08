@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/07/06 06:04:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2019/05/08 15:19:44 ajacoutot Exp $
 @bin bin/gnome-clocks
 share/applications/org.gnome.clocks.desktop
 share/dbus-1/services/org.gnome.clocks.service
@@ -267,11 +267,7 @@ share/help/sv/gnome-clocks/timer.page
 share/help/sv/gnome-clocks/world-add.page
 share/help/sv/gnome-clocks/world-check.page
 share/help/sv/gnome-clocks/world-remove.page
-share/icons/hicolor/16x16/apps/org.gnome.clocks.png
-share/icons/hicolor/22x22/apps/org.gnome.clocks.png
-share/icons/hicolor/256x256/apps/org.gnome.clocks.png
-share/icons/hicolor/32x32/apps/org.gnome.clocks.png
-share/icons/hicolor/48x48/apps/org.gnome.clocks.png
+share/icons/hicolor/scalable/apps/org.gnome.clocks.svg
 share/icons/hicolor/symbolic/apps/org.gnome.clocks-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-clocks.mo
 share/locale/an/LC_MESSAGES/gnome-clocks.mo
