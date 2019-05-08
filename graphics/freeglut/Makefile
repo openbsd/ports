@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.18 2017/07/05 21:29:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/08 15:48:26 danj Exp $
 
 COMMENT =		open source alternative to glut
 
 DISTNAME =		freeglut-3.0.0
+REVISION =		0
 
 SHARED_LIBS +=  glut                      6.0 # 3.10
 
 CATEGORIES =		graphics
 
 HOMEPAGE =		http://freeglut.sourceforge.net/
-
-MAINTAINER =		Tobias Ulmer <tobiasu@tmux.org>
 
 # X11
 PERMIT_PACKAGE_CDROM =	Yes
