@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_ephy-web-app-utils_c,v 1.1 2019/05/08 12:11:54 jasper Exp $
+
+error: cannot jump from this goto statement to its label
+https://gitlab.gnome.org/GNOME/epiphany/issues/764
+
+Index: lib/ephy-web-app-utils.c
+--- lib/ephy-web-app-utils.c.orig
++++ lib/ephy-web-app-utils.c
+@@ -348,6 +348,7 @@ ephy_web_application_create (const char *id,
+   /* If there's already a WebApp profile for the contents of this
+    * view, do nothing. */
+   profile_dir = ephy_web_application_get_profile_directory (id);
++  g_autofree char *app_file = g_build_filename (profile_dir, ".app", NULL);
+   if (g_file_test (profile_dir, G_FILE_TEST_IS_DIR)) {
+     g_warning ("Profile directory %s already exists", profile_dir);
+     goto out;
+@@ -360,7 +361,6 @@ ephy_web_application_create (const char *id,
+   }
+ 
+   /* Create an .app file. */
+-  g_autofree char *app_file = g_build_filename (profile_dir, ".app", NULL);
+   int fd = g_open (app_file, O_WRONLY|O_CREAT|O_TRUNC, 0644);
+   if (fd < 0) {
+     LOG ("Failed to create .app file: %s", g_strerror (errno));
