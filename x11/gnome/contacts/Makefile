@@ -1,18 +1,21 @@
-# $OpenBSD: Makefile,v 1.74 2019/01/06 14:12:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.75 2019/05/08 14:37:21 jasper Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
-GNOME_VERSION=		3.30.2
+GNOME_VERSION=		3.32.1
 
 CATEGORIES=		productivity
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM= 	Yes
 
-WANTLIB += atk-1.0 c cairo edataserver-1.2 edataserverui-1.2 folks
-WANTLIB += folks-eds gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0
-WANTLIB += gnome-desktop-3 goa-1.0 gobject-2.0 gtk-3 intl m pango-1.0
+WANTLIB += atk-1.0 c cairo cairo-gobject ebackend-1.2 ebook-1.2
+WANTLIB += ebook-contacts-1.2 ecal-1.2 edata-book-1.2 edataserver-1.2
+WANTLIB += edataserverui-1.2 folks folks-eds gdk-3 gdk_pixbuf-2.0
+WANTLIB += gee-0.8 gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
+WANTLIB += goa-1.0 gobject-2.0 gtk-3 handy-0.0 ical intl m pango-1.0
+WANTLIB += pangocairo-1.0 secret-1 soup-2.4 xml2
 WANTLIB += ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
@@ -22,7 +25,8 @@ MODULES=		devel/meson \
 			devel/dconf
 
 LIB_DEPENDS=		net/telepathy/folks \
-			x11/gnome/desktop
+			x11/gnome/desktop \
+			x11/libhandy
 
 MODGNOME_TOOLS=		desktop-file-utils docbook \
 			gobject-introspection vala
