@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/08 14:32:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/08 14:39:05 ajacoutot Exp $
 
 COMMENT =		library to help in developing UIs for mobile devices
 
 DISTNAME =		libhandy-0.0.9.1
 CATEGORIES =		x11
 
-SHARED_LIBS +=  handy-0.0                 0.0 # 0.0
+SHARED_LIBS += handy-0.0                 0.0 # 0
 
 MASTER_SITES =		https://distfiles.nl/
 
