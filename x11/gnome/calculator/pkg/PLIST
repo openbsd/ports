@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/01/06 14:01:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/05/08 13:15:50 jasper Exp $
 @conflict gcalctool-*
 @pkgpath x11/gnome/gcalctool
 @bin bin/gcalccmd
@@ -939,14 +939,8 @@ share/help/zh_TW/gnome-calculator/trigonometry.page
 share/help/zh_TW/gnome-calculator/variables.page
 @tag glib-compile-schemas
 @tag update-desktop-database
-share/icons/hicolor/16x16/apps/gnome-calculator.png
-share/icons/hicolor/22x22/apps/gnome-calculator.png
-share/icons/hicolor/24x24/apps/gnome-calculator.png
-share/icons/hicolor/256x256/apps/gnome-calculator.png
-share/icons/hicolor/32x32/apps/gnome-calculator.png
-share/icons/hicolor/48x48/apps/gnome-calculator.png
-share/icons/hicolor/512x512/apps/gnome-calculator.png
-share/icons/hicolor/scalable/apps/gnome-calculator-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.Calculator.svg
+share/icons/hicolor/symbolic/apps/org.gnome.Calculator-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-calculator.mo
 share/locale/am/LC_MESSAGES/gnome-calculator.mo
 share/locale/ar/LC_MESSAGES/gnome-calculator.mo
