@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2019/01/04 13:38:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.52 2019/05/08 12:04:10 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gsd-enums.h
@@ -21,7 +21,6 @@ lib/pkgconfig/gnome-settings-daemon.pc
 @bin libexec/gsd-sharing
 @bin libexec/gsd-smartcard
 @bin libexec/gsd-sound
-@bin libexec/gsd-test-input-helper
 @bin libexec/gsd-xsettings
 share/GConf/gsettings/gnome-settings-daemon.convert
 share/examples/gnome-settings-daemon/

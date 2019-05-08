@@ -1,9 +1,9 @@
-$OpenBSD: patch-plugins_power_gsd-power-manager_c,v 1.1 2019/01/18 06:37:02 ajacoutot Exp $
+$OpenBSD: patch-plugins_power_gsd-power-manager_c,v 1.2 2019/05/08 12:04:09 ajacoutot Exp $
 
 Index: plugins/power/gsd-power-manager.c
 --- plugins/power/gsd-power-manager.c.orig
 +++ plugins/power/gsd-power-manager.c
-@@ -69,9 +69,9 @@
+@@ -70,9 +70,9 @@
  #define GSD_POWER_MANAGER_NOTIFY_TIMEOUT_SHORT          10 * 1000 /* ms */
  #define GSD_POWER_MANAGER_NOTIFY_TIMEOUT_LONG           30 * 1000 /* ms */
  
