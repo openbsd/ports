@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.51 2019/01/01 16:57:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2019/05/08 13:37:46 ajacoutot Exp $
 
 COMMENT=		directory tree analyzer for GNOME
 
 GNOME_PROJECT=		baobab
-GNOME_VERSION=		3.30.0
+GNOME_VERSION=		3.32.0
 
 # GPLv2 - GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c cairo gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl
-WANTLIB += m pango-1.0
+WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl m pango-1.0
+WANTLIB += pangocairo-1.0
 
 LIB_DEPENDS=		x11/gtk+3
 
