@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Host.pm,v 1.8 2019/05/08 12:59:33 espie Exp $
+# $OpenBSD: Host.pm,v 1.9 2019/05/08 18:26:43 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -24,7 +24,15 @@ my $hosts = {};
 sub shell
 {
 	my $self = shift;
+	# XXX create a lazy shell so host registration already occurred
+	$self->{shell} //= $self->shellclass->new($self);
 	return $self->{shell};
+}
+
+sub create
+{
+	my ($class, $name, $prop) = @_;
+	return bless {host => $name, prop => $prop }, $class;
 }
 
 sub new
@@ -33,34 +41,18 @@ sub new
 	if ($class->name_is_localhost($name)) {
 		$class = "DPB::Host::Localhost";
 		$name = 'localhost';
-		$prop->{iamroot} = $< == 0;
-		$prop->{build_user}->enforce_local 
-		    if defined $prop->{build_user};
 	} else {
 		require DPB::Core::Distant;
 		$class = "DPB::Host::Distant";
 	}
-	if (!defined $hosts->{$name}) {
-		my $h = bless {host => $name, 
-		    prop => $prop }, $class;
-		# XXX have to register *before* creating the shell
-		$hosts->{$name} = $h;
-		$h->{shell} = $h->shellclass->new($h);
-	}
+	$hosts->{$name} //= $class->create($name, $prop);
 	return $hosts->{$name};
 }
 
 sub fetch_host
 {
 	my ($class, $prop) = @_;
-	if (!defined $hosts->{FETCH}) {
-		$prop->{iamroot} = $< == 0;
-		my $h = bless {host => 'localhost',
-		    prop => $prop }, 'DPB::Host::Localhost';
-		# XXX have to register *before* creating the shell
-		$hosts->{FETCH} = $h;
-		$h->{shell} = $h->shellclass->new($h);
-	}
+	$hosts->{FETCH} //= DPB::Host::Localhost->create('localhost', $prop);
 	return $hosts->{FETCH};
 }
 
@@ -104,6 +96,15 @@ sub name_is_localhost
 package DPB::Host::Localhost;
 our @ISA = qw(DPB::Host);
 
+sub create
+{
+	my ($class, $name, $prop) = @_;
+	$prop->{iamroot} = $< == 0;
+	$prop->{build_user}->enforce_local 
+	    if defined $prop->{build_user};
+	return $class->SUPER::create('localhost', $prop);
+}
+
 sub is_localhost
 {
 	return 1;
@@ -127,7 +128,7 @@ sub shellclass
 	}
 }
 
-# XXX this is a "quicky" shell before we set up hosts properly
+# XXX this is a "quicky" local shell before we set up hosts properly
 sub getshell
 {
 	my ($class, $state) = @_;
@@ -141,9 +142,7 @@ sub getshell
 			$prop->{chroot} = $state->{chroot};
 		}
 	}
-	$prop->{iamroot} = $< == 0;
-
-	my $h = bless { prop => $prop }, $class;
+	my $h = $class->create('localhost', $prop);
 	return $h->shellclass->new($h);
 }
 
