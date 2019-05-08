@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2018/08/05 19:02:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/08 14:40:33 ajacoutot Exp $
 
 COMMENT=		LaTeX editor for the GNOME desktop
 
 GNOME_PROJECT=		gnome-latex
-GNOME_VERSION=		3.30.2
+GNOME_VERSION=		3.32.0
 
 CATEGORIES=		editors print
 
@@ -12,9 +12,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender amtk-5 aspell atk-1.0 atk-bridge-2.0
-WANTLIB += atspi c cairo cairo-gobject dbus-1 dconf enchant-2
-WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
-WANTLIB += gee-0.8 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += c cairo cairo-gobject dconf enchant-2 epoxy expat ffi
+WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gee-0.8
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gspell-1 gthread-2.0 gtk-3 gtksourceview-4 harfbuzz
 WANTLIB += iconv intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread tepl-4 uchardet xcb xcb-render

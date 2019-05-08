@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/07/06 06:04:45 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/05/08 14:40:33 ajacoutot Exp $
 @conflict latexila-*
 @pkgpath x11/gnome/latexila
 @bin bin/gnome-latex
@@ -175,14 +175,13 @@ share/help/uk/gnome-latex/projects.page
 share/help/uk/gnome-latex/spell_checking.page
 share/help/uk/gnome-latex/structure.page
 share/help/uk/gnome-latex/synctex.page
-share/icons/hicolor/128x128/apps/gnome-latex.png
 share/icons/hicolor/16x16/apps/gnome-latex.png
 share/icons/hicolor/22x22/apps/gnome-latex.png
 share/icons/hicolor/24x24/apps/gnome-latex.png
 share/icons/hicolor/256x256/apps/gnome-latex.png
 share/icons/hicolor/32x32/apps/gnome-latex.png
 share/icons/hicolor/48x48/apps/gnome-latex.png
-share/icons/hicolor/scalable/apps/gnome-latex.svg
+share/icons/hicolor/symbolic/apps/gnome-latex-symbolic.svg
 share/locale/bs/LC_MESSAGES/gnome-latex.mo
 share/locale/ca/LC_MESSAGES/gnome-latex.mo
 share/locale/cs/LC_MESSAGES/gnome-latex.mo
