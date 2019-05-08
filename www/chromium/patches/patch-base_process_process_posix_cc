@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_process_process_posix_cc,v 1.20 2019/03/24 12:24:44 robert Exp $
+$OpenBSD: patch-base_process_process_posix_cc,v 1.21 2019/05/08 22:04:25 robert Exp $
 
 Index: base/process/process_posix.cc
 --- base/process/process_posix.cc.orig
@@ -35,7 +35,7 @@ Index: base/process/process_posix.cc
  
  // static
  void Process::TerminateCurrentProcessImmediately(int exit_code) {
-@@ -359,25 +361,33 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
+@@ -359,25 +361,32 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
  
  void Process::Exited(int exit_code) const {}
  
@@ -73,7 +73,6 @@ Index: base/process/process_posix.cc
 +
 +Time Process::CreationTime() const {
 +  // TODO(https://crbug.com/726484): There is no syscall providing this data.
-+  NOTIMPLEMENTED();
 +  return Time();
  }
  
