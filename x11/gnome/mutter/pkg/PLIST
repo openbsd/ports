@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2019/05/08 16:16:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2019/05/08 16:25:47 jasper Exp $
 @conflict metacity-*
 @pkgpath x11/gnome/metacity
 @bin bin/mutter
@@ -282,9 +282,7 @@ lib/mutter${API_SUFFIX}/Meta${API_SUFFIX}.gir
 lib/mutter${API_SUFFIX}/Meta${API_SUFFIX}.typelib
 @lib lib/mutter${API_SUFFIX}/libmutter-clutter${API_SUFFIX}.so.${LIBmutter-clutter${API_SUFFIX}_VERSION}
 @lib lib/mutter${API_SUFFIX}/libmutter-cogl${API_SUFFIX}.so.${LIBmutter-cogl${API_SUFFIX}_VERSION}
-lib/mutter${API_SUFFIX}/libmutter-cogl-gles2${API_SUFFIX}.so
-lib/mutter${API_SUFFIX}/libmutter-cogl-gles2${API_SUFFIX}.so.0
-@bin lib/mutter${API_SUFFIX}/libmutter-cogl-gles2${API_SUFFIX}.so.0.0.0
+@lib lib/mutter${API_SUFFIX}/libmutter-cogl-gles2${API_SUFFIX}.so.${LIBmutter-cogl-gles2${API_SUFFIX}_VERSION}
 @lib lib/mutter${API_SUFFIX}/libmutter-cogl-pango${API_SUFFIX}.so.${LIBmutter-cogl-pango${API_SUFFIX}_VERSION}
 @lib lib/mutter${API_SUFFIX}/libmutter-cogl-path${API_SUFFIX}.so.${LIBmutter-cogl-path${API_SUFFIX}_VERSION}
 lib/mutter${API_SUFFIX}/plugins/
