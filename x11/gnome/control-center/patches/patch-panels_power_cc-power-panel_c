@@ -1,9 +1,9 @@
-$OpenBSD: patch-panels_power_cc-power-panel_c,v 1.1 2019/02/27 03:51:22 ajacoutot Exp $
+$OpenBSD: patch-panels_power_cc-power-panel_c,v 1.2 2019/05/08 15:45:47 ajacoutot Exp $
 
 Index: panels/power/cc-power-panel.c
 --- panels/power/cc-power-panel.c.orig
 +++ panels/power/cc-power-panel.c
-@@ -2179,9 +2179,9 @@ can_suspend_or_hibernate (CcPowerPanel *self,
+@@ -2243,9 +2243,9 @@ can_suspend_or_hibernate (CcPowerPanel *self,
      }
  
    variant = g_dbus_connection_call_sync (connection,

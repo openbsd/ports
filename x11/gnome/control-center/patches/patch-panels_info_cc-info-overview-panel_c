@@ -1,0 +1,77 @@
+$OpenBSD: patch-panels_info_cc-info-overview-panel_c,v 1.3 2019/05/08 15:45:47 ajacoutot Exp $
+
+No udisks2 on OpenBSD (XXX add to meson_options.txt)
+
+Index: panels/info/cc-info-overview-panel.c
+--- panels/info/cc-info-overview-panel.c.orig
++++ panels/info/cc-info-overview-panel.c
+@@ -36,7 +36,9 @@
+ #include <glibtop/mountlist.h>
+ #include <glibtop/mem.h>
+ #include <glibtop/sysinfo.h>
++#if 0
+ #include <udisks/udisks.h>
++#endif
+ 
+ #include <gdk/gdk.h>
+ 
+@@ -80,7 +82,9 @@ typedef struct
+ 
+   GCancellable   *cancellable;
+ 
++#if 0
+   UDisksClient   *client;
++#endif
+ 
+   GraphicsData   *graphics_data;
+ } CcInfoOverviewPanelPrivate;
+@@ -480,6 +484,7 @@ get_os_type (void)
+     return g_strdup_printf (_("32-bit"));
+ }
+ 
++#if 0
+ static void
+ get_primary_disc_info (CcInfoOverviewPanel *self)
+ {
+@@ -527,6 +532,7 @@ get_primary_disc_info (CcInfoOverviewPanel *self)
+       gtk_label_set_text (GTK_LABEL (priv->disk_label), _("Unknown"));
+     }
+ }
++#endif
+ 
+ static char *
+ get_cpu_info (const glibtop_sysinfo *info)
+@@ -726,7 +732,9 @@ info_overview_panel_setup_overview (CcInfoOverviewPane
+   os_name_text = get_os_name ();
+   gtk_label_set_text (GTK_LABEL (priv->os_name_label), os_name_text ? os_name_text : "");
+ 
++#if 0
+   get_primary_disc_info (self);
++#endif
+ 
+   gtk_label_set_markup (GTK_LABEL (priv->graphics_label), priv->graphics_data->hardware_string);
+ }
+@@ -787,7 +795,9 @@ cc_info_overview_panel_finalize (GObject *object)
+       g_clear_object (&priv->cancellable);
+     }
+ 
++#if 0
+   g_clear_object (&priv->client);
++#endif
+ 
+   g_free (priv->gnome_version);
+   g_free (priv->gnome_date);
+@@ -842,11 +852,13 @@ cc_info_overview_panel_init (CcInfoOverviewPanel *self
+   else
+     gtk_widget_destroy (priv->updates_button);
+ 
++#if 0
+   priv->client = udisks_client_new_sync (NULL, &error);
+ 
+   if (error != NULL)
+       g_warning ("Unable to get UDisks client: %s. Disk information will not be available.",
+                  error->message);
++#endif
+ 
+   info_overview_panel_setup_overview (self);
+   info_overview_panel_setup_virt (self);

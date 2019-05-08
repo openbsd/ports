@@ -1,0 +1,25 @@
+$OpenBSD: patch-panels_user-accounts_user-utils_c,v 1.1 2019/05/08 15:45:47 ajacoutot Exp $
+
+No utmpx on OpenBSD
+
+Index: panels/user-accounts/user-utils.c
+--- panels/user-accounts/user-utils.c.orig
++++ panels/user-accounts/user-utils.c
+@@ -25,7 +25,7 @@
+ #include <sys/types.h>
+ #include <limits.h>
+ #include <unistd.h>
+-#include <utmpx.h>
++#include <utmp.h>
+ #include <pwd.h>
+ 
+ #include <gio/gio.h>
+@@ -343,7 +343,7 @@ clear_entry_validation_error (GtkEntry *entry)
+ gsize
+ get_username_max_length (void)
+ {
+-        return sizeof (((struct utmpx *)NULL)->ut_user);
++        return sizeof (((struct utmp *)NULL)->ut_name);
+ }
+ 
+ gboolean

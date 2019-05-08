@@ -1,10 +1,10 @@
-$OpenBSD: patch-panels_printers_pp-host_c,v 1.1 2017/07/21 13:24:55 ajacoutot Exp $
+$OpenBSD: patch-panels_printers_pp-host_c,v 1.2 2019/05/08 15:45:47 ajacoutot Exp $
 
 Index: panels/printers/pp-host.c
 --- panels/printers/pp-host.c.orig
 +++ panels/printers/pp-host.c
-@@ -267,7 +267,7 @@ _pp_host_get_snmp_devices_thread (GSimpleAsyncResult *
-   data->devices->devices = NULL;
+@@ -256,7 +256,7 @@ _pp_host_get_snmp_devices_thread (GTask        *task,
+   devices = g_new0 (PpDevicesList, 1);
  
    argv = g_new0 (gchar *, 3);
 -  argv[0] = g_strdup ("/usr/lib/cups/backend/snmp");

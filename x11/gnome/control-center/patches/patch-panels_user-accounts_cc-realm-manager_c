@@ -1,13 +1,11 @@
-$OpenBSD: patch-panels_user-accounts_um-realm-manager_c,v 1.3 2019/01/04 13:39:09 ajacoutot Exp $
+$OpenBSD: patch-panels_user-accounts_cc-realm-manager_c,v 1.1 2019/05/08 15:45:47 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=704913
-
-Index: panels/user-accounts/um-realm-manager.c
---- panels/user-accounts/um-realm-manager.c.orig
-+++ panels/user-accounts/um-realm-manager.c
+Index: panels/user-accounts/cc-realm-manager.c
+--- panels/user-accounts/cc-realm-manager.c.orig
++++ panels/user-accounts/cc-realm-manager.c
 @@ -22,7 +22,7 @@
  
- #include "um-realm-manager.h"
+ #include "cc-realm-manager.h"
  
 -#include <krb5/krb5.h>
 +#include <krb5.h>

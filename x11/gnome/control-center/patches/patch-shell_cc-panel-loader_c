@@ -1,4 +1,4 @@
-$OpenBSD: patch-shell_cc-panel-loader_c,v 1.4 2019/01/04 13:39:09 ajacoutot Exp $
+$OpenBSD: patch-shell_cc-panel-loader_c,v 1.5 2019/05/08 15:45:47 ajacoutot Exp $
 
 http://permalink.gmane.org/gmane.comp.gnome.desktop/51950
 https://bugzilla.gnome.org/show_bug.cgi?id=770758#c3
@@ -8,7 +8,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=772736 (systemd --user)
 Index: shell/cc-panel-loader.c
 --- shell/cc-panel-loader.c.orig
 +++ shell/cc-panel-loader.c
-@@ -53,7 +53,9 @@ extern GType cc_printers_panel_get_type (void);
+@@ -55,7 +55,9 @@ extern GType cc_printers_panel_get_type (void);
  extern GType cc_privacy_panel_get_type (void);
  extern GType cc_region_panel_get_type (void);
  extern GType cc_search_panel_get_type (void);
@@ -18,7 +18,7 @@ Index: shell/cc-panel-loader.c
  extern GType cc_sound_panel_get_type (void);
  #ifdef BUILD_THUNDERBOLT
  extern GType cc_bolt_panel_get_type (void);
-@@ -110,7 +112,9 @@ static struct {
+@@ -108,7 +110,9 @@ static CcPanelLoaderVtable default_panels[] =
    PANEL_TYPE("privacy",          cc_privacy_panel_get_type,              NULL),
    PANEL_TYPE("region",           cc_region_panel_get_type,               NULL),
    PANEL_TYPE("search",           cc_search_panel_get_type,               NULL),

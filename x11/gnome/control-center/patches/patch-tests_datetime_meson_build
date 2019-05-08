@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_datetime_meson_build,v 1.1 2019/05/08 15:45:47 ajacoutot Exp $
+
+https://gitlab.gnome.org/GNOME/gnome-control-center/merge_requests/472
+
+Index: tests/datetime/meson.build
+--- tests/datetime/meson.build.orig
++++ tests/datetime/meson.build
+@@ -21,6 +21,7 @@ cflags = [
+ foreach unit: test_units
+   exe = executable(
+                     unit,
++               resources,
+            [unit + '.c'],
+     include_directories : includes,
+            dependencies : common_deps + [m_dep],
