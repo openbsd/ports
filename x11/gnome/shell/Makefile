@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2019/05/08 16:17:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.173 2019/05/08 19:23:19 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.32.1
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,7 +26,7 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 # sync with x11/gnome/gjs
-COMPILER=		base-clang ports-clang ports-gcc
+COMPILER=		base-clang ports-gcc
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
