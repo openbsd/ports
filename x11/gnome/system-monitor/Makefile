@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.82 2019/01/06 14:15:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.83 2019/05/08 13:15:49 jasper Exp $
 
 COMMENT=		sytem monitor for GNOME
 
 GNOME_PROJECT=		gnome-system-monitor
-GNOME_VERSION=		3.30.0
+GNOME_VERSION=		3.32.1
 
 CATEGORIES=		sysutils
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4
 WANTLIB += glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 gtk-3 gtkmm-3.0
 WANTLIB += gtop-2.0 intl m pango-1.0 pangocairo-1.0 rsvg-2 sigc-2.0
+WANTLIB += atk-1.0 atkmm-1.6 cairo-gobject cairomm-1.0 pangomm-1.4
 WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES=		devel/dconf \
