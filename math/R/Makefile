@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2019/04/29 08:52:47 feinerer Exp $
+# $OpenBSD: Makefile,v 1.110 2019/05/08 20:17:21 bcallah Exp $
 
 COMMENT=	powerful math/statistics/graphics language
 DISTNAME=	R-3.6.0
@@ -37,7 +37,11 @@ MASTER_SITES=	https://cran.r-project.org/src/base/R-3/ \
 MODULES=	fortran \
 		x11/tk
 
+.if ${MACHINE_ARCH:Maarch64}
+MODFORTRAN_COMPILER = flang
+.else
 MODFORTRAN_COMPILER = gfortran
+.endif
 
 BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS} \
 		archivers/gtar \
