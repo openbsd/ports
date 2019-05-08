@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.62 2019/01/03 14:39:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.63 2019/05/08 14:21:42 ajacoutot Exp $
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
 include/nautilus/
@@ -22,6 +22,7 @@ lib/nautilus/
 lib/nautilus/extensions-3.0/
 lib/nautilus/extensions-3.0/libnautilus-image-properties.so
 lib/nautilus/extensions-3.0/libnautilus-sendto.so
+lib/nautilus/extensions-3.0/libtotem-properties-page.so
 lib/pkgconfig/libnautilus-extension.pc
 share/applications/nautilus-autorun-software.desktop
 share/applications/org.gnome.Nautilus.desktop
@@ -32,12 +33,7 @@ share/glib-2.0/schemas/org.gnome.nautilus.gschema.xml
 share/gnome-shell/
 share/gnome-shell/search-providers/
 share/gnome-shell/search-providers/org.gnome.Nautilus.search-provider.ini
-share/icons/hicolor/16x16/apps/org.gnome.Nautilus.png
-share/icons/hicolor/22x22/apps/org.gnome.Nautilus.png
-share/icons/hicolor/24x24/apps/org.gnome.Nautilus.png
-share/icons/hicolor/32x32/apps/org.gnome.Nautilus.png
-share/icons/hicolor/48x48/apps/org.gnome.Nautilus.png
-share/icons/hicolor/512x512/apps/org.gnome.Nautilus.png
+share/icons/hicolor/scalable/apps/org.gnome.Nautilus.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Nautilus-symbolic.svg
 share/locale/af/LC_MESSAGES/nautilus.mo
 share/locale/am/LC_MESSAGES/nautilus.mo
@@ -81,8 +77,6 @@ share/locale/ga/LC_MESSAGES/nautilus.mo
 share/locale/gd/LC_MESSAGES/nautilus.mo
 share/locale/gl/LC_MESSAGES/nautilus.mo
 share/locale/gu/LC_MESSAGES/nautilus.mo
-share/locale/gv/
-share/locale/gv/LC_MESSAGES/
 share/locale/gv/LC_MESSAGES/nautilus.mo
 share/locale/ha/LC_MESSAGES/nautilus.mo
 share/locale/he/LC_MESSAGES/nautilus.mo
@@ -91,6 +85,8 @@ share/locale/hr/LC_MESSAGES/nautilus.mo
 share/locale/hu/LC_MESSAGES/nautilus.mo
 share/locale/hy/LC_MESSAGES/nautilus.mo
 share/locale/id/LC_MESSAGES/nautilus.mo
+share/locale/ig/
+share/locale/ig/LC_MESSAGES/
 share/locale/ig/LC_MESSAGES/nautilus.mo
 share/locale/io/LC_MESSAGES/nautilus.mo
 share/locale/is/LC_MESSAGES/nautilus.mo
@@ -161,6 +157,7 @@ share/locale/zh_CN/LC_MESSAGES/nautilus.mo
 share/locale/zh_HK/LC_MESSAGES/nautilus.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 share/locale/zu/LC_MESSAGES/nautilus.mo
+share/metainfo/
 share/metainfo/org.gnome.Nautilus.appdata.xml
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
