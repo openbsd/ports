@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/08 13:11:43 jca Exp $
 
 COMMENT =	tool for netlist comparison (LVS) and format manipulation
 DISTNAME =	netgen-1.5.118
 EXTRACT_SUFX =	.tgz
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	cad
 
@@ -31,7 +31,7 @@ PATCHORIG =	.patch.orig
 WRKCONF =		${WRKSRC}/scripts
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include" \
-			CFLAGS="-std=c89 ${CFLAGS}"
+			CFLAGS="-std=gnu89 ${CFLAGS}"
 CONFIGURE_ARGS =	--with-tcl=${MODTCL_LIBDIR} \
 			--with-tk=${MODTK_LIBDIR}
 
