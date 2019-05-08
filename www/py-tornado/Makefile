@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/04/28 20:52:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/08 19:41:15 bket Exp $
 
 COMMENT =		scalable, non-blocking web server
 
@@ -6,7 +6,7 @@ COMMENT =		scalable, non-blocking web server
 MODPY_EGG_VERSION =	5.1.1
 DISTNAME =		tornado-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
@@ -30,9 +30,9 @@ FLAVOR ?=
 .if !${FLAVOR:Mpython3}
 RUN_DEPENDS +=		devel/py-backports-abc \
 			devel/py-certifi \
+			devel/py-futures \
 			devel/py-singledispatch
-TEST_DEPENDS +=		devel/py-futures \
-			devel/py-mock \
+TEST_DEPENDS +=		devel/py-mock \
 			devel/py-twisted
 .endif
 
