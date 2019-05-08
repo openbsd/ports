@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.63 2019/01/06 12:18:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.64 2019/05/08 16:17:51 jasper Exp $
 @conflict nautilus-open-terminal-*
 @pkgpath x11/gnome/nautilus-open-terminal
 @bin bin/gnome-terminal
@@ -129,7 +129,6 @@ share/help/de/gnome-terminal/app-fullscreen.page
 share/help/de/gnome-terminal/app-terminal-sizes.page
 share/help/de/gnome-terminal/app-zoom.page
 share/help/de/gnome-terminal/figures/
-share/help/de/gnome-terminal/figures/gnome-terminal.png
 share/help/de/gnome-terminal/gs-execute-commands.page
 share/help/de/gnome-terminal/gs-tabs.page
 share/help/de/gnome-terminal/index.page
@@ -166,7 +165,6 @@ share/help/el/gnome-terminal/app-fullscreen.page
 share/help/el/gnome-terminal/app-terminal-sizes.page
 share/help/el/gnome-terminal/app-zoom.page
 share/help/el/gnome-terminal/figures/
-share/help/el/gnome-terminal/figures/gnome-terminal.png
 share/help/el/gnome-terminal/gs-execute-commands.page
 share/help/el/gnome-terminal/gs-tabs.page
 share/help/el/gnome-terminal/index.page
@@ -347,7 +345,6 @@ share/help/hu/gnome-terminal/app-fullscreen.page
 share/help/hu/gnome-terminal/app-terminal-sizes.page
 share/help/hu/gnome-terminal/app-zoom.page
 share/help/hu/gnome-terminal/figures/
-share/help/hu/gnome-terminal/figures/gnome-terminal.png
 share/help/hu/gnome-terminal/gs-execute-commands.page
 share/help/hu/gnome-terminal/gs-tabs.page
 share/help/hu/gnome-terminal/index.page
@@ -384,7 +381,6 @@ share/help/ko/gnome-terminal/app-fullscreen.page
 share/help/ko/gnome-terminal/app-terminal-sizes.page
 share/help/ko/gnome-terminal/app-zoom.page
 share/help/ko/gnome-terminal/figures/
-share/help/ko/gnome-terminal/figures/gnome-terminal.png
 share/help/ko/gnome-terminal/gs-execute-commands.page
 share/help/ko/gnome-terminal/gs-tabs.page
 share/help/ko/gnome-terminal/index.page
@@ -421,7 +417,6 @@ share/help/pl/gnome-terminal/app-fullscreen.page
 share/help/pl/gnome-terminal/app-terminal-sizes.page
 share/help/pl/gnome-terminal/app-zoom.page
 share/help/pl/gnome-terminal/figures/
-share/help/pl/gnome-terminal/figures/gnome-terminal.png
 share/help/pl/gnome-terminal/gs-execute-commands.page
 share/help/pl/gnome-terminal/gs-tabs.page
 share/help/pl/gnome-terminal/index.page
@@ -458,7 +453,6 @@ share/help/pt_BR/gnome-terminal/app-fullscreen.page
 share/help/pt_BR/gnome-terminal/app-terminal-sizes.page
 share/help/pt_BR/gnome-terminal/app-zoom.page
 share/help/pt_BR/gnome-terminal/figures/
-share/help/pt_BR/gnome-terminal/figures/gnome-terminal.png
 share/help/pt_BR/gnome-terminal/gs-execute-commands.page
 share/help/pt_BR/gnome-terminal/gs-tabs.page
 share/help/pt_BR/gnome-terminal/index.page
@@ -531,7 +525,6 @@ share/help/ru/gnome-terminal/app-fullscreen.page
 share/help/ru/gnome-terminal/app-terminal-sizes.page
 share/help/ru/gnome-terminal/app-zoom.page
 share/help/ru/gnome-terminal/figures/
-share/help/ru/gnome-terminal/figures/gnome-terminal.png
 share/help/ru/gnome-terminal/gs-execute-commands.page
 share/help/ru/gnome-terminal/gs-tabs.page
 share/help/ru/gnome-terminal/index.page
@@ -594,6 +587,8 @@ share/help/sv/gnome-terminal/txt-links.page
 share/help/sv/gnome-terminal/txt-save-text.page
 share/help/sv/gnome-terminal/txt-search.page
 share/help/sv/gnome-terminal/txt-select-text.page
+share/icons/hicolor/scalable/apps/org.gnome.Terminal.svg
+share/icons/hicolor/symbolic/apps/org.gnome.Terminal-symbolic.svg
 share/locale/am/LC_MESSAGES/gnome-terminal.mo
 share/locale/an/LC_MESSAGES/gnome-terminal.mo
 share/locale/ar/LC_MESSAGES/gnome-terminal.mo
@@ -693,3 +688,4 @@ share/metainfo/org.gnome.Terminal.Nautilus.metainfo.xml
 share/metainfo/org.gnome.Terminal.appdata.xml
 @tag update-desktop-database
 @tag glib-compile-schemas
+@tag gtk-update-icon-cache %D/share/icons/hicolor
