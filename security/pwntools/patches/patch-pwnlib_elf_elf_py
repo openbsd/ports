@@ -1,0 +1,17 @@
+$OpenBSD: patch-pwnlib_elf_elf_py,v 1.1.1.1 2019/05/08 21:15:44 jasper Exp $
+
+Adjust to intervaltree 3.0 API
+https://github.com/Gallopsled/pwntools/issues/1238
+
+Index: pwnlib/elf/elf.py
+--- pwnlib/elf/elf.py.orig
++++ pwnlib/elf/elf.py
+@@ -1114,7 +1114,7 @@ class ELF(ELFFile):
+         start = address
+         stop = address + count
+ 
+-        overlap = self.memory.search(start, stop)
++        overlap = self.memory.overlap(start, stop)
+ 
+         # Create a new view of memory, for just what we need
+         memory = intervaltree.IntervalTree(overlap)

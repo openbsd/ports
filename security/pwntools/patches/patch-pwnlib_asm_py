@@ -1,0 +1,23 @@
+$OpenBSD: patch-pwnlib_asm_py,v 1.1.1.1 2019/05/08 21:15:44 jasper Exp $
+
+We ship binutils 2.17, nothing the user can do about it.
+
+Index: pwnlib/asm.py
+--- pwnlib/asm.py.orig
++++ pwnlib/asm.py
+@@ -241,15 +241,6 @@ def _assembler():
+ 
+     assembler = assemblers.get(context.arch, [gas])
+ 
+-    if not checked_assembler_version[gas]:
+-        checked_assembler_version[gas] = True
+-        result = subprocess.check_output([gas, '--version','/dev/null'],
+-                                         stderr=subprocess.STDOUT)
+-        version = re.search(r' (\d\.\d+)', result).group(1)
+-        if version < '2.19':
+-            log.warn_once('Your binutils version is too old and may not work!\n'  + \
+-                'Try updating with: https://docs.pwntools.com/en/stable/install/binutils.html\n' + \
+-                'Reported Version: %r' % result.strip())
+ 
+ 
+     return assembler

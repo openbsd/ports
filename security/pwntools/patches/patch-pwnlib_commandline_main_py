@@ -1,0 +1,23 @@
+$OpenBSD: patch-pwnlib_commandline_main_py,v 1.1.1.1 2019/05/08 21:15:44 jasper Exp $
+
+Disable automatic update checking.
+
+Index: pwnlib/commandline/main.py
+--- pwnlib/commandline/main.py.orig
++++ pwnlib/commandline/main.py
+@@ -20,7 +20,6 @@ from pwnlib.commandline import scramble
+ from pwnlib.commandline import shellcraft
+ from pwnlib.commandline import template
+ from pwnlib.commandline import unhex
+-from pwnlib.commandline import update
+ from pwnlib.commandline.common import parser
+ from pwnlib.context import context
+ 
+@@ -42,7 +41,6 @@ commands = {
+     'shellcraft': shellcraft.main,
+     'template': template.main,
+     'unhex': unhex.main,
+-    'update': update.main,
+ }
+ 
+ def main():

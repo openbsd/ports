@@ -1,0 +1,15 @@
+$OpenBSD: patch-pwnlib___init___py,v 1.1.1.1 2019/05/08 21:15:44 jasper Exp $
+
+Disable automatic update checking.
+
+Index: pwnlib/__init__.py
+--- pwnlib/__init__.py.orig
++++ pwnlib/__init__.py
+@@ -36,7 +36,6 @@ __all__ = [
+     'useragents',
+     'util',
+     'adb',
+-    'update',
+ ]
+ 
+ for module in __all__:
