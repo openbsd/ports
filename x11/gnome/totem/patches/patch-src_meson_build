@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_meson_build,v 1.1 2019/03/12 16:30:35 ajacoutot Exp $
+$OpenBSD: patch-src_meson_build,v 1.2 2019/05/08 16:37:24 ajacoutot Exp $
 
 Fix for meson >=0.50.0
 
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build
-@@ -86,7 +86,7 @@ headers = files(
+@@ -82,7 +82,7 @@ headers = files(
  
  install_headers(
    headers,

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.161 2019/04/28 20:52:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.162 2019/05/08 16:37:24 ajacoutot Exp $
 
 COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
-GNOME_VERSION=		3.30.0
-REVISION=		0
+GNOME_VERSION=		3.32.0
 
 SHARED_LIBS +=  totem                0.0      # unknown
 
@@ -13,13 +12,14 @@ CATEGORIES=		multimedia
 # GPLv2 with exception clause - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 atk-1.0 c cairo cairo-gobject clutter-1.0 clutter-gst-3.0
-WANTLIB += clutter-gtk-1.0 cogl gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
-WANTLIB += glib-2.0 gnome-desktop-3 gobject-2.0 grilo-0.3 grlpls-0.3
-WANTLIB += gstaudio-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB += gstvideo-1.0 gtk-3 intl m nautilus-extension pango-1.0
-WANTLIB += pangocairo-1.0 peas-1.0 peas-gtk-1.0 totem-plparser
-WANTLIB += xml2
+WANTLIB += EGL X11 Xcomposite Xdamage Xext Xfixes Xi Xrandr atk-1.0
+WANTLIB += c cairo cairo-gobject clutter-1.0 clutter-gst-3.0 clutter-gtk-1.0
+WANTLIB += cogl cogl-pango cogl-path drm gbm gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gnome-desktop-3
+WANTLIB += gobject-2.0 grilo-0.3 grlpls-0.3 gstaudio-1.0 gstbase-1.0
+WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
+WANTLIB += gtk-3 intl json-glib-1.0 m pango-1.0 pangocairo-1.0
+WANTLIB += peas-1.0 peas-gtk-1.0 pthread totem-plparser xml2
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -48,8 +48,7 @@ LIB_DEPENDS=		x11/gnome/totem-pl-parser \
 			graphics/clutter/clutter-gst \
 			graphics/clutter/clutter-gtk \
 			x11/gnome/desktop \
-			x11/gnome/grilo \
-			x11/gnome/nautilus
+			x11/gnome/grilo
 
 # while the following are not "required" for totem to run, there's no
 # point in using a media player that can't play most modern media files
@@ -59,11 +58,7 @@ RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good \
 MODGNOME_TOOLS += desktop-file-utils gobject-introspection gtk-update-icon-cache
 MODGNOME_TOOLS += yelp
 
-# XXX
-# https://bugzilla.gnome.org/show_bug.cgi?id=786248
-# https://github.com/mesonbuild/meson/issues/1923
-# MODGNOME_TOOLS += vala
-CONFIGURE_ARGS +=	-Denable-vala=no
+CONFIGURE_ARGS=		-Denable-easy-codec-installation=no
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}
