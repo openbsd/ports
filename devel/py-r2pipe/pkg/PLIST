@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/08 16:35:52 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/r2pipe/
+lib/python${MODPY_VERSION}/site-packages/r2pipe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/r2pipe/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/r2pipe/${MODPY_PYCACHE}
+lib/python${MODPY_VERSION}/site-packages/r2pipe/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/r2pipe/${MODPY_PYCACHE}native.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/r2pipe/${MODPY_PYCACHE}open_async.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/r2pipe/${MODPY_PYCACHE}open_base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/r2pipe/${MODPY_PYCACHE}open_sync.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/r2pipe/native.py
+lib/python${MODPY_VERSION}/site-packages/r2pipe/open_async.py
+lib/python${MODPY_VERSION}/site-packages/r2pipe/open_base.py
+lib/python${MODPY_VERSION}/site-packages/r2pipe/open_sync.py
