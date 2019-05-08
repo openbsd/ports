@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# $OpenBSD: node_exporter.rc,v 1.1.1.1 2019/05/08 12:37:09 claudio Exp $
+
+daemon="${TRUEPREFIX}/bin/node_exporter"
+daemon_user=_nodeexporter
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon}.*"
+rc_bg=YES
+rc_reload=NO
+
+rc_start() {
+	${rcexec} "${daemon} ${daemon_flags} < /dev/null 2>&1 | \
+		logger -p daemon.info -t node_exporter"
+}
+
+rc_cmd $1
