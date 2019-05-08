@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.168 2019/05/08 12:55:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.169 2019/05/08 18:52:17 ajacoutot Exp $
 
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
 GNOME_VERSION=		3.32.0
+REVISION=		0
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -39,6 +40,9 @@ MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection
 MODGNOME_TOOLS +=	gtk-update-icon-cache shared-mime-info
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
+
+# msgfmt: cannot locate ITS rules for evince-pdfdocument.metainfo.xml.in
+BUILD_DEPENDS +=	devel/appstream-glib
 
 LIB_DEPENDS=		multimedia/gstreamer1/plugins-base \
 			print/poppler \
