@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.36 2019/04/28 11:18:11 espie Exp $
+# $OpenBSD: Init.pm,v 1.37 2019/05/08 12:59:33 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -124,21 +124,8 @@ my $init = {};
 
 sub new
 {
-	my ($class, $host, $prop) = @_;
-	my $factory;
-	if (DPB::Host->name_is_localhost($host)) {
-		$host = 'localhost';
-		$prop->{iamroot} = $< == 0;
-		$factory = 'DPB::Core';
-	} else {
-		$factory = 'DPB::Core::Distant';
-		require DPB::Core::Distant;
-	}
-	if (DPB::Core->has_host($host)) {
-		return 0;
-	} else {
-		return $init->{$host} //= $factory->new_noreg($host, $prop);
-	}
+	my ($class, $host) = @_;
+	return $init->{$host->name} //= $host->new_init_core;
 }
 
 sub hostcount
@@ -282,8 +269,8 @@ sub init_cores
 	if ($state->opt('f')) {
 		$state->{fetch_user}->enforce_local;
 		for (1 .. $state->opt('f')) {
-			DPB::Core::Fetcher->new('localhost', 
-			    $state->{default_prop})->mark_ready;
+			DPB::Core::Fetcher->new(DPB::Host->fetch_host(
+			    $state->{default_prop}))->mark_ready;
 		}
 	}
 }

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Host.pm,v 1.7 2015/05/13 12:21:11 espie Exp $
+# $OpenBSD: Host.pm,v 1.8 2019/05/08 12:59:33 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -33,20 +33,46 @@ sub new
 	if ($class->name_is_localhost($name)) {
 		$class = "DPB::Host::Localhost";
 		$name = 'localhost';
+		$prop->{iamroot} = $< == 0;
 		$prop->{build_user}->enforce_local 
-			if defined $prop->{build_user};
+		    if defined $prop->{build_user};
 	} else {
 		require DPB::Core::Distant;
 		$class = "DPB::Host::Distant";
 	}
 	if (!defined $hosts->{$name}) {
 		my $h = bless {host => $name, 
-			prop => $prop }, $class;
+		    prop => $prop }, $class;
 		# XXX have to register *before* creating the shell
 		$hosts->{$name} = $h;
 		$h->{shell} = $h->shellclass->new($h);
 	}
 	return $hosts->{$name};
+}
+
+sub fetch_host
+{
+	my ($class, $prop) = @_;
+	if (!defined $hosts->{FETCH}) {
+		$prop->{iamroot} = $< == 0;
+		my $h = bless {host => 'localhost',
+		    prop => $prop }, 'DPB::Host::Localhost';
+		# XXX have to register *before* creating the shell
+		$hosts->{FETCH} = $h;
+		$h->{shell} = $h->shellclass->new($h);
+	}
+	return $hosts->{FETCH};
+}
+
+sub new_init_core
+{
+	my $self = shift;
+	return $self->coreclass->new_noreg($self);
+}
+
+sub coreclass
+{
+	return "DPB::Core";
 }
 
 sub name

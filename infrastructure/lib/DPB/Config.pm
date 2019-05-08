@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.78 2019/04/27 09:42:26 espie Exp $
+# $OpenBSD: Config.pm,v 1.79 2019/05/08 12:59:33 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -390,7 +390,7 @@ sub parse_config_files
 	my $prop = DPB::HostProperties->new($default_prop);
 	$prop->finalize_with_overrides($override_prop);
 	if (!$state->{config_files}) {
-		DPB::Core::Init->new('localhost', $prop);
+		DPB::Core::Init->new(DPB::Host->new('localhost', $prop));
 	}
 	$state->{default_prop} = $prop;
 	$state->{override_prop} = $override_prop;
@@ -429,7 +429,7 @@ sub parse_hosts_file
 			next;
 		}
 		$prop->finalize_with_overrides($override);
-		DPB::Core::Init->new($host, $prop);
+		DPB::Core::Init->new(DPB::Host->new($host, $prop));
 		if (defined $prop->{build_user} && 
 		    !defined $state->{build_user} &&
 		    !$state->defines("BUILD_USER")) {
@@ -448,7 +448,7 @@ sub add_host
 		}
 	}
 	$prop->finalize_with_overrides($state->{override_prop});
-	DPB::Core::Init->new($host, $prop);
+	DPB::Core::Init->new(DPB::Host->new($host, $prop));
 }
 
 package DPB::ExternalStub;

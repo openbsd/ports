@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.88 2018/09/06 11:31:30 espie Exp $
+# $OpenBSD: Core.pm,v 1.89 2019/05/08 12:59:33 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -92,8 +92,8 @@ sub shell
 
 sub new
 {
-	my ($class, $host, $prop) = @_;
-	my $c = bless {host => DPB::Host->new($host, $prop)}, $class;
+	my ($class, $host) = @_;
+	my $c = bless {host => $host}, $class;
 	$allhosts{$c->hostname} = 1;
 	return $c;
 }
@@ -101,7 +101,7 @@ sub new
 sub clone
 {
 	my $self = shift;
-	my $c = ref($self)->new($self->hostname, $self->prop);
+	my $c = ref($self)->new($self->host);
 	return $c;
 }
 
@@ -109,12 +109,6 @@ sub host
 {
 	my $self = shift;
 	return $self->{host};
-}
-
-sub has_host
-{
-	my ($class, $hostname) = @_;
-	return $allhosts{$hostname};
 }
 
 sub prop
@@ -735,16 +729,16 @@ sub all_sf
 
 sub new
 {
-	my ($class, $host, $prop) = @_;
-	my $o = $class->SUPER::new($host, $prop);
+	my ($class, $host) = @_;
+	my $o = $class->SUPER::new($host);
 	push(@all_cores, $o);
 	return $o;
 }
 
 sub new_noreg
 {
-	my ($class, $host, $prop) = @_;
-	$class->SUPER::new($host, $prop);
+	my ($class, $host) = @_;
+	$class->SUPER::new($host);
 }
 
 sub start_pipe
@@ -794,9 +788,9 @@ sub can_be_swallowed
 
 sub new
 {
-	my ($class, $host, $prop) = @_;
-	my $c = $class->SUPER::new($host, $prop);
-	$c->{user} = $prop->{fetch_user};
+	my ($class, $host) = @_;
+	my $c = $class->SUPER::new($host);
+	$c->{user} = $c->prop->{fetch_user};
 	return $c;
 }
 

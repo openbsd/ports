@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.22 2019/04/27 20:26:43 espie Exp $
+# $OpenBSD: Distant.pm,v 1.23 2019/05/08 12:59:33 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -38,6 +38,11 @@ sub is_alive
 	return $self->shell->is_alive;
 }
 
+sub coreclass
+{
+	return "DPB::Core::Distant";
+}
+
 package DPB::Ssh;
 our @ISA = qw(DPB::Shell::Chroot);
 
@@ -51,8 +56,7 @@ sub new
 {
 	my ($class, $host) = @_;
 	bless {
-	    master => DPB::Ssh::Master->find($host->name, 
-	    	$host->{prop}->{timeout}),
+	    master => DPB::Ssh::Master->find($host),
 	    prop => $host->{prop}
 	    }, $class;
 }
@@ -149,12 +153,13 @@ my $TMPDIR;
 sub new
 {
 	my ($class, $host) = @_;
+	my $h = $host->name;
 	$TMPDIR //= $ENV{PKG_TMPDIR} || '/var/tmp';
-	my $timeout = 10;
-	my $socket = "$TMPDIR/ssh-$host-$$";
+	my $timeout = $host->{prop}{timeout} // 10;
+	my $socket = "$TMPDIR/ssh-$h-$$";
 	my $o = $class->SUPER::new(DPB::Task::SshMaster->new($socket,
-	    $timeout, $host), "ssh master for $host");
-	$o->{host} = $host;
+	    $timeout, $h), "ssh master for $h");
+	$o->{host} = $h;
 	$o->{timeout} = $timeout;
 	$o->{socket} = $socket;
 	return $o;
@@ -185,16 +190,16 @@ sub is_alive
 
 sub create
 {
-	my ($class, $host, $timeout) = @_;
+	my ($class, $host) = @_;
 
 	my $core = $class->SUPER::new($host);
-	$core->start_job(DPB::Job::SshMaster->new($host, $timeout));
+	$core->start_job(DPB::Job::SshMaster->new($host));
 }
 
 sub find
 {
-	my ($class, $host, $timeout) = @_;
-	$master->{$host} //= $class->create($host, $timeout);
+	my ($class, $host) = @_;
+	$master->{$host->name} //= $class->create($host);
 }
 
 package DPB::Core::Distant;
