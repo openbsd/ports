@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gdbmconst_h,v 1.1 2019/05/08 15:24:14 jasper Exp $
+
+./gdbmconst.h:58:9: warning: 'SIZE_T_MAX' macro redefined
+
+Index: src/gdbmconst.h
+--- src/gdbmconst.h.orig
++++ src/gdbmconst.h
+@@ -55,4 +55,6 @@
+ #define DEFAULT_CACHESIZE  100
+ 
+ /* Maximum size representable by a size_t variable */
++#ifndef SIZE_T_MAX
+ #define SIZE_T_MAX ((size_t)-1)
++#endif

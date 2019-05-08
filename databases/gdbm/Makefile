@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2018/07/09 07:51:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2019/05/08 15:24:14 jasper Exp $
 
 COMMENT=		GNU dbm
 
-DISTNAME=		gdbm-1.16
+DISTNAME=		gdbm-1.18.1
 CATEGORIES=		databases
 
 SHARED_LIBS=		gdbm	5.1	# 5.0
