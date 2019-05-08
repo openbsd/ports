@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.101 2019/04/28 20:52:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.102 2019/05/08 13:23:54 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
-GNOME_VERSION=		3.30.1
-REVISION=		0
+GNOME_VERSION=		3.32.0
 
 CATEGORIES=		editors
 
@@ -15,9 +14,9 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 cairo cairo-gobject
 WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 gtksourceview-3.0 harfbuzz
+WANTLIB += graphite2 gthread-2.0 gtk-3 gtksourceview-4 harfbuzz
 WANTLIB += iconv intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre peas-1.0 peas-gtk-1.0 pixman-1 png16 pthread xcb
+WANTLIB += pcre peas-1.0 peas-gtk-1.0 pixman-1 png pthread xcb
 WANTLIB += xcb-render xcb-shm xml2 z
 
 MODULES=		devel/dconf \
@@ -34,7 +33,7 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/gucharmap
 
 LIB_DEPENDS=		devel/libpeas \
-			x11/gtksourceview3
+			x11/gtksourceview4
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/libgit2/libgit2-glib>=0.0.6p0 \
