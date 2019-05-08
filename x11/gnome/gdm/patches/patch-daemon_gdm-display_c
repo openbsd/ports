@@ -1,11 +1,11 @@
-$OpenBSD: patch-daemon_gdm-display_c,v 1.6 2019/01/18 05:51:51 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-display_c,v 1.7 2019/05/08 21:32:35 ajacoutot Exp $
 
 XXX fix+push upstream
 
 Index: daemon/gdm-display.c
 --- daemon/gdm-display.c.orig
 +++ daemon/gdm-display.c
-@@ -229,8 +229,8 @@ setup_xhost_auth (XHostAddress              *host_entr
+@@ -241,8 +241,8 @@ setup_xhost_auth (XHostAddress              *host_entr
          host_entries[1].address   = "localuser\0" GDM_USERNAME;
          host_entries[1].length    = sizeof ("localuser\0" GDM_USERNAME);
          host_entries[2].family    = FamilyServerInterpreted;
@@ -16,12 +16,11 @@ Index: daemon/gdm-display.c
  }
  
  gboolean
-@@ -1589,8 +1589,6 @@ gdm_display_start_greeter_session (GdmDisplay *self)
- void
+@@ -1720,7 +1720,6 @@ void
  gdm_display_stop_greeter_session (GdmDisplay *self)
  {
+         GdmDisplayPrivate *priv;
 -        GError *error = NULL;
--
-         if (self->priv->launch_environment != NULL) {
  
-                 g_signal_handlers_disconnect_by_func (self->priv->launch_environment,
+         priv = gdm_display_get_instance_private (self);
+ 

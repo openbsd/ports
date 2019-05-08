@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.276 2019/02/27 03:18:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.277 2019/05/08 21:32:35 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.30.3
+GNOME_VERSION=		3.32.0
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} puflogh1000X248.gif:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
@@ -21,7 +21,7 @@ WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl ltdl m ogg pam
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png16 pthread util vorbis vorbisfile xcb xcb-render
+WANTLIB += png pthread util vorbis vorbisfile xcb xcb-render
 WANTLIB += xcb-shm z
 
 MODULES=		x11/gnome \
