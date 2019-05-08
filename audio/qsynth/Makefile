@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/03/19 20:12:10 cwen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/08 22:53:30 jca Exp $
 
 COMMENT =		Qt GUI Interface for FluidSynth
 
@@ -35,6 +35,7 @@ NO_TEST =		Yes
 CONFIGURE_STYLE = 	gnu
 
 CONFIGURE_ENV +=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib" \
+			ac_cv_path_ac_qmake="${MODQT_QMAKE}"
 
 .include <bsd.port.mk>
