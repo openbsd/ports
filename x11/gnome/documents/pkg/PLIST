@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2019/01/06 13:23:49 ajacoutot Exp $
-bin/gnome-books
+@comment $OpenBSD: PLIST,v 1.24 2019/05/08 20:23:27 ajacoutot Exp $
 bin/gnome-documents
 lib/gnome-documents/
 lib/gnome-documents/girepository-1.0/
@@ -7,22 +6,15 @@ lib/gnome-documents/girepository-1.0/Gd-1.0.typelib
 lib/gnome-documents/girepository-1.0/GdPrivate-1.0.typelib
 lib/gnome-documents/libgd.so
 lib/gnome-documents/libgdprivate-1.0.so
-@man man/man1/gnome-books.1
 @man man/man1/gnome-documents.1
-share/applications/org.gnome.Books.desktop
 share/applications/org.gnome.Documents.desktop
-share/dbus-1/services/org.gnome.Books.service
 share/dbus-1/services/org.gnome.Documents.service
 share/glib-2.0/schemas/org.gnome.Documents.enums.xml
-share/glib-2.0/schemas/org.gnome.books.gschema.xml
 share/glib-2.0/schemas/org.gnome.documents.gschema.xml
 share/gnome-documents/
 share/gnome-documents/gir-1.0/
 share/gnome-documents/gir-1.0/Gd-1.0.gir
 share/gnome-documents/gir-1.0/GdPrivate-1.0.gir
-share/gnome-documents/org.gnome.Books
-share/gnome-documents/org.gnome.Books.data.gresource
-share/gnome-documents/org.gnome.Books.src.gresource
 share/gnome-documents/org.gnome.Documents
 share/gnome-documents/org.gnome.Documents.data.gresource
 share/gnome-documents/org.gnome.Documents.src.gresource
@@ -594,22 +586,8 @@ share/help/zh_CN/gnome-documents/search.page
 share/help/zh_CN/gnome-documents/view-add.page
 share/help/zh_CN/gnome-documents/view.page
 share/help/zh_CN/gnome-documents/viewgrid.page
-share/icons/hicolor/16x16/apps/org.gnome.Books.png
-share/icons/hicolor/16x16/apps/org.gnome.Documents.png
-share/icons/hicolor/22x22/apps/org.gnome.Books.png
-share/icons/hicolor/22x22/apps/org.gnome.Documents.png
-share/icons/hicolor/24x24/apps/org.gnome.Books.png
-share/icons/hicolor/24x24/apps/org.gnome.Documents.png
-share/icons/hicolor/256x256/apps/org.gnome.Books.png
-share/icons/hicolor/256x256/apps/org.gnome.Documents.png
-share/icons/hicolor/32x32/apps/org.gnome.Books.png
-share/icons/hicolor/32x32/apps/org.gnome.Documents.png
-share/icons/hicolor/48x48/apps/org.gnome.Books.png
-share/icons/hicolor/48x48/apps/org.gnome.Documents.png
-share/icons/hicolor/512x512/apps/org.gnome.Books.png
-share/icons/hicolor/512x512/apps/org.gnome.Documents.png
-share/icons/hicolor/scalable/apps/org.gnome.Books-symbolic.svg
-share/icons/hicolor/scalable/apps/org.gnome.Documents-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.Documents.svg
+share/icons/hicolor/symbolic/apps/org.gnome.Documents-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-documents.mo
 share/locale/ar/LC_MESSAGES/gnome-documents.mo
 share/locale/as/LC_MESSAGES/gnome-documents.mo
@@ -680,7 +658,6 @@ share/locale/xh/LC_MESSAGES/gnome-documents.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-documents.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-documents.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-documents.mo
-share/metainfo/org.gnome.Books.appdata.xml
 share/metainfo/org.gnome.Documents.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag glib-compile-schemas

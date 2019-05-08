@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.103 2019/02/21 17:08:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2019/05/08 20:23:27 ajacoutot Exp $
 
-COMMENT=		document and e-books manager for GNOME
+COMMENT=		document manager application for GNOME
 
 GNOME_PROJECT=		gnome-documents
-GNOME_VERSION=		3.30.1
-REVISION=		0
+GNOME_VERSION=		3.32.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,30 +25,23 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 # sync with x11/gnome/gjs
 COMPILER=		base-clang ports-gcc
 
-# GData-0.0.gir, Gepub-0.6.gir Zpj-0.0.gir...
+# GData-0.0.gir, Zpj-0.0.gir...
 BUILD_DEPENDS +=	devel/libgdata \
 			x11/gnome/gjs \
-			x11/gnome/libgepub \
-			x11/gnome/libzapojit \
-			x11/gnome/tracker
-
+			x11/gnome/libzapojit
 RUN_DEPENDS +=		devel/libgdata \
 			x11/gnome/gjs \
-			x11/gnome/libgepub \
-			x11/gnome/libzapojit \
-			x11/gnome/tracker \
-			www/webkitgtk4
+			x11/gnome/libzapojit
 
 LIB_DEPENDS=		evince-*-!light:graphics/evince \
-			x11/gnome/desktop
+			www/webkitgtk4 \
+			x11/gnome/desktop \
+			x11/gnome/tracker
 
-# gnome-books
-RUN_DEPENDS +=		x11/gnome/epub-thumbnailer
-
-# src/application.js
+# org.gnome.OnlineMiners.Miner
 RUN_DEPENDS +=		x11/gnome/online-miners
 
-# org.freedesktop.Tracker schema
+# org.freedesktop.Tracker1.Miner.Extract
 RUN_DEPENDS +=		x11/gnome/tracker-miners
 
 .include <bsd.port.mk>
