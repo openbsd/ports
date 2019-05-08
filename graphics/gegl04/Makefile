@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/02 09:11:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/08 22:29:07 ajacoutot Exp $
 
 COMMENT=		graph based image processing framework (API version 0.4)
 
-V=			0.4.14
+V=			0.4.16
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl04-${V}
 EXTRACT_SUFX=		.tar.bz2
 
-SHARED_LIBS +=  gegl-0.4                  0.1 # 414.0
+SHARED_LIBS +=  gegl-0.4                  0.2 # 416.0
 
 API_VERSION=		${V:R}
 SUBST_VARS=		API_VERSION
@@ -26,7 +26,7 @@ WANTLIB += croco-0.6 expat ffi fontconfig freetype fribidi gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 harfbuzz iconv intl jasper jpeg json-glib-1.0
 WANTLIB += lcms2 lzma m openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png16 poppler poppler-glib raw rsvg-2
+WANTLIB += pcre pixman-1 png poppler poppler-glib raw rsvg-2
 WANTLIB += tiff webp xcb xcb-render xcb-shm xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
