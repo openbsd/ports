@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1129 2019/05/05 06:55:06 bentley Exp $
+# $OpenBSD: Makefile,v 1.1130 2019/05/08 01:46:00 robert Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -110,7 +110,6 @@
      SUBDIR += glib2-networking
      SUBDIR += gloox
      SUBDIR += gmudix
-     SUBDIR += gnaughty
      SUBDIR += gnugk
      SUBDIR += go-ipfs
      SUBDIR += go-net
