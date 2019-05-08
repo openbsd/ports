@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.79 2019/01/06 12:28:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.80 2019/05/08 01:51:45 jasper Exp $
 
 COMMENT=		dialogs for GNOME
 
 GNOME_PROJECT=		zenity
-GNOME_VERSION=		3.30.0
+GNOME_VERSION=		3.32.0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
