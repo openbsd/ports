@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2019/03/24 22:24:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/08 21:46:44 danj Exp $
 
 COMMENT =		web application security tool
 
 VERSION =		2.7.0
-REVISION =		0
+REVISION =		1
 DISTNAME =		ZAP_${VERSION}_Linux
 PKGNAME =		zaproxy-${VERSION}
 
 CATEGORIES =		security
 
 HOMEPAGE =		https://www.owasp.org/index.php/ZAP
-
-MAINTAINER =		sebastien dellac <shaxo@laposte.net>
 
 # Apache v2.0 License
 PERMIT_PACKAGE_CDROM =	Yes

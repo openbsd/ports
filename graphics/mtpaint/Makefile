@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/27 21:03:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/08 21:46:44 danj Exp $
 
 COMMENT =	simple GTK+2 raster painting program
 
 DISTNAME =	mtpaint-3.40
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://mtpaint.sourceforge.net/
-
-MAINTAINER =	Roman Gorelov <wuymiaon@mail.ru>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
