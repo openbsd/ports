@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.3 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2019/05/08 14:24:40 sthen Exp $
 
 CATEGORIES =	devel
-MAINTAINER ?=	Johan Huldtgren <jhuldtgren@gmail.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

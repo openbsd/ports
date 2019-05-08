@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1 2012/01/16 22:11:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/08 14:24:40 sthen Exp $
 
 COMMENT =	Croatian holiday classes for PHP
 HOLNAME =	Croatia-0.1.1
+REVISION =	0
 
 .include <bsd.port.mk>
