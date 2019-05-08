@@ -1,11 +1,11 @@
-$OpenBSD: patch-js_ui_tweener_js,v 1.1 2018/04/29 10:43:33 jasper Exp $
+$OpenBSD: patch-js_ui_tweener_js,v 1.2 2019/05/08 16:17:27 jasper Exp $
 
 https://gitlab.gnome.org/GNOME/gnome-shell/merge_requests/4/diffs
 
 Index: js/ui/tweener.js
 --- js/ui/tweener.js.orig
 +++ js/ui/tweener.js
-@@ -69,30 +69,67 @@ function _getTweenState(target) {
+@@ -63,30 +63,67 @@ function _getTweenState(target) {
      return target.__ShellTweenerState;
  }
  

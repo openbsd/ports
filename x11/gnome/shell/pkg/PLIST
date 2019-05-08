@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2019/01/17 19:00:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2019/05/08 16:17:27 jasper Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
@@ -12,15 +12,11 @@ bin/gnome-shell-perf-tool
 lib/gnome-shell/
 lib/gnome-shell/Gvc-1.0.typelib
 lib/gnome-shell/Shell-0.1.typelib
-lib/gnome-shell/ShellMenu-0.1.typelib
 lib/gnome-shell/St-1.0.typelib
 lib/gnome-shell/libgnome-shell-menu.so
 lib/gnome-shell/libgnome-shell.so
 lib/gnome-shell/libgvc.so
 lib/gnome-shell/libst-1.0.so
-lib/mozilla/
-lib/mozilla/plugins/
-lib/mozilla/plugins/libgnome-shell-browser-plugin.so
 @bin libexec/gnome-shell-calendar-server
 @bin libexec/gnome-shell-hotplug-sniffer
 libexec/gnome-shell-overrides-migration.sh
@@ -31,6 +27,7 @@ share/applications/evolution-calendar.desktop
 share/applications/gnome-shell-extension-prefs.desktop
 share/applications/org.gnome.Shell.desktop
 share/dbus-1/interfaces/org.gnome.Shell.Extensions.xml
+share/dbus-1/interfaces/org.gnome.Shell.Introspect.xml
 share/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
 share/dbus-1/interfaces/org.gnome.Shell.Screencast.xml
 share/dbus-1/interfaces/org.gnome.Shell.Screenshot.xml
@@ -45,10 +42,11 @@ share/examples/gnome-shell/xdg/autostart/gnome-shell-overrides-migration.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/gnome-shell-overrides-migration.desktop
 share/glib-2.0/schemas/00_org.gnome.shell.gschema.override
 share/glib-2.0/schemas/org.gnome.shell.gschema.xml
+share/gnome-control-center/
+share/gnome-control-center/keybindings/
 share/gnome-control-center/keybindings/50-gnome-shell-system.xml
 share/gnome-shell/Gvc-1.0.gir
 share/gnome-shell/Shell-0.1.gir
-share/gnome-shell/ShellMenu-0.1.gir
 share/gnome-shell/St-1.0.gir
 share/gnome-shell/gnome-shell-dbus-interfaces.gresource
 share/gnome-shell/gnome-shell-osk-layouts.gresource
