@@ -1,0 +1,16 @@
+$OpenBSD: patch-gnome-initial-setup_meson_build,v 1.1 2019/05/08 18:42:30 ajacoutot Exp $
+
+Disable NetworkManager.
+
+Index: gnome-initial-setup/meson.build
+--- gnome-initial-setup/meson.build.orig
++++ gnome-initial-setup/meson.build
+@@ -23,8 +23,6 @@ sources += [
+ ]
+ 
+ dependencies = [
+-    dependency ('libnm', version: '>= 1.2'),
+-    dependency ('libnma', version: '>= 1.0'),
+     dependency ('polkit-gobject-1', version: '>= 0.103'),
+     dependency ('accountsservice'),
+     dependency ('gnome-desktop-3.0', version: '>= 3.7.5'),
