@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.273 2019/01/03 14:41:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.274 2019/05/08 13:17:33 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
-GNOME_VERSION=		3.30.1
+GNOME_VERSION=		3.32.0
 
 CATEGORIES=		x11
 
 # GPLv2/LGPLv2/GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += EGL GL GLESv2 ICE SM X11 Xcomposite c epoxy gdk-3 gio-2.0
+WANTLIB += EGL GL GLESv2 ICE SM X11 Xcomposite atk-1.0 c cairo
+WANTLIB += cairo-gobject dbus-1 epoxy gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gnome-desktop-3 gobject-2.0 gtk-3 intl json-glib-1.0
+WANTLIB += pango-1.0 pangocairo-1.0
 
 MODULES=		devel/dconf \
 			devel/meson \
