@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/01/06 12:45:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/05/08 01:19:51 ajacoutot Exp $
 @conflict gnome-tweak-tool-*
 @pkgpath x11/gnome/tweak-tool
 bin/gnome-tweaks
@@ -63,13 +63,8 @@ share/applications/org.gnome.tweaks.desktop
 share/gnome-tweaks/
 share/gnome-tweaks/shell.css
 share/gnome-tweaks/shell.ui
-share/icons/hicolor/16x16/apps/org.gnome.tweaks.png
-share/icons/hicolor/22x22/apps/org.gnome.tweaks.png
-share/icons/hicolor/24x24/apps/org.gnome.tweaks.png
-share/icons/hicolor/256x256/apps/org.gnome.tweaks.png
-share/icons/hicolor/32x32/apps/org.gnome.tweaks.png
-share/icons/hicolor/48x48/apps/org.gnome.tweaks.png
-share/icons/hicolor/scalable/apps/org.gnome.tweaks-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.tweaks.svg
+share/icons/hicolor/symbolic/apps/org.gnome.tweaks-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-tweaks.mo
 share/locale/ar/LC_MESSAGES/gnome-tweaks.mo
 share/locale/as/LC_MESSAGES/gnome-tweaks.mo
