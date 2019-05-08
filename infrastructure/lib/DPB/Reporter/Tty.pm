@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Tty.pm,v 1.6 2016/06/28 15:28:20 espie Exp $
+# $OpenBSD: Tty.pm,v 1.7 2019/05/08 09:10:54 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -44,11 +44,10 @@ sub filter
 	'report';
 }
 
-sub new
+sub make_singleton
 {
-	my $class = shift;
-	my $state = shift;
-	my $self = $class->make_singleton($state, @_);
+	my ($class, $state) = @_;
+	my $self = $class->SUPER::make_singleton($state);
 	$self->create_terminal;
 	$self->set_sig_handlers;
 	# no cursor, to avoid flickering

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.29 2016/06/28 15:28:20 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.30 2019/05/08 09:10:54 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -91,14 +91,12 @@ sub handle_window
 {
 }
 
-sub filter_can
+sub filter_add
 {
-	my ($self, $r, $method) = @_;
-	my @kept = ();
+	my ($self, $l, $r, $method) = @_;
 	for my $prod (@$r) {
-		push @kept, $prod if $prod->can($method);
+		push @$l, $prod if $prod->can($method);
 	}
-	return \@kept;
 }
 
 sub new
@@ -115,19 +113,17 @@ sub new
 	}
 		
 	if ($dotty) {
-		$class->ttyclass->new($state, @_);
-	} else {
-		$class->make_singleton($state, @_);
+		$class = $class->ttyclass;
 	}
+	$class->make_singleton($state)->add_producers(@_);
 }
 
 sub make_singleton
 {
-	my $class = shift;
-	my $state = shift;
+	my ($class, $state) = @_;
 	return if defined $singleton;
 	$singleton = bless {msg => '',
-	    producers => $class->filter_can(\@_, $class->filter),
+	    producers => [],
 	    timeout => $state->{display_timeout} // 10,
 	    state => $state,
 	    continued => 0}, $class;
@@ -137,6 +133,13 @@ sub make_singleton
 		    $state->{log_user}->open('>>', $state->{record});
 	}
 	return $singleton;
+}
+
+sub add_producers
+{
+	my $self = shift;
+	$self->filter_add($self->{producers}, \@_, $self->filter);
+	return $self;
 }
 
 sub filter
