@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.59 2019/01/01 16:50:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2019/05/08 12:07:01 ajacoutot Exp $
 
 COMMENT=		GNOME power manager
 
 GNOME_PROJECT=		gnome-power-manager
-GNOME_VERSION=		3.30.0
+GNOME_VERSION=		3.32.0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c cairo gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl pango-1.0
+WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl m pango-1.0
 WANTLIB += pangocairo-1.0 upower-glib
 
 MODULES=		devel/dconf \
