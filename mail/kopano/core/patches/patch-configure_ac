@@ -1,23 +1,41 @@
-$OpenBSD: patch-configure_ac,v 1.13 2019/04/17 13:01:02 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.14 2019/05/09 14:52:33 robert Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -54,11 +54,13 @@ case "$host_os" in
- 	openbsd*)
+@@ -105,16 +105,21 @@ AC_SUBST([PACKAGE_ABI])
+ abs_top_srcdir=`cd $srcdir; pwd`
+ abs_top_builddir=`pwd`
+ 
++# check build OS
++ZCPPFLAGS=""
++
+ AC_CANONICAL_HOST
+ AS_CASE([$host_os],
+-	[openbsd], [
++	[openbsd*], [
  		BUILDOS="openbsd"
  		ZCPPFLAGS="$ZCPPFLAGS -DOPENBSD"
 +		TINFO_LIB=""
  		LN_TFSV="ln -fs"
- 		;;
- 	linux*)
+ 	],
+ 	[linux*], [
  		BUILDOS="linux"
  		ZCPPFLAGS="$ZCPPFLAGS -DLINUX"
 +		TINFO_LIB="-ltinfo"
  		LN_TFSV="ln -Tfsv"
- 		;;
- esac
-@@ -76,6 +78,7 @@ AC_SUBST([ZPHPCXXFLAGS])
+ 	],
+ 	[*], [
+@@ -135,8 +140,6 @@ CPPFLAGS_system=$CPPFLAGS
+ LDFLAGS_system=$LDFLAGS
+ LIBS_system=$LIBS
+ 
+-# check build OS
+-ZCPPFLAGS=""
+ >conftest.cpp
+ ZPHPCXXFLAGS=""
+ AS_IF([$CXX -Wno-narrowing -c conftest.cpp], [ZPHPCXXFLAGS="-Wno-narrowing"])
+@@ -148,6 +151,7 @@ AC_SUBST([ZPHPCXXFLAGS])
  ZCPPFLAGS="$ZCPPFLAGS \
  	-I\${top_builddir}/common/include \
  	-I\${top_srcdir}/common/include \
@@ -25,7 +43,7 @@ Index: configure.ac
  	-I\${top_srcdir}/m4lcommon/include \
  	-I\${top_srcdir}/mapi4linux/include \
  	-I\${top_srcdir}/provider/common/include \
-@@ -93,7 +96,7 @@ ZCPPFLAGS="$ZCPPFLAGS $LFS_CFLAGS"
+@@ -165,7 +169,7 @@ ZCPPFLAGS="$ZCPPFLAGS $LFS_CFLAGS"
  
  AC_MSG_CHECKING([available C++ standard])
  cxxmode=""
@@ -34,7 +52,7 @@ Index: configure.ac
  	CXXFLAGS="$CXXFLAGS_system -std=$i"
  	AC_COMPILE_IFELSE([AC_LANG_SOURCE([])], [cxxmode="$i"])
  	AS_IF([test -n "$cxxmode"], [break])
-@@ -219,7 +222,7 @@ AC_DEFUN([LIBNCURSES_WITH_CONFIG],[
+@@ -243,7 +247,7 @@ AC_DEFUN([LIBNCURSES_WITH_CONFIG],[
  		[
  			dnl just pick the lowest common denominator
  			NCURSES_FLAGS=""
@@ -43,16 +61,7 @@ Index: configure.ac
  		]
  	)
  	AC_CHECK_HEADERS([ncurses.h])
-@@ -352,7 +355,7 @@ CXXFLAGS="$CXXFLAGS_system $ZCXXFLAGS"
- LDFLAGS="$LDFLAGS_system $ZLDFLAGS"
- AC_CHECK_FUNCS([pthread_getname_np])
- 
--PKG_CHECK_MODULES([GSOAP], [gsoapssl++ >= 2.8.73])
-+PKG_CHECK_MODULES([GSOAP], [gsoapssl++ >= 2.8])
- PKG_CHECK_MODULES([ICAL], [libical >= 0.42])
- PKG_CHECK_MODULES([curl], [libcurl], [], [:])
- CPPFLAGS="$CPPFLAGS $curl_CFLAGS"
-@@ -377,7 +380,7 @@ PKG_CHECK_MODULES([jsoncpp], [jsoncpp >= 1.4.0], [], [
+@@ -411,7 +415,7 @@ PKG_CHECK_MODULES([jsoncpp], [jsoncpp >= 1.4.0], [], [
  #
  
  AC_CHECK_HEADERS([ldap.h],
@@ -61,7 +70,7 @@ Index: configure.ac
  	  CXXFLAGS="$CXXFLAGS -pthread"
  	  AC_MSG_CHECKING([for -lldap_r without LDAP_DEPRECATED])
  	  AC_LINK_IFELSE([ AC_LANG_SOURCE([#include <ldap.h>
-@@ -434,7 +437,7 @@ iconv_t i; i = iconv_open("", "");
+@@ -466,7 +470,7 @@ iconv_t i; i = iconv_open("", "");
  	[ AC_MSG_RESULT([yes]) ],
  	[ AC_MSG_RESULT([no])
  	  AC_MSG_CHECKING([for iconv in -liconv])
@@ -70,7 +79,7 @@ Index: configure.ac
  	  AC_LINK_IFELSE([ AC_LANG_SOURCE([
  #include <stdlib.h>
  #include <iconv.h>
-@@ -453,7 +456,7 @@ AC_SEARCH_LIBS([crypt_r], [crypt], [
+@@ -485,7 +489,7 @@ AC_SEARCH_LIBS([crypt_r], [crypt], [
  ])
  LIBS="$LIBS_system"
  AC_SEARCH_LIBS([clock_gettime], [rt], [
@@ -79,7 +88,7 @@ Index: configure.ac
  ])
  LIBS="$LIBS_system"
  AC_SUBST([CRYPT_LIBS])
-@@ -569,12 +572,14 @@ AC_CHECK_LIB([z], [gzopen], GZ_LIBS="-lz",
+@@ -598,12 +602,14 @@ AC_CHECK_LIB([z], [gzopen], GZ_LIBS="-lz",
  )
  AC_SUBST(GZ_LIBS)
  
@@ -96,7 +105,7 @@ Index: configure.ac
  
  # check epoll support
  AC_ARG_ENABLE([epoll], AS_HELP_STRING([--disable-epoll], [disable epoll and fallback to select]), [want_epoll=${enableval}], [want_epoll=yes])
-@@ -631,6 +636,8 @@ AS_IF([test "$have_icu" = 0], [
+@@ -658,6 +664,8 @@ AS_IF([test "$have_icu" = 0], [
  	AC_MSG_ERROR([ICU is required but not found])
  ])
  ZCPPFLAGS="$ZCPPFLAGS $icu_uc_CFLAGS $icu_i18n_CFLAGS"

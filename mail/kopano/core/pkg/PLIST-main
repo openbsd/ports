@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2019/04/17 13:01:02 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2019/05/09 14:52:33 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -78,8 +78,6 @@ include/kopano/charset/convstring.h
 include/kopano/charset/traits.h
 include/kopano/charset/utf8string.h
 include/kopano/codepage.h
-include/kopano/conversion.h
-include/kopano/director_util.h
 include/kopano/ecversion.h
 include/kopano/fileutil.hpp
 include/kopano/hl.hpp
@@ -94,11 +92,8 @@ include/kopano/platform.h
 include/kopano/platform.linux.h
 include/kopano/scope.hpp
 include/kopano/stringutil.h
-include/kopano/swig_iunknown.h
 include/kopano/tie.hpp
 include/kopano/timeutil.hpp
-include/kopano/typemap.i
-include/kopano/typemap_python.i
 include/kopano/userutil.h
 include/kopano/ustringutil.h
 include/kopano/zcdefs.h
@@ -201,11 +196,9 @@ lib/python${MODPY_VERSION}/site-packages/MAPI/Tags.py
 lib/python${MODPY_VERSION}/site-packages/MAPI/Time.py
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/AddressBook.py
-lib/python${MODPY_VERSION}/site-packages/MAPI/Util/Generators.py
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/${MODPY_PYCACHE}AddressBook.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/MAPI/Util/${MODPY_PYCACHE}Generators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/${MODPY_PYCACHE}codepage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/codepage.py

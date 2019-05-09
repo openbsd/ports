@@ -1,45 +1,45 @@
-$OpenBSD: patch-Makefile_in,v 1.14 2019/04/17 13:01:02 robert Exp $
+$OpenBSD: patch-Makefile_in,v 1.15 2019/05/09 14:52:33 robert Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -509,7 +509,7 @@ am_libkcutil_la_OBJECTS = common/ConsoleTable.lo commo
+@@ -886,7 +886,7 @@ am__libkcutil_la_SOURCES_DIST = common/ConsoleTable.cp
  libkcutil_la_OBJECTS = $(am_libkcutil_la_OBJECTS)
  libkcutil_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
 -	$(CXXFLAGS) $(libkcutil_la_LDFLAGS) $(LDFLAGS) -o $@
-+	$(CXXFLAGS) $(libkcutil_la_LDFLAGS) -lkvm $(LDFLAGS) -o $@
- libmapi_la_DEPENDENCIES = libkcutil.la $(am__DEPENDENCIES_1) \
- 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
- am_libmapi_la_OBJECTS = mapi4linux/src/common.lo \
-@@ -1299,7 +1299,7 @@ kopano_dbadm_SOURCES = ECtools/dbadm.cpp \
- 	common/database.cpp common/include/kopano/database.hpp
++	$(CXXFLAGS) $(libkcutil_la_LDFLAGS) $(LDFLAGS) -lkvm -o $@
+ @ENABLE_BASE_TRUE@am_libkcutil_la_rpath = -rpath $(libdir)
+ @ENABLE_BASE_TRUE@libmapi_la_DEPENDENCIES = libkcutil.la \
+ @ENABLE_BASE_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+@@ -1852,7 +1852,7 @@ dist_bin_SCRIPTS = $(am__append_4) $(am__append_7)
+ @ENABLE_BASE_TRUE@	common/database.cpp common/include/kopano/database.hpp
  
- kopano_dbadm_CPPFLAGS = ${AM_CPPFLAGS}
--kopano_dbadm_LDADD = libkcutil.la ${MYSQL_LIBS}
-+kopano_dbadm_LDADD = libkcutil.la ${MYSQL_LIBS} ${PROG_LIBS}
+ @ENABLE_BASE_TRUE@kopano_dbadm_CPPFLAGS = ${AM_CPPFLAGS}
+-@ENABLE_BASE_TRUE@kopano_dbadm_LDADD = libkcutil.la ${MYSQL_LIBS}
++@ENABLE_BASE_TRUE@kopano_dbadm_LDADD = libkcutil.la ${MYSQL_LIBS} ${PROG_LIBS}
  
  #
  # kopano-fsck
-@@ -1398,7 +1398,7 @@ kopano_server_SOURCES = \
- 	provider/server/ECThreadManager.cpp provider/server/ECThreadManager.h
+@@ -1951,7 +1951,7 @@ dist_bin_SCRIPTS = $(am__append_4) $(am__append_7)
+ @ENABLE_BASE_TRUE@	provider/server/ECThreadManager.cpp provider/server/ECThreadManager.h
  
- kopano_server_LDADD = \
--	libkcutil.la libkcserver.la libkcsoap.la ${GSOAP_LIBS} \
-+	libkcutil.la libkcserver.la libkcsoap.la ${GSOAP_LIBS} ${INTL_LIBS} \
- 	${clock_LIBS} ${CRYPTO_LIBS} ${icu_uc_LIBS} ${icu_i18n_LIBS} ${DL_LIBS} \
- 	${MYSQL_LIBS} ${SSL_LIBS} ${PAM_LIBS} ${KRB5_LIBS} ${kcoidc_LIBS} -lpthread
+ @ENABLE_BASE_TRUE@kopano_server_LDADD = \
+-@ENABLE_BASE_TRUE@	libkcutil.la libkcserver.la libkcsoap.la ${GSOAP_LIBS} \
++@ENABLE_BASE_TRUE@	libkcutil.la libkcserver.la libkcsoap.la ${GSOAP_LIBS} ${INTL_LIBS} \
+ @ENABLE_BASE_TRUE@	${clock_LIBS} ${CRYPTO_LIBS} ${icu_uc_LIBS} ${icu_i18n_LIBS} ${DL_LIBS} \
+ @ENABLE_BASE_TRUE@	${MYSQL_LIBS} ${SSL_LIBS} ${PAM_LIBS} ${KRB5_LIBS} ${kcoidc_LIBS} -lpthread
  
-@@ -1849,7 +1849,7 @@ tests_readflag_LDADD = libmapi.la libkcutil.la
- tests_rosie_SOURCES = tests/rosie.cpp
- tests_rosie_LDADD = libkcrosie.la
- tests_zcpmd5_SOURCES = tests/zcpmd5.cpp
--tests_zcpmd5_LDADD = ${CRYPTO_LIBS} libkcutil.la
-+tests_zcpmd5_LDADD = ${CRYPTO_LIBS} ${PROG_LIBS} libkcutil.la
+@@ -2405,7 +2405,7 @@ dist_bin_SCRIPTS = $(am__append_4) $(am__append_7)
+ @ENABLE_BASE_TRUE@tests_rosie_SOURCES = tests/rosie.cpp
+ @ENABLE_BASE_TRUE@tests_rosie_LDADD = libkcrosie.la
+ @ENABLE_BASE_TRUE@tests_zcpmd5_SOURCES = tests/zcpmd5.cpp
+-@ENABLE_BASE_TRUE@tests_zcpmd5_LDADD = ${CRYPTO_LIBS} libkcutil.la
++@ENABLE_BASE_TRUE@tests_zcpmd5_LDADD = ${CRYPTO_LIBS} ${PROG_LIBS} libkcutil.la
  
  #
  # soap generators
-@@ -4805,7 +4805,7 @@ default.sym provider/plugin.sym provider/provider.sym 
+@@ -5295,7 +5295,7 @@ default.sym provider/plugin.sym provider/provider.sym 
  
  .PHONY: source-moved-check
  source-moved-check:

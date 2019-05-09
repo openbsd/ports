@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/04/28 20:51:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/05/09 14:52:33 robert Exp $
 
 # undefined ref's to libicon*, libintl*
 USE_LLD=	Yes
@@ -8,8 +8,6 @@ COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}.${BUILD}
 PKGNAME-mapi=	kopano-mapi-${V}.${BUILD}
-REVISION-main=	0
-REVISION-mapi=	0
 
 CATEGORIES=	mail www productivity
 
@@ -47,7 +45,7 @@ BUILD_DEPENDS=	devel/gettext-tools \
 		textproc/xmlto
 
 WANTLIB += c m pthread z vmime iconv icudata icui18n icuuc intl
-WANTLIB += lzma crypto ssl
+WANTLIB += lzma crypto ssl kvm
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += curl nghttp2 ical icalss
