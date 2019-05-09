@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/20 19:57:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/09 14:14:02 afresh1 Exp $
 
 COMMENT =	part-of-speech tagger for EN natural language processing
 
-DISTNAME =	Lingua-EN-Tagger-0.25
+DISTNAME =	Lingua-EN-Tagger-0.30
 CATEGORIES =	textproc
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
