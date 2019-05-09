@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/09 09:37:56 rpointel Exp $
 
 COMMENT =	extracts the top level domain (TLD) from the URL given
 
-MODPY_EGG_VERSION =	0.9.2
+MODPY_EGG_VERSION =	0.9.3
 DISTNAME =	tld-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	net
 
