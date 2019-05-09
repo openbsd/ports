@@ -1,11 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/16 08:12:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/09 13:00:43 ajacoutot Exp $
 
 COMMENT=		thin layer of graphic data types
 
 GNOME_PROJECT=		graphene
-GNOME_VERSION=		1.8.6
+GNOME_VERSION=		1.9.1
 
-SHARED_LIBS += graphene-1.0              0.1 # 0.800.6
+# development version needed by x11/gtk+4
+DISTFILES=		graphene-5a4531baca.tar.gz
+MASTER_SITES=		https://distfiles.bsdfrog.org/
+WRKDIST=		${WRKDIR}/graphene-5a4531baca5a97587449df5a4e82d79c69501971
+
+SHARED_LIBS += graphene-1.0              1.0 # 0.901.0
 
 CATEGORIES=		graphics
 

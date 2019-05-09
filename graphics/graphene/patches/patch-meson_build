@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.1 2018/06/19 18:34:27 jca Exp $
+$OpenBSD: patch-meson_build,v 1.2 2019/05/09 13:00:43 ajacoutot Exp $
 
 Don't fail on
 /usr/include/signal.h:72: error: redundant redeclaration of '__errno'
@@ -6,7 +6,7 @@ Don't fail on
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -92,7 +92,6 @@ else
+@@ -96,7 +96,6 @@ else
      '-Wcast-align',
      '-Wno-unused-local-typedefs',
      '-Werror=float-conversion',
