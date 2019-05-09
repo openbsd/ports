@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_backends_meta-input-mapper_c,v 1.1 2019/05/09 16:47:51 ajacoutot Exp $
+
+From f9d6627fe03f68a132501a488f73e08080018115 Mon Sep 17 00:00:00 2001
+From: Carlos Garnacho <carlosg@gnome.org>
+Date: Fri, 3 May 2019 16:31:11 +0200
+Subject: [PATCH] backends: Fallback to builtin panel for devices where all heuristics fail
+
+Index: src/backends/meta-input-mapper.c
+--- src/backends/meta-input-mapper.c.orig
++++ src/backends/meta-input-mapper.c
+@@ -381,7 +381,7 @@ guess_candidates (MetaInputMapper     *mapper,
+       info->candidates[META_MATCH_SIZE] = matched_monitor;
+     }
+ 
+-  if (input->builtin)
++  if (input->builtin || best == N_OUTPUT_MATCHES)
+     {
+       best = MIN (best, META_MATCH_IS_BUILTIN);
+       find_builtin_output (mapper, &info->candidates[META_MATCH_IS_BUILTIN]);

@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_compositor_compositor-private_h,v 1.1 2019/05/09 16:47:51 ajacoutot Exp $
+
+From 668c44e66bf681ff50c62766ea9d1ca1d0762ec4 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Marco=20Trevisan=20=28Trevi=C3=B1o=29?= <mail@3v1n0.net>
+Date: Mon, 29 Apr 2019 20:02:18 +0000
+Subject: [PATCH] compositor: Disconnect from stage signals on destruction
+
+Index: src/compositor/compositor-private.h
+--- src/compositor/compositor-private.h.orig
++++ src/compositor/compositor-private.h
+@@ -18,6 +18,9 @@ struct _MetaCompositor
+   guint           pre_paint_func_id;
+   guint           post_paint_func_id;
+ 
++  guint           stage_presented_id;
++  guint           stage_after_paint_id;
++
+   gint64          server_time_query_time;
+   gint64          server_time_offset;
+ 
