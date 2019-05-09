@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.41 2018/08/10 09:50:54 espie Exp $
+# $OpenBSD: Locks.pm,v 1.42 2019/05/09 11:06:01 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -58,6 +58,8 @@ sub clean_old_locks
 	my $dir = $self->opendir($self->{lockdir});
 	DIR: while (my $e = readdir($dir)) {
 		next if $e eq '..' or $e eq '.';
+		# and zap vim temp files as well!
+		next if $e =~ m/\.swp$/;
 		my $f = "$self->{lockdir}/$e";
 		my $fh = $self->open('<', $f);
 		if (defined $fh) {
@@ -112,7 +114,6 @@ sub clean_old_locks
 			}
 		}
 	}
-	@problems = grep { !m/^\Q$self->{lockdir}\E\/\..*\.swp$/ } @problems;
 	if (@problems) {
 		$state->say("Problematic lockfiles I can't parse:\n\t#1\n".
 			"Waiting for ten seconds",
