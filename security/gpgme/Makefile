@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/03/30 15:27:45 jca Exp $
+# $OpenBSD: Makefile,v 1.50 2019/05/09 16:45:43 sthen Exp $
 
 COMMENT-main =		GnuPG Made Easy
 COMMENT-qt =		Qt bindings for GPGme
@@ -7,8 +7,7 @@ VERSION =		1.12.0
 DISTNAME =		gpgme-${VERSION}
 PKGNAME-main =		gpgme-${VERSION}
 PKGNAME-qt =		gpgme-qt-${VERSION}
-REVISION-main =		0
-REVISION-qt =		0
+REVISION =		1
 
 CATEGORIES =		security devel
 
@@ -29,7 +28,7 @@ WANTLIB-main = ${WANTLIB} c m
 WANTLIB-qt = ${COMPILER_LIBCXX} ${WANTLIB} Qt5Core execinfo glib-2.0
 WANTLIB-qt += gthread-2.0 icudata icui18n icuuc m pcre pcre2-16 z gpgme
 
-COMPILER =		base-clang ports-clang ports-gcc
+COMPILER =		base-clang ports-gcc
 
 MULTI_PACKAGES =	-main -qt
 PSEUDO_FLAVORS =	no_qt
