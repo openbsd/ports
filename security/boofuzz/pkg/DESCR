@@ -1,0 +1,2 @@
+Boofuzz is a fork of and the successor to the venerable Sulley fuzzing
+framework. Besides numerous bug fixes, boofuzz aims for extensibility.
