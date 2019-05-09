@@ -1,0 +1,6 @@
+The Product Classification Taxonomic module adds the taxonomic classification
+to the products.
+
+The available classifications are:
+- Taxon: http://en.wikipedia.org/wiki/Taxon
+- Cultivar: http://en.wikipedia.org/wiki/Cultivar
