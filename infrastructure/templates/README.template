@@ -6,8 +6,8 @@ details:
 - no trailing spaces or newlines;
 - rulers should be the length of the above string.
 
-------------------------8<------------------------
-$OpenBSD: README.template,v 1.6 2018/09/04 13:40:26 ajacoutot Exp $
+---------------------------------------8<---------------------------------------
+$OpenBSD: README.template,v 1.7 2019/05/09 17:45:05 ajacoutot Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -45,4 +45,4 @@ Section name 3
 
 Phasellus ut ipsum nulla. Aliquam lacus ligula, vulputate dignissim tristique
 eget, laoreet a risus. Mauris ullamcorper consectetur accumsan.
-------------------------8<------------------------
+---------------------------------------8<---------------------------------------
