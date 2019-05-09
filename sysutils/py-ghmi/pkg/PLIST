@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/08/31 19:04:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/05/09 15:54:25 jasper Exp $
 bin/fakebmc${MODPY_BIN_SUFFIX}
 bin/pyghmicons${MODPY_BIN_SUFFIX}
 bin/pyghmiutil${MODPY_BIN_SUFFIX}
@@ -110,6 +110,12 @@ lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/spd.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/private/util.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/ipmi/sdr.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/media.py
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/${MODPY_PYCACHE}command.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/command.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/storage.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/tests/
 lib/python${MODPY_VERSION}/site-packages/pyghmi/tests/__init__.py
