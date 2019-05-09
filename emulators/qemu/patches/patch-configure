@@ -1,11 +1,36 @@
-$OpenBSD: patch-configure,v 1.59 2018/12/19 17:57:06 sthen Exp $
+$OpenBSD: patch-configure,v 1.60 2019/05/09 05:12:53 ratchov Exp $
 
-Fix curses test to work on OpenBSD
+- sndio module
+- Fix curses test to work on OpenBSD
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -3370,6 +3370,7 @@ if test "$curses" != "no" ; then
+@@ -819,8 +819,8 @@ NetBSD)
+ OpenBSD)
+   bsd="yes"
+   make="${MAKE-gmake}"
+-  audio_drv_list="sdl"
+-  audio_possible_drivers="sdl"
++  audio_drv_list="sndio"
++  audio_possible_drivers="sndio"
+   HOST_VARIANT_DIR="openbsd"
+   supported_os="yes"
+ ;;
+@@ -3312,6 +3312,12 @@ for drv in $audio_drv_list; do
+     fi
+     ;;
+ 
++    sndio)
++    audio_drv_probe $drv sndio.h "-lsndio" \
++        "sio_open(0, SIO_PLAY, 0); return 0;"
++    sndio_libs="-lsndio"
++    ;;
++
+     coreaudio)
+       coreaudio_libs="-framework CoreAudio"
+     ;;
+@@ -3370,6 +3376,7 @@ if test "$curses" != "no" ; then
    fi
    curses_found=no
    cat > $TMPC << EOF
@@ -13,7 +38,7 @@ Index: configure
  #include <locale.h>
  #include <curses.h>
  #include <wchar.h>
-@@ -5631,10 +5632,6 @@ write_c_skeleton
+@@ -5631,10 +5638,6 @@ write_c_skeleton
  if test "$gcov" = "yes" ; then
    CFLAGS="-fprofile-arcs -ftest-coverage -g $CFLAGS"
    LDFLAGS="-fprofile-arcs -ftest-coverage $LDFLAGS"
@@ -24,3 +49,20 @@ Index: configure
  fi
  
  if test "$have_asan" = "yes"; then
+@@ -6261,7 +6264,7 @@ echo "CONFIG_AUDIO_DRIVERS=$audio_drv_list" >> $config
+ for drv in $audio_drv_list; do
+     def=CONFIG_AUDIO_$(echo $drv | LC_ALL=C tr '[a-z]' '[A-Z]')
+     case "$drv" in
+-	alsa | oss | pa | sdl)
++	alsa | oss | pa | sdl | sndio)
+ 	    echo "$def=m" >> $config_host_mak ;;
+ 	*)
+ 	    echo "$def=y" >> $config_host_mak ;;
+@@ -6275,6 +6278,7 @@ echo "OSS_LIBS=$oss_libs" >> $config_host_mak
+ if test "$audio_pt_int" = "yes" ; then
+   echo "CONFIG_AUDIO_PT_INT=y" >> $config_host_mak
+ fi
++echo "SNDIO_LIBS=$sndio_libs" >> $config_host_mak
+ if test "$audio_win_int" = "yes" ; then
+   echo "CONFIG_AUDIO_WIN_INT=y" >> $config_host_mak
+ fi

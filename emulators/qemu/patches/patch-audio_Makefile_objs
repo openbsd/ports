@@ -1,0 +1,16 @@
+$OpenBSD: patch-audio_Makefile_objs,v 1.1 2019/05/09 05:12:53 ratchov Exp $
+
+sndio module
+
+Index: audio/Makefile.objs
+--- audio/Makefile.objs.orig
++++ audio/Makefile.objs
+@@ -29,3 +29,8 @@ common-obj-$(CONFIG_AUDIO_SDL) += sdl.mo
+ sdl.mo-objs = sdlaudio.o
+ sdl.mo-cflags := $(SDL_CFLAGS)
+ sdl.mo-libs := $(SDL_LIBS)
++
++# sndio module
++common-obj-$(CONFIG_AUDIO_SNDIO) += sndio.mo
++sndio.mo-objs = sndioaudio.o
++sndio.mo-libs := $(SNDIO_LIBS)
