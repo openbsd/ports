@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2019/05/08 18:42:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2019/05/09 16:40:28 ajacoutot Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
 GNOME_VERSION=		3.32.1
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -44,6 +45,9 @@ RUN_DEPENDS +=		sysutils/consolekit
 
 CONFIGURE_ARGS=		-Dcheese=disabled \
 			-Dsoftware-sources=disabled
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/gnome-initial-setup/meson.build
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-initial-setup

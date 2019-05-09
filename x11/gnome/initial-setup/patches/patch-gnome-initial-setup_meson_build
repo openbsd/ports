@@ -1,6 +1,8 @@
-$OpenBSD: patch-gnome-initial-setup_meson_build,v 1.1 2019/05/08 18:42:30 ajacoutot Exp $
+$OpenBSD: patch-gnome-initial-setup_meson_build,v 1.2 2019/05/09 16:40:28 ajacoutot Exp $
 
 Disable NetworkManager.
+
+Find libkrb5.so.
 
 Index: gnome-initial-setup/meson.build
 --- gnome-initial-setup/meson.build.orig
@@ -14,3 +16,13 @@ Index: gnome-initial-setup/meson.build
      dependency ('polkit-gobject-1', version: '>= 0.103'),
      dependency ('accountsservice'),
      dependency ('gnome-desktop-3.0', version: '>= 3.7.5'),
+@@ -57,7 +55,8 @@ executable(
+     include_directories: config_h_dir,
+     dependencies: dependencies,
+     install: true,
+-    install_dir: get_option('libexecdir')
++    install_dir: get_option('libexecdir'),
++    install_rpath : '${LOCALBASE}/heimdal/lib'
+ )
+ 
+ executable(
