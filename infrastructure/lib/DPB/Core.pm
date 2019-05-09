@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.91 2019/05/08 15:06:24 espie Exp $
+# $OpenBSD: Core.pm,v 1.92 2019/05/09 11:05:36 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -800,7 +800,7 @@ our @ISA = qw(DPB::Core::Special);
 sub start
 {
 	my ($class, $reporter) = @_;
-	my $core = $class->new(DPB::Host->new('localhost'), {});
+	my $core = $class->new(DPB::Host->new('localhost'));
 	$core->start_job(DPB::Job::Infinite->new(DPB::Task::Fork->new(sub {
 		sleep($reporter->timeout);
 		exit(0);

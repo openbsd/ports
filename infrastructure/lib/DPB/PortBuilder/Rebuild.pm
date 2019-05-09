@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Rebuild.pm,v 1.4 2018/06/27 07:07:57 espie Exp $
+# $OpenBSD: Rebuild.pm,v 1.5 2019/05/09 11:05:36 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -30,7 +30,7 @@ sub init
 	    "file:/$self->{fullrepo}", $self->{state});
 	$self->{repository}{trusted} = 1;
 	# this is just a dummy core, for running quick pipes
-	$self->{core} = DPB::Core->new_noreg('localhost');
+	$self->{core} = DPB::Core->new_noreg(DPB::Host->new('localhost'));
 }
 
 my $uptodate = {};
