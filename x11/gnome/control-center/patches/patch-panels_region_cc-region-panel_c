@@ -1,0 +1,26 @@
+$OpenBSD: patch-panels_region_cc-region-panel_c,v 1.1 2019/05/09 17:22:49 ajacoutot Exp $
+
+From 5fac79b089bd7a58c4fca75db5df9672994aba2b Mon Sep 17 00:00:00 2001
+From: Robert Ancell <robert.ancell@canonical.com>
+Date: Tue, 9 Apr 2019 14:08:03 +1200
+Subject: [PATCH] region: Fix input source options not being applied.
+
+Index: panels/region/cc-region-panel.c
+--- panels/region/cc-region-panel.c.orig
++++ panels/region/cc-region-panel.c
+@@ -951,7 +951,6 @@ set_input_settings (CcRegionPanel *self)
+         }
+ 
+         g_settings_set_value (self->input_settings, KEY_INPUT_SOURCES, g_variant_builder_end (&builder));
+-        g_settings_apply (self->input_settings);
+ }
+ 
+ static void set_localed_input (CcRegionPanel *self);
+@@ -1204,7 +1203,6 @@ static void
+ setup_input_section (CcRegionPanel *self)
+ {
+         self->input_settings = g_settings_new (GNOME_DESKTOP_INPUT_SOURCES_DIR);
+-        g_settings_delay (self->input_settings);
+ 
+         self->xkb_info = gnome_xkb_info_new ();
+ 

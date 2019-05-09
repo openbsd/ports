@@ -1,0 +1,19 @@
+$OpenBSD: patch-panels_power_cc-power-panel_ui,v 1.1 2019/05/09 17:22:49 ajacoutot Exp $
+
+From 9a67cd088493cacb5f23e4afcef151dd3b8de205 Mon Sep 17 00:00:00 2001
+From: Ethan Hsieh <ethan.hsieh@canonical.com>
+Date: Thu, 2 May 2019 13:28:09 +0800
+Subject: [PATCH] power: correct the value of 90 minutes to 5400
+
+Index: panels/power/cc-power-panel.ui
+--- panels/power/cc-power-panel.ui.orig
++++ panels/power/cc-power-panel.ui
+@@ -39,7 +39,7 @@
+       </row>
+       <row>
+         <col id="0" translatable="yes" context="automatic_suspend" comments="Translators: Option for &quot;Delay&quot; in &quot;Automatic suspend&quot; dialog.">90 minutes</col>
+-        <col id="1">4800</col>
++        <col id="1">5400</col>
+       </row>
+       <row>
+         <col id="0" translatable="yes" context="automatic_suspend" comments="Translators: Option for &quot;Delay&quot; in &quot;Automatic suspend&quot; dialog.">100 minutes</col>

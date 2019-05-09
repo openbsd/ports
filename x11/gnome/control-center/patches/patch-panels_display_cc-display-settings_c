@@ -1,0 +1,23 @@
+$OpenBSD: patch-panels_display_cc-display-settings_c,v 1.1 2019/05/09 17:22:49 ajacoutot Exp $
+
+From 4d64299561558ee9b23f1259c8491014ea62432b Mon Sep 17 00:00:00 2001
+From: Benjamin Berg <bberg@redhat.com>
+Date: Fri, 26 Apr 2019 18:39:03 +0200
+Subject: [PATCH] display: Fix crash if a monitor has no preferred mode
+
+Index: panels/display/cc-display-settings.c
+--- panels/display/cc-display-settings.c.orig
++++ panels/display/cc-display-settings.c
+@@ -269,6 +269,12 @@ cc_display_settings_rebuild_ui (CcDisplaySettings *sel
+   current_mode = cc_display_monitor_get_mode (self->selected_output);
+   if (current_mode == NULL)
+     current_mode = cc_display_monitor_get_preferred_mode (self->selected_output);
++  if (current_mode == NULL) {
++    modes = cc_display_monitor_get_modes (self->selected_output);
++    /* Lets assume that a monitor always has at least one mode. */
++    g_assert (modes);
++    current_mode = CC_DISPLAY_MODE (modes->data);
++  }
+ 
+   if (should_show_rotation (self))
+     {

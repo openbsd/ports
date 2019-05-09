@@ -1,0 +1,24 @@
+$OpenBSD: patch-panels_mouse_gnome-mouse-properties_ui,v 1.1 2019/05/09 17:22:49 ajacoutot Exp $
+
+From 8e78f8438a75b21c0356c5b6a7b6d91bae62b1e4 Mon Sep 17 00:00:00 2001
+From: Felipe Borges <felipeborges@gnome.org>
+Date: Mon, 1 Apr 2019 11:25:35 +0000
+Subject: [PATCH] mouse: Reinstate keyboard navigation in the panel
+
+Index: panels/mouse/gnome-mouse-properties.ui
+--- panels/mouse/gnome-mouse-properties.ui.orig
++++ panels/mouse/gnome-mouse-properties.ui
+@@ -18,11 +18,11 @@
+   </object>
+   <template class="CcMouseProperties" parent="GtkBin">
+     <property name="visible">True</property>
+-    <property name="can_focus">True</property>
++    <property name="can_focus">False</property>
+     <child>
+       <object class="GtkScrolledWindow" id="scrolled_window">
+         <property name="visible">True</property>
+-        <property name="can_focus">True</property>
++        <property name="can_focus">False</property>
+         <property name="shadow_type">none</property>
+         <property name="hscrollbar_policy">never</property>
+         <signal name="size-allocate" handler="on_content_size_changed" object="CcMouseProperties" swapped="yes"/>
