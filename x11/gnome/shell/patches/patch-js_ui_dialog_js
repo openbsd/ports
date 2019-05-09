@@ -1,0 +1,19 @@
+$OpenBSD: patch-js_ui_dialog_js,v 1.1 2019/05/09 16:47:26 ajacoutot Exp $
+
+From 0539efc8df23909a5396194ca780613f21bb63d8 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Marco=20Trevisan=20=28Trevi=C3=B1o=29?= <mail@3v1n0.net>
+Date: Fri, 3 May 2019 20:27:13 +0000
+Subject: [PATCH] dialog: Really set ellipsize mode in subtitle and body
+
+Index: js/ui/dialog.js
+--- js/ui/dialog.js.orig
++++ js/ui/dialog.js
+@@ -175,7 +175,7 @@ var MessageDialogContent = GObject.registerClass({
+             this[`_${prop}`].add_style_class_name(`message-dialog-${prop}`);
+         });
+ 
+-        let textProps = { ellipsize_mode: Pango.EllipsizeMode.NONE,
++        let textProps = { ellipsize: Pango.EllipsizeMode.NONE,
+                           line_wrap: true };
+         Object.assign(this._subtitle.clutter_text, textProps);
+         Object.assign(this._body.clutter_text, textProps);

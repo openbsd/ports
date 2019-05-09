@@ -1,0 +1,24 @@
+$OpenBSD: patch-js_ui_workspacesView_js,v 1.1 2019/05/09 16:47:26 ajacoutot Exp $
+
+From 51501663366e68de80d5dd4ae2ed3be617ee49f9 Mon Sep 17 00:00:00 2001
+From: Carlos Garnacho <carlosg@gnome.org>
+Date: Fri, 19 Apr 2019 16:52:53 +0000
+Subject: [PATCH] workspacesView: sync gesture enabled state after setting it up completely
+
+Index: js/ui/workspacesView.js
+--- js/ui/workspacesView.js.orig
++++ js/ui/workspacesView.js
+@@ -479,12 +479,12 @@ var WorkspacesDisplay = class {
+         this.actor.connect('notify::mapped', () => {
+             switchGesture.enabled = this.actor.mapped;
+         });
+-        switchGesture.enabled = this.actor.mapped;
+ 
+         this._primaryIndex = Main.layoutManager.primaryIndex;
+ 
+         this._workspacesViews = [];
+         this._primaryScrollAdjustment = null;
++        switchGesture.enabled = this.actor.mapped;
+ 
+         this._settings = new Gio.Settings({ schema_id: MUTTER_SCHEMA });
+         this._settings.connect('changed::workspaces-only-on-primary',

@@ -1,0 +1,42 @@
+$OpenBSD: patch-js_ui_status_network_js,v 1.1 2019/05/09 16:47:26 ajacoutot Exp $
+
+From 2d9ed18668c158423cbc98fa69d85780beba6c2e Mon Sep 17 00:00:00 2001
+From: Fabrice Bellet <fabrice@bellet.info>
+Date: Tue, 7 May 2019 15:21:09 +0000
+Subject: [PATCH] network: Handle interface name changes
+
+Index: js/ui/status/network.js
+--- js/ui/status/network.js.orig
++++ js/ui/status/network.js
+@@ -1730,14 +1730,24 @@ var NMApplet = class extends PanelMenu.SystemIndicator
+             this._addDeviceWrapper(wrapper);
+ 
+             this._nmDevices.push(device);
+-            if (!skipSyncDeviceNames)
+-                this._syncDeviceNames();
++            this._deviceChanged(device, skipSyncDeviceNames);
+ 
+-            if (wrapper instanceof NMConnectionSection) {
+-                this._connections.forEach(connection => {
+-                    wrapper.checkConnection(connection);
+-                });
+-            }
++            device.connect('notify::interface', () => {
++                this._deviceChanged(device, false);
++            });
++        }
++    }
++
++    _deviceChanged(device, skipSyncDeviceNames) {
++        let wrapper = device._delegate;
++
++        if (!skipSyncDeviceNames)
++            this._syncDeviceNames();
++
++        if (wrapper instanceof NMConnectionSection) {
++            this._connections.forEach(connection => {
++                wrapper.checkConnection(connection);
++            });
+         }
+     }
+ 

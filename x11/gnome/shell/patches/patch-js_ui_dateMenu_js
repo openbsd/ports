@@ -1,0 +1,19 @@
+$OpenBSD: patch-js_ui_dateMenu_js,v 1.3 2019/05/09 16:47:26 ajacoutot Exp $
+
+From a1af8b94fda59c70fa5ac0b12b956b52d2b15795 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Florian=20M=C3=BCllner?= <fmuellner@gnome.org>
+Date: Sun, 28 Apr 2019 10:33:41 +0000
+Subject: [PATCH] worldClocks: Ignore locations with unknown timezone
+
+Index: js/ui/dateMenu.js
+--- js/ui/dateMenu.js.orig
++++ js/ui/dateMenu.js
+@@ -118,7 +118,7 @@ var WorldClocksSection = class WorldClocksSection {
+             if (!clocks[i].location)
+                 continue;
+             let l = world.deserialize(clocks[i].location);
+-            if (l)
++            if (l && l.get_timezone() != null)
+                 this._locations.push({ location: l });
+         }
+ 

@@ -1,0 +1,28 @@
+$OpenBSD: patch-js_ui_padOsd_js,v 1.1 2019/05/09 16:47:26 ajacoutot Exp $
+
+From 2d0e84469e625431eacbfc10152b206e84ec0d54 Mon Sep 17 00:00:00 2001
+From: Carlos Garnacho <carlosg@gnome.org>
+Date: Fri, 26 Apr 2019 13:03:42 +0200
+Subject: [PATCH] padOsd: Use non-deprecated librsvg API to create handle
+
+Index: js/ui/padOsd.js
+--- js/ui/padOsd.js.orig
++++ js/ui/padOsd.js
+@@ -374,12 +374,12 @@ var PadDiagram = GObject.registerClass({
+         svgData += this._cssString();
+         svgData += this._wrappingSvgFooter();
+ 
+-        let handle = new Rsvg.Handle();
+-        handle.set_base_uri(GLib.path_get_dirname(this._imagePath));
+-        handle.write(svgData);
+-        handle.close();
++        let istream = new Gio.MemoryInputStream();
++        istream.add_bytes(new GLib.Bytes(svgData));
+ 
+-        return handle;
++        return Rsvg.Handle.new_from_stream_sync(istream,
++                                                Gio.File.new_for_path(this._imagePath),
++                                                0, null);
+     }
+ 
+     _updateDiagramScale() {

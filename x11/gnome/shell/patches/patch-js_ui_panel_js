@@ -1,0 +1,19 @@
+$OpenBSD: patch-js_ui_panel_js,v 1.16 2019/05/09 16:47:26 ajacoutot Exp $
+
+From 059c729da0c4deaf71caa7a61a8fb91f7bf882d6 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Florian=20M=C3=BCllner?= <fmuellner@gnome.org>
+Date: Mon, 29 Apr 2019 17:53:57 +0000
+Subject: [PATCH] panel: Don't chain up to parent's allocate
+
+Index: js/ui/panel.js
+--- js/ui/panel.js.orig
++++ js/ui/panel.js
+@@ -882,7 +882,7 @@ class Panel extends St.Widget {
+     }
+ 
+     vfunc_allocate(box, flags) {
+-        super.vfunc_allocate(box, flags);
++        this.set_allocation(box, flags);
+ 
+         let allocWidth = box.x2 - box.x1;
+         let allocHeight = box.y2 - box.y1;
