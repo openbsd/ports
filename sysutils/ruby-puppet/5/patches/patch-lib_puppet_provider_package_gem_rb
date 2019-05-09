@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_package_gem_rb,v 1.1.1.1 2017/11/20 12:45:17 sebastia Exp $
+$OpenBSD: patch-lib_puppet_provider_package_gem_rb,v 1.2 2019/05/09 20:17:31 sebastia Exp $
 Index: lib/puppet/provider/package/gem.rb
 --- lib/puppet/provider/package/gem.rb.orig
 +++ lib/puppet/provider/package/gem.rb
@@ -9,5 +9,5 @@ Index: lib/puppet/provider/package/gem.rb
 -  commands :gemcmd => "gem"
 +  commands :gemcmd => "gem${MODRUBY_BINREV}"
  
-   def self.gemlist(options)
-     gem_list_command = [command(:gemcmd), "list"]
+   # CommandDefiner in provider.rb creates convenience execution methods that set failonfail, combine, and optionally, environment.
+   # And when a child provider defines its own command via commands() or has_command(), the provider-specific path is always returned by command().
