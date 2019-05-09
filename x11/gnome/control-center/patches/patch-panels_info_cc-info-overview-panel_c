@@ -1,77 +1,89 @@
-$OpenBSD: patch-panels_info_cc-info-overview-panel_c,v 1.3 2019/05/08 15:45:47 ajacoutot Exp $
+$OpenBSD: patch-panels_info_cc-info-overview-panel_c,v 1.4 2019/05/09 21:04:20 ajacoutot Exp $
 
-No udisks2 on OpenBSD (XXX add to meson_options.txt)
+No udisks2 on OpenBSD (XXX add HAVE_UDISKS2 to meson_options.txt)
+
+Implement minimal support for get_os_name() on OpenBSD
 
 Index: panels/info/cc-info-overview-panel.c
 --- panels/info/cc-info-overview-panel.c.orig
 +++ panels/info/cc-info-overview-panel.c
-@@ -36,7 +36,9 @@
+@@ -36,10 +36,16 @@
  #include <glibtop/mountlist.h>
  #include <glibtop/mem.h>
  #include <glibtop/sysinfo.h>
-+#if 0
++#ifdef HAVE_UDISKS2
  #include <udisks/udisks.h>
 +#endif
  
  #include <gdk/gdk.h>
  
-@@ -80,7 +82,9 @@ typedef struct
++#ifdef __OpenBSD__
++#include <sys/utsname.h>
++#endif
++
+ #ifdef GDK_WINDOWING_WAYLAND
+ #include <gdk/gdkwayland.h>
+ #endif
+@@ -80,7 +86,11 @@ typedef struct
  
    GCancellable   *cancellable;
  
-+#if 0
++#if HAVE_UDISKS2
    UDisksClient   *client;
++#else
++  void           *client;
 +#endif
  
    GraphicsData   *graphics_data;
  } CcInfoOverviewPanelPrivate;
-@@ -480,6 +484,7 @@ get_os_type (void)
-     return g_strdup_printf (_("32-bit"));
- }
- 
-+#if 0
- static void
- get_primary_disc_info (CcInfoOverviewPanel *self)
+@@ -429,6 +439,7 @@ get_os_info (void)
+ static char *
+ get_os_name (void)
  {
-@@ -527,6 +532,7 @@ get_primary_disc_info (CcInfoOverviewPanel *self)
-       gtk_label_set_text (GTK_LABEL (priv->disk_label), _("Unknown"));
-     }
- }
++#ifndef __OpenBSD__
+   GHashTable *os_info;
+   gchar *name, *version_id, *pretty_name, *build_id;
+   gchar *result = NULL;
+@@ -467,6 +478,16 @@ get_os_name (void)
+   g_clear_pointer (&os_info, g_hash_table_destroy);
+ 
+   return result;
++#else
++  gchar *result = NULL;
++  struct utsname u;
++  if (uname (&u) == -1)
++    result = g_strdup_printf (_("Unknown"));
++  else
++    result = g_strdup_printf ("%s %s %s", u.sysname, u.release, u.version);
++
++  return result;
 +#endif
+ }
  
  static char *
- get_cpu_info (const glibtop_sysinfo *info)
-@@ -726,7 +732,9 @@ info_overview_panel_setup_overview (CcInfoOverviewPane
-   os_name_text = get_os_name ();
-   gtk_label_set_text (GTK_LABEL (priv->os_name_label), os_name_text ? os_name_text : "");
- 
-+#if 0
-   get_primary_disc_info (self);
-+#endif
- 
-   gtk_label_set_markup (GTK_LABEL (priv->graphics_label), priv->graphics_data->hardware_string);
- }
-@@ -787,7 +795,9 @@ cc_info_overview_panel_finalize (GObject *object)
-       g_clear_object (&priv->cancellable);
+@@ -498,6 +519,7 @@ get_primary_disc_info (CcInfoOverviewPanel *self)
+       return;
      }
  
-+#if 0
-   g_clear_object (&priv->client);
-+#endif
++#ifdef HAVE_UDISKS2
+   manager = udisks_client_get_object_manager (priv->client);
+   objects = g_dbus_object_manager_get_objects (manager);
  
-   g_free (priv->gnome_version);
-   g_free (priv->gnome_date);
-@@ -842,11 +852,13 @@ cc_info_overview_panel_init (CcInfoOverviewPanel *self
+@@ -526,6 +548,7 @@ get_primary_disc_info (CcInfoOverviewPanel *self)
+     {
+       gtk_label_set_text (GTK_LABEL (priv->disk_label), _("Unknown"));
+     }
++#endif
+ }
+ 
+ static char *
+@@ -842,7 +865,9 @@ cc_info_overview_panel_init (CcInfoOverviewPanel *self
    else
      gtk_widget_destroy (priv->updates_button);
  
-+#if 0
++#if HAVE_UDISKS2
    priv->client = udisks_client_new_sync (NULL, &error);
++#endif
  
    if (error != NULL)
        g_warning ("Unable to get UDisks client: %s. Disk information will not be available.",
-                  error->message);
-+#endif
- 
-   info_overview_panel_setup_overview (self);
-   info_overview_panel_setup_virt (self);

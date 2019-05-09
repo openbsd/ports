@@ -1,6 +1,6 @@
-$OpenBSD: patch-panels_info_meson_build,v 1.1 2019/05/08 15:45:47 ajacoutot Exp $
+$OpenBSD: patch-panels_info_meson_build,v 1.2 2019/05/09 21:04:20 ajacoutot Exp $
 
-No udisks2 on OpenBSD (XXX add to meson_options.txt)
+No udisks2 on OpenBSD (XXX add HAVE_UDISKS2 to meson_options.txt)
 
 Index: panels/info/meson.build
 --- panels/info/meson.build.orig
