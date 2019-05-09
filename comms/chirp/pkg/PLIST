@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/01/19 15:38:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/05/09 15:59:34 abieber Exp $
 bin/chirpw
 bin/rpttool
 lib/python${MODPY_VERSION}/site-packages/chirp/
@@ -68,6 +68,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft2900.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft2900.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft2d.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft2d.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft4.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft4.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft450d.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft450d.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ft50.py
@@ -210,6 +212,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/tdxone_tdq8a.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/tdxone_tdq8a.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/template.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/template.pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/th350.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/th350.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/th7800.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/th7800.pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/th9000.py

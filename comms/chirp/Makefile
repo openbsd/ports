@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2019/01/19 15:38:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/09 15:59:34 abieber Exp $
 
 COMMENT=	tool to programme a wide range of amateur radios
 
-MODPY_EGG_VERSION= 20190112
+MODPY_EGG_VERSION= 20190429
 DISTNAME=	chirp-daily-${MODPY_EGG_VERSION}
 PKGNAME=	chirp-${MODPY_EGG_VERSION}
 
