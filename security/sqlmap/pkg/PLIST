@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/03/12 14:00:27 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.15 2019/05/09 14:03:14 jasper Exp $
 bin/sqlmap
 share/sqlmap/
 share/sqlmap/.github/
@@ -65,8 +65,10 @@ share/sqlmap/extra/shellcodeexec/windows/
 share/sqlmap/extra/shellcodeexec/windows/shellcodeexec.x32.exe_
 share/sqlmap/extra/shutils/
 share/sqlmap/extra/shutils/blanks.sh
+share/sqlmap/extra/shutils/drei.sh
 share/sqlmap/extra/shutils/duplicates.py
 share/sqlmap/extra/shutils/duplicates.pyc
+share/sqlmap/extra/shutils/junk.sh
 share/sqlmap/extra/shutils/newlines.py
 share/sqlmap/extra/shutils/newlines.pyc
 share/sqlmap/extra/shutils/postcommit-hook.sh
@@ -77,19 +79,12 @@ share/sqlmap/extra/shutils/pyflakes.sh
 share/sqlmap/extra/shutils/pylint.py
 share/sqlmap/extra/shutils/pylint.pyc
 share/sqlmap/extra/shutils/pypi.sh
-share/sqlmap/extra/shutils/regressiontest.py
-share/sqlmap/extra/shutils/regressiontest.pyc
 share/sqlmap/extra/shutils/strip.sh
-share/sqlmap/extra/sqlharvest/
-share/sqlmap/extra/sqlharvest/__init__.py
-share/sqlmap/extra/sqlharvest/__init__.pyc
-share/sqlmap/extra/sqlharvest/sqlharvest.py
-share/sqlmap/extra/sqlharvest/sqlharvest.pyc
-share/sqlmap/extra/wafdetectify/
-share/sqlmap/extra/wafdetectify/__init__.py
-share/sqlmap/extra/wafdetectify/__init__.pyc
-share/sqlmap/extra/wafdetectify/wafdetectify.py
-share/sqlmap/extra/wafdetectify/wafdetectify.pyc
+share/sqlmap/extra/vulnserver/
+share/sqlmap/extra/vulnserver/__init__.py
+share/sqlmap/extra/vulnserver/__init__.pyc
+share/sqlmap/extra/vulnserver/vulnserver.py
+share/sqlmap/extra/vulnserver/vulnserver.pyc
 share/sqlmap/lib/
 share/sqlmap/lib/__init__.py
 share/sqlmap/lib/__init__.pyc
@@ -113,6 +108,8 @@ share/sqlmap/lib/core/bigarray.py
 share/sqlmap/lib/core/bigarray.pyc
 share/sqlmap/lib/core/common.py
 share/sqlmap/lib/core/common.pyc
+share/sqlmap/lib/core/compat.py
+share/sqlmap/lib/core/compat.pyc
 share/sqlmap/lib/core/convert.py
 share/sqlmap/lib/core/convert.pyc
 share/sqlmap/lib/core/data.py
@@ -193,6 +190,8 @@ share/sqlmap/lib/request/basic.py
 share/sqlmap/lib/request/basic.pyc
 share/sqlmap/lib/request/basicauthhandler.py
 share/sqlmap/lib/request/basicauthhandler.pyc
+share/sqlmap/lib/request/chunkedhandler.py
+share/sqlmap/lib/request/chunkedhandler.pyc
 share/sqlmap/lib/request/comparison.py
 share/sqlmap/lib/request/comparison.pyc
 share/sqlmap/lib/request/connect.py
@@ -288,6 +287,8 @@ share/sqlmap/lib/utils/purge.py
 share/sqlmap/lib/utils/purge.pyc
 share/sqlmap/lib/utils/search.py
 share/sqlmap/lib/utils/search.pyc
+share/sqlmap/lib/utils/sgmllib.py
+share/sqlmap/lib/utils/sgmllib.pyc
 share/sqlmap/lib/utils/sqlalchemy.py
 share/sqlmap/lib/utils/sqlalchemy.pyc
 share/sqlmap/lib/utils/timeout.py
@@ -561,8 +562,6 @@ share/sqlmap/sqlmapapi.py
 share/sqlmap/sqlmapapi.pyc
 share/sqlmap/swagger.yaml
 share/sqlmap/tamper/
-share/sqlmap/tamper/0x2char.py
-share/sqlmap/tamper/0x2char.pyc
 share/sqlmap/tamper/__init__.py
 share/sqlmap/tamper/__init__.pyc
 share/sqlmap/tamper/apostrophemask.py
@@ -601,6 +600,8 @@ share/sqlmap/tamper/greatest.py
 share/sqlmap/tamper/greatest.pyc
 share/sqlmap/tamper/halfversionedmorekeywords.py
 share/sqlmap/tamper/halfversionedmorekeywords.pyc
+share/sqlmap/tamper/hex2char.py
+share/sqlmap/tamper/hex2char.pyc
 share/sqlmap/tamper/htmlencode.py
 share/sqlmap/tamper/htmlencode.pyc
 share/sqlmap/tamper/ifnull2casewhenisnull.py
@@ -659,6 +660,8 @@ share/sqlmap/tamper/space2plus.py
 share/sqlmap/tamper/space2plus.pyc
 share/sqlmap/tamper/space2randomblank.py
 share/sqlmap/tamper/space2randomblank.pyc
+share/sqlmap/tamper/substring2leftright.py
+share/sqlmap/tamper/substring2leftright.pyc
 share/sqlmap/tamper/symboliclogical.py
 share/sqlmap/tamper/symboliclogical.pyc
 share/sqlmap/tamper/unionalltounion.py
@@ -816,16 +819,8 @@ share/sqlmap/thirdparty/multipart/multipartpost.pyc
 share/sqlmap/thirdparty/odict/
 share/sqlmap/thirdparty/odict/__init__.py
 share/sqlmap/thirdparty/odict/__init__.pyc
-share/sqlmap/thirdparty/odict/odict.py
-share/sqlmap/thirdparty/odict/odict.pyc
-share/sqlmap/thirdparty/oset/
-share/sqlmap/thirdparty/oset/LICENSE.txt
-share/sqlmap/thirdparty/oset/__init__.py
-share/sqlmap/thirdparty/oset/__init__.pyc
-share/sqlmap/thirdparty/oset/_abc.py
-share/sqlmap/thirdparty/oset/_abc.pyc
-share/sqlmap/thirdparty/oset/pyoset.py
-share/sqlmap/thirdparty/oset/pyoset.pyc
+share/sqlmap/thirdparty/odict/ordereddict.py
+share/sqlmap/thirdparty/odict/ordereddict.pyc
 share/sqlmap/thirdparty/prettyprint/
 share/sqlmap/thirdparty/prettyprint/__init__.py
 share/sqlmap/thirdparty/prettyprint/__init__.pyc
@@ -836,6 +831,9 @@ share/sqlmap/thirdparty/pydes/__init__.py
 share/sqlmap/thirdparty/pydes/__init__.pyc
 share/sqlmap/thirdparty/pydes/pyDes.py
 share/sqlmap/thirdparty/pydes/pyDes.pyc
+share/sqlmap/thirdparty/six/
+share/sqlmap/thirdparty/six/__init__.py
+share/sqlmap/thirdparty/six/__init__.pyc
 share/sqlmap/thirdparty/socks/
 share/sqlmap/thirdparty/socks/LICENSE
 share/sqlmap/thirdparty/socks/__init__.py
@@ -858,7 +856,6 @@ share/sqlmap/thirdparty/xdot/__init__.pyc
 share/sqlmap/thirdparty/xdot/xdot.py
 share/sqlmap/thirdparty/xdot/xdot.pyc
 share/sqlmap/txt/
-share/sqlmap/txt/checksum.md5
 share/sqlmap/txt/common-columns.txt
 share/sqlmap/txt/common-outputs.txt
 share/sqlmap/txt/common-tables.txt
@@ -942,6 +939,8 @@ share/sqlmap/waf/armor.py
 share/sqlmap/waf/armor.pyc
 share/sqlmap/waf/asm.py
 share/sqlmap/waf/asm.pyc
+share/sqlmap/waf/astra.py
+share/sqlmap/waf/astra.pyc
 share/sqlmap/waf/aws.py
 share/sqlmap/waf/aws.pyc
 share/sqlmap/waf/barracuda.py
@@ -1032,6 +1031,8 @@ share/sqlmap/waf/safe3.py
 share/sqlmap/waf/safe3.pyc
 share/sqlmap/waf/safedog.py
 share/sqlmap/waf/safedog.pyc
+share/sqlmap/waf/safeline.py
+share/sqlmap/waf/safeline.pyc
 share/sqlmap/waf/secureentry.py
 share/sqlmap/waf/secureentry.pyc
 share/sqlmap/waf/secureiis.py
