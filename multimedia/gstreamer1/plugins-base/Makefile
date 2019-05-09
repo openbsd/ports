@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.72 2019/04/24 08:48:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2019/05/09 12:59:57 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += gsttag-1.0                5.0 # 0.1600.0
 SHARED_LIBS += gstfft-1.0                5.0 # 0.1600.0
@@ -25,7 +25,7 @@ WANTLIB += EGL GL X11 X11-xcb Xext Xv c cairo cdda_interface cdda_paranoia
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphene-1.0
 WANTLIB += gstbase-1.0 gstcontroller-1.0 gstnet-1.0 gstreamer-1.0
 WANTLIB += intl jpeg m ogg opus orc-0.4 pango-1.0 pangocairo-1.0
-WANTLIB += png16 pthread sndio theoradec theoraenc vorbis vorbisenc
+WANTLIB += png pthread sndio theoradec theoraenc vorbis vorbisenc
 WANTLIB += xcb z
 
 BUILD_DEPENDS=		devel/iso-codes \
