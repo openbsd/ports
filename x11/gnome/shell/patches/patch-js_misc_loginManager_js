@@ -1,4 +1,4 @@
-$OpenBSD: patch-js_misc_loginManager_js,v 1.7 2019/05/08 16:17:27 jasper Exp $
+$OpenBSD: patch-js_misc_loginManager_js,v 1.8 2019/05/09 14:53:28 jasper Exp $
 
 Index: js/misc/loginManager.js
 --- js/misc/loginManager.js.orig
@@ -34,21 +34,19 @@ Index: js/misc/loginManager.js
      }
  
      return _loginManager;
-@@ -175,6 +181,84 @@ var LoginManagerSystemd = class {
+@@ -175,6 +181,82 @@ var LoginManagerSystemd = class {
      }
  };
  Signals.addSignalMethods(LoginManagerSystemd.prototype);
 +
-+var LoginManagerConsoleKit = new Lang.Class({
-+    Name: 'LoginManagerConsoleKit',
-+
-+    _init: function() {
++var LoginManagerConsoleKit = class {
++    constructor () {
 +        this._proxy = new ConsoleKitManager(Gio.DBus.system,
 +                                            'org.freedesktop.ConsoleKit',
 +                                            '/org/freedesktop/ConsoleKit/Manager');
 +        this._proxy.connectSignal('PrepareForSleep',
 +                                  this._prepareForSleep.bind(this));
-+    },
++    }
 +
 +    // Having this function is a bit of a hack since the Systemd and ConsoleKit
 +    // session objects have different interfaces - but in both cases there are
@@ -71,7 +69,7 @@ Index: js/misc/loginManager.js
 +                callback(this._currentSession);
 +            }
 +        });
-+    },
++    }
 +
 +    canSuspend(asyncCallback) {
 +        this._proxy.CanSuspendRemote((result, error) => {
@@ -81,15 +79,15 @@ Index: js/misc/loginManager.js
 +                asyncCallback(result[0], false);
 +            }
 +        });
-+    },
++    }
 +
 +    listSessions(asyncCallback) {
 +        asyncCallback([]);
-+    },
++    }
 +
 +    suspend() {
 +        this._proxy.SuspendRemote(true);
-+    },
++    }
 +
 +    inhibit(reason, callback) {
 +        let inVariant = GLib.Variant.new('(ssss)',
@@ -109,12 +107,12 @@ Index: js/misc/loginManager.js
 +                    callback(null);
 +                }
 +            });
-+    },
++    }
 +
 +    _prepareForSleep(proxy, sender, [aboutToSuspend]) {
 +        this.emit('prepare-for-sleep', aboutToSuspend);
 +    }
-+})
++}
 +Signals.addSignalMethods(LoginManagerConsoleKit.prototype);
  
  var LoginManagerDummy = class {
