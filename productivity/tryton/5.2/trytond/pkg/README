@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1.1.1 2019/05/09 11:49:02 semarie Exp $
+$OpenBSD: README,v 1.2 2019/05/09 17:39:24 semarie Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
 
 PostgreSQL is the recommended daemon for production usage. Trytond has support
 for SQLite too, but intended only for testing purpose.
@@ -152,4 +156,3 @@ or installing a module using pip${MODPY_VERSION} (installable from ports):
 	$ HOME=${LOCALSTATEDIR}/trytond pip${MODPY_VERSION} install --user .
 
 	$ HOME=${LOCALSTATEDIR}/trytond pip${MODPY_VERSION} install --user my-module
-
