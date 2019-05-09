@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.92 2019/05/08 16:25:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.93 2019/05/09 10:37:05 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
 GNOME_VERSION=		3.32.1
-REVISION=		0
+REVISION=		1
 
 API_SUFFIX=		-4
 SUBST_VARS=		API_SUFFIX
@@ -39,9 +39,11 @@ LIB_DEPENDS=		audio/libcanberra \
 			x11/xkbcommon
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas>=3.16.0 \
+			x11/gnome/settings-daemon \
 			x11/gnome/zenity
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas>=3.16.0 \
+			x11/gnome/settings-daemon \
 			x11/gnome/zenity
 
 # Required by embedded cogl/clutter forks.
