@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/08 07:26:55 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/09 01:05:50 bentley Exp $
 bin/sigil
 lib/sigil/
-lib/sigil/libhunspell.so
 lib/sigil/libsigilgumbo.so
 @bin lib/sigil/sigil
 share/applications/sigil.desktop
