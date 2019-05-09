@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.544 2019/05/08 21:16:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.545 2019/05/09 14:16:10 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -12,6 +12,7 @@
      SUBDIR += argon2
      SUBDIR += arirang
      SUBDIR += bfbtester
+     SUBDIR += boofuzz
      SUBDIR += botan
      SUBDIR += botan2
      SUBDIR += bounix
