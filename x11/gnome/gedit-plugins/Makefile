@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2019/05/08 13:23:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.103 2019/05/09 02:19:48 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
@@ -31,6 +31,9 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/dbus-python${MODPY_FLAVOR} \
 			x11/gnome/gedit>=3.14.0 \
 			x11/gnome/gucharmap
+
+# msgfmt: cannot locate ITS rules for plugins/bookmarks/gedit-bookmarks.metainfo.xml.in
+BUILD_DEPENDS +=	devel/appstream-glib
 
 LIB_DEPENDS=		devel/libpeas \
 			x11/gtksourceview4
