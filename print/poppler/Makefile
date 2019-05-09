@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.139 2019/05/06 21:17:19 kili Exp $
+# $OpenBSD: Makefile,v 1.140 2019/05/09 11:23:04 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt5=	Qt5 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
-V=		0.76.0
+V=		0.76.1
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
