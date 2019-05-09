@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2018/09/04 12:46:22 espie Exp $
+$OpenBSD: README,v 1.6 2019/05/09 14:09:36 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -9,6 +9,3 @@ to the session script (note: gdm(1) does this automatically). e.g.
     ${PREFIX}/bin/ck-launch-session ${PREFIX}/bin/openbox-session
 
 Note that you need a system-wide DBus daemon running.
-
-The ${LOCALSTATEDIR}/log/ConsoleKit/history logfile can grow very large after some
-time. It is advised to use newsyslog(8) to rotate it.
