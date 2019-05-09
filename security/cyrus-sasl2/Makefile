@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2019/01/31 09:43:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2019/05/09 03:27:40 jca Exp $
 
 # XXX merge this patch and rid of the dot.la files?
 https://git.archlinux.org/svntogit/packages.git/tree/trunk/0030-dont_use_la_files_for_opening_plugins.patch?h=packages/cyrus-sasl
@@ -89,6 +89,7 @@ PKG_ARGS=		-Dsql=0
 .if ${FLAVOR:Mmysql}
 LIB_DEPENDS +=		databases/mariadb
 WANTLIB+= m pthread ssl z lib/mysql/mysqlclient
+CONFIGURE_ARGS +=	--with-mysql="${LOCALBASE}"
 .else
 CONFIGURE_ARGS +=	--without-mysql
 .endif
