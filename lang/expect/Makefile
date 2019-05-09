@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.70 2016/03/12 12:10:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.71 2019/05/09 21:13:26 danj Exp $
 
 COMMENT =	sophisticated scripter based on Tcl/Tk
 
 VERSION =	5.45
 DISTNAME =	expect${VERSION}
 PKGNAME =	expect-${VERSION}
-REVISION =	5
+REVISION =	6
 SHARED_LIBS =	expect545 0.0
 CATEGORIES =	lang
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=expect/}
 
 HOMEPAGE =	http://expect.nist.gov/
-MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
-
 # PD
 PERMIT_PACKAGE_CDROM =	Yes
 

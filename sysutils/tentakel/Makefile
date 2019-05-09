@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2015/12/03 21:24:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/09 21:13:26 danj Exp $
 
 COMMENT=	distributed command execution
 
 DISTNAME=	tentakel-357
-REVISION =	4
+REVISION =	5
 CATEGORIES=	sysutils
-MAINTAINER=	Sebastian Stark <seb@todesplanet.de>
 HOMEPAGE=	http://tentakel.biskalar.de/
 
 MODPY_EGG_VERSION = 2.2.1

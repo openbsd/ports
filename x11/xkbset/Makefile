@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2018/05/17 10:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/09 21:13:26 danj Exp $
 
 COMMENT-main=	X11 keyboard accessibility tool
 COMMENT-gui=	GUI for xkbset
 
 DISTNAME=	xkbset-0.5
 PKGNAME-main=	xkbset-0.5
-REVISION-main=	2
+REVISION-main=	3
 PKGNAME-gui=	xkbset-gui-0.5
-REVISION-gui=	1
+REVISION-gui=	2
 CATEGORIES=	x11
-MAINTAINER=	Sebastian Stark <seb@todesplanet.de>
-
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
