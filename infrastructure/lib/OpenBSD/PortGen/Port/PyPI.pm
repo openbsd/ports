@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.5 2019/05/08 14:55:20 afresh1 Exp $
+# $OpenBSD: PyPI.pm,v 1.6 2019/05/09 02:13:57 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -133,8 +133,9 @@ sub get_deps
 			$phase = $1;
 		}
 
+		s/^\s+//; # Remove leading spaces
+
 		my ( $req, $meta ) = split /\s*;\s*/;
-		$req =~ s/^\s+//;
 		$req ||= ">=0";
 		$req =~ s/^.*( [(] ) (.*?) (?(1) [)] ).*/$2/x;
 
