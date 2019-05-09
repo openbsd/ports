@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/30 03:36:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/09 17:02:30 jasper Exp $
 
 COMMENT =			cross-platform DICOM implementation
 
-DISTNAME =			gdcm-2.8.9
+DISTNAME =			gdcm-3.0.0
 
-SHARED_LIBS +=  gdcmCommon                0.0 # 2.8
-SHARED_LIBS +=  gdcmDICT                  0.0 # 2.8
-SHARED_LIBS +=  gdcmDSED                  0.0 # 2.8
-SHARED_LIBS +=  gdcmIOD                   0.0 # 2.8
-SHARED_LIBS +=  gdcmMEXD                  0.0 # 2.8
-SHARED_LIBS +=  gdcmMSFF                  0.0 # 2.8
-SHARED_LIBS +=  gdcmcharls                0.0 # 1.1
-SHARED_LIBS +=  gdcmjpeg12                0.0 # 2.8
-SHARED_LIBS +=  gdcmjpeg16                0.0 # 2.8
-SHARED_LIBS +=  gdcmjpeg8                 0.0 # 2.8
-SHARED_LIBS +=  socketxx                  0.0 # 1.2
+SHARED_LIBS +=  gdcmCommon                1.0 # 2.8
+SHARED_LIBS +=  gdcmDICT                  1.0 # 2.8
+SHARED_LIBS +=  gdcmDSED                  1.0 # 2.8
+SHARED_LIBS +=  gdcmIOD                   1.0 # 2.8
+SHARED_LIBS +=  gdcmMEXD                  1.0 # 2.8
+SHARED_LIBS +=  gdcmMSFF                  1.0 # 2.8
+SHARED_LIBS +=  gdcmcharls                1.0 # 1.1
+SHARED_LIBS +=  gdcmjpeg12                1.0 # 2.8
+SHARED_LIBS +=  gdcmjpeg16                1.0 # 2.8
+SHARED_LIBS +=  gdcmjpeg8                 1.0 # 2.8
+SHARED_LIBS +=  socketxx                  1.0 # 1.2
+API_V =				3.0
 CATEGORIES =			graphics
-API_V =				2.8
 
 HOMEPAGE =			http://gdcm.sourceforge.net/
 
