@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.79 2019/05/08 12:59:33 espie Exp $
+# $OpenBSD: Config.pm,v 1.80 2019/05/09 11:08:55 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -241,6 +241,10 @@ sub parse_command_line
 	}
 	if ($state->define_present('FETCH_JOBS') && !defined $state->{opt}{f}) {
 		$state->{opt}{f} = $state->{subst}->value('FETCH_JOBS');
+	}
+	if ($state->define_present('LISTING_EXTRA') && 
+	    !defined $state->{opt}{e}) {
+		$state->{opt}{e} = $state->{subst}->value('LISTING_EXTRA');
 	}
 	if ($state->define_present('LOCKDIR')) {
 		$state->{lockdir} = $state->{subst}->value('LOCKDIR');
