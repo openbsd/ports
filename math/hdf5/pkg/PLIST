@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/12/28 18:39:49 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/05/10 15:12:19 feinerer Exp $
 @bin bin/gif2h5
 @bin bin/h52gif
 bin/h5c++
 bin/h5cc
+@bin bin/h5clear
 @bin bin/h5copy
 @bin bin/h5debug
 @bin bin/h5diff
 @bin bin/h5dump
+@bin bin/h5format_convert
 @bin bin/h5import
 @bin bin/h5jam
 @bin bin/h5ls
@@ -17,9 +19,9 @@ bin/h5redeploy
 @bin bin/h5repart
 @bin bin/h5stat
 @bin bin/h5unjam
+@bin bin/h5watch
 include/H5ACpublic.h
 include/H5AbstractDs.h
-include/H5AcreatProp.h
 include/H5Apublic.h
 include/H5ArrayType.h
 include/H5AtomType.h
@@ -32,6 +34,7 @@ include/H5CppDoc.h
 include/H5Cpublic.h
 include/H5DOpublic.h
 include/H5DSpublic.h
+include/H5DaccProp.h
 include/H5DataSet.h
 include/H5DataSpace.h
 include/H5DataType.h
@@ -52,6 +55,7 @@ include/H5FDmulti.h
 include/H5FDpublic.h
 include/H5FDsec2.h
 include/H5FDstdio.h
+include/H5FDwindows.h
 include/H5FaccProp.h
 include/H5FcreatProp.h
 include/H5File.h
@@ -64,6 +68,7 @@ include/H5IdComponent.h
 include/H5Include.h
 include/H5IntType.h
 include/H5Ipublic.h
+include/H5LDpublic.h
 include/H5LTpublic.h
 include/H5LaccProp.h
 include/H5LcreatProp.h
@@ -84,7 +89,6 @@ include/H5PropList.h
 include/H5Rpublic.h
 include/H5Spublic.h
 include/H5StrType.h
-include/H5StrcreatProp.h
 include/H5TBpublic.h
 include/H5Tpublic.h
 include/H5VarLenType.h
@@ -155,6 +159,14 @@ share/examples/hdf5/c/h5_reference.c
 share/examples/hdf5/c/h5_select.c
 share/examples/hdf5/c/h5_shared_mesg.c
 share/examples/hdf5/c/h5_subset.c
+share/examples/hdf5/c/h5_vds-eiger.c
+share/examples/hdf5/c/h5_vds-exc.c
+share/examples/hdf5/c/h5_vds-exclim.c
+share/examples/hdf5/c/h5_vds-percival-unlim-maxmin.c
+share/examples/hdf5/c/h5_vds-percival-unlim.c
+share/examples/hdf5/c/h5_vds-percival.c
+share/examples/hdf5/c/h5_vds-simpleIO.c
+share/examples/hdf5/c/h5_vds.c
 share/examples/hdf5/c/h5_write.c
 share/examples/hdf5/c/ph5example.c
 share/examples/hdf5/c/run-c-ex.sh

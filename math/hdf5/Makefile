@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2018/12/28 18:39:49 feinerer Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/10 15:12:19 feinerer Exp $
 
 COMMENT =		Hierarchical Data Format 5 Technology suite
 
-V =			1.8.21
+V =			1.10.5
 DISTNAME =		hdf5-${V}
 
-SHARED_LIBS +=	hdf5		1.2 # 13.2
-SHARED_LIBS +=	hdf5_cpp	5.0 # 16.0
-SHARED_LIBS +=	hdf5_hl		1.1 # 12.2
-SHARED_LIBS +=	hdf5_hl_cpp	2.0 # 12.2
+SHARED_LIBS +=	hdf5		2.0 # 104.0
+SHARED_LIBS +=	hdf5_cpp	6.0 # 104.0
+SHARED_LIBS +=	hdf5_hl		2.0 # 101.2
+SHARED_LIBS +=	hdf5_hl_cpp	3.0 # 101.3
 
 CATEGORIES =		math
 
@@ -23,8 +23,8 @@ WANTLIB += c m ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		https://support.hdfgroup.org/ftp/HDF5/current18/src/ \
-			https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-${V}/src/
+MASTER_SITES =		https://support.hdfgroup.org/ftp/HDF5/current/src/ \
+			https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-${V}/src/
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
