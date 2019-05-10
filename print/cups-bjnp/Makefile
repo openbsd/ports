@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2014/10/12 06:36:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/10 19:38:01 danj Exp $
 
 COMMENT =	BJNP protocol backend for CUPS
 DISTNAME =	cups-bjnp-2.0
 CATEGORIES =	print
+REVISION =	0
 
 HOMEPAGE =	http://cups-bjnp.sourceforge.net
-MAINTAINER =	Julian Andrej <atomic@wolfman.devio.us>
-
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
