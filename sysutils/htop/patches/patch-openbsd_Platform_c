@@ -1,4 +1,4 @@
-$OpenBSD: patch-openbsd_Platform_c,v 1.5 2019/05/10 02:17:46 ians Exp $
+$OpenBSD: patch-openbsd_Platform_c,v 1.6 2019/05/10 04:24:36 ians Exp $
 
 Use sched.h macros instead of hardcoding, the former broke when we introduced
 CP_SPIN cpu state.
@@ -35,3 +35,12 @@ Index: openbsd/Platform.c
  
     perc = v[0] + v[1] + v[2] + v[3];
  
+@@ -286,7 +286,7 @@ void Platform_setSwapValues(Meter* this) {
+    this->total = pl->totalSwap = total;
+    this->values[0] = pl->usedSwap = used;
+ 
+-   free(swdev);
++   //free(swdev);
+ }
+ 
+ void Platform_setTasksValues(Meter* this) {
