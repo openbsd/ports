@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2017/12/11 12:42:19 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/10 15:42:08 afresh1 Exp $
 
 COMMENT =	CGI interface for FastCGI
-DISTNAME =	CGI-Fast-2.13
+DISTNAME =	CGI-Fast-2.15
 CATEGORIES =	www
 
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
