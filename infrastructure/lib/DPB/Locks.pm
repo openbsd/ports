@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.42 2019/05/09 11:06:01 espie Exp $
+# $OpenBSD: Locks.pm,v 1.43 2019/05/10 18:48:41 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -83,9 +83,9 @@ sub clean_old_locks
 				}
 			}
 			if (defined $tag) {
-				DPB::Core::Init->taint($host, $tag, $path);
+				DPB::Core::Init->taint($client, $tag, $path);
 			}
-			$info->{$f} = [$host, $path] if defined $path;
+			$info->{$f} = [$client, $path] if defined $path;
 			if (defined $pid) {
 				push(@{$locks->{$pid}}, $f);
 			} else {
