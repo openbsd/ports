@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.773 2019/05/10 02:38:04 benno Exp $
+# $OpenBSD: Quirks.pm,v 1.774 2019/05/10 12:11:33 bket Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1401,6 +1401,8 @@ my $cve = {
 	'www/gitea' => 'gitea-<1.7.6',
 	'www/hiawatha' => 'hiawatha-<10.8.4',
 	'www/iridium' => 'iridium-<2018.5.67',
+	'www/jupyter-notebook' => 'jupyter-notebook-<5.7.8',
+	'www/jupyter-notebook,python3' => 'jupyter-notebook3-<5.7.8',
 	'www/mozilla-firefox' => 'firefox-<62.0.2p0',
 	'www/nginx' => 'nginx-<1.4.1',
 	'www/p5-CGI-Application' => 'p5-CGI-Application-<4.50p0',
