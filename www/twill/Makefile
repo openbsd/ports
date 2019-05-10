@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2015/09/29 10:53:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/10 16:50:05 danj Exp $
 
 COMMENT=		simple scripting language for web browsing
 
 DISTNAME=		twill-0.9
-REVISION=		5
+REVISION=		6
 CATEGORIES=		www
 
 HOMEPAGE=		http://twill.idyll.org/
 MASTER_SITES=		http://darcs.idyll.org/~t/projects/
-
-MAINTAINER=		Will Maier <willmaier@ml1.net>
 
 # MIT
 # Includes patched versions of:

@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/12 13:19:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/10 16:50:05 danj Exp $
 
 COMMENT=		statistical anti-spam filter
 
 MODPY_EGG_VERSION=	1.1b1
 DISTNAME=		spambayes-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		mail
 
 HOMEPAGE=		http://www.spambayes.org/
-
-MAINTAINER=		Will Maier <willmaier@ml1.net>
 
 # PSF
 PERMIT_PACKAGE_CDROM=	Yes

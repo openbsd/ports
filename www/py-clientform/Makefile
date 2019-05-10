@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2016/01/12 13:19:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/10 16:50:05 danj Exp $
 
 COMMENT=		handle HTML forms on the client side
 
 MODPY_EGG_VERSION=	0.2.10
 DISTNAME=		ClientForm-${MODPY_EGG_VERSION}
 PKGNAME=		py-clientform-${MODPY_EGG_VERSION}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		www
 
 HOMEPAGE=		http://wwwsearch.sourceforge.net/ClientForm/
 MASTER_SITES=		${HOMEPAGE}src/
-
-MAINTAINER=		Will Maier <willmaier@ml1.net>
 
 # BSD-like or ZPL
 PERMIT_PACKAGE_CDROM=	Yes

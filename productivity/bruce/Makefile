@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2018/04/01 09:29:31 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/10 16:50:05 danj Exp $
 
 COMMENT=		Python-based presentation tool
 
 MODPY_EGG_VERSION=	1.2.1
 DISTNAME=		bruce-${MODPY_EGG_VERSION}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES=		productivity
 
 HOMEPAGE=		https://sites.google.com/site/r1chardj0n3s/bruce
-
-MAINTAINER=		Will Maier <willmaier@ml1.net>
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes

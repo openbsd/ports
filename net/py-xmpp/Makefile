@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/01/12 13:19:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/10 16:50:05 danj Exp $
 
 COMMENT=		Python XMPP and Jabber implementation
 
@@ -6,11 +6,9 @@ MODPY_EGG_VERSION=	1.1.2
 DISTNAME=		pyxmpp-${MODPY_EGG_VERSION}
 PKGNAME=		${DISTNAME:S/^py/py-/}
 CATEGORIES=		net devel
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://pyxmpp.jajcus.net/
-
-MAINTAINER=		Will Maier <willmaier@ml1.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

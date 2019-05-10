@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2017/12/08 14:58:42 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/10 16:50:05 danj Exp $
 
 COMMENT=		netcat-like program with transparent SSL support
 
 DISTNAME=		nssl.005
 PKGNAME=		nssl-005
-REVISION=		3
+REVISION=		4
 CATEGORIES=		net
 FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE=		http://nssl.sourceforge.net/
-
-MAINTAINER=		Will Maier <willmaier@ml1.net>
 
 # None
 PERMIT_PACKAGE_CDROM=	No

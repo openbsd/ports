@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.27 2016/03/20 16:12:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/05/10 16:50:05 danj Exp $
 
 COMMENT=		Python tools for computational molecular biology
 
 MODPY_EGG_VERSION=	1.66
 DISTNAME=		biopython-${MODPY_EGG_VERSION}
 CATEGORIES=		biology
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://www.biopython.org/
-
-MAINTAINER=		Will Maier <willmaier@ml1.net>
 
 # BSD-like 
 PERMIT_PACKAGE_CDROM=	Yes
