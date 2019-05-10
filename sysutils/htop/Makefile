@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/10 22:35:36 ians Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/10 23:38:58 ians Exp $
 
 COMMENT =	interactive process viewer
 
 V =		2.2.0
 DISTNAME =	htop-${V}
-REVISION =	11
+REVISION =	12
 
 CATEGORIES =	sysutils
 
@@ -34,6 +34,6 @@ MODPY_ADJ_FILES =	scripts/MakeHeader.py
 # htop has some bugs which take hours or days to reach.
 # Keep the symbols to give a chance to the user to get an useful coredump.
 MAKE_FLAGS =	AM_CPPFLAGS="-DDEBUG"
-DEBUG =		-g
+DEBUG =		-g 
 
 .include <bsd.port.mk>

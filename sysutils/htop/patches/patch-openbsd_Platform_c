@@ -1,4 +1,4 @@
-$OpenBSD: patch-openbsd_Platform_c,v 1.6 2019/05/10 04:24:36 ians Exp $
+$OpenBSD: patch-openbsd_Platform_c,v 1.7 2019/05/10 23:38:58 ians Exp $
 
 Use sched.h macros instead of hardcoding, the former broke when we introduced
 CP_SPIN cpu state.
@@ -17,7 +17,7 @@ Index: openbsd/Platform.c
  
  /*
   * Copyright (c) 1984, 1989, William LeFebvre, Rice University
-@@ -209,7 +209,7 @@ double Platform_setCPUValues(Meter* this, int cpu) {
+@@ -209,13 +209,13 @@ double Platform_setCPUValues(Meter* this, int cpu) {
     int64_t new_v[CPUSTATES], diff_v[CPUSTATES], scratch_v[CPUSTATES];
     double *v = this->values;
     size_t size = sizeof(double) * CPUSTATES;
@@ -26,6 +26,13 @@ Index: openbsd/Platform.c
     if (sysctl(mib, 3, new_v, &size, NULL, 0) == -1) {
        return 0.;
     }
+ 
+    // XXX: why?
+-   cpuData->totalPeriod = 1;
++   //cpuData->totalPeriod = 1;
+ 
+    percentages(CPUSTATES, diff_v, new_v,
+          (int64_t *)old_v[cpu-1], scratch_v);
 @@ -225,7 +225,7 @@ double Platform_setCPUValues(Meter* this, int cpu) {
        v[i] = diff_v[i] / 10.;
     }

@@ -1,13 +1,14 @@
-$OpenBSD: patch-CPUMeter_c,v 1.5 2019/05/10 22:35:36 ians Exp $
+$OpenBSD: patch-CPUMeter_c,v 1.6 2019/05/10 23:38:58 ians Exp $
 
 Index: CPUMeter.c
 --- CPUMeter.c.orig
 +++ CPUMeter.c
-@@ -204,6 +204,9 @@ static void SingleColCPUsMeter_draw(Meter* this, int x
+@@ -204,6 +204,10 @@ static void SingleColCPUsMeter_draw(Meter* this, int x
     int start, count;
     AllCPUsMeter_getRange(this, &start, &count);
     for (int i = 0; i < count; i++) {
 +      if(meters[i]->draw == 0x1) {
++         AllCPUsMeter_init(meters[i]);
 +         meters[i]->draw = Meter_modes[meters[i]->mode]->draw;
 +      }
        meters[i]->draw(meters[i], x, y, w);
