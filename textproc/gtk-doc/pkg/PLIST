@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2018/08/30 06:03:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2019/05/10 13:27:03 ajacoutot Exp $
 bin/gtkdoc-check
 bin/gtkdoc-depscan
 bin/gtkdoc-fixxref
@@ -11,16 +11,19 @@ bin/gtkdoc-rebase
 bin/gtkdoc-scan
 bin/gtkdoc-scangobj
 bin/gtkdocize
-lib/cmake/GtkDoc/
-lib/cmake/GtkDoc/GtkDocConfig.cmake
-lib/cmake/GtkDoc/GtkDocConfigVersion.cmake
-lib/cmake/GtkDoc/GtkDocScanGObjWrapper.cmake
 share/aclocal/gtk-doc.m4
+share/cmake/
+share/cmake/GtkDoc/
+share/cmake/GtkDoc/GtkDocConfig.cmake
+share/cmake/GtkDoc/GtkDocConfigVersion.cmake
+share/cmake/GtkDoc/GtkDocScanGObjWrapper.cmake
 share/gtk-doc/data/
 share/gtk-doc/data/devhelp2.xsd
 share/gtk-doc/data/devhelp2.xsl
 share/gtk-doc/data/gtk-doc.flat.make
 share/gtk-doc/data/gtk-doc.make
+share/gtk-doc/data/gtk-doc.no-xslt-flat.make
+share/gtk-doc/data/gtk-doc.no-xslt.make
 share/gtk-doc/data/gtk-doc.xsl
 share/gtk-doc/data/home.png
 share/gtk-doc/data/left-insensitive.png
@@ -38,6 +41,7 @@ share/gtk-doc/python/gtkdoc/check.py
 share/gtk-doc/python/gtkdoc/common.py
 share/gtk-doc/python/gtkdoc/config.py
 share/gtk-doc/python/gtkdoc/fixxref.py
+share/gtk-doc/python/gtkdoc/highlight.py
 share/gtk-doc/python/gtkdoc/md_to_db.py
 share/gtk-doc/python/gtkdoc/mkdb.py
 share/gtk-doc/python/gtkdoc/mkhtml.py
