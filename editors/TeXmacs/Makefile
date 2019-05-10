@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2018/07/01 18:33:35 espie Exp $
-
-# XXX base clang: lots of undefined references to Qt functions
-COMPILER=	base-gcc
+# $OpenBSD: Makefile,v 1.12 2019/05/10 21:27:07 jca Exp $
 
 COMMENT=	wysiwyw (what you see is what you want) editing platform
 
 DISTNAME=	TeXmacs-1.99.4-src
 PKGNAME=	${DISTNAME:S/-src//}
 CATEGORIES=	editors print x11
-REVISION=	5
+REVISION=	6
 
 HOMEPAGE=	http://texmacs.org/
 
@@ -19,6 +16,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB+=	ICE QtGui SM X11 Xext Xi Xinerama Xrender c fontconfig
 WANTLIB+=	freetype gmp guile ltdl m pthread ${COMPILER_LIBCXX} util z
+
+# XXX base-clang: lots of undefined references to Qt functions
+COMPILER=	ports-gcc
 
 MODULES=	x11/qt4
 BUILD_DEPENDS=	print/ghostscript/gnu

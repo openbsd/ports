@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Plugins_Pdf_PDFWriter_PDFDocumentHandler_cpp,v 1.1 2019/05/10 21:27:07 jca Exp $
+
+Index: src/Plugins/Pdf/PDFWriter/PDFDocumentHandler.cpp
+--- src/Plugins/Pdf/PDFWriter/PDFDocumentHandler.cpp.orig
++++ src/Plugins/Pdf/PDFWriter/PDFDocumentHandler.cpp
+@@ -1329,7 +1329,7 @@ void PDFDocumentHandler::StopCopyingContext()
+             delete mParser;
+         }
+         mParser = NULL;
+-        mParserOwned = NULL;
++        mParserOwned = false;
+     }
+ 
+ }
