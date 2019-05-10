@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-tests,v 1.9 2019/02/28 09:11:28 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.10 2019/05/10 12:01:55 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tests->=3.6,<3.7
 @conflict python->=3.6,<3.6.8p0
-@pkgpath lang/python3/3.6,-tests
 lib/python3.6/test/
 lib/python3.6/test/Sine-1000Hz-300ms.aif
 lib/python3.6/test/__init__.py
