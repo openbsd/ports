@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/07 19:34:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/10 20:22:59 naddy Exp $
 
 COMMENT =	improved dynamic tiling window manager, fork with gaps
 
@@ -25,12 +25,7 @@ EXTRACT_SUFX =	.tar.bz2
 DISTFILES =	gaps-{releases/download/${V}/}i3-${V}${EXTRACT_SUFX}
 
 BUILD_DEPENDS =	textproc/asciidoc \
-		textproc/xmlto \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
-
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.15
+		textproc/xmlto
 
 LIB_DEPENDS =	devel/libev \
 		devel/libyajl \
@@ -60,9 +55,6 @@ CONFIGURE_ENV =	CPPFLAGS="-I${X11BASE}/include \
 			  -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib \
 			 -L${LOCALBASE}/lib"
-
-post-extract:
-	cd ${WRKSRC}; ${AUTOCONF_ENV} autoreconf -fi
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/etc/config \
