@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_lib_c,v 1.1 2019/05/06 08:22:31 ajacoutot Exp $
+$OpenBSD: patch-src_lib_c,v 1.2 2019/05/10 19:11:13 ajacoutot Exp $
 
 Control the stack size of spawned threads
 
@@ -11,7 +11,7 @@ Index: src/lib.c
  
 +    pthread_attr_t thread_attr;
 +    if (pthread_attr_init(&thread_attr)) return -ENOMEM;
-+    pthread_attr_setstacksize(&thread_attr, 512 * 1024);
++    pthread_attr_setstacksize(&thread_attr, 1024 * 1024);
 +
      Dav1dContext *const c = *c_out = dav1d_alloc_aligned(sizeof(*c), 32);
      if (!c) goto error;

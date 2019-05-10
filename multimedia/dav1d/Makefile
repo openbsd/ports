@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/06 08:22:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/10 19:11:13 ajacoutot Exp $
 
 COMMENT=	small and fast AV1 decoder
 
 VER=		0.3.0
 DISTNAME=	dav1d-${VER}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://code.videolan.org/videolan/dav1d/-/archive/${VER}/
 EXTRACT_SUFX=	.tar.bz2
