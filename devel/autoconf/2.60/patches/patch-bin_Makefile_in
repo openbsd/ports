@@ -1,0 +1,14 @@
+$OpenBSD: patch-bin_Makefile_in,v 1.1 2019/05/10 21:39:53 naddy Exp $
+
+Index: bin/Makefile.in
+--- bin/Makefile.in.orig
++++ bin/Makefile.in
+@@ -477,6 +477,8 @@ check-forbidden-patterns:
+ 	  rm -f forbidden.log; \
+ 	fi
+ 
++$(top_builddir)/bin/autom4te: autom4te
++
+ # autoconf is written in M4sh.
+ # FIXME: this target should depend on the frozen files below lib/m4sugar,
+ # otherwise autom4te may pick up a frozen m4sh.m4f from an earlier
