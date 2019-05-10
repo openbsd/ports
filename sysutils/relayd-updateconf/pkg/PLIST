@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/09 13:54:42 benno Exp $
-@bin bin/relayd-updateconf
-@man man/man1/relayd-updateconf.1
