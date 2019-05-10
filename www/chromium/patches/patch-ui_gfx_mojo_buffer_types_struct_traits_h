@@ -1,14 +1,14 @@
-$OpenBSD: patch-ui_gfx_mojo_buffer_types_struct_traits_h,v 1.9 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-ui_gfx_mojo_buffer_types_struct_traits_h,v 1.10 2019/05/10 21:55:40 robert Exp $
 
 Index: ui/gfx/mojo/buffer_types_struct_traits.h
 --- ui/gfx/mojo/buffer_types_struct_traits.h.orig
 +++ ui/gfx/mojo/buffer_types_struct_traits.h
-@@ -189,7 +189,7 @@ struct StructTraits<gfx::mojom::GpuMemoryBufferIdDataV
+@@ -186,7 +186,7 @@ struct StructTraits<gfx::mojom::GpuMemoryBufferIdDataV
    }
  };
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(USE_OZONE)
++#if defined(OS_LINUX) || defined(USE_OZONE) || defined(OS_BSD)
  template <>
  struct StructTraits<gfx::mojom::NativePixmapPlaneDataView,
                      gfx::NativePixmapPlane> {

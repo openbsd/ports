@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.17 2019/04/26 09:38:20 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.18 2019/05/10 21:55:39 robert Exp $
 
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -3524,7 +3524,7 @@ extern const char kAshNotificationStackingBarRedesignD
+@@ -3450,7 +3450,7 @@ const char kInstallableInkDropDescription[] =
  
  // Random platform combinations -----------------------------------------------
  
@@ -12,7 +12,7 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kEnableInputImeApiName[] = "Enable Input IME API";
  const char kEnableInputImeApiDescription[] =
-@@ -3532,7 +3532,7 @@ const char kEnableInputImeApiDescription[] =
+@@ -3458,7 +3458,7 @@ const char kEnableInputImeApiDescription[] =
  
  #endif  // defined(OS_WIN) || defined(OS_LINUX)
  
@@ -21,9 +21,9 @@ Index: chrome/browser/flag_descriptions.cc
  
  const char kWebGL2ComputeContextName[] = "WebGL 2.0 Compute";
  const char kWebGL2ComputeContextDescription[] =
-@@ -3551,7 +3551,7 @@ const char kAutomaticTabDiscardingDescription[] =
+@@ -3466,7 +3466,7 @@ const char kWebGL2ComputeContextDescription[] =
  
- #endif  // defined(OS_WIN) || defined(OS_MACOSX)
+ #endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)

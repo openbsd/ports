@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_profiles_chrome_browser_main_extra_parts_profiles_cc,v 1.6 2019/04/26 09:38:20 robert Exp $
+$OpenBSD: patch-chrome_browser_profiles_chrome_browser_main_extra_parts_profiles_cc,v 1.7 2019/05/10 21:55:40 robert Exp $
 
 Index: chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
 --- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig
 +++ chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-@@ -325,7 +325,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -329,7 +329,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #if !defined(OS_ANDROID)
    MediaGalleriesPreferencesFactory::GetInstance();
  #endif

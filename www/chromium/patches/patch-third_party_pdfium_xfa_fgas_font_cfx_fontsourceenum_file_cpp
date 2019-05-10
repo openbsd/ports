@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_pdfium_xfa_fgas_font_cfx_fontsourceenum_file_cpp,v 1.1 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-third_party_pdfium_xfa_fgas_font_cfx_fontsourceenum_file_cpp,v 1.2 2019/05/10 21:55:40 robert Exp $
 
 Index: third_party/pdfium/xfa/fgas/font/cfx_fontsourceenum_file.cpp
 --- third_party/pdfium/xfa/fgas/font/cfx_fontsourceenum_file.cpp.orig
 +++ third_party/pdfium/xfa/fgas/font/cfx_fontsourceenum_file.cpp
-@@ -14,8 +14,8 @@ constexpr char kFolderSeparator = '/';
+@@ -16,8 +16,8 @@ constexpr char kFolderSeparator = '/';
  
  constexpr const char* g_FontFolders[] = {
  #if _FX_PLATFORM_ == _FX_PLATFORM_LINUX_
@@ -13,4 +13,4 @@ Index: third_party/pdfium/xfa/fgas/font/cfx_fontsourceenum_file.cpp
 +    "/usr/X11R6/lib/X11/fonts/TTF", "/usr/local/share/fonts",
  #elif _FX_PLATFORM_ == _FX_PLATFORM_APPLE_
      "~/Library/Fonts", "/Library/Fonts", "/System/Library/Fonts",
- #elif _FX_PLATFORM_ == _FX_PLATFORM_ANDROID_
+ #elif defined(OS_ANDROID)

@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_shell_browser_shell_browser_main_parts_cc,v 1.13 2018/12/07 11:07:35 robert Exp $
+$OpenBSD: patch-content_shell_browser_shell_browser_main_parts_cc,v 1.14 2019/05/10 21:55:40 robert Exp $
 
 Index: content/shell/browser/shell_browser_main_parts.cc
 --- content/shell/browser/shell_browser_main_parts.cc.orig
@@ -8,8 +8,8 @@ Index: content/shell/browser/shell_browser_main_parts.cc
  #include "ui/events/devices/x11/touch_factory_x11.h"  // nogncheck
  #endif
 -#if !defined(OS_CHROMEOS) && defined(USE_AURA) && defined(OS_LINUX)
-+#if !defined(OS_CHROMEOS) && defined(USE_AURA) && (defined(OS_BSD) || defined(OS_LINUX))
- #include "ui/base/ime/input_method_initializer.h"
++#if !defined(OS_CHROMEOS) && defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD))
+ #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  #if defined(OS_CHROMEOS)
 @@ -126,7 +126,7 @@ int ShellBrowserMainParts::PreEarlyInitialization() {
@@ -17,7 +17,7 @@ Index: content/shell/browser/shell_browser_main_parts.cc
    ui::SetDefaultX11ErrorHandlers();
  #endif
 -#if !defined(OS_CHROMEOS) && defined(USE_AURA) && defined(OS_LINUX)
-+#if !defined(OS_CHROMEOS) && defined(USE_AURA) && (defined(OS_BSD) || defined(OS_LINUX))
++#if !defined(OS_CHROMEOS) && defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD))
    ui::InitializeInputMethodForTesting();
  #endif
  #if defined(OS_ANDROID)

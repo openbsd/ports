@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_app_content_main_runner_impl_cc,v 1.7 2019/04/26 09:38:20 robert Exp $
+$OpenBSD: patch-content_app_content_main_runner_impl_cc,v 1.8 2019/05/10 21:55:40 robert Exp $
 
 Index: content/app/content_main_runner_impl.cc
 --- content/app/content_main_runner_impl.cc.orig
@@ -90,7 +90,7 @@ Index: content/app/content_main_runner_impl.cc
      g_fds->Set(service_manager::kCrashDumpSignal,
                 service_manager::kCrashDumpSignal +
                     base::GlobalDescriptors::kBaseDescriptor);
-@@ -826,6 +841,16 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
+@@ -828,6 +843,16 @@ int ContentMainRunnerImpl::Initialize(const ContentMai
      }
  #endif
  
@@ -107,7 +107,7 @@ Index: content/app/content_main_runner_impl.cc
      delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE_HANDLE)
-@@ -870,6 +895,11 @@ int ContentMainRunnerImpl::Run(bool start_service_mana
+@@ -872,6 +897,11 @@ int ContentMainRunnerImpl::Run(bool start_service_mana
  #endif
  
    RegisterMainThreadFactories();

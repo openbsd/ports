@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_extensions_bookmark_app_extension_util_cc,v 1.1 2019/04/26 09:38:19 robert Exp $
+$OpenBSD: patch-chrome_browser_extensions_bookmark_app_extension_util_cc,v 1.2 2019/05/10 21:55:39 robert Exp $
 
 Index: chrome/browser/extensions/bookmark_app_extension_util.cc
 --- chrome/browser/extensions/bookmark_app_extension_util.cc.orig
 +++ chrome/browser/extensions/bookmark_app_extension_util.cc
-@@ -45,7 +45,7 @@ void BookmarkAppCreateOsShortcuts(
-   DCHECK(CanBookmarkAppCreateOsShortcuts());
+@@ -34,7 +34,7 @@ namespace {
+ 
  #if !defined(OS_CHROMEOS)
-   web_app::ShortcutLocations creation_locations;
+ bool CanOsAddDesktopShortcuts() {
 -#if defined(OS_LINUX) || defined(OS_WIN)
 +#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
-   creation_locations.on_desktop = true;
+   return true;
  #else
-   creation_locations.on_desktop = false;
+   return false;

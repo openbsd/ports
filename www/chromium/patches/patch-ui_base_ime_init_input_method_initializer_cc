@@ -1,14 +1,14 @@
-$OpenBSD: patch-ui_base_ime_input_method_initializer_cc,v 1.6 2018/06/02 17:19:23 robert Exp $
+$OpenBSD: patch-ui_base_ime_init_input_method_initializer_cc,v 1.1 2019/05/10 21:55:40 robert Exp $
 
-Index: ui/base/ime/input_method_initializer.cc
---- ui/base/ime/input_method_initializer.cc.orig
-+++ ui/base/ime/input_method_initializer.cc
+Index: ui/base/ime/init/input_method_initializer.cc
+--- ui/base/ime/init/input_method_initializer.cc.orig
++++ ui/base/ime/init/input_method_initializer.cc
 @@ -8,7 +8,7 @@
  
  #if defined(OS_CHROMEOS)
  #include "ui/base/ime/ime_bridge.h"
 -#elif defined(USE_AURA) && defined(OS_LINUX)
-+#elif defined(USE_AURA) && (defined(OS_BSD) || defined(OS_LINUX))
++#elif defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD))
  #include "base/logging.h"
  #include "ui/base/ime/linux/fake_input_method_context_factory.h"
  #elif defined(OS_WIN)
@@ -26,7 +26,7 @@ Index: ui/base/ime/input_method_initializer.cc
  #if defined(OS_CHROMEOS)
    IMEBridge::Initialize();
 -#elif defined(USE_AURA) && defined(OS_LINUX)
-+#elif defined(USE_AURA) && (defined(OS_BSD) || defined(OS_LINUX))
++#elif defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD))
    if (!g_linux_input_method_context_factory_for_testing)
      g_linux_input_method_context_factory_for_testing =
          new FakeInputMethodContextFactory();
@@ -35,7 +35,7 @@ Index: ui/base/ime/input_method_initializer.cc
  #if defined(OS_CHROMEOS)
    IMEBridge::Shutdown();
 -#elif defined(USE_AURA) && defined(OS_LINUX)
-+#elif defined(USE_AURA) && (defined(OS_BSD) || defined(OS_LINUX))
++#elif defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD))
    const LinuxInputMethodContextFactory* factory =
        LinuxInputMethodContextFactory::instance();
    CHECK(!factory || factory == g_linux_input_method_context_factory_for_testing)

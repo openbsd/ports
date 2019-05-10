@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.54 2019/04/26 09:38:19 robert Exp $
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.55 2019/05/10 21:55:39 robert Exp $
 
 Index: chrome/browser/chrome_content_browser_client.cc
 --- chrome/browser/chrome_content_browser_client.cc.orig
 +++ chrome/browser/chrome_content_browser_client.cc
-@@ -411,7 +411,7 @@
+@@ -416,7 +416,7 @@
  #include "components/user_manager/user_manager.h"
  #include "services/service_manager/public/mojom/interface_provider_spec.mojom.h"
  #include "services/ws/common/switches.h"
@@ -12,8 +12,8 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/chrome_browser_main_linux.h"
  #elif defined(OS_ANDROID)
  #include "base/android/application_status_listener.h"
-@@ -458,7 +458,7 @@
- #endif
+@@ -465,7 +465,7 @@
+ #endif  //  !defined(OS_ANDROID)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
 -    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
@@ -21,7 +21,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/browser_switcher/browser_switcher_navigation_throttle.h"
  #endif
  
-@@ -474,7 +474,7 @@
+@@ -491,7 +491,7 @@
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views.h"
  #endif
  
@@ -30,16 +30,16 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #include "chrome/browser/ui/views/chrome_browser_main_extra_parts_views_linux.h"
  #endif
  
-@@ -1170,7 +1170,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
+@@ -1187,7 +1187,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
  #elif defined(OS_CHROMEOS)
-   main_parts = new chromeos::ChromeBrowserMainPartsChromeos(
-       parameters, chrome_feature_list_creator_);
+   main_parts =
+       new chromeos::ChromeBrowserMainPartsChromeos(parameters, startup_data_);
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
-   main_parts =
-       new ChromeBrowserMainPartsLinux(parameters, chrome_feature_list_creator_);
+   main_parts = new ChromeBrowserMainPartsLinux(parameters, startup_data_);
  #elif defined(OS_ANDROID)
-@@ -1190,7 +1190,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
+   main_parts = new ChromeBrowserMainPartsAndroid(parameters, startup_data_);
+@@ -1203,7 +1203,7 @@ content::BrowserMainParts* ChromeContentBrowserClient:
    // Construct additional browser parts. Stages are called in the order in
    // which they are added.
  #if defined(TOOLKIT_VIEWS)
@@ -48,7 +48,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViewsLinux());
  #else
    main_parts->AddParts(new ChromeBrowserMainExtraPartsViews());
-@@ -1997,6 +1997,8 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -2027,6 +2027,8 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
  #elif defined(OS_POSIX)
  #if defined(OS_ANDROID)
    bool enable_crash_reporter = true;
@@ -57,7 +57,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  #else
    bool enable_crash_reporter = breakpad::IsCrashReporterEnabled();
  #endif
-@@ -3529,7 +3531,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -3604,7 +3606,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
@@ -66,7 +66,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -4281,7 +4283,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+@@ -4378,7 +4380,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
              handle));
    }
  
@@ -75,7 +75,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
    std::unique_ptr<content::NavigationThrottle> browser_switcher_throttle =
        browser_switcher::BrowserSwitcherNavigationThrottle ::
-@@ -5115,7 +5117,7 @@ std::unique_ptr<content::OverlayWindow>
+@@ -5219,7 +5221,7 @@ std::unique_ptr<content::OverlayWindow>
  ChromeContentBrowserClient::CreateWindowForPictureInPicture(
      content::PictureInPictureWindowController* controller) {
  #if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \

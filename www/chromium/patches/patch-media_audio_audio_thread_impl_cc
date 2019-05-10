@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_audio_audio_thread_impl_cc,v 1.1 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-media_audio_audio_thread_impl_cc,v 1.2 2019/05/10 21:55:40 robert Exp $
 
 Index: media/audio/audio_thread_impl.cc
 --- media/audio/audio_thread_impl.cc.orig
@@ -7,17 +7,8 @@ Index: media/audio/audio_thread_impl.cc
  #endif
    worker_task_runner_ = thread_.task_runner();
  
--#if !defined(OS_MACOSX)
-+#if !defined(OS_MACOSX) && !defined(OS_BSD)
+-#if !defined(OS_MACOSX) && !defined(OS_ANDROID)
++#if !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
    // Since we run on the main thread on Mac, we don't need a hang monitor.
-   hang_monitor_ = AudioThreadHangMonitor::Create(
-       false, base::DefaultTickClock::GetInstance(), task_runner_);
-@@ -56,7 +56,7 @@ void AudioThreadImpl::Stop() {
- 
- bool AudioThreadImpl::IsHung() const {
-   DCHECK_CALLED_ON_VALID_THREAD(thread_checker_);
--#if defined(OS_MACOSX)
-+#if defined(OS_MACOSX) || defined(OS_BSD)
-   return false;
- #else
-   return hang_monitor_->IsAudioThreadHung();
+   // https://crbug.com/946968: The hang monitor possibly causes crashes on
+   // Android

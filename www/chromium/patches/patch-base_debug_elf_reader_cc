@@ -1,17 +1,17 @@
-$OpenBSD: patch-base_debug_elf_reader_cc,v 1.1 2019/04/26 09:38:19 robert Exp $
+$OpenBSD: patch-base_debug_elf_reader_cc,v 1.2 2019/05/10 21:55:39 robert Exp $
 
 Index: base/debug/elf_reader.cc
 --- base/debug/elf_reader.cc.orig
 +++ base/debug/elf_reader.cc
-@@ -82,6 +82,7 @@ size_t ReadElfBuildId(const void* elf_mapped_base,
-         reinterpret_cast<const Nhdr*>(elf_base + header.p_offset);
+@@ -83,6 +83,7 @@ size_t ReadElfBuildId(const void* elf_mapped_base,
+         reinterpret_cast<const Nhdr*>(elf_base + header.p_vaddr);
      bool found = false;
      while (current_note < section_end) {
 +#if !defined(OS_BSD)
        if (current_note->n_type == NT_GNU_BUILD_ID) {
          const char* note_name =
              reinterpret_cast<const char*>(current_note) + sizeof(Nhdr);
-@@ -91,6 +92,7 @@ size_t ReadElfBuildId(const void* elf_mapped_base,
+@@ -92,6 +93,7 @@ size_t ReadElfBuildId(const void* elf_mapped_base,
            break;
          }
        }

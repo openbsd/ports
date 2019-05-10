@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_BUILD_gn,v 1.23 2019/04/26 09:38:20 robert Exp $
+$OpenBSD: patch-net_BUILD_gn,v 1.24 2019/05/10 21:55:40 robert Exp $
 Index: net/BUILD.gn
 --- net/BUILD.gn.orig
 +++ net/BUILD.gn
@@ -11,7 +11,7 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1899,7 +1899,7 @@ component("net") {
+@@ -1901,7 +1901,7 @@ component("net") {
      }
  
      # Use getifaddrs() on POSIX platforms, except Linux and Android.
@@ -20,7 +20,7 @@ Index: net/BUILD.gn
        sources += [
          "base/network_interfaces_getifaddrs.cc",
          "base/network_interfaces_getifaddrs.h",
-@@ -2098,6 +2098,15 @@ component("net") {
+@@ -2100,6 +2100,15 @@ component("net") {
        ]
      }
  
@@ -36,7 +36,7 @@ Index: net/BUILD.gn
      if (!disable_ftp_support) {
        sources += [
          "ftp/ftp_auth_cache.cc",
-@@ -5730,7 +5739,7 @@ test("net_unittests") {
+@@ -5758,7 +5767,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux and Android.

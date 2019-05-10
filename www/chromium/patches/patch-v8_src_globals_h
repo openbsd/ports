@@ -1,9 +1,9 @@
-$OpenBSD: patch-v8_src_globals_h,v 1.27 2019/04/26 09:38:20 robert Exp $
+$OpenBSD: patch-v8_src_globals_h,v 1.28 2019/05/10 21:55:40 robert Exp $
 
 Index: v8/src/globals.h
 --- v8/src/globals.h.orig
 +++ v8/src/globals.h
-@@ -148,7 +148,7 @@ constexpr int kDoubleSizeLog2 = 3;
+@@ -152,7 +152,7 @@ constexpr int kDoubleSizeLog2 = 3;
  // ARM64 only supports direct calls within a 128 MB range.
  constexpr size_t kMaxWasmCodeMB = 128;
  #else
@@ -12,7 +12,7 @@ Index: v8/src/globals.h
  #endif
  constexpr size_t kMaxWasmCodeMemory = kMaxWasmCodeMB * MB;
  
-@@ -162,10 +162,10 @@ constexpr bool kRequiresCodeRange = true;
+@@ -166,10 +166,10 @@ constexpr bool kRequiresCodeRange = true;
  constexpr size_t kMaximalCodeRangeSize = 512 * MB;
  constexpr size_t kMinExpectedOSPageSize = 64 * KB;  // OS page on PPC Linux
  #elif V8_TARGET_ARCH_ARM64

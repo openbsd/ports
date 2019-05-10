@@ -1,7 +1,8 @@
-$OpenBSD: patch-ui_views_selection_controller_cc,v 1.1 2017/01/26 17:08:26 robert Exp $
---- ui/views/selection_controller.cc.orig.port	Sun Jan 15 11:16:20 2017
-+++ ui/views/selection_controller.cc	Sun Jan 15 11:16:33 2017
-@@ -20,7 +20,7 @@ SelectionController::SelectionController(SelectionCont
+$OpenBSD: patch-ui_views_selection_controller_cc,v 1.2 2019/05/10 21:55:40 robert Exp $
+Index: ui/views/selection_controller.cc
+--- ui/views/selection_controller.cc.orig
++++ ui/views/selection_controller.cc
+@@ -21,7 +21,7 @@ SelectionController::SelectionController(SelectionCont
        delegate_(delegate),
        handles_selection_clipboard_(false) {
  // On Linux, update the selection clipboard on a text selection.

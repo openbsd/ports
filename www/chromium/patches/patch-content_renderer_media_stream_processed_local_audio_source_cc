@@ -1,12 +1,12 @@
-$OpenBSD: patch-content_renderer_media_stream_processed_local_audio_source_cc,v 1.1 2018/11/04 12:33:24 robert Exp $
+$OpenBSD: patch-content_renderer_media_stream_processed_local_audio_source_cc,v 1.2 2019/05/10 21:55:40 robert Exp $
 
 Index: content/renderer/media/stream/processed_local_audio_source.cc
 --- content/renderer/media/stream/processed_local_audio_source.cc.orig
 +++ content/renderer/media/stream/processed_local_audio_source.cc
-@@ -35,7 +35,7 @@ void* const kProcessedLocalAudioSourceIdentifier =
-     const_cast<void**>(&kProcessedLocalAudioSourceIdentifier);
+@@ -80,7 +80,7 @@ void LogAudioProcesingProperties(
+ }  // namespace
  
- bool ApmInAudioServiceEnabled() {
+ bool IsApmInAudioServiceEnabled() {
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
    return base::FeatureList::IsEnabled(features::kWebRtcApmInAudioService);

@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.31 2019/03/24 12:24:45 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.32 2019/05/10 21:55:40 robert Exp $
 Index: chrome/browser/ui/startup/startup_browser_creator.cc
 --- chrome/browser/ui/startup/startup_browser_creator.cc.orig
 +++ chrome/browser/ui/startup/startup_browser_creator.cc
-@@ -79,7 +79,7 @@
+@@ -82,7 +82,7 @@
  #include "chrome/browser/ui/user_manager.h"
  #endif
  

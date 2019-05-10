@@ -1,7 +1,8 @@
-$OpenBSD: patch-ui_views_corewm_tooltip_aura_cc,v 1.2 2016/12/10 15:35:25 robert Exp $
---- ui/views/corewm/tooltip_aura.cc.orig.port	Fri Dec  2 00:02:39 2016
-+++ ui/views/corewm/tooltip_aura.cc	Fri Dec  2 17:44:57 2016
-@@ -34,7 +34,7 @@ const int kCursorOffsetY = 15;
+$OpenBSD: patch-ui_views_corewm_tooltip_aura_cc,v 1.3 2019/05/10 21:55:40 robert Exp $
+Index: ui/views/corewm/tooltip_aura.cc
+--- ui/views/corewm/tooltip_aura.cc.orig
++++ ui/views/corewm/tooltip_aura.cc
+@@ -35,7 +35,7 @@ constexpr int kCursorOffsetY = 15;
  
  // TODO(varkha): Update if native widget can be transparent on Linux.
  bool CanUseTranslucentTooltipWidget() {

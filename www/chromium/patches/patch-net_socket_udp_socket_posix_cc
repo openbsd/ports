@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_socket_udp_socket_posix_cc,v 1.17 2019/04/26 09:38:20 robert Exp $
+$OpenBSD: patch-net_socket_udp_socket_posix_cc,v 1.18 2019/05/10 21:55:40 robert Exp $
 
 Index: net/socket/udp_socket_posix.cc
 --- net/socket/udp_socket_posix.cc.orig
@@ -39,16 +39,16 @@ Index: net/socket/udp_socket_posix.cc
    rv = setsockopt(socket_, SOL_SOCKET, SO_REUSEPORT, &value, sizeof(value));
    if (rv != 0)
      return MapSystemError(errno);
-@@ -945,7 +948,7 @@ int UDPSocketPosix::SetMulticastOptions() {
-         return OK;
- #endif
- 
+@@ -938,7 +941,7 @@ int UDPSocketPosix::SetMulticastOptions() {
+   if (multicast_interface_ != 0) {
+     switch (addr_family_) {
+       case AF_INET: {
 -#if defined(OS_MACOSX)
 +#if defined(OS_MACOSX) || defined(OS_BSD)
          ip_mreq mreq = {};
          int error = GetIPv4AddressFromIndex(socket_, multicast_interface_,
                                              &mreq.imr_interface.s_addr);
-@@ -957,7 +960,12 @@ int UDPSocketPosix::SetMulticastOptions() {
+@@ -950,7 +953,12 @@ int UDPSocketPosix::SetMulticastOptions() {
          mreq.imr_address.s_addr = htonl(INADDR_ANY);
  #endif  //  !defined(OS_MACOSX)
          int rv = setsockopt(socket_, IPPROTO_IP, IP_MULTICAST_IF,
@@ -61,7 +61,7 @@ Index: net/socket/udp_socket_posix.cc
          if (rv)
            return MapSystemError(errno);
          break;
-@@ -1019,7 +1027,7 @@ int UDPSocketPosix::JoinGroup(const IPAddress& group_a
+@@ -1012,7 +1020,7 @@ int UDPSocketPosix::JoinGroup(const IPAddress& group_a
        if (addr_family_ != AF_INET)
          return ERR_ADDRESS_INVALID;
  
@@ -70,7 +70,7 @@ Index: net/socket/udp_socket_posix.cc
        ip_mreq mreq = {};
        int error = GetIPv4AddressFromIndex(socket_, multicast_interface_,
                                            &mreq.imr_interface.s_addr);
-@@ -1067,9 +1075,17 @@ int UDPSocketPosix::LeaveGroup(const IPAddress& group_
+@@ -1060,9 +1068,17 @@ int UDPSocketPosix::LeaveGroup(const IPAddress& group_
      case IPAddress::kIPv4AddressSize: {
        if (addr_family_ != AF_INET)
          return ERR_ADDRESS_INVALID;

@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_mojo_services_gpu_mojo_media_client_cc,v 1.1 2019/04/27 12:12:05 robert Exp $
+$OpenBSD: patch-media_mojo_services_gpu_mojo_media_client_cc,v 1.2 2019/05/10 21:55:40 robert Exp $
 
 Index: media/mojo/services/gpu_mojo_media_client.cc
 --- media/mojo/services/gpu_mojo_media_client.cc.orig
@@ -12,12 +12,12 @@ Index: media/mojo/services/gpu_mojo_media_client.cc
  gpu::CommandBufferStub* GetCommandBufferStub(
      base::WeakPtr<MediaGpuChannelManager> media_gpu_channel_manager,
      base::UnguessableToken channel_token,
-@@ -188,7 +188,7 @@ std::unique_ptr<VideoDecoder> GpuMojoMediaClient::Crea
+@@ -199,7 +199,7 @@ std::unique_ptr<VideoDecoder> GpuMojoMediaClient::Crea
        std::make_unique<VideoFrameFactoryImpl>(gpu_task_runner_,
                                                std::move(get_stub_cb)));
  #elif defined(OS_CHROMEOS) || defined(OS_MACOSX) || defined(OS_WIN) || \
 -    defined(OS_LINUX)
 +    defined(OS_LINUX) || defined(OS_BSD)
-   std::unique_ptr<VideoDecoder> vda_video_decoder = VdaVideoDecoder::Create(
-       task_runner, gpu_task_runner_, media_log->Clone(), target_color_space,
-       gpu_preferences_, gpu_workarounds_,
+       video_decoder = VdaVideoDecoder::Create(
+           task_runner, gpu_task_runner_, media_log->Clone(), target_color_space,
+           gpu_preferences_, gpu_workarounds_,
