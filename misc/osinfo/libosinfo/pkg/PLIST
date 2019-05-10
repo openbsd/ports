@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/01/31 20:06:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/05/10 13:04:56 ajacoutot Exp $
 @pkgpath misc/libosinfo
 @bin bin/osinfo-detect
 @bin bin/osinfo-install-script
@@ -77,6 +77,8 @@ share/gtk-doc/html/Libosinfo/OsinfoDeviceLinkList.html
 share/gtk-doc/html/Libosinfo/OsinfoDeviceList.html
 share/gtk-doc/html/Libosinfo/OsinfoEntity.html
 share/gtk-doc/html/Libosinfo/OsinfoFilter.html
+share/gtk-doc/html/Libosinfo/OsinfoImage.html
+share/gtk-doc/html/Libosinfo/OsinfoImageList.html
 share/gtk-doc/html/Libosinfo/OsinfoInstallConfig.html
 share/gtk-doc/html/Libosinfo/OsinfoInstallConfigParam.html
 share/gtk-doc/html/Libosinfo/OsinfoInstallConfigParamList.html

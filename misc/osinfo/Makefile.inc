@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.7 2019/03/02 17:25:40 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2019/05/10 13:04:56 ajacoutot Exp $
 
-V ?=			1.4.0
+V ?=			1.5.0
 
 CATEGORIES=		misc devel
 
