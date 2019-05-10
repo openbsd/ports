@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2018/12/13 19:53:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/10 01:57:35 danj Exp $
 
 COMMENT =	Jagged Alliance 2 engine
 
 GH_ACCOUNT =	ja2-stracciatella
 GH_PROJECT =	ja2-stracciatella
 GH_TAGNAME =	v0.15.1
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	games
 
 HOMEPAGE =	http://ja2-stracciatella.github.io/
-
-MAINTAINER =	Nils Reusse <n.reusse@hxgn.net>
 
 # SFI-SCLA / public domain
 PERMIT_PACKAGE_CDROM =	No commercial use allowed by SFI-SCLA
