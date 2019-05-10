@@ -1,0 +1,20 @@
+$OpenBSD: patch-plugins_common_h,v 1.1 2019/05/10 01:22:11 jca Exp $
+
+plugins/common.h: Set default MySQL port
+https://github.com/nagios-plugins/nagios-plugins/pull/340/commits/930ede8378245eb6bd31eaf1d9103f027df0f7a0
+
+Index: plugins/common.h
+--- plugins/common.h.orig
++++ plugins/common.h
+@@ -168,6 +168,11 @@
+ #  endif
+ #endif
+ 
++/* MariaDB 10.2 client does not set MYSQL_PORT */
++#ifndef MYSQL_PORT
++#  define MYSQL_PORT 3306
++#endif
++
+ /*
+  *
+  * Standard Values
