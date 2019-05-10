@@ -1,0 +1,2 @@
+Backported, durable, and portable selectors designed to replace the
+standard library selectors module.
