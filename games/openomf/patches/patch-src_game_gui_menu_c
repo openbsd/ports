@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_game_gui_menu_c,v 1.1.1.1 2018/08/01 18:10:26 bcallah Exp $
+$OpenBSD: patch-src_game_gui_menu_c,v 1.2 2019/05/10 06:20:18 bcallah Exp $
 
 https://github.com/omf2097/openomf/issues/351
 
 Index: src/game/gui/menu.c
 --- src/game/gui/menu.c.orig
 +++ src/game/gui/menu.c
-@@ -157,7 +157,7 @@ static int menu_action(component *mc, int action) {
+@@ -158,7 +158,7 @@ static int menu_action(component *mc, int action) {
                  // Update selected component
                  c = sizer_get(mc, m->selected);
  

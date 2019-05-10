@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/04 12:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/10 06:20:18 bcallah Exp $
 
 COMMENT =	free remake of One Must Fall 2097 game engine
-DISTNAME =	openomf-0.6.5.1
+DISTNAME =	openomf-0.6.5.2
 CATEGORIES =	games x11
-REVISION =	0
 
 HOMEPAGE =	https://www.openomf.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -11,8 +10,8 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += SDL2 argtable2 c confuse enet intl m openal png pthread
-WANTLIB += xmp z
+WANTLIB += SDL2 argtable2 c confuse enet intl m openal png xmp
+WANTLIB += z
 
 MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
 
@@ -32,9 +31,7 @@ LIB_DEPENDS =	audio/libxmp \
 NO_TEST =	Yes
 
 # CONFIGURE_ARGS = -DCMAKE_C_FLAGS_RELEASE="${CFLAGS}" does not catch
-pre-configure:
-	sed -i 's,-O2,${CFLAGS},g' \
-		${WRKSRC}/CMakeLists.txt \
-		${WRKSRC}/external/libShadowDive/CMakeLists.txt
+do-gen:
+	sed -i 's,-O2,${CFLAGS},g' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
