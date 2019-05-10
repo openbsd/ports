@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.21 2019/04/26 13:39:16 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.22 2019/05/10 15:57:37 rsadowski Exp $
 
 COMMENT-main =		multimedia transformations framework
 COMMENT-gpl2 =		GPLv2-licensed modules for mlt
-VERSION =		6.14.0
+VERSION =		6.16.0
 DISTNAME =		mlt-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gpl2 =		mlt-gpl2-${VERSION}
 
 # XXX versions should be kept in sync together
-SHARED_LIBS =		mlt		3.0
-SHARED_LIBS +=		mlt++		3.0
+SHARED_LIBS =		mlt		3.1
+SHARED_LIBS +=		mlt++		3.1
 
 CATEGORIES =		multimedia devel
 HOMEPAGE =		https://www.mltframework.org/
@@ -87,9 +87,3 @@ do-test:
 		${ALL_TEST_FLAGS} clean all check
 
 .include <bsd.port.mk>
-
-# fix error: #error "Qt requires C++11 support"
-# XXX this should be retried once moving to ports-gcc>=8
-.if ${CHOSEN_COMPILER} == "ports-gcc"
-MAKE_ENV +=     CXXFLAGS="${CXXFLAGS} -std=c++11"
-.endif
