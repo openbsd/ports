@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.20 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/10 20:38:23 phessler Exp $
 
 COMMENT =		font rendering library for OpenGL applications
 
 V =			2.1.3
 DISTNAME =		ftgl-$V-rc5
 PKGNAME =		ftgl-$Vrc5
-REVISION =		7
+REVISION =		8
 EPOCH =			0
 SHARED_LIBS =		ftgl	0.0	# 2.1
 CATEGORIES =		graphics
 
 HOMEPAGE =		http://ftgl.wiki.sourceforge.net
-MAINTAINER =		Peter Hessler <phessler@openbsd.org>
 
 # MIT license or the GNU LGPL, at your option.
 PERMIT_PACKAGE_CDROM =	Yes
