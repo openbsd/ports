@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/07 20:32:32 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/10 20:41:36 phessler Exp $
 
 COMMENT =		dungeon-crawling action-RPG adventure
 
 DISTNAME =		egoboo-2.7.4
-REVISION =		0
+REVISION =		1
 CATEGORIES =		games
 
-MAINTAINER =		Peter Hessler <phessler@openbsd.org>
 HOMEPAGE =		http://egoboo.sourceforge.net
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=egoboo/}
 
