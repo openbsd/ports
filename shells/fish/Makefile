@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/01/23 00:53:06 abieber Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/10 11:44:49 abieber Exp $
 
 COMMENT =		friendly interactive shell
 
-V =			3.0.0
+V =			3.0.2
 DISTNAME =		fish-$V
 
 CATEGORIES =		shells
@@ -51,7 +51,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 
 FAKE_FLAGS =		SYSCONFDIR=${PREFIX}/share/examples/fish
 
-NO_TEST =		yes
+TEST_TARGET =		test
 
 pre-configure:
 	sed -i 's/getopt/gnugetopt/' ${WRKSRC}/share/functions/*.fish
@@ -68,5 +68,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fish
 	mv ${DESTDIR}/etc/fish/config.fish ${PREFIX}/share/examples/fish/
 	rm -Rf ${DESTDIR}/etc/fish
+
+# Encountered 196 errors in low-level tests
+do-test:
+	cd ${WRKSRC} && ${MAKE_PROGRAM} DESTDIR=${DESTDIR} test
 
 .include <bsd.port.mk>
