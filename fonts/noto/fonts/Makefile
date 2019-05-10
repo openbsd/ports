@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/24 16:26:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/10 04:14:13 bentley Exp $
 
 COMMENT =		pan-unicode font family
 
 NOTO_PROJECT =		fonts
 
-REVISION =		3
+V =			2017-10-24
+GH_TAGNAME =		v$V-phase3-second-cleanup
 
 RUN_DEPENDS =		fonts/noto/emoji
-
-GH_TAGNAME =		v$V-license-adobe
 
 do-install:
 	${INSTALL_DATA_DIR} ${NOTO_INSTALLDIR}

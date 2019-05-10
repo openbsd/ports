@@ -1,4 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/12/22 10:02:45 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/10 04:14:13 bentley Exp $
 share/fonts/
 @fontdir share/fonts/noto/
 share/fonts/noto/NotoSansCJK.ttc
+share/fonts/noto/NotoSerifCJK-Black.ttc
+share/fonts/noto/NotoSerifCJK-Bold.ttc
+share/fonts/noto/NotoSerifCJK-ExtraLight.ttc
+share/fonts/noto/NotoSerifCJK-Light.ttc
+share/fonts/noto/NotoSerifCJK-Medium.ttc
+share/fonts/noto/NotoSerifCJK-Regular.ttc
+share/fonts/noto/NotoSerifCJK-SemiBold.ttc
