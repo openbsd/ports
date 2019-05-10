@@ -1,0 +1,13 @@
+$OpenBSD: patch-openbsd_OpenBSDProcessList_h,v 1.1 2019/05/10 02:17:46 ians Exp $
+
+Index: openbsd/OpenBSDProcessList.h
+--- openbsd/OpenBSDProcessList.h.orig
++++ openbsd/OpenBSDProcessList.h
+@@ -24,6 +24,7 @@ typedef struct OpenBSDProcessList_ {
+ 
+    CPUData* cpus;
+ 
++   int *cpuIndex;
+ } OpenBSDProcessList;
+ 
+ 

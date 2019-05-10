@@ -1,0 +1,74 @@
+$OpenBSD: patch-openbsd_OpenBSDProcessList_c,v 1.1 2019/05/10 02:17:46 ians Exp $
+
+Index: openbsd/OpenBSDProcessList.c
+--- openbsd/OpenBSDProcessList.c.orig
++++ openbsd/OpenBSDProcessList.c
+@@ -20,6 +20,7 @@ in the source distribution for its full text.
+ #include <sys/sysctl.h>
+ #include <sys/types.h>
+ #include <sys/user.h>
++#include <sys/sched.h>
+ #include <limits.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -62,24 +63,37 @@ typedef struct OpenBSDProcessList_ {
+ static long fscale;
+ 
+ ProcessList* ProcessList_new(UsersTable* usersTable, Hashtable* pidWhiteList, uid_t userId) {
+-   int mib[] = { CTL_HW, HW_NCPU };
++   int mib[] = { CTL_HW, HW_NCPUONLINE };
+    int fmib[] = { CTL_KERN, KERN_FSCALE };
+-   int i, e;
++   int nmib[] = { CTL_HW, HW_NCPU };
++   int ncmib[] = { CTL_KERN, KERN_CPUSTATS, 0 };
++   int i, e, ncpu, cpu_index_c;
+    OpenBSDProcessList* opl;
+    ProcessList* pl;
+-   size_t size;
++   size_t size, size_ncpu, size_cpustats;
+    char errbuf[_POSIX2_LINE_MAX];
++   struct cpustats cpu_stats;
+ 
+    opl = xCalloc(1, sizeof(OpenBSDProcessList));
+    pl = (ProcessList*) opl;
+    size = sizeof(pl->cpuCount);
++   size_ncpu = sizeof(int);
++   size_cpustats = sizeof(cpu_stats);
++   cpu_index_c = 0;
++
+    ProcessList_init(pl, Class(OpenBSDProcess), usersTable, pidWhiteList, userId);
+ 
+    e = sysctl(mib, 2, &pl->cpuCount, &size, NULL, 0);
+    if (e == -1 || pl->cpuCount < 1) {
+       pl->cpuCount = 1;
+    }
++   e = sysctl(nmib, 2, &ncpu, &size_ncpu, NULL, 0);
++   if (e == -1) {
++       ncpu = pl->cpuCount;
++   }
++
+    opl->cpus = xRealloc(opl->cpus, pl->cpuCount * sizeof(CPUData));
++   opl->cpuIndex = xRealloc(opl->cpuIndex, pl->cpuCount * sizeof(int));
+ 
+    size = sizeof(fscale);
+    if (sysctl(fmib, 2, &fscale, &size, NULL, 0) < 0) {
+@@ -94,6 +108,19 @@ ProcessList* ProcessList_new(UsersTable* usersTable, H
+    opl->kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, errbuf);
+    if (opl->kd == NULL) {
+       errx(1, "kvm_open: %s", errbuf);
++   }
++
++   for (i = 0; i < ncpu; i++) {
++      ncmib[2] = i;
++      sysctl(ncmib, 3, &cpu_stats, &size_cpustats, NULL, 0);
++      if (cpu_stats.cs_flags & CPUSTATS_ONLINE) {
++         opl->cpuIndex[cpu_index_c] = i;
++	 cpu_index_c++;
++      }
++      
++      if (cpu_index_c == pl->cpuCount) {
++	break;
++      }
+    }
+ 
+    return pl;
