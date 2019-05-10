@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_rtgsnmp_c,v 1.1 2019/05/10 21:13:28 jca Exp $
+
+Index: src/rtgsnmp.c
+--- src/rtgsnmp.c.orig
++++ src/rtgsnmp.c
+@@ -46,10 +46,7 @@ void *poller(void *thread_args)
+ 
+     if (set.verbose >= HIGH)
+ 	printf("Thread [%d] starting.\n", worker->index);
+-    if (MYSQL_VERSION_ID > 40000)
+-       mysql_thread_init();
+-    else 
+-       my_thread_init();
++    mysql_thread_init();
+ 
+     while (1) {
+ 	if (set.verbose >= DEVELOP)

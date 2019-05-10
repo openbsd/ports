@@ -1,6 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
---- configure.in.orig	Thu Sep 25 16:20:19 2003
-+++ configure.in	Tue Jul  8 16:19:15 2008
+$OpenBSD: patch-configure_in,v 1.2 2019/05/10 21:13:28 jca Exp $
+Index: configure.in
+--- configure.in.orig
++++ configure.in
 @@ -14,9 +14,9 @@ AC_PREFIX_DEFAULT(/usr/local/rtg)
  
  dnl Define auxiliary libraries
@@ -14,6 +15,15 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
  
  dnl Compilation Setup
  AC_ARG_WITH(mysql,
+@@ -143,7 +143,7 @@ fi
+ LDFLAGS="-L$MYSQL_LIB_DIR $LDFLAGS"
+ CFLAGS="-I$MYSQL_INC_DIR $CFLAGS"
+ 
+-AC_CHECK_LIB(mysqlclient_r, my_thread_init,
++AC_CHECK_LIB(mysqlclient_r, mysql_thread_init,
+        LIBS="-lmysqlclient_r $LIBS",
+        AC_MSG_ERROR(Cannot link with thread-safe MySQL lib (libmysqlclient_r)))
+ 
 @@ -221,6 +221,14 @@ if test "$OLD_UCD_SNMP" = "yes"; then
         AC_MSG_ERROR(Cannot find UCD-SNMP libraries(snmp)))
  fi
