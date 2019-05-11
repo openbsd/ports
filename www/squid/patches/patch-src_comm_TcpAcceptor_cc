@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_comm_TcpAcceptor_cc,v 1.1 2019/05/11 08:17:36 matthieu Exp $
+
+Patch for locksup observed when accept() returns ECONNABORTED
+
+Index: src/comm/TcpAcceptor.cc
+--- src/comm/TcpAcceptor.cc.orig
++++ src/comm/TcpAcceptor.cc
+@@ -361,7 +361,7 @@ Comm::TcpAcceptor::oldAccept(Comm::ConnectionPointer &details)
+ 
+         PROF_stop(comm_accept);
+ 
+-        if (ignoreErrno(errcode)) {
++        if (ignoreErrno(errcode) || ECONNABORTED == errcode) {
+             debugs(50, 5, status() << ": " << xstrerr(errcode));
+             return Comm::NOMESSAGE;
+        } else if (ENFILE == errno || EMFILE == errno) {
