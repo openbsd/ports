@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/27 18:13:39 robert Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/05/11 18:33:43 robert Exp $
 @bin bin/mate-system-monitor
 libexec/mate-system-monitor/
 @bin libexec/mate-system-monitor/msm-kill
@@ -2016,16 +2016,12 @@ share/locale/fr/LC_MESSAGES/mate-system-monitor.mo
 share/locale/fr_CA/
 share/locale/fr_CA/LC_MESSAGES/
 share/locale/fr_CA/LC_MESSAGES/mate-system-monitor.mo
-share/locale/frp/
-share/locale/frp/LC_MESSAGES/
 share/locale/frp/LC_MESSAGES/mate-system-monitor.mo
 share/locale/fur/LC_MESSAGES/mate-system-monitor.mo
 share/locale/fy/LC_MESSAGES/mate-system-monitor.mo
 share/locale/ga/LC_MESSAGES/mate-system-monitor.mo
 share/locale/gl/LC_MESSAGES/mate-system-monitor.mo
 share/locale/gu/LC_MESSAGES/mate-system-monitor.mo
-share/locale/ha/
-share/locale/ha/LC_MESSAGES/
 share/locale/ha/LC_MESSAGES/mate-system-monitor.mo
 share/locale/he/LC_MESSAGES/mate-system-monitor.mo
 share/locale/hi/LC_MESSAGES/mate-system-monitor.mo
@@ -2065,8 +2061,6 @@ share/locale/ml/LC_MESSAGES/mate-system-monitor.mo
 share/locale/mn/LC_MESSAGES/mate-system-monitor.mo
 share/locale/mr/LC_MESSAGES/mate-system-monitor.mo
 share/locale/ms/LC_MESSAGES/mate-system-monitor.mo
-share/locale/nah/
-share/locale/nah/LC_MESSAGES/
 share/locale/nah/LC_MESSAGES/mate-system-monitor.mo
 share/locale/nb/LC_MESSAGES/mate-system-monitor.mo
 share/locale/nds/LC_MESSAGES/mate-system-monitor.mo
@@ -2087,8 +2081,6 @@ share/locale/pt_BR/LC_MESSAGES/mate-system-monitor.mo
 share/locale/ro/LC_MESSAGES/mate-system-monitor.mo
 share/locale/ru/LC_MESSAGES/mate-system-monitor.mo
 share/locale/rw/LC_MESSAGES/mate-system-monitor.mo
-share/locale/sc/
-share/locale/sc/LC_MESSAGES/
 share/locale/sc/LC_MESSAGES/mate-system-monitor.mo
 share/locale/si/LC_MESSAGES/mate-system-monitor.mo
 share/locale/sk/LC_MESSAGES/mate-system-monitor.mo
@@ -2114,8 +2106,6 @@ share/locale/vi/LC_MESSAGES/mate-system-monitor.mo
 share/locale/wa/LC_MESSAGES/mate-system-monitor.mo
 share/locale/xh/LC_MESSAGES/mate-system-monitor.mo
 share/locale/yi/LC_MESSAGES/mate-system-monitor.mo
-share/locale/yo/
-share/locale/yo/LC_MESSAGES/
 share/locale/yo/LC_MESSAGES/mate-system-monitor.mo
 share/locale/zh_CN/LC_MESSAGES/mate-system-monitor.mo
 share/locale/zh_HK/LC_MESSAGES/mate-system-monitor.mo

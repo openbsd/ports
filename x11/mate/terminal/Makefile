@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2019/03/27 18:13:39 robert Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/11 18:33:43 robert Exp $
 
 COMMENT=		MATE terminal
 
 MATE_PROJECT=		mate-terminal
+MATE_VERSION=		1.22.1
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes

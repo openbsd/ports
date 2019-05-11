@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/03/27 18:13:37 robert Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/05/11 18:33:42 robert Exp $
 @bin bin/caja-sendto
 include/caja-sendto/
 include/caja-sendto/caja-sendto-plugin.h
@@ -132,8 +132,6 @@ share/locale/is/LC_MESSAGES/caja-extensions.mo
 share/locale/it/LC_MESSAGES/caja-extensions.mo
 share/locale/ja/LC_MESSAGES/caja-extensions.mo
 share/locale/ka/LC_MESSAGES/caja-extensions.mo
-share/locale/kab/
-share/locale/kab/LC_MESSAGES/
 share/locale/kab/LC_MESSAGES/caja-extensions.mo
 share/locale/kk/LC_MESSAGES/caja-extensions.mo
 share/locale/kn/LC_MESSAGES/caja-extensions.mo

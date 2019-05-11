@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/03/27 18:13:39 robert Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/05/11 18:33:43 robert Exp $
 @bin bin/mate-terminal
 bin/mate-terminal.wrapper
 @man man/man1/mate-terminal.1
@@ -805,8 +805,6 @@ share/locale/fy/LC_MESSAGES/mate-terminal.mo
 share/locale/ga/LC_MESSAGES/mate-terminal.mo
 share/locale/gl/LC_MESSAGES/mate-terminal.mo
 share/locale/gu/LC_MESSAGES/mate-terminal.mo
-share/locale/ha/
-share/locale/ha/LC_MESSAGES/
 share/locale/ha/LC_MESSAGES/mate-terminal.mo
 share/locale/he/LC_MESSAGES/mate-terminal.mo
 share/locale/hi/LC_MESSAGES/mate-terminal.mo
@@ -889,16 +887,6 @@ share/locale/zh_CN/LC_MESSAGES/mate-terminal.mo
 share/locale/zh_HK/LC_MESSAGES/mate-terminal.mo
 share/locale/zh_TW/LC_MESSAGES/mate-terminal.mo
 share/locale/zu/LC_MESSAGES/mate-terminal.mo
-share/mate-terminal/
-share/mate-terminal/encodings-dialog.ui
-share/mate-terminal/find-dialog.ui
-share/mate-terminal/keybinding-editor.ui
-share/mate-terminal/profile-manager.ui
-share/mate-terminal/profile-new-dialog.ui
-share/mate-terminal/profile-preferences.ui
-share/mate-terminal/skey-challenge.ui
-share/mate-terminal/terminal.about
-share/mate-terminal/terminal.xml
 @tag update-desktop-database
 @tag glib-compile-schemas
 share/metainfo/mate-terminal.appdata.xml

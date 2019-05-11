@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/03/27 18:13:37 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/05/11 18:33:42 robert Exp $
 @bin bin/mate-about-me
 @bin bin/mate-appearance-properties
 @bin bin/mate-at-properties
@@ -1967,18 +1967,7 @@ share/help/zu/mate-control-center/config-screensaver.xml
 share/help/zu/mate-control-center/config-themes.xml
 share/help/zu/mate-control-center/index.docbook
 share/help/zu/mate-control-center/legal.xml
-share/icons/hicolor/16x16/apps/mate-network-properties.png
-share/icons/hicolor/16x16/apps/mate-preferences-desktop-display.png
-share/icons/hicolor/22x22/apps/mate-network-properties.png
-share/icons/hicolor/22x22/apps/mate-preferences-desktop-display.png
-share/icons/hicolor/24x24/apps/mate-network-properties.png
-share/icons/hicolor/24x24/apps/mate-preferences-desktop-display.png
-share/icons/hicolor/32x32/apps/mate-network-properties.png
-share/icons/hicolor/32x32/apps/mate-preferences-desktop-display.png
-share/icons/hicolor/48x48/apps/mate-network-properties.png
 share/icons/hicolor/48x48/apps/mate-typing-monitor.png
-share/icons/hicolor/scalable/apps/mate-network-properties.svg
-share/icons/hicolor/scalable/apps/mate-preferences-desktop-display.svg
 share/icons/hicolor/scalable/apps/mate-typing-monitor.svg
 share/locale/af/LC_MESSAGES/mate-control-center.mo
 share/locale/am/LC_MESSAGES/mate-control-center.mo
@@ -2135,35 +2124,11 @@ share/mate-control-center/pixmaps/double-click-off.svg
 share/mate-control-center/pixmaps/double-click-on.svg
 share/mate-control-center/pixmaps/gtk-theme-thumbnailing.png
 share/mate-control-center/pixmaps/icon-theme-thumbnailing.png
-share/mate-control-center/pixmaps/left-index-finger.png
-share/mate-control-center/pixmaps/left-index-finger.svg
-share/mate-control-center/pixmaps/left-little-finger.png
-share/mate-control-center/pixmaps/left-little-finger.svg
-share/mate-control-center/pixmaps/left-middle-finger.png
-share/mate-control-center/pixmaps/left-middle-finger.svg
-share/mate-control-center/pixmaps/left-ring-finger.png
-share/mate-control-center/pixmaps/left-ring-finger.svg
-share/mate-control-center/pixmaps/left-thumb.png
-share/mate-control-center/pixmaps/left-thumb.svg
 share/mate-control-center/pixmaps/mouse-cursor-normal-large.png
 share/mate-control-center/pixmaps/mouse-cursor-normal.png
 share/mate-control-center/pixmaps/mouse-cursor-white-large.png
 share/mate-control-center/pixmaps/mouse-cursor-white.png
 share/mate-control-center/pixmaps/ocean-stripes.png
-share/mate-control-center/pixmaps/print_error.png
-share/mate-control-center/pixmaps/print_error.svg
-share/mate-control-center/pixmaps/print_ok.png
-share/mate-control-center/pixmaps/print_ok.svg
-share/mate-control-center/pixmaps/right-index-finger.png
-share/mate-control-center/pixmaps/right-index-finger.svg
-share/mate-control-center/pixmaps/right-little-finger.png
-share/mate-control-center/pixmaps/right-little-finger.svg
-share/mate-control-center/pixmaps/right-middle-finger.png
-share/mate-control-center/pixmaps/right-middle-finger.svg
-share/mate-control-center/pixmaps/right-ring-finger.png
-share/mate-control-center/pixmaps/right-ring-finger.svg
-share/mate-control-center/pixmaps/right-thumb.png
-share/mate-control-center/pixmaps/right-thumb.svg
 share/mate-control-center/pixmaps/subpixel-bgr.png
 share/mate-control-center/pixmaps/subpixel-rgb.png
 share/mate-control-center/pixmaps/subpixel-vbgr.png

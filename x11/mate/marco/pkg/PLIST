@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/09/20 11:16:07 robert Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/05/11 18:33:43 robert Exp $
 @bin bin/marco
 @bin bin/marco-message
 @bin bin/marco-theme-viewer
@@ -70,15 +70,11 @@ share/locale/eu/LC_MESSAGES/marco.mo
 share/locale/fa/LC_MESSAGES/marco.mo
 share/locale/fi/LC_MESSAGES/marco.mo
 share/locale/fr/LC_MESSAGES/marco.mo
-share/locale/frp/
-share/locale/frp/LC_MESSAGES/
 share/locale/frp/LC_MESSAGES/marco.mo
 share/locale/fur/LC_MESSAGES/marco.mo
 share/locale/ga/LC_MESSAGES/marco.mo
 share/locale/gl/LC_MESSAGES/marco.mo
 share/locale/gu/LC_MESSAGES/marco.mo
-share/locale/ha/
-share/locale/ha/LC_MESSAGES/
 share/locale/ha/LC_MESSAGES/marco.mo
 share/locale/he/LC_MESSAGES/marco.mo
 share/locale/hi/LC_MESSAGES/marco.mo
@@ -152,8 +148,6 @@ share/locale/uz/LC_MESSAGES/marco.mo
 share/locale/vi/LC_MESSAGES/marco.mo
 share/locale/wa/LC_MESSAGES/marco.mo
 share/locale/xh/LC_MESSAGES/marco.mo
-share/locale/yo/
-share/locale/yo/LC_MESSAGES/
 share/locale/yo/LC_MESSAGES/marco.mo
 share/locale/zh_CN/LC_MESSAGES/marco.mo
 share/locale/zh_HK/LC_MESSAGES/marco.mo

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/03/27 18:13:37 robert Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/11 18:33:42 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -7,6 +7,7 @@ COMMENT=		file archiver for the MATE desktop
 CATEGORIES=		archivers
 
 MATE_PROJECT=		engrampa
+MATE_VERSION=		1.22.1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

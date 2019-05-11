@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/04/23 13:44:39 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/05/11 18:33:42 robert Exp $
 @bin bin/mate-about
 @bin bin/mate-color-select
 include/mate-desktop-2.0/
@@ -136,12 +136,8 @@ share/locale/eu/LC_MESSAGES/mate-desktop.mo
 share/locale/fa/LC_MESSAGES/mate-desktop.mo
 share/locale/fi/LC_MESSAGES/mate-desktop.mo
 share/locale/fr/LC_MESSAGES/mate-desktop.mo
-share/locale/frp/
-share/locale/frp/LC_MESSAGES/
 share/locale/frp/LC_MESSAGES/mate-desktop.mo
 share/locale/fur/LC_MESSAGES/mate-desktop.mo
-share/locale/fy/
-share/locale/fy/LC_MESSAGES/
 share/locale/fy/LC_MESSAGES/mate-desktop.mo
 share/locale/ga/LC_MESSAGES/mate-desktop.mo
 share/locale/gl/LC_MESSAGES/mate-desktop.mo
@@ -172,8 +168,6 @@ share/locale/ku_IQ/LC_MESSAGES/
 share/locale/ku_IQ/LC_MESSAGES/mate-desktop.mo
 share/locale/ky/LC_MESSAGES/mate-desktop.mo
 share/locale/li/LC_MESSAGES/mate-desktop.mo
-share/locale/lo/
-share/locale/lo/LC_MESSAGES/
 share/locale/lo/LC_MESSAGES/mate-desktop.mo
 share/locale/lt/LC_MESSAGES/mate-desktop.mo
 share/locale/lv/LC_MESSAGES/mate-desktop.mo
@@ -200,8 +194,6 @@ share/locale/pt/LC_MESSAGES/mate-desktop.mo
 share/locale/pt_BR/LC_MESSAGES/mate-desktop.mo
 share/locale/ro/LC_MESSAGES/mate-desktop.mo
 share/locale/ru/LC_MESSAGES/mate-desktop.mo
-share/locale/sc/
-share/locale/sc/LC_MESSAGES/
 share/locale/sc/LC_MESSAGES/mate-desktop.mo
 share/locale/si/LC_MESSAGES/mate-desktop.mo
 share/locale/sk/LC_MESSAGES/mate-desktop.mo
@@ -224,8 +216,6 @@ share/locale/vi/LC_MESSAGES/mate-desktop.mo
 share/locale/wa/LC_MESSAGES/mate-desktop.mo
 share/locale/xh/LC_MESSAGES/mate-desktop.mo
 share/locale/yi/LC_MESSAGES/mate-desktop.mo
-share/locale/yo/
-share/locale/yo/LC_MESSAGES/
 share/locale/yo/LC_MESSAGES/mate-desktop.mo
 share/locale/zh_CN/LC_MESSAGES/mate-desktop.mo
 share/locale/zh_HK/LC_MESSAGES/mate-desktop.mo

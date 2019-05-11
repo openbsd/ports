@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/03/27 18:13:37 robert Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/05/11 18:33:42 robert Exp $
 @bin bin/mate-calc
 @bin bin/mate-calc-cmd
 bin/mate-calculator
@@ -3451,18 +3451,12 @@ share/locale/fr/LC_MESSAGES/mate-calc.mo
 share/locale/fr_CA/
 share/locale/fr_CA/LC_MESSAGES/
 share/locale/fr_CA/LC_MESSAGES/mate-calc.mo
-share/locale/frp/
-share/locale/frp/LC_MESSAGES/
 share/locale/frp/LC_MESSAGES/mate-calc.mo
 share/locale/fur/LC_MESSAGES/mate-calc.mo
-share/locale/fy/
-share/locale/fy/LC_MESSAGES/
 share/locale/fy/LC_MESSAGES/mate-calc.mo
 share/locale/ga/LC_MESSAGES/mate-calc.mo
 share/locale/gl/LC_MESSAGES/mate-calc.mo
 share/locale/gu/LC_MESSAGES/mate-calc.mo
-share/locale/ha/
-share/locale/ha/LC_MESSAGES/
 share/locale/ha/LC_MESSAGES/mate-calc.mo
 share/locale/he/LC_MESSAGES/mate-calc.mo
 share/locale/hi/LC_MESSAGES/mate-calc.mo
@@ -3539,8 +3533,6 @@ share/locale/vi/LC_MESSAGES/mate-calc.mo
 share/locale/wa/LC_MESSAGES/mate-calc.mo
 share/locale/xh/LC_MESSAGES/mate-calc.mo
 share/locale/yi/LC_MESSAGES/mate-calc.mo
-share/locale/yo/
-share/locale/yo/LC_MESSAGES/
 share/locale/yo/LC_MESSAGES/mate-calc.mo
 share/locale/zh_CN/LC_MESSAGES/mate-calc.mo
 share/locale/zh_HK/LC_MESSAGES/mate-calc.mo

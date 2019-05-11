@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/03/27 18:13:37 robert Exp $
+# $OpenBSD: Makefile,v 1.25 2019/05/11 18:33:42 robert Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -10,6 +10,7 @@ SHARED_LIBS +=  atrildocument             3.0 # 3.0
 SHARED_LIBS +=  atrilview                 3.0 # 3.0
 
 MATE_PROJECT=		atril
+MATE_VERSION=		1.22.1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
