@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.7 2019/05/11 02:51:04 afresh1 Exp $
+# $OpenBSD: PyPI.pm,v 1.8 2019/05/11 14:57:23 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -71,11 +71,10 @@ sub fill_in_makefile
 	my $pkgname = $di->{info}->{name};
 	my $to_lower = $pkgname =~ /[[:upper:]]/ ? ':L' : '';
 	if ($pkgname =~ /^python-/) {
-		$self->set_other( 'PKGNAME',
-		    "\${DISTNAME:S/^python-/py-/$to_lower}" );
+		$self->set_pkgname("\${DISTNAME:S/^python-/py-/$to_lower}");
 	}
 	elsif ($pkgname !~ /^py-/) {
-		$self->set_other( 'PKGNAME', "py-\${DISTNAME$to_lower}" );
+		$self->set_pkgname("py-\${DISTNAME$to_lower}");
 	}
 	$self->set_modules('lang/python');
 	$self->set_categories('pypi');

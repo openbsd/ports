@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.5 2019/04/21 03:47:40 afresh1 Exp $
+# $OpenBSD: Port.pm,v 1.6 2019/05/11 14:57:23 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -109,6 +109,12 @@ sub set_comment
 	$comment =~ s/\n/ /g;
 	$self->{full_comment} = $comment if length $comment > 60;
 	$self->{COMMENT} = $self->_format_comment($comment);
+}
+
+sub set_pkgname {
+	my ( $self, $pkgname ) = @_;
+
+	$self->{PKGNAME} = $pkgname;
 }
 
 sub set_distname
