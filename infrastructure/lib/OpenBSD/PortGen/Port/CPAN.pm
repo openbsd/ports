@@ -1,4 +1,4 @@
-# $OpenBSD: CPAN.pm,v 1.5 2019/05/11 15:09:06 afresh1 Exp $
+# $OpenBSD: CPAN.pm,v 1.6 2019/05/11 17:17:53 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -165,11 +165,11 @@ sub read_descr
 	open my $readme, '<', "$path/README" or return;
 	my $descr = do { local $/ = undef; <$readme> };
 
-	if ( $descr =~ /^DESCRIPTION\n(.+?)^[A-Z]+/ms ) {
+	if ( $descr =~ /^DESCRIPTION\n(.+?)^\p{Upper}+/ms ) {
 		return $1 unless $1 =~ /^\s+$/;
 	}
 
-	if ( $descr =~ /^SYNOPSIS\n(.+?)^[A-Z]+/ms ) {
+	if ( $descr =~ /^SYNOPSIS\n(.+?)^\p{Upper}+/ms ) {
 		return $1 unless $1 =~ /^\s+$/;
 	}
 

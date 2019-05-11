@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.10 2019/05/11 15:16:33 afresh1 Exp $
+# $OpenBSD: Port.pm,v 1.11 2019/05/11 17:17:53 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 # Copyright (c) 2019 Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -212,6 +212,13 @@ sub name_new_port
 		return $in_ports;
 	}
 
+	# If the port name has uppercase letters
+	# and we didn't find it that way in the ports tree already
+	# we really want a lowercase name, so try again like that.
+	if ( $name =~ /\p{Upper}/ ) {
+		return $self->name_new_port( lc $name );
+	}
+
 	$name = "$prefix$name" unless $name =~ /^\Q$prefix/;
 
 	return $name;
@@ -234,7 +241,7 @@ sub parse_makefile
 
 		if ( $line =~ /^
 		    (?<comment> \#?       ) \s*
-		    (?<key>     (?<name>[A-Z_]+) (?<package>-\w+)? )
+		    (?<key>     (?<name>[\p{Upper}_]+) (?<package>-\w+)? )
 		    (?<equal>   \s* \?? = )
 		    (?<spaces>  \s*       )
 		    (?<value>   .*        )
@@ -304,7 +311,7 @@ sub write_makefile
 		if ( $line =~ /\.include \s+ <bsd.port.mk>/x ) {
 			my @additions;
 			foreach my $key ( sort keys %configs ) {
-				next if $key !~ /^[A-Z_]+(?:-\w+)?$/;
+				next if $key !~ /^[\p{Upper}_]+(?:-\w+)?$/;
 				my $value = $configs{$key};
 				next unless defined $value;
 
