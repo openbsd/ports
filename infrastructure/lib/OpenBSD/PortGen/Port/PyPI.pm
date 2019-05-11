@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.6 2019/05/09 02:13:57 afresh1 Exp $
+# $OpenBSD: PyPI.pm,v 1.7 2019/05/11 02:51:04 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -69,11 +69,13 @@ sub fill_in_makefile
 	$self->set_other( 'MODPY_EGG_VERSION', $di->{info}{version} );
 	$self->set_distname( "$di->{info}{name}" . '-${MODPY_EGG_VERSION}' );
 	my $pkgname = $di->{info}->{name};
+	my $to_lower = $pkgname =~ /[[:upper:]]/ ? ':L' : '';
 	if ($pkgname =~ /^python-/) {
-		$self->set_other( 'PKGNAME', '${DISTNAME:S/^python-/py-/}' );
+		$self->set_other( 'PKGNAME',
+		    "\${DISTNAME:S/^python-/py-/$to_lower}" );
 	}
 	elsif ($pkgname !~ /^py-/) {
-		$self->set_other( 'PKGNAME', 'py-${DISTNAME}' );
+		$self->set_other( 'PKGNAME', "py-\${DISTNAME$to_lower}" );
 	}
 	$self->set_modules('lang/python');
 	$self->set_categories('pypi');
