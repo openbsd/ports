@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/26 16:06:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/11 14:52:00 ajacoutot Exp $
 @bin bin/fprintd-delete
 @bin bin/fprintd-enroll
 @bin bin/fprintd-list
@@ -11,16 +11,16 @@ share/dbus-1/interfaces/net.reactivated.Fprint.Manager.xml
 share/dbus-1/system-services/net.reactivated.Fprint.service
 share/examples/fprintd/
 share/examples/fprintd/dbus-1/
-@sample ${SYSCONFDIR}/dbus-1/
 share/examples/fprintd/dbus-1/system.d/
-@sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/fprintd/dbus-1/system.d/net.reactivated.Fprint.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/net.reactivated.Fprint.conf
 share/examples/fprintd/fprintd.conf
 @sample ${SYSCONFDIR}/fprintd.conf
 share/locale/ar/LC_MESSAGES/fprintd.mo
 share/locale/as/LC_MESSAGES/fprintd.mo
+share/locale/ast/LC_MESSAGES/fprintd.mo
 share/locale/az/LC_MESSAGES/fprintd.mo
+share/locale/be/LC_MESSAGES/fprintd.mo
 share/locale/bg/LC_MESSAGES/fprintd.mo
 share/locale/bn_IN/LC_MESSAGES/fprintd.mo
 share/locale/ca/LC_MESSAGES/fprintd.mo
@@ -37,8 +37,11 @@ share/locale/et/LC_MESSAGES/fprintd.mo
 share/locale/eu/LC_MESSAGES/fprintd.mo
 share/locale/fa/LC_MESSAGES/fprintd.mo
 share/locale/fi/LC_MESSAGES/fprintd.mo
+share/locale/fo/
+share/locale/fo/LC_MESSAGES/
 share/locale/fo/LC_MESSAGES/fprintd.mo
 share/locale/fr/LC_MESSAGES/fprintd.mo
+share/locale/fur/LC_MESSAGES/fprintd.mo
 share/locale/ga/LC_MESSAGES/fprintd.mo
 share/locale/gl/LC_MESSAGES/fprintd.mo
 share/locale/gu/LC_MESSAGES/fprintd.mo
@@ -46,6 +49,8 @@ share/locale/he/LC_MESSAGES/fprintd.mo
 share/locale/hi/LC_MESSAGES/fprintd.mo
 share/locale/hr/LC_MESSAGES/fprintd.mo
 share/locale/hu/LC_MESSAGES/fprintd.mo
+share/locale/ia/
+share/locale/ia/LC_MESSAGES/
 share/locale/ia/LC_MESSAGES/fprintd.mo
 share/locale/id/LC_MESSAGES/fprintd.mo
 share/locale/it/LC_MESSAGES/fprintd.mo

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/26 16:06:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/11 14:52:00 ajacoutot Exp $
 
 COMMENT=		fingerprint scanning functionality over D-Bus
 
-DISTNAME=		fprintd-0.8.0
+DISTNAME=		fprintd-0.8.1
 EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=    		sysutils
 
-HOMEPAGE=		https://www.freedesktop.org/wiki/Software/fprint/fprintd/
+HOMEPAGE=		https://fprint.freedesktop.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -15,11 +15,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c dbus-1 dbus-glib-1 ffi fprint gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 iconv intl m nspr4 nss3 nssutil3 pcre pixman-1
-WANTLIB += plc4 plds4 polkit-gobject-1 pthread smime3 ssl3 usb-1.0
-WANTLIB += z
+WANTLIB += gobject-2.0 iconv intl m pcre polkit-gobject-1 pthread
 
-MASTER_SITES=		http://people.freedesktop.org/~hadess/
+MASTER_SITES=		https://gitlab.freedesktop.org/libfprint/fprintd/uploads/bdd9f91909f535368b7c21f72311704a/
 
 MODULES=		textproc/intltool
 
