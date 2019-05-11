@@ -1,8 +1,9 @@
-$OpenBSD: patch-src_ircd_c,v 1.15 2018/05/19 06:28:10 ajacoutot Exp $
+$OpenBSD: patch-src_ircd_c,v 1.16 2019/05/11 04:08:57 ajacoutot Exp $
+
 Index: src/ircd.c
 --- src/ircd.c.orig
 +++ src/ircd.c
-@@ -330,7 +330,6 @@ make_daemon(void)
+@@ -327,7 +327,6 @@ make_daemon(void)
    }
    else if (pid > 0)
    {
@@ -10,9 +11,9 @@ Index: src/ircd.c
      exit(EXIT_SUCCESS);
    }
  
-@@ -343,8 +342,19 @@ main(int argc, char *argv[])
+@@ -340,8 +339,19 @@ main(int argc, char *argv[])
    /* Check to see if the user is running us as root, which is a nono */
-   if (!geteuid())
+   if (geteuid() == 0)
    {
 -    fprintf(stderr, "ERROR: This server won't run as root/superuser\n");
 -    return -1;

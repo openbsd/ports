@@ -1,8 +1,9 @@
-$OpenBSD: patch-doc_reference_conf,v 1.14 2018/05/19 06:28:10 ajacoutot Exp $
+$OpenBSD: patch-doc_reference_conf,v 1.15 2019/05/11 04:08:57 ajacoutot Exp $
+
 Index: doc/reference.conf
 --- doc/reference.conf.orig
 +++ doc/reference.conf
-@@ -121,7 +121,7 @@ serverinfo {
+@@ -109,7 +109,7 @@ serverinfo {
  	 *    chown <ircd-user>.<ircd.group> rsa.key
  	 *    chmod 0600 rsa.key
  	 */
@@ -11,7 +12,7 @@ Index: doc/reference.conf
  
  	/*
  	 * ssl_certificate_file: the path to the file containing our
-@@ -138,7 +138,7 @@ serverinfo {
+@@ -126,7 +126,7 @@ serverinfo {
  	 * GnuTLS:
  	 *    certtool --generate-self-signed --load-privkey rsa.key --outfile cert.pem
  	 */
@@ -20,7 +21,7 @@ Index: doc/reference.conf
  
  	/*
  	 * ssl_dh_param_file: the path to the PEM encoded Diffie-Hellman
-@@ -153,7 +153,7 @@ serverinfo {
+@@ -141,7 +141,7 @@ serverinfo {
  	 * GnuTLS:
  	 *    certtool --generate-dh-params --sec-param=medium --outfile dhparam.pem
  	 */
@@ -29,7 +30,7 @@ Index: doc/reference.conf
  
  	/*
  	 * ssl_dh_elliptic_curve: defines the curve to use for the
-@@ -335,7 +335,7 @@ motd {
+@@ -318,7 +318,7 @@ motd {
  	/*
  	 * file: path to the motd file.
  	 */
@@ -38,7 +39,7 @@ Index: doc/reference.conf
  };
  
  /*
-@@ -1024,7 +1024,7 @@ serverhide {
+@@ -1006,7 +1006,7 @@ serverhide {
  	/*
  	 * flatten_links_file: path to the flatten links cache file.
  	 */
@@ -47,7 +48,7 @@ Index: doc/reference.conf
  
  	/*
  	 * hidden: hide this server from a /links output on servers that
-@@ -1357,9 +1357,9 @@ modules {
+@@ -1330,9 +1330,9 @@ modules {
  	 * path: other paths to search for modules specified below
  	 * and in "/module load".
  	 */
@@ -60,7 +61,7 @@ Index: doc/reference.conf
  
  	/* module: the name of a module to load on startup/rehash. */
  #	module = "some_module.la";
-@@ -1374,49 +1374,49 @@ log {
+@@ -1347,49 +1347,49 @@ log {
  
  	file {
  		type = oper;

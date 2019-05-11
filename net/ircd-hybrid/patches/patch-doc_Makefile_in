@@ -1,4 +1,5 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.9 2018/05/19 06:28:10 ajacoutot Exp $
+$OpenBSD: patch-doc_Makefile_in,v 1.10 2019/05/11 04:08:57 ajacoutot Exp $
+
 Index: doc/Makefile.in
 --- doc/Makefile.in.orig
 +++ doc/Makefile.in
@@ -35,7 +36,7 @@ Index: doc/Makefile.in
  tags TAGS:
  
  ctags CTAGS:
-@@ -458,7 +458,7 @@ check-am: all-am
+@@ -461,7 +461,7 @@ check-am: all-am
  check: check-am
  all-am: Makefile $(MANS) $(DATA)
  installdirs:
