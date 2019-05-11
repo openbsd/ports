@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/05/05 09:48:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/05/11 13:51:25 ajacoutot Exp $
 share/osinfo/
 share/osinfo/LICENSE
 share/osinfo/VERSION
@@ -505,6 +505,7 @@ share/osinfo/os/openbsd.org/openbsd-6.1.xml
 share/osinfo/os/openbsd.org/openbsd-6.2.xml
 share/osinfo/os/openbsd.org/openbsd-6.3.xml
 share/osinfo/os/openbsd.org/openbsd-6.4.xml
+share/osinfo/os/openbsd.org/openbsd-6.5.xml
 share/osinfo/os/opensuse.org/
 share/osinfo/os/opensuse.org/opensuse-10.2.xml
 share/osinfo/os/opensuse.org/opensuse-10.3.xml
