@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.73 2019/04/26 21:33:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.74 2019/05/11 04:25:23 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -181,6 +181,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/__init__.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/exceptions.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/get_token.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/get_token.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/kubeconfig.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/kubeconfig.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/eks/ordered_yaml.py
@@ -677,6 +679,26 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudwatch/list-metrics
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudwatch/put-metric-alarm.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudwatch/put-metric-data.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cloudwatch/set-alarm-state.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/batch-delete-builds.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/batch-get-builds.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/batch-get-projects.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/create-project.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/create-webhook.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/delete-project.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/delete-source-credentials.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/delete-webhook.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/import-source-credentials.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/invalidate-project-cache.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/list-builds-for-project.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/list-builds.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/list-curated-environment-images.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/list-projects.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/list-source-credentials.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/start-build.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/stop-build.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/update-project.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/codebuild/update-webhook.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/batch-get-repositories.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/codecommit/create-branch.rst
@@ -870,9 +892,13 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/datapipeline/put-pipeli
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/datapipeline/remove-tags.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/add-tags-to-on-premises-instances.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/batch-get-application-revisions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/batch-get-applications.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/batch-get-deployment-groups.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/batch-get-deployment-targets.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/batch-get-deployments.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/batch-get-on-premises-instances.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/continue-deployment.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/create-application.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/create-deployment-config.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/create-deployment-group.rst
@@ -880,6 +906,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/create-deploymen
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/delete-application.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/delete-deployment-config.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/delete-deployment-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/delete-git-hub-account-token.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/deregister-on-premises-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/deregister.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/get-application-revision.rst
@@ -887,6 +914,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/get-application.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/get-deployment-config.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/get-deployment-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/get-deployment-instance.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/get-deployment-target.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/get-deployment.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/get-on-premises-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/install.rst
@@ -895,7 +923,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/list-application
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/list-deployment-configs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/list-deployment-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/list-deployment-instances.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/list-deployment-targets.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/list-deployments.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/list-git-hub-account-token-names.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/list-on-premises-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/push.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/register-application-revision.rst
@@ -906,6 +936,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/stop-deployment.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/uninstall.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/update-application.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/update-deployment-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/wait/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/deploy/wait/deployment-successful.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/devicefarm/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/devicefarm/create-device-pool.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/devicefarm/create-project.rst
@@ -1189,6 +1221,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-identity-id-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-image-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-credit-specification.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-event-start-time.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-instance-placement.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-launch-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-network-interface-attribute.rst
@@ -1645,6 +1678,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/create-alias.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/decrypt.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/encrypt.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/lightsail/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/lightsail/get-instance-metric-data.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/logs/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/logs/create-log-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/logs/create-log-stream.rst
@@ -1911,6 +1946,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3/cp.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3/ls.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3/mb.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3/mv.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3/presign.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3/rb.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3/rm.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3/sync.rst
