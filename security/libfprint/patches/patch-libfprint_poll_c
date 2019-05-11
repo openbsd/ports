@@ -1,0 +1,16 @@
+$OpenBSD: patch-libfprint_poll_c,v 1.1 2019/05/11 14:51:24 ajacoutot Exp $
+
+64bit time_t
+
+Index: libfprint/poll.c
+--- libfprint/poll.c.orig
++++ libfprint/poll.c
+@@ -167,7 +167,7 @@ static int get_next_timeout_expiry(struct timeval *out
+ 		timerclear(out);
+ 	} else {
+ 		timersub(&next_timeout->expiry, &tv, out);
+-		fp_dbg("next timeout in %ld.%06lds", out->tv_sec, out->tv_usec);
++		fp_dbg("next timeout in %lld.%06lds", out->tv_sec, out->tv_usec);
+ 	}
+ 
+ 	return 1;

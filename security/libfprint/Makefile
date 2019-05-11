@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.31 2018/11/15 20:21:33 solene Exp $
+# $OpenBSD: Makefile,v 1.32 2019/05/11 14:51:24 ajacoutot Exp $
 
 COMMENT=		library for fingerprint reader devices
 
-DISTNAME=		libfprint-0.6.0
-REVISION=		1
+DISTNAME=		libfprint-0.8.2
 
 CATEGORIES=    		security
 
-SHARED_LIBS +=  fprint               1.1      # 0.0
+SHARED_LIBS += fprint                    2.0 # 0.0.0
 
-HOMEPAGE=		https://www.freedesktop.org/wiki/Software/fprint/libfprint
-MASTER_SITES=		https://people.freedesktop.org/~hadess/
+HOMEPAGE=		https://fprint.freedesktop.org/
+MASTER_SITES=		https://gitlab.freedesktop.org/libfprint/libfprint/uploads/4272fab4f37516db5b20d07bb576a4b1/
 EXTRACT_SUFX=		.tar.xz
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
@@ -18,16 +17,20 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += glib-2.0 iconv intl m nspr4 nss3 nssutil3 pcre pixman-1
-WANTLIB += plc4 plds4 pthread smime3 ssl3 usb-1.0
+WANTLIB += glib-2.0 intl m nspr4 nss3 nssutil3 pixman-1 plc4 plds4
+WANTLIB += usb-1.0
 
-CONFIGURE_STYLE=	gnu
+MODULES=		devel/meson
 
 LIB_DEPENDS=		devel/glib2 \
 			devel/libusb1 \
 			security/nss
 
-post-install:
-	rm -r ${WRKINST}/rules.d
+CONFIGURE_ENV=		LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ARGS=		-Ddoc=false \
+			-Dudev_rules=false
+
+CFLAGS +=		-DENODATA=ENOENT \
+			-DETIME=ETIMEDOUT
 
 .include <bsd.port.mk>
