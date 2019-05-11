@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.7 2019/05/11 15:09:06 afresh1 Exp $
+# $OpenBSD: Port.pm,v 1.8 2019/05/11 15:10:59 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -32,6 +32,11 @@ use OpenBSD::PortGen::Utils qw(
     base_dir
     ports_dir
 );
+
+sub _cp {
+    my (@args) = @_;
+    system('/bin/cp', @args) == 0;
+}
 
 sub new
 {
@@ -342,7 +347,7 @@ sub make_fake
 
 sub make_plist
 {
-	shift->_make('plist');
+	shift->_make('update-plist');
 }
 
 sub make_show
@@ -356,10 +361,27 @@ sub make_portdir
 {
 	my ( $self, $name ) = @_;
 
-	my $portdir = base_dir() . "/$name";
-	make_path($portdir) unless -e $portdir;
+	my $old = ports_dir() . "/$name";
+	my $new = base_dir()  . "/$name";
 
-	return $portdir;
+	if ( -e $old ) {
+		my ($dst) = $new =~ m{^(.*)/[^/]+$};
+		make_path($dst) unless -e $dst;
+		_cp( '-a', $old, $dst )
+		    or die "Unable to copy $old to $new: $!";
+
+		unlink glob("$new/pkg/PLIST*.orig");
+
+		foreach my $file ( 'Makefile', 'pkg/DESCR' ) {
+			next unless -e "$new/$file";
+			rename "$new/$file", "$new/$file.orig"
+			    or die "Unable to rename $file.orig: $!";
+		}
+	}
+
+	make_path($new) unless -e $new;
+
+	return $new;
 }
 
 sub make_port
