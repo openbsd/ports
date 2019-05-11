@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2019/05/11 20:18:18 bcallah Exp $
 
 COMMENT=	GNU awk
 
-V=		4.2.1
+V=		5.0.0
 DISTNAME=	gawk-$V
-REVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU:=gawk/}
 
@@ -32,5 +31,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 post-install:
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man3am
 	mv ${PREFIX}/man/man3/*.3am ${PREFIX}/man/man3am
+	@rm -rf ${WRKINST}/etc/profile.d
 
 .include <bsd.port.mk>

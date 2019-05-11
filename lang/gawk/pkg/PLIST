@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/01/14 10:03:54 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/05/11 20:18:18 bcallah Exp $
 bin/awk
 @bin bin/gawk
 @bin bin/gawk-${V}
@@ -50,6 +50,7 @@ share/awk/intdiv0.awk
 share/awk/join.awk
 share/awk/libintl.awk
 share/awk/noassign.awk
+share/awk/ns_passwd.awk
 share/awk/ord.awk
 share/awk/passwd.awk
 share/awk/processarray.awk
@@ -71,6 +72,7 @@ share/locale/fr/LC_MESSAGES/gawk.mo
 share/locale/id/LC_MESSAGES/gawk.mo
 share/locale/it/LC_MESSAGES/gawk.mo
 share/locale/ja/LC_MESSAGES/gawk.mo
+share/locale/ko/LC_MESSAGES/gawk.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/gawk.mo
