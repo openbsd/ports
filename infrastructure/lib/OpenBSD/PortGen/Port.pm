@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.9 2019/05/11 15:12:58 afresh1 Exp $
+# $OpenBSD: Port.pm,v 1.10 2019/05/11 15:16:33 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 # Copyright (c) 2019 Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -273,11 +273,12 @@ sub write_makefile
 		    grep { $_->{name} ne 'REVISION' }
 		    grep { ref } @template;
 	} else {
+		my $tag = 'OpenBSD';
 		my $template =
 		    ports_dir() . '/infrastructure/templates/Makefile.template';
 
 		@template = (
-		    '# $OpenBSD: Port.pm,v 1.9 2019/05/11 15:12:58 afresh1 Exp $',
+		    "# \$$tag\$",
 		    grep { $_ !~ /^\#/x } $self->parse_makefile($template)
 		);
 	}
