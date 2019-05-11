@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.63 2019/04/27 21:31:59 sthen Exp $
+# $OpenBSD: arch-defines.mk,v 1.64 2019/05/11 12:05:46 jasper Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -12,7 +12,7 @@
 ARCH ?!= uname -m
 
 ALL_ARCHS = aarch64 alpha amd64 arm arm64 armv7 hppa i386 landisk loongson \
-	luna88k m88k macppc mips64 mips64el octeon sgi sh socppc sparc64
+	luna88k m88k macppc mips64 mips64el octeon sgi sh sparc64
 # not all powerpc have apm(4), hence the use of macppc
 APM_ARCHS = arm64 amd64 i386 loongson macppc sparc64
 BE_ARCHS = hppa m88k mips64 powerpc sparc64
