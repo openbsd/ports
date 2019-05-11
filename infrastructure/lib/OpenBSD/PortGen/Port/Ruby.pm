@@ -1,4 +1,4 @@
-# $OpenBSD: Ruby.pm,v 1.4 2019/05/11 15:09:06 afresh1 Exp $
+# $OpenBSD: Ruby.pm,v 1.5 2019/05/11 19:36:27 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -121,6 +121,7 @@ sub get_deps
 		if ( $port =~ m{^ruby/} ) {
 			my $o = OpenBSD::PortGen::Port::Ruby->new();
 			$o->port($name);
+			$self->add_notice( $o->notices );
 		}
 	}
 

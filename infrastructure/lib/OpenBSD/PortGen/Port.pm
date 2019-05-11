@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.11 2019/05/11 17:17:53 afresh1 Exp $
+# $OpenBSD: Port.pm,v 1.12 2019/05/11 19:36:27 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 # Copyright (c) 2019 Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -120,7 +120,10 @@ sub set_comment
 
 	$comment =~ s/\n/ /g;
 	$self->{full_comment} = $comment if length $comment > 60;
-	$self->{COMMENT} = $self->_format_comment($comment);
+	$comment = $self->_format_comment($comment);
+	$self->add_notice( "Comment starts with an uppercase letter" )
+	    if $comment =~ /^\p{Upper}/;
+	$self->{COMMENT} = $comment;
 }
 
 sub set_pkgname {
@@ -480,8 +483,11 @@ sub make_port
 	my $portdir  = $self->make_portdir($portname);
 	chdir $portdir or die "couldn't chdir to $portdir: $!";
 
-	# Set the category to the subdir the port lives in by default
-	$self->set_categories( $portname =~ m{^([^/]+)/} );
+	if ( my ( $category, $name ) = split qr{/}, $portname, 2 ) {
+		# Set the category to the subdir the port lives in by default
+		$self->set_categories($category);
+		$self->{name} = $name;
+	}
 
 	$self->fill_in_makefile( $di, $vi );
 	$self->write_makefile();
@@ -525,18 +531,49 @@ sub port
 	my $di = eval { $self->get_dist_info($module) };
 
 	unless ($di) {
-		warn "couldn't find dist for $module";
+		$self->add_notice("couldn't find dist for $module");
 		return;
 	}
 
 	my $vi = eval { $self->get_ver_info($module) };
 
 	unless ($vi) {
-		warn "couldn't get version info for $module";
+		$self->add_notice("couldn't get version info for $module");
 		return;
 	}
 
 	return $self->make_port( $di, $vi );
+}
+
+sub add_notice
+{
+	my ( $self, @messages ) = @_;
+
+	# Store the message and who generated it so we can display
+	# all that info at the end.
+	push @{ $self->{_notices} }, map { ref $_ ? $_ : {
+	    name    => $self->{name},
+	    message => $_,
+	} } @messages;
+
+	return 1;
+}
+
+sub notices
+{
+	my ($self) = @_;
+	my $messages = delete $self->{_notices};
+	return @{ $messages || [] };
+}
+
+sub DESTROY
+{
+	my ($self) = @_;
+
+	for ( $self->notices ) {
+		my $n = $_->{name} ? "[$_->{name}] " : '';
+		print "$n$_->{message}\n";
+	}
 }
 
 1;

@@ -1,4 +1,4 @@
-# $OpenBSD: CPAN.pm,v 1.6 2019/05/11 17:17:53 afresh1 Exp $
+# $OpenBSD: CPAN.pm,v 1.7 2019/05/11 19:36:27 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -150,6 +150,7 @@ sub get_deps
 					my $o =
 					    OpenBSD::PortGen::Port::CPAN->new();
 					$o->port($module);
+					$self->add_notice( $o->notices );
 				}
 			}
 		}
@@ -268,7 +269,8 @@ sub _test_skips
 
 	while (<$fh>) {
 		if (/plan skip_all/) {
-			warn "Possible hidden test dependency in: $file\n";
+			$self->add_notice(
+				"Possible hidden test dependency in: $file");
 			return;
 		}
 	}

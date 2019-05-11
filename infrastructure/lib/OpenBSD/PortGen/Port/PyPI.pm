@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.10 2019/05/11 17:17:53 afresh1 Exp $
+# $OpenBSD: PyPI.pm,v 1.11 2019/05/11 19:36:27 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -158,6 +158,7 @@ sub get_deps
 		my $port = module_in_ports( $name, 'py-' )
 		    || $self->name_new_port($name);
 
+		my $base_port = $port;
 		$port .= '${MODPY_FLAVOR}';
 
 		if ( $phase eq 'build' ) {
@@ -166,11 +167,13 @@ sub get_deps
 			$deps->add_test( $port, $req );
 		} elsif ( $phase eq 'dev' ) {
 			# switch this to "ne 'run'" to avoid optional deps
-			warn "Not adding '$phase' dep on $port\n";
+			$self->add_notice(
+				"Didn't add $base_port as '$phase' dep");
 			next;
 		} else {
-			warn "Adding '$phase' dep on $port as run dep\n"
-				unless $phase eq 'run';
+			$self->add_notice(
+				"Added $base_port as 'run' dep, wanted '$phase'")
+			    unless $phase eq 'run';
 			$deps->add_run( $port, $req );
 		}
 
@@ -178,6 +181,7 @@ sub get_deps
 		if ( $port =~ m{^pypi/} ) {
 			my $o = OpenBSD::PortGen::Port::PyPI->new();
 			$o->port($name);
+			$self->add_notice( $o->notices );
 		}
 	}
 
