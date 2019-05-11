@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.44 2019/05/11 10:22:49 espie Exp $
+# $OpenBSD: Locks.pm,v 1.45 2019/05/11 10:31:26 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -151,7 +151,7 @@ sub scan_lockdir
 		# and zap vim temp files as well!
 		next if $e =~ m/\.swp$/;
 		next if $e =~ m/^host\:/;
-		&$code("$self->{lockdir}/$e");
+		&$code($self->get_info_from_file("$self->{lockdir}/$e"));
 	}
 }
 
@@ -166,10 +166,9 @@ sub clean_old_locks
 	# first we get all live locks that pertain to us a a dpb host
 	$self->scan_lockdir(
 	    sub {
-	    	my $f = shift;
-	    	my $i = $self->get_info_from_file($f);
+	    	my $i = shift;
 		if ($i->is_bad) {
-			push @problems, $f;
+			push @problems, $i->{filename};
 			return;
 		}
 		if (!$i->{same_host} || defined $i->{finished}) {
@@ -290,8 +289,7 @@ sub find_dependencies
 	my $nojunk;
 	$self->scan_lockdir(
 	    sub {
-	    	my $f = shift;
-		my $i = $self->get_info_from_file($f);
+	    	my $i = shift;
 		return if $i->is_bad;
 		return if defined $i->{cleaned};
 		return unless defined $i->{host} && $i->{host} eq $hostname;
@@ -315,8 +313,7 @@ sub find_tag
 	my $tag;
 	$self->scan_lockdir(
 	    sub {
-	    	my $f = shift;
-		my $i = $self->get_info_from_file($f);
+	    	my $i = shift;
 		return if $i->is_bad;
 		return if $i->{cleaned};
 		if (defined $i->{host} && $i->{host} eq $hostname) {
