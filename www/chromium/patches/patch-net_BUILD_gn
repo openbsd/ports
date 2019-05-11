@@ -1,4 +1,4 @@
-$OpenBSD: patch-net_BUILD_gn,v 1.24 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-net_BUILD_gn,v 1.25 2019/05/11 20:37:14 robert Exp $
 Index: net/BUILD.gn
 --- net/BUILD.gn.orig
 +++ net/BUILD.gn
@@ -11,6 +11,15 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
+@@ -1868,7 +1868,7 @@ component("net") {
+       }
+     }
+ 
+-    if (is_android || is_chromeos) {
++    if (is_android || is_chromeos || is_openbsd) {
+       sources += [
+         "base/network_change_notifier_posix.cc",
+         "base/network_change_notifier_posix.h",
 @@ -1901,7 +1901,7 @@ component("net") {
      }
  

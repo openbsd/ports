@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.29 2019/05/10 21:55:39 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.30 2019/05/11 20:37:14 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
@@ -81,6 +81,43 @@ Index: build/config/compiler/BUILD.gn
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
+@@ -2168,21 +2164,21 @@ config("afdo_optimize_size") {
+ # between //base/allocator:tcmalloc and AFDO on GCC), so we provide a separate
+ # config to allow AFDO to be disabled per-target.
+ config("afdo") {
+-  if (is_clang) {
+-    if (_clang_sample_profile != "") {
+-      rebased_clang_sample_profile =
+-          rebase_path(_clang_sample_profile, root_build_dir)
+-      cflags = [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
+-      inputs = [
+-        _clang_sample_profile,
+-      ]
+-    }
+-  } else if (auto_profile_path != "" && is_a_target_toolchain) {
+-    cflags = [ "-fauto-profile=${auto_profile_path}" ]
+-    inputs = [
+-      auto_profile_path,
+-    ]
+-  }
++#  if (is_clang) {
++#    if (_clang_sample_profile != "") {
++#      rebased_clang_sample_profile =
++#          rebase_path(_clang_sample_profile, root_build_dir)
++#      cflags = [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
++#      inputs = [
++#        _clang_sample_profile,
++#      ]
++#    }
++#  } else if (auto_profile_path != "" && is_a_target_toolchain) {
++#    cflags = [ "-fauto-profile=${auto_profile_path}" ]
++#    inputs = [
++#      auto_profile_path,
++#    ]
++#  }
+ }
+ 
+ # Symbols ----------------------------------------------------------------------
 @@ -2286,7 +2282,7 @@ config("symbols") {
      # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
