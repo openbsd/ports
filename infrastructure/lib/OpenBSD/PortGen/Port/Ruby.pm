@@ -1,4 +1,4 @@
-# $OpenBSD: Ruby.pm,v 1.3 2019/05/11 14:57:23 afresh1 Exp $
+# $OpenBSD: Ruby.pm,v 1.4 2019/05/11 15:09:06 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -57,10 +57,11 @@ sub name_new_port
 {
 	my ( $self, $di ) = @_;
 
-	my $name = ref $di ? $di->{name} : $di;
-	$name = "ruby-$name" unless $name =~ /^ruby-/;
+	my $name = $self->SUPER::name_new_port(
+	    ref $di ? $di->{name} : $di );
+	$name = "ruby/$name" unless $name =~ m{/};
 
-	return "ruby/$name";
+	return $name;
 }
 
 sub fill_in_makefile
@@ -72,7 +73,6 @@ sub fill_in_makefile
 	$self->set_pkgname('${DISTNAME:S/ruby-//}')
 	    if $di->{name} =~ /^ruby-/;
 	$self->set_modules('lang/ruby');
-	$self->set_categories('ruby');
 	$self->set_other( 'HOMEPAGE', $di->{homepage_uri} );
 	$self->set_license( @{ $vi->{licenses} }[0] );
 	$self->set_other( 'CONFIGURE_STYLE', "ruby gem" );

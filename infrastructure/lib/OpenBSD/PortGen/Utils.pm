@@ -1,4 +1,4 @@
-# $OpenBSD: Utils.pm,v 1.2 2016/04/28 13:29:04 tsg Exp $
+# $OpenBSD: Utils.pm,v 1.3 2019/05/11 15:09:06 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -96,6 +96,14 @@ sub module_in_ports
 	# see devel/perltidy
 	for (@results) {
 		return $_ if /\/$prefix/;
+	}
+
+	# Many ports, in particular python ports, start with $prefix,
+	# possibly without the "-".  To catch that, we check if
+	# e.g. pytest got imported as py-test instead of py-pytest
+	( my $start = $prefix ) =~ s/-$//;
+	if ( $module =~ /^$start-?(.*)$/ ) {
+		return module_in_ports( $1, $prefix );
 	}
 
 	return;

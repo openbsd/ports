@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.6 2019/05/11 14:57:23 afresh1 Exp $
+# $OpenBSD: Port.pm,v 1.7 2019/05/11 15:09:06 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -25,7 +25,13 @@ use JSON::PP;
 use Text::Wrap;
 
 use OpenBSD::PortGen::License qw( is_good pretty_license );
-use OpenBSD::PortGen::Utils qw( add_to_new_ports base_dir fetch ports_dir );
+use OpenBSD::PortGen::Utils qw(
+    add_to_new_ports
+    module_in_ports
+    fetch
+    base_dir
+    ports_dir
+);
 
 sub new
 {
@@ -190,6 +196,21 @@ sub get_other
 	return $self->{$var};
 }
 
+sub name_new_port
+{
+	my ( $self, $name ) = @_;
+
+	my $prefix = $self->ecosystem_prefix;
+
+	if ( my $in_ports = module_in_ports( $name, $prefix ) ) {
+		return $in_ports;
+	}
+
+	$name = "$prefix$name" unless $name =~ /^\Q$prefix/;
+
+	return $name;
+}
+
 sub write_makefile
 {
 	my $self = shift;
@@ -349,6 +370,9 @@ sub make_port
 	my $portname = $self->name_new_port($di);
 	my $portdir  = $self->make_portdir($portname);
 	chdir $portdir or die "couldn't chdir to $portdir: $!";
+
+	# Set the category to the subdir the port lives in by default
+	$self->set_categories( $portname =~ m{^([^/]+)/} );
 
 	$self->fill_in_makefile( $di, $vi );
 	$self->write_makefile();

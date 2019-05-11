@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.8 2019/05/11 14:57:23 afresh1 Exp $
+# $OpenBSD: PyPI.pm,v 1.9 2019/05/11 15:09:06 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -54,9 +54,11 @@ sub name_new_port
 
 	my $name = ref $di ? $di->{info}{name} : $di;
 	$name =~ s/^python-/py-/;
-	$name = "py-$name" unless $name =~ /^py-/;
 
-	return "pypi/$name";
+	$name = $self->SUPER::name_new_port($name);
+	$name = "pypi/$name" unless $name =~ m{/};
+
+	return $name;
 }
 
 sub fill_in_makefile
@@ -77,7 +79,6 @@ sub fill_in_makefile
 		$self->set_pkgname("py-\${DISTNAME$to_lower}");
 	}
 	$self->set_modules('lang/python');
-	$self->set_categories('pypi');
 	$self->set_other( 'HOMEPAGE', $di->{info}{home_page} );
 	$self->set_license( $di->{info}{license} );
 	$self->set_descr( $di->{info}{summary} );

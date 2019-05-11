@@ -1,4 +1,4 @@
-# $OpenBSD: CPAN.pm,v 1.4 2017/07/20 20:42:41 sthen Exp $
+# $OpenBSD: CPAN.pm,v 1.5 2019/05/11 15:09:06 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -63,11 +63,12 @@ sub name_new_port
 {
 	my ( $self, $di ) = @_;
 
-	my $name = ref $di ? $di->{metadata}->{name} : $di;
-	$name = "p5-$name";
+	my $name = $self->SUPER::name_new_port(
+	    ref $di ? $di->{metadata}->{name} : $di );
 	$name =~ s/::/-/g;
+	$name = "cpan/$name" unless $name =~ m{/};
 
-	return "cpan/$name";
+	return $name;
 }
 
 sub needs_author
@@ -187,7 +188,6 @@ sub fill_in_makefile
 		: $di->{metadata}->{license}[0]
 	);
 	$self->set_modules('cpan');
-	$self->set_categories('cpan');
 
 	$self->set_other( 'CPAN_AUTHOR', $di->{author} )
 	    if $self->needs_author($di);
