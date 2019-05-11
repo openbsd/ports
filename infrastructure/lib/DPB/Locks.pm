@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.43 2019/05/10 18:48:41 espie Exp $
+# $OpenBSD: Locks.pm,v 1.44 2019/05/11 10:22:49 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -18,6 +18,76 @@
 use strict;
 use warnings;
 use DPB::User;
+
+package DPB::LockInfo;
+sub new
+{
+	my ($class, $filename) = @_;
+	bless { filename => $filename}, $class;
+}
+
+sub is_bad { 0 }
+
+sub set_field
+{
+	my ($i, $k, $v) = @_;
+	if (exists $i->{$k}) {
+		$i->set_bad("duplicate $k field");
+	} else {
+		$i->{$k} = $v;
+	}
+}
+
+sub set_bad
+{
+	my ($i, $error) = @_;
+	bless $i, 'DPB::LockInfo::Bad';
+	$i->{parseerror} = $error;
+	# XXX debug
+#	print STDERR "Problem in lock $i->{filename}: $i->{parseerror}\n";
+#	exit(10);
+}
+
+sub parse_file
+{
+	my ($i, $locker, $fh) = @_;
+	while(<$fh>) {
+		chomp;
+		if (m/^dpb\=(\d+)\s+on\s+(\S+)$/) {
+			if (defined $i->{dpb_pib}) {
+				$i->set_bad("duplicate dpb field");
+				next;
+			}
+			($i->{dpb_pid}, $i->{dpb_host}) = ($1, $2);
+			if ($i->{dpb_host} eq $locker->{dpb_host}) {
+				$i->{same_host} = 1;
+				if ($i->{dpb_pid} == $locker->{dpb_pid}) {
+					$i->{same_pid} = 1;
+			    	}
+			}
+		} elsif (m/^(pid|mem)\=(\d+)$/) {
+			$i->set_field($1, $2);
+		} elsif (m/^start\=(\d+)\s/) {
+			$i->set_field('start', $1);
+		} elsif (m/^(error|status|todo)\=(.*)$/) {
+			$i->set_field($1, $2);
+			$i->{finished} = 1;
+		} elsif (m/^(host|tag|parent|locked|path)\=(.+)$/) {
+			$i->set_field($1, $2);
+		} elsif (m/^(wanted|needed)\=(.*)$/) {
+			$i->set_field($1, [split(/\s+/, $2)]);
+		} elsif (m/^(nojunk|cleaned)$/) {
+			$i->set_field($1, 1);
+		} else {
+			$i->set_bad("Parse error on $_");
+		}
+	}
+	$i->{host} //= DPB::Core::Local->hostname;
+}
+
+package DPB::LockInfo::Bad;
+our @ISA = qw(DPB::LockInfo);
+sub is_bad { 1 }
 
 package DPB::Locks;
 our @ISA = (qw(DPB::UserProxy));
@@ -47,55 +117,74 @@ sub new
 	return $o;
 }
 
+sub get_info_from_fh
+{
+	my ($self, $fh, $filename) = @_;
+	my $i = DPB::LockInfo->new($filename);
+	$i->parse_file($self, $fh);
+	return $i;
+}
+
+sub get_info_from_file
+{
+	my ($self, $f) = @_;
+	my $fh = $self->open('<', $f);
+	if (defined $fh) {
+		return $self->get_info_from_fh($fh, $f);
+	} else {
+		return DPB::LockInfo::Bad->new($f);
+	}
+}
+
+sub get_info
+{
+	my ($self, $v) = @_;
+	return $self->get_info_from_file($self->lockname($v));
+}
+
+sub scan_lockdir
+{
+	my ($self, $code) = @_;
+	my $dir = $self->opendir($self->{lockdir});
+	while (my $e = readdir($dir)) {
+		next if $e eq '..' or $e eq '.';
+		# and zap vim temp files as well!
+		next if $e =~ m/\.swp$/;
+		next if $e =~ m/^host\:/;
+		&$code("$self->{lockdir}/$e");
+	}
+}
+
 sub clean_old_locks
 {
 	my ($self, $state) = @_;
 	my $hostpaths = {};
 	START:
-	my $info = {};
 	my @problems = ();
 	my $locks = {};
-	my $dir = $self->opendir($self->{lockdir});
-	DIR: while (my $e = readdir($dir)) {
-		next if $e eq '..' or $e eq '.';
-		# and zap vim temp files as well!
-		next if $e =~ m/\.swp$/;
-		my $f = "$self->{lockdir}/$e";
-		my $fh = $self->open('<', $f);
-		if (defined $fh) {
-			my ($pid, $host);
-			my $client = DPB::Core::Local->hostname;
-			my $path;
-			my $tag;
-			while(<$fh>) {
-				if (m/^dpb\=(\d+)\s+on\s+(\S+)$/) {
-					($pid, $host) = ($1, $2);
-					next DIR 
-					    unless $host eq $self->{dpb_host};
-				} elsif (m/^(?:error|status|todo)\=/) {
-					next DIR;
-				} elsif (m/^host=(.*)$/) {
-					$client = $1;
-				} elsif (m/^locked=(.*)$/) {
-					$path = $1;
-				} elsif (m/^tag=(.+)$/) {
-					$tag = $1;
-				}
-			}
-			if (defined $tag) {
-				DPB::Core::Init->taint($client, $tag, $path);
-			}
-			$info->{$f} = [$client, $path] if defined $path;
-			if (defined $pid) {
-				push(@{$locks->{$pid}}, $f);
-			} else {
-				push(@problems, $f);
-			}
-		} else {
-			push(@problems, $f);
+
+	# first we get all live locks that pertain to us a a dpb host
+	$self->scan_lockdir(
+	    sub {
+	    	my $f = shift;
+	    	my $i = $self->get_info_from_file($f);
+		if ($i->is_bad) {
+			push @problems, $f;
+			return;
 		}
-	}
+		if (!$i->{same_host} || defined $i->{finished}) {
+			return;
+		}
+		# on the way, let's retaint cores
+		if (defined $i->{tag}) {
+			DPB::Core::Init->taint($i->{host}, $i->{tag}, 
+			    $i->{locked});
+		}
+		push(@{$locks->{$i->{dpb_pid}}}, $i);
+	    });
+
 	if (keys %$locks != 0) {
+		# use ps to check for live dpb (and kill their lists)
 		open(my $ps, "-|", "ps", "-axww", "-o", "pid args");
 		my $junk = <$ps>;
 		while (<$ps>) {
@@ -106,14 +195,16 @@ sub clean_old_locks
 				}
 			}
 		}
+		# so what's left are stalelocks: remove them, and get a list
+		# to unlock them manually
 		for my $list (values %$locks) {
-			for my $l (@$list) {
-				my ($host, $path) = @{$info->{$l}};
-				push(@{$hostpaths->{$host}}, $path);
-				$self->unlink($l);
+			for my $i (@$list) {
+				push(@{$hostpaths->{$i->{host}}}, $i->{locked});
+				$self->unlink($i->{filename});
 			}
 		}
 	}
+	# just in case there are weird locks in there
 	if (@problems) {
 		$state->say("Problematic lockfiles I can't parse:\n\t#1\n".
 			"Waiting for ten seconds",
@@ -145,7 +236,7 @@ sub dolock
 		if (sysopen my $fh, $name, 
 		    O_CREAT|O_EXCL|O_WRONLY|O_CLOEXEC, 0666) {
 			DPB::Util->make_hot($fh);
-			print $fh "locked=", $v->logname, "\n";
+			print $fh "locked=", $v->logname, "\n"; # WRITELOCK
 			print $fh "dpb=", $self->{dpb_pid}, " on ", 
 			    $self->{dpb_host}, "\n";
 			$v->print_parent($fh);
@@ -159,19 +250,9 @@ sub dolock
 sub lock_has_other_owner
 {
 	my ($self, $v) = @_;
-	my $lock = $self->lockname($v);
-	if (open my $fh, '<', $lock) {
-		while (<$fh>) {
-			next unless m/^dpb\=(\d+)\s+on\s+(\S+)$/;
-			my ($pid, $host) = ($1, $2);
-			if ($pid eq $self->{dpb_pid} && 
-			    $host eq $self->{dpb_host}) {
-			    	return undef;
-			} else {
-				return "pid $pid on $host";
-			}
-		}
-		close $fh;
+	my $info = $self->get_info($v);
+	if (!$info->is_bad && !$info->{same_pid}) {
+		return "$info->{dpb_pid} on $info->{dpb_host}";
 	}
 	return undef;
 }
@@ -205,80 +286,44 @@ sub locked
 sub find_dependencies
 {
 	my ($self, $hostname) = @_;
-	my $dir = $self->opendir($self->{lockdir});
 	my $h = {};
-	while (my $name = readdir($dir)) {
-		next if $name eq '.' or $name eq '..';
-		next if $name =~ m/^host:/;
-		#next if -d $fullname;
-		my $fullname = $self->{lockdir}."/".$name;
-		my $f = $self->open('<', $fullname);
-		# in case we remove the lockfile at the wrong time.
-		next if !defined $f;
-		my $nojunk = 0;
-		my $host;
-		my $path;
-		my $cleaned;
-		my @d;
-		while (<$f>) {
-			if (m/^locked=(.*)/) {
-				$path = $1;
-			} elsif (m/^host=(.*)/) {
-				$host = $1;
-			# XXX wanted always precedes needed, so
-			# it's safe to overwrite
-			} elsif (m/^(?:wanted|needed)=(.*)/) {
-				@d = split(/\s/, $1);
-			} elsif (m/^nojunk$/) {
-				$nojunk = 1;
-			} elsif (m/^cleaned$/) {
-				$cleaned = 1;
+	my $nojunk;
+	$self->scan_lockdir(
+	    sub {
+	    	my $f = shift;
+		my $i = $self->get_info_from_file($f);
+		return if $i->is_bad;
+		return if defined $i->{cleaned};
+		return unless defined $i->{host} && $i->{host} eq $hostname;
+		for my $k (qw(wanted needed)) {
+			if (defined $i->{$k}) {
+				for my $v (@{$i->{$k}}) {
+					$h->{$v} = 1;
+				}
 			}
 		}
-		next if $cleaned;
-		if (defined $host && $host eq $hostname) {
-			if ($nojunk) {
-				# XXX
-				return $path;
-			}
-			for my $k (@d) {
-				$h->{$k} = 1;
-			}
-		}
-	}
+		# XXX we don't need to do anything more
+		$nojunk = $i->{path} if $i->{nojunk};
+	    });
+	return $nojunk if defined $nojunk;
 	return $h;
 }
 
 sub find_tag
 {
 	my ($self, $hostname) = @_;
-	my $dir = $self->opendir($self->{lockdir});
-	while (my $name = readdir($dir)) {
-		next if $name eq '.' or $name eq '..';
-		next if $name =~ m/^host:/;
-		#next if -d $fullname;
-		my $fullname = $self->{lockdir}."/".$name;
-		my $f = $self->open('<', $fullname);
-		# XXX nfs shitting on itself again
-		# assume we don't have several dpb running and so I don't
-		# give a fuck
-		next if !$f;
-		my ($host, $cleaned, $tag);
-		while (<$f>) {
-			if (m/^host\=(.*)/) {
-				$host = $1;
-			} elsif (m/^cleaned$/) {
-				$cleaned = 1;
-			} elsif (m/^tag\=(.+)/) {
-				$tag = $1;
-			}
+	my $tag;
+	$self->scan_lockdir(
+	    sub {
+	    	my $f = shift;
+		my $i = $self->get_info_from_file($f);
+		return if $i->is_bad;
+		return if $i->{cleaned};
+		if (defined $i->{host} && $i->{host} eq $hostname) {
+			$tag //= $i->{tag};
 		}
-		next if $cleaned;
-		if (defined $host && $host eq $hostname) {
-			return $tag if defined $tag;
-		}
-	}
-	return undef;
+	    });
+	return $tag;
 }
 
 1;
