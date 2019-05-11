@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_ImportExport_ImportExportGdal_h,v 1.1 2019/05/11 20:43:31 landry Exp $
+
+detect gdal3, cf https://github.com/openstreetmap/merkaartor/issues/179
+
+Index: src/ImportExport/ImportExportGdal.h
+--- src/ImportExport/ImportExportGdal.h.orig
++++ src/ImportExport/ImportExportGdal.h
+@@ -19,7 +19,7 @@
+ #include <gdal_priv.h>
+ #include <gdal_version.h>
+ 
+-#if GDAL_VERSION_MAJOR == 2
++#if GDAL_VERSION_MAJOR >= 2
+ #define GDAL2
+ #endif
+ 
