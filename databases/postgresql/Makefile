@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.251 2019/04/11 15:18:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.252 2019/05/11 06:59:58 pea Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -7,9 +7,8 @@ COMMENT-contrib=PostgreSQL RDBMS contributions
 COMMENT-plpython=Python procedural language for PostgreSQL
 COMMENT-pg_upgrade=Support for upgrading PostgreSQL data from previous version
 
-VERSION=	11.2
+VERSION=	11.3
 PREV_MAJOR=	10
-REVISION-server=1
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
