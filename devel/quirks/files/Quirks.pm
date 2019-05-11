@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.774 2019/05/10 12:11:33 bket Exp $
+# $OpenBSD: Quirks.pm,v 1.775 2019/05/11 01:11:20 ian Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1231,6 +1231,7 @@ my $obsolete_reason = {
 	'mysql++' => 5,
 	'mysqlcc' => 3,
 	'relayd-updateconf' => 6,
+	'java-getopt' => 1,
 };
 
 # reasons for obsolete packages

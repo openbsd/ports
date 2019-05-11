@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/07 19:38:46 ian Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/11 01:11:20 ian Exp $
 
      SUBDIR =
      SUBDIR += jBCrypt
-     SUBDIR += java-getopt
      SUBDIR += javaPathHelper
      SUBDIR += jlint
      SUBDIR += jna
