@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.12 2019/05/11 19:36:27 afresh1 Exp $
+# $OpenBSD: Port.pm,v 1.13 2019/05/11 19:48:06 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 # Copyright (c) 2019 Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -480,7 +480,14 @@ sub make_port
 
 	my $old_cwd  = getcwd();
 	my $portname = $self->name_new_port($di);
-	my $portdir  = $self->make_portdir($portname);
+
+	if ( -e base_dir() . "/$portname" ) {
+		$self->add_notice(
+			"Not porting $portname, already exists in " . base_dir() );
+		return;
+	}
+
+	my $portdir = $self->make_portdir($portname);
 	chdir $portdir or die "couldn't chdir to $portdir: $!";
 
 	if ( my ( $category, $name ) = split qr{/}, $portname, 2 ) {
