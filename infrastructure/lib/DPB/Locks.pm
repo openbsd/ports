@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.45 2019/05/11 10:31:26 espie Exp $
+# $OpenBSD: Locks.pm,v 1.46 2019/05/11 11:51:00 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -67,8 +67,8 @@ sub parse_file
 			}
 		} elsif (m/^(pid|mem)\=(\d+)$/) {
 			$i->set_field($1, $2);
-		} elsif (m/^start\=(\d+)\s/) {
-			$i->set_field('start', $1);
+		} elsif (m/^(start|end)\=(\d+)\s/) {
+			$i->set_field($1, $2);
 		} elsif (m/^(error|status|todo)\=(.*)$/) {
 			$i->set_field($1, $2);
 			$i->{finished} = 1;
