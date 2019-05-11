@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/10/16 23:21:22 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/11 21:39:28 jasper Exp $
 
 COMMENT=	convert data to and from C structs
 
-DISTNAME=	struct-0.2
+DISTNAME=	struct-0.3
 PKGNAME=	lua${DISTNAME}
 
 CATEGORIES=	converters
