@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.183 2018/09/06 11:31:30 espie Exp $
+# $OpenBSD: Port.pm,v 1.184 2019/05/11 10:23:57 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -171,7 +171,7 @@ sub finalize
 	# *will* finish anyhow
 	#
 	if ($core->job->{v}{info}->has_property('tag')) {
-		print {$core->job->{lock}} "cleaned\n";
+		print {$core->job->{lock}} "cleaned\n"; # WRITELOCK
 	}
 	return 0;
 }
@@ -217,7 +217,7 @@ sub finalize
 	$job->{nojunk} = 1;
 	# XXX don't bother marking ourselves for configurejunk
 	if (!$job->{noconfigurejunk}) {
-		print {$job->{lock}} "nojunk\n";
+		print {$job->{lock}} "nojunk\n"; # WRITELOCK
 	}
 	$self->SUPER::finalize($core);
 }
@@ -354,7 +354,7 @@ sub try_lock
 
 	my $fh = $job->{builder}->locker->lock($core);
 	if ($fh) {
-		print $fh "path=".$job->{path}, "\n";
+		print $fh "path=".$job->{path}, "\n"; # WRITELOCK
 		print {$job->{logfh}} "(Junk lock obtained for ",
 		    $core->hostname, " at ", time(), ")\n";
 		$job->{locked} = 1;
@@ -837,7 +837,7 @@ sub setup
 	if ($job->{builder}{dontclean}{$job->{v}->pkgpath}) {
 		return $job->next_task($core);
 	} else {
-		print {$job->{lock}} "cleaned\n";
+		print {$job->{lock}} "cleaned\n"; # WRITELOCK
 		return $task;
 	}
 }
@@ -941,14 +941,14 @@ sub save_depends
 {
 	my ($job, $l) = @_;
 	$job->{live_depends} = $l;
-	print {$job->{lock}} "needed=", join(' ', sort @$l), "\n";
+	print {$job->{lock}} "needed=", join(' ', sort @$l), "\n"; # WRITELOCK
 }
 
 sub save_wanted_depends
 {
 	my $job = shift;
 	print {$job->{lock}} "wanted=", 
-	    join(' ', sort keys %{$job->{depends}}), "\n";
+	    join(' ', sort keys %{$job->{depends}}), "\n"; # WRITELOCK
 }
 
 sub need_depends

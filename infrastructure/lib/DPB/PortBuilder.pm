@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.81 2018/07/22 16:43:42 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.82 2019/05/11 10:23:57 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -208,7 +208,7 @@ sub end_lock
 {
 	my ($self, $lock, $core, $job) = @_;
 	my $end = time();
-	print $lock "status=$core->{status}\n";
+	print $lock "status=$core->{status}\n"; # WRITELOCK
 	print $lock "todo=", $job->current_task, "\n";
 	print $lock "end=$end (", DPB::Util->time2string($end), ")\n";
 	close $lock;
@@ -223,14 +223,14 @@ sub build
 	my $meminfo;
 
 	if ($memsize) {
-		print $lock "mem=$memsize\n";
+		print $lock "mem=$memsize\n"; # WRITELOCK
 		$meminfo = " in memory";
 		$core->{inmem} = $memsize;
 	} else {
 		$meminfo = "";
 		$core->{inmem} = 0;
 	}
-	if ($v->{info}->has_property('tag')) {
+	if ($v->{info}->has_property('tag')) { # WRITELOCK
 		print $lock "tag=".$v->{info}->has_property('tag')."\n";
 	}
 	print $fh ">>> Building on ", $core->hostname;
@@ -256,7 +256,7 @@ sub build
 	}
 	print $lock "host=", $core->hostname, "\n",
 	    "pid=$core->{pid}\n",
-	    "start=$start (", DPB::Util->time2string($start), ")\n";
+	    "start=$start (", DPB::Util->time2string($start), ")\n"; # WRITELOCK
 }
 
 sub force_junk
@@ -286,14 +286,14 @@ sub test
 
 	open my $fh, ">>", $log or DPB::Util->die_bang("can't open $log");
 	if ($memsize) {
-		print $lock "mem=$memsize\n";
+		print $lock "mem=$memsize\n"; # WRITELOCK
 		print $fh ">>> Building in memory under ";
 		$core->{inmem} = $memsize;
 	} else {
 		print $fh ">>> Building under ";
 		$core->{inmem} = 0;
 	}
-	if ($v->{info}->has_property('tag')) {
+	if ($v->{info}->has_property('tag')) { # WRITELOCK
 		print $lock "tag=".$v->{info}->has_property('tag')."\n";
 	}
 	$v->quick_dump($fh);
@@ -308,7 +308,7 @@ sub test
 		&$final_sub($job->{failed});
 	    });
 	$core->start_job($job, $v);
-	print $lock "host=", $core->hostname, "\n",
+	print $lock "host=", $core->hostname, "\n", # WRITELOCK
 	    "pid=$core->{pid}\n",
 	    "start=$start (", DPB::Util->time2string($start), ")\n";
 }
