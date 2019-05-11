@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1130 2019/05/08 01:46:00 robert Exp $
+# $OpenBSD: Makefile,v 1.1131 2019/05/11 18:16:42 danj Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -524,7 +524,6 @@
      SUBDIR += profanity
      SUBDIR += prosody
      SUBDIR += proxychains-ng
-     SUBDIR += proxy-suite
      SUBDIR += psi
      SUBDIR += ptpd
      SUBDIR += pure-ftpd
