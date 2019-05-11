@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.92 2019/05/09 11:05:36 espie Exp $
+# $OpenBSD: Core.pm,v 1.93 2019/05/11 15:31:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -163,6 +163,11 @@ sub print_parent
 	# Nothing to do
 }
 
+sub write_parent
+{
+	# Likewise
+}
+
 sub fullhostname
 {
 	my $self = shift;
@@ -290,10 +295,7 @@ sub run_task
 	if (!defined $pid) {
 		DPB::Util->die_bang("Oops: task ".$core->task->name." couldn't start");
 	} elsif ($pid == 0) {
-		$DB::inhibit_exit = 0;
-		for my $sig (keys %SIG) {
-			$SIG{$sig} = 'DEFAULT';
-		}
+		$core->job->cleanup_after_fork;
 		if (!$core->task->run($core)) {
 			exit(1);
 		}

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.54 2019/05/11 10:23:57 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.55 2019/05/11 15:31:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -148,7 +148,15 @@ sub print_parent
 {
 	my ($self, $fh) = @_;
 	if (defined $self->{parent}) {
-		print $fh "parent=", $self->{parent}->logname, "\n"; # WRITELOCK
+		print $fh "parent=", $self->{parent}->logname, "\n";
+	}
+}
+
+sub write_parent
+{
+	my ($self, $lock) = @_;
+	if (defined $self->{parent}) {
+		$lock->write("parent", $self->{parent}->logname);
 	}
 }
 

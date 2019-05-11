@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.184 2019/05/11 10:23:57 espie Exp $
+# $OpenBSD: Port.pm,v 1.185 2019/05/11 15:31:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -171,7 +171,7 @@ sub finalize
 	# *will* finish anyhow
 	#
 	if ($core->job->{v}{info}->has_property('tag')) {
-		print {$core->job->{lock}} "cleaned\n"; # WRITELOCK
+		$core->job->{lock}->write("cleaned");
 	}
 	return 0;
 }
@@ -217,7 +217,7 @@ sub finalize
 	$job->{nojunk} = 1;
 	# XXX don't bother marking ourselves for configurejunk
 	if (!$job->{noconfigurejunk}) {
-		print {$job->{lock}} "nojunk\n"; # WRITELOCK
+		$job->{lock}->write("nojunk");
 	}
 	$self->SUPER::finalize($core);
 }
@@ -352,9 +352,9 @@ sub try_lock
 	my ($self, $core) = @_;
 	my $job = $core->job;
 
-	my $fh = $job->{builder}->locker->lock($core);
-	if ($fh) {
-		print $fh "path=".$job->{path}, "\n"; # WRITELOCK
+	my $lock = $job->{builder}->locker->lock($core);
+	if ($lock) {
+		$lock->write("path", $job->{path});
 		print {$job->{logfh}} "(Junk lock obtained for ",
 		    $core->hostname, " at ", time(), ")\n";
 		$job->{locked} = 1;
@@ -608,7 +608,7 @@ sub setup
 	}
 	my $fh = $core->job->{logfh};
 	# so we're locked, let's boogie
-	my $still_tainted = 0;
+	my $still_tainted;
 	for my $job ($core->same_host_jobs) {
 		if ($job->{nojunk}) {
 			# we can't junk go next
@@ -618,22 +618,31 @@ sub setup
 			return $core->job->next_task($core);
 		}
 		if ($job->{v}{info}->has_property('tag')) {
-			$still_tainted = 1;
+			$still_tainted //= "host tagged by $job->{path}";
 		}
 	}
-	if (defined $core->job->{builder}->locker->find_tag($core->hostname)) {
-		$still_tainted = 1;
+	if (!defined $still_tainted) {
+		my ($tag, $owner) =
+		    $core->job->{builder}->locker->find_tag($core->hostname);
+		if (defined $tag) {
+			$still_tainted = "host tagged with $tag by $owner";
+		}
 	}
-	# XXX deal better with old nojunk stuff ?
-	# there are some decisions to take. For now, let's just make sure
-	# it's not broken
-	my $h = $core->job->{builder}->locker->find_dependencies($core->hostname);
-	if (!ref $h) {
-		$still_tainted = 1;
+	if (!defined $still_tainted) {
+		# XXX deal better with old nojunk stuff ?
+		# there are some decisions to take. For now, 
+		# let's just make sure  it's not broken
+		my ($nojunk, $h) = $core->job->{builder}->locker->
+		    find_dependencies($core->hostname);
+		if ($nojunk) {
+			$still_tainted = "host marked nojunk by $nojunk";
+		}
 	}
 	# we are going along with junk, BUT we may still be tainted
-	print $fh "Still tainted: $still_tainted\n";
-	if (!$still_tainted) {
+	if (defined $still_tainted) {
+		print $fh "Still tainted: $still_tainted\n";
+	} else {
+		print $fh "Still tainted: no\n";
 		$core->prop->untaint;
 	}
 	return $task;
@@ -672,9 +681,10 @@ sub run
 
 	$self->handle_output($job);
 
-	my $h = $job->{builder}->locker->find_dependencies($core->hostname);
-	if (!ref $h) {
-		print "Can't run junk because of lock on $h\n";
+	my ($nojunk, $h) = 
+	    $job->{builder}->locker->find_dependencies($core->hostname);
+	if ($nojunk) {
+		print "Can't run junk because of lock on $nojunk\n";
 		exit(2);
 	}
 	if ($self->add_live_depends($h, $core)) {
@@ -837,7 +847,7 @@ sub setup
 	if ($job->{builder}{dontclean}{$job->{v}->pkgpath}) {
 		return $job->next_task($core);
 	} else {
-		print {$job->{lock}} "cleaned\n"; # WRITELOCK
+		$job->{lock}->write("cleaned");
 		return $task;
 	}
 }
@@ -941,14 +951,13 @@ sub save_depends
 {
 	my ($job, $l) = @_;
 	$job->{live_depends} = $l;
-	print {$job->{lock}} "needed=", join(' ', sort @$l), "\n"; # WRITELOCK
+	$job->{lock}->write("needed", join(' ', sort @$l));
 }
 
 sub save_wanted_depends
 {
 	my $job = shift;
-	print {$job->{lock}} "wanted=", 
-	    join(' ', sort keys %{$job->{depends}}), "\n"; # WRITELOCK
+	$job->{lock}->write("wanted", join(' ', sort keys %{$job->{depends}}));
 }
 
 sub need_depends
@@ -1110,6 +1119,12 @@ sub really_watch
 	return 0;
 }
 
+sub cleanup_after_fork
+{
+        my $self = shift;
+        $self->{lock}->close;
+        $self->SUPER::cleanup_after_fork;
+}
 
 package DPB::Job::Port;
 our @ISA = qw(DPB::Job::BasePort);

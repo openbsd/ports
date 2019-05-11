@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.16 2018/10/04 09:02:26 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.17 2019/05/11 15:31:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -168,6 +168,11 @@ sub print_parent
 	$self->{path}->print_parent($fh);
 }
 
+sub write_parent
+{
+	my ($self, $lock) = @_;
+	$self->{path}->write_parent($lock);
+}
 sub pkgpath_and_flavors
 {
 	return shift->{path}->pkgpath_and_flavors;

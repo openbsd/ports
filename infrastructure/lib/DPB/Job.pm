@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.13 2018/07/16 12:30:53 espie Exp $
+# $OpenBSD: Job.pm,v 1.14 2019/05/11 15:31:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -155,6 +155,15 @@ sub set_status
 {
 	my ($self, $status) = @_;
 	$self->{status} = $status;
+}
+
+sub cleanup_after_fork
+{
+        my $self = shift;
+        $DB::inhibit_exit = 0;
+        for my $sig (keys %SIG) {
+                $SIG{$sig} = 'DEFAULT';
+        }
 }
 
 package DPB::Job::Normal;

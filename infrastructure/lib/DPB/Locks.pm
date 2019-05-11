@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.46 2019/05/11 11:51:00 espie Exp $
+# $OpenBSD: Locks.pm,v 1.47 2019/05/11 15:31:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -19,11 +19,61 @@ use strict;
 use warnings;
 use DPB::User;
 
+package DPB::Lock;
+sub new
+{
+	my ($class, $fh) = @_;
+	bless {fh => $fh}, $class;
+}
+
+sub write
+{
+	my ($self, $key, $value) = @_;
+	if (defined $value) {
+		print {$self->{fh}} "$key=$value\n";
+	} else {
+		print {$self->{fh}}  "$key\n";
+	}
+}
+
+sub close
+{
+	my $self = shift;
+	close($self->{fh});
+	undef $self->{fh};
+}
+
 package DPB::LockInfo;
 sub new
 {
-	my ($class, $filename) = @_;
-	bless { filename => $filename}, $class;
+	my ($class, $filename, $logger) = @_;
+	bless { filename => $filename, logger => $logger}, $class;
+}
+
+sub is_host
+{
+	my $self = shift;
+	if ($self->{filename} =~ m,/host:[^/]+$,) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+sub is_dist
+{
+	my $self = shift;
+	if ($self->{filename} =~ m,\.dist$,) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+sub is_pkgpath
+{
+	my $self = shift;
+	return !($self->is_dist || $self->is_host);
 }
 
 sub is_bad { 0 }
@@ -43,9 +93,8 @@ sub set_bad
 	my ($i, $error) = @_;
 	bless $i, 'DPB::LockInfo::Bad';
 	$i->{parseerror} = $error;
-	# XXX debug
-#	print STDERR "Problem in lock $i->{filename}: $i->{parseerror}\n";
-#	exit(10);
+	print {$i->{logger}->append($i->{logger}->logfile("locks"))}
+	    "Problem in lock $i->{filename}: $i->{parseerror}\n";
 }
 
 sub parse_file
@@ -105,6 +154,7 @@ sub new
 	my $lockdir = $state->{lockdir};
 	my $o = bless {lockdir => $lockdir, 
 		dpb_pid => $$, 
+		logger => $state->logger,
 		user => $state->{log_user},
 		dpb_host => DPB::Core::Local->hostname}, $class;
 	$o->make_path($lockdir);
@@ -120,7 +170,7 @@ sub new
 sub get_info_from_fh
 {
 	my ($self, $fh, $filename) = @_;
-	my $i = DPB::LockInfo->new($filename);
+	my $i = DPB::LockInfo->new($filename, $self->{logger});
 	$i->parse_file($self, $fh);
 	return $i;
 }
@@ -132,7 +182,7 @@ sub get_info_from_file
 	if (defined $fh) {
 		return $self->get_info_from_fh($fh, $f);
 	} else {
-		return DPB::LockInfo::Bad->new($f);
+		return DPB::LockInfo::Bad->new($f, $self->{logger});
 	}
 }
 
@@ -150,7 +200,6 @@ sub scan_lockdir
 		next if $e eq '..' or $e eq '.';
 		# and zap vim temp files as well!
 		next if $e =~ m/\.swp$/;
-		next if $e =~ m/^host\:/;
 		&$code($self->get_info_from_file("$self->{lockdir}/$e"));
 	}
 }
@@ -198,7 +247,10 @@ sub clean_old_locks
 		# to unlock them manually
 		for my $list (values %$locks) {
 			for my $i (@$list) {
-				push(@{$hostpaths->{$i->{host}}}, $i->{locked});
+				# there might be stale host locks in there
+				# make sure to clean them as well
+				push(@{$hostpaths->{$i->{host}}}, $i->{locked})
+				    if defined $i->{locked};
 				$self->unlink($i->{filename});
 			}
 		}
@@ -235,11 +287,12 @@ sub dolock
 		if (sysopen my $fh, $name, 
 		    O_CREAT|O_EXCL|O_WRONLY|O_CLOEXEC, 0666) {
 			DPB::Util->make_hot($fh);
-			print $fh "locked=", $v->logname, "\n"; # WRITELOCK
-			print $fh "dpb=", $self->{dpb_pid}, " on ", 
-			    $self->{dpb_host}, "\n";
-			$v->print_parent($fh);
-			return $fh;
+			my $lock = DPB::Lock->new($fh);
+			$lock->write("locked", $v->logname);
+			$lock->write("dpb", 
+			    $self->{dpb_pid}." on ".$self->{dpb_host});
+			$v->write_parent($lock); 
+			return $lock;
 		} else {
 			return 0;
 		}
@@ -293,6 +346,7 @@ sub find_dependencies
 		return if $i->is_bad;
 		return if defined $i->{cleaned};
 		return unless defined $i->{host} && $i->{host} eq $hostname;
+		return unless $i->is_pkgpath;
 		for my $k (qw(wanted needed)) {
 			if (defined $i->{$k}) {
 				for my $v (@{$i->{$k}}) {
@@ -303,14 +357,13 @@ sub find_dependencies
 		# XXX we don't need to do anything more
 		$nojunk = $i->{path} if $i->{nojunk};
 	    });
-	return $nojunk if defined $nojunk;
-	return $h;
+	return ($nojunk, $h);
 }
 
 sub find_tag
 {
 	my ($self, $hostname) = @_;
-	my $tag;
+	my ($tag, $tagowner);
 	$self->scan_lockdir(
 	    sub {
 	    	my $i = shift;
@@ -318,9 +371,14 @@ sub find_tag
 		return if $i->{cleaned};
 		if (defined $i->{host} && $i->{host} eq $hostname) {
 			$tag //= $i->{tag};
+			$tagowner //= $i->{path};
 		}
 	    });
-	return $tag;
+	if (wantarray) {
+		return ($tag, $tagowner);
+	} else {
+		return $tag;
+	}
 }
 
 1;

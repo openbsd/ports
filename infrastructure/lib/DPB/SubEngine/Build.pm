@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.21 2018/09/05 09:16:19 espie Exp $
+# $OpenBSD: Build.pm,v 1.22 2019/05/11 15:31:13 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -142,8 +142,9 @@ sub can_be_junked
 		    	return 0;
 		}
 	}
-	my $h = $self->{engine}{locker}->find_dependencies($core->hostname);
-	if (!ref $h) {
+	my ($nojunk, $h) = 
+	    $self->{engine}{locker}->find_dependencies($core->hostname);
+	if ($nojunk) {
 		return 0;
 	}
 	return 1;

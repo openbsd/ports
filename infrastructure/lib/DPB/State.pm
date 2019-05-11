@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.24 2018/07/11 14:43:31 espie Exp $
+# $OpenBSD: State.pm,v 1.25 2019/05/11 15:31:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -153,6 +153,7 @@ sub handle_options
 	DPB::Config->parse_command_line($state);
 	# at this point, we should know all our ids!
 	$state->{logger} = DPB::Logger->new($state);
+	# must come after logger
 	$state->{locker} = DPB::Locks->new($state);
 	DPB::Core::Init->init_cores($state);
 	DPB::Core->reap;

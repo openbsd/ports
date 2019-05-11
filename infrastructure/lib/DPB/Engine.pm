@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.126 2018/07/11 14:43:31 espie Exp $
+# $OpenBSD: Engine.pm,v 1.127 2019/05/11 15:31:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -508,8 +508,8 @@ sub add_fatal
 		print {$self->{heldlocks}{$v}} "error=$error\n";
 		delete $self->{heldlocks}{$v};
 	} else {
-		my $fh = $self->{locker}->lock($v);
-		print $fh "error=$error\n" if $fh;
+		my $lock = $self->{locker}->lock($v);
+		$lock->write("error", $error) if $lock;
 	}
 	$self->{logger}->log_error($v, $error, @messages);
 	$self->stub_out($v);
