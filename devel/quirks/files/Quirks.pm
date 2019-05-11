@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.776 2019/05/11 03:33:43 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.777 2019/05/11 12:47:17 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1233,6 +1233,26 @@ my $obsolete_reason = {
 	'relayd-updateconf' => 6,
 	'java-getopt' => 1,
 	'avidemux' => 5,
+	'OGIlexicon' => 5,
+	'festival' => 5,
+	'festlex_CMU' => 5,
+	'festlex_OALD' => 5,
+	'festlex_POSLEX' => 5,
+	'festvox_cmu_us_awb_arctic_hts' => 5,
+	'festvox_cmu_us_bdl_arctic_hts' => 5,
+	'festvox_cmu_us_jmk_arctic_hts' => 5,
+	'festvox_cmu_us_slt_arctic_hts' => 5,
+	'festvox_cstr_us_awb_arctic_multisyn' => 5,
+	'festvox_cstr_us_jmk_arctic_multisyn' => 5,
+	'festvox_don' => 5,
+	'festvox_ellpc11k' => 5,
+	'festvox_kallpc16k' => 5,
+	'festvox_kedlpc16k' => 5,
+	'festvox_rablpc16k' => 5,
+	'voice_aec_di' => 5,
+	'voice_jph_di' => 5,
+	'voice_mwm_di' => 5,
+	'voice_tll_di' => 5,
 };
 
 # reasons for obsolete packages
