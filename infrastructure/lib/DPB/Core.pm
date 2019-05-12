@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.93 2019/05/11 15:31:12 espie Exp $
+# $OpenBSD: Core.pm,v 1.94 2019/05/12 10:37:04 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -232,14 +232,73 @@ sub reap_wait
 	return $class->reap_kid(waitpid(-1, 0));
 }
 
+sub dump
+{
+	my $c = shift;
+	return join(' ', ref($c), ref($c->job), $c->job->name);
+}
+
+sub send_signal
+{
+	my ($class, $sig, $h, $verbose) = @_;
+	while (my ($pid, $core) = each %$h) {
+		print STDERR "Sending $sig to ".$core->dump, "\n"
+		    if $verbose;
+		kill $sig => $pid;
+	}
+}
+
+sub wait_for_kill
+{
+	my ($class, $h, $verbose) = @_;
+	for (my $i = 0; $i < 4;) {
+		my $kid = waitpid(-1, WNOHANG);
+		if ($kid > 0) {
+			my $info = "";
+			if (exists $h->{$kid}) {
+				$info = $h->{$kid}->dump;
+				delete $h->{$kid};
+			}
+			print STDERR "Killed $kid $? $info\n" if $verbose;
+		} elsif ($kid == -1) {
+			return 1;
+		} else {
+			print STDERR "Waiting for children to quit\n";
+			sleep 5;
+			$i++;
+		}
+    	}
+	return 0;
+}
+
 sub cleanup
 {
-	my $class = shift;
+	my ($class, $sig, $verbose) = @_;
+	$sig //= 'INT';
 	local $> = 0;
+	
+	# collate repos together
+	my $h = {};
 	for my $repo ($class->repositories) {
-		for my $pid (keys %$repo) {
-			kill INT => $pid;
+		while (my ($k, $v) = each %$repo) {
+			$h->{$k} = $v;
 		}
+	}
+	$class->send_signal($sig, $h, $verbose);
+
+	return if $class->wait_for_kill($h, $verbose);
+	return if keys %$h == 0;
+	if ($verbose) {
+		for my $pid (keys %$h) {
+			system {'ps'} ('ps', '-p', $pid, '-o', 
+			    'pid,ppid,uid,gid,pgid,command');
+		}
+	}
+	print STDERR "Sending KILL to remaining children\n";
+	$class->send_signal('KILL', $h, $verbose);
+	$class->wait_for_kill($h, $verbose);
+	if (keys %$h > 0) {
+		print STDERR "Some children still alive, giving up\n";
 	}
 }
 
