@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/11 04:11:57 bket Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/12 11:59:49 rsadowski Exp $
 
 COMMENT =		P2P payment system
 
 GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
-GH_TAGNAME =		v0.17.1
-REVISION =		1
+GH_TAGNAME =		v0.18.0
 
-SHARED_LIBS +=  bitcoinconsensus          1.0 # 0.0
+SHARED_LIBS +=  bitcoinconsensus          2.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.0 # 0.0
 SHARED_LIBS +=  univalue                  0.0 # 100.3
 
@@ -23,7 +22,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${COMPILER_LIBCXX} boost_chrono-mt boost_filesystem
 WANTLIB += boost_system boost_system-mt boost_thread-mt c crypto
 WANTLIB += db_cxx event_core event_extra event_pthreads m sodium
-WANTLIB += ssl zmq
+WANTLIB += zmq
 
 BUILD_DEPENDS =		${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS} \
@@ -43,7 +42,8 @@ COMPILER =		base-clang ports-clang
 CONFIGURE_STYLE =	gnu
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.14
-CONFIGURE_ARGS +=	--with-incompatible-bdb
+CONFIGURE_ARGS +=	--with-incompatible-bdb \
+			--disable-bip70
 
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include/db4 -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib/db4"
@@ -67,14 +67,13 @@ WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets X11
 WANTLIB += X11-xcb Xdamage Xext Xfixes Xxf86vm dbus-1 drm execinfo
 WANTLIB += expat freetype glapi glib-2.0 graphite2 gthread-2.0
 WANTLIB += harfbuzz iconv icudata icui18n icuuc intl miniupnpc
-WANTLIB += pcre pcre2-16 png16 protobuf qrencode xcb xcb-dri2
+WANTLIB += pcre pcre2-16 png qrencode xcb xcb-dri2
 WANTLIB += xcb-dri3 xcb-glx xcb-present xcb-sync xcb-xfixes xshmfence
 WANTLIB += z
 
 MODULES +=		x11/qt5
 
-LIB_DEPENDS +=		devel/protobuf \
-			graphics/libqrencode \
+LIB_DEPENDS +=		graphics/libqrencode \
 			net/miniupnp/miniupnpc
 
 CONFIGURE_ARGS +=	--with-gui=qt5

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/09/10 11:11:29 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/05/12 11:59:49 rsadowski Exp $
 @newgroup _bitcoind:813
 @newuser _bitcoind:813:813:daemon:Bitcoind Account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/bitcoind
@@ -12,6 +12,7 @@
 @bin bin/bench_bitcoin
 @bin bin/bitcoin-cli
 @bin bin/bitcoin-tx
+@bin bin/bitcoin-wallet
 @bin bin/bitcoind
 @comment @bin bin/test_bitcoin
 @comment @bin bin/test_bitcoin-qt
