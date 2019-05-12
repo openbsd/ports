@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.55 2019/04/21 08:49:11 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.56 2019/05/12 15:56:45 naddy Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -41,7 +41,7 @@ P=			multimedia/${GST_PKGNAME_PREFIX}
 
 COMPILER=		base-clang ports-gcc base-gcc
 COMPILER_LANGS ?=	c
-MODGCC4_ARCHS=		powerpc
+MODGCC4_ARCHS ?=	powerpc
 
 .if empty(CONFIGURE_STYLE)
 MODULES +=		devel/meson
