@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.12 2019/03/01 15:27:05 sthen Exp $
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.13 2019/05/12 21:56:55 jca Exp $
 Index: scripts/mysql_install_db.sh
 --- scripts/mysql_install_db.sh.orig
 +++ scripts/mysql_install_db.sh
@@ -9,28 +9,19 @@ Index: scripts/mysql_install_db.sh
 -user=""
 +user=_mysql
 +group=_mysql
+ silent_startup="--silent-startup"
  
  force=0
- in_rpm=0
-@@ -130,6 +131,8 @@ parse_arguments()
+@@ -148,6 +149,8 @@ parse_arguments()
          # as 'user' (crucial e.g. if log-bin=/some_other_path/
          # where a chown of datadir won't help)
          user=`parse_arg "$arg"` ;;
 +      --group=*)
 +        group=`parse_arg "$arg"` ;;
        --skip-name-resolve) ip_only=1 ;;
-       --verbose) verbose=1 ;; # Obsolete
+       --verbose) verbose=1 ; silent_startup="" ;;
        --rpm) in_rpm=1 ;;
-@@ -314,7 +317,7 @@ then
- elif test -n "$dirname0" -a -x "$dirname0/@INSTALL_SBINDIR@/mysqld"
- then
-   basedir="$dirname0"
--  bindir="$basedir/@INSTALL_SBINDIR@"
-+  bindir="$basedir/@INSTALL_BINDIR@"
-   resolveip="$bindir/resolveip"
-   mysqld="$basedir/@INSTALL_SBINDIR@/mysqld"
-   pkgdatadir="$basedir/@INSTALL_MYSQLSHAREDIR@"
-@@ -410,11 +413,11 @@ do
+@@ -450,11 +453,11 @@ do
    fi
    if test -n "$user"
    then
@@ -45,7 +36,7 @@ Index: scripts/mysql_install_db.sh
        exit 1
      fi
    fi
-@@ -498,10 +501,6 @@ fi
+@@ -539,10 +542,6 @@ fi
  # the screen.
  if test "$cross_bootstrap" -eq 0 && test -z "$srcdir"
  then
@@ -53,10 +44,10 @@ Index: scripts/mysql_install_db.sh
 -  s_echo "To start mysqld at boot time you have to copy"
 -  s_echo "support-files/mysql.server to the right place for your system"
 -
-   echo
-   echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !"
-   echo "To do so, start the server, then issue the following commands:"
-@@ -523,10 +522,7 @@ then
+   if test "$auth_root_authentication_method" = normal
+   then
+     echo
+@@ -569,10 +568,7 @@ then
    then
      echo
      echo "You can start the MariaDB daemon with:"

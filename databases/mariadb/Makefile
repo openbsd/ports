@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2019/05/07 08:29:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2019/05/12 21:56:55 jca Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS-server=	alpha aarch64 amd64 arm i386 mips64 mips64el powerpc sparc64
@@ -8,23 +8,21 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.0.38
+VERSION=	10.2.23
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests=	mariadb-tests-${VERSION}
-REVISION-main=	0
-REVISION-server=1
-REVISION-tests=	0
 EPOCH=		1
 
 CATEGORIES=	databases
 MASTER_SITES=	https://downloads.mariadb.com/MariaDB/${DISTNAME}/source/ \
 		https://ftp.osuosl.org/pub/mariadb/${DISTNAME}/source/ \
 
-LIB_VERSION=	27
+LIB_VERSION=	28
 SHARED_LIBS=	mysqlclient_r	${LIB_VERSION}.0 \
-		mysqlclient	${LIB_VERSION}.0
+		mysqlclient	${LIB_VERSION}.0 \
+		mariadb		${LIB_VERSION}.0
 
 HOMEPAGE=	https://mariadb.org/
 
@@ -33,10 +31,12 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c crypto m pthread ssl ${COMPILER_LIBCXX} z
-WANTLIB-main=	curses readline ${WANTLIB}
-WANTLIB-server=	mysqlclient pcre xml2 ${WANTLIB}
-WANTLIB-tests=	mysqlclient pcre pcreposix ${WANTLIB}
+WANTLIB=	${COMPILER_LIBCXX} c crypto iconv m pthread ssl z
+WANTLIB-main=	${WANTLIB} curses readline
+WANTLIB-server=	${WANTLIB} bz2 lz4 lzma lzo2 pcre snappy
+WANTLIB-tests=	${WANTLIB} pcre pcreposix
+
+COMPILER=	base-clang ports-gcc
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/mysql
 SOCKET_DIR=	/var/run/mysql
@@ -45,15 +45,22 @@ SUBST_VARS=	SOCKET_DIR
 MODULES=	devel/cmake
 BUILD_DEPENDS=	devel/bison
 
-RUN_DEPENDS-server=	${BASE_PKGPATH}>=10.0v1,<10.1v1 \
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			converters/libiconv
+RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=10.2v1,<10.3v1 \
 			databases/p5-DBD-mysql
-LIB_DEPENDS-server=	${BASE_PKGPATH}>=10.0v1,<10.1v1 \
-			devel/pcre \
-			textproc/libxml
-LIB_DEPENDS-tests=	${BASE_PKGPATH}>=10.0v1,<10.1v1 \
+LIB_DEPENDS-server=	${LIB_DEPENDS} \
+			archivers/bzip2 \
+			archivers/lz4 \
+			archivers/lzo2 \
+			archivers/snappy \
+			archivers/xz \
+			converters/libiconv \
 			devel/pcre
-
-COMPILER=	base-clang ports-gcc
+RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=10.2v1,<10.3v1
+LIB_DEPENDS-tests=	${LIB_DEPENDS} \
+			converters/libiconv \
+			devel/pcre
 
 CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DINSTALL_DOCDIR="share/doc/mysql" \
@@ -76,6 +83,7 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DWITH_PCRE=system \
 		-DWITH_SSL=system \
 		-DCONNECT_WITH_JDBC=Off \
+		-DCONNECT_WITH_LIBXML2=Off \
 		-DCONNECT_WITH_ODBC=Off \
 		-DGRN_WITH_MECAB=no \
 		-DGRN_WITH_KYTEA=no \
@@ -93,11 +101,12 @@ CONFIGURE_ARGS+=-DHAVE_EXECINFO_H=0 \
 # CMake test fails on OpenBSD
 CONFIGURE_ARGS+=-DHAVE_NETINET_TCP_H=1
 
-# The Mroonga and TokuDB storage engines are disabled.
-# Mroonga is only buildable on little endian archs.
-# TokuDB is only builable on 64-bit little endian archs.
+# The Mroonga, TokuDB and RocksDB storage engines are disabled.
+# Mroonga and RocksDB are only buildable on little endian archs.
+# TokuDB is only buildable on 64-bit little endian archs.
 CONFIGURE_ARGS+=-DWITHOUT_MROONGA_STORAGE_ENGINE=1 \
 		-DWITHOUT_TOKUDB_STORAGE_ENGINE=1
+CONFIGURE_ARGS+=-DWITHOUT_ROCKSDB_STORAGE_ENGINE=1
 
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
@@ -106,6 +115,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 MULTI_PACKAGES=	-main -server -tests
+PSEUDO_FLAVORS=	no_server no_tests
 
 .include <bsd.port.arch.mk>
 
@@ -118,12 +128,19 @@ CONFIGURE_ARGS+=-DWITH_UNIT_TESTS=Off
 .endif
 
 pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/cmake/mysql_version.cmake
+	@${SUBST_CMD} ${WRKSRC}/cmake/mysql_version.cmake \
+	    ${WRKSRC}/libmariadb/mariadb_config/mariadb_config.c.in \
+	    ${WRKSRC}/scripts/mysql_config.sh
 
 post-install:
 	@cd ${PREFIX}/lib && \
 		ln -sf mysql/libmysqlclient.so.${LIBmysqlclient_VERSION} . && \
-		ln -sf mysql/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION} .
+		ln -sf mysql/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION} . && \
+		ln -sf mysql/libmariadb.so.${LIBmariadb_VERSION} . && \
+		cd mysql && \
+		ln -sf libmariadb.so.${LIBmariadb_VERSION} libmysqlclient.so.${LIBmysqlclient_VERSION} && \
+		ln -sf libmariadb.so.${LIBmariadb_VERSION} libmysqlclient_r.so.${LIBmysqlclient_r_VERSION}
+	rm -Rf ${PREFIX}/share/mysql-test/plugin/rocksdb/
 
 .if ${BUILD_PACKAGES:M-tests}
 do-regress:

@@ -1,0 +1,17 @@
+$OpenBSD: patch-man_mysqladmin_1,v 1.1 2019/05/12 21:56:55 jca Exp $
+
+Default value for connect timeout is rejected by the kernel.
+
+Index: man/mysqladmin.1
+--- man/mysqladmin.1.orig
++++ man/mysqladmin.1
+@@ -1457,8 +1457,7 @@ You can also set the following variables by using
+ .\" timeout: connect_timeout variable
+ connect_timeout
+ .sp
+-The maximum number of seconds before connection timeout\&. The default value is 43200 (12 hours)\&.
+-.RE
++The maximum number of seconds before connection timeout\&. The default value is 600 (10 mn)\&..RE
+ .sp
+ .RS 4
+ .ie n \{\

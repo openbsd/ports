@@ -1,0 +1,16 @@
+$OpenBSD: patch-libmariadb_mariadb_config_mariadb_config_c_in,v 1.1 2019/05/12 21:56:55 jca Exp $
+
+Forcefully add -L${LOCALBASE}/lib to --libs so that libiconv can be found.
+
+Index: libmariadb/mariadb_config/mariadb_config.c.in
+--- libmariadb/mariadb_config/mariadb_config.c.in.orig
++++ libmariadb/mariadb_config/mariadb_config.c.in
+@@ -6,7 +6,7 @@
+ static char *mariadb_progname;
+ 
+ #define INCLUDE "-I@CMAKE_INSTALL_PREFIX@/@INSTALL_INCLUDEDIR@ -I@CMAKE_INSTALL_PREFIX@/@INSTALL_INCLUDEDIR@/mysql"
+-#define LIBS    "-L@CMAKE_INSTALL_PREFIX@/@INSTALL_LIBDIR@/ -lmariadb @extra_dynamic_LDFLAGS@"
++#define LIBS    "-L@CMAKE_INSTALL_PREFIX@/@INSTALL_LIBDIR@/ -L${LOCALBASE}/lib -lmariadb @extra_dynamic_LDFLAGS@"
+ #define LIBS_SYS "@extra_dynamic_LDFLAGS@"
+ #define CFLAGS  INCLUDE
+ #define VERSION "@MARIADB_CLIENT_VERSION@"

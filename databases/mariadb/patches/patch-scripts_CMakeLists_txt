@@ -1,29 +1,31 @@
-$OpenBSD: patch-scripts_CMakeLists_txt,v 1.9 2018/08/09 10:58:52 sthen Exp $
+$OpenBSD: patch-scripts_CMakeLists_txt,v 1.10 2019/05/12 21:56:55 jca Exp $
 Index: scripts/CMakeLists.txt
 --- scripts/CMakeLists.txt.orig
 +++ scripts/CMakeLists.txt
-@@ -185,22 +185,13 @@ ENDIF(UNIX)
+@@ -169,25 +169,14 @@ ENDIF(UNIX)
  # i.e. makes access relative the current directory. This matches
  # the documentation, so better not change this.
  
 -IF(INSTALL_LAYOUT MATCHES "STANDALONE")
 -  SET(prefix ".")
--ELSE()
--  SET(prefix "${CMAKE_INSTALL_PREFIX}")
--ENDIF()
--
-+SET(prefix "${CMAKE_INSTALL_PREFIX}")
- SET(bindir ${prefix}/${INSTALL_BINDIR})
- SET(sbindir ${prefix}/${INSTALL_SBINDIR})
- SET(scriptdir ${prefix}/${INSTALL_BINDIR})
- SET(libexecdir ${prefix}/${INSTALL_SBINDIR})
- SET(pkgdatadir ${prefix}/${INSTALL_MYSQLSHAREDIR})
--IF(INSTALL_LAYOUT MATCHES "STANDALONE")
++  SET(prefix "${CMAKE_INSTALL_PREFIX}")
+   SET(bindir ${prefix}/${INSTALL_BINDIR})
+   SET(sbindir ${prefix}/${INSTALL_SBINDIR})
+   SET(scriptdir ${prefix}/${INSTALL_BINDIR})
+   SET(libexecdir ${prefix}/${INSTALL_SBINDIR})
+   SET(pkgdatadir ${prefix}/${INSTALL_MYSQLSHAREDIR})
+   SET(pkgplugindir ${prefix}/${INSTALL_PLUGINDIR})
 -  SET(localstatedir ${prefix}/data)
 -ELSE()
--  SET(localstatedir ${MYSQL_DATADIR})
+-  SET(prefix "${CMAKE_INSTALL_PREFIX}")
+-  SET(bindir ${INSTALL_BINDIRABS})
+-  SET(sbindir ${INSTALL_SBINDIRABS})
+-  SET(scriptdir ${INSTALL_BINDIRABS})
+-  SET(libexecdir ${INSTALL_SBINDIRABS})
+-  SET(pkgdatadir ${INSTALL_MYSQLSHAREDIRABS})
+-  SET(pkgplugindir ${INSTALL_PLUGINDIRABS})
+   SET(localstatedir ${MYSQL_DATADIR})
 -ENDIF()
-+SET(localstatedir ${MYSQL_DATADIR})
  
  SET(resolveip_locations "$basedir/${INSTALL_BINDIR} $basedir/bin")
  SET(mysqld_locations "$basedir/${INSTALL_SBINDIR} $basedir/libexec $basedir/sbin $basedir/bin")

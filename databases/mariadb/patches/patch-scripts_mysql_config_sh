@@ -1,0 +1,16 @@
+$OpenBSD: patch-scripts_mysql_config_sh,v 1.1 2019/05/12 21:56:55 jca Exp $
+
+Forcefully add -L${LOCALBASE}/lib to --libs so that libiconv can be found.
+
+Index: scripts/mysql_config.sh
+--- scripts/mysql_config.sh.orig
++++ scripts/mysql_config.sh
+@@ -105,7 +105,7 @@ else
+ fi
+ 
+ # Create options 
+-libs="-L$pkglibdir @RPATH_OPTION@ @LIBS_FOR_CLIENTS@"
++libs="-L$pkglibdir -L${LOCALBASE}/lib @RPATH_OPTION@ @LIBS_FOR_CLIENTS@"
+ embedded_libs="-L$pkglibdir @RPATH_OPTION@ @EMB_LIBS_FOR_CLIENTS@"
+ 
+ include="-I$pkgincludedir"
