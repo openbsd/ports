@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/17 14:15:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/12 22:15:57 sthen Exp $
 
 GH_ACCOUNT =		aajanki
 GH_PROJECT =		yle-dl
-GH_TAGNAME =		2.34
+GH_TAGNAME =		20190502
 MODPY_EGG_VERSION =	${GH_TAGNAME}
-REVISION =		0
 
 COMMENT =		download videos from YLE Areena
 
@@ -20,15 +19,15 @@ MODULES =		lang/python \
 			lang/php
 
 TEST_DEPENDS =		${RUN_DEPENDS}
+TEST_ENV =		HOME=/tmp
 
 RUN_DEPENDS =		devel/py-attrs \
+			devel/py-configargparse \
 			devel/py-future \
-			devel/py-progress \
 			net/rtmpdump \
 			security/py-cryptodome \
 			www/py-requests \
 			lang/php/${MODPHP_VERSION},-curl \
-			net/py-socks \
 			net/wget \
 			textproc/py-lxml \
 			converters/py-mini-amf
@@ -38,5 +37,6 @@ MODPHP_BUILDDEP =	No
 
 pre-configure:
 	@sed -i -e "s,'php','${MODPHP_BIN}',g" ${WRKSRC}/yledl/io.py
+	@sed -i -e "s,'pycryptodomex','pycryptodome',g" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
