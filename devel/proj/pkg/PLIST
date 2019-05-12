@@ -1,17 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/07 08:41:32 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/05/12 08:00:45 landry Exp $
 @bin bin/cct
 @bin bin/cs2cs
 @bin bin/geod
 @bin bin/gie
 bin/invgeod
 bin/invproj
-@bin bin/nad2bin
 @bin bin/proj
+@bin bin/projinfo
 include/geodesic.h
 include/org_proj4_PJ.h
+include/proj/
 include/proj.h
+include/proj/common.hpp
+include/proj/coordinateoperation.hpp
+include/proj/coordinatesystem.hpp
+include/proj/crs.hpp
+include/proj/datum.hpp
+include/proj/io.hpp
+include/proj/metadata.hpp
+include/proj/nn.hpp
+include/proj/util.hpp
 include/proj_api.h
-include/projects.h
+include/proj_constants.h
+include/proj_experimental.h
+include/proj_symbol_rename.h
 lib/libproj.a
 lib/libproj.la
 @lib lib/libproj.so.${LIBproj_VERSION}
@@ -21,6 +33,7 @@ lib/pkgconfig/proj.pc
 @man man/man1/geod.1
 @man man/man1/gie.1
 @man man/man1/proj.1
+@man man/man1/projinfo.1
 @man man/man3/geodesic.3
 @man man/man3/pj_init.3
 share/proj/
@@ -28,7 +41,6 @@ share/proj/BETA2007.gsb
 share/proj/CH
 share/proj/FL
 share/proj/GL27
-share/proj/IGNF
 share/proj/ITRF2000
 share/proj/ITRF2008
 share/proj/ITRF2014
@@ -39,9 +51,6 @@ share/proj/WO
 share/proj/alaska
 share/proj/conus
 share/proj/egm96_15.gtx
-share/proj/epsg
-share/proj/esri
-share/proj/esri.extra
 share/proj/hawaii
 share/proj/nad.lst
 share/proj/nad27
@@ -51,7 +60,7 @@ share/proj/ntv1_can.dat
 share/proj/null
 share/proj/nzgd2kgrid0005.gsb
 share/proj/other.extra
-share/proj/proj_def.dat
+share/proj/proj.db
 share/proj/prvi
 share/proj/stgeorge
 share/proj/stlrnc
