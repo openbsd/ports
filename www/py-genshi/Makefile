@@ -1,29 +1,23 @@
-# $OpenBSD: Makefile,v 1.16 2019/04/28 20:51:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/12 10:09:21 semarie Exp $
 
 COMMENT =	toolkit for generation of output for the web
 
-MODPY_EGG_VERSION =	0.7
+MODPY_EGG_VERSION =	0.7.2
 DISTNAME =	Genshi-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	3
 
 CATEGORIES =	www
 
-HOMEPAGE =	http://genshi.edgewall.org/
+HOMEPAGE =	https://genshi.edgewall.org/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
 
-MASTER_SITES =	http://ftp.edgewall.com/pub/genshi/
-MASTER_SITES0 =	${MASTER_SITE_DEBIAN:=main/g/genshi/}
-
-DISTFILES =	${DISTNAME}.tar.gz \
-		genshi_0.7-6.debian.tar.xz:0
-
 MODULES =	lang/python
 
+MODPY_PI =	Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_SETUP_ARGS =	--with-speedups
 
@@ -31,13 +25,6 @@ FLAVOR ?=
 FLAVORS =	python3
 
 TEST_DEPENDS =	${BUILD_DEPENDS}
-
-PATCH_DIST_STRIP =	-p1
-
-do-distpatch:
-	for p in ${WRKDIR}/debian/patches/*.patch; do \
-		${PATCH} ${PATCH_DIST_ARGS} < $$p; \
-	done
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}genshi
