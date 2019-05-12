@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2019/04/29 06:43:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2019/05/12 22:46:58 ajacoutot Exp $
 
 COMMENT=		next-generation build system
 
@@ -34,7 +34,7 @@ PATCH_STRIP=		-p0 -b
 # regression tests need to run as root
 TEST_IS_INTERACTIVE=	Yes
 
-# XXX https://github.com/mesonbuild/meson/issues/5218
+# XXX https://github.com/mesonbuild/meson/issues/5390 (-lrt, -ldl)
 # test_meson_installed (__main__.CommandTests) ... warning: no directories found matching 'syntax-highlighting'
 # test_objc_cpp_detection (__main__.FailureTests) ... skipped "objc and objcpp found, can't test detection failure"
 # test_d_compiler (__main__.NativeFileTests) ... skipped 'No d compiler found.'
