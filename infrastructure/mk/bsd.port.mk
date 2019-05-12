@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1463 2019/05/12 07:28:59 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1464 2019/05/12 07:43:54 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3120,7 +3120,8 @@ _internal-clean:
 .endif
 .if ${_clean:Mpackages} || ${_clean:Mpackage} && ${_clean:Msub}
 	${_PBUILD} rm -f ${_PACKAGE_COOKIES}
-	rm -f ${_UPDATE_COOKIES} ${_CACHE_PACKAGE_COOKIES}
+	${_PFETCH} rm -f ${_CACHE_PACKAGE_COOKIES}
+	rm -f ${_UPDATE_COOKIES} 
 .elif ${_clean:Mpackage}
 	${_PBUILD} rm -f ${_PACKAGE_COOKIES${SUBPACKAGE}}
 	rm -f ${_UPDATE_COOKIE${SUBPACKAGE}}
