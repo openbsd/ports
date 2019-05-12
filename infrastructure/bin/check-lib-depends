@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.43 2018/07/11 12:42:57 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.44 2019/05/12 20:40:20 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -376,8 +376,10 @@ sub get_plist
 			FULLPATH => "Yes",
 			ECHO_MSG => ':'
 		);
-		if (exists $ENV{_DEPENDS_CACHE}) {
-			$myenv{_DEPENDS_CACHE} = $ENV{_DEPENDS_CACHE};
+		for my $v (qw(_DEPENDS_CACHE PORTSDIR_PATH)) {
+			if (exists $ENV{$v}) {
+				$myenv{$v} = $ENV{$v};
+			}
 		}
 		%ENV = %myenv;
 		exec { $make }
