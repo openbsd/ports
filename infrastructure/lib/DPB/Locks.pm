@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.48 2019/05/12 07:50:00 espie Exp $
+# $OpenBSD: Locks.pm,v 1.49 2019/05/12 13:39:46 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -48,6 +48,12 @@ sub new
 {
 	my ($class, $filename, $logger) = @_;
 	bless { filename => $filename, logger => $logger}, $class;
+}
+
+sub fullpkgpath
+{
+	my $self = shift;
+	return $self->{locked};
 }
 
 sub is_host
@@ -125,8 +131,11 @@ sub parse_file
 			$i->set_field($1, $2);
 		} elsif (m/^(wanted|needed)\=(.*)$/) {
 			$i->set_field($1, [split(/\s+/, $2)]);
-		} elsif (m/^(nojunk|cleaned)$/) {
-			$i->set_field($1, 1);
+		} elsif (m/^nojunk$/) {
+			$i->set_field("nojunk", 1);
+		} elsif (m/^cleaned$/) {
+			$i->set_field("cleaned", 1);
+			$i->{finished} = 1;
 		} else {
 			$i->set_bad("Parse error on $_");
 		}
@@ -226,7 +235,7 @@ sub clean_old_locks
 		# on the way, let's retaint cores
 		if (defined $i->{tag}) {
 			DPB::Core::Init->taint($i->{host}, $i->{tag}, 
-			    $i->{locked});
+			    $i->fullpkgpath);
 		}
 		push(@{$locks->{$i->{dpb_pid}}}, $i);
 	    });
@@ -249,8 +258,8 @@ sub clean_old_locks
 			for my $i (@$list) {
 				# there might be stale host locks in there
 				# make sure to clean them as well
-				push(@{$hostpaths->{$i->{host}}}, $i->{locked})
-				    if defined $i->{locked};
+				push(@{$hostpaths->{$i->{host}}}, 
+				    $i->fullpkgpath) if defined $i->fullpkgpath;
 				$self->unlink($i->{filename});
 			}
 		}
@@ -355,7 +364,7 @@ sub find_dependencies
 			}
 		}
 		# XXX we don't need to do anything more
-		$nojunk = $i->{path} if $i->{nojunk};
+		$nojunk = $i->fullpkgpath if $i->{nojunk};
 	    });
 	return ($nojunk, $h);
 }
@@ -371,7 +380,7 @@ sub find_tag
 		return if $i->{cleaned};
 		if (defined $i->{host} && $i->{host} eq $hostname) {
 			$tag //= $i->{tag};
-			$tagowner //= $i->{locked};
+			$tagowner //= $i->fullpkgpath;
 		}
 	    });
 	if (wantarray) {
