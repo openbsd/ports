@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1852 2019/05/10 15:20:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.1853 2019/05/12 22:28:08 kn Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1205,6 +1205,7 @@
      SUBDIR += p5-capitalization
      SUBDIR += p5-common-sense
      SUBDIR += p5-enum
+     SUBDIR += p5-forks
      SUBDIR += p5-indirect
      SUBDIR += p5-lib-abs
      SUBDIR += p5-libintl
