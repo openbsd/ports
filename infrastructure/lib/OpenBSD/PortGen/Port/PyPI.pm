@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.11 2019/05/11 19:36:27 afresh1 Exp $
+# $OpenBSD: PyPI.pm,v 1.12 2019/05/12 20:23:33 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -163,7 +163,7 @@ sub get_deps
 
 		if ( $phase eq 'build' ) {
 			$deps->add_build( $port, $req );
-		} elsif ( $phase eq 'test' ) {
+		} elsif ( $phase eq 'test' or $phase eq 'testing' ) {
 			$deps->add_test( $port, $req );
 		} elsif ( $phase eq 'dev' ) {
 			# switch this to "ne 'run'" to avoid optional deps

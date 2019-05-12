@@ -1,4 +1,4 @@
-# $OpenBSD: Dependency.pm,v 1.1.1.1 2016/01/18 18:08:19 tsg Exp $
+# $OpenBSD: Dependency.pm,v 1.2 2019/05/12 20:23:33 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -18,6 +18,8 @@ package OpenBSD::PortGen::Dependency;
 
 use 5.012;
 use warnings;
+
+use CPAN::Meta::Requirements;
 
 sub new
 {
@@ -51,12 +53,8 @@ sub _add_dep
 {
 	my ( $self, $type, $port, $reqs ) = @_;
 
-	# '>=0' is redundant, remove it
-	if ( defined $reqs and $reqs eq '>=0' ) {
-		$reqs = '';
-	}
-
-	$self->{deps}{$type}{$port} = $reqs;
+	$self->{deps}{$type} ||= CPAN::Meta::Requirements->new;
+	$self->{deps}{$type}->add_string_requirement( $port => $reqs );
 }
 
 # from perlfaq4
@@ -65,8 +63,9 @@ sub _arr_equal
 	my ( $self, $fst, $snd ) = @_;
 	no warnings;
 
+	return 0 unless  $fst and  $snd;
 	return 0 unless @$fst and @$snd;
-	return 0 unless @$fst == @$snd;
+	return 0 unless @$fst  == @$snd;
 
 	for ( my $i = 0 ; $i < @$fst ; $i++ ) {
 		return 0 if $fst->[$i] ne $snd->[$i];
@@ -82,31 +81,31 @@ sub format
 
 	return unless $self->{deps};
 
-	for my $type (qw/ build run test/) {
-
-		# might not have dependencies of this type
-		next unless exists $self->{deps}{$type};
-
-		my @deps;
-		while ( my ( $name, $ver_reqs ) =
-			each %{ $self->{deps}{$type} } )
-		{
-			push @deps, $ver_reqs ? $name . $ver_reqs : $name;
+	for my $type ( keys %{ $self->{deps} } ) {
+		my $dep = $self->{deps}{$type};
+		foreach my $port ( sort $dep->required_modules ) {
+			my $req =
+			    $dep->structured_requirements_for_module($port)->[0];
+			next unless $req;
+			my $v = $req->[1];
+			$v =~ s/^v//;
+			if ( $v eq '0' ) {
+				push @{ $fmt{$type} }, $port;
+			} elsif ( $req->[0] eq '>=' ) {
+				push @{ $fmt{$type} }, "$port>=$v";
+			} elsif ( $req->[0] eq '==' ) {
+				push @{ $fmt{$type} }, "$port=$v";
+			}
 		}
-
-		@{ $fmt{$type} } = sort @deps;
 	}
 
-	my ( $build_ref, $run_ref, $test_ref ) =
-	    ( \@{ $fmt{'build'} }, \@{ $fmt{'run'} }, \@{ $fmt{'test'} } );
-
-	if ( $self->_arr_equal( $build_ref, $run_ref ) ) {
+	if ( $self->_arr_equal( $fmt{'build'}, $fmt{'run'} ) ) {
 		@{ $fmt{'run'} } = '${BUILD_DEPENDS}';
 	}
 
-	if ( $self->_arr_equal( $test_ref, $build_ref ) ) {
+	if ( $self->_arr_equal( $fmt{'test'}, $fmt{'build'} ) ) {
 		@{ $fmt{'test'} } = '${BUILD_DEPENDS}';
-	} elsif ( $self->_arr_equal( $test_ref, $run_ref ) ) {
+	} elsif ( $self->_arr_equal( $fmt{'test'}, $fmt{'run'} ) ) {
 		@{ $fmt{'test'} } = '${RUN_DEPENDS}';
 	}
 
