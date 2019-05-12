@@ -1,0 +1,16 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2019/05/12 13:36:34 rsadowski Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -666,8 +666,8 @@ get_link_libraries(PRIVATE_LIBS vncclient)
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/libvncclient.pc.cmakein ${CMAKE_CURRENT_BINARY_DIR}/libvncclient.pc @ONLY)
+ 
+ 
+-install_targets(/lib vncserver)
+-install_targets(/lib vncclient)
++install(TARGETS vncserver DESTINATION "lib")
++install(TARGETS vncclient DESTINATION "lib")
+ install_files(/include/rfb FILES
+     rfb/keysym.h
+     rfb/rfb.h

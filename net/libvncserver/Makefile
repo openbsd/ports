@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2018/08/09 15:05:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/12 13:36:34 rsadowski Exp $
 
 COMMENT=		library for easy implementation of a VNC server
 
-DISTNAME=		LibVNCServer-0.9.10
-REVISION=		5
+DISTNAME=		LibVNCServer-0.9.12
 PKGNAME=		${DISTNAME:L}
 
-SHARED_LIBS +=  vncclient                 0.0 # 0.0
-SHARED_LIBS +=  vncserver                 0.0 # 0.0
+SHARED_LIBS +=  vncclient                 1.0 # 0.0
+SHARED_LIBS +=  vncserver                 2.0 # 0.0
 
 CATEGORIES=		net devel
 
@@ -16,32 +15,34 @@ HOMEPAGE=		https://libvnc.github.io/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =  crypto ffi gcrypt gmp gnutls gpg-error hogweed iconv idn2
-WANTLIB += intl jpeg m nettle p11-kit png pthread ssl tasn1 unistring z
+WANTLIB += crypto gcrypt gnutls jpeg lzo2 png pthread sasl2
+WANTLIB += ssl z
 
 MASTER_SITES=		https://github.com/LibVNC/libvncserver/archive/
 
-WRKDIST=		${WRKDIR}/libvncserver-${DISTNAME}
+MODULES=		devel/cmake
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-
-LIB_DEPENDS=		graphics/jpeg \
+LIB_DEPENDS=		archivers/lzo2 \
+			graphics/jpeg \
 			graphics/png \
+			security/cyrus-sasl2 \
 			security/gnutls \
 			security/libgcrypt
 
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
+WRKDIST=		${WRKDIR}/libvncserver-${DISTNAME}
 
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -fi
+CONFIGURE_ARGS+=	-DWITH_24BPP=ON \
+			-DWITH_JPEG=ON \
+			-DWITH_LZO=ON \
+			-DWITH_PNG=ON \
+			-DWITH_THREADS=ON \
+			-DWITH_TIGHTVNC_FILETRANSFER=ON \
+			-DWITH_WEBSOCKETS=ON \
+			-DWITH_ZLIB=ON \
+			-DWITH_SASL=ON \
+			-DWITH_IPv6=ON \
+			-DWITH_FFMPEG=OFF \
+			-DWITH_SDL=OFF \
+			-DWITH_SYSTEMD=OFF\
 
 .include <bsd.port.mk>

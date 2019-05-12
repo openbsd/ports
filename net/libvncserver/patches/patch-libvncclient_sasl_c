@@ -1,0 +1,13 @@
+$OpenBSD: patch-libvncclient_sasl_c,v 1.1 2019/05/12 13:36:34 rsadowski Exp $
+
+Index: libvncclient/sasl.c
+--- libvncclient/sasl.c.orig
++++ libvncclient/sasl.c
+@@ -35,6 +35,7 @@
+ #define _XOPEN_SOURCE 600
+ #endif
+ 
++#include <sys/socket.h>
+ #include <errno.h>
+ #include <rfb/rfbclient.h>
+ 
