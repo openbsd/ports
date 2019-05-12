@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.53 2019/05/12 08:57:03 espie Exp $
+# $OpenBSD: Vars.pm,v 1.54 2019/05/12 10:28:22 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -73,6 +73,7 @@ EOT
 		waitpid($pid2, 0);
 		waitpid($pid, 0);
 	} else {
+		DPB::Job->cleanup_after_fork;
 		close STDIN;
 		open(STDIN, '<&', $rh);
 		$shell->exec($make, '-C', '/', '-f', '-', 'print-data');
