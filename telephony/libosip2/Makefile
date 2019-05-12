@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2015/03/16 18:07:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/12 02:08:13 lteo Exp $
 
 COMMENT=	GNU oSIP library
 
 DISTNAME=	libosip2-3.5.0
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS +=	osipparser2          4.0      # 8.0
 SHARED_LIBS +=	osip2                4.0      # 8.0
@@ -11,8 +11,6 @@ SHARED_LIBS +=	osip2                4.0      # 8.0
 CATEGORIES=	telephony devel
 
 HOMEPAGE=	https://www.gnu.org/software/osip/
-
-MAINTAINER=	Lawrence Teo <lteo@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
