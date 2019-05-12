@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_wallet_db_cpp,v 1.1.1.1 2019/03/08 05:52:25 rsadowski Exp $
+$OpenBSD: patch-src_wallet_db_cpp,v 1.2 2019/05/12 13:22:58 rsadowski Exp $
 Index: src/wallet/db.cpp
 --- src/wallet/db.cpp.orig
 +++ src/wallet/db.cpp
 @@ -1,4 +1,4 @@
 -// Copyright (c) 2009-2010 Satoshi Nakamoto
 +
- // Copyright (c) 2009-2017 The Bitcoin Core developers
+ // Copyright (c) 2009-2018 The Bitcoin Core developers
  // Distributed under the MIT software license, see the accompanying
  // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-@@ -126,7 +126,9 @@ bool CDBEnv::Open(const fs::path& pathIn, bool retry)
+@@ -156,7 +156,9 @@ bool BerkeleyEnvironment::Open(bool retry)
      dbenv->set_errfile(fsbridge::fopen(pathErrorFile, "a")); /// debug
      dbenv->set_flags(DB_AUTO_COMMIT, 1);
      dbenv->set_flags(DB_TXN_WRITE_NOSYNC, 1);
@@ -18,7 +18,7 @@ Index: src/wallet/db.cpp
      int ret = dbenv->open(strPath.c_str(),
                           DB_CREATE |
                               DB_INIT_LOCK |
-@@ -179,7 +181,9 @@ void CDBEnv::MakeMock()
+@@ -213,7 +215,9 @@ void BerkeleyEnvironment::MakeMock()
      dbenv->set_lk_max_locks(10000);
      dbenv->set_lk_max_objects(10000);
      dbenv->set_flags(DB_AUTO_COMMIT, 1);

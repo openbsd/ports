@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/11 04:11:57 bket Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/12 13:22:58 rsadowski Exp $
 
 COMMENT =		P2P payment system
 
 GH_ACCOUNT =		litecoin-project
 GH_PROJECT =		litecoin
-GH_TAGNAME =		v0.16.3
-REVISION =		0
+GH_TAGNAME =		v0.17.1
 
-SHARED_LIBS +=  bitcoinconsensus          0.0 # 0.0
+SHARED_LIBS +=  bitcoinconsensus          1.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.0 # 0.0
 SHARED_LIBS +=  univalue                  0.0 # 100.3
 
@@ -21,7 +20,7 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_chrono-mt boost_filesystem
-WANTLIB += boost_program_options-mt boost_timer-mt boost_unit_test_framework-mt
+WANTLIB += boost_timer-mt boost_unit_test_framework-mt
 WANTLIB += boost_system boost_system-mt boost_thread-mt c crypto
 WANTLIB += db_cxx event_core event_extra event_pthreads m sodium
 WANTLIB += ssl zmq
@@ -68,7 +67,7 @@ WANTLIB += GL Qt5Core Qt5Test Qt5DBus Qt5Gui Qt5Network Qt5Widgets X11
 WANTLIB += X11-xcb Xdamage Xext Xfixes Xxf86vm dbus-1 drm execinfo
 WANTLIB += expat freetype glapi glib-2.0 graphite2 gthread-2.0
 WANTLIB += harfbuzz iconv icudata icui18n icuuc intl miniupnpc
-WANTLIB += pcre pcre2-16 png16 protobuf qrencode xcb xcb-dri2
+WANTLIB += pcre pcre2-16 png protobuf qrencode xcb xcb-dri2
 WANTLIB += xcb-dri3 xcb-glx xcb-present xcb-sync xcb-xfixes xshmfence
 WANTLIB += z
 
@@ -98,8 +97,8 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIST}/share/rpcauth/rpcauth.py \
 		${PREFIX}/share/litecoin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/litecoin
-	${INSTALL_DATA} ${WRKDIST}/contrib/debian/examples/bitcoin.conf \
-		${PREFIX}/share/examples/litecoin/litecoin.conf
+	${INSTALL_DATA} ${WRKDIST}/share/examples/litecoin.conf \
+		${PREFIX}/share/examples/litecoin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/litecoin
 	${INSTALL_DATA} ${WRKDIST}/contrib/*.bash-completion \
 		${PREFIX}/share/bash-completion/completions/litecoin
