@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2018/12/19 06:00:57 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/12 08:02:14 landry Exp $
 
 COMMENT=	GIS TIFF interchange library
 
-DISTNAME=	libgeotiff-1.4.3
+DISTNAME=	libgeotiff-1.5.1
 CATEGORIES=	devel geo
-SHARED_LIBS=	geotiff 2.1
+SHARED_LIBS=	geotiff 3.0 # 5.0
 
 HOMEPAGE=	http://trac.osgeo.org/geotiff/
 
@@ -24,9 +24,9 @@ CONFIGURE_ARGS=		--with-jpeg=${LOCALBASE} \
 			--with-libtiff=${LOCALBASE} \
 			--with-libz
 
-WANTLIB=		c jpeg m z proj tiff pthread
+WANTLIB=		c jpeg m z proj tiff pthread sqlite3
 
-LIB_DEPENDS=		devel/proj \
+LIB_DEPENDS=		devel/proj>=6 \
 			graphics/tiff
 
 .include <bsd.port.mk>

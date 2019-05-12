@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/09/01 16:44:12 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/05/12 08:02:14 landry Exp $
 @bin bin/applygeo
 @bin bin/geotifcp
 @bin bin/listgeo
@@ -13,7 +13,6 @@ include/epsg_units.inc
 include/epsg_vertcs.inc
 include/geo_config.h
 include/geo_ctrans.inc
-include/geo_incode_defs.h
 include/geo_keyp.h
 include/geo_normalize.h
 include/geo_simpletags.h
@@ -31,39 +30,3 @@ lib/libgeotiff.la
 @man man/man1/applygeo.1
 @man man/man1/geotifcp.1
 @man man/man1/listgeo.1
-share/epsg_csv/
-share/epsg_csv/alias.csv
-share/epsg_csv/area.csv
-share/epsg_csv/change.csv
-share/epsg_csv/compdcs.csv
-share/epsg_csv/coordinate_axis.csv
-share/epsg_csv/coordinate_axis_name.csv
-share/epsg_csv/coordinate_operation.csv
-share/epsg_csv/coordinate_operation_method.csv
-share/epsg_csv/coordinate_operation_parameter.csv
-share/epsg_csv/coordinate_operation_parameter_value.csv
-share/epsg_csv/coordinate_operation_path.csv
-share/epsg_csv/coordinate_reference_system.csv
-share/epsg_csv/coordinate_system.csv
-share/epsg_csv/csv2c.py
-share/epsg_csv/csv_tools.py
-share/epsg_csv/datum.csv
-share/epsg_csv/datum_shift.csv
-share/epsg_csv/datum_shift_pref.csv
-share/epsg_csv/deprecation.csv
-share/epsg_csv/ellipsoid.csv
-share/epsg_csv/esri_datum_override.csv
-share/epsg_csv/gcs.csv
-share/epsg_csv/gcs.override.csv
-share/epsg_csv/geoccs.csv
-share/epsg_csv/naming_system.csv
-share/epsg_csv/pcs.csv
-share/epsg_csv/pcs.override.csv
-share/epsg_csv/prime_meridian.csv
-share/epsg_csv/projop_wparm.csv
-share/epsg_csv/stateplane.csv
-share/epsg_csv/supersession.csv
-share/epsg_csv/unit_of_measure.csv
-share/epsg_csv/version_history.csv
-share/epsg_csv/vertcs.csv
-share/epsg_csv/vertcs.override.csv
