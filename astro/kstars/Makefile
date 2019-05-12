@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/05 09:41:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/12 17:30:56 rsadowski Exp $
 
 COMMENT =	planetarium simulator for KDE
 
-DISTNAME =	kstars-3.2.1
+DISTNAME =	kstars-3.2.2
 EPOCH =		0
 
 CATEGORIES =	astro education
@@ -35,6 +35,7 @@ BUILD_DEPENDS +=	devel/gettext-tools \
 			x11/xplanet
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
+			devel/kf5/breeze-icons \
 			devel/kf5/kdoctools \
 			x11/gtk+3,-guic \
 			x11/qt5/qtquickcontrols \
