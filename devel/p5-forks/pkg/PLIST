@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/12 22:25:45 kn Exp $
+${P5ARCH}/auto/forks/
+${P5ARCH}/auto/forks/forks.so
+${P5ARCH}/forks/
+${P5ARCH}/forks.pm
+${P5ARCH}/forks/Devel/
+${P5ARCH}/forks/Devel/Symdump.pm
+${P5ARCH}/forks/shared/
+${P5ARCH}/forks/shared.pm
+${P5ARCH}/forks/shared/attributes.pm
+${P5ARCH}/forks/shared/global_filter.pm
+${P5ARCH}/forks/signals.pm
+${P5ARCH}/threads/
+${P5ARCH}/threads/shared/
+${P5ARCH}/threads/shared/array.pm
+${P5ARCH}/threads/shared/handle.pm
+${P5ARCH}/threads/shared/hash.pm
+${P5ARCH}/threads/shared/scalar.pm
+@man man/man3p/forks.3p
+@man man/man3p/forks::Devel::Symdump.3p
+@man man/man3p/forks::shared.3p
+@man man/man3p/forks::signals.3p
+@man man/man3p/threads::shared::array.3p
+@man man/man3p/threads::shared::handle.3p
+@man man/man3p/threads::shared::hash.3p
+@man man/man3p/threads::shared::scalar.3p
