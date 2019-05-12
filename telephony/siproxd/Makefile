@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2018/01/11 19:27:11 rpe Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/12 02:08:29 lteo Exp $
 
 COMMENT=	proxy/masquerading daemon for the SIP protocol
 
 DISTNAME=	siproxd-0.8.2
 CATEGORIES=	telephony net
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://siproxd.sourceforge.net/
-
-MAINTAINER=	Lawrence Teo <lteo@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
