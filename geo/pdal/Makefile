@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/28 20:51:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/12 16:07:03 jca Exp $
 
 COMMENT =	translator library for point cloud formats
 
 DISTNAME =	PDAL-1.9.0-src
 PKGNAME =	${DISTNAME:L:C/-src//}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	pdal_base 2.0 # 6.1
 SHARED_LIBS +=  pdal_util 0.2 # 6.1
