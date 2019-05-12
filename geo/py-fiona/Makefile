@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/28 20:51:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/12 08:09:53 landry Exp $
 
 COMMENT =	high-level API and CLI on top of OGR
+BROKEN =	needs update to cope with gdal 3
 
 MODPY_EGG_VERSION =	1.8.6
 DISTNAME =	Fiona-${MODPY_EGG_VERSION:S/post/pl/}
