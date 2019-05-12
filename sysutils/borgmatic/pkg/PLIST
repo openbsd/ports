@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/04/01 04:18:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/05/12 15:53:55 jasper Exp $
 bin/borgmatic
 bin/generate-borgmatic-config
 bin/upgrade-borgmatic-config
+bin/validate-borgmatic-config
 lib/python${MODPY_VERSION}/site-packages/borgmatic/
 lib/python${MODPY_VERSION}/site-packages/borgmatic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/borgmatic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -22,6 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}__init__
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}check.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}environment.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}execute.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}extract.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}init.${MODPY_PYC_MAGIC_TAG}pyc
@@ -30,6 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}prune.${
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/check.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/create.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/environment.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/execute.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/extract.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/info.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/init.py
@@ -43,10 +46,12 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/${MODPY_PYCACHE}borg
 lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/${MODPY_PYCACHE}convert_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/${MODPY_PYCACHE}generate_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/${MODPY_PYCACHE}hook.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/${MODPY_PYCACHE}validate_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/borgmatic.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/convert_config.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/generate_config.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/hook.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/commands/validate_config.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/config/
 lib/python${MODPY_VERSION}/site-packages/borgmatic/config/__init__.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/config/${MODPY_PYCACHE}/
