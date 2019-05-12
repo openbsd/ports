@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.50 2019/05/12 14:09:11 espie Exp $
+# $OpenBSD: Locks.pm,v 1.51 2019/05/12 16:37:52 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -99,7 +99,7 @@ sub set_bad
 	my ($i, $error) = @_;
 	bless $i, 'DPB::LockInfo::Bad';
 	$i->{parseerror} = $error;
-	print {$i->{logger}->append($i->{logger}->logfile("locks"))}
+	print {$i->{logger}->append($i->{logger}->logfile("debug"))}
 	    "Problem in lock $i->{filename}: $i->{parseerror}\n";
 }
 
