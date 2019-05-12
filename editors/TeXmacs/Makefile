@@ -1,45 +1,45 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/10 21:27:07 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/12 15:43:45 rsadowski Exp $
 
 COMMENT=	wysiwyw (what you see is what you want) editing platform
 
-DISTNAME=	TeXmacs-1.99.4-src
+DISTNAME=	TeXmacs-1.99.9-src
 PKGNAME=	${DISTNAME:S/-src//}
 CATEGORIES=	editors print x11
-REVISION=	6
 
 HOMEPAGE=	http://texmacs.org/
 
-MASTER_SITES=	${HOMEPAGE}/Download/ftp/tmftp/source/
+MAINTAINER =	Nam Nguyen <namn@berkeley.edu>
+
+MASTER_SITES=	http://texmacs.org/Download/ftp/tmftp/source/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB+=	ICE QtGui SM X11 Xext Xi Xinerama Xrender c fontconfig
-WANTLIB+=	freetype gmp guile ltdl m pthread ${COMPILER_LIBCXX} util z
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets
+WANTLIB += c execinfo freetype gmp guile jpeg ltdl m png sqlite3
+WANTLIB += util z
 
-# XXX base-clang: lots of undefined references to Qt functions
-COMPILER=	ports-gcc
+MODULES=	devel/cmake \
+		x11/qt5
 
-MODULES=	x11/qt4
 BUILD_DEPENDS=	print/ghostscript/gnu
+
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		print/ghostscript/gnu \
 		x11/gtk+3,-guic
-LIB_DEPENDS=	lang/guile
+LIB_DEPENDS=	databases/sqlite3 \
+		devel/gmp \
+		devel/libexecinfo \
+		graphics/jpeg \
+		graphics/png \
+		lang/guile
 
-USE_GMAKE=	Yes
-CONFIGURE_STYLE=autoconf
-CONFIGURE_ARGS=	--with-qt=${MODQT4_QTDIR}/bin
-AUTOCONF_VERSION=	2.69
+CONFIGURE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 
-NO_TEST=	Yes
-ALL_TARGET=
+CXXFLAGS+=	-Wno-deprecated-register
 
 post-extract:
 	rm -f ${WRKDIST}/plugins/mathematica/bin/realpath.py
-
-post-install:
-	gunzip ${PREFIX}/man/man1/*.gz
 
 .include <bsd.port.mk>

@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2019/05/12 15:43:45 rsadowski Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -562,7 +562,7 @@ if (TEXMACS_GUI MATCHES "Qt.*")
+ 
+   set (TeXmacs_All_SRCS ${TeXmacs_All_SRCS} ${TeXmacs_Qt_SRCS} ${TeXmacs_Qt_Moc_HDRS})
+   set (TeXmacs_Include_Dirs ${TeXmacs_Include_Dirs} ${QT_INCLUDES})
+-  set (TeXmacs_Libraries ${TeXmacs_Libraries}  ${QT_LIBRARIES})
++  set (TeXmacs_Libraries ${TeXmacs_Libraries}  ${QT_LIBRARIES} execinfo)
+ 
+   if (WIN32)
+     set (GUI_TYPE WIN32)

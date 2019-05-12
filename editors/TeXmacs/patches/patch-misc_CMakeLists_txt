@@ -1,0 +1,21 @@
+$OpenBSD: patch-misc_CMakeLists_txt,v 1.1 2019/05/12 15:43:45 rsadowski Exp $
+
+Index: misc/CMakeLists.txt
+--- misc/CMakeLists.txt.orig
++++ misc/CMakeLists.txt
+@@ -7,14 +7,5 @@ set(TOOLS "texmacs" "fig2ps")
+ set(MAN_SECTION "1")
+ foreach(TOOL ${TOOLS})
+   set(TOOL_MANFILE ${CMAKE_CURRENT_SOURCE_DIR}/man/${TOOL}.${MAN_SECTION})
+-  set(TOOL_MANFILE_GZ ${CMAKE_CURRENT_BINARY_DIR}/${TOOL}.${MAN_SECTION}.gz)
+-  add_custom_command(
+-    OUTPUT ${TOOL_MANFILE_GZ}
+-    COMMAND gzip -c ${TOOL_MANFILE} > ${TOOL_MANFILE_GZ}
+-    MAIN_DEPENDENCY ${TOOL_MANFILE}
+-    COMMENT "Building ${TOOL} man page"
+-    VERBATIM
+-  )
+-  add_custom_target(${TOOL}.${MAN_SECTION} ALL DEPENDS ${TOOL_MANFILE_GZ})
+-  install(FILES ${TOOL_MANFILE_GZ} DESTINATION share/man/man${MAN_SECTION})
++  install(FILES ${TOOL_MANFILE} DESTINATION man/man${MAN_SECTION})
+ endforeach(TOOL)
