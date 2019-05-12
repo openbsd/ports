@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.76 2019/04/28 20:51:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2019/05/12 08:07:33 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 COMMENT-perl =	perl bindings for GDAL
 
-V =		2.4.1
+V =		3.0.0
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
@@ -15,10 +15,8 @@ FULLPKGNAME-python =	py-${DISTNAME}
 FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
 FULLPKGNAME-perl =	p5-Geo-GDAL-${V}
 FULLPKGPATH-perl =	geo/gdal,-perl
-REVISION-main =		0
-REVISION-perl =		0
 
-SHARED_LIBS =	gdal 34.0 #25.0
+SHARED_LIBS =	gdal 35.0 #26.0
 CATEGORIES =	geo devel
 
 HOMEPAGE =	http://www.gdal.org/
@@ -37,7 +35,6 @@ FLAVOR ?=
 .if ${FLAVOR:Mpython3}
 FULLPKGNAME-python =	py3-${DISTNAME}
 .endif
-REVISION-python =	0
 
 COMPILER = base-clang ports-gcc
 
@@ -60,8 +57,8 @@ LIB_DEPENDS-main =	databases/sqlite3 \
 			graphics/jasper \
 			graphics/openjp2 \
 			devel/pcre \
-			devel/proj \
-			devel/geotiff
+			devel/proj>=6.0 \
+			devel/geotiff>=1.5.0
 
 WANTLIB-main =		c crypto curl expat freexl geos geos_c geotiff gif \
 			iconv jasper jpeg json-c lzma m nghttp2 openjp2 \
@@ -79,7 +76,7 @@ LIB_DEPENDS-perl =	${FULLPKGNAME-main}:${FULLPKGPATH-main}
 WANTLIB-perl =		perl gdal # uses perl ABI
 WANTLIB-perl += c crypto curl expat freexl geos_c geotiff gif iconv
 WANTLIB-perl += jasper jpeg json-c lzma m nghttp2 openjp2 pcre png
-WANTLIB-perl += pq pthread qhull spatialite sqlite3 ssl tiff xml2 webp z zstd
+WANTLIB-perl += pq proj pthread qhull spatialite sqlite3 ssl tiff xml2 webp z zstd
 
 BUILD_DEPENDS +=	${RUN_DEPENDS} math/py-numpy${MODPY_FLAVOR} devel/swig
 
@@ -88,7 +85,7 @@ TEST_DEPENDS +=		${FULLPKGNAME-python}:${FULLPKGPATH-python}
 TEST_ENV =		GDAL_DOWNLOAD_TEST_DATA=1 GDAL_RUN_SLOW_TESTS=yes
 
 MODPY_SETUPTOOLS =	Yes
-MODPY_EGG_VERSION =	${V:C/beta.//}
+MODPY_EGG_VERSION =	${V}
 MODPY_ADJ_FILES =	swig/python/scripts/*.py swig/python/samples/*.py
 
 MAKE_FILE =	GNUmakefile
@@ -111,7 +108,7 @@ CONFIGURE_ARGS =--without-hdf5 \
 		--without-idb \
 		--without-sde \
 		--without-libgrass \
-		--with-pg=${LOCALBASE}/bin/pg_config \
+		--with-pg \
 		--with-python=${MODPY_BIN} \
 		--with-perl \
 		--with-geos \
