@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.76 2019/02/21 22:37:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2019/05/12 15:26:06 edd Exp $
 
 COMMENT =		input and output plugins for Audacious
 
 V =			3.9
 DISTNAME =		audacious-plugins-$V
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		audio multimedia
 
@@ -40,6 +40,7 @@ LIB_DEPENDS =		audio/faad>=2.7 \
 			audio/flac \
 			audio/lame \
 			audio/libcdio \
+			audio/libcdio-paranoia \
 			audio/libcue \
 			audio/libmodplug \
 			audio/libsamplerate \

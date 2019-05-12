@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.46 2019/02/25 22:43:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2019/05/12 15:26:07 edd Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.29.1
+
+REVISION =		0
 
 CATEGORIES =		multimedia x11
 
@@ -34,6 +36,7 @@ BUILD_DEPENDS =		audio/ladspa \
 			textproc/py-docutils
 
 LIB_DEPENDS =		audio/libcdio \
+			audio/libcdio-paranoia \
 			converters/libiconv \
 			devel/libdvdread \
 			devel/sdl2 \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2019/03/08 20:00:39 cwen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/12 15:26:07 edd Exp $
 
 COMMENT =	Qt-based MPD client
 
 V =			2.3.2
 DISTNAME =	cantata-${V}
 HOMEPAGE =	https://github.com/CDrummond/cantata
-REVISION =	0
+REVISION =	1
 
 MASTER_SITES =	https://github.com/CDrummond/cantata/releases/download/v${V}/
 EXTRACT_SUFX =	.tar.bz2
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Multimedia Qt5Network Qt5Sql Qt5Svg Qt5Widgets Qt5Xml
 WANTLIB += avcodec avformat avutil c cddb cdio cdio_cdda cdio_paranoia
-WANTLIB += m mpg123 mtp musicbrainz5 tag z avahi-client avahi-common
+WANTLIB += iconv m mpg123 mtp musicbrainz5 tag z avahi-client avahi-common
 
 MODULES =	devel/cmake \
 		x11/qt5
@@ -27,6 +27,7 @@ RUN_DEPENDS +=	devel/desktop-file-utils
 RUN_DEPENDS +=	x11/gtk+3,-guic
 LIB_DEPENDS +=	audio/mpg123 \
 		audio/libcdio \
+		audio/libcdio-paranoia \
 		audio/libcddb \
 		audio/libmusicbrainz5 \
 		audio/taglib \

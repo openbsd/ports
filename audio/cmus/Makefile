@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/06 14:58:54 cwen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/05/12 15:26:07 edd Exp $
 
 COMMENT-main=		ncurses-based music player
 COMMENT-ffmpeg=		ffmpeg input plugin for cmus (.aac, .mp4...)
 
 V=			2.8.0
+REVISION=		0
 DISTNAME=		cmus-${V}
 PKGNAME-main=		${PKGNAME}
 PKGNAME-ffmpeg=		cmus-ffmpeg-${V}
@@ -31,6 +32,7 @@ WANTLIB-main+=		ogg vorbis
 COMPILER=		base-clang ports-gcc
 LIB_DEPENDS-main=	audio/flac \
 			audio/libcdio \
+			audio/libcdio-paranoia \
 			audio/libdiscid \
 			audio/libmad \
 			audio/libogg \

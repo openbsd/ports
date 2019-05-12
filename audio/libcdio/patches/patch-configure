@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure,v 1.1 2019/05/12 15:26:07 edd Exp $
+
+Re-enable cdda_player.
+
+Already applied upstream:
+http://git.savannah.gnu.org/cgit/libcdio.git/commit/?id=3c1eff03a256ab47bb79f439bfc478664e3fe917
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -18229,7 +18229,6 @@ $as_echo "#define HAVE_NETBSD_CDROM 1" >>confdefs.h
+ 
+  	# LIBS="$LIBS -lcam"
+   	cd_drivers="${cd_drivers}, NetBSD "
+-	enable_cdda_player="no"
+ 	;;
+      os2*)
+ 

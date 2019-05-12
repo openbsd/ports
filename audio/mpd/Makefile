@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.119 2019/04/24 16:26:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.120 2019/05/12 15:26:07 edd Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
 VER =			0.20.23
+REVISION =		0
 DISTNAME =		mpd-${VER}
 CATEGORIES =		audio
 HOMEPAGE =		https://www.musicpd.org/
@@ -29,6 +30,7 @@ LIB_DEPENDS =		audio/faad>=2.6.1p0 \
 			audio/flac \
 			audio/lame \
 			audio/libcdio \
+			audio/libcdio-paranoia \
 			audio/libid3tag \
 			audio/libmikmod \
 			audio/libmpdclient \

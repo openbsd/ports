@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2019/02/03 03:58:35 bentley Exp $
+# $OpenBSD: Makefile,v 1.53 2019/05/12 15:26:06 edd Exp $
 
 COMMENT=	advanced music player
 
 VERSION=	1.0
 DISTNAME=	aqualung-${VERSION}
-REVISION=	8
+REVISION=	9
 EPOCH=		0
 CATEGORIES=	audio
 
@@ -36,6 +36,7 @@ MODLUA_SA=	Yes
 LIB_DEPENDS=	audio/flac \
 		audio/lame \
 		audio/libcdio \
+		audio/libcdio-paranoia \
 		audio/libcddb \
 		audio/libmad \
 		audio/libmodplug \

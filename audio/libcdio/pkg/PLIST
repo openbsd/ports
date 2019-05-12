@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:35 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/05/12 15:26:07 edd Exp $
 @bin bin/cd-drive
 @bin bin/cd-info
-@bin bin/cd-paranoia
 @bin bin/cd-read
 @bin bin/cdda-player
 @bin bin/iso-info
@@ -23,7 +22,6 @@ include/cdio/audio.h
 include/cdio/bytesex.h
 include/cdio/bytesex_asm.h
 include/cdio/cd_types.h
-include/cdio/cdda.h
 include/cdio/cdio.h
 include/cdio/cdio_config.h
 include/cdio/cdtext.h
@@ -34,8 +32,12 @@ include/cdio/dvd.h
 include/cdio/ecma_167.h
 include/cdio/iso9660.h
 include/cdio/logging.h
+include/cdio/memory.h
 include/cdio/mmc.h
-include/cdio/paranoia.h
+include/cdio/mmc_cmds.h
+include/cdio/mmc_hl_cmds.h
+include/cdio/mmc_ll_cmds.h
+include/cdio/mmc_util.h
 include/cdio/posix.h
 include/cdio/read.h
 include/cdio/rock.h
@@ -56,12 +58,6 @@ lib/libcdio++.la
 lib/libcdio.a
 lib/libcdio.la
 @lib lib/libcdio.so.${LIBcdio_VERSION}
-lib/libcdio_cdda.a
-lib/libcdio_cdda.la
-@lib lib/libcdio_cdda.so.${LIBcdio_cdda_VERSION}
-lib/libcdio_paranoia.a
-lib/libcdio_paranoia.la
-@lib lib/libcdio_paranoia.so.${LIBcdio_paranoia_VERSION}
 lib/libiso9660++.a
 lib/libiso9660++.la
 @lib lib/libiso9660++.so.${LIBiso9660++_VERSION}
@@ -73,17 +69,11 @@ lib/libudf.la
 @lib lib/libudf.so.${LIBudf_VERSION}
 lib/pkgconfig/libcdio++.pc
 lib/pkgconfig/libcdio.pc
-lib/pkgconfig/libcdio_cdda.pc
-lib/pkgconfig/libcdio_paranoia.pc
 lib/pkgconfig/libiso9660++.pc
 lib/pkgconfig/libiso9660.pc
 lib/pkgconfig/libudf.pc
-man/jp/
-man/jp/man1/
-@man man/jp/man1/cd-paranoia.1
 @man man/man1/cd-drive.1
 @man man/man1/cd-info.1
-@man man/man1/cd-paranoia.1
 @man man/man1/cd-read.1
 @man man/man1/iso-info.1
 @man man/man1/iso-read.1
