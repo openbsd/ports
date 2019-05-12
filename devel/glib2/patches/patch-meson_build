@@ -1,17 +1,6 @@
-$OpenBSD: patch-meson_build,v 1.3 2019/04/28 06:28:17 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.4 2019/05/12 04:04:12 ajacoutot Exp $
 
-The old autoconf build has the following additional check after
-determining a valid type for gsize:
-
-dnl If int/long are the same size, we see which one produces
-dnl warnings when used in the location as size_t. (This matters
-dnl on AIX with xlc)
-dnl
-AS_IF([test $ac_cv_sizeof_size_t = $ac_cv_sizeof_int &&
-       test $ac_cv_sizeof_size_t = $ac_cv_sizeof_long], 
-
-It matters on OpenBSD too. Since sthen's meson-fu is lacking, this
-simply reorders the if statement to put the one we need earlier.
+https://gitlab.gnome.org/GNOME/glib/issues/1777
 
 Last hunk: __GCC_HAVE_SYNC_* macros were introduced after gcc 4.2.1,
 make the workaround more generic.
