@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.13 2019/05/11 19:48:06 afresh1 Exp $
+# $OpenBSD: Port.pm,v 1.14 2019/05/12 16:38:15 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 # Copyright (c) 2019 Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -502,22 +502,21 @@ sub make_port
 	$self->make_makesum();
 	$self->make_checksum();
 	$self->make_extract();
+
 	my $wrksrc = $self->make_show('WRKSRC');
 
 	# children can override this to set any variables
 	# that require extracted distfiles
 	$self->postextract( $di, $wrksrc );
 
-	$self->set_other( 'CONFIGURE_STYLE',
-		$self->get_config_style( $di, $wrksrc ) );
-	$self->write_makefile();
-
-	$self->make_configure();
-
 	my $deps = $self->get_deps( $di, $wrksrc );
 	$self->set_build_deps( $deps->{build} );
 	$self->set_run_deps( $deps->{run} );
 	$self->set_test_deps( $deps->{test} );
+
+	$self->set_other( 'CONFIGURE_STYLE',
+		$self->get_config_style( $di, $wrksrc ) );
+
 	$self->write_makefile();
 
 	# sometimes a make_fake() is not enough, need to run it more than
