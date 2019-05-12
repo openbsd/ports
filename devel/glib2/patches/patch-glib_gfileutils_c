@@ -1,9 +1,6 @@
-$OpenBSD: patch-glib_gfileutils_c,v 1.4 2019/03/10 09:00:29 ajacoutot Exp $
+$OpenBSD: patch-glib_gfileutils_c,v 1.5 2019/05/12 16:24:04 ajacoutot Exp $
 
-Try to create the complete path right away and fall back to creating all path
-elements one by one.
-
-Ignore ENOENT errors up until the last element to help programs using unveil(2).
+https://gitlab.gnome.org/GNOME/glib/merge_requests/832
 
 Index: glib/gfileutils.c
 --- glib/gfileutils.c.orig
