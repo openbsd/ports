@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/03/08 20:00:41 cwen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/12 06:21:19 feinerer Exp $
 
 COMMENT =	PostgreSQL Database Modeler
 
-VERSION =	0.9.0
+VERSION =	0.9.1
 DISTNAME =	pgmodeler-${VERSION}
-REVISION =	1
 
 GH_ACCOUNT =	pgmodeler
 GH_PROJECT =	pgmodeler

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/11/23 17:56:07 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/05/12 06:21:19 feinerer Exp $
 @bin bin/pgmodeler
 @bin bin/pgmodeler-cli
 lib/pgmodeler/
@@ -88,12 +88,14 @@ share/pgmodeler/schemas/alter/constraint.sch
 share/pgmodeler/schemas/alter/database.sch
 share/pgmodeler/schemas/alter/diff.sch
 share/pgmodeler/schemas/alter/domain.sch
+share/pgmodeler/schemas/alter/domconstraint.sch
 share/pgmodeler/schemas/alter/eventtrigger.sch
 share/pgmodeler/schemas/alter/extension.sch
 share/pgmodeler/schemas/alter/function.sch
 share/pgmodeler/schemas/alter/index.sch
 share/pgmodeler/schemas/alter/owner.sch
 share/pgmodeler/schemas/alter/permission.sch
+share/pgmodeler/schemas/alter/policy.sch
 share/pgmodeler/schemas/alter/relationship.sch
 share/pgmodeler/schemas/alter/rename.sch
 share/pgmodeler/schemas/alter/role.sch
@@ -108,6 +110,7 @@ share/pgmodeler/schemas/catalog/aggregate.sch
 share/pgmodeler/schemas/catalog/cast.sch
 share/pgmodeler/schemas/catalog/collation.sch
 share/pgmodeler/schemas/catalog/column.sch
+share/pgmodeler/schemas/catalog/comment.sch
 share/pgmodeler/schemas/catalog/constraint.sch
 share/pgmodeler/schemas/catalog/conversion.sch
 share/pgmodeler/schemas/catalog/database.sch
@@ -115,13 +118,13 @@ share/pgmodeler/schemas/catalog/domain.sch
 share/pgmodeler/schemas/catalog/eventtrigger.sch
 share/pgmodeler/schemas/catalog/extension.sch
 share/pgmodeler/schemas/catalog/function.sch
-share/pgmodeler/schemas/catalog/getcomment.sch
 share/pgmodeler/schemas/catalog/index.sch
 share/pgmodeler/schemas/catalog/language.sch
 share/pgmodeler/schemas/catalog/notextobject.sch
 share/pgmodeler/schemas/catalog/opclass.sch
 share/pgmodeler/schemas/catalog/operator.sch
 share/pgmodeler/schemas/catalog/opfamily.sch
+share/pgmodeler/schemas/catalog/policy.sch
 share/pgmodeler/schemas/catalog/role.sch
 share/pgmodeler/schemas/catalog/rule.sch
 share/pgmodeler/schemas/catalog/schema.sch
@@ -144,6 +147,7 @@ share/pgmodeler/schemas/sql/conversion.sch
 share/pgmodeler/schemas/sql/database.sch
 share/pgmodeler/schemas/sql/dbmodel.sch
 share/pgmodeler/schemas/sql/domain.sch
+share/pgmodeler/schemas/sql/domconstraint.sch
 share/pgmodeler/schemas/sql/drop.sch
 share/pgmodeler/schemas/sql/element.sch
 share/pgmodeler/schemas/sql/eventtrigger.sch
@@ -159,6 +163,7 @@ share/pgmodeler/schemas/sql/operator.sch
 share/pgmodeler/schemas/sql/opfamily.sch
 share/pgmodeler/schemas/sql/parameter.sch
 share/pgmodeler/schemas/sql/permission.sch
+share/pgmodeler/schemas/sql/policy.sch
 share/pgmodeler/schemas/sql/relationship.sch
 share/pgmodeler/schemas/sql/role.sch
 share/pgmodeler/schemas/sql/rule.sch
@@ -184,6 +189,7 @@ share/pgmodeler/schemas/xml/customidxs.sch
 share/pgmodeler/schemas/xml/database.sch
 share/pgmodeler/schemas/xml/dbmodel.sch
 share/pgmodeler/schemas/xml/domain.sch
+share/pgmodeler/schemas/xml/domconstraint.sch
 share/pgmodeler/schemas/xml/dtd/
 share/pgmodeler/schemas/xml/dtd/aggregate.dtd
 share/pgmodeler/schemas/xml/dtd/baseelements.dtd
@@ -210,6 +216,7 @@ share/pgmodeler/schemas/xml/dtd/opclass.dtd
 share/pgmodeler/schemas/xml/dtd/operator.dtd
 share/pgmodeler/schemas/xml/dtd/opfamily.dtd
 share/pgmodeler/schemas/xml/dtd/permission.dtd
+share/pgmodeler/schemas/xml/dtd/policy.dtd
 share/pgmodeler/schemas/xml/dtd/relationship.dtd
 share/pgmodeler/schemas/xml/dtd/role.dtd
 share/pgmodeler/schemas/xml/dtd/rule.dtd
@@ -240,6 +247,7 @@ share/pgmodeler/schemas/xml/operator.sch
 share/pgmodeler/schemas/xml/opfamily.sch
 share/pgmodeler/schemas/xml/parameter.sch
 share/pgmodeler/schemas/xml/permission.sch
+share/pgmodeler/schemas/xml/policy.sch
 share/pgmodeler/schemas/xml/position.sch
 share/pgmodeler/schemas/xml/prependedsql.sch
 share/pgmodeler/schemas/xml/reference.sch
