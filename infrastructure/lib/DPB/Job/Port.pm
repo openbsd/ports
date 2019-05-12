@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.185 2019/05/11 15:31:12 espie Exp $
+# $OpenBSD: Port.pm,v 1.186 2019/05/12 11:20:57 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -334,10 +334,9 @@ sub setup
 	}
 	if (!$job->{locked}) {
 		unshift(@{$job->{tasks}}, $task);
-		$job->{wakemeup} = 1;
-		$job->{lock_order} = $core->prop->{waited_for_lock}++;
+		$job->{wakemeup} = $core->prop->{waited_for_lock}++;
 		my $o = $job->{builder}->locker->lock_has_other_owner($core);
-		my $status = 'waiting-for-lock #'.$job->{lock_order};
+		my $status = 'waiting-for-lock #'.$job->{wakemeup};
 		if (defined $o) {
 			$status ='locked by '.$o;
 		}
@@ -1264,11 +1263,10 @@ sub wake_others
 	$core->walk_same_host_jobs(
 	    sub {
 		my ($pid, $job) = @_;
-		return unless $job->{wakemeup};
+		return unless exists $job->{wakemeup};
 		if (!defined $minjob || 
-		    $job->{lock_order} < $minjob->{lock_order}) {
-			$minjob = $job;
-			$minpid = $pid;
+		    $job->{wakemeup} < $minjob->{wakemeup}) {
+			($minjob, $minpid) = ($job, $pid);
 		}
 	    });
 	if (defined $minjob) {
