@@ -1,7 +1,9 @@
-$OpenBSD: patch-data_PreSession_in,v 1.6 2017/04/16 12:43:20 ajacoutot Exp $
---- data/PreSession.in.orig	Thu Dec 26 16:04:18 2013
-+++ data/PreSession.in	Thu Dec 26 16:09:50 2013
-@@ -7,3 +7,8 @@
+$OpenBSD: patch-data_PreSession_in,v 1.7 2019/05/12 21:28:50 ajacoutot Exp $
+
+Index: data/PreSession.in
+--- data/PreSession.in.orig
++++ data/PreSession.in
+@@ -7,3 +7,11 @@
  # Note that output goes into the .xsession-errors file for easy debugging
  #
  PATH="@X_PATH@:$PATH"
@@ -9,4 +11,7 @@ $OpenBSD: patch-data_PreSession_in,v 1.6 2017/04/16 12:43:20 ajacoutot Exp $
 +# /etc/X11/xenodm/GiveConsole, fbtab(5)
 +if [ -c /dev/drm0 ]; then
 +    /sbin/chown $USER /dev/drm0
++fi
++if [ -c /dev/drmR128 ]; then
++    /sbin/chown $USER /dev/drmR128
 +fi

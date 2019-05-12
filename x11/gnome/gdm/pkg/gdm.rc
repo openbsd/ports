@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: gdm.rc,v 1.43 2018/01/14 14:42:18 rpe Exp $
+# $OpenBSD: gdm.rc,v 1.44 2019/05/12 21:28:50 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/gdm"
 
@@ -26,6 +26,9 @@ rc_stop() {
 rc_post() {
 	if [[ -c /dev/drm0 ]]; then
 		chown root /dev/drm0
+	fi
+	if [[ -c /dev/drmR128 ]]; then
+		chown root /dev/drmR128
 	fi
 	# XXX OpenBSD needs an implementation of XDG_RUNTIME_DIR
 	rm -rf /var/db/gdm/.cache/gnome-shell/runtime-state-*
