@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.22 2019/05/11 15:31:13 espie Exp $
+# $OpenBSD: Build.pm,v 1.23 2019/05/12 12:12:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -306,6 +306,19 @@ sub start_build
 	    sub {
 	    	my $fail = shift;
 	    	$self->end($core, $v, $fail);
+	    });
+}
+
+sub start_wipe
+{
+	my ($self, $v, $core) = @_;
+	$self->log('W', $v, " ".$core->hostname);
+	$self->{builder}->wipe($v, $core, 
+	    sub {
+	    	my $fail = shift;
+	    	$self->end_build($v);
+		$self->log('N', $v);
+		$self->{engine}{locker}->unlock($v);
 	    });
 }
 

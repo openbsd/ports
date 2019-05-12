@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.27 2018/11/08 09:19:28 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.28 2019/05/12 12:12:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -322,6 +322,11 @@ sub is_done
 }
 
 sub start_build
+{
+	return 0;
+}
+
+sub start_wipe
 {
 	return 0;
 }

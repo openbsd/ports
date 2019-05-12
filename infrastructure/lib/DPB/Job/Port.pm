@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.186 2019/05/12 11:20:57 espie Exp $
+# $OpenBSD: Port.pm,v 1.187 2019/05/12 12:12:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -846,7 +846,9 @@ sub setup
 	if ($job->{builder}{dontclean}{$job->{v}->pkgpath}) {
 		return $job->next_task($core);
 	} else {
-		$job->{lock}->write("cleaned");
+		# XXX wipe won't have any lock
+		# should I add a "dummy" lock object ?...
+		$job->{lock}->write("cleaned") if defined $job->{lock};
 		return $task;
 	}
 }
@@ -1326,6 +1328,28 @@ sub new
 		    DPB::Task::Port::Install->new('install'));
 	return $job;
 }
+
+package DPB::Job::Port::Wipe;
+our @ISA = qw(DPB::Job::BasePort);
+
+sub new
+{
+	my ($class, $log, $fh, $v, $builder, $endcode) = @_;
+	my $job = bless {
+	    tasks => [],
+	    log => $log, 
+	    logfh => $fh,
+	    v => $v,
+	    path => $v->fullpkgpath,
+	    builder => $builder,
+	    endcode => $endcode},
+		$class;
+
+	push(@{$job->{tasks}},
+		    DPB::Task::Port::Clean->new('clean'));
+	return $job;
+}
+
 
 package DPB::Port::Watch;
 our @ISA = qw(DPB::Watch);

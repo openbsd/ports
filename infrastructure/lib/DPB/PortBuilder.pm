@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.83 2019/05/11 15:31:12 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.84 2019/05/12 12:12:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -233,8 +233,7 @@ sub build
 	if (defined (my $t = $v->{info}->has_property('tag'))) {
 		$lock->write("tag", $t);
 	}
-	print $fh ">>> Building on ", $core->hostname;
-	print $fh $meminfo, " under ";
+	print $fh ">>> Building on ", $core->hostname, $meminfo, " under ";
 	$v->quick_dump($fh);
 
 	my $job;
@@ -257,6 +256,24 @@ sub build
 	$lock->write("host", $core->hostname);
 	$lock->write("pid", $core->{pid});
 	$lock->write("start", "$start (".DPB::Util->time2string($start).")");
+}
+
+sub wipe
+{
+	my ($self, $v, $core, $final_sub) = @_;
+	my ($log, $fh) = $self->logger->make_logs($v);
+	print $fh ">>> Wiping on ", $core->hostname, " under ";
+	$v->quick_dump($fh);
+
+	my $job;
+	$job = DPB::Job::Port::Wipe->new($log, $fh, $v, $core,
+	    sub {
+	    	close($fh); 
+		$self->report($v, $job, $core); 
+		&$final_sub($job->{failed});
+	    });
+	$job->set_watch($self->logger, $v);
+	$core->start_job($job, $v);
 }
 
 sub force_junk

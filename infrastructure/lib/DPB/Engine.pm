@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.127 2019/05/11 15:31:12 espie Exp $
+# $OpenBSD: Engine.pm,v 1.128 2019/05/12 12:12:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -65,6 +65,12 @@ sub new
 	$o->{log} = $state->logger->append("engine");
 	$o->{stats} = DPB::Stats->new($state);
 	return $o;
+}
+
+sub wipe
+{
+	my $o = shift;
+	$o->{buildable}->start_wipe(@_);
 }
 
 sub status

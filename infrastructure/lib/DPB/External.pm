@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.14 2019/01/31 17:05:18 jca Exp $
+# $OpenBSD: External.pm,v 1.15 2019/05/12 12:12:53 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -105,6 +105,22 @@ sub handle_command
 			}
 			$pkgpath->add_to_subdirlist($self->{subdirlist});
 		    });
+	} elsif ($line =~ m/^wipe\s+(.*)/) {
+		for my $p (split(/\s+/, $1)) {
+			my $v = DPB::PkgPath->new($p);
+			my $info = $state->locker->get_info($v);
+			if ($info->is_bad) {
+				$fh->print($p, " is not locked\n");
+			} elsif (defined $info->{locked}) {
+				$fh->print("cleaning up $info->{locked}\n");
+				my $w = DPB::PkgPath->new($info->{locked});
+				# steal a temporary core
+				$state->engine->wipe($v, 
+				    DPB::Core->new_noreg(
+					DPB::Host->new($info->{host})));
+
+			}
+		}
 	} elsif ($line =~ m/^help\b/) {
 		$fh->print(
 		    "Commands:\n",
@@ -113,10 +129,11 @@ sub handle_command
 		    "\tbye\n",
 		    "\tdontclean <pkgpath>...\n",
 		    "\tstats\n",
-		    "\tstatus <fullpkgpath>...\n"
+		    "\tstatus <fullpkgpath>...\n",
+		    "\twipe <fullpkgpath>...\n"
 		);
 	} else {
-		$fh->print("Unknown command: ", $line, " (help for details)\n");
+		$fh->print("Unknown command or bad syntax: ", $line, " (help for details)\n");
 	}
 	$fh->print('dpb$ ');
 }
