@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.778 2019/05/11 18:19:03 danj Exp $
+# $OpenBSD: Quirks.pm,v 1.779 2019/05/12 16:54:07 danj Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1254,6 +1254,7 @@ my $obsolete_reason = {
 	'voice_mwm_di' => 5,
 	'voice_tll_di' => 5,
 	'proxy-suite' => 3,
+	'py-amf' => 6,
 };
 
 # reasons for obsolete packages
