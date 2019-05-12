@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/12 16:29:44 danj Exp $
 
 COMMENT =	tool for programming Wouxun transcievers
 
 DISTNAME =	owx-20110917
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	comms
 
 HOMEPAGE =	http://owx.chmurka.net/
-
-MAINTAINER =	Mitja Muzenic <mitja@kerberos.si>
 
 # Apache 2.0 license
 PERMIT_PACKAGE_CDROM=	Yes
