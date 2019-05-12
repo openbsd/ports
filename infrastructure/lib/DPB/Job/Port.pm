@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.187 2019/05/12 12:12:53 espie Exp $
+# $OpenBSD: Port.pm,v 1.188 2019/05/12 14:09:11 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -95,7 +95,7 @@ sub tweak_args
 	if ($job->{parallel}) {
 		push(@$args, "MAKE_JOBS=$job->{parallel}");
 	}
-	if ($job->{special}) {
+	if ($job->{memsize}) {
 		push(@$args, "USE_MFS=Yes");
 	}
 	if ($builder->{nochecksum}) {
@@ -567,7 +567,8 @@ sub finalize
 		}
 		close $fh;
 		$job->save_depends(\@r);
-		# XXX we ran junk before us, so retaint *now* before losing the lock
+		# XXX we ran junk before us, so retaint *now* 
+		# before losing the lock
 		if ($job->{v}{info}->has_property('tag') && 
 		    !defined $core->prop->{tainted}) {
 		    	$core->prop->taint($v);
@@ -846,9 +847,7 @@ sub setup
 	if ($job->{builder}{dontclean}{$job->{v}->pkgpath}) {
 		return $job->next_task($core);
 	} else {
-		# XXX wipe won't have any lock
-		# should I add a "dummy" lock object ?...
-		$job->{lock}->write("cleaned") if defined $job->{lock};
+		$job->{lock}->write("cleaned");
 		return $task;
 	}
 }
@@ -903,6 +902,22 @@ sub create
 	$fw->new($k);
 }
 
+package DPB::DummyLock;
+
+sub new
+{
+	my $class = shift;
+	bless {}, $class;
+}
+
+sub write
+{
+}
+
+sub close
+{
+}
+
 package DPB::Job::BasePort;
 our @ISA = qw(DPB::Job::Watched);
 
@@ -910,22 +925,22 @@ use Time::HiRes qw(time);
 
 sub new
 {
-	my ($class, $log, $fh, $v, $lock, $builder, $special, $core, 
-	    $endcode) = @_;
-	my $job = bless {
-	    tasks => [],
-	    log => $log,
-	    logfh => $fh, 
-	    v => $v,
-	    lock => $lock,
-	    path => $v->fullpkgpath,
-	    special => $special,  current => '',
-	    builder => $builder},
-		$class;
+	my ($class, %prop) = @_;
 
-	$job->{endcode} = sub { 
-		close($job->{logfh}); 
-		&$endcode; };
+
+	my $job = bless \%prop, $class;
+	$job->{path} = $job->{v}->fullpkgpath;
+
+	my $e = $job->{endcode};
+
+	$job->{endcode} = sub {
+	    close($job->{logfh});
+	    &$e;
+	};
+	$job->{tasks} = [];
+	$job->{current} = '';
+	# for stuff that doesn't really lock
+	$job->{lock} //= DPB::DummyLock->new;
 
 	return $job;
 }
@@ -1133,10 +1148,12 @@ our @ISA = qw(DPB::Job::BasePort);
 sub new
 {
 	my $class = shift;
-	my ($log, $fh, $v, $lock, $builder, $special, $core, 
-	    $endcode) = @_;
 
 	my $job = $class->SUPER::new(@_);
+
+	my $v = $job->{v};
+	my $core = $job->{core};
+	my $builder = $job->{builder};
 
 	my $prop = $core->prop;
 	# note that lonesome *and* parallel can be specified
@@ -1162,12 +1179,11 @@ sub new
 sub new_junk_only
 {
 	my $class = shift;
-	my ($log, $fh, $v, $lock, $builder, $special, $core, 
-	    $endcode) = @_;
+	my %h = @_;
 
-	my $job = $class->SUPER::new(@_);
+	my $job = $class->SUPER::new(\%h);
 	my $fh2 = $job->{builder}->logger->append("junk");
-	print $fh2 "$$@", CORE::time(), ": ", $core->hostname,
+	print $fh2 "$$@", CORE::time(), ": ", $job->{core}->hostname,
 	    ": forced junking -> $job->{path}\n";
 	$job->add_tasks(DPB::Port::TaskFactory->create('junk'));
 	return $job;
@@ -1283,12 +1299,10 @@ our @ISA = qw(DPB::Job::BasePort);
 sub new
 {
 	my $class = shift;
-	my ($log, $fh, $v, $lock, $builder, $special, $core, 
-	    $endcode) = @_;
 
 	my $job = $class->SUPER::new(@_);
 
-	$job->add_test_tasks($core);
+	$job->add_test_tasks($job->{core});
 
 	return $job;
 }
@@ -1313,16 +1327,8 @@ our @ISA = qw(DPB::Job::BasePort);
 
 sub new
 {
-	my ($class, $log, $fh, $v, $builder, $endcode) = @_;
-	my $job = bless {
-	    tasks => [],
-	    log => $log, 
-	    logfh => $fh,
-	    v => $v,
-	    path => $v->fullpkgpath,
-	    builder => $builder,
-	    endcode => $endcode},
-		$class;
+	my $class = shift;
+	my $job = $class->SUPER::new(@_);
 
 	push(@{$job->{tasks}},
 		    DPB::Task::Port::Install->new('install'));
@@ -1334,16 +1340,8 @@ our @ISA = qw(DPB::Job::BasePort);
 
 sub new
 {
-	my ($class, $log, $fh, $v, $builder, $endcode) = @_;
-	my $job = bless {
-	    tasks => [],
-	    log => $log, 
-	    logfh => $fh,
-	    v => $v,
-	    path => $v->fullpkgpath,
-	    builder => $builder,
-	    endcode => $endcode},
-		$class;
+	my $class = shift;
+	my $job = $class->SUPER::new(@_);
 
 	push(@{$job->{tasks}},
 		    DPB::Task::Port::Clean->new('clean'));

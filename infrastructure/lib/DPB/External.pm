@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.15 2019/05/12 12:12:53 espie Exp $
+# $OpenBSD: External.pm,v 1.16 2019/05/12 14:09:11 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -73,6 +73,28 @@ sub status
 	return $status;
 }
 
+sub wipe
+{
+	my ($self, $fh, $p) = @_;
+
+	my $v = DPB::PkgPath->new($p);
+	my $state = $self->{state};
+	my $info = $state->locker->get_info($v);
+	if ($info->is_bad) {
+		$fh->print($p, " is not locked\n");
+	} elsif (defined $info->{locked}) {
+		if ($info->{same_pid} && !$info->{errored}) {
+			$fh->print($p, " is still running\n");
+			return;
+		}
+		$fh->print("cleaning up $info->{locked}\n");
+		my $w = DPB::PkgPath->new($info->{locked});
+		# steal a temporary core
+		$state->engine->wipe($w, 
+		    DPB::Core->new_noreg(DPB::Host->new($info->{host})));
+	}
+}
+
 sub handle_command
 {
 	my ($self, $line, $fh) = @_;
@@ -107,19 +129,7 @@ sub handle_command
 		    });
 	} elsif ($line =~ m/^wipe\s+(.*)/) {
 		for my $p (split(/\s+/, $1)) {
-			my $v = DPB::PkgPath->new($p);
-			my $info = $state->locker->get_info($v);
-			if ($info->is_bad) {
-				$fh->print($p, " is not locked\n");
-			} elsif (defined $info->{locked}) {
-				$fh->print("cleaning up $info->{locked}\n");
-				my $w = DPB::PkgPath->new($info->{locked});
-				# steal a temporary core
-				$state->engine->wipe($v, 
-				    DPB::Core->new_noreg(
-					DPB::Host->new($info->{host})));
-
-			}
+			$self->wipe($fh, $1);
 		}
 	} elsif ($line =~ m/^help\b/) {
 		$fh->print(

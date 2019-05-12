@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.84 2019/05/12 12:12:53 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.85 2019/05/12 14:09:11 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -236,14 +236,17 @@ sub build
 	print $fh ">>> Building on ", $core->hostname, $meminfo, " under ";
 	$v->quick_dump($fh);
 
-	my $job;
-	$job = DPB::Job::Port->new($log, $fh, $v, $lock, $self, $memsize, $core,
-	    sub {
+	my $job; # separate decl for closure
+	$job = DPB::Job::Port->new(
+	    log => $log, logfh => $fh, v => $v, builder => $self, core => $core,
+	    lock => $lock,
+	    memsize => $memsize,
+	    endcode => sub {
 	    	close($fh); 
 		$self->end_lock($lock, $core, $job); 
 		$self->report($v, $job, $core); 
 		&$final_sub($job->{failed});
-	    });
+	});
 	$job->set_watch($self->logger, $v);
 	$core->start_job($job, $v);
 	# lonesome takes precedence for swallowing everything
@@ -265,13 +268,14 @@ sub wipe
 	print $fh ">>> Wiping on ", $core->hostname, " under ";
 	$v->quick_dump($fh);
 
-	my $job;
-	$job = DPB::Job::Port::Wipe->new($log, $fh, $v, $core,
-	    sub {
-	    	close($fh); 
+	my $job; # separate decl for endcode closure
+	$job = DPB::Job::Port::Wipe->new(
+	    log => $log, logfh => $fh, v => $v, builder => $self, core => $core,
+	    endcode => sub {
+		close($fh); 
 		$self->report($v, $job, $core); 
 		&$final_sub($job->{failed});
-	    });
+	});
 	$job->set_watch($self->logger, $v);
 	$core->start_job($job, $v);
 }
@@ -283,14 +287,14 @@ sub force_junk
 	my $log = $self->logger->log_pkgpath($v);
 	my $fh = $self->logger->open('>>', $log);
 	print $fh ">>> Force junking on ", $core->hostname;
-	my $job;
-	$job = DPB::Job::Port->new_junk_only($log, $fh, $v, undef, $self,
-	    0,$core,
-	    sub {
-		    close($fh);
-		    &$final_sub($job->{failed});
-		    $core->mark_ready;
-	    });
+	my $job; # separate decl for endcode closure
+	$job = DPB::Job::Port->new_junk_only(
+	    log => $log, logfh => $fh, v => $v, builder => $self, core => $core,
+	    endcode => sub {
+		close($fh);
+		&$final_sub($job->{failed});
+		$core->mark_ready;
+	});
 	$core->start_job($job, $v);
 }
 
@@ -315,15 +319,17 @@ sub test
 	}
 	$v->quick_dump($fh);
 
-	my $job;
-	$job = DPB::Job::Port::Test->new($log, $fh, $v, $lock, $self, 
-	    $memsize, $core,
-	    sub {
+	my $job; # separate decl for endcode closure
+	$job = DPB::Job::Port::Test->new(
+	    log => $log, logfh => $fh, v => $v, builder => $self, core => $core,
+	    lock => $lock, 
+	    memsize => $memsize, 
+	    endcode => sub {
 	    	close($fh); 
 		$self->end_lock($lock, $core, $job); 
 		$self->report($v, $job, $core); 
 		&$final_sub($job->{failed});
-	    });
+	});
 	$core->start_job($job, $v);
 	$lock->write("host", $core->hostname);
 	$lock->write("pid", $core->{pid});
@@ -336,11 +342,12 @@ sub install
 	my ($log, $fh) = $self->logger->make_logs($v);
 	print $fh ">>> Installing under ";
 	$v->quick_dump($fh);
-	my $job = DPB::Job::Port::Install->new($log, $fh, $v, $self,
-	    sub {
+	my $job = DPB::Job::Port::Install->new(
+	    log => $log, logfh => $fh, v => $v, builder => $self, core => $core,
+	    endcode => sub {
 	    	close($fh);
 	    	$core->mark_ready; 
-	    });
+	});
 	$core->start_job($job, $v);
 	return $core;
 }

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.49 2019/05/12 13:39:46 espie Exp $
+# $OpenBSD: Locks.pm,v 1.50 2019/05/12 14:09:11 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -126,16 +126,13 @@ sub parse_file
 			$i->set_field($1, $2);
 		} elsif (m/^(error|status|todo)\=(.*)$/) {
 			$i->set_field($1, $2);
-			$i->{finished} = 1;
+			$i->{errored} = 1;
 		} elsif (m/^(host|tag|parent|locked|path)\=(.+)$/) {
 			$i->set_field($1, $2);
 		} elsif (m/^(wanted|needed)\=(.*)$/) {
 			$i->set_field($1, [split(/\s+/, $2)]);
-		} elsif (m/^nojunk$/) {
-			$i->set_field("nojunk", 1);
-		} elsif (m/^cleaned$/) {
-			$i->set_field("cleaned", 1);
-			$i->{finished} = 1;
+		} elsif (m/^(nojunk|cleaned)$/) {
+			$i->set_field($1, 1);
 		} else {
 			$i->set_bad("Parse error on $_");
 		}
@@ -229,7 +226,7 @@ sub clean_old_locks
 			push @problems, $i->{filename};
 			return;
 		}
-		if (!$i->{same_host} || defined $i->{finished}) {
+		if (!$i->{same_host} || defined $i->{errored}) {
 			return;
 		}
 		# on the way, let's retaint cores
