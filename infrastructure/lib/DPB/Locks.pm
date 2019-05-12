@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.47 2019/05/11 15:31:12 espie Exp $
+# $OpenBSD: Locks.pm,v 1.48 2019/05/12 07:50:00 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -371,7 +371,7 @@ sub find_tag
 		return if $i->{cleaned};
 		if (defined $i->{host} && $i->{host} eq $hostname) {
 			$tag //= $i->{tag};
-			$tagowner //= $i->{path};
+			$tagowner //= $i->{locked};
 		}
 	    });
 	if (wantarray) {
