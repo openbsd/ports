@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/04/01 04:28:06 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/13 22:45:57 jca Exp $
 
 COMMENT =	library to deal with pinyin
 
@@ -22,6 +22,7 @@ WANTLIB +=	${COMPILER_LIBCXX} c db glib-2.0 iconv intl m pcre
 
 MASTER_SITES =	https://github.com/libpinyin/libpinyin/releases/download/$V/
 
+COMPILER =	base-clang ports-gcc
 BUILD_DEPENDS =	print/texinfo
 LIB_DEPENDS =	databases/db/v4 \
 		devel/glib2
