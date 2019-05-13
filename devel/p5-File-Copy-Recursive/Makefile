@@ -1,14 +1,19 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/13 12:28:02 cwen Exp $
 
 COMMENT=	recursive copy of files and directories
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	File-Copy-Recursive-0.38
-REVISION=	1
+DISTNAME=	File-Copy-Recursive-0.44
 CATEGORIES=	devel
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
+
+TEST_DEPENDS=		devel/p5-Path-Tiny \
+			devel/p5-Test-Deep \
+			devel/p5-Test-Fatal \
+			devel/p5-Test-File \
+			devel/p5-Test-Warnings
 
 .include <bsd.port.mk>
