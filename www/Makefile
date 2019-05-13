@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.904 2019/05/08 13:45:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.905 2019/05/13 14:31:47 abieber Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -569,6 +569,7 @@
      SUBDIR += surfraw
      SUBDIR += swiggle
      SUBDIR += syweb
+     SUBDIR += tidy
      SUBDIR += tidyp
      SUBDIR += tinyproxy
      SUBDIR += tomcat
