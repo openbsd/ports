@@ -1,0 +1,37 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2019/05/13 15:08:50 jasper Exp $
+
+COMMENT =	implementation of WireGuard in Go
+
+DISTNAME =	wireguard-go-0.0.20190409
+
+CATEGORIES =	net security
+
+HOMEPAGE =	https://www.wireguard.com/
+
+# GPLv2 only
+PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += c pthread
+
+MASTER_SITES =		https://git.zx2c4.com/wireguard-go/snapshot/
+EXTRACT_SUFX =		.tar.xz
+
+MODULES =		lang/go
+BUILD_DEPENDS =		devel/go-sys \
+			devel/go-tools \
+			net/go-net \
+			security/go-crypto \
+			textproc/go-text
+
+USE_GMAKE =		Yes
+
+ALL_TARGET =		golang.zx2c4.com/wireguard-go
+
+# Adjust the paths so that imports like golang.zx2c4.com/wireguard/device are
+# correctly handled.
+pre-build:
+	cd ${WRKSRC} && \
+		mkdir ../wireguard/ && \
+		mv device ipc ratelimiter replay tai64n tun ../wireguard
+
+.include <bsd.port.mk>
