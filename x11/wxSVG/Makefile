@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.46 2019/01/11 20:24:33 jca Exp $
+# $OpenBSD: Makefile,v 1.47 2019/05/13 21:35:25 ajacoutot Exp $
 
 COMMENT=		C++ library to create, manipulate and render SVG files
 
-DISTNAME=		wxsvg-1.5.15
+DISTNAME=		wxsvg-1.5.16
 EPOCH=			0
 CATEGORIES=		x11 graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=wxsvg/}
@@ -18,11 +18,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ICE SDL2 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 atk-bridge-2.0
 WANTLIB += avcodec avformat avutil bz2 c cairo cairo-gobject
-WANTLIB += crypto epoxy exif expat ffi fontconfig freetype
+WANTLIB += crypto epoxy exif expat ffi fontconfig freetype dav1d
 WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gsm gthread-2.0 gtk-3 harfbuzz
 WANTLIB += iconv intl jpeg m mp3lame mspack notify ogg opus pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png16 samplerate
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png samplerate
 WANTLIB += sndio speex ssl swresample swscale tiff usbhid vorbis
 WANTLIB += vorbisenc vpx wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
 WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0 wx_gtk3u_html-3.0
@@ -40,7 +40,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 LIB_DEPENDS=		graphics/cairo \
 			graphics/ffmpeg \
 			graphics/libexif \
-			x11/wxWidgets>=3.0.4
+			x11/wxWidgets
 
 CONFIGURE_STYLE=	gnu
 
