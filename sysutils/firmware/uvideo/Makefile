@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/11 12:38:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/13 16:46:23 danj Exp $
 
 FW_DRIVER=	uvideo
 FW_VER=		1.2
 DISTNAME=	uvideo-firmware-${FW_VER}
-REVISION=	2
-
-MAINTAINER=	Marcus Glocker <marcus@nazgul.ch>
+REVISION=	3
 
 HOMEPAGE=	http://www.nazgul.ch/uvideo/
 

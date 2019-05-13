@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/13 16:46:23 danj Exp $
 
 COMMENT =		parse an email Received: header
 
@@ -7,8 +7,7 @@ PKG_ARCH =		*
 
 DISTNAME =		Email-Received-1.00
 CATEGORIES =		mail
-
-MAINTAINER =		Marcus Glocker <marcus@nazgul.ch>
+REVISION =		0
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

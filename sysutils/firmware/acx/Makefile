@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/11 12:38:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/13 16:46:23 danj Exp $
 
 FW_DRIVER=	acx
 FW_VER=		1.4
 DISTNAME=	acx-firmware-${FW_VER}
-REVISION=	5
-
-MAINTAINER=	Marcus Glocker <marcus@nazgul.ch>
+REVISION=	6
 
 HOMEPAGE=	http://www.nazgul.ch/acx/
 

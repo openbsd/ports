@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/11 12:38:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/13 16:46:23 danj Exp $
 
 FW_DRIVER=	upgt
 FW_VER=		1.1
 DISTNAME=	upgt-firmware-${FW_VER}
-REVISION=	4
-
-MAINTAINER=	Marcus Glocker <marcus@nazgul.ch>
+REVISION=	5
 
 HOMEPAGE=	http://www.nazgul.ch/upgt/
 
