@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.120 2019/05/12 15:26:07 edd Exp $
+# $OpenBSD: Makefile,v 1.121 2019/05/13 13:59:37 ajacoutot Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
 VER =			0.20.23
-REVISION =		0
 DISTNAME =		mpd-${VER}
 CATEGORIES =		audio
 HOMEPAGE =		https://www.musicpd.org/
-REVISION =		0
+REVISION =		1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
