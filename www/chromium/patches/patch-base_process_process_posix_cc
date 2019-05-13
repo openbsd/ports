@@ -1,79 +1,42 @@
-$OpenBSD: patch-base_process_process_posix_cc,v 1.21 2019/05/08 22:04:25 robert Exp $
+$OpenBSD: patch-base_process_process_posix_cc,v 1.22 2019/05/13 18:21:30 robert Exp $
 
 Index: base/process/process_posix.cc
 --- base/process/process_posix.cc.orig
 +++ base/process/process_posix.cc
-@@ -9,6 +9,7 @@
- #include <stdint.h>
- #include <sys/resource.h>
- #include <sys/wait.h>
-+#include <signal.h>
- 
- #include "base/clang_coverage_buildflags.h"
- #include "base/debug/activity_tracker.h"
-@@ -26,6 +27,9 @@
- 
- namespace {
- 
-+const int kBackgroundPriority = 5;
-+const int kForegroundPriority = 0;
-+
- #if !defined(OS_NACL_NONSFI)
- 
- bool WaitpidWithTimeout(base::ProcessHandle handle,
-@@ -264,12 +268,10 @@ Process Process::DeprecatedGetProcessFromHandle(Proces
-   return Process(handle);
- }
- 
--#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
- // static
- bool Process::CanBackgroundProcesses() {
--  return false;
-+  return true;
- }
--#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
- 
- // static
- void Process::TerminateCurrentProcessImmediately(int exit_code) {
-@@ -359,25 +361,32 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
- 
- void Process::Exited(int exit_code) const {}
- 
--#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
- bool Process::IsProcessBackgrounded() const {
-   // See SetProcessBackgrounded().
-   DCHECK(IsValid());
--  return false;
-+  return GetPriority() == kBackgroundPriority;
- }
- 
--bool Process::SetProcessBackgrounded(bool value) {
--  // Not implemented for POSIX systems other than Linux and Mac. With POSIX, if
--  // we were to lower the process priority we wouldn't be able to raise it back
--  // to its initial priority.
--  NOTIMPLEMENTED();
--  return false;
-+bool Process::SetProcessBackgrounded(bool background) {
-+  DCHECK(IsValid());
-+
-+  if (!CanBackgroundProcesses())
-+    return false;
-+
-+  int priority = background ? kBackgroundPriority : kForegroundPriority;
-+  int result = setpriority(PRIO_PROCESS, process_, priority);
-+  DPCHECK(result == 0);
-+  return result == 0;
- }
--#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
- 
- int Process::GetPriority() const {
-   DCHECK(IsValid());
+@@ -380,4 +380,36 @@ int Process::GetPriority() const {
    return getpriority(PRIO_PROCESS, process_);
+ }
+ 
++Time Process::CreationTime() const {
++#if defined(OS_OPENBSD)
++  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid(),
++               sizeof(struct kinfo_proc), 0 };
++  struct kinfo_proc *info = nullptr;
++  size_t info_size;
++  Time ct = Time();
++
++  if (sysctl(mib, base::size(mib), NULL, &info_size, NULL, 0) < 0)
++    goto out;
++
++  mib[5] = (info_size / sizeof(struct kinfo_proc));
++  if ((info = reinterpret_cast<kinfo_proc*>(malloc(info_size))) == NULL)
++    goto out;
++
++  if (sysctl(mib, base::size(mib), info, &info_size, NULL, 0) < 0)
++    goto out;
++
++  ct = Time::FromTimeT(info->p_ustart_sec);
++
++out:
++  if (info)
++    free(info);
++
++  return ct;
++#else
++ // TODO(https://crbug.com/726484): There is no syscall providing this data.
++ NOTIMPLEMENTED();
++ return Time();
++#endif
 +}
 +
-+Time Process::CreationTime() const {
-+  // TODO(https://crbug.com/726484): There is no syscall providing this data.
-+  return Time();
- }
- 
  }  // namespace base
