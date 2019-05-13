@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: update-patches,v 1.18 2018/10/08 15:20:28 espie Exp $
+# $OpenBSD: update-patches,v 1.19 2019/05/13 20:39:07 espie Exp $
 # Copyright (c) 2017
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -195,7 +195,11 @@ sub create_patch
 		"$stem.orig", "-L", $stem, "--", $src, $dst) or 
 	    die "can't start diff: $!";
 	my @lines = <$file>;
-	close $file;
+	unless (close $file) {
+		if ($? != 256) {
+			die "diff exited with an error";
+		}
+	}
 	my $comment = "!OpenBSD!\n";
 	$comment =~ tr/!/$/;
 	may_fuzz_patch($stem, \@lines);
