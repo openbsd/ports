@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.9 2019/05/13 14:27:23 abieber Exp $
+@conflict tidyp-<=1.04p1v0
+@bin bin/tidy
+include/tidy.h
+include/tidybuffio.h
+include/tidyenum.h
+include/tidyplatform.h
+@lib lib/libtidy.so.${LIBtidy_VERSION}
+lib/libtidys.a
+lib/pkgconfig/tidy.pc
+@man man/man1/tidy.1
