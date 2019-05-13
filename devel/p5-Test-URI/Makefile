@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/13 12:40:14 cwen Exp $
 
 COMMENT =		check Uniform Resource Identifiers
 
-DISTNAME =		Test-URI-1.081
+DISTNAME =		Test-URI-1.082
 CATEGORIES =		devel
 
 MODULES =		cpan
 PKG_ARCH =		*
 
-# perl
+# Artistic 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
 RUN_DEPENDS =		www/p5-URI
