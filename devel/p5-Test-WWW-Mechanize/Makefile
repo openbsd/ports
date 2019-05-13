@@ -1,24 +1,26 @@
-# $OpenBSD: Makefile,v 1.17 2017/05/18 06:55:34 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/13 12:37:59 cwen Exp $
 
 COMMENT=	test suite using WWW::Mechanize
 
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME =	Test-WWW-Mechanize-1.48
+DISTNAME=	Test-WWW-Mechanize-1.52
 CATEGORIES=	www devel
 
-# Artitistic License
+# Artistic 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/p5-Carp-Assert-More \
-		devel/p5-Test-LongString \
+# Can use p5-HTML-Tidy5 when available
+RUN_DEPENDS=	devel/p5-Carp-Assert-More>=1.16 \
+		devel/p5-Test-LongString>=0.15 \
+		www/p5-HTML-Form \
 		www/p5-HTML-Lint>=2.20 \
-		www/p5-HTML-Tree \
-		www/p5-HTTP-Server-Simple \
-		www/p5-WWW-Mechanize \
-		www/p5-URI
+		www/p5-HTML-Parser \
+		www/p5-HTTP-Server-Simple>=0.42 \
+		www/p5-URI \
+		www/p5-WWW-Mechanize>=1.68 \
+		www/p5-libwww>=6.02
 
 MAKE_ENV=	TEST_POD=Yes
 
