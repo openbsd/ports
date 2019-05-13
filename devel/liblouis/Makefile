@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2019/04/28 20:51:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/05/13 22:14:01 ajacoutot Exp $
 
 COMMENT=	braille translator, back-translator and formatter
 
-V=		3.6.0
+V=		3.9.0
 DISTNAME=	liblouis-${V}
-REVISION=	1
 
-SHARED_LIBS +=  louis                7.2      # 16.0
+SHARED_LIBS +=  louis                8.0      # 17.1
 
 CATEGORIES=	devel
 
@@ -25,6 +24,9 @@ MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES=tools/lou_harnessGenerator
 
 BUILD_DEPENDS=	devel/help2man
+
+# lou_maketable
+RUN_DEPENDS +=	shells/bash
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-packager="OpenBSD Ports" \
