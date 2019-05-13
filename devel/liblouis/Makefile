@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/05/13 22:14:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2019/05/13 22:26:37 ajacoutot Exp $
 
 COMMENT=	braille translator, back-translator and formatter
 
@@ -21,7 +21,6 @@ MASTER_SITES=	https://github.com/liblouis/liblouis/releases/download/v${V}/
 MODULES=	lang/python
 
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
-MODPY_ADJ_FILES=tools/lou_harnessGenerator
 
 BUILD_DEPENDS=	devel/help2man
 
