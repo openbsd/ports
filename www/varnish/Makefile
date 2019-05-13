@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/05/06 09:23:15 kn Exp $
+# $OpenBSD: Makefile,v 1.44 2019/05/13 22:06:00 kn Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
@@ -44,6 +44,8 @@ AUTOMAKE_VERSION =	1.15
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
 			PYTHON="${MODPY_BIN}"
+CONFIGURE_ARGS =	--with-rst2man=rst2man${MODPY_BIN_SUFFIX} \
+			--with-sphinx-build=sphinx-build${MODPY_BIN_SUFFIX}
 
 TEST_TARGET =		check
 
