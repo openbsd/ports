@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/07/15 08:57:59 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/05/13 04:02:31 phessler Exp $
 bin/pbgpp
 lib/python${MODPY_VERSION}/site-packages/pbgpp/
 lib/python${MODPY_VERSION}/site-packages/pbgpp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -198,6 +198,7 @@ lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/Exceptions.py
 lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/Filter.py
 lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/Filters/
 lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/Filters/ASNFilter.py
+lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/Filters/BlackholeFilter.py
 lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/Filters/CommunityASNFilter.py
 lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/Filters/CommunityValueFilter.py
 lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/Filters/ErrorFilter.py
@@ -217,6 +218,7 @@ lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/Filters/WithdrawnFilter.py
 lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/Filters/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/Filters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/Filters/${MODPY_PYCACHE}ASNFilter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/Filters/${MODPY_PYCACHE}BlackholeFilter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/Filters/${MODPY_PYCACHE}CommunityASNFilter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/Filters/${MODPY_PYCACHE}CommunityValueFilter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbgpp/Output/Filters/${MODPY_PYCACHE}ErrorFilter.${MODPY_PYC_MAGIC_TAG}pyc

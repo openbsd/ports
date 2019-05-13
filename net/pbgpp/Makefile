@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/13 04:02:31 phessler Exp $
 
 COMMENT =	pcap bgp parser
 
-MODPY_EGG_VERSION =	0.2.18
+MODPY_EGG_VERSION =	0.2.22
 DISTNAME =	pbgpp-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	net
 
@@ -20,5 +19,8 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		net/py-pcapy${MODPY_FLAVOR}
 BUILD_DEPENDS +=	${RUN_DEPENDS}
+
+# tests depend on a running kafka
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
