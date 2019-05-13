@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/28 20:51:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/13 19:03:51 danj Exp $
 
 COMMENT =		tiny 'shelve'-like database with concurrency support
 
 MODPY_EGG_VERSION =	0.7.4
 DISTNAME =		pickleshare-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		databases devel
 
 HOMEPAGE =		https://github.com/pickleshare/pickleshare
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

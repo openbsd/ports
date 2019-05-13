@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/13 19:03:53 danj Exp $
 
 COMMENT =		readthedocs.org theme for Sphinx
 
 MODPY_EGG_VERSION =	0.2.4
 DISTNAME =		sphinx_rtd_theme-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # MIT/OFL
 PERMIT_PACKAGE_CDROM =	Yes

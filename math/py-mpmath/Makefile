@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/13 19:03:52 danj Exp $
 
 COMMENT =		library for arbitrary-precision floating-point arithmetic
 
@@ -6,11 +6,9 @@ MODPY_EGG_VERSION =	0.19
 DISTNAME =		mpmath-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://mpmath.org/
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # New BSD
 PERMIT_PACKAGE_CDROM =	Yes

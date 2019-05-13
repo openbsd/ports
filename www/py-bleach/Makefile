@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/13 19:03:54 danj Exp $
 
 COMMENT =		easy whitelist-based HTML-sanitizing tool
 
@@ -6,11 +6,9 @@ MODPY_EGG_VERSION =	2.0.0
 DISTNAME =		bleach-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/mozilla/bleach
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes

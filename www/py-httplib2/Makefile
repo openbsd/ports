@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.18 2019/04/28 20:51:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/13 19:03:54 danj Exp $
 
 COMMENT =		Python HTTP client library
 
 MODPY_EGG_VERSION =	0.10.3
 DISTNAME =		httplib2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www net
 
 HOMEPAGE =		https://github.com/jcgregorio/httplib2
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

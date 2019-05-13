@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/10 11:36:55 bket Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/13 19:03:54 danj Exp $
 
 COMMENT =		web-based notebook for interactive computing
 
 MODPY_EGG_VERSION =	5.7.8
 DISTNAME =		notebook-${MODPY_EGG_VERSION}
 PKGNAME =		jupyter-notebook-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		www devel
 
 HOMEPAGE =		https://jupyter.org/
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

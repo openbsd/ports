@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/13 19:03:54 danj Exp $
 
 COMMENT =		HTTP request and response service
 
 MODPY_EGG_VERSION =	0.5.0
 DISTNAME =		httpbin-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 
 HOMEPAGE =		https://github.com/Runscope/httpbin
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

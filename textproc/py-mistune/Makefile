@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/13 19:03:53 danj Exp $
 
 COMMENT =		markdown parser for Python
 
 MODPY_EGG_VERSION =	0.7.4
 DISTNAME =		mistune-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 
 HOMEPAGE =		https://github.com/lepture/mistune
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

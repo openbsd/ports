@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/13 19:03:53 danj Exp $
 
 COMMENT =		Jupyter Qt console
 
@@ -7,9 +7,7 @@ DISTNAME =		qtconsole-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		shells
 
-REVISION =		1
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
+REVISION =		2
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2019/03/08 20:00:45 cwen Exp $
+# $OpenBSD: Makefile,v 1.42 2019/05/13 19:03:51 danj Exp $
 
 COMMENT=		LaTeX development environment
 DISTNAME=		texmaker-5.0.2
 CATEGORIES=		editors
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://www.xm1math.net/texmaker/
-
-MAINTAINER=		Alexandr Shadchin <shadchin@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/13 19:03:54 danj Exp $
 
 COMMENT =		snowball stemming algorithms, for information retrieval
 
 MODPY_EGG_VERSION =	1.3.0
-REVISION =		3
+REVISION =		4
 DISTNAME =		PyStemmer-${MODPY_EGG_VERSION}
 PKGNAME =		py-stemmer-${MODPY_EGG_VERSION}
 
 CATEGORIES =		textproc
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # MIT/BSD
 PERMIT_PACKAGE_CDROM =	Yes

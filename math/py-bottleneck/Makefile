@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/13 19:03:52 danj Exp $
 
 BROKEN-powerpc = bottleneck/src/move.c:568: internal compiler error: in extract_insn, at recog.c:2077
 
@@ -8,9 +8,7 @@ MODPY_EGG_VERSION =	1.2.1
 DISTNAME =		Bottleneck-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 CATEGORIES =		math
-REVISION =		0
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
+REVISION =		1
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

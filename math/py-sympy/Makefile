@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/28 20:51:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/13 19:03:52 danj Exp $
 
 COMMENT =		computer algebra system (CAS) in Python
 
 MODPY_EGG_VERSION =	1.1
 DISTNAME =		sympy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		math
 
 HOMEPAGE =		https://www.sympy.org
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # New BSD
 PERMIT_PACKAGE_CDROM =	Yes

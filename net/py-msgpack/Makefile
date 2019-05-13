@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/04/28 20:51:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/13 19:03:52 danj Exp $
 
 COMMENT =		messagepack (de)serializer
 
@@ -8,13 +8,11 @@ COMMENT =		messagepack (de)serializer
 MODPY_EGG_VERSION =	0.5.6
 DISTNAME =		msgpack-python-${MODPY_EGG_VERSION}
 PKGNAME =		py-msgpack-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net textproc
 
 HOMEPAGE =		https://msgpack.org/
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes

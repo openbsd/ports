@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/13 19:03:52 danj Exp $
 
 COMMENT =		fast numerical expression evaluator for NumPy
 
@@ -6,9 +6,7 @@ MODPY_EGG_VERSION =	2.6.4
 DISTNAME =		numexpr-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		1
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
+REVISION =		2
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

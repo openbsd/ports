@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/10 11:35:39 bket Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/13 19:03:54 danj Exp $
 
 COMMENT =		terminals served to term.js using Tornado websockets
 
 MODPY_EGG_VERSION =	0.8.2
 DISTNAME =		terminado-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 
 HOMEPAGE =		https://github.com/takluyver/terminado
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
