@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/09 13:42:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/13 19:28:28 ajacoutot Exp $
 
 # XXX: PORTROACH is set at the end of this file to override gnome.port.mk
   
@@ -23,6 +23,8 @@ PKGNAME-cups=		gtk+4-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+4-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk4-update-icon-cache-${GNOME_VERSION}
 PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
+
+REVISION-main=		0
 
 CATEGORIES=		x11 devel
 

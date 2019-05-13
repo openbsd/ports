@@ -1,0 +1,36 @@
+$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.14 2019/05/13 19:28:28 ajacoutot Exp $
+
+From 0334ea1c889331adb02d361670e24b3f85b5b0d6 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Mon, 13 May 2019 20:47:46 +0200
+Subject: [PATCH] pid_get_parent: fix for OpenBSD
+
+Index: gtk/gtkmountoperation-x11.c
+--- gtk/gtkmountoperation-x11.c.orig
++++ gtk/gtkmountoperation-x11.c
+@@ -720,7 +720,7 @@ pid_get_command_line (GPid pid)
+ static GPid
+ pid_get_parent (GPid pid)
+ {
+-  struct kinfo_proc kp;
++  struct kinfo_proc *kp;
+   size_t len;
+   GPid ppid;
+ 
+@@ -731,11 +731,14 @@ pid_get_parent (GPid pid)
+       return (-1);
+   mib[5] = (len / sizeof(struct kinfo_proc));
+ 
+-  if (sysctl (mib, G_N_ELEMENTS (mib), &kp, &len, NULL, 0) < 0)
++  kp = g_malloc0 (len);
++
++  if (sysctl (mib, G_N_ELEMENTS (mib), kp, &len, NULL, 0) < 0)
+       return -1;
+ 
+-  ppid = kp.p_ppid;
++  ppid = kp->p_ppid;
+ 
++  g_free (kp);
+   return ppid;
+ }
+ 

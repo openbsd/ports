@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.210 2019/04/16 08:11:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.211 2019/05/13 19:28:28 ajacoutot Exp $
 
 # XXX add support for libcloudproviders?
 
@@ -20,6 +20,10 @@ PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
+
+REVISION-main=		0
+REVISION-cups=		0
+REVISION-cloudprint=	0
 
 CATEGORIES=		x11 devel
 
@@ -59,7 +63,7 @@ WANTLIB-main += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-main += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-main += cairo cairo-gobject dbus-1 expat fontconfig freetype
 WANTLIB-main += graphite2 gthread-2.0 harfbuzz pango-1.0 pangocairo-1.0
-WANTLIB-main += pangoft2-1.0 pixman-1 xcb xcb-render xcb-shm png16
+WANTLIB-main += pangoft2-1.0 pixman-1 xcb xcb-render xcb-shm png
 
 LIB_DEPENDS-cups=	${LIB_DEPENDS} \
 			print/cups,-libs \
@@ -71,7 +75,7 @@ WANTLIB-cups += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-cups += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB-cups += cairo cairo-gobject dbus-1 expat fontconfig freetype
 WANTLIB-cups += graphite2 gthread-2.0 harfbuzz pango-1.0 pangocairo-1.0
-WANTLIB-cups += pangoft2-1.0 pixman-1 xcb xcb-render png16
+WANTLIB-cups += pangoft2-1.0 pixman-1 xcb xcb-render png
 WANTLIB-cups += avahi-client avahi-common cups gdk-3 gmp xcb-shm
 WANTLIB-cups += gnutls gtk-3 hogweed nettle p11-kit tasn1 unistring
 
@@ -88,7 +92,7 @@ WANTLIB-cloudprint += cairo cairo-gobject dbus-1 expat fontconfig freetype
 WANTLIB-cloudprint += graphite2 gthread-2.0 harfbuzz pango-1.0 pangocairo-1.0
 WANTLIB-cloudprint += pangoft2-1.0 pixman-1 xcb xcb-render
 WANTLIB-cloudprint += gdk-3 gtk-3 json-glib-1.0 rest-0.7 soup-2.4 soup-gnome-2.4
-WANTLIB-cloudprint += sqlite3 xml2 lzma xcb-shm png16
+WANTLIB-cloudprint += sqlite3 xml2 lzma xcb-shm png
 
 LIB_DEPENDS-guic=	graphics/gdk-pixbuf2
 RUN_DEPENDS-guic=	x11/hicolor-icon-theme

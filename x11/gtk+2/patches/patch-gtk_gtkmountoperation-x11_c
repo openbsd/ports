@@ -1,4 +1,9 @@
-$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.2 2014/04/25 15:11:55 ajacoutot Exp $
+$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.3 2019/05/13 19:28:27 ajacoutot Exp $
+
+From 0334ea1c889331adb02d361670e24b3f85b5b0d6 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Mon, 13 May 2019 20:47:46 +0200
+Subject: [PATCH] pid_get_parent: fix for OpenBSD
 
 From ad9da2727d3e3243fd052c9feb0c55645e87d384 Mon Sep 17 00:00:00 2001
 From: Jonathan Matthew <jmatthew@openbsd.org>
@@ -25,8 +30,9 @@ From: Antoine Jacoutot <ajacoutot@gnome.org>
 Date: Fri, 25 Apr 2014 14:37:59 +0200
 Subject: openbsd: properly set len for gtkmountoperation-x11
 
---- gtk/gtkmountoperation-x11.c.orig	Wed Apr 16 16:16:11 2014
-+++ gtk/gtkmountoperation-x11.c	Wed Apr 16 16:17:59 2014
+Index: gtk/gtkmountoperation-x11.c
+--- gtk/gtkmountoperation-x11.c.orig
++++ gtk/gtkmountoperation-x11.c
 @@ -43,9 +43,6 @@
  #include <errno.h>
  
@@ -37,7 +43,7 @@ Subject: openbsd: properly set len for gtkmountoperation-x11
  #include <sys/sysctl.h>
  #endif
  
-@@ -724,6 +721,100 @@ pid_get_command_line (GPid pid)
+@@ -724,6 +721,103 @@ pid_get_command_line (GPid pid)
  }
  
  /* ---------------------------------------------------------------------------------------------------- */
@@ -49,7 +55,7 @@ Subject: openbsd: properly set len for gtkmountoperation-x11
 +static GPid
 +pid_get_parent (GPid pid)
 +{
-+  struct kinfo_proc kp;
++  struct kinfo_proc *kp;
 +  size_t len;
 +  GPid ppid;
 +
@@ -60,11 +66,14 @@ Subject: openbsd: properly set len for gtkmountoperation-x11
 +      return (-1);
 +  mib[5] = (len / sizeof(struct kinfo_proc));
 +
-+  if (sysctl (mib, G_N_ELEMENTS (mib), &kp, &len, NULL, 0) < 0)
++  kp = g_malloc0 (len);
++
++  if (sysctl (mib, G_N_ELEMENTS (mib), kp, &len, NULL, 0) < 0)
 +      return -1;
 +
-+  ppid = kp.p_ppid;
++  ppid = kp->p_ppid;
 +
++  g_free (kp);
 +  return ppid;
 +}
 +

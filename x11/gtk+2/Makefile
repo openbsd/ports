@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.225 2018/09/04 12:46:27 espie Exp $
+# $OpenBSD: Makefile,v 1.226 2019/05/13 19:28:27 ajacoutot Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -9,11 +9,12 @@ COMMENT-cups=		gtk+2 CUPS print backend
 
 GNOME_VERSION=		2.24.32
 GNOME_PROJECT=		gtk+
-REVISION=		0
 
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-cups=		gtk+2-cups-${GNOME_VERSION}
-REVISION-main=		2
+
+REVISION-main=		3
+REVISION-cups=		1
 
 CATEGORIES=		x11 devel
 
@@ -33,12 +34,12 @@ WANTLIB += Xrandr Xrender atk-1.0 cairo expat ffi fontconfig
 WANTLIB += freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 harfbuzz m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += xcb xcb-render xcb-shm z iconv intl
+WANTLIB += xcb xcb-render xcb-shm z iconv intl fribidi
 
 WANTLIB-main += ${WANTLIB} c
 
 WANTLIB-cups += ${WANTLIB}
-WANTLIB-cups += avahi-client avahi-common cups dbus-1 gdk-x11-2.0 gmp
+WANTLIB-cups += avahi-client avahi-common cups dbus-1 gdk-x11-2.0 gmp fribidi
 WANTLIB-cups += gnutls gtk-x11-2.0 hogweed idn2 nettle p11-kit tasn1 unistring
 
 MULTI_PACKAGES=		-main -cups
