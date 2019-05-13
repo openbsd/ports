@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2017/11/02 17:52:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/13 22:20:12 ajacoutot Exp $
 
 COMMENT=	dynamically create Perl language bindings
 
-DISTNAME=	Glib-Object-Introspection-0.043
+DISTNAME=	Glib-Object-Introspection-0.047
 
 CATEGORIES=	devel
 
@@ -16,8 +16,10 @@ CPAN_AUTHOR=	XAOC
 
 BUILD_DEPENDS=	devel/p5-ExtUtils-Depends \
 		devel/p5-ExtUtils-PkgConfig \
-		${RUN_DEPENDS}
+		devel/p5-Glib2
+
 RUN_DEPENDS=	devel/p5-Glib2
+
 LIB_DEPENDS=	devel/gobject-introspection
 
 .include <bsd.port.mk>
