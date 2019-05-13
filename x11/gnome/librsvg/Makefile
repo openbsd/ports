@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.147 2019/02/16 07:56:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.148 2019/05/13 22:47:45 ajacoutot Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
 GNOME_PROJECT=		librsvg
-STABLE_VERSION=		2.44.13
+STABLE_VERSION=		2.44.14
 OLD_VERSION=		2.40.20
 DISTFILES=		librsvg-${STABLE_VERSION}${EXTRACT_SUFX}:0 \
 			librsvg-${OLD_VERSION}${EXTRACT_SUFX}:1
@@ -15,14 +15,14 @@ MASTER_SITES1=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${OLD_VERSION:C/^(
 
 ### stable
 .if ${PROPERTIES:Mrust}
-SHARED_LIBS +=  rsvg-2               39.0     # 46.13
+SHARED_LIBS +=  rsvg-2               39.0     # 46.14
 GNOME_VERSION=		${STABLE_VERSION}
 BUILD_DEPENDS=		lang/rust
 PKG_ARGS=		-Dold=0 -Dstable=1
 MAKE_ENV+=		CARGO_BUILD_JOBS=${MAKE_JOBS}
 .else
 ### old
-REVISION=		2
+REVISION=		3
 SHARED_LIBS +=  rsvg-2               38.2     # 42.20
 GNOME_VERSION=		${OLD_VERSION}
 PATCH_LIST=		old-patch-*
@@ -38,7 +38,7 @@ WANTLIB += X11 Xext Xrender c cairo croco-0.6 expat ffi fontconfig
 WANTLIB += freetype fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz iconv
 WANTLIB += intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png16 pthread xcb xcb-render xcb-shm xml2 z
+WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm xml2 z
 
 MODULES=		x11/gnome
 
