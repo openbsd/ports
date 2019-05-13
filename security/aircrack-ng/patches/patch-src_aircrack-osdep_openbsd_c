@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_aircrack-osdep_openbsd_c,v 1.1 2019/05/13 17:15:40 jca Exp $
+
+Index: src/aircrack-osdep/openbsd.c
+--- src/aircrack-osdep/openbsd.c.orig
++++ src/aircrack-osdep/openbsd.c
+@@ -37,7 +37,6 @@
+ #include <net80211/ieee80211_crypto.h>
+ #include <frame.h>
+ #include <sys/timeout.h>
+-#include <machine/intr.h>
+ #undef _KERNEL
+ #include <net80211/ieee80211_node.h>
+ #include <net80211/ieee80211_ioctl.h>
