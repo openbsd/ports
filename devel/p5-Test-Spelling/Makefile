@@ -1,19 +1,19 @@
-# $OpenBSD: Makefile,v 1.13 2017/08/01 22:53:11 bluhm Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/13 12:25:49 cwen Exp $
 
 COMMENT=	check for spelling errors in POD files
 
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME =	Test-Spelling-0.20
+DISTNAME=	Test-Spelling-0.22
+
 CATEGORIES=	devel textproc
 
 # Perl
 PERMIT_PACKAGE_CDROM=   Yes
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	textproc/p5-Pod-Spell \
+RUN_DEPENDS=	devel/p5-IPC-Run3 \
 		textproc/aspell/core \
-		devel/p5-IPC-Run3
+		textproc/p5-Pod-Spell
 
 .include <bsd.port.mk>
