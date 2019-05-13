@@ -1,4 +1,4 @@
-# $OpenBSD: License.pm,v 1.4 2019/05/10 20:50:51 afresh1 Exp $
+# $OpenBSD: License.pm,v 1.5 2019/05/13 00:21:29 kmos Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -39,6 +39,7 @@ my %good_licenses = (
 	gpl_2_0     => 'GPLv2',
 	gpl_3       => 'GPLv3',
 	gpl_3_0     => 'GPLv3',
+	isc         => 'ISC',
 	lgpl        => 'LGPL',
 	lgpl_2_1    => 'LGPL v2.1',
 	'lgpl_2_1+' => 'LGPL v2.1',
