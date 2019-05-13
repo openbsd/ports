@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/05/12 10:09:21 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/05/13 09:00:22 semarie Exp $
 lib/python${MODPY_VERSION}/site-packages/Genshi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Genshi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Genshi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -17,7 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/genshi/${MODPY_PYCACHE}input.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/genshi/${MODPY_PYCACHE}output.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/genshi/${MODPY_PYCACHE}path.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/genshi/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/genshi/_speedups.c
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/genshi/_speedups.c
 lib/python${MODPY_VERSION}/site-packages/genshi/builder.py
 lib/python${MODPY_VERSION}/site-packages/genshi/compat.py
 lib/python${MODPY_VERSION}/site-packages/genshi/core.py
@@ -92,12 +92,12 @@ lib/python${MODPY_VERSION}/site-packages/genshi/template/tests/templates/
 lib/python${MODPY_VERSION}/site-packages/genshi/template/tests/templates/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/genshi/template/tests/templates/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/genshi/template/tests/templates/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/genshi/template/tests/templates/functions.html
-lib/python${MODPY_VERSION}/site-packages/genshi/template/tests/templates/functions.txt
-lib/python${MODPY_VERSION}/site-packages/genshi/template/tests/templates/new_syntax.txt
-lib/python${MODPY_VERSION}/site-packages/genshi/template/tests/templates/test.html
-lib/python${MODPY_VERSION}/site-packages/genshi/template/tests/templates/test.txt
-lib/python${MODPY_VERSION}/site-packages/genshi/template/tests/templates/test_no_doctype.html
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/genshi/template/tests/templates/functions.html
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/genshi/template/tests/templates/functions.txt
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/genshi/template/tests/templates/new_syntax.txt
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/genshi/template/tests/templates/test.html
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/genshi/template/tests/templates/test.txt
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/genshi/template/tests/templates/test_no_doctype.html
 lib/python${MODPY_VERSION}/site-packages/genshi/template/tests/text.py
 lib/python${MODPY_VERSION}/site-packages/genshi/template/text.py
 lib/python${MODPY_VERSION}/site-packages/genshi/tests/
