@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.36 2019/03/04 12:51:12 chrisz Exp $
+# $OpenBSD: Makefile,v 1.37 2019/05/13 22:41:55 jca Exp $
+
+BROKEN-sparc64 =	"/usr/bin/ld: skipping incompatible pyml-current/libpyml_stubs.a when searching for -lpyml_stubs" \
+			"/usr/bin/ld: cannot find -lpyml_stubs"
 
 COMMENT =	program matching and transformation engine
 
