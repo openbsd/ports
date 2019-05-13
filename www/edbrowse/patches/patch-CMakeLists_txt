@@ -1,0 +1,34 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2019/05/13 22:11:20 abieber Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -238,16 +238,16 @@ if (UNIX)
+     FILE (GLOB UnixManFile "doc/man-edbrowse-debian.1")
+     set (UnixManDir "/usr/share/man/man1")
+     set (UnixDocDir "/usr/share/doc/edbrowse")
+-    if (${CMAKE_SYSTEM_NAME} STREQUAL  "FreeBSD")
++    if (${CMAKE_SYSTEM_NAME} STREQUAL  "FreeBSD" OR ${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
+ 	FILE (GLOB UnixManFile "doc/man-edbrowse-freebsd.1")
+-        set (UnixManDir "/usr/local/man/man1")
+-        set (UnixDocDir "/usr/local/share/doc/edbrowse")
++        set (UnixManDir "${PREFIX}/man/man1")
++        set (UnixDocDir "${PREFIX}/share/doc/edbrowse")
+     endif()
+     # copy to build dir
+     configure_file( ${UnixManFile} ${CMAKE_BINARY_DIR}/edbrowse.1 )
+     # find 'gzip' - warn if not...
+     find_program(GZIP_EXE gzip PATHS /bin )
+-    if (GZIP_EXE)
++    if (GZIP_EXE AND NOT ${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
+         # gzip it in place
+         execute_process(COMMAND ${GZIP_EXE} -f "edbrowse.1"
+             WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+@@ -257,6 +257,7 @@ if (UNIX)
+ 	install(FILES ${CMAKE_BINARY_DIR}/edbrowse.1.gz DESTINATION ${UnixManDir})
+     else ()
+         message(WARNING "Unable to locate 'gzip'! No man page...")
++	install(FILES ${CMAKE_BINARY_DIR}/edbrowse.1 DESTINATION ${UnixManDir})
+     endif ()
+     # install user guide
+     install(FILES doc/usersguide.html doc/usersguide_fr.html doc/sample.ebrc doc/sample_fr.ebrc doc/sample_it.ebrc DESTINATION ${UnixDocDir})

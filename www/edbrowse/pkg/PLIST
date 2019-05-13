@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/13 22:11:20 abieber Exp $
+@bin bin/edbrowse
+@man man/man1/edbrowse.1
+share/doc/edbrowse/
+share/doc/edbrowse/sample.ebrc
+share/doc/edbrowse/sample_fr.ebrc
+share/doc/edbrowse/sample_it.ebrc
+share/doc/edbrowse/usersguide.html
+share/doc/edbrowse/usersguide_fr.html
