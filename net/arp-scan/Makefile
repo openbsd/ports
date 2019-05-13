@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/01/28 16:36:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2019/05/13 11:01:10 sthen Exp $
 
 COMMENT-main =	ARP scanning and fingerprinting tool
 COMMENT-mac =	MAC address vendor list
@@ -8,7 +8,7 @@ DISTNAME =	arp-scan-$V
 PKGNAME-main =	${DISTNAME}
 REVISION-main =	13
 
-M =		20190128
+M =		20190513
 PKGNAME-mac =	mac-vendor-$M
 
 CATEGORIES =	net
@@ -60,7 +60,7 @@ listing:
 	f=oui-iab-`date +%Y%m%d`.tar.xz; \
 	t=`mktemp -d /tmp/oui-iab.XXXXXXXXXX`; \
 	cd $$t; \
-	mkdir oui-iab; \
+	mkdir -p oui-iab; \
 	cd oui-iab; \
 	[ -r iab.csv ] || ftp -o iab.csv $$base/iab/iab.csv; \
 	[ -r ma-l.csv ] || ftp -o ma-l.csv $$base/oui/oui.csv; \
