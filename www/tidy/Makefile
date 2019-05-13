@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/13 14:27:22 abieber Exp $
+# $OpenBSD: Makefile,v 1.27 2019/05/13 20:28:20 ajacoutot Exp $
 
 COMMENT =	correct and clean up HTML and XML
 
@@ -22,6 +22,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += c
 
 MODULES =	devel/cmake
+
+BUILD_DEPENDS =	textproc/libxslt
 
 CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR=${PREFIX}/man/man1
 
