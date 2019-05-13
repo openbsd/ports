@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2019/05/12 21:56:55 jca Exp $
+# $OpenBSD: Makefile,v 1.76 2019/05/13 03:53:22 jca Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS-server=	alpha aarch64 amd64 arm i386 mips64 mips64el powerpc sparc64
@@ -17,7 +17,7 @@ EPOCH=		1
 
 CATEGORIES=	databases
 MASTER_SITES=	https://downloads.mariadb.com/MariaDB/${DISTNAME}/source/ \
-		https://ftp.osuosl.org/pub/mariadb/${DISTNAME}/source/ \
+		https://ftp.osuosl.org/pub/mariadb/${DISTNAME}/source/
 
 LIB_VERSION=	28
 SHARED_LIBS=	mysqlclient_r	${LIB_VERSION}.0 \
