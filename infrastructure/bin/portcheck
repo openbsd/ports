@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.126 2018/11/16 10:08:38 espie Exp $
+# $OpenBSD: portcheck,v 1.127 2019/05/13 20:07:15 sthen Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -851,10 +851,12 @@ sub_checks() {
 			make "${make_args[@]}" show="$vars" | {
 				local comment fullpkgname modules pkg_arch
 				local wantlib perm_pkg_cdrom perm_pkg_ftp
+				local arch_independent=false
 				read -r comment
 				read -r fullpkgname
 				read -r modules
 				read -r pkg_arch
+				[[ $pkg_arch == "*" ]] && arch_independent=true
 				read -r wantlib
 				read -r wantlib_ss
 				read -r perm_pkg_cdrom
@@ -865,7 +867,7 @@ sub_checks() {
 					    "COMMENT${subpkg%-}, please"
 				fi
 
-				if [[ $pkg_arch == "*" && -n $wantlib ]]; then
+				if $arch_independent && [[ -n $wantlib ]]; then
 					if [[ $subpkg != - || -n $wantlib_ss ]]; then
 						err "${portref}non-empty $wantlib_var for" \
 						    "arch-independent package"
@@ -881,7 +883,8 @@ sub_checks() {
 					    print-plist-with-depends || true) \
 					    </dev/null |&
 					check_plist "$portref" "$fullpkgname" \
-					    "$flavor" "${subpkg%-}" "$modules"
+					    "$flavor" "${subpkg%-}" "$modules" \
+					    "$arch_independent"
 					check_lib_depends "$portref" "$subpkg" \
 					    "$modules" "$wantlib"
 					wait
@@ -935,6 +938,8 @@ sub_checks() {
 #
 #   * @rcscript items and pkg-readmes have @mode, @owner and @group reset.
 #
+#   * PKG_ARCH is not set to * if a library is present.
+#
 check_plist() {
 	$debugging && echo "CALLED: check_plist($*)" >&2
 
@@ -943,6 +948,7 @@ check_plist() {
 	local flavor_list=$1; shift
 	local subpkg=$1; shift
 	local modules_list=$1; shift
+	local arch_independent=$1; shift
 
 	local flavor is_static=false
 	for flavor in $flavor_list; do
@@ -982,6 +988,7 @@ check_plist() {
 
 	local qml_found=false qt5_qml_found=false non_qt5_qml_found=false
 	local qt4_dep=false qt5_dep=false qt5declarative_dep=false
+	local lib_found=false
 
 	local owner_set=false group_set=false mode_set=false
 	local readme_seen=false
@@ -1071,11 +1078,16 @@ check_plist() {
 			;;
 		lib/qt5/qml/*)
 			qml_found=true
+			lib_found=true
 			qt5_qml_found=true
 			;;
 		*/qmldir)
 			qml_found=true
 			non_qt5_qml_found=true
+			;;
+
+		*.so|*.a|*.so.*)
+			lib_found=true
 			;;
 
 		share/dbus-1/system-services/*)
@@ -1204,6 +1216,9 @@ check_plist() {
 	$qt5_dep && ! $qt4_dep && $non_qt5_qml_found &&
 		err "${portref}depends on Qt5 but installs QML files" \
 		    "outside PREFIX/lib/qt5/qml/"
+
+	$lib_found && $arch_independent &&
+		err "${portref}arch-independent package contains library files"
 
 	# dbus,-suid
 	if $dbus_suid_dep_needed && ! $dbus_suid_dep && ! $is_dbus_suid; then
