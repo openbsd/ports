@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/04/28 20:51:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/13 18:06:42 danj Exp $
 
 COMMENT =		common base representation of Python source code
 
@@ -6,11 +6,9 @@ MODPY_EGG_VERSION =	1.4.9
 DISTNAME =		astroid-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		http://www.astroid.org/
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/13 18:06:43 danj Exp $
 
 COMMENT =		Jupyter notebook format
 
 MODPY_EGG_VERSION =	4.3.0
 DISTNAME =		nbformat-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://jupyter.org
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 RUN_DEPENDS =		devel/py-ipython_genutils${MODPY_FLAVOR} \
 			devel/py-traitlets${MODPY_FLAVOR} \

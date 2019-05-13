@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/01 01:24:44 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/13 18:06:43 danj Exp $
 
 COMMENT =		plugin and hook calling mechanisms for Python
 
@@ -6,8 +6,7 @@ MODPY_EGG_VERSION =	0.9.0
 DISTNAME =		pluggy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
+REVISION =		0
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

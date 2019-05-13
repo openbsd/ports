@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/28 20:51:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/13 18:06:44 danj Exp $
 
 COMMENT =		configuration system for Python applications
 
 MODPY_EGG_VERSION =	4.3.2
 DISTNAME =		traitlets-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://ipython.org/
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

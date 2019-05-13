@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2016/05/31 08:46:19 shadchin Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/13 18:06:43 danj Exp $
 
 COMMENT =		Python 3.4 Enum backported to previous versions
 
 MODPY_EGG_VERSION =	1.1.6
 DISTNAME =		enum34-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

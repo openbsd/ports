@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.30 2019/04/28 20:51:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/05/13 18:06:44 danj Exp $
 
 COMMENT =		JSON encoder/decoder
 
 MODPY_EGG_VERSION =	3.11.1
 DISTNAME =		simplejson-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # MIT/AFLv2.1
 PERMIT_PACKAGE_CDROM =	Yes

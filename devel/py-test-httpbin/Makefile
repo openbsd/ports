@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/13 18:06:44 danj Exp $
 
 COMMENT =		test your HTTP library against a local copy of httpbin
 
@@ -6,11 +6,9 @@ MODPY_EGG_VERSION =	0.2.3
 DISTNAME =		pytest-httpbin-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://github.com/kevin1024/pytest-httpbin
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

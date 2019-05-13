@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/06/19 12:31:31 shadchin Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/13 18:06:43 danj Exp $
 
 COMMENT =		ssl.match_hostname() function from Python 3.5
 
@@ -6,9 +6,7 @@ MODPY_EGG_VERSION =	3.5.0.1
 DISTNAME =		backports.ssl_match_hostname-${MODPY_EGG_VERSION}
 PKGNAME =		py-backports-ssl-match-hostname-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-REVISION =		0
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
+REVISION =		1
 
 # Python Software Foundation License
 PERMIT_PACKAGE_CDROM =	Yes

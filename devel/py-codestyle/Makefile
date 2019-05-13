@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2019/04/28 20:51:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/13 18:06:43 danj Exp $
 
 COMMENT =		python style guide checker
 
 MODPY_EGG_VERSION =	2.3.1
 DISTNAME =		pycodestyle-${MODPY_EGG_VERSION}
 PKGNAME =		py-codestyle-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/PyCQA/pycodestyle
-
-MAINTAINER=		Alexandr Shadchin <shadchin@openbsd.org>
 
 # Expat
 PERMIT_PACKAGE_CDROM =	Yes

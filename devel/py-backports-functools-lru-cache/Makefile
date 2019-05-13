@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/25 14:29:50 kn Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/13 18:06:42 danj Exp $
 
 COMMENT =		backport of the lru_cache from functools
 
@@ -6,8 +6,7 @@ MODPY_EGG_VERSION =	1.4
 DISTNAME =		backports.functools_lru_cache-${MODPY_EGG_VERSION}
 PKGNAME =		py-backports-functools-lru-cache-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
+REVISION =		0
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

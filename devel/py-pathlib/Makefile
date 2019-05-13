@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/28 20:51:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/13 18:06:43 danj Exp $
 
 COMMENT =		object-oriented filesystem paths
 
 MODPY_EGG_VERSION =	1.0.1
 DISTNAME =		pathlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://pathlib.readthedocs.org/
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

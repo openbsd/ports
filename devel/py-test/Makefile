@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.32 2019/05/01 01:22:00 kmos Exp $
+# $OpenBSD: Makefile,v 1.33 2019/05/13 18:06:44 danj Exp $
 
 COMMENT=		cross-project testing tool for Python
 
 MODPY_EGG_VERSION =	4.4.0
 DISTNAME=		pytest-${MODPY_EGG_VERSION}
 PKGNAME=		py-test-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		devel
 
 HOMEPAGE =		https://docs.pytest.org/en/latest/
-
-MAINTAINER=		Alexandr Shadchin <shadchin@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

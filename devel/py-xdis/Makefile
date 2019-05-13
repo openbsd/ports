@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/04/28 20:51:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/13 18:06:44 danj Exp $
 
 COMMENT =		cross-version byte-code disassembler and marshal routines
 
@@ -6,11 +6,9 @@ MODPY_EGG_VERSION =	3.6.11
 DISTNAME =		xdis-${MODPY_EGG_VERSION}
 PKGNAME =		py-xdis-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/rocky/python-xdis/
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

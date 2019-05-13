@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/28 20:51:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/13 18:06:44 danj Exp $
 
 COMMENT =		test utilities working with files and commands
 
 MODPY_EGG_VERSION =	0.3.1
 DISTNAME =		testpath-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/jupyter/testpath
-
-MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
