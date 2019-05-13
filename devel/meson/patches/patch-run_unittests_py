@@ -1,11 +1,14 @@
-$OpenBSD: patch-run_unittests_py,v 1.11 2019/05/12 22:46:58 ajacoutot Exp $
+$OpenBSD: patch-run_unittests_py,v 1.12 2019/05/13 02:11:10 ajacoutot Exp $
 
 From c1c699eda4ed4f8778e621e5d635e31264400053 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@openbsd.org>
 Date: Sun, 10 Mar 2019 14:37:25 +0100
 Subject: [PATCH] Fix unit test: test_find_library_patterns
 
-https://github.com/mesonbuild/meson/pull/5389
+From e2f6f47fa3bb4034d9cc8fa84d17dfa3d5715e39 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Mon, 13 May 2019 00:26:44 +0200
+Subject: [PATCH] unittests: adapt pkg-config test for OpenBSD
 
 From d4cece3b34b91ff9f726da2ffe340645ff0d7ad4 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@openbsd.org>
