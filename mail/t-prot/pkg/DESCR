@@ -1,0 +1,7 @@
+t-prot (TOFU Protection) is a filter which improves the readability of
+email messages and Usenet posts by hiding some of their annoying parts.
+The annoyances it handles include mailing list footers, signatures,
+TOFU, sequences of blank lines, and repeated punctuation. TOFU is an
+acronym that stands for "Text oben, Fullquote unten", a German reference
+to the practice of adding just a few lines of original text and quoting
+a complete message below them.

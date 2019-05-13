@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/13 04:33:41 afresh1 Exp $
+bin/t-prot
+@man man/man1/t-prot.1
+share/doc/t-prot/
+share/doc/t-prot/ChangeLog
+share/doc/t-prot/README
+share/examples/t-prot/
+share/examples/t-prot/README.examples
+share/examples/t-prot/README.patches
+share/examples/t-prot/filter_innd.pl
+share/examples/t-prot/mailcap.t-prot
+share/examples/t-prot/muttrc.t-prot
+share/examples/t-prot/nailrc.t-prot
+share/examples/t-prot/t-prot.sl
