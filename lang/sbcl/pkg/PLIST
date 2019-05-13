@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/03/08 15:17:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/05/13 12:58:58 solene Exp $
 @bin bin/sbcl
 @info info/asdf.info
 @info info/sbcl.info
@@ -9,6 +9,8 @@ lib/sbcl/contrib/sb-aclrepl.asd
 lib/sbcl/contrib/sb-aclrepl.fasl
 lib/sbcl/contrib/sb-bsd-sockets.asd
 lib/sbcl/contrib/sb-bsd-sockets.fasl
+lib/sbcl/contrib/sb-capstone.asd
+lib/sbcl/contrib/sb-capstone.fasl
 lib/sbcl/contrib/sb-cltl2.asd
 lib/sbcl/contrib/sb-cltl2.fasl
 lib/sbcl/contrib/sb-concurrency.asd
@@ -48,4 +50,3 @@ share/doc/sbcl/BUGS
 share/doc/sbcl/COPYING
 share/doc/sbcl/CREDITS
 share/doc/sbcl/NEWS
-share/doc/sbcl/html/

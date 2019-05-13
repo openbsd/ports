@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.40 2019/03/21 22:06:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2019/05/13 12:58:58 solene Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 USE_WXNEEDED =		Yes
-REVISION =		0
 
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 
-V =			1.4.8
+V =			1.5.2
 DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
 WRKDIST=		${WRKDIR}/sbcl-${V}
@@ -15,28 +14,30 @@ EXTRACT_SUFX=		.tar.bz2
 
 CATEGORIES=		lang
 HOMEPAGE=		http://www.sbcl.org/
-MAINTAINER =		Joshua Elsasser <joshe@openbsd.org>
+MAINTAINER =		Joshua Elsasser <josh@elsasser.org>
 
 # Public domain and BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sbcl/}
 
-WANTLIB=		c m util
+WANTLIB=		c m util z
 
 PSEUDO_FLAVORS=		native_bootstrap
 
-# XXX threads flavor does not work reliably it won't even pass its self-test
-# on amd64 all the time
 FLAVORS=		threads
 FLAVOR?=
 
-EXTRA_PARAMS=
+MAKE_PARAMS =		--prefix=${PREFIX}
+
 .if ${FLAVOR:Mthreads}
-ONLY_FOR_ARCHS =	amd64
-EXTRA_PARAMS+=		--with-sb-thread
+ONLY_FOR_ARCHS =	amd64 powerpc
+MAKE_PARAMS +=		--with-sb-thread
 WANTLIB+=		pthread
 .endif
+# enable features from --fancy other than :sb-thread
+MAKE_PARAMS +=		--with-sb-core-compression \
+			--with-sb-xref-for-internals
 
 .if ${FLAVOR:Mnative_bootstrap}
 BUILD_DEPENDS+=		lang/sbcl
@@ -46,12 +47,17 @@ BOOTSTRAP_CMD=		${LOCALBASE}/bin/sbcl \
 BUILD_DEPENDS +=	lang/clisp
 BOOTSTRAP_CMD =		${LOCALBASE}/bin/clisp -q -norc
 .endif
+MAKE_PARAMS +=		--xc-host="${BOOTSTRAP_CMD}" ${EXTRA_PARAMS}
 TEST_DEPENDS =		devel/gmp
+
+# base makeinfo chokes on sbcl texinfo files
+BUILD_DEPENDS +=	print/texinfo
 
 USE_GMAKE=		Yes
 PORTHOME=		${TMPDIR}
 MAKE_ENV=		GNUMAKE=${GMAKE} INSTALL_ROOT=${PREFIX} \
-			MAN_DIR=${PREFIX}/man INFO_DIR=${PREFIX}/info
+			MAN_DIR=${PREFIX}/man INFO_DIR=${PREFIX}/info \
+			MAKEINFO=${PREFIX}/bin/gmakeinfo
 
 # Upstream asks that packagers append something like this to the
 # version to distinguish official tarballs from third-party packages.
@@ -66,8 +72,8 @@ pre-configure:
 	sed -i 's/^"\([0-9.]*\)"$$/"\1.${LOCAL_VERSION}"/' ${VERSION_FILE}
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} /bin/sh make.sh \
-		--prefix=${PREFIX} --xc-host="${BOOTSTRAP_CMD}" ${EXTRA_PARAMS}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} SBCL_CONTRIB_TARGET=all \
+		/bin/sh make.sh ${MAKE_PARAMS}
 	cd ${WRKSRC}/doc/manual && touch sbcl.texinfo && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} asdf.info sbcl.info
 
@@ -78,6 +84,8 @@ post-install:
 	chown -R 0:0 ${PREFIX}/lib/sbcl
 
 do-test:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DONT_CLEAN_SBCL_CONTRIB=1 \
+	    /bin/sh make-target-contrib.sh
 	cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} /bin/sh run-tests.sh
 
 .include <bsd.port.mk>
