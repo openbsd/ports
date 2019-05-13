@@ -1,8 +1,0 @@
-$OpenBSD: patch-testdata2,v 1.2 2011/07/08 09:52:50 jasper Exp $
---- s2.orig	Tue Sep 29 17:38:18 1998
-+++ s2	Tue Sep 29 17:39:31 1998
-@@ -0,0 +1,4 @@
-+I think that eye shall never see
-+a computerist as happy as me.
-+I once put up with Cistern Vee
-+But now I use OpenBSD.

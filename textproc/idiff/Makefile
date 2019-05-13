@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/13 17:52:58 ian Exp $
 #
 
-COMMENT=	powerful command-line front end to diff
+COMMENT=	interactive front end to diff
 
-DISTNAME=	idiff-1.0
-REVISION=	1
+DISTNAME=	idiff-1.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.darwinsys.com/freeware/
 
+CATEGORIES =	textproc
+
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
-# BSD-like, badly worded
+# BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c
