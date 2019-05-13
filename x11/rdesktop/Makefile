@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2019/02/06 14:22:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/05/13 21:31:11 ajacoutot Exp $
 
 COMMENT=	open source client for Windows Terminal Server
 
-V=		1.8.4
+V=		1.8.5
 DISTNAME=	rdesktop-$V
 
 CATEGORIES=	x11 net
