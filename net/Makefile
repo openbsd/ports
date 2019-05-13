@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1131 2019/05/11 18:16:42 danj Exp $
+# $OpenBSD: Makefile,v 1.1132 2019/05/13 15:12:07 jasper Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -767,6 +767,8 @@
      SUBDIR += whatweb
      SUBDIR += wide-dhcpv6
      SUBDIR += wifind
+     SUBDIR += wireguard-go
+     SUBDIR += wireguard-tools
      SUBDIR += wireless
      SUBDIR += wireshark
      SUBDIR += wmnetload
