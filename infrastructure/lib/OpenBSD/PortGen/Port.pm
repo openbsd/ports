@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.14 2019/05/12 16:38:15 afresh1 Exp $
+# $OpenBSD: Port.pm,v 1.15 2019/05/13 01:30:05 cwen Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 # Copyright (c) 2019 Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -218,7 +218,9 @@ sub name_new_port
 	# If the port name has uppercase letters
 	# and we didn't find it that way in the ports tree already
 	# we really want a lowercase name, so try again like that.
-	if ( $name =~ /\p{Upper}/ ) {
+	# The exception is for Perl that has traditionally
+	# camel-cased names.
+	if ( $name =~ /\p{Upper}/ and $prefix ne 'p5-' ) {
 		return $self->name_new_port( lc $name );
 	}
 
