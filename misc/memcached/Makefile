@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2018/09/04 12:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2019/05/14 16:49:05 giovanni Exp $
 
 COMMENT=	distributed memory object caching system
 
-DISTNAME=	memcached-1.5.6
+DISTNAME=	memcached-1.5.14
 CATEGORIES=	misc
-REVISION=	0
 
 HOMEPAGE=	https://www.memcached.org/
 
@@ -14,7 +13,7 @@ MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 # uses pledge()
-WANTLIB += c event pthread
+WANTLIB += c crypto event pthread ssl
 
 FLAVOR?=
 FLAVORS=	sasl
@@ -26,7 +25,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--with-libevent=/usr \
 			--disable-coverage \
-			--disable-docs
+			--disable-docs \
+			--enable-tls
 TEST_TARGET=		test
 TEST_DEPENDS=		devel/p5-Test-MockSleep
 

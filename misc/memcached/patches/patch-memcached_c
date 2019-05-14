@@ -1,15 +1,16 @@
-$OpenBSD: patch-memcached_c,v 1.16 2018/03/03 13:39:18 sthen Exp $
+$OpenBSD: patch-memcached_c,v 1.17 2019/05/14 16:49:05 giovanni Exp $
 
 Index: memcached.c
 --- memcached.c.orig
 +++ memcached.c
-@@ -7746,6 +7746,9 @@ int main (int argc, char **argv) {
-     /* Drop privileges no longer needed */
-     if (settings.drop_privileges) {
-         drop_privileges();
-+    } else {
-+        fprintf(stderr, "no_drop_privileges option unsupported on this operating system.\n");
-+        exit(EXIT_FAILURE);
-     }
- 
-     /* Initialize the uriencode lookup table. */
+@@ -7719,8 +7719,8 @@ int main (int argc, char **argv) {
+                 start_lru_maintainer = false;
+                 break;
+             case NO_DROP_PRIVILEGES:
+-                settings.drop_privileges = false;
+-                break;
++		fprintf(stderr, "no_drop_privileges option unsupported on this operating system.\n");
++		return 1;
+             case DROP_PRIVILEGES:
+                 settings.drop_privileges = true;
+                 break;
