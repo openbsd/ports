@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/14 14:30:23 cwen Exp $
+${P5SITE}/Ref/
+${P5SITE}/Ref/Util/
+${P5SITE}/Ref/Util.pm
+${P5SITE}/Ref/Util/PP.pm
+@man man/man3p/Ref::Util.3p
+@man man/man3p/Ref::Util::PP.3p
