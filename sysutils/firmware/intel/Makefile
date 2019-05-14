@@ -1,23 +1,19 @@
-# $OpenBSD: Makefile,v 1.10 2018/10/16 12:36:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/14 20:34:15 jsg Exp $
 
 COMMENT=	microcode update binaries for Intel CPUs
 FW_DRIVER=	intel
 
-FW_VER=		20180807
+FW_VER=		20190514
 EPOCH=		0
-REVISION=	0
-MASTER_SITES=	https://downloadmirror.intel.com/28087/eng/
+GH_ACCOUNT=	intel
+GH_PROJECT=	Intel-Linux-Processor-Microcode-Data-Files
+GH_TAGNAME=	microcode-${FW_VER}
 
-DISTNAME=	microcode-${FW_VER}a
-
-MAINTAINER=	Patrick Wildt <patrick@blueri.se>
-
-HOMEPAGE=	https://downloadcenter.intel.com/search?keyword=Linux*+Processor+Microcode+Data+File
-EXTRACT_SUFX=	.tgz
+MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/firmware/intel
-	${INSTALL_DATA} ${WRKDIR}/intel-ucode/*-* ${PREFIX}/firmware/intel
-	${INSTALL_DATA} ${WRKDIR}/license ${PREFIX}/firmware/intel-ucode-license
+	${INSTALL_DATA} ${WRKDIST}/intel-ucode/*-* ${PREFIX}/firmware/intel
+	${INSTALL_DATA} ${WRKDIST}/license ${PREFIX}/firmware/intel-ucode-license
 
 .include <bsd.port.mk>

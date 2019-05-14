@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/10/16 12:36:26 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/05/14 20:34:15 jsg Exp $
 firmware/intel/
 firmware/intel-ucode-license
 firmware/intel/06-03-02
@@ -50,6 +50,8 @@ firmware/intel/06-2d-06
 firmware/intel/06-2d-07
 firmware/intel/06-2e-06
 firmware/intel/06-2f-02
+firmware/intel/06-37-08
+firmware/intel/06-37-09
 firmware/intel/06-3a-09
 firmware/intel/06-3c-03
 firmware/intel/06-3d-04
@@ -61,9 +63,11 @@ firmware/intel/06-3f-04
 firmware/intel/06-45-01
 firmware/intel/06-46-01
 firmware/intel/06-47-01
+firmware/intel/06-4c-03
+firmware/intel/06-4c-04
 firmware/intel/06-4e-03
-firmware/intel/06-55-03
 firmware/intel/06-55-04
+firmware/intel/06-55-07
 firmware/intel/06-56-02
 firmware/intel/06-56-03
 firmware/intel/06-56-04
@@ -76,9 +80,13 @@ firmware/intel/06-5f-01
 firmware/intel/06-7a-01
 firmware/intel/06-8e-09
 firmware/intel/06-8e-0a
+firmware/intel/06-8e-0b
+firmware/intel/06-8e-0c
 firmware/intel/06-9e-09
 firmware/intel/06-9e-0a
 firmware/intel/06-9e-0b
+firmware/intel/06-9e-0c
+firmware/intel/06-9e-0d
 firmware/intel/0f-00-07
 firmware/intel/0f-00-0a
 firmware/intel/0f-01-02
