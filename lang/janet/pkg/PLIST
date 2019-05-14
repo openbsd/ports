@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/04/16 00:29:26 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/05/14 23:43:31 jturner Exp $
 @bin bin/janet
 include/janet/
 include/janet.h
@@ -9,4 +9,5 @@ lib/janet/cook.janet
 lib/janet/highlight.janet
 lib/janet/janet.h
 lib/janet/janetconf.h
+@lib lib/libjanet.so.${LIBjanet_VERSION}
 @man man/man1/janet.1

@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/16 01:56:16 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/14 23:43:31 jturner Exp $
 
 COMMENT =	functional and imperative programming language
 CATEGORIES =	lang
 
 GH_ACCOUNT =	janet-lang
 GH_PROJECT =	janet
-GH_TAGNAME =	v0.4.1
+GH_TAGNAME =	v0.5.0
+
+SHARED_LIBS +=	janet		1.0 # 0.0
 
 HOMEPAGE =	https://www.janet-lang.org/
 MAINTAINER =	James Turner <james@calminferno.net>
@@ -20,6 +22,7 @@ COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
 
 USE_GMAKE =	Yes
-MAKE_FLAGS =	FLAGS="${CFLAGS}"
+MAKE_FLAGS =	FLAGS="${CFLAGS}" \
+		JANET_LIBRARY="build/libjanet.so.${LIBjanet_VERSION}"
 
 .include <bsd.port.mk>
