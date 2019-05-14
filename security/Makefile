@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.545 2019/05/09 14:16:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.546 2019/05/14 07:06:34 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -60,6 +60,7 @@
      SUBDIR += fragrouter
      SUBDIR += fwbuilder
      SUBDIR += fwknop
+     SUBDIR += ghidra
      SUBDIR += gnupg
      SUBDIR += gnupg,card,ldap
      SUBDIR += gnupg2
