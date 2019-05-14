@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.56 2018/11/07 23:26:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2019/05/14 16:28:23 jca Exp $
 
 COMMENT=	GNU parser generator
 
-DISTNAME=	bison-3.2
+DISTNAME=	bison-3.3.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=bison/}
 EXTRACT_SUFX=	.tar.xz
