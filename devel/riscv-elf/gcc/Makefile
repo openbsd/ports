@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2018/11/09 15:29:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/14 17:20:34 jca Exp $
 
 COMMENT=	gcc for riscv-elf cross-development
 
 VERSION=	8.1.0
 DISTNAME=	gcc-${VERSION}
 PKGNAME=	riscv-elf-gcc-${VERSION}
-REVISION=	1
+REVISION=	2
 
 SUBST_VARS+=	VERSION
 
