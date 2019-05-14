@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2017/07/12 09:02:28 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2019/05/14 20:04:14 sthen Exp $
 
 COMMENT ?=	firmware binary images for ${FW_DRIVER}(4) driver
 
@@ -12,7 +12,9 @@ PERMIT_PACKAGE_CDROM ?=	  proprietary
 PERMIT_PACKAGE_FTP ?=	  proprietary
 PERMIT_DISTFILES_FTP ?=	  proprietary
 
+.if !defined(GH_ACCOUNT)
 MASTER_SITES ?=	http://firmware.openbsd.org/firmware-dist/
+.endif
 
 PKG_ARCH ?=	*
 PREFIX ?=	/etc
