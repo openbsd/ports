@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1853 2019/05/12 22:28:08 kn Exp $
+# $OpenBSD: Makefile,v 1.1854 2019/05/14 13:49:27 cwen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -989,6 +989,7 @@
      SUBDIR += p5-Rcs
      SUBDIR += p5-Readonly
      SUBDIR += p5-Readonly-XS
+     SUBDIR += p5-Ref-Util-XS
      SUBDIR += p5-Regexp-Copy
      SUBDIR += p5-Regexp-IPv6
      SUBDIR += p5-Regexp-Shellish
