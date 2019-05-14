@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.135 2019/04/18 16:56:03 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.136 2019/05/14 20:20:16 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -196,7 +196,7 @@ CONFIGURE_ARGS+=	--enable-dba=shared \
 COMMENT-gd=		image manipulation extensions for php
 LIB_DEPENDS-gd=		graphics/jpeg \
 			graphics/png
-WANTLIB-gd+=		X11 Xpm freetype jpeg m png16 pthread xcb z
+WANTLIB-gd+=		X11 Xpm freetype jpeg m png pthread xcb z
 .if ${BUILD_PACKAGES:M-gd}
 CONFIGURE_ARGS+=	--with-gd=shared \
 			--with-jpeg-dir=${LOCALBASE} \
@@ -361,8 +361,8 @@ CONFIGURE_ARGS+=	--with-pdo-dblib=shared,${LOCALBASE}
 
 # tidy
 COMMENT-tidy=		tidy HTML cleaner bindings
-LIB_DEPENDS-tidy=	www/tidyp
-WANTLIB-tidy=		pthread tidyp-1.04
+LIB_DEPENDS-tidy=	www/tidy
+WANTLIB-tidy=		pthread tidy
 .if ${BUILD_PACKAGES:M-tidy}
 CONFIGURE_ARGS+=	--with-tidy=shared,${LOCALBASE}
 .endif
