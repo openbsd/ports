@@ -1,0 +1,81 @@
+$OpenBSD: README,v 1.1 2019/05/14 15:03:18 jasper Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Setting up two OpenBSD peers
+============================
+
+Assumptions:
+Two nodes, wg1 and wg2 which will use 10.0.0.1 and 10.0.0.2 respectively within
+the VPN network. wg1 will be the "server" and wg2 the client. Both nodes use
+`tun0` as the tunneling interface. wg1 is reachable for wg2 on 192.168.1.1.
+
+Generating keys
+---------------
+
+First generate the private keys and derive the public keys from it for both the
+server and client:
+
+# wg genkey | tee server-private.key | wg pubkey > server-public.key
+# wg genkey | tee client-private.key | wg pubkey > client-public.key
+
+Networking setup
+----------------
+
+On wg1 a few setting are required:
+
+# sysctl net.inet.ip.forwarding=1
+# echo 'pass out on egress inet from (tun0:network) nat-to (egress:0)' >> /etc/pf.conf
+
+Configure the tun0 interfaces for wg1:
+
+# ifconfig tun2 up 10.0.0.1 10.0.0.2 netmask 255.255.255.0
+
+and wg2:
+
+# ifconfig tun2 up 10.0.0.2 10.0.0.1 netmask 255.255.255.0
+
+Configure the wireguard_go service on both nodes:
+
+# rcctl enable wireguard_go
+# rcctl set wireguard_go flags tun0
+# rcctl start wireguard_go
+
+Interface configuration
+-----------------------
+
+server.conf would be:
+
+----------8<----------
+[Interface]
+PrivateKey = <contents of server-private.key go here>
+ListenPort = 8080
+
+[Peer]
+PublicKey = <contents of client-public.key go here>
+AllowedIPs = 10.0.0.2/32
+----------8<----------
+
+Apply it on wg1:
+
+# wg setconf tun0 server.conf
+
+and client.conf:
+
+----------8<----------
+[Interface]
+PrivateKey = <contents of client-private.key go here>
+
+[Peer]
+PublicKey = <contents of server-public.key go here>
+AllowedIPs = 0.0.0.0/0
+Endpoint = 192.168.1.1:8080
+----------8<----------
+
+Apply it on wg2:
+
+# wg setconf tun0 client.conf
+
+Now you can reach 10.0.0.1 from wg2 via the tunnel.

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/13 15:10:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/14 15:03:18 jasper Exp $
 @bin bin/wg
 bin/wg-quick
 @man man/man8/wg-quick.8
@@ -7,3 +7,4 @@ share/bash-completion/
 share/bash-completion/completions/
 share/bash-completion/completions/wg
 share/bash-completion/completions/wg-quick
+share/doc/pkg-readmes/${PKGSTEM}
