@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/14 13:47:42 cwen Exp $
+${P5ARCH}/
+${P5ARCH}/Ref/
+${P5ARCH}/Ref/Util/
+${P5ARCH}/Ref/Util/XS.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Ref/
+${P5ARCH}/auto/Ref/Util/
+${P5ARCH}/auto/Ref/Util/XS/
+${P5ARCH}/auto/Ref/Util/XS/XS.so
+@man man/man3p/Ref::Util::XS.3p
