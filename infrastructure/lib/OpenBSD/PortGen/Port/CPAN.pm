@@ -1,4 +1,4 @@
-# $OpenBSD: CPAN.pm,v 1.7 2019/05/11 19:36:27 afresh1 Exp $
+# $OpenBSD: CPAN.pm,v 1.8 2019/05/14 15:00:01 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -182,7 +182,7 @@ sub fill_in_makefile
 	my ( $self, $di, $vi ) = @_;
 
 	$self->set_comment( $di->{abstract} );
-	$self->set_distname( $di->{name} );
+	$self->pick_distfile( $di->{archive} );
 	$self->set_license(
 		$di->{metadata}->{license}[0] eq 'unknown'
 		? ''
@@ -192,12 +192,6 @@ sub fill_in_makefile
 
 	$self->set_other( 'CPAN_AUTHOR', $di->{author} )
 	    if $self->needs_author($di);
-
-	my ($sufx) = $di->{archive} =~ /(\.[\.A-Za-z]+)$/;
-
-	if ( defined $sufx and $sufx ne '.tar.gz' ) {
-		$self->set_other( 'EXTRACT_SUFX', $sufx );
-	}
 }
 
 sub postextract

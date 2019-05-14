@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.15 2019/05/13 01:30:05 cwen Exp $
+# $OpenBSD: Port.pm,v 1.16 2019/05/14 15:00:01 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 # Copyright (c) 2019 Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -130,6 +130,38 @@ sub set_pkgname {
 	my ( $self, $pkgname ) = @_;
 
 	$self->{PKGNAME} = $pkgname;
+}
+
+sub pick_distfile
+{
+	my ( $self, @files ) = @_;
+
+	my ($distname, $ext);
+	foreach my $filename (@files) {
+		# from EXTRACT_CASES
+		($distname, $ext) = $filename =~ /^(.*)(\.(?:
+		    tar\.xz  | tar\.lzma
+		  | tar\.lz
+		  | zip
+		  | tar\.bz2 | tbz2    | tbz
+		  | shar\.gz | shar\.Z | sh\.Z | sh\.gz
+		  | shar     | shar\.sh
+		  | tar
+		  | tar\.gz  | tgz
+		))$/xms;
+
+		next unless $ext;
+
+		# These are our preferred suffixes
+		if ( $ext eq '.tar.gz' or $ext eq '.tgz' or $ext eq '.tar' ) {
+			last;
+		}
+	}
+
+	$self->add_notice("Failed to pick a distname from @files") unless $distname;
+
+	$self->set_other( EXTRACT_SUFX => $ext ) if $ext;
+	return $self->set_distname($distname);
 }
 
 sub set_distname
@@ -283,6 +315,7 @@ sub write_makefile
 	if (@template) {
 		%copy_values = map { $_->{key} => 1 }
 		    grep { $_->{name} ne 'REVISION' }
+		    grep { $_->{name} ne 'EXTRACT_SUFX' }
 		    grep { ref } @template;
 	} else {
 		my $tag = 'OpenBSD';
@@ -304,6 +337,10 @@ sub write_makefile
 		sort { $equals{$b} <=> $equals{$a} } keys %equals;
 	};
 	$default_equal ||= ' =';
+
+	# If we got an EXTRACT_SUFX, we don't need to print the default
+	delete $configs{EXTRACT_SUFX}
+	    if $configs{EXTRACT_SUFX} and $configs{EXTRACT_SUFX} eq '.tar.gz';
 
 	my @makefile;
 	foreach my $line (@template) {

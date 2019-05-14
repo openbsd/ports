@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.12 2019/05/12 20:23:33 afresh1 Exp $
+# $OpenBSD: PyPI.pm,v 1.13 2019/05/14 15:00:01 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -68,9 +68,22 @@ sub fill_in_makefile
 	$self->set_other( 'MODPY_PI',         'Yes' );
 	$self->set_other( 'MODPY_SETUPTOOLS', 'Yes' );
 	$self->set_comment( $di->{info}{summary} );
-	$self->set_other( 'MODPY_EGG_VERSION', $di->{info}{version} );
-	$self->set_distname( "$di->{info}{name}" . '-${MODPY_EGG_VERSION}' );
-	my $pkgname = $di->{info}->{name};
+
+	my $pkgname  = $di->{info}->{name};
+	my $version  = $di->{info}->{version};
+	my $distname = $self->pick_distfile(
+	     map { $_->{filename} } @{ $di->{urls} || [] } );
+
+	$self->add_notice("distname $distname does not match pkgname $pkgname")
+	    unless $distname =~ /^\Q$pkgname/;
+
+	$self->set_other( 'MODPY_EGG_VERSION', $version );
+	$distname =~ s/-\Q$version\E$/-\$\{MODPY_EGG_VERSION\}/
+	    or $self->add_notice("Didn't set distname version to \${MODPY_EGG_VERSION}");
+
+	$self->set_distname($distname);
+
+	# TODO: These assume the PKGNAME is the DISTNAME
 	my $to_lower = $pkgname =~ /\p{Upper}/ ? ':L' : '';
 	if ($pkgname =~ /^python-/) {
 		$self->set_pkgname("\${DISTNAME:S/^python-/py-/$to_lower}");
@@ -78,6 +91,7 @@ sub fill_in_makefile
 	elsif ($pkgname !~ /^py-/) {
 		$self->set_pkgname("py-\${DISTNAME$to_lower}");
 	}
+
 	$self->set_modules('lang/python');
 	$self->set_other( 'HOMEPAGE', $di->{info}{home_page} );
 	$self->set_license( $di->{info}{license} );
