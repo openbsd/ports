@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Host.pm,v 1.9 2019/05/08 18:26:43 espie Exp $
+# $OpenBSD: Host.pm,v 1.10 2019/05/15 13:53:17 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -49,6 +49,11 @@ sub new
 	return $hosts->{$name};
 }
 
+sub retrieve
+{
+	my ($class, $name) = @_;
+	return $hosts->{$name};
+}
 sub fetch_host
 {
 	my ($class, $prop) = @_;

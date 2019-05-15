@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.16 2019/05/12 14:09:11 espie Exp $
+# $OpenBSD: External.pm,v 1.17 2019/05/15 13:53:17 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -87,11 +87,15 @@ sub wipe
 			$fh->print($p, " is still running\n");
 			return;
 		}
-		$fh->print("cleaning up $info->{locked}\n");
-		my $w = DPB::PkgPath->new($info->{locked});
-		# steal a temporary core
-		$state->engine->wipe($w, 
-		    DPB::Core->new_noreg(DPB::Host->new($info->{host})));
+		my $h = DPB::Host->retrieve($info->{host});
+		if (!defined $h) {
+			$fh->print("Can't run wipe on $info->{host}\n");
+		} else {
+			$fh->print("cleaning up $info->{locked}\n");
+			my $w = DPB::PkgPath->new($info->{locked});
+			# steal a temporary core
+			$state->engine->wipe($w, DPB::Core->new_noreg($h));
+		}
 	}
 }
 
