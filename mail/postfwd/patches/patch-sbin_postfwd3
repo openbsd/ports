@@ -1,0 +1,14 @@
+$OpenBSD: patch-sbin_postfwd3,v 1.1 2019/05/15 06:44:23 giovanni Exp $
+
+Index: sbin/postfwd3
+--- sbin/postfwd3.orig
++++ sbin/postfwd3
+@@ -74,7 +74,7 @@ our %postfwd_settings = (
+ 		no_client_stdout => 1,
+ 	},
+ 	master => {
+-		pid_file         => "/var/tmp/$NAME-master.pid",
++		pid_file         => "/var/run/$NAME-master.pid",
+ 		watchdog	 => 60,
+ 		failures	 => 7,
+ 		respawn		 => 4,
