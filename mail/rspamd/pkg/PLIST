@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2019/04/18 16:12:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.30 2019/05/15 08:19:13 sthen Exp $
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd:daemon:Rspamd Account:/nonexistent:/sbin/nologin
 !%%no_luajit%%
@@ -292,6 +292,7 @@ share/rspamd/lualib/rspamadm/mime.lua
 share/rspamd/lualib/rspamadm/rescore.lua
 share/rspamd/lualib/rspamadm/stat_convert.lua
 share/rspamd/lualib/rspamadm/template.lua
+share/rspamd/lualib/rspamadm/vault.lua
 share/rspamd/lualib/tableshape.lua
 share/rspamd/plugins/
 share/rspamd/plugins/antivirus.lua
@@ -390,6 +391,7 @@ share/rspamd/www/js/lib/domReady.js
 share/rspamd/www/js/lib/footable.min.js
 share/rspamd/www/js/lib/humanize.min.js
 share/rspamd/www/js/lib/jquery-3.3.1.min.js
+share/rspamd/www/js/lib/jquery.stickytabs.min.js
 share/rspamd/www/js/lib/nprogress.min.js
 share/rspamd/www/js/lib/require.min.js
 share/rspamd/www/js/lib/visibility.min.js
