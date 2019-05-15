@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/09 17:40:27 semarie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/15 12:43:24 semarie Exp $
 
 COMMENT =		3-tiers general purpose business application framework
 
@@ -25,8 +25,6 @@ RUN_DEPENDS +=		databases/py-psycopg2${MODPY_FLAVOR} \
 
 #RUN_DEPENDS +=		graphics/pydot	# optional, port is py2 only
 #RUN_DEPENDS +=		levenshtein	# optional, not ported
-
-TEST_DEPENDS +=		${RUN_DEPENDS}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/trytond
