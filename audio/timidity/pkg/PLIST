@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/08/02 15:21:48 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/05/15 13:37:32 bcallah Exp $
 @bin bin/timidity
 @man man/man1/timidity.1
 @man man/man5/timidity.cfg.5
@@ -189,4 +189,3 @@ share/timidity/TimGM6mb/WarmPad.pat
 share/timidity/TimGM6mb/Whistle.pat
 share/timidity/TimGM6mb/WoodBlock.pat
 share/timidity/TimGM6mb/Xylophone.pat
-%%xaw%%

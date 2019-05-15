@@ -1,6 +1,9 @@
---- TiMidity++-2.13.2/timidity/freq.c.orig	Tue Sep  7 07:27:26 2004
-+++ TiMidity++-2.13.2/timidity/freq.c	Tue Mar 24 01:00:15 2009
-@@ -371,7 +371,7 @@ float freq_fourier(Sample *sp, int *chord)
+$OpenBSD: patch-TiMidity++-2_15_0_timidity_freq_c,v 1.1 2019/05/15 13:37:32 bcallah Exp $
+
+Index: TiMidity++-2.15.0/timidity/freq.c
+--- TiMidity++-2.15.0/timidity/freq.c.orig
++++ TiMidity++-2.15.0/timidity/freq.c
+@@ -368,7 +368,7 @@ float freq_fourier(Sample *sp, int *chord)
      /* go out 2 zero crossings in both directions, starting at maxpos */
      /* find the peaks after the 2nd crossing */
      minoffset1 = 0;

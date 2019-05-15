@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.48 2019/04/02 06:54:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2019/05/15 13:37:32 bcallah Exp $
 
 COMMENT=	MIDI to WAV renderer and player
 
-V=		2.13.2
+V=		2.15.0
 DISTNAME=	TiMidity++-${V}
 PKGNAME=	timidity-${V}
-REVISION=	6
 CATEGORIES=	audio
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=timidity/}
-MASTER_SITES0=	https://devio.us/~bcallah/source/
+MASTER_SITES0=	https://mirrors.nycbug.org/pub/distfiles/
 TIINS=		TimGM6mb-20170802.tar.gz
 DISTFILES=	${TIINS}:0 ${DISTNAME}.tar.gz
 
@@ -21,7 +20,7 @@ MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 #	"License: GNU GPL, version 2; Courtesy of Tim Brechbill"
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c m ncurses sndio
+WANTLIB += c curses m sndio
 
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
