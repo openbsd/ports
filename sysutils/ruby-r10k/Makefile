@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2019/02/26 16:35:32 sebastia Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/15 07:07:44 sebastia Exp $
 
 COMMENT =	Puppet module management
 
-DISTNAME =	r10k-3.1.1
+DISTNAME =	r10k-3.2.0
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/puppetlabs/r10k
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
@@ -11,6 +11,9 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/ruby
+
+GEM_FLAGS =		--no-format-executable
+
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 RUN_DEPENDS += converters/ruby-multi_json,${MODRUBY_FLAVOR}>=1.10,<2 \
 		devel/ruby-colored,${MODRUBY_FLAVOR}=1.2 \

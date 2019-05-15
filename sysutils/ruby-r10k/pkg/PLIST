@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/02/26 16:35:32 sebastia Exp $
-${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
+@comment $OpenBSD: PLIST,v 1.15 2019/05/15 07:07:44 sebastia Exp $
+${GEM_BIN}/r10k
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitattributes
@@ -38,6 +38,7 @@ ${GEM_LIB}/gems/${DISTNAME}/docker/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/docker/.rspec
 ${GEM_LIB}/gems/${DISTNAME}/docker/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/docker/Makefile
+${GEM_LIB}/gems/${DISTNAME}/docker/README.md
 ${GEM_LIB}/gems/${DISTNAME}/docker/ci/
 ${GEM_LIB}/gems/${DISTNAME}/docker/ci/build.ps1
 ${GEM_LIB}/gems/${DISTNAME}/docker/distelli-manifest.yml
@@ -50,6 +51,7 @@ ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/dockerfile_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/fixtures/
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/fixtures/Puppetfile
+${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/
 ${GEM_LIB}/gems/${DISTNAME}/integration/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/integration/README.mkd
@@ -322,6 +324,11 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/module/forge/eight_hundred/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/module/forge/eight_hundred/Modulefile
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/module/forge/eight_hundred/metadata.json
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_cachedir.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_generate_types.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_puppet_path.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/argument-error/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/argument-error/Puppetfile
@@ -470,5 +477,4 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/subprocess/runner/windows_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/subprocess/subprocess_error_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/subprocess_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util/symbolize_keys_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/test
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
