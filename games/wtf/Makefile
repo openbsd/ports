@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.74 2019/05/09 18:15:17 bcallah Exp $
+# $OpenBSD: Makefile,v 1.75 2019/05/15 17:39:41 bcallah Exp $
 
 COMMENT =	translate common internet acronyms
 
-DISTNAME =	wtf-20190424
+DISTNAME =	wtf-20190507
 CATEGORIES =	games
 
 HOMEPAGE =	https://sourceforge.net/projects/bsdwtf/
