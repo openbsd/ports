@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.70 2018/12/30 17:08:09 pascal Exp $
+# $OpenBSD: Makefile,v 1.71 2019/05/15 22:06:06 sthen Exp $
 
 COMMENT-main=	garbage collection and memory leak detection for C and C++
 COMMENT-atomic=	access to hardware provided atomic memory operations
 
 VERSION=	7.6.0
 LIBAO_VERSION=	7.6.6
+# has various machine-dependent parts; updates definitely need
+# tests on more than just amd64.
 
 DISTNAME=	gc-${VERSION}
 
 PKGNAME-atomic=	libatomic_ops-${LIBAO_VERSION}
 PKGNAME-main=	boehm-gc-${VERSION}
-REVISION-main=	2
+REVISION=	3
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		libatomic_ops-${LIBAO_VERSION}${EXTRACT_SUFX}
@@ -20,14 +22,14 @@ MULTI_PACKAGES=	-main -atomic
 SHARED_LIBS +=	gc		4.0	# 1.3
 SHARED_LIBS +=	gccpp		0.0	# 1.3
 SHARED_LIBS +=	cord		2.3	# 1.3
-SHARED_LIBS +=  atomic_ops	2.0 	# 1.3
-SHARED_LIBS +=  atomic_ops_gpl	2.0 	# 1.3
+SHARED_LIBS +=  atomic_ops	2.0	# 1.3
+SHARED_LIBS +=  atomic_ops_gpl	2.0	# 1.3
 
 CATEGORIES=	devel
 
-MASTER_SITES=	${HOMEPAGE}gc_source/
+MASTER_SITES=	https://hboehm.info/gc/gc_source/
 
-HOMEPAGE=	http://hboehm.info/gc/
+HOMEPAGE=	https://hboehm.info/gc/
 
 # currently works only on most ELF archs
 NOT_FOR_ARCHS=	m88k
