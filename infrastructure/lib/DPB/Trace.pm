@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Trace.pm,v 1.2 2015/10/30 09:46:45 espie Exp $
+# $OpenBSD: Trace.pm,v 1.3 2019/05/15 13:51:07 espie Exp $
 #
 # Copyright (c) 2015 Marc Espie <espie@openbsd.org>
 #
@@ -50,11 +50,12 @@ sub trace_message
 	return $msg;
 }
 
-my ($reporter, $sig, $olddie, $oldwarn, $logfile);
+my ($reporter, $sig, $olddie, $oldwarn, $logfile, $cleanup);
 sub setup
 {
 	my $class = shift;
 	$sig = shift;
+	$cleanup = shift;
 	$olddie = $SIG{__DIE__};
 	$oldwarn = $SIG{__WARN__};
 	$sig->{__WARN__} = sub {
@@ -88,6 +89,7 @@ sub setup
 			print $logfile $msg;
 			print $logfile '-'x70, "\n";
 		}
+		&$cleanup;
 		die $msg;
 	};
 

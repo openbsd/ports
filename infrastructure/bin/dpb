@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.128 2019/05/12 10:37:04 espie Exp $
+# $OpenBSD: dpb,v 1.129 2019/05/15 13:51:07 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -98,23 +98,25 @@ sub affinityclass
 my $subdirlist = {};
 
 my $master_pid = $$;
+
+my $cleanup = 
+    sub {
+    	my $S = shift;
+	if ($$ == $master_pid) {
+		$> = 0;
+		DPB::Core->cleanup($S // "INT", 0);
+	}
+    };
+
 for my $S (qw(INT HUP TERM QUIT)) {
 	$SIG{$S} = sub {
-	    if ($$ == $master_pid) {
-		    $> = 0;
-		    DPB::Core->cleanup($S, 0);
-	#	    my $g = getpgrp();
-	#	    kill $S => -$g; # or ask Core.pm ?
-	    } else {
-#		print STDERR "Entering $S handler from $$ ($master_pid)\n";
-#	    	print STDERR join("\n", DPB::Trace::trace_message()), "\n";
-	    }
+	    &$cleanup($S);
 	    $SIG{$S} = 'DEFAULT';
 	    kill $S => $$;
 	};
 }
 
-DPB::Trace->setup(\%SIG);
+DPB::Trace->setup(\%SIG, $cleanup);
 
 my $state = DPB::State->new;
 $state->handle_options;
