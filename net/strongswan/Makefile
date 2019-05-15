@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/01 14:05:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/15 11:52:23 cwen Exp $
 
 COMMENT=	IPsec-based VPN software (IKEv1/IKEv2) with XAUTH and EAP
 
@@ -6,6 +6,7 @@ DISTNAME=	strongswan-5.7.2
 # don't want versions like strongswan-5.8.0dr2
 PORTROACH=	limit:.*[0-9]\.[0-9]\.[0-9]$$
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
 SHARED_LIBS +=	charon                    0.0 # 0.0
 SHARED_LIBS +=	ipsec                     0.0 # 0.0
@@ -43,7 +44,6 @@ LIB_DEPENDS=	devel/gmp \
 		security/botan2
 
 CONFIGURE_ARGS+= \
-	--enable-aesni \
 	--enable-chapoly \
 	--enable-eap-gtc \
 	--enable-eap-identity \
@@ -56,6 +56,14 @@ CONFIGURE_ARGS+= \
 	--enable-md4 \
 	--enable-pkcs11 \
 	--enable-xauth-eap
+
+# AES-NI support builds only on x86
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS+= --enable-aesni
+PKG_ARGS+= -Daesni=1
+.else
+PKG_ARGS+= -Daesni=0
+.endif
 
 # either botan or openssl for DH/ECDH/HMAC
 # (can probably be made to work with libressl with sufficient #ifdefs)

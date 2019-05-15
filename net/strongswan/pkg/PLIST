@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/31 19:47:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/15 11:52:23 cwen Exp $
+%%aesni%%
 @bin bin/pki
 lib/ipsec/
 @lib lib/ipsec/libcharon.so.${LIBcharon_VERSION}
@@ -9,7 +10,6 @@ lib/ipsec/
 @lib lib/ipsec/libvici.so.${LIBvici_VERSION}
 lib/ipsec/plugins/
 lib/ipsec/plugins/libstrongswan-aes.so
-lib/ipsec/plugins/libstrongswan-aesni.so
 lib/ipsec/plugins/libstrongswan-attr.so
 lib/ipsec/plugins/libstrongswan-botan.so
 lib/ipsec/plugins/libstrongswan-chapoly.so
@@ -127,8 +127,6 @@ share/examples/strongswan/strongswan.d/charon.conf
 @sample ${SYSCONFDIR}/strongswan.d/charon.conf
 share/examples/strongswan/strongswan.d/charon/aes.conf
 @sample ${SYSCONFDIR}/strongswan.d/charon/aes.conf
-share/examples/strongswan/strongswan.d/charon/aesni.conf
-@sample ${SYSCONFDIR}/strongswan.d/charon/aesni.conf
 share/examples/strongswan/strongswan.d/charon/attr.conf
 @sample ${SYSCONFDIR}/strongswan.d/charon/attr.conf
 share/examples/strongswan/strongswan.d/charon/botan.conf
@@ -272,7 +270,6 @@ share/strongswan/templates/
 share/strongswan/templates/config/
 share/strongswan/templates/config/plugins/
 share/strongswan/templates/config/plugins/aes.conf
-share/strongswan/templates/config/plugins/aesni.conf
 share/strongswan/templates/config/plugins/attr.conf
 share/strongswan/templates/config/plugins/botan.conf
 share/strongswan/templates/config/plugins/chapoly.conf
