@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2019/04/23 11:36:57 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.20 2019/05/15 06:42:17 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
@@ -133,6 +133,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/object/try.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/object/with_options.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/compare_range.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/conversions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/each.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/include_range.rb
