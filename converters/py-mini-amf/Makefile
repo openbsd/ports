@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/15 12:04:34 kmos Exp $
 
 COMMENT =		serialize and deserialize AMF data
 
@@ -25,7 +25,5 @@ FLAVOR ?=
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			textproc/py-defusedxml${MODPY_FLAVOR}
-
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>

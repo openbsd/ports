@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/04/28 20:51:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/15 12:04:35 kmos Exp $
 
 COMMENT =		Object Relational Manager
 
@@ -22,8 +22,7 @@ MODPY_PI =		Yes
 MODULES =		lang/python
 RUN_DEPENDS =		www/py-formencode${MODPY_FLAVOR} \
 			devel/py-dispatcher${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-nose${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
 			devel/py-py${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR} \
 			${BASE_PKGPATH}${MODPY_FLAVOR}=${MODPY_EGG_VERSION}

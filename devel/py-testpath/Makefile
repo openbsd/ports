@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/13 18:06:44 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/15 12:04:37 kmos Exp $
 
 COMMENT =		test utilities working with files and commands
 
@@ -22,8 +22,7 @@ FLAVORS =		python3
 FLAVOR ?=
 
 BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-nose${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 
 .if !${FLAVOR:Mpython3}
 RUN_DEPENDS =		devel/py-pathlib${MODPY_FLAVOR}

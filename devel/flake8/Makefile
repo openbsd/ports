@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/04/28 20:51:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/15 12:04:35 kmos Exp $
 
 COMMENT =		modular python code checker wrapping pep8 and pyflakes
 
@@ -23,8 +23,7 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	tests
 
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-mock${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
 
 RUN_DEPENDS =		devel/py-codestyle${MODPY_FLAVOR} \
 			devel/py-mccabe${MODPY_FLAVOR} \

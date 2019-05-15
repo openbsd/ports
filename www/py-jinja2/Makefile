@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/04/28 20:52:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/05/15 12:04:42 kmos Exp $
 
 COMMENT =		fast, optionally sandboxed, Python template engine
 
@@ -22,7 +22,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
 RUN_DEPENDS =		textproc/py-MarkupSafe${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 FLAVORS =		python3
 FLAVOR ?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/13 19:03:54 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/15 12:04:42 kmos Exp $
 
 COMMENT =		easy whitelist-based HTML-sanitizing tool
 
@@ -25,6 +25,5 @@ FLAVOR ?=
 RUN_DEPENDS =		devel/py-html5lib${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
 BUILD_DEPENDS =		devel/py-test-runner${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>

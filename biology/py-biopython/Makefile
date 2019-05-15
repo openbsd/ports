@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/05/10 16:50:05 danj Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/15 12:04:34 kmos Exp $
 
 COMMENT=		Python tools for computational molecular biology
 
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	devel/swig \
 		math/py-numpy
 RUN_DEPENDS=	math/py-numpy \
 		print/py-reportlab
-TEST_DEPENDS=	${RUN_DEPENDS}
 
 CFLAGS+=	-fPIC
 

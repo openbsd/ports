@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/04/29 12:55:44 bket Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/15 12:04:37 kmos Exp $
 
 COMMENT =		py.test plugin to validate Jupyter notebooks
 
@@ -22,8 +22,7 @@ RUN_DEPENDS =		devel/py-ipykernel${MODPY_FLAVOR} \
 			devel/py-nbformat${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-nbval${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-nbval${MODPY_FLAVOR} \
 			math/py-sympy${MODPY_FLAVOR}
 
 FLAVORS =		python3

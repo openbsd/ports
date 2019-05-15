@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/28 20:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/15 12:04:41 kmos Exp $
 
 COMMENT =		datetime-iterator for cron-like formats
 
@@ -22,6 +22,5 @@ FLAVORS =		python3
 FLAVOR ?=
 
 RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>

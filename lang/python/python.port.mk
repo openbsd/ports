@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.108 2019/04/27 21:28:30 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.109 2019/05/15 12:04:34 kmos Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -72,10 +72,9 @@ MODPY_RUN_DEPENDS =	lang/python/${MODPY_VERSION}
 MODPY_LIB_DEPENDS =	lang/python/${MODPY_VERSION}
 _MODPY_BUILD_DEPENDS =	lang/python/${MODPY_VERSION}
 
+MODPY_TEST_DEPENDS =	${RUN_DEPENDS}
 .if ${MODPY_PYTEST:L} == "yes"
-MODPY_TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR}
-.else
-MODPY_TEST_DEPENDS =	# Leave blank for now for non-pytest
+MODPY_TEST_DEPENDS +=	devel/py-test${MODPY_FLAVOR}
 .endif
 
 .if ${NO_BUILD:L} == "no"

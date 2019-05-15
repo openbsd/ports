@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:42 kmos Exp $
 
 COMMENT =	parser for the Open Financial Exchange file format
 
@@ -24,7 +24,5 @@ FLAVOR ?=
 RUN_DEPENDS +=		devel/py-six${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR} \
 			www/py-beautifulsoup4${MODPY_FLAVOR}
-
-TEST_DEPENDS +=		${RUN_DEPENDS}
 
 .include <bsd.port.mk>

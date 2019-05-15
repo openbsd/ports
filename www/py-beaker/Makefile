@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/04/28 20:51:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/05/15 12:04:42 kmos Exp $
 
 COMMENT =	session and caching library with wsgi middleware
 
@@ -34,8 +34,7 @@ NO_TEST =	Yes
 #		devel/py-nose${MODPY_FLAVOR} \
 #		misc/py-memcached${MODPY_FLAVOR} \
 #		security/py-cryptography${MODPY_FLAVOR} \
-#		www/py-webtest${MODPY_FLAVOR} \
-#		${RUN_DEPENDS}
+#		www/py-webtest${MODPY_FLAVOR}
 
 # needs a running memcached instance in 127.0.0.1:11211
 TEST_IS_INTERACTIVE = Yes

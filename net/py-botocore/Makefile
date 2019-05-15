@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.382 2019/05/13 21:20:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.383 2019/05/15 12:04:39 kmos Exp $
 
 # !!! do not update blindly: sysutils/awscli requires a specific version
 
@@ -31,8 +31,7 @@ FLAVORS=		python3
 FLAVOR ?=
 
 # XXX py-behave, unported yet
-TEST_DEPENDS=		${RUN_DEPENDS} \
-			${BUILD_PKGPATH} \
+TEST_DEPENDS=		${BUILD_PKGPATH} \
 			devel/py-mock${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR}
 

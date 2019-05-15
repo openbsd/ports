@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/05/13 18:06:44 danj Exp $
+# $OpenBSD: Makefile,v 1.34 2019/05/15 12:04:37 kmos Exp $
 
 COMMENT=		cross-project testing tool for Python
 
@@ -39,7 +39,6 @@ RUN_DEPENDS +=		devel/py-funcsigs \
 .endif
 
 TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
-			${RUN_DEPENDS} \
 			devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR} \

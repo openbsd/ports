@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/04/21 18:40:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/15 12:04:34 kmos Exp $
 
 COMMENT =	Python DB-API 2.0 compliant interface to PostgreSQL
 
@@ -25,7 +25,6 @@ MODULES =	lang/python
 BUILD_DEPENDS =		databases/postgresql
 RUN_DEPENDS =		devel/py-mxDateTime
 LIB_DEPENDS =		databases/postgresql
-TEST_DEPENDS =	${RUN_DEPENDS}
 
 # To run the tests, create and start a test database as follows:
 #     createdb -E UNICODE pypgsql

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/09 00:40:38 feinerer Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:40 kmos Exp $
 
 COMMENT =		Python port of libaxolotl
 
@@ -23,6 +23,5 @@ FLAVOR ?=
 RUN_DEPENDS =		devel/py-protobuf${MODPY_FLAVOR} \
 			security/py-axolotl-curve25519${MODPY_FLAVOR} \
 			security/py-cryptography${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>

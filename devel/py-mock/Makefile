@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/04/28 20:51:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/15 12:04:36 kmos Exp $
 
 COMMENT=		python mocking and patching library for testing
 
@@ -17,7 +17,6 @@ MODULES=		lang/python
 BUILD_DEPENDS=		devel/py-pbr${MODPY_FLAVOR}
 RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR} \
 			devel/py-pbr${MODPY_FLAVOR}
-TEST_DEPENDS=		${RUN_DEPENDS}
 
 FLAVORS =		python3
 FLAVOR ?=

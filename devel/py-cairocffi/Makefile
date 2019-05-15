@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/13 18:06:43 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:35 kmos Exp $
 
 COMMENT =		cffi-based cairo bindings for Python
 
@@ -17,7 +17,6 @@ MODULES =		lang/python
 
 RUN_DEPENDS =		devel/py-cffi${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS}
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

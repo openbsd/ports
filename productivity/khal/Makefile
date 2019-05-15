@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/28 20:51:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/15 12:04:40 kmos Exp $
 
 COMMENT =		standards based terminal calendar
 
@@ -36,8 +36,7 @@ RUN_DEPENDS =		devel/py-atomicwrites${MODPY_FLAVOR} \
 			devel/py-urwid${MODPY_FLAVOR} \
 			devel/py-xdg${MODPY_FLAVOR} \
 			productivity/vdirsyncer
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-freezegun${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-freezegun${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

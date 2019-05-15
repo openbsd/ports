@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/13 19:03:53 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/15 12:04:42 kmos Exp $
 
 COMMENT =		Sphinx extension to support docstrings in Numpy format
 
@@ -23,8 +23,7 @@ RUN_DEPENDS =		graphics/py-matplotlib${MODPY_FLAVOR} \
 			textproc/py-sphinx${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR}
 
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-nose${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 
 do-test:
 	cd ${WRKSRC} && \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/15 12:04:36 kmos Exp $
 
 COMMENT =		parser/generator of iCalendar files
 
@@ -23,8 +23,7 @@ MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-tz${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-coverage${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
 

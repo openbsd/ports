@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/03/29 19:45:16 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/15 12:04:40 kmos Exp $
 
 COMMENT =	FireEye Labs Obfuscated String Solver
 
@@ -26,8 +26,7 @@ RUN_DEPENDS =	textproc/py-yaml \
 		security/py-viv_utils \
 		devel/py-enum34
 
-TEST_DEPENDS =	devel/py-test \
-		${RUN_DEPENDS}
+TEST_DEPENDS =	devel/py-test
 
 NO_TEST =	Yes
 

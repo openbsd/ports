@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/04/28 20:51:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/15 12:04:40 kmos Exp $
 
 COMMENT =		slixmpp is an elegant Python library for XMPP
 
@@ -24,8 +24,7 @@ RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR} \
 			devel/py-asn1-modules${MODPY_FLAVOR} \
 			net/py-aiodns${MODPY_FLAVOR} \
 			www/py-aiohttp
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			security/gnupg
+TEST_DEPENDS =		security/gnupg
 
 do-test:
 	@cd ${WRKSRC} && ${MODPY_BIN} run_tests.py

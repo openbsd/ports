@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/04/28 20:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/15 12:04:41 kmos Exp $
 
 COMMENT =	Python library for OAuth
 
@@ -26,8 +26,7 @@ RUN_DEPENDS =	devel/py-blinker${MODPY_FLAVOR} \
 
 TEST_DEPENDS =	devel/py-nose${MODPY_FLAVOR} \
 		devel/py-coverage${MODPY_FLAVOR} \
-		devel/py-mock${MODPY_FLAVOR} \
-		${RUN_DEPENDS}
+		devel/py-mock${MODPY_FLAVOR}
 
 FLAVORS =	python3
 FLAVOR ?=

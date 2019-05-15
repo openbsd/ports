@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/10 16:50:05 danj Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/15 12:04:40 kmos Exp $
 
 COMMENT=		Python XMPP and Jabber implementation
 
@@ -23,7 +23,6 @@ MODULES=	lang/python
 BUILD_DEPENDS=	textproc/libxml,-python
 RUN_DEPENDS=	textproc/libxml,-python \
 		net/py-dnspython
-TEST_DEPENDS=${RUN_DEPENDS}
 
 MODPY_ADJ_FILES=examples/*.py
 

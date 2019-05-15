@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/15 12:04:35 kmos Exp $
 
 COMMENT =		lightweight Python package to check if a file is binary
 
@@ -19,8 +19,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
 
 RUN_DEPENDS =		textproc/py-chardet${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-hypothesis${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR}
 
 FLAVORS +=		python3
 FLAVOR ?=

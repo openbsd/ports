@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:42 kmos Exp $
 
 COMMENT =		freezes a Flask application into a set of static files
 
@@ -23,7 +23,6 @@ FLAVOR ?=
 
 BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
 RUN_DEPENDS +=		www/py-flask${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 post-build:
 	cd ${WRKBUILD}/docs && \

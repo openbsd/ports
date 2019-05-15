@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/19 13:51:02 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/15 12:04:36 kmos Exp $
 
 COMMENT =	extract metadata using Hachoir library
 
@@ -21,8 +21,6 @@ RUN_DEPENDS =	devel/py-hachoir-core \
 
 MODPY_SETUP_ARGS = --disable-qt
 	
-TEST_DEPENDS =	${RUN_DEPENDS}
-
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} test_doc.py -v
 

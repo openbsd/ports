@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/27 06:17:24 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/15 12:04:37 kmos Exp $
 
 COMMENT =		TeX Live texmf subsetter tool and Python library.
 
@@ -20,8 +20,7 @@ MODPY_SETUPTOOLS =	Yes
 
 MODULES =		lang/python
 RUN_DEPENDS +=		databases/py-sqlalchemy
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-test
+TEST_DEPENDS =		devel/py-test
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 # pre-build database for last two texlive versions.

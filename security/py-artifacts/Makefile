@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/28 20:51:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/15 12:04:40 kmos Exp $
 
 COMMENT =	ForensicArtifacts.com Artifact Repository
 
@@ -24,8 +24,7 @@ FLAVORS =	python3
 FLAVOR ?=
 
 RUN_DEPENDS =	textproc/py-yaml${MODPY_FLAVOR}
-TEST_DEPENDS =	${RUN_DEPENDS} \
-		devel/py-yapf${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-yapf${MODPY_FLAVOR}
 MAKE_ENV +=	LC_CTYPE='en_US.UTF-8'
 
 .include <bsd.port.mk>

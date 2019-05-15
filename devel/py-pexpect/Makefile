@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/13 18:06:43 danj Exp $
+# $OpenBSD: Makefile,v 1.32 2019/05/15 12:04:37 kmos Exp $
 
 COMMENT=		pure Python Expect-like module
 
@@ -21,8 +21,7 @@ MODULES=		lang/python
 RUN_DEPENDS =		devel/py-ptyprocess${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			textproc/py-sphinx${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			shells/bash
+TEST_DEPENDS =		shells/bash
 
 FLAVORS =		python3
 FLAVOR ?=

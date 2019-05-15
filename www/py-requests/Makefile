@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/04/28 20:52:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/05/15 12:04:43 kmos Exp $
 
 COMMENT=		elegant and simple HTTP library for Python
 
@@ -22,8 +22,7 @@ RUN_DEPENDS=		devel/py-certifi${MODPY_FLAVOR} \
 			net/py-idna${MODPY_FLAVOR} \
 			textproc/py-chardet${MODPY_FLAVOR} \
 			www/py-urllib3${MODPY_FLAVOR}
-TEST_DEPENDS=		${RUN_DEPENDS} \
-			devel/py-test-cov${MODPY_FLAVOR} \
+TEST_DEPENDS=		devel/py-test-cov${MODPY_FLAVOR} \
 			devel/py-test-mock${MODPY_FLAVOR} \
 			devel/py-test-httpbin${MODPY_FLAVOR} \
 			devel/py-test-xdist${MODPY_FLAVOR} \

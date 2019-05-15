@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/01/08 19:26:11 danj Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/15 12:04:43 kmos Exp $
 
 COMMENT=		pluggable command-line frontend
 
@@ -24,8 +24,7 @@ RUN_DEPENDS=		devel/py-cheetah \
 # NOTE: regression tests won't pass, because they need ZPTKit (which
 # has shitloads of dependencies) and FakePlugin.  There isn't much
 # point in porting them.
-TEST_DEPENDS=	${RUN_DEPENDS} \
-			devel/py-nose \
+TEST_DEPENDS=		devel/py-nose \
 			devel/py-test \
 			devel/py-py
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/28 20:51:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/15 12:04:38 kmos Exp $
 
 COMMENT =	linter for YAML files
 
@@ -20,7 +20,6 @@ MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	devel/py-pathspec${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR}
-TEST_DEPENDS =	${RUN_DEPENDS}
 
 FLAVORS =	python3
 FLAVOR ?=

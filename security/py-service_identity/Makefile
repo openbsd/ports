@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/15 12:04:41 kmos Exp $
 
 COMMENT =		service identity verification for pyOpenSSL/py-cryptography
 
@@ -27,8 +27,6 @@ RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR} \
 			net/py-idna${MODPY_FLAVOR} \
 			security/py-cryptography${MODPY_FLAVOR} \
 			security/py-openssl${MODPY_FLAVOR}
-
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 FLAVORS =		python3
 FLAVOR ?=

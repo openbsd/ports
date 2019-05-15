@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/04/28 20:51:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/05/15 12:04:35 kmos Exp $
 
 COMMENT =		automation tool
 
@@ -20,8 +20,7 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 RUN_DEPENDS =		devel/py-cloudpickle${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
 
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
+TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
 			devel/py-test${MODPY_FLAVOR}
 
 do-test:

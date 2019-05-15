@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/15 12:04:42 kmos Exp $
 
 COMMENT =		YAML 1.2 loader/dumper package for Python
 
@@ -23,7 +23,6 @@ WANTLIB =		${MODPY_WANTLIB} pthread
 
 .if !${FLAVOR:Mpython3}
 RUN_DEPENDS =		devel/py-ruamel.ordereddict${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS}
 .endif
 
 .include <bsd.port.mk>

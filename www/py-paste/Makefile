@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/09/29 10:52:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/15 12:04:43 kmos Exp $
 
 COMMENT =		tools for using web server gateway interface stack
 
@@ -18,8 +18,7 @@ MODPY_PI =		Yes
 
 MODULES =		lang/python
 RUN_DEPENDS =		www/py-flup
-TEST_DEPENDS =	${RUN_DEPENDS} \
-			${BASE_PKGPATH} \
+TEST_DEPENDS =		${BASE_PKGPATH} \
 			devel/py-py \
 			devel/py-test
 

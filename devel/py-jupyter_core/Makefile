@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/05 15:44:12 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/15 12:04:36 kmos Exp $
 
 COMMENT =		Jupyter core package
 
@@ -12,8 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://jupyter.org/
 
 RUN_DEPENDS =		devel/py-traitlets${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/ipython${MODPY_FLAVOR}>=5.1.0 \
+TEST_DEPENDS =		devel/ipython${MODPY_FLAVOR}>=5.1.0 \
 			devel/py-ipykernel${MODPY_FLAVOR}>=4.5.2
 
 # BSD

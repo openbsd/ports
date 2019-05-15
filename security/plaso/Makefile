@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/09/07 19:47:09 rpointel Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/15 12:04:40 kmos Exp $
 
 COMMENT =		engine and tools to automate creation of super timeline
 
@@ -77,8 +77,7 @@ RUN_DEPENDS +=	devel/ipython \
 		devel/py-dtfabric \
 		devel/py-biplist
 
-TEST_DEPENDS +=	devel/py-test \
-		${RUN_DEPENDS}
+TEST_DEPENDS +=	devel/py-test
 
 # py-elasticsearch in ports is > 5.5.1
 # mark elasticsearch as not required, so we can use plaso

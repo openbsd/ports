@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/15 12:04:42 kmos Exp $
 
 COMMENT=	format dates according to RFC3339
 
@@ -19,7 +19,6 @@ MODPY_SETUPTOOLS= Yes
 MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/py-tz${MODPY_FLAVOR}
-TEST_DEPENDS=	${RUN_DEPENDS} \
-		devel/py-nose${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

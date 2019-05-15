@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/12 08:09:53 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/15 12:04:38 kmos Exp $
 
 COMMENT =	high-level API and CLI on top of OGR
 BROKEN =	needs update to cope with gdal 3
@@ -39,8 +39,7 @@ RUN_DEPENDS =	geo/py-cligj${MODPY_FLAVOR} \
 		devel/py-munch${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR}
 
-TEST_DEPENDS =	${RUN_DEPENDS} \
-		devel/py-nose${MODPY_FLAVOR} \
+TEST_DEPENDS =	devel/py-nose${MODPY_FLAVOR} \
 		net/py-boto3${MODPY_FLAVOR}
 
 WANTLIB += ${COMPILER_LIBCXX} gdal m ${MODPY_WANTLIB}

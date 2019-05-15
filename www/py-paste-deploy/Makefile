@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/01/08 19:26:11 danj Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/15 12:04:42 kmos Exp $
 
 COMMENT =		load, configure, compose WSGI applications and servers
 
@@ -16,8 +16,7 @@ MODPY_PI =		Yes
 
 MODULES =		lang/python
 RUN_DEPENDS =		www/py-paste
-TEST_DEPENDS =	${RUN_DEPENDS} \
-			devel/py-nose \
+TEST_DEPENDS =		devel/py-nose \
 			devel/py-py
 
 MODPY_SETUPTOOLS =	Yes

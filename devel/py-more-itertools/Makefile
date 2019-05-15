@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:37 kmos Exp $
 
 COMMENT =		routines for operating on iterables beyond itertools
 
@@ -19,8 +19,6 @@ MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	more_itertools/tests
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
-
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 FLAVORS =		python3
 FLAVOR ?=

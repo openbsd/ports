@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/28 20:52:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/15 12:04:43 kmos Exp $
 
 COMMENT =	web out of browsers
 
@@ -44,8 +44,7 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 		www/py-requests${MODPY_FLAVOR} \
 		x11/py-qt5${MODPY_FLAVOR}
 
-TEST_DEPENDS +=	${RUN_DEPENDS} \
-		devel/py-coverage${MODPY_FLAVOR} \
+TEST_DEPENDS +=	devel/py-coverage${MODPY_FLAVOR} \
 		devel/py-nose${MODPY_FLAVOR} \
 		shells/bash
 

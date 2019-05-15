@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/13 19:03:54 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/15 12:04:43 kmos Exp $
 
 COMMENT =		terminals served to term.js using Tornado websockets
 
@@ -19,8 +19,7 @@ MODPY_PI =		Yes
 
 RUN_DEPENDS +=		devel/py-ptyprocess${MODPY_FLAVOR} \
 			www/py-tornado${MODPY_FLAVOR}>=4
-TEST_DEPENDS +=		${RUN_DEPENDS} \
-			devel/py-nose${MODPY_FLAVOR}
+TEST_DEPENDS +=		devel/py-nose${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=

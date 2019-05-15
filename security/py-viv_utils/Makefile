@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/03/29 19:40:55 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/15 12:04:41 kmos Exp $
 
 COMMENT =	utilities for working with vivisect
 
@@ -25,7 +25,5 @@ RUN_DEPENDS =	devel/py-funcy \
 		devel/py-intervaltree \
 		security/py-vivisect \
 		security/py-pefile
-
-TEST_DEPENDS =	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

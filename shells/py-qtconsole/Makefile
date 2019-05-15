@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/13 19:03:53 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/15 12:04:41 kmos Exp $
 
 COMMENT =		Jupyter Qt console
 
@@ -24,8 +24,7 @@ RUN_DEPENDS =		devel/ipython${MODPY_FLAVOR}>=5.1.0 \
 			devel/py-traitlets${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR} \
 			x11/py-qt5${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-nose${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=

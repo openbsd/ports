@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/07 21:35:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/15 12:04:43 kmos Exp $
 
 COMMENT =	helper functions focused on web applications
 
@@ -18,8 +18,7 @@ MODULES =	lang/python
 
 RUN_DEPENDS =	www/py-routes \
 		textproc/py-MarkupSafe
-TEST_DEPENDS = ${RUN_DEPENDS} \
-		  devel/py-nose
+TEST_DEPENDS =	devel/py-nose
 
 MODPY_SETUPTOOLS =	Yes
 

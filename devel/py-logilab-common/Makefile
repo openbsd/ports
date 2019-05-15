@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/13 18:06:43 danj Exp $
+# $OpenBSD: Makefile,v 1.24 2019/05/15 12:04:36 kmos Exp $
 
 COMMENT=		common low-level libraries for logilab projects
 
@@ -17,7 +17,6 @@ MODULES=		lang/python
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
-			${RUN_DEPENDS} \
 			devel/py-tz${MODPY_FLAVOR}
 
 MODPY_PI =		Yes

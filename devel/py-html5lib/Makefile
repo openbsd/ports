@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/09 21:13:26 danj Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/15 12:04:36 kmos Exp $
 
 COMMENT=		HTML parser/tokeniser based for HTML5
 
@@ -21,8 +21,7 @@ MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			textproc/py-webencodings${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-test-expect${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-test-expect${MODPY_FLAVOR} \
 			textproc/py-chardet${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR}
 

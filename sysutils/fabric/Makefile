@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/04/28 18:18:14 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/15 12:04:41 kmos Exp $
 
 COMMENT =		simple, pythonic tool for remote execution and deployment
 
@@ -21,8 +21,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		security/py-paramiko
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-nose \
+TEST_DEPENDS =		devel/py-nose \
 			security/sudo \
 			www/py-jinja2
 PORTHOME =		${WRKSRC}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/10 11:44:49 abieber Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/15 12:04:41 kmos Exp $
 
 COMMENT =		friendly interactive shell
 
@@ -35,7 +35,6 @@ LIB_DEPENDS =		devel/pcre2 \
 			devel/gettext
 
 RUN_DEPENDS =		misc/gnugetopt
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 MODPY_ADJ_FILES =	share/tools/create_manpage_completions.py \
 			share/tools/deroff.py \

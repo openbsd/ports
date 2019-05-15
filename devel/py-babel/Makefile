@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/13 18:06:42 danj Exp $
+# $OpenBSD: Makefile,v 1.27 2019/05/15 12:04:35 kmos Exp $
 
 COMMENT=		I18N/L10N tools for Python
 
@@ -20,7 +20,6 @@ MODPY_SETUPTOOLS=	Yes
 MODPY_PYTEST=		Yes
 
 RUN_DEPENDS=		devel/py-tz${MODPY_FLAVOR}
-TEST_DEPENDS=		${RUN_DEPENDS}
 
 FLAVORS=		python3
 FLAVOR?=

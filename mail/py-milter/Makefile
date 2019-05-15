@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/09/19 09:05:52 benoit Exp $
+# $OpenBSD: Makefile,v 1.24 2019/05/15 12:04:38 kmos Exp $
 
 COMMENT =	Python interface to sendmail milter API
 
@@ -21,8 +21,7 @@ MODULES =	lang/python
 CFLAGS +=	-I${LOCALBASE}/include
 
 LIB_DEPENDS =	mail/sendmail,-libmilter
-TEST_DEPENDS = ${RUN_DEPENDS} \
-		  net/py-dns
+TEST_DEPENDS =	net/py-dns
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-milter

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/05/14 17:45:52 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/15 12:04:38 kmos Exp $
 
 COMMENT = 		Python charting module
 
@@ -17,7 +17,6 @@ MODULES = 		lang/python
 MODPY_SETUPTOOLS = 	Yes
 
 RUN_DEPENDS = 		graphics/py-cairo
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pycha

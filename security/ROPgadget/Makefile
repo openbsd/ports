@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/30 12:33:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/15 12:04:40 kmos Exp $
 
 COMMENT =	Gadgets finder and auto-roper
 
@@ -21,7 +21,6 @@ MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	devel/capstone/python
-TEST_DEPENDS =	${RUN_DEPENDS}
 
 WRKDIST =	${WRKDIR}/ROPgadget-${MODPY_EGG_VERSION}
 

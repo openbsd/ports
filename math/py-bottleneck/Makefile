@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/13 19:03:52 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/15 12:04:39 kmos Exp $
 
 BROKEN-powerpc = bottleneck/src/move.c:568: internal compiler error: in extract_insn, at recog.c:2077
 
@@ -19,8 +19,7 @@ MODULES =		lang/python
 
 RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-nose${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/04 10:49:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2019/05/15 12:04:35 kmos Exp $
 
 # XXX: Check _cffi__ hashes of dependent ports if updating.
 # e.g. devel/libgit2/py-git2
@@ -25,8 +25,7 @@ MODPY_SETUPTOOLS=	Yes
 
 LIB_DEPENDS=		devel/libffi
 RUN_DEPENDS=		devel/py-cparser${MODPY_FLAVOR}
-TEST_DEPENDS=		${RUN_DEPENDS} \
-			devel/py-py${MODPY_FLAVOR} \
+TEST_DEPENDS=		devel/py-py${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

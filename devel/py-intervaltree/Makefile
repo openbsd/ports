@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:36 kmos Exp $
 
 COMMENT =	editable interval tree data structure for Python 2 and 3
 
@@ -20,8 +20,7 @@ MODPY_PI =	Yes
 
 RUN_DEPENDS =	devel/py-sortedcontainers${MODPY_FLAVOR}
 
-TEST_DEPENDS =	${RUN_DEPENDS} \
-		devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR}
 
 FLAVORS =	python3
 FLAVOR ?=

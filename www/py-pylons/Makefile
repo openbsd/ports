@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/09/29 10:52:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/15 12:04:43 kmos Exp $
 
 COMMENT =	rapid web application development framework
 
@@ -35,11 +35,10 @@ RUN_DEPENDS =	devel/py-decorator \
 		www/py-webhelpers \
 		www/py-webob \
 		www/py-webtest
-TEST_DEPENDS = ${RUN_DEPENDS} \
-		  devel/py-coverage \
-		  www/py-genshi \
-		  www/py-jinja2 \
-		  ${PKGNAME}:${BASE_PKGPATH}
+TEST_DEPENDS =	devel/py-coverage \
+		www/py-genshi \
+		www/py-jinja2 \
+		${PKGNAME}:${BASE_PKGPATH}
 
 MODPY_SETUPTOOLS = Yes
 

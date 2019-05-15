@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/05 15:44:13 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/15 12:04:39 kmos Exp $
 
 COMMENT =		data analysis and manipulation library
 
@@ -34,8 +34,7 @@ RUN_DEPENDS +=		devel/py-dateutil${MODPY_FLAVOR}>=2.5.0 \
 			lang/cython${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}>=1.9.0
 
-TEST_DEPENDS +=		${RUN_DEPENDS} \
-			databases/py-mysqlclient${MODPY_FLAVOR} \
+TEST_DEPENDS +=		databases/py-mysqlclient${MODPY_FLAVOR} \
 			databases/py-psycopg2${MODPY_FLAVOR} \
 			databases/py-sqlalchemy${MODPY_FLAVOR} \
 			devel/ipython${MODPY_FLAVOR} \

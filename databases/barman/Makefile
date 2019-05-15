@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/09/04 12:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/15 12:04:34 kmos Exp $
 
 COMMENT =	backup and restoration manager for PostgreSQL
 
@@ -23,8 +23,7 @@ RUN_DEPENDS =	databases/py-psycopg2 \
 
 # needs pytest-timeout and pytest-catchlog
 NO_TEST =	Yes
-#TEST_DEPENDS =	${RUN_DEPENDS} \
-#		devel/py-test-timeout \
+#TEST_DEPENDS =	devel/py-test-timeout \
 #		devel/py-test-catchlog \
 #		devel/py-test-runner \
 #		devel/py-setuptools_scm

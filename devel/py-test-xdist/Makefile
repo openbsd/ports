@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/15 12:04:37 kmos Exp $
 
 COMMENT =	py.test xdist plugin for distributed testing
 
@@ -27,7 +27,6 @@ BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-execnet${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR} \
 			devel/py-apipkg${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			${FULLPKGNAME}:${FULLPKGPATH}
+TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH}
 
 .include <bsd.port.mk>

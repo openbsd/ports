@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/04/24 16:26:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/05/15 12:04:36 kmos Exp $
 
 COMMENT =		pure Python implementation of Git file formats and protocols
 
@@ -22,8 +22,7 @@ MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		net/py-geventhttpclient
 
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/git,-main \
+TEST_DEPENDS =		devel/git,-main \
 			devel/py-fastimport \
 			devel/py-greenlet \
 			devel/py-mock

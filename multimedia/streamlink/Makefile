@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/04/28 20:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/15 12:04:39 kmos Exp $
 
 MODPY_EGG_VERSION =	1.1.1
 COMMENT =	pipe video streams into a video player
@@ -31,7 +31,6 @@ TEST_DEPENDS =	devel/py-country${MODPY_FLAVOR} \
 		devel/py-freezegun${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR} \
 		devel/py-test${MODPY_FLAVOR} \
-		www/py-requests-mock${MODPY_FLAVOR} \
-		${RUN_DEPENDS}
+		www/py-requests-mock${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

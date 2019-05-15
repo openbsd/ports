@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/12 22:15:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/15 12:04:39 kmos Exp $
 
 GH_ACCOUNT =		aajanki
 GH_PROJECT =		yle-dl
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/python \
 			lang/php
 
-TEST_DEPENDS =		${RUN_DEPENDS}
 TEST_ENV =		HOME=/tmp
 
 RUN_DEPENDS =		devel/py-attrs \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/01/26 06:45:20 rpointel Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:40 kmos Exp $
 
 BROKEN-i386 =	uint128_t
 
@@ -29,8 +29,7 @@ RUN_DEPENDS =	security/py-elfesteem \
 		devel/py-llvmlite \
 		devel/py-parsing
 
-TEST_DEPENDS =	${RUN_DEPENDS} \
-		devel/py-cparser
+TEST_DEPENDS =	devel/py-cparser
 
 post-build:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKSRC}/example

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/07 21:35:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/15 12:04:43 kmos Exp $
 
 COMMENT =	aggregate profiling for wsgi requests
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODPY_PI =	Yes
 
 RUN_DEPENDS =	devel/py-pyprof2calltree
-TEST_DEPENDS = ${RUN_DEPENDS}
 
 MODULES =	lang/python
 

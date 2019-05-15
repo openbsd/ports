@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/28 20:51:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/15 12:04:42 kmos Exp $
 
 COMMENT =		standalone version of Django's feedgenerator
 
@@ -24,8 +24,6 @@ FLAVOR ?=
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			devel/py-tz${MODPY_FLAVOR}
-
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} -m unittest discover

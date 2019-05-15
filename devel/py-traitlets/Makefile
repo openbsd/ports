@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/13 18:06:44 danj Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/15 12:04:38 kmos Exp $
 
 COMMENT =		configuration system for Python applications
 
@@ -19,7 +19,6 @@ MODULES =		lang/python
 RUN_DEPENDS =		devel/py-ipython_genutils${MODPY_FLAVOR} \
 			devel/py-decorator${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 MODPY_PI =		Yes
 MODPY_PYTEST =		Yes

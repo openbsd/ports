@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/04/28 20:51:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/15 12:04:37 kmos Exp $
 
 COMMENT=		Python module dependency analysis tool
 
@@ -21,7 +21,6 @@ FLAVORS =		python3
 FLAVOR? =
 
 RUN_DEPENDS=		devel/py-altgraph${MODPY_FLAVOR}
-TEST_DEPENDS=		${RUN_DEPENDS}
 
 post-install:
 	mv ${PREFIX}/bin/modulegraph{,${MODPY_BIN_SUFFIX}}

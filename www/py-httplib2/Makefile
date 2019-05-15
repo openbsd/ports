@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/13 19:03:54 danj Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/15 12:04:42 kmos Exp $
 
 COMMENT =		Python HTTP client library
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/python
 
 RUN_DEPENDS =		net/py-socks${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/01/11 15:25:46 inoguchi Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/15 12:04:35 kmos Exp $
 
 COMMENT=		migrate repositories from CVS to Subversion/GIT/BZR
 
@@ -20,8 +20,6 @@ MODULES=	lang/python
 
 RUN_DEPENDS=	devel/subversion,-python \
 		${MODPY_RUN_DEPENDS},-bsddb
-
-TEST_DEPENDS=${RUN_DEPENDS}
 
 TEST_FLAGS=	PYTHON=${MODPY_BIN}
 

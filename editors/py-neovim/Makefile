@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/15 12:04:38 kmos Exp $
 
 COMMENT =	Python plugin support for Neovim
 
@@ -24,8 +24,7 @@ FLAVOR ?=
 RUN_DEPENDS =		net/py-msgpack${MODPY_FLAVOR} \
 			devel/py-uv${MODPY_FLAVOR} \
 			devel/py-greenlet${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 			${BASE_PKGPATH}=${MODPY_EGG_VERSION}
 
 # You may need to increase the file descriptor ulimits to run tests.

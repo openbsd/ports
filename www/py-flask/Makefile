@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/04/28 20:51:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/15 12:04:42 kmos Exp $
 
 COMMENT =		microframework based on Werkzeug and Jinja 2
 
@@ -31,7 +31,6 @@ RUN_DEPENDS =		devel/py-blinker${MODPY_FLAVOR} \
 BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR} \
 			www/py-itsdangerous${MODPY_FLAVOR} \
 			www/py-werkzeug${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 MAKE_ENV =		PYTHONPATH="${WRKSRC}" SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
 

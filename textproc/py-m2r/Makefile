@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:41 kmos Exp $
 
 COMMENT =		markdown to reStructuredText converter
 
@@ -22,8 +22,6 @@ MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		textproc/py-mistune${MODPY_FLAVOR} \
 			textproc/py-docutils${MODPY_FLAVOR}
-
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 FLAVORS =		python3
 FLAVOR ?=

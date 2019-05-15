@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/23 21:06:32 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/15 12:04:38 kmos Exp $
 
 COMMENT =	GIS WMTS/TMS tile caching server
 
@@ -25,8 +25,7 @@ RUN_DEPENDS =	devel/proj \
 		textproc/py-lxml \
 		graphics/py-Pillow>2.4.0
 
-TEST_DEPENDS =	${RUN_DEPENDS} \
-		devel/py-nose \
+TEST_DEPENDS =	devel/py-nose \
 		geo/py-shapely \
 		geo/gdal,-python \
 		www/py-requests \

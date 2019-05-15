@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/28 20:51:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/15 12:04:37 kmos Exp $
 
 COMMENT=	extensions to the Python unit testing framework
 
@@ -16,7 +16,6 @@ MODPY_PI=	Yes
 MODPY_SETUPTOOLS= Yes
 BUILD_DEPENDS=	devel/py-pbr${MODPY_FLAVOR}
 RUN_DEPENDS=	devel/py-extras${MODPY_FLAVOR}
-TEST_DEPENDS=	${RUN_DEPENDS}
 
 FLAVORS=	python3
 FLAVOR?=

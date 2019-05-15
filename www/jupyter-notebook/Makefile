@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/13 19:03:54 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/15 12:04:42 kmos Exp $
 
 COMMENT =		web-based notebook for interactive computing
 
@@ -36,8 +36,7 @@ RUN_DEPENDS =		devel/py-ipykernel${MODPY_FLAVOR} \
 			www/py-terminado${MODPY_FLAVOR}>=0.8.1 \
 			www/py-tornado${MODPY_FLAVOR}>=4.1,<7
 
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-coverage${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR} \
 			devel/py-nose-warnings-filters${MODPY_FLAVOR} \
 			devel/py-nbval${MODPY_FLAVOR} \

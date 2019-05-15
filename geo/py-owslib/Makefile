@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:38 kmos Exp $
 
 COMMENT =		library for accessing OGC Web Services
 
@@ -26,7 +26,6 @@ RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR} \
 		devel/py-tz${MODPY_FLAVOR} \
 		devel/py-dateutil${MODPY_FLAVOR}
 
-TEST_DEPENDS =	${RUN_DEPENDS} \
-		devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:39 kmos Exp $
 
 COMMENT=	optimise a list of IPv4/IPv6 prefixes
 
@@ -23,8 +23,7 @@ MODPY_VERSION= ${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS=	devel/py-radix${MODPY_FLAVOR}
 
-TEST_DEPENDS=	${RUN_DEPENDS} \
-		devel/py-coverage${MODPY_FLAVOR} \
+TEST_DEPENDS=	devel/py-coverage${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR} \
 		devel/py-nose${MODPY_FLAVOR}
 

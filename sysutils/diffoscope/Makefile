@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/29 13:57:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/15 12:04:41 kmos Exp $
 
 MODPY_EGG_VERSION =	114
 COMMENT =	in-depth comparison of files, archives, and directories
@@ -19,8 +19,7 @@ MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =	archivers/py-libarchive-c${MODPY_FLAVOR} \
 		devel/py-magic${MODPY_FLAVOR}
 
-TEST_DEPENDS =	${RUN_DEPENDS} \
-		devel/py-pluggy${MODPY_FLAVOR} \
+TEST_DEPENDS =	devel/py-pluggy${MODPY_FLAVOR} \
 		devel/py-test${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

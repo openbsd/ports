@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/02 21:58:21 kmos Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/15 12:04:43 kmos Exp $
 
 COMMENT =		CLI for interacting with Mastodon/fediverse instances
 
@@ -27,8 +27,6 @@ RUN_DEPENDS =		www/py-mastodon.py${MODPY_FLAVOR}=1.3.1 \
 			textproc/py-colored${MODPY_FLAVOR} \
 			textproc/py-emoji${MODPY_FLAVOR} \
 			textproc/py-humanize${MODPY_FLAVOR}
-
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 # Doesn't seem to have tests
 NO_TEST =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/15 12:04:36 kmos Exp $
 
 COMMENT =		rapid multi-Python deployment
 
@@ -25,7 +25,6 @@ MODPY_PYTEST_ARGS =	testing
 
 RUN_DEPENDS +=		devel/py-apipkg${MODPY_FLAVOR}
 BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
-TEST_DEPENDS +=		${RUN_DEPENDS} \
-			${FULLPKGNAME}:${FULLPKGPATH}
+TEST_DEPENDS +=		${FULLPKGNAME}:${FULLPKGPATH}
 
 .include <bsd.port.mk>

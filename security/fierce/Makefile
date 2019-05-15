@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:40 kmos Exp $
 
 COMMENT =		DNS reconnaissance tool for locating non-contiguous IP space
 
@@ -20,7 +20,6 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		net/py-dnspython${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/fierce/fierce.py

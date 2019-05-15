@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/15 12:04:35 kmos Exp $
 
 COMMENT =		logging integration for Python click
 
@@ -17,7 +17,6 @@ MAINTAINER =		Remi Locherer <remi@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 RUN_DEPENDS =		devel/py-click${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 MODULES =		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/14 21:27:51 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/15 12:04:42 kmos Exp $
 
 COMMENT =		static site generator written in Python
 
@@ -38,8 +38,7 @@ RUN_DEPENDS =		devel/py-blinker${MODPY_FLAVOR} \
 # Else setuptools skips filenames containing UTF8 chars
 MAKE_ENV +=		LC_CTYPE=en_US.UTF-8
 
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/git \
+TEST_DEPENDS =		devel/git \
 			devel/py-mock${MODPY_FLAVOR}
 
 pre-configure:

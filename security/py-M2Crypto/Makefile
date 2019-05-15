@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/09 16:12:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2019/05/15 12:04:40 kmos Exp $
 
 COMMENT =		crypto and ssl toolkit for python
 
@@ -32,7 +32,5 @@ BUILD_DEPENDS =		devel/swig
 .if !${FLAVOR:Mpython3}
 RUN_DEPENDS +=		devel/py-typing
 .endif
-
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>

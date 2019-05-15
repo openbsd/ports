@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/13 18:06:43 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/15 12:04:37 kmos Exp $
 
 COMMENT =		converting Jupyter notebooks
 
@@ -37,7 +37,6 @@ RUN_DEPENDS =		devel/py-entrypoints${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR} \
 			www/py-tornado${MODPY_FLAVOR}>=4.2
 TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
-			${RUN_DEPENDS} \
 			devel/ipython${MODPY_FLAVOR}>=5.1.0 \
 			devel/py-ipykernel${MODPY_FLAVOR}>=4.5.2 \
 			devel/py-nose${MODPY_FLAVOR}

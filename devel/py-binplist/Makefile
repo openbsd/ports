@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/01/22 08:05:42 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/15 12:04:35 kmos Exp $
 
 COMMENT =	binary property list (plist) parser module written in Python
 
@@ -20,6 +20,5 @@ MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	devel/py-tz
-TEST_DEPENDS =	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

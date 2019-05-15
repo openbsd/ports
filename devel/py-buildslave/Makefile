@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/04/28 20:51:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2019/05/15 12:04:35 kmos Exp $
 
 COMMENT=	buildworker for the buildbot CI system
 
@@ -25,8 +25,7 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 RUN_DEPENDS=	devel/py-twisted${MODPY_FLAVOR}>=17.9.0 \
 		devel/py-future${MODPY_FLAVOR}
 
-TEST_DEPENDS=	${RUN_DEPENDS} \
-		devel/py-setuptools_trial${MODPY_FLAVOR} \
+TEST_DEPENDS=	devel/py-setuptools_trial${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR}
 
 UPDATE_PLIST_ARGS +=	-i MODPY_PY_PREFIX

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/08 19:41:15 bket Exp $
+# $OpenBSD: Makefile,v 1.22 2019/05/15 12:04:43 kmos Exp $
 
 COMMENT =		scalable, non-blocking web server
 
@@ -16,8 +16,7 @@ HOMEPAGE =		https://www.tornadoweb.org/
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			net/py-curl${MODPY_FLAVOR}
+TEST_DEPENDS =		net/py-curl${MODPY_FLAVOR}
 
 WANTLIB +=		pthread ${MODPY_WANTLIB}
 

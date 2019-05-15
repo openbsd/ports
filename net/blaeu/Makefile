@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/30 09:31:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:39 kmos Exp $
 
 COMMENT =	create measurements on RIPE Atlas probes.
 
@@ -24,6 +24,5 @@ RUN_DEPENDS =		net/py-dnspython${MODPY_FLAVOR} \
 			security/py-openssl${MODPY_FLAVOR}
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>

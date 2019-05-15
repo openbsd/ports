@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/13 19:03:52 danj Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/15 12:04:39 kmos Exp $
 
 COMMENT =		computer algebra system (CAS) in Python
 
@@ -21,8 +21,7 @@ MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		devel/ipython${MODPY_FLAVOR} \
 			math/py-mpmath${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 			graphics/py-matplotlib${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}
 

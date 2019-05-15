@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/28 20:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/15 12:04:41 kmos Exp $
 
 # !!! do not update blindly: sysutils/awscli requires a specific version
 
@@ -23,7 +23,6 @@ MODPY_SETUPTOOLS=	Yes
 MODPY_PYTEST =		Yes
 
 RUN_DEPENDS=		devel/py-asn1${MODPY_FLAVOR}
-TEST_DEPENDS=		${RUN_DEPENDS}
 
 FLAVORS=		python3
 FLAVOR ?=

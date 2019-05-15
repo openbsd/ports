@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/05 15:44:12 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/15 12:04:36 kmos Exp $
 
 COMMENT =		IPython kernel for Jupyter
 
@@ -18,8 +18,7 @@ RUN_DEPENDS +=		devel/py-jupyter_client${MODPY_FLAVOR} \
 			www/py-tornado${MODPY_FLAVOR}>=4.0 \
 			devel/ipython${MODPY_FLAVOR}>=4.0.0
 
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-nose${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
 			devel/py-nose-warnings-filters${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR} \

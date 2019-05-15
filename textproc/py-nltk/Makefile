@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/05/13 19:03:53 danj Exp $
+# $OpenBSD: Makefile,v 1.23 2019/05/15 12:04:42 kmos Exp $
 
 COMMENT=		Natural Language ToolKit
 
@@ -24,8 +24,7 @@ RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR} \
 			graphics/py-matplotlib${MODPY_FLAVOR} \
 			math/prover9/p9m4 \
 			textproc/py-yaml${MODPY_FLAVOR}
-TEST_DEPENDS=		${RUN_DEPENDS} \
-			devel/py-nose${MODPY_FLAVOR} \
+TEST_DEPENDS=		devel/py-nose${MODPY_FLAVOR} \
 			devel/py-parsing${MODPY_FLAVOR}
 
 FLAVORS =		python3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/11/09 11:11:10 bentley Exp $
+# $OpenBSD: Makefile,v 1.25 2019/05/15 12:04:35 kmos Exp $
 
 COMMENT =	distributed version control system by Canonical
 
@@ -21,8 +21,7 @@ MODULES =	lang/python
 RUN_DEPENDS +=	net/py-curl \
 		security/py-paramiko \
 		textproc/gdiff
-TEST_DEPENDS = ${RUN_DEPENDS} \
-		devel/py-testtools
+TEST_DEPENDS =	devel/py-testtools
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/bzr ${WRKSRC}/bzrlib/tests/test_diff.py

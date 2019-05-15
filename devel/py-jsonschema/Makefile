@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/28 20:51:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/15 12:04:36 kmos Exp $
 
 COMMENT =		implementation of JSON Schema validation for Python
 
@@ -27,8 +27,7 @@ BUILD_DEPENDS =		devel/py-vcversioner${MODPY_FLAVOR}
 .if !${FLAVOR:Mpython3}
 RUN_DEPENDS =		devel/py-functools32
 .endif
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-mock${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
 
 post-install:
 	mv ${PREFIX}/bin/jsonschema{,${MODPY_BIN_SUFFIX}}

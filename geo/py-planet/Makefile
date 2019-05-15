@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:38 kmos Exp $
 
 COMMENT =	client library and CLI for Planet's public API
 #'
@@ -27,8 +27,7 @@ MODPY_PYTEST =	Yes
 RUN_DEPENDS +=	devel/py-click${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR} \
 		www/py-requests-futures${MODPY_FLAVOR}
-TEST_DEPENDS =	${RUN_DEPENDS} \
-		devel/py-mock${MODPY_FLAVOR} \
+TEST_DEPENDS =	devel/py-mock${MODPY_FLAVOR} \
 		www/py-requests-mock${MODPY_FLAVOR}
 
 post-install:

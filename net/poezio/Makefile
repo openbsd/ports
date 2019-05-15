@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/28 20:51:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/15 12:04:39 kmos Exp $
 
 COMMENT =		console XMPP client
 
@@ -25,15 +25,12 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 MODPY_DISTUTILS_BUILD =	build_ext --inplace
 
-
-
 BUILD_DEPENDS =		lang/cython
 # py-slixmpp is python3 only
 RUN_DEPENDS =		net/py-aiodns${MODPY_FLAVOR} \
 			security/py-potr${MODPY_FLAVOR} \
 			net/py-slixmpp
 
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			${FULLPKGNAME}:${BUILD_PKGPATH}
+TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/28 20:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/15 12:04:37 kmos Exp $
 
 # !!! do not update blindly: sysutils/aws-shell requires a specific version
 PORTROACH=		ignore:1
@@ -29,8 +29,6 @@ PORTHOME=		${WRKDIR}
 RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR} \
 			devel/py-wcwidth${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR}
-
-TEST_DEPENDS=		${RUN_DEPENDS}
 
 FLAVORS=		python3
 FLAVOR ?=

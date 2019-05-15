@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/09/04 12:46:22 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:41 kmos Exp $
 
 COMMENT =		Google Cloud Platform (GCP) Compute Engine daemon
 
@@ -24,8 +24,6 @@ MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		net/py-boto \
 			net/py-netifaces \
 			net/py-netaddr
-
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 pre-configure:
 	cd ${WRKSRC}/google_compute_engine && ${SUBST_CMD} \

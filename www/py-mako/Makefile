@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/04/28 20:52:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/05/15 12:04:42 kmos Exp $
 
 COMMENT =	super-fast templating language
 
@@ -25,8 +25,7 @@ RUN_DEPENDS =	textproc/py-MarkupSafe${MODPY_FLAVOR} \
 		www/py-beaker${MODPY_FLAVOR}
 
 TEST_DEPENDS =	devel/py-nose${MODPY_FLAVOR} \
-		devel/py-babel${MODPY_FLAVOR} \
-		${RUN_DEPENDS}
+		devel/py-babel${MODPY_FLAVOR}
 
 MODPY_SETUPTOOLS = Yes
 

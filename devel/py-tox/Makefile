@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/04/28 20:51:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/15 12:04:37 kmos Exp $
 
 COMMENT =		virtualenv-based automation of test activities
 
@@ -21,7 +21,6 @@ MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		devel/py-py${MODPY_FLAVOR} \
 			devel/py-pluggy${MODPY_FLAVOR} \
 			devel/py-virtualenv${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 FLAVORS =		python3
 FLAVOR ?=

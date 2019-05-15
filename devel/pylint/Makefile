@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/13 18:06:44 danj Exp $
+# $OpenBSD: Makefile,v 1.27 2019/05/15 12:04:38 kmos Exp $
 
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
@@ -27,8 +27,7 @@ RUN_DEPENDS=		devel/py-astroid${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
 RUN_DEPENDS-gui=	${MODPY_TKINTER_DEPENDS} \
 			devel/pylint${MODPY_FLAVOR}=${MODPY_EGG_VERSION}
-TEST_DEPENDS=		${RUN_DEPENDS} \
-			devel/py-logilab-common${MODPY_FLAVOR}>=1.3.0
+TEST_DEPENDS=		devel/py-logilab-common${MODPY_FLAVOR}>=1.3.0
 
 FLAVORS =		python3
 FLAVOR ?=

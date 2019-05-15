@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/04/28 20:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/15 12:04:41 kmos Exp $
 
 COMMENT =		deduplicating backup program
 
@@ -28,8 +28,7 @@ LIB_DEPENDS +=		${MODPY_LIB_DEPENDS} \
 			security/libb2
 BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS +=		net/py-msgpack${MODPY_FLAVOR}
-TEST_DEPENDS +=		${RUN_DEPENDS} \
-			devel/py-test-benchmark${MODPY_FLAVOR} \
+TEST_DEPENDS +=		devel/py-test-benchmark${MODPY_FLAVOR} \
 			devel/py-test-xdist${MODPY_FLAVOR}
 
 TEST_ENV +=		PATH=${WRKINST}/usr/local/bin:${PATH} \

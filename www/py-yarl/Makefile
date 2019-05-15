@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:52:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/15 12:04:43 kmos Exp $
 
 COMMENT =		yet another URL library
 
@@ -24,7 +24,6 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		net/py-idna${MODPY_FLAVOR}>=2.0 \
 			www/py-multidict>=4.0
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-test-runner${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test-runner${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

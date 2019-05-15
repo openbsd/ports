@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/03 16:33:25 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:38 kmos Exp $
 
 COMMENT =	geospatial raster data API and CLI
 
@@ -43,8 +43,7 @@ RUN_DEPENDS +=	devel/py-enum34
 # test_read_no_band requires hdf5 support in GDAL
 # requires datafiles only on github...
 NO_TEST =	Yes
-TEST_DEPENDS =	${RUN_DEPENDS} \
-		devel/py-test${MODPY_FLAVOR} \
+TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR} \
 		devel/py-test-cov${MODPY_FLAVOR} \
 		devel/py-hypothesis${MODPY_FLAVOR}
 

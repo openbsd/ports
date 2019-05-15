@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/04/28 20:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/15 12:04:41 kmos Exp $
 
 COMMENT =		Python bindings for Augeas
 
@@ -29,8 +29,7 @@ RUN_DEPENDS =		devel/py-cffi${MODPY_FLAVOR}
 # dlopen()s libaugeas
 RUN_DEPENDS +=		sysutils/augeas
 
-TEST_DEPENDS =		${BUILD_PKGPATH} \
-			${RUN_DEPENDS}
+TEST_DEPENDS =		${BUILD_PKGPATH}
 
 do-test:
 	cd ${WRKSRC}/test; ${MODPY_BIN} test_augeas.py

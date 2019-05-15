@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/04/05 18:01:42 pvk Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/15 12:04:35 kmos Exp $
 
 COMMENT=	Python API for SOAP HTTP/RPC
 
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	devel/py-fpconst
 RUN_DEPENDS=	devel/py-fpconst \
 		textproc/py-defusedxml \
 		www/py-wtools
-TEST_DEPENDS=${RUN_DEPENDS}
 
 # There are lots of tests, but most of them require network access
 # The one below doesn't, but it has a known failure...

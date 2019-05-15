@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/04/28 20:51:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/15 12:04:36 kmos Exp $
 
 COMMENT =		network library for easy and scalable concurrency
 
@@ -50,7 +50,6 @@ post-install:
 # depends on self for now, but upstream intends to pass PYTHONPATH
 # to subproc's in the future which should obviate the need for this
 TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
-			${RUN_DEPENDS} \
 			devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-coveralls${MODPY_FLAVOR} \
 			devel/py-objgraph${MODPY_FLAVOR} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:52:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:43 kmos Exp $
 
 COMMENT =		OAuth library support for python-requests
 
@@ -20,8 +20,7 @@ RUN_DEPENDS =		security/py-oauthlib${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
-			www/py-requests-mock${MODPY_FLAVOR} \
-			${RUN_DEPENDS}
+			www/py-requests-mock${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

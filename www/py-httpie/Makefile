@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/28 20:51:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/15 12:04:42 kmos Exp $
 
 COMMENT =	command-line HTTP client
 
@@ -23,8 +23,7 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR} \
 		textproc/py-pygments${MODPY_FLAVOR}
-TEST_DEPENDS =	${RUN_DEPENDS} \
-		devel/py-test${MODPY_FLAVOR} \
+TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR} \
 		devel/py-test-httpbin${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR}
 PORTHOME =	${WRKSRC}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/01/07 21:35:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/15 12:04:43 kmos Exp $
 
 COMMENT =	web error handling and exception catching
 
@@ -20,9 +20,8 @@ RUN_DEPENDS =	textproc/py-pygments \
 		www/py-paste \
 		www/py-tempita \
 		www/py-webob
-TEST_DEPENDS = ${RUN_DEPENDS} \
-		  devel/py-nose \
-		  www/py-webtest
+TEST_DEPENDS =	devel/py-nose \
+		www/py-webtest
 
 MODPY_SETUPTOOLS =	Yes
 

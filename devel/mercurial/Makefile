@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2019/03/21 18:32:46 juanfra Exp $
+# $OpenBSD: Makefile,v 1.97 2019/05/15 12:04:35 kmos Exp $
 
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
@@ -29,8 +29,7 @@ USE_GMAKE =		Yes
 MULTI_PACKAGES =	-main -x11
 
 BUILD_DEPENDS =		devel/gettext-tools
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			archivers/unzip \
+TEST_DEPENDS =		archivers/unzip \
 			devel/git \
 			devel/mercurial,-main \
 			devel/mercurial,-x11 \

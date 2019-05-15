@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2019/05/03 07:35:59 bket Exp $
+# $OpenBSD: Makefile,v 1.78 2019/05/15 12:04:38 kmos Exp $
 
 COMMENT=	Python charting and plotting API
 
@@ -43,8 +43,7 @@ BUILD_DEPENDS=	${COMMON_DEPENDS} \
 		textproc/py-sphinx${MODPY_FLAVOR}
 RUN_DEPENDS=	${COMMON_DEPENDS}
 LIB_DEPENDS=	graphics/png
-TEST_DEPENDS =	${RUN_DEPENDS} \
-		devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR}
 
 
 .if ${FLAVOR:Mpython3}

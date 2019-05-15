@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2019/05/12 22:46:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2019/05/15 12:04:35 kmos Exp $
 
 COMMENT=		next-generation build system
 
@@ -41,8 +41,7 @@ TEST_IS_INTERACTIVE=	Yes
 # test_fortran_compiler (__main__.NativeFileTests) ... skipped 'No alternate Fortran implementation.'
 # test_coverage (__main__.LinuxlikeTests) ... skipped 'gcovr not found'
 # test_swift_compiler (__main__.NativeFileTests) ... skipped 'No swift compiler found.'
-TEST_DEPENDS=		${RUN_DEPENDS} \
-			devel/git \
+TEST_DEPENDS=		devel/git \
 			devel/jdk/11 \
 			devel/mercurial \
 			g95->=8,<9:lang/gcc/8,-f95 \

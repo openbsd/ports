@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:36 kmos Exp $
 
 COMMENT =		python package that provides useful locks
 
@@ -25,8 +25,7 @@ FLAVOR ?=
 RUN_DEPENDS =		devel/py-monotonic${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
 
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-nose${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
 			devel/py-testtools${MODPY_FLAVOR}
 
 .if !${FLAVOR:Mpython3}

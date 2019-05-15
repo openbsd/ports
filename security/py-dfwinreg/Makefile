@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/09/07 05:56:09 rpointel Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:40 kmos Exp $
 
 COMMENT =	Digital Forensics Windows Registry (dfWinReg)
 
@@ -24,8 +24,7 @@ RUN_DEPENDS =		devel/py-construct \
 			devel/py-six \
 			sysutils/libregf
 TEST_DEPENDS =		devel/py-test \
-			devel/py-mock \
-			${RUN_DEPENDS}
+			devel/py-mock
 
 do-test:
 	touch ${WRKSRC}/utils/__init__.py

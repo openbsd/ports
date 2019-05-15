@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/04/28 20:52:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/15 12:04:43 kmos Exp $
 
 COMMENT =		helper to test wsgi applications
 
@@ -28,8 +28,7 @@ RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			www/py-webob${MODPY_FLAVOR}>=1.2
 
 # also needs WSGIProxy2, PasteDeploy and pyquery
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-coverage${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR}
 

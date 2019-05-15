@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:41 kmos Exp $
 
 COMMENT=		parser for the CommonMark markdown spec
 
@@ -21,8 +21,7 @@ FLAVORS=		python3
 FLAVOR?=
 
 RUN_DEPENDS=		devel/py-future${MODPY_FLAVOR}
-TEST_DEPENDS=		${RUN_DEPENDS} \
-			devel/flake8 \
+TEST_DEPENDS=		devel/flake8 \
 			devel/py-hypothesis${MODPY_FLAVOR}
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/28 20:51:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/15 12:04:40 kmos Exp $
 
 COMMENT=		templating library able to output odt and pdf files
 
@@ -34,8 +34,6 @@ RUN_DEPENDS+=		graphics/pycha \
 			textproc/py-yaml
 .endif
 
-TEST_DEPENDS=		${RUN_DEPENDS} \
-			devel/py-nose${MODPY_FLAVOR}
-
+TEST_DEPENDS=		devel/py-nose${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

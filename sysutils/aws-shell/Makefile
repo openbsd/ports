@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/17 16:33:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/15 12:04:41 kmos Exp $
 
 PORTROACH=		skipv:reinvent-demo
 
@@ -28,8 +28,7 @@ RUN_DEPENDS=		devel/py-configobj \
 # !!! check setup.py for exact dependencies version
 RUN_DEPENDS +=		devel/py-prompt_toolkit>=1.0.0,<1.1.0
 
-TEST_DEPENDS +=		${RUN_DEPENDS} \
-			devel/py-unittest2 \
+TEST_DEPENDS +=		devel/py-unittest2 \
 			devel/py-tox \
 			devel/py-test \
 			devel/py-test-cov \

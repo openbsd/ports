@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/15 12:04:42 kmos Exp $
 
 COMMENT =		http client/server for asyncio
 
@@ -25,8 +25,7 @@ RUN_DEPENDS =		devel/py-async-timeout \
 			textproc/py-chardet${MODPY_FLAVOR} \
 			www/py-multidict \
 			www/py-yarl
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 			www/py-gunicorn${MODPY_FLAVOR}
 
 # we don't have any port for pytest-{xdist,timeout}

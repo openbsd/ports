@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/15 12:04:39 kmos Exp $
 
 COMMENT =		snuggs are s-expressions for numpy
 
@@ -20,8 +20,7 @@ RUN_DEPENDS =		devel/py-parsing${MODPY_FLAVOR} \
 			devel/py-click${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}
 
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-test${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=

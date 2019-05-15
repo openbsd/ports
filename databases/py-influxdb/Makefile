@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:34 kmos Exp $
 
 COMMENT =		Python client for interacting with InfluxDB
 
@@ -25,8 +25,7 @@ RUN_DEPENDS +=		devel/py-dateutil${MODPY_FLAVOR}>=2.6.0 \
 			devel/py-six${MODPY_FLAVOR}>=1.10.0 \
 			devel/py-tz${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}>=2.17.0
-TEST_DEPENDS +=		${RUN_DEPENDS} \
-			databases/influxdb \
+TEST_DEPENDS +=		databases/influxdb \
 			devel/py-mock${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR} \
 			math/py-pandas${MODPY_FLAVOR} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/04/24 09:42:42 danj Exp $
+# $OpenBSD: Makefile,v 1.27 2019/05/15 12:04:37 kmos Exp $
 
 COMMENT=		rule-based dispatching and generic functions
 
@@ -22,7 +22,6 @@ WANTLIB += pthread
 
 MODULES=		lang/python
 RUN_DEPENDS=		devel/py-protocols
-TEST_DEPENDS=		${RUN_DEPENDS}
 
 MODPY_SETUPTOOLS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/13 19:03:52 danj Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/15 12:04:39 kmos Exp $
 
 COMMENT =		fast numerical expression evaluator for NumPy
 
@@ -22,7 +22,6 @@ MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS}
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 FLAVORS =		python3
 FLAVOR ?=

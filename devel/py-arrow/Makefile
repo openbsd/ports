@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:35 kmos Exp $
 
 COMMENT =		better dates and times for Python
 
@@ -19,8 +19,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
 
 RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-chai${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-chai${MODPY_FLAVOR} \
 			devel/py-simplejson${MODPY_FLAVOR} \
 			devel/py-tz${MODPY_FLAVOR}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/04/28 20:51:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/15 12:04:40 kmos Exp $
 
 COMMENT =		official command-line client for RIPE Atlas
 
@@ -31,8 +31,7 @@ RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-coverage${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR}
 

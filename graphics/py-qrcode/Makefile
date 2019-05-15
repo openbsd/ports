@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:38 kmos Exp $
 
 COMMENT =		QR Code image generator
 
@@ -19,8 +19,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			graphics/py-Pillow${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-mock${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=

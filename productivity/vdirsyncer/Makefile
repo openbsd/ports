@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/28 20:51:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/15 12:04:40 kmos Exp $
 
 COMMENT =		synchronize calendars and contacts
 
@@ -36,8 +36,7 @@ RUN_DEPENDS =		devel/py-atomicwrites${MODPY_FLAVOR} \
 TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-test-localserver${MODPY_FLAVOR} \
 			devel/py-test-subtesthack${MODPY_FLAVOR} \
-			www/py-urllib3${MODPY_FLAVOR} \
-			${RUN_DEPENDS}
+			www/py-urllib3${MODPY_FLAVOR}
 
 TEST_ENV +=		DAV_SERVER=skip \
 			DETERMINISTIC_TESTS=true

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/05 16:06:34 danj Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/15 12:04:38 kmos Exp $
 
 COMMENT =		Simple Revision Control
 
@@ -22,8 +22,7 @@ RUN_DEPENDS =		devel/grcs \
 
 TEST_DEPENDS =		devel/git \
 			devel/pylint \
-			shells/bash \
-			${RUN_DEPENDS}
+			shells/bash
 
 USE_GMAKE =		Yes
 NO_BUILD =		Yes

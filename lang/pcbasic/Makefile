@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/11 20:56:11 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/15 12:04:38 kmos Exp $
 
 MODPY_EGG_VERSION =		2.0.1
 COMMENT =	free, cross-platform emulator for GW-BASIC family (PC-BASIC)
@@ -20,8 +20,6 @@ RUN_DEPENDS =	devel/py-parallel \
 		devel/py-serial \
 		devel/sdl2-gfx \
 		math/py-numpy
-
-TEST_DEPENDS =	${RUN_DEPENDS}
 
 post-extract:
 	@gunzip -o ${WRKSRC}/doc/pcbasic.1 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:37 kmos Exp $
 
 COMMENT =		extend nose coverage to add Cobertura-style XML reports
 
@@ -21,7 +21,6 @@ FLAVOR ?=
 
 RUN_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
 			devel/py-coverage${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 do-test:
 	cd ${WRKSRC}/nosexcover && nosetests${MODPY_BIN_SUFFIX} -v tests.py

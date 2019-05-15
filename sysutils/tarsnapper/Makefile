@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:41 kmos Exp $
 
 COMMENT =		tarsnap wrapper which automatically expires backups
 
@@ -24,8 +24,7 @@ RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			sysutils/tarsnap
 
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-nose${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 
 do-test:
 	cd ${WRKSRC} && \

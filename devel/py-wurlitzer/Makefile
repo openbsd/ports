@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/05 15:44:12 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:38 kmos Exp $
 
 COMMENT =		capture c-level output in context managers
 
@@ -21,8 +21,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	test.py
 
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-mock${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=

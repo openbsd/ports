@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:41 kmos Exp $
 
 COMMENT =		python code formatter
 
@@ -25,6 +25,5 @@ RUN_DEPENDS =		devel/py-appdirs${MODPY_FLAVOR} \
 			devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-click${MODPY_FLAVOR} \
 			textproc/py-toml${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>

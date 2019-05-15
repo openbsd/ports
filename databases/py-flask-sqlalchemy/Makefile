@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/27 19:09:19 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/15 12:04:34 kmos Exp $
 
 REVISION=4
 
@@ -26,7 +26,6 @@ BUILD_DEPENDS =	databases/py-sqlalchemy \
 		www/py-flask
 RUN_DEPENDS =	databases/py-sqlalchemy \
 		www/py-flask
-TEST_DEPENDS =	${RUN_DEPENDS}
 
 MAKE_ENV =	PYTHONPATH="${WRKSRC}"
 

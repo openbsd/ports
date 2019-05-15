@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/05 15:44:12 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/15 12:04:36 kmos Exp $
 
 COMMENT =		Jupyter protocol implementation and client libraries
 
@@ -30,8 +30,7 @@ RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-traitlets${MODPY_FLAVOR} \
 			net/py-zmq${MODPY_FLAVOR} \
 			www/py-tornado${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/ipython${MODPY_FLAVOR}>=5.1.0 \
+TEST_DEPENDS =		devel/ipython${MODPY_FLAVOR}>=5.1.0 \
 			devel/py-ipykernel${MODPY_FLAVOR}>=4.5.2 \
 			shells/bash
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/13 18:06:42 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/15 12:04:35 kmos Exp $
 
 COMMENT =		common base representation of Python source code
 
@@ -21,7 +21,6 @@ MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		devel/py-lazy-object-proxy${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \
 			devel/py-wrapt${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 FLAVORS =		python3
 FLAVOR ?=

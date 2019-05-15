@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:41 kmos Exp $
 
 COMMENT =	web-application vulnerability scanner
 
@@ -30,7 +30,5 @@ RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR} \
 			net/py-tld${MODPY_FLAVOR} \
 			devel/py-html5lib${MODPY_FLAVOR} \
 			security/py-yaswfp
-
-TEST_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>

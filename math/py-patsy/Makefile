@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/13 19:03:52 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:39 kmos Exp $
 
 COMMENT =		Python package for describing statistical models
 
@@ -20,8 +20,7 @@ MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-nose${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
 			math/py-scipy${MODPY_FLAVOR}
 
 FLAVORS =		python3
