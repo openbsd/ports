@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/16 17:27:58 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/15 07:04:47 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/.rspec
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
+${GEM_LIB}/gems/${DISTNAME}/.yardopts
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/History.txt
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
@@ -18,12 +21,13 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/net/http/post/
 ${GEM_LIB}/gems/${DISTNAME}/lib/net/http/post/multipart.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/parts.rb
 ${GEM_LIB}/gems/${DISTNAME}/multipart-post.gemspec
-${GEM_LIB}/gems/${DISTNAME}/test/
-${GEM_LIB}/gems/${DISTNAME}/test/multibyte.txt
-${GEM_LIB}/gems/${DISTNAME}/test/net/
-${GEM_LIB}/gems/${DISTNAME}/test/net/http/
-${GEM_LIB}/gems/${DISTNAME}/test/net/http/post/
-${GEM_LIB}/gems/${DISTNAME}/test/net/http/post/test_multipart.rb
-${GEM_LIB}/gems/${DISTNAME}/test/test_composite_io.rb
-${GEM_LIB}/gems/${DISTNAME}/test/test_parts.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/
+${GEM_LIB}/gems/${DISTNAME}/spec/composite_io_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/multibyte.txt
+${GEM_LIB}/gems/${DISTNAME}/spec/net/
+${GEM_LIB}/gems/${DISTNAME}/spec/net/http/
+${GEM_LIB}/gems/${DISTNAME}/spec/net/http/post/
+${GEM_LIB}/gems/${DISTNAME}/spec/net/http/post/multipart_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/parts_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
