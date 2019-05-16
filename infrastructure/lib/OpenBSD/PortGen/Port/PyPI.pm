@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.15 2019/05/16 16:00:08 afresh1 Exp $
+# $OpenBSD: PyPI.pm,v 1.16 2019/05/16 16:01:10 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -67,56 +67,54 @@ sub fill_in_makefile
 {
 	my ( $self, $di, $vi ) = @_;
 
-	$self->set_other( 'MODPY_PI',         'Yes' );
-	$self->set_other( 'MODPY_SETUPTOOLS', 'Yes' );
-	$self->set_comment( $di->{info}{summary} );
-
 	my $pkgname  = $di->{info}->{name};
 	my $version  = $di->{info}->{version};
-	my $distname = $self->pick_distfile(
-	     map { $_->{filename} } @{ $di->{urls} || [] } );
+	my $distname = $self->pick_distfile( map { $_->{filename} }
+		    @{ $di->{urls} || [] } );
 
 	$self->add_notice("distname $distname does not match pkgname $pkgname")
 	    unless $distname =~ /^\Q$pkgname/;
 
-	$self->set_other( 'MODPY_EGG_VERSION', $version );
 	$distname =~ s/-\Q$version\E$/-\$\{MODPY_EGG_VERSION\}/
-	    or $self->add_notice("Didn't set distname version to \${MODPY_EGG_VERSION}");
+	    or $self->add_notice(
+		"Didn't set distname version to \${MODPY_EGG_VERSION}");
 
+	$self->set_other( 'MODPY_PI',         'Yes' );
+	$self->set_other( 'MODPY_SETUPTOOLS', 'Yes' );
+	$self->set_comment( $di->{info}{summary} );
+	$self->set_other( 'MODPY_EGG_VERSION', $version );
 	$self->set_distname($distname);
-
-	# TODO: These assume the PKGNAME is the DISTNAME
-	my $to_lower = $pkgname =~ /\p{Upper}/ ? ':L' : '';
-	if ($pkgname =~ /^python-/) {
-		$self->set_pkgname("\${DISTNAME:S/^python-/py-/$to_lower}");
-	}
-	elsif ($pkgname !~ /^py-/) {
-		$self->set_pkgname("py-\${DISTNAME$to_lower}");
-	}
-
 	$self->set_modules('lang/python');
 	$self->set_other( 'HOMEPAGE', $di->{info}{home_page} );
 	$self->set_license( $di->{info}{license} );
 	$self->set_descr( $di->{info}{summary} );
 
+	# TODO: These assume the PKGNAME is the DISTNAME
+	my $to_lower = $pkgname =~ /\p{Upper}/ ? ':L' : '';
+	if ( $pkgname =~ /^python-/ ) {
+		$self->set_pkgname("\${DISTNAME:S/^python-/py-/$to_lower}");
+	} elsif ( $pkgname !~ /^py-/ ) {
+		$self->set_pkgname("py-\${DISTNAME$to_lower}");
+	}
+
 	my @versions = do {
 		my %seen;
-		sort { $a <=> $b } grep { !$seen{$_}++ } map {
-			/^Programming Language :: Python :: (\d+)/ ? $1 : ()
-		} @{ $di->{info}{classifiers} }
+		sort     { $a <=> $b }
+		    grep { !$seen{$_}++ }
+		    map { /^Programming Language :: Python :: (\d+)/ ? $1 : () }
+		    @{ $di->{info}{classifiers} };
 	};
 
 	if ( @versions > 1 ) {
-		shift @versions; # remove default, lowest
+		shift @versions;    # remove default, lowest
 		$self->{reset_values}{MODPY_VERSION} = 1;
 		$self->set_other( 'FLAVORS', "python$_" ) for @versions;
-		$self->set_other( 'FLAVOR',  '' );
-	}
-	elsif ( @versions && $versions[0] != 2 ) {
+		$self->set_other( 'FLAVOR', '' );
+	} elsif ( @versions && $versions[0] != 2 ) {
 		$self->{reset_values}{$_} = 1 for qw( FLAVORS FLAVOR );
 		$self->set_other(
-		    MODPY_VERSION => "\${MODPY_DEFAULT_VERSION_$_}" )
-		        for @versions;
+			MODPY_VERSION => "\${MODPY_DEFAULT_VERSION_$_}" )
+		    for @versions;
 	}
 }
 
