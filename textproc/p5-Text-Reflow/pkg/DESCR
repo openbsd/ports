@@ -13,3 +13,6 @@ or after certain connectives ("a", "the", etc.). The result is a file
 with a more "ragged" right margin than is produced by fmt or
 Text::Wrap but it is easier to read since fewer phrases are broken
 across line breaks.
+
+This module provides reflow(1), a tool allowing to reflow text straight
+from the command line, according to that algorithm.

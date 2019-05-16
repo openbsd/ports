@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/02 14:35:46 florian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/16 15:41:59 cwen Exp $
+bin/reflow
 ${P5ARCH}/
 ${P5ARCH}/Text/
 ${P5ARCH}/Text/Reflow.pm
@@ -6,4 +7,5 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Text/
 ${P5ARCH}/auto/Text/Reflow/
 ${P5ARCH}/auto/Text/Reflow/Reflow.so
+@man man/man1/reflow.1
 @man man/man3p/Text::Reflow.3p

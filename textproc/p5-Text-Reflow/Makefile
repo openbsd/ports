@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2017/12/29 07:24:49 florian Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/16 15:41:59 cwen Exp $
 
 COMMENT =	module for reflowing text files
 
 MODULES =	cpan
-DISTNAME =	Text-Reflow-1.09
+DISTNAME =	Text-Reflow-1.17
 CATEGORIES =	textproc
-REVISION =	1
-FIX_EXTRACT_PERMISSIONS=Yes
+FIX_EXTRACT_PERMISSIONS =	Yes
 
-# perl
+# Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c perl
