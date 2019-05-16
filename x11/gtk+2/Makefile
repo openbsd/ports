@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.227 2019/05/14 14:46:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.228 2019/05/16 20:43:09 ajacoutot Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -13,7 +13,7 @@ GNOME_PROJECT=		gtk+
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-cups=		gtk+2-cups-${GNOME_VERSION}
 
-REVISION-main=		4
+REVISION-main=		5
 REVISION-cups=		1
 
 CATEGORIES=		x11 devel

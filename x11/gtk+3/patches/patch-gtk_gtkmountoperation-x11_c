@@ -1,4 +1,4 @@
-$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.15 2019/05/14 14:46:34 ajacoutot Exp $
+$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.16 2019/05/16 20:43:09 ajacoutot Exp $
 
 https://gitlab.gnome.org/GNOME/gtk/merge_requests/844
 
@@ -15,7 +15,7 @@ Index: gtk/gtkmountoperation-x11.c
  pid_get_parent (GPid pid)
  {
 -  struct kinfo_proc kp;
-+  struct kinfo_proc *kp;
++  struct kinfo_proc *kp = NULL;
    size_t len;
 -  GPid ppid;
 +  GPid ppid = 0;
