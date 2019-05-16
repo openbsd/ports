@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/22 11:22:50 semarie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/16 18:12:54 semarie Exp $
 
 COMMENT =		tryton web client
 
-VERSION =		5.0.7
+VERSION =		5.0.8
 DEPVERSION =		7
 DISTNAME =		tryton-sao-${VERSION}
 

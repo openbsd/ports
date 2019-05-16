@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/16 18:12:54 semarie Exp $
 
-MODPY_EGG_VERSION =	5.0.2
+MODPY_EGG_VERSION =	5.0.3
 TRYTON_MODULE =		product_cost_fifo
-REVISION =		0
 
 TRYTON_DEPENDS +=	product \
 			stock
