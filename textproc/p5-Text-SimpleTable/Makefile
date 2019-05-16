@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/16 21:11:47 cwen Exp $
 
 COMMENT=	simple eyecandy ASCII Tables
 
-DISTNAME=	Text-SimpleTable-2.03
-REVISION=	1
+DISTNAME=	Text-SimpleTable-2.07
 CATEGORIES=	textproc
 
-# Same as Perl
+# Artistic 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
 PKG_ARCH=	*
+
+TEST_DEPENDS=	converters/p5-Unicode-LineBreak
 
 MAKE_ENV=	TEST_POD=Yes
 
