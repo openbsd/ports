@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/03/13 20:27:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/05/16 11:39:19 jasper Exp $
 
 # let's give it a chance?
 #BROKEN-powerpc=	fails to build
@@ -6,7 +6,7 @@
 
 COMMENT=	library for machine-independent, array-oriented data access
 
-V=		4.6.3
+V=		4.7.0
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
@@ -53,6 +53,6 @@ SEPARATE_BUILD=		Yes
 # "Actually, I did not intend the .so files in netcdf-c/plugins to be
 # installed. They are intended only for testing and examples"
 post-install:
-	rm ${PREFIX}/lib/lib{bzip2,misc}.{a,la,so}
+	rm ${PREFIX}/lib/libh5bzip2.{a,la,so}
 
 .include <bsd.port.mk>

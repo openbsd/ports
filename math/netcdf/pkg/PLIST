@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/03/13 20:27:40 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/05/16 11:39:19 jasper Exp $
 bin/nc-config
 @bin bin/nccopy
 @bin bin/ncdump
@@ -9,12 +9,6 @@ include/netcdf_aux.h
 include/netcdf_filter.h
 include/netcdf_mem.h
 include/netcdf_meta.h
-@comment lib/libbzip2.a
-@comment lib/libbzip2.la
-@comment lib/libbzip2.so
-@comment lib/libmisc.a
-@comment lib/libmisc.la
-@comment lib/libmisc.so
 lib/libnetcdf.a
 lib/libnetcdf.la
 lib/libnetcdf.settings
