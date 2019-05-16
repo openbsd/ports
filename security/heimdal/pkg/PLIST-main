@@ -1,4 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2016/12/17 14:58:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2019/05/16 15:28:32 ajacoutot Exp $
+@rcscript ${RCDIR}/ipropd_master
+@rcscript ${RCDIR}/ipropd_slave
+@rcscript ${RCDIR}/kadmind
+@rcscript ${RCDIR}/kdc
+@rcscript ${RCDIR}/kpasswdd
 @bin heimdal/bin/bsearch
 @bin heimdal/bin/gsstool
 @bin heimdal/bin/heimtools
@@ -67,9 +72,3 @@ heimdal/sbin/
 @man man/man8/verify_krb5_conf.8
 @mode 0700
 @sample /var/heimdal/
-@mode
-@rcscript ${RCDIR}/ipropd_master
-@rcscript ${RCDIR}/ipropd_slave
-@rcscript ${RCDIR}/kadmind
-@rcscript ${RCDIR}/kdc
-@rcscript ${RCDIR}/kpasswdd
