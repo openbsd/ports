@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.16 2019/05/14 15:00:01 afresh1 Exp $
+# $OpenBSD: Port.pm,v 1.17 2019/05/16 15:55:47 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 # Copyright (c) 2019 Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -312,6 +312,9 @@ sub write_makefile
 	my @template = $self->parse_makefile("Makefile.orig");
 	my %copy_values;
 
+	# Decisions elsewhere might effect which values to copy from the template
+	my %reset_values = %{ delete $configs{reset_values} || {} };
+
 	if (@template) {
 		%copy_values = map { $_->{key} => 1 }
 		    grep { $_->{name} ne 'REVISION' }
@@ -380,17 +383,10 @@ sub write_makefile
 			}
 
 			# If we didn't get a value, copy from the template
-			# if we know we should and if so, also copy:
-			# * MULTI_PACKAGES until we understand them
-			# * any _DEPENDS that we didn't find
-			# * plus any MODPY_* variables
 			if ( not $value and %copy_values ) {
-				my $name = $line->{name};
-				my $copy =
-				       $copy_values{$key}
-				    || $name =~ /_DEPENDS$/
-				    || $name =~ /^MODPY_/;
-				$value = $line->{value} if $copy;
+				$value = $line->{value}
+				    if $copy_values{$key}
+				    and not $reset_values{$key};
 			}
 
 			next unless defined $value;
