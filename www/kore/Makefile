@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/16 14:08:52 fcambus Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/16 19:47:49 fcambus Exp $
 
 COMMENT =	web application framework for writing scalable web APIs in C
 
 DISTNAME =	kore-3.3.0
+REVISION =	0
 
 CATEGORIES =	www
 
@@ -17,8 +18,14 @@ WANTLIB +=	c crypto pthread ssl
 
 MASTER_SITES =	https://kore.io/releases/
 
-FLAVORS =	debug pgsql
+FLAVORS =	curl debug pgsql
 FLAVOR ?=
+
+.if ${FLAVOR} == "curl"
+MAKE_ENV +=	CURL=1
+WANTLIB +=	curl
+LIB_DEPENDS +=	net/curl
+.endif
 
 .if ${FLAVOR} == "debug"
 MAKE_ENV +=	DEBUG=1
