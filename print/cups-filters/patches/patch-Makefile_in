@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.10 2018/09/03 07:55:48 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.11 2019/05/16 20:19:31 ajacoutot Exp $
 
 Our ln(1) does not support the `-r' knob.
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -5774,9 +5774,9 @@ install-exec-hook:
+@@ -5775,9 +5775,9 @@ install-exec-hook:
  	$(INSTALL) -d -m 755 $(DESTDIR)$(bindir)
  	$(INSTALL) -d -m 755 $(DESTDIR)$(pkgfilterdir)
  	$(INSTALL) -d -m 755 $(DESTDIR)$(pkgbackenddir)
