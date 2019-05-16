@@ -1,22 +1,16 @@
-$OpenBSD: patch-librtsp_rtspprot_cpp,v 1.1 2015/07/01 11:33:50 bluhm Exp $
---- librtsp/rtspprot.cpp.orig	Tue Feb  6 20:20:12 2001
-+++ librtsp/rtspprot.cpp	Tue Nov 11 19:12:07 2014
-@@ -15,6 +15,14 @@
+$OpenBSD: patch-librtsp_rtspprot_cpp,v 1.2 2019/05/16 16:07:06 bluhm Exp $
+Index: librtsp/rtspprot.cpp
+--- librtsp/rtspprot.cpp.orig
++++ librtsp/rtspprot.cpp
+@@ -15,6 +15,7 @@
  #include "app.h"
  #include "rtspprot.h"
  
-+#ifndef min
-+#define min(a,b) ( ((a)<(b)) ? (a) : (b) )
-+#endif
-+#ifndef max
-+#define max(a,b) ( ((a)>(b)) ? (a) : (b) )
-+#endif
-+
 +#include "Avl.h"
  #include "dbg.h"
  
  /**************************************
-@@ -45,6 +53,7 @@ CRtspInterleavedSocket::~CRtspInterleavedSocket( void 
+@@ -45,6 +46,7 @@ CRtspInterleavedSocket::~CRtspInterleavedSocket( void 
  {
      Close();
      delete m_pbuf;
@@ -24,7 +18,7 @@ $OpenBSD: patch-librtsp_rtspprot_cpp,v 1.1 2015/07/01 11:33:50 bluhm Exp $
  }
  
  bool CRtspInterleavedSocket::IsOpen( void )
-@@ -56,7 +65,9 @@ void CRtspInterleavedSocket::Close( void )
+@@ -56,7 +58,9 @@ void CRtspInterleavedSocket::Close( void )
  {
      if( m_pProt )
      {
@@ -35,7 +29,7 @@ $OpenBSD: patch-librtsp_rtspprot_cpp,v 1.1 2015/07/01 11:33:50 bluhm Exp $
          m_pProt = NULL;
          if( m_pResponse ) m_pResponse->OnClosed();
      }
-@@ -68,7 +79,7 @@ size_t CRtspInterleavedSocket::Read( PVOID pbuf, size_
+@@ -68,7 +72,7 @@ size_t CRtspInterleavedSocket::Read( PVOID pbuf, size_
  
      // We will treat the read as a datagram -- copy as much as will fit and
      // discard any remainder
@@ -44,7 +38,7 @@ $OpenBSD: patch-librtsp_rtspprot_cpp,v 1.1 2015/07/01 11:33:50 bluhm Exp $
  
      memcpy( pbuf, m_pbuf->GetBuffer(), copylen );
      delete m_pbuf; m_pbuf = NULL;
-@@ -154,6 +165,9 @@ CRtspProtocol::~CRtspProtocol( void )
+@@ -154,6 +158,9 @@ CRtspProtocol::~CRtspProtocol( void )
      delete m_psock;
      delete[] m_pReadBuf;
      delete m_pmsg;
@@ -54,7 +48,7 @@ $OpenBSD: patch-librtsp_rtspprot_cpp,v 1.1 2015/07/01 11:33:50 bluhm Exp $
  }
  
  void CRtspProtocol::Init( CSocket* pSocket )
-@@ -174,7 +188,8 @@ void CRtspProtocol::SendRequest( CRtspRequestMsg* pmsg
+@@ -174,7 +181,8 @@ void CRtspProtocol::SendRequest( CRtspRequestMsg* pmsg
      {
          char buf[16];
          cseq = GetNextCseq();
@@ -64,7 +58,7 @@ $OpenBSD: patch-librtsp_rtspprot_cpp,v 1.1 2015/07/01 11:33:50 bluhm Exp $
          pmsg->SetHdr( "CSeq", buf );
      }
      else
-@@ -190,28 +205,62 @@ void CRtspProtocol::SendRequest( CRtspRequestMsg* pmsg
+@@ -190,28 +198,62 @@ void CRtspProtocol::SendRequest( CRtspRequestMsg* pmsg
      // <verb> SP <url> SP "RTSP/1.0" CRLF
      // <headers> CRLF <buf>
      size_t len = FUDGE + strlen(pVerb)+1+strlen(pUrl)+1+8 + 2 + nHdrLen + 2 + nBufLen;
@@ -133,7 +127,7 @@ $OpenBSD: patch-librtsp_rtspprot_cpp,v 1.1 2015/07/01 11:33:50 bluhm Exp $
      m_psock->Write( pbuf, p-pbuf );
      delete[] pbuf;
  
-@@ -232,21 +281,52 @@ void CRtspProtocol::SendResponse( CRtspResponseMsg* pm
+@@ -232,21 +274,52 @@ void CRtspProtocol::SendResponse( CRtspResponseMsg* pm
      if( 0 == nBufLen ) nResponseLen++;
      char* pbuf = new char[ nResponseLen ];
      char* p = pbuf;
@@ -189,7 +183,7 @@ $OpenBSD: patch-librtsp_rtspprot_cpp,v 1.1 2015/07/01 11:33:50 bluhm Exp $
          memcpy( p, pmsg->GetBuf(), nBufLen );
          p += nBufLen;
      }
-@@ -672,7 +752,7 @@ void CRtspProtocol::OnExceptReady( void )
+@@ -672,7 +745,7 @@ void CRtspProtocol::OnExceptReady( void )
  
  void CRtspProtocol::OnClosed( void )
  {

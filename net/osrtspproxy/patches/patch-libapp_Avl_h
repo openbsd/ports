@@ -1,0 +1,23 @@
+$OpenBSD: patch-libapp_Avl_h,v 1.4 2019/05/16 16:07:06 bluhm Exp $
+
+Index: libapp/Avl.h
+--- libapp/Avl.h.orig
++++ libapp/Avl.h
+@@ -15,6 +15,8 @@ enum cmp_t { CMP_LT=-1, CMP_EQ=0, CMP_GT=1 };
+ enum dir_t { LEFT = 0, RIGHT = 1 };
+ static dir_t Opposite(dir_t dir) { return dir_t(1 - int(dir)); }
+ 
++static int MAX(int a, int b);
++
+ // AvlNode -- Class to implement an AVL Tree
+ //
+ template <class KeyType>
+@@ -38,7 +40,7 @@ class AvlNode (public)
+     {
+         UINT lh = (m_tree[LEFT]) ? m_tree[LEFT]->Height() : 0;
+         UINT rh = (m_tree[RIGHT]) ? m_tree[RIGHT]->Height() : 0;
+-        return ( 1 + max( lh, rh ) );
++        return ( 1 + MAX( lh, rh ) );
+     }
+ 
+     // Look for the given key, return NULL if not found,

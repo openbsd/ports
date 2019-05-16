@@ -1,0 +1,22 @@
+$OpenBSD: patch-libapp_types_h,v 1.1 2019/05/16 16:07:06 bluhm Exp $
+
+Index: libapp/types.h
+--- libapp/types.h.orig
++++ libapp/types.h
+@@ -38,16 +38,6 @@
+ #include <sys/stat.h>
+ #endif
+ 
+-#ifndef NULL
+-#define NULL 0
+-#endif
+-#ifndef min
+-#define min(a,b) ( ((a)<(b)) ? (a) : (b) )
+-#endif
+-#ifndef max
+-#define max(a,b) ( ((a)>(b)) ? (a) : (b) )
+-#endif
+-
+ typedef unsigned int UINT;
+ 
+ typedef void* PVOID;
