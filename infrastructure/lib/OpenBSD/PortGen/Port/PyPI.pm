@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.14 2019/05/16 15:55:47 afresh1 Exp $
+# $OpenBSD: PyPI.pm,v 1.15 2019/05/16 16:00:08 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -21,8 +21,10 @@ use warnings;
 
 use parent 'OpenBSD::PortGen::Port';
 
+use Cwd;
+
 use OpenBSD::PortGen::Dependency;
-use OpenBSD::PortGen::Utils qw( module_in_ports );
+use OpenBSD::PortGen::Utils qw( base_dir ports_dir module_in_ports );
 
 sub ecosystem_prefix
 {
@@ -171,11 +173,32 @@ sub get_deps
 
 		next if @plat and join( " ", @plat ) !~ /OpenBSD/i;
 
-		my $port = module_in_ports( $name, 'py-' )
-		    || $self->name_new_port($name);
+		my $port = module_in_ports( $name, 'py-' );
+		my $dep_dir;
+
+		if ($port) {
+			$dep_dir = ports_dir() . '/' . $port;
+		} else {
+			$port    = $self->name_new_port($name);
+			$dep_dir = base_dir() . '/' . $port;
+
+			# don't have it in tree, port it
+			my $o = OpenBSD::PortGen::Port::PyPI->new();
+			$o->port($name);
+			$self->add_notice( $o->notices );
+		}
 
 		my $base_port = $port;
-		$port .= '${MODPY_FLAVOR}';
+
+		{
+			my $old_cwd = getcwd();
+			chdir $dep_dir || die "Unable to chdir $dep_dir: $!";
+			my $flavors = $self->make_show('FLAVORS');
+			chdir $old_cwd || die "Unable to chdir $old_cwd: $!";
+
+			# Attach the flavor if the dependency has one
+			$port .= '${MODPY_FLAVOR}' if $flavors =~ /\bpython3\b/;
+		}
 
 		if ( $phase eq 'build' ) {
 			$deps->add_build( $port, $req );
@@ -191,13 +214,6 @@ sub get_deps
 				"Added $base_port as 'run' dep, wanted '$phase'")
 			    unless $phase eq 'run';
 			$deps->add_run( $port, $req );
-		}
-
-		# don't have it in tree, port it
-		if ( $port =~ m{^pypi/} ) {
-			my $o = OpenBSD::PortGen::Port::PyPI->new();
-			$o->port($name);
-			$self->add_notice( $o->notices );
 		}
 	}
 
