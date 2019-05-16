@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1855 2019/05/14 14:31:43 cwen Exp $
+# $OpenBSD: Makefile,v 1.1856 2019/05/16 04:33:35 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -753,6 +753,7 @@
      SUBDIR += p5-File-ReadBackwards
      SUBDIR += p5-File-Remove
      SUBDIR += p5-File-RsyncP
+     SUBDIR += p5-File-Share
      SUBDIR += p5-File-ShareDir
      SUBDIR += p5-File-ShareDir-Install
      SUBDIR += p5-File-ShareDir-PathClass
