@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.182 2019/04/02 18:42:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.183 2019/05/16 14:06:05 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		4.1.3
 DISTNAME=	ffmpeg-${V}
+REVISION=	0
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
@@ -27,10 +28,10 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	SDL2 X11 Xext Xv ass bz2 c crypto dav1d>=2.0 fontconfig freetype \
-		fribidi gsm m mp3lame opus pthread sndio speex ssl v4l2 \
-		vorbis vorbisenc vpx x264 x265 xcb xcb-shape xcb-shm \
-		xcb-xfixes xvidcore z
+WANTLIB=	SDL2 X11 Xext Xv ass bz2 c crypto dav1d fontconfig freetype \
+		fribidi gsm iconv lzma m mp3lame opus pthread sndio speex ssl \
+		v4l2 vorbis vorbisenc vpx x264 x265 xcb xcb-shape xcb-shm \
+		xcb-xfixes xml2 xvidcore z
 
 BUILD_DEPENDS=	textproc/texi2html \
 		multimedia/frei0r-plugins
@@ -38,25 +39,28 @@ BUILD_DEPENDS=	textproc/texi2html \
 BUILD_DEPENDS+=	devel/nasm
 .endif
 LIB_DEPENDS=	archivers/bzip2 \
+		archivers/xz \
 		audio/lame \
 		audio/libvorbis \
 		audio/opus \
 		audio/speex \
 		audio/gsm \
+		converters/libiconv \
 		devel/sdl2 \
-		multimedia/dav1d>=0.2.1 \
+		multimedia/dav1d \
 		multimedia/libass \
 		multimedia/libv4l \
 		multimedia/libvpx \
 		multimedia/x264 \
 		multimedia/x265 \
-		multimedia/xvidcore
+		multimedia/xvidcore \
+		textproc/libxml
 
 # inter-library dependencies for the current configuration
-LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -ldav1d -lgsm -lmp3lame -lopus -lspeex -lvorbis -lvorbisenc -lvpx -lx264 -lx265 -lxvidcore -lm -lz -pthread
+LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -ldav1d -lgsm -liconv -llzma -lmp3lame -lopus -lspeex -lvorbis -lvorbisenc -lvpx -lx264 -lx265 -lxvidcore -lm -lz -pthread
 LIBavdevice_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 -lXext -lXv -lxcb-shape -lxcb-shm -lxcb-xfixes -lxcb -lsndio -lv4l2 -lm
 LIBavfilter_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lass -lfontconfig -lfreetype -lfribidi -lm -lz -pthread
-LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lssl -lcrypto -lm -lz
+LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lxml2 -lssl -lcrypto -lm -lz
 LIBavresample_EXTRALIBS=-lm
 LIBavutil_EXTRALIBS=-lm -pthread
 LIBpostproc_EXTRALIBS=-lm
@@ -80,10 +84,8 @@ CONFIGURE_ARGS+= --enable-shared \
 		--cc=${CC} \
 		--disable-altivec \
 		--disable-debug \
-		--disable-iconv \
 		--disable-indev=jack \
 		--disable-indev=oss \
-		--disable-lzma \
 		--disable-mipsdsp \
 		--disable-mipsdspr2 \
 		--disable-mipsfpu \
@@ -108,6 +110,7 @@ CONFIGURE_ARGS+= --enable-shared \
 		--enable-libvpx \
 		--enable-libx264 \
 		--enable-libx265 \
+		--enable-libxml2 \
 		--enable-libxvid \
 		--enable-nonfree \
 		--enable-openssl \
