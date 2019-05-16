@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/16 15:38:07 cwen Exp $
 
 COMMENT=		XHTML format for Text::Diff::Unified
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME=		Text-Diff-HTML-0.07
+DISTNAME=		Text-Diff-HTML-0.08
 CATEGORIES=		textproc www
 
-# perl
-PERMIT_PACKAGE_CDROM=   Yes
+# Perl
+PERMIT_PACKAGE_CDROM=	Yes
+
+RUN_DEPENDS=		textproc/p5-Text-Diff>=0.11 \
+			www/p5-HTML-Parser
 
 CONFIGURE_STYLE=	modbuild
 
-RUN_DEPENDS=		www/p5-HTML-Parser \
-			textproc/p5-Text-Diff
+MAKE_ENV+=		TEST_POD=Yes
 
-TEST_DEPENDS=	devel/p5-Test-Pod
-
-.include <bsd.port.mk>	
+.include <bsd.port.mk>
