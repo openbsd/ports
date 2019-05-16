@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/12 16:07:03 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/16 03:12:29 ajacoutot Exp $
 
 COMMENT =	translator library for point cloud formats
 
 DISTNAME =	PDAL-1.9.0-src
 PKGNAME =	${DISTNAME:L:C/-src//}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	pdal_base 2.0 # 6.1
 SHARED_LIBS +=  pdal_util 0.2 # 6.1
@@ -29,11 +29,12 @@ BUILD_DEPENDS =	math/py-numpy,${MODPY_FLAVOR}
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		geo/gdal \
 		devel/jsoncpp \
+		devel/libexecinfo \
 		databases/postgresql \
 		net/curl
 
 WANTLIB +=	c curl gdal geotiff jsoncpp m pq pthread ${MODPY_WANTLIB}
-WANTLIB +=	xml2 z
+WANTLIB +=	execinfo xml2 z
 WANTLIB += ${COMPILER_LIBCXX}
 
 CONFIGURE_ARGS =	\
