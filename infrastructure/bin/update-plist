@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.172 2019/02/25 20:48:09 espie Exp $
+# $OpenBSD: update-plist,v 1.173 2019/05/17 10:24:18 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -124,8 +124,8 @@ sub write_all
 
 
 		while (my $file = pop @stack) {
-			while (my $i = $file->next_item) {
-				my $filename = $i->write_restate($file, $p);
+			while (my $j = $file->next_item) {
+				my $filename = $j->write_restate($file, $p);
 				if (defined $filename) {
 					push(@stack, $file);
 					$file = $self->file($filename);
