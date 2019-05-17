@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.18 2018/09/04 12:41:51 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.19 2019/05/17 10:04:13 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -333,6 +333,28 @@ sub unsubst_non_empty_var
 	return $string;
 }
 
+sub do_empty_backsubst
+{
+	my ($subst, $string, $unsubst) = @_;
+	# this part will be done repeatedly
+	my $old;
+	do {
+		$old = $string;
+		for my $k (@{$subst->{lempty}}) {
+			my $k2 = $k;
+			$k2 =~ s/^\^//;
+			if ($unsubst =~ m/^(.*)\$\{$k2\}/) {
+				my $prefix = $1;
+				# XXX avoid infinite loop
+				next if $string =~ m/\Q$prefix\E\$\{\Q$k2\E\}/;
+				$string =~ s/^\Q$prefix\E/$prefix\$\{$k2\}/;
+			}
+			# TODO we could also try based on suffixes ?
+		}
+	} while ($old ne $string);
+	return $string;
+}
+
 # create actual reverse substitution. $unsubst is the string already stored
 # in an existing plist, to figure out ambiguous cases and empty substs
 sub do_backsubst
@@ -354,25 +376,11 @@ sub do_backsubst
 	}
 
 	# we can't do empty subst without an unsubst;
-	return $string unless defined $unsubst;
-
-	# this part will be done repeatedly
-	my $old;
-	do {
-		$old = $string;
-		for my $k (@{$subst->{lempty}}) {
-			my $k2 = $k;
-			$k2 =~ s/^\^//;
-			if ($unsubst =~ m/^(.*)\$\{$k2\}/) {
-				my $prefix = $1;
-				# XXX avoid infinite loop
-				next if $string =~ m/\Q$prefix\E\$\{\Q$k2\E\}/;
-				$string =~ s/^\Q$prefix\E/$prefix\$\{$k2\}/;
-			}
-			# TODO we could also try based on suffixes ?
-		}
-	} while ($old ne $string);
+	if ($unsubst) {
+		$string = $subst->do_empty_backsubst($string, $unsubst);
+	}
 	$context->adjust(\$string);
+
 	return $string;
 }
 
