@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/08 19:08:34 abieber Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/17 16:50:48 sthen Exp $
 
 COMMENT =		federated status updater
 
 DISTNAME =		honk-0.5.0
+REVISION =		0
 CATEGORIES =		www
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/honk
@@ -10,10 +11,13 @@ HOMEPAGE =		https://humungus.tedunangst.com/r/honk
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB += c pthread sqlite3
+
 MASTER_SITES =		${HOMEPAGE}/d/
 EXTRACT_SUFX =		.tgz
 
 MODULES =		lang/go
+LIB_DEPENDS =		databases/sqlite3
 
 NO_TEST =		yes
 ALL_TARGET =		humungus.tedunangst.com/r/honk
