@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/03/21 11:34:15 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/05/17 21:49:43 pvk Exp $
 @newgroup _gitea:787
 @newuser _gitea:787:_gitea:daemon:Gitea Account:/var/gitea:/bin/sh
 @rcscript ${RCDIR}/gitea
@@ -601,6 +601,7 @@ share/gitea/options/locale/locale_sr-SP.ini
 share/gitea/options/locale/locale_sv-SE.ini
 share/gitea/options/locale/locale_tr-TR.ini
 share/gitea/options/locale/locale_uk-UA.ini
+share/gitea/options/locale/locale_vi-VN.ini
 share/gitea/options/locale/locale_zh-CN.ini
 share/gitea/options/locale/locale_zh-HK.ini
 share/gitea/options/locale/locale_zh-TW.ini
@@ -615,6 +616,7 @@ share/gitea/public/img/404.png
 share/gitea/public/img/500.png
 share/gitea/public/img/auth/
 share/gitea/public/img/auth/bitbucket.png
+share/gitea/public/img/auth/discord.png
 share/gitea/public/img/auth/dropbox.png
 share/gitea/public/img/auth/facebook.png
 share/gitea/public/img/auth/github.png
@@ -676,6 +678,18 @@ share/gitea/public/vendor/assets/font-awesome/fonts/fontawesome-webfont.ttf
 share/gitea/public/vendor/assets/font-awesome/fonts/fontawesome-webfont.woff
 share/gitea/public/vendor/assets/font-awesome/fonts/fontawesome-webfont.woff2
 share/gitea/public/vendor/assets/lato-fonts/
+share/gitea/public/vendor/assets/lato-fonts/lato-bold.eot
+share/gitea/public/vendor/assets/lato-fonts/lato-bold.woff
+share/gitea/public/vendor/assets/lato-fonts/lato-bold.woff2
+share/gitea/public/vendor/assets/lato-fonts/lato-bolditalic.eot
+share/gitea/public/vendor/assets/lato-fonts/lato-bolditalic.woff
+share/gitea/public/vendor/assets/lato-fonts/lato-bolditalic.woff2
+share/gitea/public/vendor/assets/lato-fonts/lato-italic.eot
+share/gitea/public/vendor/assets/lato-fonts/lato-italic.woff
+share/gitea/public/vendor/assets/lato-fonts/lato-italic.woff2
+share/gitea/public/vendor/assets/lato-fonts/lato-regular.eot
+share/gitea/public/vendor/assets/lato-fonts/lato-regular.woff
+share/gitea/public/vendor/assets/lato-fonts/lato-regular.woff2
 share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-700.eot
 share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-700.svg
 share/gitea/public/vendor/assets/lato-fonts/lato-v14-latin-700.ttf
@@ -2027,8 +2041,6 @@ share/gitea/public/vendor/plugins/emojify/images/yum.png
 share/gitea/public/vendor/plugins/emojify/images/zap.png
 share/gitea/public/vendor/plugins/emojify/images/zero.png
 share/gitea/public/vendor/plugins/emojify/images/zzz.png
-share/gitea/public/vendor/plugins/es6-promise/
-share/gitea/public/vendor/plugins/es6-promise/es6-promise.auto.min.js
 share/gitea/public/vendor/plugins/gitgraph/
 share/gitea/public/vendor/plugins/gitgraph/LICENSE
 share/gitea/public/vendor/plugins/gitgraph/gitgraph.css
@@ -2151,6 +2163,8 @@ share/gitea/public/vendor/plugins/pdfjs/web/images/treeitem-expanded@2x.png
 share/gitea/public/vendor/plugins/pdfjs/web/viewer.css
 share/gitea/public/vendor/plugins/pdfjs/web/viewer.html
 share/gitea/public/vendor/plugins/pdfjs/web/viewer.js
+share/gitea/public/vendor/plugins/promise-polyfill/
+share/gitea/public/vendor/plugins/promise-polyfill/polyfill.min.js
 share/gitea/public/vendor/plugins/semantic/
 share/gitea/public/vendor/plugins/semantic/LICENSE
 share/gitea/public/vendor/plugins/semantic/semantic.min.css
@@ -2304,7 +2318,6 @@ share/gitea/templates/pwa/manifest_json.tmpl
 share/gitea/templates/pwa/serviceworker_js.tmpl
 share/gitea/templates/repo/
 share/gitea/templates/repo/activity.tmpl
-share/gitea/templates/repo/bare.tmpl
 share/gitea/templates/repo/branch/
 share/gitea/templates/repo/branch/list.tmpl
 share/gitea/templates/repo/branch_dropdown.tmpl
@@ -2328,6 +2341,7 @@ share/gitea/templates/repo/editor/delete.tmpl
 share/gitea/templates/repo/editor/diff_preview.tmpl
 share/gitea/templates/repo/editor/edit.tmpl
 share/gitea/templates/repo/editor/upload.tmpl
+share/gitea/templates/repo/empty.tmpl
 share/gitea/templates/repo/forks.tmpl
 share/gitea/templates/repo/graph.tmpl
 share/gitea/templates/repo/header.tmpl
@@ -2410,6 +2424,8 @@ share/gitea/templates/user/auth/change_passwd.tmpl
 share/gitea/templates/user/auth/change_passwd_inner.tmpl
 share/gitea/templates/user/auth/finalize_openid.tmpl
 share/gitea/templates/user/auth/forgot_passwd.tmpl
+share/gitea/templates/user/auth/grant.tmpl
+share/gitea/templates/user/auth/grant_error.tmpl
 share/gitea/templates/user/auth/link_account.tmpl
 share/gitea/templates/user/auth/prohibit_login.tmpl
 share/gitea/templates/user/auth/reset_passwd.tmpl
@@ -2441,6 +2457,8 @@ share/gitea/templates/user/profile.tmpl
 share/gitea/templates/user/settings/
 share/gitea/templates/user/settings/account.tmpl
 share/gitea/templates/user/settings/applications.tmpl
+share/gitea/templates/user/settings/applications_oauth2.tmpl
+share/gitea/templates/user/settings/applications_oauth2_edit.tmpl
 share/gitea/templates/user/settings/keys.tmpl
 share/gitea/templates/user/settings/keys_gpg.tmpl
 share/gitea/templates/user/settings/keys_ssh.tmpl

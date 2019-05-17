@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/04 21:46:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/17 21:49:43 pvk Exp $
 
 COMMENT =		compact self-hosted Git service
 
-VERSION =		1.7.6
+VERSION =		1.8.1
 GH_ACCOUNT =		go-gitea
 GH_PROJECT =		gitea
 GH_TAGNAME =		v${VERSION}
@@ -11,7 +11,7 @@ CATEGORIES =		www devel
 
 HOMEPAGE =		https://gitea.io/
 
-MAINTAINER =		Robert Nagy <robert@openbsd.org>
+MAINTAINER =		Pavel Korovin <pvk@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
