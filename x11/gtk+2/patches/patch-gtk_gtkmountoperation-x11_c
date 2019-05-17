@@ -1,6 +1,9 @@
-$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.5 2019/05/16 20:43:09 ajacoutot Exp $
+$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.6 2019/05/17 12:11:30 ajacoutot Exp $
 
-https://gitlab.gnome.org/GNOME/gtk/merge_requests/844
+From 7d8be1c1ffc31523e2de09d4829169b78dd391e4 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Fri, 17 May 2019 11:55:16 +0000
+Subject: [PATCH] pid_get_parent: fix potential leak of kp
 
 From 0334ea1c889331adb02d361670e24b3f85b5b0d6 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@gnome.org>
