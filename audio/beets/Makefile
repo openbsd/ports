@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2019/05/15 12:04:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.35 2019/05/17 13:42:00 sthen Exp $
 
 COMMENT =	CLI tools to manage music collections
 
-MODPY_EGG_VERSION = 1.4.7
+MODPY_EGG_VERSION = 1.4.8
 DISTNAME =	beets-${MODPY_EGG_VERSION}
 CATEGORIES =	audio
-REVISION =	3
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
@@ -25,10 +24,13 @@ RUN_DEPENDS+=	audio/py-discogs-client${MODPY_FLAVOR}>=2.0.2 \
 		audio/py-musicbrainzngs${MODPY_FLAVOR} \
 		audio/py-mutagen${MODPY_FLAVOR} \
 		devel/py-algorithm-munkres${MODPY_FLAVOR} \
+		devel/py-pathlib${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR} \
+		devel/py-xdg${MODPY_FLAVOR} \
 		textproc/py-jellyfish${MODPY_FLAVOR} \
 		textproc/py-unidecode${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
+		www/py-beautifulsoup4${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR}
 
 post-install:
@@ -38,9 +40,6 @@ post-install:
 # also wants responses, rarfile: currently fetches from pypi at test time
 TEST_DEPENDS=	audio/py-mpd2${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR} \
-		devel/py-pathlib${MODPY_FLAVOR} \
-		devel/py-xdg${MODPY_FLAVOR} \
-		www/py-beautifulsoup4${MODPY_FLAVOR} \
 		www/py-flask${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
