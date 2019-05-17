@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.54 2019/03/15 11:29:53 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.55 2019/05/17 20:41:54 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -147,6 +147,8 @@ for my $p (sort keys %{$walker->{equivs}}) {
 $walker->inserter->commit_to_db;
 $walker->inserter->insert("Meta", $opt_V, digest($dbname));
 $walker->inserter->commit_to_db;
+$db->do("ANALYZE");
+$db->disconnect;
 
 while (my ($k, $v) = each %$Info::unknown) {
 	print STDERR "Unknown variable $k in ", $v->fullpkgpath, "\n";

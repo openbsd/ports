@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.39 2019/03/15 11:29:53 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.40 2019/05/17 20:41:54 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -127,18 +127,11 @@ sub new_sql
 	my $n = $sql->name;
 	return if defined $self->{created}{$n};
 	$self->{created}{$n} = 1;
-	$self->db->do($sql->drop);
+	my $drop = $sql->drop;
+#	print "$drop\n" if $self->{verbose};
+	$self->db->do($drop);
 	my $request = $sql->stringize;
 	print "$request\n" if $self->{verbose};
-	$self->db->do($request);
-}
-
-sub create_index
-{
-	my ($self, $name, $cols) = @_;
-	$self->db->do("DROP INDEX IF EXISTS $name");
-	my $request = "CREATE INDEX $name ON $cols";
-	print $request, "\n";
 	$self->db->do($request);
 }
 
@@ -154,8 +147,10 @@ sub create_schema
 			print $i, "\n";
 			$self->{insert}{$t->name} = $self->prepare($i);
 		}
+		for my $i (Sql::Create->all_indices) {
+			$self->new_sql($i);
+		}
 	}
-	$self->create_index("canonical", "_Paths(Canonical)");
 	for my $v (Sql::Create->all_views) {
 		$self->new_sql($v);
 	}
@@ -273,7 +268,7 @@ sub create_path_table
 	    Sql::Column::Key->new("Id")->noautoincrement, 
 	    Sql::Column::Text->new("FullPkgPath")->notnull->unique,
 	    Sql::Column::Integer->new("PkgPath")->references($t),
-	    Sql::Column::Integer->new("Canonical")->references($t));
+	    Sql::Column::Integer->new("Canonical")->references($t)->indexed);
 
 	Sql::Create::View->new($v, origin => $t)->add(
 	    Sql::Column::View->new("PathId", origin => "Id"),

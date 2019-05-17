@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.56 2019/03/11 13:29:21 espie Exp $
+# $OpenBSD: Var.pm,v 1.57 2019/05/17 20:41:54 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -153,7 +153,7 @@ sub need_in_ports_table
 sub fullpkgpath
 {
 	return Sql::Column::Integer->new("FullPkgPath")->references("_Paths")
-	    ->constraint;
+	    ->constraint->indexed;
 }
 
 sub pathref

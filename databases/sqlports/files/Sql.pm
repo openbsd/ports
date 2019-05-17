@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.32 2019/01/21 08:51:56 espie Exp $
+# $OpenBSD: Sql.pm,v 1.33 2019/05/17 20:41:54 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -117,6 +117,16 @@ sub identify
 	return $string;
 }
 
+sub is_view
+{
+	0
+}
+
+sub is_index
+{
+	0
+}
+
 package Sql::Create;
 our @ISA = qw(Sql::Object);
 
@@ -146,7 +156,13 @@ sub all_tables
 sub all_views
 {
 	my $class = shift;
-	return grep {!$_->is_table} (sort {$a->name cmp $b->name} values %$register);
+	return grep {$_->is_view} (sort {$a->name cmp $b->name} values %$register);
+}
+
+sub all_indices
+{
+	my $class = shift;
+	return grep {$_->is_index} (sort {$a->name cmp $b->name} values %$register);
 }
 
 sub key
@@ -261,6 +277,9 @@ sub contents
 	my @c;
 	my @d;
 	for my $col (@{$self->{columns}}) {
+		if ($col->{want_index}) {
+			Sql::Create::Index->new($self, $col);
+		}
 		push(@c, $col->stringize);
 		if ($col->{is_constraint}) {
 			push(@d, $col->name);
@@ -312,6 +331,11 @@ our @ISA = qw(Sql::Create);
 sub type
 {
 	"VIEW"
+}
+
+sub is_view
+{
+	1
 }
 
 sub new
@@ -546,6 +570,13 @@ sub unique
 {
 	my $self = shift;
 	$self->{unique} = 1;
+	return $self;
+}
+
+sub indexed
+{
+	my $self = shift;
+	$self->{want_index} = 1;
 	return $self;
 }
 
@@ -937,4 +968,31 @@ sub equation
 
 	return "$a IS NULL";
 }
+package Sql::Create::Index;
+our @ISA = qw(Sql::Create);
+
+sub type
+{
+	"INDEX"
+}
+
+sub is_index
+{
+	1
+}
+
+sub new
+{
+	my ($class, $table, $col) = @_;
+	my $name = $table->name."_".$col->name;
+	my $o = bless { name => $name, table => $table, col => $col}, $class;
+	$o->register;
+}
+
+sub contents
+{
+	my $self = shift;
+	return "ON ". $self->{table}->name."(".$self->{col}->name.")";
+}
+
 1;
