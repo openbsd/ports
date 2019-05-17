@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2019/05/17 16:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.102 2019/05/17 16:56:20 ajacoutot Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -12,14 +12,13 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.24.1
+V =			2.24.2
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 EXTRACT_SUFX =		.tar.xz
 API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
-REVISION =		0
 
 SHARED_LIBS +=  javascriptcoregtk-${API}     3.0 # 18.13.3
 SHARED_LIBS +=  webkit2gtk-${API}            3.0 # 37.37.2
@@ -107,10 +106,10 @@ CONFIGURE_ARGS +=	-DENABLE_LLINT_C_LOOP=ON
 LDFLAGS +=		-Wl,--no-keep-memory
 .endif
 
-# __sync_add_and_fetch_8, SSE2
+# __sync_add_and_fetch_8
 .if ${MACHINE_ARCH} == "i386"
-CFLAGS +=		-march=i686 -msse2
-CXXFLAGS +=		-march=i686 -msse2
+CFLAGS +=		-march=i686
+CXXFLAGS +=		-march=i686
 .endif
 
 .if ${MACHINE_ARCH} == "powerpc"

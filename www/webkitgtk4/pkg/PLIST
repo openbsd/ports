@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/03/14 09:48:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2019/05/17 16:56:21 ajacoutot Exp $
 @bin bin/WebKitWebDriver
 include/webkitgtk-${API}/
 include/webkitgtk-${API}/JavaScriptCore/
@@ -236,6 +236,7 @@ share/locale/as/LC_MESSAGES/WebKit2GTK-${API}.mo
 share/locale/bg/LC_MESSAGES/WebKit2GTK-${API}.mo
 share/locale/ca/LC_MESSAGES/WebKit2GTK-${API}.mo
 share/locale/cs/LC_MESSAGES/WebKit2GTK-${API}.mo
+share/locale/da/LC_MESSAGES/WebKit2GTK-${API}.mo
 share/locale/de/LC_MESSAGES/WebKit2GTK-${API}.mo
 share/locale/el/LC_MESSAGES/WebKit2GTK-${API}.mo
 share/locale/en_CA/LC_MESSAGES/WebKit2GTK-${API}.mo
