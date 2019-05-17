@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/13 22:05:33 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/17 16:19:37 sthen Exp $
 
 COMMENT=	curses-based 3270 terminal editor
 
@@ -6,6 +6,7 @@ DISTNAME=	suite3270-3.5ga11-src
 PKGNAME=	c3270-3.5.11
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	comms
+REVISION=	0
 
 HOMEPAGE=	http://x3270.bgp.nu/
 
@@ -13,7 +14,8 @@ MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c crypto iconv ssl ncursesw readline util
+
+WANTLIB += c crypto curses iconv readline ssl util
 
 LIB_DEPENDS=		converters/libiconv
 

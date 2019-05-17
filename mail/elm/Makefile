@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2019/04/04 03:38:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2019/05/17 16:19:39 sthen Exp $
 
 COMMENT=	once-popular mail user agent
 
 DISTNAME=	elm-2.4ME+66
-REVISION=	2
+REVISION=	3
 CATEGORIES=	mail
 
 MASTER_SITES=	ftp://ftp.ozone.fmi.fi/KEH/
@@ -11,7 +11,8 @@ MASTER_SITES=	ftp://ftp.ozone.fmi.fi/KEH/
 MAINTAINER=	Paul Janzen <pjanzen@foatdi.net>
 
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c termlib
+
+WANTLIB += c curses
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT= Configure

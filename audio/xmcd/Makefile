@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.50 2016/05/05 19:52:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2019/05/17 16:19:37 sthen Exp $
 
 COMMENT=	Motif CD player
 
 DISTNAME=	xmcd-2.6
-REVISION=	14
+REVISION=	15
 CATEGORIES=	audio
 HOMEPAGE=	http://www.amb.org/xmcd/
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	ICE SM Xau Xdmcp X11 Xaw Xext Xmu Xpm Xt c curses \
-		m termlib Xm
+WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xm Xmu Xpm Xt c curses m
 
 MASTER_SITES=	https://distfiles.nl/
 

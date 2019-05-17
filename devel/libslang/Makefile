@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2018/05/27 08:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2019/05/17 16:19:37 sthen Exp $
 
 COMMENT=	stack-based interpreter for terminal applications
 
 DISTNAME=	slang-2.2.4
-REVISION=	4
+REVISION=	5
 PKGNAME=	lib${DISTNAME}
 SHARED_LIBS=	slang 16.0
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://jedsoft.org/slang/
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c iconv m onig pcre png termcap z
+WANTLIB += c curses iconv m onig pcre png z
 
 LIB_DEPENDS=		converters/libiconv \
 			devel/pcre \

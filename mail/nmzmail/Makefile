@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/05 10:22:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/17 16:19:39 sthen Exp $
 
 COMMENT=	fast maildir search engine
 
 DISTNAME=	nmzmail-1.1
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	mail textproc
 HOMEPAGE=	http://www.ecademix.com/JohannesHofmann/nmzmail.html
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.ecademix.com/JohannesHofmann/nmzmail.html
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c readline termcap
+WANTLIB += c curses readline
 
 MASTER_SITES=	${HOMEPAGE:nmzmail.html=}
 

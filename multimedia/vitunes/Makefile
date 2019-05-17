@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2018/04/25 12:44:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/17 16:19:40 sthen Exp $
 
 COMMENT =		curses media indexer and player for vi users
 
 DISTNAME =		vitunes-2.3
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		multimedia
 
@@ -15,7 +15,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m ncursesw tag tag_c util
+WANTLIB += c curses m tag tag_c util
 
 LIB_DEPENDS =		audio/taglib
 RUN_DEPENDS =		x11/mplayer

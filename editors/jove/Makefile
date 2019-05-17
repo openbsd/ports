@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.28 2015/02/19 12:42:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/17 16:19:38 sthen Exp $
 
 COMMENT=	Jonathan's Own Version of Emacs
 
 V=		4.16.0.73
 DISTNAME=	jove${V}
 PKGNAME=	jove-${V}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	editors
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += c curses
+
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/cs/ftp/pub/hugh/jove-dev/
 EXTRACT_SUFX=	.tgz
 
-WANTLIB=	c termcap
 
 BUILD_DEPENDS=	textproc/groff
 

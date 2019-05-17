@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/11/22 21:26:04 jca Exp $
+# $OpenBSD: Makefile,v 1.34 2019/05/17 16:19:39 sthen Exp $
 
 COMMENT=		color ascii art library
 
@@ -6,14 +6,14 @@ DISTNAME=		libcaca-0.99.beta19
 PKGNAME=		libcaca-0.99.19
 SHARED_LIBS +=  caca           1.2               # .0.99
 CATEGORIES=		graphics
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://caca.zoy.org/wiki/libcaca
 
 # LGPLv2.1/Do What The Fuck You Want To Public License
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB=		c ncursesw m z
+WANTLIB=		c curses m z
 
 MASTER_SITES=		http://caca.zoy.org/files/libcaca/ \
 			https://distfiles.nl/

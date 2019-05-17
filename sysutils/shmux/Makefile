@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/22 18:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/17 16:19:41 sthen Exp $
 
 COMMENT=		execute a command on many hosts in parallel
 
@@ -7,13 +7,15 @@ CATEGORIES=		sysutils
 HOMEPAGE=		http://web.taranis.org/shmux/
 MASTER_SITES=		${HOMEPAGE}dist/
 EXTRACT_SUFX=		.tgz
+REVISION=		0
 
 # XXX N.B. if adding patches: redistributing modified versions
 # is not permitted.  See LICENSE, it has an important restriction
 # on top of what at first glance looks like a typical BSD license.
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c termcap pcre
+WANTLIB += c curses pcre
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

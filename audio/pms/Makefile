@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.21 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/05/17 16:19:37 sthen Exp $
 
 COMMENT=		curses based frontend for mpd
 
 DISTNAME=		pms-0.42
 EXTRACT_SUFX = 		.tar.bz2
 CATEGORIES=		audio
-REVISION =		8
+REVISION =		9
 
 HOMEPAGE=		https://ambientsound.github.io/pms/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c glib-2.0 intl m ncursesw pthread ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} c curses glib-2.0 intl m pthread
 
 COMPILER =		base-clang ports-gcc base-gcc
 

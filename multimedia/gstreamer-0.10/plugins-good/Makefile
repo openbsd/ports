@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2018/10/24 14:28:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.111 2019/05/17 16:19:40 sthen Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # audio/pulseaudio and x11/xfce4/xfce4-mixer
@@ -18,10 +18,10 @@ PKGNAME-dv=		gstreamer-dv-${V}
 PKGNAME-caca=		gstreamer-libcaca-${V}
 EPOCH-main=		0
 
-REVISION-main=		24
-REVISION-aalib=		12
+REVISION-main=		25
+REVISION-aalib=		13
+REVISION-caca=		13
 REVISION-dv=		12
-REVISION-caca=		12
 
 MULTI_PACKAGES=		-main -aalib -dv -caca
 
@@ -34,7 +34,7 @@ MODGCONF2_SCHEMAS_DIR=	gst-plugins
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 iconv intl lzma pthread
 WANTLIB += pcre xml2 m z gstreamer-0.10 gstbase-0.10 ffi
 
-WANTLIB-main += ${WANTLIB} ${MODGCONF2_WANTLIB}
+WANTLIB-main += ${WANTLIB} ${MODGCONF2_WANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-main += FLAC ICE SM X11 Xdamage Xext Xfixes Xrender
 WANTLIB-main += Xv bz2 cairo cairo-gobject dbus-1 dbus-glib-1
 WANTLIB-main += expat execinfo fontconfig freetype gdk_pixbuf-2.0
@@ -43,14 +43,14 @@ WANTLIB-main += gstfft-0.10 gstinterfaces-0.10 gstnetbuffer-0.10 gstpbutils-0.10
 WANTLIB-main += gstriff-0.10 gstrtp-0.10 gstrtsp-0.10 gstsdp-0.10 gsttag-0.10
 WANTLIB-main += gstvideo-0.10 jpeg ogg orc-0.4 ossaudio pixman-1 png
 WANTLIB-main += shout sndio soup-2.4 soup-gnome-2.4 speex
-WANTLIB-main += sqlite3 ${COMPILER_LIBCXX} tag theora v4l2 v4lconvert vorbis wavpack
+WANTLIB-main += sqlite3 tag theora v4l2 v4lconvert vorbis wavpack
 WANTLIB-main += xcb xcb-render
 
 WANTLIB-aalib += ${WANTLIB}
-WANTLIB-aalib += X11 aa ncurses xcb
+WANTLIB-aalib += X11 aa curses xcb
 
 WANTLIB-caca += ${WANTLIB}
-WANTLIB-caca += X11 caca ncursesw xcb
+WANTLIB-caca += X11 caca curses xcb
 
 WANTLIB-dv += ${WANTLIB}
 WANTLIB-dv += dv gstaudio-0.10 gstinterfaces-0.10 gstpbutils-0.10

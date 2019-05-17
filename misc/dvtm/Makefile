@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.17 2016/04/27 13:22:41 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/17 16:19:39 sthen Exp $
 
 COMMENT=		tiling window management for the console
 
 DISTNAME=		dvtm-0.15
 CATEGORIES=		misc
+REVISION=		0
 
 HOMEPAGE=		http://www.brain-dump.org/projects/dvtm/
 
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB= 		c ncursesw util
+WANTLIB += c curses util
 
 MASTER_SITES=		${HOMEPAGE}
 

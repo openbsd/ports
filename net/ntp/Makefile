@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2018/11/14 20:48:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2019/05/17 16:19:40 sthen Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
@@ -7,7 +7,7 @@ COMMENT=	Network Time Protocol reference implementation
 # 'pl' for local use.
 
 VERSION=	4.2.8p10
-REVISION=	4
+REVISION=	5
 DISTNAME=	ntp-${VERSION}
 PKGNAME=	ntp-${VERSION:S/p/pl/}
 CATEGORIES=	net
@@ -20,8 +20,7 @@ MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
 # modified ISC
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto edit event_core event_pthreads
-WANTLIB += m pthread ssl termcap
+WANTLIB += c crypto curses edit event_core event_pthreads m pthread ssl
 
 # enabling SEPARATE_BUILD causes the parser to be rebuilt .y -> .c,
 # which requires bison

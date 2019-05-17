@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2017/10/23 17:10:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2019/05/17 16:19:39 sthen Exp $
 
 COMMENT =	dungeon explorin', hackin' game, but harder than nethack
 
 DISTNAME =	slash-e8
 PKGNAME =	slash-3.2.2.e8
-REVISION =	7
+REVISION =	8
 CATEGORIES =	games
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nethack/}
@@ -18,7 +18,8 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 #	GPL
 PERMIT_PACKAGE_CDROM =	Yes
-WANTLIB =		c termlib
+
+WANTLIB += c curses
 
 FAKE_FLAGS =	PREFIX=${PREFIX}
 

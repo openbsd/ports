@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2016/04/05 22:54:46 jca Exp $
+# $OpenBSD: Makefile,v 1.26 2019/05/17 16:19:40 sthen Exp $
 
 COMMENT=	shell (clone of plan9 shell)
 
 DISTNAME=	rc-1.7.4
-REVISION=	0
+REVISION=	1
 CATEGORIES=	plan9 shells
 MASTER_SITES=	http://static.tobold.org/rc/
 
@@ -25,10 +25,10 @@ TEST_TARGET= trip
 
 .if ${FLAVOR} == "readline"
 CONFIGURE_ARGS+= --with-edit=readline
-WANTLIB+=		readline termcap
+WANTLIB+=		curses readline
 .elif ${FLAVOR} == "editline"
 CONFIGURE_ARGS+= --with-edit=edit
-WANTLIB += edit termcap
+WANTLIB += curses edit
 .endif
 
 .include <bsd.port.mk>

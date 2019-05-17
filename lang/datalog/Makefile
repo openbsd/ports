@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/27 19:55:46 zhuk Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/17 16:19:39 sthen Exp $
 
 COMMENT=	deductive database system similar to Prolog
 
 DISTNAME=	datalog-2.6
-REVISION=	0
+REVISION=	1
 SHARED_LIBS +=  datalog                   0.0 # 0.0
 CATEGORIES=	lang
 
@@ -12,7 +12,8 @@ HOMEPAGE=	http://datalog.sourceforge.net/
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m readline termcap ${MODLUA_WANTLIB}
+WANTLIB += ${MODLUA_WANTLIB}
+WANTLIB += c curses m readline
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=datalog/}
 

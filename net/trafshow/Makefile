@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2017/08/15 22:02:50 danj Exp $
+# $OpenBSD: Makefile,v 1.25 2019/05/17 16:19:40 sthen Exp $
 
 COMMENT=	full screen visualization of network traffic
 
 DISTNAME=	trafshow-3.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 
 MASTER_SITES=	https://spacehopper.org/mirrors/ \
@@ -19,7 +19,7 @@ HOMEPAGE=	http://soft.risp.ru/trafshow/index_en.shtml
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c ncurses pcap termcap
+WANTLIB += c curses pcap
 
 CONFIGURE_STYLE= gnu
 #CONFIGURE_ENV=	CPPFLAGS="-DINET6"

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/01/01 20:46:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/17 16:19:41 sthen Exp $
 
 COMMENT=		grep wrapper with search highlighting
 
 DISTNAME=		hgrep-19991004
-REVISION =		0
+REVISION =		1
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.acme.com/software/hgrep/
@@ -12,7 +12,8 @@ MAINTAINER=		Nick Nauwelaerts <nick@nauwelaerts.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c termcap 
+
+WANTLIB += c curses
 
 MASTER_SITES=		${HOMEPAGE}
 DISTFILES=		hgrep_04oct1999.tar.gz

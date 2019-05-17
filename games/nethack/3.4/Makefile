@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/17 16:19:38 sthen Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Piece of cake
 V =		3.4.3
 DISTNAME =	nethack-$V
 PKGNAME =	${DISTNAME}
-REVISION =	14
+REVISION =	15
 CATEGORIES =	games
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nethack/}
@@ -16,7 +16,8 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
-WANTLIB =		c termlib
+
+WANTLIB +=	c curses
 
 COMPILER =		base-clang ports-gcc base-gcc
 

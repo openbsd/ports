@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2015/06/14 06:27:42 bentley Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/17 16:19:40 sthen Exp $
 
 COMMENT=	programmable MUD client, with macro support and more
 
 PKGNAME=	tinyfugue-4.0s1
-REVISION=	4
+REVISION=	5
 DISTNAME=	tf-40s1
 CATEGORIES=	net games
 
@@ -13,7 +13,8 @@ MAINTAINER=	Markus Lude <markus.lude@gmx.de>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c m termcap z 
+
+WANTLIB += c curses m z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tinyfugue/}
 

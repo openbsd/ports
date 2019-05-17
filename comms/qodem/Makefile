@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/14 20:26:49 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/17 16:19:37 sthen Exp $
 
 COMMENT =	Qodem Terminal Emulator
 
 DISTNAME =	qodem-1.0.0
+REVISION =	0
 
 CATEGORIES =	comms
 
@@ -14,7 +15,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # MIT (UTF-8 decoder in source/codepage.c)
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	c ncursesw util
+WANTLIB += c curses util
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qodem/}
 

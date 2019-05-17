@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2016/06/28 23:05:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/05/17 16:19:39 sthen Exp $
 
 COMMENT=	MIME implementation
 
 DISTNAME=	mm2.7
 PKGNAME=	metamail-2.7
-REVISION=	5
+REVISION=	6
 CATEGORIES=	mail
 
 MASTER_SITES=	http://www.guppylake.com/~nsb/metamail/
@@ -12,7 +12,8 @@ EXTRACT_SUFX=	.tar.Z
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c termcap
+WANTLIB += c curses
+
 # mkfontdir & friends
 USE_X11 =	Yes
 

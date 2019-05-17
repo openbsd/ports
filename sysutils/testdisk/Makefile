@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2016/09/13 18:52:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/17 16:19:41 sthen Exp $
 
 COMMENT =	data recovery software
 
 VERSION =	7.0
 DISTNAME =	testdisk-${VERSION}
 CATEGORIES =	sysutils
+REVISION =	0
 
 HOMEPAGE =	http://www.cgsecurity.org/
 MASTER_SITES =	${HOMEPAGE}
@@ -14,6 +15,8 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += c com_err curses ext2fs iconv jpeg ntfs-3g uuid z
 
 SUBST_VARS +=		VERSION
 
@@ -27,7 +30,6 @@ LIB_DEPENDS =		converters/libiconv \
 			sysutils/ntfs-3g \
 			graphics/jpeg
 
-WANTLIB =		c com_err iconv uuid ext2fs jpeg ncursesw ntfs-3g z
 
 post-install:
 			${INSTALL_DATA} ${WRKSRC}/documentation.html ${PREFIX}/share/doc/testdisk/

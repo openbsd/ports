@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2016/09/01 10:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2019/05/17 16:19:39 sthen Exp $
 # losely based on the FreeBSD port
 
 .for m in alpha powerpc sparc64
@@ -6,7 +6,7 @@ BROKEN-$m =	segfaults in longjump return while testing continuations
 .endfor
 
 COMMENT =	scheme r5 interpreter
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	lang
 
@@ -26,7 +26,7 @@ WRKDIST =	${WRKDIR}/scm
 # LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c curses termcap m readline
+WANTLIB += c curses m readline
 
 FLAVORS =	no_x11
 

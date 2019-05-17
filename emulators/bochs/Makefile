@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.72 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2019/05/17 16:19:38 sthen Exp $
 
 COMMENT=	x86 machine simulator
 
 DISTNAME=	bochs-2.6.9
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://bochs.sourceforge.net/
 
 # LGPLv2.1+ and MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m pthread ${COMPILER_LIBCXX} termlib
+WANTLIB += ${COMPILER_LIBCXX} c curses m pthread
 
 COMPILER =		base-clang ports-gcc base-gcc
 

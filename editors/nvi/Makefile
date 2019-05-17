@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.16 2016/09/12 22:44:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/17 16:19:38 sthen Exp $
 
 COMMENT=	ex/vi text editor with wide character support
 
 V =		2.1.3
+GH_ACCOUNT =	lichray
+GH_PROJECT =	nvi2
+GH_TAGNAME =	v$V
 DISTNAME =	nvi-$V
-CATEGORIES=	editors
-REVISION =	1
+REVISION =	2
+
+CATEGORIES =	editors
 
 MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-GH_ACCOUNT =	lichray
-GH_PROJECT =	nvi2
-GH_TAGNAME =	v$V
-
-WANTLIB=	c ncursesw util
+WANTLIB=	c curses util
 
 MODULES=	devel/cmake
 

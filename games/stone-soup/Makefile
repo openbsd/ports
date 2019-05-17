@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/04/30 12:50:29 kirby Exp $
+# $OpenBSD: Makefile,v 1.37 2019/05/17 16:19:39 sthen Exp $
 
 BROKEN-hppa =	ICE on dgn-shoals.cc:638
 
@@ -7,7 +7,7 @@ COMMENT = 	dungeon crawl stone soup
 VERSION = 	0.23.2
 DISTNAME=	stone_soup-${VERSION}-nodeps
 PKGNAME=	stone-soup-${VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES = 	games
 
@@ -16,7 +16,7 @@ HOMEPAGE = 	https://crawl.develz.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	 Yes
 
-WANTLIB = 	c m ${MODLUA_WANTLIB} sqlite3 ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} c m sqlite3
 
 MASTER_SITES = 	https://crawl.develz.org/release/${VERSION:R}/
 EXTRACT_SUFX=	.tar.xz
@@ -51,7 +51,7 @@ FLAVORS = 	no_x11
 FLAVOR ?=
 
 .if ${FLAVOR:Mno_x11}
-WANTLIB += 	ncursesw pthread z
+WANTLIB += 	curses pthread z
 MAKE_FLAGS += 	USE_UNICODE=y UNICODE_LOCALE=y
 .else
 # This should be automatically set during "gmake -C rltiles..." but isn't...

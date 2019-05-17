@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/22 18:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/17 16:19:40 sthen Exp $
 
 COMMENT=	distributed document delivery client
 
 V=		3.0.11
 DISTNAME=	gopher_${V}
 PKGNAME=	gopher-${V}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 
 HOMEPAGE=	http://quux.org/devel/gopher/Downloads/
@@ -13,9 +13,10 @@ HOMEPAGE=	http://quux.org/devel/gopher/Downloads/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += c curses m
+
 MASTER_SITES=	${HOMEPAGE}
 
-WANTLIB=	c m curses termcap
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu

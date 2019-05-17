@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.25 2018/03/08 17:19:20 fcambus Exp $
+# $OpenBSD: Makefile,v 1.26 2019/05/17 16:19:38 sthen Exp $
 
 COMMENT=	network head-to-head version of T*tris
 
 DISTNAME=	netris-0.52
-REVISION=	2
+REVISION=	3
 CATEGORIES=	games
 
 MASTER_SITES=	https://www.distfiles.pl/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c ncurses termcap
+
+WANTLIB += c curses
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	Configure

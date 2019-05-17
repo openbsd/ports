@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2019/04/28 20:51:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.162 2019/05/17 16:19:39 sthen Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -12,7 +12,7 @@ COMMENT =		compiler for the functional language Haskell
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
-REVISION =		3
+REVISION =		4
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
@@ -32,6 +32,8 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 # binaries, with BSD, GPLv2 and Perl artistic license.
 PERMIT_PACKAGE_CDROM =		Yes
 
+WANTLIB += c curses iconv m pthread util
+
 LIB_DEPENDS =		converters/libiconv
 
 BUILD_DEPENDS =		archivers/gtar \
@@ -43,7 +45,6 @@ RUN_DEPENDS =
 # CONFIGURE_ENV below)
 USE_WXNEEDED =		special
 
-WANTLIB +=		c iconv m ncursesw pthread util
 
 MASTER_SITES =		${HOMEPAGE}dist/${MODGHC_VER}/ \
 			${HOMEPAGE}dist/stable/dist/

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/17 16:19:38 sthen Exp $
 
 V =		2.1
 COMMENT =	scrabble game
 DISTNAME =	eliot-${V}
 CATEGORIES =	games
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	http://nongnu.org/eliot/
 
@@ -36,7 +36,7 @@ BUILD_DEPENDS =	devel/boost \
 RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	textproc/arabica devel/libconfig
 WANTLIB +=	lib/qt4/QtGui lib/qt4/QtNetwork c m pthread ${COMPILER_LIBCXX}
-WANTLIB +=	arabica config++ expat iconv intl ncursesw
+WANTLIB +=	arabica config++ expat iconv intl curses
 
 post-configure:
 	${SUBST_CMD} ${WRKSRC}/qt/main_window.cpp

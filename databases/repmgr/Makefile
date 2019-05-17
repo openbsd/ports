@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/16 16:46:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/17 16:19:37 sthen Exp $
 
 COMMENT =	HA and replication cluster management for PostgreSQL
 
 DISTNAME =	repmgr-3.0.3
 CATEGORIES =	databases
 HOMEPAGE =	http://www.repmgr.org/
+REVISION =	0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c crypto m pq pthread readline ssl termcap xml2 z
+WANTLIB += c crypto curses m pq pthread readline ssl xml2 z
 
 MASTER_SITES =	${HOMEPAGE}download/
 USE_GMAKE =	Yes

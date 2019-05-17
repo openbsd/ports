@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2017/04/25 15:47:41 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/17 16:19:38 sthen Exp $
 
 COMMENT=	The Dungeons of Moria
 
 V=		5.5.2
 DISTNAME=	um$V
 PKGNAME=	moria-$V
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	games
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www-math.bgsu.edu/~grabine/moria.html
 PERMIT_PACKAGE_CDROM=	not-for-profit redistribution only
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	c curses termcap
+WANTLIB += c curses
 
 MASTER_SITES=	http://www.nic.funet.fi/pub/unix/games/moria/source/
 

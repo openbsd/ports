@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/11/12 22:58:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/17 16:19:39 sthen Exp $
 
 COMMENT =	program for statistical analysis of sampled data
 DISTNAME =	pspp-1.2.0
-REVISION =	0
+REVISION =	1
 CATEGORIES =	math x11
 
 HOMEPAGE =	https://www.gnu.org/software/pspp/
@@ -11,15 +11,15 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo
-WANTLIB += cairo-gobject crypto curses dbus-1 epoxy expat ffi
-WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gsl gslcblas
-WANTLIB += gthread-2.0 gtk-3 gtksourceview-3.0 harfbuzz iconv
-WANTLIB += intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pq pthread readline spread-sheet-widget
-WANTLIB += ssl xcb xcb-render xcb-shm xml2 z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
+WANTLIB += crypto curses dbus-1 epoxy expat ffi fontconfig freetype
+WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gsl gslcblas gthread-2.0 gtk-3
+WANTLIB += gtksourceview-3.0 harfbuzz iconv intl lzma m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pq pthread
+WANTLIB += readline spread-sheet-widget ssl xcb xcb-render xcb-shm xml2
+WANTLIB += z
 
 MASTER_SITES =	${MASTER_SITE_GNU:=pspp/}
 

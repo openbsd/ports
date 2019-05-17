@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.143 2019/05/17 16:19:40 sthen Exp $
 
 COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
@@ -17,7 +17,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
 REVISION-main=	2
-REVISION-finch=	0
+REVISION-finch=	1
 REVISION-libpurple=0
 
 SHARED_LIBS=	jabber		0.0 \
@@ -45,7 +45,7 @@ WANTLIB-main=	X11 ICE SM Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		png purple ${COMPILER_LIBCXX} xcb-render xcb-shm xcb \
 		${WANTLIB}
 WANTLIB-libpurple= crypto meanwhile ssl silc silcclient ${WANTLIB}
-WANTLIB-finch=	X11 ncursesw panelw purple util xcb ${WANTLIB} \
+WANTLIB-finch=	X11 curses panelw purple util xcb ${WANTLIB} \
 		${MODPY_WANTLIB}
 
 MODULES=	textproc/intltool \

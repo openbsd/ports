@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.83 2018/11/14 20:48:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.84 2019/05/17 16:19:37 sthen Exp $
 
 COMMENT=	tools to connect your PalmOS(R) compatible handheld
 
 DISTNAME=	pilot-link-0.12.5
-REVISION=	11
+REVISION=	12
 
 SHARED_LIBS +=  pisock               11.0     # 9.2
 SHARED_LIBS +=  pisync               2.0      # 1.3
@@ -21,7 +21,8 @@ EXTRACT_SUFX=	.tar.bz2
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c iconv intl m perl png popt pthread readline termcap z
+WANTLIB += c curses iconv intl m perl png popt pthread readline z
+
 # uses perl ABI
 
 LIB_DEPENDS=		graphics/png \

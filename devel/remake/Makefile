@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2018/11/14 20:48:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/17 16:19:38 sthen Exp $
 
 COMMENT=		GNU make debugger
 
 PKGNAME=		remake-0.61p0
 DISTNAME=		remake-3.80+dbg-0.61
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		devel
 
@@ -14,8 +14,9 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bashdb/}
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += c curses readline
+
 CONFIGURE_STYLE=	gnu
-WANTLIB=		c readline termcap
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/make ${PREFIX}/bin/remake

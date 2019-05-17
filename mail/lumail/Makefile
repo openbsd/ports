@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2019/05/17 16:19:39 sthen Exp $
 
 PORTROACH =		limit:^0
 
@@ -6,7 +6,7 @@ COMMENT =		console-based e-mail client with Lua scripting support
 
 DISTNAME =		lumail-0.26
 CATEGORIES =		mail
-REVISION =		5
+REVISION =		6
 
 HOMEPAGE =		http://lumail.org/
 MASTER_SITES =		http://lumail.org/download/
@@ -14,9 +14,8 @@ MASTER_SITES =		http://lumail.org/download/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c gio-2.0 glib-2.0 glibmm-2.4 gmime-2.6 gobject-2.0
-WANTLIB +=		intl ${MODLUA_WANTLIB} m ncursesw pcrecpp pthread
-WANTLIB +=		sigc-2.0 ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} c curses gio-2.0 glib-2.0
+WANTLIB += glibmm-2.4 gmime-2.6 gobject-2.0 intl m pcrecpp pthread sigc-2.0
 
 MODULES =		lang/lua
 
@@ -34,7 +33,7 @@ MAKE_FLAGS =		C="${CC}" CC="${CXX}" \
 			CPPFLAGS="-std=gnu++0x -I${LOCALBASE}/include \
 				`pkg-config --cflags ${MODLUA_DEP}`" \
 			LDLIBS="`pkg-config --libs ${MODLUA_DEP}` \
-				-lncursesw -lpcrecpp"
+				-lcurses -lpcrecpp"
 
 NO_TEST =		Yes
 

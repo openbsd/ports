@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.11 2018/05/20 08:48:55 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/17 16:19:38 sthen Exp $
 
 COMMENT=		curses-based Lines game
 
 DISTNAME=		clines-1.0.4
 CATEGORIES=		games
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://manticore.2y.net/prj/clines-a.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ncursesw
+WANTLIB += c curses
 
 MASTER_SITES=		http://manticore.2y.net/cgi-bin/dlwct.sh?f=clines/
 EXTRACT_SUFX=		.tar.bz2

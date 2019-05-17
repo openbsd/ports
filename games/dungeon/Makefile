@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2016/05/07 12:40:56 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/17 16:19:38 sthen Exp $
 
 COMMENT =		text adventure game
 
 PKGNAME =		dungeon-2.7s
 DISTNAME =		dungn27s
 EXTRACT_SUFX =		.zip
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
@@ -15,7 +15,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE_CDROM =	no commercial use
 PERMIT_PACKAGE_FTP =	Yes
 
-WANTLIB =		c termcap
+WANTLIB += c curses
 
 MASTER_SITES =		http://mirror.ifarchive.org/if-archive/games/source/ \
 			ftp://ftp.ifarchive.org/if-archive/games/source/ \

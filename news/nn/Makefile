@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/03 13:45:29 danj Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/17 16:19:40 sthen Exp $
 
 COMMENT =		menu-based Usenet newsreader
 DISTNAME =		nn-6.7.3
-REVISION =		4
+REVISION =		5
 CATEGORIES =		news
 HOMEPAGE =		http://www.nndev.org
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://www.nndev.org
 PERMIT_PACKAGE_CDROM =	CDs not sold at cost
 PERMIT_PACKAGE_FTP =	Yes
 
-WANTLIB =		c termlib
+WANTLIB += c curses
 
 MASTER_SITES =		ftp://ftp.nndev.org/pub/nn-6.7/ \
                         https://distfiles.nl/
