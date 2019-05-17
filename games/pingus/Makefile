@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/17 19:14:08 cwen Exp $
 
 COMMENT=	free Lemmings-like game
 
 DISTNAME=	pingus-0.7.6
-REVISION=	4
+REVISION=	5
 CATEGORIES=	games x11
 
 EXTRACT_SUFX=	.tar.bz2
 
-HOMEPAGE=	http://pingus.seul.org/
+HOMEPAGE=	https://pingus.seul.org/
 MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=pingus/}
 
 # GPLv2

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_pingus_screens_demo_session_cpp,v 1.1 2019/05/17 19:14:08 cwen Exp $
+
+Add missing header for ports-gcc
+
+Index: src/pingus/screens/demo_session.cpp
+--- src/pingus/screens/demo_session.cpp.orig
++++ src/pingus/screens/demo_session.cpp
+@@ -17,6 +17,7 @@
+ #include "pingus/screens/demo_session.hpp"
+ 
+ #include <algorithm>
++#include <functional>
+ #include <iostream>
+ 
+ #include "engine/gui/gui_manager.hpp"
