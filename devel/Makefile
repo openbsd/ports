@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1856 2019/05/16 04:33:35 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.1857 2019/05/17 03:30:18 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1084,6 +1084,7 @@
      SUBDIR += p5-Test-Differences
      SUBDIR += p5-Test-DistManifest
      SUBDIR += p5-Test-Distribution
+     SUBDIR += p5-Test-EOL
      SUBDIR += p5-Test-Exception
      SUBDIR += p5-Test-Expect
      SUBDIR += p5-Test-FailWarnings
