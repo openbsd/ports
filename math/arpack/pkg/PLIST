@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:49 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/05/17 17:01:08 naddy Exp $
 lib/libarpack.a
 @lib lib/libarpack.so.${LIBarpack_VERSION}
-lib/libarpack_p.a
 share/doc/arpack/
 share/doc/arpack/LICENSE
 share/doc/arpack/README
