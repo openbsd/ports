@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.110 2019/05/16 18:15:40 semarie Exp $
+# $OpenBSD: python.port.mk,v 1.111 2019/05/17 13:27:03 espie Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -237,5 +237,11 @@ do-install:
 do-test:
 	@${MODPY_TEST_TARGET}
 .  endif
+
+.if make(update-plist) || make(plist)
+.  if ${FLAVORS:Mpython3} && !${FLAVOR:Mpython3}
+ERRORS += "***\n*** WARNING: running update-plist without FLAVOR=python3\n***\n***"
+.  endif
+.endif
 
 .endif
