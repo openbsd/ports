@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/28 20:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/17 13:35:49 sthen Exp $
 
 COMMENT =	python bindings for Chromaprint and the Acoustid API
 
-MODPY_EGG_VERSION =	1.1.5
+MODPY_EGG_VERSION =	1.1.6
 DISTNAME =	pyacoustid-${MODPY_EGG_VERSION}
 PKGNAME =	py-acoustid-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	audio
 
@@ -28,6 +27,6 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/setup.py
 
 # needs audioread
-NO_TEST=	Yes
+#NO_TEST=	Yes
 
 .include <bsd.port.mk>
