@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.90 2019/04/27 22:26:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.91 2019/05/17 12:52:46 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 # 9.11 is an ESV.  After 9.11 the format changes: odd numbers are devel,
 # even numbers are stable (and for stable branches, point releases are
 # bug fixes only).  The next ESV will be 9.16.
-V=		9.11.6-P1
+V=		9.11.7
 EPOCH=		0
 
 DISTNAME=	bind-$V
