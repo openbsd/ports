@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2019/03/31 10:55:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/17 15:39:59 sthen Exp $
 
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
 
+# if updating, check if pageant can go back to main
 V=		0.71
-REVISION=	0
+REVISION=	1
 DISTNAME=	putty-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-gui=	${DISTNAME:S/putty/putty-gui/}
