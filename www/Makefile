@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.907 2019/05/16 16:24:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.908 2019/05/17 03:33:21 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -73,6 +73,7 @@
      SUBDIR += kcgi
      SUBDIR += kibana
      SUBDIR += kore
+     SUBDIR += kore,curl
      SUBDIR += kore,pgsql
      SUBDIR += kwebapp
      SUBDIR += kwebkitpart
