@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2019/02/20 14:16:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/05/17 13:31:29 sthen Exp $
 
 COMMENT=	library to determine file type
 
-V=		5.35
+V=		5.37
 DISTNAME=	file-${V}
 PKGNAME=	libmagic-${V}
 
