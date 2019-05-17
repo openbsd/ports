@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/13 02:09:15 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/17 16:45:28 sthen Exp $
 
 COMMENT=		extensions for Caja, the MATE file manager
 
 MATE_PROJECT=		caja-extensions
-REVISION=		0
+REVISION=		1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 c
-WANTLIB += cairo cairo-gobject caja-extension dbus-1 dbus-glib-1
-WANTLIB += dconf epoxy expat ffi fontconfig freetype fribidi gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gssdp-1.2 gthread-2.0 gtk-3 gupnp-1.2 harfbuzz
-WANTLIB += iconv idn2 intl lzma m mate-desktop-2 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png16 psl pthread soup-2.4
-WANTLIB += sqlite3 startup-notification-1 unistring xcb xcb-render
-WANTLIB += xcb-shm xcb-util xml2 z
+WANTLIB += X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo
+WANTLIB += cairo-gobject caja-extension dbus-1 dbus-glib-1 dconf epoxy
+WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gssdp-1.2
+WANTLIB += gthread-2.0 gtk-3 gupnp-1.2 harfbuzz iconv idn2 intl lzma m
+WANTLIB += mate-desktop-2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png psl pthread soup-2.4 sqlite3
+WANTLIB += startup-notification-1 unistring xcb xcb-render xcb-shm
+WANTLIB += xcb-util xml2 z
 
 MODULES=		devel/dconf \
 			x11/gnome

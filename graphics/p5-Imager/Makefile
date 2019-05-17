@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.42 2019/05/07 17:04:59 danj Exp $
+# $OpenBSD: Makefile,v 1.43 2019/05/17 16:45:27 sthen Exp $
 
 COMMENT=	generate and manipulate images
 
 DISTNAME =	Imager-1.009
 CATEGORIES=	graphics
 MODULES=	cpan
-REVISION =	0
+REVISION =	1
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c freetype gif jpeg m perl png16 t1 tiff z
+WANTLIB += c freetype gif jpeg m perl png t1 tiff z
 
 LIB_DEPENDS=	devel/t1lib \
 		graphics/png \

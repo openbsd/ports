@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.85 2019/04/22 16:34:45 jca Exp $
+# $OpenBSD: Makefile,v 1.86 2019/05/17 16:45:25 sthen Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
 VERSION=		26.2
+REVISION=		0
 DISTNAME=		emacs-${VERSION}
 
 CATEGORIES=		editors
@@ -82,7 +83,7 @@ WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 X11-xcb
 WANTLIB += Xaw3d Xext Xfixes Xft Xinerama Xmu Xpm Xrandr Xrender
 WANTLIB += Xt cairo dbus-1 fontconfig freetype gdk_pixbuf-2.0
 WANTLIB += gif gio-2.0 glib-2.0 gobject-2.0 intl jpeg lcms2 m17n-core
-WANTLIB += m17n-flt otf png16 rsvg-2 tiff xcb
+WANTLIB += m17n-flt otf png rsvg-2 tiff xcb
 . elif ${FLAVOR} == "gtk2"
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk2
 LIB_DEPENDS+=		x11/gtk+2
@@ -91,7 +92,7 @@ WANTLIB += Xcomposite Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
 WANTLIB += Xpm Xrandr Xrender atk-1.0 cairo dbus-1 fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-x11-2.0 intl jpeg lcms2 m17n-core m17n-flt
-WANTLIB += otf pango-1.0 pangocairo-1.0 pangoft2-1.0 png16 rsvg-2
+WANTLIB += otf pango-1.0 pangocairo-1.0 pangoft2-1.0 png rsvg-2
 WANTLIB += tiff xcb
 . elif ${FLAVOR} == "gtk3"
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk3
@@ -101,7 +102,7 @@ WANTLIB += Xext Xfixes Xft Xinerama Xpm Xrandr Xrender atk-1.0
 WANTLIB += cairo cairo-gobject dbus-1 fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0 gtk-3
 WANTLIB += intl jpeg lcms2 m17n-core m17n-flt otf pango-1.0 pangocairo-1.0
-WANTLIB += png16 rsvg-2 tiff xcb
+WANTLIB += png rsvg-2 tiff xcb
 . else
 ERRORS+=		"Fatal: Conflicting flavor: ${FLAVOR}"
 . endif

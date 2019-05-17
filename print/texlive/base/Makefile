@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2019/03/12 21:19:29 cwen Exp $
+# $OpenBSD: Makefile,v 1.111 2019/05/17 16:45:28 sthen Exp $
 
 COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
@@ -8,7 +8,7 @@ DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
 
-REVISION-main =		2
+REVISION-main =		3
 
 MULTI_PACKAGES =	-main -mktexlsr -synctex
 PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
@@ -30,7 +30,7 @@ WANTLIB-main += cups cupsimage dbus-1 expat ffi fontconfig freetype
 WANTLIB-main += gd glib-2.0 gmp gnutls graphite2 gs harfbuzz harfbuzz-icu
 WANTLIB-main += hogweed iconv icudata icui18n icuio icuuc idn2 ijs
 WANTLIB-main += intl jbig2dec jpeg lcms2 m nettle p11-kit paper
-WANTLIB-main += pixman-1 png16 potrace tasn1 tiff unistring webp xcb
+WANTLIB-main += pixman-1 png potrace tasn1 tiff unistring webp xcb
 WANTLIB-main += xcb-render xcb-shm z zzip
 WANTLIB-main += kpathsea
 

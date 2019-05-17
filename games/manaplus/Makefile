@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.97 2019/03/29 01:13:30 bcallah Exp $
+# $OpenBSD: Makefile,v 1.98 2019/05/17 16:45:26 sthen Exp $
 
 V =		1.9.3.23
+REVISION =	0
 COMMENT =	client for The Mana World
 DISTNAME =	manaplus-${V}
 EXTRACT_SUFX =	.tar.xz
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL SDL2 SDL2_gfx-1.0 SDL2_image
 WANTLIB += SDL2_mixer SDL2_net SDL2_ttf X11 c crypto curl execinfo
-WANTLIB += iconv intl m nghttp2 png16 ssl xml2 z
+WANTLIB += iconv intl m nghttp2 png ssl xml2 z
 
 MASTER_SITES =	http://download.evolonline.org/manaplus/download/${V}/
 

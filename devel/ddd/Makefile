@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.78 2019/02/07 14:32:45 jca Exp $
+# $OpenBSD: Makefile,v 1.79 2019/05/17 16:45:25 sthen Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
 DISTNAME=	ddd-3.3.12
-REVISION =	14
+REVISION =	15
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=ddd/}
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xft
 WANTLIB += Xm Xmu Xpm Xrender Xt c curses expat fontconfig
-WANTLIB += freetype iconv jpeg m png16 xcb z
+WANTLIB += freetype iconv jpeg m png xcb z
 
 COMPILER =		base-clang ports-gcc base-gcc
 

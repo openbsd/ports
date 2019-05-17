@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.206 2019/04/28 20:51:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.207 2019/05/17 16:45:26 sthen Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -23,7 +23,7 @@ PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde4
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-java=	0
 EPOCH=		0
 
@@ -239,7 +239,7 @@ WANTLIB-main+=	boost_filesystem boost_filesystem-mt boost_iostreams-mt
 WANTLIB-main+=	boost_system boost_system-mt boost_date_time-mt
 WANTLIB-main+=	boost_locale-mt
 WANTLIB-main+=	epoxy mysqlclient_r
-WANTLIB-main+=	lber-2.4 ldap-2.4 png16
+WANTLIB-main+=	lber-2.4 ldap-2.4 png
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/libexecinfo \

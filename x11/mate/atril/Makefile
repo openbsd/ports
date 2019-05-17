@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/11 18:33:42 robert Exp $
+# $OpenBSD: Makefile,v 1.26 2019/05/17 16:45:28 sthen Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -11,6 +11,7 @@ SHARED_LIBS +=  atrilview                 3.0 # 3.0
 
 MATE_PROJECT=		atril
 MATE_VERSION=		1.22.1
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,7 +30,7 @@ WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gtk-3 gxps harfbuzz-icu harfbuzz hogweed hyphen
 WANTLIB += icudata icui18n icuuc idn2 javascriptcoregtk-4.0 jpeg lcms2
 WANTLIB += lz4 lzma nettle notify openjp2 orc-0.4 p11-kit pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 png16 poppler-glib poppler psl secret-1
+WANTLIB += pangocairo-1.0 pangoft2-1.0 png poppler-glib poppler psl secret-1
 WANTLIB += soup-2.4 spectre tasn1 tiff unistring webkit2gtk-4.0 webp xml2
 WANTLIB += z xslt aspell
 WANTLIB += GLESv2 gstallocators-1.0 gstgl-1.0

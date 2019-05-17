@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/03/08 20:00:45 cwen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/05/17 16:45:26 sthen Exp $
 
 COMMENT-main =		Game Boy Color/Advance emulator
 COMMENT-qt =		Game Boy Color/Advance emulator with GUI
@@ -9,9 +9,9 @@ DISTNAME =		mgba-$V
 PKGNAME-main =		mgba-$V
 PKGNAME-qt =		mgba-qt-$V
 PKGNAME-libretro =	libretro-mgba-$V
-REVISION-libretro =	0
-REVISION-main =		0
-REVISION-qt =		0
+REVISION-libretro =	1
+REVISION-main =		1
+REVISION-qt =		1
 
 MULTI_PACKAGES =	-main -qt -libretro
 
@@ -29,7 +29,7 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 PERMIT_PACKAGE_CDROM =	Yes
 
 cWANTLIB =		GL GLU MagickCore-6.Q16 MagickWand-6.Q16 SDL2 \
-			avcodec avformat avutil c curses edit m png16 \
+			avcodec avformat avutil c curses edit m png \
 			pthread sqlite3 swresample swscale z zip elf \
 			avresample
 WANTLIB-main =		${cWANTLIB}

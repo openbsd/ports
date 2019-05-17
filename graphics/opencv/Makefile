@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2019/03/23 07:26:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.48 2019/05/17 16:45:27 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -8,6 +8,7 @@ COMMENT-main =		library for computer vision real-time processin
 COMMENT-java =		Java bindings for OpenCV
 
 V =			3.4.2
+REVISION-main =		0
 DISTNAME =		opencv-${V}
 PKGNAME-main =		opencv-${V}
 PKGNAME-docs =		opencv-docs-$V
@@ -31,7 +32,7 @@ WANTLIB-main += cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB-main += gobject-2.0 gphoto2 gphoto2_port gstapp-1.0 gstbase-1.0
 WANTLIB-main += gstpbutils-1.0 gstreamer-1.0 gstriff-1.0 gstvideo-1.0
 WANTLIB-main += gthread-2.0 gtk-3 intl jasper jpeg m pango-1.0 pangocairo-1.0
-WANTLIB-main += png16 swscale tiff webp z
+WANTLIB-main += png swscale tiff webp z
 
 WANTLIB-java += ${COMPILER_LIBCXX} m opencv_calib3d opencv_core opencv_features2d
 WANTLIB-java += opencv_flann opencv_highgui opencv_imgcodecs opencv_imgproc

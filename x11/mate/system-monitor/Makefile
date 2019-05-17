@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/11 18:33:43 robert Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/17 16:45:29 sthen Exp $
 
 COMMENT=		MATE system monitor
 
 MATE_PROJECT=		mate-system-monitor
 MATE_VERSION=		1.22.1
+REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -18,7 +19,7 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0
 WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 gtkmm-3.0 gtop-2.0 harfbuzz iconv intl kvm lzma
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
-WANTLIB += pcre pixman-1 png16 rsvg-2 sigc-2.0 wnck-3 xcb xcb-render
+WANTLIB += pcre pixman-1 png rsvg-2 sigc-2.0 wnck-3 xcb xcb-render
 WANTLIB += xcb-shm xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc

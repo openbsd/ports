@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:52:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/17 16:45:28 sthen Exp $
 
 COMMENT =	freedesktop-compliant menu for openbox and tint2
 CATEGORIES =	x11
@@ -6,14 +6,14 @@ CATEGORIES =	x11
 GH_ACCOUNT =	johanmalm
 GH_PROJECT =	jgmenu
 GH_TAGNAME =	v2.1
-REVISION =	0
+REVISION =	1
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xrandr c cairo gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 iconv intl lzma m menu-cache pango-1.0
-WANTLIB += pangocairo-1.0 png16 pthread rsvg-2 xml2 z
+WANTLIB += pangocairo-1.0 png pthread rsvg-2 xml2 z
 
 # base-gcc does not understand all the warnings
 COMPILER =	base-clang ports-gcc

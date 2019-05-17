@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/30 09:17:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/17 16:45:28 sthen Exp $
 
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${VERSION}
 CATEGORIES =	graphics x11
-REVISION =	0
+REVISION =	1
 
 
 SHARED_LIBS +=  gwenviewlib               53.0 # 4.97
@@ -17,7 +17,7 @@ WANTLIB += KF5Kipi KF5Notifications KF5Parts KF5Service KF5Solid
 WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5OpenGL Qt5PrintSupport Qt5Svg Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml X11 c cfitsio exiv2 jpeg lcms2 m png16 z
+WANTLIB += Qt5Xml X11 c cfitsio exiv2 jpeg lcms2 m png z
 
 MODULES +=	x11/kde-applications \
 		multimedia/phonon

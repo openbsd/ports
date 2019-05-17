@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/11 18:33:43 robert Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/17 16:45:29 sthen Exp $
 
 COMMENT=		panel component for MATE
+REVISION=		0
 
 SHARED_LIBS +=  mate-panel-applet-4       1.1 # 1.1
 
@@ -12,19 +13,15 @@ CATEGORIES=		x11
 # GPLv2/LGPLv2/GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 X11-xcb XRes Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender c dconf epoxy
-WANTLIB += expat ffi fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 iconv intl m pcre pixman-1
-WANTLIB += pthread xcb xcb-render xcb-shm
-WANTLIB += xcb-util z fribidi
-WANTLIB += atk-1.0 atk-bridge-2.0 cairo-gobject
-WANTLIB += cairo croco-0.6 gdk-3
-WANTLIB += gdk_pixbuf-2.0 graphite2 gtk-3 harfbuzz
-WANTLIB += lzma mate-menu mateweather pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 png16 rsvg-2 soup-2.4
-WANTLIB += startup-notification-1 wnck-3 xml2 mate-desktop-2
-WANTLIB += idn2 unistring
+WANTLIB += ICE SM X11 X11-xcb XRes Xau Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 c
+WANTLIB += cairo cairo-gobject croco-0.6 dconf epoxy expat ffi
+WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
+WANTLIB += harfbuzz iconv idn2 intl lzma m mate-desktop-2 mate-menu
+WANTLIB += mateweather pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread rsvg-2 soup-2.4 startup-notification-1
+WANTLIB += unistring wnck-3 xcb xcb-render xcb-shm xcb-util xml2 z
 
 MODULES=		devel/dconf \
 			x11/gnome

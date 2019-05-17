@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2019/04/21 08:49:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2019/05/17 16:45:27 sthen Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -11,6 +11,7 @@ PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-good-${V}
 
 PKGNAME-main=		${PKGNAME}
 PKGNAME-pulse=		${GST_PKGNAME_PREFIX}-plugins-pulse-${V}
+REVISION-main=		0
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-good/}
 
@@ -22,7 +23,7 @@ WANTLIB-main += FLAC X11 Xdamage Xext Xfixes atk-1.0 bz2 cairo cairo-gobject
 WANTLIB-main += gdk-3 gdk_pixbuf-2.0 gio-2.0 gstallocators-1.0 gstfft-1.0
 WANTLIB-main += gstgl-1.0 gstnet-1.0 gstpbutils-1.0 gstriff-1.0 gstrtp-1.0
 WANTLIB-main += gstrtsp-1.0 gstsdp-1.0 gsttag-1.0 gtk-3 jpeg m mpg123
-WANTLIB-main += ogg orc-0.4 pango-1.0 pangocairo-1.0 png16 shout soup-2.4
+WANTLIB-main += ogg orc-0.4 pango-1.0 pangocairo-1.0 png shout soup-2.4
 WANTLIB-main += speex tag theora twolame v4l2 vorbis vpx wavpack z
 
 # comes from multimedia/libvpx using lang/clang MODULE on i386|amd64 only

@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.35 2019/03/28 16:46:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2019/05/17 16:45:28 sthen Exp $
 
 COMMENT =		suite of solitaire card games
 
 GNOME_PROJECT =		aisleriot
 GNOME_VERSION =		3.22.8
+REVISION =		0
 
 CATEGORIES =		games
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo
-WANTLIB += cairo-gobject canberra canberra-gtk3 croco-0.6 dbus-1
-WANTLIB += dbus-glib-1 epoxy expat ffi fontconfig freetype fribidi
-WANTLIB += gc gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gmp gobject-2.0 graphite2 gthread-2.0 gtk-3 guile-2.2
-WANTLIB += harfbuzz iconv intl ltdl lzma m ogg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png16 pthread rsvg-2 unistring
-WANTLIB += vorbis vorbisfile xcb xcb-render xcb-shm xml2 z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject canberra
+WANTLIB += canberra-gtk3 croco-0.6 dbus-1 dbus-glib-1 epoxy expat ffi
+WANTLIB += fontconfig freetype fribidi gc gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gmp gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-3 guile-2.2 harfbuzz iconv intl ltdl lzma m ogg pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread rsvg-2
+WANTLIB += unistring vorbis vorbisfile xcb xcb-render xcb-shm xml2 z
 
 MODULES =		devel/dconf \
 			devel/gconf2 \

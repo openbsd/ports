@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2019/04/24 09:56:33 robert Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/17 16:45:29 sthen Exp $
 
 COMMENT=		MATE screensaver
+REVISION=		0
 
 MATE_PROJECT=		mate-screensaver
 MATE_VERSION=		1.22.1
@@ -8,20 +9,17 @@ MATE_VERSION=		1.22.1
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xss Xxf86vm
-WANTLIB += c dconf drm epoxy expat ffi fontconfig freetype gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += iconv intl lzma m pcre pixman-1 pthread
-WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xkbfile xml2
-WANTLIB += z
-WANTLIB += atk-1.0 atk-bridge-2.0 cairo-gobject cairo dbus-1
-WANTLIB += dbus-glib-1 gdk-3 graphite2 gtk-3 harfbuzz mate-desktop-2
+WANTLIB += GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xss Xxf86vm atk-1.0 atk-bridge-2.0
+WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 dconf drm epoxy
+WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl lzma m mate-desktop-2
 WANTLIB += mate-menu matekbd matekbdui notify pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 xklavier
-WANTLIB += startup-notification-1 xcb-util
-WANTLIB += fribidi xcb-dri3 xcb-present xcb-sync xshmfence
-WANTLIB += png16 xcb-xfixes
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread startup-notification-1
+WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render xcb-shm
+WANTLIB += xcb-sync xcb-util xcb-xfixes xkbfile xklavier xml2 xshmfence
+WANTLIB += z
 
 MODULES=		devel/dconf \
 			x11/gnome

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2019/02/16 22:49:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.136 2019/05/17 16:45:28 sthen Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -12,6 +12,7 @@ COMMENT-sqlite3=	Bacula libbaccats support for SQLite3
 
 V=			9.4.2
 REVISION-pgsql=		0
+REVISION-bat=		0
 DISTNAME=		bacula-$V
 PKGNAME-main=		bacula-client-$V
 PKGNAME-server=		bacula-server-$V
@@ -131,7 +132,7 @@ LIB_DEPENDS-sqlite3=	${MODGCC4_CPPLIBDEP} \
 WANTLIB-bat += ${WANTLIB}
 WANTLIB-bat += ICE QtCore QtGui SM X11 Xext Xi Xinerama Xrender bac
 WANTLIB-bat += baccfg bacfind expat fontconfig freetype xcb
-WANTLIB-bat += ffi glib-2.0 gobject-2.0 gthread-2.0 pcre png16
+WANTLIB-bat += ffi glib-2.0 gobject-2.0 gthread-2.0 pcre png
 RUN_DEPENDS-bat=	${RUN_DEPENDS} \
 			devel/desktop-file-utils
 LIB_DEPENDS-bat=	${LIB_DEPENDS} \

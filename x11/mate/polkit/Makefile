@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/27 18:13:38 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/17 16:45:29 sthen Exp $
 
 COMMENT=		PolicyKit authentication agent for MATE
+REVISION=		0
 
 MATE_PROJECT=		mate-polkit
 
@@ -9,13 +10,13 @@ CATEGORIES=		x11 sysutils
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
-WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject epoxy
+WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png16 polkit-agent-1 polkit-gobject-1
-WANTLIB += pthread xcb xcb-render xcb-shm z
+WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png polkit-agent-1
+WANTLIB += polkit-gobject-1 pthread xcb xcb-render xcb-shm z
 
 MODULES=		x11/gnome
 

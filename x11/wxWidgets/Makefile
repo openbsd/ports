@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2019/01/21 18:55:07 jca Exp $
+# $OpenBSD: Makefile,v 1.65 2019/05/17 16:45:29 sthen Exp $
 
 COMMENT-main =	C++ cross-platform GUI toolkit
 COMMENT-media =	wxMediaCtrl class for wxWidgets
@@ -7,7 +7,7 @@ V =		3.0.4
 DISTNAME =	wxWidgets-${V}
 PKGNAME-main =	wxWidgets-gtk3-${V}
 PKGNAME-media =	wxWidgets-media-${V}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	x11
 MASTER_SITES =	https://github.com/wxWidgets/wxWidgets/releases/download/v$V/
@@ -56,7 +56,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 WANTLIB-main += ${COMPILER_LIBCXX} GL GLU SDL2 SM X11 Xxf86vm atk-1.0
 WANTLIB-main += c cairo cairo-gobject expat gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB-main += glib-2.0 gobject-2.0 gthread-2.0 gtk-3 iconv intl jpeg m
-WANTLIB-main += mspack notify pango-1.0 pangocairo-1.0 png16 tiff z
+WANTLIB-main += mspack notify pango-1.0 pangocairo-1.0 png tiff z
 
 LIB_DEPENDS-media =	${LIB_DEPENDS} \
 			multimedia/gstreamer1/plugins-base \
@@ -65,7 +65,7 @@ LIB_DEPENDS-media =	${LIB_DEPENDS} \
 WANTLIB-media += ${COMPILER_LIBCXX} SM X11 Xxf86vm atk-1.0 cairo cairo-gobject
 WANTLIB-media += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gstbase-1.0
 WANTLIB-media += gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3 iconv
-WANTLIB-media += intl jpeg m notify pango-1.0 pangocairo-1.0 png16 tiff
+WANTLIB-media += intl jpeg m notify pango-1.0 pangocairo-1.0 png tiff
 WANTLIB-media += wx_baseu-3.0 wx_gtk3u_core-3.0 z
 
 MAKE_FLAGS =	SO_VERSION="${LIBwx_baseu-3.0_VERSION}"

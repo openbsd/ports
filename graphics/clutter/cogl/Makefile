@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.40 2019/04/26 09:27:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2019/05/17 16:45:26 sthen Exp $
 
 COMMENT=		modern 3D graphics API
 
 GNOME_PROJECT=		cogl
 GNOME_VERSION=		1.22.4
+REVISION=		0
 
 SHARED_LIBS +=  cogl                 3.2      # 24.2
 SHARED_LIBS +=	cogl-path            0.1      # 24.2
 SHARED_LIBS +=  cogl-pango           3.1      # 24.2
 
-WANTLIB += EGL X11 X11-xcb Xcomposite Xdamage Xext Xfixes Xrandr
-WANTLIB += Xrender cairo drm expat ffi fontconfig freetype gbm
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += EGL X11 X11-xcb Xcomposite Xdamage Xext Xfixes Xrandr Xrender
+WANTLIB += cairo drm expat ffi fontconfig freetype fribidi gbm
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 harfbuzz iconv intl m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 pthread
-WANTLIB += xcb xcb-dri2 xcb-render xcb-shm xcb-xfixes xshmfence
-WANTLIB += z fribidi glapi png16 xcb-dri3 xcb-present xcb-sync
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread xcb
+WANTLIB += xcb-dri2 xcb-dri3 xcb-present xcb-render xcb-shm xcb-sync
+WANTLIB += xcb-xfixes xshmfence z
 
 MODGNOME_TOOLS +=	gobject-introspection
 

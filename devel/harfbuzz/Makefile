@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2019/03/30 11:05:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2019/05/17 16:45:25 sthen Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -11,6 +11,8 @@ EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		harfbuzz-${V}
 PKGNAME-icu=		harfbuzz-icu-${V}
+REVISION-icu=		0
+REVISION-main=		0
 
 SHARED_LIBS +=  harfbuzz             14.3     # 20301.0
 SHARED_LIBS +=  harfbuzz-icu         1.0      # 20301.0
@@ -26,8 +28,12 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += freetype glib-2.0 graphite2 iconv intl m pthread
-WANTLIB += ${COMPILER_LIBCXX} z
+WANTLIB += png
+
+WANTLIB-main += ${WANTLIB} X11 Xext Xrender c cairo expat ffi fontconfig
+WANTLIB-main += gobject-2.0 pcre pixman-1 xcb xcb-render xcb-shm
+
+WANTLIB-icu += ${WANTLIB} harfbuzz icudata icuuc
 
 MASTER_SITES=		http://www.freedesktop.org/software/harfbuzz/release/
 
@@ -38,12 +44,6 @@ USE_GMAKE=		Yes
 # C++11
 COMPILER=		base-clang ports-gcc ports-clang
 
-WANTLIB-main += ${WANTLIB}
-WANTLIB-main += X11 Xext Xrender c cairo expat fontconfig pixman-1
-WANTLIB-main += png16 xcb xcb-render xcb-shm ffi gobject-2.0 pcre
-
-WANTLIB-icu += ${WANTLIB}
-WANTLIB-icu += harfbuzz icudata icuuc
 
 BUILD_DEPENDS=		devel/gobject-introspection
 

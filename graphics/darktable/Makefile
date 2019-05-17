@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.90 2019/03/21 13:38:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.91 2019/05/17 16:45:27 sthen Exp $
 
 ONLY_FOR_ARCHS= i386 amd64 aarch64
 
 COMMENT=	virtual lighttable and darkroom for photographers
 
 V=		2.6.2
+REVISION=	0
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
@@ -24,7 +25,7 @@ WANTLIB += atk-1.0 c cairo cairo-gobject colord colord-gtk colordprivate
 WANTLIB += cups curl exiv2 flickcurl gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gphoto2 gphoto2_port
 WANTLIB += gtk-3 intl jpeg json-glib-1.0 lcms2 lensfun m openjp2
-WANTLIB += osmgpsmap-1.0 pango-1.0 pangocairo-1.0 png16 pugixml
+WANTLIB += osmgpsmap-1.0 pango-1.0 pangocairo-1.0 png pugixml
 WANTLIB += rsvg-2 secret-1 soup-2.4 sqlite3 tiff webp xml2 z
 
 MASTER_SITES=	https://github.com/darktable-org/darktable/releases/download/release-$V/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/02/17 00:28:54 bcallah Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/17 16:45:26 sthen Exp $
 
 COMMENT =	roguelike game in a non-Euclidean world
 CATEGORIES =	games x11
@@ -6,6 +6,7 @@ CATEGORIES =	games x11
 GH_ACCOUNT =	zenorogue
 GH_PROJECT =	hyperrogue
 GH_TAGNAME =	v10.5e
+REVISION =	0
 
 HOMEPAGE =	http://roguetemple.com/z/hyper/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -14,7 +15,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW SDL SDL_gfx SDL_mixer SDL_ttf
-WANTLIB += c m png16
+WANTLIB += c m png
 
 # C++11
 COMPILER =	base-clang ports-gcc

@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/11 18:33:43 robert Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/17 16:45:29 sthen Exp $
 
 COMMENT=		MATE terminal
+REVISION=		0
 
 MATE_PROJECT=		mate-terminal
 MATE_VERSION=		1.22.1
@@ -8,16 +9,14 @@ MATE_VERSION=		1.22.1
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender c dconf epoxy expat ffi fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += iconv intl m pcre pixman-1 pthread xcb
-WANTLIB += xcb-render xcb-shm z
-WANTLIB += atk-1.0 atk-bridge-2.0 cairo-gobject cairo
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gmp gnutls graphite2 gtk-3 harfbuzz
-WANTLIB += hogweed idn2 nettle p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 png16 tasn1 unistring vte-2.91 pcre2-8
-WANTLIB += fribidi
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
+WANTLIB += dconf epoxy expat ffi fontconfig freetype fribidi gdk-3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz hogweed
+WANTLIB += iconv idn2 intl m nettle p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pcre2-8 pixman-1 png pthread tasn1
+WANTLIB += unistring vte-2.91 xcb xcb-render xcb-shm z
 
 MODULES=		devel/dconf \
 			x11/gnome

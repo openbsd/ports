@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/05/07 07:16:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2019/05/17 16:45:27 sthen Exp $
 
 COMMENT-face =		face detection library for KDE4
 COMMENT-libkipi =	KDE4 image plugins infrastructure
@@ -27,8 +27,8 @@ PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 
-REVISION-main =		9
-REVISION-kipi =		10
+REVISION-main =		10
+REVISION-kipi =		11
 REVISION-libkface =	3
 REVISION-dcraw =	4
 REVISION-libkipi =	4
@@ -76,7 +76,7 @@ WANTLIB-kipi += lib/opencv2/opencv_core lib/opencv2/opencv_highgui
 WANTLIB-kipi += lib/opencv2/opencv_imgproc lib/opencv2/opencv_objdetect
 WANTLIB-kipi += exslt gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpod
 WANTLIB-kipi += gthread-2.0 intl jpeg
-WANTLIB-kipi += qjson kqoauth kvkontakte png16 qca soprano
+WANTLIB-kipi += qjson kqoauth kvkontakte png qca soprano
 WANTLIB-kipi += tiff xml2 xslt MagickCore-6.Q16
 WANTLIB-kipi += QtGLib-2.0 QtGStreamer-1.0 QtGStreamerUtils-1.0
 
@@ -96,7 +96,7 @@ WANTLIB-main += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB-main += ${KDE4LIB}/solid ${KDE4LIB}/threadweaver
 WANTLIB-main += akonadi-contact akonadi-kde baloocore baloofiles baloopim
 WANTLIB-main += balooqueryparser gphoto2 gphoto2_port jasper jpeg
-WANTLIB-main += lcms2 lensfun lqr-1 pgf png16 soprano
+WANTLIB-main += lcms2 lensfun lqr-1 pgf png soprano
 WANTLIB-main += sqlite tiff usb
 WANTLIB-main += lib/opencv2/opencv_calib3d lib/opencv2/opencv_contrib
 WANTLIB-main += lib/opencv2/opencv_core lib/opencv2/opencv_features2d

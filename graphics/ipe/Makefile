@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/04/30 06:44:29 bentley Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/17 16:45:27 sthen Exp $
 
 COMMENT =		extensible drawing editor
 
@@ -6,6 +6,7 @@ V =			7.2.11
 SUBST_VARS +=		V
 DISTNAME =		ipe-${V}-src
 PKGNAME =		ipe-${V}
+REVISION =		0
 
 # Upstream libraries would be installed as libxxx.so.${V}
 SHLIB_VERSION =	0.0
@@ -24,7 +25,7 @@ MAINTAINER =		Alessandro De Laurenzis <just22@atlantide.t28.net>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} Qt5Core Qt5Gui
-WANTLIB += Qt5Widgets c cairo freetype iconv jpeg m png16 pthread z
+WANTLIB += Qt5Widgets c cairo freetype iconv jpeg m png pthread z
 
 COMPILER =		base-clang ports-gcc base-gcc
 

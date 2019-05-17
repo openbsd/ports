@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/19 13:58:47 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/17 16:45:27 sthen Exp $
 
 COMMENT =	multilingual text processing library
 
 DISTNAME =	m17n-lib-${M17N_V}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  m17n-core            0.0      # 4.2
 SHARED_LIBS +=  m17n                 0.0      # 4.2
@@ -12,10 +12,9 @@ SHARED_LIBS +=  m17n-gui             0.0      # 4.2
 
 CATEGORIES =	misc
 
-WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xft Xmu Xpm Xrender Xt
-WANTLIB += anthy anthydic c expat fontconfig freetype fribidi
-WANTLIB += gd iconv intl jpeg lzma m otf png16 pthread tiff webp
-WANTLIB += xcb xml2 z
+WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xft Xmu Xpm Xrender Xt anthy
+WANTLIB += anthydic c expat fontconfig freetype fribidi gd iconv intl
+WANTLIB += jpeg lzma m otf png pthread tiff webp xcb xml2 z
 
 LIB_DEPENDS =	devel/gettext \
 		devel/libotf \

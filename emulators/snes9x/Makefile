@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/04/28 19:50:35 fcambus Exp $
+# $OpenBSD: Makefile,v 1.49 2019/05/17 16:45:26 sthen Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 BROKEN-alpha =	ICE/failure on filter/hq2x.cpp
@@ -8,6 +8,7 @@ BROKEN-powerpc =ICE/failure on filter/hq2x.cpp
 GH_ACCOUNT =	snes9xgit
 GH_PROJECT =	snes9x
 GH_TAGNAME =	1.60
+REVISION =	0
 
 CATEGORIES =	emulators games
 
@@ -22,7 +23,7 @@ PERMIT_PACKAGE_FTP =	Yes
 WANTLIB += ${COMPILER_LIBCXX} SDL2 X11 Xext Xrandr Xv atk-1.0
 WANTLIB += c cairo cairo-gobject epoxy gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gtk-3 intl m pango-1.0 pangocairo-1.0
-WANTLIB += png16 z
+WANTLIB += png z
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic

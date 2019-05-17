@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/27 18:13:38 robert Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/17 16:45:29 sthen Exp $
 
 COMMENT=		weather library for MATE
+REVISION=		0
 
 SHARED_LIBS +=  mateweather               7.9 # 7.9
 
@@ -11,16 +12,13 @@ CATEGORIES=		net
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender epoxy expat ffi fontconfig
-WANTLIB += freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 iconv intl lzma m pcre pixman-1
-WANTLIB += pthread sqlite3 xcb xcb-render xcb-shm
-WANTLIB += xml2 z harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += cairo cairo-gobject graphite2 soup-2.4 gdk-3
-WANTLIB += gtk-3 atk-1.0 atk-bridge-2.0
-WANTLIB += fribidi
-WANTLIB += idn2 png16 psl unistring
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 atk-bridge-2.0 cairo cairo-gobject epoxy
+WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv idn2 intl lzma m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png psl pthread
+WANTLIB += soup-2.4 sqlite3 unistring xcb xcb-render xcb-shm xml2 z
 
 MODULES=		x11/gnome
 

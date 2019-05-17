@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/18 18:06:17 kurt Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/17 16:45:25 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -13,6 +13,7 @@ PACKAGE_VER=	${BASE_VER}.${PATCH_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
 PKGSTEM=	jdk-11
 EPOCH=		0
+REVISION=	0
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
@@ -35,6 +36,9 @@ MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 
 # GPLv2 w/CLASSPATH exception
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB += ${COMPILER_LIBCXX} X11 Xext Xi Xrender Xtst c freetype gif
+WANTLIB += iconv jpeg lcms2 m png pthread z
 
 NO_TEST=	Yes
 
@@ -74,8 +78,6 @@ LIB_DEPENDS=	converters/libiconv \
 		graphics/lcms2 \
 		graphics/png \
 		graphics/giflib
-
-WANTLIB=	X11 Xext Xi Xrender Xtst c freetype gif iconv jpeg lcms2 m png16 pthread ${COMPILER_LIBCXX} z
 
 USE_GMAKE=	Yes
 GMAKE=		${LOCALBASE}/bin/gmake

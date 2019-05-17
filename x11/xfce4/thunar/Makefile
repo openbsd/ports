@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2019/01/25 16:22:42 landry Exp $
+# $OpenBSD: Makefile,v 1.73 2019/05/17 16:45:29 sthen Exp $
 
 COMMENT=	Xfce4 file manager
 
@@ -7,11 +7,21 @@ XFCE_PROJECT=	Thunar
 # :L is here for a reason
 PKGNAME=	${DISTNAME:L}
 PORTROACH=	limitw:1,even
+REVISION=	0
 
 SHARED_LIBS=	thunarx-2	0.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1
+WANTLIB += exif exo-1 expat ffi fontconfig freetype fribidi gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl m
+WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread startup-notification-1 xcb xcb-render xcb-shm
+WANTLIB += xcb-util xfce4panel-1.0 xfce4ui-1 xfce4util xfconf-0 z
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
@@ -37,14 +47,5 @@ LIB_DEPENDS=	x11/xfce4/exo>=0.10.0 \
 
 RUN_DEPENDS=	x11/gnome/gvfs
 
-WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += atk-1.0 c cairo dbus-1 dbus-glib-1 exif exo-1 expat
-WANTLIB += ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png16 fribidi pthread startup-notification-1
-WANTLIB += xcb xcb-util xcb-render xcb-shm xfce4panel-1.0 xfce4ui-1
-WANTLIB += xfce4util z xfconf-0 harfbuzz graphite2 iconv intl
 
 .include <bsd.port.mk>

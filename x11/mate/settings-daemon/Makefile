@@ -1,26 +1,25 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/27 18:13:39 robert Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/17 16:45:29 sthen Exp $
 
 COMMENT=		MATE settings daemon
+REVISION=		0
 
 MATE_PROJECT=		mate-settings-daemon
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender c dconf epoxy expat
-WANTLIB += ffi fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 iconv intl lzma
-WANTLIB += m pcre pixman-1 pthread xcb
-WANTLIB += xcb-render xcb-shm xkbfile xml2 z
-WANTLIB += smime3 ssl3 fribidi
-WANTLIB += nspr4 nss3 nssutil3 plc4 plds4
-WANTLIB += atk-1.0 atk-bridge-2.0 cairo-gobject cairo canberra-gtk3
-WANTLIB += canberra dbus-1 dbus-glib-1 gdk-3 graphite2 gtk-3 harfbuzz ltdl
-WANTLIB += mate-desktop-2 matekbd matekbdui matemixer notify ogg pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 polkit-gobject-1 vorbis vorbisfile xklavier
-WANTLIB += X11-xcb startup-notification-1 xcb-util
-WANTLIB += FLAC Xtst execinfo png16 pulse sndfile vorbisenc
+WANTLIB += FLAC ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0
+WANTLIB += c cairo cairo-gobject canberra canberra-gtk3 dbus-1
+WANTLIB += dbus-glib-1 dconf epoxy execinfo expat ffi fontconfig
+WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += iconv intl ltdl lzma m mate-desktop-2 matekbd matekbdui
+WANTLIB += matemixer notify nspr4 nss3 nssutil3 ogg pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4 png
+WANTLIB += polkit-gobject-1 pthread pulse smime3 sndfile ssl3
+WANTLIB += startup-notification-1 vorbis vorbisenc vorbisfile xcb
+WANTLIB += xcb-render xcb-shm xcb-util xkbfile xklavier xml2 z
 
 MODULES=		devel/dconf \
 			x11/gnome

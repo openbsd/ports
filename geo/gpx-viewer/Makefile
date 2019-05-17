@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2019/02/21 08:30:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2019/05/17 16:45:26 sthen Exp $
 
 COMMENT =	gpx file viewer
 
 VERSION =	0.4.0
 DISTNAME =	gpx-viewer-${VERSION}
-REVISION =	13
+REVISION =	14
 
 CATEGORIES =	geo x11
 
@@ -14,18 +14,17 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += EGL X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 c
-WANTLIB += cairo cairo-gobject champlain-0.12 champlain-gtk-0.12
-WANTLIB += clutter-1.0 clutter-gtk-1.0 cogl cogl-pango cogl-path
-WANTLIB += drm epoxy expat ffi fontconfig freetype fribidi gbm
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gdl-3 gio-2.0 glapi glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv
-WANTLIB += idn2 intl json-glib-1.0 lzma m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png16 psl pthread soup-2.4
-WANTLIB += sqlite3 unistring xcb xcb-dri2 xcb-dri3 xcb-present
-WANTLIB += xcb-render xcb-shm xcb-sync xcb-xfixes xml2 xshmfence
-WANTLIB += z
+WANTLIB += EGL X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo
+WANTLIB += cairo-gobject champlain-0.12 champlain-gtk-0.12 clutter-1.0
+WANTLIB += clutter-gtk-1.0 cogl cogl-pango cogl-path drm epoxy expat ffi
+WANTLIB += fontconfig freetype fribidi gbm gdk-3 gdk_pixbuf-2.0 gdl-3
+WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv idn2 intl json-glib-1.0 lzma
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png psl
+WANTLIB += pthread soup-2.4 sqlite3 unistring xcb xcb-dri2 xcb-dri3
+WANTLIB += xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes xml2
+WANTLIB += xshmfence z
 
 MASTER_SITES =	http://edge.launchpad.net/gpx-viewer/trunk/${VERSION}/+download/
 

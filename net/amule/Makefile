@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2019/04/30 15:06:32 kn Exp $
+# $OpenBSD: Makefile,v 1.74 2019/05/17 16:45:28 sthen Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -6,7 +6,7 @@ COMMENT-daemon =stand-alone daemon/cmdline for amule
 
 V =		2.3.2
 DISTNAME =	aMule-$V
-REVISION =	15
+REVISION =	16
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.amule.org/
@@ -54,13 +54,13 @@ commonWANTLIB =		c m pthread ${COMPILER_LIBCXX} \
 			z wx_baseu-3.0 wx_baseu_net-3.0
 WANTLIB-main =		${WANTLIB} ${commonWANTLIB} \
 			GeoIP X11 cryptopp fontconfig tiff webp \
-			freetype gd iconv jpeg png16 wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
+			freetype gd iconv jpeg png wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
 
 WANTLIB-daemon =	${WANTLIB} ${commonWANTLIB} \
 			cryptopp readline
 
 WANTLIB-web =		${WANTLIB} ${commonWANTLIB} \
-			iconv intl png16 readline
+			iconv intl png readline
 
 USE_GMAKE =		Yes
 
