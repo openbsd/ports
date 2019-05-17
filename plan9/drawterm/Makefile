@@ -1,17 +1,20 @@
-# $OpenBSD: Makefile,v 1.10 2017/03/20 10:43:52 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/17 12:21:08 abieber Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64 mips64 mips64el arm
 
 COMMENT=	Plan9 terminal emulator
 
-DISTNAME=	drawterm-20170319
-EXTRACT_SUFX=	.tgz
+V=		5c953ddd29fa
+DISTNAME=	drawterm-20190309
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{${V}${EXTRACT_SUFX}}
+WRKDIST=	${WRKDIR}/drawterm-${V}
+EXTRACT_SUFX=	.tar.gz
 
 CATEGORIES=	plan9
 
 HOMEPAGE=	http://drawterm.9front.org/
 
-MASTER_SITES=	http://drawterm.9front.org/
+MASTER_SITES=	https://code.9front.org/hg/drawterm/archive/
 
 MAINTAINER=	Stanley Lieber <sl@stanleylieber.com>
 
