@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2017/11/20 13:04:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2019/05/17 16:53:07 sthen Exp $
 
 COMMENT-main=	parallelized network logon cracker
 COMMENT-gui=	GTK frontend for hydra
@@ -6,6 +6,8 @@ COMMENT-gui=	GTK frontend for hydra
 VERSION=	8.6
 PKGNAME-main=	hydra-${VERSION}
 PKGNAME-gui=	hydra-gui-${VERSION}
+REVISION-main=	0
+
 CATEGORIES=	security
 
 GH_ACCOUNT =	vanhauser-thc
@@ -45,10 +47,11 @@ LIB_DEPENDS-main=	databases/mariadb,-main \
 			databases/postgresql,-main \
 			devel/libidn \
 			devel/pcre \
+			security/libgcrypt \
 			security/libssh
 RUN_DEPENDS-main=
 
-WANTLIB-main=	${WANTLIB} m crypto curses idn mysqlclient pcre pq ssh ssl
+WANTLIB-main=	${WANTLIB} m crypto curses gcrypt idn mysqlclient pcre pq ssh ssl
 
 LIB_DEPENDS-gui=x11/gtk+2
 
