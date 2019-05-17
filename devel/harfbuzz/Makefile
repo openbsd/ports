@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2019/05/17 16:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.107 2019/05/17 20:01:59 ajacoutot Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -11,8 +11,8 @@ EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		harfbuzz-${V}
 PKGNAME-icu=		harfbuzz-icu-${V}
-REVISION-icu=		0
-REVISION-main=		0
+REVISION-icu=		1
+REVISION-main=		1
 
 SHARED_LIBS +=  harfbuzz             14.3     # 20301.0
 SHARED_LIBS +=  harfbuzz-icu         1.0      # 20301.0
@@ -28,10 +28,11 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += png
+WANTLIB += ${COMPILER_LIBCXX} freetype glib-2.0 graphite2 iconv intl m z
 
 WANTLIB-main += ${WANTLIB} X11 Xext Xrender c cairo expat ffi fontconfig
-WANTLIB-main += gobject-2.0 pcre pixman-1 xcb xcb-render xcb-shm
+WANTLIB-main += gobject-2.0 graphite2 pcre pixman-1 png xcb xcb-render
+WANTLIB-main += xcb-shm
 
 WANTLIB-icu += ${WANTLIB} harfbuzz icudata icuuc
 
