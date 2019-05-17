@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2019/04/28 21:08:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/17 17:42:15 naddy Exp $
 
 COMMENT=	C interface to the BLAS library
 
 VERSION=	1.0
 DISTNAME=	cblas
 PKGNAME=	${DISTNAME}-${VERSION}
-REVISION=	5
+REVISION=	6
 SHARED_LIBS=	cblas	1.0
 
 CATEGORIES=	math
@@ -32,6 +32,7 @@ LIB_DEPENDS =	math/blas
 WANTLIB =	blas>=2.1
 
 CFLAGS+=	-DADD_ -I${WRKDIST}/include
+PICFLAG=	-fPIC
 MAKE_FILE=	${FILESDIR}/Makefile
 MAKE_ENV=	SHLIB_MAJOR=${LIBcblas_VERSION:R} \
 		SHLIB_MINOR=${LIBcblas_VERSION:E} \
