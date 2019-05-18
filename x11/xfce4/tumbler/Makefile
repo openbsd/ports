@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/05/18 14:49:34 landry Exp $
 
 COMMENT=	D-Bus thumbnailing service
 
-XFCE_VERSION=	0.2.3
+XFCE_VERSION=	0.2.4
 XFCE_GOODIE=	tumbler
-REVISION=	0
 
 SHARED_LIBS+=	tumbler-1 0.0
 
@@ -12,7 +11,7 @@ SHARED_LIBS+=	tumbler-1 0.0
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xext Xrender avcodec avformat avutil bz2 c cairo
-WANTLIB += crypto curl expat ffi ffmpegthumbnailer
+WANTLIB += crypto curl dav1d expat ffi ffmpegthumbnailer
 WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gsf-1 gthread-2.0 jpeg
 WANTLIB += lcms2 lzma m nghttp2 ogg openjp2 pcre pixman-1 png poppler
