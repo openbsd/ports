@@ -1,17 +1,21 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/04 01:18:58 danj Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/18 01:34:20 cwen Exp $
 
 COMMENT=		text mode progress bar
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME=		Term-ProgressBar-2.17
-REVISION =		1
+DISTNAME=		Term-ProgressBar-2.22
 CATEGORIES=		devel
 
-# perl
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-BUILD_DEPENDS	= ${RUN_DEPENDS}
-RUN_DEPENDS	= devel/p5-Class-MethodMaker
+RUN_DEPENDS=		devel/p5-Class-MethodMaker>=1.02
+
+TEST_DEPENDS=		devel/p5-Test-Exception>=0.31 \
+			devel/p5-Test-Warnings \
+			sysutils/p5-Capture-Tiny>=0.13
+
+MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>

@@ -1,7 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/12/25 21:31:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/05/18 01:34:20 cwen Exp $
 ${P5SITE}/Term/
 ${P5SITE}/Term/ProgressBar/
 ${P5SITE}/Term/ProgressBar.pm
 ${P5SITE}/Term/ProgressBar/IO.pm
 @man man/man3p/Term::ProgressBar.3p
 @man man/man3p/Term::ProgressBar::IO.3p
+share/examples/p5-Term-ProgressBar/
+share/examples/p5-Term-ProgressBar/powers
+share/examples/p5-Term-ProgressBar/powers2
+share/examples/p5-Term-ProgressBar/powers3
+share/examples/p5-Term-ProgressBar/powers4
+share/examples/p5-Term-ProgressBar/powers5
+share/examples/p5-Term-ProgressBar/simple_use.pl
+share/examples/p5-Term-ProgressBar/smooth_bar.pl
+share/examples/p5-Term-ProgressBar/stdinorfile.pl
