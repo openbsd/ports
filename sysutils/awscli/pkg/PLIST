@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.74 2019/05/11 04:25:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.75 2019/05/18 23:27:57 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1230,6 +1230,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-snapshot-att
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-spot-fleet-request.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-subnet-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-volume-attribute.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-volume.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-endpoint-connection-notification.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-vpc-endpoint-service-configuration.rst
@@ -1289,25 +1290,37 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/start-lifecycle-pol
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/create-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/create-service.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/create-task-set.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/delete-account-setting.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/delete-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/delete-service.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/delete-task-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/deregister-container-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/deregister-task-definition.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/describe-clusters.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/describe-container-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/describe-services.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/describe-task-definition.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/describe-task-sets.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/describe-tasks.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/list-account-settings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/list-clusters.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/list-container-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/list-services.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/list-tags-for-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/list-task-definition-families.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/list-task-definitions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/list-tasks.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/put-account-setting-default.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/put-account-settings.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/register-task-definition.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/run-task.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/tag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/update-container-agent.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/update-service-primary-task-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/update-service.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/update-task-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/create-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/delete-cluster.rst
@@ -2022,6 +2035,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/tag-reso
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/update-secret-version-stage.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/secretsmanager/update-secret.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/serverlessrepo/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/serverlessrepo/put-application-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ses/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ses/delete-identity.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ses/get-identity-dkim-attributes.rst
@@ -2165,6 +2180,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/register-patch-base
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/register-target-with-maintenance-window.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/register-task-with-maintenance-window.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/remove-tags-from-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/reset-service-setting.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/resume-session.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/send-automation-signal.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ssm/send-command.rst
