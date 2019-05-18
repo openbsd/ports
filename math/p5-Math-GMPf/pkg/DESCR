@@ -1,0 +1,3 @@
+A bigfloat module utilising the Gnu MP (GMP) library. Basically this
+module simply wraps nearly all of the 'mpf' functions provided by
+that library.

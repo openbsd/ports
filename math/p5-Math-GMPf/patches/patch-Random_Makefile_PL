@@ -1,0 +1,16 @@
+$OpenBSD: patch-Random_Makefile_PL,v 1.1.1.1 2019/05/18 18:12:22 steven Exp $
+
+Index: Random/Makefile.PL
+--- Random/Makefile.PL.orig
++++ Random/Makefile.PL
+@@ -5,8 +5,8 @@ my %options = %{
+     '../typemap'
+   ],
+   'NAME' => 'Math::GMPf::Random',
+-  'LIBS' => $LIBS,
+-  'INC' => $INC,
++  'INC'  => "$ENV{CPPFLAGS}",
++  'LIBS' => ["$ENV{LDFLAGS} -lgmp"],
+   'VERSION_FROM' => 'Random.pm'
+ }
+ };
