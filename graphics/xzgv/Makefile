@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/18 00:18:19 danj Exp $
 
 COMMENT=	picture viewer for X, with thumbnail-based file selector
 DISTNAME=	xzgv-0.9
-REVISION=	6
+REVISION=	7
 CATEGORIES=	graphics
 FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE=	http://xzgv.sourceforge.net/
-
-MAINTAINER=	Julian Leyh <julian@vgai.de>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

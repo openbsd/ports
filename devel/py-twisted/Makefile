@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/04/28 20:51:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/18 00:18:19 danj Exp $
 
 COMMENT =		asynchronous networking Python framework
 
@@ -7,13 +7,11 @@ MODPY_EGG_VERSION =	18.9.0
 EXTRACT_SUFX =		.tar.bz2
 DISTNAME =		Twisted-${MODPY_EGG_VERSION}
 PKGNAME =		py-twisted-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://twistedmatrix.com/
-
-MAINTAINER =		Pavel Korovin <pvk@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

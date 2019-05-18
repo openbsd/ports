@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/03/09 04:59:43 sunil Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/18 00:18:19 danj Exp $
 
 COMMENT =	set of Maildir utilities
 
@@ -6,8 +6,7 @@ GH_ACCOUNT =	leahneukirchen
 GH_PROJECT =	mblaze
 GH_TAGNAME =	v0.5.1
 CATEGORIES =	mail
-
-MAINTAINER =	Sunil Nimmagadda <sunil@nimmagadda.net>
+REVISION =	0
 
 # Public domain
 PERMIT_PACKAGE_CDROM =	Yes
