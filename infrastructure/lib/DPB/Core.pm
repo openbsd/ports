@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.94 2019/05/12 10:37:04 espie Exp $
+# $OpenBSD: Core.pm,v 1.95 2019/05/18 22:24:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -238,13 +238,21 @@ sub dump
 	return join(' ', ref($c), ref($c->job), $c->job->name);
 }
 
+
 sub send_signal
 {
 	my ($class, $sig, $h, $verbose) = @_;
 	while (my ($pid, $core) = each %$h) {
-		print STDERR "Sending $sig to ".$core->dump, "\n"
-		    if $verbose;
-		kill $sig => $pid;
+		$core->{process_group} //= CORE::getpgrp($pid);
+		if ($core->{process_group} != $pid) {
+			print STDERR "Sending $sig to pg ".$core->dump, "\n"
+			    if $verbose;
+			kill $sig => -$pid; 
+		} else {
+			print STDERR "Sending $sig to ".$core->dump, "\n"
+			    if $verbose;
+			kill $sig => $pid;
+		}
 	}
 }
 
