@@ -1,4 +1,4 @@
-$OpenBSD: patch-jruby-launcher_unixlauncher_cpp,v 1.4 2015/07/26 04:40:16 jeremy Exp $
+$OpenBSD: patch-jruby-launcher_unixlauncher_cpp,v 1.5 2019/05/18 16:05:27 jeremy Exp $
 
 Attempt to replicate the following shell code:
 
@@ -7,8 +7,9 @@ JAVA_HOME=$(javaPathHelper -h jruby)
 Without this, if the JAVA_HOME environment variable is not
 defined, bin/jruby will segfault when run.
 
---- jruby-launcher/unixlauncher.cpp.orig	Wed Dec 31 16:00:00 1969
-+++ jruby-launcher/unixlauncher.cpp	Mon May 21 14:43:20 2012
+Index: jruby-launcher/unixlauncher.cpp
+--- jruby-launcher/unixlauncher.cpp.orig
++++ jruby-launcher/unixlauncher.cpp
 @@ -1,5 +1,6 @@
  #include <stdlib.h>
  #include <unistd.h>
@@ -16,8 +17,8 @@ defined, bin/jruby will segfault when run.
  #include "unixlauncher.h"
  #include "utilsfuncs.h"
  
-@@ -45,6 +46,44 @@ int UnixLauncher::run(int argc, char* argv[], char* en
-     prepareOptions();
+@@ -43,6 +44,44 @@ int UnixLauncher::run(int argc, char* argv[], char* en
+     }
  
      string java("");
 +

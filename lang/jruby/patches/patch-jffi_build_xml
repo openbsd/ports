@@ -1,0 +1,45 @@
+$OpenBSD: patch-jffi_build_xml,v 1.3 2019/05/18 16:05:27 jeremy Exp $
+
+Work with Java 10+.
+
+Index: jffi/build.xml
+--- jffi/build.xml.orig
++++ jffi/build.xml
+@@ -159,8 +159,9 @@
+ 
+   <target name="-do-compile" depends="-init">
+     <mkdir dir="${build.classes.dir}"/>
++    <mkdir dir="${build.native.dir}"/>
+     <!-- Compile the java code from ${src} into ${build} -->
+-    <javac srcdir="${src.dir}" destdir="${build.classes.dir}" includeantruntime="false"/>
++    <javac srcdir="${src.dir}" destdir="${build.classes.dir}" includeantruntime="false" nativeHeaderDir="${build.native.dir}"/>
+   </target>
+ 
+   <target name="-compile-java" depends="-do-compile"/>
+@@ -289,25 +290,10 @@
+ 
+ 
+   <target name="-generate-version" depends="-init,-init-vars,-generate-version-source">
+-    <javac target="1.6" destdir="${build.classes.dir}" srcdir="${build.dir}/java" includeantruntime="false"/>
++    <javac target="1.6" destdir="${build.classes.dir}" srcdir="${build.dir}/java" includeantruntime="false" nativeHeaderDir="${build.native.dir}"/>
+   </target>
+ 
+   <target name="-generate-native-headers" depends="-init-vars,-generate-version,-compile-java">
+-    <mkdir dir="${build.native.dir}"/>
+-    <mkdir dir="${build.classes.dir}"/>
+-    <javah classpath="${build.classes.dir}" destdir="${build.native.dir}" force="yes">
+-      <class name="com.kenai.jffi.Foreign"/>
+-      <class name="com.kenai.jffi.ObjectBuffer"/>
+-      <class name="com.kenai.jffi.Version"/>
+-    </javah>
+-    <!--
+-    <exec executable="javah" failonerror="true">
+-      <arg line="-d ${build.native.dir}"/>
+-      <arg line="-classpath ${build.classes.dir}"/>
+-      <arg line="com.kenai.jffi.Foreign"/>
+-      <arg line="com.kenai.jffi.ObjectBuffer"/>
+-    </exec>
+-    -->
+   </target>
+ 
+   <target name="-build-native-library" depends="-init-vars, -generate-native-headers, -generate-version">
