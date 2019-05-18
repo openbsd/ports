@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2019/04/26 15:46:58 jeremy Exp $
+# $OpenBSD: Makefile,v 1.78 2019/05/18 16:03:47 jeremy Exp $
 
 # Runtime failures on i386 in IO#pos and IO#rewind
 ONLY_FOR_ARCHS = amd64
@@ -6,11 +6,12 @@ ONLY_FOR_ARCHS = amd64
 COMMENT =	pure-Java implementation of the Ruby language
 
 V =		9.2.7.0
+REVISION =	0
 DISTNAME =	jruby-dist-${V}-bin
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
 DISTFILES =	${DISTNAME}.tar.gz \
-		jnr-jffi-1.2.2-0-g4c196bb.tar.gz:0 \
+		jffi-1.2.18.tar.gz:0 \
 		${JRUBY_LAUNCHER_GEM}:1
 
 HOMEPAGE =	http://www.jruby.org/
@@ -21,7 +22,7 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	https://repo1.maven.org/maven2/org/jruby/jruby-dist/${V}/
-MASTER_SITES0 =	http://www.distfiles.nl/
+MASTER_SITES0 =	https://filedump.se.rit.edu/pub/distfiles/
 MASTER_SITES1 =	${MASTER_SITE_RUBYGEMS}
 
 MODULES =	java
@@ -47,11 +48,11 @@ ANT_CMD =	${SETENV} ${MAKE_ENV} PATH=${JAVA_HOME}/bin:${PATH} \
 JFFI_HOME =	${WRKDIST}/jffi
 JFFI_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}-OpenBSD
 FFI_ARCH =	${JFFI_ARCH:L}
-JRUBY_LAUNCHER_GEM = jruby-launcher-1.1.5-java.gem
+JRUBY_LAUNCHER_GEM = jruby-launcher-1.1.9-java.gem
 SUBST_VARS =	JRUBY_HOME JFFI_ARCH FFI_ARCH RAKE_V RDOC_V JAVA_HOME
 
 post-extract:
-	mv ${WRKDIR}/jnr-jffi* ${JFFI_HOME}
+	mv ${WRKDIR}/jffi-jffi* ${JFFI_HOME}
 	# Unpack the jruby-launcher gem, since it needs to be patched
 	cd ${WRKSRC} && mkdir jruby-launcher \
 		&& cd jruby-launcher && tar zxf ../../data.tar.gz \
