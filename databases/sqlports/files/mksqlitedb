@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.55 2019/05/17 20:41:54 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.56 2019/05/18 21:35:22 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -108,10 +108,10 @@ sub digest
 	return encode_base64($d->digest, '');
 }
 
-our ($opt_v, $opt_q, $opt_p, $opt_V);
+our ($opt_v, $opt_q, $opt_p, $opt_V, $opt_C, $opt_w);
 
 Trace->setup(\%SIG);
-getopts('vq:p:V:');
+getopts('vq:p:V:C:w:');
 my $dbname;
 if (@ARGV == 1) {
 	$dbname = shift;
@@ -132,6 +132,25 @@ if ($opt_p) {
 }
 
 my $walker = MyTreeWalker->new($inserter);
+if (defined $opt_C) {
+	open(my $f, '>', $opt_C) or die;
+	my $cache = "PortsQ";
+	print $f "DROP TABLE if exists $cache;\n";
+	print $f Sql::Create->find('ports')->cache($cache), ";\n";
+	print $f "INSERT INTO $cache select * from Ports;\n";
+	print $f "ANALYZE;\n";
+	close $f;
+}
+
+if (defined $opt_w) {
+	open(my $f, '>', $opt_w) or die;
+	for my $v (Sql::Create->all_views) {
+		print $f $v->drop, ";\n";
+		print $f $v->stringize, ";\n";
+	}
+	close $f;
+}
+
 $walker->dump_all_dirs;
 
 # Create aliases, we have to sort the keys so that they are
@@ -147,7 +166,6 @@ for my $p (sort keys %{$walker->{equivs}}) {
 $walker->inserter->commit_to_db;
 $walker->inserter->insert("Meta", $opt_V, digest($dbname));
 $walker->inserter->commit_to_db;
-$db->do("ANALYZE");
 $db->disconnect;
 
 while (my ($k, $v) = each %$Info::unknown) {

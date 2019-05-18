@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.112 2019/05/17 20:41:54 espie Exp $
+# $OpenBSD: Makefile,v 1.113 2019/05/18 21:35:21 espie Exp $
 
 CATEGORIES =		databases
-V =			7.21
+V =			7.22
 DISTNAME =		sqlports-$V
 DISTFILES =
 COMMENT =		sqlite database of ports
@@ -15,19 +15,22 @@ PERMIT_PACKAGE_CDROM =	Yes
 MULTI_PACKAGES =	-main -list
 
 DBNAME =		sqlports
-DBS =			${DBNAME}.list ${DBNAME} ports-INDEX
+SQLCACHE =		${DBNAME}_cache.sql
+SQLVIEWS =		${DBNAME}_views.sql
+DBS =			${DBNAME}.list ${DBNAME} ports-INDEX ${SQLCACHE}
 BUILD_DEPENDS =		databases/p5-DBD-SQLite \
 			databases/sqlite3
 RUN_DEPENDS-main =	databases/sqlite3
 
-SCRIPTS = print-ports-index show-reverse-deps
+SCRIPTS = print-ports-index show-reverse-deps rebuild-sqlports-cache
 
 do-build:
-	@unset MAKEFLAGS; unset BUILD_ONCE; cd ${PORTSDIR} && PORTSDIR=${PORTSDIR} ${MAKE_ENV} perl ${FILESDIR}/mksqlitedb -v -V $V -p ${WRKBUILD}/ouch ${WRKBUILD}/${DBNAME}
+	@unset MAKEFLAGS; unset BUILD_ONCE; cd ${PORTSDIR} && PORTSDIR=${PORTSDIR} ${MAKE_ENV} perl ${FILESDIR}/mksqlitedb -v -V $V -p ${WRKBUILD}/ouch -C ${WRKBUILD}/${SQLCACHE} -w ${WRKBUILD}/${SQLVIEWS} ${WRKBUILD}/${DBNAME}
 	@if test -s ${WRKBUILD}/ouch; then \
 		cat ${WRKBUILD}/ouch; \
 		exit 1; \
 	fi
+	cd ${WRKBUILD} && sqlite3 <${SQLCACHE} ${DBNAME}
 
 alter-tables:
 	@unset MAKEFLAGS; unset BUILD_ONCE; cd ${PORTSDIR} && PORTSDIR=${PORTSDIR} ${MAKE_ENV} ${SUDO} -u ${BUILD_USER} perl ${FILESDIR}/rebuild_schema -v -V $V ${WRKBUILD/${DBNAME}

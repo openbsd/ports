@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Sql.pm,v 1.33 2019/05/17 20:41:54 espie Exp $
+# $OpenBSD: Sql.pm,v 1.34 2019/05/18 21:35:22 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -348,6 +348,12 @@ sub new
 	$o->register;
 }
 
+sub cache
+{
+	my ($self, $name) = @_;
+	$name //= $self->name."_Cache";
+	return "CREATE TABLE $name (". $self->{select}->cache. ")";
+}
 
 sub contents
 {
@@ -464,6 +470,7 @@ sub contents
 	push(@parts, $self->indent("FROM ".$self->origin, 0));
 	for my $j  (@joins) {
 		push(@parts, $self->indent($j->join_part, 4));
+#		next if $j->is_natural;
 		my @p = $j->on_part($self);
 		if (@p > 0) {
 			push(@parts, $self->indent("ON ".join(" AND ", @p), 8));
@@ -488,6 +495,35 @@ sub is_unique_name
 		die "$name not registed in ", $self->identify;
 	}
 	return $c == 1;
+}
+
+sub cache
+{
+	my $self = shift;
+
+	my @c;
+	my $base = Sql::Create->find($self->origin);
+	for my $c (@{$self->{columns}}) {
+		my $type = "TEXT";
+		if (defined $c->{join}) {
+			my $t = Sql::Create->find($c->{join}->name);
+			for my $c2 (@{$t->{columns}}) {
+				if ($c2->name eq $c->origin) {
+					$type = $c2->type;
+					last;
+				}
+			}
+		} else {
+			for my $c2 (@{$base->{columns}}) {
+				if ($c2->name eq $c->origin) {
+					$type = $c2->type;
+					last;
+				}
+			}
+		}
+		push @c, $c->name." ".$type;
+	}
+	return join(', ', @c);
 }
 
 package Sql::With;
@@ -890,6 +926,9 @@ sub join_part
 	if ($self->{left}) {
 		$s = "LEFT ".$s;
 	}
+#	if ($self->is_natural) {
+#		$s = "NATURAL ".$s;
+#	}
 	return $s;
 }
 
@@ -904,6 +943,15 @@ sub on_part
 	my ($self, $view) = @_;
 	return map {$_->equation($self, $view)} @{$self->{equals}};
 
+}
+
+sub is_natural
+{
+	my ($self) = @_;
+	for my $e (@{$self->{equals}}) {
+		return 0 if !$e->is_natural;
+	}
+	return 1;
 }
 
 sub left
@@ -942,6 +990,11 @@ sub equation
 	return "$a=$b";
 }
 
+sub is_natural
+{
+	my $self = shift;
+	return $self->{a} eq $self->{b};
+}
 
 package Sql::EqualConstant;
 our @ISA = qw(Sql::Equal);
@@ -956,6 +1009,11 @@ sub equation
 	return "$a=$self->{b}";
 }
 
+sub is_natural
+{
+	0
+}
+
 package Sql::IsNull;
 our @ISA = qw(Sql::Equal);
 sub equation
@@ -968,6 +1026,12 @@ sub equation
 
 	return "$a IS NULL";
 }
+
+sub is_natural
+{
+	0
+}
+
 package Sql::Create::Index;
 our @ISA = qw(Sql::Create);
 
