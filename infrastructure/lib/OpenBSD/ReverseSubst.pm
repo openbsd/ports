@@ -1,4 +1,4 @@
-# $OpenBSD: ReverseSubst.pm,v 1.19 2019/05/17 10:04:13 espie Exp $
+# $OpenBSD: ReverseSubst.pm,v 1.20 2019/05/18 18:53:48 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -175,8 +175,12 @@ sub new
 	    isversion => {},
 	    # under some cases, some variables are a priority
 	    disregard_count => {},
+	    # to be able to inject @comment  conditionally on some other
+	    # variables
+	    maybe_comment => $state->{maybe_comment},
 	    }, $class;
-    	for my $k (qw(dont_backsubst start_only suffix_only no_version)) {
+    	for my $k (qw(dont_backsubst start_only suffix_only no_version
+	    maybe_ignored)) {
 		if (defined $state->{$k}) {
 			for my $v (@{$state->{$k}}) {
 				$o->{$k}{$v} = 1;
@@ -184,6 +188,16 @@ sub new
 		}
 	}
 	return $o;
+}
+
+sub remove_ignored_vars
+{
+	my ($self, $s) = @_;
+	for my $v (keys %{$self->{maybe_ignored}}) {
+		while ($s =~ s/\$\{\Q$v\E\}//) {}
+	}
+	$s =~ s,//,/,g;
+	return $s;
 }
 
 # those are actually just passed thru to pkg_create for special

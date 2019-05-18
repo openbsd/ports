@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.173 2019/05/17 10:24:18 espie Exp $
+# $OpenBSD: update-plist,v 1.174 2019/05/18 18:53:48 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -52,13 +52,35 @@ package TrackedFile;
 sub new
 {
 	my ($class, $name, $ext) = @_;
-	bless {name => $name, ext => $ext, items => []}, $class;
+	bless {name => $name, ext => $ext, items => [], items2 => []}, $class;
 }
 
 sub add
 {
 	my ($self, $item) = @_;
 	push(@{$self->{items}}, $item);
+}
+
+sub add2
+{
+	my ($self, $item, $p) = @_;
+
+	if ($item->NoDuplicateNames) {
+		my $s = $p->subst->remove_ignored_vars($item->{prepared});
+		my $s2 = $p->subst->do($s);
+		if (defined (my $k = $item->keyword)) {
+			$s2 =~ s/^\@\Q$k\E\s//;
+		}
+		$p->{stash}{$s2}++;
+
+		my $comment = $p->subst->{maybe_comment};
+
+		if ($s ne $item->{prepared} &&
+			$item->{prepared} !~ m/^\Q$comment\E/) {
+			$item->{candidate_for_comment} = $s2;
+		}
+	}
+	push(@{$self->{items2}}, $item);
 }
 
 sub fh
@@ -82,6 +104,16 @@ sub next_item
 	my $self = shift;
 	if (@{$self->{items}} != 0) {
 		return shift @{$self->{items}};
+	} else {
+		return undef;
+	}
+}
+
+sub next_item2
+{
+	my $self = shift;
+	if (@{$self->{items2}} != 0) {
+		return shift @{$self->{items2}};
 	} else {
 		return undef;
 	}
@@ -125,6 +157,25 @@ sub write_all
 
 		while (my $file = pop @stack) {
 			while (my $j = $file->next_item) {
+				my $filename = $j->prepare_restate($file, $p);
+				if (defined $filename) {
+					push(@stack, $file);
+					$file = $self->file($filename);
+				}
+			}
+		}
+	}
+
+	for my $i (@{$p->{base_plists}}) {
+		# we mimic the way pkg_create writes files
+		$p->{restate} = {};
+
+		my @stack = ();
+		push(@stack, $self->file($i));
+
+
+		while (my $file = pop @stack) {
+			while (my $j = $file->next_item2) {
 				my $filename = $j->write_restate($file, $p);
 				if (defined $filename) {
 					push(@stack, $file);
@@ -390,12 +441,33 @@ sub write_restate
 	return undef;
 }
 
+sub prepare_restate
+{
+	my ($o, $file, $p) = @_;
+	$o->prepare_backsubst($file, $p);
+	return undef;
+}
+
+sub prepare_backsubst
+{
+	my ($o, $file, $p) = @_;
+	my $s = $p->subst->do_backsubst($o->fullstring, $o->unsubst, $o);
+	$o->{prepared} = $s;
+	$file->add2($o, $p);
+}
+
 # default backsubstitution and writing. 
 sub write_backsubst
 {
 	my ($o, $file, $p) = @_;
-	my $s = $p->subst->do_backsubst($o->fullstring, $o->unsubst, $o);
-	print {$file->fh} $s, "\n";
+
+	if (defined (my $s = $o->{candidate_for_comment})) {
+		if ($p->{stash}{$s} > 1) {
+			$o->{prepared} = 
+			    $p->subst->{maybe_comment}.$o->{prepared};
+		}
+	}
+	print {$file->fh} $o->{prepared}, "\n";
 }
 
 # extra objects that get copied very late (e.g., @extra)
@@ -665,10 +737,11 @@ sub tie_objects
 }
 
 # we will never do backsubst on CVSTags
-sub write_backsubst
+sub prepare_backsubst
 {
 	my ($o, $file, $p) = @_;
-	$o->write($file->fh);
+	$o->{prepared} = $o->fullstring;
+	$file->add2($o, $p);
 }
 
 # this is extra stuff that PkgCreate  builds but that we don't want to copy
@@ -691,6 +764,10 @@ sub show_unknown
 }
 
 sub write_restate
+{
+}
+
+sub prepare_restate
 {
 }
 
@@ -889,6 +966,19 @@ sub write_restate
 	return undef;
 }
 
+sub prepare_restate
+{
+	my ($self, $file, $p) = @_;
+	# don't do backsubst on fragments, pkg_create does not!
+	$file->add2($self, $p);
+	my $base = $file->name;
+	my $frag = $self->frag;
+	$base =~ s/PFRAG\./PFRAG.$frag-/ or
+	    $base =~ s/PLIST/PFRAG.$frag/;
+	return $base if $p->{tracker}{known}{$base};
+	return undef;
+}
+
 sub frag
 {
 	my $self = shift;
@@ -1063,7 +1153,7 @@ sub check_lib_version
 	}
 }
 
-sub write_backsubst
+sub prepare_backsubst
 {
 	my ($self, $f, $p) = @_;
 	if ($self->name =~ m,^(.*?)lib([^\/]+)\.so\.(\d+\.\d+)$,) {
@@ -1074,7 +1164,8 @@ sub write_backsubst
 		    "\@lib ${path}lib$name.so.\$\{$k\}", $self->unsubst, $self);
 		$self->check_lib_version($version, $name, 
 			$p->subst->value($k));
-		print {$f->fh} "$s\n";
+		$self->{prepared} = $s;
+		$f->add2($self, $p);
 	} else {
 		$self->SUPER::write_backsubst($f, $p);
 	}
@@ -1229,6 +1320,17 @@ sub handle_options
 			my $var = shift;
 			push(@{$state->{dont_backsubst}}, $var);
 		    },
+		'I' => sub {
+			my $var = shift;
+			push(@{$state->{maybe_ignored}}, $var);
+		    },
+		'c' => sub {
+			my $var = shift;
+			if (exists $state->{maybe_comment}) {
+				$state->usage;
+			}
+			$state->{maybe_comment} = '${'.$var.'}';
+		    },
 		's' => sub {
 			my $var = shift;
 			push(@{$state->{start_only}}, $var);
@@ -1243,10 +1345,10 @@ sub handle_options
 		    },
 
 	};
-	$state->SUPER::handle_options('rvqV:FC:i:j:L:s:S:X:P:w:e:E:', 
-	    '[-Fmnrvx] [-C dir] [-E ext] [-e ext] [-i var] [-j jobs]',
-	    '[-L logfile] [-P pkgdir] [-S var] [-s var] [-V var]',
-	    '[-w suffix] [-X path] -- pkg_create_args ...');
+	$state->SUPER::handle_options('rvI:c:qV:FC:i:j:L:s:S:X:P:w:e:E:', 
+	    '[-Fmnrvx] [-C dir] [-c comment] [-E ext] [-e ext] [-i var]',
+	    '[-I ignored] [-j jobs] [-L logfile] [-P pkgdir] [-S var]',
+	    '[-s var] [-V var] [-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
 	$state->{scan_as_root} = $state->opt('r');
 	$state->{verbose} = $state->opt('v');
@@ -1255,6 +1357,9 @@ sub handle_options
 	$state->{extnew} = $state->opt('E') // ".new";
 	$state->{extorig} = $state->opt('e') // ".orig";
 	$state->{logfile} = $state->opt('L');
+	if (exists $state->{maybe_ignored} && !exists $state->{maybe_comment}) {
+		$state->usage;
+	}
 }
 
 package UpdatePlist;
