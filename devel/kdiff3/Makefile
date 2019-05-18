@@ -1,28 +1,54 @@
-# $OpenBSD: Makefile,v 1.13 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/18 13:32:19 rsadowski Exp $
 
 COMMENT =	compares and merges multiple files or directories
 
-DISTNAME =	kdiff3-0.9.98
-REVISION =	2
-CATEGORIES =	devel x11/kde
-HOMEPAGE =	http://kdiff3.sourceforge.net/
+DISTNAME =	kdiff3-1.8
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=kdiff3/}
+CATEGORIES =	devel
 
-# GPLv2
+HOMEPAGE =	https://kde.org/applications/development/kdiff3/
+
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdiff3/}
+EXTRACT_SUFX =	.tar.xz
+
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	ICE QtGui SM X11 Xext Xi Xinerama Xrender
-WANTLIB +=	c fontconfig freetype m pthread ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5Crash KF5I18n KF5IconThemes KF5JobWidgets KF5KIOCore
+WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5SonnetUi KF5TextWidgets
+WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml
+WANTLIB += c m
 
-COMPILER =		base-clang ports-gcc base-gcc
+MODULES =		devel/kf5
 
-MODULES =	x11/qt4 devel/qmake
+BUILD_DEPENDS +=	devel/gettext-tools \
+			devel/kf5/kbookmarks \
+			devel/kf5/kdoctools \
 
-CONFIGURE_STYLE =	qmake
-MODQMAKE_PROJECTS =	src-QT4/kdiff3.pro
+RUN_DEPENDS +=		devel/desktop-file-utils \
+			devel/kf5/kbookmarks \
+			devel/kf5/kdoctools \
+			x11/gtk+3,-guic
 
-pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/src-QT4/kdiff3.pro
+LIB_DEPENDS +=		devel/kf5/kauth \
+			devel/kf5/kbookmarks \
+			devel/kf5/kcodecs \
+			devel/kf5/kcompletion \
+			devel/kf5/kconfig \
+			devel/kf5/kconfigwidgets \
+			devel/kf5/kcoreaddons \
+			devel/kf5/kcrash \
+			devel/kf5/ki18n \
+			devel/kf5/kiconthemes \
+			devel/kf5/kio \
+			devel/kf5/kparts \
+			devel/kf5/kservice \
+			devel/kf5/ktextwidgets \
+			devel/kf5/kwidgetsaddons \
+			devel/kf5/kxmlgui \
+			devel/kf5/sonnet
 
 .include <bsd.port.mk>
