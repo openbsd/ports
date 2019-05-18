@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2018/11/14 19:27:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/18 23:30:21 cwen Exp $
 
 COMMENT =		C/C++ implementation of a Sass compiler
 
 GH_ACCOUNT =		sass
 GH_PROJECT =		libsass
 GH_TAGNAME =		3.5.5
+REVISION =		0
 
 SHARED_LIBS +=  sass                      0.0 # 0.0
 
@@ -20,7 +21,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		${COMPILER_LIBCXX} m
 
 # c++0x
-COMPILER = base-clang ports-clang ports-gcc
+COMPILER = base-clang ports-gcc
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
