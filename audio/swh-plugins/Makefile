@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/04/02 07:12:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/18 12:13:33 naddy Exp $
 
 COMMENT =		LADSPA plugins from Steve Harris
 
@@ -16,16 +16,13 @@ WANTLIB =		fftw3f m pthread
 MASTER_SITES =		${HOMEPAGE}/releases/0.4.15/ \
 			https://distfiles.nl/
 
-BUILD_DEPENDS =		audio/ladspa \
-			devel/libtool \
-			${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+BUILD_DEPENDS =		audio/ladspa
 LIB_DEPENDS =		math/fftw3,float
 
 
 AUTOMAKE_VERSION =	1.9
 AUTOCONF_VERSION =	2.59
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include"
 
 CFLAGS +=		-fPIC
@@ -40,8 +37,5 @@ post-extract:
 	    {} \;
 post-patch:
 	rm ${WRKSRC}/acconfig.h ${WRKSRC}/ladspa.h
-
-do-gen:
-	cd ${WRKSRC}; ${AUTOCONF_ENV} autoreconf -fi
 
 .include <bsd.port.mk>

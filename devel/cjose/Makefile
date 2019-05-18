@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/01/30 07:58:19 yasuoka Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/18 12:13:33 naddy Exp $
 
 COMMENT =		Javascript Object Signing and Encryption library
 
@@ -19,18 +19,13 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		crypto jansson m
 
-BUILD_DEPENDS =		devel/check \
-			${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+BUILD_DEPENDS =		devel/check
 LIB_DEPENDS =		devel/jansson
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.16
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS =	--with-jansson=${PREFIX}
-
-do-gen:
-	@cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} autoreconf
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/01/13 06:59:42 kirby Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/18 12:13:33 naddy Exp $
 
 COMMENT =		simple RPC framework based on GObject system
 
@@ -15,23 +15,15 @@ WANTLIB += ffi glib-2.0 gobject-2.0 iconv intl jansson pcre pthread
 
 MODULES =		lang/python
 
-BUILD_DEPENDS = 	devel/libtool \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			${MODGNU_AUTOCONF_DEPENDS}
-
 LIB_DEPENDS =		devel/glib2 \
 			devel/jansson
 
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 
 AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9
 
 MODPY_ADJ_FILES = 	lib/searpc-codegen.py pysearpc/pygencode.py
-
-do-gen:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
 
 .include <bsd.port.mk>

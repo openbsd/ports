@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/02 09:01:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/18 12:13:33 naddy Exp $
 
 # Keep in sync with games/easyrpg
 COMMENT =	library for handling RPG Maker 2000/2003 data
@@ -19,17 +19,12 @@ WANTLIB += ${COMPILER_LIBCXX} expat icudata icui18n icuuc m
 
 COMPILER =	base-clang ports-clang ports-gcc
 
-BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS =	textproc/icu4c
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 USE_LIBTOOL =		gnu
 USE_GMAKE =		Yes
-
-do-gen:
-	cd ${WRKSRC}; ${AUTOCONF_ENV} autoreconf -fi
 
 .include <bsd.port.mk>

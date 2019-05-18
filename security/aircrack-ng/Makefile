@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/13 17:15:40 jca Exp $
+# $OpenBSD: Makefile,v 1.25 2019/05/18 12:13:34 naddy Exp $
 
 COMMENT=		802.11 WEP and WPA-PSK keys cracking program
 DISTNAME=		aircrack-ng-1.5.2
@@ -17,10 +17,7 @@ WANTLIB+=		${COMPILER_LIBCXX} m sqlite3
 
 MASTER_SITES=		https://download.aircrack-ng.org/
 
-BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool \
-			devel/shtool \
+BUILD_DEPENDS=		devel/shtool \
 			devel/pkgconf
 LIB_DEPENDS=		databases/sqlite3 \
 			devel/pcre
@@ -35,7 +32,7 @@ USE_LLD=		No
 LIBTOOL_FLAGS=		--tag=disable-static
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 
 MAKE_ENV+=		SQLITE=true UNSTABLE=true
 MAKE_FLAGS+=		CC=${CC}
@@ -56,9 +53,6 @@ PKG_ARGS+=              -Dppc=1
 PKG_ARGS+=              -Dppc=0
 .endif
 
-
-do-gen:
-	cd ${WRKSRC} &&  ${AUTOCONF_ENV} autoreconf -i
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/airodump-ng.h

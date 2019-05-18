@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/17 16:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/18 12:13:33 naddy Exp $
 
 COMMENT=	OCR Engine developed at HP Labs
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=		devel/pango \
 
 RUN_DEPENDS=		graphics/tesseract/tessdata,-main
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -33,12 +33,6 @@ INSTALL_TARGET=		install training-install
 ###
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool \
-			textproc/asciidoc
-
-do-gen:
-	cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf -fi
+BUILD_DEPENDS +=	textproc/asciidoc
 
 .include <bsd.port.mk>

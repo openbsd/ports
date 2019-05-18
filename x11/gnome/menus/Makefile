@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2019/05/10 14:25:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2019/05/18 12:13:34 naddy Exp $
 
 COMMENT=		implementation of the FreeDesktop Desktop Menu Spec
 
@@ -25,13 +25,9 @@ FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-menus
 CONFIGURE_STYLE=	gnu
 
 ### realpath revert patches
+CONFIGURE_STYLE+=	autoreconf
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
-do-gen:
-	cd ${WRKSRC} && env -i ${AUTOCONF_ENV} autoreconf -fi
 ###
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/04/01 10:11:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/18 12:13:33 naddy Exp $
 
 COMMENT-main =		accurate Nintendo Entertainment System emulator
 COMMENT-libretro =	Nintendo Entertainment System core for retroarch
@@ -31,10 +31,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=nestopiaue/}
 EXTRACT_SUFX =		.tgz
 
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/autoconf-archive \
-			devel/libtool
+BUILD_DEPENDS =		devel/autoconf-archive
 RUN_DEPENDS-main =	devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS-main =	archivers/libarchive \
@@ -52,7 +49,7 @@ MAKE_FLAGS =		CC="${CC}" \
 				-Ilibretro-common/include -Wno-narrowing"
 FAKE_FLAGS =		PREFIX="${WRKINST}/${TRUEPREFIX}"
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS =	--enable-gui \
 			--with-ao
 
@@ -62,9 +59,6 @@ NO_TEST =		Yes
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
-
-do-gen:
-	cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf -fi
 
 post-build:
 	cd ${WRKSRC}/libretro && \

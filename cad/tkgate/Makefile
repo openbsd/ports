@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/02/11 13:07:51 kirby Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/18 12:13:33 naddy Exp $
 
 COMMENT =		Tcl/Tk based digital circuit editor and simulator
 
@@ -23,15 +23,13 @@ MODULES =		x11/tk
 
 LIB_DEPENDS =		converters/libiconv \
 			devel/pango
-BUILD_DEPENDS = 	${MODTK_BUILD_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			${MODGNU_AUTOCONF_DEPENDS}
+BUILD_DEPENDS = 	${MODTK_BUILD_DEPENDS}
 RUN_DEPENDS = 		${MODTK_RUN_DEPENDS} \
 			devel/desktop-file-utils
 
 SEPARATE_BUILD = 	Yes
 USE_LIBTOOL = 		gnu
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV += 	TKGATE_LIBDIRS="${MODTCL_LIBDIR} ${MODTK_LIBDIR} \
 				${LOCALBASE}/lib ${X11BASE}/lib" \
 			TKGATE_INCDIRS="${MODTCL_INCDIR} ${MODTK_INCDIR} \
@@ -43,10 +41,6 @@ AUTOMAKE_VERSION = 	1.9
 
 post-extract:
 	mkdir ${WRKSRC}/m4
-
-do-gen:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/scripts/parms.tcl ${WRKSRC}/src/tkgate/verilog_out.c

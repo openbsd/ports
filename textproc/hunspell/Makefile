@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/11/29 13:35:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/05/18 12:13:34 naddy Exp $
 
 COMMENT =	spelling, stemming, morphological analysis and generation
 
@@ -27,12 +27,9 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 
 # gettext-tools needed for aclocal/extern-inline.m4
-BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/gettext-tools \
-		devel/libtool
+BUILD_DEPENDS =	devel/gettext-tools \
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${WRKBUILD}/src/hunspell/.libs"
 CONFIGURE_ARGS =	--with-ui \
@@ -43,12 +40,6 @@ CONFIGURE_ARGS =	--with-ui \
 RUN_DEPENDS =		textproc/mozilla-dicts/en-GB
 
 TEST_DEPENDS =	shells/bash
-
-do-gen:
-	cd ${WRKSRC} && env ${MAKE_ENV} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -vif
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/tests/test.sh \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/03/21 13:18:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/05/18 12:13:33 naddy Exp $
 
 V=		4.2.2
 COMMENT=	motion detection software for video
@@ -38,9 +38,7 @@ FAKE_FLAGS=		docdir=${PREFIX}/share/doc/motion \
 			sysconfdir=${PREFIX}/share/examples
 
 USE_GMAKE=		Yes
-CONFIGURE_STYLE=	autoconf
-BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+CONFIGURE_STYLE=	autoreconf
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 CONFIGURE_ARGS=		--without-optimizecpu \
@@ -63,10 +61,6 @@ CONFIGURE_ARGS+=	--without-pgsql
 .endif
 
 NO_TEST=		Yes
-
-do-gen:
-	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fiv
 
 pre-configure:
 	perl -pi -e s,/usr/local/etc,${SYSCONFDIR},g \

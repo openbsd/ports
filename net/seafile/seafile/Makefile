@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/01/13 06:59:42 kirby Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/18 12:13:33 naddy Exp $
 
 COMMENT =		seafile daemon
 
@@ -14,10 +14,7 @@ cWANTLIB += searpc sqlite3 ssl uuid z
 WANTLIB += lib/inotify/inotify ${cWANTLIB}
 
 MODULES =		lang/python
-BUILD_DEPENDS =		devel/libtool \
-			lang/vala \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			${MODGNU_AUTOCONF_DEPENDS}
+BUILD_DEPENDS =		lang/vala
 
 RUN_DEPENDS = 		devel/py-simplejson
 LIB_DEPENDS = 		devel/libinotify \
@@ -28,7 +25,7 @@ LIB_DEPENDS = 		devel/libinotify \
 			sysutils/e2fsprogs
 
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS +=	--disable-fuse \
 			--disable-server
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify" \
@@ -39,9 +36,5 @@ AUTOMAKE_VERSION =	1.11
 
 MODPY_ADJ_FILES = 	scripts/*.py scripts/build/*.py integration-tests/*.py \
 			app/seaf-cli
-
-do-gen:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
 
 .include <bsd.port.mk>

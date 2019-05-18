@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2019/05/17 16:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2019/05/18 12:13:33 naddy Exp $
 
 COMMENT=	free audio editor
 
@@ -36,10 +36,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 MODULES=	lang/python
 MODPY_RUNDEP=	No
 
-BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/gettext-tools \
-		devel/libtool \
+BUILD_DEPENDS=	devel/gettext-tools \
 		shells/bash
 # Used to build suild, not installed by default
 # See ${WRKSRC}/lib-src/lv2/suil and https://drobilla.net/software/suil
@@ -63,7 +60,7 @@ SEPARATE_BUILD= No
 USE_GMAKE=		Yes
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ENV=		CC="${CC}" CXX="${CXX}" OBJCXX="${CXX}" \
 			CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			CFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include ${CFLAGS}" \
@@ -114,9 +111,6 @@ NO_TEST=	Yes
 # dummy Makefile to disable portmixer
 post-extract:
 	printf 'all:\ninstall:\n' > ${WRKSRC}/lib-src/portmixer/Makefile
-
-do-gen:
-	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} autoreconf -fi
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps

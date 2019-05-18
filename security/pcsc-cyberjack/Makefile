@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/04 09:10:10 feinerer Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/18 12:13:34 naddy Exp $
 
 COMMENT =		REINER SCT cyberJack chipcard reader driver
 
@@ -23,17 +23,14 @@ MASTER_SITES =		https://support.reiner-sct.de/downloads/LINUX/V3.99.5_SP13/
 # -std=c++11
 COMPILER =		base-clang ports-clang ports-gcc
 
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool \
-			security/pcsc-lite
+BUILD_DEPENDS =		security/pcsc-lite
 RUN_DEPENDS =		security/pcsc-lite
 LIB_DEPENDS =		devel/libusb1
 
 MAKE_FLAGS =		CPPFLAGS=-I${LOCALBASE}/include \
 			CXXFLAGS="${CXXFLAGS} -std=c++11 -Wno-c++11-narrowing"
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS +=	--disable-xml2 \
 			--enable-release
 
@@ -46,8 +43,5 @@ WRKDIST =		${WRKDIR}/${DISTNAME:S/_/-/}
 post-extract:
 	cd ${WRKSRC} && perl -i -pe 's/\r$$//' cjeca32/Debug.cpp \
 		cjeca32/RSCTCriticalSection.cpp
-
-do-gen:
-	cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf -fi
 
 .include <bsd.port.mk>

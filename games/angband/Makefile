@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/04/27 13:24:42 edd Exp $
+# $OpenBSD: Makefile,v 1.33 2019/05/18 12:13:33 naddy Exp $
 # Original from: Robert Ruehlmann
 
 COMMENT=		rogue-like game with X11 support
@@ -23,7 +23,7 @@ WANTLIB=		c m curses
 
 MASTER_SITES =		${HOMEPAGE}/downloads/${V_DLDIR}/
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 
@@ -38,9 +38,7 @@ FLAVORS=		no_x11 sdl
 FLAVOR?=
 
 RUN_DEPENDS =		devel/desktop-file-utils
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			textproc/py-docutils
+BUILD_DEPENDS =		textproc/py-docutils
 
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=	--without-x
@@ -69,9 +67,6 @@ NO_TEST =		Yes
 pre-configure:
 	@perl -pi -e "s,/usr/share,${TRUEPREFIX}/share," \
 		${WRKSRC}/lib/icons/angband-*.desktop
-
-do-gen:
-	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} autoreconf -fi
 
 # Looks like upstream forgot to include a version file.
 # `cat: ../version: No such file or directory`

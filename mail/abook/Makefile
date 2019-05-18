@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/02/08 09:50:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/05/18 12:13:33 naddy Exp $
 
 COMMENT=		addressbook program with mutt support
 
@@ -18,18 +18,13 @@ MASTER_SITES=		http://abook.sourceforge.net/devel/
 LIB_DEPENDS=		converters/libiconv \
 			devel/gettext
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 
-BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/gettext-tools
+BUILD_DEPENDS=		devel/gettext-tools
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.14
 
 EXAMPLEDIR=		${PREFIX}/share/examples/abook/
-
-do-gen:
-	@cd ${WRKSRC}; ${AUTOCONF_ENV} autoreconf -i
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}

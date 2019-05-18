@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/04/29 08:25:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2019/05/18 12:13:33 naddy Exp $
 
 COMMENT=	lightweight DLNA/UPnP-AV media server (aka ReadyMedia)
 
@@ -27,7 +27,7 @@ WANTLIB += ogg pthread sqlite3 vorbis
 # https://svnweb.freebsd.org/ports?view=revision&revision=489641
 #MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=minidlna/}
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	autoreconf
 
 CONFIGURE_ARGS= --with-log-path=/var/log/minidlna \
 		--with-db-path=/var/db/minidlna \
@@ -45,11 +45,6 @@ LIB_DEPENDS=	audio/flac \
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-
-do-gen:
-	cd ${WRKSRC} && env -i ${AUTOCONF_ENV} autoreconf -fi
  
 E=		${PREFIX}/share/examples/minidlna
 
