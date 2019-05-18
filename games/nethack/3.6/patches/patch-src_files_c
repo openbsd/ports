@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_files_c,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
---- src/files.c.orig	Tue Nov 22 11:18:44 2016
-+++ src/files.c	Tue Nov 22 11:19:41 2016
-@@ -1303,7 +1303,9 @@ boolean uncomp;
+$OpenBSD: patch-src_files_c,v 1.2 2019/05/18 15:00:41 espie Exp $
+Index: src/files.c
+--- src/files.c.orig
++++ src/files.c
+@@ -1354,7 +1354,9 @@ boolean uncomp;
              redirect(filename, RDBMODE, stdin, uncomp);
              redirect(cfn, WRBMODE, stdout, uncomp);
          }

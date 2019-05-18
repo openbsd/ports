@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/18 15:00:41 espie Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Piece of cake
-V =		3.6.0
+V =		3.6.2
+# what we have compatible with
+BASEV =		3.6.0
 DISTNAME =	nethack-$V
 PKGNAME =	${DISTNAME}
-REVISION =	1
 CATEGORIES =	games
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nethack/} \
-		http://www.nethack.de/download/
+MASTER_SITES =	https://www.nethack.org/download/3.6.2/
 DISTFILES =	nethack-${V:S/.//g}-src.tgz
 
 HOMEPAGE =	http://nethack.org/
@@ -25,24 +25,27 @@ CONFIG = 	simple-config
 .elif ${FLAVOR} == "qt"
 CONFIG =		qt-config
 MODULES +=	x11/qt3
-WANTLIB += ${COMPILER_LIBCXX} SM
+WANTLIB += ${COMPILER_LIBCXX} SM m
 .else
 CONFIG =		x-config
-WANTLIB += X11 Xaw Xext Xmu Xpm Xt
+WANTLIB += X11 Xaw Xext Xmu Xt
 .endif
 RUN_DEPENDS = games/hackdata
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-GAMEDIR = lib/nethackdir-$V
+# The game dir name actually refers to the base version
+# we're compatible with
+GAMEDIR = lib/nethackdir-${BASEV}
 GAMEGRP = _nethack36
 
+FIX_EXTRACT_PERMISSIONS = Yes
 MAKE_ENV = GAMEDIR=${GAMEDIR} FILESDIR=${FILESDIR} GAMEGRP=$(GAMEGRP) \
 	CONFIG=$(CONFIG) V=$V
 
 
-SUBST_VARS += GAMEDIR V GAMEGRP
+SUBST_VARS += GAMEDIR V GAMEGRP BASEV
 
 NO_TEST =	Yes
 

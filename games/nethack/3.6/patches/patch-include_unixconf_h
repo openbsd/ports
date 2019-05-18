@@ -1,9 +1,9 @@
-$OpenBSD: patch-include_unixconf_h,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
+$OpenBSD: patch-include_unixconf_h,v 1.2 2019/05/18 15:00:41 espie Exp $
 
 Index: include/unixconf.h
 --- include/unixconf.h.orig
 +++ include/unixconf.h
-@@ -6,6 +6,8 @@
+@@ -7,6 +7,8 @@
  #ifndef UNIXCONF_H
  #define UNIXCONF_H
  
@@ -12,7 +12,7 @@ Index: include/unixconf.h
  /*
   * Some include files are in a different place under SYSV
   *      BSD                SYSV
-@@ -296,23 +298,6 @@
+@@ -329,23 +331,6 @@
  #include <sys/wait.h>
  #endif
  
@@ -34,9 +34,9 @@ Index: include/unixconf.h
 -#endif
 -
  /* Use the high quality random number routines. */
- #if defined(BSD) || defined(LINUX) || defined(ULTRIX) || defined(CYGWIN32) \
-     || defined(RANDOM) || defined(__APPLE__)
-@@ -322,9 +307,7 @@
+ /* the high quality random number routines */
+ #ifndef USE_ISAAC64
+@@ -358,9 +343,7 @@
  #endif
  
  #ifdef TIMED_DELAY

@@ -1,9 +1,9 @@
-$OpenBSD: patch-win_tty_termcap_c,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
+$OpenBSD: patch-win_tty_termcap_c,v 1.2 2019/05/18 15:00:41 espie Exp $
 
 Index: win/tty/termcap.c
 --- win/tty/termcap.c.orig
 +++ win/tty/termcap.c
-@@ -851,10 +851,6 @@ cl_eos() /* free after Robert Viduya */
+@@ -840,10 +840,6 @@ cl_eos() /* free after Robert Viduya */
  
  #include <curses.h>
  

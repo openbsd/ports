@@ -1,9 +1,9 @@
-$OpenBSD: patch-include_system_h,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
+$OpenBSD: patch-include_system_h,v 1.2 2019/05/18 15:00:41 espie Exp $
 
 Index: include/system.h
 --- include/system.h.orig
 +++ include/system.h
-@@ -527,14 +527,6 @@ E struct tm *FDECL(localtime, (const time_t *));
+@@ -540,14 +540,6 @@ E struct tm *FDECL(localtime, (const time_t *));
  #endif
  #endif
  

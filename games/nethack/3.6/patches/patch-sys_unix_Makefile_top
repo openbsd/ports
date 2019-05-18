@@ -1,18 +1,18 @@
-$OpenBSD: patch-sys_unix_Makefile_top,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
+$OpenBSD: patch-sys_unix_Makefile_top,v 1.2 2019/05/18 15:00:41 espie Exp $
 
 Index: sys/unix/Makefile.top
 --- sys/unix/Makefile.top.orig
 +++ sys/unix/Makefile.top
-@@ -184,7 +184,7 @@ title.img:
+@@ -186,7 +186,7 @@ title.img:
  check-dlb: options
  	@if egrep -s librarian dat/options ; then $(MAKE) dlb ; else true ; fi
  
 -dlb:
 +dlb: spec_levs $(VARDATD)
  	( cd util ; $(MAKE) dlb )
- 	( cd dat ; ../util/dlb cf nhdat $(DATDLB) )
+ 	( cd dat ; LC_ALL=C ; ../util/dlb cf nhdat $(DATDLB) )
  
-@@ -206,20 +206,20 @@ dofiles:
+@@ -207,20 +207,20 @@ dofiles:
  	cp util/recover $(INSTDIR)
  	-if test -n '$(SHELLDIR)'; then rm -f $(SHELLDIR)/$(GAME); fi
  	if test -n '$(SHELLDIR)'; then \
@@ -35,6 +35,6 @@ Index: sys/unix/Makefile.top
 -		chmod $(EXEPERM) $(SHELLDIR)/$(GAME); fi
 +		$(CHGRP) $(GAMEGRP) $(SHELLDIR)/$(REALGAME); \
 +		chmod $(EXEPERM) $(SHELLDIR)/$(REALGAME); fi
- 	-( cd $(INSTDIR) ; $(CHOWN) $(GAMEUID) symbols ; \
- 			$(CHGRP) $(GAMEGRP) symbols ; \
- 			chmod $(FILEPERM) symbols )
+ 
+ dofiles-dlb: check-dlb
+ 	( cd dat ; cp nhdat $(DATNODLB) $(INSTDIR) )

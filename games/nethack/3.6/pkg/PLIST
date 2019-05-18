@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/18 15:00:41 espie Exp $
 @option no-default-conflict
 @option is-branch
-@conflict nethack-${V}
+@conflict nethack->=${BASEV}
 @newgroup ${GAMEGRP}:806
 @comment bin/license
 @comment bin/nethack
