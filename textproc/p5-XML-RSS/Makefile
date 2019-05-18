@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2017/05/12 20:11:58 benoit Exp $
+# $OpenBSD: Makefile,v 1.42 2019/05/18 01:26:36 cwen Exp $
 
 COMMENT=	perl module to manage XML RSS files
 
-DISTNAME =	XML-RSS-1.59
+DISTNAME=	XML-RSS-1.60
 CATEGORIES=	textproc
 
 # perl
@@ -13,22 +13,20 @@ PKG_ARCH=		*
 
 CONFIGURE_STYLE=	modbuild
 
-RUN_DEPENDS=	devel/p5-DateTime \
-		devel/p5-DateTime-Format-Mail \
-		devel/p5-DateTime-Format-W3CDTF \
-		devel/p5-Test-Manifest \
-		textproc/p5-XML-Parser>=2.23  \
-		www/p5-HTML-Parser
-BUILD_DEPENDS=	${RUN_DEPENDS}
-TEST_DEPENDS=	devel/p5-Test-Differences \
-		devel/p5-Test-Manifest>=0.9 \
-		devel/p5-Test-Pod-Coverage \
-		devel/p5-Test-TrailingSpace
+RUN_DEPENDS=		devel/p5-DateTime-Format-Mail \
+			devel/p5-DateTime-Format-W3CDTF \
+			textproc/p5-XML-Parser \
+			www/p5-HTML-Parser
+
+TEST_DEPENDS=		devel/p5-Test-Differences \
+			devel/p5-Test-Manifest>=0.9 \
+			devel/p5-Test-TrailingSpace
+
+MAKE_ENV+=		TEST_POD=Yes
 
 MODCPAN_EXAMPLES=	Yes
 
 post-install:
-	find ${WRKSRC} -name \*.orig -print0 | xargs -0 rm -f
 	${MODCPAN_POST_INSTALL}
 
 .include <bsd.port.mk>
