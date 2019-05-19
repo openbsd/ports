@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2018/01/22 21:43:46 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/19 19:58:51 danj Exp $
 
 COMMENT =		portable POSIX-compatibility layer
 
 DISTNAME =		unix-compat-0.4.1.1
-REVISION =		5
+REVISION =		6
 CATEGORIES =		devel
-
-MAINTAINER =		Jim Razmus II <jim@openbsd.org>
 
 # BSD4
 PERMIT_PACKAGE_CDROM =	Yes

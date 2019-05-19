@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2018/01/22 21:40:32 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/19 19:58:51 danj Exp $
 
 COMMENT =		list-like type supporting O(1) append
 
 DISTNAME =		dlist-0.7.1.2
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
-
-MAINTAINER =		Jim Razmus II <jim@openbsd.org>
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes

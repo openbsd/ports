@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/19 19:58:52 danj Exp $
 
 COMMENT =	persistent Markdown processor for Catalyst
 
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Catalyst-Plugin-Markdown-0.01
-REVISION =	1
+REVISION =	2
 CATEGORIES =	textproc
-
-MAINTAINER =	Jim Razmus II <jim@openbsd.org>
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM =	Yes

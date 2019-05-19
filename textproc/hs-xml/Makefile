@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2018/01/22 21:48:45 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/19 19:58:52 danj Exp $
 
 COMMENT =		simple XML library
 
 DISTNAME =		xml-1.3.7
-REVISION =		11
+REVISION =		12
 CATEGORIES =		textproc
-
-MAINTAINER =		Jim Razmus II <jim@openbsd.org>
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes

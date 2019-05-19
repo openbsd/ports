@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/19 19:58:52 danj Exp $
 
 COMMENT =	cache the output of entire pages
 
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Catalyst-Plugin-PageCache-0.31
-REVISION =	0
+REVISION =	1
 CATEGORIES =	www
 FIX_EXTRACT_PERMISSIONS=Yes
-
-MAINTAINER =	Jim Razmus II <jim@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

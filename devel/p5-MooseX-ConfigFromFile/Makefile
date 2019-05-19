@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/02/06 15:53:35 cwen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/19 19:58:51 danj Exp $
 
 COMMENT=		Moose role for setting attributes from a config file
 
@@ -7,8 +7,7 @@ PKG_ARCH=		*
 DISTNAME=		MooseX-ConfigFromFile-0.14
 CATEGORIES=		devel
 FIX_EXTRACT_PERMISSIONS =	Yes
-
-MAINTAINER=		Jim Razmus II <jim@openbsd.org>
+REVISION=		0
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

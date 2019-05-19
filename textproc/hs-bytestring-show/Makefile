@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2018/01/22 21:48:45 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/19 19:58:51 danj Exp $
 
 COMMENT =		efficient conversion of values to readable byte strings
 
 DISTNAME =		bytestring-show-0.3.5.6
-REVISION =		4
+REVISION =		5
 CATEGORIES =		textproc
-
-MAINTAINER =		Jim Razmus II <jim@openbsd.org>
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes

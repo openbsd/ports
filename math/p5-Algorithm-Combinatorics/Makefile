@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/19 19:58:51 danj Exp $
 
 COMMENT =		efficient generation of combinatorial sequences
 
 DISTNAME =		Algorithm-Combinatorics-0.27
-REVISION =		2
+REVISION =		3
 CATEGORIES =		math
 
 CPAN_AUTHOR =		FXN
-
-MAINTAINER =		Jim Razmus II <jim@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

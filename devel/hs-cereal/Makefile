@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2018/01/22 21:40:32 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2019/05/19 19:58:51 danj Exp $
 
 COMMENT =		binary serialization library
 
 DISTNAME =		cereal-0.4.1.0
-REVISION =		4
+REVISION =		5
 CATEGORIES =		devel
-
-MAINTAINER =		Jim Razmus II <jim@openbsd.org>
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
