@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/05/19 11:26:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2019/05/19 13:14:56 kn Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
@@ -46,6 +46,10 @@ CONFIGURE_ARGS =	--with-rst2man=rst2man${MODPY_BIN_SUFFIX} \
 			--with-sphinx-build=sphinx-build${MODPY_BIN_SUFFIX}
 
 TEST_TARGET =		check
+
+.ifdef DEBUG
+CONFIGURE_ARGS +=	--enable-debugging-symbols
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/varnish
