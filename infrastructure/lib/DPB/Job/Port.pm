@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.189 2019/05/19 12:41:42 espie Exp $
+# $OpenBSD: Port.pm,v 1.190 2019/05/19 17:34:18 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -1055,8 +1055,7 @@ sub finalize
 {
 	my $self = shift;
 	if ($self->{stuck}) {
-		open my $fh, ">>", $self->{log};
-		print $fh $self->{stuck}, "\n";
+		print {$self->{logfh}} $self->{stuck}, "\n";
 	}
 	$self->SUPER::finalize(@_);
 }

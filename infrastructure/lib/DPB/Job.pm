@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.14 2019/05/11 15:31:12 espie Exp $
+# $OpenBSD: Job.pm,v 1.15 2019/05/19 17:34:18 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -197,7 +197,7 @@ sub kill_on_timeout
 	return $msg if !defined $to || $diff <= $to;
 	local $> = 0;	# XXX switch to root, we don't know for sure which
 			# user owns the pid (not really an issue)
-	kill 9, $core->{pid};
+	$core->kill(9);
 	return $self->{stuck} = "KILLED: $self->{current} stuck at $msg";
 }
 

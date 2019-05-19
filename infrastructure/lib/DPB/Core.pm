@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.95 2019/05/18 22:24:50 espie Exp $
+# $OpenBSD: Core.pm,v 1.96 2019/05/19 17:34:18 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -235,24 +235,26 @@ sub reap_wait
 sub dump
 {
 	my $c = shift;
-	return join(' ', ref($c), ref($c->job), $c->job->name);
+	return join(' ', $c->{pid}, ref($c), 
+	    ref($c->job), $c->job->name);
 }
 
+
+sub kill
+{
+	my ($core, $sig, $pid) = @_;
+	$pid //= $core->{pid};
+	kill $sig => -$pid;
+	kill $sig => $pid;
+}
 
 sub send_signal
 {
 	my ($class, $sig, $h, $verbose) = @_;
 	while (my ($pid, $core) = each %$h) {
-		$core->{process_group} //= CORE::getpgrp($pid);
-		if ($core->{process_group} != $pid) {
-			print STDERR "Sending $sig to pg ".$core->dump, "\n"
-			    if $verbose;
-			kill $sig => -$pid; 
-		} else {
-			print STDERR "Sending $sig to ".$core->dump, "\n"
-			    if $verbose;
-			kill $sig => $pid;
-		}
+		print STDERR "Sending $sig to pg ".$core->dump, "\n"
+		    if $verbose;
+		$core->kill($sig, $pid);
 	}
 }
 
