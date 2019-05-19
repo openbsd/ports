@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Trace.pm,v 1.3 2019/05/15 13:51:07 espie Exp $
+# $OpenBSD: Trace.pm,v 1.4 2019/05/19 08:27:30 espie Exp $
 #
 # Copyright (c) 2015 Marc Espie <espie@openbsd.org>
 #
@@ -89,7 +89,7 @@ sub setup
 			print $logfile $msg;
 			print $logfile '-'x70, "\n";
 		}
-		&$cleanup;
+		&$cleanup();
 		die $msg;
 	};
 
