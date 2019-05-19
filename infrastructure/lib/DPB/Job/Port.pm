@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.190 2019/05/19 17:34:18 espie Exp $
+# $OpenBSD: Port.pm,v 1.191 2019/05/19 21:26:03 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -891,6 +891,7 @@ my $repo = {
 	junk => 'DPB::Task::Port::Uninstall',
 	inbetween => 'DPB::Task::Port::InBetween',
 	fake => 'DPB::Task::Port::Fake',
+	signature => 'DPB::Task::Port::Signature',
 };
 
 sub create
