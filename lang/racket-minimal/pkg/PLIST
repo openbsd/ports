@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/01/31 00:00:49 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/05/19 17:48:42 juanfra Exp $
 @conflict racket-<6.2
 @pkgpath lang/racket
 @bin bin/racket
@@ -1124,6 +1124,7 @@ share/racket/collects/racket/pretty.rkt
 share/racket/collects/racket/private/
 share/racket/collects/racket/private/arity.rkt
 share/racket/collects/racket/private/base.rkt
+share/racket/collects/racket/private/c.rkt
 share/racket/collects/racket/private/case.rkt
 share/racket/collects/racket/private/cert.rkt
 share/racket/collects/racket/private/check.rkt
@@ -1139,6 +1140,8 @@ share/racket/collects/racket/private/compiled/arity_rkt.dep
 share/racket/collects/racket/private/compiled/arity_rkt.zo
 share/racket/collects/racket/private/compiled/base_rkt.dep
 share/racket/collects/racket/private/compiled/base_rkt.zo
+share/racket/collects/racket/private/compiled/c_rkt.dep
+share/racket/collects/racket/private/compiled/c_rkt.zo
 share/racket/collects/racket/private/compiled/case_rkt.dep
 share/racket/collects/racket/private/compiled/case_rkt.zo
 share/racket/collects/racket/private/compiled/cert_rkt.dep
@@ -1656,6 +1659,8 @@ share/racket/collects/setup/private/compiled/omitted-paths_rkt.dep
 share/racket/collects/setup/private/compiled/omitted-paths_rkt.zo
 share/racket/collects/setup/private/compiled/pkg-deps_rkt.dep
 share/racket/collects/setup/private/compiled/pkg-deps_rkt.zo
+share/racket/collects/setup/private/compiled/time_rkt.dep
+share/racket/collects/setup/private/compiled/time_rkt.zo
 share/racket/collects/setup/private/dirs.rkt
 share/racket/collects/setup/private/dylib.rkt
 share/racket/collects/setup/private/elf.rkt
@@ -1664,6 +1669,7 @@ share/racket/collects/setup/private/format-error.rkt
 share/racket/collects/setup/private/lib-roots.rkt
 share/racket/collects/setup/private/omitted-paths.rkt
 share/racket/collects/setup/private/pkg-deps.rkt
+share/racket/collects/setup/private/time.rkt
 share/racket/collects/setup/setup-cmdline.rkt
 share/racket/collects/setup/setup-core.rkt
 share/racket/collects/setup/setup-go.rkt
