@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/05/19 19:13:46 naddy Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
@@ -24,8 +24,6 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	lang/lua
 MODLUA_SA=	Yes
-BUILD_DEPENDS = ${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS =	archivers/bzip2 \
 		databases/sqlite3 \
 		devel/ode \
@@ -42,7 +40,7 @@ RUN_DEPENDS = 	devel/desktop-file-utils
 
 SEPARATE_BUILD =	Yes
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV =		CPPFLAGS="`pkg-config --cflags libpng sqlite3 sdl ${MODLUA_DEP}` -DSVN_REV='\"${V}\"'" \
 			LDFLAGS="`pkg-config --libs libpng sdl ${MODLUA_DEP}` -lGL"
 AUTOMAKE_VERSION =	1.11
@@ -56,12 +54,6 @@ WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}
 # stop picking up included ode
 post-extract:
 	rm -r ${WRKDIST}/src/ode
-
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		autoreconf -fi
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xmoto/

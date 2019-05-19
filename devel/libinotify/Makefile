@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/08/03 07:07:44 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/19 19:13:46 naddy Exp $
 
 COMMENT =		kevent based inotify
 
@@ -18,12 +18,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		pthread
 
-BUILD_DEPENDS =		devel/libtool \
-			${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS = 	--libdir=${PREFIX}/lib/inotify/ \
 			--includedir=${PREFIX}/include/inotify/
 
@@ -31,11 +27,6 @@ AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.14
 
 TEST_TARGET =		test
-
-pre-configure:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} PATH=${PORTPATH} \
-		autoreconf -f -i
 
 post-install:
 	@rm -rf ${WRKINST}${LOCALBASE}/lib/inotify/pkgconfig

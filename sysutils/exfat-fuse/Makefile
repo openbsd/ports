@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/07/06 08:47:58 feinerer Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/19 19:13:47 naddy Exp $
 
 COMMENT =		exFAT file system through FUSE
 
@@ -17,15 +17,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c fuse
 
-CONFIGURE_STYLE = 	gnu
+CONFIGURE_STYLE = 	autoreconf
 AUTOMAKE_VERSION =	1.15
 AUTOCONF_VERSION =	2.69
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-
-pre-configure:
-	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    autoreconf -fi
 
 .include <bsd.port.mk>

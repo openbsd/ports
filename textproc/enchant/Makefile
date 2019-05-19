@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/08/10 10:19:18 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2019/05/19 19:13:47 naddy Exp $
 
 PORTROACH=		limit:^1
 
@@ -36,7 +36,7 @@ LIB_DEPENDS=		devel/glib2 \
 			textproc/aspell/core \
 			textproc/hunspell
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include"
 
@@ -50,16 +50,8 @@ CONFIGURE_ARGS=		--with-aspell-prefix=${LOCALBASE} \
 			--disable-uspell \
 			--disable-hspell
 
-###
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool # libtoolize
-
-pre-configure:
-	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} autoreconf -fi
-###
 
 post-install:
 	rm ${PREFIX}/lib/enchant/*.{a,la}

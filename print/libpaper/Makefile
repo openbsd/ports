@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/12/13 11:42:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/19 19:13:46 naddy Exp $
 
 COMMENT=		library for handling paper characteristics
 
@@ -24,17 +24,13 @@ WRKDIST=		${WRKDIR}/${DISTNAME:S/_/-/}
 
 USE_GMAKE=		Yes
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 
 AUTOCONF_VERSION=		2.69
 AUTOMAKE_VERSION=		1.15
-BUILD_DEPENDS +=		${MODGNU_AUTOCONF_DEPENDS} \
-				${MODGNU_AUTOMAKE_DEPENDS} \
-				devel/libtool
 
 pre-configure:
 	sed -i 's,/bin/bash,/bin/sh,g' ${WRKSRC}/src/paperconfig.in
-	cd ${WRKSRC} && env -i ${AUTOCONF_ENV} autoreconf -fi
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/libpaper

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2019/02/21 22:37:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2019/05/19 19:13:46 naddy Exp $
 
 COMMENT=	video stream processing tools
 
@@ -61,13 +61,9 @@ RUN_DEPENDS=	audio/sox \
 		graphics/ffmpeg \
 		x11/mplayer
 
-BUILD_DEPENDS+=	devel/libtool \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
-
 SEPARATE_BUILD=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoreconf
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 CONFIGURE_ARGS+=--enable-a52 \
 		--enable-bktr \
@@ -123,10 +119,6 @@ CONFIGURE_ARGS+=--disable-altivec
 
 post-extract:
 	@cp ${FILESDIR}/import_sndio.c ${WRKSRC}/import
-
-post-patch:
-	@cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -if
 
 post-install:
 	@rm -f ${PREFIX}/lib/transcode/*.la

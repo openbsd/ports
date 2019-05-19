@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/19 19:13:45 naddy Exp $
 
 PORTROACH=	skipv:bm_start
 
@@ -20,21 +20,13 @@ WANTLIB=  c glib-2.0 hamlib>=2 iconv intl m ncurses panel pthread sndio
 
 AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.11
-BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoreconf
 CONFIGURE_ARGS+= --enable-hamlib
 LIB_DEPENDS=	comms/hamlib \
 		devel/glib2
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-lsndio -L${LOCALBASE}/lib"
-
-post-patch:
-	cd ${WRKSRC}; \
-	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-	    autoreconf --install
 
 .include <bsd.port.mk>

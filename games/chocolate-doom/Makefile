@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/06/27 21:03:44 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2019/05/19 19:13:46 naddy Exp $
 
 COMMENT =	portable release of Doom, Heretic, Hexen, and Strife
 V =		3.0.0
@@ -24,15 +24,13 @@ MASTER_SITES =	https://www.chocolate-doom.org/downloads/${V}/
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 AUTOMAKE_VERSION =	1.15
 AUTOCONF_VERSION =	2.69
 CONFIGURE_ARGS +=	--mandir="${LOCALBASE}/man"
 
 # python just used for generating manpages
-BUILD_DEPENDS =	lang/python/2.7 \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
+BUILD_DEPENDS =	lang/python/2.7
 
 post-extract:
 	# set correct data directory
@@ -44,10 +42,6 @@ post-extract:
 		${WRKSRC}/man/docgen
 	@sed -i 's,/usr/bin/env python,/usr/bin/env python2,' \
 		${WRKSRC}/man/simplecpp
-
-pre-configure:
-	@cd ${WRKSRC}; AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-	       AUTOCONF_VERSION=${AUTOCONF_VERSION} autoreconf -fi
  
 post-install:
 	# Data files get installed to this directory.

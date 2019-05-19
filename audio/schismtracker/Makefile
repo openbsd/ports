@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/12/30 11:28:20 fcambus Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/19 19:13:45 naddy Exp $
 
 COMMENT =	open-source reimplementation of Impulse Tracker
 
@@ -25,18 +25,12 @@ MODPY_RUNDEP =	No
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
-BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
-
 LIB_DEPENDS =	devel/sdl
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 
 WRKDIST =	${WRKDIR}/schismtracker
-
-pre-configure:
-	@cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf -i
 
 .include <bsd.port.mk>

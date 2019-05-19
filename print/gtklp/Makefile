@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2019/05/19 19:13:46 naddy Exp $
 
 COMMENT=		GTK+ frontend to CUPS
 
@@ -35,22 +35,13 @@ RUN_DEPENDS +=		print/cups
 
 USE_GMAKE=		Yes
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 
 AUTOMAKE_VERSION=	1.15
 AUTOCONF_VERSION=	2.69
-BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
-			${MODGNU_AUTOCONF_DEPENDS} \
-			devel/gettext-tools \
-			devel/libtool # libtoolize(1)
+BUILD_DEPENDS +=	devel/gettext-tools
 
 post-extract:
 	rm ${WRKSRC}/po/de.po.orig
-
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		autoreconf -fi
 
 .include <bsd.port.mk>

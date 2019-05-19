@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/07/01 09:02:41 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/19 19:13:46 naddy Exp $
 
 COMMENT =	pretty printing of your mails
 
@@ -18,8 +18,6 @@ WANTLIB += c
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=muttprint/}
 
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
 RUN_DEPENDS =		converters/p5-Text-Iconv \
 			devel/p5-Time-TimeDate \
 			graphics/ImageMagick \
@@ -28,7 +26,7 @@ RUN_DEPENDS =		converters/p5-Text-Iconv \
 			print/texlive/texmf,-full
 
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
@@ -36,11 +34,5 @@ AUTOMAKE_VERSION =	1.15
 post-patch:
 	perl -pi -e 'print "=encoding latin1\n" if $$. == 1; close ARGV if eof;' \
 		${WRKSRC}/doc/manpages/{de,en,es,it}/muttprint.pod
-
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -i
 
 .include <bsd.port.mk>

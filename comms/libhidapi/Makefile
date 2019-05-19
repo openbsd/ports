@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/04 12:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/19 19:13:45 naddy Exp $
 
 COMMENT =	library for communicating with USB and Bluetooth HID devices
 
@@ -24,15 +24,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += iconv pthread usb-1.0
 
-BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/libtool
-
 LIB_DEPENDS =	converters/libiconv \
 		devel/libusb1
 
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/libusb-1.0 \
 				-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -lusb-1.0 -liconv"
@@ -42,12 +38,6 @@ AUTOMAKE_VERSION =	1.15
 
 NO_TEST =		Yes
 
-pre-configure:
-	cd ${WRKSRC} && env -i \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		PATH=${PORTPATH} \
-		autoreconf -fi
 post-install:
 	cd ${PREFIX}/lib && \
 		ln -sf libhidapi-libusb.so.${LIBhidapi-libusb_VERSION} \

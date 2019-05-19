@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/05/22 11:31:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/19 19:13:47 naddy Exp $
 
 COMMENT =		utility used to display information about USB devices
 
@@ -24,23 +24,13 @@ LIB_DEPENDS =		devel/libusb1
 AUTOMAKE_VERSION =	1.11
 AUTOCONF_VERSION =	2.69
 
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-# autogen.sh need libtoolize
-BUILD_DEPENDS +=        devel/libtool
-
 WRKDIST = 		${WRKDIR}/usbutils-${VERSION}
 
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS +=	--datarootdir=${LOCALBASE}/lib \
 			--datadir=${LOCALBASE}/share/usbutils
-
-pre-configure:
-	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-				AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-				autoreconf --install
 
 .include <bsd.port.mk>

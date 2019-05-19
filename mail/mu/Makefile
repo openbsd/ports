@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/04/30 10:51:33 solene Exp $
+# $OpenBSD: Makefile,v 1.16 2019/05/19 19:13:46 naddy Exp $
 
 COMMENT=	maildir indexer and searcher with emacs frontend
 
@@ -13,10 +13,7 @@ REVISION =	1
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/libtool \
-		emacs->=24:editors/emacs
+BUILD_DEPENDS=	emacs->=24:editors/emacs
 
 LIB_DEPENDS=	databases/xapian-core \
 		devel/glib2 \
@@ -32,18 +29,12 @@ COMPILER=	base-clang ports-clang
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 
 CONFIGURE_ARGS=		--disable-gtk \
 			--disable-webkit \
 			--disable-guile
 
 USE_GMAKE=		Yes
-
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		autoreconf -i
 
 .include <bsd.port.mk>

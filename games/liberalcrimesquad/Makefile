@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/05/19 19:13:46 naddy Exp $
 
 V =		4.10.0
 COMMENT =	politics and government game with liberal bias
@@ -22,12 +22,9 @@ COMPILER =	base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =	converters/libiconv
 
-BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
-
 RUN_DEPENDS =	devel/desktop-file-utils
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBS="-liconv"
@@ -36,10 +33,5 @@ AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 
 WRKDIST =	${WRKDIR}/Liberal-Crime-Squad-${V}
-
-pre-configure:
-	cd ${WRKSRC} && \
-		${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-			AUTOCONF_VERSION=${AUTOCONF_VERSION} autoreconf -i
 
 .include <bsd.port.mk>

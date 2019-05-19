@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/10/24 14:28:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/19 19:13:47 naddy Exp $
 
 COMMENT =		libsass command line driver
 
@@ -18,9 +18,6 @@ WANTLIB += ${COMPILER_LIBCXX} c m sass
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
 LIB_DEPENDS =		www/libsass
 
 AUTOMAKE_VERSION =	1.15
@@ -28,15 +25,11 @@ AUTOCONF_VERSION =	2.69
 
 USE_GMAKE =		Yes
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib/"
 
 NO_TEST =		Yes
-
-post-patch:
-	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -i
 
 # Bypass the need to have libsass sources present.
 do-build:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2019/05/17 16:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.99 2019/05/19 19:13:46 naddy Exp $
 
 V =		1.9.3.23
 REVISION =	0
@@ -22,9 +22,7 @@ MASTER_SITES =	http://download.evolonline.org/manaplus/download/${V}/
 # Base gcc miscompiles on at least macppc
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext-tools
 
 LIB_DEPENDS =	devel/gettext \
 		devel/libexecinfo \
@@ -39,7 +37,7 @@ LIB_DEPENDS =	devel/gettext \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xdg-utils
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS =	--without-librt \
 			--with-sdl2 \
@@ -49,10 +47,5 @@ FAKE_FLAGS +=	desktopdir=${PREFIX}/share/applications/
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.9
-
-pre-configure:
-	cd ${WRKSRC} && \
-		${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-			AUTOCONF_VERSION=${AUTOCONF_VERSION} autoreconf -i
 
 .include <bsd.port.mk>

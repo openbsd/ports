@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2019/01/07 14:29:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2019/05/19 19:13:47 naddy Exp $
 
 COMMENT =		VNC server for real X displays
 
@@ -23,7 +23,7 @@ LIB_DEPENDS =		graphics/cairo \
 			net/libvncserver
 
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS +=	--with-x \
 			--with-avahi
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -31,11 +31,6 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-
-post-patch:
-	cd ${WRKSRC}; ${AUTOCONF_ENV} autoreconf -v --install
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/gui.c

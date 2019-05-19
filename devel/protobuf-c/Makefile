@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/07/10 10:49:43 tb Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/19 19:13:46 naddy Exp $
 
 COMMENT =		c protocol buffers
 
@@ -23,16 +23,12 @@ WANTLIB =		c m protobuf protoc pthread ${COMPILER_LIBCXX} z
 COMPILER =		base-clang ports-gcc
 CXXFLAGS +=		-std=gnu++11
 
-BUILD_DEPENDS =		devel/libtool \
-			${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-
 LIB_DEPENDS =		devel/protobuf
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
@@ -40,9 +36,5 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GMAKE =		Yes
 
 SEPARATE_BUILD =	Yes
-
-pre-configure:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -f -i
 
 .include <bsd.port.mk>

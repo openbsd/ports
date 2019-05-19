@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/04/24 16:26:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/19 19:13:46 naddy Exp $
 
 COMMENT-main =		read microsoft Access MDB
 COMMENT-gmdb =		graphical interface to MDB tools
@@ -35,10 +35,7 @@ WANTLIB-gmdb += gnomeui-2 gobject-2.0 gtk-x11-2.0 intl mdb mdbsql pango-1.0
 WANTLIB-gmdb += pthread
 
 BUILD_DEPENDS =		devel/bison \
-			devel/libtool \
-			textproc/txt2man \
-			${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			textproc/txt2man
 
 LIB_DEPENDS-main =	converters/libiconv \
 			databases/iodbc,-main \
@@ -50,7 +47,7 @@ RUN_DEPENDS-main =
 RUN_DEPENDS-gmdb =
 
 YACC=			bison -y
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS =	--with-iodbc=${LOCALBASE}
 
 AUTOCONF_VERSION =	2.69
@@ -68,11 +65,6 @@ MODGNOME_TOOLS +=	yelp desktop-file-utils
 .else
 CONFIGURE_ARGS +=	--disable-gmdb2
 .endif
-
-pre-configure:
-	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-			AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-			autoreconf -i -f
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications

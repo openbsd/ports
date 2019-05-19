@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/11 19:59:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/19 19:13:46 naddy Exp $
 
 V =		1.0.1
 COMMENT =	primitives drawing/other support functions for SDL2
@@ -21,7 +21,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sdl2gfx/}
 
 LIB_DEPENDS =	devel/sdl2
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 
 .if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS +=	--disable-mmx
@@ -29,14 +29,5 @@ CONFIGURE_ARGS +=	--disable-mmx
 
 AUTOCONF_VERSION =	2.65
 AUTOMAKE_VERSION =	1.11
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
-
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		autoreconf -i
 
 .include <bsd.port.mk>

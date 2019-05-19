@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/09 09:30:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/19 19:13:46 naddy Exp $
 
 COMMENT=		read and convert TNEF files
 
@@ -14,10 +14,6 @@ CATEGORIES=		converters mail
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
-BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
-
 RUN_DEPENDS=		mail/p5-MIME-tools
 
 WANTLIB+=		c
@@ -27,10 +23,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.15
-CONFIGURE_STYLE=	gnu
-
-pre-configure:
-	cd ${WRKSRC} && env -i ${AUTOCONF_ENV} autoreconf -fi
+CONFIGURE_STYLE=	autoreconf
 
 do-test:
 	cd ${WRKSRC}/test-data && /bin/sh test.sh

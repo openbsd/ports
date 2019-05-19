@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/09/30 19:54:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/19 19:13:46 naddy Exp $
 
 GH_ACCOUNT=	royhills
 GH_PROJECT=	ike-scan
@@ -13,16 +13,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c crypto
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 CONFIGURE_ARGS+=	--with-openssl
-
-BUILD_DEPENDS +=        ${MODGNU_AUTOMAKE_DEPENDS} \
-                        ${MODGNU_AUTOCONF_DEPENDS}
-
-post-patch:
-	cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf --install
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ike-scan

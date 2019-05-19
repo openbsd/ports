@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/08/10 10:19:18 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/19 19:13:45 naddy Exp $
 
 COMMENT=	C library for manipulating tar files
 
@@ -15,12 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c z
 
-BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/libtool
-
 USE_GMAKE=		Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 
 # XXX no tls without pthread
 CONFIGURE_ENV +=	ac_cv_tls=none
@@ -29,8 +25,5 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.11
 
 NO_TEST=		Yes
-
-pre-configure:
-	cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf --force --install
 
 .include <bsd.port.mk>

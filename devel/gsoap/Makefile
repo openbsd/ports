@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/04/19 08:18:22 robert Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/19 19:13:46 naddy Exp $
 
 COMMENT=		SOAP/REST Web Services and XML-Based apps toolkit
 
@@ -22,10 +22,6 @@ HOMEPAGE=		https://www.cs.fsu.edu/~engelen/soap.html
 # MPL-like - GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-BUILD_DEPENDS=		devel/libtool \
-			${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-
 AUTOCONF_VERSION=	2.67
 AUTOMAKE_VERSION=	1.11
 
@@ -36,12 +32,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gsoap2/gSOAP/}
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ENV=		CPPFLAGS="-DWITH_NO_C_LOCALE=1" LDFLAGS="-pthread"
-
-pre-configure:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} PATH=${PORTPATH} \
-		autoreconf -f -i
 
 .include <bsd.port.mk>

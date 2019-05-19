@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2019/04/24 16:26:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2019/05/19 19:13:47 naddy Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 
@@ -22,10 +22,7 @@ WANTLIB=	c crypto curses ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 
 MASTER_SITES=	https://github.com/OpenSC/OpenSC/releases/download/${V}/
 
-BUILD_DEPENDS=	devel/libtool \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		security/pcsc-lite \
+BUILD_DEPENDS=	security/pcsc-lite \
 		textproc/docbook-xsl
 RUN_DEPENDS=	devel/desktop-file-utils \
 		security/ccid
@@ -33,7 +30,7 @@ LIB_DEPENDS=	devel/glib2
 
 USE_GMAKE=	Yes
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoreconf
 CONFIGURE_ARGS=	--enable-static \
 		--sysconfdir=${SYSCONFDIR} \
 		--enable-sm \
@@ -47,10 +44,6 @@ FAKE_FLAGS=	mandir="${PREFIX}/man/" \
 
 AUTOCONF_VERSION = 2.69
 AUTOMAKE_VERSION = 1.15
-
-pre-configure:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -f -i
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig

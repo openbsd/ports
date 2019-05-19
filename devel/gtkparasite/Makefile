@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/19 19:13:46 naddy Exp $
 
 COMMENT =	Gtk debugging tool
 
@@ -31,18 +31,8 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 
 RUN_DEPENDS =	x11/py-gtk2
 
-BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/libtool \
-		x11/py-gtk2
+BUILD_DEPENDS =	x11/py-gtk2
 
-
-CONFIGURE_STYLE =	gnu
-
-pre-configure:
-	cd ${WRKSRC} && env \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		autoreconf -fi
+CONFIGURE_STYLE =	autoreconf
 
 .include <bsd.port.mk>

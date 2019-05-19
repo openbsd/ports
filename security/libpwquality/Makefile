@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/02/18 08:02:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/19 19:13:47 naddy Exp $
 
 COMMENT =		library to generate, and check strengh of passwords
 
@@ -32,7 +32,7 @@ BUILD_DEPENDS =		devel/gettext-tools \
 
 LIB_DEPENDS =		security/cracklib
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS =	--with-python-binary=python${MODPY_VERSION} \
 			--with-python-rev=${MODPY_VERSION} \
 			--with-sconfigdir=${SYSCONFDIR} \
@@ -43,13 +43,5 @@ FAKE_FLAGS =		secureconfdir=${PREFIX}/share/examples/libpwquality/
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
-pre-configure:
-	cd ${WRKSRC} && env -i \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -fi
 
 .include <bsd.port.mk>

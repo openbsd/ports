@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2019/05/19 19:13:46 naddy Exp $
 
 COMMENT=		Gtk+ Widget for Displaying OpenStreetMap tiles
 
@@ -31,26 +31,17 @@ LIB_DEPENDS=		devel/libsoup \
 
 USE_GMAKE=		Yes
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS=		osm_gps_mapdocdir=${PREFIX}/share/doc/osm-gps-map/
 
-### autohell
 AUTOMAKE_VERSION=	1.14
 AUTOCONF_VERSION=	2.69
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool \
-			textproc/gtk-doc
+BUILD_DEPENDS +=	textproc/gtk-doc
 
 post-patch:
 	cp ${LOCALBASE}/share/gtk-doc/data/gtk-doc.make ${WRKSRC} 
-	cd ${WRKSRC} && \
-		env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -fi
-###
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/05 16:35:59 remi Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/19 19:13:46 naddy Exp $
 
 COMMENT =	fast-samples based normalization library
 
@@ -20,10 +20,6 @@ MASTER_SITES =	https://www.liblognorm.com/files/download/
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 
-BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/libtool
-
 LIB_DEPENDS =	devel/libestr \
 		devel/libfastjson
 
@@ -31,16 +27,10 @@ TEST_DEPENDS =	shells/bash
 
 SEPARATE_BUILD = Yes
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 
 post-extract:
 	sed -i s,#!/bin/bash,#!${LOCALBASE}/bin/bash, ${WRKSRC}/tests/*.sh
-
-post-patch:
-	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
-	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-	    autoreconf -vfi
 
 .include <bsd.port.mk>

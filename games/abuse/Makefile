@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2019/05/19 19:13:46 naddy Exp $
 
 COMMENT =	SDL port of the legendary 2D platform shooter
 
@@ -26,10 +26,6 @@ COMPILER =		base-clang ports-gcc base-gcc
 MASTER_SITES =	${HOMEPAGE}raw-attachment/wiki/download/
 MASTER_SITES0 =	http://www.linklevel.net/distfiles/
 
-# Needs AC_PROG_LIBTOOL
-BUILD_DEPENDS =	devel/libtool \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS =	converters/libiconv \
 		devel/sdl-mixer \
 		devel/smpeg \
@@ -43,7 +39,7 @@ DISTFILES = 	${DISTNAME}.tar.gz \
 
 SEPARATE_BUILD =Yes
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS =	--enable-release \
 			--disable-nonfree \
 			--with-assetdir=${PREFIX}/share/abuse \
@@ -57,12 +53,6 @@ post-patch:
 	cd "${WRKSRC}" && \
 		find "${WRKDIR}/${ABUSE_SFX}/patches/" -name 'patch-*' \
 		-exec patch -z .afs-orig -i {} \;
-
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		autoreconf -fi
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/abuse/sfx

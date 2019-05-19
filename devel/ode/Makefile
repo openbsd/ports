@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/01/13 15:08:01 pascal Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/19 19:13:46 naddy Exp $
 
 COMMENT =	high performance library for simulating rigid body dynamics
 SHARED_LIBS += 	ode	3.0	# 6.0
@@ -22,24 +22,13 @@ WANTLIB += xcb-glx
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-BUILD_DEPENDS = 	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
-
 SEPARATE_BUILD = 	Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV+= 	CPPFLAGS="-I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib" \
 			LIBS="-lm"
 AUTOCONF_VERSION = 	2.69
 AUTOMAKE_VERSION = 	1.11
-
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		PATH=${PORTPATH} \
-		autoreconf -fi
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ode/
