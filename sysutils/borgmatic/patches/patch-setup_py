@@ -1,0 +1,15 @@
+$OpenBSD: patch-setup_py,v 1.5 2019/05/19 14:18:48 semarie Exp $
+Permit to use the specific version of colorama we have in ports.
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -33,7 +33,7 @@ setup(
+         'pykwalify>=1.6.0,<14.06',
+         'ruamel.yaml>0.15.0,<0.16.0',
+         'setuptools',
+-        'colorama>=0.4.1,<0.5',
++        'colorama',
+     ),
+     include_package_data=True,
+ )

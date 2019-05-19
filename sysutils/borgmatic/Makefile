@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/12 15:53:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/19 14:18:48 semarie Exp $
 
 COMMENT =		wrapper for Borg to create and prune backups
 
-MODPY_EGG_VERSION =	1.3.3
+MODPY_EGG_VERSION =	1.3.5
 DISTNAME =		borgmatic-${MODPY_EGG_VERSION}
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -19,7 +19,8 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-RUN_DEPENDS =		devel/py-docopt${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/py-colorama${MODPY_FLAVOR} \
+			devel/py-docopt${MODPY_FLAVOR} \
 			sysutils/borgbackup \
 			textproc/py-pykwalify${MODPY_FLAVOR} \
 			textproc/py-ruamel.yaml${MODPY_FLAVOR}
