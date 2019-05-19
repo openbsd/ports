@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/01/09 09:44:49 landry Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/05/19 21:07:18 cwen Exp $
 bin/perlsh
 ${P5ARCH}/
 ${P5ARCH}/Term/
@@ -12,6 +12,43 @@ ${P5ARCH}/auto/Term/ReadLine/
 ${P5ARCH}/auto/Term/ReadLine/Gnu/
 ${P5ARCH}/auto/Term/ReadLine/Gnu/Gnu.so
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/Tk_getc.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/_ch_wrapper.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/_str2fn.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/_str2map.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/_tgetstrs.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/_trp_completion_function.al
 ${P5ARCH}/auto/Term/ReadLine/Gnu/XS/autosplit.ix
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/change_ornaments.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/display_readline_version.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/get_history_event.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/hist_arg_extract.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/hist_list.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/history_expand_line.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/list_completion_function.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/operate_and_get_next.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/ornaments.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_add_funmap_entry.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_bind_key.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_bind_key_if_unbound.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_bind_keyseq.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_bind_keyseq_if_unbound.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_call_function.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_completion_mode.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_copy_keymap.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_discard_keymap.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_filename_list.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_generic_bind.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_invoking_keyseqs.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_macro_bind.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_message.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_set_key.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_set_keymap.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_tty_set_default_bindings.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/rl_tty_unset_default_bindings.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/shadow_redisplay.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/unbind_command.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/unbind_function.al
+${P5ARCH}/auto/Term/ReadLine/Gnu/XS/unbind_key.al
 @man man/man1/perlsh.1
 @man man/man3p/Term::ReadLine::Gnu.3p
