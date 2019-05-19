@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2019/03/11 11:16:05 bentley Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2019/05/19 14:02:46 ajacoutot Exp $
 @pkgpath inputmethods/uim
 @pkgpath inputmethods/uim,-gnome
 @bin bin/uim-el-agent
@@ -6,6 +6,7 @@
 @bin bin/uim-fep
 @bin bin/uim-fep-tick
 @bin bin/uim-help
+bin/uim-m17nlib-relink-icons
 @bin bin/uim-module-manager
 @bin bin/uim-sh
 @bin bin/uim-xim
@@ -40,6 +41,7 @@ lib/uim/plugin/libuim-editline.so
 lib/uim/plugin/libuim-fileio.so
 lib/uim/plugin/libuim-lolevel.so
 lib/uim/plugin/libuim-look.so
+lib/uim/plugin/libuim-m17nlib.so
 lib/uim/plugin/libuim-process.so
 lib/uim/plugin/libuim-skk.so
 lib/uim/plugin/libuim-socket.so
@@ -264,6 +266,133 @@ share/uim/pixmaps/latin.png
 share/uim/pixmaps/latin.svg
 share/uim/pixmaps/look.png
 share/uim/pixmaps/look.svg
+share/uim/pixmaps/m17n-am-sera.png
+share/uim/pixmaps/m17n-ar-kbd.png
+share/uim/pixmaps/m17n-as-inscript.png
+share/uim/pixmaps/m17n-as-itrans.png
+share/uim/pixmaps/m17n-as-phonetic.png
+share/uim/pixmaps/m17n-be-kbd.png
+share/uim/pixmaps/m17n-bn-disha.png
+share/uim/pixmaps/m17n-bn-inscript.png
+share/uim/pixmaps/m17n-bn-itrans.png
+share/uim/pixmaps/m17n-bn-probhat.png
+share/uim/pixmaps/m17n-bn-unijoy.png
+share/uim/pixmaps/m17n-bo-wylie.png
+share/uim/pixmaps/m17n-bopo-kbd.png
+share/uim/pixmaps/m17n-cmc-kbd.png
+share/uim/pixmaps/m17n-cs-kbd.png
+share/uim/pixmaps/m17n-dv-phonetic.png
+share/uim/pixmaps/m17n-el-kbd.png
+share/uim/pixmaps/m17n-en-ispell.png
+share/uim/pixmaps/m17n-eo-h-fundamente.png
+share/uim/pixmaps/m17n-eo-h-sistemo.png
+share/uim/pixmaps/m17n-eo-plena.png
+share/uim/pixmaps/m17n-eo-q-sistemo.png
+share/uim/pixmaps/m17n-eo-x-sistemo.png
+share/uim/pixmaps/m17n-fa-isiri.png
+share/uim/pixmaps/m17n-gu-inscript.png
+share/uim/pixmaps/m17n-gu-itrans.png
+share/uim/pixmaps/m17n-gu-phonetic.png
+share/uim/pixmaps/m17n-he-kbd.png
+share/uim/pixmaps/m17n-hi-inscript.png
+share/uim/pixmaps/m17n-hi-itrans.png
+share/uim/pixmaps/m17n-hi-optitransv2.png
+share/uim/pixmaps/m17n-hi-phonetic.png
+share/uim/pixmaps/m17n-hi-remington.png
+share/uim/pixmaps/m17n-hi-typewriter.png
+share/uim/pixmaps/m17n-hi-vedmata.png
+share/uim/pixmaps/m17n-hr-kbd.png
+share/uim/pixmaps/m17n-hy-kbd.png
+share/uim/pixmaps/m17n-ii-phonetic.png
+share/uim/pixmaps/m17n-ja-anthy.png
+share/uim/pixmaps/m17n-ja-tcode.png
+share/uim/pixmaps/m17n-ka-kbd.png
+share/uim/pixmaps/m17n-kk-arabic.png
+share/uim/pixmaps/m17n-kk-kbd.png
+share/uim/pixmaps/m17n-km-yannis.png
+share/uim/pixmaps/m17n-kn-inscript.png
+share/uim/pixmaps/m17n-kn-itrans.png
+share/uim/pixmaps/m17n-kn-kgp.png
+share/uim/pixmaps/m17n-kn-optitransv2.png
+share/uim/pixmaps/m17n-ko-han2.png
+share/uim/pixmaps/m17n-ko-romaja.png
+share/uim/pixmaps/m17n-latn-post.png
+share/uim/pixmaps/m17n-latn-pre.png
+share/uim/pixmaps/m17n-lo-kbd.png
+share/uim/pixmaps/m17n-lo-lrt.png
+share/uim/pixmaps/m17n-math-latex.png
+share/uim/pixmaps/m17n-ml-inscript.png
+share/uim/pixmaps/m17n-ml-itrans.png
+share/uim/pixmaps/m17n-ml-mozhi.png
+share/uim/pixmaps/m17n-ml-remington.png
+share/uim/pixmaps/m17n-ml-swanalekha.png
+share/uim/pixmaps/m17n-mr-inscript.png
+share/uim/pixmaps/m17n-my-kbd.png
+share/uim/pixmaps/m17n-ne-rom.png
+share/uim/pixmaps/m17n-ne-trad-ttf.png
+share/uim/pixmaps/m17n-ne-trad.png
+share/uim/pixmaps/m17n-or-inscript.png
+share/uim/pixmaps/m17n-or-itrans.png
+share/uim/pixmaps/m17n-pa-inscript.png
+share/uim/pixmaps/m17n-pa-itrans.png
+share/uim/pixmaps/m17n-pa-jhelum.png
+share/uim/pixmaps/m17n-pa-phonetic.png
+share/uim/pixmaps/m17n-ps-phonetic.png
+share/uim/pixmaps/m17n-rfc1345.png
+share/uim/pixmaps/m17n-ru-kbd.png
+share/uim/pixmaps/m17n-ru-phonetic.png
+share/uim/pixmaps/m17n-ru-yawerty.png
+share/uim/pixmaps/m17n-sa-IAST.png
+share/uim/pixmaps/m17n-sa-itrans.png
+share/uim/pixmaps/m17n-sd-inscript.png
+share/uim/pixmaps/m17n-si-phonetic-dynamic.png
+share/uim/pixmaps/m17n-si-samanala.png
+share/uim/pixmaps/m17n-si-sumihiri.png
+share/uim/pixmaps/m17n-si-transliteration.png
+share/uim/pixmaps/m17n-si-wijesekera.png
+share/uim/pixmaps/m17n-sk-kbd.png
+share/uim/pixmaps/m17n-sr-kbd.png
+share/uim/pixmaps/m17n-sv-post.png
+share/uim/pixmaps/m17n-syrc-phonetic.png
+share/uim/pixmaps/m17n-ta-inscript.png
+share/uim/pixmaps/m17n-ta-itrans.png
+share/uim/pixmaps/m17n-ta-phonetic.png
+share/uim/pixmaps/m17n-ta-tamil99.png
+share/uim/pixmaps/m17n-ta-typewriter.png
+share/uim/pixmaps/m17n-ta-vutam.png
+share/uim/pixmaps/m17n-te-apple.png
+share/uim/pixmaps/m17n-te-inscript.png
+share/uim/pixmaps/m17n-te-itrans.png
+share/uim/pixmaps/m17n-te-pothana.png
+share/uim/pixmaps/m17n-te-sarala.png
+share/uim/pixmaps/m17n-th-kesmanee-2.png
+share/uim/pixmaps/m17n-th-kesmanee.png
+share/uim/pixmaps/m17n-th-pattachote-2.png
+share/uim/pixmaps/m17n-th-pattachote.png
+share/uim/pixmaps/m17n-th-tis820-2.png
+share/uim/pixmaps/m17n-th-tis820.png
+share/uim/pixmaps/m17n-ua-kbd.png
+share/uim/pixmaps/m17n-unicode.png
+share/uim/pixmaps/m17n-ur-phonetic.png
+share/uim/pixmaps/m17n-uz-kbd.png
+share/uim/pixmaps/m17n-vi-nom-vni.png
+share/uim/pixmaps/m17n-vi-nom.png
+share/uim/pixmaps/m17n-vi-tcvn.png
+share/uim/pixmaps/m17n-vi-telex.png
+share/uim/pixmaps/m17n-vi-viqr.png
+share/uim/pixmaps/m17n-vi-vni.png
+share/uim/pixmaps/m17n-yi-yivo.png
+share/uim/pixmaps/m17n-zh-bopomofo.png
+share/uim/pixmaps/m17n-zh-cangjie.png
+share/uim/pixmaps/m17n-zh-pinyin.png
+share/uim/pixmaps/m17n-zh-py-b5.png
+share/uim/pixmaps/m17n-zh-py-gb.png
+share/uim/pixmaps/m17n-zh-py.png
+share/uim/pixmaps/m17n-zh-quick.png
+share/uim/pixmaps/m17n-zh-tonepy-b5.png
+share/uim/pixmaps/m17n-zh-tonepy-gb.png
+share/uim/pixmaps/m17n-zh-tonepy.png
+share/uim/pixmaps/m17n-zh-zhuyin.png
 share/uim/pixmaps/mana.png
 share/uim/pixmaps/mana.svg
 share/uim/pixmaps/null.png

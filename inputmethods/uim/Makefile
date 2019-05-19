@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2019/03/27 10:11:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2019/05/19 14:02:46 ajacoutot Exp $
 
 DPB_PROPERTIES=		tag:kde3
 
@@ -19,6 +19,10 @@ PKGNAME-gtk3=		uim-gtk3-$V
 PKGNAME-kde=		uim-kde-$V
 PKGNAME-qt=		uim-qt-$V
 PKGNAME-qt4=		uim-qt4-$V
+
+REVISION-main=		0
+REVISION-gtk3=		0
+REVISION-qt4=		0
 
 MASTER_SITES=		https://github.com/uim/uim/releases/download/$V/
 HOMEPAGE=		https://github.com/uim/uim
@@ -46,11 +50,11 @@ RUN_DEPENDS-main=	devel/desktop-file-utils
 
 WANTLIB-main += ${cWANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-main += Xft anthy anthydic c curses edit expat gcroots
-WANTLIB-main += sqlite3 util xcb z
+WANTLIB-main += sqlite3 util xcb z lzma m17n m17n-core xml2
 
 LIB_DEPENDS-main=	inputmethods/anthy \
-			devel/libgcroots
-
+			devel/libgcroots \
+			misc/m17n/lib
 
 WANTLIB-gtk += ${cWANTLIB}
 WANTLIB-gtk += Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr
@@ -65,8 +69,8 @@ LIB_DEPENDS-gtk=	inputmethods/uim \
 
 WANTLIB-gtk3 += ${cWANTLIB}
 WANTLIB-gtk3 += Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
-WANTLIB-gtk3 += Xrandr atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
-WANTLIB-gtk3 += dbus-1 expat ffi gcroots gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB-gtk3 += Xrandr atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
+WANTLIB-gtk3 += expat ffi gcroots gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB-gtk3 += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB-gtk3 += gtk-3 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gtk3 += pcre pixman-1 png pthread uim uim-custom fribidi
@@ -98,9 +102,10 @@ LIB_DEPENDS-qt=		${MODQT3_LIB_DEPENDS} \
 
 WANTLIB-qt4 += ${cWANTLIB} ${MODQT4_WANTLIB}
 WANTLIB-qt4 += ICE QtGui SM Xi Xinerama c pthread ${COMPILER_LIBCXX} uim
-WANTLIB-qt4 += uim-custom uim-scm
+WANTLIB-qt4 += uim-custom uim-scm replace
 
 LIB_DEPENDS-qt4=	${MODQT4_LIB_DEPENDS} \
+			net/samba,-util \
 			inputmethods/uim
 
 AUTOCONF_VERSION=	2.69
@@ -117,9 +122,6 @@ CONFIGURE_ARGS=		--with-qt \
 			--with-qt4-immodule \
 			--with-anthy-utf8 \
 			--with-libgcroots
-# XXX should also either be neutering m17nlib (--without-m17nlib) or
-# explicitly building it, but this breaks autoconf (it is then unable
-# to find libgcroots).
 
 post-install:
 	rm ${PREFIX}/lib/uim/plugin/*.{a,la}
