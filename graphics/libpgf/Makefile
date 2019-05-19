@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/02 09:23:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/19 11:26:25 naddy Exp $
 
 COMMENT =	PGF image format handling library
 V =		6.12.24
@@ -21,14 +21,10 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=libpgf/}
 
-# needs libtoolize
-BUILD_DEPENDS +=	devel/libtool \
-			${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.9
+AUTORECONF =		sh autogen.sh
 
 # Force disabling documentation generation through doxygen,
 # it's unhelpful and wants too many dependencies.
@@ -36,8 +32,5 @@ CONFIGURE_ENV =	ac_cv_path_DOXYGEN= ac_cv_path_DOT=
 
 WRKDIST =	${WRKDIR}/libpgf
 SUBST_VARS +=	PKGNAME
-
-do-gen:
-	cd ${WRKSRC} && ${AUTOCONF_ENV} sh autogen.sh
 
 .include <bsd.port.mk>

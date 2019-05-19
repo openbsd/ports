@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/01/01 16:30:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2019/05/19 11:26:25 naddy Exp $
 
 COMMENT=	wrapper to run CGI applications via FastCGI
 
@@ -22,18 +22,15 @@ SEPARATE_BUILD=	Yes
 AUTOCONF_VERSION= 2.68
 AUTOMAKE_VERSION= 1.11
 
-BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
 RUN_DEPENDS=	www/spawn-fcgi
 LIB_DEPENDS=	devel/libev \
 		devel/glib2
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoreconf
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-do-gen:
-	cd ${WRKSRC} && env -i ${AUTOCONF_ENV} ./autogen.sh
+AUTORECONF=	./autogen.sh
 
 .include <bsd.port.mk>

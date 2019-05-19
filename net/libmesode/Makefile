@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/03 19:14:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/19 11:26:25 naddy Exp $
 
 COMMENT =	fork of libstrophe for use with profanity XMPP client
 
@@ -21,10 +21,6 @@ WANTLIB += crypto expat ssl
 # Check must be present at build time for tests to work.
 BUILD_DEPENDS +=	devel/check
 
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
-
 SEPARATE_BUILD =	Yes
 
 USE_GMAKE =		Yes
@@ -35,11 +31,9 @@ AUTOCONF_VERSION =	2.69
 MAKE_FLAGS =		CC="${CC}" \
 			CFLAGS="${CFLAGS}"
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-do-gen:
-	cd ${WRKSRC} &&  ${AUTOCONF_ENV} ./bootstrap.sh
+AUTORECONF =		./bootstrap.sh
 
 .include <bsd.port.mk>

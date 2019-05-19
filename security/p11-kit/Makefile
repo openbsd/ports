@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/02/04 20:50:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2019/05/19 11:26:25 naddy Exp $
 
 COMMENT=		library for loading and enumerating PKCS\#11 modules
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=		devel/gettext \
 			devel/libffi \
 			security/libtasn1
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--with-module-path=${PREFIX}/lib/pkcs11 \
@@ -39,13 +39,8 @@ FAKE_FLAGS=		exampledir=${PREFIX}/share/examples/p11-kit/pkcs11
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/gettext-tools \
-			devel/libtool
-
-do-gen:
-	cd ${WRKSRC} && env -i ${AUTOCONF_ENV} NOCONFIGURE=1 ./autogen.sh
+AUTORECONF=		./autogen.sh
+BUILD_DEPENDS +=	devel/gettext-tools
 
 post-install:
 	rm ${PREFIX}/lib/pkcs11/*.{a,la}

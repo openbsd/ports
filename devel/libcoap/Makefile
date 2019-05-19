@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/01/22 22:22:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/19 11:26:24 naddy Exp $
 
 COMMENT=	communicate with embedded devices using CoAP (RFC 7252)
 
@@ -31,10 +31,7 @@ WANTLIB += c
 
 MASTER_SITES=	https://spacehopper.org/mirrors/
 
-BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/cunit \
-		devel/libtool \
+BUILD_DEPENDS=	devel/cunit \
 		textproc/asciidoc
 
 USE_GMAKE=	Yes
@@ -43,7 +40,7 @@ USE_GMAKE=	Yes
 # also needed for autoconf so listed separately above as well)
 USE_LIBTOOL=	gnu
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ARGS=		--disable-doxygen \
 			--disable-shared \
 			--enable-tests \
@@ -51,9 +48,7 @@ CONFIGURE_ARGS=		--disable-doxygen \
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
-
-do-gen:
-	cd ${WRKSRC}; ${AUTOCONF_ENV} ./autogen.sh
+AUTORECONF=		./autogen.sh
 
 post-install:
 	cd ${PREFIX}/man/man5; for i in *; do mv $$i ../man1/$${i%.5}.1; done

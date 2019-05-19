@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/01/07 18:37:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/19 11:26:25 naddy Exp $
 
 # built but not actually installed at present; patches are needed for the
 # build so it seems easier to keep the SHARED_LIBS infrastructure here.
@@ -29,9 +29,6 @@ COMPILER =	base-clang ports-gcc base-gcc
 
 MASTER_SITES0=	https://github.com/ntop/ndpi/archive/${NDPI_V}/
 
-BUILD_DEPENDS=	devel/libtool \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
 RUN_DEPENDS=	databases/redis \
 		net/libmaxminddb,-db \
 		net/libmaxminddb,-city \
@@ -53,13 +50,14 @@ FAKE_FLAGS=	INSTALL_DIR=${WRKINST}${PREFIX} \
 		MAN_DIR=${WRKINST}${PREFIX}/man
 
 USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoreconf
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_lib_ldap_ldap_initialize=no
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
+AUTORECONF=		sh -c "./autogen.sh; cd nDPI; ./autogen.sh"
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/nDPI
 
@@ -67,11 +65,6 @@ NO_TEST=	Yes
 
 post-extract:
 	cd ${WRKDIR}; mv nDPI-* ${WRKSRC}/nDPI
-
-do-gen:
-	cd ${WRKSRC}; env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} sh -c \
-		"./autogen.sh; cd nDPI; ./autogen.sh"
 
 pre-configure:
 	sed -i 's,/var/db,${LOCALSTATEDIR}/db,' \

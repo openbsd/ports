@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2019/05/14 05:07:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.126 2019/05/19 11:26:24 naddy Exp $
 
 BROKEN=		Abort trap on startup (pango related?)
 
@@ -73,7 +73,7 @@ RUN_DEPENDS +=	devel/xdg-utils
 
 PLUGINS=	goffice opendocument openwriter openxml pdf
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoreconf
 CONFIGURE_ARGS=	--enable-introspection \
 		--enable-plugins="${PLUGINS}" \
 		--enable-clipart \
@@ -93,12 +93,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/autoconf-archive \
-			devel/libtool
-do-gen:
-	cd ${WRKSRC} && env -i ${AUTOCONF_ENV} NOCONFIGURE=1 ./autogen.sh
+AUTORECONF=		./autogen.sh
+BUILD_DEPENDS +=	devel/autoconf-archive
 
 post-install:
 	rm ${PREFIX}/lib/libabiword-3.1*.{a,la}

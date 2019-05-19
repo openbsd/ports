@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/11/05 17:23:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/05/19 11:26:25 naddy Exp $
 
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		bz2 c z
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 
 CONFIGURE_ARGS +=	--enable-compat15 \
 			--enable-ftconv \
@@ -61,12 +61,6 @@ TEST_FLAGS =		TZ=CET
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
-BUILD_DEPENDS =		devel/libtool \
-			${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-
-do-gen:
-	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
+AUTORECONF =		./autogen.sh
 
 .include <bsd.port.mk>

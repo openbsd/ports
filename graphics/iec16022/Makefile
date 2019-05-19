@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/11/05 17:23:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/19 11:26:24 naddy Exp $
 
 COMMENT=	2D barcodes / DataMatrix creation tool
 
@@ -24,18 +24,12 @@ MASTER_SITES=	https://github.com/rdoeffinger/iec16022/releases/download/v$V/
 
 LIB_DEPENDS=	devel/popt
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoreconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.15
-BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/libtool
-
-do-gen:
-	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
+AUTORECONF=	./autogen.sh
 
 pre-test:
 	sed -i 's,/bin/bash,/bin/sh,g' ${WRKSRC}/test/testsuite.sh
