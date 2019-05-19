@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_platform_sdl_main_c,v 1.1 2019/01/27 11:11:20 bentley Exp $
+$OpenBSD: patch-src_platform_sdl_main_c,v 1.2 2019/05/19 07:12:55 bentley Exp $
 
 Add option to drop privileges with pledge().
 From https://github.com/mgba-emu/mgba/pull/1271.
@@ -55,17 +55,17 @@ Index: src/platform/sdl/main.c
 +#ifdef USE_PLEDGE_UNVEIL
 +static bool mPledgeBroad(struct mArguments *args) {
 +	if (args->debuggerType == DEBUGGER_CLI) {
-+		if (pledge("stdio rpath wpath cpath inet fattr unix dns tty drm audio", NULL) == -1) {
++		if (pledge("stdio rpath wpath cpath inet fattr unix dns prot_exec tty drm audio", NULL) == -1) {
 +			return false;
 +		}
 +#ifdef USE_GDB_STUB
 +	} else if (args->debuggerType == DEBUGGER_GDB) {
-+		if (pledge("stdio rpath wpath cpath inet fattr unix dns drm audio", NULL) == -1) {
++		if (pledge("stdio rpath wpath cpath inet fattr unix dns prot_exec drm audio", NULL) == -1) {
 +			return false;
 +		}
 +#endif
 +	} else {
-+		if (pledge("stdio rpath wpath cpath inet fattr unix dns drm audio", NULL) == -1) {
++		if (pledge("stdio rpath wpath cpath inet fattr unix dns prot_exec drm audio", NULL) == -1) {
 +			return false;
 +		}
 +	}
@@ -74,17 +74,17 @@ Index: src/platform/sdl/main.c
 +
 +static bool mPledgeNarrow(struct mArguments *args) {
 +	if (args->debuggerType == DEBUGGER_CLI) {
-+		if (pledge("stdio rpath wpath cpath fattr tty drm audio", NULL) == -1) {
++		if (pledge("stdio rpath wpath cpath fattr tty prot_exec drm audio", NULL) == -1) {
 +			return false;
 +		}
 +#ifdef USE_GDB_STUB
 +	} else if (args->debuggerType == DEBUGGER_GDB) {
-+		if (pledge("stdio rpath wpath cpath inet fattr drm audio", NULL) == -1) {
++		if (pledge("stdio rpath wpath cpath inet fattr prot_exec drm audio", NULL) == -1) {
 +			return false;
 +		}
 +#endif
 +	} else {
-+		if (pledge("stdio rpath wpath cpath fattr drm audio", NULL) == -1) {
++		if (pledge("stdio rpath wpath cpath fattr prot_exec drm audio", NULL) == -1) {
 +			return false;
 +		}
 +	}
