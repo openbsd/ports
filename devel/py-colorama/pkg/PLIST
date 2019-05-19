@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/01/06 17:10:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/05/19 14:52:24 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/colorama/
 lib/python${MODPY_VERSION}/site-packages/colorama-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/colorama-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/colorama-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/colorama-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/colorama-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/colorama-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/colorama/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/colorama/${MODPY_PYCACHE}/
