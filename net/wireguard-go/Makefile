@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/13 15:30:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/19 19:44:53 jasper Exp $
 
 COMMENT =	implementation of WireGuard in Go
 
 DISTNAME =	wireguard-go-0.0.20190409
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net security
 
 HOMEPAGE =	https://www.wireguard.com/
+
+MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
