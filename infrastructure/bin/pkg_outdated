@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: pkg_outdated,v 1.4 2018/12/12 16:32:59 espie Exp $
+# $OpenBSD: pkg_outdated,v 1.5 2019/05/19 08:48:58 espie Exp $
 #
 # Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
 #
@@ -201,13 +201,13 @@ sub find_outdated
 
 	for my $dir (keys %$pkg) {
 		next unless $port->{$dir};
-		if ($pkg->{$dir}->{name} ne $port->{$dir}->{name}) {
+		if ($pkg->{$dir}{name} ne $port->{$dir}{name}) {
 			push(@$output, sprintf("%-30s # %s -> %s\n", $dir,
-			    $pkg->{$dir}->{version}, $port->{$dir}->{version}));
+			    $pkg->{$dir}{version}, $port->{$dir}{version}));
 			next;
 		}
 		next if $opt_q;
-		if ($pkg->{$dir}->{signature} ne $port->{$dir}->{signature}) {
+		if ($pkg->{$dir}{signature} ne $port->{$dir}{signature}) {
 			push(@$output, sprintf("%-30s # %s -> %s\n", $dir,
 			    diff_sig($dir, $pkg, $port)));
 		}
