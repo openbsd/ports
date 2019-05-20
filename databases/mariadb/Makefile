@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.76 2019/05/13 03:53:22 jca Exp $
+# $OpenBSD: Makefile,v 1.77 2019/05/20 10:31:23 sthen Exp $
 
 # archs with atomic ops
-ONLY_FOR_ARCHS-server=	alpha aarch64 amd64 arm i386 mips64 mips64el powerpc sparc64
-ONLY_FOR_ARCHS-tests=	${ONLY_FOR_ARCHS-server}
+ONLY_FOR_ARCHS=	alpha aarch64 amd64 arm i386 mips64 mips64el powerpc sparc64
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
@@ -80,10 +79,13 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DINSTALL_SUPPORTFILESDIR="share/examples/mysql" \
 		-DMYSQL_UNIX_ADDR="${SOCKET_DIR}/mysql.sock" \
 		-DCOMPILATION_COMMENT='OpenBSD port: ${FULLPKGNAME-server}' \
+		-DWITH_CURL=Off \
+		-DWITH_EXTERNAL_ZLIB=On \
 		-DWITH_PCRE=system \
 		-DWITH_SSL=system \
 		-DCONNECT_WITH_JDBC=Off \
 		-DCONNECT_WITH_LIBXML2=Off \
+		-DCONNECT_WITH_MONGO=Off \
 		-DCONNECT_WITH_ODBC=Off \
 		-DGRN_WITH_MECAB=no \
 		-DGRN_WITH_KYTEA=no \
@@ -101,12 +103,13 @@ CONFIGURE_ARGS+=-DHAVE_EXECINFO_H=0 \
 # CMake test fails on OpenBSD
 CONFIGURE_ARGS+=-DHAVE_NETINET_TCP_H=1
 
-# The Mroonga, TokuDB and RocksDB storage engines are disabled.
-# Mroonga and RocksDB are only buildable on little endian archs.
+# The Mroonga, RocksDB, and TokuDB storage engines are disabled.
+# Mroonga is only buildable on little endian archs.
+# RocksDB is only buildable on little endian archs and requires POSIX timers.
 # TokuDB is only buildable on 64-bit little endian archs.
 CONFIGURE_ARGS+=-DWITHOUT_MROONGA_STORAGE_ENGINE=1 \
+		-DWITHOUT_ROCKSDB_STORAGE_ENGINE=1 \
 		-DWITHOUT_TOKUDB_STORAGE_ENGINE=1
-CONFIGURE_ARGS+=-DWITHOUT_ROCKSDB_STORAGE_ENGINE=1
 
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
@@ -143,7 +146,7 @@ post-install:
 	rm -Rf ${PREFIX}/share/mysql-test/plugin/rocksdb/
 
 .if ${BUILD_PACKAGES:M-tests}
-do-regress:
+do-test:
 	@cd ${WRKBUILD}/mysql-test && ./mysql-test-run.pl --force --verbose --max-test-fail=0
 .else
 NO_TEST=	Yes
