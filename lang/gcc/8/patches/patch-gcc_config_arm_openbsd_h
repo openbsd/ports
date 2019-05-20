@@ -1,4 +1,4 @@
-$OpenBSD: patch-gcc_config_arm_openbsd_h,v 1.1.1.1 2019/01/04 15:50:40 pascal Exp $
+$OpenBSD: patch-gcc_config_arm_openbsd_h,v 1.2 2019/05/20 14:59:05 pascal Exp $
 Index: gcc/config/arm/openbsd.h
 --- gcc/config/arm/openbsd.h.orig
 +++ gcc/config/arm/openbsd.h
@@ -82,7 +82,7 @@ Index: gcc/config/arm/openbsd.h
 +   %{!static:-Bdynamic} \
 +   %{rdynamic:-export-dynamic} \
 +   %{assert*} \
-+   %{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so} \
++   %{!shared:%{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so}} \
 +   %{!nostdlib:-L/usr/lib}"
 +#endif
 +

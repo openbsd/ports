@@ -1,6 +1,7 @@
-$OpenBSD: patch-gcc_config_mips_openbsd_h,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
---- gcc/config/mips/openbsd.h.orig	Sat Jul  9 22:05:54 2016
-+++ gcc/config/mips/openbsd.h	Sat Jul  9 22:28:39 2016
+$OpenBSD: patch-gcc_config_mips_openbsd_h,v 1.2 2019/05/20 14:59:05 pascal Exp $
+Index: gcc/config/mips/openbsd.h
+--- gcc/config/mips/openbsd.h.orig
++++ gcc/config/mips/openbsd.h
 @@ -0,0 +1,227 @@
 +/* Configuration file for a mips64 OpenBSD target.
 +   Copyright (C) 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006
@@ -141,7 +142,7 @@ $OpenBSD: patch-gcc_config_mips_openbsd_h,v 1.1.1.1 2019/01/04 15:50:39 pascal E
 +   %{!static:-Bdynamic} \
 +   %{rdynamic:-export-dynamic} \
 +   %{assert*} \
-+   %{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so}"
++   %{!shared:%{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so}}"
 +
 +/* As an elf system, we need crtbegin/crtend stuff.  */
 +#undef STARTFILE_SPEC

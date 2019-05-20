@@ -1,13 +1,15 @@
-$OpenBSD: patch-gcc_config_pa_pa-openbsd_h,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
---- gcc/config/pa/pa-openbsd.h.orig	Thu Jan  2 23:23:26 2014
-+++ gcc/config/pa/pa-openbsd.h	Sat Jul  9 22:26:21 2016
+$OpenBSD: patch-gcc_config_pa_pa-openbsd_h,v 1.2 2019/05/20 14:59:05 pascal Exp $
+Index: gcc/config/pa/pa-openbsd.h
+--- gcc/config/pa/pa-openbsd.h.orig
++++ gcc/config/pa/pa-openbsd.h
 @@ -138,14 +138,15 @@ along with GCC; see the file COPYING3.  If not see
     %{shared:-shared} %{R*} \
     %{static:-Bstatic} \
     %{!static:-Bdynamic} \
 +   %{rdynamic:-export-dynamic} \
     %{assert*} \
-    -dynamic-linker /usr/libexec/ld.so"
+-   -dynamic-linker /usr/libexec/ld.so"
++   %{!shared:%{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so}}"
  
  #undef STARTFILE_SPEC
  #define STARTFILE_SPEC "\
