@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2019/05/20 22:15:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.89 2019/05/20 23:45:47 naddy Exp $
 
 COMMENT-runtime=	GNU gettext runtime libraries and programs
 COMMENT-textstyle=	text styling library
@@ -9,6 +9,7 @@ DISTNAME=		gettext-${VERSION}
 PKGNAME-runtime=	gettext-runtime-${VERSION}
 PKGNAME-textstyle=	libtextstyle-${VERSION}
 PKGNAME-tools=		gettext-tools-${VERSION}
+REVISION-tools=		0
 
 SHARED_LIBS +=  intl                 6.0      # 9.6
 SHARED_LIBS +=  asprintf             1.1      # unknown
