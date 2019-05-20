@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/20 15:55:14 sthen Exp $
 
 COMMENT-main =		read microsoft Access MDB
 COMMENT-gmdb =		graphical interface to MDB tools
@@ -9,8 +9,8 @@ GH_TAGNAME =		0.7.1
 
 PKGNAME-main =		${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME-gmdb =		gmdb-${GH_TAGNAME}
-REVISION-main =		5
-REVISION-gmdb =		6
+REVISION-main =		6
+REVISION-gmdb =		7
 EPOCH =			0
 
 CATEGORIES =		databases converters
@@ -28,11 +28,21 @@ SHARED_LIBS +=  mdbodbcW             0.0
 # GPLv2+, LGPL v2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-main += c glib-2.0 iconv iodbcinst pthread readline
+WANTLIB-main += c curses glib-2.0 iconv intl iodbcinst pcre pthread
+WANTLIB-main += readline
 
-WANTLIB-gmdb += c gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 glib-2.0 gnome-2
-WANTLIB-gmdb += gnomeui-2 gobject-2.0 gtk-x11-2.0 intl mdb mdbsql pango-1.0
-WANTLIB-gmdb += pthread
+WANTLIB-gmdb += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xcomposite Xcursor
+WANTLIB-gmdb += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2
+WANTLIB-gmdb += atk-1.0 bonobo-2 bonobo-activation bonoboui-2 c cairo
+WANTLIB-gmdb += canberra crypto dbus-1 dbus-glib-1 expat ffi fontconfig
+WANTLIB-gmdb += freetype fribidi gailutil gconf-2 gcrypt gdk-x11-2.0
+WANTLIB-gmdb += gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0 gmodule-2.0
+WANTLIB-gmdb += gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2
+WANTLIB-gmdb += gobject-2.0 gpg-error graphite2 gthread-2.0 gtk-x11-2.0
+WANTLIB-gmdb += harfbuzz iconv intl ltdl lzma m mdb mdbsql ogg pango-1.0
+WANTLIB-gmdb += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png popt
+WANTLIB-gmdb += pthread ssl util vorbis vorbisfile xcb xcb-render xcb-shm
+WANTLIB-gmdb += xml2 z
 
 BUILD_DEPENDS =		devel/bison \
 			textproc/txt2man
