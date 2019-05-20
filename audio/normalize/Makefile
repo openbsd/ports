@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2018/12/05 20:19:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2019/05/20 22:15:01 naddy Exp $
 
 COMMENT=	audio file volume normalizer
 
 DISTNAME=	normalize-0.7.7
-REVISION=	5
+REVISION=	6
 CATEGORIES=	audio
 
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=normalize/}
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c iconv intl m mad>=2 audiofile FLAC ogg
 
 LIB_DEPENDS=	audio/libmad \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/libaudiofile
 
 CONFIGURE_STYLE= gnu

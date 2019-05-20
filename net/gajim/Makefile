@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2019/04/28 20:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.87 2019/05/20 22:15:19 naddy Exp $
 
 COMMENT=	jabber client written in pygtk
 MODPY_EGG_VERSION=	1.1.2
@@ -19,7 +19,7 @@ MODULES=	lang/python
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_SETUPTOOLS=	Yes
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		graphics/py-Pillow${MODPY_FLAVOR} \

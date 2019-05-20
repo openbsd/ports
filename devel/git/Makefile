@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2019/02/26 09:10:34 kn Exp $
+# $OpenBSD: Makefile,v 1.199 2019/05/20 22:15:03 naddy Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
@@ -9,6 +9,7 @@ DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
 PKGNAME-x11 =	git-x11-${V}
+REVISION-main =	0
 CATEGORIES =	devel
 
 HOMEPAGE =	https://git-scm.com/
@@ -34,7 +35,7 @@ MODPY_ADJ_FILES =	contrib/hooks/multimail/git_multimail.py \
 			contrib/hooks/multimail/migrate-mailhook-config \
 			contrib/hooks/multimail/post-receive.example
 
-BUILD_DEPENDS =		devel/gettext-tools \
+BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/p5-Error \
 			textproc/asciidoc \
 			textproc/xmlto
@@ -46,7 +47,7 @@ WANTLIB-main =		c crypto curl expat iconv intl nghttp2 pthread ssl z
 RUN_DEPENDS-main =	devel/cvsps \
 			devel/p5-Error \
 			net/rsync
-LIB_DEPENDS-main =	devel/gettext \
+LIB_DEPENDS-main =	devel/gettext,-runtime \
 			net/curl \
 			www/nghttp2
 

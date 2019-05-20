@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2019/03/08 17:02:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/20 22:15:27 naddy Exp $
 
 BROKEN= builds, but has problems picking up libcurl
 
 COMMENT=	extended HTTP support
 
 DISTNAME=	pecl_http-3.2.0
+REVISION=	0
 
 HOMEPAGE=	http://pecl.php.net/package/pecl_http
 
@@ -29,7 +30,7 @@ RUN_DEPENDS+=	www/pecl-raphf${MODPHP_FLAVOR} \
 TEST_DEPENDS+=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 LIB_DEPENDS=	archivers/brotli \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/libidn \
 		devel/libevent2 \
 		net/curl \

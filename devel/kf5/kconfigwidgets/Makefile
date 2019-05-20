@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/30 09:13:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/20 22:15:04 naddy Exp $
 
 COMMENT =		widgets for KDE configuration dialogs
 DISTNAME =		kconfigwidgets-${VERSION}
@@ -11,7 +11,7 @@ WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml m
 
 MODULES =		lang/python
 
-BUILD_DEPENDS =		devel/gettext-tools \
+BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/kf5/kdoctools
 
 RUN_DEPENDS =		devel/kf5/kdoctools

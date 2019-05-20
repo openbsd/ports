@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/03/21 15:59:11 jca Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:29 naddy Exp $
 
 DISTNAME =		qtbase-opensource-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
@@ -21,7 +21,7 @@ REVISION-psql =		0
 REVISION-sqlite2 =	0
 REVISION-tds =		0
 
-REVISION-main =		3
+REVISION-main =		4
 
 PKG_ARCH-global =	*
 PKG_ARCH-examples =	*
@@ -95,7 +95,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 
 # those come from gthread-2.0, not used by Qt itself
 WANTLIB-main +=		intl
-LIB_DEPENDS-main +=	devel/gettext
+LIB_DEPENDS-main +=	devel/gettext,-runtime
 
 LIB_DEPENDS-global =
 

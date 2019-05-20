@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/27 21:04:20 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/20 22:15:29 naddy Exp $
 
 COMMENT =	GTK 2 and 3 Theme Switcher from LXDE
 DISTNAME =	lxappearance-0.6.3
 CATEGORIES =	x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://lxde.org/
 MAINTAINER =	Victor Kukshiev <andrey0bolkonsky@gmail.com>
@@ -20,7 +20,7 @@ EXTRACT_SUFX = 		.tar.xz
 
 MODULES =		textproc/intltool
 RUN_DEPENDS =		devel/desktop-file-utils
-LIB_DEPENDS =		devel/gettext \
+LIB_DEPENDS =		devel/gettext,-runtime \
 			x11/gtk+3
 
 # required for l10n files, see po/Makefile.in.in

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2018/06/01 14:24:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2019/05/20 22:15:24 naddy Exp $
 
 COMMENT-main=	single process stack of system monitors for GTK+2 (server)
 COMMENT-client=	single process stack of system monitors for GTK+2
@@ -40,7 +40,7 @@ WANTLIB-client += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 gobject-2.0
 WANTLIB-client += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-client += ssl z
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes

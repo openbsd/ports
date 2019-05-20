@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2016/04/12 15:19:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/20 22:15:21 naddy Exp $
 
 COMMENT=	encoder/decoder tool for the Usenet yEnc encoding format
 
 DISTNAME=	yencode-0.46
-REVISION=	2
+REVISION=	3
 CATEGORIES=	news
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=yencode/}
 
-LIB_DEPENDS=	devel/gettext
+LIB_DEPENDS=	devel/gettext,-runtime
 
 WANTLIB=	c iconv intl
 

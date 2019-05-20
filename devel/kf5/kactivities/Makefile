@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/03/30 09:13:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/20 22:15:04 naddy Exp $
 
 COMMENT =	core components for the KDE Activity concept
 DISTNAME =	kactivities-${VERSION}
@@ -11,7 +11,7 @@ WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5Sql c
 WANTLIB += m
 
 BUILD_DEPENDS =	devel/boost \
-		devel/gettext-tools \
+		devel/gettext,-tools \
 		devel/kf5/kwindowsystem \
 		x11/qt5/qtquickcontrols
 

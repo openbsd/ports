@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/30 04:46:04 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/20 22:15:18 naddy Exp $
 
 COMMENT =	GNU dictionary server
 
 V =		2.9
 DISTNAME =	dico-$V
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  dico                      0.0 # 2.0
 
@@ -25,7 +25,7 @@ MASTER_SITES =		https://download.gnu.org.ua/pub/release/dico/
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 LIB_DEPENDS =		databases/openldap \
-			devel/gettext \
+			devel/gettext,-runtime \
 			devel/libtool,-ltdl \
 			devel/pcre \
 			security/libgsasl \

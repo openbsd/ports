@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2018/07/01 18:33:38 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2019/05/20 22:15:29 naddy Exp $
 
 COMMENT=	configuration utility for openbox
 
 DISTNAME=	obconf-2.0.4
 CATEGORIES=	x11
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	http://openbox.org/wiki/Obconf
 
@@ -20,7 +20,7 @@ WANTLIB += rsvg-2 startup-notification-1 xml2 z
 
 MASTER_SITES=	http://openbox.org/dist/obconf/
 
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		x11/gtk+2 \
 		devel/libglade2 \
 		devel/startup-notification \

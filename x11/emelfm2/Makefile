@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/06/27 21:04:07 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2019/05/20 22:15:27 naddy Exp $
 
 COMMENT =		GTK+2 file manager
 
@@ -19,7 +19,7 @@ EXTRACT_SUFX =	.tar.bz2
 
 LIB_DEPENDS =	x11/gtk+3
 
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/libmagic
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xdg-utils

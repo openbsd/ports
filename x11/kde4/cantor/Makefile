@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2018/06/27 21:04:13 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/20 22:15:28 naddy Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${MODKDE4_VERSION}
-REVISION =	9
+REVISION =	10
 
 SHARED_LIBS =  cantorlibs                50.0 # 0.0
 SHARED_LIBS += cantor_config             50.0 # 0.0
@@ -33,7 +33,7 @@ LIB_DEPENDS = 	databases/soprano \
 		math/R>=2.15.1p4 \
 		math/libqalculate \
 		print/libspectre \
-		devel/gettext \
+		devel/gettext,-runtime \
 		${MODKDE4_DEP_DIR}/analitza>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

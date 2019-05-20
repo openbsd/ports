@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2018/11/05 17:23:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2019/05/20 22:15:20 naddy Exp $
 
 COMMENT=		SLang-based newsreader
 
 DISTNAME=		slrn-1.0.2
-REVISION=		1
+REVISION=		2
 CATEGORIES=		news
 
 HOMEPAGE=		http://slrn.sourceforge.net/
@@ -21,8 +21,8 @@ MASTER_SITES=		http://jedsoft.org/releases/slrn/ \
 MAKE_ARGS+=		LDFLAGS="${LDFLAGS}"
 
 NO_TEST=		Yes
-BUILD_DEPENDS=		devel/gettext-tools
-LIB_DEPENDS=		devel/gettext \
+BUILD_DEPENDS=		devel/gettext,-tools
+LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/libslang
 
 CONFIGURE_STYLE=	gnu

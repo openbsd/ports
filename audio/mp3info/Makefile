@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2018/04/26 19:59:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2019/05/20 22:15:01 naddy Exp $
 
 PORTROACH=	skipv:0.8.5
 
 COMMENT=	MP3 technical info viewer and ID3 1.x tag editor
 
 DISTNAME=	mp3info-0.8.5a
-REVISION=	12
+REVISION=	13
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.ibiblio.org/mp3info/
@@ -28,7 +28,7 @@ FLAVOR?=
 ALL_TARGET=	mp3info doc
 INSTALL_TARGET=	install-mp3info
 .else
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		x11/gtk+2
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig

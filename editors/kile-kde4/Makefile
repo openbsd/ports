@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/07/01 18:33:35 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/20 22:15:08 naddy Exp $
 
 CATEGORIES =	editors
 COMMENT =	user-friendly TeX/LaTex editor for KDE
@@ -23,7 +23,7 @@ WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils soprano
 MODULES =	x11/kde4 \
 		multimedia/phonon
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \

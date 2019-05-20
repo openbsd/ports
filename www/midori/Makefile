@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2019/03/05 12:58:06 landry Exp $
+# $OpenBSD: Makefile,v 1.87 2019/05/20 22:15:26 naddy Exp $
 
 COMMENT =	lightweight web browser
 
@@ -27,7 +27,7 @@ LIB_DEPENDS =	www/webkitgtk4 \
 RUN_DEPENDS +=	multimedia/gstreamer1/plugins-libav
 
 BUILD_DEPENDS =	lang/vala \
-		devel/gettext-tools \
+		devel/gettext,-tools \
 		x11/gnome/librsvg
 
 WANTLIB += atk-1.0 c cairo cairo-gobject gck-1 gcr-base-3 gcr-ui-3

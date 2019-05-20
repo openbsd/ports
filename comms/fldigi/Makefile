@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/05/20 22:15:02 naddy Exp $
 
 COMMENT=	soundcard-based software modem for Amateur Radio use
 
 # skip alpha-test versions (x.x.x.x format version numbers)
 PORTROACH=	limit:^[0-9]+\.[0-9]+\.[0-9]+$$
 DISTNAME=	fldigi-4.0.18
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	comms hamradio
 
@@ -28,7 +28,7 @@ LIB_DEPENDS=	audio/libsamplerate \
 		audio/libsndfile \
 		audio/portaudio-svn \
 		comms/hamlib \
-		devel/gettext \
+		devel/gettext,-runtime \
 		graphics/png \
 		x11/fltk
 

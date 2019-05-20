@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/12/04 11:38:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/20 22:15:24 naddy Exp $
 
 COMMENT =	library and tools to access the Windows Prefetch File
 
@@ -30,7 +30,7 @@ WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 LIB_DEPENDS +=	devel/libbfio \
 		sysutils/libfwnt

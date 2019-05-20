@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2018/06/29 22:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.61 2019/05/20 22:15:00 naddy Exp $
 
 BROKEN-hppa =	no atomic ops / __sync_fetch_and_add_4
 BROKEN-alpha =	tinylock.c:58: internal compiler error: in extract_insn, at recog.c:2077
@@ -31,7 +31,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS =		devel/gettext-tools
+BUILD_DEPENDS =		devel/gettext,-tools
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2018/10/24 14:28:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2019/05/20 22:15:30 naddy Exp $
 
 COMMENT=	draw pictures of the earth textured by an image
 
 DISTNAME=	xplanet-1.3.0
-REVISION=	3
+REVISION=	4
 CATEGORIES=	astro geo x11
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -20,7 +20,7 @@ WANTLIB += ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-LIB_DEPENDS=		devel/gettext \
+LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/pango \
 			graphics/giflib \
 			graphics/jpeg \

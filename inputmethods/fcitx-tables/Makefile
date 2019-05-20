@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/28 03:00:24 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/20 22:15:14 naddy Exp $
 
 COMMENT =	input method data tables for fcitx
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES =	devel/cmake
 
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		inputmethods/fcitx,-main
 RUN_DEPENDS =	inputmethods/fcitx,-main
 

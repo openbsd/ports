@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/05/19 11:26:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.50 2019/05/20 22:15:23 naddy Exp $
 
 COMMENT=		library for loading and enumerating PKCS\#11 modules
 
@@ -6,7 +6,7 @@ GH_PROJECT=		p11-kit
 GH_ACCOUNT=		p11-glue
 GH_TAGNAME=		0.23.15
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		security
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += 	c ffi iconv intl pthread tasn1
 
-LIB_DEPENDS=		devel/gettext \
+LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/libffi \
 			security/libtasn1
 
@@ -40,7 +40,7 @@ FAKE_FLAGS=		exampledir=${PREFIX}/share/examples/p11-kit/pkcs11
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
 AUTORECONF=		./autogen.sh
-BUILD_DEPENDS +=	devel/gettext-tools
+BUILD_DEPENDS +=	devel/gettext,-tools
 
 post-install:
 	rm ${PREFIX}/lib/pkcs11/*.{a,la}

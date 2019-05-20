@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/03/04 19:26:17 bket Exp $
+# $OpenBSD: Makefile,v 1.28 2019/05/20 22:15:04 naddy Exp $
 
 COMMENT =	python powered git gui
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES =	lang/python
 
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/git \
 		textproc/xxdiff \
 		x11/py-qt4 \

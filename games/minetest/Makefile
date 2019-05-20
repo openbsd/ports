@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:10 naddy Exp $
 
 COMMENT =		infinite-world block sandbox game
 # minetest_game is still 0.4.17
@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=	-DENABLE_REDIS=FALSE -DENABLE_LEVELDB=FALSE
 CONFIGURE_ARGS+=	-DBUILD_SERVER=TRUE
 CONFIGURE_ENV +=	CXXFLAGS="-I${X11BASE}/include"
 
-BUILD_DEPENDS =		devel/gettext-tools
+BUILD_DEPENDS =		devel/gettext,-tools
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.115 2019/03/13 14:30:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.116 2019/05/20 22:15:16 naddy Exp $
 
 COMMENT=	tty-based e-mail client
 
 DISTNAME=	mutt-1.11.4
 EPOCH=		3
+REVISION=	0
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
@@ -22,7 +23,7 @@ MASTER_SITES=	http://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.mutt.org/pub/mutt/
 
 LIB_DEPENDS=	databases/qdbm \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/libidn2
 BUILD_DEPENDS+=	textproc/docbook-xsl \
 		www/lynx

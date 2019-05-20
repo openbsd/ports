@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/01/02 12:44:53 jca Exp $
+# $OpenBSD: Makefile,v 1.35 2019/05/20 22:15:02 naddy Exp $
 
 BROKEN=		/usr/local/include/wx-3.0/wx/strvararg.h:354:71: error: no member named 'value' in 'wxFormatStringSpecifierNonPodType<false>'
 
@@ -36,7 +36,7 @@ MULTI_PACKAGES=	-main -docs
 
 MODULES=	devel/cmake
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 
 # kicad includes some boost headers, but somehow
 # randomly fails if boost is present then junked

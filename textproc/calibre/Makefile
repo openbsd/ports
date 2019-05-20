@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2019/03/08 20:00:51 cwen Exp $
+# $OpenBSD: Makefile,v 1.72 2019/05/20 22:15:25 naddy Exp $
 
 COMMENT =		ebook management application
 
@@ -7,7 +7,7 @@ V =			2.85.1
 DISTNAME =		calibre-$V
 CATEGORIES =		textproc
 EXTRACT_SUFX =		.tar.xz
-REVISION =		9
+REVISION =		10
 
 HOMEPAGE =		https://calibre-ebook.com/
 
@@ -25,7 +25,7 @@ MODULES =		lang/python \
 			x11/qt5
 
 LIB_DEPENDS=		devel/chmlib \
-			devel/gettext \
+			devel/gettext,-runtime \
 			textproc/icu4c \
 			textproc/podofo
 

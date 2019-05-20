@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2019/04/24 18:39:06 cwen Exp $
+# $OpenBSD: Makefile,v 1.47 2019/05/20 22:15:29 naddy Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
 DISTNAME =	rxvt-unicode-9.22
-REVISION =	9
+REVISION =	10
 CATEGORIES =	x11
 FIX_EXTRACT_PERMISSIONS =	Yes
 
@@ -22,7 +22,7 @@ WANTLIB += perl startup-notification-1 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-LIB_DEPENDS =	devel/gettext \
+LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/startup-notification \
 		graphics/gdk-pixbuf2
 

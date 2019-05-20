@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/20 22:15:25 naddy Exp $
 
 COMMENT=		MTP device filesystem
 
@@ -28,7 +28,7 @@ MAKE_FILE=		makefile
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 AUTORECONF=		/bin/sh ./autogen.sh
-BUILD_DEPENDS +=	devel/gettext
+BUILD_DEPENDS +=	devel/gettext,-runtime
 
 CPPFLAGS +=	-I${LOCALBASE}/include
 LDFLAGS +=	-L${LOCALBASE}/lib

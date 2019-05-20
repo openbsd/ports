@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/05/20 22:15:13 naddy Exp $
 
 COMMENT =	tool for working with RAW images
 
 DISTNAME =	rawstudio-1.2
-REVISION =	20
+REVISION =	21
 
 CATEGORIES =	graphics
 
@@ -29,7 +29,7 @@ CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
 LIB_DEPENDS +=	graphics/exiv2 \
 		graphics/lcms \
 		devel/gconf2 \
-		devel/gettext \
+		devel/gettext,-runtime \
 		x11/dbus \
 		x11/gtk+2
 

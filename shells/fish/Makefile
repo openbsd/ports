@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/15 12:04:41 kmos Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/20 22:15:23 naddy Exp $
 
 COMMENT =		friendly interactive shell
 
 V =			3.0.2
 DISTNAME =		fish-$V
+REVISION =		0
 
 CATEGORIES =		shells
 
@@ -27,12 +28,12 @@ MODULES =		lang/python
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 
-BUILD_DEPENDS =		devel/gettext-tools \
+BUILD_DEPENDS =		devel/gettext,-tools \
 			${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
 
 LIB_DEPENDS =		devel/pcre2 \
-			devel/gettext
+			devel/gettext,-runtime
 
 RUN_DEPENDS =		misc/gnugetopt
 

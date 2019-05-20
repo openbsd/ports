@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2018/03/29 19:35:04 robert Exp $
+# $OpenBSD: Makefile,v 1.27 2019/05/20 22:15:28 naddy Exp $
 
 COMMENT=	GDI+ comptible API
 
 DISTNAME=	libgdiplus-4.2
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	x11 devel
 
@@ -24,7 +24,7 @@ WANTLIB += xcb-shm z
 
 MASTER_SITES=	http://download.mono-project.com/sources/libgdiplus/
 
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		graphics/cairo \
 		graphics/tiff \
 		graphics/libexif \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/11 04:11:57 bket Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/20 22:15:11 naddy Exp $
 
 V =		0.8.2.20180924
 COMMENT =	open source engine remake of The Settlers 2 (s25client)
@@ -30,7 +30,7 @@ MODULES =	devel/cmake \
 		lang/lua
 MODLUA_VERSION =	5.2
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 LIB_DEPENDS =	archivers/bzip2 \
 		devel/boost \

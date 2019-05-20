@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/04/04 02:04:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:26 naddy Exp $
 
 COMMENT=	texinfo to HTML converter
 
@@ -18,7 +18,7 @@ USE_GMAKE=	Yes
 MAKE_FLAGS=	texinfohtmldir=${PREFIX}/share/doc/texi2html
 
 BUILD_DEPENDS=	devel/p5-libintl \
-		devel/gettext-tools \
+		devel/gettext,-tools \
 		textproc/p5-Text-Unidecode
 
 RUN_DEPENDS=	devel/p5-libintl \

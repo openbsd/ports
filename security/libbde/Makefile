@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/22 11:42:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/20 22:15:22 naddy Exp $
 
 COMMENT =		access the BitLocker Drive Encryption encrypted volumes
 
@@ -33,7 +33,7 @@ WRKDIST =		${WRKDIR}/${PKGNAME}
 
 MODULES =		lang/python
 
-BUILD_DEPENDS =		devel/gettext-tools
+BUILD_DEPENDS =		devel/gettext,-tools
 
 LIB_DEPENDS +=		devel/libbfio
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/03/05 13:47:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/20 22:15:10 naddy Exp $
 
 COMMENT=		interactive game for young children
 
@@ -15,7 +15,7 @@ WANTLIB += m pango-1.0 pangocairo-1.0
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gamine-game/}
 
-BUILD_DEPENDS=		devel/gettext-tools
+BUILD_DEPENDS=		devel/gettext,-tools
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/gtk+3,-guic

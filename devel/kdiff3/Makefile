@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/18 13:32:19 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/20 22:15:04 naddy Exp $
 
 COMMENT =	compares and merges multiple files or directories
 
@@ -24,7 +24,7 @@ WANTLIB += c m
 
 MODULES =		devel/kf5
 
-BUILD_DEPENDS +=	devel/gettext-tools \
+BUILD_DEPENDS +=	devel/gettext,-tools \
 			devel/kf5/kbookmarks \
 			devel/kf5/kdoctools \
 

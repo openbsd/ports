@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/27 21:03:50 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/20 22:15:11 naddy Exp $
 
 COMMENT =	economic historical real-time strategy game
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/python \
 			textproc/intltool
 MODPY_ADJ_FILES =	unknown-horizons
-BUILD_DEPENDS =		devel/gettext-tools
+BUILD_DEPENDS =		devel/gettext,-tools
 RUN_DEPENDS =		devel/desktop-file-utils \
 			games/fifengine
 TEST_DEPENDS =		devel/py-greenlet \

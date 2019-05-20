@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2016/04/12 15:19:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/20 22:15:20 naddy Exp $
 
 COMMENT=		noninteractive ftp client
 DISTNAME=		weex-2.6.1.5
-REVISION=		3
+REVISION=		4
 CATEGORIES=		net
 
 HOMEPAGE=		http://weex.sourceforge.net
@@ -14,9 +14,9 @@ WANTLIB=		c iconv intl
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=weex/}
 
-BUILD_DEPENDS=		devel/gettext-tools
+BUILD_DEPENDS=		devel/gettext,-tools
 
-LIB_DEPENDS=		devel/gettext
+LIB_DEPENDS=		devel/gettext,-runtime
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	autoconf

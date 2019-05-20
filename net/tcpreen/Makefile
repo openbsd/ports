@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/05/20 22:15:20 naddy Exp $
 
 COMMENT=		simple tcp re-engineering tool
 
 DISTNAME=		tcpreen-1.4.4
-REVISION =		5
+REVISION =		6
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.remlab.net/tcpreen/
@@ -20,7 +20,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 EXTRACT_SUFX=		.tar.bz2
 
-LIB_DEPENDS=		devel/gettext
+LIB_DEPENDS=		devel/gettext,-runtime
 
 FAKE_FLAGS+=		localedir="${PREFIX}/share/locale" \
 			gettextsrcdir="${PREFIX}/share/gettext/po"

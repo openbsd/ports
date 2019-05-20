@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/17 16:19:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/20 22:15:16 naddy Exp $
 
 COMMENT =	program for statistical analysis of sampled data
 DISTNAME =	pspp-1.2.0
@@ -23,7 +23,7 @@ WANTLIB += z
 
 MASTER_SITES =	${MASTER_SITE_GNU:=pspp/}
 
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		print/texinfo
 
 LIB_DEPENDS =	databases/postgresql \

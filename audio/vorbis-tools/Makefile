@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.53 2019/05/05 04:31:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.54 2019/05/20 22:15:01 naddy Exp $
 
 COMMENT=	play, encode, and manage Ogg Vorbis files
 
 DISTNAME=	vorbis-tools-1.4.0
-REVISION=	5
+REVISION=	6
 CATEGORIES=    	audio
 HOMEPAGE=	https://www.xiph.org/vorbis/
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	audio/flac \
 		audio/libao \
 		audio/libvorbis \
 		audio/speex \
-		devel/gettext \
+		devel/gettext,-runtime \
 		net/curl
 
 CONFIGURE_STYLE=gnu

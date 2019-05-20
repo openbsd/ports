@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2019/05/17 16:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.142 2019/05/20 22:15:21 naddy Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt5=	Qt5 interface to PDF rendering library
@@ -10,7 +10,7 @@ CATEGORIES=	print
 PKGNAME-main=	poppler-$V
 PKGNAME-utils=	poppler-utils-$V
 PKGNAME-qt5=	poppler-qt5-$V
-REVISION=	0
+REVISION=	1
 
 EXTRACT_SUFX=	.tar.xz
 
@@ -58,7 +58,7 @@ RUN_DEPENDS-main= \
 
 LIB_DEPENDS-main=${MODGCC4_CPPLIBDEP} \
 		converters/libiconv \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/glib2 \
 		graphics/cairo \
 		graphics/lcms2 \

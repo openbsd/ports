@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/12/13 19:53:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/20 22:15:03 naddy Exp $
 
 COMMENT =		C++ parser for the HOCON configuration language
 
@@ -30,7 +30,7 @@ CXXFLAGS +=		-pthread -Wno-delete-non-virtual-dtor
 LIB_DEPENDS =		devel/boost \
 			devel/leatherman
 
-BUILD_DEPENDS =		devel/gettext-tools
+BUILD_DEPENDS =		devel/gettext,-tools
 
 # test cases:  112 |   82 passed | 16 failed | 14 failed as expected                    
 # assertions: 1718 | 1660 passed | 40 failed | 18 failed as expected                    

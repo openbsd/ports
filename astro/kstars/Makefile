@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/12 17:30:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2019/05/20 22:15:00 naddy Exp $
 
 COMMENT =	planetarium simulator for KDE
 
@@ -28,7 +28,7 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/kstars/}
 
 MODULES =		devel/kf5
 
-BUILD_DEPENDS +=	devel/gettext-tools \
+BUILD_DEPENDS +=	devel/gettext,-tools \
 			devel/kf5/kdoctools \
 			math/eigen3 \
 			x11/qt5/qtquickcontrols \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/27 21:03:54 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/20 22:15:13 naddy Exp $
 
 COMMENT =	fast and simple GTK+ image viewer
 
@@ -26,7 +26,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/py-gtk2 \
 		devel/xdg-utils
 
-BUILD_DEPENDS = devel/gettext-tools
+BUILD_DEPENDS = devel/gettext,-tools
 
 NO_TEST =	Yes
 

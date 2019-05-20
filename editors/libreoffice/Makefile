@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.207 2019/05/17 16:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.208 2019/05/20 22:15:08 naddy Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -162,7 +162,7 @@ BUILD_DEPENDS+=	archivers/zip \
 		databases/db/v4 \
 		devel/bison \
 		devel/cppunit \
-		devel/gettext-tools \
+		devel/gettext,-tools \
 		devel/gpatch \
 		devel/gperf \
 		devel/libexecinfo \

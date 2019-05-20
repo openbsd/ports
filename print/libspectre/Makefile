@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/09/27 16:01:06 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:21 naddy Exp $
 
 # libgs from ghostscript is only provided on shared libs archs
 
@@ -6,7 +6,7 @@ COMMENT=	library for rendering Postscript documents
 
 DISTNAME=	libspectre-0.2.8
 CATEGORIES=	print
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=  spectre              0.1      # 2.8
 
@@ -26,7 +26,7 @@ MASTER_SITES=	${HOMEPAGE}/releases/
 
 # we want the 'display' device from ghostscript, which is not available
 # in the no_x11 FLAVOR
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		ghostscript-*-!no_x11:print/ghostscript/gnu
 
 

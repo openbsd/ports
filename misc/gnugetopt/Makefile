@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/05 16:06:34 danj Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/20 22:15:16 naddy Exp $
 
 COMMENT=	GNU getopt(1) utility
 
 DISTNAME=	getopt-1.1.6
 PKGNAME=	gnu${DISTNAME}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	misc
 
 HOMEPAGE=	http://software.frodo.looijaard.name/getopt/
@@ -16,8 +16,8 @@ MASTER_SITES=	http://frodo.looijaard.name/system/files/software/getopt/
 
 WANTLIB=	c iconv intl
 
-BUILD_DEPENDS=	devel/gettext-tools
-LIB_DEPENDS=	devel/gettext
+BUILD_DEPENDS=	devel/gettext,-tools
+LIB_DEPENDS=	devel/gettext,-runtime
 
 USE_GMAKE=	Yes
 MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

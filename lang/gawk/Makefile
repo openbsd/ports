@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/05/11 20:18:18 bcallah Exp $
+# $OpenBSD: Makefile,v 1.37 2019/05/20 22:15:14 naddy Exp $
 
 COMMENT=	GNU awk
 
@@ -6,6 +6,7 @@ V=		5.0.0
 DISTNAME=	gawk-$V
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU:=gawk/}
+REVISION=	0
 
 HOMEPAGE=	https://www.gnu.org/software/gawk/
 
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c curses gmp iconv intl m mpfr readline sigsegv
 
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		devel/gmp \
 		devel/libsigsegv \
 		devel/mpfr

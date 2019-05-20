@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2019/05/12 15:26:06 edd Exp $
+# $OpenBSD: Makefile,v 1.78 2019/05/20 22:15:00 naddy Exp $
 
 COMMENT =		input and output plugins for Audacious
 
@@ -30,7 +30,7 @@ EXTRACT_SUFX =		.tar.bz2
 COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		audio/audacious>=${V} \
-			devel/gettext-tools
+			devel/gettext,-tools
 
 RUN_DEPENDS =		audio/audacious>=${V}
 # needed for the gio plugin

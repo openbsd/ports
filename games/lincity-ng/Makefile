@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/05/20 22:15:10 naddy Exp $
 
 COMMENT=	city simulation game
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=	devel/sdl-gfx \
 		devel/sdl-ttf \
 		devel/physfs \
 		textproc/libxml
-BUILD_DEPENDS=	devel/gettext-tools \
+BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/jam
 RUN_DEPENDS=	devel/desktop-file-utils
 NO_TEST=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/30 09:13:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/20 22:15:05 naddy Exp $
 
 COMMENT-main =	KDE 5 library for extracting text and metadata
 COMMENT-locale =localization files of kfilemetadata
@@ -20,7 +20,7 @@ WANTLIB += tag
 
 MODULES +=	lang/python
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 RUN_DEPENDS-locale =	devel/kf5/ki18n
 RUN_DEPENDS-main =	textproc/catdoc

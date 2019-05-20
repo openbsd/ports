@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/21 09:28:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/20 22:15:09 naddy Exp $
 
 COMMENT=		rogue-like zombie survival game
 DISTNAME=		cataclysm-dda-0.D
 CATEGORIES=		games
+REVISION=		0
 
 GH_ACCOUNT=		CleverRaven
 GH_PROJECT=		Cataclysm-DDA
@@ -30,7 +31,7 @@ MODLUA_SA=		Yes
 
 BUILD_DEPENDS=		devel/libexecinfo
 
-LIB_DEPENDS=		devel/gettext \
+LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/libexecinfo
 
 MAKE_ENV=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"

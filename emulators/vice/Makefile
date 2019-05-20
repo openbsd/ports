@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2019/03/07 14:45:29 fcambus Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/20 22:15:09 naddy Exp $
 
 COMMENT =		versatile Commodore emulator
 
 DISTNAME =		vice-3.3
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		emulators
 
@@ -25,7 +25,7 @@ BUILD_DEPENDS =		devel/xa
 
 LIB_DEPENDS =		audio/flac \
 			audio/libvorbis \
-			devel/gettext \
+			devel/gettext,-runtime \
 			devel/sdl2 \
 			graphics/giflib \
 			graphics/jpeg \

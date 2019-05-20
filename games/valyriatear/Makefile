@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/10/27 07:22:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.26 2019/05/20 22:15:11 naddy Exp $
 
 COMMENT =	free J-RPG game
 CATEGORIES =	games x11
@@ -29,7 +29,7 @@ MODULES =	devel/cmake \
 		lang/lua
 
 BUILD_DEPENDS =	devel/boost>=1.52 \
-		devel/gettext-tools
+		devel/gettext,-tools
 
 LIB_DEPENDS =	audio/libogg \
 		audio/libvorbis \

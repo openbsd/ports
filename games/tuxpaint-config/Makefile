@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/05/20 22:15:11 naddy Exp $
 
 COMMENT=	graphical tool to change Tux Paint's settings
 #'
@@ -21,7 +21,7 @@ WANTLIB += Xft Xinerama fontconfig Xcursor Xfixes iconv intl
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 LIB_DEPENDS=	x11/fltk \
 		print/libpaper
 RUN_DEPENDS=	games/tuxpaint

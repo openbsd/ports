@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/06/27 21:03:35 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2019/05/20 22:15:01 naddy Exp $
 
 COMMENT =	music manager and player for GTK+ written in Python
 
@@ -30,7 +30,7 @@ COMMON_DEPENDS =x11/dbus-python>=0.82.1 \
 		multimedia/gstreamer-0.10/py-gstreamer
 
 BUILD_DEPENDS =	${COMMON_DEPENDS} \
-		devel/gettext-tools
+		devel/gettext,-tools
 RUN_DEPENDS =	${COMMON_DEPENDS} \
 		devel/desktop-file-utils
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2019/04/29 16:12:28 bcallah Exp $
+# $OpenBSD: Makefile,v 1.68 2019/05/20 22:15:28 naddy Exp $
 
 V=		1.5.4
 COMMENT=	small and fast window manager
@@ -22,7 +22,7 @@ COMPILER=	base-clang ports-gcc base-gcc
 
 MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${V}/
 
-BUILD_DEPENDS=	devel/gettext-tools \
+BUILD_DEPENDS=	devel/gettext,-tools \
 		textproc/asciidoc
 
 LIB_DEPENDS=	audio/libao \

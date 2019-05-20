@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/03/08 20:00:51 cwen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:24 naddy Exp $
 
 COMMENT =	powerful batch file renamer
 
@@ -25,7 +25,7 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/krename/${VERSION}/src/}
 
 MODULES =	devel/kf5
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic

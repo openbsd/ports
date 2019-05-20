@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2018/05/15 09:07:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2019/05/20 22:15:07 naddy Exp $
 
 COMMENT=		internationalized string handling
 
 DISTNAME=		libidn-1.35
+REVISION=		0
 
 SHARED_LIBS +=  idn                  18.0     # 18.0
 
@@ -20,7 +21,7 @@ WANTLIB += c iconv intl
 
 MASTER_SITES=		${MASTER_SITE_GNU:=libidn/}
 
-LIB_DEPENDS=		devel/gettext
+LIB_DEPENDS=		devel/gettext,-runtime
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-csharp \

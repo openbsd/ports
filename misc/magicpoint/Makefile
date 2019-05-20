@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.64 2019/05/20 22:15:17 naddy Exp $
 
 COMMENT=	X11-based presentation tool
 
 DISTNAME=	magicpoint-1.09a
-REVISION=	1
+REVISION=	2
 EPOCH=		0
 CATEGORIES=	misc productivity
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
@@ -16,7 +16,7 @@ WANTLIB=  ICE SM X11 Xau Xdmcp Xext Xmu Xt Xtst c gif iconv intl m mng
 WANTLIB+= png ttf util
 
 # plus sign is for localized (i.e. Japanese) version
-LIB_DEPENDS+=	devel/gettext \
+LIB_DEPENDS+=	devel/gettext,-runtime \
 		print/freetype \
 		graphics/png \
 		graphics/libmng \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/01/24 22:39:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2019/05/20 22:15:22 naddy Exp $
 COMMENT =		accounting for KDE 4
 CATEGORIES =		productivity x11
 HOMEPAGE =		https://kmymoney.org/
@@ -46,7 +46,7 @@ MODULES =		devel/cmake \
 MODKDE4_USE =		pim
 
 BUILD_DEPENDS =	devel/boost \
-		devel/gettext-tools \
+		devel/gettext,-tools \
 		misc/shared-mime-info
 
 RUN_DEPENDS =	devel/desktop-file-utils \

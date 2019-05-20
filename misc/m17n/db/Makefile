@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/26 16:46:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/20 22:15:17 naddy Exp $
 
 COMMENT =	database for multilingual text processing library
 
@@ -10,7 +10,7 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 
 MASTER_SITES0 =	${MASTER_SITE_GNU:=glibc/}
 
-BUILD_DEPENDS +=	devel/gettext-tools
+BUILD_DEPENDS +=	devel/gettext,-tools
 
 CONFIGURE_ARGS +=	--with-charmaps=${WRKDIR}/${GLIBC}/localedata/charmaps
 

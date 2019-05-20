@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/05/09 14:52:33 robert Exp $
+# $OpenBSD: Makefile,v 1.37 2019/05/20 22:15:16 naddy Exp $
 
 # undefined ref's to libicon*, libintl*
 USE_LLD=	Yes
@@ -8,6 +8,7 @@ COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}.${BUILD}
 PKGNAME-mapi=	kopano-mapi-${V}.${BUILD}
+REVISION-main=	0
 
 CATEGORIES=	mail www productivity
 
@@ -37,7 +38,7 @@ MODPHP_DO_SAMPLE=mapi
 MESSAGE-main=	# empty
 UNMESSAGE-main=	# empty
 
-BUILD_DEPENDS=	devel/gettext-tools \
+BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/py-setuptools${MODPY_FLAVOR} \
 		devel/swig \
 		shells/bash \
@@ -66,7 +67,7 @@ RUN_DEPENDS-main= ${MODPY_RUN_DEPENDS} \
 		www/py-jwt${MODPY_FLAVOR}
 LIB_DEPENDS-main= databases/mariadb \
 		databases/openldap \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/gsoap>=2.8.50 \
 		devel/jsoncpp \
 		devel/libHX \

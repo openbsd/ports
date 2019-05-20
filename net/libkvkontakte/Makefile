@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/20 22:15:19 naddy Exp $
 
 COMMENT =		KDE library implementing VK.com API
 VERSION =		4.12.0
@@ -21,7 +21,7 @@ WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kparts
 WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += qjson soprano
 
-BUILD_DEPENDS =		devel/gettext-tools
+BUILD_DEPENDS =		devel/gettext,-tools
 
 LIB_DEPENDS =		devel/qjson>=0.7
 

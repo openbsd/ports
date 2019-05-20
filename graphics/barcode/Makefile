@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/20 22:15:12 naddy Exp $
 
 COMMENT=		convert text strings to printed bars
 
 DISTNAME=		barcode-0.99
 CATEGORIES=		graphics
-REVISION=		0
+REVISION=		1
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,7 +13,7 @@ WANTLIB =  c iconv intl m paper
 
 MASTER_SITES=		${MASTER_SITE_GNU:=barcode/}
 
-LIB_DEPENDS=		devel/gettext \
+LIB_DEPENDS=		devel/gettext,-runtime \
 			print/libpaper
 
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/30 09:13:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/20 22:15:04 naddy Exp $
 
 COMMENT =	utility classes for KDE control modules
 DISTNAME =	kcmutils-${VERSION}
@@ -12,7 +12,7 @@ WANTLIB += KF5Service KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Widgets
 WANTLIB += Qt5Xml m
 
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		x11/qt5/qtquickcontrols
 
 RUN_DEPENDS =	x11/qt5/qtquickcontrols

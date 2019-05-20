@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2018/06/29 22:16:17 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2019/05/20 22:15:16 naddy Exp $
 
 COMMENT=	GTK-based scientific calculator
 
 GH_ACCOUNT=	galculator
 GH_PROJECT=	galculator
 GH_TAGNAME=	v2.1.4
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	math
 HOMEPAGE=	http://galculator.mnim.org/
@@ -27,7 +27,7 @@ MODULES=	textproc/intltool
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		x11/gtk+3
 
 AUTOCONF_VERSION=2.69

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.99 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.100 2019/05/20 22:15:10 naddy Exp $
 
 V =		1.9.3.23
-REVISION =	0
+REVISION =	1
 COMMENT =	client for The Mana World
 DISTNAME =	manaplus-${V}
 EXTRACT_SUFX =	.tar.xz
@@ -22,9 +22,9 @@ MASTER_SITES =	http://download.evolonline.org/manaplus/download/${V}/
 # Base gcc miscompiles on at least macppc
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
-LIB_DEPENDS =	devel/gettext \
+LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/libexecinfo \
 		devel/sdl2-gfx \
 		devel/sdl2-image \

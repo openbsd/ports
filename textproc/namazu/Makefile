@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/19 00:53:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/20 22:15:26 naddy Exp $
 
 COMMENT=	small to medium scale full-text search engine
 DISTNAME=	namazu-2.0.21
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS+=	nmz 0.1	# .8.3
 
@@ -16,7 +16,7 @@ WANTLIB=	c iconv intl m
 
 MASTER_SITES=	${HOMEPAGE}stable/
 
-LIB_DEPENDS=	devel/gettext
+LIB_DEPENDS=	devel/gettext,-runtime
 BUILD_DEPENDS=	misc/p5-File-MMagic
 RUN_DEPENDS=	archivers/unzip \
 		misc/p5-File-MMagic

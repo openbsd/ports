@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2018/09/04 12:46:27 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2019/05/20 22:15:27 naddy Exp $
 
 COMMENT =	lightweight graphical download manager
 DISTNAME =	uget-2.0.11
 CATEGORIES =	www net x11
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://ugetdm.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -20,9 +20,9 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=urlget/}
 
 MODULES =	textproc/intltool
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
-LIB_DEPENDS =	devel/gettext \
+LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/libnotify \
 		multimedia/gstreamer1/core \
 		net/curl \

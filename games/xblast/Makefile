@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2016/04/12 15:19:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:11 naddy Exp $
 
 COMMENT=	graphical multi-player real-time strategy game for X11
 
 DISTNAME=	xblast-2.10.4
-REVISION=	2
+REVISION=	3
 DIST_SUBDIR=	xblast
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		images-2005-01-06${EXTRACT_SUFX} \
@@ -22,9 +22,9 @@ WANTLIB=	ICE X11 c iconv intl m sndio
 
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=xblast/}
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 
-LIB_DEPENDS=	devel/gettext
+LIB_DEPENDS=	devel/gettext,-runtime
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.59

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/20 22:15:21 naddy Exp $
 
 COMMENT=	online banking interface and financial data framework
 
@@ -31,7 +31,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	http://www.aquamaniac.de/sites/download/
 
-BUILD_DEPENDS=		devel/gettext-tools
+BUILD_DEPENDS=		devel/gettext,-tools
 LIB_DEPENDS=		devel/gmp \
 			devel/gwenhywfar \
 			security/xmlsec

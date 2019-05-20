@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2019/05/17 16:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2019/05/20 22:15:12 naddy Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
@@ -41,7 +41,7 @@ WANTLIB += lensfun
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
 
-BUILD_DEPENDS =		devel/gettext-tools \
+BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/swig>=2 \
 			graphics/p5-Image-ExifTool
 RUN_DEPENDS =		devel/desktop-file-utils \

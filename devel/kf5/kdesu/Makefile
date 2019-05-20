@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/30 09:13:50 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/20 22:15:05 naddy Exp $
 
 COMMENT =	KDE wrapper over doas commands
 DISTNAME =	kdesu-${VERSION}
@@ -10,7 +10,7 @@ WANTLIB += KF5I18n KF5Pty KF5Service Qt5Core SM X11 Xext c m
 
 MODULES +=	lang/python
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 LIB_DEPENDS =	devel/kf5/kcoreaddons \
 		devel/kf5/ki18n \

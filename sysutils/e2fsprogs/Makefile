@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2016/09/10 13:03:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2019/05/20 22:15:23 naddy Exp $
 
 COMMENT=	utilities to manipulate ext2 filesystems
 
 DISTNAME=	e2fsprogs-1.42.12
-REVISION=	4
+REVISION=	5
 CATEGORIES=	sysutils devel
 SHARED_LIBS=	blkid		0.0 \
 		com_err		21.0 \
@@ -21,7 +21,7 @@ WANTLIB += c iconv intl
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=e2fsprogs/}
 
-LIB_DEPENDS=	devel/gettext
+LIB_DEPENDS=	devel/gettext,-runtime
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= autoconf

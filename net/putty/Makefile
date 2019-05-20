@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/17 15:39:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/05/20 22:15:20 naddy Exp $
 
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
 
 # if updating, check if pageant can go back to main
 V=		0.71
-REVISION=	1
+REVISION=	2
 DISTNAME=	putty-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-gui=	${DISTNAME:S/putty/putty-gui/}
@@ -32,7 +32,7 @@ WRKSRC=			${WRKDIST}/unix
 
 MULTI_PACKAGES=		-main -gui
 
-LIB_DEPENDS-gui=	devel/gettext \
+LIB_DEPENDS-gui=	devel/gettext,-runtime \
 			x11/gtk+3
 
 NO_TEST=		Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2018/05/01 20:28:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2019/05/20 22:15:31 naddy Exp $
 
 COMMENT=	graphical version of traceroute
 
 DISTNAME=	xtraceroute-0.9.2
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	net x11
 
@@ -24,7 +24,7 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-x11-2.0 gtkgl-2.0 intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread z
 
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		x11/gtkglarea
 
 USE_GMAKE=	Yes

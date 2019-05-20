@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/03/30 09:08:42 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/20 22:15:04 naddy Exp $
 
 COMMENT-main =	KDE file search and metadata handling framework
 COMMENT-icons =	icons for baloo
@@ -23,7 +23,7 @@ WANTLIB-main += lmdb m
 # RUN_DEPENDS +=>-devel/kf5/baloo,-icons
 MULTI_PACKAGES =	-main -icons
 
-BUILD_DEPENDS	+=	devel/gettext-tools \
+BUILD_DEPENDS	+=	devel/gettext,-tools \
 			devel/kf5/kidletime \
 			devel/kf5/kio \
 			devel/kf5/kcrash

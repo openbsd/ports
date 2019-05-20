@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/17 16:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/05/20 22:15:18 naddy Exp $
 
 COMMENT =		2D animation software
 
@@ -36,7 +36,7 @@ COMPILER =		base-clang ports-gcc
 MODULES =		textproc/intltool
 
 BUILD_DEPENDS =		devel/etl>=1.2.1 \
-			devel/gettext-tools
+			devel/gettext,-tools
 
 LIB_DEPENDS =		archivers/xz \
 			devel/boost \

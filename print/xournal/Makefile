@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/07/01 18:33:37 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/20 22:15:21 naddy Exp $
 
 COMMENT =		application for notetaking & annotating PDF files
 DISTNAME =		xournal-0.4.8
@@ -19,7 +19,7 @@ WANTLIB += pangoft2-1.0 poppler-glib pthread z
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xournal/}
 
 
-BUILD_DEPENDS =		devel/gettext-tools
+BUILD_DEPENDS =		devel/gettext,-tools
 LIB_DEPENDS =		print/poppler \
 			x11/gnome/libgnomecanvas
 RUN_DEPENDS = 		devel/desktop-file-utils \

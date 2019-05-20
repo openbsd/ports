@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/08 06:38:53 bentley Exp $
+# $OpenBSD: Makefile,v 1.32 2019/05/20 22:15:10 naddy Exp $
 
 COMMENT=	graphically improved game of yore
 
@@ -7,7 +7,7 @@ DATAVERSION=	1.5
 SOUNDVERSION=	1.0
 MUSICVERSION=	1.0
 DISTNAME=	heroes-${VERSION}
-REVISION =	7
+REVISION =	8
 CATEGORIES=	games x11
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -28,7 +28,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=heroes/}
 
 USE_GMAKE=	Yes
 
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		devel/sdl \
 		devel/sdl-mixer
 

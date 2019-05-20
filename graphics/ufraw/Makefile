@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2019/05/20 22:15:13 naddy Exp $
 
 COMMENT=	read and manipulate raw images from digital cameras
 
@@ -28,7 +28,7 @@ WANTLIB += lensfun
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 
 LIB_DEPENDS=	gimp->=2,<3:graphics/gimp/stable \
 		graphics/lcms2 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/03/30 09:13:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/20 22:15:06 naddy Exp $
 
 COMMENT =	KDE framework for aggregating and accessing people contacts
 DISTNAME =	kpeople-${VERSION}
@@ -12,7 +12,7 @@ WANTLIB += KF5ItemViews KF5Service KF5WidgetsAddons Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Sql Qt5Widgets m
 
 BUILD_DEPENDS =x11/qt5/qtquickcontrols \
-		devel/gettext-tools
+		devel/gettext,-tools
 
 RUN_DEPENDS =	x11/qt5/qtquickcontrols
 

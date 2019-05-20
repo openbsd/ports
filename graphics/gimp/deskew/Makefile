@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/04/24 16:26:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/20 22:15:12 naddy Exp $
 
 COMMENT =		deskew plug-in for GIMP
 DISTNAME =		gimp-deskew-plugin-0.0.20141025
@@ -27,7 +27,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 MODULES =		textproc/intltool
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/gettext-tools
+			devel/gettext,-tools
 LIB_DEPENDS =		graphics/gimp/stable
 
 CONFIGURE_STYLE =	gnu

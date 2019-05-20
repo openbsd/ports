@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/09/16 17:01:37 bcallah Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/20 22:15:30 naddy Exp $
 
 COMMENT=	freedesktop-compliant panel
 
@@ -19,7 +19,7 @@ WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread rsvg-2 startup-notification-1
 WANTLIB += z
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 
 LIB_DEPENDS=	devel/pango \
 		devel/startup-notification \

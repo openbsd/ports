@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.63 2017/12/02 21:39:49 juanfra Exp $
+# $OpenBSD: Makefile,v 1.64 2019/05/20 22:15:29 naddy Exp $
 
 COMMENT=	GTK+ binding for librep Lisp environment
 
 VERSION=	0.90.8.1
 DISTNAME=	rep-gtk-${VERSION}
 CATEGORIES=     x11
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=       http://rep-gtk.sourceforge.net/
 
@@ -27,7 +27,7 @@ EXTRACT_SUFX=		.tar.xz
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		lang/librep>=0.92.2
-LIB_DEPENDS= 		devel/gettext \
+LIB_DEPENDS= 		devel/gettext,-runtime \
 			x11/gtk+2
 
 USE_GMAKE=		Yes

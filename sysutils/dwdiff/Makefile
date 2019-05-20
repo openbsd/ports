@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2017/12/04 21:09:39 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2019/05/20 22:15:23 naddy Exp $
 
 COMMENT =		word-based diff program
 
 DISTNAME =		dwdiff-2.0.9
-REVISION =		1
+REVISION =		2
 CATEGORIES =		sysutils textproc
 FIX_EXTRACT_PERMISSIONS=Yes
 
@@ -19,9 +19,9 @@ WANTLIB =  c iconv icudata icui18n icuuc intl m pthread
 MASTER_SITES =		http://os.ghalkes.nl/dist/
 EXTRACT_SUFX =		.tgz
 
-BUILD_DEPENDS =		devel/gettext-tools
+BUILD_DEPENDS =		devel/gettext,-tools
 
-LIB_DEPENDS =		devel/gettext \
+LIB_DEPENDS =		devel/gettext,-runtime \
 			textproc/icu4c
 
 CONFIGURE_STYLE =	simple

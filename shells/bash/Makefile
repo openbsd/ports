@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2019/04/23 21:21:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.112 2019/05/20 22:15:23 naddy Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
@@ -6,6 +6,7 @@ DISTNAME=	bash-5.0
 PKGNAME=	bash-5.0.7
 CATEGORIES=	shells
 HOMEPAGE=	https://www.gnu.org/software/bash/
+REVISION=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -19,7 +20,7 @@ DIST_SUBDIR=	bash
 PATCHFILES+=	bash50-$i:0
 .endfor
 
-LIB_DEPENDS=	devel/gettext
+LIB_DEPENDS=	devel/gettext,-runtime
 WANTLIB=	c curses iconv intl
 
 ALL_TARGET=	all loadables

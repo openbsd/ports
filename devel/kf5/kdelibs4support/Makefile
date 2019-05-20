@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/03/30 09:13:50 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/20 22:15:05 naddy Exp $
 
 COMMENT =		legacy support for kdelibs-4.x compatibility
 DISTNAME =		kdelibs4support-${VERSION}
@@ -16,7 +16,7 @@ WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Designer
 WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Svg Qt5Test Qt5Widgets
 WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext c m
 
-BUILD_DEPENDS =		devel/gettext-tools \
+BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/kf5/kded \
 			devel/kf5/kdesignerplugin \
 			devel/kf5/kdoctools \

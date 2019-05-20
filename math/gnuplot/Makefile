@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2018/12/22 09:35:30 pirofti Exp $
+# $OpenBSD: Makefile,v 1.72 2019/05/20 22:15:16 naddy Exp $
 
 COMMENT =	command-driven interactive function plotting program
 
@@ -7,6 +7,7 @@ PATCHLEVEL =	5
 DISTNAME =	gnuplot-${V}.${PATCHLEVEL}
 CATEGORIES =	math graphics
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnuplot/}
+REVISION =	0
 
 HOMEPAGE =	http://www.gnuplot.info/
 
@@ -58,7 +59,7 @@ CONFIGURE_ARGS += --with-x
 .if ${FLAVOR:Mno_cairo} || ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS += --without-cairo
 .else
-LIB_DEPENDS +=	devel/gettext \
+LIB_DEPENDS +=	devel/gettext,-runtime \
 		devel/pango \
 		graphics/cairo
 WANTLIB +=	cairo gobject-2.0 glib-2.0 intl pango-1.0 pangocairo-1.0

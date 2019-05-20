@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/05/17 16:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2019/05/20 22:15:12 naddy Exp $
 
 COMMENT-face =		face detection library for KDE4
 COMMENT-libkipi =	KDE4 image plugins infrastructure
@@ -138,7 +138,7 @@ WANTLIB-libkipi += QtCore ${KDE4LIB}/kdecore soprano
 
 BUILD_DEPENDS =		devel/bison \
 			devel/boost \
-			devel/gettext-tools \
+			devel/gettext,-tools \
 			math/eigen3 \
 			misc/shared-desktop-ontologies
 

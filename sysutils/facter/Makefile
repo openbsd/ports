@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2019/05/10 11:17:36 sebastia Exp $
+# $OpenBSD: Makefile,v 1.69 2019/05/20 22:15:24 naddy Exp $
 
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
 
@@ -40,7 +40,7 @@ LIB_DEPENDS =		devel/boost>=1.58 \
 			devel/yaml-cpp \
 			net/curl
 
-BUILD_DEPENDS =		devel/gettext-tools
+BUILD_DEPENDS =		devel/gettext,-tools
 
 CONFIGURE_ARGS+=	-DFACTER_RUBY="${LOCALBASE}/lib/libruby${MODRUBY_BINREV}.so" \
 			-DRUBY_LIB_INSTALL="${PREFIX}/lib/ruby/vendor_ruby/${MODRUBY_REV}" \

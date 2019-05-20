@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/20 22:15:30 naddy Exp $
 
 COMMENT =		Mac OS-X style lightweight application launcher
 
 DISTNAME =		wbar-2.3.4
 EXTRACT_SUFX =		.tgz
-REVISION =		7
+REVISION =		8
 
 CATEGORIES=		x11
 
@@ -23,7 +23,7 @@ MODULES =		textproc/intltool
 
 RUN_DEPENDS =		devel/desktop-file-utils
 
-LIB_DEPENDS =		devel/gettext \
+LIB_DEPENDS =		devel/gettext,-runtime \
 			graphics/imlib2
 
 USE_GMAKE =		Yes

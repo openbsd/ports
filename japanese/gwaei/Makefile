@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2018/07/06 06:04:42 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2019/05/20 22:15:14 naddy Exp $
 
 COMMENT =	japanese-english dictionary program
 
 DISTNAME =	gwaei-3.2.0
-REVISION =	19
+REVISION =	20
 
 SHARED_LIBS =	waei	0.0
 
@@ -32,7 +32,7 @@ USE_GMAKE=	Yes
 
 RUN_DEPENDS =	fonts/ja-kanjistrokeorders-ttf \
 		textproc/docbook
-LIB_DEPENDS =	devel/gettext \
+LIB_DEPENDS =	devel/gettext,-runtime \
 		net/curl \
 		x11/gtk+3
 

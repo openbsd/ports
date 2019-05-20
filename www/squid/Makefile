@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.215 2019/05/11 12:40:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.216 2019/05/20 22:15:27 naddy Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
@@ -10,6 +10,7 @@ EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
 PKGNAME-ntlm=	squid-ntlm-$V
+REVISION-main=	0
 
 CATEGORIES=	www
 
@@ -51,7 +52,7 @@ WANTLIB-main +=	${cWANTLIB} crypto db expat lzma ssl xml2 z
 
 LIB_DEPENDS-main += ${LIB_DEPENDS} \
 		databases/db/v4 \
-		devel/gettext \
+		devel/gettext,-runtime \
 		security/libnettle \
 		textproc/libxml
 

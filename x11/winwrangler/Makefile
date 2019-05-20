@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2018/06/29 22:16:35 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/20 22:15:30 naddy Exp $
 
 COMMENT =	desktop daemon to perform advanced window manipulations
 
 V =		0.2.4
 DISTNAME =	winwrangler-$V
-REVISION=	11
+REVISION=	12
 
 CATEGORIES =	x11
 
@@ -27,7 +27,7 @@ CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 
 BUILD_DEPENDS =	devel/libexecinfo
 LIB_DEPENDS =	x11/gtkhotkey \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/libwnck \
 		devel/startup-notification
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2019/05/18 12:13:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2019/05/20 22:15:15 naddy Exp $
 
 COMMENT=		addressbook program with mutt support
 
 DISTNAME=		abook-0.6.1
-REVISION=		2
+REVISION=		3
 CATEGORIES=		mail
 
 HOMEPAGE=		http://abook.sourceforge.net/
@@ -16,11 +16,11 @@ WANTLIB += c curses iconv intl readline
 MASTER_SITES=		http://abook.sourceforge.net/devel/
 
 LIB_DEPENDS=		converters/libiconv \
-			devel/gettext
+			devel/gettext,-runtime
 
 CONFIGURE_STYLE=	autoreconf
 
-BUILD_DEPENDS=		devel/gettext-tools
+BUILD_DEPENDS=		devel/gettext,-tools
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.14
 

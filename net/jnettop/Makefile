@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2016/04/06 21:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/20 22:15:19 naddy Exp $
 
 COMMENT=	capture network traffic, display streams sorted by bandwidth
 
 DISTNAME=	jnettop-0.13.0
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	net
 
@@ -16,7 +16,7 @@ WANTLIB += c glib-2.0 gthread-2.0 intl ncurses pcap pthread
 
 MASTER_SITES=	${HOMEPAGE}dist/
 
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		devel/glib2
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2018/05/16 09:54:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.65 2019/05/20 22:15:29 naddy Exp $
 
 COMMENT=		GTK+-2 file manager with desktop features
 
 DISTNAME=		rox-filer-2.11
-REVISION=		2
+REVISION=		3
 CATEGORIES=		x11
 
 HOMEPAGE=		http://rox.sourceforge.net/desktop/ROX-Filer
@@ -21,7 +21,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rox/}
 EXTRACT_SUFX=	.tar.bz2
 
 RUN_DEPENDS=	misc/shared-mime-info
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		x11/gtk+2
 
 NO_TEST=	Yes

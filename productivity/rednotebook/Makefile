@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/04/28 20:51:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/05/20 22:15:22 naddy Exp $
 
 COMMENT=		diary and journal application
 
@@ -18,7 +18,7 @@ MODULES=		lang/python
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 # msgfmt(1)
-BUILD_DEPENDS=		devel/gettext-tools
+BUILD_DEPENDS=		devel/gettext,-tools
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/py-gobject3${MODPY_FLAVOR} \

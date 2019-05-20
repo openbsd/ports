@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/11/18 17:06:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/20 22:15:01 naddy Exp $
 
 COMMENT =	Open Fingerprint Architecture library
 
@@ -18,7 +18,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 # needed to build the examples
 BUILD_DEPENDS =	net/curl \
-		devel/gettext
+		devel/gettext,-runtime
 
 LIB_DEPENDS =	math/fftw3
 

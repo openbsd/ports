@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/05/08 22:50:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2019/05/20 22:15:15 naddy Exp $
 
 # XXX consider moving to https://repo.or.cz/alpine.git
 
@@ -28,12 +28,12 @@ PKGNAME-mailutil=	mailutil-uw-${V}
 PKGNAME-pico=		pico-${PICO_V}
 PKGNAME-pilot=		pilot-${PILOT_V}
 
-REVISION-main=		1
-REVISION-c-client=	1
-REVISION-imap=		1
-REVISION-mailutil=	1
-REVISION-pico=		18
-REVISION-pilot=		18
+REVISION-main=		2
+REVISION-c-client=	2
+REVISION-imap=		2
+REVISION-mailutil=	2
+REVISION-pico=		19
+REVISION-pilot=		19
 
 EPOCH-c-client=		0
 EPOCH-imap=		0
@@ -61,7 +61,7 @@ WANTLIB-c-client=	# empty
 WANTLIB-pico=		${WANTLIB} pthread
 WANTLIB-pilot=		${WANTLIB} pthread
 
-LIB_DEPENDS=		devel/gettext
+LIB_DEPENDS=		devel/gettext,-runtime
 BUILD_DEPENDS=		textproc/aspell/core
 RUN_DEPENDS-main=	textproc/aspell/core
 RUN_DEPENDS-pico=	textproc/aspell/core

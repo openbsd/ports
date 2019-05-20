@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/19 11:26:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/20 22:15:19 naddy Exp $
 
 COMMENT=	client for MikroTik's "L2 telnet" protocol#'
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_ARGS=	--disable-nls

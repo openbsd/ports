@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/17 14:07:29 cwen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/20 22:15:28 naddy Exp $
 
 COMMENT =	D-Bus menu implementation for Gtk
 DISTNAME =	libdbusmenu-16.04.0
@@ -20,7 +20,7 @@ USE_GMAKE= yes
 
 MODULES =	textproc/intltool
 
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/gobject-introspection \
 		textproc/libxslt \
 		textproc/gtk-doc \

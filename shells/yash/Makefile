@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/02/01 21:26:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/20 22:15:23 naddy Exp $
 
 COMMENT=	POSIX-compliant command line shell
 
@@ -6,6 +6,7 @@ DISTNAME=	yash-2.48
 RELEASE=	70439
 CATEGORIES=	shells
 HOMEPAGE=	https://yash.osdn.jp/index.html.en
+REVISION=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -16,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_OSDN_JP:=/yash/${RELEASE}/}
 EXTRACT_SUFX=	.tar.xz
 
 WANTLIB=	c curses intl m
-LIB_DEPENDS=	devel/gettext
+LIB_DEPENDS=	devel/gettext,-runtime
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \

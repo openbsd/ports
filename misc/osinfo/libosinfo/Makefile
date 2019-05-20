@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/10 13:04:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/20 22:15:17 naddy Exp $
 
 COMMENT=		library for managing information about operating systems
 
@@ -13,7 +13,7 @@ MODULES=		x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection vala
 
-BUILD_DEPENDS=		devel/gettext-tools
+BUILD_DEPENDS=		devel/gettext,-tools
 
 # needed for test
 BUILD_DEPENDS +=	devel/check \

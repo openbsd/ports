@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/04/03 06:57:51 giovanni Exp $
+# $OpenBSD: Makefile,v 1.30 2019/05/20 22:15:28 naddy Exp $
 
 COMMENT=		gui cd image editor
 
@@ -22,7 +22,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 MASTER_SITES=	${HOMEPAGE}releases/
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 LIB_DEPENDS=	x11/gtk+2
 RUN_DEPENDS=	devel/desktop-file-utils
 

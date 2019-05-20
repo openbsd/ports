@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/20 22:15:14 naddy Exp $
 
 COMMENT =	fcitx plugin for Qt5
 
@@ -24,7 +24,7 @@ WANTLIB +=	Qt5Widgets c fcitx-config fcitx-utils intl m xkbcommon
 MODULES =	devel/cmake \
 		x11/qt5
 
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/extra-cmake-modules
 
 LIB_DEPENDS =	inputmethods/fcitx,-main

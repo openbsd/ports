@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2018/10/24 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2019/05/20 22:15:01 naddy Exp $
 
 COMMENT=		front-end to external cd audio rippers and mp3 encoders
 
@@ -40,7 +40,7 @@ LIB_DEPENDS=		audio/cdparanoia \
 
 RUN_DEPENDS=		audio/vorbis-tools
 
-BUILD_DEPENDS=		devel/gettext-tools
+BUILD_DEPENDS=		devel/gettext,-tools
 
 CONFIGURE_STYLE=	gnu
 

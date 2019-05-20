@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/08 21:46:44 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/20 22:15:13 naddy Exp $
 
 COMMENT =	simple GTK+2 raster painting program
 
 DISTNAME =	mtpaint-3.40
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	graphics
 
@@ -21,8 +21,8 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 png pthread tiff z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mtpaint/}
 
-BUILD_DEPENDS =	devel/gettext-tools
-LIB_DEPENDS =	devel/gettext \
+BUILD_DEPENDS =	devel/gettext,-tools
+LIB_DEPENDS =	devel/gettext,-runtime \
 		graphics/jasper \
 		graphics/lcms2 \
 		graphics/tiff \

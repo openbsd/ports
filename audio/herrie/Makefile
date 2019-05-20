@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/05/20 20:52:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/05/20 22:15:01 naddy Exp $
 
 COMMENT=		minimalistic console-based audio player
 
@@ -19,7 +19,7 @@ MASTER_SITES=		${HOMEPAGE}/distfiles/ \
 			http://www.stack.nl/~ed/projects/herrie/distfiles/ \
 			http://www.il.fontys.nl/~ed/projects/herrie/distfiles/
 
-BUILD_DEPENDS=		devel/gettext-tools
+BUILD_DEPENDS=		devel/gettext,-tools
 LIB_DEPENDS=		audio/libmad \
 			audio/libid3tag \
 			audio/libsndfile \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2019/05/03 06:26:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.54 2019/05/20 22:15:12 naddy Exp $
 
 COMMENT =	KDE digital photo and video management utility
 
@@ -44,7 +44,7 @@ MODULES =	devel/kf5
 
 BUILD_DEPENDS =	devel/bison \
 		devel/boost \
-		devel/gettext-tools \
+		devel/gettext,-tools \
 		devel/git \
 		devel/kf5/kdoctools \
 		multimedia/qtav \

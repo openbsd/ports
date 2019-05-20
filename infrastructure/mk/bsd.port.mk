@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1466 2019/05/14 14:59:56 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1467 2019/05/20 22:15:13 naddy Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2529,7 +2529,7 @@ ${_WRKDIR_COOKIE}:
 	@${_PBUILD} ln -sf ${WRKDIR} ${.CURDIR}/${WRKDIR_LINKNAME}
 .endif
 # poison some common gettext-tools binaries
-.if !defined(BUILD_DEPENDS) || !${BUILD_DEPENDS:Mdevel/gettext-tools} && \
+.if !defined(BUILD_DEPENDS) || !${BUILD_DEPENDS:Mdevel/gettext,-tools} && \
 		!${BUILD_DEPENDS:M*textproc/intltool}
 	@printf '#!/bin/sh\n\
 		echo "*** $$0 was called without gettext-tools dependency ***" >&2\n\

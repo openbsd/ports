@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.80 2018/06/27 21:04:21 espie Exp $
+# $OpenBSD: Makefile,v 1.81 2019/05/20 22:15:29 naddy Exp $
 
 COMMENT =	small, fast & usable window manager
 
 V =		3.6.1
-REVISION =	4
+REVISION =	5
 DISTNAME =	openbox-${V}
 SHARED_LIBS +=	obrender	12.0	# 32.0
 SHARED_LIBS +=	obt		1.1	# 2.2
@@ -32,7 +32,7 @@ MODULES =	lang/python
 
 RUN_DEPENDS =	devel/py-xdg \
 		devel/desktop-file-utils
-LIB_DEPENDS +=	devel/gettext \
+LIB_DEPENDS +=	devel/gettext,-runtime \
 		devel/pango \
 		devel/startup-notification \
 		graphics/imlib2 \

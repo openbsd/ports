@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/09/02 08:31:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2019/05/20 22:15:11 naddy Exp $
 
 COMMENT=		drawing program for children
 
@@ -19,7 +19,7 @@ WANTLIB += paper png pthread rsvg-2 z
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
 
 
-BUILD_DEPENDS=		devel/gettext-tools \
+BUILD_DEPENDS=		devel/gettext,-tools \
 			devel/gperf
 
 LIB_DEPENDS=		devel/sdl-image \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2019/04/28 13:38:28 stsp Exp $
+# $OpenBSD: Makefile,v 1.173 2019/05/20 22:15:08 naddy Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -20,6 +20,7 @@ FULLPKGNAME-ap2=	ap2-subversion-${VERSION}
 FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
+REVISION-main=		0
 
 MODRUBY_REV ?=	2.5
 # Work around for SHARED_LIBS not picking up MODRUBY_BINREV from ruby module
@@ -63,7 +64,7 @@ MODULES=	lang/python
 
 WANTLIB=	expat iconv intl lz4 m pthread z
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 
 MULTI_PACKAGES = -main -ap2 -perl -python -ruby -gnome-keyring
 
@@ -74,7 +75,7 @@ LIB_DEPENDS-main = ${LIB_DEPENDS} \
 		databases/sqlite3 \
 		devel/apr \
 		devel/apr-util \
-		devel/gettext \
+		devel/gettext,-runtime \
 		security/cyrus-sasl2
 
 WANTLIB-main=	${WANTLIB} apr-1 aprutil-1 db sasl2>=2 serf-1>=1.0 ssl sqlite3 \

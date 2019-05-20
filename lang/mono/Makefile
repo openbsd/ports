@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2019/05/08 12:34:00 robert Exp $
+# $OpenBSD: Makefile,v 1.128 2019/05/20 22:15:14 naddy Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -42,7 +42,7 @@ USE_LIBTOOL=	gnu
 SUBST_VARS=	LIBTOOL
 
 BUILD_DEPENDS=	devel/bison \
-		devel/gettext-tools \
+		devel/gettext,-tools \
 		lang/gawk \
 		shells/bash \
 		x11/libgdiplus

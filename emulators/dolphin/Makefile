@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/11 04:11:57 bket Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/20 22:15:09 naddy Exp $
 
 USE_WXNEEDED =		Yes
 ONLY_FOR_ARCHS =	amd64
@@ -38,7 +38,7 @@ WANTLIB-nogui =	${cWANTLIB}
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake
-BUILD_DEPENDS =		devel/gettext-tools
+BUILD_DEPENDS =		devel/gettext,-tools
 LIB_DEPENDS-nogui =	archivers/lzo2 \
 			audio/pulseaudio \
 			comms/libhidapi \

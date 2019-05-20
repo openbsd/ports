@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2019/05/09 16:45:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2019/05/20 22:15:22 naddy Exp $
 
 COMMENT-main =		GnuPG Made Easy
 COMMENT-qt =		Qt bindings for GPGme
@@ -7,7 +7,7 @@ VERSION =		1.12.0
 DISTNAME =		gpgme-${VERSION}
 PKGNAME-main =		gpgme-${VERSION}
 PKGNAME-qt =		gpgme-qt-${VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		security devel
 
@@ -46,7 +46,7 @@ BUILD_DEPENDS =		gnupg->=2:security/gnupg2
 # so we must be explicit here.
 RUN_DEPENDS =		gnupg-*:security/gnupg
 LIB_DEPENDS-main =	${LIB_DEPENDS:N*qt*} \
-			devel/gettext \
+			devel/gettext,-runtime \
 			security/libgpg-error>=1.4 \
 			security/libassuan
 

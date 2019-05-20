@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/05/20 20:52:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:01 naddy Exp $
 
 COMMENT =		SoundFont2 software synthesizer
 DISTNAME =		fluidsynth-1.1.6
@@ -25,7 +25,7 @@ AUTOMAKE_VERSION =	1.9
 AUTORECONF =		./autogen.sh
 
 # autogen.sh needs aclocal/lib-ld.m4
-BUILD_DEPENDS +=	devel/gettext-tools
+BUILD_DEPENDS +=	devel/gettext,-tools
 
 CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS +=	--disable-coreaudio \

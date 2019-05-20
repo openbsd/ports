@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/01 09:08:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2019/05/20 22:15:26 naddy Exp $
 
 COMMENT=		internationalization tools
 
 V=			0.51.0
 DISTNAME=		intltool-${V}
-REVISION=		1
+REVISION=		2
 CATEGORIES=		textproc
 
 HOMEPAGE=		https://edge.launchpad.net/intltool
@@ -16,7 +16,7 @@ MASTER_SITES=		${HOMEPAGE}/trunk/${V}/+download/
 
 BUILD_DEPENDS=		textproc/p5-XML-Parser
 
-RUN_DEPENDS=		devel/gettext-tools \
+RUN_DEPENDS=		devel/gettext,-tools \
 			textproc/p5-XML-Parser
 
 CONFIGURE_STYLE= 	gnu

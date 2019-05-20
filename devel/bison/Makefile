@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2019/05/14 16:28:23 jca Exp $
+# $OpenBSD: Makefile,v 1.58 2019/05/20 22:15:02 naddy Exp $
 
 COMMENT=	GNU parser generator
 
@@ -6,6 +6,7 @@ DISTNAME=	bison-3.3.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=bison/}
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 HOMEPAGE=	https://www.gnu.org/software/bison/
 
@@ -16,7 +17,7 @@ WANTLIB=	c iconv intl m
 
 AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.16
-LIB_DEPENDS=	devel/gettext
+LIB_DEPENDS=	devel/gettext,-runtime
 BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/help2man \
 		devel/m4

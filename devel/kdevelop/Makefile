@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/03/08 21:05:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.24 2019/05/20 22:15:04 naddy Exp $
 
 # Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -55,7 +55,7 @@ BUILD_DEPENDS =	archivers/gtar \
 		lang/clazy \
 		devel/boost \
 		devel/cppcheck \
-		devel/gettext-tools \
+		devel/gettext,-tools \
 		misc/shared-mime-info
 
 RUN_DEPENDS =	devel/cmake \

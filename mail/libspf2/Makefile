@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2017/11/19 00:53:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/20 22:15:16 naddy Exp $
 
 COMMENT=	SPF library
 
 DISTNAME=	libspf2-1.2.10
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=	spf2                 4.0      # 3.0
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c iconv intl pthread
 
-LIB_DEPENDS=		devel/gettext
+LIB_DEPENDS=		devel/gettext,-runtime
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.68

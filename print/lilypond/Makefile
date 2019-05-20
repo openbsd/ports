@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2018/12/26 21:20:21 kili Exp $
+# $OpenBSD: Makefile,v 1.51 2019/05/20 22:15:21 naddy Exp $
 
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
@@ -9,7 +9,7 @@ DISTNAME-docs=		${DISTNAME}-1.documentation
 PKGNAME-main=		lilypond-${VERSION}
 PKGNAME-docs=		lilypond-docs-${VERSION}
 CATEGORIES=		print
-REVISION-main=		3
+REVISION-main=		4
 REVISION-docs=		2
 
 DISTFILES=		${DISTNAME}.tar.gz ${DISTNAME-docs}.tar.bz2:0
@@ -62,14 +62,14 @@ WANTLIB-main=		c fontconfig freetype glib-2.0 gmp gobject-2.0 \
 			guile intl ltdl m pango-1.0 pangoft2-1.0 pthread z \
 			${COMPILER_LIBCXX}
 MODULES=		lang/python
-LIB_DEPENDS-main=	devel/gettext \
+LIB_DEPENDS-main=	devel/gettext,-runtime \
 			lang/guile \
 			devel/glib2 \
 			devel/pango
 RUN_DEPENDS=		print/ghostscript/gnu
 BUILD_DEPENDS= 		print/mftrace \
 			devel/bison \
-			devel/gettext-tools \
+			devel/gettext,-tools \
 			archivers/bzip2 \
 			devel/autoconf/${AUTOCONF_VERSION} \
 			${RUN_DEPENDS}

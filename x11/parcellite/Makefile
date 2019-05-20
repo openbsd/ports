@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2018/06/27 21:04:22 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/20 22:15:29 naddy Exp $
 
 COMMENT=	lightweight GTK+ clipboard manager
 
 DISTNAME=	parcellite-1.0.2rc5
-REVISION=	3
+REVISION=	4
 CATEGORIES=	x11
 
 MAINTAINER=	Lawrence Teo <lteo@openbsd.org>
@@ -29,7 +29,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 
 MODULES=	textproc/intltool
 
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		x11/gtk+2
 
 RUN_DEPENDS=	devel/desktop-file-utils

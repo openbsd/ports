@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.14 2018/09/14 11:37:30 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.15 2019/05/20 22:15:28 naddy Exp $
 
 COMMENT =		K Desktop Environment, language localization pack
 DISTNAME =		kde-l10n-${KDE_L10N_LANG}-${MODKDE4_VERSION}
@@ -13,7 +13,7 @@ MODKDE4_USE =		libs
 SUPDISTFILES +=	kde-l10n-${L}-${MODKDE4_VERSION}${EXTRACT_SUFX}
 .endfor
 
-BUILD_DEPENDS +=	devel/gettext-tools
+BUILD_DEPENDS +=	devel/gettext,-tools
 RUN_DEPENDS +=	x11/gtk+3,-guic
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/${MODKDE4_VERSION}/src/kde-l10n/}

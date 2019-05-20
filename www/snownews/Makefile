@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2019/05/01 19:29:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/05/20 22:15:27 naddy Exp $
 
 COMMENT=	text mode rss newsreader
 DISTNAME=	snownews-1.5.12
-REVISION=	4
+REVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}download/
 
@@ -16,9 +16,9 @@ WANTLIB +=	c crypto curses iconv intl m lzma xml2 z
 NO_TEST=	Yes
 USE_GMAKE=	Yes
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 RUN_DEPENDS=	textproc/p5-XML-LibXML
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		textproc/libxml
 
 MAKE_ENV+=	EXTRA_CFLAGS="${CFLAGS}"

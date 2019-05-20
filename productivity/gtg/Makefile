@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/06/29 22:16:20 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2019/05/20 22:15:21 naddy Exp $
 
 COMMENT=		GTD organizer for GNOME
 
@@ -17,7 +17,7 @@ MASTER_SITES=		https://launchpad.net/gtg/${MODPY_EGG_VERSION:R}/${MODPY_EGG_VERS
 
 MODULES=		lang/python
 
-BUILD_DEPENDS=		devel/gettext-tools
+BUILD_DEPENDS=		devel/gettext,-tools
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/py-configobj \

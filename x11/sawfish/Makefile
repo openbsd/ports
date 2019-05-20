@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.79 2018/06/29 22:16:34 espie Exp $
+# $OpenBSD: Makefile,v 1.80 2019/05/20 22:15:29 naddy Exp $
 
 COMMENT=	extensible window manager
 
 VERSION=	1.9.1
 DISTNAME=	sawfish-${VERSION}
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	x11
 
@@ -28,13 +28,13 @@ WANTLIB += pangox-1.0 pangoxft-1.0 pcre png pthread
 WANTLIB += rep xcb z
 
 BUILD_DEPENDS=	archivers/gtar \
-		devel/gettext-tools \
+		devel/gettext,-tools \
 		x11/rep-gtk>=0.90.8.1
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/rep-gtk>=0.90.8.1 \
 		x11/gtk+3,-guic
 
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		devel/pangox-compat>=0.0.2 \
 		lang/librep \
 		x11/gtk+2

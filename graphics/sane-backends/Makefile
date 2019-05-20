@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2019/01/06 14:50:49 danj Exp $
+# $OpenBSD: Makefile,v 1.84 2019/05/20 22:15:13 naddy Exp $
 
 BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
@@ -24,7 +24,7 @@ WANTLIB += v4lconvert z
 MASTER_SITES=		https://alioth-archive.debian.org/releases/sane/sane-backends/1.0.27/ \
 			https://distfiles.bsdfrog.org/
 
-BUILD_DEPENDS=		devel/gettext-tools
+BUILD_DEPENDS=		devel/gettext,-tools
 
 LIB_DEPENDS=		devel/libusb1 \
 			graphics/png \

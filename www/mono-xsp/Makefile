@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/04 01:47:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/20 22:15:26 naddy Exp $
 
 COMMENT=	ASP.NET implementations for Mono
 
@@ -34,7 +34,7 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/gettext \
+			devel/gettext,-runtime \
 			devel/libtool \
 			misc/findutils \
 			shells/bash

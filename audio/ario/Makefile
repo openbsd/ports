@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/06/29 22:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2019/05/20 22:15:00 naddy Exp $
 
 COMMENT =	GTK2-based MPD client inspired by Rhythmbox
 DISTNAME =	ario-1.5.1
@@ -33,7 +33,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ario-player/}
 
 MODULES =	textproc/intltool
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 LIB_DEPENDS =	audio/libmpdclient \
 		audio/taglib \
 		devel/libnotify \

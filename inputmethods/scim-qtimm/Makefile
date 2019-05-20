@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/05/20 22:15:14 naddy Exp $
 
 COMMENT=	scim plugin for qt
 
@@ -21,7 +21,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scim/}
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	x11/qt3
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 LIB_DEPENDS=	inputmethods/scim
 
 SUBST_VARS=     MODQT_PLUGINS

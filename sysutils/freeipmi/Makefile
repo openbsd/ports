@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2019/03/11 23:21:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/05/20 22:15:24 naddy Exp $
 
 COMMENT=	IPMI library and tools (in- and out-of-band)
 
 DISTNAME=	freeipmi-1.6.3
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	freeipmi             6.5      # 19.2
 SHARED_LIBS +=	ipmiconsole          3.1      # 5.5
@@ -25,7 +25,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=freeipmi/}
 
 BUILD_DEPENDS=	devel/argp-standalone
 LIB_DEPENDS=	security/libgcrypt \
-		devel/gettext
+		devel/gettext,-runtime
 
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes

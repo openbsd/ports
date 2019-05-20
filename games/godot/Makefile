@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/20 22:15:10 naddy Exp $
 
 COMMENT =	2D and 3D game engine
 
@@ -8,7 +8,7 @@ PKGNAME =	godot-${V}
 CATEGORIES =	games
 HOMEPAGE =	https://godotengine.org/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
-REVISION =	0
+REVISION =	1
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -58,7 +58,7 @@ LIB_DEPENDS =		archivers/zstd \
 			audio/libvorbis \
 			audio/musepack \
 			audio/opusfile \
-			devel/gettext \
+			devel/gettext,-runtime \
 			devel/libexecinfo \
 			devel/pcre2 \
 			graphics/libwebp \

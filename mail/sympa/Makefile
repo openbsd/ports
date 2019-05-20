@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2018/09/04 12:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2019/05/20 22:15:16 naddy Exp $
 
 COMMENT =	mailing list manager with web interface
 
 VERSION =	6.2.16
 DISTNAME =	sympa-${VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	mail www
 
@@ -45,8 +45,8 @@ CONFIGURE_ARGS =	--with-modulesdir=${PREFIX}/${P5SITE} \
 			--with-lockdir=${VARBASE}/spool/lock \
 			--with-localedir=${PREFIX}/share/locale
 
-# no MODULE, doesn't link with it
-BUILD_DEPENDS =	devel/gettext
+# no LIB_DEPENDS, doesn't link with it
+BUILD_DEPENDS =	devel/gettext,-runtime
 # for postmap check
 BUILD_DEPENDS +=	mail/postfix/stable
 WANTLIB =	c
@@ -54,7 +54,7 @@ WANTLIB =	c
 RUN_DEPENDS =	archivers/p5-Archive-Zip \
 		converters/p5-Unicode-LineBreak>=2011.05 \
 		databases/p5-DBI \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/p5-IO-stringy \
 		devel/p5-File-Copy-Recursive \
 		devel/p5-Class-Singleton \

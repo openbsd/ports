@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2016/04/11 22:10:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:16 naddy Exp $
 
 COMMENT=		finds and then operates on files
 
 DISTNAME=		findutils-4.6.0
 CATEGORIES=		misc
+REVISION=		0
 
 HOMEPAGE=		https://www.gnu.org/software/findutils/
 
@@ -14,7 +15,7 @@ WANTLIB=		c iconv intl m
 
 MASTER_SITES=		${MASTER_SITE_GNU:=findutils/}
 
-LIB_DEPENDS=		devel/gettext
+LIB_DEPENDS=		devel/gettext,-runtime
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--program-prefix="g"

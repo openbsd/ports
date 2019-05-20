@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/02/17 22:21:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/05/20 22:15:01 naddy Exp $
 
 COMMENT =	console audio player
 DISTNAME =	moc-2.5.2
@@ -7,7 +7,7 @@ HOMEPAGE =	http://moc.daper.net/
 MASTER_SITES =	http://ftp.daper.net/pub/soft/moc/stable/ \
 		https://distfiles.nl/
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	6
+REVISION =	7
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM = Yes
@@ -35,7 +35,7 @@ LIB_DEPENDS =	audio/faad \
 		audio/speex \
 		audio/taglib \
 		databases/db/v4 \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/libmagic \
 		devel/libtool,-ltdl \
 		graphics/ffmpeg \

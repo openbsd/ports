@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2016/08/27 17:28:32 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/20 22:15:30 naddy Exp $
 
 COMMENT =	lightweight WM with an original look and feel
 DISTNAME =	uwm-0.2.11
 CATEGORIES =	x11
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://udeproject.sourceforge.net/
 
@@ -16,7 +16,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=udeproject/}
 
 BUILD_DEPENDS =	devel/bison
 
-LIB_DEPENDS =	devel/gettext \
+LIB_DEPENDS =	devel/gettext,-runtime \
 		graphics/jpeg
 
 CONFIGURE_STYLE =	gnu

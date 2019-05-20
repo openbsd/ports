@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2018/05/16 10:06:08 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.55 2019/05/20 22:15:26 naddy Exp $
 
 BROKEN-alpha =	MetalinkParserStateV4Impl.cc:219:1: internal compiler error: Segmentation fault
 
@@ -7,6 +7,7 @@ V =			1.34.0
 DISTNAME =		aria2-${V}
 CATEGORIES =		www
 HOMEPAGE =		https://aria2.github.io/
+REVISION =		0
 
 MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>
 
@@ -18,7 +19,7 @@ MASTER_SITES =		https://github.com/aria2/aria2/releases/download/release-${V}/
 COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS =		databases/sqlite3 \
-			devel/gettext \
+			devel/gettext,-runtime \
 			net/libcares \
 			security/libssh2
 

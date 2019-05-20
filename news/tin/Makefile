@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2019/01/19 16:22:28 giovanni Exp $
+# $OpenBSD: Makefile,v 1.54 2019/05/20 22:15:20 naddy Exp $
 
 COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
@@ -6,6 +6,7 @@ DISTNAME=	tin-${MAJORVERSION}.${PATCHLEVEL}
 MAJORVERSION=	2.4
 PATCHLEVEL=	3
 CATEGORIES=	news
+REVISION=	0
 
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
 		http://ftp.cuhk.edu.hk/pub/packages/news/tin/v${MAJORVERSION}/ \
@@ -50,9 +51,9 @@ CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 LIB_DEPENDS+=	devel/pcre \
-		devel/gettext \
+		devel/gettext,-runtime \
 		textproc/icu4c
 
 ALL_TARGET=	build

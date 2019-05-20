@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2017/08/13 21:43:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/05/20 22:15:02 naddy Exp $
 
 COMMENT=	automatic text creation from templates
 CATEGORIES=	devel
 
 V=		5.8.7
 DISTNAME=	autogen-${V}
-REVISION=	6
+REVISION=	7
 
 SHARED_LIBS +=	opts                 27.5     # .27.5
 SHARED_LIBS +=	guileopts            1.0      # .0.1
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=Yes
 
 WANTLIB += c gmp guile iconv intl ltdl lzma m pthread xml2 z
 
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		lang/guile \
 		textproc/libxml
 CONFIGURE_STYLE=gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/03/08 20:00:56 cwen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/05/20 22:15:31 naddy Exp $
 
 COMMENT =	drop-down terminal emulator based on KDE Konsole
 
@@ -28,7 +28,7 @@ WANTLIB += c m
 
 MODULES =	devel/kf5
 
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kdoctools
 
 RUN_DEPENDS =	devel/desktop-file-utils \

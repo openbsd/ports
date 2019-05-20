@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2018/06/27 16:18:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/20 22:15:25 naddy Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -30,7 +30,7 @@ RUN_DEPENDS =
 
 # bison needed if .y files are patched
 BUILD_DEPENDS =		devel/bison \
-			devel/gettext-tools
+			devel/gettext,-tools
 
 commonLIB_DEPENDS =	x11/wxWidgets>=2.8.12 \
 			net/libupnp>=1.6.6
@@ -45,7 +45,7 @@ LIB_DEPENDS-daemon =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
 			devel/cryptopp>=5.6.0
 
 LIB_DEPENDS-web =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
-			devel/gettext
+			devel/gettext,-runtime
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/desktop-file-utils

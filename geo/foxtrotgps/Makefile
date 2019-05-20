@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/07/06 06:04:42 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/20 22:15:12 naddy Exp $
 
 COMMENT =		lightweight mapping application for use with or without GPS
 
@@ -28,7 +28,7 @@ WANTLIB += xml2 z
 MODULES = 		lang/python \
 			textproc/intltool
 
-BUILD_DEPENDS = 	devel/gettext-tools \
+BUILD_DEPENDS = 	devel/gettext,-tools \
 			devel/gsettings-desktop-schemas
 LIB_DEPENDS =		devel/libglade2 \
 			databases/sqlite3 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/01 16:31:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/20 22:15:22 naddy Exp $
 
 COMMENT=	GNU implementation of the SASL framework
 
@@ -7,7 +7,7 @@ CATEGORIES=	security
 HOMEPAGE=	https://www.gnu.org/software/gsasl/
 MASTER_SITES=	${MASTER_SITE_GNU:=gsasl/}
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS +=  gsasl 0.0 # 14.6
 
@@ -15,7 +15,7 @@ SHARED_LIBS +=  gsasl 0.0 # 14.6
 PERMIT_PACKAGE_CDROM=	yes
 
 WANTLIB+=	gcrypt gpg-error iconv idn intl
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		devel/libidn \
 		security/libgcrypt
 

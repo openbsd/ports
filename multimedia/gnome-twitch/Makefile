@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/07/10 14:45:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/20 22:15:17 naddy Exp $
 
 COMMENT =	desktop Twitch.tv client
 CATEGORIES =	multimedia games x11
@@ -24,7 +24,7 @@ COMPILER =	base-clang ports-clang ports-gcc
 MODULES =	devel/dconf \
 		devel/meson
 
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS =	devel/json-glib \

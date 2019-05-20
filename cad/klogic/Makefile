@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/06/29 22:16:09 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2019/05/20 22:15:02 naddy Exp $
 
 COMMENT =	logic circuit simulator for KDE
 
@@ -26,7 +26,7 @@ MODULES =	x11/kde4 \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 NO_TEST =	Yes
 

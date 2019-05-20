@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2019/05/18 12:13:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.69 2019/05/20 22:15:00 naddy Exp $
 
 COMMENT=	free audio editor
 
@@ -36,7 +36,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 MODULES=	lang/python
 MODPY_RUNDEP=	No
 
-BUILD_DEPENDS=	devel/gettext-tools \
+BUILD_DEPENDS=	devel/gettext,-tools \
 		shells/bash
 # Used to build suild, not installed by default
 # See ${WRKSRC}/lib-src/lv2/suil and https://drobilla.net/software/suil

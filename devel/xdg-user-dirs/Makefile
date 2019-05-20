@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2018/04/27 16:44:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/20 22:15:08 naddy Exp $
 
 COMMENT=		utilities to manage well known user directories
 
 DISTNAME=		xdg-user-dirs-0.17
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://freedesktop.org/wiki/Software/xdg-user-dirs/
@@ -20,7 +20,7 @@ WANTLIB += c iconv intl
 # man pages
 BUILD_DEPENDS +=	textproc/docbook-xsl
 
-LIB_DEPENDS=		devel/gettext
+LIB_DEPENDS=		devel/gettext,-runtime
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2019/04/15 17:00:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/20 22:15:29 naddy Exp $
 
 COMMENT=	simple xrandr config tool
 
 DISTNAME=	lxrandr-0.3.2
+REVISION=	0
 
 CATEGORIES=	x11 sysutils
 
@@ -23,7 +24,7 @@ EXTRACT_SUFX=	.tar.xz
 # needed for regression test
 MODULES+=	textproc/intltool
 
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		x11/gtk+2
 RUN_DEPENDS=	devel/desktop-file-utils
 

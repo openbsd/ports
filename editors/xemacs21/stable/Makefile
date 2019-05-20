@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.46 2019/02/28 01:52:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2019/05/20 22:15:08 naddy Exp $
 
 BRANCH=		21.4
 VERSION=	22
-REVISION=	24
+REVISION=	25
 
 WANTLIB=	c m curses util
 
@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=--with-xim=xlib
 .endif
 
 .if ${FLAVOR:Mmule}
-LIB_DEPENDS+=	devel/gettext
+LIB_DEPENDS+=	devel/gettext,-runtime
 CONFIGURE_ARGS+=--with-mule
 WANTLIB+=	iconv intl
 

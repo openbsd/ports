@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/18 12:13:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/05/20 22:15:26 naddy Exp $
 
 COMMENT =	spelling, stemming, morphological analysis and generation
 
@@ -27,7 +27,7 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 
 # gettext-tools needed for aclocal/extern-inline.m4
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 
 CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

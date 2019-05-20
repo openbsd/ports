@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2018/06/29 22:16:37 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/20 22:15:31 naddy Exp $
 
 COMMENT=		display graphical dialogs from shell scripts or command line
 
 DISTNAME=		yad-0.40.0
 CATEGORIES=		x11
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://sourceforge.net/projects/yad-dialog/
 
@@ -22,7 +22,7 @@ MODULES=		textproc/intltool
 
 USE_GMAKE=		Yes
 
-LIB_DEPENDS=		devel/gettext \
+LIB_DEPENDS=		devel/gettext,-runtime \
 			x11/gtk+3
 RUN_DEPENDS=		x11/gtk+3,-guic
 

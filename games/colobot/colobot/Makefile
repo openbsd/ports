@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/13 19:53:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/20 22:15:09 naddy Exp $
 
 COMMENT =		programming-focused real-time strategy game
 
 DISTNAME =		colobot-$V
-REVISION =		0
+REVISION =		1
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL GLEW GLU SDL2 SDL2_image SDL2_ttf boost_filesystem-mt
@@ -15,11 +15,11 @@ GH_PROJECT =		colobot
 # c++11
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake
-BUILD_DEPENDS =		devel/gettext-tools
+BUILD_DEPENDS =		devel/gettext,-tools
 LIB_DEPENDS =		audio/libsndfile \
 			audio/openal \
 			devel/boost \
-			devel/gettext \
+			devel/gettext,-runtime \
 			devel/physfs \
 			devel/sdl2-image \
 			devel/sdl2-ttf \

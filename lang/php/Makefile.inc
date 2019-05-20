@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.136 2019/05/14 20:20:16 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.137 2019/05/20 22:15:15 naddy Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -154,7 +154,7 @@ CONFIGURE_ARGS+=	--enable-phpdbg
 .for i in ${SAPI}
 WANTLIB$i +=		c crypto curses iconv intl lzma m onig
 WANTLIB$i +=		pthread readline ssl xml2 z
-LIB_DEPENDS$i +=	devel/gettext \
+LIB_DEPENDS$i +=	devel/gettext,-runtime \
 			textproc/libxml \
 			textproc/oniguruma
 .if ${PV} != "7.1"

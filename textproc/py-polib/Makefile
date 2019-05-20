@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/04/28 20:51:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/20 22:15:26 naddy Exp $
 
 COMMENT=	Python library to manipulate gettext files
 
@@ -21,7 +21,7 @@ FLAVOR ?=
 FLAVORS =	python3
 
 # only used on test, but poisoned if not in BUILD_DEPENDS
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 TEST_DEPENDS =	devel/py-coverage${MODPY_FLAVOR}
 

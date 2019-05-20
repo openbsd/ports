@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2019/05/02 01:03:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.189 2019/05/20 22:15:08 naddy Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -13,6 +13,7 @@ PKGNAME-main=	vim-$T
 PKGNAME-lang=	vim-lang-$T
 FULLPKGNAME-lang= vim-lang-$T
 FULLPKGPATH-lang= ${PKGPATH},-lang
+REVISION-main=	0
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
 
@@ -26,7 +27,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB +=	c curses iconv intl m
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		devel/gettext
+		devel/gettext,-runtime
 
 MULTI_PACKAGES=	-main -lang
 
@@ -53,7 +54,7 @@ CONFIGURE_ARGS+= --with-tlib="curses" \
 
 AUTOCONF_VERSION= 2.69
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-		devel/gettext-tools
+		devel/gettext,-tools
 
 .if defined(DEBUG)
 MAKE_FLAGS+= STRIP=:

@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST-textstyle,v 1.1 2019/05/20 22:15:03 naddy Exp $
+include/textstyle/
+include/textstyle.h
+include/textstyle/stdbool.h
+include/textstyle/version.h
+include/textstyle/woe32dll.h
+@info info/libtextstyle.info
+lib/libtextstyle.a
+lib/libtextstyle.la
+@lib lib/libtextstyle.so.${LIBtextstyle_VERSION}
+share/doc/libtextstyle/
+share/doc/libtextstyle/libtextstyle_1.html
+share/doc/libtextstyle/libtextstyle_2.html
+share/doc/libtextstyle/libtextstyle_3.html
+share/doc/libtextstyle/libtextstyle_4.html
+share/doc/libtextstyle/libtextstyle_5.html
+share/doc/libtextstyle/libtextstyle_6.html
+share/doc/libtextstyle/libtextstyle_7.html
+share/doc/libtextstyle/libtextstyle_abt.html
+share/doc/libtextstyle/libtextstyle_toc.html

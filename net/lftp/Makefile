@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.124 2019/03/10 18:24:48 jca Exp $
+# $OpenBSD: Makefile,v 1.125 2019/05/20 22:15:19 naddy Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
 DISTNAME=	lftp-4.8.4
 CATEGORIES=	net
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://lftp.tech/
 
@@ -20,7 +20,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 # lftp needs add_history_time()
 LIB_DEPENDS=	devel/libidn2 \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/readline>=6.1p2
 
 MASTER_SITES=	http://lftp.yar.ru/ftp/ \

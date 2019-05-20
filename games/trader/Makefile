@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/10 20:50:56 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/20 22:15:11 naddy Exp $
 
 COMMENT =	simple text-based game of interstellar trading
 
 DISTNAME =	trader-7.12
+REVISION =	0
 
 CATEGORIES =	games
 
@@ -18,7 +19,7 @@ WANTLIB +=	c curses iconv intl
 MASTER_SITES =	https://ftp.zap.org.au/pub/trader/unix/
 
 LIB_DEPENDS =	converters/libiconv \
-		devel/gettext
+		devel/gettext,-runtime
 
 CONFIGURE_STYLE = gnu
 

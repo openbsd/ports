@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/03/30 09:13:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/20 22:15:05 naddy Exp $
 
 COMMENT =		KDE framework for sharing additional application data
 DISTNAME =		knewstuff-${VERSION}
@@ -14,7 +14,7 @@ WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5Widgets Qt5Xml
 WANTLIB += m
 
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kirigami2
 
 RUN_DEPENDS =	devel/kf5/kirigami2

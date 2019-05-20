@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2016/04/12 15:19:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2019/05/20 22:15:11 naddy Exp $
 
 COMMENT=	shoot them nasty little bugs
 
 DISTNAME=	xinvaders-2.1.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	games
 
 PERMIT_PACKAGE_CDROM=	no fee
@@ -13,7 +13,7 @@ WANTLIB=	X11 Xaw Xmu Xt c iconv intl
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=games/arcade/invaders/}
 
-LIB_DEPENDS=	devel/gettext
+LIB_DEPENDS=	devel/gettext,-runtime
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-scorefile=/var/games/xinvaders.scores

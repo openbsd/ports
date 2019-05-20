@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/20 22:15:14 naddy Exp $
 
 COMMENT=	COBOL compiler, formerly known as OpenCOBOL
 
 DISTNAME =	gnucobol-2.2
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	cob	4.0	# 4.0
 
@@ -22,7 +22,7 @@ WANTLIB += c curses db gmp iconv intl m
 MASTER_SITES =	${MASTER_SITE_GNU:=gnucobol/}
 
 LIB_DEPENDS =	databases/db/v4 \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/gmp
 
 CONFIGURE_STYLE = gnu

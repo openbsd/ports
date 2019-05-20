@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/20 22:15:26 naddy Exp $
 
 COMMENT =		XML manipulation library
 
 VERSION =		0.18.3
 DISTNAME =		libnxml-${VERSION}
-REVISION =		7
+REVISION =		8
 CATEGORIES =		textproc
 MASTER_SITES =		http://www.autistici.org/bakunin/libnxml/
 SHARED_LIBS =		nxml 0.0 # 18.3
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB =  crypto curl iconv intl nghttp2 pthread ssl z
 
-LIB_DEPENDS =		devel/gettext \
+LIB_DEPENDS =		devel/gettext,-runtime \
 			net/curl
 
 CONFIGURE_STYLE=	gnu

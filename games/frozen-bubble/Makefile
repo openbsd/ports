@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/05/18 10:11:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/05/20 22:15:10 naddy Exp $
 
 COMMENT-main =		bubble popping game, like puzzle bobble
 COMMENT-server =	server for the frozen-bubble bubble popping game
@@ -6,9 +6,9 @@ COMMENT-server =	server for the frozen-bubble bubble popping game
 VER =			2.2.0
 DISTNAME =		frozen-bubble-${VER}
 PKGNAME-main =		${DISTNAME}
-REVISION-main =		12
+REVISION-main =		13
 PKGNAME-server =	frozen-bubble-server-${VER}
-REVISION-server =	8
+REVISION-server =	9
 CATEGORIES =		games
 
 HOMEPAGE =		http://www.frozen-bubble.org
@@ -29,18 +29,18 @@ MODULES =		perl
 
 BUILD_DEPENDS =		devel/p5-SDL \
 			devel/p5-Locale-gettext \
-			devel/gettext-tools
+			devel/gettext,-tools
 
 RUN_DEPENDS-main =	devel/p5-SDL \
 			devel/p5-Locale-gettext \
 			${BASE_PKGPATH},-server
 
-LIB_DEPENDS-main =	devel/gettext \
+LIB_DEPENDS-main =	devel/gettext,-runtime \
 			devel/sdl-pango \
 			devel/sdl-mixer \
 			devel/glib2
 
-LIB_DEPENDS-server =	devel/gettext \
+LIB_DEPENDS-server =	devel/gettext,-runtime \
 			devel/glib2
 
 WANTLIB-main =		SDL SDL_Pango SDL_mixer glib-2.0 gobject-2.0 \

@@ -1,0 +1,28 @@
+$OpenBSD: patch-gettext-tools_src_Makefile_in,v 1.11 2019/05/20 22:15:03 naddy Exp $
+
+Use standard shared library versioning.
+
+Do not remove static library after building.  
+This was also a race if MAKE_JOBS > 1.
+
+Index: gettext-tools/src/Makefile.in
+--- gettext-tools/src/Makefile.in.orig
++++ gettext-tools/src/Makefile.in
+@@ -2518,7 +2518,7 @@ cldr_plurals_LDADD = libgettextsrc.la $(LDADD)
+ # Need @LTLIBINTL@ because many source files use gettext().
+ # Need @LTLIBICONV@ because po-charset.c, po-lex.c, msgl-iconv.c, write-po.c
+ # use iconv().
+-libgettextsrc_la_LDFLAGS = -release @VERSION@ \
++libgettextsrc_la_LDFLAGS = \
+ 	../gnulib-lib/libgettextlib.la $(LTLIBUNISTRING) \
+ 	../../libtextstyle/lib/libtextstyle.la @LTLIBINTL@ \
+ 	@LTLIBICONV@ -lc -no-undefined $(am__append_1) $(am__append_3) \
+@@ -3957,7 +3957,7 @@ textstyle.h textstyle/stdbool.h textstyle/version.h te
+ 	  $(MAKE) install-nobase_includeHEADERS install-nobase_nodist_includeHEADERS includedir="$$here"
+ 
+ # No need to install libgettextsrc.a, except on AIX.
+-install-exec-hook: install-exec-clean
++install-exec-hook:
+ install-exec-clean:
+ 	case "@host_os@" in \
+ 	  aix*) ;; \

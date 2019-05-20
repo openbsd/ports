@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/03/30 09:13:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/20 22:15:06 naddy Exp $
 
 COMMENT =		KDE safe desktop-wide storage for passwords
 DISTNAME =		kwallet-${VERSION}
@@ -13,7 +13,7 @@ WANTLIB += KF5I18n KF5IconThemes KF5Notifications KF5Service KF5WidgetsAddons
 WANTLIB += KF5WindowSystem Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml
 WANTLIB += c gcrypt m
 
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kdoctools
 
 RUN_DEPENDS =	devel/kf5/kdoctools

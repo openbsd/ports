@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2018/01/30 15:06:37 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/20 22:15:22 naddy Exp $
 
 COMMENT = 	X.509 library
 
 DISTNAME = 	libksba-1.3.5
-REVISION =	1
+REVISION =	2
 CATEGORIES = 	security
 
 SHARED_LIBS = 	ksba 0.2	# 19.6
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM = 	Yes
 
 EXTRACT_SUFX = 		.tar.bz2
 
-LIB_DEPENDS = 		devel/gettext \
+LIB_DEPENDS = 		devel/gettext,-runtime \
 			security/libgpg-error
 WANTLIB += gpg-error iconv intl
 

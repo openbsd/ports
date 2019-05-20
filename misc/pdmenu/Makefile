@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:17 naddy Exp $
 
 COMMENT=		simple slang-based menu program
 
@@ -6,7 +6,7 @@ VERSION =		1.3.4
 DISTNAME=		pdmenu_${VERSION}
 PKGNAME=		pdmenu-${VERSION}
 CATEGORIES=     	misc
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://kitenet.net/programs/pdmenu/
 
@@ -17,8 +17,8 @@ WANTLIB=  c curses iconv intl m slang
 
 MASTER_SITES=		${MASTER_SITE_DEBIAN:=main/p/pdmenu/}
 
-BUILD_DEPENDS=		devel/gettext-tools
-LIB_DEPENDS=		devel/gettext \
+BUILD_DEPENDS=		devel/gettext,-tools
+LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/libslang
 DESTDIRNAME=		INSTALL_PREFIX
 

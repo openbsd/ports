@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2019/04/20 16:48:32 jca Exp $
+# $OpenBSD: Makefile,v 1.41 2019/05/20 22:15:19 naddy Exp $
 
 COMMENT =		authoritative DNS server
 
 DISTNAME =		knot-2.8.1
+REVISION =		0
 
 SHARED_LIBS +=	dnssec               2.0      # .7.0
 SHARED_LIBS +=	knot                 5.0      # .9.0
@@ -29,7 +30,7 @@ COMPILER =		base-clang ports-gcc ports-clang
 COMPILER_LANGS =	c
 
 BUILD_DEPENDS =		devel/bison
-LIB_DEPENDS =		devel/gettext \
+LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/libidn2 \
 			devel/liburcu \
 			security/gnutls \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/30 09:13:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/20 22:15:05 naddy Exp $
 
 COMMENT =	speed up for applications inside KDE workspaces
 DISTNAME =	kinit-${VERSION}
@@ -11,7 +11,7 @@ WANTLIB += KF5Service KF5WidgetsAddons KF5WindowSystem Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets X11 c
 WANTLIB += m xcb
 
-BUILD_DEPENDS =		devel/gettext-tools \
+BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/kf5/kdoctools
 
 RUN_DEPENDS =		devel/kf5/kdoctools

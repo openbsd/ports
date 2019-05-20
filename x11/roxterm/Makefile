@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2018/06/29 22:16:34 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2019/05/20 22:15:29 naddy Exp $
 
 COMMENT=		terminal emulator for X
 
 DISTNAME=		roxterm-2.9.7
-REVISION=		3
+REVISION=		4
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roxterm.sourceforge.net/
@@ -24,11 +24,11 @@ WANTLIB += z
 
 MODULES=		lang/python
 
-LIB_DEPENDS=		devel/gettext \
+LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/vte \
 			x11/dbus-glib
 
-BUILD_DEPENDS=		devel/gettext-tools \
+BUILD_DEPENDS=		devel/gettext,-tools \
 			sysutils/py-lockfile \
 			textproc/docbook-xsl \
 			textproc/xmlto

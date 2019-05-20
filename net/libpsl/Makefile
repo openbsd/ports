@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2019/02/05 13:19:11 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/20 22:15:19 naddy Exp $
 
 COMMENT =		public suffix list library
 
 DISTNAME =		libpsl-0.20.2
+REVISION =		0
 
 SHARED_LIBS +=		psl	1.2	# 8.1
 
@@ -23,10 +24,10 @@ MODULES =		lang/python
 
 MODPY_RUNDEP =		No
 
-BUILD_DEPENDS =		devel/gettext-tools \
+BUILD_DEPENDS =		devel/gettext,-tools \
 			sysutils/coreutils
 LIB_DEPENDS =		converters/libunistring \
-			devel/gettext \
+			devel/gettext,-runtime \
 			devel/libidn2
 
 CONFIGURE_STYLE = gnu

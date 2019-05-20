@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2019/04/01 11:16:35 sebastia Exp $
+# $OpenBSD: Makefile,v 1.26 2019/05/20 22:15:06 naddy Exp $
 
 COMMENT =		collection of C++ and CMake utility libraries
 
 GH_ACCOUNT =		puppetlabs
 GH_PROJECT =		leatherman
 GH_TAGNAME =		1.6.0
+REVISION =		0
 
 # N.B.: Upstream doesn't care about ABI, better just bump major on update
 SHARED_LIBS =	leatherman_curl           1.1 # 0.12
@@ -37,8 +38,8 @@ WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt curl
 LIB_DEPENDS =		devel/boost \
 			net/curl
 
-BUILD_DEPENDS =		devel/gettext-tools
-RUN_DEPENDS =		devel/gettext
+BUILD_DEPENDS =		devel/gettext,-tools
+RUN_DEPENDS =		devel/gettext,-runtime
 
 # needed for sysutils/facter
 CONFIGURE_ARGS +=	-DLEATHERMAN_SHARED=Yes

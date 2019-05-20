@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/17 16:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/05/20 22:15:13 naddy Exp $
 
 COMMENT =	advanced drawing and image manipulation
 
@@ -96,7 +96,7 @@ LIB_DEPENDS +=		devel/boost \
 			x11/qt5/qtsvg \
 			x11/qt5/qtx11extras
 
-BUILD_DEPENDS +=	devel/gettext-tools \
+BUILD_DEPENDS +=	devel/gettext,-tools \
 			devel/kf5/kdoctools \
 			devel/kf5/kitemmodels \
 			math/eigen3 \

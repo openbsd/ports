@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/03/31 00:09:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/05/20 22:15:19 naddy Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -24,16 +24,16 @@ PKGNAME-samba=	monitoring-plugins-samba-$V
 PKGNAME-snmp=	monitoring-plugins-snmp-$V
 PKGNAME-radius=	monitoring-plugins-radius-$V
 CATEGORIES=	net
-REVISION-dbi=	3
-REVISION-fping=	4
-REVISION-game=	3
-REVISION-ldap=	3
-REVISION-main=	7
-REVISION-mysql=	3
-REVISION-pgsql=	3
-REVISION-radius=4
+REVISION-dbi=	4
+REVISION-fping=	5
+REVISION-game=	4
+REVISION-ldap=	4
+REVISION-main=	8
+REVISION-mysql=	4
+REVISION-pgsql=	4
+REVISION-radius=5
 REVISION-samba=	2
-REVISION-snmp=	3
+REVISION-snmp=	4
 
 HOMEPAGE=	https://www.monitoring-plugins.org/
 
@@ -49,7 +49,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES=	https://www.monitoring-plugins.org/download/
 
-LIB_DEPENDS=	devel/gettext
+LIB_DEPENDS=	devel/gettext,-runtime
 
 FAKE_FLAGS=	setuid_root_mode=0555
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/20 22:15:09 naddy Exp $
 
 COMMENT =	abstract puzzle game
 
 DISTNAME =	chroma-1.13
-REVISION =	1
+REVISION =	2
 EXTRACT_SUFX =	.tar.bz2
 FIX_EXTRACT_PERMISSIONS=Yes
 
@@ -22,7 +22,7 @@ MASTER_SITES=	${HOMEPAGE}/download/
 
 CONFIGURE_STYLE =	gnu
 
-LIB_DEPENDS =	devel/gettext \
+LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/sdl-image
 CFLAGS +=	-fgnu89-inline
 

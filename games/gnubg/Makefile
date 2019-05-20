@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/04/24 16:26:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/20 22:15:10 naddy Exp $
 
 COMMENT =		GNU Backgammon
 V =			1.05.002
@@ -6,7 +6,7 @@ DISTNAME =		gnubg-release-$V-sources
 PKGNAME =		gnubg-$V
 CATEGORIES =		games x11
 HOMEPAGE =		http://gnubg.org/
-REVISION =		5
+REVISION =		6
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -26,10 +26,10 @@ WANTLIB += vorbis vorbisfile xcb xcb-dri2 xcb-glx xcb-render xcb-shm z
 MASTER_SITES =		http://gnubg.org/media/sources/
 
 MODULES =		lang/python
-BUILD_DEPENDS =		devel/gettext-tools
+BUILD_DEPENDS =		devel/gettext,-tools
 LIB_DEPENDS =		audio/libcanberra,-gtk \
 			databases/sqlite3 \
-			devel/gettext \
+			devel/gettext,-runtime \
 			devel/glib2 \
 			devel/gmp \
 			devel/pango \

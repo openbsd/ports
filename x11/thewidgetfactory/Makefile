@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/02 19:34:40 danj Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/20 22:15:30 naddy Exp $
 
 COMMENT=	showcase for GTK+ 2 widgets
 
 DISTNAME=	thewidgetfactory-0.2.1
-REVISION=	9
+REVISION=	10
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.stellingwerff.com/?page_id=10
@@ -21,7 +21,7 @@ WANTLIB += xcb-shm z
 
 MASTER_SITES=	http://www.stellingwerff.com/TheWidgetFactory/
 
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		x11/gtk+2
 
 CONFIGURE_STYLE=gnu

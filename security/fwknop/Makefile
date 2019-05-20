@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2018/08/08 07:07:25 feinerer Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/20 22:15:22 naddy Exp $
 
 COMMENT =	firewall knock operator
 
 DISTNAME =	fwknop-2.6.10
+REVISION =	0
 
 SHARED_LIBS +=	fko	0.0 # 3.0
 
@@ -23,7 +24,7 @@ BUILD_DEPENDS =		net/wget \
 			security/gnupg
 RUN_DEPENDS =		net/wget \
 			security/gnupg
-LIB_DEPENDS =		devel/gettext \
+LIB_DEPENDS =		devel/gettext,-runtime \
 			security/gpgme
 
 SEPARATE_BUILD =	Yes

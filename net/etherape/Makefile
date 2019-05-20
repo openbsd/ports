@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/01/28 22:58:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2019/05/20 22:15:19 naddy Exp $
 
 COMMENT =		graphical network monitor
 
@@ -39,7 +39,7 @@ LIB_DEPENDS =		x11/gtk+2 \
 			x11/gnome/libgnomeui
 
 # grab new macros that match *.so.n.m shared libraries
-BUILD_DEPENDS +=	devel/gettext-tools
+BUILD_DEPENDS +=	devel/gettext,-tools
 post-patch:
 	cd ${LOCALBASE}/share/aclocal && \
 	    cp lib-link.m4 lib-prefix.m4 ${WRKSRC}/m4

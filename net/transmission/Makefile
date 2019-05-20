@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2019/03/11 04:11:57 bket Exp $
+# $OpenBSD: Makefile,v 1.133 2019/05/20 22:15:20 naddy Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -15,9 +15,9 @@ PKGNAME-qt=	transmission-qt-${VER}
 CATEGORIES=	net
 HOMEPAGE=	https://transmissionbt.com/
 MAINTAINER=	Josh Grosse <josh@jggimi.net>
-REVISION-gtk=	3
-REVISION-qt=	3
-REVISION-main=	1
+REVISION-gtk=	4
+REVISION-qt=	4
+REVISION-main=	2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -56,7 +56,7 @@ WANTLIB-qt=	${WANTLIB-common} ${MODQT_WANTLIB} \
 
 MODULES+=	textproc/intltool
 
-LIB_DEPENDS-common=devel/gettext \
+LIB_DEPENDS-common=devel/gettext,-runtime \
 		devel/libevent2 \
 		net/curl \
 		net/miniupnp/libnatpmp \

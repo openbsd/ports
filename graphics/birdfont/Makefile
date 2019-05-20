@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2019/03/07 19:43:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.69 2019/05/20 22:15:12 naddy Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
 
@@ -29,7 +29,7 @@ MODULES =	lang/python
 
 MODPY_ADJ_FILES =	configure install.py
 
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/py-doit \
 		lang/vala
 

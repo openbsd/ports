@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2018/07/03 18:16:23 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2019/05/20 22:15:19 naddy Exp $
 
 COMMENT=		Gtk-based GUI client for the Gnutella Network
 
@@ -25,7 +25,7 @@ WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread z
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtk-gnutella/}
 EXTRACT_SUFX=	.tar.bz2
 
-BUILD_DEPENDS=	devel/gettext-tools \
+BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/libexecinfo
 LIB_DEPENDS=	x11/gtk+2
 RUN_DEPENDS=	devel/desktop-file-utils

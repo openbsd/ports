@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/02/02 15:25:29 kirby Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/20 22:15:02 naddy Exp $
 
 COMMENT =		Gnu All Mobile Management Utilities
 
@@ -24,7 +24,7 @@ MODULES =		devel/cmake
 
 COMPILER = 		base-clang ports-gcc
 
-BUILD_DEPENDS = 	devel/gettext-tools
+BUILD_DEPENDS = 	devel/gettext,-tools
 RUN_DEPENDS =		misc/dialog
 LIB_DEPENDS =		databases/libdbi \
 			devel/glib2 \

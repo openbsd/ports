@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2018/06/29 22:16:34 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2019/05/20 22:15:29 naddy Exp $
 
 COMMENT=		background browser and setter for X11
 
 DISTNAME=		nitrogen-1.6.1
 CATEGORIES=		x11 graphics
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://projects.l3ib.org/nitrogen/
 
@@ -24,7 +24,7 @@ MASTER_SITES=		${HOMEPAGE}/files/
 COMPILER =		base-clang ports-clang
 CXXFLAGS +=		-std=c++11
 
-LIB_DEPENDS=		devel/gettext \
+LIB_DEPENDS=		devel/gettext,-runtime \
 			x11/gtk2mm
 RUN_DEPENDS=		x11/gtk+3,-guic
 

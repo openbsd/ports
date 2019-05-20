@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2017/11/16 18:39:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2019/05/20 22:15:20 naddy Exp $
 
 COMMENT=	tool to mirror contents of HTTP and FTP servers
 
 DISTNAME=	pavuk-0.9.35
-REVISION=	9
+REVISION=	10
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pavuk.org/
@@ -18,9 +18,9 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pavuk/}
 FLAVORS=	no_x11
 FLAVOR?=
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 
-LIB_DEPENDS=	devel/gettext
+LIB_DEPENDS=	devel/gettext,-runtime
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --disable-debug --disable-socks --disable-gnome \

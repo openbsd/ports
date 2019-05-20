@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2019/03/22 11:23:50 kirby Exp $
+# $OpenBSD: Makefile,v 1.22 2019/05/20 22:15:26 naddy Exp $
 
 COMMENT =		realtime console web log analyzer
 
 DISTNAME =		goaccess-1.3
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 
@@ -18,7 +18,7 @@ WANTLIB += c crypto curses intl maxminddb pthread ssl
 
 MASTER_SITES =		https://tar.goaccess.io/
 
-LIB_DEPENDS =		devel/gettext \
+LIB_DEPENDS =		devel/gettext,-runtime \
 			net/libmaxminddb
 
 CONFIGURE_STYLE =	gnu

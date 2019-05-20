@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/02 14:51:49 danj Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/20 22:15:18 naddy Exp $
 
 COMMENT =		lightweight and simple DVD slide show maker
 DISTNAME =		imagination-3.0
-REVISION =		10
+REVISION =		11
 
 CATEGORIES =		multimedia
 
@@ -29,7 +29,7 @@ LIBTOOL_FLAGS =		--tag=disable-static
 USE_GMAKE =		Yes
 
 LIB_DEPENDS =	audio/sox \
-		devel/gettext \
+		devel/gettext,-runtime \
 		x11/gtk+2
 
 RUN_DEPENDS =	devel/desktop-file-utils \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2019/04/25 08:37:01 kirby Exp $
+# $OpenBSD: Makefile,v 1.80 2019/05/20 22:15:11 naddy Exp $
 
 PORTROACH = 	limitw:1,even
 
@@ -31,7 +31,7 @@ MODULES=	devel/cmake
 # c++11
 COMPILER = 	base-clang ports-gcc
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 LIB_DEPENDS=	devel/boost>=1.66.0p0 \
 		devel/sdl2-image \
 		devel/sdl2-mixer \

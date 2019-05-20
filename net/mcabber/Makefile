@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2019/05/17 16:19:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/05/20 22:15:19 naddy Exp $
 
 COMMENT=		console jabber client
 DISTNAME=		mcabber-1.1.0
 CATEGORIES=		net
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		https://mcabber.com/
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=		devel/glib2 \
 			net/loudmouth \
 			devel/libidn \
 			security/libotr \
-			devel/gettext
+			devel/gettext,-runtime
 
 RUN_DEPENDS=		devel/desktop-file-utils
 

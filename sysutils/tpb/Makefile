@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/01 20:12:51 danj Exp $
+# $OpenBSD: Makefile,v 1.25 2019/05/20 22:15:25 naddy Exp $
 
 # requires nvram(4) device
 ONLY_FOR_ARCHS=	amd64 i386
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 COMMENT=	utility to use ibm thinkpad(tm) special keys
 
 DISTNAME=	tpb-0.6.4
-REVISION=	6
+REVISION=	7
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.nongnu.org/tpb/
@@ -20,8 +20,8 @@ WANTLIB=  ICE SM X11 Xext Xinerama c iconv intl ossaudio pthread xosd>=4
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-xosd-config=${LOCALBASE}/bin/xosd-config
 
-BUILD_DEPENDS=	devel/gettext-tools
-LIB_DEPENDS=	devel/gettext \
+BUILD_DEPENDS=	devel/gettext,-tools
+LIB_DEPENDS=	devel/gettext,-runtime \
 		x11/xosd
 
 post-install:

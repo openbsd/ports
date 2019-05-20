@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2018/06/27 21:04:23 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/20 22:15:30 naddy Exp $
 
 COMMENT=	GTK+2 front-end for command line archiving tools
 
 V=		0.2.8-6
 DISTNAME=	xarchive-$V
 PKGNAME=	xarchive-${V:S/-/./}
-REVISION=	7
+REVISION=	8
 CATEGORIES=	x11
 
 HOMEPAGE=	http://xarchive.sourceforge.net/
@@ -21,7 +21,7 @@ WANTLIB += pthread z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xarchive/}
 
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		x11/gtk+2
 RUN_DEPENDS=	devel/desktop-file-utils
 

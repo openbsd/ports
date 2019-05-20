@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/01/29 20:58:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/05/20 22:15:27 naddy Exp $
 
 COMMENT=	X11 counterpart of curses-based misc/dialog
 
@@ -20,7 +20,7 @@ WANTLIB += pangoft2-1.0 z
 MASTER_SITES=	http://xdialog.free.fr/
 EXTRACT_SUFX=	.tar.bz2
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 LIB_DEPENDS=	x11/gtk+2
 AUTOCONF_VERSION=2.59
 CONFIGURE_STYLE=autoconf

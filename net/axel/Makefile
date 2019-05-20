@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/03/02 18:41:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/20 22:15:18 naddy Exp $
 
 COMMENT=	tiny download accelerator
 
 V=		2.16.1
 DISTNAME=	axel-$V
+REVISION=	0
 
 CATEGORIES=	net
 
@@ -16,9 +17,9 @@ MASTER_SITES=	https://github.com/axel-download-accelerator/axel/releases/downloa
 
 WANTLIB=	c crypto iconv intl pthread ssl
 
-LIB_DEPENDS=	devel/gettext
+LIB_DEPENDS=	devel/gettext,-runtime
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 
 USE_GMAKE=	Yes
 

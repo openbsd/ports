@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/03/08 20:00:49 cwen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/05/20 22:15:18 naddy Exp $
 
 COMMENT =	guitar tab editor
 
@@ -8,7 +8,7 @@ GH_COMMIT =	a7c73491ef236134de55cbdcfc9f8cafa2a76ae1
 
 # commit date YYYYMMDD
 DISTNAME =	${GH_PROJECT}-20170809
-REVISION =	2
+REVISION =	3
 
 # override kf5
 EXTRACT_SUFX =	.tar.gz
@@ -33,13 +33,13 @@ MODULES =	devel/cmake \
 		devel/kf5
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
-		devel/gettext \
+		devel/gettext,-runtime \
 		x11/gtk+3,-guic
 
 # kdelibs4support includes kdex.dtd which is necessary to generate docs
 BUILD_DEPENDS +=	devel/kf5/kdoctools \
 			devel/kf5/kdelibs4support \
-			devel/gettext-tools
+			devel/gettext,-tools
 
 LIB_DEPENDS =		devel/kf5/kauth \
 			devel/kf5/kcodecs \

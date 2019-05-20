@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/04/25 22:41:38 mortimer Exp $
+# $OpenBSD: Makefile,v 1.49 2019/05/20 22:15:14 naddy Exp $
 
 PORTROACH+=	limit:^1
 
@@ -6,7 +6,7 @@ COMMENT=	GNU's Ubiquitous Intelligent Language for Extension
 
 VERSION=	1.8.8
 DISTNAME=	guile-${VERSION}
-REVISION=	6
+REVISION=	7
 SHARED_LIBS=	guile 20.0 \
 		guile-srfi-srfi-1-v-3 3.2 \
 		guile-srfi-srfi-13-14-v-3 3.1 \
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=  c gmp>=6 iconv intl ltdl m ncurses pthread readline
 
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		devel/gmp>=4.1 \
 		devel/libtool,-ltdl
 RUN_DEPENDS=	devel/slib>=3b4

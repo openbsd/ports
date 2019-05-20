@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/12/16 20:19:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/20 22:15:24 naddy Exp $
 
 COMMENT =	library for binary signature scanning
 
@@ -30,7 +30,7 @@ WRKDIST =	${WRKDIR}/${PKGNAME}
 			
 MODULES +=	lang/python
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 LIB_DEPENDS +=	devel/libbfio
 

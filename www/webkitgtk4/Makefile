@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2019/05/17 16:56:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2019/05/20 22:15:27 naddy Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -62,7 +62,7 @@ USE_GMAKE =		Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 
 BUILD_DEPENDS =		devel/bison \
-			devel/gettext-tools \
+			devel/gettext,-tools \
 			devel/gperf \
 			devel/libexecinfo \
 			geo/geoclue2

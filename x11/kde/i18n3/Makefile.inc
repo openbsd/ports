@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2018/09/17 07:45:41 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2019/05/20 22:15:28 naddy Exp $
 
 LANGS = af ar az be bg bn br bs ca cs csb cy da de el en_GB eo es et eu fa \
 	fi fr fy ga gl he hi hr hu is it ja kk km ko lt lv mk mn ms nb nds \
@@ -28,7 +28,7 @@ VERSION =		3.5.10
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/3.5.10/src/kde-i18n/}
 
-BUILD_DEPENDS = devel/gettext-tools x11/kde/libs3
+BUILD_DEPENDS = devel/gettext,-tools x11/kde/libs3
 RUN_DEPENDS += x11/kde/libs3
 
 MODKDE_VERSION =

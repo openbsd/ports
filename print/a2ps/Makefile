@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2018/09/04 12:46:20 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2019/05/20 22:15:21 naddy Exp $
 
 COMMENT=	format files for printing on PostScript printers
 
 DISTNAME=	a2ps-4.14
-REVISION=	14
+REVISION=	15
 
 SHARED_LIBS +=  a2ps                 2.0      # 2.0
 
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	devel/gperf \
 
 RUN_DEPENDS=	print/psutils
 
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		print/libpaper
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/auxdir

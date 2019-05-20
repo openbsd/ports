@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/04 01:47:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/20 22:15:13 naddy Exp $
 
 COMMENT =		interactive fractal zoomer and morpher
 
 VERSION =		3.6
 DISTNAME =		xaos-${VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		graphics
 
@@ -19,10 +19,10 @@ WANTLIB =  X11 Xext c gsl gslcblas iconv intl m png z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xaos/XaoS/${VERSION}/}
 
-BUILD_DEPENDS =		devel/gettext-tools
+BUILD_DEPENDS =		devel/gettext,-tools
 
 LIB_DEPENDS =		graphics/png \
-			devel/gettext \
+			devel/gettext,-runtime \
 			devel/gsl
 
 USE_GMAKE =		Yes

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2018/04/27 15:19:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/20 22:15:12 naddy Exp $
 
 COMMENT =		extractor and converter for .ico and .cur files
 
 DISTNAME =		icoutils-0.32.3
+REVISION =		0
 
 CATEGORIES =		graphics
 
@@ -17,7 +18,7 @@ MASTER_SITES =		http://savannah.nongnu.org/download/icoutils/
 
 EXTRACT_SUFX =		.tar.bz2
 
-LIB_DEPENDS =		devel/gettext \
+LIB_DEPENDS =		devel/gettext,-runtime \
 			graphics/png
 
 CONFIGURE_STYLE =	gnu

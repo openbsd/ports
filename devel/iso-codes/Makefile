@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2019/04/28 20:51:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2019/05/20 22:15:04 naddy Exp $
 
 COMMENT=	lists of the country, language and currency iso names
 
@@ -28,7 +28,7 @@ MODPY_ADJ_FILES=bin/validate_json_data.py \
 		bin/pot_from_json.py \
 		bin/check_valid_utf8.py
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 
 # hardcodes python3, which isn't needed as the script already has the x bit set
 post-extract:

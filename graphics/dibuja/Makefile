@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/11/02 19:23:13 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/20 22:15:12 naddy Exp $
 
 V =		0.10.0
 COMMENT =	simple to use paint program
@@ -25,7 +25,7 @@ MASTER_SITES =	https://launchpad.net/dibuja/trunk/${V}/+download/
 
 MODULES =	textproc/intltool
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 LIB_DEPENDS =	graphics/exiv2 \
 		graphics/gegl04 \

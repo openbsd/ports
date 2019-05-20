@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2019/04/02 19:47:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/20 22:15:23 naddy Exp $
 
 COMMENT =		file, shell and text manipulation utilities
 
 DISTNAME =		coreutils-8.31
 CATEGORIES =		sysutils
+REVISION =		0
 
 MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
@@ -17,7 +18,7 @@ WANTLIB =		c iconv intl pthread
 MASTER_SITES =		${MASTER_SITE_GNU:=coreutils/}
 EXTRACT_SUFX =		.tar.xz
 
-LIB_DEPENDS =		devel/gettext
+LIB_DEPENDS =		devel/gettext,-runtime
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--program-prefix=g \

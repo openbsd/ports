@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/01/06 20:26:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/05/20 22:15:25 naddy Exp $
 
 COMMENT=	GNU versions of the diff utilities
 
@@ -8,6 +8,7 @@ DISTNAME=	diffutils-${VERSION}
 PKGNAME=	gdiff-${VERSION}
 CATEGORIES=	textproc
 HOMEPAGE=	https://www.gnu.org/software/diffutils/
+REVISION=	0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,7 +17,7 @@ WANTLIB += c iconv intl sigsegv
 
 MASTER_SITES=	${MASTER_SITE_GNU:=diffutils/}
 
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		devel/libsigsegv
 
 CONFIGURE_STYLE= gnu

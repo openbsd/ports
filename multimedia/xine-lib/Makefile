@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.140 2018/12/19 16:08:08 bcallah Exp $
+# $OpenBSD: Makefile,v 1.141 2019/05/20 22:15:18 naddy Exp $
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.2.9
-REVISION=	1
+REVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
@@ -44,7 +44,7 @@ LIB_DEPENDS=	audio/flac \
 		audio/musepack \
 		audio/speex \
 		converters/libiconv \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/sdl \
 		graphics/ffmpeg \
 		graphics/jpeg \

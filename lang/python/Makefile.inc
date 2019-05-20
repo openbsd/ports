@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.128 2019/04/21 09:32:19 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.129 2019/05/20 22:15:15 naddy Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -67,7 +67,7 @@ LIB_DEPENDS-main =	${MODGCC4_CPPLIBDEP} \
 			archivers/bzip2 \
 			databases/sqlite3 \
 			devel/libffi \
-			devel/gettext
+			devel/gettext,-runtime
 RUN_DEPENDS-main =
 WANTLIB-main =		bz2 c crypto expat ffi intl m curses panel pthread \
 			readline sqlite3 ssl util z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/30 09:13:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/20 22:15:06 naddy Exp $
 
 COMMENT =	core components and tools of the Plasma Workspaces
 DISTNAME =	plasma-framework-${VERSION}
@@ -18,7 +18,7 @@ WANTLIB += Qt5Xml SM X11 Xext c m xcb xcb-composite xcb-damage
 WANTLIB += xcb-render xcb-shape xcb-xfixes
 
 BUILD_DEPENDS =	archivers/bzip2 \
-		devel/gettext-tools \
+		devel/gettext,-tools \
 		devel/kf5/kdbusaddons \
 		devel/kf5/kdesu \
 		devel/kf5/kdoctools \

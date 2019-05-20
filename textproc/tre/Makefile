@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2017/11/19 00:53:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/05/20 22:15:26 naddy Exp $
 
 COMMENT=	lightweight regexp matching library with additional features
 
 DISTNAME=		tre-0.8.0
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		textproc
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		http://laurikari.net/tre/
 
@@ -20,7 +20,7 @@ SHARED_LIBS +=	tre                  7.0      # 5.0
 
 WANTLIB=		c iconv intl
 
-LIB_DEPENDS=		devel/gettext
+LIB_DEPENDS=		devel/gettext,-runtime
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-static

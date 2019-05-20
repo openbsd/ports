@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2017/06/23 19:50:42 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.25 2019/05/20 22:15:27 naddy Exp $
 
 COMMENT =	simple webbrowser based on webkit/gtk+
 
 DISTNAME =	surf-2.0
 CATEGORIES =	www
 HOMEPAGE =	http://surf.suckless.org/
-REVISION =	0
+REVISION =	1
 
 MAINTAINER=	Joerg Jung <jung@openbsd.org>
 
@@ -18,7 +18,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 soup-2.4 webkit2gtk-4.0 intl
 
 MASTER_SITES =	http://dl.suckless.org/surf/
 
-LIB_DEPENDS =	devel/gettext \
+LIB_DEPENDS =	devel/gettext,-runtime \
 		www/webkitgtk4
 RUN_DEPENDS =	x11/dmenu \
 		net/curl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/21 10:12:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/20 22:15:02 naddy Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -49,7 +49,7 @@ MODULES =		devel/cmake \
 			devel/kf5
 
 BUILD_DEPENDS =		databases/postgresql,-server \
-			devel/gettext-tools \
+			devel/gettext,-tools \
 			devel/kf5/breeze-icons \
 			devel/kf5/karchive \
 			x11/kde-applications/marble

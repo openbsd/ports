@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/17 13:13:40 edd Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/20 22:15:08 naddy Exp $
 
 COMMENT =	continuation and extension of Vim
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
 GH_TAGNAME =	v0.3.4
+REVISION =	0
 
 CATEGORIES =	editors devel
 HOMEPAGE =	http://neovim.org
@@ -27,7 +28,7 @@ BUILD_DEPENDS =		${RUN_DEPENDS} \
 			devel/lpeg \
 			devel/lua-bitop
 
-LIB_DEPENDS =		devel/gettext \
+LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/libtermkey \
 			devel/libuv \
 			devel/libvterm \

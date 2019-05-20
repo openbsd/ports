@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/20 22:15:07 naddy Exp $
 
 COMMENT =	libftdi, interface to ftdi debug device
 
@@ -6,7 +6,7 @@ CATEGORIES =	devel
 
 V =		1.4
 DISTNAME =	libftdi1-$V
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  ftdi1                     0.0 # 2.4
 SHARED_LIBS +=  ftdipp1                   0.0 # 2.4
@@ -29,7 +29,7 @@ MODULES =		devel/cmake \
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 BUILD_DEPENDS =		devel/boost \
 			devel/swig
-LIB_DEPENDS =		devel/gettext \
+LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/libusb1 \
 			devel/libconfuse
 

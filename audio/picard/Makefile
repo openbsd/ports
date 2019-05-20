@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/05/20 22:15:01 naddy Exp $
 
 COMMENT =		automatic audio files tagger using the MusicBrainz database
 
@@ -30,7 +30,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_DISTUTILS_INSTALL=install --prefix=${LOCALBASE} --root=${DESTDIR}
 
 # msgfmt
-BUILD_DEPENDS =		devel/gettext-tools
+BUILD_DEPENDS =		devel/gettext,-tools
 
 LIB_DEPENDS =		audio/libofa \
 			graphics/ffmpeg

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2017/09/25 09:16:13 robert Exp $
+# $OpenBSD: Makefile,v 1.45 2019/05/20 22:15:17 naddy Exp $
 
 COMMENT=		framework for streaming media
 
 V=			0.10.36
 DISTNAME=		gstreamer-${V}
-REVISION=		12
+REVISION=		13
 
 SHARED_LIBS +=  gstreamer-0.10       3.0      # 30.0
 SHARED_LIBS +=  gstbase-0.10         3.0      # 30.0
@@ -18,7 +18,7 @@ WANTLIB += pcre pthread xml2 z
 
 MASTER_SITES=		${MASTER_SITE_GST:=gstreamer/}
 
-LIB_DEPENDS=		devel/gettext \
+LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/glib2 \
 			textproc/libxml
 

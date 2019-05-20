@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2017/11/04 14:16:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/20 22:15:10 naddy Exp $
 
 COMMENT-main =	tilt the floor to roll a ball through an obstacle course
 COMMENT-data =	data for Neverball/Neverputt
 BROKEN-hppa =	SIGILL on data/ball/snowglobe/snowglobe-inner.so
 
 V =		1.6.0
-REVISION-main =	1
+REVISION-main =	2
 DISTNAME =	neverball-$V
 PKGNAME-main =	neverball-$V
 PKGNAME-data =	neverball-data-$V
@@ -27,7 +27,7 @@ WANTLIB-main =	GL SDL2 c m pthread ogg vorbis vorbisfile \
 
 MASTER_SITES =	${HOMEPAGE}
 
-BUILD_DEPENDS=		devel/gettext-tools
+BUILD_DEPENDS=		devel/gettext,-tools
 
 LIB_DEPENDS-main =	audio/libogg \
 			audio/libvorbis \
@@ -35,7 +35,7 @@ LIB_DEPENDS-main =	audio/libogg \
 			graphics/png \
 			devel/sdl2-ttf \
 			devel/physfs \
-			devel/gettext
+			devel/gettext,-runtime
 RUN_DEPENDS-data =
 LIB_DEPENDS-data =
 WANTLIB-data =

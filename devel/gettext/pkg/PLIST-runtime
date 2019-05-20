@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.27 2015/07/19 23:46:08 naddy Exp $
+@comment $OpenBSD: PLIST-runtime,v 1.1 2019/05/20 22:15:03 naddy Exp $
+@pkgpath devel/gettext
+@conflict gettext-*
 @bin bin/envsubst
 @bin bin/gettext
 bin/gettext.sh
@@ -63,6 +65,9 @@ share/doc/libasprintf/autosprintf_all.html
 share/gettext/
 share/gettext/ABOUT-NLS
 share/locale/
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/gettext-runtime.mo
 share/locale/be/
 share/locale/be/LC_MESSAGES/
 share/locale/be/LC_MESSAGES/gettext-runtime.mo

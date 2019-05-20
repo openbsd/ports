@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2018/08/15 11:59:55 chrisz Exp $
+# $OpenBSD: Makefile,v 1.121 2019/05/20 22:15:09 naddy Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
@@ -38,7 +38,7 @@ WANTLIB-share=
 MODULES=	lang/lua
 MODLUA_VERSION = 5.3
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 LIB_DEPENDS-main=	archivers/xz \
 			databases/sqlite3 \
 			net/curl

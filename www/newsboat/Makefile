@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/02 09:01:14 fcambus Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/20 22:15:27 naddy Exp $
 
 COMMENT =	RSS/Atom feed reader for text terminals
 
 V =		2.15
 DISTNAME =	newsboat-$V
+REVISION =	0
 
 CATEGORIES =	www
 
@@ -105,11 +106,11 @@ MODCARGO_CRATES +=	winapi	0.3.6	# MIT/Apache-2.0
 MODCARGO_CRATES +=	winapi-i686-pc-windows-gnu	0.4.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	winapi-x86_64-pc-windows-gnu	0.4.0	# MIT/Apache-2.0
 
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		textproc/asciidoc
 
 LIB_DEPENDS =	databases/sqlite3 \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/stfl \
 		devel/json-c \
 		textproc/libxml \

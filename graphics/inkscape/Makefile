@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.75 2019/05/17 16:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2019/05/20 22:15:12 naddy Exp $
 
 COMMENT =	SVG vector drawing application
 
 DISTNAME =	inkscape-0.92.4
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 
@@ -68,7 +68,7 @@ LIB_DEPENDS =	devel/boehm-gc \
 		x11/gtk2mm>=2.24.4
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/gettext \
+		devel/gettext,-runtime \
 		fonts/liberation-fonts \
 		textproc/py-lxml \
 		x11/gtk+3,-guic

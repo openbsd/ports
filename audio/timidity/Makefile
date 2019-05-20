@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2019/05/18 12:13:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2019/05/20 22:15:01 naddy Exp $
 
 COMMENT=	MIDI to WAV renderer and player
 
@@ -6,6 +6,7 @@ V=		2.15.0
 DISTNAME=	TiMidity++-${V}
 PKGNAME=	timidity-${V}
 CATEGORIES=	audio
+REVISION=	0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=timidity/}
 MASTER_SITES0=	https://mirrors.nycbug.org/pub/distfiles/
@@ -37,7 +38,7 @@ FLAVOR?=
 
 .if ${FLAVOR:Mgtk2}
 CONFIGURE_ARGS+=--enable-gtk
-LIB_DEPENDS+=	devel/gettext \
+LIB_DEPENDS+=	devel/gettext,-runtime \
 		x11/gtk+2
 WANTLIB+=	X11 Xcomposite Xcursor Xdamage Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo \

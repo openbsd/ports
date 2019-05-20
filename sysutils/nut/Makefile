@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2018/11/06 18:26:27 landry Exp $
+# $OpenBSD: Makefile,v 1.102 2019/05/20 22:15:25 naddy Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -15,7 +15,7 @@ PKGNAME-xml=		${DISTNAME:S/-/-xml-/}
 REVISION-main=		6
 REVISION-snmp=		2
 REVISION-xml=		3
-REVISION-cgi=		2
+REVISION-cgi=		3
 
 SHARED_LIBS +=	upsclient            4.0      # .4.0
 SHARED_LIBS +=	nutclient            0.0      # .0.0
@@ -99,7 +99,7 @@ RUN_DEPENDS-xml=	${RUN_DEPENDS} \
 LIB_DEPENDS-snmp=	net/net-snmp
 RUN_DEPENDS-snmp=	sysutils/nut
 
-LIB_DEPENDS-cgi=	devel/gettext \
+LIB_DEPENDS-cgi=	devel/gettext,-runtime \
 			graphics/jpeg \
 			graphics/gd \
 			sysutils/nut

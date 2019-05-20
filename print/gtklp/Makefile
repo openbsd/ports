@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2019/05/20 22:15:21 naddy Exp $
 
 COMMENT=		GTK+ frontend to CUPS
 
@@ -39,7 +39,7 @@ CONFIGURE_STYLE=	autoreconf
 
 AUTOMAKE_VERSION=	1.15
 AUTOCONF_VERSION=	2.69
-BUILD_DEPENDS +=	devel/gettext-tools
+BUILD_DEPENDS +=	devel/gettext,-tools
 
 post-extract:
 	rm ${WRKSRC}/po/de.po.orig

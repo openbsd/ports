@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2017/04/28 22:16:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/20 22:15:30 naddy Exp $
 
 COMMENT=		WindowMaker dock.app clock
 BROKEN-sparc64 =	ICE in change_address_1, at emit-rtl.c:1784
 
 DISTNAME=		wmclockmon-0.8.1
 CATEGORIES=		x11 x11/windowmaker
+REVISION=		0
 
 HOMEPAGE=		http://tnemeth.free.fr/projets/dockapps.html
 
@@ -19,7 +20,7 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-x11-2.0 intl pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pthread z
 
-LIB_DEPENDS=		devel/gettext \
+LIB_DEPENDS=		devel/gettext,-runtime \
 			x11/gtk+2
 
 USE_GROFF =		Yes

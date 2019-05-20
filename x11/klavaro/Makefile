@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2018/06/29 22:16:32 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/20 22:15:28 naddy Exp $
 
 COMMENT =	touch typing tutor program
 
 DISTNAME =	klavaro-1.5.0
-REVISION =	9
+REVISION =	10
 
 CATEGORIES =	x11
 
@@ -26,8 +26,8 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=klavaro/}
 
 EXTRACT_SUFX = 	.tar.bz2
 
-BUILD_DEPENDS =	devel/gettext-tools
-LIB_DEPENDS = 	devel/gettext \
+BUILD_DEPENDS =	devel/gettext,-tools
+LIB_DEPENDS = 	devel/gettext,-runtime \
 		x11/gtk+2 \
 		x11/gtkdatabox \
 		net/curl

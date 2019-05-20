@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2019/04/05 08:13:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.119 2019/05/20 22:15:15 naddy Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -8,7 +8,7 @@ DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
 FULLPKGPATH-pop3=	mail/courier-imap,-pop3
-REVISION-main=		0
+REVISION-main=		1
 REVISION-pop3=		0
 
 CATEGORIES=		mail
@@ -97,7 +97,7 @@ CONFIGURE_ARGS+=	--disable-workarounds-for-imap-client-bugs
 MULTI_PACKAGES=		-main -pop3
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			devel/gettext \
+			devel/gettext,-runtime \
 			databases/gdbm \
 			mail/courier-unicode>=2.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/03/04 12:51:16 chrisz Exp $
+# $OpenBSD: Makefile,v 1.44 2019/05/20 22:15:28 naddy Exp $
 
 COMMENT =	OCaml interface to GTK+2
 
@@ -6,6 +6,7 @@ V =		2.18.6
 DISTNAME =	lablgtk-$V
 PKGNAME =	lablgtk2-$V
 CATEGORIES =	x11 devel
+REVISION =	0
 
 HOMEPAGE =	http://lablgtk.forge.ocamlcore.org/
 MASTER_SITES =	https://forge.ocamlcore.org/frs/download.php/1726/
@@ -23,7 +24,7 @@ WANTLIB += xml2 z
 BUILD_DEPENDS =	sysutils/findlib
 
 LIB_DEPENDS =	x11/gtk+2 \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/libglade2 \
 		x11/gtksourceview \
 		x11/gnome/libgnomecanvas \

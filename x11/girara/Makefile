@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/03/27 23:28:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/20 22:15:27 naddy Exp $
 
 COMMENT =	user interface library from pwmt
 DISTNAME =	girara-0.3.2
@@ -18,7 +18,7 @@ WANTLIB += gobject-2.0 gtk-3 intl json-c m pango-1.0 pangocairo-1.0
 MASTER_SITES =	https://pwmt.org/projects/girara/download/
 MODULES =	devel/meson
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 LIB_DEPENDS =	x11/gtk+3 \
 		devel/json-c
 

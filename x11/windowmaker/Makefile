@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2017/10/23 17:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.105 2019/05/20 22:15:30 naddy Exp $
 
 COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
@@ -6,7 +6,7 @@ COMMENT-lang=		language subpackage for Window Maker
 V =			0.95.8
 DISTNAME=		WindowMaker-${V}
 PKGNAME-main=		${DISTNAME:L}
-REVISION-main=		2
+REVISION-main=		3
 FULLPKGNAME-lang=	windowmaker-lang-${V}
 
 SHARED_LIBS +=  WINGs                     1.0 # 4.0
@@ -45,8 +45,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 
 MULTI_PACKAGES=		-main -lang
 
-BUILD_DEPENDS=		devel/gettext-tools
-LIB_DEPENDS=		devel/gettext \
+BUILD_DEPENDS=		devel/gettext,-tools
+LIB_DEPENDS=		devel/gettext,-runtime \
 			graphics/tiff \
 			graphics/png \
 			graphics/giflib

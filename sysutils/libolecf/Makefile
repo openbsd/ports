@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/11/29 14:50:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/20 22:15:24 naddy Exp $
 
 COMMENT =	library and tools to access the OLE 2 Compound File
 
@@ -30,7 +30,7 @@ WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 LIB_DEPENDS +=	devel/libbfio
 

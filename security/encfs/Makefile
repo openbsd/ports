@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2018/10/16 17:51:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/20 22:15:22 naddy Exp $
 
 COMMENT =		fuse-based cryptographic filesystem
 
 V =			1.9.5
 DISTNAME =		encfs-$V
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		security
 
@@ -24,8 +24,8 @@ MODULES =		devel/cmake \
 
 MODPY_RUNDEP =		No
 
-BUILD_DEPENDS =		devel/gettext-tools
-LIB_DEPENDS =		devel/gettext \
+BUILD_DEPENDS =		devel/gettext,-tools
+LIB_DEPENDS =		devel/gettext,-runtime \
 			textproc/tinyxml2
 
 CONFIGURE_ARGS =	-DUSE_INTERNAL_TINYXML=Off \

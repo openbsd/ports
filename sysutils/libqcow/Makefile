@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/11/02 19:12:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/20 22:15:24 naddy Exp $
 
 COMMENT =	library and tools to access the QEMU Copy-On-Write (QCOW)
 
@@ -30,7 +30,7 @@ WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 LIB_DEPENDS +=	devel/libbfio
 

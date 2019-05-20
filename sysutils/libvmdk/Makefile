@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/11/28 15:27:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/20 22:15:25 naddy Exp $
 
 COMMENT =	library and tools to access the VMware Virtual Disk format
 
@@ -30,7 +30,7 @@ WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 LIB_DEPENDS +=	devel/libbfio
 

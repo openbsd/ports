@@ -1,11 +1,23 @@
-# $OpenBSD: Makefile,v 1.87 2018/10/25 13:21:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.88 2019/05/20 22:15:03 naddy Exp $
 
-COMMENT=	GNU gettext runtime libraries and programs
+COMMENT-runtime=	GNU gettext runtime libraries and programs
+COMMENT-textstyle=	text styling library
+COMMENT-tools=		GNU gettext development and translation tools
 
-DISTNAME=	gettext-0.19.8.1
-REVISION =	3
-SHARED_LIBS +=  intl                 6.0      # 9.5
+VERSION=		0.20.1
+DISTNAME=		gettext-${VERSION}
+PKGNAME-runtime=	gettext-runtime-${VERSION}
+PKGNAME-textstyle=	libtextstyle-${VERSION}
+PKGNAME-tools=		gettext-tools-${VERSION}
+
+SHARED_LIBS +=  intl                 6.0      # 9.6
 SHARED_LIBS +=  asprintf             1.1      # unknown
+SHARED_LIBS +=  textstyle            0.0      # 0.0
+SHARED_LIBS +=  gettextlib           8.0      # unknown
+SHARED_LIBS +=  gettextsrc           7.0      # unknown
+SHARED_LIBS +=  gettextpo            9.0      # 5.5
+
+SUBST_VARS=	VERSION
 
 CATEGORIES=	devel
 # DPB: parallel-safe, not worth it. Too much time in configure
@@ -20,21 +32,34 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # LGPLv2.1, GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-LIB_DEPENDS=	converters/libiconv
-WANTLIB=	c m iconv ${COMPILER_LIBCXX}
+MULTI_PACKAGES=	-runtime -textstyle -tools
+SUBPACKAGE?=	-runtime
+
+WANTLIB-runtime=	c iconv m ${COMPILER_LIBCXX}
+WANTLIB-textstyle=	curses iconv m
+WANTLIB-tools=		c curses iconv intl m textstyle
+
+LIB_DEPENDS=		converters/libiconv
+LIB_DEPENDS-tools=	${BASE_PKGPATH},-runtime \
+			${BASE_PKGPATH},-textstyle
 
 # on critical path to lang/gcc.  XXX c++ used in libasprintf but seems
 # unused at present; may need to revisit if this changes
 COMPILER =		base-clang base-gcc
 
-WRKSRC=		${WRKDIST}/gettext-runtime
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-csharp \
 		--disable-java \
+		--disable-acl \
 		--with-libiconv-prefix="${LOCALBASE}" \
-		--with-included-gettext
+		--with-included-gettext \
+		--with-included-libunistring \
+		--with-included-libxml \
+		--without-emacs \
+		--without-git
 
-MODGNU_CONFIG_GUESS_DIRS=${WRKDIST}/build-aux
+MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/build-aux \
+				${WRKSRC}/libtextstyle/build-aux
 
 EXTRA_LOCALES=	en he lv no
 # only in gettext-tools
@@ -43,6 +68,11 @@ EXTRA_LOCALES+=	eu pa
 post-install:
 	for l in ${EXTRA_LOCALES}; do \
 		${INSTALL_DATA_DIR} ${PREFIX}/share/locale/$$l/LC_MESSAGES; \
+	done
+	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
+	for f in start-po.el po-mode.el po-compat.el; do \
+		${INSTALL_DATA} ${WRKSRC}/gettext-tools/emacs/$$f \
+			${PREFIX}/share/emacs/site-lisp; \
 	done
 
 .include <bsd.port.mk>

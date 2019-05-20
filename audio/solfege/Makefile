@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/27 21:03:37 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/20 22:15:01 naddy Exp $
 
 COMMENT =	solfege and ear training program
 DISTNAME =	solfege-3.22.2
@@ -15,7 +15,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=solfege/}
 
 MODULES =	lang/python
 
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		print/lilypond,-main \
 		sysutils/coreutils \
 		x11/py-gtk2

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2019/05/20 15:28:29 bket Exp $
+# $OpenBSD: Makefile,v 1.50 2019/05/20 22:15:20 naddy Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
 DISTNAME=	openconnect-8.03
+REVISION=	0
 
 SHARED_LIBS +=  openconnect               4.4 # 5.5
 
@@ -29,12 +30,12 @@ MODULES=	lang/python
 MODPY_RUNDEP=	No
 # groff is used to format html during build, USE_GROFF not needed
 # XXX can probably convert to using mandoc?
-BUILD_DEPENDS=	devel/gettext-tools \
+BUILD_DEPENDS=	devel/gettext,-tools \
 		textproc/groff \
 		textproc/py-xml
 RUN_DEPENDS=	net/vpnc-scripts
 LIB_DEPENDS=	archivers/lz4 \
-		devel/gettext \
+		devel/gettext,-runtime \
 		security/gnutls \
 		textproc/libxml
 # also wants socket_wrapper and uid_wrapper from cwrap to be present at

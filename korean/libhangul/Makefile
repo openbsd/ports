@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/18 16:50:34 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/20 22:15:14 naddy Exp $
 
 COMMENT=	hangul input library
 
 DISTNAME=	libhangul-0.1.0
 DISTFILES=	3442-${DISTNAME}${EXTRACT_SUFX}
+REVISION=	0
 
 SHARED_LIBS=	hangul	1.0	# .1.0
 
@@ -17,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c iconv intl
 
 LIB_DEPENDS=	converters/libiconv \
-		devel/gettext
+		devel/gettext,-runtime
 
 MASTER_SITES=	http://kldp.net/hangul/release/
 

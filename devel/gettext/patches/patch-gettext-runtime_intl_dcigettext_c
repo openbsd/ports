@@ -1,6 +1,7 @@
-$OpenBSD: patch-gettext-runtime_intl_dcigettext_c,v 1.7 2014/07/10 20:42:28 naddy Exp $
---- gettext-runtime/intl/dcigettext.c.orig	Tue Apr 15 03:52:10 2014
-+++ gettext-runtime/intl/dcigettext.c	Tue Jul  8 23:49:09 2014
+$OpenBSD: patch-gettext-runtime_intl_dcigettext_c,v 1.8 2019/05/20 22:15:03 naddy Exp $
+Index: gettext-runtime/intl/dcigettext.c
+--- gettext-runtime/intl/dcigettext.c.orig
++++ gettext-runtime/intl/dcigettext.c
 @@ -505,6 +505,7 @@ DCIGETTEXT (const char *domainname, const char *msgid1
    const char *localename;
  #endif
@@ -24,7 +25,7 @@ $OpenBSD: patch-gettext-runtime_intl_dcigettext_c,v 1.7 2014/07/10 20:42:28 nadd
 -	      resolved_dirname = (char *) alloca (path_max + dirname_len);
 +	      resolved_dirname_len = path_max + dirname_len;
 +	      resolved_dirname = (char *) alloca (resolved_dirname_len);
- 	      ADD_BLOCK (block_list, tmp_dirname);
+ 	      ADD_BLOCK (block_list, resolved_dirname);
  
  	      __set_errno (0);
 @@ -650,7 +653,8 @@ DCIGETTEXT (const char *domainname, const char *msgid1

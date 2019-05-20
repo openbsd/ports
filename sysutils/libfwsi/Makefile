@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/01 07:44:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/20 22:15:24 naddy Exp $
 
 COMMENT =	library to access the Windows Shell Item format
 
@@ -28,7 +28,7 @@ WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 TEST_DEPENDS +=	shells/bash
 

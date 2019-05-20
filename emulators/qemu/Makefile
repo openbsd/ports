@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.184 2019/05/09 05:12:53 ratchov Exp $
+# $OpenBSD: Makefile,v 1.185 2019/05/20 22:15:09 naddy Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc sparc64
 COMMENT=	multi system emulator
 
 DISTNAME=	qemu-3.1.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
@@ -32,13 +32,13 @@ COMPILER =	base-clang ports-gcc
 MODULES=	lang/python
 
 
-BUILD_DEPENDS=	devel/gettext-tools \
+BUILD_DEPENDS=	devel/gettext,-tools \
 		textproc/texi2html
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/lzo2 \
 		devel/capstone/main \
 		devel/dtc \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/glib2 \
 		devel/libiscsi \
 		devel/libnfs \

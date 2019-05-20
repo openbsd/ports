@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2019/02/06 23:05:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2019/05/20 22:15:22 naddy Exp $
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
 DISTNAME =	gnupg-2.2.12
 CATEGORIES = 	security
+REVISION =	0
 
 # don't mix up dependencies with gnupg1
 PKGSPEC =	gnupg->=2
@@ -27,7 +28,7 @@ FLAVOR ?=
 
 LIB_DEPENDS =		archivers/bzip2 \
 			databases/sqlite3 \
-			devel/gettext \
+			devel/gettext,-runtime \
 			devel/libusb1 \
 			devel/npth>=1.5 \
 			security/gnutls \

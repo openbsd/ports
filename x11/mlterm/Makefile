@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.60 2019/04/24 16:26:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2019/05/20 22:15:29 naddy Exp $
 
 COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-3.8.3
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS+=	mef	0.0 # 1.0
 SHARED_LIBS+=	pobl	0.0 # 1.0
@@ -24,10 +24,10 @@ WANTLIB += util xcb xcb-render xcb-shm z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mlterm/}
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 
 LIB_DEPENDS=	devel/fribidi \
-		devel/gettext \
+		devel/gettext,-runtime \
 		x11/gtk+2
 
 FAKE_FLAGS=	INSTALL_DATA="${INSTALL_DATA}" \

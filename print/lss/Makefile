@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/06/27 21:04:01 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/20 22:15:21 naddy Exp $
 
 COMMENT=		LaTeX symbols selector
 
@@ -20,7 +20,7 @@ WANTLIB += xcb xml2 z
 
 MASTER_SITES=		${HOMEPAGE}
 
-BUILD_DEPENDS=		devel/gettext-tools
+BUILD_DEPENDS=		devel/gettext,-tools
 
 LIB_DEPENDS=		textproc/libxml \
 			x11/gtk+2

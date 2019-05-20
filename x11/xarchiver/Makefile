@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2018/06/29 22:16:35 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2019/05/20 22:15:30 naddy Exp $
 
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
@@ -6,7 +6,7 @@ GH_ACCOUNT =	ib
 GH_PROJECT =	xarchiver
 GH_COMMIT =		358d2f86a74cc37573e6c5175f40f2a810c2b0a7
 DISTNAME =		xarchiver-0.5.4.12pl0
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =	http://xarchiver.sourceforge.net
 
@@ -23,7 +23,7 @@ BUILD_DEPENDS =	textproc/libxslt
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-LIB_DEPENDS =	devel/gettext \
+LIB_DEPENDS =	devel/gettext,-runtime \
 		x11/gtk+3
 RUN_DEPENDS =	archivers/zip \
 		archivers/unzip \

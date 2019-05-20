@@ -1,4 +1,4 @@
-# $OpenBSD: kde-applications.port.mk,v 1.2 2019/03/24 11:56:57 rsadowski Exp $
+# $OpenBSD: kde-applications.port.mk,v 1.3 2019/05/20 22:15:28 naddy Exp $
 
 # Module for KDE applications related ports, divided into 16 categories:
 # - accessibility
@@ -34,7 +34,7 @@ MODKDE5_RUN_DEPENDS +=		x11/gtk+3,-guic
 
 # Set to 'yes' if there are icon files under share/locale/.
 .if defined(MODKDE5_TRANSLATIONS) && ${MODKDE5_TRANSLATIONS:L} == "yes"
-MODKDE5_BUILD_DEPENDS +=	devel/gettext-tools
+MODKDE5_BUILD_DEPENDS +=	devel/gettext,-tools
 .endif
 
 # Set to 'yes' if there are icon files under share/doc/.

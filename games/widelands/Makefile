@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/05/20 22:15:11 naddy Exp $
 
 COMMENT=	economic and military simulation game
 BROKEN-sparc64=	generates 240Mb log with 'terminate called recursively'
@@ -8,7 +8,7 @@ DISTNAME= 	widelands-build${V}-src
 PKGNAME=	widelands-0.${V}
 CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://wl.widelands.org/
 MASTER_SITES =	https://launchpad.net/widelands/build${V}/build${V}/+download/
@@ -23,9 +23,9 @@ WANTLIB += c execinfo iconv icuuc intl m png z
 # c++11
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 LIB_DEPENDS =	devel/boost \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/libexecinfo \
 		devel/sdl2-image \
 		devel/sdl2-mixer \

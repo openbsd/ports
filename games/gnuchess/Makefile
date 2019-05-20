@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/05/20 22:15:10 naddy Exp $
 
 COMMENT=	chess program
 
 DISTNAME=	gnuchess-6.2.5
 DISTFILES=	${DISTNAME}.tar.gz book_1.02.pgn.gz
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	games
 HOMEPAGE=	http://www.gnu.org/software/chess/
@@ -17,7 +17,7 @@ WANTLIB += c iconv intl m ncurses pthread readline ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-LIB_DEPENDS=	devel/gettext
+LIB_DEPENDS=	devel/gettext,-runtime
 
 BUILD_DEPENDS=	devel/help2man
 

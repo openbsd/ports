@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/07/09 15:09:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/20 22:15:30 naddy Exp $
 
 COMMENT=		Tangerine icon theme from Ubuntu
 
@@ -19,7 +19,7 @@ WRKDIST=		${WRKDIR}/tangerine-icon-theme-0.27
 
 RUN_DEPENDS=		x11/gtk+3,-guic
 
-BUILD_DEPENDS=		devel/gettext \
+BUILD_DEPENDS=		devel/gettext,-runtime \
 			misc/findutils \
 			x11/icon-naming-utils
 

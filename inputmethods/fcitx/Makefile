@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/02/20 06:16:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/20 22:15:13 naddy Exp $
 
 COMMENT-main =	flexible input method framework
 COMMENT-gtk3 = 	fcitx for GTK+3
@@ -39,7 +39,7 @@ WANTLIB-main +=		ICE X11 Xcomposite Xcursor Xdamage Xext Xfixes \
 			gobject-2.0 gtk-x11-2.0 pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 pthread uuid xkbcommon xkbfile xml2 z
 
-BUILD_DEPENDS =		devel/gettext-tools \
+BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/gobject-introspection \
 			devel/iso-codes \
 			devel/kf5/extra-cmake-modules \
@@ -48,7 +48,7 @@ RUN_DEPENDS-main =	devel/desktop-file-utils \
 			misc/shared-mime-info \
 			shells/bash \
 			x11/gtk+3,-guic
-LIB_DEPENDS-main =	devel/gettext-tools \
+LIB_DEPENDS-main =	devel/gettext,-tools \
 			devel/libexecinfo \
 			sysutils/e2fsprogs \
 			textproc/libxml \

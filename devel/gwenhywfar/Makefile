@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/05/20 22:15:04 naddy Exp $
 
 COMMENT=	helper library for networking and security applications
 
@@ -34,7 +34,7 @@ MASTER_SITES=	http://www.aquamaniac.de/sites/download/
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		x11/qt4
-BUILD_DEPENDS=		devel/gettext-tools
+BUILD_DEPENDS=		devel/gettext,-tools
 LIB_DEPENDS=		graphics/png \
 			security/libgcrypt \
 			security/gnutls \

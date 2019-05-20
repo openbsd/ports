@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2017/11/03 14:06:57 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/20 22:15:30 naddy Exp $
 
 COMMENT=		display control panel for X.org SiS driver
 
 DISTNAME=		sisctrl-0.0.20051202
-REVISION=		10
+REVISION=		11
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.winischhofer.eu/linuxsispart1.shtml\#sisctrl
@@ -19,7 +19,7 @@ WANTLIB += pangoft2-1.0 z
 
 MASTER_SITES=		http://www.winischhofer.net/sis/
 
-LIB_DEPENDS=		devel/gettext \
+LIB_DEPENDS=		devel/gettext,-runtime \
 			x11/gtk+2
 
 NO_TEST=		Yes

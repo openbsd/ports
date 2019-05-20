@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/02/24 09:56:09 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/20 22:15:24 naddy Exp $
 
 COMMENT =	library and tools to access the Windows Event Log (EVT)
 
@@ -32,7 +32,7 @@ WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
 
-BUILD_DEPENDS +=	devel/gettext-tools
+BUILD_DEPENDS +=	devel/gettext,-tools
 LIB_DEPENDS +=	devel/libbfio
 
 TEST_DEPENDS +=	shells/bash

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/04/01 04:29:35 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/20 22:15:14 naddy Exp $
 
 COMMENT =	pinyin wrapper for fcitx
 
@@ -26,7 +26,7 @@ DISTFILES +=	${DISTNAME}.tar.gz model.text.20161206.tar.gz:0
 DIST_SUBDIR =	fcitx-libpinyin
 
 MODULES =	devel/cmake
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		inputmethods/fcitx,-main
 RUN_DEPENDS =	devel/desktop-file-utils \
 		inputmethods/fcitx,-main \

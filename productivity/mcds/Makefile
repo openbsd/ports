@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/02 15:52:58 kmos Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/20 22:15:22 naddy Exp $
 
 COMMENT =		tty-based carddav search tool
 
 V =			0.9
 DISTNAME =		mcds-${V}
 CATEGORIES =		productivity
+REVISION =		0
 
 MAINTAINER =		Timothy Brown <tbrown@freeshell.org>
 
@@ -15,7 +16,7 @@ WANTLIB =		c curl iconv intl xml2
 
 MASTER_SITES =		https://github.com/t-brown/mcds/releases/download/v${V}/
 
-LIB_DEPENDS =		devel/gettext \
+LIB_DEPENDS =		devel/gettext,-runtime \
 			net/curl \
 			textproc/libxml
 

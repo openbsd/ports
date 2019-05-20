@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/07 16:52:35 danj Exp $
+# $OpenBSD: Makefile,v 1.24 2019/05/20 22:15:19 naddy Exp $
 
 COMMENT =		GTK+2 IRC Client
 DISTNAME =		hexchat-2.12.3
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net x11
-REVISION =		6
+REVISION =		7
 
 HOMEPAGE =		http://hexchat.github.io/
 # GPLv2+
@@ -31,7 +31,7 @@ MODLUA_VERSION =	5.3
 
 BUILD_DEPENDS =		devel/iso-codes
 
-LIB_DEPENDS =		devel/gettext \
+LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/libnotify \
 			net/libproxy \
 			x11/gtk+2 \

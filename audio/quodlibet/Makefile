@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/04/30 21:52:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/05/20 22:15:01 naddy Exp $
 
 COMMENT=	audio player and tagger for GTK+ with regex support
 
@@ -36,8 +36,8 @@ RUN_DEPENDS+=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		devel/gettext \
-		devel/gettext-tools
+		devel/gettext,-runtime \
+		devel/gettext,-tools
 MODPY_ADJ_FILES= *py
 
 MODPY_DISTUTILS_INSTALLARGS= --mandir=${PREFIX}/man

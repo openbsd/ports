@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/11/17 15:20:00 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/20 22:15:07 naddy Exp $
 
 COMMENT=		manage large numbers of patches
 
@@ -28,7 +28,7 @@ RUN_DEPENDS=		devel/gpatch \
 			textproc/gsed
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			devel/gettext-tools
+			devel/gettext,-tools
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-date=${LOCALBASE}/bin/gdate \

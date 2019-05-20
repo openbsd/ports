@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2019/01/31 11:14:33 bentley Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/20 22:15:11 naddy Exp $
 
 COMMENT=	x bust a move clone
 
 DISTNAME=	xbubble-0.5.8
-REVISION =	2
+REVISION =	3
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.nongnu.org/xbubble/
@@ -17,7 +17,7 @@ MASTER_SITES=		https://gentoo.osuosl.org/distfiles/ \
 			ftp://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/distfiles/
 			
 
-LIB_DEPENDS=		devel/gettext \
+LIB_DEPENDS=		devel/gettext,-runtime \
 			graphics/png
 
 USE_GMAKE=		Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/05/20 22:15:03 naddy Exp $
 
 COMMENT=	documentation system for C, C++, IDL and Java
 
 DISTNAME=	doc++-3.4.10
-REVISION =	12
+REVISION =	13
 CATEGORIES=	devel
 
 HOMEPAGE=	http://docpp.sourceforge.net/
@@ -23,9 +23,9 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 
-LIB_DEPENDS=	devel/gettext
+LIB_DEPENDS=	devel/gettext,-runtime
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/doc++

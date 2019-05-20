@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/19 00:53:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/20 22:15:17 naddy Exp $
 
 COMMENT=	Unicode utilities
 
 DISTNAME=	uniutils-2.27
-REVISION=	1
+REVISION=	2
 CATEGORIES=	misc
 
 HOMEPAGE=	http://billposer.org/Software/unidesc.html
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c iconv intl
 
-LIB_DEPENDS=	devel/gettext
+LIB_DEPENDS=	devel/gettext,-runtime
 
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 

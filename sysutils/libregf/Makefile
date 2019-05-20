@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/07/17 07:35:55 rpointel Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/20 22:15:24 naddy Exp $
 
 COMMENT =	library and tools to access the Windows NT Registry File
 
@@ -32,7 +32,7 @@ WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 LIB_DEPENDS +=	devel/libbfio \
 		sysutils/libfwnt

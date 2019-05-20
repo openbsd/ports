@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/12/05 16:25:46 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/20 22:15:29 naddy Exp $
 
 COMMENT=		Perl bindings to the GtkImageView image viewer widget
 
 DISTNAME=		Gtk2-ImageView-0.05
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		x11
 FIX_EXTRACT_PERMISSIONS=Yes
@@ -21,7 +21,7 @@ MODULES=	cpan
 
 MODCPAN_EXAMPLES=	Yes
 
-LIB_DEPENDS=		devel/gettext \
+LIB_DEPENDS=		devel/gettext,-runtime \
 			graphics/gtkimageview
 
 BUILD_DEPENDS=		devel/p5-ExtUtils-Depends \

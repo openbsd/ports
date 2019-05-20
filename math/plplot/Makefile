@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2019/05/03 22:29:00 steven Exp $
+# $OpenBSD: Makefile,v 1.64 2019/05/20 22:15:16 naddy Exp $
 
 BROKEN-powerpc = Error: Kind -2 not supported for type INTEGER at (1)
 
@@ -20,7 +20,7 @@ PKGNAME-c++ =	plplot-c++-${VERSION}
 PKGNAME-fortran =	plplot-fortran-${VERSION}
 REVISION-c++ =	2
 REVISION-fortran =	2
-REVISION-main =	2
+REVISION-main =	3
 
 CATEGORIES =	math graphics
 
@@ -76,7 +76,7 @@ WANTLIB-c++ =	plplot m ${COMPILER_LIBCXX}
 WANTLIB-fortran = plplot m ${MODFORTRAN_WANTLIB}
 
 myLIB_DEPENDS =	devel/glib2 \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/pango \
 		graphics/cairo \
 		math/qhull \

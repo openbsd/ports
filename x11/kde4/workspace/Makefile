@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.70 2019/04/29 00:42:09 jeremy Exp $
+# $OpenBSD: Makefile,v 1.71 2019/05/20 22:15:28 naddy Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-4.11.21
-REVISION =	28
+REVISION =	29
 
 MASTER_SITES =	${MASTER_SITE_KDE:=Attic/applications/15.04.3/src/}
 
@@ -94,7 +94,7 @@ BUILD_DEPENDS =	misc/shared-desktop-ontologies \
 		${MODKDE4_DEP_DIR}/py-kde>=${MODKDE4_DEP_VERSION} \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/gettext \
+		devel/gettext,-runtime \
 		misc/shared-desktop-ontologies \
 		x11/gtk+3,-guic \
 		x11/polkit-qt, \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/03/08 20:00:55 cwen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/05/20 22:15:28 naddy Exp $
 
 COMMENT=	twin panel file manager for KDE
 
@@ -35,7 +35,7 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/kde-applications/kompare
 
 BUILD_DEPENDS +=devel/kf5/kdoctools \
-		devel/gettext-tools
+		devel/gettext,-tools
 
 LIB_DEPENDS +=	devel/kf5/karchive \
 		devel/kf5/kbookmarks \

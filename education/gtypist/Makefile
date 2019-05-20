@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2019/05/17 16:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/05/20 22:15:09 naddy Exp $
 
 COMMENT=	interactive typing tutor
 
 DISTNAME=	gtypist-2.9.5
-REVISION=	2
+REVISION=	3
 CATEGORIES=	education
 HOMEPAGE=	https://www.gnu.org/software/gtypist/
 
@@ -17,7 +17,7 @@ WANTLIB += c curses iconv intl
 MASTER_SITES=	${MASTER_SITE_GNU:=gtypist/}
 EXTRACT_SUFX=	.tar.xz
 
-LIB_DEPENDS=	devel/gettext
+LIB_DEPENDS=	devel/gettext,-runtime
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${WRKDIR}/include" \

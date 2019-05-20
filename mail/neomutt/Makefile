@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2018/10/29 17:55:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/05/20 22:15:16 naddy Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
 GH_TAGNAME=	neomutt-20180716
-REVISION=	0
+REVISION=	1
 DISTNAME=	${GH_TAGNAME}
 
 CATEGORIES=	mail
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 # uses pledge()
 WANTLIB+=	c crypto curses iconv idn2 intl ssl z
 
-LIB_DEPENDS+=	devel/gettext \
+LIB_DEPENDS+=	devel/gettext,-runtime \
 		devel/libidn2
 BUILD_DEPENDS+=	textproc/docbook-xsl \
 		www/lynx
@@ -30,7 +30,7 @@ FLAVOR?=
 
 CONFIGURE_STYLE= simple
 BUILD_DEPENDS+=	lang/jimtcl \
-		devel/gettext-tools
+		devel/gettext,-tools
 CONFIGURE_ARGS+= --mandir="${PREFIX}/man" \
 		--with-ui=ncurses \
 		--docdir="${PREFIX}/share/doc/neomutt" \

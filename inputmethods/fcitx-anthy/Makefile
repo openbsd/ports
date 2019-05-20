@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/20 22:15:13 naddy Exp $
 
 COMMENT =	anthy wrapper for fcitx
 
@@ -22,7 +22,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake
 
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		inputmethods/fcitx,-main
 RUN_DEPENDS =	inputmethods/fcitx,-main
 LIB_DEPENDS =	inputmethods/anthy

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/03/08 20:00:50 cwen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/20 22:15:19 naddy Exp $
 
 COMMENT =	KTorrent engine
 
@@ -23,7 +23,7 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/ktorrent/5.1/}
 MODULES =		devel/kf5
 
 BUILD_DEPENDS =	devel/boost \
-		devel/gettext-tools
+		devel/gettext,-tools
 
 LIB_DEPENDS =	devel/gmp \
 		security/libgcrypt \

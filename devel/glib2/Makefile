@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.305 2019/05/13 20:24:14 robert Exp $
+# $OpenBSD: Makefile,v 1.306 2019/05/20 22:15:04 naddy Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -8,7 +8,7 @@ COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
 GNOME_VERSION=		2.60.2
-REVISION=		1
+REVISION=		2
 PKGNAME=		${DISTNAME:S/glib/glib2/}
 
 CATEGORIES=		devel
@@ -43,7 +43,7 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 # meson: have_bash, needed to install bash-completion snippets
 BUILD_DEPENDS +=	shells/bash
 
-LIB_DEPENDS=		devel/gettext \
+LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/pcre \
 			devel/libffi
 

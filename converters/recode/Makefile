@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2019/05/20 22:15:02 naddy Exp $
 
 COMMENT=	convert files between character sets and usages
 
 DISTNAME=	recode-3.6
-REVISION =	11
+REVISION =	12
 SHARED_LIBS +=	recode               0.0      # .0.0
 
 CATEGORIES=	converters textproc
@@ -22,7 +22,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=recode/}
 
 MODPY_RUNDEP=	No
 
-LIB_DEPENDS=	devel/gettext
+LIB_DEPENDS=	devel/gettext,-runtime
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--without-included-gettext

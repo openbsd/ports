@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/01/09 21:02:36 schwarze Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/20 22:15:11 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT =		role playing game
 V =			0.5.8
 DISTNAME =		sumwars-${V}-src
 PKGNAME =		sumwars-${V}
-REVISION =		5
+REVISION =		6
 
 SUBST_VARS +=		V
 
@@ -37,7 +37,7 @@ COMPILER =		base-clang ports-gcc
 LIB_DEPENDS =		x11/cegui \
 			audio/freealut \
 			audio/libvorbis \
-			devel/gettext \
+			devel/gettext,-runtime \
 			devel/physfs \
 			devel/ois \
 			net/enet

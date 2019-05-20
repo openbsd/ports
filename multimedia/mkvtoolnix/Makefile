@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.90 2019/05/15 11:50:38 jca Exp $
+# $OpenBSD: Makefile,v 1.91 2019/05/20 22:15:18 naddy Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
 DISTNAME=	mkvtoolnix-33.0.0
+REVISION=	0
 
 CATEGORIES=	multimedia x11
 
@@ -28,7 +29,7 @@ MODRUBY_RUNDEP=	No
 # C++11 / C++14
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS=	devel/gettext-tools \
+BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/gtest \
 		textproc/docbook \
 		textproc/docbook-xsl \
@@ -39,7 +40,7 @@ LIB_DEPENDS=	audio/flac \
 		audio/libvorbis \
 		devel/boost \
 		textproc/cmark \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/libmagic \
 		multimedia/libmatroska>=1.5.0 \
 		textproc/libebml>=1.3.7

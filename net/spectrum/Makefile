@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/05/20 22:15:20 naddy Exp $
 
 COMMENT =	XMPP transport/gateway
 
@@ -21,7 +21,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake lang/python
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 LIB_DEPENDS =	devel/libev \
 		graphics/ImageMagick \

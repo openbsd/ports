@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2018/11/12 16:08:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2019/05/20 22:15:00 naddy Exp $
 
 COMMENT=	free space simulator and planetarium
 
 DISTNAME=	celestia-1.6.1
-REVISION=	16
+REVISION=	17
 
 CATEGORIES=	astro x11
 
@@ -30,8 +30,8 @@ WANTLIB += ${MODLUA_WANTLIB}
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	lang/lua
-BUILD_DEPENDS=	devel/gettext-tools
-LIB_DEPENDS=	devel/gettext \
+BUILD_DEPENDS=	devel/gettext,-tools
+LIB_DEPENDS=	devel/gettext,-runtime \
 		multimedia/libtheora \
 		x11/gtkglext \
 		${MODLUA_LIB_DEPENDS}

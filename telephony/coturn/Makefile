@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/02 11:43:10 feinerer Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/20 22:15:25 naddy Exp $
 
 COMMENT =	coturn STUN/TURN server
 
 V =		4.5.1.1
 DISTNAME =	turnserver-${V}
+REVISION =	0
 
 CATEGORIES =	telephony
 
@@ -23,7 +24,7 @@ MASTER_SITES =		http://turnserver.open-sys.org/downloads/v${V}/ \
 LIB_DEPENDS =		databases/mariadb \
 			databases/postgresql \
 			databases/sqlite3 \
-			devel/gettext \
+			devel/gettext,-runtime \
 			devel/libevent2 \
 			databases/libhiredis
 

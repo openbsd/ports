@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2018/10/23 19:28:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2019/05/20 22:15:29 naddy Exp $
 
 COMMENT=		GTK+3 remote desktop client
 
@@ -6,7 +6,7 @@ GH_TAGNAME=		v1.2.30
 GH_PROJECT=		Remmina
 GH_ACCOUNT=		FreeRDP
 PKGNAME=		remmina-${GH_TAGNAME:S/v//}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		x11 net
 
@@ -28,9 +28,9 @@ WANTLIB += spice-client-gtk-3.0
 
 MODULES=		devel/cmake
 
-BUILD_DEPENDS=		devel/gettext-tools
+BUILD_DEPENDS=		devel/gettext,-tools
 
-LIB_DEPENDS=		devel/gettext \
+LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/libsoup \
 			devel/json-glib \
 			devel/vte3 \

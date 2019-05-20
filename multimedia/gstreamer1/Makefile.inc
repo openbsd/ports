@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.56 2019/05/12 15:56:45 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.57 2019/05/20 22:15:17 naddy Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -45,7 +45,7 @@ MODGCC4_ARCHS ?=	powerpc
 
 .if empty(CONFIGURE_STYLE)
 MODULES +=		devel/meson
-BUILD_DEPENDS +=	devel/gettext-tools # -Dnls
+BUILD_DEPENDS +=	devel/gettext,-tools # -Dnls
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS +=	-Dbenchmarks=disabled \

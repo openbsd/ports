@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/05/20 22:15:14 naddy Exp $
 
 COMMENT =	personal dictionary manager for anthy
 
 DISTNAME =	kasumi-2.5
-REVISION =	9
+REVISION =	10
 
 CATEGORIES =	japanese
 
@@ -22,9 +22,9 @@ WANTLIB += pangoft2-1.0 pthread ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 RUN_DEPENDS =	devel/desktop-file-utils
-LIB_DEPENDS =	devel/gettext \
+LIB_DEPENDS =	devel/gettext,-runtime \
 		inputmethods/anthy \
 		x11/gtk+2
 

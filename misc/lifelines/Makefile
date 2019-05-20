@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/17 16:19:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/05/20 22:15:17 naddy Exp $
 
 COMMENT=		genealogical database and programming system
 DISTNAME=		lifelines-3.0.62
 CATEGORIES=		misc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lifelines/}
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://lifelines.sourceforge.net/
 
@@ -18,7 +18,7 @@ CONFIGURE_ENV+=		YACC="bison -y" \
 			LDFLAGS="-L/usr/local/lib" \
 			LIBS="-liconv -lintl"
 BUILD_DEPENDS=		devel/bison
-LIB_DEPENDS=		devel/gettext
+LIB_DEPENDS=		devel/gettext,-runtime
 USE_GMAKE=		Yes
 
 post-install:

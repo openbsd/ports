@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/03/30 09:13:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/20 22:15:05 naddy Exp $
 
 COMMENT =		original KDE HTML rendering engine
 DISTNAME =		khtml-${VERSION}
@@ -18,7 +18,7 @@ WANTLIB += png z
 
 MODULES =		multimedia/phonon
 
-BUILD_DEPENDS =		devel/gettext-tools
+BUILD_DEPENDS =		devel/gettext,-tools
 
 LIB_DEPENDS =		devel/kf5/karchive \
 			devel/kf5/kcodecs \

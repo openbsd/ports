@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/02/14 16:03:34 jca Exp $
+# $OpenBSD: Makefile,v 1.31 2019/05/20 22:15:12 naddy Exp $
 
 COMMENT=	manipulate image meta-data such as exif and ipct
 
@@ -6,7 +6,7 @@ DISTNAME=	exiv2-0.26-trunk
 PKGNAME=	exiv2-0.26
 CATEGORIES=	graphics devel
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  exiv2                11.0      # 14.0
 
@@ -25,9 +25,9 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 
-LIB_DEPENDS=	devel/gettext
+LIB_DEPENDS=	devel/gettext,-runtime
 
 CONFIGURE_ARGS=	--enable-static
 

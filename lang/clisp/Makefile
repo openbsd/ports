@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.50 2019/05/20 22:15:14 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 COMMENT =		ANSI Common Lisp implementation
 
 DISTNAME=		clisp-2.49
-REVISION =		2
+REVISION =		3
 CATEGORIES=		lang
 HOMEPAGE=		http://clisp.cons.org/
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB =  avcall c callback iconv intl m ncurses readline sigsegv
 
-LIB_DEPENDS =		devel/gettext \
+LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/libsigsegv \
 			devel/ffcall>=1.10p1
 

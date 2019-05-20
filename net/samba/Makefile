@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.272 2019/05/14 17:57:20 jca Exp $
+# $OpenBSD: Makefile,v 1.273 2019/05/20 22:15:20 naddy Exp $
 
 VERSION =		4.8.12
 DISTNAME =		samba-${VERSION}
@@ -20,6 +20,7 @@ PKG_ARCH-docs =		*
 LDB_V =			1.3.8
 TEVENT_V =		0.9.36
 
+REVISION-main =		0
 REVISION-ldb =		0
 REVISION-tevent =	6
 
@@ -118,7 +119,7 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 			converters/libiconv \
 			databases/openldap \
 			databases/tdb>=1.3.14 \
-			devel/gettext \
+			devel/gettext,-runtime \
 			devel/jansson \
 			devel/libexecinfo \
 			devel/libtalloc>=2.1.9 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/20 19:49:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/20 22:15:24 naddy Exp $
 
 COMMENT =	library and tools to access the Windows XML Event Log (EVTX)
 
@@ -34,7 +34,7 @@ MODULES +=	lang/python
 MODPY_ADJ_FILES += tests/pyevtx_test_support.py
 
 # xgettext(1)
-BUILD_DEPENDS +=	devel/gettext-tools
+BUILD_DEPENDS +=	devel/gettext,-tools
 
 LIB_DEPENDS +=	devel/libbfio
 

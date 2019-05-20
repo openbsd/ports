@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/03/08 20:00:45 cwen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/05/20 22:15:08 naddy Exp $
 
 COMMENT =	user-friendly TeX/LaTeX editor for KDE
 
@@ -28,7 +28,7 @@ EXTRACT_SUFX =	.tar.bz2
 MODULES =	devel/kf5 \
 		multimedia/phonon
 
-BUILD_DEPENDS +=devel/gettext-tools \
+BUILD_DEPENDS +=devel/gettext,-tools \
 		devel/kf5/kdoctools \
 		x11/kde-applications/okular \
 		x11/kde-applications/kate

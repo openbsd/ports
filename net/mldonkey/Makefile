@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2019/04/24 16:26:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/05/20 22:15:19 naddy Exp $
 
 COMMENT =	e-donkey client
 
 VER =		3.1.6
 DISTNAME =	mldonkey-${VER}
-REVISION =	4
+REVISION =	5
 CATEGORIES =	net
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
@@ -47,7 +47,7 @@ USE_GMAKE =	Yes
 MODULES =	lang/ocaml
 BUILD_DEPENDS =	lang/ocaml-camlp4 x11/lablgtk2 math/ocaml-num
 LIB_DEPENDS =	archivers/bzip2 \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/libmagic \
 		graphics/gd \
 		net/miniupnp/libnatpmp \

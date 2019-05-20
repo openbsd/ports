@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.91 2019/05/17 16:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.92 2019/05/20 22:15:12 naddy Exp $
 
 ONLY_FOR_ARCHS= i386 amd64 aarch64
 
 COMMENT=	virtual lighttable and darkroom for photographers
 
 V=		2.6.2
-REVISION=	0
+REVISION=	1
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
@@ -41,7 +41,7 @@ COMPILER =	base-clang
 BUILD_DEPENDS=	sysutils/coreutils
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
-LIB_DEPENDS=	devel/gettext \
+LIB_DEPENDS=	devel/gettext,-runtime \
 		devel/json-glib \
 		devel/libsoup \
 		geo/osm-gps-map \

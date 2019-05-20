@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2019/05/05 16:06:34 danj Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:27 naddy Exp $
 
 COMMENT=		Squid Analysis Report Generator
 
 DISTNAME=		sarg-2.3.11
 CATEGORIES=		www
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://sarg.sourceforge.net/
 
@@ -15,7 +15,7 @@ WANTLIB=		c gd iconv intl m pcre
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sarg/}
 
-LIB_DEPENDS=		devel/gettext \
+LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/pcre \
  			graphics/gd
 

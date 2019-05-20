@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2019/04/24 16:26:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2019/05/20 22:15:27 naddy Exp $
 
 COMMENT =	beautiful glass-like GTK+ 2.x engine and themes
 
 GNOME_VERSION =	0.98.2
 GNOME_PROJECT =	murrine
 PKGNAME =	gtk2-murrine-engine-${GNOME_VERSION}
-REVISION =	7
+REVISION =	8
 CATEGORIES =	x11
 
 HOMEPAGE =	http://cimitan.com/murrine/
@@ -42,8 +42,8 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 
 MODULES =	x11/gnome
 
-BUILD_DEPENDS =	devel/gettext-tools
-LIB_DEPENDS =	devel/gettext \
+BUILD_DEPENDS =	devel/gettext,-tools
+LIB_DEPENDS =	devel/gettext,-runtime \
 		x11/gtk+2
 
 CONFIGURE_STYLE =gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/19 19:13:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/20 22:15:23 naddy Exp $
 
 COMMENT =		library to generate, and check strengh of passwords
 
@@ -27,7 +27,7 @@ MODULES =		lang/python
 
 USE_GMAKE =		Yes
 
-BUILD_DEPENDS =		devel/gettext-tools \
+BUILD_DEPENDS =		devel/gettext,-tools \
 			shells/bash
 
 LIB_DEPENDS =		security/cracklib

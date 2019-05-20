@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/03/30 09:13:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/20 22:15:06 naddy Exp $
 
 COMMENT =	KDE configuration dialog for desktop notifications
 DISTNAME =	knotifyconfig-${VERSION}
@@ -12,7 +12,7 @@ WANTLIB += Qt5Network Qt5Widgets m
 
 MODULES =	multimedia/phonon
 
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/knotifications \
 		devel/kf5/kxmlgui

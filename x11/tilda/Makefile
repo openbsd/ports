@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/05/20 22:15:30 naddy Exp $
 
 COMMENT=		drop-down terminal emulator
 
@@ -7,7 +7,7 @@ GH_PROJECT=		tilda
 GH_TAGNAME=		tilda-1.3.3
 DISTNAME=		tilda-1.3.3
 
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 
@@ -20,8 +20,8 @@ WANTLIB += X11 c confuse gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-3 intl pango-1.0 vte-2.91
 
 # autogen.sh needs autopoint (gettext)
-BUILD_DEPENDS=		devel/gettext-tools
-LIB_DEPENDS=		devel/gettext \
+BUILD_DEPENDS=		devel/gettext,-tools
+LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/libconfuse \
 			devel/vte3
 RUN_DEPENDS=		devel/desktop-file-utils

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/27 21:03:47 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/20 22:15:10 naddy Exp $
 
 V =		1.60
 COMMENT =	game of cute bunnies jumping on each other's heads
@@ -21,7 +21,7 @@ MODPY_BUILDDEP =	No
 MODPY_RUNDDEP =		No
 MODPY_ADJ_FILES =	menu/jumpnbump_menu.py.pre
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 LIB_DEPENDS =	archivers/bzip2 \
 		devel/sdl2-mixer \

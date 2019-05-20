@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/04/28 07:35:19 landry Exp $
+# $OpenBSD: Makefile,v 1.46 2019/05/20 22:15:01 naddy Exp $
 
 COMMENT=		curses based frontend for mpd
 
@@ -6,6 +6,7 @@ VER=			0.34
 DISTNAME=		ncmpc-${VER}
 EPOCH=			0
 CATEGORIES=		audio
+REVISION=		0
 
 HOMEPAGE=		https://www.musicpd.org/clients/ncmpc/
 
@@ -24,10 +25,10 @@ COMPILER =		base-clang ports-gcc
 MODULES=		devel/meson
 
 BUILD_DEPENDS=		devel/boost \
-			devel/gettext-tools \
+			devel/gettext,-tools \
 			textproc/py-sphinx
 
-LIB_DEPENDS=		devel/gettext \
+LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/pcre \
 			audio/libmpdclient>=2.4
 

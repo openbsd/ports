@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/05/17 16:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/05/20 22:15:09 naddy Exp $
 
 BROKEN-alpha =		ICE or OOM on hq_implementation.cpp
 BROKEN-hppa =		ICE or OOM on src/filters/hq/c/hq_base.h:421
@@ -8,7 +8,7 @@ COMMENT =		emulator for Nintendo Game Boy (Color/Advance)
 GH_ACCOUNT =		visualboyadvance-m
 GH_PROJECT =		${GH_ACCOUNT}
 GH_TAGNAME =		v2.1.1
-REVISION =		0
+REVISION =		1
 PKGNAME =		vbam-${GH_TAGNAME:S/v//}
 
 CATEGORIES =		emulators
@@ -27,9 +27,9 @@ MODULES =		devel/cmake
 # c++11
 COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS =		devel/gettext-tools
+BUILD_DEPENDS =		devel/gettext,-tools
 
-LIB_DEPENDS =		devel/gettext \
+LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/sdl2 \
 			graphics/png \
 			multimedia/sfml

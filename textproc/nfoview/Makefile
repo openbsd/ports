@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/04/28 20:51:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/05/20 22:15:26 naddy Exp $
 
 COMMENT =	simple viewer for NFO files
 MODPY_EGG_VERSION =	1.26
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext,-tools
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/py-gobject3${MODPY_FLAVOR} \

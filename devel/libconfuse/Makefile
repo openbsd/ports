@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/11/04 22:04:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/20 22:15:07 naddy Exp $
 
 COMMENT=		configuration file parser library
 V=			3.2.1
@@ -6,6 +6,7 @@ DISTNAME=		confuse-${V}
 PKGNAME=		lib${DISTNAME}
 SHARED_LIBS +=  confuse              2.1      # 2.0
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		https://github.com/martinh/libconfuse
 
@@ -16,7 +17,7 @@ WANTLIB=		iconv intl
 
 MASTER_SITES=		https://github.com/martinh/libconfuse/releases/download/v${V}/
 
-LIB_DEPENDS=		devel/gettext
+LIB_DEPENDS=		devel/gettext,-runtime
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"

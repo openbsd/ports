@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/07/22 22:18:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2019/05/20 22:15:28 naddy Exp $
 
 COMMENT=		Joe's Window Manager#'
 
@@ -18,7 +18,7 @@ WANTLIB += intl jpeg m png rsvg-2 z
 MASTER_SITES=		http://www.joewing.net/projects/jwm/releases/
 EXTRACT_SUFX=		.tar.xz
 
-BUILD_DEPENDS=		devel/gettext-tools
+BUILD_DEPENDS=		devel/gettext,-tools
 
 LIB_DEPENDS=		devel/fribidi \
 			devel/glib2 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/03/30 09:13:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/20 22:15:05 naddy Exp $
 
 # XXX has some internal dependency problems, look for kpasswdserver.json
 
@@ -20,7 +20,7 @@ WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Script
 WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml c exslt m xml2 xslt
 
-BUILD_DEPENDS =	devel/gettext-tools \
+BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/kdoctools
 
 RUN_DEPENDS =	devel/kf5/kdoctools \

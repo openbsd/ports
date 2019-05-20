@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2018/12/21 14:42:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/20 22:15:12 naddy Exp $
 
 COMMENT =	Zuma-like arcade game
 DISTNAME =	zaz-1.0.0
-REVISION =	6
+REVISION =	7
 CATEGORIES =	games
 
 HOMEPAGE =	http://zaz.sourceforge.net/
@@ -21,7 +21,7 @@ EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=zaz/}
 
 LIB_DEPENDS =	audio/libvorbis \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/sdl-image \
 		graphics/ftgl \
 		multimedia/libtheora

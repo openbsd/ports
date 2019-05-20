@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2019/05/17 16:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.137 2019/05/20 22:15:23 naddy Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -11,8 +11,10 @@ COMMENT-pgsql=		Bacula libbaccats support for PostgreSQL
 COMMENT-sqlite3=	Bacula libbaccats support for SQLite3
 
 V=			9.4.2
+REVISION-main=		0
+REVISION-server=	0
 REVISION-pgsql=		0
-REVISION-bat=		0
+REVISION-bat=		1
 DISTNAME=		bacula-$V
 PKGNAME-main=		bacula-client-$V
 PKGNAME-server=		bacula-server-$V
@@ -49,7 +51,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 # http://www.bacula.org/7.0.x-manuals/en/main/Bacula_Copyright_Trademark_.html
 PERMIT_PACKAGE_CDROM=	Yes
 
-LIB_DEPENDS=		devel/gettext
+LIB_DEPENDS=		devel/gettext,-runtime
 
 LOCALSTATEDIR=		${BASELOCALSTATEDIR}/bacula
 SYSCONFDIR=		${BASESYSCONFDIR}/bacula

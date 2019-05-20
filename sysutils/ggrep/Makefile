@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2019/01/25 18:39:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2019/05/20 22:15:24 naddy Exp $
 
 COMMENT=	GNU versions of grep pattern matching utilities
 
 DISTNAME=	grep-3.3
 PKGNAME=	g${DISTNAME}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	sysutils
 HOMEPAGE=	https://www.gnu.org/software/grep/grep.html
 
@@ -17,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=grep/}
 
 EXTRACT_SUFX=	.tar.xz
 
-LIB_DEPENDS=	devel/gettext devel/pcre
+LIB_DEPENDS=	devel/gettext,-runtime devel/pcre
 WANTLIB=	c iconv intl pcre
 
 CONFIGURE_STYLE=gnu

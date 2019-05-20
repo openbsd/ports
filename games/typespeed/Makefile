@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/10 01:57:35 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/20 22:15:11 naddy Exp $
 COMMENT =		Test your typing speed and get your fingers' CPS
 
 DISTNAME =		typespeed-0.6.5
 CATEGORIES =		games
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		http://typespeed.sourceforge.net/
 
@@ -14,7 +14,7 @@ WANTLIB =		c iconv intl curses
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=typespeed/}
 
-LIB_DEPENDS =		devel/gettext
+LIB_DEPENDS =		devel/gettext,-runtime
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu

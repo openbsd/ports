@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2016/04/09 20:14:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/20 22:15:20 naddy Exp $
 
 COMMENT=	XML-RPC C/C++ client-server implementation
 CATEGORIES=	net devel textproc
 
 DISTNAME=	xmlrpc-epi-0.54.1
+REVISION=	0
 SHARED_LIBS +=	xmlrpc-epi	0.3
 
 HOMEPAGE=	http://xmlrpc-epi.sourceforge.net/
@@ -17,8 +18,8 @@ LIB_DEPENDS=		converters/libiconv
 
 WANTLIB += c expat iconv
 
-BUILD_DEPENDS +=	devel/gettext
-RUN_DEPENDS +=		devel/gettext
+BUILD_DEPENDS +=	devel/gettext,-runtime
+RUN_DEPENDS +=		devel/gettext,-runtime
 
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2019/01/13 02:58:15 millert Exp $
+# $OpenBSD: Makefile,v 1.30 2019/05/20 22:15:23 naddy Exp $
 
 COMMENT=	execute a command as another user
 
 DISTNAME=	sudo-1.8.27
 CATEGORIES=	security
+REVISION=	0
 
 MAINTAINER=	Todd C. Miller <millert@openbsd.org>
 
@@ -41,7 +42,7 @@ WANTLIB+=		crypto lber-2.4 ldap-2.4 sasl2 ssl
 .endif
 .if ${FLAVOR:Mgettext}
 CONFIGURE_ARGS += --enable-nls=${LOCALBASE}
-LIB_DEPENDS+=	devel/gettext
+LIB_DEPENDS+=	devel/gettext,-runtime
 WANTLIB+=	iconv intl
 .else
 CONFIGURE_ARGS += --disable-nls

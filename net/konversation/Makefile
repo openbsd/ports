@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2019/03/08 20:00:50 cwen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/20 22:15:19 naddy Exp $
 
 COMMENT =	IRC client for KDE
 
 V =		1.7.4
 DISTNAME =	konversation-$V
-REVISION =	2
+REVISION =	3
 
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -33,10 +33,10 @@ MODULES =		devel/kf5 \
 
 BUILD_DEPENDS +=	devel/kf5/kdoctools \
 			devel/kf5/kitemmodels \
-			devel/gettext-tools
+			devel/gettext,-tools
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
-			devel/gettext \
+			devel/gettext,-runtime \
 			x11/gtk+3,-guic
 
 LIB_DEPENDS +=		security/qca-qt5 \

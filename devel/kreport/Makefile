@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/21 10:11:38 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/20 22:15:06 naddy Exp $
 
 COMMENT =	framework for generation of reports in multiple formats
 
@@ -29,7 +29,7 @@ MODULES =		devel/kf5
 BUILD_DEPENDS =		shells/bash \
 			devel/kf5/kguiaddons \
 			x11/qt5/qttools \
-			devel/gettext-tools
+			devel/gettext,-tools
 
 LIB_DEPENDS =		devel/kf5/kconfig \
 			devel/kf5/kcoreaddons \

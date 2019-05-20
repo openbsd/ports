@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2019/05/17 16:19:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.112 2019/05/20 22:15:17 naddy Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # audio/pulseaudio and x11/xfce4/xfce4-mixer
@@ -103,7 +103,7 @@ AUTOMAKE_VERSION=	1.10
 BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS}
 BUILD_DEPENDS +=	devel/libtool		# needs libtoolize
-BUILD_DEPENDS +=	devel/gettext-tools	# autopoint
+BUILD_DEPENDS +=	devel/gettext,-tools	# autopoint
 
 post-extract:
 	cp -R ${FILESDIR} ${WRKSRC}/ext/sndio

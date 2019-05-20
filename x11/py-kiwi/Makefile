@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/08/28 10:37:48 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/20 22:15:29 naddy Exp $
 
 COMMENT=		framework and a set of enhanced PyGTK widgets
 
@@ -20,7 +20,7 @@ MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
-BUILD_DEPENDS=		devel/gettext-tools \
+BUILD_DEPENDS=		devel/gettext,-tools \
 			x11/py-gtk2
 RUN_DEPENDS=		databases/py-sqlobject \
 			x11/py-gtk2

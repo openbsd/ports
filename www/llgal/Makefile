@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/02/03 09:23:40 steven Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/20 22:15:26 naddy Exp $
 
 COMMENT=	command-line online gallery generator
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	https://github.com/bgoglin/llgal/archive/
 
-BUILD_DEPENDS=	devel/gettext-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 
 RUN_DEPENDS=	graphics/ImageMagick \
 		graphics/p5-Image-ExifTool \
