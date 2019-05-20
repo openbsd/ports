@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2019/04/28 20:51:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2019/05/20 15:58:15 sthen Exp $
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
@@ -14,7 +14,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
-REVISION-md=	0
+REVISION-md=	1
 
 SO_VERSION=	9.0
 BOOST_LIBS=	boost_atomic-mt \
@@ -88,6 +88,10 @@ BUILD_DEPENDS+=	lang/python/${MODPY_DEFAULT_VERSION_2} \
 
 LIB_DEPENDS=	archivers/bzip2 \
 		textproc/icu4c
+
+LIB_DEPENDS-md=	devel/boost
+WANTLIB-md+=	boost_chrono-mt boost_filesystem-mt boost_system-mt
+WANTLIB-md+=	boost_system boost_thread-mt
 
 .include <bsd.port.arch.mk>
 .if !(${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "arm")
