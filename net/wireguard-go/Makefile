@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/20 08:15:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/20 17:47:39 jasper Exp $
 
 ONLY_FOR_ARCHS = amd64
 
 COMMENT =	implementation of WireGuard in Go
 
-DISTNAME =	wireguard-go-0.0.20190409
-REVISION =	1
+DISTNAME =	wireguard-go-0.0.20190517
 
 CATEGORIES =	net security
 
