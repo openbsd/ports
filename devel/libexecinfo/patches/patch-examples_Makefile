@@ -1,11 +1,12 @@
-$OpenBSD: patch-examples_Makefile,v 1.1 2011/11/14 19:14:18 sthen Exp $
+$OpenBSD: patch-examples_Makefile,v 1.2 2019/05/20 15:12:28 schwarze Exp $
 
 we renamed the library to execinfo
 
---- examples/Makefile.orig	Mon May  2 19:39:02 2011
-+++ examples/Makefile	Sat Nov 12 21:04:49 2011
+Index: examples/Makefile
+--- examples/Makefile.orig
++++ examples/Makefile
 @@ -1,6 +1,6 @@
- # $backtrace: Makefile,v 1.6 2011/05/02 17:39:02 dhill Exp $
+ # $backtrace$
  
 -LOCALBASE?=/usr/local
 +LOCALBASE?=${PREFIX}

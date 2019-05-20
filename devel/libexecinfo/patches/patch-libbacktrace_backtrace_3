@@ -1,9 +1,17 @@
-$OpenBSD: patch-libbacktrace_backtrace_3,v 1.1 2013/02/07 12:30:44 zhuk Exp $
+$OpenBSD: patch-libbacktrace_backtrace_3,v 1.2 2019/05/20 15:12:28 schwarze Exp $
 We renamed the library to execinfo.
---- libbacktrace/backtrace.3.orig	Thu Feb  7 14:51:59 2013
-+++ libbacktrace/backtrace.3	Thu Feb  7 14:52:20 2013
-@@ -22,7 +22,7 @@
- .Nm backtrace
+Also add the missing function names to the NAME section.
+Index: libbacktrace/backtrace.3
+--- libbacktrace/backtrace.3.orig
++++ libbacktrace/backtrace.3
+@@ -19,10 +19,12 @@
+ .Dt BACKTRACE 3
+ .Os
+ .Sh NAME
+-.Nm backtrace
++.Nm backtrace ,
++.Nm backtrace_symbols ,
++.Nm backtrace_symbols_fd
  .Nd glibc and libexecinfo backtrace compatible API
  .Sh SYNOPSIS
 -.Fd #include <backtrace.h>

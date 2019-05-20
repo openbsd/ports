@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/03/16 18:07:42 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/05/20 15:12:28 schwarze Exp $
 @bin bin/backtrace_test
 include/execinfo.h
 lib/libexecinfo.a
 @lib lib/libexecinfo.so.${LIBexecinfo_VERSION}
 lib/libexecinfo_p.a
 @man man/man3/backtrace.3
-@man man/man3/backtrace_symbols.3
-@man man/man3/backtrace_symbols_fd.3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/07/13 04:08:08 jsg Exp $
+# $OpenBSD: Makefile,v 1.24 2019/05/20 15:12:28 schwarze Exp $
 
 COMMENT =	clone of backtrace facility found in the GNU libc
 
@@ -9,7 +9,7 @@ GH_PROJECT=	backtrace
 DISTNAME =	${GH_PROJECT}-${V}
 PKGNAME =	libexecinfo-$V
 EPOCH =		0
-REVISION =	1
+REVISION =	2
 CATEGORIES =	devel
 
 SHARED_LIBS =	execinfo	2.0
