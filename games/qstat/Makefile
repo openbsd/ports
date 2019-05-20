@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/02/18 16:07:39 awolk Exp $
+# $OpenBSD: Makefile,v 1.11 2019/05/20 04:47:01 naddy Exp $
 
 COMMENT=	displays the status of multi-player Internet Game servers
 
@@ -14,22 +14,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c
 
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 
 AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9
-
-MAKE_ENV =		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
-
-post-patch:
-	cd ${WRKSRC}; \
-		export AUTOCONF_VERSION=${AUTOCONF_VERSION}; \
-		export AUTOMAKE_VERSION=${AUTOMAKE_VERSION}; \
-		./autogen.sh
+AUTORECONF =		./autogen.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/qstat

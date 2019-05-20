@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/01/17 23:30:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/20 04:47:01 naddy Exp $
 
 COMMENT=		MTP device filesystem
 
@@ -19,7 +19,7 @@ WANTLIB += c fuse m mtp pthread usb-1.0 ${COMPILER_LIBCXX}
 # c++11
 COMPILER =		base-clang ports-gcc
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 
 LIB_DEPENDS=		devel/libmtp
 
@@ -27,19 +27,12 @@ MAKE_FILE=		makefile
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/gettext
+AUTORECONF=		/bin/sh ./autogen.sh
+BUILD_DEPENDS +=	devel/gettext
 
 CPPFLAGS +=	-I${LOCALBASE}/include
 LDFLAGS +=	-L${LOCALBASE}/lib
 
 CONFIGURE_ENV +=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		/bin/sh ./autogen.sh
 
 .include <bsd.port.mk>

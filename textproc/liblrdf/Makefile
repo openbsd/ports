@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/05/20 04:47:01 naddy Exp $
 
 COMMENT =		light RDF manipulation with LADSPA plugin support
 
@@ -18,23 +18,17 @@ WANTLIB =  crypto curl iconv intl lzma m nghttp2 pthread raptor2 ssl
 WANTLIB += xml2 xslt yajl z
 
 MASTER_SITES =		https://spacehopper.org/mirrors/
-BUILD_DEPENDS =		audio/ladspa \
-			devel/libtool \
-			${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+BUILD_DEPENDS =		audio/ladspa
 LIB_DEPENDS =		devel/libyajl \
 			textproc/raptor
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
-CONFIGURE_STYLE =	gnu
+AUTORECONF =		./autogen.sh
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 TEST_DEPENDS =	audio/swh-plugins
-
-post-patch:
-	@cd ${WRKBUILD} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 .include <bsd.port.mk>

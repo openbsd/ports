@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/01/21 17:08:32 bcallah Exp $
+# $OpenBSD: Makefile,v 1.45 2019/05/20 04:47:02 naddy Exp $
 
 V=		5.4.0
 COMMENT=	virtual sticky pad system
@@ -20,15 +20,12 @@ MASTER_SITES=	http://launchpad.net/xpad/trunk/${V}/+download/
 
 MODULES=	textproc/intltool
 
-BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
-
 LIB_DEPENDS=	x11/gtksourceview3
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoreconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -36,9 +33,6 @@ USE_GMAKE=	Yes
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.9
-
-pre-configure:
-	cd ${WRKSRC} && ${SETENV} AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
+AUTORECONF=		./autogen.sh
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/21 09:28:20 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/20 04:47:01 naddy Exp $
 
 COMMENT =	HTML5 parsing library in pure C99
 
@@ -17,22 +17,16 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/libtool
-
 TEST_DEPENDS =	devel/gtest
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 
 # Allow gtest detection
 CONFIGURE_ENV =	LDFLAGS=-L${LOCALBASE}/lib
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
-
-pre-configure:
-	@cd ${WRKSRC} && ${AUTOCONF_ENV} ./autogen.sh
+AUTORECONF =		./autogen.sh
 
 pre-test:
 	@mkdir ${WRKSRC}/gtest

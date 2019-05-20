@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/06/27 21:04:23 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2019/05/20 04:47:01 naddy Exp $
 
 COMMENT=		drop-down terminal emulator
 
@@ -20,9 +20,7 @@ WANTLIB += X11 c confuse gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-3 intl pango-1.0 vte-2.91
 
 # autogen.sh needs autopoint (gettext)
-BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/gettext-tools
+BUILD_DEPENDS=		devel/gettext-tools
 LIB_DEPENDS=		devel/gettext \
 			devel/libconfuse \
 			devel/vte3
@@ -32,13 +30,9 @@ USE_GMAKE=		Yes
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
-CONFIGURE_STYLE=	gnu
+AUTORECONF=		./autogen.sh
+CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ARGS=		--disable-rpath
-
-post-patch:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} NOCONFIGURE=1 \
-	    ./autogen.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tilda

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/01/05 17:14:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/20 04:47:01 naddy Exp $
 
 COMMENT=		remote filesystem snapshot utility
 
@@ -17,25 +17,19 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
+AUTORECONF=		./autogen.sh
 
-BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			net/rsync
+BUILD_DEPENDS=		net/rsync
 
 RUN_DEPENDS=		devel/p5-Lchown \
 			net/rsync
 
 PKG_ARCH=		*
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 
 SAMPLES_DIR=		${PREFIX}/share/examples/rsnapshot
 FAKE_FLAGS=		sysconfdir=${SAMPLES_DIR}
-
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 pre-build:
 	sed -i "s,/etc/rsnapshot.conf,${SYSCONFDIR}/rsnapshot.conf,g" \

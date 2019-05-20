@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/01/04 08:53:54 pascal Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/20 04:47:01 naddy Exp $
 
 # BROKEN-hppa =	undefined reference to __sync atomic ops
 
@@ -20,21 +20,16 @@ PERMIT_PACKAGE_CDROM = Yes
 
 WANTLIB += pthread
 
-BUILD_DEPENDS =	devel/libtool \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		textproc/py-sphinx
+BUILD_DEPENDS =	textproc/py-sphinx
 
 USE_GMAKE =	Yes
 
-CONFIGURE_STYLE = gnu
+CONFIGURE_STYLE = autoreconf
 CONFIGURE_ENV =	cc_cv_cflags__g=no
 
 AUTOCONF_VERSION = 2.69
 AUTOMAKE_VERSION = 1.14
-
-pre-configure:
-	cd ${WRKSRC} && ${AUTOCONF_ENV} sh autogen.sh
+AUTORECONF =	sh autogen.sh
 
 post-build:
 	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} man -C docs

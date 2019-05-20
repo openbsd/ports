@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/08/10 10:19:18 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2019/05/20 04:47:01 naddy Exp $
 
 COMMENT =		SoundFont2 software synthesizer
 DISTNAME =		fluidsynth-1.1.6
@@ -22,15 +22,12 @@ LIB_DEPENDS =		audio/libsndfile \
 
 AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9
+AUTORECONF =		./autogen.sh
 
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-# autogen.sh needs libtoolize
-BUILD_DEPENDS +=        devel/libtool
 # autogen.sh needs aclocal/lib-ld.m4
 BUILD_DEPENDS +=	devel/gettext-tools
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS +=	--disable-coreaudio \
 			--disable-coremidi \
 			--disable-dart \
@@ -47,8 +44,5 @@ CONFIGURE_ARGS +=	--disable-jack-support
 
 post-patch:
 	cp ${FILESDIR}/fluid_sndio.c ${WRKSRC}/src/drivers/
-
-pre-configure:
-	cd ${WRKSRC} && ${AUTOCONF_ENV} ./autogen.sh
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/02/04 23:34:10 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/20 04:47:01 naddy Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -27,20 +27,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		c pthread
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 USE_GMAKE =		Yes
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-
-
-pre-configure:
-	@cd ${WRKSRC} && \
-	env \
-	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		/bin/sh ./autogen.sh
+AUTORECONF =		/bin/sh ./autogen.sh
 
 .include <bsd.port.mk>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/10/02 06:38:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/20 04:47:01 naddy Exp $
 
 COMMENT =	multilanguage reimplementation of the Unix ctags utility
 
@@ -20,7 +20,7 @@ WANTLIB += c xml2 yaml
 PERMIT_PACKAGE_CDROM =	Yes
 
 USE_GMAKE =		Yes
-CONFIGURE_STYLE = 	gnu
+CONFIGURE_STYLE = 	autoreconf
 
 # emulate git rev-parse --short HEAD
 REV =			"${GH_COMMIT:C/^(.{7}).*/\1/}"
@@ -36,10 +36,9 @@ CONFIGURE_ARGS =	--program-prefix=u --disable-json
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
+AUTORECONF =		./autogen.sh
 
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			textproc/py-docutils
+BUILD_DEPENDS =		textproc/py-docutils
 
 LIB_DEPENDS +=		textproc/libxml \
 			devel/libyaml
@@ -57,10 +56,6 @@ WANTLIB+=		iconv
 .else
 CONFIGURE_ARGS+=	--disable-iconv
 .endif
-
-pre-configure:
-	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} ./autogen.sh
 
 pre-test:
 	ln -sf ${LOCALBASE}/bin/gdiff ${WRKDIR}/bin/diff

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/05/20 04:47:01 naddy Exp $
 
 COMMENT=	scim input method module for chewing
 
@@ -25,25 +25,19 @@ WANTLIB += scim-x11utils-1.0 sqlite3 xcb xcb-render xcb-shm z
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	textproc/intltool
-BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/libtool
 LIB_DEPENDS=	x11/gtk+2 \
 		chinese/libchewing \
 		inputmethods/scim
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoreconf
 CONFIGURE_ARGS= --disable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
-
-post-patch:
-	@cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
+AUTORECONF=		./autogen.sh
 
 .include <bsd.port.mk>

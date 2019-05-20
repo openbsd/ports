@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/06/16 11:49:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2019/05/20 04:47:01 naddy Exp $
 
 CATEGORIES=		devel
 COMMENT=		high performance Cloud Storage client library
@@ -18,22 +18,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += crypto iconv json-c lzma m pthread ssl xml2 z
 
-BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
-# XXX Depends on libtool macros
-
 LIB_DEPENDS=		converters/libiconv \
 			textproc/libxml \
 			devel/json-c
 
 AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.11
-CONFIGURE_STYLE=	gnu
+AUTORECONF=		./autogen.sh
+CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-post-patch:
-	cd ${WRKBUILD} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 .include <bsd.port.mk>

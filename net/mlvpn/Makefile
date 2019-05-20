@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/01/11 19:27:06 rpe Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/20 04:47:01 naddy Exp $
 
 COMMENT =		link-aggregation VPN software
 
@@ -19,24 +19,21 @@ WANTLIB += c ev m sodium
 
 MASTER_SITES =		https://github.com/zehome/MLVPN/archive/
 
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS =		devel/libev \
 			security/libsodium
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 			ac_cv_header_valgrind_valgrind_h=no
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.14
+AUTORECONF =		./autogen.sh
 
 post-patch:
 	cd ${WRKSRC}; \
-	[ -r .tarball-version ] || echo $V > .tarball-version; \
-	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
+	[ -r .tarball-version ] || echo $V > .tarball-version
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mlvpn

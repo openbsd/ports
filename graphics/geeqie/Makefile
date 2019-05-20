@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/05/20 04:47:01 naddy Exp $
 
 COMMENT=		lightweight Gtk+3 based image viewer
 
@@ -37,7 +37,7 @@ LIB_DEPENDS=		graphics/exiv2 \
 
 USE_GMAKE=		Yes
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--disable-doxygen-doc \
@@ -51,16 +51,7 @@ CONFIGURE_ARGS=		--disable-doxygen-doc \
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.14
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
+AUTORECONF=		./autogen.sh
 MAKE_ENV=		MKDIR_P='mkdir -p'
-
-pre-configure:
-	cd ${WRKSRC} && \
-		NOCONFIGURE=1 \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		./autogen.sh
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2019/05/20 04:47:01 naddy Exp $
 
 COMMENT =	firewall GUI
 DISTNAME =	fwbuilder-5.1.0.3599
@@ -23,12 +23,11 @@ PATCHORIG =		.ports.orig
 
 AUTOMAKE_VERSION =	1.10
 AUTOCONF_VERSION =	2.63
+AUTORECONF =		sh autogen.sh
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 
-BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/cppunit
+BUILD_DEPENDS +=devel/cppunit
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
@@ -60,11 +59,6 @@ TEST_IS_INTERACTIVE =	X11
 
 FAKE_FLAGS =	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_FILE="${INSTALL_DATA}"
-post-patch:
-	cd ${WRKSRC}; \
-	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-	    sh autogen.sh
 
 post-install:
 	cd ${WRKSRC}/src/res/Icons && find . -type d -mindepth 1 -maxdepth 1 | \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/06/21 11:46:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2019/05/20 04:47:01 naddy Exp $
 
 COMMENT=		HP48sx emulator
 
@@ -17,21 +17,16 @@ EXTRACT_SUFX=		.tar.bz2
 
 AUTOCONF_VERSION=	2.60
 AUTOMAKE_VERSION=	1.10
-BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+AUTORECONF=		sh ./autogen.sh
 
 USE_GMAKE=		Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ENV=		LIBS="-lncurses -lutil"
 CONFIGURE_ARGS=		--with-appdefaultdir="${LOCALBASE}/lib/X11/app-defaults"
 
 NO_TEST=		Yes
 
 WRKDIST=		${WRKDIR}
-
-post-patch:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} sh ./autogen.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/x48

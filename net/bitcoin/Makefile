@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/12 11:59:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2019/05/20 04:47:01 naddy Exp $
 
 COMMENT =		P2P payment system
 
@@ -24,10 +24,6 @@ WANTLIB += boost_system boost_system-mt boost_thread-mt c crypto
 WANTLIB += db_cxx event_core event_extra event_pthreads m sodium
 WANTLIB += zmq
 
-BUILD_DEPENDS =		${MODGNU_AUTOMAKE_DEPENDS} \
-			${MODGNU_AUTOCONF_DEPENDS} \
-			devel/libtool
-
 LIB_DEPENDS =		devel/boost \
 			net/zeromq \
 			devel/libevent2 \
@@ -39,9 +35,10 @@ USE_GMAKE =		Yes
 # Undefined reference to boost and db4 with GCC
 COMPILER =		base-clang ports-clang
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.14
+AUTORECONF =		./autogen.sh
 CONFIGURE_ARGS +=	--with-incompatible-bdb \
 			--disable-bip70
 
@@ -82,10 +79,6 @@ CONFIGURE_ENV +=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 .endif
 
 SUBST_VARS +=		VARBASE
-
-post-patch:
-	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} ./autogen.sh
 
 post-install:
 	cd ${WRKBUILD}/src/secp256k1 && \

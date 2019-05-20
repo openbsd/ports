@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/27 07:25:31 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/20 04:47:01 naddy Exp $
 
 COMMENT =	library for parsing/normalizing street addresses
 
@@ -20,12 +20,9 @@ WANTLIB +=	c m
 
 AUTOMAKE_VERSION = 1.15
 AUTOCONF_VERSION = 2.69
+AUTORECONF =	./bootstrap.sh
 
-BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/libtool
-
-CONFIGURE_STYLE = gnu
+CONFIGURE_STYLE = autoreconf
 
 CONFIGURE_ARGS +=	--datadir=${LOCALSTATEDIR}/db \
 			--disable-data-download
@@ -37,10 +34,6 @@ CONFIGURE_ARGS +=	--enable-sse2=no
 .endif
 
 NO_TEST =	Yes
-
-pre-configure:
-	cd ${WRKSRC} && ${SETENV} AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./bootstrap.sh
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/address_parser ${PREFIX}/bin

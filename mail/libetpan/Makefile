@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/01/26 10:25:09 danj Exp $
+# $OpenBSD: Makefile,v 1.36 2019/05/20 04:47:01 naddy Exp $
 
 COMMENT=	mail purpose library
 
@@ -22,26 +22,16 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
-BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/libtool
+AUTORECONF=		./autogen.sh
 LIB_DEPENDS+=	converters/libiconv \
 		net/curl \
 		security/cyrus-sasl2
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoreconf
 CONFIGURE_ARGS+= --with-curl=auto \
 		--with-sasl="${LOCALBASE}" \
 		--without-gnutls
 CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-post-patch:
-	cd ${WRKSRC} && \
-	    AUTOCONF_VERSION="${AUTOCONF_VERSION}" \
-	    AUTOMAKE_VERSION="${AUTOMAKE_VERSION}" \
-	    NOCONFIGURE=1 \
-	    PATH=${PORTPATH} \
-	   ./autogen.sh
 
 .include <bsd.port.mk>
