@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/18 12:13:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/05/20 20:52:33 sthen Exp $
 
 COMMENT=	Zangband (Zelazny Angband) with color, X11 support
 
 VERSION=	2.6.2
 DISTNAME=	zangband-${VERSION}
-REVISION =	5
+REVISION =	6
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=zangband/}
 
 PERMIT_PACKAGE_CDROM=	not-for-profit redistribution only
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=		c ncurses
+WANTLIB=		c curses
 
 HOMEPAGE=		http://www.zangband.org/
 

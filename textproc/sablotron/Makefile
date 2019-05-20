@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2019/05/20 20:52:36 sthen Exp $
 
 COMMENT =	fast, compact and portable XSL/XSLT processor
 
 V =		1.0.3
 DISTNAME =	Sablot-${V}
 PKGNAME =	sablotron-${V}
-REVISION =	5
+REVISION =	6
 SHARED_LIBS =	sablot	103.0	# .100.3
 CATEGORIES =	textproc
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://freshmeat.net/projects/sablotron/
 # MPL1.1 / GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c expat iconv m ncurses readline ${COMPILER_LIBCXX}
+WANTLIB =	c expat iconv m curses readline ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 

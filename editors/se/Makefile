@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/14 16:37:07 schwarze Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/20 20:52:32 sthen Exp $
 
 COMMENT =		screen oriented version of the classic text editor ed
 
 DISTNAME =		se-3.0.1
-REVISION =		1
+REVISION =		2
 CATEGORIES =		editors
 
 HOMEPAGE =		http://se-editor.org/
@@ -12,7 +12,7 @@ MASTER_SITES =		http://se-editor.org/dist/
 # PD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c ncurses
+WANTLIB =		c curses
 
 CONFIGURE_STYLE =	gnu
 

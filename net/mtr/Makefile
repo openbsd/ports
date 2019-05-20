@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2018/11/05 17:23:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2019/05/20 20:52:34 sthen Exp $
 
 COMMENT=	Matt's traceroute - network diagnostic tool#'
 
@@ -6,7 +6,7 @@ GH_ACCOUNT=	traviscross
 GH_PROJECT=	mtr
 GH_TAGNAME=	v0.92
 
-REVISION=	1
+REVISION=	2
 EPOCH=		0
 
 CATEGORIES=	net
@@ -19,7 +19,7 @@ HOMEPAGE=	https://www.bitwizard.nl/mtr/
 PERMIT_PACKAGE_CDROM=	yes
 
 # diff for pledge(), not yet enabled
-WANTLIB += c m ncurses
+WANTLIB += c m curses
 
 MASTER_SITES=	https://www.bitwizard.nl/mtr/files/ \
 		ftp://ftp.bitwizard.nl/mtr/

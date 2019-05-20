@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2017/07/28 23:34:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/20 20:52:34 sthen Exp $
 
 BROKEN-powerpc=	does not build, error: lvalue required as increment operand
 
 COMMENT=	Portable Forth Environment
 
 DISTNAME=	pfe-0.33.71
-REVISION=	1
+REVISION=	2
 CATEGORIES=    	lang
 
 SHARED_LIBS +=  pfe                  33.71    # .33.71
@@ -16,10 +16,10 @@ HOMEPAGE=	http://pfe.sourceforge.net/
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB=	c m curses
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pfe/}
 EXTRACT_SUFX=	.tar.bz2
-
-WANTLIB=	c m ncurses
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--mandir=${PREFIX}/man

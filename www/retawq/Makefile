@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/04 01:18:59 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/20 20:52:36 sthen Exp $
 
 COMMENT =		interactive, multi-threaded text mode web browser
 
 DISTNAME =		retawq-0.2.6c
-REVISION = 		3
+REVISION = 		4
 CATEGORIES =		www
 
 HOMEPAGE =		http://retawq.sourceforge.net
@@ -12,7 +12,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=retawq/}
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c crypto pthread ncurses ssl
+WANTLIB =		c crypto pthread curses ssl
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS = 	--enable-ipv6 --set-tls=2

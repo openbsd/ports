@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2018/10/07 00:58:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2019/05/20 20:52:34 sthen Exp $
 
 COMMENT=	utility to create virtual hosts on a network
 DISTNAME=	honeyd-1.5c
-REVISION=	11
+REVISION=	12
 CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 		http://niels.xtdnet.nl/honeyd/
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.honeyd.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB +=	c edit event m ncurses pcap pthread util z
+WANTLIB +=	c edit event m curses pcap pthread util z
 WANTLIB +=	${MODPY_WANTLIB} dnet>=1 pcre>=1 eventextra>=1
 
 .if ${MACHINE_ARCH} == "sparc64"

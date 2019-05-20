@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/04/23 09:18:21 yasuoka Exp $
+# $OpenBSD: Makefile,v 1.27 2019/05/20 20:52:33 sthen Exp $
 
 COMMENT=	enhanced less with iso-2022-jp and UTF-8 encodings support
 
@@ -11,12 +11,14 @@ GH_TAGNAME=	v${V}
 PKGNAME=	ja-less-${V}
 CATEGORIES=	japanese
 HOMEPAGE=	http://web.archive.org/web/20070220213232/http://www25.big.or.jp/~jam/less
+REVISION=	0
 
 MAINTAINER =	YASUOKA Masahiko <yasuoka@yasuoka.net>
 
-#		BSD
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c ncurses
+
+WANTLIB=		c curses
 
 CONFIGURE_STYLE=	gnu dest
 

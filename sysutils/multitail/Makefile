@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2016/08/01 12:29:36 awolk Exp $
+# $OpenBSD: Makefile,v 1.32 2019/05/20 20:52:36 sthen Exp $
 
 COMMENT=	multi-window tail(1) utility
 
 DISTNAME=	multitail-6.4.2
 CATEGORIES=	sysutils
+REVISION=	0
 
 HOMEPAGE=	http://www.vanheusden.com/multitail/
 
@@ -15,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
-WANTLIB=	c m ncurses util panel
+WANTLIB=	c m curses util panel
 
 NO_TEST=	Yes
 

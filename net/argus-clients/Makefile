@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2017/06/17 17:45:23 schwarze Exp $
+# $OpenBSD: Makefile,v 1.16 2019/05/20 20:52:34 sthen Exp $
 
 COMMENT =	utilities to read and parse Argus data
 
 DISTNAME =	argus-clients-3.0.8.2
-REVISION =	1
+REVISION =	2
 CATEGORIES =	net
 
 HOMEPAGE =	http://qosient.com/argus/
@@ -14,7 +14,7 @@ MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB =	c m ncurses readline z pthread ft
+WANTLIB =	c m curses readline z pthread ft
 
 NO_TEST =	Yes
 

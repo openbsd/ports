@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2018/09/04 12:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/20 20:52:31 sthen Exp $
 
 COMMENT =		interface to various LCD displays
 DISTNAME =		lcdproc-0.5.5
-REVISION =		11
+REVISION =		12
 CATEGORIES =		comms devel
 HOMEPAGE =		http://www.lcdproc.org
 
@@ -13,7 +13,7 @@ LIB_DEPENDS =		devel/libftdi \
 			devel/libhid
 # XXX If we ever get an xmlto update, we could build some user docs
 #BUILD_DEPENDS =		textproc/xmlto
-WANTLIB +=		c ftdi hid kvm ncurses pthread usb
+WANTLIB +=		c ftdi hid kvm curses pthread usb
 
 USE_GMAKE =		Yes
 

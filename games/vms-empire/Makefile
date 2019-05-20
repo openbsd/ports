@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2018/06/29 22:16:15 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/20 20:52:33 sthen Exp $
 
 COMMENT =		turn-based empire game
 
 DISTNAME =		vms-empire-1.14
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		games
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.catb.org/~esr/vms-empire/
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c ncurses
+WANTLIB += c curses
 
 MASTER_SITES =		http://www.catb.org/~esr/vms-empire/
 

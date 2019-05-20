@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2013/10/11 23:50:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/20 20:52:34 sthen Exp $
 
 COMMENT=	log colorizer
 
 DISTNAME=	ccze-0.2.1
-REVISION=	3
+REVISION=	4
 CATEGORIES=	misc
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -13,7 +13,7 @@ MASTER_SITES=	https://distfiles.bsdfrog.org/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c ncurses pcre
+WANTLIB=		c curses pcre
 
 LIB_DEPENDS=	devel/pcre
 

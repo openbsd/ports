@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/20 20:52:33 sthen Exp $
 
 COMMENT =	interpreter for the programming language APL
 DISTNAME =	apl-1.7
 CATEGORIES =	lang
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	_sql                      0.0 # 0.0
 SHARED_LIBS +=	_template_F0              0.0 # 0.0
@@ -18,7 +18,7 @@ MAINTAINER =	Giuseppe Cocomazzi <sbudella@gmail.com>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m ncurses pthread ${COMPILER_LIBCXX}
+WANTLIB += c m curses pthread ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 

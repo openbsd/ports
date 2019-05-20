@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2017/11/25 13:27:48 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2019/05/20 20:52:31 sthen Exp $
 
 COMMENT=	Embedded SQL implementation
 DISTNAME=	sqlite-2.8.17
 FIX_EXTRACT_PERMISSIONS =	Yes
-REVISION =	4
+REVISION =	5
 CATEGORIES=	databases
 SHARED_LIBS +=	sqlite               8.6      # .0.0
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 AUTOCONF_VERSION=2.59
 USE_GMAKE=	Yes
 
-WANTLIB=	c ncurses readline
+WANTLIB=	c curses readline
 
 FLAVORS=no_tcl
 FLAVOR?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/11/04 14:50:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/05/20 20:52:35 sthen Exp $
 
 COMMENT-main =	graphical tools for the MetaGeek Wi-spy spectrum analyser
 COMMENT-utils =	tools for the MetaGeek Wi-spy spectrum analyser
@@ -10,8 +10,8 @@ PKGNAME =	spectrum-tools-$V
 FULLPKGNAME-main =  spectrum-tools-${V:S/-//g}
 FULLPKGNAME-utils = spectrum-tools-utils-${V:S/-//g}
 
-REVISION-main=	3
-REVISION-utils= 0
+REVISION-main=	4
+REVISION-utils= 1
 
 CATEGORIES =	net
 
@@ -32,7 +32,7 @@ WANTLIB-main =	${cWANTLIB} \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 \
 		intl pango-1.0 pangocairo-1.0 pangoft2-1.0 z
 
-WANTLIB-utils =	${cWANTLIB} ncurses
+WANTLIB-utils =	${cWANTLIB} curses
 
 LIB_DEPENDS-utils =	devel/libusb-compat
 

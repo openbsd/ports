@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2016/09/13 11:44:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/20 20:52:31 sthen Exp $
 
 COMMENT=	SQL shell for FreeTDS
 
 DISTNAME=	sqsh-2.5.16.1
-REVISION=	0
+REVISION=	1
 WRKDIST=	${WRKDIR}/sqsh-2.5
 EXTRACT_SUFX=	.tgz
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://sourceforge.net/projects/sqsh/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ct>=2 iconv ncurses m pthread readline
+WANTLIB += c ct>=2 iconv curses m pthread readline
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sqsh/}
 

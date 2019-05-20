@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/05 10:22:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/20 20:52:34 sthen Exp $
 
 COMMENT =		pcap-based DNS query monitor
 
 DISTNAME =		dnstop-20140915
-REVISION =		0
+REVISION =		1
 CATEGORIES =		net
 
 # 3-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += 		c ncurses pcap
+WANTLIB += 		c curses pcap
 
 CONFIGURE_STYLE =	gnu
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/02 19:28:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2019/05/20 20:52:32 sthen Exp $
 
 COMMENT=	AVR simulator
 
 DISTNAME=	simulavr-0.1.2.7
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	http://www.nongnu.org/simulavr/
 
@@ -12,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=simulavr/}
 
-WANTLIB=		c ncurses
+WANTLIB=		c curses
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+=	--enable-curses=yes \

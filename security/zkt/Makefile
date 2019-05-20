@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2017/09/13 16:27:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/20 20:52:35 sthen Exp $
 
 COMMENT=	DNSsec Zone Key Tool
 
 DISTNAME=	zkt-1.1.4
 CATEGORIES=	security
+REVISION=	0
 
 HOMEPAGE=	http://www.hznet.de/dns/zkt/
 
@@ -12,7 +13,7 @@ MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c ncurses
+WANTLIB=	c curses
 
 RUN_DEPENDS=	net/isc-bind
 BUILD_DEPENDS=	net/isc-bind

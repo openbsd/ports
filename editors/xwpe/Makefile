@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/05/20 20:52:32 sthen Exp $
 
 COMMENT=	powerful programming editor
 
 DISTNAME=	xwpe-1.5.30a
-REVISION=	2
+REVISION=	3
 CATEGORIES=	editors
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/editors/X/} \
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/editors/X/} \
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		ICE SM X11 c ncurses xcb z
+WANTLIB=		ICE SM X11 c curses xcb z
 
 ALL_TARGET=	xwpe
 

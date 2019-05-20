@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/20 20:52:35 sthen Exp $
 
 COMMENT=		network traffic and bandwidth usage in real time
 
 DISTNAME=		nload-0.7.4
-REVISION =		4
+REVISION =		5
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.roland-riegel.de/nload/
@@ -12,7 +12,7 @@ MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c form m ncurses ${COMPILER_LIBCXX}
+WANTLIB=		c form m curses ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 

@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2015/12/30 10:46:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/20 20:52:36 sthen Exp $
 
 V =		1.4.4
 COMMENT =	user-friendly text pager
 DISTNAME =	lookat_bekijk-${V}
 PKGNAME =	lookat-${V}
 CATEGORIES =	sysutils textproc
+REVISION =	0
 
 HOMEPAGE =	http://www.wagemakers.be/english/programs/lookat
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c ncurses
+WANTLIB += c curses
 
 MASTER_SITES =	http://www.wagemakers.be/downloads/lookat/
 

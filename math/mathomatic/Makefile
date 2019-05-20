@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2018/06/27 21:03:57 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/20 20:52:34 sthen Exp $
 
 COMMENT =	small, portable, general purpose computer algebra system
 
 DISTNAME =	mathomatic-16.0.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	math
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://mathomatic.org/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c m ncurses readline
+WANTLIB =	c m curses readline
 
 MASTER_SITES =	${HOMEPAGE}
 EXTRACT_SUFX =	.tar.bz2

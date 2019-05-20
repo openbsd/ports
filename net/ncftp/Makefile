@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.44 2017/05/29 15:12:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2019/05/20 20:52:35 sthen Exp $
 
 COMMENT=	FTP client with advanced user interface
 
 DISTNAME=	ncftp-3.2.6
 CATEGORIES=	net
 HOMEPAGE=	http://www.ncftp.com/ncftp/
+REVISION=	0
 
 MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c ncurses
+WANTLIB=	c curses
 
 MASTER_SITES=	https://ftp.mirrorservice.org/sites/ftp.ncftp.com/ncftp/ \
 		ftp://ftp.ncftp.com/ncftp/

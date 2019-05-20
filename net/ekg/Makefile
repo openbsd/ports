@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2019/01/21 14:33:26 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/20 20:52:34 sthen Exp $
 
 COMMENT=	Gadu-Gadu IM protocol client
 
 DISTNAME=	ekg-1.7
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 
 HOMEPAGE=	http://ekg.chmurka.net/
@@ -11,7 +11,7 @@ HOMEPAGE=	http://ekg.chmurka.net/
 # GPLv2 - LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c crypto gadu ncurses pthread ssl z
+WANTLIB=	c crypto gadu curses pthread ssl z
 
 MASTER_SITES=	${HOMEPAGE}archive/
 

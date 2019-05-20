@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.6 2014/11/01 10:18:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/20 20:52:33 sthen Exp $
 
 COMMENT=		electronic periodic table of the elements
 
 DISTNAME=		epte-2.0.8
 CATEGORIES=		education
+REVISION=		0
 
 HOMEPAGE=		http://www.toddmiller.com/epte/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ncurses
+WANTLIB += c curses
 
 WRKDIST=		${WRKDIR}/epte
 MAKE_FILE=		makefile

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/09/23 09:44:55 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/20 20:52:35 sthen Exp $
 
 COMMENT =	network traffic monitor and statistics
 
@@ -8,6 +8,7 @@ GH_PROJECT =	slurm
 GH_TAGNAME =	upstream/${GH_VERSION}
 DISTNAME =	${GH_PROJECT}-${GH_VERSION}
 CATEGORIES =	net
+REVISION =	0
 
 HOMEPAGE =	http://github.com/mattthias/slurm/wiki/
 
@@ -16,7 +17,7 @@ MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c ncurses
+WANTLIB =	c curses
 
 MODULES =	devel/cmake
 

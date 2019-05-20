@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2018/08/09 03:20:31 kirby Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/20 20:52:33 sthen Exp $
 
 COMMENT =	terminal-based tetris clone in vein of nintendo tetris
 DISTNAME =	vitetris-0.57
 CATEGORIES =	games
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://victornils.net/tetris/
 
@@ -12,7 +12,7 @@ MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c ncurses
+WANTLIB =	c curses
 
 MASTER_SITES =	http://victornils.net/tetris/
 

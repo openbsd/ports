@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.68 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.69 2019/05/20 20:52:33 sthen Exp $
 
 COMMENT=	Emacs Lisp-like runtime library
 
 VERSION=	0.92.3
 DISTNAME=	librep-${VERSION}
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  rep                  14.0     # .16.0
 
@@ -17,7 +17,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=  c ffi gdbm gmp iconv intl m ncurses pthread readline
+WANTLIB=  c ffi gdbm gmp iconv intl m curses pthread readline
 
 MASTER_SITES=           https://download.tuxfamily.org/librep/
 EXTRACT_SUFX=           .tar.xz

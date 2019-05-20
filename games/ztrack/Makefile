@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2013/10/11 23:49:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/20 20:52:33 sthen Exp $
 
 COMMENT=		ncurses based pseudo-3D driving game
 
 DISTNAME=		ztrack-1.0
 CATEGORIES=		games
+REVISION=		0
 
 # Public Domain
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c ncurses
+
+WANTLIB=		c curses
 
 MASTER_SITES=		${MASTER_SITE_SUNSITE:=games/arcade/}
 

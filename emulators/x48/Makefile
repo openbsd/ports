@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/05/20 20:52:33 sthen Exp $
 
 COMMENT=		HP48sx emulator
 
 DISTNAME=		x48-0.6.4
 CATEGORIES=		emulators
+REVISION=		0
 
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		X11 Xext c ncurses readline util
+WANTLIB=		X11 Xext c curses readline util
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=x48.berlios/}
 EXTRACT_SUFX=		.tar.bz2

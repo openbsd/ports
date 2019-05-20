@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2015/01/21 06:13:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.16 2019/05/20 20:52:32 sthen Exp $
 
 COMMENT=	hierarchical notebook
 
 DISTNAME=	hnb-1.9.17
-REVISION=	1
+REVISION=	2
 CATEGORIES=	editors
 
 HOMEPAGE=	http://hnb.sourceforge.net/
@@ -11,7 +11,7 @@ HOMEPAGE=	http://hnb.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB=		c ncurses
+WANTLIB=		c curses
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=hnb/}
 

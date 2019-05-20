@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/05/20 20:52:31 sthen Exp $
 
 COMMENT =		SoundFont2 software synthesizer
 DISTNAME =		fluidsynth-1.1.6
-REVISION =		4
+REVISION =		5
 
 SHARED_LIBS +=	fluidsynth           1.0      # 6.2
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.fluidsynth.org/
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  FLAC c glib-2.0 gthread-2.0 iconv intl m ncurses ogg pcre
+WANTLIB =  FLAC c glib-2.0 gthread-2.0 iconv intl m curses ogg pcre
 WANTLIB += pthread readline sndfile sndio vorbis vorbisenc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fluidsynth/}

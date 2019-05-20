@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/05/20 20:52:34 sthen Exp $
 
 COMMENT=	environment for rapid engineering and scientific processing
 BROKEN-hppa =	undefined reference to lapack funcs
 
 V=		4.0
 DISTNAME=	FreeMat-${V}-Source
-REVISION=	4
+REVISION=	5
 PKGNAME=	freemat-${V}
 
 CATEGORIES=	graphics math
@@ -16,7 +16,7 @@ HOMEPAGE=	http://freemat.sourceforge.net/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += GL GLU QtGui QtNetwork QtOpenGL QtSvg QtXml amd c fftw3
-WANTLIB += fftw3f m ncurses pcre portaudio pthread ${COMPILER_LIBCXX} umfpack
+WANTLIB += fftw3f m curses pcre portaudio pthread ${COMPILER_LIBCXX} umfpack
 WANTLIB += z
 
 COMPILER =		base-clang ports-gcc base-gcc

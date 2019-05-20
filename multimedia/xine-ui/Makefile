@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2018/07/01 18:33:37 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2019/05/20 20:52:34 sthen Exp $
 
 COMMENT=	multimedia player
 
@@ -6,7 +6,7 @@ DISTNAME=	xine-ui-0.99.10
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	https://www.xine-project.org/
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://www.xine-project.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xext Xft Xinerama Xss Xtst Xv Xxf86vm c curl iconv
-WANTLIB += intl jpeg m ncurses png pthread readline xine z
+WANTLIB += intl jpeg m curses png pthread readline xine z
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \

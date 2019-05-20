@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2017/06/20 14:59:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/20 20:52:35 sthen Exp $
 
 COMMENT =		interactive PKI manager for isakmpd(8) or iked(8)
 DISTNAME =		ikeman-0.2
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		security
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${HOMEPAGE}
 
-WANTLIB +=		c crypto ncurses
+WANTLIB +=		c crypto curses
 
 NO_TEST =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/05/29 07:52:12 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2019/05/20 20:52:32 sthen Exp $
 
 COMMENT=	binary editor and viewer
 
@@ -8,13 +8,13 @@ REV=		18
 
 DISTNAME=	beav-140
 PKGNAME=	beav-${VERSION}.${REV}
-REVISION =	2
+REVISION =	3
 CATEGORIES=	editors
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c ncurses
+WANTLIB=	c curses
 
 MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/b/beav/}
 

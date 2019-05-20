@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2015/07/21 15:52:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/20 20:52:32 sthen Exp $
 
 TOOL=			gdb
 TOOL_V= 		7.2a
 LTS_V=			20111205
 
-REVISION=		1
+REVISION=		2
 
 GNU_TOOL=		Yes
 
@@ -14,7 +14,7 @@ RUN_DEPENDS=		devel/msp430/binutils>=2.21.1a \
 			devel/msp430/gcc>=4.6.3
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
-WANTLIB=		c expat m ncurses z
+WANTLIB=		c expat m curses z
 
 CONFIGURE_ARGS+=	--disable-werror
 
