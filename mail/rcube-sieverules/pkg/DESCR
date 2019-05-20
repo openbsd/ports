@@ -1,4 +1,6 @@
 This plugin adds the ability for users to manage their sieve mail filter
-rules.  Unlike the "managesieve" plugin bundled with roundcube, this
-offers simple pre-defined rules and import of existing rules from
-Avelsieve and Ingo.
+rules.
+
+Warning: this plugin is unmaintained and may be removed in the future,
+new installations should use the Managesieve plugin bundled in the main
+Roundcube package.

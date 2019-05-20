@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2018/10/17 14:15:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/20 13:23:44 sthen Exp $
 
 COMMENT=	roundcube plugin: log end-user IP in Dovecot using IMAP ID
 
 GH_ACCOUNT=	corbosman
 GH_PROJECT=	dovecot_ident
 GH_TAGNAME=	2.2
-REVISION=	1
+REVISION=	2
 
 PKGNAME=	rcube-${DISTNAME}
 CATEGORIES=	mail www
@@ -24,6 +24,8 @@ INSTDIR=	${PREFIX}/roundcubemail/plugins
 SUBST_VARS=	INSTDIR
 
 MODULES=	lang/php
+MODPHP_VERSION=	7.3
+
 RUN_DEPENDS=	mail/roundcubemail>=1.1
 
 do-install:

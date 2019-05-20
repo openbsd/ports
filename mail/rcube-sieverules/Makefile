@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2018/10/17 14:15:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/20 13:23:44 sthen Exp $
 
 COMMENT=	roundcube plugin: sieve rules (managesieve)
 
 GH_ACCOUNT=	johndoh
 GH_PROJECT=	roundcube-sieverules
 GH_TAGNAME=	2.3
-REVISION=	3
+REVISION=	4
 
 PKGNAME=	${DISTNAME:S/roundcube/rcube/}
 
@@ -27,6 +27,8 @@ TINSTDIR=	${TRUEPREFIX}/roundcubemail/plugins
 SUBST_VARS=	INSTDIR TINSTDIR
 
 MODULES=	lang/php
+MODPHP_VERSION=	7.3
+
 RUN_DEPENDS=	mail/roundcubemail>=1.1
 
 do-install:
