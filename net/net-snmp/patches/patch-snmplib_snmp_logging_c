@@ -1,0 +1,31 @@
+$OpenBSD: patch-snmplib_snmp_logging_c,v 1.1 2019/05/20 08:45:11 sthen Exp $
+
+From c890caa47876a0da05e69cae1428b65d9ec70478 Mon Sep 17 00:00:00 2001
+From: Bill Fenner <fenner@gmail.com>
+Date: Tue, 7 May 2019 13:10:51 -0700
+Subject: [PATCH] Avoid off-by-one error when logging "" to a file
+
+Index: snmplib/snmp_logging.c
+--- snmplib/snmp_logging.c.orig
++++ snmplib/snmp_logging.c
+@@ -1254,6 +1254,7 @@ log_handler_file(    netsnmp_log_handler* logh, int pr
+ {
+     FILE           *fhandle;
+     char            sbuf[40];
++    int             len = strlen( str );
+ 
+     /*
+      * We use imagic to save information about whether the next output
+@@ -1282,7 +1283,11 @@ log_handler_file(    netsnmp_log_handler* logh, int pr
+     }
+     fprintf(fhandle, "%s%s", sbuf, str);
+     fflush(fhandle);
+-    logh->imagic = str[strlen(str) - 1] == '\n';
++    if (len > 0) {
++        logh->imagic = str[len - 1] == '\n';
++    } else {
++        logh->imagic = 0;
++    }
+     return 1;
+ }
+ #endif /* NETSNMP_FEATURE_REMOVE_LOGGING_FILE */
