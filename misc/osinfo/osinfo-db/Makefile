@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/11 13:51:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/20 12:28:29 ajacoutot Exp $
 
 COMMENT=		osinfo database files
 
@@ -20,7 +20,10 @@ CONFIGURE_STYLE=	# empty
 do-install:
 	osinfo-db-import --root ${WRKINST} --dir ${TRUEPREFIX}/share/osinfo \
 		${FULLDISTDIR}/${DISTFILES}
-# https://gitlab.com/libosinfo/osinfo-db/merge_requests/8
+# From 01a48f94459cafacc97867d3026c46743026f794 Mon Sep 17 00:00:00 2001
+# From: Antoine Jacoutot <ajacoutot@openbsd.org>
+# Date: Sat, 11 May 2019 15:15:21 +0200
+# Subject: [PATCH] openbsd: Add 6.5
 	${INSTALL_DATA} ${FILESDIR}/openbsd-6.5.xml \
 		${PREFIX}/share/osinfo/os/openbsd.org/
 
