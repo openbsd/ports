@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/05/03 11:06:26 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.15 2019/05/20 20:02:27 kn Exp $
 @newgroup _varnish:625
 @newuser _varnish:625:_varnish:daemon:Varnish Cache:/var/varnish:/bin/sh
 @rcscript ${RCDIR}/varnishd
@@ -6,6 +6,7 @@
 @bin bin/varnishhist
 @bin bin/varnishlog
 @bin bin/varnishncsa
+bin/varnishreload
 @bin bin/varnishstat
 @bin bin/varnishtest
 @bin bin/varnishtop
@@ -115,6 +116,7 @@ lib/varnish/vmods/libvmod_vtc.so
 @man man/man1/varnishhist.1
 @man man/man1/varnishlog.1
 @man man/man1/varnishncsa.1
+@man man/man1/varnishreload.1
 @man man/man1/varnishstat.1
 @man man/man1/varnishtest.1
 @man man/man1/varnishtop.1

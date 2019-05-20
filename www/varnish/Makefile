@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2019/05/19 13:14:56 kn Exp $
+# $OpenBSD: Makefile,v 1.47 2019/05/20 20:02:27 kn Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
 DISTNAME =		varnish-6.2.0
+REVISION =		0
 
 CATEGORIES =		www
 
@@ -52,6 +53,8 @@ CONFIGURE_ARGS +=	--enable-debugging-symbols
 .endif
 
 post-install:
+	${SUBST_PROGRAM} ${FILESDIR}/varnishreload ${PREFIX}/bin/varnishreload
+	${SUBST_MAN} ${FILESDIR}/varnishreload.1 ${PREFIX}/man/man1/varnishreload.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/varnish
 	${INSTALL_DATA} ${WRKDIST}${SYSCONFDIR}/{example,builtin}.vcl \
 	    ${PREFIX}/share/examples/varnish
