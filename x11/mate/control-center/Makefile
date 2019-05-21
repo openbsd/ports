@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/17 16:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/05/21 12:40:22 robert Exp $
 
 COMMENT=		MATE control center
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  mate-slab                 0.0 # 0.0
 SHARED_LIBS +=  mate-window-settings      1.0 # 1.0
@@ -24,10 +24,12 @@ WANTLIB += marco-private mate-desktop-2 mate-menu matekbd matekbdui ogg
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += pthread rsvg-2 startup-notification-1 vorbis vorbisfile xcb
 WANTLIB += xcb-render xcb-shm xcb-util xkbfile xklavier xml2 z
+WANTLIB += accountsservice
 
 MODULES=		x11/gnome
 
 LIB_DEPENDS=		devel/startup-notification \
+			sysutils/accountsservice \
 			x11/mate/marco \
 			x11/mate/menus \
 			x11/mate/libmatekbd
