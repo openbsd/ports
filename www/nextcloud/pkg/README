@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.12 2019/03/11 15:43:46 gonzalo Exp $
+$OpenBSD: README,v 1.13 2019/05/21 06:20:24 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -28,7 +28,7 @@ The HTTP server must be able to resolve hostnames:
 The configuration of an SQLite database path is set relatively to the chroot in
 Nextcloud which will break background jobs run by cron(8) (see below).
 A symlink can be created to workaround this issue:
-    # ln -f ${INSTDIR} /nextcloud
+    # ln -sf ${INSTDIR} /nextcloud
 
 OpenBSD HTTP daemon
 -------------------
@@ -38,9 +38,6 @@ httpd(8) example configuration for Nextcloud:
 server "domain.tld" {
 	listen on egress tls port 443
 
-	root "/nextcloud"
-	request strip 1
-
 	hsts max-age 15768000
 
 	tls {
@@ -48,28 +45,55 @@ server "domain.tld" {
 		key "/etc/ssl/private/domain.tld_private.pem"
 	}
 
-	# First deny access to the specified files
-	location "/.ht*"                { block }
-	location "/.user*"              { block }
-	location "/3rdparty*"           { block }
-	location "/README"              { block }
-	location "/autotest*"           { block }
-	location "/build*"              { block }
-	location "/config*"             { block }
-	location "/console*"            { block }
-	location "/data*"               { block }
-	location "/db_*"                { block }
-	location "/indie*"              { block }
-	location "/issue*"              { block }
-	location "/lib*"                { block }
-	location "/occ*"                { block }
-	location "/templates*"          { block }
-	location "/tests*"              { block }
+	# Set max upload size to 513M (in bytes)
+	connection max request body 537919488
+	connection max requests 1000
+	connection request timeout 3600
+	connection timeout 3600
 
-	location "/*.php*" {
+	block drop
+
+	# Ensure that no '*.php*' files can be fetched from these directories
+	location "/nextcloud/config/*" {
+		block drop
+	}
+
+	location "/nextcloud/data/*" {
+		block drop
+	}
+
+	# Note that this matches "*.php*" anywhere in the request path.
+	location "/nextcloud/*.php*" {
 		root "/nextcloud"
 		request strip 1
 		fastcgi socket "/run/php-fpm.sock"
+		pass
+	}
+
+	location "/nextcloud/apps/*" {
+		root "/nextcloud"
+		request strip 1
+		pass
+	}
+
+	location "/nextcloud/core/*" {
+		root "/nextcloud"
+		request strip 1
+		pass
+	}
+
+	location "/nextcloud/settings/*" {
+		root "/nextcloud"
+		request strip 1
+		pass
+	}
+
+	location "/nextcloud" {
+		block return 301 "$DOCUMENT_URI/index.php"
+	}
+
+	location "/nextcloud/" {
+		block return 301 "$DOCUMENT_URI/index.php"
 	}
 }
 ---8<---------------------------------------------------------------------------
