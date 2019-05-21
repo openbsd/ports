@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.109 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.110 2019/05/21 10:08:03 sthen Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	3.6.2
-REVISION=	0
+REVISION=	1
 
 API_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	API_V
@@ -17,16 +17,25 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject clutter-1.0 clutter-gtk-1.0
-WANTLIB += dbus-1 epoxy exiv2 expat ffi fontconfig freetype gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gstreamer-1.0 gthread-2.0 gtk-3 fribidi
-WANTLIB += harfbuzz jpeg json-glib-1.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread colord
-WANTLIB += rsvg-2 secret-1 soup-2.4 ${COMPILER_LIBCXX} tiff lcms2 raw
-WANTLIB += webkit2gtk-4.0 webp xcb xcb-render xcb-shm z iconv intl
+WANTLIB += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb Xau Xcomposite
+WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender Xxf86vm atk-1.0 atk-bridge-2.0 brotlicommon
+WANTLIB += brotlidec c cairo cairo-gobject clutter-1.0 clutter-gtk-1.0
+WANTLIB += cogl cogl-pango cogl-path colord colordprivate croco-0.6
+WANTLIB += drm enchant-2 epoxy exiv2 expat ffi fontconfig freetype
+WANTLIB += fribidi gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error graphite2
+WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstgl-1.0
+WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
+WANTLIB += gthread-2.0 gtk-3 harfbuzz harfbuzz-icu hyphen iconv
+WANTLIB += icudata icui18n icuuc idn2 intl jasper javascriptcoregtk-4.0
+WANTLIB += jpeg json-glib-1.0 lcms2 lzma m notify openjp2 orc-0.4
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png psl raw rsvg-2 secret-1 soup-2.4 sqlite3 tasn1
+WANTLIB += tiff unistring webkit2gtk-4.0 webp webpdemux woff2common
+WANTLIB += woff2dec xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present
+WANTLIB += xcb-render xcb-shm xcb-sync xcb-xfixes xml2 xshmfence
+WANTLIB += xslt z
 
 COMPILER =		base-clang ports-gcc base-gcc
 

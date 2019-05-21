@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/21 10:08:03 sthen Exp $
 
 COMMENT =		emulator for Nintendo Entertainment System
 
@@ -6,7 +6,7 @@ V =			2.2.3
 DISTNAME =		fceux-${V}.src
 PKGNAME =		fceux-${V}
 CATEGORIES =		emulators games
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		http://fceux.com/
 
@@ -17,9 +17,14 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fceultra/}
 
-WANTLIB += 		GL SDL X11 c gd gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0
-WANTLIB += 		gobject-2.0 gtk-x11-2.0 lua5.1 m pthread
-WANTLIB += 		z ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
+WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
+WANTLIB += Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 cairo expat ffi fontconfig
+WANTLIB += GL SDL X11 c gd gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0
+WANTLIB += gobject-2.0 gtk-x11-2.0 lua5.1 m pthread z
+WANTLIB += freetype fribidi gio-2.0 gmodule-2.0 graphite2 harfbuzz
+WANTLIB += intl pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png xcb xcb-render xcb-shm
 
 COMPILER =		base-clang ports-gcc base-gcc
 

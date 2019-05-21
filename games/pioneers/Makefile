@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2018/10/26 06:42:02 bentley Exp $
+# $OpenBSD: Makefile,v 1.50 2019/05/21 10:08:03 sthen Exp $
 
 COMMENT=		Settlers of Catan for GNOME/Gtk
 
 GNOME_PROJECT=		pioneers
 GNOME_VERSION=		15.5
+REVISION=		0
 
 CATEGORIES=		games
 
@@ -14,6 +15,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-3 intl m notify pango-1.0 pangocairo-1.0
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 cairo-gobject
+WANTLIB += epoxy expat ffi fontconfig freetype fribidi gmodule-2.0
+WANTLIB += graphite2 harfbuzz iconv pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread xcb xcb-render xcb-shm z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pio/}
 EXTRACT_SUFX=		.tar.gz

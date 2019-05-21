@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/20 22:15:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/05/21 10:08:03 sthen Exp $
 
 V =			0.4.3
+REVISION =		0
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
 DISTNAME =		zathura-${V}
 CATEGORIES =		textproc x11
@@ -10,6 +11,11 @@ HOMEPAGE =		https://pwmt.org/projects/zathura/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 girara-gtk3 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gtk-3 intl m magic pango-1.0 pangocairo-1.0 pthread
+WANTLIB += sqlite3 synctex
 
 MASTER_SITES =	https://pwmt.org/projects/zathura/download/
 
@@ -23,11 +29,6 @@ LIB_DEPENDS =	databases/sqlite3 \
 		devel/libmagic \
 		x11/girara>=0.3.2 \
 		print/texlive/base,-synctex
-
-WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 girara-gtk3 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gtk-3 intl m magic pango-1.0 pangocairo-1.0 pthread
-WANTLIB += sqlite3 synctex
 
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c
