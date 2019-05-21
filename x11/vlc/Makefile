@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.224 2019/05/20 22:15:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.225 2019/05/21 15:39:57 sthen Exp $
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
@@ -89,6 +89,7 @@ LIB_DEPENDS-jack= ${BUILD_PKGPATH} \
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/bison \
+		devel/gettext,-tools \
 		devel/libtool
 RUN_DEPENDS-main= devel/desktop-file-utils \
 		x11/gtk+3,-guic
