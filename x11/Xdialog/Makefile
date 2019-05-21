@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/20 22:15:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/05/21 23:05:27 naddy Exp $
 
 COMMENT=	X11 counterpart of curses-based misc/dialog
 
@@ -22,15 +22,16 @@ EXTRACT_SUFX=	.tar.bz2
 
 BUILD_DEPENDS=	devel/gettext,-tools
 LIB_DEPENDS=	x11/gtk+2
-AUTOCONF_VERSION=2.59
+AUTOCONF_VERSION=2.61
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ARGS=	--with-gtk2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 # grab new macros that match *.so.n.m shared libraries
+# requires autoconf >=2.61
 post-patch:
-	cp ${LOCALBASE}/share/aclocal/lib-link.m4 \
-	    ${LOCALBASE}/share/aclocal/lib-prefix.m4 ${WRKSRC}/m4
+	cd ${LOCALBASE}/share/aclocal && \
+	    cp lib-link.m4 lib-prefix.m4 host-cpu-c-abi.m4 ${WRKSRC}/m4
 
 .include <bsd.port.mk>
