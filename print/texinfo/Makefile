@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/20 22:15:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/21 09:34:30 sthen Exp $
 
 COMMENT =		official documentation format of the GNU project
 
 DISTNAME =		texinfo-6.5
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		print
 
@@ -14,7 +14,7 @@ MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c iconv intl ncurses
+WANTLIB += c iconv intl curses
 
 MASTER_SITES =		${MASTER_SITE_GNU:=texinfo/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/05/20 22:15:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2019/05/21 09:34:30 sthen Exp $
 
 # XXX consider moving to https://repo.or.cz/alpine.git
 
@@ -28,12 +28,9 @@ PKGNAME-mailutil=	mailutil-uw-${V}
 PKGNAME-pico=		pico-${PICO_V}
 PKGNAME-pilot=		pilot-${PILOT_V}
 
-REVISION-main=		2
-REVISION-c-client=	2
-REVISION-imap=		2
-REVISION-mailutil=	2
-REVISION-pico=		19
-REVISION-pilot=		19
+REVISION=		3
+REVISION-pico=		20
+REVISION-pilot=		20
 
 EPOCH-c-client=		0
 EPOCH-imap=		0
@@ -54,7 +51,7 @@ MASTER_SITES=		http://alpine.x10host.com/alpine/release/
 
 MULTI_PACKAGES=		-main -c-client -imap -mailutil -pico -pilot
 
-WANTLIB += c crypto iconv intl ncurses ssl
+WANTLIB += c crypto iconv intl curses ssl
 
 WANTLIB-main=		${WANTLIB} pthread
 WANTLIB-c-client=	# empty

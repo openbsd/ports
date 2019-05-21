@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/20 22:15:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/21 09:34:30 sthen Exp $
 
 COMMENT =	abstract puzzle game
 
 DISTNAME =	chroma-1.13
-REVISION =	2
+REVISION =	3
 EXTRACT_SUFX =	.tar.bz2
 FIX_EXTRACT_PERMISSIONS=Yes
 
@@ -16,7 +16,7 @@ MAINTAINER =	LEVAI Daniel <leva@ecentrum.hu>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  SDL SDL_image c freetype iconv intl ncurses pthread z
+WANTLIB =  SDL SDL_image c freetype iconv intl curses pthread z
 
 MASTER_SITES=	${HOMEPAGE}/download/
 

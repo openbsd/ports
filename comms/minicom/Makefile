@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2019/05/20 22:15:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.65 2019/05/21 09:34:30 sthen Exp $
 
 COMMENT=	MS-DOS Telix-like serial communication program
 
 DISTNAME=	minicom-2.7.1
-REVISION=	2
+REVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	https://alioth-archive.debian.org/releases/minicom/Source/2.7.1/
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	comms/kermit \
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c iconv intl ncurses
+WANTLIB=		c iconv intl curses
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \

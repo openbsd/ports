@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/20 22:15:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/21 09:34:30 sthen Exp $
 
 COMMENT=	capture network traffic, display streams sorted by bandwidth
 
 DISTNAME=	jnettop-0.13.0
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	net
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://jnettop.kubs.info/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c glib-2.0 gthread-2.0 intl ncurses pcap pthread
+WANTLIB += c glib-2.0 gthread-2.0 intl curses pcap pthread
 
 MASTER_SITES=	${HOMEPAGE}dist/
 
