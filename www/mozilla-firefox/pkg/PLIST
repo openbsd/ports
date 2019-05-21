@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.79 2018/12/11 15:32:35 landry Exp $
+@comment $OpenBSD: PLIST,v 1.80 2019/05/21 16:51:12 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
 @conflict firefox36-*
@@ -30,6 +30,7 @@ lib/${MOZILLA_PROJECT}/browser/defaults/preferences/
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/all-openbsd.js
 lib/${MOZILLA_PROJECT}/browser/features/
 lib/${MOZILLA_PROJECT}/browser/features/formautofill@mozilla.org.xpi
+lib/${MOZILLA_PROJECT}/browser/features/fxmonitor@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/screenshots@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/webcompat-reporter@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/webcompat@mozilla.org.xpi

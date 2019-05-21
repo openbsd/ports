@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.379 2019/05/08 18:16:31 landry Exp $
+# $OpenBSD: Makefile,v 1.380 2019/05/21 16:51:12 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	66.0.5
+MOZILLA_VERSION =	67.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	83.0
+SO_VERSION =	84.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs
@@ -49,6 +49,8 @@ BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_3}
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
 BUILD_DEPENDS +=	devel/cbindgen
+# 67 requires nasm for bundled libav1d
+BUILD_DEPENDS +=	devel/nasm
 
 WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm ${COMPILER_LIBCXX}
 
@@ -63,8 +65,8 @@ CONFIGURE_ARGS +=	--enable-release #1386371
 # rust-simd doesn't work with lang/rust>=1.33
 #CONFIGURE_ARGS +=	--enable-rust-simd #1261841
 CONFIGURE_ARGS +=	--enable-webrender=build
-CONFIGURE_ARGS +=	--disable-debug-symbols
 .if ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS +=	--disable-debug-symbols
 MAKE_ENV +=		RUSTFLAGS="-C target-cpu=pentium4 --cfg target_feature=\"sse2\""
 DPB_PROPERTIES =	lonesome
 .endif
