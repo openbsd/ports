@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.122 2019/05/02 14:51:49 danj Exp $
+# $OpenBSD: Makefile,v 1.123 2019/05/21 09:41:52 sthen Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME=	gimp-2.8.22
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS+=	gimp-2.0	272.0	# 800.0
 SHARED_LIBS+=	gimpbase-2.0	272.0	# 800.0
@@ -48,18 +48,19 @@ LIB_DEPENDS=	archivers/bzip2 \
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =  ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB =  ${COMPILER_LIBCXX}
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xmu Xpm Xrandr Xrender Xt aa atk-1.0 avahi-client
 WANTLIB += avahi-common babl-0.1 bz2 c cairo croco-0.6 crypto cups
 WANTLIB += cupsimage curl dbus-1 dbus-glib-1 execinfo exif expat ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gegl-0.2
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 graphite2
 WANTLIB += gs gthread-2.0 gtk-x11-2.0 harfbuzz hogweed iconv idn2 ijs
-WANTLIB += intl jasper jbig2dec jpeg lcms lcms2 lzma m mng ncurses
+WANTLIB += intl jasper jbig2dec jpeg lcms lcms2 lzma m mng curses
 WANTLIB += nettle nghttp2 openjp2 p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png poppler poppler-glib pthread
+WANTLIB += pangoft2-1.0 pcre pixman-1 png poppler poppler-glib
 WANTLIB += rsvg-2 ssl tasn1 tiff unistring wmf-0.2 wmflite-0.2 xcb
-WANTLIB += xcb-render xcb-shm xml2 z
+WANTLIB += xcb-render xcb-shm xml2 z fribidi
 
 MODULES=	textproc/intltool \
 		lang/python
