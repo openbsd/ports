@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/20 22:15:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/21 21:21:23 naddy Exp $
 
 COMMENT-main =	flexible input method framework
 COMMENT-gtk3 = 	fcitx for GTK+3
@@ -9,6 +9,7 @@ DISTNAME = 	fcitx-$V
 PKGNAME-main =	fcitx-$V
 PKGNAME-gtk3 =	fcitx-gtk3-$V
 PKGNAME-qt4 =	fcitx-qt4-$V
+REVISION-main =	0
 
 SHARED_LIBS +=	fcitx-config	0.0 # 4.1
 SHARED_LIBS +=	fcitx-core	0.0 # 0.3
