@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2019/05/20 22:15:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.59 2019/05/22 11:54:37 naddy Exp $
 
 COMMENT=		SLang-based newsreader
 
@@ -42,7 +42,8 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autoconf
 
 # replace bundled m4 files with the newer (working ;) ones from gettext
 do-gen:
-.for i in gettext lib-ld lib-prefix nls progtest iconv lib-link po
+.for i in gettext lib-ld lib-prefix host-cpu-c-abi nls progtest iconv \
+    lib-link po
 	cp ${LOCALBASE}/share/aclocal/$i.m4 ${WRKSRC}/autoconf/include/
 .endfor
 	cd ${WRKSRC}/autoconf && \

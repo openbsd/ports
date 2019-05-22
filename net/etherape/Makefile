@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/05/20 22:15:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2019/05/22 11:54:37 naddy Exp $
 
 COMMENT =		graphical network monitor
 
@@ -42,6 +42,6 @@ LIB_DEPENDS =		x11/gtk+2 \
 BUILD_DEPENDS +=	devel/gettext,-tools
 post-patch:
 	cd ${LOCALBASE}/share/aclocal && \
-	    cp lib-link.m4 lib-prefix.m4 ${WRKSRC}/m4
+	    cp lib-link.m4 lib-prefix.m4 host-cpu-c-abi.m4 ${WRKSRC}/m4
 
 .include <bsd.port.mk>

@@ -1,0 +1,13 @@
+$OpenBSD: patch-autoconf_configure_ac,v 1.1 2019/05/22 11:54:37 naddy Exp $
+
+Index: autoconf/configure.ac
+--- autoconf/configure.ac.orig
++++ autoconf/configure.ac
+@@ -213,6 +213,7 @@ m4_include([./include/po.m4])
+ m4_include([./include/lib-ld.m4])
+ m4_include([./include/lib-link.m4])
+ m4_include([./include/lib-prefix.m4])
++m4_include([./include/host-cpu-c-abi.m4])
+ m4_include([./include/mkdirp.m4])
+ m4_include([./include/progtest.m4])
+ AM_ICONV
