@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.225 2019/05/22 10:29:00 jca Exp $
+# $OpenBSD: Makefile,v 1.226 2019/05/22 11:03:47 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -19,7 +19,7 @@ PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
 REVISION-main =	13
-REVISION-lldb =	2
+REVISION-lldb =	3
 
 CATEGORIES =	devel
 
@@ -34,8 +34,6 @@ MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-
-WANTLIB =	${COMPILER_LIBCXX} c edit m pthread z
 
 MASTER_SITES =	https://releases.llvm.org/${LLVM_V}/
 EXTRACT_SUFX =	.tar.xz
@@ -63,17 +61,23 @@ TEST_DEPENDS +=		lang/gcc/${MODGCC4_VERSION},-c++
 RUN_DEPENDS +=		lang/gcc/${MODGCC4_VERSION},-c++
 .endif
 
+WANTLIB =		${COMPILER_LIBCXX} c edit m pthread
+
+WANTLIB-main =		${WANTLIB} z
+LIB_DEPENDS-main =	${LIB_DEPENDS}
+
 # clang python module loads libclang.so dynamically with cdll.LoadLibrary()
 WANTLIB-python =	clang
 RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-python =	${BUILD_PKGPATH},-main
 
-WANTLIB-lldb =		${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB-lldb +=		c curses edit form m panel
+WANTLIB-lldb =		${WANTLIB} ${MODPY_WANTLIB}
+WANTLIB-lldb +=		curses edit form panel
 # XXX linked against libLLVM-x.so, should be LIB_DEPENDS
 RUN_DEPENDS-lldb =	${BUILD_PKGPATH},-main
 RUN_DEPENDS-lldb +=	${MODPY_RUN_DEPENDS} \
 			devel/py-six
+LIB_DEPENDS-lldb =	${LIB_DEPENDS}
 
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
