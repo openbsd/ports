@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/08/22 05:19:17 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/05/22 17:03:31 kirby Exp $
 bin/searpc-codegen.py
 include/searpc-client.h
 include/searpc-named-pipe-transport.h
@@ -19,6 +19,18 @@ lib/python${MODPY_VERSION}/site-packages/pysearpc/client.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysearpc/common.py
 lib/python${MODPY_VERSION}/site-packages/pysearpc/common.pyc
 lib/python${MODPY_VERSION}/site-packages/pysearpc/common.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pysearpc/errors.py
+lib/python${MODPY_VERSION}/site-packages/pysearpc/errors.pyc
+lib/python${MODPY_VERSION}/site-packages/pysearpc/errors.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pysearpc/named_pipe.py
+lib/python${MODPY_VERSION}/site-packages/pysearpc/named_pipe.pyc
+lib/python${MODPY_VERSION}/site-packages/pysearpc/named_pipe.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pysearpc/server.py
 lib/python${MODPY_VERSION}/site-packages/pysearpc/server.pyc
 lib/python${MODPY_VERSION}/site-packages/pysearpc/server.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pysearpc/transport.py
+lib/python${MODPY_VERSION}/site-packages/pysearpc/transport.pyc
+lib/python${MODPY_VERSION}/site-packages/pysearpc/transport.${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pysearpc/utils.py
+lib/python${MODPY_VERSION}/site-packages/pysearpc/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/pysearpc/utils.${MODPY_PYOEXTENSION}
