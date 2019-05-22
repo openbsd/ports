@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.224 2019/05/08 21:53:20 jca Exp $
+# $OpenBSD: Makefile,v 1.225 2019/05/22 10:29:00 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -19,7 +19,7 @@ PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
 REVISION-main =	13
-REVISION-lldb =	1
+REVISION-lldb =	2
 
 CATEGORIES =	devel
 
@@ -70,8 +70,9 @@ LIB_DEPENDS-python =	${BUILD_PKGPATH},-main
 
 WANTLIB-lldb =		${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 WANTLIB-lldb +=		c curses edit form m panel
-LIB_DEPENDS-lldb =	${BUILD_PKGPATH},-main
-RUN_DEPENDS-lldb =	${MODPY_RUN_DEPENDS} \
+# XXX linked against libLLVM-x.so, should be LIB_DEPENDS
+RUN_DEPENDS-lldb =	${BUILD_PKGPATH},-main
+RUN_DEPENDS-lldb +=	${MODPY_RUN_DEPENDS} \
 			devel/py-six
 
 CONFIGURE_STYLE =	cmake
