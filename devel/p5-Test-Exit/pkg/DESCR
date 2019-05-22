@@ -1,0 +1,3 @@
+Test::Exit provides some simple tools for testing code that might
+call exit(), providing you with the status code without exiting the
+test file.
