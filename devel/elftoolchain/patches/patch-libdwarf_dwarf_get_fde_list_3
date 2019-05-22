@@ -1,0 +1,15 @@
+$OpenBSD: patch-libdwarf_dwarf_get_fde_list_3,v 1.1 2019/05/22 12:56:29 schwarze Exp $
+
+Index: libdwarf/dwarf_get_fde_list.3
+--- libdwarf/dwarf_get_fde_list.3.orig
++++ libdwarf/dwarf_get_fde_list.3
+@@ -28,7 +28,8 @@
+ .Os
+ .Dt DWARF_GET_FDE_LIST 3
+ .Sh NAME
+-.Nm dwarf_get_fde_list
++.Nm dwarf_get_fde_list ,
++.Nm dwarf_get_fde_list_eh
+ .Nd retrieve frame information
+ .Sh LIBRARY
+ .Lb libdwarf

@@ -1,0 +1,121 @@
+$OpenBSD: patch-libdwarf_Makefile,v 1.1 2019/05/22 12:56:29 schwarze Exp $
+
+Index: libdwarf/Makefile
+--- libdwarf/Makefile.orig
++++ libdwarf/Makefile
+@@ -213,115 +213,6 @@ MAN=	dwarf.3                                         \
+ 	dwarf_vendor_ext.3				\
+ 	dwarf_whatattr.3
+ 
+-MLINKS+= \
+-	dwarf_add_AT_const_value_string.3 dwarf_add_AT_const_value_signedint.3 \
+-	dwarf_add_AT_const_value_string.3 dwarf_add_AT_const_value_unsignedint.3 \
+-	dwarf_add_AT_signed_const.3 dwarf_add_AT_unsigned_const.3 \
+-	dwarf_add_AT_targ_address.3 dwarf_add_AT_targ_address_b.3 \
+-	dwarf_add_arange.3	dwarf_add_arange_b.3	\
+-	dwarf_add_expr_addr.3	dwarf_add_expr_addr_b.3	\
+-	dwarf_add_frame_fde.3	dwarf_add_frame_fde_b.3	\
+-	dwarf_attrval_signed.3	dwarf_attrval_flag.3	\
+-	dwarf_attrval_signed.3	dwarf_attrval_string.3	\
+-	dwarf_attrval_signed.3	dwarf_attrval_unsigned.3 \
+-	dwarf_child.3	dwarf_offdie.3			\
+-	dwarf_child.3	dwarf_offdie_b.3		\
+-	dwarf_child.3	dwarf_siblingof.3		\
+-	dwarf_child.3	dwarf_siblingof_b.3		\
+-	dwarf_dealloc.3	dwarf_fde_cie_list_dealloc.3	\
+-	dwarf_dealloc.3	dwarf_funcs_dealloc.3		\
+-	dwarf_dealloc.3	dwarf_globals_dealloc.3		\
+-	dwarf_dealloc.3	dwarf_pubtypes_dealloc.3	\
+-	dwarf_dealloc.3	dwarf_types_dealloc.3		\
+-	dwarf_dealloc.3	dwarf_vars_dealloc.3		\
+-	dwarf_dealloc.3	dwarf_weaks_dealloc.3		\
+-	dwarf_dealloc.3	dwarf_ranges_dealloc.3		\
+-	dwarf_dealloc.3	dwarf_srclines_dealloc.3	\
+-	dwarf_init.3	dwarf_elf_init.3		\
+-	dwarf_dieoffset.3	dwarf_die_CU_offset.3	\
+-	dwarf_dieoffset.3	dwarf_die_CU_offset_range.3 \
+-	dwarf_dieoffset.3	dwarf_get_cu_die_offset_given_cu_header_offset.3 \
+-	dwarf_dieoffset.3	dwarf_get_cu_die_offset_given_cu_header_offset_b.3 \
+-	dwarf_finish.3		dwarf_object_finish.3	\
+-	dwarf_formref.3	dwarf_global_formref.3		\
+-	dwarf_formudata.3	dwarf_formsdata.3	\
+-	dwarf_get_AT_name.3	dwarf_get_ACCESS_name.3	\
+-	dwarf_get_AT_name.3	dwarf_get_ATE_name.3	\
+-	dwarf_get_AT_name.3	dwarf_get_CC_name.3	\
+-	dwarf_get_AT_name.3	dwarf_get_CFA_name.3	\
+-	dwarf_get_AT_name.3	dwarf_get_CHILDREN_name.3 \
+-	dwarf_get_AT_name.3	dwarf_get_DS_name.3	\
+-	dwarf_get_AT_name.3	dwarf_get_DSC_name.3	\
+-	dwarf_get_AT_name.3	dwarf_get_EH_name.3	\
+-	dwarf_get_AT_name.3	dwarf_get_END_name.3	\
+-	dwarf_get_AT_name.3	dwarf_get_FORM_name.3	\
+-	dwarf_get_AT_name.3	dwarf_get_ID_name.3	\
+-	dwarf_get_AT_name.3	dwarf_get_INL_name.3	\
+-	dwarf_get_AT_name.3	dwarf_get_LANG_name.3	\
+-	dwarf_get_AT_name.3	dwarf_get_LNE_name.3	\
+-	dwarf_get_AT_name.3	dwarf_get_LNS_name.3	\
+-	dwarf_get_AT_name.3	dwarf_get_MACINFO_name.3 \
+-	dwarf_get_AT_name.3	dwarf_get_OP_name.3	\
+-	dwarf_get_AT_name.3	dwarf_get_ORD_name.3	\
+-	dwarf_get_AT_name.3	dwarf_get_TAG_name.3	\
+-	dwarf_get_AT_name.3	dwarf_get_VIRTUALITY_name.3 \
+-	dwarf_get_AT_name.3	dwarf_get_VIS_name.3	\
+-	dwarf_get_cu_die_offset.3 dwarf_get_arange_cu_header_offset.3 \
+-	dwarf_get_fde_list.3	dwarf_get_fde_list_eh.3	\
+-	dwarf_get_funcs.3	dwarf_func_die_offset.3	\
+-	dwarf_get_funcs.3	dwarf_func_cu_offset.3	\
+-	dwarf_get_funcs.3	dwarf_func_name_offsets.3 \
+-	dwarf_get_funcs.3	dwarf_funcname.3	\
+-	dwarf_get_globals.3	dwarf_global_die_offset.3 \
+-	dwarf_get_globals.3	dwarf_global_cu_offset.3 \
+-	dwarf_get_globals.3	dwarf_global_name_offsets.3 \
+-	dwarf_get_globals.3	dwarf_globname.3	\
+-	dwarf_get_pubtypes.3	dwarf_pubtype_die_offset.3 \
+-	dwarf_get_pubtypes.3	dwarf_pubtype_cu_offset.3 \
+-	dwarf_get_pubtypes.3	dwarf_pubtype_name_offsets.3 \
+-	dwarf_get_pubtypes.3	dwarf_pubtypename.3	\
+-	dwarf_get_ranges.3	dwarf_get_ranges_a.3	\
+-	dwarf_get_section_max_offsets.3 dwarf_get_section_max_offsets_b.3 \
+-	dwarf_get_types.3	dwarf_type_die_offset.3	\
+-	dwarf_get_types.3	dwarf_type_cu_offset.3	\
+-	dwarf_get_types.3	dwarf_type_name_offsets.3 \
+-	dwarf_get_types.3	dwarf_typename.3	\
+-	dwarf_get_vars.3	dwarf_var_die_offset.3	\
+-	dwarf_get_vars.3	dwarf_var_cu_offset.3	\
+-	dwarf_get_vars.3	dwarf_var_name_offsets.3 \
+-	dwarf_get_vars.3	dwarf_varname.3		\
+-	dwarf_get_weaks.3	dwarf_weak_die_offset.3	\
+-	dwarf_get_weaks.3	dwarf_weak_cu_offset.3	\
+-	dwarf_get_weaks.3	dwarf_weak_name_offsets.3 \
+-	dwarf_get_weaks.3	dwarf_weakname.3	\
+-	dwarf_hasform.3	dwarf_whatform.3		\
+-	dwarf_hasform.3	dwarf_whatform_direct.3		\
+-	dwarf_highpc.3	dwarf_arrayorder.3		\
+-	dwarf_highpc.3	dwarf_bitoffset.3		\
+-	dwarf_highpc.3	dwarf_bitsize.3			\
+-	dwarf_highpc.3	dwarf_bytesize.3		\
+-	dwarf_highpc.3	dwarf_highpc_b.3		\
+-	dwarf_highpc.3	dwarf_lowpc.3			\
+-	dwarf_highpc.3	dwarf_srclang.3			\
+-	dwarf_lineno.3	dwarf_lineaddr.3		\
+-	dwarf_lineno.3	dwarf_linebeginstatement.3	\
+-	dwarf_lineno.3	dwarf_lineblock.3		\
+-	dwarf_lineno.3	dwarf_lineendsequence.3		\
+-	dwarf_lineno.3	dwarf_lineoff.3			\
+-	dwarf_lineno.3	dwarf_linesrc.3			\
+-	dwarf_lineno.3	dwarf_line_srcfileno.3		\
+-	dwarf_loclist.3	dwarf_loclist_n.3		\
+-	dwarf_loclist_from_expr.3 dwarf_loclist_from_expr_a.3 \
+-	dwarf_loclist_from_expr.3 dwarf_loclist_from_expr_b.3 \
+-	dwarf_next_cu_header.3 dwarf_next_cu_header_b.3	\
+-	dwarf_next_cu_header.3 dwarf_next_cu_header_c.3	\
+-	dwarf_producer_init.3 dwarf_producer_init_b.3	\
+-	dwarf_seterrarg.3	dwarf_seterrhand.3	\
+-	dwarf_set_frame_cfa_value.3 dwarf_set_frame_rule_initial_value.3 \
+-	dwarf_set_frame_cfa_value.3 dwarf_set_frame_rule_table_size.3 \
+-	dwarf_set_frame_cfa_value.3 dwarf_set_frame_same_value.3 \
+-	dwarf_set_frame_cfa_value.3 dwarf_set_frame_undefined_value.3
+-
+ dwarf_pubnames.c:	dwarf_nametbl.m4 dwarf_pubnames.m4
+ dwarf_pubtypes.c:	dwarf_nametbl.m4 dwarf_pubtypes.m4
+ dwarf_weaks.c:		dwarf_nametbl.m4 dwarf_weaks.m4

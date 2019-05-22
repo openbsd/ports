@@ -1,0 +1,15 @@
+$OpenBSD: patch-libelf_elf_open_3,v 1.1 2019/05/22 12:56:29 schwarze Exp $
+
+Index: libelf/elf_open.3
+--- libelf/elf_open.3.orig
++++ libelf/elf_open.3
+@@ -27,7 +27,8 @@
+ .Os
+ .Dt ELF_OPEN 3
+ .Sh NAME
+-.Nm elf_open
++.Nm elf_open ,
++.Nm elf_openmemory
+ .Nd open ELF objects and ar(1) archives
+ .Sh LIBRARY
+ .Lb libelf

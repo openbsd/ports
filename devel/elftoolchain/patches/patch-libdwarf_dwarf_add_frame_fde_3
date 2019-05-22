@@ -1,0 +1,15 @@
+$OpenBSD: patch-libdwarf_dwarf_add_frame_fde_3,v 1.1 2019/05/22 12:56:29 schwarze Exp $
+
+Index: libdwarf/dwarf_add_frame_fde.3
+--- libdwarf/dwarf_add_frame_fde.3.orig
++++ libdwarf/dwarf_add_frame_fde.3
+@@ -28,7 +28,8 @@
+ .Os
+ .Dt DWARF_ADD_FRAME_FDE 3
+ .Sh NAME
+-.Nm dwarf_add_frame_fde
++.Nm dwarf_add_frame_fde ,
++.Nm dwarf_add_frame_fde_b
+ .Nd add a call frame descriptor to a DWARF producer instance
+ .Sh LIBRARY
+ .Lb libdwarf

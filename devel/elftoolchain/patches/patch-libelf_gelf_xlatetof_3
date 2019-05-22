@@ -1,0 +1,21 @@
+$OpenBSD: patch-libelf_gelf_xlatetof_3,v 1.1 2019/05/22 12:56:29 schwarze Exp $
+
+Index: libelf/gelf_xlatetof.3
+--- libelf/gelf_xlatetof.3.orig
++++ libelf/gelf_xlatetof.3
+@@ -27,9 +27,12 @@
+ .Os
+ .Dt GELF_XLATETOF 3
+ .Sh NAME
+-.Nm elf32_xlate ,
+-.Nm elf64_xlate ,
+-.Nm gelf_xlate
++.Nm elf32_xlatetof ,
++.Nm elf32_xlatetom ,
++.Nm elf64_xlatetof ,
++.Nm elf64_xlatetom ,
++.Nm gelf_xlatetof ,
++.Nm gelf_xlatetom
+ .Nd translate data between files and memory
+ .Sh LIBRARY
+ .Lb libelf
