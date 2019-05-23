@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/17 16:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/05/23 09:37:30 sthen Exp $
 
 COMMENT=	full screen simple editor
 
 DISTNAME=	uemacs
 PKGNAME=	uemacs-4.0
 CATEGORIES=	editors
-REVISION =	1
+REVISION=	2
 
 HOMEPAGE=	http://uemacs.tripod.com/
 
-PERMIT_PACKAGE_CDROM=	weird no fee license
+# see doc/readme
+PERMIT_PACKAGE_CDROM=	can be copied and distributed freely for any non-commercial purposes
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += c curses

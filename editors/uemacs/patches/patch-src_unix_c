@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_unix_c,v 1.1 2004/01/06 03:29:09 espie Exp $
---- src/unix.c.orig	1995-11-18 16:36:58.000000000 +0100
-+++ src/unix.c	2004-01-06 04:20:22.000000000 +0100
+$OpenBSD: patch-src_unix_c,v 1.2 2019/05/23 09:37:30 sthen Exp $
+Index: src/unix.c
+--- src/unix.c.orig
++++ src/unix.c
 @@ -81,7 +81,7 @@ int scnothing()
  }
  
@@ -58,7 +59,7 @@ $OpenBSD: patch-src_unix_c,v 1.1 2004/01/06 03:29:09 espie Exp $
  /* Surely more than just BSD systems do this */
  
  /** Perform a stop signal **/
-@@ -1225,7 +1225,7 @@ int bktoshell(f, n)
+@@ -1225,12 +1225,12 @@ int bktoshell(f, n)
  	return(0);
  }
  
@@ -67,6 +68,12 @@ $OpenBSD: patch-src_unix_c,v 1.1 2004/01/06 03:29:09 espie Exp $
  
  /** Get time of day **/
  char * timeset()
+ {
+-	long int buf; /* Should be time_t */
++	time_t buf;
+ 	char * sp, * cp;
+ 
+ 	char * ctime();
 @@ -1327,9 +1327,9 @@ int n;					/* Argument count		*/
  	/* Get shell path */
  	sh = getenv("SHELL");
