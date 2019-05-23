@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:40 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2019/05/23 05:01:04 feinerer Exp $
 
 COMMENT =		Python port of libaxolotl
 
-MODPY_EGG_VERSION =	0.2.2
+MODPY_EGG_VERSION =	0.2.3
 DISTNAME =		python-axolotl-${MODPY_EGG_VERSION}
 PKGNAME =		py-axolotl-${MODPY_EGG_VERSION}
 
