@@ -1,21 +1,20 @@
-$OpenBSD: README-php,v 1.4 2018/09/04 12:46:14 espie Exp $
+$OpenBSD: README-php,v 1.5 2019/05/23 19:24:47 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
 You can enable this module by creating a symbolic
-link from ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/mapscript.ini to
-${SYSCONFDIR}/php-${MODPHP_VERSION}/mapscript.ini.
+link from ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/mapscriptng.ini to
+${SYSCONFDIR}/php-${MODPHP_VERSION}/mapscriptng.ini.
 
-    # ln -fs ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/mapscript.ini \
-        ${SYSCONFDIR}/php-${MODPHP_VERSION}/mapscript.ini
+    # ln -fs ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/mapscriptng.ini \
+        ${SYSCONFDIR}/php-${MODPHP_VERSION}/mapscriptng.ini
 
 If you plan to use PHP mapscript extension with a chrooted web server, make
-sure to copy the libs needed by mapscript.so file binary from ${LOCALBASE}/lib,
-but also the projection definitions from libgeotiff and proj packages to the
+sure to copy the libs needed by mapscriptng.so file binary from ${LOCALBASE}/lib,
+but also the projection definitions from proj package to the chroot:
 chroot:
 
-# mkdir -p /var/www/${LOCALBASE}/share/{epsg_csv,proj}
-# cp ${LOCALBASE}/share/epsg_csv/* /var/www/${LOCALBASE}/share/epsg_csv
+# mkdir -p /var/www/${LOCALBASE}/share/proj
 # cp ${LOCALBASE}/share/proj/* /var/www/${LOCALBASE}/share/proj
