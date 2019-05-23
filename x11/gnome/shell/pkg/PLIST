@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2019/05/08 16:17:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.32 2019/05/23 08:48:23 ajacoutot Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
@@ -42,8 +42,6 @@ share/examples/gnome-shell/xdg/autostart/gnome-shell-overrides-migration.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/gnome-shell-overrides-migration.desktop
 share/glib-2.0/schemas/00_org.gnome.shell.gschema.override
 share/glib-2.0/schemas/org.gnome.shell.gschema.xml
-share/gnome-control-center/
-share/gnome-control-center/keybindings/
 share/gnome-control-center/keybindings/50-gnome-shell-system.xml
 share/gnome-shell/Gvc-1.0.gir
 share/gnome-shell/Shell-0.1.gir

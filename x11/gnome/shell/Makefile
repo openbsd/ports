@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.175 2019/05/09 16:47:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.176 2019/05/23 08:48:23 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.32.1
-REVISION=		2
+GNOME_VERSION=		3.32.2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,6 +18,9 @@ WANTLIB += gtk-3 ical intl json-glib-1.0 m mutter-4 p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 polkit-agent-1 polkit-gobject-1 pthread
 WANTLIB += pulse pulse-mainloop-glib secret-1 soup-2.4 startup-notification-1
 WANTLIB += xml2
+WANTLIB += lib/mutter-4/mutter-clutter-4
+WANTLIB += lib/mutter-4/mutter-cogl-4
+WANTLIB += lib/mutter-4/mutter-cogl-pango-4
 
 MODULES=		devel/dconf \
 			devel/meson \
