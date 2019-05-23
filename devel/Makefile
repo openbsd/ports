@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1859 2019/05/22 23:39:32 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1860 2019/05/23 17:50:11 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -725,6 +725,7 @@
      SUBDIR += p5-ExtUtils-Typemaps-Default
      SUBDIR += p5-ExtUtils-XSBuilder
      SUBDIR += p5-ExtUtils-XSpp
+     SUBDIR += p5-FFI-CheckLib
      SUBDIR += p5-File-Attributes
      SUBDIR += p5-File-Attributes-Recursive
      SUBDIR += p5-File-BOM
