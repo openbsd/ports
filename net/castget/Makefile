@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2018/10/24 14:28:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/05/23 20:44:24 naddy Exp $
 
 COMMENT=		command-line podcast downloader
 
 DISTNAME=		castget-1.0.1
-REVISION=		10
+REVISION=		11
 SHARED_LIBS +=	castget              0.0      # .0.0
 CATEGORIES=		net
 
@@ -16,8 +16,8 @@ MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto curl glib-2.0 iconv id3 intl lzma m nghttp2 pcre pthread ssl
-WANTLIB += ${COMPILER_LIBCXX} xml2 z
+WANTLIB += c crypto curl glib-2.0 iconv id3 intl lzma m nghttp2 pcre pthread
+WANTLIB += ssl xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
