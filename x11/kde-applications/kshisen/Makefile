@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/24 11:57:02 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/23 10:39:13 espie Exp $
 
 COMMENT =	Shisen-Sho Mahjongg-like game
 DISTNAME =	kshisen-${VERSION}
 CATEGORIES =	games
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.kde.org/applications/games/kshisen
 
