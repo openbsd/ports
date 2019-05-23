@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/24 11:57:02 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/23 10:38:45 espie Exp $
 
+BROKEN =	Are you kidding me, this is not even the right port
 COMMENT =	Shisen-Sho Mahjongg-like game
 DISTNAME =	kshisen-${VERSION}
 CATEGORIES =	games
