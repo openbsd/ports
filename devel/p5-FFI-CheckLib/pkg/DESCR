@@ -1,0 +1,6 @@
+This module checks whether a particular dynamic library is available
+for FFI to use.  It is modeled heavily on Devel::CheckLib, but will
+find dynamic libraries even when development packages are not
+installed.  It also provides a find_lib function that will return
+the full path to the found dynamic library, which can be feed
+directly into FFI::Platypus or another FFI system.
