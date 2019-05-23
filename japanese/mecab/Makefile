@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/11/29 21:16:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/05/23 21:02:32 naddy Exp $
 
 # .libs/libmecab.so.0.0: undefined reference to `__sync_val_compare_and_swap_4'
 # .libs/libmecab.so.0.0: undefined reference to `__sync_add_and_fetch_4'
@@ -10,7 +10,7 @@ COMMENT-ipadic = IPA japanese dictionary for mecab
 DISTNAME =	mecab-0.996
 PKGNAME-main =	${DISTNAME}
 PKGNAME-ipadic = mecab-ipadic-2.7.0
-REVISION-main =	3
+REVISION-main =	4
 REVISION-ipadic = 4
 
 SHARED_LIBS =	mecab	0.0 # 2.0
@@ -43,6 +43,10 @@ CONFIGURE_STYLE = gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-liconv"
+
+# Do not explicitly add -lstdc++.
+# The test succeeds with clang even if libstdc++ is not present.
+CONFIGURE_ENV += ac_cv_lib_stdcpp_main=no
 
 IPADIC_VER =	20070801
 IPADIC_FILES =	char.bin dicrc left-id.def matrix.bin pos-id.def \
