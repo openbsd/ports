@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2019/03/13 19:46:15 landry Exp $
+@comment $OpenBSD: PLIST,v 1.49 2019/05/23 06:50:19 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -4060,9 +4060,13 @@ share/qgis/resources/themes/Blend of Gray/icons/caret-right.svg
 share/qgis/resources/themes/Blend of Gray/icons/close.svg
 share/qgis/resources/themes/Blend of Gray/icons/handle-horizontal.svg
 share/qgis/resources/themes/Blend of Gray/icons/handle-vertical.svg
+share/qgis/resources/themes/Blend of Gray/icons/qcheckbox-checked-disabled.svg
 share/qgis/resources/themes/Blend of Gray/icons/qcheckbox-checked.svg
+share/qgis/resources/themes/Blend of Gray/icons/qcheckbox-unchecked-disabled.svg
 share/qgis/resources/themes/Blend of Gray/icons/qcheckbox-unchecked.svg
+share/qgis/resources/themes/Blend of Gray/icons/qradiobox-checked-disabled.svg
 share/qgis/resources/themes/Blend of Gray/icons/qradiobox-checked.svg
+share/qgis/resources/themes/Blend of Gray/icons/qradiobox-unchecked-disabled.svg
 share/qgis/resources/themes/Blend of Gray/icons/qradiobox-unchecked.svg
 share/qgis/resources/themes/Blend of Gray/icons/separator-horizontal.svg
 share/qgis/resources/themes/Blend of Gray/icons/separator-vertical.svg
@@ -4081,9 +4085,13 @@ share/qgis/resources/themes/Night Mapping/icons/eye-blocked.svg
 share/qgis/resources/themes/Night Mapping/icons/eye.svg
 share/qgis/resources/themes/Night Mapping/icons/handle-horizontal.svg
 share/qgis/resources/themes/Night Mapping/icons/handle-vertical.svg
+share/qgis/resources/themes/Night Mapping/icons/qcheckbox-checked-disabled.svg
 share/qgis/resources/themes/Night Mapping/icons/qcheckbox-checked.svg
+share/qgis/resources/themes/Night Mapping/icons/qcheckbox-unchecked-disabled.svg
 share/qgis/resources/themes/Night Mapping/icons/qcheckbox-unchecked.svg
+share/qgis/resources/themes/Night Mapping/icons/qradiobox-checked-disabled.svg
 share/qgis/resources/themes/Night Mapping/icons/qradiobox-checked.svg
+share/qgis/resources/themes/Night Mapping/icons/qradiobox-unchecked-disabled.svg
 share/qgis/resources/themes/Night Mapping/icons/qradiobox-unchecked.svg
 share/qgis/resources/themes/Night Mapping/icons/separator-horizontal.svg
 share/qgis/resources/themes/Night Mapping/icons/separator-vertical.svg
