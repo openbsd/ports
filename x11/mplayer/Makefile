@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.298 2019/04/02 18:42:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.299 2019/05/23 08:52:16 ajacoutot Exp $
 
 COMMENT=	movie player supporting many formats
 
-V=		20190330
+V=		20190520
 FFMPEG_V=	4.1.3
 DISTNAME=	mplayer-${V}
 REVISION=	0
