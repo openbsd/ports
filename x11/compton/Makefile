@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/09 21:13:26 danj Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/24 17:43:05 thfr Exp $
 
 COMMENT =	lightweight compositor for X, forked from xcompmgr-dana
 
 V =		0.1_beta2
 PKGNAME =	compton-${V}
 DISTNAME =	compton-git-v0.1_beta2-2013-10-21
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	x11
 
 HOMEPAGE =	https://github.com/chjj/compton
+
+MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

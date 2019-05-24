@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_compton_c,v 1.1.1.1 2014/10/27 11:21:49 sthen Exp $
---- src/compton.c.orig	Mon Oct 21 19:47:01 2013
-+++ src/compton.c	Sun Oct 26 00:56:53 2014
+$OpenBSD: patch-src_compton_c,v 1.2 2019/05/24 17:43:05 thfr Exp $
+Index: src/compton.c
+--- src/compton.c.orig
++++ src/compton.c
 @@ -1665,6 +1665,8 @@ win_paint_win(session_t *ps, win *w, XserverRegion reg
              reg_paint, pcache_reg);
          break;
@@ -10,6 +11,15 @@ $OpenBSD: patch-src_compton_c,v 1.1.1.1 2014/10/27 11:21:49 sthen Exp $
      }
    }
  
+@@ -5825,7 +5827,7 @@ static bool
+ vsync_drm_init(session_t *ps) {
+ #ifdef CONFIG_VSYNC_DRM
+   // Should we always open card0?
+-  if (ps->drm_fd < 0 && (ps->drm_fd = open("/dev/dri/card0", O_RDWR)) < 0) {
++  if (ps->drm_fd < 0 && (ps->drm_fd = open("/dev/drm0", O_RDWR)) < 0) {
+     printf_errf("(): Failed to open device.");
+     return false;
+   }
 @@ -6165,6 +6167,8 @@ init_filters(session_t *ps) {
              return false;
          }

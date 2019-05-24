@@ -1,12 +1,13 @@
-$OpenBSD: patch-src_opengl_c,v 1.1 2019/02/13 20:36:08 matthieu Exp $
+$OpenBSD: patch-src_opengl_c,v 1.2 2019/05/24 17:43:05 thfr Exp $
 
 https://github.com/yshui/compton/commit/bf29b2d
 Avoid using 10bit FBConfigs
 Fix weird color issue with Mesa 18.0
 
---- src/opengl.c.orig	Mon Oct 21 16:17:01 2013
-+++ src/opengl.c	Tue Feb 12 21:14:44 2019
-@@ -497,6 +497,16 @@
+Index: src/opengl.c
+--- src/opengl.c.orig
++++ src/opengl.c
+@@ -497,6 +497,16 @@ glx_cmp_fbconfig(session_t *ps,
      return -1;
    if (!pfbc_b)
      return 1;
