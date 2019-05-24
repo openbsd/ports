@@ -1,23 +1,41 @@
-$OpenBSD: patch-src_libtomcrypt_src_headers_tomcrypt_cfg_h,v 1.1 2019/05/02 19:58:53 bcallah Exp $
+$OpenBSD: patch-src_libtomcrypt_src_headers_tomcrypt_cfg_h,v 1.2 2019/05/24 14:43:53 naddy Exp $
 
 Index: src/libtomcrypt/src/headers/tomcrypt_cfg.h
 --- src/libtomcrypt/src/headers/tomcrypt_cfg.h.orig
 +++ src/libtomcrypt/src/headers/tomcrypt_cfg.h
-@@ -101,6 +101,17 @@ LTC_EXPORT int   LTC_CALL XSTRCMP(const char *s1, cons
-   #endif
- #endif
+@@ -55,6 +55,26 @@ LTC_EXPORT int   LTC_CALL XSTRCMP(const char *s1, cons
+  * use the portable [slower] macros.
+  */
  
-+/* detect arm64 and arm */
 +#if defined(__OpenBSD__)
-+  #if defined(__aarch64__)
-+    #define ENDIAN_LITTLE
-+    #define ENDIAN_64BITWORD
-+  #elif defined(__arm__)
-+    #define ENDIAN_LITTLE
-+    #define ENDIAN_32BITWORD
-+  #endif
++
++#include <endian.h>
++#if BYTE_ORDER == LITTLE_ENDIAN
++   #define ENDIAN_LITTLE
++#elif BYTE_ORDER == BIG_ENDIAN
++   #define ENDIAN_BIG
++#endif
++#if defined(__LP64__)
++   #define ENDIAN_64BITWORD
++#else
++   #define ENDIAN_32BITWORD
++#endif
++#if !defined(__STRICT_ALIGNMENT)
++   #define LTC_FAST
++   #define LTC_FAST_TYPE    unsigned long
 +#endif
 +
++#else
++
+ /* detect x86-32 machines somewhat */
+ #if !defined(__STRICT_ANSI__) && (defined(INTEL_CC) || (defined(_MSC_VER) && defined(WIN32)) || (defined(__GNUC__) && (defined(__DJGPP__) || defined(__CYGWIN__) || defined(__MINGW32__) || defined(__i386__))))
+ #if !defined(ENDIAN_LITTLE) // SM
+@@ -100,6 +120,8 @@ LTC_EXPORT int   LTC_CALL XSTRCMP(const char *s1, cons
+     #define ENDIAN_32BITWORD
+   #endif
+ #endif
++
++#endif	/* __OpenBSD__ */
+ 
  
  #ifdef LTC_NO_FAST
-    #ifdef LTC_FAST
