@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/03 16:13:11 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/24 12:13:15 espie Exp $
 
 COMMENT =	run command with randomized parameters
 CATEGORIES = 	sysutils
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
 
 GH_PROJECT = 	random_run
-GH_TAGNAME = 	1.4
+GH_TAGNAME = 	1.5
 GH_ACCOUNT = 	marcespie
 
 COMPILER =	base-clang ports-gcc
@@ -13,6 +13,11 @@ COMPILER =	base-clang ports-gcc
 # BSD licence
 PERMIT_PACKAGE_CDROM = Yes
 NO_TEST = 	Yes
+
+# need to add this for gcc
+# revisit when gcc drops it
+EXTRA_ports-gcc =	-lstdc++fs
+LDFLAGS += 	${EXTRA_${CHOSEN_COMPILER}}
 
 WANTLIB =	${COMPILER_LIBCXX} c m
 
