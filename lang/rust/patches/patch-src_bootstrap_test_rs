@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_bootstrap_test_rs,v 1.1 2019/05/24 04:28:24 semarie Exp $
+Disable "Bootstrap" test by default (it requires network).
+
+Index: src/bootstrap/test.rs
+--- src/bootstrap/test.rs.orig
++++ src/bootstrap/test.rs
+@@ -2005,7 +2005,7 @@ pub struct Bootstrap;
+ 
+ impl Step for Bootstrap {
+     type Output = ();
+-    const DEFAULT: bool = true;
++    const DEFAULT: bool = false;
+     const ONLY_HOSTS: bool = true;
+ 
+     /// Tests the build system itself.
