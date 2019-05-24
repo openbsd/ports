@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/24 08:40:32 espie Exp $
 
 COMMENT =	walk all of perl memory arena
 
 MODULES =	cpan
-DISTNAME =	Devel-Gladiator-0.04
+DISTNAME =	Devel-Gladiator-0.07
 CATEGORIES =	devel
 MAINTAINER =	Marc Espie <espie@openbsd.org>
-REVISION =	2
 
 TEST_DEPENDS =	devel/p5-PadWalker
 # perl
