@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.39 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-ui_views_controls_textfield_textfield_cc,v 1.40 2019/05/24 19:09:15 robert Exp $
 
 Index: ui/views/controls/textfield/textfield.cc
 --- ui/views/controls/textfield/textfield.cc.orig
@@ -47,7 +47,7 @@ Index: ui/views/controls/textfield/textfield.cc
    if (!handled && !had_focus && event.IsOnlyMiddleMouseButton())
      RequestFocusWithPointer(ui::EventPointerType::POINTER_TYPE_MOUSE);
  #endif
-@@ -711,7 +711,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
+@@ -713,7 +713,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
    if (!textfield)
      return handled;
  
@@ -56,7 +56,7 @@ Index: ui/views/controls/textfield/textfield.cc
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
    std::vector<ui::TextEditCommandAuraLinux> commands;
-@@ -880,7 +880,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
+@@ -882,7 +882,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
  }
  
  bool Textfield::SkipDefaultKeyEventProcessing(const ui::KeyEvent& event) {
@@ -65,7 +65,7 @@ Index: ui/views/controls/textfield/textfield.cc
    // Skip any accelerator handling that conflicts with custom keybindings.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
        ui::GetTextEditKeyBindingsDelegate();
-@@ -2079,7 +2079,7 @@ bool Textfield::PasteSelectionClipboard() {
+@@ -2081,7 +2081,7 @@ bool Textfield::PasteSelectionClipboard() {
  }
  
  void Textfield::UpdateSelectionClipboard() {

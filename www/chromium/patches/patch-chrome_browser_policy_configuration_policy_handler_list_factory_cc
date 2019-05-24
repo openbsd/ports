@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.5 2019/05/10 21:55:39 robert Exp $
+$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.6 2019/05/24 19:09:15 robert Exp $
 
 Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
 --- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig
@@ -21,7 +21,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
    { key::kAuthNegotiateDelegateByKdcPolicy,
      prefs::kAuthNegotiateDelegateByKdcPolicy,
      base::Value::Type::BOOLEAN },
-@@ -997,7 +997,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -994,7 +994,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      prefs::kAllowPopupsDuringPageUnload,
      base::Value::Type::BOOLEAN },
  

@@ -1,2 +1,4 @@
-SHA256 (chromium-75.0.3770.27.tar.xz) = NVqKxZ1EvSS9g7Te+miiEcvR6uuDEUr44j9kRyg2XAc=
-SIZE (chromium-75.0.3770.27.tar.xz) = 1300252944
+SHA256 (chromium-75.0.3770.52.tar.xz) = h5M9GotJEZVYkYj0Cw+opdLuIBYRQApkcRL32/jcxhk=
+SHA256 (gn-75.0.3770.52.tar.gz) = lVAyZAa1SuUKo/wLVeyIdHzVCf7V/GYxpxQnoYwsPYI=
+SIZE (chromium-75.0.3770.52.tar.xz) = 708321036
+SIZE (gn-75.0.3770.52.tar.gz) = 961993
