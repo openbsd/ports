@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.78 2019/05/20 22:15:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.79 2019/05/24 22:43:45 cwen Exp $
 
 COMMENT =		input and output plugins for Audacious
 
 V =			3.9
 DISTNAME =		audacious-plugins-$V
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		audio multimedia
 
-HOMEPAGE =		http://audacious-media-player.org/
+HOMEPAGE =		https://audacious-media-player.org/
 
 # BSD / GPL
 PERMIT_PACKAGE_CDROM =	Yes
