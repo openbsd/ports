@@ -1,0 +1,81 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/24 11:35:02 sthen Exp $
+@newgroup _opendmarc:835
+@newuser _opendmarc:835:_opendmarc:daemon:opendmarc Account:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/opendmarc
+include/opendmarc/
+include/opendmarc/dmarc.h
+lib/libopendmarc.a
+lib/libopendmarc.la
+@lib lib/libopendmarc.so.${LIBopendmarc_VERSION}
+@man man/man5/opendmarc.conf.5
+@man man/man8/opendmarc-check.8
+@man man/man8/opendmarc-expire.8
+@man man/man8/opendmarc-import.8
+@man man/man8/opendmarc-importstats.8
+@man man/man8/opendmarc-params.8
+@man man/man8/opendmarc-reports.8
+@man man/man8/opendmarc.8
+@bin sbin/opendmarc
+@bin sbin/opendmarc-check
+sbin/opendmarc-expire
+sbin/opendmarc-import
+sbin/opendmarc-importstats
+sbin/opendmarc-params
+sbin/opendmarc-reports
+share/doc/opendmarc/
+share/doc/opendmarc/LICENSE
+share/doc/opendmarc/LICENSE.Sendmail
+share/doc/opendmarc/README
+share/doc/opendmarc/README.rddmarc
+share/doc/opendmarc/README.schema
+share/doc/opendmarc/README.specs.html
+share/doc/opendmarc/dmarc_policy_t.html
+share/doc/opendmarc/dmarcfail.py
+share/doc/opendmarc/index.html
+share/doc/opendmarc/mkdmarc
+share/doc/opendmarc/mysql_ip6.c
+share/doc/opendmarc/opendmarc
+share/doc/opendmarc/opendmarc.conf.sample
+share/doc/opendmarc/opendmarc.service.in
+share/doc/opendmarc/opendmarc.spec.in
+share/doc/opendmarc/opendmarc_dns_fake_record.html
+share/doc/opendmarc/opendmarc_get_policy_to_enforce.html
+share/doc/opendmarc/opendmarc_lib_t.html
+share/doc/opendmarc/opendmarc_policy_connect_clear.html
+share/doc/opendmarc/opendmarc_policy_connect_init.html
+share/doc/opendmarc/opendmarc_policy_connect_rset.html
+share/doc/opendmarc/opendmarc_policy_connect_shutdown.html
+share/doc/opendmarc/opendmarc_policy_fetch_adkim.html
+share/doc/opendmarc/opendmarc_policy_fetch_alignment.html
+share/doc/opendmarc/opendmarc_policy_fetch_aspf.html
+share/doc/opendmarc/opendmarc_policy_fetch_fo.html
+share/doc/opendmarc/opendmarc_policy_fetch_p.html
+share/doc/opendmarc/opendmarc_policy_fetch_pct.html
+share/doc/opendmarc/opendmarc_policy_fetch_rf.html
+share/doc/opendmarc/opendmarc_policy_fetch_rua.html
+share/doc/opendmarc/opendmarc_policy_fetch_ruf.html
+share/doc/opendmarc/opendmarc_policy_fetch_sp.html
+share/doc/opendmarc/opendmarc_policy_fetch_utilized_domain.html
+share/doc/opendmarc/opendmarc_policy_library_init.html
+share/doc/opendmarc/opendmarc_policy_library_shutdown.html
+share/doc/opendmarc/opendmarc_policy_parse_dmarc.html
+share/doc/opendmarc/opendmarc_policy_query_dmarc.html
+share/doc/opendmarc/opendmarc_policy_status_to_str.html
+share/doc/opendmarc/opendmarc_policy_store_dkim.html
+share/doc/opendmarc/opendmarc_policy_store_dmarc.html
+share/doc/opendmarc/opendmarc_policy_store_from_domain.html
+share/doc/opendmarc/opendmarc_policy_store_spf.html
+share/doc/opendmarc/opendmarc_policy_to_buf.html
+share/doc/opendmarc/opendmarc_spf_test.html
+share/doc/opendmarc/opendmarc_status_t.html
+share/doc/opendmarc/opendmarc_tld_read_file.html
+share/doc/opendmarc/opendmarc_tld_shutdown.html
+share/doc/opendmarc/opendmarc_util_clearargv.html
+share/doc/opendmarc/opendmarc_xml.html
+share/doc/opendmarc/opendmarc_xml_parse.html
+share/doc/opendmarc/overview.html
+share/doc/opendmarc/rddmarc
+share/doc/opendmarc/schema.mysql
+share/examples/opendmarc/
+share/examples/opendmarc/opendmarc.conf.sample
+@sample ${SYSCONFDIR}/opendmarc.conf

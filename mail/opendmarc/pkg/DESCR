@@ -1,0 +1,9 @@
+OpenDMARC is a free open source software implementation of the DMARC
+specification.
+
+The OpenDMARC project is a community effort to develop and maintain an open
+source package for providing DMARC report generation and policy enforcement
+services.  It includes a library for handling DMARC record parsing,
+a database schema and tools for aggregating and processing transaction
+history to produce DMARC reports, and a filter that ties it all together
+with an MTA using the milter protocol.
