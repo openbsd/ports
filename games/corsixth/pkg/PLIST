@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/09/04 12:46:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/05/25 15:49:40 bcallah Exp $
 @bin bin/corsix-th
+@man man/man6/corsix-th.6
+share/applications/
+share/applications/com.corsixth.CorsixTH.desktop
 share/corsix-th/
 share/corsix-th/Bitmap/
 share/corsix-th/Bitmap/aux_ui.dat
@@ -9,6 +12,10 @@ share/corsix-th/Bitmap/bootstrap_font.pal
 share/corsix-th/Bitmap/bootstrap_font.tab
 share/corsix-th/Bitmap/mainmenu1080.dat
 share/corsix-th/Bitmap/mainmenu1080.pal
+share/corsix-th/Bitmap/mainmenu480.dat
+share/corsix-th/Bitmap/mainmenu480.pal
+share/corsix-th/Bitmap/mainmenu720.dat
+share/corsix-th/Bitmap/mainmenu720.pal
 share/corsix-th/Bitmap/tree_ctrl.dat
 share/corsix-th/Bitmap/tree_ctrl.pal
 share/corsix-th/Bitmap/tree_ctrl.tab
@@ -59,6 +66,7 @@ share/corsix-th/Levels/original12.level
 share/corsix-th/Levels/st.peter's.level
 share/corsix-th/Levels/st.peter's.map
 share/corsix-th/Lua/
+share/corsix-th/Lua/announcer.lua
 share/corsix-th/Lua/api_version.lua
 share/corsix-th/Lua/app.lua
 share/corsix-th/Lua/audio.lua
@@ -122,6 +130,7 @@ share/corsix-th/Lua/dialogs/resizables/file_browsers/load_map.lua
 share/corsix-th/Lua/dialogs/resizables/file_browsers/save_game.lua
 share/corsix-th/Lua/dialogs/resizables/file_browsers/save_map.lua
 share/corsix-th/Lua/dialogs/resizables/folder_settings.lua
+share/corsix-th/Lua/dialogs/resizables/hotkey_assign.lua
 share/corsix-th/Lua/dialogs/resizables/lua_console.lua
 share/corsix-th/Lua/dialogs/resizables/main_menu.lua
 share/corsix-th/Lua/dialogs/resizables/map_editor.lua
@@ -174,14 +183,20 @@ share/corsix-th/Lua/diseases/tv_personalities.lua
 share/corsix-th/Lua/diseases/uncommon_cold.lua
 share/corsix-th/Lua/diseases/unexpected_swelling.lua
 share/corsix-th/Lua/entities/
-share/corsix-th/Lua/entities/grim_reaper.lua
 share/corsix-th/Lua/entities/humanoid.lua
-share/corsix-th/Lua/entities/inspector.lua
+share/corsix-th/Lua/entities/humanoids/
+share/corsix-th/Lua/entities/humanoids/grim_reaper.lua
+share/corsix-th/Lua/entities/humanoids/inspector.lua
+share/corsix-th/Lua/entities/humanoids/patient.lua
+share/corsix-th/Lua/entities/humanoids/staff/
+share/corsix-th/Lua/entities/humanoids/staff.lua
+share/corsix-th/Lua/entities/humanoids/staff/doctor.lua
+share/corsix-th/Lua/entities/humanoids/staff/handyman.lua
+share/corsix-th/Lua/entities/humanoids/staff/nurse.lua
+share/corsix-th/Lua/entities/humanoids/staff/receptionist.lua
+share/corsix-th/Lua/entities/humanoids/vip.lua
 share/corsix-th/Lua/entities/machine.lua
 share/corsix-th/Lua/entities/object.lua
-share/corsix-th/Lua/entities/patient.lua
-share/corsix-th/Lua/entities/staff.lua
-share/corsix-th/Lua/entities/vip.lua
 share/corsix-th/Lua/entity.lua
 share/corsix-th/Lua/entity_map.lua
 share/corsix-th/Lua/epidemic.lua
@@ -223,7 +238,6 @@ share/corsix-th/Lua/humanoid_actions/vip_go_to_next_room.lua
 share/corsix-th/Lua/humanoid_actions/vomit.lua
 share/corsix-th/Lua/humanoid_actions/walk.lua
 share/corsix-th/Lua/humanoid_actions/yawn.lua
-share/corsix-th/Lua/key_mapping.txt
 share/corsix-th/Lua/languages/
 share/corsix-th/Lua/languages/brazilian_portuguese.lua
 share/corsix-th/Lua/languages/czech.lua
@@ -356,3 +370,12 @@ share/corsix-th/Lua/walls/yellow.lua
 share/corsix-th/Lua/window.lua
 share/corsix-th/Lua/world.lua
 share/doc/pkg-readmes/${PKGSTEM}
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/corsix-th.svg
+share/metainfo/
+share/metainfo/com.corsixth.CorsixTH.appdata.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

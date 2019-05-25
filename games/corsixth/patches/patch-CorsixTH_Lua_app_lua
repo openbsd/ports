@@ -1,11 +1,11 @@
-$OpenBSD: patch-CorsixTH_Lua_app_lua,v 1.1 2017/12/22 07:36:17 bcallah Exp $
+$OpenBSD: patch-CorsixTH_Lua_app_lua,v 1.2 2019/05/25 15:49:40 bcallah Exp $
 
 Do not check or download updates.
 
 Index: CorsixTH/Lua/app.lua
 --- CorsixTH/Lua/app.lua.orig
 +++ CorsixTH/Lua/app.lua
-@@ -63,7 +63,7 @@ function App:App()
+@@ -64,7 +64,7 @@ function App:App()
    }
    self.strings = {}
    self.savegame_version = SAVEGAME_VERSION
