@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.111 2019/05/15 19:05:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.112 2019/05/25 10:47:00 ajacoutot Exp $
 bin/bq
 bin/gcloud
 bin/git-credential-gcloud.sh
@@ -796,8 +796,6 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/resource_manager/org_policies.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/__init__.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/run/build_template.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/run/build_template.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/condition.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/condition.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/run/configuration.py
@@ -1864,6 +1862,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/functions/deploy/trigger_util.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/functions/deploy/trigger_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/functions/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/functions/flags.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/game_services/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/game_services/resources.yaml
 google-cloud-sdk/lib/googlecloudsdk/command_lib/genomics/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/genomics/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/genomics/__init__.pyc
@@ -2169,8 +2169,6 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/run/config_changes.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/config_changes.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/connection_context.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/connection_context.pyc
-google-cloud-sdk/lib/googlecloudsdk/command_lib/run/deployable.py
-google-cloud-sdk/lib/googlecloudsdk/command_lib/run/deployable.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/exceptions.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/exceptions.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/flags.py
@@ -2184,8 +2182,6 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/run/resource_name_conversion.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/resources.yaml
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/serverless_operations.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/serverless_operations.pyc
-google-cloud-sdk/lib/googlecloudsdk/command_lib/run/source_ref.py
-google-cloud-sdk/lib/googlecloudsdk/command_lib/run/source_ref.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/stages.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/stages.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/runtime_config/
@@ -3213,6 +3209,15 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudresourcesearch_v1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/v1/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/v1/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/v1/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/v1/cloudscheduler_v1_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/v1/cloudscheduler_v1_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/v1/cloudscheduler_v1_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/v1/cloudscheduler_v1_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/v1/resources.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/v1/resources.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/v1alpha1/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/v1alpha1/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/v1alpha1/__init__.pyc
@@ -3231,6 +3236,7 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/v1beta1/clou
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/v1beta1/cloudscheduler_v1beta1_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/v1beta1/resources.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler/v1beta1/resources.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler_v1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler_v1alpha1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudscheduler_v1beta1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/cloudshell/
@@ -3718,6 +3724,19 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/firestore/v1beta2/resources
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/firestore_v1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/firestore_v1beta1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/firestore_v1beta2.json
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gameservices/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gameservices/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gameservices/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gameservices/v1alpha/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gameservices/v1alpha/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gameservices/v1alpha/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gameservices/v1alpha/gameservices_v1alpha_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gameservices/v1alpha/gameservices_v1alpha_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gameservices/v1alpha/gameservices_v1alpha_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gameservices/v1alpha/gameservices_v1alpha_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gameservices/v1alpha/resources.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gameservices/v1alpha/resources.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/gameservices_v1alpha.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/genomics/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/genomics/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/genomics/__init__.pyc
@@ -5031,6 +5050,7 @@ google-cloud-sdk/lib/surface/builds/triggers/create/github.pyc
 google-cloud-sdk/lib/surface/builds/triggers/delete.yaml
 google-cloud-sdk/lib/surface/builds/triggers/describe.yaml
 google-cloud-sdk/lib/surface/builds/triggers/list.yaml
+google-cloud-sdk/lib/surface/builds/triggers/run.yaml
 google-cloud-sdk/lib/surface/builds/worker_pools/
 google-cloud-sdk/lib/surface/builds/worker_pools/__init__.py
 google-cloud-sdk/lib/surface/builds/worker_pools/__init__.pyc
@@ -5514,6 +5534,8 @@ google-cloud-sdk/lib/surface/compute/instance_groups/managed/update.py
 google-cloud-sdk/lib/surface/compute/instance_groups/managed/update.pyc
 google-cloud-sdk/lib/surface/compute/instance_groups/managed/update_autoscaling.py
 google-cloud-sdk/lib/surface/compute/instance_groups/managed/update_autoscaling.pyc
+google-cloud-sdk/lib/surface/compute/instance_groups/managed/update_instances.py
+google-cloud-sdk/lib/surface/compute/instance_groups/managed/update_instances.pyc
 google-cloud-sdk/lib/surface/compute/instance_groups/managed/wait_until.py
 google-cloud-sdk/lib/surface/compute/instance_groups/managed/wait_until.pyc
 google-cloud-sdk/lib/surface/compute/instance_groups/managed/wait_until_stable.py
@@ -8373,6 +8395,12 @@ google-cloud-sdk/lib/surface/scheduler/jobs/list.yaml
 google-cloud-sdk/lib/surface/scheduler/jobs/pause.yaml
 google-cloud-sdk/lib/surface/scheduler/jobs/resume.yaml
 google-cloud-sdk/lib/surface/scheduler/jobs/run.yaml
+google-cloud-sdk/lib/surface/scheduler/jobs/update/
+google-cloud-sdk/lib/surface/scheduler/jobs/update/__init__.py
+google-cloud-sdk/lib/surface/scheduler/jobs/update/__init__.pyc
+google-cloud-sdk/lib/surface/scheduler/jobs/update/app_engine.yaml
+google-cloud-sdk/lib/surface/scheduler/jobs/update/http.yaml
+google-cloud-sdk/lib/surface/scheduler/jobs/update/pubsub.yaml
 google-cloud-sdk/lib/surface/search_help.py
 google-cloud-sdk/lib/surface/search_help.pyc
 google-cloud-sdk/lib/surface/service_management/
@@ -8730,6 +8758,8 @@ google-cloud-sdk/lib/surface/tasks/cancel_lease.py
 google-cloud-sdk/lib/surface/tasks/cancel_lease.pyc
 google-cloud-sdk/lib/surface/tasks/create_app_engine_task.py
 google-cloud-sdk/lib/surface/tasks/create_app_engine_task.pyc
+google-cloud-sdk/lib/surface/tasks/create_http_task.py
+google-cloud-sdk/lib/surface/tasks/create_http_task.pyc
 google-cloud-sdk/lib/surface/tasks/create_pull_task.py
 google-cloud-sdk/lib/surface/tasks/create_pull_task.pyc
 google-cloud-sdk/lib/surface/tasks/delete.py
