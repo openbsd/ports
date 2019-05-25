@@ -5,13 +5,13 @@ Basically,
 $ rr mpv *.mp4
 will give you a true shuffle, that doesn't play the same file twice.
 
-There are more options:
+There are lots more options:
 
 $ rr xv -nolimit -- *
 allows you to specify options that won't be jumbled.
 
-$ rr -n 500 -x '.*.pdf' xv -nolimit -- *
-will run xv several times on all files in the current directory
+$ rr -n 500 -r -x '.*.pdf' xv -nolimit -- *
+will run xv several times on all files below the current directory
 except those matching '.*.pdf', limiting each run to 500 parameters.
 
 See the manpage for details.
