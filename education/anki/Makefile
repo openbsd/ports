@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/04/01 13:27:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/25 19:54:45 naddy Exp $
 
 BROKEN =	Trace/BPT trap, cti_vm_throw() from /usr/local/lib/libQtWebKit.so.4.0
 # ...and anki-2.1.x requires QtWebEngine (not currently ported to OpenBSD)
@@ -15,7 +15,8 @@ HOMEPAGE =	https://ankisrs.net/
 # AGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	https://apps.ankiweb.net/downloads/current/ \
+MASTER_SITES =	https://apps.ankiweb.net/downloads/archive/ \
+		https://apps.ankiweb.net/downloads/current/ \
 		https://apps.ankiweb.net/downloads/beta/
 
 MODULES =	lang/python
