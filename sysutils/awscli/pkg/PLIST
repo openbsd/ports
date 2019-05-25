@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.75 2019/05/18 23:27:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.76 2019/05/25 10:44:41 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -511,6 +511,10 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-rest-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-stage.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-usage-plan.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-usage.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/create-api.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/create-integration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewayv2/create-route.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/delete-scaling-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/application-autoscaling/deregister-scalable-target.rst
