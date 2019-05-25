@@ -1,9 +1,12 @@
-$OpenBSD: patch-setup_py,v 1.2 2016/06/04 20:24:54 giovanni Exp $
+$OpenBSD: patch-setup_py,v 1.3 2019/05/25 20:42:32 kn Exp $
 
 Do not compress manual pages and install them in the right place.
+Fix "TypeError: write() argument must be str, not bytes" with Python 3
+by decoding `manpage' properly.
 
---- setup.py.orig	Wed Feb 24 13:47:08 2016
-+++ setup.py	Wed Jun  1 12:20:09 2016
+Index: setup.py
+--- setup.py.orig
++++ setup.py
 @@ -20,7 +20,6 @@ import os
  import operator
  import subprocess
@@ -36,11 +39,11 @@ Do not compress manual pages and install them in the right place.
 -                    compressed.write(manpage)
 -                    compressed.close()
 +                    with open(manfile, 'w') as fh:
-+                        fh.write(manpage)
++                        fh.write(manpage.decode('utf-8'))
  
  class update_translator_credits(NoOptionCommand):
      description = 'Examine the git history to produce an updated metadata file.'
-@@ -212,7 +210,7 @@ class clean(_clean):
+@@ -218,7 +216,7 @@ class clean(_clean):
      def run(self):
          if self.all:
              dirs = ['build/locale']
@@ -49,7 +52,7 @@ Do not compress manual pages and install them in the right place.
              for directory in dirs:
                  if os.path.exists(directory):
                      remove_tree(directory, dry_run=self.dry_run)
-@@ -253,7 +251,7 @@ setup(name = PACKAGENAME,
+@@ -259,7 +257,7 @@ setup(name = PACKAGENAME,
              },
          data_files = [
              ('share/applications', ['data/arandr.desktop']), # FIXME: use desktop-file-install?

@@ -1,35 +1,41 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:04:07 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/05/25 20:42:32 kn Exp $
 bin/arandr
 bin/unxrandr
 lib/python${MODPY_VERSION}/site-packages/arandr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/screenlayout/
 lib/python${MODPY_VERSION}/site-packages/screenlayout/__init__.py
-lib/python${MODPY_VERSION}/site-packages/screenlayout/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/screenlayout/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/screenlayout/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/screenlayout/${MODPY_PYCACHE}auxiliary.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/screenlayout/${MODPY_PYCACHE}demo.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/screenlayout/${MODPY_PYCACHE}gui.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/screenlayout/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/screenlayout/${MODPY_PYCACHE}meta.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/screenlayout/${MODPY_PYCACHE}snap.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/screenlayout/${MODPY_PYCACHE}widget.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/screenlayout/${MODPY_PYCACHE}xrandr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/screenlayout/auxiliary.py
-lib/python${MODPY_VERSION}/site-packages/screenlayout/auxiliary.pyc
 lib/python${MODPY_VERSION}/site-packages/screenlayout/data/
 lib/python${MODPY_VERSION}/site-packages/screenlayout/data/gpl-3.txt
 lib/python${MODPY_VERSION}/site-packages/screenlayout/demo.py
-lib/python${MODPY_VERSION}/site-packages/screenlayout/demo.pyc
 lib/python${MODPY_VERSION}/site-packages/screenlayout/gui.py
-lib/python${MODPY_VERSION}/site-packages/screenlayout/gui.pyc
+lib/python${MODPY_VERSION}/site-packages/screenlayout/i18n.py
 lib/python${MODPY_VERSION}/site-packages/screenlayout/meta.py
-lib/python${MODPY_VERSION}/site-packages/screenlayout/meta.pyc
-lib/python${MODPY_VERSION}/site-packages/screenlayout/metacity.py
-lib/python${MODPY_VERSION}/site-packages/screenlayout/metacity.pyc
 lib/python${MODPY_VERSION}/site-packages/screenlayout/snap.py
-lib/python${MODPY_VERSION}/site-packages/screenlayout/snap.pyc
 lib/python${MODPY_VERSION}/site-packages/screenlayout/widget.py
-lib/python${MODPY_VERSION}/site-packages/screenlayout/widget.pyc
 lib/python${MODPY_VERSION}/site-packages/screenlayout/xrandr.py
-lib/python${MODPY_VERSION}/site-packages/screenlayout/xrandr.pyc
 @man man/man1/arandr.1
 @man man/man1/unxrandr.1
 share/applications/arandr.desktop
 share/locale/ar/LC_MESSAGES/arandr.mo
+share/locale/br/
+share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/arandr.mo
 share/locale/bs/LC_MESSAGES/arandr.mo
 share/locale/ca/LC_MESSAGES/arandr.mo
+share/locale/ckb/
+share/locale/ckb/LC_MESSAGES/
+share/locale/ckb/LC_MESSAGES/arandr.mo
 share/locale/cs/LC_MESSAGES/arandr.mo
 share/locale/da/LC_MESSAGES/arandr.mo
 share/locale/de/LC_MESSAGES/arandr.mo
@@ -37,9 +43,12 @@ share/locale/el/LC_MESSAGES/arandr.mo
 share/locale/es/LC_MESSAGES/arandr.mo
 share/locale/et/LC_MESSAGES/arandr.mo
 share/locale/fa/LC_MESSAGES/arandr.mo
+share/locale/fi/LC_MESSAGES/arandr.mo
 share/locale/fr/LC_MESSAGES/arandr.mo
 share/locale/gl/LC_MESSAGES/arandr.mo
+share/locale/he/LC_MESSAGES/arandr.mo
 share/locale/hu/LC_MESSAGES/arandr.mo
+share/locale/id/LC_MESSAGES/arandr.mo
 share/locale/it/LC_MESSAGES/arandr.mo
 share/locale/ja/LC_MESSAGES/arandr.mo
 share/locale/kn/LC_MESSAGES/arandr.mo
@@ -47,6 +56,9 @@ share/locale/ko_KR/
 share/locale/ko_KR/LC_MESSAGES/
 share/locale/ko_KR/LC_MESSAGES/arandr.mo
 share/locale/lt/LC_MESSAGES/arandr.mo
+share/locale/nb_NO/
+share/locale/nb_NO/LC_MESSAGES/
+share/locale/nb_NO/LC_MESSAGES/arandr.mo
 share/locale/nl/LC_MESSAGES/arandr.mo
 share/locale/pl/LC_MESSAGES/arandr.mo
 share/locale/pt_BR/LC_MESSAGES/arandr.mo
@@ -63,3 +75,6 @@ share/locale/tr/LC_MESSAGES/arandr.mo
 share/locale/uk/LC_MESSAGES/arandr.mo
 share/locale/zh_CN/LC_MESSAGES/arandr.mo
 @tag update-desktop-database
+share/locale/zh_Hant/
+share/locale/zh_Hant/LC_MESSAGES/
+share/locale/zh_Hant/LC_MESSAGES/arandr.mo

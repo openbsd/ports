@@ -1,3 +1,16 @@
 ARandR is designed to provide a simple visual front end for XRandR.
 Relative monitor positions are shown graphically and can be changed in a
 drag-and-drop way.
+
+Features
+--------
+
+* Full control over output positioning
+  (instead of plain "left of") with edge snapping
+* Saving configurations as executable shell scripts
+  (configurations can be loaded without using this program)
+* Configuration files can be edited to include additional payload
+  (like xsetwacom_ commands tablet PC users need when rotating),
+  which is preserved when editing
+* Main widget separated from packaged application
+  (to facilitate integration with existing solutions)
