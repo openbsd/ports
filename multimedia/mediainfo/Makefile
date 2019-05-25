@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2019/01/01 21:12:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/05/25 11:45:55 naddy Exp $
 
 COMMENT=	display technical and tag data for video and audio files
 
-VERSION=	18.12
+VERSION=	19.04
 PKGNAME=	mediainfo-${VERSION}
 CATEGORIES=	multimedia
 HOMEPAGE=	https://mediaarea.net/en/MediaInfo
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c m pthread ${COMPILER_LIBCXX} z
 
-COMPILER =	base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
 
 MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${VERSION}/
 DISTFILES=	MediaInfo_CLI_${VERSION}_GNU_FromSource.tar.xz
