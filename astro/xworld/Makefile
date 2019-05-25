@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2018/05/12 09:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/25 23:47:25 danj Exp $
 
 COMMENT=	earth as seen from the direction of the sun
 
 DISTNAME=	xworld-2.0
-REVISION=	3
+REVISION=	4
 CATEGORIES=	astro x11
-
-MAINTAINER=	Vladimir Kotal <vlada@devnull.cz>
 
 MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL:=naddy/}
 

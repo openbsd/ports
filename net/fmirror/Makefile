@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2015/02/16 22:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/25 23:47:25 danj Exp $
 
 COMMENT=	mirror files and directories from a remote FTP server
 
 DISTNAME=       fmirror-0.8.4
 CATEGORIES=	net
+REVISION=       0
 
 MASTER_SITES=	ftp://ftp.oav.net/pkg_freebsd/distfiles/
 
@@ -12,8 +13,6 @@ PERMIT_PACKAGE_CDROM=   Yes
 
 NO_TEST=     Yes
 WANTLIB=	c
-
-MAINTAINER=	Vladimir Kotal <vlada@devnull.cz>
 
 CONFIGURE_STYLE= gnu
 
