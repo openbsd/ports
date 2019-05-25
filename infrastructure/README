@@ -1,35 +1,12 @@
 This directory does not hold ports, but rather stuff to help
 with building specific ports, or with checking packages.
 
-Better documentation will be written as this progresses.
-
-Quick list of what exists, most useful stuff first
-
-fetch/check-distfiles
-	Heuristic to check the whole contents of /usr/ports/distfiles against
-	all MD5 files in the ports tree.
-
-package/check-dependencies
-	Check dependencies for all packages in the current directory.
-	Basically, verifies that the tsort in bsd.port.mk did their job.
-
-bin/find-build-order
-	Used such as cat plist/i386 | build/find-build-order
-	outputs a list of stuff that actually needs to be built to obtain those
-	packages, in a suitable order for removing backward dependencies.
-
-	Optional arg `build' or `run' to take only build or run dependencies
-	into account.
-
-	Major defect: tsort is not a stable sort, so find-build-order will
-	rearrange the list it gets as input.
+A lot of documentation actually exists as manpages.
+See bsd.port.mk(5) for most things.
 
 bin/pkg_outdated
-	Compare installed registered packages with INDEX, try to find out
-	of date ports.
-
-install/make-plist
-	perl helper for the make plist target.
+	Compare installed registered packages with the ports tree, try to find
+	out of date ports.
 
 db/network.conf
 	Distfiles configuration. Tweakable by the user.
@@ -38,12 +15,9 @@ db/user.list
 	List of users and groups created by the ports (or that are advised
 	to be added.
 
-fetch/check-license
-	Legacy script used by Marco to check the LICENSE files.
-
 bin/outdated-perl-ports
-	Compare perl ports INDEX entries with the latest module
-	versions available from CPAN.
+	Compare perl ports INDEX entries (install portslist) with the 
+	latest module versions available from CPAN.
 
 templates/Makefile.template
 	Template Makefile that may be of use when making a port.
