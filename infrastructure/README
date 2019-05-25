@@ -24,7 +24,7 @@ bin/find-build-order
 	Major defect: tsort is not a stable sort, so find-build-order will
 	rearrange the list it gets as input.
 
-bin/out-of-date
+bin/pkg_outdated
 	Compare installed registered packages with INDEX, try to find out
 	of date ports.
 
