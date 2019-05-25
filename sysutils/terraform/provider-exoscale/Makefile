@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/07 07:20:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/05/25 10:35:20 ajacoutot Exp $
 
 GH_ACCOUNT=		exoscale
 GH_PROJECT=		terraform-provider-exoscale
 
 PROVIDER=		exoscale
-GH_TAGNAME=		v0.10.0
+GH_TAGNAME=		v0.11.0
 
 pre-configure:
 	sed -i "s,terraform-providers,exoscale," ${WRKDIST}/main.go

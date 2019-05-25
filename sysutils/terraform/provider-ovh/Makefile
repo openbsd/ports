@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2018/07/12 09:10:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2019/05/25 10:35:20 ajacoutot Exp $
 
 PROVIDER=		ovh
-GH_TAGNAME=		v0.3.0
+GH_TAGNAME=		v0.4.0
 
 .include <bsd.port.mk>
