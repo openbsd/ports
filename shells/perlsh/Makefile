@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.11 2017/06/17 01:31:46 schwarze Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/25 22:10:18 cwen Exp $
 
 COMMENT=		Perl shell
 
 DISTNAME=		psh-1.8.1
 PKGNAME=		${DISTNAME:S/p/perl/}
-REVISION=		1
+REVISION=		2
 CATEGORIES=		shells
 
-HOMEPAGE=		http://www.focusresearch.com/gregor/sw/psh/
-
-# perl
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://www.focusresearch.com/gregor/download/
+MODULES=		cpan
+
+CPAN_AUTHOR=		GREGOR
 
 RUN_DEPENDS=		devel/p5-Term-ReadLine-Gnu \
 			devel/p5-Term-ReadLine-Perl \

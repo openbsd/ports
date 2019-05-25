@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_Psh_Strategy_Executable_pm,v 1.1 2019/05/25 22:10:18 cwen Exp $
+
+Arrays can't be used as references since Perl 5.22.
+
+Index: lib/Psh/Strategy/Executable.pm
+--- lib/Psh/Strategy/Executable.pm.orig
++++ lib/Psh/Strategy/Executable.pm
+@@ -24,7 +24,7 @@ sub runs_before {
+ }
+ 
+ sub applies {
+-	my $com= @{$_[2]}->[0];
++	my $com= ${$_[2]}[0];
+ 	my $executable= Psh::Util::which($com);
+ 	return $executable if defined $executable;
+ 	return '';
