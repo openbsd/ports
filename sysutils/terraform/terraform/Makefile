@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2019/05/18 23:31:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/25 10:41:15 ajacoutot Exp $
 
 COMMENT=		tool for building, changing, and versioning infrastructure
 
-GH_TAGNAME=		v0.11.14
+GH_TAGNAME=		v0.12.0
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		terraform
 
