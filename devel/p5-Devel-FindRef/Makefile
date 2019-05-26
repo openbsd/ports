@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/24 08:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/26 12:58:01 sthen Exp $
 
 COMMENT =	tracking back references
 
@@ -9,6 +9,7 @@ PKGNAME =	Devel-FindRef-1.460
 CATEGORIES =	devel
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
+BUILD_DEPENDS =	devel/p5-Canary-Stability
 RUN_DEPENDS =	devel/p5-common-sense
 
 # perl
