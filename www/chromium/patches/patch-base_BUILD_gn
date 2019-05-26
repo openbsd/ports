@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_BUILD_gn,v 1.27 2019/05/13 18:21:30 robert Exp $
+$OpenBSD: patch-base_BUILD_gn,v 1.28 2019/05/26 08:22:47 robert Exp $
 
 Index: base/BUILD.gn
 --- base/BUILD.gn.orig
@@ -30,7 +30,7 @@ Index: base/BUILD.gn
        sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
      } else if (is_android && use_allocator == "none") {
        sources += [
-@@ -1813,6 +1818,29 @@ jumbo_component("base") {
+@@ -1813,6 +1818,28 @@ jumbo_component("base") {
      }
    }
  
@@ -39,7 +39,6 @@ Index: base/BUILD.gn
 +      "files/file_path_watcher_linux.cc",
 +      "files/file_util_linux.cc",
 +      "process/memory_linux.cc",
-+      "process/process_linux.cc",
 +      "system/sys_info_linux.cc",
 +      "process/process_iterator_linux.cc",
 +      "process/process_metrics_linux.cc",
@@ -60,7 +59,7 @@ Index: base/BUILD.gn
    # iOS
    if (is_ios) {
      set_sources_assignment_filter([])
-@@ -2939,6 +2967,8 @@ test("base_unittests") {
+@@ -2939,6 +2966,8 @@ test("base_unittests") {
        # data += [ "$root_out_dir/base_unittests.dSYM/" ]
      }
    }

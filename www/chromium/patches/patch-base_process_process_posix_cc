@@ -1,42 +1,23 @@
-$OpenBSD: patch-base_process_process_posix_cc,v 1.22 2019/05/13 18:21:30 robert Exp $
+$OpenBSD: patch-base_process_process_posix_cc,v 1.23 2019/05/26 08:22:47 robert Exp $
 
 Index: base/process/process_posix.cc
 --- base/process/process_posix.cc.orig
 +++ base/process/process_posix.cc
-@@ -380,4 +380,36 @@ int Process::GetPriority() const {
-   return getpriority(PRIO_PROCESS, process_);
+@@ -264,7 +264,7 @@ Process Process::DeprecatedGetProcessFromHandle(Proces
+   return Process(handle);
  }
  
-+Time Process::CreationTime() const {
-+#if defined(OS_OPENBSD)
-+  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid(),
-+               sizeof(struct kinfo_proc), 0 };
-+  struct kinfo_proc *info = nullptr;
-+  size_t info_size;
-+  Time ct = Time();
-+
-+  if (sysctl(mib, base::size(mib), NULL, &info_size, NULL, 0) < 0)
-+    goto out;
-+
-+  mib[5] = (info_size / sizeof(struct kinfo_proc));
-+  if ((info = reinterpret_cast<kinfo_proc*>(malloc(info_size))) == NULL)
-+    goto out;
-+
-+  if (sysctl(mib, base::size(mib), info, &info_size, NULL, 0) < 0)
-+    goto out;
-+
-+  ct = Time::FromTimeT(info->p_ustart_sec);
-+
-+out:
-+  if (info)
-+    free(info);
-+
-+  return ct;
-+#else
-+ // TODO(https://crbug.com/726484): There is no syscall providing this data.
-+ NOTIMPLEMENTED();
-+ return Time();
-+#endif
-+}
-+
- }  // namespace base
+-#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
++#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX) && !defined(OS_BSD)
+ // static
+ bool Process::CanBackgroundProcesses() {
+   return false;
+@@ -359,7 +359,7 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
+ 
+ void Process::Exited(int exit_code) const {}
+ 
+-#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
++#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX) && !defined(OS_BSD)
+ bool Process::IsProcessBackgrounded() const {
+   // See SetProcessBackgrounded().
+   DCHECK(IsValid());
