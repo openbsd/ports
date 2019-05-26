@@ -1,0 +1,14 @@
+$OpenBSD: patch-rfb_rfbproto_h,v 1.1 2019/05/26 12:05:25 sthen Exp $
+
+Index: rfb/rfbproto.h
+--- rfb/rfbproto.h.orig
++++ rfb/rfbproto.h
+@@ -80,7 +80,7 @@ typedef int8_t rfbBool;
+ 
+ #if LIBVNCSERVER_HAVE_ENDIAN_H
+ # include <endian.h>
+-# if __BYTE_ORDER == __BIG_ENDIAN
++# if BYTE_ORDER == BIG_ENDIAN
+ #  define LIBVNCSERVER_WORDS_BIGENDIAN 1
+ # endif
+ #endif
