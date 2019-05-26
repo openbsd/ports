@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.208 2019/05/20 22:15:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.209 2019/05/26 12:59:16 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=  orcus-parser-0.14         0.0 # 0.0
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 
 BV=		6.2
-VERSION=	${BV}.3.2
+VERSION=	${BV}.4.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -23,8 +23,6 @@ PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde4
 
-REVISION-main=	2
-REVISION-java=	0
 EPOCH=		0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -95,7 +93,7 @@ DISTFILES += e7a384790b13c29113e22e596ade9687-LinLibertineG-20120116.zip:0
 DISTFILES += edc4d741888bc0d38e32dbaa17149596-source-sans-pro-2.010R-ro-1.065R-it.tar.gz:0
 DISTFILES += eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0
 DISTFILES += f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0
-DISTFILES += language-subtag-registry-2018-04-23.tar.bz2:0
+DISTFILES += language-subtag-registry-2019-04-03.tar.bz2:0
 DISTFILES += libabw-0.1.2.tar.xz:0
 DISTFILES += libcdr-0.1.5.tar.xz:0
 DISTFILES += libcdr-0.1.3.tar.bz2:0
