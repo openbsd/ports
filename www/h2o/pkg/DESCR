@@ -1,0 +1,5 @@
+H2O is a new generation HTTP server that provides quicker response to
+users with less CPU utilization when compared to older generation of web
+servers. Designed from ground-up, the server takes full advantage of
+HTTP/2 features including prioritized content serving and server push,
+promising outstanding experience to the visitors of your web site.

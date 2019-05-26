@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_main_c,v 1.1.1.1 2019/05/26 12:38:01 sthen Exp $
+
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -1892,9 +1892,9 @@ static void setup_configurators(void)
+ {
+     h2o_config_init(&conf.globalconf);
+ 
+-    /* let the default setuid user be "nobody", if run as root */
+-    if (getuid() == 0 && getpwnam("nobody") != NULL)
+-        conf.globalconf.user = "nobody";
++    /* let the default setuid user be "www", if run as root */
++    if (getuid() == 0 && getpwnam("www") != NULL)
++        conf.globalconf.user = "www";
+ 
+     {
+         h2o_configurator_t *c = h2o_configurator_create(&conf.globalconf, sizeof(*c));
+@@ -2163,7 +2163,7 @@ int main(int argc, char **argv)
+         }
+     } else {
+         if (getuid() == 0) {
+-            fprintf(stderr, "refusing to run as root (and failed to switch to `nobody`); you can use the `user` directive to set "
++            fprintf(stderr, "refusing to run as root (and failed to switch to `www`); you can use the `user` directive to set "
+                             "the running user\n");
+             return EX_CONFIG;
+         }
