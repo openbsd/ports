@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/25 19:27:48 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/26 10:33:27 espie Exp $
 
 COMMENT =	run command with randomized parameters
 CATEGORIES = 	sysutils
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
 
 GH_PROJECT = 	random_run
-GH_TAGNAME = 	2.0
+GH_TAGNAME = 	2.1
 GH_ACCOUNT = 	marcespie
 
 COMPILER =	base-clang ports-gcc
