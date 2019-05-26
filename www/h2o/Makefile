@@ -1,4 +1,4 @@
-# $OpenBSD $
+# $OpenBSD: Makefile,v 1.2 2019/05/26 12:47:00 sthen Exp $
 
 COMMENT =	optimized HTTP server with support for HTTP/1.x and HTTP/2
 
