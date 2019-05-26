@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.25 2019/05/12 21:56:55 jca Exp $
+@comment $OpenBSD: PLIST-server,v 1.26 2019/05/26 22:28:40 jca Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -42,8 +42,6 @@ bin/wsrep_sst_mariabackup
 bin/wsrep_sst_mysqldump
 bin/wsrep_sst_rsync
 bin/wsrep_sst_rsync_wan
-bin/wsrep_sst_xtrabackup
-bin/wsrep_sst_xtrabackup-v2
 include/mysql/server/
 include/mysql/server/big_endian.h
 include/mysql/server/byte_order_generic.h
@@ -133,9 +131,9 @@ include/mysql/server/pack.h
 include/mysql/server/private/
 include/mysql/server/private/atomic/
 include/mysql/server/private/atomic/gcc_builtins.h
+include/mysql/server/private/atomic/gcc_sync.h
 include/mysql/server/private/atomic/generic-msvc.h
 include/mysql/server/private/atomic/solaris.h
-include/mysql/server/private/atomic/x86-gcc.h
 include/mysql/server/private/authors.h
 include/mysql/server/private/bounded_queue.h
 include/mysql/server/private/client_settings.h
@@ -157,6 +155,7 @@ include/mysql/server/private/event_queue.h
 include/mysql/server/private/event_scheduler.h
 include/mysql/server/private/events.h
 include/mysql/server/private/field.h
+include/mysql/server/private/field_comp.h
 include/mysql/server/private/filesort.h
 include/mysql/server/private/filesort_utils.h
 include/mysql/server/private/ft_global.h
@@ -165,6 +164,7 @@ include/mysql/server/private/gcalc_tools.h
 include/mysql/server/private/group_by_handler.h
 include/mysql/server/private/gstream.h
 include/mysql/server/private/ha_partition.h
+include/mysql/server/private/ha_sequence.h
 include/mysql/server/private/handler.h
 include/mysql/server/private/hash.h
 include/mysql/server/private/hash_filo.h
@@ -184,11 +184,13 @@ include/mysql/server/private/item_strfunc.h
 include/mysql/server/private/item_subselect.h
 include/mysql/server/private/item_sum.h
 include/mysql/server/private/item_timefunc.h
+include/mysql/server/private/item_vers.h
 include/mysql/server/private/item_windowfunc.h
 include/mysql/server/private/item_xmlfunc.h
 include/mysql/server/private/key.h
 include/mysql/server/private/keycaches.h
 include/mysql/server/private/lex.h
+include/mysql/server/private/lex_string.h
 include/mysql/server/private/lex_symbol.h
 include/mysql/server/private/lf.h
 include/mysql/server/private/lock.h
@@ -197,6 +199,7 @@ include/mysql/server/private/log_event.h
 include/mysql/server/private/log_event_old.h
 include/mysql/server/private/log_slow.h
 include/mysql/server/private/maria.h
+include/mysql/server/private/mariadb.h
 include/mysql/server/private/mdl.h
 include/mysql/server/private/mem_root_array.h
 include/mysql/server/private/message.h
@@ -247,6 +250,7 @@ include/mysql/server/private/probes_mysql.h
 include/mysql/server/private/probes_mysql_nodtrace.h
 include/mysql/server/private/procedure.h
 include/mysql/server/private/protocol.h
+include/mysql/server/private/proxy_protocol.h
 include/mysql/server/private/queues.h
 include/mysql/server/private/records.h
 include/mysql/server/private/repl_failsafe.h
@@ -255,7 +259,6 @@ include/mysql/server/private/rijndael.h
 include/mysql/server/private/rpl_constants.h
 include/mysql/server/private/rpl_filter.h
 include/mysql/server/private/rpl_gtid.h
-include/mysql/server/private/rpl_handler.h
 include/mysql/server/private/rpl_injector.h
 include/mysql/server/private/rpl_mi.h
 include/mysql/server/private/rpl_parallel.h
@@ -266,10 +269,15 @@ include/mysql/server/private/rpl_rli.h
 include/mysql/server/private/rpl_tblmap.h
 include/mysql/server/private/rpl_utility.h
 include/mysql/server/private/scheduler.h
+include/mysql/server/private/semisync.h
+include/mysql/server/private/semisync_master.h
+include/mysql/server/private/semisync_master_ack_receiver.h
+include/mysql/server/private/semisync_slave.h
 include/mysql/server/private/service_versions.h
 include/mysql/server/private/session_tracker.h
 include/mysql/server/private/set_var.h
 include/mysql/server/private/slave.h
+include/mysql/server/private/source_revision.h
 include/mysql/server/private/sp.h
 include/mysql/server/private/sp_cache.h
 include/mysql/server/private/sp_head.h
@@ -278,6 +286,7 @@ include/mysql/server/private/sp_rcontext.h
 include/mysql/server/private/spatial.h
 include/mysql/server/private/sql_acl.h
 include/mysql/server/private/sql_admin.h
+include/mysql/server/private/sql_alloc.h
 include/mysql/server/private/sql_alter.h
 include/mysql/server/private/sql_analyse.h
 include/mysql/server/private/sql_analyze_stmt.h
@@ -331,6 +340,7 @@ include/mysql/server/private/sql_reload.h
 include/mysql/server/private/sql_rename.h
 include/mysql/server/private/sql_repl.h
 include/mysql/server/private/sql_select.h
+include/mysql/server/private/sql_sequence.h
 include/mysql/server/private/sql_servers.h
 include/mysql/server/private/sql_show.h
 include/mysql/server/private/sql_signal.h
@@ -343,6 +353,7 @@ include/mysql/server/private/sql_test.h
 include/mysql/server/private/sql_time.h
 include/mysql/server/private/sql_trigger.h
 include/mysql/server/private/sql_truncate.h
+include/mysql/server/private/sql_tvc.h
 include/mysql/server/private/sql_type.h
 include/mysql/server/private/sql_type_int.h
 include/mysql/server/private/sql_udf.h
@@ -350,7 +361,6 @@ include/mysql/server/private/sql_union.h
 include/mysql/server/private/sql_update.h
 include/mysql/server/private/sql_view.h
 include/mysql/server/private/sql_window.h
-include/mysql/server/private/sql_yacc.h
 include/mysql/server/private/ssl_compat.h
 include/mysql/server/private/strfunc.h
 include/mysql/server/private/structs.h
@@ -369,9 +379,12 @@ include/mysql/server/private/tzfile.h
 include/mysql/server/private/tztime.h
 include/mysql/server/private/uniques.h
 include/mysql/server/private/unireg.h
+include/mysql/server/private/vers_string.h
+include/mysql/server/private/vers_utils.h
 include/mysql/server/private/violite.h
 include/mysql/server/private/waiting_threads.h
 include/mysql/server/private/welcome_copyright_notice.h
+include/mysql/server/private/win_tzname_data.h
 include/mysql/server/private/winservice.h
 include/mysql/server/private/wqueue.h
 include/mysql/server/private/wsrep.h
@@ -425,8 +438,6 @@ lib/mysql/plugin/qa_auth_interface.so
 lib/mysql/plugin/qa_auth_server.so
 lib/mysql/plugin/query_cache_info.so
 lib/mysql/plugin/query_response_time.so
-lib/mysql/plugin/semisync_master.so
-lib/mysql/plugin/semisync_slave.so
 lib/mysql/plugin/server_audit.so
 lib/mysql/plugin/sha256_password.so
 lib/mysql/plugin/simple_password_check.so
@@ -463,22 +474,18 @@ lib/mysql/plugin/wsrep_info.so
 @man man/man8/mysqld.8
 share/doc/mysql/
 share/doc/mysql/COPYING
-share/doc/mysql/COPYING.thirdparty
 share/doc/mysql/CREDITS
 share/doc/mysql/EXCEPTIONS-CLIENT
 share/doc/mysql/INSTALL-BINARY
 share/doc/mysql/README-wsrep
 share/doc/mysql/README.md
+share/doc/mysql/THIRDPARTY
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/mysql/
 share/examples/mysql/binary-configure
 share/examples/mysql/magic
-share/examples/mysql/my-huge.cnf
-share/examples/mysql/my-innodb-heavy-4G.cnf
-share/examples/mysql/my-large.cnf
-share/examples/mysql/my-medium.cnf
+share/examples/mysql/my.cnf
 @sample ${SYSCONFDIR}/my.cnf
-share/examples/mysql/my-small.cnf
 share/examples/mysql/mysql-log-rotate
 share/examples/mysql/mysql.server
 share/examples/mysql/mysqld_multi.server
@@ -557,6 +564,7 @@ share/mysql/mysql_performance_tables.sql
 share/mysql/mysql_system_tables.sql
 share/mysql/mysql_system_tables_data.sql
 share/mysql/mysql_test_data_timezone.sql
+share/mysql/mysql_test_db.sql
 share/mysql/mysql_to_mariadb.sql
 share/mysql/norwegian/
 share/mysql/norwegian-ny/

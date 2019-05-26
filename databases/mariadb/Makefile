@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2019/05/20 10:31:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2019/05/26 22:28:40 jca Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS=	alpha aarch64 amd64 arm i386 mips64 mips64el powerpc sparc64
@@ -7,7 +7,7 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.2.23
+VERSION=	10.3.15
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
@@ -46,7 +46,7 @@ BUILD_DEPENDS=	devel/bison
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			converters/libiconv
-RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=10.2v1,<10.3v1 \
+RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=10.3v1,<10.4v1 \
 			databases/p5-DBD-mysql
 LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			archivers/bzip2 \
@@ -56,7 +56,7 @@ LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			archivers/xz \
 			converters/libiconv \
 			devel/pcre
-RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=10.2v1,<10.3v1
+RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=10.3v1,<10.4v1
 LIB_DEPENDS-tests=	${LIB_DEPENDS} \
 			converters/libiconv \
 			devel/pcre
@@ -117,6 +117,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
+.if ${MACHINE_ARCH} == "powerpc"
+LDFLAGS+=	-latomic
+WANTLIB+=	atomic
+.endif
+
 MULTI_PACKAGES=	-main -server -tests
 PSEUDO_FLAVORS=	no_server no_tests
 
@@ -143,10 +148,12 @@ post-install:
 		cd mysql && \
 		ln -sf libmariadb.so.${LIBmariadb_VERSION} libmysqlclient.so.${LIBmysqlclient_VERSION} && \
 		ln -sf libmariadb.so.${LIBmariadb_VERSION} libmysqlclient_r.so.${LIBmysqlclient_r_VERSION}
+	${INSTALL_DATA} ${FILESDIR}/my.cnf ${PREFIX}/share/examples/mysql/
 	rm -Rf ${PREFIX}/share/mysql-test/plugin/rocksdb/
 
 .if ${BUILD_PACKAGES:M-tests}
 do-test:
+	(${MODCMAKE_TEST_TARGET}) || true # Keep on going even if regress tests fail
 	@cd ${WRKBUILD}/mysql-test && ./mysql-test-run.pl --force --verbose --max-test-fail=0
 .else
 NO_TEST=	Yes

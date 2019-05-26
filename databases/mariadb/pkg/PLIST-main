@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2019/05/12 21:56:55 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2019/05/26 22:28:40 jca Exp $
 @conflict mysql-client-*
 @conflict mysql-server-*
 @pkgpath databases/mysql,-main
@@ -79,8 +79,6 @@ lib/pkgconfig/libmariadb.pc
 @man man/man1/wsrep_sst_mysqldump.1
 @man man/man1/wsrep_sst_rsync.1
 @man man/man1/wsrep_sst_rsync_wan.1
-@man man/man1/wsrep_sst_xtrabackup-v2.1
-@man man/man1/wsrep_sst_xtrabackup.1
 share/aclocal/
 share/aclocal/mysql.m4
 share/pkgconfig/mariadb.pc

@@ -1,11 +1,11 @@
-$OpenBSD: patch-scripts_mysql_config_sh,v 1.1 2019/05/12 21:56:55 jca Exp $
+$OpenBSD: patch-scripts_mysql_config_sh,v 1.2 2019/05/26 22:28:40 jca Exp $
 
 Forcefully add -L${LOCALBASE}/lib to --libs so that libiconv can be found.
 
 Index: scripts/mysql_config.sh
 --- scripts/mysql_config.sh.orig
 +++ scripts/mysql_config.sh
-@@ -105,7 +105,7 @@ else
+@@ -86,7 +86,7 @@ else
  fi
  
  # Create options 
