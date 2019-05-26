@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.10 2019/04/18 16:12:15 sthen Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.11 2019/05/26 12:49:36 sthen Exp $
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
@@ -12,5 +12,5 @@ Index: src/CMakeLists.txt
 -ENDIF(NOT DEBIAN_BUILD)
 +ENDIF(NOT DEBIAN_BUILD AND NOT OPENBSD_BUILD)
  
+ TARGET_LINK_LIBRARIES(rspamd ${RSPAMD_REQUIRED_LIBRARIES})
  TARGET_LINK_LIBRARIES(rspamd rspamd-server)
- 
