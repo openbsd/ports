@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2019/05/08 01:55:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2019/05/26 08:40:13 ajacoutot Exp $
 
 COMMENT=		screenshot application for GNOME
 
 GNOME_PROJECT=		gnome-screenshot
 GNOME_VERSION=		3.32.0
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,7 +20,7 @@ MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
 
-MODGNOME_TOOLS=		desktop-file-utils
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib

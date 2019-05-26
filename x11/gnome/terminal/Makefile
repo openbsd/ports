@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.167 2019/05/09 10:47:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.168 2019/05/26 08:40:13 ajacoutot Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
 GNOME_VERSION=	3.32.2
+REVISION=	0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,7 +30,7 @@ LIB_DEPENDS=	devel/vte3>=0.52.2 \
 		sysutils/e2fsprogs \
 		x11/gnome/nautilus>=3.22.1
 
-MODGNOME_TOOLS=	desktop-file-utils vala yelp
+MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache vala yelp
 
 CONFIGURE_STYLE=	gnu
 

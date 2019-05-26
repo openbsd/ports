@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2019/05/08 13:15:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2019/05/26 08:40:13 ajacoutot Exp $
 
 COMMENT=		GNOME desktop calculator
 
 GNOME_PROJECT=		gnome-calculator
 GNOME_VERSION=		3.32.1
+REVISION=		0
 
 CATEGORIES=		math
 
@@ -23,6 +24,6 @@ LIB_DEPENDS+=		devel/libmpc \
 			devel/mpfr \
 			x11/gtksourceview4
 
-MODGNOME_TOOLS=		desktop-file-utils vala yelp
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache vala yelp
 
 .include <bsd.port.mk>
