@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2019/03/15 07:22:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2019/05/27 20:49:11 ajacoutot Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
@@ -89,7 +89,6 @@ cyrus/man/man8/
 @man cyrus/man/man8/quota.8
 @man cyrus/man/man8/reconstruct.8
 @man cyrus/man/man8/restore.8
-@man cyrus/man/man8/rmnews.8
 @man cyrus/man/man8/smmapd.8
 @man cyrus/man/man8/squatter.8
 @man cyrus/man/man8/timsieved.8
@@ -194,6 +193,7 @@ lib/libcyrus_sieve.a
 lib/libcyrus_sieve.la
 @lib lib/libcyrus_sieve.so.${LIBcyrus_sieve_VERSION}
 lib/pkgconfig/libcyrus.pc
+lib/pkgconfig/libcyrus_imap.pc
 lib/pkgconfig/libcyrus_min.pc
 lib/pkgconfig/libcyrus_sieve.pc
 libdata/perl5/site_perl/Cyrus/
@@ -418,6 +418,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.0-rc3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.0-rc4.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.0.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.1.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.10.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.4.html
@@ -582,7 +583,6 @@ share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/quota.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/reconstruct.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/rehash.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/restore.html
-share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/rmnews.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/sievec.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/sieved.html
 share/doc/cyrus-imapd/html/imap/reference/manpages/systemcommands/smmapd.html
@@ -716,6 +716,3 @@ share/examples/cyrus-imapd/tools/translatesieve
 @sample /var/spool/imap/sync./
 @mode 750
 @sample /var/sieve/
-@mode
-@owner
-@group
