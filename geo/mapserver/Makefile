@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2019/05/23 19:24:47 landry Exp $
+# $OpenBSD: Makefile,v 1.65 2019/05/27 20:26:48 ajacoutot Exp $
 
 MULTI_PACKAGES=	-utils -main -perl -php -python
 
@@ -15,6 +15,13 @@ PKGNAME-utils=	mapserver-utils-${V}
 PKGNAME-php=	php-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
 PKGNAME-python=	py3-mapscript-${V}
+
+REVISION-main=		0
+REVISION-perl=		0
+REVISION-php=		0
+REVISION-python=	0
+REVISION-utils=		0
+
 SHARED_LIBS +=	mapserver 4.0
 
 CATEGORIES=	geo www
@@ -32,12 +39,18 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	lang/php lang/python devel/cmake
 MODPHP_RUNDEP=	No
+MODPY_SETUPTOOLS=	Yes
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 CONFIGURE_STYLE=cmake
 
 NO_TEST =	Yes
-RUN_DEPENDS-php =	${MODPHP_RUN_DEPENDS}
+
 RUN_DEPENDS-main =	www/spawn-fcgi
+RUN_DEPENDS-perl =	# empty
+RUN_DEPENDS-php =	${MODPHP_RUN_DEPENDS}
+RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS}
+RUN_DEPENDS-utils =	# empty
+
 BUILD_DEPENDS +=	devel/swig databases/postgresql,-server
 
 LIB_DEPENDS=	devel/proj \
