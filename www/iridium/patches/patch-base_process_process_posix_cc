@@ -1,80 +1,23 @@
-$OpenBSD: patch-base_process_process_posix_cc,v 1.14 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-base_process_process_posix_cc,v 1.15 2019/05/27 16:11:17 robert Exp $
 
 Index: base/process/process_posix.cc
 --- base/process/process_posix.cc.orig
 +++ base/process/process_posix.cc
-@@ -9,6 +9,7 @@
- #include <stdint.h>
- #include <sys/resource.h>
- #include <sys/wait.h>
-+#include <signal.h>
- 
- #include "base/clang_coverage_buildflags.h"
- #include "base/debug/activity_tracker.h"
-@@ -26,6 +27,9 @@
- 
- namespace {
- 
-+const int kBackgroundPriority = 5;
-+const int kForegroundPriority = 0;
-+
- #if !defined(OS_NACL_NONSFI)
- 
- bool WaitpidWithTimeout(base::ProcessHandle handle,
-@@ -264,12 +268,10 @@ Process Process::DeprecatedGetProcessFromHandle(Proces
+@@ -264,7 +264,7 @@ Process Process::DeprecatedGetProcessFromHandle(Proces
    return Process(handle);
  }
  
 -#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
++#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX) && !defined(OS_BSD)
  // static
  bool Process::CanBackgroundProcesses() {
--  return false;
-+  return true;
- }
--#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
- 
- // static
- void Process::TerminateCurrentProcessImmediately(int exit_code) {
-@@ -359,25 +361,33 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
+   return false;
+@@ -359,7 +359,7 @@ bool Process::WaitForExitWithTimeout(TimeDelta timeout
  
  void Process::Exited(int exit_code) const {}
  
 -#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
++#if !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX) && !defined(OS_BSD)
  bool Process::IsProcessBackgrounded() const {
    // See SetProcessBackgrounded().
    DCHECK(IsValid());
--  return false;
-+  return GetPriority() == kBackgroundPriority;
- }
- 
--bool Process::SetProcessBackgrounded(bool value) {
--  // Not implemented for POSIX systems other than Linux and Mac. With POSIX, if
--  // we were to lower the process priority we wouldn't be able to raise it back
--  // to its initial priority.
--  NOTIMPLEMENTED();
--  return false;
-+bool Process::SetProcessBackgrounded(bool background) {
-+  DCHECK(IsValid());
-+
-+  if (!CanBackgroundProcesses())
-+    return false;
-+
-+  int priority = background ? kBackgroundPriority : kForegroundPriority;
-+  int result = setpriority(PRIO_PROCESS, process_, priority);
-+  DPCHECK(result == 0);
-+  return result == 0;
- }
--#endif  // !defined(OS_LINUX) && !defined(OS_MACOSX) && !defined(OS_AIX)
- 
- int Process::GetPriority() const {
-   DCHECK(IsValid());
-   return getpriority(PRIO_PROCESS, process_);
-+}
-+
-+Time Process::CreationTime() const {
-+  // TODO(https://crbug.com/726484): There is no syscall providing this data.
-+  NOTIMPLEMENTED();
-+  return Time();
- }
- 
- }  // namespace base

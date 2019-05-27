@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.17 2019/04/17 11:48:53 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.18 2019/05/27 16:11:17 robert Exp $
 
 Index: chrome/common/chrome_paths.cc
 --- chrome/common/chrome_paths.cc.orig
@@ -30,6 +30,15 @@ Index: chrome/common/chrome_paths.cc
        if (!GetUserDownloadsDirectorySafe(&cur))
          return false;
        break;
+@@ -459,7 +459,7 @@ bool PathProvider(int key, base::FilePath* result) {
+       if (!base::PathExists(cur))  // We don't want to create this
+         return false;
+       break;
+-#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
++#if defined(OS_POSIX) && !defined(OS_MACOSX)
+     case chrome::DIR_POLICY_FILES: {
+ #if defined(GOOGLE_CHROME_BUILD)
+       cur = base::FilePath(FILE_PATH_LITERAL("/etc/opt/chrome/policies"));
 @@ -470,7 +470,7 @@ bool PathProvider(int key, base::FilePath* result) {
      }
  #endif

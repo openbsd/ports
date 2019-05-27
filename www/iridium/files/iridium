@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: iridium,v 1.5 2019/04/17 18:35:36 robert Exp $
+# $OpenBSD: iridium,v 1.6 2019/05/27 16:11:17 robert Exp $
 
 DATASIZE="716800"
 OPENFILES="400"
@@ -20,13 +20,6 @@ if [ $(ulimit -Sn) -lt ${OPENFILES} ]; then
 	ulimit -Sn ${OPENFILES} || \
 		xm_log "Cannot increase openfiles-cur to at least ${OPENFILES}"
 		[ $? -eq 0 ] || exit
-fi
-
-if ! mount | grep `df -h ${TRUEPREFIX} | tail -1 | awk '{print $6}'` |
-	grep -q wxallowed; then
-	echo "Filesystem containing ${TRUEPREFIX} must have the 'wxallowed' flag" |
-	    ${X11BASE}/bin/xmessage -file - -center -buttons exit:0 -default exit
-	exit
 fi
 
 #
