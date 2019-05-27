@@ -1,4 +1,4 @@
-$OpenBSD: patch-test_failbackup_test,v 1.1 2017/11/17 14:59:18 jca Exp $
+$OpenBSD: patch-test_failbackup_test,v 1.2 2019/05/27 10:59:32 jca Exp $
 
 Index: test/failbackup.test
 --- test/failbackup.test.orig
@@ -7,8 +7,8 @@ Index: test/failbackup.test
  	$ cat > test.txt
  	< This is updated test.txt.
  	$ quilt refresh --backup
--	>~ mv: cannot move [`']?%{P}test.diff'? to [`']?%{P}test.diff~'?: Permission denied
-+	>~ mv: rename [`']?%{P}test.diff'? to [`']?%{P}test.diff~'?: Permission denied
+-	>~ mv: cannot move [`']?patches/test.diff'? to [`']?patches/test.diff~'?: Permission denied
++	>~ mv: rename [`']?patches/test.diff'? to [`']?patches/test.diff~'?: Permission denied
  	$ echo %{?}
  	> 1
  

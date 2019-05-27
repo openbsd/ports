@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/20 22:15:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/27 10:59:32 jca Exp $
 
 COMMENT=		manage large numbers of patches
 
-DISTNAME=		quilt-0.65
-REVISION=		0
+DISTNAME=		quilt-0.66
 CATEGORIES=		devel
 
 HOMEPAGE=		http://savannah.nongnu.org/projects/quilt/
@@ -39,6 +38,7 @@ CONFIGURE_ARGS=		--with-date=${LOCALBASE}/bin/gdate \
 			--with-md5sum=${LOCALBASE}/bin/gmd5sum \
 			--with-patch=${LOCALBASE}/bin/gpatch \
 			--with-sed=${LOCALBASE}/bin/gsed \
+			--without-7z \
 			--without-patch-wrapper \
 			--without-rpmbuild
 

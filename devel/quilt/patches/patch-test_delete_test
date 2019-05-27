@@ -1,6 +1,7 @@
-$OpenBSD: patch-test_delete_test,v 1.4 2015/02/10 16:02:05 kspillner Exp $
---- test/delete.test.orig	Fri Feb 28 07:15:45 2014
-+++ test/delete.test	Mon Feb  9 14:00:08 2015
+$OpenBSD: patch-test_delete_test,v 1.5 2019/05/27 10:59:32 jca Exp $
+Index: test/delete.test
+--- test/delete.test.orig
++++ test/delete.test
 @@ -79,7 +79,7 @@ Test the delete command.
  	# running as root, but you shouldn't do that anyway.
  	$ quilt delete "test3"
@@ -8,5 +9,5 @@ $OpenBSD: patch-test_delete_test,v 1.4 2015/02/10 16:02:05 kspillner Exp $
 -	>~ .*find: [`']?\./dir'?: Permission denied
 +	>~ ${LOCALBASE}/bin/gfind: [`']?\./dir'?: Permission denied
  
- 	$ chmod a+rx .pc/test3/dir
+ 	$ chmod a+rx %{QUILT_PC}/test3/dir
  
