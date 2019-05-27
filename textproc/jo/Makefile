@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/12/11 09:58:39 fcambus Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/27 12:27:54 fcambus Exp $
 
 COMMENT =	JSON output from a shell
 
@@ -20,5 +20,9 @@ WANTLIB =	c m
 MASTER_SITES =	https://github.com/jpmens/jo/releases/download/$V/
 
 CONFIGURE_STYLE = gnu
+
+pre-configure:
+	# Remove hardcoded optimization (-O2) flag
+	@sed -i '/^AM_CFLAGS/ s,-O2,,' ${WRKSRC}/Makefile.*
 
 .include <bsd.port.mk>
