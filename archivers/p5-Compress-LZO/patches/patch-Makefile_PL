@@ -1,20 +1,13 @@
-$OpenBSD: patch-Makefile_PL,v 1.3 2005/07/16 16:27:25 alek Exp $
---- Makefile.PL.orig	Sun Aug 23 12:14:41 1998
-+++ Makefile.PL	Sun Aug 29 09:52:03 2004
-@@ -6,14 +6,14 @@ use Config;
- # <lzoconf.h> and <lzo1x.h> can be found.
+$OpenBSD: patch-Makefile_PL,v 1.4 2019/05/27 11:45:38 cwen Exp $
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -46,7 +46,7 @@ my %WriteMakefileArgs = (
  
- #$LZO_INCLUDE = '-I/usr/include/lzo';
--#$LZO_INCLUDE = '-I/usr/local/include';
-+$LZO_INCLUDE = '-I!!LOCALBASE!!/include';
- #$LZO_INCLUDE = '-I/usr/local/include/lzo';
+ %WriteMakefileArgs = (
+     %WriteMakefileArgs,
+-    LIBS => [ '-llzo2' ],
++    LIBS => [ '-L${LOCALBASE}/lib -llzo2' ],
+ );
  
- # If liblzo is not installed in some place obvious, uncomment the next
- # line and change the path to point to the directory where liblzo is
- # installed.
- 
--#$LZO_LIB     = '-L/usr/local/lib';
-+$LZO_LIB     = '-L!!LOCALBASE!!/lib';
- 
- 
- # It shouldn't be necessary to change anything from here on.
+ my %FallbackPrereqs = (

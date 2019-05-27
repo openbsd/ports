@@ -1,3 +1,2 @@
-Perl-LZO provides LZO bindings for Perl5.  I.e.  you can access the LZO
-library from your Perl scripts thereby compressing ordinary Perl
-strings.
+The Compress::LZO module provides a Perl interface to the LZO compression
+library.

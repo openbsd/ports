@@ -1,26 +1,26 @@
-# $OpenBSD: Makefile,v 1.35 2016/03/20 16:36:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2019/05/27 11:45:38 cwen Exp $
 
-COMMENT=	interface to lzo compression library
+COMMENT=	interface to the LZO compression library
 
-DISTNAME=	perl-lzo-1.08
-PKGNAME=	p5-Compress-LZO-1.08
-REVISION = 	6
-CATEGORIES=	archivers perl5
-MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/
+DISTNAME=	Compress-LZO-1.09
+CATEGORIES=	archivers
 
-HOMEPAGE=	http://www.oberhumer.com/opensource/lzo/
-
-LIB_DEPENDS =	archivers/lzo
-WANTLIB =	c lzo>=1 perl
-
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-CONFIGURE_STYLE= perl
+WANTLIB+=	c lzo2 perl
 
-WRKDIST=	${WRKDIR}/Compress-LZO-1.08
+MODULES=	cpan
+
+BUILD_DEPENDS=	devel/p5-Devel-CheckLib>=0.9
+
+LIB_DEPENDS=	archivers/lzo2
+
+# We can't enable RELEASE_TESTING due to several depends missing
+# in the ports tree
+MAKE_ENV+=	TEST_POD=Yes AUTHOR_TESTING=Yes RELEASE_TESTING=
 
 pre-configure:
-	@sed -i "s,!!LOCALBASE!!,${LOCALBASE},g" ${WRKSRC}/Makefile.PL
+	${SUBST_CMD} ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
