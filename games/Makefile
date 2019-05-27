@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.400 2019/05/04 02:00:51 bcallah Exp $
+# $OpenBSD: Makefile,v 1.401 2019/05/27 20:05:36 thfr Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -265,6 +265,7 @@
      SUBDIR += spider
      SUBDIR += starfighter
      SUBDIR += starlanes
+     SUBDIR += steamworks-nosteam
      SUBDIR += stepmania
      SUBDIR += stockfish
      SUBDIR += stone-soup
