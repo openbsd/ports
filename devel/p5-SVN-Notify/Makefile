@@ -1,23 +1,20 @@
-# $OpenBSD: Makefile,v 1.18 2016/04/28 14:21:58 rpe Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/27 11:37:25 cwen Exp $
 
 COMMENT=	subversion activity notification
 
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME =	SVN-Notify-2.86
+DISTNAME=	SVN-Notify-2.87
 CATEGORIES=	devel
 
-# perl
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=	devel/subversion,-perl \
-		www/p5-HTML-Parser
-BUILD_DEPENDS=	${RUN_DEPENDS}
-TEST_DEPENDS=	mail/p5-Email-Address
+RUN_DEPENDS=		devel/subversion,-perl \
+			mail/p5-Email-Address-XS>=1.03 \
+			www/p5-HTML-Parser
 
-MAKE_ENV=	TEST_POD=Yes
-
-CONFIGURE_STYLE= modbuild
+CONFIGURE_STYLE=	modbuild
 
 .include <bsd.port.mk>
