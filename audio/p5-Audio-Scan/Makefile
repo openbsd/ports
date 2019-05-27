@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.18 2018/04/27 14:47:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2019/05/27 11:48:38 cwen Exp $
 
 COMMENT=	fast audio metadata and tag reader for Perl
 
-DISTNAME=	Audio-Scan-0.99
+DISTNAME=	Audio-Scan-1.01
 CATEGORIES=	audio
 
-# GPLv2+
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c perl z
 
 MODULES=	cpan
 
-TEST_FLAGS=	TEST_POD=1
-TEST_DEPENDS=	devel/p5-Test-Pod \
-		devel/p5-Test-Pod-Coverage \
-		devel/p5-Test-Warn
+TEST_DEPENDS=	devel/p5-Test-Warn
+
+MAKE_ENV+=	TEST_POD=Yes
 
 .include <bsd.port.mk>
