@@ -1,7 +1,8 @@
-$OpenBSD: patch-examples_cli_ini,v 1.6 2017/04/07 14:56:24 sthen Exp $
---- examples/cli.ini.orig	Wed Apr  5 20:47:54 2017
-+++ examples/cli.ini	Fri Apr  7 15:47:30 2017
-@@ -13,11 +13,19 @@ rsa-key-size = 4096
+$OpenBSD: patch-examples_cli_ini,v 1.7 2019/05/28 14:24:10 sthen Exp $
+Index: examples/cli.ini
+--- examples/cli.ini.orig
++++ examples/cli.ini
+@@ -13,10 +13,18 @@ rsa-key-size = 4096
  # Uncomment and update to register with the specified e-mail address
  # email = foo@example.com
  
@@ -10,7 +11,6 @@ $OpenBSD: patch-examples_cli_ini,v 1.6 2017/04/07 14:56:24 sthen Exp $
 +
  # Uncomment to use the standalone authenticator on port 443
  # authenticator = standalone
- # standalone-supported-challenges = tls-sni-01
  
  # Uncomment to use the webroot authenticator. Replace webroot-path with the
  # path to the public_html / webroot folder being served by your web server.
