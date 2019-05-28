@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/05/20 22:15:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2019/05/28 15:43:19 robert Exp $
 
 # undefined ref's to libicon*, libintl*
 USE_LLD=	Yes
@@ -8,7 +8,8 @@ COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}.${BUILD}
 PKGNAME-mapi=	kopano-mapi-${V}.${BUILD}
-REVISION-main=	0
+REVISION-main=	1
+REVISION-mapi=	0
 
 CATEGORIES=	mail www productivity
 
@@ -21,6 +22,7 @@ SHARED_LIBS +=  kcfreebusy                0.0 # 0.0
 SHARED_LIBS +=  kcicalmapi                0.0 # 0.0
 SHARED_LIBS +=  kcinetmapi                0.0 # 0.0
 SHARED_LIBS +=  kcpyplug                  0.0 # 0.0
+SHARED_LIBS +=  kcrosie                   0.0 # 0.0
 SHARED_LIBS +=  kcserver                  0.0 # 0.0
 SHARED_LIBS +=  kcsoap                    0.0 # 0.0
 SHARED_LIBS +=  kcutil                    0.0 # 0.0
@@ -45,13 +47,13 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 		sysutils/coreutils \
 		textproc/xmlto
 
-WANTLIB += c m pthread z vmime iconv icudata icui18n icuuc intl
+WANTLIB += m pthread z vmime iconv icudata icui18n icuuc intl
 WANTLIB += lzma crypto ssl kvm
 
-WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
+WANTLIB-main += c ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += curl nghttp2 ical icalss
-WANTLIB-main += mysqlclient curses ssl xml2
-WANTLIB-main += gsoapssl++
+WANTLIB-main += mariadb curses ssl xml2
+WANTLIB-main += gsoapssl++ tidy
 WANTLIB-main += ${LIBCXX}
 WANTLIB-main += icalvcal ldap_r-2.4 HX jsoncpp
 
@@ -75,14 +77,15 @@ LIB_DEPENDS-main= databases/mariadb \
 		net/curl \
 		textproc/icu4c \
 		textproc/libical \
-		textproc/libxml
+		textproc/libxml \
+		www/tidy
 
 WANTLIB-mapi += ${WANTLIB}
 WANTLIB-mapi += ical icalss mapi
 WANTLIB-mapi += xml2
 WANTLIB-mapi += ${LIBCXX}
 WANTLIB-mapi += icalvcal kcfreebusy kcicalmapi kcinetmapi
-WANTLIB-mapi += kcutil
+WANTLIB-mapi += kcutil kcrosie tidy
 WANTLIB-mapi += HX curl jsoncpp nghttp2
 
 LIB_DEPENDS-mapi= ${BASE_PKGPATH}>=${V}
