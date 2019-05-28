@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.909 2019/05/26 12:38:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.910 2019/05/28 12:58:34 fcambus Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -76,6 +76,7 @@
      SUBDIR += kore
      SUBDIR += kore,curl
      SUBDIR += kore,pgsql
+     SUBDIR += kore,python
      SUBDIR += kwebapp
      SUBDIR += kwebkitpart
      SUBDIR += larbin
