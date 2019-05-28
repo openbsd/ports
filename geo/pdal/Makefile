@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/16 03:12:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/28 19:35:14 landry Exp $
 
 COMMENT =	translator library for point cloud formats
 
-DISTNAME =	PDAL-1.9.0-src
+DISTNAME =	PDAL-1.9.1-src
 PKGNAME =	${DISTNAME:L:C/-src//}
-REVISION =	2
 
 SHARED_LIBS =	pdal_base 2.0 # 6.1
 SHARED_LIBS +=  pdal_util 0.2 # 6.1
@@ -12,7 +11,7 @@ SHARED_LIBS +=  pdal_util 0.2 # 6.1
 CATEGORIES =	geo devel textproc
 
 HOMEPAGE =	https://pdal.io/
-MASTER_SITES =	https://github.com/PDAL/PDAL/releases/download/1.9.0/
+MASTER_SITES =	https://github.com/PDAL/PDAL/releases/download/1.9.1/
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
