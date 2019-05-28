@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2019/02/05 16:10:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.115 2019/05/28 13:59:36 sthen Exp $
 
 COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool
@@ -6,7 +6,7 @@ COMMENT-python= python interface to librrd
 COMMENT-ruby=	ruby interface to librrd
 
 MODPY_EGG_VERSION= 0.1.10
-VERSION=	1.7.1
+VERSION=	1.7.2
 DISTNAME=	rrdtool-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-${VERSION}
@@ -74,7 +74,7 @@ CONFIGURE_ENV+=	NROFF="/usr/bin/true" \
 		TROFF="/usr/bin/true"
 
 cWANTLIB=	pthread
-WANTLIB-update=	${cWANTLIB} c glib-2.0 iconv intl m pcre
+WANTLIB-update=	${cWANTLIB} c glib-2.0 iconv intl m
 WANTLIB-python=	${cWANTLIB} ${MODPY_WANTLIB} rrd
 WANTLIB-ruby=	${cWANTLIB} ${MODRUBY_WANTLIB} c gmp m rrd
 # depends on Perl ABI
@@ -87,12 +87,12 @@ WANTLIB-main += xcb-render xcb-shm xml2 z fribidi
 
 LIB_DEPENDS-main=	devel/glib2 \
 			devel/pango \
+			devel/pcre \
 			graphics/png \
 			textproc/libxml
 RUN_DEPENDS-main=	rrdupdate-${VERSION}:net/rrdtool,-update
 
-LIB_DEPENDS-update=	devel/glib2 \
-			devel/pcre
+LIB_DEPENDS-update=	devel/glib2
 RUN_DEPENDS-update=
 
 LIB_DEPENDS-python=	rrdtool-${VERSION}:net/rrdtool

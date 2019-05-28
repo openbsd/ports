@@ -1,20 +1,28 @@
-$OpenBSD: patch-configure,v 1.13 2019/02/05 16:10:05 sthen Exp $
+$OpenBSD: patch-configure,v 1.14 2019/05/28 13:59:36 sthen Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -28326,15 +28326,10 @@ $as_echo_n "checking in... " >&6; }
- $as_echo "and out again" >&6; }
+@@ -28696,23 +28696,6 @@ $as_echo "$as_me: WARNING: unrecognized options: $ac_u
+ fi
  
- echo $ECHO_N "ordering CD from http://tobi.oetiker.ch/wish $ECHO_C" 1>&6
+ 
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking in" >&5
+-$as_echo_n "checking in... " >&6; }
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: and out again" >&5
+-$as_echo "and out again" >&6; }
+-
+-echo $ECHO_N "ordering CD from https://tobi.oetiker.ch/wish $ECHO_C" 1>&6
 -sleep 1
- echo $ECHO_N ".$ECHO_C" 1>&6
+-echo $ECHO_N ".$ECHO_C" 1>&6
 -sleep 1
- echo $ECHO_N ".$ECHO_C" 1>&6
+-echo $ECHO_N ".$ECHO_C" 1>&6
 -sleep 1
- echo $ECHO_N ".$ECHO_C" 1>&6
+-echo $ECHO_N ".$ECHO_C" 1>&6
 -sleep 1
- echo $ECHO_N ".$ECHO_C" 1>&6
+-echo $ECHO_N ".$ECHO_C" 1>&6
 -sleep 1
- { $as_echo "$as_me:${as_lineno-$LINENO}: result:  just kidding ;-)" >&5
- $as_echo " just kidding ;-)" >&6; }
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result:  just kidding ;-)" >&5
+-$as_echo " just kidding ;-)" >&6; }
  echo
+ echo "----------------------------------------------------------------"
+ echo "Config is DONE!"
