@@ -1,7 +1,8 @@
-$OpenBSD: patch-nss_coreconf_OpenBSD_mk,v 1.4 2019/04/16 18:45:41 jca Exp $
+$OpenBSD: patch-nss_coreconf_OpenBSD_mk,v 1.5 2019/05/28 17:00:54 landry Exp $
 
 - respect SHARED_LIBS
 - use the version script to avoid symbol clashes with libcrypto
+cf https://hg.mozilla.org/projects/nss/rev/383fbab6baf5ff2a694aae4dac6da7ffc2dd5342
 
 Index: nss/coreconf/OpenBSD.mk
 --- nss/coreconf/OpenBSD.mk.orig
