@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/03/03 15:42:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/05/28 22:19:56 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict openssl->=1.1.0,openssl-<1.2
@@ -1552,6 +1552,7 @@ lib/eopenssl11/man/man3/
 @man lib/eopenssl11/man/man3/EVP_PKEY_get0_EC_KEY.3
 @man lib/eopenssl11/man/man3/EVP_PKEY_get0_RSA.3
 @man lib/eopenssl11/man/man3/EVP_PKEY_get0_asn1.3
+@man lib/eopenssl11/man/man3/EVP_PKEY_get0_engine.3
 @man lib/eopenssl11/man/man3/EVP_PKEY_get0_hmac.3
 @man lib/eopenssl11/man/man3/EVP_PKEY_get0_poly1305.3
 @man lib/eopenssl11/man/man3/EVP_PKEY_get0_siphash.3
@@ -2461,11 +2462,13 @@ lib/eopenssl11/man/man3/
 @man lib/eopenssl11/man/man3/RSA_new.3
 @man lib/eopenssl11/man/man3/RSA_new_method.3
 @man lib/eopenssl11/man/man3/RSA_padding_add_PKCS1_OAEP.3
+@man lib/eopenssl11/man/man3/RSA_padding_add_PKCS1_OAEP_mgf1.3
 @man lib/eopenssl11/man/man3/RSA_padding_add_PKCS1_type_1.3
 @man lib/eopenssl11/man/man3/RSA_padding_add_PKCS1_type_2.3
 @man lib/eopenssl11/man/man3/RSA_padding_add_SSLv23.3
 @man lib/eopenssl11/man/man3/RSA_padding_add_none.3
 @man lib/eopenssl11/man/man3/RSA_padding_check_PKCS1_OAEP.3
+@man lib/eopenssl11/man/man3/RSA_padding_check_PKCS1_OAEP_mgf1.3
 @man lib/eopenssl11/man/man3/RSA_padding_check_PKCS1_type_1.3
 @man lib/eopenssl11/man/man3/RSA_padding_check_PKCS1_type_2.3
 @man lib/eopenssl11/man/man3/RSA_padding_check_SSLv23.3
