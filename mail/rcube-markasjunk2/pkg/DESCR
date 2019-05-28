@@ -2,3 +2,6 @@ Adds a new button to Roundcube's mailbox toolbar to mark the selected
 messages as Junk/Not Junk, optionally detaching original messages from
 spam reports if the message is not junk and learning junk/not junk using
 various methods (sa-learn, etc.).
+
+Warning: this plugin is unmaintained and may be removed in the future.
+Users should migrate to the "markasjunk" plugin in the main Roundcube package.

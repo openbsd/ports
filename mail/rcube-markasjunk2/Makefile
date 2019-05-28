@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/20 13:23:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/05/28 19:42:43 sthen Exp $
 
 COMMENT=	roundcube plugin: add Spam/Ham-buttons
 
@@ -6,11 +6,9 @@ GH_ACCOUNT=	johndoh
 GH_PROJECT=	roundcube-markasjunk2
 GH_TAGNAME=	1.11.2
 PKGNAME=	${DISTNAME:S/roundcube/rcube/}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	mail www
-
-HOMEPAGE=	https://github.com/JohnDoh/Roundcube-Plugin-Mark-as-Junk-2/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
