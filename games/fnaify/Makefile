@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/01/27 19:37:46 thfr Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/28 15:05:03 thfr Exp $
 
 # Don't bother on non-mono archs.
 ONLY_FOR_ARCHS =	${MONO_ARCHS}
 
 COMMENT =	script to configure FNA games to run on OpenBSD
-DISTNAME =	fnaify-1.2
+DISTNAME =	fnaify-1.3
 CATEGORIES =	games
 
 HOMEPAGE =	https://www.PlayOnBSD.com
@@ -21,6 +21,7 @@ RUN_DEPENDS =	audio/libogg \
 		audio/libvorbis \
 		audio/openal \
 		devel/sdl2-image \
+		games/steamworks-nosteam \
 		graphics/jpeg \
 		graphics/mojoshader \
 		graphics/png \
