@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/31 09:45:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/28 00:49:12 danj Exp $
 
 COMMENT=		Microsoft TrueType core fonts
 
 DISTNAME=		msttcorefonts-2.0
-REVISION=		1
+REVISION=		2
 CATEGORIES=		fonts x11
 
 HOMEPAGE=		http://corefonts.sourceforge.net/
-
-MAINTAINER=		Steve Shockley <steve.shockley@shockley.net>
 
 # Font source files have a restrictive license
 PERMIT_PACKAGE_CDROM=	Restrictive license, can't distribute modified files

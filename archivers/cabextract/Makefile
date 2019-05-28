@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/26 20:09:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/28 00:49:12 danj Exp $
 
 COMMENT=		extracts files from Microsoft CAB archives
 
 DISTNAME=		cabextract-1.8
 CATEGORIES=		archivers
+REVISION=		0
 
 HOMEPAGE=		https://www.cabextract.org.uk/
-
-MAINTAINER=		Steve Shockley <steve.shockley@shockley.net>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
