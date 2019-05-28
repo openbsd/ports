@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/20 13:23:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/05/28 20:08:35 sthen Exp $
 
 COMMENT=	roundcube plugin: log end-user IP in Dovecot using IMAP ID
 
 GH_ACCOUNT=	corbosman
 GH_PROJECT=	dovecot_ident
 GH_TAGNAME=	2.2
+PKGNAME=	rcube-${DISTNAME}
 REVISION=	2
 
-PKGNAME=	rcube-${DISTNAME}
 CATEGORIES=	mail www
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
@@ -32,6 +32,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}/dovecot_ident
 	cp -Rp ${WRKDIST}/* ${INSTDIR}/dovecot_ident
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-	find ${INSTDIR} \( -name \*.orig -or -name \*.src \) -exec rm -f {} \;
+	find ${INSTDIR} \( -name \*.orig -or -name \*.src \) -delete
 
 .include <bsd.port.mk>

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/20 13:23:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/05/28 20:08:34 sthen Exp $
 
 COMMENT=	roundcube plugin: context-sensitive menus
 
 GH_ACCOUNT=	johndoh
 GH_PROJECT=	roundcube-contextmenu
 GH_TAGNAME=	2.3
-REVISION=	3
-
 PKGNAME=	${DISTNAME:S/roundcube/rcube/}
+REVISION=	3
 
 CATEGORIES=	mail www
 HOMEPAGE=	http://www.tehinterweb.co.uk/roundcube/\#picontextmenu
@@ -35,6 +34,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}/contextmenu
 	cp -Rp ${WRKDIST}/* ${INSTDIR}/contextmenu
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-	find ${INSTDIR} \( -name \*.orig -or -name \*.src \) -exec rm -f {} \;
+	find ${INSTDIR} \( -name \*.orig -or -name \*.src \) -delete
 
 .include <bsd.port.mk>

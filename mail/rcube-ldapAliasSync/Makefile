@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/20 13:23:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/28 20:08:35 sthen Exp $
 
 COMMENT=	roundcube plugin: LDAP Alias Sync
 
 GH_ACCOUNT=	brenard
 GH_PROJECT=	ldapAliasSync
 GH_COMMIT=	73f9644eb181f39aa98ca5e173d3b2e74155bf7b
-
 DISTNAME=	rcube-ldapAliasSync-20170701
-DISTFILES=	${DISTNAME}{${GH_COMMIT}}${EXTRACT_SUFX}
 REVISION=	0
 
 CATEGORIES=	mail www
@@ -36,6 +34,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}/ldapAliasSync
 	cp -Rp ${WRKDIST}/* ${INSTDIR}/ldapAliasSync
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-	find ${INSTDIR} \( -name \*.orig -or -name \*.src \) -exec rm -f {} \;
+	find ${INSTDIR} \( -name \*.orig -or -name \*.src \) -delete
 
 .include <bsd.port.mk>

@@ -1,4 +1,8 @@
 DKIMSTATUS displays the status of the DKIM Signature of each email you
 read in Roundcube.
 
-Note: This plugin is no longer maintained upstream.
+It does not carry out its own DKIM checks; it only reports information
+added to headers by an MTA or spam filter.
+
+Warning: this plugin is unmaintained upstream and may be removed in
+the future.

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/20 13:23:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/05/28 20:08:35 sthen Exp $
 
 COMMENT=	roundcube plugin: authenticate via Yubikey HTTPS API
 
 GH_ACCOUNT=	northox
 GH_PROJECT=	roundcube-yubikey-plugin
 GH_TAGNAME=	1.4
+PKGNAME=	${DISTNAME:S/roundcube/rcube/}
 REVISION=	2
 
-PKGNAME=	rcube-yubikey-plugin-${GH_TAGNAME}
 CATEGORIES=	mail www
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
@@ -35,7 +35,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	cp -Rp ${WRKDIST}/* ${INSTDIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-	find ${INSTDIR} \( -name \*.orig -or -name \*.src \) -exec rm -f {} \;
+	find ${INSTDIR} \( -name \*.orig -or -name \*.src \) -delete
 	mv ${INSTDIR}/config.inc.php{,.dist}
 
 .include <bsd.port.mk>

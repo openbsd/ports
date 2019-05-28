@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/28 19:42:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/05/28 20:08:35 sthen Exp $
 
 COMMENT=	roundcube plugin: add Spam/Ham-buttons
 
@@ -6,7 +6,7 @@ GH_ACCOUNT=	johndoh
 GH_PROJECT=	roundcube-markasjunk2
 GH_TAGNAME=	1.11.2
 PKGNAME=	${DISTNAME:S/roundcube/rcube/}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	mail www
 
@@ -31,6 +31,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}/markasjunk2
 	cp -Rp ${WRKDIST}/* ${INSTDIR}/markasjunk2
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-	find ${INSTDIR} \( -name \*.orig -or -name \*.src \) -exec rm -f {} \;
+	find ${INSTDIR} \( -name \*.orig -or -name \*.src \) -delete
 
 .include <bsd.port.mk>
