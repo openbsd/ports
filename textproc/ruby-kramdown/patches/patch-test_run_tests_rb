@@ -1,0 +1,26 @@
+$OpenBSD: patch-test_run_tests_rb,v 1.1 2019/05/28 16:14:00 jeremy Exp $
+
+Fix tests so they run.
+
+Index: test/run_tests.rb
+--- test/run_tests.rb.orig
++++ test/run_tests.rb
+@@ -32,9 +32,9 @@ Dir[arg].each {|f| fwidth = [fwidth, f.length + 10].ma
+   html_file = file.sub('.text', '.html')
+   opts_file = file.sub('.text', '.options')
+   opts_file = File.join(File.dirname(file), 'options') if !File.exist?(opts_file)
+-  options = File.exist?(opts_file) ? YAML::load(File.read(opts_file)) : {:auto_ids => false, :footnote_nr => 1}
+-  doc = Kramdown::Document.new(File.read(file), options)
+   begin
++    options = File.exist?(opts_file) ? YAML.safe_load(File.read(opts_file)) : {auto_ids: false, footnote_nr: 1}
++    doc = Kramdown::Document.new(File.read(file), options)
+     assert_equal(File.read(html_file), doc.to_html)
+     puts 'PASSED'
+   rescue Exception => e
+@@ -42,5 +42,5 @@ Dir[arg].each {|f| fwidth = [fwidth, f.length + 10].ma
+     puts $!.message if $VERBOSE
+     puts $!.backtrace if $DEBUG
+   end
+-  puts "Warnings:\n" + doc.warnings.join("\n") if !doc.warnings.empty? && $VERBOSE
++  puts "Warnings:\n" + doc.warnings.join("\n") if doc && !doc.warnings.empty? && $VERBOSE
+ end
