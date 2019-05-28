@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1467 2019/05/20 22:15:13 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1468 2019/05/28 20:08:17 naddy Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -809,6 +809,11 @@ _NONDEFAULT_LD = Yes
 .  endif
 .endif
 _NONDEFAULT_LD ?= No
+.if ${_NONDEFAULT_LD:L} == "yes"
+.  if !exists(${_LD_PROGRAM})
+IGNORE = "requires ${_LD_PROGRAM}"
+.  endif
+.endif
 
 # setup locations of compilers from the base system or environment variables.
 # MODULES for compilers (gcc4.port.mk, clang.port.mk) also append to this,
