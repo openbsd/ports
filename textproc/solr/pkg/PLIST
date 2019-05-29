@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/05/15 08:18:34 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/05/29 21:28:59 sthen Exp $
 @newgroup _solr:801
 @newuser _solr:801:_solr:daemon:solr user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/db/solr/*
@@ -218,6 +218,7 @@ share/solr/example/example-DIH/solr/db/conf/clustering/carrot2/kmeans-attributes
 share/solr/example/example-DIH/solr/db/conf/clustering/carrot2/lingo-attributes.xml
 share/solr/example/example-DIH/solr/db/conf/clustering/carrot2/stc-attributes.xml
 share/solr/example/example-DIH/solr/db/conf/currency.xml
+share/solr/example/example-DIH/solr/db/conf/dataimport.properties
 share/solr/example/example-DIH/solr/db/conf/db-data-config.xml
 share/solr/example/example-DIH/solr/db/conf/elevate.xml
 share/solr/example/example-DIH/solr/db/conf/lang/
@@ -354,6 +355,7 @@ share/solr/example/example-DIH/solr/solr/conf/clustering/carrot2/kmeans-attribut
 share/solr/example/example-DIH/solr/solr/conf/clustering/carrot2/lingo-attributes.xml
 share/solr/example/example-DIH/solr/solr/conf/clustering/carrot2/stc-attributes.xml
 share/solr/example/example-DIH/solr/solr/conf/currency.xml
+share/solr/example/example-DIH/solr/solr/conf/dataimport.properties
 share/solr/example/example-DIH/solr/solr/conf/elevate.xml
 share/solr/example/example-DIH/solr/solr/conf/lang/
 share/solr/example/example-DIH/solr/solr/conf/lang/contractions_ca.txt
@@ -1124,6 +1126,7 @@ share/solr/server/lib/metrics-graphite-4.0.5.jar
 share/solr/server/lib/metrics-jetty9-4.0.5.jar
 share/solr/server/lib/metrics-jmx-4.0.5.jar
 share/solr/server/lib/metrics-jvm-4.0.5.jar
+share/solr/server/logs/
 share/solr/server/modules/
 share/solr/server/modules/http.mod
 share/solr/server/modules/https.mod
