@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2019/01/07 22:49:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.31 2019/05/29 14:17:05 sthen Exp $
 @newgroup _clamav:539
 @newuser _clamav:539:539:daemon:Clam AntiVirus:/nonexistent:/sbin/nologin
 @extraunexec rm -fr /var/db/clamav/*
@@ -22,9 +22,6 @@ include/clamav.h
 lib/libclamav.a
 lib/libclamav.la
 @lib lib/libclamav.so.${LIBclamav_VERSION}
-lib/libclammspack.a
-lib/libclammspack.la
-@lib lib/libclammspack.so.${LIBclammspack_VERSION}
 lib/libclamunrar.a
 lib/libclamunrar.la
 @lib lib/libclamunrar.so.${LIBclamunrar_VERSION}

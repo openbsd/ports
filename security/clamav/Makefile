@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.126 2019/03/28 14:30:01 solene Exp $
+# $OpenBSD: Makefile,v 1.127 2019/05/29 14:17:05 sthen Exp $
 
 COMMENT=	virus scanner
 DISTNAME=	clamav-0.101.2
+REVISION=	0
 
 CATEGORIES=	security
 
 SHARED_LIBS +=	clamav               23.1     # 9.0
-SHARED_LIBS +=	clammspack           1.0      # 1.0
 SHARED_LIBS +=	clamunrar            4.0      # 9.0
 SHARED_LIBS +=	clamunrar_iface      4.0
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += bz2 c crypto curl curses iconv json-c ltdl lzma m milter
-WANTLIB += nghttp2 pcre2-8 pthread ssl xml2 z
+WANTLIB += mspack nghttp2 pcre2-8 pthread ssl xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -27,6 +27,7 @@ BUILD_DEPENDS=		devel/check \
 			devel/libexecinfo
 
 LIB_DEPENDS=		archivers/bzip2 \
+			archivers/libmspack \
 			devel/json-c \
 			devel/libtool,-ltdl \
 			devel/pcre2 \
@@ -38,17 +39,15 @@ TEST_DEPENDS=		security/clamav
 MASTER_SITES=		http://www.clamav.net/downloads/production/
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-clamav \
-			--enable-dependency-tracking \
-			--disable-clamuko \
+CONFIGURE_ARGS+=	--disable-cr \
 			--enable-bigstack \
 			--enable-milter \
-			--with-user=_clamav \
-			--with-group=_clamav \
-                        --disable-cr \
 			--with-dbdir=/var/db/clamav \
+			--with-group=_clamav \
 			--with-ltdl-include=${LOCALBASE}/include \
-			--with-ltdl-lib=${LOCALBASE}/lib
+			--with-ltdl-lib=${LOCALBASE}/lib \
+			--with-system-libmspack \
+			--with-user=_clamav
 
 TEST_TARGET=	check
 MODULES=	lang/python
