@@ -1,29 +1,20 @@
-$OpenBSD: patch-SConstruct,v 1.1.1.1 2018/09/04 21:56:09 bcallah Exp $
+$OpenBSD: patch-SConstruct,v 1.2 2019/05/29 20:30:54 bcallah Exp $
 
 Remove hardcoded -O3
-Pick up all compiler flags.
 Install to the correct locations.
 
 Index: SConstruct
 --- SConstruct.orig
 +++ SConstruct
-@@ -12,6 +12,8 @@ if 'LDFLAGS' in os.environ:
- 	env.Append(LINKFLAGS = os.environ['LDFLAGS'])
- if 'CPPPATH' in os.environ:
- 	env.Append(CPPPATH = os.environ['CPPPATH'])
-+if 'LIBPATH' in os.environ:
-+	env.Append(LIBPATH = os.environ['LIBPATH'])
- 
- # The Steam runtime has an out-of-date libstdc++, so link it in statically:
- if 'SCHROOT_CHROOT_NAME' in os.environ and 'steamrt' in os.environ['SCHROOT_CHROOT_NAME']:
-@@ -19,15 +21,12 @@ if 'SCHROOT_CHROOT_NAME' in os.environ and 'steamrt' i
+@@ -13,7 +13,6 @@ if 'SCHROOT_CHROOT_NAME' in os.environ and 'steamrt' i
  
  opts = Variables()
  opts.Add(PathVariable("PREFIX", "Directory to install under", "/usr/local", PathVariable.PathIsDirCreate))
 -opts.Add(PathVariable("DESTDIR", "Destination root directory", "", PathVariable.PathAccept))
  opts.Add(EnumVariable("mode", "Compilation mode", "release", allowed_values=("release", "debug", "profile")))
+ opts.Add(PathVariable("BUILDDIR", "Build directory", "build", PathVariable.PathIsDirCreate))
  opts.Update(env)
- 
+@@ -21,8 +20,6 @@ opts.Update(env)
  Help(opts.GenerateHelpText(env))
  
  flags = ["-std=c++11", "-Wall"]
@@ -32,16 +23,7 @@ Index: SConstruct
  if env["mode"] == "debug":
  	flags += ["-g"]
  if env["mode"] == "profile":
-@@ -58,7 +57,7 @@ else:
- # Work with clang's static analyzer:
- env["CC"] = os.getenv("CC") or env["CC"]
- env["CXX"] = os.getenv("CXX") or env["CXX"]
--env["ENV"].update(x for x in os.environ.items() if x[0].startswith("CCC_"))
-+env["ENV"].update(x for x in os.environ.items())
- 
- VariantDir("build/" + env["mode"], "source", duplicate = 0)
- 
-@@ -66,7 +65,7 @@ sky = env.Program("endless-sky", Glob("build/" + env["
+@@ -57,7 +54,7 @@ sky = env.Program("endless-sky", Glob(buildDirectory +
  
  
  # Install the binary:
@@ -50,21 +32,20 @@ Index: SConstruct
  
  # Install the desktop file:
  env.Install("$DESTDIR$PREFIX/share/applications", "endless-sky.desktop")
-@@ -93,10 +92,9 @@ if env.get("PREFIX").startswith("/usr/"):
+@@ -83,12 +80,6 @@ if env.get("PREFIX").startswith("/usr/"):
+ 		icons,
  		"gtk-update-icon-cache -t $DESTDIR$PREFIX/share/icons/hicolor/")
  
- # Install the man page.
+-# Install the man page.
 -env.Command(
 -	"$DESTDIR$PREFIX/share/man/man6/endless-sky.6.gz",
 -	"endless-sky.6",
 -	"gzip -c $SOURCE > $TARGET")
-+env.Install(
-+	"$DESTDIR$PREFIX/man/man6",
-+	"endless-sky.6")
- 
+-
  # Install the data files.
  def RecursiveInstall(env, target, source):
-@@ -107,11 +105,11 @@ def RecursiveInstall(env, target, source):
+ 	rootIndex = len(env.Dir(source).abspath) + 1
+@@ -98,11 +89,11 @@ def RecursiveInstall(env, target, source):
  			RecursiveInstall(env, os.path.join(target, name), node.abspath)
  		else:
  			env.Install(target, node)

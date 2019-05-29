@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2018/12/05 20:19:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/05/29 20:30:54 bcallah Exp $
 
 COMMENT =	space exploration and combat game similar to Escape Velocity
 CATEGORIES =	games x11
 
 GH_ACCOUNT =	endless-sky
 GH_PROJECT =	endless-sky
-GH_TAGNAME =	v0.9.8
-REVISION =	1
+GH_TAGNAME =	v0.9.9
 
 HOMEPAGE =	https://endless-sky.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -40,5 +39,9 @@ NO_TEST =	Yes
 
 pre-configure:
 	sed -i 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/source/Files.cpp
+
+# Don't bother with SConstruct, install the manual page ourselves.
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/endless-sky.6 ${PREFIX}/man/man6
 
 .include <bsd.port.mk>

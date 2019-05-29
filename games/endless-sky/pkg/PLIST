@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/04 21:56:10 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/29 20:30:54 bcallah Exp $
 @bin bin/endless-sky
 @man man/man6/endless-sky.6
 share/appdata/
@@ -14,11 +14,12 @@ share/endless-sky/data/coalition outfits.txt
 share/endless-sky/data/coalition ships.txt
 share/endless-sky/data/coalition weapons.txt
 share/endless-sky/data/coalition.txt
-share/endless-sky/data/combat ratings.txt
 share/endless-sky/data/commodities.txt
 share/endless-sky/data/conversations.txt
 share/endless-sky/data/deep jobs.txt
+share/endless-sky/data/deep missions.txt
 share/endless-sky/data/deprecated outfits.txt
+share/endless-sky/data/dirt belt jobs.txt
 share/endless-sky/data/drak missions.txt
 share/endless-sky/data/drak.txt
 share/endless-sky/data/effects.txt
@@ -32,6 +33,8 @@ share/endless-sky/data/free worlds middle.txt
 share/endless-sky/data/free worlds reconciliation.txt
 share/endless-sky/data/free worlds side plots.txt
 share/endless-sky/data/free worlds start.txt
+share/endless-sky/data/free worlds war jobs.txt
+share/endless-sky/data/frontier jobs.txt
 share/endless-sky/data/governments.txt
 share/endless-sky/data/hai jobs.txt
 share/endless-sky/data/hai missions.txt
@@ -56,6 +59,8 @@ share/endless-sky/data/map.txt
 share/endless-sky/data/marauders.txt
 share/endless-sky/data/names.txt
 share/endless-sky/data/nanobots.txt
+share/endless-sky/data/near earth jobs.txt
+share/endless-sky/data/news.txt
 share/endless-sky/data/outfits.txt
 share/endless-sky/data/paradise world jobs.txt
 share/endless-sky/data/persons.txt
@@ -65,14 +70,18 @@ share/endless-sky/data/pug.txt
 share/endless-sky/data/quarg missions.txt
 share/endless-sky/data/quarg outfits.txt
 share/endless-sky/data/quarg ships.txt
+share/endless-sky/data/ratings.txt
 share/endless-sky/data/remnant missions.txt
 share/endless-sky/data/remnant outfits.txt
 share/endless-sky/data/remnant ships.txt
 share/endless-sky/data/remnant.txt
+share/endless-sky/data/rim jobs.txt
 share/endless-sky/data/sales.txt
 share/endless-sky/data/ships.txt
+share/endless-sky/data/south jobs.txt
+share/endless-sky/data/stars.txt
 share/endless-sky/data/start.txt
-share/endless-sky/data/syndicate world jobs.txt
+share/endless-sky/data/syndicate jobs.txt
 share/endless-sky/data/tooltips.txt
 share/endless-sky/data/transport missions.txt
 share/endless-sky/data/variants.txt
@@ -480,6 +489,7 @@ share/endless-sky/images/asteroid/medium rock/spin-54.png
 share/endless-sky/images/asteroid/medium rock/spin-55.png
 share/endless-sky/images/asteroid/medium rock/spin-56.png
 share/endless-sky/images/asteroid/silicon/
+share/endless-sky/images/asteroid/silicon/spin-00.png
 share/endless-sky/images/asteroid/silicon/spin-01.png
 share/endless-sky/images/asteroid/silicon/spin-02.png
 share/endless-sky/images/asteroid/silicon/spin-03.png
@@ -771,6 +781,13 @@ share/endless-sky/images/effect/blaster impact+0.png
 share/endless-sky/images/effect/blaster impact+1.png
 share/endless-sky/images/effect/blaster impact+2.png
 share/endless-sky/images/effect/blaster impact+3.png
+share/endless-sky/images/effect/blood-0.png
+share/endless-sky/images/effect/blood-1.png
+share/endless-sky/images/effect/blood-2.png
+share/endless-sky/images/effect/blood-3.png
+share/endless-sky/images/effect/blood-4.png
+share/endless-sky/images/effect/blood-5.png
+share/endless-sky/images/effect/blood-6.png
 share/endless-sky/images/effect/bolide~0.png
 share/endless-sky/images/effect/bolide~1.png
 share/endless-sky/images/effect/bolide~2.png
@@ -799,10 +816,11 @@ share/endless-sky/images/effect/bullet impact-4.png
 share/endless-sky/images/effect/bullet impact-5.png
 share/endless-sky/images/effect/bullet impact-6.png
 share/endless-sky/images/effect/bullet impact-7.png
-share/endless-sky/images/effect/coalition large flare~0.png
-share/endless-sky/images/effect/coalition large flare~1.png
-share/endless-sky/images/effect/coalition small flare~0.png
-share/endless-sky/images/effect/coalition small flare~1.png
+share/endless-sky/images/effect/coalition flare/
+share/endless-sky/images/effect/coalition flare/large~0.png
+share/endless-sky/images/effect/coalition flare/large~1.png
+share/endless-sky/images/effect/coalition flare/small~0.png
+share/endless-sky/images/effect/coalition flare/small~1.png
 share/endless-sky/images/effect/detainer impact+0.png
 share/endless-sky/images/effect/detainer impact+1.png
 share/endless-sky/images/effect/detainer impact+2.png
@@ -831,6 +849,32 @@ share/endless-sky/images/effect/drak bolt impact~6.png
 share/endless-sky/images/effect/electron impact+0.png
 share/endless-sky/images/effect/electron impact+1.png
 share/endless-sky/images/effect/electron impact+2.png
+share/endless-sky/images/effect/emp ring+00.png
+share/endless-sky/images/effect/emp ring+01.png
+share/endless-sky/images/effect/emp ring+02.png
+share/endless-sky/images/effect/emp ring+03.png
+share/endless-sky/images/effect/emp ring+04.png
+share/endless-sky/images/effect/emp ring+05.png
+share/endless-sky/images/effect/emp ring+06.png
+share/endless-sky/images/effect/emp ring+07.png
+share/endless-sky/images/effect/emp ring+08.png
+share/endless-sky/images/effect/emp ring+09.png
+share/endless-sky/images/effect/emp ring+10.png
+share/endless-sky/images/effect/emp ring+11.png
+share/endless-sky/images/effect/emp ring+12.png
+share/endless-sky/images/effect/emp spark+0.png
+share/endless-sky/images/effect/emp spark+1.png
+share/endless-sky/images/effect/emp spark+2.png
+share/endless-sky/images/effect/emp spark+3.png
+share/endless-sky/images/effect/emp spark+4.png
+share/endless-sky/images/effect/emp spark+5.png
+share/endless-sky/images/effect/emp spark+6.png
+share/endless-sky/images/effect/emp torpedo fire+0.png
+share/endless-sky/images/effect/emp torpedo fire+1.png
+share/endless-sky/images/effect/emp torpedo fire+2.png
+share/endless-sky/images/effect/emp torpedo fire+3.png
+share/endless-sky/images/effect/emp torpedo fire+4.png
+share/endless-sky/images/effect/emp torpedo fire+5.png
 share/endless-sky/images/effect/explosion/
 share/endless-sky/images/effect/explosion/huge~0.png
 share/endless-sky/images/effect/explosion/huge~1.png
@@ -867,6 +911,47 @@ share/endless-sky/images/effect/explosion/nuke+4.png
 share/endless-sky/images/effect/explosion/nuke+5.png
 share/endless-sky/images/effect/explosion/nuke+6.png
 share/endless-sky/images/effect/explosion/nuke+7.png
+share/endless-sky/images/effect/explosion/pug/
+share/endless-sky/images/effect/explosion/pug/huge~0.png
+share/endless-sky/images/effect/explosion/pug/huge~1.png
+share/endless-sky/images/effect/explosion/pug/huge~2.png
+share/endless-sky/images/effect/explosion/pug/huge~3.png
+share/endless-sky/images/effect/explosion/pug/huge~4.png
+share/endless-sky/images/effect/explosion/pug/huge~5.png
+share/endless-sky/images/effect/explosion/pug/huge~6.png
+share/endless-sky/images/effect/explosion/pug/huge~7.png
+share/endless-sky/images/effect/explosion/pug/huge~8.png
+share/endless-sky/images/effect/explosion/pug/huge~9.png
+share/endless-sky/images/effect/explosion/pug/large~0.png
+share/endless-sky/images/effect/explosion/pug/large~1.png
+share/endless-sky/images/effect/explosion/pug/large~2.png
+share/endless-sky/images/effect/explosion/pug/large~3.png
+share/endless-sky/images/effect/explosion/pug/large~4.png
+share/endless-sky/images/effect/explosion/pug/large~5.png
+share/endless-sky/images/effect/explosion/pug/large~6.png
+share/endless-sky/images/effect/explosion/pug/large~7.png
+share/endless-sky/images/effect/explosion/pug/large~8.png
+share/endless-sky/images/effect/explosion/pug/medium~0.png
+share/endless-sky/images/effect/explosion/pug/medium~1.png
+share/endless-sky/images/effect/explosion/pug/medium~2.png
+share/endless-sky/images/effect/explosion/pug/medium~3.png
+share/endless-sky/images/effect/explosion/pug/medium~4.png
+share/endless-sky/images/effect/explosion/pug/medium~5.png
+share/endless-sky/images/effect/explosion/pug/medium~6.png
+share/endless-sky/images/effect/explosion/pug/medium~7.png
+share/endless-sky/images/effect/explosion/pug/small~0.png
+share/endless-sky/images/effect/explosion/pug/small~1.png
+share/endless-sky/images/effect/explosion/pug/small~2.png
+share/endless-sky/images/effect/explosion/pug/small~3.png
+share/endless-sky/images/effect/explosion/pug/small~4.png
+share/endless-sky/images/effect/explosion/pug/small~5.png
+share/endless-sky/images/effect/explosion/pug/small~6.png
+share/endless-sky/images/effect/explosion/pug/tiny~0.png
+share/endless-sky/images/effect/explosion/pug/tiny~1.png
+share/endless-sky/images/effect/explosion/pug/tiny~2.png
+share/endless-sky/images/effect/explosion/pug/tiny~3.png
+share/endless-sky/images/effect/explosion/pug/tiny~4.png
+share/endless-sky/images/effect/explosion/pug/tiny~5.png
 share/endless-sky/images/effect/explosion/small~0.png
 share/endless-sky/images/effect/explosion/small~1.png
 share/endless-sky/images/effect/explosion/small~2.png
@@ -897,6 +982,12 @@ share/endless-sky/images/effect/fire-lance impact+0.png
 share/endless-sky/images/effect/fire-lance impact+1.png
 share/endless-sky/images/effect/fire-lance impact+2.png
 share/endless-sky/images/effect/fire-lance impact+3.png
+share/endless-sky/images/effect/flame~0.png
+share/endless-sky/images/effect/flame~1.png
+share/endless-sky/images/effect/flame~2.png
+share/endless-sky/images/effect/flame~3.png
+share/endless-sky/images/effect/flame~4.png
+share/endless-sky/images/effect/flame~5.png
 share/endless-sky/images/effect/flotsam aluminum.png
 share/endless-sky/images/effect/flotsam copper.png
 share/endless-sky/images/effect/flotsam gold.png
@@ -985,6 +1076,14 @@ share/endless-sky/images/effect/large anti missile~1.png
 share/endless-sky/images/effect/laser impact+0.png
 share/endless-sky/images/effect/laser impact+1.png
 share/endless-sky/images/effect/laser impact+2.png
+share/endless-sky/images/effect/leak big-0.png
+share/endless-sky/images/effect/leak big-1.png
+share/endless-sky/images/effect/leak big-2.png
+share/endless-sky/images/effect/leak big-3.png
+share/endless-sky/images/effect/leak-0.png
+share/endless-sky/images/effect/leak-1.png
+share/endless-sky/images/effect/leak-2.png
+share/endless-sky/images/effect/leak-3.png
 share/endless-sky/images/effect/medium graviton flare+.png
 share/endless-sky/images/effect/meteor fire~0.png
 share/endless-sky/images/effect/meteor fire~1.png
@@ -1000,6 +1099,12 @@ share/endless-sky/images/effect/missile death~0.png
 share/endless-sky/images/effect/missile death~1.png
 share/endless-sky/images/effect/missile death~2.png
 share/endless-sky/images/effect/missile death~3.png
+share/endless-sky/images/effect/moonbeam fleck+0.png
+share/endless-sky/images/effect/moonbeam fleck+1.png
+share/endless-sky/images/effect/moonbeam impact+0.png
+share/endless-sky/images/effect/moonbeam impact+1.png
+share/endless-sky/images/effect/moonbeam impact+2.png
+share/endless-sky/images/effect/moonbeam impact+3.png
 share/endless-sky/images/effect/nano spark+0.png
 share/endless-sky/images/effect/nano spark+1.png
 share/endless-sky/images/effect/nano spark+2.png
@@ -1090,15 +1195,16 @@ share/endless-sky/images/effect/quarg anti missile+1.png
 share/endless-sky/images/effect/railspark~0.png
 share/endless-sky/images/effect/railspark~1.png
 share/endless-sky/images/effect/railspark~2.png
-share/endless-sky/images/effect/remnant large flare~0.png
-share/endless-sky/images/effect/remnant large flare~1.png
-share/endless-sky/images/effect/remnant large flare~2.png
-share/endless-sky/images/effect/remnant medium flare~0.png
-share/endless-sky/images/effect/remnant medium flare~1.png
-share/endless-sky/images/effect/remnant medium flare~2.png
-share/endless-sky/images/effect/remnant small flare~0.png
-share/endless-sky/images/effect/remnant small flare~1.png
-share/endless-sky/images/effect/remnant small flare~2.png
+share/endless-sky/images/effect/remnant flare/
+share/endless-sky/images/effect/remnant flare/large~0.png
+share/endless-sky/images/effect/remnant flare/large~1.png
+share/endless-sky/images/effect/remnant flare/large~2.png
+share/endless-sky/images/effect/remnant flare/medium~0.png
+share/endless-sky/images/effect/remnant flare/medium~1.png
+share/endless-sky/images/effect/remnant flare/medium~2.png
+share/endless-sky/images/effect/remnant flare/small~0.png
+share/endless-sky/images/effect/remnant flare/small~1.png
+share/endless-sky/images/effect/remnant flare/small~2.png
 share/endless-sky/images/effect/repeater impact~0.png
 share/endless-sky/images/effect/repeater impact~1.png
 share/endless-sky/images/effect/repeater impact~2.png
@@ -1183,6 +1289,18 @@ share/endless-sky/images/effect/tracker impact~5.png
 share/endless-sky/images/effect/typhoon fire+0.png
 share/endless-sky/images/effect/typhoon fire+1.png
 share/endless-sky/images/effect/typhoon fire+2.png
+share/endless-sky/images/effect/void sprite adult death~0.png
+share/endless-sky/images/effect/void sprite adult death~1.png
+share/endless-sky/images/effect/void sprite adult death~2.png
+share/endless-sky/images/effect/void sprite adult death~3.png
+share/endless-sky/images/effect/void sprite adult death~4.png
+share/endless-sky/images/effect/void sprite adult death~5.png
+share/endless-sky/images/effect/void sprite infant death~0.png
+share/endless-sky/images/effect/void sprite infant death~1.png
+share/endless-sky/images/effect/void sprite infant death~2.png
+share/endless-sky/images/effect/void sprite infant death~3.png
+share/endless-sky/images/effect/void sprite infant death~4.png
+share/endless-sky/images/effect/void sprite infant death~5.png
 share/endless-sky/images/effect/wanderer anti-missile+0.png
 share/endless-sky/images/effect/wanderer anti-missile+1.png
 share/endless-sky/images/effect/wanderer anti-missile+2.png
@@ -1209,19 +1327,26 @@ share/endless-sky/images/hardpoint/heliarch attractor.png
 share/endless-sky/images/hardpoint/heliarch repulsor.png
 share/endless-sky/images/hardpoint/laser turret.png
 share/endless-sky/images/hardpoint/mod blaster turret.png
+share/endless-sky/images/hardpoint/moonbeam turret.png
 share/endless-sky/images/hardpoint/plasma turret.png
 share/endless-sky/images/hardpoint/point defense.png
+share/endless-sky/images/hardpoint/proton turret.png
 share/endless-sky/images/hardpoint/pug anti-missile.png
+share/endless-sky/images/hardpoint/pug gridfire turret.png
 share/endless-sky/images/hardpoint/pug zapper turret.png
 share/endless-sky/images/hardpoint/pulse turret.png
 share/endless-sky/images/hardpoint/quad blaster turret.png
+share/endless-sky/images/hardpoint/quarg anti missile.png
+share/endless-sky/images/hardpoint/quarg skylance.png
 share/endless-sky/images/hardpoint/repeater turret.png
 share/endless-sky/images/hardpoint/slicer turret.png
 share/endless-sky/images/hardpoint/sunbeam turret.png
+share/endless-sky/images/hardpoint/t3 anti missile.png
 share/endless-sky/images/hardpoint/thrasher turret.png
 share/endless-sky/images/hardpoint/wanderer anti-missile.png
 share/endless-sky/images/hardpoint/warder.png
 share/endless-sky/images/icon/
+share/endless-sky/images/icon/emp.png
 share/endless-sky/images/icon/finisher.png
 share/endless-sky/images/icon/flamethrower.png
 share/endless-sky/images/icon/gat.png
@@ -1463,6 +1588,16 @@ share/endless-sky/images/land/sea6.jpg
 share/endless-sky/images/land/sea7.jpg
 share/endless-sky/images/land/sea8.jpg
 share/endless-sky/images/land/sea9.jpg
+share/endless-sky/images/land/sivael0.jpg
+share/endless-sky/images/land/sivael1.jpg
+share/endless-sky/images/land/sivael2.jpg
+share/endless-sky/images/land/sivael3.jpg
+share/endless-sky/images/land/sivael4.jpg
+share/endless-sky/images/land/sivael5.jpg
+share/endless-sky/images/land/sivael6.jpg
+share/endless-sky/images/land/sivael7.jpg
+share/endless-sky/images/land/sivael8.jpg
+share/endless-sky/images/land/sivael9.jpg
 share/endless-sky/images/land/sky0.jpg
 share/endless-sky/images/land/sky1.jpg
 share/endless-sky/images/land/sky2.jpg
@@ -1499,6 +1634,7 @@ share/endless-sky/images/land/station1.jpg
 share/endless-sky/images/land/station2.jpg
 share/endless-sky/images/land/station3.jpg
 share/endless-sky/images/land/station4.jpg
+share/endless-sky/images/land/station5.jpg
 share/endless-sky/images/land/valley0.jpg
 share/endless-sky/images/land/valley1.jpg
 share/endless-sky/images/land/valley10-sfiera.jpg
@@ -1533,6 +1669,7 @@ share/endless-sky/images/outfit/afterburner.png
 share/endless-sky/images/outfit/android.png
 share/endless-sky/images/outfit/anti-missile hai.png
 share/endless-sky/images/outfit/anti-missile.png
+share/endless-sky/images/outfit/asteroid scanner.png
 share/endless-sky/images/outfit/banisher.png
 share/endless-sky/images/outfit/blaster turret.png
 share/endless-sky/images/outfit/blaster.png
@@ -1541,18 +1678,23 @@ share/endless-sky/images/outfit/blue sun.png
 share/endless-sky/images/outfit/bombardment cannon.png
 share/endless-sky/images/outfit/bombardment turret.png
 share/endless-sky/images/outfit/breeder.png
+share/endless-sky/images/outfit/brig.png
 share/endless-sky/images/outfit/bright cloud.png
 share/endless-sky/images/outfit/bullet storage.png
 share/endless-sky/images/outfit/bullet.png
 share/endless-sky/images/outfit/bunk room.png
 share/endless-sky/images/outfit/cargo scanner.png
+share/endless-sky/images/outfit/carrier license.png
 share/endless-sky/images/outfit/catalytic ramscoop.png
+share/endless-sky/images/outfit/city-ship license.png
+share/endless-sky/images/outfit/coalition license.png
 share/endless-sky/images/outfit/command center.png
 share/endless-sky/images/outfit/control transceiver.png
 share/endless-sky/images/outfit/cooling ducts hai.png
 share/endless-sky/images/outfit/cooling ducts.png
 share/endless-sky/images/outfit/cooling module.png
 share/endless-sky/images/outfit/core.png
+share/endless-sky/images/outfit/cruiser license.png
 share/endless-sky/images/outfit/crystal capacitor.png
 share/endless-sky/images/outfit/dark storm.png
 share/endless-sky/images/outfit/detainer.png
@@ -1564,6 +1706,8 @@ share/endless-sky/images/outfit/dwarf core.png
 share/endless-sky/images/outfit/electron beam.png
 share/endless-sky/images/outfit/electron turret.png
 share/endless-sky/images/outfit/emergency ramscoop.png
+share/endless-sky/images/outfit/emp torpedo bay.png
+share/endless-sky/images/outfit/emp torpedo.png
 share/endless-sky/images/outfit/epoch cell.png
 share/endless-sky/images/outfit/finisher pod.png
 share/endless-sky/images/outfit/finisher.png
@@ -1578,6 +1722,7 @@ share/endless-sky/images/outfit/fusion hai.png
 share/endless-sky/images/outfit/fusion.png
 share/endless-sky/images/outfit/gat.png
 share/endless-sky/images/outfit/grab-strike.png
+share/endless-sky/images/outfit/hai rifle.png
 share/endless-sky/images/outfit/hai tracker pod.png
 share/endless-sky/images/outfit/hai tracker storage.png
 share/endless-sky/images/outfit/hai tracker.png
@@ -1622,12 +1767,15 @@ share/endless-sky/images/outfit/ionic afterburner.png
 share/endless-sky/images/outfit/javelin pod.png
 share/endless-sky/images/outfit/javelin storage.png
 share/endless-sky/images/outfit/javelin.png
+share/endless-sky/images/outfit/jump drive (broken).png
 share/endless-sky/images/outfit/jump drive.png
 share/endless-sky/images/outfit/keystone.png
+share/endless-sky/images/outfit/korath fuel processor.png
 share/endless-sky/images/outfit/korath mine storage.png
 share/endless-sky/images/outfit/korath mine.png
 share/endless-sky/images/outfit/korath minelayer.png
 share/endless-sky/images/outfit/korath piercer storage.png
+share/endless-sky/images/outfit/korath rifle.png
 share/endless-sky/images/outfit/large atomic steering hai.png
 share/endless-sky/images/outfit/large atomic steering.png
 share/endless-sky/images/outfit/large atomic thruster hai.png
@@ -1646,6 +1794,8 @@ share/endless-sky/images/outfit/large korath steering.png
 share/endless-sky/images/outfit/large korath thruster.png
 share/endless-sky/images/outfit/large plasma steering.png
 share/endless-sky/images/outfit/large plasma thruster.png
+share/endless-sky/images/outfit/large quarg steering.png
+share/endless-sky/images/outfit/large quarg thruster.png
 share/endless-sky/images/outfit/large radar jammer.png
 share/endless-sky/images/outfit/large radiant steering.png
 share/endless-sky/images/outfit/large radiant thruster.png
@@ -1666,6 +1816,7 @@ share/endless-sky/images/outfit/laser.png
 share/endless-sky/images/outfit/license.png
 share/endless-sky/images/outfit/liquid helium.png
 share/endless-sky/images/outfit/liquid nitrogen.png
+share/endless-sky/images/outfit/luxury accommodations.png
 share/endless-sky/images/outfit/map.png
 share/endless-sky/images/outfit/medium atomic steering hai.png
 share/endless-sky/images/outfit/medium atomic steering.png
@@ -1681,6 +1832,8 @@ share/endless-sky/images/outfit/medium korath steering.png
 share/endless-sky/images/outfit/medium korath thruster.png
 share/endless-sky/images/outfit/medium plasma steering.png
 share/endless-sky/images/outfit/medium plasma thruster.png
+share/endless-sky/images/outfit/medium quarg steering.png
+share/endless-sky/images/outfit/medium quarg thruster.png
 share/endless-sky/images/outfit/medium radiant steering.png
 share/endless-sky/images/outfit/medium radiant thruster.png
 share/endless-sky/images/outfit/medium remnant steering.png
@@ -1690,9 +1843,13 @@ share/endless-sky/images/outfit/medium systems core.png
 share/endless-sky/images/outfit/meteor launcher.png
 share/endless-sky/images/outfit/meteor storage.png
 share/endless-sky/images/outfit/meteor.png
+share/endless-sky/images/outfit/militia license.png
 share/endless-sky/images/outfit/millennium cell.png
 share/endless-sky/images/outfit/mod blaster turret.png
 share/endless-sky/images/outfit/mod blaster.png
+share/endless-sky/images/outfit/moonbeam turret.png
+share/endless-sky/images/outfit/moonbeam.png
+share/endless-sky/images/outfit/navy license.png
 share/endless-sky/images/outfit/nerve gas.png
 share/endless-sky/images/outfit/nuke.png
 share/endless-sky/images/outfit/outfit scanner.png
@@ -1704,12 +1861,14 @@ share/endless-sky/images/outfit/plasma core.png
 share/endless-sky/images/outfit/plasma turret.png
 share/endless-sky/images/outfit/point defense.png
 share/endless-sky/images/outfit/proton gun.png
+share/endless-sky/images/outfit/proton turret.png
 share/endless-sky/images/outfit/pug akfar steering.png
 share/endless-sky/images/outfit/pug akfar thruster.png
 share/endless-sky/images/outfit/pug anti-missile.png
 share/endless-sky/images/outfit/pug biodefenses.png
 share/endless-sky/images/outfit/pug cormet steering.png
 share/endless-sky/images/outfit/pug cormet thruster.png
+share/endless-sky/images/outfit/pug gridfire turret.png
 share/endless-sky/images/outfit/pug lohmar steering.png
 share/endless-sky/images/outfit/pug lohmar thruster.png
 share/endless-sky/images/outfit/pug seeker.png
@@ -1718,18 +1877,30 @@ share/endless-sky/images/outfit/pug zapper.png
 share/endless-sky/images/outfit/pulse cannon.png
 share/endless-sky/images/outfit/pulse turret.png
 share/endless-sky/images/outfit/quad blaster turret.png
+share/endless-sky/images/outfit/quarg anti missile.png
+share/endless-sky/images/outfit/quarg antimatter core.png
+share/endless-sky/images/outfit/quarg countermeasures.png
+share/endless-sky/images/outfit/quarg nanotech battery.png
+share/endless-sky/images/outfit/quarg quantum shield generator.png
+share/endless-sky/images/outfit/quarg skylance.png
 share/endless-sky/images/outfit/railgun.png
 share/endless-sky/images/outfit/railslug.png
 share/endless-sky/images/outfit/ramscoop.png
 share/endless-sky/images/outfit/reasoning node.png
 share/endless-sky/images/outfit/red screwdriver.png
 share/endless-sky/images/outfit/red sun.png
+share/endless-sky/images/outfit/remnant capital license.png
+share/endless-sky/images/outfit/remnant license.png
+share/endless-sky/images/outfit/remnant rifle.png
 share/endless-sky/images/outfit/repeater turret.png
 share/endless-sky/images/outfit/repeater.png
 share/endless-sky/images/outfit/reverse thruster.png
 share/endless-sky/images/outfit/rocket launcher.png
 share/endless-sky/images/outfit/rocket storage.png
 share/endless-sky/images/outfit/rocket.png
+share/endless-sky/images/outfit/salvage scanner.png
+share/endless-sky/images/outfit/scan module.png
+share/endless-sky/images/outfit/scram drive.png
 share/endless-sky/images/outfit/security station.png
 share/endless-sky/images/outfit/sidewinder launcher.png
 share/endless-sky/images/outfit/sidewinder storage.png
@@ -1757,6 +1928,8 @@ share/endless-sky/images/outfit/small nucleovoltaic.png
 share/endless-sky/images/outfit/small photovoltaic.png
 share/endless-sky/images/outfit/small plasma steering.png
 share/endless-sky/images/outfit/small plasma thruster.png
+share/endless-sky/images/outfit/small quarg steering.png
+share/endless-sky/images/outfit/small quarg thruster.png
 share/endless-sky/images/outfit/small radar jammer.png
 share/endless-sky/images/outfit/small radiant steering.png
 share/endless-sky/images/outfit/small radiant thruster.png
@@ -1777,6 +1950,9 @@ share/endless-sky/images/outfit/stack core.png
 share/endless-sky/images/outfit/sunbeam turret.png
 share/endless-sky/images/outfit/sunbeam.png
 share/endless-sky/images/outfit/supercapacitor.png
+share/endless-sky/images/outfit/surveillance pod.png
+share/endless-sky/images/outfit/t3 anti missile.png
+share/endless-sky/images/outfit/tactical scanner.png
 share/endless-sky/images/outfit/thermoelectric cooler.png
 share/endless-sky/images/outfit/thrasher cannon.png
 share/endless-sky/images/outfit/thrasher turret.png
@@ -1812,133 +1988,250 @@ share/endless-sky/images/outfit/typhoon.png
 share/endless-sky/images/outfit/unknown.png
 share/endless-sky/images/outfit/wanderer anti-missile.png
 share/endless-sky/images/outfit/wanderer heat sink.png
+share/endless-sky/images/outfit/wanderer license.png
+share/endless-sky/images/outfit/wanderer military license.png
+share/endless-sky/images/outfit/wanderer outfits license.png
 share/endless-sky/images/outfit/wanderer ramscoop.png
 share/endless-sky/images/outfit/warder.png
 share/endless-sky/images/outfit/water cooling.png
 share/endless-sky/images/outfit/white sun.png
 share/endless-sky/images/outfit/yellow sun.png
 share/endless-sky/images/planet/
+share/endless-sky/images/planet/callisto-b.png
 share/endless-sky/images/planet/callisto.png
+share/endless-sky/images/planet/cloud0-b.png
 share/endless-sky/images/planet/cloud0.png
+share/endless-sky/images/planet/cloud1-b.png
 share/endless-sky/images/planet/cloud1.png
+share/endless-sky/images/planet/cloud2-b.png
 share/endless-sky/images/planet/cloud2.png
+share/endless-sky/images/planet/cloud3-b.png
 share/endless-sky/images/planet/cloud3.png
+share/endless-sky/images/planet/cloud4-b.png
 share/endless-sky/images/planet/cloud4.png
+share/endless-sky/images/planet/cloud5-b.png
 share/endless-sky/images/planet/cloud5.png
+share/endless-sky/images/planet/cloud6-b.png
 share/endless-sky/images/planet/cloud6.png
+share/endless-sky/images/planet/cloud7-b.png
 share/endless-sky/images/planet/cloud7.png
+share/endless-sky/images/planet/cloud8-b.png
 share/endless-sky/images/planet/cloud8.png
+share/endless-sky/images/planet/desert0-b.png
 share/endless-sky/images/planet/desert0.png
+share/endless-sky/images/planet/desert1-b.png
 share/endless-sky/images/planet/desert1.png
+share/endless-sky/images/planet/desert10-b.png
 share/endless-sky/images/planet/desert10.png
+share/endless-sky/images/planet/desert2-b.png
 share/endless-sky/images/planet/desert2.png
+share/endless-sky/images/planet/desert3-b.png
 share/endless-sky/images/planet/desert3.png
+share/endless-sky/images/planet/desert4-b.png
 share/endless-sky/images/planet/desert4.png
+share/endless-sky/images/planet/desert5-b.png
 share/endless-sky/images/planet/desert5.png
+share/endless-sky/images/planet/desert6-b.png
 share/endless-sky/images/planet/desert6.png
+share/endless-sky/images/planet/desert7-b.png
 share/endless-sky/images/planet/desert7.png
+share/endless-sky/images/planet/desert8-b.png
 share/endless-sky/images/planet/desert8.png
+share/endless-sky/images/planet/desert9-b.png
 share/endless-sky/images/planet/desert9.png
+share/endless-sky/images/planet/dust0-b.png
 share/endless-sky/images/planet/dust0.png
+share/endless-sky/images/planet/dust1-b.png
 share/endless-sky/images/planet/dust1.png
+share/endless-sky/images/planet/dust2-b.png
 share/endless-sky/images/planet/dust2.png
+share/endless-sky/images/planet/dust3-b.png
 share/endless-sky/images/planet/dust3.png
+share/endless-sky/images/planet/dust4-b.png
 share/endless-sky/images/planet/dust4.png
+share/endless-sky/images/planet/dust5-b.png
 share/endless-sky/images/planet/dust5.png
+share/endless-sky/images/planet/dust6-b.png
 share/endless-sky/images/planet/dust6.png
+share/endless-sky/images/planet/dust7-b.png
 share/endless-sky/images/planet/dust7.png
+share/endless-sky/images/planet/earth-b.png
 share/endless-sky/images/planet/earth.png
+share/endless-sky/images/planet/europa-b.png
 share/endless-sky/images/planet/europa.png
+share/endless-sky/images/planet/fog0-b.png
 share/endless-sky/images/planet/fog0.png
+share/endless-sky/images/planet/forest0-b.png
 share/endless-sky/images/planet/forest0.png
+share/endless-sky/images/planet/forest1-b.png
 share/endless-sky/images/planet/forest1.png
+share/endless-sky/images/planet/forest2-b.png
 share/endless-sky/images/planet/forest2.png
+share/endless-sky/images/planet/forest3-b.png
 share/endless-sky/images/planet/forest3.png
+share/endless-sky/images/planet/forest4-b.png
 share/endless-sky/images/planet/forest4.png
+share/endless-sky/images/planet/forest5-b.png
 share/endless-sky/images/planet/forest5.png
+share/endless-sky/images/planet/forest6-b.png
 share/endless-sky/images/planet/forest6.png
+share/endless-sky/images/planet/ganymede-b.png
 share/endless-sky/images/planet/ganymede.png
+share/endless-sky/images/planet/gas0-b.png
 share/endless-sky/images/planet/gas0.png
+share/endless-sky/images/planet/gas1-b.png
 share/endless-sky/images/planet/gas1.png
+share/endless-sky/images/planet/gas10-b.png
 share/endless-sky/images/planet/gas10.png
+share/endless-sky/images/planet/gas11-b.png
 share/endless-sky/images/planet/gas11.png
+share/endless-sky/images/planet/gas12-b.png
 share/endless-sky/images/planet/gas12.png
+share/endless-sky/images/planet/gas13-b.png
 share/endless-sky/images/planet/gas13.png
+share/endless-sky/images/planet/gas14-b.png
 share/endless-sky/images/planet/gas14.png
+share/endless-sky/images/planet/gas15-b.png
 share/endless-sky/images/planet/gas15.png
+share/endless-sky/images/planet/gas16-b.png
 share/endless-sky/images/planet/gas16.png
+share/endless-sky/images/planet/gas17-b.png
 share/endless-sky/images/planet/gas17.png
+share/endless-sky/images/planet/gas2-b.png
 share/endless-sky/images/planet/gas2.png
+share/endless-sky/images/planet/gas3-b.png
 share/endless-sky/images/planet/gas3.png
+share/endless-sky/images/planet/gas4-b.png
 share/endless-sky/images/planet/gas4.png
+share/endless-sky/images/planet/gas5-b.png
 share/endless-sky/images/planet/gas5.png
+share/endless-sky/images/planet/gas6-b.png
 share/endless-sky/images/planet/gas6.png
+share/endless-sky/images/planet/gas7-b.png
 share/endless-sky/images/planet/gas7.png
+share/endless-sky/images/planet/gas8-b.png
 share/endless-sky/images/planet/gas8.png
+share/endless-sky/images/planet/gas9-b.png
 share/endless-sky/images/planet/gas9.png
+share/endless-sky/images/planet/ice0-b.png
 share/endless-sky/images/planet/ice0.png
+share/endless-sky/images/planet/ice1-b.png
 share/endless-sky/images/planet/ice1.png
+share/endless-sky/images/planet/ice2-b.png
 share/endless-sky/images/planet/ice2.png
+share/endless-sky/images/planet/ice3-b.png
 share/endless-sky/images/planet/ice3.png
+share/endless-sky/images/planet/ice4-b.png
 share/endless-sky/images/planet/ice4.png
+share/endless-sky/images/planet/ice5-b.png
 share/endless-sky/images/planet/ice5.png
+share/endless-sky/images/planet/ice6-b.png
 share/endless-sky/images/planet/ice6.png
+share/endless-sky/images/planet/ice7-b.png
 share/endless-sky/images/planet/ice7.png
+share/endless-sky/images/planet/ice8-b.png
 share/endless-sky/images/planet/ice8.png
+share/endless-sky/images/planet/io-b.png
 share/endless-sky/images/planet/io.png
+share/endless-sky/images/planet/jupiter-b.png
 share/endless-sky/images/planet/jupiter.png
+share/endless-sky/images/planet/lava0-b.png
 share/endless-sky/images/planet/lava0.png
+share/endless-sky/images/planet/lava1-b.png
 share/endless-sky/images/planet/lava1.png
+share/endless-sky/images/planet/lava2-b.png
 share/endless-sky/images/planet/lava2.png
+share/endless-sky/images/planet/lava3-b.png
 share/endless-sky/images/planet/lava3.png
+share/endless-sky/images/planet/lava4-b.png
 share/endless-sky/images/planet/lava4.png
+share/endless-sky/images/planet/lava5-b.png
 share/endless-sky/images/planet/lava5.png
+share/endless-sky/images/planet/lava6-b.png
 share/endless-sky/images/planet/lava6.png
+share/endless-sky/images/planet/lava7-b.png
 share/endless-sky/images/planet/lava7.png
+share/endless-sky/images/planet/luna-b.png
 share/endless-sky/images/planet/luna.png
+share/endless-sky/images/planet/mars-b.png
 share/endless-sky/images/planet/mars.png
+share/endless-sky/images/planet/mercury-b.png
 share/endless-sky/images/planet/mercury.png
+share/endless-sky/images/planet/miranda-b.png
 share/endless-sky/images/planet/miranda.png
+share/endless-sky/images/planet/neptune-b.png
 share/endless-sky/images/planet/neptune.png
+share/endless-sky/images/planet/oberon-b.png
 share/endless-sky/images/planet/oberon.png
+share/endless-sky/images/planet/ocean0-b.png
 share/endless-sky/images/planet/ocean0.png
+share/endless-sky/images/planet/ocean1-b.png
 share/endless-sky/images/planet/ocean1.png
+share/endless-sky/images/planet/ocean2-b.png
 share/endless-sky/images/planet/ocean2.png
+share/endless-sky/images/planet/ocean3-b.png
 share/endless-sky/images/planet/ocean3.png
+share/endless-sky/images/planet/ocean4-b.png
 share/endless-sky/images/planet/ocean4.png
+share/endless-sky/images/planet/ocean5-b.png
 share/endless-sky/images/planet/ocean5.png
+share/endless-sky/images/planet/ocean6-b.png
 share/endless-sky/images/planet/ocean6.png
+share/endless-sky/images/planet/ocean7-b.png
 share/endless-sky/images/planet/ocean7.png
+share/endless-sky/images/planet/ocean8-b.png
 share/endless-sky/images/planet/ocean8.png
+share/endless-sky/images/planet/ocean9-b.png
 share/endless-sky/images/planet/ocean9.png
 share/endless-sky/images/planet/panels1.png
 share/endless-sky/images/planet/panels2.png
 share/endless-sky/images/planet/panels3.png
 share/endless-sky/images/planet/panels4.png
 share/endless-sky/images/planet/panels5.png
+share/endless-sky/images/planet/rhea-b.png
 share/endless-sky/images/planet/rhea.png
 share/endless-sky/images/planet/ringworld left.png
 share/endless-sky/images/planet/ringworld right.png
 share/endless-sky/images/planet/ringworld.png
+share/endless-sky/images/planet/rock0-b.png
 share/endless-sky/images/planet/rock0.png
+share/endless-sky/images/planet/rock1-b.png
 share/endless-sky/images/planet/rock1.png
+share/endless-sky/images/planet/rock10-b.png
 share/endless-sky/images/planet/rock10.png
+share/endless-sky/images/planet/rock11-b.png
 share/endless-sky/images/planet/rock11.png
+share/endless-sky/images/planet/rock12-b.png
 share/endless-sky/images/planet/rock12.png
+share/endless-sky/images/planet/rock13-b.png
 share/endless-sky/images/planet/rock13.png
+share/endless-sky/images/planet/rock14-b.png
 share/endless-sky/images/planet/rock14.png
+share/endless-sky/images/planet/rock15-b.png
 share/endless-sky/images/planet/rock15.png
+share/endless-sky/images/planet/rock16-b.png
 share/endless-sky/images/planet/rock16.png
+share/endless-sky/images/planet/rock17-b.png
 share/endless-sky/images/planet/rock17.png
+share/endless-sky/images/planet/rock18-b.png
 share/endless-sky/images/planet/rock18.png
+share/endless-sky/images/planet/rock19-b.png
 share/endless-sky/images/planet/rock19.png
+share/endless-sky/images/planet/rock2-b.png
 share/endless-sky/images/planet/rock2.png
+share/endless-sky/images/planet/rock3-b.png
 share/endless-sky/images/planet/rock3.png
+share/endless-sky/images/planet/rock4-b.png
 share/endless-sky/images/planet/rock4.png
+share/endless-sky/images/planet/rock5-b.png
 share/endless-sky/images/planet/rock5.png
+share/endless-sky/images/planet/rock6-b.png
 share/endless-sky/images/planet/rock6.png
+share/endless-sky/images/planet/rock7-b.png
 share/endless-sky/images/planet/rock7.png
+share/endless-sky/images/planet/rock8-b.png
 share/endless-sky/images/planet/rock8.png
+share/endless-sky/images/planet/rock9-b.png
 share/endless-sky/images/planet/rock9.png
 share/endless-sky/images/planet/station0.png
 share/endless-sky/images/planet/station1.png
@@ -1954,17 +2247,157 @@ share/endless-sky/images/planet/station4.png
 share/endless-sky/images/planet/station5.png
 share/endless-sky/images/planet/station6.png
 share/endless-sky/images/planet/station7.png
+share/endless-sky/images/planet/tethys-b.png
 share/endless-sky/images/planet/tethys.png
+share/endless-sky/images/planet/titan-b.png
 share/endless-sky/images/planet/titan.png
+share/endless-sky/images/planet/uranus-b.png
 share/endless-sky/images/planet/uranus.png
+share/endless-sky/images/planet/venus-b.png
 share/endless-sky/images/planet/venus.png
+share/endless-sky/images/planet/water0-b.png
 share/endless-sky/images/planet/water0.png
+share/endless-sky/images/planet/water1-b.png
 share/endless-sky/images/planet/water1.png
 share/endless-sky/images/planet/wisp.png
 share/endless-sky/images/planet/wormhole-red.png
 share/endless-sky/images/planet/wormhole.png
 share/endless-sky/images/planet/zenith cold.png
 share/endless-sky/images/planet/zenith hot.png
+share/endless-sky/images/portrait/
+share/endless-sky/images/portrait/hai00.png
+share/endless-sky/images/portrait/human00.png
+share/endless-sky/images/portrait/human01.png
+share/endless-sky/images/portrait/human02.png
+share/endless-sky/images/portrait/human03.png
+share/endless-sky/images/portrait/human04.png
+share/endless-sky/images/portrait/human05.png
+share/endless-sky/images/portrait/human06.png
+share/endless-sky/images/portrait/human07.png
+share/endless-sky/images/portrait/human08.png
+share/endless-sky/images/portrait/human09.png
+share/endless-sky/images/portrait/human10.png
+share/endless-sky/images/portrait/human100.png
+share/endless-sky/images/portrait/human101.png
+share/endless-sky/images/portrait/human102.png
+share/endless-sky/images/portrait/human103.png
+share/endless-sky/images/portrait/human104.png
+share/endless-sky/images/portrait/human105.png
+share/endless-sky/images/portrait/human106.png
+share/endless-sky/images/portrait/human107.png
+share/endless-sky/images/portrait/human108.png
+share/endless-sky/images/portrait/human109.png
+share/endless-sky/images/portrait/human11.png
+share/endless-sky/images/portrait/human110.png
+share/endless-sky/images/portrait/human111.png
+share/endless-sky/images/portrait/human112.png
+share/endless-sky/images/portrait/human113.png
+share/endless-sky/images/portrait/human114.png
+share/endless-sky/images/portrait/human115.png
+share/endless-sky/images/portrait/human116.png
+share/endless-sky/images/portrait/human117.png
+share/endless-sky/images/portrait/human118.png
+share/endless-sky/images/portrait/human119.png
+share/endless-sky/images/portrait/human12.png
+share/endless-sky/images/portrait/human120.png
+share/endless-sky/images/portrait/human121.png
+share/endless-sky/images/portrait/human122.png
+share/endless-sky/images/portrait/human123.png
+share/endless-sky/images/portrait/human124.png
+share/endless-sky/images/portrait/human125.png
+share/endless-sky/images/portrait/human126.png
+share/endless-sky/images/portrait/human127.png
+share/endless-sky/images/portrait/human128.png
+share/endless-sky/images/portrait/human13.png
+share/endless-sky/images/portrait/human14.png
+share/endless-sky/images/portrait/human15.png
+share/endless-sky/images/portrait/human16.png
+share/endless-sky/images/portrait/human17.png
+share/endless-sky/images/portrait/human18.png
+share/endless-sky/images/portrait/human19.png
+share/endless-sky/images/portrait/human20.png
+share/endless-sky/images/portrait/human21.png
+share/endless-sky/images/portrait/human22.png
+share/endless-sky/images/portrait/human23.png
+share/endless-sky/images/portrait/human24.png
+share/endless-sky/images/portrait/human25.png
+share/endless-sky/images/portrait/human26.png
+share/endless-sky/images/portrait/human27.png
+share/endless-sky/images/portrait/human28.png
+share/endless-sky/images/portrait/human29.png
+share/endless-sky/images/portrait/human30.png
+share/endless-sky/images/portrait/human31.png
+share/endless-sky/images/portrait/human32.png
+share/endless-sky/images/portrait/human33.png
+share/endless-sky/images/portrait/human34.png
+share/endless-sky/images/portrait/human35.png
+share/endless-sky/images/portrait/human36.png
+share/endless-sky/images/portrait/human37.png
+share/endless-sky/images/portrait/human38.png
+share/endless-sky/images/portrait/human39.png
+share/endless-sky/images/portrait/human40.png
+share/endless-sky/images/portrait/human41.png
+share/endless-sky/images/portrait/human42.png
+share/endless-sky/images/portrait/human43.png
+share/endless-sky/images/portrait/human44.png
+share/endless-sky/images/portrait/human45.png
+share/endless-sky/images/portrait/human46.png
+share/endless-sky/images/portrait/human47.png
+share/endless-sky/images/portrait/human48.png
+share/endless-sky/images/portrait/human49.png
+share/endless-sky/images/portrait/human50.png
+share/endless-sky/images/portrait/human51.png
+share/endless-sky/images/portrait/human52.png
+share/endless-sky/images/portrait/human53.png
+share/endless-sky/images/portrait/human54.png
+share/endless-sky/images/portrait/human55.png
+share/endless-sky/images/portrait/human56.png
+share/endless-sky/images/portrait/human57.png
+share/endless-sky/images/portrait/human58.png
+share/endless-sky/images/portrait/human59.png
+share/endless-sky/images/portrait/human60.png
+share/endless-sky/images/portrait/human61.png
+share/endless-sky/images/portrait/human62.png
+share/endless-sky/images/portrait/human63.png
+share/endless-sky/images/portrait/human64.png
+share/endless-sky/images/portrait/human65.png
+share/endless-sky/images/portrait/human66.png
+share/endless-sky/images/portrait/human67.png
+share/endless-sky/images/portrait/human68.png
+share/endless-sky/images/portrait/human69.png
+share/endless-sky/images/portrait/human70.png
+share/endless-sky/images/portrait/human71.png
+share/endless-sky/images/portrait/human72.png
+share/endless-sky/images/portrait/human73.png
+share/endless-sky/images/portrait/human74.png
+share/endless-sky/images/portrait/human75.png
+share/endless-sky/images/portrait/human76.png
+share/endless-sky/images/portrait/human77.png
+share/endless-sky/images/portrait/human78.png
+share/endless-sky/images/portrait/human79.png
+share/endless-sky/images/portrait/human80.png
+share/endless-sky/images/portrait/human81.png
+share/endless-sky/images/portrait/human82.png
+share/endless-sky/images/portrait/human83.png
+share/endless-sky/images/portrait/human84.png
+share/endless-sky/images/portrait/human85.png
+share/endless-sky/images/portrait/human86.png
+share/endless-sky/images/portrait/human87.png
+share/endless-sky/images/portrait/human88.png
+share/endless-sky/images/portrait/human89.png
+share/endless-sky/images/portrait/human90.png
+share/endless-sky/images/portrait/human91.png
+share/endless-sky/images/portrait/human92.png
+share/endless-sky/images/portrait/human93.png
+share/endless-sky/images/portrait/human94.png
+share/endless-sky/images/portrait/human95.png
+share/endless-sky/images/portrait/human96.png
+share/endless-sky/images/portrait/human97.png
+share/endless-sky/images/portrait/human98.png
+share/endless-sky/images/portrait/human99.png
+share/endless-sky/images/portrait/korath00.png
+share/endless-sky/images/portrait/quarg00.png
+share/endless-sky/images/portrait/wanderer00.png
 share/endless-sky/images/projectile/
 share/endless-sky/images/projectile/2x electron+0.png
 share/endless-sky/images/projectile/2x electron+1.png
@@ -2012,6 +2445,10 @@ share/endless-sky/images/projectile/drak bolt+4.png
 share/endless-sky/images/projectile/electron+0.png
 share/endless-sky/images/projectile/electron+1.png
 share/endless-sky/images/projectile/electron+2.png
+share/endless-sky/images/projectile/emp torpedo-0.png
+share/endless-sky/images/projectile/emp torpedo-1.png
+share/endless-sky/images/projectile/emp torpedo-2.png
+share/endless-sky/images/projectile/emp torpedo-3.png
 share/endless-sky/images/projectile/finisher activating-0.png
 share/endless-sky/images/projectile/finisher activating-1.png
 share/endless-sky/images/projectile/finisher-0.png
@@ -2071,6 +2508,9 @@ share/endless-sky/images/projectile/meteor-1.png
 share/endless-sky/images/projectile/missile-0.png
 share/endless-sky/images/projectile/missile-1.png
 share/endless-sky/images/projectile/mod blaster+.png
+share/endless-sky/images/projectile/moonbeam+0.png
+share/endless-sky/images/projectile/moonbeam+1.png
+share/endless-sky/images/projectile/moonbeam+2.png
 share/endless-sky/images/projectile/particle beam+.png
 share/endless-sky/images/projectile/piercer-0.png
 share/endless-sky/images/projectile/piercer-1.png
@@ -2195,6 +2635,7 @@ share/endless-sky/images/ship/chaser.png
 share/endless-sky/images/ship/clipper.png
 share/endless-sky/images/ship/cloaked.png
 share/endless-sky/images/ship/combat drone.png
+share/endless-sky/images/ship/cool breeze.png
 share/endless-sky/images/ship/corvette.png
 share/endless-sky/images/ship/cruiser.png
 share/endless-sky/images/ship/dagger.png
@@ -2218,9 +2659,13 @@ share/endless-sky/images/ship/freighter.png
 share/endless-sky/images/ship/frigate.png
 share/endless-sky/images/ship/fury.png
 share/endless-sky/images/ship/gascraft.png
+share/endless-sky/images/ship/gull.png
 share/endless-sky/images/ship/gunboat.png
 share/endless-sky/images/ship/hai aphid.png
+share/endless-sky/images/ship/hai centipede.png
 share/endless-sky/images/ship/hai flea.png
+share/endless-sky/images/ship/hai geocoris.png
+share/endless-sky/images/ship/hai grasshopper.png
 share/endless-sky/images/ship/hai lightning bug.png
 share/endless-sky/images/ship/hai pond strider.png
 share/endless-sky/images/ship/hai shield beetle.png
@@ -2245,6 +2690,7 @@ share/endless-sky/images/ship/kimek briar.png
 share/endless-sky/images/ship/kimek spire.png
 share/endless-sky/images/ship/kimek thistle.png
 share/endless-sky/images/ship/kimek thorn.png
+share/endless-sky/images/ship/lampyrid.png
 share/endless-sky/images/ship/lance.png
 share/endless-sky/images/ship/leviathan.png
 share/endless-sky/images/ship/manta.png
@@ -2276,6 +2722,7 @@ share/endless-sky/images/ship/model 512.png
 share/endless-sky/images/ship/model 64.png
 share/endless-sky/images/ship/model 8.png
 share/endless-sky/images/ship/modified argosy.png
+share/endless-sky/images/ship/mosprey.png
 share/endless-sky/images/ship/mquicksilvere.png
 share/endless-sky/images/ship/mquicksilvers.png
 share/endless-sky/images/ship/mquicksilverw.png
@@ -2288,6 +2735,7 @@ share/endless-sky/images/ship/msplinterw.png
 share/endless-sky/images/ship/mule.png
 share/endless-sky/images/ship/nest.png
 share/endless-sky/images/ship/osprey.png
+share/endless-sky/images/ship/pelican.png
 share/endless-sky/images/ship/pointedstick_vanguard.png
 share/endless-sky/images/ship/protector.png
 share/endless-sky/images/ship/pug arfecta.png
@@ -2347,6 +2795,7 @@ share/endless-sky/images/ship/void sprite infant-7.png
 share/endless-sky/images/ship/void sprite infant-8.png
 share/endless-sky/images/ship/wardragon.png
 share/endless-sky/images/ship/wasp.png
+share/endless-sky/images/ship/winter gale.png
 share/endless-sky/images/ship/world-ship a.png
 share/endless-sky/images/ship/world-ship b.png
 share/endless-sky/images/ship/world-ship c.png
@@ -2354,6 +2803,8 @@ share/endless-sky/images/star/
 share/endless-sky/images/star/a0.png
 share/endless-sky/images/star/a5.png
 share/endless-sky/images/star/b5.png
+share/endless-sky/images/star/black-hole+.jpg
+share/endless-sky/images/star/black-hole-core.png
 share/endless-sky/images/star/f0.png
 share/endless-sky/images/star/f5-old.png
 share/endless-sky/images/star/f5.png
@@ -2371,11 +2822,134 @@ share/endless-sky/images/star/m4.png
 share/endless-sky/images/star/m8.png
 share/endless-sky/images/star/nova+.jpg
 share/endless-sky/images/star/wr.png
+share/endless-sky/images/thumbnail/
+share/endless-sky/images/thumbnail/aerie.png
+share/endless-sky/images/thumbnail/albatross.png
+share/endless-sky/images/thumbnail/arach courier.png
+share/endless-sky/images/thumbnail/arach freighter.png
+share/endless-sky/images/thumbnail/arach hulk.png
+share/endless-sky/images/thumbnail/arach spindle.png
+share/endless-sky/images/thumbnail/arach transport.png
+share/endless-sky/images/thumbnail/argosy.png
+share/endless-sky/images/thumbnail/arrow.png
+share/endless-sky/images/thumbnail/autumn leaf.png
+share/endless-sky/images/thumbnail/bactrian.png
+share/endless-sky/images/thumbnail/barb.png
+share/endless-sky/images/thumbnail/barbp.png
+share/endless-sky/images/thumbnail/bastion.png
+share/endless-sky/images/thumbnail/behemoth.png
+share/endless-sky/images/thumbnail/berserker.png
+share/endless-sky/images/thumbnail/blackbird.png
+share/endless-sky/images/thumbnail/bounder.png
+share/endless-sky/images/thumbnail/boxwing.png
+share/endless-sky/images/thumbnail/bulk freighter.png
+share/endless-sky/images/thumbnail/carrier.png
+share/endless-sky/images/thumbnail/chaser.png
+share/endless-sky/images/thumbnail/clipper.png
+share/endless-sky/images/thumbnail/combat drone.png
+share/endless-sky/images/thumbnail/cool breeze.png
+share/endless-sky/images/thumbnail/corvette.png
+share/endless-sky/images/thumbnail/cruiser.png
+share/endless-sky/images/thumbnail/dagger.png
+share/endless-sky/images/thumbnail/deep river.png
+share/endless-sky/images/thumbnail/derecho.png
+share/endless-sky/images/thumbnail/dreadnought.png
+share/endless-sky/images/thumbnail/earth shaper.png
+share/endless-sky/images/thumbnail/falcon.png
+share/endless-sky/images/thumbnail/far lek 14.png
+share/endless-sky/images/thumbnail/far osk 27.png
+share/endless-sky/images/thumbnail/finch.png
+share/endless-sky/images/thumbnail/firebird.png
+share/endless-sky/images/thumbnail/flivver.png
+share/endless-sky/images/thumbnail/flycatcher.png
+share/endless-sky/images/thumbnail/freighter.png
+share/endless-sky/images/thumbnail/frigate.png
+share/endless-sky/images/thumbnail/fury.png
+share/endless-sky/images/thumbnail/gascraft.png
+share/endless-sky/images/thumbnail/gull.png
+share/endless-sky/images/thumbnail/gunboat.png
+share/endless-sky/images/thumbnail/hai aphid.png
+share/endless-sky/images/thumbnail/hai centipede.png
+share/endless-sky/images/thumbnail/hai flea.png
+share/endless-sky/images/thumbnail/hai geocoris.png
+share/endless-sky/images/thumbnail/hai grasshopper.png
+share/endless-sky/images/thumbnail/hai lightning bug.png
+share/endless-sky/images/thumbnail/hai pond strider.png
+share/endless-sky/images/thumbnail/hai shield beetle.png
+share/endless-sky/images/thumbnail/hai solifuge.png
+share/endless-sky/images/thumbnail/hai violin spider.png
+share/endless-sky/images/thumbnail/hai water bug.png
+share/endless-sky/images/thumbnail/hauler i.png
+share/endless-sky/images/thumbnail/hauler ii.png
+share/endless-sky/images/thumbnail/hauler iii.png
+share/endless-sky/images/thumbnail/hawk.png
+share/endless-sky/images/thumbnail/headhunter.png
+share/endless-sky/images/thumbnail/heavy shuttle.png
+share/endless-sky/images/thumbnail/heliarch interdictor.png
+share/endless-sky/images/thumbnail/heliarch neutralizer.png
+share/endless-sky/images/thumbnail/heliarch punisher.png
+share/endless-sky/images/thumbnail/hurricane.png
+share/endless-sky/images/thumbnail/kar ik vot 349.png
+share/endless-sky/images/thumbnail/kestrel.png
+share/endless-sky/images/thumbnail/kimek briar.png
+share/endless-sky/images/thumbnail/kimek spire.png
+share/endless-sky/images/thumbnail/kimek thistle.png
+share/endless-sky/images/thumbnail/kimek thorn.png
+share/endless-sky/images/thumbnail/lance.png
+share/endless-sky/images/thumbnail/leviathan.png
+share/endless-sky/images/thumbnail/manta.png
+share/endless-sky/images/thumbnail/met par tek 53.png
+share/endless-sky/images/thumbnail/model 128.png
+share/endless-sky/images/thumbnail/model 16.png
+share/endless-sky/images/thumbnail/model 256.png
+share/endless-sky/images/thumbnail/model 32.png
+share/endless-sky/images/thumbnail/model 512.png
+share/endless-sky/images/thumbnail/model 64.png
+share/endless-sky/images/thumbnail/model 8.png
+share/endless-sky/images/thumbnail/modified argosy.png
+share/endless-sky/images/thumbnail/mule.png
+share/endless-sky/images/thumbnail/nest.png
+share/endless-sky/images/thumbnail/osprey.png
+share/endless-sky/images/thumbnail/pelican.png
+share/endless-sky/images/thumbnail/protector.png
+share/endless-sky/images/thumbnail/pug arfecta.png
+share/endless-sky/images/thumbnail/pug enfolta.png
+share/endless-sky/images/thumbnail/pug maboro.png
+share/endless-sky/images/thumbnail/pug zibruka.png
+share/endless-sky/images/thumbnail/quicksilver.png
+share/endless-sky/images/thumbnail/raider.png
+share/endless-sky/images/thumbnail/rainmaker.png
+share/endless-sky/images/thumbnail/raven.png
+share/endless-sky/images/thumbnail/roost.png
+share/endless-sky/images/thumbnail/saryd runabout.png
+share/endless-sky/images/thumbnail/saryd sojourner.png
+share/endless-sky/images/thumbnail/saryd traveler.png
+share/endless-sky/images/thumbnail/saryd visitor.png
+share/endless-sky/images/thumbnail/scout.png
+share/endless-sky/images/thumbnail/shuttle.png
+share/endless-sky/images/thumbnail/skein.png
+share/endless-sky/images/thumbnail/sparrow.png
+share/endless-sky/images/thumbnail/splinter.png
+share/endless-sky/images/thumbnail/star barge.png
+share/endless-sky/images/thumbnail/star queen.png
+share/endless-sky/images/thumbnail/starling.png
+share/endless-sky/images/thumbnail/strong wind.png
+share/endless-sky/images/thumbnail/summer leaf.png
+share/endless-sky/images/thumbnail/surveillance drone.png
+share/endless-sky/images/thumbnail/tek far 109.png
+share/endless-sky/images/thumbnail/tek far 71 lek.png
+share/endless-sky/images/thumbnail/tek far 78 osk.png
+share/endless-sky/images/thumbnail/tempest.png
+share/endless-sky/images/thumbnail/vanguard.png
+share/endless-sky/images/thumbnail/wasp.png
+share/endless-sky/images/thumbnail/winter gale.png
+share/endless-sky/images/thumbnail/world-ship.png
 share/endless-sky/images/ui/
 share/endless-sky/images/ui/ammo selected.png
 share/endless-sky/images/ui/ammo unselected.png
 share/endless-sky/images/ui/boarding dialog.png
 share/endless-sky/images/ui/bottom edge.png
+share/endless-sky/images/ui/bottom edges.png
 share/endless-sky/images/ui/checked+.png
 share/endless-sky/images/ui/collapsed.png
 share/endless-sky/images/ui/description panel.png
@@ -2383,7 +2957,10 @@ share/endless-sky/images/ui/dialog bottom.png
 share/endless-sky/images/ui/dialog cancel.png
 share/endless-sky/images/ui/dialog middle.png
 share/endless-sky/images/ui/dialog top.png
+share/endless-sky/images/ui/error.png
 share/endless-sky/images/ui/expanded.png
+share/endless-sky/images/ui/faction left.png
+share/endless-sky/images/ui/faction right.png
 share/endless-sky/images/ui/fast forward.png
 share/endless-sky/images/ui/five info buttons.png
 share/endless-sky/images/ui/galaxy.jpg
@@ -2393,14 +2970,14 @@ share/endless-sky/images/ui/icon unselected.png
 share/endless-sky/images/ui/info panel.png
 share/endless-sky/images/ui/keys panel.png
 share/endless-sky/images/ui/left edge.png
-share/endless-sky/images/ui/map key.png
 share/endless-sky/images/ui/map planet.png
 share/endless-sky/images/ui/map system.png
 share/endless-sky/images/ui/map trade.png
 share/endless-sky/images/ui/mission key.png
 share/endless-sky/images/ui/mission.png
 share/endless-sky/images/ui/navigation.png
-share/endless-sky/images/ui/orbits.png
+share/endless-sky/images/ui/news.png
+share/endless-sky/images/ui/orbits and key.png
 share/endless-sky/images/ui/outfitter key.png
 share/endless-sky/images/ui/outfitter selected+.png
 share/endless-sky/images/ui/outfitter unselected+.png
@@ -2409,6 +2986,7 @@ share/endless-sky/images/ui/planet dialog.png
 share/endless-sky/images/ui/player tab.png
 share/endless-sky/images/ui/pleiades.jpg
 share/endless-sky/images/ui/radar.png
+share/endless-sky/images/ui/range.png
 share/endless-sky/images/ui/right edge.png
 share/endless-sky/images/ui/sales key.png
 share/endless-sky/images/ui/selected system.png
@@ -2417,10 +2995,13 @@ share/endless-sky/images/ui/ship tab.png
 share/endless-sky/images/ui/shipyard selected+.png
 share/endless-sky/images/ui/shipyard unselected+.png
 share/endless-sky/images/ui/status.png
+share/endless-sky/images/ui/tactical.png
 share/endless-sky/images/ui/target.png
 share/endless-sky/images/ui/three info buttons.png
 share/endless-sky/images/ui/thumb box.png
+share/endless-sky/images/ui/thumb boxes.png
 share/endless-sky/images/ui/unchecked+.png
+share/endless-sky/images/ui/warning.png
 share/endless-sky/images/ui/wide button.png
 share/endless-sky/images/ui/zoom.png
 share/endless-sky/keys.txt
@@ -2464,6 +3045,7 @@ share/endless-sky/sounds/heliarch repulsor~.wav
 share/endless-sky/sounds/hyperdrive in.wav
 share/endless-sky/sounds/hyperdrive out.wav
 share/endless-sky/sounds/hyperdrive.wav
+share/endless-sky/sounds/inhibitor.wav
 share/endless-sky/sounds/ion huge~.wav
 share/endless-sky/sounds/ion impact.wav
 share/endless-sky/sounds/ion large~.wav
@@ -2482,6 +3064,7 @@ share/endless-sky/sounds/laser~.wav
 share/endless-sky/sounds/meteor.wav
 share/endless-sky/sounds/mine deploy.wav
 share/endless-sky/sounds/minelayer.wav
+share/endless-sky/sounds/missile hit.wav
 share/endless-sky/sounds/mod blaster.wav
 share/endless-sky/sounds/nuke.wav
 share/endless-sky/sounds/particle.wav
@@ -2492,6 +3075,7 @@ share/endless-sky/sounds/plasma medium~.wav
 share/endless-sky/sounds/plasma small~.wav
 share/endless-sky/sounds/plasma tiny~.wav
 share/endless-sky/sounds/plasma.wav
+share/endless-sky/sounds/point defense.wav
 share/endless-sky/sounds/proton.wav
 share/endless-sky/sounds/pug anti-missile.wav
 share/endless-sky/sounds/pulse.wav
@@ -2505,31 +3089,21 @@ share/endless-sky/sounds/skylance~.wav
 share/endless-sky/sounds/slicer~.wav
 share/endless-sky/sounds/sunbeam~.wav
 share/endless-sky/sounds/takeoff.wav
+share/endless-sky/sounds/thrasher.wav
 share/endless-sky/sounds/thunderhead.wav
+share/endless-sky/sounds/torpedo hit.wav
 share/endless-sky/sounds/torpedo.wav
 share/endless-sky/sounds/tracker.wav
 share/endless-sky/sounds/typhoon.wav
 share/endless-sky/sounds/warder.wav
 share/endless-sky/sounds/zapper~.wav
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
+share/icons/hicolor/128x128/apps/endless-sky.png
 share/icons/hicolor/16x16/apps/endless-sky.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/endless-sky.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/endless-sky.png
-share/icons/hicolor/256x256/
-share/icons/hicolor/256x256/apps/
 share/icons/hicolor/256x256/apps/endless-sky.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/endless-sky.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/endless-sky.png
+share/icons/hicolor/512x512/apps/endless-sky.png
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
