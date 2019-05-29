@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/29 11:42:34 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/29 22:24:08 espie Exp $
 
 PKG_ARCH =	*
 COMMENT =	pictures for your background by OpenBSD developers
@@ -8,18 +8,10 @@ MAINTAINER = 	Marc Espie <espie@openbsd.org>
 GH_PROJECT = 	openbsd-backgrounds
 GH_TAGNAME = 	1.5
 GH_ACCOUNT = 	marcespie
+REVISION =	0
 
-FLAVORS =	large
-
-FLAVOR ?=
-
-.if ${FLAVOR} == "large"
-W = 2440
+W = 2560
 H = 1600
-.endif
-
-W ?= 1920
-H ?= 1080
 
 # CC-by 4.0
 PERMIT_PACKAGE_CDROM = Yes
