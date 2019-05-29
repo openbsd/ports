@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/28 11:32:55 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/29 12:30:02 landry Exp $
 
 COMMENT =	Desktop suite theme for Xfce
 
@@ -17,7 +17,8 @@ AUTOMAKE_VERSION =	1.11
 AUTORECONF =		./autogen.sh
 CONFIGURE_STYLE =	autoreconf
 
-BUILD_DEPENDS =		www/sassc
+BUILD_DEPENDS =		www/sassc \
+			x11/gnome/librsvg
 
 RUN_DEPENDS =		x11/gtk+3,-guic \
 			x11/gtk2-murrine-engine
