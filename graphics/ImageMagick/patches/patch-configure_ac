@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.19 2018/11/06 22:27:13 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.20 2019/05/29 12:16:10 sthen Exp $
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1339,7 +1339,7 @@ fi
+@@ -1338,7 +1338,7 @@ fi
  
  # Assume that delegate headers reside under same directory as ImageMagick
  # installation prefix.
@@ -11,7 +11,7 @@ Index: configure.ac
  
  #
  # Find the X11 RGB database
-@@ -2969,7 +2969,7 @@ AC_SUBST([PERLMAINCC])
+@@ -2972,7 +2972,7 @@ AC_SUBST([PERLMAINCC])
  #
  
  # Path to ImageMagick header files
@@ -20,7 +20,7 @@ Index: configure.ac
  INCLUDE_PATH="${INCLUDE_DIR}/${INCLUDE_RELATIVE_PATH}"
  DEFINE_INCLUDE_PATH="${INCLUDE_DIR}/${INCLUDE_RELATIVE_PATH}/"
  case "${build_os}" in
-@@ -2992,7 +2992,7 @@ AC_DEFINE_UNQUOTED(INCLUDEARCH_PATH,"$DEFINE_INCLUDE_P
+@@ -2995,7 +2995,7 @@ AC_DEFINE_UNQUOTED(INCLUDEARCH_PATH,"$DEFINE_INCLUDE_P
  AC_SUBST(INCLUDEARCH_PATH)
  
  # Subdirectory under lib to place ImageMagick lib files
@@ -29,7 +29,7 @@ Index: configure.ac
  AC_DEFINE_UNQUOTED(LIBRARY_RELATIVE_PATH,"$LIBRARY_RELATIVE_PATH",[Subdirectory of lib where ImageMagick architecture dependent files are installed.])
  
  # Path to ImageMagick bin directory
-@@ -3083,7 +3083,7 @@ AC_SUBST(FILTER_PATH)
+@@ -3086,7 +3086,7 @@ AC_SUBST(FILTER_PATH)
  
  #
  # Path to ImageMagick documentation files
@@ -38,7 +38,7 @@ Index: configure.ac
  DOCUMENTATION_PATH="${DOC_DIR}/${DOCUMENTATION_RELATIVE_PATH}"
  DEFINE_DOCUMENTATION_PATH="${DOC_DIR}/${DOCUMENTATION_RELATIVE_PATH}/"
  case "${build_os}" in
-@@ -3103,7 +3103,7 @@ AC_ARG_ENABLE([docs],
+@@ -3106,7 +3106,7 @@ AC_ARG_ENABLE([docs],
  AM_CONDITIONAL([INSTALL_DOC], [test "$wantdocs" = "yes"])
  
  # Subdirectory to place architecture-dependent configuration files
@@ -47,7 +47,7 @@ Index: configure.ac
  AC_DEFINE_UNQUOTED(CONFIGURE_RELATIVE_PATH,"$CONFIGURE_RELATIVE_PATH",[Subdirectory of lib where architecture-dependent configuration files live.])
  CONFIGURE_PATH="${SYSCONF_DIR}/${CONFIGURE_RELATIVE_PATH}/"
  DEFINE_CONFIGURE_PATH="${SYSCONF_DIR}/${CONFIGURE_RELATIVE_PATH}/"
-@@ -3116,7 +3116,7 @@ AC_DEFINE_UNQUOTED(CONFIGURE_PATH,"$DEFINE_CONFIGURE_P
+@@ -3119,7 +3119,7 @@ AC_DEFINE_UNQUOTED(CONFIGURE_PATH,"$DEFINE_CONFIGURE_P
  AC_SUBST(CONFIGURE_PATH)
  
  # Subdirectory to place architecture-independent configuration files
