@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/09 14:08:21 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/05/29 15:04:53 fcambus Exp $
 
 COMMENT =	disables bareword filehandles
 
-DISTNAME =	bareword-filehandles-0.006
+DISTNAME =	bareword-filehandles-0.007
 
 CATEGORIES =	devel
 
