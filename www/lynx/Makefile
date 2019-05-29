@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.42 2018/08/12 08:28:49 fcambus Exp $
+# $OpenBSD: Makefile,v 1.43 2019/05/29 20:20:55 fcambus Exp $
 
 V =		2.8.9
 R =		1
 COMMENT =	text web browser
 DISTNAME =	lynx${V}rel.${R}
 PKGNAME =	lynx-${V}rel${R}
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	www net
 
 HOMEPAGE =	https://lynx.invisible-island.net/
-
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
