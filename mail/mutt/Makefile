@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.117 2019/05/26 12:59:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.118 2019/05/30 16:58:14 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
 DISTNAME=	mutt-1.12.0
 EPOCH=		3
+REVISION=	0
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
@@ -55,7 +56,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ISPELL="${LOCALBASE}/bin/ispell"
 SYSCONFDIR=	${BASESYSCONFDIR}/mutt
-FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/mutt"
 
 .if defined(DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -84,8 +84,9 @@ CONFIGURE_ARGS+= --with-curses
 .endif
 
 post-install:
-	@mv -f ${PREFIX}/share/doc/mutt/samples/* ${PREFIX}/share/examples/mutt
-	@perl -pi -e "s,/usr/bin/gpg,${LOCALBASE}/bin/gpg," \
+	mv ${WRKINST}${SYSCONFDIR} ${PREFIX}/share/examples/mutt
+	mv -f ${PREFIX}/share/doc/mutt/samples/* ${PREFIX}/share/examples/mutt
+	sed -i -e 's,gpg ,${LOCALBASE}/bin/gpg2 ,' \
 		${PREFIX}/share/examples/mutt/gpg.rc
 
 .include <bsd.port.mk>
