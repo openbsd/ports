@@ -1,4 +1,2 @@
-SHA256 (29364770669d8aa16e7aa1a8cef14f79665920ce.patch) = Mq0Pg8mOBipu0t4waQXqwaw0y4jwXKB4VpwOAe/9iXk=
-SHA256 (nomad-0.8.7.tar.gz) = 906sYn3mkZDlhjWLGVZXOgrhpA0HVeze4WMBaUn5x/4=
-SIZE (29364770669d8aa16e7aa1a8cef14f79665920ce.patch) = 1716191
-SIZE (nomad-0.8.7.tar.gz) = 69782860
+SHA256 (nomad-0.9.1.tar.gz) = GdqfK8xMUht3eniJ7SwaKBgtIEjhNKVgmf9U6ftsI0c=
+SIZE (nomad-0.9.1.tar.gz) = 31844614
