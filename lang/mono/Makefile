@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2019/05/20 22:15:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.129 2019/05/30 12:43:30 jca Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -63,8 +63,7 @@ AUTOMAKE_VERSION=1.15
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
-		ac_cv_header_execinfo_h=no \
-		ac_cv_header_pthread_np_h=yes
+		ac_cv_header_execinfo_h=no
 
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ENV+=	CFLAGS="-march=i586"

@@ -1,8 +1,6 @@
-$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.13 2018/09/04 07:12:47 ajacoutot Exp $
+$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.14 2019/05/30 12:43:30 jca Exp $
 
 Our ar(1) is too old and have not support for `T'.
-
-Undefined references to libc functions.
 
 Index: Source/cmake/OptionsCommon.cmake
 --- Source/cmake/OptionsCommon.cmake.orig
@@ -22,12 +20,3 @@ Index: Source/cmake/OptionsCommon.cmake
      endif ()
  endif ()
  
-@@ -117,7 +117,7 @@ WEBKIT_CHECK_HAVE_INCLUDE(HAVE_FEATURES_H features.h)
- WEBKIT_CHECK_HAVE_INCLUDE(HAVE_ERRNO_H errno.h)
- WEBKIT_CHECK_HAVE_INCLUDE(HAVE_LANGINFO_H langinfo.h)
- WEBKIT_CHECK_HAVE_INCLUDE(HAVE_MMAP sys/mman.h)
--WEBKIT_CHECK_HAVE_INCLUDE(HAVE_PTHREAD_NP_H pthread_np.h)
-+WEBKIT_CHECK_HAVE_INCLUDE(HAVE_PTHREAD_NP_H "pthread.h;pthread_np.h")
- WEBKIT_CHECK_HAVE_INCLUDE(HAVE_STRINGS_H strings.h)
- WEBKIT_CHECK_HAVE_INCLUDE(HAVE_SYS_PARAM_H sys/param.h)
- WEBKIT_CHECK_HAVE_INCLUDE(HAVE_SYS_TIME_H sys/time.h)

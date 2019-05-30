@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2019/02/12 19:15:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.72 2019/05/30 12:43:30 jca Exp $
 
 COMMENT=	GNUstep base library
 
@@ -36,8 +36,7 @@ LIB_DEPENDS +=	converters/libiconv \
 		x11/gnustep/libobjc2
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	ac_cv_header_execinfo_h=false \
-		OBJCFLAGS=-DHAVE_PTHREAD_NP_H=1
+CONFIGURE_ENV=	ac_cv_header_execinfo_h=false
 CONFIGURE_ARGS +=	--disable-procfs \
 			--disable-procfs-psinfo
 MAKE_FLAGS +=		libgnustep-base_INTERFACE_VERSION=${LIBgnustep-base_VERSION}
