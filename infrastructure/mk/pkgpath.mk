@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.82 2018/12/13 15:49:59 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.83 2019/05/30 17:23:46 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -131,6 +131,7 @@ FETCH_USER ?= _pfetch
 BUILD_USER ?= _pbuild
 
 .if ${PORTS_PRIVSEP:L} == "yes"
+SUDO ?= doas
 _PFETCH = ${SUDO} -u ${FETCH_USER}
 _PBUILD = ${SUDO} -u ${BUILD_USER}
 _MK_READABLE = ${_PBUILD} chmod a+rX
