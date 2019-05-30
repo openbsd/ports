@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/26 12:05:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/05/30 10:15:54 jca Exp $
 
 COMMENT=		library for easy implementation of a VNC server
 
@@ -21,6 +21,8 @@ WANTLIB += ssl z
 
 MASTER_SITES=		https://github.com/LibVNC/libvncserver/archive/
 
+# TLS (Thread-Local Storage)
+COMPILER=		base-clang ports-gcc
 MODULES=		devel/cmake
 
 LIB_DEPENDS=		archivers/lzo2 \
