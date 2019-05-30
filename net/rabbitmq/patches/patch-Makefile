@@ -1,108 +1,19 @@
-$OpenBSD: patch-Makefile,v 1.9 2015/11/05 10:49:03 jasper Exp $
---- Makefile.orig	Wed Oct  7 14:45:15 2015
-+++ Makefile	Wed Oct 28 19:23:44 2015
-@@ -25,26 +25,11 @@ MANPAGES=$(patsubst %.xml, %.gz, $(wildcard $(DOCS_DIR
- WEB_MANPAGES=$(patsubst %.xml, %.man.xml, $(wildcard $(DOCS_DIR)/*.[0-9].xml) $(DOCS_DIR)/rabbitmq-service.xml $(DOCS_DIR)/rabbitmq-echopid.xml)
- USAGES_XML=$(DOCS_DIR)/rabbitmqctl.1.xml $(DOCS_DIR)/rabbitmq-plugins.1.xml
- USAGES_ERL=$(foreach XML, $(USAGES_XML), $(call usage_xml_to_erl, $(XML)))
-+TARGET_DIR=$(PREFIX)/lib/rabbitmq
-+SBIN_DIR=$(PREFIX)/sbin
-+MAN_DIR=$(PREFIX)/man
-+DOC_INSTALL_DIR=$(PREFIX)/share/doc/rabbitmq/
+$OpenBSD: patch-Makefile,v 1.10 2019/05/30 16:24:33 sebastia Exp $
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -238,11 +238,11 @@ DESTDIR ?=
+ PREFIX ?= /usr/local
+ WINDOWS_PREFIX ?= rabbitmq-server-windows-$(PROJECT_VERSION)
  
--ifeq ($(shell python -c 'import simplejson' 2>/dev/null && echo yes),yes)
--PYTHON=python
--else
--ifeq ($(shell python2.7 -c 'import json' 2>/dev/null && echo yes),yes)
--PYTHON=python2.7
--else
--ifeq ($(shell python2.6 -c 'import simplejson' 2>/dev/null && echo yes),yes)
--PYTHON=python2.6
--else
--ifeq ($(shell python2.5 -c 'import simplejson' 2>/dev/null && echo yes),yes)
--PYTHON=python2.5
--else
--# Hmm. Missing simplejson?
--PYTHON=python
--endif
--endif
--endif
--endif
--
- BASIC_PLT=basic.plt
- RABBIT_PLT=rabbit.plt
+-MANDIR ?= $(PREFIX)/share/man
+-RMQ_ROOTDIR ?= $(PREFIX)/lib/erlang
++MANDIR ?= $(PREFIX)/man
++RMQ_ROOTDIR ?= $(PREFIX)
+ RMQ_BINDIR ?= $(RMQ_ROOTDIR)/bin
+ RMQ_LIBDIR ?= $(RMQ_ROOTDIR)/lib
+-RMQ_ERLAPP_DIR ?= $(RMQ_LIBDIR)/rabbitmq_server-$(PROJECT_VERSION)
++RMQ_ERLAPP_DIR ?= $(RMQ_LIBDIR)/rabbitmq
  
-@@ -103,6 +88,10 @@ ERL_CALL=erl_call -sname $(RABBITMQ_NODENAME) -e
- 
- ERL_EBIN=erl -noinput -pa $(EBIN_DIR)
- 
-+CHECK_NAME=rabbitmq-check
-+CHECK_DIR=/tmp/$(CHECK_NAME)
-+CHECK_CALL=HOME=$(CHECK_DIR) erl_call -sname $(CHECK_NAME) -e
-+
- define usage_xml_to_erl
-   $(subst __,_,$(patsubst $(DOCS_DIR)/rabbitmq%.1.xml, $(SOURCE_DIR)/rabbit_%_usage.erl, $(subst -,_,$(1))))
- endef
-@@ -117,7 +106,7 @@ endef
- 
- ifneq "$(SBIN_DIR)" ""
- ifneq "$(TARGET_DIR)" ""
--SCRIPTS_REL_PATH=$(shell ./calculate-relative $(TARGET_DIR)/sbin $(SBIN_DIR))
-+SCRIPTS_REL_PATH="../lib/rabbitmq/sbin"
- endif
- endif
- 
-@@ -210,7 +199,7 @@ clean:
- 	rm -f $(PLUGINS_DIR)/*.ez
- 	[ -d "$(PLUGINS_SRC_DIR)" ] && PLUGINS_SRC_DIR="" PRESERVE_CLONE_DIR=1 make -C $(PLUGINS_SRC_DIR) clean || true
- 	rm -f $(INCLUDE_DIR)/rabbit_framing.hrl $(SOURCE_DIR)/rabbit_framing_amqp_*.erl codegen.pyc
--	rm -f $(DOCS_DIR)/*.[0-9].gz $(DOCS_DIR)/*.man.xml $(DOCS_DIR)/*.erl $(USAGES_ERL)
-+	rm -f $(DOCS_DIR)/*.[0-9] $(DOCS_DIR)/*.man.xml $(DOCS_DIR)/*.erl $(USAGES_ERL)
- 	rm -f $(RABBIT_PLT)
- 	rm -f $(DEPS_FILE)
- 
-@@ -261,6 +250,25 @@ run-qc: all
- 	./quickcheck $(RABBITMQ_NODENAME) rabbit_backing_queue_qc 100 40
- 	./quickcheck $(RABBITMQ_NODENAME) gm_qc 1000 200
- 
-+regress:
-+	@[ "`id -u`" != "0" ] || (echo "Don't run tests as a superuser." && false)
-+	rm -rf $(CHECK_DIR)
-+	mkdir -m 777 -p $(CHECK_DIR)
-+	HOME=$(CHECK_DIR) \
-+		RABBITMQ_NODENAME="$(CHECK_NAME)" \
-+		RABBITMQ_NODE_PORT="45672" \
-+		RABBITMQ_LOG_BASE="$(CHECK_DIR)/logs" \
-+		RABBITMQ_MNESIA_BASE="$(CHECK_DIR)/mnesia" \
-+		RABBITMQ_PLUGINS_EXPAND_DIR="$(CHECK_DIR)/plugins" \
-+		RABBITMQ_ENABLED_PLUGINS_FILE="$(CHECK_DIR)/none" \
-+		RABBITMQ_SERVER_START_ARGS="$(RABBITMQ_SERVER_START_ARGS) -detached" \
-+		./scripts/rabbitmq-server
-+	@sleep 5
-+	OUT=$$(echo "rabbit_tests:all_tests()." | $(CHECK_CALL)) ; \
-+		echo $$OUT ; echo $$OUT | grep '^{ok, passed}$$' > /dev/null || \
-+		($(CHECK_CALL) -q && rm -rf $(CHECK_DIR) && false)
-+	$(CHECK_CALL) -q && rm -rf $(CHECK_DIR) && echo "Passed."
-+
- start-background-node: all
- 	-rm -f $(RABBITMQ_MNESIA_DIR).pid
- 	mkdir -p $(RABBITMQ_MNESIA_DIR)
-@@ -348,8 +356,7 @@ distclean: clean
- %.gz: %.xml $(DOCS_DIR)/examples-to-end.xsl
- 	xmlto --version | grep -E '^xmlto version 0\.0\.([0-9]|1[1-8])$$' >/dev/null || opt='--stringparam man.indent.verbatims=0' ; \
- 	    xsltproc --novalid $(DOCS_DIR)/examples-to-end.xsl $< > $<.tmp && \
--	    xmlto -o $(DOCS_DIR) $$opt man $<.tmp && \
--	    gzip -f $(DOCS_DIR)/`basename $< .xml`
-+	    xmlto -o $(DOCS_DIR) $$opt man $<.tmp
- 	rm -f $<.tmp
- 
- # Use tmp files rather than a pipeline so that we get meaningful errors
-@@ -393,7 +400,7 @@ install_bin: all install_dirs
- install_docs: docs_all install_dirs
- 	for section in 1 5; do \
- 		mkdir -p $(MAN_DIR)/man$$section; \
--		for manpage in $(DOCS_DIR)/*.$$section.gz; do \
-+		for manpage in $(DOCS_DIR)/*.$$section; do \
- 			cp $$manpage $(MAN_DIR)/man$$section; \
- 		done; \
- 	done
+ SCRIPTS = rabbitmq-defaults \
+ 	  rabbitmq-env \

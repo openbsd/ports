@@ -1,25 +1,25 @@
-# $OpenBSD: Makefile,v 1.30 2018/01/11 19:27:07 rpe Exp $
+# $OpenBSD: Makefile,v 1.31 2019/05/30 16:24:33 sebastia Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
-V =		3.5.6
-REVISION =	1
+V =		3.6.15
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
 
-HOMEPAGE =	http://www.rabbitmq.com/
+HOMEPAGE =	https://www.rabbitmq.com/
 
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MPL
 PERMIT_PACKAGE_CDROM = Yes
 
-MASTER_SITES =	http://www.rabbitmq.com/releases/rabbitmq-server/v${V}/
+MASTER_SITES =	https://www.rabbitmq.com/releases/rabbitmq-server/v${V}/
+EXTRACT_SUFX =	.tar.xz
 
 MODULES =	lang/erlang \
 		lang/python
-MODERL_VERSION = 18
+MODERL_VERSION = 19
 MODPY_RUNDEP =	No
 
 USE_GMAKE =	Yes
@@ -32,26 +32,33 @@ BUILD_DEPENDS =	archivers/unzip \
 		textproc/libxslt \
 		textproc/xmlto
 
-MAKE_ENV =	PYTHON=${MODPY_BIN} VERSION=${V}
+MAKE_ENV =	PYTHON=${MODPY_BIN} VERSION=${V} V=1
 
 RABBITUSER =	_rabbitmq
 
 SUBST_VARS +=	RABBITUSER V
 
-MODPY_ADJ_FILES +=	plugins-src/rabbitmq-amqp1.0/codegen.py
-MODPY_ADJ_FILES +=	plugins-src/rabbitmq-management/bin/rabbitmqadmin
+#MODPY_ADJ_FILES +=	plugins-src/rabbitmq-amqp1.0/codegen.py
+#MODPY_ADJ_FILES +=	plugins-src/rabbitmq-management/bin/rabbitmqadmin
 
 NO_TEST =	Yes
 
+FAKE_FLAGS =	DESTDIR=''
+
 pre-build:
-	${SUBST_CMD} ${WRKSRC}/scripts/rabbitmqctl \
-		${WRKSRC}/scripts/rabbitmq-defaults
+	${SUBST_CMD} ${WRKSRC}/deps/rabbit/scripts/rabbitmqctl \
+		${WRKSRC}/deps/rabbit/scripts/rabbitmq-defaults
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/rabbitmq
-	@for file in INSTALL LICENSE*; do \
+	for file in INSTALL LICENSE*; do \
 		mv ${PREFIX}/lib/rabbitmq/$$file \
 			${PREFIX}/share/doc/rabbitmq; \
+	done
+	for f in rabbitmqctl rabbitmq-defaults rabbitmq-env rabbitmq-plugins \
+			rabbitmq-server; do \
+		cd ${PREFIX}/sbin && ln -s ../lib/rabbitmq/sbin/$$f \
+			$$f; \
 	done
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rabbitmq
 	${SUBST_CMD} -m 0644 -c ${FILESDIR}/rabbitmq.conf \
