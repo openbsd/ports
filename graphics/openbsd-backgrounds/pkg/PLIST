@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/29 11:42:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/05/30 11:16:28 espie Exp $
 ${BG}/
 ${BG}/AUTHORS
 ${BG}/LICENSE.txt
@@ -67,6 +67,14 @@ ${BGPICS}/gonzalo/photo4911190636942698561.jpg
 ${BGPICS}/gonzalo/photo4911190636942698563.jpg
 ${BGPICS}/gonzalo/photo4911659986673838054.jpg
 ${BGPICS}/gonzalo/photo4911659986673838056.jpg
+${BGPICS}/ian/
+${BGPICS}/ian/ANeighboursBarn.jpg
+${BGPICS}/ian/TheTree.jpg
+${BGPICS}/ian/dscn0099-costarica-tree.jpg
+${BGPICS}/ian/dscn0153-costaricabird.jpg
+${BGPICS}/ian/dscn0183-costarica-iguana.jpg
+${BGPICS}/ian/ifd_4329-Ottawa-IceFest.jpg
+${BGPICS}/ian/ifd_4408-PortPerryOntario.jpg
 ${BGPICS}/kirby/
 ${BGPICS}/kirby/DSCN0100.JPG
 ${BGPICS}/kirby/DSCN0105.JPG
