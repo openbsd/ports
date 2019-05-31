@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/04/16 08:15:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/05/31 16:19:37 ajacoutot Exp $
 bin/bokeh${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/bokeh/
 lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -565,6 +565,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/models/${MODPY_PYCACHE}renderers.
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/${MODPY_PYCACHE}scales.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/${MODPY_PYCACHE}selections.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/${MODPY_PYCACHE}sources.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bokeh/models/${MODPY_PYCACHE}textures.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/${MODPY_PYCACHE}tickers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/${MODPY_PYCACHE}tiles.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/${MODPY_PYCACHE}tools.${MODPY_PYC_MAGIC_TAG}pyc
@@ -600,6 +601,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/${MODPY_PYCACHE}test
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/${MODPY_PYCACHE}test_formatters.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/${MODPY_PYCACHE}test_glyphs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/${MODPY_PYCACHE}test_graphs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/${MODPY_PYCACHE}test_grids.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/${MODPY_PYCACHE}test_layouts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/${MODPY_PYCACHE}test_mappers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/${MODPY_PYCACHE}test_plots.${MODPY_PYC_MAGIC_TAG}pyc
@@ -615,6 +617,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/test_defaults.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/test_formatters.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/test_glyphs.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/test_graphs.py
+lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/test_grids.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/test_layouts.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/test_mappers.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/test_plots.py
@@ -629,6 +632,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/util
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/utils/${MODPY_PYCACHE}property_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tests/utils/property_utils.py
+lib/python${MODPY_VERSION}/site-packages/bokeh/models/textures.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tickers.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tiles.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/models/tools.py
@@ -1121,6 +1125,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyph
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/annular_wedge.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/annulus.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/arc.js
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/area.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/bezier.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/box.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/center_rotatable.js
@@ -1128,6 +1133,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyph
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/ellipse.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/ellipse_oval.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/glyph.js
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/harea.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/hbar.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/hex_tile.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/image.js
@@ -1149,6 +1155,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyph
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/step.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/text.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/utils.js
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/varea.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/vbar.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/webgl/
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/glyphs/webgl/base.js
@@ -1186,6 +1193,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/mappe
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/mappers/categorical_color_mapper.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/mappers/categorical_mapper.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/mappers/categorical_marker_mapper.js
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/mappers/categorical_pattern_mapper.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/mappers/color_mapper.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/mappers/continuous_color_mapper.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/mappers/index.js
@@ -1238,6 +1246,11 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/sourc
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/sources/remote_data_source.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/sources/server_sent_data_source.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/sources/web_data_source.js
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/textures/
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/textures/canvas_texture.js
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/textures/image_url_texture.js
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/textures/index.js
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/textures/texture.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/tickers/
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/tickers/adaptive_ticker.js
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/lib/models/tickers/basic_ticker.js
@@ -1522,6 +1535,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/gly
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/annular_wedge.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/annulus.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/arc.d.ts
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/area.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/bezier.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/box.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/center_rotatable.d.ts
@@ -1529,6 +1543,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/gly
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/ellipse.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/ellipse_oval.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/glyph.d.ts
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/harea.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/hbar.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/hex_tile.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/image.d.ts
@@ -1550,6 +1565,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/gly
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/step.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/text.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/utils.d.ts
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/varea.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/vbar.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/webgl/
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/glyphs/webgl/base.d.ts
@@ -1587,6 +1603,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/map
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/mappers/categorical_color_mapper.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/mappers/categorical_mapper.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/mappers/categorical_marker_mapper.d.ts
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/mappers/categorical_pattern_mapper.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/mappers/color_mapper.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/mappers/continuous_color_mapper.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/mappers/index.d.ts
@@ -1639,6 +1656,11 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/sou
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/sources/remote_data_source.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/sources/server_sent_data_source.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/sources/web_data_source.d.ts
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/textures/
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/textures/canvas_texture.d.ts
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/textures/image_url_texture.d.ts
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/textures/index.d.ts
+lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/textures/texture.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/tickers/
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/tickers/adaptive_ticker.d.ts
 lib/python${MODPY_VERSION}/site-packages/bokeh/server/static/js/types/models/tickers/basic_ticker.d.ts
