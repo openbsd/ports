@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2019/05/30 16:58:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.119 2019/05/31 10:25:34 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
@@ -31,7 +31,9 @@ BUILD_DEPENDS+=	textproc/docbook-xsl \
 FLAVORS=	gpgme sasl slang
 FLAVOR?=
 
-CONFIGURE_STYLE=  gnu
+CONFIGURE_STYLE=  autoreconf
+AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.15
 
 FLAVOR_COMMA=	${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=	FLAVOR_COMMA
@@ -56,6 +58,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ISPELL="${LOCALBASE}/bin/ispell"
 SYSCONFDIR=	${BASESYSCONFDIR}/mutt
+FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/mutt"
 
 .if defined(DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -84,7 +87,6 @@ CONFIGURE_ARGS+= --with-curses
 .endif
 
 post-install:
-	mv ${WRKINST}${SYSCONFDIR} ${PREFIX}/share/examples/mutt
 	mv -f ${PREFIX}/share/doc/mutt/samples/* ${PREFIX}/share/examples/mutt
 	sed -i -e 's,gpg ,${LOCALBASE}/bin/gpg2 ,' \
 		${PREFIX}/share/examples/mutt/gpg.rc
