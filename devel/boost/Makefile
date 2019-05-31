@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2019/05/20 15:58:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.86 2019/05/31 05:51:55 ajacoutot Exp $
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
@@ -94,7 +94,10 @@ WANTLIB-md+=	boost_chrono-mt boost_filesystem-mt boost_system-mt
 WANTLIB-md+=	boost_system boost_thread-mt
 
 .include <bsd.port.arch.mk>
-.if !(${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "arm")
+
+.if !(${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \
+      ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386" || \
+      ${MACHINE_ARCH} == "powerpc")
 BUILD_PACKAGES=	${MULTI_PACKAGES:N-md}
 .endif
 
