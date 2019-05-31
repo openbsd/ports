@@ -1,10 +1,18 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/30 11:58:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2019/05/31 14:19:36 ajacoutot Exp $
 
 COMMENT=		secure secret storage
 
 GH_TAGNAME=		v1.1.2
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		vault
+REVISION=		0
+
+### Vault UI
+MODGO_FLAGS +=		-tags=ui
+MASTER_SITES0=		https://github.com/swills/vaultui/raw/${GH_TAGNAME}/http/
+EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
+			bindata_assetfs.go:0
 
 CATEGORIES=		security net
 
@@ -22,6 +30,9 @@ MODULES=		lang/go
 # go/src/github.com/hashicorp/vault/version/version.go
 MODGO_LDFLAGS +=	-X github.com/hashicorp/vault/version.GitDescribe=${GH_TAGNAME:S/v//}
 MODGO_LDFLAGS +=	-X github.com/hashicorp/vault/version.VersionPrerelease="" # empty
+
+post-extract:
+	install -m644 ${DISTDIR}/bindata_assetfs.go ${WRKDIST}/http/
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vault

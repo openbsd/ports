@@ -1,2 +1,4 @@
+SHA256 (bindata_assetfs.go) = yVkSj0vjZ8qSgf/xZLpR5vI1AK51fE1YA8V8gB9PBms=
 SHA256 (vault-1.1.2.tar.gz) = 13ZtHXbQ/W6mGFi53F30oLcheYm33tkbUAZxPDNvP+k=
+SIZE (bindata_assetfs.go) = 2696990
 SIZE (vault-1.1.2.tar.gz) = 26026601
