@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.80 2019/04/01 07:35:45 bentley Exp $
+# $OpenBSD: Makefile.template,v 1.81 2019/05/31 21:29:52 espie Exp $
 #
 # Replace ??? with appropriate values
 # Remove extraneous comments before commit
@@ -56,7 +56,7 @@ CATEGORIES =	???
 # Default value is ports@openbsd.org, no need to fill in
 #MAINTAINER =		???
 
-# Licensing:  This determines what we can distribute.
+# Licensing:  This determines what we can distribute through ftp.
 # When you determine the license type, make sure to look at ALL distfiles.
 # Every distfile can have a different license.  The PERMIT_* values are
 # determined by the most restrictive license.  If you have two licenses
@@ -67,10 +67,9 @@ CATEGORIES =	???
 # Can be as brief as `BSD' or `GPLv2+', but it'd better be easy to check,
 # if someone wants to double-check licensing.
 # For GPL, the applicable versions must be included (e.g. v2+, v2 only, v3+).
-# If all PERMIT_* are Yes, just setting 'PERMIT_PACKAGE_CDROM=Yes' is enough.
-#PERMIT_PACKAGE_CDROM =	Yes | Reason if No
-#PERMIT_PACKAGE_FTP =	Yes | Reason if No
-#PERMIT_DISTFILES_FTP =	Yes | Reason if No
+# If both PERMIT_* are Yes, just setting 'PERMIT_PACKAGE=Yes' is enough.
+#PERMIT_PACKAGE =	Yes | Reason if No
+#PERMIT_DISTFILES =	Yes | Reason if No
 
 # If pledge is used, annotate with `uses pledge()' in a comment
 
