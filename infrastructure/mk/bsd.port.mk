@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1468 2019/05/28 20:08:17 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1469 2019/05/31 21:27:03 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -65,7 +65,7 @@ COMMENT ?= 				dummy
 CATEGORIES ?= 			dummy
 PKGPATH ?= 				dummy/a
 DISTNAME ?= 			dummy
-PERMIT_PACKAGE_CDROM ?= Yes
+PERMIT_PACKAGE ?= 		Yes
 IGNORE ?=				Yes
 _MAKEFILE_INC_DONE ?=	Yes
 ECHO_MSG ?=				:
@@ -115,7 +115,7 @@ _ALL_VARIABLES += DISTFILES PATCHFILES SUPDISTFILES DIST_SUBDIR MASTER_SITES \
 	MASTER_SITES0 MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 MASTER_SITES4 \
 	MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9 \
 	CHECKSUM_FILE FETCH_MANUALLY MISSING_FILES \
-	PERMIT_DISTFILES_FTP
+	PERMIT_DISTFILES_FTP PERMIT_DISTFILES
 .endif
 .if ${DPB:L:Mtest} || ${DPB:L:Mall}
 _ALL_VARIABLES += NO_TEST TEST_IS_INTERACTIVE TEST_DEPENDS
@@ -135,7 +135,7 @@ _ALL_VARIABLES += HOMEPAGE DISTNAME \
 _ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
-	ONLY_FOR_ARCHS NOT_FOR_ARCHS PKGSPEC PKGSTEM PREFIX \
+	ONLY_FOR_ARCHS NOT_FOR_ARCHS PKGSPEC PKGSTEM PREFIX PERMIT_PACKAGE \
 	PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM WANTLIB CATEGORIES DESCR \
 	EPOCH REVISION STATIC_PLIST PKG_ARCH
 .endif
@@ -470,28 +470,44 @@ ALL_FAKE_FLAGS += -j${MAKE_JOBS}
 .endif
 
 .for _S in ${MULTI_PACKAGES}
+.  if defined(PERMIT_PACKAGE) || defined(PERMIT_PACKAGE${_S})
+PERMIT_PACKAGE${_S} ?= ${PERMIT_PACKAGE}
+PERMIT_PACKAGE_FTP${_S} = ${PERMIT_PACKAGE${_S}}
+PERMIT_PACKAGE_CDROM${_S} = Unknown
+.  else
+.    if defined(PERMIT_PACKAGE_CDROM)
 PERMIT_PACKAGE_CDROM${_S} ?= ${PERMIT_PACKAGE_CDROM}
-.  if defined(PERMIT_PACKAGE_FTP)
+.    endif
+.    if defined(PERMIT_PACKAGE_FTP)
 PERMIT_PACKAGE_FTP${_S} ?= ${PERMIT_PACKAGE_FTP}
-.  endif
-.  if defined(PERMIT_PACKAGE_CDROM${_S}) && ${PERMIT_PACKAGE_CDROM${_S}:L} == "yes"
+.    endif
+.    if defined(PERMIT_PACKAGE_CDROM${_S}) && ${PERMIT_PACKAGE_CDROM${_S}:L} == "yes"
 PERMIT_PACKAGE_FTP${_S} ?= Yes
+.    endif
+PERMIT_PACKAGE${_S} = ${PERMIT_PACKAGE_FTP${_S}}
 .  endif
-.  if !defined(PERMIT_PACKAGE_CDROM${_S}) || !defined(PERMIT_PACKAGE_FTP${_S})
+.  if !defined(PERMIT_PACKAGE_FTP${_S})
 ERRORS += "The licensing info for ${FULLPKGNAME${_S}} is incomplete."
 _BAD_LICENSING = Yes
 .  endif
 .endfor
 
-.if defined(PERMIT_PACKAGE_CDROM) && ${PERMIT_PACKAGE_CDROM:L} == "yes"
+.if defined(PERMIT_PACKAGE)
+PERMIT_DISTFILES ?= ${PERMIT_PACKAGE}
+PERMIT_PACKAGE_FTP = ${PERMIT_PACKAGE}
+PERMIT_DISTFILES_FTP = ${PERMIT_DISTFILES}
+PERMIT_PACKAGE_CDROM = Unknown
+.else
+.  if defined(PERMIT_PACKAGE_CDROM) && ${PERMIT_PACKAGE_CDROM:L} == "yes"
 PERMIT_PACKAGE_FTP ?= Yes
 PERMIT_DISTFILES_FTP ?= Yes
-.elif defined(PERMIT_PACKAGE_FTP) && ${PERMIT_PACKAGE_FTP:L} == "yes"
+.  elif defined(PERMIT_PACKAGE_FTP) && ${PERMIT_PACKAGE_FTP:L} == "yes"
 PERMIT_DISTFILES_FTP ?= Yes
+.  endif
+PERMIT_PACKAGE = ${PERMIT_PACKAGE_FTP}
+PERMIT_DISTILES = ${PERMIT_DISTFILES_FTP}
 .endif
-
-.if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
-	!defined(PERMIT_DISTFILES_FTP)
+.if !defined(PERMIT_PACKAGE_FTP) || !defined(PERMIT_DISTFILES_FTP)
 ERRORS += "The licensing info for ${FULLPKGNAME} is incomplete."
 _BAD_LICENSING = Yes
 .endif
@@ -499,12 +515,16 @@ _BAD_LICENSING = Yes
 .if defined(_BAD_LICENSING)
 ERRORS += "Please notify the OpenBSD port maintainer:"
 ERRORS += "    ${MAINTAINER}"
+PERMIT_PACKAGE = No
+PERMIT_DISTFILES = No
 PERMIT_PACKAGE_CDROM = No
 PERMIT_PACKAGE_FTP = No
 PERMIT_DISTFILES_FTP = No
 .  for _S in ${MULTI_PACKAGES}
 PERMIT_PACKAGE_CDROM${_S} = No
 PERMIT_PACKAGE_FTP${_S} = No
+PERMIT_PACKAGE${_S} = No
+PERMIT_DISTFILES${_S} = No
 .  endfor
 .endif
 
@@ -961,13 +981,9 @@ _PACKAGE_LINKS += ${MACHINE_ARCH}/all/${_PKGFILE${_S}} ${NO_ARCH}/${_PKGFILE${_S
 _PACKAGE_COOKIES${_S} += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${_S}}
 .  endif
 _PACKAGE_COOKIES${_S} += ${_PACKAGE_COOKIE${_S}}
-.  if ${PERMIT_PACKAGE_FTP${_S}:L} == "yes"
+.  if ${PERMIT_PACKAGE${_S}:L} == "yes"
 _PACKAGE_COOKIES${_S} += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/ftp/${_PKGFILE${_S}}
 _PACKAGE_LINKS += ${MACHINE_ARCH}/ftp/${_PKGFILE${_S}} ${MACHINE_ARCH}/all/${_PKGFILE${_S}}
-.  endif
-.  if ${PERMIT_PACKAGE_CDROM${_S}:L} == "yes"
-_PACKAGE_COOKIES${_S} += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cdrom/${_PKGFILE${_S}}
-_PACKAGE_LINKS += ${MACHINE_ARCH}/cdrom/${_PKGFILE${_S}} ${MACHINE_ARCH}/all/${_PKGFILE${_S}}
 .  endif
 _PACKAGE_COOKIES += ${_PACKAGE_COOKIES${_S}}
 _PACKAGE_COOKIE += ${_PACKAGE_COOKIE${_S}}
@@ -1084,8 +1100,7 @@ PKG_ARGS${_S} += ${_PKG_ARGS_VERSION}
 
 PKG_ARGS${_S} += ${_substvars${_S}:N-DTRUEPREFIX=*}
 PKG_ARGS${_S} += -DFULLPKGPATH=${FULLPKGPATH${_S}}
-PKG_ARGS${_S} += -DPERMIT_PACKAGE_CDROM=${PERMIT_PACKAGE_CDROM${_S}:Q}
-PKG_ARGS${_S} += -DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE_FTP${_S}:Q}
+PKG_ARGS${_S} += -DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE${_S}:Q}
 
 SUBST_CMD${_S} = ${_PERLSCRIPT}/pkg_subst ${_substvars${_S}}
 SUBST_CMD${_S} += -i -B ${WRKDIR}
@@ -1706,12 +1721,7 @@ _do_checksum_package = \
 _checksum_package = ${_do_checksum_package}
 .elif ${CHECKSUM_PACKAGES:L} == "ftp"
 _checksum_package = \
-	case $${permit_ftp} in yes) \
-		${_do_checksum_package};; \
-	esac
-.elif ${CHECKSUM_PACKAGES:L} == "cdrom"
-_checksum_package = \
-	case $${permit_cdrom} in yes) \
+	case $${permit} in yes) \
 		${_do_checksum_package};; \
 	esac
 .else
@@ -2038,7 +2048,7 @@ ${_PACKAGE_COOKIE${_S}}:
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${_S}}"
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
 	@cd ${.CURDIR} && \
-	tmp=${_TMP_REPO}${_PKGFILE${_S}} pkgname=${_PKGFILE${_S}} permit_ftp=${PERMIT_PACKAGE_FTP${_S}:L:Q} permit_cdrom=${PERMIT_PACKAGE_CDROM${_S}:L:Q} && \
+	tmp=${_TMP_REPO}${_PKGFILE${_S}} pkgname=${_PKGFILE${_S}} permit=${PERMIT_PACKAGE${_S}:L:Q} && \
 	if deps=$$(SUBPACKAGE=${_S} wantlib_args=${_pkg_wantlib_args} \
 			${MAKE} print-package-args) && \
 		${_PBUILD} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
@@ -3167,25 +3177,21 @@ full-${_i}-depends:
 
 license-check:
 .for _S in ${BUILD_PACKAGES}
-.  if ${PERMIT_PACKAGE_CDROM${_S}:L} == "yes" || \
-	${PERMIT_PACKAGE_FTP${_S}:L} == "yes"
+.  if ${PERMIT_PACKAGE_FTP${_S}:L} == "yes"
 	@SUBPACKAGE=${_S} PKGPATH=${PKGPATH} ${MAKE} all-dir-depends|${_sort_dependencies}|while read subdir; do \
 		${_flavor_fragment}; \
-		_MASTER_PERMIT_CDROM=${PERMIT_PACKAGE_CDROM${_S}:Q}; \
-		_MASTER_PERMIT_FTP=${PERMIT_PACKAGE_FTP${_S}:Q}; \
-		export _MASTER_PERMIT_CDROM _MASTER_PERMIT_FTP; \
+		_MASTER_PERMIT=${PERMIT_PACKAGE${_S}:Q}; \
+		export _MASTER_PERMIT; \
 		eval $$toset ${MAKE} _license-check; \
 	done
 .  endif
 .endfor
 
 _license-check:
-.for _i in FTP CDROM
-.  if defined(_MASTER_PERMIT_${_i}) && ${_MASTER_PERMIT_${_i}:L} == "yes" && \
-	${PERMIT_PACKAGE_${_i}:L} != "yes"
-	@echo >&2 "Warning: dependency ${PKGPATH} is not allowed for ${_i}"
-.  endif
-.endfor
+.if defined(_MASTER_PERMIT) && ${_MASTER_PERMIT:L} == "yes" && \
+	${PERMIT_PACKAGE:L} != "yes"
+	@echo >&2 "Warning: dependency ${PKGPATH} is not allowed for ftp"
+.endif
 
 # run-depends-list, build-depends-list, lib-depends-list, test-depends-list
 .for _i in RUN BUILD LIB TEST
