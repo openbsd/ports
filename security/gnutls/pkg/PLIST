@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2019/01/28 06:33:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.48 2019/05/31 05:54:14 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/danetool
 @bin bin/gnutls-cli
@@ -237,6 +237,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_dh_params_import_pkcs3.3
 @man man/man3/gnutls_dh_params_import_raw.3
 @man man/man3/gnutls_dh_params_import_raw2.3
+@man man/man3/gnutls_dh_params_import_raw3.3
 @man man/man3/gnutls_dh_params_init.3
 @man man/man3/gnutls_dh_set_prime_bits.3
 @man man/man3/gnutls_digest_get_id.3
@@ -535,6 +536,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_pkcs_schema_get_name.3
 @man man/man3/gnutls_pkcs_schema_get_oid.3
 @man man/man3/gnutls_prf.3
+@man man/man3/gnutls_prf_early.3
 @man man/man3/gnutls_prf_raw.3
 @man man/man3/gnutls_prf_rfc5705.3
 @man man/man3/gnutls_priority_certificate_type_list.3
@@ -686,6 +688,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_record_send_early_data.3
 @man man/man3/gnutls_record_send_range.3
 @man man/man3/gnutls_record_set_max_early_data_size.3
+@man man/man3/gnutls_record_set_max_recv_size.3
 @man man/man3/gnutls_record_set_max_size.3
 @man man/man3/gnutls_record_set_state.3
 @man man/man3/gnutls_record_set_timeout.3
