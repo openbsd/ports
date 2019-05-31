@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.47 2019/05/20 22:15:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2019/05/31 16:28:43 rsadowski Exp $
 
 COMMENT =	organizer for book/dvd/music collections
 
-DISTNAME =	tellico-3.1.4
-REVISION =	0
+DISTNAME =	tellico-3.2
 
 CATEGORIES =	x11
 
@@ -15,7 +14,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5Bookmarks
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5Cddb KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5FileMetaData
 WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews
 WANTLIB += KF5JS KF5JobWidgets KF5KHtml KF5KIOCore KF5KIOFileWidgets
@@ -75,6 +74,7 @@ LIB_DEPENDS +=	audio/libcdio \
 		textproc/exempi \
 		textproc/libxml \
 		textproc/libxslt \
+		x11/kde-applications/libkcddb \
 		x11/kde-applications/libksane
 
 TEST_IS_INTERACTIVE =	X11
