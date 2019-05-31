@@ -1,19 +1,9 @@
-$OpenBSD: patch-third-party_pjproject_Makefile,v 1.5 2019/04/18 19:10:06 sthen Exp $
+$OpenBSD: patch-third-party_pjproject_Makefile,v 1.6 2019/05/31 10:36:27 sthen Exp $
 
 Index: third-party/pjproject/Makefile
 --- third-party/pjproject/Makefile.orig
 +++ third-party/pjproject/Makefile
-@@ -64,9 +64,6 @@ ifeq ($(SPECIAL_TARGETS),)
-         endif
-         MALLOC_DEBUG_LIBS = source/pjsip-apps/lib/libasterisk_malloc_debug.a
-         MALLOC_DEBUG_LDFLAGS = -L$(PJDIR)/pjsip-apps/lib -Wl,-whole-archive -lasterisk_malloc_debug -Wl,-no-whole-archive
--        ifeq ($(findstring DONT_OPTIMIZE,$(MENUSELECT_CFLAGS)),)
--            CF += -O3
--        endif
-         export CFLAGS += $(CF) -g3
-         export LDFLAGS += $(CC_LDFLAGS)
-         TARGETS += pjproject.symbols
-@@ -86,7 +83,7 @@ _all: $(TARGETS)
+@@ -88,7 +88,7 @@ _all: $(TARGETS)
  
  .DELETE_ON_ERROR:
  

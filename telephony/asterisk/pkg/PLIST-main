@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.78 2019/01/29 23:40:02 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.79 2019/05/31 10:36:27 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -141,6 +141,7 @@ include/asterisk/module.h
 include/asterisk/monitor.h
 include/asterisk/multicast_rtp.h
 include/asterisk/musiconhold.h
+include/asterisk/mwi.h
 include/asterisk/named_locks.h
 include/asterisk/netsock2.h
 include/asterisk/network.h
@@ -456,6 +457,7 @@ lib/asterisk/modules/res_manager_presencestate.so
 lib/asterisk/modules/res_monitor.so
 lib/asterisk/modules/res_musiconhold.so
 lib/asterisk/modules/res_mutestream.so
+lib/asterisk/modules/res_mwi_devstate.so
 lib/asterisk/modules/res_parking.so
 lib/asterisk/modules/res_phoneprov.so
 lib/asterisk/modules/res_pjproject.so
@@ -594,7 +596,6 @@ share/asterisk/static-http/core-en_US.xml
 share/asterisk/static-http/mantest.html
 share/asterisk/static-http/prototype.js
 share/asterisk/third-party/
-share/asterisk/third-party/pjproject/
 share/doc/asterisk/
 share/doc/asterisk/BUGS
 share/doc/asterisk/CHANGES
@@ -608,16 +609,6 @@ share/doc/asterisk/README-SERIOUSLY.bestpractices.md
 share/doc/asterisk/README-addons.txt
 share/doc/asterisk/README.md
 share/doc/asterisk/README.txt
-share/doc/asterisk/UPGRADE-1.2.txt
-share/doc/asterisk/UPGRADE-1.4.txt
-share/doc/asterisk/UPGRADE-1.6.txt
-share/doc/asterisk/UPGRADE-1.8.txt
-share/doc/asterisk/UPGRADE-10.txt
-share/doc/asterisk/UPGRADE-11.txt
-share/doc/asterisk/UPGRADE-12.txt
-share/doc/asterisk/UPGRADE-13.txt
-share/doc/asterisk/UPGRADE-14.txt
-share/doc/asterisk/UPGRADE-15.txt
 share/doc/asterisk/UPGRADE.txt
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/asterisk/
@@ -638,6 +629,7 @@ share/examples/asterisk/basic-pbx/logger.conf
 share/examples/asterisk/basic-pbx/modules.conf
 share/examples/asterisk/basic-pbx/musiconhold.conf
 share/examples/asterisk/basic-pbx/pjsip.conf
+share/examples/asterisk/basic-pbx/pjsip_notify.conf
 share/examples/asterisk/basic-pbx/voicemail.conf
 share/examples/asterisk/default/
 share/examples/asterisk/default/acl.conf

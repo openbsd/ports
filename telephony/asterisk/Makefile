@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.300 2019/05/20 22:15:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.301 2019/05/31 10:36:27 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		16.3.0
+VER=		16.4.0
 PJ_V=		2.8
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
-REVISION=	2
 
 .if ${MACHINE_ARCH} == i386
 # i386 issue linking libasteriskpj.so.0.0:
@@ -177,7 +176,6 @@ CONFIGURE_ARGS+=	--with-imap=no
 COMMENT-calendar=	calendar support for Asterisk
 WANTLIB-calendar=	crypto expat ical iconv intl iksemel lzma
 WANTLIB-calendar+=	m neon proxy pthread ssl xml2 z
-
 LIB_DEPENDS-calendar=	devel/gettext,-runtime \
 			net/neon \
 			textproc/libical
@@ -187,7 +185,8 @@ CONFIGURE_ARGS+=	--with-ical=no
 
 # http_post
 COMMENT-http_post=	HTTP POST support for Asterisk
-LIB_DEPENDS-http_post=	devel/gettext,-runtime mail/gmime
+LIB_DEPENDS-http_post=	devel/gettext,-runtime \
+			mail/gmime
 WANTLIB-http_post=	gio-2.0 glib-2.0 gmime-2.6 gobject-2.0 intl pthread
 .if !${BUILD_PACKAGES:M-http_post}
 CONFIGURE_ARGS+=	--with-gmime=no
@@ -306,5 +305,6 @@ post-install:
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLEDIR}
 	@rm -rf ${WRKINST}/{etc,var/{log,run,spool}}/asterisk
 	@rm ${PREFIX}/lib/libasterisk{pj,ssl}.so
+	@find ${WRKINST}/opt -type d -delete
 
 .include <bsd.port.mk>
