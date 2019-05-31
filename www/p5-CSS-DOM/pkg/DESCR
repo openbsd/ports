@@ -1,0 +1,21 @@
+This set of modules provides the CSS-specific interfaces described in the
+W3C DOM recommendation.
+
+The CSS::DOM class itself implements the StyleSheet and CSSStyleSheet DOM
+interfaces.
+
+This set of modules has two modes:
+
+1. It can validate property values, ignoring those that are invalid (just
+like a real web browser), and support shorthand properties. This means you
+can set font to '13px/15px My Font' and have the font-size, line-height, and
+font-family properties (among others) set automatically. Also, color: green;
+color: kakariki will assign 'green' to the color property, 'kakariki' not
+being a recognised color value.
+
+2. It can blithely accept all property assignments as being valid. In the
+case of color: green; color: kakariki, 'kakariki' will be assigned, since it
+overrides the previous assignment.
+
+These two modes are controlled by the property_parser option to the
+constructors.

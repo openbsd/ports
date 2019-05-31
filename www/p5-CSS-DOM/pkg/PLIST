@@ -1,0 +1,51 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/31 06:57:00 bentley Exp $
+${P5SITE}/CSS/
+${P5SITE}/CSS/DOM/
+${P5SITE}/CSS/DOM.pm
+${P5SITE}/CSS/DOM/Array.pm
+${P5SITE}/CSS/DOM/Constants.pm
+${P5SITE}/CSS/DOM/Exception.pm
+${P5SITE}/CSS/DOM/Interface.pm
+${P5SITE}/CSS/DOM/MediaList.pm
+${P5SITE}/CSS/DOM/Parser.pm
+${P5SITE}/CSS/DOM/PropertyParser.pm
+${P5SITE}/CSS/DOM/Rule/
+${P5SITE}/CSS/DOM/Rule.pm
+${P5SITE}/CSS/DOM/Rule/Charset.pm
+${P5SITE}/CSS/DOM/Rule/FontFace.pm
+${P5SITE}/CSS/DOM/Rule/Import.pm
+${P5SITE}/CSS/DOM/Rule/Media.pm
+${P5SITE}/CSS/DOM/Rule/Page.pm
+${P5SITE}/CSS/DOM/Rule/Style.pm
+${P5SITE}/CSS/DOM/RuleList.pm
+${P5SITE}/CSS/DOM/Style.pm
+${P5SITE}/CSS/DOM/StyleSheetList.pm
+${P5SITE}/CSS/DOM/Util.pm
+${P5SITE}/CSS/DOM/Value/
+${P5SITE}/CSS/DOM/Value.pm
+${P5SITE}/CSS/DOM/Value/List.pm
+${P5SITE}/CSS/DOM/Value/Primitive/
+${P5SITE}/CSS/DOM/Value/Primitive.pm
+${P5SITE}/CSS/DOM/Value/Primitive/colours.pl
+@man man/man3p/CSS::DOM.3p
+@man man/man3p/CSS::DOM::Array.3p
+@man man/man3p/CSS::DOM::Constants.3p
+@man man/man3p/CSS::DOM::Exception.3p
+@man man/man3p/CSS::DOM::Interface.3p
+@man man/man3p/CSS::DOM::MediaList.3p
+@man man/man3p/CSS::DOM::Parser.3p
+@man man/man3p/CSS::DOM::PropertyParser.3p
+@man man/man3p/CSS::DOM::Rule.3p
+@man man/man3p/CSS::DOM::Rule::Charset.3p
+@man man/man3p/CSS::DOM::Rule::FontFace.3p
+@man man/man3p/CSS::DOM::Rule::Import.3p
+@man man/man3p/CSS::DOM::Rule::Media.3p
+@man man/man3p/CSS::DOM::Rule::Page.3p
+@man man/man3p/CSS::DOM::Rule::Style.3p
+@man man/man3p/CSS::DOM::RuleList.3p
+@man man/man3p/CSS::DOM::Style.3p
+@man man/man3p/CSS::DOM::StyleSheetList.3p
+@man man/man3p/CSS::DOM::Util.3p
+@man man/man3p/CSS::DOM::Value.3p
+@man man/man3p/CSS::DOM::Value::List.3p
+@man man/man3p/CSS::DOM::Value::Primitive.3p
