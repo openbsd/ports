@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_lib_WPXHeader_cpp,v 1.1 2019/06/01 10:11:09 cwen Exp $
+
+ports-gcc: fix missing header
+
+Index: src/lib/WPXHeader.cpp
+--- src/lib/WPXHeader.cpp.orig
++++ src/lib/WPXHeader.cpp
+@@ -23,6 +23,8 @@
+  * Corel Corporation or Corel Corporation Limited."
+  */
+ 
++#include <string.h>
++
+ #include "WPXHeader.h"
+ #include "WP3Header.h"
+ #include "WP5Header.h"
