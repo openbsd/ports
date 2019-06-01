@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/02 13:09:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2019/06/01 20:00:01 kn Exp $
 
 COMMENT =	Unicorn CPU emulator engine
 
@@ -23,9 +23,11 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-# XXX: ERROR: Cannot use '/usr/local/bin/python3.6', Python 2.4 or later is required.
-#FLAVORS =		python3
-#FLAVOR ?=
+FLAVORS =		python3
+FLAVOR ?=
+
+# see patches/patch-src_Makefile
+BUILD_DEPENDS =		lang/python/${MODPY_DEFAULT_VERSION_2}
 
 USE_GMAKE =		Yes
 

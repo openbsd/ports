@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1860 2019/05/23 17:50:11 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1861 2019/06/01 20:00:01 kn Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1664,6 +1664,7 @@
      SUBDIR += py-uncompyle6
      SUBDIR += py-uncompyle6,python3
      SUBDIR += py-unicorn
+     SUBDIR += py-unicorn,python3
      SUBDIR += py-unit
      SUBDIR += py-unit,no_x11
      SUBDIR += py-unittest2
