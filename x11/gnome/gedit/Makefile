@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.161 2019/05/15 19:13:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.162 2019/06/01 07:58:09 ajacoutot Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		3.32.2
+REVISION=		0
 
 CATEGORIES=		editors
 
@@ -22,9 +23,10 @@ MODULES=		devel/dconf \
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
+			devel/libsoup \
 			devel/py-gobject3${MODPY_FLAVOR}
 
-LIB_DEPENDS=		devel/libpeas>=1.8.0 \
+LIB_DEPENDS=		devel/libpeas \
 			textproc/gspell \
 			x11/gtksourceview4
 
