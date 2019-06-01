@@ -1,9 +1,9 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.10 2019/05/11 04:08:57 ajacoutot Exp $
+$OpenBSD: patch-doc_Makefile_in,v 1.11 2019/06/01 09:47:19 ajacoutot Exp $
 
 Index: doc/Makefile.in
 --- doc/Makefile.in.orig
 +++ doc/Makefile.in
-@@ -398,25 +398,25 @@ uninstall-man8:
+@@ -399,25 +399,25 @@ uninstall-man8:
  	dir='$(DESTDIR)$(man8dir)'; $(am__uninstall_files_from_dir)
  install-dist_sysconfDATA: $(dist_sysconf_DATA)
  	@$(NORMAL_INSTALL)
@@ -36,7 +36,7 @@ Index: doc/Makefile.in
  tags TAGS:
  
  ctags CTAGS:
-@@ -461,7 +461,7 @@ check-am: all-am
+@@ -462,7 +462,7 @@ check-am: all-am
  check: check-am
  all-am: Makefile $(MANS) $(DATA)
  installdirs:

@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_reference_conf,v 1.15 2019/05/11 04:08:57 ajacoutot Exp $
+$OpenBSD: patch-doc_reference_conf,v 1.16 2019/06/01 09:47:19 ajacoutot Exp $
 
 Index: doc/reference.conf
 --- doc/reference.conf.orig
@@ -39,7 +39,7 @@ Index: doc/reference.conf
  };
  
  /*
-@@ -1006,7 +1006,7 @@ serverhide {
+@@ -1007,7 +1007,7 @@ serverhide {
  	/*
  	 * flatten_links_file: path to the flatten links cache file.
  	 */
@@ -48,7 +48,7 @@ Index: doc/reference.conf
  
  	/*
  	 * hidden: hide this server from a /links output on servers that
-@@ -1330,9 +1330,9 @@ modules {
+@@ -1326,9 +1326,9 @@ modules {
  	 * path: other paths to search for modules specified below
  	 * and in "/module load".
  	 */
@@ -61,7 +61,7 @@ Index: doc/reference.conf
  
  	/* module: the name of a module to load on startup/rehash. */
  #	module = "some_module.la";
-@@ -1347,49 +1347,49 @@ log {
+@@ -1343,49 +1343,49 @@ log {
  
  	file {
  		type = oper;

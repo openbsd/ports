@@ -1,9 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.18 2016/11/13 08:52:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2019/06/01 09:47:19 ajacoutot Exp $
 @conflict bnc-*
 @conflict irc-*
 @conflict ircd-ratbox-*
 @newgroup _ircd-hybrid:616
 @newuser _ircd-hybrid:616:616:daemon:IRC Daemon:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/ircd_hybrid
+@owner _ircd-hybrid
+@group _ircd-hybrid
+@sample ${LOCALSTATEDIR}/db/ircd-hybrid/
+@mode 700
+@sample ${LOGDIR}/
+@mode
+@owner
+@group
 @bin bin/ircd
 @bin bin/mkpasswd
 lib/ircd-hybrid/
@@ -249,9 +258,3 @@ share/ircd-hybrid/help/who
 share/ircd-hybrid/help/whois
 share/ircd-hybrid/help/whowas
 share/ircd-hybrid/help/xline
-@rcscript ${RCDIR}/ircd_hybrid
-@owner _ircd-hybrid
-@group _ircd-hybrid
-@sample ${LOCALSTATEDIR}/db/ircd-hybrid/
-@mode 700
-@sample ${LOGDIR}/
