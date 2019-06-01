@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.115 2019/05/25 10:44:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.116 2019/06/01 16:32:13 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -526,6 +526,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/greengrass/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/greengrass/2017-06-07/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/greengrass/2017-06-07/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/greengrass/2017-06-07/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/groundstation/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/groundstation/2019-05-23/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/groundstation/2019-05-23/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/groundstation/2019-05-23/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/guardduty/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/guardduty/2017-11-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/guardduty/2017-11-28/paginators-1.json
@@ -576,6 +580,18 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/iotanalytics/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotanalytics/2017-11-27/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotanalytics/2017-11-27/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotanalytics/2017-11-27/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotevents/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotevents-data/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotevents-data/2018-10-23/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotevents-data/2018-10-23/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotevents-data/2018-10-23/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotevents/2018-07-27/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotevents/2018-07-27/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotevents/2018-07-27/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotthingsgraph/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotthingsgraph/2018-09-06/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotthingsgraph/2018-09-06/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotthingsgraph/2018-09-06/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kafka/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kafka/2018-11-14/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kafka/2018-11-14/paginators-1.json
