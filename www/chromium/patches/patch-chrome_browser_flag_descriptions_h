@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.18 2019/05/10 21:55:39 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_h,v 1.19 2019/06/01 18:03:30 robert Exp $
 
 Index: chrome/browser/flag_descriptions.h
 --- chrome/browser/flag_descriptions.h.orig
 +++ chrome/browser/flag_descriptions.h
-@@ -2085,21 +2085,21 @@ extern const char kInstallableInkDropDescription[];
+@@ -2088,21 +2088,21 @@ extern const char kInstallableInkDropDescription[];
  
  // Random platform combinations -----------------------------------------------
  

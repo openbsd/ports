@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_gn_tools_gn_args_cc,v 1.5 2019/06/01 18:03:30 robert Exp $
+
+Index: tools/gn/tools/gn/args.cc
+--- tools/gn/tools/gn/args.cc.orig
++++ tools/gn/tools/gn/args.cc
+@@ -296,6 +296,8 @@ void Args::SetSystemVarsLocked(Scope* dest) const {
+   os = "linux";
+ #elif defined(OS_FREEBSD)
+   os = "freebsd";
++#elif defined(OS_OPENBSD)
++  os = "openbsd";
+ #elif defined(OS_AIX)
+   os = "aix";
+ #else

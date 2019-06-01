@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_webui_url_constants_cc,v 1.12 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-chrome_common_webui_url_constants_cc,v 1.13 2019/06/01 18:03:30 robert Exp $
 
 Index: chrome/common/webui_url_constants.cc
 --- chrome/common/webui_url_constants.cc.orig
 +++ chrome/common/webui_url_constants.cc
-@@ -250,7 +250,7 @@ const char kChromeUIMetroFlowURL[] = "chrome://make-me
+@@ -251,7 +251,7 @@ const char kChromeUIMetroFlowURL[] = "chrome://make-me
  const char kChromeUICastHost[] = "cast";
  #endif
  
@@ -12,7 +12,7 @@ Index: chrome/common/webui_url_constants.cc
  const char kChromeUIDiscardsHost[] = "discards";
  const char kChromeUIDiscardsURL[] = "chrome://discards/";
  const char kChromeUIHatsHost[] = "hats";
-@@ -261,17 +261,17 @@ const char kChromeUIHatsURL[] = "chrome://hats/";
+@@ -262,17 +262,17 @@ const char kChromeUIHatsURL[] = "chrome://hats/";
  const char kChromeUILinuxProxyConfigHost[] = "linux-proxy-config";
  #endif
  
@@ -33,7 +33,7 @@ Index: chrome/common/webui_url_constants.cc
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
  #endif
  
-@@ -462,13 +462,13 @@ const char* const kChromeHostURLs[] = {
+@@ -463,13 +463,13 @@ const char* const kChromeHostURLs[] = {
      kChromeUIInternetDetailDialogHost,
      kChromeUIAssistantOptInHost,
  #endif
