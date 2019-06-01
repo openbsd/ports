@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2019/03/05 14:58:49 cwen Exp $
+# $OpenBSD: Makefile,v 1.50 2019/06/01 23:22:41 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
-DISTNAME=		bro-2.6.1
+DISTNAME=		bro-2.6.2
 
 SHARED_LIBS +=  broccoli                  6.0 # 5.1
 SHARED_LIBS +=  broker                    0.0 # XXX see patch-aux_broker_CMakeLists_txt
