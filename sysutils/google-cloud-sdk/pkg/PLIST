@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.112 2019/05/25 10:47:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.113 2019/06/01 16:41:36 ajacoutot Exp $
 bin/bq
 bin/gcloud
 bin/git-credential-gcloud.sh
@@ -639,6 +639,8 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/firebase/test/ios/catalog_manager.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/firebase/test/ios/catalog_manager.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/firebase/test/ios/matrix_creator.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/firebase/test/ios/matrix_creator.pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/firebase/test/matrix_creator_common.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/firebase/test/matrix_creator_common.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/firebase/test/matrix_ops.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/firebase/test/matrix_ops.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/firebase/test/results_bucket.py
@@ -6507,6 +6509,7 @@ google-cloud-sdk/lib/surface/data_catalog/crawlers/create.yaml
 google-cloud-sdk/lib/surface/data_catalog/crawlers/delete.yaml
 google-cloud-sdk/lib/surface/data_catalog/crawlers/describe.yaml
 google-cloud-sdk/lib/surface/data_catalog/crawlers/list.yaml
+google-cloud-sdk/lib/surface/data_catalog/crawlers/update.yaml
 google-cloud-sdk/lib/surface/data_catalog/entries/
 google-cloud-sdk/lib/surface/data_catalog/entries/__init__.py
 google-cloud-sdk/lib/surface/data_catalog/entries/__init__.pyc
@@ -7443,6 +7446,7 @@ google-cloud-sdk/lib/surface/iam/service_accounts/sign_blob.py
 google-cloud-sdk/lib/surface/iam/service_accounts/sign_blob.pyc
 google-cloud-sdk/lib/surface/iam/service_accounts/sign_jwt.py
 google-cloud-sdk/lib/surface/iam/service_accounts/sign_jwt.pyc
+google-cloud-sdk/lib/surface/iam/service_accounts/undelete.yaml
 google-cloud-sdk/lib/surface/iam/service_accounts/update.py
 google-cloud-sdk/lib/surface/iam/service_accounts/update.pyc
 google-cloud-sdk/lib/surface/iam/service_accounts/update.yaml
@@ -8025,6 +8029,7 @@ google-cloud-sdk/lib/surface/projects/delete.py
 google-cloud-sdk/lib/surface/projects/delete.pyc
 google-cloud-sdk/lib/surface/projects/describe.py
 google-cloud-sdk/lib/surface/projects/describe.pyc
+google-cloud-sdk/lib/surface/projects/get_ancestors.yaml
 google-cloud-sdk/lib/surface/projects/get_iam_policy.py
 google-cloud-sdk/lib/surface/projects/get_iam_policy.pyc
 google-cloud-sdk/lib/surface/projects/get_iam_policy.yaml
