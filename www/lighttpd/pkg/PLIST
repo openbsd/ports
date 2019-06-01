@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.25 2018/08/21 06:54:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2019/06/01 09:52:33 ajacoutot Exp $
 @newgroup _lighttpd:585
 @newuser _lighttpd:585:_lighttpd:daemon:lighttpd Account:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/lighttpd
 lib/lighttpd/
 lib/lighttpd/mod_access.so
 lib/lighttpd/mod_accesslog.so
@@ -99,4 +100,3 @@ share/examples/lighttpd/error.log
 share/examples/lighttpd/lighttpd.conf
 @sample ${SYSCONFDIR}/lighttpd.conf
 share/examples/lighttpd/spawn-php.sh
-@rcscript ${RCDIR}/lighttpd
