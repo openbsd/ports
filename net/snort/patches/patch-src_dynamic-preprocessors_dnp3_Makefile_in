@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_dynamic-preprocessors_dnp3_Makefile_in,v 1.12 2018/01/28 03:09:12 lteo Exp $
+$OpenBSD: patch-src_dynamic-preprocessors_dnp3_Makefile_in,v 1.13 2019/06/02 02:07:44 lteo Exp $
 Index: src/dynamic-preprocessors/dnp3/Makefile.in
 --- src/dynamic-preprocessors/dnp3/Makefile.in.orig
 +++ src/dynamic-preprocessors/dnp3/Makefile.in
@@ -11,7 +11,7 @@ Index: src/dynamic-preprocessors/dnp3/Makefile.in
  @SO_WITH_STATIC_LIB_TRUE@libsf_dnp3_preproc_la_LIBADD =  \
  @SO_WITH_STATIC_LIB_TRUE@	../libsf_dynamic_preproc.la \
  @SO_WITH_STATIC_LIB_TRUE@	$(am__append_1)
-@@ -588,7 +588,7 @@ distdir: $(DISTFILES)
+@@ -591,7 +591,7 @@ distdir-am: $(DISTFILES)
  	done
  check-am: all-am
  check: check-am

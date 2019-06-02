@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_preprocessors_spp_sfportscan_c,v 1.12 2018/01/28 03:09:12 lteo Exp $
+$OpenBSD: patch-src_preprocessors_spp_sfportscan_c,v 1.13 2019/06/02 02:07:44 lteo Exp $
 Index: src/preprocessors/spp_sfportscan.c
 --- src/preprocessors/spp_sfportscan.c.orig
 +++ src/preprocessors/spp_sfportscan.c
-@@ -280,7 +280,7 @@ static int LogPortscanAlert(Packet *p, const char *msg
+@@ -281,7 +281,7 @@ static int LogPortscanAlert(Packet *p, const char *msg
          return 0;
      }
  
