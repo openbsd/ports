@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.26 2016/06/14 07:19:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2019/06/02 11:35:28 jasper Exp $
 
 COMMENT=	event loop processing
 
 MODULES=	cpan
-DISTNAME=	Event-1.26
+DISTNAME=	Event-1.27
 CATEGORIES=	devel
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 
