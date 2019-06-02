@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.9 2018/10/19 11:46:42 danj Exp $
+@comment $OpenBSD: PLIST-html,v 1.10 2019/06/02 11:53:10 jasper Exp $
 share/doc/ansible/html/
 share/doc/ansible/html/_downloads/
 share/doc/ansible/html/_downloads/first_playbook.yml
@@ -214,7 +214,6 @@ share/doc/ansible/html/scenario_guides/guide_gce.html
 share/doc/ansible/html/scenario_guides/guide_kubernetes.html
 share/doc/ansible/html/scenario_guides/guide_packet.html
 share/doc/ansible/html/scenario_guides/guide_rax.html
-share/doc/ansible/html/scenario_guides/guide_rolling_upgrade.html
 share/doc/ansible/html/scenario_guides/guide_vagrant.html
 share/doc/ansible/html/scenario_guides/guides.html
 share/doc/ansible/html/search.html

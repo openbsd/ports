@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_ansible_utils_encrypt_py,v 1.1 2018/10/19 11:46:42 danj Exp $
+$OpenBSD: patch-lib_ansible_utils_encrypt_py,v 1.2 2019/06/02 11:53:09 jasper Exp $
 
 Index: lib/ansible/utils/encrypt.py
 --- lib/ansible/utils/encrypt.py.orig
 +++ lib/ansible/utils/encrypt.py
-@@ -67,7 +67,7 @@ class BaseHash(object):
+@@ -64,7 +64,7 @@ class BaseHash(object):
      algo = namedtuple('algo', ['crypt_id', 'salt_size', 'implicit_rounds'])
      algorithms = {
          'md5_crypt': algo(crypt_id='1', salt_size=8, implicit_rounds=None),
