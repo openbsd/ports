@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/19 19:13:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/06/02 11:57:28 jasper Exp $
 
 COMMENT =		libsass command line driver
 
 GH_ACCOUNT =		sass
 GH_PROJECT =		sassc
-GH_TAGNAME =		3.5.0
-REVISION =		0
+GH_TAGNAME =		3.6.0
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 CATEGORIES =		www
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m sass
 
