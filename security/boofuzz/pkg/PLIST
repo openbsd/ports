@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/09 14:15:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/06/02 11:42:21 jasper Exp $
 bin/boo
 lib/python${MODPY_VERSION}/site-packages/boofuzz/
 lib/python${MODPY_VERSION}/site-packages/boofuzz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -39,6 +39,8 @@ lib/python${MODPY_VERSION}/site-packages/boofuzz/fuzz_logger.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/fuzz_logger.pyc
 lib/python${MODPY_VERSION}/site-packages/boofuzz/fuzz_logger_csv.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/fuzz_logger_csv.pyc
+lib/python${MODPY_VERSION}/site-packages/boofuzz/fuzz_logger_curses.py
+lib/python${MODPY_VERSION}/site-packages/boofuzz/fuzz_logger_curses.pyc
 lib/python${MODPY_VERSION}/site-packages/boofuzz/fuzz_logger_db.py
 lib/python${MODPY_VERSION}/site-packages/boofuzz/fuzz_logger_db.pyc
 lib/python${MODPY_VERSION}/site-packages/boofuzz/fuzz_logger_file.py

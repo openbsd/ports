@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/09 14:15:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/06/02 11:42:21 jasper Exp $
 
 COMMENT =	extensible network protocol fuzzer
 
-MODPY_EGG_VERSION =	0.1.4
+MODPY_EGG_VERSION =	0.1.5
 DISTNAME =	boofuzz-${MODPY_EGG_VERSION}
 
 CATEGORIES =	security
@@ -18,6 +18,7 @@ MODULES =		lang/python
 
 RUN_DEPENDS = 		databases/py-ldap3 \
 			devel/py-attrs \
+			devel/py-backports-shutil-get-terminal-size \
 			devel/py-click \
 			devel/py-colorama \
 			devel/py-future \
