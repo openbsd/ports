@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/20 04:26:41 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2019/06/02 16:24:42 thfr Exp $
 
 # versions are in sync with FNA versions
-V =		19.05
+V =		19.06
 COMMENT =	XAudio reimplementation for open platforms
 DISTNAME =	fna-${V:S/.//g}
 PKGNAME =	faudio-${V}
 
-SHARED_LIBS =	FAudio		0.0	# 19.05
+SHARED_LIBS =	FAudio		0.1	# 19.06
 
 CATEGORIES =	audio
 HOMEPAGE =	https://github.com/FNA-XNA/FAudio
