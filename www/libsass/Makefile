@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/19 19:13:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/06/02 11:57:20 jasper Exp $
 
 COMMENT =		C/C++ implementation of a Sass compiler
 
 GH_ACCOUNT =		sass
 GH_PROJECT =		libsass
-GH_TAGNAME =		3.5.5
-REVISION =		0
+GH_TAGNAME =		3.6.0
 
 SHARED_LIBS +=  sass                      0.0 # 0.0
 
@@ -16,7 +15,7 @@ HOMEPAGE =		http://libsass.org/
 CATEGORIES =		www
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		${COMPILER_LIBCXX} m
 
