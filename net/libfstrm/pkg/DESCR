@@ -1,0 +1,19 @@
+Frame Streams is a light weight, binary clean protocol that allows for
+the transport of arbitrarily encoded data payload sequences with minimal
+framing overhead -- just four bytes per data frame. Frame Streams does
+not specify an encoding format for data frames and can be used with any
+data serialization format that produces byte sequences, such as Protocol
+Buffers, XML, JSON, MessagePack, YAML, etc. Frame Streams can be used
+as both a streaming transport over a reliable byte stream socket (TCP
+sockets, TLS connections, AF_UNIX sockets, etc.) for data in motion
+as well as a file format for data at rest. A "Content Type" header
+identifies the type of payload being carried over an individual Frame
+Stream and allows cooperating programs to determine how to interpret a
+given sequence of data payloads.
+
+fstrm is an optimized C implementation of Frame Streams that includes
+a fast, lockless circular queue implementation and exposes library
+interfaces for setting up a dedicated Frame Streams I/O thread and
+asynchronously submitting data frames for transport from worker threads.
+It was originally written to facilitate the addition of high speed
+binary logging to DNS servers written in C using the dnstap log format.

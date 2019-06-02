@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/02 06:19:38 otto Exp $
+@bin bin/fstrm_capture
+@bin bin/fstrm_dump
+@bin bin/fstrm_replay
+include/fstrm/
+include/fstrm.h
+include/fstrm/control.h
+include/fstrm/file.h
+include/fstrm/iothr.h
+include/fstrm/rdwr.h
+include/fstrm/reader.h
+include/fstrm/tcp_writer.h
+include/fstrm/unix_writer.h
+include/fstrm/writer.h
+lib/libfstrm.a
+lib/libfstrm.la
+@lib lib/libfstrm.so.${LIBfstrm_VERSION}
+lib/pkgconfig/libfstrm.pc
+@man man/man1/fstrm_capture.1
+@man man/man1/fstrm_dump.1
+@man man/man1/fstrm_replay.1
