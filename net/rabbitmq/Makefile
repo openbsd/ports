@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/30 16:24:33 sebastia Exp $
+# $OpenBSD: Makefile,v 1.32 2019/06/02 08:42:29 ajacoutot Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
@@ -27,6 +27,7 @@ CONFIGURE_STYLE = none
 
 BUILD_DEPENDS =	archivers/unzip \
 		archivers/zip \
+		net/rsync \
 		textproc/docbook \
 		textproc/docbook-xsl \
 		textproc/libxslt \
