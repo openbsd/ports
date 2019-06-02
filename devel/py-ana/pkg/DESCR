@@ -1,0 +1,6 @@
+ANA is a project to provide easy distributed data storage for stuff. It
+provides every object with a UUID and, when pickled, will first
+serialize the object's state to a central location and then "pickle" the
+object into just its UUID. This is really handy when you have to
+distribute objects in some distributed system, and you'd rather not
+pickle the whole object every time you need to send it.
