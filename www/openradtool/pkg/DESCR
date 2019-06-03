@@ -1,0 +1,9 @@
+openradtool ("ort") is an open source RAD tool generating front-end code
+(JavaScript, TypeScript) and back-end code (SQL, C) for your
+application, leaving you to develop your "middle-tier" business and
+presentation logic.
+
+The system consists of a set of source generators, each accepting a
+single ort(5) configuration file that describes your data and how it is
+accessed, modified, created, deleted. The generated sources have a
+strong focus on security, documentation, and auditability.

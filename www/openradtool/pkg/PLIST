@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/03 23:06:22 jturner Exp $
+@bin bin/ort
+@bin bin/ort-audit
+@bin bin/ort-audit-gv
+@bin bin/ort-audit-json
+@bin bin/ort-c-header
+@bin bin/ort-c-source
+@bin bin/ort-javascript
+@bin bin/ort-sql
+@bin bin/ort-sqldiff
+@bin bin/ort-xliff
+@man man/man1/ort-audit-gv.1
+@man man/man1/ort-audit-json.1
+@man man/man1/ort-audit.1
+@man man/man1/ort-c-header.1
+@man man/man1/ort-c-source.1
+@man man/man1/ort-javascript.1
+@man man/man1/ort-sql.1
+@man man/man1/ort-sqldiff.1
+@man man/man1/ort-xliff.1
+@man man/man1/ort.1
+@man man/man5/ort.5
+share/openradtool/
+share/openradtool/audit.css
+share/openradtool/audit.html
+share/openradtool/audit.js
+share/openradtool/b64_ntop.c
+share/openradtool/gensalt.c
+share/openradtool/jsmn.c
