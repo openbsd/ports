@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/03 23:06:22 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/06/03 23:27:32 jturner Exp $
+@conflict kwebapp-*
+@pkgpath www/kwebapp
 @bin bin/ort
 @bin bin/ort-audit
 @bin bin/ort-audit-gv
