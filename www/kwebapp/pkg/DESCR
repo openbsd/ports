@@ -1,7 +1,0 @@
-kwebapp is an open source UNIX system generating front-end (JavaScript) and
-back-end (SQL, C) for your web application, leaving you to develop your
-business logic. It accepts a configuration file that describes your data:
-tables (structures), fields (members), accessors (search, list, iterate),
-modifiers (insert, update, delete), etc. It generates the source files (C
-header, C source, SQL schema, SQL update schema, JavaScript) for your
-application.
