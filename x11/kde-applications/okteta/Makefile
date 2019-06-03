@@ -1,22 +1,20 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/24 11:57:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2019/06/03 05:18:41 rsadowski Exp $
 
 COMMENT =	Hex Editor
-VERSION =	0.25.4
+VERSION =	0.26.1
 DISTNAME =	okteta-${VERSION}
 CATEGORIES =	editors
-REVISION =	0
 
 EPOCH =		0
 
-
-SHARED_LIBS +=  kasten3controllers        0.0 # 0.3
-SHARED_LIBS +=  kasten3core               0.0 # 0.3
-SHARED_LIBS +=  kasten3gui                0.0 # 0.3
-SHARED_LIBS +=  kasten3okteta1controllers 0.0 # 0.3
-SHARED_LIBS +=  kasten3okteta1core        0.0 # 0.3
-SHARED_LIBS +=  kasten3okteta1gui         0.0 # 0.3
-SHARED_LIBS +=  okteta2core               0.0 # 0.9
-SHARED_LIBS +=  okteta2gui                0.0 # 0.9
+SHARED_LIBS +=  Kasten4Controllers        0.0 # 0.4
+SHARED_LIBS +=  Kasten4Core               0.0 # 0.4
+SHARED_LIBS +=  Kasten4Gui                0.0 # 0.4
+SHARED_LIBS +=  Kasten4Okteta2Controllers 0.0 # 0.4
+SHARED_LIBS +=  Kasten4Okteta2Core        0.0 # 0.4
+SHARED_LIBS +=  Kasten4Okteta2Gui         0.0 # 0.4
+SHARED_LIBS +=  Okteta3Core               0.0 # 0.10
+SHARED_LIBS +=  Okteta3Gui                0.0 # 0.10
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5Bookmarks KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
