@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.137 2019/05/20 22:15:15 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.138 2019/06/03 13:43:27 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -80,6 +80,7 @@ CONFIGURE_ARGS+=	--with-gettext=${LOCALBASE} \
 			--with-iconv=${LOCALBASE} \
 			--with-onig=${LOCALBASE} \
 			--with-openssl \
+			--with-password-argon2=${LOCALBASE} \
 			--with-pcre-regex \
 			--with-sodium=${LOCALBASE} \
 			--with-zlib \
@@ -158,8 +159,9 @@ LIB_DEPENDS$i +=	devel/gettext,-runtime \
 			textproc/libxml \
 			textproc/oniguruma
 .if ${PV} != "7.1"
-WANTLIB$i +=		sodium
-LIB_DEPENDS$i +=	security/libsodium
+WANTLIB$i +=		argon2 sodium
+LIB_DEPENDS$i +=	security/argon2 \
+			security/libsodium
 .endif
 .endfor
 
