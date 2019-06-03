@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2018/11/09 10:08:20 sthen Exp $
-
-BROKEN=		needs to adapt to libressl changes
+# $OpenBSD: Makefile,v 1.3 2019/06/03 13:42:49 reyk Exp $
 
 COMMENT=	cloud provisioning for OpenBSD VMs
 
-V=		0.6
+V=		0.8
 DISTNAME=	cloud-agent-$V
 CATEGORIES=	sysutils
 HOMEPAGE=	https://github.com/reyk/cloud-agent/
