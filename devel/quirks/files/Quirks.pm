@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.782 2019/05/26 22:34:45 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.783 2019/06/03 23:03:36 jturner Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -331,6 +331,7 @@ my $stem_extensions = {
 	'Xonotic-data' => 'xonotic-data',
 	'Xonotic-server' => 'xonotic-server',
 	'gettext' => 'gettext-runtime',
+	'kwebapp' => 'openradtool',
 };
 
 my $obsolete_reason = {
