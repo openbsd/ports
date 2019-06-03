@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2019/05/20 11:46:38 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.40 2019/06/03 10:56:12 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -100,6 +100,7 @@ share/highlight/langDefs/haxe.lang
 share/highlight/langDefs/hcl.lang
 share/highlight/langDefs/html.lang
 share/highlight/langDefs/httpd.lang
+share/highlight/langDefs/hugo.lang
 share/highlight/langDefs/icon.lang
 share/highlight/langDefs/idl.lang
 share/highlight/langDefs/idlang.lang
@@ -377,6 +378,11 @@ share/highlight/themes/darkplus.theme
 share/highlight/themes/darkslategray.theme
 share/highlight/themes/darkspectrum.theme
 share/highlight/themes/denim.theme
+share/highlight/themes/duotone-dark-earth.theme
+share/highlight/themes/duotone-dark-forest.theme
+share/highlight/themes/duotone-dark-sea.theme
+share/highlight/themes/duotone-dark-sky.theme
+share/highlight/themes/duotone-dark-space.theme
 share/highlight/themes/dusk.theme
 share/highlight/themes/earendel.theme
 share/highlight/themes/easter.theme
