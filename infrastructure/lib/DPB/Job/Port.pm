@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.191 2019/05/19 21:26:03 espie Exp $
+# $OpenBSD: Port.pm,v 1.192 2019/06/03 23:10:57 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -1177,9 +1177,8 @@ sub new
 sub new_junk_only
 {
 	my $class = shift;
-	my %h = @_;
 
-	my $job = $class->SUPER::new(\%h);
+	my $job = $class->SUPER::new(@_);
 	my $fh2 = $job->{builder}->logger->append("junk");
 	print $fh2 "$$@", CORE::time(), ": ", $job->{core}->hostname,
 	    ": forced junking -> $job->{path}\n";
