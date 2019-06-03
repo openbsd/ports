@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/19 07:44:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/06/03 05:35:09 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @conflict kdegames-*
-@pkgpath x11/kde4/kmines
 @pkgpath x11/kde4/kshisen
 @bin bin/kshisen
 share/applications/org.kde.kshisen.desktop

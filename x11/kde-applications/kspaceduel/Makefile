@@ -1,25 +1,22 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/23 10:38:45 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/06/03 05:35:09 rsadowski Exp $
 
-BROKEN =	Are you kidding me, this is not even the right port
-COMMENT =	Shisen-Sho Mahjongg-like game
-DISTNAME =	kshisen-${VERSION}
+COMMENT =	2D space arcade game for KDE
+DISTNAME =	kspaceduel-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
-HOMEPAGE =	https://www.kde.org/applications/games/kshisen
-
-
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5KDEGames KF5KDEGamesPrivate
-WANTLIB += KF5KMahjongglib KF5WidgetsAddons KF5XmlGui Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Widgets Qt5Xml c m
+HOMEPAGE =	https://www.kde.org/applications/games/kspaceduel
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
+
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5KDEGames KF5WidgetsAddons
+WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
+WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Svg Qt5Widgets Qt5Xml c
+WANTLIB += m
 
 MODULES +=	x11/kde-applications
 
@@ -37,7 +34,7 @@ LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/ki18n \
 		devel/kf5/kxmlgui \
 		x11/kde-applications/libkdegames \
-		x11/kde-applications/libkmahjongg \
-		x11/qt5/qtdeclarative
+		x11/qt5/qtdeclarative \
+		x11/qt5/qtsvg
 
 .include <bsd.port.mk>

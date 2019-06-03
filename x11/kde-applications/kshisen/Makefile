@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/23 10:39:13 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/06/03 05:35:09 rsadowski Exp $
 
 COMMENT =	Shisen-Sho Mahjongg-like game
 DISTNAME =	kshisen-${VERSION}
 CATEGORIES =	games
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://www.kde.org/applications/games/kshisen
-
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
