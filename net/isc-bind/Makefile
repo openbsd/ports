@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2019/05/17 12:52:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.92 2019/06/03 16:06:53 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
@@ -27,7 +27,7 @@ HOMEPAGE=	http://www.isc.org/software/bind
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # MPL 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv idn2 json-c lzma m pthread unistring xml2 z
 

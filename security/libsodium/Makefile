@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/05/31 14:29:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/06/03 16:06:56 sthen Exp $
 
 COMMENT=	library for network communications and cryptography
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://github.com/jedisct1/libsodium
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += pthread
 

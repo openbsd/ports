@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/19 11:26:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/06/03 16:06:52 sthen Exp $
 
 COMMENT=	read and set MPEG-4/3GPP metadata tags
 
@@ -15,7 +15,7 @@ HOMEPAGE=	https://bitbucket.org/wez/atomicparsley/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2 "or its successor"
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m ${COMPILER_LIBCXX} z
 

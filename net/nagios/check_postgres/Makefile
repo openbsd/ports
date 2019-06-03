@@ -1,26 +1,26 @@
-# $OpenBSD: Makefile,v 1.7 2018/11/29 23:16:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/06/03 16:06:54 sthen Exp $
 
-PKG_ARCH=		*
+PKG_ARCH=	*
 
-COMMENT=		Nagios plugin to monitor PostgresQL
-DISTNAME=		check_postgres-2.24.0
-CATEGORIES=		net databases
+COMMENT=	Nagios plugin to monitor PostgresQL
+DISTNAME=	check_postgres-2.24.0
+CATEGORIES=	net databases
 
-MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
-HOMEPAGE=		http://bucardo.org/wiki/Check_postgres
-MASTER_SITES=		http://bucardo.org/downloads/
+HOMEPAGE=	http://bucardo.org/wiki/Check_postgres
+MASTER_SITES=	http://bucardo.org/downloads/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES=		perl
-CONFIGURE_STYLE=	perl
+MODULES=	perl
+CONFIGURE_STYLE= perl
 
 TEST_DEPENDS=	${RUN_DEPENDS} \
-			databases/postgresql,-server
+		databases/postgresql,-server
 
-RUN_DEPENDS=		databases/p5-DBD-Pg
+RUN_DEPENDS=	databases/p5-DBD-Pg
 
 pre-configure:
 	@perl -pi -e 's,data space,data_space,g' ${WRKSRC}/t/CP_Testing.pm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/19 11:26:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/06/03 16:06:54 sthen Exp $
 
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
@@ -17,7 +17,7 @@ CATEGORIES =		net
 MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		bz2 c z
 

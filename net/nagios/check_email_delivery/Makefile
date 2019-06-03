@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/09/19 12:21:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/06/03 16:06:54 sthen Exp $
 
 COMMENT=	Nagios plugin to check full email delivery loop (SMTP/IMAP)
 
@@ -12,7 +12,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 HOMEPAGE=	http://buhacoff.net/software/check_email_delivery/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/archive/
 

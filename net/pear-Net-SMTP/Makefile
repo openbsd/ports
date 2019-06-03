@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/10/03 13:33:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/06/03 16:06:54 sthen Exp $
 
 COMMENT=	SMTP support for PHP
 
@@ -10,7 +10,7 @@ MODULES=	www/pear
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # PHP License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	net/pear-Net-Socket>=1.0.7 \
 		security/pear-Auth-SASL

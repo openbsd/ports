@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/02/23 11:23:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/06/03 16:06:53 sthen Exp $
 
 COMMENT=	simple filter to look up MAC address vendors
 
@@ -9,7 +9,7 @@ CATEGORIES=	net textproc
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # Public Domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://spacehopper.org/mirrors/
 

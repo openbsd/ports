@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2018/11/29 23:13:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2019/06/03 16:06:52 sthen Exp $
 
 COMMENT=	C-style arbitrary precision calculator
 
@@ -15,7 +15,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 HOMEPAGE=	http://www.isthe.com/chongo/tech/comp/calc
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses readline
 

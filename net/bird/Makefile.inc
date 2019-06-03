@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2018/09/18 19:21:05 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/06/03 16:06:53 sthen Exp $
 
 COMMENT=	BIRD internet routing daemon
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://bird.network.cz/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 

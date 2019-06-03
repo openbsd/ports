@@ -1,32 +1,32 @@
-# $OpenBSD: Makefile,v 1.42 2019/01/27 20:00:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2019/06/03 16:06:54 sthen Exp $
 
-COMMENT=		web-based front end for the nfdump netflow tools
+COMMENT=	web-based front end for the nfdump netflow tools
 
-V=			1.3.8
-REVISION=		4
-DISTNAME=		nfsen-$V
-CATEGORIES=		net www
-HOMEPAGE=		http://nfsen.sourceforge.net/
+V=		1.3.8
+REVISION=	4
+DISTNAME=	nfsen-$V
+CATEGORIES=	net www
+HOMEPAGE=	http://nfsen.sourceforge.net/
 
-MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nfsen/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nfsen/}
 
-MODULES=		perl lang/php
-RUN_DEPENDS=		net/rrdtool \
-			mail/p5-Mail-Tools \
-			net/p5-Socket6 \
-			net/nfdump,-nfprofile \
-			net/nfdump>=1.6.9
-BUILD_DEPENDS=		${RUN_DEPENDS}
+MODULES=	perl lang/php
+RUN_DEPENDS=	net/rrdtool \
+		mail/p5-Mail-Tools \
+		net/p5-Socket6 \
+		net/nfdump,-nfprofile \
+		net/nfdump>=1.6.9
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
-NO_BUILD=		Yes
-NO_TEST=		Yes
-WWWDIR=			${WRKINST}/var/www/htdocs
-PKG_ARCH=		*
+NO_BUILD=	Yes
+NO_TEST=	Yes
+WWWDIR=		${WRKINST}/var/www/htdocs
+PKG_ARCH=	*
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/etc/nfsen-dist.conf

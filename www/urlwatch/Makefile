@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/04/28 20:52:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/06/03 16:06:58 sthen Exp $
 
 COMMENT=	monitor webpages for updates
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://thp.io/2008/urlwatch/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2019/05/23 13:17:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.92 2019/06/03 16:06:55 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
@@ -24,7 +24,7 @@ EXTRACT_SUFX =	.tar.xz
 
 # Mostly GPLv2 or later. Some files are less restrictive.
 # tools/pidl is GPLv3 or later. See COPYING.
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE = Yes
 
 cWANTLIB +=	bcg729 c gcrypt glib-2.0 gmodule-2.0 gnutls gpg-error
 cWANTLIB +=	m pcap spandsp z

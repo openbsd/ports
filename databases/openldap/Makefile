@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2019/02/05 20:35:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.169 2019/06/03 16:06:50 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -29,7 +29,7 @@ HOMEPAGE =	https://www.openldap.org/
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # OpenLDAP Public License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto ssl
 

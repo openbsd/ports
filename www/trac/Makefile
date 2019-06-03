@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2018/09/04 12:46:27 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2019/06/03 16:06:58 sthen Exp $
 
 COMMENT=	wiki and bug tracking system for software projects
 
@@ -18,7 +18,7 @@ MASTER_SITES=	https://ftp.edgewall.org/pub/trac/
 MODPY_SETUPTOOLS=	Yes
 
 # BSD
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=   Yes
 
 MODULES=	lang/python
 

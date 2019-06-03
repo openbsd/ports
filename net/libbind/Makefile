@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/08/11 10:27:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/06/03 16:06:53 sthen Exp $
 
 COMMENT=	BIND stub resolver library for special use cases
 
@@ -24,7 +24,7 @@ HOMEPAGE=	http://www.isc.org/software/libbind
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_ISC:=libbind/$V/}
 

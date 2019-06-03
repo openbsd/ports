@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/04 14:04:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/06/03 16:06:58 sthen Exp $
 
 COMMENT =	YAML-1.1 parser and emitter for PHP
 
@@ -10,7 +10,7 @@ CATEGORIES =	textproc
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # PHP
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += yaml-0
 

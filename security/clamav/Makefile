@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2019/05/29 14:17:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.128 2019/06/03 16:06:56 sthen Exp $
 
 COMMENT=	virus scanner
 DISTNAME=	clamav-0.101.2
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.clamav.net/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2/LGPL, with OpenSSL exemption
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += bz2 c crypto curl curses iconv json-c ltdl lzma m milter

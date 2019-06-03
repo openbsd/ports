@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2019/05/20 22:15:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2019/06/03 16:06:54 sthen Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
@@ -14,12 +14,12 @@ HOMEPAGE=	https://www.infradead.org/openconnect/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # LGPLv2.1 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c ffi gmp gnutls hogweed iconv idn2 intl lz4 lzma m
 WANTLIB += nettle p11-kit pthread tasn1 unistring xml2 z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/
 

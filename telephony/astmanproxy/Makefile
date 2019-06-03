@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/04/25 20:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/06/03 16:06:57 sthen Exp $
 
 COMMENT =	proxy for Asterisk Manager Interface
 DISTNAME =	astmanproxy-1.22pre081119
@@ -11,7 +11,7 @@ HOMEPAGE =	http://www.voip-info.org/tiki-index.php?page=AstManProxy
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c crypto pthread ssl
 

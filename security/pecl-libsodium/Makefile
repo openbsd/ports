@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/04/25 12:00:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/06/03 16:06:56 sthen Exp $
 
 COMMENT =	low-level encryption extension for PHP
 
@@ -10,7 +10,7 @@ CATEGORIES =	security
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # PHP
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += pthread sodium
 

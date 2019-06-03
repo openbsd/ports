@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/05/13 11:01:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2019/06/03 16:06:53 sthen Exp $
 
 COMMENT-main =	ARP scanning and fingerprinting tool
 COMMENT-mac =	MAC address vendor list
@@ -24,7 +24,7 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		oui-iab-$M.tar.xz:0
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB-main =		c pcap
 RUN_DEPENDS-main =	${BASE_PKGPATH},-mac

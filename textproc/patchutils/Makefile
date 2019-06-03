@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/06/02 10:51:56 schwarze Exp $
+# $OpenBSD: Makefile,v 1.5 2019/06/03 16:06:58 sthen Exp $
 
 COMMENT=	small tools to operate on patch files
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://cyberelk.net/tim/software/patchutils/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

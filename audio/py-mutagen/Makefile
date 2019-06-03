@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/04/28 20:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/06/03 16:06:50 sthen Exp $
 
 COMMENT =	Python module to handle audio metadata
 
@@ -17,7 +17,7 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 MASTER_SITES =	https://github.com/quodlibet/mutagen/releases/download/release-${MODPY_EGG_VERSION}/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVOR ?=
 FLAVORS =	python3

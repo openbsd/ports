@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/07/30 21:20:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/06/03 16:06:54 sthen Exp $
 
 COMMENT=	monitors the status of mirrors
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://people.cs.uu.nl/henkp/mirmon/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # free license, see LICENSE
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 

@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/01 20:24:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/06/03 16:06:58 sthen Exp $
 
 COMMENT=	pdf swiss army knife
 
-https://gitlab.com/pdftk-java/pdftk/-/archive/v3.0.3/pdftk-v3.0.3.tar.gz
 V=		v3.0.3
 DISTNAME=	pdftk-$V
 PKGNAME=	${DISTNAME:S/-v/-/}
@@ -14,22 +13,22 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 CATEGORIES=	textproc
 
 # GPLv2+ (main program), see ${WRKDIST}/license_gpl_pdftk/ for libraries
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
-HOMEPAGE =	https://gitlab.com/pdftk-java/
+HOMEPAGE=	https://gitlab.com/pdftk-java/
 
-MASTER_SITES =	https://gitlab.com/pdftk-java/pdftk/-/archive/$V/
-MASTER_SITES0 =	${MASTER_SITE_APACHE:=commons/lang/binaries/}
-MASTER_SITES1 =	https://www.bouncycastle.org/download/
-DISTFILES =	pdftk-$V.tar.gz \
+MASTER_SITES=	https://gitlab.com/pdftk-java/pdftk/-/archive/$V/
+MASTER_SITES0=	${MASTER_SITE_APACHE:=commons/lang/binaries/}
+MASTER_SITES1=	https://www.bouncycastle.org/download/
+DISTFILES=	pdftk-$V.tar.gz \
 		commons-lang3-3.8.1-bin.tar.gz:0 \
 		bcprov-jdk15on-160.jar:1
 
-MODULES =	java
-MODJAVA_VER =	1.8+
-MODJAVA_BUILD =	ant
+MODULES=	java
+MODJAVA_VER=	1.8+
+MODJAVA_BUILD=	ant
 
-RUN_DEPENDS +=	java/javaPathHelper
+RUN_DEPENDS+=	java/javaPathHelper
 
 post-extract:
 	mkdir ${WRKSRC}/lib

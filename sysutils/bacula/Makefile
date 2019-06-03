@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2019/05/30 11:14:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.140 2019/06/03 16:06:57 sthen Exp $
 
 # XXX building this port while a version is already installed on the
 # system will lead to unexpected hidden dependencies!!!
@@ -45,7 +45,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 # AGPLv3 with exception for OpenSSL (majority),
 # FDL (docs), LGPL (some libraries), and PD
 # http://www.bacula.org/7.0.x-manuals/en/main/Bacula_Copyright_Trademark_.html
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 LIB_DEPENDS=		devel/gettext,-runtime
 

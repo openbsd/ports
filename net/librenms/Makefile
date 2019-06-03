@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2019/05/28 14:18:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.92 2019/06/03 16:06:53 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
@@ -15,7 +15,7 @@ HOMEPAGE =	https://www.librenms.org/
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES0 =	https://spacehopper.org/mirrors/
 

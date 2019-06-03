@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/06/27 21:03:57 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/06/03 16:06:52 sthen Exp $
 
 COMMENT=		browser for a large lexical database of English
 
@@ -14,7 +14,7 @@ HOMEPAGE=		http://wordnet.princeton.edu/
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xft Xrender Xss c expat fontconfig
 WANTLIB += freetype m xcb z ${MODTK_WANTLIB}

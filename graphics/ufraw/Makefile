@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2019/05/20 22:15:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2019/06/03 16:06:51 sthen Exp $
 
 COMMENT=	read and manipulate raw images from digital cameras
 
 DISTNAME=	ufraw-0.22
-REVISION =	3
+REVISION=	3
 
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ufraw/}
@@ -12,7 +12,7 @@ HOMEPAGE=	http://ufraw.sourceforge.net/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 bz2 c cairo cfitsio exiv2
@@ -26,7 +26,7 @@ WANTLIB += png pthread ${COMPILER_LIBCXX} tiff z
 # don't remove unless you are sure:
 WANTLIB += lensfun
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=	devel/gettext,-tools
 

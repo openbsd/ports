@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/12/03 21:24:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/06/03 16:06:58 sthen Exp $
 
 COMMENT=	customizable navigation bar for trac's wiki#'
 
@@ -17,7 +17,7 @@ HOMEPAGE=	http://svn.ipd.uka.de/trac/javaparty/wiki/TracNav
 MASTER_SITES=		https://spacehopper.org/mirrors/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=   Yes
 
 RUN_DEPENDS=		www/trac
 

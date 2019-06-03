@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/18 19:46:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/06/03 16:06:52 sthen Exp $
 
 COMMENT=	classes to create and decode MIME messages in PHP
 
@@ -12,7 +12,7 @@ MODULES=	www/pear
 PKG_ARCH=	*
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES+=	 lang/php # MODPHP_BIN, for tests
 MODPHP_BUILDDEP= No

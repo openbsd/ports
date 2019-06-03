@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/22 19:59:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/06/03 16:06:55 sthen Exp $
 
 COMMENT=	IPsec-based VPN software (IKEv1/IKEv2) with XAUTH and EAP
 
@@ -22,7 +22,7 @@ HOMEPAGE=	https://www.strongswan.org/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} botan-2 bz2 c crypto execinfo gmp
 WANTLIB += lzma m z

@@ -1,36 +1,36 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/28 13:40:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/06/03 16:06:51 sthen Exp $
 
-COMMENT=		JVM-based scripting language for web apps (open-source CFML)
+COMMENT=	JVM-based scripting language for web apps (open-source CFML)
 
-V=			5.3.2.77
-DISTNAME=		lucee-$V
-EXTRACT_SUFX=		.war
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX}{$V}
+V=		5.3.2.77
+DISTNAME=	lucee-$V
+EXTRACT_SUFX=	.war
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{$V}
 
-CATEGORIES=		lang www
+CATEGORIES=	lang www
 
-HOMEPAGE=		https://lucee.org/
+HOMEPAGE=	https://lucee.org/
 
-MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =		http://release.lucee.org/rest/update/provider/war/
+MASTER_SITES=	http://release.lucee.org/rest/update/provider/war/
 
 # doesn't actually need tomcat to build, but listing it here avoids
 # wasting time on arch where it's unavailable
-BUILD_DEPENDS=		archivers/unzip \
-			${RUN_DEPENDS}
-RUN_DEPENDS=		www/tomcat/v9
-SUBST_VARS=		CATALINA_BASE
+BUILD_DEPENDS=	archivers/unzip \
+		${RUN_DEPENDS}
+RUN_DEPENDS=	www/tomcat/v9
+SUBST_VARS=	CATALINA_BASE
 
-NO_BUILD=		Yes
-NO_TEST=		Yes
-PKG_ARCH=		*
+NO_BUILD=	Yes
+NO_TEST=	Yes
+PKG_ARCH=	*
 
-CATALINA_BASE=		/var/tomcat
-PREFIX=			${CATALINA_BASE}
+CATALINA_BASE=	/var/tomcat
+PREFIX=		${CATALINA_BASE}
 
 do-extract:
 	mkdir ${WRKSRC}; cd ${WRKSRC}; unzip ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}

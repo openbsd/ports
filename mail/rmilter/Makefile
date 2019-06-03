@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/01/11 19:27:04 rpe Exp $
+# $OpenBSD: Makefile,v 1.8 2019/06/03 16:06:52 sthen Exp $
 
 COMMENT=	milter for rspamd (also supports clamav, rate-limiting, etc)
 
@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto glib-2.0 intl m milter opendkim pcre pthread ssl
 

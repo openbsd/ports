@@ -1,42 +1,42 @@
-# $OpenBSD: Makefile,v 1.59 2019/05/22 11:54:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.60 2019/06/03 16:06:55 sthen Exp $
 
-COMMENT=		SLang-based newsreader
+COMMENT=	SLang-based newsreader
 
-DISTNAME=		slrn-1.0.2
-REVISION=		2
-CATEGORIES=		news
+DISTNAME=	slrn-1.0.2
+REVISION=	2
+CATEGORIES=	news
 
-HOMEPAGE=		http://slrn.sourceforge.net/
+HOMEPAGE=	http://slrn.sourceforge.net/
 
-MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c crypto iconv intl m ssl slang
+WANTLIB=	c crypto iconv intl m ssl slang
 
-MASTER_SITES=		http://jedsoft.org/releases/slrn/ \
-			http://jedsoft.org/releases/slrn/old/
+MASTER_SITES=	http://jedsoft.org/releases/slrn/ \
+		http://jedsoft.org/releases/slrn/old/
 
-MAKE_ARGS+=		LDFLAGS="${LDFLAGS}"
+MAKE_ARGS+=	LDFLAGS="${LDFLAGS}"
 
-NO_TEST=		Yes
-BUILD_DEPENDS=		devel/gettext,-tools
-LIB_DEPENDS=		devel/gettext,-runtime \
-			devel/libslang
+NO_TEST=	Yes
+BUILD_DEPENDS=	devel/gettext,-tools
+LIB_DEPENDS=	devel/gettext,-runtime \
+		devel/libslang
 
-CONFIGURE_STYLE=	gnu
-BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS}
-AUTOCONF_VERSION=	2.69
-AUTOCONF_DIR=		${WRKSRC}/autoconf
-CONFIGURE_ARGS+=	--disable-inews \
-			--with-libiconv-prefix=${LOCALBASE} \
-			--with-ssl \
-			--with-slrnpull \
-			--enable-spool
-LDFLAGS=		-L${LOCALBASE}/lib -lm
-CONFIGURE_ENV=		LDFLAGS="${LDFLAGS}" CPPFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ARGS+=	--with-slang=${LOCALBASE}
+CONFIGURE_STYLE= gnu
+BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS}
+AUTOCONF_VERSION= 2.69
+AUTOCONF_DIR=	${WRKSRC}/autoconf
+CONFIGURE_ARGS+= --disable-inews \
+		--with-libiconv-prefix=${LOCALBASE} \
+		--with-ssl \
+		--with-slrnpull \
+		--enable-spool
+LDFLAGS=	-L${LOCALBASE}/lib -lm
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ARGS+= --with-slang=${LOCALBASE}
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autoconf
 

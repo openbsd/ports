@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2018/02/13 01:10:20 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2019/06/03 16:06:57 sthen Exp $
 
 MODULES +=	telephony/asterisk-sounds
 MODAS_NAME =	asterisk-extra-sounds
@@ -9,7 +9,7 @@ MODAS_VER =	1.5.2
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # CC-BY-SA
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 PKGDIR =        ${.CURDIR}/../pkg
 PLIST =         ${PKGDIR}/PLIST-${MODAS_LANG}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/03/11 22:53:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/06/03 16:06:54 sthen Exp $
 
 PKG_ARCH =		*
 
@@ -14,7 +14,7 @@ CATEGORIES =		net
 MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 NO_BUILD =		Yes
 NO_TEST =		Yes

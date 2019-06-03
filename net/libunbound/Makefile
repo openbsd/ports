@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/13 14:21:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/06/03 16:06:53 sthen Exp $
 
 COMMENT=	validating DNS resolver library
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://www.unbound.net/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += crypto event ssl
 

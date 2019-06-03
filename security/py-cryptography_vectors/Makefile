@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/04/28 20:51:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/06/03 16:06:56 sthen Exp $
 
 COMMENT=	test vectors for py-cryptography
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://cryptography.io/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # dual: BSD or Apache 2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_SETUPTOOLS= Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/09/17 16:43:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/06/03 16:06:50 sthen Exp $
 
 COMMENT=	multi-format tools and Python module for ReplayGain
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://bitbucket.org/fk/rgain
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 

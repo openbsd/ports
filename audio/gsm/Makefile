@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2018/05/09 21:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2019/06/03 16:06:50 sthen Exp $
 
 COMMENT=	GSM audio codec library and converter
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.quut.com/gsm/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # ISC-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

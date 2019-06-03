@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/19 11:26:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/06/03 16:06:51 sthen Exp $
 
 COMMENT=	communicate with embedded devices using CoAP (RFC 7252)
 
@@ -25,7 +25,7 @@ HOMEPAGE=	https://libcoap.net/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/09/04 12:46:22 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2019/06/03 16:06:57 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -15,7 +15,7 @@ HOMEPAGE=	https://www.flashrom.org/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c ftdi usb-1.0 usb z
 

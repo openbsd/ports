@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/02/27 21:47:38 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/06/03 16:06:50 sthen Exp $
 
 COMMENT-main =	Wireless Networking in the Developing World, English edition
 COMMENT-es =	Wireless Networking in the Developing World, Spanish edition
@@ -23,7 +23,7 @@ DISTNAME =	wndw
 CATEGORIES =	books net
 
 # Creative Commons Attribution-ShareAlike 3.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MULTI_PACKAGES =-main -es -fr -ar -pt -id -my
 

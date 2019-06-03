@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/09/24 20:28:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/06/03 16:06:55 sthen Exp $
 
 COMMENT=	simple RADIUS client library
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://radcli.github.io/radcli/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # recent code BSD, some old MERIT/Livingston
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  ffi gmp gnutls hogweed iconv idn2 intl nettle p11-kit pthread
 WANTLIB += tasn1 unistring z

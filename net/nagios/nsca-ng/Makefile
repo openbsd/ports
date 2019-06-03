@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/11/07 11:07:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/06/03 16:06:54 sthen Exp $
 
 COMMENT-main=	server to accept passive check results for Nagios/Icinga
 COMMENT-client=	client to send passive check results to Nagios/Icinga
@@ -15,7 +15,7 @@ HOMEPAGE=	https://www.nsca-ng.org/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c ev lib/eopenssl/crypto lib/eopenssl/ssl
 WANTLIB-main=	${WANTLIB} confuse

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/11/05 17:49:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/06/03 16:06:52 sthen Exp $
 
 COMMENT=	RRDtool frontend for Postfix statistics
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://mailgraph.schweikert.ch
 MAINTAINER=     Stuart Henderson <sthen@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	net/rrdtool \
 		devel/p5-File-Tail

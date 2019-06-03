@@ -1,35 +1,35 @@
-# $OpenBSD: Makefile,v 1.102 2019/05/20 22:15:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.103 2019/06/03 16:06:57 sthen Exp $
 
-COMMENT-main=		UPS monitoring program supporting many brands
-COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
-COMMENT-snmp=		driver for monitoring UPS via SNMP
-COMMENT-xml=		driver for monitoring UPS via XML/HTTP
+COMMENT-main=	UPS monitoring program supporting many brands
+COMMENT-cgi=	CGIs for monitoring Nut-based UPSs
+COMMENT-snmp=	driver for monitoring UPS via SNMP
+COMMENT-xml=	driver for monitoring UPS via XML/HTTP
 
-DISTNAME=		nut-2.7.4
+DISTNAME=	nut-2.7.4
 
-PKGNAME-main=		${DISTNAME}
-PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
-PKGNAME-snmp=		${DISTNAME:S/-/-snmp-/}
-PKGNAME-xml=		${DISTNAME:S/-/-xml-/}
+PKGNAME-main=	${DISTNAME}
+PKGNAME-cgi=	${DISTNAME:S/-/-cgi-/}
+PKGNAME-snmp=	${DISTNAME:S/-/-snmp-/}
+PKGNAME-xml=	${DISTNAME:S/-/-xml-/}
 
-REVISION-main=		6
-REVISION-snmp=		2
-REVISION-xml=		3
-REVISION-cgi=		3
+REVISION-main=	6
+REVISION-snmp=	2
+REVISION-xml=	3
+REVISION-cgi=	3
 
 SHARED_LIBS +=	upsclient            4.0      # .4.0
 SHARED_LIBS +=	nutclient            0.0      # .0.0
 SHARED_LIBS +=	nutscan              2.0      # .1.0
 
-CATEGORIES=		sysutils
-HOMEPAGE=		http://www.networkupstools.org/
+CATEGORIES=	sysutils
+HOMEPAGE=	http://www.networkupstools.org/
 
-MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+, some scripts (not packaged) are GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
 COMMON +=	c crypto pthread
 WANTLIB-main +=	${COMMON} ltdl m ssl ${COMPILER_LIBCXX} usb usb-1.0
@@ -40,34 +40,34 @@ WANTLIB-snmp +=	${COMMON} m netsnmp
 
 MASTER_SITES=		${HOMEPAGE}source/2.7/
 
-MODULES=		lang/python
-MODPY_RUNDEP=		No
+MODULES=	lang/python
+MODPY_RUNDEP=	No
 # if avahi is present at build time, avahi support is built in nut-scanner,
 # but it's dlopen()'d at runtime, so support is optional, so we don't list a
 # hard run dependency for this (to reduce deps in the common case).
-BUILD_DEPENDS+=		net/avahi
-BUILD_DEPENDS+=		textproc/asciidoc>=8.6.8 \
-			textproc/docbook-xsl
+BUILD_DEPENDS+=	net/avahi
+BUILD_DEPENDS+=	textproc/asciidoc>=8.6.8 \
+		textproc/docbook-xsl
 
-WEB_ROOT=		/var/www
-SUBST_VARS=		BASESYSCONFDIR WEB_ROOT
+WEB_ROOT=	/var/www
+SUBST_VARS=	BASESYSCONFDIR WEB_ROOT
 
-CONFIGURE_STYLE=	gnu
-SYSCONFDIR=		${BASESYSCONFDIR}/nut
-LDFLAGS+=		-L${LOCALBASE}/lib -pthread
-CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/nut \
-			--htmldir=${PREFIX}/share/doc/nut \
-			--includedir=${PREFIX}/include/nut \
-			--with-dev \
-			--with-doc=html-single \
-			--with-hal-libs="" \
-			--with-ssl \
-			--with-statepath=/var/db/nut \
-			--with-user=_ups \
-			--with-group=_ups \
-			--without-ipmi \
-			CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS}"
+CONFIGURE_STYLE= gnu
+SYSCONFDIR=	${BASESYSCONFDIR}/nut
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
+CONFIGURE_ARGS+= --datadir=${PREFIX}/share/nut \
+		--htmldir=${PREFIX}/share/doc/nut \
+		--includedir=${PREFIX}/include/nut \
+		--with-dev \
+		--with-doc=html-single \
+		--with-hal-libs="" \
+		--with-ssl \
+		--with-statepath=/var/db/nut \
+		--with-user=_ups \
+		--with-group=_ups \
+		--without-ipmi \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS}"
 
 PSEUDO_FLAVORS=		no_snmp no_xml
 FLAVOR?=

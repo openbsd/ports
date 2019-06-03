@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/11 10:35:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/06/03 16:06:55 sthen Exp $
 
 COMMENT=	privilege-separated letsencrypt client
 
@@ -13,7 +13,7 @@ MASTER_SITES=	${HOMEPAGE}snapshots/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 WANTLIB += c crypto ssl tls

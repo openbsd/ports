@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/17 14:15:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/06/03 16:06:55 sthen Exp $
 
 COMMENT=	graphical network traffic map
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.network-weathermap.com/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}files/
 

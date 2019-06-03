@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/10 21:13:28 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2019/06/03 16:06:55 sthen Exp $
 
 COMMENT =		SNMP statistics monitoring system
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://rtg.sourceforge.net/
 MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto fontconfig freetype gd iconv jpeg m mysqlclient_r
 WANTLIB += netsnmp png pthread tiff webp z

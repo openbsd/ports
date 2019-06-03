@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2019/05/31 10:25:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.120 2019/06/03 16:06:52 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.mutt.org/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 WANTLIB+=	c crypto curses iconv idn2 intl qdbm ssl unistring z

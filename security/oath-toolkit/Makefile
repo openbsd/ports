@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/06/29 09:58:56 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2019/06/03 16:06:56 sthen Exp $
 
 COMMENT-main=	toolkit for OATH/HOTP and TOTP
 COMMENT-pskc=	toolkit for RFC 6030 Portable Symmetric Key Container
@@ -21,7 +21,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH:=oath-toolkit/}
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # libraries: LGPLv2.1+, tools: GPLv3+
-PERMIT_PACKAGE_CDROM=	 Yes
+PERMIT_PACKAGE=	 Yes
 
 MULTI_PACKAGES=	-main -pskc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2018/11/07 11:00:29 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/06/03 16:06:56 sthen Exp $
 
 COMMENT?=	TLS/SSL library and tools
 
@@ -12,7 +12,7 @@ HOMEPAGE?=	https://www.openssl.org/
 MAINTAINER?=	Stuart Henderson <sthen@openbsd.org>
 
 # OpenSSL
-PERMIT_PACKAGE_CDROM?=	Yes
+PERMIT_PACKAGE?=	Yes
 
 MASTER_SITES?=	https://www.openssl.org/source/ \
 		https://www.openssl.org/source/old/${V:C/.$//}/ \

@@ -1,34 +1,34 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/20 20:52:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/06/03 16:06:57 sthen Exp $
 
-COMMENT=		manage and configure devices that support IPMI
+COMMENT=	manage and configure devices that support IPMI
 
-DISTNAME=		ipmitool-1.8.18
-REVISION=		1
-CATEGORIES=		sysutils
+DISTNAME=	ipmitool-1.8.18
+REVISION=	1
+CATEGORIES=	sysutils
 
-HOMEPAGE=		http://ipmitool.sourceforge.net/
+HOMEPAGE=	http://ipmitool.sourceforge.net/
 
-MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
-WANTLIB=		m curses edit crypto c
+WANTLIB=	m curses edit crypto c
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ipmitool/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ipmitool/}
 
-SEPARATE_BUILD=		Yes
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.69
-CONFIGURE_ARGS+=	--enable-intf-lan \
-			--disable-intf-usb \
-			--enable-intf-lanplus \
-			--enable-intf-serial \
-			--disable-intf-free \
-			--disable-intf-imb \
-			--disable-intf-lipmi \
-			--disable-intf-bmc \
-			--disable-intf-dummy
+SEPARATE_BUILD=	Yes
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.69
+CONFIGURE_ARGS+= --enable-intf-lan \
+		--disable-intf-usb \
+		--enable-intf-lanplus \
+		--enable-intf-serial \
+		--disable-intf-free \
+		--disable-intf-imb \
+		--disable-intf-lipmi \
+		--disable-intf-bmc \
+		--disable-intf-dummy
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=	--enable-intf-open

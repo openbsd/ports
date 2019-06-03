@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/26 21:33:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/06/03 16:06:55 sthen Exp $
 
 COMMENT=	live CLI display of interface bandwidth, using SNMP
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.tenox.tc/out/\#ttg
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c netsnmp
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2018/08/10 10:19:18 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2019/06/03 16:06:55 sthen Exp $
 
 COMMENT-gui =		enhanced TightVNC client GUI and wrappers
 COMMENT-main =		enhanced TightVNC client
@@ -20,7 +20,7 @@ HOMEPAGE =		http://www.karlrunge.com/x11vnc/ssvnc.html
 MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ssvnc/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2018/09/04 12:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2019/06/03 16:06:55 sthen Exp $
 
 COMMENT=	latency logging and graphing system
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://oss.oetiker.ch/smokeping/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 COMMON_DEPENDS=	devel/p5-Config-Grammar \
 		net/rrdtool \

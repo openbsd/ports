@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2019/05/26 14:49:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2019/06/03 16:06:53 sthen Exp $
 
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
 
@@ -38,7 +38,7 @@ SHARED_LIBS +=	socketpair                0.0 # 2.6
 HOMEPAGE =	https://icinga.com/products/icinga-2/
 
 # GPLv2+ with OpenSSL exemption
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_program_options-mt boost_regex-mt

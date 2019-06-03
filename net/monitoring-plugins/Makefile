@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/20 22:15:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/06/03 16:06:54 sthen Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -40,7 +40,7 @@ HOMEPAGE=	https://www.monitoring-plugins.org/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv intl pthread
 WANTLIB-main=	${WANTLIB} crypto m ssl

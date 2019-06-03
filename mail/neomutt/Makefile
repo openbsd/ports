@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/05/20 22:15:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2019/06/03 16:06:52 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://neomutt.org/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 WANTLIB+=	c crypto curses iconv idn2 intl ssl z

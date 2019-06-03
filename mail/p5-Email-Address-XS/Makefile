@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/06/20 16:14:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/06/03 16:06:52 sthen Exp $
 
 COMMENT=	parse and format RFC 5322 email addresses and groups
 
@@ -9,7 +9,7 @@ CATEGORIES=	mail
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

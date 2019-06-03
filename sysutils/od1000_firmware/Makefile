@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/04 12:46:23 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/06/03 16:06:57 sthen Exp $
 
 COMMENT=	firmware and flash tool for SOFTIRON OverDrive 1000
 
@@ -16,7 +16,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # UEFI firmware (Tianocore EDK2, Linaro OpenPlatformPkg): BSD
 # PIC32 firmware: unknown - @comment'ed in PLIST for now.
 # - revisit if it ever gets an update from 1.02.
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c usb-1.0
 

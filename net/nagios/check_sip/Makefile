@@ -1,26 +1,26 @@
-# $OpenBSD: Makefile,v 1.11 2015/12/03 21:24:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/06/03 16:06:54 sthen Exp $
 
-COMMENT=		Nagios plugin to check SIP
+COMMENT=	Nagios plugin to check SIP
 
-DISTNAME=		check_sip-20060929
-REVISION=		3
-CATEGORIES=		net
+DISTNAME=	check_sip-20060929
+REVISION=	3
+CATEGORIES=	net
 
-MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
-HOMEPAGE=		http://isle.wumpus.org/src/nagios/
-MASTER_SITES=		https://spacehopper.org/mirrors/
+HOMEPAGE=	http://isle.wumpus.org/src/nagios/
+MASTER_SITES=	https://spacehopper.org/mirrors/
 
 # Artistic License 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
-NO_BUILD=		Yes
-NO_TEST=		Yes
+NO_BUILD=	Yes
+NO_TEST=	Yes
 
 EXTRACT_SUFX=
-RUN_DEPENDS=		net/sipsak \
-			net/monitoring-plugins
-WRKDIST=		${WRKDIR}
+RUN_DEPENDS=	net/sipsak \
+		net/monitoring-plugins
+WRKDIST=	${WRKDIR}
 
 do-extract:
 	@cp ${DISTDIR}/${DISTNAME} ${WRKSRC}/check_sip

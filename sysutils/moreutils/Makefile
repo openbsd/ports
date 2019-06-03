@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/03/21 13:19:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/06/03 16:06:57 sthen Exp $
 
 COMMENT =	miscellaneous unix tools
 
@@ -15,7 +15,7 @@ HOMEPAGE =	https://joeyh.name/code/moreutils/
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	 Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB += c
 

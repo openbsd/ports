@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/02/15 22:30:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/06/03 16:06:56 sthen Exp $
 
 SHARED_LIBS +=  srtp2                     0.0 # 0.0
 
@@ -13,9 +13,9 @@ CATEGORIES=	security telephony
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE= gnu
 
 MAKE_FLAGS=	SHAREDLIBVERSION=${LIBsrtp2_VERSION}
 

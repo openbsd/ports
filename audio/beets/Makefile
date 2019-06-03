@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/05/31 13:51:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/06/03 16:06:50 sthen Exp $
 
 COMMENT =	CLI tools to manage music collections
 
@@ -11,7 +11,7 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 HOMEPAGE =	http://beets.io/
 
 # MIT
-PERMIT_PACKAGE_CDROM =  Yes
+PERMIT_PACKAGE =  Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes

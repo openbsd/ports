@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/28 13:39:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/06/03 16:06:54 sthen Exp $
 
 COMMENT =	module to interface the DNS resolver using the ldns library
 
@@ -10,7 +10,7 @@ CATEGORIES =	net
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB += c crypto idn ldns perl
 

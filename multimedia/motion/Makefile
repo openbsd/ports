@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/18 12:13:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/06/03 16:06:53 sthen Exp $
 
 V=		4.2.2
 COMMENT=	motion detection software for video
@@ -16,7 +16,7 @@ HOMEPAGE=	https://motion-project.github.io/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPL (according to source files, v2 only. website says v2+).
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += avcodec avdevice avformat avutil c intl jpeg m microhttpd
 WANTLIB += pthread sqlite3 swscale webp webpmux

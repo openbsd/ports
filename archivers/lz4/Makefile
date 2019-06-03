@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/04/24 10:12:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/06/03 16:06:50 sthen Exp $
 
 SHARED_LIBS +=	lz4                       3.0
 
@@ -15,7 +15,7 @@ HOMEPAGE=	https://fastcompression.blogspot.com/p/lz4.html
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # library: BSD, tools: GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

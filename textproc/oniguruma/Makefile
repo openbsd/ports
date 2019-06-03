@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/08 17:26:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/06/03 16:06:57 sthen Exp $
 
 COMMENT=	regular expressions library
 
@@ -15,7 +15,7 @@ HOMEPAGE=	https://github.com/kkos/oniguruma/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://github.com/kkos/oniguruma/releases/download/v$V/
 

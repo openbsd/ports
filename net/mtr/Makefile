@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2019/05/20 20:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2019/06/03 16:06:54 sthen Exp $
 
 COMMENT=	Matt's traceroute - network diagnostic tool#'
 
@@ -16,7 +16,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 HOMEPAGE=	https://www.bitwizard.nl/mtr/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE=	yes
 
 # diff for pledge(), not yet enabled
 WANTLIB += c m curses

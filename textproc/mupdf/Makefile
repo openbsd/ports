@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2019/05/12 16:07:03 jca Exp $
+# $OpenBSD: Makefile,v 1.86 2019/06/03 16:06:57 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
@@ -16,7 +16,7 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 # code: Affero v3 (UGH!)
 # font maps: Adobe (redist ok, see headers).
 # droid font: Apache.
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge(2)
 WANTLIB += X11 Xext c curl freetype harfbuzz jbig2dec jpeg m

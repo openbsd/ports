@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/11 15:31:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/06/03 16:06:50 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://acpica.org/
 MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # BSD-ish (or GPLv2 or Intel's own license: triple-licensed)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c pthread
 

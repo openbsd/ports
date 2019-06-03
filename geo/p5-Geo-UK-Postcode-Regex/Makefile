@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/05 12:08:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/06/03 16:06:51 sthen Exp $
 
 COMMENT=	regular expressions for handling British postcodes
 
@@ -8,7 +8,7 @@ DISTNAME=	Geo-UK-Postcode-Regex-0.017
 CATEGORIES=	geo
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 

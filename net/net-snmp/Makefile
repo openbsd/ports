@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2019/05/20 08:45:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.105 2019/06/03 16:06:54 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
@@ -28,11 +28,11 @@ HOMEPAGE=	http://www.net-snmp.org/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
-WANTLIB-main=		c crypto kvm m perl
+WANTLIB-main=	c crypto kvm m perl
 
-FLAVORS=		readonly
+FLAVORS=	readonly
 FLAVOR?=
 
 RUN_DEPENDS-tkmib=	net/net-snmp \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/04/18 17:27:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2019/06/03 16:06:53 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -35,7 +35,7 @@ HOMEPAGE=	http://www.freeradius.org/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2 - LGPLv2 - OpenSSL exemption
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE= gnu
 # Don't allow FR_LOCATE_DIR to use locate(1) to guess possible

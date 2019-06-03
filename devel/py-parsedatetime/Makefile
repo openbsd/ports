@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/28 20:51:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/06/03 16:06:51 sthen Exp $
 
 COMMENT=		parse human-readable date/time text
 
@@ -12,7 +12,7 @@ CATEGORIES=		devel
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 FLAVORS=		python3
 FLAVOR?=

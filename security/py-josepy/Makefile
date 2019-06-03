@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/06/03 16:06:56 sthen Exp $
 
 COMMENT=	Javascript Object Signing and Encryption (JOSE)
 
@@ -13,7 +13,7 @@ FLAVORS=	python3
 FLAVOR?=
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM= Yes
+PERMIT_PACKAGE= Yes
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 

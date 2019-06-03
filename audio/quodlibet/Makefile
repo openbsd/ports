@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/05/20 22:15:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/06/03 16:06:50 sthen Exp $
 
 COMMENT=	audio player and tagger for GTK+ with regex support
 
@@ -13,7 +13,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 HOMEPAGE=	https://quodlibet.readthedocs.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://github.com/quodlibet/quodlibet/releases/download/release-${MODPY_EGG_VERSION}/
 

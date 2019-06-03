@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2019/03/27 10:37:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2019/06/03 16:06:50 sthen Exp $
 
 COMMENT=	manage remote serial consoles via TCP/IP
 
@@ -12,7 +12,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 HOMEPAGE=	https://www.conserver.com/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c util
 

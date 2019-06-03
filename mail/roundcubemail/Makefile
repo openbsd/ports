@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2019/05/20 13:23:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.141 2019/06/03 16:06:52 sthen Exp $
 
 COMMENT=	imap4 webmail client
 
@@ -17,7 +17,7 @@ HOMEPAGE=	http://www.roundcube.net/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3+ with exceptions for skins & plugins
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://github.com/roundcube/roundcubemail/releases/download/$V/
 

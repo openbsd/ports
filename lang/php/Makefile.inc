@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.138 2019/06/03 13:43:27 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.139 2019/06/03 16:06:51 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -22,7 +22,7 @@ MASTER_SITES=		http://se.php.net/distributions/ \
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 MODPHP_CONFIG_PATH=	/var/www/conf
 

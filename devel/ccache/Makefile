@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/05/02 22:09:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2019/06/03 16:06:51 sthen Exp $
 
 COMMENT =	compiler cache
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://ccache.dev/
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	 Yes
+PERMIT_PACKAGE =	 Yes
 
 WANTLIB += c m z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2018/12/11 14:28:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2019/06/03 16:06:53 sthen Exp $
 
 COMMENT=	LLDP (802.1ab)/CDP/EDP/SONMP/FDP daemon and SNMP subagent
 
@@ -18,7 +18,7 @@ HOMEPAGE=	http://vincentbernat.github.com/lldpd/
 # Program: ISC. Bundled MIB is from IEEE 802.1AB-2005; "Users of this
 # standard may freely reproduce the MIB contained in this subclause so
 # that it can be used for its intended purpose."
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses event_core event_extra pthread readline
 

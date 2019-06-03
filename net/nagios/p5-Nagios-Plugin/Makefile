@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/11/29 23:16:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/06/03 16:06:54 sthen Exp $
 
 COMMENT=	helper routines for writing monitoring plugins
 
@@ -13,7 +13,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 HOMEPAGE=	https://github.com/monitoring-plugins/monitoring-plugin-perl
 
 # same as Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CPAN_AUTHOR=	NIERLEIN
 

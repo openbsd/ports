@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/10/03 13:36:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/06/03 16:06:55 sthen Exp $
 
 COMMENT=	pear class to talk to Sieve servers
 
@@ -10,7 +10,7 @@ MODULES=	www/pear
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	net/pear-Net-Socket \
 		security/pear-Auth-SASL

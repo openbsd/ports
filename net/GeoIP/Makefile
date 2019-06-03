@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2018/12/21 23:45:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2019/06/03 16:06:53 sthen Exp $
 
 COMMENT-main=	find the country where IP address/hostname originates from
 COMMENT-db=	GeoIP GeoLite database: IPv4/v6 address to country
@@ -27,7 +27,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # geoip-api-c: LGPLv2.1+
 # geolite DBs: CC BY-SA 4.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB-main += c
 

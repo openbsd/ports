@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/08/23 13:38:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/06/03 16:06:57 sthen Exp $
 
 COMMENT =	create PDF documents with perl
 
@@ -11,7 +11,7 @@ CATEGORIES =	textproc
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	textproc/p5-Font-TTF
 TEST_DEPENDS =	devel/p5-Test-Memory-Cycle

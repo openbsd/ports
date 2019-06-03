@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/08/26 19:37:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/06/03 16:06:54 sthen Exp $
 
 PKG_ARCH =	*
 
@@ -14,7 +14,7 @@ CATEGORIES =	net
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB =	perl
 

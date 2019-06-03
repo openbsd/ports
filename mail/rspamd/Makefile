@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2019/05/26 12:49:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2019/06/03 16:06:52 sthen Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://rspamd.com/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # Apache License 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto event glib-2.0 gthread-2.0 icudata icui18n icuuc
 WANTLIB += intl m magic pcre pthread sqlite3 ssl z

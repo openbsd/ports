@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/10/08 02:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/06/03 16:06:57 sthen Exp $
 
 MODULES +=	telephony/asterisk-sounds
 MODAS_NAME =	asterisk-moh-opsound
@@ -10,7 +10,7 @@ MODAS_INST =	share/asterisk/moh
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # CC-BY-SA
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVOR ?= wav
 

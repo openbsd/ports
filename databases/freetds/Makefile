@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2019/04/30 14:41:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2019/06/03 16:06:50 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -18,7 +18,7 @@ MASTER_SITES=	http://www.freetds.org/files/stable/ \
 		ftp://ftp.freetds.org/pub/freetds/stable/
 
 # LGPLv2+ (most things) GPLv2+ (fisql, tdspool) FDL (docs)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses ffi gmp gnutls hogweed iconv idn2 intl iodbc
 WANTLIB += iodbcinst nettle p11-kit pthread readline tasn1 unistring

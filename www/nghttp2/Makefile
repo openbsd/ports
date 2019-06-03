@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/04/19 13:26:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2019/06/03 16:06:58 sthen Exp $
 
 COMMENT=	library for HTTP/2
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://nghttp2.org/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://github.com/tatsuhiro-t/nghttp2/releases/download/v$V/
 

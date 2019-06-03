@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/04/28 20:51:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/06/03 16:06:56 sthen Exp $
 
 COMMENT=	cryptographic recipes and primitives for Python
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://cryptography.io/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # dual: BSD or Apache 2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${MODPY_WANTLIB} crypto pthread ssl
 

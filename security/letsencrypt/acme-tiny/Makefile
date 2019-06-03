@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/04/28 20:51:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/06/03 16:06:56 sthen Exp $
 
 COMMENT=	small 3rd-party letsencrypt client
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://github.com/diafygi/acme-tiny
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_PI=	No
 MODPY_SETUPTOOLS= No

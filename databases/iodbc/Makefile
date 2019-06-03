@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2018/06/08 12:41:29 stu Exp $
+# $OpenBSD: Makefile,v 1.44 2019/06/03 16:06:50 sthen Exp $
 
 COMMENT-main=		ODBC 3.x driver manager
 COMMENT-admin=		ODBC 3.x driver manager admin application
@@ -24,7 +24,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=iodbc/}
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # Dual licensed: BSD or LGPLv2
-PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE=	yes
 
 WANTLIB-main += c
 

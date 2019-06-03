@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/19 11:26:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/06/03 16:06:51 sthen Exp $
 
 COMMENT=	2D barcodes / DataMatrix creation tool
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://rdoeffinger.github.io/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c iconv intl popt z
 

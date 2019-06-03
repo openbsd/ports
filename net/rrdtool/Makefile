@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2019/05/28 13:59:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.116 2019/06/03 16:06:55 sthen Exp $
 
 COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool
@@ -24,7 +24,7 @@ MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
 # GPLv2+, with exemptions for use of the library with certain
 # named open-source licenses; see COPYRIGHT
-PERMIT_PACKAGE_CDROM=	 Yes
+PERMIT_PACKAGE=	 Yes
 
 USE_GMAKE=	Yes
 

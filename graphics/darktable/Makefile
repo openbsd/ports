@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2019/05/20 22:15:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.93 2019/06/03 16:06:51 sthen Exp $
 
 ONLY_FOR_ARCHS= i386 amd64 aarch64
 
@@ -17,7 +17,7 @@ HOMEPAGE=	http://www.darktable.org/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
 WANTLIB += GraphicsMagick ICE Iex IlmImf IlmThread X11 Xext Xrandr

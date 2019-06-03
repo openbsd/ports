@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/19 11:26:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/06/03 16:06:54 sthen Exp $
 
 # built but not actually installed at present; patches are needed for the
 # build so it seems easier to keep the SHARED_LIBS infrastructure here.
@@ -19,7 +19,7 @@ HOMEPAGE=	https://www.ntop.org/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += c crypto curl hiredis json-c m maxminddb mysqlclient

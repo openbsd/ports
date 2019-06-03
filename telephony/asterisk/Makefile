@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.301 2019/05/31 10:36:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.302 2019/06/03 16:06:57 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -24,8 +24,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # Asterisk with OpenSSL and OpenH323 and distribute the resulting binary
 # files." iLBC codec has BSD-like license terms, but also see patent
 # notes in codecs/ilbc/LICENSE_ADDENDUM.
-PERMIT_PACKAGE_CDROM=	patent licensing clauses
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB-main += ${MODGCC4_CPPWANTLIB}
 # XXX somehow COMPILER_LIBCXX doesn't get set to gcc libs?

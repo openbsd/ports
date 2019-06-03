@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/04/28 20:51:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/06/03 16:06:56 sthen Exp $
 
 COMMENT=	bcrypt blowfish password hashing for Python
 
@@ -12,7 +12,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 CATEGORIES=	security
 
 # Apache License 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += pthread ${MODPY_WANTLIB}
 

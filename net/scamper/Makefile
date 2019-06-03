@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2018/12/19 21:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/06/03 16:06:55 sthen Exp $
 
 SHARED_LIBS +=  scamperfile               2.0 # 0.0
 
@@ -15,7 +15,7 @@ HOMEPAGE =	https://www.caida.org/tools/measurement/scamper/
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	 Yes
+PERMIT_PACKAGE =	 Yes
 
 WANTLIB += c crypto m ssl pthread
 

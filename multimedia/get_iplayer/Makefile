@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2019/02/27 14:23:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.124 2019/06/03 16:06:52 sthen Exp $
 
 COMMENT=		download/stream programmes from BBC iPlayer
 
@@ -11,7 +11,7 @@ CATEGORIES=		multimedia
 HOMEPAGE=		http://www.infradead.org/get_iplayer/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 

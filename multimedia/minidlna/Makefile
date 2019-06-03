@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2019/06/03 16:06:52 sthen Exp $
 
 COMMENT=	lightweight DLNA/UPnP-AV media server (aka ReadyMedia)
 
@@ -18,7 +18,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 HOMEPAGE=	http://sourceforge.net/projects/minidlna/
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += FLAC avformat avutil c exif iconv id3tag intl jpeg
 WANTLIB += ogg pthread sqlite3 vorbis

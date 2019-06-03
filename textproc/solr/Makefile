@@ -1,32 +1,32 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/29 21:28:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/06/03 16:06:58 sthen Exp $
 
-COMMENT=		full-text search engine based on Lucene
+COMMENT=	full-text search engine based on Lucene
 
-V=			8.1.1
-DISTNAME=		solr-$V
-EXTRACT_SUFX=		.tgz
+V=		8.1.1
+DISTNAME=	solr-$V
+EXTRACT_SUFX=	.tgz
 
-PKG_ARCH=		*
+PKG_ARCH=	*
 
-CATEGORIES=		textproc
+CATEGORIES=	textproc
 
-HOMEPAGE=		https://lucene.apache.org/solr/
+HOMEPAGE=	https://lucene.apache.org/solr/
 
-MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_APACHE:=lucene/solr/$V/}
+MASTER_SITES=	${MASTER_SITE_APACHE:=lucene/solr/$V/}
 
-MODULES=		java
-MODJAVA_VER=		1.8+
-SUBST_VARS=		V
-RUN_DEPENDS=		shells/bash \
-			java/javaPathHelper
+MODULES=	java
+MODJAVA_VER=	1.8+
+SUBST_VARS=	V
+RUN_DEPENDS=	shells/bash \
+		java/javaPathHelper
 
-NO_TEST=		Yes
-NO_BUILD=		Yes
+NO_TEST=	Yes
+NO_BUILD=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/solr

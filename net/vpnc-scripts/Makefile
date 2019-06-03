@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/09/19 16:42:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/06/03 16:06:55 sthen Exp $
 
 COMMENT=	connect scripts for use with vpnc and openconnect
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.infradead.org/openconnect/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://git.infradead.org/users/dwmw2/vpnc-scripts.git/snapshot/
 WRKDIST=	${WRKDIR}/vpnc-scripts-${DISTNAME:C/([0-9a-f]{7}).*/\1/}

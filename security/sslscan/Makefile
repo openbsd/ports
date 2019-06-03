@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/03/03 15:14:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/06/03 16:06:56 sthen Exp $
 
 COMMENT=	SSL port scanner
 
@@ -15,7 +15,7 @@ HOMEPAGE=	https://github.com/rbsec/sslscan
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 FLAVORS=	openssl
 FLAVOR?=

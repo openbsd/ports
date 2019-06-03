@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/10/10 08:32:04 kirby Exp $
+# $OpenBSD: Makefile,v 1.17 2019/06/03 16:06:51 sthen Exp $
 
 COMMENT =		library for processing panoramic images
 DISTNAME =		libpano13-2.9.19
@@ -14,7 +14,7 @@ HOMEPAGE =		http://panotools.sourceforge.net/
 MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c jpeg png tiff z
 

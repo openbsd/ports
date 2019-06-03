@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/01/29 23:05:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/06/03 16:06:56 sthen Exp $
 
 COMMENT=	transparent and scalable SSL/TLS interception
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://www.roe.ch/SSLsplit
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # SSLsplit: BSD, khash.h (header-based library): MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto event_core event_extra event_openssl event_pthreads
 WANTLIB += net pcap pthread ssl

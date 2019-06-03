@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/07/30 21:14:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/06/03 16:06:56 sthen Exp $
 
 COMMENT=	tools for use with PC/SC drivers, cards, readers
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://ludovic.rousseau.free.fr/softwares/pcsc-tools/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pcsclite pthread
 

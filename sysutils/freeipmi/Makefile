@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/05/20 22:15:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2019/06/03 16:06:57 sthen Exp $
 
 COMMENT=	IPMI library and tools (in- and out-of-band)
 
@@ -17,7 +17,7 @@ HOMEPAGE=	https://www.gnu.org/software/freeipmi/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c gcrypt gpg-error iconv intl m pthread
 

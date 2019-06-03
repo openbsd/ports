@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/06/03 16:06:57 sthen Exp $
 
 COMMENT=	filter files for IP address matches
 
@@ -14,7 +14,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

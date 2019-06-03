@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2019/05/29 12:16:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.190 2019/06/03 16:06:51 sthen Exp $
 
 COMMENT=		image processing tools
 
@@ -23,7 +23,7 @@ MASTER_SITES=		https://www.imagemagick.org/download/releases/ \
 			ftp://sunsite.icm.edu.pl/packages/ImageMagick/
 
 # http://www.imagemagick.org/script/license.php
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xdmcp Xext Xt bz2
 WANTLIB += c djvulibre expat fftw3 fontconfig freetype iconv jasper

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/02 14:04:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/06/03 16:06:50 sthen Exp $
 
 COMMENT=	minimalistic C client for Redis
 
@@ -14,7 +14,7 @@ CATEGORIES=	databases devel
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 LIBV=		HIREDIS_MAJOR=${LIBhiredis_VERSION:R} \
 		HIREDIS_MINOR=${LIBhiredis_VERSION:E} \

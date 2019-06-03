@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2019/05/20 22:15:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.190 2019/06/03 16:06:51 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -22,7 +22,7 @@ HOMEPAGE=	https://www.vim.org/
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # donation-ware
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c curses iconv intl m
 
