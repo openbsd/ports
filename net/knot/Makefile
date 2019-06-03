@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2019/05/20 22:15:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2019/06/03 22:32:23 jca Exp $
 
 COMMENT =		authoritative DNS server
 
 DISTNAME =		knot-2.8.1
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=	dnssec               2.0      # .7.0
 SHARED_LIBS +=	knot                 5.0      # .9.0
@@ -26,7 +26,7 @@ MASTER_SITES =		https://secure.nic.cz/files/knot-dns/
 EXTRACT_SUFX =		.tar.xz
 
 # atomics
-COMPILER =		base-clang ports-gcc ports-clang
+COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 BUILD_DEPENDS =		devel/bison
@@ -41,8 +41,6 @@ CONFIGURE_ARGS +=	--with-storage=${LOCALSTATEDIR}/db/knot \
 			--with-libidn \
 			--disable-dnstap \
 			--disable-maxminddb
-# Disable workaround for old clang versions.
-CONFIGURE_ARGS +=	--enable-fastparser=force
 
 CONFIGURE_ENV =		ac_cv_path_PDFLATEX="false" \
 			ac_cv_path_SPHINXBUILD="false" \
@@ -57,3 +55,13 @@ post-install:
 	mv ${WRKINST}/etc/knot/ ${PREFIX}/share/examples/knot/
 
 .include <bsd.port.mk>
+
+.if ${CHOSEN_COMPILER} == "ports-gcc"
+# gcc-8.3.0 uses too much memory to build the fast zone parser
+# (at least on sparc64)
+CONFIGURE_ARGS +=	--disable-fastparser
+.else
+# Old clang versions choked when building the fast zone parser,
+# force-enable it here.
+CONFIGURE_ARGS +=	--enable-fastparser=force
+.endif
