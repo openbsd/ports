@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.912 2019/06/03 23:03:35 jturner Exp $
+# $OpenBSD: Makefile,v 1.913 2019/06/03 23:08:01 jturner Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -112,6 +112,7 @@
      SUBDIR += nghttp2
      SUBDIR += nginx
      SUBDIR += nostromo
+     SUBDIR += openradtool
      SUBDIR += otter-browser
      SUBDIR += p5-Alien-Tidyp
      SUBDIR += p5-Any-URI-Escape
