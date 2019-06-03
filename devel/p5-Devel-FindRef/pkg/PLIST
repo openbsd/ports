@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/05/24 08:46:08 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/06/03 19:19:39 espie Exp $
+@conflict Devel-FindRef-1.460
 ${P5ARCH}/Devel/
 ${P5ARCH}/Devel/FindRef.pm
 ${P5ARCH}/auto/
