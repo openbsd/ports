@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/06/01 20:00:01 kn Exp $
+# $OpenBSD: Makefile,v 1.5 2019/06/03 06:08:52 ajacoutot Exp $
 
 COMMENT =	Unicorn CPU emulator engine
 
 MODPY_EGG_VERSION =	1.0.1
 DISTNAME =	unicorn-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
