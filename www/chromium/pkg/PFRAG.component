@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.component,v 1.2 2019/05/01 10:58:37 robert Exp $
+@comment $OpenBSD: PFRAG.component,v 1.3 2019/06/03 15:59:52 robert Exp $
 chrome/libVkICD_mock_icd.so
 chrome/libVkLayer_core_validation.so
 chrome/libVkLayer_object_lifetimes.so
@@ -11,18 +11,19 @@ chrome/libanimation.so
 chrome/libapdu.so
 chrome/libaura.so
 chrome/libaura_extra.so
+chrome/libauthenticator_test_mojo_bindings_shared.so
 chrome/libbase.so
 chrome/libbase_i18n.so
 chrome/libbindings.so
 chrome/libbindings_base.so
-chrome/libblink_android_mojo_bindings_shared.so
 chrome/libblink_common.so
 chrome/libblink_controller.so
 chrome/libblink_core.so
-chrome/libblink_core_mojo_bindings_shared.so
 chrome/libblink_embedded_frame_sink_mojo_bindings_shared.so
+chrome/libblink_features.so
 chrome/libblink_modules.so
 chrome/libblink_mojo_bindings_shared.so
+chrome/libblink_mojom_broadcastchannel_bindings_shared.so
 chrome/libblink_platform.so
 chrome/libbluetooth.so
 chrome/libboringssl.so
@@ -40,6 +41,7 @@ chrome/libcc_paint.so
 chrome/libcdm_manager.so
 chrome/libcertificate_matching.so
 chrome/libchrome_features.so
+chrome/libchrome_zlib.so
 chrome/libchromium_sqlite3.so
 chrome/libclient.so
 chrome/libcloud_policy_proto_generated_compile.so
@@ -139,7 +141,7 @@ chrome/libmessage_center.so
 chrome/libmessage_support.so
 chrome/libmetrics_cpp.so
 chrome/libmidi.so
-chrome/libmirclient.so.9
+@bin chrome/libmirclient.so.9
 chrome/libmirroring_service.so
 chrome/libmojo_base_lib.so
 chrome/libmojo_base_mojom.so
@@ -207,9 +209,6 @@ chrome/libshared_memory_support.so
 chrome/libshell_dialogs.so
 chrome/libskia.so
 chrome/libsnapshot.so
-chrome/libspeech_recognition_error_code_mojom.so
-chrome/libspeech_recognition_error_code_mojom_blink.so
-chrome/libspeech_recognition_error_code_mojom_shared.so
 chrome/libsql.so
 chrome/libstartup_tracing.so
 chrome/libstorage_browser.so
@@ -227,7 +226,9 @@ chrome/libui_base.so
 chrome/libui_base_clipboard.so
 chrome/libui_base_clipboard_types.so
 chrome/libui_base_features.so
+chrome/libui_base_idle.so
 chrome/libui_base_ime.so
+chrome/libui_base_ime_init.so
 chrome/libui_base_ime_linux.so
 chrome/libui_base_ime_types.so
 chrome/libui_base_x.so

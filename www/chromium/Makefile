@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.434 2019/06/01 18:03:30 robert Exp $
+# $OpenBSD: Makefile,v 1.435 2019/06/03 15:59:52 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -205,7 +205,8 @@ do-configure:
 		gen --args="${GN_ARGS}" out/${BUILDTYPE}
 
 pre-build:
-	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py
+	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
+		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py
 	
 do-build:
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
