@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/20 22:15:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/06/03 05:19:32 rsadowski Exp $
 
 # Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -7,6 +7,7 @@ COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 
 VERSION =	5.3.2
 DISTNAME =	kdevelop-${VERSION}
+REVISION =	0
 
 HOMEPAGE =	https://www.kdevelop.org/
 
@@ -37,13 +38,13 @@ WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Notifications
 WANTLIB += KF5NotifyConfig KF5Package KF5Parts KF5Plasma KF5Purpose
 WANTLIB += KF5PurposeWidgets KF5Runner KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5TextEditor KF5TextWidgets KF5ThreadWeaver KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Help Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Sql Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets
-WANTLIB += Qt5Xml apr-1 aprutil-1 c clang kasten3controllers kasten3core
-WANTLIB += kasten3gui kasten3okteta1controllers kasten3okteta1core
-WANTLIB += kasten3okteta1gui komparediff2 m okteta2core okteta2gui
-WANTLIB += svn_client-1 svn_fs-1 svn_ra-1 svn_repos-1 svn_subr-1
+WANTLIB += KF5WindowSystem KF5XmlGui Kasten4Controllers Kasten4Core
+WANTLIB += Kasten4Gui Kasten4Okteta2Controllers Kasten4Okteta2Core
+WANTLIB += Kasten4Okteta2Gui Okteta3Core Okteta3Gui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Help Qt5Network Qt5Qml Qt5Quick
+WANTLIB += Qt5QuickWidgets Qt5Sql Qt5Test Qt5WebKit Qt5WebKitWidgets
+WANTLIB += Qt5Widgets Qt5Xml apr-1 aprutil-1 c clang komparediff2
+WANTLIB += m svn_client-1 svn_fs-1 svn_ra-1 svn_repos-1 svn_subr-1
 WANTLIB += svn_wc-1
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${VERSION}/src/}
@@ -96,11 +97,11 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/subversion \
 		x11/grantlee-qt5 \
 		x11/kde-applications/libkomparediff2 \
-		x11/kde-applications/okteta \
+		x11/kde-applications/okteta>=0.26.1v0 \
 		x11/qt5/qttools \
 		x11/qt5/qtwebkit
 
-CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngineWidgets=true
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngineWidgets=ON
 
 TEST_IS_INTERACTIVE =	X11
 
