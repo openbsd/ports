@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: show-reverse-deps,v 1.5 2018/12/19 15:29:47 espie Exp $
+# $OpenBSD: show-reverse-deps,v 1.6 2019/06/04 16:05:52 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -21,6 +21,7 @@
 # actually doing it.
 # we just require a few more views for that.
 
+set -e
 if [ $# -eq 0 ]
 then
     echo 2>&1 "Usage: show-reverse-deps path [sqlite_db]"

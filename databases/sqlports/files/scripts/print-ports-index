@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: print-ports-index,v 1.10 2019/01/09 15:46:20 espie Exp $
+# $OpenBSD: print-ports-index,v 1.11 2019/06/04 16:05:52 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -16,6 +16,7 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 # recreate index file, identical to /usr/ports/INDEX
+set -e
 
 if [ $# -ge 1 ]
 then
