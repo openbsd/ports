@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2019/05/20 22:15:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2019/06/04 14:29:30 sthen Exp $
 
 PORTROACH=	skipv:0.8.5
 
 COMMENT=	MP3 technical info viewer and ID3 1.x tag editor
 
 DISTNAME=	mp3info-0.8.5a
-REVISION=	13
+REVISION=	14
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.ibiblio.org/mp3info/
@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/sound/mp3-utils/mp3info/}
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c ncurses
+WANTLIB=	c curses
 
 EXTRACT_SUFX=	.tgz
 

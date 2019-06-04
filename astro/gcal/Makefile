@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/20 22:15:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/06/04 14:29:30 sthen Exp $
 
 COMMENT =		calculate and print calendars
 
 DISTNAME =		gcal-3.6.3
-REVISION =		2
+REVISION =		3
 CATEGORIES =		astro
 
 HOMEPAGE =		https://www.gnu.org/software/gcal/
@@ -18,7 +18,7 @@ MASTER_SITES =		${MASTER_SITE_GNU:=gcal/}
 BUILD_DEPENDS =		devel/gettext,-tools
 LIB_DEPENDS =		devel/gettext,-runtime
 
-WANTLIB =		c iconv intl m ncurses
+WANTLIB =		c iconv intl m curses
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-easc
