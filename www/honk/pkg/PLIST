@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/05/02 05:03:08 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/06/04 02:41:50 abieber Exp $
 @newgroup _honk:833
 @newuser _honk:833:_honk:daemon:Honk User:${VARBASE}/honk:/sbin/nologin
 @rcscript ${RCDIR}/honk
@@ -23,6 +23,8 @@ share/examples/honk/
 share/examples/honk/schema.sql
 @sample ${VARBASE}/honk/schema.sql
 share/examples/honk/views/
+share/examples/honk/views/account.html
+@sample ${VARBASE}/honk/views/account.html
 share/examples/honk/views/combos.html
 @sample ${VARBASE}/honk/views/combos.html
 share/examples/honk/views/header.html
