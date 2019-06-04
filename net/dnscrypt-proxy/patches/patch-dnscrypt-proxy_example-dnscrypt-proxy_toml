@@ -1,4 +1,4 @@
-$OpenBSD: patch-dnscrypt-proxy_example-dnscrypt-proxy_toml,v 1.3 2019/04/16 15:26:11 bket Exp $
+$OpenBSD: patch-dnscrypt-proxy_example-dnscrypt-proxy_toml,v 1.4 2019/06/04 10:02:45 bket Exp $
 
 Index: dnscrypt-proxy/example-dnscrypt-proxy.toml
 --- dnscrypt-proxy/example-dnscrypt-proxy.toml.orig
@@ -12,7 +12,7 @@ Index: dnscrypt-proxy/example-dnscrypt-proxy.toml
  
  
  ## Require servers (from static + remote sources) to satisfy specific properties
-@@ -497,7 +497,7 @@ cache_neg_max_ttl = 600
+@@ -514,7 +514,7 @@ cache_neg_max_ttl = 600
  
    [sources.'public-resolvers']
    urls = ['https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v2/public-resolvers.md', 'https://download.dnscrypt.info/resolvers-list/v2/public-resolvers.md']
