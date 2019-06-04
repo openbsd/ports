@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1469 2019/05/31 21:27:03 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1470 2019/06/04 13:34:10 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -505,7 +505,7 @@ PERMIT_DISTFILES_FTP ?= Yes
 PERMIT_DISTFILES_FTP ?= Yes
 .  endif
 PERMIT_PACKAGE = ${PERMIT_PACKAGE_FTP}
-PERMIT_DISTILES = ${PERMIT_DISTFILES_FTP}
+PERMIT_DISTFILES = ${PERMIT_DISTFILES_FTP}
 .endif
 .if !defined(PERMIT_PACKAGE_FTP) || !defined(PERMIT_DISTFILES_FTP)
 ERRORS += "The licensing info for ${FULLPKGNAME} is incomplete."
