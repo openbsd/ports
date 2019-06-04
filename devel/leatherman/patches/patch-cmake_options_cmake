@@ -1,0 +1,16 @@
+$OpenBSD: patch-cmake_options_cmake,v 1.1 2019/06/04 15:22:32 jca Exp $
+
+Force-disable the use of -Werror.  Since options.cmake is installed and
+used by consumers (eg sysutils/facter) it's not enough to
+pass -DENABLE_CXX_WERROR=Off when building leatherman.
+
+Index: cmake/options.cmake
+--- cmake/options.cmake.orig
++++ cmake/options.cmake
+@@ -1,5 +1,5 @@
+ include(leatherman)
+-defoption(ENABLE_CXX_WERROR "Enables the -Werror compiler option" ON)
++defoption(ENABLE_CXX_WERROR "Enables the -Werror compiler option" OFF)
+ defoption(COVERALLS "Generate code coverage using Coveralls.io" OFF)
+ defoption(BOOST_STATIC "Use Boost's static libraries" OFF)
+ defoption(CURL_STATIC "Use curl's static libraries" OFF)
