@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/03/04 04:28:57 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/06/05 03:01:47 bcallah Exp $
 bin/ponyc
 include/pony/
 include/pony.h
@@ -217,9 +217,12 @@ lib/pony/${GH_TAGNAME}/packages/promises/fulfill.pony
 lib/pony/${GH_TAGNAME}/packages/promises/promise.pony
 lib/pony/${GH_TAGNAME}/packages/random/
 lib/pony/${GH_TAGNAME}/packages/random/_test.pony
+lib/pony/${GH_TAGNAME}/packages/random/benchmarks/
+lib/pony/${GH_TAGNAME}/packages/random/benchmarks/main.pony
 lib/pony/${GH_TAGNAME}/packages/random/dice.pony
 lib/pony/${GH_TAGNAME}/packages/random/mt.pony
 lib/pony/${GH_TAGNAME}/packages/random/random.pony
+lib/pony/${GH_TAGNAME}/packages/random/splitmix64.pony
 lib/pony/${GH_TAGNAME}/packages/random/xoroshiro.pony
 lib/pony/${GH_TAGNAME}/packages/random/xorshift.pony
 lib/pony/${GH_TAGNAME}/packages/regex/

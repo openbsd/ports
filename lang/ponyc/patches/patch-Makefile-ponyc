@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile,v 1.3 2019/03/23 13:52:06 bcallah Exp $
+$OpenBSD: patch-Makefile-ponyc,v 1.1 2019/06/05 03:01:47 bcallah Exp $
 
 Remove hardcoded -O3 and -Werror flags.
 Remove -march and -mtune flags.
 
-Index: Makefile
---- Makefile.orig
-+++ Makefile
-@@ -106,9 +106,9 @@ else
+Index: Makefile-ponyc
+--- Makefile-ponyc.orig
++++ Makefile-ponyc
+@@ -108,9 +108,9 @@ else
  endif
  
  LIB_EXT ?= a
@@ -18,7 +18,7 @@ Index: Makefile
  AR_FLAGS ?= rcs
  ALL_CFLAGS = -std=gnu11 -fexceptions \
    -DPONY_VERSION=\"$(tag)\" -DLLVM_VERSION=\"$(llvm_version)\" \
-@@ -201,8 +201,8 @@ ifdef config
+@@ -225,8 +225,8 @@ ifdef config
  endif
  
  ifeq ($(config),release)
@@ -29,7 +29,7 @@ Index: Makefile
  
    ifeq ($(lto),yes)
      BUILD_FLAGS += -flto -DPONY_USE_LTO
-@@ -827,7 +827,7 @@ $($(1))/libponyrt.bc: $(depends) $(bcfiles)
+@@ -858,7 +858,7 @@ $($(1))/libponyrt.bc: $(depends) $(bcfiles)
  	@echo 'Generating bitcode for libponyrt'
  	$(SILENT)$(LLVM_LINK) -o $$@ $(bcfiles)
      ifeq ($(config),release)

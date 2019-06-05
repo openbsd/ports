@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/03/23 13:52:06 bcallah Exp $
+# $OpenBSD: Makefile,v 1.8 2019/06/05 03:01:47 bcallah Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386
 
@@ -7,13 +7,13 @@ CATEGORIES =	lang
 
 GH_ACCOUNT =	ponylang
 GH_PROJECT =	ponyc
-GH_TAGNAME =	0.28.0
+GH_TAGNAME =	0.28.1
 
 HOMEPAGE =	https://www.ponylang.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # Also links -lLLVM-7.0
 WANTLIB += ${COMPILER_LIBCXX} c curses execinfo m z
@@ -29,7 +29,7 @@ LIB_DEPENDS =	devel/libexecinfo
 RUN_DEPENDS =	devel/llvm>=7.0,<7.1
 
 USE_GMAKE =	Yes
-MAKE_ENV =	verbose=true default_pic=true \
+MAKE_ENV =	verbose=true \
 		LLVM_CONFIG="${LOCALBASE}/bin/llvm-config"
 
 .if ${MACHINE_ARCH:Marm} || ${MACHINE_ARCH:Mi386}
