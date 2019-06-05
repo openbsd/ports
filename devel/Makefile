@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1863 2019/06/02 22:55:29 kn Exp $
+# $OpenBSD: Makefile,v 1.1864 2019/06/05 19:49:40 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1353,6 +1353,8 @@
      SUBDIR += py-construct,python3
      SUBDIR += py-contextlib2
      SUBDIR += py-contextlib2,python3
+     SUBDIR += py-cooldict
+     SUBDIR += py-cooldict,python3
      SUBDIR += py-country
      SUBDIR += py-country,python3
      SUBDIR += py-coverage
@@ -1534,6 +1536,8 @@
      SUBDIR += py-pbr
      SUBDIR += py-pbr,python3
      SUBDIR += py-peak-rules
+     SUBIDR += py-pefile
+     SUBIDR += py-pefile,python3
      SUBDIR += py-pexpect
      SUBDIR += py-pexpect,python3
      SUBDIR += py-pip
