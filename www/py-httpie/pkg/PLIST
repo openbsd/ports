@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/06/05 11:27:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/06/05 13:26:58 sthen Exp $
 bin/http
 lib/python${MODPY_VERSION}/site-packages/httpie/
 lib/python${MODPY_VERSION}/site-packages/httpie-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -63,3 +63,5 @@ lib/python${MODPY_VERSION}/site-packages/httpie/plugins/builtin.py
 lib/python${MODPY_VERSION}/site-packages/httpie/plugins/manager.py
 lib/python${MODPY_VERSION}/site-packages/httpie/sessions.py
 lib/python${MODPY_VERSION}/site-packages/httpie/utils.py
+share/doc/httpie/
+share/doc/httpie/README.rst
