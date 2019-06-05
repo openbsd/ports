@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/15 12:04:42 kmos Exp $
+# $OpenBSD: Makefile,v 1.13 2019/06/05 11:27:51 sthen Exp $
 
 COMMENT =	command-line HTTP client
 
-MODPY_EGG_VERSION =	0.9.8
+MODPY_EGG_VERSION =	1.0.2
 GH_TAGNAME =	${MODPY_EGG_VERSION}
 GH_ACCOUNT =	jkbrzt
 GH_PROJECT =	httpie
 DISTNAME =	httpie-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	www net
 
-HOMEPAGE =	http://httpie.org
+HOMEPAGE =	https://httpie.org
+MAINTAINER =	Paco Esteban <paco@onna.be>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
