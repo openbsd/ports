@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: telegraf.rc,v 1.1.1.1 2018/12/18 19:31:28 landry Exp $
+# $OpenBSD: telegraf.rc,v 1.2 2019/06/05 14:27:02 landry Exp $
 
 daemon="${TRUEPREFIX}/bin/telegraf"
 daemon_user="_telegraf"
@@ -9,5 +9,10 @@ daemon_user="_telegraf"
 
 rc_bg=YES
 rc_reload=NO
+
+rc_start() {
+	${rcexec} "${daemon} ${daemon_flags} 2>&1 | \
+	logger -p daemon.info -t telegraf"
+}
 
 rc_cmd $1
