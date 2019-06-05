@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2019/04/28 20:51:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/06/05 05:44:54 rpointel Exp $
 
 COMMENT =	Z3 theorem prover
 
-VERSION =	4.8.4
-DISTNAME =	z3-${VERSION}
-REVISION =	1
+VERSION =	4.8.5
+DISTNAME =	Z3-${VERSION}
+PKGNAME =	${DISTNAME:L}
 
 GH_ACCOUNT =	Z3Prover
 GH_PROJECT =	z3
 
-SHARED_LIBS =	z3			1.0
+SHARED_LIBS =	z3			2.0 # 4.8
 
 CATEGORIES =	math
 
