@@ -1,10 +1,11 @@
-$OpenBSD: patch-garglk_launchgtk_c,v 1.2 2013/08/22 20:06:50 sthen Exp $
+$OpenBSD: patch-garglk_launchgtk_c,v 1.3 2019/06/05 12:54:03 sthen Exp $
 
 Remove Linux'ism to figure out the libexec dir.
 
---- garglk/launchgtk.c.orig	Thu Aug 22 20:12:01 2013
-+++ garglk/launchgtk.c	Thu Aug 22 20:13:27 2013
-@@ -149,6 +149,10 @@ void winbrowsefile(char *buffer)
+Index: garglk/launchgtk.c
+--- garglk/launchgtk.c.orig
++++ garglk/launchgtk.c
+@@ -180,6 +180,10 @@ static void winbrowsefile(char *buffer)
  
  void winpath(char *buffer)
  {
@@ -13,9 +14,9 @@ Remove Linux'ism to figure out the libexec dir.
 +    snprintf(buffer, sizeof(exepath), "%s", exepath );
 +#else
      char exepath[MaxBuffer] = {0};
-     unsigned int exelen;
+     ssize_t exelen;
  
-@@ -161,6 +165,7 @@ void winpath(char *buffer)
+@@ -192,6 +196,7 @@ void winpath(char *buffer)
      }
  
      strcpy(buffer, exepath);

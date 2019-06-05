@@ -1,7 +1,8 @@
-$OpenBSD: patch-tads_Jamfile,v 1.4 2013/08/22 20:06:50 sthen Exp $
---- tads/Jamfile.orig	Wed Jul 13 09:22:18 2011
-+++ tads/Jamfile	Thu Mar  7 12:16:26 2013
-@@ -21,7 +21,7 @@ SubDirCcFlags
+$OpenBSD: patch-tads_Jamfile,v 1.5 2019/06/05 12:54:03 sthen Exp $
+Index: tads/Jamfile
+--- tads/Jamfile.orig
++++ tads/Jamfile
+@@ -23,7 +23,7 @@ SubDirCcFlags
  
  # HTMLMODE ?= yes ;
  
