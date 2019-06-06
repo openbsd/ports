@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/06 12:04:20 rapha Exp $
+@bin bin/rubberband
+include/rubberband/
+include/rubberband/RubberBandStretcher.h
+include/rubberband/rubberband-c.h
+lib/ladspa/
+lib/ladspa/ladspa-rubberband.cat
+lib/ladspa/ladspa-rubberband.so
+lib/librubberband.a
+@lib lib/librubberband.so.${LIBrubberband_VERSION}
+lib/pkgconfig/rubberband.pc
+lib/vamp/vamp-rubberband.cat
+lib/vamp/vamp-rubberband.so
+share/ladspa/
+share/ladspa/rdf/
+share/ladspa/rdf/ladspa-rubberband.rdf

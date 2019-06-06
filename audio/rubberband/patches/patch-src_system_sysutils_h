@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_system_sysutils_h,v 1.1.1.1 2019/06/06 12:04:20 rapha Exp $
+Index: src/system/sysutils.h
+--- src/system/sysutils.h.orig
++++ src/system/sysutils.h
+@@ -47,7 +47,7 @@
+ #include <malloc.h>
+ #else
+ #ifndef __MSVC__
+-#include <alloca.h>
++#include <stdlib.h> /* alloca() */
+ #endif
+ #endif
+ 

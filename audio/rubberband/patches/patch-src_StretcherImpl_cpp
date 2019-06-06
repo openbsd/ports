@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_StretcherImpl_cpp,v 1.1.1.1 2019/06/06 12:04:20 rapha Exp $
+--- src/StretcherImpl.cpp.orig	Sat Mar 26 19:39:02 2016
++++ src/StretcherImpl.cpp	Sat Mar 26 19:39:23 2016
+@@ -38,7 +38,7 @@
+ #include "base/Profiler.h"
+ 
+ #ifndef _WIN32
+-#include <alloca.h>
++#include <stdlib.h> /* alloca() */
+ #endif
+ 
+ #include <cassert>
