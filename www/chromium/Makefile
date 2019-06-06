@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.437 2019/06/05 18:31:50 robert Exp $
+# $OpenBSD: Makefile,v 1.438 2019/06/06 11:36:00 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -110,7 +110,7 @@ BUILDTYPE=	Debug
 BUILDTYPE=	Release
 .endif
 
-SUBST_VARS+=	WRKSRC
+SUBST_VARS+=	WRKSRC WRKDIR
 
 ALL_TARGET=	chrome chromedriver
 TEST_TARGET=	base_unittests
@@ -191,6 +191,8 @@ pre-configure:
 	@cp ${FILESDIR}/audio_manager_openbsd.{cc,h} ${WRKSRC}/media/audio/openbsd
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
+	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
+		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py
 
 # Configuration consists of three steps:
 # 1. replace the specified bundled libraries with hooks to use the system libs
@@ -204,10 +206,6 @@ do-configure:
 	@cd ${WRKSRC} && env -i ${CONFIGURE_ENV} ${WRKSRC}/out/Release/gn \
 		gen --args="${GN_ARGS}" out/${BUILDTYPE}
 
-pre-build:
-	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
-		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py
-	
 do-build:
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${ALL_TARGET}
