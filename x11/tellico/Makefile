@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2019/05/31 16:28:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.49 2019/06/06 06:08:56 rsadowski Exp $
 
 COMMENT =	organizer for book/dvd/music collections
 
 DISTNAME =	tellico-3.2
+REVISION =	0
 
 CATEGORIES =	x11
 
@@ -76,6 +77,8 @@ LIB_DEPENDS +=	audio/libcdio \
 		textproc/libxslt \
 		x11/kde-applications/libkcddb \
 		x11/kde-applications/libksane
+
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_QImageBlitz=ON
 
 TEST_IS_INTERACTIVE =	X11
 
