@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.30 2019/03/08 01:55:36 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.31 2019/06/06 15:04:22 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -234,6 +234,7 @@ share/vim/${P}/doc/pi_spec.txt
 share/vim/${P}/doc/pi_tar.txt
 share/vim/${P}/doc/pi_vimball.txt
 share/vim/${P}/doc/pi_zip.txt
+share/vim/${P}/doc/popup.txt
 share/vim/${P}/doc/print.txt
 share/vim/${P}/doc/quickfix.txt
 share/vim/${P}/doc/quickref.txt
@@ -439,6 +440,7 @@ share/vim/${P}/ftplugin/muttrc.vim
 share/vim/${P}/ftplugin/nanorc.vim
 share/vim/${P}/ftplugin/neomuttrc.vim
 share/vim/${P}/ftplugin/netrc.vim
+share/vim/${P}/ftplugin/nroff.vim
 share/vim/${P}/ftplugin/nsis.vim
 share/vim/${P}/ftplugin/objc.vim
 share/vim/${P}/ftplugin/ocaml.vim
@@ -1391,6 +1393,7 @@ share/vim/${P}/syntax/taskedit.vim
 share/vim/${P}/syntax/tasm.vim
 share/vim/${P}/syntax/tcl.vim
 share/vim/${P}/syntax/tcsh.vim
+share/vim/${P}/syntax/template.vim
 share/vim/${P}/syntax/teraterm.vim
 share/vim/${P}/syntax/terminfo.vim
 share/vim/${P}/syntax/tex.vim
