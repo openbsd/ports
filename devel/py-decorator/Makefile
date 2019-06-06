@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/13 18:06:43 danj Exp $
+# $OpenBSD: Makefile,v 1.21 2019/06/06 19:48:25 kn Exp $
 
 COMMENT =		simplify usage of decorators
 
-MODPY_EGG_VERSION =	4.0.11
+MODPY_EGG_VERSION =	4.4.0
 DISTNAME =		decorator-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
-
-HOMEPAGE =		https://pythonhosted.org/decorator/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
