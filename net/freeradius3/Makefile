@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2019/06/03 16:06:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2019/06/06 19:36:51 cwen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -14,6 +14,7 @@ COMMENT-python=	freeradius python rlm addon
 V=		3.0.19
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
 PKGNAME-main=	freeradius-$V
 PKGNAME-freetds= freeradius-freetds-$V
@@ -146,7 +147,7 @@ CONFIGURE_ARGS+=	--with-mysql-include-dir=${LOCALBASE}/include/mysql
 CONFIGURE_ARGS+=	--without-rlm_sql_mysql
 .endif
 LIB_DEPENDS-mysql=	databases/mariadb
-WANTLIB-mysql=		crypto ssl m pthread z mysqlclient_r
+WANTLIB-mysql=		crypto iconv m mariadb ssl z
 RUN_DEPENDS-mysql=	#empty
 
 # rlm_sql_postgresql
@@ -170,6 +171,13 @@ SUBST_VARS=	FREERADIUS_ETC
 MAKE_FLAGS=	PACKAGE=openbsd VERBOSE=1
 FAKE_FLAGS=	VERBOSE=1 R=${WRKINST} \
 		raddbdir=${PREFIX}/share/examples/freeradius
+
+.if ${MACHINE_ARCH} == "powerpc"
+LDFLAGS += 	-latomic
+.for i in ${MULTI_PACKAGES}
+WANTLIB$i +=	atomic
+.endfor
+.endif
 
 post-configure:
 	sed -i -e 's,/etc/raddb,${SYSCONFDIR}/raddb,g' ${WRKSRC}/man/*/*
