@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2019/06/06 20:19:44 kn Exp $
+# $OpenBSD: Makefile,v 1.162 2019/06/06 22:37:09 kn Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -123,7 +123,6 @@
      SUBDIR += py-mpmath
      SUBDIR += py-mpmath,python3
      SUBDIR += py-networkx
-     SUBDIR += py-networkx,python3
      SUBDIR += py-numexpr
      SUBDIR += py-numexpr,python3
      SUBDIR += py-numpy
