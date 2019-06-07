@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2019/06/03 16:06:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/06/07 10:37:45 kn Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	flash ROM programmer for BIOS etc
 
-DISTNAME=	flashrom-1.0
+V =		1.0.1
+DISTNAME=	flashrom-v${V}
+PKGNAME=	flashrom-${V}
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -37,6 +38,6 @@ pre-patch:
 	mv ${WRKDIR}/sysutils/pciutils/pciutils-* ${WRKSRC}/pciutils
 
 do-configure:
-	cd ${WRKSRC}/pciutils; ${MAKE_PROGRAM} CC="${CC}" OPT="${CFLAGS}"
+	${MAKE_PROGRAM} -C ${WRKSRC}/pciutils CC="${CC}" OPT="${CFLAGS}"
 
 .include <bsd.port.mk>
