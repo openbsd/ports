@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2019/04/28 20:51:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/06/07 12:18:32 benoit Exp $
 
 COMMENT =	PostgreSQL module for Python
 
-MODPY_EGG_VERSION =	5.0.6
+MODPY_EGG_VERSION =	5.1
 DISTNAME =		PyGreSQL-${MODPY_EGG_VERSION}
 PKGNAME =		py-pygresql-${MODPY_EGG_VERSION}
 CATEGORIES =		databases
-REVISION =		0
 
 HOMEPAGE =		http://www.pygresql.org/
 
