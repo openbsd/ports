@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.525 2019/05/14 18:55:53 claudio Exp $
+# $OpenBSD: Makefile,v 1.526 2019/06/07 15:02:54 edd Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -62,6 +62,7 @@
      SUBDIR += detox
      SUBDIR += dfc
      SUBDIR += diffoscope
+     SUBDIR += dinit
      SUBDIR += direvent
      SUBDIR += diskrescue
      SUBDIR += dmassage
