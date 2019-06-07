@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2018/06/29 22:16:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/06/07 18:12:10 landry Exp $
 @bin bin/parole
 include/parole/
 include/parole/parole-debug.h
@@ -28,6 +28,7 @@ share/icons/hicolor/64x64/apps/parole.png
 share/icons/hicolor/scalable/apps/parole.svg
 share/locale/ar/LC_MESSAGES/parole.mo
 share/locale/ast/LC_MESSAGES/parole.mo
+share/locale/be/LC_MESSAGES/parole.mo
 share/locale/bg/LC_MESSAGES/parole.mo
 share/locale/ca/LC_MESSAGES/parole.mo
 share/locale/cs/LC_MESSAGES/parole.mo
@@ -62,6 +63,7 @@ share/locale/pt/LC_MESSAGES/parole.mo
 share/locale/pt_BR/LC_MESSAGES/parole.mo
 share/locale/ru/LC_MESSAGES/parole.mo
 share/locale/sk/LC_MESSAGES/parole.mo
+share/locale/sl/LC_MESSAGES/parole.mo
 share/locale/sq/LC_MESSAGES/parole.mo
 share/locale/sr/LC_MESSAGES/parole.mo
 share/locale/sv/LC_MESSAGES/parole.mo
