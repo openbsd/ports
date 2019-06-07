@@ -1,0 +1,10 @@
+pySMT makes working with Satisfiability Modulo Theory simple.
+
+Among others, you can:
+
+* Define formulae in a solver independent way in a simple and
+  inutitive way,
+* Write ad-hoc simplifiers and operators,
+* Dump your problems in the SMT-Lib format,
+* Solve them using one of the native solvers, or by wrapping any
+  SMT-Lib complaint solver.
