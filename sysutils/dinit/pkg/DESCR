@@ -1,0 +1,9 @@
+"Dinit" is a service supervisor with dependency support.
+
+Specifically, Dinit can launch multiple services in parallel, with dependency
+management (i.e. if one service's operation depends on another, the latter
+service will be started first). It can monitor the process corresponding to a
+service, and re-start it if it dies, and it can do this in an intelligent way,
+first "rolling back" all dependent services, and restarting them when their
+dependencies are satisfied. However, the precise nature of dependency relations
+between services is highly configurable.

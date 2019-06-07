@@ -1,0 +1,27 @@
+$OpenBSD: README,v 1.1.1.1 2019/06/07 15:01:52 edd Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Although dinit can be used to boot a Linux system from scratch, you cannot use
+dinit as a replacement for OpenBSD's init system. This package does however
+allow you to use dinit as a generic process supervisor on OpenBSD.
+
+Getting Started Guide
+=====================
+
+The best way to get up an running quickly with Dinit is to read the getting
+started guide:
+
+ $ less ${TRUEPREFIX}/share/doc/dinit/getting_started.md
+
+Running System-wide
+===================
+
+The provided rc script starts a system-wide instance of dinit. The instance
+will run as root so that services requiring root permissions can be managed
+under dinit. If your services don't need root permissions, then you should run
+dinit as a normal user instead.
+
+When running a system-wide instance, add `-s` to your dinitctl(8) invocations.

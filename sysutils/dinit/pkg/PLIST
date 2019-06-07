@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/07 15:01:52 edd Exp $
+@rcscript ${RCDIR}/dinit
+@man man/man5/dinit-service.5
+@man man/man8/dinit.8
+@man man/man8/dinitctl.8
+@bin sbin/dinit
+@bin sbin/dinitctl
+share/doc/dinit/
+share/doc/dinit/COMPARISON
+share/doc/dinit/DESIGN
+share/doc/dinit/README.md
+share/doc/dinit/getting_started.md
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/dinit/
+@sample ${SYSCONFDIR}/dinit.d/
+@extraunexec rm -rf ${SYSCONFDIR}/dinit.d/!(boot|boot.d)
+share/examples/dinit/boot
+@sample ${SYSCONFDIR}/dinit.d/boot
+@sample ${SYSCONFDIR}/dinit.d/boot.d/
+@extraunexec rm -rf ${SYSCONFDIR}/dinit.d/boot.d/*
