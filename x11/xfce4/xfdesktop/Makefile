@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.66 2018/06/29 22:16:37 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2019/06/07 18:32:38 landry Exp $
 
 COMMENT=	Xfce4 desktop manager
 
 XFCE_PROJECT=	xfdesktop
-XFCE_VERSION =	4.12.4
-REVISION =	2
+XFCE_VERSION =	4.12.5
 
 PORTROACH=	limitw:1,even
 
@@ -27,7 +26,7 @@ LIB_DEPENDS=	x11/xfce4/libxfce4ui>=4.9.0 \
 		devel/libwnck
 
 WANTLIB += ICE SM X11 X11-xcb XRes Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender fribidi
 WANTLIB += atk-1.0 c cairo dbus-1 dbus-glib-1 exo-1 expat
 WANTLIB += ffi fontconfig freetype garcon-1 gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
