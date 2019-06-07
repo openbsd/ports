@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2017/10/23 17:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/06/07 18:20:59 landry Exp $
 
 COMMENT=	Xfce4 places panel plugin
 
-XFCE_VERSION=	1.7.0
+XFCE_VERSION=	1.8.0
 XFCE_PLUGIN=	places
-REVISION=	2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -12,16 +11,18 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	x11/xfce4
 
 LIB_DEPENDS +=	devel/libnotify \
+		x11/xfce4/xfce4-panel \
 		x11/xfce4/xfconf
+MODXFCE_WANTLIB=	xfce4panel-2.0
 
-WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += atk-1.0 cairo exo-1 expat ffi fontconfig freetype
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 notify
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread startup-notification-1
-WANTLIB += xcb xcb-util xcb-render xcb-shm xfce4util xfce4ui-1 z
-WANTLIB += harfbuzz dbus-1 dbus-glib-1 graphite2 xfconf-0 iconv intl
+WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
+WANTLIB += cairo cairo-gobject epoxy exo-2 expat ffi fontconfig
+WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
+WANTLIB += harfbuzz iconv intl m notify pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread startup-notification-1
+WANTLIB += xcb xcb-render xcb-shm xcb-util xfce4ui-2
+WANTLIB += xfce4util xfconf-0 z
 
 .include <bsd.port.mk>
