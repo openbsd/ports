@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2019/03/08 20:00:51 cwen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/06/07 05:42:53 rsadowski Exp $
 
 COMMENT =	Qt-based library for writing accessibility apps
 
-DISTNAME =	libqaccessibilityclient-0.4.0
-REVISION =	0
+DISTNAME =	libqaccessibilityclient-0.4.1
 
-SHARED_LIBS +=	qaccessibilityclient-qt5  0.0 # 0.3
+SHARED_LIBS +=	qaccessibilityclient-qt5  1.0 # 0.3
 
 CATEGORIES =	x11 devel
 
