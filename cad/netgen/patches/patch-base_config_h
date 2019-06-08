@@ -1,0 +1,16 @@
+$OpenBSD: patch-base_config_h,v 1.1 2019/06/08 10:05:52 jca Exp $
+
+Use clock(3) instead of time(3) to compute elapsed cpu time.
+
+Index: base/config.h
+--- base/config.h.orig
++++ base/config.h
+@@ -39,7 +39,7 @@
+ /* #define HAVE_GETRUSAGE */
+ 
+ /* define the following if your system has ANSI C:  clock and CLOCKS_PER_SEC */
+-/* #define HAVE_CLOCK */
++#define HAVE_CLOCK
+ 
+ /* define the following if your (nominally BSD) system provides the SYSV
+    string functions:  strchr, strrchr, memcpy, and memset */
