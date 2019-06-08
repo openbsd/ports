@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1866 2019/06/06 20:16:39 kn Exp $
+# $OpenBSD: Makefile,v 1.1867 2019/06/08 12:02:59 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1538,8 +1538,6 @@
      SUBDIR += py-pbr
      SUBDIR += py-pbr,python3
      SUBDIR += py-peak-rules
-     SUBDIR += py-pefile
-     SUBDIR += py-pefile,python3
      SUBDIR += py-pexpect
      SUBDIR += py-pexpect,python3
      SUBDIR += py-pip
