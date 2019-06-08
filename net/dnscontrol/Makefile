@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/05 11:43:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/06/08 12:02:01 sthen Exp $
 
 COMMENT =		manage DNS configuration across any number of DNS hosts
 
@@ -19,6 +19,14 @@ MODULES =		lang/go
 
 MODGO_FLAGS +=		-tags nosystemd
 MODGO_TEST_FLAGS +=	-provider BIND
+
+.include <bsd.port.arch.mk>
+
+# providers/octodns/octoyaml/read.go:265:17: constant 4294967295 overflows int
+ONLY_FOR_ARCHS =
+.for i in ${GO_ARCHS}
+ONLY_FOR_ARCHS += ${LP64_ARCHS:M$i}
+.endfor
 
 do-build:
 	cd ${WRKSRC} && ${MODGO_CMD} generate
