@@ -17,16 +17,18 @@
 #ifndef SNDIO_MIDI_DRIVER_H
 #define SNDIO_MIDI_DRIVER_H
 
-#ifdef SNDIO_SUPPORT
-
 #include <hydrogen/IO/MidiInput.h>
+
+#ifdef H2CORE_HAVE_SNDIO
+
 #include <sndio.h>
 
 namespace H2Core
 {
 
-class SndioMidiDriver : public MidiInput
+class SndioMidiDriver : public virtual MidiInput
 {
+	H2_OBJECT
 public:
 	struct mio_hdl *hdl;
 	bool m_bRunning;

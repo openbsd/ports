@@ -14,22 +14,24 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include "SndioMidiDriver.h"
+#include <hydrogen/IO/SndioMidiDriver.h>
 
-#include <hydrogen/Preferences.h>
-
-#ifdef SNDIO_SUPPORT
+#ifdef H2CORE_HAVE_SNDIO
 
 #include <poll.h>
 #include <pthread.h>
+#include <hydrogen/Preferences.h>
 
 namespace H2Core
 {
+
+const char* SndioMidiDriver::__class_name = "SndioMidiDriver";
 
 pthread_t SndioMidiDriverThread;
 
 void* SndioMidiDriver_thread( void* param )
 {
+	Object* __object = ( Object* )param;
 	SndioMidiDriver *instance = ( SndioMidiDriver* )param;
 	MidiMessage msg;
 	struct pollfd pfd;
@@ -37,19 +39,19 @@ void* SndioMidiDriver_thread( void* param )
 	unsigned char buf[1], sysex_data[256], status = 0;
 	int i, msglen, count = 0, sysex_len = 0;
 
-	_INFOLOG("SndioMidiDriver_thread starting");
+	__INFOLOG("SndioMidiDriver_thread starting");
 
 	while (instance->m_bRunning) {
 		nfds = mio_pollfd(instance->hdl, &pfd, POLLIN);
 		if (poll(&pfd, nfds, 100) < 0) {
-			_ERRORLOG("poll error; aborting midi thread");
+			__ERRORLOG("poll error; aborting midi thread");
 			break;
 		}
 		if (!(mio_revents(instance->hdl, &pfd) & POLLIN))
 			continue;
 
 		if (!mio_read(instance->hdl, buf, 1)) {
-			_ERRORLOG("read error; aborting midi thread");
+			__ERRORLOG("read error; aborting midi thread");
 			break;
 		}
 
@@ -148,7 +150,7 @@ void* SndioMidiDriver_thread( void* param )
 
 		if (status == 0xf0) {
 			if (sysex_len > 255) {
-				_ERRORLOG("already 256 bytes in midi sysex buffer!");
+				__ERRORLOG("already 256 bytes in midi sysex buffer!");
 				continue;
 			}
 			sysex_data[sysex_len++] = buf[0];
@@ -175,7 +177,7 @@ void* SndioMidiDriver_thread( void* param )
 		instance->handleMidiMessage(msg);
 	}
 
-	_INFOLOG("MIDI Thread DESTROY");
+	__INFOLOG("MIDI Thread DESTROY");
 	pthread_exit(NULL);
 	return NULL;
 }
@@ -259,4 +261,4 @@ std::vector<QString> SndioMidiDriver::getOutputPortList()
 
 };
 
-#endif	// SNDIO_SUPPORT
+#endif	// H2CORE_HAVE_SNDIO

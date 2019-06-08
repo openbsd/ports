@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_core_CMakeLists_txt,v 1.1 2019/06/08 18:42:32 rapha Exp $
+
+Add sndio include_directories, do not install headers
+
+Index: src/core/CMakeLists.txt
+--- src/core/CMakeLists.txt.orig
++++ src/core/CMakeLists.txt
+@@ -13,6 +13,7 @@ INCLUDE_DIRECTORIES( include
+     ${LIBTAR_INCLUDE_DIR}
+     ${LIBARCHIVE_INCLUDE_DIR}
+     ${LIBSNDFILE_INCLUDE_DIR}
++    ${SNDIO_INCLUDE_DIR}
+     ${ALSA_INCLUDE_DIR}
+     ${OSS_INCLUDE_DIR}
+     ${JACK_INCLUDE_DIR}
+@@ -34,6 +35,7 @@ TARGET_LINK_LIBRARIES(hydrogen-core-${VERSION}
+     ${LIBTAR_LIBRARIES}
+     ${LIBARCHIVE_LIBRARIES}
+     ${LIBSNDFILE_LIBRARIES}
++    ${SNDIO_LIBRARIES}
+     ${ALSA_LIBRARIES}
+     ${OSS_LIBRARIES}
+     ${JACK_LIBRARIES}
+@@ -60,9 +62,3 @@ INSTALL(TARGETS hydrogen-core-${VERSION}
+     # do not copy directory hierarchy
+     #PUBLIC_HEADER DESTINATION include/hydrogen
+ )
+-
+-IF(NOT APPPLE AND NOT WIN32)
+-    INSTALL(DIRECTORY include DESTINATION "${CMAKE_INSTALL_PREFIX}" FILES_MATCHING PATTERN "*.h" PATTERN ".svn" EXCLUDE)
+-    INSTALL(FILES "${CMAKE_CURRENT_BINARY_DIR}/include/hydrogen/config.h" DESTINATION "${CMAKE_INSTALL_PREFIX}/include/hydrogen" )
+-ENDIF()
+-

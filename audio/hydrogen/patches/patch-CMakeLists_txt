@@ -1,0 +1,49 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2019/06/08 18:42:32 rapha Exp $
+
+Add sndio support
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -63,6 +63,7 @@ ELSE()
+ 	OPTION(WANT_OSS          "Include OSS (Open Sound System) support" OFF)
+ ENDIF()
+ 
++OPTION(WANT_SNDIO        "Include Sndio support" ON)
+ OPTION(WANT_ALSA         "Include ALSA (Advanced Linux Sound Architecture) support" ON)
+ IF(MINGW)
+ 	OPTION(WANT_JACK         "Include JACK (Jack Audio Connection Kit) support" ON)
+@@ -193,6 +194,7 @@ IF( WANT_LIBARCHIVE AND LIBARCHIVE_FOUND)
+     SET(WANT_LIBTAR FALSE)
+ ENDIF()
+ FIND_HELPER(LIBSNDFILE sndfile sndfile.h sndfile)
++INCLUDE_DIRECTORIES(${LIBSNDFILE_INCLUDE_DIR})
+ FIND_HELPER(ALSA alsa alsa/asoundlib.h asound )
+ FIND_LADSPA(LADSPA ladspa.h noise)
+ 
+@@ -204,6 +206,8 @@ ELSE()
+ 	FIND_HELPER(OSS oss sys/soundcard.h OSSlib )
+ ENDIF()
+ 
++FIND_HELPER(SNDIO sndio sndio.h sndio)
++
+ FIND_HELPER(JACK jack jack/jack.h jack)
+ CHECK_LIBRARY_EXISTS(jack jack_port_rename "" HAVE_JACK_PORT_RENAME)
+ FIND_HELPER(JACKSESSION jack jack/session.h jack)
+@@ -243,7 +247,7 @@ endif(DOXYGEN_FOUND)
+ #
+ # COMPUTE H2CORE_HAVE_xxx xxx_STATUS_REPORT
+ #
+-SET(STATUS_LIST LIBSNDFILE LIBTAR LIBARCHIVE LADSPA ALSA OSS JACK JACKSESSION NSMSESSION COREAUDIO COREMIDI PORTAUDIO PORTMIDI PULSEAUDIO LASH LRDF RAPTOR RUBBERBAND CPPUNIT )
++SET(STATUS_LIST LIBSNDFILE LIBTAR LIBARCHIVE LADSPA SNDIO ALSA OSS JACK JACKSESSION NSMSESSION COREAUDIO COREMIDI PORTAUDIO PORTMIDI PULSEAUDIO LASH LRDF RAPTOR RUBBERBAND CPPUNIT )
+ FOREACH( _pkg ${STATUS_LIST})
+     COMPUTE_PKGS_FLAGS(${_pkg})
+ ENDFOREACH()
+@@ -293,6 +297,7 @@ COLOR_MESSAGE("${cyan}Main librarires${reset}
+ 
+ COLOR_MESSAGE("${cyan}Supported audio interfaces${reset}
+ --------------------------
++* ${purple}SNDIO${reset}                        : ${SNDIO_STATUS}
+ * ${purple}ALSA${reset}                         : ${ALSA_STATUS}
+ * ${purple}OSS${reset}                          : ${OSS_STATUS}
+ * ${purple}JACK${reset}                         : ${JACK_STATUS}

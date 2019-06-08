@@ -1,0 +1,81 @@
+$OpenBSD: patch-src_gui_src_PreferencesDialog_cpp,v 1.1 2019/06/08 18:42:32 rapha Exp $
+
+Add sndio support
+
+Index: src/gui/src/PreferencesDialog.cpp
+--- src/gui/src/PreferencesDialog.cpp.orig
++++ src/gui/src/PreferencesDialog.cpp
+@@ -64,6 +64,9 @@ PreferencesDialog::PreferencesDialog(QWidget* parent)
+ 
+ 	driverComboBox->clear();
+ 	driverComboBox->addItem( "Auto" );
++#ifdef H2CORE_HAVE_SNDIO
++	driverComboBox->addItem( "SndioAudio" );
++#endif
+ #ifdef H2CORE_HAVE_JACK
+ 	driverComboBox->addItem( "Jack" );
+ #endif
+@@ -95,6 +98,9 @@ PreferencesDialog::PreferencesDialog(QWidget* parent)
+ 
+ 
+ 	m_pMidiDriverComboBox->clear();
++#ifdef H2CORE_HAVE_SNDIO
++	m_pMidiDriverComboBox->addItem( "SndioMidi" );
++#endif
+ #ifdef H2CORE_HAVE_ALSA
+ 	m_pMidiDriverComboBox->addItem( "ALSA" );
+ #endif
+@@ -333,6 +339,9 @@ void PreferencesDialog::on_okBtn_clicked()
+ 	if (driverComboBox->currentText() == "Auto" ) {
+ 		pPref->m_sAudioDriver = "Auto";
+ 	}
++	else if (driverComboBox->currentText() == "SndioAudio" ) {
++		pPref->m_sAudioDriver = "SndioAudio";
++	}
+ 	else if (driverComboBox->currentText() == "Jack" ) {
+ 		pPref->m_sAudioDriver = "Jack";
+ 	}
+@@ -394,7 +403,10 @@ void PreferencesDialog::on_okBtn_clicked()
+ 	// maxVoices
+ 	pPref->m_nMaxNotes = maxVoicesTxt->value();
+ 
+-	if ( m_pMidiDriverComboBox->currentText() == "ALSA" ) {
++	if ( m_pMidiDriverComboBox->currentText() == "SndioMidi" ) {
++		pPref->m_sMidiDriver = "SndioMidi";
++	}
++	else if ( m_pMidiDriverComboBox->currentText() == "ALSA" ) {
+ 		pPref->m_sMidiDriver = "ALSA";
+ 	}
+ 	else if ( m_pMidiDriverComboBox->currentText() == "PortMidi" ) {
+@@ -514,6 +526,11 @@ void PreferencesDialog::updateDriverInfo()
+ 	Preferences *pPref = Preferences::get_instance();
+ 	QString info;
+ 
++	bool bSndioAudio_support = false;
++#ifdef H2CORE_HAVE_SNDIO
++	bSndioAudio_support = true;
++#endif
++
+ 	bool bJack_support = false;
+ #ifdef H2CORE_HAVE_JACK
+ 	bJack_support = true;
+@@ -553,6 +570,19 @@ void PreferencesDialog::updateDriverInfo()
+ 		sampleRateComboBox->setEnabled( false );
+ 		trackOutputComboBox->setEnabled( false );
+ 		connectDefaultsCheckBox->setEnabled( false );
++	}
++	else if ( driverComboBox->currentText() == "SndioAudio" ) {
++		info += trUtf8("<b>SndioAudio Driver</b><br>");
++		if ( !bSndioAudio_support ) {
++			info += trUtf8("<br><b><font color=\"red\">Not compiled</font></b>");
++		}
++		m_pAudioDeviceTxt->setEnabled(true);
++		m_pAudioDeviceTxt->setText("");
++		bufferSizeSpinBox->setEnabled(false);
++		sampleRateComboBox->setEnabled(false);
++		trackOutputComboBox->setEnabled( false );
++		trackOutsCheckBox->setEnabled( false );
++		connectDefaultsCheckBox->setEnabled(false);
+ 	}
+ 	else if ( driverComboBox->currentText() == "OSS" ) {	// OSS
+ 		info += trUtf8("<b>Open Sound System</b><br>Simple audio driver [/dev/dsp]");

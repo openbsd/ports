@@ -14,16 +14,17 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-#include "SndioAudioDriver.h"
+#include "hydrogen/IO/SndioAudioDriver.h"
 
-#ifdef SNDIO_SUPPORT
-
-#include <hydrogen/Preferences.h>
+#ifdef H2CORE_HAVE_SNDIO
 
 #include <pthread.h>
+#include <hydrogen/Preferences.h>
 
 namespace H2Core
 {
+
+const char* SndioAudioDriver::__class_name = "SndioAudioDriver";
 
 audioProcessCallback sndioAudioDriver_audioProcessCallback;
 bool sndioAudioDriver_running;
@@ -237,4 +238,4 @@ void SndioAudioDriver::setBpm(float fBPM)
 
 };	/* namespace H2Core */
 
-#endif	/* SNDIO_SUPPORT */
+#endif	/* H2CORE_HAVE_SNDIO */

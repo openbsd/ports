@@ -1,58 +1,56 @@
-# $OpenBSD: Makefile,v 1.25 2019/01/08 21:24:29 sebastia Exp $
+# $OpenBSD: Makefile,v 1.26 2019/06/08 18:42:32 rapha Exp $
 
 COMMENT=		software drum machine
 
-DISTNAME=		hydrogen-0.9.5
+DISTNAME=		hydrogen-0.9.7
 CATEGORIES=		audio
 
 HOMEPAGE=		http://www.hydrogen-music.org/
 
+SHARED_LIBS=		hydrogen-core-0.9.7	0.0
+
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} QtGui QtNetwork QtXml archive c
-WANTLIB += jack lrdf m ogg sndfile sndio
+WANTLIB += ${COMPILER_LIBCXX} QtGui QtNetwork QtXml QtXmlPatterns archive c
+WANTLIB += lrdf m sndfile sndio z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hydrogen/}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=		audio/libsndfile \
-			audio/flac \
-			audio/jack \
 			archivers/libarchive \
 			textproc/liblrdf
 
+BUILD_DEPENDS=		audio/ladspa
+
 RUN_DEPENDS=		devel/desktop-file-utils
 
-MODULES=		x11/qt4 devel/scons
+MODULES=		devel/cmake \
+			x11/qt4
 
-MAKE_ENV+=		QTDIR="${MODQT4_QTDIR}"
-MODSCONS_FLAGS=		localinc="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			locallib="-L${LOCALBASE}/lib -L${X11BASE}/lib -logg -lpthread" \
-			optflags="${CXXFLAGS} " \
-			libarchive="1" sndio="1" oss="0" alsa="0" portmidi="0" \
-			portaudio="0" lash="0" lrdf="1"
+CONFIGURE_ENV=		LADSPA_PATH=${LOCALBASE}/lib/ladspa
+
+CONFIGURE_ARGS=		-DWANT_ALSA=OFF \
+			-DWANT_CPPUNIT=OFF \
+			-DWANT_DEBUG=OFF \
+			-DWANT_JACK=OFF \
+			-DWANT_JACKSESSION=OFF \
+			-DWANT_LADSPA=ON \
+			-DWANT_LRDF=ON \
+			-DWANT_NSMSESSION=OFF \
+			-DWANT_PORTAUDIO=OFF \
+			-DWANT_PORTMIDI=OFF \
+			-DWANT_PULSEAUDIO=OFF \
+			-DWANT_SNDIO=ON
 
 NO_TEST=		Yes
 
 post-extract:
 	cp ${FILESDIR}/Sndio{Audio,Midi}Driver.h \
-		${FILESDIR}/sndio_{audio,midi}_driver.cpp \
-		${WRKSRC}/libs/hydrogen/src/IO
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/hydrogen ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKBUILD}/hydrogen.desktop \
-		${PREFIX}/share/applications
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/data/img/gray/h2-icon.svg \
-		${PREFIX}/share/pixmaps
-	${INSTALL_DATA_DIR} ${PREFIX}/share/hydrogen
-	${INSTALL_DATA_DIR} ${PREFIX}/share/hydrogen/data
-	#mv -f ${WRKSRC}/data/new_tutorial ${WRKDIR}
-	cd ${WRKSRC}/data && umask 022 && \
-		pax -rw . ${PREFIX}/share/hydrogen/data
+		${WRKSRC}/src/core/include/hydrogen/IO
+	cp ${FILESDIR}/sndio_{audio,midi}_driver.cpp \
+		${WRKSRC}/src/core/src/IO
 
 .include <bsd.port.mk>

@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_core_include_hydrogen_config_h_in,v 1.1 2019/06/08 18:42:32 rapha Exp $
+
+Add sndio support
+
+Index: src/core/include/hydrogen/config.h.in
+--- src/core/include/hydrogen/config.h.in.orig
++++ src/core/include/hydrogen/config.h.in
+@@ -45,6 +45,9 @@
+ #ifndef H2CORE_HAVE_LIBARCHIVE
+ #cmakedefine H2CORE_HAVE_LIBARCHIVE
+ #endif
++#ifndef H2CORE_HAVE_SNDIO
++#cmakedefine H2CORE_HAVE_SNDIO
++#endif
+ #ifndef H2CORE_HAVE_OSS
+ #cmakedefine H2CORE_HAVE_OSS
+ #endif

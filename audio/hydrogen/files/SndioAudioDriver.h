@@ -20,7 +20,7 @@
 #include <hydrogen/IO/AudioOutput.h>
 #include <hydrogen/IO/NullDriver.h>
 
-#ifdef SNDIO_SUPPORT
+#ifdef H2CORE_HAVE_SNDIO
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -45,6 +45,7 @@ typedef int  (*audioProcessCallback)(uint32_t, void *);
  */
 class SndioAudioDriver : public AudioOutput
 {
+	H2_OBJECT
 public:
 	SndioAudioDriver(audioProcessCallback processCallback);
 	~SndioAudioDriver();

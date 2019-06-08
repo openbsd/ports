@@ -1,8 +1,11 @@
-$OpenBSD: patch-data_hydrogen_default_conf,v 1.3 2019/01/08 21:24:29 sebastia Exp $
+$OpenBSD: patch-data_hydrogen_default_conf,v 1.4 2019/06/08 18:42:32 rapha Exp $
+
+Set default to SndioAudio/SndioMidi
+
 Index: data/hydrogen.default.conf
 --- data/hydrogen.default.conf.orig
 +++ data/hydrogen.default.conf
-@@ -30,7 +30,7 @@
+@@ -31,7 +31,7 @@
  	<lastNews>-</lastNews>
  
  	<audio_engine>
@@ -11,7 +14,7 @@ Index: data/hydrogen.default.conf
  		<use_metronome>false</use_metronome>
  		<metronome_volume>0.5</metronome_volume>
  		<maxNotes>256</maxNotes>
-@@ -41,6 +41,10 @@
+@@ -42,6 +42,10 @@
  			<ossDevice>/dev/dsp</ossDevice>
  		</oss_driver>
  
@@ -22,7 +25,7 @@ Index: data/hydrogen.default.conf
  		<jack_driver>
  			<jack_port_name_1>alsa_pcm:playback_1</jack_port_name_1>
  			<jack_port_name_2>alsa_pcm:playback_2</jack_port_name_2>
-@@ -55,7 +59,7 @@
+@@ -56,7 +60,7 @@
  		</alsa_audio_driver>
  
  		<midi_driver>

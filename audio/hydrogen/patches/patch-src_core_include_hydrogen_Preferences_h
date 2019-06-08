@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_core_include_hydrogen_Preferences_h,v 1.1 2019/06/08 18:42:32 rapha Exp $
+
+Add sndio support
+
+Index: src/core/include/hydrogen/Preferences.h
+--- src/core/include/hydrogen/Preferences.h.orig
++++ src/core/include/hydrogen/Preferences.h
+@@ -202,6 +202,9 @@ class Preferences : public H2Core::Object (public)
+ 	//	OSS driver properties ___
+ 	QString				m_sOSSDevice;		///< Device used for output
+ 
++	//	SNDIO driver properties ___
++	QString				m_sSndioDevice;		///< Device used for output
++
+ 	//	MIDI Driver properties
+ 	QString				m_sMidiDriver;
+ 	QString				m_sMidiPortName;
