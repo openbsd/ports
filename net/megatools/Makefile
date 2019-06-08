@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2018/12/19 08:21:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2019/06/08 09:55:49 jca Exp $
 
 PORTROACH =		limit:[0-9]\.tar\.gz
 
 COMMENT =		command line client application for Mega
 
 DISTNAME =		megatools-1.10.2
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net
 
@@ -21,6 +21,7 @@ WANTLIB += ssl
 
 MASTER_SITES =		https://megatools.megous.com/builds/
 
+COMPILER =		base-clang ports-gcc
 BUILD_DEPENDS =		devel/gobject-introspection \
 			textproc/asciidoc
 LIB_DEPENDS =		devel/glib2 \
@@ -31,8 +32,6 @@ CONFIGURE_STYLE =	gnu
 MAKE_FLAGS =		VERBOSE=1
 
 CONFIGURE_ARGS =	--disable-introspection
-
-CFLAGS +=		-std=c99
 
 SEPARATE_BUILD =	Yes
 
