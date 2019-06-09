@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/15 17:09:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2019/06/09 08:22:18 rsadowski Exp $
 
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${VERSION}
 CATEGORIES =	textproc
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://okular.kde.org/
-
 
 SHARED_LIBS +=  Okular5Core               0.0 # 9.0
 
@@ -31,12 +30,10 @@ MODKDE5_DOCS = yes
 MODULES +=	x11/kde-applications \
 		multimedia/phonon
 
-BUILD_DEPENDS +=graphics/qimageblitz \
-		net/libvncserver \
+BUILD_DEPENDS +=net/libvncserver \
 		print/libspectre
 
-RUN_DEPENDS +=	graphics/qimageblitz \
-		misc/shared-mime-info \
+RUN_DEPENDS +=	misc/shared-mime-info \
 		net/libvncserver \
 
 LIB_DEPENDS +=	devel/chmlib \
