@@ -1,0 +1,6 @@
+This package contains the W3C Link Checker. It checks HTML pages for
+links pointing to resources that have been moved or no longer exist.
+
+The link checker can be run as a CGI script in a web server as well as on
+the command line.  The CGI version provides a HTML interface as seen at
+<http://validator.w3.org/checklink>.
