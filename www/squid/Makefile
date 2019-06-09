@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.217 2019/06/03 16:06:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.218 2019/06/09 19:36:24 cwen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
@@ -123,6 +123,14 @@ WANTLIB-ldap +=     ${cWANTLIB} crypto lber-2.4 ldap-2.4 sasl2 ssl
 RUN_DEPENDS-ntlm=   net/samba ${BASE_PKGPATH}
 LIB_DEPENDS-ntlm += security/libnettle
 WANTLIB-ntlm=       ${WANTLIB} ${COMPILER_LIBCXX}
+
+.if ${MACHINE_ARCH} == "powerpc"
+WANTLIB += 		atomic
+# The test in configure doesn't want atomic builtins, bypass it, but
+# 'make test' uses the flag from LIBS.
+CONFIGURE_ENV +=	LIBS=-latomic \
+			ac_cv_search___atomic_load_8=-latomic
+.endif
 
 pre-build:
 	@cd ${WRKSRC}; \
