@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/20 22:15:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/06/09 08:32:58 bentley Exp $
 
 COMMENT=	Japanese handwriting recognition
 
 DISTNAME=	kanjipad-2.0.0
-REVISION=	6
+REVISION=	7
 CATEGORIES=	japanese
 
-HOMEPAGE=	http://fishsoup.net/software/kanjipad/
+HOMEPAGE=	https://fishsoup.net/software/kanjipad/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=Yes
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	https://fishsoup.net/software/kanjipad/
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
