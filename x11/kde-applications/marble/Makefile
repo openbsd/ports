@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2019/03/30 21:07:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2019/06/10 12:24:21 rsadowski Exp $
 
 COMMENT =	virtual globe and world atlas
 DISTNAME =	marble-${VERSION}
 PKGNAME =	marble-kf5-${VERSION}
 CATEGORIES =	geo
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://marble.kde.org/
 
@@ -63,7 +63,7 @@ LIB_DEPENDS +=	devel/kf5/attica \
 		x11/qt5/qtserialport \
 		x11/qt5/qtsvg
 
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_libwlocate=OFF \
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_libwlocate=ON \
 			-DBUILD_MARBLE_TOOLS=ON \
 			-DBUILD_MARBLE_EXAMPLES=OFF \
 			-DMOBILE=OFF \
