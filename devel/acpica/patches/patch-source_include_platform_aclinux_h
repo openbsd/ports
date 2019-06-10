@@ -1,15 +1,25 @@
-$OpenBSD: patch-source_include_platform_aclinux_h,v 1.4 2019/03/06 15:40:56 sthen Exp $
+$OpenBSD: patch-source_include_platform_aclinux_h,v 1.5 2019/06/10 19:02:21 sthen Exp $
 Index: source/include/platform/aclinux.h
 --- source/include/platform/aclinux.h.orig
 +++ source/include/platform/aclinux.h
-@@ -168,6 +168,10 @@
+@@ -168,7 +168,11 @@
  #define ACPI_USE_DO_WHILE_0
  #define ACPI_IGNORE_PACKAGE_RESOLUTION_ERRORS
  
 +#ifdef __OpenBSD__
 +#define ACPI_USE_ALTERNATE_TIMEOUT
 +#endif
-+
  
++
  #ifdef __KERNEL__
  
+ #define ACPI_USE_SYSTEM_INTTYPES
+@@ -324,7 +328,7 @@
+ 
+ #if defined(__ia64__)    || (defined(__x86_64__) && !defined(__ILP32__)) ||\
+     defined(__aarch64__) || defined(__PPC64__) ||\
+-    defined(__s390x__)
++    defined(__s390x__)   || defined(__sparc64__)
+ #define ACPI_MACHINE_WIDTH          64
+ #define COMPILER_DEPENDENT_INT64    long
+ #define COMPILER_DEPENDENT_UINT64   unsigned long
