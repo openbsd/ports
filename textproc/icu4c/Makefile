@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.68 2018/12/09 21:00:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2019/06/10 08:07:50 ajacoutot Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 COMMENT-main=		International Components for Unicode
 COMMENT-wwwdata=	ICU data file for use with /var/www chroot jails
 
-VERSION=		63.1
+VERSION=		64.2
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME-main=		icu4c-${VERSION}
 PKGNAME-wwwdata=	icu4c-wwwdata-${VERSION}
 
 MAJ_V=			${VERSION:R}
-SO_VERSION=		14.0
+SO_VERSION=		15.0
 .for _lib in icudata icui18n icuio icutest icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
