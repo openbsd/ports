@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_ssl_sock_c,v 1.10 2018/12/15 20:25:54 danj Exp $
+$OpenBSD: patch-src_ssl_sock_c,v 1.11 2019/06/10 23:01:13 danj Exp $
 
 Index: src/ssl_sock.c
 --- src/ssl_sock.c.orig
 +++ src/ssl_sock.c
-@@ -2088,7 +2088,7 @@ static void ssl_sock_switchctx_set(SSL *ssl, SSL_CTX *
+@@ -2175,7 +2175,7 @@ static void ssl_sock_switchctx_set(SSL *ssl, SSL_CTX *
  	SSL_set_SSL_CTX(ssl, ctx);
  }
  
@@ -12,25 +12,16 @@ Index: src/ssl_sock.c
  
  static int ssl_sock_switchctx_err_cbk(SSL *ssl, int *al, void *priv)
  {
-@@ -3820,7 +3820,7 @@ ssl_sock_initial_ctx(struct bind_conf *bind_conf)
+@@ -3919,7 +3919,7 @@ ssl_sock_initial_ctx(struct bind_conf *bind_conf)
  #ifdef OPENSSL_IS_BORINGSSL
  	SSL_CTX_set_select_certificate_cb(ctx, ssl_sock_switchctx_cbk);
  	SSL_CTX_set_tlsext_servername_callback(ctx, ssl_sock_switchctx_err_cbk);
 -#elif (OPENSSL_VERSION_NUMBER >= 0x10101000L)
 +#elif (OPENSSL_VERSION_NUMBER >= 0x10101000L) && !defined(LIBRESSL_VERSION_NUMBER)
- 	SSL_CTX_set_client_hello_cb(ctx, ssl_sock_switchctx_cbk, NULL);
- 	SSL_CTX_set_tlsext_servername_callback(ctx, ssl_sock_switchctx_err_cbk);
- #else
-@@ -5067,7 +5067,7 @@ static int ssl_sock_init(struct connection *conn)
- 
- 		/* leave init state and start handshake */
- 		conn->flags |= CO_FL_SSL_WAIT_HS | CO_FL_WAIT_L6_CONN;
--#if OPENSSL_VERSION_NUMBER >= 0x10101000L || defined(OPENSSL_IS_BORINGSSL)
-+#if (OPENSSL_VERSION_NUMBER >= 0x10101000L && !defined(LIBRESSL_VERSION_NUMBER)) || defined(OPENSSL_IS_BORINGSSL)
- 		conn->flags |= CO_FL_EARLY_SSL_HS;
- #endif
- 
-@@ -5097,7 +5097,7 @@ int ssl_sock_handshake(struct connection *conn, unsign
+ 	if (bind_conf->ssl_conf.early_data) {
+ 		SSL_CTX_set_options(ctx, SSL_OP_NO_ANTI_REPLAY);
+ 		SSL_CTX_set_max_early_data(ctx, global.tune.bufsize - global.tune.maxrewrite);
+@@ -5217,7 +5217,7 @@ int ssl_sock_handshake(struct connection *conn, unsign
  	if (!conn->xprt_ctx)
  		goto out_error;
  
@@ -39,7 +30,7 @@ Index: src/ssl_sock.c
  	/*
  	 * Check if we have early data. If we do, we have to read them
  	 * before SSL_do_handshake() is called, And there's no way to
-@@ -5165,11 +5165,11 @@ int ssl_sock_handshake(struct connection *conn, unsign
+@@ -5285,11 +5285,11 @@ int ssl_sock_handshake(struct connection *conn, unsign
  				if (!errno && conn->flags & CO_FL_WAIT_L4_CONN)
  					conn->flags &= ~CO_FL_WAIT_L4_CONN;
  				if (!conn->err_code) {
@@ -53,7 +44,7 @@ Index: src/ssl_sock.c
  					OSSL_HANDSHAKE_STATE state = SSL_get_state((SSL *)conn->xprt_ctx);
  					empty_handshake = state == TLS_ST_BEFORE;
  #else
-@@ -5249,11 +5249,11 @@ check_error:
+@@ -5369,11 +5369,11 @@ check_error:
  			if (!errno && conn->flags & CO_FL_WAIT_L4_CONN)
  				conn->flags &= ~CO_FL_WAIT_L4_CONN;
  			if (!conn->err_code) {
@@ -67,7 +58,7 @@ Index: src/ssl_sock.c
  				OSSL_HANDSHAKE_STATE state = SSL_get_state((SSL *)conn->xprt_ctx);
  				empty_handshake = state == TLS_ST_BEFORE;
  #else
-@@ -5297,7 +5297,7 @@ check_error:
+@@ -5417,7 +5417,7 @@ check_error:
  			goto out_error;
  		}
  	}
@@ -76,7 +67,7 @@ Index: src/ssl_sock.c
  	else {
  		/*
  		 * If the server refused the early data, we have to send a
-@@ -5420,7 +5420,7 @@ static int ssl_sock_to_buf(struct connection *conn, st
+@@ -5532,7 +5532,7 @@ static size_t ssl_sock_to_buf(struct connection *conn,
  			continue;
  		}
  
@@ -85,21 +76,21 @@ Index: src/ssl_sock.c
  		if (conn->flags & CO_FL_EARLY_SSL_HS) {
  			size_t read_length;
  
-@@ -5557,7 +5557,7 @@ static int ssl_sock_from_buf(struct connection *conn, 
+@@ -5672,7 +5672,7 @@ static size_t ssl_sock_from_buf(struct connection *con
  	 * in which case we accept to do it once again.
  	 */
- 	while (buf->o) {
+ 	while (count) {
 -#if (OPENSSL_VERSION_NUMBER >= 0x10101000L)
 +#if (OPENSSL_VERSION_NUMBER >= 0x10101000L) && !defined(LIBRESSL_VERSION_NUMBER)
  		size_t written_data;
  #endif
  
-@@ -5576,7 +5576,7 @@ static int ssl_sock_from_buf(struct connection *conn, 
+@@ -5693,7 +5693,7 @@ static size_t ssl_sock_from_buf(struct connection *con
  			conn->xprt_st |= SSL_SOCK_SEND_UNLIMITED;
  		}
  
 -#if (OPENSSL_VERSION_NUMBER >= 0x10101000L)
-+#if (OPENSSL_VERSION_NUMBER >= 0x10101000L) && !defined(LIBRESSL_VERSION_NUMBER)
- 		if (!SSL_is_init_finished(conn->xprt_ctx)) {
++#if (OPENSSL_VERSION_NUMBER >= 0x10101000L)  && !defined(LIBRESSL_VERSION_NUMBER)
+ 		if (!SSL_is_init_finished(conn->xprt_ctx) && conn_is_back(conn)) {
  			unsigned int max_early;
  

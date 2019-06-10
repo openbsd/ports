@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.56 2019/03/14 21:37:20 cwen Exp $
+# $OpenBSD: Makefile,v 1.57 2019/06/10 23:01:13 danj Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
-DISTNAME =	haproxy-1.8.17
+DISTNAME =	haproxy-1.9.8
 CATEGORIES =	net www
 HOMEPAGE =	http://www.haproxy.org/
 MAINTAINER =	Daniel Jakots <obsd@chown.me>
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB +=	c crypto pcre pcreposix pthread ssl
 
-MASTER_SITES =	${HOMEPAGE}/download/1.8/src/
+MASTER_SITES =	${HOMEPAGE}/download/1.9/src/
 
 HAPROXYCONF =	${SYSCONFDIR}/haproxy
 HAPROXYSTATE =	/var/haproxy
