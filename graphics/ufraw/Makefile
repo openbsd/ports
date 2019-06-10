@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2019/06/03 16:06:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2019/06/10 14:57:59 cwen Exp $
 
 COMMENT=	read and manipulate raw images from digital cameras
 
 DISTNAME=	ufraw-0.22
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ufraw/}
