@@ -1,0 +1,21 @@
+$OpenBSD: patch-generate_unix_Makefile_rules,v 1.1 2019/06/10 17:17:44 sthen Exp $
+
+Index: generate/unix/Makefile.rules
+--- generate/unix/Makefile.rules.orig
++++ generate/unix/Makefile.rules
+@@ -11,13 +11,11 @@ $(FINAL_PROG) : $(PROG)
+ 	$(COPYPROG)
+ 
+ $(PROG) : $(INTERMEDIATES) $(MISC) $(OBJECTS)
+-	@echo "- Link" $(PROG)
+-	@$(LINKPROG)
++	$(LINKPROG)
+ 	$(RENAMEPROG)
+ 
+ $(OBJDIR)/%.o : %.c $(HEADERS) $(ACPICA_HEADERS)
+-	@echo $(PROG)  $<
+-	@$(COMPILEOBJ)
++	$(COMPILEOBJ)
+ 
+ clean :
+ 	@rm -f $(PROG) $(PROG).exe $(OBJECTS) $(OBJDIR)/*.o $(INTERMEDIATES) $(MISC)
