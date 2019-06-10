@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/02/14 06:26:30 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/06/10 02:05:26 bentley Exp $
 
 PKG_ARCH =		*
 
@@ -6,7 +6,7 @@ V =			2.200
 COMMENT =		New Tai Lue Unicode characters
 DISTNAME =		DaiBanna-$V
 PKGNAME =		dai-banna-$V
-REVISION =		0
+REVISION =		1
 CATEGORIES =		fonts
 
 HOMEPAGE =		https://scripts.sil.org/DaiBannaSIL
@@ -14,9 +14,9 @@ HOMEPAGE =		https://scripts.sil.org/DaiBannaSIL
 MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://mirrors.nycbug.org/pub/distfiles/
+MASTER_SITES =		https://software.sil.org/downloads/r/daibanna/
 
 EXTRACT_SUFX =		.zip
 
