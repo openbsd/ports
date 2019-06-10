@@ -1,8 +1,9 @@
-$OpenBSD: patch-setup_py,v 1.6 2019/02/08 19:44:52 jasper Exp $
+$OpenBSD: patch-setup_py,v 1.7 2019/06/10 08:11:37 ajacoutot Exp $
+
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -60,6 +60,7 @@ CONFIGURE_WITH_ICU_CONFIG = {
+@@ -82,6 +82,7 @@ CONFIGURE_WITH_ICU_CONFIG = {
      'darwin': True,
      'linux': True,
      'freebsd': False, # not tested
@@ -10,7 +11,7 @@ Index: setup.py
      'win32': False,   # no icu-config
      'sunos5': False,  # not tested
      'cygwin': False,  # not tested
-@@ -69,6 +70,7 @@ INCLUDES = {
+@@ -100,6 +101,7 @@ INCLUDES = {
      'darwin': [],
      'linux': [],
      'freebsd': ['/usr/local/include'],
@@ -18,15 +19,23 @@ Index: setup.py
      'win32': ['c:/icu/include'],
      'sunos5': [],
      'cygwin': [],
-@@ -78,6 +80,7 @@ CFLAGS = {
+@@ -109,6 +111,7 @@ VER_FLAGS = {
      'darwin': ['-DPYICU_VER="%s"' %(VERSION)],
      'linux': ['-DPYICU_VER="%s"' %(VERSION)],
-     'freebsd': ['-DPYICU_VER="%s"' %(VERSION), '-std=c++11'],
-+    'openbsd': ['-DPYICU_VER="%s"' %(VERSION), '-std=c++11'],
-     'win32': ['/Zc:wchar_t', '/EHsc', '/DPYICU_VER=\\"%s\\"' %(VERSION)],
-     'sunos5': ['-DPYICU_VER="%s"' %(VERSION), '-std=c++11'],
-     'cygwin': ['-DPYICU_VER="%s"' %(VERSION), '-D_GNU_SOURCE=1', '-std=c++11'],
-@@ -88,6 +91,7 @@ DEBUG_CFLAGS = {
+     'freebsd': ['-DPYICU_VER="%s"' %(VERSION)],
++    'openbsd': ['-DPYICU_VER="%s"' %(VERSION)],
+     'win32': ['/DPYICU_VER=\\"%s\\"' %(VERSION)],
+     'sunos5': ['-DPYICU_VER="%s"' %(VERSION)],
+     'cygwin': ['-DPYICU_VER="%s"' %(VERSION)],
+@@ -118,6 +121,7 @@ CFLAGS = {
+     'darwin': [],
+     'linux': [],
+     'freebsd': ['-std=c++11'],
++    'openbsd': ['-std=c++11'],
+     'win32': ['/Zc:wchar_t', '/EHsc'],
+     'sunos5': ['-std=c++11'],
+     'cygwin': ['-D_GNU_SOURCE=1', '-std=c++11'],
+@@ -128,6 +132,7 @@ DEBUG_CFLAGS = {
      'darwin': ['-O0', '-g', '-DDEBUG'],
      'linux': ['-O0', '-g', '-DDEBUG'],
      'freebsd': ['-O0', '-g', '-DDEBUG'],
@@ -34,7 +43,7 @@ Index: setup.py
      'win32': ['/Od', '/DDEBUG'],
      'sunos5': ['-DDEBUG'],
      'cygwin': ['-Og', '-g', '-DDEBUG'],
-@@ -97,6 +101,7 @@ LFLAGS = {
+@@ -137,6 +142,7 @@ LFLAGS = {
      'darwin': [],
      'linux': [],
      'freebsd': ['-L/usr/local/lib'],
@@ -42,7 +51,7 @@ Index: setup.py
      'win32': ['/LIBPATH:c:/icu/lib'],
      'sunos5': [],
      'cygwin': [],
-@@ -106,6 +111,7 @@ LIBRARIES = {
+@@ -146,6 +152,7 @@ LIBRARIES = {
      'darwin': [],
      'linux': [],
      'freebsd': ['icui18n', 'icuuc', 'icudata'],
@@ -50,7 +59,7 @@ Index: setup.py
      'win32': ['icuin', 'icuuc', 'icudt'],
      'sunos5': ['icui18n', 'icuuc', 'icudata'],
      'cygwin': ['icui18n', 'icuuc', 'icudata'],
-@@ -116,6 +122,8 @@ if platform.startswith(('linux', 'gnu')):
+@@ -156,6 +163,8 @@ if platform.startswith(('linux', 'gnu')):
      platform = 'linux'
  elif platform.startswith('freebsd'):
      platform = 'freebsd'
