@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2019/06/03 17:37:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/06/10 19:00:38 sthen Exp $
 
 COMMENT =		reference implementation of ACPI tools
 DISTNAME =		acpica-unix-20190509
 PKGNAME =		${DISTNAME:S/-unix//}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -19,7 +20,7 @@ MASTER_SITES =		https://acpica.org/sites/acpica/files/
 
 USE_GMAKE =		Yes
 BUILD_DEPENDS =		devel/bison
-MAKE_FLAGS =		CC="${CC}"
+MAKE_FLAGS =		CC="${CC}" HOST=_LINUX
 FAKE_FLAGS =		DESTDIR=
 
 do-test:
