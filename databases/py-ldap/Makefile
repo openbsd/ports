@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2019/04/28 20:51:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2019/06/11 15:32:17 sthen Exp $
 
 COMMENT-main=		LDAP client API for Python
 COMMENT-examples=	example programs for the LDAP client API for Python
 
 MODPY_EGG_VERSION =	3.2.0
-REVISION=		1
+REVISION=		2
 DISTNAME=		python-ldap-${MODPY_EGG_VERSION}
 PKGNAME=		py-ldap-${MODPY_EGG_VERSION}
 
@@ -46,12 +46,12 @@ LIB_DEPENDS-main=	${MODPY_LIB_DEPENDS} \
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
 			devel/py-asn1-modules${MODPY_FLAVOR}
 
+MAKE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+
 TEST_DEPENDS=		${RUN_DEPENDS-main} \
 			databases/openldap,-server
 TEST_ENV=		SBIN=${LOCALBASE}/libexec:${LOCALBASE}/sbin
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/setup.cfg
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}ldap
