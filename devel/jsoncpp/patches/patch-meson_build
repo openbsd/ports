@@ -1,4 +1,8 @@
-$OpenBSD: patch-meson_build,v 1.5 2018/02/11 09:05:59 rsadowski Exp $
+$OpenBSD: patch-meson_build,v 1.6 2019/06/11 11:15:04 naddy Exp $
+
+implicit_include_directories : false
+  Prevent libc++ headers from picking up <version> file; the header
+  files are under include/
 
 Index: meson.build
 --- meson.build.orig
@@ -25,12 +29,13 @@ Index: meson.build
  jsoncpp_lib = library(
    'jsoncpp',
    [ jsoncpp_gen_sources,
-@@ -55,12 +58,15 @@ jsoncpp_lib = library(
+@@ -55,12 +58,16 @@ jsoncpp_lib = library(
      'src/lib_json/json_writer.cpp'],
    soversion : 20,
    install : true,
 +  dependencies : thread_dep,
 +  link_args : no_asneeded,
++  implicit_include_directories : false,
    include_directories : jsoncpp_include_directories)
  
  import('pkgconfig').generate(
@@ -41,7 +46,7 @@ Index: meson.build
    filebase : 'jsoncpp',
    description : 'A C++ library for interacting with JSON')
  
-@@ -68,6 +74,8 @@ import('pkgconfig').generate(
+@@ -68,6 +75,8 @@ import('pkgconfig').generate(
  jsoncpp_dep = declare_dependency(
    include_directories : jsoncpp_include_directories,
    link_with : jsoncpp_lib,
@@ -50,8 +55,11 @@ Index: meson.build
    version : meson.project_version(),
    sources : jsoncpp_gen_sources)
  
-@@ -81,6 +89,8 @@ jsoncpp_test = executable(
+@@ -79,8 +88,11 @@ jsoncpp_test = executable(
+   [ 'src/test_lib_json/jsontest.cpp',
+     'src/test_lib_json/jsontest.h',
      'src/test_lib_json/main.cpp'],
++  implicit_include_directories : false,
    include_directories : jsoncpp_include_directories,
    link_with : jsoncpp_lib,
 +  dependencies : thread_dep,
@@ -59,9 +67,11 @@ Index: meson.build
    install : false)
  test(
    'unittest_jsoncpp_test',
-@@ -90,6 +100,8 @@ jsontestrunner = executable(
+@@ -89,7 +101,10 @@ test(
+ jsontestrunner = executable(
    'jsontestrunner',
    'src/jsontestrunner/main.cpp',
++  implicit_include_directories : false,
    include_directories : jsoncpp_include_directories,
 +  dependencies : thread_dep,
 +  link_args : no_asneeded,
