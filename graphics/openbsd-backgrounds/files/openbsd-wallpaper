@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $OpenBSD: openbsd-wallpaper,v 1.1 2019/06/09 14:13:03 espie Exp $
+# $OpenBSD: openbsd-wallpaper,v 1.2 2019/06/11 10:34:13 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -20,12 +20,12 @@ set -e
 
 exit=false
 PATH=${LOCALBASE}/bin:$PATH
-if [ -x ${LOCALBASE}/rr ]
+if [ ! -x ${LOCALBASE}/bin/rr ]
 then
 	echo 1>&2 "You must pkg_add random_run for this to work"
 	exit=true
 fi
-if [ -x ${LOCALBASE}/xwallpaper ]
+if [ ! -x ${LOCALBASE}/bin/xwallpaper ]
 then
 	echo 1>&2 "You must pkg_add xwallpaper for this to work"
 	exit=true
