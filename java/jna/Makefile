@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/03/24 22:24:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/06/11 00:38:35 kurt Exp $
 
 COMMENT=	Java Native Access (JNA)
 
@@ -7,7 +7,7 @@ GH_ACCOUNT=	java-native-access
 GH_TAGNAME=	4.4.0
 CATEGORIES=	devel
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://github.com/java-native-access/jna
 

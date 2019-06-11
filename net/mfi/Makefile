@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/03/25 03:15:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/06/11 00:38:35 kurt Exp $
 
 COMMENT=	Ubiquiti mfi wireless controller
 
@@ -6,7 +6,7 @@ DISTFILES=	mFi-$V{mFi.unix}.zip
 V=		2.1.2
 FW_VER=		2.1.2.1297
 PKGNAME=	mfi-$V
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	net
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2019/03/24 22:24:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/06/11 00:38:36 kurt Exp $
 
 COMMENT =	network event stream processing system
 
 V =		0.3.1
-REVISION =	0
+REVISION =	1
 DISTNAME =	riemann-${V}
 CATEGORIES =	sysutils
 

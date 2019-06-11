@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2017/10/11 05:21:29 rpointel Exp $
+# $OpenBSD: Makefile,v 1.11 2019/06/11 00:38:35 kurt Exp $
 
 COMMENT=	general purpose multi-paradigm programming language
 
 VERSION =	2.12.3
+REVISION =	0
 DISTNAME=	scala-${VERSION}
 CATEGORIES=	lang
 

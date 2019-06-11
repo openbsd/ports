@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2019/04/28 20:51:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2019/06/11 00:38:36 kurt Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
@@ -13,7 +13,7 @@ DISTNAME =		link-grammar-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
 PKGNAME-python =	py3-link-grammar-${VERSION}
-REVISION-java =		0
+REVISION-java =		1
 REVISION-main =		0
 REVISION-python =	0
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2019/02/05 07:49:32 sunil Exp $
+# $OpenBSD: Makefile,v 1.33 2019/06/11 00:38:35 kurt Exp $
 
 COMMENT =		Lisp-1 dialect for the Java Virtual Machine
 
 V =			1.10.0.411
+REVISION =		0
 DISTNAME =		clojure-tools-$V
 PKGNAME =		clojure-$V
 

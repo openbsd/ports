@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/24 22:24:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/06/11 00:38:34 kurt Exp $
 
 COMMENT =	tools to work with android .dex and java .class files
 
 DISTNAME =	dex2jar-2.0
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel security
 

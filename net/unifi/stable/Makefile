@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2019/06/03 15:38:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/06/11 00:38:35 kurt Exp $
 
 V=		5.10.24
 SNAPPY_V=	1.1.7.2
+REVISION=	0
 
 .include <bsd.port.mk>

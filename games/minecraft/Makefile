@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/03/24 22:24:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/06/11 00:38:34 kurt Exp $
 
 PORTROACH=	skipv:0.1
 PORTROACH_COMMENT=version 0.1 is actually older than 0.0.4
@@ -10,7 +10,7 @@ GH_PROJECT=	minecraft
 GH_ACCOUNT=	qbit
 GH_TAGNAME=	${GH_PROJECT}-${V}
 DISTNAME=	${GH_TAGNAME}
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	games
 

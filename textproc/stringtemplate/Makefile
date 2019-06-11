@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/24 22:24:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/06/11 00:38:36 kurt Exp $
 
 COMMENT=	Java template engine for generating source code, etc
 
 V=		4.0.4
 DISTNAME=	ST-$V
-REVISION=	3
+REVISION=	4
 PKGNAME=	stringtemplate-$V
 CATEGORIES=	textproc java
 

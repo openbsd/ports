@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/05/17 16:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2019/06/11 00:38:35 kurt Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -8,7 +8,7 @@ COMMENT-main =		library for computer vision real-time processin
 COMMENT-java =		Java bindings for OpenCV
 
 V =			3.4.2
-REVISION-main =		0
+REVISION =		1
 DISTNAME =		opencv-${V}
 PKGNAME-main =		opencv-${V}
 PKGNAME-docs =		opencv-docs-$V

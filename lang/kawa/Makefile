@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2018/05/11 10:37:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/06/11 00:38:35 kurt Exp $
 
 COMMENT=		Scheme and language framework for the Java platform
 
 DISTNAME=		kawa-3.0
+REVISION=		0
 CATEGORIES=		lang java
 
 HOMEPAGE=		https://www.gnu.org/software/kawa/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/24 22:24:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/06/11 00:38:34 kurt Exp $
 
 COMMENT =		online help system for java platform applications
 
@@ -8,7 +8,7 @@ DISTNAME =		javahelp${VERSION}
 DISTFILES =		javahelp${VERSION_}.zip
 PKGNAME =		javahelp-${VERSION}
 CATEGORIES =		devel
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://javahelp.java.net/
 MAINTAINER =		Bryan Everly <bryan@bceassociates.com>

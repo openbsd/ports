@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/26 02:07:44 lteo Exp $
+# $OpenBSD: Makefile,v 1.3 2019/06/11 00:38:36 kurt Exp $
 
 # bundled jython has amd64 components for OpenBSD
 ONLY_FOR_ARCHS =	amd64
@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS =	amd64
 COMMENT =	software reverse engineering (SRE) framework
 
 VERSION = 	9.0.4
+REVISION =	0
 DISTNAME =	ghidra_9.0.4_PUBLIC_20190516
 PKGNAME =	ghidra-${VERSION}
 

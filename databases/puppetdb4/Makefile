@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/04/29 00:42:08 jeremy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/06/11 00:38:34 kurt Exp $
 
 PORTROACH=	limit:^4
 
@@ -11,7 +11,7 @@ DISTNAME=	puppetdb-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-plugin= puppetdb-termini-$V
 CATEGORIES=	databases
-REVISION-main=	3
+REVISION-main=	4
 REVISION-plugin=2
 
 HOMEPAGE=	http://docs.puppetlabs.com/puppetdb/latest/

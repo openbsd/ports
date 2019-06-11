@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/24 22:24:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/06/11 00:38:36 kurt Exp $
 
 COMMENT=		job scheduler and runbook automation
 
 V=			2.6.11
 DISTNAME=		rundeck-launcher-${V}
 PKGNAME=		rundeck-${V}
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		sysutils
 

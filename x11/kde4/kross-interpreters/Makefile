@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2019/04/29 00:42:09 jeremy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/06/11 00:38:36 kurt Exp $
 
 COMMENT-main =	KDE bindings for running interpreters
 COMMENT-java =	KDE Java bindings
 DISTNAME =	kross-interpreters-${MODKDE4_VERSION}
 PKGNAME-main =	${PKGNAME}
 PKGNAME-java =	${PKGNAME:C/interpreters/java/}
-REVISION-java =	3
+REVISION-java =	4
 REVISION-main =	7
 
 MULTI_PACKAGES =	-main -java
