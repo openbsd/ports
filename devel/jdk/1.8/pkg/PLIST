@@ -1,16 +1,22 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2018/09/04 12:46:11 espie Exp $
+@comment $OpenBSD: PLIST,v 1.1 2019/06/11 00:35:17 kurt Exp $
 @option no-default-conflict
 @option is-branch
 @conflict jdk->=1.8v0,<1.9v0
-@pkgpath devel/jdk/1.7,-jdk
-@pkgpath devel/jdk/1.8,-jdk,with_ipv6
+@conflict jre->=1.8v0,<1.9v0
+@pkgpath devel/jdk/1.7,-jdk[,with_ipv6]
+@pkgpath devel/jdk/1.7,-jre[,with_ipv6]
+@pkgpath devel/jdk/1.8,-jdk[,with_ipv6]
+@pkgpath devel/jdk/1.8,-main[,with_ipv6]
+@pkgpath devel/jdk/1.8,-jre[,with_ipv6]
 ${JDKHOME}/
 ${JDKHOME}/ASSEMBLY_EXCEPTION
 ${JDKHOME}/LICENSE
 ${JDKHOME}/THIRD_PARTY_README
 ${JDKHOME}/bin/
 @bin ${JDKHOME}/bin/appletviewer
+@bin ${JDKHOME}/bin/clhsdb
 @bin ${JDKHOME}/bin/extcheck
+@bin ${JDKHOME}/bin/hsdb
 @bin ${JDKHOME}/bin/idlj
 @bin ${JDKHOME}/bin/jar
 @bin ${JDKHOME}/bin/jarsigner
@@ -419,6 +425,8 @@ ${JDKHOME}/jre/ASSEMBLY_EXCEPTION
 ${JDKHOME}/jre/LICENSE
 ${JDKHOME}/jre/THIRD_PARTY_README
 ${JDKHOME}/jre/bin/
+@bin ${JDKHOME}/jre/bin/clhsdb
+@bin ${JDKHOME}/jre/bin/hsdb
 @bin ${JDKHOME}/jre/bin/java
 @bin ${JDKHOME}/jre/bin/jjs
 @bin ${JDKHOME}/jre/bin/keytool

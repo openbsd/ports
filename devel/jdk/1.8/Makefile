@@ -1,36 +1,33 @@
-# $OpenBSD: Makefile,v 1.42 2019/05/28 17:37:40 kurt Exp $
+# $OpenBSD: Makefile,v 1.43 2019/06/11 00:35:17 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
 DPB_PROPERTIES=	parallel
 
-COMMENT-main=	OpenJDK Software Development Kit v${V}
-COMMENT-jre=	OpenJDK Runtime Environment v${V}
-U=		202
-V=		1.8.0.${U}
-B=		b08
+COMMENT=	OpenJDK Software Development Kit v${V}
+BASE_VER=	1.8.0
+UPDATE_VER=	212
+BUILD_VER=	b04
+BSD_PORT_REL=	1
+V=		${BASE_VER}.${UPDATE_VER}.${BUILD_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${V}
-PKGNAME-main=	jdk-${V}
-PKGNAME-jre=	jre-${V}
+PKGSTEM=	jdk-${BASE_VER}
 EPOCH=		0
-REVISION=	0
 
 DIST_SUBDIR=	jdk
-DISTNAME=	openjdk-8u202b08-bsd-port-20190310
+DISTNAME=	jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}
 BOOTJDK_DATE=	20190111
-EXTRACT_SUFX=	.tar.xz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+WRKDIST=	${WRKDIR}/openjdk-jdk8u-jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}
 
 CATEGORIES=	devel/jdk java
-
-MULTI_PACKAGES=	-main -jre
 
 PSEUDO_FLAVORS=	native_bootstrap
 FLAVOR?=
 
 HOMEPAGE=	http://openjdk.java.net/
 
-MASTER_SITES=	http://www.intricatesoftware.com/distfiles/
+MASTER_SITES=	https://github.com/battleblow/openjdk-jdk8u/archive/
 MASTER_SITES1=	https://spacehopper.org/mirrors/ \
 		http://www.intricatesoftware.com/distfiles/
 MASTER_SITES2=	${MASTER_SITE_APACHE:=ant/binaries/} \
@@ -48,7 +45,7 @@ SUPDISTFILES+=	openjdk8-bootjdk-i386-${BOOTJDK_DATE}.tar.gz:1  \
 		openjdk8-bootjdk-amd64-${BOOTJDK_DATE}.tar.gz:1 \
 		${APACHE_ANT}:2
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
 .include <bsd.port.arch.mk>
 
@@ -92,6 +89,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-option-checking \
 		--with-boot-jdk=${BOOT_JDK} \
 		--with-package-path=${LOCALBASE} \
+		--with-fontconfig=${X11BASE} \
 		--with-jobs=${MAKE_JOBS} \
 		--with-cacerts-file=${FILESDIR}/cacerts \
 		--with-debug-level=release \
@@ -103,8 +101,8 @@ CONFIGURE_ARGS=	--disable-option-checking \
 		--with-zlib=system \
 		--with-giflib=system \
 		--with-milestone=fcs \
-		--with-update-version=${U} \
-		--with-build-number=${B}
+		--with-update-version=${UPDATE_VER} \
+		--with-build-number=${BUILD_VER}
 CONFIGURE_ENV+=	ac_cv_path_NAWK=awk
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/common/autoconf/build-aux
 
@@ -117,28 +115,23 @@ MAKE_ENV+=	USE_CLANG=true
 .endif
 
 JDKHOME=	jdk-1.8.0
-JREHOME=	jre-1.8.0
 
-SUBST_VARS=	JDKHOME JREHOME
+SUBST_VARS=	JDKHOME
 
 JVMARCH=	${MACHINE_ARCH:S/i386/x86/:S/amd64/x86_64/}
 BUILDDIR=	${WRKDIST}/build/bsd-${JVMARCH}-normal-server-release/images
 JDKIMAGEDIR=	${BUILDDIR}/j2sdk-image
-JREIMAGEDIR=	${BUILDDIR}/j2re-image
 WRKTMP=		${WRKDIR}/tmp
  
 post-extract:
 	chmod +x ${WRKDIST}/configure
 
 post-build:
-	@rm -rf ${JDKIMAGEDIR}/man/ja ${JDKIMAGEDIR}/man/ja_JP.UTF-8 \
-		${JREIMAGEDIR}/man/ja ${JREIMAGEDIR}/man/ja_JP.UTF-8
+	@rm -rf ${JDKIMAGEDIR}/man/ja ${JDKIMAGEDIR}/man/ja_JP.UTF-8
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${JDKHOME}
 	cd ${JDKIMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${JDKHOME} -xf - 
-	${INSTALL_DATA_DIR} ${PREFIX}/${JREHOME}
-	cd ${JREIMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${JREHOME} -xf -
 
 # The bootjdk is the jdk image with some parts deleted
 # and a copy of the system shared libs needed to run it.
