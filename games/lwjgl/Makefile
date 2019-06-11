@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/03/24 22:24:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/06/11 00:37:09 kurt Exp $
 
 COMMENT=	lightweight game library for java
 
@@ -8,7 +8,7 @@ GH_PROJECT=	lwjgl
 GH_TAGNAME=	${GH_PROJECT}${V}
 DISTNAME=	lwjgl${V}
 PKGNAME=	lwjgl-${V}
-REVISION=	1
+REVISION=	2
 
 .if ${MACHINE_ARCH} == "i386"
 M_ARCH=		""
@@ -34,13 +34,9 @@ MODULES=	java
 MODJAVA_VER=	1.8+
 MODJAVA_BUILD=	ant
 
-BUILD_DEPENDS=	audio/openal \
-		devel/apache-ant
+BUILD_DEPENDS=	audio/openal
 
 NO_TEST=	Yes
-
-ANT_CMD=	${SETENV} ${MAKE_ENV} PATH=${JAVA_HOME}/bin:${PATH} \
-		${LOCALBASE}/bin/ant
 
 SUBST_VARS+=	M_ARCH
 
@@ -49,9 +45,6 @@ pre-configure:
 		${WRKSRC}/platform_build/bsd_ant/build.xml
 	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/platform_build/bsd_ant/build.xml
-
-do-build:
-	cd ${WRKSRC} && ${ANT_CMD}
 
 do-install:
 	${INSTALL_DATA_DIR} ${LWJGL_HOME}

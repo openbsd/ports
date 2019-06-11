@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2019/05/18 16:03:47 jeremy Exp $
+# $OpenBSD: Makefile,v 1.79 2019/06/11 00:37:09 kurt Exp $
 
 # Runtime failures on i386 in IO#pos and IO#rewind
 ONLY_FOR_ARCHS = amd64
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS = amd64
 COMMENT =	pure-Java implementation of the Ruby language
 
 V =		9.2.7.0
-REVISION =	0
+REVISION =	1
 DISTNAME =	jruby-dist-${V}-bin
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
@@ -27,29 +27,27 @@ MASTER_SITES1 =	${MASTER_SITE_RUBYGEMS}
 
 MODULES =	java
 MODJAVA_VER =	1.8+
+MODJAVA_BUILD =	ant
 USE_GMAKE =	Yes
 
 WANTLIB =	c m pthread ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-BUILD_DEPENDS =	devel/apache-ant \
-		shells/bash \
-		${RUN_DEPENDS}
+BUILD_DEPENDS = shells/bash
 RUN_DEPENDS =	java/javaPathHelper
-
-MAKE_ENV =	JAVA_HOME=${JAVA_HOME} MAKE=${MAKE_PROGRAM}
 
 JRUBY_HOME =	${PREFIX}/jruby
 
 WRKDIST =	${WRKDIR}/jruby-${V}
-ANT_CMD =	${SETENV} ${MAKE_ENV} PATH=${JAVA_HOME}/bin:${PATH} \
-			${LOCALBASE}/bin/ant
 JFFI_HOME =	${WRKDIST}/jffi
 JFFI_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}-OpenBSD
 FFI_ARCH =	${JFFI_ARCH:L}
 JRUBY_LAUNCHER_GEM = jruby-launcher-1.1.9-java.gem
 SUBST_VARS =	JRUBY_HOME JFFI_ARCH FFI_ARCH RAKE_V RDOC_V JAVA_HOME
+
+MODJAVA_BUILD_DIR = ${JFFI_HOME}
+MODJAVA_BUILD_TARGET_NAME = jar
 
 post-extract:
 	mv ${WRKDIR}/jffi-jffi* ${JFFI_HOME}
@@ -68,7 +66,7 @@ do-configure:
                 -e 'close ARGV if eof;' ${WRKSRC}/bin/!(*.*)
 
 do-build:
-	cd ${JFFI_HOME} && ${ANT_CMD} jar
+	${MODJAVA_BUILD_TARGET}
 	rm -rf ${WRKSRC}/lib/jni
 	mkdir -p ${WRKSRC}/lib/jni/${JFFI_ARCH}
 	cp ${JFFI_HOME}/build/jni/libjffi-1.2.so \

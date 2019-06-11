@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2019/06/03 16:06:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/06/11 00:37:09 kurt Exp $
 
 COMMENT=	pdf swiss army knife
 
 V=		v3.0.3
 DISTNAME=	pdftk-$V
 PKGNAME=	${DISTNAME:S/-v/-/}
+REVISION=	0
 EXTRACT_ONLY=	pdftk-$V.tar.gz \
 		commons-lang3-3.8.1-bin.tar.gz
 
@@ -27,6 +28,7 @@ DISTFILES=	pdftk-$V.tar.gz \
 MODULES=	java
 MODJAVA_VER=	1.8+
 MODJAVA_BUILD=	ant
+MODJAVA_BUILD_TARGET_NAME= jar
 
 RUN_DEPENDS+=	java/javaPathHelper
 
@@ -34,9 +36,6 @@ post-extract:
 	mkdir ${WRKSRC}/lib
 	cp ${FULLDISTDIR}/bcprov-jdk15on-160.jar ${WRKSRC}/lib/bcprov.jar
 	cp ${WRKDIR}/commons-lang3-3.8.1/commons-lang3-3.8.1.jar ${WRKSRC}/lib/commons-lang3.jar
-
-do-build:
-	cd ${WRKSRC}; ant jar
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pdftk
