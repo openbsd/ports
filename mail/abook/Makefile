@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2019/05/20 22:15:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2019/06/11 19:28:45 ajacoutot Exp $
 
 COMMENT=		addressbook program with mutt support
 
@@ -20,7 +20,8 @@ LIB_DEPENDS=		converters/libiconv \
 
 CONFIGURE_STYLE=	autoreconf
 
-BUILD_DEPENDS=		devel/gettext,-tools
+BUILD_DEPENDS=		devel/gettext,-tools \
+			archivers/xz
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.14
 
