@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/04/20 00:59:40 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/06/11 07:17:23 bentley Exp $
 share/doc/ibm-plex/
 share/doc/ibm-plex/license.txt
 share/fonts/
@@ -147,6 +147,22 @@ share/fonts/ibm-plex/IBMPlexSansHebrew-Text.otf
 share/fonts/ibm-plex/IBMPlexSansHebrew-Text.ttf
 share/fonts/ibm-plex/IBMPlexSansHebrew-Thin.otf
 share/fonts/ibm-plex/IBMPlexSansHebrew-Thin.ttf
+share/fonts/ibm-plex/IBMPlexSansThaiLooped-Bold.otf
+share/fonts/ibm-plex/IBMPlexSansThaiLooped-Bold.ttf
+share/fonts/ibm-plex/IBMPlexSansThaiLooped-ExtraLight.otf
+share/fonts/ibm-plex/IBMPlexSansThaiLooped-ExtraLight.ttf
+share/fonts/ibm-plex/IBMPlexSansThaiLooped-Light.otf
+share/fonts/ibm-plex/IBMPlexSansThaiLooped-Light.ttf
+share/fonts/ibm-plex/IBMPlexSansThaiLooped-Medium.otf
+share/fonts/ibm-plex/IBMPlexSansThaiLooped-Medium.ttf
+share/fonts/ibm-plex/IBMPlexSansThaiLooped-Regular.otf
+share/fonts/ibm-plex/IBMPlexSansThaiLooped-Regular.ttf
+share/fonts/ibm-plex/IBMPlexSansThaiLooped-SemiBold.otf
+share/fonts/ibm-plex/IBMPlexSansThaiLooped-SemiBold.ttf
+share/fonts/ibm-plex/IBMPlexSansThaiLooped-Text.otf
+share/fonts/ibm-plex/IBMPlexSansThaiLooped-Text.ttf
+share/fonts/ibm-plex/IBMPlexSansThaiLooped-Thin.otf
+share/fonts/ibm-plex/IBMPlexSansThaiLooped-Thin.ttf
 share/fonts/ibm-plex/IBMPlexSerif-Bold.otf
 share/fonts/ibm-plex/IBMPlexSerif-Bold.ttf
 share/fonts/ibm-plex/IBMPlexSerif-BoldItalic.otf
@@ -195,19 +211,3 @@ share/fonts/ibm-plex/IBMPlexThai-Text.otf
 share/fonts/ibm-plex/IBMPlexThai-Text.ttf
 share/fonts/ibm-plex/IBMPlexThai-Thin.otf
 share/fonts/ibm-plex/IBMPlexThai-Thin.ttf
-share/fonts/ibm-plex/IBMPlexThaiLooped-Bold.otf
-share/fonts/ibm-plex/IBMPlexThaiLooped-Bold.ttf
-share/fonts/ibm-plex/IBMPlexThaiLooped-ExtraLight.otf
-share/fonts/ibm-plex/IBMPlexThaiLooped-ExtraLight.ttf
-share/fonts/ibm-plex/IBMPlexThaiLooped-Light.otf
-share/fonts/ibm-plex/IBMPlexThaiLooped-Light.ttf
-share/fonts/ibm-plex/IBMPlexThaiLooped-Medium.otf
-share/fonts/ibm-plex/IBMPlexThaiLooped-Medium.ttf
-share/fonts/ibm-plex/IBMPlexThaiLooped-Regular.otf
-share/fonts/ibm-plex/IBMPlexThaiLooped-Regular.ttf
-share/fonts/ibm-plex/IBMPlexThaiLooped-SemiBold.otf
-share/fonts/ibm-plex/IBMPlexThaiLooped-SemiBold.ttf
-share/fonts/ibm-plex/IBMPlexThaiLooped-Text.otf
-share/fonts/ibm-plex/IBMPlexThaiLooped-Text.ttf
-share/fonts/ibm-plex/IBMPlexThaiLooped-Thin.otf
-share/fonts/ibm-plex/IBMPlexThaiLooped-Thin.ttf
