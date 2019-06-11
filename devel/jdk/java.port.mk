@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.36 2019/03/28 19:00:47 sthen Exp $
+# $OpenBSD: java.port.mk,v 1.37 2019/06/11 00:36:04 kurt Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version of the jdk needed
 # for the port. x.y means any x.y jdk. x.y+ means any x.y jdk or higher
@@ -44,6 +44,8 @@ RUN_DEPENDS+= ${MODJAVA_RUN_DEPENDS}
 
 .if ${NO_BUILD:L} != "yes"
     BUILD_DEPENDS+= ${MODJAVA_BUILD_DEPENDS}
+    CONFIGURE_ENV += JAVA_HOME=${JAVA_HOME}
+    MAKE_ENV += JAVA_HOME=${JAVA_HOME}
 .endif
 
 # Append 'java' to the list of categories.
@@ -55,7 +57,6 @@ CATEGORIES+=	java
 # respectively.
 .if defined(MODJAVA_BUILD) && ${MODJAVA_BUILD:L} == "ant"
     BUILD_DEPENDS += devel/apache-ant
-    MAKE_ENV += JAVA_HOME=${JAVA_HOME}
     MODJAVA_BUILD_TARGET_NAME ?=
     MODJAVA_BUILD_FILE ?= build.xml
     MODJAVA_BUILD_DIR ?= ${WRKSRC}
