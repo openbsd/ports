@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/03 12:28:13 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/06/12 04:41:57 semarie Exp $
 @option is-branch
 @newgroup _trytond:675
 @newuser _trytond:675:675:daemon:Trytond Daemon:/var/trytond:/bin/sh
@@ -18,7 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/trytond-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/trytond-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/trytond/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/${MODPY_PYCACHE}admin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}pyc
@@ -46,14 +46,14 @@ lib/python${MODPY_VERSION}/site-packages/trytond/admin.py
 lib/python${MODPY_VERSION}/site-packages/trytond/application.py
 lib/python${MODPY_VERSION}/site-packages/trytond/backend/
 lib/python${MODPY_VERSION}/site-packages/trytond/backend/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/backend/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/backend/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/backend/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/backend/${MODPY_PYCACHE}database.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/backend/${MODPY_PYCACHE}table.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/backend/database.py
 lib/python${MODPY_VERSION}/site-packages/trytond/backend/postgresql/
 lib/python${MODPY_VERSION}/site-packages/trytond/backend/postgresql/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/backend/postgresql/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/backend/postgresql/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/backend/postgresql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/backend/postgresql/${MODPY_PYCACHE}database.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/backend/postgresql/${MODPY_PYCACHE}table.${MODPY_PYC_MAGIC_TAG}pyc
@@ -62,7 +62,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/backend/postgresql/init.sql
 lib/python${MODPY_VERSION}/site-packages/trytond/backend/postgresql/table.py
 lib/python${MODPY_VERSION}/site-packages/trytond/backend/sqlite/
 lib/python${MODPY_VERSION}/site-packages/trytond/backend/sqlite/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/backend/sqlite/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/backend/sqlite/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/backend/sqlite/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/backend/sqlite/${MODPY_PYCACHE}database.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/backend/sqlite/${MODPY_PYCACHE}table.${MODPY_PYC_MAGIC_TAG}pyc
@@ -82,7 +82,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/trytond/filestore.py
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/ir/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/ir/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/${MODPY_PYCACHE}action.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/${MODPY_PYCACHE}attachment.${MODPY_PYC_MAGIC_TAG}pyc
@@ -160,7 +160,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/ir/trigger.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/tryton.cfg
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/ui/
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/ui/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/ir/ui/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/ir/ui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/ui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/ui/${MODPY_PYCACHE}icon.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/ui/${MODPY_PYCACHE}menu.${MODPY_PYC_MAGIC_TAG}pyc
@@ -283,7 +283,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/ir/view/ui_view_tree_width_form
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/view/ui_view_tree_width_list.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/model/
 lib/python${MODPY_VERSION}/site-packages/trytond/model/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/model/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/model/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/model/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/model/${MODPY_PYCACHE}active.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/model/${MODPY_PYCACHE}descriptors.${MODPY_PYC_MAGIC_TAG}pyc
@@ -304,7 +304,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/model/descriptors.py
 lib/python${MODPY_VERSION}/site-packages/trytond/model/dictschema.py
 lib/python${MODPY_VERSION}/site-packages/trytond/model/fields/
 lib/python${MODPY_VERSION}/site-packages/trytond/model/fields/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/model/fields/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/model/fields/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/model/fields/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/model/fields/${MODPY_PYCACHE}binary.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/model/fields/${MODPY_PYCACHE}boolean.${MODPY_PYC_MAGIC_TAG}pyc
@@ -353,12 +353,12 @@ lib/python${MODPY_VERSION}/site-packages/trytond/model/union.py
 lib/python${MODPY_VERSION}/site-packages/trytond/model/workflow.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/pool.py
 lib/python${MODPY_VERSION}/site-packages/trytond/protocols/
 lib/python${MODPY_VERSION}/site-packages/trytond/protocols/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/protocols/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/protocols/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/protocols/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/protocols/${MODPY_PYCACHE}dispatcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/protocols/${MODPY_PYCACHE}jsonrpc.${MODPY_PYC_MAGIC_TAG}pyc
@@ -371,13 +371,13 @@ lib/python${MODPY_VERSION}/site-packages/trytond/protocols/xmlrpc.py
 lib/python${MODPY_VERSION}/site-packages/trytond/pyson.py
 lib/python${MODPY_VERSION}/site-packages/trytond/report/
 lib/python${MODPY_VERSION}/site-packages/trytond/report/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/report/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/report/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/report/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/report/${MODPY_PYCACHE}report.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/report/report.py
 lib/python${MODPY_VERSION}/site-packages/trytond/res/
 lib/python${MODPY_VERSION}/site-packages/trytond/res/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/res/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/res/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/res/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/res/${MODPY_PYCACHE}group.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/res/${MODPY_PYCACHE}ir.${MODPY_PYC_MAGIC_TAG}pyc
@@ -431,7 +431,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/sendmail.py
 lib/python${MODPY_VERSION}/site-packages/trytond/test_loader.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/${MODPY_PYCACHE}access.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/${MODPY_PYCACHE}copy_.${MODPY_PYC_MAGIC_TAG}pyc
@@ -629,7 +629,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/tests/workflow.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/tools/
 lib/python${MODPY_VERSION}/site-packages/trytond/tools/StringMatcher.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tools/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/tools/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/tools/${MODPY_PYCACHE}StringMatcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tools/${MODPY_PYCACHE}datetime_strftime.${MODPY_PYC_MAGIC_TAG}pyc
@@ -646,7 +646,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/transaction.py
 lib/python${MODPY_VERSION}/site-packages/trytond/url.py
 lib/python${MODPY_VERSION}/site-packages/trytond/wizard/
 lib/python${MODPY_VERSION}/site-packages/trytond/wizard/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/wizard/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/wizard/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/wizard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/wizard/${MODPY_PYCACHE}wizard.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/wizard/wizard.py
