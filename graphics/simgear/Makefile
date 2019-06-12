@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/12/26 19:19:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2019/06/12 21:54:40 naddy Exp $
 
 COMMENT =		library set for simulations, games and visualizations
 
@@ -15,7 +15,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 HOMEPAGE =		http://www.flightgear.org
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=flightgear/}
 EXTRACT_SUFX =		.tar.bz2
@@ -35,5 +35,9 @@ CFLAGS +=		-I${X11BASE}/include -pthread
 CXXFLAGS +=		-I${X11BASE}/include -pthread
 
 NO_TEST =		Yes
+
+# Keep C++ #include <version> from picking up this unrelated file
+post-extract:
+	mv ${WRKSRC}/version ${WRKSRC}/version.txt
 
 .include <bsd.port.mk>
