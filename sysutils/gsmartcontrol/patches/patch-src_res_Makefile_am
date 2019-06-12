@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_res_Makefile_am,v 1.1 2019/06/12 21:13:59 naddy Exp $
+
+Work around .cpp suffix rules.  These rules are not actually needed as the files
+are distributed with the tarball.  Upstream workaround of setting SUFFIXES=
+earlier in the Makefile only works with GNU make.
+
+Index: src/res/Makefile.am
+--- src/res/Makefile.am.orig
++++ src/res/Makefile.am
+@@ -38,7 +38,3 @@ libres_a_DEPENDENCIES = $(RES_LIBADD)
+ EXTRA_DIST = $(RES_DIST)
+ 
+ 
+-# This lists the actual makefile rules for each target.
+-@RES_TARGETS@
+-
+-

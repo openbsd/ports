@@ -1,0 +1,26 @@
+$OpenBSD: patch-configure_ac,v 1.1 2019/06/12 21:13:59 naddy Exp $
+
+Move config.h into src subdirectory to keep C++ #include <version>
+from picking up an unrelated file by way of -I$(top_srcdir).
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -2,7 +2,7 @@
+ AC_INIT([GSmartControl],[1.1.3],[],[gsmartcontrol])
+ 
+ AC_CONFIG_SRCDIR([configure.ac])
+-AC_CONFIG_HEADERS([config.h])
++AC_CONFIG_HEADERS([src/config.h])
+ 
+ AC_CANONICAL_TARGET
+ 
+@@ -389,7 +389,7 @@ CXXFLAGS="$CXXFLAGS $ADDITIONAL_FLAGS"
+ # Add global configuration file. Note: It must be searched in top_builddir
+ # first (that's why -I is the first flag), for precompiled headers to work.
+ 
+-ADDITIONAL_INCLUDES="-I\$(top_builddir) -I\$(top_srcdir)/src"
++ADDITIONAL_INCLUDES="-I\$(top_srcdir)/src"
+ 
+ # -include works with gcc, intel, pathscale and sunstudio since 12u1, but doesn't work
+ # with pgi and older sunstudio (the one in solaris10, for example).
