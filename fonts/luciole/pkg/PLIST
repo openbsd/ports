@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/12 05:47:32 rpointel Exp $
+share/fonts/
+@fontdir share/fonts/luciole/
+share/fonts/luciole/Luciole-Bold-Italic.ttf
+share/fonts/luciole/Luciole-Bold.ttf
+share/fonts/luciole/Luciole-Regular-Italic.ttf
+share/fonts/luciole/Luciole-Regular.ttf
