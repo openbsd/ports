@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.17 2019/05/16 15:55:47 afresh1 Exp $
+# $OpenBSD: Port.pm,v 1.18 2019/06/12 19:25:53 kmos Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 # Copyright (c) 2019 Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -176,11 +176,10 @@ sub set_license
 	my ( $self, $license ) = @_;
 
 	if ( is_good($license) ) {
-		$self->{PERMIT_PACKAGE_CDROM} = 'Yes';
+		$self->{PERMIT_PACKAGE} = 'Yes';
 	} else {
-		$self->{PERMIT_PACKAGE_CDROM} = 'unknown license';
-		$self->{PERMIT_PACKAGE_FTP}   = 'unknown license';
-		$self->{PERMIT_DISTFILES_FTP} = 'unknown license';
+		$self->{PERMIT_PACKAGE}   = 'unknown license';
+		$self->{PERMIT_DISTFILES} = 'unknown license';
 	}
 
 	$self->{license} = pretty_license($license);
@@ -396,7 +395,7 @@ sub write_makefile
 			my $print_key = "$key$equal";
 			$print_key .= $tabs if length $value;
 
-			if ( $key eq 'PERMIT_PACKAGE_CDROM' && $license ) {
+			if ( $key eq 'PERMIT_PACKAGE' && $license ) {
 				# guess that the comment before this was
 				# the license marker.
 				pop @makefile if $makefile[-1] =~ /^#/;
