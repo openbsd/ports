@@ -1,21 +1,35 @@
-$OpenBSD: patch-configure_ac,v 1.2 2019/03/27 16:19:55 jca Exp $
+$OpenBSD: patch-configure_ac,v 1.3 2019/06/12 20:28:36 rapha Exp $
 
-- do not use -latomic with clang
+- check if -latomic is needed
+- disable jack
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -208,9 +208,6 @@ dnl Check if $CXX is clang by evaluating the version s
- dnl $ax_cv_cxx_compiler_vendor seems not to work (it is either "gnu" or just empty).
- dnl If $CXX is clang (string is found), grep returns 0 and the if is executed.
- dnl Use /dev/null to suppress grep output to shell.
+@@ -204,12 +204,16 @@ if test x$enable_universal_binary = xyes; then
+    esac
+ fi
+ 
+-dnl Check if $CXX is clang by evaluating the version string because
+-dnl $ax_cv_cxx_compiler_vendor seems not to work (it is either "gnu" or just empty).
+-dnl If $CXX is clang (string is found), grep returns 0 and the if is executed.
+-dnl Use /dev/null to suppress grep output to shell.
 -if ($CXX --version | grep 'clang version' > /dev/null); then
 -    LDFLAGS="${LDFLAGS} -latomic"
--fi
++AC_LINK_IFELSE([AC_LANG_SOURCE([[
++  #include <atomic>
++  #include <cstdint>
++  std::atomic<std::int64_t> v;
++  int main() {
++    return v;
++  }
++]])], STD_ATOMIC_NEED_LIBATOMIC=no, STD_ATOMIC_NEED_LIBATOMIC=yes)
++if test "x$STD_ATOMIC_NEED_LIBATOMIC" = xyes; then
++   LDFLAGS="${LDFLAGS} -latomic"
+ fi
  
  if test x$enable_sse = xyes; then
- 
-@@ -650,10 +647,6 @@ case "${host_os}" in
+@@ -650,10 +654,6 @@ case "${host_os}" in
        AC_CHECK_LIB(asound, snd_pcm_open, have_alsa=yes, have_alsa=no)
        if [[ $have_alsa = "yes" ]] ; then
           LIBS="$LIBS -lasound"
