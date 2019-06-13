@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/29 17:00:48 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2019/06/13 21:54:24 bcallah Exp $
 
-V =		2.0.2
+V =		2.0.3
 COMMENT =	implementation of POSIX bc with GNU and BSD extensions
 DISTNAME =	bc-${V}
 PKGNAME =	ebc-${V}
@@ -11,7 +11,7 @@ HOMEPAGE =	https://github.com/gavinhoward/bc
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
