@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.27 2018/06/27 21:04:25 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2019/06/13 15:48:57 sthen Exp $
 
 COMMENT=	Xfce4 Music Player Daemon client
 
 XFCE_VERSION=	0.2.3
 XFCE_GOODIE=	xfmpc
-REVISION =	2
+REVISION =	3
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c
-WANTLIB += cairo expat ffi fontconfig freetype gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz m mpd pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += startup-notification-1 xcb xcb-render
-WANTLIB += xcb-shm xcb-util xfce4ui-1 xfce4util z iconv intl
+WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig
+WANTLIB += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
+WANTLIB += harfbuzz iconv intl m mpd pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread startup-notification-1
+WANTLIB += xcb xcb-render xcb-shm xcb-util xfce4ui-1 xfce4util z
 
 MODXFCE_DESKTOP_FILE=	Yes
 MODULES=	x11/xfce4

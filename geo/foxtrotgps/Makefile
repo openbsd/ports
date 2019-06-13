@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/20 22:15:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/06/13 15:48:52 sthen Exp $
 
 COMMENT =		lightweight mapping application for use with or without GPS
 
 DISTNAME =		foxtrotgps-1.2.1
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		geo x11
 
@@ -17,13 +17,12 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 c cairo crypto curl exif
-WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glade-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gps
-WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl lzma m
-WANTLIB += nghttp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread sqlite3 ssl xcb xcb-render xcb-shm
-WANTLIB += xml2 z
+WANTLIB += Xrender atk-1.0 c cairo crypto curl exif expat ffi fontconfig
+WANTLIB += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gps graphite2 gthread-2.0
+WANTLIB += gtk-x11-2.0 harfbuzz iconv intl lzma m nghttp2 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread sqlite3
+WANTLIB += ssl xcb xcb-render xcb-shm xml2 z
 
 MODULES = 		lang/python \
 			textproc/intltool

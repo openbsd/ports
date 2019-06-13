@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.87 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.88 2019/06/13 15:48:54 sthen Exp $
 
 COMMENT=		HTML editor for experienced web designers
 
 DISTNAME =		bluefish-2.2.10
 CATEGORIES=		www editors
 HOMEPAGE=		http://bluefish.openoffice.nl/
-REVISION =		5
+REVISION =		6
 
 MASTER_SITES=		http://www.bennewitz.com/bluefish/stable/source/
 
@@ -20,7 +20,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += gucharmap_2_90 harfbuzz iconv intl lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += ${MODPY_WANTLIB} ${COMPILER_LIBCXX} util xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += xcb-shm xml2 z fribidi
 
 COMPILER =		base-clang ports-gcc base-gcc
 

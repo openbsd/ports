@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/06/13 15:48:51 sthen Exp $
 
 COMMENT=		python bindings for libnotify
 
 V=			0.1.1
 DISTNAME=		notify-python-${V}
 PKGNAME=		py-notify-${V}
-REVISION =		14
+REVISION =		15
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.galago-project.org/
@@ -13,13 +13,13 @@ HOMEPAGE=		http://www.galago-project.org/
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =  GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat ffi
-WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz iconv intl m notify pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread xcb
-WANTLIB += xcb-render xcb-shm z
+WANTLIB += fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl m notify
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
+WANTLIB += pthread xcb xcb-render xcb-shm z
 
 MASTER_SITES=		${HOMEPAGE}/files/releases/source/notify-python/
 EXTRACT_SUFX=		.tar.bz2

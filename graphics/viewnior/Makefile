@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/06/13 15:48:52 sthen Exp $
 
 COMMENT=		fast and simple image viewer
 
 DISTNAME=		viewnior-1.6
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		graphics x11
 
@@ -18,7 +18,7 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread ${COMPILER_LIBCXX} xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += xcb-shm z fribidi
 
 COMPILER =		base-clang ports-gcc base-gcc
 

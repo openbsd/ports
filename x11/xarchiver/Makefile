@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/20 22:15:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2019/06/13 15:48:56 sthen Exp $
 
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
@@ -6,12 +6,20 @@ GH_ACCOUNT =	ib
 GH_PROJECT =	xarchiver
 GH_COMMIT =		358d2f86a74cc37573e6c5175f40f2a810c2b0a7
 DISTNAME =		xarchiver-0.5.4.12pl0
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =	http://xarchiver.sourceforge.net
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c cairo
+WANTLIB += cairo-gobject dbus-1 epoxy expat ffi fontconfig freetype
+WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl m
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
+WANTLIB += pthread xcb xcb-render xcb-shm z
 
 MODULES =	textproc/intltool
 
@@ -32,16 +40,6 @@ RUN_DEPENDS =	archivers/zip \
 		devel/xdg-utils \
 		devel/desktop-file-utils \
 		x11/gtk+3,-guic
-
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig
-WANTLIB += freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread xcb xcb-render
-WANTLIB += xcb-shm z
-WANTLIB += Xtst atk-bridge-2.0 atspi cairo-gobject dbus-1 epoxy
-WANTLIB += gdk-3 gtk-3
 
 
 .include <bsd.port.mk>

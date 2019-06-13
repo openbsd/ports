@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2019/06/13 15:48:54 sthen Exp $
 
 COMMENT=	graphics library for GNOME
 
 GNOME_PROJECT=	libgnomecanvas
 GNOME_VERSION=	2.30.3
-REVISION=	7
+REVISION=	8
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -15,13 +15,13 @@ CATEGORIES=	x11
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB+= X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB+= Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 cairo
-WANTLIB+= expat ffi fontconfig freetype gailutil gdk-x11-2.0 iconv
-WANTLIB+= gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0 gmodule-2.0 intl
-WANTLIB+= gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz lzma m
-WANTLIB+= pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB+= pthread xcb xcb-render xcb-shm xml2 z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB+= Xrender art_lgpl_2 atk-1.0 cairo expat ffi fontconfig freetype
+WANTLIB+= fribidi gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
+WANTLIB+= glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB+= gtk-x11-2.0 harfbuzz iconv intl lzma m pango-1.0
+WANTLIB+= pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread xcb
+WANTLIB+= xcb-render xcb-shm xml2 z
 
 MODULES=	x11/gnome
 

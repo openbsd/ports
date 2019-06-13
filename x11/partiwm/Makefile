@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/06/13 15:48:55 sthen Exp $
 
 COMMENT=	tiling window manager
 
 DISTNAME=	parti-all-0.0.6
 PKGNAME=	${DISTNAME:S/-all//}
-REVISION=	11
+REVISION=	12
 CATEGORIES=	x11
 
 HOMEPAGE=	https://github.com/njsmith/partiwm
@@ -12,17 +12,19 @@ HOMEPAGE=	https://github.com/njsmith/partiwm
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender Xtst atk-1.0 cairo expat ffi
+WANTLIB += fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gtk-x11-2.0 harfbuzz intl pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread xcb xcb-render xcb-shm
+WANTLIB += z
+
 MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=partiwm/}
 
 MODULES=	lang/python
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xtst atk-1.0 cairo expat
-WANTLIB += ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gtk-x11-2.0 harfbuzz intl pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += xcb xcb-render xcb-shm z ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/ipython \

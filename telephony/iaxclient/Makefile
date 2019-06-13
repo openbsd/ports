@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/02/21 22:37:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2019/06/13 15:48:54 sthen Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -7,6 +7,7 @@ DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
 REVISION=	24
+REVISION-tcl=	25
 
 CATEGORIES=	telephony
 SHARED_LIBS=	tcliaxclient02 0.0 \
@@ -36,7 +37,7 @@ WANTLIB-tcl	+= expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-tcl	+= gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-tcl	+= gtk-x11-2.0 iaxclient iconv intl pango-1.0 pangocairo-1.0
 WANTLIB-tcl	+= pangoft2-1.0 pcre pixman-1 png xcb xcb-render
-WANTLIB-tcl	+= graphite2 harfbuzz vorbis
+WANTLIB-tcl	+= graphite2 harfbuzz vorbis fribidi
 WANTLIB-tcl	+= xcb-shm ffi ${cWANTLIB}
 
 

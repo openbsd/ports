@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/06/13 15:48:52 sthen Exp $
 
 COMMENT=	scim input method module for hangul
 
 DISTNAME=	scim-hangul-0.3.2
-REVISION=	13
+REVISION=	14
 
 CATEGORIES=	inputmethods korean
 
@@ -19,7 +19,7 @@ WANTLIB+= glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB+= gtk-x11-2.0 hangul harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB+= pangoft2-1.0 pcre pixman-1 png pthread scim-1.0
 WANTLIB+= scim-gtkutils-1.0 scim-x11utils-1.0 ${COMPILER_LIBCXX} xcb xcb-render
-WANTLIB+= xcb-shm z
+WANTLIB+= xcb-shm z fribidi
 
 COMPILER =		base-clang ports-gcc base-gcc
 

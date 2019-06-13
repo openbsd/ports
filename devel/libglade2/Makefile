@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2018/06/29 09:58:56 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2019/06/13 15:48:51 sthen Exp $
 
 COMMENT=		library for loading GLADE interface files at runtime
 
@@ -8,7 +8,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME=		libglade2-${GNOME_VERSION}
 EPOCH=			0
-REVISION=		16
+REVISION=		17
 
 SHARED_LIBS +=  glade-2.0            1.0      # 1.0
 
@@ -20,8 +20,8 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 cairo expat ffi fontconfig freetype
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 cairo expat ffi fontconfig freetype fribidi
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv
 WANTLIB += intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre

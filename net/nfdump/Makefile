@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/06/03 16:06:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/06/13 15:48:53 sthen Exp $
 
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
@@ -9,6 +9,7 @@ GH_PROJECT =		nfdump
 GH_TAGNAME =		v$V
 FULLPKGNAME-main =	nfdump-$V
 FULLPKGNAME-nfprofile =	nfprofile-$V
+REVISION-nfprofile =	0
 
 SHARED_LIBS +=	nfdump                    0.0 # 0.0
 
@@ -20,6 +21,13 @@ MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		bz2 c z
+
+WANTLIB-nfprofile =  ${WANTLIB}
+WANTLIB-nfprofile += X11 Xext Xrender cairo expat ffi fontconfig freetype
+WANTLIB-nfprofile += glib-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
+WANTLIB-nfprofile += iconv intl lzma m nfdump pango-1.0 pangocairo-1.0
+WANTLIB-nfprofile += pangoft2-1.0 pcre pixman-1 png pthread rrd xcb
+WANTLIB-nfprofile += xcb-render xcb-shm xml2 fribidi
 
 CONFIGURE_STYLE =	autoreconf
 
@@ -41,13 +49,6 @@ WANTLIB-main =		${WANTLIB} ft
 LIB_DEPENDS-nfprofile =	net/rrdtool \
 			net/nfdump,-main
 RUN_DEPENDS-nfprofile =	nfdump-$V:net/nfdump,-main
-
-WANTLIB-nfprofile =  ${WANTLIB}
-WANTLIB-nfprofile += X11 Xext Xrender cairo expat ffi fontconfig freetype
-WANTLIB-nfprofile += glib-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
-WANTLIB-nfprofile += iconv intl lzma m nfdump pango-1.0 pangocairo-1.0
-WANTLIB-nfprofile += pangoft2-1.0 pcre pixman-1 png pthread rrd xcb
-WANTLIB-nfprofile += xcb-render xcb-shm xml2
 
 REORDER_DEPENDENCIES += ${PORTSDIR}/infrastructure/mk/automake.dep
 

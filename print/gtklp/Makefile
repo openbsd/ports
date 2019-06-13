@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2019/05/20 22:15:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2019/06/13 15:48:53 sthen Exp $
 
 COMMENT=		GTK+ frontend to CUPS
 
 DISTNAME=		gtklp-1.3.3
 EXTRACT_SUFX=		.src.tar.gz
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		print sysutils x11
 
@@ -15,15 +15,14 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 avahi-client avahi-common c
-WANTLIB += cairo cups dbus-1 expat ffi fontconfig freetype gdk-x11-2.0
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 avahi-client avahi-common c cairo cups dbus-1
+WANTLIB += expat ffi fontconfig freetype fribidi gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += hogweed iconv idn2 intl m nettle p11-kit pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += tasn1 unistring xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread tasn1
+WANTLIB += unistring xcb xcb-render xcb-shm z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gtklp/}
 

@@ -1,25 +1,25 @@
-# $OpenBSD: Makefile,v 1.31 2018/07/06 06:04:46 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2019/06/13 15:48:54 sthen Exp $
 
 COMMENT=		GnuPG extension for nautilus(1)
 
 GNOME_PROJECT=		seahorse-nautilus
 GNOME_VERSION=		3.10.1
-REVISION=		11
+REVISION=		12
 
 CATEGORIES=		security
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xtst assuan atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject cryptui dbus-1 dbus-glib-1 epoxy
-WANTLIB += expat ffi fontconfig freetype gck-1 gcr-base-3 gcr-ui-3
-WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender Xtst assuan atk-1.0 atk-bridge-2.0 atspi c cairo
+WANTLIB += cairo-gobject cryptui dbus-1 dbus-glib-1 epoxy expat ffi
+WANTLIB += fontconfig freetype fribidi gck-1 gcr-base-3 gcr-ui-3 gcrypt
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gnome-keyring gobject-2.0 gpg-error gpgme graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl m nautilus-extension
-WANTLIB += notify p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread xcb xcb-render xcb-shm z
+WANTLIB += notify p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm z
 
 MODULES=		x11/gnome \
 			devel/dconf

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2019/05/17 16:19:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.144 2019/06/13 15:48:53 sthen Exp $
 
 COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
@@ -16,7 +16,7 @@ FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
-REVISION-main=	2
+REVISION-main=	3
 REVISION-finch=	1
 REVISION-libpurple=0
 
@@ -43,7 +43,7 @@ WANTLIB-main=	X11 ICE SM Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		freetype gdk-x11-2.0 gdk_pixbuf-2.0 graphite2 gtk-x11-2.0 \
 		harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
 		png purple ${COMPILER_LIBCXX} xcb-render xcb-shm xcb \
-		${WANTLIB}
+		fribidi ${WANTLIB}
 WANTLIB-libpurple= crypto meanwhile ssl silc silcclient ${WANTLIB}
 WANTLIB-finch=	X11 curses panelw purple util xcb ${WANTLIB} \
 		${MODPY_WANTLIB}

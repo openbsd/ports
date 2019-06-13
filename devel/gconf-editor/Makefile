@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.83 2018/06/29 22:16:10 espie Exp $
+# $OpenBSD: Makefile,v 1.84 2019/06/13 15:48:51 sthen Exp $
 
 COMMENT=	editor for the GConf configuration system
 
 GNOME_PROJECT=	gconf-editor
 GNOME_VERSION=	3.0.1
-REVISION=	14
+REVISION=	15
 
 CATEGORIES=	devel x11
 
@@ -14,13 +14,13 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c cairo
 WANTLIB += cairo-gobject dbus-1 dbus-glib-1 epoxy expat ffi fontconfig
-WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl m
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += pthread xcb xcb-render xcb-shm z
+WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm z
 
 MODULES=	x11/gnome \
 		devel/gconf2

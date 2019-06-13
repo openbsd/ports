@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/24 16:26:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/06/13 15:48:53 sthen Exp $
 
 COMMENT =		merge Buddy List with a conversation window in Pidgin
 DISTNAME =		pidgin-window-merge-0.0.20130511
@@ -6,19 +6,18 @@ GH_ACCOUNT =		dm0-
 GH_PROJECT =		window_merge
 GH_COMMIT =		b4811ae1807a6c124fb06a717951bb2541be19f7
 CATEGORIES =		net
-REVISION =		1
+REVISION =		2
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 cairo dbus-1 dbus-glib-1 expat
-WANTLIB += ffi fontconfig freetype gadu gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv idn intl lzma
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread purple xcb xcb-render xcb-shm
-WANTLIB += xml2 z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 cairo dbus-1 dbus-glib-1 expat ffi fontconfig
+WANTLIB += freetype fribidi gadu gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-x11-2.0 harfbuzz iconv idn intl lzma m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread purple
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \

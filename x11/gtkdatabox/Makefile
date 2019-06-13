@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/21 00:13:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/06/13 15:48:55 sthen Exp $
 
 COMMENT =	GTK+2 widget to display large amounts of numerical data
 
 DISTNAME =	gtkdatabox-0.9.1.1
-REVISION =	8
+REVISION =	9
 
 SHARED_LIBS =	gtkdatabox 0.0
 
@@ -16,8 +16,8 @@ MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 cairo expat ffi fontconfig freetype
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 cairo expat ffi fontconfig freetype fribidi
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv
 WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1

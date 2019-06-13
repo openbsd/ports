@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2018/06/29 22:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2019/06/13 15:48:50 sthen Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT =	CALF LADSPA plugins
 DISTNAME =	calf-0.0.18.6
 CATEGORIES =	audio
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	https://calf-studio-gear.org/
 
@@ -18,7 +18,7 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz iconv intl jack lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += xcb xcb-render xcb-shm xml2 z ${COMPILER_LIBCXX}
+WANTLIB += xcb xcb-render xcb-shm xml2 z fribidi ${COMPILER_LIBCXX}
 
 MASTER_SITES =		https://calf-studio-gear.org/files/
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2019/01/08 19:19:27 landry Exp $
+# $OpenBSD: Makefile,v 1.59 2019/06/13 15:48:56 sthen Exp $
 
 COMMENT=	Xfce4 advanced calendar
 
 XFCE_GOODIE=	orage
 XFCE_VERSION=	4.12.1
-REVISION=	8
+REVISION=	9
 
 HOMEPAGE=	https://www.xfce.org
 # GPLv2
@@ -20,7 +20,7 @@ LIB_DEPENDS =	x11/xfce4/xfce4-panel \
 		devel/libnotify \
 		x11/dbus-glib
 
-WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext xcb-render \
+WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext xcb-render fribidi
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 gthread-2.0 \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/20 22:15:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/06/13 15:48:53 sthen Exp $
 
 COMMENT =		GTK+2 IRC Client
 DISTNAME =		hexchat-2.12.3
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net x11
-REVISION =		7
+REVISION =		8
 
 HOMEPAGE =		http://hexchat.github.io/
 # GPLv2+
@@ -17,7 +17,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl ${MODLUA_WANTLIB} m
 WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre perl pixman-1
 WANTLIB += png proxy pthread ${MODPY_WANTLIB} ssl ${COMPILER_LIBCXX} util
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += xcb xcb-render xcb-shm z fribidi
 
 COMPILER =		base-clang ports-gcc base-gcc
 

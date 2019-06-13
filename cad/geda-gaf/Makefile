@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2019/06/13 15:48:51 sthen Exp $
 
 COMMENT =		suite of tools for electronic design automation
 DISTNAME =		geda-gaf-1.6.0
@@ -6,7 +6,7 @@ CATEGORIES =		cad
 HOMEPAGE =		http://wiki.geda-project.org/geda:gaf
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
-REVISION =		19
+REVISION =		20
 
 SHARED_LIBS = 		geda	0.0	# 38.0
 
@@ -19,7 +19,7 @@ WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gmp gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 guile harfbuzz iconv intl ltdl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread ${COMPILER_LIBCXX}
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += xcb xcb-render xcb-shm z fribidi
 
 MASTER_SITES =		http://geda.seul.org/release/v1.6/1.6.0/
 

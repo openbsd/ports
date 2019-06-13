@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2018/03/29 19:39:43 robert Exp $
+# $OpenBSD: Makefile,v 1.40 2019/06/13 15:48:54 sthen Exp $
 
 COMMENT=		.NET language bindings for assorted GNOME libraries
 
 GNOME_PROJECT=		gnome-sharp
 GNOME_VERSION=		2.24.5
 PKGNAME=		mono-gnome-${VERSION}
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -16,15 +17,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2
-WANTLIB += atk-1.0 bonobo-2 bonobo-activation bonoboui-2 cairo
-WANTLIB += canberra crypto dbus-1 dbus-glib-1 expat ffi fontconfig
-WANTLIB += freetype gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += atk-1.0 bonobo-2 bonobo-activation bonoboui-2 cairo canberra
+WANTLIB += crypto dbus-1 dbus-glib-1 expat ffi fontconfig freetype
+WANTLIB += fribidi gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-2 gnome-keyring
 WANTLIB += gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 gpg-error
-WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl
-WANTLIB += ltdl lzma m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png popt pthread ssl util
-WANTLIB += vorbis vorbisfile xcb xcb-render xcb-shm xml2 z
+WANTLIB += graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl ltdl
+WANTLIB += lzma m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png popt pthread ssl util vorbis vorbisfile xcb
+WANTLIB += xcb-render xcb-shm xml2 z
 
 EXTRACT_SUFX=		.tar.gz
 

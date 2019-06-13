@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/06/13 15:48:51 sthen Exp $
 
 COMMENT=	interactive geometry program
 
 DISTNAME=	drgeo-1.1.0
-REVISION=	25
+REVISION=	26
 CATEGORIES=	education math
 
 HOMEPAGE=	http://www.ofset.org/drgeo/
@@ -20,7 +20,7 @@ WANTLIB += gmodule-2.0 gmp gobject-2.0 gtk-x11-2.0 iconv intl ltdl guile
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread ${COMPILER_LIBCXX} xcb xml2 z glade-2.0
 WANTLIB += ffi gthread-2.0 xcb-render xcb-shm
-WANTLIB += harfbuzz graphite2 lzma
+WANTLIB += harfbuzz graphite2 lzma fribidi
 
 COMPILER =		base-clang ports-gcc base-gcc
 

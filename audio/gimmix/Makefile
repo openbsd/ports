@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2018/10/24 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/06/13 15:48:50 sthen Exp $
 
 COMMENT=		small and easy to use graphical MPD client
 
 DISTNAME=		gimmix-0.5.7.2
 CATEGORIES=		audio x11
-REVISION=		7
+REVISION=		8
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,7 +16,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz iconv intl lzma m mpd nghttp2 nxml pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += ssl ${COMPILER_LIBCXX} tag tag_c xcb xcb-render xcb-shm
-WANTLIB += xml2 z
+WANTLIB += xml2 z fribidi
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gimmix.berlios/}
 EXTRACT_SUFX=		.tar.bz2

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/20 22:15:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/06/13 15:48:53 sthen Exp $
 
 COMMENT =		video editor and a VJ tool
 
 V =			1.0.10
 DISTNAME =		LiVES-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		9
+REVISION =		10
 
 SHARED_LIBS +=		weed		0.0 # 0.2
 SHARED_LIBS +=		weed_slice	0.0 # 0.2
@@ -18,9 +18,9 @@ MASTER_SITES =		http://www.xs4all.nl/%7Esalsaman/lives/current/
 # GPL v3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  SDL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += SDL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo dv expat ffi fontconfig
-WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB += harfbuzz iconv intl m mjpegutils ogg oil-0.3 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread sndio

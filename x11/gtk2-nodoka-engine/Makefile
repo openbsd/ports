@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2018/10/24 14:28:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/06/13 15:48:55 sthen Exp $
 
 COMMENT =	GTK+2 engine from Fedora
 
 VERSION =	0.7.5
 DISTNAME =	gtk-nodoka-engine-${VERSION}
 PKGNAME =	gtk2-nodoka-engine-${VERSION}
-REVISION=	8
+REVISION=	9
 
 CATEGORIES =	x11
 
@@ -20,7 +20,7 @@ WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread ${COMPILER_LIBCXX} xcb
-WANTLIB += xcb-render xcb-shm z
+WANTLIB += xcb-render xcb-shm z fribidi
 
 COMPILER =		base-clang ports-gcc base-gcc
 

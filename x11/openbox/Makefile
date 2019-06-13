@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.81 2019/05/20 22:15:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.82 2019/06/13 15:48:55 sthen Exp $
 
 COMMENT =	small, fast & usable window manager
 
 V =		3.6.1
-REVISION =	5
+REVISION =	6
 DISTNAME =	openbox-${V}
 SHARED_LIBS +=	obrender	12.0	# 32.0
 SHARED_LIBS +=	obt		1.1	# 2.2
@@ -19,12 +19,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ICE Imlib2 SM X11 X11-xcb Xau Xcursor Xext Xfixes Xft
 WANTLIB += Xinerama Xrandr Xrender c cairo croco-0.6 expat ffi
-WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
-WANTLIB += iconv intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pangoxft-1.0 pcre pixman-1 png pthread
-WANTLIB += rsvg-2 startup-notification-1 xcb xcb-render xcb-shm
-WANTLIB += xcb-util xml2 z
+WANTLIB += fontconfig freetype fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz iconv
+WANTLIB += intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pangoxft-1.0 pcre pixman-1 png pthread rsvg-2
+WANTLIB += startup-notification-1 xcb xcb-render xcb-shm xcb-util xml2 z
 
 MASTER_SITES =	${HOMEPAGE}dist/openbox/
 

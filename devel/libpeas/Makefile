@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2019/04/28 20:51:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2019/06/13 15:48:51 sthen Exp $
 
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
 GNOME_VERSION=	1.22.0
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	devel
 
@@ -17,18 +17,19 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c cairo
+WANTLIB += cairo-gobject dbus-1 epoxy expat ffi fontconfig freetype
+WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
+WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread python${MODPY_DEFAULT_VERSION_2}
+WANTLIB += util xcb xcb-render xcb-shm z
+
 MODULES=	x11/gnome \
 		lang/python
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject dbus-1 epoxy expat ffi fontconfig
-WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB += gtk-3 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += util xcb xcb-render xcb-shm z
-WANTLIB += Xtst ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR}
 
@@ -49,7 +50,6 @@ CONFIGURE_ARGS=	--disable-glade-catalog \
 BUILD_DEPENDS +=lang/python/${MODPY_DEFAULT_VERSION_2}
 RUN_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_2} \
 		devel/py-gobject3
-WANTLIB +=	python${MODPY_DEFAULT_VERSION_2}
 
 post-install:
 	rm ${PREFIX}/lib/libpeas-1.0/loaders/*.{a,la}
