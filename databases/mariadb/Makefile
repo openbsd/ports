@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2019/05/26 22:28:40 jca Exp $
+# $OpenBSD: Makefile,v 1.79 2019/06/13 21:51:46 sthen Exp $
 
 # archs with atomic ops
 ONLY_FOR_ARCHS=	alpha aarch64 amd64 arm i386 mips64 mips64el powerpc sparc64
@@ -34,6 +34,8 @@ WANTLIB=	${COMPILER_LIBCXX} c crypto iconv m pthread ssl z
 WANTLIB-main=	${WANTLIB} curses readline
 WANTLIB-server=	${WANTLIB} bz2 lz4 lzma lzo2 pcre snappy
 WANTLIB-tests=	${WANTLIB} pcre pcreposix
+
+MULTI_PACKAGES=	-main -server -tests
 
 COMPILER=	base-clang ports-gcc
 
@@ -122,19 +124,6 @@ LDFLAGS+=	-latomic
 WANTLIB+=	atomic
 .endif
 
-MULTI_PACKAGES=	-main -server -tests
-PSEUDO_FLAVORS=	no_server no_tests
-
-.include <bsd.port.arch.mk>
-
-.if !${BUILD_PACKAGES:M-server}
-CONFIGURE_ARGS+=-DWITHOUT_SERVER=On
-.endif
-
-.if !${BUILD_PACKAGES:M-tests}
-CONFIGURE_ARGS+=-DWITH_UNIT_TESTS=Off
-.endif
-
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/cmake/mysql_version.cmake \
 	    ${WRKSRC}/libmariadb/mariadb_config/mariadb_config.c.in \
@@ -151,12 +140,8 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/my.cnf ${PREFIX}/share/examples/mysql/
 	rm -Rf ${PREFIX}/share/mysql-test/plugin/rocksdb/
 
-.if ${BUILD_PACKAGES:M-tests}
 do-test:
 	(${MODCMAKE_TEST_TARGET}) || true # Keep on going even if regress tests fail
 	@cd ${WRKBUILD}/mysql-test && ./mysql-test-run.pl --force --verbose --max-test-fail=0
-.else
-NO_TEST=	Yes
-.endif
 
 .include <bsd.port.mk>
