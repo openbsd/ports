@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2019/04/28 21:08:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/06/13 17:00:47 sthen Exp $
 
 COMMENT=	common libraries for the CMU speech recognition engines
 
 VERSION=	0.6
 DISTNAME=	sphinxbase-${VERSION}
 PKGNAME=	cmu-sphinxbase-${VERSION}
-REVISION=	6
+REVISION=	7
 CATEGORIES=	audio
 SHARED_LIBS= 	sphinxbase	1.0 \
 		sphinxad	1.0
@@ -15,9 +15,11 @@ HOMEPAGE=	http://cmusphinx.sourceforge.net/
 # CMU
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += ${MODFORTRAN_WANTLIB}
+WANTLIB += blas c iconv lapack m pthread sndio z
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cmusphinx/}
 
-WANTLIB=	blas c iconv lapack m pthread sndio ${MODFORTRAN_WANTLIB}
 MODULES=	fortran
 MODFORTRAN_COMPILER = gfortran
 

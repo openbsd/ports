@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2017/09/22 21:37:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/06/13 17:00:47 sthen Exp $
 
 COMMENT =		easy to use database connection pool Library
 
 DISTNAME =		libzdb-3.1
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS += 		zdb 1.0 # 11.0
 
@@ -11,10 +11,10 @@ CATEGORIES =		databases
 
 HOMEPAGE =		http://www.tildeslash.com/libzdb/#
 
-WANTLIB += m pthread sqlite3
-
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += m pthread sqlite3 z
 
 MASTER_SITES =		http://www.tildeslash.com/libzdb/dist/
 
@@ -33,7 +33,7 @@ LIB_DEPENDS+=   databases/sqlite3
 .if ${FLAVOR:Mmysql}
 LIB_DEPENDS+=   databases/mariadb
 WANTLIB += lib/mysql/mysqlclient
-WANTLIB += crypto m ssl ${COMPILER_LIBCXX} z
+WANTLIB += crypto m ssl ${COMPILER_LIBCXX}
 CONFIGURE_ARGS+= --with-mysql
 .endif
 

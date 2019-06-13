@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/13 13:21:35 kevlo Exp $
+# $OpenBSD: Makefile,v 1.11 2019/06/13 17:00:47 sthen Exp $
 
 COMMENT =	intelligent phonetic input method library
 
 V =		0.5.1
 DISTNAME =	libchewing-$V
 PKGNAME =	zh-libchewing-$V
+REVISION =	0
 
 SHARED_LIBS =	chewing	0.1	# .3.3
 
@@ -17,7 +18,7 @@ MAINTAINER = 	Kevin Lo <kevlo@openbsd.org>
 # LGPLv2.1 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB +=	m pthread sqlite3
+WANTLIB +=	m pthread sqlite3 z
 
 MASTER_SITES =	https://github.com/chewing/libchewing/releases/download/v$V/
 

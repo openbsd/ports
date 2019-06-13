@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2018/12/10 09:49:13 solene Exp $
+# $OpenBSD: Makefile,v 1.4 2019/06/13 17:00:47 sthen Exp $
 
 COMMENT=		easily hackable Common LISP window manager
 
 VERSION=		18.05
 DISTNAME=		stumpwm-${VERSION}
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -14,7 +15,7 @@ MAINTAINER=		Solene Rapenne <solene@perso.pw>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m util
+WANTLIB += c m util z
 
 MASTER_SITES=		https://github.com/stumpwm/stumpwm/archive/
 MASTER_SITES0=		https://github.com/edicl/cl-ppcre/archive/

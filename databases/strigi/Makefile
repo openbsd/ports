@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2019/04/15 17:14:46 cwen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/06/13 17:00:47 sthen Exp $
 
 COMMENT =	document indexer
 DISTNAME =	strigi-0.7.8
-REVISION =	1
+REVISION =	2
 CATEGORIES =	databases devel textproc sysutils
 
 HOMEPAGE =	https://www.vandenoever.info/software/strigi/
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} lib/qt4/QtDBus lib/qt4/QtGui avcodec
 WANTLIB += avformat avutil bz2 c clucene-core clucene-shared dbus-1
-WANTLIB += exiv2 fam iconv m swscale xml2
+WANTLIB += exiv2 fam iconv m swscale xml2 z
 
 MASTER_SITES =	https://www.vandenoever.info/software/strigi/
 EXTRACT_SUFX =	.tar.bz2
