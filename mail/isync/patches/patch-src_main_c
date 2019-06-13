@@ -1,4 +1,6 @@
-$OpenBSD: patch-src_main_c,v 1.6 2018/11/08 11:05:32 sthen Exp $
+$OpenBSD: patch-src_main_c,v 1.7 2019/06/13 11:42:37 kn Exp $
+
+Use pledge.
 
 Index: src/main.c
 --- src/main.c.orig
