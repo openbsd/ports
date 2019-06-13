@@ -1,4 +1,4 @@
-$OpenBSD: patch-tryton_config_py,v 1.1.1.1 2019/05/09 11:49:00 semarie Exp $
+$OpenBSD: patch-tryton_config_py,v 1.2 2019/06/13 12:19:05 semarie Exp $
 Disable, by default, the check of a new client version.
 Index: tryton/config.py
 --- tryton/config.py.orig
@@ -10,5 +10,5 @@ Index: tryton/config.py
 -            'client.check_version': True,
 +            'client.check_version': False,
              'client.bus_timeout': 10 * 60,
-             'icon.color': '#3465a4',
+             'icon.colors': '#3465a4,#555753,#cc0000',
              'image.max_size': 10 ** 6,
