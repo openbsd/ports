@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.596 2019/05/04 14:05:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.597 2019/06/13 08:55:09 fcambus Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -142,6 +142,7 @@
      SUBDIR += meld
      SUBDIR += mgdiff
      SUBDIR += miller
+     SUBDIR += misspell
      SUBDIR += mozilla-dicts
      SUBDIR += multimarkdown
      SUBDIR += mupdf
