@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/13 09:35:32 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2019/06/13 23:16:05 kn Exp $
 
 COMMENT =		library for nonlinear optimization
 
-V =			2.5.0
 GH_ACCOUNT =		stevengj
 GH_PROJECT =		nlopt
-GH_TAGNAME =		v${V}
+GH_TAGNAME =		v2.6.1
 
-SHARED_LIBS =		nlopt	0.0	# 0.9
+SHARED_LIBS =		nlopt	0.1	# 0.10.0
 
 CATEGORIES =		math
-
-HOMEPAGE =		http://ab-initio.mit.edu/nlopt
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # LGPL 2.1+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		m
+COMPILER =		base-clang ports-gcc base-gcc
+
+WANTLIB =		${COMPILER_LIBCXX} m
 
 MODULES =		devel/cmake
 
