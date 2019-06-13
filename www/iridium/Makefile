@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2019/05/27 16:11:17 robert Exp $
+# $OpenBSD: Makefile,v 1.93 2019/06/13 17:07:04 sthen Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,7 +12,7 @@ DPB_PROPERTIES+=	lonesome
 COMMENT=		Iridium browser
 
 V=			2019.04.73
-REVISION=		2
+REVISION=		3
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -49,7 +49,7 @@ WANTLIB += X11 Xext Xfixes Xrender Xss c cups dbus-1 event
 WANTLIB += execinfo
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0
 WANTLIB += m
-WANTLIB += pthread
+WANTLIB += kvm pthread
 WANTLIB += xslt
 WANTLIB += sndio
 WANTLIB += ${COMPILER_LIBCXX}
