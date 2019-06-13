@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.68 2019/05/20 22:15:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.69 2019/06/13 21:53:34 bcallah Exp $
 
-V=		1.5.4
+V=		1.5.5
 COMMENT=	small and fast window manager
 DISTNAME=	icewm-${V}
 EXTRACT_SUFX=	.tar.xz
@@ -10,7 +10,7 @@ HOMEPAGE=	https://www.ice-wm.org/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # LGPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC ICE SM X11 Xext Xft Xinerama
 WANTLIB += Xrandr Xrender ao c expat ffi fontconfig freetype fribidi
