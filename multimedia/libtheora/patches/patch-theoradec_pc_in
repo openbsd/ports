@@ -1,9 +1,10 @@
-$OpenBSD: patch-theoradec_pc_in,v 1.1 2013/04/14 00:41:46 brad Exp $
+$OpenBSD: patch-theoradec_pc_in,v 1.2 2019/06/13 21:58:12 sthen Exp $
 
 Correct pkg-config file for overlinking.
 
---- theoradec.pc.in.orig	Sat Mar 30 00:46:54 2013
-+++ theoradec.pc.in	Sat Mar 30 00:47:13 2013
+Index: theoradec.pc.in
+--- theoradec.pc.in.orig
++++ theoradec.pc.in
 @@ -8,7 +8,6 @@ includedir=@includedir@
  Name: theora
  Description: Theora video codec (decoder)

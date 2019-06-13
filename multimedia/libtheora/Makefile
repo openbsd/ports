@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.22 2019/06/13 21:35:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/06/13 21:58:12 sthen Exp $
 
 COMMENT=	open video codec
 
-DISTNAME=	libtheora-1.1.1
-REVISION=	5
+# e5d205b from github, plus generated configure scripts
+DISTNAME=	libtheora-1.2.20190601
 CATEGORIES=	multimedia
-MASTER_SITES=	https://downloads.xiph.org/releases/theora/
-EXTRACT_SUFX=	.tar.bz2
+MASTER_SITES=	https://comstyle.com/source/
+EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	theora		3.2 \
-		theoradec	1.1 \
-		theoraenc	1.2
+SHARED_LIBS=	theora		4.0 \
+		theoradec	2.0 \
+		theoraenc	2.0
 
 HOMEPAGE=	https://www.theora.org/
 
@@ -27,10 +27,5 @@ CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.63
 CONFIGURE_ARGS=	--disable-examples --disable-spec
 CONFIGURE_ENV=	ac_cv_prog_HAVE_DOXYGEN=false
-
-# our binutils is too old for amd64
-.if ${MACHINE_ARCH} != "i386"
-CONFIGURE_ARGS+=--disable-asm
-.endif
 
 .include <bsd.port.mk>
