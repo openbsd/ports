@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/06/13 15:54:56 sthen Exp $
 
 COMMENT =		tools for handling data matrix barcodes
 
 DISTNAME =		dmtx-utils-0.7.4
-REVISION =		8
+REVISION =		9
 CATEGORIES =		graphics
 
 HOMEPAGE =		http://www.libdmtx.org/
@@ -15,10 +15,10 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libdmtx/}
 # LGPLv2
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xext Xt
-WANTLIB += bz2 c djvulibre dmtx expat fftw3 fontconfig freetype iconv
-WANTLIB += jbig jpeg lcms2 lzma m openjp2 png pthread
-WANTLIB += tiff webp xcb xml2 z
+WANTLIB += ${COMPILER_LIBCXX} ICE MagickCore-6.Q16 MagickWand-6.Q16
+WANTLIB += SM X11 Xext Xt bz2 c djvulibre dmtx expat fftw3 fontconfig
+WANTLIB += freetype iconv jasper jbig jpeg lcms2 lzma m openjp2
+WANTLIB += png raw_r tiff webp webpmux xcb xml2 z
 
 LIB_DEPENDS +=		converters/libiconv \
 			graphics/ImageMagick \
