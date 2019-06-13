@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.185 2019/06/10 04:29:24 thfr Exp $
+# $OpenBSD: Makefile,v 1.186 2019/06/13 17:29:23 sthen Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		4.1.3
 DISTNAME=	ffmpeg-${V}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
@@ -28,10 +28,11 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	SDL2 X11 Xext Xv ass bz2 c crypto dav1d fontconfig freetype \
-		fribidi gsm iconv lzma m mp3lame opus pthread sndio speex ssl \
-		theora v4l2 vorbis vorbisenc vpx x264 x265 xcb xcb-shape \
-		xcb-shm xcb-xfixes xml2 xvidcore z
+WANTLIB+= SDL2 X11 Xext Xv ass bz2 c crypto dav1d fontconfig
+WANTLIB+= freetype fribidi gsm iconv lzma m mp3lame ogg opus
+WANTLIB+= pthread sndio speex ssl theora theoradec theoraenc
+WANTLIB+= v4l2 vorbis vorbisenc vpx x264 x265 xcb xcb-shape xcb-shm
+WANTLIB+= xcb-xfixes xml2 xvidcore z
 
 BUILD_DEPENDS=	textproc/texi2html \
 		multimedia/frei0r-plugins
