@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2019/05/20 22:15:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/06/13 16:38:34 sthen Exp $
 
 COMMENT =	beginner's drill tool to learn Japanese kana characters
 
 DISTNAME =	kanatest-0.4.6
-REVISION=	11
+REVISION =	12
 
 CATEGORIES =	japanese
 
@@ -14,7 +14,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-x11-2.0 iconv intl lzma m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 xml2 z
+WANTLIB += pangoft2-1.0 pthread xml2 z
 
 MASTER_SITES =	${HOMEPAGE}
 

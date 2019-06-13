@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/09/13 14:40:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2019/06/13 16:38:33 sthen Exp $
 
 COMMENT=		parser generator for Haskell
 
@@ -7,6 +7,7 @@ COMMENT=		parser generator for Haskell
 PORTROACH =		ignore:1
 
 DISTNAME=		happy-1.19.5
+REVISION=		0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.haskell.org/happy/
@@ -14,7 +15,7 @@ HOMEPAGE=		http://www.haskell.org/happy/
 # BSD3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c iconv m
+WANTLIB=		c iconv m pthread
 
 MODULES=		lang/ghc
 MODGHC_BUILD=		cabal hackage nort

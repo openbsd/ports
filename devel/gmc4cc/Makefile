@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/06/13 16:38:34 sthen Exp $
 
 COMMENT=	C compiler for GMC-4
 
 DISTNAME=	gmc4cc-0.6.2
 CATEGORIES=	devel lang
 
-REVISION=	3
+REVISION=	4
 
 # Japanese, use this for the English version: http://goo.gl/LPtgg
 HOMEPAGE=	http://terus.jp/engineering/gmc4cc/
@@ -15,13 +15,13 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += c gmp iconv m pthread
+
 MASTER_SITES=	${HOMEPAGE}/files/
 MASTER_SITES0=	http://distfiles.nl/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		gmc4cc-samples-0.1${EXTRACT_SUFX}:0
-
-WANTLIB += c gmp iconv m
 
 BUILD_DEPENDS=	lang/ghc
 LIB_DEPENDS=	converters/libiconv \

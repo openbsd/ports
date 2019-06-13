@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2019/05/20 22:15:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2019/06/13 16:38:34 sthen Exp $
 
 COMMENT=	text mode rss newsreader
 DISTNAME=	snownews-1.5.12
-REVISION=	5
+REVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}download/
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://kiza.kcore.de/software/snownews/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB +=	c crypto curses iconv intl m lzma xml2 z
+WANTLIB +=	c crypto curses iconv intl m lzma pthread xml2 z
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
