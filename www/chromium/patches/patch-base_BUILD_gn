@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_BUILD_gn,v 1.28 2019/05/26 08:22:47 robert Exp $
+$OpenBSD: patch-base_BUILD_gn,v 1.29 2019/06/14 10:08:28 robert Exp $
 
 Index: base/BUILD.gn
 --- base/BUILD.gn.orig
@@ -59,7 +59,7 @@ Index: base/BUILD.gn
    # iOS
    if (is_ios) {
      set_sources_assignment_filter([])
-@@ -2939,6 +2966,8 @@ test("base_unittests") {
+@@ -2940,6 +2967,8 @@ test("base_unittests") {
        # data += [ "$root_out_dir/base_unittests.dSYM/" ]
      }
    }
