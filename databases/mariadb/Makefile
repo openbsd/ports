@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2019/06/13 21:51:46 sthen Exp $
-
-# archs with atomic ops
-ONLY_FOR_ARCHS=	alpha aarch64 amd64 arm i386 mips64 mips64el powerpc sparc64
+# $OpenBSD: Makefile,v 1.80 2019/06/14 10:08:52 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
@@ -37,6 +34,7 @@ WANTLIB-tests=	${WANTLIB} pcre pcreposix
 
 MULTI_PACKAGES=	-main -server -tests
 
+# C++, atomic ops
 COMPILER=	base-clang ports-gcc
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/mysql
@@ -119,7 +117,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
-.if ${MACHINE_ARCH} == "powerpc"
+.if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "hppa"
 LDFLAGS+=	-latomic
 WANTLIB+=	atomic
 .endif
