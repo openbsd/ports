@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2019/06/14 20:19:31 rsadowski Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -10,7 +10,7 @@ COMMENT=	source code documentation generator tool
 VERSION=	1.8.14
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-${VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel textproc
 
