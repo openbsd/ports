@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2019/03/08 20:00:39 cwen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/06/14 13:51:01 sthen Exp $
 
 COMMENT =		music studio with tracking, sampling and MIDI
 
 # rolled from git; requires submodules
-# git clone --recurse-submodules -b v1.2.0-rc6 https://github.com/lmms/lmms
-DISTNAME =		lmms-1.2.0rc6
+# git clone --recurse-submodules -b v1.2.0 https://github.com/lmms/lmms
+DISTNAME =		lmms-1.2.0
 EXTRACT_SUFX =		.tar.xz
-REVISION =		3
 
 CATEGORIES =		audio
 
@@ -47,15 +46,15 @@ CONFIGURE_ARGS =	-DCMAKE_PREFIX_PATH=${LOCALBASE}/lib/qt5/cmake \
 			-DWANT_SDL=OFF \
 			-DWANT_PULSEAUDIO=OFF
 
-# these are all available as separate ports
 CONFIGURE_ARGS +=	-DWANT_CALF=OFF \
 			-DWANT_CAPS=OFF \
+			-DWANT_CARLA=OFF \
 			-DWANT_CMT=OFF \
+			-DWANT_GIG=OFF \
+			-DWANT_STK=OFF \
 			-DWANT_SWH=OFF \
-			-DWANT_TAP=OFF
-
-# needs wine
-CONFIGURE_ARGS +=	-DWANT_VST=OFF
+			-DWANT_TAP=OFF \
+			-DWANT_VST=OFF
 
 NO_TEST =		Yes
 

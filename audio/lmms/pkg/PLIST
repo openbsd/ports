@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/07/01 18:33:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/06/14 13:51:01 sthen Exp $
 @bin bin/lmms
 lib/lmms/
 lib/lmms/libOPL2.so
@@ -40,6 +40,49 @@ lib/lmms/libwatsyn.so
 lib/lmms/libwaveshaper.so
 @man man/man1/lmms.1
 share/applications/lmms.desktop
+share/bash-completion/completions/lmms
+share/icons/hicolor/128x128/apps/lmms.png
+share/icons/hicolor/128x128/mimetypes/application-x-lmms-project.png
+share/icons/hicolor/128x128@2/
+share/icons/hicolor/128x128@2/apps/
+share/icons/hicolor/128x128@2/apps/lmms.png
+share/icons/hicolor/128x128@2/mimetypes/
+share/icons/hicolor/128x128@2/mimetypes/application-x-lmms-project.png
+share/icons/hicolor/16x16/apps/lmms.png
+share/icons/hicolor/16x16/mimetypes/application-x-lmms-project.png
+share/icons/hicolor/16x16@2/
+share/icons/hicolor/16x16@2/apps/
+share/icons/hicolor/16x16@2/apps/lmms.png
+share/icons/hicolor/16x16@2/mimetypes/
+share/icons/hicolor/16x16@2/mimetypes/application-x-lmms-project.png
+share/icons/hicolor/24x24/apps/lmms.png
+share/icons/hicolor/24x24/mimetypes/application-x-lmms-project.png
+share/icons/hicolor/24x24@2/
+share/icons/hicolor/24x24@2/apps/
+share/icons/hicolor/24x24@2/apps/lmms.png
+share/icons/hicolor/24x24@2/mimetypes/
+share/icons/hicolor/24x24@2/mimetypes/application-x-lmms-project.png
+share/icons/hicolor/32x32/apps/lmms.png
+share/icons/hicolor/32x32/mimetypes/application-x-lmms-project.png
+share/icons/hicolor/32x32@2/
+share/icons/hicolor/32x32@2/apps/
+share/icons/hicolor/32x32@2/apps/lmms.png
+share/icons/hicolor/32x32@2/mimetypes/
+share/icons/hicolor/32x32@2/mimetypes/application-x-lmms-project.png
+share/icons/hicolor/48x48/apps/lmms.png
+share/icons/hicolor/48x48/mimetypes/application-x-lmms-project.png
+share/icons/hicolor/48x48@2/
+share/icons/hicolor/48x48@2/apps/
+share/icons/hicolor/48x48@2/apps/lmms.png
+share/icons/hicolor/48x48@2/mimetypes/
+share/icons/hicolor/48x48@2/mimetypes/application-x-lmms-project.png
+share/icons/hicolor/64x64/apps/lmms.png
+share/icons/hicolor/64x64/mimetypes/application-x-lmms-project.png
+share/icons/hicolor/64x64@2/
+share/icons/hicolor/64x64@2/apps/
+share/icons/hicolor/64x64@2/apps/lmms.png
+share/icons/hicolor/64x64@2/mimetypes/
+share/icons/hicolor/64x64@2/mimetypes/application-x-lmms-project.png
 share/icons/hicolor/scalable/apps/lmms.svg
 share/icons/hicolor/scalable/mimetypes/application-x-lmms-project.svg
 share/lmms/
@@ -59,6 +102,7 @@ share/lmms/locale/fa.qm
 share/lmms/locale/fr.qm
 share/lmms/locale/gl.qm
 share/lmms/locale/hu_HU.qm
+share/lmms/locale/id.qm
 share/lmms/locale/it.qm
 share/lmms/locale/ja.qm
 share/lmms/locale/ko.qm
@@ -2401,6 +2445,7 @@ share/lmms/themes/classic/hint.png
 share/lmms/themes/classic/home.png
 share/lmms/themes/classic/hq_mode.png
 share/lmms/themes/classic/icon.png
+share/lmms/themes/classic/icon_small.png
 share/lmms/themes/classic/instrument_track.png
 share/lmms/themes/classic/keep_stop_position.png
 share/lmms/themes/classic/knob01.png
@@ -2644,6 +2689,7 @@ share/lmms/themes/default/hint.png
 share/lmms/themes/default/home.png
 share/lmms/themes/default/hq_mode.png
 share/lmms/themes/default/icon.png
+share/lmms/themes/default/icon_small.png
 share/lmms/themes/default/ignore.png
 share/lmms/themes/default/instrument_track.png
 share/lmms/themes/default/keep_stop_position.png
