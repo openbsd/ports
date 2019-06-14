@@ -1,11 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/10/30 17:57:42 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/06/14 00:59:39 jturner Exp $
 include/duo/
+include/duo/common_ini_test.h
 include/duo/duo.h
+include/duo/duo_private.h
 include/duo/shell.h
+include/duo/unity.h
 include/duo/util.h
 lib/pkgconfig/libduo.pc
 @man man/man3/duo.3
 @man man/man8/login_duo.8
+@mode 4555
+@owner root
+@bin sbin/login_duo
+@mode
+@owner
 share/doc/login_duo/
 share/doc/login_duo/AUTHORS
 share/doc/login_duo/CHANGES
@@ -14,9 +22,6 @@ share/doc/login_duo/LICENSE
 share/doc/login_duo/README.md
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/login_duo/
-@mode 4555
-@owner root
-@bin sbin/login_duo
 @mode 0444
 @owner root
 @group bin
