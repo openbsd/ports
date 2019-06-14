@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2019/06/13 15:48:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2019/06/14 12:18:12 naddy Exp $
 
 COMMENT=	Xfce4 advanced calendar
 
@@ -20,7 +20,7 @@ LIB_DEPENDS =	x11/xfce4/xfce4-panel \
 		devel/libnotify \
 		x11/dbus-glib
 
-WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext xcb-render fribidi
+WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext xcb-render fribidi \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 gthread-2.0 \
