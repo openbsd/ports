@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2019/02/09 10:05:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2019/06/15 09:19:04 ajacoutot Exp $
 
 PROVIDER=		fastly
-GH_TAGNAME=		v0.6.0
+GH_TAGNAME=		v0.6.1
 
 .include <bsd.port.mk>

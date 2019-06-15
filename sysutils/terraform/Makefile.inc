@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2019/03/04 17:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2019/06/15 09:19:04 ajacoutot Exp $
 
 DIST_SUBDIR=		terraform
 
@@ -9,7 +9,7 @@ HOMEPAGE ?=		https://www.terraform.io/
 MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += c pthread
 
