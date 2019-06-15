@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2018/09/04 12:53:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.35 2019/06/15 09:46:12 ajacoutot Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
 @conflict foomatic-filters-*
@@ -12,6 +12,7 @@ include/cupsfilters/colord.h
 include/cupsfilters/colormanager.h
 include/cupsfilters/driver.h
 include/cupsfilters/image.h
+include/cupsfilters/pdftoippprinter.h
 include/cupsfilters/ppdgenerator.h
 include/cupsfilters/raster.h
 include/fontembed/
@@ -45,7 +46,6 @@ libexec/cups/filter/gstopxl
 libexec/cups/filter/imagetops
 @bin libexec/cups/filter/imagetoraster
 @bin libexec/cups/filter/mupdftoraster
-@bin libexec/cups/filter/pdftoijs
 @bin libexec/cups/filter/pdftopdf
 @bin libexec/cups/filter/pdftops
 @bin libexec/cups/filter/pdftoraster
@@ -115,7 +115,6 @@ share/ppd/cupsfilters/
 share/ppd/cupsfilters/Fuji_Xerox-DocuPrint_CM305_df-PDF.ppd
 share/ppd/cupsfilters/Generic-PDF_Printer-PDF.ppd
 share/ppd/cupsfilters/HP-Color_LaserJet_CM3530_MFP-PDF.ppd
-share/ppd/cupsfilters/HP-PhotoSmart_Pro_B8300-hpijs-pdftoijs.ppd
 share/ppd/cupsfilters/Ricoh-PDF_Printer-PDF.ppd
 share/ppd/cupsfilters/pxlcolor.ppd
 share/ppd/cupsfilters/pxlmono.ppd

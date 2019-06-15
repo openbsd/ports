@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.153 2019/05/18 23:57:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.154 2019/06/15 09:46:12 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.23.0
+DISTNAME=	cups-filters-1.25.0
 
 CATEGORIES=	print
 
@@ -17,14 +17,14 @@ HOMEPAGE=	http://www.linuxfoundation.org/collaborate/workgroups/openprinting
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3 - LGPLv2 - GPLv2+ - MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
-WANTLIB += avahi-client avahi-common avahi-glib c cups cupsimage
-WANTLIB += dbus-1 expat ffi fontconfig freetype gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gmp gnutls gobject-2.0 hogweed iconv idn2
-WANTLIB += intl jpeg lcms2 m nettle openjp2 p11-kit pcre png
-WANTLIB += poppler pthread qpdf tasn1 tiff unistring z
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} avahi-client avahi-common avahi-glib
+WANTLIB += c cups cupsimage dbus-1 expat ffi fontconfig freetype
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
+WANTLIB += hogweed iconv idn2 intl jpeg lcms2 m nettle openjp2
+WANTLIB += p11-kit pcre png poppler poppler-cpp qpdf tasn1 tiff
+WANTLIB += unistring z
 
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 
@@ -45,7 +45,7 @@ RUN_DEPENDS=	print/ghostscript/gnu \
 
 LIB_DEPENDS=	print/cups,-libs \
 		print/poppler \
-		print/qpdf>=7.0beta1
+		print/qpdf
 
 # make it easier for users: bring in foomatic-db and allow the
 # regeneration of PPD files from share/foomatic/db/source/*/*.xml
@@ -66,11 +66,6 @@ CONFIGURE_ARGS=	--with-gs-path=${LOCALBASE}/bin/gs \
 		--with-shell=/bin/ksh \
 		--without-php \
 		--disable-braille
-
-# deprecated but still needed for direct printing with foomatic
-CONFIGURE_ARGS +=	--enable-ijs
-LIB_DEPENDS +=		print/ijs
-WANTLIB +=		ijs
 
 # http://bzr.linuxfoundation.org/loggerhead/openprinting/cups-filters/revision/7554
 CONFIGURE_ENV +=ac_cv_prog_CUPS_PDFTOPS=${LOCALBASE}/bin/pdftops
