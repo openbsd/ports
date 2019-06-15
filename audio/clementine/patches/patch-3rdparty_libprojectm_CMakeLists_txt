@@ -1,6 +1,16 @@
-$OpenBSD: patch-3rdparty_libprojectm_CMakeLists_txt,v 1.1 2013/02/06 13:23:03 zhuk Exp $
---- 3rdparty/libprojectm/CMakeLists.txt.orig	Wed Feb  6 16:10:58 2013
-+++ 3rdparty/libprojectm/CMakeLists.txt	Wed Feb  6 16:11:33 2013
+$OpenBSD: patch-3rdparty_libprojectm_CMakeLists_txt,v 1.2 2019/06/15 07:12:41 rsadowski Exp $
+Index: 3rdparty/libprojectm/CMakeLists.txt
+--- 3rdparty/libprojectm/CMakeLists.txt.orig
++++ 3rdparty/libprojectm/CMakeLists.txt
+@@ -17,7 +17,7 @@ set(USE_FBO ON)
+ set(USE_FTGL OFF)
+ set(USE_GLES1 OFF)
+ set(USE_THREADS OFF)
+-set(USE_OPENMP ON)
++set(USE_OPENMP OFF)
+ set(USE_NATIVE_GLEW OFF)
+ set(USE_CG OFF)
+ set(BUILD_PROJECTM_STATIC ON)
 @@ -164,7 +164,7 @@ CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/libproject
  CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/config.inp.in" "${CMAKE_CURRENT_SOURCE_DIR}/config.inp" @ONLY)
  
