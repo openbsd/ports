@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2018/08/15 12:33:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2019/06/15 11:06:43 ajacoutot Exp $
 include/libgoffice-${GOFFICE_API_VERSION}/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/app/
@@ -414,6 +414,7 @@ share/locale/et/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/eu/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/fi/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/fr/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
+share/locale/fur/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/ga/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/gl/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/he/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
