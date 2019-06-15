@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/15 12:20:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/06/15 14:36:38 robert Exp $
 
 COMMENT=		all-in-one management software
 
 MV=			12.0
 SV=			20190517
 V=			${MV}.${SV}
+REVISION=		0
 
 DISTNAME=		odoo_${V}
 
@@ -36,10 +37,10 @@ RUN_DEPENDS=		converters/py-html2text${MODPY_FLAVOR} \
 			print/py-reportlab${MODPY_FLAVOR} \
 			security/py-passlib${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR} \
+			telephony/py-phonenumbers${MODPY_FLAVOR} \
 			textproc/py-PyPDF2${MODPY_FLAVOR} \
 			textproc/py-docutils${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR} \
-			textproc/py-phonenumbers${MODPY_FLAVOR} \
 			textproc/py-vobject${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			textproc/wkhtmltopdf \
