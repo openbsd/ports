@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/15 20:53:39 bcallah Exp $
+@bin bin/dMagnetic
+@man man/man1/dMagnetic.1
+@man man/man5/dMagneticini.5
+share/dMagnetic/
+share/dMagnetic/LICENSE.txt
+share/dMagnetic/README.txt
+share/dMagnetic/dMagnetic.ini

@@ -1,0 +1,5 @@
+DMAGNETIC is a Magnetic Scrolls Interpreter. It can be used to
+play classic text adventure games, such as "The Pawn",
+"The Guild of Thieves", and "Wonderland". Graphics will be
+rendered in glorious ANSI art, so the games can be played in
+any console window.
