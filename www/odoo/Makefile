@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/15 12:17:52 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2019/06/15 12:20:12 ajacoutot Exp $
 
 COMMENT=		all-in-one management software
 
@@ -51,7 +51,7 @@ RUN_DEPENDS=		converters/py-html2text${MODPY_FLAVOR} \
 			www/sassc
 
 # LGPL
-PERMIT_PACKAGE_ =	Yes
+PERMIT_PACKAGE =	Yes
 
 PKG_ARCH=		*
 
