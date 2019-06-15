@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.401 2019/05/27 20:05:36 thfr Exp $
+# $OpenBSD: Makefile,v 1.402 2019/06/15 20:54:03 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -69,6 +69,7 @@
      SUBDIR += dd2
      SUBDIR += defendguin
      SUBDIR += dhewm3
+     SUBDIR += dmagnetic
      SUBDIR += doomdata
      SUBDIR += dopewars
      SUBDIR += dopewars,no_x11
