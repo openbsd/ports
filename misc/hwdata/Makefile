@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.47 2019/05/03 16:13:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2019/06/15 09:23:28 ajacoutot Exp $
 
 COMMENT=		hardware identification and configuration data
 
 GH_ACCOUNT=		vcrhonek
 GH_PROJECT=		hwdata
-GH_TAGNAME=		v0.323
+GH_TAGNAME=		v0.324
 
 CATEGORIES=		misc
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 PKG_ARCH=		*
 NO_BUILD=		Yes
