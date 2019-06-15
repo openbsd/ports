@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_libide_foundry_ide-simple-build-system-discovery_c,v 1.1 2019/06/15 11:00:12 ajacoutot Exp $
+
+XXX error: 'FNM_EXTMATCH' undeclared
+
+Index: src/libide/foundry/ide-simple-build-system-discovery.c
+--- src/libide/foundry/ide-simple-build-system-discovery.c.orig
++++ src/libide/foundry/ide-simple-build-system-discovery.c
+@@ -27,6 +27,10 @@
+ #endif
+ #include <fnmatch.h>
+ 
++#if !defined(FNM_EXTMATCH)
++#define FNM_EXTMATCH 0
++#endif
++
+ #include "ide-simple-build-system-discovery.h"
+ 
+ typedef struct

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2019/05/09 00:11:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2019/06/15 11:00:12 ajacoutot Exp $
 @bin bin/gnome-builder
 include/gnome-builder/
 include/gnome-builder-3.32/
@@ -335,7 +335,7 @@ lib/gnome-builder/plugins/jedi.plugin
 lib/gnome-builder/plugins/jedi_plugin.py
 lib/gnome-builder/plugins/jhbuild.plugin
 lib/gnome-builder/plugins/jhbuild_plugin.py
-@bin lib/gnome-builder/plugins/libplugin-vala-pack.so
+lib/gnome-builder/plugins/libplugin-vala-pack.so
 lib/gnome-builder/plugins/make.plugin
 lib/gnome-builder/plugins/make_plugin.gresource
 lib/gnome-builder/plugins/make_plugin.py

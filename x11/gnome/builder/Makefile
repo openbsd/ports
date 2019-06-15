@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.94 2019/05/09 00:11:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.95 2019/06/15 11:00:12 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		3.32.2
+GNOME_VERSION=		3.32.3
 
 CATEGORIES=		devel
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject clang dazzle-1.0 devhelp-3
 WANTLIB += enchant-2 fontconfig freetype gdk-3 gdk_pixbuf-2.0
