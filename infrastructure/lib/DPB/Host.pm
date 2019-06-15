@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Host.pm,v 1.11 2019/06/15 07:41:46 espie Exp $
+# $OpenBSD: Host.pm,v 1.12 2019/06/15 12:05:37 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -53,7 +53,7 @@ sub retrieve
 {
 	my ($class, $name) = @_;
 	if ($class->name_is_localhost($name)) {
-		return $host->{localhost};
+		return $hosts->{localhost};
 	} else {
 		return $hosts->{$name};
 	}
