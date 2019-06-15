@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1135 2019/06/05 11:43:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.1136 2019/06/15 21:43:34 kmos Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -721,6 +721,7 @@
      SUBDIR += telegram-purple
      SUBDIR += telepathy
      SUBDIR += thcrut
+     SUBDIR += thingsd
      SUBDIR += tinc
      SUBDIR += tintin++
      SUBDIR += tinyfugue
