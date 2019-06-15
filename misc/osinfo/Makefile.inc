@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2019/05/10 13:04:56 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2019/06/15 09:26:38 ajacoutot Exp $
 
 V ?=			1.5.0
 
@@ -9,7 +9,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 HOMEPAGE=		http://libosinfo.org/
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 MASTER_SITES=		https://releases.pagure.org/libosinfo/
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/05/11 13:51:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/06/15 09:26:38 ajacoutot Exp $
 share/osinfo/
 share/osinfo/LICENSE
 share/osinfo/VERSION
@@ -163,6 +163,7 @@ share/osinfo/os/asianux.com/asianux-4.7.xml
 share/osinfo/os/asianux.com/asianux-7.0.xml
 share/osinfo/os/asianux.com/asianux-7.1.xml
 share/osinfo/os/asianux.com/asianux-7.2.xml
+share/osinfo/os/asianux.com/asianux-7.3.xml
 share/osinfo/os/asianux.com/asianux-unknown.xml
 share/osinfo/os/centos.org/
 share/osinfo/os/centos.org/centos-5.0.xml
@@ -278,6 +279,7 @@ share/osinfo/os/dragonflybsd.org/dragonflybsd-5.2.2.xml
 share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.0.xml
 share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.1.xml
 share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.2.xml
+share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.3.xml
 share/osinfo/os/endlessos.com/
 share/osinfo/os/endlessos.com/eos-3.3.xml
 share/osinfo/os/endlessos.com/eos-3.4.xml
@@ -528,6 +530,43 @@ share/osinfo/os/opensuse.org/opensuse-factory.xml
 share/osinfo/os/opensuse.org/opensuse-tumbleweed.xml
 share/osinfo/os/opensuse.org/opensuse-unknown.xml
 share/osinfo/os/oracle.com/
+share/osinfo/os/oracle.com/oel-4.4.xml
+share/osinfo/os/oracle.com/oel-4.5.xml
+share/osinfo/os/oracle.com/oel-4.6.xml
+share/osinfo/os/oracle.com/oel-4.7.xml
+share/osinfo/os/oracle.com/oel-4.8.xml
+share/osinfo/os/oracle.com/oel-4.9.xml
+share/osinfo/os/oracle.com/oel-5.0.xml
+share/osinfo/os/oracle.com/oel-5.1.xml
+share/osinfo/os/oracle.com/oel-5.2.xml
+share/osinfo/os/oracle.com/oel-5.3.xml
+share/osinfo/os/oracle.com/oel-5.4.xml
+share/osinfo/os/oracle.com/ol-5.10.xml
+share/osinfo/os/oracle.com/ol-5.11.xml
+share/osinfo/os/oracle.com/ol-5.5.xml
+share/osinfo/os/oracle.com/ol-5.6.xml
+share/osinfo/os/oracle.com/ol-5.7.xml
+share/osinfo/os/oracle.com/ol-5.8.xml
+share/osinfo/os/oracle.com/ol-5.9.xml
+share/osinfo/os/oracle.com/ol-6.0.xml
+share/osinfo/os/oracle.com/ol-6.1.xml
+share/osinfo/os/oracle.com/ol-6.10.xml
+share/osinfo/os/oracle.com/ol-6.2.xml
+share/osinfo/os/oracle.com/ol-6.3.xml
+share/osinfo/os/oracle.com/ol-6.4.xml
+share/osinfo/os/oracle.com/ol-6.5.xml
+share/osinfo/os/oracle.com/ol-6.6.xml
+share/osinfo/os/oracle.com/ol-6.7.xml
+share/osinfo/os/oracle.com/ol-6.8.xml
+share/osinfo/os/oracle.com/ol-6.9.xml
+share/osinfo/os/oracle.com/ol-7.0.xml
+share/osinfo/os/oracle.com/ol-7.1.xml
+share/osinfo/os/oracle.com/ol-7.2.xml
+share/osinfo/os/oracle.com/ol-7.3.xml
+share/osinfo/os/oracle.com/ol-7.4.xml
+share/osinfo/os/oracle.com/ol-7.5.xml
+share/osinfo/os/oracle.com/ol-7.6.xml
+share/osinfo/os/oracle.com/ol-8.0.xml
 share/osinfo/os/oracle.com/solaris-11.xml
 share/osinfo/os/pureos.net/
 share/osinfo/os/pureos.net/pureos-8.xml
@@ -678,6 +717,7 @@ share/osinfo/os/suse.com/sled-12-unknown.xml
 share/osinfo/os/suse.com/sled-12.1.xml
 share/osinfo/os/suse.com/sled-12.2.xml
 share/osinfo/os/suse.com/sled-12.3.xml
+share/osinfo/os/suse.com/sled-12.4.xml
 share/osinfo/os/suse.com/sled-12.xml
 share/osinfo/os/suse.com/sled-9.xml
 share/osinfo/os/suse.com/sles-10.1.xml
@@ -694,6 +734,7 @@ share/osinfo/os/suse.com/sles-12-unknown.xml
 share/osinfo/os/suse.com/sles-12.1.xml
 share/osinfo/os/suse.com/sles-12.2.xml
 share/osinfo/os/suse.com/sles-12.3.xml
+share/osinfo/os/suse.com/sles-12.4.xml
 share/osinfo/os/suse.com/sles-12.xml
 share/osinfo/os/suse.com/sles-9.xml
 share/osinfo/os/system76.com/
