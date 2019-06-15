@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.47 2019/05/20 22:15:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2019/06/15 18:47:46 cwen Exp $
 
 COMMENT=	free space simulator and planetarium
 
 DISTNAME=	celestia-1.6.1
-REVISION=	17
+REVISION=	18
 
 CATEGORIES=	astro x11
 
-HOMEPAGE=	http://www.shatters.net/celestia/
+HOMEPAGE=	https://celestia.space/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
