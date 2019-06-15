@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/15 21:42:26 kmos Exp $
+@newgroup _thingsd:836
+@newuser _thingsd:836:_thingsd:daemon:Thingsd User:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/thingsd
+@man man/man5/thingsd.conf.5
+@man man/man8/thingsctl.8
+@man man/man8/thingsd.8
+@bin sbin/thingsctl
+@bin sbin/thingsd
+share/examples/thingsd/
+share/examples/thingsd/thingsd.conf
+@mode 640
+@sample ${SYSCONFDIR}/thingsd.conf

@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: thingsd.rc,v 1.1.1.1 2019/06/15 21:42:26 kmos Exp $
+
+daemon="${TRUEPREFIX}/sbin/thingsd"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
