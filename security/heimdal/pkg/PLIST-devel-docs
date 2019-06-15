@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel-docs,v 1.2 2016/12/17 14:58:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST-devel-docs,v 1.3 2019/06/15 10:24:37 ajacoutot Exp $
 @man man/man3/DES_cbc_cksum.3
 @man man/man3/DES_cbc_encrypt.3
 @man man/man3/DES_cfb64_encrypt.3
@@ -239,6 +239,7 @@
 @man man/man3/hdb_password.3
 @man man/man3/hdb_remove.3
 @man man/man3/hdb_rename.3
+@man man/man3/hdb_set_sync.3
 @man man/man3/hdb_store.3
 @man man/man3/hdb_unlock.3
 @man man/man3/heim_ntlm_build_ntlm1_master.3
@@ -894,6 +895,7 @@
 @man man/man3/krb5_principal_get_realm.3
 @man man/man3/krb5_principal_get_type.3
 @man man/man3/krb5_principal_intro.3
+@man man/man3/krb5_principal_is_anonymous.3
 @man man/man3/krb5_principal_is_gss_hostbased_service.3
 @man man/man3/krb5_principal_is_krbtgt.3
 @man man/man3/krb5_principal_is_lkdc.3
