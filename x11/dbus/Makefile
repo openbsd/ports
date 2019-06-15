@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2019/05/18 19:02:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.159 2019/06/15 09:59:57 ajacoutot Exp $
 
 PORTROACH=		limitw:1,even
 DPB_PROPERTIES=		parallel
@@ -6,7 +6,7 @@ DPB_PROPERTIES=		parallel
 COMMENT-main=		message bus system
 COMMENT-suid=		DBus setuid helper for starting system services
 
-V=			1.12.14
+V=			1.12.16
 DISTNAME=		dbus-${V}
 EPOCH-main=		0
 
@@ -22,7 +22,7 @@ HOMEPAGE=		http://dbus.freedesktop.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += c expat pthread
 
