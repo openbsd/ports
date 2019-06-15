@@ -1,0 +1,14 @@
+$OpenBSD: patch-bindings_perl_t_CMakeLists_txt,v 1.1 2019/06/15 09:53:00 rsadowski Exp $
+
+https://cmake.org/cmake/help/v3.0/policy/CMP0037.html
+Fix cmake policy CMP0037 to avoid multiple ninja targets.
+
+"Target names reserved by one or more CMake generators are not allowed. Among
+others these include “all”, “help” and “test”."
+
+Index: bindings/perl/t/CMakeLists.txt
+--- bindings/perl/t/CMakeLists.txt.orig
++++ bindings/perl/t/CMakeLists.txt
+@@ -1 +1 @@
+-add_custom_target(test prove -b ${CMAKE_CURRENT_SOURCE_DIR})
++add_custom_target(test-prove prove -b ${CMAKE_CURRENT_SOURCE_DIR})
