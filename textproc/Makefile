@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.597 2019/06/13 08:55:09 fcambus Exp $
+# $OpenBSD: Makefile,v 1.598 2019/06/15 12:15:15 robert Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -362,6 +362,8 @@
      SUBDIR += py-MarkupSafe,python3
      SUBDIR += py-PEG2
      SUBDIR += py-PEG2,python3
+     SUBDIR += py-PyPDF2
+     SUBDIR += py-PyPDF2,python3
      SUBDIR += py-alabaster
      SUBDIR += py-alabaster,python3
      SUBDIR += py-black
