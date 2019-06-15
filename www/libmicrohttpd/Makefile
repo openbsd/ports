@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2019/02/12 21:11:40 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2019/06/15 02:21:51 bcallah Exp $
 
 COMMENT =	tiny embeddable httpd library written in C
-DISTNAME =	libmicrohttpd-0.9.63
+DISTNAME =	libmicrohttpd-0.9.64
 CATEGORIES =	www
 
-SHARED_LIBS +=	microhttpd                0.3 # 61.0
+SHARED_LIBS +=	microhttpd                0.4 # 64.0
 
 HOMEPAGE =	https://www.gnu.org/software/libmicrohttpd/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
