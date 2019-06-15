@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.116 2019/06/01 16:32:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.117 2019/06/15 08:54:12 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -235,6 +235,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2018-11-05/exa
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2018-11-05/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2018-11-05/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2018-11-05/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2019-03-26/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2019-03-26/examples-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2019-03-26/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2019-03-26/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudfront/2019-03-26/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudhsm/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudhsm/2014-05-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudhsm/2014-05-30/examples-1.json
@@ -757,6 +762,18 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/organizations/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/organizations/2016-11-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/organizations/2016-11-28/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/organizations/2016-11-28/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize-events/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize-events/2018-03-22/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize-events/2018-03-22/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize-events/2018-03-22/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize-runtime/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize-runtime/2018-05-22/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize-runtime/2018-05-22/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize-runtime/2018-05-22/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize/2018-05-22/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize/2018-05-22/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize/2018-05-22/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pi/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pi/2018-02-27/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pi/2018-02-27/paginators-1.json
