@@ -1,0 +1,33 @@
+$OpenBSD: patch-odoo_service_server_py,v 1.1.1.1 2019/06/15 12:17:52 robert Exp $
+
+Set the socket timeout to a more sane value for slower connections.
+
+Index: odoo/service/server.py
+--- odoo/service/server.py.orig
++++ odoo/service/server.py
+@@ -70,14 +70,14 @@ def memory_info(process):
+     # psutil < 2.0 does not have memory_info, >= 3.0 does not have get_memory_info
+     pmem = (getattr(process, 'memory_info', None) or process.get_memory_info)()
+     # MacOSX allocates very large vms to all processes so we only monitor the rss usage.
+-    if platform.system() == 'Darwin':
++    if platform.system() == 'OpenBSD':
+         return pmem.rss
+     return pmem.vms
+ 
+ 
+ def set_limit_memory_hard():
+     if os.name == 'posix':
+-        rlimit = resource.RLIMIT_RSS if platform.system() == 'Darwin' else resource.RLIMIT_AS
++        rlimit = resource.RLIMIT_RSS if platform.system() == 'OpenBSD' else resource.RLIMIT_AS
+         soft, hard = resource.getrlimit(rlimit)
+         resource.setrlimit(rlimit, (config['limit_memory_hard'], hard))
+ 
+@@ -949,7 +949,7 @@ class WorkerHTTP(Worker):
+     """ HTTP Request workers """
+     def process_request(self, client, addr):
+         client.setblocking(1)
+-        client.settimeout(2)
++        client.settimeout(5)
+         client.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
+         # Prevent fd inherientence close_on_exec
+         flags = fcntl.fcntl(client, fcntl.F_GETFD) | fcntl.FD_CLOEXEC

@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $OpenBSD: odoo.rc,v 1.1.1.1 2019/06/15 12:17:58 robert Exp $
+
+daemon="${TRUEPREFIX}/bin/odoo"
+daemon_flags="-c ${SYSCONFDIR}/odoo/odoo.conf"
+daemon_user="_odoo"
+
+. /etc/rc.d/rc.subr
+
+pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+ 
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1
