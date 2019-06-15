@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/10/31 08:04:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/06/15 10:35:36 ajacoutot Exp $
 @conflict libsigc++-docs-*
 @pkgpath devel/libsigc++
 @pkgpath devel/libsigc++-2,-main
@@ -60,6 +60,8 @@ share/doc/libsigc++-${API_V}/index.html
 share/doc/libsigc++-${API_V}/reference/
 share/doc/libsigc++-${API_V}/reference/html/
 share/doc/libsigc++-${API_V}/reference/html/annotated.html
+share/doc/libsigc++-${API_V}/reference/html/arrowdown.png
+share/doc/libsigc++-${API_V}/reference/html/arrowright.png
 share/doc/libsigc++-${API_V}/reference/html/bc_s.png
 share/doc/libsigc++-${API_V}/reference/html/bdwn.png
 share/doc/libsigc++-${API_V}/reference/html/classes.html
@@ -415,10 +417,13 @@ share/doc/libsigc++-${API_V}/reference/html/classsigc_1_1volatile__mem__functor7
 share/doc/libsigc++-${API_V}/reference/html/classsigc_1_1volatile__mem__functor7__inherit__graph.png
 share/doc/libsigc++-${API_V}/reference/html/closed.png
 share/doc/libsigc++-${API_V}/reference/html/deprecated.html
-share/doc/libsigc++-${API_V}/reference/html/dir_0bd3c8d814eb03171de012519d7a2ccd.html
-share/doc/libsigc++-${API_V}/reference/html/dir_5c02128c554eaa40138b2e605fc08970.html
-share/doc/libsigc++-${API_V}/reference/html/dir_5fbc72877197f8c6013d0f619df5433c.html
-share/doc/libsigc++-${API_V}/reference/html/dir_ea4abdd77c05d5873cecf571a6d96de7.html
+share/doc/libsigc++-${API_V}/reference/html/dir_69292b900bf9f32fa1522c0a297aa561.html
+share/doc/libsigc++-${API_V}/reference/html/dir_7061c03125b177af05ebe54a01c7815e.html
+share/doc/libsigc++-${API_V}/reference/html/dir_a7a614a8e549e28882ee9909ca095aec.html
+share/doc/libsigc++-${API_V}/reference/html/dir_d1b074183e01b19b1ce0df6f4868a06f.html
+share/doc/libsigc++-${API_V}/reference/html/dir_e610d0fd7d8d422b14c5e759f0ef71be.html
+share/doc/libsigc++-${API_V}/reference/html/dir_e7ee533ee50f0002bd12390b80ea971b.html
+share/doc/libsigc++-${API_V}/reference/html/dir_ffa8fd617c28221f63108bd7d58d97eb.html
 share/doc/libsigc++-${API_V}/reference/html/doc.png
 share/doc/libsigc++-${API_V}/reference/html/doxygen-extra.css
 share/doc/libsigc++-${API_V}/reference/html/doxygen.css
@@ -546,8 +551,6 @@ share/doc/libsigc++-${API_V}/reference/html/inherit_graph_8.png
 share/doc/libsigc++-${API_V}/reference/html/inherit_graph_9.png
 share/doc/libsigc++-${API_V}/reference/html/inherits.html
 share/doc/libsigc++-${API_V}/reference/html/jquery.js
-share/doc/libsigc++-${API_V}/reference/html/menu.js
-share/doc/libsigc++-${API_V}/reference/html/menudata.js
 share/doc/libsigc++-${API_V}/reference/html/modules.html
 share/doc/libsigc++-${API_V}/reference/html/namespacemembers.html
 share/doc/libsigc++-${API_V}/reference/html/namespacemembers_c.html

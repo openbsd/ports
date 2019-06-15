@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2018/10/31 08:04:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2019/06/15 10:35:36 ajacoutot Exp $
 
 COMMENT=		callback framework for C++
 
-GNOME_VERSION=		2.10.1
+GNOME_VERSION=		2.10.2
 GNOME_PROJECT=		libsigc++
 
 CATEGORIES=		devel
@@ -14,8 +14,10 @@ SUBST_VARS=		API_V
 
 HOMEPAGE=		http://libsigc.sourceforge.net/
 
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
