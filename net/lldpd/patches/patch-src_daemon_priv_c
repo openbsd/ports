@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_daemon_priv_c,v 1.3 2018/12/02 16:10:32 sthen Exp $
+$OpenBSD: patch-src_daemon_priv_c,v 1.4 2019/06/16 19:18:48 sthen Exp $
 
 Index: src/daemon/priv.c
 --- src/daemon/priv.c.orig
 +++ src/daemon/priv.c
-@@ -45,6 +45,9 @@
+@@ -46,6 +46,9 @@
  #if defined HOST_OS_FREEBSD || HOST_OS_OSX || HOST_OS_DRAGONFLY
  # include <net/if_dl.h>
  #endif
