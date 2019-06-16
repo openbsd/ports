@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.344 2019/06/16 13:17:45 ajacoutot Exp $
+$OpenBSD: user.list,v 1.345 2019/06/16 21:48:30 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -346,3 +346,4 @@ id  user		group		port options
 835 _opendmarc		_opendmarc	mail/opendmarc
 836 _odoo		_odoo		www/odoo
 837 _thingsd		_thingsd	net/thingsd
+838 _i2pd		_i2pd		net/i2pd
