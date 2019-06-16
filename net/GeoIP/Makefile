@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2019/06/03 16:06:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2019/06/16 23:08:38 sthen Exp $
 
 COMMENT-main=	find the country where IP address/hostname originates from
 COMMENT-db=	GeoIP GeoLite database: IPv4/v6 address to country
@@ -6,7 +6,7 @@ COMMENT-city=	GeoIP GeoLite database: IPv4/v6 address to city
 COMMENT-asn=	GeoIP GeoLite database: IPv4/v6 address to AS number
 
 V=		1.6.12
-REVISION-main=	1
+REVISION=	2
 D=		20180401
 DISTNAME=	GeoIP-$V
 PKGNAME-main=	GeoIP-$V
@@ -22,8 +22,6 @@ SHARED_LIBS +=	GeoIP                9.0      # 7.3
 CATEGORIES=	net geo
 
 HOMEPAGE=	https://dev.maxmind.com/geoip/legacy/downloadable/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # geoip-api-c: LGPLv2.1+
 # geolite DBs: CC BY-SA 4.0
