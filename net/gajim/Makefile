@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.87 2019/05/20 22:15:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.88 2019/06/16 16:57:34 feinerer Exp $
 
 COMMENT=	jabber client written in pygtk
-MODPY_EGG_VERSION=	1.1.2
+MODPY_EGG_VERSION=	1.1.3
 DISTNAME=	gajim-${MODPY_EGG_VERSION}
 CATEGORIES=	net x11
-REVISION=	0
 
 HOMEPAGE=	https://www.gajim.org
 
@@ -13,7 +12,7 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 MASTER_SITES=	${HOMEPAGE}/downloads/1.1/
 
 # GPLv3 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
@@ -24,7 +23,7 @@ BUILD_DEPENDS=	devel/gettext,-tools
 RUN_DEPENDS=	devel/desktop-file-utils \
 		graphics/py-Pillow${MODPY_FLAVOR} \
 		graphics/py-cairo${MODPY_FLAVOR} \
-		net/py-nbxmpp${MODPY_FLAVOR} \
+		net/py-nbxmpp${MODPY_FLAVOR}>=0.6.10 \
 		security/py-cryptodome${MODPY_FLAVOR} \
 		security/py-gnupg${MODPY_FLAVOR} \
 		security/py-keyring${MODPY_FLAVOR} \
