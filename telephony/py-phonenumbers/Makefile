@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/06/16 08:57:48 ajacoutot Exp $
 
 COMMENT =	port of Google's libphonenumber library
 #'
 
-MODPY_EGG_VERSION = 8.10.10
+MODPY_EGG_VERSION = 8.10.13
 DISTNAME =	phonenumbers-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	telephony devel
 
