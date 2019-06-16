@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2019/05/02 15:54:06 kmos Exp $
+# $OpenBSD: Makefile,v 1.85 2019/06/16 07:39:13 kirby Exp $
 
      SUBDIR =
      SUBDIR += akonadi
@@ -16,6 +16,7 @@
      SUBDIR += glabels
      SUBDIR += gnucash
      SUBDIR += grisbi
+     SUBDIR += gsimplecal
      SUBDIR += gtg
      SUBDIR += homebank
      SUBDIR += impressive
