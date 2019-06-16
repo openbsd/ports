@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.120 2019/06/03 16:06:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.121 2019/06/16 17:18:10 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-1.12.0
+DISTNAME=	mutt-1.12.1
 EPOCH=		3
-REVISION=	0
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
@@ -31,9 +30,7 @@ BUILD_DEPENDS+=	textproc/docbook-xsl \
 FLAVORS=	gpgme sasl slang
 FLAVOR?=
 
-CONFIGURE_STYLE=  autoreconf
-AUTOCONF_VERSION= 2.69
-AUTOMAKE_VERSION= 1.15
+CONFIGURE_STYLE=  gnu
 
 FLAVOR_COMMA=	${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=	FLAVOR_COMMA
