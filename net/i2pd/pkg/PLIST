@@ -1,0 +1,285 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/16 22:13:55 sthen Exp $
+@newgroup _i2pd:838
+@newuser _i2pd:838:838:daemon:i2pd account:${LOCALSTATEDIR}/lib/i2pd:/sbin/nologin
+@rcscript ${RCDIR}/i2pd
+include/i2pd/
+include/i2pd/AddressBook.cpp
+include/i2pd/AddressBook.h
+include/i2pd/BOB.cpp
+include/i2pd/BOB.h
+include/i2pd/Base.cpp
+include/i2pd/Base.h
+include/i2pd/Blinding.cpp
+include/i2pd/Blinding.h
+include/i2pd/BloomFilter.cpp
+include/i2pd/BloomFilter.h
+include/i2pd/CPU.cpp
+include/i2pd/CPU.h
+include/i2pd/ChaCha20.cpp
+include/i2pd/ChaCha20.h
+include/i2pd/ClientContext.cpp
+include/i2pd/ClientContext.h
+include/i2pd/ClientTunnelPane.cpp
+include/i2pd/Config.cpp
+include/i2pd/Config.h
+include/i2pd/Crypto.cpp
+include/i2pd/Crypto.h
+include/i2pd/CryptoKey.cpp
+include/i2pd/CryptoKey.h
+include/i2pd/CryptoWorker.h
+include/i2pd/Daemon.cpp
+include/i2pd/Daemon.h
+include/i2pd/DaemonAndroid.cpp
+include/i2pd/DaemonQT.cpp
+include/i2pd/DaemonWin32.cpp
+include/i2pd/Datagram.cpp
+include/i2pd/Datagram.h
+include/i2pd/Destination.cpp
+include/i2pd/Destination.h
+include/i2pd/Ed25519.cpp
+include/i2pd/Ed25519.h
+include/i2pd/Event.cpp
+include/i2pd/Event.h
+include/i2pd/FS.cpp
+include/i2pd/FS.h
+include/i2pd/Family.cpp
+include/i2pd/Family.h
+include/i2pd/Garlic.cpp
+include/i2pd/Garlic.h
+include/i2pd/Gost.cpp
+include/i2pd/Gost.h
+include/i2pd/Gzip.cpp
+include/i2pd/Gzip.h
+include/i2pd/HTTP.cpp
+include/i2pd/HTTP.h
+include/i2pd/HTTPProxy.cpp
+include/i2pd/HTTPProxy.h
+include/i2pd/HTTPServer.cpp
+include/i2pd/HTTPServer.h
+include/i2pd/I2CP.cpp
+include/i2pd/I2CP.h
+include/i2pd/I2NPProtocol.cpp
+include/i2pd/I2NPProtocol.h
+include/i2pd/I2PControl.cpp
+include/i2pd/I2PControl.h
+include/i2pd/I2PEndian.cpp
+include/i2pd/I2PEndian.h
+include/i2pd/I2PService.cpp
+include/i2pd/I2PService.h
+include/i2pd/I2PTunnel.cpp
+include/i2pd/I2PTunnel.h
+include/i2pd/Identity.cpp
+include/i2pd/Identity.h
+include/i2pd/LeaseSet.cpp
+include/i2pd/LeaseSet.h
+include/i2pd/LittleBigEndian.h
+include/i2pd/Log.cpp
+include/i2pd/Log.h
+include/i2pd/MainWindowItems.cpp
+include/i2pd/MatchedDestination.cpp
+include/i2pd/MatchedDestination.h
+include/i2pd/NTCP2.cpp
+include/i2pd/NTCP2.h
+include/i2pd/NTCPSession.cpp
+include/i2pd/NTCPSession.h
+include/i2pd/NetDb.cpp
+include/i2pd/NetDbRequests.cpp
+include/i2pd/NetDbRequests.h
+include/i2pd/Poly1305.cpp
+include/i2pd/Poly1305.h
+include/i2pd/Profiling.cpp
+include/i2pd/Profiling.h
+include/i2pd/Queue.h
+include/i2pd/Reseed.cpp
+include/i2pd/Reseed.h
+include/i2pd/RouterContext.cpp
+include/i2pd/RouterContext.h
+include/i2pd/RouterInfo.cpp
+include/i2pd/RouterInfo.h
+include/i2pd/SAM.cpp
+include/i2pd/SAM.h
+include/i2pd/SOCKS.cpp
+include/i2pd/SOCKS.h
+include/i2pd/SSU.cpp
+include/i2pd/SSU.h
+include/i2pd/SSUData.cpp
+include/i2pd/SSUData.h
+include/i2pd/SSUSession.cpp
+include/i2pd/SSUSession.h
+include/i2pd/ServerTunnelPane.cpp
+include/i2pd/Signature.cpp
+include/i2pd/Signature.h
+include/i2pd/SignatureTypeComboboxFactory.cpp
+include/i2pd/Siphash.h
+include/i2pd/Streaming.cpp
+include/i2pd/Streaming.h
+include/i2pd/Tag.h
+include/i2pd/Timestamp.cpp
+include/i2pd/Timestamp.h
+include/i2pd/TransitTunnel.cpp
+include/i2pd/TransitTunnel.h
+include/i2pd/TransportSession.h
+include/i2pd/Transports.cpp
+include/i2pd/Transports.h
+include/i2pd/Tunnel.cpp
+include/i2pd/Tunnel.h
+include/i2pd/TunnelBase.h
+include/i2pd/TunnelConfig.cpp
+include/i2pd/TunnelConfig.h
+include/i2pd/TunnelEndpoint.cpp
+include/i2pd/TunnelEndpoint.h
+include/i2pd/TunnelGateway.cpp
+include/i2pd/TunnelGateway.h
+include/i2pd/TunnelPane.cpp
+include/i2pd/TunnelPool.cpp
+include/i2pd/TunnelPool.h
+include/i2pd/UPnP.cpp
+include/i2pd/UPnP.h
+include/i2pd/UnixDaemon.cpp
+include/i2pd/WebSocks.cpp
+include/i2pd/WebSocks.h
+include/i2pd/Websocket.cpp
+include/i2pd/Websocket.h
+include/i2pd/Win32App.cpp
+include/i2pd/Win32Service.cpp
+include/i2pd/api.cpp
+include/i2pd/api.h
+include/i2pd/i2pd.cpp
+include/i2pd/i2pd_android.cpp
+include/i2pd/logviewermanager.cpp
+include/i2pd/mainwindow.cpp
+include/i2pd/pagewithbackbutton.cpp
+include/i2pd/test-aeadchacha20poly1305.cpp
+include/i2pd/test-base-64.cpp
+include/i2pd/test-blinding.cpp
+include/i2pd/test-gost-sig.cpp
+include/i2pd/test-gost.cpp
+include/i2pd/test-http-merge_chunked.cpp
+include/i2pd/test-http-req.cpp
+include/i2pd/test-http-res.cpp
+include/i2pd/test-http-url.cpp
+include/i2pd/test-http-url_decode.cpp
+include/i2pd/test-x25519.cpp
+include/i2pd/textbrowsertweaked1.cpp
+include/i2pd/util.cpp
+include/i2pd/util.h
+include/i2pd/version.h
+include/i2pd/widgetlock.cpp
+include/i2pd/widgetlockregistry.cpp
+lib/libi2pd.a
+lib/libi2pdclient.a
+@bin sbin/i2pd
+@owner _i2pd
+@group _i2pd
+@sample ${SYSCONFDIR}/i2pd/
+@sample ${LOCALSTATEDIR}/lib/i2pd/
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/family/
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/router/
+@owner
+@group
+share/doc/i2pd/
+share/doc/i2pd/LICENSE
+share/examples/i2pd/
+share/examples/i2pd/certificates/
+share/examples/i2pd/certificates/family/
+@sample ${LOCALSTATEDIR}/lib/
+share/examples/i2pd/certificates/family/gostcoin.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/family/gostcoin.crt
+@owner
+@group
+share/examples/i2pd/certificates/family/i2p-dev.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/family/i2p-dev.crt
+@owner
+@group
+share/examples/i2pd/certificates/family/i2pd-dev.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/family/i2pd-dev.crt
+@owner
+@group
+share/examples/i2pd/certificates/family/mca2-i2p.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/family/mca2-i2p.crt
+@owner
+@group
+share/examples/i2pd/certificates/family/volatile.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/family/volatile.crt
+share/examples/i2pd/certificates/reseed/
+@owner
+@group
+share/examples/i2pd/certificates/reseed/backup_at_mail.i2p.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/backup_at_mail.i2p.crt
+@owner
+@group
+share/examples/i2pd/certificates/reseed/bugme_at_mail.i2p.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/bugme_at_mail.i2p.crt
+@owner
+@group
+share/examples/i2pd/certificates/reseed/creativecowpat_at_mail.i2p.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/creativecowpat_at_mail.i2p.crt
+@owner
+@group
+share/examples/i2pd/certificates/reseed/echelon_at_mail.i2p.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/echelon_at_mail.i2p.crt
+@owner
+@group
+share/examples/i2pd/certificates/reseed/hottuna_at_mail.i2p.crt
+share/examples/i2pd/certificates/reseed/igor_at_novg.net.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/igor_at_novg.net.crt
+@owner
+@group
+share/examples/i2pd/certificates/reseed/lazygravy_at_mail.i2p.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/lazygravy_at_mail.i2p.crt
+@owner
+@group
+share/examples/i2pd/certificates/reseed/meeh_at_mail.i2p.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/meeh_at_mail.i2p.crt
+@owner
+@group
+share/examples/i2pd/certificates/reseed/r4sas-reseed_at_mail.i2p.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/r4sas-reseed_at_mail.i2p.crt
+@owner
+@group
+share/examples/i2pd/certificates/reseed/reseedi2pnetin_at_mail.i2p.crt
+share/examples/i2pd/certificates/router/
+share/examples/i2pd/certificates/router/orignal_at_mail.i2p.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/router/orignal_at_mail.i2p.crt
+@owner
+@group
+share/examples/i2pd/i2pd.conf
+@owner _i2pd
+@group _i2pd
+@sample ${SYSCONFDIR}/i2pd/i2pd.conf
+@owner
+@group
+share/examples/i2pd/tunnels.conf
+@owner _i2pd
+@group _i2pd
+@sample ${SYSCONFDIR}/i2pd/tunnels.conf

@@ -1,0 +1,31 @@
+$OpenBSD: patch-tests_Makefile,v 1.1.1.1 2019/06/16 22:13:55 sthen Exp $
+
+Index: tests/Makefile
+--- tests/Makefile.orig
++++ tests/Makefile
+@@ -13,8 +13,8 @@ test-base-%: ../libi2pd/Base.cpp test-base-%.cpp
+ test-gost: ../libi2pd/Gost.cpp ../libi2pd/I2PEndian.cpp test-gost.cpp
+ 	$(CXX) $(CXXFLAGS) $(NEEDED_CXXFLAGS) $(INCFLAGS) -o $@ $^ -lcrypto
+ 
+-test-gost-sig: ../libi2pd/Gost.cpp ../libi2pd/I2PEndian.cpp ../libi2pd/Crypto.cpp ../libi2pd/Log.cpp test-gost-sig.cpp
+-	$(CXX) $(CXXFLAGS) $(NEEDED_CXXFLAGS) $(INCFLAGS) -o $@ $^ -lcrypto -lssl -lboost_system
++test-gost-sig: ../libi2pd/Gost.cpp ../libi2pd/Config.cpp ../libi2pd/I2PEndian.cpp ../libi2pd/Crypto.cpp ../libi2pd/Log.cpp test-gost-sig.cpp
++	$(CXX) $(CXXFLAGS) $(NEEDED_CXXFLAGS) $(INCFLAGS) -o $@ $^ -lcrypto -lssl -lboost_system -lboost_program_options-mt
+ 
+ test-x25519: ../libi2pd/Ed25519.cpp ../libi2pd/I2PEndian.cpp ../libi2pd/Log.cpp ../libi2pd/Crypto.cpp  test-x25519.cpp
+ 	$(CXX) $(CXXFLAGS) $(NEEDED_CXXFLAGS) $(INCFLAGS) -o $@ $^ -lcrypto -lssl -lboost_system
+@@ -22,11 +22,11 @@ test-x25519: ../libi2pd/Ed25519.cpp ../libi2pd/I2PEndi
+ test-aeadchacha20poly1305: ../libi2pd/Crypto.cpp ../libi2pd/ChaCha20.cpp ../libi2pd/Poly1305.cpp test-aeadchacha20poly1305.cpp
+ 	 $(CXX) $(CXXFLAGS) $(NEEDED_CXXFLAGS) $(INCFLAGS) -o $@ $^ -lcrypto -lssl -lboost_system
+ 
+-test-blinding: ../libi2pd/Crypto.cpp ../libi2pd/Blinding.cpp ../libi2pd/Ed25519.cpp ../libi2pd/I2PEndian.cpp ../libi2pd/Log.cpp ../libi2pd/util.cpp ../libi2pd/Identity.cpp ../libi2pd/Signature.cpp ../libi2pd/Timestamp.cpp test-blinding.cpp
+-	 $(CXX) $(CXXFLAGS) $(NEEDED_CXXFLAGS) $(INCFLAGS) -o $@ $^ -lcrypto -lssl -lboost_system
++test-blinding: ../libi2pd/Crypto.cpp ../libi2pd/Config.cpp ../libi2pd/Blinding.cpp ../libi2pd/Ed25519.cpp ../libi2pd/I2PEndian.cpp ../libi2pd/Log.cpp ../libi2pd/util.cpp ../libi2pd/Identity.cpp ../libi2pd/Signature.cpp ../libi2pd/Timestamp.cpp test-blinding.cpp
++	 $(CXX) $(CXXFLAGS) $(NEEDED_CXXFLAGS) $(INCFLAGS) -o $@ $^ -lcrypto -lssl -lboost_system -lboost_program_options-mt
+ 
+ run: $(TESTS)
+-	@for TEST in $(TESTS); do ./$$TEST ; done
++	@for TEST in $(TESTS); do echo -n "$$TEST: "; ./$$TEST && echo OK; done
+ 
+ clean:
+ 	rm -f $(TESTS)
