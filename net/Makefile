@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1136 2019/06/15 21:43:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.1137 2019/06/16 22:14:18 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -131,6 +131,7 @@
      SUBDIR += hs-HTTP
      SUBDIR += hs-hostname
      SUBDIR += httptunnel
+     SUBDIR += i2pd
      SUBDIR += icbd
      SUBDIR += icbirc
      SUBDIR += icecast
