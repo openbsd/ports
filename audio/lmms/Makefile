@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/06/14 13:51:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/06/16 09:12:11 ajacoutot Exp $
 
 COMMENT =		music studio with tracking, sampling and MIDI
 
@@ -24,6 +24,8 @@ WANTLIB += vorbisfile
 COMPILER =		base-clang ports-gcc
 
 MODULES =		x11/qt5 devel/cmake
+
+BUILD_DEPENDS =		shells/bash
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
