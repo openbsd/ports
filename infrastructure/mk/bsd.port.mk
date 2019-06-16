@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1470 2019/06/04 13:34:10 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1471 2019/06/16 14:27:42 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -155,7 +155,7 @@ UPDATE_COOKIES_DIR ?= ${PORTSDIR}/update/${MACHINE_ARCH}
 
 PLIST_REPOSITORY ?= ${PORTSDIR}/plist
 .if !empty(PLIST_REPOSITORY)
-PLIST_DB ?= ${PLIST_REPOSITORY}/${MACHINE_ARCH}
+_PLIST_DB = ${PLIST_REPOSITORY}/${MACHINE_ARCH}
 .endif
 PACKAGE_REPOSITORY ?= ${PORTSDIR}/packages
 
@@ -323,7 +323,7 @@ COMPILER_LIBCXX ?= ${LIBCXX}
 
 .for v in PKGREPOSITORY PKGREPOSITORYBASE CDROM_PACKAGES FTP_PACKAGES \
 	SED_PLIST IGNORE_FILES NO_REGRESS REGRESS_IS_INTERACTIVE REGRESS_DEPENDS \
-	PERMIT_DISTFILES_CDROM
+	PERMIT_DISTFILES_CDROM PLIST_DB
 .  if defined($v)
 ERRORS += "Fatal: Variable $v is obsolete, see bsd.port.mk(5)"
 .  endif
@@ -572,8 +572,8 @@ BASE_PKGPATH := ${PKGPATH}
 _FLAVOR_EXT2 :=
 BUILD_PKGPATH := ${PKGPATH}
 _PKG_ARGS = -u ${PORTSDIR}/infrastructure/db/user.list
-.if !empty(PLIST_DB)
-_PKG_ARGS += -DHISTORY_DIR=${PLIST_DB}/history
+.if !empty(_PLIST_DB)
+_PKG_ARGS += -DHISTORY_DIR=${_PLIST_DB}/history
 .endif
 _README_DIR = ${LOCALBASE}/share/doc/pkg-readmes
 
@@ -1827,10 +1827,10 @@ _list_port_libs = \
 		cat $$cached_libs; \
 	done; ${_list_system_libs}; }
 
-.if empty(PLIST_DB)
+.if empty(_PLIST_DB)
 _register_plist =:
 .else
-_register_plist = ${_PBUILD} install -d ${PLISTDIR_MODE} ${PLIST_DB:S/:/ /g} && ${_PBUILD} ${_PERLSCRIPT}/register-plist ${PLIST_DB}
+_register_plist = ${_PBUILD} install -d ${PLISTDIR_MODE} ${_PLIST_DB} && ${_PBUILD} ${_PERLSCRIPT}/register-plist ${_PLIST_DB}
 .endif
 .if ${CHECK_LIB_DEPENDS:L} == "yes"
 _check_lib_depends = ${_CHECK_LIB_DEPENDS}
@@ -1976,10 +1976,10 @@ dump-vars:
 .endif
 
 check-register:
-.if empty(PLIST_DB)
+.if empty(_PLIST_DB)
 	@exit 1
 .else
-	@if cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} print-plist-with-depends | ${_PERLSCRIPT}/register-plist -p ${PLIST_DB}; then \
+	@if cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} print-plist-with-depends | ${_PERLSCRIPT}/register-plist -p ${_PLIST_DB}; then \
 		echo "${FULLPKGNAME${SUBPACKAGE}} okay"; \
 	else \
 		echo "${FULLPKGNAME${SUBPACKAGE}} BAD"; \
@@ -3145,11 +3145,11 @@ _internal-clean:
 	rm -f ${_BULK_COOKIE}
 .endif
 .if ${_clean:Mplist}
-.  for _d in ${PLIST_DB:S/:/ /}
+.  if !empty(_PLIST_DB)
 .    for _p in ${PKGNAMES}
-	${_PBUILD} rm -f ${_d}/${_p}
+	${_PBUILD} rm -f ${_PLIST_DB}/${_p}
 .    endfor
-.  endfor
+.  endif
 .endif
 
 print-build-depends:
