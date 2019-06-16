@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Unique_cpp,v 1.1.1.1 2019/06/16 07:37:33 kirby Exp $
+
+Index: src/Unique.cpp
+--- src/Unique.cpp.orig
++++ src/Unique.cpp
+@@ -108,7 +108,9 @@ void Unique::getPathnameFromFile(const char *const pat
+ 
+ void Unique::getPathnameFromExe(char* pathname)
+ {
+-#if HAVE_GETEXECNAME && HAVE_STRLCPY
++#ifdef __OpenBSD__
++    strlcpy(pathname, "${PREFIX}/bin/gsimplecal", PATH_MAX + 1);
++#elif HAVE_GETEXECNAME && HAVE_STRLCPY
+     // Try getexecname (Solaris).
+     const char* execname = getexecname();
+     strlcpy(pathname, execname, PATH_MAX + 1);
