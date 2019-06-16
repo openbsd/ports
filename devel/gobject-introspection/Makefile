@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.96 2019/04/30 17:43:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.97 2019/06/16 08:45:44 ajacoutot Exp $
 
 COMMENT=		GObject Introspection
 
-GNOME_VERSION=		1.60.1
+GNOME_VERSION=		1.60.2
 GNOME_PROJECT=		gobject-introspection
 
 CATEGORIES=		devel
@@ -14,7 +14,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 
 # Library: LGPLv2+
 # Tools: GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 MODULES=		devel/meson \
 			lang/python \
