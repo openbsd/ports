@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/05/16 11:34:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2019/06/16 09:03:48 ajacoutot Exp $
 @pkgpath graphics/GraphicsMagick,no_x11
 bin/GraphicsMagick++-config
 bin/GraphicsMagick-config
@@ -105,6 +105,8 @@ lib/GraphicsMagick/modules-Q16/coders/avs.la
 lib/GraphicsMagick/modules-Q16/coders/avs.so
 lib/GraphicsMagick/modules-Q16/coders/bmp.la
 lib/GraphicsMagick/modules-Q16/coders/bmp.so
+lib/GraphicsMagick/modules-Q16/coders/braille.la
+lib/GraphicsMagick/modules-Q16/coders/braille.so
 lib/GraphicsMagick/modules-Q16/coders/cals.la
 lib/GraphicsMagick/modules-Q16/coders/cals.so
 lib/GraphicsMagick/modules-Q16/coders/caption.la
@@ -343,6 +345,7 @@ share/doc/GraphicsMagick/ChangeLog.2014
 share/doc/GraphicsMagick/ChangeLog.2015
 share/doc/GraphicsMagick/ChangeLog.2016
 share/doc/GraphicsMagick/ChangeLog.2017
+share/doc/GraphicsMagick/ChangeLog.2018
 share/doc/GraphicsMagick/Copyright.txt
 share/doc/GraphicsMagick/NEWS.txt
 share/doc/GraphicsMagick/www/
@@ -363,6 +366,7 @@ share/doc/GraphicsMagick/www/ChangeLog-2014.html
 share/doc/GraphicsMagick/www/ChangeLog-2015.html
 share/doc/GraphicsMagick/www/ChangeLog-2016.html
 share/doc/GraphicsMagick/www/ChangeLog-2017.html
+share/doc/GraphicsMagick/www/ChangeLog-2018.html
 share/doc/GraphicsMagick/www/Changelog.html
 share/doc/GraphicsMagick/www/Changes.html
 share/doc/GraphicsMagick/www/Copyright.html
