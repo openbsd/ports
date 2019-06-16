@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.98 2019/04/08 23:25:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.99 2019/06/16 21:08:56 sthen Exp $
 
 COMMENT=		apache HTTP server
 
 V=			2.4.39
-REVISION=		1
+REVISION=		2
 DISTNAME=		httpd-${V}
 PKGNAME=		apache-httpd-${V}
 
@@ -36,29 +36,31 @@ FLAVOR_COMMA=		${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=		CONFDIR FLAVOR_COMMA
 
 CONFIGURE_STYLE=	simple
-CONFIGURE_ARGS=		--enable-layout=OpenBSD \
-			--prefix=${HTTPD_DIR} \
-			--exec-prefix=${LOCALBASE} \
-			--sysconfdir=${CONFDIR} \
-			--with-apr=${LOCALBASE}/bin/apr-1-config  \
-			--with-apr-util=${LOCALBASE}/bin/apu-1-config \
-			--enable-ssl --with-ssl=/usr \
-			--enable-mpms-shared=all \
-			--with-mpm=prefork \
-			--with-program-name=httpd2 \
-			--enable-modules=all \
+
+CONFIGURE_ARGS=		--enable-authnz-fcgi \
 			--enable-cache \
+			--enable-cgi \
 			--enable-disk-cache \
 			--enable-http2 \
-			--enable-proxy=shared \
-			--enable-proxy-fdpass \
+			--enable-layout=OpenBSD \
 			--enable-mods-shared=all \
-			--enable-cgi \
+			--enable-modules=all \
+			--enable-mpms-shared=all \
+			--enable-proxy-fdpass \
+			--enable-proxy=shared \
+			--enable-ssl --with-ssl=/usr \
 			--enable-suexec \
-			--with-suexec-caller=www \
+			--exec-prefix=${LOCALBASE} \
+			--prefix=${HTTPD_DIR} \
+			--sysconfdir=${CONFDIR} \
+			--with-apr-util=${LOCALBASE}/bin/apu-1-config \
+			--with-apr=${LOCALBASE}/bin/apr-1-config  \
+			--with-mpm=prefork \
+			--with-pcre=${LOCALBASE} \
+			--with-program-name=httpd2 \
 			--with-suexec-bin=${TRUEPREFIX}/sbin/suexec2 \
-			--with-suexec-logfile=${LOCALSTATEDIR}/log/suexec2_log \
-			--with-pcre=${LOCALBASE}
+			--with-suexec-caller=www \
+			--with-suexec-logfile=${LOCALSTATEDIR}/log/suexec2_log
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \

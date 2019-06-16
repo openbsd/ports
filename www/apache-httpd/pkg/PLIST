@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2019/04/02 08:17:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.31 2019/06/16 21:08:56 sthen Exp $
 @conflict apache-httpd-common-*
 @pkgpath www/apache-httpd,-main${FLAVOR_COMMA}
 @pkgpath www/apache-httpd,-common
@@ -93,6 +93,7 @@ lib/apache2/mod_authn_dbd.so
 lib/apache2/mod_authn_dbm.so
 lib/apache2/mod_authn_file.so
 lib/apache2/mod_authn_socache.so
+lib/apache2/mod_authnz_fcgi.so
 lib/apache2/mod_authz_core.so
 lib/apache2/mod_authz_dbd.so
 lib/apache2/mod_authz_dbm.so
