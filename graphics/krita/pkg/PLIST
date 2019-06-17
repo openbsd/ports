@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/03/03 09:51:01 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/06/17 04:32:21 rsadowski Exp $
 @conflict calligra-<=2.9.11
 @bin bin/krita
 lib/kritaplugins/
@@ -37,7 +37,6 @@ lib/kritaplugins/kritaconvolutionfilters.so
 lib/kritaplugins/kritacsvexport.so
 lib/kritaplugins/kritacsvimport.so
 lib/kritaplugins/kritacurvepaintop.so
-lib/kritaplugins/kritadefaultdockers.so
 lib/kritaplugins/kritadefaultpaintops.so
 lib/kritaplugins/kritadefaulttools.so
 lib/kritaplugins/kritadeformpaintop.so
@@ -52,6 +51,7 @@ lib/kritaplugins/kritaexrimport.so
 lib/kritaplugins/kritaextensioncolorsfilters.so
 lib/kritaplugins/kritafastcolortransferfilter.so
 lib/kritaplugins/kritafilterop.so
+lib/kritaplugins/kritagamutmask.so
 lib/kritaplugins/kritagifexport.so
 lib/kritaplugins/kritagifimport.so
 lib/kritaplugins/kritagradientmap.so
@@ -62,7 +62,6 @@ lib/kritaplugins/kritahalftone.so
 lib/kritaplugins/kritahatchingpaintop.so
 lib/kritaplugins/kritaheightmapexport.so
 lib/kritaplugins/kritaheightmapimport.so
-lib/kritaplugins/kritahistogram.so
 lib/kritaplugins/kritahistogramdocker.so
 lib/kritaplugins/kritahistorydocker.so
 lib/kritaplugins/kritaimageenhancement.so
@@ -73,10 +72,12 @@ lib/kritaplugins/kritajpegexport.so
 lib/kritaplugins/kritajpegimport.so
 lib/kritaplugins/kritakraexport.so
 lib/kritaplugins/kritakraimport.so
+lib/kritaplugins/kritalayerdocker.so
 lib/kritaplugins/kritalayergroupswitcher.so
 lib/kritaplugins/kritalayersplit.so
 lib/kritaplugins/kritalcmsengine.so
 lib/kritaplugins/kritalevelfilter.so
+lib/kritaplugins/kritalogdocker.so
 lib/kritaplugins/kritalutdocker.so
 lib/kritaplugins/kritametadataeditor.so
 lib/kritaplugins/kritamodifyselection.so
@@ -116,6 +117,7 @@ lib/kritaplugins/kritaroundmarkerpaintop.so
 lib/kritaplugins/kritaselectiontools.so
 lib/kritaplugins/kritaseparatechannels.so
 lib/kritaplugins/kritashearimage.so
+lib/kritaplugins/kritasimplexnoisegenerator.so
 lib/kritaplugins/kritasketchpaintop.so
 lib/kritaplugins/kritasmallcolorselector.so
 lib/kritaplugins/kritasmalltilesfilter.so
@@ -140,7 +142,6 @@ lib/kritaplugins/kritatoolpolyline.so
 lib/kritaplugins/kritatooltransform.so
 lib/kritaplugins/kritatouchdocker.so
 lib/kritaplugins/kritaunsharpfilter.so
-lib/kritaplugins/kritavideoexport.so
 lib/kritaplugins/kritawavefilter.so
 lib/kritaplugins/kritawaveletdecompose.so
 lib/kritaplugins/kritaxcfimport.so
@@ -156,6 +157,7 @@ lib/kritaplugins/kritaxcfimport.so
 @lib lib/libkritalibkis.so.${LIBkritalibkis_VERSION}
 @lib lib/libkritalibkra.so.${LIBkritalibkra_VERSION}
 @lib lib/libkritalibpaintop.so.${LIBkritalibpaintop_VERSION}
+@lib lib/libkritametadata.so.${LIBkritametadata_VERSION}
 @lib lib/libkritaodf.so.${LIBkritaodf_VERSION}
 @lib lib/libkritapigment.so.${LIBkritapigment_VERSION}
 @lib lib/libkritaplugin.so.${LIBkritaplugin_VERSION}
@@ -165,7 +167,6 @@ lib/kritaplugins/kritaxcfimport.so
 @lib lib/libkritatext.so.${LIBkritatext_VERSION}
 @lib lib/libkritatextlayout.so.${LIBkritatextlayout_VERSION}
 @lib lib/libkritaui.so.${LIBkritaui_VERSION}
-@lib lib/libkritavectorimage.so.${LIBkritavectorimage_VERSION}
 @lib lib/libkritaversion.so.${LIBkritaversion_VERSION}
 @lib lib/libkritawidgets.so.${LIBkritawidgets_VERSION}
 @lib lib/libkritawidgetutils.so.${LIBkritawidgetutils_VERSION}
@@ -251,9 +252,11 @@ share/color/icc/krita/Gray-D50-elle-V4-g22.icc
 share/color/icc/krita/Gray-D50-elle-V4-labl.icc
 share/color/icc/krita/Gray-D50-elle-V4-rec709.icc
 share/color/icc/krita/Gray-D50-elle-V4-srgbtrc.icc
+share/color/icc/krita/ITUR_2100_PQ_FULL.ICC
 share/color/icc/krita/Lab-D50-Identity-elle-V2.icc
 share/color/icc/krita/Lab-D50-Identity-elle-V4.icc
 share/color/icc/krita/README
+share/color/icc/krita/Rec2020-elle-V4-g10.icc
 share/color/icc/krita/XYZ-D50-Identity-elle-V4.icc
 share/color/icc/krita/cmyk.icm
 share/color/icc/krita/krita25_lcms-builtin-sRGB_g100-truegamma.icc
@@ -290,6 +293,7 @@ share/krita/
 share/krita/actions/
 share/krita/actions/ConnectionTool.action
 share/krita/actions/InteractionTool.action
+share/krita/actions/KarbonCalligraphyTool.action
 share/krita/actions/KisAssistantTool.action
 share/krita/actions/KisToolCrop.action
 share/krita/actions/KisToolPath.action
@@ -338,6 +342,15 @@ share/krita/defaultpresets/spraybrush.kpp
 share/krita/defaultpresets/tangentnormal.kpp
 share/krita/dtd/
 share/krita/dtd/krita.dtd
+share/krita/gamutmasks/
+share/krita/gamutmasks/Atmosphere_With_Accent.kgm
+share/krita/gamutmasks/Atmospheric_Triad.kgm
+share/krita/gamutmasks/Complementary.kgm
+share/krita/gamutmasks/Dominant_Hue_With_Accent.kgm
+share/krita/gamutmasks/GamutMaskTemplate.kra
+share/krita/gamutmasks/Shifted_Triad.kgm
+share/krita/gamutmasks/Split_Complementary.kgm
+share/krita/gamutmasks/empty_mask_preview.png
 share/krita/gradients/
 share/krita/gradients/BG-Krita2.ggr
 share/krita/gradients/GPS-FG-Glare.ggr
@@ -792,8 +805,6 @@ share/krita/symbols/
 share/krita/symbols/BalloonSymbols.svg
 share/krita/symbols/pepper_carrot_speech_bubbles.svg
 share/krita/symbols/preset_icons.svg
-share/krita/tags/
-share/krita/tags/kis_paintoppresets_tags.xml
 share/krita/templates/
 share/krita/templates/animation/
 share/krita/templates/animation/.directory
@@ -884,7 +895,6 @@ share/kritaplugins/buginfo.xmlgui
 share/kritaplugins/clonesarray.xmlgui
 share/kritaplugins/colorrange.xmlgui
 share/kritaplugins/colorspaceconversion.xmlgui
-share/kritaplugins/histogram.xmlgui
 share/kritaplugins/imageseparate.xmlgui
 share/kritaplugins/imagesize.xmlgui
 share/kritaplugins/imagesplit.xmlgui
