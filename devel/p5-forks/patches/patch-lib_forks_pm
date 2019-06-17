@@ -1,0 +1,26 @@
+$OpenBSD: patch-lib_forks_pm,v 1.1 2019/06/17 21:11:43 kn Exp $
+
+Argument "3.08_01" isn't numeric in numeric ge (>=) at /usr/local/libdata/perl5/site_perl/amd64-openbsd/forks.pm line 1570.
+
+Index: lib/forks.pm
+--- lib/forks.pm.orig
++++ lib/forks.pm
+@@ -44,6 +44,7 @@ use strict;
+ use warnings;
+ use warnings::register;
+ use Carp ();
++use version;
+ 
+ #---------------------------------------------------------------------------
+ # Set when to execute check and end blocks
+@@ -1567,8 +1568,8 @@ sub _server {
+     
+ # Localize Storable variables to allow CODE refs, if using Storable >= 2.05
+ 
+-    local $Storable::Deparse = 1 if $Storable::VERSION >= 2.05;
+-    local $Storable::Eval = 1 if $Storable::VERSION >= 2.05;
++    local $Storable::Deparse = 1 if version->parse($Storable::VERSION) >= version->parse(2.05);
++    local $Storable::Eval = 1 if version->parse($Storable::VERSION) >= version->parse(2.05);
+ 
+ # Initialize the number of polls
+ # While we're running in the main dispatch loop

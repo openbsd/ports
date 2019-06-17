@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/12 22:25:45 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2019/06/17 21:11:42 kn Exp $
 
 COMMENT =		forks - emulate threads with fork
 
 DISTNAME =		forks-0.36
+REVISION =		0
 
 CATEGORIES =		devel
 
