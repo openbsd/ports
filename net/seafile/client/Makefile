@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2019/03/08 20:00:50 cwen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/06/17 09:12:37 kirby Exp $
 
 COMMENT =		seafile client
 
 GH_PROJECT = 		seafile-client
-REVISION =              0
 
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets c
 WANTLIB += crypto event_core event_extra gio-2.0 glib-2.0 gobject-2.0
