@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Rebuild.pm,v 1.6 2019/05/15 13:53:17 espie Exp $
+# $OpenBSD: Rebuild.pm,v 1.7 2019/06/17 10:55:37 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -27,7 +27,7 @@ sub init
 
 	require OpenBSD::PackageRepository;
 	$self->{repository} = OpenBSD::PackageRepository->new(
-	    "file:/$self->{fullrepo}", $self->{state});
+	    "file:/$self->{realfullrepo}", $self->{state});
 	$self->{repository}{trusted} = 1;
 	# this is just a dummy core, for running quick pipes
 	# XXX but does it exist ?... rebuild requires localhost
@@ -54,12 +54,12 @@ sub check_signature
 	my $okay = 1;
 	for my $w ($v->build_path_list) {
 		my $name = $w->fullpkgname;
-		if (!-f "$self->{fullrepo}/$name.tgz") {
+		next if $uptodate->{$name};
+		if (!$self->SUPER::check($w)) {
 			print "$name: absent\n";
 			$okay = 0;
 			next;
 		}
-		next if $uptodate->{$name};
 		if ($self->equal_signatures($core, $w)) {
 			$uptodate->{$name} = 1;
 			print "$name: uptodate\n";
