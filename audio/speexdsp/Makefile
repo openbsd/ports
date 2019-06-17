@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/05 04:31:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/06/17 17:11:38 naddy Exp $
 
 COMMENT=	speech processing DSP library
 
-DISTNAME=	speexdsp-1.2rc3
+DISTNAME=	speexdsp-1.2.0
 CATEGORIES=	audio
 HOMEPAGE=	https://speex.org/
-SHARED_LIBS=	speexdsp	1.0	# 6.0
+SHARED_LIBS=	speexdsp	1.1	# 6.1
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://downloads.xiph.org/releases/speex/
 
@@ -18,10 +18,5 @@ WANTLIB=	m
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
-
-.if ${MACHINE_ARCH} == "aarch64"
-# inline assembly errors
-CONFIGURE_ARGS+=--disable-neon
-.endif
 
 .include <bsd.port.mk>
