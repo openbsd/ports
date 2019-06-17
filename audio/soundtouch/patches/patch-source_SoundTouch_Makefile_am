@@ -1,6 +1,9 @@
---- source/SoundTouch/Makefile.am.orig	Sun Sep 20 09:40:59 2015
-+++ source/SoundTouch/Makefile.am	Tue Dec 29 22:50:08 2015
-@@ -34,7 +34,7 @@ libSoundTouch_la_SOURCES=AAFilter.cpp FIRFilter.cpp FI
+$OpenBSD: patch-source_SoundTouch_Makefile_am,v 1.7 2019/06/17 08:17:49 rapha Exp $
+
+Index: source/SoundTouch/Makefile.am
+--- source/SoundTouch/Makefile.am.orig
++++ source/SoundTouch/Makefile.am
+@@ -33,7 +33,7 @@ libSoundTouch_la_SOURCES=AAFilter.cpp FIRFilter.cpp FI
      InterpolateShannon.cpp
  
  # Compiler flags
@@ -9,7 +12,7 @@
  
  # Compile the files that need MMX and SSE individually.
  libSoundTouch_la_LIBADD=libSoundTouchMMX.la libSoundTouchSSE.la
-@@ -72,4 +72,4 @@ libSoundTouch_la_LDFLAGS=-version-info @LIB_SONAME@
+@@ -71,4 +71,4 @@ libSoundTouch_la_LDFLAGS=-version-info @LIB_SONAME@
  # noinst_LTLIBRARIES = libSoundTouchOpt.la
  # libSoundTouch_la_LIBADD = libSoundTouchOpt.la
  # libSoundTouchOpt_la_SOURCES = mmx_optimized.cpp sse_optimized.cpp 

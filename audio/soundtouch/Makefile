@@ -1,45 +1,35 @@
-# $OpenBSD: Makefile,v 1.24 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/06/17 08:17:49 rapha Exp $
 
 COMMENT=	tempo/pitch audio processing library
 
-DISTNAME=	soundtouch-1.9.2
-SHARED_LIBS +=	SoundTouch	3.0      # .0.0
+V=		2.1.2
+DISTNAME=	soundtouch-${V}
+SHARED_LIBS=	SoundTouch	4.0
 CATEGORIES=	audio devel
-REVISION =	3
 
-HOMEPAGE=	http://www.surina.net/soundtouch/
+HOMEPAGE=	https://www.surina.net/soundtouch/
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	https://gitlab.com/soundtouch/soundtouch/-/archive/${V}/
 
 WANTLIB=	c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/libtool
+AUTOCONF_VERSION=2.69
+AUTOMAKE_VERSION=1.16
 
-WRKDIST=	${WRKDIR}/soundtouch
-
-AUTOCONF_VERSION=2.61
-AUTOMAKE_VERSION=1.9
-
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoreconf
 CONFIGURE_ARGS=	--disable-x86-optimizations
+AUTORECONF=	./bootstrap
 
-MAKE_FLAGS=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		CXXFLAGS="${CXXFLAGS}"
+MAKE_FLAGS=	CXXFLAGS="${CXXFLAGS}"
 
-pre-configure:
-	cd ${WRKSRC} && \
-		touch NEWS README AUTHORS ChangeLog && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		PATH=${PORTPATH} \
-		./bootstrap
+post-extract:
+	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' \
+	    source/SoundStretch/Makefile.am source/SoundTouch/Makefile.am
+
 
 .include <bsd.port.mk>
