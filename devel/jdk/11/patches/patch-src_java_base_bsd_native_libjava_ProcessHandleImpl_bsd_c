@@ -1,0 +1,71 @@
+$OpenBSD: patch-src_java_base_bsd_native_libjava_ProcessHandleImpl_bsd_c,v 1.1 2019/06/17 19:23:40 kurt Exp $
+
+Emulate waitid(2) with kqueue(2)
+
+Index: src/java.base/bsd/native/libjava/ProcessHandleImpl_bsd.c
+--- src/java.base/bsd/native/libjava/ProcessHandleImpl_bsd.c.orig
++++ src/java.base/bsd/native/libjava/ProcessHandleImpl_bsd.c
+@@ -46,6 +46,18 @@
+ #endif
+ 
+ #if defined(__OpenBSD__)
++#include <sys/event.h> // For kqueue
++#include <sys/time.h>  // For kqueue
++#endif
++
++/* TODO: Refactor. */
++#define RESTARTABLE(_cmd, _result) do { \
++  do { \
++    _result = _cmd; \
++  } while((_result == -1) && (errno == EINTR)); \
++} while(0)
++
++#if defined(__OpenBSD__)
+ #define KI_PID         p_pid
+ #define KI_PPID        p_ppid
+ #define KI_UID         p_uid
+@@ -464,3 +476,44 @@ void os_getCmdlineAndUserInfo(JNIEnv *env, jobject jin
+ #endif
+ }
+ 
++#if defined(__OpenBSD__)
++int os_waitForProcessExitNoReap(pid_t pid) {
++    int kq, ret;
++    struct kevent evSet;
++    struct kevent event;
++
++    kq = kqueue();
++    if (kq == -1)
++        return -1;
++
++    /* block to clean up kq fd */
++    do {
++        EV_SET(&evSet, pid, EVFILT_PROC, EV_ADD, NOTE_EXIT, 0, NULL);
++
++        RESTARTABLE(kevent(kq, &evSet, 1, NULL, 0, NULL), ret);
++        if (ret == -1) {
++            /*
++             * If process doesn't exist (or is a zombie), return 0
++             * since it is not possible to return actual exit status.
++             */
++            if (errno == ESRCH)
++                ret = 0;
++            break;
++        }
++
++        RESTARTABLE(kevent(kq, NULL, 0, &event, 1, NULL), ret);
++        if (ret == -1)
++           break;
++
++        if (event.flags & EV_ERROR) {
++            ret = -1;
++            break;
++        }
++
++        ret = event.data;
++    } while(0);
++
++    close(kq);
++    return ret;
++}
++#endif

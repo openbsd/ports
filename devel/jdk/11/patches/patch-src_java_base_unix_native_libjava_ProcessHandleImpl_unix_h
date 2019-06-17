@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_java_base_unix_native_libjava_ProcessHandleImpl_unix_h,v 1.1 2019/06/17 19:23:40 kurt Exp $
+
+Emulate waitid(2) with kqueue(2)
+
+Index: src/java.base/unix/native/libjava/ProcessHandleImpl_unix.h
+--- src/java.base/unix/native/libjava/ProcessHandleImpl_unix.h.orig
++++ src/java.base/unix/native/libjava/ProcessHandleImpl_unix.h
+@@ -74,3 +74,7 @@ extern void unix_fillArgArray(JNIEnv *env, jobject jin
+                               char *argsEnd, jstring cmdexe, char *cmdline);
+ 
+ extern void os_initNative(JNIEnv *env, jclass clazz);
++
++#if defined(__OpenBSD__)
++extern int os_waitForProcessExitNoReap(pid_t pid);
++#endif
