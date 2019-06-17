@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/28 20:51:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/06/17 22:30:49 kmos Exp $
 
 COMMENT =		simple yet flexible natural sorting
 
@@ -12,18 +12,22 @@ CATEGORIES =		textproc devel
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
 
 # could also make use of 'fastnumbers'
 RUN_DEPENDS =		textproc/py-ICU${MODPY_FLAVOR}
+
+TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
+			devel/py-test-mock${MODPY_FLAVOR}
 
 post-install:
 	mv ${PREFIX}/bin/natsort{,${MODPY_BIN_SUFFIX}}
