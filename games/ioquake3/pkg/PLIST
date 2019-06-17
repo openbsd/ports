@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/09/04 12:46:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/06/17 13:52:54 abieber Exp $
 @newgroup _ioq3:776
 @newuser _ioq3:776:_ioq3:daemon:ioquake3 Server:/var/ioq3:/sbin/nologin
+@rcscript ${RCDIR}/ioq3ded
 @bin bin/ioq3ded
 @bin bin/ioquake3
 share/doc/pkg-readmes/${PKGSTEM}
@@ -19,7 +20,3 @@ share/ioquake3/renderer_opengl2_${QUAKE_ARCH}.so
 @owner _ioq3
 @group _ioq3
 @sample /var/ioq3/
-@owner
-@group
-@mode
-@rcscript ${RCDIR}/ioq3ded
