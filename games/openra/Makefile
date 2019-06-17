@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 03:34:16 thfr Exp $
+# $OpenBSD: Makefile,v 1.4 2019/06/17 00:34:42 thfr Exp $
 
 COMMENT =		open-source real-time strategy game engine
 V =			20190314
@@ -6,7 +6,7 @@ DISTNAME =		openra-${V}
 CATEGORIES =		games x11
 HOMEPAGE =		https://www.openra.net
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
-REVISION =		1
+REVISION =		2
 
 # GPLv3 (openra)
 # MIT (StyleCopPlus, StyleCop, SharpZipLib, NUnit, NUnit.Console, Open.Nat,
@@ -15,6 +15,9 @@ REVISION =		1
 # GPLv2 (FuzzyLogicLibrary)
 # zlib (SDL2-CS, OpenAL-CS)
 PERMIT_PACKAGE_CDROM =	Yes
+
+# dlopen'd via mono-config(5)
+WANTLIB +=	SDL2 freetype openal
 
 MASTER_SITES =  	https://mirrors.nycbug.org/pub/distfiles/
 EXTRACT_SUFX =		.tar.xz
