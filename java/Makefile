@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/11 01:11:20 ian Exp $
+# $OpenBSD: Makefile,v 1.15 2019/06/17 02:07:21 lteo Exp $
 
      SUBDIR =
+     SUBDIR += gradle
      SUBDIR += jBCrypt
      SUBDIR += javaPathHelper
      SUBDIR += jlint
