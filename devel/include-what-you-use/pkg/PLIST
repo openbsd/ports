@@ -1,10 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/01/01 06:58:37 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/06/17 21:33:45 kn Exp $
 bin/fix_includes.py
 @bin bin/include-what-you-use
 bin/iwyu_tool.py
+share/doc/include-what-you-use/
+share/doc/include-what-you-use/IWYUMappings.md
+share/doc/include-what-you-use/IWYUPragmas.md
+share/doc/include-what-you-use/README.md
+share/doc/include-what-you-use/WhatIsAUse.md
+share/doc/include-what-you-use/WhyIWYU.md
+share/doc/include-what-you-use/WhyIWYUIsDifficult.md
 share/include-what-you-use/
+share/include-what-you-use/boost-1.64-all-private.imp
+share/include-what-you-use/boost-1.64-all.imp
 share/include-what-you-use/boost-all-private.imp
 share/include-what-you-use/boost-all.imp
+share/include-what-you-use/clang-6.intrinsics.imp
+share/include-what-you-use/gcc-8.intrinsics.imp
 share/include-what-you-use/gcc.libc.imp
 share/include-what-you-use/gcc.stl.headers.imp
 share/include-what-you-use/gcc.symbols.imp
