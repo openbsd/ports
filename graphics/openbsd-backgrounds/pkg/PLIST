@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/06/09 14:13:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/06/18 11:08:36 espie Exp $
 bin/openbsd-wallpaper
 ${BG}/
 ${BG}/AUTHORS
@@ -144,6 +144,19 @@ ${LPICS}/kirby/IMGP7935.JPG
 ${LPICS}/kirby/IMGP9539.JPG
 ${LPICS}/kirby/imgp1612.jpg
 ${LPICS}/kirby/imgp8977.jpg
+${LPICS}/kristaps/
+${LPICS}/kristaps/common_cuttlefish.JPG
+${LPICS}/kristaps/cratena_peregrina.JPG
+${LPICS}/kristaps/flabellina_affinis_upsidedown.JPG
+${LPICS}/kristaps/green_sea_turtle.JPG
+${LPICS}/kristaps/green_sea_turtle_closeup.JPG
+${LPICS}/kristaps/hawksbill_sea_turtle.JPG
+${LPICS}/kristaps/hawksbill_sea_turtle_moz.JPG
+${LPICS}/kristaps/humpback_whale_calf.jpg
+${LPICS}/kristaps/humpback_whale_calf_closeup.jpg
+${LPICS}/kristaps/octopus_and_comber.JPG
+${LPICS}/kristaps/p29_bw.JPG
+${LPICS}/kristaps/reef_manta_ray.JPG
 ${LPICS}/schwarze/
 ${LPICS}/schwarze/1507_Calgary_BowTower.jpeg
 ${LPICS}/schwarze/1507_Calgary_CenterStr.jpeg
