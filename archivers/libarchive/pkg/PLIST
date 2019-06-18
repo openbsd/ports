@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2016/05/26 20:31:37 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/06/18 20:30:01 naddy Exp $
 @bin bin/bsdcat
 @bin bin/bsdcpio
 @bin bin/bsdtar
@@ -14,6 +14,7 @@ lib/pkgconfig/libarchive.pc
 @man man/man3/archive_entry.3
 @man man/man3/archive_entry_acl.3
 @man man/man3/archive_entry_linkify.3
+@man man/man3/archive_entry_misc.3
 @man man/man3/archive_entry_paths.3
 @man man/man3/archive_entry_perms.3
 @man man/man3/archive_entry_stat.3
