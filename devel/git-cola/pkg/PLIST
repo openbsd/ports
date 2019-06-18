@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/03/04 19:26:17 bket Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/06/18 04:13:54 bket Exp $
 bin/git-cola
 bin/git-dag
 lib/python${MODPY_VERSION}/site-packages/git_cola-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -24,10 +24,12 @@ share/git-cola/bin/git-xbase
 share/git-cola/bin/ssh-askpass
 share/git-cola/bin/ssh-askpass-darwin
 share/git-cola/icons/
+share/git-cola/icons/a-z-order.svg
 share/git-cola/icons/check.svg
 share/git-cola/icons/circle-slash-red.svg
 share/git-cola/icons/circle-slash.svg
 share/git-cola/icons/dark/
+share/git-cola/icons/dark/a-z-order.svg
 share/git-cola/icons/dark/check.svg
 share/git-cola/icons/dark/circle-slash-red.svg
 share/git-cola/icons/dark/circle-slash.svg
@@ -55,6 +57,7 @@ share/git-cola/icons/dark/git-cola.svg
 share/git-cola/icons/dark/git-commit.svg
 share/git-cola/icons/dark/git-compare.svg
 share/git-cola/icons/dark/git-merge.svg
+share/git-cola/icons/dark/last-first-order.svg
 share/git-cola/icons/dark/link-external.svg
 share/git-cola/icons/dark/modified.svg
 share/git-cola/icons/dark/partial.svg
@@ -104,6 +107,7 @@ share/git-cola/icons/git-cola.svg
 share/git-cola/icons/git-commit.svg
 share/git-cola/icons/git-compare.svg
 share/git-cola/icons/git-merge.svg
+share/git-cola/icons/last-first-order.svg
 share/git-cola/icons/link-external.svg
 share/git-cola/icons/modified.svg
 share/git-cola/icons/partial.svg
@@ -167,6 +171,8 @@ share/git-cola/lib/cola/gravatar.py
 share/git-cola/lib/cola/gravatar.pyc
 share/git-cola/lib/cola/guicmds.py
 share/git-cola/lib/cola/guicmds.pyc
+share/git-cola/lib/cola/hidpi.py
+share/git-cola/lib/cola/hidpi.pyc
 share/git-cola/lib/cola/hotkeys.py
 share/git-cola/lib/cola/hotkeys.pyc
 share/git-cola/lib/cola/i18n.py
@@ -210,6 +216,8 @@ share/git-cola/lib/cola/spellcheck.py
 share/git-cola/lib/cola/spellcheck.pyc
 share/git-cola/lib/cola/textwrap.py
 share/git-cola/lib/cola/textwrap.pyc
+share/git-cola/lib/cola/themes.py
+share/git-cola/lib/cola/themes.pyc
 share/git-cola/lib/cola/utils.py
 share/git-cola/lib/cola/utils.pyc
 share/git-cola/lib/cola/version.py
