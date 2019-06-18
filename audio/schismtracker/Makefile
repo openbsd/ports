@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/19 19:13:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/06/18 11:35:39 fcambus Exp $
 
 COMMENT =	open-source reimplementation of Impulse Tracker
 
-V =		20181223
+V =		20190614
 DISTNAME =	schismtracker-${V}.source
 PKGNAME =	schismtracker-${V}
 
