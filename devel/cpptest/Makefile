@@ -1,24 +1,25 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/06/19 05:22:32 rsadowski Exp $
 
 COMMENT =		unit testing framework
 
-DISTNAME =		cpptest-1.1.2
-REVISION =		3
+V =			2.0.0
+DISTNAME =		cpptest-${V}
 
-SHARED_LIBS +=  cpptest                   0.0 # 0.7
+SHARED_LIBS +=  cpptest                   1.0 # 0.7
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://cpptest.sourceforge.net/
+HOMEPAGE =		https://cpptest.sourceforge.io
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+MASTER_SITES =	https://github.com/cpptest/cpptest/releases/download/${V}/
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cpptest/}
+# C++11
+COMPILER =		base-clang ports-gcc
 
 CONFIGURE_STYLE =	gnu
 
