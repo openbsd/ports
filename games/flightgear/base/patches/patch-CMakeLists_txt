@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2018/10/26 19:53:06 naddy Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2019/06/19 15:44:21 naddy Exp $
 
 Linking with the X11 libraries is required because various X11
 functions are called directly.
@@ -6,6 +6,22 @@ functions are called directly.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
+@@ -49,13 +49,13 @@ set(CMAKE_RELWITHDEBINFO_POSTFIX ""  CACHE STRING "add
+ set(CMAKE_MINSIZEREL_POSTFIX     ""  CACHE STRING "add a postfix, usually empty on windows")
+ 
+ # read 'version' file into a variable (stripping any newlines or spaces)
+-file(READ version versionFile)
++file(READ version.txt versionFile)
+ if (NOT versionFile)
+     message(FATAL_ERROR "Unable to determine FlightGear version. Version file is missing.")
+ endif()
+ string(STRIP "${versionFile}" FLIGHTGEAR_VERSION)
+ # add a dependency on the versino file
+-set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS version)
++set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS version.txt)
+ 
+ # FlightGear packaging (to build a source tarball)
+ include( ConfigureCPack )
 @@ -149,6 +149,8 @@ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR
      if(HTS_ENGINE_FOUND)
          set(SYSTEM_HTS_ENGINE_DEFAULT 1)

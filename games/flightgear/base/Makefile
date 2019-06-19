@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/02/08 18:53:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2019/06/19 15:44:21 naddy Exp $
 
 COMMENT =		modern, open-source flight simulator
 
@@ -35,6 +35,10 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="${PREFIX}/man" \
 			-DENABLE_QT=OFF
 
 NO_TEST =	Yes
+
+# Keep C++ #include <version> from picking up this unrelated file
+post-extract:
+	mv ${WRKSRC}/version ${WRKSRC}/version.txt
 
 pre-configure:
 	perl -pi -e 's/^\.Id.*//' ${WRKSRC}/man/*.1.in
