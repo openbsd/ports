@@ -1,0 +1,14 @@
+$OpenBSD: patch-go_vendor_gopkg_in_src_d_go_git_v4_worktree_bsd_go,v 1.1 2019/06/19 21:07:05 juanfra Exp $
+
+Index: go/vendor/gopkg.in/src-d/go-git.v4/worktree_bsd.go
+--- go/vendor/gopkg.in/src-d/go-git.v4/worktree_bsd.go.orig	Wed Jun 12 17:53:05 2019
++++ go/vendor/gopkg.in/src-d/go-git.v4/worktree_bsd.go	Sat Jun 15 19:41:25 2019
+@@ -12,7 +12,7 @@
+ func init() {
+ 	fillSystemInfo = func(e *index.Entry, sys interface{}) {
+ 		if os, ok := sys.(*syscall.Stat_t); ok {
+-			e.CreatedAt = time.Unix(int64(os.Atimespec.Sec), int64(os.Atimespec.Nsec))
++			e.CreatedAt = time.Unix(int64(os.Atim.Sec), int64(os.Atim.Nsec))
+ 			e.Dev = uint32(os.Dev)
+ 			e.Inode = uint32(os.Ino)
+ 			e.GID = os.Gid
