@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/19 00:04:58 bcallah Exp $
+@bin bin/freesynd
+share/doc/pkg-readmes/${PKGSTEM}
+share/freesynd/
+share/freesynd/data/
+share/freesynd/data/cursors/
+share/freesynd/data/cursors/cursors.png
+share/freesynd/data/lang/
+share/freesynd/data/lang/english.lng
+share/freesynd/data/lang/french.lng
+share/freesynd/data/lang/german.lng
+share/freesynd/data/lang/italian.lng
+share/freesynd/data/music/
+share/freesynd/data/music/assassinate.ogg
+share/freesynd/data/music/intro.ogg
+share/freesynd/data/ref/
+share/freesynd/data/ref/original_data.crc
+share/freesynd/data/ref/research.dat
+share/freesynd/data/ref/weapons.dat

@@ -1,0 +1,17 @@
+$OpenBSD: README,v 1.1.1.1 2019/06/19 00:04:58 bcallah Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+freesynd
+========
+FreeSynd requires the original game files from Syndicate to work
+properly.  These must be the original game, not Syndicate Plus.
+
+While freesynd is a game engine and is open source software, Syndicate
+is proprietary software and must be purchased in order for FreeSynd to
+work.
+
+The game files (under DATA) as well as intro.xmi and syngame.xmi must
+be placed in ${TRUEPREFIX}/share/freesynd/data
