@@ -1,29 +1,41 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/07 17:04:58 danj Exp $
+# $OpenBSD: Makefile,v 1.20 2019/06/19 19:12:45 kirby Exp $
 
 COMMENT=	turn-based strategy engine
 
-DISTNAME=	lgeneral-0.5.0
-REVISION =	3
+DISTNAME=	lgeneral-1.4.3
 CATEGORIES=	games x11
 
-HOMEPAGE=	http://lgeneral.sourceforge.net/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		kukgen-data-1.1.tar.gz
 
-PERMIT_PACKAGE_CDROM=   Yes
-WANTLIB=		X11 Xext c m pthread usbhid xcb \
-			SDL SDL_mixer
+HOMEPAGE=	http://lgames.sourceforge.net/LGeneral/
+
+# GPLv2 / CC BY-SA 3.0 (data)
+PERMIT_PACKAGE=   Yes
+
+WANTLIB += SDL SDL_mixer c intl m pthread
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lgeneral/}
 
-LIB_DEPENDS=	devel/sdl \
+LIB_DEPENDS=	devel/gettext \
 		devel/sdl-mixer
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/gtk+3,-guic
 
-
-AUTOCONF_VERSION=2.13
+SEPARATE_BUILD=	Yes
+AUTOCONF_VERSION=2.69
 CONFIGURE_STYLE= autoconf
+CONFIGURE_ENV+=		LDFLAGS=-L${LOCALBASE}/lib \
+			CPPFLAGS=-I${LOCALBASE}/include
 CFLAGS += -fgnu89-inline
 
+DATA=		lgeneral-data-1.1-d4d831b06c39a4d20dd0a96d0a89e3d50f22e69a
+
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lgeneral
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/lgeneral
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lgeneral/
+	${INSTALL_DATA} ${WRKSRC}/README.lgeneral ${PREFIX}/share/doc/lgeneral/
+	${INSTALL_DATA} ${WRKSRC}/README.lgc-pg ${PREFIX}/share/doc/lgeneral/
+	cd ${WRKDIR}/${DATA}/ && pax -rw {gfx,maps,nations,scenarios,sounds,units} \
+		${PREFIX}/share/lgeneral/
 
 .include <bsd.port.mk>
