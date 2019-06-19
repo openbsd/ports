@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2019/06/12 21:54:40 naddy Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2019/06/19 15:29:47 naddy Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -29,13 +29,13 @@ if(CMAKE_VERSION VERSION_LESS "3.1")
+@@ -29,17 +29,17 @@ if(CMAKE_VERSION VERSION_LESS "3.1")
      set (CMAKE_CXX_FLAGS "-std=gnu++98 ${CMAKE_CXX_FLAGS}")
    endif()
  else()
@@ -19,3 +19,8 @@ Index: CMakeLists.txt
  string(STRIP ${versionFile} SIMGEAR_VERSION)
  
  # add a dependency on the versino file
+-set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS version)
++set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS version.txt)
+ 
+ set(FIND_LIBRARY_USE_LIB64_PATHS ON)
+ 
