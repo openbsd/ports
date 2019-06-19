@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.142 2019/05/20 22:15:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.143 2019/06/19 19:39:14 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt5=	Qt5 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
-V=		0.76.1
+V=		0.77.0
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
 PKGNAME-utils=	poppler-utils-$V
 PKGNAME-qt5=	poppler-qt5-$V
-REVISION=	1
 
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS +=	poppler              51.0     # 87.0
+SHARED_LIBS +=	poppler              52.0     # 88.0
 SHARED_LIBS +=	poppler-glib         19.1     # 8.12
 SHARED_LIBS +=	poppler-qt5          7.1      # 1.19
 SHARED_LIBS +=	poppler-cpp          11.0     # 0.7
@@ -27,10 +26,6 @@ MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
-
-PSEUDO_FLAVORS=no_qt5 bootstrap
-# XXX not strictly a bootstrap loop, but on the critical path for libreoffice
-FLAVOR?=no_qt5 bootstrap
 
 NOT_FOR_ARCHS-qt5 = arm
 
@@ -45,11 +40,7 @@ cWANTLIB=	expat freetype fontconfig jpeg m pthread tiff z
 
 MODULES=	devel/cmake
 
-.if ${BUILD_PACKAGES:M-qt5}
 MODULES+=	x11/qt5
-.else
-CONFIGURE_ARGS+=	--disable-poppler-qt5
-.endif
 
 BUILD_DEPENDS+= devel/gobject-introspection
 
