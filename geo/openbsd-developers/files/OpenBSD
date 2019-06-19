@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.162 2019/04/16 15:30:31 kmos Exp $
+# $OpenBSD: OpenBSD,v 1.163 2019/06/19 04:48:32 thfr Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -76,12 +76,12 @@
 45.43		12.13		"michele"	# Michele Marchetto
 45.4745		-73.6556	"msf"		# Mathieu Sauve-Frankel
 45.5		-122.5		"joshe"		# Joshua Elsasser
-45.52		-122.681944	"thfr"		# Thomas Frohwein
 45.52582	-73.57180	"danj"		# Daniel Jakots
 45.6103		-122.7455	"afresh1"	# Andrew Fresh
 45.69296	3.25642		"landry"	# Landry Breuil
 45.79259	3.11090		"miod"		# Miod Vallat
 45.79793	3.08237		"denis"		# Denis Fondras
+46.00		-112.53		"thfr"		# Thomas Frohwein
 47.21725	-1.55336	"cwen"		# Charlene Wendling
 47.22164	-1.55717	"jca"		# Jeremie Courreges-Anglas
 47.2230677	-1.5538359	"gilles"	# Gilles Chehade
