@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/03/08 20:00:45 cwen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/06/19 19:45:59 kili Exp $
 
 COMMENT =		games cataloging tool and emulator launcher
 
@@ -24,7 +24,7 @@ WANTLIB += Qt5Script z
 
 MODULES =		x11/qt5
 LIB_DEPENDS =		audio/pulseaudio \
-			print/poppler,,-qt5 \
+			print/poppler,-qt5 \
 			x11/qt5/qtmultimedia \
 			x11/qt5/qtscript
 RUN_DEPENDS =		devel/desktop-file-utils

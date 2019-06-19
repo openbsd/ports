@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/09 08:22:18 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2019/06/19 19:45:59 kili Exp $
 
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${VERSION}
@@ -68,7 +68,7 @@ LIB_DEPENDS +=	devel/chmlib \
 		devel/kf5/threadweaver \
 		graphics/djvulibre \
 		graphics/tiff \
-		print/poppler,,-qt5 \
+		print/poppler,-qt5 \
 		security/qca-qt5 \
 		textproc/ebook-tools \
 		x11/kde-applications/kdegraphics-mobipocket \

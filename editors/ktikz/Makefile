@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/08 20:00:45 cwen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/06/19 19:45:59 kili Exp $
 
 COMMENT =		editor for the TikZ language
 
@@ -38,7 +38,7 @@ RUN_DEPENDS =		print/texlive/base \
 			misc/shared-mime-info \
 			devel/desktop-file-utils
 
-LIB_DEPENDS =		print/poppler,,-qt5
+LIB_DEPENDS =		print/poppler,-qt5
 
 NO_TEST =		Yes
 

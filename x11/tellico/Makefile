@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/06/06 06:08:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.50 2019/06/19 19:45:59 kili Exp $
 
 COMMENT =	organizer for book/dvd/music collections
 
@@ -71,7 +71,7 @@ LIB_DEPENDS +=	audio/libcdio \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
 		net/yaz \
-		print/poppler,,-qt5 \
+		print/poppler,-qt5 \
 		textproc/exempi \
 		textproc/libxml \
 		textproc/libxslt \

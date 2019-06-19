@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/05/20 22:15:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2019/06/19 19:45:59 kili Exp $
 
 COMMENT =	user-friendly TeX/LaTeX editor for KDE
 
@@ -62,7 +62,7 @@ LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		devel/kf5/sonnet \
-		print/poppler,,-qt5 \
+		print/poppler,-qt5 \
 		x11/kde-applications/okular
 
 .include <bsd.port.mk>

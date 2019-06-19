@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/06/17 04:32:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.27 2019/06/19 19:45:59 kili Exp $
 
 COMMENT =	advanced drawing and image manipulation
 
@@ -89,7 +89,7 @@ LIB_DEPENDS +=		archivers/quazip,qt5 \
 			graphics/png \
 			graphics/tiff \
 			math/fftw3 \
-			print/poppler,,-qt5 \
+			print/poppler,-qt5 \
 			x11/qt5/qtdeclarative \
 			x11/qt5/qtmultimedia \
 			x11/qt5/qtsvg \

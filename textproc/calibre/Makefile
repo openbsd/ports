@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2019/05/20 22:15:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.73 2019/06/19 19:45:59 kili Exp $
 
 COMMENT =		ebook management application
 
@@ -36,8 +36,8 @@ COMMON_DEPENDS =	databases/py-apsw \
 			graphics/py-Pillow \
 			net/py-dnspython \
 			graphics/png \
-			print/poppler, \
-			print/poppler,,-qt5 \
+			print/poppler \
+			print/poppler,-qt5 \
 			textproc/py-cssselect \
 			textproc/py-cssutils>=0.9.9 \
 			textproc/py-lxml>=2.2.8 \
