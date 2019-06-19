@@ -1,7 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.8 2016/03/18 21:59:51 giovanni Exp $
---- Makefile.in.orig	Sun Mar  6 23:42:27 2016
-+++ Makefile.in	Sun Mar  6 23:43:12 2016
-@@ -406,10 +406,10 @@ CLEANFILES = $(databin_SCRIPTS) $(man_MANS) $(sysconf_
+$OpenBSD: patch-Makefile_in,v 1.9 2019/06/19 21:59:01 giovanni Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -416,10 +416,10 @@ CLEANFILES = $(databin_SCRIPTS) $(man_MANS) $(sysconf_
  databindir = $(datadir)
  databin_SCRIPTS = mkimapdcert mkpop3dcert mkdhparams
  binPROGRAMS = imapd pop3d maildirmake maildiracl deliverquota maildirkw \

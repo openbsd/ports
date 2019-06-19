@@ -1,12 +1,13 @@
-$OpenBSD: patch-libs_maildir_Makefile_in,v 1.3 2016/03/18 21:59:51 giovanni Exp $
---- libs/maildir/Makefile.in.orig	Sat Jun  6 16:45:55 2015
-+++ libs/maildir/Makefile.in	Sun Mar  6 23:13:09 2016
-@@ -585,7 +585,7 @@ clean-noinstLTLIBRARIES:
+$OpenBSD: patch-libs_maildir_Makefile_in,v 1.4 2019/06/19 21:59:01 giovanni Exp $
+Index: libs/maildir/Makefile.in
+--- libs/maildir/Makefile.in.orig
++++ libs/maildir/Makefile.in
+@@ -623,7 +623,7 @@ clean-noinstLTLIBRARIES:
  	}
  
  libmaildir.la: $(libmaildir_la_OBJECTS) $(libmaildir_la_DEPENDENCIES) $(EXTRA_libmaildir_la_DEPENDENCIES) 
 -	$(AM_V_CXXLD)$(CXXLINK)  $(libmaildir_la_OBJECTS) $(libmaildir_la_LIBADD) $(LIBS)
 +	$(AM_V_CXXLD)$(CXXLINK)  $(libmaildir_la_OBJECTS) $(libmaildir_la_LIBADD) $(LIBS) $(LIBPCRE)
  
- clean-noinstPROGRAMS:
- 	@list='$(noinst_PROGRAMS)'; test -n "$$list" || exit 0; \
+ deliverquota$(EXEEXT): $(deliverquota_OBJECTS) $(deliverquota_DEPENDENCIES) $(EXTRA_deliverquota_DEPENDENCIES) 
+ 	@rm -f deliverquota$(EXEEXT)

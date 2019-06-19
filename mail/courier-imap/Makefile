@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.119 2019/05/20 22:15:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.120 2019/06/19 21:59:01 giovanni Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 
-V=			4.18.2
+V=			5.0.7
 DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
 FULLPKGPATH-pop3=	mail/courier-imap,-pop3
-REVISION-main=		1
-REVISION-pop3=		0
 
 CATEGORIES=		mail
 
@@ -24,9 +22,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 COMPILER =		base-clang ports-gcc
 
-WANTLIB=		c courierauth courierauthcommon courierauthsasl gdbm
-WANTLIB+=		iconv intl idn m pcre ${COMPILER_LIBCXX}
-WANTLIB-pop3=		c courierauth courierauthcommon courierauthsasl
+WANTLIB=		c courierauth courierauthcommon courierauthsasl courier-unicode
+WANTLIB+=		gdbm iconv intl idn m pcre ${COMPILER_LIBCXX}
+WANTLIB-pop3=		c courierauth courierauthcommon courierauthsasl courier-unicode
 WANTLIB-pop3+=		iconv intl idn m pcre ${COMPILER_LIBCXX}
 
 USE_GMAKE=		Yes
@@ -68,7 +66,8 @@ CONFIGURE_ARGS=		--sbindir=${PREFIX}/sbin \
 			--with-makedatprog=${TRUEPREFIX}/libexec/makedat \
 			--with-db=gdbm \
 			--with-certsdir=/etc/ssl \
-			--cache-file=${WRKDIR}/courier-imap.cache
+			--cache-file=${WRKDIR}/courier-imap.cache \
+			--with-notice=unicode
 
 DOCS=			AUTHORS INSTALL \
 			NEWS libs/imap/ChangeLog \
@@ -99,11 +98,11 @@ MULTI_PACKAGES=		-main -pop3
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/gettext,-runtime \
 			databases/gdbm \
-			mail/courier-unicode>=2.0
+			mail/courier-unicode>=2.1
 
 RUN_DEPENDS-pop3=	mail/courier-imap,-main
 
-WANTLIB-main=		${WANTLIB} ssl crypto courier-unicode
+WANTLIB-main=		${WANTLIB} ssl crypto
 
 CNFFILES=		etc/courier/imapd-ssl.dist etc/courier/imapd.dist \
 			etc/courier/pop3d-ssl.dist etc/courier/pop3d.dist \
