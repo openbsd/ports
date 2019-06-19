@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.402 2019/06/15 20:54:03 bcallah Exp $
+# $OpenBSD: Makefile,v 1.403 2019/06/19 00:05:13 bcallah Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -111,6 +111,7 @@
      SUBDIR += freedroidrpg
      SUBDIR += freeorion
      SUBDIR += freeserf
+     SUBDIR += freesynd
      SUBDIR += fretsonfire
      SUBDIR += frotz
      SUBDIR += frozen-bubble
