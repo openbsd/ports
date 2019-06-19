@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/10/24 01:53:37 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/06/19 04:01:21 jeremy Exp $
 @bin bin/mednafen
 share/doc/mednafen/
-share/doc/mednafen/README.jpeg4a
+share/doc/mednafen/apple2.html
+share/doc/mednafen/apple2.php
 share/doc/mednafen/bwolf0.png
 share/doc/mednafen/bwolf1.png
 share/doc/mednafen/cdplay.html
