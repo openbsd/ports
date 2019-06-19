@@ -1,8 +1,8 @@
-$OpenBSD: patch-po_POTFILES_in,v 1.6 2018/03/15 15:41:21 rsadowski Exp $
+$OpenBSD: patch-po_POTFILES_in,v 1.7 2019/06/19 05:19:33 rsadowski Exp $
 Index: po/POTFILES.in
 --- po/POTFILES.in.orig
 +++ po/POTFILES.in
-@@ -33,6 +33,7 @@ src/ui-assist-import.c
+@@ -36,6 +36,7 @@ src/ui-assist-import.c
  src/ui-budget.c
  src/ui-category.c
  src/ui-currency.c

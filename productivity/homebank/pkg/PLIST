@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/09/14 15:45:35 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.21 2019/06/19 05:19:33 rsadowski Exp $
 @bin bin/homebank
 share/appdata/
 share/appdata/homebank.appdata.xml
@@ -9,10 +9,12 @@ share/homebank/
 share/homebank/datas/
 share/homebank/datas/ChangeLog
 share/homebank/datas/example.xhb
+share/homebank/datas/hb-categories-cy.csv
 share/homebank/datas/hb-categories-de.csv
 share/homebank/datas/hb-categories-en.csv
 share/homebank/datas/hb-categories-es.csv
 share/homebank/datas/hb-categories-fr.csv
+share/homebank/datas/hb-categories-hu.csv
 share/homebank/datas/hb-categories-it.csv
 share/homebank/datas/hb-categories-lt.csv
 share/homebank/datas/hb-categories-pt.csv
@@ -34,6 +36,7 @@ share/homebank/help/dlg-mult.html
 share/homebank/help/dlg-paye.html
 share/homebank/help/dlg-pref.html
 share/homebank/help/dlg-spli.html
+share/homebank/help/dlg-tag.html
 share/homebank/help/dlg-tran.html
 share/homebank/help/dlg-wall.html
 share/homebank/help/dlg-xfer.html
@@ -92,6 +95,7 @@ share/homebank/help/images/dlg-prefs8.png
 share/homebank/help/images/dlg-prefs9.png
 share/homebank/help/images/dlg-properties1.png
 share/homebank/help/images/dlg-split1.png
+share/homebank/help/images/dlg-tag.png
 share/homebank/help/images/dlg-template1.png
 share/homebank/help/images/dlg-transaction1.png
 share/homebank/help/images/dlg-transaction2.png
@@ -161,6 +165,7 @@ share/homebank/help/use-auto_addition.html
 share/homebank/help/use-auto_assign.html
 share/homebank/help/use-budget.html
 share/homebank/help/use-import.html
+share/homebank/help/use-lend-refund.html
 share/homebank/help/use-tipsandtricks.html
 share/homebank/help/use-vehiclecost.html
 share/homebank/help/win-account.html
@@ -274,6 +279,9 @@ share/locale/be/LC_MESSAGES/homebank.mo
 share/locale/bg/LC_MESSAGES/homebank.mo
 share/locale/br/LC_MESSAGES/homebank.mo
 share/locale/ca/LC_MESSAGES/homebank.mo
+share/locale/ckb/
+share/locale/ckb/LC_MESSAGES/
+share/locale/ckb/LC_MESSAGES/homebank.mo
 share/locale/cs/LC_MESSAGES/homebank.mo
 share/locale/cy/LC_MESSAGES/homebank.mo
 share/locale/da/LC_MESSAGES/homebank.mo
@@ -298,10 +306,10 @@ share/locale/id/LC_MESSAGES/homebank.mo
 share/locale/is/LC_MESSAGES/homebank.mo
 share/locale/it/LC_MESSAGES/homebank.mo
 share/locale/ja/LC_MESSAGES/homebank.mo
+share/locale/ka/LC_MESSAGES/homebank.mo
 share/locale/ko/LC_MESSAGES/homebank.mo
 share/locale/lt/LC_MESSAGES/homebank.mo
 share/locale/lv/LC_MESSAGES/homebank.mo
-share/locale/mr/LC_MESSAGES/homebank.mo
 share/locale/ms/LC_MESSAGES/homebank.mo
 share/locale/nb/LC_MESSAGES/homebank.mo
 share/locale/nds/LC_MESSAGES/homebank.mo
