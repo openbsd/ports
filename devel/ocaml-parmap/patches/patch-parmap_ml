@@ -1,0 +1,37 @@
+$OpenBSD: patch-parmap_ml,v 1.1 2019/06/19 09:18:18 chrisz Exp $
+
+Index: parmap.ml
+--- parmap.ml.orig
++++ parmap.ml
+@@ -109,7 +109,8 @@ let redirect ?(path = (Printf.sprintf "/tmp/.parmap.%d
+ (* unmarshal from a mmap seen as a bigarray *)
+ let unmarshal fd =
+  let a =
+-   Bigarray.Array1.map_file fd Bigarray.char Bigarray.c_layout true (-1) in
++   Bigarray.array1_of_genarray @@
++   Unix.map_file fd Bigarray.char Bigarray.c_layout true [|~-1|] in
+  let res = Bytearray.unmarshal a 0 in
+  Unix.close fd;
+  res
+@@ -124,8 +125,9 @@ let unmarshal fd =
+     - on Linux kernels, we might allocate a mmapped memory area of huge_size
+       and marshal into it directly
+ 
+-      let ba = Bigarray.Array1.map_file
+-                 fd Bigarray.char Bigarray.c_layout true huge_size in
++      let ba =
++        Bigarray.array1_of_genarray @@
++        Unix.map_file fd Bigarray.char Bigarray.c_layout true huge_size in
+       ignore(Bytearray.marshal_to_buffer ba 0 v [Marshal.Closures]);
+       Unix.close fd
+ 
+@@ -624,7 +626,8 @@ let init_shared_buffer a =
+   let size = Array.length a in
+   let fd = Utils.tempfd() in
+   let arr =
+-    Bigarray.Array1.map_file fd Bigarray.float64 Bigarray.c_layout true size in
++    Bigarray.array1_of_genarray @@
++    Unix.map_file fd Bigarray.float64 Bigarray.c_layout true [|size|] in
+ 
+   (* The mmap() function shall add an extra reference to the file associated
+      with the file descriptor fildes which is not removed by a subsequent

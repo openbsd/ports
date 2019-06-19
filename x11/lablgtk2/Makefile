@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.44 2019/05/20 22:15:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2019/06/19 09:18:19 chrisz Exp $
 
 COMMENT =	OCaml interface to GTK+2
 
-V =		2.18.6
+V =		2.18.8
 DISTNAME =	lablgtk-$V
 PKGNAME =	lablgtk2-$V
 CATEGORIES =	x11 devel
-REVISION =	0
 
 HOMEPAGE =	http://lablgtk.forge.ocamlcore.org/
-MASTER_SITES =	https://forge.ocamlcore.org/frs/download.php/1726/
+GH_ACCOUNT =	garrigue
+GH_PROJECT =	lablgtk
+GH_TAGNAME =	lablgtk2188
 
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes

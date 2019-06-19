@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/03/04 12:51:14 chrisz Exp $
+# $OpenBSD: Makefile,v 1.9 2019/06/19 09:18:18 chrisz Exp $
 
 COMMENT =	OCaml parallel map primitive for multicores
 CATEGORIES =	devel
 
-V =		1.0-rc9
+V =		1.0-rc10
 NAME =		ocaml-parmap
 DISTNAME =	ocaml-parmap-$V
 DISTFILES =	${DISTNAME}{$V}.tar.gz
