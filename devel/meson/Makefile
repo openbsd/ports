@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.63 2019/05/15 12:04:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.64 2019/06/20 21:03:03 ajacoutot Exp $
 
 COMMENT=		next-generation build system
 
 MODPY_EGG_VERSION=	${GH_TAGNAME}
 GH_ACCOUNT=		mesonbuild
 GH_PROJECT=		meson
-GH_TAGNAME=		0.50.1
+GH_TAGNAME=		0.51.0
 EPOCH=			0
-REVISION=		1
 
 CATEGORIES=		devel
 
@@ -16,7 +15,7 @@ HOMEPAGE=		http://mesonbuild.com/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
 
