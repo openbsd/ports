@@ -1,0 +1,26 @@
+$OpenBSD: patch-source_blender_python_intern_bpy_rna_c,v 1.1 2019/06/21 22:44:14 jca Exp $
+
+Fix PyRNA class registration w/ Python 3.7
+https://developer.blender.org/rB1db47a2ccd1e68994bf8140eba6cc2a26a2bc91f
+
+Index: source/blender/python/intern/bpy_rna.c
+--- source/blender/python/intern/bpy_rna.c.orig
++++ source/blender/python/intern/bpy_rna.c
+@@ -7389,6 +7389,7 @@ static int bpy_class_validate_recursive(PointerRNA *du
+ 		item = PyObject_GetAttrString(py_class, identifier);
+ 
+ 		if (item == NULL) {
++			PyErr_Clear();
+ 			/* Sneaky workaround to use the class name as the bl_idname */
+ 
+ #define     BPY_REPLACEMENT_STRING(rna_attr, py_attr)                         \
+@@ -7404,6 +7405,9 @@ static int bpy_class_validate_recursive(PointerRNA *du
+ 					}                                                         \
+ 					Py_DECREF(item);                                          \
+ 				}                                                             \
++				else {					\
++					PyErr_Clear();			\
++				}					\
+ 			}  /* intentionally allow else here */
+ 
+ 			if (false) {}  /* needed for macro */

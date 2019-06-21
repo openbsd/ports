@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.92 2019/05/26 11:09:30 jca Exp $
+# $OpenBSD: Makefile,v 1.93 2019/06/21 22:44:14 jca Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT =	3D creation software
 
 DISTNAME =	blender-2.79
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	graphics
 
@@ -32,7 +32,7 @@ MODULES =	devel/cmake \
 
 COMPILER =	base-clang ports-gcc
 
-MODPY_VERSION =	3.6
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 CONFIGURE_ARGS =	-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
 			-DPYTHON_VERSION=${MODPY_VERSION} \
