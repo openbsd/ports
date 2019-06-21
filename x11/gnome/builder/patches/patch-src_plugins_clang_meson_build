@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_plugins_clang_meson_build,v 1.1 2019/06/21 03:43:49 ajacoutot Exp $
+
+XXX remove when cmake find method is fixed in meson(1)
+Issue similar to: https://gitlab.freedesktop.org/mesa/mesa/merge_requests/830
+meson git now has a cmake find method for llvm, but it lacks a couple of
+features that we use from the config tool version. Until that reaches
+parity we need to use the config-tool version.
+
+Index: src/plugins/clang/meson.build
+--- src/plugins/clang/meson.build.orig
++++ src/plugins/clang/meson.build
+@@ -44,7 +44,7 @@ plugin_clang_resources = gnome.compile_resources(
+ plugins_sources += plugin_clang_resources
+ 
+ add_languages('cpp') # Needed for llvm dep
+-llvm_dep = dependency('llvm', version: '>= 3.5')
++llvm_dep = dependency('llvm', version: '>= 3.5', method : 'config-tool')
+ clang_include = llvm_dep.get_configtool_variable('includedir')
+ clang_libdir = llvm_dep.get_configtool_variable('libdir').split(' ')
+ 
