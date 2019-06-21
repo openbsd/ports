@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.784 2019/06/06 15:58:30 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.785 2019/06/21 06:26:36 sebastia Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1438,6 +1438,8 @@ my $cve = {
 	'www/py-django/stable' => 'py-django-<2.1.6',
 	'www/py-requests' => 'py-requests-<2.20.0',
 	'www/py-requests,python3' => 'py3-requests-<2.20.0',
+	'www/py-urllib3' => 'py-urllib3-<1.24.3',
+	'www/py-urllib3,python3' => 'py3-urllib3-<1.24.3',
 	'www/ruby-rack,ruby24' => 'ruby24-rack-<2.0.6',
 	'www/ruby-rack,ruby25' => 'ruby25-rack-<2.0.6',
 	'www/webkitgtk4' => 'webkitgtk4-<2.20.5',
