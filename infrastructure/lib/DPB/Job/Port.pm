@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.192 2019/06/03 23:10:57 espie Exp $
+# $OpenBSD: Port.pm,v 1.193 2019/06/21 23:14:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -922,6 +922,12 @@ package DPB::Job::BasePort;
 our @ISA = qw(DPB::Job::Watched);
 
 use Time::HiRes qw(time);
+
+sub killinfo
+{
+	my $self = shift;
+	return "$self->{path} $self->{current}";
+}
 
 sub new
 {

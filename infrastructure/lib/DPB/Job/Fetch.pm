@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.21 2018/07/16 13:23:05 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.22 2019/06/21 23:14:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -263,6 +263,12 @@ sub new
 		$file->{sz}, undef, $job->{started});
 	$job->new_fetch_task;
 	return $job;
+}
+
+sub killinfo
+{
+	my $self = shift;
+	return $self->{file};
 }
 
 sub name
