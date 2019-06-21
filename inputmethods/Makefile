@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/04/01 04:31:33 kevlo Exp $
+# $OpenBSD: Makefile,v 1.18 2019/06/21 16:35:44 kevlo Exp $
 
      SUBDIR =
      SUBDIR += anthy
@@ -6,6 +6,7 @@
      SUBDIR += fcitx
      SUBDIR += fcitx-anthy
      SUBDIR += fcitx-chewing
+     SUBDIR += fcitx-m17n
      SUBDIR += fcitx-pinyin
      SUBDIR += fcitx-qt5
      SUBDIR += fcitx-tables
