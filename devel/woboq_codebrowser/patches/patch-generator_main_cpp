@@ -1,0 +1,32 @@
+$OpenBSD: patch-generator_main_cpp,v 1.1.1.1 2019/06/22 12:16:56 semarie Exp $
+add pledge(2) and unveil(2) to codebrowser_generator
+
+Index: generator/main.cpp
+--- generator/main.cpp.orig
++++ generator/main.cpp
+@@ -43,6 +43,8 @@
+ #include "compat.h"
+ #include <ctime>
+ 
++#include <unistd.h>
++
+ #include "embedded_includes.h"
+ 
+ namespace cl = llvm::cl;
+@@ -325,6 +327,16 @@ int main(int argc, const char **argv) {
+     }
+ 
+     llvm::cl::ParseCommandLineOptions(argc, argv);
++
++    create_directories(OutputPath);
++    if ((unveil(OutputPath.c_str(), "rwc") == -1) || (unveil("/", "r") == -1)) {
++        std::cerr << "error: unveil" << std::endl;
++        return EXIT_FAILURE;
++    }
++    if (pledge("stdio rpath wpath cpath tty", "") == -1) {
++        std::cerr << "error: pledge" << std::endl;
++        return EXIT_FAILURE;
++    }
+ 
+ #ifdef _WIN32
+     make_forward_slashes(OutputPath._Get_data()._Myptr());

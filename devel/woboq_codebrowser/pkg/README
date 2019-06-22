@@ -1,0 +1,47 @@
+$OpenBSD: README,v 1.1.1.1 2019/06/22 12:16:56 semarie Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Licence information
+-------------------
+
+Licensees holding valid commercial licenses provided by Woboq may use
+this software in accordance with the terms contained in a written
+agreement between the licensee and Woboq. For further information see
+https://woboq.com/codebrowser.html
+
+Alternatively, this work may be used under a Creative Commons
+Attribution-NonCommercial-ShareAlike 3.0 (CC-BY-NC-SA 3.0) License.
+http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US
+
+This license does not allow you to use the code browser to assist
+the development of your commercial software. If you intent to do so,
+consider purchasing a commercial licence.
+
+
+
+Example of usage with OpenBSD kernel (~1.5Go)
+---------------------------------------------
+
+Compile and generate compile_commands.json
+
+$ cd /sys/arch/amd64/compile/GENERIC.MP
+$ make obj
+$ make config
+$ make COPTS='-MJ $@.json -O2'
+$ sed -e '1s/^/[/' -e '$s/,$/]/' obj/*.o.json > compile_commands.json
+
+Generate static HTML from compile_commands.json
+
+$ codebrowser_generator -a -b /sys/arch/amd64/compile/GENERIC.MP \
+	-o ${VARBASE}/www/htdocs/openbsd \
+	-p sys:/sys \
+	-d http://localhost/data
+
+$ codebrowser_indexgenerator ${VARBASE}/www/htdocs/openbsd \
+	-p sys:/sys \
+	-d http://localhost/data
+
+$ cp -R ${LOCALBASE}/share/woboq/data ${VARBASE}/www/htdocs

@@ -1,0 +1,30 @@
+$OpenBSD: patch-indexgenerator_indexer_cpp,v 1.1.1.1 2019/06/22 12:16:56 semarie Exp $
+add pledge(2) and unveil(2) to codebrowser_indexgenerator.
+
+Index: indexgenerator/indexer.cpp
+--- indexgenerator/indexer.cpp.orig
++++ indexgenerator/indexer.cpp
+@@ -28,6 +28,8 @@
+ #include <map>
+ #include <ctime>
+ 
++#include <unistd.h>
++
+ #include "../global.h"
+ 
+ const char *data_url = "../data";
+@@ -228,6 +230,14 @@ int main(int argc, char **argv) {
+     if (root.empty()) {
+         std::cerr << "Usage: " << argv[0] << " <path> [-d data_url] [-p project_definition]" << std::endl;
+         return -1;
++    }
++    if ((unveil(root.c_str(), "rwc") == -1) || (unveil("/", "r") == -1)) {
++        std::cerr << "error: unveil" << std::endl;
++        return EXIT_FAILURE;
++    }
++    if (pledge("stdio rpath wpath cpath tty", "") == -1) {
++        std::cerr << "error: pledge" << std::endl;
++        return EXIT_FAILURE;
+     }
+     std::ifstream fileIndex(root + "/" + "fileIndex");
+     std::string line;

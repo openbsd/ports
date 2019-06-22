@@ -1,0 +1,21 @@
+The generator generates static HTML pages that can be served by any web
+server. It can be run automatically manually or with a hook on your
+version control or CI system.
+
+It functions as the source code indexer (using libclang). In contrast to
+other solutions (LXR, OpenGrok) it semantically analyzes the code as a
+compile step.
+
+The generation is a two-step process: First is a compile step that
+creates a .h.html and .cpp.html (and some other) files from the syntax
+tree (AST) of the source source. The second step generates an index.html
+for each directory.
+
+A server-side database or CGI script are currently not needed, so it is
+easy to host. Your normal HTML5 web browser is the source code navigator
+(from your local machine or your network).
+
+
+Please note that the license does not allow you to use the code browser
+to assist the development of your commercial software. If you intent to
+do so, consider purchasing a commercial licence.
