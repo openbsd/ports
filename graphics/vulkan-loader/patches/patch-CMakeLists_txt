@@ -1,14 +1,21 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2019/06/22 15:28:42 thfr Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2019/06/22 17:02:24 ajacoutot Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -83,7 +83,7 @@ if(UNIX)
+@@ -77,13 +77,13 @@ set(LOADER_HELPER_FOLDER "Helper Targets")
+ 
+ if(UNIX)
+     set(
+-        FALLBACK_CONFIG_DIRS "/etc/xdg"
++        FALLBACK_CONFIG_DIRS "${SYSCONFDIR}/xdg"
+         CACHE
+             STRING
              "Search path to use when XDG_CONFIG_DIRS is unset or empty or the current process is SUID/SGID. Default is freedesktop compliant."
          )
      set(
 -        FALLBACK_DATA_DIRS "/usr/local/share:/usr/share"
-+        FALLBACK_DATA_DIRS "/usr/X11R6/share:/usr/local/share:/usr/share"
++        FALLBACK_DATA_DIRS "${X11BASE}/share:${LOCALBASE}/share:/usr/share"
          CACHE
              STRING
              "Search path to use when XDG_DATA_DIRS is unset or empty or the current process is SUID/SGID. Default is freedesktop compliant."

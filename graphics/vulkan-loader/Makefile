@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/22 16:51:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/06/22 17:02:24 ajacoutot Exp $
 
 COMMENT =	Vulkan ICD loader
 
@@ -7,6 +7,7 @@ PKGNAME =	vulkan-loader-${V}
 GH_TAGNAME =	sdk-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-Loader
+REVISION =	0
 
 SHARED_LIBS +=	vulkan	0.0 # 1.1
 
@@ -32,5 +33,8 @@ MODPY_RUNDEP =	No
 
 # Tests only build if Google Test framework is in directory external/
 NO_TEST =	Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
