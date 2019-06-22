@@ -1,0 +1,14 @@
+$OpenBSD: patch-cube_cube_cpp,v 1.1.1.1 2019/06/22 15:30:16 thfr Exp $
+
+Index: cube/cube.cpp
+--- cube/cube.cpp.orig
++++ cube/cube.cpp
+@@ -2975,7 +2975,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPre
+     return (int)msg.wParam;
+ }
+ 
+-#elif __linux__
++#elif defined(__linux__) || defined(__unix__)
+ 
+ int main(int argc, char **argv) {
+     Demo demo;

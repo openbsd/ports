@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/22 15:30:16 thfr Exp $
+@bin bin/vkcube
+@bin bin/vkcubepp
+@bin bin/vulkaninfo
