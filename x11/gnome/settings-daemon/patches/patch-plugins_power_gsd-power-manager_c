@@ -1,16 +1,6 @@
-$OpenBSD: patch-plugins_power_gsd-power-manager_c,v 1.3 2019/05/09 17:22:31 ajacoutot Exp $
+$OpenBSD: patch-plugins_power_gsd-power-manager_c,v 1.4 2019/06/22 10:35:48 ajacoutot Exp $
 
 login1 -> ConsoleKit
-
-From 4d3fa8511821557e85bfcaeb64704c87c6fcc90f Mon Sep 17 00:00:00 2001
-From: Benjamin Berg <bberg@redhat.com>
-Date: Thu, 11 Apr 2019 11:28:33 +0200
-Subject: [PATCH] power,media-keys: Signal connector rather than output ID for OSD
-
-From 18095f41587d051bf05eb96b348b71563c47b657 Mon Sep 17 00:00:00 2001
-From: Benjamin Berg <bberg@redhat.com>
-Date: Tue, 7 May 2019 15:40:20 +0200
-Subject: [PATCH] power: Only disable Suspend/Hibernate actions inside VM
 
 Index: plugins/power/gsd-power-manager.c
 --- plugins/power/gsd-power-manager.c.orig
@@ -28,58 +18,3 @@ Index: plugins/power/gsd-power-manager.c
  
  /* Time between notifying the user about a critical action and the action itself in UPower. */
  #define GSD_ACTION_DELAY 20
-@@ -90,11 +90,11 @@ static const gchar introspection_xml[] =
- "    <property name='Brightness' type='i' access='readwrite'/>"
- "    <method name='StepUp'>"
- "      <arg type='i' name='new_percentage' direction='out'/>"
--"      <arg type='i' name='output_id' direction='out'/>"
-+"      <arg type='s' name='connector' direction='out'/>"
- "    </method>"
- "    <method name='StepDown'>"
- "      <arg type='i' name='new_percentage' direction='out'/>"
--"      <arg type='i' name='output_id' direction='out'/>"
-+"      <arg type='s' name='connector' direction='out'/>"
- "    </method>"
- "  </interface>"
- "  <interface name='org.gnome.SettingsDaemon.Power.Keyboard'>"
-@@ -1520,13 +1520,6 @@ idle_set_mode (GsdPowerManager *manager, GsdPowerIdleM
-                 return;
-         }
- 
--        /* don't do any power saving if we're a VM */
--        if (manager->priv->is_virtual_machine) {
--                g_debug ("ignoring state transition to %s as virtual machine",
--                         idle_mode_to_string (mode));
--                return;
--        }
--
-         manager->priv->current_idle_mode = mode;
-         g_debug ("Doing a state transition: %s", idle_mode_to_string (mode));
- 
-@@ -1727,6 +1720,14 @@ idle_configure (GsdPowerManager *manager)
-         clear_idle_watch (manager->priv->idle_monitor,
-                           &manager->priv->idle_sleep_warning_id);
- 
-+        /* don't do any power saving if we're a VM */
-+        if (manager->priv->is_virtual_machine &&
-+            (action_type == GSD_POWER_ACTION_SUSPEND ||
-+             action_type == GSD_POWER_ACTION_HIBERNATE)) {
-+                g_debug ("Ignoring sleep timeout with suspend action inside VM");
-+                timeout_sleep = 0;
-+        }
-+
-         if (timeout_sleep != 0) {
-                 g_debug ("setting up sleep callback %is", timeout_sleep);
- 
-@@ -2794,9 +2795,9 @@ backlight_brightness_step_cb (GObject *object,
-                                                      error);
-         } else {
-                 g_dbus_method_invocation_return_value (invocation,
--                                                       g_variant_new ("(ii)",
-+                                                       g_variant_new ("(is)",
-                                                                       brightness,
--                                                                      gsd_backlight_get_output_id (backlight)));
-+                                                                      gsd_backlight_get_connector (backlight)));
-         }
- 
-         g_object_unref (manager);
