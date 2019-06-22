@@ -1,4 +1,6 @@
-$OpenBSD: patch-contrib_CMakeLists_txt,v 1.1.1.1 2019/05/02 03:34:39 bentley Exp $
+$OpenBSD: patch-contrib_CMakeLists_txt,v 1.2 2019/06/22 20:18:00 rsadowski Exp $
+
+fix man install directory
 
 Index: contrib/CMakeLists.txt
 --- contrib/CMakeLists.txt.orig

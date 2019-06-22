@@ -1,0 +1,32 @@
+$OpenBSD: patch-qucs-activefilter_CMakeLists_txt,v 1.1 2019/06/22 20:18:00 rsadowski Exp $
+
+Fix build with Ninja 1.9.0.
+Create only one custom target to generate config.h to avoid duplicate ninja
+rules.
+
+Index: qucs-activefilter/CMakeLists.txt
+--- qucs-activefilter/CMakeLists.txt.orig
++++ qucs-activefilter/CMakeLists.txt
+@@ -27,13 +27,8 @@ IF(NOT WIN32)
+   SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-register ")
+ ENDIF()
+ 
+-#configure the header config.h
+-CONFIGURE_FILE (
+-    "${PROJECT_SOURCE_DIR}/../config.h.cmake"
+-    "${PROJECT_BINARY_DIR}/config.h"
+-)
+-
+ INCLUDE_DIRECTORIES("${PROJECT_BINARY_DIR}")
++INCLUDE_DIRECTORIES( ${CMAKE_SOURCE_DIR} )
+ 
+ FIND_PACKAGE( Qt4 REQUIRED )
+ SET( QT_USE_QTGUI TRUE )
+@@ -91,6 +86,7 @@ ADD_EXECUTABLE(${QUCS_NAME}activefilter MACOSX_BUNDLE 
+   ${RESOURCES_SRCS} )
+ 
+ TARGET_LINK_LIBRARIES(${QUCS_NAME}activefilter ${QT_LIBRARIES})
++ADD_DEPENDENCIES(${QUCS_NAME}activefilter generate_config_header)
+ 
+ INSTALL(TARGETS ${QUCS_NAME}activefilter
+     BUNDLE DESTINATION bin COMPONENT Runtime
