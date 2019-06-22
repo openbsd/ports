@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/22 16:51:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/06/22 17:12:27 ajacoutot Exp $
 
 COMMENT =	Vulkan header files
 
@@ -7,6 +7,7 @@ PKGNAME =	vulkan-headers-${V}
 GH_TAGNAME =	sdk-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-Headers
+REVISION =	0
 
 CATEGORIES =	devel graphics
 
