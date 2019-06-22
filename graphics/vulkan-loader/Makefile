@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/22 15:28:42 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2019/06/22 16:51:06 ajacoutot Exp $
 
 COMMENT =	Vulkan ICD loader
 
@@ -16,7 +16,7 @@ HOMEPAGE =	https://www.khronos.org/vulkan/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += m pthread
 

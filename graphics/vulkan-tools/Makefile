@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/22 15:30:16 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2019/06/22 16:51:06 ajacoutot Exp $
 
 COMMENT =	Vulkan Utilities and Tools
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://www.khronos.org/vulkan/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xext c m vulkan xcb
 
