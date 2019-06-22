@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/06/22 07:07:58 rpointel Exp $
 
 COMMENT =	lightweight LLVM-Python binding for writing JIT compilers
 
-MODPY_EGG_VERSION =	0.27.0
-REVISION =	1
+MODPY_EGG_VERSION =	0.29.0
 
 PKGNAME =	py-${DISTNAME}
 
