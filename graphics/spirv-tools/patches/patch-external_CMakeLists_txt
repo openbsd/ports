@@ -1,0 +1,14 @@
+$OpenBSD: patch-external_CMakeLists_txt,v 1.1.1.1 2019/06/22 15:24:31 thfr Exp $
+
+Index: external/CMakeLists.txt
+--- external/CMakeLists.txt.orig
++++ external/CMakeLists.txt
+@@ -19,7 +19,7 @@ if (DEFINED SPIRV-Headers_SOURCE_DIR)
+ else()
+   if (IS_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/SPIRV-Headers)
+     set(SPIRV_HEADER_DIR ${CMAKE_CURRENT_SOURCE_DIR}/SPIRV-Headers)
+-  else()
++  elseif(IS_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/spirv-headers)
+     set(SPIRV_HEADER_DIR ${CMAKE_CURRENT_SOURCE_DIR}/spirv-headers)
+   endif()
+ endif()

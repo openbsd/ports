@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/22 15:24:31 thfr Exp $
+@bin bin/spirv-as
+@bin bin/spirv-cfg
+@bin bin/spirv-dis
+bin/spirv-lesspipe.sh
+@bin bin/spirv-link
+@bin bin/spirv-opt
+@bin bin/spirv-reduce
+@bin bin/spirv-stats
+@bin bin/spirv-val
+include/spirv-tools/
+include/spirv-tools/instrument.hpp
+include/spirv-tools/libspirv.h
+include/spirv-tools/libspirv.hpp
+include/spirv-tools/linker.hpp
+include/spirv-tools/optimizer.hpp
+lib/libSPIRV-Tools-link.a
+lib/libSPIRV-Tools-opt.a
+lib/libSPIRV-Tools-reduce.a
+lib/libSPIRV-Tools-shared.so
+lib/libSPIRV-Tools.a
+lib/pkgconfig/SPIRV-Tools-shared.pc
+lib/pkgconfig/SPIRV-Tools.pc
