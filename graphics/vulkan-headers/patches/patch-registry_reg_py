@@ -1,0 +1,11 @@
+$OpenBSD: patch-registry_reg_py,v 1.1.1.1 2019/06/22 15:26:43 thfr Exp $
+
+Index: registry/reg.py
+--- registry/reg.py.orig
++++ registry/reg.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python3 -i
++#!/usr/bin/env python3 -i
+ #
+ # Copyright (c) 2013-2019 The Khronos Group Inc.
+ #

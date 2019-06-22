@@ -1,0 +1,11 @@
+$OpenBSD: patch-registry_conventions_py,v 1.1.1.1 2019/06/22 15:26:43 thfr Exp $
+
+Index: registry/conventions.py
+--- registry/conventions.py.orig
++++ registry/conventions.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python3 -i
++#!/usr/bin/env python3 -i
+ #
+ # Copyright (c) 2013-2019 The Khronos Group Inc.
+ #

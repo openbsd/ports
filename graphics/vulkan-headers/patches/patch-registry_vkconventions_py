@@ -1,0 +1,11 @@
+$OpenBSD: patch-registry_vkconventions_py,v 1.1.1.1 2019/06/22 15:26:43 thfr Exp $
+
+Index: registry/vkconventions.py
+--- registry/vkconventions.py.orig
++++ registry/vkconventions.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python3 -i
++#!/usr/bin/env python3 -i
+ #
+ # Copyright (c) 2013-2019 The Khronos Group Inc.
+ #

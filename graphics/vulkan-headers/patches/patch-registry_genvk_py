@@ -1,0 +1,11 @@
+$OpenBSD: patch-registry_genvk_py,v 1.1.1.1 2019/06/22 15:26:43 thfr Exp $
+
+Index: registry/genvk.py
+--- registry/genvk.py.orig
++++ registry/genvk.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python3
++#!/usr/bin/env python3
+ #
+ # Copyright (c) 2013-2019 The Khronos Group Inc.
+ #
