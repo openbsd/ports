@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.14 2018/09/04 12:53:16 espie Exp $
+$OpenBSD: README-main,v 1.15 2019/06/22 23:58:23 jca Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -6,7 +6,7 @@ $OpenBSD: README-main,v 1.14 2018/09/04 12:53:16 espie Exp $
 
 Configuration
 =============
-The configuration file, found at ${CONFDIR}/smb.conf can be used right
+The configuration file, found at ${SYSCONFDIR}/samba/smb.conf can be used right
 away for simple configurations.  Local users should be added to the
 Samba user database using the pdbedit(1) utility in order to use the
 Samba server.
