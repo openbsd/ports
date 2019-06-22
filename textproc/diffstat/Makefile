@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/08/16 11:07:57 jca Exp $
+# $OpenBSD: Makefile,v 1.25 2019/06/22 22:44:07 jca Exp $
 
 COMMENT=		accumulates and displays statistics from a diff file
 
@@ -11,7 +11,7 @@ MAINTAINER=		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 HOMEPAGE=		http://invisible-island.net/diffstat/diffstat.html
 
 # ISC-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB=		c
 

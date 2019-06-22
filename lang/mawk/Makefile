@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/10/19 15:55:57 jca Exp $
+# $OpenBSD: Makefile,v 1.35 2019/06/22 22:44:06 jca Exp $
 
 COMMENT=	fast POSIX-compliant awk
 
@@ -14,9 +14,9 @@ HOMEPAGE=	http://invisible-island.net/mawk/
 MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c m
+WANTLIB=	c m
 
 CONFIGURE_STYLE= gnu
 

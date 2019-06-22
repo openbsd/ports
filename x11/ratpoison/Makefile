@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/04/06 12:12:21 jca Exp $
+# $OpenBSD: Makefile,v 1.35 2019/06/22 22:44:07 jca Exp $
 
 COMMENT=	minimal wm based on GNU screen
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.nongnu.org/ratpoison/
 MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xft Xrandr Xtst c
 

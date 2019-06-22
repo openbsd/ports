@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2019/04/05 06:56:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2019/06/22 22:44:06 jca Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://openvpn.net/index.php/open-source/
 MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c lz4 lzo2
 

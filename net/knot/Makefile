@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/06/03 22:32:23 jca Exp $
+# $OpenBSD: Makefile,v 1.43 2019/06/22 22:44:06 jca Exp $
 
 COMMENT =		authoritative DNS server
 
@@ -16,7 +16,7 @@ HOMEPAGE =		https://www.knot-dns.cz/
 MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses edit ffi gmp gnutls hogweed iconv idn2 intl
 WANTLIB += lmdb m nettle p11-kit pthread tasn1 unistring urcu

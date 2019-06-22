@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/10/20 13:35:41 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2019/06/22 22:44:06 jca Exp $
 
 COMMENT =		compiles yacc-like LALR grammars to Perl OO parser modules
 
@@ -8,7 +8,7 @@ CATEGORIES =		devel
 
 MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/26 20:52:01 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2019/06/22 22:44:06 jca Exp $
 
 COMMENT =		forward mail received via UUCP to the local MTA
 
@@ -9,7 +9,7 @@ CATEGORIES =		mail
 MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

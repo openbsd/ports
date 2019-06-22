@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/08/12 22:57:21 jca Exp $
+# $OpenBSD: Makefile,v 1.27 2019/06/22 22:44:06 jca Exp $
 
 COMMENT=	trivial database library
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://tdb.samba.org/
 MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # LGPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m pthread util ${MODPY_WANTLIB}
 

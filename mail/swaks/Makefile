@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/11/16 20:46:23 kn Exp $
+# $OpenBSD: Makefile,v 1.21 2019/06/22 22:44:06 jca Exp $
 
 COMMENT=	swiss army knife SMTP transaction tester
 
@@ -12,7 +12,7 @@ MASTER_SITES=	https://jetmore.org/john/code/swaks/
 MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	net/p5-Net-DNS \
 		security/p5-Net_SSLeay \

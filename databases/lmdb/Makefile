@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/02 12:49:25 chrisz Exp $
+# $OpenBSD: Makefile,v 1.7 2019/06/22 22:44:06 jca Exp $
 
 COMMENT =	Symas Lightning Memory-Mapped Database
 
@@ -20,7 +20,7 @@ HOMEPAGE =	https://symas.com/lmdb/
 MAINTAINER =	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # OpenLDAP Public License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread
 

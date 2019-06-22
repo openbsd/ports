@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/07 10:03:32 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2019/06/22 22:44:07 jca Exp $
 
 COMMENT=	keep X clipboard and cutbuffer in sync
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.nongnu.org/autocutsel/
 MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c
 WANTLIB += xcb

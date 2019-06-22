@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/20 22:15:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/06/22 22:44:06 jca Exp $
 
 COMMENT =		public suffix list library
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://github.com/rockdaboot/libpsl/
 MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c iconv idn2 intl unistring
 

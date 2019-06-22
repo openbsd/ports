@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/23 13:45:36 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2019/06/22 22:44:07 jca Exp $
 
 COMMENT =		Debian Almquist shell, POSIX-compliant
 
@@ -11,7 +11,7 @@ MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # 3-clause BSD
 # (source contains GPLv2 tool used during build only, see COPYING)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c curses edit
 

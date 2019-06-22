@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/17 16:19:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/06/22 22:44:06 jca Exp $
 
 COMMENT =		mobile shell
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://mosh.org/
 MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB +=		${COMPILER_LIBCXX} c crypto curses m protobuf

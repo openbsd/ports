@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/04/20 15:14:19 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2019/06/22 22:44:06 jca Exp $
 
 COMMENT =		user-level RCU implementation
 
@@ -20,7 +20,7 @@ HOMEPAGE =		https://liburcu.org/
 MAINTAINER = 		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		pthread
 

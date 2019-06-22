@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.226 2019/05/22 11:03:47 jca Exp $
+# $OpenBSD: Makefile,v 1.227 2019/06/22 22:44:06 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -33,7 +33,7 @@ HOMEPAGE =	https://www.llvm.org/
 MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://releases.llvm.org/${LLVM_V}/
 EXTRACT_SUFX =	.tar.xz
