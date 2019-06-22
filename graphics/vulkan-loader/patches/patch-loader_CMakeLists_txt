@@ -1,0 +1,25 @@
+$OpenBSD: patch-loader_CMakeLists_txt,v 1.1.1.1 2019/06/22 15:28:42 thfr Exp $
+
+Avoid vulkan-validation-layers vk_loader_platform.h being used.
+
+Index: loader/CMakeLists.txt
+--- loader/CMakeLists.txt.orig
++++ loader/CMakeLists.txt
+@@ -15,7 +15,7 @@
+ # limitations under the License.
+ # ~~~
+ 
+-include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${PROJECT_BINARY_DIR} ${CMAKE_BINARY_DIR})
++include_directories(BEFORE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${PROJECT_BINARY_DIR} ${CMAKE_BINARY_DIR})
+ 
+ # Check for the existance of the secure_getenv or __secure_getenv commands
+ include(CheckFunctionExists)
+@@ -247,7 +247,7 @@ else()
+                                      "1"
+                                      VERSION
+                                      "${VulkanHeaders_VERSION_MAJOR}.${VulkanHeaders_VERSION_MINOR}.${VulkanHeaders_VERSION_PATCH}")
+-    target_link_libraries(vulkan -ldl -lpthread -lm)
++    target_link_libraries(vulkan -lpthread -lm)
+     target_link_libraries(vulkan Vulkan::Headers)
+ 
+     if(APPLE)

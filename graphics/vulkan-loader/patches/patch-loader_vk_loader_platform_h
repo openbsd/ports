@@ -1,0 +1,14 @@
+$OpenBSD: patch-loader_vk_loader_platform_h,v 1.1.1.1 2019/06/22 15:28:42 thfr Exp $
+
+Index: loader/vk_loader_platform.h
+--- loader/vk_loader_platform.h.orig
++++ loader/vk_loader_platform.h
+@@ -31,7 +31,7 @@
+ #include "vulkan/vk_platform.h"
+ #include "vulkan/vk_sdk_platform.h"
+ 
+-#if defined(__linux__) || defined(__APPLE__)
++#if defined(__linux__) || defined(__APPLE__) || defined(__unix__)
+ /* Linux-specific common code: */
+ 
+ // Headers:

@@ -1,0 +1,22 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2019/06/22 15:28:42 thfr Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -83,7 +83,7 @@ if(UNIX)
+             "Search path to use when XDG_CONFIG_DIRS is unset or empty or the current process is SUID/SGID. Default is freedesktop compliant."
+         )
+     set(
+-        FALLBACK_DATA_DIRS "/usr/local/share:/usr/share"
++        FALLBACK_DATA_DIRS "/usr/X11R6/share:/usr/local/share:/usr/share"
+         CACHE
+             STRING
+             "Search path to use when XDG_DATA_DIRS is unset or empty or the current process is SUID/SGID. Default is freedesktop compliant."
+@@ -97,6 +97,7 @@ if(UNIX AND NOT APPLE) # i.e.: Linux
+ 
+     if(BUILD_WSI_XCB_SUPPORT)
+         find_package(XCB REQUIRED)
++        include_directories(${XCB_INCLUDE_DIR})
+     endif()
+ 
+     if(BUILD_WSI_XLIB_SUPPORT)
