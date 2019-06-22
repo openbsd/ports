@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1868 2019/06/21 20:49:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.1869 2019/06/22 12:18:50 semarie Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1912,6 +1912,7 @@
      SUBDIR += vtcl
      SUBDIR += vte
      SUBDIR += vte3
+     SUBDIR += woboq_codebrowser
      SUBDIR += xa
      SUBDIR += xdg-user-dirs
      SUBDIR += xdg-utils
