@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/05/06 19:36:30 danj Exp $
+# $OpenBSD: Makefile,v 1.28 2019/06/22 20:23:04 rsadowski Exp $
 
 # as error: ``operation combines symbols in different segments''
 # (known toolchain problem) - if fixing, re-enable in devel/cmake/Makefile
@@ -9,14 +9,13 @@ COMMENT =		small build system with a focus on speed
 
 GH_ACCOUNT =		ninja-build
 GH_PROJECT =		ninja
-GH_TAGNAME =		v1.8.2
-REVISION =		1
+GH_TAGNAME =		v1.9.0
 
 CATEGORIES =		devel
 HOMEPAGE =		https://ninja-build.org/
 
 # Apache License v2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # c>=68.1 needed for ppoll
 WANTLIB =		c>=68.1 m ${COMPILER_LIBCXX}
