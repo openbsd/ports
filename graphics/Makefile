@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.480 2019/05/29 11:43:28 espie Exp $
+# $OpenBSD: Makefile,v 1.481 2019/06/22 15:40:43 thfr Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -83,6 +83,7 @@
      SUBDIR += glfw
      SUBDIR += glm
      SUBDIR += glpng
+     SUBDIR += glslang
      SUBDIR += gmt
      SUBDIR += gnofract4d
      SUBDIR += gocr
@@ -277,6 +278,8 @@
      SUBDIR += simgear
      SUBDIR += simple-scan
      SUBDIR += sk1
+     SUBDIR += spirv-headers
+     SUBDIR += spirv-tools
      SUBDIR += sketch
      SUBDIR += slop
      SUBDIR += sxiv
@@ -294,6 +297,10 @@
      SUBDIR += videod
      SUBDIR += viewnior
      SUBDIR += vigra
+     SUBDIR += vulkan-headers
+     SUBDIR += vulkan-loader
+     SUBDIR += vulkan-tools
+     SUBDIR += vulkan-validation-layers
      SUBDIR += waffle
      SUBDIR += wmicons
      SUBDIR += xanim
