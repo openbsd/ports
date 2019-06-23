@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.403 2019/06/19 00:05:13 bcallah Exp $
+# $OpenBSD: Makefile,v 1.404 2019/06/23 19:01:34 thfr Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -304,6 +304,7 @@
      SUBDIR += vectoroids
      SUBDIR += vegastrike
      SUBDIR += vitetris
+     SUBDIR += vkquake
      SUBDIR += vms-empire
      SUBDIR += vodovod
      SUBDIR += wanderer
