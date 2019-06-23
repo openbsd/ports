@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/23 06:50:52 bentley Exp $
+bin/epubcheck
+share/epubcheck/
+share/epubcheck/epubcheck.jar
+share/epubcheck/lib/
+share/epubcheck/lib/Saxon-HE-9.8.0-8.jar
+share/epubcheck/lib/animal-sniffer-annotations-1.14.jar
+share/epubcheck/lib/checker-compat-qual-2.0.0.jar
+share/epubcheck/lib/common-image-3.4.1.jar
+share/epubcheck/lib/common-io-3.4.1.jar
+share/epubcheck/lib/common-lang-3.4.1.jar
+share/epubcheck/lib/commons-compress-1.18.jar
+share/epubcheck/lib/error_prone_annotations-2.1.3.jar
+share/epubcheck/lib/guava-24.0-android.jar
+share/epubcheck/lib/imageio-core-3.4.1.jar
+share/epubcheck/lib/imageio-jpeg-3.4.1.jar
+share/epubcheck/lib/imageio-metadata-3.4.1.jar
+share/epubcheck/lib/isorelax-20030108.jar
+share/epubcheck/lib/j2objc-annotations-1.1.jar
+share/epubcheck/lib/jackson-core-asl-1.9.12.jar
+share/epubcheck/lib/jackson-mapper-asl-1.9.12.jar
+share/epubcheck/lib/jing-20181222.jar
+share/epubcheck/lib/jsr305-1.3.9.jar
+share/epubcheck/lib/sac-1.3.jar
+share/epubcheck/lib/xercesImpl-2.9.1.jar

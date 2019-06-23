@@ -1,0 +1,2 @@
+#!/bin/sh
+`javaPathHelper -c epubcheck` -jar /usr/local/share/epubcheck/epubcheck.jar $@
