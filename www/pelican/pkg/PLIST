@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/11/25 19:57:14 danj Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/06/23 14:01:52 danj Exp $
 bin/pelican
 bin/pelican-import
 bin/pelican-quickstart
@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/pelican-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/pelican-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/pelican-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pelican/__init__.py
-lib/python${MODPY_VERSION}/site-packages/pelican/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pelican/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pelican/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pelican/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pelican/${MODPY_PYCACHE}contents.${MODPY_PYC_MAGIC_TAG}pyc
@@ -126,7 +126,7 @@ lib/python${MODPY_VERSION}/site-packages/pelican/themes/simple/templates/transla
 @mode
 lib/python${MODPY_VERSION}/site-packages/pelican/tools/
 lib/python${MODPY_VERSION}/site-packages/pelican/tools/__init__.py
-lib/python${MODPY_VERSION}/site-packages/pelican/tools/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pelican/tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pelican/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pelican/tools/${MODPY_PYCACHE}pelican_import.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pelican/tools/${MODPY_PYCACHE}pelican_quickstart.${MODPY_PYC_MAGIC_TAG}pyc
