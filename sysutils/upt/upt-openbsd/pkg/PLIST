@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/02/11 18:52:07 danj Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/06/23 15:01:50 danj Exp $
 lib/python${MODPY_VERSION}/site-packages/upt_openbsd/
 lib/python${MODPY_VERSION}/site-packages/upt_openbsd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/upt_openbsd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,17 +8,24 @@ lib/python${MODPY_VERSION}/site-packages/upt_openbsd-${MODPY_EGG_VERSION}-py${MO
 lib/python${MODPY_VERSION}/site-packages/upt_openbsd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/upt_openbsd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/upt_openbsd/__init__.py
-lib/python${MODPY_VERSION}/site-packages/upt_openbsd/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/upt_openbsd/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/upt_openbsd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt_openbsd/${MODPY_PYCACHE}upt_openbsd.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/templates/
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/templates/base.mk
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/templates/perl.mk
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/templates/python.mk
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/templates/ruby.mk
 lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/
 lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/${MODPY_PYCACHE}test_openbsd_backend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/${MODPY_PYCACHE}test_openbsd_package.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/${MODPY_PYCACHE}test_perl_package.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/${MODPY_PYCACHE}test_python_package.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/${MODPY_PYCACHE}test_ruby_package.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/test_openbsd_backend.py
 lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/test_openbsd_package.py
 lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/test_perl_package.py
 lib/python${MODPY_VERSION}/site-packages/upt_openbsd/tests/test_python_package.py
