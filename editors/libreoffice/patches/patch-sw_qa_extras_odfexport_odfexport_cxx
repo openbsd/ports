@@ -1,0 +1,17 @@
+$OpenBSD: patch-sw_qa_extras_odfexport_odfexport_cxx,v 1.1 2019/06/23 19:38:31 naddy Exp $
+
+Adapt to C++2a char_t
+https://cgit.freedesktop.org/libreoffice/core/commit/sw/qa/extras/odfexport/odfexport.cxx?id=221caface804a0db8773bc77f0ffbed073f69d6b
+
+Index: sw/qa/extras/odfexport/odfexport.cxx
+--- sw/qa/extras/odfexport/odfexport.cxx.orig
++++ sw/qa/extras/odfexport/odfexport.cxx
+@@ -1950,7 +1950,7 @@ DECLARE_ODFEXPORT_TEST(testReferenceLanguage, "referen
+     // (used from LibreOffice 6.1, and proposed for next ODF)
+     const char* aFieldTexts[] = { "A 2", "Az Isten", "Az 50-esek",
+         "A 2018-asok", "Az egyebek", "A fejezetek",
+-        u8"Az „Őseinket...”", "a 2",
++        reinterpret_cast<char const *>(u8"Az „Őseinket...”"), "a 2",
+         "Az v", "az 1", "Az e", "az 1",
+         "Az (5)", "az 1", "A 2", "az 1" };
+     uno::Reference<text::XTextFieldsSupplier> xTextFieldsSupplier(mxComponent, uno::UNO_QUERY);
