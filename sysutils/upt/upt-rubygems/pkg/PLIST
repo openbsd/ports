@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/27 16:33:27 danj Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/06/23 14:56:55 danj Exp $
 lib/python${MODPY_VERSION}/site-packages/upt_rubygems/
 lib/python${MODPY_VERSION}/site-packages/upt_rubygems-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/upt_rubygems-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,12 +8,12 @@ lib/python${MODPY_VERSION}/site-packages/upt_rubygems-${MODPY_EGG_VERSION}-py${M
 lib/python${MODPY_VERSION}/site-packages/upt_rubygems-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/upt_rubygems-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/upt_rubygems/__init__.py
-lib/python${MODPY_VERSION}/site-packages/upt_rubygems/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/upt_rubygems/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/upt_rubygems/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt_rubygems/${MODPY_PYCACHE}upt_rubygems.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt_rubygems/tests/
 lib/python${MODPY_VERSION}/site-packages/upt_rubygems/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/upt_rubygems/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/upt_rubygems/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/upt_rubygems/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt_rubygems/tests/${MODPY_PYCACHE}test_upt_rubygems.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt_rubygems/tests/test_upt_rubygems.py
