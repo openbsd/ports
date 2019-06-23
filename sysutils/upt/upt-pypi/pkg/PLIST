@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/02/11 19:02:58 danj Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/06/23 14:59:18 danj Exp $
 lib/python${MODPY_VERSION}/site-packages/upt_pypi/
 lib/python${MODPY_VERSION}/site-packages/upt_pypi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/upt_pypi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,13 +8,17 @@ lib/python${MODPY_VERSION}/site-packages/upt_pypi-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/upt_pypi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/upt_pypi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/upt_pypi/__init__.py
-lib/python${MODPY_VERSION}/site-packages/upt_pypi/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/upt_pypi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/upt_pypi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/upt_pypi/${MODPY_PYCACHE}licenses.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt_pypi/${MODPY_PYCACHE}upt_pypi.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/upt_pypi/licenses.py
 lib/python${MODPY_VERSION}/site-packages/upt_pypi/tests/
 lib/python${MODPY_VERSION}/site-packages/upt_pypi/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/upt_pypi/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/upt_pypi/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/upt_pypi/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/upt_pypi/tests/${MODPY_PYCACHE}test_licenses.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/upt_pypi/tests/${MODPY_PYCACHE}test_upt_pypi.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/upt_pypi/tests/test_licenses.py
 lib/python${MODPY_VERSION}/site-packages/upt_pypi/tests/test_upt_pypi.py
 lib/python${MODPY_VERSION}/site-packages/upt_pypi/upt_pypi.py
