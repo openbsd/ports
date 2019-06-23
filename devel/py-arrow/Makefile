@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2019/06/23 16:09:57 kmos Exp $
 
 COMMENT =		better dates and times for Python
 
-MODPY_EGG_VERSION =	0.13.1
+MODPY_EGG_VERSION =	0.14.2
 DISTNAME =		arrow-${MODPY_EGG_VERSION}
 PKGNAME =		py-arrow-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/crsmithdev/arrow/
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
