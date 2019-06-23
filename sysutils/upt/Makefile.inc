@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2018/04/27 16:33:27 danj Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/06/23 15:03:08 danj Exp $
 
 CATEGORIES ?=		sysutils devel
 
 # BSD-3-Clause
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
