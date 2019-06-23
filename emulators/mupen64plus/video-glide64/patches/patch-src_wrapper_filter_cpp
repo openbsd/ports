@@ -1,4 +1,6 @@
-$OpenBSD: patch-src_wrapper_filter_cpp,v 1.1 2019/04/23 08:08:24 bentley Exp $
+$OpenBSD: patch-src_wrapper_filter_cpp,v 1.2 2019/06/23 15:03:37 bentley Exp $
+
+From upstream 8d618f060a9e1b179a917d452c5420a1607d23f5.
 
 Index: src/wrapper/filter.cpp
 --- src/wrapper/filter.cpp.orig
@@ -9,8 +11,8 @@ Index: src/wrapper/filter.cpp
      unsigned char *result, *temp, *temp2;
 -    char mx[3*3] = {-1, 0, 1, -2, 0, 2, -1, 0, 1};
 -    char my[3*3] = {-1, -2, -1, 0, 0, 0, 1, 2 ,1};
-+    int mx[3*3] = {-1, 0, 1, -2, 0, 2, -1, 0, 1};
-+    int my[3*3] = {-1, -2, -1, 0, 0, 0, 1, 2 ,1};
++    signed char mx[3*3] = {-1, 0, 1, -2, 0, 2, -1, 0, 1};
++    signed char my[3*3] = {-1, -2, -1, 0, 0, 0, 1, 2 ,1};
      int i,j;
  
      *width2 = width*2;
