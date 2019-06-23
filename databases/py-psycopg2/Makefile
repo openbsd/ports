@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.35 2019/05/13 19:04:45 danj Exp $
+# $OpenBSD: Makefile,v 1.36 2019/06/23 14:32:22 danj Exp $
 
 COMMENT =		PostgreSQL database adapter for Python
 
-MODPY_EGG_VERSION =	2.8.2
+MODPY_EGG_VERSION =	2.8.3
 DISTNAME =		psycopg2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		databases
-REVISION =		1
 
 HOMEPAGE =		http://initd.org/projects/psycopg2
 
 MAINTAINER =		Daniel Jakots <obsd@chown.me>
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pq pthread
