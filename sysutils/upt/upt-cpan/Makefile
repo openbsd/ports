@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/06/23 14:49:22 danj Exp $
 
 COMMENT =		CPAN frontend for upt
 
-MODPY_EGG_VERSION =	0.3
+MODPY_EGG_VERSION =	0.5
 DISTNAME =		upt-cpan-${MODPY_EGG_VERSION}
-REVISION =		0
 
 HOMEPAGE =		https://framagit.org/upt/upt-cpan
 
