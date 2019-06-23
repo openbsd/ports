@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.4 2018/11/20 08:20:39 fcambus Exp $
+$OpenBSD: patch-configure,v 1.5 2019/06/23 09:22:19 fcambus Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -580,19 +580,6 @@ fi
+@@ -594,19 +594,6 @@ fi
  rm -f _testprog _testprog.error _testprog.stdout
  
  

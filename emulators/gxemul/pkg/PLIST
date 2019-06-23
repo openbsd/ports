@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/04/30 08:51:25 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/06/23 09:22:19 fcambus Exp $
 @bin bin/gxemul
 @man man/man1/gxemul.1
 share/doc/gxemul/
@@ -99,6 +99,16 @@ share/doc/gxemul/20180220-openbsd-luna88k-5.4.png
 share/doc/gxemul/20180910-sgiip32prom-4.13.png
 share/doc/gxemul/20181018-openbsd-sgi-o2-small.png
 share/doc/gxemul/20181018-openbsd-sgi-o2.png
+share/doc/gxemul/20190526-irix-not-really-working-yet.png
+share/doc/gxemul/20190526-irix-not-really-working-yet_small.png
+share/doc/gxemul/20190528-winnt-arc-mips-video-fail.png
+share/doc/gxemul/20190528-winnt-arc-mips-video-fail_small.png
+share/doc/gxemul/20190612-netbsd-sgimips-1.png
+share/doc/gxemul/20190612-netbsd-sgimips-1_small.png
+share/doc/gxemul/20190612-netbsd-sgimips-2.png
+share/doc/gxemul/20190612-netbsd-sgimips-2_small.png
+share/doc/gxemul/20190616-netbsd-playstation2-userland-small.png
+share/doc/gxemul/20190616-netbsd-playstation2-userland.png
 share/doc/gxemul/RELEASE.html
 share/doc/gxemul/TODO.html
 share/doc/gxemul/configfiles.html
@@ -132,16 +142,35 @@ share/doc/gxemul/debian-8-small.png
 share/doc/gxemul/debian-8.png
 share/doc/gxemul/debian-9-small.png
 share/doc/gxemul/debian-9.png
+share/doc/gxemul/debugging.html
 share/doc/gxemul/doxygen_footerFile.html
 share/doc/gxemul/doxygen_headerFile.html
-share/doc/gxemul/dreamcast.html
 share/doc/gxemul/experiments.html
 share/doc/gxemul/framework.html
-share/doc/gxemul/guestoses.html
 share/doc/gxemul/head.html
 share/doc/gxemul/index.html
 share/doc/gxemul/intro.html
+share/doc/gxemul/machine_algor.html
+share/doc/gxemul/machine_arc.html
+share/doc/gxemul/machine_cats.html
+share/doc/gxemul/machine_cobalt.html
+share/doc/gxemul/machine_decstation.html
+share/doc/gxemul/machine_dreamcast.html
+share/doc/gxemul/machine_evbarm.html
+share/doc/gxemul/machine_evbmips.html
+share/doc/gxemul/machine_hpcmips.html
+share/doc/gxemul/machine_landisk.html
+share/doc/gxemul/machine_luna88k.html
+share/doc/gxemul/machine_macppc.html
+share/doc/gxemul/machine_mvme88k.html
+share/doc/gxemul/machine_netwinder.html
+share/doc/gxemul/machine_pmppc.html
+share/doc/gxemul/machine_prep.html
+share/doc/gxemul/machine_ps2.html
+share/doc/gxemul/machine_rpi.html
+share/doc/gxemul/machine_sgi_o2.html
 share/doc/gxemul/machine_template.html
+share/doc/gxemul/machine_vocore.html
 share/doc/gxemul/misc.html
 share/doc/gxemul/model.png
 share/doc/gxemul/networking.html
@@ -155,4 +184,3 @@ share/doc/gxemul/technical.html
 share/doc/gxemul/translation.html
 share/doc/gxemul/ultrix4.5-20040706.png
 share/doc/gxemul/ultrix4.5-20040706_small.png
-share/doc/gxemul/unsupported.html
