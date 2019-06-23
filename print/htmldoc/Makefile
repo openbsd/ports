@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.44 2019/03/13 15:43:25 fcambus Exp $
+# $OpenBSD: Makefile,v 1.45 2019/06/23 22:54:06 naddy Exp $
 
 COMMENT =		convert HTML pages to PDF/PS format
 
 V =			1.8.29
 DISTNAME =		htmldoc-${V}
 CATEGORIES =		print www
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		https://www.msweet.org/htmldoc/
 
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto m ssl z jpeg png ${COMPILER_LIBCXX}
 

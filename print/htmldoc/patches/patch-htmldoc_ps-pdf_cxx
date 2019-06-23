@@ -1,0 +1,18 @@
+$OpenBSD: patch-htmldoc_ps-pdf_cxx,v 1.1 2019/06/23 22:54:06 naddy Exp $
+
+Work around an LLVM 8.0.0 optimizer bug that causes htmldoc to spin.
+https://github.com/michaelrsweet/htmldoc/issues/349
+https://bugs.llvm.org/show_bug.cgi?id=41998
+
+Index: htmldoc/ps-pdf.cxx
+--- htmldoc/ps-pdf.cxx.orig
++++ htmldoc/ps-pdf.cxx
+@@ -5315,7 +5315,7 @@ parse_pre(tree_t *t,		/* I - Tree to parse */
+ 		line[10240],
+ 		*lineptr,
+ 		*dataptr;
+-  int		col;
++  volatile int	col;
+   float		width,
+ 		height,
+ 		rgb[3];
