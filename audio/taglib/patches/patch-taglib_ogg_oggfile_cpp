@@ -1,0 +1,18 @@
+$OpenBSD: patch-taglib_ogg_oggfile_cpp,v 1.1 2019/06/23 09:00:21 rapha Exp $
+
+Fix possible Ogg packet losses.
+https://github.com/taglib/taglib/issues/864
+https://github.com/taglib/taglib/commit/9336c82
+
+Index: taglib/ogg/oggfile.cpp
+--- taglib/ogg/oggfile.cpp.orig
++++ taglib/ogg/oggfile.cpp
+@@ -253,7 +253,7 @@ void Ogg::File::writePacket(unsigned int i, const Byte
+   ByteVectorList packets = firstPage->packets();
+   packets[i - firstPage->firstPacketIndex()] = packet;
+ 
+-  if(firstPage != lastPage && lastPage->packetCount() > 2) {
++  if(firstPage != lastPage && lastPage->packetCount() > 1) {
+     ByteVectorList lastPagePackets = lastPage->packets();
+     lastPagePackets.erase(lastPagePackets.begin());
+     packets.append(lastPagePackets);

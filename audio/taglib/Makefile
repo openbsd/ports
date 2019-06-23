@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2019/06/23 09:00:21 rapha Exp $
 
 COMMENT=	managing meta-data of audio formats
 DISTNAME=	taglib-1.11.1
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	audio devel
 
@@ -21,10 +21,12 @@ COMPILER =		base-clang ports-gcc base-gcc
 MASTER_SITES=	https://taglib.github.io/releases/
 
 MODULES=	devel/cmake
-BUILD_DEPENDS=	devel/boost
+BUILD_DEPENDS=	devel/boost \
+		devel/cppunit
 
-CONFIGURE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON
+CONFIGURE_ARGS=	-DBUILD_SHARED_LIBS=ON \
+		-DBUILD_TESTS=ON
 
-NO_TEST=	Yes
+TEST_TARGET=	check
 
 .include <bsd.port.mk>

@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2019/06/23 09:00:21 rapha Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -143,7 +143,7 @@ if(BUILD_BINDINGS)
+   add_subdirectory(bindings)
+ endif()
+ 
+-if(BUILD_TESTS AND NOT BUILD_SHARED_LIBS)
++if(BUILD_TESTS)
+   enable_testing()
+   add_subdirectory(tests)
+ endif()
