@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2017/07/11 23:34:16 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2019/06/23 05:24:00 rsadowski Exp $
 
 CATEGORIES +=		devel devel/kf5
 
@@ -8,7 +8,7 @@ HOMEPAGE ?=		https://projects.kde.org/projects/frameworks/${DISTNAME:C/-[0-9].*/
 
 # usual KDE rules:
 # LGPLv2.1+, GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE =	cmake
 MODULES :=		devel/kf5 ${MODULES}

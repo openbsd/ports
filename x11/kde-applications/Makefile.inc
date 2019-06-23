@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2018/12/18 09:39:17 rsadowski Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2019/06/23 05:24:00 rsadowski Exp $
 
 DIST_SUBDIR =	kde-applications
 
@@ -11,7 +11,7 @@ MAINTAINER ?=		Rafael Sadowski <rsadowski@openbsd.org>
 
 # usual KDE rules:
 # LGPLv2.1+, GPLv2+, GPLv3
-PERMIT_PACKAGE_CDROM ?=	Yes
+PERMIT_PACKAGE ?=	Yes
 
 # Do not rely on devel/cmake here: additional modules that are
 # set up in ports may have, say, lang/python before devel/cmake,
