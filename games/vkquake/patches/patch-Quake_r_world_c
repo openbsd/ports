@@ -1,0 +1,17 @@
+$OpenBSD: patch-Quake_r_world_c,v 1.1.1.1 2019/06/23 19:00:14 thfr Exp $
+
+add type 'float' to variable alpha, otherwise would default to int per
+clang
+
+Index: Quake/r_world.c
+--- Quake/r_world.c.orig
++++ Quake/r_world.c
+@@ -386,7 +386,7 @@ void R_DrawTextureChains_ShowTris(qmodel_t *model, tex
+ 	msurface_t	*s;
+ 	texture_t	*t;
+ 	float color[] = { 1.0f, 1.0f, 1.0f };
+-	const alpha = 1.0f;
++	const float alpha = 1.0f;
+ 
+ 	for (i = 0; i<model->numtextures; i++)
+ 	{

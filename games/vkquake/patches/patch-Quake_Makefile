@@ -1,0 +1,15 @@
+$OpenBSD: patch-Quake_Makefile,v 1.1.1.1 2019/06/23 19:00:14 thfr Exp $
+
+remove hardcoded -O2
+
+Index: Quake/Makefile
+--- Quake/Makefile.orig
++++ Quake/Makefile
+@@ -59,7 +59,6 @@ CFLAGS += -g
+ do_strip=
+ else
+ DFLAGS += -DNDEBUG
+-CFLAGS += -O2
+ CFLAGS += -std=gnu99
+ CFLAGS += $(call check_gcc,-fweb,)
+ CFLAGS += $(call check_gcc,-frename-registers,)

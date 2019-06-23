@@ -1,0 +1,16 @@
+$OpenBSD: patch-Quake_r_brush_c,v 1.1.1.1 2019/06/23 19:00:14 thfr Exp $
+
+add missing type to variable
+
+Index: Quake/r_brush.c
+--- Quake/r_brush.c.orig
++++ Quake/r_brush.c
+@@ -262,7 +262,7 @@ void R_DrawBrushModel_ShowTris(entity_t *e)
+ 	mplane_t	*pplane;
+ 	qmodel_t	*clmodel;
+ 	float color[] = { 1.0f, 1.0f, 1.0f };
+-	const alpha = 1.0f;
++	const float alpha = 1.0f;
+ 
+ 	if (R_CullModelForEntity(e))
+ 		return;
