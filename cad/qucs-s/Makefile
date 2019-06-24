@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/22 20:17:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2019/06/24 04:45:52 rsadowski Exp $
 
 COMMENT =	an universal GUI for SPICE and not-SPICE circuit simulators
 
 V =		0.0.21
 DISTNAME =	qucs-s-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	cad
 HOMEPAGE =	https://ra3xdh.github.io/
@@ -28,5 +28,8 @@ RUN_DEPENDS =	cad/ngspice \
 		x11/gtk+3,-guic
 
 NO_TEST =	Yes
+
+post-extract:
+	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' CMakeLists.txt
 
 .include <bsd.port.mk>
