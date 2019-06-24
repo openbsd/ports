@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_scutil_pgnewfil_c,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+$OpenBSD: patch-lib_scutil_pgnewfil_c,v 1.2 2019/06/24 15:53:37 bcallah Exp $
 
 Don't need an extern to time()
 
 Index: lib/scutil/pgnewfil.c
 --- lib/scutil/pgnewfil.c.orig
 +++ lib/scutil/pgnewfil.c
-@@ -161,7 +161,6 @@ gentmp(char *pfx, char *sfx)
+@@ -166,7 +166,6 @@ gentmp(char *pfx, char *sfx)
  
  #else /* }else{ */
  

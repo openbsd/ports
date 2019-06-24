@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_Analysis_CallGraph_cpp,v 1.1 2019/06/24 15:53:37 bcallah Exp $
+
+Needs endian.h
+
+Index: lib/Analysis/CallGraph.cpp
+--- lib/Analysis/CallGraph.cpp.orig
++++ lib/Analysis/CallGraph.cpp
+@@ -11,6 +11,7 @@
+ //
+ //===----------------------------------------------------------------------===//
+ 
++#include <endian.h>
+ #include "clang/Analysis/CallGraph.h"
+ #include "clang/AST/Decl.h"
+ #include "clang/AST/DeclBase.h"
