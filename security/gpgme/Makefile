@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/05/20 22:15:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2019/06/24 20:56:45 sthen Exp $
 
 COMMENT-main =		GnuPG Made Easy
 COMMENT-qt =		Qt bindings for GPGme
@@ -7,7 +7,7 @@ VERSION =		1.12.0
 DISTNAME =		gpgme-${VERSION}
 PKGNAME-main =		gpgme-${VERSION}
 PKGNAME-qt =		gpgme-qt-${VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		security devel
 

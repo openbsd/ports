@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2019/03/08 20:00:40 cwen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/06/24 20:56:46 sthen Exp $
 
 QT5NAME =		QtX11Extras
 COMMENT =		X11-specific parts of Qt
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		Qt5X11Extras		2.2
 
