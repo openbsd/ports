@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.113 2019/05/18 18:56:45 espie Exp $
+# $OpenBSD: python.port.mk,v 1.114 2019/06/24 14:25:54 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -190,7 +190,7 @@ SUBST_VARS :=	MODPY_PYCACHE MODPY_COMMENT MODPY_ABI3SO MODPY_PYC_MAGIC_TAG \
 		MODPY_PY_PREFIX MODPY_PYOEXTENSION ${SUBST_VARS}
 
 UPDATE_PLIST_ARGS += -S MODPY_BIN_SUFFIX -S MODPY_PYOEXTENSION \
-    -S MODPY_ABI3SO -c MODPY_COMMENT -I MODPY_PYCACHE
+    -I MODPY_ABI3SO -c MODPY_COMMENT -I MODPY_PYCACHE
 
 # set MODPY_BIN for executable scripts
 MODPY_BIN_ADJ =	perl -pi \
