@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/02/27 09:13:08 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/06/24 12:19:10 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -30,6 +30,8 @@ ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/error.rb
 ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/extension_value.rb
 ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/factory.rb
 ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/packer.rb
+${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/time.rb
+${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/timestamp.rb
 ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/unpacker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/
@@ -39,6 +41,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/factory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/msgpack.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/packer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/symbol.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/time.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/timestamp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/unpacker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/msgpack.gemspec
@@ -68,6 +72,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/pack_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/packer_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/random_compat.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/timestamp_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unpack_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unpacker_spec.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

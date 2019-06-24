@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/10 11:24:15 sebastia Exp $
+# $OpenBSD: Makefile,v 1.32 2019/06/24 12:19:10 sebastia Exp $
 
 COMMENT =	binary-based efficient object serialization library
 
-DISTNAME =	msgpack-1.2.10
+DISTNAME =	msgpack-1.3.0
 CATEGORIES =	net devel
 
 HOMEPAGE =	http://msgpack.org/
@@ -10,7 +10,7 @@ HOMEPAGE =	http://msgpack.org/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apache2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 
