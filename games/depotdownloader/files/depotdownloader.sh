@@ -18,7 +18,6 @@ fi
 while [ $# -gt 0 ]; do
 	case "$1" in
 		-appname) appname="$2"; shift;;
-		-app) appname="$2"; shift;;
 	esac
 	shift
 done
@@ -38,8 +37,8 @@ elif [ -n "$dirpath" ] ; then
 	dirpath="$dirpath/app"
 fi
 
-dirpath=$(echo $dirpath | sed -E 's,[[:blank:]],_,g')
+dirpath=$(echo $dirpath | sed -E 's|[[:blank:]]|_|g')
 dirpath="-dir $dirpath"
-dd_args="$(echo "$dd_args" | sed -E "s,\-appname[[:blank:]]+$appname,,g")"
+dd_args="$(echo "$dd_args" | sed -E "s|\-appname[[:blank:]]+$appname||g")"
 MONO_PATH=/usr/local/share/depotdownloader mono \
 	/usr/local/share/depotdownloader/DepotDownloader.dll $appid $dirpath $dd_args

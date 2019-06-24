@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/24 16:49:48 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2019/06/24 22:15:01 thfr Exp $
 
 ONLY_FOR_ARCHS =	${MONO_ARCHS}
 
@@ -7,6 +7,7 @@ COMMENT =	Steam depot downloader utilizing the SteamKit2 library
 V =		2.3.0pl1
 DISTNAME =	depotdownloader-${V:S/pl/-hotfix/g}
 PKGNAME =	depotdownloader-${V}
+REVISION =	0
 
 CATEGORIES =	games
 HOMEPAGE =	https://github.com/SteamRE/DepotDownloader
