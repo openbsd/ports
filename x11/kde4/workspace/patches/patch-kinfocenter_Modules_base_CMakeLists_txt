@@ -1,0 +1,15 @@
+$OpenBSD: patch-kinfocenter_Modules_base_CMakeLists_txt,v 1.1 2019/06/24 12:26:34 rsadowski Exp $
+
+Unbreak build with ninja 1.9.0
+
+Index: kinfocenter/Modules/base/CMakeLists.txt
+--- kinfocenter/Modules/base/CMakeLists.txt.orig
++++ kinfocenter/Modules/base/CMakeLists.txt
+@@ -3,4 +3,6 @@
+ 
+ check_include_files(devinfo.h HAVE_DEVINFO_H)       # info_fbsd.cpp
+ 
+-configure_file (../base/config-infocenter.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-infocenter.h )
++include_directories( PROJECT_SOURCE_DIR} )
++
++#configure_file (../base/config-infocenter.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-infocenter.h )
