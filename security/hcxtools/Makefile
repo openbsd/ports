@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/18 12:02:00 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2019/06/24 12:22:17 sebastia Exp $
 
 COMMENT =	convert pcap dumps to hashcat or John the Ripper input
 
 GH_ACCOUNT =	ZerBea
 GH_PROJECT =	hcxtools
-GH_TAGNAME =	5.1.4
+GH_TAGNAME =	5.1.6
 DISTNAME =	hcxtools-${GH_TAGNAME}
 
 CATEGORIES =	security
@@ -12,7 +12,7 @@ CATEGORIES =	security
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread crypto curl z
 LIB_DEPENDS +=	net/curl
