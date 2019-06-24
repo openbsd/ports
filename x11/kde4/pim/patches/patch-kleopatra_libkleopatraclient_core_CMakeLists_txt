@@ -1,0 +1,29 @@
+$OpenBSD: patch-kleopatra_libkleopatraclient_core_CMakeLists_txt,v 1.1 2019/06/24 06:07:39 rsadowski Exp $
+
+Unbreak ninja 1.9.0 build "multiple rules generate"
+
+Index: kleopatra/libkleopatraclient/core/CMakeLists.txt
+--- kleopatra/libkleopatraclient/core/CMakeLists.txt.orig
++++ kleopatra/libkleopatraclient/core/CMakeLists.txt
+@@ -16,8 +16,8 @@ else()
+ endif()
+ 
+ set_source_files_properties(command.cpp PROPERTIES SKIP_AUTOMOC TRUE)
+-qt4_generate_moc(command_p.h "${CMAKE_CURRENT_BINARY_DIR}/moc_command_p.cpp")
+-qt4_generate_moc(command.h "${CMAKE_CURRENT_BINARY_DIR}/moc_command.cpp")
++qt4_generate_moc(command_p.h "${CMAKE_CURRENT_BINARY_DIR}/moc_command_core_p.cpp")
++qt4_generate_moc(command.h "${CMAKE_CURRENT_BINARY_DIR}/moc_core_command.cpp")
+ kde4_add_library(kleopatraclientcore ${LIBRARY_TYPE}
+   ${_kleopatraclientcore_extra_SRCS}
+   initialization.cpp
+@@ -25,8 +25,8 @@ kde4_add_library(kleopatraclientcore ${LIBRARY_TYPE}
+   selectcertificatecommand.cpp
+   signencryptfilescommand.cpp
+   decryptverifyfilescommand.cpp
+-  "${CMAKE_CURRENT_BINARY_DIR}/moc_command_p.cpp"
+-  "${CMAKE_CURRENT_BINARY_DIR}/moc_command.cpp"
++  "${CMAKE_CURRENT_BINARY_DIR}/moc_command_core_p.cpp"
++  "${CMAKE_CURRENT_BINARY_DIR}/moc_core_command.cpp"
+ )
+ 
+ set_target_properties(kleopatraclientcore PROPERTIES
