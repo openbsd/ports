@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2018/01/07 22:05:09 bentley Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2019/06/24 10:12:06 bentley Exp $
 
 Don't set -O3.
 
@@ -7,18 +7,29 @@ Don't install source docs.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -93,10 +93,8 @@ endif (NOT CMAKE_BUILD_TYPE OR CMAKE_BUILD_TYPE STREQU
- if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+@@ -146,21 +146,9 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
    set(WL_DEBUG_FLAGS "-g -DDEBUG")
+   option(OPTION_ASAN "Build with AddressSanitizer" ON)
  elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
--  set(WL_OPTIMIZE_FLAGS "-O3")
+-  if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU") AND (CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 6.2))
+-    message(STATUS "GCC >6.2.0 breaks -03, setting -02")
+-    set(WL_OPTIMIZE_FLAGS "-O2")
+-  else()
+-    set(WL_OPTIMIZE_FLAGS "-O3")
+-  endif ()
    set(WL_DEBUG_FLAGS "-DNDEBUG -DNOPARACHUTE")
+   option(OPTION_ASAN "Build with AddressSanitizer" OFF)
  elseif(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
--  set(WL_OPTIMIZE_FLAGS "-O3")
-   set(WL_DEBUG_FLAGS "-g -DNDEBUG -DNOPARACHUTE")
+-  if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU") AND (CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 6.2))
+-    message(STATUS "GCC >6.2.0 breaks -03, setting -02")
+-    set(WL_OPTIMIZE_FLAGS "-O2")
+-  else()
+-    set(WL_OPTIMIZE_FLAGS "-O3")
+-  endif ()
+   set(WL_DEBUG_FLAGS "-DNDEBUG -DNOPARACHUTE")
+   option(OPTION_ASAN "Build with AddressSanitizer" ON)
  else()
-   message(FATAL_ERROR "Unknown CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
-@@ -297,15 +295,6 @@ install(
+@@ -367,15 +355,6 @@ install(
    DESTINATION ${WL_INSTALL_BASEDIR}
    CONFIGURATIONS Debug;Release
    COMPONENT CoreLicenseFiles
