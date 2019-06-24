@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/24 16:49:48 thfr Exp $
+bin/depotdownloader
+share/depotdownloader/
+share/depotdownloader/DepotDownloader.deps.json
+share/depotdownloader/DepotDownloader.dll
+share/depotdownloader/DepotDownloader.dll.config
+share/depotdownloader/DepotDownloader.pdb
+share/depotdownloader/DepotDownloader.runtimeconfig.json
+share/depotdownloader/README.md
+share/depotdownloader/SteamKit2.dll
+share/depotdownloader/protobuf-net.dll
+share/doc/pkg-readmes/${PKGSTEM}

@@ -1,0 +1,24 @@
+$OpenBSD: README,v 1.1.1.1 2019/06/24 16:49:48 thfr Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+The wrapper script of ${PKGSTEM} adds the following functionality:
+
+1. Adds the flag '-appname <name>' which is the name of the Steam app to
+   download. To be used instead of '-app <AppID>'.
+2. If '-dir <installdir>' is not provided, it will install the depot in
+   ~/games/steamdepots/<AppName> or ~/games/steamdepots/<AppId> instead of the
+   current working directory.
+
+Note that in some cases '-os windows' needs to be added if the depot advertises
+itself as only for the Windows platform.
+
+Further CLI documentation can be found at:
+
+	https://github.com/SteamRE/DepotDownloader
+
+Example:
+
+	$ depotdownloader -appname "salt and sanctuary" -username <username>
