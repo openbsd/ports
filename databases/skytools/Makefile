@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2019/02/19 05:11:57 jeremy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/06/24 22:26:28 sthen Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
+# XXX outdated; http://pgfoundry.org/frs/download.php/3622/skytools-3.2.tar.gz
 MODPY_EGG_VERSION=	3.1.1
 DISTNAME=		skytools-${MODPY_EGG_VERSION}
 REVISION=	5

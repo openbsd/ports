@@ -1,0 +1,19 @@
+$OpenBSD: patch-sql_txid_Makefile,v 1.1 2019/06/24 22:26:28 sthen Exp $
+
+hardcode around a bogus test; "test" requires integers, and the logic doesn't
+make sense anyway.
+
+Index: sql/txid/Makefile
+--- sql/txid/Makefile.orig
++++ sql/txid/Makefile
+@@ -8,8 +8,8 @@ ifeq ($(PGVER),)
+ $(error Failed to get Postgres version)
+ else
+ # postgres >= manages epoch itself, so skip epoch tables
+-pg83 = $(shell test $(PGVER) "<" "8.3" && echo "false" || echo "true")
+-pg82 = $(shell test $(PGVER) "<" "8.2" && echo "false" || echo "true")
++pg83 = true
++pg82 = false
+ endif
+ 
+ ifeq ($(pg83),true)  # we have 8.3 with internal txid
