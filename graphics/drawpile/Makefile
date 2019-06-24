@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2019/06/15 02:23:22 bcallah Exp $
+# $OpenBSD: Makefile,v 1.21 2019/06/24 13:49:57 bcallah Exp $
 
 COMMENT =	collaborative drawing program
-DISTNAME =	drawpile-2.1.10
+DISTNAME =	drawpile-2.1.11
 CATEGORIES =	graphics x11
 
 HOMEPAGE =	https://drawpile.net/
