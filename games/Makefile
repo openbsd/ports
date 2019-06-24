@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.404 2019/06/23 19:01:34 thfr Exp $
+# $OpenBSD: Makefile,v 1.405 2019/06/24 16:52:01 thfr Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -68,6 +68,7 @@
      SUBDIR += dangerdeep
      SUBDIR += dd2
      SUBDIR += defendguin
+     SUBDIR += depotdownloader
      SUBDIR += dhewm3
      SUBDIR += dmagnetic
      SUBDIR += doomdata
