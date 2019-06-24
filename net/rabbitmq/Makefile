@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2019/06/02 08:42:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2019/06/24 21:32:07 sebastia Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
 V =		3.6.15
+REVISION =	0
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
@@ -12,7 +13,7 @@ HOMEPAGE =	https://www.rabbitmq.com/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MPL
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE= Yes
 
 MASTER_SITES =	https://www.rabbitmq.com/releases/rabbitmq-server/v${V}/
 EXTRACT_SUFX =	.tar.xz
@@ -39,8 +40,8 @@ RABBITUSER =	_rabbitmq
 
 SUBST_VARS +=	RABBITUSER V
 
-#MODPY_ADJ_FILES +=	plugins-src/rabbitmq-amqp1.0/codegen.py
-#MODPY_ADJ_FILES +=	plugins-src/rabbitmq-management/bin/rabbitmqadmin
+MODPY_ADJ_FILES +=	deps/rabbit_common/codegen.py
+MODPY_ADJ_FILES +=	deps/rabbitmq_management/bin/rabbitmqadmin
 
 NO_TEST =	Yes
 
