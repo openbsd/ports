@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/05/15 07:07:44 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/06/25 07:52:39 sebastia Exp $
 ${GEM_BIN}/r10k
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -51,7 +51,6 @@ ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/dockerfile_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/fixtures/
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/fixtures/Puppetfile
-${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/
 ${GEM_LIB}/gems/${DISTNAME}/integration/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/integration/README.mkd
@@ -89,7 +88,6 @@ ${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/
 ${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/00_pe_install.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/10_git_config.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/20_pe_r10k.rb
-${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/30_test_utils.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/pre-suite/README.mkd
 ${GEM_LIB}/gems/${DISTNAME}/integration/scripts/
 ${GEM_LIB}/gems/${DISTNAME}/integration/scripts/README.mkd
