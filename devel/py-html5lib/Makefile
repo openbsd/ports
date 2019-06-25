@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/15 12:04:36 kmos Exp $
+# $OpenBSD: Makefile,v 1.19 2019/06/25 08:14:47 feinerer Exp $
 
 COMMENT=		HTML parser/tokeniser based for HTML5
 
-MODPY_EGG_VERSION=	0.999999999
+MODPY_EGG_VERSION=	1.0.1
 DISTNAME=		html5lib-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel www textproc
-REVISION=		1
 
 HOMEPAGE=		https://github.com/html5lib/html5lib-python/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
 
@@ -21,7 +20,8 @@ MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			textproc/py-webencodings${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-test-expect${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
+			devel/py-test-expect${MODPY_FLAVOR} \
 			textproc/py-chardet${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR}
 
