@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/25 10:50:03 sebastia Exp $
+@bin bin/sn0int
+@man man/man1/sn0int.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/sn0int
+share/fish/
+share/fish/completions/
+share/fish/completions/sn0int.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_sn0int
