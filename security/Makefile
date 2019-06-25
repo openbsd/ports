@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.546 2019/05/14 07:06:34 rpointel Exp $
+# $OpenBSD: Makefile,v 1.547 2019/06/25 10:51:36 sebastia Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -374,6 +374,7 @@
      SUBDIR += smbsniff
      SUBDIR += smtpscan
      SUBDIR += smurflog
+     SUBDIR += sn0int
      SUBDIR += snort2pf
      SUBDIR += softhsm
      SUBDIR += softhsm2
