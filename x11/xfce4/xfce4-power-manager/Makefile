@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2019/06/07 18:21:42 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2019/06/25 20:25:24 sthen Exp $
 
 COMMENT =	Xfce4 power manager
 
 XFCE_VERSION =	1.6.2
 XFCE_GOODIE =	xfce4-power-manager
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

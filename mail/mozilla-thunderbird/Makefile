@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.290 2019/06/21 16:41:47 landry Exp $
+# $OpenBSD: Makefile,v 1.291 2019/06/25 20:25:21 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 COMMENT-main =		Mozilla e-mail, rss and usenet client
@@ -17,6 +17,8 @@ PKGNAME-main =		${PKGNAME}
 # version = (TB+2)/10
 PKGNAME-lightning =	lightning-6.2.7.2
 EPOCH-lightning =	0
+REVISION-lightning =	0
+REVISION-main =		0
 
 HOMEPAGE =	http://www.mozilla.org/thunderbird/
 

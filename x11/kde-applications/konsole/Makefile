@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2019/03/24 11:57:02 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2019/06/25 20:25:23 sthen Exp $
 
 COMMENT =	KDE terminal emulator
 DISTNAME =	konsole-${VERSION}
 CATEGORIES =	editors x11
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  konsoleprivate            0.0 # 17.08
 

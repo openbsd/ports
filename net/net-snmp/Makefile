@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.105 2019/06/03 16:06:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.106 2019/06/25 20:25:21 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
 
 V=		5.8
-REVISION-main=	1
+REVISION-main=	2
 
 DISTNAME=	net-snmp-$V
 MULTI_PACKAGES=	-main -tkmib
@@ -14,6 +14,7 @@ PKGNAME-tkmib=	net-snmp-tkmib-${V:S/.rc/rc/}
 # tkmib isn't flavoured
 FULLPKGPATH-tkmib= net/net-snmp,-tkmib
 FULLPKGNAME-tkmib= net-snmp-tkmib-${V:S/.rc/rc/}
+REVISION-tkmib=    0
 
 LIBV=		15.1
 .for i in netsnmp netsnmpagent netsnmphelpers netsnmpmibs netsnmptrapd

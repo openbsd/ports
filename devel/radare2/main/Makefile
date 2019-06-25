@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2019/04/30 12:16:46 edd Exp $
+# $OpenBSD: Makefile,v 1.15 2019/06/25 20:25:20 sthen Exp $
 
 COMMENT =		reverse engineers disassembler and debugger
 
 V =			3.4.1
+REVISION =		0
 SUBST_VARS +=		V
 
 GH_PROJECT =		radare2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/06/02 12:54:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2019/06/25 20:25:20 sthen Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -21,6 +21,7 @@ EXTRACT_SUFX =		.tar.bz2
 PKGNAME =		spidermonkey-${MOZILLA_VERSION}.7.0
 PKGSPEC =		spidermonkey->=60.0v1,<68.0v1
 EPOCH =			1
+REVISION =		0
 
 SHARED_LIBS =		mozjs-60 0.0
 

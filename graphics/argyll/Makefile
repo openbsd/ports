@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/12/03 13:09:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2019/06/25 20:25:20 sthen Exp $
 
 COMMENT=	ICC compatible color management system
 
@@ -7,6 +7,7 @@ DISTNAME=	Argyll_V${V}_src
 PKGNAME=	argyllcms-${V}
 EXTRACT_SUFX=	.zip
 WRKDIST=	${WRKDIR}/${DISTNAME:S/_src//}
+REVISION=	0
 
 CATEGORIES=	graphics sysutils
 

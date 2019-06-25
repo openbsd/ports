@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/20 22:15:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/06/25 20:25:22 sthen Exp $
 
 COMMENT =		friendly interactive shell
 
 V =			3.0.2
 DISTNAME =		fish-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		shells
 

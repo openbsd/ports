@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2017/04/09 11:53:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2019/06/25 20:25:21 sthen Exp $
 
 COMMENT=		generic readline wrapper for various programs
 
 V =			0.43
 DISTNAME=		rlwrap-$V
 CATEGORIES=		misc
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

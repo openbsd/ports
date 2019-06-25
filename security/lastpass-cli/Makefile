@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2019/04/17 06:39:55 bket Exp $
+# $OpenBSD: Makefile,v 1.18 2019/06/25 20:25:21 sthen Exp $
 
 COMMENT =	LastPass command line interface tool
 
 V =		1.3.3
 DISTNAME =	lastpass-cli-${V}
+REVISION =	0
 
 CATEGORIES =	security
 

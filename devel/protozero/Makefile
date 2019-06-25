@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/17 23:33:15 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2019/06/25 20:25:20 sthen Exp $
 
 COMMENT =	minimalist protocol buffer decoder and encoder in C++
 
 GH_ACCOUNT =	mapbox
 GH_PROJECT =	protozero
 GH_TAGNAME =	v1.6.3
+REVISION =	0
 
 CATEGORIES =	devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/06/25 20:25:20 sthen Exp $
 
 # BROKEN-hppa =	undefined reference to __sync atomic ops
 
@@ -8,6 +8,7 @@ VER =		1.24.1
 DISTNAME =	libuv-v${VER}
 PKGNAME =	libuv-${VER}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS =	uv 2.0	# 1.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2018/11/18 19:39:29 landry Exp $
+# $OpenBSD: Makefile,v 1.60 2019/06/25 20:25:22 sthen Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -32,6 +32,20 @@ PKGNAME-redis =		collectd-redis-$V
 PKGNAME-prometheus =	collectd-prometheus-$V
 PKGNAME-ping =		collectd-ping-$V
 CATEGORIES =		sysutils
+REVISION-main =		0
+REVISION-memcachec =	0
+REVISION-mqtt =		0
+REVISION-mysql =	0
+REVISION-nut =		0
+REVISION-pgsql =	0
+REVISION-ping =		0
+REVISION-prometheus =	0
+REVISION-python =	0
+REVISION-redis =	0
+REVISION-riemann =	0
+REVISION-rrdtool =	0
+REVISION-snmp =		0
+REVISION-virt =		0
 
 HOMEPAGE =		http://www.collectd.org/
 SHARED_LIBS +=		collectdclient 1.0

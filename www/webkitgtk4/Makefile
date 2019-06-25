@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2019/05/20 22:15:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.104 2019/06/25 20:25:23 sthen Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -19,6 +19,7 @@ EXTRACT_SUFX =		.tar.xz
 API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
+REVISION =		0
 
 SHARED_LIBS +=  javascriptcoregtk-${API}     3.0 # 18.13.3
 SHARED_LIBS +=  webkit2gtk-${API}            3.0 # 37.37.2
