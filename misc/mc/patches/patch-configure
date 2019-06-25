@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.18 2019/01/30 12:49:47 solene Exp $
+$OpenBSD: patch-configure,v 1.19 2019/06/25 07:35:59 kirby Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -16394,7 +16394,7 @@ if ${ac_cv_lib_slang_SLang_init_tty+:} false; then :
+@@ -16422,7 +16422,7 @@ if ${ac_cv_lib_slang_SLang_init_tty+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -11,7 +11,7 @@ Index: configure
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -27923,7 +27923,7 @@ done
+@@ -27193,7 +27193,7 @@ done
    done
  IFS=$as_save_IFS
  
@@ -20,7 +20,7 @@ Index: configure
    ;;
  esac
  fi
-@@ -27964,7 +27964,7 @@ done
+@@ -27234,7 +27234,7 @@ done
    done
  IFS=$as_save_IFS
  

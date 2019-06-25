@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2019/01/30 08:27:01 solene Exp $
+@comment $OpenBSD: PLIST,v 1.26 2019/06/25 07:35:59 kirby Exp $
 @pkgpath misc/mc,no_x11
 @bin bin/mc
 bin/mcdiff
@@ -253,6 +253,7 @@ share/mc/skins/dark.ini
 share/mc/skins/darkfar.ini
 share/mc/skins/default.ini
 share/mc/skins/double-lines.ini
+share/mc/skins/featured-plus.ini
 share/mc/skins/featured.ini
 share/mc/skins/gotar.ini
 share/mc/skins/gray-green-purple256.ini
