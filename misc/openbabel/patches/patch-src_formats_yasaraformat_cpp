@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_formats_yasaraformat_cpp,v 1.1 2019/06/25 11:54:02 cwen Exp $
+
+fix narrowing conversion errors on archs where char is unsigned by default
+(arm, ppc), see 
+https://github.com/openbabel/openbabel/pull/1744
+
+Index: src/formats/yasaraformat.cpp
+--- src/formats/yasaraformat.cpp.orig
++++ src/formats/yasaraformat.cpp
+@@ -478,7 +478,7 @@ bool YOBFormat::WriteMolecule(OBBase* pOb, OBConversio
+ 
+   //  bool hetatom;
+   char buffer[32],/*resname[4],*/atomname[5];
+-  char double1[8]={0,0,0,0,0,0,-16,0x3f};
++  unsigned char double1[8]={0,0,0,0,0,0,0xf0,0x3f};
+   //   char *str;
+   int i,j,/*m,q,*/pos;
+   int /*resno,chainNum,link,linktype,*/atoms,element,links/*,chain*/;
+@@ -506,7 +506,7 @@ bool YOBFormat::WriteMolecule(OBBase* pOb, OBConversio
+   mem_set(buffer,0,8);
+   for (i=0;i<4;i++)
+   { for (j=0;j<4;j++)
+-    { if (i==j) ofs.write(double1,8);
++    { if (i==j) ofs.write((char*)double1,8);
+       else ofs.write(buffer,8); } }
+   storeint32le(buffer,MOB_INFOEND);
+   storeint32le(&buffer[4],MOB_INFOENDSIZE);

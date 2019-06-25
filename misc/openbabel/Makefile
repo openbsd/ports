@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2018/10/24 14:28:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/06/25 11:54:02 cwen Exp $
 
 COMMENT=	chemistry file translation program
 
 V=		2.2.3
 DISTNAME=	openbabel-${V}
-REVISION=	7
+REVISION=	8
 CATEGORIES=	misc
 
 SUBST_VARS=	V
@@ -14,7 +14,7 @@ SHARED_LIBS+=	openbabel	5.0	# .3.0
 HOMEPAGE=	http://openbabel.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv lzma m pthread ${COMPILER_LIBCXX} xml2 z
 
