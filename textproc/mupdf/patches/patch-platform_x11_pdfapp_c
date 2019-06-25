@@ -1,13 +1,19 @@
-$OpenBSD: patch-platform_x11_pdfapp_c,v 1.10 2018/12/03 18:40:07 sthen Exp $
+$OpenBSD: patch-platform_x11_pdfapp_c,v 1.11 2019/06/25 22:03:46 sthen Exp $
+
 Index: platform/x11/pdfapp.c
 --- platform/x11/pdfapp.c.orig
 +++ platform/x11/pdfapp.c
-@@ -34,8 +34,18 @@ enum
+@@ -31,11 +31,21 @@ enum panning
  static void pdfapp_showpage(pdfapp_t *app, int loadpage, int drawpage, int repaint, int transition, int searching);
- static void pdfapp_updatepage(pdfapp_t *app);
  
--static const int zoomlist[] = { 18, 24, 36, 54, 72, 96, 120, 144, 180, 216, 288 };
-+static const int zoomlist[] = { 18, 21, 24, 30, 36, 44, 54, 62, 72, 83, 96, 107, 120, 131, 144, 160, 180, 197, 216, 250, 288 };
+ static const int zoomlist[] = {
+-	18, 24, 36, 54, 72, 96, 120, 144, 180,
+-	216, 288, 360, 432, 504, 576, 648, 720,
+-	792, 864, 936, 1008, 1080, 1152
++	18, 21, 24, 30, 36, 44, 54, 62, 72, 83, 96, 107, 120, 131, 144, 160, 180, 197,
++	216, 250, 288, 322, 360, 394, 432, 466, 504, 538, 576, 610, 648, 682, 720, 754,
++	792, 826, 864, 898, 936, 970, 1008, 1042, 1080, 1114, 1152
+ };
  
 +static int fine_zoom_in(int oldres)
 +{
@@ -22,23 +28,10 @@ Index: platform/x11/pdfapp.c
  static int zoom_in(int oldres)
  {
  	int i;
-@@ -1045,6 +1055,12 @@ static void pdfapp_search_in_direction(pdfapp_t *app, 
- 		return;
- 	}
- 
-+	if (app && *app->search == '\0')
-+	{
-+		winrepaint(app);
-+		return;
-+	}
-+
- 	wincursor(app, WAIT);
- 
- 	firstpage = app->pageno;
-@@ -1540,9 +1556,9 @@ static void handlescroll(pdfapp_t *app, int modifiers,
+@@ -1421,9 +1431,9 @@ static void handlescroll(pdfapp_t *app, int modifiers,
  	{
  		/* zoom in/out if ctrl is pressed */
- 		if (dir < 0)
+ 		if (dir > 0)
 -			app->resolution = zoom_in(app->resolution);
 +			app->resolution = ((modifiers & (1<<0)) ? fine_zoom_in : zoom_in)(app->resolution);
  		else

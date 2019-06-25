@@ -25,3 +25,6 @@ image files.
 
 Flavors:
 	js - build with JavaScript support (using the MuJS interpreter)
+
+Note that the js flavor also include the OpenGL-based renderer "mupdf-gl"
+which has some dependencies on MuJS.

@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile,v 1.16 2018/12/10 17:52:58 sthen Exp $
+$OpenBSD: patch-Makefile,v 1.17 2019/06/25 22:03:46 sthen Exp $
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
 @@ -60,7 +60,7 @@ endif
  LINK_CMD = $(QUIET_LINK) $(MKTGTDIR) ; $(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
- TAGS_CMD = $(QUIET_TAGS) ctags $^
+ TAGS_CMD = $(QUIET_TAGS) ctags -R
  WINDRES_CMD = $(QUIET_WINDRES) $(MKTGTDIR) ; $(WINDRES) $< $@
 -OBJCOPY_CMD = $(QUIET_OBJCOPY) $(MKTGTDIR) ; $(LD) -r -b binary -o $@ $<
 +OBJCOPY_CMD = $(QUIET_OBJCOPY) $(MKTGTDIR) ; $(LD) $(LLD_EMUL) -r -b binary -o $@ $<

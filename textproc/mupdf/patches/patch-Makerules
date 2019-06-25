@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makerules,v 1.20 2019/04/19 16:52:31 semarie Exp $
+$OpenBSD: patch-Makerules,v 1.21 2019/06/25 22:03:46 sthen Exp $
 Index: Makerules
 --- Makerules.orig
 +++ Makerules
 @@ -24,8 +24,8 @@ ifeq ($(build),debug)
    CFLAGS += -pipe -g
-   LDFLAGS += -g $(LDREMOVEUNREACH)
+   LDFLAGS += -g
  else ifeq ($(build),release)
 -  CFLAGS += -pipe -O2 -DNDEBUG -fomit-frame-pointer
 -  LDFLAGS += $(LDREMOVEUNREACH) -Wl,-s
@@ -24,7 +24,7 @@ Index: Makerules
  
    ifeq ($(shell pkg-config --exists freetype2 && echo yes),yes)
  	SYS_FREETYPE_CFLAGS := $(shell pkg-config --cflags freetype2)
-@@ -131,10 +131,10 @@ else ifeq ($(OS),Linux)
+@@ -125,10 +125,10 @@ else ifeq ($(OS),Linux)
  	X11_LIBS := $(shell pkg-config --libs x11 xext)
    endif
  

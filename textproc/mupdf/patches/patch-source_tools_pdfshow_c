@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_tools_pdfshow_c,v 1.5 2018/12/03 18:40:07 sthen Exp $
+$OpenBSD: patch-source_tools_pdfshow_c,v 1.6 2019/06/25 22:03:46 sthen Exp $
 
 add pledge(2) to "mutool show":
   - rpath : dropped after opening
@@ -17,7 +17,7 @@ Index: source/tools/pdfshow.c
  #include <stdlib.h>
  #include <stdio.h>
  #include <string.h>
-@@ -393,6 +396,12 @@ int pdfshow_main(int argc, char **argv)
+@@ -443,6 +446,12 @@ int pdfshow_main(int argc, char **argv)
  	char *output = NULL;
  	int c;
  
@@ -30,11 +30,11 @@ Index: source/tools/pdfshow.c
  	ctx = fz_new_context(NULL, NULL, FZ_STORE_UNLIMITED);
  	if (!ctx)
  	{
-@@ -427,6 +436,13 @@ int pdfshow_main(int argc, char **argv)
+@@ -477,6 +486,13 @@ int pdfshow_main(int argc, char **argv)
  	fz_try(ctx)
  	{
  		doc = pdf_open_document(ctx, filename);
-+		
++
 +		if (pledge("stdio", NULL) == -1)
 +		{
 +			fprintf(stderr, "pledge: %s\n", strerror(errno));

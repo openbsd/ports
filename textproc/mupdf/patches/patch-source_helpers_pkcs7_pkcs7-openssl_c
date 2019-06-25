@@ -1,11 +1,15 @@
-$OpenBSD: patch-source_helpers_pkcs7_pkcs7-openssl_c,v 1.1 2019/04/19 16:52:31 semarie Exp $
+$OpenBSD: patch-source_helpers_pkcs7_pkcs7-openssl_c,v 1.2 2019/06/25 22:03:46 sthen Exp $
+
 - add default_paths to STORE for checking signatures (aka /etc/ssl/cert.pem)
 - avoid OpenSSL 1.1.0 methods
+
+XXX source/helpers/pkcs7/pkcs7-openssl.c:194:39: warning: incompatible pointer types
+(but should be harmless)
 
 Index: source/helpers/pkcs7/pkcs7-openssl.c
 --- source/helpers/pkcs7/pkcs7-openssl.c.orig
 +++ source/helpers/pkcs7/pkcs7-openssl.c
-@@ -473,6 +473,9 @@ enum pdf_signature_error pkcs7_openssl_check_certifica
+@@ -472,6 +472,9 @@ enum pdf_signature_error pkcs7_openssl_check_certifica
  		}
  	}
  
@@ -15,7 +19,7 @@ Index: source/helpers/pkcs7/pkcs7-openssl.c
  	res = pk7_verify_cert(st, pk7sig);
  
  exit:
-@@ -521,7 +524,7 @@ static void add_from_bag(X509 **pX509, EVP_PKEY **pPke
+@@ -520,7 +523,7 @@ static void add_from_bag(X509 **pX509, EVP_PKEY **pPke
  	{
  	case NID_keyBag:
  		{
@@ -24,7 +28,7 @@ Index: source/helpers/pkcs7/pkcs7-openssl.c
  			pkey = EVP_PKCS82PKEY(p8);
  		}
  		break;
-@@ -543,7 +546,7 @@ static void add_from_bag(X509 **pX509, EVP_PKEY **pPke
+@@ -542,7 +545,7 @@ static void add_from_bag(X509 **pX509, EVP_PKEY **pPke
  		break;
  
  	case NID_safeContentsBag:

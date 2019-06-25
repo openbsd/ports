@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.86 2019/06/03 16:06:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.87 2019/06/25 22:03:46 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-V =		1.14.0
-REVISION =	2
+V =		1.15.0
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-$V
 
@@ -19,7 +18,7 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 # uses pledge(2)
-WANTLIB += X11 Xext c curl freetype harfbuzz jbig2dec jpeg m
+WANTLIB += X11 Xext c freetype harfbuzz jbig2dec jpeg m
 WANTLIB += openjp2 pthread z crypto
 
 FLAVORS=	js
@@ -33,13 +32,12 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 LIB_DEPENDS =	devel/harfbuzz \
 		graphics/jbig2dec \
 		graphics/jpeg \
-		graphics/openjp2>=2.0.1 \
-		net/curl
+		graphics/openjp2>=2.0.1
 
 USE_GMAKE =	Yes
 NO_TEST =	Yes
 
-ALL_TARGET =	all extra
+ALL_TARGET =	all
 
 MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
 		XCFLAGS="${CFLAGS} -fPIC -I$(WRKSRC)/fitz -I$(WRKSRC)/pdf -I$(WRKSRC)/xps -I${X11BASE}/include" \
@@ -53,7 +51,7 @@ pre-configure:
 	cd ${WRKSRC}; sed -i 's,/usr/X11R6/include,${X11BASE}/include,g' Makerules Makethird
 # keeping internal copy of lcms2 which is a fork with API changes
 # http://git.ghostscript.com/?p=thirdparty-lcms2.git;a=blob_plain;f=doc/WhyThisFork.txt;hb=lcms2mt
-	rm -rf ${WRKSRC}/thirdparty/{curl,freeglut,freetype,harfbuzz,jbig2dec,libjpeg,openjpeg,zlib} # use from ports
+	rm -r ${WRKSRC}/thirdparty/{freeglut,freetype,harfbuzz,jbig2dec,libjpeg,openjpeg,zlib} # use from ports
 .if !${FLAVOR:Mjs}
 	rm -r ${WRKSRC}/thirdparty/mujs # not building with javascript support
 CFLAGS +=	-DFZ_ENABLE_JS=0
@@ -71,7 +69,6 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/mupdf.xpm ${PREFIX}/share/pixmaps/
 	${INSTALL_DATA} ${FILESDIR}/mupdf.desktop ${PREFIX}/share/applications/
 	cd ${PREFIX}/bin; ln -s mupdf-x11 mupdf
-	${INSTALL_PROGRAM} ${WRKSRC}/build/release/mupdf-x11-curl ${PREFIX}/bin
 	mv ${PREFIX}/share/doc/mupdf/examples ${PREFIX}/share/examples/mupdf
 
 .include <bsd.port.mk>
