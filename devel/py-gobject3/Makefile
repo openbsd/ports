@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.68 2019/04/28 20:51:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2019/06/25 06:22:12 ajacoutot Exp $
 
 COMMENT-main=		Python bindings for GLib and GObject
 COMMENT-common=		common files for py-gobject3
 
 GNOME_PROJECT=		pygobject
-GNOME_VERSION=		3.32.1
+GNOME_VERSION=		3.32.2
 MODPY_EGG_VERSION=	${GNOME_VERSION}
 
 PKGNAME-main=		py-gobject3-${GNOME_VERSION}
 FULLPKGNAME-common=	py-gobject3-common-${GNOME_VERSION}
 FULLPKGPATH-common=	devel/py-gobject3,-common
-REVISION-common=	0
 
 CATEGORIES=		devel
 
@@ -19,7 +18,7 @@ HOMEPAGE=		http://www.pygtk.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB-main += ${MODPY_WANTLIB}
 WANTLIB-main += cairo cairo-gobject ffi gio-2.0 girepository-1.0 glib-2.0
@@ -56,7 +55,6 @@ RUN_DEPENDS-main=	devel/py-gobject3,-common=${GNOME_VERSION} \
 FULLPKGNAME-main=	${PKGNAME-main:S/^py-/py3-/}
 FULLPKGPATH-main=	devel/py-gobject3,-main${MODPY_FLAVOR}
 .endif
-REVISION-main=		0
 
 TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR}
 
