@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/03/14 04:37:59 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/06/26 15:51:22 benoit Exp $
 @bin bin/stella
 share/doc/stella/
 share/doc/stella/debugger.html
@@ -35,7 +35,6 @@ share/doc/stella/graphics/eventmapping_devsports.png
 share/doc/stella/graphics/eventmapping_remap.png
 share/doc/stella/graphics/jr_pacman.png
 share/doc/stella/graphics/launcher.png
-share/doc/stella/graphics/launcher_filter.png
 share/doc/stella/graphics/launcher_options_files.png
 share/doc/stella/graphics/launcher_options_snapshots.png
 share/doc/stella/graphics/launcher_override.png
@@ -60,13 +59,11 @@ share/doc/stella/graphics/options_video_dbgcolors.png
 share/doc/stella/graphics/options_video_tv.png
 share/doc/stella/graphics/pacman.png
 share/doc/stella/graphics/qwertz.png
-share/doc/stella/graphics/rom_browser.png
 share/doc/stella/graphics/romaudit.png
 share/doc/stella/graphics/rominfo_1x_large.png
 share/doc/stella/graphics/rominfo_1x_small.png
 share/doc/stella/graphics/rominfo_2x_small.png
 share/doc/stella/graphics/secret_quest.png
-share/doc/stella/graphics/select_romdir.png
 share/doc/stella/graphics/space_invaders.png
 share/doc/stella/graphics/timemachine.png
 share/doc/stella/index.html
