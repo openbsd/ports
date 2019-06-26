@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.481 2019/06/22 15:40:43 thfr Exp $
+# $OpenBSD: Makefile,v 1.482 2019/06/26 12:10:26 espie Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -12,6 +12,7 @@
      SUBDIR += ansilove
      SUBDIR += aqsis
      SUBDIR += argyll
+     SUBDIR += aspect-crop
      SUBDIR += asymptote
      SUBDIR += autopano-sift-c
      SUBDIR += babl
