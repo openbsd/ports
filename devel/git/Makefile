@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.199 2019/05/20 22:15:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.200 2019/06/26 15:07:57 kn Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
 COMMENT-x11 =	GIT - graphical tools
 
-V =		2.21.0
+V =		2.22.0
 DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
 PKGNAME-x11 =	git-x11-${V}
-REVISION-main =	0
 CATEGORIES =	devel
 
 HOMEPAGE =	https://git-scm.com/
@@ -17,7 +16,7 @@ HOMEPAGE =	https://git-scm.com/
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 DOC_DISTFILE =		git-manpages-${V}${EXTRACT_SUFX}
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} ${DOC_DISTFILE}
@@ -91,6 +90,9 @@ TEST_DEPENDS =		archivers/gtar \
 			archivers/zip \
 			devel/cvsps \
 			devel/subversion,-perl
+
+# ${WRKSRC}/t/t4256/1/mailinfo.c.orig 
+PATCHORIG =		.pat.orig
 
 post-extract:
 	@mkdir -p ${WRKSRC}/doc

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.88 2019/02/26 09:10:34 kn Exp $
+@comment $OpenBSD: PLIST-main,v 1.89 2019/06/26 15:07:57 kn Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
@@ -80,7 +80,7 @@ libexec/git/git-filter-branch
 @bin libexec/git/git-init-db
 libexec/git/git-instaweb
 @bin libexec/git/git-interpret-trailers
-libexec/git/git-legacy-rebase
+libexec/git/git-legacy-stash
 @bin libexec/git/git-log
 @bin libexec/git/git-ls-files
 @bin libexec/git/git-ls-remote
@@ -122,7 +122,6 @@ libexec/git/git-quiltimport
 @bin libexec/git/git-rebase
 libexec/git/git-rebase--am
 libexec/git/git-rebase--common
-@bin libexec/git/git-rebase--interactive
 libexec/git/git-rebase--preserve-merges
 @bin libexec/git/git-receive-pack
 @bin libexec/git/git-reflog
@@ -145,7 +144,6 @@ libexec/git/git-request-pull
 @bin libexec/git/git-rm
 libexec/git/git-send-email
 @bin libexec/git/git-send-pack
-@bin libexec/git/git-serve
 libexec/git/git-sh-i18n
 @bin libexec/git/git-sh-i18n--envsubst
 libexec/git/git-sh-setup
@@ -156,7 +154,7 @@ libexec/git/git-sh-setup
 @bin libexec/git/git-show-index
 @bin libexec/git/git-show-ref
 @bin libexec/git/git-stage
-libexec/git/git-stash
+@bin libexec/git/git-stash
 @bin libexec/git/git-status
 @bin libexec/git/git-stripspace
 libexec/git/git-submodule
@@ -199,6 +197,7 @@ libexec/git/mergetools/kompare
 libexec/git/mergetools/meld
 libexec/git/mergetools/opendiff
 libexec/git/mergetools/p4merge
+libexec/git/mergetools/smerge
 libexec/git/mergetools/tkdiff
 libexec/git/mergetools/tortoisemerge
 libexec/git/mergetools/vimdiff
@@ -309,7 +308,6 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-reflog.1
 @man man/man1/git-remote-ext.1
 @man man/man1/git-remote-fd.1
-@man man/man1/git-remote-testgit.1
 @man man/man1/git-remote.1
 @man man/man1/git-repack.1
 @man man/man1/git-replace.1
@@ -355,7 +353,6 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-worktree.1
 @man man/man1/git-write-tree.1
 @man man/man1/git.1
-@man man/man1/gitremote-helpers.1
 @man man/man1/gitweb.1
 @man man/man5/gitattributes.5
 @man man/man5/githooks.5
@@ -371,6 +368,7 @@ libexec/git/mergetools/xxdiff
 @man man/man7/giteveryday.7
 @man man/man7/gitglossary.7
 @man man/man7/gitnamespaces.7
+@man man/man7/gitremote-helpers.7
 @man man/man7/gitrevisions.7
 @man man/man7/gitsubmodules.7
 @man man/man7/gittutorial-2.7

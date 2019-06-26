@@ -1,8 +1,8 @@
-$OpenBSD: patch-contrib_svn-fe_Makefile,v 1.1 2015/02/07 18:19:41 dcoppa Exp $
+$OpenBSD: patch-contrib_svn-fe_Makefile,v 1.2 2019/06/26 15:07:57 kn Exp $
 
 No need for librt on OpenBSD
 
---- contrib/svn-fe/Makefile.orig	Fri Feb  6 02:50:23 2015
+--- contrib/svn-fe/Makefile.pat.orig	Fri Feb  6 02:50:23 2015
 +++ contrib/svn-fe/Makefile	Fri Feb  6 02:50:45 2015
 @@ -41,7 +41,6 @@ endif
  

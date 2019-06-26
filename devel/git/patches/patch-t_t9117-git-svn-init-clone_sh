@@ -1,5 +1,5 @@
-$OpenBSD: patch-t_t9117-git-svn-init-clone_sh,v 1.2 2009/01/24 14:31:29 bernd Exp $
---- t/t9117-git-svn-init-clone.sh.orig	Thu Dec 25 06:33:25 2008
+$OpenBSD: patch-t_t9117-git-svn-init-clone_sh,v 1.3 2019/06/26 15:07:57 kn Exp $
+--- t/t9117-git-svn-init-clone.sh.pat.orig	Thu Dec 25 06:33:25 2008
 +++ t/t9117-git-svn-init-clone.sh	Thu Dec 25 19:25:32 2008
 @@ -8,7 +8,6 @@ test_description='git svn init/clone tests'
  . ./lib-git-svn.sh
