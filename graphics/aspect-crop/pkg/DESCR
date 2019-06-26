@@ -1,0 +1,6 @@
+aspect-crop is a pure "companion application" for the new features
+of xwallpaper. Namely, being able to specify a trim box with --trim.
+
+aspect-crop allows interactively figuring out a good crop box for
+given pictures so that one can fit them to a specific screen
+aspect ratio.
