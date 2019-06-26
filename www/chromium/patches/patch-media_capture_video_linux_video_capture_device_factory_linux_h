@@ -1,0 +1,14 @@
+$OpenBSD: patch-media_capture_video_linux_video_capture_device_factory_linux_h,v 1.1 2019/06/26 17:22:41 robert Exp $
+
+Index: media/capture/video/linux/video_capture_device_factory_linux.h
+--- media/capture/video/linux/video_capture_device_factory_linux.h.orig
++++ media/capture/video/linux/video_capture_device_factory_linux.h
+@@ -65,7 +65,7 @@ class CAPTURE_EXPORT VideoCaptureDeviceFactoryLinux
+ 
+  private:
+   // Simple wrapper to do HANDLE_EINTR(v4l2_->ioctl(fd, ...)).
+-  int DoIoctl(int fd, int request, void* argp);
++  int DoIoctl(int fd, unsigned int request, void* argp);
+ 
+   bool HasUsableFormats(int fd, uint32_t capabilities);
+   std::vector<float> GetFrameRateList(int fd,

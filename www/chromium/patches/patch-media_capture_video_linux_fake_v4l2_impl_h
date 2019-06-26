@@ -1,0 +1,14 @@
+$OpenBSD: patch-media_capture_video_linux_fake_v4l2_impl_h,v 1.1 2019/06/26 17:22:41 robert Exp $
+
+Index: media/capture/video/linux/fake_v4l2_impl.h
+--- media/capture/video/linux/fake_v4l2_impl.h.orig
++++ media/capture/video/linux/fake_v4l2_impl.h
+@@ -35,7 +35,7 @@ class CAPTURE_EXPORT FakeV4L2Impl : public V4L2Capture
+   // Implementation of V4L2CaptureDevice interface:
+   int open(const char* device_name, int flags) override;
+   int close(int fd) override;
+-  int ioctl(int fd, int request, void* argp) override;
++  int ioctl(int fd, unsigned long request, void* argp) override;
+   void* mmap(void* start,
+              size_t length,
+              int prot,

@@ -1,0 +1,14 @@
+$OpenBSD: patch-media_capture_video_linux_v4l2_capture_device_h,v 1.1 2019/06/26 17:22:41 robert Exp $
+
+Index: media/capture/video/linux/v4l2_capture_device.h
+--- media/capture/video/linux/v4l2_capture_device.h.orig
++++ media/capture/video/linux/v4l2_capture_device.h
+@@ -21,7 +21,7 @@ class CAPTURE_EXPORT V4L2CaptureDevice
+  public:
+   virtual int open(const char* device_name, int flags) = 0;
+   virtual int close(int fd) = 0;
+-  virtual int ioctl(int fd, int request, void* argp) = 0;
++  virtual int ioctl(int fd, unsigned long request, void* argp) = 0;
+   virtual void* mmap(void* start,
+                      size_t length,
+                      int prot,
