@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_scripting_vm_vmframe_cpp,v 1.1 2019/02/12 18:07:11 solene Exp $
+$OpenBSD: patch-src_scripting_vm_vmframe_cpp,v 1.2 2019/06/26 07:12:04 solene Exp $
 
 disable JIT so it's W^X compatible
 
 Index: src/scripting/vm/vmframe.cpp
 --- src/scripting/vm/vmframe.cpp.orig
 +++ src/scripting/vm/vmframe.cpp
-@@ -49,7 +49,7 @@
- #endif
+@@ -45,7 +45,7 @@
+ #include "version.h"
  
- #ifdef ARCH_X64
+ #ifdef HAVE_VM_JIT
 -CUSTOM_CVAR(Bool, vm_jit, true, CVAR_NOINITCALL)
 +CUSTOM_CVAR(Bool, vm_jit, false, CVAR_NOINITCALL)
  {

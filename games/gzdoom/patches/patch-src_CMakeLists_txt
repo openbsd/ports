@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2019/02/06 09:32:21 solene Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2019/06/26 07:12:04 solene Exp $
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
@@ -14,8 +14,8 @@ Index: src/CMakeLists.txt
  if( WIN32 )
  	if( X64 )
  		set( WIN_TYPE Win64 )
-@@ -1301,7 +1305,13 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "SunOS")
- 	set( ZDOOM_LIBS ${ZDOOM_LIBS} nsl socket)
+@@ -1369,7 +1373,13 @@ if( UNIX )
+ 	endif()
  endif()
  
 +find_package( Backtrace )

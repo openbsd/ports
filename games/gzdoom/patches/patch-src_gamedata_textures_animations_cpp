@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_gamedata_textures_animations_cpp,v 1.1 2019/06/26 07:12:04 solene Exp $
+
+backport fix as noted by David Carlier:
+https://github.com/coelckers/gzdoom/commit/57a0a4c06635783ff6f48874b131e95fe9ab35c8
+
+Index: src/gamedata/textures/animations.cpp
+--- src/gamedata/textures/animations.cpp.orig
++++ src/gamedata/textures/animations.cpp
+@@ -73,7 +73,7 @@ FAnimDef *FTextureManager::AddAnim (FAnimDef *anim)
+ 		if (mAnimations[i]->BasePic == anim->BasePic)
+ 		{
+ 			// Found one!
+-			free (mAnimations[i]);
++			M_Free (mAnimations[i]);
+ 			mAnimations[i] = anim;
+ 			return anim;
+ 		}
