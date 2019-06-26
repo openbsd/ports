@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/06/11 00:38:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.29 2019/06/26 09:48:45 sthen Exp $
 
 COMMENT =		tool for testing security of web applications
 
@@ -24,7 +24,6 @@ EXTRACT_SUFX =		.jar
 MODULES =		java
 # XXX if updating, please check if it works with jdk 11 and switch to "1.8+" if ok
 MODJAVA_VER =		1.8
-MODJAVA_JRERUN =	yes
 
 RUN_DEPENDS =		java/javaPathHelper
 
