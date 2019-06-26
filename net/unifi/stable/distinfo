@@ -2,11 +2,11 @@ SHA256 (UBNT-MIB) = 4Ar6EHXTLLq/9a93slrup9AL7Arp5CF3yCXsTbHCEco=
 SHA256 (UBNT-UniFi-MIB) = zwR4LSXFy2Wjb9Sorkdmbi7MM74U2e14TlOyKsWqfDg=
 SHA256 (activation-1.1.1.jar) = rkdRIOn82ZtLALODKb1hzcXrdU7uA/5mwB9Q4TdyT5k=
 SHA256 (snappy-java-1.1.7.2.jar) = OQjjH3hru7e/lYQRlxFSYu8g2fNhquXbJu2DsPZ38mE=
-SHA256 (unifi-5.10.24.zip) = 2Pxejdw0Y8INrkJr9u5NV1Yc41BQOQP9WQIQDZZPcYM=
-SHA256 (unifi_sh_api-5.10.24) = F5FoUDnqeVlwvMemHuyFQFjj5vwTxSdw4x4g8762Ius=
+SHA256 (unifi-5.10.25.zip) = tSUH+PtR0nSLz2U2iZNoeWCbbUdIxmkl1bRBfCZKdDU=
+SHA256 (unifi_sh_api-5.10.25) = F5FoUDnqeVlwvMemHuyFQFjj5vwTxSdw4x4g8762Ius=
 SIZE (UBNT-MIB) = 4001
 SIZE (UBNT-UniFi-MIB) = 13520
 SIZE (activation-1.1.1.jar) = 69409
 SIZE (snappy-java-1.1.7.2.jar) = 2241285
-SIZE (unifi-5.10.24.zip) = 91779832
-SIZE (unifi_sh_api-5.10.24) = 5174
+SIZE (unifi-5.10.25.zip) = 91781146
+SIZE (unifi_sh_api-5.10.25) = 5174
