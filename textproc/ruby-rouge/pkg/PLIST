@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/06/13 20:20:22 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/06/27 18:33:17 fcambus Exp $
 ${GEM_BIN}/rougify${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -18,6 +18,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/apiblueprint
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/applescript
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/awk
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/biml
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/bpf
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/brainfuck
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/bsl
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/c
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ceylon
@@ -85,6 +87,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/literate_haskell
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/llvm
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/lua
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/m68k
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/magik
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/make
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/markdown
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/mathematica
@@ -163,6 +166,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/html_pygments.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/html_table.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/null.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/terminal256.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/tex.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/guesser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/guessers/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/guessers/disambiguation.rb
@@ -183,6 +187,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/apiblueprint.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/apple_script.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/awk.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/biml.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/bpf.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/brainfuck.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/bsl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/c.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ceylon.rb
@@ -255,6 +261,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lua/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lua.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lua/builtins.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/m68k.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/magik.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/make.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/markdown.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/mathematica/
@@ -341,6 +348,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/plugins/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/plugins/redcarpet.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/regex_lexer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/template_lexer.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/tex_theme_renderer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/text_analyzer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/theme.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/themes/
@@ -350,6 +358,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/themes/colorful.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/themes/github.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/themes/gruvbox.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/themes/igor_pro.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/themes/magritte.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/themes/molokai.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/themes/monokai.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/themes/monokai_sublime.rb
