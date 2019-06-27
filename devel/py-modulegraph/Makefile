@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/15 12:04:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.14 2019/06/27 16:03:23 kmos Exp $
 
 COMMENT=		Python module dependency analysis tool
 
-MODPY_EGG_VERSION=	0.16
+MODPY_EGG_VERSION=	0.17
 DISTNAME=		modulegraph-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		devel
 
 # MIT
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=   	Yes
 
 MODULES=		lang/python
 
