@@ -1,4 +1,5 @@
-$OpenBSD: patch-cmake_mysql_version_cmake,v 1.2 2019/05/12 21:56:55 jca Exp $
+$OpenBSD: patch-cmake_mysql_version_cmake,v 1.3 2019/06/27 21:15:18 sthen Exp $
+
 Index: cmake/mysql_version.cmake
 --- cmake/mysql_version.cmake.orig
 +++ cmake/mysql_version.cmake

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.80 2019/06/14 10:08:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.81 2019/06/27 21:15:18 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.3.15
+VERSION=	10.3.16
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
@@ -117,7 +117,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
-.if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "hppa"
+.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "powerpc"
 LDFLAGS+=	-latomic
 WANTLIB+=	atomic
 .endif

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.26 2019/05/26 22:28:40 jca Exp $
+@comment $OpenBSD: PLIST-server,v 1.27 2019/06/27 21:15:19 sthen Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -356,6 +356,7 @@ include/mysql/server/private/sql_truncate.h
 include/mysql/server/private/sql_tvc.h
 include/mysql/server/private/sql_type.h
 include/mysql/server/private/sql_type_int.h
+include/mysql/server/private/sql_type_real.h
 include/mysql/server/private/sql_udf.h
 include/mysql/server/private/sql_union.h
 include/mysql/server/private/sql_update.h
