@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/26 12:09:53 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2019/06/27 07:17:09 espie Exp $
 
 COMMENT =	crop tool for xwallpaper(1)
 CATEGORIES = 	graphics
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
 
 GH_PROJECT = 	aspect-crop
-GH_TAGNAME = 	1.5
+GH_TAGNAME = 	1.6
 GH_ACCOUNT = 	marcespie
 
 MODULES = x11/qt5
