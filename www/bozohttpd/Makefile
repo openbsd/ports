@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2018/12/30 13:26:59 benoit Exp $
+# $OpenBSD: Makefile,v 1.25 2019/06/27 07:21:51 benoit Exp $
 
 COMMENT =	bozotic HTTP server
 
-DISTNAME =	bozohttpd-20181215
+DISTNAME =	bozohttpd-20190228
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.eterna.com.au/bozohttpd/
@@ -10,7 +10,7 @@ HOMEPAGE =	http://www.eterna.com.au/bozohttpd/
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto m ssl
 
