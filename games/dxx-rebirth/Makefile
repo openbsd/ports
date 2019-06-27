@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/01/06 21:26:03 thfr Exp $
+# $OpenBSD: Makefile,v 1.5 2019/06/27 15:48:59 sthen Exp $
+
+.for i in aarch64 amd64 arm i386
+BROKEN-$i =	needs update following clang update in base
+.endfor
 
 V =		0.60
 COMMENT =	source port of Descent, a 6-degrees-of-freedom shooter
