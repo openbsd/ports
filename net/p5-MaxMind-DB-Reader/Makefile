@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/19 09:05:32 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/06/27 18:54:45 fcambus Exp $
 
 COMMENT =	read MaxMind DB files and look up IP addresses
 
-DISTNAME =	MaxMind-DB-Reader-1.000013
+DISTNAME =	MaxMind-DB-Reader-1.000014
 
 CATEGORIES =	net
 
