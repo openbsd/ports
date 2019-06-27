@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/02/12 06:33:49 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/06/27 15:59:57 kmos Exp $
 lib/python${MODPY_VERSION}/site-packages/progress/
 lib/python${MODPY_VERSION}/site-packages/progress-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/progress-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -12,7 +12,5 @@ lib/python${MODPY_VERSION}/site-packages/progress/bar.py
 lib/python${MODPY_VERSION}/site-packages/progress/${MODPY_PYCACHE}bar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/progress/counter.py
 lib/python${MODPY_VERSION}/site-packages/progress/${MODPY_PYCACHE}counter.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/progress/helpers.py
-lib/python${MODPY_VERSION}/site-packages/progress/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/progress/spinner.py
 lib/python${MODPY_VERSION}/site-packages/progress/${MODPY_PYCACHE}spinner.${MODPY_PYC_MAGIC_TAG}pyc
