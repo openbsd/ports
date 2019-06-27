@@ -1,4 +1,4 @@
-The Open MPI Project is an open source MPI-2 implementation that is
+The Open MPI Project is an open source MPI-3.1 implementation that is
 developed and maintained by a consortium of academic, research, and
 industry partners. Open MPI is therefore able to combine the expertise,
 technologies, and resources from all across the High Performance
@@ -7,19 +7,19 @@ Open MPI offers advantages for system and software vendors, application
 developers and computer science researchers.
 
 Features implemented or in short-term development for Open MPI:
-- Full MPI-2 standards conformance 
-- Thread safety and concurrency 
-- Dynamic process spawning 
-- Network and process fault tolerance 
-- Support network heterogeneity 
-- Single library supports all networks 
-- Run-time instrumentation 
+- Full MPI-3.1 standards conformance
+- Thread safety and concurrency
+- Dynamic process spawning
+- Network and process fault tolerance
+- Support network heterogeneity
+- Single library supports all networks
+- Run-time instrumentation
 - Many job schedulers supported
-- Many OS's supported (32 and 64 bit) 
-- Production quality software 
-- High performance on all platforms 
-- Portable and maintainable 
-- Tunable by installers and end-users 
-- Component-based design, documented APIs 
-- Active, responsive mailing list 
+- Many OS's supported (32 and 64 bit)
+- Production quality software
+- High performance on all platforms
+- Portable and maintainable
+- Tunable by installers and end-users
+- Component-based design, documented APIs
+- Active, responsive mailing list
 - Open source license based on the BSD license

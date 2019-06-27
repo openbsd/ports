@@ -1,243 +1,452 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/03/27 15:31:24 naddy Exp $
-@conflict lam-*
+@comment $OpenBSD: PLIST,v 1.5 2019/06/27 13:52:00 jca Exp $
+bin/aggregate_profile.pl
 bin/mpiCC
-bin/mpiCC-vt
 bin/mpic++
-bin/mpic++-vt
 bin/mpicc
-bin/mpicc-vt
 bin/mpicxx
-bin/mpicxx-vt
 bin/mpiexec
 bin/mpif77
-bin/mpif77-vt
 bin/mpif90
-bin/mpif90-vt
+bin/mpifort
 bin/mpirun
-bin/ompi-checkpoint
 bin/ompi-clean
-bin/ompi-iof
-bin/ompi-ps
-bin/ompi-restart
-@bin bin/ompi-server
+bin/ompi-server
 @bin bin/ompi_info
 @bin bin/opal_wrapper
-@bin bin/opari
 @bin bin/orte-clean
-@bin bin/orte-iof
-@bin bin/orte-ps
+@bin bin/orte-info
+@bin bin/orte-server
+bin/ortecc
 @bin bin/orted
 @bin bin/orterun
-@bin bin/otfaux
-@bin bin/otfcompress
-@bin bin/otfconfig
-bin/otfdecompress
-@bin bin/otfdump
-@bin bin/otfinfompi
-@bin bin/otfmerge
-@bin bin/vtcc
-@bin bin/vtcxx
-@bin bin/vtf77
-@bin bin/vtf90
-@bin bin/vtfilter
-@bin bin/vtunify
+bin/profile2mat.pl
+include/mpi-ext.h
 include/mpi.h
-include/mpif-common.h
+include/mpi_portable_platform.h
+include/mpif-c-constants-decl.h
 include/mpif-config.h
-include/mpif-mpi-io.h
+include/mpif-constants.h
+include/mpif-ext.h
+include/mpif-externals.h
+include/mpif-handles.h
+include/mpif-io-constants.h
+include/mpif-io-handles.h
+include/mpif-sentinels.h
+include/mpif-sizeof.h
 include/mpif.h
 include/openmpi/
-include/openmpi/ompi/
-include/openmpi/ompi/mpi/
-include/openmpi/ompi/mpi/cxx/
-include/openmpi/ompi/mpi/cxx/comm.h
-include/openmpi/ompi/mpi/cxx/comm_inln.h
-include/openmpi/ompi/mpi/cxx/constants.h
-include/openmpi/ompi/mpi/cxx/datatype.h
-include/openmpi/ompi/mpi/cxx/datatype_inln.h
-include/openmpi/ompi/mpi/cxx/errhandler.h
-include/openmpi/ompi/mpi/cxx/errhandler_inln.h
-include/openmpi/ompi/mpi/cxx/exception.h
-include/openmpi/ompi/mpi/cxx/file.h
-include/openmpi/ompi/mpi/cxx/file_inln.h
-include/openmpi/ompi/mpi/cxx/functions.h
-include/openmpi/ompi/mpi/cxx/functions_inln.h
-include/openmpi/ompi/mpi/cxx/group.h
-include/openmpi/ompi/mpi/cxx/group_inln.h
-include/openmpi/ompi/mpi/cxx/info.h
-include/openmpi/ompi/mpi/cxx/info_inln.h
-include/openmpi/ompi/mpi/cxx/intercomm.h
-include/openmpi/ompi/mpi/cxx/intercomm_inln.h
-include/openmpi/ompi/mpi/cxx/intracomm.h
-include/openmpi/ompi/mpi/cxx/intracomm_inln.h
-include/openmpi/ompi/mpi/cxx/mpicxx.h
-include/openmpi/ompi/mpi/cxx/op.h
-include/openmpi/ompi/mpi/cxx/op_inln.h
-include/openmpi/ompi/mpi/cxx/request.h
-include/openmpi/ompi/mpi/cxx/request_inln.h
-include/openmpi/ompi/mpi/cxx/status.h
-include/openmpi/ompi/mpi/cxx/status_inln.h
-include/openmpi/ompi/mpi/cxx/topology.h
-include/openmpi/ompi/mpi/cxx/topology_inln.h
-include/openmpi/ompi/mpi/cxx/win.h
-include/openmpi/ompi/mpi/cxx/win_inln.h
-include/vampirtrace/
-include/vampirtrace/OTF_CopyHandler.h
-include/vampirtrace/OTF_Definitions.h
-include/vampirtrace/OTF_File.h
-include/vampirtrace/OTF_FileManager.h
-include/vampirtrace/OTF_Filenames.h
-include/vampirtrace/OTF_HandlerArray.h
-include/vampirtrace/OTF_MasterControl.h
-include/vampirtrace/OTF_RBuffer.h
-include/vampirtrace/OTF_RStream.h
-include/vampirtrace/OTF_Reader.h
-include/vampirtrace/OTF_WBuffer.h
-include/vampirtrace/OTF_WStream.h
-include/vampirtrace/OTF_Writer.h
-include/vampirtrace/OTF_inttypes.h
-include/vampirtrace/OTF_inttypes_unix.h
-include/vampirtrace/opari_omp.h
-include/vampirtrace/otf.h
-include/vampirtrace/pomp_lib.h
-include/vampirtrace/vt_user.h
-include/vampirtrace/vt_user.inc
-include/vampirtrace/vt_user_comment.h
-include/vampirtrace/vt_user_comment.inc
-include/vampirtrace/vt_user_count.h
-include/vampirtrace/vt_user_count.inc
+include/openmpi/mpiext/
+include/openmpi/mpiext/mpiext_affinity_c.h
+include/openmpi/mpiext/mpiext_cuda_c.h
+include/openmpi/mpiext/mpiext_pcollreq_c.h
+include/openmpi/mpiext/mpiext_pcollreq_mpifh.h
+include/openmpi/mpiext/pmpiext_pcollreq_c.h
+lib/libmca_common_dstore.a
+lib/libmca_common_dstore.la
+@lib lib/libmca_common_dstore.so.${LIBmca_common_dstore_VERSION}
+lib/libmca_common_monitoring.a
+lib/libmca_common_monitoring.la
+@lib lib/libmca_common_monitoring.so.${LIBmca_common_monitoring_VERSION}
+lib/libmca_common_ompio.a
+lib/libmca_common_ompio.la
+@lib lib/libmca_common_ompio.so.${LIBmca_common_ompio_VERSION}
+lib/libmca_common_sm.a
 lib/libmca_common_sm.la
 @lib lib/libmca_common_sm.so.${LIBmca_common_sm_VERSION}
+lib/libmpi.a
 lib/libmpi.la
 @lib lib/libmpi.so.${LIBmpi_VERSION}
-lib/libmpi_cxx.la
-@lib lib/libmpi_cxx.so.${LIBmpi_cxx_VERSION}
-lib/libmpi_f77.la
-@lib lib/libmpi_f77.so.${LIBmpi_f77_VERSION}
+lib/libmpi_mpifh.a
+lib/libmpi_mpifh.la
+@lib lib/libmpi_mpifh.so.${LIBmpi_mpifh_VERSION}
+lib/libmpi_usempi_ignore_tkr.a
+lib/libmpi_usempi_ignore_tkr.la
+@lib lib/libmpi_usempi_ignore_tkr.so.${LIBmpi_usempi_ignore_tkr_VERSION}
+lib/libmpi_usempif08.a
+lib/libmpi_usempif08.la
+@lib lib/libmpi_usempif08.so.${LIBmpi_usempif08_VERSION}
+lib/libompitrace.a
+lib/libompitrace.la
+@lib lib/libompitrace.so.${LIBompitrace_VERSION}
+lib/libopen-pal.a
 lib/libopen-pal.la
 @lib lib/libopen-pal.so.${LIBopen-pal_VERSION}
+lib/libopen-rte.a
 lib/libopen-rte.la
 @lib lib/libopen-rte.so.${LIBopen-rte_VERSION}
-lib/libotf.a
-lib/libotf.la
-lib/libvt.a
-lib/libvt.fmpi.a
-lib/libvt.mpi.a
+lib/mpi.mod
+lib/mpi_ext.mod
+lib/mpi_f08.mod
+lib/mpi_f08_callbacks.mod
+lib/mpi_f08_ext.mod
+lib/mpi_f08_interfaces.mod
+lib/mpi_f08_interfaces_callbacks.mod
+lib/mpi_f08_types.mod
+lib/ompi_monitoring_prof.a
+lib/ompi_monitoring_prof.la
+lib/ompi_monitoring_prof.so
 lib/openmpi/
+lib/openmpi/libompi_dbg_msgq.a
 lib/openmpi/libompi_dbg_msgq.la
 lib/openmpi/libompi_dbg_msgq.so
+lib/openmpi/mca_allocator_basic.a
 lib/openmpi/mca_allocator_basic.la
 lib/openmpi/mca_allocator_basic.so
+lib/openmpi/mca_allocator_bucket.a
 lib/openmpi/mca_allocator_bucket.la
 lib/openmpi/mca_allocator_bucket.so
+lib/openmpi/mca_bml_r2.a
 lib/openmpi/mca_bml_r2.la
 lib/openmpi/mca_bml_r2.so
+lib/openmpi/mca_btl_self.a
 lib/openmpi/mca_btl_self.la
 lib/openmpi/mca_btl_self.so
+lib/openmpi/mca_btl_sm.a
 lib/openmpi/mca_btl_sm.la
 lib/openmpi/mca_btl_sm.so
+lib/openmpi/mca_btl_tcp.a
 lib/openmpi/mca_btl_tcp.la
 lib/openmpi/mca_btl_tcp.so
-lib/openmpi/mca_carto_auto_detect.la
-lib/openmpi/mca_carto_auto_detect.so
-lib/openmpi/mca_carto_file.la
-lib/openmpi/mca_carto_file.so
+lib/openmpi/mca_btl_vader.a
+lib/openmpi/mca_btl_vader.la
+lib/openmpi/mca_btl_vader.so
+lib/openmpi/mca_coll_basic.a
 lib/openmpi/mca_coll_basic.la
 lib/openmpi/mca_coll_basic.so
-lib/openmpi/mca_coll_hierarch.la
-lib/openmpi/mca_coll_hierarch.so
+lib/openmpi/mca_coll_inter.a
 lib/openmpi/mca_coll_inter.la
 lib/openmpi/mca_coll_inter.so
+lib/openmpi/mca_coll_libnbc.a
+lib/openmpi/mca_coll_libnbc.la
+lib/openmpi/mca_coll_libnbc.so
+lib/openmpi/mca_coll_monitoring.a
+lib/openmpi/mca_coll_monitoring.la
+lib/openmpi/mca_coll_monitoring.so
+lib/openmpi/mca_coll_self.a
 lib/openmpi/mca_coll_self.la
 lib/openmpi/mca_coll_self.so
+lib/openmpi/mca_coll_sm.a
 lib/openmpi/mca_coll_sm.la
 lib/openmpi/mca_coll_sm.so
+lib/openmpi/mca_coll_sync.a
 lib/openmpi/mca_coll_sync.la
 lib/openmpi/mca_coll_sync.so
+lib/openmpi/mca_coll_tuned.a
 lib/openmpi/mca_coll_tuned.la
 lib/openmpi/mca_coll_tuned.so
+lib/openmpi/mca_compress_bzip.a
+lib/openmpi/mca_compress_bzip.la
+lib/openmpi/mca_compress_bzip.so
+lib/openmpi/mca_compress_gzip.a
+lib/openmpi/mca_compress_gzip.la
+lib/openmpi/mca_compress_gzip.so
+lib/openmpi/mca_crs_none.a
 lib/openmpi/mca_crs_none.la
 lib/openmpi/mca_crs_none.so
-lib/openmpi/mca_dpm_orte.la
-lib/openmpi/mca_dpm_orte.so
-lib/openmpi/mca_errmgr_default.la
-lib/openmpi/mca_errmgr_default.so
+lib/openmpi/mca_dfs_app.a
+lib/openmpi/mca_dfs_app.la
+lib/openmpi/mca_dfs_app.so
+lib/openmpi/mca_dfs_orted.a
+lib/openmpi/mca_dfs_orted.la
+lib/openmpi/mca_dfs_orted.so
+lib/openmpi/mca_dfs_test.a
+lib/openmpi/mca_dfs_test.la
+lib/openmpi/mca_dfs_test.so
+lib/openmpi/mca_errmgr_default_app.a
+lib/openmpi/mca_errmgr_default_app.la
+lib/openmpi/mca_errmgr_default_app.so
+lib/openmpi/mca_errmgr_default_hnp.a
+lib/openmpi/mca_errmgr_default_hnp.la
+lib/openmpi/mca_errmgr_default_hnp.so
+lib/openmpi/mca_errmgr_default_orted.a
+lib/openmpi/mca_errmgr_default_orted.la
+lib/openmpi/mca_errmgr_default_orted.so
+lib/openmpi/mca_errmgr_default_tool.a
+lib/openmpi/mca_errmgr_default_tool.la
+lib/openmpi/mca_errmgr_default_tool.so
+lib/openmpi/mca_ess_env.a
 lib/openmpi/mca_ess_env.la
 lib/openmpi/mca_ess_env.so
+lib/openmpi/mca_ess_hnp.a
 lib/openmpi/mca_ess_hnp.la
 lib/openmpi/mca_ess_hnp.so
+lib/openmpi/mca_ess_pmi.a
+lib/openmpi/mca_ess_pmi.la
+lib/openmpi/mca_ess_pmi.so
+lib/openmpi/mca_ess_singleton.a
 lib/openmpi/mca_ess_singleton.la
 lib/openmpi/mca_ess_singleton.so
+lib/openmpi/mca_ess_tool.a
 lib/openmpi/mca_ess_tool.la
 lib/openmpi/mca_ess_tool.so
-lib/openmpi/mca_filem_rsh.la
-lib/openmpi/mca_filem_rsh.so
-lib/openmpi/mca_grpcomm_bad.la
-lib/openmpi/mca_grpcomm_bad.so
-lib/openmpi/mca_grpcomm_basic.la
-lib/openmpi/mca_grpcomm_basic.so
-lib/openmpi/mca_io_romio.la
-lib/openmpi/mca_io_romio.so
+lib/openmpi/mca_fcoll_dynamic.a
+lib/openmpi/mca_fcoll_dynamic.la
+lib/openmpi/mca_fcoll_dynamic.so
+lib/openmpi/mca_fcoll_dynamic_gen2.a
+lib/openmpi/mca_fcoll_dynamic_gen2.la
+lib/openmpi/mca_fcoll_dynamic_gen2.so
+lib/openmpi/mca_fcoll_individual.a
+lib/openmpi/mca_fcoll_individual.la
+lib/openmpi/mca_fcoll_individual.so
+lib/openmpi/mca_fcoll_two_phase.a
+lib/openmpi/mca_fcoll_two_phase.la
+lib/openmpi/mca_fcoll_two_phase.so
+lib/openmpi/mca_fcoll_vulcan.a
+lib/openmpi/mca_fcoll_vulcan.la
+lib/openmpi/mca_fcoll_vulcan.so
+lib/openmpi/mca_filem_raw.a
+lib/openmpi/mca_filem_raw.la
+lib/openmpi/mca_filem_raw.so
+lib/openmpi/mca_fs_ufs.a
+lib/openmpi/mca_fs_ufs.la
+lib/openmpi/mca_fs_ufs.so
+lib/openmpi/mca_grpcomm_direct.a
+lib/openmpi/mca_grpcomm_direct.la
+lib/openmpi/mca_grpcomm_direct.so
+lib/openmpi/mca_io_ompio.a
+lib/openmpi/mca_io_ompio.la
+lib/openmpi/mca_io_ompio.so
+lib/openmpi/mca_io_romio321.a
+lib/openmpi/mca_io_romio321.la
+lib/openmpi/mca_io_romio321.so
+lib/openmpi/mca_iof_hnp.a
 lib/openmpi/mca_iof_hnp.la
 lib/openmpi/mca_iof_hnp.so
+lib/openmpi/mca_iof_orted.a
 lib/openmpi/mca_iof_orted.la
 lib/openmpi/mca_iof_orted.so
+lib/openmpi/mca_iof_tool.a
 lib/openmpi/mca_iof_tool.la
 lib/openmpi/mca_iof_tool.so
-lib/openmpi/mca_maffinity_first_use.la
-lib/openmpi/mca_maffinity_first_use.so
-lib/openmpi/mca_mpool_fake.la
-lib/openmpi/mca_mpool_fake.so
-lib/openmpi/mca_mpool_rdma.la
-lib/openmpi/mca_mpool_rdma.so
-lib/openmpi/mca_mpool_sm.la
-lib/openmpi/mca_mpool_sm.so
+lib/openmpi/mca_mpool_hugepage.a
+lib/openmpi/mca_mpool_hugepage.la
+lib/openmpi/mca_mpool_hugepage.so
+lib/openmpi/mca_notifier_syslog.a
 lib/openmpi/mca_notifier_syslog.la
 lib/openmpi/mca_notifier_syslog.so
+lib/openmpi/mca_odls_default.a
 lib/openmpi/mca_odls_default.la
 lib/openmpi/mca_odls_default.so
+lib/openmpi/mca_odls_pspawn.a
+lib/openmpi/mca_odls_pspawn.la
+lib/openmpi/mca_odls_pspawn.so
+lib/openmpi/mca_oob_tcp.a
 lib/openmpi/mca_oob_tcp.la
 lib/openmpi/mca_oob_tcp.so
+lib/openmpi/mca_osc_monitoring.a
+lib/openmpi/mca_osc_monitoring.la
+lib/openmpi/mca_osc_monitoring.so
+lib/openmpi/mca_osc_pt2pt.a
 lib/openmpi/mca_osc_pt2pt.la
 lib/openmpi/mca_osc_pt2pt.so
+lib/openmpi/mca_osc_rdma.a
 lib/openmpi/mca_osc_rdma.la
 lib/openmpi/mca_osc_rdma.so
-lib/openmpi/mca_paffinity_posix.la
-lib/openmpi/mca_paffinity_posix.so
+lib/openmpi/mca_osc_sm.a
+lib/openmpi/mca_osc_sm.la
+lib/openmpi/mca_osc_sm.so
+@comment XXX arch-specific
+@comment lib/openmpi/mca_patcher_overwrite.a
+@comment lib/openmpi/mca_patcher_overwrite.la
+@comment lib/openmpi/mca_patcher_overwrite.so
+lib/openmpi/mca_plm_isolated.a
+lib/openmpi/mca_plm_isolated.la
+lib/openmpi/mca_plm_isolated.so
+lib/openmpi/mca_plm_rsh.a
 lib/openmpi/mca_plm_rsh.la
 lib/openmpi/mca_plm_rsh.so
+lib/openmpi/mca_pmix_flux.a
+lib/openmpi/mca_pmix_flux.la
+lib/openmpi/mca_pmix_flux.so
+lib/openmpi/mca_pmix_isolated.a
+lib/openmpi/mca_pmix_isolated.la
+lib/openmpi/mca_pmix_isolated.so
+lib/openmpi/mca_pmix_pmix3x.a
+lib/openmpi/mca_pmix_pmix3x.la
+lib/openmpi/mca_pmix_pmix3x.so
+lib/openmpi/mca_pml_cm.a
 lib/openmpi/mca_pml_cm.la
 lib/openmpi/mca_pml_cm.so
-lib/openmpi/mca_pml_csum.la
-lib/openmpi/mca_pml_csum.so
+lib/openmpi/mca_pml_monitoring.a
+lib/openmpi/mca_pml_monitoring.la
+lib/openmpi/mca_pml_monitoring.so
+lib/openmpi/mca_pml_ob1.a
 lib/openmpi/mca_pml_ob1.la
 lib/openmpi/mca_pml_ob1.so
-lib/openmpi/mca_pml_v.la
-lib/openmpi/mca_pml_v.so
-lib/openmpi/mca_pubsub_orte.la
-lib/openmpi/mca_pubsub_orte.so
-lib/openmpi/mca_rcache_vma.la
-lib/openmpi/mca_rcache_vma.so
-lib/openmpi/mca_rmaps_load_balance.la
-lib/openmpi/mca_rmaps_load_balance.so
+lib/openmpi/mca_pstat_test.a
+lib/openmpi/mca_pstat_test.la
+lib/openmpi/mca_pstat_test.so
+lib/openmpi/mca_ras_simulator.a
+lib/openmpi/mca_ras_simulator.la
+lib/openmpi/mca_ras_simulator.so
+lib/openmpi/mca_rcache_grdma.a
+lib/openmpi/mca_rcache_grdma.la
+lib/openmpi/mca_rcache_grdma.so
+lib/openmpi/mca_reachable_weighted.a
+lib/openmpi/mca_reachable_weighted.la
+lib/openmpi/mca_reachable_weighted.so
+lib/openmpi/mca_regx_fwd.a
+lib/openmpi/mca_regx_fwd.la
+lib/openmpi/mca_regx_fwd.so
+lib/openmpi/mca_regx_reverse.a
+lib/openmpi/mca_regx_reverse.la
+lib/openmpi/mca_regx_reverse.so
+lib/openmpi/mca_rmaps_mindist.a
+lib/openmpi/mca_rmaps_mindist.la
+lib/openmpi/mca_rmaps_mindist.so
+lib/openmpi/mca_rmaps_ppr.a
+lib/openmpi/mca_rmaps_ppr.la
+lib/openmpi/mca_rmaps_ppr.so
+lib/openmpi/mca_rmaps_rank_file.a
 lib/openmpi/mca_rmaps_rank_file.la
 lib/openmpi/mca_rmaps_rank_file.so
+lib/openmpi/mca_rmaps_resilient.a
+lib/openmpi/mca_rmaps_resilient.la
+lib/openmpi/mca_rmaps_resilient.so
+lib/openmpi/mca_rmaps_round_robin.a
 lib/openmpi/mca_rmaps_round_robin.la
 lib/openmpi/mca_rmaps_round_robin.so
+lib/openmpi/mca_rmaps_seq.a
 lib/openmpi/mca_rmaps_seq.la
 lib/openmpi/mca_rmaps_seq.so
+lib/openmpi/mca_rml_oob.a
 lib/openmpi/mca_rml_oob.la
 lib/openmpi/mca_rml_oob.so
+lib/openmpi/mca_routed_binomial.a
 lib/openmpi/mca_routed_binomial.la
 lib/openmpi/mca_routed_binomial.so
+lib/openmpi/mca_routed_debruijn.a
+lib/openmpi/mca_routed_debruijn.la
+lib/openmpi/mca_routed_debruijn.so
+lib/openmpi/mca_routed_direct.a
 lib/openmpi/mca_routed_direct.la
 lib/openmpi/mca_routed_direct.so
-lib/openmpi/mca_routed_linear.la
-lib/openmpi/mca_routed_linear.so
-lib/openmpi/mca_topo_unity.la
-lib/openmpi/mca_topo_unity.so
+lib/openmpi/mca_routed_radix.a
+lib/openmpi/mca_routed_radix.la
+lib/openmpi/mca_routed_radix.so
+lib/openmpi/mca_rtc_hwloc.a
+lib/openmpi/mca_rtc_hwloc.la
+lib/openmpi/mca_rtc_hwloc.so
+lib/openmpi/mca_schizo_flux.a
+lib/openmpi/mca_schizo_flux.la
+lib/openmpi/mca_schizo_flux.so
+lib/openmpi/mca_schizo_ompi.a
+lib/openmpi/mca_schizo_ompi.la
+lib/openmpi/mca_schizo_ompi.so
+lib/openmpi/mca_schizo_orte.a
+lib/openmpi/mca_schizo_orte.la
+lib/openmpi/mca_schizo_orte.so
+lib/openmpi/mca_sharedfp_individual.a
+lib/openmpi/mca_sharedfp_individual.la
+lib/openmpi/mca_sharedfp_individual.so
+lib/openmpi/mca_sharedfp_lockedfile.a
+lib/openmpi/mca_sharedfp_lockedfile.la
+lib/openmpi/mca_sharedfp_lockedfile.so
+lib/openmpi/mca_sharedfp_sm.a
+lib/openmpi/mca_sharedfp_sm.la
+lib/openmpi/mca_sharedfp_sm.so
+lib/openmpi/mca_shmem_mmap.a
+lib/openmpi/mca_shmem_mmap.la
+lib/openmpi/mca_shmem_mmap.so
+lib/openmpi/mca_shmem_posix.a
+lib/openmpi/mca_shmem_posix.la
+lib/openmpi/mca_shmem_posix.so
+lib/openmpi/mca_shmem_sysv.a
+lib/openmpi/mca_shmem_sysv.la
+lib/openmpi/mca_shmem_sysv.so
+lib/openmpi/mca_state_app.a
+lib/openmpi/mca_state_app.la
+lib/openmpi/mca_state_app.so
+lib/openmpi/mca_state_hnp.a
+lib/openmpi/mca_state_hnp.la
+lib/openmpi/mca_state_hnp.so
+lib/openmpi/mca_state_novm.a
+lib/openmpi/mca_state_novm.la
+lib/openmpi/mca_state_novm.so
+lib/openmpi/mca_state_orted.a
+lib/openmpi/mca_state_orted.la
+lib/openmpi/mca_state_orted.so
+lib/openmpi/mca_state_tool.a
+lib/openmpi/mca_state_tool.la
+lib/openmpi/mca_state_tool.so
+lib/openmpi/mca_topo_basic.a
+lib/openmpi/mca_topo_basic.la
+lib/openmpi/mca_topo_basic.so
+lib/openmpi/mca_topo_treematch.a
+lib/openmpi/mca_topo_treematch.la
+lib/openmpi/mca_topo_treematch.so
+lib/openmpi/mca_vprotocol_pessimist.a
 lib/openmpi/mca_vprotocol_pessimist.la
 lib/openmpi/mca_vprotocol_pessimist.so
+lib/pkgconfig/ompi-c.pc
+lib/pkgconfig/ompi-cxx.pc
+lib/pkgconfig/ompi-f77.pc
+lib/pkgconfig/ompi-f90.pc
+lib/pkgconfig/ompi-fort.pc
+lib/pkgconfig/ompi.pc
+lib/pkgconfig/orte.pc
+lib/pmix/
+lib/pmix/mca_bfrops_v12.a
+lib/pmix/mca_bfrops_v12.la
+lib/pmix/mca_bfrops_v12.so
+lib/pmix/mca_bfrops_v20.a
+lib/pmix/mca_bfrops_v20.la
+lib/pmix/mca_bfrops_v20.so
+lib/pmix/mca_bfrops_v21.a
+lib/pmix/mca_bfrops_v21.la
+lib/pmix/mca_bfrops_v21.so
+lib/pmix/mca_bfrops_v3.a
+lib/pmix/mca_bfrops_v3.la
+lib/pmix/mca_bfrops_v3.so
+lib/pmix/mca_gds_ds12.a
+lib/pmix/mca_gds_ds12.la
+lib/pmix/mca_gds_ds12.so
+lib/pmix/mca_gds_ds21.a
+lib/pmix/mca_gds_ds21.la
+lib/pmix/mca_gds_ds21.so
+lib/pmix/mca_gds_hash.a
+lib/pmix/mca_gds_hash.la
+lib/pmix/mca_gds_hash.so
+lib/pmix/mca_plog_default.a
+lib/pmix/mca_plog_default.la
+lib/pmix/mca_plog_default.so
+lib/pmix/mca_plog_stdfd.a
+lib/pmix/mca_plog_stdfd.la
+lib/pmix/mca_plog_stdfd.so
+lib/pmix/mca_plog_syslog.a
+lib/pmix/mca_plog_syslog.la
+lib/pmix/mca_plog_syslog.so
+lib/pmix/mca_pnet_tcp.a
+lib/pmix/mca_pnet_tcp.la
+lib/pmix/mca_pnet_tcp.so
+lib/pmix/mca_pnet_test.a
+lib/pmix/mca_pnet_test.la
+lib/pmix/mca_pnet_test.so
+lib/pmix/mca_preg_native.a
+lib/pmix/mca_preg_native.la
+lib/pmix/mca_preg_native.so
+lib/pmix/mca_psec_native.a
+lib/pmix/mca_psec_native.la
+lib/pmix/mca_psec_native.so
+lib/pmix/mca_psec_none.a
+lib/pmix/mca_psec_none.la
+lib/pmix/mca_psec_none.so
+lib/pmix/mca_psensor_file.a
+lib/pmix/mca_psensor_file.la
+lib/pmix/mca_psensor_file.so
+lib/pmix/mca_psensor_heartbeat.a
+lib/pmix/mca_psensor_heartbeat.la
+lib/pmix/mca_psensor_heartbeat.so
+lib/pmix/mca_pshmem_mmap.a
+lib/pmix/mca_pshmem_mmap.la
+lib/pmix/mca_pshmem_mmap.so
+lib/pmix/mca_ptl_tcp.a
+lib/pmix/mca_ptl_tcp.la
+lib/pmix/mca_ptl_tcp.so
+lib/pmix/mca_ptl_usock.a
+lib/pmix/mca_ptl_usock.la
+lib/pmix/mca_ptl_usock.so
+lib/pmpi_f08_interfaces.mod
 @man man/man1/mpiCC.1
 @man man/man1/mpic++.1
 @man man/man1/mpicc.1
@@ -245,27 +454,49 @@ lib/openmpi/mca_vprotocol_pessimist.so
 @man man/man1/mpiexec.1
 @man man/man1/mpif77.1
 @man man/man1/mpif90.1
+@man man/man1/mpifort.1
 @man man/man1/mpirun.1
-@man man/man1/ompi-checkpoint.1
 @man man/man1/ompi-clean.1
-@man man/man1/ompi-iof.1
-@man man/man1/ompi-ps.1
-@man man/man1/ompi-restart.1
 @man man/man1/ompi-server.1
 @man man/man1/ompi_info.1
 @man man/man1/opal_wrapper.1
 @man man/man1/orte-clean.1
-@man man/man1/orte-iof.1
-@man man/man1/orte-ps.1
+@man man/man1/orte-info.1
+@man man/man1/orte-server.1
 @man man/man1/orted.1
 @man man/man1/orterun.1
 @man man/man3/MPI.3
+@man man/man3/MPIX_Allgather_init.3
+@man man/man3/MPIX_Allgatherv_init.3
+@man man/man3/MPIX_Allreduce_init.3
+@man man/man3/MPIX_Alltoall_init.3
+@man man/man3/MPIX_Alltoallv_init.3
+@man man/man3/MPIX_Alltoallw_init.3
+@man man/man3/MPIX_Barrier_init.3
+@man man/man3/MPIX_Bcast_init.3
+@man man/man3/MPIX_Exscan_init.3
+@man man/man3/MPIX_Gather_init.3
+@man man/man3/MPIX_Gatherv_init.3
+@man man/man3/MPIX_Neighbor_allgather_init.3
+@man man/man3/MPIX_Neighbor_allgatherv_init.3
+@man man/man3/MPIX_Neighbor_alltoall_init.3
+@man man/man3/MPIX_Neighbor_alltoallv_init.3
+@man man/man3/MPIX_Neighbor_alltoallw_init.3
+@man man/man3/MPIX_Query_cuda_support.3
+@man man/man3/MPIX_Reduce_init.3
+@man man/man3/MPIX_Reduce_scatter_block_init.3
+@man man/man3/MPIX_Reduce_scatter_init.3
+@man man/man3/MPIX_Scan_init.3
+@man man/man3/MPIX_Scatter_init.3
+@man man/man3/MPIX_Scatterv_init.3
 @man man/man3/MPI_Abort.3
 @man man/man3/MPI_Accumulate.3
 @man man/man3/MPI_Add_error_class.3
 @man man/man3/MPI_Add_error_code.3
 @man man/man3/MPI_Add_error_string.3
 @man man/man3/MPI_Address.3
+@man man/man3/MPI_Aint_add.3
+@man man/man3/MPI_Aint_diff.3
 @man man/man3/MPI_Allgather.3
 @man man/man3/MPI_Allgatherv.3
 @man man/man3/MPI_Alloc_mem.3
@@ -299,31 +530,42 @@ lib/openmpi/mca_vprotocol_pessimist.so
 @man man/man3/MPI_Comm_connect.3
 @man man/man3/MPI_Comm_create.3
 @man man/man3/MPI_Comm_create_errhandler.3
+@man man/man3/MPI_Comm_create_group.3
 @man man/man3/MPI_Comm_create_keyval.3
 @man man/man3/MPI_Comm_delete_attr.3
 @man man/man3/MPI_Comm_disconnect.3
 @man man/man3/MPI_Comm_dup.3
+@man man/man3/MPI_Comm_dup_with_info.3
 @man man/man3/MPI_Comm_f2c.3
 @man man/man3/MPI_Comm_free.3
 @man man/man3/MPI_Comm_free_keyval.3
 @man man/man3/MPI_Comm_get_attr.3
 @man man/man3/MPI_Comm_get_errhandler.3
+@man man/man3/MPI_Comm_get_info.3
 @man man/man3/MPI_Comm_get_name.3
 @man man/man3/MPI_Comm_get_parent.3
 @man man/man3/MPI_Comm_group.3
+@man man/man3/MPI_Comm_idup.3
 @man man/man3/MPI_Comm_join.3
 @man man/man3/MPI_Comm_rank.3
 @man man/man3/MPI_Comm_remote_group.3
 @man man/man3/MPI_Comm_remote_size.3
 @man man/man3/MPI_Comm_set_attr.3
 @man man/man3/MPI_Comm_set_errhandler.3
+@man man/man3/MPI_Comm_set_info.3
 @man man/man3/MPI_Comm_set_name.3
 @man man/man3/MPI_Comm_size.3
 @man man/man3/MPI_Comm_spawn.3
 @man man/man3/MPI_Comm_spawn_multiple.3
 @man man/man3/MPI_Comm_split.3
+@man man/man3/MPI_Comm_split_type.3
 @man man/man3/MPI_Comm_test_inter.3
+@man man/man3/MPI_Compare_and_swap.3
 @man man/man3/MPI_Dims_create.3
+@man man/man3/MPI_Dist_graph_create.3
+@man man/man3/MPI_Dist_graph_create_adjacent.3
+@man man/man3/MPI_Dist_graph_neighbors.3
+@man man/man3/MPI_Dist_graph_neighbors_count.3
 @man man/man3/MPI_Errhandler_create.3
 @man man/man3/MPI_Errhandler_free.3
 @man man/man3/MPI_Errhandler_get.3
@@ -331,6 +573,7 @@ lib/openmpi/mca_vprotocol_pessimist.so
 @man man/man3/MPI_Error_class.3
 @man man/man3/MPI_Error_string.3
 @man man/man3/MPI_Exscan.3
+@man man/man3/MPI_Fetch_and_op.3
 @man man/man3/MPI_File_c2f.3
 @man man/man3/MPI_File_call_errhandler.3
 @man man/man3/MPI_File_close.3
@@ -349,10 +592,14 @@ lib/openmpi/mca_vprotocol_pessimist.so
 @man man/man3/MPI_File_get_type_extent.3
 @man man/man3/MPI_File_get_view.3
 @man man/man3/MPI_File_iread.3
+@man man/man3/MPI_File_iread_all.3
 @man man/man3/MPI_File_iread_at.3
+@man man/man3/MPI_File_iread_at_all.3
 @man man/man3/MPI_File_iread_shared.3
 @man man/man3/MPI_File_iwrite.3
+@man man/man3/MPI_File_iwrite_all.3
 @man man/man3/MPI_File_iwrite_at.3
+@man man/man3/MPI_File_iwrite_at_all.3
 @man man/man3/MPI_File_iwrite_shared.3
 @man man/man3/MPI_File_open.3
 @man man/man3/MPI_File_preallocate.3
@@ -394,9 +641,12 @@ lib/openmpi/mca_vprotocol_pessimist.so
 @man man/man3/MPI_Gather.3
 @man man/man3/MPI_Gatherv.3
 @man man/man3/MPI_Get.3
+@man man/man3/MPI_Get_accumulate.3
 @man man/man3/MPI_Get_address.3
 @man man/man3/MPI_Get_count.3
 @man man/man3/MPI_Get_elements.3
+@man man/man3/MPI_Get_elements_x.3
+@man man/man3/MPI_Get_library_version.3
 @man man/man3/MPI_Get_processor_name.3
 @man man/man3/MPI_Get_version.3
 @man man/man3/MPI_Graph_create.3
@@ -421,11 +671,30 @@ lib/openmpi/mca_vprotocol_pessimist.so
 @man man/man3/MPI_Group_size.3
 @man man/man3/MPI_Group_translate_ranks.3
 @man man/man3/MPI_Group_union.3
+@man man/man3/MPI_Iallgather.3
+@man man/man3/MPI_Iallgatherv.3
+@man man/man3/MPI_Iallreduce.3
+@man man/man3/MPI_Ialltoall.3
+@man man/man3/MPI_Ialltoallv.3
+@man man/man3/MPI_Ialltoallw.3
+@man man/man3/MPI_Ibarrier.3
+@man man/man3/MPI_Ibcast.3
 @man man/man3/MPI_Ibsend.3
+@man man/man3/MPI_Iexscan.3
+@man man/man3/MPI_Igather.3
+@man man/man3/MPI_Igatherv.3
+@man man/man3/MPI_Improbe.3
+@man man/man3/MPI_Imrecv.3
+@man man/man3/MPI_Ineighbor_allgather.3
+@man man/man3/MPI_Ineighbor_allgatherv.3
+@man man/man3/MPI_Ineighbor_alltoall.3
+@man man/man3/MPI_Ineighbor_alltoallv.3
+@man man/man3/MPI_Ineighbor_alltoallw.3
 @man man/man3/MPI_Info_c2f.3
 @man man/man3/MPI_Info_create.3
 @man man/man3/MPI_Info_delete.3
 @man man/man3/MPI_Info_dup.3
+@man man/man3/MPI_Info_env.3
 @man man/man3/MPI_Info_f2c.3
 @man man/man3/MPI_Info_free.3
 @man man/man3/MPI_Info_get.3
@@ -440,14 +709,30 @@ lib/openmpi/mca_vprotocol_pessimist.so
 @man man/man3/MPI_Intercomm_merge.3
 @man man/man3/MPI_Iprobe.3
 @man man/man3/MPI_Irecv.3
+@man man/man3/MPI_Ireduce.3
+@man man/man3/MPI_Ireduce_scatter.3
+@man man/man3/MPI_Ireduce_scatter_block.3
 @man man/man3/MPI_Irsend.3
 @man man/man3/MPI_Is_thread_main.3
+@man man/man3/MPI_Iscan.3
+@man man/man3/MPI_Iscatter.3
+@man man/man3/MPI_Iscatterv.3
 @man man/man3/MPI_Isend.3
 @man man/man3/MPI_Issend.3
 @man man/man3/MPI_Keyval_create.3
 @man man/man3/MPI_Keyval_free.3
 @man man/man3/MPI_Lookup_name.3
+@man man/man3/MPI_Message_c2f.3
+@man man/man3/MPI_Message_f2c.3
+@man man/man3/MPI_Mprobe.3
+@man man/man3/MPI_Mrecv.3
+@man man/man3/MPI_Neighbor_allgather.3
+@man man/man3/MPI_Neighbor_allgatherv.3
+@man man/man3/MPI_Neighbor_alltoall.3
+@man man/man3/MPI_Neighbor_alltoallv.3
+@man man/man3/MPI_Neighbor_alltoallw.3
 @man man/man3/MPI_Op_c2f.3
+@man man/man3/MPI_Op_commutative.3
 @man man/man3/MPI_Op_create.3
 @man man/man3/MPI_Op_f2c.3
 @man man/man3/MPI_Op_free.3
@@ -461,15 +746,21 @@ lib/openmpi/mca_vprotocol_pessimist.so
 @man man/man3/MPI_Publish_name.3
 @man man/man3/MPI_Put.3
 @man man/man3/MPI_Query_thread.3
+@man man/man3/MPI_Raccumulate.3
 @man man/man3/MPI_Recv.3
 @man man/man3/MPI_Recv_init.3
 @man man/man3/MPI_Reduce.3
+@man man/man3/MPI_Reduce_local.3
 @man man/man3/MPI_Reduce_scatter.3
+@man man/man3/MPI_Reduce_scatter_block.3
 @man man/man3/MPI_Register_datarep.3
 @man man/man3/MPI_Request_c2f.3
 @man man/man3/MPI_Request_f2c.3
 @man man/man3/MPI_Request_free.3
 @man man/man3/MPI_Request_get_status.3
+@man man/man3/MPI_Rget.3
+@man man/man3/MPI_Rget_accumulate.3
+@man man/man3/MPI_Rput.3
 @man man/man3/MPI_Rsend.3
 @man man/man3/MPI_Rsend_init.3
 @man man/man3/MPI_Scan.3
@@ -488,6 +779,35 @@ lib/openmpi/mca_vprotocol_pessimist.so
 @man man/man3/MPI_Status_f2c.3
 @man man/man3/MPI_Status_set_cancelled.3
 @man man/man3/MPI_Status_set_elements.3
+@man man/man3/MPI_Status_set_elements_x.3
+@man man/man3/MPI_T_category_changed.3
+@man man/man3/MPI_T_category_get_categories.3
+@man man/man3/MPI_T_category_get_cvars.3
+@man man/man3/MPI_T_category_get_info.3
+@man man/man3/MPI_T_category_get_num.3
+@man man/man3/MPI_T_category_get_pvars.3
+@man man/man3/MPI_T_cvar_get_info.3
+@man man/man3/MPI_T_cvar_get_num.3
+@man man/man3/MPI_T_cvar_handle_alloc.3
+@man man/man3/MPI_T_cvar_handle_free.3
+@man man/man3/MPI_T_cvar_read.3
+@man man/man3/MPI_T_cvar_write.3
+@man man/man3/MPI_T_enum_get_info.3
+@man man/man3/MPI_T_enum_get_item.3
+@man man/man3/MPI_T_finalize.3
+@man man/man3/MPI_T_init_thread.3
+@man man/man3/MPI_T_pvar_get_info.3
+@man man/man3/MPI_T_pvar_get_num.3
+@man man/man3/MPI_T_pvar_handle_alloc.3
+@man man/man3/MPI_T_pvar_handle_free.3
+@man man/man3/MPI_T_pvar_read.3
+@man man/man3/MPI_T_pvar_readreset.3
+@man man/man3/MPI_T_pvar_reset.3
+@man man/man3/MPI_T_pvar_session_create.3
+@man man/man3/MPI_T_pvar_session_free.3
+@man man/man3/MPI_T_pvar_start.3
+@man man/man3/MPI_T_pvar_stop.3
+@man man/man3/MPI_T_pvar_write.3
 @man man/man3/MPI_Test.3
 @man man/man3/MPI_Test_cancelled.3
 @man man/man3/MPI_Testall.3
@@ -502,6 +822,7 @@ lib/openmpi/mca_vprotocol_pessimist.so
 @man man/man3/MPI_Type_create_f90_integer.3
 @man man/man3/MPI_Type_create_f90_real.3
 @man man/man3/MPI_Type_create_hindexed.3
+@man man/man3/MPI_Type_create_hindexed_block.3
 @man man/man3/MPI_Type_create_hvector.3
 @man man/man3/MPI_Type_create_indexed_block.3
 @man man/man3/MPI_Type_create_keyval.3
@@ -518,8 +839,10 @@ lib/openmpi/mca_vprotocol_pessimist.so
 @man man/man3/MPI_Type_get_contents.3
 @man man/man3/MPI_Type_get_envelope.3
 @man man/man3/MPI_Type_get_extent.3
+@man man/man3/MPI_Type_get_extent_x.3
 @man man/man3/MPI_Type_get_name.3
 @man man/man3/MPI_Type_get_true_extent.3
+@man man/man3/MPI_Type_get_true_extent_x.3
 @man man/man3/MPI_Type_hindexed.3
 @man man/man3/MPI_Type_hvector.3
 @man man/man3/MPI_Type_indexed.3
@@ -528,6 +851,7 @@ lib/openmpi/mca_vprotocol_pessimist.so
 @man man/man3/MPI_Type_set_attr.3
 @man man/man3/MPI_Type_set_name.3
 @man man/man3/MPI_Type_size.3
+@man man/man3/MPI_Type_size_x.3
 @man man/man3/MPI_Type_struct.3
 @man man/man3/MPI_Type_ub.3
 @man man/man3/MPI_Type_vector.3
@@ -538,128 +862,140 @@ lib/openmpi/mca_vprotocol_pessimist.so
 @man man/man3/MPI_Waitall.3
 @man man/man3/MPI_Waitany.3
 @man man/man3/MPI_Waitsome.3
+@man man/man3/MPI_Win_allocate.3
+@man man/man3/MPI_Win_allocate_shared.3
+@man man/man3/MPI_Win_attach.3
 @man man/man3/MPI_Win_c2f.3
 @man man/man3/MPI_Win_call_errhandler.3
 @man man/man3/MPI_Win_complete.3
 @man man/man3/MPI_Win_create.3
+@man man/man3/MPI_Win_create_dynamic.3
 @man man/man3/MPI_Win_create_errhandler.3
 @man man/man3/MPI_Win_create_keyval.3
 @man man/man3/MPI_Win_delete_attr.3
+@man man/man3/MPI_Win_detach.3
 @man man/man3/MPI_Win_f2c.3
 @man man/man3/MPI_Win_fence.3
+@man man/man3/MPI_Win_flush.3
+@man man/man3/MPI_Win_flush_all.3
+@man man/man3/MPI_Win_flush_local.3
+@man man/man3/MPI_Win_flush_local_all.3
 @man man/man3/MPI_Win_free.3
 @man man/man3/MPI_Win_free_keyval.3
 @man man/man3/MPI_Win_get_attr.3
 @man man/man3/MPI_Win_get_errhandler.3
 @man man/man3/MPI_Win_get_group.3
+@man man/man3/MPI_Win_get_info.3
 @man man/man3/MPI_Win_get_name.3
 @man man/man3/MPI_Win_lock.3
+@man man/man3/MPI_Win_lock_all.3
 @man man/man3/MPI_Win_post.3
 @man man/man3/MPI_Win_set_attr.3
 @man man/man3/MPI_Win_set_errhandler.3
+@man man/man3/MPI_Win_set_info.3
 @man man/man3/MPI_Win_set_name.3
+@man man/man3/MPI_Win_shared_query.3
 @man man/man3/MPI_Win_start.3
+@man man/man3/MPI_Win_sync.3
 @man man/man3/MPI_Win_test.3
 @man man/man3/MPI_Win_unlock.3
+@man man/man3/MPI_Win_unlock_all.3
 @man man/man3/MPI_Win_wait.3
 @man man/man3/MPI_Wtick.3
 @man man/man3/MPI_Wtime.3
+@man man/man3/OMPI_Affinity_str.3
 @man man/man3/OpenMPI.3
 @man man/man7/ompi_crcp.7
 @man man/man7/opal_crs.7
 @man man/man7/orte_filem.7
 @man man/man7/orte_hosts.7
 @man man/man7/orte_snapc.7
+@man man/man7/orte_sstore.7
 share/examples/openmpi/
-@sample ${SYSCONFDIR}/openmpi/
 share/examples/openmpi/openmpi-default-hostfile
-@sample ${SYSCONFDIR}/openmpi/default-hostfile
 share/examples/openmpi/openmpi-mca-params.conf
-@sample ${SYSCONFDIR}/openmpi/mca-params.conf
 share/examples/openmpi/openmpi-totalview.tcl
-@sample ${SYSCONFDIR}/openmpi/totalview.tcl
+share/examples/openmpi/pmix-mca-params.conf
 share/openmpi/
 share/openmpi/amca-param-sets/
 share/openmpi/amca-param-sets/example.conf
+share/openmpi/help-btl-vader.txt
 share/openmpi/help-coll-sync.txt
 share/openmpi/help-dash-host.txt
+share/openmpi/help-errmgr-base.txt
 share/openmpi/help-ess-base.txt
 share/openmpi/help-hostfile.txt
 share/openmpi/help-mca-base.txt
 share/openmpi/help-mca-bml-r2.txt
 share/openmpi/help-mca-coll-base.txt
-share/openmpi/help-mca-param.txt
+share/openmpi/help-mca-hook-base.txt
+share/openmpi/help-mca-var.txt
 share/openmpi/help-mpi-api.txt
 share/openmpi/help-mpi-btl-base.txt
+share/openmpi/help-mpi-btl-sm.txt
+share/openmpi/help-mpi-btl-tcp.txt
+share/openmpi/help-mpi-coll-sm.txt
 share/openmpi/help-mpi-common-sm.txt
 share/openmpi/help-mpi-errors.txt
+share/openmpi/help-mpi-pml-ob1.txt
 share/openmpi/help-mpi-runtime.txt
 share/openmpi/help-mpool-base.txt
-share/openmpi/help-odls-default.txt
-share/openmpi/help-ompi-crcp-base.txt
-share/openmpi/help-ompi-dpm-base.txt
-share/openmpi/help-ompi-dpm-orte.txt
-share/openmpi/help-ompi-pubsub-orte.txt
-share/openmpi/help-ompi-server.txt
-share/openmpi/help-ompi_info.txt
-share/openmpi/help-opal-carto-file.txt
-share/openmpi/help-opal-crs-base.txt
+share/openmpi/help-oob-base.txt
+share/openmpi/help-oob-tcp.txt
 share/openmpi/help-opal-crs-none.txt
+share/openmpi/help-opal-hwloc-base.txt
 share/openmpi/help-opal-runtime.txt
+share/openmpi/help-opal-shmem-mmap.txt
+share/openmpi/help-opal-shmem-posix.txt
+share/openmpi/help-opal-shmem-sysv.txt
 share/openmpi/help-opal-util.txt
 share/openmpi/help-opal-wrapper.txt
+share/openmpi/help-opal_info.txt
 share/openmpi/help-orte-clean.txt
-share/openmpi/help-orte-filem-base.txt
-share/openmpi/help-orte-filem-rsh.txt
-share/openmpi/help-orte-iof.txt
+share/openmpi/help-orte-filem-raw.txt
+share/openmpi/help-orte-info.txt
 share/openmpi/help-orte-odls-base.txt
-share/openmpi/help-orte-ps.txt
+share/openmpi/help-orte-odls-default.txt
+share/openmpi/help-orte-odls-pspawn.txt
 share/openmpi/help-orte-rmaps-base.txt
-share/openmpi/help-orte-rmaps-lb.txt
+share/openmpi/help-orte-rmaps-md.txt
+share/openmpi/help-orte-rmaps-ppr.txt
+share/openmpi/help-orte-rmaps-resilient.txt
 share/openmpi/help-orte-rmaps-rr.txt
 share/openmpi/help-orte-rmaps-seq.txt
+share/openmpi/help-orte-rtc-base.txt
+share/openmpi/help-orte-rtc-hwloc.txt
 share/openmpi/help-orte-runtime.txt
+share/openmpi/help-orte-server.txt
 share/openmpi/help-orte-snapc-base.txt
 share/openmpi/help-orted.txt
 share/openmpi/help-orterun.txt
+share/openmpi/help-osc-pt2pt.txt
 share/openmpi/help-plm-base.txt
 share/openmpi/help-plm-rsh.txt
+share/openmpi/help-pmix-base.txt
+share/openmpi/help-pmix-pmix3x.txt
 share/openmpi/help-ras-base.txt
+share/openmpi/help-ras-simulator.txt
+share/openmpi/help-rcache-base.txt
+share/openmpi/help-regex.txt
 share/openmpi/help-rmaps_rank_file.txt
-share/openmpi/mpiCC-vt-wrapper-data.txt
+share/openmpi/help-state-base.txt
 share/openmpi/mpiCC-wrapper-data.txt
-share/openmpi/mpic++-vt-wrapper-data.txt
 share/openmpi/mpic++-wrapper-data.txt
-share/openmpi/mpicc-vt-wrapper-data.txt
 share/openmpi/mpicc-wrapper-data.txt
-share/openmpi/mpicxx-vt-wrapper-data.txt
 share/openmpi/mpicxx-wrapper-data.txt
-share/openmpi/mpif77-vt-wrapper-data.txt
 share/openmpi/mpif77-wrapper-data.txt
-share/openmpi/mpif90-vt-wrapper-data.txt
 share/openmpi/mpif90-wrapper-data.txt
+share/openmpi/mpifort-wrapper-data.txt
 share/openmpi/openmpi-valgrind.supp
-share/vampirtrace/
-share/vampirtrace/FILTER.SPEC
-share/vampirtrace/GROUPS.SPEC
-share/vampirtrace/METRICS.SPEC
-share/vampirtrace/doc/
-share/vampirtrace/doc/ChangeLog
-share/vampirtrace/doc/LICENSE
-share/vampirtrace/doc/UserManual.html
-share/vampirtrace/doc/UserManual.pdf
-share/vampirtrace/doc/opari/
-share/vampirtrace/doc/opari/ChangeLog
-share/vampirtrace/doc/opari/LICENSE
-share/vampirtrace/doc/opari/Readme.html
-share/vampirtrace/doc/opari/lacsi01.pdf
-share/vampirtrace/doc/opari/opari-logo-100.gif
-share/vampirtrace/doc/otf/
-share/vampirtrace/doc/otf/ChangeLog
-share/vampirtrace/doc/otf/LICENSE
-share/vampirtrace/doc/otf/otftools.pdf
-share/vampirtrace/doc/otf/specification.pdf
-share/vampirtrace/vtcc-wrapper-data.txt
-share/vampirtrace/vtcxx-wrapper-data.txt
-share/vampirtrace/vtf77-wrapper-data.txt
-share/vampirtrace/vtf90-wrapper-data.txt
+share/openmpi/ortecc-wrapper-data.txt
+share/pmix/
+share/pmix/help-pmix-mca-base.txt
+share/pmix/help-pmix-mca-var.txt
+share/pmix/help-pmix-plog.txt
+share/pmix/help-pmix-psensor-file.txt
+share/pmix/help-pmix-psensor-heartbeat.txt
+share/pmix/help-pmix-runtime.txt
+share/pmix/help-pmix-server.txt
+share/pmix/pmix-valgrind.supp
