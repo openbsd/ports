@@ -1,0 +1,76 @@
+$OpenBSD: patch-libavformat_aacdec_c,v 1.1 2019/06/27 14:20:13 jca Exp $
+
+From: James Almer <jamrial@gmail.com>
+Date: Thu, 25 Apr 2019 22:04:01 +0000 (-0300)
+Subject: avformat/aacdec: fix demuxing of small frames
+X-Git-Url: http://git.videolan.org/?p=ffmpeg.git;a=commitdiff_plain;h=d88193c2196cf5342424aaa7a44b046c71c2527a
+
+avformat/aacdec: fix demuxing of small frames
+
+10 bytes (id3v2 header amount of bytes) were being read before any checks
+were made on the bitstream. The result was that we were overreading into
+the next frame if the current one was 8 or 9 bytes long.
+
+Fixes tickets #7271 and #7869.
+
+Signed-off-by: James Almer <jamrial@gmail.com>
+
+
+Index: libavformat/aacdec.c
+--- libavformat/aacdec.c.orig
++++ libavformat/aacdec.c
+@@ -20,6 +20,7 @@
+  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+  */
+ 
++#include "libavutil/avassert.h"
+ #include "libavutil/intreadwrite.h"
+ #include "avformat.h"
+ #include "avio_internal.h"
+@@ -154,17 +155,8 @@ static int adts_aac_read_packet(AVFormatContext *s, AV
+ {
+     int ret, fsize;
+ 
+-    // Parse all the ID3 headers between frames
+-    while (1) {
+-        ret = av_get_packet(s->pb, pkt, FFMAX(ID3v2_HEADER_SIZE, ADTS_HEADER_SIZE));
+-        if (ret >= ID3v2_HEADER_SIZE && ff_id3v2_match(pkt->data, ID3v2_DEFAULT_MAGIC)) {
+-            if ((ret = handle_id3(s, pkt)) >= 0) {
+-                continue;
+-            }
+-        }
+-        break;
+-    }
+-
++retry:
++    ret = av_get_packet(s->pb, pkt, ADTS_HEADER_SIZE);
+     if (ret < 0)
+         return ret;
+ 
+@@ -174,8 +166,24 @@ static int adts_aac_read_packet(AVFormatContext *s, AV
+     }
+ 
+     if ((AV_RB16(pkt->data) >> 4) != 0xfff) {
+-        av_packet_unref(pkt);
+-        return AVERROR_INVALIDDATA;
++        // Parse all the ID3 headers between frames
++        int append = ID3v2_HEADER_SIZE - ADTS_HEADER_SIZE;
++
++        av_assert2(append > 0);
++        ret = av_append_packet(s->pb, pkt, append);
++        if (ret != append) {
++            av_packet_unref(pkt);
++            return AVERROR(EIO);
++        }
++        if (!ff_id3v2_match(pkt->data, ID3v2_DEFAULT_MAGIC)) {
++            av_packet_unref(pkt);
++            return AVERROR_INVALIDDATA;
++        }
++        ret = handle_id3(s, pkt);
++        if (ret < 0)
++            return ret;
++
++        goto retry;
+     }
+ 
+     fsize = (AV_RB32(pkt->data + 3) >> 13) & 0x1FFF;
