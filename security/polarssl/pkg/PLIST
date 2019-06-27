@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/03/29 04:39:09 bket Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/06/27 05:05:49 bket Exp $
 @conflict polarssl-*
 include/mbedtls/
 include/mbedtls/aes.h
@@ -124,7 +124,6 @@ share/examples/mbedtls/README
 @bin share/examples/mbedtls/rsa_sign
 @bin share/examples/mbedtls/rsa_verify
 @bin share/examples/mbedtls/selftest
-@bin share/examples/mbedtls/ssl_cert_test
 @bin share/examples/mbedtls/ssl_client1
 @bin share/examples/mbedtls/ssl_client2
 @bin share/examples/mbedtls/ssl_fork_server

@@ -1,8 +1,8 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.8 2018/11/26 15:18:28 bket Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.9 2019/06/27 05:05:49 bket Exp $
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -125,8 +125,6 @@ if(CMAKE_COMPILER_IS_GNU)
+@@ -131,8 +131,6 @@ if(CMAKE_COMPILER_IS_GNU)
      if (GCC_VERSION VERSION_GREATER 4.8 OR GCC_VERSION VERSION_EQUAL 4.8)
          set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wshadow")
      endif()
@@ -11,7 +11,7 @@ Index: CMakeLists.txt
      set(CMAKE_C_FLAGS_COVERAGE    "-O0 -g3 --coverage")
      set(CMAKE_C_FLAGS_ASAN        "-Werror -fsanitize=address -fno-common -O3")
      set(CMAKE_C_FLAGS_ASANDBG     "-Werror -fsanitize=address -fno-common -O1 -g3 -fno-omit-frame-pointer -fno-optimize-sibling-calls ")
-@@ -136,8 +134,6 @@ endif(CMAKE_COMPILER_IS_GNU)
+@@ -142,8 +140,6 @@ endif(CMAKE_COMPILER_IS_GNU)
  
  if(CMAKE_COMPILER_IS_CLANG)
      set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -W -Wdeclaration-after-statement -Wwrite-strings -Wpointer-arith -Wimplicit-fallthrough -Wshadow")
