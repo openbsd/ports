@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/16 10:09:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/06/27 17:31:37 sthen Exp $
 
 # see https://github.com/i3/i3/issues/3085
 COMMENT =	improved dynamic tiling window manager, fork with mouse drag
@@ -24,12 +24,7 @@ WANTLIB += xcb-util xcb-xinerama xcb-xkb xcb-xrm xkbcommon
 WANTLIB += xkbcommon-x11 yajl
 
 BUILD_DEPENDS =	textproc/asciidoc \
-		textproc/xmlto \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
-
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.15
+		textproc/xmlto
 
 LIB_DEPENDS =	devel/libev \
 		devel/libyajl>=2.0.0 \
@@ -50,7 +45,6 @@ FAKE_FLAGS =	i3confdir="${PREFIX}/share/examples/i3/"
 
 SEPARATE_BUILD =Yes
 USE_GMAKE =	Yes
-CONFIGURE_STYLE =gnu
 CONFIGURE_ARGS =--enable-builddir=${WRKBUILD} \
 		--enable-debug=no
 CONFIGURE_ENV =	CPPFLAGS="-I${X11BASE}/include \
@@ -58,8 +52,9 @@ CONFIGURE_ENV =	CPPFLAGS="-I${X11BASE}/include \
 		LDFLAGS="-L${X11BASE}/lib \
 			 -L${LOCALBASE}/lib"
 
-post-extract:
-	cd ${WRKSRC}; ${AUTOCONF_ENV} autoreconf -fi
+CONFIGURE_STYLE =  autoreconf
+AUTOCONF_VERSION = 2.69
+AUTOMAKE_VERSION = 1.15
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/etc/config \
