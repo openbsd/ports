@@ -4,4 +4,4 @@ suitable for use as background pictures.
 Those pictures have been released under CC-By 4.0 by the individual artists.
 
 This comes with a small script (openbsd-wallpaper)
-that requires both random_run and xwallpaper to run
+that requires a recent xwallpaper to run

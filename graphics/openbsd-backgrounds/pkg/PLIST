@@ -1,11 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/06/18 11:08:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/06/28 16:48:42 espie Exp $
 bin/openbsd-wallpaper
+@man man/man1/openbsd-wallpaper.1
 ${BG}/
 ${BG}/AUTHORS
 ${BG}/LICENSE.txt
 ${BG}/README.md
+${BG}/aspect-9:16
 @comment ${BG}/example
 ${LPICS}/
+${LPICS}/deraadt/
+${LPICS}/deraadt/chobe-0512-162406tdr.jpg
+${LPICS}/deraadt/chobe-0512-165545tdr.jpg
+${LPICS}/deraadt/limestone-0727-120951tdr.jpg
+${LPICS}/deraadt/limestone-0728-073918tdr.jpg
+${LPICS}/deraadt/vietnam-1108-184342tdr.jpg
 ${LPICS}/djm/
 ${LPICS}/djm/20110806_nevada_sunset.jpg
 ${LPICS}/djm/20111002_happy_landings.jpg
@@ -214,9 +222,10 @@ ${LPICS}/tj/DSC_6228.jpg
 ${LPICS}/tj/DSC_6254.jpg
 ${LPICS}/tj/DSC_6315.jpg
 ${BG}/list
-${BG}/mklist
-${BG}/mkrelease
 ${PPICS}/
+${PPICS}/deraadt/
+${PPICS}/deraadt/limestone-0727-094133tdr.jpg
+${PPICS}/deraadt/limestone-0727-171837tdr.jpg
 ${PPICS}/espie/
 ${PPICS}/espie/IMG_20170818_114024.jpg
 ${PPICS}/espie/IMG_20180403_191952.jpg
@@ -240,3 +249,4 @@ ${PPICS}/kirby/IMGP1184.jpg
 ${PPICS}/kirby/IMGP3569.JPG
 ${PPICS}/kirby/IMGP3583.JPG
 ${PPICS}/kirby/IMGP3587.JPG
+@comment ${BG}/wallpaper

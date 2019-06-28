@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/06/18 11:08:36 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/06/28 16:48:42 espie Exp $
 
 PKG_ARCH =	*
 COMMENT =	pictures for your background by OpenBSD developers
@@ -6,7 +6,7 @@ CATEGORIES = 	graphics
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
 
 GH_PROJECT = 	openbsd-backgrounds
-GH_TAGNAME = 	2.0
+GH_TAGNAME = 	2.4
 GH_ACCOUNT = 	marcespie
 MASTER_SITES = 	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/
 
@@ -23,11 +23,14 @@ PPICS = ${BG}/portrait
 SUBST_VARS = BG LPICS PPICS
 DESTINATION = ${PREFIX}/${BG}
 EXTRACT_ONLY =
+RUN_DEPENDS = x11/xwallpaper>=0.6.2
 
 do-install:
 	${INSTALL_DATA_DIR} ${DESTINATION}
 	cd ${DESTINATION} && tar -s ',^${DISTNAME}/,,' -zxf ${FULLDISTDIR}/${DISTFILES}
 	rmdir ${DESTINATION}/${DISTNAME}
-	@${SUBST_PROGRAM} ${FILESDIR}/openbsd-wallpaper ${PREFIX}/bin/openbsd-wallpaper
+	@${SUBST_PROGRAM} ${DESTINATION}/bin/openbsd-wallpaper ${PREFIX}/bin/openbsd-wallpaper
+	@${INSTALL_MAN} ${DESTINATION}/man/openbsd-wallpaper.1 ${PREFIX}/man/man1
+	rm -rf ${DESTINATION}/{bin,man}
 
 .include <bsd.port.mk>
