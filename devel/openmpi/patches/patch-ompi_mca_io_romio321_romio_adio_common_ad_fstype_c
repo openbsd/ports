@@ -1,90 +1,33 @@
-$OpenBSD: patch-ompi_mca_io_romio321_romio_adio_common_ad_fstype_c,v 1.1 2019/06/27 13:52:00 jca Exp $
+$OpenBSD: patch-ompi_mca_io_romio321_romio_adio_common_ad_fstype_c,v 1.2 2019/06/28 11:05:11 jca Exp $
+
+Our struct statfs doesn't have an f_type member.
 
 Index: ompi/mca/io/romio321/romio/adio/common/ad_fstype.c
 --- ompi/mca/io/romio321/romio/adio/common/ad_fstype.c.orig
 +++ ompi/mca/io/romio321/romio/adio/common/ad_fstype.c
-@@ -38,7 +38,7 @@
-  *
-  * There are three more "general" mechanisms that we use for detecting
-  * file system type:
-- * - struct statfs's f_type field
-+ * - struct statfs's f_fstypename field
-  * - struct statvfs's f_basetype field
-  * - struct stat's st_fstype field
-  *
-@@ -347,15 +347,15 @@ static void ADIO_FileSysType_fncall(const char *filena
+@@ -338,13 +338,15 @@ static void ADIO_FileSysType_fncall(const char *filena
+     /* --END ERROR HANDLING-- */
  
+ # ifdef ROMIO_HAVE_STRUCT_STATFS_WITH_F_FSTYPENAME
+-    /* uncommon: maybe only on Darwin ? */
++    /* BSD, Darwin... */
+     if ( !strncmp("nfs",fsbuf.f_fstypename,3) ) {
+ 	*fstype = ADIO_NFS;
+ 	return;
+     }
+ # endif
+ 
++/* TODO: configure.ac check for f_type */
++#ifdef ROMIO_HAVE_STRUCT_STATFS_WITH_F_TYPE
  
  #ifdef ROMIO_GPFS
--    if (fsbuf.f_type == GPFS_SUPER_MAGIC) {
-+    if (fsbuf.f_fstypename == GPFS_SUPER_MAGIC) {
- 	*fstype = ADIO_GPFS;
- 	return;
-     }
- #endif
- 
--    /* FPRINTF(stderr, "%d\n", fsbuf.f_type);*/
-+    /* FPRINTF(stderr, "%d\n", fsbuf.f_fstypename);*/
- # ifdef NFS_SUPER_MAGIC
--    if (fsbuf.f_type == NFS_SUPER_MAGIC) {
-+    if (fsbuf.f_fstypename == NFS_SUPER_MAGIC) {
- 	*fstype = ADIO_NFS;
- 	return;
-     }
-@@ -365,49 +365,49 @@ static void ADIO_FileSysType_fncall(const char *filena
- # ifndef LL_SUPER_MAGIC
- #  define LL_SUPER_MAGIC 0x0BD00BD0
- # endif
--    if (fsbuf.f_type == LL_SUPER_MAGIC) {
-+    if (fsbuf.f_fstypename == LL_SUPER_MAGIC) {
- 	*fstype = ADIO_LUSTRE;
- 	return;
-     }
- #endif
- 
- # ifdef PAN_KERNEL_FS_CLIENT_SUPER_MAGIC
--    if (fsbuf.f_type == PAN_KERNEL_FS_CLIENT_SUPER_MAGIC) {
-+    if (fsbuf.f_fstypename == PAN_KERNEL_FS_CLIENT_SUPER_MAGIC) {
- 	*fstype = ADIO_PANFS;
- 	return;
-     }
- # endif
- 
- # ifdef MOUNT_NFS
--    if (fsbuf.f_type == MOUNT_NFS) {
-+    if (fsbuf.f_fstypename == MOUNT_NFS) {
- 	*fstype = ADIO_NFS;
- 	return;
-     }
- # endif
- 
- # ifdef MOUNT_PFS
--    if (fsbuf.f_type == MOUNT_PFS) {
-+    if (fsbuf.f_fstypename == MOUNT_PFS) {
- 	*fstype = ADIO_PFS;
- 	return;
-     }
- # endif
- 
- # ifdef PVFS_SUPER_MAGIC
--    if (fsbuf.f_type == PVFS_SUPER_MAGIC) {
-+    if (fsbuf.f_fstypename == PVFS_SUPER_MAGIC) {
- 	*fstype = ADIO_PVFS;
- 	return;
-     }
- # endif
- 
- # ifdef PVFS2_SUPER_MAGIC
--    if (fsbuf.f_type == PVFS2_SUPER_MAGIC) {
-+    if (fsbuf.f_fstypename == PVFS2_SUPER_MAGIC) {
- 	*fstype = ADIO_PVFS2;
- 	return;
-     }
- # endif
- 
- # ifdef XFS_SUPER_MAGIC
--    if (fsbuf.f_type == XFS_SUPER_MAGIC) {
-+    if (fsbuf.f_fstypename == XFS_SUPER_MAGIC) {
- 	    *fstype = ADIO_XFS;
+     if (fsbuf.f_type == GPFS_SUPER_MAGIC) {
+@@ -412,6 +414,8 @@ static void ADIO_FileSysType_fncall(const char *filena
  	    return;
      }
+ # endif
++
++#endif /* ROMIO_HAVE_STRUCT_STATFS_WITH_F_TYPE */
+ 
+ # ifdef ROMIO_UFS
+     /* if UFS support is enabled, default to that */
