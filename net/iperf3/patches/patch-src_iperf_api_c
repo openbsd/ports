@@ -1,9 +1,11 @@
-$OpenBSD: patch-src_iperf_api_c,v 1.3 2018/07/11 15:36:55 gonzalo Exp $
+$OpenBSD: patch-src_iperf_api_c,v 1.4 2019/06/28 07:25:37 sthen Exp $
+
+Default to IPv4.
 
 Index: src/iperf_api.c
 --- src/iperf_api.c.orig
 +++ src/iperf_api.c
-@@ -2145,7 +2145,7 @@ iperf_defaults(struct iperf_test *testp)
+@@ -2314,7 +2314,7 @@ iperf_defaults(struct iperf_test *testp)
      testp->stats_interval = testp->reporter_interval = 1;
      testp->num_streams = 1;
  

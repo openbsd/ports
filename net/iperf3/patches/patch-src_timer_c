@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_timer_c,v 1.1 2019/06/28 07:25:37 sthen Exp $
+
+for struct timeval
+
+Index: src/timer.c
+--- src/timer.c.orig
++++ src/timer.c
+@@ -28,6 +28,7 @@
+  */
+ 
+ #include <sys/types.h>
++#include <sys/time.h>
+ #include <stdlib.h>
+ 
+ #include "timer.h"
