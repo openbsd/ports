@@ -1,0 +1,8 @@
+armips is an assembler and linker that includes full support for the MIPS
+R3000, MIPS R4000, and Allegrex instruction sets, partial support for the
+EmotionEngine instruction set, as well as complete support for the ARM7 and
+ARM9 instruction sets, both THUMB and ARM mode.
+
+Some of the other features include a full-fledged C-like expression parser,
+the ability to overlay assembled output over an existing file, and table
+support for user-defined text encodings.

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/28 06:45:23 bentley Exp $
+@bin bin/armips
+share/doc/armips/
+share/doc/armips/LICENSE.txt
+share/doc/armips/Readme.md
