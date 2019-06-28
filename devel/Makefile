@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1870 2019/06/22 18:23:34 jca Exp $
+# $OpenBSD: Makefile,v 1.1871 2019/06/28 06:47:02 bentley Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -21,6 +21,7 @@
      SUBDIR += argtable
      SUBDIR += arm-elf
      SUBDIR += arm-none-eabi
+     SUBDIR += armips
      SUBDIR += asm6
      SUBDIR += astyle
      SUBDIR += atf
