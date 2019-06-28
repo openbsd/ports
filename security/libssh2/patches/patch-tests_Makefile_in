@@ -1,8 +1,8 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.5 2019/04/02 06:00:16 jasper Exp $
+$OpenBSD: patch-tests_Makefile_in,v 1.6 2019/06/28 12:33:45 benoit Exp $
 Index: tests/Makefile.in
 --- tests/Makefile.in.orig
 +++ tests/Makefile.in
-@@ -538,7 +538,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src -I$(top_srcdir)/incl
+@@ -543,7 +543,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src -I$(top_srcdir)/incl
  LDADD = ../src/libssh2.la
  @SSHD_TRUE@ssh2_SOURCES = ssh2.c
  ctests = simple$(EXEEXT)

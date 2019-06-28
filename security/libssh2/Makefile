@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2019/04/02 06:00:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2019/06/28 12:33:45 benoit Exp $
 
 COMMENT =		library implementing the SSH2 protocol
 
-DISTNAME =		libssh2-1.8.2
+DISTNAME =		libssh2-1.9.0
 CATEGORIES =		security
-SHARED_LIBS +=		ssh2	8.0	# .1.1
+SHARED_LIBS +=		ssh2	9.0	# .1.1
 
 HOMEPAGE =		https://www.libssh2.org/
 
@@ -12,7 +12,7 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # libssh2: BSD License
 # libssh2 Documentation: Open Publication License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		crypto ssl z
 

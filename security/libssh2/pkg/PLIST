@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2016/03/07 08:18:34 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/06/28 12:33:45 benoit Exp $
 include/libssh2.h
 include/libssh2_publickey.h
 include/libssh2_sftp.h
@@ -10,8 +10,10 @@ lib/pkgconfig/libssh2.pc
 @man man/man3/libssh2_agent_disconnect.3
 @man man/man3/libssh2_agent_free.3
 @man man/man3/libssh2_agent_get_identity.3
+@man man/man3/libssh2_agent_get_identity_path.3
 @man man/man3/libssh2_agent_init.3
 @man man/man3/libssh2_agent_list_identities.3
+@man man/man3/libssh2_agent_set_identity_path.3
 @man man/man3/libssh2_agent_userauth.3
 @man man/man3/libssh2_banner_set.3
 @man man/man3/libssh2_base64_decode.3
