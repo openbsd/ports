@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.75 2019/06/24 14:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2019/06/28 23:48:51 tj Exp $
 
 COMMENT=	block-sorting file compressor, unencumbered
 
-DISTNAME=	bzip2-1.0.6
-REVISION=	10
+DISTNAME=	bzip2-1.0.7
 
 CATEGORIES=	archivers
 
@@ -12,13 +11,12 @@ HOMEPAGE=	https://gitlab.com/federicomenaquintero/bzip2
 SHARED_LIBS=	bz2	10.4
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 WANTLIB += c
 
-# originally at bzip.org, domain expired
-MASTER_SITES=	https://spacehopper.org/mirrors/
+MASTER_SITES=	https://sourceware.org/pub/bzip2/
 
 BZ2_CFLAGS=	-Wall -Winline -fomit-frame-pointer -fno-strength-reduce
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} ${BZ2_CFLAGS}" \
