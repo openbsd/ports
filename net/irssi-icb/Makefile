@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/06/29 00:46:39 kn Exp $
+# $OpenBSD: Makefile,v 1.44 2019/06/29 14:54:45 tj Exp $
 
 COMMENT=	ICB plugin for irssi
 
@@ -7,6 +7,7 @@ GH_PROJECT=	irssi-icb
 GH_COMMIT=	c4e2ea8939b5b75d1941ebe3335475482d218838
 
 DISTNAME=	irssi-icb-0.17
+REVISION=	0
 
 CATEGORIES=	net
 
