@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2019/04/28 20:51:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/06/29 09:54:15 ajacoutot Exp $
 
 COMMENT=		unified interface for interacting with cloud services
 
-MODPY_EGG_VERSION=	2.4.0
+MODPY_EGG_VERSION=	2.5.0
 DISTNAME=		apache-libcloud-${MODPY_EGG_VERSION}
 PKGNAME=		py-libcloud-${MODPY_EGG_VERSION}
-REVISION=		0
 
 CATEGORIES=		net
 
@@ -14,7 +13,7 @@ HOMEPAGE=		https://libcloud.apache.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 MASTER_SITES=		${MASTER_SITE_APACHE:=libcloud/}
 
