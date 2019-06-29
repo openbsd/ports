@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2019/03/25 17:25:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2019/06/29 10:39:41 ajacoutot Exp $
 @bin bin/stellarium
 @man man/man1/stellarium.1
 share/applications/stellarium.desktop
@@ -19,7 +19,7 @@ share/stellarium/data/
 share/stellarium/data/DejaVuSans.ttf
 share/stellarium/data/DejaVuSansMono.ttf
 share/stellarium/data/base_locations.bin.gz
-share/stellarium/data/constellations_boundaries.dat
+share/stellarium/data/constellation_boundaries.dat
 share/stellarium/data/constellations_spans.dat
 share/stellarium/data/countryCodes.dat
 share/stellarium/data/default_cfg.ini
@@ -50,10 +50,6 @@ share/stellarium/data/ssystem_major.ini
 share/stellarium/data/ssystem_minor.ini
 share/stellarium/data/stellarium.ico
 share/stellarium/landscapes/
-share/stellarium/landscapes/armintxe_cave/
-share/stellarium/landscapes/armintxe_cave/armintxe_cave.png
-share/stellarium/landscapes/armintxe_cave/description.en.utf8
-share/stellarium/landscapes/armintxe_cave/landscape.ini
 share/stellarium/landscapes/garching/
 share/stellarium/landscapes/garching/description.ar.utf8
 share/stellarium/landscapes/garching/description.be.utf8
@@ -626,6 +622,7 @@ share/stellarium/nebulae/default/n2683.png
 share/stellarium/nebulae/default/n2685-vasey.png
 share/stellarium/nebulae/default/n2736.png
 share/stellarium/nebulae/default/n2775.png
+share/stellarium/nebulae/default/n2805-vasey.png
 share/stellarium/nebulae/default/n2808.png
 share/stellarium/nebulae/default/n2818.png
 share/stellarium/nebulae/default/n281kepler.png
@@ -650,6 +647,7 @@ share/stellarium/nebulae/default/n3310-vasey.png
 share/stellarium/nebulae/default/n3314.png
 share/stellarium/nebulae/default/n3344-vasey.png
 share/stellarium/nebulae/default/n3359-vasey.png
+share/stellarium/nebulae/default/n3504-vasey.png
 share/stellarium/nebulae/default/n3521-vasey.png
 share/stellarium/nebulae/default/n3532.png
 share/stellarium/nebulae/default/n3603.png
@@ -693,6 +691,7 @@ share/stellarium/nebulae/default/n4656-vasey.png
 share/stellarium/nebulae/default/n4676.png
 share/stellarium/nebulae/default/n4697-dss.png
 share/stellarium/nebulae/default/n4725.png
+share/stellarium/nebulae/default/n474-vasey.png
 share/stellarium/nebulae/default/n4755.png
 share/stellarium/nebulae/default/n4833-dss.png
 share/stellarium/nebulae/default/n488-vasey.png
@@ -746,6 +745,7 @@ share/stellarium/nebulae/default/n660.png
 share/stellarium/nebulae/default/n6624-dss.png
 share/stellarium/nebulae/default/n663.png
 share/stellarium/nebulae/default/n6712-2mass.png
+share/stellarium/nebulae/default/n672-vasey.png
 share/stellarium/nebulae/default/n6726.png
 share/stellarium/nebulae/default/n6744.png
 share/stellarium/nebulae/default/n6752.png
@@ -758,6 +758,7 @@ share/stellarium/nebulae/default/n6888.png
 share/stellarium/nebulae/default/n6894.png
 share/stellarium/nebulae/default/n6905.png
 share/stellarium/nebulae/default/n6914.png
+share/stellarium/nebulae/default/n691group-vasey.png
 share/stellarium/nebulae/default/n6934-dss.png
 share/stellarium/nebulae/default/n6946dumont.png
 share/stellarium/nebulae/default/n6960.png
@@ -778,6 +779,7 @@ share/stellarium/nebulae/default/n7497.png
 share/stellarium/nebulae/default/n7538.png
 share/stellarium/nebulae/default/n7590-trev.png
 share/stellarium/nebulae/default/n7635-vasey.png
+share/stellarium/nebulae/default/n7640-vasey.png
 share/stellarium/nebulae/default/n7662.png
 share/stellarium/nebulae/default/n772.png
 share/stellarium/nebulae/default/n7742.png
@@ -1047,25 +1049,6 @@ share/stellarium/skycultures/arabic_moon_stations/description.zh_HK.utf8
 share/stellarium/skycultures/arabic_moon_stations/description.zh_TW.utf8
 share/stellarium/skycultures/arabic_moon_stations/info.ini
 share/stellarium/skycultures/arabic_moon_stations/star_names.fab
-share/stellarium/skycultures/armintxe/
-share/stellarium/skycultures/armintxe/Armintxesala.png
-share/stellarium/skycultures/armintxe/bison1.png
-share/stellarium/skycultures/armintxe/bison2.png
-share/stellarium/skycultures/armintxe/constellation_names.eng.fab
-share/stellarium/skycultures/armintxe/constellationsart.fab
-share/stellarium/skycultures/armintxe/constellationship.fab
-share/stellarium/skycultures/armintxe/description.en.utf8
-share/stellarium/skycultures/armintxe/horse2.png
-share/stellarium/skycultures/armintxe/horse3.png
-share/stellarium/skycultures/armintxe/horsehead.png
-share/stellarium/skycultures/armintxe/ibex.png
-share/stellarium/skycultures/armintxe/ibex2.png
-share/stellarium/skycultures/armintxe/ibex3.png
-share/stellarium/skycultures/armintxe/info.ini
-share/stellarium/skycultures/armintxe/lion.png
-share/stellarium/skycultures/armintxe/osoa.png
-share/stellarium/skycultures/armintxe/river.png
-share/stellarium/skycultures/armintxe/twoheadhorse.png
 share/stellarium/skycultures/aztec/
 share/stellarium/skycultures/aztec/Primeros_Memoriales.png
 share/stellarium/skycultures/aztec/Tianquiztli_T.png
@@ -1186,9 +1169,9 @@ share/stellarium/skycultures/boorong/won.png
 share/stellarium/skycultures/boorong/yerredkr.png
 share/stellarium/skycultures/boorong/yurree.png
 share/stellarium/skycultures/chinese/
+share/stellarium/skycultures/chinese/constellation_boundaries.dat
 share/stellarium/skycultures/chinese/constellation_names.eng.fab
 share/stellarium/skycultures/chinese/constellation_names.zh_CN.fab
-share/stellarium/skycultures/chinese/constellations_boundaries.dat
 share/stellarium/skycultures/chinese/constellationship.fab
 share/stellarium/skycultures/chinese/description.ar.utf8
 share/stellarium/skycultures/chinese/description.be.utf8
@@ -1304,9 +1287,9 @@ share/stellarium/skycultures/chinese_contemporary/virgo.png
 share/stellarium/skycultures/chinese_contemporary/volans.png
 share/stellarium/skycultures/chinese_contemporary/vulpecula.png
 share/stellarium/skycultures/chinese_medieval/
+share/stellarium/skycultures/chinese_medieval/constellation_boundaries.dat
 share/stellarium/skycultures/chinese_medieval/constellation_names.eng.fab
 share/stellarium/skycultures/chinese_medieval/constellation_names.zh_CN.fab
-share/stellarium/skycultures/chinese_medieval/constellations_boundaries.dat
 share/stellarium/skycultures/chinese_medieval/constellationship.fab
 share/stellarium/skycultures/chinese_medieval/description.en.utf8
 share/stellarium/skycultures/chinese_medieval/description.zh_CN.utf8
@@ -1528,8 +1511,8 @@ share/stellarium/skycultures/korean/description.zh_TW.utf8
 share/stellarium/skycultures/korean/info.ini
 share/stellarium/skycultures/korean/star_names.fab
 share/stellarium/skycultures/lokono/
+share/stellarium/skycultures/lokono/constellation_boundaries.dat
 share/stellarium/skycultures/lokono/constellation_names.eng.fab
-share/stellarium/skycultures/lokono/constellations_boundaries.dat
 share/stellarium/skycultures/lokono/constellationsart.fab
 share/stellarium/skycultures/lokono/constellationship.fab
 share/stellarium/skycultures/lokono/description.en.utf8
@@ -2205,6 +2188,7 @@ share/stellarium/translations/stellarium-planetary-features/jv.qm
 share/stellarium/translations/stellarium-planetary-features/ka.qm
 share/stellarium/translations/stellarium-planetary-features/kk.qm
 share/stellarium/translations/stellarium-planetary-features/ko.qm
+share/stellarium/translations/stellarium-planetary-features/ku.qm
 share/stellarium/translations/stellarium-planetary-features/ky.qm
 share/stellarium/translations/stellarium-planetary-features/la.qm
 share/stellarium/translations/stellarium-planetary-features/lt.qm
@@ -2294,6 +2278,7 @@ share/stellarium/translations/stellarium-remotecontrol/jv.qm
 share/stellarium/translations/stellarium-remotecontrol/ka.qm
 share/stellarium/translations/stellarium-remotecontrol/kk.qm
 share/stellarium/translations/stellarium-remotecontrol/ko.qm
+share/stellarium/translations/stellarium-remotecontrol/ku.qm
 share/stellarium/translations/stellarium-remotecontrol/ky.qm
 share/stellarium/translations/stellarium-remotecontrol/la.qm
 share/stellarium/translations/stellarium-remotecontrol/lt.qm
@@ -2383,6 +2368,7 @@ share/stellarium/translations/stellarium-scripts/jv.qm
 share/stellarium/translations/stellarium-scripts/ka.qm
 share/stellarium/translations/stellarium-scripts/kk.qm
 share/stellarium/translations/stellarium-scripts/ko.qm
+share/stellarium/translations/stellarium-scripts/ku.qm
 share/stellarium/translations/stellarium-scripts/ky.qm
 share/stellarium/translations/stellarium-scripts/la.qm
 share/stellarium/translations/stellarium-scripts/lt.qm
@@ -2484,6 +2470,7 @@ share/stellarium/translations/stellarium-skycultures/ka.qm
 share/stellarium/translations/stellarium-skycultures/kg.qm
 share/stellarium/translations/stellarium-skycultures/kk.qm
 share/stellarium/translations/stellarium-skycultures/ko.qm
+share/stellarium/translations/stellarium-skycultures/ku.qm
 share/stellarium/translations/stellarium-skycultures/ky.qm
 share/stellarium/translations/stellarium-skycultures/la.qm
 share/stellarium/translations/stellarium-skycultures/lt.qm
@@ -2588,6 +2575,7 @@ share/stellarium/translations/stellarium/ka.qm
 share/stellarium/translations/stellarium/kg.qm
 share/stellarium/translations/stellarium/kk.qm
 share/stellarium/translations/stellarium/ko.qm
+share/stellarium/translations/stellarium/ku.qm
 share/stellarium/translations/stellarium/ky.qm
 share/stellarium/translations/stellarium/la.qm
 share/stellarium/translations/stellarium/lt.qm
@@ -2687,7 +2675,7 @@ share/stellarium/webroot/js/api/updatequeue.js
 share/stellarium/webroot/js/api/viewcontrol.js
 share/stellarium/webroot/js/api/viewoptions.js
 share/stellarium/webroot/js/globalize.js
-share/stellarium/webroot/js/jquery-3.3.1.js
+share/stellarium/webroot/js/jquery-3.4.1.js
 share/stellarium/webroot/js/jquery-ui.js
 share/stellarium/webroot/js/jquery.ui.touch-punch.js
 share/stellarium/webroot/js/main.js
