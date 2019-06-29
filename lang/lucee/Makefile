@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2019/06/26 21:19:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/06/29 13:35:48 sthen Exp $
 
 COMMENT=	JVM-based scripting language for web apps (open-source CFML)
 
-V=		5.3.2.77
+V=		5.3.3.60-RC
 DISTNAME=	lucee-$V
+PKGNAME=	${DISTNAME:S/-RC/rc0/}
 EXTRACT_SUFX=	.war
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{$V}
-# snaps:	${DISTNAME}${EXTRACT_SUFX}{$V-SNAPSHOT}
+# snaps: ${DISTNAME}${EXTRACT_SUFX}{$V-SNAPSHOT}
 
 CATEGORIES=	lang www
 

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2019/03/30 14:47:11 sthen Exp $
+$OpenBSD: README,v 1.5 2019/06/29 13:35:48 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -98,8 +98,8 @@ as expected, and don't forget to rotate/archive them as appropriate.
 Patch to unmodified Tomcat sample configuration
 ===============================================
 
---- context.xml.orig	Thu Jul 27 13:37:45 2017
-+++ context.xml	Thu Jul 27 13:38:15 2017
+--- context.xml.orig	Sat Jun 29 13:13:37 2019
++++ context.xml	Sat Jun 29 13:13:37 2019
 @@ -16,7 +16,7 @@
    limitations under the License.
  -->
@@ -109,8 +109,8 @@ Patch to unmodified Tomcat sample configuration
  
      <!-- Default set of monitored resources. If one of these changes, the    -->
      <!-- web application will be reloaded.                                   -->
---- web.xml.orig	Thu Jul 27 13:37:45 2017
-+++ web.xml	Thu Jul 27 13:38:15 2017
+--- web.xml.orig	Sat Jun 29 13:13:37 2019
++++ web.xml	Sat Jun 29 13:13:37 2019
 @@ -1,4 +1,8 @@
  <?xml version="1.0" encoding="UTF-8"?>
 +<!DOCTYPE root [
@@ -120,7 +120,7 @@ Patch to unmodified Tomcat sample configuration
  <!--
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
-@@ -4677,9 +4681,11 @@
+@@ -4702,9 +4706,11 @@
    <!-- to use within your application.                                       -->
  
      <welcome-file-list>
