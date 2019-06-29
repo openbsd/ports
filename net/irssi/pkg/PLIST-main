@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.26 2019/02/17 19:25:43 kn Exp $
-@pkgpath net/irssi-otr
+@comment $OpenBSD: PLIST-main,v 1.1 2019/06/29 14:54:09 tj Exp $
+@pkgpath net/irssi
 @bin bin/irssi
 include/irssi/
 include/irssi/irssi-config
@@ -152,8 +152,6 @@ lib/irssi/
 lib/irssi/modules/
 lib/irssi/modules/libirc_proxy.la
 lib/irssi/modules/libirc_proxy.so
-lib/irssi/modules/libotr_core.la
-lib/irssi/modules/libotr_core.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi.pm

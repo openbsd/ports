@@ -1,10 +1,18 @@
-# $OpenBSD: Makefile,v 1.81 2019/06/29 00:55:29 kn Exp $
+# $OpenBSD: Makefile,v 1.82 2019/06/29 14:54:09 tj Exp $
 
-COMMENT =	modular IRC client with many features (ipv6,socks,proxy)
+MULTI_PACKAGES = -main -otr
+
+COMMENT-main =	modular IRC client with many features
+COMMENT-otr =	OTR (off-the-record) plugin for irssi
 
 V =		1.2.1
 DISTNAME =	irssi-$V
 PKGSPEC =	irssi-=$V
+PKGNAME-main =	irssi-$V
+
+# -otr module doesn't vary between FLAVORs; override default FLAVOR suffix
+FULLPKGNAME-otr = irssi-otr-$V
+FULLPKGPATH-otr = net/irssi,-otr
 
 CATEGORIES =	net
 
@@ -15,17 +23,20 @@ MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	c crypto curses gcrypt glib-2.0 gmodule-2.0 gpg-error \
-		iconv intl m otr pcre perl pthread ssl
+WANTLIB +=	c crypto curses glib-2.0 gmodule-2.0 \
+		iconv intl m pcre perl pthread ssl
 
 MASTER_SITES =	https://github.com/irssi/irssi/releases/download/${V}/
 
 FLAVORS =	socks
 FLAVOR ?=
 
-LIB_DEPENDS =	devel/glib2>=2.28.0 \
-		security/libgcrypt>=1.2.0 \
+LIB_DEPENDS =	devel/glib2>=2.28.0
+
+RUN_DEPENDS-otr = net/irssi,-main
+LIB_DEPENDS-otr = security/libgcrypt>=1.2.0 \
 		security/libotr>=4.1.0
+WANTLIB-otr =	gcrypt gpg-error iconv intl otr
 
 LIBTOOL_FLAGS +=	--tag=disable-static
 
