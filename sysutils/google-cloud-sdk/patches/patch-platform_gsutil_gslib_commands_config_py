@@ -1,9 +1,9 @@
-$OpenBSD: patch-platform_gsutil_gslib_commands_config_py,v 1.12 2019/04/04 09:47:48 ajacoutot Exp $
+$OpenBSD: patch-platform_gsutil_gslib_commands_config_py,v 1.13 2019/06/29 10:07:11 ajacoutot Exp $
 
 Index: platform/gsutil/gslib/commands/config.py
 --- platform/gsutil/gslib/commands/config.py.orig
 +++ platform/gsutil/gslib/commands/config.py
-@@ -466,7 +466,7 @@ CONFIG_INPUTLESS_GSUTIL_SECTION_CONTENT = """
+@@ -476,7 +476,7 @@ CONFIG_INPUTLESS_GSUTIL_SECTION_CONTENT = """
  # available. 'software_update_check_period' specifies the number of days
  # between such checks. The default is 30. Setting the value to 0 disables
  # periodic software update checks.
