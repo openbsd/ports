@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.79 2019/02/18 18:35:57 kn Exp $
+# $OpenBSD: Makefile,v 1.80 2019/06/29 00:01:43 kn Exp $
 
 COMMENT =	modular IRC client with many features (ipv6,socks,proxy)
 
-V =		1.2.0
+V =		1.2.1
 DISTNAME =	irssi-$V
 PKGSPEC =	irssi-=$V
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://www.irssi.org/
 MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c crypto curses gcrypt glib-2.0 gmodule-2.0 gpg-error \
 		iconv intl m otr pcre perl pthread ssl

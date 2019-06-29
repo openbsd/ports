@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.786 2019/06/22 18:23:34 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.787 2019/06/29 00:01:43 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1394,6 +1394,7 @@ my $cve = {
 	'net/dhcpcd' => 'dhcpcd-<7.2.2',
 	'net/haproxy' => 'haproxy-<1.8.17',
 	'net/icecast' => 'icecast-<2.4.4',
+	'net/irssi' => 'irssi-<1.2.1',
 	'net/isc-bind' => 'isc-bind-<9.11.5pl4v0',
 	'net/libssh2' => 'libssh2-<1.8.2',
 	'net/lldpd' => 'lldpd-<0.7.18p0',
