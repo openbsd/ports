@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/09/13 10:38:34 robert Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/06/29 11:53:33 robert Exp $
 @conflict zarafa-libvmime-*
 @pkgpath mail/zarafa/libvmime
 include/vmime/
@@ -243,7 +243,6 @@ include/vmime/utility/inputStreamByteBufferAdapter.hpp
 include/vmime/utility/inputStreamPointerAdapter.hpp
 include/vmime/utility/inputStreamSocketAdapter.hpp
 include/vmime/utility/inputStreamStringAdapter.hpp
-include/vmime/utility/inputStreamStringProxyAdapter.hpp
 include/vmime/utility/outputStream.hpp
 include/vmime/utility/outputStreamAdapter.hpp
 include/vmime/utility/outputStreamByteArrayAdapter.hpp
@@ -257,7 +256,6 @@ include/vmime/utility/seekableInputStream.hpp
 include/vmime/utility/seekableInputStreamRegionAdapter.hpp
 include/vmime/utility/stream.hpp
 include/vmime/utility/streamUtils.hpp
-include/vmime/utility/stringProxy.hpp
 include/vmime/utility/stringUtils.hpp
 include/vmime/utility/sync/
 include/vmime/utility/sync/autoLock.hpp

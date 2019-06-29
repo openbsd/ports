@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.34 2017/12/14 17:07:17 jca Exp $
+# $OpenBSD: Makefile,v 1.35 2019/06/29 11:53:33 robert Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
 GH_ACCOUNT=     kisli
 GH_PROJECT=     vmime
-GH_COMMIT=      243efb267fe539958610ef1e2142a36dfbcd3c28
+GH_COMMIT=     	e2fc1911f17374ae5343c28ec52493f1dfdf09ab
 
 DISTNAME=	vmime
-PKGNAME=	libvmime-0.9.4
+PKGNAME=	libvmime-0.9.5
 
 SHARED_LIBS+=	vmime	4.0	# 0.0
 
