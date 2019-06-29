@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2019/06/29 00:01:43 kn Exp $
+# $OpenBSD: Makefile,v 1.81 2019/06/29 00:55:29 kn Exp $
 
 COMMENT =	modular IRC client with many features (ipv6,socks,proxy)
 
@@ -38,6 +38,7 @@ CONFIGURE_ARGS =	--with-otr=module \
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_lib_utf8proc_utf8proc_version=no
+SEPARATE_BUILD =	Yes
 
 .if ${FLAVOR:Msocks}
 CONFIGURE_ARGS +=	--with-socks
@@ -51,10 +52,10 @@ FAKE_FLAGS =	confdir="${PREFIX}/share/examples/irssi" \
 		scriptdir="${PREFIX}/share/examples/irssi/scripts" \
 		themedir="${PREFIX}/share/examples/irssi/themes"
 
-pre-configure:
+post-patch:
 	${SUBST_CMD} ${WRKSRC}/docs/irssi.1
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/irssi-config ${PREFIX}/include/irssi/
+	${INSTALL_DATA} ${WRKBUILD}/irssi-config ${PREFIX}/include/irssi/
 
 .include <bsd.port.mk>
