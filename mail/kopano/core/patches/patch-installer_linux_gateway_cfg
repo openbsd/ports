@@ -1,26 +1,18 @@
-$OpenBSD: patch-installer_linux_gateway_cfg,v 1.3 2018/07/09 16:29:20 robert Exp $
+$OpenBSD: patch-installer_linux_gateway_cfg,v 1.4 2019/06/29 13:52:11 robert Exp $
 
 Index: installer/linux/gateway.cfg
 --- installer/linux/gateway.cfg.orig
 +++ installer/linux/gateway.cfg
-@@ -27,16 +27,16 @@
+@@ -27,10 +27,10 @@
  #server_hostname_greeting = no
  
  # drop privileges and run the process as this user
 -#run_as_user = kopano
-+run_as_user = _kopano
++#run_as_user = _kopano
  
  # drop privileges and run the process as this group
 -#run_as_group = kopano
-+run_as_group = _kopano
++#run_as_group = _kopano
  
  # create a pid file for stopping the service via the init.d scripts
--#pid_file = /var/run/kopano/gateway.pid
-+pid_file = /var/run/kopano/gateway.pid
- 
- # run server in this path (when not using the -F switch)
--#running_path = /var/lib/kopano/empty
-+running_path = /var/empty
- 
- # create memory coredumps upon crash [no, systemdefault, yes]
- #coredump_enabled = systemdefault
+ #pid_file = /var/run/kopano/gateway.pid

@@ -1,9 +1,9 @@
-$OpenBSD: patch-common_UnixUtil_cpp,v 1.1 2019/04/17 13:01:02 robert Exp $
+$OpenBSD: patch-common_UnixUtil_cpp,v 1.2 2019/06/29 13:52:11 robert Exp $
 
 Index: common/UnixUtil.cpp
 --- common/UnixUtil.cpp.orig
 +++ common/UnixUtil.cpp
-@@ -25,8 +25,85 @@
+@@ -26,8 +26,85 @@
  #include <string>
  #include <libHX/string.h>
  
@@ -86,10 +86,10 @@ Index: common/UnixUtil.cpp
 +}
 +#endif
 +
- static int unix_runpath(ECConfig *conf)
+ static int unix_runpath()
  {
  	auto ret = chdir("/");
-@@ -485,6 +562,15 @@ int ec_reexec(const char *const *argv)
+@@ -465,6 +542,15 @@ int ec_reexec(const char *const *argv)
  
  	/* Resolve "exe" symlink before exec to please the sysadmin */
  	std::vector<char> linkbuf(16); /* mutable std::string::data is C++17 only */
@@ -105,7 +105,7 @@ Index: common/UnixUtil.cpp
  	ssize_t linklen;
  	while (true) {
  		linklen = readlink("/proc/self/exe", &linkbuf[0], linkbuf.size());
-@@ -500,6 +586,7 @@ int ec_reexec(const char *const *argv)
+@@ -480,6 +566,7 @@ int ec_reexec(const char *const *argv)
  	linkbuf[linklen] = '\0';
  	ec_log_debug("Reexecing %s", &linkbuf[0]);
  	execv(&linkbuf[0], const_cast<char **>(argv));

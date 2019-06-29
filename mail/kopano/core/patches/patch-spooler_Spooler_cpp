@@ -1,9 +1,9 @@
-$OpenBSD: patch-spooler_Spooler_cpp,v 1.12 2019/04/17 13:01:02 robert Exp $
+$OpenBSD: patch-spooler_Spooler_cpp,v 1.13 2019/06/29 13:52:11 robert Exp $
 
 Index: spooler/Spooler.cpp
 --- spooler/Spooler.cpp.orig
 +++ spooler/Spooler.cpp
-@@ -899,10 +899,10 @@ static int main2(int argc, char **argv)
+@@ -896,8 +896,8 @@ static int main2(int argc, char **argv)
  		{ "smtp_server","localhost", CONFIGSETTING_RELOADABLE },
  		{ "smtp_port","25", CONFIGSETTING_RELOADABLE },
  		{ "server_socket", "default:" },
@@ -12,15 +12,12 @@ Index: spooler/Spooler.cpp
 +		{ "run_as_user", "_kopano" },
 +		{ "run_as_group", "_kopano" },
  		{ "pid_file", "/var/run/kopano/spooler.pid" },
--		{"running_path", "/var/lib/kopano/empty", CONFIGSETTING_OBSOLETE},
-+		{"running_path", "/var/empty", CONFIGSETTING_OBSOLETE},
  		{"coredump_enabled", "systemdefault"},
  		{"log_method", "auto", CONFIGSETTING_NONEMPTY},
- 		{"log_file", ""},
-@@ -926,8 +926,8 @@ static int main2(int argc, char **argv)
+@@ -922,8 +922,8 @@ static int main2(int argc, char **argv)
  		{ "archive_on_send", "no", CONFIGSETTING_RELOADABLE },
  		{ "enable_dsn", "yes", CONFIGSETTING_RELOADABLE },
-         { "plugin_enabled", "yes" },
+ 		{"plugin_enabled", "no"},
 -        { "plugin_path", "/var/lib/kopano/spooler/plugins" },
 -        { "plugin_manager_path", "/usr/share/kopano-spooler/python" },
 +        { "plugin_path", "/var/db/kopano/spooler/plugins" },

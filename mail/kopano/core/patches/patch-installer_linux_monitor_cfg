@@ -1,26 +1,18 @@
-$OpenBSD: patch-installer_linux_monitor_cfg,v 1.3 2018/07/09 16:29:20 robert Exp $
+$OpenBSD: patch-installer_linux_monitor_cfg,v 1.4 2019/06/29 13:52:11 robert Exp $
 
 Index: installer/linux/monitor.cfg
 --- installer/linux/monitor.cfg.orig
 +++ installer/linux/monitor.cfg
-@@ -8,16 +8,16 @@
+@@ -8,10 +8,10 @@
  #servers =
  
  # drop privileges and run the process as this user
 -#run_as_user = kopano
-+run_as_user = _kopano
++#run_as_user = _kopano
  
  # drop privileges and run the process as this group
 -#run_as_group = kopano
-+run_as_group = _kopano
++#run_as_group = _kopano
  
  # create a pid file for stopping the service via the init.d scripts
--#pid_file = /var/run/kopano/monitor.pid
-+pid_file = /var/run/kopano/monitor.pid
- 
- # run server in this path (when not using the -F switch)
--#running_path = /var/lib/kopano/empty
-+running_path = /var/empty
- 
- ##############################################################
- # KOPANO MONITOR LOG SETTINGS
+ #pid_file = /var/run/kopano/monitor.pid

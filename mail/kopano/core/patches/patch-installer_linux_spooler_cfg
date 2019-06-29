@@ -1,35 +1,27 @@
-$OpenBSD: patch-installer_linux_spooler_cfg,v 1.6 2018/08/29 16:58:30 robert Exp $
+$OpenBSD: patch-installer_linux_spooler_cfg,v 1.7 2019/06/29 13:52:11 robert Exp $
 
 Index: installer/linux/spooler.cfg
 --- installer/linux/spooler.cfg.orig
 +++ installer/linux/spooler.cfg
-@@ -11,16 +11,16 @@
+@@ -11,10 +11,10 @@
  #server_socket = default:
  
  # drop privileges and run the process as this user
 -#run_as_user = kopano
-+run_as_user = _kopano
++#run_as_user = _kopano
  
  # drop privileges and run the process as this group
 -#run_as_group = kopano
-+run_as_group = _kopano
++#run_as_group = _kopano
  
  # create a pid file for stopping the service via the init.d scripts
--#pid_file = /var/run/kopano/spooler.pid
-+pid_file = /var/run/kopano/spooler.pid
- 
- # run server in this path (when not using the -F switch)
--#running_path = /var/lib/kopano/empty
-+running_path = /var/empty
- 
- # create memory coredumps upon crash [no, systemdefault, yes]
- #coredump_enabled = systemdefault
-@@ -147,13 +147,13 @@
- #plugin_enabled = yes
+ #pid_file = /var/run/kopano/spooler.pid
+@@ -144,13 +144,13 @@
+ #plugin_enabled = no
  
  # Path to the spooler plugin manager
 -#plugin_manager_path = /usr/share/kopano-spooler/python
-+plugin_manager_path = /usr/local/share/kopano-spooler/python
++#plugin_manager_path = /usr/local/share/kopano-spooler/python
  
  # Path to the activated spooler plugins.
  #   This folder contains symlinks to the kopano plugins and custom scripts. The plugins are
@@ -40,5 +32,5 @@ Index: installer/linux/spooler.cfg
  # Example:
 -#  $ ln -s /usr/share/kopano-spooler/python/plugins/disclaimer.py /var/lib/kopano/spooler/plugins/disclaimer.py
 -#plugin_path = /var/lib/kopano/spooler/plugins
-+#  $ ln -s /usr/local/share/kopano-spooler/python/plugins/disclaimer.py /var/db/kopano/spooler/plugins/disclaimer.py
-+plugin_path = /var/db/kopano/spooler/plugins
++#  $ ln -s /usr/localshare/kopano-spooler/python/plugins/disclaimer.py /var/db/kopano/spooler/plugins/disclaimer.py
++#plugin_path = /var/db/kopano/spooler/plugins

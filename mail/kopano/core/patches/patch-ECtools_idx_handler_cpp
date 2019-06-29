@@ -1,0 +1,16 @@
+$OpenBSD: patch-ECtools_idx_handler_cpp,v 1.1 2019/06/29 13:52:11 robert Exp $
+
+Index: ECtools/idx_handler.cpp
+--- ECtools/idx_handler.cpp.orig
++++ ECtools/idx_handler.cpp
+@@ -218,8 +218,8 @@ static constexpr const configsetting_t idx_defaults[] 
+ 	{"log_level", "3"},
+ 	{"log_file", "/var/log/kopano/search.log"},
+ 	{"log_timestamp", "yes"},
+-	{"run_as_user", "kopano"},
+-	{"run_as_group", "kopano"},
++	{"run_as_user", "_kopano"},
++	{"run_as_group", "_kopano"},
+ 	{nullptr, nullptr},
+ };
+ 

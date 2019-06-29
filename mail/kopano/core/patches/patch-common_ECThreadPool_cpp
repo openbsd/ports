@@ -1,9 +1,9 @@
-$OpenBSD: patch-common_ECThreadPool_cpp,v 1.1 2019/04/17 13:01:02 robert Exp $
+$OpenBSD: patch-common_ECThreadPool_cpp,v 1.2 2019/06/29 13:52:11 robert Exp $
 
 Index: common/ECThreadPool.cpp
 --- common/ECThreadPool.cpp.orig
 +++ common/ECThreadPool.cpp
-@@ -15,6 +15,9 @@
+@@ -17,6 +17,9 @@
  #ifdef LINUX
  #	include <sys/syscall.h>
  #endif
@@ -11,5 +11,5 @@ Index: common/ECThreadPool.cpp
 +#	include <signal.h>
 +#endif
  #include <kopano/platform.h>
+ #include <kopano/ECConfig.h>
  #include <kopano/ECLogger.h>
- #include <kopano/ECScheduler.h>

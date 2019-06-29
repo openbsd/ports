@@ -1,0 +1,23 @@
+$OpenBSD: patch-installer_linux_presence_cfg,v 1.1 2019/06/29 13:52:11 robert Exp $
+
+Index: installer/linux/presence.cfg
+--- installer/linux/presence.cfg.orig
++++ installer/linux/presence.cfg
+@@ -2,7 +2,7 @@
+ # PRESENCE SERVICE SETTINGS
+ 
+ # Location of presence backup
+-#data_path = /var/lib/kopano/presence/
++data_path = /var/db/kopano/presence/
+ 
+ # save data every N minutes
+ #data_save_interval = 5
+@@ -17,7 +17,7 @@
+ #pid_file            =   /var/run/kopano/presence.pid
+ 
+ # run server in this path (when not using the -F switch)
+-#running_path = /var/lib/kopano/empty
++running_path = /var/empty
+ 
+ # Configure listening address and port, for standalone
+ # operation only

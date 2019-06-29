@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/05/28 15:43:19 robert Exp $
+# $OpenBSD: Makefile,v 1.39 2019/06/29 13:52:11 robert Exp $
 
 # undefined ref's to libicon*, libintl*
 USE_LLD=	Yes
@@ -8,8 +8,6 @@ COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}.${BUILD}
 PKGNAME-mapi=	kopano-mapi-${V}.${BUILD}
-REVISION-main=	1
-REVISION-mapi=	0
 
 CATEGORIES=	mail www productivity
 
@@ -20,6 +18,7 @@ SHARED_LIBS +=  kcarchiver                0.0 # 0.0
 SHARED_LIBS +=  kcarchivercore            0.0 # 0.0
 SHARED_LIBS +=  kcfreebusy                0.0 # 0.0
 SHARED_LIBS +=  kcicalmapi                0.0 # 0.0
+SHARED_LIBS +=  kcindex                   0.0 # 0.0
 SHARED_LIBS +=  kcinetmapi                0.0 # 0.0
 SHARED_LIBS +=  kcpyplug                  0.0 # 0.0
 SHARED_LIBS +=  kcrosie                   0.0 # 0.0

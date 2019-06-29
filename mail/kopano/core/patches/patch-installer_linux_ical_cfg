@@ -1,26 +1,18 @@
-$OpenBSD: patch-installer_linux_ical_cfg,v 1.2 2018/07/09 16:29:20 robert Exp $
+$OpenBSD: patch-installer_linux_ical_cfg,v 1.3 2019/06/29 13:52:11 robert Exp $
 
 Index: installer/linux/ical.cfg
 --- installer/linux/ical.cfg.orig
 +++ installer/linux/ical.cfg
-@@ -2,16 +2,16 @@
+@@ -2,10 +2,10 @@
  # ICAL SETTINGS
  
  # drop privileges and run the process as this user
 -#run_as_user = kopano
-+run_as_user = _kopano
++#run_as_user = _kopano
  
  # drop privileges and run the process as this group
 -#run_as_group = kopano
-+run_as_group = _kopano
++#run_as_group = _kopano
  
  # create a pid file for stopping the service via the init.d scripts
--#pid_file = /var/run/kopano/ical.pid
-+pid_file = /var/run/kopano/ical.pid
- 
- # run server in this path (when not using the -F switch)
--#running_path = /var/lib/kopano/empty
-+running_path = /var/empty
- 
- # Space-separated list of address:port specifiers for where the server should
- # listen for connections.
+ #pid_file = /var/run/kopano/ical.pid

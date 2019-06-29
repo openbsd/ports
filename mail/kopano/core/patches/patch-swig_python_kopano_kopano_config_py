@@ -1,9 +1,9 @@
-$OpenBSD: patch-swig_python_kopano_kopano_config_py,v 1.6 2019/04/17 13:01:02 robert Exp $
+$OpenBSD: patch-swig_python_kopano_kopano_config_py,v 1.7 2019/06/29 13:52:11 robert Exp $
 
 Index: swig/python/kopano/kopano/config.py
 --- swig/python/kopano/kopano/config.py.orig
 +++ swig/python/kopano/kopano/config.py
-@@ -190,7 +190,7 @@ CONFIG = {
+@@ -189,7 +189,7 @@ CONFIG = {
      'run_as_user': Config.string(default=None),
      'run_as_group': Config.string(default=None),
      'running_path': Config.string(check_path=True,

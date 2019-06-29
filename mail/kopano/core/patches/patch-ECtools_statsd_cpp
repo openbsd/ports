@@ -1,0 +1,18 @@
+$OpenBSD: patch-ECtools_statsd_cpp,v 1.1 2019/06/29 13:52:11 robert Exp $
+
+Index: ECtools/statsd.cpp
+--- ECtools/statsd.cpp.orig
++++ ECtools/statsd.cpp
+@@ -55,9 +55,9 @@ static constexpr const struct HXoption sd_options[] = 
+ 
+ static constexpr const configsetting_t sd_config_defaults[] = {
+ 	{"statsd_listen", "unix:/var/run/kopano/statsd.sock"},
+-	{"statsd_rrd", "/var/lib/kopano/rrd"},
+-	{"run_as_user", "kopano"},
+-	{"run_as_group", "kopano"},
++	{"statsd_rrd", "/var/db/kopano/rrd"},
++	{"run_as_user", "_kopano"},
++	{"run_as_group", "_kopano"},
+ 	{"coredump_enabled", "systemdefault"},
+ 	{nullptr},
+ };
