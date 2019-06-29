@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.174 2019/05/18 18:53:48 espie Exp $
+# $OpenBSD: update-plist,v 1.175 2019/06/29 14:50:52 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1441,7 +1441,7 @@ sub scan_fake_dir
 	local $> = 0 if $self->{state}{scan_as_root};
 
 	$self->{objects} = OpenBSD::FS2->fill($base, $self->{state}{ignored},
-	    $self->{state}{logfile});
+	    $self->{state}{logfile}, $self->{state});
 }
 
 sub add_missing_cvstags

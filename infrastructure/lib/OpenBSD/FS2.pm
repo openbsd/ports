@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.29 2018/08/06 09:36:32 espie Exp $
+# $OpenBSD: FS2.pm,v 1.30 2019/06/29 14:50:52 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -63,6 +63,7 @@ sub classes
 	return (qw(OpenBSD::FS::File::Directory OpenBSD::FS::File::Rc
 		OpenBSD::FS::File::Desktop
 		OpenBSD::FS::File::Glib2Schema
+		OpenBSD::FS::File::PkgConfig
 		OpenBSD::FS::File::MimeInfo
 		OpenBSD::FS::File::Icon
 		OpenBSD::FS::File::IconTheme
@@ -170,6 +171,28 @@ sub recognize
 sub element_class
 {
 	'OpenBSD::PackingElement::Glib2Schema';
+}
+
+package OpenBSD::FS::File::PkgConfig;
+our @ISA = qw(OpenBSD::FS::File);
+sub recognize
+{
+	my ($class, $filename, $fs) = @_;
+	if ($filename =~ m,(.*lib/pkgconfig/)(.*)\.pc$,) {
+		my ($dir, $f) = ($1, $2);
+		my $state = $fs->{state};
+		
+		if ($state->system(
+		    sub {
+			$ENV{PKG_CONFIG_PATH}="$fs->{destdir}/$dir"; }, 
+		    'pkg-config', '--validate', $f) != 0) {
+		    	$state->errsay(
+			    "WARNING: file #1 is not a valid .pc file", 
+			    $filename);
+		}
+	}
+
+	return 0;
 }
 
 package OpenBSD::FS::File::MimeInfo;
@@ -398,8 +421,11 @@ sub recognize
 	$filename = $fs->resolve_link($filename);
 	return 0 if -l $filename;
 	$class->fill_objdump($filename, $fs, $data);
-	if ($data->{objdump} =~ m/ .note.openbsd.ident / && 
-	    $data->{objdump} !~ m/ .interp /) {
+	if ($data->{objdump} =~ m/ .note.openbsd.ident /) {
+		if ($data->{objdump} =~ m/ .interp /) {
+			print STDERR 
+    "WARNING: likely library $filename linked with -dynamic-linker\n";
+		}
 	    	return 1;
 	} else {
 		return 0;
@@ -475,8 +501,9 @@ sub ignore_parents
 # we look under a destdir, and we do ignore a hash of files
 sub new
 {
-	my ($class, $destdir, $ignored) = @_;
-	my $o = bless {destdir => $destdir, ignored => {}}, $class;
+	my ($class, $destdir, $ignored, $state) = @_;
+	my $o = bless {destdir => $destdir, ignored => {},
+	    state => $state}, $class;
 	# this allows _FAKE_TREE_LIST to be used
 	for my $d (keys %$ignored) {
 		for my $path (glob $d) {
@@ -639,8 +666,8 @@ sub parse_logfile
 # build a hash of files needing registration
 sub fill
 {
-	my ($class, $destdir, $ignored, $logfile) = @_;
-	my $self = $class->new($destdir, $ignored);
+	my ($class, $destdir, $ignored, $logfile, $state) = @_;
+	my $self = $class->new($destdir, $ignored, $state);
 
 	if (defined $logfile) {
 		$self->{ignored}{$logfile} = 1;
