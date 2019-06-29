@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2016/06/24 14:52:20 mglocker Exp $
+# $OpenBSD: Makefile,v 1.42 2019/06/29 00:32:00 kn Exp $
 
 COMMENT=	ICB plugin for irssi
 
@@ -13,7 +13,7 @@ CATEGORIES=     net
 RUN_DEPENDS=	net/irssi
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=   Yes
 
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE= gnu
