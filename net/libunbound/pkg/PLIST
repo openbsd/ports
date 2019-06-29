@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/17 09:58:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/06/29 13:49:41 sthen Exp $
 @conflict unbound-*
 include/unbound.h
 lib/libunbound.a
 lib/libunbound.la
-lib/libunbound.pc
 @lib lib/libunbound.so.${LIBunbound_VERSION}
+lib/pkgconfig/libunbound.pc
 @man man/man3/libunbound.3
 @man man/man3/ub_cancel.3
 @man man/man3/ub_ctx.3

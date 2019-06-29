@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/06/03 16:06:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/06/29 13:49:41 sthen Exp $
 
 COMMENT=	validating DNS resolver library
 
-DISTNAME=	unbound-1.9.1
+DISTNAME=	unbound-1.9.2
 PKGNAME=	lib${DISTNAME}
 
 SHARED_LIBS +=  unbound              4.1      # 9.0
@@ -42,6 +42,6 @@ ALL_TARGET=	lib
 INSTALL_TARGET=	install-lib
 
 post-install:
-	${INSTALL_DATA} ${WRKBUILD}/contrib/libunbound.pc ${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKBUILD}/contrib/libunbound.pc ${PREFIX}/lib/pkgconfig/
 
 .include <bsd.port.mk>
