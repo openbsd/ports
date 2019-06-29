@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/06/29 09:59:08 ajacoutot Exp $
 
 COMMENT=		library for handling paper characteristics
 
-DISTNAME=		libpaper_1.1.26
+DISTNAME=		libpaper_1.1.28
 PKGNAME=		${DISTNAME:S/_/-/}
 
 SHARED_LIBS +=  paper                0.0      # 2.2
@@ -14,7 +14,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 HOMEPAGE=		http://packages.debian.org/unstable/source/libpaper
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += c
 
@@ -26,8 +26,8 @@ USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	autoreconf
 
-AUTOCONF_VERSION=		2.69
-AUTOMAKE_VERSION=		1.15
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
 
 pre-configure:
 	sed -i 's,/bin/bash,/bin/sh,g' ${WRKSRC}/src/paperconfig.in
