@@ -1,7 +1,9 @@
-$OpenBSD: patch-lib_relocatable_c,v 1.3 2011/09/02 15:44:46 naddy Exp $
---- lib/relocatable.c.orig	Thu Sep  1 18:08:15 2011
-+++ lib/relocatable.c	Thu Sep  1 18:21:29 2011
-@@ -446,16 +446,20 @@ relocate (const char *pathname)
+$OpenBSD: patch-lib_relocatable_c,v 1.4 2019/06/29 15:46:54 naddy Exp $
+
+Index: lib/relocatable.c
+--- lib/relocatable.c.orig
++++ lib/relocatable.c
+@@ -506,16 +506,20 @@ relocate (const char *pathname)
    if (orig_prefix != NULL && curr_prefix != NULL
        && strncmp (pathname, orig_prefix, orig_prefix_len) == 0)
      {
@@ -24,7 +26,7 @@ $OpenBSD: patch-lib_relocatable_c,v 1.3 2011/09/02 15:44:46 naddy Exp $
                return result;
              }
          }
-@@ -463,15 +467,16 @@ relocate (const char *pathname)
+@@ -523,15 +527,16 @@ relocate (const char *pathname)
          {
            /* pathname starts with orig_prefix.  */
            const char *pathname_tail = &pathname[orig_prefix_len];

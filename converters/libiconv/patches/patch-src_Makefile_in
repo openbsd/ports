@@ -1,6 +1,8 @@
-$OpenBSD: patch-src_Makefile_in,v 1.6 2011/09/02 15:44:47 naddy Exp $
---- src/Makefile.in.orig	Thu Sep  1 18:19:18 2011
-+++ src/Makefile.in	Thu Sep  1 18:20:19 2011
+$OpenBSD: patch-src_Makefile_in,v 1.7 2019/06/29 15:46:54 naddy Exp $
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
 @@ -71,7 +71,6 @@ OBJECTS_RES_no =
  # without internationalization and not linked with libintl.
  
