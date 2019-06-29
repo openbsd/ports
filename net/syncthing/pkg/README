@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2018/09/04 12:46:19 espie Exp $
+$OpenBSD: README,v 1.5 2019/06/29 14:05:19 edd Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -51,7 +51,12 @@ File Descriptor Limits
 ======================
 
 Syncthing is fairly hungry for file descriptors and the default limits may be
-insufficient. If you run Syncthing via the rc.d(8) script, then you can give
+insufficient. On OpenBSD, Syncthing uses kqueue(2) to "watch" files, and since
+kqueue(2) doesn't support recursive watching, each file has be watched
+individually. The upshot of this is that each file in a watched folder will use
+one file descriptor.
+
+If you run Syncthing via the rc.d(8) script, then you can give
 Syncthing more file descriptors by adding the following to login.conf(5):
 
        syncthing:\
@@ -62,3 +67,12 @@ Syncthing more file descriptors by adding the following to login.conf(5):
 Don't forget to rebuild the login.conf.db file (if necessary):
 
         # [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
+
+Note that in addition to ulimits, there is a kernel-level file descriptor limit
+which may also need to be adjusted. This limit is managed through the
+kern.maxfiles sysctl(8).
+
+Another option is to turn off the file watcher and use only periodic scans.
+This will result in much reduced file descriptor usage at the cost of a
+(configurable) latency. See "watch for changes" and "full rescan interval" in
+the "advanced" tab in a folder's settings (on the web UI).

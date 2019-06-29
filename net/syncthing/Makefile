@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/04 21:46:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/06/29 14:05:19 edd Exp $
 
 COMMENT =	open decentralized synchronization utility
 
-V =		1.1.1
+V =		1.1.4
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://syncthing.net/
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # MPL 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB += c pthread
 
@@ -29,9 +29,9 @@ do-build:
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go \
 		-version v${V} -no-upgrade
 
-# Some tests fail, but they are bugs in the test suite itself, not Syncthing.
-# We are working with upstream to fix these:
-# https://forum.syncthing.net/t/openbsd-test-debugging/12799
+# A couple of test failures caused by a bug in the test suite (but not in
+# Syncthing itself):
+# https://github.com/syncthing/syncthing/issues/5796#issuecomment-502473144
 do-test:
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go test
 
