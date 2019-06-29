@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 2018/12/11 10:46:06 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2019/06/29 22:26:25 ajacoutot Exp $
 
 COMMENT=		cryptographic library
 
-DISTNAME=		nettle-3.4.1
+DISTNAME=		nettle-3.5.1
 PKGNAME=		lib${DISTNAME}
-REVISION=		0
 
-SHARED_LIBS +=  hogweed                   2.0 # 6.5
-SHARED_LIBS +=  nettle                    4.0 # 4.5
+SHARED_LIBS +=  hogweed                   3.0 # 6.5
+SHARED_LIBS +=  nettle                    5.0 # 4.5
 
 CATEGORIES=		security devel
 
@@ -16,7 +15,7 @@ HOMEPAGE=		http://www.lysator.liu.se/~nisse/nettle/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += c gmp
 

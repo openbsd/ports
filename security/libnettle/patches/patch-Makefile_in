@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2018/12/06 14:03:41 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.10 2019/06/29 22:26:25 ajacoutot Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -462,11 +462,6 @@ install-dll-nettle:
+@@ -476,11 +476,6 @@ install-dll-nettle:
  install-shared-nettle: $(LIBNETTLE_FORLINK) @IF_DLL@ install-dll-nettle
  	$(MKDIR_P) $(DESTDIR)$(libdir)
  	$(INSTALL_DATA) $(LIBNETTLE_FILE_SRC) $(DESTDIR)$(libdir)/$(LIBNETTLE_FILE)
@@ -15,7 +15,7 @@ Index: Makefile.in
  
  install-dll-hogweed:
  	$(MKDIR_P) $(DESTDIR)$(bindir)
-@@ -475,11 +470,6 @@ install-dll-hogweed:
+@@ -489,11 +484,6 @@ install-dll-hogweed:
  install-shared-hogweed: $(LIBHOGWEED_FORLINK) @IF_DLL@ install-dll-hogweed
  	$(MKDIR_P) $(DESTDIR)$(libdir)
  	$(INSTALL_DATA) $(LIBHOGWEED_FILE_SRC) $(DESTDIR)$(libdir)/$(LIBHOGWEED_FILE)
