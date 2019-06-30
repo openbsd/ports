@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2019/05/31 05:54:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.156 2019/06/30 08:34:10 ajacoutot Exp $
 
 COMMENT=		GNU Transport Layer Security library
 
@@ -55,6 +55,7 @@ CONFIGURE_ARGS +=	--without-tpm
 
 # prevents dependency on devel/autogen
 CONFIGURE_ARGS +=	--enable-local-libopts
+CONFIGURE_ARGS +=	ac_cv_prog_autogen=
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
