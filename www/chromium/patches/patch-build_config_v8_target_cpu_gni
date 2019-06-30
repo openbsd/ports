@@ -1,0 +1,14 @@
+$OpenBSD: patch-build_config_v8_target_cpu_gni,v 1.1 2019/06/30 18:46:23 robert Exp $
+
+Index: build/config/v8_target_cpu.gni
+--- build/config/v8_target_cpu.gni.orig
++++ build/config/v8_target_cpu.gni
+@@ -36,6 +36,8 @@ declare_args() {
+ if (v8_target_cpu == "") {
+   if (current_toolchain == "//build/toolchain/linux:clang_x64_v8_arm64") {
+     v8_target_cpu = "arm64"
++  } else if (current_toolchain == "//build/toolchain/openbsd:clang_arm64") {
++    v8_target_cpu = "arm64"
+   } else if (current_toolchain == "//build/toolchain/linux:clang_x86_v8_arm") {
+     v8_target_cpu = "arm"
+   } else if (current_toolchain ==

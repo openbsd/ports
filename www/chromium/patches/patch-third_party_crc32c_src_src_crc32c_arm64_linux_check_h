@@ -1,0 +1,27 @@
+$OpenBSD: patch-third_party_crc32c_src_src_crc32c_arm64_linux_check_h,v 1.1 2019/06/30 18:46:23 robert Exp $
+
+Index: third_party/crc32c/src/src/crc32c_arm64_linux_check.h
+--- third_party/crc32c/src/src/crc32c_arm64_linux_check.h.orig
++++ third_party/crc32c/src/src/crc32c_arm64_linux_check.h
+@@ -16,6 +16,7 @@
+ 
+ #if HAVE_ARM64_CRC32C
+ 
++#if !defined(__OpenBSD__)
+ #if HAVE_STRONG_GETAUXVAL
+ #include <sys/auxv.h>
+ #elif HAVE_WEAK_GETAUXVAL
+@@ -25,11 +26,12 @@ extern "C" unsigned long getauxval(unsigned long type)
+ 
+ #define AT_HWCAP 16
+ #endif  // HAVE_STRONG_GETAUXVAL || HAVE_WEAK_GETAUXVAL
++#endif
+ 
+ namespace crc32c {
+ 
+ inline bool CanUseArm64Linux() {
+-#if HAVE_STRONG_GETAUXVAL || HAVE_WEAK_GETAUXVAL
++#if !defined(__OpenBSD__) && (defined(HAVE_STRONG_GETAUXVAL) || defined(HAVE_WEAK_GETAUXVAL))
+   // From 'arch/arm64/include/uapi/asm/hwcap.h' in Linux kernel source code.
+   constexpr unsigned long kHWCAP_PMULL = 1 << 4;
+   constexpr unsigned long kHWCAP_CRC32 = 1 << 7;

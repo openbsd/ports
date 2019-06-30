@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.30 2019/05/11 20:37:14 robert Exp $
+$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.31 2019/06/30 18:46:23 robert Exp $
 
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
@@ -54,6 +54,15 @@ Index: build/config/compiler/BUILD.gn
      cflags += [ "-fcrash-diagnostics-dir=" +
                  rebase_path("//tools/clang/crashreports", root_build_dir) ]
  
+@@ -726,7 +722,7 @@ config("compiler_cpu_abi") {
+         ]
+       }
+     } else if (current_cpu == "arm") {
+-      if (is_clang && !is_android && !is_nacl) {
++      if (is_clang && !is_android && !is_nacl && !is_openbsd) {
+         cflags += [ "--target=arm-linux-gnueabihf" ]
+         ldflags += [ "--target=arm-linux-gnueabihf" ]
+       }
 @@ -740,7 +736,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
