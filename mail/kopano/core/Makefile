@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2019/06/29 13:52:11 robert Exp $
+# $OpenBSD: Makefile,v 1.40 2019/06/30 20:07:54 robert Exp $
 
 # undefined ref's to libicon*, libintl*
 USE_LLD=	Yes
@@ -8,6 +8,8 @@ COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}.${BUILD}
 PKGNAME-mapi=	kopano-mapi-${V}.${BUILD}
+
+REVISION-main=	0
 
 CATEGORIES=	mail www productivity
 
@@ -55,6 +57,7 @@ WANTLIB-main += mariadb curses ssl xml2
 WANTLIB-main += gsoapssl++ tidy
 WANTLIB-main += ${LIBCXX}
 WANTLIB-main += icalvcal ldap_r-2.4 HX jsoncpp
+WANTLIB-main += db_cxx uuid xapian
 
 # Do not substitute MODULE_NAME
 UPDATE_PLIST_ARGS+=	-i MODULE_NAME
@@ -68,6 +71,7 @@ RUN_DEPENDS-main= ${MODPY_RUN_DEPENDS} \
 		www/py-jwt${MODPY_FLAVOR}
 LIB_DEPENDS-main= databases/mariadb \
 		databases/openldap \
+		databases/xapian-core \
 		devel/gettext,-runtime \
 		devel/gsoap>=2.8.50 \
 		devel/jsoncpp \
