@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-otr,v 1.1 2019/06/29 14:54:09 tj Exp $
-@conflict irssi-<=1.2.1
+@comment $OpenBSD: PLIST-otr,v 1.2 2019/07/01 13:52:09 kn Exp $
+@conflict irssi-<1.2.1
 @pkgpath net/irssi-otr
 lib/irssi/modules/libotr_core.la
 lib/irssi/modules/libotr_core.so

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2019/06/30 15:12:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2019/07/01 13:52:09 kn Exp $
 
 MULTI_PACKAGES = -main -otr
 
@@ -11,6 +11,7 @@ PKGSPEC =	irssi-=$V
 PKGNAME-main =	irssi-$V
 
 REVISION-main =	0
+REVISION-otr =	0
 
 # -otr module doesn't vary between FLAVORs; override default FLAVOR suffix
 FULLPKGNAME-otr = irssi-otr-$V
