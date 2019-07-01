@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.346 2019/07/01 16:48:17 sthen Exp $
+$OpenBSD: user.list,v 1.347 2019/07/01 20:17:13 naddy Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -164,7 +164,7 @@ id  user		group		port options
 653 _pgbouncer		_pgbouncer	databases/pgbouncer
 654 _spectrum		_spectrum	net/spectrum
 655 _minbif		_minbif		net/minbif
-$656 _mediatomb		_mediatomb	multimedia/mediatomb
+#656 _mediatomb		_mediatomb	multimedia/mediatomb
 #657 _ircd-seven		_ircd-seven	net/ircd-seven
 658 _vnstat		_vnstat		net/vnstat
 659 _sogo		_sogo		www/sogo
