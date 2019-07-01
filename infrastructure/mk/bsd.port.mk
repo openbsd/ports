@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1471 2019/06/16 14:27:42 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1472 2019/07/01 06:47:12 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -253,7 +253,7 @@ _clean += -f
 .endif
 
 _okay_words = depends work fake -f flavors dist install sub packages package \
-	bulk force plist build all
+	bulk force plist build all test
 .for _w in ${_clean}
 .  if !${_okay_words:M${_w}}
 ERRORS += "Fatal: unknown clean command: ${_w}\n(not in ${_okay_words})"
@@ -3151,6 +3151,9 @@ _internal-clean:
 .    endfor
 .  endif
 .endif
+.if ${_clean:Mtest}
+	${_PBUILD} rm -f ${_TEST_COOKIE}
+.endif
 
 print-build-depends:
 .if !empty(_BUILD_DEP)
@@ -3473,6 +3476,10 @@ rebuild:
 	@${_PBUILD} rm -f ${_BUILD_COOKIE}
 	@${_MAKE} build
 
+retest:
+	@${_PBUILD} rm -f ${_TEST_COOKIE}
+	@${_MAKE} test
+
 regen:
 	@${_PBUILD} rm -f ${_GEN_COOKIE}
 	@${_MAKE} gen
@@ -3549,7 +3556,7 @@ _all_phony = ${_recursive_depends_targets} \
 	post-distpatch post-extract post-install \
 	post-patch post-test pre-build pre-configure pre-extract pre-fake \
 	pre-install pre-patch pre-test prepare \
-	print-build-depends print-run-depends rebuild regen reprepare \
+	print-build-depends print-run-depends rebuild regen reprepare retest \
 	test-depends test-depends-list run-depends-list \
     show-required-by subpackage uninstall _print-metadata \
 	run-depends-args lib-depends-args all-lib-depends-args wantlib-args \
