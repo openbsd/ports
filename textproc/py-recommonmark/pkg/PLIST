@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/01 10:02:50 jca Exp $
+bin/cm2html${MODPY_BIN_SUFFIX}
+bin/cm2latex${MODPY_BIN_SUFFIX}
+bin/cm2man${MODPY_BIN_SUFFIX}
+bin/cm2pseudoxml${MODPY_BIN_SUFFIX}
+bin/cm2xetex${MODPY_BIN_SUFFIX}
+bin/cm2xml${MODPY_BIN_SUFFIX}
+lib/python${MODPY_VERSION}/site-packages/recommonmark/
+lib/python${MODPY_VERSION}/site-packages/recommonmark-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/recommonmark-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/recommonmark-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/recommonmark-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/recommonmark-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/recommonmark-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/recommonmark-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/recommonmark/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/recommonmark/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/recommonmark/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/recommonmark/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/recommonmark/${MODPY_PYCACHE}scripts.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/recommonmark/${MODPY_PYCACHE}states.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/recommonmark/${MODPY_PYCACHE}transform.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/recommonmark/parser.py
+lib/python${MODPY_VERSION}/site-packages/recommonmark/scripts.py
+lib/python${MODPY_VERSION}/site-packages/recommonmark/states.py
+lib/python${MODPY_VERSION}/site-packages/recommonmark/transform.py

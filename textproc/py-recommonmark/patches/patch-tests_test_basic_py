@@ -1,0 +1,17 @@
+$OpenBSD: patch-tests_test_basic_py,v 1.1.1.1 2019/07/01 10:02:50 jca Exp $
+
+Index: tests/test_basic.py
+--- tests/test_basic.py.orig
++++ tests/test_basic.py
+@@ -8,7 +8,10 @@ from docutils.utils import new_document
+ from docutils.readers import Reader
+ from docutils.core import publish_parts
+ 
+-from commonmark import Parser
++try:
++    from commonmark import Parser
++except ImportError:
++    from CommonMark import Parser
+ from recommonmark.parser import CommonMarkParser
+ 
+ 

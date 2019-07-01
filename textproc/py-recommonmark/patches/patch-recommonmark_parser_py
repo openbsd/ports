@@ -1,0 +1,17 @@
+$OpenBSD: patch-recommonmark_parser_py,v 1.1.1.1 2019/07/01 10:02:50 jca Exp $
+
+Index: recommonmark/parser.py
+--- recommonmark/parser.py.orig
++++ recommonmark/parser.py
+@@ -6,7 +6,10 @@ from os.path import splitext
+ from docutils import parsers, nodes
+ from sphinx import addnodes
+ 
+-from commonmark import Parser
++try:
++    from commonmark import Parser
++except ImportError:
++    from CommonMark import Parser
+ 
+ from warnings import warn
+ 
