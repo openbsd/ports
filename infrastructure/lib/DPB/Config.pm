@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.81 2019/07/01 08:59:41 espie Exp $
+# $OpenBSD: Config.pm,v 1.82 2019/07/01 12:03:41 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -221,7 +221,7 @@ sub parse_command_line
 		}
 	} else {
 		require DPB::External;
-		$state->{subst}->add('CONTROL', "%L/dpb-".$$);
+		$state->{subst}->add('CONTROL', '%L/control-%h-%$');
 		$state->{external} = DPB::External->server($state);
 	}
 	$state->{external} //= DPB::ExternalStub->new;

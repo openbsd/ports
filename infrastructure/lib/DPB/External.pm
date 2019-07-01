@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.19 2019/07/01 08:59:41 espie Exp $
+# $OpenBSD: External.pm,v 1.20 2019/07/01 12:03:41 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -31,7 +31,8 @@ sub server
 
 	my $o = bless {state => $state, 
 	    subdirlist => {},
-	    path => $state->expand_path($state->{subst}->value('CONTROL'))
+	    path => $state->expand_path($state->{subst}->value('CONTROL')),
+	    prompt => $state->expand_path('dpb@%h[%$]$ ')
 	    }, $class;
 
 	# this ensures the socket belongs to log_user.
@@ -186,7 +187,7 @@ sub handle_command
 	} else {
 		$fh->print("Unknown command or bad syntax: ", $line, " (help for details)\n");
 	}
-	$fh->print('dpb$ ');
+	$fh->print($self->{prompt});
 }
 
 sub receive_commands
@@ -198,7 +199,7 @@ sub receive_commands
 			if ($fh == $self->{server}) {
 				my $n = $fh->accept;
 				$self->{select}->add($n);
-				$n->print('dpb$ ');
+				$n->print($self->{prompt});
 			} else {
 				my $line = $fh->getline;
 				if (!defined $line || $line =~ m/^bye$/) {

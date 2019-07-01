@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.97 2019/07/01 08:59:41 espie Exp $
+# $OpenBSD: Core.pm,v 1.98 2019/07/01 12:03:41 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -850,13 +850,22 @@ sub repository
 package DPB::Core::Local;
 our @ISA = qw(DPB::Core);
 
-my $host;
+my ($host, $shorthost);
 sub hostname
 {
 	if (!defined $host) {
 		chomp($host = `hostname`);
+		$shorthost = $host;
+		$shorthost =~ s/\..*//;
 	}
 	return $host;
+}
+
+sub short_hostname
+{
+	my $class = shift;
+	$class->hostname;
+	return $shorthost;
 }
 
 package DPB::Core::Fetcher;
