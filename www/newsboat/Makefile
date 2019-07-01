@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/20 22:15:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/01 10:21:12 semarie Exp $
 
 COMMENT =	RSS/Atom feed reader for text terminals
 
@@ -116,7 +116,9 @@ LIB_DEPENDS =	databases/sqlite3 \
 		textproc/libxml \
 		net/curl
 
-MAKE_ENV =	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+MAKE_ENV =	${MODCARGO_ENV} \
+		CXX="${CXX}" \
+		CXXFLAGS="${CXXFLAGS}"
 FAKE_FLAGS =	mandir="${PREFIX}/man"
 
 USE_GMAKE =	Yes
