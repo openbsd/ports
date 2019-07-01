@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_tests_rs,v 1.1 2019/07/01 11:25:58 jca Exp $
+
+Index: tests/tests.rs
+--- tests/tests.rs.orig
++++ tests/tests.rs
+@@ -60,8 +60,8 @@ fn run_cbindgen(
+ 
+ fn compile(cbindgen_output: &Path, language: Language) {
+     let cc = env::var("CC").unwrap_or_else(|_| match language {
+-        Language::Cxx => "g++".to_owned(),
+-        Language::C => "gcc".to_owned(),
++        Language::Cxx => "c++".to_owned(),
++        Language::C => "cc".to_owned(),
+     });
+ 
+     let mut object = cbindgen_output.to_path_buf();

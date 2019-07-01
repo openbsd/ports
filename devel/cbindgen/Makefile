@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/23 12:05:15 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/01 11:25:58 jca Exp $
 
 COMMENT =		C bindings generator from rust code
 
@@ -17,7 +17,6 @@ DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 MODULES =		devel/cargo
 
 CONFIGURE_STYLE =	cargo
-SEPARATE_BUILD =	Yes
 
 MODCARGO_CRATES +=      ansi_term       0.11.0  # MIT
 MODCARGO_CRATES +=      atty    0.2.11  # MIT
@@ -66,5 +65,7 @@ MODCARGO_CRATES +=      winapi-i686-pc-windows-gnu      0.4.0   # MIT/Apache-2.0
 MODCARGO_CRATES +=      winapi-x86_64-pc-windows-gnu    0.4.0   # MIT/Apache-2.0
 
 WANTLIB += c c++abi m pthread
+
+PATCHORIG =	.ports.orig
 
 .include <bsd.port.mk>
