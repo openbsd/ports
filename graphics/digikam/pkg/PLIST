@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2019/05/03 06:17:52 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.20 2019/07/01 08:02:37 espie Exp $
 @conflict digikam-kde4-*
 @conflict kipi-plugins-<=4
 bin/cleanup_digikamdb
@@ -751,9 +751,5 @@ share/showfoto/data/splash-showfoto.png
 share/solid/
 share/solid/actions/
 share/solid/actions/digikam-opencamera.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
