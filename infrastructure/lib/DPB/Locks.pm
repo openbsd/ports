@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.51 2019/05/12 16:37:52 espie Exp $
+# $OpenBSD: Locks.pm,v 1.52 2019/07/01 08:59:41 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -207,6 +207,20 @@ sub scan_lockdir
 		# and zap vim temp files as well!
 		next if $e =~ m/\.swp$/;
 		&$code($self->get_info_from_file("$self->{lockdir}/$e"));
+	}
+}
+
+sub wipehost
+{
+	my ($self, $h) = @_;
+	my @wipe;
+	$self->scan_lockdir(
+	    sub {
+	    	my $i = shift;
+		push(@wipe, $i->{filename}) if $i->{host} eq $h;
+	    });
+	for my $f (@wipe) {
+		$self->unlink($f);
 	}
 }
 

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.129 2019/05/15 13:51:07 espie Exp $
+# $OpenBSD: dpb,v 1.130 2019/07/01 08:59:41 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -98,6 +98,7 @@ sub affinityclass
 my $subdirlist = {};
 
 my $master_pid = $$;
+my $state;
 
 my $cleanup = 
     sub {
@@ -106,6 +107,7 @@ my $cleanup =
 		$> = 0;
 		DPB::Core->cleanup($S // "INT", 0);
 	}
+	eval { $state->{external}->cleanup; };
     };
 
 for my $S (qw(INT HUP TERM QUIT)) {
@@ -118,7 +120,7 @@ for my $S (qw(INT HUP TERM QUIT)) {
 
 DPB::Trace->setup(\%SIG, $cleanup);
 
-my $state = DPB::State->new;
+$state = DPB::State->new;
 $state->handle_options;
 my $reporter = DPB::Reporter->new($state, "main", "DPB::Core");
 DPB::Trace->set_reporter($reporter);
@@ -342,6 +344,7 @@ if ($state->{scan_only}) {
 
 $reporter->reset;
 DPB::Core->cleanup;
+$state->{external}->cleanup;
 print "Elapsed time=", show_time(time-$starttime),"\n";
 print $state->engine->report;
 $state->engine->end_dump($state->logger->append('dump'));

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.80 2019/05/09 11:08:55 espie Exp $
+# $OpenBSD: Config.pm,v 1.81 2019/07/01 08:59:41 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -214,11 +214,17 @@ sub parse_command_line
 		$state->{logdir} = $state->{subst}->value('LOGDIR');
 	}
 	if ($state->define_present('CONTROL')) {
-		require DPB::External;
-		$state->{external} = DPB::External->server($state);
+		if ($state->{subst}->value('CONTROL') ne '') {
+			require DPB::External;
+			$state->{external} = DPB::External->server($state);
+			die if !defined $state->{external};
+		}
 	} else {
-		$state->{external} = DPB::ExternalStub->new;
+		require DPB::External;
+		$state->{subst}->add('CONTROL', "%L/dpb-".$$);
+		$state->{external} = DPB::External->server($state);
 	}
+	$state->{external} //= DPB::ExternalStub->new;
 	if ($state->{opt}{s}) {
 		$state->{wantsize} = 1;
 	} elsif ($state->define_present('WANTSIZE')) {
@@ -463,6 +469,10 @@ sub new
 }
 
 sub receive_commands
+{
+}
+
+sub cleanup
 {
 }
 

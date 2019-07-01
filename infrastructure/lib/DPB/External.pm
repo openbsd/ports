@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.18 2019/05/15 13:55:46 espie Exp $
+# $OpenBSD: External.pm,v 1.19 2019/07/01 08:59:41 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -30,28 +30,43 @@ sub server
 	my ($class, $state) = @_;
 
 	my $o = bless {state => $state, 
-	    subdirlist => {}}, $class;
-	my $path = $state->expand_path($state->{subst}->value('CONTROL'));
+	    subdirlist => {},
+	    path => $state->expand_path($state->{subst}->value('CONTROL'))
+	    }, $class;
 
 	# this ensures the socket belongs to log_user.
 	$state->{log_user}->run_as(
 	    sub {
-	    	unlink($path);
+	    	unlink($o->{path});
 		$o->{server} = IO::Socket::UNIX->new(
 		    Type => SOCK_STREAM,
-		    Local => $path);
+		    Local => $o->{path});
 	    	if (!defined $o->{server}) {
-			$state->fatal("Can't create socket named #1: #2", 
-			    $path, $!);
+			$state->errsay("Can't create socket named #1: #2", 
+			    $o->{path}, $!);
 		}
-		chmod 0700, $path or 
-		    $state->fatal("Can't enforce permissions for socket #1:#2", 
-			$path, $!);
+		if (!chmod 0700, $o->{path}) {
+			$state->errsay(
+			    "Can't enforce permissions for socket #1:#2", 
+			    $o->{path}, $!);
+			unlink($o->{path});
+			delete $o->{server};
+		}
 	    });
-	# NOW we can listen
-	$o->{server}->listen;
-	$o->{select} = IO::Select->new($o->{server});
-	return $o;
+	if (defined $o->{server}) {
+		# NOW we can listen
+		$o->{server}->listen;
+		$o->{select} = IO::Select->new($o->{server});
+		return $o;
+	} else {
+		return undef;
+	}
+}
+
+sub cleanup
+{
+	my $self = shift;
+	$self->{state}{log_user}->unlink($self->{path});
 }
 
 sub status
@@ -101,6 +116,21 @@ sub wipe
 	}
 }
 
+sub wipehost
+{
+	my ($self, $fh, $h) = @_;
+	# kill the stuff that's running
+	DPB::Core->wipehost($h);
+	my $state = $self->{state};
+	# zap the locks as well
+	$state->locker->wipehost($h);
+	for my $p (DPB::PkgPath->seen) {
+		next unless defined $p->{affinity};
+		next unless $p->{affinity} eq $h;
+		$state->{affinity}->unmark($p);
+	}
+}
+
 sub handle_command
 {
 	my ($self, $line, $fh) = @_;
@@ -137,6 +167,10 @@ sub handle_command
 		for my $p (split(/\s+/, $1)) {
 			$self->wipe($fh, $1);
 		}
+	} elsif ($line =~ m/^wipehost\s+(.*)/) {
+		for my $p (split(/\s+/, $1)) {
+			$self->wipehost($fh, $1);
+		}
 	} elsif ($line =~ m/^help\b/) {
 		$fh->print(
 		    "Commands:\n",
@@ -146,7 +180,8 @@ sub handle_command
 		    "\tdontclean <pkgpath>...\n",
 		    "\tstats\n",
 		    "\tstatus <fullpkgpath>...\n",
-		    "\twipe <fullpkgpath>...\n"
+		    "\twipe <fullpkgpath>...\n",
+		    "\twipehost <hostname>...\n"
 		);
 	} else {
 		$fh->print("Unknown command or bad syntax: ", $line, " (help for details)\n");
