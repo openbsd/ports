@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/31 17:45:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/01 05:21:41 rsadowski Exp $
 
 COMMENT =	C++-native, header-only, test framework for unit-tests
 
 GH_ACCOUNT =	catchorg
 GH_PROJECT =	Catch2
-GH_TAGNAME =	v2.8.0
+GH_TAGNAME =	v2.9.1
 
 DISTNAME =	catch2-${GH_TAGNAME:S/v//}
 
@@ -13,7 +13,7 @@ CATEGORIES =	devel
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # Boost
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # C++11 / C++14
 COMPILER =		base-clang ports-clang ports-gcc
