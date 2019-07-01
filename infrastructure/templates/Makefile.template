@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.81 2019/05/31 21:29:52 espie Exp $
+# $OpenBSD: Makefile.template,v 1.82 2019/07/01 11:35:42 kirby Exp $
 #
 # Replace ??? with appropriate values
 # Remove extraneous comments before commit
@@ -97,7 +97,10 @@ MASTER_SITES =		???
 
 # Dependencies
 #
-#COMPILER =		???
+# For ports using C++, except in special cases you should use a compiler
+# with the same standard library as used in other ports. Remove entries
+# from the COMPILER list if they're known to not work.
+#COMPILER =		base-clang ports-gcc base-gcc
 #MODULES =		???
 #BUILD_DEPENDS =	???
 #RUN_DEPENDS =		???
@@ -108,11 +111,6 @@ MASTER_SITES =		???
 #MAKE_ENV =		???
 #FAKE_FLAGS =		???
 #TEST_FLAGS =		???
-
-# For ports using C++, except in special cases you should use a compiler
-# with the same standard library as used in other ports. Remove entries
-# from the COMPILER list if they're known to not work.
-#COMPILER =		base-clang ports-gcc base-gcc
 
 # build/configuration variables
 #
