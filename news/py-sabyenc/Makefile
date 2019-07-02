@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/27 04:26:28 bket Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/02 04:19:32 bket Exp $
 
 COMMENT =		yEnc Module for Python modified for SABnzbd
 
-MODPY_EGG_VERSION =	3.3.5
+MODPY_EGG_VERSION =	3.3.6
 DISTNAME =		sabyenc-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		news
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		${MODPY_WANTLIB} pthread
 
