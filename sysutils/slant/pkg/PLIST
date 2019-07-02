@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/02 09:17:53 bentley Exp $
+@bin bin/slant
+@man man/man1/slant.1
+@man man/man8/slant-cgi.8
+@man man/man8/slant-collectd.8
+@man man/man8/slant-upgrade.8
+@bin sbin/slant-collectd
+sbin/slant-upgrade
+share/slant/
+share/slant/slant.kwbp
+@cwd ${VARBASE}/www
+@rcscript ${RCDIR}/slant_collectd
+@bin cgi-bin/slant-cgi
+@exec slant-upgrade

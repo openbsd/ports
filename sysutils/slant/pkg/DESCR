@@ -1,0 +1,8 @@
+Slant is an open source, minimal remote system monitor. It models host
+fitness via a set of numeric quantifiers, for instance, CPU usage quantified
+as a percent average over all CPUs, memory usage over available memory,
+number of processes over maximum configured, etc. For past behaviour, slant
+maintains a set of time-interval-bound circular queues (hourly, daily, etc.)
+with current data aggregated into each time series. An important design
+decision of slant is that each monitoring host retains its own [bounded]
+history.
