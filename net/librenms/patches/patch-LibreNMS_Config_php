@@ -1,9 +1,9 @@
-$OpenBSD: patch-LibreNMS_Config_php,v 1.4 2019/04/01 13:52:45 sthen Exp $
+$OpenBSD: patch-LibreNMS_Config_php,v 1.5 2019/07/02 16:57:58 sthen Exp $
 
 Index: LibreNMS/Config.php
 --- LibreNMS/Config.php.orig
 +++ LibreNMS/Config.php
-@@ -551,7 +551,7 @@ class Config
+@@ -558,7 +558,7 @@ class Config
      public static function locateBinary($binary)
      {
          if (!str_contains($binary, '/')) {

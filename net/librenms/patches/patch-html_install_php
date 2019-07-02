@@ -1,9 +1,9 @@
-$OpenBSD: patch-html_install_php,v 1.26 2019/01/29 22:20:37 sthen Exp $
+$OpenBSD: patch-html_install_php,v 1.27 2019/07/02 16:57:58 sthen Exp $
 
 Index: html/install.php
 --- html/install.php.orig
 +++ html/install.php
-@@ -372,7 +372,8 @@ $config_file = <<<"EOD"
+@@ -375,7 +375,8 @@ $config_file = <<<"EOD"
  #\$config\['base_url'\]        = "http://librenms.company.com";
  
  ### Enable this to use rrdcached. Be sure rrd_dir is within the rrdcached dir
