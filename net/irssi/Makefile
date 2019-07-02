@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2019/07/01 13:52:09 kn Exp $
+# $OpenBSD: Makefile,v 1.85 2019/07/02 20:30:02 sthen Exp $
 
 MULTI_PACKAGES = -main -otr
 
@@ -10,7 +10,7 @@ DISTNAME =	irssi-$V
 PKGSPEC =	irssi-=$V
 PKGNAME-main =	irssi-$V
 
-REVISION-main =	0
+REVISION-main =	1
 REVISION-otr =	0
 
 # -otr module doesn't vary between FLAVORs; override default FLAVOR suffix
@@ -33,6 +33,8 @@ MASTER_SITES =	https://github.com/irssi/irssi/releases/download/${V}/
 
 FLAVORS =	socks
 FLAVOR ?=
+FLAVOR_STRING =	${FLAVOR_EXT:S/-/,/g}
+SUBST_VARS =	FLAVOR_STRING
 
 LIB_DEPENDS =	devel/glib2>=2.28.0
 
