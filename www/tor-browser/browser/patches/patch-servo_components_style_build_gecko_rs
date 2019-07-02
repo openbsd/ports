@@ -1,0 +1,23 @@
+$OpenBSD: patch-servo_components_style_build_gecko_rs,v 1.1 2019/07/02 16:52:09 landry Exp $
+
+Fix build with rust 1.36.
+
+Index: servo/components/style/build_gecko.rs
+--- servo/components/style/build_gecko.rs.orig
++++ servo/components/style/build_gecko.rs
+@@ -36,6 +36,7 @@ mod bindings {
+     use std::fs::{self, File};
+     use std::io::{Read, Write};
+     use std::path::{Path, PathBuf};
++    use std::panic::UnwindSafe;
+     use std::process::{Command, exit};
+     use std::slice;
+     use std::sync::Mutex;
+@@ -384,6 +385,7 @@ mod bindings {
+     fn generate_structs() {
+         #[derive(Debug)]
+         struct Callbacks(HashMap<String, RegexSet>);
++        impl UnwindSafe for Callbacks {}
+         impl ParseCallbacks for Callbacks {
+             fn enum_variant_behavior(&self,
+                                      enum_name: Option<&str>,
