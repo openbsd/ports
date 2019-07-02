@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.82 2019/07/01 11:35:42 kirby Exp $
+# $OpenBSD: Makefile.template,v 1.83 2019/07/02 12:03:14 sthen Exp $
 #
 # Replace ??? with appropriate values
 # Remove extraneous comments before commit
@@ -95,12 +95,14 @@ MASTER_SITES =		???
 #PATCHFILES =		???
 #PATCH_DIST_STRIP =	-p0
 
-# Dependencies
-#
-# For ports using C++, except in special cases you should use a compiler
-# with the same standard library as used in other ports. Remove entries
-# from the COMPILER list if they're known to not work.
+# Standard for C++ ports:
 #COMPILER =		base-clang ports-gcc base-gcc
+# Standard for C++11 or newer:
+#COMPILER =		base-clang ports-gcc
+# Ports that require a non-default compiler that do *not* use C++ should set this:
+#COMPILER_LANGS =	c
+
+# Dependencies
 #MODULES =		???
 #BUILD_DEPENDS =	???
 #RUN_DEPENDS =		???
