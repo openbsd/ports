@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.526 2019/06/07 15:02:54 edd Exp $
+# $OpenBSD: Makefile,v 1.527 2019/07/02 09:18:44 bentley Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -316,6 +316,7 @@
      SUBDIR += shunt
      SUBDIR += simple-mtpfs
      SUBDIR += skill
+     SUBDIR += slant
      SUBDIR += sleuthkit
      SUBDIR += smartmontools
      SUBDIR += smbldap-tools
