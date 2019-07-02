@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.20 2019/07/01 12:03:41 espie Exp $
+# $OpenBSD: External.pm,v 1.21 2019/07/02 10:17:00 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -45,8 +45,7 @@ sub server
 	    	if (!defined $o->{server}) {
 			$state->errsay("Can't create socket named #1: #2", 
 			    $o->{path}, $!);
-		}
-		if (!chmod 0700, $o->{path}) {
+		} elsif (!chmod 0700, $o->{path}) {
 			$state->errsay(
 			    "Can't enforce permissions for socket #1:#2", 
 			    $o->{path}, $!);
