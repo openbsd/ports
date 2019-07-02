@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.5 2019/06/05 00:33:39 jturner Exp $
+$OpenBSD: patch-Makefile,v 1.6 2019/07/02 23:10:39 jturner Exp $
 
 Use a date stamp for JANET_BUILD to avoid using git.
 Replace hardcoded -O2.
@@ -23,8 +23,8 @@ Index: Makefile
  PKG_CONFIG_PATH?=$(PREFIX)/lib/pkgconfig
  DEBUGGER=gdb
  
--CFLAGS=-std=c99 -Wall -Wextra -Isrc/include -fpic -O2 -fvisibility=hidden \
-+CFLAGS=-std=c99 -Wall -Wextra -Isrc/include -fPIC $(FLAGS) -fvisibility=hidden \
+-CFLAGS=-std=c99 -Wall -Wextra -Isrc/include -Isrc/conf -fpic -O2 -fvisibility=hidden \
++CFLAGS=-std=c99 -Wall -Wextra -Isrc/include -Isrc/conf -fPIC $(FLAGS) -fvisibility=hidden \
  	   -DJANET_BUILD=$(JANET_BUILD)
  LDFLAGS=-rdynamic
  
@@ -41,7 +41,7 @@ Index: Makefile
  	echo 'prefix=$(PREFIX)' > $@
  	echo 'exec_prefix=$${prefix}' >> $@
  	echo 'includedir=$(INCLUDEDIR)/janet' >> $@
-@@ -288,24 +288,21 @@ $(PKG_CONFIG_PATH)/janet.pc: $(JANET_TARGET)
+@@ -288,22 +288,19 @@ $(PKG_CONFIG_PATH)/janet.pc: $(JANET_TARGET)
  	echo 'Libs: -L$${libdir} -ljanet $(LDFLAGS)' >> $@
  	echo 'Libs.private: $(CLIBS)' >> $@
  
@@ -56,10 +56,8 @@ Index: Makefile
 -	cp $(JANET_STATIC_LIBRARY) $(LIBDIR)/libjanet.a
 -	ln -sf $(SONAME) $(LIBDIR)/libjanet.so
 -	ln -sf libjanet.so.$(shell $(JANET_TARGET) -e '(print janet/version)') $(LIBDIR)/$(SONAME)
--	cp tools/cook.janet $(JANET_PATH)
--	cp tools/jpm $(BINDIR)/jpm
--	cp tools/highlight.janet $(JANET_PATH)
--	cp tools/bars.janet $(JANET_PATH)
+-	cp -rf auxlib/* $(JANET_PATH)
+-	cp -rf auxbin/* $(BINDIR)
 -	mkdir -p $(MANPATH)
 -	cp janet.1 $(MANPATH)
 -	-ldconfig $(LIBDIR)
@@ -72,12 +70,10 @@ Index: Makefile
 +	mkdir -p $(DESTDIR)$(LIBDIR)
 +	cp $(JANET_LIBRARY) $(DESTDIR)$(LIBDIR)
 +	cp $(JANET_STATIC_LIBRARY) $(DESTDIR)$(LIBDIR)/libjanet.a
-+	cp tools/cook.janet $(DESTDIR)$(JANET_PATH)
-+	cp tools/jpm $(DESTDIR)$(BINDIR)/jpm
-+	cp tools/highlight.janet $(DESTDIR)$(JANET_PATH)
-+	cp tools/bars.janet $(DESTDIR)$(JANET_PATH)
++	cp auxlib/* $(DESTDIR)$(JANET_PATH)
++	cp auxbin/* $(DESTDIR)$(BINDIR)
 +	mkdir -p $(DESTDIR)$(MANPATH)
 +	cp janet.1 $(DESTDIR)$(MANPATH)
  
- #################
- ##### Other #####
+ uninstall:
+ 	-rm $(BINDIR)/janet
