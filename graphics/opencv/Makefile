@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/06/11 00:38:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.50 2019/07/02 10:13:03 jca Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -41,7 +41,7 @@ WANTLIB-java += opencv_videoio
 
 WANTLIB-docs =
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=opencvlibrary/}
 EXTRACT_SUFX =		.zip
@@ -51,12 +51,11 @@ PSEUDO_FLAVORS =	no_docs no_java
 FLAVOR ?=
 
 # BSDL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.arch.mk>
 
-MODULES =		lang/clang \
-			devel/cmake \
+MODULES =		devel/cmake \
 			lang/python
 
 BUILD_DEPENDS =		devel/doxygen \
