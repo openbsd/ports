@@ -1,4 +1,4 @@
-$OpenBSD: patch-netwerk_cache_nsDiskCacheDeviceSQL_cpp,v 1.1 2018/09/28 14:54:26 sthen Exp $
+$OpenBSD: patch-netwerk_cache_nsDiskCacheDeviceSQL_cpp,v 1.2 2019/07/02 16:48:11 landry Exp $
 
 https://bugzilla.mozilla.org/show_bug.cgi?id=1470961
 
@@ -13,7 +13,7 @@ Index: netwerk/cache/nsDiskCacheDeviceSQL.cpp
  #include "mozilla/storage.h"
  #include "nsVariant.h"
  #include "mozilla/BasePrincipal.h"
-@@ -218,7 +217,6 @@ nsOfflineCacheEvictionFunction::OnFunctionCall(mozISto
+@@ -204,7 +203,6 @@ nsOfflineCacheEvictionFunction::OnFunctionCall(mozISto
  
    // If the key is currently locked, refuse to delete this row.
    if (mDevice->IsLocked(fullKey)) {
