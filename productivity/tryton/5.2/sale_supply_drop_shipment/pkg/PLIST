@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/09 11:48:59 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/07/02 10:21:27 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply_drop_shipment/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply_drop_shipment/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply_drop_shipment/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply_drop_shipment/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply_drop_shipment/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply_drop_shipment/${MODPY_PYCACHE}party.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply_drop_shipment/${MODPY_PYCACHE}purchase.${MODPY_PYC_MAGIC_TAG}pyc
@@ -40,7 +40,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply_drop_shipme
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply_drop_shipment/stock.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply_drop_shipment/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply_drop_shipment/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply_drop_shipment/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply_drop_shipment/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply_drop_shipment/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply_drop_shipment/tests/${MODPY_PYCACHE}test_sale_supply_drop_shipment.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply_drop_shipment/tests/scenario_sale_supply_drop_shipment.rst

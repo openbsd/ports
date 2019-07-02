@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.26 2019/05/15 12:43:24 semarie Exp $
+# $OpenBSD: Makefile.inc,v 1.27 2019/07/02 10:21:26 semarie Exp $
 
 CATEGORIES ?=		productivity \
 			productivity/tryton
@@ -8,7 +8,7 @@ HOMEPAGE ?=		https://www.tryton.org/
 MAINTAINER ?=		Sebastien Marie <semarie@online.fr>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM ?=	Yes
+PERMIT_PACKAGE ?=	Yes
 
 MASTER_SITES =		https://downloads.tryton.org/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
 DIST_SUBDIR =		tryton

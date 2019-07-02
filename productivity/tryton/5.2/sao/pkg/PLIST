@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/09 11:49:00 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/07/02 10:21:27 semarie Exp $
 @option is-branch
 share/doc/tryton-sao-${TRYTON_VERSION}/
 share/doc/tryton-sao-${TRYTON_VERSION}/CHANGELOG
@@ -288,11 +288,8 @@ share/tryton-sao-${TRYTON_VERSION}/locale/fr.json
 share/tryton-sao-${TRYTON_VERSION}/locale/fr.po
 share/tryton-sao-${TRYTON_VERSION}/locale/hu.json
 share/tryton-sao-${TRYTON_VERSION}/locale/hu.po
-share/tryton-sao-${TRYTON_VERSION}/locale/hu_HU.json
 share/tryton-sao-${TRYTON_VERSION}/locale/it.json
 share/tryton-sao-${TRYTON_VERSION}/locale/it.po
-share/tryton-sao-${TRYTON_VERSION}/locale/it_IT.json
-share/tryton-sao-${TRYTON_VERSION}/locale/ja_JP.json
 share/tryton-sao-${TRYTON_VERSION}/locale/lo.json
 share/tryton-sao-${TRYTON_VERSION}/locale/lo.po
 share/tryton-sao-${TRYTON_VERSION}/locale/lt.json
@@ -304,7 +301,6 @@ share/tryton-sao-${TRYTON_VERSION}/locale/pl.json
 share/tryton-sao-${TRYTON_VERSION}/locale/pl.po
 share/tryton-sao-${TRYTON_VERSION}/locale/pt.json
 share/tryton-sao-${TRYTON_VERSION}/locale/pt.po
-share/tryton-sao-${TRYTON_VERSION}/locale/pt_BR.json
 share/tryton-sao-${TRYTON_VERSION}/locale/ru.json
 share/tryton-sao-${TRYTON_VERSION}/locale/ru.po
 share/tryton-sao-${TRYTON_VERSION}/locale/sl.json

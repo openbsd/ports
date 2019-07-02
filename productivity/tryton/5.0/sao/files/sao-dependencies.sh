@@ -199,7 +199,7 @@ bootstrap			'3.3.7'		# ^3.3.7
 bootstrap_datetimepicker	'4.17.47'	# ^4.17
 bootstrap_rtl_ondemand		'3.3.4'		# ^3.3.4-ondemand
 c3				'0.7.1'		# ^0.6
-d3				'5.9.2'		# ^5.0.0 (c3 dependency)
+d3				'5.9.7'		# ^5.0.0 (c3 dependency)
 fullcalendar			'3.10.0'	# ^3.0
 gettext_js			'0.5.5'		# ^0.5
 jquery				'3.3.1'		# ^3

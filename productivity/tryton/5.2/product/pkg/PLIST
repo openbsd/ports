@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/09 11:48:57 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/07/02 10:21:27 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/${MODPY_PYCACHE}category.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/${MODPY_PYCACHE}configuration.${MODPY_PYC_MAGIC_TAG}pyc
@@ -38,11 +38,12 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/locale/ru.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/locale/sl.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/locale/tr.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/locale/zh_CN.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/message.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/product.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/product.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/tests/${MODPY_PYCACHE}test_product.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product/tests/test_product.py
