@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.127 2019/06/23 17:20:43 cwen Exp $
+@comment $OpenBSD: PLIST,v 1.128 2019/07/02 18:31:26 cwen Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -457,7 +457,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}ne
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}newstube.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}nextmedia.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}nexx.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}nfb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}nfl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}nhk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/${MODPY_PYCACHE}nhl.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1243,7 +1242,6 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/newgrounds.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/newstube.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nextmedia.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nexx.py
-lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nfb.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nfl.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nhk.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nhl.py
