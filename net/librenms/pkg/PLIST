@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.59 2019/07/02 16:57:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.60 2019/07/03 14:07:46 sthen Exp $
 @newgroup _librenms:755
 @newuser _librenms:755:_librenms:daemon:librenms user:${INSTDIR}:/sbin/nologin
 librenms/
@@ -1452,6 +1452,7 @@ librenms/html/images/os/orvaldi.png
 librenms/html/images/os/osmc.png
 librenms/html/images/os/packetflux.png
 librenms/html/images/os/packetlight.png
+librenms/html/images/os/panasonic.png
 librenms/html/images/os/panduit.png
 librenms/html/images/os/panos.svg
 librenms/html/images/os/papouch-tme.png
@@ -2178,6 +2179,7 @@ librenms/includes/definitions/oracle-ilom.yaml
 librenms/includes/definitions/orvaldi-ups.yaml
 librenms/includes/definitions/packetlight.yaml
 librenms/includes/definitions/packetshaper.yaml
+librenms/includes/definitions/panasonic-ns.yaml
 librenms/includes/definitions/panduit-eagle.yaml
 librenms/includes/definitions/panos.yaml
 librenms/includes/definitions/papouch-tme.yaml
@@ -4697,6 +4699,7 @@ librenms/includes/polling/os/opnsense.inc.php
 librenms/includes/polling/os/oracle-ilom.inc.php
 librenms/includes/polling/os/orvaldi-ups.inc.php
 librenms/includes/polling/os/packetlight.inc.php
+librenms/includes/polling/os/panasonic-ns.inc.php
 librenms/includes/polling/os/panos.inc.php
 librenms/includes/polling/os/patton-sn.inc.php
 librenms/includes/polling/os/pbn-cp.inc.php
@@ -7953,6 +7956,8 @@ librenms/mibs/paloaltonetworks/PAN-ENTITY-EXT-MIB
 librenms/mibs/paloaltonetworks/PAN-GLOBAL-REG-MIB
 librenms/mibs/paloaltonetworks/PAN-GLOBAL-TC-MIB
 librenms/mibs/paloaltonetworks/PAN-PRODUCT-MIB
+librenms/mibs/panasonic/
+librenms/mibs/panasonic/KX-NS.mib
 librenms/mibs/patton/
 librenms/mibs/patton/SMARTNODE-MIB
 librenms/mibs/pbi/
