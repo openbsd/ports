@@ -1,11 +1,12 @@
-$OpenBSD: patch-Makefile_PL,v 1.4 2016/04/01 19:32:48 sthen Exp $
+$OpenBSD: patch-Makefile_PL,v 1.5 2019/07/03 13:57:59 sthen Exp $
 
 comment-out this block, it uses an installed version of XML::SAX to write out
 an ini file. this is provided by ${FILESDIR}/ParserDetails.ini instead.
 
---- Makefile.PL.orig	Sun Sep  4 22:37:48 2011
-+++ Makefile.PL	Fri Apr  1 14:45:14 2016
-@@ -21,6 +21,7 @@ sub MY::install {
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -31,6 +31,7 @@ sub MY::install {
  
      my $write_ini_ok = 0;
  
@@ -13,7 +14,7 @@ an ini file. this is provided by ${FILESDIR}/ParserDetails.ini instead.
      eval { require XML::SAX };
      if ($@) {
          $write_ini_ok = 1;
-@@ -38,6 +39,7 @@ sub MY::install {
+@@ -48,6 +49,7 @@ sub MY::install {
          }
      }
      

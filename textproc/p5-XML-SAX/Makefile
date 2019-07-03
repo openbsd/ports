@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2019/03/09 23:47:54 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/03 13:57:59 sthen Exp $
 
 COMMENT =	framework for the Perl SAX2 XML parsers, filters and drivers
 
-DISTNAME =	XML-SAX-1.00
+DISTNAME =	XML-SAX-1.02
 
 CATEGORIES =	textproc
 
