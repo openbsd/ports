@@ -1,6 +1,8 @@
-$OpenBSD: patch-arp-scan_c,v 1.1 2015/04/14 14:17:20 sthen Exp $
---- arp-scan.c.orig	Tue Apr 14 14:29:22 2015
-+++ arp-scan.c	Tue Apr 14 14:57:22 2015
+$OpenBSD: patch-arp-scan_c,v 1.2 2019/07/03 20:38:57 sthen Exp $
+
+Index: arp-scan.c
+--- arp-scan.c.orig
++++ arp-scan.c
 @@ -133,6 +133,10 @@ main(int argc, char *argv[]) {
   *      Process options.
   */
