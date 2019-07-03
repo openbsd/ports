@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2018/12/30 21:58:26 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.48 2019/07/03 16:15:28 sthen Exp $
 @conflict xscreensaver-data-*
 @conflict xscreensaver-gle-*
 @conflict xscreensaver-<5.07p3-no_gle
@@ -116,6 +116,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/gltext
 @bin libexec/xscreensaver/goop
 @bin libexec/xscreensaver/grav
+@bin libexec/xscreensaver/gravitywell
 @bin libexec/xscreensaver/greynetic
 @bin libexec/xscreensaver/halftone
 @bin libexec/xscreensaver/halo
@@ -257,6 +258,7 @@ libexec/xscreensaver/webcollage
 @man man/man1/xscreensaver-getimage-file.1
 @man man/man1/xscreensaver-getimage-video.1
 @man man/man1/xscreensaver-getimage.1
+@man man/man1/xscreensaver-systemd.1
 @man man/man1/xscreensaver-text.1
 @man man/man1/xscreensaver.1
 @man man/man6/abstractile.6
@@ -355,6 +357,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/gltext.6
 @man man/man6/goop.6
 @man man/man6/grav.6
+@man man/man6/gravitywell.6
 @man man/man6/greynetic.6
 @man man/man6/halftone.6
 @man man/man6/halo.6
@@ -545,6 +548,7 @@ share/applications/screensavers/cynosure.desktop
 share/applications/screensavers/dangerball.desktop
 share/applications/screensavers/decayscreen.desktop
 share/applications/screensavers/deco.desktop
+share/applications/screensavers/deepstars.desktop
 share/applications/screensavers/deluxe.desktop
 share/applications/screensavers/demon.desktop
 share/applications/screensavers/discoball.desktop
@@ -597,6 +601,7 @@ share/applications/screensavers/glsnake.desktop
 share/applications/screensavers/gltext.desktop
 share/applications/screensavers/goop.desktop
 share/applications/screensavers/grav.desktop
+share/applications/screensavers/gravitywell.desktop
 share/applications/screensavers/greynetic.desktop
 share/applications/screensavers/halftone.desktop
 share/applications/screensavers/halo.desktop
@@ -875,6 +880,7 @@ share/xscreensaver/config/glsnake.xml
 share/xscreensaver/config/gltext.xml
 share/xscreensaver/config/goop.xml
 share/xscreensaver/config/grav.xml
+share/xscreensaver/config/gravitywell.xml
 share/xscreensaver/config/greynetic.xml
 share/xscreensaver/config/halftone.xml
 share/xscreensaver/config/halo.xml
