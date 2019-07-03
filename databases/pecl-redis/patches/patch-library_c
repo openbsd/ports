@@ -1,0 +1,14 @@
+$OpenBSD: patch-library_c,v 1.1 2019/07/03 14:38:55 sthen Exp $
+
+Index: library.c
+--- library.c.orig
++++ library.c
+@@ -1842,7 +1842,7 @@ PHP_REDIS_API int redis_sock_connect(RedisSock *redis_
+             }
+ 
+             gettimeofday(&tv, NULL);
+-            persistent_id = strpprintf(0, "phpredis_%ld%ld", tv.tv_sec, tv.tv_usec);
++            persistent_id = strpprintf(0, "phpredis_%lld%ld", (long long)tv.tv_sec, tv.tv_usec);
+         } else {
+             if (redis_sock->persistent_id) {
+                 persistent_id = strpprintf(0, "phpredis:%s:%s", host, ZSTR_VAL(redis_sock->persistent_id));
