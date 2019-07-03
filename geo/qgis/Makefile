@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.106 2019/05/23 06:50:18 landry Exp $
+# $OpenBSD: Makefile,v 1.107 2019/07/03 09:45:05 landry Exp $
 
 COMMENT =	desktop geographical information system
 
-DISTNAME =	qgis-3.6.3
+DISTNAME =	qgis-3.8.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
-SHARED_LIBS =	qgis_core	32.0 \
-		qgis_app	16.1 \
-		qgis_gui	24.2 \
-		qgis_analysis	12.2 \
-		qgis_server	10.1 \
+SHARED_LIBS =	qgis_core	33.0 \
+		qgis_app	17.0 \
+		qgis_gui	25.0 \
+		qgis_analysis	13.0 \
+		qgis_server	11.0 \
 		qgispython	6.0 \
-		qgis_3d		4.0 \
+		qgis_3d		5.0 \
 		qgis_native	0.3
 
 HOMEPAGE =	http://www.qgis.org/
@@ -33,6 +33,7 @@ COMPILER =	base-clang ports-gcc
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	x11/py-qt5${MODPY_FLAVOR} \
+		devel/py-sip${MODPY_FLAVOR}>=4.19.4 \
 		geo/gdal,-python${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR} \
 		editors/py-qscintilla,qt5 \
