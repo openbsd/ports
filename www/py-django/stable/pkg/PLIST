@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2019/03/18 13:27:50 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.25 2019/07/03 09:41:46 rpointel Exp $
 @conflict py3-django-lts-*
 @pkgpath www/py-django
 @comment bin/${LNAME}-admin
@@ -383,6 +383,10 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/hu
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/hu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/hu/${MODPY_PYCACHE}formats.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/hu/formats.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/hy/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/hy/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/hy/LC_MESSAGES/${LNAME}.mo
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/hy/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/ia/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/ia/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/ia/LC_MESSAGES/${LNAME}.mo
@@ -1038,6 +1042,12 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/hu/LC_MES
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/hu/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/hu/LC_MESSAGES/${LNAME}js.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/hu/LC_MESSAGES/${LNAME}js.po
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/hy/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/hy/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/hy/LC_MESSAGES/${LNAME}.mo
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/hy/LC_MESSAGES/${LNAME}.po
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/hy/LC_MESSAGES/${LNAME}js.mo
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/hy/LC_MESSAGES/${LNAME}js.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/ia/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/ia/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/locale/ia/LC_MESSAGES/${LNAME}.mo
@@ -1513,7 +1523,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/templates/admin/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/templates/admin/pagination.html
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/templates/admin/popup_response.html
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/templates/admin/prepopulated_fields_js.html
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/templates/admin/related_widget_wrapper.html
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/templates/admin/search_form.html
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/templates/admin/submit_line.html
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/templates/admin/widgets/
@@ -2136,6 +2145,10 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/hu/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/hu/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/hu/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/hu/LC_MESSAGES/${LNAME}.po
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/hy/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/hy/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/hy/LC_MESSAGES/${LNAME}.mo
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/hy/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/ia/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/ia/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/locale/ia/LC_MESSAGES/${LNAME}.mo
@@ -2353,6 +2366,8 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/migrations/0006_r
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/migrations/0007_alter_validators_add_error_messages.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/migrations/0008_alter_user_username_max_length.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/migrations/0009_alter_user_last_name_max_length.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/migrations/0010_alter_group_name_max_length.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/migrations/0011_update_proxy_permissions.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/migrations/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/migrations/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/migrations/${MODPY_PYCACHE}0001_initial.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2364,6 +2379,8 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/migrations/${MODP
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/migrations/${MODPY_PYCACHE}0007_alter_validators_add_error_messages.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/migrations/${MODPY_PYCACHE}0008_alter_user_username_max_length.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/migrations/${MODPY_PYCACHE}0009_alter_user_last_name_max_length.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/migrations/${MODPY_PYCACHE}0010_alter_group_name_max_length.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/migrations/${MODPY_PYCACHE}0011_update_proxy_permissions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/migrations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/mixins.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/models.py
@@ -2552,6 +2569,10 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/hu
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/hu/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/hu/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/hu/LC_MESSAGES/${LNAME}.po
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/hy/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/hy/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/hy/LC_MESSAGES/${LNAME}.mo
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/hy/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/ia/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/ia/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/ia/LC_MESSAGES/${LNAME}.mo
@@ -2746,10 +2767,10 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/zh
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/locale/zh_Hant/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/management/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/management/__init__.py
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/management/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/management/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/management/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/management/commands/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/management/commands/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/management/commands/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/management/commands/${MODPY_PYCACHE}remove_stale_contenttypes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/management/commands/remove_stale_contenttypes.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/contenttypes/migrations/
@@ -2934,6 +2955,10 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/hu/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/hu/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/hu/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/hu/LC_MESSAGES/${LNAME}.po
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/hy/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/hy/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/hy/LC_MESSAGES/${LNAME}.mo
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/hy/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/ia/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/ia/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/flatpages/locale/ia/LC_MESSAGES/${LNAME}.mo
@@ -3564,6 +3589,10 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/hu/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/hu/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/hu/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/hu/LC_MESSAGES/${LNAME}.po
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/hy/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/hy/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/hy/LC_MESSAGES/${LNAME}.mo
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/hy/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/ia/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/ia/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/locale/ia/LC_MESSAGES/${LNAME}.mo
@@ -4057,6 +4086,10 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/mr/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/mr/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/mr/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/mr/LC_MESSAGES/${LNAME}.po
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/ms/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/ms/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/ms/LC_MESSAGES/${LNAME}.mo
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/ms/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/my/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/my/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/humanize/locale/my/LC_MESSAGES/${LNAME}.mo
@@ -4223,6 +4256,7 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/${MODPY_PYCACHE}lookups.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/${MODPY_PYCACHE}operations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/${MODPY_PYCACHE}search.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/${MODPY_PYCACHE}serializers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/${MODPY_PYCACHE}signals.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/${MODPY_PYCACHE}validators.${MODPY_PYC_MAGIC_TAG}pyc
@@ -4231,8 +4265,10 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/aggregates/__
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/aggregates/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/aggregates/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/aggregates/${MODPY_PYCACHE}general.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/aggregates/${MODPY_PYCACHE}mixins.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/aggregates/${MODPY_PYCACHE}statistics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/aggregates/general.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/aggregates/mixins.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/aggregates/statistics.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/apps.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/fields/
@@ -4272,6 +4308,10 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/jinja2/postgr
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/jinja2/postgres/widgets/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/jinja2/postgres/widgets/split_array.html
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/af/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/af/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/af/LC_MESSAGES/${LNAME}.mo
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/af/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/ar/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/ar/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/ar/LC_MESSAGES/${LNAME}.mo
@@ -4380,6 +4420,10 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/hu/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/hu/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/hu/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/hu/LC_MESSAGES/${LNAME}.po
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/hy/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/hy/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/hy/LC_MESSAGES/${LNAME}.mo
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/hy/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/ia/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/ia/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/ia/LC_MESSAGES/${LNAME}.mo
@@ -4476,6 +4520,10 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/sr/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/sr/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/sr/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/sr/LC_MESSAGES/${LNAME}.po
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/sr_Latn/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/sr_Latn/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/sr_Latn/LC_MESSAGES/${LNAME}.mo
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/sr_Latn/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/sv/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/sv/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/sv/LC_MESSAGES/${LNAME}.mo
@@ -4499,6 +4547,7 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/locale/zh_Han
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/lookups.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/operations.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/search.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/serializers.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/signals.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/templates/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/postgres/templates/postgres/
@@ -4673,6 +4722,10 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/hu/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/hu/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/hu/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/hu/LC_MESSAGES/${LNAME}.po
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/hy/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/hy/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/hy/LC_MESSAGES/${LNAME}.mo
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/hy/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/ia/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/ia/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/redirects/locale/ia/LC_MESSAGES/${LNAME}.mo
@@ -5067,6 +5120,10 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/hu/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/hu/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/hu/LC_MESSAGES/${LNAME}.mo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/hu/LC_MESSAGES/${LNAME}.po
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/hy/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/hy/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/hy/LC_MESSAGES/${LNAME}.mo
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/hy/LC_MESSAGES/${LNAME}.po
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/ia/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/ia/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/locale/ia/LC_MESSAGES/${LNAME}.mo
@@ -5773,6 +5830,7 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/core/checks/${MODPY_PYCACHE}me
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/core/checks/${MODPY_PYCACHE}model_checks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/core/checks/${MODPY_PYCACHE}registry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/core/checks/${MODPY_PYCACHE}templates.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/core/checks/${MODPY_PYCACHE}translation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/core/checks/${MODPY_PYCACHE}urls.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/core/checks/caches.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/core/checks/compatibility/
@@ -5794,6 +5852,7 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/core/checks/security/base.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/core/checks/security/csrf.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/core/checks/security/sessions.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/core/checks/templates.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/core/checks/translation.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/core/checks/urls.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/core/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/core/files/
@@ -6106,7 +6165,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/migrations/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/migrations/${MODPY_PYCACHE}recorder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/migrations/${MODPY_PYCACHE}serializer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/migrations/${MODPY_PYCACHE}state.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/migrations/${MODPY_PYCACHE}topological_sort.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/migrations/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/migrations/${MODPY_PYCACHE}writer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/migrations/autodetector.py
@@ -6134,7 +6192,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/migrations/questioner.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/migrations/recorder.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/migrations/serializer.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/migrations/state.py
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/migrations/topological_sort.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/migrations/utils.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/migrations/writer.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/
@@ -6144,6 +6201,7 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/${MODPY_PYCACHE}__in
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/${MODPY_PYCACHE}aggregates.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/${MODPY_PYCACHE}constraints.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/${MODPY_PYCACHE}deletion.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/${MODPY_PYCACHE}expressions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/${MODPY_PYCACHE}indexes.${MODPY_PYC_MAGIC_TAG}pyc
@@ -6157,6 +6215,7 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/${MODPY_PYCACHE}util
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/aggregates.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/base.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/constants.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/constraints.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/deletion.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/expressions.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/fields/
@@ -6183,10 +6242,14 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/func
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/functions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/functions/${MODPY_PYCACHE}comparison.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/functions/${MODPY_PYCACHE}datetime.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/functions/${MODPY_PYCACHE}math.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/functions/${MODPY_PYCACHE}mixins.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/functions/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/functions/${MODPY_PYCACHE}window.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/functions/comparison.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/functions/datetime.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/functions/math.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/functions/mixins.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/functions/text.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/functions/window.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/db/models/indexes.py
@@ -6487,6 +6550,7 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/${MODPY_PYCACHE}termcolo
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/${MODPY_PYCACHE}timesince.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/${MODPY_PYCACHE}timezone.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/${MODPY_PYCACHE}topological_sort.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/${MODPY_PYCACHE}tree.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/${MODPY_PYCACHE}xmlutils.${MODPY_PYC_MAGIC_TAG}pyc
@@ -6528,13 +6592,16 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/termcolors.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/text.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/timesince.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/timezone.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/topological_sort.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/translation/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/translation/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/translation/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/translation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/translation/${MODPY_PYCACHE}reloader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/translation/${MODPY_PYCACHE}template.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/translation/${MODPY_PYCACHE}trans_null.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/translation/${MODPY_PYCACHE}trans_real.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/translation/reloader.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/translation/template.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/translation/trans_null.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/utils/translation/trans_real.py
@@ -6847,6 +6914,7 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/ref/migration-operati
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/ref/models/
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/ref/models/class.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/ref/models/conditional-expressions.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/ref/models/constraints.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/ref/models/database-functions.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/ref/models/expressions.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/ref/models/fields.txt
@@ -6907,6 +6975,8 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.18.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.19.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.2.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.20.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.21.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.22.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.3.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.4.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/1.11.5.txt
@@ -7029,6 +7099,7 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.1.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.10.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.11.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.12.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.13.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.2.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.3.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.4.txt
@@ -7039,13 +7110,20 @@ share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.8.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.9.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.0.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.1.1.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.1.10.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.1.2.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.1.3.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.1.4.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.1.5.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.1.6.txt
-share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/${MODPY_EGG_VERSION}.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.1.7.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.1.8.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.1.9.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.1.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.2.1.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.2.2.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/${MODPY_EGG_VERSION}.txt
+share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/2.2.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/index.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/releases/security.txt
 share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}/spelling_wordlist

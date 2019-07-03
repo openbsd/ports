@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.27 2019/04/28 20:51:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/03 09:41:46 rpointel Exp $
 
 COMMENT =	high-level Python web framework
 
-MODPY_EGG_VERSION =	2.1.7
-REVISION =		0
+MODPY_EGG_VERSION =	2.2.3
 
 LNAME =			django
+
+RUN_DEPENDS +=	databases/py-sqlparse,python3
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}-${LNAME}-${MODPY_EGG_VERSION}
