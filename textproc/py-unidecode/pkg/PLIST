@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/02/25 17:58:33 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/07/04 20:53:31 kmos Exp $
 bin/unidecode${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/Unidecode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Unidecode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,8 +8,10 @@ lib/python${MODPY_VERSION}/site-packages/Unidecode-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/Unidecode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/unidecode/
 lib/python${MODPY_VERSION}/site-packages/unidecode/__init__.py
+lib/python${MODPY_VERSION}/site-packages/unidecode/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/unidecode/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/unidecode/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/unidecode/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/unidecode/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/unidecode/${MODPY_PYCACHE}x000.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/unidecode/${MODPY_PYCACHE}x001.${MODPY_PYC_MAGIC_TAG}pyc
