@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2019/06/25 20:25:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2019/07/04 12:13:01 jca Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -7,7 +7,7 @@ COMMENT =		cross-platform IDE for use with Qt
 V =			4.8.2
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=	Aggregation               0.0 # 0.0
 SHARED_LIBS +=	CPlusPlus                 2.0 # 0.0
@@ -56,7 +56,7 @@ MODQMAKE_ARGS =		QTC_ENABLE_CLANG_LIBTOOLING=Yes \
 			CONFIG+=qbs_enable_project_file_updates
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols \
-		lang/clazy \
+		lang/clazy>=1.5 \
 		devel/qbs
 
 RUN_DEPENDS =	${MODGCC4_CPPDEP} \

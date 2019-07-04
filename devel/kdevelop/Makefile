@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/06/03 05:19:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/04 12:13:01 jca Exp $
 
 # Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -7,7 +7,7 @@ COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 
 VERSION =	5.3.2
 DISTNAME =	kdevelop-${VERSION}
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.kdevelop.org/
 
@@ -53,7 +53,7 @@ MODULES =	devel/kf5 \
 		lang/python
 
 BUILD_DEPENDS =	archivers/gtar \
-		lang/clazy \
+		lang/clazy>=1.5 \
 		devel/boost \
 		devel/cppcheck \
 		devel/gettext,-tools \
@@ -63,7 +63,7 @@ RUN_DEPENDS =	devel/cmake \
 		devel/cppcheck \
 		devel/desktop-file-utils \
 		devel/gmake \
-		lang/clazy \
+		lang/clazy>=1.5 \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic \
 		x11/kde-applications/kate \
