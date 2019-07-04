@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.226 2019/06/25 20:25:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.227 2019/07/04 07:23:45 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386
+BROKEN-amd64 =		xpcshell segfaults during fake since llvm8 update
 
 # version = (TB version - 3) / 100 + 2
 MOZILLA_VERSION =	2.49.4
