@@ -1,11 +1,11 @@
-$OpenBSD: patch-audio_sndioaudio_c,v 1.1 2019/05/09 05:12:53 ratchov Exp $
+$OpenBSD: patch-audio_sndioaudio_c,v 1.2 2019/07/04 17:11:05 sthen Exp $
 
 sndio module
 
 Index: audio/sndioaudio.c
 --- audio/sndioaudio.c.orig
 +++ audio/sndioaudio.c
-@@ -0,0 +1,544 @@
+@@ -0,0 +1,526 @@
 +/*
 + * Copyright (c) 2019 Alexandre Ratchov <alex@caoua.org>
 + *
@@ -46,6 +46,8 @@ Index: audio/sndioaudio.c
 +#define AUDIO_CAP "sndio"
 +#include "audio_int.h"
 +
++#define SNDIO_LATENCY_US   50000
++
 +typedef struct SndioVoice {
 +    union {
 +        HWVoiceOut out;
@@ -74,11 +76,6 @@ Index: audio/sndioaudio.c
 +/* needed for forward reference */
 +static void sndio_poll_in(void *arg);
 +static void sndio_poll_out(void *arg);
-+
-+static SndioConf glob_conf = {
-+    .devname = SIO_DEVANY,
-+    .latency = 50
-+};
 +
 +static void sndio_poll_clear (SndioVoice *self)
 +{
@@ -239,13 +236,19 @@ Index: audio/sndioaudio.c
 +}
 +
 +static int sndio_init (SndioVoice *self,
-+                       struct audsettings *as, int mode, SndioConf *cf)
++                       struct audsettings *as, int mode, Audiodev *dev)
 +{
++    AudiodevSndioOptions *opts = &dev->u.sndio;
++    unsigned long long latency;
++    const char *dev_name;
 +    struct sio_par req;
 +    unsigned int nch;
 +    int i, nfds;
 +
-+    self->hdl = sio_open (cf->devname, mode, 1);
++    dev_name = opts->has_dev ? opts->dev : SIO_DEVANY;
++    latency = opts->has_latency ? opts->latency : SNDIO_LATENCY_US;
++
++    self->hdl = sio_open (dev_name, mode, 1);
 +    if (self->hdl == NULL) {
 +        dolog ("failed to open device\n");
 +        return -1;
@@ -256,29 +259,32 @@ Index: audio/sndioaudio.c
 +    sio_initpar(&req);
 +
 +    switch (as->fmt) {
-+    case AUD_FMT_S8:
++    case AUDIO_FORMAT_S8:
 +        req.bits = 8;
 +        req.sig = 1;
 +        break;
-+    case AUD_FMT_U8:
++    case AUDIO_FORMAT_U8:
 +        req.bits = 8;
 +        req.sig = 0;
 +        break;
-+    case AUD_FMT_S16:
++    case AUDIO_FORMAT_S16:
 +        req.bits = 16;
 +        req.sig = 1;
 +        break;
-+    case AUD_FMT_U16:
++    case AUDIO_FORMAT_U16:
 +        req.bits = 16;
 +        req.sig = 0;
 +        break;
-+    case AUD_FMT_S32:
++    case AUDIO_FORMAT_S32:
 +        req.bits = 32;
 +        req.sig = 1;
 +        break;
-+    case AUD_FMT_U32:
++    case AUDIO_FORMAT_U32:
 +        req.bits = 32;
 +        req.sig = 0;
++    default:
++        dolog ("unknown audio sample format\n");
++        return -1;
 +    }
 +
 +    if (req.bits > 8)
@@ -291,7 +297,7 @@ Index: audio/sndioaudio.c
 +            req.rchan = as->nchannels;
 +
 +    /* set on-device buffer size */
-+    req.appbufsz = req.rate * cf->latency / 1000;
++    req.appbufsz = req.rate * latency / 1000000;
 +
 +    if (!sio_setpar (self->hdl, &req)) {
 +        dolog ("failed set audio params\n");
@@ -483,39 +489,15 @@ Index: audio/sndioaudio.c
 +    return sndio_fini(self);
 +}
 +
-+static void *sndio_audio_init (void)
++static void *sndio_audio_init (Audiodev *dev)
 +{
-+    SndioConf *conf;
-+
-+    conf = g_malloc(sizeof(SndioConf));
-+    if (conf == NULL)
-+        return NULL;
-+
-+    *conf = glob_conf;
-+
-+    return conf;
++    assert(dev->driver == AUDIODEV_DRIVER_SNDIO);
++    return dev;
 +}
 +
 +static void sndio_audio_fini (void *opaque)
 +{
-+    g_free(opaque);
 +}
-+
-+static struct audio_option sndio_options[] = {
-+    {
-+        .name  = "LATENCY",
-+        .tag   = AUD_OPT_INT,
-+        .valp  = &glob_conf.latency,
-+        .descr = "Desired latency in milliseconds"
-+    },
-+    {
-+        .name  = "DEVICE",
-+        .tag   = AUD_OPT_STR,
-+        .valp  = &glob_conf.devname,
-+        .descr = "Device name"
-+    },
-+    { /* End of list */ }
-+};
 +
 +static struct audio_pcm_ops sndio_pcm_ops = {
 +    .init_out = sndio_init_out,
@@ -523,6 +505,7 @@ Index: audio/sndioaudio.c
 +    .run_out  = sndio_run_out,
 +    .write    = sndio_write,
 +    .ctl_out  = sndio_ctl_out,
++
 +    .init_in  = sndio_init_in,
 +    .fini_in  = sndio_fini_in,
 +    .run_in   = sndio_run_in,
@@ -533,7 +516,6 @@ Index: audio/sndioaudio.c
 +static struct audio_driver sndio_audio_driver = {
 +    .name           = "sndio",
 +    .descr          = "https://man.openbsd.org/sndio",
-+    .options        = sndio_options,
 +    .init           = sndio_audio_init,
 +    .fini           = sndio_audio_fini,
 +    .pcm_ops        = &sndio_pcm_ops,

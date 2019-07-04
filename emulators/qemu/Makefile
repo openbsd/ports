@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.187 2019/06/25 20:25:20 sthen Exp $
-
-USE_WXNEEDED=	Yes
+# $OpenBSD: Makefile,v 1.188 2019/07/04 17:11:05 sthen Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
-DISTNAME=	qemu-3.1.0
-REVISION=	3
+DISTNAME=	qemu-4.0.0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
@@ -20,24 +17,24 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	SDL2 X11 atk-1.0 bz2 c cairo cairo-gobject capstone curl \
-		epoxy fdt gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gnutls \
-		gobject-2.0 gthread-2.0 gtk-3 intl iscsi jpeg lzo2 m \
-		curses nettle nfs pango-1.0 pangocairo-1.0 pcre2-8 \
-		pixman-1 png sndio ssh2 usb-1.0 util vte-2.91 xkbcommon \
-		xml2 z ${COMPILER_LIBCXX}
+		curses epoxy fdt>=4.1 gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 \
+		glib-2.0 gnutls gobject-2.0 gthread-2.0 gtk-3 iconv intl \
+		iscsi jpeg lzo2 m nettle nfs pango-1.0 pangocairo-1.0 \
+		pcre2-8 pixman-1 png sndio ssh2 usb-1.0 util vte-2.91 \
+		xkbcommon xml2 z ${COMPILER_LIBCXX}
 
 # Using TLS emulation layer
 COMPILER =	base-clang ports-gcc
 
 MODULES=	lang/python
 
-
 BUILD_DEPENDS=	devel/gettext,-tools \
-		textproc/texi2html
+		textproc/py-sphinx
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/lzo2 \
+		converters/libiconv \
 		devel/capstone/main \
-		devel/dtc \
+		devel/dtc>=1.5.0p0 \
 		devel/gettext,-runtime \
 		devel/glib2 \
 		devel/libiscsi \
@@ -60,7 +57,8 @@ MODPY_RUNDEP=	No
 MAKE_ENV=	V=1
 FAKE_FLAGS=	qemu_confdir=${PREFIX}/share/examples/qemu
 
-EXTRA_CFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
+# fix build with ancient ncurses
+EXTRA_CFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include -D_XOPEN_SOURCE_EXTENDED
 EXTRA_LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 # until the system headers are fixed properly.
@@ -81,7 +79,9 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-bsd-user \
 		--enable-capstone=system \
 		--enable-curses \
+		--disable-auth-pam \
 		--disable-gcrypt \
+		--disable-sdl-image \
 		--disable-smartcard \
 		--disable-snappy \
 		--disable-spice \

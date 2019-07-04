@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.41 2018/12/19 17:57:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.42 2019/07/04 17:11:05 sthen Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
 @pkgpath emulators/qemu,kqemu
 @pkgpath emulators/qemu-old[,no_x11]
+@bin bin/elf2dmp
 @bin bin/qemu-edid
 @bin bin/qemu-ga
 @bin bin/qemu-img
@@ -49,8 +50,40 @@
 @man man/man7/qemu-qmp-ref.7
 @man man/man8/qemu-ga.8
 @man man/man8/qemu-nbd.8
+share/applications/qemu.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/qemu/
+share/doc/qemu/interop/
+share/doc/qemu/interop/.buildinfo
+share/doc/qemu/interop/_static/
+share/doc/qemu/interop/_static/ajax-loader.gif
+share/doc/qemu/interop/_static/alabaster.css
+share/doc/qemu/interop/_static/basic.css
+share/doc/qemu/interop/_static/comment-bright.png
+share/doc/qemu/interop/_static/comment-close.png
+share/doc/qemu/interop/_static/comment.png
+share/doc/qemu/interop/_static/custom.css
+share/doc/qemu/interop/_static/doctools.js
+share/doc/qemu/interop/_static/down-pressed.png
+share/doc/qemu/interop/_static/down.png
+share/doc/qemu/interop/_static/file.png
+share/doc/qemu/interop/_static/jquery.js
+share/doc/qemu/interop/_static/minus.png
+share/doc/qemu/interop/_static/plus.png
+share/doc/qemu/interop/_static/pygments.css
+share/doc/qemu/interop/_static/searchtools.js
+share/doc/qemu/interop/_static/underscore.js
+share/doc/qemu/interop/_static/up-pressed.png
+share/doc/qemu/interop/_static/up.png
+share/doc/qemu/interop/_static/websupport.js
+share/doc/qemu/interop/bitmaps.html
+share/doc/qemu/interop/genindex.html
+share/doc/qemu/interop/index.html
+share/doc/qemu/interop/live-block-operations.html
+share/doc/qemu/interop/objects.inv
+share/doc/qemu/interop/pr-helper.html
+share/doc/qemu/interop/search.html
+share/doc/qemu/interop/searchindex.js
 share/doc/qemu/qemu-doc.html
 share/doc/qemu/qemu-doc.txt
 share/doc/qemu/qemu-ga-ref.html
@@ -66,6 +99,16 @@ share/examples/qemu/qemu-ifup
 @mode 755
 @sample ${SYSCONFDIR}/qemu-ifup
 @mode
+share/icons/hicolor/128x128/apps/qemu.png
+share/icons/hicolor/16x16/apps/qemu.png
+share/icons/hicolor/24x24/apps/qemu.png
+share/icons/hicolor/256x256/apps/qemu.png
+share/icons/hicolor/32x32/apps/qemu.bmp
+share/icons/hicolor/32x32/apps/qemu.png
+share/icons/hicolor/48x48/apps/qemu.png
+share/icons/hicolor/512x512/apps/qemu.png
+share/icons/hicolor/64x64/apps/qemu.png
+share/icons/hicolor/scalable/apps/qemu.svg
 share/locale/bg/LC_MESSAGES/qemu.mo
 share/locale/de_DE/
 share/locale/de_DE/LC_MESSAGES/
@@ -96,7 +139,6 @@ share/qemu/hppa-firmware.img
 share/qemu/keymaps/
 share/qemu/keymaps/ar
 share/qemu/keymaps/bepo
-share/qemu/keymaps/common
 share/qemu/keymaps/cz
 share/qemu/keymaps/da
 share/qemu/keymaps/de
@@ -119,9 +161,7 @@ share/qemu/keymaps/ja
 share/qemu/keymaps/lt
 share/qemu/keymaps/lv
 share/qemu/keymaps/mk
-share/qemu/keymaps/modifiers
 share/qemu/keymaps/nl
-share/qemu/keymaps/nl-be
 share/qemu/keymaps/no
 share/qemu/keymaps/pl
 share/qemu/keymaps/pt
@@ -142,14 +182,13 @@ share/qemu/palcode-clipper
 share/qemu/petalogix-ml605.dtb
 share/qemu/petalogix-s3adsp1800.dtb
 share/qemu/ppc_rom.bin
+share/qemu/pvh.bin
 share/qemu/pxe-e1000.rom
 share/qemu/pxe-eepro100.rom
 share/qemu/pxe-ne2k_pci.rom
 share/qemu/pxe-pcnet.rom
 share/qemu/pxe-rtl8139.rom
 share/qemu/pxe-virtio.rom
-share/qemu/qemu-icon.bmp
-share/qemu/qemu_logo_no_text.svg
 share/qemu/qemu_vga.ndrv
 share/qemu/s390-ccw.img
 share/qemu/s390-netboot.img
@@ -168,3 +207,5 @@ share/qemu/vgabios-stdvga.bin
 share/qemu/vgabios-virtio.bin
 share/qemu/vgabios-vmware.bin
 share/qemu/vgabios.bin
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

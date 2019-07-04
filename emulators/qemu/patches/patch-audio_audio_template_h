@@ -1,0 +1,14 @@
+$OpenBSD: patch-audio_audio_template_h,v 1.1 2019/07/04 17:11:05 sthen Exp $
+
+Index: audio/audio_template.h
+--- audio/audio_template.h.orig
++++ audio/audio_template.h
+@@ -306,6 +306,8 @@ AudiodevPerDirectionOptions *glue(audio_get_pdo_, TYPE
+         return dev->u.none.TYPE;
+     case AUDIODEV_DRIVER_ALSA:
+         return qapi_AudiodevAlsaPerDirectionOptions_base(dev->u.alsa.TYPE);
++    case AUDIODEV_DRIVER_SNDIO:
++        return dev->u.sndio.TYPE;
+     case AUDIODEV_DRIVER_COREAUDIO:
+         return qapi_AudiodevCoreaudioPerDirectionOptions_base(
+             dev->u.coreaudio.TYPE);

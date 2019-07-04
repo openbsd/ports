@@ -1,0 +1,51 @@
+$OpenBSD: patch-qapi_audio_json,v 1.1 2019/07/04 17:11:05 sthen Exp $
+
+Index: qapi/audio.json
+--- qapi/audio.json.orig
++++ qapi/audio.json
+@@ -96,6 +96,28 @@
+     '*threshold': 'uint32' } }
+ 
+ ##
++# @AudiodevSndioOptions:
++#
++# Options of the sndio audio backend.
++#
++# @in: options of the capture stream
++#
++# @out: options of the playback stream
++#
++# @dev: the name of the sndio device to use (default 'default')
++#
++# @latency: play buffer size (in microseconds)
++#
++# Since: 4.0
++##
++{ 'struct': 'AudiodevSndioOptions',
++  'data': {
++    '*in':        'AudiodevPerDirectionOptions',
++    '*out':       'AudiodevPerDirectionOptions',
++    '*dev':       'str',
++    '*latency':   'uint32'} }
++
++##
+ # @AudiodevCoreaudioPerDirectionOptions:
+ #
+ # Options of the Core Audio backend that are used for both playback and
+@@ -274,7 +296,7 @@
+ # Since: 4.0
+ ##
+ { 'enum': 'AudiodevDriver',
+-  'data': [ 'none', 'alsa', 'coreaudio', 'dsound', 'oss', 'pa', 'sdl',
++  'data': [ 'none', 'alsa', 'sndio', 'coreaudio', 'dsound', 'oss', 'pa', 'sdl',
+             'spice', 'wav' ] }
+ 
+ ##
+@@ -299,6 +321,7 @@
+   'data': {
+     'none':      'AudiodevGenericOptions',
+     'alsa':      'AudiodevAlsaOptions',
++    'sndio':     'AudiodevSndioOptions',
+     'coreaudio': 'AudiodevCoreaudioOptions',
+     'dsound':    'AudiodevDsoundOptions',
+     'oss':       'AudiodevOssOptions',
