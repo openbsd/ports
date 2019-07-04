@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/01/16 12:53:23 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/07/04 18:16:52 bluhm Exp $
 @bin bin/botan
 @bin bin/botan-test
 include/botan-2/
@@ -1951,5 +1951,6 @@ share/doc/botan-2/manual/tss.rst
 share/doc/botan-2/manual/versions.rst
 share/doc/botan-2/manual/x509.rst
 share/doc/botan-2/news.txt
+share/doc/botan-2/oids.txt
 share/doc/botan-2/pgpkey.txt
 share/doc/botan-2/reading_list.txt

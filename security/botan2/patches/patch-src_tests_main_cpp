@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_tests_main_cpp,v 1.6 2019/01/16 12:53:23 bluhm Exp $
+$OpenBSD: patch-src_tests_main_cpp,v 1.7 2019/07/04 18:16:52 bluhm Exp $
 
 Index: src/tests/main.cpp
 --- src/tests/main.cpp.orig
 +++ src/tests/main.cpp
-@@ -77,7 +77,7 @@ int main(int argc, char* argv[])
+@@ -86,7 +86,7 @@ int main(int argc, char* argv[])
        const Botan_Tests::Test_Options opts(
           parser.get_arg_list("suites"),
           parser.get_arg_list("skip-tests"),
