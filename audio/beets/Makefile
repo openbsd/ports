@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/06/03 16:06:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/04 19:57:40 sthen Exp $
 
 COMMENT =	CLI tools to manage music collections
 
@@ -38,6 +38,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/beetsconfig.5 ${PREFIX}/man/man5
 
 # also wants responses, rarfile: currently fetches from pypi at test time
+TEST_ENV=	PORTHOME=${WRKDIR}
 TEST_DEPENDS=	audio/py-mpd2${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR} \
 		www/py-flask${MODPY_FLAVOR}
