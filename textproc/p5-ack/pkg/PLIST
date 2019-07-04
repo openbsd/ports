@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/04/07 19:55:06 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/07/04 13:41:01 sthen Exp $
 bin/ack
 ${P5SITE}/App/
 ${P5SITE}/App/Ack/
@@ -6,6 +6,8 @@ ${P5SITE}/App/Ack.pm
 ${P5SITE}/App/Ack/ConfigDefault.pm
 ${P5SITE}/App/Ack/ConfigFinder.pm
 ${P5SITE}/App/Ack/ConfigLoader.pm
+${P5SITE}/App/Ack/File.pm
+${P5SITE}/App/Ack/Files.pm
 ${P5SITE}/App/Ack/Filter/
 ${P5SITE}/App/Ack/Filter.pm
 ${P5SITE}/App/Ack/Filter/Collection.pm
@@ -20,6 +22,4 @@ ${P5SITE}/App/Ack/Filter/IsPath.pm
 ${P5SITE}/App/Ack/Filter/IsPathGroup.pm
 ${P5SITE}/App/Ack/Filter/Match.pm
 ${P5SITE}/App/Ack/Filter/MatchGroup.pm
-${P5SITE}/App/Ack/Resource.pm
-${P5SITE}/App/Ack/Resources.pm
 @man man/man1/ack.1
