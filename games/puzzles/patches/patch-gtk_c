@@ -1,9 +1,9 @@
-$OpenBSD: patch-gtk_c,v 1.5 2017/05/07 16:45:12 landry Exp $
+$OpenBSD: patch-gtk_c,v 1.6 2019/07/04 15:58:53 landry Exp $
 Add 'online help' menu entry to open help in browser
 Index: gtk.c
 --- gtk.c.orig
 +++ gtk.c
-@@ -2317,6 +2317,13 @@ static void menu_config_event(GtkMenuItem *menuitem, g
+@@ -2383,6 +2383,13 @@ static void menu_config_event(GtkMenuItem *menuitem, g
      midend_redraw(fe->me);
  }
  
@@ -17,25 +17,25 @@ Index: gtk.c
  static void menu_about_event(GtkMenuItem *menuitem, gpointer data)
  {
      frontend *fe = (frontend *)data;
-@@ -2661,6 +2668,12 @@ static frontend *new_window(char *arg, int argtype, ch
+@@ -2751,6 +2758,12 @@ static frontend *new_window(
                       G_CALLBACK(menu_about_event), fe);
      gtk_widget_show(menuitem);
  
 +    menuitem = gtk_menu_item_new_with_label("Online Help");
 +    gtk_container_add(GTK_CONTAINER(menu), menuitem);
-+    gtk_signal_connect(GTK_OBJECT(menuitem), "activate",
-+		       GTK_SIGNAL_FUNC(menu_help_event), fe);
++    g_signal_connect(G_OBJECT(menuitem), "activate",
++		       G_CALLBACK(menu_help_event), fe);
 +    gtk_widget_show(menuitem);
 +
  #ifdef STYLUS_BASED
      menuitem=gtk_button_new_with_mnemonic("_Redo");
      g_object_set_data(G_OBJECT(menuitem), "user-data",
-@@ -2862,7 +2875,7 @@ static void list_presets_from_menu(struct preset_menu 
+@@ -2937,7 +2950,7 @@ static void list_presets_from_menu(struct preset_menu 
  int main(int argc, char **argv)
  {
      char *pname = argv[0];
 -    char *error;
 +    char *error = "";
-     int ngenerate = 0, print = FALSE, px = 1, py = 1;
-     int time_generation = FALSE, test_solve = FALSE, list_presets = FALSE;
-     int soln = FALSE, colour = FALSE;
+     int ngenerate = 0, px = 1, py = 1;
+     bool print = false;
+     bool time_generation = false, test_solve = false, list_presets = false;
