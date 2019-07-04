@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/05/20 22:15:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/04 15:39:32 sthen Exp $
 
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
@@ -24,7 +24,8 @@ WANTLIB-gui+=	X11 atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB-gui+=	gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl pango-1.0
 WANTLIB-gui+=	pangocairo-1.0 ${WANTLIB}
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
+AUTORECONF=		${WRKDIST}/mkauto.sh
 CONFIGURE_ENV=		CPPFLAGS="-I.././" \
 			LDFLAGS="-L${X11BASE}/lib"
 MAKE_FLAGS=		WARNINGOPTS=-Wall # strip upstream's usual -Werror for clang
@@ -39,11 +40,8 @@ NO_TEST=		Yes
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
-BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
 
 do-gen:
-	cd ${WRKDIST}; ${AUTOCONF_ENV} perl mkfiles.pl && \
-	    ${AUTOCONF_ENV} sh mkauto.sh
+	cd ${WRKDIST}; ${AUTOCONF_ENV} perl mkfiles.pl
 
 .include <bsd.port.mk>
