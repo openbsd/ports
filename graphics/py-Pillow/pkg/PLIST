@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/05/01 17:27:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/07/04 14:46:23 sthen Exp $
 @conflict py-Imaging-*
 @pkgpath graphics/py-Pillow,-main${MODPY_FLAVOR}
 @pkgpath graphics/py-Imaging,-bin[,python2.4][,python2.5][,python2.6][,python2.7]
@@ -94,6 +94,7 @@ lib/python${MODPY_VERSION}/site-packages/PIL/XVThumbImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/XbmImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/XpmImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/__init__.py
+lib/python${MODPY_VERSION}/site-packages/PIL/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}BdfFontFile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}BlpImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
@@ -181,6 +182,7 @@ lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}XVThumbImagePlugin.
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}XbmImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}XpmImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}_binary.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}_tkinter_finder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}_util.${MODPY_PYC_MAGIC_TAG}pyc

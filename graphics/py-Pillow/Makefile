@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2019/05/01 17:27:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/04 14:46:23 sthen Exp $
 
 COMMENT=		Python Imaging Library (maintained fork of PIL)
 
-MODPY_EGG_VERSION=	6.0.0
+MODPY_EGG_VERSION=	6.1.0
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
@@ -42,6 +42,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/libImaging/{ImPlatform,Imaging}.h ${WRKINST}${MODPY_INCDIR}
 
 do-test:
-	cd ${WRKSRC}; ${MODPY_BIN} ./selftest.py --installed
+	cd ${WRKSRC}; ${MODPY_BIN} ./selftest.py
 
 .include <bsd.port.mk>
