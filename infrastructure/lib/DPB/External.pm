@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.21 2019/07/02 10:17:00 espie Exp $
+# $OpenBSD: External.pm,v 1.22 2019/07/04 02:32:21 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -23,6 +23,7 @@ use warnings;
 package DPB::External;
 use IO::Socket;
 use IO::Select;
+use File::Basename;
 
 my $motto = "shut up and hack!";
 sub server
@@ -35,6 +36,7 @@ sub server
 	    prompt => $state->expand_path('dpb@%h[%$]$ ')
 	    }, $class;
 
+	$state->{log_user}->make_path(File::Basename::dirname($o->{path}));
 	# this ensures the socket belongs to log_user.
 	$state->{log_user}->run_as(
 	    sub {
