@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2019/06/26 08:50:05 solene Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/04 06:59:57 sthen Exp $
+
+BROKEN-i386 =		various always_inline functions require sse2, but would be inlined into function 'Loop' that is compiled without support for sse2
 
 # asmjit in gzdoom-3.7.2 supports only x86 and arm/arm64
 # arm/arm64 are only supported on Windows and Linux
