@@ -1,27 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/10/16 14:31:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/07/04 12:07:23 jca Exp $
 bin/clazy
 @bin bin/clazy-standalone
-include/clazy/
-include/clazy/AccessSpecifierManager.h
-include/clazy/ClazyContext.h
-include/clazy/ContextUtils.h
-include/clazy/FixItUtils.h
-include/clazy/HierarchyUtils.h
-include/clazy/LoopUtils.h
-include/clazy/MacroUtils.h
-include/clazy/QtUtils.h
-include/clazy/StmtBodyRange.h
-include/clazy/StringUtils.h
-include/clazy/SuppressionManager.h
-include/clazy/TemplateUtils.h
-include/clazy/TypeUtils.h
-include/clazy/Utils.h
-include/clazy/checkbase.h
-include/clazy/checkmanager.h
-include/clazy/clazy_export.h
-include/clazy/clazy_stl.h
-lib/libClangLazy.so
-@lib lib/libclazylib.so.${LIBclazylib_VERSION}
+lib/libClazyPlugin.so
 @man man/man1/clazy.1
 share/doc/clazy/
 share/doc/clazy/COPYING-LGPL2.txt
@@ -36,6 +16,7 @@ share/doc/clazy/level0/README-empty-qstringliteral.md
 share/doc/clazy/level0/README-fully-qualified-moc-types.md
 share/doc/clazy/level0/README-lambda-in-connect.md
 share/doc/clazy/level0/README-lambda-unique-connection.md
+share/doc/clazy/level0/README-lowercase-qml-type-name.md
 share/doc/clazy/level0/README-mutable-container-key.md
 share/doc/clazy/level0/README-qcolor-from-literal.md
 share/doc/clazy/level0/README-qdatetime-utc.md
@@ -101,9 +82,11 @@ share/doc/clazy/level3/README-thread-with-slots.md
 share/doc/clazy/level3/README-unneeded-cast.md
 share/doc/clazy/manuallevel/
 share/doc/clazy/manuallevel/README-container-inside-loop.md
+share/doc/clazy/manuallevel/README-ifndef-define-typo.md
 share/doc/clazy/manuallevel/README-inefficient-qlist.md
 share/doc/clazy/manuallevel/README-isempty-vs-count.md
 share/doc/clazy/manuallevel/README-qhash-with-char-pointer-key.md
+share/doc/clazy/manuallevel/README-qrequiredresult-candidates.md
 share/doc/clazy/manuallevel/README-qstring-varargs.md
 share/doc/clazy/manuallevel/README-qt-keywords.md
 share/doc/clazy/manuallevel/README-qt4-qstring-from-array.md
