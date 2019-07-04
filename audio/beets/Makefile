@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.38 2019/07/04 19:57:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/04 20:05:26 sthen Exp $
 
-COMMENT =	CLI tools to manage music collections
+COMMENT=	CLI tools to manage music collections
 
-MODPY_EGG_VERSION = 1.4.9
-DISTNAME =	beets-${MODPY_EGG_VERSION}
-CATEGORIES =	audio
+MODPY_EGG_VERSION= 1.4.9
+DISTNAME=	beets-${MODPY_EGG_VERSION}
+CATEGORIES=	audio
 
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
-HOMEPAGE =	http://beets.io/
+HOMEPAGE=	http://beets.io/
 
 # MIT
-PERMIT_PACKAGE =  Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =	lang/python
-MODPY_SETUPTOOLS = Yes
-MODPY_PI =	Yes
+MODULES=	lang/python
+MODPY_SETUPTOOLS= Yes
+MODPY_PI=	Yes
 
-MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3}
+MODPY_VERSION= ${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS+=	audio/py-discogs-client${MODPY_FLAVOR}>=2.0.2 \
 		audio/py-last${MODPY_FLAVOR} \
@@ -38,7 +38,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/beetsconfig.5 ${PREFIX}/man/man5
 
 # also wants responses, rarfile: currently fetches from pypi at test time
-TEST_ENV=	PORTHOME=${WRKDIR}
+PORTHOME=	${WRKDIR}
 TEST_DEPENDS=	audio/py-mpd2${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR} \
 		www/py-flask${MODPY_FLAVOR}
