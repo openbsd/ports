@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2019/05/13 22:47:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.149 2019/07/04 06:52:03 semarie Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
@@ -19,7 +19,8 @@ SHARED_LIBS +=  rsvg-2               39.0     # 46.14
 GNOME_VERSION=		${STABLE_VERSION}
 BUILD_DEPENDS=		lang/rust
 PKG_ARGS=		-Dold=0 -Dstable=1
-MAKE_ENV+=		CARGO_BUILD_JOBS=${MAKE_JOBS}
+MAKE_ENV+=		CARGO_BUILD_JOBS=${MAKE_JOBS} \
+			CARGO_HOME=${WRKBUILD}/cargo-home
 .else
 ### old
 REVISION=		3
