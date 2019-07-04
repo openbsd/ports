@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/26 19:26:15 jung Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/07/04 18:57:50 kmos Exp $
 lib/python${MODPY_VERSION}/site-packages/freezegun/
 lib/python${MODPY_VERSION}/site-packages/freezegun-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/freezegun-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -9,5 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/freezegun-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/freezegun/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/freezegun/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/freezegun/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/freezegun/${MODPY_PYCACHE}_async.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/freezegun/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/freezegun/_async.py
 lib/python${MODPY_VERSION}/site-packages/freezegun/api.py
