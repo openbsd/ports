@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/17 16:45:27 sthen Exp $
-
-ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
+# $OpenBSD: Makefile,v 1.3 2019/07/05 16:57:39 sthen Exp $
 
 CATEGORIES =		graphics devel
 COMMENT=		library for computer vision real-time processin
@@ -11,7 +9,7 @@ GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
 
 PKGNAME =		opencv2-${V}
-REVISION =		0
+REVISION =		1
 
 .for i in opencv_calib3d opencv_contrib opencv_core opencv_features2d \
   opencv_flann opencv_gpu opencv_highgui opencv_imgproc opencv_legacy \
@@ -24,25 +22,20 @@ HOMEPAGE =		https://www.opencv.org/
 
 MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
-# "patents" means containing some patented algorithms, see
+# BSD license, but contains some patented algorithms, see
 # http://docs.opencv.org/modules/nonfree/doc/nonfree.html
-# As some source modules include this functionality, we couldn't
-# just subpackage "nonfree". Excluding this, here we have a usual
-# BSD license.
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_PACKAGE_CDROM =		patents
-PERMIT_PACKAGE_CDROM-docs =	Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Half Iex IlmImf IlmThread Imath
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 avcodec avformat avresample
 WANTLIB += avutil c cairo fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gstapp-1.0 gstbase-1.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gstriff-1.0 gstvideo-1.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 intl jasper jpeg m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 png swscale tiff z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
