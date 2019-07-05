@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/05 18:31:54 cwen Exp $
+${P5SITE}/DateTime/Format/Flexible/
+${P5SITE}/DateTime/Format/Flexible.pm
+${P5SITE}/DateTime/Format/Flexible/lang/
+${P5SITE}/DateTime/Format/Flexible/lang.pm
+${P5SITE}/DateTime/Format/Flexible/lang/de.pm
+${P5SITE}/DateTime/Format/Flexible/lang/en.pm
+${P5SITE}/DateTime/Format/Flexible/lang/es.pm
+@man man/man3p/DateTime::Format::Flexible.3p
+@man man/man3p/DateTime::Format::Flexible::lang.3p
+@man man/man3p/DateTime::Format::Flexible::lang::de.3p
+@man man/man3p/DateTime::Format::Flexible::lang::en.3p
+@man man/man3p/DateTime::Format::Flexible::lang::es.3p
