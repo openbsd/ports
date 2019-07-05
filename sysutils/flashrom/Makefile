@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2019/06/07 10:37:45 kn Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/05 16:01:57 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	flash ROM programmer for BIOS etc
 
-V =		1.0.1
+V =		1.1
 DISTNAME=	flashrom-v${V}
 PKGNAME=	flashrom-${V}
 EXTRACT_SUFX=	.tar.bz2

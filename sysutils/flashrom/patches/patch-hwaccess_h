@@ -1,10 +1,11 @@
-$OpenBSD: patch-hwaccess_h,v 1.1.1.1 2016/06/01 16:42:23 sthen Exp $
+$OpenBSD: patch-hwaccess_h,v 1.2 2019/07/05 16:01:57 sthen Exp $
 
 use patched pciutils.
 
---- hwaccess.h.orig	Sat Feb 20 21:43:56 2016
-+++ hwaccess.h	Mon May 30 23:26:58 2016
-@@ -34,7 +34,9 @@
+Index: hwaccess.h
+--- hwaccess.h.orig
++++ hwaccess.h
+@@ -30,7 +30,9 @@
   */
  #define index shadow_workaround_index
  

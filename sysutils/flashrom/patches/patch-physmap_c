@@ -1,9 +1,9 @@
-$OpenBSD: patch-physmap_c,v 1.2 2018/01/16 22:16:41 sthen Exp $
+$OpenBSD: patch-physmap_c,v 1.3 2019/07/05 16:01:57 sthen Exp $
 
 Index: physmap.c
 --- physmap.c.orig
 +++ physmap.c
-@@ -288,9 +288,8 @@ static void *physmap_common(const char *descr, uintptr
+@@ -284,9 +284,8 @@ static void *physmap_common(const char *descr, uintptr
  			msg_perr("disabling the other option unfortunately requires a kernel recompile. Sorry!\n");
  		}
  #elif defined (__OpenBSD__)

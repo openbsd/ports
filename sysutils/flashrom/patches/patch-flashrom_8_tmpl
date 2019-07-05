@@ -1,9 +1,9 @@
-$OpenBSD: patch-flashrom_8_tmpl,v 1.1 2018/01/16 22:16:41 sthen Exp $
+$OpenBSD: patch-flashrom_8_tmpl,v 1.2 2019/07/05 16:01:57 sthen Exp $
 
 Index: flashrom.8.tmpl
 --- flashrom.8.tmpl.orig
 +++ flashrom.8.tmpl
-@@ -1144,7 +1144,7 @@ On OpenBSD, you can obtain raw access permission by se
+@@ -1268,7 +1268,7 @@ On OpenBSD, you can obtain raw access permission by se
  .B "securelevel=-1"
  in
  .B "/etc/rc.securelevel"
