@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1871 2019/06/28 06:47:02 bentley Exp $
+# $OpenBSD: Makefile,v 1.1872 2019/07/05 18:38:47 cwen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -656,6 +656,7 @@
      SUBDIR += p5-DateTime-Event-ICal
      SUBDIR += p5-DateTime-Event-Recurrence
      SUBDIR += p5-DateTime-Format-Builder
+     SUBDIR += p5-DateTime-Format-Flexible
      SUBDIR += p5-DateTime-Format-HTTP
      SUBDIR += p5-DateTime-Format-ICal
      SUBDIR += p5-DateTime-Format-ISO8601
@@ -879,6 +880,7 @@
      SUBDIR += p5-Module-ScanDeps
      SUBDIR += p5-Module-Starter
      SUBDIR += p5-Module-Starter-Plugin-CGIApp
+     SUBDIR += p5-Module-Util
      SUBDIR += p5-Module-Versions-Report
      SUBDIR += p5-Module-Which
      SUBDIR += p5-Moo
