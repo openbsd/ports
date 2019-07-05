@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.111 2019/05/17 16:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.112 2019/07/05 19:27:30 feinerer Exp $
 
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-3.6.0
-REVISION=	0
+DISTNAME=	R-3.6.1
 
-SO_VERSION=	35.0
+SO_VERSION=	35.1
 .for _lib in R Rblas Rlapack
 SHARED_LIBS +=	${_lib} ${SO_VERSION}
 .endfor
@@ -15,7 +14,7 @@ HOMEPAGE=	https://www.r-project.org/
 MAINTAINER=	Ingo Feinerer <feinerer@logic.at>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODTK_WANTLIB}
 WANTLIB += ICE SM X11 Xext Xmu Xss Xt bz2 c cairo crypto curl
@@ -79,6 +78,7 @@ CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/tools
 
 CONFIGURE_ARGS= --disable-java \
+		--disable-openmp \
 		--enable-BLAS-shlib \
 		--enable-R-shlib \
 		--with-tcl-config=${MODTCL_CONFIG} \
