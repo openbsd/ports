@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/05 15:43:43 sthen Exp $
 
 COMMENT=		DICOM toolkit
 
 V =			3.6.3
 DISTNAME=		dcmtk-$V
+REVISION=		0
+
 SHARED_LIBS +=  charls                    0.0 # 3.6
 SHARED_LIBS +=  cmr                       0.0 # 3.6
 SHARED_LIBS +=  dcmdata                   0.0 # 3.6
@@ -30,7 +32,6 @@ SHARED_LIBS +=  ijg16                     0.0 # 3.6
 SHARED_LIBS +=  ijg8                      0.0 # 3.6
 SHARED_LIBS +=  oflog                     0.0 # 3.6
 SHARED_LIBS +=  ofstd                     0.0 # 3.6
-REVISION=		0
 
 CATEGORIES=		graphics
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2019/04/28 20:51:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2019/07/05 15:43:42 sthen Exp $
 
 COMMENT=		enhanced interactive Python shell
 
 MODPY_EGG_VERSION =	5.8.0
+REVISION =		0
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
@@ -50,7 +51,6 @@ RUN_DEPENDS +=		devel/py-backports-shutil-get-terminal-size \
 			devel/py-pathlib2
 TEST_DEPENDS +=		devel/py-mock
 .endif
-REVISION =		0
 
 # Despite the fact that setupbase.py defines paths for examples to
 # be installed into, we still have to do it manually for some reason.
