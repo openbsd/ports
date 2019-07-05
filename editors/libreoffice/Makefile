@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.210 2019/06/11 00:38:34 kurt Exp $
+# $OpenBSD: Makefile,v 1.211 2019/07/05 07:17:56 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -13,8 +13,7 @@ SHARED_LIBS +=  orcus-parser-0.14         0.0 # 0.0
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 
 BV=		6.2
-VERSION=	${BV}.4.2
-REVISION-java=	0
+VERSION=	${BV}.5.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -192,7 +191,6 @@ MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
 
 LIB_DEPENDS-main=x11/gtk+2 \
-		${MODPY_LIB_DEPENDS} \
 		databases/openldap \
 		databases/mariadb \
 		databases/postgresql \
@@ -223,7 +221,6 @@ WANTLIB-main+=	ICE SM X11 Xcomposite Xcursor Xdamage \
 		pthread ssl xml2 z gdk_pixbuf-2.0 \
 		util
 WANTLIB-main+=	hunspell-1.6
-WANTLIB-main+=	${MODPY_WANTLIB}
 WANTLIB-main+=	clucene-contribs-lib clucene-core clucene-shared
 WANTLIB-main+=	cups exslt lcms2
 WANTLIB-main+=	nspr4 nss3 nssutil3 plc4 plds4 smime3 ssl3
@@ -237,7 +234,7 @@ WANTLIB-main+=	bz2 graphite2
 WANTLIB-main+=	boost_filesystem boost_filesystem-mt boost_iostreams-mt
 WANTLIB-main+=	boost_system boost_system-mt boost_date_time-mt
 WANTLIB-main+=	boost_locale-mt
-WANTLIB-main+=	epoxy mysqlclient_r
+WANTLIB-main+=	epoxy mariadb
 WANTLIB-main+=	lber-2.4 ldap-2.4 png
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
@@ -245,6 +242,7 @@ RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/xdg-utils \
 			graphics/glew \
 			graphics/glm \
+			${MODPY_RUN_DEPENDS} \
 			misc/shared-mime-info \
 			security/nss \
 			textproc/clucene \
