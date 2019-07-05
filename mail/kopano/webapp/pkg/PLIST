@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/04/17 13:01:21 robert Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/07/05 13:07:48 robert Exp $
 @conflict zarafa-webapp-*
 @pkgpath mail/zarafa/webapp
 kopano-webapp/
@@ -283,6 +283,13 @@ kopano-webapp/client/fingerprint.js
 kopano-webapp/client/kopano-debug.js
 kopano-webapp/client/kopano.js
 kopano-webapp/client/kopano.js.map
+kopano-webapp/client/oidc/
+kopano-webapp/client/oidc-kopano-debug.js
+kopano-webapp/client/oidc-kopano.js
+kopano-webapp/client/oidc.js.php
+kopano-webapp/client/oidc/README.md
+kopano-webapp/client/oidc/oidc-client.js
+kopano-webapp/client/oidc/oidc-client.min.js
 kopano-webapp/client/resize-debug.js
 kopano-webapp/client/resize.js
 kopano-webapp/client/resources/
@@ -293,10 +300,10 @@ kopano-webapp/client/resources/css/external/login.css
 kopano-webapp/client/resources/css/external/login.css.map
 kopano-webapp/client/resources/css/external/print.calendar.css
 kopano-webapp/client/resources/css/external/print.calendar.css.map
+kopano-webapp/client/resources/css/external/print.list.css
+kopano-webapp/client/resources/css/external/print.list.css.map
 kopano-webapp/client/resources/css/external/print.record.css
 kopano-webapp/client/resources/css/external/print.record.css.map
-kopano-webapp/client/resources/css/external/print.task.css
-kopano-webapp/client/resources/css/external/print.task.css.map
 kopano-webapp/client/resources/css/kopano.css
 kopano-webapp/client/resources/css/kopano.css.map
 kopano-webapp/client/resources/fonts/
@@ -369,8 +376,8 @@ kopano-webapp/client/resources/scss/external/
 kopano-webapp/client/resources/scss/external/_print.scss
 kopano-webapp/client/resources/scss/external/login.scss
 kopano-webapp/client/resources/scss/external/print.calendar.scss
+kopano-webapp/client/resources/scss/external/print.list.scss
 kopano-webapp/client/resources/scss/external/print.record.scss
-kopano-webapp/client/resources/scss/external/print.task.scss
 kopano-webapp/client/resources/scss/kopano.scss
 kopano-webapp/client/themes/
 kopano-webapp/client/themes/dark/
@@ -1422,7 +1429,6 @@ kopano-webapp/plugins/files/js/external/Ext.ux.form.MetaForm-debug.js
 kopano-webapp/plugins/files/js/external/Ext.ux.form.MetaForm.js
 kopano-webapp/plugins/files/js/files-debug.js
 kopano-webapp/plugins/files/js/files.js
-kopano-webapp/plugins/files/js/files.js.map
 kopano-webapp/plugins/files/language/
 kopano-webapp/plugins/files/language/de_DE.UTF-8/
 kopano-webapp/plugins/files/language/de_DE.UTF-8/LC_MESSAGES/
@@ -1456,6 +1462,9 @@ kopano-webapp/plugins/files/language/nl_NL.UTF-8/LC_MESSAGES/plugin_files.mo
 kopano-webapp/plugins/files/language/pt_BR.UTF-8/
 kopano-webapp/plugins/files/language/pt_BR.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/files/language/pt_BR.UTF-8/LC_MESSAGES/plugin_files.mo
+kopano-webapp/plugins/files/language/pt_PT.UTF-8/
+kopano-webapp/plugins/files/language/pt_PT.UTF-8/LC_MESSAGES/
+kopano-webapp/plugins/files/language/pt_PT.UTF-8/LC_MESSAGES/plugin_files.mo
 kopano-webapp/plugins/files/language/ru_RU.UTF-8/
 kopano-webapp/plugins/files/language/ru_RU.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/files/language/ru_RU.UTF-8/LC_MESSAGES/plugin_files.mo
@@ -2505,6 +2514,9 @@ kopano-webapp/plugins/filesbackendOwncloud/language/nl_NL.UTF-8/LC_MESSAGES/plug
 kopano-webapp/plugins/filesbackendOwncloud/language/pt_BR.UTF-8/
 kopano-webapp/plugins/filesbackendOwncloud/language/pt_BR.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendOwncloud/language/pt_BR.UTF-8/LC_MESSAGES/plugin_filesbackendOwncloud.mo
+kopano-webapp/plugins/filesbackendOwncloud/language/pt_PT.UTF-8/
+kopano-webapp/plugins/filesbackendOwncloud/language/pt_PT.UTF-8/LC_MESSAGES/
+kopano-webapp/plugins/filesbackendOwncloud/language/pt_PT.UTF-8/LC_MESSAGES/plugin_files-owncloud-backend.mo
 kopano-webapp/plugins/filesbackendOwncloud/language/ru_RU.UTF-8/
 kopano-webapp/plugins/filesbackendOwncloud/language/ru_RU.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendOwncloud/language/ru_RU.UTF-8/LC_MESSAGES/plugin_filesbackendOwncloud.mo
@@ -2588,6 +2600,9 @@ kopano-webapp/plugins/filesbackendSMB/language/nl_NL.UTF-8/LC_MESSAGES/plugin_fi
 kopano-webapp/plugins/filesbackendSMB/language/pt_BR.UTF-8/
 kopano-webapp/plugins/filesbackendSMB/language/pt_BR.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendSMB/language/pt_BR.UTF-8/LC_MESSAGES/plugin_filesbackendSMB.mo
+kopano-webapp/plugins/filesbackendSMB/language/pt_PT.UTF-8/
+kopano-webapp/plugins/filesbackendSMB/language/pt_PT.UTF-8/LC_MESSAGES/
+kopano-webapp/plugins/filesbackendSMB/language/pt_PT.UTF-8/LC_MESSAGES/plugin_files-smb-backend.mo
 kopano-webapp/plugins/filesbackendSMB/language/ru_RU.UTF-8/
 kopano-webapp/plugins/filesbackendSMB/language/ru_RU.UTF-8/LC_MESSAGES/
 kopano-webapp/plugins/filesbackendSMB/language/ru_RU.UTF-8/LC_MESSAGES/plugin_filesbackendSMB.mo
@@ -2952,6 +2967,7 @@ kopano-webapp/server/includes/controllers/service.authenticated.php
 kopano-webapp/server/includes/controllers/service.fingerprint.php
 kopano-webapp/server/includes/controllers/service.logout.php
 kopano-webapp/server/includes/controllers/service.php
+kopano-webapp/server/includes/controllers/service.token.php
 kopano-webapp/server/includes/core/
 kopano-webapp/server/includes/core/class.attachmentstate.php
 kopano-webapp/server/includes/core/class.browserfingerprint.php
@@ -3059,6 +3075,8 @@ kopano-webapp/server/includes/notifiers/class.tasklistnotifier.php
 kopano-webapp/server/includes/templates/
 kopano-webapp/server/includes/templates/BadRequest.php
 kopano-webapp/server/includes/templates/login.php
+kopano-webapp/server/includes/templates/oidc-silent-refresh.php
+kopano-webapp/server/includes/templates/oidc.php
 kopano-webapp/server/includes/templates/serverinfo.php
 kopano-webapp/server/includes/templates/webclient.php
 kopano-webapp/server/includes/templates/webclient_separatewindow.php
