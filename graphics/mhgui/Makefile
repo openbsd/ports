@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/05 11:52:59 sthen Exp $
 
 COMMENT=	GUI widget library used in MakeHuman
 
 DISTNAME=	mhgui-0.2
 CATEGORIES=	graphics
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS +=  mhgui                1.0      # unknown
 
@@ -13,12 +13,12 @@ HOMEPAGE=	http://www.dedalo-3d.com/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL GLU ICE SM X11 Xdamage Xext Xfixes Xi Xmu Xt Xxf86vm
-WANTLIB += animorph drm glut m png ${COMPILER_LIBCXX} xcb z
-WANTLIB += X11-xcb Xrandr Xrender glapi pthread
-WANTLIB += usbhid xcb-dri2 xcb-glx expat
+WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE SM X11 X11-xcb Xdamage Xext
+WANTLIB += Xfixes Xi Xmu Xrandr Xrender Xt Xxf86vm animorph drm expat
+WANTLIB += glapi glut m png pthread xcb xcb-dri2 xcb-dri3 xcb-glx
+WANTLIB += xcb-present xcb-sync xcb-xfixes xshmfence z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=makehuman/}
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2019/06/04 22:23:33 jca Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/05 11:52:59 sthen Exp $
 
 COMMENT=	parametrical modeling of 3D humanoid characters
 
 DISTNAME=	makehuman-0.9.1-rc1a
 PKGNAME=	makehuman-0.9.1rc1
 CATEGORIES=	graphics
-REVISION=	5
+REVISION=	6
 
 # Newer releases available at https://github.com/makehumancommunity/makehuman
 HOMEPAGE=	http://www.makehumancommunity.org/
@@ -13,10 +13,10 @@ HOMEPAGE=	http://www.makehumancommunity.org/
 # GPLv2 / MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL GLU ICE SM X11 Xdamage Xext Xfixes Xi Xmu Xt Xxf86vm
-WANTLIB += animorph c drm glut m mhgui png ${COMPILER_LIBCXX} xcb z
-WANTLIB += X11-xcb Xrandr Xrender glapi pthread
-WANTLIB += usbhid xcb-dri2 xcb-glx expat
+WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE SM X11 X11-xcb Xdamage Xext
+WANTLIB += Xfixes Xi Xmu Xrandr Xrender Xt Xxf86vm animorph c drm expat
+WANTLIB += glapi glut m mhgui png pthread xcb xcb-dri2 xcb-dri3 xcb-glx
+WANTLIB += xcb-present xcb-sync xcb-xfixes xshmfence z
 
 COMPILER =		base-clang ports-gcc base-gcc
 

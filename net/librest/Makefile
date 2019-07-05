@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2017/10/18 19:17:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/05 11:53:00 sthen Exp $
 
 COMMENT =	access web services that claim to be RESTful
 
 GNOME_VERSION =	0.8.1
 GNOME_PROJECT =	rest
 PKGNAME =	lib${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	net devel
 
@@ -19,7 +20,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += iconv intl lzma m pcre pthread soup-2.4 soup-gnome-2.4
-WANTLIB += sqlite3 xml2 z
+WANTLIB += sqlite3 xml2 z idn2 psl unistring
 
 MODULES =		x11/gnome
 MODGNOME_TOOLS +=	gobject-introspection

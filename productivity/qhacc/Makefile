@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/05 11:52:59 sthen Exp $
 
 COMMENT=	qt home accounting program
 
 DISTNAME=	qhacc-3.4
-REVISION=	8
+REVISION=	9
 CATEGORIES=	productivity x11
 
 HOMEPAGE=	http://qhacc.sourceforge.net/
@@ -24,10 +24,11 @@ SHARED_LIBS+=   ${_lib} ${SO_VERSION}
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += GL ICE SM X11 X11-xcb Xcursor Xdamage Xext Xfixes
 WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm c drm expat
 WANTLIB += fontconfig freetype glapi jpeg lcms m mng png pthread
 WANTLIB += ${COMPILER_LIBCXX} xcb xcb-dri2 xcb-glx z
+WANTLIB += xcb-dri3 xcb-present xcb-sync xcb-xfixes xshmfence
 
 COMPILER =		base-clang ports-gcc base-gcc
 

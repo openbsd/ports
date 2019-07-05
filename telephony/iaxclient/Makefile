@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/06/13 15:48:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2019/07/05 11:52:59 sthen Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -6,8 +6,7 @@ COMMENT-tcl=	IAX client library, tcl bindings
 DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-REVISION=	24
-REVISION-tcl=	25
+REVISION=	26
 
 CATEGORIES=	telephony
 SHARED_LIBS=	tcliaxclient02 0.0 \
@@ -26,10 +25,11 @@ MODULES=	x11/tk
 COMPILER =		base-clang ports-gcc base-gcc
 
 cWANTLIB	+= avcodec gsm m ogg ossaudio portaudio pthread speex
-cWANTLIB	+= speexdsp sndio theora vidcap z
+cWANTLIB	+= speexdsp sndio theora theoradec vidcap z
 
-WANTLIB-main 	+= avutil c mp3lame vorbis vorbisenc vpx x264 ${cWANTLIB}
-WANTLIB-main 	+= opus ${COMPILER_LIBCXX} swresample x265 xvidcore
+WANTLIB-main 	+= ${cWANTLIB} ${COMPILER_LIBCXX} avutil c dav1d
+WANTLIB-main 	+= iconv lzma mp3lame opus swresample theoraenc vorbis
+WANTLIB-main 	+= vorbisenc vpx x264 x265 xvidcore
 
 WANTLIB-tcl	+= X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB-tcl	+= Xi Xinerama Xrandr Xrender atk-1.0 c cairo

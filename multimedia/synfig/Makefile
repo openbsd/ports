@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2019/05/20 22:15:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/05 11:53:00 sthen Exp $
 
 COMMENT =		2D animation software
 
 V=			1.2.1
 DISTNAME =		synfig-$V
 API_V =			1.0
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=  synfig                    2.0 # 0.0
 
@@ -26,7 +26,7 @@ WANTLIB += graphite2 gthread-2.0 harfbuzz iconv intl jasper jbig
 WANTLIB += jpeg lcms lcms2 ltdl lzma m mlt mlt++ mng openjp2 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += raw_r sigc-2.0 tiff webp xcb xcb-render xcb-shm xml++-2.6
-WANTLIB += xml2 z
+WANTLIB += xml2 z fribidi webpmux
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=synfig/}
 

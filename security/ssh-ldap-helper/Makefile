@@ -1,14 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2016/12/30 17:53:37 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/05 11:52:59 sthen Exp $
 
 COMMENT =	fetch ssh AuthorizedKeys from LDAP
 
 DISTNAME =	openssh-5.3p1-81.el6.src.rpm
 PKGNAME =	ssh-ldap-helper-5.3
+REVISION =	0
+
 CATEGORIES =	security net
 EXTRACT_SUFX=
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB +=	c crypto lber-2.4 ldap-2.4 util z
 
 MASTER_SITES =	http://ftp.redhat.com/pub/redhat/linux/enterprise/6Server/en/os/SRPMS/
 
@@ -32,7 +36,6 @@ ALL_TARGET =	ssh-ldap-helper
 BUILD_DEPENDS=	rpm-*|rpm2cpio-*:converters/rpm2cpio \
 		archivers/bzip2
 LIB_DEPENDS =	databases/openldap
-WANTLIB +=	c crypto lber ldap util z
 
 # The LDAP_SET_REBIND_PROC_ARGS macro is set to literal
 # "$ac_cv_ldap_set_rebind_proc" instead of "3" because of the improper

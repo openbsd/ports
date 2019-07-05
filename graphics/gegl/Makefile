@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2019/02/19 23:40:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2019/07/05 11:53:00 sthen Exp $
 
 PORTROACH=		limit:^0\.2
 
@@ -18,7 +18,7 @@ PKGNAME-main=		gegl-${V}
 PKGNAME-plugins=	gegl-plugins-${V}
 
 REVISION-main=		2
-REVISION-plugins=	2
+REVISION-plugins=	3
 
 SHARED_LIBS +=  gegl-0.2             0.0      # 201.1
 SHARED_LIBS +=  gegl-sc-0.2          0.0      # unknown
@@ -50,7 +50,7 @@ WANTLIB-plugins += ${WANTLIB}
 WANTLIB-plugins += ${COMPILER_LIBCXX} Half Iex IexMath IlmImf IlmThread
 WANTLIB-plugins += Imath avcodec avformat avutil babl-0.1 bz2 crypto gegl-0.2
 WANTLIB-plugins += gsm mp3lame ogg opus speex ssl swresample vorbis vorbisenc
-WANTLIB-plugins += vpx x264 x265 xvidcore
+WANTLIB-plugins += vpx x264 x265 xvidcore dav1d lzma theoradec theoraenc xml2
 
 MODULES=		textproc/intltool
 

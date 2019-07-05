@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/20 22:15:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/05 11:53:00 sthen Exp $
 
 COMMENT =	guitar tab editor
 
@@ -8,7 +8,7 @@ GH_COMMIT =	a7c73491ef236134de55cbdcfc9f8cafa2a76ae1
 
 # commit date YYYYMMDD
 DISTNAME =	${GH_PROJECT}-20170809
-REVISION =	3
+REVISION =	4
 
 # override kf5
 EXTRACT_SUFX =	.tar.gz
@@ -27,7 +27,7 @@ WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Parts
 WANTLIB += KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += Qt5Widgets Qt5Xml c m Qt5Concurrent
 
 MODULES =	devel/cmake \
 		devel/kf5

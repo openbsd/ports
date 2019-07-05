@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/05 11:52:59 sthen Exp $
 
 COMMENT =	free open-source SQL full-text search engine
 BROKEN-hppa =	internal compiler error: internal consistency failure
@@ -10,7 +10,7 @@ VERSION =	2.2.9
 DISTNAME =	sphinx-${VERSION}-release
 PKGNAME =	sphinx-${VERSION}
 CATEGORIES =	textproc
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://www.sphinxsearch.com/
 
@@ -51,7 +51,7 @@ WANTLIB +=		pq
 .else
 CONFIGURE_ARGS +=	 --with-mysql
 LIB_DEPENDS +=		databases/mariadb
-WANTLIB +=		crypto ssl mysqlclient
+WANTLIB +=		crypto ssl mariadb
 .endif
 
 # Needs php with mysqli setup and mariadb listening on 127.0.0.1.

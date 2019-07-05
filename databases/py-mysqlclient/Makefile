@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/08 22:00:42 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/05 11:53:00 sthen Exp $
 
 COMMENT =		Python interface to MySQL
 
 MODPY_EGG_VERSION =	1.4.2
+REVISION =		0
 DISTNAME =		mysqlclient-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -13,8 +14,7 @@ HOMEPAGE =		https://github.com/PyMySQL/mysqlclient-python/
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += crypto m pthread ssl z
-WANTLIB += lib/mysql/mysqlclient_r
+WANTLIB += crypto m pthread ssl z iconv mariadb
 WANTLIB += ${MODPY_WANTLIB}
 
 MASTER_SITES =		${MASTER_SITE_PYPI:=m/mysqlclient/}

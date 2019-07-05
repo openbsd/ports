@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/05 11:52:59 sthen Exp $
 
 COMMENT-main =		Qt Widgets for Technical Applications
 COMMENT-common =	common files for the qwt packages
@@ -9,7 +9,7 @@ SHARED_LIBS =		qwt${QTLIBSUFFIX} 7.0
 PKGNAME-main =	qwt-${VERSION}
 FULLPKGNAME-common =	qwt-common-${VERSION}
 FULLPKGPATH-common =	x11/qwt,-common
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		x11
 EXTRACT_SUFX =		.tar.bz2
@@ -47,7 +47,7 @@ MODULES +=	x11/qt4
 QTVER =	qt4
 QTLIBSUFFIX =	# empty
 WANTLIB-main +=	GL ICE QtDesigner QtGui QtOpenGL QtScript QtSvg QtXml SM X11 Xext Xi
-WANTLIB-main +=	Xinerama Xrender fontconfig freetype pthread
+WANTLIB-main +=	Xinerama Xrender fontconfig freetype pthread QtCore
 .endif
 
 WANTLIB-main +=	${COMPILER_LIBCXX} m

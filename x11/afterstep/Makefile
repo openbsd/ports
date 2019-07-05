@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.52 2018/06/27 21:04:07 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2019/07/05 11:53:00 sthen Exp $
 
 COMMENT=	window manager, continuation of the Bowman NeXTSTEP clone
 
 V=		2.2.12
-REVISION=	3
+REVISION=	4
 DISTNAME=	AfterStep-${V}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=     x11
@@ -17,10 +17,10 @@ HOMEPAGE=	http://www.afterstep.org/
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB =  ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 c cairo dbus-1 execinfo fontconfig
+WANTLIB += Xrandr Xrender atk-1.0 c cairo curses dbus-1 execinfo fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-x11-2.0 iconv intl jpeg m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 png pthread rsvg-2 tiff z
+WANTLIB += gobject-2.0 gtk-x11-2.0 intl jpeg m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 png readline rsvg-2 tiff z
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		shells/bash \
