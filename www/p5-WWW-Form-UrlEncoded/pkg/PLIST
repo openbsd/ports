@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/06 20:36:57 afresh1 Exp $
+${P5SITE}/WWW/
+${P5SITE}/WWW/Form/
+${P5SITE}/WWW/Form/UrlEncoded/
+${P5SITE}/WWW/Form/UrlEncoded.pm
+${P5SITE}/WWW/Form/UrlEncoded/PP.pm
+@man man/man3p/WWW::Form::UrlEncoded.3p
+@man man/man3p/WWW::Form::UrlEncoded::PP.3p
