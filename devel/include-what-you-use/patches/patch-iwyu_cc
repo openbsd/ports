@@ -1,0 +1,19 @@
+$OpenBSD: patch-iwyu_cc,v 1.3 2019/07/06 16:16:27 jca Exp $
+
+devel/llvm is built without X86 target support on powerpc.
+
+Index: iwyu.cc
+--- iwyu.cc.orig
++++ iwyu.cc
+@@ -4066,9 +4066,11 @@ int main(int argc, char **argv) {
+   // Must initialize X86 target to be able to parse Microsoft inline
+   // assembly. We do this unconditionally, because it allows an IWYU
+   // built for non-X86 targets to parse MS inline asm without choking.
++#ifndef __powerpc__
+   LLVMInitializeX86TargetInfo();
+   LLVMInitializeX86TargetMC();
+   LLVMInitializeX86AsmParser();
++#endif
+ 
+   // The command line should look like
+   //   path/to/iwyu -Xiwyu --verbose=4 [-Xiwyu --other_iwyu_flag]... CLANG_FLAGS... foo.cc
