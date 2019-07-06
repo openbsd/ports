@@ -27,7 +27,7 @@ case $state in
         _arguments '2: :(backend backends flags)'
       ;;
       serve)
-        _arguments '2: :(dlna ftp http restic webdav)'
+        _arguments '2: :(dlna ftp http restic sftp webdav)'
       ;;
       *)
         _arguments '*: :_files'
