@@ -1,0 +1,16 @@
+$OpenBSD: patch-sip_kdeui_kfontchooser_sip,v 1.1 2019/07/06 06:14:49 landry Exp $
+
+https://git.launchpad.net/ubuntu/+source/pykde4/commit/?h=applied/debian/sid&id=ce42f8b65ae90e0d784c7f565e7a6786660c0d86
+
+Index: sip/kdeui/kfontchooser.sip
+--- sip/kdeui/kfontchooser.sip.orig
++++ sip/kdeui/kfontchooser.sip
+@@ -59,7 +59,7 @@ class KFontChooser : QWidget (public)
+ 
+     typedef QFlags<KFontChooser::DisplayFlag> DisplayFlags;
+ 
+-    explicit                KFontChooser (QWidget* parent /TransferThis/ = 0, const KFontChooser::DisplayFlags& flags = KFontChooser::DisplayFrame, const QStringList& fontList = QStringList(), int visibleListSize = 8, Qt::CheckState* sizeIsRelativeState = 0) [(QWidget* = 0, const KFontChooser::DisplayFlags& = KFontChooser::DisplayFrame, const QStringList& = QStringList(), int = 8, Qt::CheckState* = 0)];
++    explicit                KFontChooser (QWidget* parent /TransferThis/ = 0, const KFontChooser::DisplayFlags& flags = KFontChooser::DisplayFrame, const QStringList& fontList = QStringList(), int visibleListSize = 8, Qt::CheckState sizeIsRelativeState = Qt::Unchecked) [(QWidget* = 0, const KFontChooser::DisplayFlags& = KFontChooser::DisplayFrame, const QStringList& = QStringList(), int = 8, Qt::CheckState* = 0)];
+ %MethodCode
+ Py_BEGIN_ALLOW_THREADS
+     sipCpp = new sipKFontChooser (a0, *a1, *a2, a3, &a4);
