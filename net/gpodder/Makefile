@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/20 22:15:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/06 20:12:46 kn Exp $
 
 COMMENT=		media aggregator and podcast client
 
-MODPY_EGG_VERSION=	3.10.7
-REVISION=		1
+MODPY_EGG_VERSION=	3.10.9
 
 GH_ACCOUNT=		gpodder
 GH_PROJECT=		gpodder
@@ -16,7 +15,7 @@ HOMEPAGE=		https://gpodder.github.io/
 MAINTAINER=		Tim Meunier <trondd@kagu-tsuchi.com>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 
 MODULES=		lang/python \
