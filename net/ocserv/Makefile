@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2019/03/14 04:20:18 bket Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/06 18:14:34 bket Exp $
 
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
-DISTNAME=	ocserv-0.12.3
+DISTNAME=	ocserv-0.12.4
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	net
@@ -12,7 +12,7 @@ HOMEPAGE=	https://ocserv.gitlab.io/www/
 MAINTAINER=	Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB+=	c curses ev gnutls lz4 m nettle oath pam protobuf-c
 WANTLIB+=	radcli readline talloc
@@ -44,10 +44,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 AUTOCONF_VERSION=	2.69
 
 post-extract:
-	sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' \
-	    ${WRKSRC}/tests/test-{iroute,append-routes,user-config} \
-	    ${WRKSRC}/tests/haproxy-connect \
-	    ${WRKSRC}/tests/multiple-routes
+	find ${WRKSRC}/tests -type f -perm -+x -exec \
+	    sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' {} +
 	sed -i 's,/usr/sbin/openconnect,${LOCALBASE}/sbin/openconnect,' \
 	    ${WRKSRC}/tests/common.sh
 	sed -i 's,/etc/ocserv,${SYSCONFDIR}/ocserv,' \
