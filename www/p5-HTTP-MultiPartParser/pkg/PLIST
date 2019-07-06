@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/06 20:32:42 afresh1 Exp $
+${P5SITE}/HTTP/
+${P5SITE}/HTTP/MultiPartParser.pm
+${P5SITE}/HTTP/MultiPartParser.pod
+@man man/man3p/HTTP::MultiPartParser.3p
