@@ -1,14 +1,15 @@
-$OpenBSD: patch-src_print_wireless_info_c,v 1.13 2018/05/12 14:03:46 jasper Exp $
+$OpenBSD: patch-src_print_wireless_info_c,v 1.14 2019/07/06 20:20:27 jasper Exp $
 
 warning: implicit declaration of function 'free' is invalid in C99
 
 Index: src/print_wireless_info.c
 --- src/print_wireless_info.c.orig
 +++ src/print_wireless_info.c
-@@ -1,5 +1,6 @@
+@@ -1,6 +1,7 @@
  // vim:ts=4:sw=4:expandtab
+ #include <config.h>
  #include <stdio.h>
 +#include <stdlib.h>
  #include <string.h>
+ #include <stdlib.h>
  #include <yajl/yajl_gen.h>
- #include <yajl/yajl_version.h>

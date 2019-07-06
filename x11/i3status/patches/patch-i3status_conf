@@ -1,9 +1,10 @@
-$OpenBSD: patch-i3status_conf,v 1.16 2017/01/31 18:47:56 jasper Exp $
+$OpenBSD: patch-i3status_conf,v 1.17 2019/07/06 20:20:27 jasper Exp $
 
 Adjust config file to be reasonably useful on OpenBSD out of the box.
 
---- i3status.conf.orig	Tue Jan 31 19:44:46 2017
-+++ i3status.conf	Tue Jan 31 19:46:10 2017
+Index: i3status.conf
+--- i3status.conf.orig
++++ i3status.conf
 @@ -7,6 +7,7 @@
  # If the above line is not correctly displayed, fix your editor first!
  
@@ -12,41 +13,28 @@ Adjust config file to be reasonably useful on OpenBSD out of the box.
          colors = true
          interval = 5
  }
-@@ -18,20 +19,31 @@ order += "ethernet _first_"
- order += "battery all"
+@@ -19,7 +20,20 @@ order += "disk /"
  order += "load"
+ order += "memory"
  order += "tztime local"
 +order += "cpu_temperature cpu0"
 +order += "cpu_temperature acpitz0"
 +order += "volume master"
- 
++ 
 +cpu_temperature cpu0 {
 +         format = "C: %degrees C"
 +         path = "cpu0"
 +}
-+
+ 
 +cpu_temperature acpitz0 {
 +        format = "TZ: %degrees C"
 +}
 +
++
  wireless _first_ {
          format_up = "W: (%quality at %essid) %ip"
          format_down = "W: down"
- }
- 
- ethernet _first_ {
--        # if you use %speed, i3status requires root privileges
-         format_up = "E: %ip (%speed)"
-         format_down = "E: down"
- }
- 
- battery all {
--        format = "%status %percentage %remaining"
-+        format = "%status %percentage \% %remaining"
- }
- 
- tztime local {
-@@ -44,4 +56,8 @@ load {
+@@ -36,6 +50,10 @@ battery all {
  
  disk "/" {
          format = "%avail"
@@ -55,3 +43,5 @@ Adjust config file to be reasonably useful on OpenBSD out of the box.
 +volume master {
 +	format = "vol: %volume"
  }
+ 
+ load {
