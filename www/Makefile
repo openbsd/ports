@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.915 2019/06/15 12:47:22 robert Exp $
+# $OpenBSD: Makefile,v 1.916 2019/07/06 20:38:09 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -263,6 +263,7 @@
      SUBDIR += p5-HTTP-Headers-Fast
      SUBDIR += p5-HTTP-Lite
      SUBDIR += p5-HTTP-Message
+     SUBDIR += p5-HTTP-MultiPartParser
      SUBDIR += p5-HTTP-Negotiate
      SUBDIR += p5-HTTP-Parser-XS
      SUBDIR += p5-HTTP-Proxy
@@ -319,6 +320,8 @@
      SUBDIR += p5-WWW-Bugzilla
      SUBDIR += p5-WWW-Curl
      SUBDIR += p5-WWW-Ebay
+     SUBDIR += p5-WWW-Form-UrlEncoded
+     SUBDIR += p5-WWW-Form-UrlEncoded-XS
      SUBDIR += p5-WWW-IndexParser
      SUBDIR += p5-WWW-Mechanize
      SUBDIR += p5-WWW-Mechanize-FormFiller
