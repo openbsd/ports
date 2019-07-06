@@ -1,0 +1,2 @@
+WWW::Form::UrlEncoded::XS provides an application/x-www-form-urlencoded
+parser and builder that is implemented in XS.

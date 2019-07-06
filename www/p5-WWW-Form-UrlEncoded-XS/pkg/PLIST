@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/06 20:34:17 afresh1 Exp $
+${P5ARCH}/
+${P5ARCH}/WWW/
+${P5ARCH}/WWW/Form/
+${P5ARCH}/WWW/Form/UrlEncoded/
+${P5ARCH}/WWW/Form/UrlEncoded/XS.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/WWW/
+${P5ARCH}/auto/WWW/Form/
+${P5ARCH}/auto/WWW/Form/UrlEncoded/
+${P5ARCH}/auto/WWW/Form/UrlEncoded/XS/
+${P5ARCH}/auto/WWW/Form/UrlEncoded/XS/XS.so
+@man man/man3p/WWW::Form::UrlEncoded::XS.3p
