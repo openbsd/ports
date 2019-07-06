@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.7 2019/04/26 02:04:01 bcallah Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2019/07/06 15:00:03 jca Exp $
+
+BROKEN ?=	needs an update for LLVM-8.0.0
 
 # Also ppc64le
 ONLY_FOR_ARCHS =	amd64 arm64

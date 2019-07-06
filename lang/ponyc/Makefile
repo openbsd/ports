@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2019/06/05 03:01:47 bcallah Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/06 15:00:03 jca Exp $
+
+# see https://github.com/ponylang/ponyc/issues/3207
+#     https://github.com/ponylang/ponyc/pull/3034
+BROKEN =	no support for LLVM-8.0.0
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386
 
