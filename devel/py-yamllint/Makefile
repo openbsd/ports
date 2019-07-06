@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/15 12:04:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/06 07:36:45 rpointel Exp $
 
 COMMENT =	linter for YAML files
 
-MODPY_EGG_VERSION = 1.15.0
+MODPY_EGG_VERSION = 1.16.0
 DISTNAME =	yamllint-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	devel
 
