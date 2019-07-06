@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1872 2019/07/05 18:38:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.1873 2019/07/06 19:44:07 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1501,6 +1501,8 @@
      SUBDIR += py-more-itertools
      SUBDIR += py-more-itertools,python3
      SUBDIR += py-mox
+     SUBDIR += py-mulpyplexer
+     SUBDIR += py-mulpyplexer,python3
      SUBDIR += py-munch
      SUBDIR += py-munch,python3
      SUBDIR += py-mxDateTime
