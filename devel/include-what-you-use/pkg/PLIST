@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/06/17 21:33:45 kn Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/07/06 15:07:55 jca Exp $
 bin/fix_includes.py
 @bin bin/include-what-you-use
 bin/iwyu_tool.py
@@ -24,4 +24,3 @@ share/include-what-you-use/libcxx.imp
 share/include-what-you-use/qt4.imp
 share/include-what-you-use/qt5_4.imp
 share/include-what-you-use/stl.c.headers.imp
-share/include-what-you-use/third_party.imp
