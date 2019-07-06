@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.787 2019/06/29 00:01:43 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.788 2019/07/06 07:33:58 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1258,6 +1258,7 @@ my $obsolete_reason = {
 	'proxy-suite' => 3,
 	'py-amf' => 6,
 	'lam' => 3,
+	'gxml' => 6,
 };
 
 # reasons for obsolete packages
