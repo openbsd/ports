@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_X86Subtarget_h,v 1.5 2019/02/11 05:24:16 jca Exp $
+$OpenBSD: patch-lib_Target_X86_X86Subtarget_h,v 1.6 2019/07/06 15:06:36 jca Exp $
 
 - implement -msave-args in clang/llvm, like the sun did for gcc
 - Turn on -mretpoline by default in clang on amd64.
@@ -6,7 +6,7 @@ $OpenBSD: patch-lib_Target_X86_X86Subtarget_h,v 1.5 2019/02/11 05:24:16 jca Exp 
 Index: lib/Target/X86/X86Subtarget.h
 --- lib/Target/X86/X86Subtarget.h.orig
 +++ lib/Target/X86/X86Subtarget.h
-@@ -400,6 +400,9 @@ class X86Subtarget final : public X86GenSubtargetInfo 
+@@ -411,6 +411,9 @@ class X86Subtarget final : public X86GenSubtargetInfo 
    /// entry to the function and which must be maintained by every function.
    unsigned stackAlignment = 4;
  
@@ -16,7 +16,7 @@ Index: lib/Target/X86/X86Subtarget.h
    /// Max. memset / memcpy size that is turned into rep/movs, rep/stos ops.
    ///
    // FIXME: this is a known good value for Yonah. How about others?
-@@ -478,6 +481,8 @@ class X86Subtarget final : public X86GenSubtargetInfo 
+@@ -492,6 +495,8 @@ class X86Subtarget final : public X86GenSubtargetInfo 
      return &getInstrInfo()->getRegisterInfo();
    }
  
@@ -25,7 +25,7 @@ Index: lib/Target/X86/X86Subtarget.h
    /// Returns the minimum alignment known to hold of the
    /// stack frame on entry to the function and which must be maintained by every
    /// function for this subtarget.
-@@ -699,6 +704,7 @@ class X86Subtarget final : public X86GenSubtargetInfo 
+@@ -722,6 +727,7 @@ class X86Subtarget final : public X86GenSubtargetInfo 
  
    bool isTargetDarwin() const { return TargetTriple.isOSDarwin(); }
    bool isTargetFreeBSD() const { return TargetTriple.isOSFreeBSD(); }

@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.8 2019/02/24 20:53:56 jca Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.9 2019/07/06 15:06:36 jca Exp $
 
 - Make LLVM create strict aligned code for OpenBSD/arm64.
 - Disable -fstrict-aliasing per default on OpenBSD.
@@ -32,16 +32,7 @@ $OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.8 2019/02/24 20:
 Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
 --- tools/clang/lib/Driver/ToolChains/Clang.cpp.orig
 +++ tools/clang/lib/Driver/ToolChains/Clang.cpp
-@@ -341,7 +341,7 @@ static void getTargetFeatures(const ToolChain &TC, con
-     break;
-   case llvm::Triple::aarch64:
-   case llvm::Triple::aarch64_be:
--    aarch64::getAArch64TargetFeatures(D, Args, Features);
-+    aarch64::getAArch64TargetFeatures(D, Triple, Args, Features);
-     break;
-   case llvm::Triple::x86:
-   case llvm::Triple::x86_64:
-@@ -3478,9 +3478,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -3893,9 +3893,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
    // We turn strict aliasing off by default if we're in CL mode, since MSVC
    // doesn't do any TBAA.
@@ -56,19 +47,22 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
      CmdArgs.push_back("-relaxed-aliasing");
    if (!Args.hasFlag(options::OPT_fstruct_path_tbaa,
                      options::OPT_fno_struct_path_tbaa))
-@@ -4086,7 +4089,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -4521,7 +4524,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                        options::OPT_fno_strict_overflow)) {
      if (A->getOption().matches(options::OPT_fno_strict_overflow))
        CmdArgs.push_back("-fwrapv");
 -  }
 +  } else if (getToolChain().getTriple().isOSOpenBSD())
-+      CmdArgs.push_back("-fwrapv");
++    CmdArgs.push_back("-fwrapv");
  
    if (Arg *A = Args.getLastArg(options::OPT_freroll_loops,
                                 options::OPT_fno_reroll_loops))
-@@ -4101,6 +4105,34 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -4538,9 +4542,44 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+                    false))
+     CmdArgs.push_back(Args.MakeArgString("-mspeculative-load-hardening"));
  
-   RenderSSPOptions(getToolChain(), Args, CmdArgs, KernelOrKext);
+-  RenderSSPOptions(TC, Args, CmdArgs, KernelOrKext);
+   RenderTrivialAutoVarInitOptions(D, TC, Args, CmdArgs);
  
 +  // -ret-protector
 +  unsigned RetProtector = 1;
@@ -85,7 +79,15 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
 +      !Args.hasArg(options::OPT_fno_stack_protector) &&
 +      !Args.hasArg(options::OPT_pg)) {
 +    CmdArgs.push_back(Args.MakeArgString("-D_RET_PROTECTOR"));
-+    CmdArgs.push_back(Args.MakeArgString(Twine("-ret-protector")));
++    CmdArgs.push_back(Args.MakeArgString("-ret-protector"));
++    // Consume the stack protector arguments to prevent warning
++    Args.getLastArg(options::OPT_fstack_protector_all,
++        options::OPT_fstack_protector_strong,
++        options::OPT_fstack_protector,
++        options::OPT__param); // ssp-buffer-size
++  } else {
++    // If we're not using retguard, then do the usual stack protector
++    RenderSSPOptions(getToolChain(), Args, CmdArgs, KernelOrKext);
 +  }
 +
 +  // -fixup-gadgets
@@ -101,11 +103,10 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
    // Translate -mstackrealign
    if (Args.hasFlag(options::OPT_mstackrealign, options::OPT_mno_stackrealign,
                     false))
-@@ -4579,6 +4611,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
-       llvm::sys::path::replace_extension(F, "opt.yaml");
-       CmdArgs.push_back(Args.MakeArgString(F));
-     }
-+  }
+@@ -5023,6 +5062,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+                                      options::OPT_fno_rewrite_imports, false);
+   if (RewriteImports)
+     CmdArgs.push_back("-frewrite-imports");
 +
 +  // Disable some builtins on OpenBSD because they are just not
 +  // right...
@@ -117,6 +118,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
 +    CmdArgs.push_back("-fno-builtin-free");
 +    CmdArgs.push_back("-fno-builtin-strdup");
 +    CmdArgs.push_back("-fno-builtin-strndup");
-   }
++  }
  
-   bool RewriteImports = Args.hasFlag(options::OPT_frewrite_imports,
+   // Enable rewrite includes if the user's asked for it or if we're generating
+   // diagnostics.

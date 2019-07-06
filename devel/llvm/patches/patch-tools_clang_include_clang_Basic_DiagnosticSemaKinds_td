@@ -1,8 +1,8 @@
-$OpenBSD: patch-tools_clang_include_clang_Basic_DiagnosticSemaKinds_td,v 1.6 2019/01/28 06:27:28 jca Exp $
+$OpenBSD: patch-tools_clang_include_clang_Basic_DiagnosticSemaKinds_td,v 1.7 2019/07/06 15:06:36 jca Exp $
 
 - Disable -Waddress-of-packed-member by default.
 
-While these warnings have the potential to be useful, there are too manu
+While these warnings have the potential to be useful, there are too many
 false positives right now.
 
 - Disable -Wpointer-sign warnings per default
@@ -12,7 +12,7 @@ base gcc does the same.
 Index: tools/clang/include/clang/Basic/DiagnosticSemaKinds.td
 --- tools/clang/include/clang/Basic/DiagnosticSemaKinds.td.orig
 +++ tools/clang/include/clang/Basic/DiagnosticSemaKinds.td
-@@ -5827,7 +5827,7 @@ def warn_pointer_indirection_from_incompatible_type : 
+@@ -5857,7 +5857,7 @@ def warn_pointer_indirection_from_incompatible_type : 
    InGroup<UndefinedReinterpretCast>, DefaultIgnore;
  def warn_taking_address_of_packed_member : Warning<
    "taking address of packed member %0 of class or structure %q1 may result in an unaligned pointer value">,
@@ -21,7 +21,7 @@ Index: tools/clang/include/clang/Basic/DiagnosticSemaKinds.td
  
  def err_objc_object_assignment : Error<
    "cannot assign to class object (%0 invalid)">;
-@@ -6804,7 +6804,7 @@ def ext_typecheck_convert_incompatible_pointer_sign : 
+@@ -6841,7 +6841,7 @@ def ext_typecheck_convert_incompatible_pointer_sign : 
    "sending to parameter of different type}0,1"
    "|%diff{casting $ to type $|casting between types}0,1}2"
    " converts between pointers to integer types with different sign">,

@@ -1,11 +1,11 @@
-$OpenBSD: patch-tools_lldb_source_Plugins_UnwindAssembly_x86_x86AssemblyInspectionEngine_h,v 1.1 2019/02/20 00:24:11 jca Exp $
+$OpenBSD: patch-tools_lldb_source_Plugins_UnwindAssembly_x86_x86AssemblyInspectionEngine_h,v 1.2 2019/07/06 15:06:36 jca Exp $
 
 Skip retguard instructions in prologue detection.
 
 Index: tools/lldb/source/Plugins/UnwindAssembly/x86/x86AssemblyInspectionEngine.h
 --- tools/lldb/source/Plugins/UnwindAssembly/x86/x86AssemblyInspectionEngine.h.orig
 +++ tools/lldb/source/Plugins/UnwindAssembly/x86/x86AssemblyInspectionEngine.h
-@@ -110,6 +110,7 @@ class x86AssemblyInspectionEngine { (private)
+@@ -115,6 +115,7 @@ class x86AssemblyInspectionEngine { (private)
    bool call_next_insn_pattern_p();
    bool mov_reg_to_local_stack_frame_p(int &regno, int &rbp_offset);
    bool ret_pattern_p();

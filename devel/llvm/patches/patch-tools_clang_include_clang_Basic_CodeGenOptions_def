@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_include_clang_Frontend_CodeGenOptions_def,v 1.2 2019/01/28 06:27:28 jca Exp $
+$OpenBSD: patch-tools_clang_include_clang_Basic_CodeGenOptions_def,v 1.1 2019/07/06 15:06:36 jca Exp $
 
 Add RETGUARD to clang for amd64. This security mechanism uses per-function
 random cookies to protect access to function return instructions, with the
@@ -18,10 +18,10 @@ essentially gadget free, leaving only the polymorphic gadgets that result from
 jumping into the instruction stream partway through other instructions. Work to
 remove these gadgets will continue through other mechanisms.
 
-Index: tools/clang/include/clang/Frontend/CodeGenOptions.def
---- tools/clang/include/clang/Frontend/CodeGenOptions.def.orig
-+++ tools/clang/include/clang/Frontend/CodeGenOptions.def
-@@ -274,6 +274,9 @@ VALUE_CODEGENOPT(NumRegisterParameters, 32, 0)
+Index: tools/clang/include/clang/Basic/CodeGenOptions.def
+--- tools/clang/include/clang/Basic/CodeGenOptions.def.orig
++++ tools/clang/include/clang/Basic/CodeGenOptions.def
+@@ -286,6 +286,9 @@ VALUE_CODEGENOPT(NumRegisterParameters, 32, 0)
  /// The lower bound for a buffer to be considered for stack protection.
  VALUE_CODEGENOPT(SSPBufferSize, 32, 0)
  

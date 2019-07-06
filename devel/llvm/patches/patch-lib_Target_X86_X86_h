@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_X86_h,v 1.2 2019/01/28 06:27:28 jca Exp $
+$OpenBSD: patch-lib_Target_X86_X86_h,v 1.3 2019/07/06 15:06:36 jca Exp $
 
 Add a clang pass that identifies potential ROP gadgets and replaces ROP
 friendly instructions with safe alternatives. This initial commit fixes
@@ -9,9 +9,9 @@ this framework.
 Index: lib/Target/X86/X86.h
 --- lib/Target/X86/X86.h.orig
 +++ lib/Target/X86/X86.h
-@@ -114,6 +114,10 @@ FunctionPass *createX86DomainReassignmentPass();
- 
- void initializeFixupBWInstPassPass(PassRegistry &);
+@@ -115,6 +115,10 @@ FunctionPass *createX86FixupBWInsts();
+ /// to another, when profitable.
+ FunctionPass *createX86DomainReassignmentPass();
  
 +/// Return a Machine Function pass that attempts to replace
 +/// ROP friendly instructions with alternatives.

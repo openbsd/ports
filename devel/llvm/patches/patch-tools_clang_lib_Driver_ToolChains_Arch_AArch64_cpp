@@ -1,21 +1,11 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Arch_AArch64_cpp,v 1.3 2019/01/28 06:27:28 jca Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Arch_AArch64_cpp,v 1.4 2019/07/06 15:06:36 jca Exp $
 
 Make LLVM create strict aligned code for OpenBSD/arm64.
 
 Index: tools/clang/lib/Driver/ToolChains/Arch/AArch64.cpp
 --- tools/clang/lib/Driver/ToolChains/Arch/AArch64.cpp.orig
 +++ tools/clang/lib/Driver/ToolChains/Arch/AArch64.cpp
-@@ -152,7 +152,8 @@ getAArch64MicroArchFeaturesFromMcpu(const Driver &D, S
-   return getAArch64MicroArchFeaturesFromMtune(D, CPU, Args, Features);
- }
- 
--void aarch64::getAArch64TargetFeatures(const Driver &D, const ArgList &Args,
-+void aarch64::getAArch64TargetFeatures(const Driver &D, const llvm::Triple &Triple,
-+                                       const ArgList &Args,
-                                        std::vector<StringRef> &Features) {
-   Arg *A;
-   bool success = true;
-@@ -194,9 +195,11 @@ void aarch64::getAArch64TargetFeatures(const Driver &D
+@@ -311,9 +311,11 @@ fp16_fml_fallthrough:
    }
  
    if (Arg *A = Args.getLastArg(options::OPT_mno_unaligned_access,
@@ -26,5 +16,5 @@ Index: tools/clang/lib/Driver/ToolChains/Arch/AArch64.cpp
 +  } else if (Triple.isOSOpenBSD())
 +    Features.push_back("+strict-align");
  
-   if (Args.hasArg(options::OPT_ffixed_x18))
-     Features.push_back("+reserve-x18");
+   if (Args.hasArg(options::OPT_ffixed_x1))
+     Features.push_back("+reserve-x1");

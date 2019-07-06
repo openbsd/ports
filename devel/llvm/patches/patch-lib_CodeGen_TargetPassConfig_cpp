@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_CodeGen_TargetPassConfig_cpp,v 1.2 2019/01/28 06:27:28 jca Exp $
+$OpenBSD: patch-lib_CodeGen_TargetPassConfig_cpp,v 1.3 2019/07/06 15:06:36 jca Exp $
 
 Add RETGUARD to clang for amd64. This security mechanism uses per-function
 random cookies to protect access to function return instructions, with the
@@ -21,7 +21,7 @@ remove these gadgets will continue through other mechanisms.
 Index: lib/CodeGen/TargetPassConfig.cpp
 --- lib/CodeGen/TargetPassConfig.cpp.orig
 +++ lib/CodeGen/TargetPassConfig.cpp
-@@ -696,6 +696,8 @@ void TargetPassConfig::addISelPrepare() {
+@@ -737,6 +737,8 @@ void TargetPassConfig::addISelPrepare() {
    if (requiresCodeGenSCCOrder())
      addPass(new DummyCGSCCPass);
  

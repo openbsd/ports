@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_PowerPC_PPCISelLowering_cpp,v 1.4 2019/02/20 00:24:11 jca Exp $
+$OpenBSD: patch-lib_Target_PowerPC_PPCISelLowering_cpp,v 1.5 2019/07/06 15:06:36 jca Exp $
 
 When generating code for OpenBSD/powerpc, avoid unaligned floating-point
 load and store instructions.  The vast majority of PowerPC CPUs that
@@ -10,7 +10,7 @@ compiler generate code that only uses aligned load and store instructions.
 Index: lib/Target/PowerPC/PPCISelLowering.cpp
 --- lib/Target/PowerPC/PPCISelLowering.cpp.orig
 +++ lib/Target/PowerPC/PPCISelLowering.cpp
-@@ -13921,6 +13921,14 @@ bool PPCTargetLowering::allowsMisalignedMemoryAccesses
+@@ -14204,6 +14204,14 @@ bool PPCTargetLowering::allowsMisalignedMemoryAccesses
    if (VT == MVT::ppcf128)
      return false;
  

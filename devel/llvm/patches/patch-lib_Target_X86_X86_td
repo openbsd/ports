@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_X86_X86_td,v 1.3 2019/02/11 05:24:16 jca Exp $
+$OpenBSD: patch-lib_Target_X86_X86_td,v 1.4 2019/07/06 15:06:36 jca Exp $
 
 implement -msave-args in clang/llvm, like the sun did for gcc 
 
 Index: lib/Target/X86/X86.td
 --- lib/Target/X86/X86.td.orig
 +++ lib/Target/X86/X86.td
-@@ -284,6 +284,9 @@ def FeatureLZCNTFalseDeps : SubtargetFeature<"false-de
+@@ -283,6 +283,9 @@ def FeatureLZCNTFalseDeps : SubtargetFeature<"false-de
                                       "LZCNT/TZCNT have a false dependency on dest register">;
  def FeaturePCONFIG : SubtargetFeature<"pconfig", "HasPCONFIG", "true",
                                        "platform configuration instruction">;

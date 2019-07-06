@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST-lldb,v 1.2 2019/01/28 06:27:28 jca Exp $
+@comment $OpenBSD: PLIST-lldb,v 1.3 2019/07/06 15:06:36 jca Exp $
 @conflict ${MODPY_PY_PREFIX}llvm-<6.0.1p3
 @conflict llvm-<6.0.1p19
 @bin bin/lldb
 @bin bin/lldb-argdumper
 @bin bin/lldb-mi
 @bin bin/lldb-test
+@bin bin/lldb-vscode
 include/lldb/
 include/lldb/API/
 include/lldb/API/LLDB.h
@@ -32,6 +33,7 @@ include/lldb/API/SBFileSpecList.h
 include/lldb/API/SBFrame.h
 include/lldb/API/SBFunction.h
 include/lldb/API/SBHostOS.h
+include/lldb/API/SBInitializerOptions.h
 include/lldb/API/SBInstruction.h
 include/lldb/API/SBInstructionList.h
 include/lldb/API/SBLanguageRuntime.h
@@ -89,6 +91,7 @@ include/lldb/Breakpoint/BreakpointResolverAddress.h
 include/lldb/Breakpoint/BreakpointResolverFileLine.h
 include/lldb/Breakpoint/BreakpointResolverFileRegex.h
 include/lldb/Breakpoint/BreakpointResolverName.h
+include/lldb/Breakpoint/BreakpointResolverScripted.h
 include/lldb/Breakpoint/BreakpointSite.h
 include/lldb/Breakpoint/BreakpointSiteList.h
 include/lldb/Breakpoint/Stoppoint.h
@@ -104,7 +107,6 @@ include/lldb/Core/AddressResolver.h
 include/lldb/Core/AddressResolverFileLine.h
 include/lldb/Core/AddressResolverName.h
 include/lldb/Core/Architecture.h
-include/lldb/Core/Broadcaster.h
 include/lldb/Core/ClangForward.h
 include/lldb/Core/Communication.h
 include/lldb/Core/Debugger.h
@@ -112,13 +114,12 @@ include/lldb/Core/Disassembler.h
 include/lldb/Core/DumpDataExtractor.h
 include/lldb/Core/DumpRegisterValue.h
 include/lldb/Core/EmulateInstruction.h
-include/lldb/Core/Event.h
 include/lldb/Core/FileLineResolver.h
 include/lldb/Core/FileSpecList.h
 include/lldb/Core/FormatEntity.h
+include/lldb/Core/Highlighter.h
 include/lldb/Core/IOHandler.h
 include/lldb/Core/IOStreamMacros.h
-include/lldb/Core/Listener.h
 include/lldb/Core/LoadedModuleInfoList.h
 include/lldb/Core/Mangled.h
 include/lldb/Core/MappedHash.h
@@ -130,13 +131,11 @@ include/lldb/Core/Opcode.h
 include/lldb/Core/PluginInterface.h
 include/lldb/Core/PluginManager.h
 include/lldb/Core/RangeMap.h
-include/lldb/Core/RegisterValue.h
+include/lldb/Core/RichManglingContext.h
 include/lldb/Core/STLUtils.h
-include/lldb/Core/Scalar.h
 include/lldb/Core/SearchFilter.h
 include/lldb/Core/Section.h
 include/lldb/Core/SourceManager.h
-include/lldb/Core/State.h
 include/lldb/Core/StreamAsynchronousIO.h
 include/lldb/Core/StreamBuffer.h
 include/lldb/Core/StreamFile.h
@@ -229,10 +228,10 @@ include/lldb/Host/OptionParser.h
 include/lldb/Host/Pipe.h
 include/lldb/Host/PipeBase.h
 include/lldb/Host/PosixApi.h
-include/lldb/Host/Predicate.h
 include/lldb/Host/ProcessLauncher.h
 include/lldb/Host/ProcessRunLock.h
 include/lldb/Host/PseudoTerminal.h
+include/lldb/Host/SafeMachO.h
 include/lldb/Host/Socket.h
 include/lldb/Host/SocketAddress.h
 include/lldb/Host/StringConvert.h
@@ -246,13 +245,11 @@ include/lldb/Host/android/
 include/lldb/Host/android/HostInfoAndroid.h
 include/lldb/Host/common/
 include/lldb/Host/common/GetOptInc.h
-include/lldb/Host/common/NativeBreakpoint.h
 include/lldb/Host/common/NativeBreakpointList.h
 include/lldb/Host/common/NativeProcessProtocol.h
 include/lldb/Host/common/NativeRegisterContext.h
 include/lldb/Host/common/NativeThreadProtocol.h
 include/lldb/Host/common/NativeWatchpointList.h
-include/lldb/Host/common/SoftwareBreakpoint.h
 include/lldb/Host/common/TCPSocket.h
 include/lldb/Host/common/UDPSocket.h
 include/lldb/Host/freebsd/
@@ -362,11 +359,8 @@ include/lldb/Symbol/DeclVendor.h
 include/lldb/Symbol/Declaration.h
 include/lldb/Symbol/FuncUnwinders.h
 include/lldb/Symbol/Function.h
-include/lldb/Symbol/GoASTContext.h
-include/lldb/Symbol/JavaASTContext.h
 include/lldb/Symbol/LineEntry.h
 include/lldb/Symbol/LineTable.h
-include/lldb/Symbol/OCamlASTContext.h
 include/lldb/Symbol/ObjectContainer.h
 include/lldb/Symbol/ObjectFile.h
 include/lldb/Symbol/Symbol.h
@@ -420,6 +414,7 @@ include/lldb/Target/SectionLoadHistory.h
 include/lldb/Target/SectionLoadList.h
 include/lldb/Target/StackFrame.h
 include/lldb/Target/StackFrameList.h
+include/lldb/Target/StackFrameRecognizer.h
 include/lldb/Target/StackID.h
 include/lldb/Target/StopInfo.h
 include/lldb/Target/StructuredDataPlugin.h
@@ -456,6 +451,7 @@ include/lldb/Utility/AnsiTerminal.h
 include/lldb/Utility/ArchSpec.h
 include/lldb/Utility/Args.h
 include/lldb/Utility/Baton.h
+include/lldb/Utility/Broadcaster.h
 include/lldb/Utility/CleanUp.h
 include/lldb/Utility/CompletionRequest.h
 include/lldb/Utility/Connection.h
@@ -465,25 +461,28 @@ include/lldb/Utility/DataBufferHeap.h
 include/lldb/Utility/DataBufferLLVM.h
 include/lldb/Utility/DataEncoder.h
 include/lldb/Utility/DataExtractor.h
-include/lldb/Utility/Either.h
 include/lldb/Utility/Endian.h
 include/lldb/Utility/Environment.h
-include/lldb/Utility/FastDemangle.h
+include/lldb/Utility/Event.h
 include/lldb/Utility/FileSpec.h
 include/lldb/Utility/Flags.h
 include/lldb/Utility/IOObject.h
 include/lldb/Utility/Iterable.h
 include/lldb/Utility/JSON.h
 include/lldb/Utility/LLDBAssert.h
+include/lldb/Utility/Listener.h
 include/lldb/Utility/Log.h
 include/lldb/Utility/Logging.h
 include/lldb/Utility/NameMatches.h
-include/lldb/Utility/Range.h
+include/lldb/Utility/Predicate.h
+include/lldb/Utility/RegisterValue.h
 include/lldb/Utility/RegularExpression.h
-include/lldb/Utility/SafeMachO.h
+include/lldb/Utility/Reproducer.h
+include/lldb/Utility/Scalar.h
 include/lldb/Utility/SelectHelper.h
 include/lldb/Utility/SharedCluster.h
 include/lldb/Utility/SharingPtr.h
+include/lldb/Utility/State.h
 include/lldb/Utility/Status.h
 include/lldb/Utility/Stream.h
 include/lldb/Utility/StreamCallback.h
@@ -542,9 +541,11 @@ lib/liblldbPluginABISysV_s390x.a
 lib/liblldbPluginABISysV_x86_64.a
 lib/liblldbPluginAppleObjCRuntime.a
 lib/liblldbPluginArchitectureArm.a
+lib/liblldbPluginArchitectureMips.a
 lib/liblldbPluginArchitecturePPC64.a
 lib/liblldbPluginCPlusPlusLanguage.a
 lib/liblldbPluginCXXItaniumABI.a
+lib/liblldbPluginClangCommon.a
 lib/liblldbPluginDisassemblerLLVM.a
 lib/liblldbPluginDynamicLoaderDarwinKernel.a
 lib/liblldbPluginDynamicLoaderHexagonDYLD.a
@@ -553,8 +554,6 @@ lib/liblldbPluginDynamicLoaderPosixDYLD.a
 lib/liblldbPluginDynamicLoaderStatic.a
 lib/liblldbPluginDynamicLoaderWindowsDYLD.a
 lib/liblldbPluginExpressionParserClang.a
-lib/liblldbPluginExpressionParserGo.a
-lib/liblldbPluginGoLanguage.a
 lib/liblldbPluginInstructionARM.a
 lib/liblldbPluginInstructionARM64.a
 lib/liblldbPluginInstructionMIPS.a
@@ -565,17 +564,13 @@ lib/liblldbPluginInstrumentationRuntimeMainThreadChecker.a
 lib/liblldbPluginInstrumentationRuntimeTSan.a
 lib/liblldbPluginInstrumentationRuntimeUBSan.a
 lib/liblldbPluginJITLoaderGDB.a
-lib/liblldbPluginJavaLanguage.a
-lib/liblldbPluginLanguageRuntimeGo.a
-lib/liblldbPluginLanguageRuntimeJava.a
 lib/liblldbPluginMemoryHistoryASan.a
-lib/liblldbPluginOCamlLanguage.a
-lib/liblldbPluginOSGo.a
 lib/liblldbPluginOSPython.a
 lib/liblldbPluginObjCLanguage.a
 lib/liblldbPluginObjCPlusPlusLanguage.a
 lib/liblldbPluginObjectContainerBSDArchive.a
 lib/liblldbPluginObjectContainerMachOArchive.a
+lib/liblldbPluginObjectFileBreakpad.a
 lib/liblldbPluginObjectFileELF.a
 lib/liblldbPluginObjectFileJIT.a
 lib/liblldbPluginObjectFileMachO.a
@@ -599,7 +594,9 @@ lib/liblldbPluginRenderScriptRuntime.a
 lib/liblldbPluginScriptInterpreterNone.a
 lib/liblldbPluginScriptInterpreterPython.a
 lib/liblldbPluginStructuredDataDarwinLog.a
+lib/liblldbPluginSymbolFileBreakpad.a
 lib/liblldbPluginSymbolFileDWARF.a
+lib/liblldbPluginSymbolFileNativePDB.a
 lib/liblldbPluginSymbolFilePDB.a
 lib/liblldbPluginSymbolFileSymtab.a
 lib/liblldbPluginSymbolVendorELF.a

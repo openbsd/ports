@@ -1,51 +1,16 @@
-$OpenBSD: patch-lib_Target_Sparc_SparcISelLowering_cpp,v 1.3 2019/01/28 06:27:28 jca Exp $
+$OpenBSD: patch-lib_Target_Sparc_SparcISelLowering_cpp,v 1.4 2019/07/06 15:06:36 jca Exp $
 
 - Use a 64-bit register when required
-- [Sparc] Use float register for integer constrained with "f" in inline asm
-
-  Constraining an integer value to a floating point register using "f"
-  causes an llvm_unreachable to trigger. This patch allows i32 integers
-  to be placed in a single precision float register and i64 integers to
-  be placed in a double precision float register. This matches the behavior
-  of GCC.
 
 Index: lib/Target/Sparc/SparcISelLowering.cpp
 --- lib/Target/Sparc/SparcISelLowering.cpp.orig
 +++ lib/Target/Sparc/SparcISelLowering.cpp
-@@ -3491,26 +3491,28 @@ SparcTargetLowering::getRegForInlineAsmConstraint(cons
+@@ -3258,6 +3258,8 @@ SparcTargetLowering::getRegForInlineAsmConstraint(cons
      case 'r':
        if (VT == MVT::v2i32)
          return std::make_pair(0U, &SP::IntPairRegClass);
 +      else if (VT == MVT::i64 && Subtarget->is64Bit())
-+       return std::make_pair(0U, &SP::I64RegsRegClass);
++	return std::make_pair(0U, &SP::I64RegsRegClass);
        else
          return std::make_pair(0U, &SP::IntRegsRegClass);
      case 'f':
--      if (VT == MVT::f32)
-+      if (VT == MVT::f32 || VT == MVT::i32)
-         return std::make_pair(0U, &SP::FPRegsRegClass);
--      else if (VT == MVT::f64)
-+      else if (VT == MVT::f64 || VT == MVT::i64)
-         return std::make_pair(0U, &SP::LowDFPRegsRegClass);
-       else if (VT == MVT::f128)
-         return std::make_pair(0U, &SP::LowQFPRegsRegClass);
--      llvm_unreachable("Unknown ValueType for f-register-type!");
--      break;
-+      // This will generate an error message
-+      return std::make_pair(0U, nullptr);
-     case 'e':
--      if (VT == MVT::f32)
-+      if (VT == MVT::f32 || VT == MVT::i32)
-         return std::make_pair(0U, &SP::FPRegsRegClass);
--      else if (VT == MVT::f64)
-+      else if (VT == MVT::f64 || VT == MVT::i64 )
-         return std::make_pair(0U, &SP::DFPRegsRegClass);
-       else if (VT == MVT::f128)
-         return std::make_pair(0U, &SP::QFPRegsRegClass);
--      llvm_unreachable("Unknown ValueType for e-register-type!");
--      break;
-+      // This will generate an error message
-+      return std::make_pair(0U, nullptr);
-     }
-   } else if (!Constraint.empty() && Constraint.size() <= 5
-               && Constraint[0] == '{' && *(Constraint.end()-1) == '}') {

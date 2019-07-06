@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_X86FrameLowering_cpp,v 1.6 2019/02/11 05:24:16 jca Exp $
+$OpenBSD: patch-lib_Target_X86_X86FrameLowering_cpp,v 1.7 2019/07/06 15:06:36 jca Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -58,7 +58,7 @@ Index: lib/Target/X86/X86FrameLowering.cpp
  }
  
  static unsigned getSUBriOpcode(unsigned IsLP64, int64_t Imm) {
-@@ -871,6 +874,24 @@ void X86FrameLowering::BuildStackAlignAND(MachineBasic
+@@ -872,6 +875,24 @@ void X86FrameLowering::BuildStackAlignAND(MachineBasic
    MI->getOperand(3).setIsDead();
  }
  
@@ -83,7 +83,7 @@ Index: lib/Target/X86/X86FrameLowering.cpp
  /// emitPrologue - Push callee-saved registers onto the stack, which
  /// automatically adjust the stack pointer. Adjust the stack pointer to allocate
  /// space for local variables. Also emit labels used by the exception handler to
-@@ -1153,6 +1174,43 @@ void X86FrameLowering::emitPrologue(MachineFunction &M
+@@ -1145,6 +1166,43 @@ void X86FrameLowering::emitPrologue(MachineFunction &M
                                      nullptr, DwarfFramePtr));
        }
  
@@ -127,7 +127,7 @@ Index: lib/Target/X86/X86FrameLowering.cpp
        if (NeedsWinFPO) {
          // .cv_fpo_setframe $FramePtr
          HasWinCFI = true;
-@@ -1618,20 +1676,6 @@ void X86FrameLowering::emitEpilogue(MachineFunction &M
+@@ -1626,20 +1684,6 @@ void X86FrameLowering::emitEpilogue(MachineFunction &M
    }
    uint64_t SEHStackAllocAmt = NumBytes;
  
@@ -148,7 +148,7 @@ Index: lib/Target/X86/X86FrameLowering.cpp
    MachineBasicBlock::iterator FirstCSPop = MBBI;
    // Skip the callee-saved pop instructions.
    while (MBBI != MBB.begin()) {
-@@ -1701,6 +1745,28 @@ void X86FrameLowering::emitEpilogue(MachineFunction &M
+@@ -1709,6 +1753,28 @@ void X86FrameLowering::emitEpilogue(MachineFunction &M
      --MBBI;
    }
  
@@ -177,7 +177,7 @@ Index: lib/Target/X86/X86FrameLowering.cpp
    // Windows unwinder will not invoke function's exception handler if IP is
    // either in prologue or in epilogue.  This behavior causes a problem when a
    // call immediately precedes an epilogue, because the return address points
-@@ -1789,6 +1855,8 @@ int X86FrameLowering::getFrameIndexReference(const Mac
+@@ -1797,6 +1863,8 @@ int X86FrameLowering::getFrameIndexReference(const Mac
             "FPDelta isn't aligned per the Win64 ABI!");
    }
  
@@ -186,7 +186,7 @@ Index: lib/Target/X86/X86FrameLowering.cpp
  
    if (TRI->hasBasePointer(MF)) {
      assert(HasFP && "VLAs and dynamic stack realign, but no FP?!");
-@@ -3153,4 +3221,8 @@ void X86FrameLowering::processFunctionBeforeFrameFinal
+@@ -3168,4 +3236,8 @@ void X86FrameLowering::processFunctionBeforeFrameFinal
    addFrameReference(BuildMI(MBB, MBBI, DL, TII.get(X86::MOV64mi32)),
                      UnwindHelpFI)
        .addImm(-2);

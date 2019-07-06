@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_CodeGen_TargetLoweringBase_cpp,v 1.5 2019/01/28 06:27:28 jca Exp $
+$OpenBSD: patch-lib_CodeGen_TargetLoweringBase_cpp,v 1.6 2019/07/06 15:06:36 jca Exp $
 
 Restore setting the visibility of __guard_local to hidden for better
 code generation.  Use dyn_case_or_null instead of a static cast to
@@ -7,7 +7,7 @@ solve the crashes in the previous code.
 Index: lib/CodeGen/TargetLoweringBase.cpp
 --- lib/CodeGen/TargetLoweringBase.cpp.orig
 +++ lib/CodeGen/TargetLoweringBase.cpp
-@@ -1624,7 +1624,10 @@ Value *TargetLoweringBase::getIRStackGuard(IRBuilder<>
+@@ -1636,7 +1636,10 @@ Value *TargetLoweringBase::getIRStackGuard(IRBuilder<>
    if (getTargetMachine().getTargetTriple().isOSOpenBSD()) {
      Module &M = *IRB.GetInsertBlock()->getParent()->getParent();
      PointerType *PtrTy = Type::getInt8PtrTy(M.getContext());

@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_llvm_CodeGen_MachineFrameInfo_h,v 1.3 2019/01/28 06:27:28 jca Exp $
+$OpenBSD: patch-include_llvm_CodeGen_MachineFrameInfo_h,v 1.4 2019/07/06 15:06:36 jca Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -22,7 +22,7 @@ $OpenBSD: patch-include_llvm_CodeGen_MachineFrameInfo_h,v 1.3 2019/01/28 06:27:2
 Index: include/llvm/CodeGen/MachineFrameInfo.h
 --- include/llvm/CodeGen/MachineFrameInfo.h.orig
 +++ include/llvm/CodeGen/MachineFrameInfo.h
-@@ -257,6 +257,13 @@ class MachineFrameInfo { (private)
+@@ -274,6 +274,15 @@ class MachineFrameInfo { (private)
    /// The frame index for the stack protector.
    int StackProtectorIdx = -1;
  
@@ -31,12 +31,14 @@ Index: include/llvm/CodeGen/MachineFrameInfo.h
 +    unsigned Register = 0;
 +    /// Set to true if this function needs return protectors
 +    bool Needed = false;
++    /// Does the return protector cookie need to be stored in frame
++    bool NeedsStore = true;
 +  } RPI;
 +
    /// The frame index for the function context. Used for SjLj exceptions.
    int FunctionContextIdx = -1;
  
-@@ -333,6 +340,14 @@ class MachineFrameInfo { (private)
+@@ -354,6 +363,17 @@ class MachineFrameInfo { (private)
    int getStackProtectorIndex() const { return StackProtectorIdx; }
    void setStackProtectorIndex(int I) { StackProtectorIdx = I; }
    bool hasStackProtectorIndex() const { return StackProtectorIdx != -1; }
@@ -48,6 +50,9 @@ Index: include/llvm/CodeGen/MachineFrameInfo.h
 +  /// Get / Set if this frame needs a return protector
 +  void setReturnProtectorNeeded(bool I) { RPI.Needed = I; }
 +  bool getReturnProtectorNeeded() const { return RPI.Needed; }
++  /// Get / Set if the return protector cookie needs to be stored in frame
++  void setReturnProtectorNeedsStore(bool I) { RPI.NeedsStore = I; }
++  bool getReturnProtectorNeedsStore() const { return RPI.NeedsStore; }
  
    /// Return the index for the function context object.
    /// This object is used for SjLj exceptions.
