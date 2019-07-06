@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/12/31 10:27:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/07/06 20:26:45 jasper Exp $
 @bin bin/rofi
 bin/rofi-sensible-terminal
 bin/rofi-theme-selector
@@ -33,6 +33,7 @@ share/rofi/themes/arthur.rasi
 share/rofi/themes/blue.rasi
 share/rofi/themes/c64.rasi
 share/rofi/themes/dmenu.rasi
+share/rofi/themes/fancy.rasi
 share/rofi/themes/glue_pro_blue.rasi
 share/rofi/themes/gruvbox-common.rasi
 share/rofi/themes/gruvbox-dark-hard.rasi
