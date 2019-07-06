@@ -1,0 +1,18 @@
+$OpenBSD: patch-source_data_Makefile_in,v 1.3 2019/07/06 12:11:01 cwen Exp $
+
+Unbreak the build on big endian archs, see:
+https://unicode-org.atlassian.net/browse/ICU-20533
+
+Index: source/data/Makefile.in
+--- source/data/Makefile.in.orig
++++ source/data/Makefile.in
+@@ -148,7 +148,8 @@ ICUDATA_ARCHIVE = $(firstword $(wildcard $(srcdir)/in/
+ # and convert it to the current type.
+ ifneq ($(ICUDATA_ARCHIVE),)
+ ICUDATA_SOURCE_ARCHIVE = $(OUTDIR)/$(ICUDATA_PLATFORM_NAME).dat
+-$(ICUDATA_SOURCE_ARCHIVE): $(ICUDATA_ARCHIVE) $(OUTDIR)
++$(ICUDATA_SOURCE_ARCHIVE): $(ICUDATA_ARCHIVE)
++	$(MKINSTALLDIRS) $(OUTDIR)
+ 	$(INVOKE) $(TOOLBINDIR)/icupkg -t$(ICUDATA_CHAR) $(ICUDATA_ARCHIVE) $(ICUDATA_SOURCE_ARCHIVE)
+ endif
+ else

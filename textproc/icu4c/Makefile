@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2019/06/10 08:07:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2019/07/06 12:11:01 cwen Exp $
 
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
@@ -9,6 +9,8 @@ VERSION=		64.2
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME-main=		icu4c-${VERSION}
 PKGNAME-wwwdata=	icu4c-wwwdata-${VERSION}
+REVISION-main=		0
+REVISION-wwwdata=	0
 
 MAJ_V=			${VERSION:R}
 SO_VERSION=		15.0
@@ -25,7 +27,7 @@ HOMEPAGE=		http://www.icu-project.org
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # ICU: http://source.icu-project.org/repos/icu/icu/trunk/license.html
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB-main=		c m pthread ${COMPILER_LIBCXX}
 
