@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/12/03 09:00:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/07/06 07:15:14 ajacoutot Exp $
 @pkgpath graphics/colord,-gtk
 @bin bin/cd-convert
-include/colord-1/
 include/colord-1/colord-gtk/
 include/colord-1/colord-gtk.h
 include/colord-1/colord-gtk/cd-sample-widget.h
@@ -9,18 +8,10 @@ include/colord-1/colord-gtk/cd-sample-window.h
 include/colord-1/colord-gtk/cd-version.h
 include/colord-1/colord-gtk/cd-window-sync.h
 include/colord-1/colord-gtk/cd-window.h
-lib/girepository-1.0/
 lib/girepository-1.0/ColordGtk-1.0.typelib
-lib/libcolord-gtk.a
-lib/libcolord-gtk.la
 @lib lib/libcolord-gtk.so.${LIBcolord-gtk_VERSION}
 lib/pkgconfig/colord-gtk.pc
-@man man/man1/cd-convert.1
-share/gir-1.0/
 share/gir-1.0/ColordGtk-1.0.gir
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/colord-gtk.mo
-share/vala/
-share/vala/vapi/
+share/vala/vapi/colord-gtk.deps
 share/vala/vapi/colord-gtk.vapi
