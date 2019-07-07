@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2019/05/15 12:04:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.79 2019/07/07 14:58:04 daniel Exp $
 
 COMMENT=	Python charting and plotting API
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://matplotlib.org/
 MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB} ${COMPILER_LIBCXX}
 WANTLIB += freetype m png z

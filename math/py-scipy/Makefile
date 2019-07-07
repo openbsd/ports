@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/05/01 12:12:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/07 14:58:04 daniel Exp $
 
 COMMENT=		maths, science and engineering modules for Python
 
@@ -19,7 +19,7 @@ CATEGORIES=		math devel
 MAINTAINER=		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODFORTRAN_WANTLIB} ${MODPY_WANTLIB}
 WANTLIB += blas lapack m pthread ${COMPILER_LIBCXX} util

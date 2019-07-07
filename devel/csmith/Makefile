@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/07 14:58:04 daniel Exp $
 
 COMMENT=	fuzzer for C compilers
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel
 MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 SHARED_LIBS +=  csmith                    0.0 # 0.0
 

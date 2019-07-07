@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/05/20 20:52:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2019/07/07 14:58:04 daniel Exp $
 
 COMMENT=	FTP client with advanced user interface
 
@@ -10,7 +10,7 @@ REVISION=	0
 MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/06/05 22:43:00 daniel Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/07 14:58:04 daniel Exp $
 
 COMMENT =		computer algebra system (CAS) in Python
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://www.sympy.org
 MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # New BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

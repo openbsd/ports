@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/04/28 21:08:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2019/07/07 14:58:04 daniel Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 
@@ -15,7 +15,7 @@ HOMEPAGE=		https://www.numpy.org/
 MAINTAINER=		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB=		blas lapack m pthread ${MODFORTRAN_WANTLIB} ${MODPY_WANTLIB}
 
