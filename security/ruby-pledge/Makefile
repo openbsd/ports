@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/25 18:21:30 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/07 16:14:37 jeremy Exp $
 
-COMMENT =		ruby wrapper for pledge(2)
+COMMENT =		ruby wrapper for pledge(2) and unveil(2)
 
-DISTNAME =		pledge-1.1.0
+DISTNAME =		pledge-1.2.0
 CATEGORIES =		security	
 
 HOMEPAGE =		https://github.com/jeremyevans/ruby-pledge
@@ -22,7 +22,7 @@ MODRUBY_TEST_ENV =	RUBY=${RUBY} RUBYOPT=-rpledge.so
 MODRUBY_TEST_TARGET =	spec/pledge_spec.rb
 
 pre-test:
-			ln -s ${PREFIX}/${GEM_LIB}/gems/${DISTNAME}/lib \
-				${WRKSRC}/lib
+			ln -s ${PREFIX}/${GEM_LIB}/gems/${DISTNAME}/lib/pledge.so \
+				${WRKSRC}/lib/pledge.so
 
 .include <bsd.port.mk>
