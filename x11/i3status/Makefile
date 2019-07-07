@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2019/07/06 20:20:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2019/07/07 15:21:31 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		${APM_ARCHS}
 
@@ -21,7 +21,9 @@ WANTLIB += c confuse m pthread yajl iconv intl
 
 USE_GMAKE=		Yes
 
-BUILD_DEPENDS=		textproc/asciidoc>=8.6.8
+BUILD_DEPENDS=		textproc/asciidoc>=8.6.8 \
+			textproc/xmlto
+
 LIB_DEPENDS=		devel/libconfuse \
 			devel/libyajl
 
