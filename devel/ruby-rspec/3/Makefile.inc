@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.4 2019/04/04 06:21:04 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2019/07/07 18:46:44 jasper Exp $
 
 PORTROACH =		limit:^3
 
 CATEGORIES ?=		devel
 
 HOMEPAGE ?=		http://rspec.info/
-
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM ?=	Yes
