@@ -1,13 +1,20 @@
-$OpenBSD: patch-bin_elixir,v 1.4 2018/08/31 18:59:45 jasper Exp $
+$OpenBSD: patch-bin_elixir,v 1.5 2019/07/07 19:00:44 jasper Exp $
 Index: bin/elixir
 --- bin/elixir.orig
 +++ bin/elixir
-@@ -40,7 +40,7 @@ readlink_f () {
+@@ -81,7 +81,7 @@ starts_with () {
+   esac
  }
  
- MODE="elixir"
 -ERL_EXEC="erl"
 +ERL_EXEC="erl${MODERL_VERSION}"
- ERL=""
+ MODE="elixir"
  I=1
- 
+ E=0
+@@ -226,4 +226,4 @@ if [ -n "$ELIXIR_CLI_DRY_RUN" ]; then
+   echo "$@"
+ else
+   exec "$@"
+-fi
+\ No newline at end of file
++fi

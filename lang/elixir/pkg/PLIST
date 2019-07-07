@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/01/27 14:52:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/07/07 19:00:44 jasper Exp $
 bin/elixir
 bin/elixirc
 bin/iex
@@ -57,6 +57,9 @@ lib/elixir/lib/elixir/ebin/Elixir.Collectable.MapSet.beam
 lib/elixir/lib/elixir/ebin/Elixir.Collectable.beam
 lib/elixir/lib/elixir/ebin/Elixir.CompileError.beam
 lib/elixir/lib/elixir/ebin/Elixir.CondClauseError.beam
+lib/elixir/lib/elixir/ebin/Elixir.Config.Provider.beam
+lib/elixir/lib/elixir/ebin/Elixir.Config.Reader.beam
+lib/elixir/lib/elixir/ebin/Elixir.Config.beam
 lib/elixir/lib/elixir/ebin/Elixir.Date.Range.beam
 lib/elixir/lib/elixir/ebin/Elixir.Date.beam
 lib/elixir/lib/elixir/ebin/Elixir.DateTime.beam
@@ -83,6 +86,7 @@ lib/elixir/lib/elixir/ebin/Elixir.Exception.beam
 lib/elixir/lib/elixir/ebin/Elixir.File.CopyError.beam
 lib/elixir/lib/elixir/ebin/Elixir.File.Error.beam
 lib/elixir/lib/elixir/ebin/Elixir.File.LinkError.beam
+lib/elixir/lib/elixir/ebin/Elixir.File.RenameError.beam
 lib/elixir/lib/elixir/ebin/Elixir.File.Stat.beam
 lib/elixir/lib/elixir/ebin/Elixir.File.Stream.beam
 lib/elixir/lib/elixir/ebin/Elixir.File.beam
@@ -312,7 +316,6 @@ lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Tuple.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Info.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Introspection.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Pry.beam
-lib/elixir/lib/iex/ebin/Elixir.IEx.Remsh.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Server.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.State.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.beam
@@ -358,6 +361,7 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Project.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.ProjectStack.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.PublicKey.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Rebar.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Release.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.RemoteConverger.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.SCM.Git.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.SCM.Path.beam
@@ -415,6 +419,8 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.New.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Profile.Cprof.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Profile.Eprof.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Profile.Fprof.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Release.Init.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Release.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Run.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Test.Cover.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Test.beam
