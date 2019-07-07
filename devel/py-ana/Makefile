@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/02 19:13:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/07 18:11:21 jasper Exp $
 
 COMMENT =		distributed data storage classes
 
-MODPY_EGG_VERSION =	0.05
+MODPY_EGG_VERSION =	0.06
 DISTNAME =		ana-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/02 19:13:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/07/07 18:11:21 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/ana/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/ana-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/ana/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ana/d.py
 lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}d.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ana/datalayer.py
 lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}datalayer.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ana/errors.py
 lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ana/storable.py
 lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}storable.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ana/d.py
+lib/python${MODPY_VERSION}/site-packages/ana/datalayer.py
+lib/python${MODPY_VERSION}/site-packages/ana/errors.py
+lib/python${MODPY_VERSION}/site-packages/ana/storable.py
 share/doc/${MODPY_PY_PREFIX}ana/
 share/doc/${MODPY_PY_PREFIX}ana/README.md
