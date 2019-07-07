@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2019/07/04 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.189 2019/07/07 11:02:24 sthen Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc sparc64
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://www.qemu.org/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2, LGPLv2 and BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	SDL2 X11 atk-1.0 bz2 c cairo cairo-gobject capstone curl \
 		curses epoxy fdt>=4.1 gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 \
@@ -57,9 +57,11 @@ MODPY_RUNDEP=	No
 MAKE_ENV=	V=1
 FAKE_FLAGS=	qemu_confdir=${PREFIX}/share/examples/qemu
 
-# fix build with ancient ncurses
-EXTRA_CFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include -D_XOPEN_SOURCE_EXTENDED
+EXTRA_CFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 EXTRA_LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+
+# fix build with ancient ncurses. ncurses needs to be updated to 5.9 or newer.
+EXTRA_CFLAGS+=	-D_XOPEN_SOURCE_EXTENDED
 
 # until the system headers are fixed properly.
 EXTRA_CFLAGS+=	-Wno-redundant-decls
