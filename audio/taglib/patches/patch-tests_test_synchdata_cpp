@@ -1,0 +1,29 @@
+$OpenBSD: patch-tests_test_synchdata_cpp,v 1.1 2019/07/07 16:58:46 cwen Exp $
+
+Fix narrowing error on archs where char is unsigned by default (ppc,arm).
+From: 
+https://github.com/taglib/taglib/commit/0b583bafd09c29695af9e84f7e7182280411a78e
+
+Index: tests/test_synchdata.cpp
+--- tests/test_synchdata.cpp.orig
++++ tests/test_synchdata.cpp
+@@ -75,8 +75,8 @@ class TestID3v2SynchData : public CppUnit::TestFixture
+ 
+   void testToUIntBroken()
+   {
+-    char data[] = { 0, 0, 0, -1 };
+-    char data2[] = { 0, 0, -1, -1 };
++    char data[] = { 0, 0, 0, (char)-1 };
++    char data2[] = { 0, 0, (char)-1, (char)-1 };
+ 
+     CPPUNIT_ASSERT_EQUAL((unsigned int)255, ID3v2::SynchData::toUInt(ByteVector(data, 4)));
+     CPPUNIT_ASSERT_EQUAL((unsigned int)65535, ID3v2::SynchData::toUInt(ByteVector(data2, 4)));
+@@ -84,7 +84,7 @@ class TestID3v2SynchData : public CppUnit::TestFixture
+ 
+   void testToUIntBrokenAndTooLarge()
+   {
+-    char data[] = { 0, 0, 0, -1, 0 };
++    char data[] = { 0, 0, 0, (char)-1, 0 };
+     ByteVector v(data, 5);
+ 
+     CPPUNIT_ASSERT_EQUAL((unsigned int)255, ID3v2::SynchData::toUInt(v));
