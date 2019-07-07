@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2018/11/30 08:03:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2019/07/07 11:20:52 ajacoutot Exp $
 
 # XXX PORTROACH overriden at end of this file.
 
@@ -17,7 +17,7 @@ SHARED_LIBS +=	grlpls-0.3           0.0      # 0.307.0
 CATEGORIES+=	multimedia
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c gdk-3 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-3
 WANTLIB += intl oauth soup-2.4 totem-plparser

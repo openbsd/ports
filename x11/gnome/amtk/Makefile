@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/17 07:02:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/07 11:20:50 ajacoutot Exp $
 
 COMMENT=		Actions, Menus and Toolbars Kit
 
@@ -10,7 +10,7 @@ CATEGORIES=		devel
 SHARED_LIBS +=  amtk-5                    0.0 # 0.0
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi cairo cairo-gobject

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2019/05/07 20:54:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.136 2019/07/07 11:20:55 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
@@ -8,7 +8,7 @@ GNOME_VERSION=		3.32.2
 SHARED_LIBS +=  yelp                 0.0      # unknown
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr

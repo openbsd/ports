@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/05/08 01:35:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/07 11:20:54 ajacoutot Exp $
 
 COMMENT =		recipe manager for GNOME
 
@@ -9,7 +9,7 @@ REVISION =		4
 CATEGORIES =		misc
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/dconf \
 			devel/meson \

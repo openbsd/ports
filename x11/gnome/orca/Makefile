@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2019/04/28 20:52:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.107 2019/07/07 11:20:54 ajacoutot Exp $
 
 # XXX could use brltty and brlapi (with python bindinds) -- not ported yet
 
@@ -9,7 +9,7 @@ GNOME_VERSION=		3.32.0
 REVISION=		0
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python \
 			x11/gnome

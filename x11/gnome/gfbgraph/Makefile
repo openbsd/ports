@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/04/13 07:38:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/07 11:20:52 ajacoutot Exp $
 
 COMMENT=		GObject library for Facebook Graph API
 
@@ -12,7 +12,7 @@ SHARED_LIBS +=  gfbgraph-0.2              0.1 # 0.0
 CATEGORIES=		net
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 goa-1.0 gobject-2.0
 WANTLIB += gthread-2.0 json-glib-1.0 lzma m pcre pthread rest-0.7

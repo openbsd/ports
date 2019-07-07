@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/06/13 15:48:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/07 11:20:53 ajacoutot Exp $
 
 COMMENT=		.NET language bindings for assorted GNOME libraries
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://mono-project.com/GtkSharp
 MASTER_SITES=		https://download.mono-project.com/sources/gnome-sharp2/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2

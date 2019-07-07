@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2019/05/08 01:09:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.75 2019/07/07 11:20:52 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -14,7 +14,7 @@ CATEGORIES=		devel
 # MIT
 # console modules (modules/console.c) and stack printer (gjs/stack.c)
 # contain code from Mozilla which are: MPL1.1/LGPLv2+/GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject curses

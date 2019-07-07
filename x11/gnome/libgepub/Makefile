@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/05 11:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/07 11:20:53 ajacoutot Exp $
 
 # build time requirement for WebKit2-4.0 introspection
 USE_WXNEEDED=		Yes
@@ -14,7 +14,7 @@ CATEGORIES=		graphics
 SHARED_LIBS += gepub-0.6                 0.0 # 0.0.0
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += archive gio-2.0 glib-2.0 gobject-2.0 gtk-3 javascriptcoregtk-4.0
 WANTLIB += soup-2.4 webkit2gtk-4.0 xml2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/10/24 14:28:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/07 11:20:55 ajacoutot Exp $
 
 COMMENT=		Text Editor Product Line
 
@@ -11,7 +11,7 @@ CATEGORIES=		devel
 SHARED_LIBS +=  tepl-4                    1.0 # 0.0
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender amtk-5 atk-1.0 atk-bridge-2.0

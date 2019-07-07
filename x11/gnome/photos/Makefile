@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2019/05/08 16:24:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2019/07/07 11:20:54 ajacoutot Exp $
 
 BROKEN-powerpc=		undefined reference to __sync_add_and_fetch_8
 
@@ -10,7 +10,7 @@ GNOME_VERSION=		3.32.0
 CATEGORIES=		graphics
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += atk-1.0 babl-0.1 c cairo cairo-gobject dazzle-1.0 gdata
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gegl-0.4 geocode-glib gexiv2 gfbgraph-0.2

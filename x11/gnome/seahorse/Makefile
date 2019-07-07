@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2019/05/16 20:21:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2019/07/07 11:20:54 ajacoutot Exp $
 
 COMMENT=		GNOME encryption interface
 
@@ -8,7 +8,7 @@ GNOME_VERSION=		3.32.2
 CATEGORIES=		security
 
 # GPLv2/GFDLv1.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += atk-1.0 avahi-client avahi-common avahi-glib c cairo
 WANTLIB += cairo-gobject gck-1 gcr-base-3 gcr-ui-3 gdk-3 gdk_pixbuf-2.0

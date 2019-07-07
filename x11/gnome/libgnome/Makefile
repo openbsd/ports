@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2017/10/26 08:53:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2019/07/07 11:20:53 ajacoutot Exp $
 
 COMMENT=		libraries for the GNOME project
 
@@ -10,7 +10,7 @@ REVISION=		13
 SHARED_LIBS +=	gnome-2		2402.0   # .3000.0
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += ORBit-2 ORBitCosNaming-2 bonobo-2 bonobo-activation c
 WANTLIB += canberra crypto dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0

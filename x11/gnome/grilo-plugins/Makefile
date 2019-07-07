@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2019/02/21 17:08:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2019/07/07 11:20:52 ajacoutot Exp $
 
 # XXX: PORTROACH overriden at end of this file.
 
@@ -14,7 +14,7 @@ SUBST_VARS=	API
 CATEGORIES+=	multimedia
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += avahi-client avahi-common avahi-glib gdata gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 goa-1.0 gobject-2.0 grilo-0.3

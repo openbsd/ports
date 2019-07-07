@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2019/05/08 01:57:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2019/07/07 11:20:55 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -8,7 +8,7 @@ GNOME_PROJECT=		gnome-weather
 GNOME_VERSION=		3.32.2
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 MODULES=		devel/dconf \
 			devel/meson \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2019/05/09 13:53:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.192 2019/07/07 11:20:54 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -11,7 +11,7 @@ SHARED_LIBS += nautilus-extension        3.0 # 1.4.0
 CATEGORIES=		x11
 
 # GPLv2 - LGPLv2 - GFPLv1.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 archive atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gexiv2 gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0

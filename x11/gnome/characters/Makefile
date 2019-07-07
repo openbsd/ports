@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/08 01:44:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/07 11:20:50 ajacoutot Exp $
 
 COMMENT =		GNOME utility to insert unusual characters
 
@@ -6,7 +6,7 @@ GNOME_PROJECT =		gnome-characters
 GNOME_VERSION =		3.32.1
 
 # BSD3/GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += atk-1.0 cairo cairo-gobject fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 intl pangocairo-1.0 pangoft2-1.0 z

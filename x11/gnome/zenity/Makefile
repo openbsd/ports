@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2019/05/08 01:51:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.81 2019/07/07 11:20:56 ajacoutot Exp $
 
 COMMENT=		dialogs for GNOME
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=		zenity
 GNOME_VERSION=		3.32.0
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 intl
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 javascriptcoregtk-4.0

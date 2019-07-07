@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2019/04/28 06:29:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2019/07/07 11:20:50 ajacoutot Exp $
 
 COMMENT=		service interface for assistive technologies
 
@@ -10,7 +10,7 @@ SHARED_LIBS +=  atspi                0.3      # 0.0.1
 HOMEPAGE=		https://wiki.linuxfoundation.org/en/AT-SPI_on_D-Bus
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xtst c dbus-1 gio-2.0 glib-2.0 gobject-2.0 intl
 

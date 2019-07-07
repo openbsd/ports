@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2018/07/06 06:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/07 11:20:51 ajacoutot Exp $
 
 COMMENT=		GNOME dictionary application
 
@@ -9,7 +9,7 @@ REVISION=		1
 SHARED_LIBS +=  gdict-1.0            9.1      # 10.0
 
 # GPLv2 - LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += c cairo gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl
 WANTLIB += m pango-1.0 pangocairo-1.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.244 2019/06/25 20:25:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.245 2019/07/07 11:20:55 ajacoutot Exp $
 
 COMMENT=		metadata database and search tool
 
@@ -17,7 +17,7 @@ SHARED_LIBS +=  tracker-miner-2.0    0.0      # 0.200.0
 SHARED_LIBS +=  tracker-control-2.0  0.0      # 0.200.0
 
 # GPLv2+ - LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 icudata icui18n icuuc
 WANTLIB += intl json-glib-1.0 kvm m soup-2.4 sqlite3 uuid xml2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2019/03/05 13:14:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2019/07/07 11:20:55 ajacoutot Exp $
 
 COMMENT=		GObject-based parsing library
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=  totem-plparser-mini  18.0     # 18.1.4
 CATEGORIES=		multimedia net textproc
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += archive c gcrypt gio-2.0 glib-2.0 gobject-2.0 intl
 WANTLIB += pthread quvi-0.9 xml2

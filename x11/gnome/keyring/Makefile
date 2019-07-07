@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2019/01/17 20:22:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.132 2019/07/07 11:20:52 ajacoutot Exp $
 
 # XXX should be a RUN_DEPENDS of x11/gnome/{libgnome-keyring,libsecret} but that
 # would create dependency loops:                                                
@@ -14,7 +14,7 @@ GNOME_VERSION=		3.28.2
 REVISION=		0
 
 # GPLv2/LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo

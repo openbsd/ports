@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/05/09 16:40:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2019/07/07 11:20:52 ajacoutot Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
@@ -7,7 +7,7 @@ GNOME_VERSION=		3.32.1
 REVISION=		0
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += accountsservice atk-1.0 c cairo cairo-gobject fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gdm geoclue-2 geocode-glib

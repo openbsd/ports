@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2019/03/28 15:52:30 robert Exp $
+# $OpenBSD: Makefile,v 1.48 2019/07/07 11:20:53 ajacoutot Exp $
 
 COMMENT=		library for storing and retrieving passwords and secrets
 
@@ -10,7 +10,7 @@ REVISION=		0
 SHARED_LIBS +=  secret-1             2.0      # 0.0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += c ffi gcrypt gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gpg-error iconv intl pcre pthread z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2019/05/08 01:21:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.116 2019/07/07 11:20:54 ajacoutot Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
@@ -9,7 +9,7 @@ SHARED_LIBS +=  goa-1.0              4.0      # .0.0
 SHARED_LIBS +=  goa-backend-1.0      4.0      # .1.0
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm
@@ -29,20 +29,20 @@ WANTLIB += webp webpdemux woff2common woff2dec xcb xcb-dri2 xcb-dri3
 WANTLIB += xcb-glx xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes
 WANTLIB += xml2 xshmfence xslt z ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
-MODULES=		devel/dconf \
-			x11/gnome
+MODULES=	devel/dconf \
+		x11/gnome
 
-LIB_DEPENDS=		devel/json-glib \
-			net/librest \
-			x11/gnome/libsecret \
-			www/webkitgtk4
+LIB_DEPENDS=	devel/json-glib \
+		net/librest \
+		x11/gnome/libsecret \
+		www/webkitgtk4
 
-MODGNOME_TOOLS += 	docbook gobject-introspection gtk-update-icon-cache vala
+MODGNOME_TOOLS=	docbook gobject-introspection gtk-update-icon-cache vala
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-gudev
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--disable-gudev
 
 post-install:
 	rm ${PREFIX}/lib/goa-1.0/web-extensions/*.{a,la}

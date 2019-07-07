@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2019/05/26 08:40:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.169 2019/07/07 11:20:55 ajacoutot Exp $
 
 COMMENT=	GNOME terminal
 
@@ -7,7 +7,7 @@ GNOME_VERSION=	3.32.2
 REVISION=	0
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2019/05/26 08:40:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2019/07/07 11:20:50 ajacoutot Exp $
 
 COMMENT=		contacts manager for GNOME
 
@@ -9,7 +9,7 @@ REVISION=		0
 CATEGORIES=		productivity
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM= 	Yes
+PERMIT_PACKAGE= 	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject ebackend-1.2 ebook-1.2
 WANTLIB += ebook-contacts-1.2 ecal-1.2 edata-book-1.2 edataserver-1.2

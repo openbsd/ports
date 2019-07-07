@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.176 2019/05/23 08:48:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.177 2019/07/07 11:20:54 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -8,7 +8,7 @@ GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.32.2
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += EGL GL X11 Xfixes Xi atk-1.0 atk-bridge-2.0 c cairo
 WANTLIB += cairo-gobject croco-0.6 ecal-1.2 edataserver-1.2 gck-1

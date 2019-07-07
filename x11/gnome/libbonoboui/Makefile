@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2019/06/13 15:48:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2019/07/07 11:20:52 ajacoutot Exp $
 
 COMMENT=	user interface components for bonobo
 
@@ -9,7 +9,7 @@ REVISION=	12
 SHARED_LIBS +=	bonoboui-2	3.0        # .0.0
 
 # GPLv2/LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2

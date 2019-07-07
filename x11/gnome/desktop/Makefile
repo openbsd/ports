@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2019/05/08 01:31:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.164 2019/07/07 11:20:51 ajacoutot Exp $
 
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=590059
 #RUN_DEPENDS +=		misc/hwdata
@@ -14,7 +14,7 @@ SHARED_LIBS +=  gnome-desktop-3      2.2      # 17.0.6
 CATEGORIES=		x11
 
 # LGPLv2/GFDLv1.1/GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl m pango-1.0

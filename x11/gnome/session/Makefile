@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.274 2019/05/08 13:17:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.275 2019/07/07 11:20:54 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
@@ -8,7 +8,7 @@ GNOME_VERSION=		3.32.0
 CATEGORIES=		x11
 
 # GPLv2/LGPLv2/GFDLv1.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += EGL GL GLESv2 ICE SM X11 Xcomposite atk-1.0 c cairo
 WANTLIB += cairo-gobject dbus-1 epoxy gdk-3 gdk_pixbuf-2.0 gio-2.0

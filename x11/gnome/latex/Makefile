@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/08 14:40:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/07 11:20:52 ajacoutot Exp $
 
 COMMENT=		LaTeX editor for the GNOME desktop
 
@@ -8,7 +8,7 @@ GNOME_VERSION=		3.32.0
 CATEGORIES=		editors print
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender amtk-5 aspell atk-1.0 atk-bridge-2.0

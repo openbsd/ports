@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2019/04/28 20:52:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.82 2019/07/07 11:20:51 ajacoutot Exp $
 
 # XXX the "postr" plugin needs postr which hasn't been ported yet
 
@@ -11,7 +11,7 @@ REVISION=		0
 CATEGORIES=		graphics
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += EGL X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi cairo

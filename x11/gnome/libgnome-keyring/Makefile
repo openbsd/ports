@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/03/28 15:52:30 robert Exp $
+# $OpenBSD: Makefile,v 1.47 2019/07/07 11:20:53 ajacoutot Exp $
 
 COMMENT=	library for gnome keyring integration
 
@@ -9,7 +9,7 @@ REVISION=	6
 SHARED_LIBS +=  gnome-keyring        7.0      # 2.0
 
 # GPLv2/LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += dbus-1 ffi gcrypt glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gpg-error pcre pthread iconv intl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/05/25 10:36:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2019/07/07 11:20:51 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -10,7 +10,7 @@ GNOME_VERSION=		3.32.2
 CATEGORIES=		x11
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xi accountsservice atk-1.0 c cairo cairo-gobject
 WANTLIB += colord colord-gtk colordprivate cups fontconfig freetype

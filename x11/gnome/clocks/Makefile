@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/05/08 15:19:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2019/07/07 11:20:50 ajacoutot Exp $
 
 COMMENT=		clock application for GNOME
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=		gnome-clocks
 GNOME_VERSION=		3.32.0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += atk-1.0 cairo-gobject pango-1.0 pangocairo-1.0
 WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 geoclue-2 geocode-glib

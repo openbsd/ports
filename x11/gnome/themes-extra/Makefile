@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/07/09 15:09:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/07 11:20:55 ajacoutot Exp $
 
 COMMENT=		extra themes for GNOME applications
 
@@ -7,7 +7,7 @@ GNOME_VERSION=		3.28
 REVISION=		2
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 cairo expat ffi fontconfig freetype

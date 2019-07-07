@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.278 2019/05/12 21:28:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.279 2019/07/07 11:20:51 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
@@ -13,7 +13,7 @@ MASTER_SITES0=		http://www.openbsd.org/art/puffy/
 SHARED_LIBS +=  gdm                  0.0      # 1.0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender accountsservice atk-1.0

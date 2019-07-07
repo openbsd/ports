@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2019/05/08 01:34:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.125 2019/07/07 11:20:52 ajacoutot Exp $
 
 COMMENT=		Unicode character map for the GNOME project
 
@@ -8,7 +8,7 @@ GNOME_VERSION=		12.0.1
 SHARED_LIBS +=  gucharmap_2_90            7.0 # 7.0
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject

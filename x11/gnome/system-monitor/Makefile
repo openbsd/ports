@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2019/05/08 13:15:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.84 2019/07/07 11:20:55 ajacoutot Exp $
 
 COMMENT=		sytem monitor for GNOME
 
@@ -8,7 +8,7 @@ GNOME_VERSION=		3.32.1
 CATEGORIES=		sysutils
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4
 WANTLIB += glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 gtk-3 gtkmm-3.0

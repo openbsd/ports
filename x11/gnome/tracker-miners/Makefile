@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/06/25 20:25:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/07 11:20:55 ajacoutot Exp $
 
 COMMENT=		tracker miners and metadata extractors
 
@@ -9,7 +9,7 @@ REVISION=		0
 SHARED_LIBS +=  tracker-extract           1.1 # 0.0
 
 # GPLv2+ - LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += FLAC archive c cairo cue exempi exif gexiv2 gif gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gsf-1 gstaudio-1.0

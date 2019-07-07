@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/04/28 06:37:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/07 11:20:50 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -10,7 +10,7 @@ GNOME_VERSION=		3.32.0
 CATEGORIES=		x11
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 MODULES=		x11/gnome
 

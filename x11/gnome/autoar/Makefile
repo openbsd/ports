@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/05 11:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/07 11:20:50 ajacoutot Exp $
 
 COMMENT=		GLib wrapper around libarchive
 
@@ -12,7 +12,7 @@ SHARED_LIBS +=  gnome-autoar-gtk-0        0.0 # 0.0
 CATEGORIES=		archivers
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0

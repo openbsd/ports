@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2019/04/28 08:17:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.121 2019/07/07 11:20:51 ajacoutot Exp $
 
 # build time requirement for WebKit2-4.0 introspection
 USE_WXNEEDED=		Yes
@@ -13,7 +13,7 @@ SHARED_LIBS +=  devhelp-3            1.0      # 4.0
 CATEGORIES=		textproc
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += amtk-5 atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl javascriptcoregtk-4.0

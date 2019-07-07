@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/05/08 12:07:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2019/07/07 11:20:50 ajacoutot Exp $
 
 COMMENT=		color profile manager for GNOME
 
@@ -8,7 +8,7 @@ GNOME_VERSION=		3.32.0
 CATEGORIES=		graphics
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 atk-1.0 c cairo cairo-gobject
 WANTLIB += canberra canberra-gtk3 colord colord-gtk colordprivate

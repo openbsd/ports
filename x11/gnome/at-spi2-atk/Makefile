@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/04/28 06:30:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2019/07/07 11:20:50 ajacoutot Exp $
 
 COMMENT=		atk-bridge for at-spi2
 
@@ -10,7 +10,7 @@ SHARED_LIBS +=  atk-bridge-2.0       0.1      # 0.0.0
 HOMEPAGE=		https://wiki.linuxfoundation.org/en/AT-SPI_on_D-Bus
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += atk-1.0 atspi dbus-1 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += intl pthread

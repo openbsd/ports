@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/27 21:04:10 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/07 11:20:54 ajacoutot Exp $
 
 COMMENT=		OCR and DAR program
 
@@ -9,7 +9,7 @@ REVISION=		3
 CATEGORIES=		graphics textproc
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python \
 			x11/gnome

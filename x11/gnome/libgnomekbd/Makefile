@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2019/05/17 16:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2019/07/07 11:20:53 ajacoutot Exp $
 
 COMMENT=		keyboard configuration library
 
@@ -12,7 +12,7 @@ SHARED_LIBS +=  gnomekbdui           8.0      # 8.0
 CATEGORIES=		devel
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject epoxy

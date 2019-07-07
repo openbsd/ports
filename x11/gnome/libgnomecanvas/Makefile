@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2019/06/13 15:48:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2019/07/07 11:20:53 ajacoutot Exp $
 
 COMMENT=	graphics library for GNOME
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=	gnomecanvas-2        2002.0   # .2001.0
 CATEGORIES=	x11
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB+= Xrender art_lgpl_2 atk-1.0 cairo expat ffi fontconfig freetype

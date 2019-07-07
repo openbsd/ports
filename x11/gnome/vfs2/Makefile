@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2017/04/13 07:38:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2019/07/07 11:20:55 ajacoutot Exp $
 
 COMMENT=		GNOME Virtual File System
 
@@ -12,7 +12,7 @@ REVISION=		14
 SHARED_LIBS +=	gnomevfs-2           2400.0   # .2400.0
 
 # GPLv2/LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += bz2 c crypto dbus-1 dbus-glib-1 fam ffi gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 lzma m pcre pthread ssl

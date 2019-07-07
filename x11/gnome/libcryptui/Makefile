@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/06/13 15:48:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/07 11:20:52 ajacoutot Exp $
 
 COMMENT=	interface components for OpenPGP
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=  cryptui              2.0      # 0.0
 CATEGORIES=	security
 
 # GPLv2/LGPLv2/GFDLv1.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender Xtst assuan atk-1.0 atk-bridge-2.0 atspi c

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2018/06/16 08:38:15 kili Exp $
+# $OpenBSD: Makefile,v 1.64 2019/07/07 11:20:51 ajacoutot Exp $
 
 COMMENT=		GNOME Docking Library
 
@@ -9,7 +9,7 @@ REVISION=		0
 SHARED_LIBS +=  gdl-3                3.1      # 5.9
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi cairo cairo-gobject

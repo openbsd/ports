@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/08 15:04:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/07 11:20:54 ajacoutot Exp $
 
 COMMENT =		fit falling blocks together
 
@@ -8,7 +8,7 @@ GNOME_VERSION =		3.32.0
 CATEGORIES =		games
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += EGL X11 Xcomposite Xdamage Xext Xfixes Xi Xrandr atk-1.0
 WANTLIB += c cairo cairo-gobject canberra canberra-gtk3 clutter-1.0

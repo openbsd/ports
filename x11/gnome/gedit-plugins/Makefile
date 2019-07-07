@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2019/05/15 19:09:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.105 2019/07/07 11:20:52 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
@@ -8,7 +8,7 @@ GNOME_VERSION=		3.32.2
 CATEGORIES=		editors
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 cairo cairo-gobject

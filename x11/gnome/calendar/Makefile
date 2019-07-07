@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2019/05/10 15:18:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2019/07/07 11:20:50 ajacoutot Exp $
 
 COMMENT =		GNOME calendar
 
@@ -6,7 +6,7 @@ GNOME_PROJECT =		gnome-calendar
 GNOME_VERSION =		3.32.2
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject dazzle-1.0 ecal-1.2 edataserver-1.2
 WANTLIB += edataserverui-1.2 gdk-3 gdk_pixbuf-2.0 geoclue-2 geocode-glib

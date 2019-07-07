@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/04/28 20:52:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2019/07/07 11:20:50 ajacoutot Exp $
 
 COMMENT=		input assistive technology
 
@@ -9,7 +9,7 @@ REVISION=		3
 SHARED_LIBS +=  caribou              0.0      # 0.0
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += EGL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0

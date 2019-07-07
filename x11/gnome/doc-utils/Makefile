@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2016/04/28 14:14:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2019/07/07 11:20:51 ajacoutot Exp $
 
 # This port does set MODGNOME_TOOLS=yelp on purpose: it would create a
 # dependency on itself. We do not enforce dependency on x11/gnome/yelp
@@ -13,7 +13,7 @@ REVISION=	5
 CATEGORIES=	textproc
 
 # (L)GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python \
 		x11/gnome

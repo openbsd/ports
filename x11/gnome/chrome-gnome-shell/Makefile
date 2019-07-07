@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:52:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/07 11:20:50 ajacoutot Exp $
 
 COMMENT=		GNOME Shell integration for Chrome
 
@@ -7,7 +7,7 @@ GNOME_VERSION=		10.1
 REVISION=		1
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 MODULES=		devel/cmake \
 			lang/python \

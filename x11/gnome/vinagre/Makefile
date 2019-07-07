@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2018/07/06 06:04:47 espie Exp $
+# $OpenBSD: Makefile,v 1.112 2019/07/07 11:20:55 ajacoutot Exp $
 
 COMMENT=		remote desktop viewer for GNOME
 
@@ -9,7 +9,7 @@ REVISION=		8
 CATEGORIES=		net
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 atk-1.0 avahi-client avahi-common avahi-glib avahi-gobject
 WANTLIB += avahi-ui-gtk3 c cairo cairo-gobject dbus-1 dbus-glib-1

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2019/05/08 22:04:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.133 2019/07/07 11:20:53 ajacoutot Exp $
 
 PORTROACH=		skipv:5.90.1
 
@@ -36,7 +36,7 @@ HOMEPAGE=		http://www.gnome-db.org/
 
 # library: LGPLv2
 # tools: GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += m pcre z gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 lzma
 WANTLIB += gthread-2.0 xml2 gcrypt secret-1 gpg-error ffi pthread

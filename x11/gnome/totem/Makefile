@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2019/05/08 16:37:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.163 2019/07/07 11:20:55 ajacoutot Exp $
 
 COMMENT=		official media player for GNOME
 
@@ -10,7 +10,7 @@ SHARED_LIBS +=  totem                0.0      # unknown
 CATEGORIES=		multimedia
 
 # GPLv2 with exception clause - LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += EGL X11 Xcomposite Xdamage Xext Xfixes Xi Xrandr atk-1.0
 WANTLIB += c cairo cairo-gobject clutter-1.0 clutter-gst-3.0 clutter-gtk-1.0

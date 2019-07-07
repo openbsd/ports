@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2019/07/04 06:52:03 semarie Exp $
+# $OpenBSD: Makefile,v 1.150 2019/07/07 11:20:53 ajacoutot Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
@@ -33,7 +33,7 @@ PKG_ARGS=		-Dold=1 -Dstable=0
 CATEGORIES=		devel graphics
 
 # GPLv2/LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xext Xrender c cairo croco-0.6 expat ffi fontconfig
 WANTLIB += freetype fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0

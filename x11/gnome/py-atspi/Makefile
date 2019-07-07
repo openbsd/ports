@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/04/28 20:52:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/07 11:20:54 ajacoutot Exp $
 
 COMMENT=		python bindings for at-spi2
 
@@ -10,7 +10,7 @@ REVISION=		0
 HOMEPAGE=		https://wiki.linuxfoundation.org/en/AT-SPI_on_D-Bus
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python \
 			x11/gnome

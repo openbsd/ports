@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/05/22 21:23:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2019/07/07 11:20:53 ajacoutot Exp $
 
 COMMENT=		map application for GNOME
 
@@ -8,7 +8,7 @@ GNOME_VERSION=		3.32.2.1
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0.0
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += EGL X11 Xcomposite Xdamage Xext Xfixes Xi Xrandr atk-1.0
 WANTLIB += cairo cairo-gobject champlain-0.12 clutter-1.0 cogl

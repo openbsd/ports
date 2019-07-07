@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2017/06/19 08:38:03 landry Exp $
+# $OpenBSD: Makefile,v 1.56 2019/07/07 11:20:53 ajacoutot Exp $
 
 COMMENT=		utility library for XKB
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://www.freedesktop.org/wiki/Software/LibXklavier
 MASTER_SITES=	https://people.freedesktop.org/~svu/
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xext Xi ffi glib-2.0 gobject-2.0 lzma m pcre
 WANTLIB += pthread xcb xkbfile xml2 z iconv intl

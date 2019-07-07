@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2019/05/23 08:48:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2019/07/07 11:20:54 ajacoutot Exp $
 
 COMMENT=		window and compositing manager
 
@@ -16,7 +16,7 @@ SHARED_LIBS += mutter-clutter-4          0.0 # 0.0.0
 SHARED_LIBS += mutter-4                  0.0 # 0.0.0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0

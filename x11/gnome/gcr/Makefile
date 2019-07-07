@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2019/05/17 16:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2019/07/07 11:20:51 ajacoutot Exp $
 
 COMMENT=		library for bits of crypto UI and parsing
 
@@ -12,7 +12,7 @@ SHARED_LIBS +=  gcr-base-3           3.0      # 1.0
 SHARED_LIBS +=  gcr-ui-3             3.0      # 1.0
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject epoxy

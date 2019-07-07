@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2019/06/13 15:48:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2019/07/07 11:20:53 ajacoutot Exp $
 
 COMMENT=		user interface components for GNOME
 
@@ -10,7 +10,7 @@ REVISION=		13
 SHARED_LIBS +=	gnomeui-2      2400.0         # .2400.2
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2

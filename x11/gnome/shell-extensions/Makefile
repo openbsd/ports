@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2019/05/08 16:17:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2019/07/07 11:20:55 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -8,7 +8,7 @@ GNOME_PROJECT=		gnome-shell-extensions
 GNOME_VERSION=		3.32.1
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 MODULES=		devel/dconf \
 			devel/meson \

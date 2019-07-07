@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/04/28 06:30:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/07 11:20:56 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -8,7 +8,7 @@ GNOME_PROJECT=		yelp-xsl
 GNOME_VERSION=		3.32.1
 
 # GPLv2 - LGPLv2.1 - MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 MODULES=		x11/gnome
 
