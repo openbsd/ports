@@ -1,30 +1,30 @@
-# $OpenBSD: Makefile,v 1.21 2019/01/02 12:44:07 jca Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/07 10:58:53 sthen Exp $
 
 COMMENT=	display chm files
 
-DISTNAME=	xchm-1.23
-REVISION=	3
+V=		1.30
+DISTNAME=	xchm-$V
 
 CATEGORIES=	devel textproc x11
 
-HOMEPAGE=	http://xchm.sourceforge.net/
+HOMEPAGE=	https://github.com/rzvncj/xCHM
 
-# GPL
-PERMIT_PACKAGE_CDROM=	Yes
+# GPLv2+
+PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xchm/}
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += c chm m wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
+WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0
+WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0
+
+MASTER_SITES=	https://github.com/rzvncj/xCHM/releases/download/$V/
 
 LIB_DEPENDS=	devel/chmlib \
 		x11/wxWidgets>=3.0.4
 
 RUN_DEPENDS=	devel/desktop-file-utils
 
-WANTLIB += ${COMPILER_LIBCXX} c chm m wx_baseu-3.0 wx_baseu_net-3.0
-WANTLIB += wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0
-WANTLIB += wx_gtk3u_core-3.0 wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0
-WANTLIB += wx_gtk3u_xrc-3.0
-
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"

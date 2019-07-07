@@ -1,6 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:04:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/07/07 10:58:53 sthen Exp $
 @bin bin/xchm
+@man man/man1/xchm.1
 share/applications/xchm.desktop
+share/icons/hicolor/128x128/apps/xchm.png
+share/icons/hicolor/128x128/apps/xchm.xpm
+share/icons/hicolor/128x128/apps/xchmdoc.png
+share/icons/hicolor/128x128/apps/xchmdoc.xpm
+share/icons/hicolor/16x16/apps/xchm.png
+share/icons/hicolor/16x16/apps/xchm.xpm
+share/icons/hicolor/16x16/apps/xchmdoc.png
+share/icons/hicolor/16x16/apps/xchmdoc.xpm
+share/icons/hicolor/32x32/apps/xchm.png
+share/icons/hicolor/32x32/apps/xchm.xpm
+share/icons/hicolor/32x32/apps/xchmdoc.png
+share/icons/hicolor/32x32/apps/xchmdoc.xpm
+share/icons/hicolor/48x48/apps/xchm.png
+share/icons/hicolor/48x48/apps/xchm.xpm
+share/icons/hicolor/48x48/apps/xchmdoc.png
+share/icons/hicolor/48x48/apps/xchmdoc.xpm
 share/locale/be/LC_MESSAGES/xchm.mo
 share/locale/bg/LC_MESSAGES/xchm.mo
 share/locale/cs/LC_MESSAGES/xchm.mo
@@ -25,21 +42,7 @@ share/locale/sv/LC_MESSAGES/xchm.mo
 share/locale/uk/LC_MESSAGES/xchm.mo
 share/locale/zh_CN/LC_MESSAGES/xchm.mo
 share/locale/zh_TW/LC_MESSAGES/xchm.mo
-share/pixmaps/
-share/pixmaps/xchm-128.png
-share/pixmaps/xchm-128.xpm
-share/pixmaps/xchm-16.png
-share/pixmaps/xchm-16.xpm
-share/pixmaps/xchm-32.png
-share/pixmaps/xchm-32.xpm
-share/pixmaps/xchm-48.png
-share/pixmaps/xchm-48.xpm
-share/pixmaps/xchmdoc-128.png
-share/pixmaps/xchmdoc-128.xpm
-share/pixmaps/xchmdoc-16.png
-share/pixmaps/xchmdoc-16.xpm
-share/pixmaps/xchmdoc-32.png
-share/pixmaps/xchmdoc-32.xpm
-share/pixmaps/xchmdoc-48.png
-share/pixmaps/xchmdoc-48.xpm
 @tag update-desktop-database
+share/metainfo/
+share/metainfo/xchm.appdata.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
