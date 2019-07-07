@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_MC_MCELFStreamer_cpp,v 1.4 2019/01/28 06:27:28 jca Exp $
+$OpenBSD: patch-lib_MC_MCELFStreamer_cpp,v 1.5 2019/07/07 14:04:07 jca Exp $
 
 Index: lib/MC/MCELFStreamer.cpp
 --- lib/MC/MCELFStreamer.cpp.orig
@@ -11,7 +11,7 @@ Index: lib/MC/MCELFStreamer.cpp
 -    SwitchSection(Ctx.getAsmInfo()->getNonexecutableStackSection(Ctx));
 +  if (NoExecStack) {
 +    MCSection *s = Ctx.getAsmInfo()->getNonexecutableStackSection(Ctx);
-+    if (s) 
++    if (s)
 +	SwitchSection(s);
 +  }
  }

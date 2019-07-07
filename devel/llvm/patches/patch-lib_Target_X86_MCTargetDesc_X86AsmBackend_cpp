@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_Target_X86_MCTargetDesc_X86AsmBackend_cpp,v 1.4 2019/01/28 06:27:28 jca Exp $
+$OpenBSD: patch-lib_Target_X86_MCTargetDesc_X86AsmBackend_cpp,v 1.5 2019/07/07 14:04:07 jca Exp $
 
 trapsleds
 
 Index: lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp
 --- lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp.orig
 +++ lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp
-@@ -319,57 +319,22 @@ void X86AsmBackend::relaxInstruction(const MCInst &Ins
+@@ -319,57 +319,23 @@ void X86AsmBackend::relaxInstruction(const MCInst &Ins
  /// bytes.
  /// \return - true on success, false on failure
  bool X86AsmBackend::writeNopData(raw_ostream &OS, uint64_t Count) const {
@@ -31,7 +31,7 @@ Index: lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp
 -    // nopw %cs:0L(%[re]ax,%[re]ax,1)
 -    "\x66\x2e\x0f\x1f\x84\x00\x00\x00\x00\x00",
 -  };
--
+ 
 -  // This CPU doesn't support long nops. If needed add more.
 -  // FIXME: We could generated something better than plain 0x90.
 -  if (!STI.getFeatureBits()[X86::FeatureNOPL]) {

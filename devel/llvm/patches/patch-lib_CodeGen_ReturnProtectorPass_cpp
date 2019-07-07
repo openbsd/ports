@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_CodeGen_ReturnProtectorPass_cpp,v 1.1 2018/07/06 06:55:10 ajacoutot Exp $
+$OpenBSD: patch-lib_CodeGen_ReturnProtectorPass_cpp,v 1.2 2019/07/07 14:04:07 jca Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -24,7 +24,7 @@ $OpenBSD: patch-lib_CodeGen_ReturnProtectorPass_cpp,v 1.1 2018/07/06 06:55:10 aj
 Index: lib/CodeGen/ReturnProtectorPass.cpp
 --- lib/CodeGen/ReturnProtectorPass.cpp.orig
 +++ lib/CodeGen/ReturnProtectorPass.cpp
-@@ -0,0 +1,61 @@
+@@ -0,0 +1,60 @@
 +//===- ReturnProtectorPass.cpp - Set up rteurn protectors -----------------===//
 +//
 +//                     The LLVM Compiler Infrastructure
@@ -85,4 +85,3 @@ Index: lib/CodeGen/ReturnProtectorPass.cpp
 +INITIALIZE_PASS(ReturnProtector, "return-protector", "Return Protector Pass",
 +                false, false)
 +FunctionPass *llvm::createReturnProtectorPass() { return new ReturnProtector(); }
-+
