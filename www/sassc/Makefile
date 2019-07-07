@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/02 11:57:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/07 18:42:23 jasper Exp $
 
 COMMENT =		libsass command line driver
 
 GH_ACCOUNT =		sass
 GH_PROJECT =		sassc
-GH_TAGNAME =		3.6.0
+GH_TAGNAME =		3.6.1
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
