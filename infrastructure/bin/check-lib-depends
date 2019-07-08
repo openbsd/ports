@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.44 2019/05/12 20:40:20 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.45 2019/07/08 13:13:29 kmos Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -145,11 +145,7 @@ sub is_binary
 	my $item = shift;
 	my $fullname = File::Spec->canonpath($item->fullname);
 
-	my $linux_bin = 0;
-	if ($fullname =~ m,^/usr/local/emul/(?:redhat|fedora)/,) {
-		$linux_bin = 1;
-	}
-	if ($linux_bin || $item->{symlink} || $item->{link}) {
+	if ($item->{symlink} || $item->{link}) {
 		return 0;
 	} else {
 		return $fullname;
