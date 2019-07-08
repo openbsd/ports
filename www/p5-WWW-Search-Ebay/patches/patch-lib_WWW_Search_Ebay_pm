@@ -1,0 +1,27 @@
+$OpenBSD: patch-lib_WWW_Search_Ebay_pm,v 1.1 2019/07/08 08:41:21 cwen Exp $
+
+Fix for:
+Use of uninitialized value in numeric lt (<) at
+/usr/local/libdata/perl5/site_perl/WWW/Search/Ebay.pm line 672.
+
+Index: lib/WWW/Search/Ebay.pm
+--- lib/WWW/Search/Ebay.pm.orig
++++ lib/WWW/Search/Ebay.pm
+@@ -669,7 +669,7 @@ sub result_as_HTML
+   my $dateNow = ParseDate('now');
+   print STDERR " DDD compare end_date ==$dateEnd==\n" if (DEBUG_DATES || (1 < $self->{_debug}));
+   print STDERR " DDD compare date_now ==$dateNow==\n" if (DEBUG_DATES || (1 < $self->{_debug}));
+-  if (Date_Cmp($dateEnd, $dateNow) < 0)
++  if ((Date_Cmp($dateEnd, $dateNow) || 0) < 0)
+     {
+     $sEndedColor = 'red';
+     $sEndedWord = 'ended';
+@@ -1040,7 +1040,7 @@ sub _parse_tree
+         &&
+         (0 < $iBids) # Item got any bids
+         &&
+-        (Date_Cmp($enddate, 'now') < 0) # Item is ended
++        ((Date_Cmp($enddate, 'now') || 0) < 0) # Item is ended
+        )
+       {
+       # Item must have been sold!?!
