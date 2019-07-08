@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1873 2019/07/06 19:44:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.1874 2019/07/08 09:49:59 cwen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1143,6 +1143,7 @@
      SUBDIR += p5-Test-URI
      SUBDIR += p5-Test-Unit
      SUBDIR += p5-Test-UseAllModules
+     SUBDIR += p5-Test-Version
      SUBDIR += p5-Test-WWW-Mechanize
      SUBDIR += p5-Test-WWW-Mechanize-Catalyst
      SUBDIR += p5-Test-Warn
