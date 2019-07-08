@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2019/07/06 15:06:37 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2019/07/08 07:56:53 jca Exp $
 @pkgpath devel/llvm
 @bin bin/bugpoint
 @bin bin/c-index-test
@@ -2343,7 +2343,7 @@ lib/libLLVMWindowsManifest.a
 lib/libLLVMXRay.a
 lib/libLLVMipo.a
 @lib lib/libLTO.so.${LIBLTO_VERSION}
-lib/libOptRemarks.so.8
+@lib lib/libOptRemarks.so.${LIBOptRemarks_VERSION}
 @lib lib/libclang.so.${LIBclang_VERSION}
 lib/libclangARCMigrate.a
 lib/libclangAST.a
