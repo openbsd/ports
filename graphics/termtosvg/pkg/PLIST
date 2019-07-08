@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/01/23 22:37:41 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/07/08 08:49:20 fcambus Exp $
 bin/termtosvg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/
 lib/python${MODPY_VERSION}/site-packages/termtosvg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/termtosvg-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/termtosvg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/termtosvg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/termtosvg/__init__.py
-lib/python${MODPY_VERSION}/site-packages/termtosvg/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/termtosvg/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/termtosvg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/termtosvg/${MODPY_PYCACHE}anim.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/termtosvg/${MODPY_PYCACHE}asciicast.${MODPY_PYC_MAGIC_TAG}pyc
@@ -25,6 +25,7 @@ lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/base16_default
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/dracula.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/gjm8.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/gjm8_play.svg
+lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/gjm8_single_loop.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/progress_bar.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/solarized_dark.svg
 lib/python${MODPY_VERSION}/site-packages/termtosvg/data/templates/solarized_light.svg
@@ -34,7 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/termtosvg/main.py
 lib/python${MODPY_VERSION}/site-packages/termtosvg/term.py
 lib/python${MODPY_VERSION}/site-packages/termtosvg/tests/
 lib/python${MODPY_VERSION}/site-packages/termtosvg/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/termtosvg/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/termtosvg/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/termtosvg/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/termtosvg/tests/${MODPY_PYCACHE}suite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/termtosvg/tests/${MODPY_PYCACHE}test_anim.${MODPY_PYC_MAGIC_TAG}pyc
