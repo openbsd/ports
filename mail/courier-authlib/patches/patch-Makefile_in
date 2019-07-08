@@ -1,6 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2017/02/10 09:40:01 giovanni Exp $
---- Makefile.in.orig	Sat Jan 28 04:00:36 2017
-+++ Makefile.in	Fri Feb 10 10:26:23 2017
+$OpenBSD: patch-Makefile_in,v 1.8 2019/07/08 09:46:54 giovanni Exp $
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
 @@ -688,7 +688,7 @@ CLEANFILES = authldaprc.h authmysqlrc.h authsqliterc.h
  
  DISTCLEANFILES = dbobj.config README_authlib.html
@@ -46,7 +47,7 @@ $OpenBSD: patch-Makefile_in,v 1.7 2017/02/10 09:40:01 giovanni Exp $
  include_HEADERS = courier_auth_config.h courierauth.h courierauthsasl.h \
  	courierauthsaslclient.h courierauthdebug.h courierauthstaticlist.h
  
-@@ -859,7 +859,7 @@ authdaemondprog_LDADD = $(LIBLTDL) libcourierauthcommo
+@@ -860,7 +860,7 @@ authdaemondprog_LDADD = $(LIBLTDL) libcourierauthcommo
  	libs/libhmac/libhmac.la libs/md5/libmd5.la libs/sha1/libsha1.la \
  	libs/rfc822/libencode.la libs/numlib/libnumlib.la
  

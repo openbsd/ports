@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2019/05/20 22:15:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.77 2019/07/08 09:46:54 giovanni Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -6,9 +6,7 @@ COMMENT-mysql=		mysql authentication module for courier-authLib
 COMMENT-pgsql=		pgsql authentication module for courier-authLib
 COMMENT-userdb=		userdb authentication module for courier-authLib
 
-DISTNAME=		courier-authlib-0.68.0
-REVISION=		3
-REVISION-main=		5
+DISTNAME=		courier-authlib-0.69.0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}
 PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}
@@ -41,10 +39,7 @@ EXTRACT_SUFX=		.tar.bz2
 COMPILER =		base-clang ports-gcc base-gcc
 
 USE_GMAKE=		Yes
-AUTOCONF_VERSION=	2.69
-# only libs/rfc822/configure.ac is patched
-AUTOCONF_DIR=		${WRKSRC}/libs/rfc822
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		LIBS="-L${LOCALBASE}/lib" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
@@ -74,27 +69,22 @@ CONFIGURE_ARGS+=	--enable-static \
 			--cache-file=${WRKDIR}/courier-authlib.cache
 
 RUN_DEPENDS-main=	lang/expect
-BUILD_DEPENDS=		lang/expect \
+BUILD_DEPENDS=		lang/expect
+# Only used by regress tests
+BUILD_DEPENDS+=		devel/libidn \
 			mail/courier-unicode>=2.0
 
 DOCS=			COPYING COPYING.GPL INSTALL NEWS README
-
-MODULES=		textproc/intltool
 
 MULTI_PACKAGES=		-main -ldap -mysql -pgsql -userdb
 PSEUDO_FLAVORS=		no_ldap no_mysql no_pgsql no_userdb
 FLAVOR?=
 
-WANTLIB-main=		c ltdl m pthread sqlite3 ${COMPILER_LIBCXX}
+WANTLIB-main=		c ltdl m pthread sqlite3 z ${COMPILER_LIBCXX}
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			databases/sqlite3 \
 			devel/libtool,-ltdl
-
-# statically linked
-WANTLIB-main+=		iconv idn intl
-LIB_DEPENDS-main+=	devel/gettext,-runtime \
-			devel/libidn
 
 WANTLIB-ldap=		crypto ssl courierauthcommon courierauth \
 			m ldap-2.4 lber-2.4 sasl2 ${COMPILER_LIBCXX}
@@ -104,7 +94,7 @@ LIB_DEPENDS-ldap=	${BUILD_PKGPATH} \
 			security/cyrus-sasl2
 
 WANTLIB-mysql=		crypto m ssl z courierauthcommon courierauth \
-			mysqlclient pthread ${COMPILER_LIBCXX}
+			iconv mariadb pthread ${COMPILER_LIBCXX}
 RUN_DEPENDS-mysql=
 LIB_DEPENDS-mysql=	${BUILD_PKGPATH} \
 			databases/mariadb
