@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/06/13 21:58:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/08 17:22:28 jca Exp $
 
 COMMENT=	open video codec
 
@@ -27,5 +27,9 @@ CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.63
 CONFIGURE_ARGS=	--disable-examples --disable-spec
 CONFIGURE_ENV=	ac_cv_prog_HAVE_DOXYGEN=false
+
+.if ${MACHINE_ARCH} == "arm"
+CONFIGURE_ARGS+=--disable-asm
+.endif
 
 .include <bsd.port.mk>
