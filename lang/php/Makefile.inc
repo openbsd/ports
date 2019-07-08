@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.139 2019/06/03 16:06:51 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.140 2019/07/08 16:30:56 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
 COMMENT-main=		server-side HTML-embedded scripting language
 
 PKGNAME-main?=		php-${V}
+PKGSTEM=		php-${PV}
 PKGSTEM-main=		php-${PV}
 
 DISTFILES+=		php-${V}.tar.bz2
