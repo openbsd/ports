@@ -1,4 +1,4 @@
-$OpenBSD: patch-tac_plus_h,v 1.5 2019/07/09 17:24:22 gsoares Exp $
+$OpenBSD: patch-tac_plus_h,v 1.6 2019/07/09 20:22:42 gsoares Exp $
 
 Index: tac_plus.h
 --- tac_plus.h.orig

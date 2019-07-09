@@ -1,0 +1,82 @@
+# $OpenBSD: tac_plus.conf.sample,v 1.1 2019/07/09 20:22:42 gsoares Exp $
+
+key = "your key here"
+
+# default is to write accounting to separate file
+accounting file = /var/log/tac_plus/tac.acct
+
+# This sends accounting data to syslog as daemon.info
+accounting syslog
+
+# authentication users not appearing elsewhere via
+# the file /etc/passwd
+# 
+# passwd backend needs tac_plus running a root,
+# `cleartext' and `des' backends can run as 
+# _tacacs:_tacacs
+# 
+
+
+acl = management_networks_acl {
+        permit = ^192\.168\.50\.
+        deny = .*
+}
+
+acl = monitoring_acl {
+        permit = 192\.168\.10\.
+        deny = .*
+}
+
+# administrators with direct enable mode access
+group = admin {
+	default service = permit
+	service = exec {
+	    priv-lvl = 15
+	}
+
+	acl = management_networks_acl
+}
+
+# group for monitoring
+group = monitoring {
+	default service = deny
+
+	service = exec {
+	    priv-lvl = 15
+	}
+
+	# COMWARE example
+	cmd = display {
+		permit mac-address
+		deny .*
+        }
+
+	# IOS example
+	cmd = show {
+		permit version
+		deny .*
+	}
+
+	acl = monitoring_acl
+}
+
+user = fred {
+    # "login = des" actually uses the OS crypt() function, it is not really
+    # using DES encryption. On OpenBSD this uses bcrypt. See encrypt(1) to
+    # generate suitable hashes.   test123
+    login = des $2b$10$rhfyMY/VeB7Tm1nCy4hDpeJNcfI32EcEZBYZ1sy/qpQf5YhAahVqG
+    name = "Fred Flintstone"
+    member = admin
+}
+
+user = wilma {
+    login = cleartext test123
+    name = "Wilma Flinstone"
+    member = monitoring
+}
+
+# this would need tac_plus to run as root
+user = homer  {
+    login = file /etc/passwd
+    member = monitoring
+}

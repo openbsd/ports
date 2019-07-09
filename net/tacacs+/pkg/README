@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2019/07/09 17:24:22 gsoares Exp $
+$OpenBSD: README,v 1.2 2019/07/09 20:22:43 gsoares Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
