@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.100 2019/07/02 16:51:49 landry Exp $
+# $OpenBSD: Makefile,v 1.101 2019/07/09 18:05:14 landry Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 i386
 
-MOZILLA_VERSION =	60.7.2esr
+MOZILLA_VERSION =	60.8.0esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
@@ -13,7 +13,6 @@ HOMEPAGE =	https://www.mozilla.org/firefox/organizations/
 PKGNAME =	${MOZILLA_PROJECT}-esr-${MOZILLA_VERSION:S/esr//}
 SO_VERSION =	5.0
 MOZILLA_LIBS =	xul clearkey lgpllibs mozavcodec mozavutil mozgtk
-REVISION =	1
 
 CATEGORIES =	www
 
