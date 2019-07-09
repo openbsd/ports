@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.347 2019/07/01 20:17:13 naddy Exp $
+$OpenBSD: user.list,v 1.348 2019/07/09 16:39:55 gsoares Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -19,7 +19,7 @@ id  user		group		port options
 508			_postdrop	mail/postfix/{snapshot,stable}
 509 _bitlbee		_bitlbee	net/bitlbee
 510 _pdnsd		_pdnsd		net/pdnsd
-#511 _tacacs		_tacacs		net/tacacs+
+511 _tacacs		_tacacs		net/tacacs+
 512 _silcd		_silcd		net/silc-server
 513 _vsftpd		_vsftpd		net/vsftpd
 514 _scanlogd		_scanlogd	security/scanlogd
