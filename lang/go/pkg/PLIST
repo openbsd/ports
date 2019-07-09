@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2019/05/07 16:33:42 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.35 2019/07/09 17:54:46 jsing Exp $
 bin/go
 bin/gofmt
 go/
@@ -373,6 +373,7 @@ go/misc/cgo/test/issue29781.go
 go/misc/cgo/test/issue30065.go
 go/misc/cgo/test/issue3250.go
 go/misc/cgo/test/issue3250w.go
+go/misc/cgo/test/issue32579.go
 go/misc/cgo/test/issue3261.go
 go/misc/cgo/test/issue3729.go
 go/misc/cgo/test/issue3729w.go
@@ -6445,8 +6446,10 @@ go/src/os/dir_plan9.go
 go/src/os/dir_unix.go
 go/src/os/dir_windows.go
 go/src/os/env.go
+go/src/os/env_default.go
 go/src/os/env_test.go
 go/src/os/env_unix_test.go
+go/src/os/env_windows.go
 go/src/os/error.go
 go/src/os/error_plan9.go
 go/src/os/error_posix.go
@@ -9475,6 +9478,11 @@ go/test/fixedbugs/issue31252.dir/b.go
 go/test/fixedbugs/issue31252.dir/c.go
 go/test/fixedbugs/issue31252.dir/main.go
 go/test/fixedbugs/issue31252.go
+go/test/fixedbugs/issue31987.go
+go/test/fixedbugs/issue32477.go
+go/test/fixedbugs/issue32560.go
+go/test/fixedbugs/issue32680.go
+go/test/fixedbugs/issue32680.out
 go/test/fixedbugs/issue3552.dir/
 go/test/fixedbugs/issue3552.dir/one.go
 go/test/fixedbugs/issue3552.dir/two.go

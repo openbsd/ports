@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2019/05/07 16:33:42 jsing Exp $
+# $OpenBSD: Makefile,v 1.66 2019/07/09 17:54:46 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -7,7 +7,7 @@ BIN_BOOTSTRAP_VERSION = 1.12.1
 
 COMMENT =		Go programming language
 
-VERSION =		1.12.5
+VERSION =		1.12.7
 DISTNAME =		go${VERSION}.src
 PKGNAME =		go-${VERSION}
 PKGSPEC =		go-=${VERSION}
