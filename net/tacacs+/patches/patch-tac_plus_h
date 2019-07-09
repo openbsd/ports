@@ -1,0 +1,21 @@
+$OpenBSD: patch-tac_plus_h,v 1.5 2019/07/09 17:24:22 gsoares Exp $
+
+Index: tac_plus.h
+--- tac_plus.h.orig
++++ tac_plus.h
+@@ -30,6 +30,15 @@
+ #define MSCHAP_DIGEST_LEN 49
+ #endif /* MSCHAP */
+ 
++#ifdef OPENBSD
++#include <stdlib.h>
++#include <ctype.h>
++#include <fcntl.h>
++#define STDLIB_MALLOC
++#define VOIDSIG
++#define NO_PWAGE
++#endif
++
+ #if HAVE_STRING_H
+ # include <string.h>
+ #endif

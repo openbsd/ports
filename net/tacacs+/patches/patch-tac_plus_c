@@ -1,0 +1,79 @@
+$OpenBSD: patch-tac_plus_c,v 1.6 2019/07/09 17:24:22 gsoares Exp $
+
+Index: tac_plus.c
+--- tac_plus.c.orig
++++ tac_plus.c
+@@ -271,6 +271,8 @@ open_logfile(void)
+ int
+ main(int argc, char **argv)
+ {
++    struct passwd *pw;
++    struct group *gr;
+     extern char *optarg;
+     FILE *fp;
+     int	c, *s, ns, somaxconn;
+@@ -574,10 +576,13 @@ main(int argc, char **argv)
+ 		   gr->gr_gid, strerror(errno));
+ 	}
+     }
+-#ifdef TACPLUS_GROUPID
+-      else if (setgid(TACPLUS_GROUPID))
+-	report(LOG_ERR, "Cannot set group id to %d %s",
+-	       TACPLUS_GROUPID, strerror(errno));
++#ifdef TAC_PLUS_GROUP
++    gr = getgrnam(TAC_PLUS_GROUP);
++    if (gr == NULL)
++	report(LOG_ERR, "Cannot find group %s", TAC_PLUS_GROUP);
++    if (setgid(gr->gr_gid))
++	report(LOG_ERR, "Cannot set group to %d %s", 
++	       TAC_PLUS_GROUP, sys_errlist[errno]);
+ #endif
+ 
+     if (opt_U) {
+@@ -590,10 +595,13 @@ main(int argc, char **argv)
+ 		       pw->pw_uid, strerror(errno));
+ 	}
+     }
+-#ifdef TACPLUS_USERID
+-      else if (setuid(TACPLUS_USERID))
+-	report(LOG_ERR, "Cannot set user id to %d %s",
+-	       TACPLUS_USERID, strerror(errno));
++#ifdef TAC_PLUS_USER
++    pw = getpwnam(TAC_PLUS_USER);
++    if (pw == NULL)
++	report(LOG_ERR, "Cannot find user %s", TAC_PLUS_USER);
++    if (setuid(pw->pw_uid))
++	report(LOG_ERR, "Cannot set user to %d %s",
++	       TAC_PLUS_USER, sys_errlist[errno]);
+ #endif
+ 
+ #ifdef MAXSESS
+@@ -922,6 +930,9 @@ vers(void)
+ #ifdef NO_PWAGE
+     fprintf(stdout, "NO_PWAGE\n");
+ #endif
++#ifdef OPENBSD
++    fprintf(stdout,"OPENBSD\n");
++#endif
+ #ifdef REAPCHILD
+     fprintf(stdout, "REAPCHILD\n");
+ #endif
+@@ -971,14 +982,14 @@ vers(void)
+ #if SYSLOG_IN_SYS
+     fprintf(stdout, "SYSLOG_IN_SYS\n");
+ #endif
+-#if TACPLUS_GROUPID
+-    fprintf(stdout, "TACPLUS_GROUPID\n");
++#ifdef TAC_PLUS_GROUP
++    fprintf(stdout,"TAC_PLUS_GROUP\n");
+ #endif
+ #if TAC_PLUS_PORT
+     fprintf(stdout, "TAC_PLUS_PORT\n");
+ #endif
+-#if TACPLUS_USERID
+-    fprintf(stdout, "TACPLUS_USERID\n");
++#ifdef TAC_PLUS_USER
++    fprintf(stdout,"TAC_PLUS_USER\n");
+ #endif
+ #if TRACE
+     fprintf(stdout, "TRACE\n");

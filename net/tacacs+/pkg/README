@@ -1,0 +1,12 @@
+$OpenBSD: README,v 1.1 2019/07/09 17:24:22 gsoares Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Don't forget to rotate tacacs+' logs in newsyslog.conf, e.g.:
+
+/var/log/tac_plus/tac.acct        _tacacs:_tacacs 644  7     250  *     Z
+/var/log/tac_plus/tac.log         _tacacs:_tacacs 644  7     250  *     Z
+/var/log/tac_plus/tacwho.log      _tacacs:_tacacs 644  7     250  *     Z
+

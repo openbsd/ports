@@ -1,0 +1,26 @@
+$OpenBSD: patch-tac_plus_conf_5_in,v 1.1 2019/07/09 17:24:22 gsoares Exp $
+
+- fix invalid syntax (semi-colon in config file)
+- update accounting file path for setuid user
+
+Index: tac_plus.conf.5.in
+--- tac_plus.conf.5.in.orig
++++ tac_plus.conf.5.in
+@@ -36,7 +36,7 @@ All accounting records are either written to a file,
+ at priority info, or both.
+ .sp
+ .nf
+-    accounting syslog;
++    accounting syslog
+     accounting file = <filename>
+ .fi
+ .sp
+@@ -1550,7 +1550,7 @@ the device!
+ .\"
+ .nf
+ key = "your key here"
+-accounting file = /var/log/tac.acct
++accounting file = /var/log/tac_plus/tac.acct
+ # authentication users not appearing elsewhere via
+ # the file /etc/passwd
+ default authentication = file /etc/passwd
