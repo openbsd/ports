@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_include_clang_Basic_CodeGenOptions_def,v 1.1 2019/07/06 15:06:36 jca Exp $
+$OpenBSD: patch-tools_clang_include_clang_Basic_CodeGenOptions_def,v 1.2 2019/07/09 13:21:37 jca Exp $
 
 Add RETGUARD to clang for amd64. This security mechanism uses per-function
 random cookies to protect access to function return instructions, with the

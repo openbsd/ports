@@ -1,4 +1,4 @@
-$OpenBSD: patch-include_llvm_CodeGen_TargetFrameLowering_h,v 1.3 2019/01/28 06:27:28 jca Exp $
+$OpenBSD: patch-include_llvm_CodeGen_TargetFrameLowering_h,v 1.4 2019/07/09 13:21:37 jca Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -30,23 +30,13 @@ Index: include/llvm/CodeGen/TargetFrameLowering.h
  #include <utility>
  #include <vector>
  
-@@ -168,6 +169,20 @@ class TargetFrameLowering { (public)
+@@ -168,6 +169,10 @@ class TargetFrameLowering { (public)
                              MachineBasicBlock &MBB) const = 0;
    virtual void emitEpilogue(MachineFunction &MF,
                              MachineBasicBlock &MBB) const = 0;
 +
 +  virtual const ReturnProtectorLowering *getReturnProtector() const {
 +    return nullptr;
-+  }
-+
-+  /// insertReturnProtectorPrologue/Epilogue - Insert ret-protector code
-+  virtual void insertReturnProtectorPrologue(MachineFunction &MF,
-+                                             MachineBasicBlock &MBB) const
-+  {}
-+  virtual bool insertReturnProtectorEpilogue(MachineFunction &MF,
-+                                             MachineBasicBlock &MBB) const
-+  {
-+    return false;
 +  }
  
    /// Replace a StackProbe stub (if any) with the actual probe code inline

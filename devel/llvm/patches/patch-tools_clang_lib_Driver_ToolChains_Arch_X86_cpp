@@ -1,0 +1,19 @@
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Arch_X86_cpp,v 1.1 2019/07/09 13:21:37 jca Exp $
+
+- Turn on -mretpoline by default in clang on amd64.
+
+Index: tools/clang/lib/Driver/ToolChains/Arch/X86.cpp
+--- tools/clang/lib/Driver/ToolChains/Arch/X86.cpp.orig
++++ tools/clang/lib/Driver/ToolChains/Arch/X86.cpp
+@@ -146,6 +146,11 @@ void x86::getX86TargetFeatures(const Driver &D, const 
+   // flags). This is a bit hacky but keeps existing usages working. We should
+   // consider deprecating this and instead warn if the user requests external
+   // retpoline thunks and *doesn't* request some form of retpolines.
++  if (Triple.isOSOpenBSD() && Triple.getArch() == llvm::Triple::x86_64 &&
++      Args.hasFlag(options::OPT_mretpoline, options::OPT_mno_retpoline, true)) {
++      Features.push_back("+retpoline-indirect-calls");
++      Features.push_back("+retpoline-indirect-branches");
++  } else
+   if (Args.hasArgNoClaim(options::OPT_mretpoline, options::OPT_mno_retpoline,
+                          options::OPT_mspeculative_load_hardening,
+                          options::OPT_mno_speculative_load_hardening)) {

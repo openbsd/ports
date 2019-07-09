@@ -1,11 +1,14 @@
-$OpenBSD: patch-include_llvm_CodeGen_ReturnProtectorLowering_h,v 1.1 2018/08/21 06:56:09 ajacoutot Exp $
+$OpenBSD: patch-include_llvm_CodeGen_ReturnProtectorLowering_h,v 1.2 2019/07/09 13:21:37 jca Exp $
 
-Refactor retguard to make adding additional arches easier.
+- Refactor retguard to make adding additional arches easier.
+- Do not store the retguard cookie in frame in leaf functions if possible.
+  Makes things slightly faster and also improves security in these functions,
+  since the retguard cookie can't leak via the stack.
 
 Index: include/llvm/CodeGen/ReturnProtectorLowering.h
 --- include/llvm/CodeGen/ReturnProtectorLowering.h.orig
 +++ include/llvm/CodeGen/ReturnProtectorLowering.h
-@@ -0,0 +1,78 @@
+@@ -0,0 +1,79 @@
 +//===-- llvm/CodeGen/ReturnProtectorLowering.h ------------------*- C++ -*-===//
 +//
 +//                     The LLVM Compiler Infrastructure
@@ -36,6 +39,7 @@ Index: include/llvm/CodeGen/ReturnProtectorLowering.h
 +
 +class ReturnProtectorLowering {
 +public:
++  virtual ~ReturnProtectorLowering() {}
 +  /// Subclass interface - subclasses need to implement these functions.
 +
 +  /// insertReturnProtectorPrologue/Epilogue - insert return protector
@@ -65,7 +69,7 @@ Index: include/llvm/CodeGen/ReturnProtectorLowering.h
 +  /// saveReturnProtectorRegister - Allows the target to save the
 +  /// CalculationRegister in the CalleeSavedInfo vector if needed.
 +  virtual void
-+  saveReturnProtectorRegister(const MachineFunction &MF,
++  saveReturnProtectorRegister(MachineFunction &MF,
 +                              std::vector<CalleeSavedInfo> &CSI) const;
 +
 +  /// determineReturnProtectorTempRegister - Find a register that can be used

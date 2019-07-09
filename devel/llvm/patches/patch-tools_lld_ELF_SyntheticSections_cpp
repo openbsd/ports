@@ -1,0 +1,23 @@
+$OpenBSD: patch-tools_lld_ELF_SyntheticSections_cpp,v 1.12 2019/07/09 13:21:37 jca Exp $
+
+- When merging sections into the output, lld tries to adjust the alignment of
+  the section to be at least as large as the entry size of the section.
+  This causes a later check that validates the alignment to fail if the
+  entry size isn't a power of two.  This happens when building some of the
+  java support code in ports gcc.  Fix this by sticking to the original
+  alignment if the entry size isn't a power of two.
+
+Index: tools/lld/ELF/SyntheticSections.cpp
+--- tools/lld/ELF/SyntheticSections.cpp.orig
++++ tools/lld/ELF/SyntheticSections.cpp
+@@ -2996,7 +2996,9 @@ void elf::mergeSections() {
+     }
+ 
+     StringRef OutsecName = getOutputSectionName(MS);
+-    uint32_t Alignment = std::max<uint32_t>(MS->Alignment, MS->Entsize);
++    uint32_t Alignment = MS->Alignment;
++    if (isPowerOf2_32(MS->Entsize))
++        Alignment = std::max<uint32_t>(Alignment, MS->Entsize);
+ 
+     auto I = llvm::find_if(MergeSections, [=](MergeSyntheticSection *Sec) {
+       // While we could create a single synthetic section for two different

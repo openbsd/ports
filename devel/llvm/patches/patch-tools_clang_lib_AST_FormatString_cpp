@@ -1,0 +1,39 @@
+$OpenBSD: patch-tools_clang_lib_AST_FormatString_cpp,v 1.1 2019/07/09 13:21:37 jca Exp $
+
+- The %b printf extension in the kernel is not fixed to a int type. On sparc64
+  there are various %llb formats. Adjust the code to handle the length specifiers
+  and type check like it is used by the regular case.
+
+Index: tools/clang/lib/AST/FormatString.cpp
+--- tools/clang/lib/AST/FormatString.cpp.orig
++++ tools/clang/lib/AST/FormatString.cpp
+@@ -746,6 +746,10 @@ bool FormatSpecifier::hasValidLengthModifier(const Tar
+         case ConversionSpecifier::XArg:
+         case ConversionSpecifier::nArg:
+           return true;
++        case ConversionSpecifier::FreeBSDbArg:
++          return Target.getTriple().isOSFreeBSD() ||
++                 Target.getTriple().isPS4() ||
++                 Target.getTriple().isOSOpenBSD();
+         case ConversionSpecifier::FreeBSDrArg:
+         case ConversionSpecifier::FreeBSDyArg:
+           return Target.getTriple().isOSFreeBSD() || Target.getTriple().isPS4();
+@@ -779,6 +783,10 @@ bool FormatSpecifier::hasValidLengthModifier(const Tar
+         case ConversionSpecifier::ScanListArg:
+         case ConversionSpecifier::ZArg:
+           return true;
++        case ConversionSpecifier::FreeBSDbArg:
++          return Target.getTriple().isOSFreeBSD() ||
++                 Target.getTriple().isPS4() ||
++                 Target.getTriple().isOSOpenBSD();
+         case ConversionSpecifier::FreeBSDrArg:
+         case ConversionSpecifier::FreeBSDyArg:
+           return Target.getTriple().isOSFreeBSD() || Target.getTriple().isPS4();
+@@ -937,6 +945,7 @@ bool FormatSpecifier::hasStandardLengthConversionCombi
+         case ConversionSpecifier::uArg:
+         case ConversionSpecifier::xArg:
+         case ConversionSpecifier::XArg:
++        case ConversionSpecifier::FreeBSDbArg:
+           return false;
+         default:
+           return true;

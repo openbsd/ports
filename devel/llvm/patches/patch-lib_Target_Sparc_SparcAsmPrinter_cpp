@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_Target_Sparc_SparcAsmPrinter_cpp,v 1.1 2019/07/09 13:21:37 jca Exp $
+
+- Remove cast that truncates immediate operands to 32 bits.  This fixes
+  genassym.sh on sparc64 when using clang as the compiler.
+
+Index: lib/Target/Sparc/SparcAsmPrinter.cpp
+--- lib/Target/Sparc/SparcAsmPrinter.cpp.orig
++++ lib/Target/Sparc/SparcAsmPrinter.cpp
+@@ -354,7 +354,7 @@ void SparcAsmPrinter::printOperand(const MachineInstr 
+     break;
+ 
+   case MachineOperand::MO_Immediate:
+-    O << (int)MO.getImm();
++    O << MO.getImm();
+     break;
+   case MachineOperand::MO_MachineBasicBlock:
+     MO.getMBB()->getSymbol()->print(O, MAI);

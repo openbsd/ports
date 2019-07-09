@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_X86_X86MCInstLower_cpp,v 1.7 2019/07/06 15:06:36 jca Exp $
+$OpenBSD: patch-lib_Target_X86_X86MCInstLower_cpp,v 1.8 2019/07/09 13:21:37 jca Exp $
 
 - Add RETGUARD to clang for amd64. This security mechanism uses per-function
   random cookies to protect access to function return instructions, with the
@@ -18,20 +18,44 @@ $OpenBSD: patch-lib_Target_X86_X86MCInstLower_cpp,v 1.7 2019/07/06 15:06:36 jca 
   jumping into the instruction stream partway through other instructions. Work to
   remove these gadgets will continue through other mechanisms.
 - Use int3 trap padding between functions instead of trapsleds with a leading jump.
+- Emit variable length trap padding in retguard epilogue.
+  This adds more trap padding before the return while ensuring that the
+  return is still in the same cache line.
 
 Index: lib/Target/X86/X86MCInstLower.cpp
 --- lib/Target/X86/X86MCInstLower.cpp.orig
 +++ lib/Target/X86/X86MCInstLower.cpp
-@@ -1786,6 +1786,27 @@ void X86AsmPrinter::EmitInstruction(const MachineInstr
+@@ -1786,6 +1786,48 @@ void X86AsmPrinter::EmitInstruction(const MachineInstr
          MCInstBuilder(X86::MOV64rr).addReg(X86::R10).addReg(X86::RAX));
      return;
  
 +  case X86::RETGUARD_JMP_TRAP: {
++    // Make a symbol for the end of the trapsled and emit a jump to it
 +    MCSymbol *RGSuccSym = OutContext.createTempSymbol();
 +    const MCExpr *RGSuccExpr = MCSymbolRefExpr::create(RGSuccSym, OutContext);
 +    EmitAndCountInstruction(MCInstBuilder(X86::JE_1).addExpr(RGSuccExpr));
++
++    // Emit at least two trap instructions
 +    EmitAndCountInstruction(MCInstBuilder(X86::INT3));
 +    EmitAndCountInstruction(MCInstBuilder(X86::INT3));
++
++    // Now .fill up to 0xe byte, so the ret happens on 0xf
++    MCSymbol *Dot = OutContext.createTempSymbol();
++    OutStreamer->EmitLabel(Dot);
++    const MCExpr *DotE = MCSymbolRefExpr::create(Dot, OutContext);
++    const MCExpr *BaseE = MCSymbolRefExpr::create(
++        TM.getSymbol(&MF->getFunction()), OutContext);
++    // .fill (0xf - ((DotE - BaseE) & 0xf)), 1, 0xcc
++    const MCExpr *FillE = MCBinaryExpr::createSub(
++        MCConstantExpr::create(0xf, OutContext),
++        MCBinaryExpr::createAnd(
++          MCBinaryExpr::createSub(DotE, BaseE, OutContext),
++          MCConstantExpr::create(0xf, OutContext),
++          OutContext),
++        OutContext);
++    OutStreamer->emitFill(*FillE, 0xCC);
++
++    // And finally emit the jump target symbol
 +    OutStreamer->EmitLabel(RGSuccSym);
 +    return;
 +  }
@@ -50,7 +74,7 @@ Index: lib/Target/X86/X86MCInstLower.cpp
    case X86::SEH_PushReg:
    case X86::SEH_SaveReg:
    case X86::SEH_SaveXMM:
-@@ -2223,4 +2244,10 @@ void X86AsmPrinter::EmitInstruction(const MachineInstr
+@@ -2223,4 +2265,10 @@ void X86AsmPrinter::EmitInstruction(const MachineInstr
    }
  
    EmitAndCountInstruction(TmpInst);
