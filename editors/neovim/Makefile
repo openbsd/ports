@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.17 2019/06/25 20:25:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/09 09:46:16 edd Exp $
 
 COMMENT =	continuation and extension of Vim
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_TAGNAME =	v0.3.4
-REVISION =	2
+GH_TAGNAME =	v0.3.8
 
 CATEGORIES =	editors devel
-HOMEPAGE =	http://neovim.org
+HOMEPAGE =	https://neovim.io
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # Apache 2.0 + Vim License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c iconv intl ${MODLUA_WANTLIB} m msgpackc pthread termkey
 WANTLIB += unibilium util uv vterm
@@ -56,9 +55,9 @@ TEST_DEPENDS =	shells/bash \
 # "busted" test suite for Lua, which is not yet ported.
 #
 # There is currently one (minor) test failure:
-# https://github.com/neovim/neovim/issues/9704
+# https://github.com/neovim/neovim/issues/10420
 do-test:
-	cd ${WRKSRC} && env LC_CTYPE=en_US.UTF-8 ${MAKE_PROGRAM} \
-		-C src/nvim/testdir NVIM_PRG=${WRKBUILD}/bin/nvim ${MAKE_FLAGS}
+	cd ${WRKSRC}/src/nvim/testdir && env LC_CTYPE=en_US.UTF-8 \
+		${MAKE_PROGRAM} NVIM_PRG=${WRKBUILD}/bin/nvim ${MAKE_FLAGS}
 
 .include <bsd.port.mk>
