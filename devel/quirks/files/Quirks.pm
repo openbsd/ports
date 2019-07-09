@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.788 2019/07/06 07:33:58 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.789 2019/07/09 17:29:39 gsoares Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1033,7 +1033,6 @@ my $obsolete_reason = {
 	'vomit' => 0,
 	'p5-WWW-YouTube-Download' => 6,
 	'oggtag' => 6,
-	'tacacs+' => 0,
 	'aimsniff' => 6,
 	'pork' => 6,
 	'ntimed' => 3,
