@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.385 2019/06/25 20:25:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.386 2019/07/09 18:04:15 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	67.0.4
+MOZILLA_VERSION =	68.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-REVISION =		0
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
@@ -41,7 +40,7 @@ MOZILLA_USE_BUNDLED_CAIRO = Yes
 MOZILLA_USE_BUNDLED_HUNSPELL = Yes
 
 # firefox >= 53 needs rust
-BUILD_DEPENDS +=	lang/rust
+BUILD_DEPENDS +=	lang/rust>=1.34
 # stylo build needs LLVM
 BUILD_DEPENDS +=	devel/llvm
 # 61 requires both versions of python
@@ -49,7 +48,7 @@ BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_3}
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
-BUILD_DEPENDS +=	devel/cbindgen
+BUILD_DEPENDS +=	devel/cbindgen>=0.8.7
 # 67 requires nasm for bundled libav1d
 BUILD_DEPENDS +=	devel/nasm
 
