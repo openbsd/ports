@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2019/06/25 20:25:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.99 2019/07/09 11:24:28 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,16 +13,16 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.35.0
-CARGO_V =		0.36.0
+V =			1.36.0
+CARGO_V =		0.37.0
 CLIPPY_V =		0.0.212
-RUSTFMT_V =		1.2.0
+RUSTFMT_V =		1.2.2
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.35.0-20190523
-BV-amd64 =		1.35.0-20190521
-BV-i386 =		1.35.0-20190521
+BV-aarch64 =		1.36.0-20190703
+BV-amd64 =		1.36.0-20190630
+BV-i386 =		1.36.0-20190630
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -30,10 +30,6 @@ PKGNAME-main =		rust-${V}
 PKGNAME-gdb =		rust-gdb-${V}
 PKGNAME-clippy =	rust-clippy-${V}
 PKGNAME-rustfmt =	rust-rustfmt-${V}
-REVISION-clippy =	0
-REVISION-gdb =		0
-REVISION-main =		0
-REVISION-rustfmt =	0
 
 MULTI_PACKAGES =	-main -gdb -clippy -rustfmt
 
@@ -44,7 +40,7 @@ MAINTAINER =		Sebastien Marie <semarie@online.fr>
 
 # both MIT and Apache2.0
 # with portions covered by various BSD-like licenses
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB-main =		${COMPILER_LIBCXX} c crypto curl git2 m pthread ssh2 ssl z
 WANTLIB-gdb =
@@ -109,6 +105,7 @@ RUN_DEPENDS-clippy +=	lang/rust,-main
 RUN_DEPENDS-rustfmt +=	lang/rust,-main
 
 MAKE_ENV +=	OPENBSD_PORTS_LANG_RUST_VERSION=${V:C/\.[0-9]*$//} \
+		CARGO_HOME=${WRKBUILD}/cargo-home \
 		LIBGIT2_SYS_USE_PKG_CONFIG=1 \
 		LIBSSH2_SYS_USE_PKG_CONFIG=1
 TEST_ENV +=	RUST_BACKTRACE=0
