@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/05 11:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/10 21:01:27 tj Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
@@ -17,7 +17,7 @@ WANTLIB += gobject-2.0 gps iconv intl lzma m pcre pthread soup-2.4
 WANTLIB += soup-gnome-2.4 sqlite3 xml2 z
 WANTLIB += idn2 psl unistring
 
-MASTER_SITES=		http://freedesktop.org/~hadess/
+MASTER_SITES=		https://freedesktop.org/~hadess/
 
 MODULES=		devel/dconf
 

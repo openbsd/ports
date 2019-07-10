@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/07 19:35:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/10 21:01:28 tj Exp $
 
 COMMENT=		library to handle keyboard descriptions
 
 DISTNAME=		libxkbcommon-0.8.4
+REVISION=		0
 SHARED_LIBS +=	xkbcommon            1.5      # unknown
 SHARED_LIBS +=	xkbcommon-x11        1.2      # unknown
 CATEGORIES=		x11 inputmethods
 
-HOMEPAGE=		http://xkbcommon.org/
+HOMEPAGE=		https://xkbcommon.org/
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

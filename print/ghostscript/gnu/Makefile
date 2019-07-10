@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2017/11/02 17:52:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.113 2019/07/10 21:01:27 tj Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -8,7 +8,9 @@ CATEGORIES=	print lang
 SHARED_LIBS=	gs	15.0
 REVISION=	7
 
-MASTER_SITES=	http://downloads.ghostscript.com/public/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ghostscript/}
+
+PORTROACH=	site:https://github.com/ArtifexSoftware/ghostpdl-downloads/releases
 
 HOMEPAGE=	http://www.cs.wisc.edu/~ghost/
 

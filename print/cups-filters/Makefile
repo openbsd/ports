@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2019/07/07 08:11:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.156 2019/07/10 21:01:27 tj Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
@@ -26,7 +26,7 @@ WANTLIB += hogweed iconv idn2 intl jpeg lcms2 m nettle openjp2
 WANTLIB += p11-kit pcre png poppler poppler-cpp qpdf tasn1 tiff
 WANTLIB += unistring z
 
-MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
+MASTER_SITES=	https://www.openprinting.org/download/cups-filters/
 
 # cc1plus: error: unrecognized command line option "-std=c++0x"
 COMPILER =	base-clang ports-gcc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.140 2019/07/08 16:30:56 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.141 2019/07/10 21:01:27 tj Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -16,10 +16,10 @@ CATEGORIES=		lang www
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 HOMEPAGE=		https://secure.php.net/
 
-MASTER_SITES=		http://se.php.net/distributions/ \
-			http://us.php.net/distributions/ \
-			http://no.php.net/distributions/ \
-			http://uk.php.net/distributions/
+MASTER_SITES=		https://se.php.net/distributions/ \
+			https://us.php.net/distributions/ \
+			https://no.php.net/distributions/ \
+			https://uk.php.net/distributions/
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade

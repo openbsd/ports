@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2019/02/25 07:48:55 phessler Exp $
+# $OpenBSD: Makefile,v 1.99 2019/07/10 21:01:26 tj Exp $
 
 # XXX
 # sndio: what to do with (channel) map
@@ -33,7 +33,7 @@ WANTLIB += FLAC ICE SM X11 X11-xcb Xext Xi Xtst c crypto dbus-1
 WANTLIB += execinfo glib-2.0 iconv intl ltdl m ogg pthread
 WANTLIB += sndfile sndio speexdsp ssl tdb vorbis vorbisenc xcb
 
-MASTER_SITES=		http://freedesktop.org/software/pulseaudio/releases/
+MASTER_SITES=		https://freedesktop.org/software/pulseaudio/releases/
 
 MODULES=		textproc/intltool
 

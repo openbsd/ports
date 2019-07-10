@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/12/08 11:23:47 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/10 21:01:27 tj Exp $
 
 COMMENT =	scheme r5 library
 
@@ -9,8 +9,8 @@ DISTNAME =	slib-3b4
 
 HOMEPAGE =	http://people.csail.mit.edu/jaffer/SLIB
 
-MASTER_SITES =	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
-		http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
+MASTER_SITES =	https://groups.csail.mit.edu/mac/ftpdir/scm/ \
+		https://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2019/05/17 20:01:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2019/07/10 21:01:26 tj Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -36,7 +36,7 @@ WANTLIB-main += xcb-shm
 
 WANTLIB-icu += ${WANTLIB} harfbuzz icudata icuuc
 
-MASTER_SITES=		http://www.freedesktop.org/software/harfbuzz/release/
+MASTER_SITES=		https://www.freedesktop.org/software/harfbuzz/release/
 
 MULTI_PACKAGES=		-main -icu
 

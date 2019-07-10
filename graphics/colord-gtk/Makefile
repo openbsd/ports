@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/06 07:15:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/10 21:01:27 tj Exp $
 
 COMMENT=	GTK+ support library for colord
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c cairo colord colordprivate gdk-3 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-3 intl
 
-MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
+MASTER_SITES=	https://www.freedesktop.org/software/colord/releases/
 
 MODULES=	devel/meson
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/08/31 20:43:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/10 21:01:27 tj Exp $
 
 COMMENT=	color targets from vendors for color calibration
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://github.com/hughsie/shared-color-targets
 # GPLv2, public domain, CC-BY-SA
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://people.freedesktop.org/~hughsient/releases/
+MASTER_SITES=	https://people.freedesktop.org/~hughsient/releases/
 
 PKG_ARCH=	*
 

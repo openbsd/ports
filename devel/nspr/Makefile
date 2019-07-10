@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2019/03/08 07:05:47 landry Exp $
+# $OpenBSD: Makefile,v 1.73 2019/07/10 21:01:27 tj Exp $
 
 ONLY_FOR_ARCHS=	aarch64 alpha amd64 arm i386 mips64 mips64el powerpc sparc64 hppa
 
@@ -23,7 +23,7 @@ WANTLIB=		c pthread
 # MPL - Mozilla Public License
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES =		http://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v${VER}/src/
+MASTER_SITES =		https://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v${VER}/src/
 
 USE_GMAKE=		Yes
 AUTOCONF_VERSION=	2.69

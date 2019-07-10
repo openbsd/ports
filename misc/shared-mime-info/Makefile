@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2019/03/25 15:49:22 robert Exp $
+# $OpenBSD: Makefile,v 1.66 2019/07/10 21:01:27 tj Exp $
 
 COMMENT=		shared mime database for desktops
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 # uses pledge()
 WANTLIB += c glib-2.0 intl xml2
 
-MASTER_SITES=		http://people.freedesktop.org/~hadess/
+MASTER_SITES=		https://people.freedesktop.org/~hadess/
 EXTRACT_SUFX=		.tar.xz
 
 MODULES=		textproc/intltool

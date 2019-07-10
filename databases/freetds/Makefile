@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2019/07/10 13:26:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2019/07/10 21:01:26 tj Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.freetds.org/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
-MASTER_SITES=	http://www.freetds.org/files/stable/ \
+MASTER_SITES=	https://www.freetds.org/files/stable/ \
 		ftp://ftp.freetds.org/pub/freetds/stable/
 
 # LGPLv2+ (most things) GPLv2+ (fisql, tdspool) FDL (docs)

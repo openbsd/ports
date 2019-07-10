@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2019/03/03 13:36:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2019/07/10 21:01:27 tj Exp $
 
 PKG_ARCH=		*
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 # tarballs are only available for a 24 hour period
 #MASTER_SITES=		http://www.openprinting.org/download/foomatic/
-MASTER_SITES=		http://pkgs.fedoraproject.org/repo/extras/foomatic-db/foomatic-db-4.0-${V}${EXTRACT_SUFX}/sha512/8961b4e0e0f7232a74b83a4261510102cb9c9793b49bb528cdfac8d16fb96a77d5878ad24ed12387099493b52858bfc340cdb0af83a1256018ae9b8bea3ff8c9/
+MASTER_SITES=		https://pkgs.fedoraproject.org/repo/extras/foomatic-db/foomatic-db-4.0-${V}${EXTRACT_SUFX}/sha512/8961b4e0e0f7232a74b83a4261510102cb9c9793b49bb528cdfac8d16fb96a77d5878ad24ed12387099493b52858bfc340cdb0af83a1256018ae9b8bea3ff8c9/
 
 BUILD_DEPENDS=		print/cups,-libs
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2019/06/25 20:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2019/07/10 21:01:28 tj Exp $
 
 COMMENT=		framework for granting privileged operations to users
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ${COMPILER_LIBCXX} c expat ffi gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 iconv intl m mozjs-60 pcre z
 
-MASTER_SITES=		http://www.freedesktop.org/software/polkit/releases/
+MASTER_SITES=		https://www.freedesktop.org/software/polkit/releases/
 
 # C++11
 COMPILER=		base-clang ports-gcc

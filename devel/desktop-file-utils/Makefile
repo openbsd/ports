@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/03/27 12:49:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2019/07/10 21:01:26 tj Exp $
 
 COMMENT=	utilities for dot.desktop entries
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 # uses pledge()
 WANTLIB += c glib-2.0 intl
 
-MASTER_SITES=	http://freedesktop.org/software/desktop-file-utils/releases/
+MASTER_SITES=	https://freedesktop.org/software/desktop-file-utils/releases/
 
 LIB_DEPENDS=	devel/glib2
 

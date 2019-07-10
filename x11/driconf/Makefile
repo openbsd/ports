@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2015/11/24 09:11:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/10 21:01:28 tj Exp $
 
 COMMENT =		configuration utility for DRI drivers
 
 MODPY_EGG_VERSION =	0.9.1
 DISTNAME =		driconf-${MODPY_EGG_VERSION}
-REVISION=		5
+REVISION=		6
 CATEGORIES =		x11
 
-HOMEPAGE =		http://dri.freedesktop.org/wiki/DriConf
-MASTER_SITES =		https://distfiles.nl/
+HOMEPAGE =		https://dri.freedesktop.org/wiki/DriConf
+MASTER_SITES =		https://people.freedesktop.org/~fxkuehl/driconf/ \
+			https://distfiles.nl/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
