@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.141 2019/07/10 21:01:27 tj Exp $
+# $OpenBSD: Makefile.inc,v 1.142 2019/07/10 22:27:31 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -14,12 +14,9 @@ DISTNAME?=		php-${V}
 CATEGORIES=		lang www
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
-HOMEPAGE=		https://secure.php.net/
 
-MASTER_SITES=		https://se.php.net/distributions/ \
-			https://us.php.net/distributions/ \
-			https://no.php.net/distributions/ \
-			https://uk.php.net/distributions/
+HOMEPAGE=		https://www.php.net/
+MASTER_SITES=		https://www.php.net/distributions/
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade
