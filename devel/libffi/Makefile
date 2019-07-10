@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2018/11/02 18:27:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/10 15:25:03 tj Exp $
 
 COMMENT=		Foreign Function Interface
 
@@ -19,7 +19,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c++abi
 .endif
 
-MASTER_SITES=		ftp://sourceware.org/pub/libffi/
+MASTER_SITES=		https://sourceware.org/pub/libffi/ \
+			ftp://sourceware.org/pub/libffi/
 
 TEST_DEPENDS=		devel/dejagnu
 

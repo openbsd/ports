@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.32 2019/04/02 09:53:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/10 15:25:03 tj Exp $
 
 COMMENT=	portable OTR messaging library and toolkit
 
 DISTNAME=	libotr-4.1.1
 CATEGORIES=	security
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  otr                  4.1      # 6.0
 
-HOMEPAGE=	http://otr.cypherpunks.ca/
+HOMEPAGE=	https://otr.cypherpunks.ca/
 
 MASTER_SITES=	${HOMEPAGE}
 

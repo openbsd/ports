@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2019/06/15 09:59:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.160 2019/07/10 15:25:03 tj Exp $
 
 PORTROACH=		limitw:1,even
 DPB_PROPERTIES=		parallel
@@ -32,7 +32,7 @@ WANTLIB-suid +=	${WANTLIB} dbus-1
 
 MULTI_PACKAGES=		-main -suid
 
-MASTER_SITES=		http://dbus.freedesktop.org/releases/dbus/
+MASTER_SITES=		https://dbus.freedesktop.org/releases/dbus/
 
 USE_GMAKE=		Yes
 

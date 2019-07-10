@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.101 2019/05/12 08:22:18 landry Exp $
+# $OpenBSD: Makefile,v 1.102 2019/07/10 15:25:02 tj Exp $
 
 COMMENT=	embedded SQL implementation
 
 DISTNAME =	sqlite-autoconf-3280000
 PKGNAME=	sqlite3-3.28.0
+REVISION=	0
 
 # XXX needs bumps every time :-
 SHARED_LIBS +=  sqlite3                   37.6 # 8.6
@@ -15,7 +16,7 @@ SHARED_LIBS +=  sqlite3                   37.6 # 8.6
 
 CATEGORIES=	databases
 
-HOMEPAGE=	http://www.sqlite.org/
+HOMEPAGE=	https://www.sqlite.org/
 
 # PD
 PERMIT_PACKAGE_CDROM=	Yes

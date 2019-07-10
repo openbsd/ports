@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/02/04 20:44:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/10 15:25:03 tj Exp $
 
 COMMENT =	wrapper for gnu auto*
 
@@ -13,8 +13,7 @@ DISTFILES =	pkg-config-${PKGCONFIG_V}.tar.gz
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-MASTER_SITES =	http://pkg-config.freedesktop.org/releases/
-
+MASTER_SITES =	https://pkg-config.freedesktop.org/releases/
 
 # BSD, except pkg.m4 which is GPL
 PERMIT_PACKAGE_CDROM =	Yes
