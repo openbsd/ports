@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.39 2019/07/10 15:25:02 tj Exp $
+# $OpenBSD: Makefile.inc,v 1.40 2019/07/10 17:14:47 sthen Exp $
 
 COMMENT-main=	Berkeley DB package, revision ${REV}
 COMMENT-tcl=	TCL bindings for Berkeley DB, revision ${REV}
 
 DISTNAME=	db-${VERSION}
 CATEGORIES=	databases
-HOMEPAGE=	http://www.oracle.com/technology/products/berkeley-db/
+HOMEPAGE=	https://www.oracle.com/database/technologies/related/berkeleydb.html
 MASTER_SITES=	https://download.oracle.com/berkeley-db/
 
 # License: BSD + SleepyCat's additions.
