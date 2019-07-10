@@ -1,4 +1,10 @@
-$OpenBSD: patch-src_print_battery_info_c,v 1.17 2019/07/06 20:20:27 jasper Exp $
+$OpenBSD: patch-src_print_battery_info_c,v 1.18 2019/07/10 18:40:58 jasper Exp $
+
+From 3a51673c05142b99f8db6a0bd9b8e4b806efeb72 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Mon, 8 Jul 2019 17:53:25 +0200
+Subject: [PATCH] Extend battery handling on OpenBSD (#351)
+
 Index: src/print_battery_info.c
 --- src/print_battery_info.c.orig
 +++ src/print_battery_info.c
