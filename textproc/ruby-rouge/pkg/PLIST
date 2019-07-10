@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/06/27 18:33:17 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/07/10 20:30:45 fcambus Exp $
 ${GEM_BIN}/rougify${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -101,6 +101,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/nim
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/nix
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/objective_c
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ocaml
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/openedge
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/pascal
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/perl
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/php
@@ -155,12 +156,15 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/vue
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/wollok
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/xml
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/xojo
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/xpath
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/xquery
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/yaml
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/html.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/html_inline.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/html_legacy.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/html_line_table.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/html_linewise.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/html_pygments.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/formatters/html_table.rb
@@ -279,6 +283,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nim.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nix.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/objective_c.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ocaml.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/openedge.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/pascal.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/perl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/php/
@@ -343,6 +348,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/vue.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/wollok.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/xml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/xojo.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/xpath.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/xquery.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/yaml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/plugins/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/plugins/redcarpet.rb

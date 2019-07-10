@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/06/27 18:33:17 fcambus Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/10 20:30:45 fcambus Exp $
 
 COMMENT =	pure-ruby code highlighter compatible with pygments
 
-DISTNAME =	rouge-3.5.1
+DISTNAME =	rouge-3.6.0
 
 CATEGORIES =	textproc
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://rouge.jneen.net/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT, BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =	lang/ruby
 
