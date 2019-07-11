@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.104 2019/05/20 22:15:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.105 2019/07/11 20:35:39 naddy Exp $
 
 COMMENT=	simple editor, inspired by Pico
 
-DISTNAME=	nano-4.2
+DISTNAME=	nano-4.3
 CATEGORIES=	editors
 HOMEPAGE=	https://www.nano-editor.org/
-REVISION=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -15,7 +14,7 @@ PORTROACH=	site:https://www.nano-editor.org/dist/latest/
 EXTRACT_SUFX=	.tar.xz
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 LIB_DEPENDS=	devel/gettext,-runtime
 WANTLIB=	c curses iconv intl
