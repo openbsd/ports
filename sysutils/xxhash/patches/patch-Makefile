@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2019/07/11 16:28:13 bket Exp $
+
+Don't create symbolic links pointing to the shared lib.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -293,8 +293,6 @@ install: lib xxhsum
+ 	@$(INSTALL) -d -m 755 $(DESTDIR)$(LIBDIR)
+ 	@$(INSTALL_DATA) libxxhash.a $(DESTDIR)$(LIBDIR)
+ 	@$(INSTALL_PROGRAM) $(LIBXXH) $(DESTDIR)$(LIBDIR)
+-	@ln -sf $(LIBXXH) $(DESTDIR)$(LIBDIR)/libxxhash.$(SHARED_EXT_MAJOR)
+-	@ln -sf $(LIBXXH) $(DESTDIR)$(LIBDIR)/libxxhash.$(SHARED_EXT)
+ 	@$(INSTALL) -d -m 755 $(DESTDIR)$(INCLUDEDIR)   # includes
+ 	@$(INSTALL_DATA) xxhash.h $(DESTDIR)$(INCLUDEDIR)
+ 	@echo Installing xxhsum

@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/11 16:28:13 bket Exp $
+bin/xxh32sum
+bin/xxh64sum
+@bin bin/xxhsum
+include/xxhash.h
+lib/libxxhash.a
+@lib lib/libxxhash.so.${LIBxxhash_VERSION}
+@man man/man1/xxh32sum.1
+@man man/man1/xxh64sum.1
+@man man/man1/xxhsum.1

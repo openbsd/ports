@@ -1,0 +1,3 @@
+xxHash is an extremely fast non-cryptographic hash algorithm, running at
+RAM speed limits. Code is highly portable, and hashes are identical on
+all platforms (little / big endian).
