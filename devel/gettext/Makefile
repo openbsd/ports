@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2019/05/20 23:45:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.90 2019/07/11 20:24:00 naddy Exp $
 
 COMMENT-runtime=	GNU gettext runtime libraries and programs
 COMMENT-textstyle=	text styling library
@@ -52,6 +52,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-csharp \
 		--disable-java \
 		--disable-acl \
+		--disable-openmp \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-included-gettext \
 		--with-included-libunistring \
