@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/11/16 04:16:16 kirby Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/11 17:16:59 tj Exp $
 
 COMMENT=		mpd client library
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += glib-2.0 iconv intl pcre pthread
 
-MASTER_SITES=		http://www.musicpd.org/download/libmpd/${VERSION}/
+MASTER_SITES=		https://www.musicpd.org/download/libmpd/${VERSION}/
 
 LIB_DEPENDS=		devel/glib2
 

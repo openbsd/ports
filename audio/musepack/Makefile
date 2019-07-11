@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.8 2018/05/12 10:00:24 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/11 17:16:59 tj Exp $
 
 COMMENT =		decoder, encoder and replaygain for musepack files
 
 V =			475
 DISTNAME =		musepack_src_r${V}
 PKGNAME =		musepack-${V}
-REVISION =		3
+REVISION =		4
 CATEGORIES =		audio
 
-HOMEPAGE =		http://www.musepack.net/
+HOMEPAGE =		https://www.musepack.net/
 
 SHARED_LIBS +=		mpcdec		4.0	# .7.0
 
 # BSD and LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://files.musepack.net/source/
+MASTER_SITES =		https://files.musepack.net/source/
 DISTFILES =		musepack_src_r${V}.tar.gz libreplaygain_r${V}.tar.gz
 
 WANTLIB += c cue m

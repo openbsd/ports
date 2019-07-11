@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2018/11/22 20:28:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.59 2019/07/11 17:16:59 tj Exp $
 
 # -fvisibility
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -18,7 +18,7 @@ CATEGORIES=	devel audio
 
 MASTER_SITES=	${HOMEPAGE}
 
-HOMEPAGE=	http://www.68k.org/~michael/audiofile/
+HOMEPAGE=	https://www.68k.org/~michael/audiofile/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
