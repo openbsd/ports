@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.378 2019/05/09 11:50:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.379 2019/07/11 10:44:38 giovanni Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -77,6 +77,7 @@
      SUBDIR += p5-DBD-SQLite2
      SUBDIR += p5-DBD-Sybase
      SUBDIR += p5-DBD-XBase
+     SUBDIR += p5-DBD-MariaDB
      SUBDIR += p5-DBD-mysql
      SUBDIR += p5-DBD-mysqlPP
      SUBDIR += p5-DBI
