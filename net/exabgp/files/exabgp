@@ -1,2 +1,0 @@
-#!/bin/sh
-exec ${MODPY_BIN} -m exabgp.debug ${TRUEPREFIX}/lib/python${MODPY_VERSION}/site-packages/exabgp/application/bgp.py -c ${SYSCONFDIR}/exabgp

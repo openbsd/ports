@@ -1,0 +1,27 @@
+$OpenBSD: patch-lib_exabgp_application_healthcheck_py,v 1.1 2019/07/11 14:14:52 sthen Exp $
+
+Index: lib/exabgp/application/healthcheck.py
+--- lib/exabgp/application/healthcheck.py.orig
++++ lib/exabgp/application/healthcheck.py
+@@ -15,10 +15,10 @@ To use, declare this program as a process in your
+        peer-as 64497;
+     }
+     process watch-haproxy {
+-       run python -m exabgp healthcheck --cmd "curl -sf http://127.0.0.1/healthcheck" --label haproxy;
++       run exabgp-healthcheck --cmd "curl -sf http://127.0.0.1/healthcheck" --label haproxy;
+     }
+     process watch-mysql {
+-       run python -m exabgp healthcheck --cmd "mysql -u check -e 'SELECT 1'" --label mysql;
++       run exabgp-healthcheck --cmd "mysql -u check -e 'SELECT 1'" --label mysql;
+     }
+ 
+ Use :option:`--help` to get options accepted by this program. A
+@@ -257,6 +257,8 @@ def setup_logging(debug, silent, name, syslog_facility
+             return "/var/run/log"
+         if sys.platform.startswith("netbsd"):
+             return "/var/run/log"
++        if sys.platform.startswith("openbsd"):
++            return "/dev/log"
+         if sys.platform.startswith("linux"):
+             return "/dev/log"
+         raise EnvironmentError("Unable to guess syslog address for your "

@@ -1,0 +1,24 @@
+#!/bin/ksh
+#
+# $OpenBSD: exabgp.rc,v 1.1 2019/07/11 14:14:52 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/exabgp --env ${SYSCONFDIR}/exabgp/exabgp.daemon.env"
+daemon_flags="${SYSCONFDIR}/exabgp/exabgp.conf"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+
+rc_cmd $1
+
+rc_pre() {
+	install -d -o _exabgp /var/run/exabgp
+	for i in /var/run/exabgp/exabgp.{in,out}; do
+		if ! [[ -e $i ]]; then
+			mkfifo $i
+			chown _exabgp:wheel $i
+			chmod 660 $i
+		fi
+	done
+}

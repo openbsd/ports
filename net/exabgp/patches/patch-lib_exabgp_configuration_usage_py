@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_exabgp_configuration_usage_py,v 1.1 2019/07/11 14:14:52 sthen Exp $
+
+Index: lib/exabgp/configuration/usage.py
+--- lib/exabgp/configuration/usage.py.orig
++++ lib/exabgp/configuration/usage.py
+@@ -66,7 +66,7 @@ debugging:
+ ExaBGP will automatically look for its configuration file (in windows ini
+ format):
+  * in the etc/exabgp folder located within the extracted tar.gz
+- * in /etc/exabgp/exabgp.env
++ * in ${SYSCONFDIR}/exabgp/exabgp.env
+ 
+ Individual configuration options can be set using environment variables, such
+ as:

@@ -1,0 +1,9 @@
+$OpenBSD: patch-dev_bin_pythonstats,v 1.1 2019/07/11 14:14:52 sthen Exp $
+
+Index: dev/bin/pythonstats
+--- dev/bin/pythonstats.orig
++++ dev/bin/pythonstats
+@@ -1,2 +1,2 @@
+ #!/bin/sh
+-python -m pstats stat.prof
++${MODPY_BIN} -m pstats stat.prof

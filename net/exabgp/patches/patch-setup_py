@@ -1,8 +1,9 @@
-$OpenBSD: patch-setup_py,v 1.3 2017/11/20 18:39:33 danj Exp $
+$OpenBSD: patch-setup_py,v 1.4 2019/07/11 14:14:52 sthen Exp $
+
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -330,8 +330,8 @@ def testFilesOf (direcotry):
+@@ -347,8 +347,8 @@ def testFilesOf (directory):
  os_name = platform.system()
  
  files_definition = [
@@ -13,3 +14,11 @@ Index: setup.py
  ]
  
  if os_name != 'NetBSD':
+@@ -395,6 +395,7 @@ setup(
+ 		'console_scripts': [
+ 			'exabgp = exabgp.application:run_exabgp',
+ 			'exabgpcli = exabgp.application:run_cli',
++			'exabgp-healthcheck = exabgp.application:run_healthcheck',
+ 		],
+ 	},
+ )

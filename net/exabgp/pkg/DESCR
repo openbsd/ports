@@ -1,20 +1,12 @@
-ExaBGP is software which can inject routes with arbitrary next-hops into
-your network (i.e. source IPv4/IPv6 routes using both IPv4 and IPv6 BGP
-connections, either from a configuration file or third party applications),
-inject flowspec routes, or pass received routes in textual form to a
-third-party application.
+ExaBGP is software which speaks BGP. It is used for injecting routes
+or performing complex route mangling with BGP, it is not intended to
+transform a server into a BGP router.
 
 Potential uses include:
 
- - announce IPv4/IPv6 routes with arbitrary next-hops into your network
-   * injection of service IPs like AS112 announcement
-   * temporary route redirection (adding more specific routes with
-     different next-hop)
-   * injection of flow routes to handle DDOS
- - source flow routes.
- - track changes in the global routing table.
- - add the received default route to an host.
- - filter and/or modify routes using your own logic.
-
-ExaBGP is for injecting or performing complex route mangling with BGP,
-it is not intended to transform a server into a BGP router.
+ - injecting routes for service IPs (e.g. anycasting health-checked services)
+ - injecting flowspec routes, possibly to handle DDOS
+ - adding the received default route to a host
+ - filtering and/or modifying routes using your own logic
+ - tracking changes in the global routing table
+ - passing received routes in text/JSON form to a third-party application

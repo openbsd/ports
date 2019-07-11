@@ -1,0 +1,27 @@
+$OpenBSD: patch-exabgp_daemon_env,v 1.1 2019/07/11 14:14:52 sthen Exp $
+
+Index: exabgp.daemon.env
+--- exabgp.daemon.env.orig
++++ exabgp.daemon.env
+@@ -17,17 +17,17 @@ attributes = true
+ nexthops = true
+ 
+ [exabgp.daemon]
+-daemonize = false
++daemonize = true
+ drop = true
+-pid = ''
++pid = '/var/run/exabgp/exabgp.pid'
+ umask = '0o137'
+-user = 'nobody'
++user = '_exabgp'
+ 
+ [exabgp.log]
+ all = false
+ configuration = true
+ daemon = true
+-destination = 'stdout'
++destination = '/var/log/exabgp/exabgp.log'
+ enable = true
+ level = INFO
+ message = false

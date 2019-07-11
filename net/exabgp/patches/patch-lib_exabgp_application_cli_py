@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_exabgp_application_cli_py,v 1.1 2019/07/11 14:14:52 sthen Exp $
+
+Index: lib/exabgp/application/cli.py
+--- lib/exabgp/application/cli.py.orig
++++ lib/exabgp/application/cli.py
+@@ -119,7 +119,7 @@ def main ():
+ 
+ 	root = root_folder(options,['/bin/exabgpcli','/sbin/exabgpcli','/lib/exabgp/application/cli.py'])
+ 	prefix = '' if root == '/usr' else root
+-	etc = prefix + '/etc/exabgp'
++	etc = '${SYSCONFDIR}/exabgp'
+ 	envfile = get_envfile(options,etc)
+ 	env = get_env(envfile)
+ 	pipename = env['api']['pipename']

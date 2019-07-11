@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_exabgp_vendoring_profiler_py,v 1.1 2019/07/11 14:14:52 sthen Exp $
+
+Index: lib/exabgp/vendoring/profiler.py
+--- lib/exabgp/vendoring/profiler.py.orig
++++ lib/exabgp/vendoring/profiler.py
+@@ -5,7 +5,7 @@
+ 
+ __version__ = '0.26'
+ 
+-_CMD_USAGE = "python -m memory_profiler script_file.py"
++_CMD_USAGE = "${MODPY_BIN} -m memory_profiler script_file.py"
+ 
+ import time, sys, os, pdb
+ import warnings

@@ -1,0 +1,9 @@
+$OpenBSD: patch-dev_bin_python-profile,v 1.1 2019/07/11 14:14:52 sthen Exp $
+
+Index: dev/bin/python-profile
+--- dev/bin/python-profile.orig
++++ dev/bin/python-profile
+@@ -1,2 +1,2 @@
+ #!/bin/sh
+-python -m cProfile -o stat.prof $*
++${MODPY_BIN} -m cProfile -o stat.prof $*
