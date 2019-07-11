@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.67 2019/04/03 06:49:01 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.68 2019/07/11 17:28:27 giovanni Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/phpmyadmin.conf
 @group daemon
 phpMyAdmin/
@@ -885,6 +885,9 @@ phpMyAdmin/locale/it/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/ja/
 phpMyAdmin/locale/ja/LC_MESSAGES/
 phpMyAdmin/locale/ja/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/kk/
+phpMyAdmin/locale/kk/LC_MESSAGES/
+phpMyAdmin/locale/kk/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/ko/
 phpMyAdmin/locale/ko/LC_MESSAGES/
 phpMyAdmin/locale/ko/LC_MESSAGES/phpmyadmin.mo
@@ -1864,6 +1867,7 @@ phpMyAdmin/vendor/bacon/bacon-qr-code/tests/phpunit.xml
 phpMyAdmin/vendor/bin/
 phpMyAdmin/vendor/bin/highlight-query
 phpMyAdmin/vendor/bin/lint-query
+phpMyAdmin/vendor/bin/tokenize-query
 phpMyAdmin/vendor/composer/
 phpMyAdmin/vendor/composer/ClassLoader.php
 phpMyAdmin/vendor/composer/LICENSE
@@ -1983,6 +1987,7 @@ phpMyAdmin/vendor/phpmyadmin/sql-parser/.github/
 phpMyAdmin/vendor/phpmyadmin/sql-parser/.github/stale.yml
 phpMyAdmin/vendor/phpmyadmin/sql-parser/.weblate
 phpMyAdmin/vendor/phpmyadmin/sql-parser/CHANGELOG.md
+phpMyAdmin/vendor/phpmyadmin/sql-parser/CODE_OF_CONDUCT.md
 phpMyAdmin/vendor/phpmyadmin/sql-parser/CONTRIBUTING.md
 phpMyAdmin/vendor/phpmyadmin/sql-parser/LICENSE.txt
 phpMyAdmin/vendor/phpmyadmin/sql-parser/README.md
@@ -2243,7 +2248,8 @@ phpMyAdmin/vendor/phpmyadmin/sql-parser/locale/zh_CN/LC_MESSAGES/sqlparser.mo
 phpMyAdmin/vendor/phpmyadmin/sql-parser/locale/zh_TW/
 phpMyAdmin/vendor/phpmyadmin/sql-parser/locale/zh_TW/LC_MESSAGES/
 phpMyAdmin/vendor/phpmyadmin/sql-parser/locale/zh_TW/LC_MESSAGES/sqlparser.mo
-phpMyAdmin/vendor/phpmyadmin/sql-parser/phpunit.xml
+phpMyAdmin/vendor/phpmyadmin/sql-parser/phpcs.xml.dist
+phpMyAdmin/vendor/phpmyadmin/sql-parser/phpunit.xml.dist
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Component.php
 phpMyAdmin/vendor/phpmyadmin/sql-parser/src/Components/
@@ -2461,9 +2467,11 @@ phpMyAdmin/vendor/symfony/polyfill-util/Binary.php
 phpMyAdmin/vendor/symfony/polyfill-util/BinaryNoFuncOverload.php
 phpMyAdmin/vendor/symfony/polyfill-util/BinaryOnFuncOverload.php
 phpMyAdmin/vendor/symfony/polyfill-util/LICENSE
-phpMyAdmin/vendor/symfony/polyfill-util/LegacyTestListener.php
 phpMyAdmin/vendor/symfony/polyfill-util/README.md
 phpMyAdmin/vendor/symfony/polyfill-util/TestListener.php
+phpMyAdmin/vendor/symfony/polyfill-util/TestListenerForV5.php
+phpMyAdmin/vendor/symfony/polyfill-util/TestListenerForV6.php
+phpMyAdmin/vendor/symfony/polyfill-util/TestListenerForV7.php
 phpMyAdmin/vendor/symfony/polyfill-util/TestListenerTrait.php
 phpMyAdmin/vendor/symfony/polyfill-util/composer.json
 phpMyAdmin/vendor/tecnickcom/
@@ -2562,6 +2570,7 @@ phpMyAdmin/vendor/twig/twig/CHANGELOG
 phpMyAdmin/vendor/twig/twig/LICENSE
 phpMyAdmin/vendor/twig/twig/README.rst
 phpMyAdmin/vendor/twig/twig/composer.json
+phpMyAdmin/vendor/twig/twig/drupal_test.sh
 phpMyAdmin/vendor/twig/twig/ext/
 phpMyAdmin/vendor/twig/twig/ext/twig/
 phpMyAdmin/vendor/twig/twig/ext/twig/config.m4
@@ -2835,12 +2844,14 @@ phpMyAdmin/vendor/twig/twig/src/Node/BlockNode.php
 phpMyAdmin/vendor/twig/twig/src/Node/BlockReferenceNode.php
 phpMyAdmin/vendor/twig/twig/src/Node/BodyNode.php
 phpMyAdmin/vendor/twig/twig/src/Node/CheckSecurityNode.php
+phpMyAdmin/vendor/twig/twig/src/Node/CheckToStringNode.php
 phpMyAdmin/vendor/twig/twig/src/Node/DeprecatedNode.php
 phpMyAdmin/vendor/twig/twig/src/Node/DoNode.php
 phpMyAdmin/vendor/twig/twig/src/Node/EmbedNode.php
 phpMyAdmin/vendor/twig/twig/src/Node/Expression/
 phpMyAdmin/vendor/twig/twig/src/Node/Expression/AbstractExpression.php
 phpMyAdmin/vendor/twig/twig/src/Node/Expression/ArrayExpression.php
+phpMyAdmin/vendor/twig/twig/src/Node/Expression/ArrowFunctionExpression.php
 phpMyAdmin/vendor/twig/twig/src/Node/Expression/AssignNameExpression.php
 phpMyAdmin/vendor/twig/twig/src/Node/Expression/Binary/
 phpMyAdmin/vendor/twig/twig/src/Node/Expression/Binary/AbstractBinary.php
@@ -2878,6 +2889,7 @@ phpMyAdmin/vendor/twig/twig/src/Node/Expression/Filter/DefaultFilter.php
 phpMyAdmin/vendor/twig/twig/src/Node/Expression/FilterExpression.php
 phpMyAdmin/vendor/twig/twig/src/Node/Expression/FunctionExpression.php
 phpMyAdmin/vendor/twig/twig/src/Node/Expression/GetAttrExpression.php
+phpMyAdmin/vendor/twig/twig/src/Node/Expression/InlinePrint.php
 phpMyAdmin/vendor/twig/twig/src/Node/Expression/MethodCallExpression.php
 phpMyAdmin/vendor/twig/twig/src/Node/Expression/NameExpression.php
 phpMyAdmin/vendor/twig/twig/src/Node/Expression/NullCoalesceExpression.php
@@ -2959,6 +2971,7 @@ phpMyAdmin/vendor/twig/twig/src/Test/NodeTestCase.php
 phpMyAdmin/vendor/twig/twig/src/Token.php
 phpMyAdmin/vendor/twig/twig/src/TokenParser/
 phpMyAdmin/vendor/twig/twig/src/TokenParser/AbstractTokenParser.php
+phpMyAdmin/vendor/twig/twig/src/TokenParser/ApplyTokenParser.php
 phpMyAdmin/vendor/twig/twig/src/TokenParser/AutoEscapeTokenParser.php
 phpMyAdmin/vendor/twig/twig/src/TokenParser/BlockTokenParser.php
 phpMyAdmin/vendor/twig/twig/src/TokenParser/DeprecatedTokenParser.php
