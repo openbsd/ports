@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_plugins_python_CMakeLists_txt,v 1.1 2015/01/19 12:28:46 dcoppa Exp $
---- src/plugins/python/CMakeLists.txt.orig	Mon Jan 19 04:44:30 2015
-+++ src/plugins/python/CMakeLists.txt	Mon Jan 19 04:45:43 2015
+$OpenBSD: patch-src_plugins_python_CMakeLists_txt,v 1.2 2019/07/12 04:42:34 rsadowski Exp $
+Index: src/plugins/python/CMakeLists.txt
+--- src/plugins/python/CMakeLists.txt.orig
++++ src/plugins/python/CMakeLists.txt
 @@ -22,10 +22,9 @@ weechat-python-api.c weechat-python-api.h)
  
  set_target_properties(python PROPERTIES PREFIX "")
@@ -8,10 +9,10 @@ $OpenBSD: patch-src_plugins_python_CMakeLists_txt,v 1.1 2015/01/19 12:28:46 dcop
 -if(PYTHON_FOUND)
 -  include_directories(${PYTHON_INCLUDE_PATH})
 -  set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} ${PYTHON_LFLAGS}")
--  target_link_libraries(python ${PYTHON_LIBRARY} weechat_plugins_scripts)
+-  target_link_libraries(python ${PYTHON_LIBRARY} weechat_plugins_scripts coverage_config)
 +if(PYTHONLIBS_FOUND)
 +  include_directories(${PYTHON_INCLUDE_DIRS})
-+  target_link_libraries(python ${PYTHON_LIBRARIES} weechat_plugins_scripts)
++  target_link_libraries(python ${PYTHON_LIBRARIES} weechat_plugins_scripts coverage_config)
  endif()
  
- install(TARGETS python LIBRARY DESTINATION ${LIBDIR}/plugins)
+ install(TARGETS python LIBRARY DESTINATION ${WEECHAT_LIBDIR}/plugins)

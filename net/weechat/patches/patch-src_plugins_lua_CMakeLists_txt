@@ -1,14 +1,15 @@
-$OpenBSD: patch-src_plugins_lua_CMakeLists_txt,v 1.1 2015/01/19 12:28:46 dcoppa Exp $
---- src/plugins/lua/CMakeLists.txt.orig	Mon Jan 19 03:45:59 2015
-+++ src/plugins/lua/CMakeLists.txt	Mon Jan 19 03:46:40 2015
+$OpenBSD: patch-src_plugins_lua_CMakeLists_txt,v 1.2 2019/07/12 04:42:34 rsadowski Exp $
+Index: src/plugins/lua/CMakeLists.txt
+--- src/plugins/lua/CMakeLists.txt.orig
++++ src/plugins/lua/CMakeLists.txt
 @@ -24,8 +24,8 @@ weechat-lua-api.h)
  set_target_properties(lua PROPERTIES PREFIX "")
  
  if(LUA_FOUND)
 -  include_directories(${LUA_INCLUDE_DIRS})
--  target_link_libraries(lua ${LUA_LDFLAGS} weechat_plugins_scripts)
+-  target_link_libraries(lua ${LUA_LDFLAGS} weechat_plugins_scripts coverage_config)
 +  include_directories(${LUA_INCLUDE_DIR})
-+  target_link_libraries(lua ${LUA_LIBRARIES} weechat_plugins_scripts)
++  target_link_libraries(lua ${LUA_LIBRARIES} weechat_plugins_scripts coverage_config)
  endif()
  
- install(TARGETS lua LIBRARY DESTINATION ${LIBDIR}/plugins)
+ install(TARGETS lua LIBRARY DESTINATION ${WEECHAT_LIBDIR}/plugins)

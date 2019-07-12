@@ -1,14 +1,15 @@
-$OpenBSD: patch-src_plugins_ruby_CMakeLists_txt,v 1.1 2015/01/19 12:28:46 dcoppa Exp $
---- src/plugins/ruby/CMakeLists.txt.orig	Mon Jan 19 03:50:14 2015
-+++ src/plugins/ruby/CMakeLists.txt	Mon Jan 19 03:51:43 2015
+$OpenBSD: patch-src_plugins_ruby_CMakeLists_txt,v 1.2 2019/07/12 04:42:34 rsadowski Exp $
+Index: src/plugins/ruby/CMakeLists.txt
+--- src/plugins/ruby/CMakeLists.txt.orig
++++ src/plugins/ruby/CMakeLists.txt
 @@ -24,9 +24,7 @@ set_target_properties(ruby PROPERTIES PREFIX "")
  
  if(RUBY_FOUND)
    include_directories(${RUBY_INCLUDE_DIRS})
 -  set(LINK_LIBS)
 -  list(APPEND LINK_LIBS ${RUBY_LDFLAGS})
--  target_link_libraries(ruby ${LINK_LIBS} ${RUBY_LIB} weechat_plugins_scripts)
-+  target_link_libraries(ruby ${RUBY_LIBRARY} weechat_plugins_scripts)
+-  target_link_libraries(ruby ${LINK_LIBS} ${RUBY_LIB} weechat_plugins_scripts coverage_config)
++  target_link_libraries(ruby ${RUBY_LIBRARY} weechat_plugins_scripts coverage_config)
  endif(RUBY_FOUND)
  
- install(TARGETS ruby LIBRARY DESTINATION ${LIBDIR}/plugins)
+ install(TARGETS ruby LIBRARY DESTINATION ${WEECHAT_LIBDIR}/plugins)
