@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/04/28 14:29:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 21:34:51 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -30,9 +30,8 @@ MASTER_SITES0=	https://github.com/qemu/sgabios/archive/
 
 # LGPLv3 but distributed via fw_update/firmware.openbsd.org so disable
 # normal packaging.
-PERMIT_PACKAGE_CDROM=	firmware
-PERMIT_PACKAGE_FTP=	firmware
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE=   firmware
+PERMIT_DISTFILES= Yes
 
 NO_BUILD=	No
 

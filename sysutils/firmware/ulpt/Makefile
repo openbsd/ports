@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/12 09:02:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 21:34:51 sthen Exp $
 
 FW_DRIVER =	ulpt
 FW_VER =	1.0
 REVISION =	0
 
 # "You may not copy the Software onto any public network."
-PERMIT_PACKAGE_CDROM ?=	  stupid license
-PERMIT_PACKAGE_FTP ?=	  stupid license
-PERMIT_DISTFILES_FTP ?=	  stupid license
+PERMIT_PACKAGE =   stupid license
+PERMIT_DISTFILES = stupid license
 
 MASTER_SITES =	https://www.openprinting.org/download/printdriver/auxfiles/HP/plugins/
 

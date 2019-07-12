@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/19 13:04:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 21:34:51 sthen Exp $
 
 FW_DRIVER=	athn
 FW_VER=		1.1
@@ -9,9 +9,8 @@ WRKDIST=	${WRKDIR}
 
 # can be redistributed, but shouldn't be in normal packages directory as
 # this is only meant for use with fw_update.
-PERMIT_PACKAGE_CDROM=	firmware
-PERMIT_PACKAGE_FTP=	firmware
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE=	  firmware
+PERMIT_DISTFILES= Yes
 
 BUILD_DEPENDS=		devel/open-ath9k-htc-firmware/k2>=1.4.0pl20171105p0 \
 			devel/open-ath9k-htc-firmware/magpie
