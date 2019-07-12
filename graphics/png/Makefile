@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2019/04/30 14:46:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.124 2019/07/12 20:47:08 sthen Exp $
 
 COMMENT=	library for manipulating PNG images
 
@@ -16,7 +16,7 @@ SHARED_LIBS=	png	18.0 \
 HOMEPAGE=	http://www.libpng.org/pub/png/libpng.html
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m z
 

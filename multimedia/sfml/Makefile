@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/01/23 07:07:51 bentley Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:58 sthen Exp $
 
 COMMENT =		simple and fast multimedia library
 
@@ -21,7 +21,7 @@ HOMEPAGE =		https://www.sfml-dev.org/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # zlib/libpng
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += FLAC GL X11-xcb freetype jpeg m ogg openal vorbis vorbisenc
 WANTLIB += vorbisfile xcb xcb-image xcb-randr ${COMPILER_LIBCXX}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2019/05/17 16:19:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.163 2019/07/12 20:47:18 sthen Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -30,7 +30,7 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 # BSD w/o advertising clause + LGPLv3 (from libgmp).
 # Distfile is bundled with other stuff like libffi, mingw
 # binaries, with BSD, GPLv2 and Perl artistic license.
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += c curses iconv m pthread util
 

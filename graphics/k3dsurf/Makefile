@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/03/02 20:05:29 cwen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:01 sthen Exp $
 
 COMMENT=	visualize and manipulate mathematical models
 
@@ -9,7 +9,7 @@ CATEGORIES=	graphics math
 HOMEPAGE=	http://k3dsurf.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=k3dsurf/}
 

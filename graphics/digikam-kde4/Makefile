@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/06/30 21:27:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 20:46:57 sthen Exp $
 
 BROKEN=	ninja: multiple rules generate /usr/obj/ports/digikam-kde4-4.13.0/digikam-4.13.0/core/cmake/templates/Info.plist.cmake.in
 
@@ -39,7 +39,7 @@ REVISION-mediawiki =	8
 REVISION-face =		4
 
 # LGPL, GPL and many others
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 SHARED_LIBS =	kipiplugins		0.1
 SHARED_LIBS +=  digikamcore		0.1

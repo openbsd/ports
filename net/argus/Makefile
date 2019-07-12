@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/01/11 19:27:04 rpe Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:59 sthen Exp $
 
 COMMENT =	Audit Record Generation and Utilization System
 
@@ -12,7 +12,7 @@ MASTER_SITES =	http://qosient.com/argus/src/
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =	c m pcap z
 

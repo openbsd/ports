@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/02/13 13:20:54 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:16 sthen Exp $
 
 BROKEN =	does not build with LLVM 7
 
@@ -16,7 +16,7 @@ HOMEPAGE =	https://crystal-lang.org/
 MAINTAINER =	Wesley Moxam <wes@wmoxam.com>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c event_core event_extra gc iconv
 WANTLIB += m pcre yaml

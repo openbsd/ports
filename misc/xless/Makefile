@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/02/16 22:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:55 sthen Exp $
 
 COMMENT=	X11 viewer for text files
 
@@ -6,7 +6,7 @@ DISTNAME=	xless-1.7
 REVISION=	4
 CATEGORIES=	misc	
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM Xau Xdmcp X11 Xaw Xext Xmu Xpm Xt c
 

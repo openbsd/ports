@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/01/19 21:38:36 jung Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:47 sthen Exp $
 
 COMMENT =		software tools for blink(1) LED notification light
 
@@ -16,7 +16,7 @@ HOMEPAGE =		https://blink1.thingm.com/
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
 # Creative Commons - Attribution - ShareAlike 3.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += 		c pthread usb
 

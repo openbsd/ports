@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/04/27 14:59:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:57 sthen Exp $
 
 COMMENT =	Context Free Design Grammar
 
@@ -11,7 +11,7 @@ CATEGORIES =	graphics
 HOMEPAGE =	https://www.contextfreeart.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://www.contextfreeart.org/download/
 EXTRACT_SUFX =	.tgz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/20 16:12:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:46 sthen Exp $
 
 COMMENT=	fast array facility to the Python language
 
@@ -11,7 +11,7 @@ CATEGORIES=	math
 HOMEPAGE=	http://people.csail.mit.edu/jrennie/python/numeric/
 
 # Python License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += m pthread

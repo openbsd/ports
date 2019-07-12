@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:55 sthen Exp $
 
 COMMENT =	manipulation and analysis of planar geometric objects
 
@@ -14,7 +14,7 @@ CATEGORIES =	geo
 HOMEPAGE =	https://github.com/Toblerity/Shapely
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVORS =		python3
 FLAVOR ?=

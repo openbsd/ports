@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2019/07/01 08:02:37 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2019/07/12 20:46:57 sthen Exp $
 
 COMMENT =	KDE digital photo and video management utility
 
@@ -17,7 +17,7 @@ SHARED_LIBS +=  digikamdatabase           1.0 # 5.9
 SHARED_LIBS +=  digikamgui                1.0 # 5.9
 
 # LGPL, GPL and many others
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE KF5Auth KF5CalendarCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

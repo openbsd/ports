@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:23:50 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:25 sthen Exp $
 
 COMMENT=	generate ScamNailer spear phishing database in ClamAV format
 
@@ -12,7 +12,7 @@ CATEGORIES=	mail security
 HOMEPAGE=	http://www.scamnailer.info/
 
 # Public Domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://www.scamnailer.info/files/contrib/
 

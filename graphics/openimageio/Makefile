@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/03/08 20:00:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:47:04 sthen Exp $
 
 BROKEN-powerpc =	undefined reference to __atomic_fetch_add_8
 BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
@@ -22,7 +22,7 @@ HOMEPAGE =		http://www.openimageio.org
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU Half Iex IlmImf IlmThread
 WANTLIB += Imath OpenColorIO Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/05/19 23:23:11 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:47:50 sthen Exp $
 
 COMMENT=	hfsplus filesystem access tool
 
@@ -11,7 +11,7 @@ SHARED_LIBS=	hfsp	0.0
 CATEGORIES=	misc 
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

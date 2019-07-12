@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/01 19:29:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:37 sthen Exp $
 
 COMMENT=	spam relay database
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.benzedrine.ch/
 HOMEPAGE=	http://www.benzedrine.ch/relaydb.html
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

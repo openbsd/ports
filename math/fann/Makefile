@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/03/08 17:41:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:40 sthen Exp $
 
 COMMENT=	Fast Artificial Neural Network Library
 
@@ -16,7 +16,7 @@ CATEGORIES=	math devel
 HOMEPAGE=	http://leenissen.dk/fann/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	devel/cmake
 

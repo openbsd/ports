@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/06 14:37:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:02 sthen Exp $
 
 COMMENT=		library for encoding data in a QR Code symbol
 
@@ -12,7 +12,7 @@ CATEGORIES=		graphics
 HOMEPAGE=		https://fukuchi.org/works/qrencode/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://fukuchi.org/works/qrencode/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2015/09/01 12:05:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.69 2019/07/12 20:47:54 sthen Exp $
 # Please adjust www/faq/faq15.html if updating.
 
 COMMENT=	multi-screen window manager
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=screen/}
 HOMEPAGE=	https://www.gnu.org/software/screen/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 SUBST_VARS=	VERSION
 

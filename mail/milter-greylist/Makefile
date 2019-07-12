@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/01/11 19:27:03 rpe Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:30 sthen Exp $
 
 COMMENT=	greylist milter
 
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 # BSD license
-PERMIT_PACKAGE_CDROM=		Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB=	c pthread milter spf2
 

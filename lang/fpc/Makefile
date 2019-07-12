@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/10/23 14:39:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:17 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -17,7 +17,7 @@ HOMEPAGE =		http://www.freepascal.org/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # compiler: GPLv2+, packages/rtl: modified LGPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c iconv pthread
 

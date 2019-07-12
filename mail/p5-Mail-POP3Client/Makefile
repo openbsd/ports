@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.29 2016/03/20 19:56:46 naddy Exp $
+#   $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:34 sthen Exp $
 
 COMMENT=	perl module to talk to a POP3 (RFC1081) server
 
@@ -7,7 +7,7 @@ CATEGORIES=	mail
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
 PKG_ARCH=	*

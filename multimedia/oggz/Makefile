@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/05 04:31:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:57 sthen Exp $
 
 COMMENT =	inspect, edit and validate Ogg files
 
@@ -12,7 +12,7 @@ REVISION =	3
 SHARED_LIBS =	oggz	0.0
 
 # BSD
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =	https://downloads.xiph.org/releases/liboggz/
 

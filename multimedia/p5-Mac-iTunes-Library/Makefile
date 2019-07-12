@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:57 sthen Exp $
 
 COMMENT =	representation of an iTunes Library
 
@@ -11,7 +11,7 @@ REVISION =	0
 HOMEPAGE =	https://github.com/dinomite/Mac-iTunes-Library
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODCPAN_EXAMPLES =	Yes
 

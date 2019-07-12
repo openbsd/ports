@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2019/07/03 09:45:05 landry Exp $
+# $OpenBSD: Makefile,v 1.108 2019/07/12 20:46:55 sthen Exp $
 
 COMMENT =	desktop geographical information system
 
@@ -18,7 +18,7 @@ SHARED_LIBS =	qgis_core	33.0 \
 HOMEPAGE =	http://www.qgis.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 

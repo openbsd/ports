@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/06 14:10:16 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:59 sthen Exp $
 
 COMMENT =	open source, multi-platform library for creating windows
 DISTNAME =	glfw-3.2.1
@@ -11,7 +11,7 @@ HOMEPAGE =	http://www.glfw.org/
 MAINTAINER =	Gregor Best <gbe@unobtanium.de>
 
 # zlib
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcursor Xinerama Xrandr Xxf86vm m pthread
 

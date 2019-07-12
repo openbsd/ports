@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:57 sthen Exp $
 
 COMMENT=		closed caption converter
 
@@ -10,7 +10,7 @@ REVISION=		0
 CATEGORIES=		multimedia
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

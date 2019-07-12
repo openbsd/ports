@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/01 19:29:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:47:30 sthen Exp $
 
 COMMENT=	sendmail milter plugin for SpamAssassin spamd
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.benzedrine.ch/
 HOMEPAGE=	http://www.benzedrine.ch/milter-spamd.html
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c milter pthread
 

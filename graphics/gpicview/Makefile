@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/06/13 15:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:47:00 sthen Exp $
 
 COMMENT =	simple and fast image viewer for X11
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://lxde.sourceforge.net/gpicview/
 
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo expat ffi fontconfig freetype fribidi

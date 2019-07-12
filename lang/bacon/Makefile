@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/02 21:46:02 juanfra Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:16 sthen Exp $
 
 COMMENT =		BASIC converter to C translator for Unix system
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://www.basic-converter.org/
 MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcursor Xdmcp Xext Xfixes
 WANTLIB += Xft Xinerama c fltk fltk_images fontconfig m

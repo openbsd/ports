@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.92 2019/07/09 18:09:19 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.93 2019/07/12 20:47:39 sthen Exp $
 
 # keep in sync with www/mozilla/mozilla.port.mk
 ONLY_FOR_ARCHS =	amd64 i386
@@ -16,7 +16,7 @@ HOMEPAGE =	https://wiki.mozilla.org/L10n:Home_Page
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # Mozilla public license
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${FV}/linux-i686/xpi/ \
 		http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${FV}/linux-i686/xpi/

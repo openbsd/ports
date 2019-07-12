@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/11/19 09:44:53 edd Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:47:27 sthen Exp $
 
 COMMENT =		robust sending of e-mail via external commands
 
@@ -10,7 +10,7 @@ HOMEPAGE =		http://tratt.net/laurie/src/extsmail/
 MAINTAINER =		Laurence Tratt <laurie@tratt.net>
 
 # BSD / MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}releases/
 

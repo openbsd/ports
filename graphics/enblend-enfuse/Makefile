@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:46:58 sthen Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS} ${CLANG_ARCHS}
 .if (${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "arm64")
@@ -18,7 +18,7 @@ CATEGORIES =	graphics
 HOMEPAGE =	http://enblend.sourceforge.net/
 
 # GPLv2+, MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += Half Iex IexMath IlmImf IlmThread Imath c gsl gslcblas
 WANTLIB += jpeg lcms2 m png pthread tiff vigraimpex z ${COMPILER_LIBCXX}

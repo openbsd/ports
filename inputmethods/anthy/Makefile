@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/04/02 10:13:19 yasuoka Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:47:12 sthen Exp $
 
 COMMENT-main =	japanese input method
 COMMENT-emacs =	emacs files for anthy
@@ -19,7 +19,7 @@ CATEGORIES =	inputmethods japanese
 HOMEPAGE = 	https://anthy.osdn.jp/
 
 # GPL, part LGPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB-main =	c m
 

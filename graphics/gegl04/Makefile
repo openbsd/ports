@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/08 22:29:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:59 sthen Exp $
 
 COMMENT=		graph based image processing framework (API version 0.4)
 
@@ -19,7 +19,7 @@ HOMEPAGE=		http://gegl.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3/LGPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xext Xrender babl-0.1 cairo
 WANTLIB += croco-0.6 expat ffi fontconfig freetype fribidi gdk_pixbuf-2.0

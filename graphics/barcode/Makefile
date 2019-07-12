@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/20 22:15:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:56 sthen Exp $
 
 COMMENT=		convert text strings to printed bars
 
@@ -7,7 +7,7 @@ CATEGORIES=		graphics
 REVISION=		1
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c iconv intl m paper
 

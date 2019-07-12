@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2019/06/25 20:25:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.131 2019/07/12 20:47:20 sthen Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -25,7 +25,7 @@ HOMEPAGE=	http://www.mono-project.com/
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # GPLv2, LGPL, MIT X11, MPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv m pthread z
 

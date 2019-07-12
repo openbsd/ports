@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/05/20 15:59:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:47:07 sthen Exp $
 
 COMMENT=	PHP support for the ImageMagick library
 
@@ -6,7 +6,7 @@ DISTNAME=	imagick-3.4.4
 CATEGORIES=	graphics
 
 # PHP
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE MagickCore-6.Q16 MagickWand-6.Q16
 WANTLIB += SM X11 Xext Xt bz2 c djvulibre expat fftw3 fontconfig

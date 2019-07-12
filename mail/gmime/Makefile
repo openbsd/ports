@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2018/04/14 10:14:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.60 2019/07/12 20:47:27 sthen Exp $
 
 PORTROACH=		limit:^2\.6
 
@@ -17,7 +17,7 @@ HOMEPAGE=		http://spruce.sourceforge.net/gmime/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += assuan ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gpg-error gpgme gthread-2.0 iconv intl pcre

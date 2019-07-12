@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/03/27 23:30:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:04 sthen Exp $
 
 COMMENT =	small and fast Qt image viewer
 
@@ -16,7 +16,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 SHARED_LIBS +=  nomacsCore                4.0 # 3.3
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5PrintSupport Qt5Svg Qt5Widgets c exiv2 lcms2 m opencv_core

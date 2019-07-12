@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/01/11 19:27:04 rpe Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:38 sthen Exp $
 
 COMMENT =	postfix greylist daemon
 
@@ -10,7 +10,7 @@ HOMEPAGE =	http://sqlgrey.sf.net/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sqlgrey/}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 PKG_ARCH =		*
 

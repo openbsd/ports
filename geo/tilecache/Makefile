@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/09/29 10:52:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:56 sthen Exp $
 
 COMMENT =	tile caching frontend for WMS/TMS services
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://tilecache.org/
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${HOMEPAGE}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/09/13 15:29:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:03 sthen Exp $
 
 COMMENT=	gd binding for the lua language
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://lua-gd.luaforge.net/
 MASTER_SITES=	http://luaforge.net/frs/download.php/1592/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/lua
 WANTLIB=	freetype fontconfig z iconv jpeg>=62 png>=2 gd>=20.33

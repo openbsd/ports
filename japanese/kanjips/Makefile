@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/10/11 23:49:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:14 sthen Exp $
 
 COMMENT=	converts Japanese fonts in PostScript documents
 
@@ -14,7 +14,7 @@ DISTFILES=kanjips.tar.Z jis32.Z:0 jis48.Z:0
 # Freeware
 EXTRACT_ONLY=kanjips.tar.Z
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m
 

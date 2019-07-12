@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/02/10 18:01:30 juanfra Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:18 sthen Exp $
 
 # Gambit doesn't have thread-local storage support on GCC platforms
 ONLY_FOR_ARCHS = ${CLANG_ARCHS}
@@ -16,7 +16,7 @@ HOMEPAGE =	https://cons.io/
 MAINTAINER = 	Timo Myyra <timo.myyra@bittivirhe.fi>
 
 # LGPLv2.1/Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m pthread util z
 WANTLIB += crypto iconv lzma sqlite3 ssl xml2

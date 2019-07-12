@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/10/23 17:10:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:56 sthen Exp $
 
 COMMENT=	portable ASS/SSA subtitle renderer
 
@@ -16,7 +16,7 @@ HOMEPAGE=	https://github.com/libass/libass
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	expat fontconfig freetype fribidi iconv m z
 

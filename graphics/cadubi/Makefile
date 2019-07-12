@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/12/30 16:06:55 fcambus Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:56 sthen Exp $
 
 COMMENT=	ASCII drawing utility
 
@@ -9,7 +9,7 @@ GH_TAGNAME =	v1.3.3
 CATEGORIES=	graphics editors
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

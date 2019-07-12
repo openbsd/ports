@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:47:44 sthen Exp $
 
 COMMENT=	module to internal operations of neural networks
 
@@ -9,7 +9,7 @@ REVISION=	1
 CATEGORIES=	math
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	modbuild
 

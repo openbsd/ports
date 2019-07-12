@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/19 19:58:51 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:44 sthen Exp $
 
 COMMENT =		efficient generation of combinatorial sequences
 
@@ -9,7 +9,7 @@ CATEGORIES =		math
 CPAN_AUTHOR =		FXN
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

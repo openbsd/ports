@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2019/07/10 15:25:03 tj Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2019/07/12 20:47:19 sthen Exp $
 
 COMMENT=	powerful, light-weight programming language (version ${VERSION})
 
@@ -12,7 +12,7 @@ MASTER_SITES=	https://www.lua.org/ftp/ \
 HOMEPAGE=	http://www.lua.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_FLAGS+=	CC="${CC}" MYLDFLAGS=-lm
 

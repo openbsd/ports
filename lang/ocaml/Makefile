@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2019/03/04 12:51:14 chrisz Exp $
+# $OpenBSD: Makefile,v 1.83 2019/07/12 20:47:21 sthen Exp $
 
 MULTI_PACKAGES = -graphics -main
 
@@ -27,7 +27,7 @@ HOMEPAGE=	https://ocaml.org/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
 # QPL/LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	simple dest
 CONFIGURE_ARGS+=	-prefix ${PREFIX} \

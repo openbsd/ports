@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/10/01 11:54:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:08 sthen Exp $
 
 COMMENT=	Python interface to Graphviz's Dot#'
 
@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 HOMEPAGE=	https://github.com/erocarrera/pydot
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=pydot/}
 

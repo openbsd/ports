@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/12/20 16:52:20 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:23 sthen Exp $
 
 V =		6.4.7
 REVISION =	0
@@ -11,7 +11,7 @@ HOMEPAGE =	https://spinroot.com/
 MAINTAINER =	Ori Bernstein <ori@eigenstate.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

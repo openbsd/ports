@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/11/05 17:49:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:59 sthen Exp $
 
 COMMENT=	rrdtool frontend for Bind installation
 
@@ -13,7 +13,7 @@ MASTER_SITES= 	${HOMEPAGE}
 MAINTAINER=     Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 EXTRACT_SUFX= 	.tgz
 

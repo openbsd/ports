@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/12/14 00:23:28 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:01 sthen Exp $
 
 COMMENT =	reference implementation of JPEG-2000
 
@@ -12,7 +12,7 @@ CATEGORIES =	graphics
 HOMEPAGE =	https://www.ece.uvic.ca/~frodo/jasper/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m
 

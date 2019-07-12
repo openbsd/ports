@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/10 05:50:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:47:03 sthen Exp $
 
 COMMENT =	desktop screenshot utility (make image)
 CATEGORIES =	graphics x11
@@ -10,7 +10,7 @@ GH_TAGNAME =	v5.5.3
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL ICE SM X11 Xcomposite Xext Xfixes
 WANTLIB += Xrandr Xrender c icuuc jpeg m png slopy z

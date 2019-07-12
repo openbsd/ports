@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/01/25 07:39:38 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:36 sthen Exp $
 
 COMMENT =	basic Postfix policy engine for Sender Policy Framework
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://launchpad.net/postfix-policyd-spf-perl
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://launchpad.net/postfix-policyd-spf-perl/trunk/${V}/+download/
 

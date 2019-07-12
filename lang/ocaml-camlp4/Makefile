@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/03/04 12:51:15 chrisz Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:21 sthen Exp $
 
 COMMENT =	OCaml Preprocessor and Pretty-Printer
 CATEGORIES =	lang
@@ -18,7 +18,7 @@ HOMEPAGE =	https://github.com/ocaml/camlp4/
 MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
 
 # LGPL >=2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ocaml
 

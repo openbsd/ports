@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/02 19:58:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:47:56 sthen Exp $
 
 COMMENT=		print information about the content and structure of a DVD
 
@@ -8,7 +8,7 @@ CATEGORIES=		multimedia
 HOMEPAGE=		http://lsdvd.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c dvdread
 

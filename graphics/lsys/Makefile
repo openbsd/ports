@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:03 sthen Exp $
 
 COMMENT=	intepreter for Lindenmayer-systems
 
@@ -10,7 +10,7 @@ REVISION=	2
 HOMEPAGE=	http://software.schmorp.de/pkg/lsys
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://crappydiffs.org/
 

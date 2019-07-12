@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/07/01 06:35:18 benoit Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:59 sthen Exp $
 
 COMMENT=		TCP proxy with load balancing and failover mechanisms
 
@@ -8,7 +8,7 @@ CATEGORIES=		net
 HOMEPAGE=		http://www.inlab.de/balance.html
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

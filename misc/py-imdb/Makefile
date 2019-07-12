@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/09/29 10:52:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:47:53 sthen Exp $
 
 COMMENT =	python package to retrieve data of the IMDb movie database
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://imdbpy.sourceforge.net/
 MAINTAINER =	Todd C. Miller <millert@openbsd.org>
 
 # GPL 
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread ${MODPY_WANTLIB}
 

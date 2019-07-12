@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/05/10 20:11:16 benoit Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:47:53 sthen Exp $
 
 COMMENT=	module to map charset names registered with IANA
 
@@ -8,7 +8,7 @@ DISTNAME =	I18N-Charset-1.417
 CATEGORIES=	misc
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	converters/p5-Jcode \
 		devel/p5-IO-String \

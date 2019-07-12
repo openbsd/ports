@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2019/06/24 20:56:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.112 2019/07/12 20:47:43 sthen Exp $
 
 COMMENT =	high-level language for numerical computations
 
@@ -16,7 +16,7 @@ HOMEPAGE =	https://www.gnu.org/software/octave/
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODFORTRAN_WANTLIB}
 WANTLIB += FLAC GL GLU GraphicsMagick GraphicsMagick++ ICE

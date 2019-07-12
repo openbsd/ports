@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/02/04 14:13:04 rapha Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:24 sthen Exp $
 
 COMMENT =	WebAssembly binary toolkit
 
@@ -11,7 +11,7 @@ CATEGORIES =	lang
 MAINTAINER =	Fabian Raetz <fabian.raetz@gmail.com>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB = ${COMPILER_LIBCXX} c m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/04/29 10:58:03 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:38 sthen Exp $
 
 COMMENT=	dynamic .signature generator
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://signify.sourceforge.net/
 REVISION =	0
 
 # Public domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=signify/}
 

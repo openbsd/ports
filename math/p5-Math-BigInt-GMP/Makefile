@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:44 sthen Exp $
 
 COMMENT=	use the GMP library for Math::BigInt routines
 
@@ -8,7 +8,7 @@ REVISION =	0
 CATEGORIES=	math
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c gmp>=6 perl
 

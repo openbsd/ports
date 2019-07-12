@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/01/24 17:10:55 giovanni Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:37 sthen Exp $
 
 COMMENT=	Sender-Policy-Framework queries in Python
 
@@ -11,7 +11,7 @@ CATEGORIES=	mail
 HOMEPAGE=	http://bmsi.com/python/milter.html
 
 # Python
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pymilter/}
 

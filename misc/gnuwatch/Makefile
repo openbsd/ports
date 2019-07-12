@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/20 20:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:50 sthen Exp $
 
 COMMENT=		GNU watch command
 
@@ -12,7 +12,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 HOMEPAGE=		http://procps.sourceforge.net/
 
 # GPLv2/LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		curses c
 

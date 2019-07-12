@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2019/05/20 22:15:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.66 2019/07/12 20:47:00 sthen Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
@@ -27,7 +27,7 @@ HOMEPAGE =	http://hugin.sourceforge.net/
 MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU Half Iex IlmImf IlmThread
 WANTLIB += Imath X11 boost_filesystem-mt boost_system-mt c exiv2

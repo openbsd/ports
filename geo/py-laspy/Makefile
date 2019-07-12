@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:55 sthen Exp $
 
 COMMENT =		library for reading, modifying and creating LAS LiDAR files
 
@@ -10,7 +10,7 @@ REVISION=		0
 CATEGORIES=		geo devel textproc
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES=		lang/python
 

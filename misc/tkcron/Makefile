@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/11/09 18:22:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:54 sthen Exp $
 
 COMMENT =	Tk frontend to crontab
 
@@ -7,7 +7,7 @@ REVISION =	1
 CATEGORIES =	misc 
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	ftp://ftp.tcl.tk/pub/tcl/mirror/ftp.procplace.com/alcatel/code/
 EXTRACT_SUFX =	.tcl.gz

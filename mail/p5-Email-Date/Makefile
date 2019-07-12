@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:31 sthen Exp $
 
 COMMENT= 	find and format date headers
 
@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Time-TimeDate \
 		mail/p5-Email-Abstract \

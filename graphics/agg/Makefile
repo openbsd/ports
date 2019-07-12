@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/19 11:26:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:46:56 sthen Exp $
 
 COMMENT=	anti-grain geometry graphics library
 
@@ -13,7 +13,7 @@ CATEGORIES=	graphics
 HOMEPAGE=	http://www.antigrain.com/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 freetype iconv m sndio usbhid xcb z SDL>=6 ${COMPILER_LIBCXX} pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.169 2019/05/08 18:52:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.170 2019/07/12 20:46:58 sthen Exp $
 
 COMMENT=		GNOME document viewer
 
@@ -18,7 +18,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0

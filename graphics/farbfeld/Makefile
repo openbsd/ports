@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/28 16:31:12 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:58 sthen Exp $
 
 COMMENT =	lossless, uncompressed graphics format
 DISTNAME =	farbfeld-4
@@ -8,7 +8,7 @@ HOMEPAGE =	https://tools.suckless.org/farbfeld
 MAINTAINER =	Kaashif Hymabaccus <kaashif@kaashif.co.uk>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c jpeg png
 

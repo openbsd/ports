@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/02/19 18:49:01 feinerer Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:03 sthen Exp $
 
 COMMENT=		V4L compatible video application
 
@@ -7,7 +7,7 @@ REVISION=		6
 CATEGORIES=		graphics x11
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=	http://mxhaard.free.fr/
 MASTER_SITES=	${HOMEPAGE}/spca50x/Investigation/uvc/

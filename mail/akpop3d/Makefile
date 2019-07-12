@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/05/22 20:03:43 giovanni Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:24 sthen Exp $
 
 COMMENT=	small and secure POP3 daemon
 
@@ -8,7 +8,7 @@ CATEGORIES=	mail
 HOMEPAGE=	http://www.synflood.at/akpop3d.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c crypto ssl
 
 MASTER_SITES=	http://www.synflood.at/akpop3d/ \

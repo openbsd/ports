@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/10/30 20:21:11 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:15 sthen Exp $
 
 COMMENT =	large dictionary for the SKK system
 
@@ -9,7 +9,7 @@ CATEGORIES =	japanese
 HOMEPAGE =	http://openlab.ring.gr.jp/skk/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://distfiles.bsdfrog.org/
 

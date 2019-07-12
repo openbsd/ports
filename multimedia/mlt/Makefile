@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/05/10 15:57:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:57 sthen Exp $
 
 COMMENT-main =		multimedia transformations framework
 COMMENT-gpl2 =		GPLv2-licensed modules for mlt
@@ -19,7 +19,7 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2+, LGPLv2.1+
 # Actually, qimage module could be under GPLv3+ if one more object
 # file gets included, see --enable-gpl3 configure option.
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB-main += ${COMPILER_LIBCXX} SDL SDL2 SDL_image X11 Xcomposite
 WANTLIB-main += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender

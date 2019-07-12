@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2015/03/16 18:07:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:47:21 sthen Exp $
 
 COMMENT=	MIT Object Tcl
 
@@ -13,7 +13,7 @@ REVISION=	0
 HOMEPAGE=	http://otcl-tclcl.sourceforge.net/otcl/
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES +=	x11/tk
 WANTLIB=	X11 Xext c m ${MODTK_WANTLIB}

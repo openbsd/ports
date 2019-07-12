@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:42 sthen Exp $
 
 COMMENT =		solve vertex enumeration and convex hull problems
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://cgm.cs.mcgill.ca/~avis/C/lrs.html
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c gmp
 

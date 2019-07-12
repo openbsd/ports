@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/02/20 10:15:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:46:59 sthen Exp $
 
 COMMENT=	tools and library routines for working with GIF images
 
@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=giflib/}
 HOMEPAGE=	http://giflib.sourceforge.net/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m
 

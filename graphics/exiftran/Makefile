@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/05 17:28:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:58 sthen Exp $
 
 COMMENT=	command line utility to transform jpeg files
 
@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 HOMEPAGE=	https://www.kraxel.org/blog/linux/fbida/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c exif jpeg m pixman-1
 

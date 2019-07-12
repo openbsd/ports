@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.27 2017/11/21 00:13:01 naddy Exp $
+#	$OpenBSD: Makefile,v 1.28 2019/07/12 20:47:12 sthen Exp $
 
 COMMENT=	ZBar barcode reader
 DISTNAME=	zbar-0.10
@@ -16,7 +16,7 @@ HOMEPAGE=	http://zbar.sourceforge.net/
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # LGPL 2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xcomposite
 WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xv

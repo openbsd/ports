@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2019/05/27 20:49:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.121 2019/07/12 20:47:26 sthen Exp $
 
 PORTROACH=		limitw:1,even
 
@@ -19,7 +19,7 @@ HOMEPAGE=		https://www.cyrusimap.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # CMU - see COPYING file in package
-PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c com_err crypto icudata icuuc jansson m pcre pcreposix
 WANTLIB += pthread sasl2 sqlite3 ssl ${COMPILER_LIBCXX} uuid z

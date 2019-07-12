@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/04 01:18:58 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:53 sthen Exp $
 
 COMMENT=		produce sprite animations using ASCII art
 
@@ -7,7 +7,7 @@ CATEGORIES=		misc
 REVISION=		0
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

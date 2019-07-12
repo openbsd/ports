@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/13 23:16:05 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:43 sthen Exp $
 
 COMMENT =		library for nonlinear optimization
 
@@ -13,7 +13,7 @@ CATEGORIES =		math
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # LGPL 2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
 

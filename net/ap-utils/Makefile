@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/21 09:34:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:59 sthen Exp $
 
 COMMENT=	Atmel/NWN wireless access point configuration tools
 
@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tar.bz2
 HOMEPAGE=	http://ap-utils.polesye.net/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv intl curses menu
 

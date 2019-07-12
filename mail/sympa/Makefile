@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2019/05/20 22:15:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2019/07/12 20:47:38 sthen Exp $
 
 COMMENT =	mailing list manager with web interface
 
@@ -11,7 +11,7 @@ CATEGORIES =	mail www
 HOMEPAGE =	http://www.sympa.org
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/distribution/ \
 			${HOMEPAGE}/distribution/old/

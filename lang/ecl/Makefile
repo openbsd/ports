@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:47:17 sthen Exp $
 
 COMMENT =	embeddable common-lisp
 CATEGORIES =	lang
@@ -17,7 +17,7 @@ SUBST_VARS =	V
 EXTRACT_SUFX =	.tgz
 
 # GPLv2 or later
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}static/files/release/
 

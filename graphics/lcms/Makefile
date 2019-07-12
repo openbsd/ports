@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/11 19:59:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:47:01 sthen Exp $
 
 COMMENT =	color management library
 
@@ -14,7 +14,7 @@ LIB_DEPENDS +=	graphics/jpeg \
 		graphics/tiff
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 WANTLIB =		c m z jpeg tiff
 
 CONFIGURE_STYLE = 	gnu

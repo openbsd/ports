@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/02/24 08:33:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:02 sthen Exp $
 
 COMMENT=	library for decoding/generating MPEG TS/DVB PSI tables
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.videolan.org/developers/libdvbpsi.html
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE= gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/25 13:23:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:16 sthen Exp $
 
 COMMENT =	GNU Simula compiler
 DISTNAME =	cim-5.1
@@ -11,7 +11,7 @@ HOMEPAGE =	https://www.gnu.org/software/cim/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m
 

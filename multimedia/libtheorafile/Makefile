@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/01/06 21:26:03 thfr Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:56 sthen Exp $
 
 COMMENT =	Ogg Theora Video Decoder Library
 
@@ -17,7 +17,7 @@ HOMEPAGE =	https://github.com/FNA-XNA/Theorafile
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # zlib
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ogg theoradec vorbis
 

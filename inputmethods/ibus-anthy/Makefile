@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/07/13 22:22:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:13 sthen Exp $
 
 COMMENT =	japanese input engine for ibus
 
@@ -14,7 +14,7 @@ CATEGORIES =	inputmethods japanese
 HOMEPAGE =	https://github.com/fujiwarat/ibus-anthy/wiki
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  anthy anthydic ffi glib-2.0 gobject-2.0 iconv intl m pcre
 WANTLIB += pthread

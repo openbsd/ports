@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:51 sthen Exp $
 
 COMMENT=	perl scripts for migrating system information to LDAP
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.padl.com/download/
 HOMEPAGE=	http://www.padl.com/OSS/MigrationTools.html
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	databases/openldap
 

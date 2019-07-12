@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/05/10 12:47:56 pea Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:28 sthen Exp $
 
 GH_ACCOUNT =    imapsync
 GH_PROJECT =    imapsync
@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # NO_LIMIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WRKDIST=	${WRKDIR}/imapsync-${DISTNAME}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/19 15:06:42 millert Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:59 sthen Exp $
 
 COMMENT=	handle GIF89a transparent option and interlace mode
 
@@ -8,7 +8,7 @@ REVISION=	0
 CATEGORIES=	graphics
 
 # BSD-like, badly worded
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/infosystems/misc/tools/

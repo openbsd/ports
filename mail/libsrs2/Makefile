@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/06/08 20:12:30 jung Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:28 sthen Exp $
 
 COMMENT =	SRS library
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://www.libsrs2.org/
 MAINTAINER =	Joerg Jung <jung@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

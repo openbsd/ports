@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/03/10 21:58:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:47:04 sthen Exp $
 
 COMMENT=	collection of C routines to decode MPEG movies
 
@@ -9,7 +9,7 @@ SHARED_LIBS=	mpeg	13.1
 CATEGORIES=	graphics
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	ftp://ftp.bic.mni.mcgill.ca/pub/mpeg/ \
 		http://starship.python.net/~gward/mpeglib/

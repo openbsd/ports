@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:08 sthen Exp $
 
 COMMENT=	lightweight image viewer
 
@@ -11,7 +11,7 @@ CATEGORIES=	graphics x11
 HOMEPAGE=	http://www.shallowsky.com/software/pho/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0

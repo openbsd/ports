@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/08/05 05:44:10 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:43 sthen Exp $
 
 COMMENT =		nonogram solver library
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://www.lancs.ac.uk/~simpsons/software/pkg-nonowimp
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://www.lancs.ac.uk/~simpsons/archives/
 

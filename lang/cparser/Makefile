@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/24 02:12:35 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:16 sthen Exp $
 
 # Depends on devel/libfirm
 ONLY_FOR_ARCHS =	amd64 arm i386
@@ -17,7 +17,7 @@ HOMEPAGE =	https://pp.ipd.kit.edu/firm/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c firm
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2019/06/13 15:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2019/07/12 20:47:41 sthen Exp $
 
 COMMENT-main=	graph drawing software
 
@@ -44,7 +44,7 @@ HOMEPAGE=	http://www.graphviz.org/
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # Eclipse Public License v1.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xft Xi Xinerama Xmu Xpm Xrandr Xrender

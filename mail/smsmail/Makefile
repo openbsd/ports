@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/16 16:46:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:38 sthen Exp $
 
 COMMENT=	LDAP enabled MDA to deliver mails as SMS
 
@@ -8,7 +8,7 @@ REVISION=	5
 CATEGORIES=	mail
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c pthread ldap_r>=8 lber>=8
 

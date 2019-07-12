@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/09 17:05:42 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:32 sthen Exp $
 
 COMMENT=	easy MIME message handling
 
@@ -9,7 +9,7 @@ CATEGORIES=	mail
 EPOCH=		0
 
 # Same as Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Module-Runtime \
 		mail/p5-Email-Address-XS \

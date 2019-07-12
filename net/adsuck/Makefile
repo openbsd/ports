@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/09/04 12:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:47:58 sthen Exp $
 
 COMMENT=		DNS relay for ad blocking
 
@@ -14,7 +14,7 @@ HOMEPAGE=		https://github.com/conformal/adsuck/wiki
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c event_core event_extra ldns pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/06/25 20:25:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:56 sthen Exp $
 
 COMMENT=	ICC compatible color management system
 
@@ -14,7 +14,7 @@ CATEGORIES=	graphics sysutils
 HOMEPAGE=	http://www.argyllcms.com/
 
 # AGPLv3 (GNU Affero Public License)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xinerama Xrandr Xss Xxf86vm c jpeg
 WANTLIB += m png pthread ssl tiff z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/03/08 20:00:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:47:42 sthen Exp $
 
 COMMENT=	data viewing/plotting tool
 
@@ -18,7 +18,7 @@ HOMEPAGE=	https://kst-plot.kde.org/
 MAINTAINER=	KDE porting team <openbsd-kde@googlegroups.com>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Widgets Qt5Xml c m

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/06/11 00:38:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:16 sthen Exp $
 
 COMMENT =		Common Lisp dialect for the Java Virtual Machine
 V =			1.5.0
@@ -14,7 +14,7 @@ HOMEPAGE =		http://common-lisp.net/project/armedbear/
 MAINTAINER =		Timo Myyra <timo.myyra@bittivirhe.fi>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/releases/$V/
 

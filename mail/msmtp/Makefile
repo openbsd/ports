@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/02/18 19:43:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2019/07/12 20:47:30 sthen Exp $
 
 COMMENT =		SMTP plugin for MUAs
 
@@ -9,7 +9,7 @@ REVISION =		1
 HOMEPAGE =		https://marlam.de/msmtp/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =  c crypto iconv idn intl ssl
 

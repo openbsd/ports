@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2019/07/12 20:47:36 sthen Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -32,7 +32,7 @@ SHARED_LIBS +=  perditiondb_postgresql       0.0  # .0.0
 
 # GPLv2+ (included COPYING is v3, but all files with a
 # copyright claim specify version 2 or above).
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}download/${DISTVER}/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2018/06/23 19:53:36 schwarze Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:47:41 sthen Exp $
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
@@ -9,7 +9,7 @@ CATEGORIES=	math
 HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c m z
 
 GRACE_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/ \

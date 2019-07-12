@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/03 08:18:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:57 sthen Exp $
 
 COMMENT =	FFmpeg-based Qt multimedia framework
 
@@ -17,7 +17,7 @@ CATEGORIES =	multimedia
 HOMEPAGE =	https://www.qtav.org/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL
 WANTLIB += Qt5Qml Qt5Quick Qt5Widgets X11 Xext Xv ass avcodec

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/12/03 21:24:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:49 sthen Exp $
 # Original from: John Walker http://www.fourmilab.ch/random/
 
 CATEGORIES=		misc
@@ -17,7 +17,7 @@ ALL_TARGET=		ent
 MAKE_FLAGS=		CFLAGS="${CFLAGS}" CC="${CC}"
 
 # Public Domain; see ent.html
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m
 

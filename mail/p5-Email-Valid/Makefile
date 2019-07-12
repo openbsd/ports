@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/05/11 14:51:15 benoit Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:33 sthen Exp $
 
 COMMENT=	check validity of Internet email addresses
 
@@ -8,7 +8,7 @@ DISTNAME =	Email-Valid-1.202
 CATEGORIES=	mail
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	mail/p5-Mail-Tools>=1.67 \
 		devel/p5-IO-CaptureOutput \

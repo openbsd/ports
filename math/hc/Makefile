@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/01/22 21:17:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:41 sthen Exp $
 
 COMMENT=	multi-radix integer desk calculator
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.geocities.com/connorbd/software/hc.html
 MASTER_SITES=	http://www.geocities.com/connorbd/software/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 EXTRACT_SUFX=	.tgz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2019/05/20 22:15:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.77 2019/07/12 20:47:01 sthen Exp $
 
 COMMENT =	SVG vector drawing application
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://www.inkscape.org/
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2 and LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Magick++-6.Q16 MagickCore-6.Q16
 WANTLIB += MagickWand-6.Q16 SM X11 Xcomposite Xcursor Xdamage

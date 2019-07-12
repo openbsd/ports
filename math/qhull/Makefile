@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/06/14 07:30:48 feinerer Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:46 sthen Exp $
 
 COMMENT =		computing the convex hull
 
@@ -12,7 +12,7 @@ CATEGORIES =		math
 HOMEPAGE =		http://www.qhull.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m
 

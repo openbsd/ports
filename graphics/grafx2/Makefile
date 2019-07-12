@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/01/18 11:24:00 fcambus Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:00 sthen Exp $
 
 COMMENT =	bitmap paint program inspired by Deluxe Paint and Brilliance
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://pulkomandy.tk/projects/GrafX2
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	SDL2 SDL2_image X11 c iconv m png tiff z ${MODLUA_WANTLIB}
 

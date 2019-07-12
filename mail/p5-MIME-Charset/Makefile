@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/12 14:23:22 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:33 sthen Exp $
 
 COMMENT =	charset Informations for MIME
 
@@ -6,7 +6,7 @@ DISTNAME =	MIME-Charset-1.012.2
 CATEGORIES =	mail
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*

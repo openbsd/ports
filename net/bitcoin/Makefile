@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/06/24 20:56:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:59 sthen Exp $
 
 COMMENT =		P2P payment system
 
@@ -18,7 +18,7 @@ HOMEPAGE =		https://www.bitcoin.org/
 MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_chrono-mt boost_filesystem
 WANTLIB += boost_system boost_system-mt boost_thread-mt c crypto

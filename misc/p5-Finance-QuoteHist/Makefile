@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/20 19:56:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:52 sthen Exp $
 
 COMMENT =	module to obtain historical financial quotes from exchanges
 
@@ -8,7 +8,7 @@ DISTNAME =	Finance-QuoteHist-1.24
 CATEGORIES =	misc
 
 # GPL/Artistic License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	converters/p5-DateManip \

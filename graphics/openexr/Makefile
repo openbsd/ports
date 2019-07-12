@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:47:04 sthen Exp $
 
 COMMENT-main=	high dynamic range image format
 COMMENT-tools=	image viewing tools for OpenEXR
@@ -22,7 +22,7 @@ HOMEPAGE=	http://www.openexr.com/
 
 # Modified BSD license
 # `name of ILM not to be used for advertizing without written agreement'
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=openexr/}
 

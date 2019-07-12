@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/02 13:13:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:40 sthen Exp $
 
 COMMENT=	library for handling FITS data
 CATEGORIES=	math graphics devel
@@ -15,7 +15,7 @@ MASTER_SITES=	https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/
 
 # Mostly BSD-style, with two chunks of GPL code
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto curl m nghttp2 ssl z
 

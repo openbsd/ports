@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/06/22 00:03:31 gsoares Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:28 sthen Exp $
 
 COMMENT=		remote IMAP filtering utility
 
@@ -14,7 +14,7 @@ CATEGORIES=		mail
 MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 
 # MIT/X
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto m ssl pcre ${MODLUA_WANTLIB}
 

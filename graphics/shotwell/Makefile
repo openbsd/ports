@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2019/04/25 08:15:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2019/07/12 20:47:10 sthen Exp $
 
 COMMENT =		digital photo organizer
 
@@ -14,7 +14,7 @@ SHARED_LIBS += shotwell-authenticator    0.0 # 0.30.0
 SHARED_LIBS += shotwell-plugin-dev-1.0   0.0 # 0.30.0
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject exif gck-1 gcr-base-3
 WANTLIB += gcr-ui-3 gdata gdk-3 gdk_pixbuf-2.0 gee-0.8 gexiv2

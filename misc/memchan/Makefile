@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/06/02 19:54:15 schwarze Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:51 sthen Exp $
 
 COMMENT =		in-memory channels for Tcl
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://memchan.sourceforge.net/
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

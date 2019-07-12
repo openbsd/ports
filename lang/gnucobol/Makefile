@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/20 22:15:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:18 sthen Exp $
 
 COMMENT=	COBOL compiler, formerly known as OpenCOBOL
 
@@ -15,7 +15,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # compiler: GPLv3+
 # run-time library: LGPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses db gmp iconv intl m
 

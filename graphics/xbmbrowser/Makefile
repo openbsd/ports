@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:11 sthen Exp $
 
 COMMENT=	view complete directories of X bitmaps and X pixmaps
 
@@ -11,7 +11,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=utilities/}
 
 # Public Domain-ish
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c
 

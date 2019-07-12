@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:14 sthen Exp $
 
 COMMENT=	japanese handwriting recognition library
 
@@ -13,7 +13,7 @@ CATEGORIES=	inputmethods japanese
 SHARED_LIBS +=  tomoe                1.0      # 1.0
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  ffi glib-2.0 gmodule-2.0 gobject-2.0 iconv intl pcre pthread
 

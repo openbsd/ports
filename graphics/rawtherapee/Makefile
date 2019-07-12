@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/04/28 09:03:13 kirby Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:47:09 sthen Exp $
 
 # http://rawpedia.rawtherapee.com/The_Floating_Point_Engine
 ONLY_FOR_ARCHS = 	amd64
@@ -14,7 +14,7 @@ HOMEPAGE =		https://www.rawtherapee.com/
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 atk-1.0 atkmm-1.6 c cairo cairo-gobject cairomm-1.0
 WANTLIB += canberra canberra-gtk3 expat fftw3f gdk-3 gdk_pixbuf-2.0

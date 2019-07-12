@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/06/13 15:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:14 sthen Exp $
 
 COMMENT =	japanese-english dictionary program
 
@@ -12,7 +12,7 @@ CATEGORIES =	japanese
 HOMEPAGE =	http://sourceforge.net/projects/gwaei/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo

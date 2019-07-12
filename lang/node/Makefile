@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2019/06/25 20:25:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2019/07/12 20:47:21 sthen Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -28,7 +28,7 @@ HOMEPAGE =		http://nodejs.org/
 MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}dist/${NODE_VERSION}/
 

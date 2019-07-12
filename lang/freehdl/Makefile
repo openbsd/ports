@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/12/22 09:39:03 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:17 sthen Exp $
 
 COMMENT=	open-source (C++ generating) VHDL simulator
 
@@ -16,7 +16,7 @@ SHARED_LIBS +=  freehdl-vaul              0.0 # 0.0
 HOMEPAGE=	http://www.freehdl.seul.org/
 
 # (L)GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/~enaroska/
 

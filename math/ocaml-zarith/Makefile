@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/04 12:51:15 chrisz Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:43 sthen Exp $
 
 COMMENT =	arbitrary precision integer and rational arithmetic
 CATEGORIES =	math
@@ -16,7 +16,7 @@ MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
 
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ocaml
 

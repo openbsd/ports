@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/05/20 22:15:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:47:54 sthen Exp $
 
 COMMENT =	Red Hat package manager
 
@@ -9,7 +9,7 @@ SHARED_LIBS =	rpm		0.1 \
 CATEGORIES =	misc archivers emulators
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  bz2 c iconv intl popt z
 

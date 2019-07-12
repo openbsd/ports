@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/07/24 12:18:01 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:02 sthen Exp $
 
 COMMENT =	encoder/decoder implementation for DEC SIXEL graphics
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://github.com/saitoha/libsixel
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c jpeg m png z
 

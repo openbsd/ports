@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:35 sthen Exp $
 
 COMMENT =		perl SPF test-suite class
 
@@ -7,7 +7,7 @@ PKGNAME =		p5-${DISTNAME:S/-v/-/}
 CATEGORIES =		mail
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

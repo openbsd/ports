@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2019/05/20 22:15:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.92 2019/07/12 20:47:57 sthen Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://www.bunkus.org/videotools/mkvtoolnix/
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC boost_filesystem-mt boost_regex-mt
 WANTLIB += boost_system-mt c cmark ebml iconv intl m magic matroska

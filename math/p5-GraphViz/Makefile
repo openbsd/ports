@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:44 sthen Exp $
 
 COMMENT=	perl interface to the graphviz graphing tool
 
@@ -9,7 +9,7 @@ REVISION=	2
 CATEGORIES=	math
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-IPC-Run \

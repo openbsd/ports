@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/06/13 16:38:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:01 sthen Exp $
 
 COMMENT=	image processing and analysis library
 
@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 HOMEPAGE=	http://www.leptonica.com/
 
 # BSD-like (see leptonica-license.txt in WRKSRC)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c gif jpeg m openjp2 png pthread tiff webp z
 

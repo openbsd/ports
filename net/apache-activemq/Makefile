@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/06/11 00:38:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:47:59 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -13,7 +13,7 @@ CATEGORIES=	net
 HOMEPAGE=	https://activemq.apache.org/
 
 # Apache2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=activemq/${V}/}
 EXTRACT_SUFX=	-bin.tar.gz

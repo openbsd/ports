@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/01/22 11:22:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:47:23 sthen Exp $
 
 COMMENT =		Tool Command Language
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/12/03 13:05:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:47:01 sthen Exp $
 
 COMMENT =		color management library
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=  lcms2                1.2      # 2.8
 HOMEPAGE =		http://www.littlecms.com/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c jpeg m pthread tiff z
 

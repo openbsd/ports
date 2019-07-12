@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/15 12:04:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:47:36 sthen Exp $
 
 COMMENT =	Python interface to sendmail milter API
 
@@ -10,7 +10,7 @@ CATEGORIES =	mail
 HOMEPAGE =	http://www.bmsi.com/python/milter.html
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	milter ${MODPY_WANTLIB} pthread
 

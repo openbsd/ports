@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/05/15 21:16:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:47 sthen Exp $
 
 COMMENT=	Bible reading, browsing, and searching tool
 
@@ -9,7 +9,7 @@ CATEGORIES=	misc
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses readline
 

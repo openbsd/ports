@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:43 sthen Exp $
 
 COMMENT=		minimalistic Boolean satisfiability solver
 
@@ -17,7 +17,7 @@ HOMEPAGE=		http://minisat.se/
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=		c m ${COMPILER_LIBCXX} z
 

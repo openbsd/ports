@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/02/16 10:45:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:00 sthen Exp $
 
 COMMENT=		convert profilers output into a dot(1) graph
 
@@ -11,7 +11,7 @@ MODPY_EGG_VERSION=	${GH_TAGNAME}
 CATEGORIES=		graphics
 
 # LGPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

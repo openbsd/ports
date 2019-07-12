@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:23 sthen Exp $
 
 COMMENT =	HolyC transcompiler
 
@@ -15,7 +15,7 @@ HOMEPAGE =	https://www.github.com/jamesalbert/HolyC-for-Linux
 MAINTAINER =	Mike Larkin <mlarkin@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}

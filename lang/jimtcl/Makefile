@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/06/10 03:13:20 stu Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:19 sthen Exp $
 
 COMMENT =		small footprint implementation of Tcl
 
@@ -9,7 +9,7 @@ HOMEPAGE =		http://jim.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto execinfo m sqlite3 ssl z
 

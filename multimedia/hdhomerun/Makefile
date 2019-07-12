@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/07/19 21:09:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:47:56 sthen Exp $
 
 V=		20140604
 COMMENT=	HDHomeRun Config CLI utility & firmware
@@ -21,7 +21,7 @@ MASTER_SITES=	http://download.silicondust.com/hdhomerun/
 HOMEPAGE=	http://www.silicondust.com/
 
 # LGPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 ALL_TARGET=	hdhomerun_config
 NO_TEST=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2019/07/12 20:46:56 sthen Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -18,7 +18,7 @@ SHARED_LIBS+=	${_lib} ${SO_VERSION}
 HOMEPAGE=	http://www.aqsis.org/
 
 # GPLv2 - LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aqsis/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:57 sthen Exp $
 
 COMMENT=		ogg mux/demuxer
 DISTNAME=		ogmtools-1.5
@@ -10,7 +10,7 @@ MASTER_SITES=		${HOMEPAGE}
 HOMEPAGE=		http://www.bunkus.org/videotools/ogmtools/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX} ogg dvdread vorbis vorbisenc
 

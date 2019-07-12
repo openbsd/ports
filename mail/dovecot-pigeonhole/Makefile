@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2019/05/02 22:06:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2019/07/12 20:47:26 sthen Exp $
 
 COMMENT=	Sieve mail filtering for Dovecot
 
@@ -18,7 +18,7 @@ HOMEPAGE=	https://pigeonhole.dovecot.org/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	lib/dovecot/dovecot lib/dovecot/dovecot-lda \
 		lib/dovecot/dovecot-login lib/dovecot/dovecot-storage \

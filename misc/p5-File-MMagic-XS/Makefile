@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/03 18:38:55 bluhm Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:52 sthen Exp $
 
 COMMENT =	guess file type with XS (a la mod_mime_magic)
 
@@ -8,7 +8,7 @@ CATEGORIES =	misc
 REVISION =	2
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += c perl
 

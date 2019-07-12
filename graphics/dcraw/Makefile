@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/06/02 13:54:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:46:57 sthen Exp $
 
 COMMENT =	digital camera RAW format conversion tool
 
@@ -10,7 +10,7 @@ HOMEPAGE =	http://www.cybercom.net/~dcoffin/dcraw/
 MASTER_SITES =	http://cybercom.net/~dcoffin/dcraw/archive/
 
 # Some code is completely free, some is under the GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c jasper jpeg lcms2 m
 

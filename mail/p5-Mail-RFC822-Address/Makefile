@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/12/29 07:24:49 florian Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:34 sthen Exp $
 
 COMMENT =	validate email addresses according to RFC822
 
@@ -9,6 +9,6 @@ CATEGORIES =	mail
 REVISION =	0
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/07/27 09:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:08 sthen Exp $
 
 CATEGORIES =	graphics print
 COMMENT =	Qt-based barcode abstraction library
@@ -13,7 +13,7 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/prison/${VERSION}/src/}
 EXTRACT_SUFX =	.tar.gz
 
 # BSDL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	x11/kde4
 MODKDE4_USE =

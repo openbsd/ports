@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/06/29 22:16:16 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:46:58 sthen Exp $
 
 PORTROACH=	skipv:0.98.11_01
 
@@ -12,7 +12,7 @@ CATEGORIES=	graphics audio multimedia perl5
 HOMEPAGE=	http://www.exit1.org/dvdrip/
 
 # Artistic and GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/

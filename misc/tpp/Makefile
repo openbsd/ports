@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/04/29 00:42:08 jeremy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:54 sthen Exp $
 
 COMMENT =		text-based presentation program
 
@@ -10,7 +10,7 @@ CATEGORIES =		misc productivity
 HOMEPAGE =		http://synflood.at/tpp.html
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://synflood.at/tpp/
 

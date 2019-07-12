@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/21 10:07:14 pirofti Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:31 sthen Exp $
 
 COMMENT =	RFC close address list parsing
 
@@ -8,7 +8,7 @@ DISTNAME =	Email-Address-List-0.06
 CATEGORIES =	mail
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS=	devel/p5-Module-Install
 

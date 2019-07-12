@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/04/27 10:16:27 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:27 sthen Exp $
 
 COMMENT=	fetch, filter and deliver mail
 
@@ -9,7 +9,7 @@ CATEGORIES=	mail
 MAINTAINER=	Nicholas Marriott <nicm@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB= c crypto pcre ssl z tdb>=3.0
 

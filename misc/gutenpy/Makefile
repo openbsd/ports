@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 16:12:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:47:50 sthen Exp $
 
 COMMENT=		text reader and catalog browser for Project Gutenberg
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://gutenpy.sourceforge.net/
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gutenpy/}
 EXTRACT_SUFX=		.zip

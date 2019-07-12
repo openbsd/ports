@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/06/13 15:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:11 sthen Exp $
 
 COMMENT=		fast and simple image viewer
 
@@ -10,7 +10,7 @@ CATEGORIES=		graphics x11
 HOMEPAGE=		http://siyanpanayotov.com/project/viewnior/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo exiv2 expat ffi fontconfig

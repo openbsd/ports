@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/15 12:04:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:29 sthen Exp $
 
 COMMENT =	mail client with encryption and privacy features
 PKGNAME =	${DISTNAME:L}
@@ -13,7 +13,7 @@ CATEGORIES =	mail
 MAINTAINER =	Solene Rapenne <solene@perso.pw>
 
 # AGPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 

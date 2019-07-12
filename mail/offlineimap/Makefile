@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/06/18 20:32:37 remi Exp $
+# $OpenBSD: Makefile,v 1.55 2019/07/12 20:47:31 sthen Exp $
 
 COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.offlineimap.org/
 MAINTAINER=	Remi Locherer <remi@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_TEST=	Yes
 

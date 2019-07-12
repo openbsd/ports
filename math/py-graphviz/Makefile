@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/10 18:21:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:46 sthen Exp $
 
 COMMENT =		simple Python interface for Graphviz
 
@@ -11,7 +11,7 @@ CATEGORIES =		math
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 EXTRACT_SUFX =		.zip
 MODULES =		lang/python

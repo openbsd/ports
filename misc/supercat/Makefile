@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/04 01:18:59 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:54 sthen Exp $
 
 COMMENT=	colorize specific patterns in input
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://supercat.nosredna.net/
 MASTER_SITES=	${HOMEPAGE}
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

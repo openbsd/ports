@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:45 sthen Exp $
 
 COMMENT =	generate Math::Symbolic parser extensions
 
@@ -9,7 +9,7 @@ HOMEPAGE =	http://search.cpan.org/~smueller/Math-SymbolicX-ParserExtensionFactor
 REVISION =	0
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 CPAN_AUTHOR =	SMUELLER
 

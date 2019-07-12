@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2019/05/17 16:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.121 2019/07/12 20:47:25 sthen Exp $
 
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
@@ -23,7 +23,7 @@ HOMEPAGE=		http://www.claws-mail.org/
 MAINTAINER=		Daniel Jakots <obsd@chown.me>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://www.claws-mail.org/releases/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/05/10 02:20:22 schwarze Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:47:24 sthen Exp $
 
 COMMENT=	biff-type program, designed to match AfterStep
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://asmail.sourceforge.net/
 LIB_DEPENDS=	graphics/jpeg
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 Xext Xpm Xt c jpeg>=62
 

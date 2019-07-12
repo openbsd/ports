@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/07/30 22:53:10 stu Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:17 sthen Exp $
 
 COMMENT =	Tcl implementation for the CLR
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://eagle.to/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=eagle/} \
 		https://download.eagle.to/releases/${V}.${P}/ \

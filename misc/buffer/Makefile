@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/04/13 21:21:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:48 sthen Exp $
 
 COMMENT=	buffer sporadic I/O for faster tape and pipe throughput
 
@@ -7,7 +7,7 @@ REVISION=	1
 CATEGORIES=	misc
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

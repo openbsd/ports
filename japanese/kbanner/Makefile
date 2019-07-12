@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:15 sthen Exp $
 
 COMMENT=	display kanji files in large letters
 
@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tar.Z
 
 HOMEPAGE=	http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/program.html
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 ALL_TARGET=	kbanner

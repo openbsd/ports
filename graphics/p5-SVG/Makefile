@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/04/28 14:32:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:47:07 sthen Exp $
 
 COMMENT=	Scalable Vector Graphics (SVG) in perl
 
@@ -6,7 +6,7 @@ DISTNAME=	SVG-2.84
 CATEGORIES=	graphics devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2019/06/13 15:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2019/07/12 20:47:57 sthen Exp $
 
 COMMENT=		tools to edit/modify/encode video streams
 
@@ -17,7 +17,7 @@ SHARED_LIBS=		lavfile		5.0 \
 HOMEPAGE=		http://mjpeg.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += SDL SDL_gfx X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo dv expat

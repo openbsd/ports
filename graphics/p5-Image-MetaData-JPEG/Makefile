@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/03 13:44:26 danj Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:07 sthen Exp $
 
 COMMENT=	access and modify JPEG metadata
 
@@ -9,7 +9,7 @@ REVISION=	0
 CATEGORIES=	graphics
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 pre-configure:
 	@find ${WRKSRC} -name '*.orig' -print0 | xargs -0 rm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/05/23 20:28:34 bluhm Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:53 sthen Exp $
 
 COMMENT =	open POSIX test suite
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://posixtest.sourceforge.net/
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m pthread
 

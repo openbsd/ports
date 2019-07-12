@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2018/06/29 22:16:15 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2019/07/12 20:46:56 sthen Exp $
 
 COMMENT =	GPS track manager
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://viking.sourceforge.net/
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 bz2 c cairo crypto curl expat fontconfig

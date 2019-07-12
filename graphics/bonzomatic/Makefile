@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/04/22 08:55:50 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:56 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -21,7 +21,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # kiss_fft:	Unlicense
 # min_al:	public domain
 # stb:		public domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} GL X11 Xcursor Xinerama Xrandr Xxf86vm c m
 

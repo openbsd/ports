@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2019/06/13 16:38:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.87 2019/07/12 20:47:04 sthen Exp $
 
 COMMENT=	toolkit for manipulation and conversion of graphic images
 
@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
 REVISION=	1
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 c iconv jasper jbig jpeg lzma m png pthread tiff xml2 z
 

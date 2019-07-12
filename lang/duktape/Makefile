@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/08/06 10:26:34 fcambus Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:17 sthen Exp $
 
 COMMENT =	embeddable JavaScript engine
 
@@ -15,7 +15,7 @@ HOMEPAGE =	http://duktape.org/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c m
 

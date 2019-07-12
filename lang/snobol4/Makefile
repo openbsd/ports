@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/08 18:52:46 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:23 sthen Exp $
 
 COMMENT =	CSNOBOL4 suite including interpreter, debugger and utilities
 DISTNAME =	snobol4-2.0
@@ -9,7 +9,7 @@ HOMEPAGE =	http://www.snobol4.org/csnobol4/curr/
 MAINTAINER =	STeve Andre <steve@wb8wsf.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c ffi m ncurses readline sqlite3 util
 

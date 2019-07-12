@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/22 13:11:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:28 sthen Exp $
 
 COMMENT=		hashcash anti-spam / denial of service counter-measure tool
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.hashcash.org/
 MAINTAINER=		Armin Wolfermann <armin@wolfermann.org>
 
 # public domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

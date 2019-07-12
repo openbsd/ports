@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/06/13 15:54:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:57 sthen Exp $
 
 COMMENT =		tools for handling data matrix barcodes
 
@@ -13,7 +13,7 @@ MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libdmtx/}
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE MagickCore-6.Q16 MagickWand-6.Q16
 WANTLIB += SM X11 Xext Xt bz2 c djvulibre dmtx expat fftw3 fontconfig

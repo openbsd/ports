@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/20 22:15:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:46:58 sthen Exp $
 
 COMMENT=	manipulate image meta-data such as exif and ipct
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=  exiv2                11.0      # 14.0
 HOMEPAGE=	http://www.exiv2.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c expat iconv intl m z
 

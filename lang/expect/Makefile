@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2019/05/09 21:13:26 danj Exp $
+# $OpenBSD: Makefile,v 1.72 2019/07/12 20:47:17 sthen Exp $
 
 COMMENT =	sophisticated scripter based on Tcl/Tk
 
@@ -12,7 +12,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=expect/}
 
 HOMEPAGE =	http://expect.nist.gov/
 # PD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c util m ${MODTCL_WANTLIB}
 

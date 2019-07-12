@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/15 12:04:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:55 sthen Exp $
 
 COMMENT =	high-level API and CLI on top of OGR
 BROKEN =	needs update to cope with gdal 3
@@ -13,7 +13,7 @@ CATEGORIES =	geo
 HOMEPAGE =	https://fiona.readthedocs.io
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 

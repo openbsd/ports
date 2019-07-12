@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/09/19 05:33:26 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:54 sthen Exp $
 
 COMMENT=	perl module for parsing OpenStreetMap (.osm) files
 
@@ -8,7 +8,7 @@ CATEGORIES=	geo
 RUN_DEPENDS=	geo/p5-Geo-Constants>=0.06 \
 		www/p5-HTML-Parser>=3.72
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # Perl
 MODULES=	cpan

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/05/02 08:12:56 benoit Exp $
+# $OpenBSD: Makefile,v 1.49 2019/07/12 20:46:59 sthen Exp $
 
 COMMENT =	creating & editing GIF images and animations
 
@@ -9,7 +9,7 @@ CATEGORIES =	graphics
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c ICE SM X11 m pthread
 

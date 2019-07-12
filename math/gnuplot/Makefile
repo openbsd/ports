@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2019/05/21 09:34:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2019/07/12 20:47:41 sthen Exp $
 
 COMMENT =	command-driven interactive function plotting program
 
@@ -15,7 +15,7 @@ MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # see Copyright in source
 # http://gnuplot.cvs.sourceforge.net/gnuplot/gnuplot/Copyright
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c cerf m curses ereadline ${COMPILER_LIBCXX} z
 

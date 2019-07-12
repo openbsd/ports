@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/05/08 17:41:49 schwarze Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:54 sthen Exp $
 
 COMMENT=	Convert invisible (binary) characters to a visible form
 
@@ -8,7 +8,7 @@ CATEGORIES=	misc
 
 EXTRACT_SUFX=	.tgz
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m
 

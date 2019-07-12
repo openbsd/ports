@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/05/19 19:58:51 danj Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:47:25 sthen Exp $
 
 COMMENT=		easy to use Bayesian spam filter
 DISTNAME=		bmf-0.9.4
@@ -7,7 +7,7 @@ CATEGORIES=		mail
 HOMEPAGE=		http://sourceforge.net/projects/bmf/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bmf/}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/02/28 01:52:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:47:17 sthen Exp $
 
 NOT_FOR_ARCHS =		aarch64
 
@@ -24,7 +24,7 @@ COMMENT =		GNU fortran 77 compiler
 CATEGORIES =		lang math
 MASTER_SITES =		https://spacehopper.org/mirrors/
 
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		devel/libf2c
 TEST_DEPENDS =		devel/dejagnu \

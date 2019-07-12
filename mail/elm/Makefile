@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/17 16:19:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:47:26 sthen Exp $
 
 COMMENT=	once-popular mail user agent
 
@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.ozone.fmi.fi/KEH/
 
 MAINTAINER=	Paul Janzen <pjanzen@foatdi.net>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses
 

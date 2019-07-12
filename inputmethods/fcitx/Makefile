@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/06/25 20:25:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:12 sthen Exp $
 
 COMMENT-main =	flexible input method framework
 COMMENT-gtk3 = 	fcitx for GTK+3
@@ -26,7 +26,7 @@ HOMEPAGE =	https://fcitx-im.org/
 MAINTAINER = 	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv2+ with plugin exception
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES =	-main -gtk3 -qt4
 

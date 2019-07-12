@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:23:53 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:36 sthen Exp $
 
 COMMENT=	Postfix log entry summarizer
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://jimsun.linxnet.com/postfix_contrib.html
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_TEST=	Yes
 

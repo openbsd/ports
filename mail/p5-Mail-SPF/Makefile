@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:35 sthen Exp $
 
 COMMENT =		perl oop implementation of Sender Policy Framework
 
@@ -10,7 +10,7 @@ CATEGORIES =		mail
 MAINTAINER =		Giovanni Bechis <giovanni@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

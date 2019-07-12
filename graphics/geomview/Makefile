@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:46:59 sthen Exp $
 
 COMMENT =		geometry viewer for OOGL file formats
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.geomview.org
 MAINTAINER =		Patsy <openbsd@ethernull.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SM X11 Xext Xft Xm Xmu Xrender Xt c expat fontconfig
 WANTLIB += freetype iconv jpeg m png ${COMPILER_LIBCXX} xcb z

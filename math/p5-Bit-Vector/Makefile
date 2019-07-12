@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/20 19:56:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:44 sthen Exp $
 
 COMMENT =	library of advanced math functions
 
@@ -10,7 +10,7 @@ REVISION =	0
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

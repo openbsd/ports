@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/02/18 06:09:30 pamela Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:04 sthen Exp $
 
 COMMENT=	OCR program for pnm files
 
@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 EXTRACT_SUFX=	.tar.lz
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m ${COMPILER_LIBCXX}
 

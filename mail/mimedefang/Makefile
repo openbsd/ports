@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2018/09/04 12:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2019/07/12 20:47:30 sthen Exp $
 
 COMMENT=	mailfilter to identify and mark spam
 
@@ -12,7 +12,7 @@ MASTER_SITES=	${HOMEPAGE}static/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m milter perl pthread
 

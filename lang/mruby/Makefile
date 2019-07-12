@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/04/29 00:42:08 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:20 sthen Exp $
 
 COMMENT =		lightweight, embeddable implementation of ruby
 
@@ -9,7 +9,7 @@ CATEGORIES =		lang
 HOMEPAGE =		https://github.com/mruby/mruby
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses m readline
 

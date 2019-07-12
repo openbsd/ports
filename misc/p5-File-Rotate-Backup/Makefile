@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/07 02:31:03 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:52 sthen Exp $
 
 COMMENT=		make backups of multiple directories and rotate them
 
@@ -7,7 +7,7 @@ REVISION=		1
 CATEGORIES=		misc
 
 # Artistic/GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

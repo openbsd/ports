@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/05/03 19:35:52 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:02 sthen Exp $
 
 COMMENT-main =		library for manipulating IPTC metadata
 COMMENT-python =	libiptcdata Python bindings
@@ -17,7 +17,7 @@ CATEGORIES =		graphics
 HOMEPAGE =		http://libiptcdata.sourceforge.net/
 
 # LGPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 cWANTLIB =		m util pthread
 WANTLIB-main = 		${cWANTLIB} c iconv intl

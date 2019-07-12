@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/24 16:26:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:01 sthen Exp $
 
 GH_ACCOUNT =		eXeC64
 GH_PROJECT =		imv
@@ -9,7 +9,7 @@ CATEGORIES =		graphics x11
 REVISION =		1
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 SDL2_ttf c fontconfig freeimage pthread
 

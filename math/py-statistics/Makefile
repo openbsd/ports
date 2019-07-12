@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/12/29 15:55:13 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:46 sthen Exp $
 
 COMMENT =		port of Python 3.4 statistics module to Python 2
 
@@ -10,7 +10,7 @@ CATEGORIES =		math
 HOMEPAGE =		https://github.com/digitalemagine/py-statistics
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODULES =		lang/python

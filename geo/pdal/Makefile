@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/28 19:35:14 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:55 sthen Exp $
 
 COMMENT =	translator library for point cloud formats
 
@@ -16,7 +16,7 @@ MASTER_SITES =	https://github.com/PDAL/PDAL/releases/download/1.9.1/
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cmake lang/python
 

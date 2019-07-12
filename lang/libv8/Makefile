@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:19 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -24,7 +24,7 @@ HOMEPAGE=	https://bugs.chromium.org/p/v8/
 MAINTAINER=	David Carlier <devnexen@gmail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://github.com/v8/v8/archive/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:46:56 sthen Exp $
 
 COMMENT=		library for powerful image loading capabilities
 
@@ -13,7 +13,7 @@ CATEGORIES=		graphics devel
 HOMEPAGE=		http://openil.sourceforge.net/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openil/}
 EXTRACT_SUFX=		.zip

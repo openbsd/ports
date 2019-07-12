@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/04/28 14:28:13 rpe Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:34 sthen Exp $
 
 COMMENT=	handle GnuPG-encrypted/signed messages
 
@@ -6,7 +6,7 @@ DISTNAME =	Mail-GnuPG-0.23
 CATEGORIES=	mail security
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	security/p5-GnuPG-Interface>=0.44 \
 		mail/p5-MIME-tools>=5.428

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2015/02/16 22:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:47:55 sthen Exp $
 
 COMMENT=	super simple digital timer for X11
 
@@ -9,7 +9,7 @@ CATEGORIES=	misc
 
 MASTER_SITES=	http://www.bsddiary.net/xtimer/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c
 

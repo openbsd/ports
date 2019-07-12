@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2019/02/21 22:37:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2019/07/12 20:47:56 sthen Exp $
 
 COMMENT=	library for reading and writing QuickTime files
 
@@ -12,7 +12,7 @@ SHARED_LIBS=	quicktime	5.1
 HOMEPAGE=	http://libquicktime.sourceforge.net/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL ICE SM X11 X11-xcb Xau Xaw Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender

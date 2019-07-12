@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:47:53 sthen Exp $
 
 COMMENT=	write a cross-platform Excel binary file
 
@@ -8,7 +8,7 @@ DISTNAME =	Spreadsheet-WriteExcel-2.40
 CATEGORIES=	misc
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-OLE-Storage_Lite \
 		devel/p5-Parse-RecDescent

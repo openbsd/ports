@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:47:28 sthen Exp $
 
 COMMENT=	mail purpose library
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.etpan.org/libetpan.html
 MAINTAINER=	Daniel Jakots <obsd@chown.me>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += crypto curl expat iconv m nghttp2 pthread sasl2 ssl ${COMPILER_LIBCXX} z
 

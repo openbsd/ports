@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/12/02 11:42:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:47:18 sthen Exp $
 
 BROKEN-i386=		various errors from gplc during build (segv, "fatal error", etc at various different points)
 
@@ -14,7 +14,7 @@ CATEGORIES=		lang
 HOMEPAGE=		http://www.gprolog.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m
 

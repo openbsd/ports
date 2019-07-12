@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2019/05/21 09:41:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.124 2019/07/12 20:46:59 sthen Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
@@ -46,7 +46,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		net/curl
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  ${COMPILER_LIBCXX}
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama

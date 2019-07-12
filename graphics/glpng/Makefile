@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/03/17 23:43:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:59 sthen Exp $
 
 COMMENT=	load PNG graphics files and bind them to an OpenGL texture
 
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.zip
 HOMEPAGE=	http://www.fifi.org/doc/libglpng-dev/glpng.html
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://mirrors.nycbug.org/pub/distfiles/
 

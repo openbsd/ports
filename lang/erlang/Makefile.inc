@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.18 2019/04/16 11:40:17 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.19 2019/07/12 20:47:17 sthen Exp $
 
 COMMENT ?=	real-time, concurrent and distributed functional language
 
@@ -7,7 +7,7 @@ CATEGORIES =	lang
 # Erlang 16/17: Erlang Public License
 #		http://www.erlang.org/EPLICENSE
 # Erlang 18:	Apachev2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 HOMEPAGE =	http://www.erlang.org/
 MASTER_SITES ?=	${HOMEPAGE}download/

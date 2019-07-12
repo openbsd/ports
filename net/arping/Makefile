@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2017/11/30 14:26:14 jca Exp $
+# $OpenBSD: Makefile,v 1.48 2019/07/12 20:47:59 sthen Exp $
 
 COMMENT =	ARP level ping utility
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://www.habets.pp.se/synscan/programs.php?prog=ARPing
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m pcap lib/libnet-1.1/net=11
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:11 sthen Exp $
 
 COMMENT =	interactive viewer for Graphviz dot graphs
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://github.com/jrfonseca/xdot.py
 MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}

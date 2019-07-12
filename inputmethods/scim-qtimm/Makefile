@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/20 22:15:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:47:14 sthen Exp $
 
 COMMENT=	scim plugin for qt
 
@@ -10,7 +10,7 @@ CATEGORIES=	inputmethods
 HOMEPAGE=	https://sourceforge.net/projects/scim/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 iconv intl m pthread scim-1.0 scim-x11utils-1.0
 WANTLIB += ${COMPILER_LIBCXX} xcb

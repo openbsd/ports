@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/16 16:46:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:56 sthen Exp $
 
 COMMENT =	game programming library for C/C++ developers
 
@@ -15,7 +15,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=alpng/}
 # bsd-like
 # "Altered source versions must be plainly marked as such
 #  and must not be misrepresented as being the original software."
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 USE_GMAKE =		Yes
 BUILD_DEPENDS +=	games/allegro

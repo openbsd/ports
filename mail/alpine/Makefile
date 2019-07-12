@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/05/21 09:34:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:47:24 sthen Exp $
 
 # XXX consider moving to https://repo.or.cz/alpine.git
 
@@ -45,7 +45,7 @@ CATEGORIES-pilot=	sysutils
 HOMEPAGE=		http://alpine.x10host.com/
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://alpine.x10host.com/alpine/release/
 

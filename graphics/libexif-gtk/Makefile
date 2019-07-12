@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/06/13 15:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:02 sthen Exp $
 
 COMMENT=	gtk+2 interface to libexif
 
@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 HOMEPAGE=	http://libexif.sourceforge.net/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 cairo exif expat ffi fontconfig freetype

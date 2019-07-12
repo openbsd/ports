@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2019/07/06 15:00:03 jca Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2019/07/12 20:47:17 sthen Exp $
 
 BROKEN ?=	needs an update for LLVM-8.0.0
 
@@ -15,6 +15,6 @@ GH_ACCOUNT ?=	flang-compiler
 # driver: BSD
 # flang: Apache 2.0
 # libpgmath: Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 NO_TEST ?=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/08/27 16:59:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:52 sthen Exp $
 
 COMMENT =	verify credit card pins
 
@@ -8,6 +8,6 @@ DISTNAME =	Business-CreditCard-0.36
 CATEGORIES =	misc
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

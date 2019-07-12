@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/12/22 14:30:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:58 sthen Exp $
 
 COMMENT=	optimise a list of route prefixes
 
@@ -8,7 +8,7 @@ CATEGORIES=	net
 
 MASTER_SITES=	${MASTER_SITE_ISC:=aggregate/}
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

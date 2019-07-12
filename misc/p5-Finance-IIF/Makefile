@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:52 sthen Exp $
 
 COMMENT=	parse and create IIF files for QuickBooks
 
@@ -9,6 +9,6 @@ REVISION=	1
 CATEGORIES=	misc
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

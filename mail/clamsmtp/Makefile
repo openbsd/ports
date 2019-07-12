@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/01/22 21:17:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:25 sthen Exp $
 
 COMMENT=	SMTP virus filter
 
@@ -12,7 +12,7 @@ MASTER_SITES=	${HOMEPAGE}
 RUN_DEPENDS=	security/clamav
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c pthread
 

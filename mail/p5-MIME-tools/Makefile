@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/04/11 12:53:49 giovanni Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 20:47:33 sthen Exp $
 
 COMMENT=		modules for parsing (and creating) MIME entities
 
@@ -8,7 +8,7 @@ CATEGORIES=		mail
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

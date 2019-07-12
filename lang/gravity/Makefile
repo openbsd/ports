@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/04/15 21:09:05 bcallah Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:18 sthen Exp $
 
 COMMENT =	small, high performance language with a modern syntax
 CATEGORIES =	lang
@@ -11,7 +11,7 @@ HOMEPAGE =	http://creolabs.com/gravity
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:07 sthen Exp $
 
 COMMENT =		visualize your data in SVG format
 
@@ -7,7 +7,7 @@ CATEGORIES =		graphics
 REVISION =		1
 
 # Artistic License 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

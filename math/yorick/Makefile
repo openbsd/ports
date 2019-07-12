@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/05/07 17:04:59 danj Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:47:47 sthen Exp $
 
 # Memory hog, stuck for days on the same file during build.
 NOT_FOR_ARCHS=	sh
@@ -17,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=yorick/}
 EXTRACT_SUFX=	.tgz
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 c m
 

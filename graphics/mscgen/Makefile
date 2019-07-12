@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/15 19:56:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:04 sthen Exp $
 
 COMMENT=		utility to create Message Sequence Charts
 
@@ -11,7 +11,7 @@ CATEGORIES=		graphics
 HOMEPAGE=		http://www.mcternan.me.uk/mscgen/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/software/
 

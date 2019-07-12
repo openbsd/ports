@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:55 sthen Exp $
 
 COMMENT=	parse TIGER/Line geographic data
 MODULES=	cpan
@@ -7,7 +7,7 @@ DISTNAME=	Geo-TigerLine-0.03
 CATEGORIES=	geo
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Carp-Assert \
 		devel/p5-Class-Accessor \

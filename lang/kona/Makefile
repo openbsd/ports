@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/15 17:37:19 bcallah Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:19 sthen Exp $
 
 COMMENT =	open source implementation of the K programming language
 DISTNAME =	kona-3.2.0.20190514
@@ -13,7 +13,7 @@ HOMEPAGE =	https://kona.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m pthread
 

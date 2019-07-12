@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/11/14 20:48:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:41 sthen Exp $
 
 COMMENT=		GNU units conversion program
 
@@ -11,7 +11,7 @@ REVISION=		0
 HOMEPAGE=		https://www.gnu.org/software/units/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses m readline
 

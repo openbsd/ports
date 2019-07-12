@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/05/13 19:03:52 danj Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:46:57 sthen Exp $
 
 COMMENT=	portable DjVu viewer and browser plugin
 
@@ -10,7 +10,7 @@ CATEGORIES=	graphics print
 HOMEPAGE=	http://djvu.sourceforge.net/djview4.html
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL ICE QtGui QtNetwork QtOpenGL SM X11 Xext Xi Xinerama
 WANTLIB += Xrender c djvulibre fontconfig freetype glib-2.0 iconv intl m

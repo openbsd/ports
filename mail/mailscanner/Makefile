@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2018/09/04 12:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2019/07/12 20:47:29 sthen Exp $
 
 COMMENT=	virus/spam scanning framework
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://www.mailscanner.info/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS+=	archivers/lha \
 		archivers/p5-Archive-Zip>=1.30p0 \

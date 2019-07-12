@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/10/19 22:09:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:47:57 sthen Exp $
 
 COMMENT =	multimedia layer for Qt4/KDE4
 CATEGORIES =	multimedia devel
@@ -15,7 +15,7 @@ SHARED_LIBS +=	phonon_sexperimental	2.0
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 
 # LGPL v2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} QtDBus QtGui m pulse pulse-mainloop-glib
 

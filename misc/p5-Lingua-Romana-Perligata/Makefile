@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/10 20:18:32 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:53 sthen Exp $
 
 COMMENT=		write Perl in Latin
 
@@ -9,7 +9,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CPAN_AUTHOR=		DCONWAY
 

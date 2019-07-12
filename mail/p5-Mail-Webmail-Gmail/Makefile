@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:35 sthen Exp $
 
 COMMENT=		interface to Google webmail service
 
@@ -9,7 +9,7 @@ CATEGORIES=		mail
 MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

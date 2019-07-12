@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2019/06/21 22:44:14 jca Exp $
+# $OpenBSD: Makefile,v 1.94 2019/07/12 20:46:56 sthen Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://www.blender.org/
 MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLEW GLU Half Iex IlmImf IlmThread Imath OpenColorIO
 WANTLIB += OpenImageIO X11 Xi Xrender Xxf86vm avcodec avdevice avformat

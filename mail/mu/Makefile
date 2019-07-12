@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:30 sthen Exp $
 
 COMMENT=	maildir indexer and searcher with emacs frontend
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.djcbsoftware.nl/code/mu/
 REVISION =	1
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	emacs->=24:editors/emacs
 

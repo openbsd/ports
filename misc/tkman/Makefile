@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/11/09 18:22:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:47:54 sthen Exp $
 
 COMMENT =	Tcl/Tk-based manual browser
 
@@ -9,7 +9,7 @@ HOMEPAGE =	http://www.sourceforge.net/projects/tkman
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # Artistic License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=tkman/}
 MODULES =	x11/tk

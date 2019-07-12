@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/01/05 18:04:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:28 sthen Exp $
 
 COMMENT=	search mailboxes for a particular email
 
@@ -8,7 +8,7 @@ CATEGORIES=	mail perl5
 REVISION=	0
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
 CPAN_AUTHOR=	DCOPPIT

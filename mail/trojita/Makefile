@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/03/08 20:00:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:39 sthen Exp $
 
 COMMENT =		fast Qt IMAP e-mail client
 
@@ -15,7 +15,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=trojita/}
 EXTRACT_SUFX =		.tar.xz
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Sql Qt5WebKit Qt5WebKitWidgets Qt5Widgets c gpgmepp

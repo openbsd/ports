@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2019/06/13 15:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2019/07/12 20:47:41 sthen Exp $
 
 COMMENT=	GTK-based scientific calculator
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://galculator.mnim.org/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB+= Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo

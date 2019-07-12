@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.277 2019/05/02 22:06:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.278 2019/07/12 20:47:26 sthen Exp $
 
 COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication / dictionary support for Dovecot
@@ -33,7 +33,7 @@ HOMEPAGE=	https://dovecot.org/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # LGPLv2.1 and MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB-server=	bz2 c crypto expat iconv lz4 lzma m pthread sqlite3 ssl z sodium
 WANTLIB-ldap=	crypto iconv lber ldap sasl2 ssl lib/dovecot/dovecot

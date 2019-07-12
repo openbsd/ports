@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/30 13:05:17 schwarze Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:49 sthen Exp $
 
 COMMENT =		download and process dive computer data
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://kristaps.bsd.lv/divecmd
 MAINTAINER =		Kristaps Dzonsons <kristaps@bsd.lv>
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += 		divecomputer expat m c

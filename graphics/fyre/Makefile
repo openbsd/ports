@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:46:58 sthen Exp $
 
 COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
@@ -8,7 +8,7 @@ CATEGORIES=		graphics
 HOMEPAGE=		http://fyre.navi.cx/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += Half Iex IexMath IlmImf IlmThread Imath X11 Xcomposite
 WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender

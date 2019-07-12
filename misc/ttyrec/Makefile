@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/07/02 07:21:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:54 sthen Exp $
 
 COMMENT=	tty recorder
 
@@ -9,7 +9,7 @@ CATEGORIES=	misc
 HOMEPAGE=	http://0xcc.net/ttyrec/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

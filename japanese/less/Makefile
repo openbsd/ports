@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/05/20 20:52:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:47:15 sthen Exp $
 
 COMMENT=	enhanced less with iso-2022-jp and UTF-8 encodings support
 
@@ -16,7 +16,7 @@ REVISION=	0
 MAINTAINER =	YASUOKA Masahiko <yasuoka@yasuoka.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 

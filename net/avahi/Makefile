@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2019/04/28 20:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.136 2019/07/12 20:47:59 sthen Exp $
 
 COMMENT-main=		framework for Multicast DNS Service Discovery
 COMMENT-gtk=		gtk+2 avahi-ui libraries
@@ -43,7 +43,7 @@ SHARED_LIBS +=  avahi-ui-gtk3        0.1      # 1.4
 HOMEPAGE=		http://www.avahi.org/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 PSEUDO_FLAVORS=		no_gui bootstrap
 FLAVOR?=		no_gui bootstrap

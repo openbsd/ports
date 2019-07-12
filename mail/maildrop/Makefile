@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2019/06/19 22:06:01 giovanni Exp $
+# $OpenBSD: Makefile,v 1.75 2019/07/12 20:47:29 sthen Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
@@ -22,7 +22,7 @@ FLAVOR?=
 MULTI_PACKAGES=		-main -utils
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 COMPILER =		base-clang ports-gcc
 

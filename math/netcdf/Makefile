@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/05/16 11:39:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:47:43 sthen Exp $
 
 # let's give it a chance?
 #BROKEN-powerpc=	fails to build
@@ -20,7 +20,7 @@ HOMEPAGE=	http://www.unidata.ucar.edu/software/netcdf/
 MAINTAINER=	Martin Reindl <martin@catai.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m z pthread
 WANTLIB+=		curl crypto nghttp2 ssl

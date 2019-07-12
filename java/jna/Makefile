@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/06/11 00:38:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:47:15 sthen Exp $
 
 COMMENT=	Java Native Access (JNA)
 
@@ -12,7 +12,7 @@ REVISION=	2
 HOMEPAGE=	https://github.com/java-native-access/jna
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	java
 MODJAVA_VER=	1.8+

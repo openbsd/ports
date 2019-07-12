@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/01 03:51:17 kmos Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:47:56 sthen Exp $
 
 COMMENT=	DVD navigation library
 
@@ -14,7 +14,7 @@ SHARED_LIBS=	dvdnav		7.1
 HOMEPAGE=	http://dvdnav.mplayerhq.hu/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	dvdread>=7.0 pthread
 

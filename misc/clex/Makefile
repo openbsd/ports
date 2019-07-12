@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/20 20:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:48 sthen Exp $
 
 COMMENT=		commandline shell and file manager
 
@@ -9,7 +9,7 @@ REVISION=		1
 HOMEPAGE=		http://www.clex.sk/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 

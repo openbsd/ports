@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/03/16 18:07:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:02 sthen Exp $
 
 COMMENT=		high-performance 2D graphics library
 
@@ -14,7 +14,7 @@ CATEGORIES=		graphics
 HOMEPAGE=		http://www.levien.com/libart/
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 

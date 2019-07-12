@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/05/13 19:03:52 danj Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:46:57 sthen Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
@@ -10,7 +10,7 @@ CATEGORIES=	graphics print
 HOMEPAGE=	http://djvu.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=djvu/}
 

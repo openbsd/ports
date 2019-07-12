@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/01 16:04:26 danj Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:44 sthen Exp $
 
 COMMENT=	calculate Fast Fourier Transforms in perl
 
@@ -8,7 +8,7 @@ CATEGORIES=	math
 REVISION=	0
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

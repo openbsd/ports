@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/05/20 22:15:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:14 sthen Exp $
 
 COMMENT =	personal dictionary manager for anthy
 
@@ -10,7 +10,7 @@ CATEGORIES =	japanese
 HOMEPAGE =	https://osdn.jp/projects/kasumi/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_OSDN_JP:=kasumi/41436/}
 

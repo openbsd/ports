@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2018/02/28 14:08:36 nigel Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:47:56 sthen Exp $
 
 COMMENT=	download flash video files from various sites
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://github.com/monsieurvideo/get-flash-videos
 MAINTAINER=	Nigel Taylor <nigel@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES =	https://github.com/monsieurvideo/get-flash-videos/releases/download/${V}/
 

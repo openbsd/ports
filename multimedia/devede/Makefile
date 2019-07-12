@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/05/20 22:15:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2019/07/12 20:47:55 sthen Exp $
 
 COMMENT=		video DVDs and CDs creation tool
 
@@ -15,7 +15,7 @@ CATEGORIES=		multimedia x11
 HOMEPAGE=		http://www.rastersoft.com/programas/devede.html
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

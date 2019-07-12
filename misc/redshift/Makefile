@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/04/28 20:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:47:53 sthen Exp $
 
 COMMENT=		automatic color temperature adjustment
 
@@ -11,7 +11,7 @@ CATEGORIES=		misc graphics
 HOMEPAGE=		http://jonls.dk/redshift/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xau Xdmcp Xext Xxf86vm c drm ffi gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 iconv intl m pcre pthread xcb

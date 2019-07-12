@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/11 19:59:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:40 sthen Exp $
 
 PORTROACH=	limit:^2\.
 
@@ -13,7 +13,7 @@ CATEGORIES=	math
 HOMEPAGE=	http://www.fftw.org/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		m
 
 MASTER_SITES=	http://fftw.org/ \

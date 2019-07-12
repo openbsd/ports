@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:44 sthen Exp $
 
 COMMENT=	fast functions to CoNVert between number Bases
 
@@ -9,7 +9,7 @@ PKGNAME=	p5-${DISTNAME:R}
 CATEGORIES=	math
 
 # GPLv3 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
 PKG_ARCH=	*

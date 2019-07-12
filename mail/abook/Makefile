@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/06/11 19:28:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 20:47:24 sthen Exp $
 
 COMMENT=		addressbook program with mutt support
 
@@ -9,7 +9,7 @@ CATEGORIES=		mail
 HOMEPAGE=		http://abook.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses iconv intl readline
 

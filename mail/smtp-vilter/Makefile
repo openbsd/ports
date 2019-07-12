@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2018/01/11 19:27:04 rpe Exp $
+# $OpenBSD: Makefile,v 1.65 2019/07/12 20:47:38 sthen Exp $
 
 COMMENT=	sendmail milter to scan messages for viruses and spam
 
@@ -9,7 +9,7 @@ REVISION=	4
 CATEGORIES=	mail
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m pthread milter
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/08 15:44:46 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:32 sthen Exp $
 
 COMMENT=	parse MIME Content-Type or Content-Disposition headers
 
@@ -9,6 +9,6 @@ CATEGORIES=	mail
 REVISION =	0
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

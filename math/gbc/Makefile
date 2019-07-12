@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/21 02:04:04 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:41 sthen Exp $
 
 COMMENT =	GNU version of the arbitrary precision calculators bc and dc
 DISTNAME =	bc-1.07.1
@@ -9,7 +9,7 @@ HOMEPAGE =	https://www.gnu.org/software/bc/
 MAINTAINER =	Ivan Ivanov <rambiusparkisanius@gmail.com>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses edit
 

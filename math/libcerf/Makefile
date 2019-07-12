@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 21:08:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:42 sthen Exp $
 
 COMMENT =	implementation of complex error functions
 
@@ -16,7 +16,7 @@ HOMEPAGE =	http://apps.jcns.fz-juelich.de/doku/sc/libcerf
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/06/13 15:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:47:14 sthen Exp $
 
 COMMENT=	input method data tables for scim
 
@@ -10,7 +10,7 @@ CATEGORIES=	inputmethods chinese japanese korean
 HOMEPAGE=	https://github.com/scim-im/scim-tables
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB+= GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB+= Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo drm expat ffi

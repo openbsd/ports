@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2019/04/25 02:18:58 bcallah Exp $
+# $OpenBSD: Makefile,v 1.97 2019/07/12 20:46:58 sthen Exp $
 
 COMMENT=	lightweight image viewer
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://feh.finalrewind.org/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	Imlib2 X11 Xinerama c curl exif m png
 

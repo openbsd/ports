@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:49 cwen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:49 sthen Exp $
 
 COMMENT =	lightweight Qt5 notes manager
 PKGNAME =	feathernotes-${GH_TAGNAME:S/^V//}
@@ -12,7 +12,7 @@ GH_TAGNAME =	V0.4.6
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5PrintSupport
 WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml X11 c m

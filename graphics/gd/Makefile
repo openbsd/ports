@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2019/07/12 20:46:58 sthen Exp $
 
 PORTROACH=	skipv:gd-2.2.5
 
@@ -15,7 +15,7 @@ CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.libgd.org/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c expat fontconfig freetype iconv jpeg m png pthread
 WANTLIB += ${COMPILER_LIBCXX} tiff webp z

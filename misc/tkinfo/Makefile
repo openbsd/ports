@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/12/27 23:47:26 stu Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:54 sthen Exp $
 
 COMMENT =	read and display GNU info files in Tk
 
@@ -8,7 +8,7 @@ HOMEPAGE =	http://math-www.uni-paderborn.de/~axel/tkinfo/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD/GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${HOMEPAGE}
 MODULES =	x11/tk

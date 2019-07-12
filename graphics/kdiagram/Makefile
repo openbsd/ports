@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:45 cwen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:01 sthen Exp $
 
 COMMENT =	libraries for creating business diagrams
 
@@ -14,7 +14,7 @@ SHARED_LIBS +=  KGantt                    0.0 # 2.6
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5PrintSupport Qt5Svg
 WANTLIB += Qt5Widgets c m

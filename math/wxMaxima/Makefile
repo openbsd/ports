@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:47:47 sthen Exp $
 
 # http://marc.info/?l=openbsd-ports&m=140587945502296&w=2
 BROKEN =		allocation error starting socket server
@@ -12,7 +12,7 @@ REVISION =		2
 HOMEPAGE =		http://wxmaxima.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=wxmaxima/}
 MAINTAINER =		Edd Barrett <edd@openbsd.org>

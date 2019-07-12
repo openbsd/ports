@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:53 sthen Exp $
 
 COMMENT=		simple slang-based menu program
 
@@ -11,7 +11,7 @@ REVISION=		1
 HOMEPAGE=		http://kitenet.net/programs/pdmenu/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c curses iconv intl m slang
 

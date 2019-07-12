@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/18 00:18:19 danj Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:29 sthen Exp $
 
 COMMENT =	set of Maildir utilities
 
@@ -9,7 +9,7 @@ CATEGORIES =	mail
 REVISION =	0
 
 # Public domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c iconv pthread
 LIB_DEPENDS =	converters/libiconv

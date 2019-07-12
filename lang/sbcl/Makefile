@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/05/13 12:58:58 solene Exp $
+# $OpenBSD: Makefile,v 1.42 2019/07/12 20:47:22 sthen Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -17,7 +17,7 @@ HOMEPAGE=		http://www.sbcl.org/
 MAINTAINER =		Joshua Elsasser <josh@elsasser.org>
 
 # Public domain and BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sbcl/}
 

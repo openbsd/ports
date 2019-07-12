@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.26 2016/03/20 19:56:47 naddy Exp $
+#   $OpenBSD: Makefile,v 1.27 2019/07/12 20:47:35 sthen Exp $
 
 COMMENT=	modules for handling mail with perl
 
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Mail/}
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Time-TimeDate
 

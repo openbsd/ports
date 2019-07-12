@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:55 sthen Exp $
 
 COMMENT =	client library and CLI for Planet's public API
 #'
@@ -10,7 +10,7 @@ REVISION =	0
 CATEGORIES =	geo
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 

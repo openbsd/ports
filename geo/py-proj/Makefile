@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/12 08:03:50 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:46:55 sthen Exp $
 
 COMMENT =		Pyrex generated python interface to PROJ.4 library
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/jswhit/pyproj
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB} proj pthread
 

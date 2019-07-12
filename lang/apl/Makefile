@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/20 20:52:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:16 sthen Exp $
 
 COMMENT =	interpreter for the programming language APL
 DISTNAME =	apl-1.7
@@ -16,7 +16,7 @@ HOMEPAGE =	https://www.gnu.org/software/apl/
 MAINTAINER =	Giuseppe Cocomazzi <sbudella@gmail.com>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m curses pthread ${COMPILER_LIBCXX}
 

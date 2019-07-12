@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/08 15:48:26 danj Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:58 sthen Exp $
 
 COMMENT =		open source alternative to glut
 
@@ -12,7 +12,7 @@ CATEGORIES =		graphics
 HOMEPAGE =		http://freeglut.sourceforge.net/
 
 # X11
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL ICE SM X11 Xext Xi Xrandr Xxf86vm m
 

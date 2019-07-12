@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2018/10/31 08:58:56 sebastia Exp $
+# $OpenBSD: Makefile,v 1.51 2019/07/12 20:47:59 sthen Exp $
 
 COMMENT=	monitor arp & rarp requests
 
@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.ee.lbl.gov/
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c pcap
 

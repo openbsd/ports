@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2019/05/20 22:15:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.65 2019/07/12 20:47:45 sthen Exp $
 
 BROKEN-powerpc = Error: Kind -2 not supported for type INTEGER at (1)
 
@@ -27,7 +27,7 @@ CATEGORIES =	math graphics
 HOMEPAGE =	http://plplot.sourceforge.net/
 
 # LGPL
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=plplot/}
 

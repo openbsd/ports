@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/06/13 15:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:00 sthen Exp $
 
 COMMENT=		canvas widget for GTK+ based on Cairo
 
@@ -15,7 +15,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi cairo

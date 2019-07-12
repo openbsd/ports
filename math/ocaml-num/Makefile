@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/04 12:51:15 chrisz Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:43 sthen Exp $
 
 COMMENT =	library for arithmetic on big integers and rationals
 CATEGORIES =	math
@@ -18,7 +18,7 @@ MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
 
 
 # LGPL 2.1
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES =	lang/ocaml
 

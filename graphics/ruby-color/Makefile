@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/12/20 09:27:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:09 sthen Exp $
 
 COMMENT =	color value conversion and modification
 
@@ -8,7 +8,7 @@ CATEGORIES =	graphics
 HOMEPAGE =	https://github.com/halostatue/color
 
 # MIT
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES =		lang/ruby
 

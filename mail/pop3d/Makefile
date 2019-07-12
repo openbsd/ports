@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/01/11 19:27:03 rpe Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:36 sthen Exp $
 
 COMMENT =		POP3 daemon with POP3S and STARTTLS extensions
 
@@ -15,7 +15,7 @@ MAINTAINER =		James Turner <james@calminferno.net>
 HOMEPAGE =		https://github.com/snimmagadda/pop3d/
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto event ssl util
 

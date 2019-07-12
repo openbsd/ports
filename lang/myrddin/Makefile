@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/07/02 22:20:20 jturner Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:20 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://myrlang.org/
 MASTER_SITES =		https://myrlang.org/releases/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB	+= c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/06/14 23:13:30 feinerer Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:47:42 sthen Exp $
 
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://maxima.sourceforge.net/
 MAINTAINER=		Ingo Feinerer <feinerer@logic.at>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c ecl ffi gc gmp m pthread
 

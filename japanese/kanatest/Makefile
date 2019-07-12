@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/06/13 16:38:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:14 sthen Exp $
 
 COMMENT =	beginner's drill tool to learn Japanese kana characters
 
@@ -8,7 +8,7 @@ REVISION =	12
 CATEGORIES =	japanese
 
 # GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype

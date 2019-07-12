@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/04 22:02:27 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:45 sthen Exp $
 
 # XXX: 32-bit issues?
 # See: https://github.com/vapier/pcalc/issues/7
@@ -15,7 +15,7 @@ GH_TAGNAME =	v4
 MAINTAINER =	Charles Daniels <charles@cdaniels.net>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m
 

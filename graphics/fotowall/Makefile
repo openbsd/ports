@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:58 sthen Exp $
 
 COMMENT =	Pictures collage & creativity tool
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://www.enricoros.com/opensource/fotowall/
 
 MAINTAINER =	Adam Wolk <awolk@openbsd.org>
 
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL ICE QtGui QtNetwork QtOpenGL QtSvg QtXml SM X11
 WANTLIB += Xext Xi Xinerama Xrender c fontconfig freetype m pthread

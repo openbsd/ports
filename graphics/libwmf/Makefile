@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/01 16:04:26 danj Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:47:02 sthen Exp $
 
 COMMENT=	WMF handling and conversion library
 
@@ -14,7 +14,7 @@ CATEGORIES=	graphics devel
 HOMEPAGE=	http://wvware.sf.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	X11 c expat freetype m xcb z jpeg png Xau Xdmcp
 

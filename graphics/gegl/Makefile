@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2019/07/05 11:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2019/07/12 20:46:59 sthen Exp $
 
 PORTROACH=		limit:^0\.2
 
@@ -28,7 +28,7 @@ HOMEPAGE=		http://gegl.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3/LGPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://download.gimp.org/pub/gegl/${V:R}/
 

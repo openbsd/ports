@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2018/06/27 21:03:55 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:47:12 sthen Exp $
 
 COMMENT=	scanner frontend for SANE
 
@@ -15,7 +15,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype

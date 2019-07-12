@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.292 2019/07/09 18:09:19 landry Exp $
+# $OpenBSD: Makefile,v 1.293 2019/07/12 20:47:30 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 COMMENT-main =		Mozilla e-mail, rss and usenet client
@@ -29,7 +29,7 @@ MOZILLA_LIBS = ldap60 ldif60 lgpllibs mozgtk mozsqlite3 prldap60 xul
 CATEGORIES=	mail news
 
 # MPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:23:50 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:25 sthen Exp $
 
 COMMENT=	mh-e like mail user agent
 
@@ -10,7 +10,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/cue/snap/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto z
 

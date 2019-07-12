@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/07/01 09:02:41 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:01 sthen Exp $
 
 COMMENT=		create PNG images from LaTeX expressions
 
@@ -9,7 +9,7 @@ REVISION=		0
 HOMEPAGE=		http://redsymbol.net/software/l2p/
 
 # Public Domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://static.redsymbol.net/software/l2p/dist/
 EXTRACT_SUFX=		.tgz

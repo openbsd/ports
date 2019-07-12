@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/03/08 20:00:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:57 sthen Exp $
 
 COMMENT =		convert images to cross stitch patterns
 
@@ -21,7 +21,7 @@ HOMEPAGE =		http://cstitch.sourceforge.net/
 MAINTAINER =		Adam Wolk <awolk@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets Qt5Xml
 WANTLIB += c m pthread

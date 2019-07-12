@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/01/22 11:22:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:23 sthen Exp $
 
 COMMENT =		Tool Command Language
 
@@ -13,7 +13,7 @@ MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 REVISION =		2
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m pthread z
 

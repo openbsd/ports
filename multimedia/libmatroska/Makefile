@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/04/28 08:59:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:47:56 sthen Exp $
 
 COMMENT=	extensible open standard audio/video container library
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.matroska.org/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ebml m
 

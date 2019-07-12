@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/04/28 14:36:20 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:52 sthen Exp $
 
 COMMENT =	test suites for POSIX operating systems
 
@@ -18,7 +18,7 @@ HOMEPAGE =	https://sortix.org/os-test/
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

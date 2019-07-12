@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/08 20:00:44 cwen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:57 sthen Exp $
 
 COMMENT =	multimedia layer for Qt5/KDE5
 VERSION =	4.10.1
@@ -16,7 +16,7 @@ HOMEPAGE =	https://phonon.kde.org/
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 
 # LGPL v2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB += m pulse pulse-mainloop-glib

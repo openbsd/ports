@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2019/06/15 17:19:03 bcallah Exp $
+# $OpenBSD: Makefile,v 1.75 2019/07/12 20:47:23 sthen Exp $
 
 COMMENT =	high-level, extensible programming language
 
@@ -13,7 +13,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Interpreter and example programs: GPLv2+
 # Runtime libraries: LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 c curses m
 

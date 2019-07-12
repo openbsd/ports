@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/01/04 09:27:55 pascal Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:47:22 sthen Exp $
 
 BROKEN-powerpc =	Cannot declare pseudo-package GLOBAL
 
@@ -16,7 +16,7 @@ HOMEPAGE =		http://rakudo.org
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Artistic 2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += atomic_ops ffi kvm m moar pthread uv
 

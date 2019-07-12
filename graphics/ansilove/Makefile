@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/06/25 13:57:56 fcambus Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:56 sthen Exp $
 
 COMMENT =	ansi and ascii art to png converter
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://www.ansilove.org/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB +=	ansilove c m

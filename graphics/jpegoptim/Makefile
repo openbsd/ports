@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/27 15:17:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:01 sthen Exp $
 
 COMMENT =	utility to optimize jpeg files
 
@@ -9,7 +9,7 @@ CATEGORIES =	graphics
 HOMEPAGE =	https://www.kokkonen.net/tjko/projects.html
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c jpeg m
 

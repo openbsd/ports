@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/04/23 17:55:31 cwen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:58 sthen Exp $
 
 COMMENT=		c++ library for common image format
 
@@ -12,7 +12,7 @@ SHARED_LIBS+=		freeimage	2.0
 HOMEPAGE=		http://freeimage.sourceforge.net/
 
 # GPL / "FreeImage Public Nons^WLicense"
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		${COMPILER_LIBCXX}
 

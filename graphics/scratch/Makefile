@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/05 11:52:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:10 sthen Exp $
 
 COMMENT =	visual programming environment and toolkit
 
@@ -10,7 +10,7 @@ HOMEPAGE =	http://scratch.mit.edu/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # GPLv2 / MIT / Creative Commons (CC BY-SA 3.0)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  X11 Xau Xdmcp Xext Xrender cairo expat ffi fontconfig
 WANTLIB += freetype fribidi glib-2.0 gobject-2.0 graphite2 harfbuzz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/03/20 19:56:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:47:52 sthen Exp $
 
 COMMENT=	module to obtain financial quotes from exchanges
 
@@ -22,7 +22,7 @@ MODCPAN_EXAMPLES =	Yes
 MODCPAN_EXAMPLES_DIST =	Examples
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # pod tests too many failures leave disabled
 #MAKE_ENV +=	TEST_POD=Yes

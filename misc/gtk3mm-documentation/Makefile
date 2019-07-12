@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/01/01 11:39:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:47:50 sthen Exp $
 
 COMMENT=		documentation for gtk3mm
 
@@ -14,7 +14,7 @@ HOMEPAGE=		http://www.gtkmm.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GFDLv1.2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		x11/gnome
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/16 16:46:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:23 sthen Exp $
 
 COMMENT=	lightweight Scheme implementation with subset of R5RS
 
@@ -8,7 +8,7 @@ CATEGORIES=	lang
 HOMEPAGE=	http://tinyscheme.sourceforge.net/home.html
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tinyscheme/}
 

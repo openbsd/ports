@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/18 18:11:10 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:45 sthen Exp $
 
 COMMENT =	perl interface to GMP integer functions
 
@@ -7,7 +7,7 @@ DISTNAME =	Math-GMPz-0.48
 CATEGORIES =	math
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAINTAINER = 	Steven Mestdagh <steven@openbsd.org>
 

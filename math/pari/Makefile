@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/20 20:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:45 sthen Exp $
 
 COMMENT=	number theory-oriented computer algebra system
 
@@ -10,7 +10,7 @@ CATEGORIES=	math
 HOMEPAGE=	http://pari.math.u-bordeaux.fr/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 c m curses readline
 

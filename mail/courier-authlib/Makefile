@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2019/07/08 09:46:54 giovanni Exp $
+# $OpenBSD: Makefile,v 1.78 2019/07/12 20:47:25 sthen Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -31,7 +31,7 @@ HOMEPAGE=		http://www.courier-mta.org/authlib/
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=courier/}
 EXTRACT_SUFX=		.tar.bz2

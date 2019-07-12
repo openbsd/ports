@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/01/11 19:27:03 rpe Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:36 sthen Exp $
 
 COMMENT =	tiny pop3 daemon
 
@@ -11,7 +11,7 @@ CATEGORIES =	mail
 HOMEPAGE =	http://www.openwall.com/popa3d/
 
 # (Very) Simplified BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto
 

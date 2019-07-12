@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/05/20 22:15:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:47:18 sthen Exp $
 
 COMMENT=	GNU awk
 
@@ -11,7 +11,7 @@ REVISION=	0
 HOMEPAGE=	https://www.gnu.org/software/gawk/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses gmp iconv intl m mpfr readline sigsegv
 

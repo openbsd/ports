@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/12/26 03:00:13 jsg Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:11 sthen Exp $
 
 COMMENT=	OpenGL API/window system abstraction
 DISTNAME=	waffle-1.5.2
@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tar.xz
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # 2-clause BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 SHARED_LIBS+=	waffle-1 0.0 # 0.5
 WANTLIB=	X11 X11-xcb c pthread xcb

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/05/19 14:02:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2019/07/12 20:47:14 sthen Exp $
 
 DPB_PROPERTIES=		tag:kde3
 
@@ -32,7 +32,7 @@ SHARED_LIBS +=	uim                  1.1      # .6.0
 SHARED_LIBS +=	uim-custom           0.0      # .2.0
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 cWANTLIB += X11 Xext Xrender fontconfig freetype iconv intl m
 

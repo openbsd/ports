@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/13 19:03:52 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:09 sthen Exp $
 
 COMMENT =		getting image size from png/jpeg/jpeg2000/gif file
 
@@ -11,7 +11,7 @@ REVISION =		1
 HOMEPAGE =		https://github.com/shibukawa/imagesize_py
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

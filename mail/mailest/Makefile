@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/07/12 10:16:06 yasuoka Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:29 sthen Exp $
 
 COMMENT =		search backend for Mew with Hyper Estrairer
 
@@ -13,7 +13,7 @@ CATEGORIES =		mail
 MAINTAINER =		YASUOKA Masahiko <yasuoka@yasuoka.net>
 
 # BSD and partially LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c event iconv pthread estraier qdbm
 

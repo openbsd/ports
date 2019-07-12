@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:55 sthen Exp $
 
 COMMENT =		2-letter, 3-letter, and numerical codes for countries
 
@@ -7,7 +7,7 @@ REVISION =		0
 CATEGORIES =		geo devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

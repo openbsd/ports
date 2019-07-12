@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/09/23 10:53:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:47:37 sthen Exp $
 
 COMMENT=		agent for Razor spam filtering networks
 
@@ -8,7 +8,7 @@ CATEGORIES=		mail
 HOMEPAGE=		http://razor.sourceforge.net/
 
 # Artistic License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/03/27 23:29:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2019/07/12 20:47:02 sthen Exp $
 
 COMMENT =		library for reading RAW files
 
@@ -15,7 +15,7 @@ HOMEPAGE =		https://www.libraw.org/
 MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
 # LGPL v2.1 OR CDDL v1.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c jasper jpeg lcms2 m pthread ${COMPILER_LIBCXX}
 

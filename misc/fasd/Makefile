@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/12/29 19:49:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:49 sthen Exp $
 
 COMMENT =	quick access to files in a POSIX shell
 
@@ -11,7 +11,7 @@ GH_TAGNAME =	1.0.1
 CATEGORIES =	misc
 
 # MIT/X11
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

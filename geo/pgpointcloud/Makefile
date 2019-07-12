@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/19 11:26:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:55 sthen Exp $
 
 COMMENT =	point cloud storage extension for PostgreSQL
 
@@ -14,7 +14,7 @@ PATCHFILES =		pgpointcloud-patch1.patch{3e64c68dd4e0b9b9fdf0a74492ab49023161f6f1
 PATCH_DIST_STRIP =	-p1
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 COMPILER =	base-clang ports-gcc
 

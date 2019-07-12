@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/06/13 15:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:13 sthen Exp $
 
 COMMENT=	scim input method module for chewing
 
@@ -12,7 +12,7 @@ CATEGORIES=	inputmethods chinese
 HOMEPAGE=	http://chewing.im/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo chewing

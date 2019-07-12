@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/01 16:04:26 danj Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:33 sthen Exp $
 
 COMMENT=		perl module for reading procmail logs
 
@@ -7,7 +7,7 @@ CATEGORIES=		mail textproc
 REVISION=		0
 
 # GPL/Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

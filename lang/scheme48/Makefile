@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/03 18:51:01 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:22 sthen Exp $
 
 COMMENT=	Scheme Underground's implementation of R5RS
 # '
@@ -11,7 +11,7 @@ REVISION=	0
 HOMEPAGE=	http://www.s48.org/
 
 # 3-clause BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/$V/
 EXTRACT_SUFX=		.tgz

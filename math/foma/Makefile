@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/17 16:19:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:40 sthen Exp $
 
 COMMENT =		finite-state compiler and C library
 
@@ -12,7 +12,7 @@ CATEGORIES =		math devel
 HOMEPAGE =		https://bitbucket.org/mhulden/foma
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += c curses readline z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/01 19:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:10 sthen Exp $
 
 COMMENT=		commandline screen capture util
 
@@ -9,7 +9,7 @@ CATEGORIES=		graphics
 HOMEPAGE=		http://www.linuxbrit.co.uk/scrot/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext c freetype m z \
 			giblib>=1 Imlib2>=1

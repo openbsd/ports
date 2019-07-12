@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/05 18:19:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:40 sthen Exp $
 
 COMMENT =		random number generator (rng) testing suite
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://webhome.phy.duke.edu/~rgb/General/dieharder.php
 
 # GPLv2+ (w/ "Beverage modification")
 # https://webhome.phy.duke.edu/~rgb/GPL.php
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://webhome.phy.duke.edu/~rgb/General/dieharder/
 EXTRACT_SUFX =		.tgz

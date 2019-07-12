@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/07/17 16:42:12 bcallah Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:01 sthen Exp $
 
 SHARED_LIBS +=	jbig2dec             0.0      # 0.0
 
@@ -13,7 +13,7 @@ CATEGORIES =	graphics
 HOMEPAGE =	http://jbig2dec.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=jbig2dec/}
 MASTER_SITES0 =		http://jbig2dec.sourceforge.net/ubc/

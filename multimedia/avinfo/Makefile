@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/02/27 18:41:38 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:55 sthen Exp $
 
 COMMENT=	utility for audio-video information extraction
 
@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 HOMEPAGE=	http://shounen.ru/soft/avinfo/desc_en.shtml
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

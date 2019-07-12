@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/20 22:15:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:13 sthen Exp $
 
 COMMENT =	chewing wrapper for fcitx
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://fcitx-im.org/
 MAINTAINER = 	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	chewing
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/02/10 18:00:26 juanfra Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:47:17 sthen Exp $
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://dynamo.iro.umontreal.ca/wiki/index.php/Main_Page
 MAINTAINER=	Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # LGPLv2.1 / Apachev2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://www.iro.umontreal.ca/~gambit/download/gambit/v${V:R}/source/
 EXTRACT_SUFX=	.tgz

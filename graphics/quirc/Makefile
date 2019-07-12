@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/24 16:26:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:09 sthen Exp $
 
 V =			1.0
 COMMENT =		QR decoder library
@@ -12,7 +12,7 @@ REVISION =		0
 SHARED_LIBS +=		quirc 0.0 # 1.0
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL SDL_gfx c jpeg m pthread
 

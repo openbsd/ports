@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/01/04 11:07:58 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:53 sthen Exp $
 
 COMMENT-main =		model railroad control daemon
 COMMENT-gui =		model railroad control daemon client
@@ -17,7 +17,7 @@ HOMEPAGE =		http://www.rocrail.net/
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =		http://bugs.launchpad.net/rocrail/sunrise/2.0/+download/
 

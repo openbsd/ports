@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/10 14:26:19 stu Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:11 sthen Exp $
 
 COMMENT =	PNG photo image extension for Tcl/Tk
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://www.muonics.com/FreeStuff/TkPNG/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	z
 

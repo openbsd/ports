@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/08/14 00:50:17 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:16 sthen Exp $
 
 COMMENT =	Algol 68 Genie compiler-interpreter
 DISTNAME =	algol68g-2.8.5
@@ -8,7 +8,7 @@ HOMEPAGE =	https://jmvdveer.home.xs4all.nl/algol.html
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://jmvdveer.home.xs4all.nl/
 

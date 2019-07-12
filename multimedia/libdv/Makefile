@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/11/13 19:40:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:47:56 sthen Exp $
 
 COMMENT=		Quasar DV codec
 
@@ -12,7 +12,7 @@ SHARED_LIBS +=  dv                   5.0      # 4.3
 HOMEPAGE=		http://libdv.sourceforge.net/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c iconv intl m popt pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/11 16:24:38 nigel Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:01 sthen Exp $
 
 COMMENT =	dump raw jpeg exif information
 CATEGORIES =	graphics devel
@@ -6,7 +6,7 @@ CATEGORIES =	graphics devel
 MASTER_SITES =	https://svn.xiph.org/experimental/giles/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 V =		1.0
 DISTFILES =	jpegdump.c

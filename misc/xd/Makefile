@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/02/27 18:28:14 jca Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:55 sthen Exp $
 
 COMMENT=	yet another dump utility
 
@@ -7,7 +7,7 @@ REVISION=	1
 CATEGORIES=	misc
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/15 12:04:39 kmos Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:46 sthen Exp $
 
 COMMENT =		matrices describing affine transformation of the plane
 
@@ -9,7 +9,7 @@ CATEGORIES =		math
 REVISION =		0
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

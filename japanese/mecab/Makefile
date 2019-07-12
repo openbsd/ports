@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/05/23 21:02:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:15 sthen Exp $
 
 # .libs/libmecab.so.0.0: undefined reference to `__sync_val_compare_and_swap_4'
 # .libs/libmecab.so.0.0: undefined reference to `__sync_add_and_fetch_4'
@@ -20,7 +20,7 @@ CATEGORIES =	japanese
 HOMEPAGE =	http://taku910.github.io/mecab/
 
 # BSD + IPADIC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MULTI_PACKAGES = -main -ipadic
 

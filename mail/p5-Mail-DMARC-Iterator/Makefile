@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/02/13 22:12:01 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:34 sthen Exp $
 
 COMMENT =	iterative DMARC validation for mails
 
@@ -10,7 +10,7 @@ CATEGORIES =	mail
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 

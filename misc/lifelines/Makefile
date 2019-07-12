@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/20 22:15:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:51 sthen Exp $
 
 COMMENT=		genealogical database and programming system
 DISTNAME=		lifelines-3.0.62
@@ -9,7 +9,7 @@ REVISION=		2
 HOMEPAGE=		http://lifelines.sourceforge.net/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses iconv intl m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/09/25 07:01:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:02 sthen Exp $
 
 COMMENT=	Google WebP image format conversion tool
 
@@ -14,7 +14,7 @@ SHARED_LIBS +=  webpmux              2.0      # 2.0
 HOMEPAGE=	https://developers.google.com/speed/webp/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c gif jpeg m png pthread tiff z
 

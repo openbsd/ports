@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:09 sthen Exp $
 
 COMMENT =		QR Code image generator
 
@@ -12,7 +12,7 @@ CATEGORIES =		graphics textproc
 MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/05/15 19:01:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:10 sthen Exp $
 
 # icu4c namespace problem when mixing gcc 4.2 and a c++11 compiler:
 # undefined reference to `_ZN6icu_5713UnicodeStringC1EOS0_'
@@ -16,7 +16,7 @@ SHARED_LIBS =   slopy   3.0     # 0.0
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU ICE SM X11 Xext Xrender
 WANTLIB += c icuuc m

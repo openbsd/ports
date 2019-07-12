@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/01 21:52:00 bluhm Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:34 sthen Exp $
 
 COMMENT =	iterative DKIM validation of records or signing of mails
 
@@ -9,7 +9,7 @@ CATEGORIES =	mail
 MAINTAINER =	Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 

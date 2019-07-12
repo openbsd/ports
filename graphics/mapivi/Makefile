@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/02 14:51:49 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:03 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -12,7 +12,7 @@ CATEGORIES=	graphics x11
 HOMEPAGE=	http://mapivi.de.vu/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mapivi/}
 

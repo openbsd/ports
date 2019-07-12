@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/13 16:46:23 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:32 sthen Exp $
 
 COMMENT =		parse an email Received: header
 
@@ -10,7 +10,7 @@ CATEGORIES =		mail
 REVISION =		0
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		textproc/p5-Regexp-Common
 BUILD_DEPENDS =		${RUN_DEPENDS}

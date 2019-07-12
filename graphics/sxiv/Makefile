@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/06/29 22:16:17 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:10 sthen Exp $
 
 COMMENT =	simple X Image Viewer
 
@@ -12,7 +12,7 @@ CATEGORIES =	graphics x11
 MAINTAINER =	Klemens Nanni <kl3@posteo.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB +=	Imlib2 X11 Xft c exif gif lib/inotify/inotify
 

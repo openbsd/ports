@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/06/11 00:38:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:56 sthen Exp $
 
 COMMENT =	modern GPS tracking platform
 V =		4.5
@@ -14,7 +14,7 @@ HOMEPAGE =	https://www.traccar.org/
 MAINTAINER =	Renaud Allard <renaud@allard.it>
 
 # MPL 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES = https://github.com/traccar/traccar/releases/download/v${V}/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2019/06/11 00:37:09 kurt Exp $
+# $OpenBSD: Makefile,v 1.80 2019/07/12 20:47:19 sthen Exp $
 
 # Runtime failures on i386 in IO#pos and IO#rewind
 ONLY_FOR_ARCHS = amd64
@@ -19,7 +19,7 @@ HOMEPAGE =	http://www.jruby.org/
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # EPLv1/GPLv2/LGPLv2.1/Ruby/MIT/BSD/Apache/CPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://repo1.maven.org/maven2/org/jruby/jruby-dist/${V}/
 MASTER_SITES0 =	https://filedump.se.rit.edu/pub/distfiles/

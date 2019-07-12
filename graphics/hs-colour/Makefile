@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/01/22 21:44:46 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:00 sthen Exp $
 
 COMMENT =		model for human colour/color perception
 
@@ -7,7 +7,7 @@ REVISION =		0
 CATEGORIES =		devel graphics
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

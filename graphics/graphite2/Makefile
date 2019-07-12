@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/04/28 20:51:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:00 sthen Exp $
 
 COMMENT=	rendering for complex writing systems
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://scripts.sil.org/cms/scripts/page.php?site_id=projects&item_id=g
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 

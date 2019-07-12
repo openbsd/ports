@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2019/06/13 15:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.125 2019/07/12 20:47:38 sthen Exp $
 
 COMMENT =		lightweight and user-friendly e-mail client
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://sylpheed.sraoss.jp/en
 MAINTAINER =		Amit Kulkarni <amit.obsd@gmail.com>
 
 # GPLv2 - LGPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 LIB_DEPENDS =		security/gpgme \
 			textproc/gtkspell \

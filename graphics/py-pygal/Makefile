@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:09 sthen Exp $
 
 COMMENT =	python svg graph plotting library
 
@@ -12,7 +12,7 @@ CATEGORIES =	graphics
 MAINTAINER =	Sebastien Marie <semarie@online.fr>
 
 # LGPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.13 2019/05/08 19:08:58 danj Exp $
+#	$OpenBSD: Makefile,v 1.14 2019/07/12 20:47:43 sthen Exp $
 
 COMMENT=		"Marco's Object Oriented calculator"
 
@@ -10,7 +10,7 @@ REVISION=		0
 CATEGORIES=		math
 
 # Public domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 WANTLIB += c

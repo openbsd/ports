@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/01/19 15:17:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:30 sthen Exp $
 
 COMMENT-main=	accept email on behalf of real sendmail
 COMMENT-chroot=	static mini_sendmail for chrooted apache
@@ -13,7 +13,7 @@ MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://www.acme.com/software/mini_sendmail/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_TEST=	Yes
 

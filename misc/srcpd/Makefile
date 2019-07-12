@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/01/11 19:27:04 rpe Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:54 sthen Exp $
 
 COMMENT =	daemon to control digital model railroad systems
 
@@ -12,7 +12,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=srcpd/}
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += 		c iconv m pthread z lzma xml2
 LIB_DEPENDS +=		converters/libiconv \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:48 sthen Exp $
 
 COMMENT =		various ROM (and other) development tools
 
@@ -11,7 +11,7 @@ CATEGORIES =		misc
 HOMEPAGE =		http://www.neillcorlett.com/cmdpack/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB +=		c
 

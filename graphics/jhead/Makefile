@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/01/02 10:24:39 benoit Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:01 sthen Exp $
 
 COMMENT =	Exif jpeg camera setting parser and thumbnail remover
 
@@ -11,7 +11,7 @@ MASTER_SITES =	${HOMEPAGE}
 MAINTAINER=	Benoit Lecocq <benoit@openbsd.org>
 
 # public domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c m
 

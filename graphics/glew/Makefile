@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/01/28 08:26:17 jsg Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:46:59 sthen Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -18,7 +18,7 @@ HOMEPAGE=	http://glew.sourceforge.net/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL GLU X11 Xext Xi Xmu c m
 

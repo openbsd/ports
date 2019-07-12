@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/10/29 21:49:16 bluhm Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:52 sthen Exp $
 
 COMMENT =	perl wrapper for libmagic
 
@@ -9,7 +9,7 @@ CATEGORIES =	misc
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c magic perl
 

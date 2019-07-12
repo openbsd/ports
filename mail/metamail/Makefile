@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/05/17 16:19:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:47:29 sthen Exp $
 
 COMMENT=	MIME implementation
 
@@ -10,7 +10,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.guppylake.com/~nsb/metamail/
 EXTRACT_SUFX=	.tar.Z
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/08/24 20:12:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:17 sthen Exp $
 
 COMMENT=	functional-first programming language
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://fsharp.org/
 MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
 # Apache 2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/mono
 

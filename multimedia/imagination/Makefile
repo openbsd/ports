@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/06/13 15:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:56 sthen Exp $
 
 COMMENT =		lightweight and simple DVD slide show maker
 DISTNAME =		imagination-3.0
@@ -9,7 +9,7 @@ CATEGORIES =		multimedia
 HOMEPAGE =		http://imagination.sf.net
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += FLAC X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig freetype

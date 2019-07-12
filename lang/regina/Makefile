@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/05/07 17:55:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:22 sthen Exp $
 
 V =		3.9.1
 COMMENT =	ANSI-compliant interpreter for REXX language (regina-rexx)
@@ -12,7 +12,7 @@ HOMEPAGE =	https://regina-rexx.sourceforge.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread
 

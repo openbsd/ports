@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/05/20 22:15:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:47:55 sthen Exp $
 
 COMMENT=		DVD authoring application
 
@@ -11,7 +11,7 @@ EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		https://www.dvdstyler.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} avcodec avfilter avformat avutil
 WANTLIB += c dbus-1 exif fontconfig freetype jpeg m swscale wx_baseu-3.0

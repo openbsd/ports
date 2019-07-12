@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/06/24 13:49:57 bcallah Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:58 sthen Exp $
 
 COMMENT =	collaborative drawing program
 DISTNAME =	drawpile-2.1.11
@@ -11,7 +11,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 EXTRACT_SUFX =	.tar.gz
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5DNSSD Qt5Core Qt5Gui
 WANTLIB += Qt5Multimedia Qt5Network Qt5Sql Qt5Svg Qt5Widgets c

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/01/06 21:26:03 thfr Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:56 sthen Exp $
 
 COMMENT =	simple library to make decoding of Ogg Theora videos easier
 
@@ -19,7 +19,7 @@ HOMEPAGE =	https://icculus.org/theoraplay/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # zlib
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += pthread
 WANTLIB += ogg theoradec vorbis

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/06/02 07:26:47 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:47:47 sthen Exp $
 
 COMMENT =		library to manipulate units of physical quantities
 
@@ -10,7 +10,7 @@ SHARED_LIBS =		udunits2 2.2
 HOMEPAGE =		http://www.unidata.ucar.edu/software/udunits/
 
 # original BSD-like, with advertisement clause
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		ftp://ftp.unidata.ucar.edu/pub/udunits/
 

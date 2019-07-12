@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/20 22:15:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:59 sthen Exp $
 
 COMMENT =		deskew plug-in for GIMP
 DISTNAME =		gimp-deskew-plugin-0.0.20141025
@@ -12,7 +12,7 @@ CATEGORIES =		graphics x11
 HOMEPAGE =		http://registry.gimp.org/node/2958
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype

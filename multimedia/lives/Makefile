@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/06/13 15:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:56 sthen Exp $
 
 COMMENT =		video editor and a VJ tool
 
@@ -16,7 +16,7 @@ HOMEPAGE =		http://lives.sourceforge.net
 MASTER_SITES =		http://www.xs4all.nl/%7Esalsaman/lives/current/
 
 # GPL v3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo dv expat ffi fontconfig

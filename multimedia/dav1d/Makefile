@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/06/02 08:32:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:55 sthen Exp $
 
 COMMENT=	small and fast AV1 decoder
 
@@ -16,7 +16,7 @@ HOMEPAGE=	https://code.videolan.org/videolan/dav1d/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/06/13 15:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:47:12 sthen Exp $
 
 COMMENT =	medical image conversion
 
@@ -10,7 +10,7 @@ REVISION =	2
 HOMEPAGE =	http://xmedcon.sourceforge.net
 
 # GPLv2 - LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo expat ffi fontconfig freetype fribidi

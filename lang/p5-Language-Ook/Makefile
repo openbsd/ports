@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/05/07 12:40:57 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:21 sthen Exp $
 
 COMMENT =	programming language designed for orang-utans
 
@@ -13,6 +13,6 @@ MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 HOMEPAGE =	http://www.dangermouse.net/esoteric/ook.html
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

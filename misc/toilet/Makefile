@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/08/25 13:18:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:54 sthen Exp $
 
 COMMENT =	banner art generator with Unicode font and color support
 DISTNAME =	toilet-0.3
@@ -8,7 +8,7 @@ REVISION =	0
 HOMEPAGE =	http://caca.zoy.org/wiki/toilet
 
 # WTFPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c caca
 

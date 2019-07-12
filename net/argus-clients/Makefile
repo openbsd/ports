@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/20 20:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:59 sthen Exp $
 
 COMMENT =	utilities to read and parse Argus data
 
@@ -12,7 +12,7 @@ MASTER_SITES =	${HOMEPAGE}/src/
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =	c m curses readline z pthread ft
 

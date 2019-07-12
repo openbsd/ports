@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/05/10 02:20:22 schwarze Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:47:10 sthen Exp $
 
 COMMENT =	two-dimensional drawing tool and hyper-object browser
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://bourbon.usc.edu/tgif/
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Trolltech Q License
-PERMIT_PACKAGE_CDROM =	yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	X11 Xau Xdmcp Xext c m z
 

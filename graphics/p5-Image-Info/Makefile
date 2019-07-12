@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/05/06 15:40:06 benoit Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:47:07 sthen Exp $
 
 COMMENT =	perl module for getting image information
 
@@ -10,7 +10,7 @@ CATEGORIES =	graphics
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-IO-String>=1.08
 

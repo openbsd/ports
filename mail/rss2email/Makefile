@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/08/10 09:58:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:37 sthen Exp $
 
 COMMENT=	get news from RSS feeds in email
 
@@ -9,7 +9,7 @@ CATEGORIES=	mail textproc
 HOMEPAGE=	http://www.allthingsrss.com/rss2email/
 
 # GPLv2/v3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 

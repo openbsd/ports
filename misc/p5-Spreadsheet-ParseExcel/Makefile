@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/12/04 17:56:27 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:53 sthen Exp $
 
 COMMENT=	get information from Excel spreadsheets
 
@@ -10,7 +10,7 @@ CATEGORIES=	misc
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-OLE-Storage_Lite \
 		devel/p5-IO-stringy \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/03/28 19:02:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:15 sthen Exp $
 
 COMMENT=		helper script for launching java applications
 
@@ -11,7 +11,7 @@ CATEGORIES=		java
 MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

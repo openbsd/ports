@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/11/29 20:41:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:46:56 sthen Exp $
 
 COMMENT=	morphing engine
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=  animorph             1.0      # unknown
 HOMEPAGE=	http://www.dedalo-3d.com/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
 

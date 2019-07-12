@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/04 01:18:59 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:53 sthen Exp $
 
 COMMENT=	output characters or lines at random intervals
 
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bjk/}
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c z
 

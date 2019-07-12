@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/15 12:04:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:21 sthen Exp $
 
 MODPY_EGG_VERSION =		2.0.1
 COMMENT =	free, cross-platform emulator for GW-BASIC family (PC-BASIC)
@@ -9,7 +9,7 @@ HOMEPAGE =	http://www.pc-basic.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://github.com/robhagemans/pcbasic/releases/download/v${MODPY_EGG_VERSION}/
 

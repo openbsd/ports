@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/03 16:59:10 danj Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:21 sthen Exp $
 
 COMMENT =	portable C compiler
 
@@ -15,7 +15,7 @@ HOMEPAGE =	http://pcc.ludd.ltu.se/
 ONLY_FOR_ARCHS = i386 amd64
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

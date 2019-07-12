@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/05/22 11:36:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:54 sthen Exp $
 
 COMMENT = 		shared desktop ontologies
 PKG_ARCH =		*
@@ -14,7 +14,7 @@ CATEGORIES = 		misc
 MASTER_SITES = 		${MASTER_SITE_SOURCEFORGE:=oscaf/}
 
 # BSD - CC-BY
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cmake
 

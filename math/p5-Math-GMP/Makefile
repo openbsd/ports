@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:47:44 sthen Exp $
 
 COMMENT=	high speed arbitrary-size integer math
 
@@ -8,7 +8,7 @@ REVISION =	0
 CATEGORIES=	math
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c gmp>=4 perl
 

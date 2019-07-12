@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:50 sthen Exp $
 
 COMMENT=	tool to program the eeprom on FTDI usb devices
 
@@ -7,7 +7,7 @@ REVISION=	1
 CATEGORIES=	misc
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	http://www.bwct.de/

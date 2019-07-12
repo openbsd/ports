@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2018/11/17 13:29:17 juanfra Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2019/07/12 20:47:16 sthen Exp $
 
 COMMENT=	practical and portable Scheme system
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://www.call-cc.org/
 MASTER_SITES=	https://code.call-cc.org/releases/${V:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m pthread
 

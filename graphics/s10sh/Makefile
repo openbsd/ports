@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/17 16:19:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:09 sthen Exp $
 
 COMMENT=	S10sh - a Canon PowerShot digital camera driver
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.kyuzz.org/antirez/s10sh-src/
 HOMEPAGE=	http://www.kyuzz.org/antirez/s10sh.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses pthread readline usb
 

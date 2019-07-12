@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/03/11 08:15:31 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:47:53 sthen Exp $
 
 COMMENT=		OpenBSD ports distfile version scanner
 
@@ -14,7 +14,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 HOMEPAGE=		http://jasperla.github.io/portroach/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		perl
 

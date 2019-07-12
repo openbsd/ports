@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.129 2019/05/20 22:15:15 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.130 2019/07/12 20:47:22 sthen Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -40,7 +40,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # PSF license <http://www.python.org/${VERSION}/license.html>
 # A summary of changes to Python is required to be distributed
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .if ${VERSION} == "2.7"
 LIB_SUFX =	

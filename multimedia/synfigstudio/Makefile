@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/07/01 18:33:37 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:58 sthen Exp $
 
 COMMENT =		2D animation software studio
 BROKEN-alpha =		[keyframe_lock_past_on_icon.png] Bus error (core dumped)
@@ -17,7 +17,7 @@ CATEGORIES =		multimedia
 HOMEPAGE =		https://www.synfig.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Half ICE Iex IexMath IlmImf IlmThread
 WANTLIB += Imath Magick++-6.Q16 MagickCore-6.Q16 MagickWand-6.Q16

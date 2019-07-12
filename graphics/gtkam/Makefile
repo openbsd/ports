@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/06/13 15:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2019/07/12 20:47:00 sthen Exp $
 
 COMMENT=	digital camera frontend
 
@@ -10,7 +10,7 @@ CATEGORIES=	graphics
 HOMEPAGE=	http://gphoto.sourceforge.net/proj/gtkam/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo exif exif-gtk expat ffi fontconfig

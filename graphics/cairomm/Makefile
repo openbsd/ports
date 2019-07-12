@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2017/11/16 23:20:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:46:57 sthen Exp $
 
 PORTROACH=		limitw:1,even
 
@@ -19,7 +19,7 @@ HOMEPAGE=		http://cairographics.org/cairomm/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xext Xrender cairo expat fontconfig freetype m
 WANTLIB += pixman-1 png pthread sigc-2.0 xcb xcb-render

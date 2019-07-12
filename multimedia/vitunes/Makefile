@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/17 16:19:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:58 sthen Exp $
 
 COMMENT =		curses media indexer and player for vi users
 
@@ -13,7 +13,7 @@ MAINTAINER =		Laurent Fanis <laurent.fanis@gmail.com>
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses m tag tag_c util
 

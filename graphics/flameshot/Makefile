@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/05 18:52:24 denis Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:58 sthen Exp $
 
 COMMENT =	powerful yet simple to use screenshot software
 CATEGORIES =	graphics x11
@@ -11,7 +11,7 @@ HOMEPAGE =	https://flameshot.js.org/
 MAINTAINER =	Denis Fondras <denis@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Svg Qt5Widgets c m

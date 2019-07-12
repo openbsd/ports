@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/15 12:04:39 kmos Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:58 sthen Exp $
 
 GH_ACCOUNT =		aajanki
 GH_PROJECT =		yle-dl
@@ -13,7 +13,7 @@ HOMEPAGE =		http://aajanki.github.io/yle-dl/
 MAINTAINER =		Timo Myyra <timo.myyra@bittivirhe.fi>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python \
 			lang/php

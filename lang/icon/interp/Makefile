@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/03/12 23:16:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:47:18 sthen Exp $
 
 COMMENT-main =		programming language with generators, X11 and more
 COMMENT-main-no_x11 =	programming language with generators
@@ -15,7 +15,7 @@ PKGNAME-main =		icon-interp-${VERSION}
 REVISION-main =		0
 
 # Public domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 HOMEPAGE =	http://www.cs.arizona.edu/icon/
 

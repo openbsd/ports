@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:44 sthen Exp $
 
 COMMENT=	module to implement an accurate neural network mesh
 
@@ -9,7 +9,7 @@ REVISION=	2
 CATEGORIES=	math
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 EXTRACT_SUFX=	.zip
 

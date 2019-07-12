@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/07/01 09:02:41 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:09 sthen Exp $
 
 COMMENT =	package for creating PostScript/PDF graphics
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://pyx.sourceforge.net/
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${MODPY_WANTLIB} pthread
 

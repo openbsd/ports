@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/04/17 19:43:32 solene Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:37 sthen Exp $
 
 COMMENT=		SysV mail/BSD Mail/POSIX mailx: send and receive mail
 
@@ -7,7 +7,7 @@ CATEGORIES=		mail
 HOMEPAGE=		https://www.sdaoden.eu/code.html\#s-mailx
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto curses iconv ssl
 

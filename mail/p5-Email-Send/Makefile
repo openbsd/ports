@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/08/09 07:38:20 matthieu Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:32 sthen Exp $
 
 COMMENT= 	simply sending email
 
@@ -10,7 +10,7 @@ REVISION=	0
 CATEGORIES=	mail
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Module-Pluggable \
 		devel/p5-Return-Value \

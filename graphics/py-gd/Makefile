@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/03/20 16:12:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:47:09 sthen Exp $
 
 COMMENT=	Python wrapper for the GD library
 
@@ -13,7 +13,7 @@ CATEGORIES=	graphics
 HOMEPAGE=	http://newcenturycomputers.net/projects/gdmodule.html
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += freetype gd>=20 jpeg png pthread z ${MODPY_WANTLIB}
 

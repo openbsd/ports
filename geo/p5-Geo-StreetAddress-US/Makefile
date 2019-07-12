@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/12/07 21:26:05 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:55 sthen Exp $
 
 COMMENT =	perl extension for parsing US street addresses
 MODULES =	cpan
@@ -8,7 +8,7 @@ CATEGORIES =	geo
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODCPAN_EXAMPLES =	Yes
 MODCPAN_EXAMPLES_DIST =	eg

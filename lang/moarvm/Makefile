@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/06/25 20:25:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:20 sthen Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64 mips64el powerpc sparc64
 BROKEN-sparc64 =	undefined reference to `AO_fetch_compare_and_swap_full'
@@ -19,7 +19,7 @@ HOMEPAGE =		http://moarvm.org/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Artistic2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		atomic_ops c ffi kvm m pthread uv
 

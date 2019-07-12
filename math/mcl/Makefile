@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:23:55 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:43 sthen Exp $
 
 COMMENT=	clustering algorithm for graphs
 
@@ -10,7 +10,7 @@ CATEGORIES=	math
 HOMEPAGE=	http://micans.org/mcl/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/src/
 

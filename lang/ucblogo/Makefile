@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/12/21 15:00:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:24 sthen Exp $
 
 COMMENT=	Berkeley's implementation of the logo programming language#'
 DISTNAME=	ucblogo-6.0
@@ -10,7 +10,7 @@ HOMEPAGE=	https://people.eecs.berkeley.edu/~bh/logo.html
 MASTER_SITES=	https://people.eecs.berkeley.edu/~bh/downloads/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 c curses m
 

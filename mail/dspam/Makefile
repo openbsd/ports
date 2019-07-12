@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2019/07/12 20:47:26 sthen Exp $
 
 COMMENT-main =	anti-spam filter
 COMMENT-pgsql =	PostgreSQL driver for dspam
@@ -28,7 +28,7 @@ HOMEPAGE =	http://dspam.sourceforge.net/
 MAINTAINER =	Todd T. Fries <todd@OpenBSD.org>
 
 # AGPLv3/BSD/GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MULTI_PACKAGES = -main -mysql -pgsql
 

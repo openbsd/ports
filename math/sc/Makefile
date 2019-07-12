@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/17 16:19:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:46 sthen Exp $
 
 COMMENT=	curses spreadsheet-calculator program
 
@@ -9,7 +9,7 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/financial/spreadsheet/}
 
 # Public Domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses m
 

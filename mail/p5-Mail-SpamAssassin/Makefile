@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2019/03/07 07:41:07 giovanni Exp $
+# $OpenBSD: Makefile,v 1.113 2019/07/12 20:47:35 sthen Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
@@ -18,7 +18,7 @@ MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 HOMEPAGE=		http://spamassassin.apache.org/
 
 # Apache Software License (v2)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c crypto ssl z
 

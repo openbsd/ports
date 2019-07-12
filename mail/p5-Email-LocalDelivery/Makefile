@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:32 sthen Exp $
 
 COMMENT= 	deliver a piece of mail locally
 
@@ -9,7 +9,7 @@ DISTNAME=	Email-LocalDelivery-1.200
 CATEGORIES=	mail
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	mail/p5-Email-FolderType \
 		mail/p5-Email-Simple \

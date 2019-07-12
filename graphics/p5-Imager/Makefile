@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/05/17 16:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2019/07/12 20:47:07 sthen Exp $
 
 COMMENT=	generate and manipulate images
 
@@ -8,7 +8,7 @@ MODULES=	cpan
 REVISION =	1
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c freetype gif jpeg m perl png t1 tiff z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/10/25 02:37:26 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:43 sthen Exp $
 
 COMMENT =		weighted finite-state transducers library
 
@@ -15,7 +15,7 @@ CATEGORIES =		math devel textproc
 HOMEPAGE =		http://www.openfst.org/twiki/bin/view/FST/WebHome
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB +=		c m ${COMPILER_LIBCXX}
 

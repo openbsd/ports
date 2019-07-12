@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/06/11 00:38:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:22 sthen Exp $
 
 COMMENT=		language/IDE for images, animations and interactions
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://processing.org/
 
 # IDE: GPL
 # Core libraries: LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=processing/}
 EXTRACT_SUFX=		.tgz

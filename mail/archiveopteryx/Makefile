@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/10/24 14:28:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:24 sthen Exp $
 
 COMMENT =		mail server storing messages in a database
 
@@ -9,7 +9,7 @@ REVISION =		3
 HOMEPAGE =		http://www.archiveopteryx.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto m pthread ssl ${COMPILER_LIBCXX} z
 

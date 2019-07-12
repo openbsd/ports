@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/04 01:47:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:20 sthen Exp $
 
 COMMENT =		new brainfuck compiler
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://koeln.ccc.de/ablage/brainfuck/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

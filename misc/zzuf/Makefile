@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/05/03 11:02:57 solene Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:55 sthen Exp $
 
 BROKEN-hppa=		__sync_lock_test_and_set_4 in zzuf_mutex_lock
 
@@ -12,7 +12,7 @@ CATEGORIES=		misc security
 MASTER_SITES=		https://github.com/samhocevar/zzuf/releases/download/v${VERSION}/
 
 # WTFPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m
 

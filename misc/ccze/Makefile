@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/20 20:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:48 sthen Exp $
 
 COMMENT=	log colorizer
 
@@ -11,7 +11,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 MASTER_SITES=	https://distfiles.bsdfrog.org/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses pcre
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:32 sthen Exp $
 
 COMMENT= 	determine email folder type
 
@@ -9,7 +9,7 @@ DISTNAME =	Email-FolderType-0.814
 CATEGORIES=	mail
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 TEST_DEPENDS+=	devel/p5-Test-Pod
 

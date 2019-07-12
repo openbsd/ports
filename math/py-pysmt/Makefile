@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/07 07:58:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:46 sthen Exp $
 
 COMMENT =		library for SMT formulae manipulation and solving
 
@@ -11,7 +11,7 @@ CATEGORIES =		math
 HOMEPAGE =		http://www.pysmt.org
 
 # Apache2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

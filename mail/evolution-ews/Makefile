@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2019/05/06 18:12:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.110 2019/07/12 20:47:26 sthen Exp $
 
 COMMENT=		evolution connector for MS Exchange via EWS
 
@@ -11,7 +11,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += atk-1.0 cairo cairo-gobject camel-1.2 ebackend-1.2
 WANTLIB += ebook-1.2 ebook-contacts-1.2 ecal-1.2 edata-book-1.2

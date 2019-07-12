@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2019/05/31 13:58:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2019/07/12 20:47:00 sthen Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
@@ -11,7 +11,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL X11 Xcomposite Xdamage Xext
 WANTLIB += Xfixes Xi Xrandr atk-1.0 c cairo cairo-gobject clutter-1.0

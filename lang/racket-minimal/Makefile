@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2019/05/19 17:48:42 juanfra Exp $
+# $OpenBSD: Makefile,v 1.58 2019/07/12 20:47:22 sthen Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc sparc64
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://racket-lang.org/
 MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://mirror.racket-lang.org/installers/${V}/ \
 			https://www.cs.utah.edu/plt/installers/${V}/ \

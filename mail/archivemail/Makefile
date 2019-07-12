@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/04/19 13:02:09 rpe Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:47:24 sthen Exp $
 
 COMMENT=	archive and compress your old email
 
@@ -7,7 +7,7 @@ DISTNAME=	archivemail-${VERSION}
 CATEGORIES=	mail
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=archivemail/}
 

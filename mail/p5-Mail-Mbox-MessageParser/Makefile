@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/01/26 11:46:01 giovanni Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:34 sthen Exp $
 
 COMMENT=	fast and simple mbox folder reader
 
@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	devel/p5-Benchmark-Timer \
 		devel/p5-File-Slurp \

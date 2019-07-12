@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/05/20 08:19:25 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:47:39 sthen Exp $
 
 COMMENT=		verify email addresses and mailing lists
 
@@ -7,7 +7,7 @@ PKGNAME=		vrfy-99.05.22
 REVISION =		1
 CATEGORIES=		mail
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		http://ftp.ksut.edu.tw/FTP/Unix/Network/tools/

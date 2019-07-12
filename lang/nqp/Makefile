@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/01/04 09:27:27 pascal Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:47:21 sthen Exp $
 
 BROKEN-arm =		Bus error
 BROKEN-mips64 =		Bus error
@@ -19,7 +19,7 @@ HOMEPAGE =		https://github.com/perl6/NQP
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Artistic 2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 GH_ACCOUNT =		perl6
 GH_PROJECT =		nqp

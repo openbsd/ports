@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/16 20:19:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:53 sthen Exp $
 
 COMMENT=	Debian package repository producer
 
@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/r/reprepro/}
 HOMEPAGE=	https://salsa.debian.org/brlink/reprepro
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	archive bz2 c gpg-error gpgme lib/db4/db>=4 lzma z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/20 22:15:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:28 sthen Exp $
 
 COMMENT=	SPF library
 
@@ -15,7 +15,7 @@ MASTER_SITES=	${HOMEPAGE}/spf/
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv intl pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:31 sthen Exp $
 
 COMMENT= 	unified interface to mail representations
 
@@ -8,7 +8,7 @@ DISTNAME =	Email-Abstract-3.008
 CATEGORIES=	mail
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS =		mail/p5-Email-Simple>=1.999 \
 			devel/p5-MRO-Compat \

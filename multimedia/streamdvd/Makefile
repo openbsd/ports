@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/06 19:51:38 danj Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:58 sthen Exp $
 
 COMMENT=	fast tool to backup video DVDs 'on the fly'
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.badabum.de/down/
 HOMEPAGE=	http://www.badabum.de/streamdvd.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_TEST=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/05/14 19:49:29 schwarze Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:14 sthen Exp $
 # FreeBSD Id: Makefile,v 1.14 1998/04/05 04:46:33 max Exp $
 
 COMMENT=	Kanji -> kana converter
@@ -13,7 +13,7 @@ HOMEPAGE=	http://kakasi.namazu.org/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

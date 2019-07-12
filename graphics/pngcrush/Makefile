@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2017/10/09 07:18:45 benoit Exp $
+# $OpenBSD: Makefile,v 1.94 2019/07/12 20:47:08 sthen Exp $
 
 COMMENT =		optimizer for PNG files
 
@@ -10,7 +10,7 @@ HOMEPAGE =		http://pmt.sourceforge.net/pngcrush/
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # custom, see pngcrush.c
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m
 

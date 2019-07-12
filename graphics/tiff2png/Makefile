@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/04/01 10:20:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:11 sthen Exp $
 
 COMMENT =	converts TIFF images to PNG format
 
@@ -16,7 +16,7 @@ LIB_DEPENDS =	graphics/tiff \
 WANTLIB =	c jpeg m z tiff>=35 png>=8
 
 # custom, see tiff2png.c
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=png-mng/}

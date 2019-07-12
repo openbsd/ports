@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/10/18 18:08:41 jung Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:51 sthen Exp $
 
 COMMENT =		write insults to standard error on command failure
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://www.umaxx.net/
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

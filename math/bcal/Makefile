@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/12/12 16:56:12 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:39 sthen Exp $
 
 # Upstream says 64-bit only.
 # https://github.com/jarun/bcal/issues/4
@@ -14,7 +14,7 @@ HOMEPAGE =	https://github.com/jarun/bcal
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses readline
 

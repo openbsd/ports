@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/02/16 22:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:25 sthen Exp $
 
 COMMENT=	speed mail delivery by sorting & batching addresses
 
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://cs.utk.edu/pub/moore/bulk_mailer/
 HOMEPAGE=	http://www.cs.utk.edu/~moore/software.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 CONFIGURE_STYLE=gnu

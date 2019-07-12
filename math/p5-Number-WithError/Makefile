@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/08/04 09:27:03 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:45 sthen Exp $
 
 COMMENT =	numbers with error propagation and scientific rounding
 
@@ -10,7 +10,7 @@ CATEGORIES =	math
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 RUN_DEPENDS =		devel/p5-prefork>=1.00 \

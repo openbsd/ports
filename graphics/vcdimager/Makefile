@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/12 15:26:07 edd Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:11 sthen Exp $
 
 COMMENT=		(S)VCD authoring software
 
@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_GNU:=vcdimager/}
 HOMEPAGE=		http://www.vcdimager.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c cdio iconv intl iso9660 lzma m popt pthread xml2 z
 

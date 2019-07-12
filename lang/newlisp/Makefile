@@ -1,4 +1,4 @@
-#       $OpenBSD: Makefile,v 1.18 2018/11/14 20:48:21 sthen Exp $
+#       $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:20 sthen Exp $
 
 COMMENT=	newLISP is a LISP like, general purpose scripting language
 
@@ -9,7 +9,7 @@ HOMEPAGE=	http://newlisp.org/
 REVISION=	2
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m ncurses readline
 

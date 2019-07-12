@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:10:56 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:12 sthen Exp $
 
 COMMENT =	X11 pixel color grabber
 
@@ -10,7 +10,7 @@ HOMEPAGE =	http://xoris.sf.net/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=xoris/}
 
 # MIT/X license
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	X11 c
 

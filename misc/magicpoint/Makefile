@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2019/05/20 22:15:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.65 2019/07/12 20:47:51 sthen Exp $
 
 COMMENT=	X11-based presentation tool
 
@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
 HOMEPAGE=	http://member.wide.ad.jp/wg/mgp/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=  ICE SM X11 Xau Xdmcp Xext Xmu Xt Xtst c gif iconv intl m mng
 WANTLIB+= png ttf util

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/01/22 12:52:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:49 sthen Exp $
 
 COMMENT=	delay program with feedback to the user
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${HOMEPAGE}dl/
 HOMEPAGE=	http://onegeek.org/~tom/software/delay/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 

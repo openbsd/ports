@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/04/30 08:29:51 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:34 sthen Exp $
 
 COMMENT = 	IMAP client interface with lots of features
 
@@ -8,6 +8,6 @@ DISTNAME =	Mail-IMAPTalk-4.04
 CATEGORIES =	mail
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/11/30 00:06:23 bluhm Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:47:35 sthen Exp $
 
 COMMENT =	iterative SPF lookup
 
@@ -9,7 +9,7 @@ CATEGORIES =	mail
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 RUN_DEPENDS =		net/p5-Net-DNS>=0.62 \

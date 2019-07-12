@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/20 22:15:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:54 sthen Exp $
 
 COMMENT=	Unicode utilities
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://billposer.org/Software/unidesc.html
 MAINTAINER=	Nicholas Marriott <nicm@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv intl
 

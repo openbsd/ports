@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2019/05/20 22:15:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.85 2019/07/12 20:47:10 sthen Exp $
 
 BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
@@ -16,7 +16,7 @@ HOMEPAGE=		http://www.sane-project.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c execinfo jpeg m png pthread tiff usb-1.0 v4l1 v4l2
 WANTLIB += v4lconvert z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/22 17:47:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:58 sthen Exp $
 
 COMMENT=	extract subtitles from dvds
 DISTNAME=	ogmrip-0.10.0
@@ -12,7 +12,7 @@ HOMEPAGE=	http://ogmrip.sourceforge.net/
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WRKDIST=	${WRKDIR}/${DISTNAME}/subrip
 

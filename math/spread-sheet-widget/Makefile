@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/12 21:29:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:46 sthen Exp $
 
 COMMENT =	spread sheet widget library
 DISTNAME =	spread-sheet-widget-0.3
@@ -10,7 +10,7 @@ HOMEPAGE =	https://www.gnu.org/software/ssw/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += pthread
 

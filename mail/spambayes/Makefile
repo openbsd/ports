@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/10 16:50:05 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:38 sthen Exp $
 
 COMMENT=		statistical anti-spam filter
 
@@ -11,7 +11,7 @@ CATEGORIES=		mail
 HOMEPAGE=		http://www.spambayes.org/
 
 # PSF
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=spambayes/}
 

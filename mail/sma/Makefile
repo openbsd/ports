@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/02/17 20:41:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:38 sthen Exp $
 
 COMMENT=	Sendmail Log Analysis Report
 
@@ -10,7 +10,7 @@ CATEGORIES=	mail
 HOMEPAGE=	http://www.klake.org/sma/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	http://www.klake.org/sma/dl/

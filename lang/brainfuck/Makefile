@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2018/07/12 18:26:30 nayden Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:16 sthen Exp $
 
 GH_ACCOUNT =	fabianishere
 GH_PROJECT =	brainfuck
@@ -10,7 +10,7 @@ CATEGORIES =	lang
 MAINTAINER =	Nayden Markatchev <nayden@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses edit
 

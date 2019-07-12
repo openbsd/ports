@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:50 sthen Exp $
 
 COMMENT=		finds and then operates on files
 
@@ -9,7 +9,7 @@ REVISION=		0
 HOMEPAGE=		https://www.gnu.org/software/findutils/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c iconv intl m
 

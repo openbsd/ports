@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:44 sthen Exp $
 
 COMMENT =		encoding and decoding of base36 strings
 
@@ -10,7 +10,7 @@ CATEGORIES =		math
 MAINTAINER =		Mikolaj Kucharski <mikolaj@kucharski.name>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 TEST_DEPENDS =		devel/p5-Test-Exception \
 			devel/p5-Test-Pod \

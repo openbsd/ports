@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/04/28 20:51:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:01 sthen Exp $
 
 COMMENT=	library to adjust for photographic lens characteristics
 DISTNAME=	lensfun-0.3.2
@@ -10,7 +10,7 @@ CATEGORIES=	graphics
 HOMEPAGE=	http://lensfun.sourceforge.net/
 
 # library LGPLv3, lens db CC-BY-SA, build infrastructure/applications GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c glib-2.0 m png ${COMPILER_LIBCXX} z
 

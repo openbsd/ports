@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/02/07 21:31:59 kirby Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:59 sthen Exp $
 
 COMMENT=	C++ mathematics header-only library for OpenGL software
 
@@ -11,7 +11,7 @@ CATEGORIES=	graphics math
 HOMEPAGE=	https://glm.g-truc.net/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	devel/cmake
 

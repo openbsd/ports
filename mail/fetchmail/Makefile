@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2019/05/20 22:15:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.152 2019/07/12 20:47:27 sthen Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
@@ -10,7 +10,7 @@ REVISION=	3
 HOMEPAGE=	http://www.fetchmail.info/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c crypto iconv intl ssl
 

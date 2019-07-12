@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/16 18:07:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:02 sthen Exp $
 
 COMMENT =		library for handling data matrix barcodes
 
@@ -12,7 +12,7 @@ MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libdmtx/}
 
 # BSD
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB +=		m
 

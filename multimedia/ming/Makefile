@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/11 19:59:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:57 sthen Exp $
 
 COMMENT=	Flash 4/5 movie output library
 
@@ -12,7 +12,7 @@ SHARED_LIBS=	ming	0.1
 HOMEPAGE=	http://www.libming.org/
 
 # LGPLv2.1+ and GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c freetype m png gif z
 

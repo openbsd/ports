@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/04/16 20:13:09 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:46:55 sthen Exp $
 
 COMMENT =	garmin GPS map management tool
 
@@ -11,7 +11,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qlandkartegt/}
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES =	devel/cmake x11/qt4
 

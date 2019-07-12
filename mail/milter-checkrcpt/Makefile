@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/01/11 19:27:03 rpe Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:29 sthen Exp $
 
 COMMENT=	sendmail milter plugin for recipient checking
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.benzedrine.ch/milter-checkrcpt.html
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c milter pthread
 

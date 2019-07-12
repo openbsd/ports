@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:02 sthen Exp $
 
 COMMENT = 			seam-carving smart rescale library
 CATEGORIES =			graphics devel
@@ -11,7 +11,7 @@ EXTRACT_SUFX =			.tar.bz2
 REVISION =                      0
 
 # Library is LGPLv3, examples are GPLv3
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =  glib-2.0 iconv intl m pcre pthread
 

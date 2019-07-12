@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/05/01 16:51:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:49 sthen Exp $
 
 COMMENT=	program for reading values from 1-wire devices
 
@@ -9,7 +9,7 @@ REVISION=	1
 HOMEPAGE=	http://www.digitemp.com/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m usb pthread
 

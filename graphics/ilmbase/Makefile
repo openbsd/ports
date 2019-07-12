@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:00 sthen Exp $
 
 COMMENT=	ILM base libraries
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://www.openexr.com/
 
 # Modified BSD license
 # `name of ILM not to be used for advertizing without written agreement'
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += m pthread ${COMPILER_LIBCXX}
 

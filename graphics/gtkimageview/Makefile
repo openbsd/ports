@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/06/13 15:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:00 sthen Exp $
 
 COMMENT=	image viewer widget for gtk
 
@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 HOMEPAGE=	http://trac.bjourne.webfactional.com/
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat ffi

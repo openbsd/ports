@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/24 16:26:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:42 sthen Exp $
 
 COMMENT =		number theoretic multiple-precision integer library
 CATEGORIES =		math
@@ -10,7 +10,7 @@ GH_TAGNAME =		v1.0.1
 REVISION =		0
 
 # WTFPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAKE_FLAGS =		CC="${CC}" \
 			IGNORE_SPEED=Yes \

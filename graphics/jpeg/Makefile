@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2019/02/17 20:18:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2019/07/12 20:47:01 sthen Exp $
 
 COMMENT=	SIMD-accelerated JPEG codec replacement of libjpeg
 
@@ -15,7 +15,7 @@ DPB_PROPERTIES=	parallel
 HOMEPAGE=	https://libjpeg-turbo.org/
 
 # BSD-style
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libjpeg-turbo/}
 DISTFILES=	libjpeg-turbo-${V}.tar.gz

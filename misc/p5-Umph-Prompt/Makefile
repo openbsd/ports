@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/08/22 19:25:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:53 sthen Exp $
 
 COMMENT =		interactive prompt module
 
@@ -11,7 +11,7 @@ CATEGORIES =		misc
 HOMEPAGE =		http://repo.or.cz/w/umph-prompt.git
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =		https://distfiles.nl/
 

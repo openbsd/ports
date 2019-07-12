@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/02 14:51:49 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:01 sthen Exp $
 
 COMMENT=	jpeg pixel interpolator
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.zero-based.org/software/jpegpixi/
 MASTER_SITES=	${HOMEPAGE}
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m jpeg>=62
 LIB_DEPENDS=		graphics/jpeg

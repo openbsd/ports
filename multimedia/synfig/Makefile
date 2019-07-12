@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/05 11:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:58 sthen Exp $
 
 COMMENT =		2D animation software
 
@@ -14,7 +14,7 @@ CATEGORIES =		multimedia
 HOMEPAGE =		https://www.synfig.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Half ICE Iex IexMath IlmImf IlmThread
 WANTLIB += Imath Magick++-6.Q16 MagickCore-6.Q16 MagickWand-6.Q16

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/09/02 22:12:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:09 sthen Exp $
 
 COMMENT=		library for making beautiful graphs
 
@@ -8,7 +8,7 @@ CATEGORIES=		graphics
 HOMEPAGE=		https://github.com/topfunky/gruff
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

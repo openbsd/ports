@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/04/15 17:02:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:11 sthen Exp $
 
 COMMENT=		automated hinting process based on FreeType's autohinter #'
 
@@ -12,7 +12,7 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 HOMEPAGE =		http://www.freetype.org/ttfautohint/#download
 
 # FreeType License or GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://download.savannah.gnu.org/releases/freetype/
 

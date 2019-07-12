@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2019/04/28 20:51:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2019/07/12 20:47:02 sthen Exp $
 
 COMMENT=		GObject wrapper around exiv2
 
@@ -15,7 +15,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} exiv2 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += intl m

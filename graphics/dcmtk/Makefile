@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/05 15:43:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:46:57 sthen Exp $
 
 COMMENT=		DICOM toolkit
 
@@ -41,7 +41,7 @@ MASTER_SITES=		ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk${V:S/./
 
 # Several ISC and BSDish
 # ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk363/COPYRIGHT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto jpeg m png pthread ssl ${COMPILER_LIBCXX} tiff
 WANTLIB += xml2 z charset iconv

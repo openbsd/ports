@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:23:50 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:24 sthen Exp $
 
 COMMENT=	complain about SPAM
 
@@ -12,7 +12,7 @@ EXTRACT_CASES=	*.uu) uudecode ${FULLDISTDIR}/$$archive;;
 
 HOMEPAGE=	http://www.rdrop.com/users/billmc/adcomplain.html
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

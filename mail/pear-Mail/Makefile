@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/06/16 14:07:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:35 sthen Exp $
 
 COMMENT=	class that provides multiple interfaces for sending email
 
@@ -11,7 +11,7 @@ MODULES=	www/pear
 HOMEPAGE=	http://pear.php.net/package/Mail
 
 # PHP License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	net/pear-Net-SMTP>=1.4.1
 

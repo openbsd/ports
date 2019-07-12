@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/05 11:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:47:56 sthen Exp $
 
 COMMENT =	guitar tab editor
 
@@ -20,7 +20,7 @@ HOMEPAGE =	http://kguitar.sourceforge.net/
 MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2+; for MusicXML copyright see licenseMusicXML.html
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

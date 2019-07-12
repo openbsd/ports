@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2018/04/06 11:37:28 pascal Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:47:30 sthen Exp $
 
 COMMENT=		new MH mail handling program
 
@@ -10,7 +10,7 @@ HOMEPAGE=		https://www.nongnu.org/nmh/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c crypto curses edit iconv ssl
 

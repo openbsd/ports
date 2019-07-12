@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/12/30 14:30:29 giovanni Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:33 sthen Exp $
 
 COMMENT=		detect image spam with SpamAssassin
 
@@ -28,7 +28,7 @@ RUN_DEPENDS=		devel/p5-MLDBM-Sync \
 NO_TEST=		Yes
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_BUILD=		Yes
 MODULES=		perl

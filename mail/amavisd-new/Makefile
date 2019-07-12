@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2018/10/16 20:28:09 giovanni Exp $
+# $OpenBSD: Makefile,v 1.49 2019/07/12 20:47:24 sthen Exp $
 
 COMMENT-main=		interface between mailer MTA and content checkers
 COMMENT-utils=		utilities to monitor amavisd-new server
@@ -13,7 +13,7 @@ HOMEPAGE=		http://www.amavis.org/
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 # BSD / GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE} \
 			http://mirrors.catpipe.net/amavisd-new/ \

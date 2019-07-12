@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/17 09:11:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:36 sthen Exp $
 
 COMMENT=	simple shell based filters to use GnuPG within (Al)Pine
 
@@ -9,7 +9,7 @@ CATEGORIES=	mail security
 HOMEPAGE=	http://dougbarton.us/PGP/ppf/index.html
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://dougbarton.us/PGP/ppf/
 

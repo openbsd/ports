@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/12/03 21:24:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:41 sthen Exp $
 
 COMMENT=	multi-radix calculator for x11
 
@@ -9,7 +9,7 @@ REVISION=	1
 CATEGORIES=	math
 EXTRACT_SUFX=	..tar.Z
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xaw Xext Xmu Xt c
 

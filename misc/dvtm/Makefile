@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/17 16:19:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:49 sthen Exp $
 
 COMMENT=		tiling window management for the console
 
@@ -9,7 +9,7 @@ REVISION=		0
 HOMEPAGE=		http://www.brain-dump.org/projects/dvtm/
 
 # MIT/X
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses util
 

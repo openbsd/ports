@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/12/08 00:09:18 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:31 sthen Exp $
 
 COMMENT= 	send emails with Catalyst
 
@@ -10,7 +10,7 @@ CATEGORIES=	mail
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	mail/p5-Email-MIME>=1.910 \
 		mail/p5-Email-Send \

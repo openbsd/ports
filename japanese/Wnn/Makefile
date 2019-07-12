@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2018/04/15 19:48:38 schwarze Exp $
+# $OpenBSD: Makefile,v 1.82 2019/07/12 20:47:14 sthen Exp $
 
 COMMENT-main = 		Japanese input method
 COMMENT-dict =		dictionaries for Japanese Wnn
@@ -62,7 +62,7 @@ DISTFILES =	Wnn4.2.tar.gz Wnn4.2.patch.tar.gz
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 #		BSD
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 EXTRACT_ONLY =	Wnn4.2.tar.gz
 WRKDIST =	${WRKDIR}/Xsi

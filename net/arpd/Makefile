@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/06/10 11:05:02 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:59 sthen Exp $
 
 COMMENT=		ARP reply daemon
 
@@ -7,7 +7,7 @@ REVISION=		4
 CATEGORIES=    		net
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c pcap event dnet
 
 MASTER_SITES=		http://www.citi.umich.edu/u/provos/honeyd/

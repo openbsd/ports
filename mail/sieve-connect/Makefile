@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/05/12 14:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:38 sthen Exp $
 
 COMMENT =	perl sieveshell-compatible ManageSieve client
 
@@ -18,7 +18,7 @@ MASTER_SITES =	http://github.com/philpennock/${PROJECT}/releases/download/${GH_V
 EXTRACT_SUFX =	.tar.bz2
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 NO_TEST =	Yes
 RUN_DEPENDS =	net/p5-Net-DNS \

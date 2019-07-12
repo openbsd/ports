@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/04 12:51:15 chrisz Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:21 sthen Exp $
 
 V =		7.07
 COMMENT =	OCaml Preprocessor and Pretty-Printer
@@ -10,7 +10,7 @@ HOMEPAGE =	https://camlp5.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:59 sthen Exp $
 
 COMMENT = 			seam-carving smart rescale gimp plugin
 CATEGORIES =			graphics
@@ -10,7 +10,7 @@ EXTRACT_SUFX =			.tar.bz2
 REVISION =                      2
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =  GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype

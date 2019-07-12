@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2019/03/23 10:55:51 jca Exp $
+# $OpenBSD: Makefile,v 1.40 2019/07/12 20:47:40 sthen Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
@@ -15,7 +15,7 @@ HOMEPAGE=		https://coq.inria.fr/
 MAINTAINER=		Yozo Toda <yozo@v007.vaio.ne.jp>
 
 # LGPL 2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype fribidi

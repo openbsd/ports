@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/08 20:00:49 cwen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:54 sthen Exp $
 
 # Qt5Webkit
 USE_WXNEEDED =	Yes
@@ -16,7 +16,7 @@ MAINTAINER =	Kristaps Dzonsons <kristaps@bsd.lv>
 
 # GPLv2, and LGPLv2.1 for libdivecomputer
 # The content of mobile-widgets/qml/icons/ is Apache 2, but not installed.
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates Qt5Concurrent
 WANTLIB += Qt5Core Qt5Gui Qt5Location Qt5Network Qt5Positioning

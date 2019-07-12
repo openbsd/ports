@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 20:47:55 sthen Exp $
 
 COMMENT=		gtk-based frontend to cdrtools
 DISTNAME=		xcdroast-0.98alpha16
@@ -10,7 +10,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xcdroast/}
 HOMEPAGE=		http://www.xcdroast.org/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/06 16:34:44 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:58 sthen Exp $
 
 COMMENT =		UPnP audio control point
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://www.lesbonscomptes.com/upplay/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Script
 WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml c jsoncpp

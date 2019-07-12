@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:12 sthen Exp $
 
 COMMENT =	barcode image processing library
 
@@ -12,7 +12,7 @@ REVISION =	0
 CATEGORIES =	graphics
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c iconv m ${COMPILER_LIBCXX}
 

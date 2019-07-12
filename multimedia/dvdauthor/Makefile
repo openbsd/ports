@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/10/23 17:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:55 sthen Exp $
 
 COMMENT=	creates DVD file structures
 
@@ -10,7 +10,7 @@ REVISION=	0
 HOMEPAGE=	http://dvdauthor.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE MagickCore-6.Q16 SM X11 Xext Xt bz2 c djvulibre
 WANTLIB += dvdread expat fftw3 fontconfig freetype fribidi iconv

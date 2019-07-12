@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:58 sthen Exp $
 
 COMMENT=	xml2swf and swf2xml processor with import functionalities
 
@@ -10,7 +10,7 @@ REVISION=	0
 HOMEPAGE=	http://swfmill.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c exslt freetype gcrypt gpg-error iconv intl lzma m png pthread
 WANTLIB += ${COMPILER_LIBCXX} xml2 xslt z

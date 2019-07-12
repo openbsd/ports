@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/04/30 08:50:52 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:35 sthen Exp $
 
 COMMENT=	class to decode mime messages
 
@@ -9,7 +9,7 @@ MODULES=	www/pear
 PKG_ARCH=	*
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		mail/pear-Mail-Mime>=1.5.2
 

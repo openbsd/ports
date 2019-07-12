@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/19 05:53:08 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:12 sthen Exp $
 
 COMMENT =		grid-entry natural handwriting input panel
 
@@ -11,7 +11,7 @@ CATEGORIES =		inputmethods x11
 MAINTAINER =		Vasily Mikhaylichenko <vaskas@lxmx.com.au>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender Xtst atk-1.0 c cairo fontconfig freetype gdk-x11-2.0

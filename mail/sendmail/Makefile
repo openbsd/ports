@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/02/18 10:50:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:47:38 sthen Exp $
 
 COMMENT-main =		mother of Mail Transfer Agents
 COMMENT-libmilter =	mail filter support library for sendmail
@@ -19,7 +19,7 @@ HOMEPAGE =		http://www.sendmail.org/
 MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Sendmail License / BSD3 / BSD4 / Public Domain / CDDL (contrib/ directory)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MULTI_PACKAGES =	-main -libmilter
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/17 17:42:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:40 sthen Exp $
 
 COMMENT=	C interface to the BLAS library
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.netlib.org/blas/
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
 # freely available
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://www.netlib.org/blas/blast-forum/ \
 		http://www.netlib.no/netlib/blas/blast-forum/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/19 11:26:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:02 sthen Exp $
 
 COMMENT =	PGF image format handling library
 V =		6.12.24
@@ -13,7 +13,7 @@ HOMEPAGE =	http://sourceforge.net/projects/libpgf/
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	m ${COMPILER_LIBCXX}
 

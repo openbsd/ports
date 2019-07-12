@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/06/22 10:21:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:00 sthen Exp $
 
 COMMENT=		thin layer of graphic data types
 
@@ -12,7 +12,7 @@ CATEGORIES=		graphics
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += glib-2.0 gobject-2.0 intl m pthread
 

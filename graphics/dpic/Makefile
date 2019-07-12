@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/09/09 22:56:49 nigel Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:57 sthen Exp $
 
 COMMENT =		pic-like interpreter for producing line graphics
 
@@ -9,7 +9,7 @@ CATEGORIES =		graphics
 HOMEPAGE =		https://ece.uwaterloo.ca/~aplevich/dpic/
 
 # 2-clause BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c m
 

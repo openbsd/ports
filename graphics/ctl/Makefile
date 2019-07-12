@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:57 sthen Exp $
 
 COMMENT =		Color Transformation Language interpreter
 
@@ -17,7 +17,7 @@ CATEGORIES =		graphics lang
 HOMEPAGE =		https://github.com/ampas/CTL/
 
 # 3-clause BSD license
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += Half Iex IexMath IlmImf IlmThread Imath c m pthread
 WANTLIB += ${COMPILER_LIBCXX} tiff

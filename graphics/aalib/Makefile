@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/05/20 20:52:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2019/07/12 20:46:56 sthen Exp $
 
 COMMENT=	ascii art library
 
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aa-project/}
 HOMEPAGE=	http://aa-project.sourceforge.net/aalib/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m curses X11 xcb
 

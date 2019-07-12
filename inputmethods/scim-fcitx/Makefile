@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/02/20 06:16:07 kevlo Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:13 sthen Exp $
 
 COMMENT=	scim input method module for fcitx
 
@@ -12,7 +12,7 @@ CATEGORIES=	inputmethods chinese
 HOMEPAGE=	https://github.com/scim-im/scim-fcitx
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv intl m ${COMPILER_LIBCXX} scim-1.0 pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/25 11:45:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:56 sthen Exp $
 
 COMMENT=	display technical and tag data for video and audio files
 
@@ -10,7 +10,7 @@ HOMEPAGE=	https://mediaarea.net/en/MediaInfo
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # BSD-style
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m pthread ${COMPILER_LIBCXX} z
 

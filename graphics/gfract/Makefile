@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:46:59 sthen Exp $
 
 COMMENT=		fractal program with GTK interface
 GH_ACCOUNT=		oskusalerma
@@ -12,7 +12,7 @@ REVISION=		2
 HOMEPAGE=		http://www.oskusoft.com/osku/gfract/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 boost_filesystem boost_regex

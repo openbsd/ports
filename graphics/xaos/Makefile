@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/20 22:15:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:11 sthen Exp $
 
 COMMENT =		interactive fractal zoomer and morpher
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://matek.hu/xaos/doku.php
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  X11 Xext c gsl gslcblas iconv intl m png z
 

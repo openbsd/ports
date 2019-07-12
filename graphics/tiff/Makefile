@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2019/07/10 15:25:03 tj Exp $
+# $OpenBSD: Makefile,v 1.89 2019/07/12 20:47:10 sthen Exp $
 
 COMMENT=	tools and library routines for working with TIFF images
 
@@ -17,7 +17,7 @@ WANTLIB=	c m ${COMPILER_LIBCXX} z jpeg
 COMPILER =		base-clang ports-gcc base-gcc
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-jbig \

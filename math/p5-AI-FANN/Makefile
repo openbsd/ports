@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:43 sthen Exp $
 
 COMMENT=		interface to the Fast Artificial Neural Network library
 
@@ -9,7 +9,7 @@ CATEGORIES=		math
 MODULES=		cpan
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c doublefann perl
 

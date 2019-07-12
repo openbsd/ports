@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/12/20 09:34:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:20 sthen Exp $
 
 COMMENT=	Python as a hardware description and verification language
 
@@ -9,7 +9,7 @@ CATEGORIES=	lang
 HOMEPAGE=	http://www.myhdl.org/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2019/07/07 19:00:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2019/07/12 20:47:17 sthen Exp $
 
 COMMENT=		functional language for building scalable applications
 
@@ -14,7 +14,7 @@ HOMEPAGE=		http://elixir-lang.org/
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apache2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/erlang
 MODERL_VERSION=		21

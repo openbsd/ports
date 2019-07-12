@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/07/10 21:01:27 tj Exp $
+# $OpenBSD: Makefile,v 1.67 2019/07/12 20:47:54 sthen Exp $
 
 COMMENT=		shared mime database for desktops
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://www.freedesktop.org/wiki/Software/shared-mime-info
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 WANTLIB += c glib-2.0 intl xml2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/11/09 18:22:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:57 sthen Exp $
 
 COMMENT =	tool for exploring the color space and relations
 
@@ -9,7 +9,7 @@ HOMEPAGE =	http://billposer.org/Software/ColorExplorer.html
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://billposer.org/Software/Downloads/
 MODULES =	x11/tk

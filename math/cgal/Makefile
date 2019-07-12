@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:40 sthen Exp $
 
 BROKEN-mips64 =		ICE on Interval_nt.h:98
 
@@ -23,7 +23,7 @@ CATEGORIES =		math
 HOMEPAGE =		http://www.cgal.org/
 
 # mix of LGPLv2.1 and QPL; see http://www.cgal.org/license.html
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU boost_system-mt boost_thread-mt gmp m mpfr pthread
 WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt

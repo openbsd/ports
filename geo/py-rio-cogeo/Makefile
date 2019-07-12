@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:55 sthen Exp $
 
 COMMENT =	cloud optimized GeoTiff creation plugin for rasterio
 
@@ -11,7 +11,7 @@ REVISION =	0
 CATEGORIES =	geo
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 

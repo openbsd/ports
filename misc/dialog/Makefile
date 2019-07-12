@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/05/20 22:15:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:47:49 sthen Exp $
 
 COMMENT =		curses widgets (menus, lists, etc) for shell scripts
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://invisible-island.net/dialog/dialog.html
 MAINTAINER =		Frederic Cambus <fcambus@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses iconv intl
 

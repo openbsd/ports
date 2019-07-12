@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/05/20 22:15:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2019/07/12 20:46:55 sthen Exp $
 
 V =	2.5.2
 COMMENT=	geographic objects support for PostgreSQL
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.postgis.net/
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto curl expat freexl gdal geos geos_c geotiff gif iconv intl
 WANTLIB += jasper jpeg json-c lzma m nghttp2 openjp2 pcre png pq>=5.3 protobuf-c zstd

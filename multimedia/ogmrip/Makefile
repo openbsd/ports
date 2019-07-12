@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/06/13 15:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:57 sthen Exp $
 
 COMMENT-main =		DVD ripper/converter
 COMMENT-dvdcpy =	copy selected info from DVD
@@ -27,7 +27,7 @@ HOMEPAGE =		http://ogmrip.sourceforge.net/en/index.html
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB-main += ${WANTLIB} X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB-main += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c

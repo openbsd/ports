@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:16 sthen Exp $
 
 COMMENT =	NASE A60 Algol interpreter
 DISTNAME =	a60-0.23a
@@ -9,7 +9,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SM X11 Xaw Xext Xmu Xt c m
 

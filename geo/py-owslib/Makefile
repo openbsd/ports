@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:55 sthen Exp $
 
 COMMENT =		library for accessing OGC Web Services
 
@@ -11,7 +11,7 @@ CATEGORIES =		geo devel
 
 HOMEPAGE =	http://geopython.github.io/OWSLib
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

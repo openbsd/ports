@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/08/20 07:54:04 fcambus Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:51 sthen Exp $
 
 PORTROACH =	limit:^[0-9].*
 
@@ -14,7 +14,7 @@ CATEGORIES =	misc
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # NCSA
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/20 22:15:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:04 sthen Exp $
 
 COMMENT =	simple GTK+2 raster painting program
 
@@ -11,7 +11,7 @@ CATEGORIES =	graphics
 HOMEPAGE =	http://mtpaint.sourceforge.net/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype

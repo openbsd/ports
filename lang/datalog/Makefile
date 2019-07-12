@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/17 16:19:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:17 sthen Exp $
 
 COMMENT=	deductive database system similar to Prolog
 
@@ -10,7 +10,7 @@ CATEGORIES=	lang
 HOMEPAGE=	http://datalog.sourceforge.net/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODLUA_WANTLIB}
 WANTLIB += c curses m readline

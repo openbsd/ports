@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 16:36:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:15 sthen Exp $
 
 COMMENT=	Kanji -> kana converter, perl interface
 
@@ -13,7 +13,7 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 LIB_DEPENDS=	japanese/kakasi
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c kakasi perl
 

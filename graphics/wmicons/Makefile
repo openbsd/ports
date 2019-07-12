@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:10:56 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:11 sthen Exp $
 
 COMMENT=		icons mainly for use in Window Maker
 
@@ -7,7 +7,7 @@ REVISION=		1
 CATEGORIES=		graphics x11 x11/windowmaker
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 DISTFILES=		DWiconpack1.tar.gz DWiconpack2.tar.gz IconFest-1.2.tgz \
 			NeXT_XEmacs_tar.gz wm_icons_png.tar.gz wm_icons_tif.tar.gz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2013/10/15 12:50:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.54 2019/07/12 20:47:12 sthen Exp $
 
 COMMENT=		simple paint program
 
@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sf-xpaint/}
 EXTRACT_SUFX=		.tar.bz2
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c m \
 			z jpeg>=62 tiff>=36 png>=4

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/02/16 22:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:59 sthen Exp $
 
 COMMENT=	active packet sniffer
 
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=angst/} \
 		${MASTER_SITE_PACKETSTORM:=sniffers/angst/}	
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =	c pcap lib/libnet-1.0/net=0
 LIB_DEPENDS=	net/libnet/1.0

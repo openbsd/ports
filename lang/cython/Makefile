@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2019/07/07 17:55:01 juanfra Exp $
+# $OpenBSD: Makefile,v 1.40 2019/07/12 20:47:16 sthen Exp $
 
 COMMENT =		optimising static compiler for Python and Cython
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://cython.org/
 MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # Apache 2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += pthread ${MODPY_WANTLIB}
 

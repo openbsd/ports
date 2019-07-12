@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/07 17:04:59 danj Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:47:43 sthen Exp $
 
 COMMENT=	monte carlo simulation software
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=mcsim/}
 FAKE_FLAGS=	PREFIX="${WRKINST}${PREFIX}"
 WRKDIST=	${WRKDIR}/mcsim
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c m
 
 do-build:

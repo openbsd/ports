@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/10/21 13:29:47 edd Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:47:22 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -31,7 +31,7 @@ HOMEPAGE =		http://pypy.org/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # PyPy is MIT; the Python libs it comes with have the same license as Python
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		bz2 c crypto curses expat ffi gdbm iconv intl m
 WANTLIB +=		panel pthread sqlite3 ssl ${MODTCL_LIB}

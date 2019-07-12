@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/28 21:08:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:17 sthen Exp $
 
 BROKEN-i386 =	needs fixing for LLD
 
@@ -17,7 +17,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Compiler: GPLv2+
 # Runtime and Graphics libs: LGPLv2+ with static linking exception
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m ncurses pthread
 

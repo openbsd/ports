@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/04/29 00:42:08 jeremy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:29 sthen Exp $
 
 COMMENT=	emacs-based mail client
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.mew.org/
 MAINTAINER=	YASUOKA Masahiko <yasuoka@yasuoka.net>
 
 # BSD license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c z
 

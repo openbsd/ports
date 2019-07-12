@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:47 sthen Exp $
 
 COMMENT=		wm-dockapp; simple four-function calculator
 
@@ -9,7 +9,7 @@ CATEGORIES=		math x11 x11/windowmaker
 HOMEPAGE=		http://members.cox.net/ehf_dockapps/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext Xpm c m
 
 MASTER_SITES=		${HOMEPAGE}wmcalc/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/14 16:12:55 schwarze Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:51 sthen Exp $
 
 COMMENT =	library for communication with dive computers
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://www.libdivecomputer.org/
 MAINTAINER =	Kristaps Dzonsons <kristaps@bsd.lv>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c m
 

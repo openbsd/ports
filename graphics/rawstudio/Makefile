@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/05/20 22:15:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:47:09 sthen Exp $
 
 COMMENT =	tool for working with RAW images
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://rawstudio.org/
 MASTER_SITES =	${HOMEPAGE}files/release/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1

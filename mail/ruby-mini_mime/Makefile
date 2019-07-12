@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/02/02 01:59:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:37 sthen Exp $
 
 COMMENT=		minimal mime type implementation
 
@@ -8,7 +8,7 @@ CATEGORIES=		mail
 HOMEPAGE=		https://github.com/discourse/mini_mime
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

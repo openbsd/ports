@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2017/04/28 18:00:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2019/07/12 20:47:00 sthen Exp $
 
 COMMENT=	image manipulation library
 
@@ -9,7 +9,7 @@ CATEGORIES=	graphics
 HOMEPAGE=	http://www.enlightenment.org/p.php?p=about/libs/imlib2&l=en
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
 

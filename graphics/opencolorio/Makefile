@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:04 sthen Exp $
 
 COMMENT =		color management library
 
@@ -16,7 +16,7 @@ HOMEPAGE =		http://opencolorio.org/index.html
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # several BSD-like
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += m pthread ${COMPILER_LIBCXX} tinyxml yaml-cpp
 

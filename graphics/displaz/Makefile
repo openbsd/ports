@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/08 20:00:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:57 sthen Exp $
 
 COMMENT =	viewer for geospatial point clouds
 GH_ACCOUNT =	c42f
@@ -11,7 +11,7 @@ HOMEPAGE =	http://c42f.github.io/displaz/
 CATEGORIES =	graphics
 
 # BSD 3-clause
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cmake x11/qt5
 LIB_DEPENDS =	graphics/glew>=2.0 \

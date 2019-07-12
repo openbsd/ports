@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:09 sthen Exp $
 
 COMMENT=		very small and pretty fast gdk/Imlib image viewer
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://spiegl.de/qiv/
 MASTER_SITES=		${HOMEPAGE}/download/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  Imlib2 X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender c cairo exif fontconfig freetype gdk-x11-2.0

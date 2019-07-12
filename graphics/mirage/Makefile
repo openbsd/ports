@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/20 22:15:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:03 sthen Exp $
 
 COMMENT =	fast and simple GTK+ image viewer
 
@@ -9,7 +9,7 @@ REVISION =	6
 CATEGORIES =	graphics
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += X11 pthread

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/08/31 12:31:49 solene Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:10 sthen Exp $
 
 COMMENT =		3D scene description translator for TeX
 
@@ -10,7 +10,7 @@ CATEGORIES =		graphics
 HOMEPAGE =		https://www.frontiernet.net/~eugene.ressler/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/01/02 12:44:07 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:57 sthen Exp $
 
 COMMENT =	color correction utility for digital images
 DISTNAME =	delaboratory-0.8
@@ -6,7 +6,7 @@ CATEGORIES =	graphics x11
 REVISION =	6
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c iconv lzma m tiff wx_baseu-3.0
 WANTLIB += wx_baseu_net-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0

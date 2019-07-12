@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:47:03 sthen Exp $
 
 BROKEN =	undefined reference to '_ZN6icu_5613UnicodeStringC1EOS0_'
 
@@ -21,7 +21,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 DPB_PROPERTIES = nojunk
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xrender boost_filesystem-mt
 WANTLIB += boost_program_options-mt boost_regex-mt harfbuzz webp

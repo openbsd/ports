@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/06/05 12:38:56 jca Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:47:31 sthen Exp $
 
 COMMENT-main=		extras for smtpd
 COMMENT-mysql=		mysql based smtpd table support
@@ -26,7 +26,7 @@ MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>, \
 MULTI_PACKAGES=		-main -mysql -pgsql -python -redis
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB-main=		c crypto event m pthread ssl sqlite3 z
 WANTLIB-mysql=		c crypto event iconv ssl m pthread mysqlclient z

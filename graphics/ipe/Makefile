@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/17 16:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:01 sthen Exp $
 
 COMMENT =		extensible drawing editor
 
@@ -22,7 +22,7 @@ HOMEPAGE =		https://ipe.otfried.org/
 MAINTAINER =		Alessandro De Laurenzis <just22@atlantide.t28.net>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} Qt5Core Qt5Gui
 WANTLIB += Qt5Widgets c cairo freetype iconv jpeg m png pthread z

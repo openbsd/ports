@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/02/29 23:42:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:37 sthen Exp $
 
 COMMENT =		collaborative, networked system to detect and block spam
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://www.pyzor.org/
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

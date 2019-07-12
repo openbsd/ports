@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:05 sthen Exp $
 
 COMMENT =	format Data Matrix (IEC16022) barcodes as PNG
 
@@ -7,7 +7,7 @@ DISTNAME =	Barcode-DataMatrix-PNG-0.04
 CATEGORIES =	graphics
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*

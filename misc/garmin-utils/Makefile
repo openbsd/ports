@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/01 19:29:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:50 sthen Exp $
 
 COMMENT=	Garmin GPS upload/download utilities
 
@@ -8,7 +8,7 @@ CATEGORIES=	misc geo
 
 MASTER_SITES=	ftp://ftp.snafu.org/pub/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

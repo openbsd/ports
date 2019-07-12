@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/06/13 15:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:47:14 sthen Exp $
 
 COMMENT=	japanese handwriting
 
@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tomoe/uim-tomoe-gtk/}
 CATEGORIES=	inputmethods japanese
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo expat ffi fontconfig freetype fribidi

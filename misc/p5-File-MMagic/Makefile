@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:52 sthen Exp $
 
 COMMENT =		perl module to guess file type from contents
 
@@ -9,7 +9,7 @@ CATEGORIES =		misc
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # misc, Apache
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

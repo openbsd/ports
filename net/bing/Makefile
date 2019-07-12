@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/11/24 09:11:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:59 sthen Exp $
 
 COMMENT=	point-to-point bandwidth measurement tool
 
@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	https://distfiles.nl/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

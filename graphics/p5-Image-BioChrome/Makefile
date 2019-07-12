@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/04/28 17:38:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:06 sthen Exp $
 
 COMMENT= 	recolor gif images on the fly
 
@@ -10,7 +10,7 @@ REVISION=	1
 CATEGORIES=	graphics
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		misc/p5-File-MMagic
 TEST_DEPENDS=		textproc/p5-Template \

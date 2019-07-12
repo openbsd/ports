@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/08/27 14:51:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:54 sthen Exp $
 
 COMMENT=	analyze terminal control sequences
 
@@ -9,7 +9,7 @@ HOMEPAGE=	https://www.gnu.org/software/teseq/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=teseq/}
 EXTRACT_SUFX=	.tar.xz

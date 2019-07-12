@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:55 sthen Exp $
 
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
 CATEGORIES =	multimedia
@@ -13,7 +13,7 @@ WRKDIST =	${WRKDIR}/ccextractor.$V
 WRKSRC =	${WRKDIST}/src
 
 # GPL 2.0
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
 

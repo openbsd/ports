@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:46 sthen Exp $
 
 COMMENT=	Python interface to the gnuplot plotting program
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://gnuplot-py.sourceforge.net/
 MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gnuplot-py/}
 

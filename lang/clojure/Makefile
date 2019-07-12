@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/06/11 00:38:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:47:16 sthen Exp $
 
 COMMENT =		Lisp-1 dialect for the Java Virtual Machine
 
@@ -16,7 +16,7 @@ HOMEPAGE =		http://www.clojure.org/
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Eclipse Public License EPL 1.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://download.clojure.org/install/
 

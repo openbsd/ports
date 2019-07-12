@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/11/24 09:11:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:38 sthen Exp $
 
 COMMENT=		simple SMTP client
 
@@ -6,7 +6,7 @@ DISTNAME=		smtpclient-1.0.0
 REVISION =		2
 CATEGORIES=		mail
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		https://distfiles.nl/

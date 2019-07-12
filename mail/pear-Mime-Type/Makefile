@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/11/11 10:54:53 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:35 sthen Exp $
 
 COMMENT=	utility class for dealing with MIME types
 
@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MODULES=	www/pear
 
 # PHP License 3.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/pear-System-Command
 

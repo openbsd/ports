@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/15 12:04:39 kmos Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:58 sthen Exp $
 
 MODPY_EGG_VERSION =	1.1.1
 COMMENT =	pipe video streams into a video player
@@ -10,7 +10,7 @@ HOMEPAGE =	https://streamlink.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PI =	Yes

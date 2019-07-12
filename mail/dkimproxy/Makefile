@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/01/11 19:27:03 rpe Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:26 sthen Exp $
 
 COMMENT =		SMTP proxy to verify or add DKIM signatures
 
@@ -10,7 +10,7 @@ CATEGORIES =		mail
 HOMEPAGE =		http://dkimproxy.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dkimproxy/}
 

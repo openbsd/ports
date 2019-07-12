@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/07/09 17:54:46 jsing Exp $
+# $OpenBSD: Makefile,v 1.67 2019/07/12 20:47:18 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -19,7 +19,7 @@ HOMEPAGE =		https://golang.org/
 MAINTAINER =		Joel Sing <jsing@openbsd.org>
 
 # software: BSD, documentation: CC-BY-3.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c pthread
 

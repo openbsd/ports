@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/05/03 16:59:10 danj Exp $
+# $OpenBSD: Makefile,v 1.42 2019/07/12 20:47:39 sthen Exp $
 
 COMMENT=		reduce the amount of SPAM/UCE (junk-mail)
 
@@ -9,7 +9,7 @@ CATEGORIES=		mail
 HOMEPAGE=		http://tmda.net/
 
 # BSD-style
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://tmda.net/releases/stable/
 EXTRACT_SUFX=		.tgz

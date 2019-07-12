@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/02/16 22:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:00 sthen Exp $
 
 COMMENT-main=	OCR software
 COMMENT-gui=	gocr tcl/tk frontend
@@ -17,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jocr/}
 HOMEPAGE=	http://www-e.uni-magdeburg.de/jschulen/ocr/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_TEST=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/03/13 09:33:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:21 sthen Exp $
 
 BROKEN=		broken by ocaml update: Error: This expression has type string but an expression was expected of type bytes
 # "i386 architecture of input file is incompatible with i386:x86-64 output"
@@ -15,7 +15,7 @@ HOMEPAGE =	http://spivey.oriel.ox.ac.uk/corner/Oxford_Oberon-2_compiler
 MAINTAINER =	Alexander Shiryaev <shiryaev.a.v@gmail.com>
 
 # BSD-3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://spivey.oriel.ox.ac.uk/wiki2/files/download/
 

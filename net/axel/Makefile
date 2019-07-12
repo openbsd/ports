@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/20 22:15:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:59 sthen Exp $
 
 COMMENT=	tiny download accelerator
 
@@ -11,7 +11,7 @@ CATEGORIES=	net
 HOMEPAGE=	https://github.com/axel-download-accelerator/axel
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://github.com/axel-download-accelerator/axel/releases/download/v${V}/
 

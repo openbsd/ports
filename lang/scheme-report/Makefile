@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:22 sthen Exp $
 
 COMMENT=	revised^5 report on scheme
 
@@ -24,6 +24,6 @@ NO_TEST=	Yes
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

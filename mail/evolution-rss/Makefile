@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2019/05/05 12:52:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2019/07/12 20:47:26 sthen Exp $
 
 COMMENT=		RSS reader plugin for evolution
 
@@ -14,7 +14,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr

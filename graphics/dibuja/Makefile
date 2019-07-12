@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/20 22:15:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:57 sthen Exp $
 
 V =		0.10.0
 COMMENT =	simple to use paint program
@@ -10,7 +10,7 @@ HOMEPAGE =	https://launchpad.net/dibuja
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 babl-0.1

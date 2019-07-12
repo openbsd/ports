@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/29 22:16:17 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:08 sthen Exp $
 
 V =		1.6
 COMMENT =	open source drawing/editing program modeled after Paint.NET
@@ -9,7 +9,7 @@ REVISION =	5
 HOMEPAGE =	http://pinta-project.com/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # These tarballs have a proper configure. GH checkout does not...
 MASTER_SITES =	https://github.com/PintaProject/Pinta/releases/download/${V}/

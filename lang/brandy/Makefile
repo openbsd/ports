@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/03/27 09:59:58 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:16 sthen Exp $
 
 COMMENT =	interpreter for BBC Basic (Basic V)
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://jaguar.orpheusweb.co.uk/branpage.html
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	SDL c m
 

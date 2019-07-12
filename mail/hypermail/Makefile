@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2018/09/18 08:18:01 solene Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:47:28 sthen Exp $
 
 COMMENT=		generate a cross-referenced HTML mail archive
 
@@ -14,7 +14,7 @@ WRKDIST=		${WRKDIR}/hypermail
 LIB_DEPENDS+=		devel/pcre
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c m pcre
 
 CONFIGURE_STYLE=	gnu

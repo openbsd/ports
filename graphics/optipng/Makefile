@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/01/09 10:42:52 fcambus Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:05 sthen Exp $
 
 COMMENT =		lossless PNG optimizer
 DISTNAME =		optipng-0.7.7
@@ -9,7 +9,7 @@ HOMEPAGE =		http://optipng.sourceforge.net/
 MAINTAINER =		Frederic Cambus <fcambus@openbsd.org>
 
 # zlib
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m png z
 

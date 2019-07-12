@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/28 21:08:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:46 sthen Exp $
 
 BROKEN-hppa=	undefined refs to dtrsv/dgemv/dtrsm/dgemm/dger in libumfpack.a
 
@@ -22,7 +22,7 @@ SHARED_LIBS +=		${_lib} ${SO_VERSION}
 .endfor
 
 # GPLv2 - LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODFORTRAN_WANTLIB} blas lapack m
 

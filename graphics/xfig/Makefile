@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2018/06/27 21:03:55 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2019/07/12 20:47:12 sthen Exp $
 
 COMMENT=	CAD drawing program for X11
 
@@ -10,7 +10,7 @@ CATEGORIES=	graphics x11
 HOMEPAGE=	http://mcj.sourceforge.net/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xaw3d Xpm Xt c jpeg m png
 

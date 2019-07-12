@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/10 20:38:23 phessler Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:58 sthen Exp $
 
 COMMENT =		font rendering library for OpenGL applications
 
@@ -13,7 +13,7 @@ CATEGORIES =		graphics
 HOMEPAGE =		http://ftgl.wiki.sourceforge.net
 
 # MIT license or the GNU LGPL, at your option.
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU ICE SM X11 Xdamage Xext Xfixes Xmu Xt Xxf86vm drm
 WANTLIB += freetype m ${COMPILER_LIBCXX} xcb xcb-glx z expat

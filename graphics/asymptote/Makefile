@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:46:56 sthen Exp $
 
 NOT_FOR_ARCHS=		${CLANG_ARCHS} # hangs during build, while running
 # ../asy -dir ../base -config "" -render=0 -f pdf -noprc cube.asy
@@ -16,7 +16,7 @@ CATEGORIES=		graphics
 HOMEPAGE=		http://asymptote.sourceforge.net/
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=asymptote/}
 EXTRACT_SUFX=		.tgz

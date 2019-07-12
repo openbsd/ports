@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:35 sthen Exp $
 
 COMMENT=		perl module to query Sender Policy Framework
 
@@ -7,7 +7,7 @@ REVISION=		5
 CATEGORIES=		mail
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

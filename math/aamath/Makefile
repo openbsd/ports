@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/17 16:19:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:39 sthen Exp $
 
 COMMENT=		ASCII art mathematics
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://fuse.superglue.se/aamath/
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://openbsd.dead-parrot.de/distfiles/
 

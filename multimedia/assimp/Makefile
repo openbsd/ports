@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/23 23:07:24 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:55 sthen Exp $
 
 COMMENT =	open asset import library
 CATEGORIES =	multimedia
@@ -13,7 +13,7 @@ HOMEPAGE =	http://www.assimp.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m z
 

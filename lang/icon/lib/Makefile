@@ -1,5 +1,5 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.29 2013/11/03 14:42:36 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:19 sthen Exp $
 
 COMMENT-main =	useful and interesting programs for Icon
 COMMENT-x11 =	useful and interesting graphics program for Icon
@@ -16,7 +16,7 @@ CATEGORIES =	lang
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # Public domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WRKDIST =	${WRKDIR}/${DISTNAME}/ipl
 

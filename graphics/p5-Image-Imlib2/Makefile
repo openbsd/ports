@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/03/20 19:56:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:47:06 sthen Exp $
 
 COMMENT=	Perl interface to the Imlib2 image library
 
@@ -7,7 +7,7 @@ REVISION=	3
 CATEGORIES=	graphics
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c X11 Xext freetype m perl z Imlib2>=1
 

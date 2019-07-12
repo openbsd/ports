@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/11/30 13:33:42 benoit Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:06 sthen Exp $
 
 COMMENT =	module for graph plotting
 
@@ -18,7 +18,7 @@ TEST_DEPENDS =	devel/p5-Test-Exception \
 		sysutils/p5-Capture-Tiny
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*

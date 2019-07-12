@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:28 sthen Exp $
 
 COMMENT=	caching IMAP proxy to be used with webmail clients
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.imapproxy.org/
 MAINTAINER=	Holger Mauermann <holger@mauermann.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto curses pthread ssl
 

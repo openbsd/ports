@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2019/05/21 09:34:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2019/07/12 20:47:18 sthen Exp $
 
 PORTROACH+=	limit:^1
 
@@ -19,7 +19,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=guile/}
 HOMEPAGE=	https://www.gnu.org/software/guile/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c gmp>=6 iconv intl ltdl m curses pthread readline
 

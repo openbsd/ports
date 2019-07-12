@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:55 sthen Exp $
 
 COMMENT =		click params for command line interfaces to GeoJSON
 
@@ -10,7 +10,7 @@ REVISION =		0
 CATEGORIES =		geo
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

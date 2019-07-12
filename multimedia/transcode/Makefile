@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.76 2019/07/12 20:47:58 sthen Exp $
 
 COMMENT=	video stream processing tools
 
@@ -12,7 +12,7 @@ MASTER_SITES=	https://bitbucket.org/france/transcode-tcforge/downloads/
 EXTRACT_SUFX=	.tar.bz2
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SDL SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt Xv a52 avcodec
 WANTLIB += avformat avutil bz2 c crypto dv dvdread freetype gsm iconv intl jpeg

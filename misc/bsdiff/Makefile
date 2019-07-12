@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/11 23:50:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:48 sthen Exp $
 
 COMMENT=	binary patch tools
 DISTNAME=	bsdiff-4.3
@@ -9,7 +9,7 @@ HOMEPAGE=	http://www.daemonology.net/bsdiff/
 MAINTAINER=	Benoit Lecocq <benoit@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	bz2 c
 

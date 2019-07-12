@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/10/22 19:16:25 kettenis Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:19 sthen Exp $
 
 # ../src/luajit2/src/lj_arch.h:55:2: error: #error "No support for
 # this architecture (yet)"
@@ -20,7 +20,7 @@ CATEGORIES =	lang
 HOMEPAGE =	http://luajit.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c m
 

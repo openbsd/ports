@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/08 17:22:28 jca Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:47:56 sthen Exp $
 
 COMMENT=	open video codec
 
@@ -15,7 +15,7 @@ SHARED_LIBS=	theora		4.0 \
 HOMEPAGE=	https://www.theora.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ogg
 

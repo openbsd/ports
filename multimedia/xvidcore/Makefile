@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/06/02 08:31:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:58 sthen Exp $
 
 COMMENT=	ISO MPEG-4 compliant video codec
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://www.xvid.com/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	m pthread
 

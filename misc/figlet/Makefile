@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/02/26 20:18:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:47:49 sthen Exp $
 
 COMMENT =	generates ASCII banner art
 
@@ -10,7 +10,7 @@ HOMEPAGE =	http://www.figlet.org/
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

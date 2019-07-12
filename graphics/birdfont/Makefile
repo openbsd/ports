@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2019/05/20 22:15:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.70 2019/07/12 20:46:56 sthen Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://birdfont.org/
 MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 
 MASTER_SITES =	http://birdfont.org/releases/

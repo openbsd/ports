@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2019/05/17 16:19:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.81 2019/07/12 20:47:23 sthen Exp $
 
 BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
 BROKEN-powerpc =	pl-modul.c:1497: internal compiler error: in extract_insn, at recog.c:2077
@@ -19,7 +19,7 @@ HOMEPAGE =		http://www.swi-prolog.org/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xt archive c crypto curses
 WANTLIB += db edit execinfo fontconfig freetype gmp iodbc jpeg m

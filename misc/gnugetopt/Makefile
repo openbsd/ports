@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/20 22:15:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:50 sthen Exp $
 
 COMMENT=	GNU getopt(1) utility
 
@@ -10,7 +10,7 @@ CATEGORIES=	misc
 HOMEPAGE=	http://software.frodo.looijaard.name/getopt/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://frodo.looijaard.name/system/files/software/getopt/
 

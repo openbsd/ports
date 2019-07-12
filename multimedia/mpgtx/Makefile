@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:57 sthen Exp $
 
 COMMENT=		command line MPEG audio/video/system file toolbox
 
@@ -9,7 +9,7 @@ CATEGORIES=		multimedia sysutils
 HOMEPAGE=		http://mpgtx.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mpgtx/}
 

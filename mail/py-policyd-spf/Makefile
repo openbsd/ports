@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/01/24 16:53:37 giovanni Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:36 sthen Exp $
 
 COMMENT=	external SPF policy checker for postfix
 
@@ -13,7 +13,7 @@ CATEGORIES=	mail
 HOMEPAGE=	http://www.openspf.org
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://launchpad.net/pypolicyd-spf/${VER}/${MODPY_EGG_VERSION}/+download/
 

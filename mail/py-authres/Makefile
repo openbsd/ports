@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/11/16 11:29:05 giovanni Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:36 sthen Exp $
 
 COMMENT =	module for RFC 5451 Authentication-Results Headers
 
@@ -10,7 +10,7 @@ CATEGORIES =	mail
 HOMEPAGE =	https://launchpad.net/authentication-results-python
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 

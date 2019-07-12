@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/05/10 02:20:22 schwarze Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:59 sthen Exp $
 
 COMMENT-main=		draw maps and charts
 COMMENT-high=		high resolution coastline data for GMT
@@ -17,7 +17,7 @@ CATEGORIES=		graphics geo
 HOMEPAGE=		http://gmt.soest.hawaii.edu/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		ftp://ftp.iris.washington.edu/pub/gmt/4/
 			

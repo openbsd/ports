@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/08/31 15:51:49 stu Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:23 sthen Exp $
 
 COMMENT =	learn Tcl interactively
 
@@ -8,7 +8,7 @@ HOMEPAGE =	http://www.msen.com/~clif/TclTutor.html
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://www.msen.com/~clif/
 DISTFILES =	tcltutor30b7.tgz

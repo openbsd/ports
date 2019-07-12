@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/06/17 16:58:24 schwarze Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:48 sthen Exp $
 
 COMMENT=	access software for a blind person using a braille terminal
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${HOMEPAGE}/releases/
 MAINTAINER=	Mario Lang <mlang@delysid.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses pthread sndio
 

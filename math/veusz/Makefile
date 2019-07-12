@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/03/08 20:00:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:47 sthen Exp $
 
 COMMENT =	scientific plotting and graphing package
 MODPY_EGG_VERSION =	3.0.1
@@ -10,7 +10,7 @@ HOMEPAGE =	https://veusz.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += Qt5Core Qt5Gui Qt5Widgets Qt5Xml m
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/05/20 08:19:25 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:39 sthen Exp $
 
 COMMENT=		wm-dockapp; POP3 mail check
 
@@ -8,7 +8,7 @@ REVISION=		3
 CATEGORIES=		mail x11/windowmaker
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext Xpm c xcb
 
 NO_TEST=		Yes

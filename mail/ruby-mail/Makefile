@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/11/02 17:04:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:37 sthen Exp $
 
 COMMENT=	easy email delivery and testing for ruby
 
@@ -6,7 +6,7 @@ DISTNAME=	mail-2.6.4
 CATEGORIES=	mail
 
 # MIT License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby
 

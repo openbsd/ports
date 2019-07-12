@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2016/03/10 21:58:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:47:01 sthen Exp $
 
 COMMENT =	lossless image compression library, with lightweight version
 
@@ -12,7 +12,7 @@ CATEGORIES =	graphics
 HOMEPAGE =	http://www.cl.cam.ac.uk/~mgk25/jbigkit/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

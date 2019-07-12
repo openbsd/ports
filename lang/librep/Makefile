@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2019/05/20 20:52:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2019/07/12 20:47:19 sthen Exp $
 
 COMMENT=	Emacs Lisp-like runtime library
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://librep.sourceforge.net/
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c ffi gdbm gmp iconv intl m curses pthread readline
 

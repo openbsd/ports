@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2019/04/28 20:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2019/07/12 20:47:50 sthen Exp $
 
 COMMENT=		Genealogical Research Analysis Management Programming System
 
@@ -11,7 +11,7 @@ CATEGORIES=		misc x11
 HOMEPAGE=		https://gramps-project.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gramps/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/13 04:33:41 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:38 sthen Exp $
 
 COMMENT=	filter which improves readability of email and Usenet posts
 
@@ -8,7 +8,7 @@ CATEGORIES=    	mail news
 MAINTAINER=	Andrew Fresh <afresh1@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=		https://www.escape.de/~tolot/mutt/
 MASTER_SITES=		${HOMEPAGE}/t-prot/downloads/

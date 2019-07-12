@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/17 16:19:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:47:29 sthen Exp $
 
 PORTROACH =		limit:^0
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://lumail.org/
 MASTER_SITES =		http://lumail.org/download/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} c curses gio-2.0 glib-2.0
 WANTLIB += glibmm-2.4 gmime-2.6 gobject-2.0 intl m pcrecpp pthread sigc-2.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/02/10 15:01:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:47:48 sthen Exp $
 
 COMMENT=	checkbook balancing tool
 
@@ -9,7 +9,7 @@ HOMEPAGE=	http://gna.org/projects/cbb/
 MAINTAINER=	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	x11/tk
 

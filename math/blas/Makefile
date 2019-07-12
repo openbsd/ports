@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/10 21:01:27 tj Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:47:39 sthen Exp $
 
 COMMENT=	Basic Linear Algebra Subprograms
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://www.netlib.org/blas/
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
 # freely available
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://www.netlib.org/blas/
 MASTER_SITES0=	${MASTER_SITES:S/blas/lapack/}

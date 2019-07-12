@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/03/10 20:37:33 cwen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:05 sthen Exp $
 
 PORTROACH =		limitw:1,even
 
@@ -40,7 +40,7 @@ HOMEPAGE =		http://www.openscenegraph.org
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # OSGPL (see LICENSE.txt)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Half Iex IlmImf IlmThread Qt5Core
 WANTLIB += Qt5Gui Qt5OpenGL Qt5Widgets SDL X11 Xrandr avcodec

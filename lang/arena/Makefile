@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/11/24 09:11:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:16 sthen Exp $
 
 COMMENT=	lightweight scripting language with C-like syntax
 
@@ -9,7 +9,7 @@ CATEGORIES=	lang
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c m
 
 MASTER_SITES=	https://distfiles.nl/

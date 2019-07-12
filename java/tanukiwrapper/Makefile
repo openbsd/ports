@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/06/11 00:38:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:15 sthen Exp $
 
 COMMENT=	Tanuki Java Service Wrapper
 
@@ -14,7 +14,7 @@ MASTER_SITES=	https://distfiles.nl/
 
 # GPLv2
 # http://wrapper.tanukisoftware.com/doc/english/licenseCommunity.html
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 EXTRACT_SUFX=	.zip
 

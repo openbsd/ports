@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2019/06/19 21:59:01 giovanni Exp $
+# $OpenBSD: Makefile,v 1.121 2019/07/12 20:47:25 sthen Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -18,7 +18,7 @@ HOMEPAGE=		http://www.courier-mta.org/imap/
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 COMPILER =		base-clang ports-gcc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:39 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:59 sthen Exp $
 
 COMMENT=	optimise a list of IPv4/IPv6 prefixes
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://github.com/job/aggregate6/
 MAINTAINER=	Job Snijders <job@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 

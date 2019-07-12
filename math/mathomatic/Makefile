@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/20 20:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:42 sthen Exp $
 
 COMMENT =	small, portable, general purpose computer algebra system
 
@@ -10,7 +10,7 @@ CATEGORIES =	math
 HOMEPAGE =	http://mathomatic.org/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c m curses readline
 

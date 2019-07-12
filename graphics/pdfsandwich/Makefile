@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/08/13 07:08:40 feinerer Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:07 sthen Exp $
 
 # configure looks for ocamlopt
 ONLY_FOR_ARCHS =	${OCAML_NATIVE_ARCHS}
@@ -13,7 +13,7 @@ HOMEPAGE =	http://www.tobias-elze.de/pdfsandwich/
 MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m pthread
 

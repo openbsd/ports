@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/06/13 15:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:13 sthen Exp $
 
 COMMENT =	scim input method module for anthy
 
@@ -11,7 +11,7 @@ CATEGORIES =	inputmethods japanese
 HOMEPAGE =	https://osdn.jp/projects/scim-imengine/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm anthy anthydic atk-1.0 cairo

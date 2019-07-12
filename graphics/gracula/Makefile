@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/01/21 06:13:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:00 sthen Exp $
 
 COMMENT=	graphic counter language compiler/interpreter
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://www.whizkidtech.redprince.net/gcl/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c m
 
 NO_TEST=	Yes

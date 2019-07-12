@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/11/29 17:03:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:31 sthen Exp $
 
 COMMENT=	library and milter for DKIM (Domain Keys Identified Mail)
 
@@ -12,7 +12,7 @@ CATEGORIES=	mail
 HOMEPAGE=	http://www.opendkim.org/
 
 # BSD, Sendmail
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto milter pthread ssl
 

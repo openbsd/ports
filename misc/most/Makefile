@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/05/17 16:19:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:51 sthen Exp $
 
 PORTROACH=	skipv:5.0.0
 
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://space.mit.edu/pub/davis/most/
 LIB_DEPENDS=	devel/libslang
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses m slang
 

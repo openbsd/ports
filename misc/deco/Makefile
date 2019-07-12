@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/11/24 09:11:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:47:49 sthen Exp $
 
 COMMENT=	Demos Commander, a free Norton Commander clone
 
@@ -10,7 +10,7 @@ MASTER_SITES=	https://distfiles.nl/
 EXTRACT_SUFX=	.tgz
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 

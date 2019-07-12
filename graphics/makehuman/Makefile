@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/05 11:52:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:47:03 sthen Exp $
 
 COMMENT=	parametrical modeling of 3D humanoid characters
 
@@ -11,7 +11,7 @@ REVISION=	6
 HOMEPAGE=	http://www.makehumancommunity.org/
 
 # GPLv2 / MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE SM X11 X11-xcb Xdamage Xext
 WANTLIB += Xfixes Xi Xmu Xrandr Xrender Xt Xxf86vm animorph c drm expat

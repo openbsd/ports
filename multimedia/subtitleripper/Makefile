@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/12/07 23:11:51 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:58 sthen Exp $
 
 COMMENT=	subtitle ripper, used with transcode
 
@@ -12,7 +12,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 HOMEPAGE=	http://subtitleripper.sourceforge.net/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=subtitleripper/}
 

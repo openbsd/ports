@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/01/03 13:11:18 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:45 sthen Exp $
 
 COMMENT =	efficient resampling and calculation of medians
 
@@ -9,7 +9,7 @@ CATEGORIES =	math
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c perl
 

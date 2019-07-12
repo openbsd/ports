@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2019/04/28 07:38:48 landry Exp $
+# $OpenBSD: Makefile,v 1.53 2019/07/12 20:47:27 sthen Exp $
 
 COMMENT =	lightweight mail user agent
 
@@ -9,7 +9,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 HOMEPAGE =	https://wiki.gnome.org/Apps/Geary
 MODULES =	devel/meson devel/dconf x11/gnome

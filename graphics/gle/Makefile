@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/03/11 19:59:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:46:59 sthen Exp $
 
 COMMENT=		OpenGL Extrusion library
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=  gle                  4.0      # 4.0
 HOMEPAGE=		http://www.linas.org/gle/
 
 # Artistic/IBM standard example source code or GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += m
 

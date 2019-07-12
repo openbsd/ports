@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/05/20 08:19:25 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:39 sthen Exp $
 
 COMMENT=		wm-dockapp; multiple pop3 mailbox checker
 
@@ -11,7 +11,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=wmmultipop3/}
 HOMEPAGE=		http://wmmultipop3.sourceforge.net/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext Xpm c xcb
 
 NO_TEST=	Yes

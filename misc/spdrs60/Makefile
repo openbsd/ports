@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/03/08 20:00:49 cwen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:54 sthen Exp $
 
 COMMENT =	graphical SRCP client to control a digital model railway
 
@@ -12,7 +12,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=spdrs60/}
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES =		x11/qt5
 WANTLIB += c m pthread Qt5Core Qt5Gui Qt5Network Qt5Widgets

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/05/21 09:34:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2019/07/12 20:47:16 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
@@ -10,7 +10,7 @@ CATEGORIES=		lang
 HOMEPAGE=		http://clisp.cons.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  avcall c callback iconv intl m curses readline sigsegv
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/04/30 11:04:36 benoit Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:55 sthen Exp $
 
 COMMENT=	DOS-XTREE(tm) look-a-like file manager
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.han.de/~werner/ytree.html
 MASTER_SITES=	http://www.han.de/~werner/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses readline
 

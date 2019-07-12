@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2019/05/01 21:10:06 danj Exp $
+# $OpenBSD: Makefile,v 1.97 2019/07/12 20:47:27 sthen Exp $
 
 COMMENT=	IMAP/POP3/SDPS mail retriever
 
@@ -10,7 +10,7 @@ REVISION=	0
 HOMEPAGE=	http://pyropus.ca/software/getmail/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/old-versions/
 

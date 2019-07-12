@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:32 sthen Exp $
 
 COMMENT=	strip the attachments from an e-mail
 
@@ -10,7 +10,7 @@ CATEGORIES=	mail
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	mail/p5-Email-MIME>=1.861 \
 		mail/p5-Email-MIME-ContentType \
