@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/20 22:15:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:08 sthen Exp $
 
 COMMENT =		graphical 8085 simulator, assembler, and debugger
 
@@ -11,7 +11,7 @@ CATEGORIES =		emulators devel
 HOMEPAGE =		http://gnusim8085.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =  GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype

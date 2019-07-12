@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/04/25 19:57:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:48 sthen Exp $
 
 COMMENT=		library used to interact with Git repositories
 
@@ -9,7 +9,7 @@ PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

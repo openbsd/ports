@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/13 18:06:43 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:50 sthen Exp $
 
 COMMENT =		fast and thorough lazy object proxy
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://python-lazy-object-proxy.readthedocs.org
 
 WANTLIB += pthread ${MODPY_WANTLIB}
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

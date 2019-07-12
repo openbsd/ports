@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/04/28 20:51:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:45:46 sthen Exp $
 
 COMMENT =		Python package to check certificates using the OpenBSD CA
 
@@ -11,7 +11,7 @@ REVISION =		1
 HOMEPAGE =		https://certifi.io/
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

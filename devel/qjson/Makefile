@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:57 sthen Exp $
 
 CATEGORIES =	devel
 
@@ -21,7 +21,7 @@ WANTLIB += QtGui m ${COMPILER_LIBCXX}
 COMPILER =		base-clang ports-gcc base-gcc
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 # XXX enable tests if we switch to qt5
 CONFIGURE_ARGS =	-DQJSON_BUILD_TESTS:Bool=No \

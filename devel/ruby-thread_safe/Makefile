@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/04/23 11:24:28 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:00 sthen Exp $
 
 COMMENT=		make thread safe programming in Ruby easier
 
@@ -9,7 +9,7 @@ HOMEPAGE=		https://github.com/ruby-concurrency/thread_safe
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

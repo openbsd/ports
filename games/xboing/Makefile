@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/06/06 15:05:44 schwarze Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:46:27 sthen Exp $
 
 COMMENT=	blockout style game for X11
 
@@ -12,7 +12,7 @@ CATEGORIES=	games
 HOMEPAGE=	http://www.techrescue.org/xboing/
 
 # X Consortium
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext Xpm c m sndio
 

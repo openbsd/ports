@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/08 20:00:46 cwen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:16 sthen Exp $
 
 COMMENT =		traditional top-down car racing game
 
@@ -14,7 +14,7 @@ CATEGORIES =		games
 HOMEPAGE =		https://juzzlin.github.io/DustRacing2D/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU c m openal pthread vorbisfile
 WANTLIB += Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets Qt5Xml

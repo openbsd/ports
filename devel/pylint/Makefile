@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/05 15:43:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:45:56 sthen Exp $
 
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
@@ -14,7 +14,7 @@ CATEGORIES=		devel
 HOMEPAGE=		http://www.pylint.org/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES=		-main -gui
 

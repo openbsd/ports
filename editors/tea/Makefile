@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/05/20 22:15:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:46:06 sthen Exp $
 
 COMMENT=	powerful and simple GTK editor
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tar.bz2
 HOMEPAGE=	http://semiletov.org/tea/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender aspell>=16 atk-1.0 c cairo expat

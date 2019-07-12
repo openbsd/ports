@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2017/11/16 18:39:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.65 2019/07/12 20:46:16 sthen Exp $
 
 COMMENT=	game where you deal drugs on the streets of NY
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dopewars/}
 HOMEPAGE=	http://dopewars.sourceforge.net/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c glib-2.0 iconv intl curses
 

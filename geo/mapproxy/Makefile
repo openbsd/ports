@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/15 12:04:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:29 sthen Exp $
 
 COMMENT =	GIS WMTS/TMS tile caching server
 
@@ -10,7 +10,7 @@ CATEGORIES =	geo www
 
 HOMEPAGE =	http://www.mapproxy.org/
 # apache v2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 

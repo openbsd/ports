@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:46 sthen Exp $
 
 COMMENT =		register CLI commands via setuptools entry-points
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/click-contrib/click-plugins
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		devel/py-click${MODPY_FLAVOR}
 

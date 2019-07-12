@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/15 12:04:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:54 sthen Exp $
 
 COMMENT =	py.test xdist plugin for distributed testing
 
@@ -13,7 +13,7 @@ CATEGORIES =	devel
 HOMEPAGE =	https://github.com/pytest-dev/pytest-xdist
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVORS =		python3
 FLAVOR ?=

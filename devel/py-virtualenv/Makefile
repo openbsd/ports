@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/04/28 20:51:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:45:55 sthen Exp $
 
 COMMENT =		virtual Python environment builder
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://www.virtualenv.org/
 MAINTAINER =		Daniel Jakots <obsd@chown.me>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/03/16 09:05:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:46:28 sthen Exp $
 
 COMMENT=	convenience library for the geocoding
 
@@ -13,7 +13,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 intl json-glib-1.0 m soup-2.4
 

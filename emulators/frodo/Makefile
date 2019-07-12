@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:46:08 sthen Exp $
 
 COMMENT=	Commodore 64 emulator
 
@@ -14,7 +14,7 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 HOMEPAGE=	http://frodo.cebix.net/
 
 # FreeWare
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		SDL c m pthread sndio ${COMPILER_LIBCXX}
 

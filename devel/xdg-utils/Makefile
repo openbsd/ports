@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/01/30 06:11:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:46:04 sthen Exp $
 
 # Does _not_ depend on desktop-file-utils, hicolor-icon-theme,
 # gtk-update-icon-cache, shared-mime-info... on purpose as it should
@@ -16,7 +16,7 @@ HOMEPAGE=		https://wiki.freedesktop.org/www/Software/xdg-utils/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://portland.freedesktop.org/download/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/01/22 08:00:32 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:45 sthen Exp $
 
 COMMENT =	bencoding and bdecoding implementation
 
@@ -14,7 +14,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # BitTorrent Open Source License
 # BTOSL http://www.bittorrent.com/license
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/04/28 20:51:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:23 sthen Exp $
 
 COMMENT =		solitaire card games collection
 MODPY_EGG_VERSION =	2.4.0
@@ -10,7 +10,7 @@ REVISION =		1
 HOMEPAGE =		http://pysolfc.sourceforge.net/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pysolfc/}
 EXTRACT_SUFX =		.tar.xz

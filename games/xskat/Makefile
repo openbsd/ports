@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:46:28 sthen Exp $
 
 COMMENT=	skat card game
 
@@ -7,7 +7,7 @@ REVISION =	3
 CATEGORIES=	games
 HOMEPAGE=	http://www.xskat.de/xskat.html
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 c xcb
 
 MASTER_SITES=	http://www.xskat.de/

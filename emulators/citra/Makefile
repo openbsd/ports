@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/08 20:00:45 cwen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:08 sthen Exp $
 
 BROKEN-i386 =	undefined reference to `operator delete(void*, std::align_val_t)', etc.
 
@@ -18,7 +18,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 # GPLv2, BSD-2-clause (fmt), LGPL (getopt), MIT (httplib, json, lurlparser),
 # "New BSD license" (inih), unlicense/public domain (microprofile),
 # BSD-3-clause (nihstro), LGPLv2.1 (soundtouch), BSD-style (xbyak)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Multimedia Qt5Network Qt5OpenGL
 WANTLIB += Qt5Widgets SDL2 c cryptopp enet iconv m

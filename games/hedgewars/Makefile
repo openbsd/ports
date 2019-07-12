@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/03/08 20:00:46 cwen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:46:19 sthen Exp $
 
 BROKEN-i386 =		Could NOT find GLEW (missing: GLEW_LIBRARY GLEW_INCLUDE_DIR)
 
@@ -24,7 +24,7 @@ HOMEPAGE =		http://www.hedgewars.org/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB-main += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Widgets
 WANTLIB-main += SDL2 SDL2_image SDL2_mixer SDL2_net SDL2_ttf c ${MODLUA_WANTLIB}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/15 12:04:36 kmos Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:45:48 sthen Exp $
 
 COMMENT =		network library for easy and scalable concurrency
 
@@ -14,7 +14,7 @@ FLAVORS =		python3
 FLAVOR ?=
 
 # MPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB} cares ev pthread
 

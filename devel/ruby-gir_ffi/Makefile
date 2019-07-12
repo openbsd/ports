@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/12/19 19:04:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:58 sthen Exp $
 
 COMMENT=	Ruby-FFI-based binding to the GObjectIntrospection API
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 HOMEPAGE=	https://github.com/mvz/ruby-gir-ffi
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby
 

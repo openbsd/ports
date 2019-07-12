@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/03/14 07:53:42 sebastia Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:58 sthen Exp $
 
 COMMENT =	ruby internationalization and localization solution
 
@@ -11,7 +11,7 @@ BUILD_DEPENDS = ${RUN_DEPENDS}
 RUN_DEPENDS =	devel/ruby-concurrent-ruby,${MODRUBY_FLAVOR},>=1.0,<2
 
 # MIT License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem

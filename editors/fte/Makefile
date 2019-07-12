@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:05 sthen Exp $
 
 COMMENT=	powerful and intuitive editor for programmers
 
@@ -9,7 +9,7 @@ CATEGORIES=	editors devel
 HOMEPAGE=	http://fte.sourceforge.net/
 
 # GPLv2 or later / Artistic License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB+=	X11 Xau Xdmcp Xpm c m ${COMPILER_LIBCXX}
 

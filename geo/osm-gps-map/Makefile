@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:46:29 sthen Exp $
 
 COMMENT=		Gtk+ Widget for Displaying OpenStreetMap tiles
 
@@ -14,7 +14,7 @@ SHARED_LIBS +=  osmgpsmap-1.0             1.0 # 0.0
 HOMEPAGE=		http://nzjrs.github.com/osm-gps-map/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi cairo

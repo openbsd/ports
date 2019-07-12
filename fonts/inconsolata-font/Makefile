@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/16 03:33:09 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:12 sthen Exp $
 
 COMMENT=		monospace font designed for coders
 
@@ -15,7 +15,7 @@ EXTRACT_SUFX=		.otf
 EXTRACT_ONLY=
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		font
 FONTTYPES=		otf

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2019/07/12 20:46:14 sthen Exp $
 
 COMMENT =	SDL port of the legendary 2D platform shooter
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://abuse.zoy.org/
 
 # Abuse: GPLv2 and public domain
 # Abuse-free-sounds: various free licenses
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += FLAC GL SDL SDL_mixer X11 Xdamage Xext Xfixes
 WANTLIB += Xxf86vm c drm iconv m mikmod ogg pthread smpeg

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/23 02:37:47 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:24 sthen Exp $
 
 V =		2.0.1
 COMMENT =	interstellar trading strategy game
@@ -11,7 +11,7 @@ HOMEPAGE =	https://www.spronck.net/spacetrader/index.html
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=spacetraderwin/}
 

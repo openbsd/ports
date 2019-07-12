@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:46:22 sthen Exp $
 
 COMMENT=	texas hold'em poker game with online capabilities
 #'
@@ -12,7 +12,7 @@ CATEGORIES=	games x11
 HOMEPAGE=	https://www.pokerth.net/
 
 # AGPL3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE QtGui QtNetwork QtSql SDL SDL_mixer
 WANTLIB += SM X11 Xext Xi Xinerama Xrender boost_chrono-mt boost_filesystem-mt

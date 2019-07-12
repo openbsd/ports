@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/04/28 20:51:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:45:56 sthen Exp $
 
 COMMENT=		python library to access freedesktop.org standards
 
@@ -14,7 +14,7 @@ HOMEPAGE=		http://freedesktop.org/wiki/Software/pyxdg
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 FLAVORS =		python3
 FLAVOR?=

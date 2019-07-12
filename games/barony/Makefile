@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/10/01 12:00:12 solene Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:14 sthen Exp $
 
 V =		3.2.2
 COMMENT =	3D, first person roguelike
@@ -13,7 +13,7 @@ HOMEPAGE =	http://www.baronygame.com/
 MAINTAINER =	David Carlier <devnexen@gmail.com>
 
 # GPLv3 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL2 SDL2_image SDL2_net
 WANTLIB += SDL2_ttf c execinfo m ogg openal png vorbisfile physfs

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/20 22:15:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:23 sthen Exp $
 
 V =		0.8.2.20180924
 COMMENT =	open source engine remake of The Settlers 2 (s25client)
@@ -13,7 +13,7 @@ HOMEPAGE =	https://www.siedler25.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL SDL SDL_mixer boost_chrono-mt
 WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_locale-mt

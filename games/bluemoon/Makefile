@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/20 20:52:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:15 sthen Exp $
 
 COMMENT =	console-based 52-card solitare game
 DISTNAME =	bluemoon-2.12
@@ -8,7 +8,7 @@ REVISION =	2
 HOMEPAGE =	http://www.catb.org/~esr/bluemoon/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses
 

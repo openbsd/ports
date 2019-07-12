@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:19 sthen Exp $
 
 COMMENT =		package manager for Instead game engine
 V =			0.7.0
@@ -10,7 +10,7 @@ MAINTAINER =		Roman Yakovlev <obsd@51t.ru>
 REVISION =		2
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  ICE QtGui QtNetwork SM X11 Xext Xi Xinerama Xrender
 WANTLIB += c fontconfig freetype m pthread ${COMPILER_LIBCXX} z

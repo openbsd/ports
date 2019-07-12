@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:20 sthen Exp $
 
 BROKEN-sparc64 =	Illegal operands error building SDL_gfxPrimitives.cpp
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://www.blinkensisters.org
 CATEGORIES =		games
 
 # GPL v2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=blinkensisters/}
 

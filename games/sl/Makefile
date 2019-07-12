@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/20 20:52:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:24 sthen Exp $
 
 COMMENT =			Steam Locomotive
 
@@ -12,7 +12,7 @@ CATEGORIES =			games
 MAINTAINER =			Gallon Sylvestre <ccna.syl@gmail.com>
 
 # BSD-like
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =			c curses
 

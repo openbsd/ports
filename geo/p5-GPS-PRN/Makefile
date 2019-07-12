@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:29 sthen Exp $
 
 COMMENT=	perl module to map GPS PRN to Satellite OID and vice versa
 MODULES=	cpan
@@ -8,6 +8,6 @@ REVISION=	0
 CATEGORIES=	geo
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

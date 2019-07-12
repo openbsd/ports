@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/04/28 20:51:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:45:46 sthen Exp $
 
 COMMENT=		Python-powered template engine and code generator
 
@@ -11,7 +11,7 @@ REVISION=		1
 HOMEPAGE=		http://www.cheetahtemplate.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pthread

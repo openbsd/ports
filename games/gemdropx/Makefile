@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:46:18 sthen Exp $
 
 COMMENT=	one-player puzzle game for x11
 
@@ -10,7 +10,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE=	http://www.newbreedsoftware.com/gemdropx/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c m pthread SDL SDL_mixer
 
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/gemdropx/src/

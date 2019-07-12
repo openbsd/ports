@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/04/21 18:33:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:47 sthen Exp $
 
 COMMENT=		calculate Levenshtein distance between two strings
 
@@ -10,7 +10,7 @@ CATEGORIES=    		devel
 HOMEPAGE=		http://www.mindrot.org/projects/py-editdist/
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pthread

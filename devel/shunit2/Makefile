@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/05 16:06:34 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:01 sthen Exp $
 
 COMMENT =		unit test framework for Bourne based shell scripts
 
@@ -10,7 +10,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/kward/shunit2
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://distfiles.nl/
 

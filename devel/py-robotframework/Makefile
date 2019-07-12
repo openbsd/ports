@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:53 sthen Exp $
 
 COMMENT =	generic test automation framework for acceptance testing
 
@@ -14,7 +14,7 @@ GH_TAGNAME =		3.0
 CATEGORIES =	devel
 
 # Apache
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVORS =               python3
 FLAVOR ?=

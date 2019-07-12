@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/04 06:59:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:19 sthen Exp $
 
 BROKEN-i386 =		various always_inline functions require sse2, but would be inlined into function 'Loop' that is compiled without support for sse2
 
@@ -23,7 +23,7 @@ MASTER_SITES =		https://zdoom.org/files/gzdoom/src/
 EXTRACT_SUFX =		.zip
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		${COMPILER_LIBCXX} SDL2 bz2 c execinfo jpeg m mpg123
 WANTLIB +=		openal sndfile z

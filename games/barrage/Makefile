@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/29 22:16:12 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:14 sthen Exp $
 
 COMMENT=	kill and destroy as many targets as possible in 3 minutes
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://lgames.sourceforge.net/?project=Barrage
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	SDL c m pthread SDL_mixer
 

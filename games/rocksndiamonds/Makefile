@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/05/27 08:57:33 benoit Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 20:46:23 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://www.artsoft.org/rocksndiamonds/
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	SDL2 c m SDL2_mixer SDL2_image SDL2_net z
 

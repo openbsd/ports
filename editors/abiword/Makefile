@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2019/05/19 11:26:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.127 2019/07/12 20:46:04 sthen Exp $
 
 BROKEN=		Abort trap on startup (pango related?)
 
@@ -24,7 +24,7 @@ HOMEPAGE=	http://www.abisource.com/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0

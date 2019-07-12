@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/03/30 13:58:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:11 sthen Exp $
 
 PKG_ARCH =		*
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://sourcefoundry.org/hack/
 MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://github.com/source-foundry/Hack/releases/download/v${V}/
 

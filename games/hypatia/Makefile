@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/04/01 09:29:31 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:19 sthen Exp $
 
 COMMENT =	2D action adventure game engine
 CATEGORIES =	games x11
@@ -12,7 +12,7 @@ REVISION =	0
 HOMEPAGE =	http://engine.hypatia.software/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes

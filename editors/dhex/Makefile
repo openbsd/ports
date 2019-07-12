@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/20 20:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:04 sthen Exp $
 
 COMMENT =		ncurses-based hex-editor with diff mode
 V =			0.68
@@ -11,7 +11,7 @@ HOMEPAGE =		http://www.dettus.net/dhex/
 MAINTAINER =		Thanasoulas Spiros <dsp@2f30.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://www.dettus.net/dhex/
 

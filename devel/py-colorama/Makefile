@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/19 14:52:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:46 sthen Exp $
 
 # !!! do not update blindly: sysutils/awscli requires a specific version
 PORTROACH=		ignore:1
@@ -16,7 +16,7 @@ HOMEPAGE=		https://github.com/tartley/colorama
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

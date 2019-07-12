@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/15 12:04:36 kmos Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:49 sthen Exp $
 
 COMMENT =		IPython kernel for Jupyter
 
@@ -26,7 +26,7 @@ TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

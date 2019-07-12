@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/08 20:00:45 cwen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:10 sthen Exp $
 
 COMMENT =	Atari Jaguar emulator
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://icculus.org/virtualjaguar/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets
 WANTLIB +=	SDL c cdio iconv m z

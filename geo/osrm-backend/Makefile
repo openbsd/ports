@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:29 sthen Exp $
 
 COMMENT =		high-performance road network routing engine
 
@@ -12,7 +12,7 @@ CATEGORIES =		geo
 HOMEPAGE =		http://project-osrm.org/
 
 # BSD 2-clause
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
 WANTLIB += boost_chrono-mt boost_date_time-mt boost_filesystem-mt

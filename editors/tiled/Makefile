@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:06 sthen Exp $
 
 COMMENT =		tile map editor
 
@@ -14,7 +14,7 @@ CATEGORIES =		editors games
 HOMEPAGE =		http://www.mapeditor.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL ICE QtGui QtOpenGL SM X11 Xext Xi Xinerama Xrender
 WANTLIB += c fontconfig freetype m pthread ${COMPILER_LIBCXX} z

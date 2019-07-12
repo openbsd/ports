@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/15 12:04:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:55 sthen Exp $
 
 COMMENT =		configuration system for Python applications
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://ipython.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

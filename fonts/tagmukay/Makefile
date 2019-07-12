@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/19 23:11:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:13 sthen Exp $
 
 V =			2.000
 COMMENT =		Unicode Tagmukay Shifinagh script font
@@ -10,7 +10,7 @@ HOMEPAGE =		https://software.sil.org/tagmukay/
 MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://software.sil.org/downloads/r/tagmukay/
 EXTRACT_SUFX =		.zip

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/01/22 18:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:20 sthen Exp $
 
 COMMENT =	Komi the Space Frog
 
@@ -9,7 +9,7 @@ CATEGORIES =	games
 HOMEPAGE =	http://komi.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=komi/}
 

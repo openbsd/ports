@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2019/05/20 22:15:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.122 2019/07/12 20:46:17 sthen Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
@@ -15,7 +15,7 @@ CATEGORIES=	games
 HOMEPAGE=	http://www.freeciv.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freeciv/}
 EXTRACT_SUFX=	.tar.bz2

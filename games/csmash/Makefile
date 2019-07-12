@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/01 19:29:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:16 sthen Exp $
 
 COMMENT=	Cannon Smash 3D table tennis
 
@@ -8,7 +8,7 @@ CATEGORIES=	games
 HOMEPAGE=	http://cannonsmash.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cannonsmash/}
 

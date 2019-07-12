@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/13 18:06:44 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:54 sthen Exp $
 
 COMMENT =		invoke py.test as distutils command
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 REVISION =		1
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

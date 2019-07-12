@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/11/24 09:11:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:28 sthen Exp $
 
 COMMENT=	Garmin Image Tools
 
@@ -8,7 +8,7 @@ CATEGORIES=	geo
 HOMEPAGE=	https://github.com/wuyongzheng/gimgtools
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://distfiles.nl/
 

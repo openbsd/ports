@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/20 22:15:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:19 sthen Exp $
 
 COMMENT =	2D and 3D game engine
 
@@ -11,7 +11,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 REVISION =	1
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr

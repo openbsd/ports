@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/08 07:26:55 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:06 sthen Exp $
 
 COMMENT =	EPUB ebook editor
 
@@ -13,7 +13,7 @@ CATEGORIES =	editors
 HOMEPAGE =	https://sigil-ebook.com/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 WANTLIB += Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5PrintSupport

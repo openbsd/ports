@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/27 21:03:47 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:19 sthen Exp $
 
 V =		0.2.1
 COMMENT =	third person, 3D physics game
@@ -8,7 +8,7 @@ CATEGORIES =	games x11
 REVISION =	2
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += BulletCollision BulletDynamics BulletSoftBody Irrlicht
 WANTLIB += X11 Xext Xrandr Xxf86vm freetype ogg sqlite3 vorbis

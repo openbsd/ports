@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/15 20:53:39 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:16 sthen Exp $
 
 V =		0.15
 COMMENT =	interpreter for Magnetic Scrolls games
@@ -10,7 +10,7 @@ HOMEPAGE =	http://www.dettus.net/dMagnetic/
 MAINTAINER =	Thomas Dettbarn <dettus@dettus.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

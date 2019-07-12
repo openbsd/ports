@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.16 2017/11/04 22:44:49 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2019/07/12 20:46:19 sthen Exp $
 
 CATEGORIES =	games
 PKGNAME ?=	${DISTNAME:S/-src//}
@@ -10,7 +10,7 @@ MASTER_SITES ?=	${HOMEPAGE}
 MAINTAINER ?=	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WRKDIST ?=	${WRKDIR}/${DISTNAME:S/-src//}
 MODULES +=	devel/qmake x11/qt5

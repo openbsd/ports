@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/09/22 21:51:16 solene Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:23 sthen Exp $
 
 COMMENT=	enhanced clone of Id Software's Doom game; multiplayer#'
 DISTNAME=	prboom-2.5.0
@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=prboom/}
 HOMEPAGE=	http://prboom.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =	SDL c m pthread GL GLU SDL_mixer>=3 SDL_net>=1 png>=4
 

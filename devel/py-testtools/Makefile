@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/15 12:04:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:54 sthen Exp $
 
 COMMENT=	extensions to the Python unit testing framework
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 REVISION=	2
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_PI=	Yes

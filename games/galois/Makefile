@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/07/01 05:59:05 bcallah Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:18 sthen Exp $
 
 COMMENT =	free multi-dimensional Tetris-like game
 DISTNAME =	galois-0.6
@@ -8,7 +8,7 @@ HOMEPAGE =	http://www.nongnu.org/galois/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} atk-1.0 atkmm-1.6 c cairo cairo-gobject
 WANTLIB += cairomm-1.0 fribidi gdk-3 gdk_pixbuf-2.0 gdkmm-3.0

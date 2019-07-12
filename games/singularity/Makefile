@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/04/01 09:29:31 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:24 sthen Exp $
 
 COMMENT=	simulation of a true AI
 
@@ -18,7 +18,7 @@ HOMEPAGE=	http://emhsoft.com/singularity/
 
 # GPLv2
 # music under CC Attribution-ShareAlike 3.0 Unported
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://emhsoft.com/singularity/
 

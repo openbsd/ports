@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:52 sthen Exp $
 
 COMMENT =		Python lex/yacc
 
@@ -11,7 +11,7 @@ REVISION =		0
 HOMEPAGE =		http://www.dabeaz.com/ply/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

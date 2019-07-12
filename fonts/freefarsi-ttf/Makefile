@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/11/24 09:11:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:11 sthen Exp $
 
 COMMENT=		free TrueType Persian fonts
 
@@ -9,7 +9,7 @@ CATEGORIES=		fonts x11
 HOMEPAGE=		http://sourceforge.net/projects/fpf/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 # The original distfile contains .sfd files, the Debian package contains
 # .ttf files. These are the files we install.

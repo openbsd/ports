@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/05/28 18:54:26 landry Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 20:45:46 sthen Exp $
 
 COMMENT=	buildworker for the buildbot CI system
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://buildbot.net/
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_PI =	Yes
 

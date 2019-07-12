@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/20 20:52:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:07 sthen Exp $
 
 COMMENT=		electronic periodic table of the elements
 
@@ -9,7 +9,7 @@ REVISION=		0
 HOMEPAGE=		http://www.toddmiller.com/epte/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses
 

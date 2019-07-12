@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/20 22:15:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:46:25 sthen Exp $
 
 COMMENT=	graphical tool to change Tux Paint's settings
 #'
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.tuxpaint.org/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/13 18:06:44 danj Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:53 sthen Exp $
 
 COMMENT =		plugin to manage your versions by scm tags
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 REVISION =		1
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

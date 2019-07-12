@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/06/11 07:17:23 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:12 sthen Exp $
 
 COMMENT =		IBM's corporate type family
 
@@ -7,7 +7,7 @@ V =			2.0.0
 PKGNAME =		ibm-plex-$V
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://github.com/IBM/plex/releases/download/v$V/
 

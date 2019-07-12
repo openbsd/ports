@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/21 09:34:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:15 sthen Exp $
 
 COMMENT =	abstract puzzle game
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://level7.org.uk/chroma/
 MAINTAINER =	LEVAI Daniel <leva@ecentrum.hu>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  SDL SDL_image c freetype iconv intl curses pthread z
 

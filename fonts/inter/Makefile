@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/09 07:39:52 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:12 sthen Exp $
 
 COMMENT =	typeface carefully crafted & designed for computer screens
 
@@ -11,7 +11,7 @@ CATEGORIES =	fonts
 HOMEPAGE =	https://rsms.me/inter/
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://github.com/rsms/inter/releases/download/v$V/
 

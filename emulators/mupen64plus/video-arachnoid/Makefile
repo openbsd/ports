@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2019/02/26 22:10:55 bentley Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:09 sthen Exp $
 
 COMMENT =		n64 emulator video plugin
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		GL c m pthread ${COMPILER_LIBCXX}
 

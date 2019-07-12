@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/04/28 21:18:46 danj Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:56 sthen Exp $
 
 COMMENT=	testing frameworks from Zope 3
 
@@ -10,7 +10,7 @@ REVISION =	5
 CATEGORIES=	devel
 
 # Zope Public License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_PI =	Yes
 

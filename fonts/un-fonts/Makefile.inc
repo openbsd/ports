@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2017/11/15 04:38:21 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2019/07/12 20:46:13 sthen Exp $
 
 CATEGORIES ?=	fonts x11 japanese korean
 
@@ -9,7 +9,7 @@ MASTER_SITES ?=	https://kldp.net/unfonts/release/
 WRKDIST = 	${WRKDIR}/un-fonts
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	yes
+PERMIT_PACKAGE =	Yes
 
 FONTDIR ?=	${PREFIX}/share/fonts/korean
 

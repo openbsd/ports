@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:50 sthen Exp $
 
 COMMENT =		dot-accessible dictionary (a la JavaScript objects)
 
@@ -10,7 +10,7 @@ REVISION =		0
 CATEGORIES =		devel
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

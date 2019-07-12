@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/12/09 13:52:26 bcallah Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:48 sthen Exp $
 
 COMMENT=	futures implementation for Python
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # Python Software Foundation license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

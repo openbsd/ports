@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/05/05 19:21:20 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:01 sthen Exp $
 
 # g++3 chokes on the code
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/geoffpike/sparsehash
 WRKDIST =		${WRKDIR}/sparsehash-sparsehash-$V
 
 # 3-clause BSDL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu

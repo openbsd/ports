@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/04/28 20:51:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:50 sthen Exp $
 
 COMMENT=		the simplest possible mock library, for Python
 
@@ -10,7 +10,7 @@ REVISION=		3
 CATEGORIES=		devel
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_PI =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/11 03:48:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:07 sthen Exp $
 
 COMMENT =	simple, Unicode-aware word processor on the console
 
@@ -11,7 +11,7 @@ CATEGORIES =	editors
 HOMEPAGE =	https://cowlark.com/wordgrinder/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODLUA_WANTLIB}
 WANTLIB += X11 Xft c curses freetype m z

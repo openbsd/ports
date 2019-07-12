@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/20 20:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:05 sthen Exp $
 
 COMMENT=	user-friendly ncurses-based hexeditor with many features
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.jewfish.net/description.php?title=HexCurse
 MAINTAINER=	Michael Knudsen <mk@molioner.dk>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 

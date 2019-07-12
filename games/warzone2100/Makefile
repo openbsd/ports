@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/03/08 20:00:46 cwen Exp $
+# $OpenBSD: Makefile,v 1.42 2019/07/12 20:46:26 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -13,7 +13,7 @@ REVISION=	4
 HOMEPAGE=	https://wz2100.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL GLEW GLU Qt5Core Qt5Gui Qt5Script Qt5Widgets SDL2 X11
 WANTLIB += Xrandr c crypto fontconfig freetype fribidi harfbuzz iconv

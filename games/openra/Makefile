@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/06/17 00:34:42 thfr Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:22 sthen Exp $
 
 COMMENT =		open-source real-time strategy game engine
 V =			20190314
@@ -14,7 +14,7 @@ REVISION =		2
 # Apache-2.0 (MaxMind.Db)
 # GPLv2 (FuzzyLogicLibrary)
 # zlib (SDL2-CS, OpenAL-CS)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # dlopen'd via mono-config(5)
 WANTLIB +=	SDL2 freetype openal

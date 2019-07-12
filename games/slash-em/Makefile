@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/05/17 16:19:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:46:24 sthen Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Hard
 DISTNAME =	se007e7f1
@@ -13,7 +13,7 @@ HOMEPAGE =	http://slashem.sourceforge.net
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses
 

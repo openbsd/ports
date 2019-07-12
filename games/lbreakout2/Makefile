@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/06/27 21:03:47 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:46:20 sthen Exp $
 
 COMMENT =	breakout game with many levels, powerups, good graphics
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://lgames.sourceforge.net/index.php?action=show_project&project=L
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  SDL SDL_mixer c iconv intl m png>=9.0 pthread z
 

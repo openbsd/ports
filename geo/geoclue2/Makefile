@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/10/31 07:43:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 20:46:28 sthen Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
@@ -15,7 +15,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/${VERSION}/
 EXTRACT_SUFX=		.tar.bz2

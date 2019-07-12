@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2019/02/28 23:00:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2019/07/12 20:46:06 sthen Exp $
 
 COMMENT=		a fast, compact Motif/X11 plain text editor
 
@@ -18,7 +18,7 @@ MASTER_SITES0=		http://distfiles.nl/
 DIST_SUBDIR=		nedit
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xmu Xpm Xrender Xt
 WANTLIB += c expat fontconfig freetype iconv m z Xm

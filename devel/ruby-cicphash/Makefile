@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/20 20:57:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:58 sthen Exp $
 
 COMMENT =	case insensitive, case preserving hash class for ruby
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://github.com/jeremyevans/ruby-cicphash
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # MIT License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem

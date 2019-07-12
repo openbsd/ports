@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/05 15:44:12 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:53 sthen Exp $
 
 COMMENT =		refactoring library
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/python-rope/rope
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

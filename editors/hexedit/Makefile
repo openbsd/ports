@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/01/03 14:13:07 fcambus Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:46:05 sthen Exp $
 
 COMMENT=	view and edit files in hexadecimal or ASCII
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://rigaux.org/hexedit.html
 MAINTAINER=	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses
 

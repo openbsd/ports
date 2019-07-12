@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/06 04:41:56 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:11 sthen Exp $
 
 COMMENT =	Japanese Ming-style font
 
@@ -10,7 +10,7 @@ HOMEPAGE =	http://fonts.jp/hanazono/
 
 # "Unlimited permission is granted to use, copy, and distribute it,
 #  with or without modification, either commercially and noncommercially."
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_OSDN_JP:=hanazono-font/68253/}
 EXTRACT_SUFX =		.zip

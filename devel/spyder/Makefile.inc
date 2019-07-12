@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.2 2019/05/05 15:44:12 danj Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2019/07/12 20:46:01 sthen Exp $
 
 DIST_SUBDIR=	spyder
 
 CATEGORIES ?=	devel/spyder
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/08 09:40:53 solene Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:21 sthen Exp $
 
 COMMENT =	QuakeWorld server
 
@@ -17,7 +17,7 @@ QWP_VERSION =	20120131
 MASTER_SITES0 = https://raw.githubusercontent.com/id-Software/Quake/${QWP_COMMIT}/QW/progs/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curl m pcre pthread
 

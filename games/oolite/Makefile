@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/11/26 14:19:56 sebastia Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:21 sthen Exp $
 
 COMMENT=	space combat and trading game in the style of Elite
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.oolite.org/
 MAINTAINER=	Nicholas Marriott <nicm@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=oolite-linux.berlios/}
 EXTRACT_SUFX=	.tar.bz2

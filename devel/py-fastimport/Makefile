@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:48 sthen Exp $
 
 COMMENT =		parser for and generator of the Git fastimport format
 DISTNAME =		fastimport-${MODPY_EGG_VERSION}
@@ -8,7 +8,7 @@ HOMEPAGE =		https://github.com/jelmer/python-fastimport
 REVISION =		2
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_EGG_VERSION =	0.9.6

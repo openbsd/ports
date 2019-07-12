@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/04/28 20:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:45:52 sthen Exp $
 
 COMMENT=		cross-python path, ini-parsing, io, code, log facilities
 
@@ -10,7 +10,7 @@ REVISION=		0
 CATEGORIES=		devel
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/04/29 14:34:19 bcallah Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:57 sthen Exp $
 
 COMMENT =		library to edit command lines as they are typed in
 
@@ -16,7 +16,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://tiswww.case.edu/php/chet/readline/rltop.html
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += curses
 

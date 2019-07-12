@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/02/16 22:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:14 sthen Exp $
 
 COMMENT=	fast anagram generator
 
@@ -9,7 +9,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/a/an/}
 
 # GPL - LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

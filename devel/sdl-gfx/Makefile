@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2016/04/26 21:21:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:46:01 sthen Exp $
 
 COMMENT=	primitives drawing/other support functions for SDL
 
@@ -13,7 +13,7 @@ SHARED_LIBS=	SDL_gfx	15.0
 HOMEPAGE=	http://www.ferzkopp.net/joomla/content/view/19/14/
 
 # Zlib
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	SDL iconv m pthread sndio usbhid
 

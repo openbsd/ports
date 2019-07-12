@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/04/28 20:51:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:56 sthen Exp $
 
 COMMENT =		built-package format for Python
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 REVISION =		0
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

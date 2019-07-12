@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/04 01:06:42 bcallah Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:16 sthen Exp $
 
 COMMENT =	free interpreter for RPG Maker 2000/2003 and EasyRPG games
 PKGNAME =	easyrpg-${GH_TAGNAME}
@@ -7,7 +7,7 @@ CATEGORIES =	games x11
 HOMEPAGE =	https://easyrpg.org/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_mixer c freetype harfbuzz
 WANTLIB += lcf m mpg123 opusfile pixman-1 png sndfile speexdsp

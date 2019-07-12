@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:20 sthen Exp $
 
 COMMENT =	frenetic space shoot-em-up
 
@@ -17,7 +17,7 @@ HOMEPAGE =	http://koboredux.com/
 MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image audiality2 c m
 

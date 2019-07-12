@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/16 03:33:09 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:10 sthen Exp $
 
 COMMENT = 	fixed width sans font designed especially for coders
 PKG_ARCH =	*
@@ -13,7 +13,7 @@ MASTER_SITES =	http://www.marksimonson.com/assets/content/fonts/
 HOMEPAGE =	http://www.marksimonson.com/fonts/view/anonymous-pro
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

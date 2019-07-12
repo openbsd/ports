@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/09 22:31:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:03 sthen Exp $
 
 COMMENT =	source code browser plugin for the Vim text editor
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://vim-taglist.sourceforge.net/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=vim-taglist/}
 
 # BSD like license
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WRKDIST =	${WRKDIR}
 

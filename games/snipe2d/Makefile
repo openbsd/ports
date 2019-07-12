@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:24 sthen Exp $
 
 COMMENT =		overhead shooting game
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://icculus.org/oes/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # zlib-a-like - see COPYING in sources
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		SDL c m pthread ${COMPILER_LIBCXX} SDL_image>=2 SDL_mixer>=3
 

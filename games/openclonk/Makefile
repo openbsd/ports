@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/17 16:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:22 sthen Exp $
 
 # Uses x86-only blake2 implementation.
 ONLY_FOR_ARCHS =	amd64 i386
@@ -16,7 +16,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # engine: ISC
 # content: CC BY-SA, CC BY, CC0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU Qt5Core Qt5Gui Qt5Widgets
 WANTLIB += SDL2 X11 alut c freetype jpeg m miniupnpc ogg openal

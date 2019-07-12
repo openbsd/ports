@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:25 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:48 sthen Exp $
 
 COMMENT=	Python functions and constants for IEEE754 floating point
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://research.warnes.net/projects/RStatServer/fpconst/
 MODULES=	lang/python
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://research.warnes.net/~warnes/fpconst/
 

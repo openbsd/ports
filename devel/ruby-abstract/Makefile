@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/26 23:55:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:58 sthen Exp $
 
 COMMENT=		abstract methods for Ruby
 
@@ -9,7 +9,7 @@ CATEGORIES=		devel
 HOMEPAGE=		http://abstract.rubyforge.org/
 
 # Ruby license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

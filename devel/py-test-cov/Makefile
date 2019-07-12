@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/13 18:06:44 danj Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:54 sthen Exp $
 
 COMMENT =		library for stubbing in Python
 
@@ -11,7 +11,7 @@ REVISION =		1
 HOMEPAGE =		https://pytest-cov.readthedocs.org/en/latest/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

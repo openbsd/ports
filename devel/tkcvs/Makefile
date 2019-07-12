@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2018/03/20 08:29:13 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:46:02 sthen Exp $
 
 COMMENT=	graphical frontend to CVS
 DISTNAME=	tkcvs-8.2.3
@@ -9,7 +9,7 @@ HOMEPAGE=	https://www.twobarleycorns.net/tkcvs.html
 MAINTAINER=	Currell Berry <currellberry@gmail.com>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tkcvs/} \
 		https://www.twobarleycorns.net/

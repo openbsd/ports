@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/05/20 22:15:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:46:07 sthen Exp $
 
 COMMENT=	interactive typing tutor
 
@@ -10,7 +10,7 @@ HOMEPAGE=	https://www.gnu.org/software/gtypist/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses iconv intl
 

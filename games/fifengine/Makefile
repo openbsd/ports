@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/12/13 19:53:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:17 sthen Exp $
 
 BROKEN-i386 =	std::bad_alloc when compiling fifePYTHON_wrap.cxx
 BROKEN-powerpc =out of memory when compiling fifePYTHON_wrap.cxx
@@ -16,7 +16,7 @@ CATEGORIES =	games
 HOMEPAGE =	http://fifengine.net/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL SDL2 SDL2_image SDL2_ttf boost_filesystem-mt boost_regex-mt

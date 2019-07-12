@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/13 08:37:06 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:19 sthen Exp $
 
 COMMENT =			just a silly git launcher, inspired by sl
 DISTNAME =			gti-1.2.0
@@ -13,7 +13,7 @@ GH_COMMIT =			c6a32edde77fb2cf56531b87f59f133414538517
 MAINTAINER =			Robert Nagy <robert@openbsd.org>
 
 # BSD-like.
-PERMIT_PACKAGE_CDROM=		Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB =			c
 

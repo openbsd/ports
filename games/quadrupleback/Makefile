@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:23 sthen Exp $
 
 COMMENT =		clone of Doubleback, an intruder circling game
 
@@ -10,7 +10,7 @@ CATEGORIES =		games
 HOMEPAGE =		http://sarrazip.com/dev/quadrupleback.html
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += FLAC SDL SDL_gfx SDL_image SDL_mixer c flatzebra-0.1 iconv
 WANTLIB += jpeg m mikmod ogg png pthread smpeg sndio ${COMPILER_LIBCXX} tiff

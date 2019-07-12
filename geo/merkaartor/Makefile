@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/04/28 22:35:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 20:46:29 sthen Exp $
 
 COMMENT =	OpenStreetMap editor
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://www.merkaartor.be/
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 NO_TEST =	Yes
 MODULES =	devel/qmake x11/qt5

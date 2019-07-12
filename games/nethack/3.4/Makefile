@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/17 16:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:21 sthen Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Piece of cake
 V =		3.4.3
@@ -15,7 +15,7 @@ HOMEPAGE =	http://nethack.org/
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c curses
 

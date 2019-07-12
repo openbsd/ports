@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/02/26 08:42:14 sebastia Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:58 sthen Exp $
 
 COMMENT=		Ruby gem to ease i18n
 
@@ -8,7 +8,7 @@ HOMEPAGE =	https://github.com/puppetlabs/gettext-setup-gem
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

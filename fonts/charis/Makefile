@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/15 09:01:54 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:11 sthen Exp $
 
 COMMENT =		readable Unicode font for laser printers
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://software.sil.org/charis/
 MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://software.sil.org/downloads/r/charis/
 

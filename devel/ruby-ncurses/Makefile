@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/05/20 20:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:45:59 sthen Exp $
 
 COMMENT=		Ruby interface to ncurses
 
@@ -11,7 +11,7 @@ CATEGORIES=		devel
 HOMEPAGE=		https://github.com/eclubb/ncurses-ruby
 
 # LGPL 2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		form menu curses panel
 

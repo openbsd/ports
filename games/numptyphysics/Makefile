@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/05/18 12:13:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:46:21 sthen Exp $
 
 COMMENT-main =		physics-based drawing puzzle game
 COMMENT-npcomplete =	extra levels for physics-based drawing puzzle game
@@ -22,7 +22,7 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		npcomplete-0.0.r20100124.tar.bz2
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB-main =		SDL SDL_image SDL_ttf X11 c m \
 			pthread ${COMPILER_LIBCXX} z

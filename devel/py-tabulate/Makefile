@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:54 sthen Exp $
 
 COMMENT =	pretty-print tabular data
 
@@ -12,7 +12,7 @@ CATEGORIES =	devel
 HOMEPAGE =	https://bitbucket.org/astanin/python-tabulate
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes

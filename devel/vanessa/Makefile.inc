@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.5 2013/03/26 16:35:03 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2019/07/12 20:46:03 sthen Exp $
 
 CATEGORIES ?=	devel
 
 HOMEPAGE ?=	http://www.vergenet.net/linux/vanessa/
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITE_VANESSA ?=	${HOMEPAGE}download/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/05/11 20:50:55 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:46:07 sthen Exp $
 
 COMMENT=		General Atomistic Modelling Graphic Interface
 
@@ -10,7 +10,7 @@ CATEGORIES=		education x11
 HOMEPAGE=		http://www.gamgi.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		ftp://ftp.gamgi.org/gamgi/src/
 

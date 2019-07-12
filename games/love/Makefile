@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:46:20 sthen Exp $
 
 COMMENT=		2D games framework for use with Lua
 
@@ -13,7 +13,7 @@ CATEGORIES=		games lang/lua
 
 # code: zlib license
 # docs: freebsd license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODLUA_WANTLIB}
 WANTLIB += GL Half IL Iex IexMath IlmImf IlmThread Imath SDL X11

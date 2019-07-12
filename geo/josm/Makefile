@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2019/06/11 00:38:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.48 2019/07/12 20:46:29 sthen Exp $
 
 COMMENT=		OpenStreetMap map editor
 
@@ -19,7 +19,7 @@ MASTER_SITES=		${HOMEPAGE}/download/
 MAINTAINER=		Holger Mikolon <holger@mikolon.com>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		java \
 			textproc/intltool

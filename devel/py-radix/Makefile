@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/04/28 20:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:52 sthen Exp $
 
 COMMENT =		Radix tree implementation for Python
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://github.com/mjschultz/py-radix/
 MAINTAINER =		Job Snijders <job@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

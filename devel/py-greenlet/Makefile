@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/04/28 20:51:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:45:49 sthen Exp $
 
 COMMENT =	lightweight in-process concurrent programming
 # see slp_platformselect.h
@@ -12,7 +12,7 @@ REVISION =	0
 CATEGORIES =	devel
 
 # BSD-like
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pthread

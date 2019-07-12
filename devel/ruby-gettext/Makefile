@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/09/09 10:32:39 sebastia Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:45:58 sthen Exp $
 
 COMMENT=		Ruby interface to gettext
 
@@ -6,7 +6,7 @@ DISTNAME=		gettext-3.2.2
 CATEGORIES=		devel
 
 # Ruby or LGPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

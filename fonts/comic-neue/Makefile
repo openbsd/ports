@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/09/04 12:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:11 sthen Exp $
 
 COMMENT =		replacement for Comic Sans font
 
@@ -15,7 +15,7 @@ MAINTAINER =		Tristan Le Guern <tleguern@bouledef.eu>
 
 # CC0 (public domain)
 # http://creativecommons.org/publicdomain/zero/1.0/
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://comicneue.com/
 

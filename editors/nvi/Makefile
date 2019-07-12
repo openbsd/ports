@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/17 16:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:46:06 sthen Exp $
 
 COMMENT=	ex/vi text editor with wide character support
 
@@ -14,7 +14,7 @@ CATEGORIES =	editors
 MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses util
 

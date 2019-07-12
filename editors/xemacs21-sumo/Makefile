@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/05/20 08:41:43 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:07 sthen Exp $
 
 VERSION=		2010-07-27
 PKGNAME=		xemacs-sumo-21.${VERSION:S/-//g}
@@ -14,7 +14,7 @@ HOMEPAGE=		http://www.xemacs.org/
 COMMENT=		complete set of supported XEmacs packages
 
 # GNU GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://ftp.xemacs.org/pub/xemacs/packages/ \
 		ftp://ftp.oleane.net/pub/xemacs/packages/ \

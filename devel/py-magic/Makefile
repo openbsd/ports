@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:50 sthen Exp $
 
 MODPY_EGG_VERSION =	0.4.15
 COMMENT =		Python module for file type identification using libmagic
@@ -11,7 +11,7 @@ REVISION =		0
 MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVORS =		python3
 FLAVOR ?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2019/03/09 11:19:27 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2019/07/12 20:46:07 sthen Exp $
 
 LANGS =		af am bg ca cs cy da de el eo es fo fr ga gd gl he hr hu \
 		id it ku la lt lv mg mi ms nb nl nn ny pl pt ro ru rw sk \
@@ -15,7 +15,7 @@ EXTRACT_ONLY =
 DISTNAME =	vim-spell-${VERSION}
 
 # GPLv2+, LGPL, GFDL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 LANG_NAME-af =	Afrikaans
 DISTFILES-af =	af.latin1.spl af.utf-8.spl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/27 07:47:57 bentley Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:12 sthen Exp $
 
 PKG_ARCH =		*
 
@@ -11,7 +11,7 @@ CATEGORIES =		fonts japanese x11
 HOMEPAGE =		http://www.nihilist.org.uk/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://www.nihilist.org.uk/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/28 20:51:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:51 sthen Exp $
 
 COMMENT =		Python Build Reasonableness
 
@@ -11,7 +11,7 @@ REVISION =		0
 HOMEPAGE =		https://github.com/openstack-dev/pbr
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 

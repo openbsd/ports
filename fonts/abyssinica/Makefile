@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/15 09:49:39 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:10 sthen Exp $
 
 COMMENT =		Ethiopic Unicode script
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://software.sil.org/abyssinica/
 MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		font
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:03 sthen Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -23,7 +23,7 @@ HOMEPAGE =		http://www.valgrind.org/
 MAINTAINER =		Masao Uebayashi <uebayasi@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/11 20:50:55 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:13 sthen Exp $
 
 COMMENT=		ink-saving font based on Vera Sans
 
@@ -14,7 +14,7 @@ HOMEPAGE=		http://www.ecofont.eu/ecofont_en.html
 
 # Vera Sans license
 # http://www.bitstream.com/font_rendering/products/dev_fonts/vera.html
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # Untill upstream starts to version the font
 MASTER_SITES=		https://distfiles.nl/

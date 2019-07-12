@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2019/06/19 04:48:32 thfr Exp $
+# $OpenBSD: Makefile,v 1.167 2019/07/12 20:46:29 sthen Exp $
 
 CATEGORIES=		geo
 COMMENT=		geographic location of past and present OpenBSD developers
@@ -23,6 +23,6 @@ do-install:
 where-am-i:
 	@echo "$$(sysctl -n hw.sensors.nmea0.angle0 | cut -d' ' -f1)\t\t$$(sysctl -n hw.sensors.nmea0.angle1 | cut -d' ' -f1)\t\t\"$$(whoami)\"\\t\t#$$(finger $$(whoami) | head -1 | cut -d\: -f3-)"
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

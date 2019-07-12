@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:14 sthen Exp $
 
 COMMENT =		3D light cycle game
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://armagetronad.org/
 MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += GL GLU SDL SDL_image c iconv jpeg lzma m png pthread ${COMPILER_LIBCXX}
 WANTLIB += xml2 z

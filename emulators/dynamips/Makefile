@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/03/04 13:25:56 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:08 sthen Exp $
 
 COMMENT=		cisco 3600/7200 platform emulator
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://www.gns3.net/dynamips/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gns-3/}
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c elf>=2 pcap pthread
 

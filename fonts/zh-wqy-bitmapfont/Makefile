@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/11/04 15:53:59 rpe Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:13 sthen Exp $
 
 COMMENT=	Wen Quan Yi bitmap song CJK fonts
 
@@ -13,7 +13,7 @@ CATEGORIES=	x11 chinese
 HOMEPAGE=	http://wqy.sourceforge.net/en/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wqy/}
 EXTRACT_SUFX=	.tar.gz

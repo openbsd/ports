@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/12 21:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:07 sthen Exp $
 
 COMMENT=		VI Editor Like Emacs
 DISTNAME=		vile-9.8q
@@ -8,7 +8,7 @@ HOMEPAGE=		http://invisible-island.net/vile/
 MAINTAINER=		Jeff Rhyason <vile@rhyason.com>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c curses iconv
 

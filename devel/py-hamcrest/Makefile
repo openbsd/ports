@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:49 sthen Exp $
 
 COMMENT =		Hamcrest matchers for Python
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://hamcrest.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

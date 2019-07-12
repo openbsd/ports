@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/12/07 18:54:36 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:46:28 sthen Exp $
 
 DISTNAME=	xscavenger-1.4.4
 REVISION =	3
@@ -7,7 +7,7 @@ CATEGORIES=	games
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c sndio xcb
 

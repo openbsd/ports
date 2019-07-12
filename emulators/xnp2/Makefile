@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/04/27 15:43:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:10 sthen Exp $
 
 COMMENT =		PC-9801 emulator
 
@@ -10,7 +10,7 @@ CATEGORIES =		emulators
 HOMEPAGE =		https://www.nonakap.org/np2/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SDL2 SDL2_mixer SM X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0

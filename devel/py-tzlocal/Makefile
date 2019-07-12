@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:55 sthen Exp $
 
 COMMENT =		python tzinfo object for the local timezone
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/regebro/tzlocal
 
 # CC0 1.0 Universal
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

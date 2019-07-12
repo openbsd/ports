@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:52 sthen Exp $
 
 COMMENT =		run a subprocess in a pseudo terminal
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/pexpect/ptyprocess
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

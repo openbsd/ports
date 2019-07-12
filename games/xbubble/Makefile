@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/20 22:15:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:27 sthen Exp $
 
 COMMENT=	x bust a move clone
 
@@ -9,7 +9,7 @@ CATEGORIES=	games x11
 HOMEPAGE=	http://www.nongnu.org/xbubble/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=  X11 c iconv intl m png>=2 xcb z
 

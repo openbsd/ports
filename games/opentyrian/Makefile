@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/09/04 12:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:22 sthen Exp $
 
 V =			2.1.20130907
 COMMENT =		port of the DOS shoot-em-up Tyrian
@@ -10,7 +10,7 @@ CATEGORIES =		games x11
 HOMEPAGE =		https://bitbucket.org/opentyrian/opentyrian/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://www.camanis.net/opentyrian/releases/
 

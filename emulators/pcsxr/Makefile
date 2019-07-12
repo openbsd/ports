@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:46:09 sthen Exp $
 
 COMMENT =	Playstation 1 emulator
 
@@ -9,7 +9,7 @@ CATEGORIES =	emulators games
 HOMEPAGE =	http://pcsxr.codeplex.com/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL SDL X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xv Xxf86vm

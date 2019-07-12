@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/06/27 21:03:43 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:46:14 sthen Exp $
 
 COMMENT=	build molecules out of single atoms
 
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME:=/sources/atomix/2.14/}
 HOMEPAGE =	https://wiki.gnome.org/Apps/Atomix
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  GL ICE ORBit-2 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 bonobo-2

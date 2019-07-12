@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:02 sthen Exp $
 
 COMMENT=		collection of tools for manipulating EPROM load files
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=  srecord              0.0      # 0.0
 HOMEPAGE=		http://srecord.sf.net/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=srecord/}
 

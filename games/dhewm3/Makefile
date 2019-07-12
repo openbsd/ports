@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/12/24 19:50:06 pascal Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:16 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://github.com/dhewm/dhewm3
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 c curl jpeg m ogg openal pthread vorbis vorbisfile
 WANTLIB += z

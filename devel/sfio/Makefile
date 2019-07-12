@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/11/12 08:53:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:01 sthen Exp $
 
 COMMENT=	Safe/Fast I/O Library
 
@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://mirror.csoft.org/sfio/
 EXTRACT_SUFX=	.tar
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 post-extract:
 	cd ${WRKDIR} && ln -s . ${DISTNAME}

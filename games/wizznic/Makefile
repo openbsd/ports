@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/12/07 18:54:36 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:26 sthen Exp $
 
 COMMENT =		brick-matching puzzle game
 
@@ -13,7 +13,7 @@ CATEGORIES =		games
 HOMEPAGE =		http://wizznic.org/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL SDL SDL_image SDL_mixer c m png pthread z
 

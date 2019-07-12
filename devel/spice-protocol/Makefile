@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/12 22:00:52 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:46:01 sthen Exp $
 
 COMMENT=	SPICE protocol headers
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel net
 HOMEPAGE=	http://www.spice-space.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/releases/
 EXTRACT_SUFX=	.tar.bz2

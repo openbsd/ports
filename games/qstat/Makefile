@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:23 sthen Exp $
 
 COMMENT=	displays the status of multi-player Internet Game servers
 
@@ -10,7 +10,7 @@ CATEGORIES=	games
 MAINTAINER=	Tom Murphy <openbsd@pertho.net>
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

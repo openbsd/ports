@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:59 sthen Exp $
 
 COMMENT =	access the v8 javascript interpreter from ruby
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel lang
 HOMEPAGE =	https://github.com/cowboyd/libv8
 
 # MIT License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 

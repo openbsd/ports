@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/08/08 21:25:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:53 sthen Exp $
 
 COMMENT =		version of dict that keeps keys in sorted order
 
@@ -9,7 +9,7 @@ PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # NB: Functionality provided by this modules is not required with Python3.
 MODULES =		lang/python

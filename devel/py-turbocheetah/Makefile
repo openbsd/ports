@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/01/06 17:01:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:55 sthen Exp $
 
 COMMENT=		plugin to support use of Cheetah templates
 
@@ -12,7 +12,7 @@ CATEGORIES=		devel
 HOMEPAGE=		http://www.turbogears.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_PI =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2019/05/20 22:15:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.81 2019/07/12 20:46:26 sthen Exp $
 
 PORTROACH = 	limitw:1,even
 
@@ -17,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wesnoth/}
 EXTRACT_SUFX=	.tar.bz2
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SDL2 SDL2_image SDL2_mixer SDL2_ttf SM X11 Xext
 WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_locale-mt

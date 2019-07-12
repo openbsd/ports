@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/06/27 21:03:50 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:46:25 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
@@ -17,7 +17,7 @@ HOMEPAGE =		http://supertuxkart.sourceforge.net
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL X11 Xrandr c curl freetype jpeg
 WANTLIB += m ogg openal png vorbis vorbisenc vorbisfile z

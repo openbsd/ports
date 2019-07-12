@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/08 15:48:26 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:11 sthen Exp $
 
 COMMENT = 	monospace bitmap font for programming and terminal use
 PKG_ARCH =	*
@@ -10,7 +10,7 @@ HOMEPAGE =	http://font.gohu.org/
 MASTER_SITES =	http://font.gohu.org/
 
 # WTFPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

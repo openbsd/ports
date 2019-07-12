@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/04/28 20:51:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:55 sthen Exp $
 
 COMMENT =		type hints for python
 
@@ -10,7 +10,7 @@ REVISION =		0
 CATEGORIES =		devel
 
 # PSF
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/05/15 12:04:36 kmos Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:45:47 sthen Exp $
 
 COMMENT =		pure Python implementation of Git file formats and protocols
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://www.dulwich.io/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += pthread ${MODPY_WANTLIB}
 

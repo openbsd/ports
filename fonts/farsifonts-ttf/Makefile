@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/11/04 15:53:59 rpe Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:11 sthen Exp $
 
 COMMENT=	ISIRI 6219 conforming Farsi fonts
 
@@ -12,7 +12,7 @@ CATEGORIES=	fonts x11
 HOMEPAGE=	http://www.arabeyes.org/project.php?proj=Khotot
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=arabeyes/}
 EXTRACT_SUFX=		.tar.bz2

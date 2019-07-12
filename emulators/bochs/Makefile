@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2019/05/17 16:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2019/07/12 20:46:07 sthen Exp $
 
 COMMENT=	x86 machine simulator
 
@@ -10,7 +10,7 @@ REVISION=	2
 HOMEPAGE=	http://bochs.sourceforge.net/
 
 # LGPLv2.1+ and MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c curses m pthread
 

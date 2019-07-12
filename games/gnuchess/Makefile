@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/05/21 09:34:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2019/07/12 20:46:18 sthen Exp $
 
 COMMENT=	chess program
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.gnu.org/software/chess/
 MASTER_SITES=	${MASTER_SITE_GNU:=chess/}
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv intl m curses pthread readline ${COMPILER_LIBCXX}
 

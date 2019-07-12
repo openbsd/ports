@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/05/13 19:03:51 danj Exp $
+# $OpenBSD: Makefile,v 1.43 2019/07/12 20:46:06 sthen Exp $
 
 COMMENT=		LaTeX development environment
 DISTNAME=		texmaker-5.0.2
@@ -8,7 +8,7 @@ REVISION=		1
 HOMEPAGE=		http://www.xm1math.net/texmaker/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=		.tar.bz2

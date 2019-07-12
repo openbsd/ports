@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/05/14 09:57:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:17 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 WRKDIST=	${WRKDIR}
 
 # Conditional
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

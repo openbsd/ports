@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/16 03:33:09 bentley Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:12 sthen Exp $
 
 COMMENT =		fonts from the League of Moveable Type
 
@@ -21,7 +21,7 @@ MASTER_SITES =		http://s3.amazonaws.com/theleague-production/fonts/
 MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		leaguefonts
 

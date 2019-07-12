@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/29 22:16:13 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:18 sthen Exp $
 
 COMMENT =		vertical shoot-em-up with nontraditional elements
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://garden.sourceforge.net
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcursor Xext Xfixes Xpm Xrender Xxf86dga Xxf86vm
 WANTLIB += alleg c m pthread sndio xcb

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/02 15:10:07 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:22 sthen Exp $
 
 COMMENT=	pacman clone gone mad
 
@@ -17,7 +17,7 @@ CATEGORIES=	games
 HOMEPAGE=	http://pacmanarena.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL GLU SDL SDL_mixer SDL_net c m pthread
 

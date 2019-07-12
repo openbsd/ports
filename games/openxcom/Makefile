@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/03/30 14:23:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:22 sthen Exp $
 
 BROKEN-alpha =	OOM on XcomRuleset.cpp
 BROKEN-hppa =	OOM on Engine/Scalers/hq4x.cpp
@@ -13,7 +13,7 @@ HOMEPAGE =		https://openxcom.org/
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		GL SDL SDL_gfx SDL_image SDL_mixer c m pthread \
 			yaml-cpp ${COMPILER_LIBCXX}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/13 18:06:43 danj Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:45 sthen Exp $
 
 COMMENT =		ssl.match_hostname() function from Python 3.5
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 REVISION =		1
 
 # Python Software Foundation License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

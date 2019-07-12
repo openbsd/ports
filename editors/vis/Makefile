@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/04/10 22:51:28 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:07 sthen Exp $
 
 COMMENT =		vi-like editor with sam-style structural regex support
 
@@ -18,7 +18,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>, \
 			Carolyn Saunders <gigavinyl@gmail.com>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses iconv intl m termkey tre ${MODLUA_WANTLIB}
 

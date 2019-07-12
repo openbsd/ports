@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/15 12:04:36 kmos Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:50 sthen Exp $
 
 COMMENT=		python mocking and patching library for testing
 
@@ -11,7 +11,7 @@ REVISION=		1
 HOMEPAGE=		http://www.voidspace.org.uk/python/mock/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 BUILD_DEPENDS=		devel/py-pbr${MODPY_FLAVOR}

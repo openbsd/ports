@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/07/01 18:33:36 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 20:46:27 sthen Exp $
 
 COMMENT=	X11 frontend for GNU Chess and the Internet Chess Server
 
@@ -10,7 +10,7 @@ REVISION=	3
 HOMEPAGE=	https://www.gnu.org/software/xboard/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0

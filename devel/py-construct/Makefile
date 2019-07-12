@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:47 sthen Exp $
 
 COMMENT =	powerful declarative parser/builder for binary data
 
@@ -14,7 +14,7 @@ CATEGORIES =	devel
 HOMEPAGE =	http://construct.readthedocs.io/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

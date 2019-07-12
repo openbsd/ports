@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/07 16:29:03 danj Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:16 sthen Exp $
 
 COMMENT=	OpenGL game based on SNES classic Tetris Attack
 
@@ -11,7 +11,7 @@ MAINTAINER=	Mattieu Baptiste <mattieu@brimbelle.org>
 HOMEPAGE=	http://www.nongnu.org/crack-attack/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB = GL GLU ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes \
 	Xi Xinerama Xmu Xrandr Xrender atk-1.0 c cairo expat fontconfig \

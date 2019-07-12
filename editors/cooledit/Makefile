@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/05/20 22:15:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2019/07/12 20:46:04 sthen Exp $
 
 COMMENT =	easy to use, graphical editor
 
@@ -38,6 +38,6 @@ CONFIGURE_ENV += XTERM_CMD=xterm LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS += --enable-static --disable-mail-author
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

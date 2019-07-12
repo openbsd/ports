@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/11/18 19:06:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:14 sthen Exp $
 
 BROKEN-hppa =	./src/x/xdga2s.s:25: Error: symbol .text is already defined
 
@@ -15,7 +15,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=alleg/}
 
 # readme.txt: "You may use, modify, redistribute, and generally hack it about
 # in any way you like, and you do not have to give us anything in return."
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 USE_GMAKE =		Yes
 

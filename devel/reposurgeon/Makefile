@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/01/20 15:05:34 jsg Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:57 sthen Exp $
 
 COMMENT=	tool for editing version-control repository history
 
@@ -11,7 +11,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://www.catb.org/esr/reposurgeon/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c ${MODPY_WANTLIB}
 

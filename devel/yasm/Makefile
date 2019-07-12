@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/10 15:25:03 tj Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:04 sthen Exp $
 
 COMMENT=	complete rewrite of the NASM assembler
 
@@ -12,7 +12,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 HOMEPAGE=	http://yasm.tortall.net/
 
 # BSD and Artistic/LGPLv2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

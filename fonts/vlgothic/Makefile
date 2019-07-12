@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/28 12:22:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:13 sthen Exp $
 
 COMMENT =	Japanese gothic TrueType fonts from Vine Linux
 
@@ -12,7 +12,7 @@ CATEGORIES =	fonts japanese x11
 HOMEPAGE =	http://vlgothic.dicey.org/
 
 #BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES =		${MASTER_SITE_OSDN_JP:=vlgothic/62375/}
 EXTRACT_SUFX =		.tar.bz2

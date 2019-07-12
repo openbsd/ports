@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/20 20:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:01 sthen Exp $
 
 COMMENT=	AVR simulator
 
@@ -9,7 +9,7 @@ REVISION=	0
 HOMEPAGE=	http://www.nongnu.org/simulavr/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=simulavr/}
 

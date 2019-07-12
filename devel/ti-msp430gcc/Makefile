@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/04/15 21:20:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:02 sthen Exp $
 
 BROKEN-alpha =	relocation truncated to fit: GPRELHIGH against symbol default_target_hard_regs
 
@@ -13,7 +13,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://www.ti.com/tool/msp430-gcc-opensource
 
 # GPLv2+BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSPGCC/$V/exports/
 DIST_SUBDIR =		ti-msp430gcc-$V

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/04/28 20:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:45:53 sthen Exp $
 
 COMMENT=	simplified packaging system for Python modules
 
@@ -15,7 +15,7 @@ HOMEPAGE=		https://setuptools.readthedocs.io/en/latest/
 MAINTAINER=		Kurt Mosiejczuk <kmos@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

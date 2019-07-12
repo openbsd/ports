@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:52 sthen Exp $
 
 COMMENT =	simple VTXXX-compatible terminal emulator
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://github.com/selectel/pyte
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/06/04 14:46:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:00 sthen Exp $
 
 COMMENT=		portable replacement for popen4
 
@@ -8,7 +8,7 @@ CATEGORIES=		devel
 HOMEPAGE=		https://github.com/ahoward/systemu
 
 # Ruby license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

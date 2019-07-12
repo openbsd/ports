@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:46 sthen Exp $
 
 COMMENT =	decorator for caching properties in classes
 
@@ -12,7 +12,7 @@ CATEGORIES =	devel
 MAINTAINER =	Sebastien Marie <semarie@online.fr>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

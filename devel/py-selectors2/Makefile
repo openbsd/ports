@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/10 15:19:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:53 sthen Exp $
 
 COMMENT =	backported, durable, and portable selectors
 
@@ -11,7 +11,7 @@ CATEGORIES =	devel
 HOMEPAGE =	https://www.github.com/SethMichaelLarson/selectors2
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

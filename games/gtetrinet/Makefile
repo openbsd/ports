@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/06/27 21:03:47 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:46:19 sthen Exp $
 
 MULTI_PACKAGES=	-main -themes
 
@@ -29,7 +29,7 @@ DISTFILES+=	gtet-theme-${THEME}${EXTRACT_SUFX}:0
 .endfor
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		textproc/intltool \
 			devel/gconf2

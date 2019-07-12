@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/04/04 22:51:29 jsg Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:11 sthen Exp $
 
 COMMENT=	Go TrueType fonts
 GH_ACCOUNT=	golang
@@ -11,7 +11,7 @@ HOMEPAGE=	https://blog.golang.org/go-fonts
 CATEGORIES=	fonts x11
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

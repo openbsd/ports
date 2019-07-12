@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/21 00:13:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:26 sthen Exp $
 
 COMMENT =		editor war arcade game
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://wordwarvi.sourceforge.net/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2 / CC licenses for soundfiles
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo drm expat

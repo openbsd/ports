@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/13 18:06:43 danj Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:48 sthen Exp $
 
 COMMENT =		Python 3.4 Enum backported to previous versions
 
@@ -10,7 +10,7 @@ REVISION =		0
 CATEGORIES =		devel
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/20 22:15:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:03 sthen Exp $
 
 COMMENT=		utilities to manage well known user directories
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://freedesktop.org/wiki/Software/xdg-user-dirs/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://user-dirs.freedesktop.org/releases/
 

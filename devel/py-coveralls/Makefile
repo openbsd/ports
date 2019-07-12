@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/08 13:49:47 danj Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:47 sthen Exp $
 
 COMMENT =	display coverage stats online via coveralls.io
 
@@ -12,7 +12,7 @@ CATEGORIES =	devel
 HOMEPAGE =	https://github.com/coagulant/coveralls-python
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/11 13:22:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:13 sthen Exp $
 
 PKG_ARCH =		*
 
@@ -12,7 +12,7 @@ CATEGORIES =		fonts
 HOMEPAGE =		http://overpassfont.org/
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 GH_ACCOUNT =		RedHatBrand
 GH_PROJECT =		Overpass

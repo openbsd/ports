@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/07/03 14:49:18 bcallah Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:26 sthen Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
@@ -16,7 +16,7 @@ HOMEPAGE =	http://urbanterror.info/
 MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xxf86vm c m pthread SDL
 

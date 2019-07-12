@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:14 sthen Exp $
 
 COMMENT=	clone of the classic Frog Bog game
 
@@ -9,7 +9,7 @@ REVISION =	2
 HOMEPAGE=	http://sarrazip.com/dev/batrachians.html
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://sarrazip.com/dev/
 

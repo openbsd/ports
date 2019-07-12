@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:30 sthen Exp $
 
 COMMENT=	perl extension for parsing FIPS-55 gazetteer data
 MODULES=	cpan
@@ -8,7 +8,7 @@ REVISION=	0
 CATEGORIES=	geo
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	geo/p5-Geo-TigerLine
 

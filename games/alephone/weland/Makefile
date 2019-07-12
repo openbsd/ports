@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/10/03 12:08:31 robert Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:14 sthen Exp $
 
 COMMENT =		marathon / alephone map editor
 #BROKEN =	because mono
@@ -13,7 +13,7 @@ CATEGORIES =		games
 HOMEPAGE =		http://sourceforge.net/projects/weland/
 
 # GPL v2-only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=weland/}
 EXTRACT_SUFX =		.zip

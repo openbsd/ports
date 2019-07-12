@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 16:12:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:45:57 sthen Exp $
 
 COMMENT=	Python-alike language for writing Python extension modules
 
@@ -11,7 +11,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/
 
 # Free, check README.txt for details 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://distfiles.nl/ \
 		${HOMEPAGE}

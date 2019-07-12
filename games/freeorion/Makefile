@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/13 19:53:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:18 sthen Exp $
 
 V =		0.4.8
 COMMENT =	turn-based space empire and galactic conquest computer game
@@ -12,7 +12,7 @@ MAINTAINER =	Tom Murphy <openbsd@pertho.net>
 
 #Game: GPLv2+
 #Assets: CC-BY-SA 3.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU SDL2 boost_atomic-mt
 WANTLIB += boost_chrono-mt boost_date_time-mt boost_filesystem-mt

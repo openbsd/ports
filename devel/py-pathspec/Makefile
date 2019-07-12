@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:51 sthen Exp $
 
 COMMENT =	utility for gitignore style pattern matching of file paths
 
@@ -10,7 +10,7 @@ REVISION =	0
 CATEGORIES =	devel
 
 # Mozilla Public License v2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PI =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/12/02 21:39:49 juanfra Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:21 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 macppc
 
@@ -36,7 +36,7 @@ MASTER_SITES0 =		http://files.poulsander.com/~poul19/public_files/oa/dev088/ \
 			http://openbsd.fi/distfiles/
 
 # GPLv2 but contains software with other (free) licenses as well
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB-main =		GL c m pthread sndio ogg>=5 SDL>=7 vorbis>=7 \
 			vorbisfile>=5 curl

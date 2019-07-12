@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/21 10:08:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:08 sthen Exp $
 
 COMMENT =		emulator for Nintendo Entertainment System
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://fceux.com/
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fceultra/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/20 22:15:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:28 sthen Exp $
 
 COMMENT =	Zuma-like arcade game
 DISTNAME =	zaz-1.0.0
@@ -10,7 +10,7 @@ HOMEPAGE =	http://zaz.sourceforge.net/
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL SDL SDL_image c ftgl iconv intl
 WANTLIB += m ogg theoradec theoraenc vorbis vorbisenc vorbisfile

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2019/07/05 17:01:45 jca Exp $
+# $OpenBSD: Makefile,v 1.53 2019/07/12 20:45:57 sthen Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -37,7 +37,7 @@ HOMEPAGE =	https://www.qt.io/ide/
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv3 with the "Qt Company GPL Exception 1.0"
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5Designer
 WANTLIB += Qt5DesignerComponents Qt5Gui Qt5Help Qt5Network Qt5PrintSupport

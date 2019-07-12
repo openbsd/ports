@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/20 08:28:24 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:12 sthen Exp $
 
 COMMENT =	modernist Arabic typeface
 
@@ -10,7 +10,7 @@ CATEGORIES =	fonts
 MAINTAINER =	George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://github.com/alif-type/mada/releases/download/v${V}/
 

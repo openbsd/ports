@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/11 23:49:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:25 sthen Exp $
 
 COMMENT=	sudoku solver and creator
 
@@ -9,7 +9,7 @@ CATEGORIES=	games
 HOMEPAGE=	http://baaran.de/sudoku/index-en.shtml
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m z pthread
 

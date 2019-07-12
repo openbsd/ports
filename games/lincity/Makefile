@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/20 22:15:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:46:20 sthen Exp $
 
 COMMENT=		Rich city simulation game for X
 
@@ -8,7 +8,7 @@ HOMEPAGE=		http://lincity.sourceforge.net/
 REVISION=		0
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB += ICE SM X11 Xext c iconv intl m png xcb z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lincity/}

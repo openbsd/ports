@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:21 sthen Exp $
 
 COMMENT =	puzzle/platform game
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://meandmyshadow.sourceforge.net/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=meandmyshadow/}
 
 # GPLv3 (some fonts/data CCY-BY-SA/OFL)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WRKDIST =	${WRKDIR}/${DISTNAME:S/-src//}
 MODULES =	devel/cmake

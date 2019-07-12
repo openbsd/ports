@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/08 20:00:45 cwen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:04 sthen Exp $
 
 # qt5 webkit
 USE_WXNEEDED =	Yes
@@ -16,7 +16,7 @@ HOMEPAGE =	https://zealdocs.org/
 MAINTAINER =	Adam Wolk <awolk@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Concurrent Qt5Core Qt5Gui
 WANTLIB += Qt5Network Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5X11Extras

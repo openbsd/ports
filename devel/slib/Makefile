@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/10 21:01:27 tj Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:01 sthen Exp $
 
 COMMENT =	scheme r5 library
 
@@ -15,7 +15,7 @@ MASTER_SITES =	https://groups.csail.mit.edu/mac/ftpdir/scm/ \
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # BSD-like without modify
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/12/13 19:53:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:04 sthen Exp $
 
 COMMENT =		YAML parser and emitter in C++
 
@@ -16,7 +16,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/jbeder/yaml-cpp
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
 

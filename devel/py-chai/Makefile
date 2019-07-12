@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:46 sthen Exp $
 
 COMMENT =		easy to use mocking, stubbing, and spying framework
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/agoragames/chai
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

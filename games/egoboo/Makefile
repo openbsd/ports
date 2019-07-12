@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/10 20:41:36 phessler Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:16 sthen Exp $
 
 COMMENT =		dungeon-crawling action-RPG adventure
 
@@ -10,7 +10,7 @@ HOMEPAGE =		http://egoboo.sourceforge.net
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=egoboo/}
 
 # GPL v3 or later
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB = 		GL GLU SDL c m pthread SDL_net SDL_image SDL_mixer \
 			SDL_ttf

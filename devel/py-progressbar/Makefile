@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/04/28 20:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:52 sthen Exp $
 
 COMMENT =		text progressbar library for python
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://github.com/niltonvolpato/python-progressbar
 MAINTAINER = 		Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

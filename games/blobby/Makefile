@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:15 sthen Exp $
 
 COMMENT =		volleyball game with online play
 
@@ -12,7 +12,7 @@ CATEGORIES =		games
 HOMEPAGE =		http://blobby.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB +=		GL GLU ICE SDL SM X11 Xext c m physfs pthread ${COMPILER_LIBCXX}
 

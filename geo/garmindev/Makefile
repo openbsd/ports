@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:28 sthen Exp $
 
 COMMENT =	garmin gps device driver
 
@@ -10,7 +10,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qlandkartegt/}
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES =	devel/cmake
 WANTLIB +=	m pthread ${COMPILER_LIBCXX} usb

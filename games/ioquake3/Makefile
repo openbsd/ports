@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/06/17 13:52:54 abieber Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:46:19 sthen Exp $
 
 BROKEN-i386=	need to free up a register
 ONLY_FOR_ARCHS= amd64 i386
@@ -18,7 +18,7 @@ HOMEPAGE=	http://ioquake3.org/
 MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # openal is statically linked
 WANTLIB += SDL2 c curl m ogg openal pthread

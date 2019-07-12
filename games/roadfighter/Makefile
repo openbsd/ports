@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:23 sthen Exp $
 
 COMMENT=	remake of Konami's Road Fighter
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://roadfighter.jorito.net/
 MASTER_SITES=	http://braingames.jorito.net/roadfighter/downloads/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes

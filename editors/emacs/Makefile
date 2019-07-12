@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2019/06/25 20:25:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.88 2019/07/12 20:46:04 sthen Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
@@ -13,7 +13,7 @@ HOMEPAGE=		https://www.gnu.org/software/emacs/
 MAINTAINER=		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m curses pthread gnutls xml2 z
 

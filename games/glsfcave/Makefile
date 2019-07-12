@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/10/23 17:10:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:18 sthen Exp $
 
 COMMENT=	control a ribbon to avoid hitting walls
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://user.ecc.u-tokyo.ac.jp/~s081016/glsfcave/
 MASTER_SITES=	${HOMEPAGE}
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL GLU X11 Xext Xi Xmu c glut>=4 m pthread xcb
 

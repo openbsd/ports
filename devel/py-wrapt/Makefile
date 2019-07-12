@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/13 18:06:44 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:56 sthen Exp $
 
 COMMENT =		Python module for decorators, wrappers and monkey patching
 
@@ -20,7 +20,7 @@ MODPY_PYTEST =		Yes
 WANTLIB += pthread ${MODPY_WANTLIB}
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2018/01/16 22:09:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2019/07/12 20:46:05 sthen Exp $
 
 COMMENT=		Joe's Own Editor
 
@@ -9,7 +9,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=joe-editor/}
 HOMEPAGE=		http://joe-editor.sourceforge.net/
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses m util
 

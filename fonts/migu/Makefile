@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/08/10 06:35:16 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:12 sthen Exp $
 
 COMMENT =	mixture of M+ and IPA Gothic fonts, focused on kanji
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://mix-mplus-ipa.osdn.jp/
 MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # IPA Font License Agreement v1.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_OSDN_JP:=mix-mplus-ipa/63545/}
 

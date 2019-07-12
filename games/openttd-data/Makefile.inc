@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2017/04/13 07:30:15 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/07/12 20:46:22 sthen Exp $
 
 NOT_FOR_ARCHS ?=	hppa
 
@@ -12,7 +12,7 @@ HOMEPAGE ?=	https://www.openttd.org/en/
 MAINTAINER ?=	Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES ?=	https://bundles.openttdcoop.org/${OPENTTD_PROJECT}/releases/$V/
 

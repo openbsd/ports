@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/06/11 00:38:34 kurt Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:17 sthen Exp $
 
 COMMENT =	free Colonization clone
 DISTNAME =	freecol-0.11.6
@@ -9,7 +9,7 @@ REVISION =	2
 HOMEPAGE =	http://www.freecol.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=freecol/}
 

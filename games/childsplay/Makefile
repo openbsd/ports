@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/04/27 23:55:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:46:15 sthen Exp $
 
 COMMENT=	collection of educational activities for young children
 
@@ -11,7 +11,7 @@ CATEGORIES=	games education
 HOMEPAGE=	http://www.childsplay.mobi/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://download.savannah.gnu.org/releases/childsplay/
 

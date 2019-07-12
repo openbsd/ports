@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/09/29 10:52:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:54 sthen Exp $
 
 COMMENT =		lightweight python SOAP client
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://fedorahosted.org/suds/
 MAINTAINER =		Christian Rueger <cr+openbsd@rueger-net.de>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODPY_PI =		Yes
 

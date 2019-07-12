@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:56 sthen Exp $
 
 COMMENT =		cross-platform, cross-python, shutil.which functionality
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel sysutils
 HOMEPAGE =		https://github.com/pydanny/whichcraft
 
 # BSD-3-Clause
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

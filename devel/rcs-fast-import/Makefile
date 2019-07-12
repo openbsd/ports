@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/05 16:06:34 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:57 sthen Exp $
 
 COMMENT =		unpack git fast-import streams into RCS file tree
 
@@ -10,7 +10,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://www.catb.org/~esr/rcs-fast-import/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}
 

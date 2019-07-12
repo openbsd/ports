@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/17 16:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:19 sthen Exp $
 
 COMMENT =	roguelike game in a non-Euclidean world
 CATEGORIES =	games x11
@@ -12,7 +12,7 @@ HOMEPAGE =	http://roguetemple.com/z/hyper/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW SDL SDL_gfx SDL_mixer SDL_ttf
 WANTLIB += c m png

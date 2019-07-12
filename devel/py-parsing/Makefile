@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/05/21 19:35:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2019/07/12 20:45:51 sthen Exp $
 
 COMMENT =		Python parsing module
 
@@ -10,7 +10,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://pyparsing.wikispaces.com/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/05 19:46:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:47 sthen Exp $
 
 COMMENT =	some useful dict-like structures
 
@@ -13,7 +13,7 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 HOMEPAGE =	https://github.com/zardus/cooldict
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

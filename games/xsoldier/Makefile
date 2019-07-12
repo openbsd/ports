@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:46:28 sthen Exp $
 
 COMMENT =	space-based shoot'em up game for X11
 
@@ -10,7 +10,7 @@ HOMEPAGE =	http://www.interq.or.jp/libra/oohara/xsoldier/
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		ICE SM X11 Xpm c
 

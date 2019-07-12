@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/28 02:04:58 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:10 sthen Exp $
 
 COMMENT =		Unicode-based font for Devanagari script
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://software.sil.org/annapurna/
 MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://software.sil.org/downloads/r/annapurna/
 

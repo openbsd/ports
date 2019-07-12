@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/09/04 12:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:16 sthen Exp $
 
 COMMENT =		improved opensource version of Dune 2
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://dunelegacy.sourceforge.net/
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2/CC-BY-SA
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		SDL2 SDL2_mixer c enet m pthread ${COMPILER_LIBCXX}
 

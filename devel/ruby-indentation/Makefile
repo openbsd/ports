@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/07/26 03:36:39 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:58 sthen Exp $
 
 COMMENT=	indentation and manipulation of (Arrays of) Strings
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://samueldana.github.com/indentation/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby
 

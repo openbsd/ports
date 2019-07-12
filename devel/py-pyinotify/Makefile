@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:52 sthen Exp $
 
 COMMENT =		filesystem events monitoring
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://github.com/seb-m/pyinotify
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		pthread ${MODPY_WANTLIB} lib/inotify/inotify
 

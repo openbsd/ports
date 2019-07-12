@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/28 15:05:03 thfr Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:17 sthen Exp $
 
 # Don't bother on non-mono archs.
 ONLY_FOR_ARCHS =	${MONO_ARCHS}
@@ -11,7 +11,7 @@ HOMEPAGE =	https://www.PlayOnBSD.com
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
 

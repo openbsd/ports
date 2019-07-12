@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/01/25 20:36:04 bcallah Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:18 sthen Exp $
 
 COMMENT =	Settlers 1 (Serf City) clone
 CATEGORIES =	games x11
@@ -12,7 +12,7 @@ HOMEPAGE =	http://jonls.dk/freeserf/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image SDL2_mixer c m xmp
 

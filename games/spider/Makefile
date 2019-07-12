@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:46:24 sthen Exp $
 
 COMMENT=	challenging double decked solitaire game
 
@@ -9,7 +9,7 @@ CATEGORIES=	games
 
 MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c xcb
 

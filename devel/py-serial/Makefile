@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/11 21:58:00 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:53 sthen Exp $
 
 COMMENT =		serial interface class for Python
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/pyserial/pyserial
 MAINTAINER =		Daniel Winters <daniel@tydirium.org>
 
 # Python license
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

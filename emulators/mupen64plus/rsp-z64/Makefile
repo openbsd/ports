@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2019/04/23 08:47:03 bentley Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:09 sthen Exp $
 
 COMMENT =		n64 emulator signal co-processor plugin
 
 REVISION =		0
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m ${COMPILER_LIBCXX}
 

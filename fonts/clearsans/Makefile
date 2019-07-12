@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/15 09:49:39 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:11 sthen Exp $
 
 TYPEFACE =		clearsans
 COMMENT =		versatile font for on-screen legibility
@@ -10,7 +10,7 @@ EXTRACT_SUFX =		.zip
 HOMEPAGE =		https://01.org/clear-sans
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://01.org/sites/default/files/downloads/clear-sans/
 

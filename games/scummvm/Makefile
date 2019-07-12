@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2018/12/05 20:19:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.82 2019/07/12 20:46:24 sthen Exp $
 
 COMMENT=	graphical adventure game interpreter
 V=		2.0.0
@@ -12,7 +12,7 @@ HOMEPAGE=	https://www.scummvm.org/
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += FLAC SDL2 c faad freetype jpeg m mad png ogg sndio
 WANTLIB += ${COMPILER_LIBCXX} theoradec vorbis vorbisfile z

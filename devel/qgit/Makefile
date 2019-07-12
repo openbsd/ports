@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:57 sthen Exp $
 
 COMMENT =	qt git repository viewer
 
@@ -11,7 +11,7 @@ CATEGORIES =	devel x11
 HOMEPAGE =	http://libre.tibirna.org/projects/qgit
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender c fontconfig
 WANTLIB += freetype m pthread ${COMPILER_LIBCXX}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/06/24 07:11:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:00 sthen Exp $
 
 COMMENT=		test double framework with a succint syntax
 
@@ -8,7 +8,7 @@ CATEGORIES=		devel
 HOMEPAGE=		http://rr.github.io/rr/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/01/06 21:26:03 thfr Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:24 sthen Exp $
 
 COMMENT =	simple SDL joystick test application
 DISTNAME =	sdl-jstest-20180114
@@ -12,7 +12,7 @@ GH_COMMIT =	34042f66c598957c1c05135e2619a44a5622a56e
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL SDL2 c curses form pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/06/25 20:25:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:57 sthen Exp $
 
 COMMENT =	declarative cross-platform build tool
 V =		1.12.1
@@ -14,7 +14,7 @@ HOMEPAGE =	https://doc.qt.io/qbs/
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 
 # LGPLv3 or GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Script
 WANTLIB += Qt5Widgets Qt5Xml c kvm m

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:01 sthen Exp $
 
 V =		1.0.1
 COMMENT =	primitives drawing/other support functions for SDL2
@@ -13,7 +13,7 @@ SHARED_LIBS +=  SDL2_gfx-1.0         0.0      # 0.1
 HOMEPAGE =	http://www.ferzkopp.net/joomla/content/view/19/14/
 
 # zlib
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 m pthread sndio usbhid
 

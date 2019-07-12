@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:46:16 sthen Exp $
 
 COMMENT=	tactical war game like Battle Isle; multiplayer
 DISTNAME=	crimson-0.5.3
@@ -9,7 +9,7 @@ REVISION=	2
 HOMEPAGE=	http://crimson.seul.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += SDL SDL_mixer SDL_net SDL_ttf c m pthread ${COMPILER_LIBCXX} z
 

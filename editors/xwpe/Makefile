@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/05/20 20:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:46:07 sthen Exp $
 
 COMMENT=	powerful programming editor
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/editors/X/} \
 		http://www.identicalsoftware.com/xwpe/ 
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 c curses xcb z
 

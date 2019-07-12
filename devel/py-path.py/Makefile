@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/13 18:06:43 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:51 sthen Exp $
 
 COMMENT =		os.path wrapper for Python
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/jaraco/path.py
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

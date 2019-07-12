@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/02 14:29:30 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:15 sthen Exp $
 
 COMMENT=	bomberman clone with multiplayer mode
 
@@ -9,7 +9,7 @@ REVISION=	0
 HOMEPAGE=	http://www.bomberclone.de/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	SDL SDL_image SDL_mixer c jpeg m png pthread
 

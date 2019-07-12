@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:15 sthen Exp $
 
 COMMENT =	Enigma levels to the game chroma
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://level7.org.uk/chroma/
 MAINTAINER =	LEVAI Daniel <leva@ecentrum.hu>
 
 # Public Domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://leva.ecentrum.hu/openbsd/
 

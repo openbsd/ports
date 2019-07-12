@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/09/04 12:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:29 sthen Exp $
 
 COMMENT=	GIS WMTS/TMS tile caching server
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.mapserver.org/
 MASTER_SITES=	http://download.osgeo.org/mapserver/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
 

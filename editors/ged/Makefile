@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/02/24 20:48:13 pascal Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:05 sthen Exp $
 
 COMMENT =		GNU version of standard text editor
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://www.gnu.org/software/ed/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

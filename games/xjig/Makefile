@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:46:27 sthen Exp $
 
 COMMENT=	jigsaw puzzle game for X11
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
 EXTRACT_SUFX=	.tgz
 
 # License: BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c m ${COMPILER_LIBCXX} xcb
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/08/07 10:05:38 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:10 sthen Exp $
 
 COMMENT=	MIPS R2000/R3000 simulator
 
@@ -9,7 +9,7 @@ CATEGORIES=	emulators
 HOMEPAGE=	http://www.cs.wisc.edu/~larus/spim.html
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c m
 

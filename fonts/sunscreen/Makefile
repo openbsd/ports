@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/15 09:49:39 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:13 sthen Exp $
 
 TYPEFACE =		sunscreen
 V =			1.0
@@ -11,7 +11,7 @@ EXTRACT_SUFX =		.zip
 HOMEPAGE =		http://www.simon-cozens.org/fonts/sunscreen.html
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://www.simon-cozens.org/downloads/
 

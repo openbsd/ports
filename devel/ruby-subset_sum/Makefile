@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:00 sthen Exp $
 
 COMMENT =	simple subset sum problem solver for ruby
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://ruby-subsetsum.jeremyevans.net/
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # MIT License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 

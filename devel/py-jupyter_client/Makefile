@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/15 12:04:36 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:50 sthen Exp $
 
 COMMENT =		Jupyter protocol implementation and client libraries
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://jupyter.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/03/08 20:00:46 cwen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:22 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -15,7 +15,7 @@ HOMEPAGE =		https://openmw.org/en/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3 / custom BSD-like font license / DejaVu license
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} BulletCollision GL LinearMath MyGUIEngine
 WANTLIB += OpenThreads Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5Widgets

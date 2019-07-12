@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/08/21 19:43:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:03 sthen Exp $
 
 DISTNAME =	ucpp-1.3.2
 REVISION =	1
@@ -7,7 +7,7 @@ CATEGORIES =	devel
 HOMEPAGE =	https://github.com/lpsantil/ucpp
 MASTER_SITES =	https://distfiles.nl/
 
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 WANTLIB =		c
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>

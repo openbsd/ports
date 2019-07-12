@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/28 20:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:53 sthen Exp $
 
 COMMENT =		Python subprocess interface
 
@@ -13,7 +13,7 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 HOMEPAGE =		https://github.com/amoffat/sh
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 FLAVORS =		python3

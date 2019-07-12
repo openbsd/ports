@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/01/14 20:20:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:00 sthen Exp $
 
 COMMENT =	Ruby commandline parsing library
 
@@ -7,7 +7,7 @@ DISTNAME =	trollop-2.0
 CATEGORIES =	devel
 
 # Same as Ruby
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 

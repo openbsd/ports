@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:23 sthen Exp $
 
 COMMENT=	go client and fully featured sgf editor
 
@@ -7,7 +7,7 @@ REVISION =	8
 CATEGORIES=	games
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL ICE SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm c drm expat

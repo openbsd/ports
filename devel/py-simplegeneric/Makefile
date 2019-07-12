@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/04/28 20:51:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:53 sthen Exp $
 
 COMMENT =		simple generic functions
 
@@ -14,7 +14,7 @@ CATEGORIES =		devel
 # If we patch anything, we must include:
 #     "prominent notices stating that you changed the files and
 #     the date of any change."
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

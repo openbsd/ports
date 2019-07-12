@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/01/31 11:14:33 bentley Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:46:18 sthen Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -12,7 +12,7 @@ REVISION =	2
 HOMEPAGE =	http://www.freedroid.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  ${MODLUA_WANTLIB}
 WANTLIB += GL SDL SDL_gfx SDL_image SDL_mixer X11 c execinfo iconv intl

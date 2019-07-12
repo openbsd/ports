@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/18 23:12:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:02 sthen Exp $
 
 COMMENT =		arc4random for Tcl
 
@@ -8,7 +8,7 @@ HOMEPAGE =		http://www3.bell.net/stwo/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 GH_ACCOUNT =		aryler
 GH_PROJECT =		Tclarc4random

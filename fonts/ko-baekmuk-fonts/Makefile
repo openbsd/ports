@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/07/15 08:36:38 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:12 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://www.mizi.co.kr
 
 MAINTAINER=	Jung Lee <moorang@gmail.com>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # bdftopcf, mkfontdir
 

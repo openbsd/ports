@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:56 sthen Exp $
 
 COMMENT =		capture c-level output in context managers
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/minrk/wurlitzer
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

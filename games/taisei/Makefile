@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/06/29 22:16:14 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:25 sthen Exp $
 
 COMMENT =		clone of the touhou games
 
@@ -11,7 +11,7 @@ CATEGORIES =		games
 HOMEPAGE =		http://taisei-project.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU SDL SDL_ttf alut c freetype m openal png pthread
 WANTLIB += z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/02/18 03:19:18 pamela Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:52 sthen Exp $
 
 COMMENT =	help visualize profiling data collected with the cProfile
 
@@ -11,7 +11,7 @@ CATEGORIES =	devel
 HOMEPAGE =	https://github.com/pwaller/pyprof2calltree
 
 # BSD-derived
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 

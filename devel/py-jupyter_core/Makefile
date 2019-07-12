@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/15 12:04:36 kmos Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:50 sthen Exp $
 
 COMMENT =		Jupyter core package
 
@@ -16,7 +16,7 @@ TEST_DEPENDS =		devel/ipython${MODPY_FLAVOR}>=5.1.0 \
 			devel/py-ipykernel${MODPY_FLAVOR}>=4.5.2
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

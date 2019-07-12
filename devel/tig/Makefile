@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/07/28 09:01:10 fcambus Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:46:02 sthen Exp $
 
 COMMENT =	ncurses Git repository browser
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://jonas.github.io/tig/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c curses iconv
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/06/19 19:45:59 kili Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:46:05 sthen Exp $
 
 COMMENT =	user-friendly TeX/LaTeX editor for KDE
 
@@ -10,7 +10,7 @@ REVISION =	0
 HOMEPAGE =	https://kile.sourceforge.io
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Bookmarks KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

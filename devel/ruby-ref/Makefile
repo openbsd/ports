@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/06/24 07:07:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:59 sthen Exp $
 
 COMMENT =	object reference utilities for ruby
 
@@ -8,7 +8,7 @@ CATEGORIES =	devel
 HOMEPAGE=	https://github.com/bdurand/ref
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem

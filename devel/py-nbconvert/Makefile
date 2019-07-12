@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/15 12:04:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:51 sthen Exp $
 
 COMMENT =		converting Jupyter notebooks
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://jupyter.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

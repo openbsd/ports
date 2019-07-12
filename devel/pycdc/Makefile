@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:56 sthen Exp $
 
 COMMENT =	python bytecode disassembler and decompiler
 
@@ -14,7 +14,7 @@ CATEGORIES =	devel
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cmake \
 		lang/python

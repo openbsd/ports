@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:45 sthen Exp $
 
 COMMENT =		list-like type with better asymptotic performance
 
@@ -11,7 +11,7 @@ REVISION =		2
 HOMEPAGE =		http://stutzbachenterprises.com/blist/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB = 		pthread ${MODPY_WANTLIB}
 

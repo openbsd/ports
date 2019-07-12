@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/05/17 09:48:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:46:28 sthen Exp $
 
 COMMENT=	cuddlesome teddy for the X11 desktop
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://staffwww.itn.liu.se/~stegu/xteddy/
 MASTER_SITES=	${HOMEPAGE}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xext c Imlib2
 

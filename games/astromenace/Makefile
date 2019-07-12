@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:14 sthen Exp $
 
 COMMENT =		hardcore 3D space shmup
 BROKEN-sparc64 =	SIGABRT terminate called after throwing an instance of 'std::bad_alloc'
@@ -14,7 +14,7 @@ CATEGORIES =		games
 HOMEPAGE =		http://www.viewizard.com/
 
 # code GPLv3+, data a mix of GPLv3+, CC BY-SA 3.0, SIL OFL 1.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU ICE SDL SM X11 Xext Xinerama alut c fontconfig
 WANTLIB += freetype m ogg openal pthread ${COMPILER_LIBCXX} vorbis vorbisfile

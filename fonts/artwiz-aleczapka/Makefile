@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/05/15 10:40:20 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:10 sthen Exp $
 
 COMMENT-main=	improved artwiz fonts
 COMMENT-de=	improved artwiz fonts (german pack)
@@ -22,7 +22,7 @@ HOMEPAGE=	http://artwizaleczapka.sourceforge.net/
 MAINTAINER=	Patrick Keshishian <pkeshish@gmail.com>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=artwizaleczapka/}
 EXTRACT_SUFX=	.tar.bz2

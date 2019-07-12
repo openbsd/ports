@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/05/27 05:42:11 bentley Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:46:09 sthen Exp $
 
 COMMENT-main =		Game Boy Color/Advance emulator
 COMMENT-qt =		Game Boy Color/Advance emulator with GUI
@@ -23,7 +23,7 @@ HOMEPAGE =		https://mgba.io/
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # MPL 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 cWANTLIB =		GL GLU MagickCore-6.Q16 MagickWand-6.Q16 SDL2 \
 			avcodec avformat avutil c curses edit m png \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/06/24 10:55:47 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:59 sthen Exp $
 
 COMMENT=		validators for Ruby OptionParser lib
 
@@ -9,7 +9,7 @@ HOMEPAGE=		https://github.com/wpscanteam/OptParseValidator
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/15 00:46:54 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:22 sthen Exp $
 
 ONLY_FOR_ARCHS =	${LE_ARCHS}
 
@@ -9,7 +9,7 @@ CATEGORIES =		games
 HOMEPAGE =		https://pioneerspacesim.net/
 
 # GPLv3 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
 WANTLIB += GL GLEW GLU SDL2 SDL2_image assimp c freetype m png pthread

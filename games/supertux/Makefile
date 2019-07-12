@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/17 16:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:25 sthen Exp $
 
 COMMENT =		jump 'n' run game
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://www.supertux.org/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU SDL2 SDL2_image boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_locale-mt boost_system-mt

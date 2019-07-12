@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/09/13 14:40:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:45:53 sthen Exp $
 
 COMMENT=	Python bindings for the SILC toolkit
 
@@ -12,7 +12,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://www.liquidx.net/pysilc/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += iconv pthread silc>=7 silcclient>=5

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:46:10 sthen Exp $
 
 COMMENT=	emulator for US Robotics Pilot PDA
 
@@ -7,7 +7,7 @@ REVISION=	3
 CATEGORIES=	emulators
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 Xext Xpm Xt c xcb
 

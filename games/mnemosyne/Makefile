@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/05/10 01:57:35 danj Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 20:46:21 sthen Exp $
 
 COMMENT=	flash-card tool which optimises your learning process
 
@@ -11,7 +11,7 @@ REVISION=	2
 HOMEPAGE=	http://www.mnemosyne-proj.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mnemosyne-proj/}
 

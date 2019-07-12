@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2019/05/20 22:15:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.174 2019/07/12 20:46:02 sthen Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -48,7 +48,7 @@ HOMEPAGE=	http://subversion.apache.org
 MAINTAINER=	Stefan Sperling <stsp@openbsd.org>
 
 # BSD alike + Apache License 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=subversion/}
 EXTRACT_SUFX=	.tar.bz2

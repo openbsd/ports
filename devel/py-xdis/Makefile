@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/13 18:06:44 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:56 sthen Exp $
 
 COMMENT =		cross-version byte-code disassembler and marshal routines
 
@@ -11,7 +11,7 @@ REVISION =		1
 HOMEPAGE =		https://github.com/rocky/python-xdis/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

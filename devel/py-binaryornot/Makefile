@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/15 12:04:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:45 sthen Exp $
 
 COMMENT =		lightweight Python package to check if a file is binary
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/audreyr/binaryornot
 
 # BSD-3-Clause
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/04/14 08:24:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:05 sthen Exp $
 
 COMMENT=		update LDAP entries with a text editor
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.lichteblau.com/ldapvi.html
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto curses glib-2.0 intl lber ldap popt readline
 WANTLIB += ssl

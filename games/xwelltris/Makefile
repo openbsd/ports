@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:28 sthen Exp $
 
 COMMENT=	2.5 dimensional tetris-like game
 
@@ -11,7 +11,7 @@ MASTER_SITES=	${HOMEPAGE}src/
 HOMEPAGE=	http://xnc.jinr.ru/xwelltris/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m ${COMPILER_LIBCXX}
 

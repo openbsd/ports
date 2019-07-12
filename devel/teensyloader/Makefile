@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/06/08 13:36:10 bmercer Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:02 sthen Exp $
 
 COMMENT=	in-system programmer for Teensy boards
 
@@ -16,7 +16,7 @@ GH_PROJECT=	teensy_loader_cli
 HOMEPAGE=	http://www.pjrc.com/teensy/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c pthread usb
 

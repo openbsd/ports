@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/28 20:51:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:47 sthen Exp $
 
 COMMENT =		ELF and DWARF parser library for Python
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://github.com/eliben/pyelftools
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Public domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVORS =		python3
 FLAVOR ?=

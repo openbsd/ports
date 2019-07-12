@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/01/22 12:52:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:07 sthen Exp $
 
 COMMENT=	interactive tutorial for algorithms and data structures
 
@@ -9,7 +9,7 @@ CATEGORIES=	education math
 HOMEPAGE=	http://people.ofset.org/~ckhung/p/algotutor/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://people.ofset.org/~ckhung/dl/
 EXTRACT_SUFX=	.tgz

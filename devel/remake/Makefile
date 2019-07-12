@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/17 16:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:57 sthen Exp $
 
 COMMENT=		GNU make debugger
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://bashdb.sourceforge.net/remake/mdb.html
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bashdb/}
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses readline
 

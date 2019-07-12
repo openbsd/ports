@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:29 sthen Exp $
 
 GH_ACCOUNT =		pgRouting
 GH_PROJECT =		osm2pgrouting
@@ -11,7 +11,7 @@ CATEGORIES =		geo
 HOMEPAGE =		http://pgrouting.org
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += 		c expat m pq ${COMPILER_LIBCXX}
 

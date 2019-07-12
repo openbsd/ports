@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/05/17 16:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2019/07/12 20:46:07 sthen Exp $
 
 COMMENT=		lightweight Emacs clone
 DISTNAME=		zile-2.4.14
@@ -9,7 +9,7 @@ REVISION=		0
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses gc pthread
 

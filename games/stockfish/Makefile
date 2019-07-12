@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/12/12 00:19:07 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:25 sthen Exp $
 
 V =		10
 COMMENT =	open source chess engine
@@ -11,7 +11,7 @@ HOMEPAGE =	https://stockfishchess.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
 

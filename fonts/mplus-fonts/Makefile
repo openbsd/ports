@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/11/05 17:30:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:13 sthen Exp $
 
 COMMENT =		collection of Japanese sans-serif fonts
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://mplus-fonts.osdn.jp/
 
 # "Unlimited permission is granted to use, copy, and distribute them,
 #  with or without modification, either commercially or noncommercially."
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_OSDN_JP:=mplus-fonts/62344/}
 EXTRACT_SUFX =		.tar.xz

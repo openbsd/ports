@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/09 22:24:06 juanfra Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:16 sthen Exp $
 
 COMMENT =		arcade game for one or two players
 
@@ -11,7 +11,7 @@ CATEGORIES =		games
 HOMEPAGE =		http://www.usebox.net/jjm/dd2
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		SDL SDL_mixer c m pthread
 

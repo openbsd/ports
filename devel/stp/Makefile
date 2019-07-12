@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/04/28 20:51:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:02 sthen Exp $
 
 COMMENT=	decision procedure for bit-vectors and arrays
 
@@ -15,7 +15,7 @@ CATEGORIES=	devel
 HOMEPAGE=	https://stp.github.io/
 
 # MIT license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_program_options-mt c m minisat
 

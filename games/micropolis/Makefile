@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/06/27 21:03:48 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:46:21 sthen Exp $
 
 COMMENT=	city-building simulation
 
@@ -13,7 +13,7 @@ MASTER_SITES=	http://freedaemon.com/~deanna/
 
 # GPLv3
 # beware of SimCity, tm of Electronic Arts
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += SDL SDL_mixer X11 Xext Xpm c m pthread
 

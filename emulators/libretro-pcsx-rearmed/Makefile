@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/19 07:47:21 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:09 sthen Exp $
 
 COMMENT =	Sony PlayStation core for retroarch
 
@@ -12,7 +12,7 @@ GH_TAGNAME =	r$V
 CATEGORIES =	emulators
 
 # GPLv2+, LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += m pthread z
 

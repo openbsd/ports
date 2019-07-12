@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/05 15:43:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:56 sthen Exp $
 
 COMMENT =		passive checker of Python programs
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/PyCQA/pyflakes
 MAINTAINER =		frantisek holop <minusf@obiit.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/14 17:07:00 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:00 sthen Exp $
 
 COMMENT =	generic interface to multiple Ruby template engines
 
@@ -8,7 +8,7 @@ CATEGORIES =	devel textproc
 HOMEPAGE =	https://github.com/rtomayko/tilt
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

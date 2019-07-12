@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/09 22:24:06 juanfra Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:13 sthen Exp $
 
 COMMENT =	sans-serif typeface family of Android OS
 
@@ -14,7 +14,7 @@ CATEGORIES =	fonts x11
 HOMEPAGE =	https://developer.android.com/design/style/typography.html
 
 # Apache 2 License
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =	https://developer.android.com/downloads/design/
 EXTRACT_SUFX =	.zip

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/05/20 08:48:55 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:15 sthen Exp $
 
 COMMENT=	X11 Go Toolset
 
@@ -8,7 +8,7 @@ CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.igoweb.org/~wms/comp/cgoban/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 c m xcb
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:29 sthen Exp $
 
 COMMENT =	library for parsing/normalizing street addresses
 
@@ -14,7 +14,7 @@ CATEGORIES =	geo
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/04/27 23:55:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:46:08 sthen Exp $
 
 COMMENT=	graphical network simulator
 
@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 HOMEPAGE=	http://www.gns3.net/
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gns-3/}
 

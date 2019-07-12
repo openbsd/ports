@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/04/28 20:51:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:47 sthen Exp $
 
 COMMENT=		add support for i18n, documentation and icons to distutils
 
@@ -12,7 +12,7 @@ CATEGORIES=		devel
 HOMEPAGE=		https://launchpad.net/python-distutils-extra/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://launchpad.net/python-distutils-extra/trunk/${MODPY_EGG_VERSION}/+download/
 

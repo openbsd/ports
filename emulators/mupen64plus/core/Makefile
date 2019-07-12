@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2019/02/26 22:10:54 bentley Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:46:09 sthen Exp $
 
 COMMENT =		n64 emulator core
 SHARED_LIBS =		mupen64plus 2.4 # 2.5.9
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		GL GLU c m ${COMPILER_LIBCXX} z freetype png pthread SDL2
 

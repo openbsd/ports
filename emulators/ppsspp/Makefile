@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/03/19 08:10:32 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:09 sthen Exp $
 
 COMMENT =	Sony PlayStation Portable emulator
 
@@ -29,7 +29,7 @@ HOMEPAGE =	https://www.ppsspp.org/
 MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =	ppsspp
 

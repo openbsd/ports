@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2017/12/10 16:12:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2019/07/12 20:45:49 sthen Exp $
 
 PORTROACH=		limit:^2\.28
 
@@ -19,7 +19,7 @@ HOMEPAGE=		http://www.pygtk.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += iconv intl pcre pthread z

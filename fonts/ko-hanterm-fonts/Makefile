@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/31 09:45:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:12 sthen Exp $
 
 COMMENT=	extra Korean fonts
 
@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.kldp.net/hanterm/hanterm-font/3.1/ \
 		http://hanterm.org/download/font/
 HOMEPAGE=	http://hanterm.org/
 
-PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE=	Yes
 
 # bdftopcf, mkfontdir
 

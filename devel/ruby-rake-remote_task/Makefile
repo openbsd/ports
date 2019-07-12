@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/10/15 20:53:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:59 sthen Exp $
 
 COMMENT=		extending Rake with remote task goodness
 
@@ -6,7 +6,7 @@ DISTNAME=		rake-remote_task-2.4.2
 CATEGORIES=		devel
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

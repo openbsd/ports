@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/16 20:13:09 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:29 sthen Exp $
 
 COMMENT =	fast, flexible library for working with OpenStreetMap data
 
@@ -12,7 +12,7 @@ CATEGORIES =	geo
 HOMEPAGE =	https://osmcode.org/libosmium/
 
 # Boost
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 COMPILER =	base-clang ports-gcc ports-clang
 

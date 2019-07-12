@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/15 13:59:17 sebastia Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:59 sthen Exp $
 
 COMMENT=		JSON implementation for Ruby
 
@@ -8,7 +8,7 @@ CATEGORIES=		devel
 HOMEPAGE=		http://flori.github.com/json/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

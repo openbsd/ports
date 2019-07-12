@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/06/27 21:03:44 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:14 sthen Exp $
 
 COMMENT=	32-card trick-taking game
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://gnomefiles.org/content/show.php/Belooted?content=131848
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0

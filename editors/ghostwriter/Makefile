@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/03/08 20:00:45 cwen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:05 sthen Exp $
 
 # qt5 webkit
 USE_WXNEEDED =	Yes
@@ -17,7 +17,7 @@ HOMEPAGE =	https://wereturtle.github.io/ghostwriter/
 MAINTAINER =	Adam Wolk <awolk@openbsd.org>
 
 # GPLv3 code, CC BY-SA 4.0 resources
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5PrintSupport

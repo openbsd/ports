@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/06/19 19:45:59 kili Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:46:04 sthen Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra.org
@@ -13,7 +13,7 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/calligra/${VERSION}/}
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 DPB_PROPERTIES =	parallel
 
 MODULES =	devel/kf5 \

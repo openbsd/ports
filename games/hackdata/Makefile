@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/04/25 14:31:51 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:46:19 sthen Exp $
 
 COMMENT =	common data for the nethack/slash ports
 V =		3.6.0
@@ -15,7 +15,7 @@ DISTFILES =	nethack-${V:S/.//g}-src.tgz
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 #		GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 EXTRACT_ONLY =
 

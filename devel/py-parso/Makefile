@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/05 15:44:12 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:51 sthen Exp $
 
 COMMENT =		python parser
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://parso.readthedocs.org
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/07 21:35:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:52 sthen Exp $
 
 COMMENT=		Python interface to the UNIX dialog utility
 
@@ -10,7 +10,7 @@ REVISION=		0
 CATEGORIES=		devel
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # pythondialog.sourceforge.net for python3
 

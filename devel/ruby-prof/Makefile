@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:59 sthen Exp $
 
 COMMENT =	fast code profiler for Ruby
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://github.com/ruby-prof/ruby-prof
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES =	lang/ruby
 

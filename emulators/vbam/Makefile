@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/20 22:15:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:46:10 sthen Exp $
 
 BROKEN-alpha =		ICE or OOM on hq_implementation.cpp
 BROKEN-hppa =		ICE or OOM on src/filters/hq/c/hq_base.h:421
@@ -16,7 +16,7 @@ CATEGORIES =		emulators
 HOMEPAGE =		http://www.vba-m.com
 
 # GPLv2+ (see doc/License.txt)
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL GLU SDL2 c iconv intl m png sfml-network sfml-system

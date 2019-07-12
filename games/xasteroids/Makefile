@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:46:26 sthen Exp $
 
 COMMENT=	X11-based asteroids-style arcade
 
@@ -10,7 +10,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
 EXTRACT_SUFX=	.sh.Z
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c m xcb
 

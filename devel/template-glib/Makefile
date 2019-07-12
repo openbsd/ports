@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/28 06:28:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:02 sthen Exp $
 
 COMMENT=		templating library for GLib
 
@@ -12,7 +12,7 @@ CATEGORIES=		devel
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gobject-2.0 intl
 WANTLIB += m

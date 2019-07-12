@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/28 21:18:46 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:55 sthen Exp $
 
 COMMENT =		port of the Tulip project (asyncio module, PEP 3156)
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 REVISION =		0
 
 # Apache License 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

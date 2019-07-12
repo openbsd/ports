@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/04 02:00:17 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:19 sthen Exp $
 
 COMMENT =	open source retro-style 2D scrolling platform shooter game
 DISTNAME =	gnukem-1.0
@@ -8,7 +8,7 @@ HOMEPAGE =	https://djoffe.com/gnukem/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Dual licensed: MIT or GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL SDL_mixer c m
 

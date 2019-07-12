@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/07 08:36:19 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:08 sthen Exp $
 
 COMMENT =	Game & Watch core for retroarch
 
@@ -12,7 +12,7 @@ GH_COMMIT =	ae06261766487cca2742a0f60d7dc4877c6f6fc7
 CATEGORIES =	emulators
 
 # zlib
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/11/05 19:08:58 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:25 sthen Exp $
 
 COMMENT=	tetrinet server
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://tetrinetx.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tetrinetx/}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=	c adns
 
 LIB_DEPENDS=	net/adns

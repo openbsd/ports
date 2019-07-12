@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/03/19 19:45:08 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:01 sthen Exp $
 
 COMMENT=	shapefile manipulation library
 
@@ -9,7 +9,7 @@ CATEGORIES=    	devel
 HOMEPAGE=	http://shapelib.maptools.org/
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://download.osgeo.org/shapelib/
 

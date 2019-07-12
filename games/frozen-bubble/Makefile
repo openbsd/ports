@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/20 22:15:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:18 sthen Exp $
 
 COMMENT-main =		bubble popping game, like puzzle bobble
 COMMENT-server =	server for the frozen-bubble bubble popping game
@@ -15,7 +15,7 @@ HOMEPAGE =		http://www.frozen-bubble.org
 MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/data/
 EXTRACT_SUFX =		.tar.bz2

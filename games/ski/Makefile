@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/06/04 03:57:20 gsoares Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:24 sthen Exp $
 
 COMMENT=		skiing simulation game
 
@@ -11,7 +11,7 @@ MASTER_SITES=		http://catb.org/~esr/ski/
 MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

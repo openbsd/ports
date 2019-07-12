@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:17 sthen Exp $
 
 COMMENT =		wonderful puzzle game
 V = 			1.0.1
@@ -8,7 +8,7 @@ HOMEPAGE =		http://fillets.sourceforge.net/
 REVISION =              2
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB = 		SDL SDL_image SDL_mixer SDL_ttf c fribidi \
 			${MODLUA_WANTLIB} m pthread smpeg ${COMPILER_LIBCXX}

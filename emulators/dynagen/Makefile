@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/07/05 10:22:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:08 sthen Exp $
 
 COMMENT=		front-end for dynamips cisco emulator
 
@@ -9,7 +9,7 @@ CATEGORIES=		emulators
 HOMEPAGE =		http://sourceforge.net/projects/dyna-gen/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=dyna-gen/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/04/28 20:51:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:45:49 sthen Exp $
 
 COMMENT=		automated reasoning engine, flow based programming framework
 
@@ -14,7 +14,7 @@ HOMEPAGE=		https://github.com/ioflo/ioflo
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

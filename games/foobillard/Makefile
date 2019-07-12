@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/11/24 03:13:26 jsg Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:17 sthen Exp $
 
 COMMENT =		OpenGL billard game
 
@@ -9,7 +9,7 @@ CATEGORIES =		games x11
 HOMEPAGE =		http://foobillard.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU ICE SDL SM Xaw Xi c freetype m png pthread z
 

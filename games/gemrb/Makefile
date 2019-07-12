@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:18 sthen Exp $
 
 SHARED_LIBS += 		gemrb_core 0.0
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://www.gemrb.org/
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gemrb/}
 

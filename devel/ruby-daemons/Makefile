@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/20 20:57:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:45:58 sthen Exp $
 
 COMMENT=	wrap existing Ruby scripts to be run as a daemon
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 HOMEPAGE=	https://github.com/thuehlinger/daemons
 
 # Ruby license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby
 

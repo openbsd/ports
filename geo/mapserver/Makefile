@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2019/05/27 20:26:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2019/07/12 20:46:29 sthen Exp $
 
 MULTI_PACKAGES=	-utils -main -perl -php -python
 
@@ -29,7 +29,7 @@ CATEGORIES=	geo www
 HOMEPAGE=	http://www.mapserver.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
 

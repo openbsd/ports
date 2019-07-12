@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:51 sthen Exp $
 
 COMMENT =	parse, read and write Microsoft OLE2 files
 
@@ -18,7 +18,7 @@ HOMEPAGE =	https://www.decalage.info/olefile
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # BSD-like
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes

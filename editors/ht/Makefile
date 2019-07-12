@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/05/20 20:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:46:05 sthen Exp $
 
 COMMENT =		file editor/viewer/analyzer for executables
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://hte.sourceforge.net/
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m curses ${COMPILER_LIBCXX}
 

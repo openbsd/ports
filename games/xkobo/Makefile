@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:46:27 sthen Exp $
 
 COMMENT =	multi-way scrolling shoot'em up for X11, addictive
 #'
@@ -20,7 +20,7 @@ PATCH_LIST = 	patch-* extra-hard
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 	
 WANTLIB =	X11 Xau Xdmcp Xext c m xcb ${COMPILER_LIBCXX}
 

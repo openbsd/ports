@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/17 16:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:17 sthen Exp $
 
 V =		2.1
 COMMENT =	scrabble game
@@ -20,7 +20,7 @@ DISTFILES+=	${dict}.dawg:0
 MASTER_SITES0 =	${MASTER_SITE_SAVANNAH:=eliot/dict/}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	x11/qt4
 

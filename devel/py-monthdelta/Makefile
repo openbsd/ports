@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/29 10:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:50 sthen Exp $
 
 COMMENT =		date computations with months
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://packages.python.org/MonthDelta
 
 # MIT
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODPY_PI =		Yes
 

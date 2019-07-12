@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/04/01 03:11:18 bentley Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:46:09 sthen Exp $
 
 COMMENT =		generic multi-emulator frontend
 
@@ -12,7 +12,7 @@ CATEGORIES =		emulators
 HOMEPAGE =		https://www.libretro.com/
 
 # code GPLv3+, assets CC-BY-4.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += EGL GL Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5Widgets

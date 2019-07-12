@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:20 sthen Exp $
 
 V =		0.7.5
 COMMENT =	ridiculous shoot-em-up game
@@ -10,7 +10,7 @@ REVISION =	7
 HOMEPAGE =	http://mars-game.sourceforge.net/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU Xrandr c fribidi m pthread sfml-audio sfml-graphics
 WANTLIB += sfml-system sfml-window ${COMPILER_LIBCXX} tag

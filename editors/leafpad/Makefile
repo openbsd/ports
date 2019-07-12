@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2018/06/29 22:16:11 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2019/07/12 20:46:05 sthen Exp $
 
 COMMENT=	simple GTK+ text editor
 
@@ -9,7 +9,7 @@ CATEGORIES=	editors x11
 HOMEPAGE=	http://tarot.freeshell.org/leafpad/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo drm expat

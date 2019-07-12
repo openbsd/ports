@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/04/28 14:24:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:02 sthen Exp $
 
 COMMENT=	templatized C++ command line parser
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://tclap.sourceforge.net/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tclap/}
 

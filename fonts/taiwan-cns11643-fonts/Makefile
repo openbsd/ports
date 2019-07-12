@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/04/19 05:58:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:13 sthen Exp $
 
 COMMENT =	CNS 11643-compliant Taiwanese government fonts
 
@@ -12,7 +12,7 @@ CATEGORIES =	fonts chinese x11
 
 # https://data.gov.tw/license
 # May be used in compliance with CC-BY-4.0 International
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://www.sizeofvoid.org/pub/OpenBSD/distfiles/ \
 		https://distfiles.roadrunner.page/

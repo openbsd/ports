@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/20 22:15:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:26 sthen Exp $
 
 COMMENT =	economic historical real-time strategy game
 
@@ -15,7 +15,7 @@ CATEGORIES =	games
 HOMEPAGE =	http://www.unknown-horizons.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python \
 			textproc/intltool

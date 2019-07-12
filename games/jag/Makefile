@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/10/24 14:28:03 sthen Exp $ 
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:20 sthen Exp $ 
 COMMENT =		arcade-puzzle game
 V = 			0.3.2
 DISTNAME =		jag-${V}
@@ -7,7 +7,7 @@ HOMEPAGE =		http://jag.xlabsoft.com
 REVISION =		2
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL ICE QtGui QtOpenGL QtXml SDL SDL_mixer SM X11 Xext
 WANTLIB += Xi Xinerama Xrandr Xrender c fontconfig freetype m

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/05/25 07:54:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:46:04 sthen Exp $
 
 COMMENT=	powerful make utility
 
@@ -7,7 +7,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://apollo.backplane.com/xmake/
 
 # public domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

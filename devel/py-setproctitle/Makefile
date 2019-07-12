@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/04/28 20:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:53 sthen Exp $
 
 COMMENT =		library for getting/setting process names
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/dvarrazzo/py-setproctitle
 
 # BSD 3-clause
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

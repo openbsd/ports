@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/09/20 09:22:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:46:06 sthen Exp $
 
 COMMENT =	simple, fast GTK-based text editor
 DISTNAME =	tpad-5.7.1.3
@@ -8,7 +8,7 @@ REVISION =	10
 HOMEPAGE =	https://launchpad.net/tpad-project/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender aspell atk-1.0 atk-bridge-2.0 atspi

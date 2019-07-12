@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:45 sthen Exp $
 
 COMMENT =		wrapper around terminal coloring, styling, and positioning
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 REVISION =		3
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2019/03/01 09:39:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2019/07/12 20:46:10 sthen Exp $
 
 COMMENT=		PDP, IBM 1401, Nova and other CPUs simulator
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX=		.zip
 HOMEPAGE=		http://simh.trailing-edge.com/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m pcap pthread
 

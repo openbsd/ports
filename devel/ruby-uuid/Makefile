@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/06/19 14:09:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:00 sthen Exp $
 
 COMMENT=		UUID generator
 
@@ -8,7 +8,7 @@ CATEGORIES=		devel
 HOMEPAGE=		https://github.com/assaf/uuid
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

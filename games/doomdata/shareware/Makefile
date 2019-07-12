@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:16 sthen Exp $
 
 COMMENT =		DOOM I Shareware data files
 
@@ -16,7 +16,7 @@ PKG_ARCH =		*
 
 # John Carmack says "freely distributable" :
 # http://sinusforschung.com/cgi-bin/dwww/usr/share/doc/doom-wad-shareware/copyright
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		ftp://ftp.idsoftware.com/idstuff/doom/
 

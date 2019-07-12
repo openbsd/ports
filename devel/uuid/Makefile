@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2019/07/12 20:46:03 sthen Exp $
 
 COMMENT-main=	ISO-C API and CLI for generating UUIDs
 COMMENT-perl=	UUID modules for Perl
@@ -26,7 +26,7 @@ HOMEPAGE=	http://www.ossp.org/pkg/lib/uuid/
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/uuid/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES=		-main -perl
 

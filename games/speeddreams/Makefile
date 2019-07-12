@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:24 sthen Exp $
 
 BROKEN =		failure on startup
 
@@ -24,7 +24,7 @@ HOMEPAGE =		http://www.speed-dreams.org/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB-main += GL GLU ICE OpenThreads SDL2 SM X11 Xext Xrandr c enet
 WANTLIB-main += expat jpeg m ogg openal osg osgDB osgFX osgGA osgParticle

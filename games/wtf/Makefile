@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2019/06/27 23:04:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.79 2019/07/12 20:46:26 sthen Exp $
 
 COMMENT =	translate common internet acronyms
 
@@ -9,7 +9,7 @@ HOMEPAGE =	https://sourceforge.net/projects/bsdwtf/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Public Domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=bsdwtf/}
 

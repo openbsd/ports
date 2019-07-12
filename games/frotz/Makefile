@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/10/18 19:19:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:18 sthen Exp $
 
 COMMENT=		curses-based interpreter for Infocom-compatible games
 
@@ -9,7 +9,7 @@ CATEGORIES=     	games
 HOMEPAGE=		http://frotz.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 

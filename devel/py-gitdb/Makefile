@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/28 20:51:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:48 sthen Exp $
 
 COMMENT=		Git object database
 
@@ -9,7 +9,7 @@ CATEGORIES=		devel
 REVISION=		0
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
 

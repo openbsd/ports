@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:00 sthen Exp $
 
 COMMENT =	embeds the V8 javascript interpreter into ruby
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 HOMEPAGE=	https://github.com/cowboyd/therubyracer
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	pthread ${COMPILER_LIBCXX} v8
 MODULES =	lang/ruby

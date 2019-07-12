@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/15 12:04:36 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:48 sthen Exp $
 
 COMMENT =		rapid multi-Python deployment
 
@@ -13,7 +13,7 @@ CATEGORIES =	devel
 HOMEPAGE =	http://codespeak.net/execnet
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVORS =		python3
 FLAVOR ?=

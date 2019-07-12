@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/05/08 12:53:28 schwarze Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:25 sthen Exp $
 
 COMMENT=		console based sudoku
 
@@ -9,7 +9,7 @@ CATEGORIES=		games
 HOMEPAGE=		http://www.laurasia.com.au/sudoku/
 
 # Public Domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c curses
 
 MASTER_SITES=		https://distfiles.nl/ \

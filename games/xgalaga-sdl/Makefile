@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/20 17:37:36 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:27 sthen Exp $
 
 COMMENT =		clone of Galaga, 2D space shooter
 
@@ -11,7 +11,7 @@ CATEGORIES =		games
 HOMEPAGE =		http://sourceforge.net/projects/xgalaga-sdl/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL SDL_gfx SDL_image SDL_mixer SDL_ttf c pthread
 

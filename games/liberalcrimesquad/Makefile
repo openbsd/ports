@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:20 sthen Exp $
 
 V =		4.10.0
 COMMENT =	politics and government game with liberal bias
@@ -11,7 +11,7 @@ HOMEPAGE =	http://lcs.wikidot.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c curses iconv m
 

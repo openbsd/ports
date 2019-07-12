@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/01/27 19:54:39 tj Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:16 sthen Exp $
 
 COMMENT=		speaking ascii cow
 
@@ -13,7 +13,7 @@ CATEGORIES=		games
 HOMEPAGE=		https://web.archive.org/web/20071026043648/http://www.nog.net/~tony/warez/cowsay.shtml
 
 # perl (we're using the commit before the change to GPLv3)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_TEST=		Yes
 NO_BUILD=		Yes

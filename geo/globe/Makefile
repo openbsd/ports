@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/06 09:50:45 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:29 sthen Exp $
 
 COMMENT=	display the currently lighted face of Earth in ASCII
 
@@ -12,7 +12,7 @@ MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 
 
 # ACME (2-clause BSD)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 

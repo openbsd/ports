@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2018/12/21 15:21:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 20:46:27 sthen Exp $
 #
 
 PORTROACH_COMMENT =	2.02r2 is newer than 2.02
@@ -18,7 +18,7 @@ MASTER_SITES=	${HOMEPAGE}download/stable/
 EXTRACT_SUFX=	.zip
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xpm c m ${COMPILER_LIBCXX} xcb
 

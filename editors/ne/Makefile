@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/10/16 14:53:11 bcallah Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:06 sthen Exp $
 
 COMMENT =	nice console editor
 DISTNAME =	ne-3.1.2
@@ -8,7 +8,7 @@ HOMEPAGE =	http://ne.di.unimi.it/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses m
 

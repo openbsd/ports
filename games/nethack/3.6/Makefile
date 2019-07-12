@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/18 15:00:41 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:21 sthen Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Piece of cake
 V =		3.6.2
@@ -33,7 +33,7 @@ WANTLIB += X11 Xaw Xext Xmu Xt
 RUN_DEPENDS = games/hackdata
 
 # GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # The game dir name actually refers to the base version
 # we're compatible with

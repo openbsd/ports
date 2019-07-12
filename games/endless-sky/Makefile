@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/29 20:30:54 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:17 sthen Exp $
 
 COMMENT =	space exploration and combat game similar to Escape Velocity
 CATEGORIES =	games x11
@@ -12,7 +12,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Game: GPLv3+
 # Assets: Combination of CC-BY-SA 4.0, 3.0, and Public Domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW SDL2 c jpeg m mad openal
 WANTLIB += png

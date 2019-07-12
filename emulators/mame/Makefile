@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/06/30 15:41:35 fcambus Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:46:09 sthen Exp $
 
 BROKEN-i386 =	broken on 32-bit; enum in src/frontend/mame/ui/videoopt.h starting at 0x80000000
 ONLY_FOR_ARCHS = amd64 i386
@@ -20,7 +20,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 PATCHORIG =	.orig.port
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC GL SDL2 SDL2_ttf X11 Xext Xi
 WANTLIB += Xinerama c expat fontconfig freetype jpeg lua5.3 m

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/13 18:06:43 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:49 sthen Exp $
 
 COMMENT =		IPython vestigial utilities
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://ipython.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

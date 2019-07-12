@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/13 18:06:44 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:54 sthen Exp $
 
 COMMENT =		fixture for benchmarking code
 
@@ -11,7 +11,7 @@ REVISION =		0
 HOMEPAGE =		https://pytest-benchmark.readthedocs.org/en/stable/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

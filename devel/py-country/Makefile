@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/13 18:06:43 danj Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:45:47 sthen Exp $
 
 COMMENT =		country, language, currency and scripts definitions
 
@@ -10,7 +10,7 @@ REVISION =		1
 CATEGORIES =		devel
 
 # LGPL2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

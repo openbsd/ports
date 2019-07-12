@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/05/20 22:15:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:45:57 sthen Exp $
 
 # XXX doesn't build if already installed
 COMMENT=	graphical subversion client
@@ -17,7 +17,7 @@ MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
 MASTER_SITES=	${HOMEPAGE}download/release/${VERSION}/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SM X11 Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm

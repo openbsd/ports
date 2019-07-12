@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/04/28 20:51:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 20:45:51 sthen Exp $
 
 COMMENT=		discovery-based unittest extension
 
@@ -11,7 +11,7 @@ REVISION=		5
 HOMEPAGE=		http://readthedocs.org/docs/nose/en/latest/
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_PI =		Yes
 

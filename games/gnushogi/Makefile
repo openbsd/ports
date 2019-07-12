@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2015/09/21 14:35:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:46:19 sthen Exp $
 
 COMMENT=	GNU version of Shogi
 
@@ -6,7 +6,7 @@ DISTNAME=	gnushogi-1.4.2
 CATEGORIES=	games
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/04/21 21:16:42 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:01 sthen Exp $
 
 BROKEN-i386 =		needs a fixed rts/Linker.c in ghc
 
@@ -17,7 +17,7 @@ HOMEPAGE =		https://www.shellcheck.net/
 MAINTAINER =		Caspar Schutijser <caspar@schutijser.com>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MULTI_PACKAGES =	-main -lib
 WANTLIB-main =		c iconv m pthread util

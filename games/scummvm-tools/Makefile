@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/05/17 16:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:46:24 sthen Exp $
 
 COMMENT=	collection of various tools for scummvm
 V=		2.0.0
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.scummvm.org/
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC c freetype iconv m mad ogg
 WANTLIB += png vorbis vorbisenc vorbisfile wx_baseu-3.0 wx_baseu_net-3.0

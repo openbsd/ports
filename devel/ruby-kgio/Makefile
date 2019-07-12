@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:45:59 sthen Exp $
 
 COMMENT =	kinder, gentler I/O for Ruby
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # LGPLv2.1/LGPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 

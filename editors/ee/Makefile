@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2015/08/25 13:18:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:04 sthen Exp $
 
 COMMENT=		easy to use text editor
 
@@ -12,7 +12,7 @@ CATEGORIES=		editors
 HOMEPAGE=		http://www.users.uswest.net/~hmahon/
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 

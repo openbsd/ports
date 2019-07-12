@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/29 00:42:08 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:03 sthen Exp $
 
 COMMENT =		fast, intuitive file opening in VIM
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://wincent.com/products/command-t
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # BSD2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c m ${MODRUBY_WANTLIB}
 

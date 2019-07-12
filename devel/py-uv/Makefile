@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/06/25 20:25:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:55 sthen Exp $
 
 COMMENT =		Python bindings to libuv
 
@@ -11,7 +11,7 @@ CATEGORIES =	devel
 HOMEPAGE =	https://github.com/saghul/pyuv
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += pthread ${MODPY_WANTLIB} uv
 

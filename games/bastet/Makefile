@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/20 20:52:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:14 sthen Exp $
 
 # Block.s: Assembler messages:
 # Block.s:73: Error: junk `(%rip)' after expression
@@ -19,7 +19,7 @@ CATEGORIES =	games
 HOMEPAGE =	http://fph.altervista.org/prog/bastet.html
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	boost_program_options c curses m ${COMPILER_LIBCXX}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:03 sthen Exp $
 
 COMMENT =	multilanguage reimplementation of the Unix ctags utility
 
@@ -17,7 +17,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 WANTLIB += c xml2 yaml
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE = 	autoreconf

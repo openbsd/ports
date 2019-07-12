@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:14 sthen Exp $
 
 COMMENT=	cute and addictive action-puzzle game
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.emma-soft.com/games/amoebax/
 MASTER_SITES=	${HOMEPAGE}download/
 
 # GPL/LAL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	SDL c m pthread ${COMPILER_LIBCXX} SDL_image SDL_mixer
 

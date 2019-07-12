@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/07/26 16:12:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:46:00 sthen Exp $
 
 COMMENT=	Python-based build system
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.scons.org/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scons/}
 

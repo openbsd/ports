@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/06/19 14:09:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:00 sthen Exp $
 
 COMMENT=	simple library for generating UUIDs
 
@@ -6,7 +6,7 @@ DISTNAME=	uuidtools-2.1.5
 CATEGORIES=	devel
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby
 

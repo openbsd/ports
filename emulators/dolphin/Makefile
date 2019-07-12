@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/20 22:15:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:08 sthen Exp $
 
 USE_WXNEEDED =		Yes
 ONLY_FOR_ARCHS =	amd64
@@ -25,7 +25,7 @@ CATEGORIES =		emulators
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 cWANTLIB =	GL GLU ICE SDL2 SM X11 Xext Xi Xrandr avcodec avformat avutil \
 		c curl hidapi iconv intl lzo2 m mbedcrypto mbedtls mbedx509 \

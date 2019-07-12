@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 10:50:26 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:45:51 sthen Exp $
 
 COMMENT=	command line parsing library for Python
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://optik.sourceforge.net/
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # BSD License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=optik/}
 

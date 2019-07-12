@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/05/15 12:04:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:45:53 sthen Exp $
 
 COMMENT=		rule-based dispatching and generic functions
 
@@ -15,7 +15,7 @@ CATEGORIES=		devel
 HOMEPAGE=		http://peak.telecommunity.com/
 
 # PSF/ZPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pthread

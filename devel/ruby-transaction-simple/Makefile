@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/09/19 20:21:05 jeremy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:00 sthen Exp $
 
 COMMENT =	generic active transaction support for ruby objects
 
@@ -6,7 +6,7 @@ DISTNAME =	transaction-simple-1.4.0.2
 CATEGORIES =	devel
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 

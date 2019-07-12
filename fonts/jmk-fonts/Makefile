@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:12 sthen Exp $
 
 PKG_ARCH=		*
 
@@ -17,7 +17,7 @@ HOMEPAGE=		http://www.jmknoble.net/fonts/
 MAINTAINER=		Jon Olsson <jon@abc.se>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 

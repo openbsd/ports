@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.771 2019/07/09 17:29:38 gsoares Exp $
+# $OpenBSD: Makefile,v 1.772 2019/07/12 20:45:57 sthen Exp $
 
 COMMENT =	exceptions to pkg_add rules
 CATEGORIES =	devel databases
@@ -10,7 +10,7 @@ PKG_ARCH =	*
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 PERLDIR =	${PREFIX}/libdata/perl5/site_perl
 

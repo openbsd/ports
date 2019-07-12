@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/20 22:15:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:46:08 sthen Exp $
 
 BROKEN-alpha =		error: invalid 'asm': invalid %xn code
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://fengestad.no/fs-uae/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv2, LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU SDL X11 c freetype glib-2.0 gthread-2.0 intl m
 WANTLIB += openal png pthread ${COMPILER_LIBCXX} z

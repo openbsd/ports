@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/11 20:28:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:46:02 sthen Exp $
 
 COMMENT=	Type 1 rasterizer library for UNIX/X11
 
@@ -12,7 +12,7 @@ SHARED_LIBS=	t1	6.0
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # LGPLv2 / GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m
 

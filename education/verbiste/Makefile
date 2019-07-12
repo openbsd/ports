@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/06/13 15:48:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2019/07/12 20:46:07 sthen Exp $
 
 COMMENT=	French and Italian conjugation system
 
@@ -11,7 +11,7 @@ REVISION=	3
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo expat ffi fontconfig freetype fribidi

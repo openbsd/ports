@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/08/21 19:43:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:49 sthen Exp $
 
 COMMENT =		INI parser for Python
 
@@ -10,7 +10,7 @@ REVISION =		1
 CATEGORIES =		devel
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/10/26 23:55:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:58 sthen Exp $
 
 COMMENT =		ruby library wrapping calls to git CLI
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://github.com/schacon/ruby-git
 MAINTAINER =		Jeremy Evans <jeremy@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

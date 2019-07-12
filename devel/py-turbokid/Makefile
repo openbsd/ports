@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/01/06 17:01:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:55 sthen Exp $
 
 COMMENT=		template plugin that supports Kid templates
 
@@ -12,7 +12,7 @@ CATEGORIES=		devel
 HOMEPAGE=		http://www.turbogears.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://files.turbogears.org/eggs/
 

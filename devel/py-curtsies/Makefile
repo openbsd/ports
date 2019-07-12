@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/28 20:51:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:47 sthen Exp $
 
 COMMENT =		curses-like terminal wrapper
 
@@ -9,7 +9,7 @@ REVISION =		1
 CATEGORIES =		devel
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

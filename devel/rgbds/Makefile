@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/02/20 06:24:30 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:57 sthen Exp $
 
 FIX_EXTRACT_PERMISSIONS =	Yes
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://rednex.github.io/rgbds/
 MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += c m png z

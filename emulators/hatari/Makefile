@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/17 16:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:09 sthen Exp $
 
 ONLY_FOR_ARCHS = i386 amd64 powerpc arm
 
@@ -16,7 +16,7 @@ HOMEPAGE =	http://hatari.tuxfamily.org/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SDL2 SM X11 Xext c m png pthread readline z
 

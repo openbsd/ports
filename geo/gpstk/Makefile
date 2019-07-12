@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/04/12 21:12:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:46:29 sthen Exp $
 
 COMMENT=		GPS processing toolkit
 
@@ -15,7 +15,7 @@ SHARED_LIBS=		gpstk 16.0
 HOMEPAGE=		http://www.gpstk.org/
 
 # LGPLv3.0+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		${COMPILER_LIBCXX} c m
 

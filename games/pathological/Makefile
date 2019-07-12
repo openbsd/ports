@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/04/01 09:29:31 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:22 sthen Exp $
 
 COMMENT=	enriched clone of the game Logical by Rainbow Arts
 
@@ -8,7 +8,7 @@ CATEGORIES=	games
 HOMEPAGE=	http://pathological.sourceforge.net/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pathological/}

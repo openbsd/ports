@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/06/05 11:02:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:12 sthen Exp $
 
 COMMENT=	japanese true type fonts
 
@@ -9,7 +9,7 @@ CATEGORIES=	fonts japanese x11
 EXTRACT_SUFX=	.tar.bz2
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=		http://wiki.fdiary.net/font/
 MASTER_SITES=		${MASTER_SITE_OSDN_JP:=efont/10087/}

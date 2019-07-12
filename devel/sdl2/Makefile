@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/04/15 16:34:21 bcallah Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:01 sthen Exp $
 
 COMMENT=	cross-platform multimedia library
 
@@ -16,7 +16,7 @@ HOMEPAGE=	https://www.libsdl.org/
 MAINTAINER=	Thomas Frohwein <thfr@openbsd.org>
 
 # zlib
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	m pthread sndio usbhid samplerate
 # GL/X11/Xext/Xrender/Xrandr are dlopen'd by SDL

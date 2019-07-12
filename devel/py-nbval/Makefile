@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/15 12:04:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:51 sthen Exp $
 
 COMMENT =		py.test plugin to validate Jupyter notebooks
 
@@ -9,7 +9,7 @@ PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

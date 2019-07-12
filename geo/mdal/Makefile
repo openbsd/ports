@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/29 05:23:27 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:29 sthen Exp $
 
 COMMENT =	mesh data abstration library
 
@@ -17,7 +17,7 @@ HOMEPAGE =	http://www.mdal.xyz/
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cmake
 

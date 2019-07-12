@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:15 sthen Exp $
 
 COMMENT =		platform game set in Seville and in space
 VERSION = 		1.0.3
@@ -9,7 +9,7 @@ HOMEPAGE =		http://computeremuzone.com/ficha.php?id=754&l=en
 REVISION =		4
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB = 	alleg c freetype m ogg png pthread ${COMPILER_LIBCXX} vorbis vorbisfile z
 

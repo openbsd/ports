@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/13 18:06:44 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:54 sthen Exp $
 
 COMMENT =		thin-wrapper around mock package for easier use with pytest
 
@@ -11,7 +11,7 @@ REVISION =		1
 HOMEPAGE =		https://github.com/pytest-dev/pytest-mock/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

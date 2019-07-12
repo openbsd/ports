@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/11/02 11:43:59 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:46:26 sthen Exp $
 
 COMMENT=	save your computers from the evil clutches of Bill
 
@@ -9,7 +9,7 @@ CATEGORIES=	games x11
 HOMEPAGE=	http://www.xbill.org/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/
 

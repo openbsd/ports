@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/02/06 02:13:06 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:22 sthen Exp $
 
 COMMENT =	open source port of Cannon Fodder game
 DISTNAME =	openfodder-1.4.1
@@ -8,7 +8,7 @@ HOMEPAGE =	http://openfodder.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_mixer c m
 

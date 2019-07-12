@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/11/23 14:15:03 solene Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:17 sthen Exp $
 
 V =		3.1
 COMMENT =	modern QuakeWorld client
@@ -11,7 +11,7 @@ HOMEPAGE =	https://ezquake.github.io/
 MAINTAINER =	Tom Murphy <openbsd@pertho.net>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL SDL2 c curl expat jansson jpeg m pcre png pthread
 WANTLIB += speex speexdsp z

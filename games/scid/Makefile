@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/31 21:31:16 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:23 sthen Exp $
 
 V =		4.7.0
 COMMENT =	chess database software
@@ -11,7 +11,7 @@ HOMEPAGE =	http://scid.sourceforge.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODTCL_WANTLIB} c m
 

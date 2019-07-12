@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/04/29 00:37:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:58 sthen Exp $
 
 COMMENT=		ruby application dependency manager
 
@@ -9,7 +9,7 @@ CATEGORIES=		devel
 HOMEPAGE=		http://gembundler.com/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

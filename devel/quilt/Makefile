@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/27 10:59:32 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:57 sthen Exp $
 
 COMMENT=		manage large numbers of patches
 
@@ -9,7 +9,7 @@ HOMEPAGE=		http://savannah.nongnu.org/projects/quilt/
 MAINTAINER=		Kent R. Spillner <kspillner@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=quilt/}
 

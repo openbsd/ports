@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:15 sthen Exp $
 
 BROKEN-mips64el =	Bus error on startup, no core file left
 
@@ -12,7 +12,7 @@ CATEGORIES =	games x11
 HOMEPAGE =	https://github.com/jazztickets/choria
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += Irrlicht c m pthread sqlite3 ${COMPILER_LIBCXX}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/06/11 00:37:09 kurt Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:20 sthen Exp $
 
 COMMENT =	brick shooter reflexion game
 
@@ -10,7 +10,7 @@ CATEGORIES=	games
 REVISION=	2
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	java
 MODJAVA_VER=	1.8+

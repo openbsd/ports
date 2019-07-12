@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/06/28 12:22:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:13 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -13,7 +13,7 @@ CATEGORIES=	fonts
 HOMEPAGE=	https://powerline.readthedocs.org/en/latest/
 
 # see wrksrc/README.rst - SIL OFL, Apache 2.0, Ubuntu/DejaVu Font Licenses
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 GH_ACCOUNT=	powerline
 GH_PROJECT=	fonts

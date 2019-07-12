@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/12/05 20:19:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:46:23 sthen Exp $
 
 COMMENT =		interpreter for some LucasArts 3D games
 
@@ -12,7 +12,7 @@ CATEGORIES =		games
 HOMEPAGE =		http://residualvm.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL GLEW GLU SDL2 c freetype iconv jpeg m mad mpeg2

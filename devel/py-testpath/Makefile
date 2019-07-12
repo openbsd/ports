@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/15 12:04:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:54 sthen Exp $
 
 COMMENT =		test utilities working with files and commands
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/jupyter/testpath
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

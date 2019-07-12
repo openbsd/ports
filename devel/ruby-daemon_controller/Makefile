@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/10/17 17:03:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:58 sthen Exp $
 
 COMMENT =		robust daemon management
 
@@ -10,7 +10,7 @@ HOMEPAGE =		https://github.com/FooBarWidget/daemon_controller
 MAINTAINER =		Jeremy Evans <jeremy@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

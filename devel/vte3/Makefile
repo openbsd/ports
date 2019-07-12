@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2019/05/08 01:08:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.97 2019/07/12 20:46:03 sthen Exp $
 
 COMMENT=		terminal emulation library
 
@@ -16,7 +16,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0

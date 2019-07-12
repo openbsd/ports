@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/12/13 19:53:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:08 sthen Exp $
 
 COMMENT =		flexible keyboardless emulator frontend
 
@@ -9,7 +9,7 @@ CATEGORIES =		emulators
 HOMEPAGE =		http://www.emulationstation.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU SDL2 boost_date_time-mt boost_filesystem-mt
 WANTLIB += boost_locale-mt boost_system-mt c curl freeimage freetype

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/31 09:48:18 solene Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:25 sthen Exp $
 
 # tome4 ships embedded copy of luajit wich is known to
 # work on the arches listed below.
@@ -27,7 +27,7 @@ MULTI_PACKAGES =-main -data
 MAINTAINER =	Solene Rapenne <solene@perso.pw>
 
 # GPLV3+ and bundled MIT, zlib, BSD in games/thirdparty/licenses/
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB-main =	GL GLU SDL2 SDL2_image SDL2_ttf openal c m \
 		png pthread vorbisfile

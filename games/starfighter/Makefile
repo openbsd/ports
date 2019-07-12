@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:25 sthen Exp $
 
 COMMENT =		sidescrolling space shmup
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://starfighter.nongnu.org/
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 SDL2_image SDL2_mixer c m pthread ${COMPILER_LIBCXX}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:15 sthen Exp $
 
 COMMENT =	portable release of Doom, Heretic, Hexen, and Strife
 V =		3.0.0
@@ -11,7 +11,7 @@ HOMEPAGE =	https://www.chocolate-doom.org/
 MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += SDL2 SDL2_mixer SDL2_net c m png samplerate z
 

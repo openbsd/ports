@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/03/09 01:08:46 bcallah Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:46:05 sthen Exp $
 
 COMMENT =	simple, distraction-free writing environment
 
@@ -12,7 +12,7 @@ MASTER_SITES =	${HOMEPAGE}
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES +=	devel/qmake \
 		x11/qt5

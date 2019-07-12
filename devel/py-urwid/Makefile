@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/04/28 20:51:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:45:55 sthen Exp $
 
 COMMENT =	console user interface library for python
 
@@ -11,7 +11,7 @@ REVISION =	1
 HOMEPAGE =	http://urwid.org/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += pthread ${MODPY_WANTLIB}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/12/18 10:59:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:23 sthen Exp $
 
 V =		20171127
 COMMENT =	Postal 1, the non-stop killing isometric shooter game
@@ -11,7 +11,7 @@ HOMEPAGE =	http://runningwithscissors.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 c m
 

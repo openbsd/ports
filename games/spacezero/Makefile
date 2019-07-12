@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:24 sthen Exp $
 
 COMMENT =	2D RTS space combat game
 DISTNAME =	spacezero-0.86.00
@@ -8,7 +8,7 @@ REVISION =	1
 HOMEPAGE =	http://spacezero.sourceforge.net/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender alut atk-1.0 c cairo fontconfig freetype gdk-x11-2.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 10:50:27 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:45:55 sthen Exp $
 
 COMMENT=		unit testing framework for Python
 
@@ -11,7 +11,7 @@ CATEGORIES=     	devel
 HOMEPAGE=		http://pyunit.sourceforge.net/
 
 # Python License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pyunit/}
 

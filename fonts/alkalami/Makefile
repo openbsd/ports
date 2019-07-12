@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/25 10:17:14 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:10 sthen Exp $
 
 COMMENT =		Unicode font for African Arabic script
 V =			1.100
@@ -11,7 +11,7 @@ HOMEPAGE =		https://software.sil.org/alkalami/
 MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # SIL OFT 1.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://software.sil.org/downloads/r/alkalami/
 EXTRACT_SUFX =		.zip

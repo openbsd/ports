@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/20 20:52:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:15 sthen Exp $
 
 PORTROACH =	skipv:2.2
 
@@ -10,7 +10,7 @@ REVISION =	1
 HOMEPAGE =	http://www.muppetlabs.com/~breadbox/software/cgames.html
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses
 

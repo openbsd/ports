@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/06/13 15:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:46:18 sthen Exp $
 
 COMMENT =	Mastermind clone reflexion game
 
@@ -11,7 +11,7 @@ CATEGORIES =	games
 HOMEPAGE =	http://www.autistici.org/gnome-mastermind/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo dbus-1 dbus-glib-1 expat ffi

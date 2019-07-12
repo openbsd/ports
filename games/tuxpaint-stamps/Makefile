@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/05/25 07:54:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:25 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -17,7 +17,7 @@ HOMEPAGE=	http://www.tuxpaint.org/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
 

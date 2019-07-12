@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:46:21 sthen Exp $
 
 COMMENT =		infinite-world block sandbox game
 # minetest_game is still 0.4.17
@@ -12,7 +12,7 @@ REVISION =		4
 HOMEPAGE =		http://www.minetest.net/
 
 # source LGPLv2.1/ datas CC BY-SA 3.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE Irrlicht SM X11 Xext
 WANTLIB += Xxf86vm bz2 c curl curses form freetype gmp iconv intl

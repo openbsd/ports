@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/06/29 22:16:12 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:17 sthen Exp $
 
 V =		0.5
 COMMENT =	puzzle game with similar gameplay to Tetris Attack
@@ -13,7 +13,7 @@ GH_TAGNAME =	v${V}
 HOMEPAGE =	https://github.com/dorkster/freeblocks
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL SDL_image SDL_mixer SDL_ttf c pthread
 

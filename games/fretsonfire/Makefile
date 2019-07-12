@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/09/04 07:46:52 martijn Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:18 sthen Exp $
 
 # This port is known to generate errors on (some) radeon cards.
 # Intel cards appear to work fine.
@@ -14,7 +14,7 @@ CATEGORIES =		games x11
 HOMEPAGE =		http://fretsonfire.sourceforge.net
 
 # GPLv2 or later
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fretsonfire/}
 USE_GMAKE =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/03/31 18:19:38 thfr Exp $
+# $OpenBSD: Makefile,v 1.50 2019/07/12 20:46:18 sthen Exp $
 
 BROKEN=	rsvg_handle_get_dimensions: assertion 'RSVG_IS_HANDLE (handle)' failed
 
@@ -13,7 +13,7 @@ CATEGORIES=		games
 HOMEPAGE=		https://live.gnome.org/gbrainy
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://gent.softcatala.org/jmas/gbrainy/
 EXTRACT_SUFX=		.tar.gz

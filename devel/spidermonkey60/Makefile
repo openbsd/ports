@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/06/25 20:25:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:01 sthen Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -34,7 +34,7 @@ MASTER_SITES =          https://ftp.mozilla.org/pub/firefox/releases/${V}esr/sou
 EXTRACT_SUFX =		.tar.xz
 
 # MPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses icudata icui18n icuuc m nspr4 plc4 plds4 z
 WANTLIB += ${COMPILER_LIBCXX}

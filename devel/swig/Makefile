@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2019/07/12 20:46:02 sthen Exp $
 
 COMMENT =	simplified wrapper and interface generator
 
@@ -12,7 +12,7 @@ REVISION =	0
 HOMEPAGE =	http://www.swig.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c m pcre ${COMPILER_LIBCXX} z
 

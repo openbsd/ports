@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.29 2019/02/20 00:31:04 sthen Exp $
+#	$OpenBSD: Makefile,v 1.30 2019/07/12 20:46:14 sthen Exp $
 
 DIST_SUBDIR ?=		alephone
 COMMENT =		open source game engine based on Marathon 2: Durandal
@@ -16,7 +16,7 @@ HOMEPAGE =		https://alephone.lhowon.org/
 MAINTAINER =		Peter Hessler <phessler@openbsd.org>
 
 # GPLv2 or later
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://github.com/Aleph-One-Marathon/alephone/releases/download/release-${DATE}/
 

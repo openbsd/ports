@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/06/19 19:45:59 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:08 sthen Exp $
 
 COMMENT =		games cataloging tool and emulator launcher
 
@@ -15,7 +15,7 @@ HOMEPAGE =		http://www.gr-lida.org/
 MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c GL glib-2.0 intl m poppler-qt5 pulse
 WANTLIB += pulse-mainloop-glib Qt5Core Qt5Gui Qt5Network Qt5OpenGL

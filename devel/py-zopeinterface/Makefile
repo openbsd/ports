@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/04/28 20:51:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:45:56 sthen Exp $
 
 COMMENT=	object interface infrastructure from Zope
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel
 REVISION=	0
 
 # Zope Public License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pthread

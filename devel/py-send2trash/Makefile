@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:53 sthen Exp $
 
 COMMENT =		send files to the trash natively
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/hsoft/send2trash
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

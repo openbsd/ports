@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/03/07 19:34:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2019/07/12 20:46:29 sthen Exp $
 
 COMMENT=	library to provide a GTK+ widget to display maps
 
@@ -17,7 +17,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += EGL X11 Xcomposite Xdamage Xext Xfixes Xi Xrandr atk-1.0
 WANTLIB += cairo cairo-gobject clutter-1.0 clutter-gtk-1.0 cogl

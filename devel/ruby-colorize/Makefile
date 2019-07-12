@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/14 17:47:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:58 sthen Exp $
 
 COMMENT =		adds methods to set text color, background color, etc
 
@@ -6,7 +6,7 @@ DISTNAME =		colorize-0.7.7
 CATEGORIES =		devel
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

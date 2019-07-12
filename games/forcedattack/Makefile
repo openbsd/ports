@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/04/01 09:29:31 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:17 sthen Exp $
 
 COMMENT=	connect four of stones in a straight line
 
@@ -11,7 +11,7 @@ CATEGORIES=	games
 HOMEPAGE=	http://forcedattack.sourceforge.net/
 
 # GPL 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=forcedattack/}
 

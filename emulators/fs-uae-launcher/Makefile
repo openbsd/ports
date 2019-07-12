@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/04/01 09:29:31 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:08 sthen Exp $
 
 COMMENT =		launcher for the FS-UAE Amiga emulator
 
@@ -10,7 +10,7 @@ HOMEPAGE =		http://fs-uae.net
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://fs-uae.net/fs-uae/stable/${MODPY_EGG_VERSION}/
 

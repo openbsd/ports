@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/11/01 17:53:44 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:50 sthen Exp $
 
 COMMENT =		json-rpc over http
 
@@ -10,7 +10,7 @@ CATEGORIES =		devel
 
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

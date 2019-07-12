@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/10/25 09:54:10 bentley Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:12 sthen Exp $
 
 COMMENT =		advanced Unicode font for medievalists
 DISTNAME =		junicode-1.002
@@ -9,7 +9,7 @@ HOMEPAGE =		http://junicode.sourceforge.net/
 MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # OFL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=junicode/}
 

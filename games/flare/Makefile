@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/06/07 05:56:40 kirby Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:17 sthen Exp $
 
 COMMENT-main =		free/libre action roleplaying engine
 COMMENT-data =		free/libre action roleplaying engine data
@@ -13,7 +13,7 @@ CATEGORIES =		games
 HOMEPAGE =		http://flarerpg.org/
 
 # code GPLv3+, data CC BY-SA 3.0+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 

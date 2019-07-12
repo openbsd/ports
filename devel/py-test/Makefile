@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/05/15 12:04:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:45:54 sthen Exp $
 
 COMMENT=		cross-project testing tool for Python
 
@@ -12,7 +12,7 @@ CATEGORIES=		devel
 HOMEPAGE =		https://docs.pytest.org/en/latest/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

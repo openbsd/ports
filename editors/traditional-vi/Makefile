@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/20 20:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:06 sthen Exp $
 
 COMMENT =		traditional vi and ex
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://ex-vi.sourceforge.net/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # BSD-style, libuxre is LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c curses
 

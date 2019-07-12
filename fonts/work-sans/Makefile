@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/06 15:06:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:13 sthen Exp $
 
 COMMENT =	typeface based loosely on early Grotesques
 PKGNAME =	${DISTNAME:L}
@@ -12,7 +12,7 @@ HOMEPAGE =	https://weiweihuanghuang.github.io/Work-Sans/
 MAINTAINER =	George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 PKG_ARCH =	*
 

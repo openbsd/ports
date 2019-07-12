@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/06/27 21:03:44 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:15 sthen Exp $
 
 COMMENT =	open source, classic overhead run-and-gun game
 DISTNAME =	cdogs-sdl-0.5.5.1
@@ -8,7 +8,7 @@ REVISION =	2
 HOMEPAGE =	http://cxong.github.io/cdogs-sdl/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL SDL_image SDL_mixer SDL_net c m pthread
 

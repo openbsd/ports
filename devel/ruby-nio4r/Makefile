@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/07 16:26:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:59 sthen Exp $
 
 COMMENT=		cross-platform asynchronous I/O primitives
 
@@ -8,7 +8,7 @@ CATEGORIES=		devel
 HOMEPAGE=		https://github.com/socketry/nio4r
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

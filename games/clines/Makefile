@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/17 16:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:16 sthen Exp $
 
 COMMENT=		curses-based Lines game
 
@@ -9,7 +9,7 @@ REVISION=		3
 HOMEPAGE=		http://manticore.2y.net/prj/clines-a.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses
 

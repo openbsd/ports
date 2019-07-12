@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:20 sthen Exp $
 
 COMMENT =		asteroid-like game
 
@@ -12,7 +12,7 @@ MASTER_SITES =		${HOMEPAGE}/src/
 MAINTAINER =		Peter Hessler <phessler@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE = 	gnu
 

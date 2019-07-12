@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/01/28 20:44:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:45:57 sthen Exp $
 
 COMMENT=		Erlang build tool
 
@@ -12,7 +12,7 @@ CATEGORIES=		devel lang/erlang
 HOMEPAGE=		https://github.com/rebar/rebar
 
 # APLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # This port cannot use the erlang module for the module depends on this port.
 # Keep in sync with erlang.port.mk

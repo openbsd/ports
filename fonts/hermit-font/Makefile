@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/02/09 17:49:54 abieber Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:12 sthen Exp $
 
 COMMENT=	clear, readable monospaced font
 
@@ -9,7 +9,7 @@ PKGNAME=	hermit-font-${VERSION}
 CATEGORIES=	fonts x11
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 

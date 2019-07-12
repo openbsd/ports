@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2019/06/13 15:48:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2019/07/12 20:46:18 sthen Exp $
 
 COMMENT=	educational game for children
 
@@ -14,7 +14,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
 # SIL Open Font License (OFL)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr

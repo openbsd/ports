@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/20 22:15:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:46:19 sthen Exp $
 
 COMMENT =		Othello/Reversi-like game
 DISTNAME =		grhino-${V}
@@ -9,7 +9,7 @@ HOMEPAGE =		http://rhino.sourceforge.net/
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE ORBit-2 SM X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0

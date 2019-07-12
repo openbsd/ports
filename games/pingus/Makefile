@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/17 19:14:08 cwen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:22 sthen Exp $
 
 COMMENT=	free Lemmings-like game
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://pingus.seul.org/
 MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=pingus/}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL SDL X11 Xi c iconv m png pthread z
 WANTLIB += SDL_mixer>=3 SDL_image>=2 boost_signals ${COMPILER_LIBCXX}

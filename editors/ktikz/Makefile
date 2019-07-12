@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/06/19 19:45:59 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:05 sthen Exp $
 
 COMMENT =		editor for the TikZ language
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/
 MAINTAINER =		Paul Irofti <pirofti@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets c m poppler-qt5
 

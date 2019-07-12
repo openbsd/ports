@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2019/05/20 22:15:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.101 2019/07/12 20:46:20 sthen Exp $
 
 V =		1.9.3.23
 REVISION =	1
@@ -11,7 +11,7 @@ HOMEPAGE =	https://manaplus.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL SDL2 SDL2_gfx-1.0 SDL2_image
 WANTLIB += SDL2_mixer SDL2_net SDL2_ttf X11 c crypto curl execinfo

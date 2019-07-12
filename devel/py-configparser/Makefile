@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/13 18:06:43 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:46 sthen Exp $
 
 COMMENT =		Python 3.5 configparser for Python 2.6 - 3.5
 
@@ -12,7 +12,7 @@ REVISION =		0
 HOMEPAGE =		https://bitbucket.org/ambv/configparser
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

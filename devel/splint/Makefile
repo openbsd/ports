@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/11/15 11:55:59 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:01 sthen Exp $
 
 COMMENT =	advanced lint: statically check C programs
 DISTNAME =	splint-3.1.2
@@ -11,7 +11,7 @@ HOMEPAGE =	http://www.splint.org/
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 WANTLIB =		c
 
 MASTER_SITES =	${HOMEPAGE}downloads/

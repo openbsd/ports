@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/06/04 06:47:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:11 sthen Exp $
 
 COMMENT =			programming font designed with functionality in mind
 
@@ -13,7 +13,7 @@ MAINTAINER =			Jasper Lievisse Adriaanse <jasper@openbsd.org>
 HOMEPAGE =			https://fontlibrary.org/en/font/fantasque-sans-mono
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =			https://github.com/belluzj/fantasque-sans/releases/download/v$V/
 

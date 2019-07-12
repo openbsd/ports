@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/04/01 09:29:31 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:14 sthen Exp $
 
 COMMENT=	falling blocks puzzle game
 
@@ -9,7 +9,7 @@ CATEGORIES=	games
 HOMEPAGE=	http://www.sacredchao.net/~piman/angrydd/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 

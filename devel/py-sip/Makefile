@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/07/03 09:42:15 landry Exp $
+# $OpenBSD: Makefile,v 1.44 2019/07/12 20:45:53 sthen Exp $
 
 COMMENT=	automatically generate Python bindings for C and C++ libs
 
@@ -13,7 +13,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://www.riverbankcomputing.co.uk/software/sip/intro
 
 # SIP license (Python like)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	m c ${COMPILER_LIBCXX}
 

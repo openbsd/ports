@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/28 20:51:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:46 sthen Exp $
 
 COMMENT =		command line interface tools for Python
 
@@ -11,7 +11,7 @@ REVISION =		1
 MAINTAINER =		frantisek holop <minusf@obiit.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

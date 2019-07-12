@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/06 17:01:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:51 sthen Exp $
 
 COMMENT =		generic functions support systems
 
@@ -14,7 +14,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://pypi.python.org/pypi/PEAK-Rules/
 
 # PSF
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://peak.telecommunity.com/snapshots/
 

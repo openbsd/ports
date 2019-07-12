@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/06 08:12:53 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:11 sthen Exp $
 
 COMMENT =	open-source Grotesque sans-serif typeface family
 
@@ -15,7 +15,7 @@ HOMEPAGE =	https://www.omnibus-type.com/fonts/chivo/
 MAINTAINER =	George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 PKG_ARCH =	*
 

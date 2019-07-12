@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/11/28 22:11:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:17 sthen Exp $
 
 COMMENT =	open source remake of old DOS game Sherlock
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://games.flowix.com/
 
 # No license information in distfile. Homepage states that
 # "you can download game for free under GPL license terms".
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL SDL_mixer SDL_ttf c freetype
 WANTLIB += m z

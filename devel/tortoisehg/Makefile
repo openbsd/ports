@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/02/24 18:07:10 juanfra Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:46:03 sthen Exp $
 
 COMMENT =		series of applications for Mercurial
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://tortoisehg.bitbucket.io/
 MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://bitbucket.org/tortoisehg/targz/downloads/
 

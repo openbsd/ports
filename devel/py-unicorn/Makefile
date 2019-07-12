@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/03 06:08:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:55 sthen Exp $
 
 COMMENT =	Unicorn CPU emulator engine
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://www.unicorn-engine.org
 MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += m
 

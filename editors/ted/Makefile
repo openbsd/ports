@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2018/05/20 08:32:01 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:46:06 sthen Exp $
 
 
 COMMENT =	X11 based RTF editor
@@ -11,7 +11,7 @@ MASTER_SITES =	ftp://ftp.nluug.nl/pub/editors/ted/
 
 DISTFILES =	ted-$V.src.tar.gz
 # GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SM X11 Xext Xmu Xpm Xt c m xcb z
 WANTLIB += png jpeg tiff Xm

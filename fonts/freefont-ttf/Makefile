@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/08/07 19:41:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:11 sthen Exp $
 
 COMMENT=		free UCS outline fonts
 
@@ -9,7 +9,7 @@ CATEGORIES=		fonts x11
 HOMEPAGE=		https://www.gnu.org/software/freefont/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNU:=freefont/}
 EXTRACT_SUFX=		.zip

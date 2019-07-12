@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:49 sthen Exp $
 
 MODPY_EGG_VERSION =	0.4.5
 COMMENT =	Python library for the ISO 639 language code standard
@@ -11,7 +11,7 @@ HOMEPAGE =	https://github.com/noumar/iso639
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # AGPLv3 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 

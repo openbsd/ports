@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2018/06/08 14:24:31 kevlo Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/07/12 20:45:57 sthen Exp $
 
 CONFIG=		riscv64-unknown-elf
 PKGNAME?=	riscv-elf-${DISTNAME}
@@ -9,7 +9,7 @@ MAINTAINER?=	Kevin Lo <kevlo@openbsd.org>
 # GPLv3
 # For newlib: multiple copyrights, but basically BSD.
 #   See: ${PREFIX}/share/doc/newlib
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--target=${CONFIG}	\

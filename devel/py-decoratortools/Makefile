@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/09/29 10:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:47 sthen Exp $
 
 COMMENT=		class and function decorators
 
@@ -12,7 +12,7 @@ CATEGORIES=		devel
 HOMEPAGE=		http://cheeseshop.python.org/pypi/DecoratorTools
 
 # PSF/ZPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_PI =		Yes
 EXTRACT_SUFX=		.zip

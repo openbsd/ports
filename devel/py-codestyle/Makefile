@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/13 18:06:43 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:46 sthen Exp $
 
 COMMENT =		python style guide checker
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/PyCQA/pycodestyle
 
 # Expat
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

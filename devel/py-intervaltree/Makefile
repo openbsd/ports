@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:36 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:49 sthen Exp $
 
 COMMENT =	editable interval tree data structure for Python 2 and 3
 
@@ -12,7 +12,7 @@ CATEGORIES =	devel
 HOMEPAGE =	https://github.com/chaimleib/intervaltree
 
 # Apache v2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =      Yes

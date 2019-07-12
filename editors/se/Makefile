@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/20 20:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:06 sthen Exp $
 
 COMMENT =		screen oriented version of the classic text editor ed
 
@@ -10,7 +10,7 @@ HOMEPAGE =		http://se-editor.org/
 MASTER_SITES =		http://se-editor.org/dist/
 
 # PD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c curses
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/10/18 14:29:06 bket Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:54 sthen Exp $
 
 COMMENT =		backport of the subprocess library module from Python 3
 
@@ -9,7 +9,7 @@ PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
 
 # PSF
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	${MODPY_WANTLIB} pthread
 

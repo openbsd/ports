@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2013/03/11 13:42:59 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2019/07/12 20:46:07 sthen Exp $
 
 COMMENT=	heavily customizable and extensible editor
 DISTNAME=	xemacs-${BRANCH}.${VERSION}
@@ -7,7 +7,7 @@ CATEGORIES=	editors
 HOMEPAGE=	http://www.xemacs.org/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://ftp.xemacs.org/pub/xemacs/xemacs-${BRANCH}/ \
 		ftp://ftp.oleane.net/pub/xemacs/xemacs-${BRANCH}/ \

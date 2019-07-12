@@ -9,7 +9,7 @@ HOMEPAGE=	http://www.fial.com/~scott/tamsyn-font/
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # Custom
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://www.fial.com/~scott/tamsyn-font/download/
 

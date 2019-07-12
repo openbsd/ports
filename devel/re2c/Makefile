@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/12/01 21:11:32 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:45:57 sthen Exp $
 
 COMMENT=		C-based regular expression scanner generator
 
@@ -9,7 +9,7 @@ HOMEPAGE=		http://re2c.org/
 REVISION=		0
 
 # public domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 

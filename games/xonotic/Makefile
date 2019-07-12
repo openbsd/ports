@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/19 18:15:23 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:27 sthen Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
@@ -23,7 +23,7 @@ HOMEPAGE =		https://xonotic.org
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c curl jpeg m png z
 WANTLIB-main =		${WANTLIB} SDL2 X11

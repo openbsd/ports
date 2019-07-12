@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:45:58 sthen Exp $
 
 COMMENT =	cross-platform dynamic library loading for ruby
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://github.com/ffi/ffi
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # LPGLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 

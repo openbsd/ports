@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/10 19:47:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:00 sthen Exp $
 
 COMMENT =		scripting framework to replace rake/sake/rubigen
 
@@ -8,7 +8,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://whatisthor.com/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

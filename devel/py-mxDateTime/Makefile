@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2016/03/20 16:12:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:45:50 sthen Exp $
 
 COMMENT =	date and time types for Python
 
@@ -10,7 +10,7 @@ CATEGORIES =	devel
 HOMEPAGE =	http://www.egenix.com/products/python/mxBase/
 
 # eGenix.com Public License Agreement
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://downloads.egenix.com/python/
 

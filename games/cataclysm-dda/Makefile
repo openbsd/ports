@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/20 22:15:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:15 sthen Exp $
 
 COMMENT=		rogue-like zombie survival game
 DISTNAME=		cataclysm-dda-0.D
@@ -14,7 +14,7 @@ HOMEPAGE=		https://cataclysmdda.org
 MAINTAINER=		Tim Meunier <trondd@kagu-tsuchi.com>
 
 # Creative Commons 3.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 FLAVORS=		no_x11
 FLAVOR?=

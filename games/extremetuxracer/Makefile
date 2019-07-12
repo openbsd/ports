@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/12/24 14:59:12 pascal Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:46:17 sthen Exp $
 
 COMMENT =		downhill racing game
 BROKEN-alpha =		cc1plus: error: unrecognized command line option '-std=c++11'
@@ -15,7 +15,7 @@ HOMEPAGE =		http://sourceforge.net/projects/extremetuxracer/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU c m pthread sfml-audio sfml-graphics sfml-system
 WANTLIB += sfml-window

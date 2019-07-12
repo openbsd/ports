@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/06/13 15:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:46:28 sthen Exp $
 
 COMMENT =		lightweight mapping application for use with or without GPS
 
@@ -14,7 +14,7 @@ MASTER_SITES =		${HOMEPAGE}/releases/
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo crypto curl exif expat ffi fontconfig

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/03/07 05:14:20 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:23 sthen Exp $
 
 COMMENT =		visual novel engine
 
@@ -13,7 +13,7 @@ CATEGORIES =		games
 HOMEPAGE =		https://www.renpy.org/
 
 # mostly MIT, some files LGPLv2.1+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB +=		GLEW SDL avcodec avformat avresample avutil freetype
 WANTLIB +=		m png pthread swscale z ${MODPY_WANTLIB}

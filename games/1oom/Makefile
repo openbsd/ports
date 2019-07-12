@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/10 14:04:02 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:14 sthen Exp $
 
 COMMENT =	game engine recreation of Master of Orion 1
 DISTNAME =	1oom-1.0
@@ -8,7 +8,7 @@ HOMEPAGE =	https://kilgoretroutmaskreplicant.gitlab.io/plain-html/
 MAINTAINER =	Max Fillinger <max@max-fillinger.net>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 SDL2_mixer c readline
 

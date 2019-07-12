@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/15 12:04:36 kmos Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:49 sthen Exp $
 
 COMMENT =	extract metadata using Hachoir library
 
@@ -10,7 +10,7 @@ REVISION =	0
 CATEGORIES =	devel
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PI =	Yes

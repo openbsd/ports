@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 10:50:26 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:45:55 sthen Exp $
 
 COMMENT=	parser generator in Python
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://christophe.delord.free.fr/en/tpg/
 
 # LGPL 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://christophe.delord.free.fr/soft/tpg/
 

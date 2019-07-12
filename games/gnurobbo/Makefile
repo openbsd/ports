@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/12/10 06:56:06 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:19 sthen Exp $
 
 COMMENT =		action puzzle game inspired by Robbo
 
@@ -11,7 +11,7 @@ CATEGORIES =		games
 HOMEPAGE =		http://gnurobbo.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL SDL_image SDL_mixer SDL_ttf c m pthread
 

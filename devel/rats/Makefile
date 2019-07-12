@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 10:50:27 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:45:57 sthen Exp $
 
 COMMENT=		source code auditing tool
 
@@ -9,7 +9,7 @@ CATEGORIES=		devel security
 HOMEPAGE=		https://www.fortify.com/ssa-elements/threat-intelligence/rats.html
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c expat
 

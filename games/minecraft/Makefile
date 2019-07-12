@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/06/11 00:38:34 kurt Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:21 sthen Exp $
 
 PORTROACH=	skipv:0.1
 PORTROACH_COMMENT=version 0.1 is actually older than 0.0.4
@@ -21,7 +21,7 @@ MODULES=	java
 MODJAVA_VER=	1.8+
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		games/lwjgl \

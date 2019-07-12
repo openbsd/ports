@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/10 22:44:51 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:14 sthen Exp $
 
 COMMENT =	terminal version of the 2048 sliding block puzzle game
 CATEGORIES =	games
@@ -10,7 +10,7 @@ GH_TAGNAME =	v0.9.1
 MAINTAINER =	Kaashif Hymabaccus <kaashif@kaashif.co.uk>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses
 

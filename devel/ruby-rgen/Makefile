@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/09/30 19:40:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:59 sthen Exp $
 
 COMMENT=		framework for Model Driven Software Development
 
@@ -10,7 +10,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 HOMEPAGE=		http://ruby-gen.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

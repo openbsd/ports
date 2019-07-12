@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/05/07 17:04:58 danj Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:46:14 sthen Exp $
 
 COMMENT=	jump'n'run game with unique video effects
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://n.ethz.ch/student/loehrerl/amph/amph.html
 MASTER_SITES=	http://n.ethz.ch/student/loehrerl/amph/files/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL Xpm Xt c m
 

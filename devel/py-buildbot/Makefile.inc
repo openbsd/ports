@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2019/05/28 18:54:25 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2019/07/12 20:45:46 sthen Exp $
 
 MODPY_EGG_VERSION ?=	2.3.1
 DISTNAME ?=	buildbot-${PART}-${MODPY_EGG_VERSION}
@@ -9,7 +9,7 @@ CATEGORIES =	devel devel/py-buildbot
 HOMEPAGE ?=	https://buildbot.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 

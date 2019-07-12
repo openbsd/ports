@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:54 sthen Exp $
 
 COMMENT =		hack to explicitly set up and tear down fixtures
 
@@ -10,7 +10,7 @@ REVISION =		0
 CATEGORIES =		devel
 
 # Public Domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

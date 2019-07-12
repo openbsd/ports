@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/04/16 20:19:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:04 sthen Exp $
 
 COMMENT=	clone of the ex/vi text editor
 
@@ -9,7 +9,7 @@ CATEGORIES=	editors
 HOMEPAGE=	http://elvis.the-little-red-haired-girl.org/
 
 # Clarified Artistic License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 

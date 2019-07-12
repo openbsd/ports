@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/20 20:52:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:10 sthen Exp $
 
 COMMENT=		HP48sx emulator
 
@@ -9,7 +9,7 @@ REVISION=		0
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext c curses readline util
 

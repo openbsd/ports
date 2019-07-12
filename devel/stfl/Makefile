@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/17 16:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:02 sthen Exp $
 
 COMMENT=	Structured Terminal Forms Language/Library
 
@@ -12,7 +12,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://www.clifford.at/stfl/
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += curses iconv pthread
 

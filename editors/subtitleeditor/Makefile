@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2018/06/29 22:16:12 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2019/07/12 20:46:06 sthen Exp $
 
 COMMENT=		GTK+ subtitles editor
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=  subtitleeditor 0.0     # .0.0
 HOMEPAGE=		http://kitone.github.io/subtitleeditor/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:59 sthen Exp $
 
 COMMENT =		LALR(1) parser generator for ruby
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/tenderlove/racc
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

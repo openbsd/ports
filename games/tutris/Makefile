@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:46:25 sthen Exp $
 
 COMMENT=	graphical tetris clone
 DISTNAME=	Tutris-1.0.1
@@ -7,7 +7,7 @@ REVISION =	4
 CATEGORIES=	games x11
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	SDL X11 Xext c m pthread ${COMPILER_LIBCXX} usbhid xcb \
 		SDL_image

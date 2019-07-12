@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/24 16:26:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:27 sthen Exp $
 
 COMMENT =		an XBill Modification
 GH_ACCOUNT =		Xylemon
@@ -9,7 +9,7 @@ CATEGORIES =		games x11
 HOMEPAGE =		https://github.com/Xylemon/xlennart
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SM X11 Xaw Xmu Xpm Xt c
 

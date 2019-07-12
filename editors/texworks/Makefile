@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/06/19 19:45:59 kili Exp $
+# $OpenBSD: Makefile,v 1.49 2019/07/12 20:46:06 sthen Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -25,7 +25,7 @@ HOMEPAGE =		http://www.tug.org/texworks/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python \
 			lang/lua \

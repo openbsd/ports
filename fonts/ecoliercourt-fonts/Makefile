@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/11/04 15:53:59 rpe Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:11 sthen Exp $
 
 COMMENT=	dip pen style TTF fonts
 
@@ -11,7 +11,7 @@ REVISION=	2
 CATEGORIES=	fonts x11 education
 
 # Open Font License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://distfiles.bsdfrog.org/
 

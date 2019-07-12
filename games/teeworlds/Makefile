@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/04/16 20:19:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:46:25 sthen Exp $
 
 # Crashes on strict-alignment archs, see: src/base/system.c:164
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
@@ -20,7 +20,7 @@ MASTER_SITES=	https://downloads.teeworlds.com/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} bam-${BAM_VERSION}${EXTRACT_SUFX}
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	GL GLU SDL X11 c freetype m pthread ${COMPILER_LIBCXX} wavpack z
 

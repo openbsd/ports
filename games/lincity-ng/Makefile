@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/05/20 22:15:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:46:20 sthen Exp $
 
 COMMENT=	city simulation game
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://github.com/lincity-ng/lincity-ng
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lincity-ng.berlios/}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	GL SDL X11 c iconv intl m pthread ${COMPILER_LIBCXX} xcb z \
 		SDL_gfx SDL_image SDL_mixer SDL_ttf physfs xml2

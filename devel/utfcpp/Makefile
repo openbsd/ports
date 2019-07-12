@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/10/29 10:35:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:03 sthen Exp $
 
 COMMENT =		simple, portable library for handling UTF-8 strings
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://utfcpp.sourceforge.net/
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=utfcpp/}
 EXTRACT_SUFX =		.zip

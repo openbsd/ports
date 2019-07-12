@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:46:28 sthen Exp $
 
 COMMENT=	X11 version of the popular board game
 
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tar.bz2
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/educational_games/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c \
 		xcb z bz2>=10

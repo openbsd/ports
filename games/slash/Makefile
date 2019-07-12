@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/05/17 16:19:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2019/07/12 20:46:24 sthen Exp $
 
 COMMENT =	dungeon explorin', hackin' game, but harder than nethack
 
@@ -17,7 +17,7 @@ PATCHFILES =	nh-3.2.2-3.2.3.diff
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 #	GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses
 

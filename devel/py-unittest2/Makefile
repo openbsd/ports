@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/01/08 13:03:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:55 sthen Exp $
 
 COMMENT =		backport of new features added to unittest
 
@@ -11,7 +11,7 @@ REVISION =		1
 MAINTAINER =		frantisek holop <minusf@obiit.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

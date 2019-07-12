@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/12/05 20:19:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:26 sthen Exp $
 
 COMMENT =		Hexen II: Hammer of Thyrion
 
@@ -18,7 +18,7 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=uhexen2/}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS =		devel/nasm

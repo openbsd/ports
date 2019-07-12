@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/18 00:18:19 danj Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:55 sthen Exp $
 
 COMMENT =		asynchronous networking Python framework
 
@@ -14,7 +14,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://twistedmatrix.com/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		${MODPY_WANTLIB}
 WANTLIB +=		pthread

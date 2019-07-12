@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/10/31 16:54:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:45:52 sthen Exp $
 
 COMMENT=		RCS parsing library for Python
 
@@ -12,7 +12,7 @@ PKGNAME=		py-${DISTNAME}
 CATEGORIES=     	devel
 
 # AGPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=		${MODPY_WANTLIB} pthread
 

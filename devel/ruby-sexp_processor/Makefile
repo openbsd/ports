@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/26 23:55:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:00 sthen Exp $
 
 COMMENT =	sexp helper library for parsetree
 
@@ -7,7 +7,7 @@ REVISION =	0
 CATEGORIES =	devel
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 

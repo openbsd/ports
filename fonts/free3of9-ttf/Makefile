@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/09/26 08:35:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:11 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -12,7 +12,7 @@ CATEGORIES=	fonts x11
 HOMEPAGE=	http://www.squaregear.net/fonts/free3of9.shtml
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://www.squaregear.net/fonts/
 

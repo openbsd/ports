@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/15 12:04:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:52 sthen Exp $
 
 # !!! do not update blindly: sysutils/aws-shell requires a specific version
 PORTROACH=		ignore:1
@@ -17,7 +17,7 @@ HOMEPAGE=		https://github.com/jonathanslenders/python-prompt-toolkit
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

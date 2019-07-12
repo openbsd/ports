@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/06/27 21:03:40 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:01 sthen Exp $
 
 COMMENT=	SPE -- Stani's Python Editor
 
@@ -11,7 +11,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://pythonide.stani.be/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=python.berlios/}
 

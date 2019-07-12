@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/20 22:15:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:26 sthen Exp $
 
 COMMENT =	free J-RPG game
 CATEGORIES =	games x11
@@ -17,7 +17,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # Art/music a variety of CC and GPL.
 # Fonts are OFL 1.1
 # For specific details, see the LICENSES file.
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU ICE SDL SDL_image SDL_ttf SM X11 Xext c iconv intl m
 WANTLIB += ogg openal png pthread ${COMPILER_LIBCXX} vorbis vorbisfile

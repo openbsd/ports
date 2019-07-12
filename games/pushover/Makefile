@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/20 22:15:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:23 sthen Exp $
 
 COMMENT =		puzzle game featuring dominoes
 
@@ -10,7 +10,7 @@ CATEGORIES =		games
 HOMEPAGE =		http://pushover.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += FLAC SDL SDL_mixer SDL_ttf c freetype iconv intl m mikmod ogg
 WANTLIB += png pthread smpeg sndio ${COMPILER_LIBCXX} usbhid vorbis vorbisfile z

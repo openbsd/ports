@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/19 13:51:02 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:49 sthen Exp $
 
 COMMENT =	framework to parse and edit binary files
 
@@ -10,7 +10,7 @@ REVISION = 	0
 CATEGORIES =	devel
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/01/19 19:44:47 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:03 sthen Exp $
 
 COMMENT =	very basic terminfo library
 VERSION =	1.2.0
@@ -13,7 +13,7 @@ SHARED_LIBS +=	unibilium	0.0 # 3.0
 CATEGORIES =	devel
 
 # LGPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAKE_FLAGS =	PREFIX=${PREFIX} \
 		MANDIR=${PREFIX}/man

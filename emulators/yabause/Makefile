@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/27 21:03:43 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:10 sthen Exp $
 
 COMMENT =	Sega Saturn emulator
 
@@ -9,7 +9,7 @@ CATEGORIES =	emulators games
 HOMEPAGE =	http://yabause.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  GL GLU ICE SDL SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm atk-1.0

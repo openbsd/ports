@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/08 13:17:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:48 sthen Exp $
 
 COMMENT =		mix and max objects
 
@@ -11,7 +11,7 @@ CATEGORIES =		devel
 
 
 # PSF
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 EXTRACT_SUFX =		.zip

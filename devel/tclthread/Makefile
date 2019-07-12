@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/12/25 04:35:29 stu Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:02 sthen Exp $
 
 COMMENT =		thread extension for Tcl
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://tcl.sourceforge.net/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 MODULES =		lang/tcl

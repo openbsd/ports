@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/28 20:51:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:54 sthen Exp $
 
 COMMENT=		pure Python implementation of an SMM manager
 
@@ -9,7 +9,7 @@ CATEGORIES=		devel
 REVISION=		0
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:36 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:48 sthen Exp $
 
 COMMENT =		python package that provides useful locks
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/harlowja/fasteners
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

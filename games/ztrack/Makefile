@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/20 20:52:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:28 sthen Exp $
 
 COMMENT=		ncurses based pseudo-3D driving game
 
@@ -7,7 +7,7 @@ CATEGORIES=		games
 REVISION=		0
 
 # Public Domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 

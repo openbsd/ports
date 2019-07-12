@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/10/11 19:54:46 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:00 sthen Exp $
 
 COMMENT =	Ruby parser written in pure Ruby
 
@@ -7,7 +7,7 @@ REVISION =	1
 CATEGORIES =	devel
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 

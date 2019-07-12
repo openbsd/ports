@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/03/31 09:45:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:12 sthen Exp $
 
 COMMENT=	Baekmuk Korean truetype fonts
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://kldp.net/projects/baekmuk
 MAINTAINER=	Jung Lee <moorang@gmail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://kldp.net/frs/download.php/1429/
 

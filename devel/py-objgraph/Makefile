@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/15 12:04:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:51 sthen Exp $
 
 COMMENT =		draw Python object reference graphs
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://mg.pov.lt/objgraph/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVORS =		python3
 FLAVOR ?=

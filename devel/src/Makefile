@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/15 12:04:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:46:02 sthen Exp $
 
 COMMENT =		Simple Revision Control
 
@@ -10,7 +10,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://www.catb.org/~esr/src/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:46:27 sthen Exp $
 
 COMMENT=	Mahjongg game for X11
 
@@ -8,7 +8,7 @@ REVISION =	3
 CATEGORIES=	games
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c xcb
 

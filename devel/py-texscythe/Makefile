@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/15 12:04:37 kmos Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:55 sthen Exp $
 
 COMMENT =		TeX Live texmf subsetter tool and Python library.
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/vext01/texscythe
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:58 sthen Exp $
 
 COMMENT =		atomic reference implementation for Ruby
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://github.com/headius/ruby-atomic
 
 # Apache2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

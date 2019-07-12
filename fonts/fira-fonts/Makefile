@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/16 03:33:09 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:11 sthen Exp $
 
 COMMENT =		Firefox OS typeface
 
@@ -13,7 +13,7 @@ CATEGORIES =		fonts x11
 HOMEPAGE =		https://carrois.com/typefaces/FiraSans/
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 NO_BUILD =		Yes
 NO_TEST =		Yes

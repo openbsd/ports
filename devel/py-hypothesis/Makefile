@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/13 18:06:43 danj Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:45:49 sthen Exp $
 
 COMMENT =		library for property based testing
 
@@ -11,7 +11,7 @@ REVISION =		0
 HOMEPAGE =		https://hypothesis.works/
 
 # MPL 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:16 sthen Exp $
 
 COMMENT =	clone of arcade game 'Defender' with a Linux theme
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://www.newbreedsoftware.com/defendguin/
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	SDL c m pthread SDL_mixer
 

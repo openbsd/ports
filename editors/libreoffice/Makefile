@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.211 2019/07/05 07:17:56 robert Exp $
+# $OpenBSD: Makefile,v 1.212 2019/07/12 20:46:05 sthen Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -131,7 +131,7 @@ DISTFILES += Amiri-0.111.zip:0
 
 DIST_SUBDIR=	libreoffice
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES=		-main -java -kde
 

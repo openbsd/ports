@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2018/06/12 23:45:43 stu Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:46:02 sthen Exp $
 
 COMMENT =	Tcl Standard Library
 
@@ -8,7 +8,7 @@ HOMEPAGE =	http://sourceforge.net/projects/tcllib/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD style
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://chiselapp.com/user/stwo/repository/tarballia/uv/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:23 sthen Exp $
 
 COMMENT=	drive a toy wood engine
 
@@ -9,7 +9,7 @@ REVISION=	1
 HOMEPAGE=	http://ri-li.sourceforge.net
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += SDL SDL_mixer c m pthread ${COMPILER_LIBCXX}
 

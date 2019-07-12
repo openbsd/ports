@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/25 15:49:40 bcallah Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:16 sthen Exp $
 
 ONLY_FOR_ARCHS =	${CXX11_ARCHS}
 
@@ -16,7 +16,7 @@ HOMEPAGE =	http://corsixth.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_mixer avcodec avformat
 WANTLIB += avutil c freetype m swresample swscale ${MODLUA_WANTLIB}

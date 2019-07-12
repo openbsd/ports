@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:55 sthen Exp $
 
 COMMENT =		use version control tags to discover version numbers
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/habnabit/vcversioner
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/17 16:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:16 sthen Exp $
 
 COMMENT =	curses-based solitaire collection suite
 DISTNAME =	cpat-1.4.1
@@ -8,7 +8,7 @@ REVISION =	0
 HOMEPAGE =	http://cpat.sourceforge.net/
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses
 

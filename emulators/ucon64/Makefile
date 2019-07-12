@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/07/24 13:09:47 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:10 sthen Exp $
 
 COMMENT =	swiss army knife for video game console emulators
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://ucon64.sourceforge.net/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c m z
 

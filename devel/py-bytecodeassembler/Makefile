@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/04/29 14:47:41 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:46 sthen Exp $
 
 COMMENT =		python bytecode assembler
 
@@ -11,7 +11,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://peak.telecommunity.com/DevCenter/BytecodeAssembler
 
 # PSF
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 EXTRACT_SUFX =		.zip

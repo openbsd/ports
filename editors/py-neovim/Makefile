@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/15 12:04:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:06 sthen Exp $
 
 COMMENT =	Python plugin support for Neovim
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://github.com/neovim/python-client
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # Apache-2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

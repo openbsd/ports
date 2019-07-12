@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2018/09/04 08:03:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:46:11 sthen Exp $
 
 COMMENT=		humanist sans-serif font family
 
@@ -10,7 +10,7 @@ CATEGORIES=		fonts x11
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		devel/meson \
 			x11/gnome

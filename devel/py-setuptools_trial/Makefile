@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:53 sthen Exp $
 
 COMMENT=		setuptools plugin for unit tests with trial
 
@@ -10,7 +10,7 @@ REVISION=		1
 CATEGORIES=		devel
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

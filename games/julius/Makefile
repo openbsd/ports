@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/06/24 15:00:01 bcallah Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:20 sthen Exp $
 
 V =		1.1.0
 COMMENT =	open source re-implementation of Caesar III game engine
@@ -10,7 +10,7 @@ HOMEPAGE =	https://github.com/bvschaik/julius
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # AGPLv3 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 SDL2_mixer c m pthread
 

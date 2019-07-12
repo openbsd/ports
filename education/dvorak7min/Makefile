@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/20 20:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:07 sthen Exp $
 
 COMMENT=	typing tutor for dvorak keyboards
 
@@ -7,7 +7,7 @@ REVISION=	2
 CATEGORIES=	education
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 

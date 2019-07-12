@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/26 23:55:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:59 sthen Exp $
 
 COMMENT =	very simple RubyGems sandbox
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://github.com/jbarnette/isolate
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # MIT License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem

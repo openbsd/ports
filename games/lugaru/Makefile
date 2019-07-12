@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/29 22:16:14 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:20 sthen Exp $
 
 COMMENT =	third-person rabbit combat action game
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://osslugaru.gitlab.io/
 MAINTAINER = 	Kaashif Hymabaccus <kaashif@kaashif.co.uk>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU SDL2 c jpeg m ogg openal png pthread vorbisfile
 WANTLIB += z ${COMPILER_LIBCXX}

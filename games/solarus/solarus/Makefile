@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/04/01 05:54:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:46:24 sthen Exp $
 
 V =		1.6.0
 COMMENT =	open-source Zelda-like 2D game engine
@@ -10,7 +10,7 @@ SHARED_LIBS +=	solarus                   0.0 # 1.5
 HOMEPAGE =	http://www.solarus-games.org/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += Qt5Core Qt5Gui Qt5Widgets SDL2 SDL2_image SDL2_ttf
 WANTLIB += c luajit-5.1 m modplug ogg openal physfs pthread vorbis

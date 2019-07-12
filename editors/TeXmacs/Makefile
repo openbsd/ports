@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/12 15:43:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:04 sthen Exp $
 
 COMMENT=	wysiwyw (what you see is what you want) editing platform
 
@@ -13,7 +13,7 @@ MAINTAINER =	Nam Nguyen <namn@berkeley.edu>
 MASTER_SITES=	http://texmacs.org/Download/ftp/tmftp/source/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets
 WANTLIB += c execinfo freetype gmp guile jpeg ltdl m png sqlite3

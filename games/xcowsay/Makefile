@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/11/01 21:15:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:27 sthen Exp $
 
 COMMENT =		displays a cute cow and message on your desktop
 DISTNAME =		xcowsay-1.4
@@ -7,7 +7,7 @@ CATEGORIES =		games
 HOMEPAGE =		http://www.doof.me.uk/xcowsay/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype

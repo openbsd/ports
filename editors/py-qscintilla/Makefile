@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/04/28 20:51:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:06 sthen Exp $
 
 COMMENT =	Python binding for the Scintilla source code editor
 
@@ -11,7 +11,7 @@ REVISION =	3
 HOMEPAGE =	http://www.riverbankcomputing.com/software/qscintilla/
 
 # GPLv2/GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =  ${MASTER_SITE_SOURCEFORGE:=pyqt/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:47 sthen Exp $
 
 COMMENT =	data type fabric
 
@@ -13,7 +13,7 @@ CATEGORIES =	devel
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # Apache v2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes

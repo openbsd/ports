@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2016/03/05 17:41:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:46:27 sthen Exp $
 
 COMMENT=	Athena port of xminesweeper
 
@@ -8,7 +8,7 @@ REVISION=	5
 CATEGORIES=	games
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xau Xaw3d Xdmcp Xext Xmu Xpm Xt c
 

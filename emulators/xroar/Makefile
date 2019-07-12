@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/20 19:38:55 juanfra Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:10 sthen Exp $
 
 COMMENT =		Dragon and CoCo emulator
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://www.6809.org.uk/xroar/
 MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU ICE SDL2 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xmu Xt Xrandr Xrender atk-1.0 c cairo fontconfig freetype

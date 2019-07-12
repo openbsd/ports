@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/06 17:01:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:50 sthen Exp $
 
 COMMENT=		template language for XML based vocabularies
 
@@ -12,7 +12,7 @@ CATEGORIES=		devel
 HOMEPAGE=		http://www.kid-templating.org/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://www.kid-templating.org/dist/${VERSION}/
 

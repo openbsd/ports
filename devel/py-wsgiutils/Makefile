@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/06 17:01:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:56 sthen Exp $
 
 COMMENT =		libraries for WSGI development
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel textproc www
 HOMEPAGE =		http://www.owlfish.com/software/wsgiutils/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://www.owlfish.com/software/wsgiutils/downloads/
 

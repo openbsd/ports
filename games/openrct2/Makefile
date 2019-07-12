@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/09/04 12:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:22 sthen Exp $
 
 # "#error Unknown endianess!" in src/openrct2/common.h
 NOT_FOR_ARCHS =	${BE_ARCHS}
@@ -13,7 +13,7 @@ HOMEPAGE =	https://openrct2.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL SDL2 bz2 c crypto curl fontconfig
 WANTLIB += freetype iconv jansson m png speexdsp ssl z zip

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/05/26 09:30:55 kirby Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:03 sthen Exp $
 
 COMMENT=	cross-platform makefile tool from TrollTech
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://sourceforge.net/projects/tmake/
 
 # Permission to use, copy, modify, and distribute
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://www.linklevel.net/distfiles/
 

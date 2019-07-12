@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/06/27 21:03:42 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:46:08 sthen Exp $
 
 USE_WXNEEDED =	Yes
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://desmume.org/
 MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += agg c m pthread ${LIBCXX} z GL GLU X11 Xcomposite
 WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender

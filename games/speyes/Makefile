@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/10/23 17:10:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:24 sthen Exp $
 
 COMMENT=		wm-dockapp; xeyes clone using South Park characters
 
@@ -9,7 +9,7 @@ CATEGORIES=		games x11 x11/windowmaker
 HOMEPAGE=		http://www.okb-1.org/speyes/speyes.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt c m \
 			xcb

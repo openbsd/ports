@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/12/07 18:54:36 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:46:27 sthen Exp $
 
 COMMENT=	dropping jewels game for X11
 
@@ -10,7 +10,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:S/contrib/R5contrib/}
 EXTRACT_SUFX=	.tar.z
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext c xcb
 

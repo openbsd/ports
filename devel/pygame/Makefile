@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/05/13 22:34:30 jca Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:45:56 sthen Exp $
 
 COMMENT=	set of Python modules designed for writing games
 
@@ -11,7 +11,7 @@ REVISION =	1
 HOMEPAGE=	https://www.pygame.org/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += SDL SDL_image SDL_mixer SDL_ttf X11 jpeg png pthread
 WANTLIB += freetype z ${MODPY_WANTLIB}

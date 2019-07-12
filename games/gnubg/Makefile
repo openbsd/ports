@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/20 22:15:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:18 sthen Exp $
 
 COMMENT =		GNU Backgammon
 V =			1.05.002
@@ -9,7 +9,7 @@ HOMEPAGE =		http://gnubg.org/
 REVISION =		6
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += GL GLU ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext

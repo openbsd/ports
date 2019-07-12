@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/20 22:15:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:25 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -18,7 +18,7 @@ HOMEPAGE =		http://sumwars.org/wiki/Main_Page
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3+ / CC-by-sa 3.0 for data
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += CEGUIBase-0 CEGUIOgreRenderer-0 OIS OgreMain OgreRTShaderSystem
 WANTLIB += OgreTerrain X11 Xrandr alut boost_chrono-mt boost_date_time-mt

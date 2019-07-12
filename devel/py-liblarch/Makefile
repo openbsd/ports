@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/05 13:31:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:50 sthen Exp $
 
 COMMENT=		python library to easily handle data structure
 
@@ -14,7 +14,7 @@ CATEGORIES=		devel
 HOMEPAGE=		https://wiki.gnome.org/Projects/liblarch
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

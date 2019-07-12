@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/08/16 19:59:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:57 sthen Exp $
 
 COMMENT=	python interface to libusb
 
@@ -12,7 +12,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://walac.github.io/pyusb/
 
 # BSD 3-clause
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pthread usb

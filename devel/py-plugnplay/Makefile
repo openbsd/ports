@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:52 sthen Exp $
 
 COMMENT =	a generic plug-in system for python
 
@@ -12,7 +12,7 @@ CATEGORIES =	devel
 HOMEPAGE =	https://github.com/daltonmatos/plugnplay
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes

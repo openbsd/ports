@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:57 sthen Exp $
 
 COMMENT =		C++ logging library
 DISTNAME =		rlog-1.4
@@ -8,7 +8,7 @@ HOMEPAGE =		http://www.arg0.net/rlog
 REVISION =		2
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		m pthread ${COMPILER_LIBCXX}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/09/09 10:27:46 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:59 sthen Exp $
 
 COMMENT =		basic APIs for localization
 
@@ -6,7 +6,7 @@ DISTNAME =		locale-2.1.2
 CATEGORIES =		devel
 
 # Ruby, LGPLv3+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES =		lang/ruby
 

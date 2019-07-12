@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/11/21 21:18:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:46:10 sthen Exp $
 
 COMMENT=	UAE amiga emulator
 DISTNAME=	uae-0.8.25
@@ -7,7 +7,7 @@ CATEGORIES=	emulators x11
 
 HOMEPAGE=	http://uae.coresystems.de/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=  ICE SDL SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB+= Xfixes Xi Xinerama Xrandr Xrender Xxf86dga Xxf86vm atk-1.0 c

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/01/04 03:15:59 bcallah Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:06 sthen Exp $
 
 COMMENT =	powerful and user-friendly console text editor
 DISTNAME =	moe-1.10
@@ -9,7 +9,7 @@ HOMEPAGE =	http://www.gnu.org/software/moe/moe.html
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c curses m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/20 21:59:37 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:12 sthen Exp $
 
 COMMENT=	extra japanese fonts
 
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=intlfonts/}
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 FONTDIR=${PREFIX}/share/fonts/ja
 

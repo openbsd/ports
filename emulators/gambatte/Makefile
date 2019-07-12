@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/05 11:52:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:08 sthen Exp $
 
 COMMENT-main =		highly accurate Game Boy Color emulator
 COMMENT-qt =		highly accurate Game Boy Color emulator with GUI
@@ -22,7 +22,7 @@ HOMEPAGE =		http://gambatte.sourceforge.net/
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 cWANTLIB =	c m pthread ${COMPILER_LIBCXX} z
 WANTLIB-main +=	${cWANTLIB} SDL

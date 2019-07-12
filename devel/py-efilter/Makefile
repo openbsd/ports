@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/04 19:57:52 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:47 sthen Exp $
 
 COMMENT =	EFILTER query language
 
@@ -17,7 +17,7 @@ HOMEPAGE =	https://github.com/google/dotty/
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # Apache v2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

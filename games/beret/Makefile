@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/08/25 13:18:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:14 sthen Exp $
 
 COMMENT=	2D puzzle-platformer game
 DISTNAME=	beret-1.2.1pl1
@@ -9,7 +9,7 @@ HOMEPAGE=	http://kiwisauce.com/beret/
 
 # LGPLv3
 # AveriaSans-regular.ttf: SIL Open Font License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m SDL SDL_image SDL_mixer
 WANTLIB += SDL_ttf pthread

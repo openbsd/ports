@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/28 20:51:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:45 sthen Exp $
 
 COMMENT =	fast, simple object-to-object and broadcast signaling
 
@@ -12,7 +12,7 @@ CATEGORIES =	devel
 HOMEPAGE =	http://pythonhosted.org/blinker/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 

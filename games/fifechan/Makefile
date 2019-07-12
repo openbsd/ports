@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:17 sthen Exp $
 
 COMMENT =	graphical user interface library for games
 
@@ -18,7 +18,7 @@ CATEGORIES =	games
 HOMEPAGE =	https://fifengine.github.io/fifechan/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL GLU Irrlicht SDL2 SDL2_image alleg m

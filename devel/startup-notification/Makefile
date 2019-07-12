@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/03/29 19:43:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:46:02 sthen Exp $
 
 COMMENT=		library for tracking application startup
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=  startup-notification-1 2.0      # .0.0
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/startup-notification
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 X11-xcb Xau Xdmcp xcb xcb-util
 

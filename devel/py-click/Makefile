@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/04/28 20:51:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:46 sthen Exp $
 
 COMMENT=	command line library for Python
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://click.pocoo.org/6/
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_PI =	Yes
 

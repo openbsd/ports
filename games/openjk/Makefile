@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/09 18:22:18 bcallah Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:22 sthen Exp $
 
 # Avoid future EPOCH bumps.
 COMMENT =	open source reimplementation of Jedi Academy game
@@ -13,7 +13,7 @@ HOMEPAGE =	https://openjk.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL2 c jpeg m png z
 

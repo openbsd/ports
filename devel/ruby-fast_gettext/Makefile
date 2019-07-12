@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/09/09 10:35:50 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:58 sthen Exp $
 
 COMMENT =		fast implementation of gettext
 
@@ -8,7 +8,7 @@ HOMEPAGE =	https://github.com/grosser/fast_gettext
 MAINTAINER =    Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT, RUBY
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES=		lang/ruby
 

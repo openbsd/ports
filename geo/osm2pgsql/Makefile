@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/04/16 20:13:09 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:29 sthen Exp $
 
 COMMENT =		OSM data to PostgreSQL converter
 
@@ -12,7 +12,7 @@ CATEGORIES =		geo databases
 HOMEPAGE =		http://wiki.openstreetmap.org/wiki/Osm2pgsql
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 USE_GMAKE =		Yes
 

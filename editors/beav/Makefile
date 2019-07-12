@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/05/20 20:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:46:04 sthen Exp $
 
 COMMENT=	binary editor and viewer
 
@@ -12,7 +12,7 @@ REVISION =	3
 CATEGORIES=	editors
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses
 

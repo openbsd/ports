@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:25 sthen Exp $
 
 COMMENT =	Tetris and Pong played simultaneously on one playing field
 DISTNAME =	tong-1.3
@@ -8,7 +8,7 @@ REVISION =	2
 HOMEPAGE =	http://www.nongnu.org/tong/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL SDL_image SDL_mixer c m pthread ${COMPILER_LIBCXX}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/15 17:22:15 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:05 sthen Exp $
 
 COMMENT =	lightweight Qt5 plain-text editor
 PKGNAME =	featherpad-${GH_TAGNAME:S/^V//}
@@ -11,7 +11,7 @@ GH_TAGNAME =	V0.10.0
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras X11 c m

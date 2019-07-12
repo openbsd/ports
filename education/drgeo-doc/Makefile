@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:06:03 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:07 sthen Exp $
 
 COMMENT=	interactive geometry program, documentation
 
@@ -9,7 +9,7 @@ CATEGORIES=	education math
 HOMEPAGE=	http://www.ofset.org/drgeo/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://documentation.ofset.org/drgeo/
 
