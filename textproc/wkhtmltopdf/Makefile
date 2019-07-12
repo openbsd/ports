@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/11/21 22:18:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:50:16 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 USE_WXNEEDED =		Yes
@@ -25,7 +25,7 @@ HOMEPAGE =		http://wkhtmltopdf.org/
 MAINTAINER =		Frank Groeneveld <frank@frankgroeneveld.nl>
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xext Xrender c fontconfig freetype iconv jpeg m
 WANTLIB += png pthread ${COMPILER_LIBCXX} z

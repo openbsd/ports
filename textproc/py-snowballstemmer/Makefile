@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/13 19:03:53 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:13 sthen Exp $
 
 COMMENT =		snowball stemming library collection for Python
 
@@ -10,7 +10,7 @@ REVISION =		2
 CATEGORIES =		textproc
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

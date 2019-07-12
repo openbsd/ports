@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/20 16:59:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:05 sthen Exp $
 
 COMMENT =	fast and correct UTF-8 IO
 
@@ -8,7 +8,7 @@ REVISION =	0
 CATEGORIES =	textproc
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c perl
 

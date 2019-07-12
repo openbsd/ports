@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:00 sthen Exp $
 
 COMMENT =		light RDF manipulation with LADSPA plugin support
 
@@ -12,7 +12,7 @@ SHARED_LIBS =		lrdf	1.0	# 0.0
 HOMEPAGE =		https://github.com/swh/LRDF/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  crypto curl iconv intl lzma m nghttp2 pthread raptor2 ssl
 WANTLIB += xml2 xslt yajl z

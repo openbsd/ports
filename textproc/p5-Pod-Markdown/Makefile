@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/08/10 21:02:31 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:05 sthen Exp $
 
 COMMENT =	convert POD to Markdown
 
@@ -9,7 +9,7 @@ CATEGORIES =	textproc
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl 5
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 TEST_DEPENDS =		devel/p5-Test-Differences \

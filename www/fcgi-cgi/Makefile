@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/19 11:26:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:50:18 sthen Exp $
 
 COMMENT=	wrapper to run CGI applications via FastCGI
 
@@ -10,7 +10,7 @@ REVISION=	2
 HOMEPAGE=	http://redmine.lighttpd.net/projects/fcgi-cgi/wiki
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c ev glib-2.0 intl
 

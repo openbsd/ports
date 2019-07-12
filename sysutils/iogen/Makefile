@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/03/11 19:43:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:49:44 sthen Exp $
 
 COMMENT=	i/o generator
 
@@ -13,7 +13,7 @@ CATEGORIES=	sysutils
 HOMEPAGE=	https://github.com/conformal/iogen
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

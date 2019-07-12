@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:09 sthen Exp $
 
 COMMENT=		creates and XML Stream connection and parses return data
 
@@ -9,7 +9,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		security/p5-Authen-SASL \
 			security/p5-IO-Socket-SSL

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/17 16:19:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:49:51 sthen Exp $
 
 COMMENT=		execute a command on many hosts in parallel
 
@@ -12,7 +12,7 @@ REVISION=		0
 # XXX N.B. if adding patches: redistributing modified versions
 # is not permitted.  See LICENSE, it has an important restriction
 # on top of what at first glance looks like a typical BSD license.
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses pcre
 

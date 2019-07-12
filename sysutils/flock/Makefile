@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/02 07:33:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:49:42 sthen Exp $
 
 COMMENT=	flock(2) manager for shell scripts
 
@@ -17,7 +17,7 @@ MASTER_SITES=	http://blade2k.humppa.hu/distfiles/
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/03/09 16:51:59 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:35 sthen Exp $
 
 COMMENT =	vivisect analysis and debugging framework
 
@@ -13,7 +13,7 @@ GH_COMMIT =	7be4037b1cecc4551b397f840405a1fc606f9b53
 CATEGORIES =	security devel
 
 # Apache v2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 

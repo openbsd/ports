@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2017/04/30 21:36:05 phessler Exp $
+# $OpenBSD: Makefile,v 1.40 2019/07/12 20:50:17 sthen Exp $
 
 COMMENT=	convert memos written in XML to the RFC format
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES =		${MASTER_SITE_PYPI:=x/xml2rfc/}
 

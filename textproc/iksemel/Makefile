@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/05/19 19:13:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:50:00 sthen Exp $
 
 COMMENT=		XML parser designed for Jabber applications
 DISTNAME=		iksemel-1.4
@@ -11,7 +11,7 @@ CATEGORIES=		textproc net
 HOMEPAGE=		https://github.com/meduketto/iksemel
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c ffi gmp gnutls hogweed iconv idn2 intl nettle p11-kit
 WANTLIB += pthread tasn1 unistring z

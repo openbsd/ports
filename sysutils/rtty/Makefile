@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:41:32 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:50 sthen Exp $
 
 COMMENT=	multiuser tip/cu replacement with logging
 
@@ -7,7 +7,7 @@ REVISION =	0
 CATEGORIES=	sysutils
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c 
 

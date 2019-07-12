@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:57:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:02 sthen Exp $
 
 COMMENT=	text macro/markup/template language
 
@@ -13,6 +13,6 @@ CATEGORIES=	textproc
 CPAN_AUTHOR=	BOBG
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

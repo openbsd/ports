@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:52 sthen Exp $
 
 COMMENT=		small and secure replacement for syslogd
 
@@ -9,7 +9,7 @@ HOMEPAGE=		http://www.smarden.org/socklog/
 
 MAINTAINER=		Christian Rueger <cr+openbsd@rueger-net.de>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		${HOMEPAGE}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/09/13 18:52:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:59 sthen Exp $
 
 COMMENT=		high performance full-text search system
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://fallabs.com/hyperestraier/index.html
 MAINTAINER=		Jeremy Evans <jeremy@openbsd.org>
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hyperestraier/}
 

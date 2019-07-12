@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/12/12 13:41:21 helg Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:54 sthen Exp $
 
 COMMENT=	mount SMB shares from userland via FUSE
 
@@ -10,7 +10,7 @@ CATEGORIES=	sysutils
 HOMEPAGE=	http://ametros.net/code.html
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c fuse glib-2.0 iconv intl pthread smbclient xml2
 

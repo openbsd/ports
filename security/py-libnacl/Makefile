@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/28 20:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:34 sthen Exp $
 
 COMMENT=		python bindings for libsodium/tweetnacl based on ctypes
 
@@ -14,7 +14,7 @@ HOMEPAGE=		https://libnacl.readthedocs.org/en/latest/
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

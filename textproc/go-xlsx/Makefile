@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/24 16:26:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:58 sthen Exp $
 
 PORTROACH =		ignore:1
 
@@ -8,7 +8,7 @@ CATEGORIES =		textproc converters
 REVISION =		0
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 GH_ACCOUNT =		tealeg
 GH_PROJECT =		xlsx

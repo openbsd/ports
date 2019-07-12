@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/07/05 11:52:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:49:55 sthen Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -17,7 +17,7 @@ HOMEPAGE=	http://iaxclient.sourceforge.net/
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES=	-main -tcl
 MODULES=	x11/tk

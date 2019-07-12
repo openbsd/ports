@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/24 16:26:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:17 sthen Exp $
 
 COMMENT =		convert XLSX files to CSV
 DISTNAME =		xlsx2csv-20150318
@@ -6,7 +6,7 @@ CATEGORIES =		textproc converters
 REVISION =		1
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 BUILD_DEPENDS =		textproc/go-xlsx
 
 GH_ACCOUNT =		tealeg

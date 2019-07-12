@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/08/02 16:47:12 feinerer Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:50:17 sthen Exp $
 
 COMMENT =	command line XML toolkit
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://xmlstar.sourceforge.net/
 MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c exslt xml2 xslt
 

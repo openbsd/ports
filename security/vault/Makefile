@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/31 14:19:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT=		secure secret storage
 
@@ -21,7 +21,7 @@ HOMEPAGE=		https://www.vaultproject.io/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 

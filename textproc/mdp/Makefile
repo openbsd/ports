@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/06/03 05:44:29 rpointel Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:01 sthen Exp $
 
 COMMENT =	command-line based markdown presentation tool
 
@@ -9,7 +9,7 @@ GH_TAGNAME =	1.0.12
 CATEGORIES =	textproc
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c curses
 

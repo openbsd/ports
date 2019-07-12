@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/20 22:15:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:50:16 sthen Exp $
 
 COMMENT=	utility to turn simply formatted text into markup
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://txt2tags.org/
 MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=txt2tags/}
 EXTRACT_SUFX=	.tgz

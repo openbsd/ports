@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:40 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:34 sthen Exp $
 
 COMMENT =	Digital Forensics Windows Registry (dfWinReg)
 
@@ -15,7 +15,7 @@ MASTER_SITES =	https://github.com/log2timeline/dfwinreg/releases/download/${MODP
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # Apachev2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/04/05 11:45:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:49:51 sthen Exp $
 
 COMMENT =		common testing tools used in the Salt Stack projects
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://saltstack.org/
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2019/06/16 21:08:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.100 2019/07/12 20:50:17 sthen Exp $
 
 COMMENT=		apache HTTP server
 
@@ -12,7 +12,7 @@ CATEGORIES=		www net
 HOMEPAGE=		https://httpd.apache.org/
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += apr-1 aprutil-1 brotlicommon brotlienc c crypto curl
 WANTLIB += db expat iconv jansson lzma m nghttp2 pcre pthread ssl

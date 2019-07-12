@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/20 22:15:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:12 sthen Exp $
 
 COMMENT=	Python library to manipulate gettext files
 
@@ -10,7 +10,7 @@ REVISION =	0
 CATEGORIES=	textproc devel
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =	lang/python
 MODPY_PI=	Yes

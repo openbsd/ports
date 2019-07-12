@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/06/03 15:55:16 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:53 sthen Exp $
 
 COMMENT =	truncate or extend the length of files
 DISTNAME =	truncate-5.2.1
@@ -8,7 +8,7 @@ HOMEPAGE =	https://www.dragonflybsd.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

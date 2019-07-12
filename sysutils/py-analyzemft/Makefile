@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/18 16:53:03 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:49 sthen Exp $
 
 COMMENT =	parse the MFT file from an NTFS filesystem
 
@@ -11,7 +11,7 @@ CATEGORIES =	sysutils security
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # Common Public License 1.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PI =	Yes

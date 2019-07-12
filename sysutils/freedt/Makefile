@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/01/11 19:27:10 rpe Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:43 sthen Exp $
 
 COMMENT=		reimplementation of Dan Bernstein's daemontools#'
 
@@ -9,7 +9,7 @@ REVISION=		2
 HOMEPAGE=		http://offog.org/code/freedt.html
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

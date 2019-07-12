@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/10/26 23:55:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:36 sthen Exp $
 
 COMMENT=	robust library for verifying and serving OpenID identities
 
@@ -8,7 +8,7 @@ REVISION =	0
 CATEGORIES=	security
 
 # Apache License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby
 

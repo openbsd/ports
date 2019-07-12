@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:18 sthen Exp $
 
 COMMENT=	filtering HTTP proxy server
 DISTNAME=	ffproxy-1.6
@@ -11,7 +11,7 @@ HOMEPAGE=	http://faith.eu.org/programs.html\#ffproxy
 MAINTAINER=	Johan Fredin <johan@spelaroll.se>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

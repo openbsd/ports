@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/09/29 10:52:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:11 sthen Exp $
 
 COMMENT =	HTML tree builder for ElementTree
 
@@ -12,7 +12,7 @@ CATEGORIES =	textproc
 HOMEPAGE =	http://effbot.org/zone/element-tidylib.htm
 
 # AGPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://effbot.org/media/downloads/
 

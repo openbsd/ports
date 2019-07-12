@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/11 23:51:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:52 sthen Exp $
 
 COMMENT=		calculates QBUS CSR and Vector assignments
 
@@ -13,7 +13,7 @@ MAKE_FLAGS=		CFLAGS='${CFLAGS}'
 
 # License: Public Domain
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c 
 
 WRKDIST=		${WRKDIR}

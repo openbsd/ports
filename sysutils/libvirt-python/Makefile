@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/10/15 19:14:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:49:45 sthen Exp $
 
 COMMENT =		libvirt virtualization API python bindings
 
@@ -11,7 +11,7 @@ CATEGORIES =		sysutils
 HOMEPAGE =		https://libvirt.org/python.html
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://libvirt.org/sources/python/ \
 			ftp://libvirt.org/libvirt/python/

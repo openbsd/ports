@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:16 sthen Exp $
 
 COMMENT=	universal charset detection library and tool
 
@@ -13,7 +13,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	https://www.freedesktop.org/wiki/Software/uchardet/
 
 # MPL 1.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 

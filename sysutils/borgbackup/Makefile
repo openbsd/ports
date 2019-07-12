@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/05/26 17:17:13 bket Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:49:40 sthen Exp $
 
 COMMENT =		deduplicating backup program
 
@@ -10,7 +10,7 @@ CATEGORIES =		sysutils
 MAINTAINER =		Bjorn Ketelaars <bket@openbsd.org>
 
 # BSD-3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

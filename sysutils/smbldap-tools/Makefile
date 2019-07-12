@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/11/01 08:23:06 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:52 sthen Exp $
 
 COMMENT=	tools for managing samba ldap
 
@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 HOMEPAGE=	http://gna.org/projects/smbldap-tools/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=smbldap-tools/}
 

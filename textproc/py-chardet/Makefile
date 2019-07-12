@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/13 19:03:53 danj Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:11 sthen Exp $
 
 COMMENT=		character encoding auto-detection in Python
 
@@ -12,7 +12,7 @@ CATEGORIES=		textproc
 HOMEPAGE=		https://github.com/chardet/chardet
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

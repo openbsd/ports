@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/19 19:13:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:50 sthen Exp $
 
 COMMENT =		c client library for the Riemann monitoring system
 
@@ -16,7 +16,7 @@ CATEGORIES =		sysutils
 HOMEPAGE =		https://github.com/algernon/riemann-c-client
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c ffi gmp gnutls hogweed iconv idn2 intl json-c nettle
 WANTLIB += p11-kit protobuf-c pthread tasn1 unistring z

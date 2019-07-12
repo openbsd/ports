@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/08/26 21:34:08 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:46 sthen Exp $
 
 COMMENT=	utility to test for memory faults
 
@@ -9,7 +9,7 @@ CATEGORIES=	sysutils
 HOMEPAGE=	http://pyropus.ca/software/memtester/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

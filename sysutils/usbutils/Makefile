@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/19 19:13:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:54 sthen Exp $
 
 COMMENT =		utility used to display information about USB devices
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://www.linux-usb.org
 MAINTAINER =		Martin Pieuchot <mpi@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://ftp.de.debian.org/debian/pool/main/u/usbutils/
 EXTRACT_SUFX =		.tar.xz

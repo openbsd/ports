@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/03/15 07:33:16 sebastia Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT=		HTML, XML, SAX and Reader parser
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://nokogiri.org/
 MAINTAINER =		Jeremy Evans <jeremy@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		exslt xml2 xslt gcrypt gpg-error
 LIB_DEPENDS=		textproc/libxslt

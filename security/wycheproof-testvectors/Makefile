@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/28 15:08:13 tb Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:38 sthen Exp $
 
 COMMENT =	test vectors from Project Wycheproof
 
@@ -15,7 +15,7 @@ CATEGORIES =	security devel
 MAINTAINER =	Theo Buehler <tb@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 NO_BUILD =		Yes
 NO_TEST =		Yes

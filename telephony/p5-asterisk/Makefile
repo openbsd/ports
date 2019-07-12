@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:55 sthen Exp $
 
 COMMENT=	collection of perl modules to be used with asterisk
 
@@ -12,7 +12,7 @@ PKG_ARCH=	*
 CPAN_AUTHOR=	JAMESGOL
 
 # artistic
-PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	perl
 MODCPAN_EXAMPLES=	Yes

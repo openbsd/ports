@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/05/20 22:15:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:49:43 sthen Exp $
 
 COMMENT=	GNU versions of grep pattern matching utilities
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://www.gnu.org/software/grep/grep.html
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=grep/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/06/11 00:38:36 kurt Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:51 sthen Exp $
 
 COMMENT=		job scheduler and runbook automation
 
@@ -12,7 +12,7 @@ CATEGORIES=		sysutils
 HOMEPAGE=		http://rundeck.org/
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://download.rundeck.org/jar/
 EXTRACT_SUFX=		.jar

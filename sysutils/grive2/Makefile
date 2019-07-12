@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:43 sthen Exp $
 
 COMMENT =	third-party client for Google Drive
 
@@ -17,7 +17,7 @@ GH_PROJECT =	grive2
 GH_COMMIT =	ae06eccb38b2fe250c9ddeac3e3973f80b8a0aa9
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += boost_filesystem-mt boost_program_options-mt boost_regex-mt
 WANTLIB += boost_system-mt boost_unit_test_framework-mt c curl

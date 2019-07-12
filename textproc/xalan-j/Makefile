@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/06/11 00:38:36 kurt Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:16 sthen Exp $
 
 COMMENT =		apache project to transform xml documents using xslt
 
@@ -17,7 +17,7 @@ MODULES =		java
 MODJAVA_VER =		1.8+
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://mirror.reverse.net/pub/apache/xalan/xalan-j/binaries/
 

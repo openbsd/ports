@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT=	texinfo to HTML converter
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://www.nongnu.org/texi2html/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=texi2html/}
 

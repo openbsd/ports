@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:50:16 sthen Exp $
 
 COMMENT =	validating XML parser written in a portable subset of C++
 
@@ -9,7 +9,7 @@ REVISION =	0
 SHARED_LIBS +=  xerces-c             0.0
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://www.apache.org/dist/xerces/c/3/sources/
 

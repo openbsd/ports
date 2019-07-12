@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/05/07 18:29:00 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:47 sthen Exp $
 
 COMMENT =		the missing terminal file browser for X
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/jarun/nnn/
 MAINTAINER =		Ljuba Nedeljkovic <ljuba.bsd@gmail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c curses readline
 

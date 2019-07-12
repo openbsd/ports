@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/03/09 18:29:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:48 sthen Exp $
 
 # [...]/network/mgmt/2018-01-01/network/expressroutecircuitpeerings.go:53:159:
 # constant 4294967295 overflows int
@@ -17,7 +17,7 @@ HOMEPAGE=		http://www.packer.io
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/19 20:17:30 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:44 sthen Exp $
 
 COMMENT =	library to create and edit an ISO-9660 filesystem
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://dev.lovelyhq.com/libburnia/web/wikis/Libisofs
 MASTER_SITES =	http://files.libburnia-project.org/releases/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	iconv pthread z
 LIB_DEPENDS =		converters/libiconv

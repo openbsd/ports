@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/24 16:26:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:05 sthen Exp $
 
 COMMENT =	perl module for spell-checking source code
 
@@ -8,7 +8,7 @@ REVISION =	0
 CATEGORIES =	textproc devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

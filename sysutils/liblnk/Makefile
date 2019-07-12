@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/20 22:15:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:44 sthen Exp $
 
 COMMENT =	library and tools to access the Windows Shortcut File
 
@@ -18,7 +18,7 @@ MASTER_SITES =	https://github.com/libyal/liblnk/releases/download/${VERSION}/
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += bfio c fwsi iconv intl m pthread util ${MODPY_WANTLIB}
 

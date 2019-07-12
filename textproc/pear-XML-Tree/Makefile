@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:10 sthen Exp $
 
 COMMENT=	classes to represent XML data in PHP
 
@@ -11,6 +11,6 @@ MODULES=	www/pear
 RUN_DEPENDS=	textproc/pear-XML-Parser
 
 # PHP License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

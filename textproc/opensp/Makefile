@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/20 22:15:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:02 sthen Exp $
 
 COMMENT=	object-oriented SGML parser
 
@@ -14,7 +14,7 @@ SHARED_LIBS=	osp 0.0 # .4.0
 HOMEPAGE=	http://openjade.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv intl m pthread ${COMPILER_LIBCXX}
 

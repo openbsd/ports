@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/03/08 15:13:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:53 sthen Exp $
 
 COMMENT=	print ascii formatted tree of a directory structure
 
@@ -9,7 +9,7 @@ HOMEPAGE=	https://github.com/pyr/tree
 CATEGORIES=	sysutils
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

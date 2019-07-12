@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/06/03 10:54:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:50:17 sthen Exp $
 
 COMMENT=	front-end for converting XML files to various formats
 
@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	https://pagure.io/xmlto
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

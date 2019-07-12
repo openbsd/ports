@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/03/12 21:51:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:45 sthen Exp $
 
 COMMENT=		log file monitoring daemon
 
@@ -11,7 +11,7 @@ HOMEPAGE=		https://github.com/nicm/logfmon
 MAINTAINER=		Tom Doherty <tom@singlesecond.com>
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c pthread
 

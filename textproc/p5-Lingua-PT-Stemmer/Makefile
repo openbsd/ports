@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/03/28 12:08:54 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:04 sthen Exp $
 
 COMMENT=	Portuguese language stemming
 
@@ -8,6 +8,6 @@ DISTNAME =	Lingua-PT-Stemmer-0.02
 CATEGORIES=	textproc
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

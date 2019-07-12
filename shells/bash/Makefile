@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2019/05/20 22:15:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.113 2019/07/12 20:49:38 sthen Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
@@ -11,7 +11,7 @@ REVISION=	0
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=bash/}
 MASTER_SITES0=	${MASTER_SITE_GNU:=bash/bash-5.0-patches/}

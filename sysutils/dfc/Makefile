@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/20 22:15:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:41 sthen Exp $
 
 COMMENT =	display file system space usage using graph and colors
 
@@ -10,7 +10,7 @@ MASTER_SITES =	https://projects.gw-computing.net/attachments/download/615/
 HOMEPAGE =	https://projects.gw-computing.net/projects/dfc
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =	devel/cmake
 WANTLIB =	c iconv intl m

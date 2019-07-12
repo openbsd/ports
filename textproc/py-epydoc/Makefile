@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/27 23:24:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:11 sthen Exp $
 
 COMMENT=		python module API documentation generation tool
 
@@ -14,7 +14,7 @@ HOMEPAGE=		http://epydoc.sourceforge.net
 MAINTAINER=		Jason Meltzer <meltzer@strangeresearch.com>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=epydoc/}
 

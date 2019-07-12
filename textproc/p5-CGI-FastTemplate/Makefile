@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:02 sthen Exp $
 
 COMMENT=	manages templates and performs variable interpolation
 
@@ -9,6 +9,6 @@ REVISION=	1
 CATEGORIES=	textproc www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

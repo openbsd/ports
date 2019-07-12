@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:10 sthen Exp $
 
 COMMENT =	pretty print LaTeX messages
 
@@ -17,7 +17,7 @@ HOMEPAGE =	https://github.com/stefanhepp/pplatex
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cmake
 

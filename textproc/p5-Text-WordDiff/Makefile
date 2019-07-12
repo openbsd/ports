@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/17 21:10:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:08 sthen Exp $
 
 COMMENT=		module to diff based on word, not lines
 
@@ -8,7 +8,7 @@ DISTNAME=		Text-WordDiff-0.09
 CATEGORIES=		textproc
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	modbuild
 

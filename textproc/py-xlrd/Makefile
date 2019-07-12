@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/05 15:44:13 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:13 sthen Exp $
 
 COMMENT =	extract data from xls and xlsx spreadsheet files
 
@@ -12,7 +12,7 @@ CATEGORIES =	textproc devel
 HOMEPAGE =	http://www.python-excel.org/
 
 # BSD-style
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:50:00 sthen Exp $
 
 COMMENT=	text search engine by CNIDR
 
@@ -8,7 +8,7 @@ REVISION =	3
 CATEGORIES=	textproc databases
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m ${COMPILER_LIBCXX} 
 

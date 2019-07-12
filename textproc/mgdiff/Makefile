@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/05/05 19:52:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:50:01 sthen Exp $
 
 COMMENT=	graphical front end to Unix diff
 
@@ -10,7 +10,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/}
 
 # X11
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xt c m Xm
 

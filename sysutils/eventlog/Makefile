@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/03/16 18:07:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:42 sthen Exp $
 
 COMMENT =	replacement for the syslog() API
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://www.balabit.com/products/syslog_ng/
 DISTFILES =	eventlog_${V}.tar.gz
 
 # BSD
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =	http://www.balabit.com/downloads/files/eventlog/0.2/
 

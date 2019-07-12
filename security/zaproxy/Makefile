@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/06/11 00:38:36 kurt Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:38 sthen Exp $
 
 COMMENT =		web application security tool
 
@@ -12,7 +12,7 @@ CATEGORIES =		security
 HOMEPAGE =		https://www.owasp.org/index.php/ZAP
 
 # Apache v2.0 License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://github.com/zaproxy/zaproxy/releases/download/${VERSION}/
 MASTER_SITES +=		${MASTER_SITE_PACKETSTORM:=web/}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/01/06 20:51:33 pirofti Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:03 sthen Exp $
 
 COMMENT =	LaTeX to XML/HTML/MathML Converter
 
@@ -8,7 +8,7 @@ DISTNAME =	LaTeXML-0.8.3_7
 CATEGORIES =	textproc
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 

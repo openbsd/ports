@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/05/20 20:52:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT =	fast, compact and portable XSL/XSLT processor
 
@@ -12,7 +12,7 @@ CATEGORIES =	textproc
 HOMEPAGE =	http://freshmeat.net/projects/sablotron/
 
 # MPL1.1 / GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c expat iconv m curses readline ${COMPILER_LIBCXX}
 

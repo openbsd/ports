@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/15 12:04:40 kmos Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:49:33 sthen Exp $
 
 COMMENT =		crypto and ssl toolkit for python
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://gitlab.com/m2crypto/m2crypto
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		crypto pthread ssl ${MODPY_WANTLIB}
 

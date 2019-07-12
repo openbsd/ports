@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/06/25 20:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:49:48 sthen Exp $
 
 COMMENT=	interface to the system's process table#'
 
@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 REVISION =	2
 
 # Artistic License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c kvm perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/05/22 11:31:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:41 sthen Exp $
 
 COMMENT =		tools to fiddle with dates and times
 
@@ -10,7 +10,7 @@ CATEGORIES =		sysutils
 HOMEPAGE =		http://www.fresse.org/dateutils/
 
 # BSD 3-clause
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

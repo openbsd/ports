@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/10 01:06:51 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:05 sthen Exp $
 
 COMMENT =	perldoc that works for modules you don't have installed
 DISTNAME =	Pod-Cpandoc-0.16
@@ -7,7 +7,7 @@ CATEGORIES =	textproc
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*

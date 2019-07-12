@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/08 18:37:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:42 sthen Exp $
 
 COMMENT =		controller for fleet, the distributed init system
 
@@ -12,7 +12,7 @@ CATEGORIES =		sysutils
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apache2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/go
 MODGO_TYPE =		bin

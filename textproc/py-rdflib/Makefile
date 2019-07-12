@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/28 20:51:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:13 sthen Exp $
 
 COMMENT=	library to manipulate RDF data
 
@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	https://github.com/RDFLib/rdflib
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://github.com/downloads/RDFLib/rdflib/
 

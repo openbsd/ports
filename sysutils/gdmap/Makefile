@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/24 16:26:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:43 sthen Exp $
 
 COMMENT =		graphical disk map
 DISTNAME =		gdmap-0.8.1
@@ -8,7 +8,7 @@ REVISION =		5
 HOMEPAGE =		http://gdmap.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0

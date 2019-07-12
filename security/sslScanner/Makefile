@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/23 16:34:40 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT=	scan a network for SSL certificates
 
@@ -11,7 +11,7 @@ REVISION=	0
 CATEGORIES=	security www
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Time-TimeDate \
 		net/p5-IO-Socket-INET6 \

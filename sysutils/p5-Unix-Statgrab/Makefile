@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/15 21:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:48 sthen Exp $
 
 COMMENT=	interface to libstatgrab system statistics library
 
@@ -8,7 +8,7 @@ REVISION=	0
 CATEGORIES=	sysutils
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl statgrab
 

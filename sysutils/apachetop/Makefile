@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:49:39 sthen Exp $
 
 COMMENT =		top-like monitor for Apache
 
@@ -12,7 +12,7 @@ MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>
 HOMEPAGE =		https://github.com/tessus/apachetop
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=		c m curses readline ${COMPILER_LIBCXX}
 

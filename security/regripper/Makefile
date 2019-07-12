@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/05/30 14:03:05 rpointel Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:36 sthen Exp $
 
 COMMENT =		Windows Registry data extraction tool
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://regripper.wordpress.com/
 MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 GH_ACCOUNT =		keydet89
 GH_PROJECT =		RegRipper2.8

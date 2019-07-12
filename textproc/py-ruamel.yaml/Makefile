@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/15 12:04:42 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:13 sthen Exp $
 
 COMMENT =		YAML 1.2 loader/dumper package for Python
 
@@ -10,7 +10,7 @@ REVISION =		0
 CATEGORIES =		textproc
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

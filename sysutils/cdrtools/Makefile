@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/11/03 09:12:41 ratchov Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:40 sthen Exp $
 
 COMMENT=		ISO 9660 filesystem and CD/DVD/BD creation tools
 
@@ -8,7 +8,7 @@ CATEGORIES=		sysutils
 HOMEPAGE=		http://cdrtools.sourceforge.net/private/cdrtools.html
 
 # mostly CDDL, some components GPL (see COPYING)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c sndio
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cdrtools/}

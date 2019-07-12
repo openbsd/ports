@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:46 sthen Exp $
 
 COMMENT =	website access log visualization
 
@@ -10,7 +10,7 @@ REVISION =	0
 MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://github.com/acaudwell/Logstalgia/releases/download/${DISTNAME}/
 

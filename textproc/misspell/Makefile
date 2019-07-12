@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/13 08:54:29 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:50:01 sthen Exp $
 
 COMMENT =	correct commonly misspelled English words in source files
 
@@ -11,7 +11,7 @@ CATEGORIES =	textproc
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:14 sthen Exp $
 
 
 COMMENT=		RDF Parser Toolkit for Redland
@@ -14,7 +14,7 @@ HOMEPAGE=		http://librdf.org/
 MASTER_SITES=		http://download.librdf.org/source/
 
 # LGPL 2.1+, GPL 2+ or Apache 2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c crypto curl iconv intl lzma m nghttp2 pthread ssl xml2 xslt
 WANTLIB += yajl z

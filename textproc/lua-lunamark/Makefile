@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/11/13 15:49:29 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:50:01 sthen Exp $
 
 COMMENT =	Lua module for conversion between markup formats
 
@@ -14,7 +14,7 @@ CATEGORIES =	textproc
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/lua
 

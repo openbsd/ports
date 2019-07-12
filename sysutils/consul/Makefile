@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/30 11:58:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:49:41 sthen Exp $
 
 # XXX no i386 equivalent to mem_openbsd_amd64.go
 ONLY_FOR_ARCHS=		amd64
@@ -16,7 +16,7 @@ HOMEPAGE=		https://www.consul.io/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MPLv2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 

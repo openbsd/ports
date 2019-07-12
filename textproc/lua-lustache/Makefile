@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/10/16 23:21:23 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:01 sthen Exp $
 
 COMMENT =	implementation of the mustache template system in Lua
 
@@ -16,7 +16,7 @@ CATEGORIES =	textproc
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 PKG_ARCH =	*
 

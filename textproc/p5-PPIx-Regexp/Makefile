@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/01/13 14:33:42 cwen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:04 sthen Exp $
 
 COMMENT=		parse regular expressions
 
@@ -8,7 +8,7 @@ DISTNAME =		PPIx-Regexp-0.063
 CATEGORIES=		textproc
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CPAN_AUTHOR=		WYANT
 

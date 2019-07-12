@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/04 15:08:44 edd Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:52 sthen Exp $
 
 COMMENT=		system to monitor and control processes
 
@@ -10,7 +10,7 @@ CATEGORIES=		sysutils
 HOMEPAGE=		http://supervisord.org/
 
 # BSD-derived
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

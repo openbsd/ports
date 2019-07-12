@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/10 16:08:49 cwen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:09 sthen Exp $
 
 COMMENT =	compare XML documents
 
@@ -10,7 +10,7 @@ DISTNAME =	XML-SemanticDiff-1.0007
 CATEGORIES =	textproc
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	textproc/p5-XML-Parser
 

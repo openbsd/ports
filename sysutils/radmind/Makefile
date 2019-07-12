@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/04/25 20:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:50 sthen Exp $
 
 COMMENT=	remote administration software
 
@@ -9,7 +9,7 @@ CATEGORIES=	sysutils
 HOMEPAGE=	http://rsug.itd.umich.edu/software/radmind/
 
 # License: BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c crypto ssl z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=radmind/}

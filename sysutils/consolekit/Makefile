@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2019/06/25 20:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2019/07/12 20:49:40 sthen Exp $
 
 COMMENT=		framework for defining and tracking users, sessions & seats
 
@@ -17,7 +17,7 @@ SHARED_LIBS +=  ck-connector         1.2      # 0.0
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 c dbus-1 drm ffi gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 iconv intl kvm m pcre polkit-gobject-1

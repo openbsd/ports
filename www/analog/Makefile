@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2016/09/13 19:15:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.60 2019/07/12 20:50:17 sthen Exp $
 
 COMMENT=	extremely fast program for analysing WWW logfiles
 
@@ -12,7 +12,7 @@ MASTER_SITES=	http://analog.gsp.com/ \
 HOMEPAGE=	http://analog.gsp.com/
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv m jpeg png z gd>=18 pcre pthread
 

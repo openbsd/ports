@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/02/07 18:31:00 solene Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT =	protect against brute force attacks on sshd(8)
 
@@ -9,7 +9,7 @@ CATEGORIES =	security
 HOMEPAGE =	https://www.dragonflybsd.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += c

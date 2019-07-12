@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/12/10 13:22:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:50:14 sthen Exp $
 
 COMMENT-main=		Redland librdf Perl Bindings
 COMMENT-python=		Redland librdf Python Bindings
@@ -17,7 +17,7 @@ HOMEPAGE=		http://librdf.org/bindings/
 MASTER_SITES=		http://download.librdf.org/source/
 
 # LGPL 2.1, or Apache 2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += rdf
 WANTLIB-main = ${WANTLIB} c perl # uses perl ABI

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/08/11 20:15:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:52 sthen Exp $
 
 COMMENT=	tool to impose configurable amount of load
 DISTNAME=	stress-1.0.4
@@ -9,7 +9,7 @@ MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://people.seas.harvard.edu/~apw/stress/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c m 
 
 CONFIGURE_STYLE=gnu

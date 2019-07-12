@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/01/11 19:27:09 rpe Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT=		client for Cisco 3000 VPN concentrators
 
@@ -9,7 +9,7 @@ CATEGORIES=		security net
 HOMEPAGE=		http://www.unix-ag.uni-kl.de/~massar/vpnc/
 
 # GPLv2 / BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c gcrypt>=12 gpg-error iconv intl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/04/28 20:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:39 sthen Exp $
 
 COMMENT =		best practices checker for ansible
 
@@ -9,7 +9,7 @@ REVISION =		0
 CATEGORIES =		sysutils
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

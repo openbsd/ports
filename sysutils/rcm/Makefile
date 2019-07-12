@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/07/16 04:36:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:50 sthen Exp $
 
 COMMENT =		rc file (dotfile) management
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://thoughtbot.github.io/rcm/
 MAINTAINER =		Mike Burns <mike+openbsd@mike-burns.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://thoughtbot.github.io/rcm/dist/
 

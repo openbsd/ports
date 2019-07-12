@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/16 15:39:49 cwen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:07 sthen Exp $
 
 COMMENT=		various subroutines to format text
 
@@ -6,7 +6,7 @@ DISTNAME=		Text-Format-0.61
 CATEGORIES=		textproc
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

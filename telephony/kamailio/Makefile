@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2018/03/20 22:03:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:49:55 sthen Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
@@ -24,7 +24,7 @@ MAINTAINER =		Roman Kravchuk <kravchuk.kp@gmail.com>
 HOMEPAGE =		http://www.kamailio.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 SHARED_LIBS =		srdb1	4.0	# 1.0
 SHARED_LIBS +=		srdb2	4.0	# 1.0

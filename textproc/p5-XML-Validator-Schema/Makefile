@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:09 sthen Exp $
 
 COMMENT=	validate XML schema using SAX
 
@@ -9,7 +9,7 @@ REVISION=	1
 CATEGORIES=	textproc
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=		textproc/p5-XML-SAX
 RUN_DEPENDS=		devel/p5-Tree-DAG_Node \

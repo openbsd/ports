@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/02/02 23:58:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:54 sthen Exp $
 
 COMMENT=		VMDK file converter
 
@@ -9,7 +9,7 @@ CATEGORIES=		sysutils
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/05/20 22:15:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:49:46 sthen Exp $
 
 COMMENT=	modular log analyzer
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://jan.kneschke.de/projects/modlogan/
 MASTER_SITES=	${HOMEPAGE}/download/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  adns bz2 c expat fontconfig freetype gd iconv intl jpeg m
 WANTLIB += pcre png pthread tiff webp z

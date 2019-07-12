@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/12/05 16:25:46 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:48 sthen Exp $
 
 COMMENT=	module to talk to a UPS via NUT (Network UPS Tools) upsd
 
@@ -10,7 +10,7 @@ PKG_ARCH=	*
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPL/Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/K/KP/KPETERS/}
 

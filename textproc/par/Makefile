@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:50:10 sthen Exp $
 
 COMMENT=	paragraph reflow for email
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.nicemice.net/par/
 MAINTAINER=	Gregor Best <gbe@unobtanium.de>
 
 # custom
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

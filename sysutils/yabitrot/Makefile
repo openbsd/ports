@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:55 sthen Exp $
 
 COMMENT =		fast bitrot detection utility
 
@@ -10,7 +10,7 @@ CATEGORIES =		sysutils
 HOMEPAGE =		https://sourceforge.net/projects/yabitrot/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=yabitrot/}
 EXTRACT_SUFX =		.tgz

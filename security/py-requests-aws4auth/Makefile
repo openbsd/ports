@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:35 sthen Exp $
 
 COMMENT =		AWS v4 authentication for py-requests
 
@@ -13,7 +13,7 @@ CATEGORIES =		security
 HOMEPAGE =		https://github.com/sam-washington/requests-aws4auth
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

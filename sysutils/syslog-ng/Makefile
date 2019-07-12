@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2018/09/22 23:12:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2019/07/12 20:49:52 sthen Exp $
 
 COMMENT=	log management solution
 
@@ -13,7 +13,7 @@ MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 HOMEPAGE =	https://syslog-ng.org/
 
 # GPL v2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =  GeoIP c crypto curl dbi evtlog glib-2.0 gmodule-2.0
 WANTLIB += gthread-2.0 iconv intl ivykis json-c m nghttp2 pcre pthread

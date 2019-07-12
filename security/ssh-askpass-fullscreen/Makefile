@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/02/28 17:40:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT=	good-looking ssh-agent pass-phrase dialog
 
@@ -9,7 +9,7 @@ CATEGORIES=	security
 MASTER_SITES =	http://www.cgabriel.org/download/ssh-askpass-fullscreen/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 LIB_DEPENDS =	x11/gtk+2
 

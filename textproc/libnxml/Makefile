@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/20 22:15:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:00 sthen Exp $
 
 COMMENT =		XML manipulation library
 
@@ -12,7 +12,7 @@ SHARED_LIBS =		nxml 0.0 # 18.3
 HOMEPAGE=		http://www.autistici.org/bakunin/libnxml/doc
 
 # LGPL v2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  crypto curl iconv intl nghttp2 pthread ssl z
 

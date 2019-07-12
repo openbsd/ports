@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/12/13 16:45:04 schwarze Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:59 sthen Exp $
 
 COMMENT =		FreeBSD Documentation Project sanity check script
 VERSION =		1.595
@@ -9,7 +9,7 @@ HOMEPAGE =		http://www.wonkity.com/~wblock/igor/
 MAINTAINER =		Ingo Schwarze <schwarze@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://docscripts.glenbarber.us/tags/igor/${VERSION}/
 

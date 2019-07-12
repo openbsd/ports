@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/03 05:32:41 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:57 sthen Exp $
 
 COMMENT =	CommonMark parsing and rendering library and program in C
 
@@ -15,7 +15,7 @@ MAINTAINER =	Jan Klemkow <j.klemkow@wemelug.de>
 HOMEPAGE =	https://commonmark.org/
 
 # BSD2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

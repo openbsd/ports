@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:56 sthen Exp $
 
 COMMENT=		terminal session recorder
 
@@ -15,7 +15,7 @@ CATEGORIES=		textproc graphics
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

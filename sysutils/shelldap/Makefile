@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/02/07 09:58:48 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:51 sthen Exp $
 
 COMMENT =	browse LDAP server with a shell-like CLI
 
@@ -10,7 +10,7 @@ CATEGORIES =	sysutils
 HOMEPAGE =	https://bitbucket.org/mahlon/shelldap/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX}{${HG_COMMIT}${EXTRACT_SUFX}}
 MASTER_SITES =	http://code.martini.nu/shelldap/archive/

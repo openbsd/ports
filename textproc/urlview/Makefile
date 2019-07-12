@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/05/20 20:52:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:50:16 sthen Exp $
 
 COMMENT=	curses-based URL ripper
 
@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/contrib/ \
 		ftp://ftp.gbnet.net/pub/mutt-international/contrib/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

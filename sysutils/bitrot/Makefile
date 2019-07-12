@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/02/07 14:04:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:40 sthen Exp $
 
 COMMENT =		detects when files bit-rot
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://github.com/ambv/bitrot/
 MAINTAINER =		Bryan Vyhmeister <bryan@bsdjournal.net>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODULES =		lang/python

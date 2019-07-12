@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/12 01:43:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:00 sthen Exp $
 
 PKG_ARCH=		*
 
@@ -12,7 +12,7 @@ CATEGORIES=		textproc
 HOMEPAGE=		http://itstool.org/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://files.itstool.org/itstool/
 

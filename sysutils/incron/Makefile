@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:43 sthen Exp $
 
 COMMENT =	cron-like daemon but reacting to filesystem events
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://inotify.aiken.cz/
 MASTER_SITES =	http://inotify.aiken.cz/download/incron/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	lib/inotify/inotify c m pthread ${COMPILER_LIBCXX}
 

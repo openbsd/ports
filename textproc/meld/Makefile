@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/04/28 20:51:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2019/07/12 20:50:01 sthen Exp $
 
 COMMENT=		graphical diff and merge tool
 
@@ -12,7 +12,7 @@ CATEGORIES=		textproc
 HOMEPAGE=		http://meldmerge.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		devel/dconf \
 			lang/python \

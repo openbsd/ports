@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2019/05/01 10:20:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2019/07/12 20:49:42 sthen Exp $
 
 # optional dependencies
 # py-pyrax
@@ -15,7 +15,7 @@ HOMEPAGE =	http://www.nongnu.org/duplicity/
 MASTER_SITES =	${MASTER_SITE_SAVANNAH:=duplicity/}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes

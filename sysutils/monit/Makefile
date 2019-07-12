@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2019/06/25 20:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2019/07/12 20:49:46 sthen Exp $
 
 COMMENT=	monitoring and managing daemons utility
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://www.mmonit.com/monit/
 MAINTAINER=	Caspar Schutijser <caspar@schutijser.com>
 
 # AGPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto m kvm pthread ssl z
 

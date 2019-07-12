@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2019/06/13 15:48:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.89 2019/07/12 20:50:18 sthen Exp $
 
 COMMENT=		HTML editor for experienced web designers
 
@@ -10,7 +10,7 @@ REVISION =		6
 MASTER_SITES=		http://www.bennewitz.com/bluefish/stable/source/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi

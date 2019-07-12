@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/11/27 22:44:46 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:49:41 sthen Exp $
 
 COMMENT=		GNU dd with added forensic/security features
 
@@ -10,7 +10,7 @@ CATEGORIES=		sysutils
 HOMEPAGE=		http://dcfldd.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/17 01:14:09 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:52 sthen Exp $
 
 COMMENT =	noninteractive ssh password provider
 
@@ -9,7 +9,7 @@ CATEGORIES =	sysutils
 HOMEPAGE =	https://sourceforge.net/projects/sshpass/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

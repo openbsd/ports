@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:13 sthen Exp $
 
 COMMENT =		SPDX license list query tool
 
@@ -12,7 +12,7 @@ CATEGORIES =		textproc
 HOMEPAGE =		https://github.com/bbqsrc/spdx-lookup-python
 
 # BSD-2-Clause
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

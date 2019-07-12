@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:41 sthen Exp $
 
 COMMENT =		data recovery tool
 
@@ -10,7 +10,7 @@ CATEGORIES =		sysutils
 HOMEPAGE =		https://www.gnu.org/software/ddrescue/ddrescue.html
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m ${COMPILER_LIBCXX}
 

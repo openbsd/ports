@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/09/13 18:52:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT =		web/text search engine
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://swish-e.org/
 MASTER_SITES =		${HOMEPAGE}distribution/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c iconv lzma m pcre pcreposix pthread xml2 z
 

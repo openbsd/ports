@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.52 2019/04/09 22:32:48 patrick Exp $
+#	$OpenBSD: Makefile,v 1.53 2019/07/12 20:49:53 sthen Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://www.denx.de/wiki/U-Boot
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/
 EXTRACT_SUFX=	.tar.bz2

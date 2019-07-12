@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:04 sthen Exp $
 
 COMMENT=	Italian language stemming
 
@@ -8,6 +8,6 @@ DISTNAME=	Lingua-Stem-It-0.02
 CATEGORIES=	textproc
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

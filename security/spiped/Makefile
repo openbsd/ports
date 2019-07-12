@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/01/14 14:42:18 rpe Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:36 sthen Exp $
 
 COMMENT =		utility for creating secure pipes between socket addresses
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.tarsnap.com/spiped.html
 MASTER_SITES =		http://www.tarsnap.com/spiped/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto pthread
 

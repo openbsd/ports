@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/04/28 20:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:49 sthen Exp $
 
 COMMENT=	manage Elasticsearch indices
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://github.com/elastic/curator
 MAINTAINER=	Pavel Korovin <pvk@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_PI =	Yes

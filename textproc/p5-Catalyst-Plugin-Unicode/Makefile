@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/29 13:23:22 bluhm Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:02 sthen Exp $
 
 COMMENT=	unicode-aware catalyst (old style)
 
@@ -6,7 +6,7 @@ DISTNAME=	Catalyst-Plugin-Unicode-0.93
 CATEGORIES=	textproc
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
 PKG_ARCH=	*

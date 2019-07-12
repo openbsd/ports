@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/08/28 11:04:12 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:47 sthen Exp $
 
 COMMENT =		minimalistic file browser
 DISTNAME =		noice-0.6
@@ -7,7 +7,7 @@ HOMEPAGE =		http://git.2f30.org/noice/
 MAINTAINER =		Dimitris Papastamos <sin@2f30.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c curses
 

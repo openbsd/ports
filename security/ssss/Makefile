@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT=	split secrets using Shamir's Secret Sharing Scheme
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://point-at-infinity.org/ssss/
 MAINTAINER=	Denis Fondras <denis@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c gmp
 

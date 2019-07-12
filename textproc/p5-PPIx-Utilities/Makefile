@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:05 sthen Exp $
 
 COMMENT=		extensions to PPI
 
@@ -8,7 +8,7 @@ DISTNAME=		PPIx-Utilities-1.001000
 CATEGORIES=		textproc
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CPAN_AUTHOR=		ELLIOTJS
 

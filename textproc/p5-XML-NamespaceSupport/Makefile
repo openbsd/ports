@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/04/09 11:25:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:50:08 sthen Exp $
 
 COMMENT=	perl module to the SAX2 NamespaceSupport class
 
@@ -10,6 +10,6 @@ CATEGORIES=	textproc
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

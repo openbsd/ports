@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/04/28 20:51:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:50:12 sthen Exp $
 
 COMMENT=	Python syntax highlighter
 
@@ -12,7 +12,7 @@ REVISION=	1
 HOMEPAGE=	http://pygments.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/04/28 20:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:49:34 sthen Exp $
 
 COMMENT=		Python module for GnuPG interface
 
@@ -12,7 +12,7 @@ CATEGORIES=		security devel
 HOMEPAGE=		https://bitbucket.org/vinay.sajip/python-gnupg
 
 # BSD 3-clause
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_PI=		Yes
 

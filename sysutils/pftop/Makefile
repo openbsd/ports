@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2018/08/12 10:48:14 kn Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:49:48 sthen Exp $
 
 # XXX should be fixed to use the new queuing subsystem
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.eee.metu.edu.tr/~canacar/pftop/
 MAINTAINER=	Can Erkin Acar <canacar@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses
 

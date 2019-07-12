@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/06/05 14:27:02 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:53 sthen Exp $
 
 COMMENT =	plugin-driven server agent for collecting metrics
 
@@ -15,7 +15,7 @@ MASTER_SITES =	https://rhaalovely.net/stuff/
 CATEGORIES =		sysutils
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/go
 

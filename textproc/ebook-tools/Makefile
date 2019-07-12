@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/05/27 16:57:17 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:57 sthen Exp $
 
 COMMENT =		accessing and converting various ebook file formats
 V =			0.2.2
@@ -11,7 +11,7 @@ SHARED_LIBS +=		epub		0.0	# 0.2
 CATEGORIES =		textproc devel
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread xml2 z zip
 

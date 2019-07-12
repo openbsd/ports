@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:11 sthen Exp $
 
 COMMENT =		emoji for Python
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://github.com/carpedm20/emoji/
 MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

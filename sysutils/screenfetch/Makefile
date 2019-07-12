@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/08/28 20:05:18 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:51 sthen Exp $
 
 COMMENT =	display system information in the terminal for screenshots
 PKGNAME =	${DISTNAME:L}
@@ -13,7 +13,7 @@ CATEGORIES =	sysutils misc
 MAINTAINER =	Charlene Wendling <julianaito@posteo.jp>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	graphics/scrot \
 		net/curl \

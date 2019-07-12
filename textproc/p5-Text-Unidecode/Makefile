@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/12/25 01:10:04 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:07 sthen Exp $
 
 COMMENT =	US-ASCII transliterations of Unicode text
 
@@ -10,6 +10,6 @@ CATEGORIES =	textproc
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

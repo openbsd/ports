@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2019/06/11 00:38:36 kurt Exp $
+# $OpenBSD: Makefile,v 1.64 2019/07/12 20:49:57 sthen Exp $
 
 COMMENT =		distributed RESTful search and analytics
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://www.elastic.co/products/elasticsearch
 MAINTAINER =		Pavel Korovin <pvk@openbsd.org>
 
 # Apache2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://artifacts.elastic.co/downloads/elasticsearch/
 

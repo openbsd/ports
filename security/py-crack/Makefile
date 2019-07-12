@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/04/21 18:19:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:34 sthen Exp $
 
 COMMENT =		Python bindings for cracklib
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://www.nongnu.org/python-crack/
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # MIT/X Consortium License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += crack pthread

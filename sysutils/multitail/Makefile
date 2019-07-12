@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/05/20 20:52:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:49:46 sthen Exp $
 
 COMMENT=	multi-window tail(1) utility
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.vanheusden.com/multitail/
 MAINTAINER=	Adam Wolk <awolk@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz

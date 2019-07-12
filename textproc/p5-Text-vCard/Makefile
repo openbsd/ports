@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/12 20:00:43 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:08 sthen Exp $
 
 COMMENT =	read, write, and edit vCard address books
 
@@ -8,7 +8,7 @@ DISTNAME =	Text-vCard-3.09
 CATEGORIES =	textproc
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	www/p5-URI \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2019/03/04 12:51:16 chrisz Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:49:58 sthen Exp $
 
 COMMENT=	LaTeX to html translator
 
 CATEGORIES=	textproc print
 
 # Q Licence 1.0 + LGPL for parts of the runtime
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c m pthread
 
 DISTNAME =	hevea-2.32

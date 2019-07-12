@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:13 sthen Exp $
 
 COMMENT =		sphinx theme used by guzzle
 
@@ -12,7 +12,7 @@ CATEGORIES =		textproc
 MAINTAINER =		Bjorn Ketelaars <bket@openbsd.org>
 
 # MIT/OFL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

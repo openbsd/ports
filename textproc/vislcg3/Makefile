@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/12/09 21:01:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:16 sthen Exp $
 
 # XXX fix build with icu >=5.9.1 (remove at next update?)
 CXXFLAGS +=		-DU_USING_ICU_NAMESPACE=1
@@ -19,7 +19,7 @@ CATEGORIES =		textproc
 HOMEPAGE =		http://beta.visl.sdu.dk/cg3/chunked/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB +=		c icui18n icuio icuuc m pthread ${COMPILER_LIBCXX}
 

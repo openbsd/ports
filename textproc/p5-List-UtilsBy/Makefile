@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/01/08 18:49:36 bluhm Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:04 sthen Exp $
 
 COMMENT =		higher-order list utility functions
 
@@ -8,7 +8,7 @@ DISTNAME =		List-UtilsBy-0.11
 CATEGORIES =		textproc
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE =	modbuild
 

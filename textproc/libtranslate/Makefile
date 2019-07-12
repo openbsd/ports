@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:00 sthen Exp $
 
 SHARED_LIBS +=  translate                 0.0 # 0.0
 
@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://www.nongnu.org/libtranslate/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += iconv intl lzma m pcre pthread soup-2.4 sqlite3 xml2 z

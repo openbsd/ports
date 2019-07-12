@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/23 22:24:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:39 sthen Exp $
 
 COMMENT=		APC SmartUPS daemon
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://www.nazgul.ch/dev.html
 MAINTAINER=		Marcus Glocker <marcus@nazgul.ch>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 

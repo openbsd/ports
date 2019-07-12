@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:41 sthen Exp $
 
 COMMENT =		utility designed to clean up filenames
 
@@ -9,7 +9,7 @@ CATEGORIES =		sysutils
 HOMEPAGE =		http://detox.sourceforge.net/
 
 #BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c
 

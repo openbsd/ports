@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:55 sthen Exp $
 
 COMMENT=	interactive process killer
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.darwinsys.com/freeware/
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 do-install:

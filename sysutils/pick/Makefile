@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/01 06:54:21 anton Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:48 sthen Exp $
 
 COMMENT =	fuzzy select anything
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://github.com/mptre/pick
 MAINTAINER =	Anton Lindqvist <anton@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB +=	c curses

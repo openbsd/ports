@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/27 23:55:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:40 sthen Exp $
 
 COMMENT=	version control system for large binary files
 
@@ -9,7 +9,7 @@ CATEGORIES=	sysutils
 HOMEPAGE=	http://www.boarvcs.org
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://distfiles-openbsd.perso.pw/
 

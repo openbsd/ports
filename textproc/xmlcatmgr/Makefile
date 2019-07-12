@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/11 23:51:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:17 sthen Exp $
 
 COMMENT=	small utility used to manipulate SGML and XML catalogs
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://xmlcatmgr.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmlcatmgr/}

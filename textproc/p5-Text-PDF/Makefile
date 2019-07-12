@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/05/11 15:42:28 benoit Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:50:07 sthen Exp $
 
 COMMENT=	perl modules for creating and manipulating PDF
 
@@ -9,7 +9,7 @@ DISTNAME =	Text-PDF-${V}
 CATEGORIES=	textproc
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODCPAN_EXAMPLES=	Yes
 

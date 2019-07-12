@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/03/08 07:26:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:16 sthen Exp $
 
 COMMENT =		Unicode Character Database (UCD)
 
@@ -11,7 +11,7 @@ CATEGORIES =		textproc
 HOMEPAGE =		https://www.unicode.org/ucd/
 
 # https://www.unicode.org/copyright.html
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://www.unicode.org/Public/zipped/$V/
 DIST_SUBDIR =		ucd/$V

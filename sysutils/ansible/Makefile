@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2019/06/02 11:53:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.106 2019/07/12 20:49:39 sthen Exp $
 
 COMMENT-main =		ssh based config management framework
 COMMENT-html =		offline Ansible documentation in HTML format
@@ -17,7 +17,7 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 MULTI_PACKAGES =	-main -html
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://releases.ansible.com/ansible/
 

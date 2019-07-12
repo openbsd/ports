@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/04/04 10:38:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2019/07/12 20:49:55 sthen Exp $
 
 COMMENT-main=	multimedia communication library (SIP, RTP, ICE, etc)
 COMMENT-pjsua=	lightweight sip client
@@ -33,7 +33,7 @@ HOMEPAGE=	https://www.pjsip.org/
 MASTER_SITES=	https://www.pjsip.org/release/$V/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += bcg729 crypto gsm m opencore-amrnb opencore-amrwb opus
 WANTLIB += portaudio speex speexdsp srtp2 ssl

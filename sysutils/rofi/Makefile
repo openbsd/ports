@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/06 20:26:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:49:50 sthen Exp $
 
 COMMENT =		window switcher, run dialog and dmenu replacement
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://github.com/DaveDavenport/rofi
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT/X
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/releases/download/${V}/
 

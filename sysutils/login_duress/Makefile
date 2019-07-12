@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/20 17:38:41 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:45 sthen Exp $
 
 COMMENT=		BSD authentication module for duress passwords
 
@@ -11,7 +11,7 @@ CATEGORIES=		sysutils security
 MAINTAINER=		joshua stein <jcs@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c util
 

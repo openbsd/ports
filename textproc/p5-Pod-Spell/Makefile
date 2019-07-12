@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/09/24 10:54:23 nigel Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:05 sthen Exp $
 
 COMMENT =	formatter for spellchecking pod
 
@@ -10,7 +10,7 @@ CATEGORIES =	textproc
 REVISION =	0
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =	devel/p5-File-ShareDir-Install
 

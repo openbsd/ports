@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/10/22 13:56:33 okan Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:46 sthen Exp $
 
 COMMENT=	system monitoring daemon
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.estpak.ee/~risto/monitord/
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 

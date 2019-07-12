@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/10/11 19:54:47 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT =		logic-free template language
 
@@ -7,7 +7,7 @@ REVISION =		2
 CATEGORIES =		textproc
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

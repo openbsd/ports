@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/28 20:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT =	information gathering suite
 
@@ -17,7 +17,7 @@ HOMEPAGE =	http://www.edge-security.com/theharvester.php
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 

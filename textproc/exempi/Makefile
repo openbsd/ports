@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:57 sthen Exp $
 
 # g++3 chokes on the code
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -14,7 +14,7 @@ SHARED_LIBS +=  exempi               1.1      # 5.3
 HOMEPAGE =		http://libopenraw.freedesktop.org/wiki/Exempi
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c expat m pthread ${COMPILER_LIBCXX} z
 

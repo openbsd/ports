@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/02/15 02:15:57 jturner Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:36 sthen Exp $
 
 COMMENT =		create and verify cryptographic signatures
 
@@ -13,7 +13,7 @@ MASTER_SITES =		http://www.tedunangst.com/flak/files/
 EXTRACT_SUFX =		.tgz
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c sodium util
 LIB_DEPENDS =		security/libsodium>=0.7.0

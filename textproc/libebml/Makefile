@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/04/28 08:29:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:50:00 sthen Exp $
 
 COMMENT=	Extensible Binary Meta Language library
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.matroska.org/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m
 

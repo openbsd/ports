@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2019/06/03 10:56:12 benoit Exp $
+# $OpenBSD: Makefile,v 1.65 2019/07/12 20:49:59 sthen Exp $
 
 COMMENT =		convert source code to markup formats
 
@@ -10,7 +10,7 @@ HOMEPAGE =		http://www.andre-simon.de/
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m ${LIBCXX} ${MODLUA_WANTLIB}
 

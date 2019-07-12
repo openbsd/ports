@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/04/27 23:55:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:50:17 sthen Exp $
 
 COMMENT = 		web-based SSH client
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://antony.lesuisse.org/software/ajaxterm/
 MAINTAINER =		Laurent Moccellin <moccel_l@epitech.eu>
 
 # Public Domain / LGPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/files/
 

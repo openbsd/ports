@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:42 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:12 sthen Exp $
 
 COMMENT =	parser for the Open Financial Exchange file format
 
@@ -12,7 +12,7 @@ CATEGORIES =	textproc
 MAINTAINER =	Sebastien Marie <semarie@online.fr>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

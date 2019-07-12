@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/01/22 21:48:45 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:49:59 sthen Exp $
 
 COMMENT =		fast combinator parsing for bytestrings
 
@@ -14,7 +14,7 @@ MAINTAINER =		Jim Razmus II <jim@openbsd.org>, \
 			Matthias Kilian <kili@openbsd.org>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

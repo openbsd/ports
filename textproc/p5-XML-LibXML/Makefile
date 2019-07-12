@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2019/02/20 12:40:51 bluhm Exp $
+# $OpenBSD: Makefile,v 1.59 2019/07/12 20:50:08 sthen Exp $
 
 COMMENT =	perl binding for libxml2
 
@@ -10,7 +10,7 @@ CATEGORIES =	textproc
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c iconv lzma m perl pthread xml2 z
 

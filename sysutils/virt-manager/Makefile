@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/01/30 09:02:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:49:54 sthen Exp $
 
 COMMENT=		GUI for managing virtual machines through libvirt
 
@@ -9,7 +9,7 @@ REVISION=		2
 HOMEPAGE=		http://virt-manager.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/download/sources/virt-manager/
 

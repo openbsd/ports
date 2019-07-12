@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/04/28 20:51:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:50:11 sthen Exp $
 
 COMMENT=		implements an XML/HTML/XHTML markup safe string
 
@@ -10,7 +10,7 @@ REVISION=		0
 CATEGORIES=		textproc
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_PI =		Yes
 

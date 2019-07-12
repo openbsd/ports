@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:12 sthen Exp $
 
 COMMENT =		GitHub Flavored Markdown extension
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://github.com/zopieux/py-gfm
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

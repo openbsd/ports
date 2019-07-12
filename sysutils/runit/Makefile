@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/11/13 16:54:08 jca Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:51 sthen Exp $
 
 COMMENT=		daemontools alike replacement for init
 
@@ -8,7 +8,7 @@ REVISION=		1
 
 HOMEPAGE=		http://www.smarden.org/runit/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		${HOMEPAGE}

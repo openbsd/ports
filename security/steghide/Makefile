@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/20 22:15:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT =		software able to hide data in various kind of files
 
@@ -8,7 +8,7 @@ CATEGORIES =		security
 HOMEPAGE =		http://steghide.sf.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c iconv intl jpeg m mhash mcrypt ${COMPILER_LIBCXX} z
 

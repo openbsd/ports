@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/05/16 06:53:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:50 sthen Exp $
 
 COMMENT =	execute commands in parallel on multiple remote machines
 
@@ -9,7 +9,7 @@ REVISION =	0
 HOMEPAGE =	http://www.capistranorb.com/
 
 # MIT
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES =		lang/ruby
 

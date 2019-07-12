@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/04 02:52:35 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:04 sthen Exp $
 
 COMMENT=		parse, analyze and manipulate Perl
 
@@ -8,7 +8,7 @@ DISTNAME=		PPI-1.264
 CATEGORIES=		textproc
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/p5-Clone>=0.30 \
 			devel/p5-IO-String>=1.07 \

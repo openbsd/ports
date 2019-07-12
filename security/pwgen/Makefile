@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/01/18 04:09:40 danj Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:33 sthen Exp $
 
 COMMENT=	simple password generator
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://sourceforge.net/projects/pwgen/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pwgen/}
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 WANTLIB=		c

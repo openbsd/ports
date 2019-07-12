@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/01 17:47:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:36 sthen Exp $
 
 COMMENT=	generates or checks digests or mac
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://mcrypt.hellug.gr/shash/
 
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		ftp://mcrypt.hellug.gr/pub/mcrypt/shash/
 

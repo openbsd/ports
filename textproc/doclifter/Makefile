@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/08/17 18:49:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:57 sthen Exp $
 
 COMMENT =		troff to DocBook converter
 
@@ -9,7 +9,7 @@ CATEGORIES =		textproc
 HOMEPAGE =		http://www.catb.org/~esr/doclifter/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://www.catb.org/~esr/doclifter/
 

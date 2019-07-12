@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/08/10 07:58:24 rpointel Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:35 sthen Exp $
 
 COMMENT =		web reconnaissance framework
 
@@ -12,7 +12,7 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 CATEGORIES =		security
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://bitbucket.org/LaNMaSteR53/recon-ng/get/
 DISTFILES =		${DISTNAME}{v${VERSION}}${EXTRACT_SUFX}

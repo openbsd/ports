@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/07/29 10:20:49 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:50:07 sthen Exp $
 
 COMMENT =	flexible text flowing and word wrapping
 
@@ -8,7 +8,7 @@ CATEGORIES =	textproc
 MAINTAINER =		Matthias Pitzl <pitzl@genua.de>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 RUN_DEPENDS =		devel/p5-Moose>=0.21

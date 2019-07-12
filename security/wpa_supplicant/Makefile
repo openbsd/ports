@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/04/26 13:32:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2019/07/12 20:49:38 sthen Exp $
 
 COMMENT=	IEEE 802.1X supplicant
 
@@ -8,7 +8,7 @@ CATEGORIES=	security net
 HOMEPAGE=	https://w1.fi/wpa_supplicant/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c ssl crypto pcap pcsclite pthread
 

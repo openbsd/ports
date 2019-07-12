@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/11/18 21:25:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT=	steganography detection tool
 DISTNAME=	stegdetect-0.6
@@ -9,7 +9,7 @@ MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://www.outguess.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto m
 

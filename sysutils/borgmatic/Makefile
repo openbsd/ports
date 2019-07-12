@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/10 18:40:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:40 sthen Exp $
 
 COMMENT =		wrapper for Borg to create and prune backups
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://torsion.org/borgmatic/
 CATEGORIES =		sysutils
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

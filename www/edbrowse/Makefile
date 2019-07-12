@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/13 22:11:20 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:50:18 sthen Exp $
 
 COMMENT =	command-line editor and web browser
 
@@ -11,7 +11,7 @@ MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 HOMEPAGE =	http://edbrowse.org/
 
 # GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curl duktape m pcre readline tidy
 

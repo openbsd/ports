@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/28 20:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:49 sthen Exp $
 
 COMMENT =		NetBox API client library
 
@@ -12,7 +12,7 @@ CATEGORIES =		sysutils net
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apache2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

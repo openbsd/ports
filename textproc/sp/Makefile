@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/05/05 15:15:45 danj Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT=	OO toolkit for SGML parsing and entity management
 
@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://www.jclark.com/sp/
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m ${COMPILER_LIBCXX} 
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/08/10 13:28:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:58 sthen Exp $
 
 COMMENT =		extract URLs from MIME email messages or plain text
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://www.memoryhole.net/~kyle/extract_url/
 MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =		mail/p5-MIME-tools \
 			www/p5-HTML-Parser

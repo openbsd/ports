@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/13 17:52:58 ian Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:59 sthen Exp $
 #
 
 COMMENT=	interactive front end to diff
@@ -12,7 +12,7 @@ CATEGORIES =	textproc
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

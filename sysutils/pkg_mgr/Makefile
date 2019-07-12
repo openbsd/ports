@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/12/14 10:37:22 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:48 sthen Exp $
 
 COMMENT=	user-friendly package browser and manager
 
@@ -10,7 +10,7 @@ HOMEPAGE=	https://rhaalovely.net/pkg_mgr/
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://rhaalovely.net/stuff/
 

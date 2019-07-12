@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/05 05:19:31 bentley Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:01 sthen Exp $
 
 COMMENT =		finite-state lexical processing toolkit
 
@@ -17,7 +17,7 @@ HOMEPAGE =		http://wiki.apertium.org/wiki/Lttoolbox
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/12/21 21:27:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:49:55 sthen Exp $
 
 # strictly speaking not, as they are just sound files, but packaging
 # these on arch which don't build asterisk is a waste of cycles on build
@@ -30,7 +30,7 @@ HOMEPAGE =		https://www.openbsd.org/lyrics.html
 MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
 # Copyright held by Theo; ok for non-commercial-redistribution
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://ftp.openbsd.org/pub/OpenBSD/songs/
 

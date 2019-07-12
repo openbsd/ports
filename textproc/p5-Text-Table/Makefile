@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/17 21:06:08 cwen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:07 sthen Exp $
 
 COMMENT=	organize data in tables
 
@@ -8,7 +8,7 @@ DISTNAME=	Text-Table-1.133
 CATEGORIES=	textproc
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		textproc/p5-Text-Aligner
 

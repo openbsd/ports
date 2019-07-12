@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/11 19:59:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:00 sthen Exp $
 
 COMMENT=	language guessing library
 
@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://software.wise-guys.nl/libtextcat/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

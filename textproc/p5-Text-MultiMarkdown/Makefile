@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:07 sthen Exp $
 
 COMMENT =	convert MultiMarkdown syntax to (X)HTML
 
@@ -10,7 +10,7 @@ PKG_ARCH =	*
 MAINTAINER =	Okan Demirmen <okan@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	textproc/p5-Text-Markdown \
 		www/p5-HTML-Parser

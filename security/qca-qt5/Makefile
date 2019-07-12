@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/08 20:00:45 cwen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:35 sthen Exp $
 # separate port for Qt5 because it's too different from Qt4 case
 COMMENT =	Qt Cryptographic Architecture
 
@@ -13,7 +13,7 @@ SHARED_LIBS =	qca-qt5		0.0
 HOMEPAGE =	https://userbase.kde.org/QCA
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += Qt5Core c m pthread
 WANTLIB += ${COMPILER_LIBCXX}

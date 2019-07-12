@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:06 sthen Exp $
 
 COMMENT=		prefixes and suffixes analisys of text
 
@@ -9,7 +9,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE =	modbuild
 

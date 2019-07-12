@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/02/21 10:50:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:50:03 sthen Exp $
 
 COMMENT=	perl module for TrueType font hacking
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 REVISION=	0
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-IO-String
 

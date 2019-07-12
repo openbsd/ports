@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/05/12 21:41:46 stu Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT=	OpenSSL Tcl extension
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://tls.sourceforge.net/
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ssl crypto
 

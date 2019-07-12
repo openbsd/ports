@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/02/08 20:08:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:43 sthen Exp $
 
 COMMENT =	monitoring and metric analytics dashboards
 
@@ -15,7 +15,7 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 MASTER_SITES0 =	https://s3-us-west-2.amazonaws.com/grafana-releases/release/
 
 # Apache 2.0 (bundles roboto and opensans fonts)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/go
 WANTLIB += c pthread

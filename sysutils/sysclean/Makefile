@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/01/29 10:43:34 semarie Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:52 sthen Exp $
 
 COMMENT =	list obsolete files between OpenBSD upgrades
 
@@ -13,7 +13,7 @@ MAINTAINER =	Sebastien Marie <semarie@online.fr>
 MASTER_SITES =	https://github.com/semarie/sysclean/releases/download/${V}/
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAKE_ENV =		BINDIR=${LOCALBASE}/sbin \
 			MANDIR=${LOCALBASE}/man/man

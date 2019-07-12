@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:49:48 sthen Exp $
 
 COMMENT=		represent and manage a libvirt hypervisor connection
 
@@ -10,7 +10,7 @@ CATEGORIES=		sysutils
 HOMEPAGE=		https://libvirt.org/
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl virt
 

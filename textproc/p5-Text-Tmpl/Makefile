@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 19:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:50:07 sthen Exp $
 
 COMMENT=	very fast Perl templating library
 
@@ -10,7 +10,7 @@ CATEGORIES=	textproc
 MAINTAINER=	Alex Feinberg <alex@strlen.net>
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

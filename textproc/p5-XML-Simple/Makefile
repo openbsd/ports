@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/05/10 16:11:20 cwen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:50:09 sthen Exp $
 
 COMMENT=	trivial perl API for reading/writing XML
 
@@ -10,7 +10,7 @@ DISTNAME=	XML-Simple-2.25
 CATEGORIES=	textproc
 
 # GPL/Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	textproc/p5-XML-NamespaceSupport>=1.04 \
 		textproc/p5-XML-SAX-Expat \

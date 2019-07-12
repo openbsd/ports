@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:09 sthen Exp $
 
 COMMENT=	SAX2 driver based on expat
 
@@ -8,7 +8,7 @@ DISTNAME =	XML-SAX-Expat-0.51
 CATEGORIES=	textproc
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	textproc/p5-XML-SAX \
 		textproc/p5-XML-Parser \

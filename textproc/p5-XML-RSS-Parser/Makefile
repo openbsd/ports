@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:09 sthen Exp $
 
 COMMENT=		liberal object-oriented parser for RSS feeds
 
@@ -11,7 +11,7 @@ CATEGORIES=		textproc
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		textproc/p5-XML-Elemental>=2.0 \
 	 		devel/p5-Class-XPath>=1.4 \

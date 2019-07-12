@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/24 16:26:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT =		Tcl interface to GNU Privacy Guard
 DISTNAME =		tclgpg-20160615
@@ -7,7 +7,7 @@ HOMEPAGE =		https://chiselapp.com/user/sgolovan/repository/tclgpg/
 REVISION =		0
 
 # 2-clause BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # Download is hosted by fossil webui, which accepts requests for any filename
 # and chooses checkin to serve based on "uuid" query key

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/28 20:51:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:34 sthen Exp $
 
 COMMENT =	self-contained cryptographic library for Python
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://www.pycryptodome.org
 MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD + Public Domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		pthread
 MODULES =		lang/python

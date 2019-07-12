@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/10/03 13:21:28 okan Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:49:51 sthen Exp $
 
 COMMENT=	simple event correlator
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://simple-evcorr.github.io/
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

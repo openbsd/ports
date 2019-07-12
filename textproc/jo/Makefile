@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/27 12:27:54 fcambus Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:00 sthen Exp $
 
 COMMENT =	JSON output from a shell
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://jpmens.net/2016/03/05/a-shell-command-to-create-json-jo/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB =	c m

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:43 sthen Exp $
 
 COMMENT =	software version control visualization tool
 
@@ -10,7 +10,7 @@ REVISION =	1
 MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://github.com/acaudwell/Gource/releases/download/${DISTNAME}/
 

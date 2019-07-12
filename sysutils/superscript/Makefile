@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/11/24 09:11:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:49:52 sthen Exp $
 
 COMMENT=	extended script command
 
@@ -9,7 +9,7 @@ MASTER_SITES=	https://distfiles.nl/
 
 WANTLIB=	c util
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/superscript ${PREFIX}/bin

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/17 16:19:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:53 sthen Exp $
 
 COMMENT =	data recovery software
 
@@ -14,7 +14,7 @@ EXTRACT_SUFX =	.tar.bz2
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c com_err curses ext2fs iconv jpeg ntfs-3g uuid z
 

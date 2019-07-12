@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/26 15:17:23 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:53 sthen Exp $
 
 COMMENT =	userland implementation of the UDF filesystem
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://www.13thmonkey.org/udfclient/
 MAINTAINER =	Josh Grosse <josh@jggimi.net>
 
 # Clarified Artistic License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c pthread
 

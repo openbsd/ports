@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/06/22 07:43:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:39 sthen Exp $
 
 COMMENT=		easy-to-use CLI to manage AWS
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://awless.io/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 

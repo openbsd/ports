@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/08 15:44:46 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:04 sthen Exp $
 
 COMMENT=	perl module for manipulating PDF files
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 REVISION =	0
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS =		textproc/p5-Font-TTF \
 			textproc/p5-Text-PDF

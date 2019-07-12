@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2019/06/25 20:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2019/07/12 20:49:40 sthen Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -51,7 +51,7 @@ HOMEPAGE =		http://www.collectd.org/
 SHARED_LIBS +=		collectdclient 1.0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/files/
 EXTRACT_SUFX =		.tar.bz2

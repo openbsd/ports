@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2018/09/10 16:23:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2019/07/12 20:49:38 sthen Exp $
 
 COMMENT=	extended C-shell with many useful features
 
@@ -8,7 +8,7 @@ CATEGORIES=	shells
 HOMEPAGE=	http://www.tcsh.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/ \
 		ftp://ftp.astron.com/pub/tcsh/old/

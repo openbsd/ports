@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/09/04 12:46:21 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:39 sthen Exp $
 
 COMMENT =	remote backup software system
 
@@ -9,7 +9,7 @@ REVISION =	1
 CATEGORIES =	sysutils
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 HOMEPAGE =	http://backuppc.sourceforge.net
 

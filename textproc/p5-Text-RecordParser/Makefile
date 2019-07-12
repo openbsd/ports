@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/01 00:32:16 cwen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:07 sthen Exp $
 
 COMMENT= 	parse records in CSV-like formats
 
@@ -8,7 +8,7 @@ DISTNAME=	Text-RecordParser-1.6.5
 CATEGORIES=	textproc devel
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/p5-Class-Accessor \
 			devel/p5-IO-stringy \

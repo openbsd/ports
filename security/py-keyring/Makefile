@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/04/28 20:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:34 sthen Exp $
 
 COMMENT=		store and access your passwords safely
 
@@ -10,7 +10,7 @@ REVISION=		2
 CATEGORIES=   		security
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_PI =		Yes
 

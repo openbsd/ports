@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:06 sthen Exp $
 
 COMMENT=		Quote strings for passing through the shell
 
@@ -11,6 +11,6 @@ CATEGORIES=		textproc
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

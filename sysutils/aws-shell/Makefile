@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/15 12:04:41 kmos Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:39 sthen Exp $
 
 PORTROACH=		skipv:reinvent-demo
 
@@ -14,7 +14,7 @@ CATEGORIES=		sysutils
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

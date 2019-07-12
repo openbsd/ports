@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:10 sthen Exp $
 
 COMMENT=	simple document format
 
@@ -11,6 +11,6 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Pod/}
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

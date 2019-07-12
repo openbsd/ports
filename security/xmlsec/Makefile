@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2018/06/06 14:31:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2019/07/12 20:49:38 sthen Exp $
 
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
@@ -16,7 +16,7 @@ SHARED_LIBS=	xmlsec1-gnutls	5.0 \
 HOMEPAGE=	https://www.aleksey.com/xmlsec/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto gcrypt gmp gnutls gpg-error hogweed iconv idn2 intl ltdl m
 WANTLIB += nettle pthread ssl tasn1 unistring xml2 xslt z p11-kit ffi lzma

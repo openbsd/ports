@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/04/21 18:19:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:14 sthen Exp $
 
 COMMENT=		show differences between XML files/DOM trees
 
@@ -11,7 +11,7 @@ CATEGORIES=		textproc
 HOMEPAGE=		http://www.logilab.org/859/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pthread

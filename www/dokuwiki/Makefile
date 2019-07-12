@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/10/17 14:15:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:50:18 sthen Exp $
 
 COMMENT =	standards compliant, simple to use Wiki
 
@@ -12,7 +12,7 @@ REVISION =	1
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://download.dokuwiki.org/src/dokuwiki/
 

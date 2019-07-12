@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/21 10:08:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:50:17 sthen Exp $
 
 V =			0.4.3
 REVISION =		0
@@ -10,7 +10,7 @@ EXTRACT_SUFX =		.tar.xz
 HOMEPAGE =		https://pwmt.org/projects/zathura/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girara-gtk3 glib-2.0 gmodule-2.0 gobject-2.0

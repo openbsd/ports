@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/12/03 21:24:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:49:52 sthen Exp $
 
 COMMENT=	daemon to modify pf tables from userland
 
@@ -8,7 +8,7 @@ REVISION=	5
 CATEGORIES=	sysutils
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

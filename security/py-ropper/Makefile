@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:35 sthen Exp $
 
 COMMENT =	rop gadget finder and binary information tool
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://scoding.de/ropper/
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes

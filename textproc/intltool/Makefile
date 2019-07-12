@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/20 22:15:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:50:00 sthen Exp $
 
 COMMENT=		internationalization tools
 
@@ -10,7 +10,7 @@ CATEGORIES=		textproc
 HOMEPAGE=		https://edge.launchpad.net/intltool
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/trunk/${V}/+download/
 

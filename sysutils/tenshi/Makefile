@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/12 00:06:02 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:53 sthen Exp $
 
 COMMENT =	log monitoring program to watch and report on log files
 
@@ -15,7 +15,7 @@ HOMEPAGE =	https://www.inversepath.com/tenshi.html
 MAINTAINER =		Paul B. Henson <henson@acm.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://github.com/inversepath/tenshi/archive/
 

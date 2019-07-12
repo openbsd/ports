@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/19 19:58:52 danj Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:59 sthen Exp $
 
 COMMENT =		simple XML library
 
@@ -7,7 +7,7 @@ REVISION =		12
 CATEGORIES =		textproc
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

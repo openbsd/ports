@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/04 20:16:42 remi Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:49:45 sthen Exp $
 
 COMMENT =	reliable event logging protocol library
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://www.rsyslog.com/librelp/
 MAINTAINER =	Remi Locherer <remi@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  ffi gmp gnutls hogweed iconv idn2 intl nettle p11-kit pthread
 WANTLIB += tasn1 unistring crypto ssl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2014/04/13 01:01:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT=	simple log monitoring program
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	devel/p5-Date-Calc \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE= perl
 PKG_ARCH=	*

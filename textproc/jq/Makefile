@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/11/02 16:41:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:00 sthen Exp $
 
 COMMENT =		lightweight and flexible command-line JSON processor
 
@@ -12,7 +12,7 @@ CATEGORIES =		textproc
 HOMEPAGE =		http://stedolan.github.io/jq/
 
 # MIT (code), CC-BY-3.0 (docs)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += c m onig

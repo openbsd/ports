@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/11 14:52:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:42 sthen Exp $
 
 COMMENT=		fingerprint scanning functionality over D-Bus
 
@@ -12,7 +12,7 @@ HOMEPAGE=		https://fprint.freedesktop.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c dbus-1 dbus-glib-1 ffi fprint gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 iconv intl m pcre polkit-gobject-1 pthread

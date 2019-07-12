@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/10/09 12:48:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:49:56 sthen Exp $
 
 COMMENT=	text document format for writing documents and man pages
 
@@ -11,7 +11,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 HOMEPAGE=	http://www.methods.co.nz/asciidoc/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=asciidoc/}
 

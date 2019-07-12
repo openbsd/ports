@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/06/09 13:32:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:41 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH:=dmidecode/}
 HOMEPAGE=	http://www.nongnu.org/dmidecode/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/05 11:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:50:14 sthen Exp $
 
 MULTI_PACKAGES=		-main -mysql -pgsql
 
@@ -25,7 +25,7 @@ HOMEPAGE=		http://librdf.org/
 MASTER_SITES=		http://download.librdf.org/source/
 
 # LGPL 2.1+, GPL 2+ or Apache 2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += crypto curl gcrypt gmp gpg-error iconv intl ltdl lzma m mpfr
 WANTLIB += nghttp2 pcre pthread raptor2 rasqal ssl uuid xml2 xslt yajl z

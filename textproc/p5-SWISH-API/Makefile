@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:05 sthen Exp $
 
 COMMENT =	Perl interface to the swish-e C library
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://swish-e.org/
 MASTER_SITES =	${HOMEPAGE}distribution/
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m perl z swish-e>=2.1
 

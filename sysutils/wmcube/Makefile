@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/06/01 14:24:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:49:54 sthen Exp $
 
 COMMENT=		wm-dockapp; shows rotating 3d-object and CPU load
 
@@ -9,7 +9,7 @@ CATEGORIES=		sysutils x11 x11/windowmaker
 HOMEPAGE=		http://kling.mine.nu/wmcube.htm
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext Xpm c m xcb
 
 MASTER_SITES=		http://kling.mine.nu/files/

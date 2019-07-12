@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/31 15:24:32 okan Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:09 sthen Exp $
 
 COMMENT= 	XML::RSS with XML::LibXML
 
@@ -10,7 +10,7 @@ CATEGORIES=	textproc
 CONFIGURE_STYLE=modbuild
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Class-Accessor \
 		devel/p5-DateTime-Format-Mail \

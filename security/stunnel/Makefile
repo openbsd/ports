@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2019/03/19 16:51:13 jsing Exp $
+# $OpenBSD: Makefile,v 1.93 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
@@ -9,7 +9,7 @@ REVISION=	2
 MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 
 # GPLv2+ with OpenSSL exemption
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto pthread ssl util
 

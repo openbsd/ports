@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/20 22:15:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:42 sthen Exp $
 
 COMMENT=	dancers shell or distributed shell
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.netfort.gr.jp/~dancer/software/dsh.html.en
 MASTER_SITES=	http://www.netfort.gr.jp/~dancer/software/downloads/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c dshconfig iconv intl
 

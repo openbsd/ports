@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:57:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:03 sthen Exp $
 
 COMMENT=	perl interface to Adobe Font Metrics files
 
@@ -9,7 +9,7 @@ REVISION=	0
 CATEGORIES=	textproc
  
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
 

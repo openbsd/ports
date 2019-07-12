@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/07 15:01:52 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:41 sthen Exp $
 
 V =		0.5.1
 COMMENT =	service monitoring / "init" system
@@ -12,7 +12,7 @@ HOMEPAGE =	https://github.com/davmac314/dinit
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		${COMPILER_LIBCXX} c m
 

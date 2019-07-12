@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/05 11:52:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT =	fetch ssh AuthorizedKeys from LDAP
 
@@ -10,7 +10,7 @@ CATEGORIES =	security net
 EXTRACT_SUFX=
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c crypto lber-2.4 ldap-2.4 util z
 

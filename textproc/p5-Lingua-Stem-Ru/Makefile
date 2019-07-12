@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/03/28 12:13:58 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:04 sthen Exp $
 
 COMMENT =	Russian language stemming
 
@@ -8,6 +8,6 @@ DISTNAME =	Lingua-Stem-Ru-0.04
 CATEGORIES =	textproc
 
 # Artistic
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

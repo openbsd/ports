@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/04/01 18:46:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:10 sthen Exp $
 
 COMMENT=	Swiss-army knife for reading and writing XML files
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 MODULES=	www/pear
 
 # PHP License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	textproc/pear-XML-Parser>=1.2.6
 

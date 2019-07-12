@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:58 sthen Exp $
 
 COMMENT =	fontconfig-based alternative to banner(1)
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://www.normalesup.org/~george/comp/fcbanner/
 MASTER_SITES =	${HOMEPAGE}
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c expat fontconfig freetype z
 

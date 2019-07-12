@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/06/12 10:57:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:01 sthen Exp $
 
 COMMENT =	safe templates engine for Lua
 
@@ -15,7 +15,7 @@ CATEGORIES =	textproc
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/lua
 

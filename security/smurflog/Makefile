@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:36 sthen Exp $
 
 COMMENT=	logs smurf attacks
 DISTNAME=	smurflog-2.1
@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_PACKETSTORM:=UNIX/loggers/}
 
 MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c pcap
 
 AUTOCONF_VERSION=	2.13

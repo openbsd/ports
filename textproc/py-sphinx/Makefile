@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/04/28 20:51:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:50:13 sthen Exp $
 
 COMMENT =		python documentation generator
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://sphinx-doc.org/
 MAINTAINER =		frantisek holop <minusf@obiit.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

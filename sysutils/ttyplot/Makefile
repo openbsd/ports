@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/03 10:03:48 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:53 sthen Exp $
 
 COMMENT =	realtime plotting utility for terminals
 
@@ -11,7 +11,7 @@ CATEGORIES =	sysutils
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c curses
 

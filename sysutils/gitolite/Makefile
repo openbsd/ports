@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/09/04 12:46:22 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:43 sthen Exp $
 
 PKG_ARCH=		*
 
@@ -15,7 +15,7 @@ HOMEPAGE=		http://gitolite.com/gitolite/
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/git
 

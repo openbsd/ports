@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:49:54 sthen Exp $
 
 ONLY_FOR_ARCHS=		${APM_ARCHS}
 
@@ -11,7 +11,7 @@ CATEGORIES=		sysutils x11 x11/windowmaker
 HOMEPAGE=		http://nis-www.lanl.gov/~mgh/WindowMaker/DockApps.shtml
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext Xpm c xcb
 
 MASTER_SITES=		http://nis-www.lanl.gov/~mgh/WindowMaker/

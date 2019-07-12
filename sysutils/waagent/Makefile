@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/11/07 11:10:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:54 sthen Exp $
 
 COMMENT=		Microsoft Azure Linux Agent
 
@@ -12,7 +12,7 @@ REVISION=		1
 CATEGORIES=		sysutils
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes

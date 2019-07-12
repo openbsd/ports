@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/25 13:18:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:53 sthen Exp $
 
 COMMENT =		load average history on a tty
 
@@ -10,7 +10,7 @@ CATEGORIES =		sysutils
 HOMEPAGE =		http://www.daveltd.com/src/util/ttyload/
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

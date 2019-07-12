@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2018/03/08 14:41:02 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/07/12 20:49:40 sthen Exp $
 
 COMMENT =	BackUp and Restore Program
 DISTNAME =	burp-${VERSION}
@@ -7,7 +7,7 @@ CATEGORIES =	sysutils
 HOMEPAGE =	http://burp.grke.org/
 
 # AGPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB ?=	b2 c crypto m curses rsync ssl z
 

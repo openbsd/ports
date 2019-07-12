@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/03/16 20:08:00 pvk Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:36 sthen Exp $
 
 PORTROACH=	limit:^1\.
 PORTROACH_COMMENT=	the 2.x version has a different user interface
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.opendnssec.org/softhsm/
 MAINTAINER=	Pavel Korovin <pvk@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += botan-1.10 bz2 c crypto gmp m pthread sqlite3 ${COMPILER_LIBCXX} z
 

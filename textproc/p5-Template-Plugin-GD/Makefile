@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:06 sthen Exp $
 
 COMMENT =	GD plugin(s) for the Template Toolkit
 
@@ -9,7 +9,7 @@ REVISION =	2
 CATEGORIES =	textproc graphics
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =	textproc/p5-Template>=2.14 \
                 graphics/p5-GD>=1.14

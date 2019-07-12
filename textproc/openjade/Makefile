@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:50:02 sthen Exp $
 
 COMMENT=	object-oriented DSSSL engine
 
@@ -14,7 +14,7 @@ SHARED_LIBS=	ospgrove 0.0 \
 HOMEPAGE=	http://openjade.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 LIB_DEPENDS=		textproc/opensp
 WANTLIB=		c iconv intl m pthread ${COMPILER_LIBCXX} osp

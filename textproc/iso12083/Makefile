@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/11/24 09:11:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:50:00 sthen Exp $
 
 COMMENT=	SGML DTDs from The Electronic Publishing SIG
 
@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://info.ex.ac.uk/pub/SGML/ISO-12083/ \
 DISTFILES=	article.dtd book.dtd maths.dtd serial.dtd
 
 # custom
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 DIST_SUBDIR=	iso12083
 

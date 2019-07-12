@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/02/13 07:31:58 solene Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:50 sthen Exp $
 
 COMMENT =	system monitoring and alert notifier
 DISTNAME =	reed-alert-v1.04
@@ -10,7 +10,7 @@ HOMEPAGE =	https://dataswamp.org/~solene/2018-01-17-reed-alert.html
 MAINTAINER =	Solene Rapenne <solene@perso.pw>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	ftp://bitreich.org/releases/reed-alert/
 

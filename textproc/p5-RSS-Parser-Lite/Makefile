@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:05 sthen Exp $
 
 COMMENT =		simple and pure Perl RSS parser
 
@@ -7,7 +7,7 @@ CATEGORIES =		textproc
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

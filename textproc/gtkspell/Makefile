@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/06/13 15:48:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2019/07/12 20:49:58 sthen Exp $
 
 PORTROACH+=	limit:^2
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://gtkspell.sourceforge.net/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm enchant

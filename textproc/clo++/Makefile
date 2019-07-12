@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:57 sthen Exp $
 
 COMMENT=	command line parser generator
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://pmade.org/~pjones/software/clo++/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv m pthread lzma ${COMPILER_LIBCXX} xml2>=6 z
 

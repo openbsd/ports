@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/05 01:03:36 jturner Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:51 sthen Exp $
 
 COMMENT =	minimal remote system monitor
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://kristaps.bsd.lv/slant/
 MAINTAINER =	Kristaps Dzonsons <kristaps@bsd.lv>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += c curses sqlite3 tls z

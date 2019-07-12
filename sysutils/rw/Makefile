@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/05/28 02:10:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:51 sthen Exp $
 
 V =		1.0
 COMMENT =	simple dd(1) replacement utility from Sortix
@@ -10,7 +10,7 @@ HOMEPAGE =	https://sortix.org/rw/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

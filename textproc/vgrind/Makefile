@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/11/24 09:11:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:16 sthen Exp $
 
 COMMENT=		grind nice listings of programs
 
@@ -7,7 +7,7 @@ REVISION=		1
 CATEGORIES=		textproc
 
 # 3-clause BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=		c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/10/27 13:31:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:49:45 sthen Exp $
 
 COMMENT=	provide ldap authentication type
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://sourceforge.net/projects/login-ldap/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=login-ldap/}
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c lber ldap
 

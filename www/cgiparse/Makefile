@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2016/03/10 21:58:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:50:18 sthen Exp $
 
 BROKEN-alpha=	Alpha architecture not yet supported
 
@@ -12,7 +12,7 @@ SHARED_LIBS=	cgiparse	1.0
 HOMEPAGE=	http://resnet.uoregon.edu/~gurney_j/jmpc/cgiparse.html
 
 # License: BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/jmpc/dist/
 

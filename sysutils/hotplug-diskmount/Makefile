@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/09/04 12:46:22 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:43 sthen Exp $
 
 COMMENT =	disk auto-mounter
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://www.bsdua.org/hotplug-diskmount.html
 MASTER_SITES =	http://www.bsdua.org/files/
 
 # Public domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/20 22:15:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:49:38 sthen Exp $
 
 COMMENT=	POSIX-compliant command line shell
 
@@ -11,7 +11,7 @@ REVISION=	0
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_OSDN_JP:=/yash/${RELEASE}/}
 EXTRACT_SUFX=	.tar.xz

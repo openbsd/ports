@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/10/05 23:18:02 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:35 sthen Exp $
 
 COMMENT=		rar, 7zip and zip password bruteforcer
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://rarcrack.sourceforge.net/
 MAINTAINER=		Laurent Fanis <laurent.fanis@gmail.com>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB+= c iconv lzma m pthread xml2 z
 

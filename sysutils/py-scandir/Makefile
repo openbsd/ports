@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/05 15:44:13 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:49 sthen Exp $
 
 COMMENT =		improved directory iterator and faster os.walk()
 
@@ -12,7 +12,7 @@ CATEGORIES =		sysutils
 HOMEPAGE =		https://github.com/benhoyt/scandir
 
 # BSD 3-Clause
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

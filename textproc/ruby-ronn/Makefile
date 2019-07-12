@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/14 17:04:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT =		builds man pages
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://rtomayko.github.com/ronn/
 MAINTAINER =		Jeremy Evans <jeremy@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

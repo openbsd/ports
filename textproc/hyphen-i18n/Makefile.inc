@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2015/09/22 06:47:32 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/07/12 20:49:59 sthen Exp $
 
 COMMENT=		${LANG} hyphenation rules
 DESCR=			${.CURDIR}/../DESCR
@@ -13,7 +13,7 @@ WRKDIST=		${WRKDIR}
 CATEGORIES +=		textproc textproc/hyphen
 
 # LGPLv2.1, LGPLv3, GPLv2, GPLv3, MPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 DIST_SUBDIR=		hyphen
 MASTER_SITES=		${MASTER_SITE_FREEBSD_LOCAL:=sunpoet/hyphen/}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:06 sthen Exp $
 
 COMMENT =	TT plugin for Text::Markdown
 
@@ -9,7 +9,7 @@ REVISION =	1
 CATEGORIES =	textproc
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =	textproc/p5-Template \
 		textproc/p5-Text-Markdown

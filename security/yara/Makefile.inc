@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2019/05/16 09:37:00 rpointel Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2019/07/12 20:49:38 sthen Exp $
 
 VERSION ?=		3.10.0
 
@@ -10,6 +10,6 @@ GH_ACCOUNT =   VirusTotal
 GH_TAGNAME =   v${VERSION}
 
 # Apache v2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAINTAINER ?=	Remi Pointel <rpointel@openbsd.org>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/01/01 18:11:46 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:58 sthen Exp $
 
 COMMENT =	yet another free document preparation system
 
@@ -10,7 +10,7 @@ MASTER_SITES =	${HOMEPAGE}${DISTNAME}/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 USE_GMAKE =	yes
 MAKE_FLAGS =	CC="${CC}"

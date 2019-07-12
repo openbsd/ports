@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/04/29 18:19:33 bentley Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:59 sthen Exp $
 
 COMMENT =		simple utilities for manipulating HTML and XML files
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://www.w3.org/Tools/HTML-XML-utils/
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # W3C license
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto curl iconv idn nghttp2 ssl z
 

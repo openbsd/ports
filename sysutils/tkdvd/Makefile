@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/06/29 22:16:21 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:49:53 sthen Exp $
 
 COMMENT=		GUI to dvd+rw-tools and cdrecord
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://regis.damongeot.free.fr/tkdvd/
 MAINTAINER=		Vlad Glagolev <stealth@sourcemage.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE:=dl/}
 

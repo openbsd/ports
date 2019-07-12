@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/08 18:37:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:01 sthen Exp $
 
 COMMENT =		count lines of codes in many languages
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://gitlab.com/esr/loccount
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # statically linked
 WANTLIB =		c pthread

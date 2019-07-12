@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/10/17 19:56:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:42 sthen Exp $
 
 COMMENT=	identify or delete duplicates
 
@@ -11,7 +11,7 @@ MASTER_SITES=	https://github.com/adrianlopezroche/fdupes/archive/
 WRKDIST=	${WRKDIR}/fdupes-fdupes-$V
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

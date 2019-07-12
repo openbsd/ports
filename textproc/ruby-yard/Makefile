@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/10/27 18:26:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT=	Ruby documentation tool
 
@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://yardoc.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby
 

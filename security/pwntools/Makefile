@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/08 21:27:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:33 sthen Exp $
 
 COMMENT =	Pwntools CTF framework and exploit development library
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://pwntools.com
 MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # 'Mostly MIT, some GPL/BSD, see LICENSE-pwntools.txt'
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

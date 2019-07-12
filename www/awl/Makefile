@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/10/17 14:15:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:18 sthen Exp $
 
 COMMENT =	Andrews web libraries for PHP
 
@@ -10,7 +10,7 @@ PKG_ARCH =	*
 REVISION =	0
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://www.davical.org/downloads/
 

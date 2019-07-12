@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/19 19:58:51 danj Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:59 sthen Exp $
 
 COMMENT =		efficient conversion of values to readable byte strings
 
@@ -7,7 +7,7 @@ REVISION =		5
 CATEGORIES =		textproc
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

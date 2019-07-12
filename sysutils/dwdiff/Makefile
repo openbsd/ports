@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/20 22:15:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:49:42 sthen Exp $
 
 COMMENT =		word-based diff program
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://os.ghalkes.nl/dwdiff.html
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  c iconv icudata icui18n icuuc intl m pthread
 

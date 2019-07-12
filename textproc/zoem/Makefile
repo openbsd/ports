@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:17 sthen Exp $
 
 COMMENT=	interpretive macro/programming language
 
@@ -10,7 +10,7 @@ CATEGORIES=	textproc lang
 HOMEPAGE=	http://micans.org/zoem/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c m 
 
 MASTER_SITES=	${HOMEPAGE}/src/

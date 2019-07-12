@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/09/04 12:46:23 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:56 sthen Exp $
 
 COMMENT=		boustrophedon text reader
 DISTNAME=		boust-0.161
@@ -8,7 +8,7 @@ CATEGORIES=		textproc
 HOMEPAGE=		http://traevoli.com/boust/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}bin/
 

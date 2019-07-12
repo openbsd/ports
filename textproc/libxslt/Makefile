@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2019/05/15 18:59:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.91 2019/07/12 20:50:01 sthen Exp $
 
 COMMENT-main=		XSLT C Library for GNOME
 COMMENT-python= 	Python bindings for libxslt
@@ -19,7 +19,7 @@ MASTER_SITES=		https://distfiles.nl/ \
 			ftp://xmlsoft.org/libxslt/
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		gpg-error iconv intl lzma m z
 

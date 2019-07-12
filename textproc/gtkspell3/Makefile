@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/09/20 09:21:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:49:58 sthen Exp $
 
 COMMENT=	gtk+3 spelling checker
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://gtkspell.sourceforge.net/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender aspell atk-1.0 atk-bridge-2.0 atspi

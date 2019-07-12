@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/20 22:15:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:49:53 sthen Exp $
 
 # requires nvram(4) device
 ONLY_FOR_ARCHS=	amd64 i386
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.nongnu.org/tpb/
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=tpb/}
 
 # gpl
-PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=  ICE SM X11 Xext Xinerama c iconv intl ossaudio pthread xosd>=4
 

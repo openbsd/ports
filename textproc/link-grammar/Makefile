@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/06/11 00:38:36 kurt Exp $
+# $OpenBSD: Makefile,v 1.55 2019/07/12 20:50:01 sthen Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
@@ -25,7 +25,7 @@ CATEGORIES =		textproc
 HOMEPAGE =		http://www.abisource.com/projects/link-grammar/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += hunspell-1.6 m minisat pcre2-8 sqlite3 z ${COMPILER_LIBCXX}
 

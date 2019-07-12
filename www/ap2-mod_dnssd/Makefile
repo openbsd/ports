@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/03/28 12:39:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:17 sthen Exp $
 
 COMMENT=	Apache2 Zeroconf module
 
@@ -11,7 +11,7 @@ CATEGORIES=	www net
 HOMEPAGE=	http://0pointer.de/lennart/projects/mod_dnssd/
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  apr-1 avahi-client avahi-common dbus-1 iconv intl pthread
 

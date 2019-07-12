@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:05 sthen Exp $
 
 COMMENT =	parses a query string suitable for external search engines
 
@@ -11,6 +11,6 @@ CATEGORIES =	textproc
 MAINTAINER =	Ian Mcwilliam <kaosagnt@gmail.com>
 
 # perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 .include <bsd.port.mk>

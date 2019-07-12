@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/07/19 00:02:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:55 sthen Exp $
 
 COMMENT=	creative voip blaster driver/software
 DISTNAME=	fobbit-0.61
@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fobbit/}
 HOMEPAGE=	http://www.fobbit.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/02/16 22:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:33 sthen Exp $
 
 COMMENT=	simple and easy to use TCP port scanner
 
@@ -7,7 +7,7 @@ PKGNAME=	${DISTNAME:L}
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM:=UNIX/scanners/}
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 SEPARATE_BUILD=	Yes

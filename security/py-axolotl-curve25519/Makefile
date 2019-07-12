@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:34 sthen Exp $
 
 COMMENT =		Python curve25519 library with ed25519 signatures
 
@@ -13,7 +13,7 @@ CATEGORIES =		security
 MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += pthread ${MODPY_WANTLIB}
 

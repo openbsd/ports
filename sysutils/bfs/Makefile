@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/07 15:25:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:49:39 sthen Exp $
 
 COMMENT =	breadth-first version of the UNIX find command
 CATEGORIES =	sysutils
@@ -10,7 +10,7 @@ GH_TAGNAME =	1.4.1
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

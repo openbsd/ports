@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/10/09 12:23:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:01 sthen Exp $
 
 COMMENT=	Python program to create FAQ's list from formatted data file
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://www.makefaq.org/
 
 # GPL 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=makefaq/}
 EXTRACT_SUFX=	.tgz

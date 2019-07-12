@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:54 sthen Exp $
 
 COMMENT=	USB developer utilities
 
@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 
 MASTER_SITES=	ftp://ftp.augustsson.net/pub/netbsd/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 NO_TEST=	Yes

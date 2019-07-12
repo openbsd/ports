@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/08 15:44:46 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:03 sthen Exp $
 
 COMMENT =	force number of words to singular or plural
 
@@ -9,7 +9,7 @@ CATEGORIES =	textproc
 REVISION =	0
 
 # Same as Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	textproc/p5-Lingua-EN-Inflect>=0
 

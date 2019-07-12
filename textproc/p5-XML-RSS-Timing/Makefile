@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/08 15:44:46 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:09 sthen Exp $
 
 COMMENT=	figure out when to fetch RSS Feeds
 
@@ -9,6 +9,6 @@ REVISION=	1
 CATEGORIES=	textproc
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

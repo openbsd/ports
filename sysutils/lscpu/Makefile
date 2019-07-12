@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/05/05 13:44:49 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:46 sthen Exp $
 
 COMMENT =	gather and display CPU architecture information
 CATEGORIES =	sysutils
@@ -10,7 +10,7 @@ GH_TAGNAME =	1.2.0
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

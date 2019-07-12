@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/07 16:14:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:36 sthen Exp $
 
 COMMENT =		ruby wrapper for pledge(2) and unveil(2)
 
@@ -10,7 +10,7 @@ HOMEPAGE =		https://github.com/jeremyevans/ruby-pledge
 MAINTAINER =		Jeremy Evans <jeremy@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

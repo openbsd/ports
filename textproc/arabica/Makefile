@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:56 sthen Exp $
 
 COMMENT =	XML and HTML processing toolkit
 DISTNAME =	arabica-2010-November
@@ -12,7 +12,7 @@ HOMEPAGE =	http://www.jezuk.co.uk/cgi-bin/view/arabica
 SHARED_LIBS +=	arabica	0.0 # 0.0
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c expat m ${COMPILER_LIBCXX}
 

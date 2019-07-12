@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/03/05 05:19:31 bentley Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:56 sthen Exp $
 
 COMMENT =		rule-based machine translation platform
 
@@ -19,7 +19,7 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 USE_GMAKE =		Yes
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 

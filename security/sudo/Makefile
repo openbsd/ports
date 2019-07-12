@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/06/25 20:25:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT=	execute a command as another user
 
@@ -9,7 +9,7 @@ REVISION=	1
 MAINTAINER=	Todd C. Miller <millert@openbsd.org>
 
 # ISC-style license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB+=	c util z
 

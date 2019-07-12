@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/05 16:06:34 danj Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:50:18 sthen Exp $
 
 COMMENT=		free real-time logfile analyzer
 
@@ -10,7 +10,7 @@ CATEGORIES=		www
 HOMEPAGE=		http://awstats.sourceforge.net/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=awstats/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/07 17:04:59 danj Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:55 sthen Exp $
 
 COMMENT=	graphical display for the current uvm status
 
@@ -7,7 +7,7 @@ PKGNAME=	xuvmstat-20050909
 REVISION=	3
 CATEGORIES=     sysutils x11
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 c
 

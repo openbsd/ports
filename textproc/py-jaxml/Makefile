@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:12 sthen Exp $
 
 COMMENT=	Python module to easily generate XML/XHTML/HTML documents
 
@@ -10,7 +10,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://www.librelogiciel.com/software/jaxml/action_Presentation
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://www.librelogiciel.com/software/jaxml/tarballs/
 

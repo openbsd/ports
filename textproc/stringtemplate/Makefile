@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/06/11 00:38:36 kurt Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT=	Java template engine for generating source code, etc
 
@@ -11,7 +11,7 @@ CATEGORIES=	textproc java
 HOMEPAGE=	http://www.stringtemplate.org/
 
 # BSD (StringTemplate License: http://www.stringtemplate.org/license.html)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # upstream keeps re-rolling the distfile
 MASTER_SITES=	https://distfiles.nl/

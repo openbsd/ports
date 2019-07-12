@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/30 11:59:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:47 sthen Exp $
 
 # bunch of undefined things in crypto/blake2b, shirou/gopsutil/disk, shirou/gopsutil/mem
 NOT_FOR_ARCHS=		i386
@@ -16,7 +16,7 @@ HOMEPAGE=		https://www.nomadproject.io
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 

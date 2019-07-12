@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/04/28 20:51:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:12 sthen Exp $
 
 COMMENT =	Python library for pretty-printing tabular data
 
@@ -17,7 +17,7 @@ FLAVOR ?=
 FLAVORS =	python3
 
 # 3 clause BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

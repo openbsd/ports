@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/04/26 21:21:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:49:39 sthen Exp $
 
 COMMENT=		CLI for AWS ECS
 
@@ -14,7 +14,7 @@ HOMEPAGE=		https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_CLI.h
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 

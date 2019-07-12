@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/06/26 14:02:36 reyk Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:40 sthen Exp $
 
 COMMENT=	cloud provisioning for OpenBSD VMs
 
@@ -10,7 +10,7 @@ HOMEPAGE=	https://github.com/reyk/cloud-agent/
 MAINTAINER=	Reyk Floeter <reyk@openbsd.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}releases/download/v${V}/
 

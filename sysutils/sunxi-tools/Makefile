@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/13 16:46:23 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:52 sthen Exp $
 
 COMMENT =	collection of CLI tools for ARM devices with Allwinner SoCs
 
@@ -10,7 +10,7 @@ REVISION =	0
 CATEGORIES =	sysutils
 HOMEPAGE =	http://linux-sunxi.org/Sunxi-tools
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 USE_GMAKE =		Yes
 WANTLIB =		c pthread usb-1.0

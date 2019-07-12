@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/03/30 21:21:42 fcambus Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:49 sthen Exp $
 
 PORTROACH =	ignore:1
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://www.seasip.info/Unix/PSF/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c
 

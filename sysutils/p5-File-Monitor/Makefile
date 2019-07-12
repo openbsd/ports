@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:57:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:47 sthen Exp $
 
 COMMENT=	monitor files and directories for changes
 
@@ -10,7 +10,7 @@ DISTNAME=	File-Monitor-1.00
 CATEGORIES=	sysutils
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CPAN_AUTHOR=	ANDYA
 

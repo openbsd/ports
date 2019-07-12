@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/01/08 13:07:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:17 sthen Exp $
 
 COMMENT=		generator for pronounceable random words
 
@@ -8,7 +8,7 @@ REVISION=		5
 CATEGORIES=		textproc
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_PI =		Yes
 

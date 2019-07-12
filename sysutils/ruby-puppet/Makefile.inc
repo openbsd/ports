@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.45 2018/07/09 06:56:42 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.46 2019/07/12 20:49:50 sthen Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -43,7 +43,7 @@ RUN_DEPENDS +=	archivers/gtar \
 		sysutils/ruby-shadow,${MODRUBY_FLAVOR}>=2.3.4p1
 
 # Apache2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 FAKE_FLAGS +=		HOME=${WKRDIR}/home
 

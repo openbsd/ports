@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/10 18:40:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:50:10 sthen Exp $
 
 COMMENT=		presenter console with multi-monitor support
 
@@ -13,7 +13,7 @@ CATEGORIES=		textproc
 HOMEPAGE=		https://pdfpc.github.io/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		devel/cmake
 

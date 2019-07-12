@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/06/26 17:10:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:46 sthen Exp $
 
 COMMENT=		forensic tool that collects MAC times from files
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.sleuthkit.org/mac-robber/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mac-robber/}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

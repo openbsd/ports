@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:57:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:47 sthen Exp $
 
 COMMENT =		simple and dumb file system watcher
 
@@ -11,6 +11,6 @@ MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 BUILD_DEPENDS =		devel/p5-Test-SharedFork
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

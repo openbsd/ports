@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:54 sthen Exp $
 
 COMMENT=		wm-dockapp; wireless interface monitor
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://www.nazgul.ch/dev.html
 MAINTAINER=		Marcus Glocker <marcus@nazgul.ch>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext Xpm c m xcb
 
 NO_TEST=		Yes

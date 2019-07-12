@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/28 20:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:35 sthen Exp $
 
 COMMENT =		Python module to read and work with PE files
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://github.com/erocarrera/pefile
 MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS = 	Yes

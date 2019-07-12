@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/12 02:08:29 lteo Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:56 sthen Exp $
 
 COMMENT=	proxy/masquerading daemon for the SIP protocol
 
@@ -9,7 +9,7 @@ REVISION=	1
 HOMEPAGE=	http://siproxd.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c osip2 osipparser2 pthread ltdl
 

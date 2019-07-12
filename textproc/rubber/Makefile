@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/07/01 09:02:41 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:14 sthen Exp $
 
 COMMENT=	wrapper for LaTeX and friends
 
@@ -11,7 +11,7 @@ CATEGORIES=	textproc print
 HOMEPAGE=	https://launchpad.net/rubber/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/trunk/${MODPY_EGG_VERSION}/+download/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/02/26 16:34:48 sebastia Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:51 sthen Exp $
 
 COMMENT=		syntax checks for Puppet manifests and templates
 
@@ -8,7 +8,7 @@ CATEGORIES=		sysutils
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

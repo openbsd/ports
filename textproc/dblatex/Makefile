@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/05/11 18:48:35 stsp Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:57 sthen Exp $
 
 COMMENT =		convert DocBook to LaTeX, DVI, PostScript, and PDF
 DISTNAME =		dblatex-0.3
@@ -6,7 +6,7 @@ REVISION =		9
 CATEGORIES =		textproc
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 HOMEPAGE =		http://dblatex.sourceforge.net
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dblatex/}

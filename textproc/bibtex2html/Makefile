@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/07/01 09:02:41 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:56 sthen Exp $
 
 COMMENT =		collection of tools for translating from BibTeX to HTML
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://www.lri.fr/~filliatr/bibtex2html/
 MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c m
 

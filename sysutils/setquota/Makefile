@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/05/11 20:50:55 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:49:51 sthen Exp $
 # Original from: Ejovi Nuwere <ejovi@ejovi.net>
 
 COMMENT=	command line quota tools
@@ -9,7 +9,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.jurai.net/users/winter/
 
 # License: BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 WRKDIST=	${WRKDIR}/setquota

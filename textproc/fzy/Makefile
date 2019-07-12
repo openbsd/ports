@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/09/24 07:12:43 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:58 sthen Exp $
 
 COMMENT =	fuzzy text selector for the terminal
 
@@ -10,7 +10,7 @@ CATEGORIES =	textproc
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c pthread
 

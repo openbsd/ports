@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:13 sthen Exp $
 
 COMMENT =		parse semi-structured text into Python table
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://github.com/google/textfsm
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

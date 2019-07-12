@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:14 sthen Exp $
 
 COMMENT=		fast Porter stemmer for ruby
 
@@ -9,7 +9,7 @@ CATEGORIES=		textproc
 HOMEPAGE=		https://github.com/romanbsd/fast-stemmer
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

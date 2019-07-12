@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/13 19:03:54 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:13 sthen Exp $
 
 COMMENT =		snowball stemming algorithms, for information retrieval
 
@@ -10,7 +10,7 @@ PKGNAME =		py-stemmer-${MODPY_EGG_VERSION}
 CATEGORIES =		textproc
 
 # MIT/BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
 

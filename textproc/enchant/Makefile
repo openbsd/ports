@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/05/19 19:13:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2019/07/12 20:49:57 sthen Exp $
 
 PORTROACH=		limit:^1
 
@@ -24,7 +24,7 @@ HOMEPAGE=		https://abiword.github.io/enchant/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += aspell c glib-2.0 gmodule-2.0 hunspell-1.6 iconv intl
 WANTLIB += m pcre pthread ${LIBCXX}

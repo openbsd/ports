@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/05/20 22:15:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 20:49:42 sthen Exp $
 
 COMMENT=	utilities to manipulate ext2 filesystems
 
@@ -15,7 +15,7 @@ SHARED_LIBS=	blkid		0.0 \
 HOMEPAGE=	http://e2fsprogs.sourceforge.net/
 
 # GPLv2/LGPLv2/BSD/MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv intl
 

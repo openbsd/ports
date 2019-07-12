@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:55 sthen Exp $
 
 COMMENT =		ZRTP library
 
@@ -7,7 +7,7 @@ CATEGORIES =		telephony security
 REVISION =		0
 
 # AGPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 GH_ACCOUNT =		juha-h
 GH_PROJECT =		libzrtp

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2019/05/08 15:48:26 danj Exp $
+# $OpenBSD: Makefile,v 1.61 2019/07/12 20:49:40 sthen Exp $
 
 BROKEN =	pkg_add fails: problem with symlinks
 
@@ -12,7 +12,7 @@ CATEGORIES =	sysutils
 HOMEPAGE =	http://cfengine.com/
 
 # GPLv3 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto iconv lzma m pam pcre pthread ssl qdbm xml2 z
 

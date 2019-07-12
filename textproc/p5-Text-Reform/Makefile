@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/08 15:44:46 danj Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:07 sthen Exp $
 
 COMMENT=		perl module to formating plaintext
 
@@ -9,7 +9,7 @@ CATEGORIES=		textproc
 REVISION=		0
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 DEMOS_DIR =	${PREFIX}/share/examples/p5-Text-Reform
 

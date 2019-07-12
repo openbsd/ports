@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/04/28 20:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:35 sthen Exp $
 
 COMMENT=		secure storing of passwords using the SecretService DBus API
 
@@ -10,7 +10,7 @@ REVISION=		1
 CATEGORIES=   		security
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_PI =		Yes
 

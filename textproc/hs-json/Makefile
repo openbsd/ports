@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/14 19:47:43 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:59 sthen Exp $
 
 COMMENT =		JSON library
 
@@ -8,7 +8,7 @@ CATEGORIES =		textproc
 MAINTAINER =		Caspar Schutijser <caspar@schutijser.com>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

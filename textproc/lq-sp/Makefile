@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/05 15:15:45 danj Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:50:01 sthen Exp $
 
 COMMENT=	SGML parser and entity manager
 
@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://www.htmlhelp.com/tools/validator/offline/
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m ${COMPILER_LIBCXX} 
 

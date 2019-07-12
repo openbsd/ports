@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/15 12:04:41 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:42 sthen Exp $
 
 COMMENT =		simple, pythonic tool for remote execution and deployment
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://www.fabfile.org/
 MAINTAINER =		Pablo Mendez Hernandez <pablomh@gmail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

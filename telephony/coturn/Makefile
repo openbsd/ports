@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/20 22:15:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:55 sthen Exp $
 
 COMMENT =	coturn STUN/TURN server
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://github.com/coturn/coturn
 MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto event_core event_extra event_openssl event_pthreads
 WANTLIB += hiredis intl mysqlclient pq pthread sqlite3 ssl

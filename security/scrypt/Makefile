@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/04/30 14:26:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:36 sthen Exp $
 
 COMMENT =	command-line encryption using scrypt key derivation function
 
@@ -9,7 +9,7 @@ CATEGORIES =	security
 HOMEPAGE =	http://www.tarsnap.com/scrypt/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c crypto
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/01 19:40:59 jeremy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:51 sthen Exp $
 
 COMMENT=		pragmatic application deployment automation
 
@@ -9,7 +9,7 @@ REVISION=		0
 HOMEPAGE=		http://rubyhitsquad.com/Vlad_the_Deployer.html
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

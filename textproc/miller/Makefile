@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/16 11:30:37 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:01 sthen Exp $
 
 COMMENT =	name-indexed data processing tool
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://johnkerl.org/miller/doc/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c m
 

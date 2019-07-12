@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/12/28 08:46:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:55 sthen Exp $
 
 COMMENT =		dump/restore Grandstream device configurations
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://www.pkts.ca/gsutil.shtml
 MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://www.pkts.ca/
 

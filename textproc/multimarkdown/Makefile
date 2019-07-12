@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/04/12 18:42:34 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:02 sthen Exp $
 
 V =		5.4.0
 COMMENT =	marked-up plain text to formatted document converter
@@ -18,7 +18,7 @@ HOMEPAGE =	http://fletcherpenney.net/multimarkdown/
 MAINTAINER =	Sean Levy <attila@stalphonsos.com>
 
 # Dual licensed: MIT and GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += 	c

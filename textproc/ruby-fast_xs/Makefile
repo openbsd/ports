@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:14 sthen Exp $
 
 COMMENT =		provides fast methods for escaping text
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://github.com/brianmario/fast_xs
 MAINTAINER =		Jeremy Evans <jeremy@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

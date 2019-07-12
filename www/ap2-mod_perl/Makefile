@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/03/28 12:39:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:50:17 sthen Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache2
 
@@ -11,7 +11,7 @@ MODULES=	cpan
 MASTER_SITES=	${MASTER_SITE_APACHE:=perl/}
 
 # Apache Software License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += apr-1 aprutil-1 c db expat iconv m perl pthread util
 

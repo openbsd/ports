@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/02 17:52:31 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:04 sthen Exp $
 
 COMMENT =		simple wrapper for PDF::API2 module
 
@@ -10,7 +10,7 @@ CATEGORIES =		textproc
 REVISION =		0
 
 # public domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		textproc/p5-PDF-API2
 BUILD_DEPENDS =		${RUN_DEPENDS}

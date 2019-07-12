@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2019/01/19 15:47:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2019/07/12 20:49:46 sthen Exp $
 
 COMMENT=	read/write/list/format DOS disks under Unix
 DISTNAME=	mtools-4.0.23
@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 HOMEPAGE=	http://mtools.linux.lu/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

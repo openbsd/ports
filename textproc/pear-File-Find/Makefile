@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/10/29 22:12:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:10 sthen Exp $
 
 COMMENT=	php class to facilitate the search of filesystems
 
@@ -11,6 +11,6 @@ EXTRACT_SUFX=	.tgz
 MODULES=	www/pear
 
 # PHP License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

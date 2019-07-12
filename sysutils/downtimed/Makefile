@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/01/11 19:27:10 rpe Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:49:42 sthen Exp $
 
 COMMENT =		system downtime monitoring
 DISTNAME =		downtimed-1.0
@@ -11,7 +11,7 @@ MASTER_SITES =		${HOMEPAGE}
 MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE =	gnu
 

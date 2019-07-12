@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/06/25 20:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:53 sthen Exp $
 
 COMMENT =	instant terminal sharing based on tmux
 
@@ -11,7 +11,7 @@ CATEGORIES =	sysutils
 MAINTAINER =	Wesley MOUEDINE ASSABY <milo974@gmail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c event_core event_extra msgpackc curses ssh util
 

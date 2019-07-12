@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/11 20:50:55 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:40 sthen Exp $
 
 COMMENT=		uniform frontend to running Common Lisp code from the shell
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://cliki.net/cl-launch
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # LLGPL (http://www.cliki.net/LLGPL)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://distfiles.nl/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:50 sthen Exp $
 
 COMMENT=	fast process spawning
 
@@ -10,7 +10,7 @@ CATEGORIES=	sysutils
 HOMEPAGE=	https://github.com/rtomayko/posix-spawn
 
 # MIT / LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby
 

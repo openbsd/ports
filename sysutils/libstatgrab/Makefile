@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/06/25 20:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:45 sthen Exp $
 
 COMMENT=	system statistics gathering library
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.i-scream.org/libstatgrab/
 SHARED_LIBS +=  statgrab             1.0      # 10.0
 
 # LGPLv2.1/GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses m pthread
 

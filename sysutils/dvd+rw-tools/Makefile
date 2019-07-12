@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:42 sthen Exp $
 
 COMMENT=		mastering tools for DVD+RW/+R/-R/-RW
 
@@ -8,7 +8,7 @@ HOMEPAGE=		http://fy.chalmers.se/~appro/linux/DVD+RW/
 REVISION=		1
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}tools/
 

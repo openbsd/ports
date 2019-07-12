@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:50:11 sthen Exp $
 
 COMMENT=		Python library for creating postscript or PDF charts
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://home.gna.org/pychart/
 MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=		Yes
+PERMIT_PACKAGE=		Yes
 
 MASTER_SITES=	http://download.gna.org/pychart/
 

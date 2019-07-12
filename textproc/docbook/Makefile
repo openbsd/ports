@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/10 15:25:03 tj Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:49:57 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -29,7 +29,7 @@ DISTFILES=	sgml/2.4.1/docbk241.zip \
 		examples.zip:0
 
 # permission granted in dtd copyright notice
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_BUILD=       Yes
 NO_TEST=	Yes

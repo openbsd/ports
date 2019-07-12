@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/20 16:12:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:34 sthen Exp $
 
 COMMENT=	Python Cryptographic Toolkit
 
@@ -11,7 +11,7 @@ CATEGORIES=    	security devel
 HOMEPAGE=	http://sourceforge.net/projects/cryptkit/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pthread

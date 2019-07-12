@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/04/30 15:23:21 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:06 sthen Exp $
 
 COMMENT=	justify strings to various alignment styles
 
@@ -8,6 +8,6 @@ DISTNAME =	Text-Aligner-0.13
 CATEGORIES=	textproc
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:41 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:53 sthen Exp $
 
 COMMENT =		tarsnap wrapper which automatically expires backups
 
@@ -11,7 +11,7 @@ CATEGORIES =		sysutils
 MAINTAINER =		Michael Reed <michael@michaelreed.io>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

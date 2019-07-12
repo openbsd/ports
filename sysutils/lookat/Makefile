@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/20 20:52:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:46 sthen Exp $
 
 V =		1.4.4
 COMMENT =	user-friendly text pager
@@ -10,7 +10,7 @@ REVISION =	0
 HOMEPAGE =	http://www.wagemakers.be/english/programs/lookat
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses
 

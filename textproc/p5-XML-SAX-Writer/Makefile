@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/10 16:05:18 cwen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:09 sthen Exp $
 
 COMMENT=	SAX2 writer
 
@@ -10,7 +10,7 @@ DISTNAME=	XML-SAX-Writer-0.57
 CATEGORIES=	textproc
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	textproc/p5-XML-Filter-BufferText>=1.0 \
 		textproc/p5-XML-NamespaceSupport>=1.0 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/09/01 17:21:43 yasuoka Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:44 sthen Exp $
 
 COMMENT =		watch the command output with interval timer
 
@@ -13,7 +13,7 @@ CATEGORIES =		sysutils
 MAINTAINER =		YASUOKA Masahiko <yasuoka@yasuoka.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c curses
 

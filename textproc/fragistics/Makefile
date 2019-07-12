@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:58 sthen Exp $
 
 COMMENT =	Quake 3 statistics program
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://fragistics.sourceforge.net/
 MAINTAINER =	Adam Wolk <awolk@openbsd.org>
 
 # License GPL + Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/10/16 23:21:23 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:01 sthen Exp $
 
 COMMENT =		Lua binding to libsoldout
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://github.com/jturner/luasoldout/
 MASTER_SITES =		http://calminferno.net/lua/
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/lua
 

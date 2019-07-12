@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/20 19:57:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:50:05 sthen Exp $
 
 COMMENT=	convert Pod documents into a simple object model form
 
@@ -10,7 +10,7 @@ CATEGORIES=	textproc
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/p5-File-Slurper \
 			devel/p5-Test-Differences

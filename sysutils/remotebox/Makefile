@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/27 21:04:04 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:50 sthen Exp $
 
 COMMENT=		VirtualBox client with remote management
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://remotebox.knobgoblin.org.uk/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://remotebox.knobgoblin.org.uk/downloads/
 

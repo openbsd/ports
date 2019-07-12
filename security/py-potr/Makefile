@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:35 sthen Exp $
 
 COMMENT =		pure Python Off-The-Record encryption
 
@@ -11,7 +11,7 @@ REVISION =		3
 MAINTAINER =		Daniel Jakots <obsd@chown.me>
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 EXTRACT_SUFX =		.zip
 

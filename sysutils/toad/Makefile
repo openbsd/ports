@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/02/11 08:00:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:53 sthen Exp $
 
 COMMENT=		hotplugd(8) automounter (Toad Opens All Devices)
 
@@ -11,7 +11,7 @@ CATEGORIES=		sysutils
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c util
 

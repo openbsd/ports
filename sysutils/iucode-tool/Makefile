@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/02/05 12:11:07 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:44 sthen Exp $
 
 # uses cpuid.h
 ONLY_FOR_ARCHS=	i386 amd64
@@ -19,7 +19,7 @@ MAINTAINER=	Patrick Wildt <patrick@blueri.se>
 MASTER_SITES=	https://gitlab.com/iucode-tool/releases/raw/latest/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

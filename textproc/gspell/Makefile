@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/06/16 12:03:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:49:58 sthen Exp $
 
 COMMENT=		spell-checking library for GTK+
 
@@ -12,7 +12,7 @@ SHARED_LIBS +=  gspell-1             4.0      # 5.0
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender aspell atk-1.0 atk-bridge-2.0 atspi

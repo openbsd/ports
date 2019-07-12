@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/10/11 19:54:47 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT=		lexical scanner generator for use with Racc
 
@@ -9,7 +9,7 @@ CATEGORIES=		textproc
 HOMEPAGE=		https://github.com/tenderlove/rexical
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

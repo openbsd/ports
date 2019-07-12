@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/13 19:03:54 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:13 sthen Exp $
 
 COMMENT =		character encoding aliases for legacy web content
 
@@ -9,7 +9,7 @@ CATEGORIES =		textproc
 REVISION =		1
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

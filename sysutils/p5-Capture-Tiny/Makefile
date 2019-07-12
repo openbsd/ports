@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/01 00:47:45 cwen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:47 sthen Exp $
 
 COMMENT=		capture STDOUT and STDERR
 
@@ -10,7 +10,7 @@ DISTNAME=		Capture-Tiny-0.48
 CATEGORIES=		sysutils
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODCPAN_EXAMPLES=	Yes
 

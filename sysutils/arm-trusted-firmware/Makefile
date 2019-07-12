@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.10 2019/04/03 00:19:56 jsg Exp $
+#	$OpenBSD: Makefile,v 1.11 2019/07/12 20:49:39 sthen Exp $
 
 PKG_ARCH=		*
 
@@ -13,7 +13,7 @@ EPOCH=		0
 CATEGORIES=	sysutils
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS+= devel/arm-none-eabi/gcc-linaro,aarch64
 BUILD_DEPENDS+= devel/arm-none-eabi/gcc-linaro,arm

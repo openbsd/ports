@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/04/29 00:42:09 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:49:53 sthen Exp $
 
 COMMENT =		create and manage complex tmux sessions easily
 
@@ -10,7 +10,7 @@ CATEGORIES =		sysutils
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

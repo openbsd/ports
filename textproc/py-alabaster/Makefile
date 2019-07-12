@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/13 19:03:53 danj Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:11 sthen Exp $
 
 COMMENT =		configurable sidebar-enabled Sphinx theme
 
@@ -10,7 +10,7 @@ REVISION =		1
 CATEGORIES =		textproc
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

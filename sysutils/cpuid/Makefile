@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/07/05 10:22:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:41 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -11,7 +11,7 @@ DISTFILES=
 CATEGORIES=	sysutils
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

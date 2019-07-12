@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/09/29 10:52:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:13 sthen Exp $
 
 COMMENT =		Python module to validate VAT numbers
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://vatnumber.googlecode.com/
 MAINTAINER =		Christian Rueger <cr+openbsd@rueger-net.de>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =		${HOMEPAGE}files/
 

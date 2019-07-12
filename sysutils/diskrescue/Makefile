@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/11 19:47:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:41 sthen Exp $
 
 COMMENT =		fancy dd
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://github.com/conformal/diskrescue/wiki
 MAINTAINER =		Laurent Fanis <laurent.fanis@gmail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

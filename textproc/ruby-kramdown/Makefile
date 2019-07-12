@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/29 09:27:01 fcambus Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT=	fast, pure Ruby Markdown parser
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	https://kramdown.gettalong.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby
 

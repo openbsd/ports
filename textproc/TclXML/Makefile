@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/06/13 16:38:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:49:56 sthen Exp $
 
 COMMENT =	XML parser for Tcl
 
@@ -13,7 +13,7 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 SHARED_LIBS +=	Tclxml32	0.0
 
 # custom
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB +=		m z exslt iconv xslt lzma pthread xml2
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/12/01 21:49:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:50:18 sthen Exp $
 
 # note, this isn't really maintained upstream any more
 # see e2guardian.org for a maintained fork
@@ -12,7 +12,7 @@ CATEGORIES =	www net
 HOMEPAGE =	http://www.dansguardian.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m pcre pcreposix ${COMPILER_LIBCXX} z
 

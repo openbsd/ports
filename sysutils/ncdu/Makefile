@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/12 01:45:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:47 sthen Exp $
 
 COMMENT=		ncurses-based du(1)
 
@@ -10,7 +10,7 @@ HOMEPAGE=		https://dev.yorhel.nl/ncdu/
 MASTER_SITES=		https://dev.yorhel.nl/download/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 

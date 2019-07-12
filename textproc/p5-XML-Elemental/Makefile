@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:08 sthen Exp $
 
 COMMENT =	generic classes for simplistic handling of XML data
 
@@ -9,7 +9,7 @@ CATEGORIES =	textproc
 REVISION =	0
 
 # Artistic
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Class-Accessor \
 		textproc/p5-XML-Parser \

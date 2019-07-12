@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/05 15:15:45 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:16 sthen Exp $
 
 COMMENT=	collection of HTML, XHTML, ISO-HTML, WML and MathML DTDs
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://www.htmlhelp.com/tools/validator/offline/
 
 # custom
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://www.htmlhelp.com/tools/validator/src/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:35 sthen Exp $
 
 COMMENT =	Python implementation of PBKDF2
 
@@ -13,7 +13,7 @@ MAINTAINER =		Giannis Tsaraias <tsg@openbsd.org>
 HOMEPAGE =		http://www.dlitz.net/software/python-pbkdf2/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI = 		Yes
 MODULES =		lang/python

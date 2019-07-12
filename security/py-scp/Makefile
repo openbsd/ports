@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:35 sthen Exp $
 
 COMMENT =		scp module for Paramiko
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://github.com/jbardin/scp.py
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # LGPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

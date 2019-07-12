@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/13 19:03:53 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:12 sthen Exp $
 
 COMMENT =		markdown parser for Python
 
@@ -12,7 +12,7 @@ CATEGORIES =		textproc
 HOMEPAGE =		https://github.com/lepture/mistune
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

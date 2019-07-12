@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/20 19:57:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:48 sthen Exp $
 
 COMMENT=	interface to the UNIX system logger
 
@@ -9,7 +9,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	Ibrahim Khalifa <ibo@toontown.org>
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c perl
 
 MODULES=		cpan

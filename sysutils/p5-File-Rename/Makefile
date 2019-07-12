@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/11/04 23:35:58 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:47 sthen Exp $
 
 COMMENT =	renames multiple files
 
@@ -9,7 +9,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 TEST_DEPENDS =	devel/p5-Test-Pod>=1.00 \
 		devel/p5-Test-Pod-Coverage>=1.00

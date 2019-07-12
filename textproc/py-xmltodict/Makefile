@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:14 sthen Exp $
 
 COMMENT =		makes working with XML feel like orking with JSON
 
@@ -12,7 +12,7 @@ CATEGORIES =		textproc
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

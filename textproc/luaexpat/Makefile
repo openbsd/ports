@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/10/16 23:21:23 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:01 sthen Exp $
 
 COMMENT =		lua library for the expat XML parser
 DISTNAME =		luaexpat-1.3.0
@@ -8,7 +8,7 @@ CATEGORIES =		textproc
 HOMEPAGE =		http://matthewwild.co.uk/projects/luaexpat/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		expat
 MASTER_SITES =		${HOMEPAGE}

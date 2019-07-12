@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/01 19:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:39 sthen Exp $
 
 COMMENT=	.bin/.cue to .iso CD image converter
 
@@ -8,7 +8,7 @@ HOMEPAGE=	http://hes.iki.fi/bchunk/
 REVISION=	0
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${HOMEPAGE}

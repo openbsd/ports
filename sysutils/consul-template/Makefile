@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/04 21:46:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:41 sthen Exp $
 
 COMMENT=		template rendering and notifications with Consul
 
@@ -14,7 +14,7 @@ HOMEPAGE=		https://www.consul.io/
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MPLv2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 

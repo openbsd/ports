@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/01/24 14:02:40 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:42 sthen Exp $
 
 COMMENT =	time series data visualization and graphing software
 
@@ -16,7 +16,7 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX}{${GH_TAGNAME}${EXTRACT_SUFX}} \
 MASTER_SITES0 =	https://deftly.net/dist/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =	lang/go \
 		lang/node

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/06/14 00:59:39 jturner Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:49:45 sthen Exp $
 
 COMMENT =		two-factor authentication for unix systems
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://duo.com/docs/loginduo/
 MASTER_SITES =		https://dl.duosecurity.com/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto ssl
 

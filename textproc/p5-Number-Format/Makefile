@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/12/05 16:25:46 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:04 sthen Exp $
 
 COMMENT =	Perl extension for formatting numbers
 
@@ -9,6 +9,6 @@ CATEGORIES =	textproc
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # Artistic License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/05/07 16:52:35 danj Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:50:16 sthen Exp $
 
 COMMENT =	code searching tool, with a focus on speed (ag)
 
@@ -8,7 +8,7 @@ REVISION =	0
 
 HOMEPAGE =	https://geoff.greer.fm/ag/
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += c lzma pcre pthread z

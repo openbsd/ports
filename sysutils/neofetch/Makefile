@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/02/01 21:23:39 cwen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:47 sthen Exp $
 
 COMMENT =	system information tool written in bash
 CATEGORIES =	sysutils misc
@@ -11,7 +11,7 @@ GH_TAGNAME =	6.0.0
 MAINTAINER =	Charlene Wendling <cwen@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	shells/bash
 

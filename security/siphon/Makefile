@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/06/10 11:05:02 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:36 sthen Exp $
 
 COMMENT=		passive network mapping tool
 
@@ -8,7 +8,7 @@ REVISION=		0
 CATEGORIES=    		security net
 
 # BSD-style
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c pcap pthread
 
 # DEAD MASTER_SITES

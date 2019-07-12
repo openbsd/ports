@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2019/03/11 09:15:54 pea Exp $
+# $OpenBSD: Makefile,v 1.91 2019/07/12 20:49:39 sthen Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
@@ -16,7 +16,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=zsh/} \
 EXTRACT_SUFX=	.tar.xz
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses iconv m pcre
 

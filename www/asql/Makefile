@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/10/23 11:21:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:18 sthen Exp $
 
 COMMENT=	query Apache logfiles via SQL
 
@@ -8,7 +8,7 @@ CATEGORIES=	www
 HOMEPAGE=	http://www.steve.org.uk/Software/asql/
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 

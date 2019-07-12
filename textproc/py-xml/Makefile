@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2017/11/03 14:18:41 bentley Exp $
+# $OpenBSD: Makefile,v 1.50 2019/07/12 20:50:14 sthen Exp $
 
 COMMENT=	Python module for writing basic XML applications
 
@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyxml/}
 HOMEPAGE=	http://sourceforge.net/projects/pyxml/
 
 # BSD, badly worded
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 

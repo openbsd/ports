@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/29 15:54:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT=	protect against brute force attacks on sshd and others
 
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sshguard/}
 MAINTAINER=	Andreas Kusalananda Kahari <andreas.kahari@abc.se>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB+=	c pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/01/11 14:26:26 cwen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:05 sthen Exp $
 
 COMMENT=	camelcase, de-camelcase
 
@@ -10,7 +10,7 @@ CATEGORIES=	textproc
 MAINTAINER=	Andrew Fresh <afresh1@openbsd.org>
 
 # Same as Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_ENV +=	TEST_POD=Yes
 

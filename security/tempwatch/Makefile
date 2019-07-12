@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/07/15 08:36:39 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT=		temporary file auditing tool
 
@@ -7,7 +7,7 @@ REVISION=		1
 CATEGORIES=		security
 
 # public domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 DIST_SUBDIR=		tempwatch
 DISTFILES=		l0pht-watch${EXTRACT_SUFX} watch.txt:0

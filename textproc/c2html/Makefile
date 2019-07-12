@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/12/10 10:49:11 benoit Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:56 sthen Exp $
 
 COMMENT=		C-language sources to HTML converter
 
@@ -10,7 +10,7 @@ MASTER_SITES=		http://user.cs.tu-berlin.de/%7Eschintke/x2html/ \
 			${MASTER_SITE_SUNSITE:=apps/www/converters/}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =		c
 

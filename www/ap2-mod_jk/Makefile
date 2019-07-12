@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/28 12:39:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:17 sthen Exp $
 
 COMMENT =	Apache-Tomcat AJP Connector for Apache2
 
@@ -11,7 +11,7 @@ REVISION =	1
 HOMEPAGE =	http://tomcat.apache.org/connectors-doc/index.html
 
 # Apache Software License 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	pthread
 

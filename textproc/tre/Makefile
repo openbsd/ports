@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/20 22:15:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:16 sthen Exp $
 
 COMMENT=	lightweight regexp matching library with additional features
 
@@ -14,7 +14,7 @@ MASTER_SITES=		${HOMEPAGE}
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
 # 2-clause BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 SHARED_LIBS +=	tre                  7.0      # 5.0
 

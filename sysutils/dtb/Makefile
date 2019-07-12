@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/12/24 08:55:20 jsg Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:42 sthen Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://www.devicetree.org
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # dual GPL/BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://cdn.kernel.org/pub/linux/kernel/v4.x/
 EXTRACT_SUFX=	.tar.xz

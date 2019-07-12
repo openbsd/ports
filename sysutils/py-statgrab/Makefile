@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:50 sthen Exp $
 
 COMMENT=	python bindings to libstatgrab
 
@@ -11,7 +11,7 @@ REVISION=	2
 HOMEPAGE=	http://www.i-scream.org/pystatgrab/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =	pthread statgrab ${MODPY_WANTLIB}
 

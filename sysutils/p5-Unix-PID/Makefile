@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:48 sthen Exp $
 
 COMMENT=	interface for getting PID info
 
@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 REVISION=	0
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
 PKG_ARCH=	*

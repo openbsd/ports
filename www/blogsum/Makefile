@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/01 19:29:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:18 sthen Exp $
 
 COMMENT =		simple weblog
 
@@ -8,7 +8,7 @@ CATEGORIES =		www
 HOMEPAGE =		http://blogsum.obfuscurity.com/
 
 # BSD
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =	http://www.dixongroup.net/
 NO_BUILD =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/03 13:56:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:09 sthen Exp $
 
 COMMENT=	tidy indenting of XML documents
 
@@ -8,7 +8,7 @@ EXTRACT_SUFX=	.tgz
 CATEGORIES=	textproc
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
 PKG_ARCH=	*

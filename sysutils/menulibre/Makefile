@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/04/28 20:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:46 sthen Exp $
 
 COMMENT =	fd.o-compliant menu editor
 
@@ -12,7 +12,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 HOMEPAGE =	http://smdavis.us/projects/menulibre/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES =	https://launchpad.net/menulibre/2.1/${MODPY_EGG_VERSION}/+download/
 

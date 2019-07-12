@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/08 15:44:46 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:08 sthen Exp $
 
 COMMENT=	RSS Abstraction Interface
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 REVISION =	0
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	textproc/p5-XML-RSS \
 		textproc/p5-XML-RSS-Parser>=4.0 \

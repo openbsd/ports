@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:55 sthen Exp $
 
 COMMENT=	interact with Asterisk Manager Interface from perl
 
@@ -13,7 +13,7 @@ PKG_ARCH=	*
 CPAN_AUTHOR=	GREENBEAN
 
 # Artistic 2.0
-PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-AnyEvent>=5.2
 

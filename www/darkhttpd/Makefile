@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/01/31 09:29:46 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:18 sthen Exp $
 
 COMMENT=		simple and small webserver intended for ad-hoc usage
 
@@ -8,7 +8,7 @@ CATEGORIES=		www
 HOMEPAGE=		http://unix4lyfe.org/darkhttpd/
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=		.tar.bz2

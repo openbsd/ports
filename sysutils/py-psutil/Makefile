@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/06/25 20:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:49 sthen Exp $
 
 COMMENT =		library to retrieve system information and utilisation
 
@@ -14,7 +14,7 @@ REVISION =		2
 HOMEPAGE =		https://github.com/giampaolo/psutil
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += kvm pthread ${MODPY_WANTLIB}
 

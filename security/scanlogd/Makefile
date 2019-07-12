@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2018/01/11 19:27:09 rpe Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:49:36 sthen Exp $
 
 COMMENT=	TCP port scan detection tool
 
@@ -10,7 +10,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 HOMEPAGE=	http://www.openwall.com/scanlogd/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pcap lib/libnet-1.0/net=0 nids
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:16 sthen Exp $
 
 COMMENT=	simple and small C++ XML parser
 
@@ -15,7 +15,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://www.grinninglizard.com/tinyxml/
 
 # zlib license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
 

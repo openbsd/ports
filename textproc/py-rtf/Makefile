@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:13 sthen Exp $
 
 COMMENT=	Rich Text Format document generation in Python
 
@@ -10,7 +10,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://pyrtf.sourceforge.net/
 
 # GPL + LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyrtf/}
 

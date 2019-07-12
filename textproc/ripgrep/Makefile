@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/12/16 08:50:11 semarie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:14 sthen Exp $
 
 COMMENT =		line oriented search tool using Rust's regex library #'
 
@@ -9,7 +9,7 @@ GH_TAGNAME =		0.10.0
 CATEGORIES =		textproc sysutils
 
 # Unlicense/MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c c++abi pthread
 

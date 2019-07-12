@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/05/07 12:40:58 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:57 sthen Exp $
 
 COMMENT =	sentence grammar and readability analyzer
 
@@ -16,7 +16,7 @@ MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 WANTLIB +=	c m
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 CONFIGURE_STYLE =	gnu
 

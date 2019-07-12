@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:34 sthen Exp $
 
 COMMENT =		Python binding to the NaCl library
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://github.com/pyca/pynacl/
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

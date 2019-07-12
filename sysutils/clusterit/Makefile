@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/10 16:50:05 danj Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:40 sthen Exp $
 
 COMMENT=		suite of clustering tools based on IBM's PSSP
 
@@ -10,7 +10,7 @@ CATEGORIES=		sysutils
 HOMEPAGE=		http://www.garbled.net/clusterit.html
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c curses
 USE_X11 =		Yes
 

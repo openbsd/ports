@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:11 sthen Exp $
 
 COMMENT =		convert dicts and other data types into XML
 
@@ -12,7 +12,7 @@ CATEGORIES =		textproc
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

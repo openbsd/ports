@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:11 sthen Exp $
 
 COMMENT =		encoder, decoder, and lint/validator for JSON
 
@@ -11,7 +11,7 @@ REVISION =		1
 CATEGORIES =	textproc devel
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVORS =               python3
 FLAVOR ?=

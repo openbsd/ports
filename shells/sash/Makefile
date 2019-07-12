@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/11/12 08:53:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:38 sthen Exp $
 
 COMMENT=		stand-alone shell with built-in commands
 
@@ -7,7 +7,7 @@ REVISION =		1
 CATEGORIES=		shells
 HOMEPAGE=		http://www.canb.auug.org.au/~dbell/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://www.canb.auug.org.au/~dbell/programs/
 

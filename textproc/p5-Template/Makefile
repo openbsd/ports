@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/04/30 15:11:10 benoit Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:50:06 sthen Exp $
 
 COMMENT=		template processing system
 
@@ -11,7 +11,7 @@ CATEGORIES=		textproc
 HOMEPAGE=		http://www.template-toolkit.org/
 
 # Same as Perl: Artistic/GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

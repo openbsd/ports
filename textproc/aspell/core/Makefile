@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/05/20 22:15:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2019/07/12 20:49:56 sthen Exp $
 
 COMMENT=	spell checker designed to eventually replace Ispell
 
@@ -20,7 +20,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:0 \
 HOMEPAGE=	http://aspell.net/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c iconv intl m curses pthread ${COMPILER_LIBCXX}
 

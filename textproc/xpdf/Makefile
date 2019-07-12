@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2019/07/12 20:50:17 sthen Exp $
 
 COMMENT=	PDF viewer for X11
 
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 HOMEPAGE=	http://www.foolabs.com/xpdf/
 
 # GPLv2 only or GPLv3 only or both (at our choice)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 LIB_DEPENDS+=	graphics/png x11/motif
 USE_GMAKE=	Yes

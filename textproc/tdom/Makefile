@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/07/26 01:56:52 stu Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT =		fast XML/DOM/XPath/XSLT/HTML/JSON extension for Tcl
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.tdom.org/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # MPL 1.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE:=downloads/}
 EXTRACT_SUFX =		-src.tgz

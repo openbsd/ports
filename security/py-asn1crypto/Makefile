@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:34 sthen Exp $
 
 COMMENT =	fast ASN.1 parser and serializer
 
@@ -14,7 +14,7 @@ CATEGORIES =	security
 HOMEPAGE =	https://github.com/wbond/asn1crypto
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 

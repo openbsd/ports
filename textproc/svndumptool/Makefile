@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:42:47 espie Exp $ 
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:15 sthen Exp $ 
 
 COMMENT =		processing subversion dump files
 MODPY_EGG_VERSION =	0.6.1
@@ -7,7 +7,7 @@ CATEGORIES =		textproc
 HOMEPAGE =		http://svn.borg.ch/svndumptool/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://svn.borg.ch/svndumptool/${MODPY_EGG_VERSION}/
 MODULES =		lang/python

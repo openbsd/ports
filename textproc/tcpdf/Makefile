@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/10/17 14:15:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT=	PHP class for generating PDF documents
 DISTNAME =	tcpdf_6_2_13
@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcpdf/}
 HOMEPAGE=	http://www.tcpdf.org/
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 EXTRACT_SUFX =	.zip
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/01/11 13:44:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:51 sthen Exp $
 
 COMMENT=	tools to extend pipe capabilities
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.serice.net/shunt/
 MAINTAINER=	Josh Grosse <josh@jggimi.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/28 14:49:52 okan Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:09 sthen Exp $
 
 COMMENT=	access/create XML files/datas easily
 
@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
 # GPL/Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	textproc/p5-Object-MultiType
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/01 16:04:26 danj Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:50:10 sthen Exp $
 
 COMMENT=	perl module to perform XSLT transformations
 
@@ -13,6 +13,6 @@ RUN_DEPENDS=	textproc/p5-XML-Parser>=2.23 \
 		textproc/p5-XML-DOM>=1.25
 
 # GPL/Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

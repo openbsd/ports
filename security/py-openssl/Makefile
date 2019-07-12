@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/04/28 20:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:49:34 sthen Exp $
 
 COMMENT=	Python interface to the OpenSSL library
 
@@ -11,7 +11,7 @@ CATEGORIES=	security devel
 HOMEPAGE=	https://github.com/pyca/pyopenssl
 
 # Apache 2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += crypto pthread ssl

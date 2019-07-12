@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/09/04 12:46:23 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:52 sthen Exp $
 
 COMMENT =	lightweight network monitoring tool
 DISTNAME =	sysmon-0.93
@@ -9,7 +9,7 @@ MAINTAINER =	George Rosamond <george@nycbug.org>
 REVISION =	3
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c crypto curses pthread ssl
 

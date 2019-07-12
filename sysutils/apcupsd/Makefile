@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/05/07 14:26:45 jca Exp $
+# $OpenBSD: Makefile,v 1.46 2019/07/12 20:49:39 sthen Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -19,7 +19,7 @@ HOMEPAGE =		http://www.apcupsd.org/
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		${COMPILER_LIBCXX} c m pthread
 

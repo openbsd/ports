@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/20 22:15:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:41 sthen Exp $
 
 COMMENT=		directory content watcher daemon
 
@@ -10,7 +10,7 @@ CATEGORIES=		sysutils
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv intl
 

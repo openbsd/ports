@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/05/02 14:51:49 danj Exp $
+# $OpenBSD: Makefile,v 1.42 2019/07/12 20:49:51 sthen Exp $
 
 COMMENT=		control and monitor storage systems using SMART
 
@@ -10,7 +10,7 @@ REVISION=		0
 HOMEPAGE=		https://www.smartmontools.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m ${COMPILER_LIBCXX} util
 

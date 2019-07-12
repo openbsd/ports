@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/01/11 19:27:10 rpe Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:43 sthen Exp $
 
 COMMENT=		flashes gpio led whenever pf logs to pflog0
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.pro-bono-publico.de/openbsd/gpio/
 MAINTAINER=		Johan Fredin <johan@spelaroll.se>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c util
 

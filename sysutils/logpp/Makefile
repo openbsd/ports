@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:46 sthen Exp $
 
 COMMENT=	log file preprocessor
 
@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB+= c pcre
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=logpp/}

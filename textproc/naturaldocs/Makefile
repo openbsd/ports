@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:02 sthen Exp $
 
 COMMENT=	multi-language source code documentation generator
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc devel
 HOMEPAGE=	http://www.naturaldocs.org/
 
 # AGPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=naturaldocs/}
 EXTRACT_SUFX=	.zip

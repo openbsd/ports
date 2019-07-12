@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/04/30 15:40:02 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:07 sthen Exp $
 
 COMMENT =	match globbing patterns against text
 
@@ -8,6 +8,6 @@ DISTNAME =	Text-Glob-0.11
 CATEGORIES =	textproc
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

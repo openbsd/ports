@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/01/22 12:52:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:54 sthen Exp $
 #
 
 COMMENT =		execute jobs in parallel
@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.maier-komor.de/xjobs.html
 MAINTAINER =		Rene Maroufi <info@maroufi.net>
 
 # License GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m
 

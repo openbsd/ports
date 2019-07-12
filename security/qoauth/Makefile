@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:35 sthen Exp $
 
 COMMENT =	OAuth support library for Qt-based applications
 V =		1.0.1
@@ -11,7 +11,7 @@ REVISION =	2
 SHARED_LIBS =	qoauth		0.0
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		lib/qt4/QtNetwork m pthread qca ${COMPILER_LIBCXX}
 

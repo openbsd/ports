@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2019/04/28 20:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2019/07/12 20:49:41 sthen Exp $
 
 COMMENT=		dbus debugger
 
@@ -11,7 +11,7 @@ REVISION=		1
 CATEGORIES=		sysutils
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		devel/dconf \
 			lang/python \

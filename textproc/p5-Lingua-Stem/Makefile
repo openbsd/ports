@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:04 sthen Exp $
 
 COMMENT=	stemming of words
 
@@ -8,7 +8,7 @@ DISTNAME=	Lingua-Stem-0.84
 CATEGORIES=	textproc
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=modbuild
 

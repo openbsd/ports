@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/28 20:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:40 sthen Exp $
 
 COMMENT =	tool for reverse-engineering and analysing firmware blobs
 
@@ -13,7 +13,7 @@ CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/devttys0/binwalk
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}

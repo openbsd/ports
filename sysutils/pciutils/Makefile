@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/11/24 08:04:46 jsg Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:49:48 sthen Exp $
 
 NOT_FOR_ARCHS =		m88k
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://mj.ucw.cz/sw/pciutils/
 MAINTAINER =		Jonathan Gray <jsg@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c z
 

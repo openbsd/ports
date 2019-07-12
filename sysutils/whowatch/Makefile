@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/06/25 20:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:54 sthen Exp $
 
 COMMENT=	interactive utility that displays info about online users
 
@@ -13,7 +13,7 @@ MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/ \
 		${MASTER_SITE_PACKETSTORM:=UNIX/IDS/}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c kvm curses
 

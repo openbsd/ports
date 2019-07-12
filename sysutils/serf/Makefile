@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/16 08:14:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:51 sthen Exp $
 
 COMMENT=		decentralized service discovery and orchestration
 
@@ -15,7 +15,7 @@ HOMEPAGE=		https://www.serfdom.io/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MPLv2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 

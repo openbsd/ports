@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:06 sthen Exp $
 
 COMMENT=		template extension for calling class methods
 
@@ -8,7 +8,7 @@ DISTNAME=		Template-Plugin-Class-0.14
 CATEGORIES=		textproc
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		textproc/p5-Template
 

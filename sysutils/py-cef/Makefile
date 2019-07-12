@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/01/08 13:17:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:49 sthen Exp $
 
 COMMENT =	CEF logs emitter module
 
@@ -11,7 +11,7 @@ CATEGORIES =	sysutils
 
 
 # MPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 

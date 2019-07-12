@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/28 20:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:34 sthen Exp $
 
 COMMENT =	Digital Forensics date and time
 
@@ -16,7 +16,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 MASTER_SITES =	https://github.com/log2timeline/dfdatetime/releases/download/${MODPY_EGG_VERSION}/
 
 # Apachev2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes

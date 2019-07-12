@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/04/24 16:26:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:59 sthen Exp $
 
 COMMENT =		alternative parser combinator libraries
 
@@ -8,7 +8,7 @@ CATEGORIES =		textproc
 HOMEPAGE =		http://code.haskell.org/~malcolm/polyparse/
 
 # LGPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

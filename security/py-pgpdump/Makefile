@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:35 sthen Exp $
 
 COMMENT =		PGP packet parser library for Python
 
@@ -12,7 +12,7 @@ CATEGORIES =		security
 HOMEPAGE =		https://github.com/toofishes/python-pgpdump
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

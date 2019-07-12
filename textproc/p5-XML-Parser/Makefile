@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/12/02 01:09:57 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:50:08 sthen Exp $
 
 COMMENT=	perl module for parsing XML documents
 
@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 FIX_EXTRACT_PERMISSIONS = Yes
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c expat perl
 

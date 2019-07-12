@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:56 sthen Exp $
 
 COMMENT=	open source SIP User-Agent library
 
@@ -14,7 +14,7 @@ CATEGORIES=	telephony
 HOMEPAGE=	http://sofia-sip.sourceforge.net/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c crypto glib-2.0 iconv intl pcre pthread ssl
 

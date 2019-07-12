@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:49:52 sthen Exp $
 
 COMMENT =	mount remote directories over ssh
 
@@ -12,7 +12,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=fuse/}
 MAINTAINER =	Gallon Sylvestre <ccna.syl@gmail.com>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  c fuse glib-2.0 gthread-2.0 iconv intl pthread
 

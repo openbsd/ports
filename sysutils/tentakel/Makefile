@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/09 21:13:26 danj Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:53 sthen Exp $
 
 COMMENT=	distributed command execution
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://tentakel.biskalar.de/
 MODPY_EGG_VERSION = 2.2.1
 
 # BSD + LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://spacehopper.org/mirrors/
 

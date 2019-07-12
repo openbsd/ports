@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/06/25 20:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:43 sthen Exp $
 
 COMMENT =	interactive process viewer
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://hisham.hm/htop/index.php
 MAINTAINER =	Ian Sutton <ian@ce.gl>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c curses kvm m
 

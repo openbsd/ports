@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/05/19 21:34:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:10 sthen Exp $
 
 COMMENT =		tool to search text in PDF files
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://pdfgrep.org/
 MAINTAINER =		Reinhold Straub <demarchie@web.de>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 COMPILER =		base-clang ports-gcc
 

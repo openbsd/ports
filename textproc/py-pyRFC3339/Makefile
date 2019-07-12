@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/15 12:04:42 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:12 sthen Exp $
 
 COMMENT=	format dates according to RFC3339
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 REVISION=	2
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 FLAVORS=	python3
 FLAVOR?=

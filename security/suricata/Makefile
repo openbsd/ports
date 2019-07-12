@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/04 06:52:03 semarie Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
@@ -15,7 +15,7 @@ MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org> \
 		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES =	https://www.openinfosecfoundation.org/download/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/04/28 20:51:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:11 sthen Exp $
 
 COMMENT=		spellchecking library for Python
 
@@ -12,7 +12,7 @@ CATEGORIES=		textproc
 HOMEPAGE=		http://packages.python.org/pyenchant/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

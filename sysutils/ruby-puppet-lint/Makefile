@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/07/24 20:47:46 sebastia Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:49:51 sthen Exp $
 
 COMMENT=	ensure your Puppet manifests conform with the style guide
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://puppet-lint.com/
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby
 

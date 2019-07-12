@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:06 sthen Exp $
 
 COMMENT= 	explicit encoding for Template Toolkit
 
@@ -9,7 +9,7 @@ REVISION=	0
 CATEGORIES=	textproc
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	textproc/p5-Template
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/03/04 12:51:16 chrisz Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:49:42 sthen Exp $
 
 COMMENT=	OCaml package manager
 CATEGORIES=	sysutils
@@ -10,7 +10,7 @@ MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 HOMEPAGE=	http://projects.camlcity.org/projects/findlib.html
 
 # MIT/X11
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES+=		x11/tk
 

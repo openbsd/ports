@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/19 19:58:52 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:02 sthen Exp $
 
 COMMENT =	persistent Markdown processor for Catalyst
 
@@ -9,7 +9,7 @@ REVISION =	2
 CATEGORIES =	textproc
 
 # Same as Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CPAN_AUTHOR =	CLACO
 

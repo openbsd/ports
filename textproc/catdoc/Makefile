@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/01/19 15:02:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:49:57 sthen Exp $
 
 COMMENT-main=	convert MS Word, Excel, Powerpoint to ASCII or TeX
 COMMENT-tk=	viewer for MS Word files
@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.wagner.pp.ru/pub/catdoc/
 HOMEPAGE=	http://wagner.pp.ru/~vitus/software/catdoc/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES=	-main
 PSEUDO_FLAVORS=	no_x11

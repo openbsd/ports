@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:04 sthen Exp $
 
 COMMENT=		parse, analyze and manipulate Perl
 
@@ -10,7 +10,7 @@ CATEGORIES=		textproc www
 CPAN_AUTHOR=		ADAMK
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		textproc/p5-PPI \
 			www/p5-CSS-Tiny

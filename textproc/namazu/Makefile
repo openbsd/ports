@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/20 22:15:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:02 sthen Exp $
 
 COMMENT=	small to medium scale full-text search engine
 DISTNAME=	namazu-2.0.21
@@ -10,7 +10,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://www.namazu.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv intl m
 

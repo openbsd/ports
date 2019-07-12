@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/08/04 10:17:05 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:49:56 sthen Exp $
 
 COMMENT=	aspell dictionary for Esperanto
 CATEGORIES=	textproc
@@ -7,6 +7,6 @@ MASTER_SITES=	${MASTER_SITE_GNU:=aspell/dict/eo/}
 REVISION=	0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

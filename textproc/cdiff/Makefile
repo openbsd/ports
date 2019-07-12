@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/06/11 15:10:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:57 sthen Exp $
 
 COMMENT=		inline and side-by-side colored and incremental diff
 
@@ -10,7 +10,7 @@ CATEGORIES=		textproc
 HOMEPAGE=		https://github.com/ymattw/cdiff
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/15 18:37:29 schwarze Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT =		tests lexical similarity in texts
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://dickgrune.com/Programs/similarity_tester/
 MAINTAINER =     	Laurent Fanis <laurent.fanis@gmail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

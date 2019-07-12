@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/15 12:04:41 kmos Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:49 sthen Exp $
 
 COMMENT =		Python bindings for Augeas
 
@@ -12,7 +12,7 @@ CATEGORIES =		sysutils
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

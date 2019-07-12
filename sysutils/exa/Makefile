@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/12/16 08:50:11 semarie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:42 sthen Exp $
 
 COMMENT =		ls alternative written in Rust
 
@@ -10,7 +10,7 @@ REVISION =		1
 CATEGORIES =		sysutils
 
 # Unlicense/MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # as devel/cargo MODULES adds DISTFILES, GH_* didn't
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}

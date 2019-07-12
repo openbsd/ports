@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:41 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:43 sthen Exp $
 
 COMMENT =		Google Cloud Platform (GCP) Compute Engine daemon
 
@@ -15,7 +15,7 @@ CATEGORIES =		sysutils net
 MAINTAINER =		Helen Koike <helen.koike@collabora.com>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

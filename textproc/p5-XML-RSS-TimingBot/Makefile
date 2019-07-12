@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/08 15:44:46 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:09 sthen Exp $
 
 COMMENT=	efficiently fetch RSS feeds
 
@@ -9,7 +9,7 @@ REVISION=	1
 CATEGORIES=	textproc
 
 # Same as Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	www/p5-LWP-UserAgent-Determined \
 		textproc/p5-XML-RSS \

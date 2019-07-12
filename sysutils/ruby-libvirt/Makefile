@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:50 sthen Exp $
 
 COMMENT=	Ruby bindings for libvirt
 
@@ -10,7 +10,7 @@ CATEGORIES=	sysutils
 HOMEPAGE=	https://libvirt.org/ruby/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby
 

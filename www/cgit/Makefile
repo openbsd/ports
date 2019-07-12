@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/09/04 12:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:50:18 sthen Exp $
 
 COMMENT =	web frontend for git repositories
 
@@ -14,7 +14,7 @@ MASTER_SITES1 =		https://www.kernel.org/pub/software/scm/git/
 HOMEPAGE =		https://git.zx2c4.com/cgit/about/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 USE_GMAKE =	yes
 

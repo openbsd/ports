@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/20 22:15:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:50:10 sthen Exp $
 
 COMMENT=		info viewer with lynx-style navigation
 
@@ -14,7 +14,7 @@ MASTER_SITES=		https://alioth-archive.debian.org/releases/pinfo/pinfo/pinfo-0.6.
 			${MASTER_SITE_FREEBSD}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c curses iconv intl readline 
 
 LIB_DEPENDS=		devel/gettext,-runtime

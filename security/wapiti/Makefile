@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:41 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:38 sthen Exp $
 
 COMMENT =	web-application vulnerability scanner
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://wapiti.sourceforge.net/
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=wapiti/}
 

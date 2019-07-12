@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/06/25 20:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:38 sthen Exp $
 
 COMMENT =		friendly interactive shell
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://fishshell.com/
 MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c curses intl m pcre2-32
 

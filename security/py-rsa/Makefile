@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/15 12:04:41 kmos Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:35 sthen Exp $
 
 # !!! do not update blindly: sysutils/awscli requires a specific version
 
@@ -14,7 +14,7 @@ CATEGORIES=		security
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

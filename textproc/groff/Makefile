@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/01/12 17:01:35 schwarze Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:49:58 sthen Exp $
 
 COMMENT =		GNU troff typesetter
 VERSION =		1.22.4
@@ -13,7 +13,7 @@ HOMEPAGE =		https://www.gnu.org/software/groff/
 MAINTAINER =		Ingo Schwarze <schwarze@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m ${COMPILER_LIBCXX}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/02/25 17:54:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:57 sthen Exp $
 
 COMMENT=		count lines of code
 
@@ -12,7 +12,7 @@ HOMEPAGE=		https://github.com/AlDanial/cloc
 MAINTAINER=		Joerg Jung <jung@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://github.com/AlDanial/cloc/releases/download/${V}/
 

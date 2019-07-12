@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/07 16:52:35 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:01 sthen Exp $
 
 COMMENT =	Lua library for parsing and emitting YAML
 V =		6.1
@@ -13,7 +13,7 @@ GH_TAGNAME =	release-v${V}
 CATEGORIES =	textproc
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		yaml-0
 

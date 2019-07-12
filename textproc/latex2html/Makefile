@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/02/03 12:54:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:50:00 sthen Exp $
 
 COMMENT=	LaTeX to HTML converter
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc www
 HOMEPAGE=	http://www.latex2html.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=support/latex2html/}
 

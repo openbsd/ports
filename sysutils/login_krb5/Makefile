@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/03/23 10:41:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:45 sthen Exp $
 
 COMMENT=		authentication provider for KerberosV
 
@@ -17,7 +17,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 HOMEPAGE=		http://repo.or.cz/login_krb5.git
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 WANTLIB += c

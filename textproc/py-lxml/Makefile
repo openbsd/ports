@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/09 21:13:26 danj Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:50:12 sthen Exp $
 
 BROKEN-hppa=	OOM on src/lxml/lxml.etree.c
 
@@ -14,7 +14,7 @@ CATEGORIES=	textproc devel
 HOMEPAGE=	http://lxml.de/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${MODPY_WANTLIB} exslt m pthread xml2 xslt z
 

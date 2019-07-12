@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/18 07:03:02 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:03 sthen Exp $
 
 COMMENT =	encode characters for LaTeX formatting
 
@@ -6,7 +6,7 @@ DISTNAME =	LaTeX-Encode-0.092.0
 CATEGORIES =	textproc
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*

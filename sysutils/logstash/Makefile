@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/06/11 00:38:36 kurt Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:49:46 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64
 COMMENT =		tool for managing events and logs
@@ -16,7 +16,7 @@ HOMEPAGE =		https://www.elastic.co/products/logstash
 MAINTAINER =		Pavel Korovin <pvk@openbsd.org>
 
 # Apache2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://artifacts.elastic.co/downloads/logstash/
 

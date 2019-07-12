@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/04/21 08:56:07 semarie Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:49:49 sthen Exp $
 
 COMMENT =		list processes as a tree
 DISTNAME =		pstree-2.39
@@ -7,7 +7,7 @@ HOMEPAGE =		http://www.thp.uni-duisburg.de/pstree/
 REVISION =		0
 
 # GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB =		c 

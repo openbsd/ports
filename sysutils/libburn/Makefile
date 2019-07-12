@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/19 20:18:08 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:44 sthen Exp $
 
 COMMENT =	library for reading, mastering and writing optical discs
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://dev.lovelyhq.com/libburnia/web/wikis/Libburn
 MASTER_SITES =	http://files.libburnia-project.org/releases/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c pthread
 

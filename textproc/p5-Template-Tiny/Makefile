@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/01 19:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:06 sthen Exp $
 
 COMMENT =	Template Toolkit reimplemented in as little code as possible
 
@@ -10,6 +10,6 @@ CATEGORIES =	textproc
 REVISION =	1
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

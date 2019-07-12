@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/01/24 10:56:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:44 sthen Exp $
 
 COMMENT =	programs providing a simple interface to inotify
 DISTNAME =	inotify-tools-3.14pl0
@@ -10,7 +10,7 @@ GH_COMMIT =	1df9af4d6cd0f4af4b1b19254bcf056aed4ae395
 SHARED_LIBS =	inotifytools 0.0 # 4.1
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 AUTOMAKE_VERSION =	1.9
 AUTOCONF_VERSION =	2.59

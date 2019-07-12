@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/02 10:20:32 chrisz Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:47 sthen Exp $
 
 COMMENT =		OCaml source-based package manager
 
@@ -15,7 +15,7 @@ HOMEPAGE =		https://opam.ocaml.org/
 MAINTAINER =		Christopher Zimmermann <chrisz@openbsd.org>
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		${COMPILER_LIBCXX} c m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:07 sthen Exp $
 
 COMMENT=	translate Wiki formatted text into other formats
 
@@ -8,7 +8,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	www/p5-URI

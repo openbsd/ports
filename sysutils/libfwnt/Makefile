@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/24 20:16:48 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:44 sthen Exp $
 
 COMMENT =	library for Windows NT data types
 
@@ -17,7 +17,7 @@ MASTER_SITES =	https://github.com/libyal/libfwnt/releases/download/${VERSION}/
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += m pthread util ${MODPY_WANTLIB}
 

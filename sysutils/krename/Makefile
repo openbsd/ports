@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:49:44 sthen Exp $
 
 COMMENT =	powerful batch file renamer
 
@@ -11,7 +11,7 @@ CATEGORIES =	sysutils x11
 HOMEPAGE =	http://www.krename.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Bookmarks KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

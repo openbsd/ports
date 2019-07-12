@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/17 06:51:10 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:58 sthen Exp $
 
 COMMENT =	Helsinki finite state transducer
 
@@ -12,7 +12,7 @@ CATEGORIES =	textproc
 HOMEPAGE =	https://hfst.github.io/
 
 # LGPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/20 22:15:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:58 sthen Exp $
 
 COMMENT=		GNU stream editor
 
@@ -14,7 +14,7 @@ HOMEPAGE=		https://www.gnu.org/software/sed/
 MAINTAINER=		Armin Wolfermann <armin@wolfermann.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c iconv intl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/09/09 10:30:20 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT =	collection of text algorithms
 
@@ -9,7 +9,7 @@ HOMEPAGE =	https://github.com/threedaymonk/text
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT 
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

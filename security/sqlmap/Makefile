@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/06/06 07:02:20 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:36 sthen Exp $
 
 COMMENT =		penetration testing tool to detect/exploit SQL injection
 
@@ -11,7 +11,7 @@ CATEGORIES =		security
 HOMEPAGE =		http://sqlmap.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}

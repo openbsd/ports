@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/06 06:16:26 claudio Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:49 sthen Exp $
 
 COMMENT =		systems monitoring and alerting toolkit
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://prometheus.io/
 MAINTAINER =		Claudio Jeker <claudio@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c pthread
 

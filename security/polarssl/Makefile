@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/06/27 05:05:49 bket Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:49:33 sthen Exp $
 
 PORTROACH=	limit:^2\.16
 
@@ -19,7 +19,7 @@ HOMEPAGE=	https://tls.mbed.org/
 MAINTAINER=	Bjorn Ketelaars <bket@openbsd.org>
 
 # Dual licensed: GPLv2+/Commercial, Apache v2 is also available
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 

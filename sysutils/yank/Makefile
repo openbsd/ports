@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/11/08 19:02:40 anton Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:55 sthen Exp $
 
 COMMENT =	yank terminal output to clipboard
 
@@ -10,7 +10,7 @@ HOMEPAGE =	https://github.com/mptre/yank
 MAINTAINER =	Anton Lindqvist <anton@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://github.com/mptre/yank/releases/download/v${V}/
 

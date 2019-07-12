@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/05/09 19:10:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:49:40 sthen Exp $
 
 COMMENT=	ls(1) that can use color to display file attributes
 
@@ -10,7 +10,7 @@ CATEGORIES=	sysutils
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://shell.uugrn.org/~naddy/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/05/17 16:19:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:49:38 sthen Exp $
 
 COMMENT =	network switch style shell
 
@@ -13,7 +13,7 @@ CATEGORIES =	shells net
 HOMEPAGE =	http://www.nmedia.net/nsh/
 
 # 3 & 2 clause BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses edit sqlite3
 

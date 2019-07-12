@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/13 19:03:53 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:12 sthen Exp $
 
 COMMENT =		Python library for approximate and phonetic string matching
 
@@ -11,7 +11,7 @@ REVISION =		2
 HOMEPAGE =		https://github.com/sunlightlabs/jellyfish
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
 

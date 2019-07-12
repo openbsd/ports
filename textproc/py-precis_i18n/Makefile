@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:12 sthen Exp $
 
 COMMENT =		internationalized usernames and passwords
 
@@ -10,7 +10,7 @@ REVISION =		0
 CATEGORIES =		textproc security
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}

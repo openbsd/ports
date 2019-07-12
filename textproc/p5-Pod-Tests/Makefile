@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/13 12:42:18 cwen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:05 sthen Exp $
 
 COMMENT=	extracts embedded tests and code examples from pod
 
@@ -9,7 +9,7 @@ DISTNAME=	Pod-Tests-1.20
 CATEGORIES=	textproc
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 FIX_EXTRACT_PERMISSIONS=	Yes
 

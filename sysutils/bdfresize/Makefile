@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/01/01 15:37:48 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:39 sthen Exp $
 
 COMMENT =	tool for resizing BDF format fonts
 
@@ -9,7 +9,7 @@ CATEGORIES =	sysutils
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c
 

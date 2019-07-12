@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/06/25 20:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:51 sthen Exp $
 
 COMMENT=	signal or reprioritize specified processes
 
@@ -9,7 +9,7 @@ CATEGORIES=		sysutils
 
 MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		ftp://fast.cs.utah.edu/pub/skill-${VERSION}/

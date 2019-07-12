@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:49:50 sthen Exp $
 
 COMMENT=	provider bindings for Augeas
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://augeas.net/
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby
 

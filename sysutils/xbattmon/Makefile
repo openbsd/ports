@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/13 17:24:12 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:54 sthen Exp $
 
 ONLY_FOR_ARCHS =	${APM_ARCHS}
 
@@ -11,7 +11,7 @@ CATEGORIES =		sysutils x11
 HOMEPAGE =		https://git.2f30.org/xbattmon
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://dl.2f30.org/releases/
 

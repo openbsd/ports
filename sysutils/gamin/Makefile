@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2018/09/04 12:46:22 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2019/07/12 20:49:43 sthen Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=	"-DG_CONST_RETURN=const"
@@ -25,7 +25,7 @@ HOMEPAGE=	http://www.gnome.org/~veillard/gamin/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 EXTRACT_SUFX=	.tar.bz2
 

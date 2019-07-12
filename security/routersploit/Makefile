@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/07/04 21:02:08 awolk Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:36 sthen Exp $
 
 COMMENT =	The Router Exploitation Framework
 
@@ -12,7 +12,7 @@ CATEGORIES =	security net
 MAINTAINER =		Adam Wolk <awolk@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

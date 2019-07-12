@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/06/13 22:26:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT=	fast, safe and extensible Markdown to (X)HTML parser
 
@@ -8,7 +8,7 @@ REVISION =	0
 CATEGORIES=	textproc
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby
 

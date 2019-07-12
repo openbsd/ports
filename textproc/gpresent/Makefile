@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/03/07 12:03:37 schwarze Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:58 sthen Exp $
 
 COMMENT =		make presentations with groff and PDF
 DISTNAME =		gpresent-2.5
@@ -7,7 +7,7 @@ HOMEPAGE =		https://staff.fnwi.uva.nl/b.diertens/useful/gpresent/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}
 

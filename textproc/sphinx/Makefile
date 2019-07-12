@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/05 11:52:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT =	free open-source SQL full-text search engine
 BROKEN-hppa =	internal compiler error: internal consistency failure
@@ -15,7 +15,7 @@ REVISION =	2
 HOMEPAGE =	http://www.sphinxsearch.com/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c expat iconv m pthread ${COMPILER_LIBCXX} z
 

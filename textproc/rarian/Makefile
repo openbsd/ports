@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:50:14 sthen Exp $
 
 COMMENT=		documentation metadata library
 
@@ -14,7 +14,7 @@ CATEGORIES=		textproc
 HOMEPAGE=		http://rarian.freedesktop.org/
 
 # LGPLv2.1/GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 

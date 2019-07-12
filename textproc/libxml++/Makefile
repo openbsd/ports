@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 20:50:00 sthen Exp $
 
 PORTROACH=		limit:^2
 
@@ -18,7 +18,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ffi glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 iconv intl
 WANTLIB += lzma m pcre pthread sigc-2.0 xml2 z

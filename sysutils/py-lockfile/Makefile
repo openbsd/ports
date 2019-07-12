@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/04/28 20:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:49 sthen Exp $
 
 COMMENT=		platform-independent file locking for Python
 
@@ -12,7 +12,7 @@ CATEGORIES=		sysutils
 HOMEPAGE=		https://launchpad.net/pylockfile
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

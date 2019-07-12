@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/01/20 02:32:49 jca Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:49:37 sthen Exp $
 
 COMMENT=	fast scatter/gather TCP port scanner
 
@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/scanners/strobe/
 
 # License: BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 WRKDIST=	${WRKDIR}/strobe

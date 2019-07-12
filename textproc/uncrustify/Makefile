@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/05/16 07:58:50 rpointel Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:50:16 sthen Exp $
 
 COMMENT =		source code beautifier
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://uncrustify.sourceforge.net/
 MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 

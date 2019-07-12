@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.46 2019/07/12 20:50:14 sthen Exp $
 
 COMMENT=		Ruby interface to hyperestraier
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://fallabs.com/hyperestraier/rubynativeapi/
 MAINTAINER=		Jeremy Evans <jeremy@openbsd.org>
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

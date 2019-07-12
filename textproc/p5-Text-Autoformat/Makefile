@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/03/21 10:27:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:50:06 sthen Exp $
 
 COMMENT=		automatic text wrapping and reformatting
 
@@ -11,7 +11,7 @@ EPOCH=			0
 REVISION=		0
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		textproc/p5-Text-Reform
 

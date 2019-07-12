@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:57 sthen Exp $
 
 COMMENT =	full-text search engine library
 CATEGORIES =	textproc
@@ -15,7 +15,7 @@ SHARED_LIBS +=  clucene-core              0.0 # 2.3
 SHARED_LIBS +=  clucene-shared            0.0 # 2.3
 
 # LGPL or Apache License 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += m pthread ${COMPILER_LIBCXX} z
 

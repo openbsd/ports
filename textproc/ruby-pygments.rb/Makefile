@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/19 19:38:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT=	syntax highlighter based on pygments
 
@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	https://github.com/tmm1/pygments.rb
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby \
 		lang/python

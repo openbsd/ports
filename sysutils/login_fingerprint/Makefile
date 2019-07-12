@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/04/26 16:02:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:45 sthen Exp $
 
 COMMENT=	provide fingerprint authentication
 
@@ -11,7 +11,7 @@ MASTER_SITES=	http://blade2k.humppa.hu/
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto fprint freetype
 

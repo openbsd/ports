@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/04/24 16:26:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:49:59 sthen Exp $
 
 COMMENT =		basic types for representing XML
 
@@ -9,7 +9,7 @@ CATEGORIES =		textproc
 HOMEPAGE =		https://john-millikin.com/software/haskell-xml/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

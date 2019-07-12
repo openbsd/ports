@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 19:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:09 sthen Exp $
 
 COMMENT =	pure Perl implementation for parsing/writing XML documents
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://github.com/kawanet/XML-TreePP
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*

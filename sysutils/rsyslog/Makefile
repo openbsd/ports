@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/06/14 04:12:33 remi Exp $
+# $OpenBSD: Makefile,v 1.46 2019/07/12 20:49:50 sthen Exp $
 
 BROKEN-powerpc =	64-bit atomics (__sync_bool_compare_and_swap_8)
 
@@ -24,7 +24,7 @@ HOMEPAGE =		https://www.rsyslog.com/
 MAINTAINER =		Remi Locherer <remi@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
 

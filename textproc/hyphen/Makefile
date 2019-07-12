@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/11 19:59:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:59 sthen Exp $
 
 COMMENT=		text hyphenation library
 
@@ -11,7 +11,7 @@ CATEGORIES=		textproc
 HOMEPAGE=		http://hunspell.sourceforge.net/
 
 # GPLv2+ | LGPLv2.1 | MPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=hunspell/}

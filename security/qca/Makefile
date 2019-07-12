@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:49:35 sthen Exp $
 
 COMMENT-main =	Qt Cryptographic Architecture for Qt4
 COMMENT-ossl =	SSL/TLS plugin
@@ -21,7 +21,7 @@ SHARED_LIBS +=  qca                   3.0 # 2.1
 HOMEPAGE =	https://userbase.kde.org/QCA
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += QtCore c m ${COMPILER_LIBCXX}
 WANTLIB-ossl += QtCore crypto m qca ssl ${COMPILER_LIBCXX}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/04/29 13:05:01 bket Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:49 sthen Exp $
 
 COMMENT =		python client for the prometheus monitoring system
 
@@ -9,7 +9,7 @@ PKGNAME =		py-${DISTNAME}
 CATEGORIES =		sysutils
 
 # Apache License v2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/11 21:27:08 mmcc Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:56 sthen Exp $
 
 COMMENT=	DSP library for telephony
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.soft-switch.org/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # LGPLv2/GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c jpeg m tiff z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/07/01 09:02:41 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:03 sthen Exp $
 
 COMMENT =	driver to format LaTeX documents
 
@@ -12,7 +12,7 @@ PKG_ARCH =	*
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 #CONFIGURE_ENV+=		PREFIX=${PREFIX}
 

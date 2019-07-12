@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/12/29 19:37:21 nigel Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:18 sthen Exp $
 
 PORTROACH=	limit:^v
 
@@ -13,7 +13,7 @@ PKGNAME=	erl-${GH_PROJECT}-$V
 CATEGORIES=	www
 
 # Apache2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/erlang
 

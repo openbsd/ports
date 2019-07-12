@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2019/06/19 19:45:59 kili Exp $
+# $OpenBSD: Makefile,v 1.74 2019/07/12 20:49:56 sthen Exp $
 
 COMMENT =		ebook management application
 
@@ -12,7 +12,7 @@ REVISION =		10
 HOMEPAGE =		https://calibre-ebook.com/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += EGL GL Qt5Core Qt5DBus Qt5Gui Qt5Widgets X11 Xext Xrender
 WANTLIB += chm crypto fontconfig freetype glib-2.0 gthread-2.0

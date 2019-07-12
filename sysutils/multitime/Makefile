@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/03/12 11:32:38 edd Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:46 sthen Exp $
 
 COMMENT =		time multiple executions of a command
 
@@ -10,7 +10,7 @@ HOMEPAGE =		http://tratt.net/laurie/src/multitime/
 MAINTAINER =		Laurence Tratt <laurie@tratt.net>
 
 # BSD / MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}releases/
 

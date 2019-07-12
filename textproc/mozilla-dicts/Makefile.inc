@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2018/07/31 09:42:18 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2019/07/12 20:50:02 sthen Exp $
 
 # All distfiles are unversioned, and no upstream master site available
 PORTROACH =	ignore:1
@@ -14,7 +14,7 @@ CATEGORIES =	textproc
 HOMEPAGE =	https://addons.mozilla.org/language-tools/
 
 # Mozilla public license
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://spacehopper.org/martynas/mozilla/dicts/${V}/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:09 sthen Exp $
 
 COMMENT=	Provide regular expressions for some XML tokens
 
@@ -8,6 +8,6 @@ DISTNAME =	XML-RegExp-0.04
 CATEGORIES=	textproc
 
 # GPL/Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

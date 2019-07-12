@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/16 15:38:07 cwen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:06 sthen Exp $
 
 COMMENT=		XHTML format for Text::Diff::Unified
 
@@ -8,7 +8,7 @@ DISTNAME=		Text-Diff-HTML-0.08
 CATEGORIES=		textproc www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		textproc/p5-Text-Diff>=0.11 \
 			www/p5-HTML-Parser

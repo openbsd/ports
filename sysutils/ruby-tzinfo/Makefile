@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/04/23 11:26:49 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:51 sthen Exp $
 
 COMMENT=	access to time zone data and conversion
 
@@ -9,7 +9,7 @@ HOMEPAGE=	https://tzinfo.github.io/
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby
 

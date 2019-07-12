@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:54 sthen Exp $
 
 ONLY_FOR_ARCHS = ${APM_ARCHS}
 
@@ -17,7 +17,7 @@ MASTER_SITES =	http://iplab.naist.jp/member/suguru/
 MAINTAINER =	Brynet <brynet@gmail.com>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	X11 Xau Xdmcp Xext c xcb
 

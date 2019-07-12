@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/07/08 15:58:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:50:14 sthen Exp $
 
 COMMENT=		iCalendar support for Ruby
 
@@ -8,7 +8,7 @@ CATEGORIES=		textproc
 HOMEPAGE=		https://github.com/icalendar/icalendar
 
 # Ruby license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

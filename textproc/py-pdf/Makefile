@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/10/24 15:32:03 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:12 sthen Exp $
 
 COMMENT=		Python PDF toolkit
 
@@ -10,7 +10,7 @@ CATEGORIES=		textproc devel
 HOMEPAGE=		http://pybrary.net/pyPdf/
 
 # Modified BSD
-PERMIT_PACKAGE_CDROM=		Yes
+PERMIT_PACKAGE=		Yes
 
 MASTER_SITES=	http://pybrary.net/pyPdf/
 

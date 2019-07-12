@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:44 sthen Exp $
 
 COMMENT =	graphical su wrapper
 DISTNAME =	ktsuss-1.4
@@ -6,7 +6,7 @@ REVISION =	6
 CATEGORIES =	sysutils
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig

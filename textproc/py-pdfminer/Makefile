@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/01/20 09:49:19 feinerer Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:50:12 sthen Exp $
 
 COMMENT =	PDF parser and analyzer
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://www.unixuser.org/~euske/python/pdfminer/
 MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

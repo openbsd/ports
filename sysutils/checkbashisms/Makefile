@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/02/03 11:14:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:40 sthen Exp $
 
 COMMENT=		check shell scripts for bash-specific constructs
 
@@ -12,7 +12,7 @@ WRKDIST=		${WRKDIR}
 CATEGORIES=		sysutils devel
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=checkbaskisms/$V/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/22 17:47:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:36 sthen Exp $
 
 COMMENT=	Remote SMTP Server Detection
 
@@ -8,7 +8,7 @@ REVISION =	1
 CATEGORIES=	security net mail
 
 # GPL2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM:=UNIX/scanners/}
 

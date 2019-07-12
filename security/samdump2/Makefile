@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:36 sthen Exp $
 
 COMMENT =		retrieves syskey and extract hashes
 
@@ -10,7 +10,7 @@ HOMEPAGE =		http://ophcrack.sourceforge.net/
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c ssl crypto
 

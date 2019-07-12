@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/25 22:10:18 cwen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:38 sthen Exp $
 
 COMMENT=		Perl shell
 
@@ -8,7 +8,7 @@ REVISION=		2
 CATEGORIES=		shells
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 

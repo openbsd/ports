@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/04/16 20:45:43 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:35 sthen Exp $
 
 COMMENT =	online brute force WPS PINs
 
@@ -13,7 +13,7 @@ CATEGORIES =	security net
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2 or later
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c m pcap
 

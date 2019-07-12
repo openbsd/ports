@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/11/24 09:11:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:50:15 sthen Exp $
 
 COMMENT=	validating namespace-aware XML parser
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://www.cogsci.ed.ac.uk/~richard/rxp.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c 
 
 MASTER_SITES=	https://distfiles.nl/

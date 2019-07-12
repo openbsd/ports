@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2018/11/17 09:28:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2019/07/12 20:49:39 sthen Exp $
 
 COMMENT=		configuration editing tool and API
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=  fa                        0.0 # 5.4
 HOMEPAGE=		http://augeas.net/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses iconv lzma m pthread readline xml2 z
 

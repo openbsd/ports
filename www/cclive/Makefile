@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:50:18 sthen Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -14,7 +14,7 @@ CATEGORIES =		www
 HOMEPAGE =		http://cclive.sourceforge.net
 
 # AGPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_program_options-mt boost_system-mt bz2 c crypto curl

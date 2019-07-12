@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/03/28 11:51:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:03 sthen Exp $
 
 COMMENT=		measure readability of English text
 
@@ -9,7 +9,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		textproc/p5-Lingua-EN-Syllable
 

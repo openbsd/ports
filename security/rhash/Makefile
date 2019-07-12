@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/24 16:26:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:36 sthen Exp $
 
 COMMENT =	utility and library for computing hash sums
 
@@ -14,7 +14,7 @@ CATEGORIES =	security
 HOMEPAGE =	http://rhash.anz.ru/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c
 

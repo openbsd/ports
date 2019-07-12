@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:57:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:03 sthen Exp $
 
 COMMENT =	convert English text to numbers
 DISTNAME =	Lingua-EN-Words2Nums-0.18
@@ -8,7 +8,7 @@ CATEGORIES =	textproc
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # same terms as Perl itself
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

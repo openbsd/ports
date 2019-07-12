@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/09 23:04:58 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:07 sthen Exp $
 
 COMMENT=	converts simple text to web constructs
 
@@ -9,7 +9,7 @@ REVISION=	0
 HOMEPAGE =	https://github.com/bradchoate/text-textile/
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

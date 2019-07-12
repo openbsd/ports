@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/09 14:14:02 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:03 sthen Exp $
 
 COMMENT =	part-of-speech tagger for EN natural language processing
 
@@ -8,7 +8,7 @@ CATEGORIES =	textproc
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # GPLv3 Only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

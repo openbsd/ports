@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/04/28 20:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:49:57 sthen Exp $
 
 COMMENT =	versatile file searching tool
 
@@ -13,7 +13,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 HOMEPAGE =	https://bluesabre.org/projects/catfish/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python \
 		x11/xfce4 \

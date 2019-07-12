@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/05 05:19:32 bentley Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:56 sthen Exp $
 
 COMMENT =		module for compiling and processing lexical rules
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://wiki.apertium.org/wiki/Constraint-based_lexical_selection_mod
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 

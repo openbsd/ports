@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/04 20:13:37 bket Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:50 sthen Exp $
 
 COMMENT =	fast, efficient and secure backup program
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://restic.net/
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/05/01 17:22:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:50:14 sthen Exp $
 
 COMMENT =		implementation of eRuby
 
@@ -8,7 +8,7 @@ CATEGORIES =		textproc
 HOMEPAGE =		http://www.kuwata-lab.com/erubis/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

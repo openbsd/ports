@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/15 12:04:42 kmos Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:50:12 sthen Exp $
 
 COMMENT=		Natural Language ToolKit
 
@@ -13,7 +13,7 @@ EPOCH =			0
 HOMEPAGE=		http://www.nltk.org/
 
 # Apache License, Version 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

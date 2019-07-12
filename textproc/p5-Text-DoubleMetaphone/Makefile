@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/19 19:58:52 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:07 sthen Exp $
 
 COMMENT=	implementation of a "sounds like" algorithm
 
@@ -8,7 +8,7 @@ REVISION=	7
 CATEGORIES=	textproc
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.2 2017/05/15 04:05:55 stu Exp $
+#$OpenBSD: Makefile,v 1.3 2019/07/12 20:50:10 sthen Exp $
 
 COMMENT =	library for generating PDF documents for Tcl
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://sourceforge.net/projects/pdf4tcl/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pdf4tcl/}
 

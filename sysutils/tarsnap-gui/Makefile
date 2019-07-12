@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/08 20:00:51 cwen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:49:53 sthen Exp $
 
 COMMENT =		frontend to the popular Tarsnap backup service
 
@@ -12,7 +12,7 @@ CATEGORIES =		sysutils
 MAINTAINER =		Josh Grosse <josh@jggimi.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Sql
 WANTLIB += Qt5Widgets c m

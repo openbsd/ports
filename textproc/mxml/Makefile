@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/06/28 12:26:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:02 sthen Exp $
 
 COMMENT=		minimal XML library
 DISTNAME=		mxml-2.10
@@ -9,7 +9,7 @@ SHARED_LIBS=		mxml	0.2	# 1.5
 HOMEPAGE=		http://www.msweet.org/projects.php?Z3
 
 # LGPLv2 with exceptions
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

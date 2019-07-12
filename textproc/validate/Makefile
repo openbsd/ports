@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/05 15:15:45 danj Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:16 sthen Exp $
 
 COMMENT=		HTML, XHTML validator
 
@@ -9,7 +9,7 @@ CATEGORIES=		textproc
 HOMEPAGE=		http://www.htmlhelp.com/tools/validator/offline/
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=

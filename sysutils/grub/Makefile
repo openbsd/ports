@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/09/04 12:46:22 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:43 sthen Exp $
 
 BROKEN=		fails with clang, fails with ports-gcc
 
@@ -13,7 +13,7 @@ CATEGORIES=	sysutils
 HOMEPAGE=	https://www.gnu.org/software/grub/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c ncurses util
 

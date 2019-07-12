@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2016/11/03 10:33:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2019/07/12 20:49:39 sthen Exp $
 
 # XXX fix change password (gnome-cc run-passwd.c: argv[0])
 
@@ -17,7 +17,7 @@ HOMEPAGE=	http://cgit.freedesktop.org/accountsservice/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv
 WANTLIB += intl pcre polkit-gobject-1 pthread z

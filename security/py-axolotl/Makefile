@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/23 05:01:04 feinerer Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:34 sthen Exp $
 
 COMMENT =		Python port of libaxolotl
 
@@ -11,7 +11,7 @@ CATEGORIES =		security
 MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

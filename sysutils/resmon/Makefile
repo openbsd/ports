@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/01 19:29:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:50 sthen Exp $
 
 COMMENT-main =		system monitoring tool
 COMMENT-nagios =	nagios plugin for resmon
@@ -15,7 +15,7 @@ REVISION-main =		0
 MULTI_PACKAGES =	-main -nagios
 
 # BSD
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =	http://www.dixongroup.net/
 NO_BUILD =	Yes
