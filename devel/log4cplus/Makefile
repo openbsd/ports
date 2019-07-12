@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:41 sthen Exp $
 
 COMMENT=		logging API for C++
 
@@ -12,7 +12,7 @@ CATEGORIES=		devel
 HOMEPAGE=		http://log4cplus.sourceforge.net/
 
 # Apache License 2.0 + BSD style
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m pthread ${COMPILER_LIBCXX}
 

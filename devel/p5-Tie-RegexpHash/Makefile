@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:13 sthen Exp $
 
 COMMENT=	use regular expressions as hash keys
 
@@ -8,6 +8,6 @@ DISTNAME =	Tie-RegexpHash-0.17
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

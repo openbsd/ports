@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/12/27 15:08:39 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:41 sthen Exp $
 
 COMMENT =	Lua library for time and date manipulation
 
@@ -14,7 +14,7 @@ CATEGORIES =	devel
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/lua
 

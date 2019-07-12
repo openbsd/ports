@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2019/05/17 16:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.123 2019/07/12 20:45:15 sthen Exp $
 
 COMMENT=		library for layout and rendering of text
 
@@ -18,7 +18,7 @@ HOMEPAGE=		http://www.pango.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xext Xft Xrender c cairo expat ffi fontconfig freetype
 WANTLIB += fribidi glib-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz

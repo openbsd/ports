@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:12 sthen Exp $
 
 COMMENT=	ordered associative arrays for Perl
 
@@ -8,6 +8,6 @@ DISTNAME =	Tie-IxHash-1.23
 CATEGORIES=	devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

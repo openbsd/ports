@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/02/16 17:18:35 cwen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:01 sthen Exp $
 
 COMMENT = 	logging Role with easy interface for Moose
 
@@ -8,7 +8,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE =	modinst
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:12 sthen Exp $
 COMMENT=	LRU cache in memory with expiry
 
 MODULES=	cpan
@@ -13,6 +13,6 @@ RUN_DEPENDS=	devel/p5-Tie-Cache-LRU \
 		devel/p5-Class-Data-Inheritable
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

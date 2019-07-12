@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/07 20:57:15 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:58 sthen Exp $
 
 COMMENT =	run commands simply, with detailed diagnostics
 DISTNAME =	IPC-System-Simple-1.25
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 

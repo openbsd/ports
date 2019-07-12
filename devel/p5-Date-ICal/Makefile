@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/08 15:44:45 danj Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:50 sthen Exp $
 
 COMMENT=	Perl Extensions for ICal objects
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 REVISION =	0
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Date-Leapyear 

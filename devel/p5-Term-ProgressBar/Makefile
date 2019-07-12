@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/18 01:34:20 cwen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:08 sthen Exp $
 
 COMMENT=		text mode progress bar
 
@@ -8,7 +8,7 @@ DISTNAME=		Term-ProgressBar-2.22
 CATEGORIES=		devel
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/p5-Class-MethodMaker>=1.02
 

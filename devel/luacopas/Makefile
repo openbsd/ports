@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/10/16 23:21:23 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:44:41 sthen Exp $
 
 COMMENT=	coroutine oriented portable asynchronous services for lua
 
@@ -11,7 +11,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://keplerproject.github.io/copas/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://github.com/downloads/keplerproject/copas/
 

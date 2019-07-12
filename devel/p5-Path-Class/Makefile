@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/09 09:19:03 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:04 sthen Exp $
 
 COMMENT=	cross-platform path manipulation
 
@@ -8,7 +8,7 @@ DISTNAME =	Path-Class-0.37
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CPAN_AUTHOR=	KWILLIAMS
 

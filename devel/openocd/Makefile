@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/12/13 20:19:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:43 sthen Exp $
 
 COMMENT =	Open On-Chip Debugging
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 HOMEPAGE =	http://openocd.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c ftdi hidapi-libusb iconv jim m pthread usb usb-1.0
 

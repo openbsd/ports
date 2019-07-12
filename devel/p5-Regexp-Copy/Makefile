@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:05 sthen Exp $
 
 COMMENT=		copy perl Regexp objects
 
@@ -9,7 +9,7 @@ CATEGORIES=		devel
 MAINTAINER=		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

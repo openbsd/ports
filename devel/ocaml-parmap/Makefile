@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/06/19 09:18:18 chrisz Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:43 sthen Exp $
 
 COMMENT =	OCaml parallel map primitive for multicores
 CATEGORIES =	devel
@@ -14,7 +14,7 @@ MASTER_SITES =	https://github.com/rdicosmo/parmap/archive/
 HOMEPAGE =	https://github.com/rdicosmo/parmap
 
 # LGPLv2+ + static linking exception
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES =	lang/ocaml
 BUILD_DEPENDS =	sysutils/findlib devel/ocaml-ocamlbuild

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:57 sthen Exp $
 
 COMMENT=		perl interface to the BSD kqueue system call
 
@@ -8,7 +8,7 @@ REVISION=		3
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

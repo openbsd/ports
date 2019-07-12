@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:04 sthen Exp $
 
 COMMENT =		source constants from POD to avoid repetition
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

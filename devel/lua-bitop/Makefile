@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/14 14:53:15 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:41 sthen Exp $
 
 V =		1.0.2
 COMMENT =	library for bitwise operations in Lua
@@ -11,7 +11,7 @@ HOMEPAGE =	https://bitop.luajit.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://bitop.luajit.org/download/
 

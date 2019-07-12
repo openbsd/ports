@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/05/17 16:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:43 sthen Exp $
 
 COMMENT=		debugger for use with MSP 430 MCUs
 
@@ -14,7 +14,7 @@ HOMEPAGE=		https://dlbeer.co.nz/mspdebug/
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses pthread readline usb
 

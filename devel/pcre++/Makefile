@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:45:15 sthen Exp $
 
 COMMENT=		wrapper class around the pcre library
 
@@ -14,7 +14,7 @@ HOMEPAGE=		http://www.daemon.de/PCRE
 MASTER_SITES=		http://www.daemon.de/idisk/Apps/pcre++/
 
 # LGPLv2.1 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # XXX doesn't seem to actually link against libpcre?
 LIB_DEPENDS =		devel/pcre

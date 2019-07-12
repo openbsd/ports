@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/10/24 19:59:13 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:01 sthen Exp $
 
 COMMENT =		inside-out objects with Moose
 
@@ -11,7 +11,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		devel/p5-Hash-Util-FieldHash-Compat \
 			devel/p5-Moose>=0.94 \

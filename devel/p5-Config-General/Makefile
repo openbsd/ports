@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/05/06 21:16:37 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:48 sthen Exp $
 
 COMMENT =	generic configuration parser, inspired by apache
 
@@ -10,6 +10,6 @@ CATEGORIES =	devel
 HOMEPAGE =	http://www.daemon.de/ConfigGeneral
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/01/22 21:43:45 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:34 sthen Exp $
 
 COMMENT =		data encoding library
 
@@ -7,7 +7,7 @@ REVISION =		0
 CATEGORIES =		devel
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

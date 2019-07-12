@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/09/02 22:31:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:44 sthen Exp $
 
 COMMENT=	Perl module for comparing arrays
 
@@ -8,7 +8,7 @@ DISTNAME=	Array-Compare-2.12
 CATEGORIES=	devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CPAN_AUTHOR=	DAVECROSS
 

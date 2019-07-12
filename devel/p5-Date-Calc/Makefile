@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/20 19:56:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:44:50 sthen Exp $
 
 COMMENT=	date calculations for the Gregorian calendar
 
@@ -7,7 +7,7 @@ DISTNAME=	Date-Calc-6.4
 CATEGORIES=	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	perl
 

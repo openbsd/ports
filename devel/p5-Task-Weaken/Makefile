@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/02 01:53:26 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:08 sthen Exp $
 
 COMMENT=		ensure that a platform has weaken support
 
@@ -8,7 +8,7 @@ DISTNAME=		Task-Weaken-1.06
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 FIX_EXTRACT_PERMISSIONS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/19 09:18:18 chrisz Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:43 sthen Exp $
 
 COMMENT =	ocamlbuild
 CATEGORIES =	devel
@@ -10,7 +10,7 @@ GH_TAGNAME =	${V}
 DISTNAME =	${GH_PROJECT}-${V}
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m pthread
 

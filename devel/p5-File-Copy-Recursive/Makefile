@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/13 12:28:02 cwen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:54 sthen Exp $
 
 COMMENT=	recursive copy of files and directories
 
@@ -8,7 +8,7 @@ DISTNAME=	File-Copy-Recursive-0.44
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 TEST_DEPENDS=		devel/p5-Path-Tiny \
 			devel/p5-Test-Deep \

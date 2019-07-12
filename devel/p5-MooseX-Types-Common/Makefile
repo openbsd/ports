@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/19 19:58:51 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:02 sthen Exp $
 
 COMMENT=		library of commonly used type constraints
 
@@ -9,7 +9,7 @@ CATEGORIES=		devel
 REVISION=		0
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	modbuild tiny
 

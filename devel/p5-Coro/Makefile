@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/10/16 18:23:53 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:48 sthen Exp $
 
 COMMENT =	coroutines for perl
 
@@ -7,7 +7,7 @@ DISTNAME =	Coro-6.511
 CATEGORIES =	devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl pthread
 

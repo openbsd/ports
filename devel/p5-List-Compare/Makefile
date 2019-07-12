@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/02/05 14:37:13 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:58 sthen Exp $
 
 COMMENT =	compare elements of two or more lists
 DISTNAME =	List-Compare-0.53
@@ -7,7 +7,7 @@ CATEGORIES =	devel
 MAINTAINER =	James E Keenan <jkeenan@cpan.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 

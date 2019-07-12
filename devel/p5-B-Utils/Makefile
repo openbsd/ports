@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:45 sthen Exp $
 
 COMMENT=		helper functions for op tree manipulation
 
@@ -9,7 +9,7 @@ REVISION =		0
 MODULES=		cpan
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

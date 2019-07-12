@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/16 04:33:07 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:55 sthen Exp $
 
 COMMENT =	extend File::ShareDir to local libraries
 
@@ -10,7 +10,7 @@ CATEGORIES =	devel
 MAINTAINER =	Wen Heping <wenheping2000@hotmail.com>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		devel/p5-File-ShareDir>=1.03
 

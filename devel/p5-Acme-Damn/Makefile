@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/28 15:49:09 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:44 sthen Exp $
 
 COMMENT=		unbless perl objects
 
@@ -8,7 +8,7 @@ CATEGORIES=		devel
 MODULES=		cpan
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

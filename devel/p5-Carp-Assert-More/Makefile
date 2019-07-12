@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/13 12:33:58 cwen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:45 sthen Exp $
 
 COMMENT=	convenience wrappers around Carp::Assert
 
@@ -9,7 +9,7 @@ DISTNAME=	Carp-Assert-More-1.16
 CATEGORIES=	devel
 
 # Artistic 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Carp-Assert
 TEST_DEPENDS=	devel/p5-Test-Exception

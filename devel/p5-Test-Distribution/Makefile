@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:09 sthen Exp $
 
 COMMENT=	perform tests on all modules of a distribution
 
@@ -10,7 +10,7 @@ REVISION=	1
 CATEGORIES=	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE= modbuild
 

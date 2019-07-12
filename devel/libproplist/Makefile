@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/03/11 19:59:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:44:40 sthen Exp $
 
 COMMENT=	GNUstep/OPENSTEP property lists compatibility library
 
@@ -13,7 +13,7 @@ CATEGORIES=	devel
 
 HOMEPAGE=	http://www.windowmaker.info/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 USE_GMAKE=	Yes
 SEPARATE_BUILD=	Yes

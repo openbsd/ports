@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:42 sthen Exp $
 
 COMMENT=	.NET library for the Google Data API
 
@@ -11,7 +11,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 CATEGORIES=	devel
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://distfiles.nl/
 

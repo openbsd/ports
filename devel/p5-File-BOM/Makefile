@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/01 22:33:14 cwen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:53 sthen Exp $
 
 COMMENT =	utilities for handling Byte Order Marks
 
@@ -11,7 +11,7 @@ RUN_DEPENDS =	devel/p5-Readonly
 TEST_DEPENDS =	devel/p5-Test-Exception
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE =	modbuild
 

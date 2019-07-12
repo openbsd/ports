@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/02/28 22:13:08 bluhm Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:44:44 sthen Exp $
 
 COMMENT =	provide framework for multiple event loops
 
@@ -10,7 +10,7 @@ CATEGORIES =	devel
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 BUILD_DEPENDS =		devel/p5-Canary-Stability

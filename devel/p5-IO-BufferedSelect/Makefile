@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/24 15:47:38 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:57 sthen Exp $
 
 COMMENT =	line-buffered select interface
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 

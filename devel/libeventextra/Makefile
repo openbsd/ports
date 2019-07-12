@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/05/25 07:54:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:38 sthen Exp $
 
 COMMENT =	libevent extra features
 
@@ -16,7 +16,7 @@ HOMEPAGE =	http://www.monkey.org/~provos/
 MAINTAINER =	Nicholas Marriott <nicm@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${HOMEPAGE}
 

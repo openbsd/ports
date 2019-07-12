@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/09/02 22:57:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:45:03 sthen Exp $
 
 COMMENT =	simple parallel processing fork manager
 
@@ -8,7 +8,7 @@ DISTNAME =	Parallel-ForkManager-1.19
 CATEGORIES =	devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODCPAN_EXAMPLES =	Yes
 

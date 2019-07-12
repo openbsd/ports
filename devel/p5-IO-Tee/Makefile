@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/04/28 13:58:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:57 sthen Exp $
 
 COMMENT= 	multiplex output to multiple handles
 
@@ -8,6 +8,6 @@ DISTNAME=	IO-Tee-0.65
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/08/12 22:01:46 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:10 sthen Exp $
 
 COMMENT =		replace random number generation with non-random
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

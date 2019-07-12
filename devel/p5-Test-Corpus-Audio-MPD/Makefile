@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/02/22 21:12:19 cwen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:09 sthen Exp $
 
 COMMENT=	automate launching of fake mpd for testing purposes
 
@@ -6,7 +6,7 @@ DISTNAME=	Test-Corpus-Audio-MPD-1.120990
 CATEGORIES=	devel audio
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

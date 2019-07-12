@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:14 sthen Exp $
 
 COMMENT =	libzmq 3.x wrapper for Perl
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 REVISION =	1
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl zmq
 

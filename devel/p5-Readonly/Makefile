@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/03/10 22:46:37 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:05 sthen Exp $
 
 COMMENT =	facility for creating read-only scalars, arrays, hashes
 
@@ -10,7 +10,7 @@ CATEGORIES =	devel
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # perl licence
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE =	modbuild tiny
 

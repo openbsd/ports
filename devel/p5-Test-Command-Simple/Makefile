@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/05/06 15:47:50 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:09 sthen Exp $
 
 COMMENT =	simplify testing of external commands
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

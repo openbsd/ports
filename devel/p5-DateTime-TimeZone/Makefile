@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:51 sthen Exp $
 
 COMMENT =		DateTime submodule for TZ
 
@@ -11,7 +11,7 @@ CATEGORIES =		devel
 MAINTAINER =		Andrew Fresh <afresh1@openbsd.org>
 
 # perl_5
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Class-Load \
 		devel/p5-Class-Singleton \

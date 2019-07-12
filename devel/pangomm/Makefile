@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/11/05 17:20:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:45:15 sthen Exp $
 
 COMMENT =		C++ interface for pango
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://www.gtkmm.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xext Xrender cairo cairomm-1.0
 WANTLIB += expat ffi fontconfig freetype fribidi glib-2.0 glibmm-2.4

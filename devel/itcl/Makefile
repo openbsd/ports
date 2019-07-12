@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/11 20:28:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:36 sthen Exp $
 
 COMMENT=	object-oriented extensions to Tcl
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://incrtcl.sourceforge.net/itcl/
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD style
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=incrtcl/}
 

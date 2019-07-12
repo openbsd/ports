@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/09/08 21:48:57 bentley Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:38 sthen Exp $
 
 COMMENT=	event notification library
 
@@ -15,7 +15,7 @@ SHARED_LIBS+=	event_openssl   0.0	# 6.9
 SHARED_LIBS+=	event_pthreads  0.0	# 6.9
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://github.com/libevent/libevent/releases/download/release-$V-stable/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:10 sthen Exp $
 
 COMMENT =	compare difference between numbers against a given tolerance
 
@@ -8,7 +8,7 @@ CATEGORIES =	devel
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Apache 2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

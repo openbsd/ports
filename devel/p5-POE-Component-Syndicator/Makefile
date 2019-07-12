@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/12/02 01:14:37 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:03 sthen Exp $
 
 COMMENT =		module which implements the Observer pattern for POE
 
@@ -11,7 +11,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		devel/p5-Object-Pluggable>=1.29 \
 			devel/p5-POE>=1.311

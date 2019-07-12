@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/02/16 18:14:12 cwen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:02 sthen Exp $
 
 COMMENT =	organise your Moose types in libraries
 
@@ -8,7 +8,7 @@ DISTNAME =	MooseX-Types-0.50
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =	devel/p5-Carp-Clan \
 		devel/p5-Moose>=0.93 \

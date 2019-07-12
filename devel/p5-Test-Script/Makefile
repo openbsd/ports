@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/04/19 15:03:41 bluhm Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:45:11 sthen Exp $
 
 COMMENT =	cross-platform basic tests for scripts
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 RUN_DEPENDS =		devel/p5-Probe-Perl>=0.01 \

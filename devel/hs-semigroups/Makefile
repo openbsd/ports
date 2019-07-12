@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/01/22 21:43:45 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:34 sthen Exp $
 
 COMMENT =		Haskell 98 semigroups
 
@@ -7,7 +7,7 @@ REVISION =		5
 CATEGORIES =		devel math
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

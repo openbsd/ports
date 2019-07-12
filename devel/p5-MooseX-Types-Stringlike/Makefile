@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/06 15:04:18 cwen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:02 sthen Exp $
 
 COMMENT =	Moose type constraints for strings or string-like objects
 
@@ -7,7 +7,7 @@ DISTNAME =	MooseX-Types-Stringlike-0.003
 CATEGORIES =	devel
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 

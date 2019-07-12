@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2019/05/05 09:47:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2019/07/12 20:44:38 sthen Exp $
 
 COMMENT=		GNOME Structured File library
 
@@ -13,7 +13,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += bz2 c ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 iconv intl lzma m pcre pthread xml2 z

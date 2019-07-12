@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:13 sthen Exp $
 
 COMMENT =		easy-to-use date/time formatting
 
@@ -8,7 +8,7 @@ CATEGORIES =		devel
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

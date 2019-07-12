@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:54 sthen Exp $
 
 COMMENT=	File::Find::Rule adapted to Filesys::Virtual
 
@@ -9,7 +9,7 @@ REVISION=	0
 CATEGORIES=	net devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-File-Find-Rule \
 		sysutils/p5-Filesys-Virtual-Plain

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/13 09:11:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:07 sthen Exp $
 
 COMMENT=	Perl extension for Consistent Signal Handling
 
@@ -6,7 +6,7 @@ DISTNAME =	Sys-SigAction-0.23
 CATEGORIES=	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
 PKG_ARCH=	*

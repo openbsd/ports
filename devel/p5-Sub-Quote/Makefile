@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/04/28 14:14:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:07 sthen Exp $
 
 COMMENT =	efficient generation of subroutines via string eval
 
@@ -7,7 +7,7 @@ DISTNAME =	Sub-Quote-2.005000
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 

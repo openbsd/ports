@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/10/16 23:21:23 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:41 sthen Exp $
 
 COMMENT=	alarm library for the lua language
 
@@ -15,7 +15,7 @@ MASTER_SITES=	${HOMEPAGE}5.0/
 HOMEPAGE=	http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/
 
 # PD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/lua
 

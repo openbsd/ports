@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/28 17:45:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:50 sthen Exp $
 
 COMMENT =	DateTime::Set extension to create basic recurrence sets
 
@@ -10,7 +10,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 
 # GPLv1 / Artistic
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		devel/p5-DateTime \
 			devel/p5-DateTime-Set

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/05/09 08:00:58 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:51 sthen Exp $
 
 COMMENT =		parse and create PostGresql date objects
 
@@ -8,7 +8,7 @@ DISTNAME =		DateTime-Format-Pg-0.16013
 CATEGORIES =		devel converters
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		devel/p5-DateTime-Format-Builder
 BUILD_DEPENDS =		${RUN_DEPENDS}

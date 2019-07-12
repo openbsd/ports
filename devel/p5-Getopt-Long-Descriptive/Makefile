@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/02/17 19:53:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:56 sthen Exp $
 
 COMMENT =	Getopt::Long, but simpler and more powerful
 
@@ -10,7 +10,7 @@ CATEGORIES =	devel
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Params-Validate>=0.97 \
 		devel/p5-Sub-Exporter

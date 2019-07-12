@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:55 sthen Exp $
 
 COMMENT=	more sensible way to change directories
 
@@ -8,6 +8,6 @@ DISTNAME =	File-chdir-0.1010
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

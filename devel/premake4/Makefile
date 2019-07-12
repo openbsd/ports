@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/06/12 10:57:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:16 sthen Exp $
 
 COMMENT=		build configuration tool
 
@@ -19,7 +19,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=premake/}
 EXTRACT_SUFX=		.zip
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c m
 
 USE_GMAKE=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/09/02 22:26:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:44 sthen Exp $
 
 COMMENT=		simple but non-blocking HTTP/HTTPS client
 
@@ -9,7 +9,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/p5-AnyEvent \
 			devel/p5-common-sense

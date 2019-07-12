@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/01/25 22:14:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:02 sthen Exp $
 
 COMMENT =	Moose minus the antlers
 
@@ -8,7 +8,7 @@ PKGNAME =	p5-${DISTNAME:S/-v/-/}
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += c perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/05/30 15:24:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:53 sthen Exp $
 
 COMMENT =	lightweight exporting of functions and variables
 
@@ -7,7 +7,7 @@ DISTNAME =	Exporter-Lite-0.08
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 

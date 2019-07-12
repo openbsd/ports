@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/04/01 18:46:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:45:16 sthen Exp $
 
 COMMENT =	configuration file library for PHP
 
@@ -7,7 +7,7 @@ REVISION =	0
 CATEGORIES =	devel
 
 # PHP License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	www/pear
 

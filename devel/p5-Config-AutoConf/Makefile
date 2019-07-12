@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/02 20:24:58 cwen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:48 sthen Exp $
 
 COMMENT =	implement some of Autoconf macros in pure Perl
 
@@ -8,7 +8,7 @@ DISTNAME =	Config-AutoConf-0.317
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		sysutils/p5-Capture-Tiny
 

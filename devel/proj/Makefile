@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/11 14:34:13 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:45:16 sthen Exp $
 
 COMMENT=	cartographic projection utilities
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://proj4.org
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://download.osgeo.org/proj/
 

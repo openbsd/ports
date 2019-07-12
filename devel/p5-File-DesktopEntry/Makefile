@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/05/24 14:41:36 giovanni Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:54 sthen Exp $
 
 COMMENT =		handle .desktop files
 
@@ -7,7 +7,7 @@ REVISION =		0
 CATEGORIES =		devel 
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		devel/p5-File-BaseDir>=0.03 \
 			www/p5-URI

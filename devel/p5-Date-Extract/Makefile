@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/04/06 09:55:01 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:50 sthen Exp $
 
 COMMENT =	extract probable dates from strings
 
@@ -10,7 +10,7 @@ DISTNAME =	Date-Extract-${V}
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 TEST_DEPENDS =	devel/p5-Test-MockTime
 

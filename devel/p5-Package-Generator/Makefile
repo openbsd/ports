@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:03 sthen Exp $
 
 COMMENT=		generate new packages
 
@@ -8,7 +8,7 @@ DISTNAME =		Package-Generator-1.106
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 TEST_DEPENDS=	devel/p5-Params-Util
 

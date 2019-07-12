@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/09 15:59:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:41 sthen Exp $
 
 COMMENT=	YAML 1.1 parser and emitter written in C
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://pyyaml.org/wiki/LibYAML
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://pyyaml.org/download/libyaml/
 

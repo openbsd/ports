@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/07/01 18:33:35 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:37 sthen Exp $
 
 BROKEN =	build fails fairly often, "EAccessViolation: Access violation"
 
@@ -20,7 +20,7 @@ HOMEPAGE =		http://lazarus.freepascal.org/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2+ / LGPL / MPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 atk-1.0 c cairo gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv pango-1.0

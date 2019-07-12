@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:45:04 sthen Exp $
 
 COMMENT=		utility to make parameter checking easier
 
@@ -8,7 +8,7 @@ CATEGORIES=		devel
 REVISION=		1
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

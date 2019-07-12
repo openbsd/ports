@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:54 sthen Exp $
 
 COMMENT =		compare two directories using callbacks
 
@@ -13,7 +13,7 @@ CPAN_AUTHOR =		GAVINC
 MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE =	perl
 

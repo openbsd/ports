@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/10/24 21:56:24 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:45:14 sthen Exp $
 
 COMMENT =	YAML Ain't Markup Language
 
@@ -11,7 +11,7 @@ CATEGORIES =	devel
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # really, you want the faster one
 RUN_DEPENDS =	devel/p5-YAML-XS

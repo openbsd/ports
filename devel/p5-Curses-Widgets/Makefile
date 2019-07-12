@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/03/20 19:56:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:44:49 sthen Exp $
 
 COMMENT=	curses(3) based terminal widgets
 
@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Curses/}
 
 # Artistic 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Curses
 BUILD_DEPENDS=	${RUN_DEPENDS}

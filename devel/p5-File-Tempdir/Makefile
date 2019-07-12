@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:55 sthen Exp $
 
 COMMENT=		object oriented interface to File::Temp::tempdir()
 
@@ -9,6 +9,6 @@ REVISION=		0
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

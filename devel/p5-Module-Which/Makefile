@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/28 14:46:07 okan Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:00 sthen Exp $
 
 COMMENT =	finds out which version of Perl modules are installed
 
@@ -11,7 +11,7 @@ CATEGORIES =	devel
 MAINTAINER =	Okan Demirmen <okan@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-String-Truncate
 

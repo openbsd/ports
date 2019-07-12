@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/02/07 18:30:15 cwen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:56 sthen Exp $
 
 COMMENT =	merges arbitrarily deep hashes into a single hash
 
@@ -10,7 +10,7 @@ CATEGORIES =	devel
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Clone>=0 \
 		devel/p5-Clone-Choose

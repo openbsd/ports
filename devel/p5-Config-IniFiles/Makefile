@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/05/08 16:27:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 20:44:48 sthen Exp $
 
 COMMENT =	module for reading .ini-style configuration files
 
@@ -11,7 +11,7 @@ PKG_ARCH =	*
 MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CPAN_AUTHOR =		SHLOMIF
 

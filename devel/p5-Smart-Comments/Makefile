@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:06 sthen Exp $
 
 COMMENT=		debugging aid based on comments
 
@@ -10,7 +10,7 @@ CATEGORIES=		devel
 CPAN_AUTHOR =		NEILB
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_ENV=		TEST_POD=Yes
 

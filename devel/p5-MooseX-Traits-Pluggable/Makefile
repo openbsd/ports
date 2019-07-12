@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:01 sthen Exp $
 
 COMMENT =	trait loading and resolution for Moose
 
@@ -8,7 +8,7 @@ DISTNAME =	MooseX-Traits-Pluggable-0.12
 CATEGORIES =	devel
 
 # same as perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-List-MoreUtils \
 		devel/p5-Moose \

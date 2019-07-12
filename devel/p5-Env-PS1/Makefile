@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:52 sthen Exp $
 
 COMMENT=		env prompter for zoid shell
 
@@ -9,7 +9,7 @@ REVISION=		0
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	modbuild
 

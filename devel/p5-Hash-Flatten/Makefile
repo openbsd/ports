@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/01 19:57:06 sthen Exp $ $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:56 sthen Exp $ $
 
 COMMENT =		flatten/unflatten complex data hashes
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 REVISION =		0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 TEST_DEPENDS =	devel/p5-Test-Assertions \
 			devel/p5-Log-Trace

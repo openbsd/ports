@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2018/04/28 13:05:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2019/07/12 20:44:39 sthen Exp $
 
 COMMENT=		Media Transfer Protocol (MTP) implementation
 
@@ -10,7 +10,7 @@ SHARED_LIBS +=  mtp                  7.0      # 12.0
 HOMEPAGE=		http://libmtp.sourceforge.net/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c gcrypt gpg-error iconv intl pthread usb-1.0
 

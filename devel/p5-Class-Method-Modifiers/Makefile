@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/08 21:36:07 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:47 sthen Exp $
 
 COMMENT =	provides Moose-like method modifiers
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 REVISION =	0
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 TEST_DEPENDS =	devel/p5-Test-Fatal \
 		devel/p5-Test-Requires \

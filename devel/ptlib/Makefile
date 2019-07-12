@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/01/06 10:36:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:45:17 sthen Exp $
 
 COMMENT=	portable tools library
 
@@ -17,7 +17,7 @@ HOMEPAGE=	http://www.opalvoip.org/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MPL 1.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL c crypto expat lber-2.4 ldap-2.4
 WANTLIB += ldap_r-2.4 m sasl2 sndio ssl v4l2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/07 16:52:35 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:41 sthen Exp $
 
 COMMENT =	terminal library for Lua
 
@@ -10,7 +10,7 @@ REVISION =	0
 CATEGORIES =	devel
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c ${MODLUA_WANTLIB}
 

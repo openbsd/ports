@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/02/20 22:57:16 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:52 sthen Exp $
 
 COMMENT =	perl interface to libev
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 CPAN_AUTHOR =	MLEHMANN
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c perl pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/12/03 21:47:21 bluhm Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:45:02 sthen Exp $
 
 COMMENT=	portable multitasking and networking framework for perl
 
@@ -12,7 +12,7 @@ FIX_EXTRACT_PERMISSIONS=	Yes
 HOMEPAGE=	http://poe.perl.org/
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_ARGS=	--default
 

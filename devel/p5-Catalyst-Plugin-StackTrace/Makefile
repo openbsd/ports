@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:46 sthen Exp $
 
 COMMENT=	stack trace for catalyst
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 REVISION=	0
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Devel-StackTrace \
 		devel/p5-MRO-Compat \

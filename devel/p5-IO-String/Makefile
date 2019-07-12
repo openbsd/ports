@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/20 19:56:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:57 sthen Exp $
 
 COMMENT=		emulate IO::File interface for in-core strings
 
@@ -8,6 +8,6 @@ DISTNAME=		IO-String-1.08
 REVISION=		2
 CATEGORIES=		devel
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

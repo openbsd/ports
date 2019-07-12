@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/12/07 07:24:03 solene Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:44:46 sthen Exp $
 
 COMMENT =		pragma to use the C3 method resolution order algorithm
 
@@ -8,7 +8,7 @@ DISTNAME =		Class-C3-0.34
 CATEGORIES =		devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		devel/p5-Algorithm-C3>=0.06 \
 			devel/p5-Test-Exception

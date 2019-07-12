@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/12/05 16:25:45 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:45:08 sthen Exp $
 
 COMMENT =	easily create test classes in an xUnit style
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	devel/p5-Test-Exception \

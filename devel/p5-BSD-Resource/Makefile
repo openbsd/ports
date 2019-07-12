@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/12/05 16:25:45 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2019/07/12 20:44:45 sthen Exp $
 
 COMMENT =	BSD process resource limit and priority functions
 
@@ -10,7 +10,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Artistic 2.0 or LGPL 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

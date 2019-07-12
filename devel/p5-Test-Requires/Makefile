@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:11 sthen Exp $
 
 COMMENT =		checks to see if the module can be loaded
 
@@ -9,6 +9,6 @@ CATEGORIES =		devel
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

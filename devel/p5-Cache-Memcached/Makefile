@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:45 sthen Exp $
 
 COMMENT= 	pure perl client interface to memcached
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://www.danga.com/memcached/
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/p5-String-CRC32
 

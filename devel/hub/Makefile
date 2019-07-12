@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/04 21:46:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:35 sthen Exp $
 
 COMMENT =		wraps git in order to extend it with extra features
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://hub.github.com
 MAINTAINER =		Fabian Raetz <fabian.raetz@gmail.com>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread
 

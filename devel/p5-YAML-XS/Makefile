@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/10/24 18:16:30 bluhm Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:45:14 sthen Exp $
 
 COMMENT =	YAML implementation using XS and libyaml
 
@@ -12,7 +12,7 @@ CATEGORIES =	devel
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =	c perl
 

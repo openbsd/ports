@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/27 11:37:25 cwen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:45:05 sthen Exp $
 
 COMMENT=	subversion activity notification
 
@@ -9,7 +9,7 @@ DISTNAME=	SVN-Notify-2.87
 CATEGORIES=	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/subversion,-perl \
 			mail/p5-Email-Address-XS>=1.03 \

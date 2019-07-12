@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/11/25 23:41:17 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:03 sthen Exp $
 
 COMMENT =	manage deprecation warnings for your distribution
 
@@ -8,7 +8,7 @@ DISTNAME =	Package-DeprecationManager-0.17
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =	devel/p5-Package-Stash \
 		devel/p5-Params-Util \

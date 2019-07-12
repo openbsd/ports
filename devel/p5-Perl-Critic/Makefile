@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/20 19:56:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:45:04 sthen Exp $
 
 COMMENT =	critique Perl source code for best-practices
 
@@ -7,7 +7,7 @@ DISTNAME =	Perl-Critic-1.126
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

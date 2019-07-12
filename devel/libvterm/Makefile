@@ -15,7 +15,7 @@ SHARED_LIBS +=  vterm                     0.0 # 0.0
 CATEGORIES =	devel
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

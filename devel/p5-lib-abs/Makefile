@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:15 sthen Exp $
 
 COMMENT =	Relative use lib in absolute way
 MODULES =	cpan
@@ -7,6 +7,6 @@ DISTNAME =	lib-abs-0.93
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

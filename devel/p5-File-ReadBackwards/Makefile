@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/11/15 21:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:54 sthen Exp $
 
 COMMENT=	module to read a file starting at the end
 
@@ -11,6 +11,6 @@ REVISION=	0
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

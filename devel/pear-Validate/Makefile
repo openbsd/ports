@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/02 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:16 sthen Exp $
 
 COMMENT=	validation class
 
@@ -8,6 +8,6 @@ CATEGORIES=	devel
 MODULES=	www/pear
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

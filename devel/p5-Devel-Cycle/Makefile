@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:51 sthen Exp $
 
 COMMENT= 	find memory cycles in objects
 
@@ -10,7 +10,7 @@ REVISION=	0
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # not listed in META.yml but used if code closures are detected
 RUN_DEPENDS=	devel/p5-PadWalker

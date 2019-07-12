@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/12/12 15:09:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:36 sthen Exp $
 
 COMMENT =		library for manipulating JSON data
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://www.digip.org/jansson/
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://www.digip.org/jansson/releases/
 

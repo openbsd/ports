@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/06/11 00:38:34 kurt Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:44:43 sthen Exp $
 
 COMMENT=		NetBeans Java IDE
 
@@ -14,7 +14,7 @@ MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org> \
 			Rafael Sadowski <rsadowski@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_APACHE:=incubator/netbeans/incubating-netbeans/incubating-${V}/}
 EXTRACT_SUFX=		.zip

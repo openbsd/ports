@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/06/15 18:52:42 bluhm Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:44:46 sthen Exp $
 
 COMMENT =	module for easy date and time manipulation
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl 5
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 RUN_DEPENDS =		devel/p5-Time-TimeDate

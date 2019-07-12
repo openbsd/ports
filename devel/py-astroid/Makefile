@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/15 12:04:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:17 sthen Exp $
 
 COMMENT =		common base representation of Python source code
 
@@ -11,7 +11,7 @@ REVISION =		2
 HOMEPAGE =		http://www.astroid.org/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

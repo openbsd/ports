@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/11 11:13:53 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:38 sthen Exp $
 
 COMMENT =	garbage collector library
 
@@ -12,7 +12,7 @@ CATEGORIES =	devel
 HOMEPAGE =	https://github.com/uim/libgcroots/
 
 # Boehm GC license, permission to use/copy/modify/distribute
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://github.com/uim/libgcroots/releases/download/$V/
 

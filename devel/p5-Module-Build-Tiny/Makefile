@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/08/10 10:19:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:59 sthen Exp $
 
 COMMENT =	tiny replacement for Module::Build
 
@@ -8,7 +8,7 @@ CATEGORIES =	devel
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # perl_5
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*

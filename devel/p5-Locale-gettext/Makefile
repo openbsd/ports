@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/20 22:15:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:44:58 sthen Exp $
 
 COMMENT=	interface to gettext() internationalization function
 
@@ -10,7 +10,7 @@ CATEGORIES=	converters devel
 REVISION=	2
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c intl perl
 

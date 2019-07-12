@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/19 19:58:51 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:01 sthen Exp $
 
 COMMENT=		Moose role for processing command line options
 
@@ -9,7 +9,7 @@ CATEGORIES=		devel
 REVISION=		0
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/p5-Getopt-Long-Descriptive \
 			devel/p5-Moose \

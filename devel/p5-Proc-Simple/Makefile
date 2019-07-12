@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:05 sthen Exp $
 
 COMMENT =	module to launch and control background processes
 
@@ -8,6 +8,6 @@ DISTNAME =	Proc-Simple-1.32
 CATEGORIES =	devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/03/16 18:07:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:36 sthen Exp $
 
 COMMENT=	ini file parsing library
 
@@ -12,7 +12,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://ndevilla.free.fr/iniparser/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 

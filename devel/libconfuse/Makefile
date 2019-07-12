@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/20 22:15:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:37 sthen Exp $
 
 COMMENT=		configuration file parser library
 V=			3.2.1
@@ -11,7 +11,7 @@ REVISION=		0
 HOMEPAGE=		https://github.com/martinh/libconfuse
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		iconv intl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:44 sthen Exp $
 
 COMMENT =	use Moose or Mouse modules
 
@@ -8,7 +8,7 @@ DISTNAME =	Any-Moose-0.18
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =	devel/p5-Mouse>=0.40
 

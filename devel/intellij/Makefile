@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2019/06/11 00:38:34 kurt Exp $
+# $OpenBSD: Makefile,v 1.62 2019/07/12 20:44:36 sthen Exp $
 
 COMMENT=		IntelliJ IDEA Java IDE
 
@@ -12,7 +12,7 @@ HOMEPAGE=		https://www.jetbrains.com/idea/
 MAINTAINER=		Caspar Schutijser <caspar@schutijser.com>
 
 # Apache v2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://download.jetbrains.com/idea/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/04/06 09:14:25 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:49 sthen Exp $
 
 COMMENT=		accurately serialize a data structure as Perl code
 
@@ -8,7 +8,7 @@ CATEGORIES=		devel
 MODULES=		cpan
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

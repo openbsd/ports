@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/28 02:47:33 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:03 sthen Exp $
 
 COMMENT=	reusable tests for POE::Loop authors
 
@@ -8,6 +8,6 @@ DISTNAME=	POE-Test-Loops-1.360
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

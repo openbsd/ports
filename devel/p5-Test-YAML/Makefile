@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/10/24 21:46:41 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:12 sthen Exp $
 
 COMMENT =		testing module for YAML implementations
 
@@ -7,7 +7,7 @@ CATEGORIES =		devel
 
 MAINTAINER =		Andrew Fresh <afresh1@openbsd.org>
 
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

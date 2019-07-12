@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:01 sthen Exp $
 
 COMMENT =	name your accessors foo() and set_foo()
 
@@ -8,7 +8,7 @@ DISTNAME =	MooseX-SemiAffordanceAccessor-0.10
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =		devel/p5-Moose
 

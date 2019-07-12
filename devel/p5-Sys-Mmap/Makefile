@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:07 sthen Exp $
 
 COMMENT =	use mmap to map in a file as a Perl variable
 
@@ -8,7 +8,7 @@ REVISION =	0
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

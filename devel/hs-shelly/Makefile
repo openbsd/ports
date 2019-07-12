@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/01/22 21:43:45 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:34 sthen Exp $
 
 COMMENT =		shell-like programming in Haskell
 
@@ -7,7 +7,7 @@ REVISION =		0
 CATEGORIES =		devel
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register

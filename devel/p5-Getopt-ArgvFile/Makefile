@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:56 sthen Exp $
 
 COMMENT =		program arguments processing module
 
@@ -8,7 +8,7 @@ PKGNAME =		${DISTNAME:S//p5-/}
 CATEGORIES =		devel
 
 # Artistic License
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

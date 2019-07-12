@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/08 15:44:45 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:47 sthen Exp $
 
 COMMENT=	Abstract class wrapper for Autoloader
 
@@ -9,6 +9,6 @@ REVISION=	2
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

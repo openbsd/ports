@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/16 16:49:41 giovanni Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:59 sthen Exp $
 
 COMMENT=		bringing loggers and listeners together
 
@@ -10,7 +10,7 @@ CATEGORIES=		devel
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	perl
 

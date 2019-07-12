@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/08/04 09:27:03 bluhm Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:04 sthen Exp $
 
 COMMENT=	create symlink from IO handle
 
@@ -9,7 +9,7 @@ REVISION=	3
 CATEGORIES=	devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE =	modinst
 

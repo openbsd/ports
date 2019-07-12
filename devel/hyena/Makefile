@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/07/21 12:46:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:35 sthen Exp $
 
 COMMENT=	GUI and non-GUI C-sharp code library
 
@@ -13,7 +13,7 @@ REVISION=	1
 CATEGORIES=	devel
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/mono \
 		x11/gnome

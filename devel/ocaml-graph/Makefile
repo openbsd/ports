@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/12/25 08:51:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:43 sthen Exp $
 
 COMMENT =	OCaml graph library
 CATEGORIES =	devel
@@ -12,7 +12,7 @@ HOMEPAGE =	http://ocamlgraph.lri.fr/index.en.html
 MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
 
 # LGPL 2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ocaml
 

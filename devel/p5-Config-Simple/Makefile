@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:48 sthen Exp $
 
 COMMENT =	simple configuration file class
 
@@ -11,7 +11,7 @@ CATEGORIES =	devel
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CPAN_AUTHOR =		SHERZODR
 CONFIGURE_STYLE =	perl

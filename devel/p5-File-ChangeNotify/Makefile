@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/05 22:15:54 cwen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:54 sthen Exp $
 
 COMMENT =	watch for changes to files, cross-platform style
 
@@ -7,7 +7,7 @@ DISTNAME =	File-ChangeNotify-0.31
 CATEGORIES =	devel
 
 # Artistic 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 

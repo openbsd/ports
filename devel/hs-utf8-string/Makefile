@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/01/22 21:43:46 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:35 sthen Exp $
 
 COMMENT =		support for reading and writing UTF8 strings
 
@@ -7,7 +7,7 @@ REVISION =		3
 CATEGORIES =		devel
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

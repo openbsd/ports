@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/08/28 19:27:45 danj Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:44:49 sthen Exp $
 
 COMMENT =	comprehensive set of aliasing operations
 
@@ -7,7 +7,7 @@ DISTNAME =	Data-Alias-1.21
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += c perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2019/06/25 20:25:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.145 2019/07/12 20:44:38 sthen Exp $
 
 # All patches annotated with XXKVM are to prevent any kvm(3) which
 # results in an abort() for the caller.
@@ -17,7 +17,7 @@ CATEGORIES=		devel
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += Xau c ffi glib-2.0 gobject-2.0 iconv intl kvm pcre
 WANTLIB += pthread

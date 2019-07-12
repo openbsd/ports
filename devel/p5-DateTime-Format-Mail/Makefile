@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/06/28 14:34:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:51 sthen Exp $
 
 COMMENT =	convert between DateTime and email (RFC2822/822) formats
 
@@ -9,7 +9,7 @@ EPOCH =		0
 CATEGORIES =	devel converters
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE =	perl
 

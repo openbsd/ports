@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/04/28 14:00:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:00 sthen Exp $
 
 COMMENT = 	parse and examine a perl distribution MANIFEST file
 
@@ -9,7 +9,7 @@ DISTNAME =	Module-Manifest-1.09
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODCPAN_EXAMPLES = Yes
 

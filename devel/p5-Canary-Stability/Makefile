@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/06 14:45:53 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:45 sthen Exp $
 
 COMMENT =	canary to check perl compatibility for schmorp's modules#'
 
@@ -10,6 +10,6 @@ CATEGORIES =	devel
 CPAN_AUTHOR =	MLEHMANN
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

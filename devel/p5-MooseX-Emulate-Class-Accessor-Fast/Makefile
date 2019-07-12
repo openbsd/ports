@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/12/07 07:25:04 solene Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:01 sthen Exp $
 
 COMMENT =		emulate Class::Accessor::Fast behavior using Moose
 
@@ -8,7 +8,7 @@ DISTNAME =		MooseX-Emulate-Class-Accessor-Fast-0.009032
 CATEGORIES =		devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		devel/p5-Moose>=0.84 \
 			devel/p5-namespace-clean

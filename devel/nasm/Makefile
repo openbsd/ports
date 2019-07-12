@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/07/11 17:16:59 tj Exp $
+# $OpenBSD: Makefile,v 1.44 2019/07/12 20:44:43 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -16,7 +16,7 @@ HOMEPAGE=	https://www.nasm.us/
 MAINTAINER=	Gallon Sylvestre <ccna.syl@gmail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

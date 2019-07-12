@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/02/27 12:31:59 awolk Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:44:42 sthen Exp $
 
 COMMENT=	posix library for the lua language
 V=		33.4.0
@@ -12,7 +12,7 @@ GH_PROJECT=	luaposix
 GH_TAGNAME=	release-v${V}
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/lua
 

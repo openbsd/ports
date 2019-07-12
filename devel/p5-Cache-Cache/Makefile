@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:45 sthen Exp $
 
 COMMENT=	perl cache interface
 
@@ -8,7 +8,7 @@ DISTNAME =	Cache-Cache-1.08
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	security/p5-Digest-SHA1>=2.02 \
 		devel/p5-IPC-ShareLite>=0.09 \

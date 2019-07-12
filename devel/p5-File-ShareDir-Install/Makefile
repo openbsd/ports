@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/07 20:07:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:55 sthen Exp $
 
 COMMENT= 	install shared files, to use with File::ShareDir
 
@@ -13,7 +13,7 @@ CATEGORIES=	devel
 FIX_EXTRACT_PERMISSIONS=	Yes
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # Tests fails run when run with -j>1 (MAKE_JOBS>1) see
 # https://rt.cpan.org/Public/Bug/Display.html?id=111296

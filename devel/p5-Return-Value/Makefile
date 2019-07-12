@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:05 sthen Exp $
 
 COMMENT =	polymorphic return values
 
@@ -11,7 +11,7 @@ CATEGORIES =	devel
 CPAN_AUTHOR =	RJBS
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAKE_ENV =	TEST_POD=Yes
 

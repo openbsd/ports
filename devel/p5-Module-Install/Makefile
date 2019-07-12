@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/04/29 11:52:55 nigel Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:45:00 sthen Exp $
 
 COMMENT=	standalone extensible Perl module installer
 
@@ -8,7 +8,7 @@ DISTNAME=	Module-Install-1.18
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS+=	devel/p5-Module-ScanDeps \
 		devel/p5-File-Remove \

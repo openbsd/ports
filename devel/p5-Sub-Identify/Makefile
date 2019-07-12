@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/01/06 19:49:01 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:07 sthen Exp $
 
 COMMENT =		retrieve names of code references
 DISTNAME =		Sub-Identify-0.14
@@ -7,7 +7,7 @@ CATEGORIES =		devel
 MAINTAINER =		Andrew Fresh <afresh1@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c perl
 

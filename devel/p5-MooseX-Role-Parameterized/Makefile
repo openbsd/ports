@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/02/16 17:10:26 cwen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:45:01 sthen Exp $
 
 COMMENT =	roles with composition parameters
 
@@ -9,7 +9,7 @@ PKG_ARCH =	*
 REVISION =	0
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		devel/p5-Module-Runtime \
 			devel/p5-Moose \

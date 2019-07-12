@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 21:34:32 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:08 sthen Exp $
 
 COMMENT= 	data driven test framework
 
@@ -9,7 +9,7 @@ DISTNAME=	Test-Base-0.89
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Spiffy>=0.40
 

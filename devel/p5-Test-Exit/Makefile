@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/22 23:38:03 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:09 sthen Exp $
 
 COMMENT =	test whether code exits without terminating testing
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 RUN_DEPENDS =		devel/p5-Return-MultiLevel

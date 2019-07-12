@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/08/01 22:53:11 bluhm Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:11 sthen Exp $
 
 COMMENT= 	test output of other modules
 
@@ -9,7 +9,7 @@ REVISION =	0
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		sysutils/p5-Capture-Tiny
 

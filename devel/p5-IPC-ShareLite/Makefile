@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/20 19:56:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:58 sthen Exp $
 
 COMMENT=	simple interface to access shared memory
 
@@ -8,7 +8,7 @@ REVISION=	4
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

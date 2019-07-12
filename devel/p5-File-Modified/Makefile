@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:54 sthen Exp $
 
 COMMENT =		checks intelligently if files have changed
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 MAINTAINER=		Alexander Bluhm <bluhm@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

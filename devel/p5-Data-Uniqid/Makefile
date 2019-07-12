@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/06/12 10:57:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:50 sthen Exp $
 
 COMMENT=		Perl extension for simple generation of unique IDs
 
@@ -11,6 +11,6 @@ REVISION=		0
 MAINTAINER=		Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

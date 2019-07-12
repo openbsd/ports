@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:05 sthen Exp $
 
 COMMENT=	module for shell-like regular expressions
 
@@ -8,6 +8,6 @@ DISTNAME=	Regexp-Shellish-0.93
 REVISION=	2
 CATEGORIES=	devel
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

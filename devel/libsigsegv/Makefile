@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/02/08 12:49:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:44:40 sthen Exp $
 
 COMMENT =		library for handling page faults in user mode
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://www.gnu.org/software/libsigsegv/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_GNU:=libsigsegv/}
 

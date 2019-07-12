@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2019/01/07 02:23:13 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:01 sthen Exp $
 
 COMMENT=		Sugar syntax for moose 'has' fields
 DISTNAME=		MooseX-Has-Sugar-1.000006
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

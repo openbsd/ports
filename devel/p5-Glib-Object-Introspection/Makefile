@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/13 22:20:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:56 sthen Exp $
 
 COMMENT=	dynamically create Perl language bindings
 
@@ -7,7 +7,7 @@ DISTNAME=	Glib-Object-Introspection-0.047
 CATEGORIES=	devel
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c ffi girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0 perl intl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/05/12 07:15:48 benoit Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:51 sthen Exp $
 
 COMMENT =	code coverage metrics for Perl
 
@@ -7,7 +7,7 @@ DISTNAME =	Devel-Cover-1.25
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += c perl
 

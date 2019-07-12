@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/10/24 19:41:09 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:57 sthen Exp $
 
 COMMENT =		prompt for user input with a default option
 
@@ -11,7 +11,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 TEST_DEPENDS =		sysutils/p5-Capture-Tiny>=0.12
 

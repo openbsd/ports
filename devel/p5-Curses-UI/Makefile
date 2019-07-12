@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/05/12 14:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:48 sthen Exp $
 
 COMMENT=	curses based user interface framework for Perl
 
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		devel/p5-Test-Pod
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_ENV=	TEST_POD=Yes
 

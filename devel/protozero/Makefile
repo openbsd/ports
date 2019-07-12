@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/06/25 20:25:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:16 sthen Exp $
 
 COMMENT =	minimalist protocol buffer decoder and encoder in C++
 
@@ -10,7 +10,7 @@ REVISION =	0
 CATEGORIES =	devel
 
 # 3-clause BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 COMPILER =	base-clang ports-gcc ports-clang
 

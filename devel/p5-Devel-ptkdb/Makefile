@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:52 sthen Exp $
 
 COMMENT=	perl debugger built with a PerlTk GUI
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://ptkdb.sourceforge.net/
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ptkdb/}
 

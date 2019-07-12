@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/20 19:56:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:45:00 sthen Exp $
 
 COMMENT=	complete modern object system for perl 5
 
@@ -8,7 +8,7 @@ CATEGORIES=	devel
 REVISION=	1
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

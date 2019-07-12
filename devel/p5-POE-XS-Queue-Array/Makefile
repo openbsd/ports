@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:03 sthen Exp $
 
 COMMENT=	C implementation of priority queues
 
@@ -8,7 +8,7 @@ CATEGORIES=	devel
 REVISION=	1
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

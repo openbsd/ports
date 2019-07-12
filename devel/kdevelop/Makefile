@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/04 12:13:01 jca Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:44:36 sthen Exp $
 
 # Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -27,7 +27,7 @@ SHARED_LIBS +=  KDevPlatformVcs           1.0 # 5.2
 CATEGORIES =	devel x11
 
 # GPLv2+, LGPLv2.1+, GNU FDLv1.2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Attica
 WANTLIB += KF5Auth KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore

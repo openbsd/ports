@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/10 21:01:27 tj Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:43 sthen Exp $
 
 COMMENT=	library for multiple-precision floating-point computations
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://www.mpfr.org/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # LGPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}${DISTNAME}/
 DIST_SUBDIR=	${DISTNAME}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/06/17 19:23:40 kurt Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:36 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -35,7 +35,7 @@ MASTER_SITES1=	https://spacehopper.org/mirrors/ \
 MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 
 # GPLv2 w/CLASSPATH exception
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xext Xi Xrender Xtst c freetype gif
 WANTLIB += iconv jpeg lcms2 m png pthread z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/20 22:15:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:45:16 sthen Exp $
 
 COMMENT=	getopt(3)-like library with a number of enhancements
 
@@ -10,7 +10,7 @@ REVISION=	2
 SHARED_LIBS=	popt	1.0
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	iconv intl
 

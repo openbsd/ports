@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:59 sthen Exp $
 
 COMMENT=	abstraction layer for logging and tracing
 
@@ -8,6 +8,6 @@ DISTNAME =	Log-Agent-1.001
 CATEGORIES=	devel
 
 # Artistic License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

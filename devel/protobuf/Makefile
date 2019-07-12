@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/08/24 15:47:33 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:45:16 sthen Exp $
 
 COMMENT =		c++ protocol buffers
 
@@ -17,7 +17,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/google/protobuf/
 
 # New BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c m pthread ${COMPILER_LIBCXX} z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2016/03/11 19:59:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.85 2019/07/12 20:44:40 sthen Exp $
 
 COMMENT-main=	generic shared library support script
 COMMENT-ltdl=	GNU libtool system independent dlopen wrapper
@@ -19,7 +19,7 @@ HOMEPAGE=	https://www.gnu.org/software/libtool/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 AUTOCONF_VERSION= 2.67
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}

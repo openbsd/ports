@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/01 19:57:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:49 sthen Exp $
 
 COMMENT =		various utility functions
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 REVISION =		0
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 TEST_DEPENDS =		devel/p5-Test-Warnings
 

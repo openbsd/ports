@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/02/04 23:34:10 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:38 sthen Exp $
 #
 # Note that this may not build if an older libdwarf is already installed.
 
@@ -18,7 +18,7 @@ HOMEPAGE=		https://www.prevanders.net/dwarf.html
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2 - LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c elf>=2 z
 

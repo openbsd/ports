@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/04/29 11:18:13 nigel Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:45:00 sthen Exp $
 
 COMMENT=	recursively scan Perl code for dependencies
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 REVISION=	0
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_ENV=	TEST_POD=Yes
 

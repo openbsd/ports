@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:12 sthen Exp $
 
 COMMENT=        Test-WWW-Mechanize extension for catalyst
 
@@ -8,7 +8,7 @@ DISTNAME=	Test-WWW-Mechanize-Catalyst-0.56
 CATEGORIES=     devel www
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Test-WWW-Mechanize>=1.14 \
 		devel/p5-Moose \

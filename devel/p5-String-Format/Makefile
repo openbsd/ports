@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/05 00:00:11 cwen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:06 sthen Exp $
 
 COMMENT=	perl printf extensions
 
@@ -9,6 +9,6 @@ DISTNAME=	String-Format-1.18
 CATEGORIES=	devel
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/05/20 22:15:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:44:35 sthen Exp $
 
 COMMENT=	gid/lid tools for looking up variables in code
 
@@ -7,7 +7,7 @@ REVISION =	4
 CATEGORIES=	devel
 
 # License: GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c iconv intl
 
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/ \

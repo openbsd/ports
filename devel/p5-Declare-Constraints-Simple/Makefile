@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:51 sthen Exp $
 
 COMMENT=	declarative validation of data structures
 
@@ -8,7 +8,7 @@ REVISION=	1
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CPAN_AUTHOR=	PHAYLON
 

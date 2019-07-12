@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/08 21:36:07 danj Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:05 sthen Exp $
 
 COMMENT =	minimalist role composition tool
 
@@ -11,7 +11,7 @@ REVISION =	0
 CPAN_AUTHOR =	HAARG
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 TEST_DEPENDS =	devel/p5-Class-Method-Modifiers>=1.05
 

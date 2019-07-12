@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/01/05 10:50:38 steven Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:51 sthen Exp $
 
 COMMENT =		forces the unavailability of specified Perl modules
 
@@ -11,7 +11,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAKE_ENV +=		TEST_POD=Yes
 

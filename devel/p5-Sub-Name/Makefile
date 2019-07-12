@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/12/04 21:09:39 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:45:07 sthen Exp $
 
 COMMENT =		(re)name a sub
 
@@ -10,7 +10,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # perl_5
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

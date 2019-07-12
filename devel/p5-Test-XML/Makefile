@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/12/05 16:25:45 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:12 sthen Exp $
 
 COMMENT =	compare XML in perl tests
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CPAN_AUTHOR =	SEMANTICO
 

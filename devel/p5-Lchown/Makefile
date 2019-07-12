@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:58 sthen Exp $
 
 COMMENT=	perl interface to the lchown(2) system call
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel
 MAINTAINER=	Alexander Bluhm <bluhm@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/03/16 18:07:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:44:39 sthen Exp $
 
 COMMENT=	library of optimized inner loops
 
@@ -12,7 +12,7 @@ SHARED_LIBS+=	oil-0.3		4.0
 HOMEPAGE=	http://liboil.freedesktop.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/06/14 20:01:14 schwarze Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:40 sthen Exp $
 
 COMMENT =	string library designed for network communication
 
@@ -14,7 +14,7 @@ CATEGORIES =	devel
 HOMEPAGE =	http://www.and.org/vstr/
 
 # mostly LGPLv2.1+, assert_loop.c GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 CFLAGS += -fgnu89-inline
 
 MASTER_SITES =		http://www.and.org/vstr/$V/

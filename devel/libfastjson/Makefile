@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/12/27 17:29:05 remi Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:38 sthen Exp $
 
 COMMENT =	performance-focused json library for C
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=	fastjson	0.0 # 6.0.2
 HOMEPAGE = 	https://github.com/rsyslog/libfastjson
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://download.rsyslog.com/libfastjson/
 

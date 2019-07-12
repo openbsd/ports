@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:10 sthen Exp $
 
 COMMENT =	Test::More-style wrapper around HTML::Tidy
 
@@ -9,7 +9,7 @@ REVISION =	1
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =	www/p5-HTML-Tidy
 

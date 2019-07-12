@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:56 sthen Exp $
 
 COMMENT =		store multiples values per key
 
@@ -9,6 +9,6 @@ CATEGORIES =		devel
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2019/07/12 20:44:37 sthen Exp $
 
 COMMENT=		IDL parsing library
 
@@ -14,7 +14,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  glib-2.0 iconv intl pcre pthread
 

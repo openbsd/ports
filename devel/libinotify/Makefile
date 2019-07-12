@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:39 sthen Exp $
 
 COMMENT =		kevent based inotify
 
@@ -14,7 +14,7 @@ CATEGORIES =		devel
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		pthread
 

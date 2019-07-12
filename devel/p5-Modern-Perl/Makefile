@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/12/10 09:46:26 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:59 sthen Exp $
 
 COMMENT =		enable all of the features of Modern Perl with one import
 
@@ -11,7 +11,7 @@ CATEGORIES =		devel
 MAINTAINER =		Edward <edward@rdtan.net>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/p5-Modern-Perl

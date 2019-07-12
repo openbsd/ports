@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/21 10:11:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:37 sthen Exp $
 
 COMMENT =	property editing framework with editor widget
 
@@ -15,7 +15,7 @@ HOMEPAGE =	http://www.kexi-project.org/
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5ConfigGui KF5GuiAddons
 WANTLIB += KF5WidgetsAddons Qt5Core Qt5Gui Qt5Widgets Qt5Xml m

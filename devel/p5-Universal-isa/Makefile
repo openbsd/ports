@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/05 10:25:13 cwen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:13 sthen Exp $
 
 COMMENT=	calling UNIVERSAL::isa as a function
 
@@ -14,6 +14,6 @@ CATEGORIES=	devel
 FIX_EXTRACT_PERMISSIONS=	Yes
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

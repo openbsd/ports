@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/16 19:34:46 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:37 sthen Exp $
 
 # Only used by lang/flang; only supported on amd64 and arm64
 ONLY_FOR_ARCHS =	amd64 arm64
@@ -13,7 +13,7 @@ HOMEPAGE =	https://www.dragonflybsd.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += pthread
 

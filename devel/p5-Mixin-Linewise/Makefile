@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/09 14:03:35 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:59 sthen Exp $
 
 COMMENT =	write your linewise code for handles; this does the rest
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:16 sthen Exp $
 
 COMMENT =		c protocol buffers
 
@@ -16,7 +16,7 @@ MASTER_SITES=		https://github.com/protobuf-c/protobuf-c/releases/download/v$V/
 MAINTAINER =		Jonathon Sisson <sisson.j@gmail.com>
 
 # New BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m protobuf protoc pthread ${COMPILER_LIBCXX} z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:47 sthen Exp $
 
 COMMENT=	smart return-value object
 
@@ -9,7 +9,7 @@ REVISION=	1
 CATEGORIES=	devel
 
 # Artistic License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Devel-StackTrace

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/21 14:23:48 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:08 sthen Exp $
 
 COMMENT =	perl extension for retrieving terminal size
 
@@ -9,7 +9,7 @@ MAINTAINER =	Alexander Bluhm <bluhm@openbsd.org>
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 

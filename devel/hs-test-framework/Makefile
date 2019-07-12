@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/01/22 21:43:45 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:35 sthen Exp $
 
 COMMENT =		framework for running and organising tests
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://batterseapower.github.com/test-framework/
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

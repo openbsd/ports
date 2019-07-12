@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/16 13:18:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:58 sthen Exp $
 
 COMMENT =	combines List::Util, List::SomeUtils and List::UtilsBy
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Artistic 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 

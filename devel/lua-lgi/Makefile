@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/05/07 16:52:34 danj Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:44:41 sthen Exp $
 
 COMMENT=	lua bindings to libraries using GObject-Introspection
 
@@ -11,7 +11,7 @@ REVISION=	1
 CATEGORIES=	devel
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/lua
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/05/15 12:04:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:45:17 sthen Exp $
 
 COMMENT=		I18N/L10N tools for Python
 
@@ -11,7 +11,7 @@ REVISION=		1
 HOMEPAGE=		http://babel.pocoo.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

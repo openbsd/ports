@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:05 sthen Exp $
 
 COMMENT=	peek at lexical variables
 
@@ -9,6 +9,6 @@ REVISION=	0
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

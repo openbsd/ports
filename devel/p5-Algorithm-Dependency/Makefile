@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:44 sthen Exp $
 
 COMMENT=	base class for implementing various dependency trees
 
@@ -10,7 +10,7 @@ REVISION=	0
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Test-ClassAPI \
 		devel/p5-Params-Util

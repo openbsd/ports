@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/04/28 14:06:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:59 sthen Exp $
 
 COMMENT =		build and install Perl modules
 
@@ -6,7 +6,7 @@ DISTNAME =		Module-Build-0.4224
 CATEGORIES =		devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

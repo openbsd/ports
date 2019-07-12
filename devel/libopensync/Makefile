@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:39 sthen Exp $
 
 COMMENT=	data synchronization framework
 
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tar.bz2
 HOMEPAGE=	http://www.opensync.org/
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c glib-2.0>=1200 gmodule-2.0>=1200 gthread-2.0>=1200 iconv
 WANTLIB+= intl pthread sqlite3>=8 xml2>=9

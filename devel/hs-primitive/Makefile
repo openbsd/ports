@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/19 19:58:51 danj Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:44:34 sthen Exp $
 
 COMMENT =		primitive memory-related operations
 
@@ -11,7 +11,7 @@ CATEGORIES =		devel
 REVISION =		0
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

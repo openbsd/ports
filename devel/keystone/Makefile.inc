@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2018/04/08 20:43:05 rpointel Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/07/12 20:44:36 sthen Exp $
 
 GH_ACCOUNT =	keystone-engine
 GH_PROJECT =	keystone
@@ -11,4 +11,4 @@ HOMEPAGE =	http://www.keystone-engine.org/
 MAINTAINER ?=	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes

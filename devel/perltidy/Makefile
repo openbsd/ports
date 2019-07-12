@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/03/12 22:47:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:45:16 sthen Exp $
 
 COMMENT =	tool to indent and reformat perl scripts
 
@@ -10,7 +10,7 @@ CATEGORIES =	devel
 HOMEPAGE =	http://perltidy.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/02/06 08:14:09 jca Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:44:42 sthen Exp $
 
 COMMENT=	GNU m4
 
@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tar.xz
 HOMEPAGE=	https://www.gnu.org/software/m4/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c sigsegv
 

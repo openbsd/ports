@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/08 15:44:45 danj Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:02 sthen Exp $
 
 COMMENT=	Compare Dates
 
@@ -9,7 +9,7 @@ REVISION=	2
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Time-TimeDate>=1.16 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:14 sthen Exp $
 
 COMMENT=	tool for copying resources between repositories
 
@@ -10,7 +10,7 @@ REVISION =	2
 CATEGORIES=	devel
 CPAN_AUTHOR=	AUTRIJUS
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Regexp-Shellish>=0.93 \
 		devel/p5-IPC-Run3>=0.01 \

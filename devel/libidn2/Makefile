@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/10/20 20:26:53 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:39 sthen Exp $
 
 COMMENT=	implementation of IDNA2008 internationalized domain names
 
@@ -12,7 +12,7 @@ SHARED_LIBS=	idn2	1.0	# 3.0
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://alpha.gnu.org/gnu/libidn/
 EXTRACT_SUFX=	.tar.xz

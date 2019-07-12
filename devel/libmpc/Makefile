@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.9 2018/11/02 18:43:56 naddy Exp $
+#	$OpenBSD: Makefile,v 1.10 2019/07/12 20:44:39 sthen Exp $
 
 COMMENT=	complex numbers math library
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.multiprecision.org
 MASTER_SITES=	${HOMEPAGE}/mpc/download/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 LIB_DEPENDS=		devel/mpfr \
 			devel/gmp,no_cxx,bootstrap

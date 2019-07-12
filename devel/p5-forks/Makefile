@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/17 21:11:42 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:15 sthen Exp $
 
 COMMENT =		forks - emulate threads with fork
 
@@ -8,7 +8,7 @@ REVISION =		0
 CATEGORIES =		devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c perl
 

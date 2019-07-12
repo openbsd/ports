@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/01 16:07:04 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:51 sthen Exp $
 
 COMMENT =	backend for Clover reporting of coverage statistics
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 REVISION =	0
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CPAN_AUTHOR =	DBARTLE
 

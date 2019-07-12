@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/04/08 16:32:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:42 sthen Exp $
 
 PKG_PARCH=		*
 
@@ -15,7 +15,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		x11/gnome
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:44:37 sthen Exp $
 
 COMMENT=		dockapp-making standard library for Window Maker
 
@@ -8,7 +8,7 @@ SHARED_LIBS=		dockapp              1.0      # .1.0
 CATEGORIES=		devel
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xau Xdmcp Xext Xpm xcb
 
 MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/

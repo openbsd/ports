@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:58 sthen Exp $
 
 COMMENT=	objects for cycling through a list of values
 
@@ -7,7 +7,7 @@ CATEGORIES=	devel
 REVISION =	0
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
 PKG_ARCH=	*

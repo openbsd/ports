@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/05/12 14:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:08 sthen Exp $
 
 COMMENT= 	handles various forms of terminal input
 
@@ -10,6 +10,6 @@ REVISION=	1
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

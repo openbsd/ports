@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/08 21:36:07 danj Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:58 sthen Exp $
 
 COMMENT =	import packages into other packages
 
@@ -12,7 +12,7 @@ REVISION =	0
 CPAN_AUTHOR =	HAARG
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Module-Runtime
 

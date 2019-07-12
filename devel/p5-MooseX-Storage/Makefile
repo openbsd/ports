@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/12/05 16:25:45 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:01 sthen Exp $
 
 COMMENT =	a serialization framework for Moose classes
 
@@ -9,7 +9,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 MAINTAINER =		Matthias Pitzl <pitzl@genua.de>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 RUN_DEPENDS =		converters/p5-JSON-MaybeXS>=1.001000 \

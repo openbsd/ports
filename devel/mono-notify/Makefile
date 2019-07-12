@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/10/03 12:39:09 robert Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:42 sthen Exp $
 
 COMMENT=	C\# client implementation for Desktop Notifications
 
@@ -12,7 +12,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://www.ndesk.org/NotifySharp
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://crappydiffs.org/
 

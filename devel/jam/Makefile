@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/05 22:29:50 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:36 sthen Exp $
 
 COMMENT=		build utility like make
 
@@ -8,7 +8,7 @@ CATEGORIES=		devel
 
 HOMEPAGE=		http://www.perforce.com/jam/jam.html
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		ftp://ftp.perforce.com/pub/jam/

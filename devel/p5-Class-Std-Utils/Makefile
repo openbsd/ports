@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:47 sthen Exp $
 
 COMMENT=		utilities functions to build inside-out objects
 
@@ -9,7 +9,7 @@ REVISION=		2
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	modbuild
 

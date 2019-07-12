@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:15 sthen Exp $
 
 COMMENT =	Z80 cross assembler
 DISTNAME =	pasmo-0.5.3
@@ -9,7 +9,7 @@ HOMEPAGE =	http://pasmo.speccy.org/
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m ${LIBCXX}
 

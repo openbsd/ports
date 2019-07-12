@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:39 sthen Exp $
 
 COMMENT =	fast-samples based normalization library
 
@@ -11,7 +11,7 @@ CATEGORIES =	devel
 HOMEPAGE =	https://www.liblognorm.com/
 
 # LGPLv2.1+ + Apache License 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c estr fastjson
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/17 16:19:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:40 sthen Exp $
 
 COMMENT=	library and tools for creating SVF and XSVF JTAG players
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://www.clifford.at/libxsvf/
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses ftdi pthread readline usb
 

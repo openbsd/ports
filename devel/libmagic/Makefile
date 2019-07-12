@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/05/17 13:31:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 20:44:39 sthen Exp $
 
 COMMENT=	library to determine file type
 
@@ -13,7 +13,7 @@ CATEGORIES=	sysutils devel
 HOMEPAGE=	ftp://ftp.astron.com/pub/file/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += z
 

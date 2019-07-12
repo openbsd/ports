@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/12/02 01:03:31 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:02 sthen Exp $
 
 COMMENT=	POE Inter-Kernel Communication
 
@@ -8,7 +8,7 @@ DISTNAME=	POE-Component-IKC-0.2402
 CATEGORIES=	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-POE>=1.311 \
 		devel/p5-Data-Dump \

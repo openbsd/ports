@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:42 sthen Exp $
 
 COMMENT =		lightweight C++ API for Lua
 DISTNAME =		lutok-0.4
@@ -11,7 +11,7 @@ HOMEPAGE =		https://github.com/jmmv/lutok/
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += atf-c atf-c++ c ${MODLUA_WANTLIB} m ${COMPILER_LIBCXX}
 

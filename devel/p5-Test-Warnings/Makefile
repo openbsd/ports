@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/10/24 21:00:00 bluhm Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:12 sthen Exp $
 
 COMMENT =	test for warnings and the lack of them
 
@@ -10,7 +10,7 @@ PKG_ARCH =	*
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # perl_5
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 TEST_DEPENDS =	devel/p5-CPAN-Meta-Check>=0.011 \
 		devel/p5-PadWalker

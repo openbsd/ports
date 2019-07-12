@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:50 sthen Exp $
 
 COMMENT =	create DateTime parser classes and objects
 
@@ -12,7 +12,7 @@ CATEGORIES =	devel
 MAINTAINER = Andrew Fresh <afresh1@openbsd.org>
 
 # artistic_2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODCPAN_EXAMPLES =	Yes
 

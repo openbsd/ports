@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/05/20 22:15:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:44:39 sthen Exp $
 
 COMMENT=		internationalized string handling
 
@@ -15,7 +15,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv intl
 

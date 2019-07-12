@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/01 13:49:52 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:17 sthen Exp $
 
 COMMENT =		backport of the 'collections.abc' module
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/cython/backports_abc
 
 # PSFL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

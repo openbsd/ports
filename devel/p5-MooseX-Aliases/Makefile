@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:00 sthen Exp $
 
 COMMENT =	easy aliasing of methods and attributes
 
@@ -8,7 +8,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		devel/p5-Moose
 TEST_DEPENDS =		devel/p5-Test-Fatal \

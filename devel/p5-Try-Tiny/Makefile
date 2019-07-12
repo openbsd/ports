@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/01 19:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:13 sthen Exp $
 
 COMMENT =		minimal try/catch with proper preservation of $$@
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 REVISION =		0
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CPAN_AUTHOR =		DOY
 

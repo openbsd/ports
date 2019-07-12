@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:51 sthen Exp $
 
 COMMENT= 	DateTime::Format extension to HTTP formats
 
@@ -8,7 +8,7 @@ DISTNAME=	DateTime-Format-HTTP-0.42
 CATEGORIES=	devel www
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=modbuild
 

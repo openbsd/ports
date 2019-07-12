@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:08 sthen Exp $
 
 COMMENT =	fully-featured shell-like command line environment
 
@@ -8,6 +8,6 @@ DISTNAME =	Term-ShellUI-0.92
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

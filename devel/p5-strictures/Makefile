@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/08 21:36:07 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:15 sthen Exp $
 
 FIX_EXTRACT_PERMISSIONS = Yes
 
@@ -13,7 +13,7 @@ REVISION =	0
 CPAN_AUTHOR =	ETHER
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # These allow additional strictures to be used, should we ever
 # get them ported.

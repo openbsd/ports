@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/13 12:37:59 cwen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:45:12 sthen Exp $
 
 COMMENT=	test suite using WWW::Mechanize
 
@@ -9,7 +9,7 @@ DISTNAME=	Test-WWW-Mechanize-1.52
 CATEGORIES=	www devel
 
 # Artistic 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # Can use p5-HTML-Tidy5 when available
 RUN_DEPENDS=	devel/p5-Carp-Assert-More>=1.16 \

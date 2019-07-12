@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/05/25 13:18:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:16 sthen Exp $
 
 COMMENT =	suite of portable game libraries
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://plib.sourceforge.net/
 MAINTAINER =	Gallon Sylvestre <ccna.syl@gmail.com>
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 
 CONFIGURE_STYLE =	gnu

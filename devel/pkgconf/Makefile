@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/30 05:35:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:16 sthen Exp $
 
 COMMENT =		package compiler and linker metadata toolkit
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://git.dereferenced.org/pkgconf/pkgconf
 MAINTAINER =		Adam Steen <adam@adamsteen.com.au>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/01/25 13:11:34 cwen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:45 sthen Exp $
 
 COMMENT =	lists of Perl keywords for use in backend modules
 
@@ -6,7 +6,7 @@ DISTNAME =	B-Keywords-1.19
 CATEGORIES =	devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/01 19:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:15 sthen Exp $
 
 COMMENT =	keep imports out of your namespace
 
@@ -10,7 +10,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 REVISION =	0
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =	devel/p5-B-Hooks-EndOfScope \
 		devel/p5-Moose>=2.1204 \

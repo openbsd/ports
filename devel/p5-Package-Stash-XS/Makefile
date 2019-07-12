@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/21 17:54:17 cwen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:03 sthen Exp $
 
 COMMENT =	faster and more correct implementation of Package::Stash
 DISTNAME =	Package-Stash-XS-0.29
@@ -9,7 +9,7 @@ FIX_EXTRACT_PERMISSIONS =	Yes
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

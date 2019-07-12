@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2019/06/13 15:48:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2019/07/12 20:44:40 sthen Exp $
 
 PORTROACH+=		limit:^2
 
@@ -16,7 +16,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 X11-xcb XRes Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig

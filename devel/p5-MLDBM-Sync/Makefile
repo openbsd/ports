@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:59 sthen Exp $
 
 COMMENT=	safe concurrent access to MLDBM databases
 
@@ -13,6 +13,6 @@ RUN_DEPENDS=	devel/p5-MLDBM \
 		devel/p5-Tie-Cache
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

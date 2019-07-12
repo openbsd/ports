@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/08 21:36:07 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:44 sthen Exp $
 
 COMMENT =		write command line apps with less suffering
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 REVISION =		0
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 

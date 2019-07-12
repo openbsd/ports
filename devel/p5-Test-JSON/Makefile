@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/08/01 22:53:11 bluhm Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:10 sthen Exp $
 
 COMMENT =	test JSON data
 
@@ -9,7 +9,7 @@ REVISION =	0
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =		converters/p5-JSON-Any \
 			devel/p5-Test-Differences

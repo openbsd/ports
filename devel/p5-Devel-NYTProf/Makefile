@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/06/15 19:02:51 bluhm Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:44:52 sthen Exp $
 
 COMMENT =	powerful feature-rich perl source code profiler
 
@@ -10,7 +10,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c perl z
 

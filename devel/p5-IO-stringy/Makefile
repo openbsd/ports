@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/20 19:56:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:44:57 sthen Exp $
 
 COMMENT=		in-core objects like strings and arrays for I/O
 
@@ -10,6 +10,6 @@ CATEGORIES=		devel
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

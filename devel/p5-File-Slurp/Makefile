@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/07 20:14:11 cwen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:55 sthen Exp $
 
 COMMENT=	efficient reading/writing of complete files
 
@@ -10,6 +10,6 @@ DISTNAME=	File-Slurp-9999.27
 CATEGORIES=	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

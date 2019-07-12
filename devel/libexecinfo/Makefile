@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/20 15:12:28 schwarze Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:44:38 sthen Exp $
 
 COMMENT =	clone of backtrace facility found in the GNU libc
 
@@ -17,7 +17,7 @@ SHARED_LIBS =	execinfo	2.0
 HOMEPAGE =	https://github.com/conformal/backtrace/wiki
 
 # BSD
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB=	c
 LDFLAGS+=	-Wl,--export-dynamic

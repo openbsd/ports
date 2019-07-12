@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/04/28 19:00:18 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:44:53 sthen Exp $
 
 COMMENT=	simplistic perl interface to pkg-config
 
@@ -8,6 +8,6 @@ DISTNAME =	ExtUtils-PkgConfig-1.16
 CATEGORIES=	devel
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

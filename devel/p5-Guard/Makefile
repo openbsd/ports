@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:56 sthen Exp $
 
 COMMENT =	scope guards, lighter alternative
 
@@ -8,7 +8,7 @@ CATEGORIES =	devel
 CPAN_AUTHOR = 	MLEHMANN
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

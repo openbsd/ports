@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:07 sthen Exp $
 
 COMMENT=	runtime enable taint checking
 
@@ -7,7 +7,7 @@ DISTNAME=	Taint-Runtime-0.03
 REVISION=	6
 CATEGORIES=	devel
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

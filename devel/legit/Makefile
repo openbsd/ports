@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/04/25 09:36:39 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:37 sthen Exp $
 
 COMMENT=		complementary command-line interface for Git
 
@@ -10,7 +10,7 @@ EXTRACT_SUFX=		.zip
 HOMEPAGE=		http://www.git-legit.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 
 MODULES=		lang/python

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/04/04 18:55:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:41 sthen Exp $
 
 COMMENT =	binding for lua to the tcl interpreter and to the tk toolkit
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://www.tset.de/ltcltk/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # MIT/X11
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	${MODTCL_LIB}
 MASTER_SITES =	http://www.tset.de/downloads/

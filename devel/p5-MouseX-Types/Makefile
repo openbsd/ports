@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:02 sthen Exp $
 
 COMMENT =	organize your Mouse types in libraries
 
@@ -8,7 +8,7 @@ DISTNAME =	MouseX-Types-0.06
 CATEGORIES =	devel
 
 # same as perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Mouse
 

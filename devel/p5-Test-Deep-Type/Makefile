@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/12/05 16:25:45 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:09 sthen Exp $
 
 COMMENT =	a Test::Deep plugin for validating type constraints
 
@@ -9,7 +9,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 MAINTAINER =	Matthias Pitzl <pitzl@genua.de>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/04/03 11:34:42 bluhm Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:11 sthen Exp $
 
 COMMENT=	test framework to run Perl::Critic
 
@@ -9,7 +9,7 @@ REVISION=	0
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	modbuild
 

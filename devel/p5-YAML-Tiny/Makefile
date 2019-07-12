@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/01/27 19:32:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:14 sthen Exp $
 
 COMMENT =	read/write YAML files with as little code as possible
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS=	Yes
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 TEST_DEPENDS =		converters/p5-JSON-MaybeXS \
 			devel/p5-YAML \

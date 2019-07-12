@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/01/06 21:30:42 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:45:04 sthen Exp $
 
 COMMENT =	perl module to generate recursive descent parsers
 
@@ -10,7 +10,7 @@ CATEGORIES =	devel
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # Artistic
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 TEST_DEPENDS =	devel/p5-Test-Pod>=1.14 \
 		devel/p5-Test-Warn

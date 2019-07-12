@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/31 20:56:35 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:10 sthen Exp $
 
 COMMENT =	enhancing Test::More for UTF8-based projects
 DISTNAME =	Test-More-UTF8-0.05
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*

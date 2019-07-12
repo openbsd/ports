@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/08/21 19:43:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:52 sthen Exp $
 
 COMMENT=		perl wrapper around libusb
 
@@ -11,7 +11,7 @@ MODULES=		cpan
 HOMEPAGE=		https://github.com/gwadej/perl-device-usb
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl usb
 

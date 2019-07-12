@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/04/28 16:27:30 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:47 sthen Exp $
 
 COMMENT =	working 'require Class::Name' and more
 
@@ -8,7 +8,7 @@ DISTNAME =	Class-Load-0.24
 CATEGORIES =	devel
 
 # same as perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Data-OptList \
 		devel/p5-Module-Implementation \

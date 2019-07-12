@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/27 15:31:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:42 sthen Exp $
 
 COMMENT =	abstract the storage of configuration settings
 
@@ -13,7 +13,7 @@ CATEGORIES =	devel
 HOMEPAGE =	https://github.com/atheme/libmcs
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB = 	c mowgli
 

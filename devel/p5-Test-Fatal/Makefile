@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:09 sthen Exp $
 
 COMMENT =	incredibly simple helpers for testing code with exceptions
 
@@ -8,7 +8,7 @@ DISTNAME =	Test-Fatal-0.014
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS = devel/p5-Try-Tiny>=0.07
 

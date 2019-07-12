@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/03/20 19:56:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:44:50 sthen Exp $
 
 COMMENT =	extension for generating GUIDs/UUIDs
 
@@ -7,7 +7,7 @@ DISTNAME =	Data-UUID-1.221
 CATEGORIES =	devel
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

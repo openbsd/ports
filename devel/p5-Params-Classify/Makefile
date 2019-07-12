@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/04/28 14:12:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:03 sthen Exp $
 
 COMMENT =	argument type classification
 
@@ -7,7 +7,7 @@ DISTNAME =	Params-Classify-0.015
 CATEGORIES =	devel
 
 # same as perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

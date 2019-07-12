@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/05 22:27:36 cwen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:54 sthen Exp $
 
 COMMENT=		retrieve home directory location
 
@@ -10,7 +10,7 @@ DISTNAME=		File-HomeDir-1.004
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		sysutils/p5-File-Which>=0.05
 

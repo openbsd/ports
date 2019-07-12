@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:51 sthen Exp $
 
 COMMENT =		meatier versions of caller
 
@@ -9,7 +9,7 @@ CPAN_AUTHOR =		RCLAMP
 REVISION =		1
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/05/19 21:07:18 cwen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:45:08 sthen Exp $
 
 COMMENT=		GNU Readline Library Wrapper Module
 
@@ -7,7 +7,7 @@ DISTNAME=		Term-ReadLine-Gnu-1.36
 CATEGORIES=		devel
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses perl readline
 

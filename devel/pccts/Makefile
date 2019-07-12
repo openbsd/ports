@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/04/19 15:34:15 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:45:15 sthen Exp $
 
 COMMENT=	Purdue Compiler Construction Tool Set
 
@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://www.polhode.com/pccts.html
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MAKE_FILE=	makefile

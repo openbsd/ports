@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/06/29 11:53:33 robert Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:44:40 sthen Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
@@ -18,7 +18,7 @@ HOMEPAGE=	http://www.vmime.org/
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += icuuc m pthread ${COMPILER_LIBCXX}
 

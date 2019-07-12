@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/04/24 16:26:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:44:36 sthen Exp $
 
 COMMENT =		JSON parsing C++ API
 
@@ -15,7 +15,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/open-source-parsers/jsoncpp/wiki
 
 # Public Domain / MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		m ${COMPILER_LIBCXX}
 

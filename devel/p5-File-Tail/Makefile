@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/20 19:56:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:44:55 sthen Exp $
 
 COMMENT =	library for reading from continuously updated files
 
@@ -8,6 +8,6 @@ DISTNAME =	File-Tail-1.3
 CATEGORIES =	devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

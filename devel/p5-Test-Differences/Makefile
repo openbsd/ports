@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:09 sthen Exp $
 
 COMMENT =	test and show differences in strings and data structures
 
@@ -10,7 +10,7 @@ PKG_ARCH =	*
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # Artistic
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	sysutils/p5-Capture-Tiny>=0.24 \
 		textproc/p5-Text-Diff>=1.43

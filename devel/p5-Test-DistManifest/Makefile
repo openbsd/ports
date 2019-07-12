@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:09 sthen Exp $
 
 COMMENT = 	author test that validates a package MANIFEST
 
@@ -9,7 +9,7 @@ DISTNAME =	Test-DistManifest-1.014
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 BUILD_DEPENDS =	devel/p5-Test-NoWarnings \
 		devel/p5-Module-Build-Tiny

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/07 16:52:34 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:41 sthen Exp $
 
 COMMENT =	lua bindings for OpenBSD functions
 
@@ -10,7 +10,7 @@ REVISION =	0
 CATEGORIES =	devel
 
 #MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVORS =	lua52 lua53
 FLAVOR ?=

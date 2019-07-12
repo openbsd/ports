@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:17 sthen Exp $
 
 COMMENT =	namespace control and lazy-import mechanism for Python
 
@@ -13,7 +13,7 @@ CATEGORIES =	devel
 HOMEPAGE =	https://bitbucket.org/hpk42/apipkg
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVORS =               python3
 FLAVOR ?=

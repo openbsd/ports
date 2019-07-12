@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/03 10:34:01 steven Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:39 sthen Exp $
 
 COMMENT =		asynchronous I/O readiness notification library
 
@@ -15,7 +15,7 @@ HOMEPAGE =		http://libivykis.sourceforge.net/
 MAINTAINER =		Steven Mestdagh <steven@openbsd.org>
 
 # LGPL v2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		pthread
 

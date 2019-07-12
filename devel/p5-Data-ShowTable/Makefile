@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:49 sthen Exp $
 
 COMMENT=		print arrays of data in a nicely formatted listing
 
@@ -8,6 +8,6 @@ DISTNAME =		Data-ShowTable-4.6
 CATEGORIES=		devel
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

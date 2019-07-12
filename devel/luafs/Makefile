@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/07 16:52:35 danj Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:44:42 sthen Exp $
 
 COMMENT =	file system library for the lua language
 V =		1_6_3
@@ -13,7 +13,7 @@ CATEGORIES =	devel
 HOMEPAGE =	http://keplerproject.github.io/luafilesystem/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 GH_ACCOUNT =	keplerproject
 GH_PROJECT =	luafilesystem

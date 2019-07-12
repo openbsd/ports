@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.18 2016/03/20 19:56:14 naddy Exp $
+#	$OpenBSD: Makefile,v 1.19 2019/07/12 20:44:46 sthen Exp $
 
 COMMENT=	get and set methods and simplify object initialization
 
@@ -6,7 +6,7 @@ DISTNAME =	Class-AutoClass-1.56
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

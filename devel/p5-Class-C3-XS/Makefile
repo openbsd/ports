@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/12/05 16:25:45 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:46 sthen Exp $
 
 COMMENT=		XS speed-up for Class-C3
 
@@ -10,7 +10,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 CPAN_AUTHOR =		ETHER
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

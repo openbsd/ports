@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:12 sthen Exp $
 
 COMMENT=	ordered hashes for Perl
 
@@ -10,7 +10,7 @@ MODULES=	cpan
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

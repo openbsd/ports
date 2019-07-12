@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/01/22 22:04:30 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:34 sthen Exp $
 
 COMMENT =		Scrap Your Boilerplate library for generic programming
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

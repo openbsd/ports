@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/23 08:50:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:39 sthen Exp $
 
 COMMENT=	client-side library to implement the iSCSI protocol
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://github.com/sahlberg/libiscsi
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # LGPLv2.1+, GPLv2+ and PD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

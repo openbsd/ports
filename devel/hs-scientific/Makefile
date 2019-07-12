@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/01/22 21:23:53 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:34 sthen Exp $
 
 COMMENT =		scientific number type
 
@@ -15,7 +15,7 @@ HOMEPAGE =		https://github.com/basvandijk/scientific
 MAINTAINER =		David Schaefer <dawedawe@gmx.de>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

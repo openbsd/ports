@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/04 01:27:58 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:03 sthen Exp $
 
 COMMENT =		routines for manipulating stashes
 
@@ -10,7 +10,7 @@ CATEGORIES =		devel
 MAINTAINER =		Andrew Fresh <afresh1@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =	devel/p5-Dist-CheckConflicts>=0.02
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/12/04 19:15:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:48 sthen Exp $
 
 COMMENT=		use standard configuration files
 
@@ -8,7 +8,7 @@ DISTNAME=		Config-Std-0.903
 CATEGORIES=		devel
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/p5-Class-Std
 BUILD_DEPENDS=		${RUN_DEPENDS}

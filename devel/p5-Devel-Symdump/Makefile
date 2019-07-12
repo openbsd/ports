@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/04/29 08:17:57 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:52 sthen Exp $
 
 COMMENT = 	module for inspecting Perl's symbol table
 
@@ -9,7 +9,7 @@ EPOCH =		0
 CATEGORIES =	devel perl5
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_ENV =	TEST_POD=Yes
 

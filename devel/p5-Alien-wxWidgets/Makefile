@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/01/02 12:44:06 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:44 sthen Exp $
 
 COMMENT =	building, finding and using wxWidgets binaries
 
@@ -10,7 +10,7 @@ REVISION =	0
 CATEGORIES =	devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE =	modbuild
 

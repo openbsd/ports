@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/04/28 14:16:01 rpe Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:01 sthen Exp $
 
 COMMENT=	attributes with aliases for constructor arguments for MooseX
 
@@ -7,7 +7,7 @@ DISTNAME=	MooseX-MultiInitArg-0.02
 CATEGORIES=	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES=	cpan
 PKG_ARCH=	*

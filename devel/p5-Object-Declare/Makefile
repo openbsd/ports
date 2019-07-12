@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/09/02 22:55:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:02 sthen Exp $
 
 COMMENT= 	declarative object constructor
 
@@ -8,6 +8,6 @@ DISTNAME=	Object-Declare-0.23
 CATEGORIES=	www devel
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

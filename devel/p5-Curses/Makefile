@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/17 16:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:44:48 sthen Exp $
 
 COMMENT=	terminal screen handling and optimisation
 
@@ -11,7 +11,7 @@ REVISION =	0
 
 CATEGORIES=	devel
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses form menu panel perl
 

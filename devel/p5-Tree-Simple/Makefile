@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:13 sthen Exp $
 
 COMMENT=	simple tree object
 
@@ -9,7 +9,7 @@ REVISION=	1
 CATEGORIES=	devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 TEST_DEPENDS= devel/p5-Test-Exception \
 		 devel/p5-Test-Memory-Cycle>=1.02

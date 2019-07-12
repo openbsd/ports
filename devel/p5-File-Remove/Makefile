@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/07 17:54:23 cwen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:54 sthen Exp $
 
 COMMENT=	remove files and directories with perl
 
@@ -9,7 +9,7 @@ DISTNAME=	File-Remove-1.58
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	modbuild
 

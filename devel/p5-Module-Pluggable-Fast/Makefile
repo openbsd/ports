@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:00 sthen Exp $
 
 COMMENT=	instantiate plugins as they're found
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	p5-Universal-exports-<=0.05|p5-Universal-require-*:devel/p5-Universal-require
 

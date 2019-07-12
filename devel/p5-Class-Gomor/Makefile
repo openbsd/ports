@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:47 sthen Exp $
 
 COMMENT=	class and object builder
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel
 MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODCPAN_EXAMPLES=	Yes
 

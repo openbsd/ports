@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/08/27 17:03:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:14 sthen Exp $
 
 COMMENT =	boolean support for Perl
 
@@ -10,7 +10,7 @@ DISTNAME =	boolean-0.46
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 CPAN_AUTHOR =	INGY
 

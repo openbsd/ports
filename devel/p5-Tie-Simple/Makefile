@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/04/27 15:05:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:13 sthen Exp $
 
 COMMENT =	Variable ties made easier
 
@@ -10,6 +10,6 @@ CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

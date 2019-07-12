@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/10/24 21:27:03 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:45:09 sthen Exp $
 
 COMMENT =	extremely flexible deep comparison
 
@@ -10,7 +10,7 @@ PKG_ARCH =	*
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # Avoid skipping tests
 TEST_ENV =		AUTHOR_TESTING=Yes

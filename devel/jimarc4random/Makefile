@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/16 16:46:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:36 sthen Exp $
 
 COMMENT =		arc4random for Jim
 
@@ -8,7 +8,7 @@ HOMEPAGE =		http://www3.bell.net/stwo/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB	=		jim
 

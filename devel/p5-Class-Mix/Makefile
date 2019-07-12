@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/10 06:06:10 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:47 sthen Exp $
 
 COMMENT =		dynamic class mixing
 
@@ -8,7 +8,7 @@ DISTNAME =		Class-Mix-0.006
 CATEGORIES =		devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/p5-Params-Classify

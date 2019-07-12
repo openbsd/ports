@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:11 sthen Exp $
 
 COMMENT= 	check for pod coverage in your distribution
 
@@ -8,7 +8,7 @@ DISTNAME =	Test-Pod-Coverage-1.10
 CATEGORIES=	devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Pod-Coverage

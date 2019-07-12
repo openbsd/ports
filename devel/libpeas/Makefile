@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2019/06/13 15:48:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2019/07/12 20:44:40 sthen Exp $
 
 COMMENT=	gobject-based plugins engine
 
@@ -15,7 +15,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr

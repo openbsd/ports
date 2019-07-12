@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/06/28 12:05:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:45:02 sthen Exp $
 
 COMMENT=	perl module to implementing delay loading of object-data
 
@@ -14,6 +14,6 @@ HOMEPAGE=	http://perl.overmeer.net/
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

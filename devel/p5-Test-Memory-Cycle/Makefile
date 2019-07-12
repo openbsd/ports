@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:10 sthen Exp $
 
 COMMENT= 	perl extension for emulating troublesome interfaces
 
@@ -9,7 +9,7 @@ DISTNAME =	Test-Memory-Cycle-1.06
 CATEGORIES=	devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Devel-Cycle

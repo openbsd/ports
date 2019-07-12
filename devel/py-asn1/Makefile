@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/04/28 20:51:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:45:17 sthen Exp $
 
 COMMENT =	ASN.1 library for Python
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://github.com/etingof/pyasn1
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # BSD 2-Clause
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/10 15:25:03 tj Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:42 sthen Exp $
 
 COMMENT =	wrapper for gnu auto*
 
@@ -16,7 +16,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 MASTER_SITES =	https://pkg-config.freedesktop.org/releases/
 
 # BSD, except pkg.m4 which is GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 AUTOCONF_SCRIPTS = autoconf autoupdate autoheader autoreconf autom4te
 AUTOMAKE_SCRIPTS = automake aclocal

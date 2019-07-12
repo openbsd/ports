@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/12/02 11:34:17 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:57 sthen Exp $
 
 COMMENT=		provide an interface to create pseudo ttys
 
@@ -9,7 +9,7 @@ REVISION=		0
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl util
 

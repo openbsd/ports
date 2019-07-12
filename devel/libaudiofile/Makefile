@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2019/07/12 08:54:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2019/07/12 20:44:37 sthen Exp $
 
 # -fvisibility
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -21,7 +21,7 @@ MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	https://www.68k.org/~michael/audiofile/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += FLAC c m ogg ${COMPILER_LIBCXX}
 

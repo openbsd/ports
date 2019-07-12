@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/04/28 16:14:58 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:47 sthen Exp $
 
 COMMENT= 	alternative object layout in perl
 
@@ -10,7 +10,7 @@ DISTNAME =	Class-InsideOut-1.14
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Class-ISA
 

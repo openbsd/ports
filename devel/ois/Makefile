@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:43 sthen Exp $
 
 COMMENT =		object-oriented input system
 
@@ -16,7 +16,7 @@ HOMEPAGE =		http://www.wreckedgames.com
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # zlib/libpng
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		X11 m ${COMPILER_LIBCXX} xcb
 

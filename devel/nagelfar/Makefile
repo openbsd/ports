@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/05 04:10:48 stu Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:43 sthen Exp $
 
 COMMENT =	syntax analysis tool for Tcl
 
@@ -10,7 +10,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # GPLv2 (Nagelfar)
 # BSD (textSearch)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nagelfar/}
 MODULES =	x11/tk

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/12/05 16:25:45 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:47 sthen Exp $
 
 COMMENT =		XS implementation of parts of Class::Load
 
@@ -8,7 +8,7 @@ REVISION =		0
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # artistic 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

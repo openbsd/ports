@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/01/28 15:30:27 cwen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:01 sthen Exp $
 
 COMMENT=		the Illicit Love Child of Moose and POE
 
@@ -7,7 +7,7 @@ DISTNAME=		MooseX-POE-0.215
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

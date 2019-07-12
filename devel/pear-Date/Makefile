@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:45:16 sthen Exp $
 
 COMMENT=	date and timezone classes for PHP
 
@@ -8,6 +8,6 @@ CATEGORIES=	devel
 MODULES=	www/pear
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

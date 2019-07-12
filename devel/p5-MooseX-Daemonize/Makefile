@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/02/06 16:02:33 cwen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:01 sthen Exp $
 
 COMMENT =	role for daemonizing your Moose based application
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 # same as perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE =	modbuild tiny
 

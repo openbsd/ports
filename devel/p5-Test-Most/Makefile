@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/01/27 22:14:33 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:10 sthen Exp $
 
 COMMENT =	most commonly needed test functions and features
 DISTNAME =	Test-Most-0.35
@@ -9,7 +9,7 @@ PKG_ARCH =	*
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # perl_5
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Exception-Class>=1.14 \
 		devel/p5-Test-Deep>=0.119 \

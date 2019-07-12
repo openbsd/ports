@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:47 sthen Exp $
 
 COMMENT= 	automates the Factory design pattern
 
@@ -9,6 +9,6 @@ DISTNAME =	Class-Factory-1.06
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

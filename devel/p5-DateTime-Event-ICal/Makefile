@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:50 sthen Exp $
 
 COMMENT =	DateTime extension for computing rfc2445 recurrences
 
@@ -10,7 +10,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 
 # GPLv1 / Artistic
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		devel/p5-DateTime \
 			devel/p5-DateTime-Event-Recurrence

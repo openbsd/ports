@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:04 sthen Exp $
 
 COMMENT =		Write a demo program from a tutorial POD
 
@@ -12,7 +12,7 @@ CPAN_AUTHOR =		CHROMATIC
 MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 TEST_DEPENDS =	devel/p5-Test-Exception
 

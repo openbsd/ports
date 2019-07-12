@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/07/05 15:43:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2019/07/12 20:44:36 sthen Exp $
 
 COMMENT=		enhanced interactive Python shell
 
@@ -36,7 +36,7 @@ TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
 BUILD_DEPENDS +=	www/py-mako${MODPY_FLAVOR}
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_PI =		Yes
 

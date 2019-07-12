@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:05 sthen Exp $
 
 COMMENT =	simple interface to subversion's editor interface#'
 
@@ -12,7 +12,7 @@ PKG_ARCH =	*
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/subversion,-perl>=1.1.1
 BUILD_DEPENDS =	${RUN_DEPENDS}

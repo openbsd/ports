@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:14 sthen Exp $
 
 COMMENT =	perl common defaults with lower memory usage
 
@@ -8,7 +8,7 @@ DISTNAME =	common-sense-3.74
 CATEGORIES =	devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CPAN_AUTHOR =	MLEHMANN
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:53 sthen Exp $
 
 COMMENT =	XS for C++
 
@@ -8,7 +8,7 @@ DISTNAME =	ExtUtils-XSpp-0.18
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE =	modbuild
 TEST_DEPENDS =		devel/p5-Test-Base \

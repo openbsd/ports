@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:57 sthen Exp $
 
 COMMENT=	asynchronous Input/Output
 
@@ -8,7 +8,7 @@ REVISION=	1
 CATEGORIES=	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl pthread
 

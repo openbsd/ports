@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/03/16 18:07:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:37 sthen Exp $
 
 COMMENT=	simple C Library for entropy measurement
 
@@ -12,7 +12,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://libdisorder.freshdefense.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m
 

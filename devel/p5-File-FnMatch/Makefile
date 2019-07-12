@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:54 sthen Exp $
 
 COMMENT=		simple filename and pathname matching
 
@@ -8,7 +8,7 @@ CATEGORIES=		devel
 REVISION=		1
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

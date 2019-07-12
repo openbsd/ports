@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:05 sthen Exp $
 
 COMMENT= 	create readonly variables faster
 
@@ -8,7 +8,7 @@ REVISION=	4
 CATEGORIES=	devel
 
 # perl licence
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

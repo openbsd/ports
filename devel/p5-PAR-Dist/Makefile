@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:45:02 sthen Exp $
 
 COMMENT=	create and manipulate PAR distributions
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel archivers
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_ENV=	PERL_TEST_POD=Yes TEST_POD=Yes
 

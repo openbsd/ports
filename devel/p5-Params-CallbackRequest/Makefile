@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:03 sthen Exp $
 
 COMMENT=	functional and object-oriented callback architecture
 
@@ -8,7 +8,7 @@ DISTNAME =	Params-CallbackRequest-1.20
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Params-Validate \
 		devel/p5-Exception-Class \

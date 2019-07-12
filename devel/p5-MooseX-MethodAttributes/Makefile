@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/22 08:58:46 cwen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:01 sthen Exp $
 
 COMMENT =	code attribute introspection
 
@@ -10,7 +10,7 @@ CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =	devel/p5-Moose \
 		devel/p5-MooseX-Types>=0.21 \

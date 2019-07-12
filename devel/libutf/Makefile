@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/01 20:12:52 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:40 sthen Exp $
 
 COMMENT=	UTF8 support library from Plan 9
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://pdos.lcs.mit.edu/~rsc/software/
 EXTRACT_SUFX=	.tgz
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_TEST=	Yes
 MAKE_FLAGS=	CC="${CC}"

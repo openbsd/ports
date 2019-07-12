@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/01/22 21:43:45 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:35 sthen Exp $
 
 COMMENT=		provides newtype wrappers for phantom types
 
@@ -7,7 +7,7 @@ REVISION=		4
 CATEGORIES=		devel
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES=		lang/ghc
 

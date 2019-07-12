@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/02/22 04:07:49 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:45:11 sthen Exp $
 
 COMMENT =	check for POD errors in files
 
@@ -9,6 +9,6 @@ CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

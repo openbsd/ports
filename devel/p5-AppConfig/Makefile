@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:44 sthen Exp $
 
 COMMENT=	bundle for reading and parsing config files
 
@@ -8,7 +8,7 @@ DISTNAME =	AppConfig-1.71
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .ifmake test
 PORTHOME=       ${HOME}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/28 20:51:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:17 sthen Exp $
 
 COMMENT =		collection of ASN.1 data structures for py-asn1
 
@@ -11,7 +11,7 @@ REVISION =		0
 HOMEPAGE =		https://github.com/etingof/pyasn1
 
 # BSD 2-Clause
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

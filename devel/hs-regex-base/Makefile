@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/01/22 21:42:27 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:44:34 sthen Exp $
 
 COMMENT =		interface API for regex-posix,pcre,parsec,tdfa,dfa
 
@@ -15,7 +15,7 @@ HOMEPAGE =		http://sourceforge.net/projects/lazy-regex
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

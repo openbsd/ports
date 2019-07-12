@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/03/28 09:06:02 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:09 sthen Exp $
 
 COMMENT=	automated driving and testing of terminal-based programs
 
@@ -8,7 +8,7 @@ DISTNAME =	Test-Expect-0.34
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Class-Accessor-Chained \

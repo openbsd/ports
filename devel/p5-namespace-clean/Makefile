@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/09/02 22:52:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:15 sthen Exp $
 
 COMMENT =	keep imports and functions out of your namespace
 
@@ -8,7 +8,7 @@ DISTNAME =	namespace-clean-0.27
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =	devel/p5-B-Hooks-EndOfScope \
 		devel/p5-Package-Stash \

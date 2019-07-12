@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/03/12 02:26:50 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:45:04 sthen Exp $
 
 COMMENT =	perl module to validate function/method parameters
 
@@ -8,7 +8,7 @@ CATEGORIES =	devel
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # artistic_2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 

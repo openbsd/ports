@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/15 12:04:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:45:17 sthen Exp $
 
 COMMENT=	Python API for SOAP HTTP/RPC
 
@@ -11,7 +11,7 @@ REVISION=	2
 MODULES=	lang/python
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_PI =	Yes
 EXTRACT_SUFX=	.zip

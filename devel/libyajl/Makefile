@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/12/29 19:49:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:40 sthen Exp $
 
 COMMENT =	small JSON library written in ANSI C
 
@@ -14,7 +14,7 @@ SHARED_LIBS =	yajl	2.1	# 2.1.0
 HOMEPAGE =	https://lloyd.github.io/yajl/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/01/22 21:43:45 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:44:35 sthen Exp $
 
 COMMENT =		efficient packed Unicode text type
 
@@ -13,7 +13,7 @@ CATEGORIES =		devel
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

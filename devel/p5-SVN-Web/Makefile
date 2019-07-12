@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/07/01 11:43:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:06 sthen Exp $
 
 COMMENT=	subversion repository web frontend
 
@@ -9,7 +9,7 @@ REVISION=	3
 CATEGORIES=	devel perl5
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CPAN_AUTHOR=	NIKC
 

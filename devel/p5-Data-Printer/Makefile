@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/22 07:35:46 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:49 sthen Exp $
 
 COMMENT =	colored pretty-print of Perl data structures and objects
 
@@ -7,7 +7,7 @@ DISTNAME =	Data-Printer-0.40
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 

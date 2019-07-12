@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/10/16 23:21:23 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:42 sthen Exp $
 
 PKG_ARCH =      *
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://luaforge.net/projects/stdlib/
 EXTRACT_SUFX=	.zip
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/lua
 

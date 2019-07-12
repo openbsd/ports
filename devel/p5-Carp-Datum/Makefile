@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/02/12 18:11:31 cwen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:45 sthen Exp $
 
 COMMENT=	debugging and tracing ultimate module
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel
 FIX_EXTRACT_PERMISSIONS=	Yes
 
 # Artistic License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Getargs-Long>=0.1.3
 BUILD_DEPENDS=	${RUN_DEPENDS}

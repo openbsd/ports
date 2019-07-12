@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/06/12 10:57:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:45 sthen Exp $
 
 COMMENT =		turn every die/warn into carp verbose messages
 
@@ -10,7 +10,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAKE_ENV =		TEST_POD=Yes
 

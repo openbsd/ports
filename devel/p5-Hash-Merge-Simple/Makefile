@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/01 19:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:56 sthen Exp $
 
 COMMENT =		recursively merge two or more hashes, simply
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 REVISION =		0
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =		devel/p5-Test-Most
 

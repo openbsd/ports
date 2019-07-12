@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/01/07 01:57:01 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:46 sthen Exp $
 
 COMMENT=	validate method/function parameters
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Artistic License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Params-Validate>=0.23

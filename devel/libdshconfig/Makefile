@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/11 19:59:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:37 sthen Exp $
 
 COMMENT=	library for parsing dsh-style configuration files
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.netfort.gr.jp/~dancer/software/
 MASTER_SITES=	${HOMEPAGE}downloads/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 
 CONFIGURE_STYLE=	gnu

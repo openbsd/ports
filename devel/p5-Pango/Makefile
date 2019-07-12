@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:45:03 sthen Exp $
 
 COMMENT=	perl interface to the Pango libraries
 
@@ -8,7 +8,7 @@ CPAN_AUTHOR=	XAOC
 REVISION =	1
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c cairo fontconfig freetype glib-2.0 gobject-2.0 iconv intl m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 perl z

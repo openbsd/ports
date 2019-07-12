@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/12 06:44:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:47 sthen Exp $
 
 COMMENT =	support multimethods and function overloading in Perl
 
@@ -8,7 +8,7 @@ DISTNAME =	Class-Multimethods-1.701
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WRKSRC =	${WRKDIR}/Class-Multimethods-1.700
 

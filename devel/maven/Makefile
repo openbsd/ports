@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/06/11 00:38:34 kurt Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:44:42 sthen Exp $
 
 COMMENT=	software project management and comprehension tool
 
@@ -11,7 +11,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://maven.apache.org/
 
 # Apache Software License 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=maven/maven-3/${V}/binaries/} \
 		http://archive.apache.org/dist/maven/binaries/

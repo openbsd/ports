@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/11 19:59:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:45:17 sthen Exp $
 
 COMMENT=	GNU portable threads
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=pth/}
 
 HOMEPAGE=	https://www.gnu.org/software/pth/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --enable-static \

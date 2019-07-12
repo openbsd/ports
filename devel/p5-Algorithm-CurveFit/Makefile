@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:44 sthen Exp $
 
 COMMENT =	nonlinear least squares curve fitting
 
@@ -6,7 +6,7 @@ DISTNAME =	Algorithm-CurveFit-1.05
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 CPAN_AUTHOR =	SMUELLER
 

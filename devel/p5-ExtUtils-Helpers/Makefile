@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/08 21:36:07 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:53 sthen Exp $
 
 COMMENT =	various portability utilities for module builders
 
@@ -11,6 +11,6 @@ REVISION =	0
 CPAN_AUTHOR =	LEONT
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

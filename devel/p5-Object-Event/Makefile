@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/05/07 12:40:56 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:02 sthen Exp $
 
 COMMENT =		event callback interface
 
@@ -10,7 +10,7 @@ CATEGORIES =		devel
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

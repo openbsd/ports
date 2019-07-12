@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/06 22:16:46 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:52 sthen Exp $
 
 COMMENT =	simple, extensible Perl debugger
 
@@ -8,7 +8,7 @@ DISTNAME =	Devel-ebug-0.59
 CATEGORIES =	devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS=	devel/p5-PadWalker \
 		devel/p5-YAML \

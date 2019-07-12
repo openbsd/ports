@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/29 13:23:22 bluhm Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:13 sthen Exp $
 
 COMMENT =	tie to an existing object
 
@@ -9,6 +9,6 @@ REVISION =	3
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

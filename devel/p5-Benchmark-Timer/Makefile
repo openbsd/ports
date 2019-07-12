@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:45 sthen Exp $
 
 COMMENT=	benchmarking with statistical confidence
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel benchmarks
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS =	devel/p5-Module-Install
 

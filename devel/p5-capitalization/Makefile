@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:14 sthen Exp $
 
 COMMENT=	use familiar style on method naming
 
@@ -9,7 +9,7 @@ REVISION=	1
 CATEGORIES=	devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CPAN_AUTHOR=	MIYAGAWA
 

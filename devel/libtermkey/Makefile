@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/04 12:46:11 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:40 sthen Exp $
 
 COMMENT =	library for processing of keyboard entry from a terminal
 DISTNAME =	libtermkey-0.20
@@ -10,7 +10,7 @@ CATEGORIES =	devel
 HOMEPAGE =	http://www.leonerd.org.uk/code/libtermkey/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	unibilium
 

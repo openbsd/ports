@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/12/07 07:26:55 solene Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:52 sthen Exp $
 
 COMMENT=		partial dumping of data structures
 
@@ -7,7 +7,7 @@ CATEGORIES=		devel
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

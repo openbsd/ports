@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/29 10:37:56 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:11 sthen Exp $
 
 COMMENT =	POE component providing TCP server services for test cases
 
@@ -8,7 +8,7 @@ DISTNAME =	Test-POE-Server-TCP-1.20
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MAKE_ENV +=	TEST_POD=1
 

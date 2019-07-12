@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:37 sthen Exp $
 
 COMMENT =	binary I/O stream class library
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://libbinio.sourceforge.net/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	m ${COMPILER_LIBCXX}
 

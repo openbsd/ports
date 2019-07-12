@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:04 sthen Exp $
 
 COMMENT=	create dynamic PerlIO layers
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Internals
 BUILD_DEPENDS=	${RUN_DEPENDS}

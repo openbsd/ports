@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/05 17:09:38 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:43 sthen Exp $
 
 COMMENT =		MessagePack implementation for C and C++
 
@@ -11,7 +11,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://msgpack.org/
 
 # Boost license
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 GH_ACCOUNT =		msgpack
 GH_PROJECT =		msgpack-c

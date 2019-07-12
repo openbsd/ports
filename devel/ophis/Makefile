@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:12 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:43 sthen Exp $
 
 COMMENT =		65xx-series cross-assembler
 
@@ -11,7 +11,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://hkn.eecs.berkeley.edu/~mcmartin/ophis/
 
 # BSD
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =		${HOMEPAGE}
 

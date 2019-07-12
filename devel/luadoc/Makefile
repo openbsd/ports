@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/10/16 23:21:23 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:41 sthen Exp $
 
 COMMENT=	documentation generation tool for Lua
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://luadoc.luaforge.net/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/3185/
 

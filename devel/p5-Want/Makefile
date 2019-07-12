@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:45:14 sthen Exp $
 
 COMMENT=	generalisation of wantarray
 
@@ -10,7 +10,7 @@ REVISION=	0
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

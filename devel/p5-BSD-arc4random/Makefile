@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/05/15 11:21:21 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:45 sthen Exp $
 
 COMMENT =	perl interface to the arc4 random number generator
 
@@ -10,7 +10,7 @@ CATEGORIES =	devel
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # MirOS Licence
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c perl
 

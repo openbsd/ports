@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:45 sthen Exp $
 
 COMMENT=	object-oriented wrapper around vec()
 
@@ -9,6 +9,6 @@ REVISION=	1
 CATEGORIES=	devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

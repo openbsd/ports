@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:59 sthen Exp $
 
 COMMENT=		find and use installed modules in a (sub)category
 
@@ -8,7 +8,7 @@ DISTNAME=		Module-Find-0.13
 CATEGORIES=		devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODCPAN_EXAMPLES=	Yes
 MAKE_ENV=		TEST_POD=Yes

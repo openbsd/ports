@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/31 05:39:27 bentley Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:38 sthen Exp $
 
 COMMENT =	libftdi, interface to ftdi debug device
 
@@ -12,7 +12,7 @@ SHARED_LIBS =	ftdi		15.1	# 21.0
 HOMEPAGE =	https://www.intra2net.com/en/developer/libftdi/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c usb pthread usb-1.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/06 06:15:23 claudio Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:16 sthen Exp $
 
 COMMENT =		prometheus utility tool
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://prometheus.io/
 MAINTAINER =		Claudio Jeker <claudio@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c pthread
 

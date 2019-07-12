@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/07/20 13:54:35 bluhm Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:50 sthen Exp $
 
 COMMENT=	visitor-style traversal of Perl data structures
 
@@ -8,7 +8,7 @@ DISTNAME=	Data-Visitor-0.30
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Class-Load>=0.06 \
 		devel/p5-Moose>=0.89 \

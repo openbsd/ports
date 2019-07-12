@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/01/22 21:43:45 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:35 sthen Exp $
 
 COMMENT =		consistent filesystem interaction
 
@@ -7,7 +7,7 @@ REVISION =		1
 CATEGORIES =		devel
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register

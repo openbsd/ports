@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/16 08:28:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:52 sthen Exp $
 
 COMMENT =		displays stack trace in HTML
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		devel/p5-Devel-StackTrace
 BUILD_DEPENDS =		${RUN_DEPENDS}

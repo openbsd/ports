@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/11/25 23:44:25 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:49 sthen Exp $
 
 COMMENT =	compare perl data structures
 
@@ -10,7 +10,7 @@ CATEGORIES =	devel
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # Same as Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-File-Find-Rule>=0.1
 

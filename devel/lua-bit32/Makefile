@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/08/30 16:30:49 awolk Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:41 sthen Exp $
 
 COMMENT=	bit32 compatibility module for Lua 5.1
 CATEGORIES=	devel
@@ -17,7 +17,7 @@ MODLUA_VERSION=	5.1
 MODULES=	lang/lua
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 do-build:
 	${CC} ${CFLAGS} -fPIC -I${MODLUA_INCL_DIR} -I${WRKDIST}/c-api -shared \

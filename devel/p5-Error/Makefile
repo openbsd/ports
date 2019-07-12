@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/04/28 13:53:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:52 sthen Exp $
 
 COMMENT=	error/exception handling in an OO-ish way
 
@@ -8,7 +8,7 @@ DISTNAME =	Error-0.17025
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	modbuild
 

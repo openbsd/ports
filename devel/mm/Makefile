@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/03/11 19:59:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2019/07/12 20:44:42 sthen Exp $
 
 COMMENT=	shared memory lib for apps with pre-forked process model
 
@@ -12,7 +12,7 @@ MASTER_SITES=	https://distfiles.nl/ \
 HOMEPAGE=	http://www.ossp.org/pkg/lib/mm/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --enable-static

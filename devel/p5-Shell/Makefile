@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/06/10 12:54:44 awolk Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:06 sthen Exp $
 
 COMMENT= 	run shell commands transparently
 
@@ -13,6 +13,6 @@ MAINTAINER =    Adam Wolk <awolk@openbsd.org>
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

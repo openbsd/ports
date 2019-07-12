@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/29 13:23:22 bluhm Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:02 sthen Exp $
 
 COMMENT=		DateTime related constraints and coercions for Moose
 
@@ -11,7 +11,7 @@ CATEGORIES=		devel
 MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/p5-DateTime \
 			devel/p5-Moose \

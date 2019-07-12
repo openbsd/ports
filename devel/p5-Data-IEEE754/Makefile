@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/18 13:03:59 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:49 sthen Exp $
 
 COMMENT =	pack and unpack big-endian IEEE754 floats and doubles
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Artistic 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 

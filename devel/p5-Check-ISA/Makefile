@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/07/20 19:14:06 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:46 sthen Exp $
 
 COMMENT =	correct check for object classes in Perl
 
@@ -9,7 +9,7 @@ CPAN_AUTHOR =	MANWAR
 MAINTAINER =	Matthias Pitzl <pitzl@genua.de>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Sub-Exporter
 TEST_DEPENDS =	devel/p5-Moose

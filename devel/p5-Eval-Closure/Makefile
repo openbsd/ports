@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/09/02 22:33:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:52 sthen Exp $
 
 COMMENT =		safely and cleanly create closures via string eval 
 
@@ -6,7 +6,7 @@ DISTNAME =		Eval-Closure-0.14
 CATEGORIES =		devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CPAN_AUTHOR =		DOY
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/01/25 13:02:30 cwen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:50 sthen Exp $
 
 COMMENT=		validate and convert data types
 
@@ -8,7 +8,7 @@ DISTNAME =		Data-Types-0.16
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_ENV+=		TEST_POD=Yes
 

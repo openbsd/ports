@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2018/11/24 11:20:08 landry Exp $
+# $OpenBSD: Makefile,v 1.72 2019/07/12 20:45:15 sthen Exp $
 
 COMMENT=	perl-compatible regular expression library
 
@@ -21,7 +21,7 @@ HOMEPAGE=	http://www.pcre.org/
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses m readline ${COMPILER_LIBCXX}
 

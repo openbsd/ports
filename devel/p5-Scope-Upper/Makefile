@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/04/28 14:12:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:06 sthen Exp $
 
 COMMENT =	act on upper scopes
 
@@ -7,7 +7,7 @@ DISTNAME =	Scope-Upper-0.30
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

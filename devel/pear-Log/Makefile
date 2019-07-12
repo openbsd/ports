@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/11/11 14:17:01 benoit Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:45:16 sthen Exp $
 
 COMMENT =	logging utilities for PHP
 
@@ -8,7 +8,7 @@ CATEGORIES =	devel
 HOMEPAGE =	http://pear.php.net/package/Log/
 
 # MIT license
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	www/pear
 

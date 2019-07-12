@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/04/28 09:40:20 benoit Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:44:48 sthen Exp $
 
 COMMENT =	load various configuration file formats
 
@@ -10,7 +10,7 @@ CATEGORIES =	devel
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # All of these would be needed to parse all these configuration
 # formats.

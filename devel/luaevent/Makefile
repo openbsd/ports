@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/18 20:49:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:41 sthen Exp $
 
 COMMENT =	lua binding of libevent
 
@@ -10,7 +10,7 @@ CATEGORIES =	devel
 HOMEPAGE =	http://prosody.im/doc/libevent
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	event ${MODLUA_WANTLIB}
 

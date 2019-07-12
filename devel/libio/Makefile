@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:39 sthen Exp $
 
 COMMENT=	abstraction for general data transport
 
@@ -9,7 +9,7 @@ MASTER_SITES=	http://monkey.org/~provos/
 HOMEPAGE=	http://monkey.org/~provos/libio/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WRKDIST=	${WRKDIR}/libio
 

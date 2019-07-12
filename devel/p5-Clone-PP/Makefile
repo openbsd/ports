@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/22 07:30:26 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:48 sthen Exp $
 
 COMMENT =	Recursively copy Perl datatypes
 
@@ -7,7 +7,7 @@ DISTNAME =	Clone-PP-1.07
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 

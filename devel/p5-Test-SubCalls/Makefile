@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/19 19:58:51 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:11 sthen Exp $
 
 COMMENT=		track the number of times subs are called
 
@@ -11,7 +11,7 @@ REVISION=		0
 FIX_EXTRACT_PERMISSIONS=	Yes
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 TEST_DEPENDS=	devel/p5-Hook-LexWrap
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/12/11 21:30:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:16 sthen Exp $
 
 COMMENT=	library to provide abstract access to various archives
 
@@ -13,7 +13,7 @@ SHARED_LIBS=	physfs		3.0
 HOMEPAGE=	http://icculus.org/physfs/
 
 # ZLib
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses pthread readline z
 

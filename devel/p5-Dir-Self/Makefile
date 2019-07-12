@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:52 sthen Exp $
 
 COMMENT =	__DIR__ constant for the directory your source file is in
 
@@ -8,6 +8,6 @@ DISTNAME =	Dir-Self-0.11
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

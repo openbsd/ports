@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:07 sthen Exp $
 
 COMMENT =	format TAP::Harness output as JUnit XML
 
@@ -8,7 +8,7 @@ DISTNAME =	TAP-Formatter-JUnit-0.11
 CATEGORIES =	devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CPAN_AUTHOR =	GTERMARS
 

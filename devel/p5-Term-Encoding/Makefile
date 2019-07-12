@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/17 20:23:23 cwen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:08 sthen Exp $
 
 COMMENT=	detect encoding of the current terminal
 
@@ -8,7 +8,7 @@ DISTNAME=	Term-Encoding-0.03
 CATEGORIES=	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_ENV+=	TEST_POD=Yes AUTHOR_TESTING=Yes
 

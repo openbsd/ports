@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:46 sthen Exp $
 
 COMMENT =	Catalyst plugin to subvert NEXT to use Class::C3
 
@@ -9,7 +9,7 @@ REVISION =	1
 CATEGORIES =	devel www
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =	www/p5-Catalyst-Runtime \
 		devel/p5-Class-C3

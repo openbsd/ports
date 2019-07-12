@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/18 20:49:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:42 sthen Exp $
 
 COMMENT=	lua binding of posix and pcre regex libraries
 DISTNAME=	lrexlib-2.4.0
@@ -11,7 +11,7 @@ HOMEPAGE=	http://lrexlib.luaforge.net/
 EXTRACT_SUFX=	.zip
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 USE_GMAKE=	Yes
 MAKE_ENV+=	MAKE_PROGRAM=${MAKE_PROGRAM} \

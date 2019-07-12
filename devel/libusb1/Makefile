@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/07/19 12:36:34 mpi Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:44:40 sthen Exp $
 
 COMMENT =		library for USB device access from userspace
 
@@ -16,7 +16,7 @@ HOMEPAGE =		http://www.libusb.info
 MAINTAINER =		Martin Pieuchot <mpi@openbsd.org>
 
 # LGPL 2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/20 19:56:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:44:50 sthen Exp $
 
 COMMENT =		perl objected oriented Date Time
 
@@ -11,7 +11,7 @@ REVISION =		2
 MAINTAINER = Andrew Fresh <afresh1@openbsd.org>
 
 # artistic_2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 CONFIGURE_STYLE =	modbuild

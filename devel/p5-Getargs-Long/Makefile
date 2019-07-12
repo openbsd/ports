@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/02/12 18:44:26 cwen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:56 sthen Exp $
 
 COMMENT=	parses long function arguments
 
@@ -8,7 +8,7 @@ DISTNAME =	Getargs-Long-1.1012
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	www/p5-URI
 RUN_DEPENDS=	devel/p5-Log-Agent>=0.105

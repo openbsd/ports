@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/15 16:40:59 bcallah Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:39 sthen Exp $
 
 COMMENT =	library of general purpose APIs
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://www.fefe.de/libowfat/
 MAINTAINER=	Jan Klemkow <j.klemkow@wemelug.de>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/03/08 02:04:18 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:44:46 sthen Exp $
 
 COMMENT=	automated accessor generation
 
@@ -8,7 +8,7 @@ DISTNAME=	Class-Accessor-0.51
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # An optional dependency, but useful
 RUN_DEPENDS=		devel/p5-Sub-Name

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/24 07:50:25 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:55 sthen Exp $
 
 COMMENT =	update access and modification timestamps of files
 
@@ -10,6 +10,6 @@ CATEGORIES =	devel
 MAINTAINER =	Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

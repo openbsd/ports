@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:00 sthen Exp $
 
 COMMENT =		simple starter kit for any module
 
@@ -12,7 +12,7 @@ CPAN_AUTHOR =		PETDANCE
 MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 DOC_DIR =	${PREFIX}/share/doc/p5-Module-Starter/
 

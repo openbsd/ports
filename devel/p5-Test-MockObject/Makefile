@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/12 15:02:05 cwen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:10 sthen Exp $
 
 COMMENT = 	perl extension for emulating troublesome interfaces
 
@@ -8,7 +8,7 @@ DISTNAME =	Test-MockObject-1.20180705
 CATEGORIES =	devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Universal-can>=1.20110617 \
 		devel/p5-Universal-isa>=1.20110614

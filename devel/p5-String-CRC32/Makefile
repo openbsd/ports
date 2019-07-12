@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/10/04 09:17:37 benoit Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:45:06 sthen Exp $
 
 COMMENT =	interface for cyclic redundancy check generation
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Public domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c perl
 

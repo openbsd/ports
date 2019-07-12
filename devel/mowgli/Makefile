@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/03/16 18:07:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:43 sthen Exp $
 
 COMMENT =	performance and usability oriented extensions to C
 
@@ -13,7 +13,7 @@ CATEGORIES =	devel
 HOMEPAGE =	http://atheme.org/projects/libmowgli.html
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://distfiles.atheme.org/
 

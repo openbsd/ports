@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/11 20:28:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:39 sthen Exp $
 
 COMMENT=		low-level event loop management library
 
@@ -10,7 +10,7 @@ CATEGORIES=		devel
 HOMEPAGE=		http://liboop.ofb.net/
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://distfiles.nl/
 

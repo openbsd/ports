@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/01 19:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:05 sthen Exp $
 
 COMMENT =		return across multiple call levels
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 REVISION =		0
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CPAN_AUTHOR =		MAUKE
 

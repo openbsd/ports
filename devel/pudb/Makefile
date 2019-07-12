@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/15 12:04:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:17 sthen Exp $
 
 COMMENT =		console-based visual debugger for Python
 
@@ -10,7 +10,7 @@ REVISION =		0
 CATEGORIES =		devel
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

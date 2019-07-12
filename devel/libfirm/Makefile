@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/24 02:12:35 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:38 sthen Exp $
 
 # Has backends for amd64, arm (32-bit), i386, mips (32-bit), sparc (32-bit)
 ONLY_FOR_ARCHS =	amd64 arm i386
@@ -19,7 +19,7 @@ HOMEPAGE =	https://pp.ipd.kit.edu/firm/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += m
 

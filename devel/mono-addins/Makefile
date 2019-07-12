@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/03/29 19:36:13 robert Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:44:42 sthen Exp $
 
 # need some kind of tls
 ONLY_FOR_ARCHS =	${CLANG_ARCHS}
@@ -17,7 +17,7 @@ CATEGORIES=		devel lang
 HOMEPAGE=		http://www.mono-project.com/Mono.Addins
 
 # MIT X11, MPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/mono
 

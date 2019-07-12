@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.29 2019/05/01 03:51:17 kmos Exp $
+#$OpenBSD: Makefile,v 1.30 2019/07/12 20:44:38 sthen Exp $
 
 COMMENT =	accessing DVD files
 
@@ -15,7 +15,7 @@ HOMEPAGE =	http://dvdnav.mplayerhq.hu/
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	dvdcss
 

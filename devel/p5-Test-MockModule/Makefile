@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:45:10 sthen Exp $
 
 COMMENT =	override subroutines in a module for unit testing
 
@@ -8,7 +8,7 @@ DISTNAME =	Test-MockModule-0.11
 CATEGORIES =	devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE =	modbuild
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:40 sthen Exp $
 
 COMMENT-main =		library to handle Apple Property List format
 COMMENT-python =	python bindings for libplist
@@ -19,7 +19,7 @@ CATEGORIES =		devel audio
 HOMEPAGE =		http://www.libimobiledevice.org
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/downloads/
 EXTRACT_SUFX =		.tar.bz2

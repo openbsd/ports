@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/08 15:44:45 danj Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:02 sthen Exp $
 
 COMMENT=	compare numbers
 
@@ -9,6 +9,6 @@ CATEGORIES=	devel
 REVISION=	0
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

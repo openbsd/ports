@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/09 11:25:29 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:52 sthen Exp $
 
 COMMENT =	obtain the REFCNT value of a referent
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c perl
 

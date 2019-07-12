@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/16 21:19:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:39 sthen Exp $
 
 COMMENT =		high-speed character set detection library
 
@@ -13,7 +13,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://atheme.org/projects/libguess.html
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://rabbit.dereferenced.org/~nenolod/distfiles/
 

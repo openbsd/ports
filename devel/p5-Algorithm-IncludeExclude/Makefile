@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:44 sthen Exp $
 
 COMMENT =	build and evaluate include/exclude lists
 
@@ -9,7 +9,7 @@ REVISION =	1
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 # test dependency that gets pulled in by Module::Install at build time
 BUILD_DEPENDS =	devel/p5-Test-Exception

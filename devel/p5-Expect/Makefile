@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/05/20 07:55:14 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:53 sthen Exp $
 
 COMMENT =		talk to other applications
 
@@ -9,7 +9,7 @@ DISTNAME =		Expect-${V}
 CATEGORIES =		devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		devel/p5-IO-Tty
 MODCPAN_EXAMPLES =	Yes

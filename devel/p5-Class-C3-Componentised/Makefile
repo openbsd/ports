@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/01/06 23:19:09 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:46 sthen Exp $
 
 COMMENT=	load mix-ins or components to your C3-based class
 
@@ -8,7 +8,7 @@ DISTNAME=	Class-C3-Componentised-1.001002
 CATEGORIES=	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Class-C3 \
 		devel/p5-Class-Inspector \

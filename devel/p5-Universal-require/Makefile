@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:14 sthen Exp $
 
 COMMENT=	extends require to work on variables
 
@@ -10,6 +10,6 @@ PKGNAME=	p5-Universal-require-${V}
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2015/12/30 22:58:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:45:17 sthen Exp $
 
 COMMENT=	Python codes checker
 
@@ -10,7 +10,7 @@ CATEGORIES=    	devel
 HOMEPAGE=	http://pychecker.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pychecker/}
 

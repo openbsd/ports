@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:01 sthen Exp $
 
 COMMENT =	mark overload code symbols as methods
 
@@ -8,7 +8,7 @@ DISTNAME =	MooseX-MarkAsMethods-0.15
 CATEGORIES =	devel
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-B-Hooks-EndOfScope \
 		devel/p5-Moose \

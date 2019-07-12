@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/04/22 08:19:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:44 sthen Exp $
 
 COMMENT=	library and toolset to operate arrays of data
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://code.entropywave.com/projects/orc/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m pthread
 

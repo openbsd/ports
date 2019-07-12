@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/20 22:15:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:45:15 sthen Exp $
 
 COMMENT=	internationalization library written in Perl
 
@@ -10,7 +10,7 @@ CPAN_AUTHOR=	GUIDO
 REVISION=	0
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv intl perl
 

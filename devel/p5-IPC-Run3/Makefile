@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:57 sthen Exp $
 
 COMMENT=	run a subprocess in batch mode
 
@@ -7,6 +7,6 @@ PKG_ARCH=	*
 DISTNAME=	IPC-Run3-0.048
 CATEGORIES=	devel
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

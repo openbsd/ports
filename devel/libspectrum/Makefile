@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2018/07/04 18:53:27 benoit Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:44:40 sthen Exp $
 
 COMMENT =		ZX Spectrum emulator file format library
 DISTNAME =		libspectrum-1.4.4
@@ -10,7 +10,7 @@ HOMEPAGE =		http://fuse-emulator.sourceforge.net/libspectrum.php
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		FLAC audiofile bz2 gcrypt glib-2.0 gpg-error iconv
 WANTLIB +=		intl m ogg pcre pthread z

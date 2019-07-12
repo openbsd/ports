@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/08 16:05:32 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:45:10 sthen Exp $
 
 COMMENT =		framework for more readable interactive test scripts
 
@@ -6,7 +6,7 @@ DISTNAME =		Test-Inter-1.09
 CATEGORIES =		devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

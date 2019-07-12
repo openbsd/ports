@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/19 21:13:26 cwen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:08 sthen Exp $
 
 COMMENT=		module to fetch the size of the terminal
 
@@ -7,7 +7,7 @@ DISTNAME=		Term-Size-0.209
 CATEGORIES=		devel
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

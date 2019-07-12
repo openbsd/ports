@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/02 07:13:07 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:41 sthen Exp $
 
 COMMENT =	compatibility module providing Lua 5.3 style APIs
 
@@ -14,7 +14,7 @@ CATEGORIES =	devel
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/lua
 WANTLIB +=	${MODLUA_WANTLIB}

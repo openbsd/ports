@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/22 18:24:05 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:53 sthen Exp $
 
 COMMENT =		guess C++ compiler and flags
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 

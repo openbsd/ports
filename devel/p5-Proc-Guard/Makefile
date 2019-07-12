@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:05 sthen Exp $
 
 COMMENT =	process runner with RAII pattern
 
@@ -8,7 +8,7 @@ CATEGORIES =	devel
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

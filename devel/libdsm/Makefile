@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/10/17 08:40:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:37 sthen Exp $
 
 COMMENT=	minimalist and read-only implementation of SMB
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://videolabs.github.io/libdsm/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c pthread iconv tasn1
 

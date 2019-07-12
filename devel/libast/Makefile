@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:44:37 sthen Exp $
 
 COMMENT=		library of assorted spiffy things
 
@@ -11,7 +11,7 @@ CATEGORIES=		devel
 HOMEPAGE=		http://eterm.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		ICE m SM freetype X11 Xau Xdmcp Xext \
 			xcb z Imlib2>=2
 

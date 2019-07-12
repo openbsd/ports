@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:52 sthen Exp $
 
 COMMENT=		per-line Perl profiler
 
@@ -8,6 +8,6 @@ DISTNAME=		Devel-SmallProf-2.02
 REVISION=		1
 CATEGORIES=		devel
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

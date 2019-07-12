@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/12/05 16:25:45 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:54 sthen Exp $
 
 COMMENT=	common rules for searching for Perl things
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-File-Find-Rule>=0.20 \
 		devel/p5-Params-Util

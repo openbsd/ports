@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:12 sthen Exp $
 
 COMMENT =	test that freed memory objects were, indeed, freed
 
@@ -8,6 +8,6 @@ DISTNAME =	Test-Weaken-3.022000
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 .include <bsd.port.mk>

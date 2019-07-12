@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:05 sthen Exp $
 
 COMMENT=	Perl Object Class for Revision Control System (RCS)
 
@@ -11,6 +11,6 @@ PKG_ARCH=	*
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

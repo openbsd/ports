@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:52 sthen Exp $
 
 COMMENT=		generate a size report for all elements in a structure
 
@@ -8,7 +8,7 @@ CATEGORIES=		devel
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

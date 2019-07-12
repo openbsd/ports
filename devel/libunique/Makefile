@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/06/13 15:48:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:44:40 sthen Exp $
 
 PORTROACH +=		limit:^1
 
@@ -15,7 +15,7 @@ SHARED_LIBS +=  unique-1.0           2.0      # .100.6
 CATEGORIES =	devel
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 cairo dbus-1 dbus-glib-1 expat ffi fontconfig

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/12/02 01:04:48 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:03 sthen Exp $
 
 COMMENT=		bridge that allows POE to be driven by Event.pm
 
@@ -11,7 +11,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_ARGS+=	--default
 

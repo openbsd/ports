@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/23 08:49:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:39 sthen Exp $
 
 COMMENT=	client library for accessing NFS
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://github.com/sahlberg/libnfs
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # LGPLv2.1+, GPLv3+ and BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

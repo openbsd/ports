@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/09/04 12:46:11 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:42 sthen Exp $
 
 COMMENT =	development environment for native Windows applications
 
@@ -16,7 +16,7 @@ MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # Headers: public domain
 # Compiler/toolchain: GPL
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += c z
 USE_GMAKE =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/07 20:18:10 cwen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:55 sthen Exp $
 
 COMMENT=	simple, sane and efficient module to slurp a file
 
@@ -10,7 +10,7 @@ DISTNAME=	File-Slurper-0.012
 CATEGORIES=	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 TEST_DEPENDS=	devel/p5-Test-Warnings
 

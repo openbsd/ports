@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/20 19:56:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:59 sthen Exp $
 
 COMMENT =	dispatches messages to one or more outputs
 
@@ -8,7 +8,7 @@ DISTNAME =	Log-Dispatch-2.51
 CATEGORIES =	devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Module-Runtime \
 		devel/p5-Dist-CheckConflicts \

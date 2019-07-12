@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:52 sthen Exp $
 
 COMMENT=		assert performance of perl regexps
 
@@ -8,7 +8,7 @@ CATEGORIES=		devel
 REVISION =		1
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

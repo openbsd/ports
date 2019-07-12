@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/13 18:06:42 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:17 sthen Exp $
 
 COMMENT =		namespace for backported Python features
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://pypi.python.org/pypi/backports
 MASTER_SITES =		https://dev.gentoo.org/~radhermit/dist/
 
 # Python Software Foundation License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

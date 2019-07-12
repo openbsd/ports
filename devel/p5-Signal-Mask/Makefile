@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/01 19:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:06 sthen Exp $
 
 COMMENT =		utility functions dealing with signals
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 REVISION =		0
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 

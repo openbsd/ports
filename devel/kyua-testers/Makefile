@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/05/17 09:55:44 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:37 sthen Exp $
 
 COMMENT =		scriptable interfaces to interact with test programs
 DISTNAME =		kyua-testers-0.2
@@ -10,7 +10,7 @@ HOMEPAGE =		https://github.com/jmmv/kyua
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += atf-c c
 

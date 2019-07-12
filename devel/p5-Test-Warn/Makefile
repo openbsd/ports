@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/10/20 17:52:53 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:12 sthen Exp $
 
 COMMENT =	Perl extension to test methods for warnings
 
@@ -8,7 +8,7 @@ CATEGORIES =	devel
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # perl_5
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*

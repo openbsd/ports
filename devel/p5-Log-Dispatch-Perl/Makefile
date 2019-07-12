@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/05/19 07:50:27 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:59 sthen Exp $
 
 COMMENT =	use core Perl functions for logging
 
@@ -8,7 +8,7 @@ DISTNAME =	Log-Dispatch-Perl-0.04
 CATEGORIES =	devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Log-Dispatch
 

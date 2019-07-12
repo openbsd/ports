@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/20 19:56:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:45 sthen Exp $
 
 COMMENT =		stat() with BSD 4.4 extentions
 
@@ -10,7 +10,7 @@ CATEGORIES =		devel
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c perl
 

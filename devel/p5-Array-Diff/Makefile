@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/15 23:08:12 cwen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:44 sthen Exp $
 
 COMMENT= 	perform diffs on arrays
 
@@ -9,7 +9,7 @@ PKGNAME =	p5-${DISTNAME}000
 CATEGORIES=	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_ENV+=	TEST_POD=1
 

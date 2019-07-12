@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:45:04 sthen Exp $
 
 COMMENT= 	check if the documentation of a module is comprehensive
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	perl
 

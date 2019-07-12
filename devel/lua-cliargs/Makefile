@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/07 16:52:34 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:41 sthen Exp $
 
 COMMENT =	command line parser for Lua
 
@@ -13,7 +13,7 @@ GH_TAGNAME =	v${V}
 CATEGORIES =	devel
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/lua
 

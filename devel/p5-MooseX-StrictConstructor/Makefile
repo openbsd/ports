@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/08/15 09:55:24 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:01 sthen Exp $
 
 COMMENT =	blow up object constructors on unknown attributes
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Artistic 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 

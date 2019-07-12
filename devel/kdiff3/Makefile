@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/06/02 19:17:09 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:44:36 sthen Exp $
 
 COMMENT =	compares and merges multiple files or directories
 
@@ -12,7 +12,7 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdiff3/}
 EXTRACT_SUFX =	.tar.xz
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

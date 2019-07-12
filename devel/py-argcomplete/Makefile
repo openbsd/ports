@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/28 20:51:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:17 sthen Exp $
 
 COMMENT =	bash tab completion for argparse
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 REVISION =	0
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =	lang/python
 

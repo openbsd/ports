@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/14 09:28:56 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:13 sthen Exp $
 
 COMMENT =	parse strings that represent time durations
 
@@ -10,7 +10,7 @@ PKG_ARCH =	*
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =	devel/p5-Exporter-Lite
 

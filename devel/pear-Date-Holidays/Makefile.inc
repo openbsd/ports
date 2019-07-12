@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.4 2019/05/08 14:24:40 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2019/07/12 20:45:16 sthen Exp $
 
 CATEGORIES =	devel
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .if defined(HOLNAME)
 DISTNAME =	Date_Holidays_${HOLNAME}

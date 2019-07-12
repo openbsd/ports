@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:14 sthen Exp $
 
 COMMENT =	constants for libzmq
 
@@ -8,7 +8,7 @@ DISTNAME =	ZMQ-Constants-1.04
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CPAN_AUTHOR = 	DMAKI
 

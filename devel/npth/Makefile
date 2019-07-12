@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/09/18 10:08:23 pea Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:43 sthen Exp $
 
 COMMENT=	new GNU Portable Threads Library
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://www.gnupg.org/software/npth/index.html
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2019/05/01 10:06:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2019/07/12 20:44:40 sthen Exp $
 
 COMMENT=		window navigator construction kit
 
@@ -14,7 +14,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 XRes Xext Xrender atk-1.0 c cairo cairo-gobject
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3

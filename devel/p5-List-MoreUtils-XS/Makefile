@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/12/22 15:52:03 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:58 sthen Exp $
 
 COMMENT =	provide compiled List::MoreUtils functions
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl 5, Apache 2.0, BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c perl
 

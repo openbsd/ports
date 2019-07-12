@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/10 03:11:42 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:45 sthen Exp $
 
 COMMENT =	verify requirements in a CPAN::Meta object
 
@@ -10,7 +10,7 @@ CATEGORIES =	devel
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # perl_5
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 TEST_DEPENDS =	devel/p5-Test-Deep
 

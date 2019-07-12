@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:04 sthen Exp $
 
 COMMENT=	accessing the Windows registry
 
@@ -8,6 +8,6 @@ DISTNAME =	Parse-Win32Registry-1.0
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

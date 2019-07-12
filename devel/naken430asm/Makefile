@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:12 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:43 sthen Exp $
 
 COMMENT=		assembler/disassembler/simulator for MSP430 MCUs
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://www.mikekohn.net/micro/naken430asm_msp430_assembler.php
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://downloads.mikekohn.net/naken430asm/
 

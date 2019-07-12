@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:44 sthen Exp $
 
 COMMENT =	simple container for the AutoXS header file
 
@@ -10,7 +10,7 @@ CATEGORIES =	devel
 CPAN_AUTHOR =	SMUELLER
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	perl
 

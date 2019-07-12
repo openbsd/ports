@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/01/13 14:16:40 cwen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:10 sthen Exp $
 
 COMMENT =		module for tracing memory leaks
 
@@ -7,7 +7,7 @@ DISTNAME =		Test-LeakTrace-0.16
 CATEGORIES =		devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

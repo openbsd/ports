@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/12/04 17:56:27 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:44:56 sthen Exp $
 
 COMMENT =	graph data structures in perl
 
@@ -9,6 +9,6 @@ CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

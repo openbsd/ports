@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/12/02 01:05:59 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:03 sthen Exp $
 
 COMMENT=		bridge that allows POE to be driven by Tk
 
@@ -10,7 +10,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_ARGS+=	--default
 

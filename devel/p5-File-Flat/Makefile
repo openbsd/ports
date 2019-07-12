@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/05 22:18:49 cwen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:54 sthen Exp $
 
 COMMENT=	implements a flat filesystem
 
@@ -11,7 +11,7 @@ CATEGORIES=	devel
 FIX_EXTRACT_PERMISSIONS=	Yes
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/p5-File-Copy-Recursive \
 			devel/p5-File-Remove \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/09 08:07:01 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:51 sthen Exp $
 
 COMMENT =	datetime sets and set math
 
@@ -8,7 +8,7 @@ DISTNAME =	DateTime-Set-0.3900
 CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =		devel/p5-DateTime \
 			devel/p5-Params-Validate \

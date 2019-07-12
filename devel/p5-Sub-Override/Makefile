@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:07 sthen Exp $
 
 COMMENT=	extension for easily overriding subroutines
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 TEST_DEPENDS =	devel/p5-Test-Fatal
 

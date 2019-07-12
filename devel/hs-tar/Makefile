@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/01/22 21:43:45 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:35 sthen Exp $
 
 COMMENT =		tar bindings for Haskell
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel archivers
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

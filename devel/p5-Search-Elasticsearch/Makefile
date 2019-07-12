@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/01/03 18:37:35 giovanni Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:45:06 sthen Exp $
 
 COMMENT =	elasticsearch perl module
 
@@ -10,7 +10,7 @@ CATEGORIES =	devel
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	converters/p5-JSON-MaybeXS \
 		devel/p5-Log-Any>=1.02 \

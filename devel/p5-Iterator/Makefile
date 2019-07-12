@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:58 sthen Exp $
 
 COMMENT =	general-purpose iterator class.
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*

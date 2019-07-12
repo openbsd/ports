@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:56 sthen Exp $
 
 COMMENT = 	Perl interface to Git repositories
 
@@ -10,7 +10,7 @@ CATEGORIES =	devel
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		devel/p5-System-Command
 TEST_DEPENDS =		devel/git

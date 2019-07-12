@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/05/05 17:00:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:38 sthen Exp $
 
 COMMENT =	event expression library
 DISTNAME =	libee-0.4.1
@@ -11,7 +11,7 @@ HOMEPAGE =	http://www.libee.org/
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c estr m
 

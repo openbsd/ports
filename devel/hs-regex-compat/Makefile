@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/01/22 21:42:27 kili Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:44:34 sthen Exp $
 
 COMMENT =		module layer over regex-posix to replace Text.Regex
 
@@ -15,7 +15,7 @@ HOMEPAGE =		http://sourceforge.net/projects/lazy-regex
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

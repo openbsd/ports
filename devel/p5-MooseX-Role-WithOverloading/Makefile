@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/19 19:58:51 danj Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:45:01 sthen Exp $
 
 COMMENT=		roles which support overloading
 
@@ -10,7 +10,7 @@ REVISION=		0
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/03/01 13:52:46 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:14 sthen Exp $
 
 COMMENT =		pragma to call methods on native types
 
@@ -7,7 +7,7 @@ DISTNAME =		autobox-2.85
 CATEGORIES =		devel
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c perl
 MODULES =		cpan

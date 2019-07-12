@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/02/11 14:40:11 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:09 sthen Exp $
 
 COMMENT =		test routines for external commands
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 MAINTAINER =		Klemens Nanni <kl3@posteo.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 TEST_DEPENDS =		devel/p5-Test-Pod \

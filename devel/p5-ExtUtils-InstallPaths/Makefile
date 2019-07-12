@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/08 21:36:07 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:53 sthen Exp $
 
 COMMENT =	Build.PL install path logic made easy
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 REVISION =	0
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-ExtUtils-Config
 

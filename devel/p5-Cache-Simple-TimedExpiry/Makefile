@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:45 sthen Exp $
 
 COMMENT=	lightweight cache with timed expiration
 
@@ -8,6 +8,6 @@ DISTNAME=	Cache-Simple-TimedExpiry-0.27
 REVISION=	3
 CATEGORIES=	devel
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

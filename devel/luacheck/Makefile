@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/20 02:21:56 jsg Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:41 sthen Exp $
 
 COMMENT=	tool for linting and static analysis of Lua code
 CATEGORIES=	devel
@@ -12,7 +12,7 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 BUILD_DEPENDS=	textproc/py-sphinx
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_TEST=		Yes
 

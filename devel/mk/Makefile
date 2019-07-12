@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/01 20:12:52 danj Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:42 sthen Exp $
 
 COMMENT=	Streamlined replacement for make
 
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	devel/libfmt \
 		devel/libutf
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

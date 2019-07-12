@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/03 11:59:52 cwen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:10 sthen Exp $
 
 COMMENT=	thoroughly testing objects via registered handlers
 
@@ -11,7 +11,7 @@ CATEGORIES=	devel
 FIX_EXTRACT_PERMISSIONS=	Yes
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_ENV=	AUTOMATED_TESTING=Yes TEST_POD=Yes
 

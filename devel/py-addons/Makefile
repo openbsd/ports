@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/08 13:17:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:17 sthen Exp $
 
 COMMENT =		extend python objects with addons
 
@@ -11,7 +11,7 @@ CATEGORIES =		devel
 
 
 # PSF or ZPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 EXTRACT_SUFX =		.zip
