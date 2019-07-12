@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/29 13:23:22 bluhm Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 21:02:17 sthen Exp $
 
 COMMENT=		automatically apply roles at object creation time
 
@@ -7,7 +7,7 @@ DISTNAME =		MooseX-Traits-0.13
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

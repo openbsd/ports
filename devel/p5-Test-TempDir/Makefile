@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/12/05 16:25:45 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 21:02:18 sthen Exp $
 
 COMMENT=		temporary files support for testing
 
@@ -8,7 +8,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

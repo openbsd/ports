@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2019/07/12 21:02:13 sthen Exp $
 
 COMMENT=	generic playlist manager for UNIX
 
@@ -9,7 +9,7 @@ REVISION =	5
 HOMEPAGE=	https://www.gnu.org/software/xhippo/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=  Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 21:02:24 sthen Exp $
 
 COMMENT=	graphical Direct-Connect client
 
@@ -9,7 +9,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://wxdcgui.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
 WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm bz2 c crypto dc drm expat

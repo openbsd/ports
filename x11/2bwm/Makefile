@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/07/26 23:55:47 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 21:02:29 sthen Exp $
 
 COMMENT =	fast floating window manager
 DISTNAME = 	2bwm-0.3
@@ -8,7 +8,7 @@ HOMEPAGE =	https://github.com/venam/2bwm
 MAINTAINER = 	Kaashif Hymabaccus <kaashif@kaashif.co.uk>
 
 # ISC
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB = 	c xcb xcb-ewmh xcb-icccm xcb-keysyms xcb-randr xcb-xrm
 

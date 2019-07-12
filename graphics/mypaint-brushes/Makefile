@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 21:02:22 sthen Exp $
 
 COMMENT =	brushes used by software using libmypaint
 
@@ -9,7 +9,7 @@ GH_TAGNAME =	v1.3.0
 CATEGORIES =	graphics
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15

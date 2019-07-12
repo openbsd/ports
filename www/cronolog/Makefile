@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/01/22 18:41:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 21:02:28 sthen Exp $
 
 COMMENT=	web log rotation program
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.cronolog.org/download/
 HOMEPAGE=	http://www.cronolog.org/
 
 # GPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c 
 
 SEPARATE_BUILD=	Yes

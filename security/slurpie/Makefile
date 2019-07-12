@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/05/06 17:23:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 21:02:25 sthen Exp $
 
 COMMENT=	distributed passwd file cracker
 
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.jps.net/coati/archives/slurpie.html
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

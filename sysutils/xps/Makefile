@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/06/25 20:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 21:02:26 sthen Exp $
 
 DISTNAME=       xps-4.2
 REVISION=	9
@@ -6,7 +6,7 @@ CATEGORIES=     sysutils x11
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=motif-pstree/}
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		ICE SM X11 Xext Xmu Xt c kvm m Xm
 
 COMMENT=	graphically display and dynamically update the process tree

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 21:02:16 sthen Exp $
 
 COMMENT=		localization data for perl DateTime.pm
 
@@ -8,7 +8,7 @@ DISTNAME =		DateTime-Locale-0.46
 CATEGORIES=		devel
 
 # Perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/p5-List-MoreUtils \
 			devel/p5-Params-Validate

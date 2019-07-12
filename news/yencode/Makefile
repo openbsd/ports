@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/20 22:15:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 21:02:24 sthen Exp $
 
 COMMENT=	encoder/decoder tool for the Usenet yEnc encoding format
 
@@ -13,7 +13,7 @@ LIB_DEPENDS=	devel/gettext,-runtime
 WANTLIB=	c iconv intl
 
 # GPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/08 01:04:36 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 21:02:13 sthen Exp $
 
 COMMENT=	Makefile to build and upload Arduino sketches
 
@@ -11,7 +11,7 @@ PKGNAME=	arduino-makefile-${V}
 CATEGORIES=	devel
 
 # LGPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/arduino \
 		devel/gmake \

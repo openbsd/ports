@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/08/03 13:06:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 21:02:13 sthen Exp $
 
 BROKEN-m88k=	out of memory compiling cmu_us_kal_diphone.c
 BROKEN-mips64=	GCC hangs compiling cmu_us_kal_diphone.c
@@ -28,7 +28,7 @@ CATEGORIES=	audio
 
 HOMEPAGE=	http://www.cmuflite.org/
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c m sndio
 
 MASTER_SITES=	http://www.speech.cs.cmu.edu/flite/packed/flite-${VERSION}/

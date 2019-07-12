@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/08 15:44:45 danj Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:15 sthen Exp $
 
 COMMENT=	subclass of AppConfig that provides standard options
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 REVISION =	0
 
 # Perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-AppConfig
 

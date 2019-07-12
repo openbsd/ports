@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/15 07:04:47 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 21:02:29 sthen Exp $
 
 COMMENT =	library to do multipart form posts
 
@@ -8,7 +8,7 @@ HOMEPAGE =	https://github.com/nicksieger/multipart-post
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =		lang/ruby
 

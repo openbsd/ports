@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/03/20 19:57:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 21:02:25 sthen Exp $
 
 COMMENT=	module to implement the Twofish cipher
 
@@ -8,7 +8,7 @@ CATEGORIES=	security
 REVISION=	2
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

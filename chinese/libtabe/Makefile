@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2016/03/11 20:07:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 21:02:13 sthen Exp $
 
 COMMENT=	library for Chinese language processing
 
@@ -12,7 +12,7 @@ SHARED_LIBS +=	bims                 2.1      # .0.0
 HOMEPAGE=	http://libtabe.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c lib/db/db=3
 

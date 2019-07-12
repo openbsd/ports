@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/19 19:13:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:30 sthen Exp $
 
 COMMENT=		command line interface to X selections
 GH_ACCOUNT=		astrand
@@ -8,7 +8,7 @@ REVISION=		1
 CATEGORIES=		x11
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB+=		X11 Xmu c
 

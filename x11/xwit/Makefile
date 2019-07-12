@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/10/11 10:56:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 21:02:30 sthen Exp $
 
 COMMENT=	X11 window interface tool
 
@@ -7,7 +7,7 @@ REVISION=	2
 CATEGORIES=	x11
 
 # BSD-like, badly worded
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=utilities/}
 

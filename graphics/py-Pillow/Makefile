@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/04 14:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 21:02:22 sthen Exp $
 
 COMMENT=		Python Imaging Library (maintained fork of PIL)
 
@@ -11,7 +11,7 @@ HOMEPAGE=		https://python-pillow.org/
 
 # PIL Software License
 # Permission to use, copy, modify and distribute freely.
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 FLAVORS=		python3
 FLAVOR?=

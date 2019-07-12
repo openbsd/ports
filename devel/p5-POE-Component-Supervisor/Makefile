@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 21:02:17 sthen Exp $
 
 COMMENT=		Erlang inspired babysitting
 
@@ -9,7 +9,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

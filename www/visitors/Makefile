@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 21:02:29 sthen Exp $
 
 COMMENT=	very fast web log analyzer
 
@@ -7,7 +7,7 @@ REVISION=	0
 CATEGORIES=	www sysutils
 
 # GPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=	c
 
 HOMEPAGE=	http://www.hping.org/visitors/

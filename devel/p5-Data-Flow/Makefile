@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 21:02:15 sthen Exp $
 
 COMMENT=	extension for simple-minded recipe-controlled build of data
 
@@ -8,6 +8,6 @@ DISTNAME =	Data-Flow-1.02
 CATEGORIES=	devel
 REVISION =	0
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

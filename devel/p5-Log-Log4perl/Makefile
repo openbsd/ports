@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/20 19:56:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 21:02:17 sthen Exp $
 
 COMMENT=	Log4j implementation for Perl
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 REVISION=	0
 
 # Perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 TEST_DEPENDS=	devel/p5-Log-Dispatch \
 		devel/p5-Log-Dispatch-FileRotate \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/09/22 12:57:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 21:02:19 sthen Exp $
 
 COMMENT =	aquarium animation in ASCII art
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://www.robobunny.com/projects/asciiquarium/html/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MASTER_SITES =	http://www.robobunny.com/projects/asciiquarium/
 

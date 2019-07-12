@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/14 17:03:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:29 sthen Exp $
 
 COMMENT =	ruby-unicorn for sleepy apps and slow clients
 
@@ -10,7 +10,7 @@ HOMEPAGE =	https://bogomips.org/rainbows/
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # Ruby/GPLv2
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =	lang/ruby
 

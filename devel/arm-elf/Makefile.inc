@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2015/01/22 22:17:46 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2019/07/12 21:02:14 sthen Exp $
 
 CONFIG=		arm-elf
 PKGNAME?=	${CONFIG}-${DISTNAME}
@@ -7,7 +7,7 @@ CATEGORIES+=	devel
 # GPLv3
 # For newlib: multiple copyrights, but basically BSD.
 #   See: ${PREFIX}/share/doc/newlib
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--target=arm-elf    \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/06/09 08:32:58 bentley Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 21:02:22 sthen Exp $
 
 COMMENT=	Japanese handwriting recognition
 
@@ -9,7 +9,7 @@ CATEGORIES=	japanese
 HOMEPAGE=	https://fishsoup.net/software/kanjipad/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://fishsoup.net/software/kanjipad/
 

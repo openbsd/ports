@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/07 17:04:58 danj Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 21:02:20 sthen Exp $
 
 COMMENT=	jezzball-style, penguin puzzle game
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.mattdm.org/icebreaker/
 
 MASTER_SITES=	${HOMEPAGE}1.2.x/
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		SDL X11 Xext c m pthread usbhid xcb \
 			SDL_mixer smpeg>=1.3
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/11 21:39:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 21:02:13 sthen Exp $
 
 COMMENT=	convert data to and from C structs
 
@@ -10,7 +10,7 @@ CATEGORIES=	converters
 HOMEPAGE=	http://www.inf.puc-rio.br/~roberto/struct/
 
 # MIT
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 

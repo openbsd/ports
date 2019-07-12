@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/12/05 12:50:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 21:02:30 sthen Exp $
 
 COMMENT=	tails a given file anywhere on your X11 root window
 
@@ -10,7 +10,7 @@ HOMESITE=	http://www.goof.com/pcg/marc
 HOMEPAGE=	${HOMESITE}/root-tail.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext c
 

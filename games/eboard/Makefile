@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2019/07/12 21:02:20 sthen Exp $
 
 COMMENT=	gtk+2 chess board interface
 
@@ -9,7 +9,7 @@ REVISION=	4
 HOMEPAGE=	http://www.bergo.eng.br/eboard/
 
 # GPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 		Xrandr Xrender atk-1.0 c cairo fontconfig freetype \

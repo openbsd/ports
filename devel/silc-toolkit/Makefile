@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2018/11/15 21:43:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 21:02:19 sthen Exp $
 
 COMMENT=	toolkit for the development of SILC applications
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://silcnet.org/dev.html
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	iconv pthread
 

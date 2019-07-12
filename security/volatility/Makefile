@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/01/03 08:02:25 rpointel Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 21:02:25 sthen Exp $
 
 COMMENT =		memory artifact extraction utility framework
 
@@ -18,7 +18,7 @@ HOMEPAGE =		http://www.volatilityfoundation.org/
 MAINTAINER = 		Remi Pointel <rpointel@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS = 	Yes

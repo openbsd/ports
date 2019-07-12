@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/05/07 12:40:56 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 21:02:16 sthen Exp $
 
 COMMENT =	capture STDOUT and STDERR from Perl code, subprocesses or XS
 
@@ -11,6 +11,6 @@ REVISION =	0
 MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 
 # Perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

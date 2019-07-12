@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/11/29 23:12:59 schwarze Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 21:02:23 sthen Exp $
 
 COMMENT=		personal file manager
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://p-f-m.sourceforge.net/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=p-f-m/}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 NO_BUILD=		Yes
 PKG_ARCH=		*

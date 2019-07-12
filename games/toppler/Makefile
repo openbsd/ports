@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 21:02:21 sthen Exp $
 
 COMMENT=		Nebulous rewrite of Tower Toppler
 
@@ -9,7 +9,7 @@ CATEGORIES=		games
 HOMEPAGE=		http://toppler.sourceforge.net/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += FLAC SDL SDL_mixer c iconv intl m ogg pthread smpeg sndio
 WANTLIB += ${COMPILER_LIBCXX} usbhid vorbis vorbisfile z mikmod

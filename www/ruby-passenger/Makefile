@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2019/06/25 20:25:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2019/07/12 21:02:29 sthen Exp $
 
 COMMENT =		ruby web application server/nginx module
 BROKEN-alpha =		.got subsegment exceeds 64K (size 83312)
@@ -17,7 +17,7 @@ MASTER_SITES0 =	https://nginx.org/download/
 HOMEPAGE =	https://www.phusionpassenger.com/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =		lang/ruby
 

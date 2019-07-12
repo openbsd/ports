@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/23 05:37:16 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 21:02:22 sthen Exp $
 
 COMMENT =	library for making brushstrokes
 
@@ -15,7 +15,7 @@ CATEGORIES =	graphics
 HOMEPAGE =	http://mypaint.org/
 
 # ISC
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB += babl-0.1 ffi gegl-0.3 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 iconv intl json-c json-glib-1.0

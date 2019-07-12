@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/05/10 11:51:14 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:16 sthen Exp $
 
 COMMENT=		use other catalog formats in Locale::Maketext
 
@@ -8,6 +8,6 @@ DISTNAME =		Locale-Maketext-Lexicon-1.00
 CATEGORIES=		devel
 
 # MIT
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

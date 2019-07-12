@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/05/07 17:04:58 danj Exp $
+# $OpenBSD: Makefile,v 1.44 2019/07/12 21:02:20 sthen Exp $
 
 COMMENT=	gtk+ clone of the lines ball logic game
 
@@ -11,7 +11,7 @@ MASTER_SITES=	${HOMEPAGE}dist/ \
 HOMEPAGE=	http://gtkballs.antex.ru/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype

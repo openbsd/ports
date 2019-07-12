@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/03/28 11:56:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 21:02:27 sthen Exp $
 
 COMMENT=		module to split text into sentences
 
@@ -8,6 +8,6 @@ DISTNAME =		Lingua-EN-Sentence-0.30
 CATEGORIES=		textproc
 
 # Perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

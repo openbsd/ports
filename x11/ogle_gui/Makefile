@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/06/13 15:48:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 21:02:29 sthen Exp $
 
 CATEGORIES=	x11
 
@@ -13,7 +13,7 @@ MASTER_SITES=	${HOMEPAGE}/dist/
 CONFIGURE_STYLE=	gnu
 
 # GPL
-PERMIT_PACKAGE_CDROM=Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo dvdcontrol expat ffi fontconfig

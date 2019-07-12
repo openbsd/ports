@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/05/07 12:40:56 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 21:02:17 sthen Exp $
 
 COMMENT =	create an archive of TAP results
 
@@ -13,7 +13,7 @@ CONFIGURE_STYLE =	modbuild
 MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 
 # Perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	devel/p5-YAML-Tiny

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/20 20:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 21:02:14 sthen Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers GNU gdb
 
@@ -10,7 +10,7 @@ REVISION=	10
 HOMEPAGE=	https://www.gnu.org/software/gdb/gdb.html
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c expat m curses
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/10/27 18:35:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:18 sthen Exp $
 
 COMMENT =	provides a registry of file types
 
@@ -8,7 +8,7 @@ CATEGORIES =	devel
 HOMEPAGE =	https://github.com/cjheath/polyglot
 
 # MIT
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =		lang/ruby
 

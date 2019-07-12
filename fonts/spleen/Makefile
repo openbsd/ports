@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/06/01 20:54:12 fcambus Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 21:02:19 sthen Exp $
 
 COMMENT =	monospaced bitmap fonts for consoles and terminals
 
@@ -10,7 +10,7 @@ CATEGORIES =	fonts
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MASTER_SITES =	https://github.com/fcambus/spleen/releases/download/${V}/
 

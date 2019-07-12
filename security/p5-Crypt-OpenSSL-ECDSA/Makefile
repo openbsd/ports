@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/05/24 18:35:14 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 21:02:25 sthen Exp $
 
 COMMENT =	ECDSA encoding and decoding using OpenSSL
 
@@ -8,7 +8,7 @@ DISTNAME =	Crypt-OpenSSL-ECDSA-0.08
 CATEGORIES =	security
 
 # Perl
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB +=	c crypto perl ssl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 21:02:19 sthen Exp $
 
 COMMENT=	C++ wrapper for the Simple DirectMedia Layer
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=	SDLmm                9.0      # .8.0
 HOMEPAGE=	http://sdlmm.sourceforge.net/
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	SDL iconv m pthread sndio ${COMPILER_LIBCXX} usbhid
 

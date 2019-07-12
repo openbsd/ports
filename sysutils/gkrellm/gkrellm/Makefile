@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2019/06/25 20:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2019/07/12 21:02:26 sthen Exp $
 
 COMMENT-main=	single process stack of system monitors for GTK+2 (server)
 COMMENT-client=	single process stack of system monitors for GTK+2
@@ -13,7 +13,7 @@ CATEGORIES=	sysutils
 HOMEPAGE=	http://www.gkrellm.net/
 
 # GPLv3 with OpenSSL license exception
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://gkrellm.srcbox.net/releases/
 EXTRACT_SUFX=	.tar.bz2

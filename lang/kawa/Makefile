@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/06/11 00:38:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:22 sthen Exp $
 
 COMMENT=		Scheme and language framework for the Java platform
 
@@ -9,7 +9,7 @@ CATEGORIES=		lang java
 HOMEPAGE=		https://www.gnu.org/software/kawa/
 
 # MIT
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNU:=kawa/}
 

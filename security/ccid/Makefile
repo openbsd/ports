@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/04/24 16:26:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 21:02:24 sthen Exp $
 
 COMMENT =	USB Chip/Smart Card Interface Devices driver
 
@@ -15,7 +15,7 @@ MASTER_SITES =	https://alioth-archive.debian.org/releases/pcsclite/ccid/
 EXTRACT_SUFX =	.tar.bz2
 
 # LGPLv2.1+ and GPLv2+
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =	pcsclite pthread usb-1.0
 

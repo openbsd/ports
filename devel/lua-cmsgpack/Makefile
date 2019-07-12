@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/10/16 23:21:22 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 21:02:15 sthen Exp $
 
 COMMENT=	MessagePack implementation and bindings for Lua
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 HOMEPAGE=	https://github.com/antirez/lua-cmsgpack
 
 # BSD
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://distfiles.nl/
 

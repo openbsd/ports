@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/05/07 12:40:56 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 21:02:17 sthen Exp $
 
 COMMENT =	report TAP output by test file description
 
@@ -11,7 +11,7 @@ REVISION =	0
 MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 
 # Perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/p5-TAP-Harness-Archive

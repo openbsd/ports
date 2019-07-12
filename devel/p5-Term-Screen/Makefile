@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/12/05 18:28:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 21:02:17 sthen Exp $
 
 COMMENT=		positioning screen based module
 
@@ -10,7 +10,7 @@ CATEGORIES=		devel
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Artistic
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 TEST_IS_INTERACTIVE=	Yes
 TEST_FLAGS=		TERM=${TERM}

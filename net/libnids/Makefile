@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/02/08 18:58:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 21:02:23 sthen Exp $
 
 COMMENT=	network monitoring library with TCP/IP reassembly
 
@@ -11,7 +11,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://libnids.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libnids/}
 FIX_EXTRACT_PERMISSIONS=Yes

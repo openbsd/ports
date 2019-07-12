@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/10/16 23:21:22 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 21:02:15 sthen Exp $
 
 COMMENT=	JSON support for Lua
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://www.kyne.com.au/~mark/software/lua-cjson.php
 
 # MIT
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://www.kyne.com.au/~mark/software/download/
 

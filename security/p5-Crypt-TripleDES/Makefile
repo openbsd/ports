@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 21:02:25 sthen Exp $
 
 COMMENT=		implementation of 3DES encryption on ECB mode
 
@@ -9,6 +9,6 @@ REVISION=		1
 CATEGORIES=		security
 
 # Perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>	

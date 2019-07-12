@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/12/02 01:01:32 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 21:02:17 sthen Exp $
 
 COMMENT=		peek into the internals of a running POE environment
 
@@ -7,7 +7,7 @@ DISTNAME=		POE-API-Peek-2.20
 CATEGORIES=		devel
 
 # 3-clause BSD
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

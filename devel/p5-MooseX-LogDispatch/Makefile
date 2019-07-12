@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 21:02:17 sthen Exp $
 
 COMMENT=		logging role for Moose
 
@@ -7,7 +7,7 @@ DISTNAME=		MooseX-LogDispatch-1.2002
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/09/06 07:09:34 benoit Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 21:02:26 sthen Exp $
 
 COMMENT=	portable, encrypted, compressed tunnel
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.winton.org.uk/zebedee/
 MAINTAINER=	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c pthread
 

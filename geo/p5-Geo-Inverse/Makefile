@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 21:02:21 sthen Exp $
 
 COMMENT=	calculate geographic distance from a lat/lon pair
 MODULES=	cpan
@@ -8,6 +8,6 @@ REVISION=	1
 CATEGORIES=	geo
 
 # Perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

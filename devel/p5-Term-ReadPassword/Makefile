@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:17 sthen Exp $
 
 COMMENT=		ask passwords from perl
 
@@ -9,7 +9,7 @@ REVISION=		1
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 TEST_IS_INTERACTIVE=	Yes
 

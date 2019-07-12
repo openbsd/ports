@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/08 13:49:47 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 21:02:23 sthen Exp $
 
 COMMENT=		SMTP/LMTP proxy for Spamassassin
 
@@ -12,7 +12,7 @@ CATEGORIES=		mail
 HOMEPAGE=		http://www.worlddesign.com/index.cfm/page/rd/mta/spampd.htm
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/p5-Net-Server \
 			mail/p5-Mail-SpamAssassin

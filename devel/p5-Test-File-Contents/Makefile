@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/04/28 14:24:06 rpe Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 21:02:18 sthen Exp $
 
 COMMENT=		perl test framework for file contents
 
@@ -8,7 +8,7 @@ DISTNAME =		Test-File-Contents-0.23
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	modbuild
 

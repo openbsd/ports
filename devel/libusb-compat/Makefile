@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/11 19:59:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 21:02:14 sthen Exp $
 
 COMMENT=	libusb-0.1 compatibility layer for libusb1
 
@@ -17,7 +17,7 @@ HOMEPAGE=	http://libusb.sourceforge.net/
 MAINTAINER=	Martin Pieuchot <mpi@openbsd.org>
 
 # LGPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += pthread usb-1.0
 

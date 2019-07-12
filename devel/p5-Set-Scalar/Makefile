@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:17 sthen Exp $
 
 COMMENT=	module for containing a set of scalars
 
@@ -10,6 +10,6 @@ CATEGORIES=	devel
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

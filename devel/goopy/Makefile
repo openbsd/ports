@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:04 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 21:02:14 sthen Exp $
 
 COMMENT=	Google utilities written in Python
 
@@ -8,7 +8,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://goog-goopy.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=goog-goopy/}
 

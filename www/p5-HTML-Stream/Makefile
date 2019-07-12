@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:57:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 21:02:28 sthen Exp $
 
 COMMENT=	HTML output stream class
 
@@ -9,6 +9,6 @@ REVISION=	1
 CATEGORIES=	www devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

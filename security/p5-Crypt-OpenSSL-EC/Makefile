@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/06/04 08:12:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 21:02:25 sthen Exp $
 
 COMMENT =	EC using OpenSSL
 
@@ -8,7 +8,7 @@ DISTNAME =	Crypt-OpenSSL-EC-1.31
 CATEGORIES =	security
 
 # Perl
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB +=	c crypto perl ssl
 

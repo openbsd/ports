@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/01/12 19:32:54 bentley Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 21:02:18 sthen Exp $
 
 COMMENT=	SDL cross-platform networking library
 
@@ -15,7 +15,7 @@ SHARED_LIBS=	SDL_net	2.0
 HOMEPAGE=	https://www.libsdl.org/projects/SDL_net/
 
 # Zlib
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	SDL iconv m pthread sndio usbhid
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/12/05 16:25:45 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:17 sthen Exp $
 
 COMMENT=		declarative syntax for Moose
 
@@ -7,7 +7,7 @@ CATEGORIES=		devel
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

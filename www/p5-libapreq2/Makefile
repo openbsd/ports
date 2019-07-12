@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:28 sthen Exp $
 
 COMMENT=	apache HTTP server request library
 
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/J/JO/JOESUF/}
 SHARED_LIBS=	apreq2	9.0
 
 # Artistic + GPL
-PERMIT_PACKAGE_CDROM=  Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += apr-1 aprutil-1 c db expat iconv perl pthread
 

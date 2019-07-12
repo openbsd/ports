@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/10 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 21:02:13 sthen Exp $
 
 COMMENT=book about gimp
 CATEGORIES=books graphics
@@ -9,7 +9,7 @@ PKGNAME=grokking-the-gimp-${VERSION}
 REVISION=1
 
 # Open publication license
-PERMIT_PACKAGE_CDROM=Yes
+PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=	http://gimp-savvy.com/
 MASTER_SITES=${HOMEPAGE}BOOK/TarDist/

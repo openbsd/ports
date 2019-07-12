@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/13 22:26:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:27 sthen Exp $
 
 COMMENT =	discount implementation of John Gruber's Markdown
 
@@ -7,7 +7,7 @@ REVISION =	0
 CATEGORIES =	textproc
 
 # BSD
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =	lang/ruby
 

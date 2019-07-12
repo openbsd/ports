@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/01 19:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:21 sthen Exp $
 
 COMMENT=	Rogue like adventure game
 
@@ -10,7 +10,7 @@ CATEGORIES=	games
 HOMEPAGE=	http://www.e271.net/~marina/wanderer.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c curses
 
 MASTER_SITES=	http://www.e271.net/~marina/

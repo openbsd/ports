@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/06/19 12:44:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:22 sthen Exp $
 
 COMMENT=		scan mailboxes for messages matching a regular expression
 
@@ -8,7 +8,7 @@ CATEGORIES=		mail
 HOMEPAGE=		http://www.mboxgrep.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += bz2 c pcre z
 

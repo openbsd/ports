@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/01/02 12:53:27 sebastia Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 21:02:24 sthen Exp $
 
 COMMENT = 	Streaming Text Orientated Messaging Protocol (STOMP) client
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://github.com/stompgem/stomp
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES = 	lang/ruby
 

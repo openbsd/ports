@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 21:02:23 sthen Exp $
 
 COMMENT=        algorithm to find good values for chart axis
 
@@ -10,7 +10,7 @@ CATEGORIES=     math graphics
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS =	devel/p5-Params-Util
 TEST_DEPENDS =	devel/p5-Test-Taint

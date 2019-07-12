@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/07 17:04:59 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:21 sthen Exp $
 
 COMMENT=	mpeg-1 video player
 
@@ -9,7 +9,7 @@ CATEGORIES=	graphics x11
 
 HOMEPAGE=	http://people.freenet.de/for_Ki/
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 

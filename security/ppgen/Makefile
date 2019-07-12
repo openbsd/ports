@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/04/21 22:29:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 21:02:25 sthen Exp $
 
 COMMENT=	secure passphrase generator
 
@@ -7,7 +7,7 @@ CATEGORIES=	security
 REVISION=	0
 
 # Public domain
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c m
 
 DIST_SUBDIR=	${DISTNAME}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/11/08 13:18:47 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:24 sthen Exp $
 
 COMMENT=	ircII internet relay chat client
 
@@ -10,7 +10,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://netsplit.de/tkirc2/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://netsplit.de/tkirc2/
 

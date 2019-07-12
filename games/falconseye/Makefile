@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/10/23 17:10:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 21:02:20 sthen Exp $
 
 COMMENT =	NetHack derivative
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://falconseye.sourceforge.net/
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =	X11 Xext c curses m pthread usbhid xcb SDL
 

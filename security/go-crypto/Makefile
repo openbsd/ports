@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/24 16:26:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 21:02:24 sthen Exp $
 
 COMMENT =	Go supplementary cryptography libraries
 DISTNAME =	go-crypto-20190226
@@ -11,7 +11,7 @@ REVISION =	0
 HOMEPAGE =	https://godoc.org/golang.org/x/crypto
 
 # BSD
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB =	c pthread
 

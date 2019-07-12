@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/05/02 19:43:20 danj Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 21:02:28 sthen Exp $
 
 COMMENT=		FastCGI Development Kit
 
@@ -15,7 +15,7 @@ HOMEPAGE=		http://www.fastcgi.com/
 # associated with the Software and Documentation unless explicitly
 # disclaimed in individual files". Also see analysis at
 # http://www.fastcgi.com/archives/fastcgi-developers/2010-June/000559.html
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m ${COMPILER_LIBCXX}
 WANTLIB += perl # uses perl ABI

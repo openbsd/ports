@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/03/06 18:24:43 semarie Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 21:02:23 sthen Exp $
 
 COMMENT=	scripting language for reminders, with a Tk front end
 
@@ -11,7 +11,7 @@ MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/
 HOMEPAGE=	https://dianne.skoll.ca/projects/remind/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m
 

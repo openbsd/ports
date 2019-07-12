@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/05/17 16:19:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 21:02:21 sthen Exp $
 
 COMMENT=		color ascii art library
 
@@ -11,7 +11,7 @@ REVISION=		2
 HOMEPAGE=		http://caca.zoy.org/wiki/libcaca
 
 # LGPLv2.1/Do What The Fuck You Want To Public License
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses m z
 

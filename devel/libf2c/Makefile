@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/02/28 01:52:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 21:02:14 sthen Exp $
 
 V =		3.3.6
 CONFIG =	${MACHINE_ARCH}-unknown-openbsd${OSREV}
@@ -10,7 +10,7 @@ MASTER_SITES =	https://spacehopper.org/mirrors/
 
 COMMENT =	GNU fortran 77 libraries
 CATEGORIES =	devel math
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MAJOR=	8
 MINOR=  1

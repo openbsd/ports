@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/20 19:56:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 21:02:24 sthen Exp $
 
 COMMENT=	cryptographic cipher block chaining mode
 
@@ -13,7 +13,7 @@ RUN_DEPENDS=	security/p5-Crypt-DES \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # Perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	eg

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/06/11 00:37:09 kurt Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 21:02:20 sthen Exp $
 
 COMMENT=	lightweight game library for java
 
@@ -25,7 +25,7 @@ HOMEPAGE=	http://lwjgl.org
 MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 # GL listed here as it is dlopen()d by the lib
 WANTLIB += GL X11 Xcursor Xext Xrandr Xxf86vm m pthread

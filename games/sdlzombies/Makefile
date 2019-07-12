@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/07 17:04:58 danj Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:21 sthen Exp $
 
 COMMENT=	zombies clone
 
@@ -9,7 +9,7 @@ CATEGORIES=	games x11
 
 HOMEPAGE=	http://hocwp.free.fr/sdlzombies.html
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		SDL X11 Xext c m pthread usbhid xcb \
 			SDL_image SDL_mixer
 

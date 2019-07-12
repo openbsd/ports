@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/21 06:23:33 bentley Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 21:02:23 sthen Exp $
 
 COMMENT=	terminal locking utility
 
@@ -8,7 +8,7 @@ REVISION =		0
 
 HOMEPAGE=	http://www.marcuscom.com/
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

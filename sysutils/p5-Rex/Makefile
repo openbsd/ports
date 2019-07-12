@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/21 04:54:50 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 21:02:26 sthen Exp $
 
 COMMENT=	perl-based deployment and configuration management
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://www.rexify.org/
 MODULES=	cpan
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	converters/p5-JSON-XS \
 		converters/p5-JSON-MaybeXS \

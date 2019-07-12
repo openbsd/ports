@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/01/22 04:31:41 jsg Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 21:02:19 sthen Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -15,7 +15,7 @@ HOMEPAGE=	https://www.dosbox.com/
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL SDL SDL_net SDL_sound ${COMPILER_LIBCXX} png X11 c m pthread sndio z
 

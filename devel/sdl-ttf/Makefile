@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2018/01/12 19:32:54 bentley Exp $
+# $OpenBSD: Makefile,v 1.47 2019/07/12 21:02:18 sthen Exp $
 
 COMMENT=	SDL TrueType fonts library
 
@@ -14,7 +14,7 @@ SHARED_LIBS=	SDL_ttf	8.1
 HOMEPAGE=	https://www.libsdl.org/projects/SDL_ttf/
 
 # Zlib
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	SDL freetype iconv m pthread sndio usbhid z
 

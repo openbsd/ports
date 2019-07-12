@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/04/26 07:29:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:21 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
@@ -16,7 +16,7 @@ MASTER_SITES=	http://deponie.yamagi.org/quake2/
 EXTRACT_SUFX=	.tar.xz
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL SDL2 c m ogg openal pthread vorbis vorbisfile z
 

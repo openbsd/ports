@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/05/07 17:04:58 danj Exp $
+# $OpenBSD: Makefile,v 1.52 2019/07/12 21:02:19 sthen Exp $
 
 COMMENT=	MPEG video player library with sound support
 
@@ -12,7 +12,7 @@ SHARED_LIBS=	smpeg	2.0
 HOMEPAGE=	http://icculus.org/smpeg/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	SDL c iconv m pthread sndio ${COMPILER_LIBCXX} usbhid
 

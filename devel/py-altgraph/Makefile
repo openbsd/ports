@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/04/28 20:51:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 21:02:18 sthen Exp $
 
 COMMENT=		Python graph (network) package
 
@@ -10,7 +10,7 @@ REVISION=		0
 CATEGORIES=		devel
 
 # MIT
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

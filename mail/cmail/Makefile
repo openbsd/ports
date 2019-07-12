@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/21 06:13:49 bentley Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 21:02:22 sthen Exp $
 
 COMMENT=	simple mail counter
 
@@ -6,7 +6,7 @@ DISTNAME=	cmail-3.1
 REVISION =	1
 CATEGORIES=	mail
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	ftp://ftp.eboai.org/pub/users/chip/
 EXTRACT_SUFX=	.tar.bz2

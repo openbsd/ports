@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/06 19:51:38 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 21:02:28 sthen Exp $
 
 COMMENT=		parse LaTeX math expressions into gif images
 
@@ -9,7 +9,7 @@ CATEGORIES=		www
 HOMEPAGE=		http://www.forkosh.com/mimetex.html
 
 # GPLv2 or later
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://meta-planets.net/~openbsd/
 

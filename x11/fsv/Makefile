@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/06/27 21:04:07 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 21:02:29 sthen Exp $
 
 # XXX check if still needed at next update
 #CXXFLAGS +=		-std=c++11
@@ -17,7 +17,7 @@ SHARED_LIBS +=	fsvui                     0.0 # 0.0
 HOMEPAGE=		http://fedorchenko.net/fsv2.php
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL GLU ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xmu Xrandr Xrender Xt

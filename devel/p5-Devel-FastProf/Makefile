@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:16 sthen Exp $
 
 COMMENT=	per-line quick profiler for perl
 CATEGORIES=	devel
@@ -7,7 +7,7 @@ REVISION=	4
 MODULES=	cpan
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

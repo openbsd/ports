@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 21:02:21 sthen Exp $
 
 COMMENT =	language for typesetting graphs
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://lunabase.org/~faber/Vault/software/grap/
 MAINTAINER =	Hermann Gottschalk <magnum@pestilenz.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MASTER_SITES =		${HOMEPAGE}
 WANTLIB =		c m ${COMPILER_LIBCXX}

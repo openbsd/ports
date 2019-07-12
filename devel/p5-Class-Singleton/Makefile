@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 21:02:15 sthen Exp $
 
 COMMENT=		perl singleton pattern
 
@@ -8,6 +8,6 @@ DISTNAME =		Class-Singleton-1.5
 CATEGORIES=		devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>	

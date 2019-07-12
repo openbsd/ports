@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/15 06:44:23 giovanni Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 21:02:22 sthen Exp $
 
 COMMENT =	Postfix policy server
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://www.postfwd.org/
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MASTER_SITES =	${HOMEPAGE}
 

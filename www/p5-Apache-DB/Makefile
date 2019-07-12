@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/04/28 16:51:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 21:02:28 sthen Exp $
 
 COMMENT=		interactive debugger for modperl
 
@@ -8,7 +8,7 @@ REVISION=		6
 CATEGORIES=		www devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

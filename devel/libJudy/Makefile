@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/04/06 22:10:56 schwarze Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 21:02:14 sthen Exp $
 
 COMMENT=		general purpose dynamic array
 
@@ -12,7 +12,7 @@ SHARED_LIBS +=	Judy                 1.4      # .1.4
 HOMEPAGE=		http://judy.sourceforge.net/
 
 # LGPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=judy/}
 

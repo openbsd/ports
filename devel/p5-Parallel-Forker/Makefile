@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/04/29 08:39:12 benoit Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 21:02:17 sthen Exp $
 
 COMMENT=	parallel job forking and management
 
@@ -6,7 +6,7 @@ DISTNAME =	Parallel-Forker-1.234
 CATEGORIES=	devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
 PKG_ARCH=	*

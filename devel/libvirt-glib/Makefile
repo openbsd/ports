@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 21:02:14 sthen Exp $
 
 COMMENT=		libvirt wrapper suited for GObject-based applications
 
@@ -16,7 +16,7 @@ MASTER_SITES=		https://libvirt.org/sources/glib/ \
 			ftp://libvirt.org/libvirt/glib/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  avahi-client avahi-common crypto curl dbus-1 ffi gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 gthread-2.0

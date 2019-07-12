@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/09 16:13:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 21:02:30 sthen Exp $
 
 COMMENT=		Ubuntu GNOME theme
 
@@ -9,7 +9,7 @@ GH_PROJECT=		yaru
 CATEGORIES=		x11
 
 # GPLv3, CC-SA-4.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		devel/dconf \
 			devel/meson

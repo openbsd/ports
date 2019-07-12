@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/02 14:45:41 danj Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:25 sthen Exp $
 
 COMMENT= 	interface to the Serpent encryption algorithm
 
@@ -8,7 +8,7 @@ REVISION=	6
 CATEGORIES=	security
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

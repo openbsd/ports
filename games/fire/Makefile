@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/07 17:04:58 danj Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:20 sthen Exp $
 
 COMMENT=	organic fireworks demo
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.libsdl.org/projects/fire/
 
 MASTER_SITES=	${HOMEPAGE}/src/
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext c m pthread usbhid xcb SDL
 
 LIB_DEPENDS=	devel/sdl

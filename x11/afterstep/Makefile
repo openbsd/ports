@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2019/07/05 11:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2019/07/12 21:02:29 sthen Exp $
 
 COMMENT=	window manager, continuation of the Bowman NeXTSTEP clone
 
@@ -14,7 +14,7 @@ WRKDIST=	${WRKDIR}/afterstep-devel-${V}
 HOMEPAGE=	http://www.afterstep.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo curses dbus-1 execinfo fontconfig

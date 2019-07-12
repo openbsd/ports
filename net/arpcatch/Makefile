@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:23 sthen Exp $
 
 COMMENT=	userland arp-proxy daemon
 
@@ -11,7 +11,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://skoda.sockpuppet.org/tqbf/
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c pcap
 
 ALL_TARGET=

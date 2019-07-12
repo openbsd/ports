@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2019/03/13 08:57:02 sebastia Exp $
+# $OpenBSD: Makefile,v 1.77 2019/07/12 21:02:29 sthen Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
@@ -24,7 +24,7 @@ MASTER_SITES=	${HOMEPAGE}/files/downloads/SOGo/Sources/
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPLv2 or later
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES=	-main -mysql -postgres
 

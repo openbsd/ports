@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/02 22:25:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 21:02:28 sthen Exp $
 
 COMMENT=	verifies XML documents
 V=		2.1.0
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=expat/}
 HOMEPAGE=	http://expat.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WRKSRC=			${WRKDIR}/expat-$V/xmlwf
 WANTLIB=		c expat

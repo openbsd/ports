@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/10/16 13:59:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 21:02:25 sthen Exp $
 
 COMMENT =	Perl extension to OpenSSL's PKCS10 API
 
@@ -8,7 +8,7 @@ DISTNAME =	Crypt-OpenSSL-PKCS10-0.16
 CATEGORIES =	security
 
 # Perl
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB +=	c crypto perl ssl
 

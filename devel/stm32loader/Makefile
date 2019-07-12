@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/11/24 09:11:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 21:02:19 sthen Exp $
 
 COMMENT=	STM32 bootloader to upload and download firmware
 
@@ -9,7 +9,7 @@ REVISION=	3
 CATEGORIES=	devel
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://distfiles.nl/
 

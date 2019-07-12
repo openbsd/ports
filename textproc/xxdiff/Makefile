@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2018/10/24 14:28:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 21:02:28 sthen Exp $
 
 COMMENT=	graphical file comparator and merge tool
 
@@ -9,7 +9,7 @@ REVISION=	1
 HOMEPAGE=	http://furius.ca/xxdiff/
 
 # GPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender c fontconfig
 WANTLIB += freetype m pthread ${COMPILER_LIBCXX}

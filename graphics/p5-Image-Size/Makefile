@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/03/20 19:56:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 21:02:22 sthen Exp $
 
 COMMENT=	module to determine the size of images in several formats
 
@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 HOMEPAGE=       http://www.blackperl.com/Image::Size/
 
 # Artistic License and LGPLv2
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 TEST_DEPENDS=	devel/p5-Test-Pod \
 		devel/p5-Test-Pod-Coverage

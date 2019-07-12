@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/12/05 16:25:45 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 21:02:16 sthen Exp $
 
 COMMENT=		adding keywords to perl, in perl
 
@@ -8,7 +8,7 @@ CATEGORIES=		devel
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

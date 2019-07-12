@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/08/28 07:28:23 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 21:02:13 sthen Exp $
 
 COMMENT=		Redis-backed library to create jobs and place them on queues
 
@@ -9,7 +9,7 @@ CATEGORIES=		databases www
 HOMEPAGE=		https://github.com/resque/resque
 
 # MIT
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

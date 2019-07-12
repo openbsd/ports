@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2018/09/28 09:03:49 pirofti Exp $
+# $OpenBSD: Makefile,v 1.43 2019/07/12 21:02:29 sthen Exp $
 
 COMMENT=		industrial-grade ticketing system
 
@@ -100,7 +100,7 @@ RUN_DEPENDS=		converters/p5-Convert-ASN1 \
 			www/p5-libwww
 
 # GPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 NO_BUILD=		Yes
 

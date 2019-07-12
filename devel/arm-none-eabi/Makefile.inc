@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2017/06/02 23:17:07 schwarze Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2019/07/12 21:02:14 sthen Exp $
 
 CONFIG?=	arm-none-eabi
 PKGNAME?=	${CONFIG}-${DISTNAME}
@@ -8,7 +8,7 @@ CATEGORIES+=	devel
 # GPLv3
 # For newlib: multiple copyrights, but basically BSD.
 #   See: ${PREFIX}/share/doc/newlib
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--target=${CONFIG}  \

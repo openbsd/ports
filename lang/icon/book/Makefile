@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 21:02:22 sthen Exp $
 
 CATEGORIES=	books lang
 COMMENT=	Icon programming language reference book
@@ -28,7 +28,7 @@ SUPDISTFILES=	lb1up.pdf lb2up.pdf
 # 'This book originally was published by Peer-to-Peer Communications.
 # It is out of print and the rights have reverted to the authors, who hereby
 # place it in the public domain'.
-PERMIT_PACKAGE_CDROM=Yes
+PERMIT_PACKAGE=	Yes
 
 EXTRACT_ONLY=
 NO_BUILD=Yes

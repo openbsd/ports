@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/20 20:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 21:02:19 sthen Exp $
 
 COMMENT=	hierarchical notebook
 
@@ -9,7 +9,7 @@ CATEGORIES=	editors
 HOMEPAGE=	http://hnb.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 

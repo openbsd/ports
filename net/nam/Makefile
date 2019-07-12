@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2019/07/12 21:02:23 sthen Exp $
 
 COMMENT=	UCB/LBNL Network Animator
 
@@ -14,7 +14,7 @@ MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE:=nsnam/}
 HOMEPAGE=	http://nsnam.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES	+=		x11/tk
 WANTLIB +=		X11 Xext c m otcl ${COMPILER_LIBCXX} z

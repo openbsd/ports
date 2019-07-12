@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/08/03 13:06:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 21:02:23 sthen Exp $
 
 COMMENT=	flexible POP3 server
 
@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://dione.ids.pl/pub/solidpop3d/
 
 HOMEPAGE=	http://solidpop3d.pld.org.pl/
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 FLAVORS=	apop 

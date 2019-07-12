@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/09/02 22:58:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 21:02:16 sthen Exp $
 
 COMMENT=		File-finding iterator
 
@@ -8,6 +8,6 @@ DISTNAME=		File-Next-1.16
 CATEGORIES=		devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/07 17:04:59 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 21:02:26 sthen Exp $
 
 COMMENT=	format/convert text documents into compressed .pdb files
 
@@ -8,7 +8,7 @@ DISTNAME=	${PROG}-${VERSION}
 CATEGORIES=	textproc
 REVISION=	2
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=	http://sourceforge.net/projects/bibelot
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 21:02:27 sthen Exp $
 
 COMMENT=	syntax highlight for perl
 
@@ -10,7 +10,7 @@ REVISION=	0
 CATEGORIES=	textproc www
 
 # Perl licence
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/viewperl ${PREFIX}/bin

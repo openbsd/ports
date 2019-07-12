@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/03/08 16:25:11 jeremy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 21:02:29 sthen Exp $
 
 COMMENT =	ruby-rack HTTP server for Unix and fast clients
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://bogomips.org/unicorn/
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # Ruby/GPLv2
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MASTER_SITES0 =	https://bogomips.org/unicorn.git/patch/
 

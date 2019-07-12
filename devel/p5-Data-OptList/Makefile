@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/04/05 09:54:37 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:16 sthen Exp $
 
 COMMENT=	parse and validate simple name/value option pairs
 
@@ -8,7 +8,7 @@ DISTNAME =	Data-OptList-0.110
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Params-Util \
 		devel/p5-Sub-Install

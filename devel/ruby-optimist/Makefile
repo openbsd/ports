@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/07 09:45:09 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 21:02:18 sthen Exp $
 
 COMMENT =		commandline option parser for Ruby
 
@@ -8,7 +8,7 @@ CATEGORIES =		devel
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =		lang/ruby
 

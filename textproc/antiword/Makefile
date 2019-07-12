@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 21:02:26 sthen Exp $
 
 COMMENT=	converts MSWord Documents to ASCII Text and PostScript
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.winfield.demon.nl/
 MASTER_SITES=	${HOMEPAGE}/linux/
 
 # GPLv2+ (mentioned in manpage)
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

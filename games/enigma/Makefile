@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2018/10/24 14:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 21:02:20 sthen Exp $
 
 COMMENT=	Oxyd/Rock'n'Roll clone
 
@@ -11,7 +11,7 @@ CATEGORIES=	games x11
 HOMEPAGE=	https://www.nongnu.org/enigma/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL SDL_image SDL_mixer SDL_ttf
 WANTLIB += c curl enet intl m png xerces-c z zipios

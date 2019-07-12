@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/20 19:57:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 21:02:28 sthen Exp $
 
 COMMENT=	HTML text formating class
 
@@ -8,7 +8,7 @@ DISTNAME=	HTML-Format-2.11
 CATEGORIES=	www devel
 
 # GPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-File-Slurp \
 		www/p5-HTML-Tree \

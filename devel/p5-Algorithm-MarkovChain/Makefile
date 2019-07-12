@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 21:02:15 sthen Exp $
 
 COMMENT=	module to create Markov chains and output based on them
 
@@ -8,6 +8,6 @@ DISTNAME=	Algorithm-MarkovChain-0.06
 REVISION=	2
 CATEGORIES=	devel
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

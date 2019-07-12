@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/05/07 17:04:58 danj Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 21:02:21 sthen Exp $
 
 COMMENT=	multiplayer 2d space battles game
 
@@ -9,7 +9,7 @@ REVISION=	1
 HOMEPAGE=	http://www.xpilot.org/
 EXTRACT_SUFX=	.tar.bz2
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c m
 

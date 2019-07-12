@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/02/26 08:45:56 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 21:02:29 sthen Exp $
 
 COMMENT =	HTTP/REST API client library
 
@@ -8,7 +8,7 @@ HOMEPAGE =	https://github.com/lostisland/faraday
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =		lang/ruby
 BUILD_DEPENDS +=	${RUN_DEPENDS}

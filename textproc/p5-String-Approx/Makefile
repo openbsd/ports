@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 21:02:27 sthen Exp $
 
 COMMENT=	module for approximate matching
 
@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # LGPL/Artistic
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

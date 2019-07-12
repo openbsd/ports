@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/06 20:29:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 21:02:26 sthen Exp $
 
 COMMENT =	rsync for cloud storage
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://rclone.org/
 MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB += c pthread
 

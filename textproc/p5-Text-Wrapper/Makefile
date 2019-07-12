@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 21:02:27 sthen Exp $
 
 COMMENT=		simple word wrapping routine
 
@@ -8,6 +8,6 @@ DISTNAME =		Text-Wrapper-1.05
 CATEGORIES=		textproc
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

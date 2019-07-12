@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/11/08 01:00:59 jcs Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 21:02:13 sthen Exp $
 
 COMMENT=	open-source electronics prototyping platform
 
@@ -19,7 +19,7 @@ MASTER_SITES0=	https://github.com/${GH_ACCOUNT}/ArduinoCore-avr/archive/${AVR_V}
 
 # arduino core + libraries: LGPLv2.1
 # frontend application: GPLv2 (not shipped yet)
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/avr/binutils \
 		devel/avr/gcc \

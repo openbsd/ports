@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/08/07 11:08:01 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:26 sthen Exp $
 
 COMMENT=	convert docbook to man
 CATEGORIES=	textproc converters
@@ -13,7 +13,7 @@ REVISION =	2
 WANTLIB=	c
 
 # basic in debian
-PERMIT_PACKAGE_CDROM=Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=imake noman
 

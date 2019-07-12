@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:20 sthen Exp $
 
 COMMENT=	eboard extra piece sets and sounds
 
@@ -11,7 +11,7 @@ CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.bergo.eng.br/eboard/
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=eboard/}
 

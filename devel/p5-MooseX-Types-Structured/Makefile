@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/02/22 17:20:39 cwen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:17 sthen Exp $
 
 COMMENT=		structured Type Constraints for Moose
 
@@ -7,7 +7,7 @@ DISTNAME =		MooseX-Types-Structured-0.36
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

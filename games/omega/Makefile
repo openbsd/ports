@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/17 16:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:20 sthen Exp $
 
 COMMENT=	complex rogue-style game of dungeon exploration
 
@@ -12,7 +12,7 @@ MASTER_SITES=   http://www.alcyone.com/binaries/omega/
 HOMEPAGE=	http://www.alcyone.com/max/projects/omega/
 
 # LGPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses
 

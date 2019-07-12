@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:22 sthen Exp $
 
 COMMENT=	Java program analyzer and checker
 
@@ -9,7 +9,7 @@ CATEGORIES=	java
 HOMEPAGE=	http://jlint.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=  Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c z m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc

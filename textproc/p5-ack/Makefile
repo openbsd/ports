@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/04 13:41:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 21:02:27 sthen Exp $
 
 COMMENT=		grep like tool, aimed at programmers
 
@@ -13,7 +13,7 @@ CATEGORIES=		textproc
 HOMEPAGE =		https://beyondgrep.com/
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/p5-File-Next>=1.16
 

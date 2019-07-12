@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/05/20 22:15:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 21:02:30 sthen Exp $
 
 COMMENT =	drop-down terminal emulator based on KDE Konsole
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://yakuake.kde.org/
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/yakuake/${VERSION}/src/}
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

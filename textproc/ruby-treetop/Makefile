@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/20 20:57:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:28 sthen Exp $
 
 COMMENT =	Ruby-based DSL for text parsing and interpretation
 
@@ -9,7 +9,7 @@ CATEGORIES =	textproc
 HOMEPAGE =	https://github.com/cjheath/treetop
 
 # MIT
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =		lang/ruby
 

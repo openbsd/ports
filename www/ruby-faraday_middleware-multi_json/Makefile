@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/16 17:37:14 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 21:02:29 sthen Exp $
 
 COMMENT =	Faraday response parser using MultiJson
 
@@ -8,7 +8,7 @@ HOMEPAGE =	https://www.github.com/denro/faraday_middleware-multi_json
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =		lang/ruby
 BUILD_DEPENDS +=	${RUN_DEPENDS}

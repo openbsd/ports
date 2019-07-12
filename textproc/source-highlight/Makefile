@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 21:02:28 sthen Exp $
 
 COMMENT=	create a document with syntax highlighting
 
@@ -10,7 +10,7 @@ REVISION=	2
 HOMEPAGE=	https://www.gnu.org/software/src-highlite/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m ${COMPILER_LIBCXX} boost_regex-mt pthread
 

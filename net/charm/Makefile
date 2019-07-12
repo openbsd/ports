@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/12/30 16:50:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 21:02:23 sthen Exp $
 
 COMMENT=	LiveJournal client for Python
 
@@ -9,7 +9,7 @@ CATEGORIES=	net news
 HOMEPAGE=	http://ljcharm.sourceforge.net/
 
 # GPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ljcharm/}
 

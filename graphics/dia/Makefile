@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2019/06/13 15:48:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.114 2019/07/12 21:02:21 sthen Exp $
 
 COMMENT=		technical diagrams drawing tool
 
@@ -11,7 +11,7 @@ CATEGORIES=		graphics
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender art_lgpl_2 atk-1.0 c cairo expat ffi fontconfig

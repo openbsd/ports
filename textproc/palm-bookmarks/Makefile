@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/07 17:04:59 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 21:02:27 sthen Exp $
 
 COMMENT=	bookmarks on your palm
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://www.vanhemert.co.uk/palmbookmarks.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://www.vanhemert.co.uk/files/
 NO_BUILD=	Yes

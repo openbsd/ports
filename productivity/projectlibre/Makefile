@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/06/11 00:38:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 21:02:24 sthen Exp $
 
 COMMENT=		open source alternative to Microsoft Project
 
@@ -11,7 +11,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 HOMEPAGE=		http://www.projectlibre.org/
 
 # Common Public Attribution License
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=projectlibre/}
 

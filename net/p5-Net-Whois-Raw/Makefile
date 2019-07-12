@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/05/19 10:20:12 giovanni Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 21:02:24 sthen Exp $
 
 COMMENT=	extension for unparsed raw whois information
 
@@ -8,7 +8,7 @@ CATEGORIES=	net
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/07/29 13:23:22 bluhm Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 21:02:16 sthen Exp $
 
 COMMENT=		Storable based binary logs
 
@@ -8,7 +8,7 @@ REVISION=		1
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

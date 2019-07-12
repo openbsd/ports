@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 21:02:18 sthen Exp $
 
 COMMENT=		module for dealing with time periods
 
@@ -11,7 +11,7 @@ CATEGORIES=		devel
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # Artistic
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Time/}
 

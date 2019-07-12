@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/20 19:57:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 21:02:25 sthen Exp $
 
 COMMENT=	perl5 interface to GnuPG
 
@@ -8,7 +8,7 @@ DISTNAME=	GnuPG-Interface-0.44
 CATEGORIES=	security
 
 # Perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Any-Moose \

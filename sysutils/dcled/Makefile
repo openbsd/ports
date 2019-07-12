@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/10/06 21:36:32 armani Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 21:02:26 sthen Exp $
 
 COMMENT =	userland driver for Dream Link USB LED Message Board
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://www.last-outpost.com/~malakai/dcled/
 
 MAINTAINER =	Jonathan Armani <armani@openbsd.org>
 
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MASTER_SITES=	http://www.last-outpost.com/~malakai/dcled/
 

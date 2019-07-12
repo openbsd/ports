@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2018/09/15 19:26:50 bcallah Exp $
+# $OpenBSD: Makefile,v 1.48 2019/07/12 21:02:20 sthen Exp $
 
 COMMENT=	graphical multiplayer 3D tank war game
 
@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tar.bz2
 HOMEPAGE=	https://www.bzflag.org/
 
 # LGPLv2.1 only or MPL 2.0
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL GLU SDL2 X11 X11-xcb Xdamage Xext Xfixes Xxf86vm
 WANTLIB += c cares crypto curl curses drm expat glapi m

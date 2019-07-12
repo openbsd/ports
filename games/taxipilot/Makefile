@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2019/07/12 21:02:21 sthen Exp $
 
 COMMENT=	silly little game based on Spacetaxi for the C64
 
@@ -9,7 +9,7 @@ CATEGORIES=	games
 HOMEPAGE=	http://taxipilot.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=  Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL ICE SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c

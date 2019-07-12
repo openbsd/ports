@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/03/15 07:32:15 sebastia Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 21:02:29 sthen Exp $
 
 COMMENT =	replacement for Ruby's URI implementation
 
@@ -8,7 +8,7 @@ CATEGORIES =	www
 HOMEPAGE =	https://github.com/sporkmonger/addressable
 
 # MIT
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =		lang/ruby
 

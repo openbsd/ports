@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/09/07 20:12:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 21:02:14 sthen Exp $
 
 COMMENT=	libc for Atmel AVR 8-bit RISC microcontrollers
 
@@ -7,7 +7,7 @@ DISTNAME=	avr-libc-2.0.0
 HOMEPAGE=	http://www.nongnu.org/avr-libc/
 
 # Modified BSD License
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=avr-libc/}
 EXTRACT_SUFX=		.tar.bz2

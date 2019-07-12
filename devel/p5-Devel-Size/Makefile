@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/04/28 13:54:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 21:02:16 sthen Exp $
 
 COMMENT=	finding memory usage of perl variables
 
@@ -7,7 +7,7 @@ DISTNAME =	Devel-Size-0.81
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

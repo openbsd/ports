@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/10/26 23:55:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 21:02:29 sthen Exp $
 
 COMMENT=		create executable versions of Sinatra/Rack apps
 
@@ -9,7 +9,7 @@ CATEGORIES=		www
 HOMEPAGE=		http://code.quirkey.com/vegas/
 
 # MIT
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

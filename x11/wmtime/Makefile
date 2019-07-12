@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/02 19:43:20 danj Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:30 sthen Exp $
 
 COMMENT=	time/date applet for WindowMaker
 
@@ -7,7 +7,7 @@ REVISION=	2
 CATEGORIES=	x11 x11/windowmaker
 
 # GPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext Xpm c m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/06/25 20:25:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 21:02:14 sthen Exp $
 
 # BROKEN-hppa =	undefined reference to __sync atomic ops
 
@@ -17,7 +17,7 @@ HOMEPAGE =	https://libuv.org/
 MASTER_SITES =	https://dist.libuv.org/dist/v${VER}/
 
 # BSD / GPL
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB += pthread
 

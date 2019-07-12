@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/30 11:44:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 21:02:23 sthen Exp $
 
 COMMENT =	minimalistic plugin API for video effects
 CATEGORIES =	graphics multimedia
@@ -11,7 +11,7 @@ HOMEPAGE =	https://frei0r.dyne.org/
 MAINTAINER =	Raphael Graf <r@undefined.ch>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB =	${COMPILER_LIBCXX} m cairo
 

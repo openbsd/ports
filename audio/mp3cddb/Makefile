@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/10 22:55:03 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 21:02:13 sthen Exp $
 
 COMMENT=	embedding CDDB information in MP3s
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://drewie.host.sk/mp3cddb/
 MASTER_SITES=	${HOMEPAGE}
 
 # GPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	audio/p5-MP3-Info \
 		audio/p5-cddb \

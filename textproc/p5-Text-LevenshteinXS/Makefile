@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 21:02:27 sthen Exp $
 
 COMMENT=		perl implementation of Levenshtein edit distance
 
@@ -8,7 +8,7 @@ REVISION=		6
 CATEGORIES=		textproc devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

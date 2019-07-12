@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 21:02:16 sthen Exp $
 
 COMMENT=	print out each line before it is executed
 
@@ -8,6 +8,6 @@ DISTNAME =	Devel-Trace-0.12
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

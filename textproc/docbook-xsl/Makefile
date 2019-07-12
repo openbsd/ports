@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/08/07 10:08:37 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:26 sthen Exp $
 
 COMMENT=	docbook XSL modular stylesheet
 
@@ -9,7 +9,7 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://docbook.sourceforge.net/projects/xsl/
 
 # MIT/X Consortium License
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=docbook/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/06/11 00:38:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 21:02:22 sthen Exp $
 
 COMMENT=	general purpose multi-paradigm programming language
 
@@ -10,7 +10,7 @@ CATEGORIES=	lang
 HOMEPAGE=	http://www.scala-lang.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://downloads.lightbend.com/scala/${VERSION}/
 EXTRACT_SUFX=	.tgz

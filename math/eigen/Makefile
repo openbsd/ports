@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/12/02 21:39:49 juanfra Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 21:02:23 sthen Exp $
 
 PKG_ARCH=	*
 COMMENT=	lightweight C++ template library for linear algebra
@@ -10,7 +10,7 @@ WRKDIST=	${WRKDIR}/eigen
 
 # relaxed GPL (LGPL for template libs)
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 # eigen `needs' cmake to build tests. But since it's a template library,
 # simply install the header files.

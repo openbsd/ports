@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/11/21 00:13:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 21:02:20 sthen Exp $
 
 COMMENT=	graphical networked AD&D style game
 
@@ -10,7 +10,7 @@ REVISION=	1
 HOMEPAGE=	http://crossfire.real-time.com/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  GL GLU SDL SDL_image SDL_mixer X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo crypto

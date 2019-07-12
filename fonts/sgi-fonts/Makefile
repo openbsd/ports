@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/05/06 11:14:50 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 21:02:19 sthen Exp $
 
 COMMENT =	bitmap fonts from SGI
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://oss.sgi.com/projects/sgi_propack/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MASTER_SITES =	https://www.distfiles.pl/
 

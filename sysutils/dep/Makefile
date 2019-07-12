@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/08/18 01:12:28 abieber Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 21:02:26 sthen Exp $
 
 COMMENT =	Go dependency management tool
 DISTNAME =	dep-0.5.0
@@ -8,7 +8,7 @@ CATEGORIES =	sysutils
 HOMEPAGE =	https://golang.github.io/dep/
 
 # MIT
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB += c pthread
 

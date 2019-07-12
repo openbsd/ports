@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2019/06/25 20:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2019/07/12 21:02:26 sthen Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
@@ -17,7 +17,7 @@ MASTER_SITES=		${HOMEPAGE}/sources/ \
 			${HOMEPAGE}/sources/stable_updates/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  avahi-client avahi-common c crypto curl dbus-1 ffi gmp gnutls
 WANTLIB += hogweed iconv idn2 intl lzma m ncurses nettle nghttp2 p11-kit

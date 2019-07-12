@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2018/01/02 11:16:37 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2019/07/12 21:02:19 sthen Exp $
 
 CONFIG=		xtensa-elf
 PKGNAME?=	${CONFIG}-${DISTNAME}
@@ -7,7 +7,7 @@ CATEGORIES+=	devel
 # GPLv3
 # For newlib: multiple copyrights, but basically BSD.
 #   See: ${PREFIX}/share/doc/newlib
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 # XXX at least gmkdir gets picked up if present
 BUILD_DEPENDS +=	sysutils/coreutils

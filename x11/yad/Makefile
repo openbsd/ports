@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/20 22:15:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:30 sthen Exp $
 
 COMMENT=		display graphical dialogs from shell scripts or command line
 
@@ -9,7 +9,7 @@ REVISION=		1
 HOMEPAGE=		http://sourceforge.net/projects/yad-dialog/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=yad-dialog/}
 EXTRACT_SUFX=		.tar.xz

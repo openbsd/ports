@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/05/10 12:33:14 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:17 sthen Exp $
 
 COMMENT=		perl6-like method signature parser
 
@@ -7,7 +7,7 @@ DISTNAME =		Parse-Method-Signatures-1.003019
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

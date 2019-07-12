@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/11/20 20:57:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 21:02:18 sthen Exp $
 
 COMMENT =		high-level IO library for Ruby
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/JEG2/highline
 
 # Ruby license
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =		lang/ruby
 

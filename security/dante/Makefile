@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2018/02/20 16:41:59 bket Exp $
+# $OpenBSD: Makefile,v 1.50 2019/07/12 21:02:24 sthen Exp $
 
 COMMENT=	SOCKS client and server
 
@@ -18,7 +18,7 @@ MASTER_SITES=	${HOMEPAGE}/files/
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 # BSD/CMU
-PERMIT_PACKAGE_CDROM=Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m
 

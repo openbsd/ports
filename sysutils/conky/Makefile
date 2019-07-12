@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2019/06/25 20:25:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2019/07/12 21:02:26 sthen Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -12,7 +12,7 @@ REVISION=	18
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=conky/}
 
 # mostly GPLv3; see COPYING
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto curl curses glib-2.0 iconv intl kvm lzma m \
 		nghttp2 ossaudio pcre pthread ssl xml2 z ${MODLUA_WANTLIB}

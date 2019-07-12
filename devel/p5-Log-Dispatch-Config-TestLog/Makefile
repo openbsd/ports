@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 21:02:16 sthen Exp $
 
 COMMENT=		set up Log::Dispatch::Config for a test run
 
@@ -7,7 +7,7 @@ DISTNAME=		Log-Dispatch-Config-TestLog-0.02
 CATEGORIES=		devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

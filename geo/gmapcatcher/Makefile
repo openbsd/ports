@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/06/27 21:03:51 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 21:02:21 sthen Exp $
 
 COMMENT=	offline maps viewer
 
@@ -13,7 +13,7 @@ CATEGORIES=	geo x11
 HOMEPAGE=	https://github.com/heldersepu/GMapCatcher
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://distfiles.nl/
 

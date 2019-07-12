@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/05/20 22:15:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 21:02:20 sthen Exp $
 
 COMMENT=	graphically improved game of yore
 
@@ -20,7 +20,7 @@ HOMEPAGE=	http://heroes.sourceforge.net/
 
 MAINTAINER=	Anthony J. Bentley <anthony@anjbe.name>
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=  SDL SDL_mixer c iconv intl m pthread
 

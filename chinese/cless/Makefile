@@ -3,7 +3,7 @@
 # Date created:         Thu Jan 18, 2000
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.23 2019/05/17 16:19:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 21:02:13 sthen Exp $
 #
 
 COMMENT=	pager utility that speaks Chinese
@@ -15,7 +15,7 @@ MASTER_SITES=   http://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
 REVISION =	2
 
 # BSD
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/01/21 16:55:55 cwen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 21:02:27 sthen Exp $
 
 COMMENT=	perl module for generating randoms strings
 
@@ -8,7 +8,7 @@ DISTNAME =	String-Random-0.30
 CATEGORIES=	textproc
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	modbuild
 

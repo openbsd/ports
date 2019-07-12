@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/15 12:04:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 21:02:14 sthen Exp $
 
 COMMENT =	import changesets from CVS into Git
 
@@ -12,7 +12,7 @@ CATEGORIES =	devel
 HOMEPAGE =	https://github.com/ustuehler/git-cvs
 
 # BSD
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MASTER_SITES =	https://github.com/ustuehler/git-cvs/archive/
 

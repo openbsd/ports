@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 21:02:23 sthen Exp $
 
 COMMENT-main =	 C++ machine learning library
 COMMENT-python = python bindings to C++ machine learning library
@@ -11,7 +11,7 @@ HOMEPAGE = 	https://mlpack.org/
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # parts are 3-clause BSD, others MPL 2, other Boost SL 1.0
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MASTER_SITES = https://mlpack.org/files/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/05/17 10:21:42 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 21:02:30 sthen Exp $
 
 COMMENT=	animated autohiding applications launcher
 
@@ -9,7 +9,7 @@ CATEGORIES=	x11
 HOMEPAGE=	http://phrat.de/yeahtools.html
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 c
 

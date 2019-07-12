@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/01/19 14:56:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 21:02:29 sthen Exp $
 
 COMMENT =	command line tool for wordpress
 
@@ -14,7 +14,7 @@ CATEGORIES =	www
 HOMEPAGE =	https://wp-cli.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =	lang/php
 RUN_DEPENDS =	lang/php/${MODPHP_VERSION}

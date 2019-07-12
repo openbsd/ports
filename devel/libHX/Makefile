@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/10/02 10:48:17 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 21:02:14 sthen Exp $
 
 COMMENT=		C/C++ library with common data structures and functions
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=		HX	0.0 # 31.0
 HOMEPAGE=		https://libhx.sourceforge.net/
 
 # LGPL2/LGPL3
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libhx/}
 

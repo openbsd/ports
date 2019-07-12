@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/03/20 19:56:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 21:02:22 sthen Exp $
 
 COMMENT=	interface to read EXIF tags in JPEG images
 
@@ -10,7 +10,7 @@ MODULES=	cpan
 CPAN_AUTHOR=	ARC
 
 # BSD
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c exif>=8 perl
 

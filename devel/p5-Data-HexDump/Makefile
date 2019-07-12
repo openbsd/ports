@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 21:02:16 sthen Exp $
 
 COMMENT=        hexadecimal dumper
 
@@ -11,6 +11,6 @@ CATEGORIES=     devel
 MAINTAINER=	Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/12/05 16:25:45 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 21:02:18 sthen Exp $
 
 COMMENT=		simple 24 hours clock object
 
@@ -9,7 +9,7 @@ CATEGORIES=		devel
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_ENV+=		TEST_POD=Yes
 

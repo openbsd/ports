@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 21:02:13 sthen Exp $
 
 COMMENT =		library for decoding mod-like music formats
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://modplug-xmms.sourceforge.net/
 SHARED_LIBS +=          modplug         1.0     # 1.0
 
 # Public domain
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=modplug-xmms/}
 

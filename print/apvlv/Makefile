@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 21:02:24 sthen Exp $
 
 COMMENT=	lightweight PDF document viewer with vi bindings
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://naihe2010.github.io/apvlv/
 REVISION=	3
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	devel/cmake
 

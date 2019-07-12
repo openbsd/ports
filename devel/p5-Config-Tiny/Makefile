@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:15 sthen Exp $
 
 COMMENT=	simple methods to Read/Write .ini style files
 
@@ -8,7 +8,7 @@ DISTNAME=	Config-Tiny-2.14
 CATEGORIES=     devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_ENV+=	AUTOMATED_TESTING=1
 

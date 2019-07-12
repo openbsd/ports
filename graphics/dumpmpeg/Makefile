@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/07 17:04:59 danj Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 21:02:21 sthen Exp $
 
 COMMENT=	dump frames from mpeg-1 movies
 
@@ -9,7 +9,7 @@ CATEGORIES=	graphics x11
 
 HOMEPAGE=	http://sourceforge.net/projects/dumpmpeg/
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dumpmpeg/}

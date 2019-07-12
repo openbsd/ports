@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/05/22 08:18:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 21:02:28 sthen Exp $
 
 COMMENT=		Markdown implementation for PHP
 
@@ -11,7 +11,7 @@ CATEGORIES=		www
 HOMEPAGE =		https://michelf.ca/projets/php-markdown/
 
 # modified BSD
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://littoral.michelf.ca/code/php-markdown/
 EXTRACT_SUFX=		.zip

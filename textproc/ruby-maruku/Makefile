@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/20 20:57:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 21:02:27 sthen Exp $
 
 COMMENT =	Ruby markdown interpreter
 
@@ -9,7 +9,7 @@ CATEGORIES =	textproc
 HOMEPAGE =	https://github.com/bhollis/maruku
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =		lang/ruby
 

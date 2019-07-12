@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/09/07 20:09:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:14 sthen Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' GNU binutils #'
 
@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tar.bz2
 HOMEPAGE=	https://www.gnu.org/software/binutils/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c z
 
 MASTER_SITES=	${MASTER_SITE_GNU:=binutils/}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2019/06/13 15:48:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2019/07/12 21:02:13 sthen Exp $
 
 COMMENT-main=	implementation of the Freedesktop sound theme spec.
 COMMENT-gtk=	gtk+2 helper for libcanberra
@@ -27,7 +27,7 @@ HOMEPAGE=	http://0pointer.de/lennart/projects/libcanberra/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 

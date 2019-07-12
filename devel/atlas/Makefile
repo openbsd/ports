@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/07 17:04:58 danj Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 21:02:14 sthen Exp $
 
 COMMENT=	C++ reference implementation of the Atlas protocol
 
@@ -16,7 +16,7 @@ SHARED_LIBS +=	AtlasNet             2.0      # .1.1
 SHARED_LIBS +=	AtlasFunky           2.0      # .1.1
 CATEGORIES=	devel
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	ftp://ftp.ecs.soton.ac.uk/pub/worldforge/acorn/0.4/src/ \
 		http://kafka.i-site.com/~novalis/mirrors/acorn/0.4/src/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/06/02 10:40:49 nigel Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 21:02:13 sthen Exp $
 
 COMMENT =	on-the-fly HTML to WML conversion
 
@@ -9,7 +9,7 @@ REVISION =	0
 HOMEPAGE =	http://maddingue.free.fr/softwares/html2wml.html.en
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES =	http://maddingue.free.fr/softwares/download/Html2Wml/ \
 		${MASTER_SITE_SOURCEFORGE:=htmlwml/}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:17 sthen Exp $
 
 COMMENT=        cryptographic signatures for objects
 
@@ -8,7 +8,7 @@ DISTNAME=	Object-Signature-1.07
 CATEGORIES=     devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_ENV=	AUTOMATED_TESTING=Yes TEST_POD=Yes
 

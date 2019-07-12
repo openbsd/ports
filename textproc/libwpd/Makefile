@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/06/01 10:11:09 cwen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 21:02:27 sthen Exp $
 
 COMMENT=	import and export WordPerfect(tm) documents
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://libwpd.sourceforge.net/
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # LGPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += bz2 c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gsf-1
 WANTLIB += gthread-2.0 iconv intl lzma m pcre pthread ${COMPILER_LIBCXX} xml2 z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/04/24 09:42:42 danj Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 21:02:29 sthen Exp $
 
 COMMENT=		ldap authentication plugin for trac
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://trac-hacks.org/wiki/LdapPlugin
 MASTER_SITES=		https://spacehopper.org/mirrors/
 
 # BSD
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		www/trac \
 			databases/py-ldap

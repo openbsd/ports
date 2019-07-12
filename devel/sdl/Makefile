@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2019/01/28 06:47:56 jsg Exp $
+# $OpenBSD: Makefile,v 1.104 2019/07/12 21:02:18 sthen Exp $
 
 COMMENT=	cross-platform multimedia library
 
@@ -14,7 +14,7 @@ SHARED_LIBS=	SDL	8.0
 HOMEPAGE=	https://www.libsdl.org/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	iconv m pthread sndio usbhid
 

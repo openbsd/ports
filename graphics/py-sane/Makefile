@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 21:02:22 sthen Exp $
 
 COMMENT=		Python SANE module
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://python-pillow.github.io/
 
 # PIL Software License
 # Permission to use, copy, modify and distribute freely.
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += pthread sane ${MODPY_WANTLIB}
 

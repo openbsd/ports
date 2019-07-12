@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/25 23:47:25 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 21:02:23 sthen Exp $
 
 COMMENT=	mirror files and directories from a remote FTP server
 
@@ -9,7 +9,7 @@ REVISION=       0
 MASTER_SITES=	ftp://ftp.oav.net/pkg_freebsd/distfiles/
 
 # GPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 NO_TEST=     Yes
 WANTLIB=	c

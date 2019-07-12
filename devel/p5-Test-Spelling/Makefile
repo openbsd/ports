@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/13 12:25:49 cwen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:18 sthen Exp $
 
 COMMENT=	check for spelling errors in POD files
 
@@ -10,7 +10,7 @@ DISTNAME=	Test-Spelling-0.22
 CATEGORIES=	devel textproc
 
 # Perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-IPC-Run3 \
 		textproc/aspell/core \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/29 13:32:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 21:02:12 sthen Exp $
 
 COMMENT=	library for handling Microsoft compression formats
 
@@ -15,7 +15,7 @@ CATEGORIES=	archivers
 HOMEPAGE=	https://www.cabextract.org.uk/libmspack/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c
 

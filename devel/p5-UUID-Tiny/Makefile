@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 21:02:18 sthen Exp $
 
 COMMENT=	tiny pure-perl UUID generation
 
@@ -8,7 +8,7 @@ DISTNAME =	UUID-Tiny-1.04
 CATEGORIES=	devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_ENV+=	TEST_POD=1
 

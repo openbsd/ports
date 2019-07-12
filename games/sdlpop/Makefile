@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/02/27 20:50:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 21:02:20 sthen Exp $
 
 NOT_FOR_ARCHS=	${BE_ARCHS}
 
@@ -19,7 +19,7 @@ USE_GMAKE=	Yes
 MAKE_FLAGS=	CC="${CC}" LOCALBASE="${LOCALBASE}"
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	SDL2 SDL2_image SDL2_mixer c m
 

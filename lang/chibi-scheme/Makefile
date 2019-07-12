@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/06/25 20:25:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 21:02:22 sthen Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
@@ -16,7 +16,7 @@ HOMEPAGE =	http://synthcode.com/wiki/chibi-scheme
 MAINTAINER =	Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # New BSD License
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB =	c m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/02/26 08:46:31 sebastia Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 21:02:29 sthen Exp $
 
 COMMENT =	middleware for Ruby Faraday
 
@@ -8,7 +8,7 @@ HOMEPAGE =	https://github.com/lostisland/faraday_middleware
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =		lang/ruby
 BUILD_DEPENDS +=	${RUN_DEPENDS}

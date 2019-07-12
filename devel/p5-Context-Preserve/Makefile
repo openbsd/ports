@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/01/25 13:05:27 cwen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 21:02:15 sthen Exp $
 
 COMMENT=		run code after a subroutine call
 
@@ -8,7 +8,7 @@ CATEGORIES=		devel
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

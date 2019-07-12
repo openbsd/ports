@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:15 sthen Exp $
 
 COMMENT=	interface to compute differences between two objects
 
@@ -8,6 +8,6 @@ DISTNAME =	Algorithm-Diff-1.1903
 CATEGORIES=	devel
 REVISION =	0
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

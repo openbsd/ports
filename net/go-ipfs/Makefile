@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/18 14:56:13 edd Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 21:02:23 sthen Exp $
 
 COMMENT =	global, versioned, peer-to-peer filesystem
 
@@ -11,7 +11,7 @@ CATEGORIES =	net
 HOMEPAGE =	https://ipfs.io
 
 # MIT
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB =	c pthread
 

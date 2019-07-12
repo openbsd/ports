@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 21:02:16 sthen Exp $
 
 COMMENT=        wrapper around File::Find
 
@@ -9,7 +9,7 @@ REVISION=	1
 CATEGORIES=     devel
 
 # perl
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_ENV=	TEST_VERBOSE=Yes
 TEST_DEPENDS=	devel/p5-Test-Distribution

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2018/06/29 22:16:18 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2019/07/12 21:02:23 sthen Exp $
 
 COMMENT=	multi-purpose sniffer/interceptor/logger
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ettercap/}
 HOMEPAGE=	http://www.ettercap-project.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto curl curses form iconv lib/libnet-1.1/net=11 menu
 WANTLIB += panel pcap pcre pthread ssl z

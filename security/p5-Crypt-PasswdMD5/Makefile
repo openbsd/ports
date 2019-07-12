@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 21:02:25 sthen Exp $
 
 COMMENT=	md5-based passwords in perl
 
@@ -9,6 +9,6 @@ REVISION=	0
 CATEGORIES=	security
 
 # beer-ware
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>	

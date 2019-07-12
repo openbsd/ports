@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/10/26 23:55:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 21:02:25 sthen Exp $
 
 COMMENT =		common interface to HMAC functionality
 
@@ -8,7 +8,7 @@ REVISION =		0
 CATEGORIES =		security
 
 # MIT
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =		lang/ruby
 

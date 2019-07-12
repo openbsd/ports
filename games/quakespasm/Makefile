@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/06/23 06:18:09 jsg Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 21:02:20 sthen Exp $
 
 COMMENT=	SDL Quake port
 CATEGORIES=	games
@@ -11,7 +11,7 @@ HOMEPAGE=	http://quakespasm.sourceforge.net
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL SDL2 c m mad ogg pthread vorbis vorbisfile
 

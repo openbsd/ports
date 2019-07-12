@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/05 15:10:00 danj Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:30 sthen Exp $
 
 COMMENT=	keymap editor for the X window system
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tar.Z
 HOMEPAGE=http://www.jwz.org/xkeycaps/
 
 # BSD
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xt c 
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.16 2014/06/26 16:26:59 pascal Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2019/07/12 21:02:22 sthen Exp $
 
 # common stuff for all gcc ports
 # we assume each one defines a V variable.
 
 CATEGORIES=	lang
 
-PERMIT_PACKAGE_CDROM=Yes
+PERMIT_PACKAGE=	Yes
 
 COM=		GNU compiler collection
 COMMENT=	${COM}: core C compiler

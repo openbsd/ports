@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/26 23:55:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 21:02:27 sthen Exp $
 
 COMMENT =	safe, customer facing template language
 
@@ -9,7 +9,7 @@ CATEGORIES =	textproc
 HOMEPAGE =	 http://wiki.shopify.com/Liquid
 
 # MIT
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =		lang/ruby
 

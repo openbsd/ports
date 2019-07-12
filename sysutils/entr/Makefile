@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/04 14:29:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 21:02:26 sthen Exp $
 
 COMMENT =	run arbitrary commands when files change
 
@@ -9,7 +9,7 @@ CATEGORIES =	sysutils
 HOMEPAGE =	http://entrproject.org/
 
 # ISC
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB += c
 

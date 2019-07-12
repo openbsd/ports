@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/01/02 12:23:27 sebastia Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 21:02:25 sthen Exp $
 
 COMMENT =		Ruby language binding for gpgme
 
@@ -9,7 +9,7 @@ HOMEPAGE =		http://github.com/ueno/ruby-gpgme
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPL-2.1+
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 MODULES =		lang/ruby
 

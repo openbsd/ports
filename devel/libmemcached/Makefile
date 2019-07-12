@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 21:02:14 sthen Exp $
 
 COMMENT=		C C++ API for memcached
 
@@ -17,7 +17,7 @@ SHARED_LIBS +=  hashkit                   1.0 # 0.0
 SHARED_LIBS +=  memcachedutil             1.0 # 1.0
 
 # BSD
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c ${COMPILER_LIBCXX} m pthread sasl2
 

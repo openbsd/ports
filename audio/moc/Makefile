@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/05/20 22:15:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 21:02:13 sthen Exp $
 
 COMMENT =	console audio player
 DISTNAME =	moc-2.5.2
@@ -10,7 +10,7 @@ EXTRACT_SUFX =	.tar.bz2
 REVISION =	7
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 # uses pledge()
 WANTLIB += ${COMPILER_LIBCXX}

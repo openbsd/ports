@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/20 20:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 21:02:23 sthen Exp $
 
 COMMENT =	applied math library
 CATEGORIES =	math devel
@@ -9,7 +9,7 @@ HOMEPAGE =	http://qalculate.sourceforge.net/
 SHARED_LIBS =	qalculate		0.0	# 5.0
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB += c cln glib-2.0 gmp iconv intl lzma m curses pcre pthread readline
 WANTLIB += ${COMPILER_LIBCXX} xml2 z

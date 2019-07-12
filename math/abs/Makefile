@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/05/20 08:21:35 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 21:02:23 sthen Exp $
 
 COMMENT=	free spreadsheet with graphical user interface
 
@@ -7,7 +7,7 @@ PKGNAME=	${DISTNAME:S/-src//}
 REVISION=	5
 CATEGORIES=	math
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xaw Xext Xmu Xpm Xt c>=35 m
 
 MASTER_SITES=	http://www.ping.be/bertin/

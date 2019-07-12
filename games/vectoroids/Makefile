@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/12/07 15:00:30 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 21:02:21 sthen Exp $
 
 COMMENT=	vector-based, pretty, Asteroids clone
 
@@ -11,7 +11,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 HOMEPAGE=	http://www.newbreedsoftware.com/vectoroids/
 
 # GPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xext c m pthread usbhid xcb \
 		SDL SDL_mixer SDL_image

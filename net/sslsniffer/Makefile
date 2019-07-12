@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 21:02:24 sthen Exp $
 
 COMMENT=	SSLv3/TLS and SSLv2 sniffer
 
@@ -9,7 +9,7 @@ HOMEPAGE=	http://crypto.stanford.edu/~eujin/sslsniffer/
 MASTER_SITES=	${HOMEPAGE}
 
 # GPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c crypto ssl 
 
 MAKE_FLAGS=	CC='${CC}'

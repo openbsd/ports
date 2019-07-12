@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/01/11 19:27:11 rpe Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 21:02:26 sthen Exp $
 
 COMMENT =	keeps a list of uptime records
 DISTNAME =	uptimed-0.3.17
@@ -12,7 +12,7 @@ HOMEPAGE =	https://github.com/rpodgorny/uptimed/
 MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB += c
 

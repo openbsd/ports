@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/05/17 10:21:42 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:30 sthen Exp $
 
 COMMENT=	dynamically change some settings of an xterm
 
@@ -7,7 +7,7 @@ REVISION=	2
 CATEGORIES=	x11
 
 # GPL
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c 
 

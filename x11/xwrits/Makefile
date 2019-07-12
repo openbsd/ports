@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/06/19 16:24:06 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 21:02:30 sthen Exp $
 
 COMMENT =	typing break alarm and timer
 
@@ -8,7 +8,7 @@ CATEGORIES =	x11
 HOMEPAGE =	http://www.lcdf.org/~eddietwo/xwrits/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =		ICE SM X11 Xext Xinerama c m 
 

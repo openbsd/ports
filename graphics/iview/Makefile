@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/07 17:04:59 danj Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:21 sthen Exp $
 
 COMMENT=	image viewer for X
 
@@ -9,7 +9,7 @@ CATEGORIES=	graphics x11
 
 HOMEPAGE=	http://math.smsu.edu/~erik/software.php?id=63
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://math.smsu.edu/~erik/files/
 

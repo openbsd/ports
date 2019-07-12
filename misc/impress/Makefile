@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/01/21 06:23:34 bentley Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 21:02:23 sthen Exp $
 
 COMMENT=	publishing and presentation tool
 
@@ -12,7 +12,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://www.ntlug.org/~ccox/impress/
 
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	x11/tk
 RUN_DEPENDS=	${MODTK_RUN_DEPENDS}

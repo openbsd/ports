@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/25 23:47:25 danj Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 21:02:12 sthen Exp $
 
 COMMENT=	earth as seen from the direction of the sun
 
@@ -9,7 +9,7 @@ CATEGORIES=	astro x11
 MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL:=naddy/}
 
 # BSD
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 c m
 

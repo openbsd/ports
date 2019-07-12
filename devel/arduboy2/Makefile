@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/08 01:02:36 jcs Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 21:02:13 sthen Exp $
 
 COMMENT=	Arduino library for the Arduboy miniature game system
 
@@ -11,7 +11,7 @@ PKGNAME=	arduboy2-${V}
 CATEGORIES=	devel
 
 # BSD 3-clause
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/arduino
 
