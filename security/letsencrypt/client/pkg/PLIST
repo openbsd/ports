@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2019/05/28 14:24:10 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.25 2019/07/12 15:50:35 sthen Exp $
 @extraunexec rm -rf /var/log/certbot/* /var/lib/certbot/*
 bin/certbot
 bin/letsencrypt
@@ -48,8 +48,10 @@ lib/python${MODPY_VERSION}/site-packages/certbot/compat/
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/compat/${MODPY_PYCACHE}filesystem.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/${MODPY_PYCACHE}os.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/compat/filesystem.py
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/misc.py
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/os.py
 lib/python${MODPY_VERSION}/site-packages/certbot/configuration.py
@@ -178,8 +180,10 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/compat/
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/compat/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/tests/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/compat/${MODPY_PYCACHE}compat_test.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/compat/compat_test.py
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/compat/${MODPY_PYCACHE}filesystem_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/compat/${MODPY_PYCACHE}os_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/compat/filesystem_test.py
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/compat/os_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/configuration_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/crypto_util_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/display/
@@ -227,9 +231,10 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-nosans_nistp
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr-san_512.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr_512.der
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/csr_512.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/google_certificate.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/google_issuer_certificate.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/nistp256_key.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/ocsp_certificate.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/ocsp_issuer_certificate.pem
+lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/ocsp_responder_certificate.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/os-release
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/rsa2048_key.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/rsa256_key.pem
