@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/09 08:17:29 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 21:07:47 sthen Exp $
 
 COMMENT =	check the validity of links in an HTML or XHTML document
 
@@ -13,6 +13,6 @@ RUN_DEPENDS =	www/p5-CSS-DOM \
 TEST_DEPENDS =	${RUN_DEPENDS}
 
 # W3C https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

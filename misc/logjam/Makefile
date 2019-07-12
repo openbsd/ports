@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2018/06/27 21:03:57 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2019/07/12 21:07:46 sthen Exp $
 
 COMMENT =	GTK client for LiveJournal
 
@@ -9,7 +9,7 @@ CATEGORIES =	misc x11
 HOMEPAGE =	http://andy-shev.github.com/LogJam/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo dbus-1 dbus-glib-1 expat ffi

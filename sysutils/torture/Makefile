@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/29 14:55:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 21:07:46 sthen Exp $
 
 COMMENT =		set of kernel torture tools
 
@@ -9,7 +9,7 @@ CATEGORIES =		sysutils
 MAINTAINER =		Bob Beck <beck@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://foad2.obtuse.com/pub/beck/
 

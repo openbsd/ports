@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/06/29 22:16:21 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 21:07:46 sthen Exp $
 
 CATEGORIES =	www
 COMMENT =	Webkit-based KPart for KDE
@@ -12,7 +12,7 @@ MASTER_SITES =	ftp://3ps.if.ua/pub/OpenBSD/distfiles/ \
 		http://www.ohvost.ru/dnl/kde/src/
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM =          Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  c m pthread
 WANTLIB += ${COMPILER_LIBCXX}

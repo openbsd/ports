@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 21:07:45 sthen Exp $
 
 COMMENT =	python bindings for musicbrainz NGS webservice
 
@@ -11,7 +11,7 @@ CATEGORIES =	audio
 HOMEPAGE =	http://python-musicbrainzngs.readthedocs.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =  Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 

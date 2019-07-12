@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 21:07:46 sthen Exp $
 
 COMMENT=	perl implementation of Ron Rivests MD5 Algorithm
 
@@ -10,6 +10,6 @@ CATEGORIES=	security
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

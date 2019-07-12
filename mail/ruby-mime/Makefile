@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/11/20 20:57:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 21:07:46 sthen Exp $
 
 COMMENT =	MIME library for Ruby
 
@@ -9,7 +9,7 @@ CATEGORIES =	mail
 MAINTAINER =	Clint Pachl <pachl@ecentryx.com>
 
 # Ruby license
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 HOMEPAGE =	https://ecentryx.com/gems/mime/
 

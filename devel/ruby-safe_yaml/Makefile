@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/09/09 10:42:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 21:07:45 sthen Exp $
 
 COMMENT =		safe YAML parsing
 
@@ -8,7 +8,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://dtao.github.com/safe_yaml/
 
 # MIT License
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

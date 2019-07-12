@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/05/09 12:15:29 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 21:07:46 sthen Exp $
 
 COMMENT =	cross-platform password manager
 
@@ -12,7 +12,7 @@ CATEGORIES =	security
 HOMEPAGE =	http://wiki.github.com/zdia/gorilla/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =  Yes
+PERMIT_PACKAGE =	Yes
 
 USE_X11 =	Yes
 MODULES =	x11/tk

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/26 12:50:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 21:07:45 sthen Exp $
 
 COMMENT =		complete solution for Ruby command-line executables
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/commander-rb/commander
 
 # MIT License
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

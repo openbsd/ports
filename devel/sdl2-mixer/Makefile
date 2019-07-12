@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/20 18:22:28 thfr Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 21:07:45 sthen Exp $
 
 V =		2.0.4
 COMMENT =	SDL2 multi-channel audio mixer library
@@ -12,7 +12,7 @@ HOMEPAGE =	https://www.libsdl.org/projects/SDL_mixer/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # zlib
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += FLAC SDL2 c m mikmod modplug ogg opus opusfile pthread sndio usbhid
 WANTLIB += vorbis vorbisfile samplerate mpg123

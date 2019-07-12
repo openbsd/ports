@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/31 06:57:00 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 21:07:46 sthen Exp $
 
 COMMENT =	check the validity of links in an HTML or XHTML document
 
@@ -10,6 +10,6 @@ CATEGORIES =	www
 TEST_DEPENDS =	devel/p5-Clone
 
 # perl
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

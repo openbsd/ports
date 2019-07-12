@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/06 07:36:14 rpointel Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 21:07:45 sthen Exp $
 
 COMMENT =		yet another fast Java decompiler
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://jd.benow.ca/
 MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =  Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://github.com/java-decompiler/jd-gui/releases/download/v${VERSION}/
 

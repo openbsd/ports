@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/08 13:49:47 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 21:07:45 sthen Exp $
 
 COMMENT =	Pythonic argument parser
 
@@ -11,7 +11,7 @@ REVISION =	3
 HOMEPAGE =	http://docopt.org
 
 # MIT
-PERMIT_PACKAGE_CDROM =  Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PI =	Yes

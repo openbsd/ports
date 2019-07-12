@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/15 12:04:39 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 21:07:46 sthen Exp $
 
 COMMENT =	Python library for OAuth
 
@@ -11,7 +11,7 @@ REVISION =	0
 HOMEPAGE =	http://github.com/simplegeo/python-oauth2
 
 # MIT
-PERMIT_PACKAGE_CDROM =  Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/10/26 23:55:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 21:07:45 sthen Exp $
 
 COMMENT =		colorize your text in the terminal
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://octopress.org/colorator/
 
 # MIT License
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

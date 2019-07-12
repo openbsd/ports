@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/02/21 22:37:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2019/07/12 21:07:46 sthen Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
@@ -9,7 +9,7 @@ REVISION =	11
 HOMEPAGE =	http://amide.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage 
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2

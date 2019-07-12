@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/04/16 17:39:00 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 21:07:45 sthen Exp $
 
 COMMENT =		colorize your text in the terminal red
 
@@ -8,7 +8,7 @@ HOMEPAGE =		http://github.com/defunkt/colored
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT like
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

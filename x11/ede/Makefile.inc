@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2016/05/07 12:40:58 pascal Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2019/07/12 21:07:47 sthen Exp $
 
 V =		2.1
 FULL_V =	2.1.0
@@ -8,6 +8,6 @@ MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 SUBST_VARS +=	FULL_V
 
 # (L)GPLv2+
-PERMIT_PACKAGE_CDROM =  Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ede/}

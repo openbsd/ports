@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/04/28 20:52:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 21:07:47 sthen Exp $
 
 COMMENT =	JSON Web Token implementation in Python
 
@@ -12,7 +12,7 @@ REVISION =	0
 HOMEPAGE =	http://github.com/jpadilla/pyjwt
 
 # BSD
-PERMIT_PACKAGE_CDROM =  Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 

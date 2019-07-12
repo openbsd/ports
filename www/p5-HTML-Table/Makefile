@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 21:07:47 sthen Exp $
 
 COMMENT =	generate HTML tables for cgi scripts
 
@@ -10,6 +10,6 @@ REVISION =	0
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # Perl
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

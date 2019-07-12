@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 21:07:46 sthen Exp $
 
 COMMENT =	the Eksblowfish block cipher
 
@@ -7,7 +7,7 @@ DISTNAME =	Crypt-Eksblowfish-0.009
 CATEGORIES =	security
 
 # perl
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/07/27 09:34:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 21:07:45 sthen Exp $
 
 CATEGORIES =	devel
 COMMENT =	K Desktop Environment, frontend to moc
@@ -8,7 +8,7 @@ EXTRACT_SUFX =	.tar.bz2
 REVISION =	5
 
 # 2-clause BSDL
-PERMIT_PACKAGE_CDROM =          Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/automoc4/${VERSION}/}
 DIST_SUBDIR =	kde

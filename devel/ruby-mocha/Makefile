@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/20 20:57:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 21:07:45 sthen Exp $
 
 COMMENT =	Ruby library for mocking and stubbing
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 HOMEPAGE =	http://gofreerange.com/mocha/docs/
 
 # MIT License
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 

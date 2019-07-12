@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 21:07:45 sthen Exp $
 
 COMMENT =	finding memory leaks in perl objects
 
@@ -9,6 +9,6 @@ CATEGORIES =	devel
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

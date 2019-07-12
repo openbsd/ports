@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/05/15 06:42:17 sebastia Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 21:07:45 sthen Exp $
 
 COMMENT =		support libraries and Ruby extensions extracted from Rails
 
@@ -7,7 +7,7 @@ CATEGORIES =		devel
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

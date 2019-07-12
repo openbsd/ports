@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.5 2018/10/19 20:53:27 rsadowski Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2019/07/12 21:07:46 sthen Exp $
 
 CATEGORIES +=	multimedia
 
 # LGPL 2.1
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVOR ?=
 .if ${FLAVOR:Mqt5}

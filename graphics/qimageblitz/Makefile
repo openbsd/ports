@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/27 09:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 21:07:46 sthen Exp $
 
 CATEGORIES =	graphics
 COMMENT =	KDE image effects
@@ -10,7 +10,7 @@ EXTRACT_SUFX =	.tar.bz2
 SHARED_LIBS =	qimageblitz         0.0      # .4.0
 
 # 2-clause BSDL
-PERMIT_PACKAGE_CDROM =          Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/qimageblitz/}
 

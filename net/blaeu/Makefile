@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:39 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 21:07:46 sthen Exp $
 
 COMMENT =	create measurements on RIPE Atlas probes.
 
@@ -12,7 +12,7 @@ MAINTAINER =	Denis Fondras <denis@openbsd.org>
 HOMEPAGE =	https://framagit.org/bortzmeyer/blaeu
 
 # 2-clause BSD
-PERMIT_PACKAGE_CDROM =  Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/09/13 16:12:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 21:07:46 sthen Exp $
 
 COMMENT =	minimalistic SILC client
 
@@ -7,7 +7,7 @@ REVISION =	1
 CATEGORIES =	net
 
 # GPLv2/MIT
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://dokucode.de/files/
 

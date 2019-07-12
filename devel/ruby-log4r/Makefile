@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/20 20:57:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 21:07:45 sthen Exp $
 
 COMMENT =		log4j implementation for Ruby
 
@@ -9,7 +9,7 @@ HOMEPAGE =		https://github.com/colbygk/log4r
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

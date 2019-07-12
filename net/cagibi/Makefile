@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/26 22:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 21:07:46 sthen Exp $
 
 CATEGORIES =	net
 COMMENT =	SSDP cache/proxy daemon for KDE
@@ -10,7 +10,7 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/cagibi/}
 EXTRACT_SUFX =	.tar.bz2
 
 # GPLv2+ and LGPLv2.1+
-PERMIT_PACKAGE_CDROM =          Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml m pthread
 WANTLIB += ${LIBCXX}

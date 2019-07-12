@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/15 12:04:41 kmos Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 21:07:46 sthen Exp $
 
 COMMENT =	Python library for OAuth
 
@@ -15,7 +15,7 @@ CATEGORIES =	security
 MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM =  Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2018/12/25 00:32:55 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2019/07/12 21:07:45 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -14,6 +14,6 @@ MASTER_SITES =		https://releases.wildfiregames.com/ \
 			${MASTER_SITE_SOURCEFORGE:=zero-ad/}
 
 # GPLv2+, MIT for libs, CC-BY-SA for data
-PERMIT_PACKAGE_CDROM =  Yes
+PERMIT_PACKAGE =	Yes
 
 WRKDIST =		${WRKDIR}/0ad-${V}-alpha

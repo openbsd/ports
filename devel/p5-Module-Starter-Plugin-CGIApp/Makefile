@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 21:07:45 sthen Exp $
 
 COMMENT =		template based module starter for CGI apps
 
@@ -12,7 +12,7 @@ CPAN_AUTHOR =		JALDHAR
 MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>
 
 # Perl
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE =	modbuild
 

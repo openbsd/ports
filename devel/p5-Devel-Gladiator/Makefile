@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/24 08:40:32 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 21:07:45 sthen Exp $
 
 COMMENT =	walk all of perl memory arena
 
@@ -9,7 +9,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 TEST_DEPENDS =	devel/p5-PadWalker
 # perl
-PERMIT_PACKAGE_CDROM =   Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 
