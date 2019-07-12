@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/09/23 09:16:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:07 sthen Exp $
 
 COMMENT =	patch-set and bug tracking system for CVS
 
@@ -10,7 +10,7 @@ CATEGORIES =	devel www
 HOMEPAGE =	http://www.cvstrac.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${HOMEPAGE}
 

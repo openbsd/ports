@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/05/12 14:29:01 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:43:46 sthen Exp $
 
 COMMENT=	small & simple FAX send/receive program
 
@@ -8,7 +8,7 @@ CATEGORIES=	comms
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

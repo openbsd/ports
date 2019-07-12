@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/15 12:04:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:00 sthen Exp $
 
 COMMENT =	Python DB-API 2.0 compliant interface to PostgreSQL
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://pypgsql.sourceforge.net/
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # Python
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pq>=5 pthread

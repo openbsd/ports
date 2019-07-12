@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/08/21 19:43:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:06 sthen Exp $
 
 COMMENT =		library to simplify writing unit tests for C applications
 
@@ -10,7 +10,7 @@ SHARED_LIBS +=		cmockery                  0.0 # 0.0
 CATEGORIES =		devel
 
 # Apache v2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://distfiles.nl/
 

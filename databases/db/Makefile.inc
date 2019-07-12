@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.40 2019/07/10 17:14:47 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.41 2019/07/12 20:43:52 sthen Exp $
 
 COMMENT-main=	Berkeley DB package, revision ${REV}
 COMMENT-tcl=	TCL bindings for Berkeley DB, revision ${REV}
@@ -10,7 +10,7 @@ MASTER_SITES=	https://download.oracle.com/berkeley-db/
 
 # License: BSD + SleepyCat's additions.
 # Must purchase license to redistribute if not distributing the source.
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 
 CONFIGURE_SCRIPT=	../dist/configure

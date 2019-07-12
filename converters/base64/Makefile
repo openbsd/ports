@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/05/15 11:05:43 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:43:49 sthen Exp $
 
 COMMENT=	converter to/from base64 encoding
 
@@ -9,7 +9,7 @@ REVISION =	0
 HOMEPAGE=	http://www.fourmilab.ch/webtools/base64/
 
 # public domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${HOMEPAGE}

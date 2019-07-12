@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/06/13 15:48:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:43:33 sthen Exp $
 
 COMMENT=		small and easy to use graphical MPD client
 
@@ -7,7 +7,7 @@ CATEGORIES=		audio x11
 REVISION=		8
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo crypto curl expat ffi fontconfig

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/10/19 14:30:37 jca Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:43:43 sthen Exp $
 
 COMMENT=	self-scaling network benchmark
 
@@ -9,7 +9,7 @@ CATEGORIES=	benchmarks net
 HOMEPAGE=	http://bitspjoule.org/netpipe/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${HOMEPAGE}/code/

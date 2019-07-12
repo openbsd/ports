@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/11 17:16:59 tj Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:29 sthen Exp $
 
 COMMENT =		Python implementation of the LZO library
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://www.oberhumer.com/opensource/lzo/
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += lzo pthread

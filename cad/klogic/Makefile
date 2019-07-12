@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/05/20 22:15:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2019/07/12 20:43:45 sthen Exp $
 
 COMMENT =	logic circuit simulator for KDE
 
@@ -18,7 +18,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 
 # License information from homepage
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	x11/kde4 \
 		devel/cmake

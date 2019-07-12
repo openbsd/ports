@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/12/19 20:22:45 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:06 sthen Exp $
 
 COMMENT=	c++ unit testing framework
 
@@ -14,7 +14,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://cppunit.sourceforge.net/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m ${COMPILER_LIBCXX}
 

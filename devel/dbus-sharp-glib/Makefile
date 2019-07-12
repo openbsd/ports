@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/03/29 19:39:02 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:07 sthen Exp $
 
 COMMENT=	GLib main loop integration for dbus-sharp
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://github.com/mono/dbus-sharp-glib
 MASTER_SITES=	${HOMEPAGE}/releases/download/v0.6/
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/mono
 MODMONO_GMCS_COMPAT=	Yes

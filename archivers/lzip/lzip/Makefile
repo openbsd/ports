@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/01/26 22:22:34 juanfra Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:28 sthen Exp $
 
 COMMENT =		lossless data compressor
 
@@ -7,7 +7,7 @@ DISTNAME =		lzip-1.21
 HOMEPAGE =		http://lzip.nongnu.org/lzip.html
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m ${COMPILER_LIBCXX}
 

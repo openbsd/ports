@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/18 21:22:26 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:55 sthen Exp $
 
 COMMENT =	reads and writes XBase (dbf) files, includes DBI support
 
@@ -8,7 +8,7 @@ REVISION =	0
 CATEGORIES =	databases
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 

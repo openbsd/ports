@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/05/19 19:13:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:43:42 sthen Exp $
 
 COMMENT =		audio codec for lossless, lossy and hybrid compression
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://www.wavpack.com/
 SHARED_LIBS +=		wavpack		0.2	# 3.0
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c iconv m
 

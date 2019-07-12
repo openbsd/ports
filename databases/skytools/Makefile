@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/06/24 22:26:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:44:02 sthen Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://pgfoundry.org/projects/skytools
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB= 	c pq pthread ${MODPY_WANTLIB}
 

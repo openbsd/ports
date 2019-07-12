@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/06 19:36:30 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:37 sthen Exp $
 
 COMMENT=	nsf (Nintendo sound) file player
 
@@ -9,7 +9,7 @@ CATEGORIES=	audio
 HOMEPAGE=	http://nosefart.sourceforge.net/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nosefart/}
 

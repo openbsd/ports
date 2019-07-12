@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/17 16:19:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:43:46 sthen Exp $
 
 COMMENT=	curses-based 3270 terminal editor
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://x3270.bgp.nu/
 MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto curses iconv readline ssl util
 

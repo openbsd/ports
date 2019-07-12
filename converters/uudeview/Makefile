@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/11/20 21:14:54 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:52 sthen Exp $
 
 COMMENT =	uu/xx/Base64/BinHex/yEnc decoder and encoder
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://www.fpx.de/fp/Software/UUDeview/
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
 
 # GPLv2+, with BSD parts
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c m
 

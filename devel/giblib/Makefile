@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/05/01 19:57:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:09 sthen Exp $
 
 COMMENT=		utility library including a imlib2 wrapper
 
@@ -9,7 +9,7 @@ SHARED_LIBS=		giblib	1.6	# .1.6
 CATEGORIES=		devel
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext freetype m xcb z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=project/slackbuildsdirectlinks/giblib/}

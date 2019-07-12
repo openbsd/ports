@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/05/20 22:15:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2019/07/12 20:43:52 sthen Exp $
 
 COMMENT=	convert files between character sets and usages
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://recode.progiciels-bpi.ca
 MODULES=	lang/python
 
 # (L)GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c iconv intl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/04/16 14:42:30 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:52 sthen Exp $
 
 COMMENT=	converter to/from quoted-printable encoding
 
@@ -8,7 +8,7 @@ HOMEPAGE=	http://www.fourmilab.ch/webtools/qprint/
 REVISION =	0
 
 # public domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${HOMEPAGE}

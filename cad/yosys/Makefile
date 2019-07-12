@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/30 07:21:58 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:46 sthen Exp $
 
 COMMENT =	framework for Verilog RTL synthesis
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://www.clifford.at/yosys/
 MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
 
 # ISC (yosys), MIT (MiniSat)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} ${MODTCL_WANTLIB} c m readline ffi
 

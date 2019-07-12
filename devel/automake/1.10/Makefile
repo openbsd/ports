@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/04/04 02:01:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:44:04 sthen Exp $
 
 VERSION=	1.10
 DISTNAME=	automake-${VERSION}.3
@@ -6,7 +6,7 @@ REVISION=	9
 PKGSPEC=	automake->=${VERSION},<1.11
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/04/28 20:51:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:52 sthen Exp $
 
 # sync with editors/libreoffice
 ONLY_FOR_ARCHS=		amd64 i386
@@ -15,7 +15,7 @@ CATEGORIES=		converters textproc
 HOMEPAGE=		http://dag.wiee.rs/home-made/unoconv/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://dag.wieers.com/home-made/unoconv/
 

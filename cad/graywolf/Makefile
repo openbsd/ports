@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/08/28 18:26:57 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:45 sthen Exp $
 
 COMMENT =	placement tool used in VLSI design
 
@@ -13,7 +13,7 @@ CATEGORIES =	cad
 MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	ICE SM X11 Xext c gsl gslcblas m
 

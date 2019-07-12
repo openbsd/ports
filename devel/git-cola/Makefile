@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/06/18 04:13:54 bket Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:44:09 sthen Exp $
 
 COMMENT =	python powered git gui
 
@@ -16,7 +16,7 @@ HOMEPAGE =	https://git-cola.github.io/
 MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =	lang/python
 

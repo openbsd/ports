@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/04/09 20:14:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:34 sthen Exp $
 
 COMMENT=		library to access data on a CDDB server
 
@@ -10,7 +10,7 @@ REVISION=		0
 HOMEPAGE=		http://libcddb.sourceforge.net/
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libcddb/}
 EXTRACT_SUFX=		.tar.bz2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/22 12:56:29 schwarze Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:08 sthen Exp $
 
 COMMENT =		BSD-licensed implementation of compilation tools
 
@@ -7,7 +7,7 @@ REVISION =		2
 CATEGORIES =		devel
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=elftoolchain/}
 EXTRACT_SUFX =		.tgz

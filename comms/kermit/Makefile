@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/10/15 08:30:27 bentley Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:43:47 sthen Exp $
 
 COMMENT =		serial and network communications package
 
@@ -8,7 +8,7 @@ CATEGORIES =		comms
 HOMEPAGE =		http://www.kermitproject.org/
 
 # THE C-KERMIT 9.0 LICENSE (Revised 3-Clause BSD License)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c curses m util
 

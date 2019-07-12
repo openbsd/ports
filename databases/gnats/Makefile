@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/01/22 17:54:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 20:43:52 sthen Exp $
 
 COMMENT=	GNU Problem Report Management System
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=gnats/}
 HOMEPAGE=	https://www.gnu.org/software/gnats/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/13 18:06:42 danj Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:44:08 sthen Exp $
 
 COMMENT=	multilanguage implementation of ctags
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://ctags.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ctags/}

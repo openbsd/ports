@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/04/27 14:51:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:43:50 sthen Exp $
 
 COMMENT =	JSON serialising/deserialising, done correctly and fast
 
@@ -8,7 +8,7 @@ EPOCH =		1
 CATEGORIES =	converters
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

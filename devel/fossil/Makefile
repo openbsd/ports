@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2019/02/22 02:12:13 jturner Exp $
+# $OpenBSD: Makefile,v 1.69 2019/07/12 20:44:08 sthen Exp $
 
 COMMENT =		simple distributed software configuration management
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://fossil-scm.org/
 MASTER_SITES =		http://fossil-scm.org/index.html/uv/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVORS=		static
 FLAVOR?=

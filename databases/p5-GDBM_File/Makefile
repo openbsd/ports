@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 16:36:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:57 sthen Exp $
 
 COMMENT=	perl interface to gdbm
 
@@ -12,7 +12,7 @@ REVISION=	0
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../src/}
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c gdbm perl
 

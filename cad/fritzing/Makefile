@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:43:44 sthen Exp $
 
 COMMENT=	interactive electronics designing software
 
@@ -23,7 +23,7 @@ MASTER_SITES0= https://github.com/fritzing/fritzing-parts/archive/${GH_TAGNAME}/
 
 # Code: GPLv3+
 # Rest: CreativeCommons:BY-SA
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE QtGui QtNetwork QtSql QtSvg QtXml SM X11 Xext Xi
 WANTLIB += Xinerama Xrender c fontconfig freetype m pthread ${COMPILER_LIBCXX}

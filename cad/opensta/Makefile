@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/30 11:50:06 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:43:45 sthen Exp $
 
 COMMENT =	Parallax Static Timing Analyzer
 
@@ -13,7 +13,7 @@ GH_COMMIT =	ed3ad4fb3012feb53328a80df6ad01efd477f891
 MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	${COMPILER_LIBCXX} ${MODTCL_WANTLIB} c m z cudd
 

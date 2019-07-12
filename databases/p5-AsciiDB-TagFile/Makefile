@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/12/04 21:09:38 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:54 sthen Exp $
 
 COMMENT =	tie class for a simple ASCII database
 DISTNAME =	AsciiDB-TagFile-1.06
@@ -11,6 +11,6 @@ FIX_EXTRACT_PERMISSIONS=Yes
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

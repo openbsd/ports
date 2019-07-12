@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/06/13 15:48:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:43:45 sthen Exp $
 
 COMMENT =		suite of tools for electronic design automation
 DISTNAME =		geda-gaf-1.6.0
@@ -11,7 +11,7 @@ REVISION =		20
 SHARED_LIBS = 		geda	0.0	# 38.0
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo drm expat ffi

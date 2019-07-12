@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/05/12 10:00:24 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:43:42 sthen Exp $
 
 COMMENT=		wm-dockapp; front end for an mp3 player
 
@@ -9,7 +9,7 @@ CATEGORIES=		audio x11 x11/windowmaker
 HOMEPAGE=		http://www.dotfiles.com/software/wmmp3/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext Xpm c
 

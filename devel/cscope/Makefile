@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/05/20 20:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:06 sthen Exp $
 
 COMMENT =		code browsing program
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://cscope.sourceforge.net/
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB =		c curses

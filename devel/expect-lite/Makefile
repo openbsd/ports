@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/05 16:06:34 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:08 sthen Exp $
 
 COMMENT =		mature, quick and easy command line automation tool
 
@@ -11,7 +11,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://expect-lite.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=expect-lite/}
 

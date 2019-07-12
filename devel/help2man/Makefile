@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/04 11:29:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:44:11 sthen Exp $
 
 COMMENT=	generates simple manual pages from program output
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=help2man/}
 HOMEPAGE=	https://www.gnu.org/software/help2man/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 SEPARATE_BUILD=	Yes
 NO_TEST=	Yes

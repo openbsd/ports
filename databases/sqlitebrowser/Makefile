@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/03/08 20:00:41 cwen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:44:02 sthen Exp $
 
 COMMENT=	graphical interface to sqlite databases
 
@@ -12,7 +12,7 @@ CATEGORIES=	databases x11
 HOMEPAGE=	http://sqlitebrowser.org/
 
 # MPLv2/GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Test Qt5Widgets c m sqlite3 qscintilla2_qt5

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/13 19:03:51 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:34 sthen Exp $
 
 COMMENT =		cue sheet parser library
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://libcue.sourceforge.net/
 SHARED_LIBS =		cue		0.0	# 1.4
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libcue/}
 EXTRACT_SUFX =		.tar.bz2

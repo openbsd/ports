@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/05/12 10:00:24 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:43:42 sthen Exp $
 
 COMMENT=	premier dockable radio tuner
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.soren.org/linux/wmtune/
 
 MAINTAINER=	Vladimir Popov <pva48@mail.ru>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext Xpm c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/30 10:54:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:41 sthen Exp $
 
 COMMENT=	XDG sound theme
 
@@ -14,7 +14,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2 - GPLv2
 # CC-SAv2.0 - CC-Av3.0 Unported
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://people.freedesktop.org/~mccann/dist/
 

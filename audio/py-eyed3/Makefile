@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/04/28 20:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:40 sthen Exp $
 
 COMMENT=		module and program for processing ID3 tags
 
@@ -10,7 +10,7 @@ REVISION=		0
 HOMEPAGE=		http://eyed3.nicfit.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}releases/
 

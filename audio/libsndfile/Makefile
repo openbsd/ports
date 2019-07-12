@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/04/23 08:48:54 jca Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:43:35 sthen Exp $
 
 COMMENT=	library to handle various audio file formats
 
@@ -9,7 +9,7 @@ MAINTAINER=	Jan Stary <hans@stare.cz>
 SHARED_LIBS +=	sndfile              6.0      # .1.28
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}files/
 

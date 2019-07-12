@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/10/11 23:48:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:44:06 sthen Exp $
 
 COMMENT=	generate GNU-style ChangeLogs from CVS repositories
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.red-bean.com/cvs2cl/
 EXTRACT_SUFX=	.gz
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WRKDIST=	${WRKDIR}
 MASTER_SITES=	http://openbsd.dead-parrot.de/distfiles/

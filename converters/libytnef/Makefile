@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:49 sthen Exp $
 
 COMMENT=		read and convert TNEF files
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=		mail/p5-MIME-tools
 WANTLIB+=		c
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.15

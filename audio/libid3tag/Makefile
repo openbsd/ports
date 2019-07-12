@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/01/19 23:01:41 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:43:34 sthen Exp $
 
 COMMENT=	library for reading ID3 tags
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://mad.sourceforge.net/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	ftp://ftp.mars.org/pub/mpeg/ \
 		${MASTER_SITE_SOURCEFORGE:=mad/}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/20 19:56:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:43:39 sthen Exp $
 
 COMMENT=		Perl extension for Ogg Vorbis streams
 
@@ -9,7 +9,7 @@ REVISION=		5
 CATEGORIES=		audio
 
 # GPL or Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c ogg perl vorbis>=1 vorbisfile>=2
 

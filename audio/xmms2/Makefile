@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/02/21 22:37:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2019/07/12 20:43:42 sthen Exp $
 
 COMMENT =		audio player daemon with library management
 BROKEN-sparc64 =	waf build goes into an infinite loop
@@ -20,7 +20,7 @@ HOMEPAGE =		https://xmms2.org/
 MAINTAINER=		Amaury Gauthier <amaury.gauthier@etu.unilim.fr>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += FLAC ao avahi-client avahi-common avahi-glib avcodec
 WANTLIB += avutil c curl curses gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0

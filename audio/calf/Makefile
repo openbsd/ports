@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/06/13 15:48:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:43:31 sthen Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -10,7 +10,7 @@ REVISION =	4
 HOMEPAGE =	https://calf-studio-gear.org/
 
 # GPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo db expat ffi fontconfig

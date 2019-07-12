@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2019/05/20 22:15:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.84 2019/07/12 20:43:28 sthen Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://www.gnu.org/software/tar/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=tar/}
 EXTRACT_SUFX=	.tar.xz

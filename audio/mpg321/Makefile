@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/12/05 20:19:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:43:36 sthen Exp $
 
 COMMENT=	free clone of mpg123, a command-line mp3 player
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://mpg321.sourceforge.net/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mpg321/}
 DISTFILES=	mpg321_${VERSION}.orig.tar.gz

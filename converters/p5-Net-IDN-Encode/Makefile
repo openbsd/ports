@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/10/24 22:10:09 bluhm Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:51 sthen Exp $
 
 COMMENT =	Internationalizing Domain Names in Applications
 
@@ -9,7 +9,7 @@ CATEGORIES =	net converters
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2019/07/10 15:25:02 tj Exp $
+# $OpenBSD: Makefile,v 1.103 2019/07/12 20:44:02 sthen Exp $
 
 COMMENT=	embedded SQL implementation
 
@@ -19,7 +19,7 @@ CATEGORIES=	databases
 HOMEPAGE=	https://www.sqlite.org/
 
 # PD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses m pthread readline z
 

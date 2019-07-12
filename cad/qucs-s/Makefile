@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/06/24 04:45:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:45 sthen Exp $
 
 COMMENT =	an universal GUI for SPICE and not-SPICE circuit simulators
 
@@ -13,7 +13,7 @@ MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
 MASTER_SITES =	https://github.com/ra3xdh/qucs_s/releases/download/${V}/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += 	${COMPILER_LIBCXX} Qt3Support QtGui QtScript QtSvg QtXml c m
 

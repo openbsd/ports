@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/10/17 14:15:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:58 sthen Exp $
 
 COMMENT =	PostgreSQL log analyzer
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://pgfouine.projects.postgresql.org/
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://pgfoundry.org/frs/download.php/2575/ \
 		http://pgfouine.projects.postgresql.org/releases/

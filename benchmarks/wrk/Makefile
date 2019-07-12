@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/25 11:24:14 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:43 sthen Exp $
 
 COMMENT =	modern HTTP benchmarking tool
 
@@ -11,7 +11,7 @@ CATEGORIES =	benchmarks
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Apache 2.0, BSD, MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c crypto luajit-5.1 m pthread ssl
 

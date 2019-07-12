@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/04/27 23:55:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:08 sthen Exp $
 
 COMMENT =		graphical frontend to the objdump disassembler
 
@@ -11,7 +11,7 @@ REVISION =		3
 MAINTAINER =		Jonathan Armani <armani@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://distfiles.nl/
 

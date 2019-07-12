@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/08/14 19:01:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:43:58 sthen Exp $
 
 COMMENT=	Sybase database access in Perl
 
@@ -10,7 +10,7 @@ CATEGORIES=	databases perl5
 HOMEPAGE=	http://www.peppler.org/freeware/sybperl.html
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c iconv intl m perl sybdb>=5 ct>=3
 

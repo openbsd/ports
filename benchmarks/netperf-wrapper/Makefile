@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/04/28 20:51:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:43 sthen Exp $
 
 COMMENT-main=	test network latency under load via netperf
 COMMENT-gui=	GUI for flent (test network latency under load via netperf)
@@ -15,7 +15,7 @@ CATEGORIES=	benchmarks net
 HOMEPAGE=	https://flent.org/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES=	-main -gui
 

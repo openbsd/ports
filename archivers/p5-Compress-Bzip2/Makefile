@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:29 sthen Exp $
 
 COMMENT =	interface to bzip2 compression library
 
@@ -9,7 +9,7 @@ REVISION =	0
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += bz2>=10 c perl
 

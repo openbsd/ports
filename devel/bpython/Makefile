@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/05 15:43:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:44:04 sthen Exp $
 
 COMMENT=	fancy interface to the Python interpreter
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://bpython-interpreter.org/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES=	${HOMEPAGE}/releases/
 

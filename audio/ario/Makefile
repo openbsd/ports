@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/05/20 22:15:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:31 sthen Exp $
 
 COMMENT =	GTK2-based MPD client inspired by Rhythmbox
 DISTNAME =	ario-1.5.1
@@ -16,7 +16,7 @@ SHARED_LIBS +=	wikipedia		0.0 # 0.0
 HOMEPAGE =	http://ario-player.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 avahi-client avahi-common avahi-glib c cairo

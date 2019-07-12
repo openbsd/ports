@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/11/07 21:57:15 kili Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:44:03 sthen Exp $
 
 COMMENT =	lexical analyser generator for Haskell
 
@@ -12,7 +12,7 @@ CATEGORIES =	devel
 HOMEPAGE =	http://www.haskell.org/alex/
 
 # BSD3
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =		c iconv m pthread util
 

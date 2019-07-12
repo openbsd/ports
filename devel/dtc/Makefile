@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/03/25 13:28:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:08 sthen Exp $
 
 COMMENT=		Device Tree Compiler
 
@@ -11,7 +11,7 @@ EXTRACT_SUFX=		.tar.xz
 SHARED_LIBS=		fdt	4.1
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

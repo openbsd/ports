@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/01/03 20:25:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:53 sthen Exp $
 
 #'atomic_pointer.h: error Please implement AtomicPointer for this platform' on other archs
 ONLY_FOR_ARCHS =	i386 amd64
@@ -14,7 +14,7 @@ SHARED_LIBS +=  leveldb                   2.0 # 0.0
 CATEGORIES =	databases devel
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAKE_ENV =		CC="${CC}" CXX="${CXX}" OPT="${CXXFLAGS}" \
 			SHARED_VERSION_MAJOR=${LIBleveldb_VERSION:R} \

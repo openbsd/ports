@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2019/04/24 16:26:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.108 2019/07/12 20:44:01 sthen Exp $
 
 COMMENT =		persistent key-value database
 DISTNAME =		redis-4.0.14
@@ -7,7 +7,7 @@ HOMEPAGE =		https://redis.io/
 REVISION =		0
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c ${MODLUA_WANTLIB} m pthread
 

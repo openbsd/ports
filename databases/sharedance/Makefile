@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/17 08:07:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:02 sthen Exp $
 
 COMMENT=	high-performance server that centralizes key/data pairs
 
@@ -10,7 +10,7 @@ CATEGORIES=	databases
 HOMEPAGE=	http://sharedance.pureftpd.org/project/sharedance
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c event
 
 MASTER_SITES=	http://download.pureftpd.org/pub/sharedance/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/12/11 12:33:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:43:29 sthen Exp $
 
 COMMENT=	PHP support for rar archives
 
@@ -7,7 +7,7 @@ REVISION=	2
 CATEGORIES=	archivers
 
 # PHP
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m ${COMPILER_LIBCXX}
 

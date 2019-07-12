@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:44:04 sthen Exp $
 
 COMMENT-main=		free UML builder with extensions
 COMMENT-docs=		bouml documentation
@@ -16,7 +16,7 @@ CATEGORIES=		devel x11
 HOMEPAGE=		http://www.bouml.fr/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_FREEBSD}
 MASTER_SITES0=		${HOMEPAGE}

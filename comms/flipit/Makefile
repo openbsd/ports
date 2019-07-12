@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/05/12 14:03:35 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:46 sthen Exp $
 
 COMMENT=	x10 firecracker utility
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.lickey.com/flipit/dist/
 HOMEPAGE=	http://www.lickey.com/flipit/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

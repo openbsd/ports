@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/13 22:15:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:31 sthen Exp $
 
 COMMENT =	Qt-based MPD client
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Multimedia Qt5Network Qt5Sql Qt5Svg Qt5Widgets Qt5Xml

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/12/04 17:56:27 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:50 sthen Exp $
 
 COMMENT=	module to read TNEF files
 
@@ -11,7 +11,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 MAINTAINER=	Ibrahim Khalifa <ibo@toontown.org>
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	mail/p5-MIME-tools
 

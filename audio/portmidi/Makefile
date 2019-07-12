@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/10 12:55:19 rapha Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:39 sthen Exp $
 
 COMMENT =	library for real time input and output of MIDI data
 
@@ -13,7 +13,7 @@ CATEGORIES =	audio
 HOMEPAGE =	http://portmedia.sourceforge.net/
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB	=	pthread sndio
 

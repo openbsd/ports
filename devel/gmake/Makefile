@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2019/05/20 22:15:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.59 2019/07/12 20:44:10 sthen Exp $
 
 COMMENT=	GNU make
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://www.gnu.org/software/make/
 LIB_DEPENDS=	devel/gettext,-runtime
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv intl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:50 sthen Exp $
 
 COMMENT =	module to extract data from Macintosh BinHex files
 
@@ -8,7 +8,7 @@ DISTNAME =	Convert-BinHex-1.125
 CATEGORIES =	converters
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 TEST_DEPENDS =		devel/p5-Test-Most \
 			devel/p5-File-Slurp

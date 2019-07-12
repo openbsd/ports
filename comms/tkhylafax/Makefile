@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/06/18 02:50:18 bentley Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:43:48 sthen Exp $
 
 COMMENT=	Tcl/Tk interface to Sam Leffler's fax package
 
@@ -7,7 +7,7 @@ REVISION=	2
 CATEGORIES=	comms
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://ftp.hylafax.org/contrib/tkhylafax/ \
 		ftp://ftp.hylafax.org/contrib/tkhylafax/ \

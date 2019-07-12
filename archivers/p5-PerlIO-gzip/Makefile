@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/11/04 11:35:38 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:43:29 sthen Exp $
 
 COMMENT= 	PerlIO layer to gzip/gunzip
 
@@ -8,7 +8,7 @@ DISTNAME =	PerlIO-gzip-0.20
 CATEGORIES=	archivers
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c perl z
 

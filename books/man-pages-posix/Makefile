@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/09/04 12:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:44 sthen Exp $
 
 CATEGORIES =	books devel
 COMMENT =	POSIX manual pages
@@ -11,7 +11,7 @@ MASTER_SITES =	https://www.kernel.org/pub/linux/docs/man-pages/man-pages-posix/
 EXTRACT_SUFX =	.tar.xz
 
 # custom copyleft license, see POSIX-COPYRIGHT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 USE_GROFF =	Yes
 NO_BUILD =	Yes

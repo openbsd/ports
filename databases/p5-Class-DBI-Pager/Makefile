@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/08 15:44:45 danj Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:55 sthen Exp $
 
 COMMENT=	pager utility for Class::DBI
 
@@ -9,7 +9,7 @@ REVISION=	2
 CATEGORIES=	databases
 
 # Same as Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	databases/p5-Class-DBI \
 		databases/p5-Data-Page \

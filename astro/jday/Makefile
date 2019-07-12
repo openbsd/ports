@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/05/12 09:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:43:31 sthen Exp $
 
 COMMENT=	astronomical julian date calculator
 
@@ -9,7 +9,7 @@ CATEGORIES=	astro
 HOMEPAGE=	http://jday.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jday/}
 

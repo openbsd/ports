@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/22 19:56:51 cwen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:47 sthen Exp $
 
 COMMENT =	host software for the HackRF One SDR
 
@@ -15,7 +15,7 @@ HOMEPAGE =	https://greatscottgadgets.com/hackrf/
 MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2+ (tools), 3-clause BSD (library)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c fftw3f m pthread usb-1.0
 

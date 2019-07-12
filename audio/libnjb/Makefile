@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/04/23 21:09:39 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:35 sthen Exp $
 
 COMMENT=		communicate with some Creative and Dell audio players
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=  njb                  0.0      # 6.1
 HOMEPAGE=		http://libnjb.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses pthread usb usb-1.0 z
 

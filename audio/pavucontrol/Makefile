@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/10 11:54:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:39 sthen Exp $
 
 COMMENT =		PulseAudio volume mixer
 
@@ -8,7 +8,7 @@ HOMEPAGE =		http://freedesktop.org/software/pulseaudio/pavucontrol/
 CATEGORIES =		audio
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 atk-1.0 atkmm-1.6 c cairo cairo-gobject
 WANTLIB += cairomm-1.0 canberra canberra-gtk3 gdk-3 gdk_pixbuf-2.0

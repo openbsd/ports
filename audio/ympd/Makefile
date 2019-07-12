@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/01/11 19:27:01 rpe Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:42 sthen Exp $
 
 COMMENT=	Music Player Daemon web client
 
@@ -12,7 +12,7 @@ REVISION =	3
 CATEGORIES =	audio www
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cmake
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 01:30:28 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:52 sthen Exp $
 
 COMMENT=	rpm2cpio converter in Perl
 
@@ -10,7 +10,7 @@ REVISION=	2
 HOMEPAGE=	http://www.freebsd.org/cgi/cvsweb.cgi/ports/archivers/rpm2cpio/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 DISTFILES=	# empty
 

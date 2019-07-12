@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/04/24 16:26:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:35 sthen Exp $
 
 COMMENT=		library for interfacing MPD
 
@@ -10,7 +10,7 @@ HOMEPAGE=		https://www.musicpd.org/libs/libmpdclient/
 REVISION=		0
 
 # 3-BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://www.musicpd.org/download/libmpdclient/${VER:R}/
 

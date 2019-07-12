@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/11/29 20:15:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:43 sthen Exp $
 
 PORTROACH=	ignore:1
 
@@ -16,7 +16,7 @@ CATEGORIES=	biology
 HOMEPAGE=	 http://emboss.open-bio.org/
 
 # GPL v2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://distfiles.nl/
 

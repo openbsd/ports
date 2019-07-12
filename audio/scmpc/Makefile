@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/11/16 19:52:09 kirby Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:43:41 sthen Exp $
 
 COMMENT=		client for MPD to submit tracks to Last.fm
 CATEGORIES=		audio
@@ -8,7 +8,7 @@ REVISION=		1
 HOMEPAGE=		http://cmende.github.io/scmpc/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c confuse curl glib-2.0 iconv intl mpdclient
 

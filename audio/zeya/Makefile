@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/24 16:26:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:42 sthen Exp $
 
 COMMENT =	html5-powered web music server
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://web.psung.name/zeya/
 MASTER_SITES =	${MASTER_SITE_DEBIAN:=main/z/zeya/}
 
 # AGPLv3 (GNU Affero Public License)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

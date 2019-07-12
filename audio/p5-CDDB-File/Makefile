@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/04 01:18:58 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:43:38 sthen Exp $
 
 COMMENT =		parse a CDDB/freedb data file
 
@@ -9,6 +9,6 @@ REVISION =		1
 CATEGORIES =		audio
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

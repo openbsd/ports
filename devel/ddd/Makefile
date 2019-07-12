@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2019/05/17 16:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2019/07/12 20:44:07 sthen Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=ddd/}
 HOMEPAGE=	https://www.gnu.org/software/ddd/
 
 # GPLv2 / LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xft
 WANTLIB += Xm Xmu Xpm Xrender Xt c curses expat fontconfig

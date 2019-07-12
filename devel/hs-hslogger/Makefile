@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/04/24 16:26:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:44:12 sthen Exp $
 
 COMMENT =		versatile logging framework
 
@@ -8,7 +8,7 @@ CATEGORIES =		devel sysutils
 HOMEPAGE =		https://github.com/jgoerzen/hslogger/wiki
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

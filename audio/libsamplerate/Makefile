@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/11/07 21:39:58 jca Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:35 sthen Exp $
 
 COMMENT=	audio sample rate conversion library
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://mega-nerd.com/SRC/
 MAINTAINER=	Jan Stary <hans@stare.cz>
 
 # 2-BSD license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 

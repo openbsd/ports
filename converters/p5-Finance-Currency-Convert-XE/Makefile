@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:50 sthen Exp $
 
 COMMENT= 		currency conversion
 
@@ -8,7 +8,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 
 # Artistic 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CPAN_AUTHOR=		RMCKAY
 

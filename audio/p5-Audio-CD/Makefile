@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/20 19:56:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:43:37 sthen Exp $
 
 COMMENT=	interface to libcdaudio
 DISTNAME=	Audio-CD-0.04
 REVISION =	7
 CATEGORIES=	audio
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c cdaudio perl
 

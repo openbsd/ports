@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/06/15 18:47:46 cwen Exp $
+# $OpenBSD: Makefile,v 1.49 2019/07/12 20:43:30 sthen Exp $
 
 COMMENT=	free space simulator and planetarium
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://celestia.space/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=celestia/}
 

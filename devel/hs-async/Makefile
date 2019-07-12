@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/01/22 21:59:21 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:11 sthen Exp $
 
 COMMENT =		asynchronous IO operations
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

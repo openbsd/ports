@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:44:11 sthen Exp $
 
 # http://build-failures.rhaalovely.net//alpha/2017-11-19/devel/gtest.log
 BROKEN-alpha =	googletest/test/gtest_unittest.cc:2730: error: unrecognizable insn:
@@ -27,7 +27,7 @@ CXXFLAGS +=	-mxgot
 .endif
 
 # New BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 SEPARATE_BUILD =	Yes
 

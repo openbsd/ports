@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/04/27 14:59:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:57 sthen Exp $
 
 COMMENT=	DBI wrapper and abstraction layer
 
@@ -10,7 +10,7 @@ CATEGORIES=	databases
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # Same as Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	math/p5-Bit-Vector \
 		devel/p5-DateTime-Format-Pg \

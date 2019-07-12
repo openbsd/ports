@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/01/29 18:08:40 giovanni Exp $
+# $OpenBSD: Makefile,v 1.55 2019/07/12 20:43:56 sthen Exp $
 
 COMMENT=		MySQL drivers for the Perl DBI
 DISTNAME=		DBD-mysql-4.050
@@ -11,7 +11,7 @@ MODULES=		cpan databases/mariadb
 CPAN_AUTHOR=		DVEEDEN
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c crypto m perl pthread ssl z
 WANTLIB+=		lib/mysql/mysqlclient

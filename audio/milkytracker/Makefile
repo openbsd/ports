@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:43:36 sthen Exp $
 
 COMMENT =	Fasttracker II inspired MOD tracker
 
@@ -16,7 +16,7 @@ HOMEPAGE =	http://milkytracker.titandemo.org/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	SDL2 c m ${COMPILER_LIBCXX} z zzip
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/20 16:12:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:44:00 sthen Exp $
 
 COMMENT=	SQLite adapter for Python
 
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pysqlite/}
 HOMEPAGE=	http://pysqlite.org/
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pthread sqlite>=8.6

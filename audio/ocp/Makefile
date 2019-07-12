@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/20 20:52:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:37 sthen Exp $
 
 BROKEN-alpha =	arctar.c:384: internal compiler error: in extract_insn, at recog.c:2077
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://stian.cubic.org/project-ocp.php
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	FLAC SDL adplug binio c iconv m mad curses ogg pthread
 WANTLIB +=	sidplay ${COMPILER_LIBCXX} vorbis vorbisfile z

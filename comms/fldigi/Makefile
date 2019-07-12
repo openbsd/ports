@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/05/20 22:15:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:43:46 sthen Exp $
 
 COMMENT=	soundcard-based software modem for Amateur Radio use
 
@@ -12,7 +12,7 @@ CATEGORIES=	comms hamradio
 HOMEPAGE=	http://www.w1hkj.com/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama c fltk
 WANTLIB += fltk_images fontconfig hamlib iconv intl jpeg m png

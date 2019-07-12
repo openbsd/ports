@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/03/05 00:19:27 gsoares Exp $
+# $OpenBSD: Makefile,v 1.55 2019/07/12 20:44:06 sthen Exp $
 
 COMMENT =		C/C++ static checker
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://cppcheck.sourceforge.net/
 MAINTAINER =		Gleydson Soares <gsoares@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c execinfo m pcre ${COMPILER_LIBCXX}
 

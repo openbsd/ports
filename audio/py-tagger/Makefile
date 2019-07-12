@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/07/18 14:33:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:40 sthen Exp $
 
 COMMENT=	Python ID3 tag reader/writer module
 
@@ -10,7 +10,7 @@ CATEGORIES=	audio
 HOMEPAGE=	http://www.liquidx.net/pytagger/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://www.liquidx.net/static/pytagger/
 EXTRACT_SUFX=	.tar.bz2

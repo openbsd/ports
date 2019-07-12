@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/28 09:42:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:03 sthen Exp $
 
 COMMENT =		Android Debug Bridge
 
@@ -16,7 +16,7 @@ HOMEPAGE =		https://developer.android.com/tools/help/adb.html
 MAINTAINER = 		Andrew Aldridge <i80and@foxquill.com>
 
 # Apache License v2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto pthread usb-1.0 z
 LIB_DEPENDS =		devel/libusb1

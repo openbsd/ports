@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/07/11 21:40:43 fcambus Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:43:48 sthen Exp $
 
 COMMENT =		minimal dumb-terminal emulation program
 
@@ -9,7 +9,7 @@ GH_TAGNAME =		3.1
 CATEGORIES =		comms
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

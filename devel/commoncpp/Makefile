@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/10/28 08:59:07 bentley Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:44:06 sthen Exp $
 
 COMMENT=	GNU project portable class framework for C++
 
@@ -15,7 +15,7 @@ SHARED_LIBS+=	ccgnu2		2.0
 HOMEPAGE=	https://www.gnu.org/software/commoncpp/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	crypto ssl z m ${COMPILER_LIBCXX} pthread
 

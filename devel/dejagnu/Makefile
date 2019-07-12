@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2015/06/03 07:13:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2019/07/12 20:44:07 sthen Exp $
 
 COMMENT=	framework to test programs
 
@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=dejagnu/}
 HOMEPAGE=	https://www.gnu.org/software/dejagnu/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	lang/expect
 RUN_DEPENDS=	lang/expect

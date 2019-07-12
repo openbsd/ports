@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/01 19:57:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:07 sthen Exp $
 
 COMMENT=	safely manipulate and inspect CVS respositories
 
@@ -7,7 +7,7 @@ CATEGORIES=	devel
 REVISION =	1
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	http://www.does-not-exist.org/roessler/

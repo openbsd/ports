@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/29 00:42:08 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:09 sthen Exp $
 
 VERSION =		0.13
 REVISION =		0
@@ -14,7 +14,7 @@ HOMEPAGE =		https://github.com/thoughtbot/gitsh
 MAINTAINER =		Mike Burns <mike+openbsd@mike-burns.com>
 
 # License: BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		ereadline curses ${MODRUBY_WANTLIB}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/25 09:33:32 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:06 sthen Exp $
 
 COMMENT =	Colorado University Decision Diagram
 
@@ -15,7 +15,7 @@ SHARED_LIBS +=  cudd			0.0	# 0.0
 MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	${COMPILER_LIBCXX} m
 

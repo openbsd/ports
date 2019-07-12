@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:44:04 sthen Exp $
 
 COMMENT=	graphical file comparator
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.beesoft.pl/index.php?id=beediff
 MASTER_SITES=	http://www.beesoft.pl/download/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xext c iconv intl m pthread ${COMPILER_LIBCXX}
 WANTLIB += lib/qt4/QtGui ICE SM Xi Xinerama Xrender fontconfig freetype

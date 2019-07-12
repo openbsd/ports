@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/25 17:47:01 stu Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:02 sthen Exp $
 
 COMMENT =		Tcl bindings for SQLite3
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.sqlite.org/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # PD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		pthread
 

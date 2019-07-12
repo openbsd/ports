@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/04/28 20:51:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:43 sthen Exp $
 
 COMMENT =		command-line client for speedtest.net bandwidth tester
 
@@ -10,7 +10,7 @@ REVISION =		0
 HOMEPAGE =		https://github.com/sivel/speedtest-cli
 
 # Apache 2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

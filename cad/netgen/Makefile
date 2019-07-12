@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/06/08 10:05:52 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:43:45 sthen Exp $
 
 COMMENT =	tool for netlist comparison (LVS) and format manipulation
 DISTNAME =	netgen-1.5.118
@@ -12,7 +12,7 @@ HOMEPAGE =	http://opencircuitdesign.com/netgen/
 MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
 
 # GPLv1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	${MODTK_WANTLIB} X11 c m
 

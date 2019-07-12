@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2019/05/24 22:43:45 cwen Exp $
+# $OpenBSD: Makefile,v 1.80 2019/07/12 20:43:31 sthen Exp $
 
 COMMENT =		input and output plugins for Audacious
 
@@ -11,7 +11,7 @@ CATEGORIES =		audio multimedia
 HOMEPAGE =		https://audacious-media-player.org/
 
 # BSD / GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC GL X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 audgui

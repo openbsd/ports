@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2017/04/24 16:25:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2019/07/12 20:43:55 sthen Exp $
 
 COMMENT=		SQLite drivers for the Perl DBI
 
@@ -11,7 +11,7 @@ REVISION=		1
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 # artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl sqlite3
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/06/25 20:25:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:47 sthen Exp $
 
 COMMENT =		interface to various LCD displays
 DISTNAME =		lcdproc-0.5.5
@@ -7,7 +7,7 @@ CATEGORIES =		comms devel
 HOMEPAGE =		http://www.lcdproc.org
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 LIB_DEPENDS =		devel/libftdi \
 			devel/libhid

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:50 sthen Exp $
 
 COMMENT=	color space conversions and named lookups
 
@@ -8,7 +8,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	textproc/p5-List-UtilsBy

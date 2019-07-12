@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/02/04 18:50:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:41 sthen Exp $
 
 COMMENT-main =	Tcl/Tk snack sound toolkit
 COMMENT-python = Python bindings for Tcl/Tk snack sound toolkit
@@ -17,7 +17,7 @@ MASTER_SITES =	${HOMEPAGE}/dist/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD/GPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB-main += 	c sndio ossaudio ogg vorbis vorbisenc
 WANTLIB-main += 	X11 Xext Xft Xss m fontconfig

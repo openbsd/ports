@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/01/02 12:44:06 jca Exp $
+# $OpenBSD: Makefile,v 1.42 2019/07/12 20:43:58 sthen Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://www.pgadmin.org/
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # Artistic license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto m pq wx_baseu-3.0 wx_baseu_net-3.0
 WANTLIB += wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0

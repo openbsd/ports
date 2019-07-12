@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/01 16:04:26 danj Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:44 sthen Exp $
 
 COMMENT=	the definitive guide to CVS
 
@@ -12,7 +12,7 @@ MASTER_SITES=	http://cvsbook.red-bean.com/
 HOMEPAGE=	http://cvsbook.red-bean.com/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WRKDIST=	${WRKDIR}/cvsbook-${V}
 

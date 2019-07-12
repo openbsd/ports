@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2018/10/22 19:22:08 kettenis Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:44:08 sthen Exp $
 
 # arm: doesn't build super-old and broken assember files
 ONLY_FOR_ARCHS=	alpha amd64 hppa i386 mips64 mips64el powerpc sparc64
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.haible.de/bruno/gnu/
 HOMEPAGE=	http://www.haible.de/bruno/packages-ffcall.html
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 CONFIGURE_STYLE=gnu

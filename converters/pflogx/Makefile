@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/10/28 08:24:30 bentley Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:43:51 sthen Exp $
 
 COMMENT=		convert pf(4) logs to XML
 
@@ -10,7 +10,7 @@ CATEGORIES=		converters
 HOMEPAGE=		http://akldev.free.fr/pflogx/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB= 		c expat m pcap ${COMPILER_LIBCXX}
 

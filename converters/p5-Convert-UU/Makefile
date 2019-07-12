@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/03/20 19:56:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:43:50 sthen Exp $
 
 COMMENT=	Perl5 module for uuencode and uudecode
 
@@ -9,6 +9,6 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

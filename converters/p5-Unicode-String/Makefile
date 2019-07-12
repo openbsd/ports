@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/11/07 23:31:52 jca Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:43:51 sthen Exp $
 
 COMMENT=	modules to handle various Unicode issues
 
@@ -7,7 +7,7 @@ CATEGORIES=	converters
 MODULES=	cpan
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

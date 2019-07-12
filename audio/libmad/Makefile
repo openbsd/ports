@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/12/05 20:18:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:34 sthen Exp $
 
 COMMENT=	high-quality MPEG audio decoder
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=	mad                  2.1      # .2.1
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	ftp://ftp.mars.org/pub/mpeg/ \
 		${MASTER_SITE_SOURCEFORGE:=mad/}

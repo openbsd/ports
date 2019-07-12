@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/10 15:25:02 tj Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:44:01 sthen Exp $
 
 COMMENT=		high performance embedded database library
 
@@ -10,7 +10,7 @@ REVISION=		2
 HOMEPAGE=		https://fallabs.com/qdbm/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/
 

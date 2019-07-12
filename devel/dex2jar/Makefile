@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/11 00:38:34 kurt Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:07 sthen Exp $
 
 COMMENT =	tools to work with android .dex and java .class files
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://github.com/pxb1988/dex2jar
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # Apachev2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=dex2jar/}
 

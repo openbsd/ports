@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/04/15 16:38:37 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:43:41 sthen Exp $
 
 COMMENT =	MOD player
 DISTNAME =	tracker-5.3
@@ -12,7 +12,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # OpenBSD has a special exemption. Other BSD should contact me (Marc Espie) 
 # for redistribution on the CD.
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m sndio
 

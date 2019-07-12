@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/13 22:45:57 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:46 sthen Exp $
 
 COMMENT =	library to deal with pinyin
 
@@ -16,7 +16,7 @@ HOMEPAGE =	https://github.com/libpinyin/libpinyin
 MAINTAINER =	Kevin Lo <kevlo@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} c db glib-2.0 iconv intl m pcre
 

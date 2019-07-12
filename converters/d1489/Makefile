@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 01:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:49 sthen Exp $
 
 COMMENT=	cp866<>koi8-r & cp1251<>koi8-r decoders and font converter
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://koi8.pp.ru/dist/
 EXTRACT_SUFX=	.tgz
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

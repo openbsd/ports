@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/12/05 20:19:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:43:41 sthen Exp $
 
 COMMENT=	rip shoutcast streams to local mp3s
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://streamripper.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=streamripper/}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c glib-2.0 iberty iconv intl m mad>=2 ogg>=5.2 pthread vorbis>=3.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/20 20:52:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:36 sthen Exp $
 
 COMMENT =	module audio player
 DISTNAME =	mikmod-3.2.8
@@ -11,7 +11,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 HOMEPAGE =	http://mikmod.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c m mikmod curses pthread sndio
 

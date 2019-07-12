@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/07/01 02:08:21 jturner Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:52 sthen Exp $
 
 COMMENT =		extract C reference manpages from SQLite3 header file
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://github.com/kristapsdz/sqlite2mdoc
 MASTER_SITES =		https://kristaps.bsd.lv/sqlite2mdoc/snapshots/
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB =		c

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:40 cwen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:45 sthen Exp $
 
 COMMENT=	electric diagrams drawing tool
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://qelectrotech.org/
 MASTER_SITES =	https://download.tuxfamily.org/qet/tags/20180823/
 
 # GPLv2 / CC-BY 3.0 for the graphic elements
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 COMPILER =	base-clang ports-gcc
 MODULES =	x11/qt5 devel/qmake

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/02/19 05:10:51 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:59 sthen Exp $
 
 COMMENT =		Lua procedural language support for PostgreSQL
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/pllua/pllua
 MAINTAINER =		Jeremy Evans <jeremy@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c ${MODLUA_WANTLIB}
 

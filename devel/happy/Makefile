@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/06/13 16:38:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:44:11 sthen Exp $
 
 COMMENT=		parser generator for Haskell
 
@@ -13,7 +13,7 @@ CATEGORIES=		devel
 HOMEPAGE=		http://www.haskell.org/happy/
 
 # BSD3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c iconv m pthread
 

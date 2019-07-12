@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/01 20:12:52 danj Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:43:58 sthen Exp $
 
 COMMENT=	access to PostgreSQL databases perl
 
@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Pg/}
 
 LIB_DEPENDS =	databases/postgresql
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl pq>=3
 

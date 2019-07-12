@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:55 sthen Exp $
 
 COMMENT=		handle and create CouchDB views in Perl
 
@@ -10,7 +10,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		converters/p5-JSON-XS \
 			devel/p5-Data-Dump-Streamer \

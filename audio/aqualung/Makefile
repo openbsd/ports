@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2019/05/12 15:26:06 edd Exp $
+# $OpenBSD: Makefile,v 1.54 2019/07/12 20:43:31 sthen Exp $
 
 COMMENT=	advanced music player
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://github.com/jeremyevans/aqualung
 MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 bz2 c cairo fontconfig

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/06/11 00:38:34 kurt Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:44:03 sthen Exp $
 
 COMMENT =		tool for reverse engineering Android apk files
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://ibotpeaches.github.io/Apktool/
 MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # Apache v2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://bitbucket.org/iBotPeaches/apktool/downloads/
 

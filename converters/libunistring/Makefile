@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/12/29 16:12:00 pascal Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:49 sthen Exp $
 
 COMMENT =		manipulate Unicode strings
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://www.gnu.org/software/libunistring/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # LGPLv3+ or GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		iconv
 

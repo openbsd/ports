@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/18 12:13:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:45 sthen Exp $
 
 COMMENT =		Tcl/Tk based digital circuit editor and simulator
 
@@ -11,7 +11,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 MASTER_SITES =		https://bitbucket.org/starling13/tkgate/downloads/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SM X11 Xft Xrender c expat fontconfig freetype
 WANTLIB += fribidi glib-2.0 gobject-2.0 graphite2 gthread-2.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:44:08 sthen Exp $
 
 COMMENT=	generic game engine library
 
@@ -13,7 +13,7 @@ CATEGORIES=	devel games
 HOMEPAGE=	http://sarrazip.com/dev/afternoonstalker.html
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += FLAC SDL SDL_image SDL_mixer iconv jpeg m mikmod ogg png
 WANTLIB += smpeg sndio ${COMPILER_LIBCXX} tiff usbhid vorbis vorbisfile z

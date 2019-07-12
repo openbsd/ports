@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/05/27 11:45:38 cwen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:43:29 sthen Exp $
 
 COMMENT=	interface to the LZO compression library
 
@@ -6,7 +6,7 @@ DISTNAME=	Compress-LZO-1.09
 CATEGORIES=	archivers
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB+=	c lzo2 perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/01/17 06:44:18 schwarze Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:06 sthen Exp $
 
 COMMENT=	collection of utilities for C programmers
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.sigala.it/sandro/software.php
 MAINTAINER=	Paul Irofti <pirofti@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB= 		c
 

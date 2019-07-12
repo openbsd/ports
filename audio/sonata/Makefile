@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2019/05/20 22:15:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.58 2019/07/12 20:43:41 sthen Exp $
 
 COMMENT=	GTK+ client for the Music Player Daemon
 
@@ -16,7 +16,7 @@ GH_PROJECT=	sonata
 HOMEPAGE=	http://www.nongnu.org/sonata/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2018/07/07 22:39:42 espie Exp $
+# $OpenBSD: Makefile,v 1.97 2019/07/12 20:44:09 sthen Exp $
 
 COMMENT=		configuration database system for GNOME
 
@@ -15,7 +15,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 iconv intl lzma m pcre pthread xml2 z

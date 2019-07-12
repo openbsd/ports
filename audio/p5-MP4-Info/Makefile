@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:38 sthen Exp $
 
 COMMENT=	fetch info from MPEG-4 files
 
@@ -8,7 +8,7 @@ DISTNAME=	MP4-Info-1.13
 CATEGORIES=	audio
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-IO-String
 

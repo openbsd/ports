@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2019/06/13 15:48:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2019/07/12 20:43:47 sthen Exp $
 
 COMMENT=	desktop organizer software for the palm pilot
 
@@ -9,7 +9,7 @@ REVISION=	3
 HOMEPAGE=	http://www.jpilot.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo expat ffi fontconfig freetype fribidi

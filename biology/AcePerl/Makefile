@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.20 2016/04/05 12:21:41 sthen Exp $
+#	$OpenBSD: Makefile,v 1.21 2019/07/12 20:43:43 sthen Exp $
 
 COMMENT=	perl interface to the ACEDB database
 
@@ -11,7 +11,7 @@ FLAVORS=	opt
 FLAVOR?=
 
 # perl licence
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Ace/}
 

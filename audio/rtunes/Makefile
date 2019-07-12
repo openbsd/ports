@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:40 sthen Exp $
 
 COMMENT=		Streams audio to Apple AirPort Express device
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://www.nazgul.ch/dev.html
 MAINTAINER=		Marcus Glocker <marcus@nazgul.ch>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c crypto
 

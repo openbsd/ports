@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/07/18 15:31:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:48 sthen Exp $
 
 COMMENT=	RFC 2217 compliant serial port redirector
 
@@ -7,7 +7,7 @@ REVISION=	2
 CATEGORIES=	comms
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

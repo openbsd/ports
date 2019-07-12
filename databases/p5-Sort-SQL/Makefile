@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:58 sthen Exp $
 
 COMMENT=	manipulate SQL sort strings
 
@@ -9,6 +9,6 @@ REVISION=	0
 CATEGORIES=	databases devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

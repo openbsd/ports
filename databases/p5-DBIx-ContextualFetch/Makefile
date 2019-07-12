@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/08 15:44:45 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:56 sthen Exp $
 
 COMMENT=	add contextual fetches to DBI
 
@@ -9,7 +9,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 # Same as Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	databases/p5-DBI>=1.35
 TEST_DEPENDS=databases/p5-DBD-SQLite

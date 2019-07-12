@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/08/25 19:58:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:43:42 sthen Exp $
 
 COMMENT=	CD player for X11
 DISTNAME=	xcdplayer-2.2
@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
 EXTRACT_SUFX=	.tar.Z
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c
 

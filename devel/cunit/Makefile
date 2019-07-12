@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/20 20:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:06 sthen Exp $
 
 COMMENT =		c unit testing framework
 
@@ -14,7 +14,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://cunit.sourceforge.net/
 
 # LGPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += curses
 

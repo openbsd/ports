@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/04/05 09:26:07 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:50 sthen Exp $
 
 COMMENT =		binary data conversion using C types
 
@@ -6,7 +6,7 @@ DISTNAME =		Convert-Binary-C-0.78
 CATEGORIES =		converters
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

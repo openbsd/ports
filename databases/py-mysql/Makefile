@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/07/05 11:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2019/07/12 20:44:00 sthen Exp $
 
 COMMENT =	Python interface to MySQL
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://github.com/farcepest/MySQLdb1
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 EXTRACT_SUFX =	.zip
 

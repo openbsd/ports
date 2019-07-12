@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/20 22:15:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:43:35 sthen Exp $
 
 COMMENT =	Open Fingerprint Architecture library
 
@@ -8,7 +8,7 @@ CATEGORIES =	audio devel
 SHARED_LIBS +=	ofa	0.0
 
 # GPL
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =	https://distfiles.nl/
 

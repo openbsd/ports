@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/11/11 17:30:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:30 sthen Exp $
 
 COMMENT=	java-like zip interface
 
@@ -14,7 +14,7 @@ DISTFILES=	zipios++_0.1.5.9+cvs.2004.02.07.orig.tar.gz \
 		automake-1.7.tar.gz:0
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		m ${COMPILER_LIBCXX} z
 

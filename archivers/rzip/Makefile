@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/11 17:16:59 tj Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:43:30 sthen Exp $
 
 COMMENT=	file compressor with a high compression ratio
 
@@ -10,7 +10,7 @@ HOMEPAGE=	https://rzip.samba.org/
 MAINTAINER=	Lawrence Teo <lteo@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}ftp/rzip/ \
 		${HOMEPAGE}ftp/rzip/old-versions/

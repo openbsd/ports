@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/10/22 14:10:46 pea Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:58 sthen Exp $
 
 COMMENT=	programs to aid the PostgreSQL administrator
 
@@ -11,7 +11,7 @@ REVISION=	0
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # BSD / Zlib
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1943/
 

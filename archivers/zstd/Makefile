@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/04/17 08:01:01 bket Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:43:30 sthen Exp $
 
 COMMENT =		zstandard fast real-time compression algorithm
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://facebook.github.io/zstd/
 MAINTAINER =		Bjorn Ketelaars <bket@openbsd.org>
 
 # BSD 3 clauses + GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c lz4 lzma pthread z
 

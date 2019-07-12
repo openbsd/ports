@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:51 sthen Exp $
 
 COMMENT =	simple data types for common serialisation formats
 
@@ -10,6 +10,6 @@ CATEGORIES =	converters
 CPAN_AUTHOR =	MLEHMANN
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

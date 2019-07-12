@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/06/29 21:26:51 danj Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:44:08 sthen Exp $
 
 COMMENT =		modular python code checker wrapping pep8 and pyflakes
 
@@ -11,7 +11,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://gitlab.com/pycqa/flake8
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

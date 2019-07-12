@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/04 21:46:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:44:10 sthen Exp $
 
 COMMENT =		various tools for the Go programming language
 GH_ACCOUNT =		golang
@@ -10,7 +10,7 @@ HOMEPAGE =		https://godoc.org/golang.org/x/tools
 REVISION =		0
 
 # 3-clause BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c pthread
 

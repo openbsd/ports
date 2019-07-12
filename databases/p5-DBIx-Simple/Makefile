@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:56:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:57 sthen Exp $
 
 COMMENT =	very complete easy-to-use OO interface to DBI
 
@@ -9,7 +9,7 @@ DISTNAME =	DBIx-Simple-1.35
 CATEGORIES =	databases
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	databases/p5-DBI

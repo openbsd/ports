@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:09 sthen Exp $
 
 COMMENT =	 backup a github user or organization
 
@@ -15,7 +15,7 @@ CATEGORIES =	devel
 MAINTAINER =	Laurence Tratt <laurie@tratt.net>
 
 # MIT license
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

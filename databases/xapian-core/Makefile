@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/06/29 13:04:36 robert Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:44:03 sthen Exp $
 
 COMMENT=	search engine library
 
@@ -14,7 +14,7 @@ CATEGORIES=	databases textproc
 HOMEPAGE=	https://xapian.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX} z uuid
 

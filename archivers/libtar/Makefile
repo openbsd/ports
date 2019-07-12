@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/19 19:13:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:28 sthen Exp $
 
 COMMENT=	C library for manipulating tar files
 
@@ -11,7 +11,7 @@ SHARED_LIBS=	tar	0.1	# unknown
 CATEGORIES=	archivers devel
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c z
 

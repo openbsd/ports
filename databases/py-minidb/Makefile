@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:00 sthen Exp $
 
 COMMENT =		simple SQLite3 store for Python objects
 
@@ -12,7 +12,7 @@ CATEGORIES =		databases
 HOMEPAGE =		http://thp.io/2010/minidb/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

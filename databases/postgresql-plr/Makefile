@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/02/19 05:11:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:43:59 sthen Exp $
 
 COMMENT =		R procedural language for PostgreSQL
 
@@ -11,7 +11,7 @@ CATEGORIES =		databases
 HOMEPAGE =		https://github.com/postgres-plr/plr
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c lib/R/lib/R
 

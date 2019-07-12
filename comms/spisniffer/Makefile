@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/11/24 09:11:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:43:48 sthen Exp $
 
 COMMENT=		Bus Pirate binary mode SPI sniffer
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://dangerousprototypes.com/docs/Bus_Pirate_binary_SPI_sniffer_uti
 
 # CC0 1.0 Universal (CC0 1.0)  (Public Domain)
 # http://creativecommons.org/publicdomain/zero/1.0/
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://distfiles.nl/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2019/04/21 15:44:04 cwen Exp $
+# $OpenBSD: Makefile,v 1.86 2019/07/12 20:43:47 sthen Exp $
 
 COMMENT=		send/receive faxes and share modems
 DISTNAME=		hylafax-6.0.6
@@ -14,7 +14,7 @@ MASTER_SITES=		http://ftp.hylafax.org/source/ \
 
 # License: BSD
 # http://www.hylafax.org/HylaFAQ/copyright.html
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 FLAVORS=		a4
 FLAVOR?=

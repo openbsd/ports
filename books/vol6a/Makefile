@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/10 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:44 sthen Exp $
 
 COMMENT=        O'Reilly Volume 6a: Motif Programming Manual
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.oreilly.com/openbook/motif
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
 # Open Publication License 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://www.oreilly.com/catalog/motifref2/vol6a/
 EXTRACT_ONLY=

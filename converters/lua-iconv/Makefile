@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/11/02 12:30:39 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:49 sthen Exp $
 
 COMMENT =	Lua bindings for the iconv library
 
@@ -14,7 +14,7 @@ CATEGORIES =	converters
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 LIB_DEPENDS =	converters/libiconv
 

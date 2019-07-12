@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:42 sthen Exp $
 
 COMMENT =		audio plugin API
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=		vamp-hostsdk	1.0
 HOMEPAGE =		http://www.vamp-plugins.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m ${COMPILER_LIBCXX}
 

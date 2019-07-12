@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/04/24 19:17:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:36 sthen Exp $
 
 COMMENT=	utility for mp3 wrapping
 
@@ -11,7 +11,7 @@ CATEGORIES=	audio
 HOMEPAGE=	http://mp3wrap.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

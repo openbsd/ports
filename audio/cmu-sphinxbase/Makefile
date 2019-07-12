@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/06/13 17:00:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:32 sthen Exp $
 
 COMMENT=	common libraries for the CMU speech recognition engines
 
@@ -13,7 +13,7 @@ SHARED_LIBS= 	sphinxbase	1.0 \
 HOMEPAGE=	http://cmusphinx.sourceforge.net/
 
 # CMU
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODFORTRAN_WANTLIB}
 WANTLIB += blas c iconv lapack m pthread sndio z

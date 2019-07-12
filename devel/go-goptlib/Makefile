@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/08/29 16:58:06 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:10 sthen Exp $
 
 COMMENT =		library for writing Tor pluggable transports in Go
 
@@ -15,7 +15,7 @@ HOMEPAGE =		https://www.torproject.org/docs/pluggable-transports
 MAINTAINER =		Sean Levy <attila@stalphonsos.com>
 
 # CC0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES +=		lang/go
 

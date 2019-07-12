@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/02/12 17:17:24 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:46 sthen Exp $
 
 COMMENT =		hierarchical schematic capture program
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://repo.hu/projects/xschem/
 MAINTAINER =		Hannu Vuolasaho <vuokkosetae@gmail.com>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		${MODTK_WANTLIB} X11 X11-xcb Xpm Xrender
 WANTLIB +=		c cairo m xcb xcb-render

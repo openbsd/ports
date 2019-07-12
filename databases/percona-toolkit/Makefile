@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/05/12 14:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:58 sthen Exp $
 
 COMMENT =	MySQL Percona tools
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://www.percona.com/software/percona-toolkit/
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://www.percona.com/redir/downloads/percona-toolkit/${V}/
 

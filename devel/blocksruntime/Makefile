@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/07/05 10:22:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:04 sthen Exp $
 
 COMMENT=	implementation of Apple "Blocks" runtime interfaces
 
@@ -14,7 +14,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://mackyle.github.io/blocksruntime/
 
 # MIT/UIUC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 do-build:
 	cd ${WRKSRC}; CC="${CC}" CFLAGS="${CFLAGS}" ./buildlib

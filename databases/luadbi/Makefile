@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/05/15 11:08:12 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:53 sthen Exp $
 
 COMMENT-main=	database interface library for Lua (including SQLite3)
 COMMENT-mysql=	MySQL driver for luadbi
@@ -16,7 +16,7 @@ REVISION-main = 0
 CATEGORIES=	databases
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES=		-main -mysql -pgsql
 

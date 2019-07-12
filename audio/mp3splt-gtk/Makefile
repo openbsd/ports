@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/06/27 21:03:36 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:36 sthen Exp $
 
 COMMENT =	graphical mp3/ogg file splitter
 
@@ -10,7 +10,7 @@ CATEGORIES =	audio
 HOMEPAGE =	http://mp3splt.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype

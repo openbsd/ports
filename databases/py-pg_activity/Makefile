@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/24 20:13:54 feinerer Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:00 sthen Exp $
 
 COMMENT =		command line tool for PostgreSQL server activity monitoring
 
@@ -15,7 +15,7 @@ CATEGORIES =		databases
 MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # PostgreSQL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

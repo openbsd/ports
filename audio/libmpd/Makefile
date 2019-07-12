@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/11 17:16:59 tj Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:43:35 sthen Exp $
 
 COMMENT=		mpd client library
 
@@ -13,7 +13,7 @@ MAINTAINER=		Landry Breuil <landry@openbsd.org>
 HOMEPAGE =		http://gmpclient.org/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += glib-2.0 iconv intl pcre pthread
 

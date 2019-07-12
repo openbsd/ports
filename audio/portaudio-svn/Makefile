@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/02/06 14:21:15 jca Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:39 sthen Exp $
 
 COMMENT=		portable cross-platform audio API
 
@@ -13,7 +13,7 @@ SHARED_LIBS =		portaudio	1.2
 HOMEPAGE=		http://www.portaudio.com/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		m pthread sndio
 

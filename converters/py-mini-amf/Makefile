@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/15 12:04:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:51 sthen Exp $
 
 COMMENT =		serialize and deserialize AMF data
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/zackw/mini-amf
 MAINTAINER =		Timo Myyra <timo.myyra@bittivirhe.fi>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

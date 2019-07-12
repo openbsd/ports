@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/20 20:52:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:44:02 sthen Exp $
 
 COMMENT=	Embedded SQL implementation
 DISTNAME=	sqlite-2.8.17
@@ -12,7 +12,7 @@ MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://www.sqlite.org/
 
 # PD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 AUTOCONF_VERSION=2.59
 USE_GMAKE=	Yes

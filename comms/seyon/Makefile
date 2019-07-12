@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/11/25 13:27:48 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:43:48 sthen Exp $
 
 COMMENT=	communication package for X11
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	-tar.Z
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c
 

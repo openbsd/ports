@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/07/12 08:11:11 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:36 sthen Exp $
 
 COMMENT=		command line MIDI sequencer and filter
 DISTNAME=		midish-1.2.1
@@ -7,7 +7,7 @@ HOMEPAGE=		http://www.midish.org/
 MAINTAINER=		Alexandre Ratchov <alex@caoua.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 WANTLIB=		c sndio

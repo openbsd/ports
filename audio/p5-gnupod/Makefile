@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/11/09 23:19:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:39 sthen Exp $
 
 COMMENT =	collection of perl scripts to manage your iPod
 
@@ -12,7 +12,7 @@ MASTER_SITES =	http://blinkenlights.ch/gnupod-dist/stable/ \
 		${MASTER_SITE_SAVANNAH:=gnupod/}
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 EXTRACT_SUFX =	.tgz
 MODULES =	perl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/04/24 16:26:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:43:36 sthen Exp $
 
 COMMENT=		command line client for mpd
 
@@ -11,7 +11,7 @@ REVISION=		0
 HOMEPAGE=		https://www.musicpd.org/clients/mpc/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c iconv mpdclient
 

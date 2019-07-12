@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/01/22 13:53:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:44:03 sthen Exp $
 
 COMMENT=	Apache Portable Runtime
 
@@ -14,7 +14,7 @@ MAINTAINER=	Stefan Sperling <stsp@openbsd.org>
 HOMEPAGE=	http://apr.apache.org/
 
 # Apache License 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += pthread
 

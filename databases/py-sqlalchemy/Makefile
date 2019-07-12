@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/04/28 20:51:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2019/07/12 20:44:00 sthen Exp $
 
 COMMENT-main =		database toolkit for Python
 COMMENT-docs =		documentation and examples for sqlalchemy
@@ -17,7 +17,7 @@ CATEGORIES =		databases
 HOMEPAGE =		http://www.sqlalchemy.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB-main +=		${MODPY_WANTLIB} pthread
 

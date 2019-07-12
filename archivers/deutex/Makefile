@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/09/18 02:30:43 bentley Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:27 sthen Exp $
 
 V =		5.1.2
 COMMENT =	WAD composer for Doom, Heretic, Hexen, and Strife
@@ -9,7 +9,7 @@ REVISION =	0
 HOMEPAGE =	https://github.com/Doom-Utils/deutex/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c png z
 

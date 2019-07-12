@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/03/18 23:12:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:43:45 sthen Exp $
 
 COMMENT =	circuit drawing and schematic capture
 
@@ -9,7 +9,7 @@ HOMEPAGE =	http://opencircuitdesign.com/xcircuit/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c m z ICE Xt X11 SM Xpm ${MODTK_WANTLIB}
 

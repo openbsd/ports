@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/05/09 07:46:05 benoit Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:43:57 sthen Exp $
 
 COMMENT=	encapsulate SQL queries and rows in simple perl objects
 
@@ -10,7 +10,7 @@ DISTNAME =	DBIx-SearchBuilder-1.67
 CATEGORIES=	databases
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	databases/p5-DBD-SQLite \

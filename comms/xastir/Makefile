@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/06/16 13:41:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:43:48 sthen Exp $
 
 COMMENT=	X amateur station tracking and info reporting
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.xastir.org/
 
 MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  GraphicsMagick ICE SM X11 Xext Xm Xpm Xt bz2 c curl db
 WANTLIB += freetype gdal geotiff iconv intl lcms2 ltdl lzma m pcre proj

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/01 16:04:26 danj Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:43:52 sthen Exp $
 
 COMMENT=	convert Excel and PowerPoint to HTML
 
@@ -12,7 +12,7 @@ CATEGORIES=	converters
 MASTER_SITES=	http://gd.tuwien.ac.at/utils/format-conv/xlHtml/
 HOMEPAGE=	http://chicago.sourceforge.net/xlhtml/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

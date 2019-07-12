@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/12/02 21:39:49 juanfra Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:44 sthen Exp $
 
 COMMENT=	book about Python 3 for experienced programmers
 
@@ -9,7 +9,7 @@ CATEGORIES=	books
 HOMEPAGE=	http://getpython3.com/diveintopython3/
 
 # Creative Commons Attribution Share-Alike
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://download.tuxfamily.org/jod/books/diveintopython3/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2019/07/10 21:01:26 tj Exp $
+# $OpenBSD: Makefile,v 1.100 2019/07/12 20:43:39 sthen Exp $
 
 # XXX
 # sndio: what to do with (channel) map
@@ -27,7 +27,7 @@ HOMEPAGE=		http://www.pulseaudio.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += FLAC ICE SM X11 X11-xcb Xext Xi Xtst c crypto dbus-1
 WANTLIB += execinfo glib-2.0 iconv intl ltdl m ogg pthread

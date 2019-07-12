@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/08/27 20:37:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:38 sthen Exp $
 
 COMMENT=	object-oriented interface to Ogg Vorbis information
 
@@ -7,7 +7,7 @@ DISTNAME=	Ogg-Vorbis-Header-0.05
 CATEGORIES=	audio
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c ogg perl vorbis vorbisfile
 

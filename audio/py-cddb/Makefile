@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/20 16:12:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:39 sthen Exp $
 
 COMMENT=	CDDB audio CD track info access in Python
 
@@ -10,7 +10,7 @@ CATEGORIES=	audio
 HOMEPAGE=	http://cddb-py.sourceforge.net/
 
 # GPL 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pthread

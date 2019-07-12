@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/02/15 17:06:52 juanfra Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:29 sthen Exp $
 
 COMMENT =		archiver based on tar and lzip multimembers
 
@@ -8,7 +8,7 @@ HOMEPAGE =		http://lzip.nongnu.org/tarlz.html
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=lzip/tarlz/}
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c lz m pthread ${COMPILER_LIBCXX}
 

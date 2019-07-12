@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/07/31 09:57:26 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:52 sthen Exp $
 
 COMMENT=		xml to manpage converter
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://sourceforge.net/projects/xmltoman/
 MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xmltoman/}
 

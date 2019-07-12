@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/09/04 10:44:46 giovanni Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:43:54 sthen Exp $
 
 COMMENT =	MySQL backup scripts
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://www.zmanda.com/
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://www.zmanda.com/downloads/community/ZRM-MySQL/$V/Source/
 

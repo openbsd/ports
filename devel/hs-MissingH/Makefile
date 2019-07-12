@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/04/24 16:26:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:44:11 sthen Exp $
 
 COMMENT =		large library of utility functions
 
@@ -8,7 +8,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/jgoerzen/missingh/wiki
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

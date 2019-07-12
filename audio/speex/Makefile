@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/05/05 04:31:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:43:41 sthen Exp $
 
 COMMENT=	patent-free speech codec
 
@@ -10,7 +10,7 @@ SHARED_LIBS=	speex	8.0	# 6.1
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://downloads.xiph.org/releases/speex/
 

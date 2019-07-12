@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:43:52 sthen Exp $
 
 COMMENT =	convert various Microsoft formats into HTML/PNG
 
@@ -12,7 +12,7 @@ CATEGORIES =	converters
 
 HOMEPAGE =	http://wvware.sourceforge.net/
 
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  X11 bz2 c expat ffi freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gsf-1 iconv intl jpeg lzma m pcre png pthread

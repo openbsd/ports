@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/04/18 17:32:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:44:04 sthen Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC #'
 
@@ -10,7 +10,7 @@ SHARED_LIBS +=  cc1plugin                 0.0 # 0.0
 SHARED_LIBS +=  cc1                       0.0 # 0.0
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c gmp mpfr ${COMPILER_LIBCXX} m mpc
 

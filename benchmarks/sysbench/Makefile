@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/05 11:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:43:43 sthen Exp $
 
 COMMENT =	modular, cross-platform and multi-threaded benchmark tool
 DISTNAME =	sysbench-0.4.8
@@ -9,7 +9,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sysbench/}
 HOMEPAGE =	http://sysbench.sourceforge.net/
 
 # GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		m c pthread
 

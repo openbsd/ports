@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/10/24 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:30 sthen Exp $
 
 COMMENT=		Web Open Font Format 2.0 library
 
@@ -14,7 +14,7 @@ SHARED_LIBS +=  woff2enc                  0.0 # 1.0
 CATEGORIES=		archivers
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} brotlidec brotlienc m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/08/21 03:21:31 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:52 sthen Exp $
 
 COMMENT =	convert SountFont sf2 files into GUS patchsets
 DISTNAME =	unsf-1.1.20180608
@@ -11,7 +11,7 @@ GH_COMMIT =	85229250bb2dc19b5aa76391a44e674642142cfe
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # CC0-1.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m
 

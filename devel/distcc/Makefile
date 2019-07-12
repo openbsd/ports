@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/28 20:51:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:08 sthen Exp $
 
 COMMENT-main =		distributed builds for C, C++ and Objective C
 COMMENT-gtk =		GTK+ monitor for distcc
@@ -20,7 +20,7 @@ REVISION-server =	1
 HOMEPAGE =		https://github.com/distcc/distcc
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://github.com/distcc/distcc/releases/download/v${VERSION}/
 

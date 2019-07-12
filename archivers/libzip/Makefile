@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/04/23 21:48:07 bcallah Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:28 sthen Exp $
 
 COMMENT=		library for reading, creating and modifying zip archives
 
@@ -10,7 +10,7 @@ HOMEPAGE=		https://libzip.org/
 MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += bz2 c crypto ssl z
 

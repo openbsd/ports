@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/03/11 15:24:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:54 sthen Exp $
 
 COMMENT=	convert a MySQL dump to a PostgreSQL dump
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	databases/p5-DBI
 
 MAINTAINER=	Pete Fritchman <petef@databits.net>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

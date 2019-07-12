@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/20 22:15:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:06 sthen Exp $
 
 COMMENT =		C++ parser for the HOCON configuration language
 
@@ -14,7 +14,7 @@ MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 SHARED_LIBS =		cpp-hocon	0.0
 
 # Apachev2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cmake
 WANTLIB =  ${COMPILER_LIBCXX} m

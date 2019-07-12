@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:51 sthen Exp $
 
 COMMENT=	preparation of internationalized strings
 
@@ -6,7 +6,7 @@ DISTNAME =	Unicode-Stringprep-1.105
 CATEGORIES=	converters
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

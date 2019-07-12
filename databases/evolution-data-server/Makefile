@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.252 2019/06/22 10:25:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.253 2019/07/12 20:43:52 sthen Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -23,7 +23,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 atk-1.0 c cairo cairo-gobject
 WANTLIB += canberra canberra-gtk3 db gck-1 gcr-base-3 gcr-ui-3

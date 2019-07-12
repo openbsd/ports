@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/12/25 15:11:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:43:42 sthen Exp $
 
 COMMENT =		last.fm client for xmms2
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://code-monkey.de/pages/xmms2-scrobbler
 MAINTAINER =		Amaury Gauthier <amaury.gauthier@etu.unilim.fr>
 
 # BSD 
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c curl pthread xmmsclient
 

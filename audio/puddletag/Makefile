@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/06/27 21:03:36 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:39 sthen Exp $
 
 COMMENT =		spreadsheet-like audio file tagger
 
@@ -11,7 +11,7 @@ CATEGORIES =		audio
 HOMEPAGE =		http://puddletag.net
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://github.com/keithgg/puddletag/releases/download/v${MODPY_EGG_VERSION}/
 # kn: Remove with next update

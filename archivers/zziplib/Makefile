@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/02 14:51:49 danj Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:30 sthen Exp $
 
 COMMENT=	lightweight library for extracting data from zip files
 
@@ -14,7 +14,7 @@ SHARED_LIBS +=	zzip		15.52 \
 HOMEPAGE=	http://zziplib.sourceforge.net/
 
 # LGPL/MPL license
-PERMIT_PACKAGE_CDROM=		Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB=	c z
 

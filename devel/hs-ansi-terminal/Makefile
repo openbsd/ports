@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/01/22 21:40:32 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:11 sthen Exp $
 
 COMMENT =		ANSI terminal package for Haskell
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://batterseapower.github.com/ansi-terminal/
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

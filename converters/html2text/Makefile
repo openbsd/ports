@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:43:49 sthen Exp $
 
 PORTROACH=		skipv:1.3.2
 
@@ -12,7 +12,7 @@ CATEGORIES=		converters textproc
 HOMEPAGE=		http://www.mbayer.de/html2text/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:29 sthen Exp $
 
 MODPY_EGG_VERSION =	2.8
 COMMENT =	Python interface to libarchive
@@ -10,7 +10,7 @@ CATEGORIES =	archivers devel
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # CC0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVORS =	python3
 FLAVOR ?=

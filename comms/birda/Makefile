@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/11/24 09:11:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:46 sthen Exp $
 # $RuOBSD: Makefile,v 1.7 2003/08/18 18:40:14 grange Exp $
 
 COMMENT=		Bohlin's IrDA utilities
@@ -9,7 +9,7 @@ CATEGORIES=		comms
 MASTER_SITES=		https://distfiles.nl/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

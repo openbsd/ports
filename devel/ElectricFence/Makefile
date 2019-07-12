@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/01 19:29:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:03 sthen Exp $
 
 COMMENT=	library providing malloc debugging via VM protection
 
@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE:=devel/lang/c/}
 REVISION=	0
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_TEST=	Yes
 

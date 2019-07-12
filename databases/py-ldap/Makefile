@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2019/06/11 15:32:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2019/07/12 20:43:59 sthen Exp $
 
 COMMENT-main=		LDAP client API for Python
 COMMENT-examples=	example programs for the LDAP client API for Python
@@ -18,7 +18,7 @@ CATEGORIES=		databases
 HOMEPAGE=		https://www.python-ldap.org/
 
 # Python
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB-main += lber ldap_r pthread ${MODPY_WANTLIB}
 

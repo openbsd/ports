@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/04/28 22:20:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:33 sthen Exp $
 
 COMMENT =	music related metadata searchengine
 
@@ -10,7 +10,7 @@ CATEGORIES =	audio net
 SHARED_LIBS +=	glyr	0.0 # 1.1
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += c curl glib-2.0 gthread-2.0 intl sqlite3
 

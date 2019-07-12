@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/01/03 21:38:37 jturner Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:53 sthen Exp $
 
 COMMENT =		yet another SQLite wrapper
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://kristaps.bsd.lv/ksql/
 MASTER_SITES =		https://kristaps.bsd.lv/ksql/snapshots/
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # not directly linked to this static lib, but depends on API
 LIB_DEPENDS =		databases/sqlite3

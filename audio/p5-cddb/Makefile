@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/03/20 19:56:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:43:39 sthen Exp $
 
 COMMENT=	interface to CDDB and freedb servers
 
@@ -6,7 +6,7 @@ DISTNAME=	CDDB-1.222
 CATEGORIES=	audio
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
 PKG_ARCH=	*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/20 22:15:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:53 sthen Exp $
 
 COMMENT =	database connectivity and creation framework
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://www.kexi-project.org/
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5Widgets Qt5Xml c icui18n icuuc m mysqlclient pq

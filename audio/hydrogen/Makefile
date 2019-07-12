@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/06/08 18:42:32 rapha Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:43:34 sthen Exp $
 
 COMMENT=		software drum machine
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.hydrogen-music.org/
 SHARED_LIBS=		hydrogen-core-0.9.7	0.0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} QtGui QtNetwork QtXml QtXmlPatterns archive c
 WANTLIB += lrdf m sndfile sndio z

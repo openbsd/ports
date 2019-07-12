@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:56 sthen Exp $
 
 COMMENT=	data validation for DBIx::Class
 
@@ -8,7 +8,7 @@ DISTNAME=	DBIx-Class-Validation-0.02005
 CATEGORIES=	databases devel
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	databases/p5-DBIx-Class \
 		devel/p5-FormValidator-Simple

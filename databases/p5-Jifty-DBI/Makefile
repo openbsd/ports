@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:57 sthen Exp $
 
 COMMENT= 	database OO schema for Jifty
 
@@ -9,7 +9,7 @@ DISTNAME=	Jifty-DBI-0.68
 CATEGORIES=	databases www
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	devel/p5-Test-Warn
 RUN_DEPENDS=	databases/p5-DBI \

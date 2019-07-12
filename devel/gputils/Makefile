@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/01/05 13:50:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:10 sthen Exp $
 
 COMMENT =		GNU PIC assembler and utilities
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://gputils.sourceforge.net/
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

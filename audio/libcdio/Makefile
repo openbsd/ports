@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/12 15:26:07 edd Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:43:34 sthen Exp $
 
 COMMENT=	compact disk input and control library
 
@@ -17,7 +17,7 @@ SHARED_LIBS=	cdio		1.0 \
 HOMEPAGE=	https://www.gnu.org/software/libcdio/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=	c cddb curses iconv m ${COMPILER_LIBCXX}
 
 LIB_DEPENDS=	audio/libcddb \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:51 sthen Exp $
 
 COMMENT=	handles various Japanese charsets
 
@@ -10,7 +10,7 @@ PKG_ARCH=	*
 HOMEPAGE=	http://openlab.ring.gr.jp/Jcode/
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CPAN_AUTHOR=	DANKOGAI
 

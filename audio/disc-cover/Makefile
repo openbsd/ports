@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/07/01 09:02:40 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:43:32 sthen Exp $
 
 COMMENT=	creates cover for audio cds using cddb and latex
 
@@ -11,7 +11,7 @@ REVISION=	0
 HOMEPAGE=	http://www.vanhemert.co.uk/disc-cover.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=disc-cover/}
 

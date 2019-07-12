@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/07/06 17:29:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:39 sthen Exp $
 
 PKG_ARCH=		*
 
@@ -11,7 +11,7 @@ CATEGORIES=		audio converters perl5
 HOMEPAGE=		http://pacpl.sourceforge.net/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pacpl/}
 

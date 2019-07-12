@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/10/24 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:32 sthen Exp $
 
 COMMENT=	computer music toolkit
 HOMEPAGE=	http://www.ladspa.org/
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MASTER_SITES=	${HOMEPAGE:=download/}
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
 

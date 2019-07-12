@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/05/04 11:14:18 pirofti Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:59 sthen Exp $
 
 COMMENT=	ODBC driver for PostgreSQL
 VERSION=	10.02.0000
@@ -11,7 +11,7 @@ HOMEPAGE=	https://odbc.postgresql.org/
 MAINTAINER=	Paul Irofti <pirofti@openbsd.org>
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://ftp.postgresql.org/pub/odbc/versions/src/
 

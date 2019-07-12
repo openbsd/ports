@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/06/13 08:02:37 bentley Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:43:42 sthen Exp $
 
 COMMENT =		minimalistic Mumble server
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://umurmur.net/
 MAINTAINER =		Jonathon Sisson <sisson.j@gmail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB = 		c config crypto protobuf-c>=1.0 ssl
 

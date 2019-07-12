@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/06/13 15:48:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:44:11 sthen Exp $
 
 COMMENT=	helper library for networking and security applications
 
@@ -17,7 +17,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://www2.aquamaniac.de/sites/download/packages.php?package=01&showall=1
 
 # LGPLv2.1 with OpenSSL exemption
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE QtGui SM X11 Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0

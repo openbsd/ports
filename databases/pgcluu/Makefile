@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/09/07 20:19:48 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:58 sthen Exp $
 
 COMMENT=		PostgreSQL performances monitoring and auditing tool
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://pgcluu.darold.net/
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pgcluu/}
 

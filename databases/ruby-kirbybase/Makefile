@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/10/11 19:54:46 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:01 sthen Exp $
 
 COMMENT =	small, plain-text, DBMS written in Ruby
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://www.netpromi.com/kirbybase_ruby.html
 MAINTAINER =	Clint Pachl <pachl@ecentryx.com>
 
 # Ruby
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES	=		lang/ruby
 

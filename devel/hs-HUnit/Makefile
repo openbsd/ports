@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/01/22 21:40:32 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:44:11 sthen Exp $
 
 COMMENT =		unit testing framework for Haskell
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://hunit.sourceforge.net/
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

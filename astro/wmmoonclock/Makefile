@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/05/12 09:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:43:31 sthen Exp $
 
 COMMENT=		wm-dockapp; shows the moon phase
 
@@ -8,7 +8,7 @@ REVISION=		5
 CATEGORIES=		astro x11 x11/windowmaker
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext Xpm c m
 

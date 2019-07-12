@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/12/25 04:36:57 stu Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:02 sthen Exp $
 
 COMMENT =		Tcl Database Connectivity
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://tdbc.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 MODULES =		lang/tcl

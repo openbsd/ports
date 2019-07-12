@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/01/07 17:50:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:04 sthen Exp $
 
 COMMENT=		collection of macros for GNU Autoconf
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.gnu.org/software/autoconf-archive/
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv3 with Autoconf exception
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNU:=autoconf-archive/}
 EXTRACT_SUFX=		.tar.xz

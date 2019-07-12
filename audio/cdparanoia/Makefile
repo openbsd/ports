@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/05 04:31:21 bentley Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:43:32 sthen Exp $
 
 COMMENT=	CDDA reading utility with extra data verification features
 
@@ -12,7 +12,7 @@ SHARED_LIBS=	cdda_interface	0.0 \
 HOMEPAGE=	https://www.xiph.org/paranoia/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m
 

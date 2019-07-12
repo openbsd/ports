@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/09/13 14:40:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:11 sthen Exp $
 
 COMMENT =	ctags-like tool for Haskell sources
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =		c iconv m pthread util
 

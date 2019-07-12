@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/05/20 22:15:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2019/07/12 20:43:34 sthen Exp $
 
 COMMENT-main=	library to access the contents of an iPod
 COMMENT-python= python bindings for libgpod
@@ -17,7 +17,7 @@ REVISION-python= 7
 HOMEPAGE=	http://www.gtkpod.org/libgpod/
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES= -main -python
 

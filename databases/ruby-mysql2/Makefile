@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/07/26 21:33:46 jeremy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:44:01 sthen Exp $
 
 COMMENT=	modern, simple and very fast MySQL library for Ruby
 
@@ -10,7 +10,7 @@ HOMEPAGE=	https://github.com/brianmario/mysql2
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # MIT License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby
 

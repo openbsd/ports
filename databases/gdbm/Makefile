@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/05/20 22:15:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2019/07/12 20:43:52 sthen Exp $
 
 COMMENT=		GNU dbm
 
@@ -13,7 +13,7 @@ HOMEPAGE=		https://www.gnu.org/software/gdbm/
 MASTER_SITES=		${MASTER_SITE_GNU:=gdbm/}
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 LIB_DEPENDS=		devel/gettext,-runtime
 

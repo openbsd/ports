@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/12/03 11:13:33 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:43:31 sthen Exp $
 
 COMMENT=		cd player for Afterstep or Window Maker
 DISTNAME=		ascd-0.13.2
@@ -7,7 +7,7 @@ CATEGORIES=		audio x11 x11/windowmaker
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext Xpm c workman>=1
 

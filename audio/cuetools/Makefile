@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/04/24 19:06:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:32 sthen Exp $
 
 COMMENT=	tools for handling audio-file cue sheets and toc files
 
@@ -10,7 +10,7 @@ CATEGORIES=	audio textproc
 HOMEPAGE=	http://www.cuetools.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

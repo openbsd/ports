@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/07/18 21:11:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:58 sthen Exp $
 
 COMMENT=	import CSV data and Large Object to PostgreSQL
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://pgfoundry.org/projects/pgloader/
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/2294/
 

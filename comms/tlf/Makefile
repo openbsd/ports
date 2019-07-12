@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/20 20:52:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:48 sthen Exp $
 
 PORTROACH=	skipv:bm_start
 
@@ -14,7 +14,7 @@ MASTER_SITES=	https://github.com/Tlf/tlf/archive/
 WRKDIST=	${WRKDIR}/tlf-${DISTNAME}
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c glib-2.0 hamlib>=2 iconv intl m curses panel pthread sndio
 

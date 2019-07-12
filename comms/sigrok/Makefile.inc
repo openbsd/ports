@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2018/09/19 05:50:36 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/07/12 20:43:48 sthen Exp $
 
 CATEGORIES +=		comms/sigrok
 
@@ -8,6 +8,6 @@ MASTER_SITES ?=		https://sigrok.org/download/source/${SIGROK_PROJECT}/
 DISTNAME ?=		${SIGROK_PROJECT}-${SIGROK_VERSION}
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE ?=	gnu

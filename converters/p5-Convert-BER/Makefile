@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:43:50 sthen Exp $
 
 COMMENT=	module to encode and decode objects
 
@@ -10,6 +10,6 @@ PKG_ARCH=	*
 REVISION =	0
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

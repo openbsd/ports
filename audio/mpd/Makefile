@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2019/05/13 13:59:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2019/07/12 20:43:36 sthen Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
@@ -9,7 +9,7 @@ HOMEPAGE =		https://www.musicpd.org/
 REVISION =		1
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		FLAC audiofile avcodec avformat avutil \
 			bz2 c cdio cdio_cdda cdio_paranoia curl \

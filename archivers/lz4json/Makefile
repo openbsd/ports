@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/01/17 10:19:36 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:28 sthen Exp $
 
 COMMENT =	decompressor for mozilla lz4json format
 
@@ -9,7 +9,7 @@ GH_TAGNAME =	v2
 CATEGORIES =	archivers
 
 # BSD 2-Clause
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c lz4
 

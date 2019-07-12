@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/06/13 15:48:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2019/07/12 20:43:33 sthen Exp $
 
 COMMENT =		bundle of plugins for gmpc
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://gmpclient.org/plugins
 MASTER_SITES =		http://www.musicpd.org/download/gmpc-plugins/${VERSION}/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 avahi-client avahi-common avahi-glib

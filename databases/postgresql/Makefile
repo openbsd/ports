@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.253 2019/06/21 21:05:36 pea Exp $
+# $OpenBSD: Makefile,v 1.254 2019/07/12 20:43:59 sthen Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -29,7 +29,7 @@ HOMEPAGE=	http://www.postgresql.org/
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses crypto m readline ssl z
 

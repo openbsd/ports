@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/25 20:42:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:43 sthen Exp $
 
 COMMENT =	profile HMMs for biological sequence analysis
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://hmmer.org
 MAINTAINER =	Senthil Kumar M <senthil.murugapiran@gmail.com>
 
 # GPLv3 but see COPYRIGHT regarding patents
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m pthread
 

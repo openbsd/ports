@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/06/27 21:03:39 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:58 sthen Exp $
 
 COMMENT =	simple PostgreSQL GUI front end
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://pgworksheet.projects.postgresql.org/
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://pgfoundry.org/frs/download.php/1695/
 

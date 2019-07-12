@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/09/25 19:50:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:37 sthen Exp $
 
 COMMENT =		high-level decoding and seeking API for Opus files
 DISTNAME =		opusfile-0.11
@@ -11,7 +11,7 @@ HOMEPAGE =		https://opus-codec.org/
 MAINTAINER =		Christian Weisgerber <naddy@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		crypto m ogg opus ssl
 

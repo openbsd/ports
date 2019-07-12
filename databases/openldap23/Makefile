@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/06/30 11:41:36 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:43:54 sthen Exp $
 
 COMMENT=	open-source LDAP software (server, legacy version)
 
@@ -10,7 +10,7 @@ CATEGORIES=	databases net
 
 HOMEPAGE=	http://www.openldap.org/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto m perl pthread sasl2 ssl util
 

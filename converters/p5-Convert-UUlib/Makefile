@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/20 19:56:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:50 sthen Exp $
 
 COMMENT=	interface to the uulib library
 
@@ -11,7 +11,7 @@ REVISION =	1
 MAINTAINER=	Ibrahim Khalifa <ibo@toontown.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

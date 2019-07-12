@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/27 23:55:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:48 sthen Exp $
 
 COMMENT =		Gnu All Mobile Management Utilities GUI
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://wammu.eu/
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://dl.cihar.com/wammu/v0/
 

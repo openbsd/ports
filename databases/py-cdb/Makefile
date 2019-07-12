@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/04/21 18:40:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:59 sthen Exp $
 
 COMMENT=	Python extension module for accessing cdb databases
 
@@ -10,7 +10,7 @@ CATEGORIES=	databases
 HOMEPAGE=	http://pilcrow.madison.wi.us/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pthread

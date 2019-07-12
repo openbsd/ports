@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/12/04 21:09:39 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:57 sthen Exp $
 
 COMMENT=	datetime helper functions for Rose
 
@@ -10,7 +10,7 @@ CATEGORIES=	databases devel
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/p5-DateTime
 

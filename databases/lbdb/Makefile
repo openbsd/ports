@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/07/14 20:18:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:43:53 sthen Exp $
 
 COMMENT-main =		"little brother's database", email address query tools
 COMMENT-ldap =		LDAP support for lbdb
@@ -17,7 +17,7 @@ HOMEPAGE =		https://www.spinnaker.de/lbdb/
 MULTI_PACKAGES =	-main -ldap
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB-main =		c iconv
 

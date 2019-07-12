@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/03/01 12:23:09 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:29 sthen Exp $
 
 COMMENT=	generic archive extracting mechanism for Perl
 
@@ -10,6 +10,6 @@ DISTNAME =	Archive-Extract-0.80
 CATEGORIES=	archivers
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

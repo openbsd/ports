@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/24 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:32 sthen Exp $
 
 COMMENT =		CAPS LADSPA plugins
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX =		.tar.bz2
 HOMEPAGE =		http://quitte.de/dsp/caps.html
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		m ${COMPILER_LIBCXX}
 

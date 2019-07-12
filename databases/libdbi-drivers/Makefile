@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/03/21 22:24:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:43:53 sthen Exp $
 
 V =			0.9.0
 REVISION =		2
@@ -23,7 +23,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libdbi-drivers/}
 MULTI_PACKAGES =	-main -pgsql -sqlite -sqlite3 -freetds
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
 

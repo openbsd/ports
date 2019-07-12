@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/05/05 15:33:47 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:33 sthen Exp $
 
 COMMENT=	OpenAL Utility Toolkit
 
@@ -10,7 +10,7 @@ CATEGORIES=	audio
 HOMEPAGE=	http://www.openal.org/
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	m openal>=1.0 pthread sndio
 

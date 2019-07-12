@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/02/23 16:33:00 stu Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:07 sthen Exp $
 
 COMMENT =		diff functions for Tcl
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/tcl
 MODTCL_VERSION =	8.6

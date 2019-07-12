@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.174 2019/06/25 20:25:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.175 2019/07/12 20:44:05 sthen Exp $
 
 DPB_PROPERTIES =parallel
 
@@ -15,7 +15,7 @@ HOMEPAGE =	https://www.cmake.org/
 MASTER_SITES =	${HOMEPAGE}files/v${VER:R}/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} archive c curl curses expat form
 WANTLIB += jsoncpp m rhash uv z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:40 sthen Exp $
 
 COMMENT =	ruby library for reading/writing vorbis comments
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://github.com/jeremyevans/ruby-vorbis_comment
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # LGPLv2/MIT License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	vorbis ogg
 

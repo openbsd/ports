@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/01/22 23:58:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2019/07/12 20:44:03 sthen Exp $
 
 COMMENT=	companion library to APR
 
@@ -17,7 +17,7 @@ FLAVORS=	ldap
 FLAVOR?=
 
 # Apache License 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += lib/db4/db>=4 crypto expat iconv pthread ssl
 

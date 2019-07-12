@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2019/03/05 04:56:00 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.74 2019/07/12 20:43:55 sthen Exp $
 
 COMMENT=	access to PostgreSQL databases through the DBI
 
@@ -19,7 +19,7 @@ TEST_FLAGS=	DBI_DSN="dbi:Pg:dbname=${MODPOSTGRESQL_TEST_DBNAME}"\
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB+=	c m perl pq>=2
 

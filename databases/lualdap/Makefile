@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/18 20:49:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:53 sthen Exp $
 
 COMMENT =	interface LDAP from lua
 DISTNAME=	lualdap-1.1.0
@@ -8,7 +8,7 @@ MASTER_SITES =	http://files.luaforge.net/releases/lualdap/lualdap/LuaLDAP1.1.0/
 HOMEPAGE =	http://www.keplerproject.org/lualdap/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/lua
 

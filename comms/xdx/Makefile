@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/06/27 21:03:38 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:43:48 sthen Exp $
 
 COMMENT=	X DX cluster watcher
 
@@ -8,7 +8,7 @@ REVISION=	11
 
 CATEGORIES=    	comms hamradio
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype

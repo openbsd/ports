@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/03/16 18:07:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:05 sthen Exp $
 
 COMMENT=	handling CHM files
 CATEGORIES=	devel textproc
@@ -16,7 +16,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS =	--disable-io64 --enable-examples
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 

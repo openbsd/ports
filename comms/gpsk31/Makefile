@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:43:47 sthen Exp $
 
 COMMENT=	gtk PSK31 send and receive
 
@@ -9,7 +9,7 @@ CATEGORIES=	comms hamradio
 HOMEPAGE=	http://www.qsl.net/pg4i/linux/gpsk31.html
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/desktop-file-utils
 LIB_DEPENDS=		x11/gtk+2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/06/11 00:38:34 kurt Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:43:59 sthen Exp $
 
 COMMENT-main=	fast, scalable, and reliable data warehouse for Puppet
 COMMENT-plugin= PuppetDB terminus plugin
@@ -17,7 +17,7 @@ MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 MASTER_SITES=	http://downloads.puppetlabs.com/puppetdb/
 
 # Apachev2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	java \
 		lang/ruby

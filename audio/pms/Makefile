@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/05/17 16:19:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:39 sthen Exp $
 
 COMMENT=		curses based frontend for mpd
 
@@ -10,7 +10,7 @@ REVISION =		9
 HOMEPAGE=		https://ambientsound.github.io/pms/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c curses glib-2.0 intl m pthread
 

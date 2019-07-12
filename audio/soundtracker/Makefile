@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/11/12 08:53:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:43:41 sthen Exp $
 
 COMMENT=		music tracking tool for X11
 
@@ -10,7 +10,7 @@ CATEGORIES=		audio
 HOMEPAGE=		http://www.shaltev.org/programming.html
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://www.shaltev.org/data/
 EXTRACT_SUFX=		.tar.bz2

@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.8 2017/11/16 23:20:37 naddy Exp $
+#$OpenBSD: Makefile,v 1.9 2019/07/12 20:44:05 sthen Exp $
 
 COMMENT =	Bounded Model Checker for C and C++ programs
 
@@ -16,7 +16,7 @@ HOMEPAGE =	http://www.cprover.org/cbmc/
 MAINTAINER =	Mages Simon <mages.simon@googlemail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 

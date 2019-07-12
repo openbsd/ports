@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2018/07/10 15:28:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.98 2019/07/12 20:43:36 sthen Exp $
 
 COMMENT=	fast console MPEG audio player and decoder library
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://www.mpg123.de/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # LGPL 2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mpg123/} \
 		https://www.mpg123.de/download/

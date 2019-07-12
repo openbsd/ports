@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2019/07/10 21:01:26 tj Exp $
+# $OpenBSD: Makefile,v 1.109 2019/07/12 20:44:11 sthen Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -26,7 +26,7 @@ HOMEPAGE=		http://www.freedesktop.org/wiki/Software/HarfBuzz
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} freetype glib-2.0 graphite2 iconv intl m z
 

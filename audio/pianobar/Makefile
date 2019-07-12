@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2019/04/24 16:26:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.88 2019/07/12 20:43:39 sthen Exp $
 
 COMMENT =	command-line client for Pandora Internet Radio
 
@@ -14,7 +14,7 @@ MASTER_SITES =	${HOMEPAGE}
 SHARED_LIBS =	piano	9.0	# 0.0.0
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	ao avcodec avfilter avformat avutil c curl \
 		gcrypt json-c m pthread

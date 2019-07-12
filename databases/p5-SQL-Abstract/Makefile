@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/02/22 03:32:34 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:57 sthen Exp $
 
 COMMENT =	generate SQL from Perl data structures
 
@@ -10,7 +10,7 @@ CATEGORIES =	databases
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_ARGS +=	--skipdeps
 

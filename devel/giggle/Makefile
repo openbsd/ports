@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/07/05 11:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2019/07/12 20:44:09 sthen Exp $
 
 COMMENT=	gtk-based git repository viewer
 
@@ -12,7 +12,7 @@ SHARED_LIBS +=  giggle               0.0      # 0.0
 SHARED_LIBS +=  giggle-git           0.0      # 0.0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 atk-bridge-2.0 c cairo

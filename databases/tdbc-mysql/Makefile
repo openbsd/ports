@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/14 04:24:37 stu Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:02 sthen Exp $
 
 COMMENT =		MariaDB module for TDBC
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://tdbc.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 

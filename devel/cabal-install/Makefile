@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/01/22 21:54:16 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:44:05 sthen Exp $
 
 COMMENT =	command-line interface for Cabal and Hackage
 
@@ -10,7 +10,7 @@ HOMEPAGE =	http://www.haskell.org/cabal/
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =		c iconv m pthread util z
 

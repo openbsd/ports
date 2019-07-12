@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2018/06/13 22:26:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:44:01 sthen Exp $
 
 COMMENT=	Ruby interface to some common LDAP libraries
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://github.com/alexey-chebotar/ruby-ldap
 MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

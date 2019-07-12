@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/06/14 20:20:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:08 sthen Exp $
 
 # Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -19,7 +19,7 @@ HOMEPAGE=	http://www.doxygen.org/
 MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += QtGui QtXml c m ${COMPILER_LIBCXX}
 

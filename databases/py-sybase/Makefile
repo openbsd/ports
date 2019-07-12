@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:44:01 sthen Exp $
 
 COMMENT=	Python interface to the Sybase relational database system
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.object-craft.com.au/projects/sybase/
 MASTER_SITES=	${HOMEPAGE}download/
 
 # BSD 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  ${MODPY_WANTLIB}
 WANTLIB += ct iconv intl pthread

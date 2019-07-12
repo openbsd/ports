@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/03/29 19:38:37 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:07 sthen Exp $
 
 COMMENT=		C\# implementation of D-Bus
 
@@ -12,7 +12,7 @@ HOMEPAGE=		https://github.com/mono/dbus-sharp
 MASTER_SITES=		${HOMEPAGE}/releases/download/v${V}/
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/mono
 MODMONO_GMCS_COMPAT=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/03/20 16:12:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:43:40 sthen Exp $
 
 COMMENT=	Python wrapper for the Ogg libraries
 
@@ -10,7 +10,7 @@ CATEGORIES=	audio
 HOMEPAGE=	http://ekyo.nerim.net/software/pyogg/
 
 # LGPL 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += ogg pthread

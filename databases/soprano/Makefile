@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/07/26 22:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:02 sthen Exp $
 
 COMMENT =	RDF framework
 CATEGORIES =	databases devel textproc sysutils
@@ -15,7 +15,7 @@ EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=soprano/}
 
 # GPL/LGPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c clucene-core clucene-shared iodbc lib/qt4/QtCore
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml m pthread

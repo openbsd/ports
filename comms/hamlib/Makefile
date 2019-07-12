@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/11/22 19:26:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 20:43:47 sthen Exp $
 
 COMMENT-main=	radio/rotator control library
 COMMENT-python=	python bindings for hamlib
@@ -25,7 +25,7 @@ MODULES=	lang/python \
 		lang/tcl
 
 # GPLv2/LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
 

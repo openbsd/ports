@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/05/12 14:29:01 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:43:48 sthen Exp $
 
 COMMENT=	SNPP client/server (alphanum pager software)
 
@@ -7,7 +7,7 @@ REVISION=	2
 CATEGORIES=	comms
 
 # custom; see LICENSE
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

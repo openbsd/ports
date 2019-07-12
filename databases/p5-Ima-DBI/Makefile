@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:57 sthen Exp $
 
 COMMENT=	database connection caching and organization
 
@@ -9,7 +9,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 # Same as Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CPAN_AUTHOR=	PERRIN
 

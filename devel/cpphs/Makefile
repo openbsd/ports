@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2018/01/22 21:40:32 kili Exp $
+# $OpenBSD: Makefile,v 1.46 2019/07/12 20:44:06 sthen Exp $
 
 COMMENT-main =	liberalised reimplementation of cpp in Haskell
 COMMENT-lib =	cpphs library
@@ -11,7 +11,7 @@ CATEGORIES =	devel
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 
 # LGPL2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MULTI_PACKAGES =	-main -lib
 WANTLIB-main =		${WANTLIB} c m pthread

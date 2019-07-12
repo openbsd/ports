@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/02/19 05:11:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:59 sthen Exp $
 
 # v8 only works on these arches currently
 ONLY_FOR_ARCHS =	amd64 i386
@@ -15,7 +15,7 @@ CATEGORIES =		databases
 HOMEPAGE =		https://github.com/plv8/plv8
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m ${COMPILER_LIBCXX} pthread v8
 

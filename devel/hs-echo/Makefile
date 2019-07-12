@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/12 21:35:39 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:12 sthen Exp $
 
 COMMENT =		cross-platform echoing terminal input
 
@@ -8,7 +8,7 @@ CATEGORIES =		devel
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

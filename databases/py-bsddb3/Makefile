@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:59 sthen Exp $
 
 COMMENT=		Python bindings for Oracle Berkeley DB
 
@@ -12,7 +12,7 @@ CATEGORIES=		databases devel
 HOMEPAGE=		https://www.jcea.es/programacion/pybsddb.htm
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += db pthread ${MODPY_WANTLIB}
 

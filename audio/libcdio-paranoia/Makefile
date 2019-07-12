@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/12 15:17:26 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:34 sthen Exp $
 
 COMMENT =	fork of cdparanoia that uses libcdio for CDROM access
 # 10.2 is the cdparanoia version that this is based upon.
@@ -14,7 +14,7 @@ CATEGORIES =	audio
 HOMEPAGE =	https://www.gnu.org/software/libcdio/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c cdio iconv m
 

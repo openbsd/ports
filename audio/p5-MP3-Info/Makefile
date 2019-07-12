@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/20 19:56:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:43:38 sthen Exp $
 
 COMMENT=	read MPEG1-Layer3 tags
 
@@ -10,6 +10,6 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

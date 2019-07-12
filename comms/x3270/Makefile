@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/04 00:17:11 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:48 sthen Exp $
 
 COMMENT=	IBM 3270 terminal emulator for the X Window System
 
@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=x3270/}
 EXTRACT_SUFX=	.tgz
 
 # BSD, MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xt c crypto ssl \
 			util

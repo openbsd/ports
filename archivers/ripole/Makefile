@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/12/19 03:00:28 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:29 sthen Exp $
 
 COMMENT=		extract attachments from OLE2 data files
 
@@ -10,7 +10,7 @@ CATEGORIES=		archivers
 HOMEPAGE=		https://pldaniels.com/ripole/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

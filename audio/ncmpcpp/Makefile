@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2019/04/24 16:26:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2019/07/12 20:43:37 sthen Exp $
 
 BROKEN-alpha =		error: looser throw specifier for 'virtual OutOfBounds::~OutOfBounds()'
 BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'Binding'
@@ -15,7 +15,7 @@ CATEGORIES =		audio
 HOMEPAGE =		https://rybczak.net/ncmpcpp/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_locale-mt
 WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt

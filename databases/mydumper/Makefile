@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/05 11:53:00 sthen Exp $$
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:54 sthen Exp $$
 
 COMMENT =	utility for quick MySQL dumping
 
@@ -10,7 +10,7 @@ CATEGORIES =	databases
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c crypto glib-2.0 gthread-2.0 m iconv mariadb
 WANTLIB +=	pcre ssl z

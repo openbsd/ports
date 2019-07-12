@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:44:08 sthen Exp $
 
 CATEGORIES=		devel
 COMMENT=		high performance Cloud Storage client library
@@ -14,7 +14,7 @@ SHARED_LIBS=		droplet		1.0 #0.0
 MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += crypto iconv json-c lzma m pthread ssl xml2 z
 

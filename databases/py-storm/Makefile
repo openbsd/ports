@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/04/28 21:18:46 danj Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:44:00 sthen Exp $
 
 COMMENT=		generic object relational mapper for Python
 
@@ -12,7 +12,7 @@ CATEGORIES=		databases
 HOMEPAGE=		https://storm.canonical.com/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pthread

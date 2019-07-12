@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/05 11:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:00 sthen Exp $
 
 COMMENT =		Python interface to MySQL
 
@@ -12,7 +12,7 @@ CATEGORIES =		databases
 HOMEPAGE =		https://github.com/PyMySQL/mysqlclient-python/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += crypto m pthread ssl z iconv mariadb
 WANTLIB += ${MODPY_WANTLIB}

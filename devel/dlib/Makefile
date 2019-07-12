@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/21 09:43:47 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:08 sthen Exp $
 
 COMMENT =		C++ toolkit for machine learning and data analysis
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://dlib.net/
 MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
 # MIT-like (Boost)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xext gif jpeg m png sqlite3
 WANTLIB += z

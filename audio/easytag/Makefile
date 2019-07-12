@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/06/13 15:48:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2019/07/12 20:43:32 sthen Exp $
 
 COMMENT=		tag editor for various audio file formats
 
@@ -9,7 +9,7 @@ REVISION=		7
 CATEGORIES=		audio
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += FLAC Xtst X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi

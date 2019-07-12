@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2018/01/09 02:28:18 kili Exp $
+# $OpenBSD: Makefile,v 1.70 2019/07/12 20:44:07 sthen Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -76,6 +76,6 @@ pre-test:
 	ln -fs ${LOCALBASE}/bin/gdate ${WRKDIR}/bin/date
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

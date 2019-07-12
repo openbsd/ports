@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/12/03 11:13:33 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:43:35 sthen Exp $
 
 COMMENT=		multi-platform CD-Player library
 
@@ -10,7 +10,7 @@ CATEGORIES=		audio
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_TEST=		Yes
 CONFIGURE_STYLE=	imake

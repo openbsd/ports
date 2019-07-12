@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:43:35 sthen Exp $
 
 COMMENT=	C64 music player and SID chip emulator library
 
@@ -10,7 +10,7 @@ SHARED_LIBS +=	sidplay              2.0      # .1.3
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =		m ${COMPILER_LIBCXX}
 

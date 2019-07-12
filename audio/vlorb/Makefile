@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/08/11 20:13:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:42 sthen Exp $
 
 COMMENT=		audio CD to audio file encoder
 DISTNAME=		vlorb-1.2
@@ -8,7 +8,7 @@ CATEGORIES=		audio
 HOMEPAGE=		http://jk.yazzy.org/projects/vlorb/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/releases/
 

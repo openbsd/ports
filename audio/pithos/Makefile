@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/04/28 20:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:39 sthen Exp $
 
 GH_ACCOUNT =	pithos
 GH_PROJECT =	pithos
@@ -14,7 +14,7 @@ HOMEPAGE =	http://pithos.github.io/
 # Github page says GPLv3+
 # But the code says GPLv3 only
 # pithos/pandora/blowfish.py: AGPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}

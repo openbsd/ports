@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/01 21:10:05 danj Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:40 sthen Exp $
 
 COMMENT =	Python MPD client library
 
@@ -9,7 +9,7 @@ REVISION =		4
 CATEGORIES =		audio
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/06/11 00:38:33 kurt Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:43:52 sthen Exp $
 
 PKG_ARCH=		*
 
@@ -18,7 +18,7 @@ HOMEPAGE=		http://www.sqlpower.ca/page/architect
 MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		java
 MODJAVA_VER =		1.8+

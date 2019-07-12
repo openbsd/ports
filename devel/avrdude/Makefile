@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/17 16:19:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:44:04 sthen Exp $
 
 COMMENT=	AVR microcontroller hardware in-system programmer
 
@@ -11,7 +11,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://www.nongnu.org/avrdude/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses ftdi m pthread readline usb usb-1.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2019/04/28 06:37:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2019/07/12 20:44:10 sthen Exp $
 
 # g++3 chokes on the code
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
@@ -23,7 +23,7 @@ HOMEPAGE=		http://www.gtkmm.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv
 WANTLIB += intl m pcre pthread sigc-2.0 z

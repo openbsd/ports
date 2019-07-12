@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/13 19:03:51 danj Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:00 sthen Exp $
 
 COMMENT =		tiny 'shelve'-like database with concurrency support
 
@@ -12,7 +12,7 @@ CATEGORIES =		databases devel
 HOMEPAGE =		https://github.com/pickleshare/pickleshare
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

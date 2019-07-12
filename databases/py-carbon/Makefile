@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/01 10:44:39 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:59 sthen Exp $
 
 COMMENT=		backend data caching and persistence daemon for Graphite
 
@@ -10,7 +10,7 @@ CATEGORIES=		databases
 REVISION=		0
 
 # Apache
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 MODPY_PI =		Yes

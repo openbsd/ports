@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2019/05/17 16:19:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2019/07/12 20:43:48 sthen Exp $
 
 COMMENT=	tools to connect your PalmOS(R) compatible handheld
 
@@ -19,7 +19,7 @@ HOMEPAGE=	http://www.pilot-link.org/
 EXTRACT_SUFX=	.tar.bz2
 
 # GPLv2 - LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses iconv intl m perl png popt pthread readline z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/26 13:05:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:11 sthen Exp $
 
 COMMENT= generate SCons/Makefiles from platform-independent input
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://bugs.chromium.org/p/gyp/
 MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://deftly.net/
 

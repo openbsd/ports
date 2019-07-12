@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/05/20 22:15:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2019/07/12 20:43:42 sthen Exp $
 
 COMMENT=	play, encode, and manage Ogg Vorbis files
 
@@ -10,7 +10,7 @@ HOMEPAGE=	https://www.xiph.org/vorbis/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB+= FLAC ao c crypto curl iconv intl m nghttp2 ogg pthread speex
 WANTLIB+= ssl vorbis vorbisenc vorbisfile z

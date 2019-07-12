@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/11/22 19:39:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:05 sthen Exp $
 
 COMMENT=	implementation of the Real-time Transport Protocol
 
@@ -12,7 +12,7 @@ SHARED_LIBS=	ccrtp1		2.0
 HOMEPAGE=	http://www.gnutelephony.org/index.php/GNU_ccRTP
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += crypto ssl ccgnu2>=1 m pthread ${COMPILER_LIBCXX}
 

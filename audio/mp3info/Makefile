@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/06/04 14:29:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:43:36 sthen Exp $
 
 PORTROACH=	skipv:0.8.5
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.ibiblio.org/mp3info/
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/sound/mp3-utils/mp3info/}
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses
 

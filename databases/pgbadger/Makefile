@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/03/07 09:59:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:58 sthen Exp $
 
 COMMENT =	advanced PostgreSQL log analyzer
 
@@ -11,7 +11,7 @@ CATEGORIES =	databases
 HOMEPAGE =	https://dalibo.github.io/pgbadger/
 
 # PostgreSQL license
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE =	perl
 

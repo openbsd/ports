@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/12/07 22:41:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:08 sthen Exp $
 
 COMMENT =		C++ class and template library
 
@@ -11,7 +11,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://www.synfig.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=synfig/}
 

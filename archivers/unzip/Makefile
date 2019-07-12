@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2019/06/17 09:39:44 kirby Exp $
+# $OpenBSD: Makefile,v 1.64 2019/07/12 20:43:30 sthen Exp $
 
 PORTROACH =	skipv:551,552
 
@@ -18,7 +18,7 @@ FLAVORS =	iconv
 FLAVOR ?=
 
 # Conditional
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB =		c

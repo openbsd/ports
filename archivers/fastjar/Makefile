@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/05/18 11:29:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:43:28 sthen Exp $
 
 COMMENT =	Sun JDK's jar command written entirely in C
 
@@ -10,7 +10,7 @@ HOMEPAGE =	http://fastjar.sourceforge.net/
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =		c z
 

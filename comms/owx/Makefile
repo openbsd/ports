@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/12 16:29:44 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:47 sthen Exp $
 
 COMMENT =	tool for programming Wouxun transcievers
 
@@ -10,7 +10,7 @@ CATEGORIES =	comms
 HOMEPAGE =	http://owx.chmurka.net/
 
 # Apache 2.0 license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =	c m ${COMPILER_LIBCXX}
 

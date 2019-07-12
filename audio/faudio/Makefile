@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/02 16:24:42 thfr Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:33 sthen Exp $
 
 # versions are in sync with FNA versions
 V =		19.06
@@ -13,7 +13,7 @@ HOMEPAGE =	https://github.com/FNA-XNA/FAudio
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # zlib
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2
 

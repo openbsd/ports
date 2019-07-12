@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/06 14:23:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:57 sthen Exp $
 
 COMMENT =		dbd-pg wrapper for mojolicious
 
@@ -10,7 +10,7 @@ CATEGORIES =		databases
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
 #Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		databases/p5-DBD-Pg>=3.5.1 \
 			databases/p5-SQL-Abstract>=1.86 \

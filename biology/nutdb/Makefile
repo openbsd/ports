@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 20:43:43 sthen Exp $
 
 COMMENT=	record and analyze your meals for nutrient composition
 
@@ -10,7 +10,7 @@ CATEGORIES=	biology
 HOMEPAGE=	http://nut.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xpm Xinerama
 WANTLIB += c fltk fontconfig m pthread ${COMPILER_LIBCXX}

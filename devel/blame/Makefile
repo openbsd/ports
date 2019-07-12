@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/04 16:13:43 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:04 sthen Exp $
 
 COMMENT=	RCS equivalent of CVS's annotate command
 
@@ -8,7 +8,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://blame.sourceforge.net/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=blame/}

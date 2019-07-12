@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/03 13:40:38 bcallah Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:05 sthen Exp $
 
 COMMENT =		elegant unit testing framework for C
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://cmocka.org/
 MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
 # Apache License v2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://cmocka.org/files/1.1/
 EXTRACT_SUFX =		.tar.xz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/09/25 19:52:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:37 sthen Exp $
 
 COMMENT=	encode, inspect, and decode Opus files
 
@@ -10,7 +10,7 @@ HOMEPAGE=	https://opus-codec.org/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://archive.mozilla.org/pub/opus/
 

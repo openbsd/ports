@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:05 sthen Exp $
 
 COMMENT=	curses GDB interface
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel
 HOMEPAGE=	https://cgdb.github.io/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${COMPILER_LIBCXX} c curses ereadline m util
 

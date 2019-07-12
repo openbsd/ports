@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2019/05/20 20:52:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2019/07/12 20:44:09 sthen Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
@@ -11,7 +11,7 @@ HOMEPAGE=	https://www.gnu.org/software/gdb/
 MAINTAINER=	Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2 and GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=gdb/}
 DIST_SUBDIR=	gdb

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/05 11:43:47 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:32 sthen Exp $
 
 COMMENT=	IT/MOD/XM player and library
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://dumb.sourceforge.net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dumb/}
 
 # free, with some not-seriously-intended joke clauses
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	alleg c m pthread
 

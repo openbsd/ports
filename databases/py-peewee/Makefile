@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/04/28 20:51:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:00 sthen Exp $
 
 COMMENT=		small expressive ORM
 
@@ -16,7 +16,7 @@ CATEGORIES=		databases
 HOMEPAGE=		http://docs.peewee-orm.com/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=		textproc/py-sphinx${MODPY_FLAVOR}
 

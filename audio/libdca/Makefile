@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/06/23 16:32:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:34 sthen Exp $
 
 COMMENT=		free DTS Coherent Acoustics decoder
 
@@ -13,7 +13,7 @@ SHARED_LIBS=	dca	0.0
 HOMEPAGE=		http://www.videolan.org/developers/libdca.html
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m sndio
 

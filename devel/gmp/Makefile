@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2018/11/21 16:49:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2019/07/12 20:44:10 sthen Exp $
 
 COMMENT-main=	library for arbitrary precision arithmetic
 COMMENT-cxx=	C++ library for arbitrary precision arithmetic
@@ -21,7 +21,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 EXTRACT_SUFX=	.tar.xz
 
 # LGPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://gmplib.org/download/gmp/ \
 		${MASTER_SITE_GNU:=gmp/}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/01/17 14:42:14 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:43:57 sthen Exp $
 
 COMMENT =	perl binding for Redis database
 
@@ -10,7 +10,7 @@ EPOCH =		0
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

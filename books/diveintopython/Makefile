@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/01/21 14:33:26 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:44 sthen Exp $
 
 COMMENT=	book about Python for experienced programmers
 
@@ -12,7 +12,7 @@ CATEGORIES=	books
 HOMEPAGE=	http://diveintopython.org/
 
 # FDL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/
 EXTRACT_SUFX=	.zip

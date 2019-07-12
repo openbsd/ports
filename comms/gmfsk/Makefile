@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2019/07/12 20:43:47 sthen Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
@@ -13,7 +13,7 @@ MASTER_SITES=	${HOMEPAGE}	\
 EXTRACT_SUFX=	.tar.gz
 
 # GPLv2 - FDL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL ICE ORBit-2 SM X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0

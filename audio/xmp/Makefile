@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2016/09/02 17:42:44 fcambus Exp $
+# $OpenBSD: Makefile,v 1.59 2019/07/12 20:43:42 sthen Exp $
 
 COMMENT=		extended module player
 
@@ -8,7 +8,7 @@ CATEGORIES=		audio
 HOMEPAGE=		http://xmp.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xmp/}
 

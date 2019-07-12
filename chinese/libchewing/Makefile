@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/06/13 17:00:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:46 sthen Exp $
 
 COMMENT =	intelligent phonetic input method library
 
@@ -16,7 +16,7 @@ HOMEPAGE =	http://chewing.im/
 MAINTAINER = 	Kevin Lo <kevlo@openbsd.org>
 
 # LGPLv2.1 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	m pthread sqlite3 z
 

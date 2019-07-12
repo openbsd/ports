@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/03 18:27:43 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:44 sthen Exp $
 
 COMMENT =	gnu collaborative international dictionary of english
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://gcide.gnu.org.ua/
 MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_GNU:=gcide/}
 

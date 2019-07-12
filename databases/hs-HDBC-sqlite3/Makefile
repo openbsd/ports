@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/04/24 16:26:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:43:53 sthen Exp $
 
 COMMENT =		sqlite3 driver for HDBC
 
@@ -7,7 +7,7 @@ REVISION =		6
 CATEGORIES =		databases
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

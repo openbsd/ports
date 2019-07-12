@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/12/25 14:50:27 pascal Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:43:27 sthen Exp $
 
 COMMENT =		generic lossless compressor
 
@@ -15,7 +15,7 @@ CATEGORIES =		archivers
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m
 

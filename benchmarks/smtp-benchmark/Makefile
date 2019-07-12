@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/16 16:46:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:43 sthen Exp $
 
 COMMENT=	SMTP benchmark to measure throughput of an MTA
 
@@ -8,7 +8,7 @@ REVISION=	3
 CATEGORIES=    	benchmarks mail
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c pthread
 

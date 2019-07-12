@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/12/18 09:32:23 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:49 sthen Exp $
 
 COMMENT =	convert between traditional and simplified Chinese
 
@@ -18,7 +18,7 @@ HOMEPAGE =	https://opencc.byvoid.com/
 MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
 

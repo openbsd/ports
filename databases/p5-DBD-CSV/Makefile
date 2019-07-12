@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/11/03 19:22:38 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:43:55 sthen Exp $
 
 COMMENT =	DBI driver for CSV files
 
@@ -11,7 +11,7 @@ PKG_ARCH =	*
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # perl_5
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	databases/p5-DBI>=1.628 \
 		databases/p5-SQL-Statement>=1.405 \

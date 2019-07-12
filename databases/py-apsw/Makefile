@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/28 20:51:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:59 sthen Exp $
 
 COMMENT =	thin SQLite wrapper for Python
 
@@ -12,7 +12,7 @@ REVISION =	0
 HOMEPAGE=	https://rogerbinns.github.io/apsw/
 
 # zlib
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread sqlite3
 

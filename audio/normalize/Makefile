@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/05/20 22:15:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:43:37 sthen Exp $
 
 COMMENT=	audio file volume normalizer
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://normalize.nongnu.org/
 MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv intl m mad>=2 audiofile FLAC ogg
 

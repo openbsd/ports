@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/11/26 16:50:51 juanfra Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:08 sthen Exp $
 
 ONLY_FOR_ARCHS =	i386
 
@@ -9,7 +9,7 @@ HOMEPAGE =		http://flatassembler.net/
 MAINTAINER =		Dmitri Alenichev <mitya@rockers.su>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 WANTLIB =		c
 
 MASTER_SITES =		${HOMEPAGE}

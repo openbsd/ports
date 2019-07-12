@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/01/26 22:21:52 juanfra Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:28 sthen Exp $
 
 COMMENT =		C implementation of lzip
 
@@ -8,7 +8,7 @@ HOMEPAGE =		http://lzip.nongnu.org/clzip.html
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=lzip/clzip/}
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

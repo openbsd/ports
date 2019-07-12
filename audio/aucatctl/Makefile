@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/07/13 11:40:23 armani Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:31 sthen Exp $
 
 COMMENT =		control aucat and/or sndiod volume
 DISTNAME =		aucatctl-0.1
@@ -7,7 +7,7 @@ HOMEPAGE =		http://www.sndio.org/
 REVISION =		0
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c sndio
 MASTER_SITES =		${HOMEPAGE}

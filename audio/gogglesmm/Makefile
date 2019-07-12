@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/24 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:33 sthen Exp $
 
 COMMENT =	music collection manager and player
 DISTNAME =	gogglesmm-0.12.7
@@ -9,7 +9,7 @@ CATEGORIES =	audio x11
 HOMEPAGE =	https://gogglesmm.github.io/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += FOX-1.6 GL GLU X11 c dbus-1 expat intl m sqlite3 ${COMPILER_LIBCXX}
 WANTLIB += tag xine

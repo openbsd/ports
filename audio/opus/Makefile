@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/04/21 19:38:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:43:37 sthen Exp $
 
 COMMENT=	IETF audio codec
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://opus-codec.org/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://archive.mozilla.org/pub/opus/
 

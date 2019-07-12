@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2019/07/11 20:24:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.91 2019/07/12 20:44:09 sthen Exp $
 
 COMMENT-runtime=	GNU gettext runtime libraries and programs
 COMMENT-textstyle=	text styling library
@@ -31,7 +31,7 @@ HOMEPAGE=	https://www.gnu.org/software/gettext/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # LGPLv2.1, GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES=	-runtime -textstyle -tools
 SUBPACKAGE?=	-runtime

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:49 sthen Exp $
 
 COMMENT=		detect character set and encoding of text files
 
@@ -10,7 +10,7 @@ REVISION=		0
 HOMEPAGE=		http://cihar.com/software/enca/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c iconv intl m recode
 

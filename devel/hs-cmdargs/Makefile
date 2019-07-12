@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/01/22 21:59:54 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:12 sthen Exp $
 
 COMMENT =		command line parser library
 
@@ -9,7 +9,7 @@ HOMEPAGE =		http://community.haskell.org/~ndm/cmdargs/
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

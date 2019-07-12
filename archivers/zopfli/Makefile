@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/06/09 18:38:18 bket Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:30 sthen Exp $
 
 COMMENT =		deflate-compatible compression format
 
@@ -10,7 +10,7 @@ DISTNAME =		${GH_TAGNAME}
 CATEGORIES =		archivers
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m
 

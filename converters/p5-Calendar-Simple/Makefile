@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/04/27 14:49:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:49 sthen Exp $
 
 COMMENT= 	simple calendar month
 
@@ -8,7 +8,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/p5-DateTime
 

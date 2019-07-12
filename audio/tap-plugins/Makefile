@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/16 16:46:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:41 sthen Exp $
 
 COMMENT =		TAP LADSPA plugins
 
@@ -8,7 +8,7 @@ CATEGORIES =		audio
 HOMEPAGE =		http://tap-plugins.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		m
 

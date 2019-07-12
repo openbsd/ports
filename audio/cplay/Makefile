@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/05/01 19:57:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:32 sthen Exp $
 
 COMMENT=		curses front-end for various audio players
 
@@ -7,7 +7,7 @@ REVISION =		9
 CATEGORIES=		audio
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://spacehopper.org/mirrors/
 

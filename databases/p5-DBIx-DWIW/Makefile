@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:56 sthen Exp $
 
 COMMENT =	DBI wrapper intended to Do What I Want
 
@@ -11,7 +11,7 @@ CATEGORIES =	databases
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	databases/p5-DBI \

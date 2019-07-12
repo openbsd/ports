@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/20 22:15:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:43:39 sthen Exp $
 
 COMMENT =		automatic audio files tagger using the MusicBrainz database
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://musicbrainz.org/doc/Picard_Tagger
 MAINTAINER =		Amaury Gauthier <amaury.gauthier@etu.unilim.fr>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += avcodec avformat m ofa pthread ${COMPILER_LIBCXX}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/05/12 13:58:30 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:43 sthen Exp $
 
 COMMENT=	tool to measure TCP throughput
 DISTNAME=	netstrain-3.0
@@ -9,7 +9,7 @@ REVISION =	0
 HOMEPAGE=	http://netstrain.sourceforge.net/
 
 # ISC-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 NO_TEST=	Yes

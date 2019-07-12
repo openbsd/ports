@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/07/31 10:04:37 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:44 sthen Exp $
 
 COMMENT =		Version Control with Subversion
 
@@ -11,7 +11,7 @@ CATEGORIES =		books devel
 HOMEPAGE =		http://svnbook.red-bean.com/
 
 # Creative Commons Attribution License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # ${HOMEPAGE}/en/$V/svn-book-html-chunk.tar.bz2 appears to be auto-generated
 MASTER_SITES =		https://spacehopper.org/mirrors/

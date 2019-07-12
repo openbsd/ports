@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/01/22 21:42:27 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:12 sthen Exp $
 
 COMMENT =		lifted IO operations from the base library
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

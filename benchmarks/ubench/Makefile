@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/05/12 13:58:30 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:43 sthen Exp $
 
 COMMENT=	Unix benchmark utility
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.phystech.com/download/ubench.html
 MASTER_SITES=	http://www.phystech.com/ftp/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m
 

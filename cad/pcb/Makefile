@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/10/26 04:01:51 bentley Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 20:43:45 sthen Exp $
 
 COMMENT=	printed circuit board layout tool
 DISTNAME=	pcb-4.1.3
@@ -8,7 +8,7 @@ EPOCH=		0
 HOMEPAGE=	http://pcb.geda-project.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  GL GLU ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xmu Xrandr Xrender Xt atk-1.0 c cairo dbus-1

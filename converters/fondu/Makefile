@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/25 11:25:02 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:49 sthen Exp $
 
 COMMENT =	convert Mac font formats to/from pfb, ttf, otf and bdf files
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://fondu.sourceforge.net/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/01/03 11:59:16 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:49 sthen Exp $
 
 COMMENT =	tools for LiDAR processing
 DISTNAME =	lastools-0.20181229
@@ -9,7 +9,7 @@ GH_TAGNAME =	384056a5ba27edba629da1328cc7ac5020c3d9d4
 CATEGORIES =	converters textproc devel
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 

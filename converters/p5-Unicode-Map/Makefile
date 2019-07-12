@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:51 sthen Exp $
 
 COMMENT=	conversions to and from arbitrary character sets
 
@@ -8,7 +8,7 @@ CATEGORIES=	converters
 MODULES=	cpan
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

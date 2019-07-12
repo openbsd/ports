@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/01/02 12:15:38 sebastia Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:01 sthen Exp $
 
 COMMENT=		simple pluggable hierarchical database
 
@@ -13,7 +13,7 @@ HOMEPAGE=		https://puppet.com/docs/hiera/
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apachev2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

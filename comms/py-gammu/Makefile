@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/07 05:32:25 kirby Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:48 sthen Exp $
 
 COMMENT =		python bindings for Gammu
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://wammu.eu/
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += Gammu gsmsd m pthread ${MODPY_WANTLIB}
 

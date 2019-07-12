@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/01/22 22:01:42 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:12 sthen Exp $
 
 COMMENT =		class for hashable data types
 
@@ -10,7 +10,7 @@ DISTNAME =		hashable-1.2.6.1
 CATEGORIES =		devel
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

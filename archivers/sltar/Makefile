@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/08/21 08:04:16 armani Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:30 sthen Exp $
 
 COMMENT=		simple tar implementation
 
@@ -12,7 +12,7 @@ HOMEPAGE=		https://github.com/Gottox/sltar
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
 # MIT/X
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/10 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:44 sthen Exp $
 
 COMMENT=	book on embedding Perl in HTML with Mason
 CATEGORIES=	books
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	www/p5-HTML-Parser \
 		www/p5-URI
 
 # Open Publication License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WRKDIST=	${WRKDIR}
 INSTALL_LOC=	${PREFIX}/share/doc/mason-book

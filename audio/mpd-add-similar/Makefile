@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/10 22:55:04 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:36 sthen Exp $
 
 COMMENT =		add similar tracks to your mpd playlist
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://launchpad.net/mpd-add-similar
 MAINTAINER = 		Edd Barrett <edd@openbsd.org>
 
 # GPLv2 or later
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${HOMEPAGE}/trunk/0.1.6/+download/
 

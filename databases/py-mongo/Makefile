@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/28 20:51:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:00 sthen Exp $
 
 COMMENT =	Python driver for mongodb
 
@@ -12,7 +12,7 @@ CATEGORIES =	databases devel
 HOMEPAGE =	https://github.com/mongodb/mongo-python-driver/
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	pthread ${MODPY_WANTLIB}
 

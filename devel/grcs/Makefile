@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/06/05 19:44:26 schwarze Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:10 sthen Exp $
 
 COMMENT=	GNU versions of the rcs utilities
 
@@ -11,7 +11,7 @@ CATEGORIES=	devel
 HOMEPAGE=	https://www.gnu.org/software/rcs/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

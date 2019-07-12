@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/12/05 20:19:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:35 sthen Exp $
 
 COMMENT=	library to split mp3/ogg files without decoding
 
@@ -12,7 +12,7 @@ CATEGORIES=	audio
 HOMEPAGE=	http://mp3splt.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	id3tag m mad ltdl ogg vorbis vorbisfile z
 

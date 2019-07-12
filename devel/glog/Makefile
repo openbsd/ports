@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:44:10 sthen Exp $
 
 COMMENT =		C++ application-level logging library
 
@@ -12,7 +12,7 @@ SHARED_LIBS +=		glog 1.0 # 0.2.1
 CATEGORIES =		devel
 
 # New BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} gflags m
 

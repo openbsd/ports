@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/15 12:04:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:07 sthen Exp $
 
 COMMENT=		migrate repositories from CVS to Subversion/GIT/BZR
 
@@ -14,7 +14,7 @@ CATEGORIES=		devel
 HOMEPAGE=		http://cvs2svn.tigris.org/
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 

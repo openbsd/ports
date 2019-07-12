@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/07/15 08:36:38 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:08 sthen Exp $
 
 COMMENT=		simple, powerful configuration-file parser
 
@@ -12,7 +12,7 @@ CATEGORIES=		devel
 HOMEPAGE=		https://github.com/williamh/dotconf
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_FREEBSD}
 

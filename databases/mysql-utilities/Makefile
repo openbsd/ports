@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/06/12 23:07:01 schwarze Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:54 sthen Exp $
 
 COMMENT =	MySQL management utilities
 
@@ -16,7 +16,7 @@ HOMEPAGE =	http://www.mysql.com/
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 

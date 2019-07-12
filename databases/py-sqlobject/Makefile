@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/15 12:04:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:44:00 sthen Exp $
 
 COMMENT =		Object Relational Manager
 
@@ -12,7 +12,7 @@ CATEGORIES =		databases
 HOMEPAGE =		http://www.sqlobject.org/
 
 # LGPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVORS =	python3
 FLAVOR ?=

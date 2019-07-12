@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:43:54 sthen Exp $
 
 COMMENT= 	RDBO and RHTMLO base classes for Catalyst
 DISTNAME=	Catalyst-Controller-Rose-0.02
@@ -8,7 +8,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	databases/p5-Catalyst-Model-RDBO \
 		databases/p5-Sort-SQL \

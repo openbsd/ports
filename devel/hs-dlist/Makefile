@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/19 19:58:51 danj Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:12 sthen Exp $
 
 COMMENT =		list-like type supporting O(1) append
 
@@ -7,7 +7,7 @@ REVISION =		4
 CATEGORIES =		devel
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/04/28 20:51:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:03 sthen Exp $
 
 COMMENT-main=	perl bindings for Xapian
 COMMENT-python=	python bindings for Xapian
@@ -27,7 +27,7 @@ CATEGORIES=	databases textproc
 HOMEPAGE=	https://xapian.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${V}/
 EXTRACT_SUFX=	.tar.xz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/02/27 14:05:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:05 sthen Exp $
 
 COMMENT =	help generating metadata for cargo vendoring
 
@@ -11,7 +11,7 @@ CATEGORIES =	devel
 MAINTAINER =	Sebastien Marie <semarie@online.fr>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://github.com/semarie/cargo-generate-vendor/releases/download/${V}/
 

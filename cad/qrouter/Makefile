@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/18 05:50:55 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:45 sthen Exp $
 
 COMMENT =	multi-level, over-the-cell maze router for VLSI design
 DISTNAME =	qrouter-1.4.50
@@ -9,7 +9,7 @@ HOMEPAGE =	http://opencircuitdesign.com/qrouter/
 MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	${MODTK_WANTLIB} c m ICE X11 SM
 

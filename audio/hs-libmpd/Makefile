@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/04/24 16:26:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:43:34 sthen Exp $
 
 COMMENT=		Haskell interface to MPD
 
@@ -9,7 +9,7 @@ CATEGORIES=		audio
 HOMEPAGE=		https://github.com/joachifm/libmpd-haskell
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ghc
 

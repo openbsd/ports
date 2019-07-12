@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/01/22 22:01:01 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:12 sthen Exp $
 
 COMMENT =		constraint manipulation
 
@@ -6,7 +6,7 @@ DISTNAME=		constraints-0.9.1
 CATEGORIES =		devel
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

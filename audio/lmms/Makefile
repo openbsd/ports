@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/06/16 09:12:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:43:35 sthen Exp $
 
 COMMENT =		music studio with tracking, sampling and MIDI
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://lmms.io/
 MASTER_SITES =		https://spacehopper.org/mirrors/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets Qt5Xml
 WANTLIB += c curses fftw3f fluidsynth jack m mp3lame ogg portaudio

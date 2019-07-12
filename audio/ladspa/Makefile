@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/10/24 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:34 sthen Exp $
 
 COMMENT=	linux audio developer simple plugin API
 HOMEPAGE=	http://www.ladspa.org/
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MASTER_SITES=	${HOMEPAGE:=download/}
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m ${COMPILER_LIBCXX}
 

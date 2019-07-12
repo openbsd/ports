@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/20 21:36:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:05 sthen Exp $
 
 COMMENT =	unit test framework for C programs
 
@@ -11,7 +11,7 @@ CATEGORIES =	devel
 HOMEPAGE =	https://libcheck.github.io/check/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += m pthread
 

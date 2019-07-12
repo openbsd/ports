@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/20 22:15:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:43:40 sthen Exp $
 
 COMMENT =	streaming radio player
 
@@ -11,7 +11,7 @@ REVISION =	4
 MAINTAINER =	Fred Crowson <openbsd@crowsons.com>
 
 # GPLv1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=radiotray/}
 MODULES =	lang/python

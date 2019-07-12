@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/05/08 22:33:32 jca Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:44:01 sthen Exp $
 
 COMMENT=	access a MySQL database from Ruby
 
@@ -9,7 +9,7 @@ CATEGORIES=	databases
 HOMEPAGE=	http://tmtm.org/mysql/ruby/
 
 # Ruby License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	databases/mariadb lang/ruby
 

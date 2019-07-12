@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/11/28 14:57:45 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:59 sthen Exp $
 
 COMMENT =		readmes.html
 
@@ -8,7 +8,7 @@ DISTFILES =
 
 CATEGORIES =		databases
 
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =	databases/sqlports>=7.0 \
 		databases/p5-DBD-SQLite \

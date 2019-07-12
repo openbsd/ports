@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:43:42 sthen Exp $
 
 COMMENT =	Tcl/Tk CD player
 DISTNAME =	xcd-1.7
@@ -7,7 +7,7 @@ CATEGORIES =	audio
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # custom free license; see top of cdplayer.cc
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c m ${COMPILER_LIBCXX}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/01/11 01:51:34 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:52 sthen Exp $
 
 COMMENT=	extract attachments from MIME encoded emails
 
@@ -10,7 +10,7 @@ CATEGORIES=	converters mail
 HOMEPAGE=	https://pldaniels.com/ripmime/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv
 

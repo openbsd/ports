@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/07/26 21:34:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:01 sthen Exp $
 
 COMMENT =	ruby SQLite3 embedded database library
 
@@ -10,7 +10,7 @@ HOMEPAGE =	https://github.com/copiousfreetime/amalgalite
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

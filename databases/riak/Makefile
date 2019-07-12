@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2018/11/06 21:57:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:44:01 sthen Exp $
 
 COMMENT=			distributed data store
 DISTNAME=			riak-2.2.5
@@ -11,7 +11,7 @@ MAINTAINER=			Jonathan Matthew <jmatthew@openbsd.org>
 ONLY_FOR_ARCHS=			amd64
 
 # Apache License 2.0
-PERMIT_PACKAGE_CDROM=		Yes
+PERMIT_PACKAGE=		Yes
 
 MASTER_SITES=			https://files.tiot.jp/riak/kv/2.2/2.2.5/
 

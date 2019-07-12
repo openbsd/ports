@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/05/15 19:56:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:07 sthen Exp $
 
 COMMENT=		graphical representation of CVS repository
 
@@ -8,7 +8,7 @@ HOMEPAGE=		http://www.akhphd.au.dk/~bertho/cvsgraph
 REVISION=		0
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c fontconfig freetype gd iconv jpeg m png pthread tiff webp
 WANTLIB += z

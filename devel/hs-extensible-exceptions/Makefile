@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/01/22 21:40:32 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:12 sthen Exp $
 
 COMMENT =		extensible exceptions for Haskell
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

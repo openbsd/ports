@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/12/14 10:41:48 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:59 sthen Exp $
 
 COMMENT =		ports-readmes dancer web app
 PKG_ARCH = *
@@ -10,7 +10,7 @@ MASTER_SITES  =		https://distfiles.nl/
 CATEGORIES =		databases www
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 INSTALL_DIR = ${PREFIX}/libdata/ports-readmes-dancer
 NO_BUILD =	Yes
 

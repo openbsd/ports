@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:49 sthen Exp $
 
 BROKEN =	has locally modified copied of MuPDF files; some of these have changed API in 1.12.0 causing breakage
 
@@ -17,7 +17,7 @@ HOMEPAGE =	http://willus.com/k2pdfopt/
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cmake
 

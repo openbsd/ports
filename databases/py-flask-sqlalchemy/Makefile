@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/15 12:04:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:43:59 sthen Exp $
 
 REVISION=4
 
@@ -13,7 +13,7 @@ CATEGORIES =	databases www
 HOMEPAGE =	https://github.com/mitsuhiko/flask-sqlalchemy/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 

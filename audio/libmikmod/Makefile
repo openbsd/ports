@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2017/06/23 10:51:25 fcambus Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:43:35 sthen Exp $
 
 COMMENT =	mikmod sound library
 
@@ -11,7 +11,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 HOMEPAGE =	http://mikmod.sourceforge.net/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	m pthread sndio
 

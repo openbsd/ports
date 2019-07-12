@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/09/13 11:44:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:43:51 sthen Exp $
 
 COMMENT=	interface to iconv() codeset conversion function
 
@@ -8,7 +8,7 @@ CATEGORIES=	converters
 MODULES=	cpan
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv perl
 

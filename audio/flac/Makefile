@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2019/05/05 05:07:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.59 2019/07/12 20:43:33 sthen Exp $
 
 COMMENT=	free lossless audio codec
 
@@ -12,7 +12,7 @@ SHARED_LIBS +=  FLAC++               9.0      # 9.0
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://downloads.xiph.org/releases/flac/ \
 		https://ftp.osuosl.org/pub/xiph/releases/flac/

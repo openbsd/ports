@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/05/05 04:31:21 bentley Exp $
+# $OpenBSD: Makefile,v 1.44 2019/07/12 20:43:35 sthen Exp $
 
 COMMENT=	audio compression codec library
 
@@ -12,7 +12,7 @@ SHARED_LIBS +=  vorbisenc            3.1      # 2.11
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://downloads.xiph.org/releases/vorbis/
 EXTRACT_SUFX=	.tar.xz

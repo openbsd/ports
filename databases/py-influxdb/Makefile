@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:59 sthen Exp $
 
 COMMENT =		Python client for interacting with InfluxDB
 
@@ -12,7 +12,7 @@ CATEGORIES =		databases
 MAINTAINER =		Bjorn Ketelaars <bket@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

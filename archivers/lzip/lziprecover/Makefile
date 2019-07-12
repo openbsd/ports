@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/01/07 18:13:00 juanfra Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:28 sthen Exp $
 
 COMMENT =		data recovery tool and decompressor for lzip files
 
@@ -8,7 +8,7 @@ HOMEPAGE =		http://lzip.nongnu.org/lziprecover.html
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=lzip/lziprecover/}
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m ${COMPILER_LIBCXX}
 

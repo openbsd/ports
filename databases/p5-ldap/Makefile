@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2016/03/20 19:56:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:43:58 sthen Exp $
 
 COMMENT=	client interface to LDAP servers
 
@@ -26,7 +26,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=databases/openldap,-server
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	modinst
 

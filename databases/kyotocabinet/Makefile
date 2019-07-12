@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/01/02 16:03:54 bket Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:53 sthen Exp $
 
 BROKEN-hppa=	undefined reference to __sync_fetch_and_add_8
 BROKEN-powerpc=	undefined reference to __sync_fetch_and_add_8
@@ -17,7 +17,7 @@ CATEGORIES=	databases
 HOMEPAGE=	https://fallabs.com/kyotocabinet/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} c m z
 

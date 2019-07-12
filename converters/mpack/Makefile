@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/05/15 11:05:43 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:43:49 sthen Exp $
 
 COMMENT=	external MIME packer/unpacker
 
@@ -7,7 +7,7 @@ REVISION=	2
 CATEGORIES=	converters mail news
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

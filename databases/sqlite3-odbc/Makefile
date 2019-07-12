@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/06/08 12:37:23 stu Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:02 sthen Exp $
 
 COMMENT =		ODBC driver for SQLite3
 
@@ -10,7 +10,7 @@ HOMEPAGE =		http://www.ch-werner.de/sqliteodbc/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}
 WANTLIB =		iodbcinst m pthread sqlite3 z

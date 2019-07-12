@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:54 sthen Exp $
 
 COMMENT=	simple database abstraction
 
@@ -11,7 +11,7 @@ REVISION =	2
 CATEGORIES=	databases
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Class-Accessor \

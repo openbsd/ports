@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/07/10 13:32:44 kn Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:29 sthen Exp $
 
 # __builtin_clz
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -13,7 +13,7 @@ HOMEPAGE =	https://zlib.net/pigz/
 MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 
 # zlib + Apache
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 # uses pledge()
 WANTLIB =	c m pthread z

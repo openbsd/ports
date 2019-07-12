@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/12/06 09:17:59 pascal Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:04 sthen Exp $
 
 COMMENT =	physics library
 
@@ -34,7 +34,7 @@ HOMEPAGE =		http://bulletphysics.org
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # zlib
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m
 

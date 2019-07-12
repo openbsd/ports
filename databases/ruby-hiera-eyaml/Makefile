@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/02/07 09:49:43 sebastia Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:01 sthen Exp $
 
 COMMENT =	Hiera backend for decrypting encrypted yaml properties
 
@@ -8,7 +8,7 @@ CATEGORIES =	databases
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

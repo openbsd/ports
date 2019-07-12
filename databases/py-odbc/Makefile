@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/04/28 20:51:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:44:00 sthen Exp $
 
 COMMENT =	ODBC bindings for Python
 
@@ -12,7 +12,7 @@ CATEGORIES =	databases
 HOMEPAGE =	https://github.com/mkleehammer/pyodbc
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += iodbc m pthread ${COMPILER_LIBCXX}

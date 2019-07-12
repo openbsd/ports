@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/20 20:52:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:44:02 sthen Exp $
 
 COMMENT=	SQL shell for FreeTDS
 
@@ -12,7 +12,7 @@ CATEGORIES=	databases shells
 HOMEPAGE=	http://sourceforge.net/projects/sqsh/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c ct>=2 iconv curses m pthread readline
 

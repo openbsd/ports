@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/20 20:52:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:43:36 sthen Exp $
 
 COMMENT=	text console audio player with an interactive interface
 
@@ -9,7 +9,7 @@ HOMEPAGE=	http://mp3blaster.sourceforge.net/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${COMPILER_LIBCXX} c m curses ogg pthread sidplay sndio vorbis vorbisfile
 

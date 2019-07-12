@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/12/04 21:09:38 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:55 sthen Exp $
 
 COMMENT =	DBI driver abstraction for rendering charts and graphs
 
@@ -12,7 +12,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 MAINTAINER =	Okan Demirmen <okan@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	graphics/p5-GD \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/20 15:55:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:54 sthen Exp $
 
 COMMENT-main =		read microsoft Access MDB
 COMMENT-gmdb =		graphical interface to MDB tools
@@ -26,7 +26,7 @@ SHARED_LIBS +=  mdbodbc              0.0
 SHARED_LIBS +=  mdbodbcW             0.0
 
 # GPLv2+, LGPL v2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB-main += c curses glib-2.0 iconv intl iodbcinst pcre pthread
 WANTLIB-main += readline

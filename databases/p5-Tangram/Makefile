@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:58 sthen Exp $
 
 COMMENT=	object-oriented DBMS
 
@@ -9,7 +9,7 @@ DISTNAME =	Tangram-2.12
 CATEGORIES=	databases
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=		http://tangram.utsl.gen.nz/
 

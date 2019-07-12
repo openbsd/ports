@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/10 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:44 sthen Exp $
 
 COMMENT =		language and library specification for Haskell
 
@@ -14,7 +14,7 @@ MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # Copy and distribute for any purpose, but only completely.
 # When modified, mark as such and don't call the thing Haskell.
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =		http://haskell.org/definition/
 

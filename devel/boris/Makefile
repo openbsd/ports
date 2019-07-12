@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/10/17 14:15:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:04 sthen Exp $
 
 COMMENT =		read-eval-print loop for PHP
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/d11wtq/boris
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/php
 RUN_DEPENDS +=		lang/php/${MODPHP_VERSION},-pcntl

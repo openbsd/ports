@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/03/24 13:56:59 fcambus Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:33 sthen Exp $
 
 COMMENT =	crossplatform music editor for creating Commodore 64 music
 
@@ -15,7 +15,7 @@ HOMEPAGE =	http://covertbitops.c64.org/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	SDL c m pthread ${COMPILER_LIBCXX}
 

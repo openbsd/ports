@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/04/04 18:56:06 schwarze Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:03 sthen Exp $
 
 COMMENT=		ANSI C command line parser
 
@@ -11,7 +11,7 @@ REVISION=		0
 HOMEPAGE=		http://argtable.sourceforge.net/
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=argtable/}
 

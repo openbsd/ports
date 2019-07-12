@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/01/22 21:40:32 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:11 sthen Exp $
 
 COMMENT=		fast base16 (hex) encoding and decoding for ByteStrings
 
@@ -7,7 +7,7 @@ REVISION=		5
 CATEGORIES=		devel
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES=		lang/ghc
 

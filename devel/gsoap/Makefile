@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:10 sthen Exp $
 
 COMMENT=		SOAP/REST Web Services and XML-Based apps toolkit
 
@@ -20,7 +20,7 @@ CATEGORIES=		devel
 HOMEPAGE=		https://www.cs.fsu.edu/~engelen/soap.html
 
 # MPL-like - GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 AUTOCONF_VERSION=	2.67
 AUTOMAKE_VERSION=	1.11

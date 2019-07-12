@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/06/13 15:48:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:11 sthen Exp $
 
 COMMENT =	Gtk debugging tool
 
@@ -12,7 +12,7 @@ REVISION =	3
 HOMEPAGE =	http://chipx86.github.com/gtkparasite/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr

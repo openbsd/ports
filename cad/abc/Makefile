@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:44 sthen Exp $
 
 COMMENT =	system for sequential logic synthesis and verification
 DISTNAME =	abc-1.01.20180722
@@ -13,7 +13,7 @@ HOMEPAGE =	https://people.eecs.berkeley.edu/~alanmi/abc
 MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
 
 # MIT (abc, MiniSat, xSAT), BSD (bzlib, CUDD, satoko), zlib
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c curses m readline
 

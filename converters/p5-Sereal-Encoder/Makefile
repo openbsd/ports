@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/15 16:17:16 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:51 sthen Exp $
 
 COMMENT =	fast, compact, powerful binary serialization
 
@@ -9,7 +9,7 @@ CATEGORIES =	converters
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Perl, BSD, LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c perl zstd
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:32 sthen Exp $
 
 MODPY_EGG_VERSION =	0.2
 COMMENT =	curses interface for browsing and playing radio streams
@@ -13,7 +13,7 @@ GH_COMMIT =	1bd4bd0faeec675e0647bac9a100b526cba19f8d
 MAINTAINER =	Krystian Lewandowski <k.lewandowski@me.com>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes

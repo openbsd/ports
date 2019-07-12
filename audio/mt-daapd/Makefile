@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/05/12 10:00:24 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:37 sthen Exp $
 
 COMMENT=	multi-threaded DAAP server
 
@@ -9,7 +9,7 @@ CATEGORIES=	audio net
 HOMEPAGE=	http://www.mt-daapd.org/
 
 # GPL APSL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += avahi-client avahi-common c gdbm id3tag>=3 pthread z
 

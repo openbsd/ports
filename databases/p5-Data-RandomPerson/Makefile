@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/19 19:58:51 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:57 sthen Exp $
 
 COMMENT=		create random people
 
@@ -9,7 +9,7 @@ CATEGORIES=		databases
 REVISION =		1
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS =		devel/p5-Date-Calc \
 			devel/p5-Data-Random

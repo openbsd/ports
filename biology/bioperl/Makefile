@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/02/21 10:25:48 cwen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:43:43 sthen Exp $
 
 COMMENT=	perl tools for bioinformatics
 
@@ -10,7 +10,7 @@ CATEGORIES=	biology
 HOMEPAGE=	https://bioperl.org/
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CPAN_AUTHOR=	CJFIELDS
 

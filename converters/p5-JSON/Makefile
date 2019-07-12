@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/08/21 17:57:34 bluhm Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:43:50 sthen Exp $
 
 COMMENT= 	parse and convert to JSON (JavaScript Object Notation)
 
@@ -10,7 +10,7 @@ PKG_ARCH=	*
 MAINTAINER=	Genadijus Paleckis <rwx@openbsd.lt>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	www/p5-libwww
 TEST_DEPENDS=	converters/p5-JSON-XS

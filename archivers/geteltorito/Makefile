@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/06/25 18:09:51 phessler Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:28 sthen Exp $
 
 COMMENT =	el torito boot image extractor
 
@@ -8,7 +8,7 @@ CATEGORIES =	archivers
 HOMEPAGE =	https://userpages.uni-koblenz.de/~krienke/ftp/noarch/geteltorito/
 
 # GPL v2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}
 

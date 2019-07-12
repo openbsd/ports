@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2019/04/28 06:29:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2019/07/12 20:44:03 sthen Exp $
 
 COMMENT=		accessibility toolkit used by gtk+
 
@@ -13,7 +13,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += glib-2.0 gobject-2.0 intl
 

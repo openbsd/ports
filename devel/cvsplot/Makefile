@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/12/24 15:49:51 rpe Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:07 sthen Exp $
 
 COMMENT=		CVS-managed project analyzer
 
@@ -14,7 +14,7 @@ RUN_DEPENDS=		converters/p5-DateManip \
 			math/gnuplot
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

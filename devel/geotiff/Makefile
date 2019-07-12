@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/12 08:02:14 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:44:09 sthen Exp $
 
 COMMENT=	GIS TIFF interchange library
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://trac.osgeo.org/geotiff/
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://download.osgeo.org/geotiff/libgeotiff/
 

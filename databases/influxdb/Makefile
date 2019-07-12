@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/04 21:46:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:53 sthen Exp $
 
 COMMENT =	time-series datastore for metrics, events, and analytics
 
@@ -13,7 +13,7 @@ MASTER_SITES =	https://rhaalovely.net/stuff/
 CATEGORIES =		databases
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/go
 

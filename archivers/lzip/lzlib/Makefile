@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/01/26 22:21:01 juanfra Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:28 sthen Exp $
 
 COMMENT =		lzip compression library
 
@@ -10,7 +10,7 @@ HOMEPAGE =		http://lzip.nongnu.org/lzlib.html
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=lzip/lzlib/}
 
 # 2-clause BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAKE_ENV +=		LIBlz_VERSION=${LIBlz_VERSION}
 

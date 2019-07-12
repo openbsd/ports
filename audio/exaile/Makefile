@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/05/20 22:15:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:43:33 sthen Exp $
 
 COMMENT =	music manager and player for GTK+ written in Python
 
@@ -14,7 +14,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 MASTER_SITES =	https://github.com/exaile/exaile/releases/download/${V}/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/05/20 22:15:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2019/07/12 20:43:41 sthen Exp $
 
 COMMENT=	MIDI to WAV renderer and player
 
@@ -19,7 +19,7 @@ MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 # timidity: GPLv2+
 # TimGM6mb: https://musescore.org/en/handbook/soundfonts#list
 #	"License: GNU GPL, version 2; Courtesy of Tim Brechbill"
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses m sndio
 

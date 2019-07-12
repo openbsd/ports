@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/05/12 13:58:30 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:43 sthen Exp $
 
 COMMENT=	help benchmark random read performance
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://randread.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=randread/}
 
 # Public Domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

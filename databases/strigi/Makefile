@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/06/13 17:00:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:44:02 sthen Exp $
 
 COMMENT =	document indexer
 DISTNAME =	strigi-0.7.8
@@ -14,7 +14,7 @@ SHARED_LIBS +=  strigihtmlgui      2.0
 SHARED_LIBS +=  strigiqtdbusclient 2.0
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} lib/qt4/QtDBus lib/qt4/QtGui avcodec
 WANTLIB += avformat avutil bz2 c clucene-core clucene-shared dbus-1

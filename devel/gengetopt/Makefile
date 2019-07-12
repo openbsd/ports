@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:09 sthen Exp $
 
 V =		2.22.6
 COMMENT =	command line parser for c programs
@@ -9,7 +9,7 @@ REVISION =	3
 HOMEPAGE =	http://www.gnu.org/software/gengetopt/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 

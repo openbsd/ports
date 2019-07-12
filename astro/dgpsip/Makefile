@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/05/12 09:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:31 sthen Exp $
 
 COMMENT=	Differential GPS over IP communication device
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.wsrcc.com/wolfgang/gps/dgps-ip.html
 MAINTAINER=	Wolfgang Rupprecht <wsr+dgpsip@wsrcc.com>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m
 

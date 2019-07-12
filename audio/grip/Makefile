@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/05/20 22:15:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.67 2019/07/12 20:43:33 sthen Exp $
 
 COMMENT=		front-end to external cd audio rippers and mp3 encoders
 
@@ -9,7 +9,7 @@ REVISION=		2
 HOMEPAGE=		http://sourceforge.net/projects/grip/
 
 # GPLv2 - LGPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE ORBit-2 ORBitCosNaming-2 SM
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama

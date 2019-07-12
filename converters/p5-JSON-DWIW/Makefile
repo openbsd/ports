@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/11/03 11:38:53 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:50 sthen Exp $
 
 COMMENT =	JSON converter that Does What I Want
 
@@ -7,7 +7,7 @@ DISTNAME =	JSON-DWIW-0.47
 CATEGORIES =	converters
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 MAKE_ENV +=	CC='${CC}'
 
 WANTLIB += c perl

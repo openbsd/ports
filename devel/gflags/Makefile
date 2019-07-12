@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/10/24 14:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:09 sthen Exp $
 
 COMMENT =		c++ commandline flags processing library
 
@@ -15,7 +15,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://gflags.github.io/gflags/
 
 # New BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m
 

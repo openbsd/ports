@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:39 sthen Exp $
 
 COMMENT =	Python bindings for PortAudio
 
@@ -11,7 +11,7 @@ REVISION =	1
 HOMEPAGE =	http://people.csail.mit.edu/hubert/pyaudio/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	portaudio pthread ${MODPY_WANTLIB}
 

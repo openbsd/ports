@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/18 12:13:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:05 sthen Exp $
 
 COMMENT =		Javascript Object Signing and Encryption library
 
@@ -15,7 +15,7 @@ HOMEPAGE =		https://github.com/cisco/cjose
 MAINTAINER =		YASUOKA Masahiko <yasuoka@yasuoka.net>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		crypto jansson m
 

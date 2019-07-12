@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/05/03 18:36:05 fcambus Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:36 sthen Exp $
 
 COMMENT=		morse player
 
@@ -7,7 +7,7 @@ REVISION=		0
 CATEGORIES=		audio
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m sndio
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/05/20 22:15:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:43:35 sthen Exp $
 
 COMMENT=	command-line MPEG audio decoder and player
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://mad.sourceforge.net/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	ftp://ftp.mars.org/pub/mpeg/ \
 		${MASTER_SITE_SOURCEFORGE:=mad/}

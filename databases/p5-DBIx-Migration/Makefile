@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:57 sthen Exp $
 
 COMMENT =	seamless DB up- and downgrades
 
@@ -8,7 +8,7 @@ DISTNAME =	DBIx-Migration-0.07
 CATEGORIES =	databases
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE=modbuild
 

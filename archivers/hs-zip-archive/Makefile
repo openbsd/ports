@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/01/22 21:36:14 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:43:28 sthen Exp $
 
 COMMENT =		library dealing with zip archives
 
@@ -7,7 +7,7 @@ REVISION =		2
 CATEGORIES =		archivers devel
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

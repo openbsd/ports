@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/03/16 18:07:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:42 sthen Exp $
 
 COMMENT=	optimised MPEG Audio Layer 2 (MP2) encoder
 
@@ -11,7 +11,7 @@ CATEGORIES=	audio
 HOMEPAGE=	http://www.twolame.org/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=twolame/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/08 15:48:26 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:43 sthen Exp $
 
 COMMENT =		test synchronous write workloads
 DISTNAME =		fs_mark-3.3
@@ -6,7 +6,7 @@ REVISION =		1
 CATEGORIES =		benchmarks
 HOMEPAGE =		http://sourceforge.net/projects/fsmark/
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 WANTLIB =		c
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fsmark/}
 

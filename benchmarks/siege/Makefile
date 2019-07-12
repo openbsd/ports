@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/01/11 10:22:05 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:43 sthen Exp $
 
 COMMENT =		multi-threaded HTTP benchmark and regression tester
 
@@ -9,7 +9,7 @@ CATEGORIES =		benchmarks www
 HOMEPAGE =		http://www.joedog.org/index/siege-home
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto pthread ssl
 

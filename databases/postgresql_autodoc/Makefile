@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/05/12 14:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:59 sthen Exp $
 
 COMMENT =	documentation generator for postgresql databases
 
@@ -10,7 +10,7 @@ HOMEPAGE =	http://www.rbt.ca/autodoc/
 MASTER_SITES =	${HOMEPAGE}binaries/
 
 # BSD
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =	databases/p5-DBD-Pg \
 		www/p5-HTML-Template

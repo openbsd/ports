@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/05/17 16:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2019/07/12 20:44:06 sthen Exp $
 
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 COMMENT=	Code::Blocks C/C++ IDE
@@ -30,7 +30,7 @@ MAINTAINER=	Josh Grosse <josh@jggimi.net>
 HOMEPAGE=	http://www.codeblocks.org/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SM X11 Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm

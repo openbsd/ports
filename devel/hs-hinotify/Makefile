@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/01/22 21:42:27 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:12 sthen Exp $
 
 COMMENT =		inotify lib for haskell
 
@@ -7,7 +7,7 @@ REVISION =		1
 CATEGORIES =		devel
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

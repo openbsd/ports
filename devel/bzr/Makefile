@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/15 12:04:35 kmos Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:44:04 sthen Exp $
 
 COMMENT =	distributed version control system by Canonical
 
@@ -10,7 +10,7 @@ REVISION =	1
 HOMEPAGE =	https://bazaar.canonical.com/
 
 # GPL 
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
 

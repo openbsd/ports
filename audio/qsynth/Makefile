@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/15 06:36:29 sebastia Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:40 sthen Exp $
 
 COMMENT =		Qt GUI Interface for FluidSynth
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://qsynth.sourceforge.io
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qsynth/}
 

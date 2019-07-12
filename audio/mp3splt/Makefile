@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/03 16:59:09 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:36 sthen Exp $
 
 COMMENT=	split mp3/ogg files without decoding
 DISTNAME=	mp3splt-2.2.3
@@ -9,7 +9,7 @@ CATEGORIES=	audio
 HOMEPAGE=	http://mp3splt.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c mp3splt
 

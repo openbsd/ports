@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/04/27 23:24:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:43:31 sthen Exp $
 
 COMMENT =	Python module to access NOAA's METAR weather reports
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.schwarzvogel.de/software-pymetar.shtml
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://www.schwarzvogel.de/pkgs/
 

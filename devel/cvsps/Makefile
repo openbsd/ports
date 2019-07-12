@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/05/17 09:43:33 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:07 sthen Exp $
 
 COMMENT=	generate patchsets from CVS repositories
 
@@ -12,7 +12,7 @@ CATEGORIES=     devel
 HOMEPAGE=	http://cvsps.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c z
 MASTER_SITES=	${HOMEPAGE}

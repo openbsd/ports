@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/07/01 18:33:35 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:43:48 sthen Exp $
 
 COMMENT=		logbook program for amateur radio operators
 
@@ -9,7 +9,7 @@ REVISION=		1
 HOMEPAGE=		http://www.nongnu.org/xlog/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2018/12/05 20:19:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.72 2019/07/12 20:43:41 sthen Exp $
 
 BROKEN-hppa =	bend.c:155:12: internal compiler error: in expand_expr_addr_expr_1, at expr.c:7697
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://sox.sourceforge.net/
 MAINTAINER=	Jan Stary <hans@stare.cz>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m z sndio
 WANTLIB += FLAC gsm mad id3tag mp3lame ogg

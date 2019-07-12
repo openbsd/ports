@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/03/05 14:39:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:07 sthen Exp $
 
 COMMENT =		Device Firmware Update-based programmer for Atmel chips
 DISTNAME =		dfu-programmer-0.7.2
@@ -6,7 +6,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://dfu-programmer.github.io/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c usb-1.0
 

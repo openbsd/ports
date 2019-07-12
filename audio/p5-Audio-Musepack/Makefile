@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/13 07:40:44 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:38 sthen Exp $
 
 COMMENT=	object-oriented interface to Musepack/APE file information
 
@@ -8,7 +8,7 @@ DISTNAME =	Audio-Musepack-1.0.1
 CATEGORIES=	audio
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS =	audio/p5-MP3-Info>=1.20 \
 		audio/p5-Audio-Scan

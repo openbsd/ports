@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/06 12:04:20 rapha Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:40 sthen Exp $
 
 COMMENT =		audio time-stretching and pitch-shifting library
 
@@ -11,7 +11,7 @@ CATEGORIES =		audio
 HOMEPAGE =		https://breakfastquay.com/rubberband
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		${COMPILER_LIBCXX}
 WANTLIB +=		c fftw3 m pthread samplerate sndfile vamp-sdk

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/10/02 10:15:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:01 sthen Exp $
 
 COMMENT =	data backend for Hiera to return whole files
 
@@ -9,7 +9,7 @@ CATEGORIES =	databases
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apache2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

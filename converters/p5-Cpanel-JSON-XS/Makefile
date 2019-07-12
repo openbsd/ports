@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/06/12 21:39:01 bluhm Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:43:50 sthen Exp $
 
 COMMENT =	cPanel fork of JSON::XS, fast and correct serializing
 
@@ -9,7 +9,7 @@ CATEGORIES =	converters
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c perl
 

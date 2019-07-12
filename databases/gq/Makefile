@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2018/07/01 18:33:35 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2019/07/12 20:43:52 sthen Exp $
 
 COMMENT=	GTK-based LDAP client
 
@@ -10,7 +10,7 @@ CATEGORIES=	databases sysutils
 HOMEPAGE=	http://sourceforge.net/projects/gqclient/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo crypto fontconfig freetype gcrypt

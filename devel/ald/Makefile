@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/17 16:19:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:03 sthen Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://ald.sourceforge.net/
 MAINTAINER=		Patrick Alken <alken@colorado.edu>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses readline
 

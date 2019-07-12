@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/10/13 12:06:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:02 sthen Exp $
 
 SHARED_LIBS=	tokyocabinet	0.0 # .9.7
 
@@ -11,7 +11,7 @@ CATEGORIES=	databases
 HOMEPAGE=	http://fallabs.com/tokyocabinet/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += bz2 c m pthread z
 

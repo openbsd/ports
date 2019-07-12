@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/10 17:35:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:52 sthen Exp $
 
 COMMENT =	chooses from multiple available json implementations
 
@@ -8,7 +8,7 @@ CATEGORIES =	converters
 HOMEPAGE =	https://github.com/intridea/multi_json
 
 # MIT License
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES =	lang/ruby
 

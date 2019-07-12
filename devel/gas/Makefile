@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/26 19:47:27 pascal Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:09 sthen Exp $
 
 COMMENT =		GNU assembler
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://sourceware.org/binutils/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c z
 

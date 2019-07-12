@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/06/11 00:38:34 kurt Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:53 sthen Exp $
 
 COMMENT=	standards compliant LDAP browser
 
@@ -12,7 +12,7 @@ CATEGORIES=	databases net
 HOMEPAGE=	http://www.pegacat.com/jxplorer/
 
 # CA Open Source Licence v1.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jxplorer/}
 WRKDIST=	${WRKDIR}/jxplorer

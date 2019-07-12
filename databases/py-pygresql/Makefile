@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/06/07 12:18:32 benoit Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:00 sthen Exp $
 
 COMMENT =	PostgreSQL module for Python
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.pygresql.org/
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVORS=	python3
 FLAVOR ?=

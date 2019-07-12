@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/09/10 13:03:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:37 sthen Exp $
 
 COMMENT=	opensource Napster(tm) server
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opennap/}
 HOMEPAGE=	http://opennap.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c z
 

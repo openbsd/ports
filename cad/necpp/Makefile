@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/11/18 20:07:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:43:45 sthen Exp $
 
 COMMENT=	NEC2++ antenna simulator
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://elec.otago.ac.nz/w/index.php/Necpp
 MASTER_SITES=	https://openbsd.dead-parrot.de/distfiles/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=gnu
 

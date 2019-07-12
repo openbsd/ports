@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/15 12:04:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:43:44 sthen Exp $
 
 COMMENT=		Python tools for computational molecular biology
 
@@ -10,7 +10,7 @@ REVISION=		2
 HOMEPAGE=		http://www.biopython.org/
 
 # BSD-like 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}DIST/
 

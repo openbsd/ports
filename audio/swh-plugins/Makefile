@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/18 12:13:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:41 sthen Exp $
 
 COMMENT =		LADSPA plugins from Steve Harris
 
@@ -9,7 +9,7 @@ CATEGORIES =		audio
 HOMEPAGE =		http://plugin.org.uk/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		fftw3f m pthread
 

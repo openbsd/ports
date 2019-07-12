@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/12/05 20:19:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:39 sthen Exp $
 
 COMMENT =	lightweight audio player with a simple interface
 DISTNAME =	potamus-17
@@ -8,7 +8,7 @@ REVISION =	3
 HOMEPAGE =	http://offog.org/code/potamus/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += FLAC X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender ao atk-1.0 audiofile avcodec

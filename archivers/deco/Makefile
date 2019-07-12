@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/09/25 15:46:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:27 sthen Exp $
 
 COMMENT=	extract various archive file formats
 
@@ -9,7 +9,7 @@ PKGNAME=	deco-archive-${V}
 CATEGORIES=	archivers
 
 # GPLv3 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/28 20:51:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:00 sthen Exp $
 
 COMMENT =		schema migration tools for SQLAlchemy
 
@@ -10,7 +10,7 @@ REVISION =	2
 CATEGORIES =		databases
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

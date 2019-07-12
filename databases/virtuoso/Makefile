@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/12/26 18:12:30 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:44:03 sthen Exp $
 
 BROKEN-macppc =	make: don't know how to make all
 
@@ -11,7 +11,7 @@ CATEGORIES =	databases
 HOMEPAGE =	http://www.openlinksw.com/
 
 # GPLv2, plus some more rights given
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xext Xt
 WANTLIB += bz2 c crypto djvulibre expat fftw3 fontconfig freetype

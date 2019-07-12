@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/06/03 16:23:09 steven Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:53 sthen Exp $
 
 COMMENT =		database-independent abstraction layer
 DISTNAME =		libdbi-0.9.0
@@ -9,7 +9,7 @@ HOMEPAGE =		http://libdbi.sourceforge.net/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libdbi/}
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE =	gnu
 WANTLIB =		m

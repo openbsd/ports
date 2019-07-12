@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/09 14:07:43 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:43:50 sthen Exp $
 
 COMMENT =	manipulate dates in perl
 V =		6.76
@@ -11,7 +11,7 @@ PKG_ARCH =	*
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAKE_ENV +=		TEST_POD=Yes
 

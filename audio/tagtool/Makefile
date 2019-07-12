@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 20:43:41 sthen Exp $
 
 COMMENT=	Ogg Vorbis and MP3 files tagger
 
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tagtool/}
 EXTRACT_SUFX=	.tar.bz2
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig

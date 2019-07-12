@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/05/01 10:30:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:43:30 sthen Exp $
 
 COMMENT=	LZMA compression and decompression tools
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://tukaani.org/xz/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lzmautils/}
 

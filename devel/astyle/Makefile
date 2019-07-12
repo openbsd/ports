@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/05/18 02:49:29 bcallah Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:03 sthen Exp $
 
 V=			3.1
 COMMENT=		indenter and formatter of C/C++/Java source files
@@ -10,7 +10,7 @@ HOMEPAGE=		http://astyle.sourceforge.net/
 MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
 

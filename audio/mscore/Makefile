@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/06/27 16:01:52 bcallah Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:43:37 sthen Exp $
 
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://musescore.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += Qt5Concurrent Qt5Core Qt5Gui Qt5Help Qt5Network
 WANTLIB += Qt5OpenGL Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets

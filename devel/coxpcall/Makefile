@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/10/16 23:21:22 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:06 sthen Exp $
 
 PKG_ARCH =	*
 
@@ -11,7 +11,7 @@ CATEGORIES =	devel
 HOMEPAGE =	http://coxpcall.luaforge.net/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://luaforge.net/frs/download.php/3406/
 

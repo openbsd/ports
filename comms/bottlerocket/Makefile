@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/05/12 14:29:01 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:46 sthen Exp $
 
 COMMENT=	X.10 firecracker interface
 
@@ -13,7 +13,7 @@ CONFIGURE_STYLE=gnu
 
 SEPARATE_BUILD= Yes
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/05/12 13:58:30 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:43 sthen Exp $
 
 COMMENT=	measure the throughput of a TCP connection
 
@@ -8,7 +8,7 @@ DISTFILES=
 REVISION =	0
 
 # PD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 FAKE_FLAGS=	BINDIR="${PREFIX}/bin"

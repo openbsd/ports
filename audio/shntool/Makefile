@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/10/06 17:15:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:43:41 sthen Exp $
 
 COMMENT =		multi-purpose wave data processing utility
 
@@ -10,7 +10,7 @@ CATEGORIES =		audio
 HOMEPAGE =		http://www.etree.org/shnutils/shntool/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB +=	c
 

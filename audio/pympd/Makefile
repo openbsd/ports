@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/04/27 23:55:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:40 sthen Exp $
 
 COMMENT=		frontend to mpd written in Python
 
@@ -9,7 +9,7 @@ REVISION=		0
 HOMEPAGE=		http://pympd.sourceforge.net/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pympd/}
 

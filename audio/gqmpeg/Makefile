@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2018/06/27 21:03:35 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2019/07/12 20:43:33 sthen Exp $
 
 COMMENT=		front-end to various audio players
 
@@ -9,7 +9,7 @@ CATEGORIES=		audio
 HOMEPAGE=		http://gqmpeg.sourceforge.net/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype

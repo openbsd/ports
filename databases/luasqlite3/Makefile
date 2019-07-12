@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/09/23 09:16:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:43:53 sthen Exp $
 
 COMMENT=	binding of sqlite3 for lua
 PKGNAME=	luasqlite3-0.4.1
@@ -10,7 +10,7 @@ MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://www.nessie.de/mroth/lua-sqlite3/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += sqlite3>=8
 

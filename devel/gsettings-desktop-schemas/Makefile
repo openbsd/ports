@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2019/04/28 06:31:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2019/07/12 20:44:10 sthen Exp $
 
 COMMENT=		collection of shared GSettings schemas
 
@@ -10,7 +10,7 @@ CATEGORIES=		devel
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		devel/dconf \
 			devel/meson \

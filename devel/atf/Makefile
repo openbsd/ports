@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:03 sthen Exp $
 
 COMMENT =		Automated Testing Framework
 DISTNAME =		atf-0.18
@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/jmmv/atf
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 

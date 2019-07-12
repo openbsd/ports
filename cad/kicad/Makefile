@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/05/20 22:15:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:43:45 sthen Exp $
 
 BROKEN=		/usr/local/include/wx-3.0/wx/strvararg.h:354:71: error: no member named 'value' in 'wxFormatStringSpecifierNonPodType<false>'
 
@@ -20,7 +20,7 @@ CATEGORIES=	cad
 HOMEPAGE=	http://www.kicad-pcb.org/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://iut-tice.ujf-grenoble.fr/cao/sources/old_versions/
 MASTER_SITES0=	http://distfiles.nl/

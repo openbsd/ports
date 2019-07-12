@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/07/29 17:51:39 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:43 sthen Exp $
 
 COMMENT =	more reliable benchmarking
 
@@ -9,7 +9,7 @@ CATEGORIES =	benchmarks
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 CPAN_AUTHOR =		BDFOY

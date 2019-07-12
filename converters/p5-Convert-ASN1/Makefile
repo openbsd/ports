@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2016/03/20 19:56:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:43:50 sthen Exp $
 
 COMMENT=	module to encode and decode ASN.1 data structures
 
@@ -8,6 +8,6 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

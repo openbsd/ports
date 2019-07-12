@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2019/07/11 17:16:59 tj Exp $
+# $OpenBSD: Makefile,v 1.78 2019/07/12 20:43:30 sthen Exp $
 
 COMMENT=	extract, list, and test RAR archives
 
@@ -19,7 +19,7 @@ HOMEPAGE=	https://www.rarlab.com/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # nonstandard
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto m pthread ${COMPILER_LIBCXX}
 

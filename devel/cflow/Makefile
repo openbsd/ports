@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/20 22:15:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:05 sthen Exp $
 
 COMMENT =	analyze C source files and print a call graph
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://www.gnu.org/software/cflow/
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =		c iconv intl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/04 01:18:58 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:36 sthen Exp $
 
 COMMENT =		cut and cat MP3 files
 
@@ -11,7 +11,7 @@ REVISION =		1
 CATEGORIES =		audio
 
 # GPL/Artistic
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CPAN_AUTHOR =		JV
 

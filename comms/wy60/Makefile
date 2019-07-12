@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/08/21 18:36:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:48 sthen Exp $
 
 COMMENT=	curses-based emulator for the Wyse 60 terminal
 
@@ -9,7 +9,7 @@ CATEGORIES=	comms
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://distfiles.nl/
 

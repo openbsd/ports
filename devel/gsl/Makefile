@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2016/03/09 18:09:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:44:10 sthen Exp $
 
 COMMENT=	GNU Scientific Library
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://www.gnu.org/software/gsl/
 MAINTAINER=	Can Erkin Acar <canacar@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m
 

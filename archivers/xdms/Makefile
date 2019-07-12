@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/25 13:27:48 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:30 sthen Exp $
 
 COMMENT =		Amiga DMS unpacker
 DISTNAME =		xdms-1.3.2
@@ -11,7 +11,7 @@ HOMEPAGE =		http://zakalwe.fi/~shd/foss/xdms/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # public domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

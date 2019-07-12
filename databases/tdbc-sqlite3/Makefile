@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/12/25 04:37:26 stu Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:02 sthen Exp $
 
 COMMENT =		SQLite3 module for TDBC
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://tdbc.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 MODULES =		lang/tcl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/01 02:28:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:05 sthen Exp $
 
 COMMENT =	multi-platform, multi-architecture disassembly framework
 
@@ -7,7 +7,7 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 SHARED_LIBS =	capstone	${_SHLIB_VERSION}
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += 		c
 

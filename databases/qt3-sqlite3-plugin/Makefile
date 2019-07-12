@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:01 sthen Exp $
 
 COMMENT=	qt3 sqlite3 plugin
 CATEGORIES=	databases devel x11
@@ -16,7 +16,7 @@ WRKDIST=	${WRKDIR}/qt-sqlite3-${V}
 MODULES=	x11/qt3 devel/qmake
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += m pthread sqlite3 ${COMPILER_LIBCXX}
 

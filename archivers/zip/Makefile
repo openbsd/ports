@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2018/11/09 16:23:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2019/07/12 20:43:30 sthen Exp $
 
 COMMENT=	create/update ZIP files compatible with PKZip(tm)
 
@@ -12,7 +12,7 @@ CATEGORIES=	archivers
 HOMEPAGE=	http://infozip.sourceforge.net/
 
 # Conditional
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 19:47:05 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:45 sthen Exp $
 
 COMMENT =	interactive system for VLSI circuit layouts
 DISTNAME =	magic-8.1.224
@@ -9,7 +9,7 @@ HOMEPAGE =	http://opencircuitdesign.com/magic/
 MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
 
 # MIT (Magic, scmos), GPLv2 only (readline)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	${MODTK_WANTLIB} c m GL GLU X11
 

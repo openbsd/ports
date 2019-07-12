@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/19 19:13:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:43:47 sthen Exp $
 
 COMMENT =	library for communicating with USB and Bluetooth HID devices
 
@@ -20,7 +20,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # GPLv3, BSD-style, or more liberal original HIDAPI license
 # chosen at the discretion of the user of HIDAPI
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += iconv pthread usb-1.0
 

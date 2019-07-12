@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/30 01:14:54 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:46 sthen Exp $
 
 COMMENT =		utility to flash EMS 64 Mbit USB Game Boy cartridge
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://lacklustre.net/projects/ems-flasher/
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread usb-1.0
 

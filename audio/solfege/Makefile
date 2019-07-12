@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/20 22:15:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:41 sthen Exp $
 
 COMMENT =	solfege and ear training program
 DISTNAME =	solfege-3.22.2
@@ -9,7 +9,7 @@ REVISION =	2
 HOMEPAGE =	http://www.solfege.org/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=solfege/}
 

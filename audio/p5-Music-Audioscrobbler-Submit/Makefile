@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:38 sthen Exp $
 
 COMMENT=		module providing routines to submit songs to last.fm
 
@@ -7,7 +7,7 @@ REVISION=		1
 CATEGORIES=		audio
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:56:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:56 sthen Exp $
 
 COMMENT =	automatically set and update time based columns
 
@@ -8,7 +8,7 @@ DISTNAME =	DBIx-Class-TimeStamp-0.14
 CATEGORIES =	databases
 
 # same as perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-DateTime \
 		databases/p5-DBIx-Class \

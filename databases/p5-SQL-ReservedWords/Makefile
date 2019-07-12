@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:57 sthen Exp $
 
 COMMENT=	reserved words in SQL and specific databases
 
@@ -8,7 +8,7 @@ DISTNAME=	SQL-ReservedWords-0.8
 CATEGORIES=	databases
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	modbuild
 

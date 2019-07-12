@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/05/17 09:20:08 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:43:56 sthen Exp $
 
 COMMENT =	extensible and flexible object relational mapper
 
@@ -11,7 +11,7 @@ REVISION =	1
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # Artistic
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_ARGS =	--skipdeps
 

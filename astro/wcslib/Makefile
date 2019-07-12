@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/04/28 21:08:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:31 sthen Exp $
 
 BROKEN-hppa=	ICE on prj.c:4381
 COMMENT =	implementation of the FITS WCS standard
@@ -10,7 +10,7 @@ HOMEPAGE =	https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/
 SHARED_LIBS =	wcs		1.1
 
 # LGPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c cfitsio m
 

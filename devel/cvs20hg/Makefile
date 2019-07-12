@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/10/31 16:30:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:06 sthen Exp $
 
 COMMENT=		fast, incremental CVS to Mercurial conversion
 
@@ -12,7 +12,7 @@ PKGNAME=		cvs20hg-${VERSION}
 REVISION =		5
 CATEGORIES=     	devel
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=		http://ww2.fs.ei.tum.de/~corecode/hg/cvs20hg
 MASTER_SITES=		http://hg.recoil.org/dist/

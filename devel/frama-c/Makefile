@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/03/23 10:54:59 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:08 sthen Exp $
 
 BROKEN-i386 =	ld: error: undefined symbol: ml_as_z_pred, etc
 
@@ -13,7 +13,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://frama-c.com/
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender art_lgpl_2 atk-1.0 c cairo fontconfig freetype

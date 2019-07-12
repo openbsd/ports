@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/10/11 23:48:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:42 sthen Exp $
 
 COMMENT=	filesystem benchmark
 
@@ -8,7 +8,7 @@ CATEGORIES=	benchmarks
 HOMEPAGE=	http://www.pureftpd.org/project/blogbench
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://download.pureftpd.org/pub/blogbench/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/blogbench/

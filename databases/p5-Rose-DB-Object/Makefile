@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/12/04 21:09:39 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:43:57 sthen Exp $
 
 COMMENT=	object-oriented database mapper
 
@@ -10,7 +10,7 @@ CATEGORIES=	databases
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	databases/p5-Rose-DB>=0.737 \
 		databases/p5-Rose-Object>=0.83 \

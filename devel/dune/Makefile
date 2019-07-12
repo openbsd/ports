@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/06/19 09:18:18 chrisz Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:08 sthen Exp $
 
 COMMENT =		OCaml build system
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/ocaml/dune
 MAINTAINER =		Christopher Zimmermann <chrisz@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m pthread
 

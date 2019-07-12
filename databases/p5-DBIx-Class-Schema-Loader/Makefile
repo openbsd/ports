@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/20 19:56:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:43:56 sthen Exp $
 
 COMMENT=	dynamic definition of a DBIx::Class::Schema
 
@@ -11,7 +11,7 @@ CATEGORIES=	databases
 MAINTAINER=	Andrew Fresh <afresh1@openbsd.org>
 
 # Artistic + GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	databases/p5-DBIx-Class \
 		databases/p5-DBIx-Class-IntrospectableM2M \

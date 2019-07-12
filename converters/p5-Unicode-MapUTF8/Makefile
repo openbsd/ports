@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:51 sthen Exp $
 
 COMMENT=	conversions to and from arbitrary character sets and UTF8
 
@@ -9,7 +9,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	converters/p5-Jcode \
 		converters/p5-Unicode-Map \

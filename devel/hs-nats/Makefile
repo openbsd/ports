@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/01/22 21:42:27 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:13 sthen Exp $
 
 COMMENT =		Haskell 98 natural numbers
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

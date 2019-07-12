@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.309 2019/07/09 13:26:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.310 2019/07/12 20:44:09 sthen Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -27,7 +27,7 @@ SHARED_LIBS +=  gobject-2.0          4200.9   # 0.6000.5
 SHARED_LIBS +=  gio-2.0              4200.9   # 0.6000.5
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 WANTLIB += c elf>=2 ffi iconv intl pcre pthread z

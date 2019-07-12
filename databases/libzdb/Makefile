@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/06/13 17:00:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:53 sthen Exp $
 
 COMMENT =		easy to use database connection pool Library
 
@@ -12,7 +12,7 @@ CATEGORIES =		databases
 HOMEPAGE =		http://www.tildeslash.com/libzdb/#
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += m pthread sqlite3 z
 

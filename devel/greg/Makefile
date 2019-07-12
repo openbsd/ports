@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/05/23 16:34:40 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:10 sthen Exp $
 
 V =		0.4.5
 COMMENT =	PEG-based parser generator
@@ -12,7 +12,7 @@ GH_TAGNAME =	v${V}
 MAINTAINER =	Sean Levy <attila@stalphonsos.com>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/11/30 13:00:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:53 sthen Exp $
 
 COMMENT=	Qt-based LDAP browser and utility
 
@@ -11,7 +11,7 @@ CATEGORIES=	databases x11
 HOMEPAGE=	http://luma.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=luma/}
 

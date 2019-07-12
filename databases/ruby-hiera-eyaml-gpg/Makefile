@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/15 18:02:18 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:01 sthen Exp $
 
 COMMENT =	gpg encryptor for the hiera eyaml backend
 
@@ -9,7 +9,7 @@ HOMEPAGE =	http://github.com/sihil/hiera-eyaml-gpg
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

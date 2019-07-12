@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/01/08 19:03:21 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:36 sthen Exp $
 
 COMMENT =		mpd client to scrobble track info to last.fm
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://www.musicpd.org/clients/mpdscribble/
 MAINTAINER =		Steven Mestdagh <steven@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curl glib-2.0 intl mpdclient
 

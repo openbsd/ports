@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/29 13:23:22 bluhm Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:56 sthen Exp $
 
 COMMENT =	create a temporary database from a DBIx::Class::Schema
 
@@ -9,7 +9,7 @@ CATEGORIES =	databases
 CPAN_AUTHOR =	JROCKWAY
 
 # same as perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	databases/p5-DBD-SQLite \
 		databases/p5-SQL-Translator

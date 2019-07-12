@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/05/12 09:22:27 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:43:30 sthen Exp $
 
 COMMENT=	handle the old .ZOO archive format
 
@@ -9,7 +9,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	https://spacehopper.org/mirrors/
 
 # Conditional
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/05/20 22:15:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:43:28 sthen Exp $
 
 COMMENT=	packing and unpacking of shell archives
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://www.gnu.org/software/sharutils/
 MASTER_SITES=	${MASTER_SITE_GNU:=sharutils/}
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c intl
 

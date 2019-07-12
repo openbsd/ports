@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/12 22:25:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:02 sthen Exp $
 
 COMMENT =	creating and reading constant databases
 
@@ -12,7 +12,7 @@ MASTER_SITES =	http://www.corpit.ru/mjt/tinycdb/
 MAINTAINER =	Christian Rueger <cr+openbsd@rueger-net.de>
 
 # Public domain
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =	c
 

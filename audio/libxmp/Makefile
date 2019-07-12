@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/12/02 09:39:07 fcambus Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:35 sthen Exp $
 
 COMMENT =	module player library
 
@@ -10,7 +10,7 @@ SHARED_LIBS +=	xmp		1.0	# 4.4
 HOMEPAGE =	http://xmp.sourceforge.net/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=xmp/}
 

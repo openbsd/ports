@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/10/01 11:54:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:43 sthen Exp $
 
 COMMENT =		web server performance testing tool
 
@@ -9,7 +9,7 @@ CATEGORIES =		benchmarks www
 HOMEPAGE =		http://www.hpl.hp.com/research/linux/httperf/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=httperf/}
 

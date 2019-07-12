@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2018/12/13 19:53:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2019/07/12 20:43:49 sthen Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
@@ -21,7 +21,7 @@ HOMEPAGE=		http://www.five-ten-sg.com/libpst/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 cWANTLIB += m pthread ${COMPILER_LIBCXX}
 

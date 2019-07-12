@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/12/11 21:29:30 kn Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:43:29 sthen Exp $
 
 COMMENT =	perl interface to ZIP files
 
@@ -10,7 +10,7 @@ DISTNAME =	Archive-Zip-1.64
 CATEGORIES =	archivers
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 TEST_DEPENDS =	archivers/unzip \
 		archivers/zip \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2019/05/02 18:58:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2019/07/12 20:44:07 sthen Exp $
 
 COMMENT=	CGI script to browse CVS repository trees
 
@@ -8,7 +8,7 @@ CATEGORIES=	devel www
 HOMEPAGE=	http://www.freebsd.org/projects/cvsweb.html
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL:=scop/} \
 		http://people.FreeBSD.org/~scop/cvsweb/

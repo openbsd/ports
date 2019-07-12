@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/20 22:15:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:53 sthen Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -28,7 +28,7 @@ HOMEPAGE =	http://www.kexi-project.org
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KDb3 KF5Auth KF5Bookmarks KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

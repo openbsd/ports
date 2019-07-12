@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:35 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 arm i386
 
@@ -16,7 +16,7 @@ MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
 
 # Monkey's Audio Source Code License Agreement
 # http://www.monkeysaudio.com/license.html
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m ${COMPILER_LIBCXX}
 

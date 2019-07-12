@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/17 16:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:39 sthen Exp $
 
 V =		1.5.6
 COMMENT =	minimal audio player for manual speech transcription
@@ -12,7 +12,7 @@ HOMEPAGE =	https://gkarsay.github.io/parlatype/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject epoxy

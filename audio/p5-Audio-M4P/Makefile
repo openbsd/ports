@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/12/03 16:41:43 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:38 sthen Exp $
 
 COMMENT=	M4P/MP4/M4a audio/video tools
 
@@ -10,7 +10,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		security/p5-Crypt-Rijndael \
 			devel/p5-Tree-Simple \

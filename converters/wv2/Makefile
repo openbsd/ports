@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 20:43:52 sthen Exp $
 
 COMMENT=	library functions to access Microsoft Word/Excel files
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tar.bz2
 HOMEPAGE=	http://wvware.sourceforge.net/
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/10/02 15:13:48 bket Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:09 sthen Exp $
 
 COMMENT =		Git extension for versioning large files
 
@@ -11,7 +11,7 @@ CATEGORIES =		devel
 HOMEPAGE =		https://git-lfs.github.com/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c pthread
 

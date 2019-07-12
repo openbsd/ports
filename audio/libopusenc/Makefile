@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/10/20 14:12:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:35 sthen Exp $
 
 COMMENT=	high-level API for encoding .opus files
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://opus-codec.org/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	m opus
 

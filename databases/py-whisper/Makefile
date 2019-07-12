@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/14 15:59:27 rpointel Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:01 sthen Exp $
 
 COMMENT=		fixed size round-robin style database
 
@@ -9,7 +9,7 @@ PKGNAME=		py-${DISTNAME}
 CATEGORIES=		databases
 
 # Apache
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

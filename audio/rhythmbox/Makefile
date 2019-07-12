@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.174 2019/05/17 16:45:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.175 2019/07/12 20:43:40 sthen Exp $
 
 COMMENT=		integrated music management application for GNOME
 
@@ -14,7 +14,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2 with exception clause
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender archive atk-1.0 atk-bridge-2.0 bz2 c cairo

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/10/24 14:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:48 sthen Exp $
 
 COMMENT =		provides functions to access serial ports
 
@@ -20,7 +20,7 @@ MASTER_SITES =		https://deftly.net/
 # GPLv3, or LGPL.
 # (GPLv2 not needed, since LGPL is more free)
 # This lib is included in later versions of QT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/07/11 17:16:59 tj Exp $
+# $OpenBSD: Makefile,v 1.49 2019/07/12 20:43:29 sthen Exp $
 
 COMMENT=	portable speedy lossless data compression library
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=	lzo                  1.0      # .1.0
 HOMEPAGE=	https://www.oberhumer.com/opensource/lzo/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu

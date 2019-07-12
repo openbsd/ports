@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/06/17 08:17:49 rapha Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:43:41 sthen Exp $
 
 COMMENT=	tempo/pitch audio processing library
 
@@ -10,7 +10,7 @@ CATEGORIES=	audio devel
 HOMEPAGE=	https://www.surina.net/soundtouch/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://gitlab.com/soundtouch/soundtouch/-/archive/${V}/
 

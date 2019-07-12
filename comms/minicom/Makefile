@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2019/05/21 09:34:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2019/07/12 20:43:47 sthen Exp $
 
 COMMENT=	MS-DOS Telix-like serial communication program
 
@@ -14,7 +14,7 @@ RUN_DEPENDS=	comms/kermit \
 		comms/lrzsz
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c iconv intl curses
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/06/25 20:25:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:43:54 sthen Exp $
 
 PORTROACH =	limitw:1,even
 USE_WXNEEDED =	Yes
@@ -18,7 +18,7 @@ HOMEPAGE =	https://www.mongodb.com/
 
 # mongodb itself: AGPLv3
 # client/utils:   Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += boost_chrono-mt boost_filesystem-mt boost_program_options-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c crypto

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/04/28 20:51:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:44:00 sthen Exp $
 
 COMMENT =		Python interface to Redis
 
@@ -18,7 +18,7 @@ HOMEPAGE =		https://github.com/andymccurdy/redis-py/
 MAINTAINER = 		Remi Pointel <rpointel@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

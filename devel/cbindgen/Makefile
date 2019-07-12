@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/10 07:56:08 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:44:05 sthen Exp $
 
 COMMENT =		C bindings generator from rust code
 
@@ -9,7 +9,7 @@ GH_TAGNAME =		v0.9.0
 CATEGORIES =		devel
 
 # MPL-2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # as devel/cargo MODULES adds DISTFILES, GH_* didn't
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}

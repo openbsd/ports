@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/20 22:15:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:46 sthen Exp $
 
 COMMENT =		Gnu All Mobile Management Utilities
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://wammu.eu/
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curl dbi glib-2.0 gobject-2.0 iconv intl m pthread usb-1.0
 

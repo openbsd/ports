@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/06 08:03:28 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:32 sthen Exp $
 
 COMMENT=	check mp3 files for errors
 
@@ -9,7 +9,7 @@ CATEGORIES=	audio
 HOMEPAGE=	http://checkmate.gissen.nl/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

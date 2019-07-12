@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/01 16:04:26 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:43:44 sthen Exp $
 
 COMMENT=	the definite guide to DocBook
 
@@ -14,7 +14,7 @@ MASTER_SITES=	http://docbook.org/tdg/en/ \
 HOMEPAGE=	http://docbook.org/tdg/en/
 
 # GNU Free Documentation License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WRKDIST=	${WRKDIR}/tdg/en
 

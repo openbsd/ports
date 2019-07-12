@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/05 13:03:48 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:49 sthen Exp $
 
 COMMENT =	convert a BDF font to PSF format for the Linux console
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://packages.debian.org/sid/bdf2psf
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_DEBIAN:=main/c/console-setup/}
 

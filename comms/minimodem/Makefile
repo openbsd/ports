@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/02 15:22:00 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:47 sthen Exp $
 
 BROKEN-hppa =	no atomic ops in pulse-simple dependency
 COMMENT =	general-purpose software audio FSK modem
@@ -9,7 +9,7 @@ REVISION =	1
 HOMEPAGE =	http://www.whence.com/minimodem/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c fftw3f fftw3f_threads intl m pulse pulse-simple
 WANTLIB += sndfile

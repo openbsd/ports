@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/05 16:06:34 danj Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:04 sthen Exp $
 
 COMMENT =		Bash unit testing framework based on xUnit principles
 
@@ -12,7 +12,7 @@ REVISION =		0
 CATEGORIES =		devel
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		sysutils/ggrep \
 			shells/bash

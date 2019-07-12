@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/03/04 12:51:12 chrisz Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:44:05 sthen Exp $
 
 # build system needs per-arch tweaks and is very unfriendly to
 # bytecode-only builds. powerpc nativecode is currently broken.
@@ -14,7 +14,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=cil/}
 HOMEPAGE=	https://cil-project.github.io/cil/
 
 # BSD license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m pthread
 

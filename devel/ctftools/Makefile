@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/02/04 23:34:10 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:06 sthen Exp $
 
 BROKEN-alpha =		error "ISA not supported"
 
@@ -14,7 +14,7 @@ CATEGORIES =		devel
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # CDDL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c dwarf elf>=2 pthread z
 

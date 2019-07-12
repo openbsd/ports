@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/24 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:34 sthen Exp $
 
 COMMENT=	Bauer stereophonic-to-binaural DSP
 REVISION=	3
@@ -12,7 +12,7 @@ CATEGORIES=	audio
 HOMEPAGE=	http://bs2b.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += FLAC c m ogg sndfile ${COMPILER_LIBCXX} vorbis vorbisenc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:51 sthen Exp $
 
 COMMENT =	shim to support either v1 or v2 APIs of JSON::XS
 
@@ -9,7 +9,7 @@ REVISION =	1
 CATEGORIES =	converters
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	converters/p5-JSON-XS
 

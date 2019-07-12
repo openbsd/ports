@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/02/19 05:10:26 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:58 sthen Exp $
 
 COMMENT =	monitor PostgreSQL activity & statistics
 
@@ -8,7 +8,7 @@ CATEGORIES =	databases
 HOMEPAGE =	http://pgstatsinfo.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pgstatsinfo/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/03/10 22:28:04 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:43:27 sthen Exp $
 
 COMMENT=	create & extract files from DOS .ARC files
 
@@ -8,7 +8,7 @@ CATEGORIES=	archivers
 HOMEPAGE=	http://arc.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=arc/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/03 10:35:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:43:47 sthen Exp $
 
 COMMENT =	signal-processing toolkit for SDR (software-defined radio)
 
@@ -36,7 +36,7 @@ HOMEPAGE =	https://www.gnuradio.org/
 MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 WANTLIB += QtCore QtGui SDL boost_atomic-mt boost_chrono-mt boost_date_time-mt

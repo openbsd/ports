@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/01/31 19:42:58 cwen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:51 sthen Exp $
 
 COMMENT =	Unicode line breaking algorithm
 
@@ -7,7 +7,7 @@ CATEGORIES =	converters
 MODULES =	cpan
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB = c perl
 

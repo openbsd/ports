@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/03/01 13:43:24 benoit Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:43:57 sthen Exp $
 
 COMMENT =	create HTML table from sql queries
 
@@ -8,7 +8,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 
 # Artistic License 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	databases/p5-DBI>=1.20
 

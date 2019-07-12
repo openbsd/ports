@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/01/13 20:06:37 tim Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:41 sthen Exp $
 
 COMMENT =		text-based audio player
 DISTNAME =		siren-0.9
@@ -7,7 +7,7 @@ HOMEPAGE =		https://www.kariliq.nl/siren/
 MAINTAINER =		Alexandre Ratchov <alex@caoua.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/dist/
 

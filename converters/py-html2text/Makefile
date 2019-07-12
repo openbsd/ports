@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/04/28 20:51:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:51 sthen Exp $
 
 COMMENT =		HTML to markdown-formatted text converter
 
@@ -11,7 +11,7 @@ CATEGORIES =		converters
 HOMEPAGE =		http://alir3z4.github.io/html2text/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

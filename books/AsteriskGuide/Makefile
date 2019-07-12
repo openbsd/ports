@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/12/03 21:24:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:43:44 sthen Exp $
 
 PKG_ARCH=		*
 
@@ -17,7 +17,7 @@ MAINTAINER=		Diego Casati <diego.casati@gmai.com>
 
 # CC-Attribution-NonCommercial-NoDerivs
 # see page vii of the PDF
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://spacehopper.org/mirrors/ \
 			${HOMEPAGE}pdf/

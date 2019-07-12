@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/17 16:19:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:45 sthen Exp $
 
 # gcc spins compiling d_mos7
 NOT_FOR_ARCHS=		m88k
@@ -12,7 +12,7 @@ CATEGORIES=		cad
 HOMEPAGE=		http://www.gnucap.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c curses m readline
 

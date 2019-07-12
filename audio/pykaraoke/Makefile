@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/06/27 21:03:36 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:40 sthen Exp $
 
 COMMENT =		free karaoke player
 
@@ -10,7 +10,7 @@ REVISION =		1
 HOMEPAGE =		http://kibosh.org/pykaraoke/
 
 # LGPL v2.1 or later
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL pthread ${MODPY_WANTLIB}
 

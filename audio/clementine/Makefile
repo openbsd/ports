@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/06/15 07:12:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:43:32 sthen Exp $
 
 COMMENT =	Qt4-based featureful music player
 
@@ -15,7 +15,7 @@ DISTFILES =	${PKGNAME}.tar.gz{${V}.tar.gz}
 WRKDIST =	${WRKDIR}/Clementine-${V}
 
 # GPLv2/LGPLv2/GFDL
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =  c m pthread z
 WANTLIB += GL GLU GLEW ICE SM X11 Xext

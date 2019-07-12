@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:54 sthen Exp $
 
 COMMENT=		non-blocking CouchDB client based on jquery.couch.js
 
@@ -11,7 +11,7 @@ MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	eg
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		converters/p5-JSON \
 			databases/p5-CouchDB-View \

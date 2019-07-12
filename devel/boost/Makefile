@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2019/05/31 05:51:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2019/07/12 20:44:04 sthen Exp $
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
@@ -71,7 +71,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com> \
 		Rafael Sadowski <rsadowski@openbsd.org>
 
 # Boost
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} bz2 c icudata icui18n icuuc m z
 

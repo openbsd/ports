@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/15 12:04:34 kmos Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:52 sthen Exp $
 
 COMMENT =	backup and restoration manager for PostgreSQL
 
@@ -9,7 +9,7 @@ HOMEPAGE =	http://www.pgbarman.org/
 REVISION =	0
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pgbarman/}
 

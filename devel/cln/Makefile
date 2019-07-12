@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:44:05 sthen Exp $
 
 NOT_FOR_ARCHS =	arm mips64 mips64el sparc64 hppa
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://www.ginac.de/CLN/
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # GPL v2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =		${HOMEPAGE}
 EXTRACT_SUFX =		.tar.bz2

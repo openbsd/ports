@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/03/28 04:33:30 jeremy Exp $
+# $OpenBSD: Makefile,v 1.43 2019/07/12 20:44:01 sthen Exp $
 
 COMMENT=	access a SQLite3 database from ruby
 
@@ -10,7 +10,7 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 HOMEPAGE=	https://github.com/sparklemotion/sqlite3-ruby
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

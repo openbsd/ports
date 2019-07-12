@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/01/01 18:01:34 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:06 sthen Exp $
 
 COMMENT =		universal parsing tool & source code generator
 
@@ -11,7 +11,7 @@ CATEGORIES =		devel
 HOMEPAGE =		http://codeworker.free.fr/
 
 # LGPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m ${COMPILER_LIBCXX}
 

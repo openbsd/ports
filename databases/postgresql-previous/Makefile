@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/17 16:19:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:59 sthen Exp $
 
 COMMENT=	PostgreSQL RDBMS (previous version, for pg_upgrade)
 
@@ -18,7 +18,7 @@ HOMEPAGE=	http://www.postgresql.org/
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto curses m perl readline ssl xml2 z
 

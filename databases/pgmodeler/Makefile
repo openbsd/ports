@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/12 06:21:19 feinerer Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:43:58 sthen Exp $
 
 COMMENT =	PostgreSQL Database Modeler
 
@@ -23,7 +23,7 @@ HOMEPAGE =	http://www.pgmodeler.com.br/
 MAINTAINER =	Ingo Feinerer <feinerer@logic.at>
 
 # GPLv3 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL Qt5Core Qt5Gui Qt5Network Qt5PrintSupport Qt5Svg
 WANTLIB += Qt5Widgets X11 Xext c execinfo m pq pthread xml2

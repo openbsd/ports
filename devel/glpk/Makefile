@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:10 sthen Exp $
 
 COMMENT=	GNU Linear Programming Kit
 
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=glpk/}
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m gmp
 

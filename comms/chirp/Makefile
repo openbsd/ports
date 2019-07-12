@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/09 15:59:34 abieber Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:46 sthen Exp $
 
 COMMENT=	tool to programme a wide range of amateur radios
 
@@ -11,7 +11,7 @@ CATEGORIES=	comms hamradio
 HOMEPAGE=	https://chirp.danplanet.com/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://trac.chirp.danplanet.com/chirp_daily/daily-${MODPY_EGG_VERSION}/
 

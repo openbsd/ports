@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2019/05/15 22:06:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2019/07/12 20:44:04 sthen Exp $
 
 COMMENT-main=	garbage collection and memory leak detection for C and C++
 COMMENT-atomic=	access to hardware provided atomic memory operations
@@ -34,7 +34,7 @@ HOMEPAGE=	https://hboehm.info/gc/
 # currently works only on most ELF archs
 NOT_FOR_ARCHS=	m88k
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB-main += m pthread ${COMPILER_LIBCXX}
 

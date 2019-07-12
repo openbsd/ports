@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:45 sthen Exp $
 
 PORTROACH=	limit:[0-9]\.[0-9]\.[0-9][0-9]$
 
@@ -12,7 +12,7 @@ CATEGORIES=	cad
 HOMEPAGE=	http://qucs.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=qucs/}
 

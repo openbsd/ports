@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/11/21 00:12:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:43:46 sthen Exp $
 
 COMMENT=	NEC2 antenna simulator visualizer
 
@@ -13,7 +13,7 @@ CATEGORIES=	cad hamradio
 HOMEPAGE=	http://www.cs.utwente.nl/~ptdeboer/ham/xnecview/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0

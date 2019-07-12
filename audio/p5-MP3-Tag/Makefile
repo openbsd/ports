@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/12/03 16:41:43 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:38 sthen Exp $
 
 COMMENT=	read tags of MP3 audio files
 
@@ -9,6 +9,6 @@ CATEGORIES=	audio
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

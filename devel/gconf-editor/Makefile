@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2019/06/13 15:48:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2019/07/12 20:44:09 sthen Exp $
 
 COMMENT=	editor for the GConf configuration system
 
@@ -12,7 +12,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c cairo

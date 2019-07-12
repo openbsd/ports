@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/08/23 09:04:06 fcambus Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:43:29 sthen Exp $
 
 COMMENT=	fast file compressor similar to gzip
 
@@ -7,7 +7,7 @@ CATEGORIES=	archivers
 HOMEPAGE=	https://www.lzop.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}download/
 

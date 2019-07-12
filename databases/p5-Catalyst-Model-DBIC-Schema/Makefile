@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:54 sthen Exp $
 
 COMMENT=	model class for catalyst
 
@@ -9,7 +9,7 @@ PKG_ARCH=	*
 REVISION=	0
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Carp-Clan \
 		www/p5-Catalyst-Component-InstancePerContext \

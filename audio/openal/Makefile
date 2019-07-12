@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2019/02/13 16:10:38 bcallah Exp $
+# $OpenBSD: Makefile,v 1.53 2019/07/12 20:43:37 sthen Exp $
 
 BROKEN-hppa =	undefined reference to __sync atomic ops
 
@@ -16,7 +16,7 @@ HOMEPAGE =	http://kcat.strangesoft.net/openal.html
 MAINTAINER =	David Carlier <devnexen@gmail.com>
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c m pthread sndio
 

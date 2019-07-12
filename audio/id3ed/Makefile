@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/10/24 14:27:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:43:34 sthen Exp $
 
 COMMENT=		interactive console id3 tag editor
 
@@ -9,7 +9,7 @@ CATEGORIES=		audio
 HOMEPAGE=		http://code.fluffytapeworm.com/projects/id3ed/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses m readline ${COMPILER_LIBCXX}
 

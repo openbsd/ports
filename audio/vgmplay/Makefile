@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/26 15:41:00 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:42 sthen Exp $
 
 COMMENT =	command line audio player for VGM files
 CATEGORIES =	audio
@@ -11,7 +11,7 @@ HOMEPAGE =	https://vgmrips.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ao c m pthread z
 

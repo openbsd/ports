@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2018/04/27 15:03:26 solene Exp $
+# $OpenBSD: Makefile,v 1.67 2019/07/12 20:43:56 sthen Exp $
 
 COMMENT =	unified perl interface for database access
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://dbi.perl.org/
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

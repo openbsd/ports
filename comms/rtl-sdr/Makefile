@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/07/05 10:22:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:48 sthen Exp $
 
 COMMENT=	software to turn RTL2832U into an SDR
 
@@ -12,7 +12,7 @@ CATEGORIES=	comms
 HOMEPAGE=	http://sdr.osmocom.org/trac/wiki/rtl-sdr
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m pthread usb-1.0
 

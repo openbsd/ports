@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2018/06/29 22:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2019/07/12 20:43:33 sthen Exp $
 
 COMMENT=		GNOME music player client
 
@@ -13,7 +13,7 @@ MAINTAINER=		Landry Breuil <landry@openbsd.org>
 HOMEPAGE =		http://gmpclient.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1 expat ffi

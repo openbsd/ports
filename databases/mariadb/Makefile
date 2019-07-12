@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2019/06/27 21:15:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.82 2019/07/12 20:43:53 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
@@ -25,7 +25,7 @@ HOMEPAGE=	https://mariadb.org/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2 and LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${COMPILER_LIBCXX} c crypto iconv m pthread ssl z
 WANTLIB-main=	${WANTLIB} curses readline

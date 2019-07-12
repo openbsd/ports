@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/14 19:46:38 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:43:56 sthen Exp $
 
 COMMENT =	cursor class with built-in caching support
 
@@ -8,7 +8,7 @@ DISTNAME =	DBIx-Class-Cursor-Cached-1.001004
 CATEGORIES =	databases
 
 # same as perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Carp-Clan \
 		databases/p5-DBIx-Class

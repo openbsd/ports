@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/06/13 16:38:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:10 sthen Exp $
 
 COMMENT=	C compiler for GMC-4
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://terus.jp/engineering/gmc4cc/
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c gmp iconv m pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/10/20 19:00:04 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:05 sthen Exp $
 
 COMMENT=	curses development kit
 
@@ -18,7 +18,7 @@ HOMEPAGE=	http://invisible-island.net/cdk/
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://invisible-mirror.net/archives/cdk/ \
 		ftp://ftp.invisible-island.net/cdk/

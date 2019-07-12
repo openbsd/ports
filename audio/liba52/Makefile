@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/02/03 12:30:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:43:34 sthen Exp $
 
 COMMENT =	free library for decoding ATSC A/52 streams, aka AC-3
 
@@ -17,7 +17,7 @@ HOMEPAGE =	http://liba52.sourceforge.net/
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c m sndio
 

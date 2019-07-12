@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:57 sthen Exp $
 
 COMMENT =	SQL parsing and processing engine
 
@@ -10,7 +10,7 @@ CATEGORIES =	databases
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # perl_5
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Clone>=0.30 \
 		devel/p5-Module-Runtime \

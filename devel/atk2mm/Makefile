@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/11/05 08:38:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:44:04 sthen Exp $
 
 COMMENT=		C++ binding for the ATK library
 
@@ -15,7 +15,7 @@ HOMEPAGE=		http://www.gtkmm.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += atk-1.0 ffi glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
 WANTLIB += iconv intl m pcre pthread sigc-2.0

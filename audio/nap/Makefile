@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/05/20 20:52:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:43:37 sthen Exp $
 
 COMMENT=	gnu curses-based napster client
 
@@ -9,7 +9,7 @@ CATEGORIES=    	audio
 
 HOMEPAGE=	http://nap.sourceforge.net/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 

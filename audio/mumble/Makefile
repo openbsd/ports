@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/07/10 10:54:23 tb Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:43:37 sthen Exp $
 
 COMMENT =		low-latency voice chat client
 
@@ -12,7 +12,7 @@ CATEGORIES =		audio
 HOMEPAGE =		http://www.mumble.info/
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		ICE SM X11 Xext Xi Xinerama Xrender c crypto
 WANTLIB +=		fontconfig freetype lib/qt4/QtDBus lib/qt4/QtGui

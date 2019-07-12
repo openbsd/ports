@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/05/18 12:13:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:43:34 sthen Exp $
 
 COMMENT =		low latency sound server
 
@@ -14,7 +14,7 @@ SHARED_LIBS +=		jackserver	2.0	# 0.28
 HOMEPAGE =		http://jackaudio.org/
 
 # LGPLv2/GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += FLAC c celt0>=1 curses db m ogg pthread readline samplerate
 WANTLIB += sndfile sndio vorbis vorbisenc

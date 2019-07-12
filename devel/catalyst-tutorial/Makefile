@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:56:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:05 sthen Exp $
 
 COMMENT =	catalyst packages for the tutorial
 MAINTAINER =	Marc Espie <espie@openbsd.org>
@@ -12,7 +12,7 @@ EPOCH =		0
 REVISION =	0
 
 # Public domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	www/p5-Catalyst-Runtime \
 		www/p5-Catalyst-Devel \

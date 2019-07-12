@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:34 sthen Exp $
 
 COMMENT =	Qt-based C++ library for the Last.fm webservices
 V =		1.0.9
@@ -14,7 +14,7 @@ SHARED_LIBS =	lastfm			1.0
 SHARED_LIBS +=	lastfm_fingerprint	1.0
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 # archives are stable but naming scheme sucks, thus DIST_SUBDIR
 MASTER_SITES =	${HOMEPAGE}/archive/

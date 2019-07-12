@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/10 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:44 sthen Exp $
 
 PKG_ARCH=		*
 
@@ -17,7 +17,7 @@ HOMEPAGE=		http://www.oreilly.com/catalog/asterisk
 MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
 # Creative Commons Copyright, see page xi of the PDF
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://downloads.oreilly.com/books/
 

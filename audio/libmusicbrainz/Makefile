@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/10/24 14:27:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:35 sthen Exp $
 
 PORTROACH=		limit:^3
 
@@ -13,7 +13,7 @@ CATEGORIES=		audio
 HOMEPAGE=		http://musicbrainz.org/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += discid m neon ${COMPILER_LIBCXX}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/09/13 11:44:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:51 sthen Exp $
 
 COMMENT=	universal unicode codec using iconv for Python
 
@@ -8,7 +8,7 @@ REVISION =	9
 CATEGORIES=	converters
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cjkpython.berlios/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/09/04 12:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:33 sthen Exp $
 
 COMMENT=		jukebox frontend to mpd
 
@@ -11,7 +11,7 @@ CATEGORIES=		audio www
 REVISION=		0
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/04/02 08:43:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:35 sthen Exp $
 
 COMMENT=	fast and high quality sample-rate conversion (SoX Resampler)
 
@@ -14,7 +14,7 @@ CATEGORIES=	audio
 HOMEPAGE=	http://sourceforge.net/p/soxr/wiki/Home/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += m
 

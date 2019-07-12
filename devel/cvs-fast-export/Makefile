@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/03/20 14:06:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:06 sthen Exp $
 
 COMMENT=	export an RCS or CVS history as a fast-import stream
 
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 HOMEPAGE=	http://www.catb.org/esr/cvs-fast-export/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 

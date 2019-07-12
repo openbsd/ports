@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/07/05 10:22:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:07 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.red-bean.com/cvsutils/
 MASTER_SITES=	${HOMEPAGE}releases/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	gnu
 NO_TEST=		Yes
