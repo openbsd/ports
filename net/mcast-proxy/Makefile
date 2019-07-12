@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/01/11 19:27:06 rpe Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:32 sthen Exp $
 
 COMMENT =		multicast proxy daemon
 
@@ -11,7 +11,7 @@ MASTER_SITES =		http://www.weirdnet.nl/openbsd/code/mcast-proxy/
 MAINTAINER =		Paul de Weerd <weerd@weirdnet.nl>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB =		c event

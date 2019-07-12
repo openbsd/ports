@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:48:46 sthen Exp $
 
 COMMENT =		network address representation and manipulation library
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://github.com/drkjam/netaddr/
 MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

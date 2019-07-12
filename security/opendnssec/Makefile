@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/17 12:42:45 pvk Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:05 sthen Exp $
 
 COMMENT=	open-source turn-key solution for DNSSEC
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://www.opendnssec.org/
 MAINTAINER=	Pavel Korovin <pvk@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto iconv ldns lzma m pthread xml2 z
 

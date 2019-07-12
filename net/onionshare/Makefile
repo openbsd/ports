@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:35 sthen Exp $
 
 COMMENT-main =		secure and anonymous file-sharing over Tor
 COMMENT-gui =		graphical user interface for onionshare based on Qt
@@ -20,7 +20,7 @@ HOMEPAGE =		https://onionshare.org/
 MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MULTI_PACKAGES =	-main -gui
 

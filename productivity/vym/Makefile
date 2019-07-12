@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/03/08 20:00:50 cwen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:49:00 sthen Exp $
 
 COMMENT=	generate and manipulate maps of your thoughts
 
@@ -9,7 +9,7 @@ REVISION=	1
 HOMEPAGE=	http://www.insilmaril.de/vym/
 
 # modified GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vym/}
 EXTRACT_SUFX=	.tar.bz2

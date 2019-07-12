@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/23 20:44:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:48:23 sthen Exp $
 
 COMMENT=		command-line podcast downloader
 
@@ -14,7 +14,7 @@ MASTER_SITES=          	${MASTER_SITE_SAVANNAH:=castget/}
 MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto curl glib-2.0 iconv id3 intl lzma m nghttp2 pcre pthread
 WANTLIB += ssl xml2 z

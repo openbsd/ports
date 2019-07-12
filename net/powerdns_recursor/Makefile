@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/23 13:27:41 otto Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:44 sthen Exp $
 
 COMMENT=		recursive nameserver
 
@@ -12,7 +12,7 @@ CATEGORIES=		net
 HOMEPAGE=		https://www.powerdns.com/
 
 # GPLv2 only, OpenSSL exemption
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_context-mt boost_system-mt
 WANTLIB += boost_thread-mt c crypto m sodium

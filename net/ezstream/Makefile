@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/05 04:31:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:26 sthen Exp $
 
 COMMENT=	streaming source client that uses external en-/decoders
 
@@ -9,7 +9,7 @@ CATEGORIES=	net multimedia
 HOMEPAGE=	https://icecast.org/ezstream/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv m ogg pthread theora vorbis \
 		shout>=3 speex>=4 xml2>=9 tag_c>=1

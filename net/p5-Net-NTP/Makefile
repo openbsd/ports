@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:48:38 sthen Exp $
 
 COMMENT =	Perl extension for decoding NTP server responses
 
@@ -8,7 +8,7 @@ CATEGORIES =	net
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

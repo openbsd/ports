@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.16 2015/05/17 11:42:17 sthen Exp $
+#   $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:42 sthen Exp $
 
 COMMENT=	merge and extract portions of binary pcap files
 
@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_PACKETSTORM:=sniffers/}
 RUN_DEPENDS=	net/p5-Net-Pcap>=0.03
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE= perl
 

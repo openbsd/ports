@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/06/08 09:55:49 jca Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:32 sthen Exp $
 
 PORTROACH =		limit:[0-9]\.tar\.gz
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://megatools.megous.com/
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  c crypto curl gio-2.0 glib-2.0 gobject-2.0 intl pthread
 WANTLIB += ssl

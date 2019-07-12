@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/13 04:02:31 phessler Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:42 sthen Exp $
 
 COMMENT =	pcap bgp parser
 
@@ -10,7 +10,7 @@ CATEGORIES =	net
 MAINTAINER =	Peter Hessler <phessler@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

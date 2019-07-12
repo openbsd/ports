@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/04/16 12:30:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:57 sthen Exp $
 
 CATEGORIES =	productivity
 COMMENT =	collaboration services library for KDE
@@ -17,7 +17,7 @@ WANTLIB =	m lib/qt4/QtNetwork
 WANTLIB += ${COMPILER_LIBCXX}
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		x11/kde4
 MODKDE4_USE =

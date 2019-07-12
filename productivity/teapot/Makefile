@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/06 16:25:04 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:59 sthen Exp $
 
 COMMENT =	three dimensional console spreadsheet
 V =		2.3.0
@@ -12,7 +12,7 @@ HOMEPAGE =	https://www.syntax-k.de/projekte/teapot/
 MAINTAINER =	Solene Rapenne <solene@perso.pw>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += 	c curses m
 

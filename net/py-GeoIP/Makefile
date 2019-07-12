@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/01 00:07:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:44 sthen Exp $
 
 COMMENT =		GeoIP Python API
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://dev.maxmind.com/geoip/
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # LGPL v2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB} GeoIP>=8 pthread
 

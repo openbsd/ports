@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/06/16 06:12:50 rpointel Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:45 sthen Exp $
 
 COMMENT =		python network packet manipulation library
 
@@ -17,7 +17,7 @@ GH_TAGNAME =   v${MODPY_EGG_VERSION}
 MAINTAINER =		Thanasoulas Spiros <dsp@2f30.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

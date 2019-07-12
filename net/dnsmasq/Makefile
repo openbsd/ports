@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2019/01/17 10:14:33 jca Exp $
+# $OpenBSD: Makefile,v 1.53 2019/07/12 20:48:25 sthen Exp $
 
 COMMENT=	lightweight caching DNS forwarder, DHCP and TFTP server
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.thekelleys.org.uk/dnsmasq/doc.html
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

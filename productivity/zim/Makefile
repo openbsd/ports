@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/03/29 12:19:45 benno Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:00 sthen Exp $
 
 COMMENT =		desktop wiki
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://zim-wiki.org/
 MAINTAINER =		Sebastian Benoit <benno@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://zim-wiki.org/downloads/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/05/20 22:15:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:48:58 sthen Exp $
 
 COMMENT=	text-based calendar and scheduling application
 
@@ -11,7 +11,7 @@ CATEGORIES=	productivity
 HOMEPAGE=	https://calcurse.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses iconv intl m pthread
 

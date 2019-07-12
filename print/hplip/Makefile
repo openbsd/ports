@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.169 2019/02/24 10:40:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.170 2019/07/12 20:48:55 sthen Exp $
 
 PORTROACH=		skipv:${V}_py2.5
 
@@ -32,7 +32,7 @@ HOMEPAGE=		http://hplipopensource.com/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2 - MIT (backend) - BSD (hpijs)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hplip/}
 

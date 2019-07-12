@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/02/16 22:57:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:48:33 sthen Exp $
 
 COMMENT=	command line arbitrary packet builder
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://nemesis.sourceforge.net/
 LIB_DEPENDS=	net/libnet/1.0
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m lib/libnet-1.0/net=0
 

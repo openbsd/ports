@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/02/03 12:30:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:31 sthen Exp $
 
 COMMENT=	LIVE555 streaming media library
 
@@ -11,7 +11,7 @@ MASTER_SITES=	https://comstyle.com/source/
 HOMEPAGE=	http://www.live555.com/liveMedia/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m ${COMPILER_LIBCXX}
 

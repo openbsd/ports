@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:56 sthen Exp $
 
 COMMENT=	create PostScript files of mailing address labels
 
@@ -8,6 +8,6 @@ DISTNAME=	PostScript-MailLabels-2.32
 CATEGORIES=	print
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

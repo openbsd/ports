@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/09/12 17:43:10 feinerer Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:48:30 sthen Exp $
 
 COMMENT=	asynchronous resolver library
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://c-ares.haxx.se/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE= gnu
 

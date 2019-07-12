@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/02 16:29:55 solene Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:24 sthen Exp $
 
 COMMENT =	text based gopher client
 DISTNAME =	clic-v1.1.4
@@ -10,7 +10,7 @@ HOMEPAGE =	gopher://bitreich.org/1/scm/clic
 MAINTAINER =	Solene Rapenne <solene@perso.pw>
 
 # 2-Clause BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += c ecl ffi gc gmp m pthread

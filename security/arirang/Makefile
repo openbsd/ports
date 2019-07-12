@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/04/29 00:42:09 jeremy Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:49:00 sthen Exp $
 
 COMMENT =	powerful webserver security scanner for network
 
@@ -15,7 +15,7 @@ HOMEPAGE =	http://www.monkey.org/~pilot
 MAINTAINER =	Jung Lee <moorang@gmail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${SETENV} ${MAKE_ENV} ${RUBY} extconf.rb

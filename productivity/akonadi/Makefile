@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:57 sthen Exp $
 
 CATEGORIES =	productivity
 COMMENT =	PIM cache and access services
@@ -19,7 +19,7 @@ WANTLIB += boost_program_options-mt execinfo sqlite3
 WANTLIB += ${COMPILER_LIBCXX}
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		x11/kde4
 MODKDE4_USE =

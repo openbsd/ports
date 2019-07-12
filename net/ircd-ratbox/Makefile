@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/01/11 19:27:05 rpe Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:48:29 sthen Exp $
 
 COMMENT =	advanced, stable and fast irc server
 
@@ -11,7 +11,7 @@ REVISION =	3
 HOMEPAGE =	http://www.ratbox.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =		c crypto ltdl m pthread sqlite3 ssl z
 

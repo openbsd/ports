@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/01/30 10:46:57 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:43 sthen Exp $
 
 COMMENT =	interface to various online weather-services for PHP
 
@@ -8,7 +8,7 @@ CATEGORIES =	net
 MODULES =	www/pear
 
 # PHP License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/pear-Cache \
 		net/pear-HTTP-Request \

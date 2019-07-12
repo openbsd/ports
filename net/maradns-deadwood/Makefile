@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/02/01 11:18:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:31 sthen Exp $
 
 COMMENT=	recursive DNS resolver
 
@@ -10,7 +10,7 @@ CATEGORIES=	net
 HOMEPAGE=	https://maradns.samiam.org/deadwood
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

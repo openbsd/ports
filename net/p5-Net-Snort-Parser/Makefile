@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:40 sthen Exp $
 
 COMMENT= 	Perl modules for parsing Snort configuration files
 
@@ -9,7 +9,7 @@ REVISION=	2
 CATEGORIES=	net
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://www.shmoo.com/~bmc/software/snortconfig/
 

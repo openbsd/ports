@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/01/11 19:27:07 rpe Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:35 sthen Exp $
 
 COMMENT=	free implementation of Cisco VMPS
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://vmps.sourceforge.net/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/17 12:21:08 abieber Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:53 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64 mips64 mips64el arm
 
@@ -19,7 +19,7 @@ MASTER_SITES=	https://code.9front.org/hg/drawterm/archive/
 MAINTAINER=	Stanley Lieber <sl@stanleylieber.com>
 
 # Lucent Public License Version 1.02
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 c pthread sndio
 

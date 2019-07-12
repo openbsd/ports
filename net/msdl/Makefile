@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2019/01/05 23:06:38 uaa Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:32 sthen Exp $
 
 COMMENT =	download client for rtsp, mms and mmsh
 
@@ -10,7 +10,7 @@ CATEGORIES =	net
 HOMEPAGE =	http://msdl.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/08/30 21:54:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:00 sthen Exp $
 
 COMMENT=	scans webservers for vulnerable CGI programs
 
@@ -9,7 +9,7 @@ EXTRACT_SUFX=	.tgz
 
 CATEGORIES=	security
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 WRKDIST=        ${WRKDIR}/cgichk3

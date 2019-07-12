@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/11/15 23:34:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:42 sthen Exp $
 
 COMMENT=	miscellaneous HTTP utilities for PHP
 
@@ -8,6 +8,6 @@ CATEGORIES=	net
 MODULES=	www/pear
 
 # PHP License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

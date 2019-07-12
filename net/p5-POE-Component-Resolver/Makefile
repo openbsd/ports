@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/12/02 01:22:26 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:41 sthen Exp $
 
 COMMENT =		non-blocking getaddrinfo() resolver
 
@@ -8,7 +8,7 @@ CATEGORIES =		net devel
 MAINTAINER =		Charlene Wendling <julianaito@posteo.jp>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

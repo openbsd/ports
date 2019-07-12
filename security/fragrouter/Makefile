@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/10/08 21:19:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:49:02 sthen Exp $
 
 COMMENT=	tool for testing network IDS implementations
 
@@ -9,7 +9,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://monkey.org/~dugsong/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c pcap
 

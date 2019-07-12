@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 16:36:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:42 sthen Exp $
 
 COMMENT=		Perl API to flowd binary logfiles
 
@@ -10,7 +10,7 @@ CATEGORIES=		net devel
 HOMEPAGE=		http://www.mindrot.org/flowd.html
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/03/28 11:02:47 benoit Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:49:07 sthen Exp $
 
 MODULES=	cpan
 COMMENT=	implements DSA using OpenSSL
@@ -6,7 +6,7 @@ DISTNAME =	Crypt-OpenSSL-DSA-0.19
 CATEGORIES=	security
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto perl ssl
 

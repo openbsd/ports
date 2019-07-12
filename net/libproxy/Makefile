@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2019/06/15 09:53:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.64 2019/07/12 20:48:30 sthen Exp $
 
 COMMENT-main=		library handling all the details of proxy configuration
 COMMENT-webkit=		pacrunner libproxy plugin for webkit-based browsers
@@ -22,7 +22,7 @@ HOMEPAGE=		https://libproxy.googlecode.com/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # order matters: cmake must come before python
 MODULES=		devel/cmake \

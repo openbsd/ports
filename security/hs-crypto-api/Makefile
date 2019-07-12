@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/01/22 21:47:04 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:03 sthen Exp $
 
 COMMENT=		generic interface for cryptographic operations
 
@@ -9,7 +9,7 @@ CATEGORIES=		security net
 HOMEPAGE=		http://trac.haskell.org/crypto-api/wiki
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES=		lang/ghc
 

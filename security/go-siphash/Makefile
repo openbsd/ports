@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/08/29 16:59:02 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:02 sthen Exp $
 
 COMMENT =		SipHash-2-4 in go
 
@@ -15,7 +15,7 @@ HOMEPAGE =		https://github.com/dchest/siphash
 MAINTAINER =		Sean Levy <attila@stalphonsos.com>
 
 # CC0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES +=		lang/go
 

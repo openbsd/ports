@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:48:42 sthen Exp $
 
 COMMENT =	run SQL queries directly on PCAP files
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://www.dns-oarc.net/tools/packetq
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} c m z
 

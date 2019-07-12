@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/01/11 19:27:07 rpe Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:48:35 sthen Exp $
 
 COMMENT-main=		OLSR routing daemon
 COMMENT-gui=		OLSR routing daemon GUI
@@ -19,7 +19,7 @@ MASTER_SITES=	${HOMEPAGE}releases/0.9/
 MAINTAINER=	Stefan Sperling <stsp@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES= -main -gui
 

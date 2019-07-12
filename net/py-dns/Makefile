@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:45 sthen Exp $
 
 COMMENT =	Python DNS library
 
@@ -10,7 +10,7 @@ CATEGORIES =   	net
 HOMEPAGE =	http://pydns.sourceforge.net/
 
 # Python License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pydns/}
 

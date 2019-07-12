@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/10/15 09:46:56 bentley Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:01 sthen Exp $
 
 COMMENT=		control chroot and su access rights by application
 
@@ -11,7 +11,7 @@ CATEGORIES=		security
 HOMEPAGE=		http://www.porcupine.org/
 
 # BSD-style
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		http://ftp.porcupine.org/pub/security/ \

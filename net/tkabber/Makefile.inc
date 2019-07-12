@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.6 2019/04/24 16:26:56 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2019/07/12 20:48:50 sthen Exp $
 
 CATEGORIES =		net/tkabber x11
 
 HOMEPAGE =		http://tkabber.jabber.ru/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 VERSION = 		1.1.2
 

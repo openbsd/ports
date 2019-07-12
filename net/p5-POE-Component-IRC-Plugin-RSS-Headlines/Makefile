@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/01/28 15:08:58 cwen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:41 sthen Exp $
 
 COMMENT =		PoCo::IRC Plugin that provides RSS Headline retrieval
 
@@ -8,7 +8,7 @@ CATEGORIES =		net www
 MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

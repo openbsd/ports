@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/01/21 14:33:26 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:43 sthen Exp $
 
 COMMENT=	ICB protocol plugin for Pidgin
 
@@ -9,7 +9,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://nic.com.pl/~alek/pidgin-icb/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 

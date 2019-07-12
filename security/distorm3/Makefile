@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/05/12 15:29:50 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:01 sthen Exp $
 
 COMMENT =		powerful disassembler library for x86/amd64
 
@@ -10,7 +10,7 @@ CATEGORIES =		security
 HOMEPAGE =		https://github.com/gdabah/distorm/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += pthread
 

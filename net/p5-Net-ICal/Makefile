@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/08 15:44:46 danj Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:38 sthen Exp $
 
 COMMENT=	Perl interface to RFC2445 (iCalendar) objects
 
@@ -9,7 +9,7 @@ REVISION=	2
 CATEGORIES=	net
 
 # Same as Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Class-MethodMapper \
 		devel/p5-Date-Calc \

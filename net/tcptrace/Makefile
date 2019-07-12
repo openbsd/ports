@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2014/10/31 07:52:01 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:48:50 sthen Exp $
 
 COMMENT=		TCP dump file analysis tool
 
@@ -9,7 +9,7 @@ HOMEPAGE=		http://www.tcptrace.org/
 MASTER_SITES=		http://www.tcptrace.org/download/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m pcap
 

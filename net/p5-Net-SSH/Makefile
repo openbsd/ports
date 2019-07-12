@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/08 21:36:07 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:39 sthen Exp $
 
 COMMENT =	Perl extension for SSH secure shell
 
@@ -9,6 +9,6 @@ CATEGORIES =	net
 REVISION =	0
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

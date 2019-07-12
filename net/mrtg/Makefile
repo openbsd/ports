@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2019/05/04 12:42:23 jca Exp $
+# $OpenBSD: Makefile,v 1.93 2019/07/12 20:48:32 sthen Exp $
 
 COMMENT=	multi-router traffic grapher
 
@@ -10,7 +10,7 @@ CATEGORIES=	net
 HOMEPAGE=	https://oss.oetiker.ch/mrtg/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c jpeg m png z gd>=18
 

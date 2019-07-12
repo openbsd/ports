@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/20 19:57:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:49:08 sthen Exp $
 
 COMMENT=	perl module to create/verify PGP signatures
 
@@ -9,7 +9,7 @@ REVISION=	2
 CATEGORIES=	security
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 FLAVORS=	pgp
 FLAVOR?=

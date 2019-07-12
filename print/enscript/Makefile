@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/05/20 22:15:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:48:54 sthen Exp $
 
 COMMENT=		convert ASCII files to PostScript
 
@@ -9,7 +9,7 @@ REVISION=		2
 HOMEPAGE=		https://www.gnu.org/software/enscript/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNU:=enscript/}
 

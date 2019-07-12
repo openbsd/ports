@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/08/23 08:19:02 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:09 sthen Exp $
 
 COMMENT =	simple password store
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://www.passwordstore.org/
 MAINTAINER =	David Dahlberg <david+bsd@dahlberg.cologne>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://git.zx2c4.com/password-store/snapshot/
 EXTRACT_SUFX =	.tar.xz

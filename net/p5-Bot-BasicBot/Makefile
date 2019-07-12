@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/12/03 21:33:48 bluhm Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:35 sthen Exp $
 
 COMMENT =	simple irc bot baseclass
 
@@ -8,7 +8,7 @@ DISTNAME =	Bot-BasicBot-0.93
 CATEGORIES =	net
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =	devel/p5-POE \
 		net/p5-POE-Component-IRC>=6.90 \

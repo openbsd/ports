@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/08/26 17:56:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:24 sthen Exp $
 
 COMMENT =		C++ bindings for ZeroMQ
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://zeromq.org/topics:cppzmq
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cmake
 

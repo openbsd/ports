@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/07/10 21:01:27 tj Exp $
+# $OpenBSD: Makefile,v 1.49 2019/07/12 20:48:54 sthen Exp $
 
 PKG_ARCH=		*
 
@@ -15,7 +15,7 @@ HOMEPAGE=		http://www.linux-foundation.org/en/OpenPrinting/Database/Foomatic
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2 - MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # tarballs are only available for a 24 hour period
 #MASTER_SITES=		http://www.openprinting.org/download/foomatic/

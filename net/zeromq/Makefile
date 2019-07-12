@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/01/28 19:39:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:48:53 sthen Exp $
 
 COMMENT =		open source message queue optimised for performance
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://zeromq.org/
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m pthread sodium ${COMPILER_LIBCXX}
 

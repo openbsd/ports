@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:35:49 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:33 sthen Exp $
 
 COMMENT=		network pipe meter
 
@@ -9,7 +9,7 @@ CATEGORIES=		net sysutils
 HOMEPAGE=		http://www.nongnu.org/nepim/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB= c oop>=4
 

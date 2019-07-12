@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/11 19:59:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:49:05 sthen Exp $
 
 COMMENT=	strong hash library
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://mhash.sourceforge.net/
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --enable-static

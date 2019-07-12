@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/06/30 08:13:30 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:38 sthen Exp $
 
 COMMENT =	check validity of IPv6 addresses
 
@@ -8,7 +8,7 @@ CATEGORIES =	net
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

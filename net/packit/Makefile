@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/08 18:10:25 schwarze Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:42 sthen Exp $
 
 COMMENT=		packet generation tool
 DISTNAME=		packit-1.0
@@ -10,7 +10,7 @@ EXTRACT_SUFX=		.tgz
 MASTER_SITES=		http://packit.sourceforge.net/downloads/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 LIB_DEPENDS=		net/libnet/1.1
 WANTLIB=		c pcap lib/libnet-1.1/net=11

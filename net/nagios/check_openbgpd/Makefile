@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/08/13 21:06:43 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:33 sthen Exp $
 
 PKG_ARCH=		*
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://openbsd.somedomain.net/nagios/
 MASTER_SITES=		${HOMEPAGE}
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

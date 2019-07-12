@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/05/31 18:30:23 chris Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:26 sthen Exp $
 
 COMMENT=	NetFlow collector
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.mindrot.org/projects/flowd/
 MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 NO_TEST=		Yes

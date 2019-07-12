@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/03/20 19:56:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:48:41 sthen Exp $
 
 COMMENT=	module for writing rpc servers and clients
 
@@ -8,7 +8,7 @@ DISTNAME=	PlRPC-0.2020
 CATEGORIES=	net
 
 # Artistic License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	net/p5-Net-Daemon
 BUILD_DEPENDS=	net/p5-Net-Daemon

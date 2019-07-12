@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/09/29 10:52:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:47 sthen Exp $
 
 COMMENT=	Zolera SOAP Infrastructure
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://pywebsvcs.sourceforge.net/
 
 # Zope Public License (ZPL)
 # Python 2.0 License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pywebsvcs/}
 

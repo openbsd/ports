@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/09/12 19:33:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:51 sthen Exp $
 
 COMMENT =	lightweight Tox client
 
@@ -14,7 +14,7 @@ CATEGORIES =	net
 HOMEPAGE =	https://utox.io
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SM X11 Xext Xrender c fontconfig freetype m pthread
 WANTLIB += openal opus sodium toxcore v4lconvert vpx

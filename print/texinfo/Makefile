@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/21 09:34:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:57 sthen Exp $
 
 COMMENT =		official documentation format of the GNU project
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://www.gnu.org/software/texinfo/
 MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c iconv intl curses
 

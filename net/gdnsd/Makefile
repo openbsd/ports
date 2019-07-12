@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/07/12 16:31:10 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:26 sthen Exp $
 
 COMMENT=		geographically-aware, authoritative-only DNS server
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://gdnsd.org/
 MAINTAINER=		Joerg Jung <jung@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c ev m pthread
 

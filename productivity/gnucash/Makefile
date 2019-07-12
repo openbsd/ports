@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2019/05/12 03:17:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.111 2019/07/12 20:48:58 sthen Exp $
 
 COMMENT =		personal and small-business financial-accounting software
 
@@ -23,7 +23,7 @@ HOMEPAGE =		https://www.gnucash.org/
 MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} aqbanking atk-1.0 boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_locale-mt boost_regex-mt

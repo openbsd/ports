@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:56 sthen Exp $
 
 COMMENT=	desktop publishing clip-art
 
@@ -10,7 +10,7 @@ CATEGORIES=	print graphics
 HOMEPAGE=	http://openclipart.org/
 
 # Public domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/downloads/$V/
 EXTRACT_SUFX=	.tar.bz2

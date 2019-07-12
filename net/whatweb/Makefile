@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/29 00:42:08 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:52 sthen Exp $
 
 COMMENT=		web scanner
 
@@ -13,7 +13,7 @@ CATEGORIES=		net www
 HOMEPAGE=		http://www.morningstarsecurity.com/research/whatweb
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

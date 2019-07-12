@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/06/13 15:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:48:27 sthen Exp $
 
 COMMENT =		GTK+2 IRC Client
 DISTNAME =		hexchat-2.12.3
@@ -8,7 +8,7 @@ REVISION =		8
 
 HOMEPAGE =		http://hexchat.github.io/
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo crypto dbus-1 dbus-glib-1

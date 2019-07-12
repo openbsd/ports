@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/02 06:19:38 otto Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:30 sthen Exp $
 
 COMMENT=	C implementation of the Frame Streams protocol
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://github.com/farsightsec/fstrm
 MAINTAINER=	Otto Moerbeek <otto@drijf.net>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c event_core event_extra pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/10/29 21:58:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:09 sthen Exp $
 
 COMMENT=	HTTP authentication
 
@@ -10,6 +10,6 @@ CATEGORIES=	security
 MODULES=	www/pear
 
 # PHP License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

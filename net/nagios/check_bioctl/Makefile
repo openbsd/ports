@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/02/08 19:07:36 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:33 sthen Exp $
 
 PKG_ARCH =		*
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://cvs.afresh1.com/nagios/check_bioctl.html
 MASTER_SITES =		http://cvs.afresh1.com/nagios/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 NO_BUILD =		Yes
 NO_TEST =		Yes

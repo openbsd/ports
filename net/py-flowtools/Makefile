@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/10/01 11:54:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:45 sthen Exp $
 
 COMMENT=	python interface to flow-tools file format
 
@@ -9,7 +9,7 @@ REVISION=	5
 CATEGORIES=	net
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB+=	z ft ${MODPY_WANTLIB} pthread
 

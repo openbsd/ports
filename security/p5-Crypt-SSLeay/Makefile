@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2016/03/20 19:57:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2019/07/12 20:49:07 sthen Exp $
 
 COMMENT =		library to provide LWP https support via OpenSSL
 
@@ -10,7 +10,7 @@ CATEGORIES =		security
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Artistic 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c crypto perl ssl z
 

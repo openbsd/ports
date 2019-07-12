@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/04/24 16:26:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 20:48:27 sthen Exp $
 
 COMMENT =		command line podcast aggregator
 
@@ -8,7 +8,7 @@ CATEGORIES =		net
 HOMEPAGE =		https://github.com/jgoerzen/hpodder/wiki
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c iconv m pthread sqlite3 util
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/06/13 15:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2019/07/12 20:48:55 sthen Exp $
 
 COMMENT=		GTK+ frontend to CUPS
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://gtklp.sirtobi.com/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 avahi-client avahi-common c cairo cups dbus-1

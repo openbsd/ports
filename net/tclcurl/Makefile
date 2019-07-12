@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/20 22:15:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:48:49 sthen Exp $
 
 COMMENT =	Tcl bindings for Curl
 
@@ -10,7 +10,7 @@ REVISION =	7
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  crypto curl iconv intl nghttp2 ssl z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:57:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:08 sthen Exp $
 
 COMMENT=	module to calculate Nilsimsa digests
 
@@ -8,7 +8,7 @@ REVISION=	5
 CATEGORIES=	security
 
 # Artistic licence
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

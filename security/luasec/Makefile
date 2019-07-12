@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/09/08 17:21:14 gsoares Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:05 sthen Exp $
 
 COMMENT=	lua binding to OpenSSL to provide TLS/SSL communication
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://github.com/brunoos/luasec/wiki
 MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB+=	crypto ssl
 

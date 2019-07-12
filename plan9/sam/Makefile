@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:48:54 sthen Exp $
 
 COMMENT=	X11 version of Rob Pike's editor, sam
 
@@ -14,7 +14,7 @@ EXTRACT_CASES=	*.shar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | /bin/sh;;
 
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xt c xcb
 
 WRKDIST=	${WRKDIR}

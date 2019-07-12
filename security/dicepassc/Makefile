@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/03/02 16:10:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:01 sthen Exp $
 
 COMMENT =		passphrase generator based on Diceware and EFF wordlists
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://www.nul.space/dicepassc/
 MAINTAINER =		Andre Stoebe <as@nul.space>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB =		c

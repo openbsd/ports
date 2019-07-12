@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/07/18 18:24:02 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:31 sthen Exp $
 
 COMMENT =	Lua bindings to libpsl
 
@@ -14,7 +14,7 @@ CATEGORIES =	net
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 LIB_DEPENDS =	net/libpsl
 

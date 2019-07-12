@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/04/25 19:44:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:44 sthen Exp $
 
 COMMENT=	nosuid, secure TCP/IP ping
 
@@ -15,7 +15,7 @@ MASTER_SITES=	${HOMEPAGE}/soft/
 EXTRACT_SUFX=	.zip
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MAKE_FLAGS=	CC='${CC}' CFLAGS='${CFLAGS}'

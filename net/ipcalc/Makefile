@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/11/02 08:37:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:28 sthen Exp $
 
 COMMENT=	small network calculator
 
@@ -9,7 +9,7 @@ REVISION=	0
 HOMEPAGE=	https://github.com/pyr/ipcalc
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://github.com/downloads/pyr/ipcalc/
 

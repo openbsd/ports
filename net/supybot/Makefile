@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/02/16 22:57:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:49 sthen Exp $
 
 COMMENT =	cross-platform IRC bot written in Python
 
@@ -11,7 +11,7 @@ CATEGORIES =	net devel
 HOMEPAGE =	http://supybot.com/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=supybot/}
 

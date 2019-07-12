@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/20 19:56:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:38 sthen Exp $
 
 COMMENT=	perl module for IPv4 address parsing
 
@@ -9,6 +9,6 @@ REVISION=	1
 CATEGORIES=	net
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

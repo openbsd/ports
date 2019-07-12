@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:58 sthen Exp $
 
 COMMENT =	bug tracker client
 DISTNAME =	entomologist-1.1
@@ -9,7 +9,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=entomologist/}
 HOMEPAGE =	https://sourceforge.net/projects/entomologist/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/qmake x11/qt4
 

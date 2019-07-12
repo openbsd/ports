@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/10/23 05:24:10 stu Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:34 sthen Exp $
 
 COMMENT =		protocol, service, network, host and ether info for Tcl
 
@@ -8,7 +8,7 @@ HOMEPAGE =		http://www3.bell.net/stwo/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE:=software/}
 MODULES =		lang/tcl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2018/09/04 12:46:20 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2019/07/12 20:48:54 sthen Exp $
 
 COMMENT=	driver for ZjStream wire protocol compatible printers
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://foo2zjs.rkkda.com/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c cups m pthread
 

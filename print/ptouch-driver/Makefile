@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:56 sthen Exp $
 
 COMMENT=		Brother P-touch CUPS driver
 
@@ -16,7 +16,7 @@ HOMEPAGE=		https://bitbucket.org/philpem/printer-driver-ptouch
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c cups cupsimage m
 

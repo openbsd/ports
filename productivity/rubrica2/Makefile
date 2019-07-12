@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/06/13 15:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:48:59 sthen Exp $
 
 COMMENT=	addressbook manager
 
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tar.bz2
 SHARED_LIBS +=  ral                  0.0      # .1.0
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo dbus-1

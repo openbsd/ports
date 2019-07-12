@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:56:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:06 sthen Exp $
 
 COMMENT =	storage class for Catalyst Authentication using DBIx::Class
 
@@ -9,7 +9,7 @@ CATEGORIES =	security
 REVISION =	0
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	databases/p5-DBIx-Class \
 		databases/p5-Catalyst-Model-DBIC-Schema \

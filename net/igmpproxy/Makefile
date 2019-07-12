@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/01 20:12:52 danj Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:28 sthen Exp $
 
 COMMENT =	multicast router utilizing IGMP forwarding
 
@@ -12,7 +12,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=igmpproxy/}
 HOMEPAGE =	http://igmpproxy.sourceforge.net/
 
 # GPLv2+ + mrouted license in igmpproxy/doc/mrouted-LICENSE
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c
 

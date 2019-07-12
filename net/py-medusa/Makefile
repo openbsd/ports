@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/27 23:24:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:45 sthen Exp $
 
 COMMENT=		Python framework for async socket-based servers
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://www.amk.ca/python/code/medusa.html
 MASTER_SITES=		http://www.amk.ca/files/python/
 
 # Python License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

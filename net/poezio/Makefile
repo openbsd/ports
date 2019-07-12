@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/15 12:04:39 kmos Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:43 sthen Exp $
 
 COMMENT =		console XMPP client
 
@@ -10,7 +10,7 @@ REVISION =		0
 HOMEPAGE =		https://poez.io/
 
 # zlib
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += pthread ${MODPY_WANTLIB}
 

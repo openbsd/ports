@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:40 sthen Exp $
 
 COMMENT=	perl5 module for Wake On LAN
 
@@ -11,6 +11,6 @@ CATEGORIES=	net
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
 # Perl 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/01/17 16:18:18 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:28 sthen Exp $
 
 COMMENT=		simple, secure TCP proxy daemon
 
@@ -9,7 +9,7 @@ CATEGORIES=		net
 HOMEPAGE=		http://ipfreely.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ipfreely/}
 

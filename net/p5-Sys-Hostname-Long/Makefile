@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:42 sthen Exp $
 
 COMMENT=	perl module to get FQDN
 
@@ -8,6 +8,6 @@ DISTNAME=	Sys-Hostname-Long-1.5
 CATEGORIES=	net
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

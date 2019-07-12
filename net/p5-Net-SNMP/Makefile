@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/20 19:56:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:48:39 sthen Exp $
 
 COMMENT=	Perl modules to access SNMP
 
@@ -10,7 +10,7 @@ REVISION=	0
 CATEGORIES=	net devel
 
 # same as perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	security/p5-Crypt-DES>=2.03 \
 		security/p5-Digest-HMAC>=1 \

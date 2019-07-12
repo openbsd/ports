@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2019/05/17 16:53:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2019/07/12 20:49:03 sthen Exp $
 
 COMMENT-main=	parallelized network logon cracker
 COMMENT-gui=	GTK frontend for hydra
@@ -17,7 +17,7 @@ GH_TAGNAME =	${VERSION}
 HOMEPAGE=	https://thc.org/thc-hydra/
 
 # AGPLv3 (GNU Affero Public License)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c z
 

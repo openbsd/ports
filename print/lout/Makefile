@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/12/03 16:41:43 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:55 sthen Exp $
 
 COMMENT=	object oriented type setting language
 
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH:=lout/}
 MAINTAINER=	Joerg Jung <jung@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_FILE=	makefile
 ALL_TARGET=	prg2lout lout

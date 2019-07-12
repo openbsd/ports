@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/14 17:53:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:48 sthen Exp $
 
 COMMENT =		toolkit for deploying code and assets to servers
 
@@ -6,7 +6,7 @@ DISTNAME =		sshkit-1.7.1
 CATEGORIES =		net
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

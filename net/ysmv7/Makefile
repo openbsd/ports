@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/17 16:19:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:48:52 sthen Exp $
 
 COMMENT=		ICQ console client with encryption support
 
@@ -14,7 +14,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ysmv7/}
 LIB_DEPENDS=		converters/libiconv
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses iconv pthread readline
 

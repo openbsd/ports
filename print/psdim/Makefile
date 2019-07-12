@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/11 23:50:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:56 sthen Exp $
 
 COMMENT=		intelligent n-up printing
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.mathstat.dal.ca/~selinger/psdim
 MAINTAINER=		Steven Mestdagh <steven@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/download/
 

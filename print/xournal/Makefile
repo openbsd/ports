@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/20 22:15:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:57 sthen Exp $
 
 COMMENT =		application for notetaking & annotating PDF files
 DISTNAME =		xournal-0.4.8
@@ -8,7 +8,7 @@ REVISION =		4
 HOMEPAGE =		http://xournal.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender art_lgpl_2 atk-1.0 c cairo fontconfig freetype

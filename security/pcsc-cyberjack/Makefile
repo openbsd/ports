@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/18 12:13:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:09 sthen Exp $
 
 COMMENT =		REINER SCT cyberJack chipcard reader driver
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://www.reiner-sct.com/support/
 MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # LGPL2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m usb-1.0
 

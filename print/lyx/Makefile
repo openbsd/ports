@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2019/05/05 15:44:13 danj Exp $
+# $OpenBSD: Makefile,v 1.89 2019/07/12 20:48:56 sthen Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
@@ -22,7 +22,7 @@ WANTLIB += iconv m magic xcb z
 COMPILER=	base-clang ports-gcc
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_2}
 

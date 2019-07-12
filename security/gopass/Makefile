@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/04 21:46:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:02 sthen Exp $
 
 COMMENT =	pass compatible password manager written in go
 
@@ -10,7 +10,7 @@ CATEGORIES =	security
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += c pthread

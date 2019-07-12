@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/08/29 17:00:33 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:02 sthen Exp $
 
 COMMENT =		ed25519 in go
 
@@ -15,7 +15,7 @@ HOMEPAGE =		https://github.com/agl/ed25519
 MAINTAINER =		Sean Levy <attila@stalphonsos.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES +=		lang/go
 

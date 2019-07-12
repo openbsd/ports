@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/01/22 01:00:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2019/07/12 20:48:55 sthen Exp $
 
 COMMENT=		high quality print drivers for foomatic and CUPS
 
@@ -19,7 +19,7 @@ HOMEPAGE=		http://gimp-print.sourceforge.net/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += avahi-client avahi-common c cups cupsimage curses dbus-1
 WANTLIB += ffi gmp gnutls hogweed iconv idn2 intl m nettle p11-kit

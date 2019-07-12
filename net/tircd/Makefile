@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/10/01 11:54:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:50 sthen Exp $
 
 COMMENT=	ircd proxy to the twitter API
 
@@ -11,7 +11,7 @@ CATEGORIES=	net
 HOMEPAGE=	https://code.google.com/p/tircd/
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=tircd/}
 

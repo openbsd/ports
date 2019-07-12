@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/07/15 09:02:55 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:38 sthen Exp $
 
 COMMENT =	perl SSH client package implemented on top of OpenSSH
 
@@ -10,7 +10,7 @@ PKG_ARCH =	*
 MAINTAINER =	Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODCPAN_EXAMPLES =	Yes
 

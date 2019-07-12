@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:48:37 sthen Exp $
 
 COMMENT=	Perl API to the dbus inter-application messaging system
 
@@ -10,7 +10,7 @@ REVISION=	1
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPL/Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c dbus-1 perl
 

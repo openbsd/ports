@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/25 15:04:44 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:04 sthen Exp $
 
 COMMENT =	manage and share secrets using GnuPG and Git
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://keyringer.pw/
 MAINTAINER =	Gregoire Jadi <gjadi@omecha.info>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://keyringer.pw/releases/
 EXTRACT_SUFX =		.tar.bz2

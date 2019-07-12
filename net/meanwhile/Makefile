@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:48:32 sthen Exp $
 
 COMMENT=	implementation of Lotus Sametime Community Client protocol
 
@@ -10,7 +10,7 @@ CATEGORIES=	devel net
 HOMEPAGE=	http://meanwhile.sourceforge.net/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  glib-2.0>=800 iconv intl m pcre pthread
 

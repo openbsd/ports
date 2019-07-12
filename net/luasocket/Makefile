@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/10/16 23:21:23 jca Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:48:31 sthen Exp $
 
 COMMENT=	network support for the lua language
 V=		3.0-rc1
@@ -13,7 +13,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://w3.impa.br/~diego/software/luasocket/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/lua
 

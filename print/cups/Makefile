@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.246 2019/03/23 12:19:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.247 2019/07/12 20:48:54 sthen Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -22,7 +22,7 @@ HOMEPAGE=		http://www.cups.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2 - LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
 

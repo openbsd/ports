@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/08/25 07:20:08 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:01 sthen Exp $
 
 COMMENT =	analyze MIME files
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://blog.didierstevens.com/my-software/#emldump
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # public domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://didierstevens.com/files/software/
 

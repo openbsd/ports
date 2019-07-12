@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/08 19:08:58 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:52 sthen Exp $
 
 COMMENT=		wifi automagic connector
 
@@ -10,7 +10,7 @@ REVISION=		0
 CATEGORIES=		net
 
 # Unlicense
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 

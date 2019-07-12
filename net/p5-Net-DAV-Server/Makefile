@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:56:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:37 sthen Exp $
 
 COMMENT=	perl module to provide a DAV server
 
@@ -8,7 +8,7 @@ DISTNAME =	Net-DAV-Server-1.305
 CATEGORIES=	net
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	databases/p5-DBD-SQLite \

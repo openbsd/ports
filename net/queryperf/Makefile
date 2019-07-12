@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/11/28 11:52:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:47 sthen Exp $
 
 COMMENT =	DNS query performance tester from BIND 9
 
@@ -12,7 +12,7 @@ MASTER_SITES +=	${MASTER_SITE_ISC:=bind9/$V/}
 HOMEPAGE =	http://www.isc.org/products/BIND/
 
 # MPL 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m
 

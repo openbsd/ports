@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/09/21 20:28:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:33 sthen Exp $
 
 PKG_ARCH =	*
 
@@ -16,7 +16,7 @@ MASTER_SITES =	http://www.claudiokuenzler.com/nagios-plugins/
 EXTRACT_SUFX =
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

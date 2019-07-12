@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/03/07 07:19:41 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:37 sthen Exp $
 
 COMMENT =	DNS Resolver object for testing
 
@@ -7,7 +7,7 @@ DISTNAME =	Net-DNS-Resolver-Mock-1.20171219
 CATEGORIES =	net
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 

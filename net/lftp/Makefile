@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2019/05/20 22:15:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.126 2019/07/12 20:48:30 sthen Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://lftp.tech/
 MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto curses ereadline expat
 WANTLIB += iconv idn2 intl m ssl unistring util z

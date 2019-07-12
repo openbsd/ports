@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/20 20:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:25 sthen Exp $
 
 COMMENT=	Gadu-Gadu IM protocol client
 
@@ -9,7 +9,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://ekg.chmurka.net/
 
 # GPLv2 - LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto gadu curses pthread ssl z
 

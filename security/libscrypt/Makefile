@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/04/19 21:25:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:05 sthen Exp $
 
 COMMENT =	shared library that implements scrypt() functionality
 
@@ -17,7 +17,7 @@ HOMEPAGE =	https://lolware.net/libscrypt.html
 MAINTAINER =	LEVAI Daniel <leva@ecentrum.hu>
 
 # BSD
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =	c m
 

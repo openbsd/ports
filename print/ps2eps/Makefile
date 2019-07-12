@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/02/01 16:27:59 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:56 sthen Exp $
 
 COMMENT=	convert Postscript to Encapsulated Postscript
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.tm.uka.de/~bless/ps2eps.html
 MAINTAINER=	Laurence Tratt <laurie@tratt.net>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://www.tm.uka.de/~bless/
 

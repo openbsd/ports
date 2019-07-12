@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/05 11:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:48:31 sthen Exp $
 
 COMMENT =	access web services that claim to be RESTful
 
@@ -16,7 +16,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += iconv intl lzma m pcre pthread soup-2.4 soup-gnome-2.4

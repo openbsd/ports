@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/01/21 06:23:34 bentley Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:53 sthen Exp $
 
 COMMENT=	download and decode binaries posted to Usenet
 
@@ -8,7 +8,7 @@ REVISION =	0
 
 HOMEPAGE=	http://ubh.sourceforge.net/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/10/30 15:41:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:48:39 sthen Exp $
 
 COMMENT =	perl implementation of the SSH1 and SSH2 protocols
 
@@ -8,7 +8,7 @@ REVISION =	0
 CATEGORIES =	net security
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

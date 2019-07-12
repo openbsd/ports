@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/04/27 23:55:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:48:48 sthen Exp $
 
 COMMENT=	powerful interactive packet manipulation in python
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://scapy.net/
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES0=	https://spacehopper.org/mirrors/
 DISTFILES=	${EXTRACT_ONLY} ethertypes-20120703:0

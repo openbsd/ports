@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2019/07/10 21:01:27 tj Exp $
+# $OpenBSD: Makefile,v 1.114 2019/07/12 20:48:55 sthen Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -25,7 +25,7 @@ SUBST_VARS=	VERSION FLAVOR_STRING
 
 # AGPLv3, except for the included CMap files from Adobe, which may
 # only be redistributed without modifications.
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv ijs m jbig2dec jpeg>=62 lcms2 png>=6 pthread tiff z
 

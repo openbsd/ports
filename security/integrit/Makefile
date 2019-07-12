@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/09/26 16:21:10 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:03 sthen Exp $
 
 COMMENT=		file integrity checker
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://sourceforge.net/projects/integrit/
 MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

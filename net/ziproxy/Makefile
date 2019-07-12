@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/01/11 19:27:08 rpe Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:53 sthen Exp $
 
 COMMENT =		compressing non-caching HTTP proxy
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://ziproxy.sourceforge.net/
 MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c m pthread z gif>=6 png>=8 jpeg>=62 jasper>=2
 WANTLIB +=		sasl2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/12/09 19:09:13 kili Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:48:56 sthen Exp $
 
 COMMENT =		encoding files for poppler
 DISTNAME =		poppler-data-0.4.9
@@ -6,7 +6,7 @@ CATEGORIES =		print
 HOMEPAGE =		https://poppler.freedesktop.org/
 
 # Mixture of GPL2 and MIT and something similar to BSD4
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}
 

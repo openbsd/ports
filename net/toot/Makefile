@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/28 20:51:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:50 sthen Exp $
 
 COMMENT =		interact with Mastodon social networks from the command line
 
@@ -15,7 +15,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 MASTER_SITES =		https://github.com/ihabunek/toot/releases/download/${MODPY_EGG_VERSION}/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

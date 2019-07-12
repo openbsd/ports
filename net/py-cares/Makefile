@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/28 20:51:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:45 sthen Exp $
 
 # using bundled c-ares which is patched for TTL support
 COMMENT =		python interface for c-ares
@@ -10,7 +10,7 @@ CATEGORIES =		net
 REVISION =		0
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += pthread ${MODPY_WANTLIB}
 

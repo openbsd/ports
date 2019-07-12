@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2019/05/17 16:19:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2019/07/12 20:48:34 sthen Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
@@ -18,7 +18,7 @@ MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
 		http://archive.ntp.org/ntp4/ntp-4.2/
 
 # modified ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto curses edit event_core event_pthreads m pthread ssl
 

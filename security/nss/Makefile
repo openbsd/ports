@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2019/07/09 17:52:02 landry Exp $
+# $OpenBSD: Makefile,v 1.106 2019/07/12 20:49:05 sthen Exp $
 
 COMMENT=		libraries to support development of security-enabled apps
 
@@ -16,7 +16,7 @@ MAINTAINER=		Landry Breuil <landry@openbsd.org>
 HOMEPAGE=		https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS
 
 # mozilla public license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 #for regular releases
 MASTER_SITES=		https://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src/

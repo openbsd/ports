@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/12/23 12:33:50 jca Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:44 sthen Exp $
 
 COMMENT=	app-level proxy for mail retrieval behind firewalls
 
@@ -10,7 +10,7 @@ MAINTAINER=	Ian McWilliam <kaosagnt@gmail.com>
 
 MASTER_SITES=   http://www.go.dlr.de/linux/src/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/08/08 10:53:52 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:48 sthen Exp $
 
 COMMENT =		simple bandwidth monitor
 DISTNAME =		sbm-0.8
@@ -7,7 +7,7 @@ HOMEPAGE =		http://git.2f30.org/sbm/
 MAINTAINER =		Dimitris Papastamos <sin@2f30.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

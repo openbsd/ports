@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/05/11 20:50:55 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:00 sthen Exp $
 
 COMMENT=		simple but effective personal calendar
 
@@ -8,7 +8,7 @@ CATEGORIES=		productivity
 HOMEPAGE=		http://www.lightandmatter.com/when/when.html
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://distfiles.nl/
 

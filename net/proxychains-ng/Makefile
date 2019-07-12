@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/18 22:16:06 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:44 sthen Exp $
 
 COMMENT=	redirect programs through one or more proxies
 
@@ -12,7 +12,7 @@ GH_TAGNAME=	v${VERSION}
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c pthread
 
 USE_GMAKE=	Yes

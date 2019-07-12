@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/09/07 13:08:43 akoshibe Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:32 sthen Exp $
 
 COMMENT =	emulator for rapid prototyping of software defined networks
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://mininet.org
 MAINTAINER =	Ayaka Koshibe <akoshibe@gmail.com>
 
 # Custom BSD-3 clause-like
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/10/17 14:15:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:48:58 sthen Exp $
 
 COMMENT =	CalDAV/CardDav calendar/contacts server
 
@@ -14,7 +14,7 @@ MASTER_SITES =	https://www.davical.org/downloads/
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WRKSRC= 	${WRKDIR}
 MODULES =	lang/php

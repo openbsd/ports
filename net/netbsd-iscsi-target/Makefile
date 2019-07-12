@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/02/28 20:39:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:33 sthen Exp $
 
 COMMENT=	iSCSI (RFC 3720) target from NetBSD
 
@@ -9,7 +9,7 @@ REVISION=	6
 CATEGORIES=	net sysutils
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 

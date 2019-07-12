@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/20 22:15:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:49:00 sthen Exp $
 
 COMMENT=	encrypt and decrypt AES files and streams
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://ccrypt.sourceforge.net/
 MAINTAINER=	Charlene Wendling <julianaito@posteo.jp>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c iconv intl
 

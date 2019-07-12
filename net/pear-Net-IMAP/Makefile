@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/11/15 23:35:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:42 sthen Exp $
 
 COMMENT=	implementation of the IMAP protocol for PHP
 
@@ -11,6 +11,6 @@ RUN_DEPENDS+=	net/pear-Net-Socket>=1.0.8 \
 		security/pear-Auth-SASL>=1.0.2
 
 # PHP License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

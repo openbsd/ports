@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/05/07 20:42:40 schwarze Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:48:53 sthen Exp $
 
 COMMENT=	assemble usenet binaries
 
@@ -7,7 +7,7 @@ REVISION=	0
 DISTNAME=	aub
 CATEGORIES=	news
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../scripts/news/nntpstuff/aub/}
 DISTFILES=	aub aub.1 BUG_FIXES

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:38 sthen Exp $
 
 COMMENT=		Pure Perl MySQL network protocol interface
 
@@ -7,7 +7,7 @@ DISTNAME=		Net-MySQL-${VERSION}
 CATEGORIES=		net
 
 # GPL/Artistic License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		security/p5-Digest-SHA1
 			

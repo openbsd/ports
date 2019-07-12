@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/04/28 14:29:30 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:48:30 sthen Exp $
 
 COMMENT =	library and tools to generate ICMP echo requests
 
@@ -10,7 +10,7 @@ CATEGORIES =	net
 HOMEPAGE =	http://noping.cc/
 
 # LGPL v2.1+ (lib) GPLv2+ (binaries)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m curses perl
 

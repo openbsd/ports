@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/04/01 21:43:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:33 sthen Exp $
 
 COMMENT=		Nagios plugin to check Microsoft SQL Server
 
@@ -8,7 +8,7 @@ CATEGORIES=		net databases
 HOMEPAGE=		http://labs.consol.de/lang/en/nagios/check_mssql_health/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://labs.consol.de/download/shinken-nagios-plugins/
 

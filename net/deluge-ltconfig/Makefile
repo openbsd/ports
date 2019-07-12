@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/02/09 09:50:26 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:24 sthen Exp $
 
 COMMENT =	libtorrent settings modification plugin for deluge
 
@@ -11,7 +11,7 @@ GH_TAGNAME =	v${MODPY_EGG_VERSION}
 CATEGORIES =	net
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

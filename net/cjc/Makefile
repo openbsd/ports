@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/10 16:50:05 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:24 sthen Exp $
 
 COMMENT=		Jabber client for text terminals
 
@@ -10,7 +10,7 @@ REVISION=		1
 HOMEPAGE=		http://cjc.jajcus.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://cloud.github.com/downloads/Jajcus/cjc/
 

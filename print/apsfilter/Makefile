@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/09/04 12:46:20 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:54 sthen Exp $
 
 COMMENT=		filter to print a wide range of file formats
 
@@ -9,7 +9,7 @@ CATEGORIES=		print
 HOMEPAGE=		http://www.apsfilter.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://www.apsfilter.org/download/
 

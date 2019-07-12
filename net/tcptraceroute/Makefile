@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/02/16 22:57:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:48:50 sthen Exp $
 
 COMMENT=		traceroute implementation using TCP packets
 
@@ -9,7 +9,7 @@ CATEGORIES=    		net
 HOMEPAGE=		http://michael.toren.net/code/tcptraceroute/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c pcap lib/libnet-1.1/net=11
 

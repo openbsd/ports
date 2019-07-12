@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/12/25 00:17:50 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:30 sthen Exp $
 
 COMMENT =	support library for FileZilla
 
@@ -11,7 +11,7 @@ CATEGORIES =	net
 HOMEPAGE =	https://lib.filezilla-project.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} gmp hogweed iconv m nettle
 

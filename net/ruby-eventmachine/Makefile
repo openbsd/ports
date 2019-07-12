@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:48:47 sthen Exp $
 
 COMMENT=	event-driven I/O for Ruby using the Reactor pattern
 
@@ -9,7 +9,7 @@ CATEGORIES=	net devel
 HOMEPAGE=	http://rubyeventmachine.com/
 
 # ruby or gpl2
-PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby
 

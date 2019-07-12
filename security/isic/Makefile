@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2015/02/16 22:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:49:03 sthen Exp $
 
 COMMENT=	IP stack integrity checker
 
@@ -9,7 +9,7 @@ CATEGORIES=	security
 HOMEPAGE=	http://isic.sourceforge.net/
 
 # modified BSD license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c lib/libnet-1.1/net=11
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=isic/}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:02 sthen Exp $
 
 COMMENT =		tools to compute hashes recursively
 
@@ -12,7 +12,7 @@ CATEGORIES =		security
 MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # Public domain, and the code for Tiger is GPLv2.
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
 

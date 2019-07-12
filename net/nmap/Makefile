@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2019/02/05 21:12:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.136 2019/07/12 20:48:34 sthen Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
@@ -19,7 +19,7 @@ HOMEPAGE=	http://www.nmap.org/
 MAINTAINER=	David Carlier <devnexen@gmail.com>
 
 # GPL (v2 only), with additional clarifications and exceptions, see COPYING
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES=	-main -zenmap
 

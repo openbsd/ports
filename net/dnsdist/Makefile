@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/03/25 16:10:04 otto Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:25 sthen Exp $
 
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
@@ -13,7 +13,7 @@ HOMEPAGE=		https://dnsdist.org/
 MAINTAINER=		Otto Moerbeek <otto@drijf.net>
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=		${MODLUA_WANTLIB} c curses edit m protobuf pthread \
 			z crypto ssl sodium ${COMPILER_LIBCXX}

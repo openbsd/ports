@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/10 21:01:28 tj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:55 sthen Exp $
 
 COMMENT=		raster image transmission library
 
@@ -11,7 +11,7 @@ SHARED_LIBS=		ijs 0.0
 HOMEPAGE=		https://www.openprinting.org/download/ijs/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/download/
 

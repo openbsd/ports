@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/03/26 12:22:12 bluhm Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:48:40 sthen Exp $
 
 COMMENT =		manages IPv4 and IPv6 addresses and subnets
 
@@ -9,7 +9,7 @@ CATEGORIES =		net
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # perl artistic / GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c perl
 

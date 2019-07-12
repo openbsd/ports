@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:51 sthen Exp $
 
 COMMENT =		command line gopher client
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/solderpunk/VF-1
 MAINTAINER =		Paco Esteban <paco@onna.be>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2018/07/03 11:52:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.59 2019/07/12 20:48:47 sthen Exp $
 
 COMMENT=	multi-threaded routing daemon
 
@@ -14,7 +14,7 @@ SHARED_LIBS+=	$i 1.0
 HOMEPAGE=	http://www.quagga.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses m readline
 

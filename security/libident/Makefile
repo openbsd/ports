@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/05/08 18:49:59 schwarze Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:04 sthen Exp $
 
 COMMENT=	library to interface the ident protocol server (rfc1413)
 
@@ -12,7 +12,7 @@ REVISION=	1
 HOMEPAGE=	http://www.remlab.net/libident/
 
 # Public Domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	gnu
 

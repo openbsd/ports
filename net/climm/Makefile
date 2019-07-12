@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:24 sthen Exp $
 
 COMMENT =		simple, command-line multi messenger
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.climm.org/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  ${MODTCL_WANTLIB}
 WANTLIB += c gcrypt gnutls gpg-error iconv iksemel intl otr pthread

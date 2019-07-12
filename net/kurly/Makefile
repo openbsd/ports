@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/07/30 14:40:06 juanfra Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:29 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -11,7 +11,7 @@ CATEGORIES =		net
 HOMEPAGE =		https://gitlab.com/davidjpeacock/kurly
 
 # Apache 2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c pthread
 

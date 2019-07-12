@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/01 16:29:05 bluhm Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:49:00 sthen Exp $
 
 COMMENT =	portable, easy to use, and efficient C++ crypto library
 
@@ -17,7 +17,7 @@ HOMEPAGE =	https://botan.randombit.net/
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # BSD 2-Clause
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		bz2 crypto gmp m pthread ${COMPILER_LIBCXX} z
 

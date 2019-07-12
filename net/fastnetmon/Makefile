@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/01 03:53:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:26 sthen Exp $
 
 COMMENT =		DDoS detector with multiple packet capture engines
 
@@ -13,7 +13,7 @@ CATEGORIES =		net security
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cmake
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/27 21:04:01 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:56 sthen Exp $
 
 COMMENT=	3D printing host suite
 DISTNAME=	printrun-20150310
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.pronterface.com/
 MAINTAINER=     Aaron Bieber <abieber@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += pthread ${MODPY_WANTLIB}
 

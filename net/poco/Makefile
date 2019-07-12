@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:43 sthen Exp $
 
 COMMENT =	POCO C++ libraries for network based applications
 
@@ -19,7 +19,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=poco/}
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Boost software license
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto m pthread ssl ${COMPILER_LIBCXX} iodbc iodbcinst mysqlclient
 WANTLIB += expat pcre sqlite3 z

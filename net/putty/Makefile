@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/04 15:39:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:48:44 sthen Exp $
 
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
@@ -16,7 +16,7 @@ MASTER_SITES=	https://the.earth.li/~sgtatham/putty/$V/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-$V/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 

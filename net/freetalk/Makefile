@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/20 20:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:26 sthen Exp $
 
 COMMENT=	console based Jabber client
 
@@ -10,7 +10,7 @@ CATEGORIES=	net
 HOMEPAGE=	https://www.gnu.org/software/freetalk/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c glib-2.0 gmp iconv idn intl ltdl m curses pthread \
 		readline ${COMPILER_LIBCXX} guile loudmouth-1>=3

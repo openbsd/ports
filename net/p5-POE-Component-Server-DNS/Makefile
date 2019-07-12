@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/07 07:19:46 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:41 sthen Exp $
 
 COMMENT =	non-blocking, concurrent DNS server POE component
 
@@ -7,7 +7,7 @@ DISTNAME =	POE-Component-Server-DNS-0.32
 CATEGORIES =	net
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 

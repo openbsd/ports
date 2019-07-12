@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/11/05 17:16:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:57 sthen Exp $
 
 COMMENT=		utilities for PostScript Type 1 fonts
 DISTNAME=		t1utils-1.41
@@ -7,7 +7,7 @@ CATEGORIES=		print fonts
 HOMEPAGE=		http://www.lcdf.org/~eddietwo/type/
 
 # mix of BSD/GPL/PD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

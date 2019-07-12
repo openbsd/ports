@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/14 19:10:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:01 sthen Exp $
 
 COMMENT =	web content scanner
 
@@ -10,7 +10,7 @@ CATEGORIES =	security www
 MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dirb/}
 

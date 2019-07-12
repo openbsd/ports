@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:03 sthen Exp $
 
 COMMENT =	management tool for sensitive data
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://www.keepassx.org/
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://www.keepassx.org/releases/$V/
 

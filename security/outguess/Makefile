@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:06 sthen Exp $
 
 COMMENT=	universal steganography tool
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.outguess.org/ \
 HOMEPAGE=	http://www.outguess.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c m
 
 NO_TEST=	Yes

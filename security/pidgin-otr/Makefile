@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/06/23 15:19:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:49:09 sthen Exp $
 
 COMMENT =	allows deniable private conversations using Pidgin
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://otr.cypherpunks.ca/
 MASTER_SITES =	${HOMEPAGE}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  c gcrypt gpg-error iconv intl otr>=4.0 pthread
 

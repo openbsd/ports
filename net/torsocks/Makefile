@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/05/12 16:52:25 jsing Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:50 sthen Exp $
 
 COMMENT =		socks proxy for use with tor
 
@@ -18,7 +18,7 @@ HOMEPAGE =		https://gitweb.torproject.org/torsocks.git/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += pthread
 

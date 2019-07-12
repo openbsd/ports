@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/06/15 08:55:26 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:03 sthen Exp $
 
 COMMENT =	management tool for password and sensitive data
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://keepassxc.org
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2 or GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Svg Qt5Widgets Qt5X11Extras X11 Xi Xtst

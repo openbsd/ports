@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2018/11/14 20:48:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2019/07/12 20:48:29 sthen Exp $
 
 COMMENT-main=	ISC DHCP Server
 COMMENT-client=	ISC DHCP Client
@@ -24,7 +24,7 @@ MASTER_SITES=	${MASTER_SITE_ISC:=dhcp/${VERSION}/} \
 HOMEPAGE=	http://www.isc.org/software/dhcp/
 
 # MPL 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

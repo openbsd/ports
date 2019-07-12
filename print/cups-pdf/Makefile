@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/09/04 12:46:20 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:54 sthen Exp $
 
 COMMENT=		PDF backend for CUPS
 
@@ -11,7 +11,7 @@ MASTER_SITES=		${HOMEPAGE}src/
 DISTFILES=		${DISTNAME:S/pdf-/pdf_/}.tar.gz
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c cups
 

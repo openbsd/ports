@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/01/11 19:27:07 rpe Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:48:34 sthen Exp $
 
 COMMENT=		No-IP.com Dynamic DNS client
 
@@ -11,7 +11,7 @@ CATEGORIES=		net
 HOMEPAGE=		http://www.no-ip.com/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

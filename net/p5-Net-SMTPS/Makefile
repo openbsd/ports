@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/14 21:31:04 cwen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:39 sthen Exp $
 
 COMMENT=	SSL/STARTTLS support for Net::SMTP
 
@@ -8,7 +8,7 @@ DISTNAME =	Net-SMTPS-0.09
 CATEGORIES=	net mail
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	security/p5-Authen-SASL>=2 \
 		security/p5-IO-Socket-SSL>=1

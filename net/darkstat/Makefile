@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/09/04 12:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:48:24 sthen Exp $
 
 COMMENT=		network statistics gatherer with graphs
 
@@ -11,7 +11,7 @@ REVISION=		1
 HOMEPAGE=		http://unix4lyfe.org/darkstat/
 
 # GPLv2 and BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c pcap z
 

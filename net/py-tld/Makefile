@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/15 12:04:40 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:46 sthen Exp $
 
 COMMENT =	extracts the top level domain (TLD) from the URL given
 
@@ -11,7 +11,7 @@ CATEGORIES =	net
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # MPL 1.1/GPL 2.0/LGPL 2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes

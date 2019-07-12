@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/27 23:55:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:58 sthen Exp $
 
 COMMENT =		birthday reminder with tray notification
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://gbirthday.sourceforge.net/
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 RUN_DEPENDS =		devel/desktop-file-utils \

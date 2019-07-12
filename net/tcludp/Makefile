@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/18 23:12:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:49 sthen Exp $
 
 COMMENT =	Tcl UDP extension
 
@@ -9,7 +9,7 @@ HOMEPAGE =	http://sourceforge.net/projects/tcludp/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=tcludp/}
 MODULES =	lang/tcl

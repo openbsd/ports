@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/03/31 15:54:38 bcallah Exp $ 
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:48:50 sthen Exp $ 
 
 COMMENT =	client program for playing muds with advanced features
 DISTNAME =	tintin-2.01.7
@@ -7,7 +7,7 @@ CATEGORIES =	net games
 HOMEPAGE =	https://tintin.sourceforge.io/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c gnutls m pcre pthread util z
 

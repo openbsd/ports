@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:48:27 sthen Exp $
 
 COMMENT=		GNOME MUD/Moo Client
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://dw.nl.eu.org/mudix.html
 MASTER_SITES=		http://dw.nl.eu.org/gmudix/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig

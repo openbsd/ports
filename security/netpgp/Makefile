@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/05/07 12:40:58 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:49:05 sthen Exp $
 
 COMMENT =		BSD-licensed PGP implementation
 
@@ -15,7 +15,7 @@ HOMEPAGE =		http://www.netpgp.com
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		bz2 c crypto z
 

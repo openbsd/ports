@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/17 16:19:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:48:50 sthen Exp $
 
 COMMENT=	full screen visualization of network traffic
 
@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://soft.risp.ru/trafshow/index_en.shtml
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses pcap
 

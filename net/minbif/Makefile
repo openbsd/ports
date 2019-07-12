@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:32 sthen Exp $
 
 COMMENT =	IRC-friendly instant messaging client
 
@@ -10,7 +10,7 @@ HOMEPAGE =	http://minbif.im/
 MASTER_SITES=	${HOMEPAGE}attachments/download/148/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =	devel/cmake
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/04/10 12:08:52 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:06 sthen Exp $
 
 COMMENT=	decrypt one-time-password for a YubiKey
 
@@ -11,7 +11,7 @@ MAINTAINER=	Julien Dhaille <julien@dhaille.com>
 PKG_ARCH=	*
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
 CPAN_AUTHOR=	MASSYN

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/12/01 22:12:40 fcambus Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:48:30 sthen Exp $
 
 COMMENT=	implementation of Gadu-Gadu IM protocol
 
@@ -13,7 +13,7 @@ SHARED_LIBS=	gadu	7.0
 HOMEPAGE=	http://libgadu.net/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	pthread z
 

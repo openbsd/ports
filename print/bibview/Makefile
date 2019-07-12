@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/11/09 11:06:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:48:54 sthen Exp $
 
 COMMENT=	GUI for manipulating BibTeX bibliography databases
 
@@ -8,7 +8,7 @@ CATEGORIES=	databases print
 
 FIX_EXTRACT_PERMISSIONS=Yes
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xt c
 

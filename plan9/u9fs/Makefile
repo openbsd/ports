@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/09/14 11:10:53 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:54 sthen Exp $
 
 COMMENT=	serve 9P from Unix
 
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	-src.tgz
 MAINTAINER=	Stanley Lieber <sl@stanleylieber.com>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 WRKDIST=	${WRKDIR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2018/12/02 11:24:15 robert Exp $
+# $OpenBSD: Makefile,v 1.66 2019/07/12 20:49:04 sthen Exp $
 
 COMMENT=		crypto library based on code used in GnuPG
 
@@ -14,7 +14,7 @@ HOMEPAGE=		https://www.gnupg.org/software/libgcrypt/index.html
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2/LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c gpg-error iconv intl
 

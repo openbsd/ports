@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/03/29 19:56:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:31 sthen Exp $
 
 COMMENT =	simple, lightweight XMPP C library
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://strophe.im/libstrophe/
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # Dual licensed: MIT and GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += crypto expat ssl
 

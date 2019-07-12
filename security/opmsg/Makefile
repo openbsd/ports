@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/11/20 13:01:08 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:06 sthen Exp $
 
 COMMENT =	a replacement for gpg which can encrypt/sign/verify
 
@@ -15,7 +15,7 @@ HOMEPAGE =	https://github.com/stealth/opmsg
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto m
 

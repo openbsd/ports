@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2019/02/24 12:41:47 kn Exp $
+# $OpenBSD: Makefile,v 1.54 2019/07/12 20:48:29 sthen Exp $
 
 COMMENT=	Internet Relay Chat client
 
@@ -17,7 +17,7 @@ HOMEPAGE=	http://www.eterna.com.au/ircii/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto curses iconv ssl
 

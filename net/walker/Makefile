@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/01/22 13:11:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:51 sthen Exp $
 
 COMMENT=	retrieve DNS zone via DNSSEC NXT/NSEC traversal
 
@@ -9,7 +9,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://josefsson.org/walker/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}releases/
 

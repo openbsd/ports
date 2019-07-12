@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:02 sthen Exp $
 
 COMMENT=	GTK+2 secure notes manager
 
@@ -9,7 +9,7 @@ CATEGORIES=	security
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0

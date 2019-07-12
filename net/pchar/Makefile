@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:48:42 sthen Exp $
 
 COMMENT=	Sandia Internet path characterization tool
 
@@ -8,7 +8,7 @@ CATEGORIES=	net
 
 MASTER_SITES=	${HOMEPAGE}
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m pcap ${COMPILER_LIBCXX} 
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/03/14 01:35:52 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:51 sthen Exp $
 
 COMMENT=	socks proxy and tls support for ucspi
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://github.com/younix/ucspi
 MAINTAINER=	Jan Klemkow <j.klemkow@wemelug.de>
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto ssl tls
 

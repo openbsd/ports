@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/05/25 10:22:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2019/07/12 20:49:06 sthen Exp $
 
 COMMENT=		library for loading and enumerating PKCS\#11 modules
 
@@ -15,7 +15,7 @@ HOMEPAGE=		http://p11-glue.freedesktop.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += 	c ffi iconv intl pthread tasn1
 

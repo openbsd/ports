@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/06/22 18:33:07 bluhm Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:08 sthen Exp $
 
 COMMENT =		add/extend SSL support for common perl modules
 
@@ -9,7 +9,7 @@ CATEGORIES =		security net
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

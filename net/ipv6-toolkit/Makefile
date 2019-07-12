@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/04 19:18:18 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:29 sthen Exp $
 
 COMMENT =		SI6 networks IPv6 toolkit
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://www.si6networks.com/tools/ipv6toolkit/
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # GPL v3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m pcap
 

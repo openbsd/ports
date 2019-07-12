@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/20 19:57:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:07 sthen Exp $
 
 COMMENT=	routines for accessing the OpenSSL prng
 
@@ -7,7 +7,7 @@ DISTNAME=	Crypt-OpenSSL-Random-0.11
 CATEGORIES=	security
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto perl ssl
 

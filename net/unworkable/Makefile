@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/01/17 16:18:18 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:51 sthen Exp $
 
 COMMENT=		simple BitTorrent implementation
 
@@ -10,7 +10,7 @@ CATEGORIES=		net
 HOMEPAGE=		https://github.com/niallo/Unworkable
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=unworkable/}
 

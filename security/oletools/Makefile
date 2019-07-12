@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/11/16 08:02:25 rpointel Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:05 sthen Exp $
 
 COMMENT =	python tools to analyze OLE files
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://www.decalage.info/python/oletools
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # BSD (apart from the thirdparty folder which contains third-party files published with their own license.)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PI =	Yes

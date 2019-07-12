@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/06/04 10:02:45 bket Exp $
+# $OpenBSD: Makefile,v 1.43 2019/07/12 20:48:25 sthen Exp $
 
 COMMENT =	flexible DNS proxy with support for encrypted DNS protocols
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://dnscrypt.info/
 MAINTAINER =	Nam Nguyen <namn@berkeley.edu>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c pthread
 

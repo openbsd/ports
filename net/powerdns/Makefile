@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2019/06/21 10:27:52 otto Exp $
+# $OpenBSD: Makefile,v 1.72 2019/07/12 20:48:44 sthen Exp $
 
 COMMENT-main=		modular authoritative nameserver (with database support)
 COMMENT-mysql=		MySQL database access module for PowerDNS
@@ -25,7 +25,7 @@ HOMEPAGE=		http://www.powerdns.com/
 MULTI_PACKAGES=		-main -mysql -pgsql -ldap
 
 # GPLv2 only, OpenSSL exemption
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += m pthread ${COMPILER_LIBCXX}
 

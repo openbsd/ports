@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:48:55 sthen Exp $
 
 # libgs from ghostscript is only provided on shared libs archs
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://libspectre.freedesktop.org/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xext Xt avahi-client avahi-common cups cupsimage
 WANTLIB += dbus-1 ffi freetype gmp gnutls gs hogweed iconv idn2

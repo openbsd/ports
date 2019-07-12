@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/17 16:19:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:27 sthen Exp $
 
 COMMENT=	distributed document delivery client
 
@@ -11,7 +11,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://quux.org/devel/gopher/Downloads/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses m
 

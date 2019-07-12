@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/03/03 23:11:04 sebastia Exp $
+# $OpenBSD: Makefile,v 1.49 2019/07/12 20:48:29 sthen Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -19,7 +19,7 @@ EXTRACT_SUFX=	.tar.xz
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2019/07/12 20:48:34 sthen Exp $
 
 COMMENT=	UCB/LBNL Network Simulator Version 2
 
@@ -12,7 +12,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 HOMEPAGE=	http://nsnam.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES +=	x11/tk
 WANTLIB +=	X11 Xext c m pcap ${COMPILER_LIBCXX} otcl

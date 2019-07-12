@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:32 sthen Exp $
 
 COMMENT=	Twitter, Identica, and Status.net plugin for libpurple
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://microblog-purple.googlecode.com/
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat

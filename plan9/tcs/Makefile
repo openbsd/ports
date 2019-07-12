@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/01/22 18:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:48:54 sthen Exp $
 
 COMMENT=	translate character sets
 
@@ -13,7 +13,7 @@ EXTRACT_CASES=	*.shar.Z) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | /bin/sh;;
 
 MAINTAINER=	Markus Friedl <markus@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -D_POSIX_SOURCE"

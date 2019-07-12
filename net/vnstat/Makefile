@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/09/04 12:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:48:51 sthen Exp $
 
 COMMENT-main =		network traffic monitor
 COMMENT-vnstati =	image output support for vnstat
@@ -19,7 +19,7 @@ MASTER_SITES =	${HOMEPAGE}
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB 	= c m
 WANTLIB-vnstati = ${WANTLIB} gd pthread

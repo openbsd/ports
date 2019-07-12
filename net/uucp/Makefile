@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/12/18 20:25:50 jca Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:48:51 sthen Exp $
 
 COMMENT=	UUCP suite
 
@@ -6,7 +6,7 @@ DISTNAME=	uucp-1.07
 REVISION=	4
 CATEGORIES=	net mail
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_GNU:=uucp/}

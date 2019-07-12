@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/01/22 21:47:04 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:03 sthen Exp $
 
 COMMENT=		fast, pure, practical collection of crypto hashes
 
@@ -7,7 +7,7 @@ REVISION=		4
 CATEGORIES=		security
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES=		lang/ghc
 

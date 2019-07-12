@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/09/04 12:46:20 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:59 sthen Exp $
 
 COMMENT =	lightweight server providing access to task data
 
@@ -13,7 +13,7 @@ MAINTAINER =	Kent R. Spillner <kspillner@openbsd.org>
 MASTER_SITES =	${HOMEPAGE}download/
 
 # MIT
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES =	devel/cmake
 

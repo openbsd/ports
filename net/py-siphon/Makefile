@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/04 19:02:49 kmos Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:46 sthen Exp $
 
 COMMENT=	download data from remote data services (such as THREDDS)
 
@@ -13,7 +13,7 @@ HOMEPAGE=		https://unidata.github.io/siphon/
 MAINTAINER=		Martin Reindl <martin@catai.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_SETUPTOOLS=	Yes
 MODPY_PI=		Yes

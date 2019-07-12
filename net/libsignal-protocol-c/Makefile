@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/05 06:54:33 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:31 sthen Exp $
 
 COMMENT =	ratcheting forward secrecy protocol
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://signal.org/
 MAINTAINER =	Alex Holst <a@mongers.org>
 
 # GPLv3 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += m
 

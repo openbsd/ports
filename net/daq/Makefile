@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/05/02 02:28:46 lteo Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:24 sthen Exp $
 
 COMMENT =	data acquisition library for snort
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://www.snort.org/
 MAINTAINER =	Markus Lude <markus.lude@gmx.de>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =		pcap
 

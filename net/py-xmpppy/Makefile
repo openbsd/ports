@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/09/29 10:52:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:48:47 sthen Exp $
 
 COMMENT =		Python XMPP and Jabber implementation
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://xmpppy.sourceforge.net/
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xmpppy/}
 

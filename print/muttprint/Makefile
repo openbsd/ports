@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/19 19:13:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:56 sthen Exp $
 
 COMMENT =	pretty printing of your mails
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://muttprint.sourceforge.net
 MAINTAINER =	Ingo Feinerer <feinerer@logic.at>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

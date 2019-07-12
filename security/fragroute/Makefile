@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/06/10 11:05:02 jca Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:02 sthen Exp $
 
 COMMENT=		intercept, modify, and rewrite egress traffic
 
@@ -9,7 +9,7 @@ CATEGORIES=    		security net
 HOMEPAGE=		http://www.monkey.org/~dugsong/fragroute/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c event pcap dnet>=1
 
 MASTER_SITES=		http://monkey.org/~dugsong/fragroute/ \

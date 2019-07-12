@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.29 2016/07/06 21:06:21 sthen Exp $
+#   $OpenBSD: Makefile,v 1.30 2019/07/12 20:48:39 sthen Exp $
 
 COMMENT=	module for pcap access
 
@@ -7,7 +7,7 @@ DISTNAME=	Net-Pcap-0.17
 REVISION=	0
 CATEGORIES=	net
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m pcap perl pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/01/06 10:45:00 steven Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:35 sthen Exp $
 
 COMMENT =	Event based transparent Client/Server RPC framework
 
@@ -8,7 +8,7 @@ DISTNAME =	Event-RPC-1.10
 CATEGORIES =	net devel
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	devel/p5-Event \

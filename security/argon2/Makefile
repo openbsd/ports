@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/03/05 09:23:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:00 sthen Exp $
 
 COMMENT =	C implementation of Argon2 - password hashing function
 
@@ -14,7 +14,7 @@ CATEGORIES =	security
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # CC0 License or the Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread
 

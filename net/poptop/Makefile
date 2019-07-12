@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/09/04 12:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:48:44 sthen Exp $
 
 COMMENT=		PPTP Server
 
@@ -11,7 +11,7 @@ CATEGORIES=		net
 HOMEPAGE=		http://poptop.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c util 
 

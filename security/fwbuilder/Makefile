@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2019/07/12 20:49:02 sthen Exp $
 
 COMMENT =	firewall GUI
 DISTNAME =	fwbuilder-5.1.0.3599
@@ -8,7 +8,7 @@ REVISION =	7
 HOMEPAGE =	http://www.fwbuilder.org/
 
 # GPLv2+ mostly, some code under BSD-like
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto iconv m netsnmp QtGui QtNetwork
 WANTLIB += lzma pthread ${COMPILER_LIBCXX} util xml2 xslt z

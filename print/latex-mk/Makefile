@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/07/01 10:39:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:55 sthen Exp $
 
 COMMENT=	set of Makefile fragments to manage LaTeX documents
 
@@ -8,7 +8,7 @@ CATEGORIES=	print
 HOMEPAGE=	http://latex-mk.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=latex-mk/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/12/03 21:24:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:00 sthen Exp $
 
 COMMENT=		wireless auditing suite
 
@@ -9,7 +9,7 @@ CATEGORIES=    		security net
 EXTRACT_SUFX=           .tgz
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c crypto curses pcap
 
 MASTER_SITES=		https://spacehopper.org/mirrors/

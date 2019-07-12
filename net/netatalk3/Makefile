@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/12/21 14:07:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:33 sthen Exp $
 
 COMMENT=		AFP file and print services for IP networks
 
@@ -16,7 +16,7 @@ HOMEPAGE=		http://netatalk.sourceforge.net/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += avahi-client avahi-common c crypto db dbus-1 dbus-glib-1
 WANTLIB += event_core event_extra ffi gcrypt gio-2.0 glib-2.0

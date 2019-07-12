@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/06/04 19:52:09 kn Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:52 sthen Exp $
 
 COMMENT =	automatically scan for and configure wireless networks
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://github.com/farhaven/wireless
 MAINTAINER =	Gregor Best <gbe@unobtanium.de>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge
 WANTLIB =	c

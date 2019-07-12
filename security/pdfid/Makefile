@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/07/30 18:29:13 rpointel Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:09 sthen Exp $
 
 COMMENT =	tool to test a PDF file
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://blog.didierstevens.com/programs/pdf-tools/
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # public domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://didierstevens.com/files/software/
 

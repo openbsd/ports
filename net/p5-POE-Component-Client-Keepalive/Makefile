@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/01/25 10:10:19 cwen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:41 sthen Exp $
 
 COMMENT=	manage connections, with keep-alive
 
@@ -10,7 +10,7 @@ CATEGORIES=	net
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-POE \
 		net/p5-Net-IP-Minimal \

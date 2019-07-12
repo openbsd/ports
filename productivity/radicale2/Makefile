@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:59 sthen Exp $
 
 COMMENT =	simple CalDAV calendar server
 
@@ -11,7 +11,7 @@ REVISION =	0
 HOMEPAGE =	https://radicale.org/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PI =	Yes

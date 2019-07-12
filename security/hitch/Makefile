@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/12/09 12:05:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:02 sthen Exp $
 
 COMMENT =		libev-based high performance TLS proxy
 
@@ -8,7 +8,7 @@ REVISION =		2
 CATEGORIES =		security
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 HOMEPAGE =		https://hitch-tls.org
 

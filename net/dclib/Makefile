@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/02 19:43:20 danj Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:48:24 sthen Exp $
 
 COMMENT=	Library for direct-connect protocol
 
@@ -10,7 +10,7 @@ SHARED_LIBS=	dc	1.0
 HOMEPAGE=	http://wxdcgui.sourceforge.net/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += bz2 crypto iconv lzma m pthread ssl ${COMPILER_LIBCXX} xml2 z
 

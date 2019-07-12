@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/12/02 01:19:27 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:41 sthen Exp $
 
 COMMENT=	DNS module for the Perl Object Environment
 
@@ -9,7 +9,7 @@ CATEGORIES=	net
 FIX_EXTRACT_PERMISSIONS=	Yes
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-POE \
 		net/p5-Net-DNS

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/02/10 12:58:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:37 sthen Exp $
 
 COMMENT=	secure, extensible and configurable Perl FTPd
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	archivers/p5-Archive-Zip \
 		devel/p5-IO-stringy
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 FAKE_FLAGS=		NOCONF=1
 MODCPAN_EXAMPLES=	Yes

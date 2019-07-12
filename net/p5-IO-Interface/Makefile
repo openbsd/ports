@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:48:36 sthen Exp $
 
 COMMENT =	module for access to network card configuration information
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://github.com/lstein/LibIO-Interface-Perl
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
 
 # Artistic/GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

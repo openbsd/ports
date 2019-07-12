@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2018/11/18 21:09:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2019/07/12 20:49:03 sthen Exp $
 
 COMMENT =		extremely fast password cracker
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://www.openwall.com/john/
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2 & Public Domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

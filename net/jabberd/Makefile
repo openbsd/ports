@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2019/05/09 03:48:56 jca Exp $
+# $OpenBSD: Makefile,v 1.63 2019/07/12 20:48:29 sthen Exp $
 
 COMMENT=		jabber server
 DISTNAME=		jabberd-2.0s11
@@ -8,7 +8,7 @@ CATEGORIES=		net
 HOMEPAGE=		http://jabberd2.org/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c crypto ssl
 

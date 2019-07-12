@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/07 17:04:59 danj Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:48:39 sthen Exp $
 
 COMMENT=	module to manipulate raw ip packets
 
@@ -8,7 +8,7 @@ REVISION=	5
 CATEGORIES=	net
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pcap perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/20 22:15:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:49:04 sthen Exp $
 
 COMMENT=	GNU implementation of the SASL framework
 
@@ -12,7 +12,7 @@ REVISION =	4
 SHARED_LIBS +=  gsasl 0.0 # 14.6
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB+=	gcrypt gpg-error iconv idn intl
 LIB_DEPENDS=	devel/gettext,-runtime \

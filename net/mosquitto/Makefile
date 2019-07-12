@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/03/07 19:41:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:48:32 sthen Exp $
 
 COMMENT =		opensource MQTT broker
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://mosquitto.org/
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # EPL/EDL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c crypto m pthread ssl ${COMPILER_LIBCXX}
 

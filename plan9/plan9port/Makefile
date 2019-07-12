@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/09/04 12:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:48:54 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 BROKEN-powerpc =	threading issues
@@ -20,7 +20,7 @@ MAINTAINER =		Gleydson Soares <gsoares@openbsd.org>
 
 # mostly LPL (see LICENSE)
 # certain fonts may NOT be redistributed separately
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		X11 Xext c m pthread util fontconfig freetype z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/04 18:16:52 bluhm Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:00 sthen Exp $
 
 COMMENT =	crypto and TLS for C++11
 
@@ -15,7 +15,7 @@ HOMEPAGE =	https://botan.randombit.net/
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # BSD 2-Clause
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		${COMPILER_LIBCXX} bz2 c crypto lzma m z
 

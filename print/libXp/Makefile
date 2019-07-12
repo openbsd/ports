@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/03 23:04:55 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:55 sthen Exp $
 
 COMMENT =		X11 printing system
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://xprint.mozdev.org
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xau Xext xcb
 

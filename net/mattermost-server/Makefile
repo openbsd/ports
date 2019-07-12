@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/04 21:46:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:31 sthen Exp $
 
 COMMENT =	open source Slack-alternative
 
@@ -20,7 +20,7 @@ HOMEPAGE =	https://mattermost.com/
 MAINTAINER =	Robert Nagy <robert@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread
 

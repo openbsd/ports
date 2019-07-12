@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2016/03/20 19:56:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:53 sthen Exp $
 
 COMMENT=	perl module for accessing NNTP articles
 
@@ -11,7 +11,7 @@ CATEGORIES=	news
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Artistic/GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	security/p5-PGP-Sign
 BUILD_DEPENDS=	${RUN_DEPENDS}

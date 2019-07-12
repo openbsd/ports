@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2016/12/18 19:50:59 jca Exp $
+# $OpenBSD: Makefile,v 1.62 2019/07/12 20:48:53 sthen Exp $
 
 COMMENT=		USENET software package designed for small sites
 
@@ -9,7 +9,7 @@ CATEGORIES=		news
 HOMEPAGE=		http://leafnode.sourceforge.net/
 
 # MIT/BSD like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c pcre
 

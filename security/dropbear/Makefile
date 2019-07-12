@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/03/28 14:47:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:01 sthen Exp $
 
 COMMENT=	small SSH server and client
 
@@ -11,7 +11,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 HOMEPAGE=	https://matt.ucc.asn.au/dropbear/dropbear.html
 
 # unrestrictive, mostly MIT-like, see LICENSE
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c util z
 

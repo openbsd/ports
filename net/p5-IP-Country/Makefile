@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/03/01 14:16:42 giovanni Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:36 sthen Exp $
 
 COMMENT= 	fast lookup of country codes by IP address
 
@@ -15,7 +15,7 @@ CATEGORIES=	net
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES0 =		https://paclan.it/distfiles/
 

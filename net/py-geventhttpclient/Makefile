@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/24 16:26:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:45 sthen Exp $
 
 COMMENT =		high performance, concurrent HTTP client library
 
@@ -11,7 +11,7 @@ REVISION =		0
 HOMEPAGE =		https://github.com/gwik/geventhttpclient
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += pthread ${MODPY_WANTLIB}
 

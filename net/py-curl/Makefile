@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/04/28 20:51:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:48:45 sthen Exp $
 
 COMMENT=	Python interface to cURL library
 
@@ -11,7 +11,7 @@ REVISION=	0
 HOMEPAGE=	http://pycurl.sourceforge.net/
 
 # dual: LGPL or MIT-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += crypto curl nghttp2 pthread ssl z

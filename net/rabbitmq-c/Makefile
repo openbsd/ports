@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/02/27 22:50:39 mmcc Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:47 sthen Exp $
 
 COMMENT=	rabbitmq C library and commandline AMQP utilities
 
@@ -15,7 +15,7 @@ CATEGORIES=	net
 MAINTAINER=	Gregor Best <gbe@unobtanium.de>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES=	devel/cmake
 

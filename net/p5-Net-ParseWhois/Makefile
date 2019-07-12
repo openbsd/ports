@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:38 sthen Exp $
 
 COMMENT=	module for getting and parsing whois entries
 
@@ -10,6 +10,6 @@ EPOCH=		0
 CATEGORIES=	net
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

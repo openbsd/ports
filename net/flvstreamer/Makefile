@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/06/01 14:18:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:26 sthen Exp $
 
 COMMENT =		dump unencrypted RTMP media streams
 
@@ -11,7 +11,7 @@ CATEGORIES =		net
 HOMEPAGE =		http://www.nongnu.org/flvstreamer/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c pthread
 

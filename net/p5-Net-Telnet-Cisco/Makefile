@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/14 21:36:36 cwen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:40 sthen Exp $
 
 COMMENT=		module to interact with a Cisco router
 
@@ -10,7 +10,7 @@ CATEGORIES=		net
 HOMEPAGE=		http://nettelnetcisco.sourceforge.net/
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		net/p5-Net-Telnet>=3.02
 

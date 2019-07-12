@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2016/10/01 11:54:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2019/07/12 20:48:30 sthen Exp $
 
 COMMENT-main=	portable low-level networking library
 COMMENT-python= python interface to libdnet
@@ -15,7 +15,7 @@ CATEGORIES=	net
 HOMEPAGE=	https://github.com/dugsong/libdnet
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

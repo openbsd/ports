@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/06/13 15:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2019/07/12 20:49:00 sthen Exp $
 
 # XXX check if still needed at next update
 CXXFLAGS +=		-std=c++11
@@ -12,7 +12,7 @@ REVISION=		5
 HOMEPAGE=		http://www.workrave.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi

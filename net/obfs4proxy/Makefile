@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/09/04 12:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:34 sthen Exp $
 
 COMMENT =		a look-like nothing obfuscation protocol for TCP
 
@@ -17,7 +17,7 @@ https://gitweb.torproject.org/pluggable-transports/obfs4.git/tree/README.md
 MAINTAINER =		Sean Levy <attila@stalphonsos.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c pthread
 

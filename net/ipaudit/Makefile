@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/04/25 19:44:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:28 sthen Exp $
 
 COMMENT=		IP traffic summarizer
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://ipaudit.sourceforge.net/
 MASTER_SITES=		${HOMEPAGE}/download/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c m pcap
 
 EXTRACT_SUFX=		.tgz

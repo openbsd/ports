@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/09/04 12:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:49 sthen Exp $
 
 COMMENT=	flow-based network traffic analyser
 
@@ -9,7 +9,7 @@ CATEGORIES=	net
 HOMEPAGE=	https://code.google.com/p/softflowd/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=softflowd/}
 

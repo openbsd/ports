@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/20 22:15:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:59 sthen Exp $
 
 COMMENT =		tty-based carddav search tool
 
@@ -10,7 +10,7 @@ REVISION =		0
 MAINTAINER =		Timothy Brown <tbrown@freeshell.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c curl iconv intl xml2
 

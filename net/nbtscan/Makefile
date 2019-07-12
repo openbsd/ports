@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/10/17 11:15:35 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:33 sthen Exp $
 
 COMMENT=	NetBIOS name network scanner
 
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.inetcat.org/software/
 HOMEPAGE=	http://www.inetcat.org/software/nbtscan.html
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

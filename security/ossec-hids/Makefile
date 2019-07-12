@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/12/31 07:02:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:06 sthen Exp $
 
 COMMENT =	host-based intrusion detection system
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://www.ossec.net/
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += c crypto lib/inotify/inotify m magic pthread ssl
 

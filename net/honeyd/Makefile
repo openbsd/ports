@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/05/20 20:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2019/07/12 20:48:27 sthen Exp $
 
 COMMENT=	utility to create virtual hosts on a network
 DISTNAME=	honeyd-1.5c
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 HOMEPAGE=	http://www.honeyd.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c edit event m curses pcap pthread util z
 WANTLIB +=	${MODPY_WANTLIB} dnet>=1 pcre>=1 eventextra>=1

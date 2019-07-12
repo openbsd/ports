@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:47 sthen Exp $
 
 COMMENT=		remote filesystem snapshot utility
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://www.rsnapshot.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15

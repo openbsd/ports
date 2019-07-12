@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/01/22 21:47:04 kili Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:03 sthen Exp $
 
 COMMENT =		cryptographic hashes for bytestrings
 
@@ -7,7 +7,7 @@ REVISION =		2
 CATEGORIES =		devel security
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

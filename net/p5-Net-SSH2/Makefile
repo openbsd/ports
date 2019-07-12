@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/05/14 21:33:55 cwen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:48:39 sthen Exp $
 
 COMMENT =	support for the SSH 2 protocol via libssh2
 
@@ -7,7 +7,7 @@ CATEGORIES =	net
 MODULES =	cpan
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto perl ssl z ssh2
 

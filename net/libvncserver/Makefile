@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/30 10:15:54 jca Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:31 sthen Exp $
 
 COMMENT=		library for easy implementation of a VNC server
 
@@ -14,7 +14,7 @@ CATEGORIES=		net devel
 HOMEPAGE=		https://libvnc.github.io/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += crypto gcrypt gnutls jpeg lzo2 png pthread sasl2
 WANTLIB += ssl z

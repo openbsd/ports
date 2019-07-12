@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/04 01:18:59 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:37 sthen Exp $
 
 COMMENT=		FTP client class with automatic reconnect on failure
 
@@ -9,6 +9,6 @@ CATEGORIES=		net
 REVISION=		0
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

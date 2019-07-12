@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/01/11 19:27:08 rpe Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:48:51 sthen Exp $
 
 COMMENT=	lightweight userspace bandwidth shaper
 DISTNAME=	trickle-1.07
@@ -10,7 +10,7 @@ HOMEPAGE=	http://monkey.org/~marius/trickle/
 MASTER_SITES=	${HOMEPAGE}
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c event
 

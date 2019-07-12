@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/11 14:14:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:26 sthen Exp $
 
 COMMENT=		BGP route injector (supporting flow routes, etc)
 
@@ -11,7 +11,7 @@ DISTNAME=		exabgp-${MODPY_EGG_VERSION}
 CATEGORIES=		net
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes

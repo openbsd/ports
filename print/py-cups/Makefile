@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/04/28 20:51:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:48:56 sthen Exp $
 
 COMMENT=		CUPS bindings for Python
 
@@ -15,7 +15,7 @@ HOMEPAGE=		http://cyberelk.net/tim/software/pycups/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += cups iconv pthread ${MODPY_WANTLIB}
 

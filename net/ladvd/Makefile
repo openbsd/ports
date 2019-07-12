@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/01/11 19:27:06 rpe Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:30 sthen Exp $
 
 COMMENT =		link advertisement (LLDP/CDP etc) daemon
 
@@ -12,7 +12,7 @@ REVISION =		1
 MAINTAINER =		Paul de Weerd <weerd@weirdnet.nl>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-user=_ladvd --with-chroot-dir=/var/empty

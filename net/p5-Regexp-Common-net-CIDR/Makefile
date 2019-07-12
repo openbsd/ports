@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/03/20 19:56:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:48:41 sthen Exp $
 
 COMMENT=	provide patterns for CIDR blocks
 
@@ -9,7 +9,7 @@ DISTNAME =	Regexp-Common-net-CIDR-0.03
 CATEGORIES=	net textproc
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	textproc/p5-Regexp-Common
 BUILD_DEPENDS=	${RUN_DEPENDS}

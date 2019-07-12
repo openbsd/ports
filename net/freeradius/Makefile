@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2018/11/14 20:48:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2019/07/12 20:48:26 sthen Exp $
 
 PORTROACH=	limit:^2\.
 
@@ -31,7 +31,7 @@ MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 HOMEPAGE=	http://www.freeradius.org/
 
 # GPLv2 - LGPLv2 - OpenSSL exemption
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=autoconf dest
 AUTOCONF_VERSION=2.69

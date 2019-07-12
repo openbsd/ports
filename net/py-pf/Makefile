@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/10 19:17:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:46 sthen Exp $
 
 COMMENT =		Python module for managing PF
 
@@ -17,7 +17,7 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 CATEGORIES =		net
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

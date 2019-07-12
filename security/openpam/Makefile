@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/05/02 14:52:48 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:05 sthen Exp $
 
 COMMENT=	Pluggable Authentication Module
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.openpam.org/
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += util
 

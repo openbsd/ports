@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/03/18 16:29:49 giovanni Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:47 sthen Exp $
 
 COMMENT=	small daemon for DNSBLs
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://rbldnsd.io
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c z
 MODULES=		lang/python

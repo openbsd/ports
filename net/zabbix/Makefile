@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2019/06/25 20:25:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.158 2019/07/12 20:48:53 sthen Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -25,7 +25,7 @@ HOMEPAGE =		http://www.zabbix.com/
 MAINTAINER =		Robert Nagy <robert@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zabbix/}
 

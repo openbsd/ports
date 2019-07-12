@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/06 15:44:56 benoit Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:41 sthen Exp $
 
 COMMENT =	perl module for parsing nmap XML reports
 
@@ -13,7 +13,7 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 HOMEPAGE =	https://github.com/modernistik/Nmap-Parser
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	net/nmap \
 		textproc/p5-XML-Twig>=3.16

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/10/08 21:19:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:28 sthen Exp $
 
 COMMENT =		display bandwidth usage on an interface
 
@@ -9,7 +9,7 @@ CATEGORIES =		net
 HOMEPAGE =		http://www.ex-parrot.com/~pdw/iftop/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c curses m pcap pthread
 

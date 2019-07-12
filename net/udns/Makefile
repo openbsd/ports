@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/09/10 13:03:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:51 sthen Exp $
 
 COMMENT=		stub DNS resolver library
 
@@ -11,7 +11,7 @@ SHARED_LIBS+=	udns 1.0
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=		http://www.corpit.ru/mjt/udns.html
 MASTER_SITES=		http://www.corpit.ru/mjt/udns/ \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/20 20:52:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:49 sthen Exp $
 
 COMMENT =	network traffic monitor and statistics
 
@@ -15,7 +15,7 @@ HOMEPAGE =	http://github.com/mattthias/slurm/wiki/
 MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c curses
 

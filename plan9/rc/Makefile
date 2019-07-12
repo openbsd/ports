@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/17 16:19:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:48:54 sthen Exp $
 
 COMMENT=	shell (clone of plan9 shell)
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://static.tobold.org/rc/
 HOMEPAGE=	http://tobold.org/article/rc
 
 # zlib license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

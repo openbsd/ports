@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/09/04 12:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:51 sthen Exp $
 
 COMMENT=	tools for building tcp socket client/servers
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://cr.yp.to/ucspi-tcp.html
 MAINTAINER=	Jan Klemkow <j.klemkow@wemelug.de>
 
 # Public domain: http://cr.yp.to/distributors.html
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

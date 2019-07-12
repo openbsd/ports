@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/19 11:26:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:30 sthen Exp $
 
 COMMENT =	fork of libstrophe for use with profanity XMPP client
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=  mesode                    0.0 # 0.0
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # Dual licensed: MIT and GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += crypto expat ssl
 

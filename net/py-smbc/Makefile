@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/04/28 20:51:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:46 sthen Exp $
 
 COMMENT=		Python bindings to wrap the libsmbclient API
 
@@ -15,7 +15,7 @@ HOMEPAGE=		http://cyberelk.net/tim/software/pysmbc/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += smbclient pthread ${MODPY_WANTLIB}
 

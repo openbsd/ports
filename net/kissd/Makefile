@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/01 19:29:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:29 sthen Exp $
 
 COMMENT=	server for KiSS DP-500 network movie player
 
@@ -10,7 +10,7 @@ REVISION=	1
 HOMEPAGE=	http://www.benzedrine.ch/kissd.html
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

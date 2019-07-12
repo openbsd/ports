@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/02/06 09:19:40 jca Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:44 sthen Exp $
 
 COMMENT=		python interface to adns
 
@@ -10,7 +10,7 @@ REVISION=		6
 HOMEPAGE=		https://adns-python.googlecode.com/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/files/
 

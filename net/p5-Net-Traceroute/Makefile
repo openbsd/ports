@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/20 19:56:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:40 sthen Exp $
 
 COMMENT=		traceroute(1) functionality in perl
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://www.linnaean.org/~hag/perl/traceroute/traceroute.html
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # License: MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CPAN_AUTHOR=		HAG
 

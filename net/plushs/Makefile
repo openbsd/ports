@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/05 22:40:36 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:43 sthen Exp $
 
 COMMENT=		simple hostname scanner
 
@@ -9,7 +9,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=plushs/}
 
 HOMEPAGE=		http://plushs.sourceforge.net
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 SEPARATE_BUILD=		Yes

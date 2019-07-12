@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2018/04/24 12:07:26 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2019/07/12 20:48:57 sthen Exp $
 
 COMMENT=	tools to convert Xfig's .fig files  #'
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	print/ghostscript/gnu \
 		graphics/netpbm>=9.19
 
 # MIT-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	Xpm c m png>=2 iconv
 

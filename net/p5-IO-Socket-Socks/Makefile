@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/09/07 18:58:40 nigel Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:36 sthen Exp $
 
 COMMENT =	create SOCKS v4/v5 client or server
 
@@ -10,7 +10,7 @@ CPAN_AUTHOR =	OLEG
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*

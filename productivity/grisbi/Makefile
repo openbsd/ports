@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2019/07/12 20:48:58 sthen Exp $
 
 COMMENT=	personal accounting application
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.grisbi.org/
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 bz2 c cairo crypto dbus-1 dbus-glib-1 expat

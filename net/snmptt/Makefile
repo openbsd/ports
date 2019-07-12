@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/04/03 13:14:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:48:49 sthen Exp $
 
 COMMENT=	SNMP trap handler (translates traps to friendlier format)
 
@@ -10,7 +10,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://snmptt.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=snmptt/}
 EXTRACT_SUFX=		.tgz

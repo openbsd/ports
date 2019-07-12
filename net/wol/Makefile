@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/20 22:15:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:52 sthen Exp $
 
 COMMENT=		Wake On Lan client
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://ahh.sourceforge.net/wol/
 MAINTAINER=		Johan Fredin <johan@spelaroll.se>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv intl
 

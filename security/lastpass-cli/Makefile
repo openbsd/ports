@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/06/25 20:25:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:04 sthen Exp $
 
 COMMENT =	LastPass command line interface tool
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://github.com/lastpass/lastpass-cli
 MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c crypto curl kvm ssl xml2
 

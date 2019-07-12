@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/04/24 16:26:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:49:09 sthen Exp $
 
 COMMENT=	resource manager for PC/SC
 
@@ -17,7 +17,7 @@ MASTER_SITES=	https://alioth-archive.debian.org/releases/pcsclite/pcsclite/1.8.2
 EXTRACT_SUFX=	.tar.bz2
 
 # BSD and GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c pthread usb-1.0
 

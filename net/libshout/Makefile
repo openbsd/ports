@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/05/05 04:31:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:48:31 sthen Exp $
 
 COMMENT=	library for communicating with an icecast server
 
@@ -10,7 +10,7 @@ CATEGORIES=	net audio
 HOMEPAGE=	https://icecast.org/
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += m ogg pthread speex theora>=1 vorbis>=4
 

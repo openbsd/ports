@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/09/04 12:46:20 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:00 sthen Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
@@ -16,7 +16,7 @@ HOMEPAGE =		http://pogostick.net/~pnh/ntpasswd/
 MAINTAINER =		Ian Darwin <ian@openbsd.org>
 
 # Mix of GPL and LGPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 WANTLIB =		c
 
 MASTER_SITES =		http://pogostick.net/~pnh/ntpasswd/

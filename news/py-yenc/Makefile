@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/02 15:11:31 bket Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:53 sthen Exp $
 
 COMMENT=		yEnc encoding/decoding extension for Python
 
@@ -8,7 +8,7 @@ PKGNAME=		py-${DISTNAME}
 CATEGORIES=		news
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		pthread ${MODPY_WANTLIB}
 

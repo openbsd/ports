@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/20 22:15:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:30 sthen Exp $
 
 COMMENT =		KDE library implementing VK.com API
 VERSION =		4.12.0
@@ -12,7 +12,7 @@ HOMEPAGE =		https://projects.kde.org/projects/extragear/libs/libkvkontakte
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  iconv intl m pthread ${COMPILER_LIBCXX}
 WANTLIB += QtDBus QtGui QtNetwork QtSvg QtWebKit QtXml

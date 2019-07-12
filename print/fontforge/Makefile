@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/05/20 22:15:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2019/07/12 20:48:54 sthen Exp $
 
 BROKEN-i386=		hangs at runtime. started after switch to clang
 
@@ -21,7 +21,7 @@ HOMEPAGE=		https://fontforge.github.io/en-US/
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  ${MODPY_WANTLIB}
 WANTLIB += ICE SM X11 Xext Xft Xi Xrender c cairo expat ffi fontconfig

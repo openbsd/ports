@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/08 18:49:59 schwarze Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:55 sthen Exp $
 
 COMMENT=		filter for removing (La)TeX markup
 
@@ -6,7 +6,7 @@ DISTNAME=		l2a-1.2
 REVISION=		0
 CATEGORIES=     	print
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		http://monkey.org/~jose/openbsd/ports/

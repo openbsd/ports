@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/05/16 07:56:09 bket Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:49:09 sthen Exp $
 
 COMMENT=		PGP packet visualizer
 
@@ -8,7 +8,7 @@ CATEGORIES=		security
 HOMEPAGE=		https://www.mew.org/~kazu/proj/pgpdump/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c z
 

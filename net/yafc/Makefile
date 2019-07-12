@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/05/20 20:52:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:48:52 sthen Exp $
 
 COMMENT=	powerful console ftp client with many features
 
@@ -10,7 +10,7 @@ REVISION=	6
 HOMEPAGE=	http://yafc.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses readline
 

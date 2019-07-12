@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/13 15:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:43 sthen Exp $
 
 COMMENT =		merge Buddy List with a conversation window in Pidgin
 DISTNAME =		pidgin-window-merge-0.0.20130511
@@ -9,7 +9,7 @@ CATEGORIES =		net
 REVISION =		2
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 cairo dbus-1 dbus-glib-1 expat ffi fontconfig

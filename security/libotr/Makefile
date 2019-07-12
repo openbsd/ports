@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/10 15:25:03 tj Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:49:05 sthen Exp $
 
 COMMENT=	portable OTR messaging library and toolkit
 
@@ -15,7 +15,7 @@ MASTER_SITES=	${HOMEPAGE}
 MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c gcrypt gpg-error iconv intl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/05/07 12:40:58 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:35 sthen Exp $
 
 COMMENT =		event based IRC client API
 
@@ -10,7 +10,7 @@ CATEGORIES =		net devel
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

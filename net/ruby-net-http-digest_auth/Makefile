@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/10/26 23:55:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:48 sthen Exp $
 
 COMMENT=		implementation of RFC 2617, Digest Access Authentication
 
@@ -9,7 +9,7 @@ CATEGORIES=		net security
 HOMEPAGE=		http://docs.seattlerb.org/net-http-digest_auth/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

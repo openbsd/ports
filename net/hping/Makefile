@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/12/05 13:57:20 jca Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:48:27 sthen Exp $
 
 COMMENT=	command-line oriented TCP/IP packet assembler/analyzer
 
@@ -13,7 +13,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://www.hping.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c pcap
 

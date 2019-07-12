@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/05/20 20:52:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:48:52 sthen Exp $
 COMMENT=	enhanced talk that allows for multiple parties
 
 DISTNAME=	ytalk-3.1.1
@@ -9,7 +9,7 @@ MASTER_SITES=	https://distfiles.nl/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses 
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/20 19:56:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:41 sthen Exp $
 
 COMMENT=		POE-based parser for the IRC protocol
 
@@ -9,7 +9,7 @@ REVISION=		0
 CATEGORIES=		net
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		devel/p5-POE
 BUILD_DEPENDS=		${RUN_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:06 sthen Exp $
 
 COMMENT=	perl interface to the SASL auth framework
 
@@ -8,7 +8,7 @@ DISTNAME=	Authen-SASL-2.16
 CATEGORIES=	security
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	security/p5-Digest-HMAC

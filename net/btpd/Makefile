@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/01/11 09:35:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:48:23 sthen Exp $
 
 COMMENT=		BitTorrent Protocol Daemon
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://wiki.github.com/btpd/btpd/
 MASTER_SITES=		https://github.com/downloads/btpd/btpd/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c crypto m pthread
 

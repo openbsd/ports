@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/09/29 10:52:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:59 sthen Exp $
 
 COMMENT=	console CardDAV client with mutt support
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://lostpackets.de/pycarddav/
 CATEGORIES=		productivity
 
 # Expat/MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_PI =		Yes
 

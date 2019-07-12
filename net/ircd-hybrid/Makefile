@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/06/01 09:47:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2019/07/12 20:48:29 sthen Exp $
 
 COMMENT =	Internet Relay Chat server
 
@@ -10,7 +10,7 @@ EXTRACT_SUFX =	.tgz
 HOMEPAGE =	http://ircd-hybrid.com/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c crypto ltdl ssl
 

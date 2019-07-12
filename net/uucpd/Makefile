@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/26 20:49:27 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:51 sthen Exp $
 
 COMMENT =		UUCP inetd program
 
@@ -6,7 +6,7 @@ DISTNAME =		uucpd-1.0
 
 CATEGORIES =		net mail news
 
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

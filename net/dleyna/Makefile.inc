@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2017/10/09 17:45:27 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2019/07/12 20:48:25 sthen Exp $
 
 CATEGORIES ?=		net multimedia
 HOMEPAGE ?=		https://01.org/dleyna/
@@ -9,7 +9,7 @@ GH_TAGNAME ?=		0.6.0
 MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 USE_GMAKE=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static

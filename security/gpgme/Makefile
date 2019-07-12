@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2019/06/24 20:56:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2019/07/12 20:49:02 sthen Exp $
 
 COMMENT-main =		GnuPG Made Easy
 COMMENT-qt =		Qt bindings for GPGme
@@ -21,7 +21,7 @@ MASTER_SITES =		${MASTER_SITE_GNUPG:=gpgme/}
 EXTRACT_SUFX =		.tar.bz2
 
 # GPLv2 - LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB = assuan gpg-error iconv intl
 WANTLIB-main = ${WANTLIB} c m

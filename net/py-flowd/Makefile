@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 16:12:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:48:45 sthen Exp $
 
 COMMENT=		Python API for flowd binary log files
 
@@ -11,7 +11,7 @@ CATEGORIES=		net devel
 HOMEPAGE=		http://www.mindrot.org/flowd.html
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/22 13:39:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:49:08 sthen Exp $
 
 COMMENT =	interface to md4 message-digest algorithm
 
@@ -12,7 +12,7 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 #
 # This implementation is derived from the reference C code in RFC 1320.
 # See "A.3 md4c.c" for the copyright notice.
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

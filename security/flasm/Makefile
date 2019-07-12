@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/01/19 23:01:41 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:02 sthen Exp $
 
 COMMENT =		disassembles SWF
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://www.nowrap.de/flasm
 MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # https://github.com/coolwanglu/flasm/blob/master/LICENSE.TXT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c z
 

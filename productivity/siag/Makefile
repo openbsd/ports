@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/17 16:19:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:48:59 sthen Exp $
 
 COMMENT=		tightly integrated, free office package
 
@@ -10,7 +10,7 @@ CATEGORIES=		productivity x11
 HOMEPAGE=		http://siag.nu/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE Mowitz SM X11 Xext Xmu Xpm Xt c curses m neXtaw
 

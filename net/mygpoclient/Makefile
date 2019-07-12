@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:33 sthen Exp $
 
 COMMENT=		gpodder.net client library
 
@@ -10,7 +10,7 @@ REVISION=		0
 MAINTAINER=		Tim Meunier <trondd@kagu-tsuchi.com>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

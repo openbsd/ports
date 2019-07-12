@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/27 19:05:22 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:36 sthen Exp $
 
 COMMENT =	Perl API for MaxMind's GeoIP2 web services and databases
 
@@ -9,7 +9,7 @@ CATEGORIES =	net
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 

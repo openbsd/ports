@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:54 sthen Exp $
 
 COMMENT=		converts .dvi files to plain text
 
@@ -7,7 +7,7 @@ REVISION=		0
 CATEGORIES=     	print
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		http://www.mesa.nl/pub/dvi2tty/

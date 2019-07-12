@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/10/11 23:50:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:48:24 sthen Exp $
 
 COMMENT=		small and efficient HTTP crawler
 
@@ -9,7 +9,7 @@ CATEGORIES=		net
 HOMEPAGE=		http://www.monkey.org/~provos/crawl/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c event lib/db/db=3
 

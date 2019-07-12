@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/05/20 22:15:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:48:58 sthen Exp $
 
 COMMENT=		GTD organizer for GNOME
 
@@ -11,7 +11,7 @@ CATEGORIES=		productivity
 HOMEPAGE=		http://gtgnome.net/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://launchpad.net/gtg/${MODPY_EGG_VERSION:R}/${MODPY_EGG_VERSION}/+download/
 

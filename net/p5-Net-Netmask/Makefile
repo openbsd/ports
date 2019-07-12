@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/14 21:28:53 cwen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:38 sthen Exp $
 
 COMMENT =	parse, manipulate and lookup IPv4 CIDR blocks
 
@@ -8,7 +8,7 @@ DISTNAME =	Net-Netmask-1.9104
 CATEGORIES =	net
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 TEST_DEPENDS =	devel/p5-Test-UseAllModules>=0.17 \
 		devel/p5-Test2-Suite>=0.000111

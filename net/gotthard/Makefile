@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/01/22 21:17:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:27 sthen Exp $
 
 COMMENT=		ssh through https proxy tunnel
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.nazgul.ch/dev.html
 MAINTAINER=		Marcus Glocker <marcus@nazgul.ch>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 NO_TEST=		Yes

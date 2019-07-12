@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/01/22 22:05:37 kili Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:48:27 sthen Exp $
 
 COMMENT =		library for client-side HTTP
 
@@ -12,7 +12,7 @@ CATEGORIES =		net devel
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/04/30 13:23:09 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:41 sthen Exp $
 
 COMMENT=	perl implementation of XML-RPC
 
@@ -8,7 +8,7 @@ DISTNAME =	RPC-XML-0.80
 CATEGORIES=	net devel
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		www/p5-libwww \
 			textproc/p5-XML-Parser

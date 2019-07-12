@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:46 sthen Exp $
 
 COMMENT =		python socket.io client library
 
@@ -12,7 +12,7 @@ CATEGORIES =		net
 HOMEPAGE =		https://github.com/invisibleroads/socketIO-client
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODPY_PI_DIR =		s/socketIO-client

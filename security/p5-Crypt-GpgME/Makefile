@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/04/14 10:14:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:07 sthen Exp $
 
 COMMENT=	Perl interface to gpgme
 
@@ -7,7 +7,7 @@ REVISION=	5
 CATEGORIES=	devel security
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  assuan c gpg-error gpgme iconv intl perl
 

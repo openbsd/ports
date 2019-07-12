@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/20 22:15:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:25 sthen Exp $
 
 COMMENT =	GNU dictionary server
 
@@ -15,7 +15,7 @@ HOMEPAGE =	https://puszcza.gnu.org.ua/software/dico/
 MAINTAINTER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto curses gsasl iconv idn intl lber-2.4 ldap-2.4
 WANTLIB += ltdl pam pcre readline sasl2 ssl z

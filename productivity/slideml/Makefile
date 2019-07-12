@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/11 19:46:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:59 sthen Exp $
 
 COMMENT =		HTML slide generator based on SlideML
 
@@ -15,7 +15,7 @@ HOMEPAGE =		https://github.com/conformal/slideml/wiki
 MAINTAINER =		Laurent Fanis <laurent.fanis@gmail.com>
 
 #W3C Software Notice and License & BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		graphics/p5-Image-Size 
 

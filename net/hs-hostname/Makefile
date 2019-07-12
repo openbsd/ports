@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/01/22 21:46:26 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:27 sthen Exp $
 
 COMMENT =		Haskell package for determining the hostname
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel net
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/10/27 19:59:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:00 sthen Exp $
 
 COMMENT=		automated password generator
 
@@ -9,7 +9,7 @@ CATEGORIES=     	security
 HOMEPAGE=		http://www.adel.nursat.kz/apg/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c m
 
 MASTER_SITES=		http://www.adel.nursat.kz/apg/download/

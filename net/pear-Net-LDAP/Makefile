@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/10/17 14:15:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:43 sthen Exp $
 
 COMMENT=	pear ldap
 
@@ -9,7 +9,7 @@ CATEGORIES=	net
 MODULES=	lang/php www/pear
 
 # BSD License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-ldap
 

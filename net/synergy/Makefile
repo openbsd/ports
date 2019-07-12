@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/04/15 17:32:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:48:49 sthen Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
@@ -14,7 +14,7 @@ GH_TAGNAME=		v${VERSION}-stable
 HOMEPAGE=		https://synergy-foss.org/
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xext Xi Xinerama Xrandr
 WANTLIB += Xtst c curl m

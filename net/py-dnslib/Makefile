@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:45 sthen Exp $
 
 COMMENT=		library to en/decode DNS wire-format packets for Python
 
@@ -13,7 +13,7 @@ REVISION=		1
 MAINTAINER=		Bryan Everly <bryan@bceassociates.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

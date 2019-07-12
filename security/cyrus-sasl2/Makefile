@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2019/07/10 15:25:03 tj Exp $
+# $OpenBSD: Makefile,v 1.109 2019/07/12 20:49:01 sthen Exp $
 
 # XXX merge this patch and rid of the dot.la files?
 https://git.archlinux.org/svntogit/packages.git/tree/trunk/0030-dont_use_la_files_for_opening_plugins.patch?h=packages/cyrus-sasl
@@ -17,7 +17,7 @@ HOMEPAGE=		http://www.cyrusimap.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # see the COPYRIGHT file in package sources
-PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://www.cyrusimap.org/releases/ \
 			ftp://ftp.cyrusimap.org/cyrus-sasl/

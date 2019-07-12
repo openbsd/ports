@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:37:55 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:00 sthen Exp $
 
 COMMENT =	command-line oriented todo list system
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://yokadi.github.com/
 EXTRACT_SUFX =	.tar.bz2
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WRKDIST =	${WRKDIR}/yokadi-${MODPY_EGG_VERSION}
 MODULES =	lang/python

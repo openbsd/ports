@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/01/22 21:23:53 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:03 sthen Exp $
 
 # used by cabal-install
 
@@ -9,7 +9,7 @@ REVISION =		0
 CATEGORIES=		security
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES=		lang/ghc
 

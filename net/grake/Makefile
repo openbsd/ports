@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/10 15:15:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:27 sthen Exp $
 
 COMMENT =		tool for scanning webpages for Youtube links
 
@@ -8,7 +8,7 @@ REVISION =		1
 CATEGORIES =		net
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=grake/}
 

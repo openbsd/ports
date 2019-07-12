@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/07/06 05:49:10 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:48:25 sthen Exp $
 
 COMMENT=		SOCKS client wrapper for *BSD
 DISTNAME=		dsocks-1.7
@@ -11,7 +11,7 @@ HOMEPAGE=		http://monkey.org/~dugsong/dsocks/
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=dsocks/}
 

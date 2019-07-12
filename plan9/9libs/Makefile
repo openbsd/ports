@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:48:53 sthen Exp $
 
 # varargs misuse, and unportable software
 ONLY_FOR_ARCHS= 	i386 sparc64
@@ -18,7 +18,7 @@ MODGNU_SHARED_LIBS=	Xg	'' \
 HOMEPAGE=		http://www.netlib.org/research/9libs/
 
 # BSD licence
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =		ICE SM X11 Xau Xdmcp Xt m xcb
 

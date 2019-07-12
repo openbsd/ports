@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/03/11 19:59:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:04 sthen Exp $
 
 COMMENT=	encryption backend
 
@@ -13,7 +13,7 @@ CATEGORIES=	security
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += bz2 m mcrypt mhash z
 

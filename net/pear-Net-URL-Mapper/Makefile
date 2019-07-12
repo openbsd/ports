@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/04/01 18:46:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:43 sthen Exp $
 
 COMMENT=	simple and flexible way to build nice URLs
 
@@ -9,7 +9,7 @@ CATEGORIES=	net
 MODULES=	www/pear
 
 # BSD License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		net/pear-Net-URL
 

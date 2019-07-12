@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/04/28 20:52:45 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:25 sthen Exp $
 
 COMMENT=	test performance of a remote TCP service
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://github.com/bortzmeyer/echoping
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c crypto m ssl
 
 NO_TEST=		Yes

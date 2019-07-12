@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:37 sthen Exp $
 
 COMMENT=	Internet Protocol v6 layer object
 
@@ -10,7 +10,7 @@ CATEGORIES=	net
 MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	net/p5-Net-Frame
 BUILD_DEPENDS=	${RUN_DEPENDS}

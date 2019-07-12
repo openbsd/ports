@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/01 23:34:17 juanfra Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:45 sthen Exp $
 
 COMMENT =		FTP server library for Python
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/giampaolo/pyftpdlib
 MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

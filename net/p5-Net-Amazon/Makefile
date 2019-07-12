@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/02/15 05:06:45 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:36 sthen Exp $
 
 COMMENT=		Perl Interface to Amazon.{co.uk,com} Web Services
 
@@ -8,7 +8,7 @@ DISTNAME=		Net-Amazon-0.62
 CATEGORIES=		net
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	textproc/p5-XML-Simple>=2.08 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:48:58 sthen Exp $
 
 COMMENT =		command line double-entry accounting ledger
 
@@ -16,7 +16,7 @@ HOMEPAGE =		http://www.ledger-cli.org/
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_unit_test_framework-mt

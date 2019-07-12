@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:48:57 sthen Exp $
 
 COMMENT=	CUPS drivers for SPL printers
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://splix.ap2c.org/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c cups cupsimage jbig85 m pthread ${COMPILER_LIBCXX}
 

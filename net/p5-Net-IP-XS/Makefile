@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/16 15:35:46 cwen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:38 sthen Exp $
 
 COMMENT =	perl module for IPv4/IPv6 address parsing
 
@@ -9,7 +9,7 @@ DISTNAME =	Net-IP-XS-0.21
 CATEGORIES =	net
 
 # GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

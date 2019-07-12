@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:48:31 sthen Exp $
 
 COMMENT=		lightweight Jabber client library
 
@@ -11,7 +11,7 @@ CATEGORIES=		net devel
 HOMEPAGE=       	http://groups.google.com/group/loudmouth-dev/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  crypto glib-2.0 iconv idn>=16 intl pcre pthread ssl
 

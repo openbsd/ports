@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/20 20:52:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:48:50 sthen Exp $
 
 COMMENT=	5250 telnet protocol and terminal
 
@@ -12,7 +12,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://tn5250.sourceforge.net/
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tn5250/}
 

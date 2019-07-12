@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/12/14 11:46:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:24 sthen Exp $
 
 COMMENT=		high-level C binding for ZeroMQ
 
@@ -12,7 +12,7 @@ CATEGORIES=		net
 HOMEPAGE=		http://czmq.zeromq.org/
 
 # MPLv2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c ossp-uuid pthread sodium zmq
 

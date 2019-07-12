@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/03/20 19:56:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:06 sthen Exp $
 
 COMMENT=	Perl module to authenticate against a RADIUS server
 
@@ -14,7 +14,7 @@ REVISION=	0
 MAINTAINER=	Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Authen/}
 WRKDIST=	${WRKDIR}/Authen-Radius-$V

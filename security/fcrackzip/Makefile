@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/11 23:50:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:01 sthen Exp $
 
 COMMENT =	ZIP password cracker
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://home.schmorp.de/marc/fcrackzip.html
 MAINTAINER =	Jung Lee <moorang@gmail.com>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c
 

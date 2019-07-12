@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2019/03/20 16:52:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2019/07/12 20:48:27 sthen Exp $
 
 BROKEN-hppa=		libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
@@ -17,7 +17,7 @@ HOMEPAGE=		http://www.gnugk.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL c crypto curl expat h323 kvm
 WANTLIB += lber-2.4 ldap-2.4 ldap_r-2.4 lua5.2 m maxminddb netsnmp

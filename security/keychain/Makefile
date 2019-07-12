@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/03/08 15:06:55 bket Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:49:04 sthen Exp $
 
 COMMENT=		front-end to ssh-agent and gpg-agent
 
@@ -8,7 +8,7 @@ CATEGORIES=		security
 HOMEPAGE=		https://www.funtoo.org/Keychain
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://www.funtoo.org/archive/keychain/
 EXTRACT_SUFX=		.tar.bz2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/20 22:15:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:48:52 sthen Exp $
 
 COMMENT=	XML-RPC C/C++ client-server implementation
 CATEGORIES=	net devel textproc
@@ -12,7 +12,7 @@ HOMEPAGE=	http://xmlrpc-epi.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmlrpc-epi/}
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 LIB_DEPENDS=		converters/libiconv
 

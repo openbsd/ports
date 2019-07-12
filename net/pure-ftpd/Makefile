@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2018/04/06 14:08:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2019/07/12 20:48:44 sthen Exp $
 
 COMMENT=	small, easy to set up, fast and very secure FTP server
 
@@ -17,7 +17,7 @@ HOMEPAGE=	http://www.pureftpd.org/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto iconv sodium ssl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:39 sthen Exp $
 
 COMMENT =	ssh wrapper to execute remote interactive commands
 
@@ -9,7 +9,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	devel/p5-Expect

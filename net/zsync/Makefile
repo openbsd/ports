@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/09/25 09:16:13 robert Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:53 sthen Exp $
 
 COMMENT=	gzip-aware file mirroring over http
 
@@ -11,7 +11,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://zsync.moria.org.uk/
 
 # Artistic v2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m
 

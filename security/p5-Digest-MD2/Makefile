@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:57:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:08 sthen Exp $
 
 COMMENT=	perl interface to the MD2 Algorithm
 
@@ -8,7 +8,7 @@ CATEGORIES=	security
 REVISION =	0
 
 # GPL/Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

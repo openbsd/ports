@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2014/03/18 13:17:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 20:48:56 sthen Exp $
 
 COMMENT=	utilities for manipulating PostScript documents
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://github.com/rrthomas/psutils
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD-like (${WRKSRC}/LICENSE)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:23 sthen Exp $
 
 COMMENT=	simple IRC relay proxy with support for virtual hosting
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://gotbnc.com/
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 RUN_DEPENDS=		misc/dialog

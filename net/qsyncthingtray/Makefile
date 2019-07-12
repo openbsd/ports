@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/03/08 20:00:50 cwen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:47 sthen Exp $
 
 COMMENT =	system tray app for Syncthing
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://github.com/sieren/QSyncthingTray
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cmake \
 		x11/qt5

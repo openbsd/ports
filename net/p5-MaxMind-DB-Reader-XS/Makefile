@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/27 18:57:09 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:36 sthen Exp $
 
 ONLY_FOR_ARCHS = ${LP64_ARCHS}
 
@@ -11,7 +11,7 @@ CATEGORIES =	net
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Artistic 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c maxminddb perl
 

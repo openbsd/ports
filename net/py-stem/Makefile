@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:46 sthen Exp $
 
 COMMENT =		Tor controller library
 
@@ -18,7 +18,7 @@ HOMEPAGE =		https://stem.torproject.org
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVORS =		python3
 FLAVOR ?=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/09/01 10:53:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:48:31 sthen Exp $
 
 # see md.h, add others
 ONLY_FOR_ARCHS =	amd64 alpha i386
@@ -16,7 +16,7 @@ HOMEPAGE =		http://state-threads.sourceforge.net/
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # MPLv1.1 or GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=state-threads/}
 

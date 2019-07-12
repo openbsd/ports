@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/06 19:51:38 danj Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:32 sthen Exp $
 
 COMMENT=	ncurses-based MUD client with triggers, aliases, colors
 
@@ -8,7 +8,7 @@ HOMEPAGE=	http://dw.nl.eu.org/mudix.html
 REVISION=	0
 
 # BSD-style
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c curses panel
 
 MASTER_SITES=	http://dw.nl.eu.org/mudix/

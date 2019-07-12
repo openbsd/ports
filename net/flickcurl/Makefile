@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/09/04 12:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:48:26 sthen Exp $
 
 COMMENT =		flickr API library and utility
 
@@ -11,7 +11,7 @@ CATEGORIES =		net
 HOMEPAGE =		http://librdf.org/flickcurl/
 
 # LGPLv2.1/GPLv2/Apachev2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  c crypto curl>=10 iconv intl lzma m nghttp2 pthread raptor2
 WANTLIB += ssl xml2>=9 xslt yajl z

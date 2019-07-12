@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2015/01/22 12:52:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:25 sthen Exp $
 
 DISTNAME=	dnstracer-1.9
 CATEGORIES=	net
 
 # bsd
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/02/07 12:32:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 20:48:34 sthen Exp $
 
 COMMENT=	network grep
 
@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tar.bz2
 HOMEPAGE=	http://ngrep.sourceforge.net/
 
 # custom BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c pcap pcre
 LIB_DEPENDS=	devel/pcre

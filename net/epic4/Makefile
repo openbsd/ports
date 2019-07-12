@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2019/05/20 20:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2019/07/12 20:48:26 sthen Exp $
 
 COMMENT=	(E)nhanced (P)rogrammable (I)RC-II (C)lient
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.epicsol.org/
 MAINTAINER=	Adam Jeanguenat <avj@6v6.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto m curses perl pthread ssl
 

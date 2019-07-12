@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/04/18 17:30:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:48:52 sthen Exp $
 
 COMMENT=	l2tp client/server
 
@@ -11,7 +11,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://www.xelerance.com/services/software/xl2tpd/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c util
 

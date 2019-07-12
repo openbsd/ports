@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/06 19:36:30 danj Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:56 sthen Exp $
 
 COMMENT=	scalable PostScript fonts generator for MetaFont
 
@@ -9,7 +9,7 @@ REVISION =	6
 HOMEPAGE=	http://lilypond.org/mftrace/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://lilypond.org/download/sources/mftrace/
 

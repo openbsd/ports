@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2019/05/20 22:15:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2019/07/12 20:49:04 sthen Exp $
 
 COMMENT=		error codes for GnuPG related software
 
@@ -14,7 +14,7 @@ HOMEPAGE=		https://www.gnupg.org/software/libgpg-error/index.html
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2 - LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv intl
 

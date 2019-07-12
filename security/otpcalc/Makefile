@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:06 sthen Exp $
 
 COMMENT=	OTP and S/Key calculator for X
 
@@ -9,7 +9,7 @@ CATEGORIES=    	security
 HOMEPAGE=	http://www.killa.net/infosec/otpCalc/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo crypto expat fontconfig

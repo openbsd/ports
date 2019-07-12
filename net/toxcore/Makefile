@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/03 15:08:03 cwen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:50 sthen Exp $
 
 COMMENT =		Tox client library
 
@@ -16,7 +16,7 @@ CATEGORIES =		net telephony
 HOMEPAGE =		https://tox.chat/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB = c config m opus pthread sodium vpx
 

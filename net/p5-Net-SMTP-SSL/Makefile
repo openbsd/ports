@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/04/30 11:30:50 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:39 sthen Exp $
 
 COMMENT =	SSL support for Net::SMTP
 
@@ -8,7 +8,7 @@ DISTNAME =	Net-SMTP-SSL-1.04
 CATEGORIES =	net mail
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		security/p5-IO-Socket-SSL
 

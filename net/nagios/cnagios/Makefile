@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/04/21 20:59:40 rpe Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:48:33 sthen Exp $
 
 COMMENT =		console interface for nagios
 
@@ -11,7 +11,7 @@ CATEGORIES =		net
 WANTLIB =		c perl pthread curses m
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 NO_TEST =		Yes
 

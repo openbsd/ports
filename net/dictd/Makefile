@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/06/04 03:25:50 schwarze Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:25 sthen Exp $
 
 COMMENT-main=	Dictionary Server Protocol client
 COMMENT-server=	Dictionary Server Protocol server
@@ -16,7 +16,7 @@ CATEGORIES=	net education
 HOMEPAGE=	http://www.dict.org
 
 # GPL v2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dict/}

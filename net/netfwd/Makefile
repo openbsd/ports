@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/11 21:27:48 mmcc Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:34 sthen Exp $
 
 COMMENT=	netword traffic redirector
 
@@ -11,7 +11,7 @@ MAINTAINER=	Alexey Vatchenko <av@bsdua.org>
 HOMEPAGE=	http://www.bsdua.org/netfwd.html
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/01/29 00:04:23 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:30 sthen Exp $
 
 COMMENT =		library which implements the IRC protocol
 DISTNAME =		libircclient-1.9
@@ -8,7 +8,7 @@ HOMEPAGE =		http://www.ulduzsoft.com/linux/libircclient/
 SHARED_LIBS =		ircclient 1.0
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += crypto pthread ssl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:43 sthen Exp $
 
 COMMENT=	class for parsing and handling URL
 
@@ -9,6 +9,6 @@ CATEGORIES=	net
 MODULES=	www/pear
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

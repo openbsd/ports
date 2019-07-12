@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/01/23 11:31:22 jca Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:04 sthen Exp $
 
 COMMENT=		IPC library used by GnuPG and gpgme
 
@@ -12,7 +12,7 @@ CATEGORIES=		security devel
 HOMEPAGE=		https://www.gnupg.org/software/libassuan/index.html
 
 # LGPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += gpg-error iconv intl
 

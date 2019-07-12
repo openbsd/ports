@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/04/01 20:30:59 sebastia Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:40 sthen Exp $
 
 COMMENT=		XMPP perl library
 
@@ -9,7 +9,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	perl modbuild
 

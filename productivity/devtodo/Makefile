@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/05/20 20:52:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:48:58 sthen Exp $
 
 COMMENT=		reminder/task program aimed at developers
 
@@ -12,7 +12,7 @@ MASTER_SITES=		http://swapoff.org/files/devtodo/ \
 			https://spacehopper.org/mirrors/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m curses readline ${COMPILER_LIBCXX}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2019/06/02 02:07:44 lteo Exp $
+# $OpenBSD: Makefile,v 1.103 2019/07/12 20:48:49 sthen Exp $
 
 COMMENT =		highly flexible sniffer/NIDS
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://www.snort.org/
 MAINTAINER =		Markus Lude <markus.lude@gmx.de>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto daq dnet luajit-5.1 lzma m nghttp2 pcap pcre pthread z
 

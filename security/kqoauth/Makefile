@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:04 sthen Exp $
 
 COMMENT =	OAuth support library for Qt-based applications
 V =		0.97
@@ -11,7 +11,7 @@ REVISION =	1
 SHARED_LIBS =	kqoauth		0.0
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 WANTLIB += m pthread ${COMPILER_LIBCXX}

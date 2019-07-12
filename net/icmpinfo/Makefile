@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/04/17 18:45:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:28 sthen Exp $
 
 COMMENT=	look at the icmp messages received by the host
 
@@ -8,7 +8,7 @@ CATEGORIES=	net sysutils
 
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=system/network/admin/}
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 ALL_TARGET=

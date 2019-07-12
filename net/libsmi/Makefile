@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/11 20:28:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:31 sthen Exp $
 
 COMMENT=	library/tools (incl smilint) to access SMI MIB information
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.ibr.cs.tu-bs.de/projects/libsmi/
 MAINTAINER=	Nigel Taylor <nigel@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m
 

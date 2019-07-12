@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/03/18 00:03:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:49:00 sthen Exp $
 
 COMMENT=		Advanced Intrusion Detection Environment
 
@@ -10,7 +10,7 @@ CATEGORIES=		security
 HOMEPAGE=		https://github.com/aide/aide
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m mhash pcre z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/05/11 15:03:42 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:37 sthen Exp $
 
 COMMENT =	Perl interface to the DICT protocol
 
@@ -8,7 +8,7 @@ DISTNAME =	Net-Dict-2.21
 CATEGORIES =	net
 
 # GPL/Artistic License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-AppConfig-Std
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/09 16:41:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:48:45 sthen Exp $
 
 COMMENT =		library for Junos automation
 
@@ -11,7 +11,7 @@ CATEGORIES =		net
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apache2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 FLAVORS =		python3

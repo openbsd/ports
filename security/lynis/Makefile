@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/05/02 09:27:09 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:49:05 sthen Exp $
 
 COMMENT=	security auditing tool
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://cisofy.com
 MAINTAINER=	Gonzalo L. R. <gonzalo@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://downloads.cisofy.com/lynis/
 

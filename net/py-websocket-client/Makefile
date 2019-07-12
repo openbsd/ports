@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/04/28 20:51:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:46 sthen Exp $
 
 COMMENT =		WebSocket client for Python
 
@@ -12,7 +12,7 @@ CATEGORIES =		net
 HOMEPAGE =		https://github.com/liris/websocket-client
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 MODPY_PI_DIR =		w/websocket-client

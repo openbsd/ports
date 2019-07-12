@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/05/20 22:15:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:48:59 sthen Exp $
 
 COMMENT=		diary and journal application
 
@@ -11,7 +11,7 @@ REVISION=		2
 CATEGORIES=		productivity
 
 # GPLv2+ - GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/03/10 12:40:35 rpointel Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:49:09 sthen Exp $
 
 COMMENT =	parse a PDF document
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://blog.didierstevens.com/programs/pdf-tools/
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # public domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://didierstevens.com/files/software/
 

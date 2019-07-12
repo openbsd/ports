@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2018/02/13 19:20:06 danj Exp $
+# $OpenBSD: Makefile,v 1.81 2019/07/12 20:48:47 sthen Exp $
 
 COMMENT =	mirroring/synchronization over low bandwidth links
 
@@ -12,7 +12,7 @@ FLAVORS =	iconv
 FLAVOR ?=
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c
 

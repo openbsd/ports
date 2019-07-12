@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/05/22 11:54:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/12 20:48:26 sthen Exp $
 
 COMMENT =		graphical network monitor
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://etherape.sourceforge.net/
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  ICE ORBit-2 ORBitCosNaming-2 SM X11 Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2

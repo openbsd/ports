@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:37 sthen Exp $
 
 COMMENT =	update dyndns.org with correct ip address
 
@@ -8,7 +8,7 @@ DISTNAME =	Net-DNS-DynDNS-0.9993
 CATEGORIES =	net
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	www/p5-libwww
 BUILD_DEPENDS =	${RUN_DEPENDS}

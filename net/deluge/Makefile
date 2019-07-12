@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/10 21:01:27 tj Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:48:24 sthen Exp $
 
 COMMENT =	bittorrent client
 
@@ -11,7 +11,7 @@ CATEGORIES =	net
 HOMEPAGE =	https://www.deluge-torrent.org/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://ftp.osuosl.org/pub/deluge/source/
 

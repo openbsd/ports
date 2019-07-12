@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/01 16:04:26 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:51 sthen Exp $
 
 COMMENT=	tools for building unix domain socket client/servers
 
@@ -9,7 +9,7 @@ CATEGORIES=     	net
 HOMEPAGE=		http://untroubled.org/ucspi-unix/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		http://em.ca/~bruceg/ucspi-unix/0.34/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/24 16:25:20 solene Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:48 sthen Exp $
 
 COMMENT =	simple console gopher client
 DISTNAME =	sacc-v1.00
@@ -10,7 +10,7 @@ HOMEPAGE =	gopher://bitreich.org/1/scm/sacc
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses
 

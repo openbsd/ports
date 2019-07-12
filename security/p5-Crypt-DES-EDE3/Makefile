@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:56:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:07 sthen Exp $
 
 COMMENT=	Triple-DES EDE encryption/decryption
 
@@ -10,7 +10,7 @@ REVISION=	1
 CATEGORIES=	security
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	security/p5-Crypt-DES

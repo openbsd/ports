@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:32 sthen Exp $
 
 COMMENT =		link-aggregation VPN software
 
@@ -13,7 +13,7 @@ CATEGORIES =		net
 HOMEPAGE =		http://www.mlvpn.fr/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c ev m sodium
 

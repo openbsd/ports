@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/04/05 13:31:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:26 sthen Exp $
 
 COMMENT =	remotely determine DNS server versions
 
@@ -12,7 +12,7 @@ CATEGORIES =	net
 HOMEPAGE =	https://code.google.com/p/fpdns/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE = perl
 

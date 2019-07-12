@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/06/04 14:46:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:47 sthen Exp $
 
 COMMENT=		cross platform mac address determiniation
 
@@ -8,7 +8,7 @@ CATEGORIES=		net
 HOMEPAGE=		https://github.com/ahoward/macaddr
 
 # ruby
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

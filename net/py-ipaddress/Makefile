@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/01/12 22:30:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:45 sthen Exp $
 
 # python3 flavour not needed for this port; the ipaddress module
 # is available in core python 3.3+
@@ -12,7 +12,7 @@ CATEGORIES =		net
 HOMEPAGE =		https://github.com/phihag/ipaddress
 
 # Python
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2017/11/07 21:13:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:48:36 sthen Exp $
 
 COMMENT=	look up country by IP address/hostname
 
@@ -8,7 +8,7 @@ CPAN_AUTHOR=	MAXMIND
 CATEGORIES=	net geo
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GeoIP>=8 c perl
 

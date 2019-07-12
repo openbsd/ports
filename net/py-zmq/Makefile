@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/12 01:49:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:48:47 sthen Exp $
 
 COMMENT =		Python bindings for ZeroMQ
 
@@ -12,7 +12,7 @@ CATEGORIES =		net devel
 HOMEPAGE =		https://github.com/zeromq/pyzmq/
 
 # LGPLv3/BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		${MODPY_WANTLIB} pthread zmq
 

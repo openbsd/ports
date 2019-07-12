@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/12 04:21:56 bket Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:04 sthen Exp $
 
 COMMENT =	library providing BLAKE2b, BLAKE2s, BLAKE2bp, BLAKE2sp
 
@@ -15,7 +15,7 @@ HOMEPAGE =	https://blake2.net/
 MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
 # CC0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://github.com/BLAKE2/libb2/releases/download/v${V}/
 

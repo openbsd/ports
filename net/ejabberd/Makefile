@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2018/09/04 12:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2019/07/12 20:48:25 sthen Exp $
 
 COMMENT=		jabber server written in Erlang
 
@@ -11,7 +11,7 @@ CATEGORIES=		net
 HOMEPAGE=		http://www.ejabberd.im/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		crypto expat iconv ssl z
 

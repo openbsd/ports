@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/12/11 19:15:15 kirby Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:24 sthen Exp $
 
 COMMENT =		testing and/or dropping DHCP server
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://www.netpatch.ru/dhcdrop.html
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c pcap
 

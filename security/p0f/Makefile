@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2015/01/22 18:41:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:49:06 sthen Exp $
 
 COMMENT=		passive OS fingerprinting tool
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://lcamtuf.coredump.cx/p0f.shtml
 MAINTAINER=		Nigel Taylor <nigel@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c pcap
 
 MASTER_SITES=	http://lcamtuf.coredump.cx/p0f3/releases/old/2.x/

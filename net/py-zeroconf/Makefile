@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:47 sthen Exp $
 
 COMMENT =		pure Python Multicast DNS Service Discovery Library
 
@@ -12,7 +12,7 @@ CATEGORIES =		net
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

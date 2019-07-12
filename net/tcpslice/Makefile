@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/05/08 18:10:25 schwarze Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:49 sthen Exp $
 
 COMMENT=	tool for extracting and gluing pcap (tcpdump) files
 
@@ -15,7 +15,7 @@ HOME_PAGE=	https://github.com/the-tcpdump-group/tcpslice
 MAINTAINER=	Nigel Taylor <nigel@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c pcap
 
 SEPARATE_BUILD=	Yes

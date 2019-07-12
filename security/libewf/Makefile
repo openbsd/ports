@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/20 22:15:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:04 sthen Exp $
 
 COMMENT =		access the Expert Witness Compression Format
 
@@ -15,7 +15,7 @@ HOMEPAGE =		https://github.com/libyal/libewf
 MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # LGPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  ${MODPY_WANTLIB}
 WANTLIB += bfio bz2 c crypto fuse iconv intl m pthread smdev smraw util

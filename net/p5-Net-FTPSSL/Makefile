@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/12/08 12:14:03 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:37 sthen Exp $
 
 COMMENT =	FTP over SSL/TLS client class
 
@@ -11,7 +11,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =	security/p5-IO-Socket-SSL
 

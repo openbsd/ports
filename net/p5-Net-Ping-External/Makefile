@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:39 sthen Exp $
 
 COMMENT=		alternative Perl interface to ping(1)
 
@@ -12,6 +12,6 @@ EXTRACT_SUFX=		.zip
 MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

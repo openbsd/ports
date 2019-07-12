@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:35:47 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:48:28 sthen Exp $
 
 COMMENT=		fully compliant DynDNS.org client
 
@@ -12,7 +12,7 @@ CATEGORIES=		net
 HOMEPAGE=		http://ipcheck.sourceforge.net/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}releases/
 EXTRACT_SUFX=

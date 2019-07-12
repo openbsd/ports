@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/02/26 20:13:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:06 sthen Exp $
 
 COMMENT=	passive OS fingerprinting tool
 
@@ -11,7 +11,7 @@ CATEGORIES=     security net
 HOMEPAGE=	http://lcamtuf.coredump.cx/p0f.shtml
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pcap
 

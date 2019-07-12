@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/20 22:15:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:58 sthen Exp $
 
 CATEGORIES =	productivity
 COMMENT =	library for accessing Facebook services
@@ -12,7 +12,7 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/libkfbapi/$V/src/}
 SHARED_LIBS =   kfbapi			0.0
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB =  iconv intl m pthread
 WANTLIB += ${COMPILER_LIBCXX}

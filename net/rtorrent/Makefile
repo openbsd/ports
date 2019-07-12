@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/05/17 16:19:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2019/07/12 20:48:47 sthen Exp $
 
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
@@ -10,7 +10,7 @@ CATEGORIES=		net
 HOMEPAGE=		https://rakshasa.github.io/rtorrent/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto curl curses m nghttp2 pthread
 WANTLIB += ssl torrent>=21 z

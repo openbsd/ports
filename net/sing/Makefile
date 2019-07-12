@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/05/08 18:10:25 schwarze Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:48:49 sthen Exp $
 
 COMMENT=	send ICMP nasty garbage
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://sourceforge.net/projects/sing/
 
 LIB_DEPENDS=	net/libnet/1.0
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c pcap lib/libnet-1.0/net=0
 
 SEPARATE_BUILD=	Yes

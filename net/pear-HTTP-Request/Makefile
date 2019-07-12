@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:42 sthen Exp $
 
 COMMENT=	provide an easy way to perform HTTP requests
 
@@ -9,7 +9,7 @@ CATEGORIES=	net
 MODULES=	www/pear
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		net/pear-Net-URL \
 			net/pear-Net-Socket>=1.0.9

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/01/11 19:27:07 rpe Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:48:42 sthen Exp $
 
 COMMENT=		threaded DNS daemon, optimized for caching
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://members.home.nl/p.a.rombouts/pdnsd/
 WRKDIST=		${WRKDIR}/${DISTNAME:S/-par//}
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 

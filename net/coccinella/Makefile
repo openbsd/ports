@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/18 23:12:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:48:24 sthen Exp $
 
 COMMENT =		XMPP client with whiteboard
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://www.coccinella.im
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=coccinella/}
 

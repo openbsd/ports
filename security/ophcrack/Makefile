@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/16 19:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:06 sthen Exp $
 
 COMMENT =		password cracker based on rainbow tables
 
@@ -10,7 +10,7 @@ HOMEPAGE =		http://ophcrack.sourceforge.net/
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m pthread ssl crypto expat
 

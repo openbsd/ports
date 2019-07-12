@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/12/25 20:59:58 jung Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:26 sthen Exp $
 
 COMMENT =		Gopher protocol daemon
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://git.r-36.net/scm/geomyidae
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
 # MIT/X
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB =		c

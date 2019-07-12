@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:56:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:37 sthen Exp $
 
 COMMENT=	simple OOP-ish interface to the Google SOAP API
 
@@ -11,7 +11,7 @@ CATEGORIES=	net
 MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	modbuild
 

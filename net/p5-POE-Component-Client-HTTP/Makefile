@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/01/26 19:21:07 cwen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:41 sthen Exp $
 
 COMMENT=	POE HTTP user-agent component
 
@@ -9,7 +9,7 @@ CATEGORIES=	net www
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-POE>=1.312 \
 		net/p5-POE-Component-Client-Keepalive>=0.271 \

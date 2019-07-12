@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/01/11 19:27:05 rpe Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:28 sthen Exp $
 
 COMMENT =		small memory footprint dynamic dns updater
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://vmlinux.org/jocke/inadyn.shtml
 MAINTAINER =		Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

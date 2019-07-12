@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/11/03 14:46:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:58 sthen Exp $
 COMMENT =		common classes for finance KDE 4 apps
 CATEGORIES =		productivity x11
 HOMEPAGE =		http://kmymoney2.sourceforge.net
@@ -10,7 +10,7 @@ REVISION =		2
 SHARED_LIBS =		alkimia		1.0 # 5.0
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		lib/qt4/QtDBus gmp m
 WANTLIB += ${COMPILER_LIBCXX}

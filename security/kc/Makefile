@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/09/04 12:46:21 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:03 sthen Exp $
 
 COMMENT =	console based password storing application
 
@@ -15,7 +15,7 @@ HOMEPAGE =	http://github.com/levaidaniel/kc/
 MAINTAINER =	LEVAI Daniel <leva@ecentrum.hu>
 
 # BSD
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += c crypto curses edit pcre scrypt util xml2
 

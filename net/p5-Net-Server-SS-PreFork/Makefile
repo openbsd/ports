@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:40 sthen Exp $
 
 COMMENT =		hot-deployable variant of Net::Server::PreFork
 
@@ -10,7 +10,7 @@ CATEGORIES =		net
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/p5-Net-Server \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/01/07 06:35:53 steven Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:40 sthen Exp $
 
 COMMENT=	extension for UPnP
 
@@ -8,7 +8,7 @@ DISTNAME=	Net-UPnP-1.4.6
 CATEGORIES=	net
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODCPAN_EXAMPLES=	Yes
 

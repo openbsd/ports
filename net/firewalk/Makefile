@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2019/02/08 19:07:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2019/07/12 20:48:26 sthen Exp $
 
 COMMENT=	gateway acl scanner (via static-source port traceroute)
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	net/libnet/1.0
 WANTLIB=	c pcap lib/libnet-1.0/net=0
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 
 CONFIGURE_STYLE= gnu dest

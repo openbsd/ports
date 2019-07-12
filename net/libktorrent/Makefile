@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/20 22:15:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:48:30 sthen Exp $
 
 COMMENT =	KTorrent engine
 
@@ -10,7 +10,7 @@ CATEGORIES =	net
 SHARED_LIBS +=  KF5Torrent                0.0 # 6.0
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Completion KF5ConfigCore
 WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5JobWidgets KF5KIOCore

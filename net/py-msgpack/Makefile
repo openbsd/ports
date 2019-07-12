@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/13 19:03:52 danj Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:46 sthen Exp $
 
 COMMENT =		messagepack (de)serializer
 
@@ -15,7 +15,7 @@ CATEGORIES =		net textproc
 HOMEPAGE =		https://msgpack.org/
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		${COMPILER_LIBCXX} ${MODPY_WANTLIB} m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/24 08:41:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:48:59 sthen Exp $
 
 COMMENT =	command line todo list manager
 
@@ -15,7 +15,7 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 MASTER_SITES =	${HOMEPAGE}download/
 
 # MIT
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 # Needs C++11; linker issues with clang
 COMPILER =		base-clang ports-gcc

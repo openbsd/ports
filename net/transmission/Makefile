@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2019/05/20 22:15:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.134 2019/07/12 20:48:50 sthen Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -20,7 +20,7 @@ REVISION-qt=	4
 REVISION-main=	2
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://github.com/transmission/transmission-releases/raw/master/
 EXTRACT_SUFX=	.tar.xz

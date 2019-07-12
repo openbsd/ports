@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2015/06/18 07:38:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.42 2019/07/12 20:48:29 sthen Exp $
 
 COMMENT=	internet relay chat (irc) server
 
@@ -13,7 +13,7 @@ MASTER_SITES=   http://www.irc.org/ftp/irc/server/Old/irc2.10/ \
 EXTRACT_SUFX=	.tgz
 
 # GPLv1+ (yes, really!)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m z
 

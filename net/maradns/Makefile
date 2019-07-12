@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2017/05/11 00:41:14 schwarze Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:48:31 sthen Exp $
 
 COMMENT=	simple and performant DNS server
 
@@ -10,7 +10,7 @@ REVISION =	1
 HOMEPAGE=	http://www.maradns.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c pthread
 

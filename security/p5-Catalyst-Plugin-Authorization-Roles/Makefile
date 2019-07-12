@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:56:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:07 sthen Exp $
 
 COMMENT=	role based authorization for Catalyst
 
@@ -7,7 +7,7 @@ CATEGORIES=	security
 REVISION=	0
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
 PKG_ARCH=	*

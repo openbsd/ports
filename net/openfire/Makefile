@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2019/06/11 00:38:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.53 2019/07/12 20:48:35 sthen Exp $
 
 COMMENT=	XMPP real time collaboration server
 V=		4.2.3
@@ -12,7 +12,7 @@ MASTER_SITES=	https://www.igniterealtime.org/downloadServlet?filename=openfire/
 HOMEPAGE=	https://www.igniterealtime.org/projects/openfire/index.jsp
 
 # ASL 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_TEST=	yes
 

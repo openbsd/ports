@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/11 23:50:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:25 sthen Exp $
 
 COMMENT=		DNS zone verification tool
 
@@ -11,7 +11,7 @@ CATEGORIES=		net
 HOMEPAGE=		http://www.domtools.com/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://www.domtools.com/pub/
 

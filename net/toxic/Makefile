@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/28 20:51:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:50 sthen Exp $
 
 COMMENT =		ncurses-based Tox client
 
@@ -10,7 +10,7 @@ REVISION =		3
 CATEGORIES =		net
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += alut c config curses curl intl m openal png pthread
 WANTLIB += qrencode toxcore util z ${MODPY_WANTLIB}

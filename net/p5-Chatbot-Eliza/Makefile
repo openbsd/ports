@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/01/20 07:29:40 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:48:35 sthen Exp $
 
 COMMENT =	clone of the classic Eliza program
 
@@ -10,6 +10,6 @@ CATEGORIES =	net
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

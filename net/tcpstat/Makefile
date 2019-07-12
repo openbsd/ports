@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/01 19:56:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:50 sthen Exp $
 
 COMMENT=	report network interface statistics
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.frenchfries.net/paul/tcpstat/
 MAINTAINER=	Mark Lumsden <lum@openbsd.org>
 
 # BSD license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m pcap
 

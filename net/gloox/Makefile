@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/11/30 21:49:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:27 sthen Exp $
 
 COMMENT =	extensible C++ library for XMPP clients and components
 
@@ -13,7 +13,7 @@ EXTRACT_SUFX =	.tar.bz2
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv3 with OpenSSL exemption
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += crypto iconv idn intl m pthread ssl ${COMPILER_LIBCXX} z
 

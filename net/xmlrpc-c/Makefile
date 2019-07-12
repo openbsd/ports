@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/04/15 16:59:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:52 sthen Exp $
 
 # as error: ``operation combines symbols in different segments''
 # (known toolchain problem)
@@ -27,7 +27,7 @@ HOMEPAGE=	http://xmlrpc-c.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmlrpc-c/}
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} crypto curl m nghttp2 ssl z
 

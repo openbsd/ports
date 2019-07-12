@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:00 sthen Exp $
 
 COMMENT=	brute force binary tester
 
@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bfbtester/}
 
 HOMEPAGE=	http://bfbtester.sourceforge.net/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c pthread
 
 CONFIGURE_STYLE= gnu

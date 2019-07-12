@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/19 15:01:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:48:57 sthen Exp $
 
 COMMENT=	PDF transformation and inspection utility
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://qpdf.sourceforge.net/
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Artistic License 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c jpeg m ${COMPILER_LIBCXX} z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/20 22:15:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:48:56 sthen Exp $
 
 COMMENT=		LaTeX symbols selector
 
@@ -9,7 +9,7 @@ CATEGORIES=		print x11
 HOMEPAGE=		http://clayo.org/lss/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig

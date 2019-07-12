@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/11/30 05:41:34 brad Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:58 sthen Exp $
 COMMENT =	library for resource constrained project scheduling
 CATEGORIES =	productivity
 DISTNAME =	librcps-0.3
@@ -8,7 +8,7 @@ HOMEPAGE =	http://www.librcps.org/
 SHARED_LIBS =	rcps		0.0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c pthread
 

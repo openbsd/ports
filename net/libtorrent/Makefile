@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2019/04/28 02:01:30 cwen Exp $
+# $OpenBSD: Makefile,v 1.60 2019/07/12 20:48:31 sthen Exp $
 
 COMMENT=		BitTorrent library written in C++
 
@@ -17,7 +17,7 @@ CATEGORIES=		net devel
 HOMEPAGE=		https://rakshasa.github.io/rtorrent/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://rtorrent.net/downloads/
 

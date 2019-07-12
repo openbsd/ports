@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:00 sthen Exp $
 
 COMMENT=		encrypt/decrypt using Rijndael encryption algorithm
 
@@ -10,7 +10,7 @@ CATEGORIES=		security
 HOMEPAGE=		http://aescrypt.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		http://aescrypt.sourceforge.net/ \

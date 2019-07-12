@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/12/14 00:16:14 jca Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:52 sthen Exp $
 
 COMMENT =	framework for analysis of layer 2 network protocols
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://www.yersinia.net/
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
 # GPL v2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =	http://www.yersinia.net/download/
 

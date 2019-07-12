@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/07 07:58:50 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:31 sthen Exp $
 
 COMMENT =		UPnP client library
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://www.lesbonscomptes.com/upmpdcli/libupnpp-refdoc/libupnpp-ctl
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} crypto curl expat ixml m nghttp2
 WANTLIB += ssl upnp z

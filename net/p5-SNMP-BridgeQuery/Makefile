@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:41 sthen Exp $
 
 COMMENT=	Perl extension for retrieving bridge tables
 
@@ -9,7 +9,7 @@ REVISION=	0
 CATEGORIES=	devel net
 
 # GPL/Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	net/p5-Net-SNMP

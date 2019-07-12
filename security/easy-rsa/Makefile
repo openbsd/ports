@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/02/15 20:50:40 bket Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:01 sthen Exp $
 
 COMMENT =	small RSA key management package
 
@@ -11,7 +11,7 @@ CATEGORIES =	security
 HOMEPAGE =	https://openvpn.net/
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://github.com/OpenVPN/easy-rsa/releases/download/v$V/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/04/28 20:51:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:48:44 sthen Exp $
 
 COMMENT=		python interface to amazon web services
 
@@ -14,7 +14,7 @@ HOMEPAGE=		https://github.com/boto/boto
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

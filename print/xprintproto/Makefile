@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/03 23:00:37 bentley Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:57 sthen Exp $
 
 COMMENT =		X11 printing headers
 
@@ -12,7 +12,7 @@ CATEGORIES =		print devel x11
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://www.x.org/releases/individual/proto/
 EXTRACT_SUFX =		.tar.bz2

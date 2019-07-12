@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/06/20 09:46:14 bentley Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:49 sthen Exp $
 
 COMMENT=	removes sensitive information from a tcpdump -w file
 
@@ -9,7 +9,7 @@ CATEGORIES=	net security
 HOMEPAGE=	http://ita.ee.lbl.gov/html/contrib/tcpdpriv.html
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c pcap 
 

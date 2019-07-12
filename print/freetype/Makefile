@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2016/03/11 19:59:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.50 2019/07/12 20:48:55 sthen Exp $
 
 # this is freetype1; freetype2 is in xenocara.
 PORTROACH=	limit:^1\.
@@ -21,7 +21,7 @@ HOMEPAGE=	http://www.freetype.org/
 
 # See http://www.freetype.org/patents.html
 # bytecode interpreter disabled
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		m
 
 USE_GMAKE=	Yes

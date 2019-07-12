@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/18 04:35:35 mmcc Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:34 sthen Exp $
 
 COMMENT=		performs consistency checks on BIND files
 
@@ -6,7 +6,7 @@ DISTNAME=		nslint-2.0.2
 REVISION=		2
 CATEGORIES=		net
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		ftp://ftp.ee.lbl.gov/old/
 

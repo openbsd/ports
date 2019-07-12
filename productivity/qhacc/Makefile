@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/05 11:52:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:48:59 sthen Exp $
 
 COMMENT=	qt home accounting program
 
@@ -22,7 +22,7 @@ SHARED_LIBS+=   ${_lib} ${SO_VERSION}
 .endfor
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL ICE SM X11 X11-xcb Xcursor Xdamage Xext Xfixes
 WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm c drm expat

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/05/18 19:10:41 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:40 sthen Exp $
 
 COMMENT =	module to handle hardware MAC addresses
 
@@ -9,7 +9,7 @@ CATEGORIES =	net
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

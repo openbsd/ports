@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/05/20 22:15:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:49:05 sthen Exp $
 
 COMMENT =	extendable encryption program that supports many ciphers
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://mcrypt.sf.net/
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c iconv intl ltdl mcrypt mhash z
 

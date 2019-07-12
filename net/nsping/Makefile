@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2017/05/03 18:36:05 fcambus Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:48:34 sthen Exp $
 
 COMMENT=	DNS ping
 
@@ -9,7 +9,7 @@ CATEGORIES=	net
 
 MASTER_SITES=	https://www.distfiles.pl/
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

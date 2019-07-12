@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/02/28 09:24:04 jca Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:26 sthen Exp $
 
 COMMENT =	FTP listing and transfer tools
 
@@ -10,7 +10,7 @@ HOMEPAGE =	http://www.ohse.de/uwe/ftpcopy.html
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

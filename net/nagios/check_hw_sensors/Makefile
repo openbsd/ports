@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/11/01 18:46:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:33 sthen Exp $
 
 PKG_ARCH=		*
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://openbsd.somedomain.net/nagios/check_hw_sensors.html
 MASTER_SITES=		http://monitoringexchange.org/attachment/download/Check-Plugins/Operating-Systems/BSD/OpenBSD/check_hw_sensors/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

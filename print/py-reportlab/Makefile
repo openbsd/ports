@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/15 12:04:40 kmos Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:57 sthen Exp $
 
 COMMENT=		PDF-generating toolkit for Python
 
@@ -21,7 +21,7 @@ CATEGORIES=		print graphics
 HOMEPAGE=		http://www.reportlab.com
 
 # BSD, LGPLv2, MPL1.0, MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB} art_lgpl_2 freetype pthread
 

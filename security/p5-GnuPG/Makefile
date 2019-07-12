@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/03/20 19:57:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:49:08 sthen Exp $
 
 COMMENT=	perl5 interface to GnuPG
 
@@ -12,6 +12,6 @@ MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 RUN_DEPENDS=	security/gnupg
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>	

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:48:58 sthen Exp $
 
 COMMENT=		automatically create timetables
 
@@ -9,7 +9,7 @@ CATEGORIES=		productivity x11
 HOMEPAGE=		http://www.lalescu.ro/liviu/fet/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += Qt3Support QtGui QtNetwork QtSql QtXml c m pthread
 WANTLIB += ${COMPILER_LIBCXX}

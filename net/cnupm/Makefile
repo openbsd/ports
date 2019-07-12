@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/01/11 19:27:04 rpe Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:48:24 sthen Exp $
 
 COMMENT=		IPv4/IPv6 traffic collector
 
@@ -9,7 +9,7 @@ REVISION=		2
 HOMEPAGE=		http://pdp-11.org.ru/~form/cnupm
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/files/
 

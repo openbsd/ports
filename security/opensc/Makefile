@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/05/19 19:13:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2019/07/12 20:49:05 sthen Exp $
 
 COMMENT=	set of libraries and utilities to access smart cards
 
@@ -15,7 +15,7 @@ CATEGORIES=	security
 HOMEPAGE=	https://github.com/OpenSC/OpenSC/wiki
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto curses ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 		iconv intl pcre pthread readline z

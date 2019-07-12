@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/14 17:57:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:48 sthen Exp $
 
 COMMENT =		library for programmatically tunneling connections
 
@@ -6,7 +6,7 @@ DISTNAME =		net-ssh-gateway-1.2.0
 CATEGORIES =		net
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/09/29 10:52:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:46 sthen Exp $
 
 COMMENT=		twitter python module
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://mike.verdone.ca/twitter/
 MAINTAINER=		Daniel Winters <daniel@tydirium.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODPY_PI =		Yes
 

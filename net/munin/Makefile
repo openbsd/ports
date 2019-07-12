@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2019/05/10 12:45:30 kirby Exp $
+# $OpenBSD: Makefile,v 1.84 2019/07/12 20:48:32 sthen Exp $
 
 PORTROACH = 	limitw:1,even
 
@@ -16,7 +16,7 @@ MASTER_SITES =	http://downloads.munin-monitoring.org/munin/stable/$V/
 
 # Mostly GPLv2.
 # DejaVuSans.ttf and DejaVuSansMono.ttf has a non-restrictive license.
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 

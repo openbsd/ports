@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/04/01 18:46:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:43 sthen Exp $
 
 COMMENT =	easy parsing of URLs for PHP
 
@@ -7,7 +7,7 @@ REVISION =	0
 CATEGORIES =	net
 
 # BSD License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	www/pear
 

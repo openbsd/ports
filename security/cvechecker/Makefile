@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/09/04 12:46:20 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:01 sthen Exp $
 
 COMMENT=	local CVE checker tool
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://github.com/sjvermeu/cvechecker/wiki
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c config sqlite3
 

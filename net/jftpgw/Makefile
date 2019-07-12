@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/09/27 11:22:43 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:48:29 sthen Exp $
 
 COMMENT=	FTP proxy
 
@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.mcknight.de/jftpgw/
 HOMEPAGE=	http://www.mcknight.de/jftpgw/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 SEPARATE_BUILD=	Yes

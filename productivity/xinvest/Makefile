@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/05/05 19:52:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:00 sthen Exp $
 
 COMMENT= 		personal finance tracking and performance tool
 
@@ -7,7 +7,7 @@ REVISION=		8
 CATEGORIES=		productivity x11
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xpm Xt c m Xm
 

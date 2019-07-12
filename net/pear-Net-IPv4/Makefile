@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:43 sthen Exp $
 
 COMMENT=	IPv4 address handling tools for PHP
 
@@ -8,7 +8,7 @@ CATEGORIES=	net
 MODULES=	www/pear
 
 # PHP License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 PKG_ARCH=	*
 

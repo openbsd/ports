@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:41 sthen Exp $
 
 COMMENT=	POE interface to Net::Pcap
 
@@ -9,7 +9,7 @@ REVISION=	2
 CATEGORIES=	net
 
 # Artitistic License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-POE \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/11/21 13:12:37 bket Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:49 sthen Exp $
 
 COMMENT =	SSL/SSH multiplexer
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://www.rutschle.net/tech/sslh/README.html
 MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c config pcre
 

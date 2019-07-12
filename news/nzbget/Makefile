@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/05 08:14:11 bket Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:53 sthen Exp $
 
 COMMENT =	binary newsreader supporting NZB files
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://nzbget.net/
 MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	${COMPILER_LIBCXX} c crypto curses m ssl xml2 z
 

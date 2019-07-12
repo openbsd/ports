@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/12/30 17:36:41 pascal Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:40 sthen Exp $
 
 COMMENT =		interface to Twitter API
 
@@ -9,7 +9,7 @@ CATEGORIES =		net devel
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

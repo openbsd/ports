@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2019/06/06 21:09:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.145 2019/07/12 20:48:24 sthen Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
@@ -10,7 +10,7 @@ HOMEPAGE=	https://curl.haxx.se/
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://curl.haxx.se/download/
 EXTRACT_SUFX=	.tar.xz

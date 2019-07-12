@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/10 19:38:01 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:54 sthen Exp $
 
 COMMENT =	BJNP protocol backend for CUPS
 DISTNAME =	cups-bjnp-2.0
@@ -7,7 +7,7 @@ REVISION =	0
 
 HOMEPAGE =	http://cups-bjnp.sourceforge.net
 # GPLv2 - LGPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c cups pthread
 

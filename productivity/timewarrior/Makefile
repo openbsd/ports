@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/05/17 23:22:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:59 sthen Exp $
 
 COMMENT =	command line tracking time tool
 
@@ -10,7 +10,7 @@ CATEGORIES =	productivity
 HOMEPAGE =	https://taskwarrior.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 

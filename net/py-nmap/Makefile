@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/04/28 20:51:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:46 sthen Exp $
 
 COMMENT =		python interface to the nmap scan data
 
@@ -14,7 +14,7 @@ MASTER_SITES =		http://xael.org/pages/
 MAINTAINER = 		Remi Pointel <rpointel@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}

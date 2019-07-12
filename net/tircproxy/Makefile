@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/09/11 19:50:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:50 sthen Exp $
 
 COMMENT=	transparent IRC proxy
 
@@ -6,7 +6,7 @@ DISTNAME=	tircproxy-0.4.5
 REVISION=	1
 CATEGORIES=     net
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

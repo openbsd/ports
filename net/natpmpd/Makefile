@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/02/15 11:17:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:33 sthen Exp $
 
 COMMENT=		daemon implementing NAT-PMP protocol for pf(4)
 
@@ -12,7 +12,7 @@ MASTER_SITES=		http://natpmpd.s3.amazonaws.com/
 MAINTAINER=		Matt Dainty <matt@bodgit-n-scarper.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c event
 

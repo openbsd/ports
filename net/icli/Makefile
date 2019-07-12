@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/12/28 12:53:01 kirby Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:28 sthen Exp $
 
 COMMENT=	command-line interface to Icinga
 
@@ -12,7 +12,7 @@ CATEGORIES=	net
 HOMEPAGE=	https://finalrewind.org/projects/App-Icli/
 
 # custom, see COPYING.
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/06 16:34:44 kn Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:31 sthen Exp $
 
 COMMENT=	Universal Plug and Play SDK
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=  upnp                 2.0      # 13.0.0
 HOMEPAGE=	http://pupnp.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/15 12:04:40 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:58 sthen Exp $
 
 COMMENT =		standards based terminal calendar
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://lostpackets.de/khal/
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

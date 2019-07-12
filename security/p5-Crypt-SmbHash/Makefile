@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/12/04 17:56:27 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:07 sthen Exp $
 
 COMMENT=	Perl module implementing lanman and nt md4 hash functions
 
@@ -10,7 +10,7 @@ CATEGORIES=	security
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # same license as perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	security/p5-Digest-MD4
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/06/10 22:54:29 jca Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:34 sthen Exp $
 
 COMMENT=		network sed
 
@@ -11,7 +11,7 @@ EXTRACT_SUFX=		.tgz
 HOMEPAGE=		http://lcamtuf.coredump.cx/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		http://lcamtuf.coredump.cx/soft/

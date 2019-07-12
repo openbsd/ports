@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/04/16 20:38:52 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:09 sthen Exp $
 
 COMMENT =	offline bruteforce of WPS pins
 
@@ -11,7 +11,7 @@ CATEGORIES =	security net
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c pthread
 

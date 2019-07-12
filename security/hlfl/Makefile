@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/04/04 03:38:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:02 sthen Exp $
 
 COMMENT =		high level firewall language
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://www.cusae.com/hlfl/
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/04/30 16:45:26 tj Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:31 sthen Exp $
 
 COMMENT =		C++ library implementing a BitTorrent client
 
@@ -12,7 +12,7 @@ CATEGORIES =		net devel
 HOMEPAGE =		https://libtorrent.org/
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += boost_chrono-mt boost_python boost_random-mt boost_system-mt
 WANTLIB += crypto m ssl

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/10/08 21:19:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:48:28 sthen Exp $
 
 COMMENT=		tool to monitor interface bandwidth usage
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://gael.roualland.free.fr/ifstat/
 MAINTAINER=		Johan Fredin <johan@spelaroll.se>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

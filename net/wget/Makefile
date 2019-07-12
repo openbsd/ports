@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2019/05/20 22:15:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.83 2019/07/12 20:48:52 sthen Exp $
 
 COMMENT =	retrieve files from the web via HTTP, HTTPS and FTP
 
@@ -10,7 +10,7 @@ HOMEPAGE =	https://www.gnu.org/software/wget/
 MAINTAINER =	Nam Nguyen <namn@berkeley.edu>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto iconv idn2 intl pcre2-8 psl ssl unistring z
 

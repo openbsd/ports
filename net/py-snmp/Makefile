@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/09/23 18:33:27 awolk Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:48:46 sthen Exp $
 
 COMMENT =	SNMP framework for Python
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://snmplabs.com/
 MAINTAINER =	Adam Wolk <awolk@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 

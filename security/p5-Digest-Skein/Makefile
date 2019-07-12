@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/12/04 17:56:27 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:08 sthen Exp $
 
 COMMENT =	interface to the Skein digest algorithm
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://www.skein-hash.info/
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

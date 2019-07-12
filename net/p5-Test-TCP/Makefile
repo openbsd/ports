@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/07/15 09:03:57 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:42 sthen Exp $
 
 COMMENT =		testing TCP program
 
@@ -12,6 +12,6 @@ RUN_DEPENDS =		devel/p5-Test-SharedFork>=0.29
 BUILD_DEPENDS = 	${RUN_DEPENDS}
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

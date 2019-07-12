@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/12/04 17:56:27 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:49:05 sthen Exp $
 
 COMMENT=	NetBIOS Auditing Tool / Security Kit
 
@@ -9,7 +9,7 @@ CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM:=NT/scanners/}
 FIX_EXTRACT_PERMISSIONS=Yes
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_FLAGS=	GUESTACCOUNT=_nbaudit
 

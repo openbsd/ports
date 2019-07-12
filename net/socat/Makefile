@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/11/14 20:48:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:49 sthen Exp $
 
 COMMENT=	relay for bidirectional data transfer
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.dest-unreach.org/socat/
 MAINTAINER=	Nigel Taylor <nigel@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/
 

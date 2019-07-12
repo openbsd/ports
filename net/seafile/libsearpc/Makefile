@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/22 17:03:31 kirby Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:48 sthen Exp $
 
 COMMENT =		simple RPC framework based on GObject system
 
@@ -9,7 +9,7 @@ REVISION =              1
 SHARED_LIBS += 		searpc			0.0 # 1.2
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ffi glib-2.0 gobject-2.0 iconv intl jansson pcre pthread
 

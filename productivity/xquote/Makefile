@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/05/05 19:52:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:00 sthen Exp $
 
 COMMENT= 		WWW quote retrieval tool
 
@@ -7,7 +7,7 @@ REVISION=		9
 CATEGORIES=		productivity x11
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt c m Xbae Xm
 

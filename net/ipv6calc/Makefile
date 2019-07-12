@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/10/09 06:11:12 solene Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:48:29 sthen Exp $
 
 COMMENT=	tool for manipulating IPv6 addresses
 
@@ -10,7 +10,7 @@ CATEGORIES=	net
 HOMEPAGE=	https://www.deepspace6.net/projects/ipv6calc.html
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto m
 

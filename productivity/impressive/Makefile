@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/04/01 09:29:31 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:58 sthen Exp $
 
 COMMENT =		stylish PDF presentation generator
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://impressive.sourceforge.net/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=impressive/}
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 NO_BUILD =		Yes

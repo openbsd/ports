@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/10 19:38:01 danj Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:38 sthen Exp $
 
 COMMENT=	Perl interface to the PH protocol
 
@@ -9,6 +9,6 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 # Perl License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

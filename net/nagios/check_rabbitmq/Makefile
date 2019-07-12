@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/02/17 22:08:41 sebastia Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:33 sthen Exp $
 
 COMMENT =		Nagios plugin to check RabbitMQ
 
@@ -15,7 +15,7 @@ PKGNAME =		check_rabbitmq-${VERSION}
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 NO_TEST =		Yes
 

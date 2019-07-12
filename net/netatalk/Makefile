@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2018/04/27 17:22:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2019/07/12 20:48:33 sthen Exp $
 
 PORTROACH=	limit:^2
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tar.bz2
 HOMEPAGE=	http://netatalk.sourceforge.net/
 
 # GPLv2+ and BSD or similar
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto db gcrypt gpg-error iconv intl rpcsvc
 

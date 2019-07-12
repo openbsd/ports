@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/23 18:39:30 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:44 sthen Exp $
 
 COMMENT =	Rocket.chat support for Pidgin
 
@@ -9,7 +9,7 @@ PKGNAME =	purple-rocketchat-$V
 CATEGORIES =	net
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://bitbucket.org/EionRobb/purple-rocketchat/get/
 HOMEPAGE =	https://bitbucket.org/EionRobb/purple-rocketchat

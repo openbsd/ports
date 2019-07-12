@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:34 sthen Exp $
 
 COMMENT =		terminal status monitor for Tor
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://nyx.torproject.org
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

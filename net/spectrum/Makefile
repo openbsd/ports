@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/06/25 20:25:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:48:49 sthen Exp $
 
 COMMENT =	XMPP transport/gateway
 
@@ -11,7 +11,7 @@ MASTER_SITES =	https://github.com/downloads/hanzz/libtransport/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m pthread ${COMPILER_LIBCXX} gloox purple glib-2.0 gthread-2.0 ev
 WANTLIB += PocoData PocoFoundation PocoDataMySQL PocoDataODBC PocoDataSQLite

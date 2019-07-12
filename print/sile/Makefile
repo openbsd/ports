@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/10/24 14:28:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:57 sthen Exp $
 
 COMMENT =	typesetting system and improved layout engine
 
@@ -13,7 +13,7 @@ CATEGORIES =	print
 HOMEPAGE =	http://sile-typesetter.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} expat fontconfig freetype glib-2.0 graphite2
 WANTLIB += harfbuzz iconv icudata icui18n icuio icuuc intl m pcre

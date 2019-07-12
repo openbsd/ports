@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:36 sthen Exp $
 
 COMMENT=	presents a DAAP share as a VFS
 
@@ -9,7 +9,7 @@ REVISION=	1
 CATEGORIES=	net
 
 # same as perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Class-Accessor \
 		net/p5-Net-DAAP-Client \

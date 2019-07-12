@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/20 22:15:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:01 sthen Exp $
 
 COMMENT =		fuse-based cryptographic filesystem
 
@@ -11,7 +11,7 @@ CATEGORIES =		security
 HOMEPAGE =		http://www.arg0.net/encfs
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto fuse intl m ssl tinyxml2
 

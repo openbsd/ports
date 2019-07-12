@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/09/04 12:46:18 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:48:35 sthen Exp $
 
 COMMENT =		MDNS/DNS-SD daemon
 
@@ -11,7 +11,7 @@ MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>
 HOMEPAGE =		http://www.haesbaert.org/openmdns/
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://www.haesbaert.org/openmdns/releases/ \
 			http://x61.com.ar/mirrors/openmdns/

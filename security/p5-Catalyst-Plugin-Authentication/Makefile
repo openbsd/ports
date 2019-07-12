@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 19:56:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:06 sthen Exp $
 
 COMMENT=	Catalyst authentication framework
 
@@ -7,7 +7,7 @@ CATEGORIES=	security
 REVISION=	0
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
 PKG_ARCH=	*

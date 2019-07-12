@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2019/06/30 08:34:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.157 2019/07/12 20:49:02 sthen Exp $
 
 COMMENT=		GNU Transport Layer Security library
 
@@ -17,7 +17,7 @@ HOMEPAGE=		http://www.gnutls.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1+ - GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto event ffi gmp hogweed iconv
 WANTLIB += idn2 intl m nettle p11-kit ssl tasn1 unbound unistring

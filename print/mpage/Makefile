@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/08/23 07:45:00 jca Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:48:56 sthen Exp $
 
 COMMENT=	print multiple pages per sheet on PostScript printer
 
@@ -10,7 +10,7 @@ CATEGORIES=	print
 MAINTAINER=	Ian McWilliam <kaosagnt@gmail.com>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

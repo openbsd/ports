@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/05/08 14:22:25 bluhm Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:48:37 sthen Exp $
 
 COMMENT =	extends the Net::DNS module with DNSSEC functionality
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://www.net-dns.org/
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto perl
 

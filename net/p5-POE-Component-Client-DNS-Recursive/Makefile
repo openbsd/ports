@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/02/07 07:18:18 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:41 sthen Exp $
 
 COMMENT =	recursive DNS client for POE
 
@@ -7,7 +7,7 @@ DISTNAME =	POE-Component-Client-DNS-Recursive-1.12
 CATEGORIES =	net
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/06/27 13:51:01 solene Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 20:48:53 sthen Exp $
 
 COMMENT=	advanced IRC bouncer
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://znc.in/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto m pthread ssl z ${COMPILER_LIBCXX}
 

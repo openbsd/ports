@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/01/11 22:28:18 tj Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:32 sthen Exp $
 
 COMMENT =	command-line .torrent file creator
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://github.com/Rudde/mktorrent
 MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c crypto pthread
 

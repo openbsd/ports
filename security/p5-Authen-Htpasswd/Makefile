@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:56:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:06 sthen Exp $
 
 COMMENT= 	read and modify Apache .htpasswd files
 
@@ -7,7 +7,7 @@ REVISION=	1
 CATEGORIES=	security
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
 PKG_ARCH=	*

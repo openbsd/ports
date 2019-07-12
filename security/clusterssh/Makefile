@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/01/16 20:12:19 steven Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:01 sthen Exp $
 
 COMMENT=	secure concurrent multi-server terminal control
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://github.com/duncs/clusterssh/wiki
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=clusterssh/}2.%20ClusterSSH%20Series%204/
 

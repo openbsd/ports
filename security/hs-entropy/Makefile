@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/01/22 21:47:04 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:03 sthen Exp $
 
 COMMENT =		platform independent entropy source
 
@@ -7,7 +7,7 @@ REVISION =		7
 CATEGORIES =		security
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ghc
 

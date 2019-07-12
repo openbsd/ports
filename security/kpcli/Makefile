@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/01/31 07:56:52 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:04 sthen Exp $
 
 COMMENT =	cli browser for keepassx databases
 
@@ -9,7 +9,7 @@ EXTRACT_ONLY =
 HOMEPAGE =	http://kpcli.sourceforge.net/
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=kpcli/}
 

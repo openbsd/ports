@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/20 22:15:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:29 sthen Exp $
 
 COMMENT =	IRC client for KDE
 
@@ -25,7 +25,7 @@ WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Core
 WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m qca-qt5
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/kf5 \
 			multimedia/phonon \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/17 16:19:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:59 sthen Exp $
 
 COMMENT =	hierarchical todos manager
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://code.meskio.net/tudu/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv3 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} c m curses
 

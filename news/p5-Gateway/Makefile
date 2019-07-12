@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2016/03/20 19:56:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:48:53 sthen Exp $
 
 COMMENT=	perl module to gateway between news and mail
 
@@ -14,7 +14,7 @@ RUN_DEPENDS=	security/p5-PGP-Sign \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODCPAN_EXAMPLES=	Yes
 

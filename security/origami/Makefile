@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/11/08 20:21:36 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:06 sthen Exp $
 
 COMMENT =	parse, modify and generate PDF documents
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://github.com/gdelugre/origami
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # LGPL-3.0+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE =	gem
 

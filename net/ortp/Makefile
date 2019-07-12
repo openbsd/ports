@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/01/31 09:59:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:35 sthen Exp $
 
 COMMENT =		RTP (RFC3550) library
 DISTNAME =		ortp-0.24.2
@@ -11,7 +11,7 @@ HOMEPAGE =		http://www.linphone.org/eng/documentation/dev/ortp.html
 MAINTAINER =		Vadim Zhukov <zhuk@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		crypto m pthread ssl
 

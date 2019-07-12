@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/01/23 16:03:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:24 sthen Exp $
 
 COMMENT =	simple terminal based gopher client
 DISTNAME =	cgo-20180123
@@ -10,7 +10,7 @@ GH_PROJECT =	cgo
 GH_COMMIT =	ca69bbb7183e45f6ef67b86931b65ae4c8dde6f9
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

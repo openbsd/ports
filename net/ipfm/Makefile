@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/02/16 22:57:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:28 sthen Exp $
 
 COMMENT =	IP bandwidth analysis tool
 
@@ -8,7 +8,7 @@ CATEGORIES =	net
 HOMEPAGE =	http://robert.cheramy.net/ipfm/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c pcap
 

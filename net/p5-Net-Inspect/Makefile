@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/02/03 17:49:17 bluhm Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:48:38 sthen Exp $
 
 COMMENT =	library for inspection of data on various network layers
 
@@ -9,7 +9,7 @@ CATEGORIES =	net
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 RUN_DEPENDS =		net/p5-Net-Pcap \

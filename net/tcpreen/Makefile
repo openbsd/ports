@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/05/20 22:15:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:48:49 sthen Exp $
 
 COMMENT=		simple tcp re-engineering tool
 
@@ -13,7 +13,7 @@ MAINTAINER=		Nigel Taylor <nigel@openbsd.org>
 MASTER_SITES=		http://www.remlab.net/files/tcpreen/stable/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c iconv intl m ${COMPILER_LIBCXX} 
 
 COMPILER =		base-clang ports-gcc base-gcc

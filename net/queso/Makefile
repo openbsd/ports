@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2014/08/30 21:54:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:48:47 sthen Exp $
 
 COMMENT=	determine remote OS using simple tcp packets
 
 DISTNAME=	queso-980922
 CATEGORIES=	net
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c pcap
 
 CONFIGURE_STYLE=gnu

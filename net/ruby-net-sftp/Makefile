@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/05/14 17:56:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:48 sthen Exp $
 
 COMMENT =	pure-ruby implementation of the SFTP client protocol
 
@@ -6,7 +6,7 @@ DISTNAME =	net-sftp-2.1.2
 CATEGORIES =	net
 
 # bsd/ruby
-PERMIT_PACKAGE_CDROM =		yes
+PERMIT_PACKAGE =		Yes
 
 MODULES =		lang/ruby
 

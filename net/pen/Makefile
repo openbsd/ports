@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2016/04/27 21:16:17 jca Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:48:43 sthen Exp $
 
 COMMENT=		load balancer for simple TCP-based protocols
 
@@ -9,7 +9,7 @@ CATEGORIES=		net
 HOMEPAGE=		http://siag.nu/pen/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GeoIP c crypto ssl
 

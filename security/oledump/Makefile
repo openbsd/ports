@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/09 11:48:23 rpointel Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:05 sthen Exp $
 
 COMMENT =	analyze OLE files
 
@@ -14,7 +14,7 @@ HOMEPAGE =	http://blog.didierstevens.com/programs/oledump-py/
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # public domain
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://didierstevens.com/files/software/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/01/01 12:35:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:48 sthen Exp $
 
 COMMENT =	Ruby implementation of Net::DNS
 
@@ -6,7 +6,7 @@ DISTNAME =	net-dns-0.8.0
 CATEGORIES =	net
 
 # Ruby's license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =	lang/ruby
 

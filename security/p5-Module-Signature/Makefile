@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/09/02 16:33:08 bluhm Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:49:08 sthen Exp $
 
 COMMENT =	module signature file manipulation
 
@@ -9,7 +9,7 @@ CATEGORIES =	security
 MAINTAINER =	Alexander Bluhm <bluhm@openbsd.org>
 
 # CC0 creative commons
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 BUILD_DEPENDS =		security/gnupg

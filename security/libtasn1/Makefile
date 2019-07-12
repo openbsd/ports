@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2018/02/09 09:36:04 jca Exp $
+# $OpenBSD: Makefile,v 1.46 2019/07/12 20:49:05 sthen Exp $
 
 COMMENT=		Abstract Syntax Notation One structure parser library
 
@@ -13,7 +13,7 @@ HOMEPAGE=		https://www.gnu.org/software/libtasn1/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

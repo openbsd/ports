@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/05/11 14:51:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:49:04 sthen Exp $
 
 COMMENT=		library for fingerprint reader devices
 
@@ -15,7 +15,7 @@ EXTRACT_SUFX=		.tar.xz
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += glib-2.0 intl m nspr4 nss3 nssutil3 pixman-1 plc4 plds4
 WANTLIB += usb-1.0

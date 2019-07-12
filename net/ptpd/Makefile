@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/01/11 19:27:07 rpe Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:48:44 sthen Exp $
 
 # ptpd-1.x implements PTPv1 (IEEE 1588-2002)
 # ptpd-2.x implements PTPv2 (IEEE 1588-2008)
@@ -13,7 +13,7 @@ HOMEPAGE=	http://ptpd.sourceforge.net/
 REVISION=	0
 
 # ISC
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ptpd/}
 

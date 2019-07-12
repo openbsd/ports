@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/09/18 15:15:03 kspillner Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:59 sthen Exp $
 
 COMMENT =		ncurses front-end for taskwarrior
 
@@ -10,7 +10,7 @@ HOMEPAGE =		http://tasktools.org/projects/vit.html
 MAINTAINER =		Kent R. Spillner <kspillner@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://taskwarrior.org/download/
 RUN_DEPENDS =		devel/p5-Curses \

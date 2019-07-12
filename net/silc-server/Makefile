@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2018/11/17 01:06:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.77 2019/07/12 20:48:48 sthen Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) server
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.silcnet.org/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2019/03/28 23:47:27 bluhm Exp $
+# $OpenBSD: Makefile,v 1.80 2019/07/12 20:48:37 sthen Exp $
 
 COMMENT =	perl interface to the domain name system
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://www.net-dns.org/
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://www.net-dns.org/download/
 

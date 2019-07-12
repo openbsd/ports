@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/04/28 14:54:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:48:42 sthen Exp $
 
 COMMENT=	resolver library used to communicate with a DNS server
 
@@ -8,7 +8,7 @@ CATEGORIES=	net
 MODULES=	www/pear
 
 # PHP License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 PKG_ARCH=	*
 

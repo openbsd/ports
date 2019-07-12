@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/20 22:15:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:50 sthen Exp $
 
 BROKEN-powerpc =	assertion "get_int () == TLS_SCHEMA_V2" failed: file "generate.c", line 2831, function "parse_tlo_file"
 
@@ -10,7 +10,7 @@ PKGNAME =		telegram-purple-$V
 CATEGORIES =		net
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += gcrypt glib-2.0 intl purple webp z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/02/27 19:15:32 jca Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:02 sthen Exp $
 
 COMMENT =		forensic data recovery program
 
@@ -10,7 +10,7 @@ CATEGORIES =		security
 HOMEPAGE =		http://foremost.sourceforge.net/
 
 # not copyrighted; see COPYRIGHT in main.h
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://foremost.sourceforge.net/pkg/
 

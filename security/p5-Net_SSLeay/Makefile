@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2019/05/12 16:15:29 bluhm Exp $
+# $OpenBSD: Makefile,v 1.74 2019/07/12 20:49:08 sthen Exp $
 
 COMMENT =	perl module for using OpenSSL
 
@@ -9,7 +9,7 @@ CATEGORIES =	security
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Artistic 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto perl ssl z
 

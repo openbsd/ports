@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/11/19 14:39:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:40 sthen Exp $
 
 COMMENT=	perl interface to the Twitter API
 
@@ -7,7 +7,7 @@ DISTNAME =	Net-Twitter-4.01030
 CATEGORIES=	net
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
 PKG_ARCH=	*

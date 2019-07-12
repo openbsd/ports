@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/01/03 21:48:57 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:37 sthen Exp $
 
 COMMENT =	decode and encode NetFlow/IPFIX datagrams
 
@@ -9,7 +9,7 @@ CATEGORIES =	net
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 

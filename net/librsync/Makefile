@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/03/10 13:27:36 bket Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:31 sthen Exp $
 
 COMMENT=	library for delta compression of streams
 
@@ -14,7 +14,7 @@ CATEGORIES=	net
 HOMEPAGE=	https://librsync.github.io/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += b2 c popt
 

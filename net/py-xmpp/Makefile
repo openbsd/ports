@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/15 12:04:40 kmos Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:46 sthen Exp $
 
 COMMENT=		Python XMPP and Jabber implementation
 
@@ -11,7 +11,7 @@ REVISION=		2
 HOMEPAGE=		http://pyxmpp.jajcus.net/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pthread xml2

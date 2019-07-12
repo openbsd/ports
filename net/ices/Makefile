@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/05/05 04:31:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:48:28 sthen Exp $
 
 PORTROACH=	limit:^0
 PORTROACH_COMMENT=	ices2 is a different port
@@ -12,7 +12,7 @@ CATEGORIES=	net audio
 HOMEPAGE=	https://icecast.org/ices/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =	c iconv m ogg perl pthread theora util vorbis vorbisfile z
 WANTLIB += 	${MODPY_WANTLIB}

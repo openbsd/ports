@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/05/06 15:52:24 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:51 sthen Exp $
 
 COMMENT =	DNS and DNSSEC zone file validator
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://www.validns.net/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	Judy c crypto pthread
 

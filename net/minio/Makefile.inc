@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2018/03/06 18:38:02 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2019/07/12 20:48:32 sthen Exp $
 
 GH_ACCOUNT ?=	minio
 
@@ -9,7 +9,7 @@ HOMEPAGE =	https://minio.io
 MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # APACHEv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c pthread
 MODULES =	lang/go

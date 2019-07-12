@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/01/11 19:27:08 rpe Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 20:48:51 sthen Exp $
 
 COMMENT=		FTP daemon which aims to be secure
 
@@ -9,7 +9,7 @@ CATEGORIES=		net
 HOMEPAGE=		http://vsftpd.beasts.org/
 
 # GPLv2+OpenSSL exemption
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c crypto ssl util
 

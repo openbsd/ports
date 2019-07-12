@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2015/05/17 11:42:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:01 sthen Exp $
 
 COMMENT=	command-line anti-spoofing detection utility
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.bindview.com/Services/RAZOR/Utilities/Unix_Linux/despoof_readme.cfm
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c pcap lib/libnet-1.0/net=0
 

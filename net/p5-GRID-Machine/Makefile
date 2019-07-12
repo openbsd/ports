@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:56:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:36 sthen Exp $
 
 COMMENT =	Remote Procedure Calls over a SSH link
 
@@ -13,7 +13,7 @@ CPAN_AUTHOR =	CASIANO
 MAINTAINER =	Okan Demirmen <okan@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Module-Which
 

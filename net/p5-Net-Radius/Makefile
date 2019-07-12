@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:56:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:39 sthen Exp $
 
 COMMENT=	Perl interface to Radius
 
@@ -10,7 +10,7 @@ CATEGORIES=	net devel
 MAINTAINER=	Alexander Bluhm <bluhm@openbsd.org>
 
 # perl artistic license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/05/28 17:29:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:35 sthen Exp $
 
 COMMENT =	BSD Auth helper program for OpenVPN
 
@@ -10,7 +10,7 @@ HOMEPAGE =	http://www.wormhole.hu/~ice/openvpn_bsdauth/
 MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB =	c

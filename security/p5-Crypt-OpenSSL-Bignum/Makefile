@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/06/06 08:46:38 benoit Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:07 sthen Exp $
 
 COMMENT =	OpenSSL's multiprecision integer arithmetic#'
 
@@ -7,7 +7,7 @@ DISTNAME =	Crypt-OpenSSL-Bignum-0.08
 CATEGORIES =	security
 
 # Artistic licence
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c crypto perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/04/14 22:53:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:51 sthen Exp $
 
 COMMENT =		access any command-line tool via a WebSocket
 
@@ -14,7 +14,7 @@ HOMEPAGE =		http://websocketd.com/
 MAINTAINER =		Kent R. Spillner <kspillner@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c pthread
 

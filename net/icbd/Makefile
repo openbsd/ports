@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/01/11 19:27:05 rpe Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:27 sthen Exp $
 
 COMMENT =		Internet Citizens Band Server
 
@@ -12,7 +12,7 @@ CATEGORIES =		net
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c event
 

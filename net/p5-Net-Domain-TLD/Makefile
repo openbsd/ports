@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/09/20 07:38:37 benoit Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:37 sthen Exp $
 
 COMMENT =	module to work with TLD names
 
@@ -10,7 +10,7 @@ CATEGORIES =	net
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAKE_ENV +=		TEST_POD=1
 

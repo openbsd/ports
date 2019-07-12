@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/08/10 11:17:22 bluhm Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:38 sthen Exp $
 
 COMMENT =	build IPv4 and IPv6 address space hierarchies
 
@@ -10,7 +10,7 @@ CATEGORIES =	net
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 RUN_DEPENDS =		net/p5-NetAddr-IP>=4.007

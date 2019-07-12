@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/06/11 00:38:36 kurt Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:02 sthen Exp $
 
 # bundled jython has amd64 components for OpenBSD
 ONLY_FOR_ARCHS =	amd64
@@ -17,7 +17,7 @@ HOMEPAGE =	https://www.ghidra-sre.org/
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # Apache v2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}
 

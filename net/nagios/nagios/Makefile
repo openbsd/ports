@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2018/10/17 14:15:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2019/07/12 20:48:33 sthen Exp $
 
 ONLY_FOR_ARCHS=	${LP64_ARCHS} # time_t format string issues
 
@@ -16,7 +16,7 @@ REVISION-web=	1
 HOMEPAGE=	http://www.nagios.org/
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES=	-main -web
 

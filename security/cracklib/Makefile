@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/11/21 00:13:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:01 sthen Exp $
 
 COMMENT =		sensible unix password cracker
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://sourceforge.net/projects/cracklib/
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  c iconv intl z
 

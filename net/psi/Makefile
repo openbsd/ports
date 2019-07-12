@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/04/15 17:39:43 cwen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:48:44 sthen Exp $
 
 COMMENT=	multiplatform Jabber client
 
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=psi/}
 EXTRACT_SUFX=	.tar.bz2
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE QtDBus QtGui QtNetwork QtXml SM X11 Xext Xi Xinerama
 WANTLIB += Xrender Xss c enchant fontconfig freetype glib-2.0

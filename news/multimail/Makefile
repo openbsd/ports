@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/02 12:03:27 fcambus Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:53 sthen Exp $
 
 COMMENT =	offline mail reader for Blue Wave, QWK, OMEN, SOUP and OPX
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://multimail.sourceforge.io/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB =	c curses m ${COMPILER_LIBCXX}

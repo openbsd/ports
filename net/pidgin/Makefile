@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2019/06/13 15:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.145 2019/07/12 20:48:43 sthen Exp $
 
 COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
@@ -31,7 +31,7 @@ HOMEPAGE=	https://pidgin.im/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
 

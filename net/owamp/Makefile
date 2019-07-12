@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/01/11 19:27:07 rpe Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:35 sthen Exp $
 
 COMMENT =	rfc4656 one-way active measurement protocol
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://www.internet2.edu/performance/owamp/
 
 # Custom, see LICENSE.
 # Looks like BSD at first but note last paragraph.
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m
 

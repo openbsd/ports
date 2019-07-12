@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/01/12 20:03:23 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:33 sthen Exp $
 
 COMMENT-main=	nagios service check acceptor
 COMMENT-client=	nagios service check acceptor - client
@@ -14,7 +14,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://www.nagios.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nagios/}
 

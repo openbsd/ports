@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/03/04 08:29:59 rpointel Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:05 sthen Exp $
 
 COMMENT =		C library implementing server and client side
 DISTNAME =		libssh-0.8.7
@@ -14,7 +14,7 @@ EXTRACT_SUFX =		.tar.xz
 MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # LGPL v2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += crypto z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2016/10/01 11:54:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:48:54 sthen Exp $
 
 COMMENT=		strip TeX/LaTeX codes from a file
 
@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=opendetex/}
 EXTRACT_SUFX=		.tar.bz2
 
 # NCSA/University of Illinois Open Source License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MAKE_FLAGS=		DESTDIR="${LOCALBASE}/bin" CFLAGS="${CFLAGS}"

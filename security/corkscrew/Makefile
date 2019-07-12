@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/06/10 11:05:02 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:01 sthen Exp $
 
 COMMENT=		HTTP tunneling utility for SSH
 
@@ -9,7 +9,7 @@ CATEGORIES=    		security net
 HOMEPAGE=		http://www.agroman.net/corkscrew/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		http://www.agroman.net/corkscrew/

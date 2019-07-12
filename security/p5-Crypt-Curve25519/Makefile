@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/09 14:18:08 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:07 sthen Exp $
 
 COMMENT =	generate shared secret using ECDH function
 DISTNAME =	Crypt-Curve25519-0.06
 CATEGORIES =	security
 
 # Perl, BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c perl
 

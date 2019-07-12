@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2019/04/28 20:51:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2019/07/12 20:48:57 sthen Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
@@ -14,7 +14,7 @@ HOMEPAGE=		http://cyberelk.net/tim/software/system-config-printer/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python \
 			textproc/intltool

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/25 03:36:19 bket Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:53 sthen Exp $
 
 COMMENT =			retrieve and process nzb-files via web interface
 VERSION =			2.3.9
@@ -9,7 +9,7 @@ HOMEPAGE =			https://sabnzbd.org/
 MAINTAINER =			Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =			https://github.com/sabnzbd/sabnzbd/releases/download/${VERSION}/
 EXTRACT_SUFX =			-src.tar.gz

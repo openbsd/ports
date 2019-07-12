@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/01/11 19:27:05 rpe Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:25 sthen Exp $
 
 COMMENT=		DNS queries reflector
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.wolfermann.org/dnsreflector.html
 MASTER_SITES=		http://www.wolfermann.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 NO_TEST=		Yes

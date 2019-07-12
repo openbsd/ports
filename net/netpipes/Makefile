@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/11/04 17:17:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:34 sthen Exp $
 
 COMMENT=	shell utilities to connect programs to sockets
 
@@ -9,7 +9,7 @@ CATEGORIES=	net
 
 HOMEPAGE=	http://web.purplefrog.com/~thoth/netpipes/netpipes.html
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	ftp://ftp.purplefrog.com/pub/netpipes/

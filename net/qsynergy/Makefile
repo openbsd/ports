@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:47 sthen Exp $
 
 COMMENT=		GUI for synergy
 
@@ -9,7 +9,7 @@ CATEGORIES=		net x11
 HOMEPAGE=		http://sourceforge.net/projects/qsynergy/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=qsynergy/}
 

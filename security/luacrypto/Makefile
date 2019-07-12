@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/10/11 15:53:26 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:05 sthen Exp $
 
 COMMENT=	Lua binding for the OpenSSL crypto libraries
 
@@ -10,7 +10,7 @@ CATEGORIES=	security
 HOMEPAGE=	http://luacrypto.luaforge.net/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/1722/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/06/02 12:01:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:45 sthen Exp $
 
 COMMENT =		Python classes providing access to network packets
 
@@ -12,7 +12,7 @@ CATEGORIES =   		net security
 HOMEPAGE =		https://www.coresecurity.com/corelabs-research/open-source-tools/impacket
 
 # Apache modified
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

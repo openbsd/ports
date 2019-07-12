@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/05/20 22:15:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2019/07/12 20:48:29 sthen Exp $
 
 COMMENT =	BitTorrent Client
 
@@ -15,7 +15,7 @@ HOMEPAGE =	https://www.kde.org/applications/internet/ktorrent/
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

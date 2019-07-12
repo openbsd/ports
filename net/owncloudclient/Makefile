@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/04/02 08:37:02 kirby Exp $
+# $OpenBSD: Makefile,v 1.42 2019/07/12 20:48:35 sthen Exp $
 
 COMMENT =		owncloud sync client
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://owncloud.org/download/#owncloud-desktop-client
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml qt5keychain

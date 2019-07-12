@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2017/08/22 11:11:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2019/07/12 20:49:01 sthen Exp $
 
 COMMENT=	sniffing tools for penetration testing
 
@@ -15,7 +15,7 @@ LIB_DEPENDS=	databases/db/v3 \
 		net/libnids
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto pcap nids ssl rpcsvc lib/db/db=3 lib/libnet-1.0/net=0
 

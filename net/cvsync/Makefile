@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2019/03/30 07:00:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.56 2019/07/12 20:48:24 sthen Exp $
 
 COMMENT=	CVS repository synchronization utility
 
@@ -9,7 +9,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://www.cvsync.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c pthread z
 

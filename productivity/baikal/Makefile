@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/10/17 14:15:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:57 sthen Exp $
 
 COMMENT=	lightweight CalDAV and CardDAV server
 
@@ -12,7 +12,7 @@ REVISION=	4
 HOMEPAGE=	http://sabre.io/baikal/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/php
 

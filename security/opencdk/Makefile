@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/06/30 11:41:36 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:05 sthen Exp $
 
 COMMENT=		Open Crypto Development Kit
 
@@ -12,7 +12,7 @@ REVISION=		3
 HOMEPAGE=		http://www.gnutls.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=  gcrypt>=13 gpg-error iconv intl z
 

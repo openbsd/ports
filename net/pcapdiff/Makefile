@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/12/19 00:13:35 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:42 sthen Exp $
 
 COMMENT =		compare pcap dump files
 
@@ -11,7 +11,7 @@ CATEGORIES =		net security
 HOMEPAGE =		https://www.eff.org/pages/pcapdiff
 
 # GPLv2/GPLv3 (only)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://www.eff.org/files/
 

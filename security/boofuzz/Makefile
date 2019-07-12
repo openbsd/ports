@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/02 11:42:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:00 sthen Exp $
 
 COMMENT =	extensible network protocol fuzzer
 
@@ -12,7 +12,7 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 HOMEPAGE =	https://github.com/jtpereyda/boofuzz
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/04/03 14:01:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:48:33 sthen Exp $
 
 COMMENT=	Nagios Remote Plugin Executor
 
@@ -9,7 +9,7 @@ CATEGORIES=	net
 HOMEPAGE=	http://www.nagios.org/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

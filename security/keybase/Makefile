@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 17:54:38 juanfra Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:03 sthen Exp $
 
 # go-ps only supports amd64 on OpenBSD
 # ../vendor/github.com/keybase/go-ps/process.go:39: undefined: processes
@@ -21,7 +21,7 @@ HOMEPAGE =	https://keybase.io
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	security/gnupg2
 

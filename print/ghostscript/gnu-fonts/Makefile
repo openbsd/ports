@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/04/06 21:04:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:55 sthen Exp $
 
 COMMENT=		35 standard PostScript fonts with Adobe name aliases
 
@@ -10,7 +10,7 @@ CATEGORIES=		x11 print fonts
 HOMEPAGE=		http://www.cs.wisc.edu/~ghost/doc/cvs/Fonts.htm
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ghostscript/}
 

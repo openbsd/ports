@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/08/25 13:18:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:59 sthen Exp $
 
 COMMENT =	substantially more useful ls
 DISTNAME =	sl-ls-1.1.2
@@ -8,7 +8,7 @@ CATEGORIES =	productivity sysutils
 HOMEPAGE =	http://practicalthought.com/sl/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =	http://mirrors.nycbug.org/pub/distfiles/
 

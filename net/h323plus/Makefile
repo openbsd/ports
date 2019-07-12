@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/01/06 10:36:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:48:27 sthen Exp $
 
 COMMENT=		H.323 video conferencing library
 
@@ -17,7 +17,7 @@ HOMEPAGE=		http://www.h323plus.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MPL (dlopen(3) GPL modules)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL c crypto expat lber-2.4 ldap-2.4
 WANTLIB += ldap_r-2.4 m pt sasl2 ssl
