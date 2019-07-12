@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2019/05/20 22:15:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2019/07/12 21:42:15 sthen Exp $
 
 BROKEN-hppa =	no atomic ops / __sync_fetch_and_add_4
 BROKEN-alpha =	tinylock.c:58: internal compiler error: in extract_insn, at recog.c:2077
@@ -17,7 +17,7 @@ CATEGORIES =		audio multimedia
 HOMEPAGE =		http://audacious-media-player.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig

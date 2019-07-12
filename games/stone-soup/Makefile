@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/05/17 16:19:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 21:42:15 sthen Exp $
 
 BROKEN-hppa =	ICE on dgn-shoals.cc:638
 
@@ -14,7 +14,7 @@ CATEGORIES = 	games
 HOMEPAGE = 	https://crawl.develz.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	 Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} c m sqlite3
 

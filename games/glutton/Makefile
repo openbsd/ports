@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/07 17:07:29 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 21:42:15 sthen Exp $
 
 COMMENT= 	Pac-Man clone
 
@@ -8,7 +8,8 @@ CATEGORIES= 	games
 HOMEPAGE=	http://kokido.sourceforge.net/glutton.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=  	Yes
+PERMIT_PACKAGE=	Yes
+
 WANTLIB=		X11 Xext c m pthread usbhid xcb \
 			SDL SDL_mixer
 
