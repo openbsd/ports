@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/07/04 11:09:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 21:15:35 sthen Exp $
 
 COMMENT =	fetch and update unofficial signatures for ClamAV
 
@@ -12,7 +12,7 @@ CATEGORIES =	security mail
 HOMEPAGE =	https://github.com/extremeshok/clamav-unofficial-sigs
 
 # BSD
-PERMIT_PACKAGE_CDROM =	 Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://github.com/extremeshok/clamav-unofficial-sigs/archive/
 

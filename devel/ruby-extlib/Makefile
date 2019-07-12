@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/10/26 23:55:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 21:15:34 sthen Exp $
 
 COMMENT =		Ruby extensions serving DataMapper and DataObjects
 
@@ -7,7 +7,7 @@ REVISION =		0
 CATEGORIES =		devel
 
 # MIT
-PERMIT_PACKAGE_CDROM = 	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

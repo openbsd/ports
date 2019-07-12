@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/08/09 17:43:00 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 21:15:34 sthen Exp $
 
 PKG_ARCH = 	*
 COMMENT =  	config files for imake
@@ -9,7 +9,7 @@ PKGNAME = 	imake-cf-${V}
 REVISION =	2
 MASTER_SITES = 	${MASTER_SITE_XORG:=util/}
 
-PERMIT_PACKAGE_CDROM = 		Yes
+PERMIT_PACKAGE =	Yes
 
 SUBST += 	-e 's|@prefix@|${X11BASE}|'
 SUBST += 	-e 's|@FONTROOTDIR@|${X11BASE}/lib/X11/fonts|'

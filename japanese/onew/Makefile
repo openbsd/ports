@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/12/08 15:09:15 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 21:15:35 sthen Exp $
 
 COMMENT=	library for Japanese Input Method Wnn4
 
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 FLAVORS=wnn4 canna
 FLAVOR?=canna

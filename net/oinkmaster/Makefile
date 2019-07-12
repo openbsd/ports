@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/10/11 23:50:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 21:15:35 sthen Exp $
 
 COMMENT=	update your Snort rules
 
@@ -12,7 +12,7 @@ HOMEPAGE=       http://oinkmaster.sourceforge.net/
 MAINTAINER=	Markus Lude <markus.lude@gmx.de>
 
 # License: BSD
-PERMIT_PACKAGE_CDROM= 	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		net/wget
 

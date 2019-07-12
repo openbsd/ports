@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2019/05/17 22:52:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2019/07/12 21:15:36 sthen Exp $
 
 COMMENT-main=		interactive spelling checker
 COMMENT-dutch=		ispell dictionary for Dutch
@@ -64,7 +64,7 @@ MULTI_PACKAGES=	-main -dutch -french -german -swedish -russian -portuguese \
 
 # ispell: BSD-like
 # dictionaries: GPL or BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB-main=		c curses
 

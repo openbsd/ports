@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:56:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 21:15:34 sthen Exp $
 
 COMMENT =	check Manifest matches your distro
 
@@ -9,7 +9,7 @@ CATEGORIES =	devel
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	 Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*

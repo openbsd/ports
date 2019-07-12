@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/11 00:38:36 kurt Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 21:15:36 sthen Exp $
 
 COMMENT =		config backup and policy check for network devices
 
@@ -15,7 +15,7 @@ HOMEPAGE =		http://www.netfishers.onl/netshot
 MAINTAINER =		Remi Locherer <remi@openbsd.org>
 
 # GPLv3+ (included libraries: Apache1+2 BSD GPLv2 LGPL2.1 MIT)
-PERMIT_PACKAGE_CDROM =	YES
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://github.com/netfishers-onl/Netshot/releases/download/v${V}/
 

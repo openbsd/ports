@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/30 02:11:16 cwen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 21:15:36 sthen Exp $
 
 COMMENT =		Perl interface for the Tumblr API
 
@@ -9,7 +9,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 
 # Perl
-PERMIT_PACKAGE_CDROM = 	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		converters/p5-JSON \
 			devel/p5-Moose \

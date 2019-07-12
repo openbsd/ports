@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/02 12:39:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 21:15:34 sthen Exp $
 
 COMMENT = 	Atmel AVR 32-bit gcc
 V = 		4.4.7
@@ -6,7 +6,7 @@ DISTNAME = 	avr32-gcc-${V}
 REVISION =	1
 
 # GPLv3
-PERMIT_PACKAGE_CDROM = 	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB = 		c gmp mpfr
 DIST_SUBDIR = 		gcc

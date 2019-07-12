@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/04/11 13:40:46 edd Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 21:15:34 sthen Exp $
 
 COMMENT =	book on TeX typesetting system for experienced audience
 CATEGORIES =	books
@@ -16,8 +16,7 @@ MASTER_SITES =	https://bitbucket.org/VictorEijkhout/tex-by-topic/get/
 BUILD_DEPENDS =	print/texlive/base
 
 # GNU FDL
-PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WRKDIST =	${WRKDIR}/VictorEijkhout-tex-by-topic-${COMMIT}
 INSTALL_LOC =	${PREFIX}/share/doc/tex-by-topic

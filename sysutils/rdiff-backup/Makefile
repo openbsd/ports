@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.21 2017/06/04 02:58:48 schwarze Exp $
+#	$OpenBSD: Makefile,v 1.22 2019/07/12 21:15:36 sthen Exp $
 
 COMMENT = 	incremental backup
 
@@ -12,7 +12,7 @@ HOMEPAGE = 	http://www.nongnu.org/rdiff-backup/
 MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM = 	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		rsync pthread ${MODPY_WANTLIB}
 

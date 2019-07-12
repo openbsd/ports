@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 19:56:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 21:15:35 sthen Exp $
 
 COMMENT =	Perl DHCP classes
 
@@ -8,7 +8,7 @@ CATEGORIES =	net
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	 Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*

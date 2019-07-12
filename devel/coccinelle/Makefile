@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/05/13 22:41:55 jca Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 21:15:34 sthen Exp $
 
 BROKEN-sparc64 =	"/usr/bin/ld: skipping incompatible pyml-current/libpyml_stubs.a when searching for -lpyml_stubs" \
 			"/usr/bin/ld: cannot find -lpyml_stubs"
@@ -15,7 +15,7 @@ CATEGORIES =	devel
 HOMEPAGE =	http://coccinelle.lip6.fr/
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	 Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses m pthread pcre ${MODPY_WANTLIB}
 

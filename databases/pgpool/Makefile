@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/09/10 12:29:24 pea Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 21:15:34 sthen Exp $
 
 COMMENT= 	connection pool server for PostgreSQL
 
@@ -13,7 +13,7 @@ MAINTAINER= 	Pierre-Emmanuel Andre <pea@openbsd.org>
 SHARED_LIBS=  pcp	0.0
 
 # BSD
-PERMIT_PACKAGE_CDROM= 	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://www.pgpool.net/mediawiki/images/
 

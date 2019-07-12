@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/07 02:31:03 danj Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 21:15:36 sthen Exp $
 
 COMMENT=	logfile auditing tool
 
@@ -8,7 +8,7 @@ REVISION = 	8
 CATEGORIES=	security
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=  	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sentrytools/}

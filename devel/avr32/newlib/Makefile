@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/02 12:39:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 21:15:34 sthen Exp $
 
 COMMENT = 	Atmel AVR 32-bit C library
 V = 		1.16.0
 DISTNAME = 	avr32-newlib-${V}
 
 # GPLv3/GPLv2/BSD
-PERMIT_PACKAGE_CDROM = 	Yes
+PERMIT_PACKAGE =	Yes
 
 AUTOCONF_VERSION =	2.59
 AUTOMAKE_VERSION =	1.9

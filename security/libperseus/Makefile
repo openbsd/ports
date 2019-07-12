@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/03/16 18:07:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 21:15:36 sthen Exp $
 
 COMMENT = 	library to secure any kind of communication streams
 
@@ -15,7 +15,7 @@ HOMEPAGE = 	https://libperseus.googlecode.com/
 MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPL/LGPL/MPL
-PERMIT_PACKAGE_CDROM = 	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB = 	c m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2019/05/20 22:15:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.66 2019/07/12 21:15:35 sthen Exp $
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
@@ -16,7 +16,7 @@ HOMEPAGE = 	https://www.gnupg.org/
 MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM = 	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += assuan bz2 c gcrypt gnutls gpg-error iconv intl ksba
 WANTLIB += npth pthread readline sqlite3 usb-1.0 z curses

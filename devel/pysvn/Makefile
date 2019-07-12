@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/10/24 14:28:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 21:15:34 sthen Exp $
 
 COMMENT =		python interface to subversion
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://pysvn.tigris.org
 MAINTAINER = 		Stefan Sperling <stsp@openbsd.org>
 
 # Apache v1.1, BSD-like
-PERMIT_PACKAGE_CDROM = 		Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://pysvn.barrys-emacs.org/source_kits/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 21:15:36 sthen Exp $
 
 COMMENT =	create and manipulate tables
 
@@ -11,7 +11,7 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # custom:
 # http://cpansearch.perl.org/src/CERNEY/Tk-TableMatrix-1.23/COPYING
-PERMIT_PACKAGE_CDROM =	 Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	X11 c m perl
 

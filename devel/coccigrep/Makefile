@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/29 10:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 21:15:34 sthen Exp $
 
 COMMENT =	semantic grep, based on coccinelle
 
@@ -11,7 +11,7 @@ CATEGORIES =	devel textproc
 HOMEPAGE =	http://home.regit.org/software/coccigrep/
 
 # GPLv3 only
-PERMIT_PACKAGE_CDROM =	 Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://home.regit.org/wp-content/uploads/2011/08/
 

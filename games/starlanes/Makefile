@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/05/11 19:52:15 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 21:15:35 sthen Exp $
 
 COMMENT=	classic space-age stock trading game
 
@@ -7,7 +7,8 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=games/strategy/}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	YES
+PERMIT_PACKAGE=	Yes
+
 WANTLIB=		c curses
 
 MAKE_FLAGS=	CC="${CC}"

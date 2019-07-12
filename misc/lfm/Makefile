@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/02 14:21:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 21:15:35 sthen Exp $
 
 COMMENT =		powerful curses interface python file manager
 
@@ -11,7 +11,7 @@ CATEGORIES =		misc
 HOMEPAGE =		http://katxi.org/devel/lfm/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	 Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

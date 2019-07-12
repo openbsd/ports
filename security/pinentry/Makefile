@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/01/30 15:06:37 jca Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 21:15:36 sthen Exp $
 
 COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gtk2 = 	PIN or passphrase entry dialog (gtk2 interface)
@@ -21,7 +21,7 @@ HOMEPAGE = 	https://www.gnupg.org/related_software/pinentry/index.en.html
 MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM = 	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c assuan gio-2.0 glib-2.0 gobject-2.0 gpg-error iconv intl
 WANTLIB += curses secret-1

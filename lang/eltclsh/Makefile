@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/08/15 12:09:25 matthieu Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 21:15:35 sthen Exp $
 
 COMMENT =	Libedit interface to Tcl/Tk interpreters
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://git.openrobots.org/projects/eltclsh/
 MAINTAINER =	Matthieu Herrb <matthieu@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	 Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		X11 Xext Xft Xrender Xss c curses edit expat \
 			fontconfig freetype m pthread xcb z ${MODTK_WANTLIB}

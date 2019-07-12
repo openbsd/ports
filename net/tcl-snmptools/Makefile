@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/14 14:06:38 stu Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 21:15:35 sthen Exp $
 
 COMMENT =	Tcl package that provides SNMP tools
 
@@ -10,7 +10,7 @@ CATEGORIES =	net
 MAINTAINER =	Matthieu Herrb <matthieu@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM = 	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	netsnmp
 

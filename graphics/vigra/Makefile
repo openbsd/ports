@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 21:15:35 sthen Exp $
 
 COMMENT =		image processing and analysis library
 ONLY_FOR_ARCHS =	${CXX11_ARCHS}
@@ -19,7 +19,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 MASTER_SITES = https://github.com/ukoethe/vigra/releases/download/Version-${V}/
 
 # MIT
-PERMIT_PACKAGE_CDROM = 	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += Half Iex IlmImf IlmThread Imath boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_system-mt boost_thread-mt

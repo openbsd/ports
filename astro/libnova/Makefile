@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/11 19:59:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 21:15:33 sthen Exp $
 
 COMMENT =	astronomic computations as a library
 
@@ -10,7 +10,7 @@ CATEGORIES =	astro devel
 HOMEPAGE =	http://libnova.sourceforge.net/
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM = 		Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c m
 

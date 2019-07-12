@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/20 22:15:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 21:15:35 sthen Exp $
 
 COMMENT = 	X.509 library
 
@@ -15,7 +15,7 @@ HOMEPAGE = 	https://www.gnupg.org/software/libksba/index.html
 MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM = 	Yes
+PERMIT_PACKAGE =	Yes
 
 EXTRACT_SUFX = 		.tar.bz2
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/10/11 21:20:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 21:15:35 sthen Exp $
 
 COMMENT-canna=		X input method for Japanese, canna support
 COMMENT-canna-wnn=	X input method for Japanese, canna and wnn support
@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/
 CATEGORIES=	japanese x11
 
 # License: NOFEE
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c
 

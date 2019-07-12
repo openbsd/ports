@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2019/06/01 23:22:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2019/07/12 21:15:35 sthen Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
@@ -17,7 +17,7 @@ HOMEPAGE=		https://www.bro.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM= 	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto m maxminddb pcap pthread ssl z
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} lib/libbind/bind

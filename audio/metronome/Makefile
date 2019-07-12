@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/11/24 09:11:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 21:15:34 sthen Exp $
 
 COMMENT = 	simple metronome
 CATEGORIES =	audio
@@ -7,7 +7,7 @@ MAINTAINER = 	Marc Espie <espie@openbsd.org>
 MASTER_SITES = 	https://distfiles.nl/
 
 # OpenBSD licence
-PERMIT_PACKAGE_CDROM = 	Yes
+PERMIT_PACKAGE =	Yes
 
 FAKE_FLAGS = 	BINDIR=${TRUEPREFIX}/bin MANDIR=${TRUEPREFIX}/man/man
 WANTLIB += 	c m sndio

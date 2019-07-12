@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/02 12:39:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 21:15:34 sthen Exp $
 
 COMMENT = 	Atmel AVR 32-bit binutils
 V = 		2.23.1
 DISTNAME = 	avr32-binutils-${V}
 
 # GPLv3
-PERMIT_PACKAGE_CDROM = 	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB = 		c z
 DIST_SUBDIR = 		binutils

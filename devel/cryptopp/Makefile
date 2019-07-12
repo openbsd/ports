@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/04/24 16:26:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 21:15:34 sthen Exp $
 
 COMMENT = 	C++ library of cryptographic algorithms
 CATEGORIES = 	devel security
@@ -14,7 +14,7 @@ WRKDIST = 	${WRKDIR}
 
 # individual files are public domain
 # compilation is licensed under the Boost Software License 1.0
-PERMIT_PACKAGE_CDROM = 		Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	m pthread ${COMPILER_LIBCXX}
 

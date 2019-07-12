@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/15 12:04:38 kmos Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 21:15:35 sthen Exp $
 
 COMMENT = 		Python charting module
 
@@ -9,7 +9,7 @@ CATEGORIES = 		graphics
 HOMEPAGE = 		http://www.lorenzogil.com/projects/pycha/
 
 # LGPL
-PERMIT_PACKAGE_CDROM = 	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI = 		Yes
 

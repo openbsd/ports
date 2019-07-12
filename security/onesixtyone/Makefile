@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2015/06/17 06:16:51 bentley Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 21:15:36 sthen Exp $
 
 COMMENT=	efficient SNMP scanner
 
@@ -7,7 +7,7 @@ CATEGORIES=	security
 REVISION=	0
 
 # GPL
-PERMIT_PACKAGE_CDROM=  	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	http://www.phreedom.org/solar/onesixtyone/

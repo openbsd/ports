@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/29 09:58:56 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 21:15:36 sthen Exp $
 
 COMMENT =	convert DocBook to man pages and Texinfo
 
@@ -11,7 +11,7 @@ CATEGORIES =	textproc
 HOMEPAGE =	http://docbook2x.sourceforge.net/
 
 # MIT-like
-PERMIT_PACKAGE_CDROM =	 Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c iconv
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/28 20:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 21:15:36 sthen Exp $
 
 COMMENT =	minimalistic console file manager
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://ranger.github.io/
 MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	 Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://ranger.github.io/
 

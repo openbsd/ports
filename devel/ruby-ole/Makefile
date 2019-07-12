@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/07/18 21:07:40 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 21:15:34 sthen Exp $
 
 COMMENT =	provides read/write access to OLE2 structured storage files
 
@@ -8,7 +8,7 @@ REVISION =	2
 CATEGORIES =	devel
 
 # MIT
-PERMIT_PACKAGE_CDROM =	 Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 
