@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2019/07/05 15:42:54 juanfra Exp $
+$OpenBSD: README,v 1.2 2019/07/12 17:54:38 juanfra Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -9,7 +9,7 @@ Keybase and KBFS
 
 The keybase package includes two daemons which you need to run as regular user
 to access to the most of the Keybase features. "keybase" is the main daemon and
-you can start it with "keybase ctl start".
+you can control it with "keybase ctl".
 
 KBFS is a distributed and encrypted filesystem. Also, it's used as a remote for
 the encrypted git repos. You need to run "kbfsfuse" to enable the access to
@@ -17,7 +17,11 @@ KBFS. Despite the name the daemon will not use FUSE, so you can run it
 without root access.
 
 The "kbfsfuse" daemon will wait until the keybase daemon is ready. You can
-start both in parallel without worrying about the order.
+start both in parallel without worrying about the order. Upstream uses these
+commands to autostart the daemons (the logs are saved in ~/.cache/keybase):
+
+- keybase --debug --use-default-log-file service --auto-forked
+- kbfsfuse -debug -log-to-file
 
 Using the Keybase services requires an account on keybase.io. If you don't have
 an account, use "keybase signup" to register a new account and "keybase login"
