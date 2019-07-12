@@ -1,9 +1,9 @@
-#	$OpenBSD: Makefile,v 1.15 2019/04/17 02:24:56 jsg Exp $
+#	$OpenBSD: Makefile,v 1.16 2019/07/12 05:08:21 jsg Exp $
 
 COMMENT=	Raspberry Pi firmware
 GH_ACCOUNT=	raspberrypi
 GH_PROJECT=	firmware
-GH_TAGNAME=	1.20190401
+GH_TAGNAME=	1.20190709
 DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}
 #DISTNAME=	${GH_ACCOUNT}-${GH_PROJECT}-${V}
 
@@ -12,9 +12,7 @@ CATEGORIES=	sysutils
 # Broadcom/Raspberry Pi license
 # allows redistrubtion of binary files
 # only allows them to be used in relation to Raspberry Pi
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE=		Yes
 
 PKG_ARCH=		*
 
