@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2019/07/12 21:34:51 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2019/07/12 22:55:20 naddy Exp $
 
 COMMENT ?=	firmware binary images for ${FW_DRIVER}(4) driver
 
@@ -20,7 +20,7 @@ PREFIX ?=	/etc
 NO_BUILD ?=	Yes
 NO_TEST ?=	Yes
 
-.if ${PERMIT_PACKAGE_FTP:L:Myes} || ${PERMIT_PACKAGE_CDROM:L:Myes}
+.if ${PERMIT_PACKAGE:L:Myes}
 #
 # This is a special-purpose directory. Packages produced from this should
 # not be included in package directories on normal mirrors, but only on
