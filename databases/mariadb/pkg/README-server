@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.5 2018/09/04 12:46:10 espie Exp $
+$OpenBSD: README-server,v 1.6 2019/07/12 21:44:01 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -35,6 +35,11 @@ and memory limits (e.g. datasize and stacksize) may also need to be
 increased. Please report any changes and experiences to the package
 maintainers so that we can update this file for future versions.
 
+Upgrades
+========
+
+mysql_upgrade(1) should be run after updating the MariaDB server.
+
 chrooted daemons and MariaDB socket
 ===================================
 
@@ -48,11 +53,8 @@ Create a directory for the MariaDB socket:
 
     # install -d -m 0711 -o _mysql -g _mysql /var/www/var/run/mysql
 
-Adjust ${SYSCONFDIR}/my.cnf to put and connect to the MariaDB socket
-within the chroot:
+Adjust ${SYSCONFDIR}/my.cnf to use the socket in the chroot - this
+applies to both client and server processes:
 
-    [client]
-    socket = /var/www/var/run/mysql/mysql.sock
-
-    [mysqld]
+    [client-server]
     socket = /var/www/var/run/mysql/mysql.sock

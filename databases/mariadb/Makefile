@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2019/07/12 20:43:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2019/07/12 21:44:01 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
@@ -10,6 +10,7 @@ PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests=	mariadb-tests-${VERSION}
 EPOCH=		1
+REVISION-server=0
 
 CATEGORIES=	databases
 MASTER_SITES=	https://downloads.mariadb.com/MariaDB/${DISTNAME}/source/ \
