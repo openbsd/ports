@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/15 12:04:43 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:51:02 sthen Exp $
 
 MODPY_EGG_VERSION =	1.5.2
 COMMENT =	mock out responses from py-requests
@@ -10,7 +10,7 @@ REVISION =	0
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PI =		Yes

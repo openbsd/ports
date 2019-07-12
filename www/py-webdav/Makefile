@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/09/29 10:53:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:03 sthen Exp $
 
 COMMENT=		standards compliant Python WebDAV server and library
 
@@ -12,7 +12,7 @@ CATEGORIES=		www
 HOMEPAGE=		https://pywebdav.googlecode.com/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}files/
 

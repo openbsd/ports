@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:54 sthen Exp $
 
 COMMENT=	bare-bones HTML parser
 
@@ -9,7 +9,7 @@ REVISION=	1
 CATEGORIES=	www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	modbuild
 

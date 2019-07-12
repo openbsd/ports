@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2015/01/22 17:47:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:51:08 sthen Exp $
 
 COMMENT=	afterstep clock with some language extensions
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_AFTERSTEP:=apps/asclock/} \
 		http://www.tigr.net/afterstep/download/asclock/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xext Xpm Xau Xdmcp c
 

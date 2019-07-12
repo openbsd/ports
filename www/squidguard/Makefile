@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/04 00:17:11 danj Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:51:05 sthen Exp $
 
 COMMENT =		filter, redirector and access controller for Squid
 
@@ -10,7 +10,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 HOMEPAGE =		http://www.squidguard.org/
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c lib/db4/db pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/20 22:15:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:19 sthen Exp $
 
 COMMENT=		framework and a set of enhanced PyGTK widgets
 
@@ -11,7 +11,7 @@ REVISION=		1
 HOMEPAGE=		http://www.async.com.br/projects/kiwi/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=          ${MASTER_SITE_GNOME:=sources/kiwi/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX=		.tar.xz

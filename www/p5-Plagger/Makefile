@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/01/28 01:00:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:57 sthen Exp $
 
 COMMENT=	pluggable RSS/Atom aggregator
 
@@ -13,7 +13,7 @@ CPAN_AUTHOR=	MIYAGAWA
 HOMEPAGE=	http://plagger.org/
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_ARGS+=--default --skip
 

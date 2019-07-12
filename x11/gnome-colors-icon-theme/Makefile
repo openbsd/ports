@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/07/09 15:09:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:11 sthen Exp $
 
 COMMENT =		complete, multi-colored suite of icons
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://github.com/gnome-colors/gnome-colors
 MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=gnome-colors/}
 
 # GPLv2 
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 PKG_ARCH =		*
 NO_BUILD =		Yes

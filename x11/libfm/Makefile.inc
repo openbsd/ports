@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2018/12/21 13:31:05 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2019/07/12 20:51:15 sthen Exp $
 
 V=			1.3.1
 DISTNAME=		libfm-${V}
@@ -16,7 +16,7 @@ HOMEPAGE=		http://pcmanfm.sourceforge.net/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pcmanfm/}
 

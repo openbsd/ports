@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/05 16:06:34 danj Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:51:05 sthen Exp $
 
 COMMENT=		rss reader, live stream, mashup, aggregation webapp
 
@@ -11,7 +11,7 @@ CATEGORIES=		www
 HOMEPAGE=		http://selfoss.aditu.de/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://github.com/SSilence/selfoss/releases/download/$V/
 EXTRACT_SUFX=		.zip

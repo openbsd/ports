@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/12/11 12:33:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:50:59 sthen Exp $
 
 COMMENT=	PHP support for chroot(2)
 
@@ -8,7 +8,7 @@ REVISION=	13
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 # PHP
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

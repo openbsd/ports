@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2019/05/20 22:15:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2019/07/12 20:51:21 sthen Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
@@ -14,7 +14,7 @@ MASTER_SITES =	http://dist.schmorp.de/rxvt-unicode/ \
 HOMEPAGE =	http://software.schmorp.de/pkg/rxvt-unicode.html
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xft Xmu Xrender Xt c fontconfig
 WANTLIB += freetype gdk_pixbuf-2.0 glib-2.0 gobject-2.0 intl m

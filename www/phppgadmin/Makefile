@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2018/12/19 13:26:25 solene Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:51:00 sthen Exp $
 
 COMMENT=	tool to handle the administration of PostgreSQL over the web
 
@@ -9,7 +9,7 @@ HOMEPAGE=	http://phppgadmin.sourceforge.net/
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://github.com/phppgadmin/phppgadmin/releases/download/REL_5-6-0/
 EXTRACT_SUFX=	.tar.bz2

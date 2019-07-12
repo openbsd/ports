@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/11/29 21:15:11 landry Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 20:51:28 sthen Exp $
 
 COMMENT=	Xfce4 cpu/memory/swap/uptime monitor panel plugin
 
@@ -6,7 +6,7 @@ XFCE_VERSION=	1.2.2
 XFCE_PLUGIN=	systemload
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	x11/xfce4
 CONFIGURE_ARGS=	--disable-upower

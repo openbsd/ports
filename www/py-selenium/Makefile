@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:52:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:03 sthen Exp $
 
 COMMENT =		Python bindings for Selenium WebDriver
 
@@ -17,7 +17,7 @@ FLAVORS =	python3
 FLAVOR ?=
 
 # Apache
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

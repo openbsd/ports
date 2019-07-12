@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/15 12:04:42 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:51:00 sthen Exp $
 
 COMMENT =		http client/server for asyncio
 
@@ -9,7 +9,7 @@ CATEGORIES =		www
 REVISION =		0
 
 # Apache2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
 

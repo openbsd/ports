@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/05/20 22:15:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:50:58 sthen Exp $
 
 COMMENT=	perl binding for curl
 
@@ -9,7 +9,7 @@ EPOCH=		0
 CATEGORIES=	www net
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c crypto curl iconv intl nghttp2 perl ssl z
 

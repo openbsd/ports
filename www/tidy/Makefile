@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/05/13 20:28:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:51:06 sthen Exp $
 
 COMMENT =	correct and clean up HTML and XML
 
@@ -17,7 +17,7 @@ HOMEPAGE =	https://www.html-tidy.org/
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # BSD-like, badly worded, defined in include/tidy.h
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

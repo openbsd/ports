@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/10 21:01:28 tj Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:09 sthen Exp $
 
 COMMENT =		configuration utility for DRI drivers
 
@@ -12,7 +12,7 @@ MASTER_SITES =		https://people.freedesktop.org/~fxkuehl/driconf/ \
 			https://distfiles.nl/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 RUN_DEPENDS =		x11/py-gtk2

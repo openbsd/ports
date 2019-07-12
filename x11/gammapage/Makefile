@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:11 sthen Exp $
 
 COMMENT=	gamma-adjusting utility
 
@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tar.bz2
 HOMEPAGE=	http://www.pcbypaul.com/software/GAMMApage.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://www.pcbypaul.com/software/dl/
 

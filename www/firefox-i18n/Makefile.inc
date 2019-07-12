@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.135 2019/07/09 18:15:36 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.136 2019/07/12 20:50:46 sthen Exp $
 
 # Unversioned distfiles
 PORTROACH =	ignore:1
@@ -19,7 +19,7 @@ HOMEPAGE =	https://wiki.mozilla.org/L10n:Home_Page
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # Mozilla public license
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${FV}/linux-i686/xpi/ \
 		http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FV}/linux-i686/xpi/

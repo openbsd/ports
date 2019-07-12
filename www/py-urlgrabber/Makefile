@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/01/07 21:35:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:03 sthen Exp $
 
 COMMENT =		high-level cross-protocol url-grabber
 
@@ -10,7 +10,7 @@ REVISION =		0
 CATEGORIES =		www
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/03/20 19:57:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:50:50 sthen Exp $
 
 COMMENT=	object oriented interface for CGI script applications
 
@@ -8,7 +8,7 @@ DISTNAME =	CGI-XMLApplication-1.1.5
 CATEGORIES=    	www
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	textproc/p5-XML-LibXML>=1.10 \
 		textproc/p5-XML-LibXSLT>=1.08

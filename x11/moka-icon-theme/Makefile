@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/07/09 15:09:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:17 sthen Exp $
 
 COMMENT =		minimal, flat style icon theme
 
@@ -12,7 +12,7 @@ CATEGORIES =		x11
 HOMEPAGE =		https://snwh.org/moka
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 PKG_ARCH =		*
 NO_BUILD =		Yes

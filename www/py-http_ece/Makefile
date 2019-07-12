@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:01 sthen Exp $
 
 MODPY_EGG_VERSION =	1.1.0
 COMMENT =		encrypted Content Encoding for HTTP
@@ -11,7 +11,7 @@ HOMEPAGE =		https://github.com/martinthomson/encrypted-content-encoding
 MAINTAINER =		Pamela Mosiejczuk <pamela@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

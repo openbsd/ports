@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/07/14 10:12:31 kirby Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:51:17 sthen Exp $
 
 COMMENT=	display the current time using the X11 root cursor
 
@@ -9,7 +9,7 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=X11/clocks/}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c 
 

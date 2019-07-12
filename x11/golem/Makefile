@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/10 21:58:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:51:12 sthen Exp $
 
 COMMENT=		fast and light window manager with plug-ins
 
@@ -9,7 +9,7 @@ CATEGORIES=     	x11
 HOMEPAGE=		http://golem.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xext Xpm c
 

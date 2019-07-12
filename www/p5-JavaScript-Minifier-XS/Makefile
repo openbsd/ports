@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2017/09/23 10:42:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:56 sthen Exp $
 
 COMMENT=	XS based JavaScript minifier
 
@@ -8,7 +8,7 @@ REVISION=	0
 CATEGORIES=	www
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 

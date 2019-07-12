@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/20 04:47:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:46 sthen Exp $
 
 COMMENT =	HTML5 parsing library in pure C99
 
@@ -15,7 +15,7 @@ CATEGORIES =	www
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 TEST_DEPENDS =	devel/gtest
 

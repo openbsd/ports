@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/03/11 19:59:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:51:08 sthen Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -13,7 +13,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asapm/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 Xext Xpm c jpeg
 

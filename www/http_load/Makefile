@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/12/10 10:47:34 benoit Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:50:46 sthen Exp $
 
 COMMENT=	multiprocessing HTTP performance testing client
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://www.acme.com/software/http_load/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB =		c crypto ssl
 
 FAKE_FLAGS=	PREFIX="${PREFIX}"

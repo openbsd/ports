@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/04/09 20:14:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:24 sthen Exp $
 
 COMMENT=	dynamic window manager
 
@@ -9,7 +9,7 @@ CATEGORIES=	x11
 HOMEPAGE=	http://wmii.suckless.org/
 
 # MIT/X
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://dl.suckless.org/wmii/
 

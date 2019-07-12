@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2016/11/03 10:12:34 danj Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:03 sthen Exp $
 
 COMMENT=	web framework for python
 
@@ -11,7 +11,7 @@ MASTER_SITES=	${HOMEPAGE}/static/
 HOMEPAGE=	http://webpy.org
 
 # Public Domain, except wsgiserver
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 

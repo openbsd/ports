@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/04/24 18:16:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:51:09 sthen Exp $
 
 COMMENT=	network sniffer that grabs and displays images
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.ex-parrot.com/~chris/driftnet/
 MAINTAINER=	Claudio Jeker <claudio@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://launchpad.net/ubuntu/+archive/primary/+files/
 

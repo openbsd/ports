@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2019/05/02 03:01:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.66 2019/07/12 20:50:48 sthen Exp $
 
 COMMENT=	graphics and text browser
 VER=		2.19
@@ -11,7 +11,7 @@ HOMEPAGE=	http://links.twibright.com/
 MAINTAINER=	Tim Meunier <trondd@kagu-tsuchi.com>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	bz2 c crypto event lzma pthread ssl z
 

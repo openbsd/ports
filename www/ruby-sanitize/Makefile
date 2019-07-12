@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/09/27 16:59:31 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:51:05 sthen Exp $
 
 COMMENT=		whitelist-based HTML sanitizer
 
@@ -8,7 +8,7 @@ CATEGORIES=		www textproc
 HOMEPAGE=		https://github.com/rgrove/sanitize/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=            textproc/ruby-nokogiri,${MODRUBY_FLAVOR}>=1.4.4

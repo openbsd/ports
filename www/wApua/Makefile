@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/04/13 01:01:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:51:07 sthen Exp $
 
 COMMENT=		browser for wap/wml
 
@@ -9,7 +9,7 @@ CATEGORIES=		www
 HOMEPAGE=		http://fsinfo.noone.org/~abe/wApua/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 

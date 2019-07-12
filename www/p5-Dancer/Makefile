@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/10 16:02:09 cwen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:52 sthen Exp $
 
 COMMENT =	simple perl web app framework
 
@@ -8,7 +8,7 @@ DISTNAME =	Dancer-1.3512
 CATEGORIES =	www
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Hash-Merge-Simple \
 		devel/p5-Module-Runtime \

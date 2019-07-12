@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/06/13 15:48:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 20:51:28 sthen Exp $
 
 COMMENT=	Xfce4 wireless interface monitor panel plugin
 
@@ -7,7 +7,7 @@ XFCE_PLUGIN=	wavelan
 REVISION =	3
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0 atspi

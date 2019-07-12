@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/06/01 11:49:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2019/07/12 20:51:20 sthen Exp $
 
 COMMENT=		open source client for Windows Terminal Server
 
@@ -12,7 +12,7 @@ MASTER_SITES=		https://github.com/rdesktop/rdesktop/releases/download/v$V/
 HOMEPAGE=		http://www.rdesktop.org/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xrandr ao c crypto iconv pcsclite pthread samplerate
 WANTLIB += ssl

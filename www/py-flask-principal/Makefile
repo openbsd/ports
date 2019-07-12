@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/29 10:52:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:01 sthen Exp $
 
 COMMENT =		identity management for flask
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://pythonhosted.org/Flask-Principal/
 MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/10/24 14:28:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT =	capybara driver that uses WebKit
 
@@ -9,7 +9,7 @@ REVISION =	0
 HOMEPAGE=	https://github.com/thoughtbot/capybara-webkit
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	GL Qt5Core Qt5Gui Qt5Network Qt5WebKit Qt5WebKitWidgets
 WANTLIB +=	Qt5Widgets ${COMPILER_LIBCXX}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/04 01:18:59 danj Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:56 sthen Exp $
 
 COMMENT=	Perl extension for minifying JavaScript code
 
@@ -9,7 +9,7 @@ REVISION=	1
 CATEGORIES=	www
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_ENV=	TEST_POD=Yes
 

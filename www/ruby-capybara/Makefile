@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/08/09 22:44:51 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT =	integration testing tool for rack based web applications
 
@@ -8,7 +8,7 @@ CATEGORIES =	www
 HOMEPAGE=	https://github.com/jnicklas/capybara
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem

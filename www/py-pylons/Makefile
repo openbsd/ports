@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/15 12:04:43 kmos Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:02 sthen Exp $
 
 COMMENT =	rapid web application development framework
 
@@ -13,7 +13,7 @@ CATEGORIES =	www devel
 HOMEPAGE =	http://www.pylonshq.com/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 MODPY_PI_DIR =	P/Pylons

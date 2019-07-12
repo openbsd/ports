@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/09/07 20:47:49 bluhm Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:57 sthen Exp $
 
 COMMENT=	simple, high-performance PSGI/Plack HTTP server
 
@@ -10,7 +10,7 @@ CATEGORIES=	www
 CPAN_AUTHOR=	KAZUHO
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS =		devel/p5-Parallel-Prefork>=0.17 \
 			devel/p5-Try-Tiny \

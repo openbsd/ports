@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 16:12:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:51:19 sthen Exp $
 
 COMMENT=	python bindings to the XOSD library
 
@@ -10,7 +10,7 @@ CATEGORIES=	x11
 HOMEPAGE=	http://ichi2.net/pyosd/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	xosd pthread ${MODPY_WANTLIB}
 

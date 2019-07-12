@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2018/08/09 12:43:35 bluhm Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:50:53 sthen Exp $
 
 COMMENT =	high-performance, dynamic web site authoring system
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://www.masonhq.com/
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 RUN_DEPENDS =		devel/p5-Cache-Cache>=1.00 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/04/28 20:52:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT =		keyboard-focused browser with a minimal GUI
 
@@ -13,7 +13,7 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 CATEGORIES =		www
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}

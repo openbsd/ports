@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/01/01 20:46:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:51:23 sthen Exp $
 
 COMMENT=	display files containing g3 and/or g4 coded fax pages
 
@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.ping.de/pub/unix/
 CONFIGURE_STYLE=	imake
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c
 

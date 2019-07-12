@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/04/25 18:08:57 bket Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:51:00 sthen Exp $
 
 COMMENT =		HTTP reverse proxy/load balancer/SSL offload
 
@@ -10,7 +10,7 @@ CATEGORIES =		www
 HOMEPAGE =		http://www.apsis.ch/pound/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto m pcreposix pthread ssl
 

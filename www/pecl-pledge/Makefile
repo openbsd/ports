@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/08 17:02:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:59 sthen Exp $
 
 COMMENT=		PHP wrapper for pledge(2) and unveil(2)
 
@@ -12,7 +12,7 @@ HOMEPAGE=		https://github.com/tvlooy/php-pledge
 MAINTAINER=		Tom Van Looy <tom@ctors.net>
 
 # PHP
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # override default; only compatible with 7.2+
 FLAVORS=		php72 php73

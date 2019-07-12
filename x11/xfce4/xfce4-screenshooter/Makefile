@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2018/06/29 22:16:37 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:51:28 sthen Exp $
 
 COMMENT=	Xfce4 desktop screenshot panel plugin
 
@@ -9,7 +9,7 @@ REVISION=	4
 PORTROACH=	limitw:1,even
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	x11/xfce4
 

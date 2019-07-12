@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/13 14:30:17 abieber Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:06 sthen Exp $
 
 COMMENT=	validate, correct and pretty-print HTML
 
@@ -13,7 +13,7 @@ CATEGORIES=	www
 HOMEPAGE=	http://www.tidyp.com/
 
 # BSD-like, badly worded
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

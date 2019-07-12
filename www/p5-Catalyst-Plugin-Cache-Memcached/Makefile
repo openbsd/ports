@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/19 19:58:52 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:51 sthen Exp $
 
 COMMENT =	distributed cache for Catalyst (deprecated)
 
@@ -10,7 +10,7 @@ EPOCH =		0
 CATEGORIES =	www
 
 # Same as Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/p5-Cache-Memcached \
 		www/p5-Catalyst-Runtime

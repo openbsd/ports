@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/11/14 17:08:13 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT =	protects rack apps against typical web attacks
 
@@ -8,7 +8,7 @@ CATEGORIES =	www
 HOMEPAGE =	https://github.com/rkh/rack-protection
 
 # MIT
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES =	lang/ruby
 

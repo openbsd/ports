@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/10/29 22:03:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:59 sthen Exp $
 
 COMMENT=	SOAP Client/Server for PHP
 
@@ -8,6 +8,6 @@ CATEGORIES=	www
 MODULES=	www/pear
 
 # PHP License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

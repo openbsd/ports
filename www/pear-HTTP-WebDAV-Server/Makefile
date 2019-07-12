@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/04/01 18:46:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:59 sthen Exp $
 
 COMMENT =	helper class for PHP WebDAV server implementations
 
@@ -13,6 +13,6 @@ MODULES =	www/pear
 PKG_ARCH =	*
 
 # PHP License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

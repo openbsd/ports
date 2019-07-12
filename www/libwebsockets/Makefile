@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2018/04/26 20:19:58 phessler Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:47 sthen Exp $
 
 COMMENT =		lightweight C library for fast bi-directional websockets
 
@@ -15,7 +15,7 @@ HOMEPAGE =		https://libwebsockets.org
 MAINTAINER =		Adam Wolk <awolk@openbsd.org>
 
 # LGPL2 + static link exception
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += 		crypto m ssl z
 

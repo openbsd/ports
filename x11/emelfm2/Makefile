@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/05/20 22:15:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:51:10 sthen Exp $
 
 COMMENT =		GTK+2 file manager
 
@@ -9,7 +9,7 @@ CATEGORIES =		x11
 HOMEPAGE =		http://emelfm2.net/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gtk-3 iconv intl m pango-1.0 pangocairo-1.0 pthread

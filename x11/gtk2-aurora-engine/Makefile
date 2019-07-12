@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/06/13 15:48:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:12 sthen Exp $
 
 COMMENT=	Aurora GTK+2 engine
 
@@ -14,7 +14,7 @@ CATEGORIES=	x11
 HOMEPAGE=	http://gnome-look.org/content/show.php/Aurora+Gtk+Engine?content=56438
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat ffi

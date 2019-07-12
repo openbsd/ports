@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/20 22:15:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:51:24 sthen Exp $
 
 COMMENT=		wm-dockapp; clock application with clock, date and fish
 
@@ -9,7 +9,7 @@ CATEGORIES=     	x11 x11/windowmaker
 HOMEPAGE=		http://www.ne.jp/asahi/linux/timecop/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/software/
 

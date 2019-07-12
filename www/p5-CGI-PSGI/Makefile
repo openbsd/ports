@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/04/05 12:21:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:50 sthen Exp $
 
 COMMENT=	CGI.pm adaption to the PSGI protocol
 
@@ -9,7 +9,7 @@ REVISION=	0
 CATEGORIES=	www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	www/p5-CGI
 

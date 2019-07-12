@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/04/26 18:05:59 phessler Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:06 sthen Exp $
 
 COMMENT =	share your terminal over the web
 
@@ -9,7 +9,7 @@ GH_TAGNAME =	1.4.0
 CATEGORIES =	www
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto json-c m pthread ssl util websockets z
 

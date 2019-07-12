@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2017/10/23 17:11:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:51:29 sthen Exp $
 
 COMMENT=	displays text on your screen
 
@@ -9,7 +9,7 @@ HOMEPAGE=	http://libxosd.sourceforge.net/
 REVISION=	1
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xinerama c pthread
 WANTLIB += xcb

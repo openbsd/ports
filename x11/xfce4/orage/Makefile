@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2019/06/14 12:18:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.61 2019/07/12 20:51:26 sthen Exp $
 
 COMMENT=	Xfce4 advanced calendar
 
@@ -8,7 +8,7 @@ REVISION=	9
 
 HOMEPAGE=	https://www.xfce.org
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/11/03 11:45:12 danj Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:51:02 sthen Exp $
 
 COMMENT =	Python cgi/fastcgi/mod_python framework
 
@@ -10,7 +10,7 @@ CATEGORIES =		www
 HOMEPAGE =		https://github.com/jribbens/jonpy
 
 # Python License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/01/22 21:50:23 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:51:13 sthen Exp $
 
 COMMENT=		bindings for GHC to Xft, Freetype and Xrender
 
@@ -9,7 +9,7 @@ CATEGORIES=		x11 devel
 HOMEPAGE=		http://hackage.haskell.org/package/X11-xft
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES=	lang/ghc
 MODGHC_BUILD=	cabal hackage haddock register

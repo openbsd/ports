@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/03/20 19:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:49 sthen Exp $
 
 COMMENT=	building, finding and using tidyp library
 
@@ -9,7 +9,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	modbuild
 CONFIGURE_ENV+= 	TIDYP_DIR=${LOCALBASE}

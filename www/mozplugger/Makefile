@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/09/12 19:33:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:50:48 sthen Exp $
 
 COMMENT =		framework for loading web content in external viewers
 
@@ -10,7 +10,7 @@ CATEGORIES =		www
 HOMEPAGE =		http://mozplugger.mozdev.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/05/15 12:04:42 kmos Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:51:00 sthen Exp $
 
 COMMENT =	session and caching library with wsgi middleware
 
@@ -12,7 +12,7 @@ CATEGORIES =	www devel
 HOMEPAGE =	http://beaker.readthedocs.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 MODPY_SETUPTOOLS = Yes

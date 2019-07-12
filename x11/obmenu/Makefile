@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/04/27 23:55:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:51:17 sthen Exp $
 
 COMMENT=	Openbox menu editor
 
@@ -9,7 +9,7 @@ CATEGORIES=	x11
 HOMEPAGE=	http://obmenu.sourceforge.net/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=obmenu/}
 

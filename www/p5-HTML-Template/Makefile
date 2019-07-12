@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/27 11:34:23 cwen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:54 sthen Exp $
 
 COMMENT=	use HTML Templates from CGI scripts
 
@@ -8,7 +8,7 @@ DISTNAME=	HTML-Template-2.97
 CATEGORIES=	www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 TEST_DEPENDS=	www/p5-CGI
 

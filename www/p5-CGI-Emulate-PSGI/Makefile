@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/01/24 02:36:03 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:50 sthen Exp $
 
 COMMENT =	PSGI adapter for CGI
 
@@ -10,7 +10,7 @@ CATEGORIES =	www
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	www/p5-HTTP-Message
 TEST_DEPENDS =	devel/p5-Test-Requires>=0.08

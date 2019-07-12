@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2019/05/20 22:15:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2019/07/12 20:51:30 sthen Exp $
 
 COMMENT=	draw pictures of the earth textured by an image
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://xplanet.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xplanet/}
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 c charset fontconfig freetype gif glib-2.0 gobject-2.0
 WANTLIB += iconv intl jpeg m pango-1.0 pangoft2-1.0 png pthread

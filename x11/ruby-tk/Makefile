@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/10/26 16:13:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:21 sthen Exp $
 
 COMMENT=		ruby graphical tooklit using Tk
 
@@ -11,7 +11,7 @@ HOMEPAGE=		https://github.com/ruby/tk
 MAINTAINER=		Jeremy Evans <jeremy@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

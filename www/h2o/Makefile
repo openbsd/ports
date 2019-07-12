@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/26 12:47:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:46 sthen Exp $
 
 COMMENT =	optimized HTTP server with support for HTTP/1.x and HTTP/2
 
@@ -16,7 +16,7 @@ HOMEPAGE =	https://h2o.examp1e.net/
 MAINTAINER =	Otto Moerbeek <otto@drijf.net>
 
 # various dep's bundled, all seem to be MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto m ssl uv z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/05/06 16:01:32 danj Exp $
+# $OpenBSD: Makefile,v 1.46 2019/07/12 20:51:29 sthen Exp $
 
 COMMENT =		minimalistic text based status bar
 
@@ -8,7 +8,7 @@ CATEGORIES =		x11
 HOMEPAGE =		http://projects.haskell.org/xmobar
 
 # BSD3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		X11 Xext Xft Xinerama Xrandr Xrender \
 			Xss c lib/inotify/inotify iconv m pthread \

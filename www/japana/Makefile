@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:44:42 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:47 sthen Exp $
 
 COMMENT =	proxy that can transliterate japanese
 
@@ -10,7 +10,7 @@ HOMEPAGE =	http://www.h.shuttle.de/mitch/japana.en.html
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 
 MASTER_SITES =	http://www.h.shuttle.de/mitch/stuff/

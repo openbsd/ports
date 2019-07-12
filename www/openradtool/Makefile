@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/07 19:18:14 jturner Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:49 sthen Exp $
 
 COMMENT =		application source generator
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://kristaps.bsd.lv/openradtool/
 MASTER_SITES =		https://kristaps.bsd.lv/openradtool/snapshots/
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += c expat

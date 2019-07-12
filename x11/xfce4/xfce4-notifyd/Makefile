@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/06/07 18:10:44 landry Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 20:51:28 sthen Exp $
 
 COMMENT=	Xfce4 alternative notification daemon
 
@@ -6,7 +6,7 @@ XFCE_VERSION=	0.4.4
 XFCE_GOODIE=	xfce4-notifyd
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes

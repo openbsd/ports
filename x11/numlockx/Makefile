@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/08/16 07:02:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:17 sthen Exp $
 
 COMMENT=		start X11 with NumLock turned on
 
@@ -8,7 +8,7 @@ CATEGORIES=		x11
 HOMEPAGE=		http://home.kde.org/~seli/numlockx/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext c
 
 MASTER_SITES=		http://home.kde.org/~seli/numlockx/

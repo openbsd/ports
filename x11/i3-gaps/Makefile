@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/10 20:22:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:14 sthen Exp $
 
 COMMENT =	improved dynamic tiling window manager, fork with gaps
 
@@ -10,7 +10,7 @@ CATEGORIES =	x11
 HOMEPAGE =	https://i3wm.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += c cairo ev glib-2.0 gobject-2.0 iconv intl m pango-1.0

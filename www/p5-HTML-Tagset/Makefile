@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2016/03/20 19:57:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:50:54 sthen Exp $
 
 COMMENT=	data tables useful for parsing HTML
 
@@ -9,6 +9,6 @@ REVISION=	1
 CATEGORIES=	www
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/15 12:04:42 kmos Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:51:01 sthen Exp $
 
 COMMENT =		standalone version of Django's feedgenerator
 
@@ -13,7 +13,7 @@ CATEGORIES =		www textproc
 MAINTAINER =		Vladimir D. Seleznev <vseleznv@cs.msu.ru>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2019/05/20 22:15:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.92 2019/07/12 20:51:07 sthen Exp $
 
 COMMENT=	pager/text-based web browser
 
@@ -8,7 +8,7 @@ CATEGORIES=	www
 HOMEPAGE=	http://w3m.sourceforge.net/
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto curses gc iconv intl m ssl z
 

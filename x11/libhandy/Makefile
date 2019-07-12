@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/08 14:39:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:15 sthen Exp $
 
 COMMENT =		library to help in developing UIs for mobile devices
 
@@ -12,7 +12,7 @@ MASTER_SITES =		https://distfiles.nl/
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/meson
 

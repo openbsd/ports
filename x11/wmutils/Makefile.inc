@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2018/01/08 19:24:31 bcallah Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/07/12 20:51:24 sthen Exp $
 
 CATEGORIES ?=	x11
 
@@ -7,7 +7,7 @@ MAINTAINER ?=	Kaashif Hymabaccus <kaashif@kaashif.co.uk>
 GH_ACCOUNT ?=	wmutils
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c xcb xcb-util
 

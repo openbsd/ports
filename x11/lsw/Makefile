@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/12/16 09:25:15 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:15 sthen Exp $
 
 COMMENT=		list titles of running X windows
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://tools.suckless.org/x/lsw
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/15 12:04:43 kmos Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:02 sthen Exp $
 
 COMMENT =	aggregate profiling for wsgi requests
 
@@ -10,7 +10,7 @@ REVISION =	2
 CATEGORIES =	www devel
 
 # BSD-derived
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 

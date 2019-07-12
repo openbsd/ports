@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/12/03 16:41:43 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:10 sthen Exp $
 
 COMMENT=		simple, lightweight tiling and floating window manager
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://plhk.ru/
 MAINTAINER=		Alexander Polakov <polachok@gmail.com>
 
 # MIT/X
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xft Xrandr c
 

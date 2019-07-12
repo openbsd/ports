@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/06/13 15:48:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:51:27 sthen Exp $
 
 COMMENT =	Thunar archive plugin
 
@@ -7,7 +7,7 @@ THUNAR_PLUGIN =	thunar-archive-plugin
 REVISION =	6
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 cairo exo-1 expat ffi fontconfig

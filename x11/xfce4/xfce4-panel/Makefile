@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2019/06/13 15:48:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2019/07/12 20:51:28 sthen Exp $
 
 COMMENT=	Xfce4 desktop panel
 
@@ -12,7 +12,7 @@ SHARED_LIBS=	xfce4panel-1.0	1.0 \
 		xfce4panel-2.0	0.0 # 4.0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 X11-xcb XRes Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0

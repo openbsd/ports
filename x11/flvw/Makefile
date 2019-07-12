@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:51:11 sthen Exp $
 
 COMMENT=		FLTK Virtual styles, list, table, and complex table Widgets
 
@@ -11,7 +11,7 @@ CATEGORIES=		x11 devel
 HOMEPAGE=		http://flvw.sourceforge.net/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=flvw/}
 

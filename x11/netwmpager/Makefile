@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/05/02 18:34:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:17 sthen Exp $
 
 COMMENT=	small EWMH compliant pager
 
@@ -9,7 +9,7 @@ CATEGORIES=	x11
 HOMEPAGE=	http://onion.dynserv.net/~timo/netwmpager.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xft Xrender expat z c m \
 			fontconfig freetype xcb

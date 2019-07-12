@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/05/13 22:08:11 abieber Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:50:47 sthen Exp $
 
 COMMENT=	browser based analytics/search interface to ElasticSearch
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://www.elastic.co/products/kibana
 MAINTAINER =	Pavel Korovin <pvk@openbsd.org>
 
 # Apache
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://artifacts.elastic.co/downloads/kibana/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/03/08 20:00:42 cwen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:12 sthen Exp $
 
 COMMENT =		template and text document library for Qt5
 
@@ -17,7 +17,7 @@ HOMEPAGE =		https://github.com/steveire/grantlee
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Script c m
 

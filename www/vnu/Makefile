@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/06/11 00:38:36 kurt Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:06 sthen Exp $
 
 COMMENT =	HTML5 validator
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://validator.github.io/validator/
 MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://github.com/validator/validator/releases/download/$V/
 

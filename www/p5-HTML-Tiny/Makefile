@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:54 sthen Exp $
 
 COMMENT =	lightweight, dependency free HTML/XML generation
 
@@ -9,7 +9,7 @@ CATEGORIES =	www
 REVISION =	0
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODCPAN_EXAMPLES =	Yes
 

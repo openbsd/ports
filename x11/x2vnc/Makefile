@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/01/22 22:58:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:51:25 sthen Exp $
 
 COMMENT=	one keyboard and/or mouse, multiple X and VNC displays
 
@@ -7,7 +7,7 @@ REVISION=	2
 CATEGORIES=	x11
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext Xss c
 

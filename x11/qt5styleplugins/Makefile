@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/08 20:00:56 cwen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:20 sthen Exp $
 
 COMMENT =	Qt5 style plugins
 
@@ -11,7 +11,7 @@ REVISION =	0
 CATEGORIES =	x11
 
 # GPLv3+, LGPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =	devel/qmake x11/qt5
 LIB_DEPENDS +=	x11/gtk+2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2015/04/06 16:58:43 jca Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:51:26 sthen Exp $
 
 COMMENT=		graphic disk usage viewer
 
@@ -7,7 +7,7 @@ REVISION=		4
 CATEGORIES=     	x11
 
 # custom, MIT-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c
 

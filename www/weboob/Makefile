@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/16 11:37:40 semarie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:07 sthen Exp $
 
 COMMENT =	web out of browsers
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://weboob.org
 MAINTAINER =	Sebastien Marie <semarie@online.fr>
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://git.weboob.org/weboob/weboob/-/archive/${MODPY_EGG_VERSION}/
 

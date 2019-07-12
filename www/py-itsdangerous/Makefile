@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/28 20:52:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:02 sthen Exp $
 
 COMMENT = 	helpers to pass trusted data to untrusted environments
 
@@ -12,7 +12,7 @@ CATEGORIES =	www devel
 HOMEPAGE =	http://pythonhosted.org/itsdangerous/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 

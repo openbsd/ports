@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/17 16:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:16 sthen Exp $
 
 COMMENT=		the MATE window manager
 REVISION=		0
@@ -11,7 +11,7 @@ MATE_VERSION=		1.22.1
 CATEGORIES=		x11
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo

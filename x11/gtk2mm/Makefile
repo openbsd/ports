@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2019/06/13 15:48:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2019/07/12 20:51:12 sthen Exp $
 
 PORTROACH=		limit:^2
 
@@ -19,7 +19,7 @@ HOMEPAGE=		http://www.gtkmm.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama

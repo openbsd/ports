@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/05/15 12:04:42 kmos Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:51:02 sthen Exp $
 
 COMMENT =		fast, optionally sandboxed, Python template engine
 
@@ -18,7 +18,7 @@ HOMEPAGE =		http://jinja.pocoo.org/
 MAINTAINER =		frantisek holop <minusf@obiit.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 RUN_DEPENDS =		textproc/py-MarkupSafe${MODPY_FLAVOR}

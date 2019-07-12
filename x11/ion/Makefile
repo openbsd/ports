@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/05/20 22:15:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.67 2019/07/12 20:51:14 sthen Exp $
 
 COMMENT=	light, keyboard friendly window manager
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://modeemi.cs.tut.fi/~tuomov/ion/
 MASTER_SITES=	http://tuomov.iki.fi/software/dl/
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xext c iconv intl lua5.1 m
 

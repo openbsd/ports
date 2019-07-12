@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/06/02 20:22:01 schwarze Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:51:22 sthen Exp $
 
 COMMENT =		enhanced Tk console
 
@@ -9,7 +9,7 @@ HOMEPAGE =		http://sourceforge.net/projects/tkcon/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD-like
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		x11/tk
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tkcon/}

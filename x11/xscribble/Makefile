@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/05/17 10:21:42 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:30 sthen Exp $
 
 COMMENT=	stylus character recognition tool for X11
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.handhelds.org/projects/xscribble.html
 EXTRACT_SUFX=	.tgz
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext ICE Xt Xtst Xmu c m SM Xpm Xaw
 

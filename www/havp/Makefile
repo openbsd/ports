@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/02 14:51:49 danj Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:50:46 sthen Exp $
 
 COMMENT=	web proxy with antivirus filter
 
@@ -11,7 +11,7 @@ REVISION=	9
 HOMEPAGE=	http://www.server-side.de/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m pthread ${COMPILER_LIBCXX} clamav
 

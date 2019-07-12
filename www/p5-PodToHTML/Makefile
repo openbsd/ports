@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:57:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:57 sthen Exp $
 
 COMMENT=	generate HTML from files containing POD documentation
 
@@ -10,7 +10,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Pod/}
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	www/p5-HTML-Format>=1.23 \
 		www/p5-URI>=1.37

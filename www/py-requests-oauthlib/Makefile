@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/15 12:04:43 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:03 sthen Exp $
 
 COMMENT =		OAuth library support for python-requests
 
@@ -12,7 +12,7 @@ CATEGORIES =		www
 HOMEPAGE =		https://github.com/requests/requests-oauthlib
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

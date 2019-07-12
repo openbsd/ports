@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:58 sthen Exp $
 
 COMMENT=		configurable web traversal engine
 
@@ -6,7 +6,7 @@ DISTNAME=		WWW-Robot-0.026
 CATEGORIES=		www
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

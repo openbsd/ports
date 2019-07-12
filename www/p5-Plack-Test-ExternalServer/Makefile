@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/12/05 16:25:46 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:57 sthen Exp $
 
 COMMENT =	run HTTP tests on external live servers
 
@@ -9,7 +9,7 @@ CATEGORIES =	www
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # same as perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	www/p5-libwww \
 		www/p5-Plack \

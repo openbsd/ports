@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/05/29 20:20:55 fcambus Exp $
+# $OpenBSD: Makefile,v 1.44 2019/07/12 20:50:48 sthen Exp $
 
 V =		2.8.9
 R =		1
@@ -12,7 +12,7 @@ CATEGORIES =	www net
 HOMEPAGE =	https://lynx.invisible-island.net/
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB +=	c crypto curses ssl z

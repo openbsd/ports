@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/03/16 18:07:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:15 sthen Exp $
 
 COMMENT=		drag and drop library
 
@@ -12,7 +12,7 @@ CATEGORIES=		x11 devel
 USE_X11 =		Yes
 
 # LPGL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 EXTRACT_SUFX=		.tgz
 

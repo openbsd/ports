@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/25 18:54:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT=		small, simple testing API for Rack apps
 
@@ -8,7 +8,7 @@ CATEGORIES=		www
 HOMEPAGE=		https://github.com/brynary/rack-test
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

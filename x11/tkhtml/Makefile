@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/05/10 14:27:47 stu Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:22 sthen Exp $
 
 COMMENT =	Tk widget to display HTML/CSS formatted contents
 
@@ -11,7 +11,7 @@ MASTER_SITES =	${HOMEPAGE}
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES =		x11/tk
 BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/01/11 19:27:12 rpe Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:51:00 sthen Exp $
 
 COMMENT=	HTTP caching proxy
 
@@ -13,7 +13,7 @@ MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 MASTER_SITES=	http://www.pps.univ-paris-diderot.fr/~jch/software/files/polipo/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

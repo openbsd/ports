@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2016/03/19 15:47:04 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2019/07/12 20:51:09 sthen Exp $
 
 PORTROACH +=	limitw:1,even
 
@@ -7,6 +7,6 @@ CATEGORIES =	x11
 HOMEPAGE =	http://www.compiz.org/
 
 # MIT, GPL and LGPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =	compiz

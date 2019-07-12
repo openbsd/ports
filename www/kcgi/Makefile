@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2018/12/27 21:44:39 jturner Exp $
+# $OpenBSD: Makefile,v 1.44 2019/07/12 20:50:47 sthen Exp $
 
 COMMENT =		minimal CGI library for web applications
 
@@ -12,7 +12,7 @@ MASTER_SITES =		https://kristaps.bsd.lv/kcgi/snapshots/
 EXTRACT_SUFX =		.tgz
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += c

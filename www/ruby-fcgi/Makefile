@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/06/13 22:26:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT=	ruby FastCGI library
 
@@ -7,7 +7,7 @@ REVISION =	1
 CATEGORIES=	www
 
 # ruby license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby
 

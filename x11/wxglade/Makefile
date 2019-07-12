@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/27 21:04:23 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:25 sthen Exp $
 
 COMMENT=		GUI designer for wxWidgets/wxPython user interfaces
 
@@ -15,7 +15,7 @@ HOMEPAGE=		http://wxglade.sourceforge.net/
 MAINTAINER=		Daniel Winters <daniel@tydirium.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

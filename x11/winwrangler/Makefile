@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/06/13 15:48:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:51:24 sthen Exp $
 
 COMMENT =	desktop daemon to perform advanced window manipulations
 
@@ -11,7 +11,7 @@ CATEGORIES =	x11
 HOMEPAGE =	https://launchpad.net/winwrangler
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 X11-xcb XRes Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig

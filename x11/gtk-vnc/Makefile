@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2019/04/28 20:52:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2019/07/12 20:51:12 sthen Exp $
 
 COMMENT=		VNC viewer widget for GTK
 
@@ -17,7 +17,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo

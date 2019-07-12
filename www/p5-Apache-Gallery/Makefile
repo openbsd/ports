@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/09/04 12:46:25 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:50:49 sthen Exp $
 
 COMMENT=		mod_perl Apache gallery handler
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://www.apachegallery.dk/
 MASTER_SITES=		${HOMEPAGE}/download/
 
 # Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		www/p5-URI \
 			graphics/p5-Image-Info \

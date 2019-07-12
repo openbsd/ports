@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:54 sthen Exp $
 
 COMMENT=	extract structure of quoted HTML mail message
 
@@ -10,7 +10,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 CATEGORIES=	www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	www/p5-HTML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}

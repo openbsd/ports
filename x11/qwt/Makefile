@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/05 11:52:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:51:20 sthen Exp $
 
 COMMENT-main =		Qt Widgets for Technical Applications
 COMMENT-common =	common files for the qwt packages
@@ -20,7 +20,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qwt/}
 
 # Qwt License, Version 1.0
 # http://qwt.sourceforge.net/qwtlicense.html
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/qmake
 MODQMAKE_INSTALL_ROOT =

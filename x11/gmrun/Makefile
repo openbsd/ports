@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/12/19 09:30:15 jca Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:51:11 sthen Exp $
 
 COMMENT=		X11 program launcher
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://gmrun.sourceforge.net/
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype

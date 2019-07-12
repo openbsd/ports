@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/28 20:51:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:01 sthen Exp $
 
 COMMENT =		user session management for flask
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://github.com/maxcountryman/flask-login
 MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:58 sthen Exp $
 
 COMMENT= 	creating and updating Bugzilla bugs
 
@@ -8,7 +8,7 @@ DISTNAME=	WWW-Bugzilla-1.5
 CATEGORIES=	www
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Class-MethodMaker>=1.08 \
 		devel/p5-Params-Validate>0.88 \

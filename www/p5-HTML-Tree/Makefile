@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/01/10 15:15:23 cwen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:50:54 sthen Exp $
 
 COMMENT=	perl parser that builds an HTML tree
 
@@ -8,7 +8,7 @@ DISTNAME =	HTML-Tree-5.07
 CATEGORIES=	www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	www/p5-HTML-Parser>=3.46 \
 		www/p5-HTML-Tagset>=3.02

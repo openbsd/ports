@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2019/05/13 21:35:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2019/07/12 20:51:24 sthen Exp $
 
 COMMENT=		C++ library to create, manipulate and render SVG files
 
@@ -13,7 +13,7 @@ SHARED_LIBS+=		wxsvg	4.0
 HOMEPAGE=		http://wxsvg.sourceforge.net/
 
 # Modified LGPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SDL2 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 atk-bridge-2.0

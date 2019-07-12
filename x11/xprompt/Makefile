@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/05/08 18:49:59 schwarze Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:51:30 sthen Exp $
 
 COMMENT=	display a dialog box and prompt user for text
 
@@ -7,7 +7,7 @@ REVISION=	2
 CATEGORIES=	x11
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xt c 
 

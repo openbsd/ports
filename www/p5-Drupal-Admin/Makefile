@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:53 sthen Exp $
 
 COMMENT = 		screen scraping Perl API to some Drupal admin functions
 
@@ -9,7 +9,7 @@ MODULES =		cpan
 PKG_ARCH =		*
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		www/p5-WWW-Mechanize-TreeBuilder \
 			devel/p5-Moose>=2.1204 \

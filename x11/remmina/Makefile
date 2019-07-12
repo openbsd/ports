@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/05/20 22:15:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:51:20 sthen Exp $
 
 COMMENT=		GTK+3 remote desktop client
 
@@ -15,7 +15,7 @@ HOMEPAGE=		https://www.remmina.org/
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xext atk-1.0 avahi-client avahi-common avahi-ui-gtk3
 WANTLIB += c cairo freerdp2 freerdp-client2 gcrypt gdk-3 gdk_pixbuf-2.0

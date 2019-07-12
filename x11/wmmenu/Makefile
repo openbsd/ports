@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:51:24 sthen Exp $
 
 COMMENT=		wm-dockapp; A popup menu of icons that launch programs
 
@@ -9,7 +9,7 @@ CATEGORIES=     	x11 x11/windowmaker
 HOMEPAGE=		http://www.fcoutant.freesurf.fr/wmmenu.html
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext Xpm c m dockapp
 

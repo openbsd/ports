@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/08/15 15:53:57 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:50:51 sthen Exp $
 
 COMMENT=	I18N for Catalyst
 
@@ -9,7 +9,7 @@ CATEGORIES=	www
 REVISION=	1
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Locale-Maketext-Lexicon \
 		devel/p5-MRO-Compat \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:06 sthen Exp $
 
 COMMENT = 		simple web image gallery generator
 
@@ -10,7 +10,7 @@ CATEGORIES =		www graphics
 HOMEPAGE =		http://homepage.univie.ac.at/l.ertl/swiggle/
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  c exif iconv intl jpeg
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/10/03 12:05:11 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:51:24 sthen Exp $
 
 COMMENT=		Window Maker dock.app clock
 
@@ -10,7 +10,7 @@ MASTER_SITES=		${HOMEPAGE}
 HOMEPAGE=		http://www.bluestop.org/wmclock/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext Xpm c
 

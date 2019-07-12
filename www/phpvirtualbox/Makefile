@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/10/17 14:15:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:51:00 sthen Exp $
 
 COMMENT=		web-based VirtualBox front-end
 	
@@ -15,7 +15,7 @@ HOMEPAGE=		http://sourceforge.net/projects/phpvirtualbox/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=phpvirtualbox/}
 

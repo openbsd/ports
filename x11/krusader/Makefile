@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/05/20 22:15:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 20:51:15 sthen Exp $
 
 COMMENT=	twin panel file manager for KDE
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://www.krusader.org
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += KF5Archive KF5Auth KF5Bookmarks KF5Codecs KF5Completion

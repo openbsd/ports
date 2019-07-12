@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/20 19:57:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:57 sthen Exp $
 
 COMMENT =		high-performance preforking PSGI/Plack web server
 
@@ -9,7 +9,7 @@ CATEGORIES =		www
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CPAN_AUTHOR =		MIYAGAWA
 

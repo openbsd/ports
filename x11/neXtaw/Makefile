@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/10/23 17:11:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:51:17 sthen Exp $
 
 COMMENT=		libXaw widget set replacement
 
@@ -11,7 +11,7 @@ CATEGORIES=		x11 devel
 HOMEPAGE=		http://siag.nu/neXtaw/
 
 # X11
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xmu Xt \
 			xcb

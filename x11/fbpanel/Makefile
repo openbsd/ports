@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:51:10 sthen Exp $
 
 COMMENT=	lightweight NETWM compliant desktop panel
 
@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tbz2
 HOMEPAGE=	http://fbpanel.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0

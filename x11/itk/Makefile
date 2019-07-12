@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/06 10:38:26 sebastia Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:51:14 sthen Exp $
 
 COMMENT=	build mega-widgets using the Itcl object system
 
@@ -13,7 +13,7 @@ CATEGORIES=	x11 devel
 HOMEPAGE=	http://incrtcl.sourceforge.net/itk/
 
 # BSD style
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =	x11/tk
 WANTLIB +=	X11 ${MODTK_WANTLIB} itcl34

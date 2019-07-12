@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/17 16:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:13 sthen Exp $
 
 COMMENT=		text widget that extends the GTK3 GtkTextView widget
 
@@ -17,7 +17,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2/LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 atk-bridge-2.0 cairo cairo-gobject epoxy

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/03/26 13:32:44 rpe Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:47 sthen Exp $
 
 COMMENT=	online Image GALlery generator
 
@@ -8,7 +8,7 @@ CATEGORIES=	www graphics
 HOMEPAGE=	http://igal.trexler.at/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 

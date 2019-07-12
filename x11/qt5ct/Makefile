@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/05 17:52:54 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:51:20 sthen Exp $
 
 COMMENT =	Qt5 configuration tool
 
@@ -8,7 +8,7 @@ EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	x11
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =	devel/qmake x11/qt5
 

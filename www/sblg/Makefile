@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/06/14 06:46:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:51:05 sthen Exp $
 
 COMMENT =	simple off-line blog utility
 
@@ -10,7 +10,7 @@ HOMEPAGE =	https://kristaps.bsd.lv/sblg/
 MAINTAINER =	Bryan Vyhmeister <bryan@bsdjournal.net>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += c expat

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/20 22:15:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:51:21 sthen Exp $
 
 COMMENT=		display control panel for X.org SiS driver
 
@@ -9,7 +9,7 @@ CATEGORIES=		x11
 HOMEPAGE=		http://www.winischhofer.eu/linuxsispart1.shtml\#sisctrl
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xv Xxf86vm atk-1.0 c cairo

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2019/05/17 16:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2019/07/12 20:51:25 sthen Exp $
 
 COMMENT-main =	C++ cross-platform GUI toolkit
 COMMENT-media =	wxMediaCtrl class for wxWidgets
@@ -34,7 +34,7 @@ HOMEPAGE =	https://www.wxwidgets.org/
 
 # wxWindows (modified LGPL)
 # http://www.wxwidgets.org/about/licence/
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MULTI_PACKAGES = -main -media
 

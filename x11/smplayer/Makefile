@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2019/03/08 20:00:56 cwen Exp $
+# $OpenBSD: Makefile,v 1.58 2019/07/12 20:51:21 sthen Exp $
 
 COMMENT =		complete front-end for MPlayer and MPV
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://smplayer.sourceforge.net/
 MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>
 
 # GPLv2 (docs/en/gpl.html)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Script Qt5Widgets

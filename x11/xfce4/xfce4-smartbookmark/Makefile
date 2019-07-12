@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/06/13 15:48:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:51:28 sthen Exp $
 
 COMMENT=	Xfce4 web search panel plugin
 
@@ -7,7 +7,7 @@ XFCE_PLUGIN=	smartbookmark
 REVISION =	3
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0 atspi

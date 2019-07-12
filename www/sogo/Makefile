@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2019/03/13 08:58:31 sebastia Exp $
+# $OpenBSD: Makefile,v 1.81 2019/07/12 20:51:05 sthen Exp $
 
 COMMENT = 	web based groupware server
 
@@ -17,7 +17,7 @@ MASTER_SITES =	${HOMEPAGE}/files/downloads/SOGo/Sources/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPLv2/GPLv2
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES =		x11/gnustep
 MODGNUSTEP_NEEDS_GUI =	No

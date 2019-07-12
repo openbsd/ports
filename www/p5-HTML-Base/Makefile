@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2017/08/27 23:07:39 nigel Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:50:53 sthen Exp $
 
 COMMENT=	base HTML library
 
@@ -10,7 +10,7 @@ REVISION=	3
 CATEGORIES=	www
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_TEST=	Yes
 

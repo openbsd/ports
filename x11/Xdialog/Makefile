@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/21 23:05:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:51:07 sthen Exp $
 
 COMMENT=	X11 counterpart of curses-based misc/dialog
 
@@ -9,7 +9,7 @@ CATEGORIES=	x11 misc
 HOMEPAGE=	http://xdialog.free.fr/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype

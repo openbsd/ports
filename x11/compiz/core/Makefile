@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2018/10/24 14:28:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/07/12 20:51:09 sthen Exp $
 
 COMMENT =	OpenGL window and compositing manager
 
@@ -9,7 +9,7 @@ REVISION =	7
 SHARED_LIBS =	decoration	1.0
 
 # MIT, GPL and LGPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU ICE SM X11 X11-xcb XRes Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0

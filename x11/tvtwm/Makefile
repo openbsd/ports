@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/05/25 13:01:42 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:51:23 sthen Exp $
 
 COMMENT=	twm with a virtual desktop
 
@@ -8,7 +8,7 @@ REVISION=	2
 CATEGORIES=	x11
 
 # BSD-like/badly worded
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 Xext Xmu Xpm Xt c Xau Xdmcp
 

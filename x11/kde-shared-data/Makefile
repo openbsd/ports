@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/06/29 22:16:26 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:51:14 sthen Exp $
 
 COMMENT =	common run-time components for KDE3 and KDE4
 CATEGORIES =	x11 x11/kde3
@@ -11,7 +11,7 @@ MODKDE4_USE =
 MODKDE4_NO_QT =		Yes
 MODKDE4_FIX_GETTEXT =	No
 
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 KDE3_VERSION =		3.5.10
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/06/29 22:16:34 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:51:19 sthen Exp $
 
 COMMENT =	graphical documentation browser for Perl
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://podbrowser.googlecode.com/
 MASTER_SITES =	http://jodrell.net/files/unsupported/podbrowser/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/p5-Locale-gettext \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/06/13 15:48:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:51:11 sthen Exp $
 
 COMMENT =	gnome-mplayer toolkit
 DISTNAME =	gmtk-1.0.9
@@ -13,7 +13,7 @@ CATEGORIES =	x11 devel
 HOMEPAGE =	http://kdekorte.googlepages.com/gmtk/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi cairo

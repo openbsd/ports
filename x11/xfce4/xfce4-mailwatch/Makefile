@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/06/13 15:48:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:51:27 sthen Exp $
 
 COMMENT=	Xfce4 mailboxes monitor panel plugin
 
@@ -7,7 +7,7 @@ XFCE_PLUGIN=	mailwatch
 REVISION=	8
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 cairo exo-1 expat ffi

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/06/19 19:45:59 kili Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:51:15 sthen Exp $
 
 COMMENT=		Lumina Desktop Environment
 
@@ -15,7 +15,7 @@ HOMEPAGE=		https://lumina-desktop.org/
 MAINTAINER=		Bryan C. Everly <bryan@bceassociates.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2016/01/08 21:31:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:51:17 sthen Exp $
 
 COMMENT=		widgets library
 
@@ -11,7 +11,7 @@ CATEGORIES=		x11 devel
 HOMEPAGE=		http://siag.nu/mowitz/
 
 # GPLv2/LGPLv2/MIT/X
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		m neXtaw
 

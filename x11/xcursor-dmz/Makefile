@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/01 21:10:05 danj Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:25 sthen Exp $
 
 COMMENT =	style neutral scalable cursor themes
 
@@ -11,7 +11,7 @@ CATEGORIES =	x11
 HOMEPAGE =	http://jimmac.musichall.cz/themes.php?skin=7
 
 # CC by-sa 3.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES=	http://jimmac.musichall.cz/zip/
 DISTFILES =	${DISTNAME}.tar.bz2 \

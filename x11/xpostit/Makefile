@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/01/01 20:46:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:51:30 sthen Exp $
 
 COMMENT=	PostIt (R) messages onto your X11 screen
 
@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
 EXTRACT_SUFX=	.tar.Z
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c
 

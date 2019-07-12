@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:51:19 sthen Exp $
 
 COMMENT=	PolicyKit authentication agent for Qt
 
@@ -23,7 +23,7 @@ HOMEPAGE=	http://techbase.kde.org/Polkit-Qt-1
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m polkit-agent-1 polkit-gobject-1

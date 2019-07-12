@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/04/30 02:11:35 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:50:56 sthen Exp $
 
 COMMENT =	next generation web framework for Perl
 
@@ -10,7 +10,7 @@ CATEGORIES =	www
 MAINTAINER =	Manolis Tzanidakis <mtzanidakis@gmail.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 HOMEPAGE =	https://mojolicious.org/
 

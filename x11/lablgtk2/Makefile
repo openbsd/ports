@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/06/19 09:18:19 chrisz Exp $
+# $OpenBSD: Makefile,v 1.46 2019/07/12 20:51:15 sthen Exp $
 
 COMMENT =	OCaml interface to GTK+2
 
@@ -13,7 +13,7 @@ GH_PROJECT =	lablgtk
 GH_TAGNAME =	lablgtk2188
 
 # LGPL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender art_lgpl_2 atk-1.0 cairo fontconfig

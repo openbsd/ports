@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/09/04 12:46:27 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:09 sthen Exp $
 
 COMMENT =	dbus bindings for Tcl
 
@@ -12,7 +12,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 REVISION =	0
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	dbus-1
 MASTER_SITES =	${HOMEPAGE:=uv/}

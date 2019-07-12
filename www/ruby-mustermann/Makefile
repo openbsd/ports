@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2018/06/04 01:47:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT =		string matching library
 
@@ -8,7 +8,7 @@ CATEGORIES =		www
 HOMEPAGE =		https://github.com/sinatra/mustermann
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem

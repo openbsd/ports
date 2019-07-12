@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/06/19 17:14:19 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:51:29 sthen Exp $
 
 COMMENT =	very lightweight image viewer for X11
 DISTNAME =	xli-1.17.0
@@ -9,7 +9,7 @@ HOMEPAGE =	http://www.boomerangsworld.de/cms/worker/download/other.html
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xext c jpeg m png
 

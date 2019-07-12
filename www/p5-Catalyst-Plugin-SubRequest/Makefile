@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/20 19:57:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:52 sthen Exp $
 
 COMMENT=	map subrequests to actions in Catalyst
 
@@ -9,7 +9,7 @@ CATEGORIES=	www
 REVISION=	0
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	www/p5-Catalyst-Runtime>=5.7012
 

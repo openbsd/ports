@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2017/12/28 21:01:29 nigel Exp $
+# $OpenBSD: Makefile,v 1.46 2019/07/12 20:50:59 sthen Exp $
 
 COMMENT=	library for WWW access in Perl
 
@@ -7,7 +7,7 @@ PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES=	www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
 CPAN_AUTHOR=	OALDERS

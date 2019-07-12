@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/04/28 20:52:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT=		WSDL parsing services package for Python
 
@@ -9,7 +9,7 @@ CATEGORIES=		www
 REVISION=		1
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

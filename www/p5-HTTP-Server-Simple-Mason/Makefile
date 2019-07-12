@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:56 sthen Exp $
 
 COMMENT=	abstract baseclass for a standalone mason server
 
@@ -8,7 +8,7 @@ DISTNAME=	HTTP-Server-Simple-Mason-0.14
 CATEGORIES=	www
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Hook-LexWrap \

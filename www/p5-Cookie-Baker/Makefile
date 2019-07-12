@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/30 01:02:48 cwen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:52 sthen Exp $
 
 COMMENT =		cookie string generator / parser
 
@@ -8,7 +8,7 @@ DISTNAME =		Cookie-Baker-0.10
 CATEGORIES =		www
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		www/p5-URI
 

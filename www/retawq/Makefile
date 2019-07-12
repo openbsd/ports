@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/20 20:52:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT =		interactive, multi-threaded text mode web browser
 
@@ -10,7 +10,7 @@ HOMEPAGE =		http://retawq.sourceforge.net
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=retawq/}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto pthread curses ssl
 

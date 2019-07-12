@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/11/24 09:11:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:51:18 sthen Exp $
 
 COMMENT=	xosd based clock
 DISTNAME=	osd_clock-0.5
@@ -8,7 +8,7 @@ CATEGORIES=	x11
 MASTER_SITES=	https://distfiles.nl/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_TEST=	Yes
 

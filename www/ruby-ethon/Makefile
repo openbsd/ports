@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/04/23 11:16:06 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT =		lightweight libcurl wrapper
 
@@ -9,7 +9,7 @@ HOMEPAGE =		https://github.com/typhoeus/typhoeus
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

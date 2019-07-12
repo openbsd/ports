@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/12/02 17:56:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:51:24 sthen Exp $
 
 COMMENT=	window manager improved - key driven window manager
 
@@ -7,7 +7,7 @@ REVISION =	11
 CATEGORIES=	x11
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xft c m ${COMPILER_LIBCXX}
 

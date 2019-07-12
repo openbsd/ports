@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/07 19:53:08 danj Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:51:14 sthen Exp $
 
 COMMENT=		put clickable icons on the desktop
 
@@ -11,7 +11,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=idesk/}
 HOMEPAGE=		http://idesk.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 

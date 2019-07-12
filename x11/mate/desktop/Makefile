@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/17 16:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:16 sthen Exp $
 
 COMMENT=		components for the MATE desktop
 
@@ -11,7 +11,7 @@ REVISION=		1
 CATEGORIES=		x11
 
 # LGPLv2/GFDLv1.1/GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo

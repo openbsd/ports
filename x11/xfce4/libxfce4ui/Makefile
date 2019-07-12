@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/06/13 15:48:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:51:26 sthen Exp $
 
 COMMENT=	Xfce4 widget library
 
@@ -16,7 +16,7 @@ SHARED_LIBS=	xfce4ui-1		0.1	\
 HOMEPAGE=	http://www.xfce.org/projects/libraries
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c

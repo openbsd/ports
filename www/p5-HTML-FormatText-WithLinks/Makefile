@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:53 sthen Exp $
 
 COMMENT =	HTML to text conversion with links as footnotes
 
@@ -10,7 +10,7 @@ CATEGORIES =	www textproc
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 CONFIGURE_STYLE =	modbuild
 

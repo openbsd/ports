@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/06/13 15:48:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:51:13 sthen Exp $
 
 COMMENT =	platform independent hotkey handling for Gtk+ applications
 
@@ -10,7 +10,7 @@ CATEGORIES =	x11
 HOMEPAGE =	http://launchpad.net/gtkhotkey
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 cairo expat ffi fontconfig freetype fribidi

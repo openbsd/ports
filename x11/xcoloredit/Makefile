@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/10/11 21:21:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:51:25 sthen Exp $
 
 COMMENT=	find color values by graphical color mixing
 
@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
 EXTRACT_SUFX=	.tar.Z
 
 # License: BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c
 

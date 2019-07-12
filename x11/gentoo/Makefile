@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/08/29 16:13:04 jca Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:51:11 sthen Exp $
 
 COMMENT=		GTK+2 graphical filemanager
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://www.obsession.se/gentoo/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gentoo/}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype

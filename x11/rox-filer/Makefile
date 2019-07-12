@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2019/05/20 22:15:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.66 2019/07/12 20:51:21 sthen Exp $
 
 COMMENT=		GTK+-2 file manager with desktop features
 
@@ -9,7 +9,7 @@ CATEGORIES=		x11
 HOMEPAGE=		http://rox.sourceforge.net/desktop/ROX-Filer
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/20 22:15:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:51:24 sthen Exp $
 
 COMMENT=	interact with an EWMH/NetWM window manager
 DISTNAME=	wmctrl-1.07
@@ -10,7 +10,7 @@ MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	https://sites.google.com/site/tstyblo/wmctrl/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xmu c glib-2.0 intl
 

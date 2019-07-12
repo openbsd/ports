@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/04/28 20:51:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:51:01 sthen Exp $
 
 COMMENT =		HTML form validation, generation, and conversion
 
@@ -12,7 +12,7 @@ CATEGORIES =		www
 HOMEPAGE =		http://www.formencode.org/
 
 # PSF
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

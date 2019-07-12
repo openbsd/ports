@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:57:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:50 sthen Exp $
 
 COMMENT=	easily generate and process stateful forms
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 HOMEPAGE=	http://www.formbuilder.org/
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 TEST_DEPENDS=textproc/p5-Template \
 		textproc/p5-Text-Template \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2019/06/13 15:48:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2019/07/12 20:51:28 sthen Exp $
 
 COMMENT=	Xfce4 session manager
 
@@ -11,7 +11,7 @@ PORTROACH=	limitw:1,even
 SHARED_LIBS +=	xfsm-4.6	1.0 # .0.0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 X11-xcb XRes Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1

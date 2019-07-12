@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/01 19:57:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:52 sthen Exp $
 
 COMMENT =		a plugin for adding Ajax route handlers
 
@@ -9,7 +9,7 @@ CATEGORIES =		www
 REVISION =		0
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		www/p5-Dancer2>=0.155000
 

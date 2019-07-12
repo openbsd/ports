@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/06/13 15:48:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:51:25 sthen Exp $
 
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
@@ -11,7 +11,7 @@ REVISION =		3
 HOMEPAGE =	http://xarchiver.sourceforge.net
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c cairo

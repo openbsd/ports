@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/08/10 10:11:47 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:51:07 sthen Exp $
 
 COMMENT=	access counter, clock and date for WWW pages
 
@@ -17,7 +17,7 @@ MASTER_SITES=	http://muquit.com/muquit/software/Count/src/wwwcount$V/ \
 HOMEPAGE=	http://www.muquit.com/muquit/software/Count/Count.html
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 CONFIGURE_STYLE=gnu

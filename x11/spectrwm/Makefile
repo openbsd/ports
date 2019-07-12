@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/01/04 16:21:43 bket Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:51:21 sthen Exp $
 
 COMMENT=		small tiling window manager
 
@@ -16,7 +16,7 @@ HOMEPAGE=		https://github.com/conformal/spectrwm/
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 WANTLIB += X11 X11-xcb Xcursor Xft c util xcb xcb-icccm xcb-keysyms

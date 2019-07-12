@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/04/01 11:46:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:50:48 sthen Exp $
 
 COMMENT =	wiki engine written in python
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://moinmo.in/
 
 # GPLv2 and several other ones claiming compliance with GPLv2 or
 # actually being less restrictive.
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://static.moinmo.in/files/
 

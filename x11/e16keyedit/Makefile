@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/02/24 07:54:17 feinerer Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:51:09 sthen Exp $
 
 COMMENT=	edit enlightenment's keybindings
 
@@ -7,7 +7,7 @@ PKGNAME=	${DISTNAME:S/-//}
 CATEGORIES=    	x11
 
 # X11
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo

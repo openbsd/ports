@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/15 12:04:42 kmos Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:47 sthen Exp $
 
 COMMENT =		web-based notebook for interactive computing
 
@@ -12,7 +12,7 @@ CATEGORIES =		www devel
 HOMEPAGE =		https://jupyter.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

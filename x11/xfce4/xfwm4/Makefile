@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2018/08/01 08:23:10 landry Exp $
+# $OpenBSD: Makefile,v 1.58 2019/07/12 20:51:29 sthen Exp $
 
 COMMENT=	Xfce4 window manager
 
@@ -8,7 +8,7 @@ XFCE_VERSION=	4.12.5
 PORTROACH=	limitw:1,even
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes

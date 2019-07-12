@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/03/08 20:00:56 cwen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:51:21 sthen Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -14,7 +14,7 @@ MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>
 HOMEPAGE =		http://smtube.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL Qt5Core Qt5Gui Qt5Network Qt5Script Qt5WebKit Qt5WebKitWidgets

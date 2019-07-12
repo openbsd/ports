@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/11/07 10:51:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:09 sthen Exp $
 
 COMMENT-main=	general purpose messaging, notification and menu program
 COMMENT-gadgets=gadgets and scripts for dzen2
@@ -21,7 +21,7 @@ MAINTAINER=		Dmitri Alenichev <mitya@rockers.su>
 MULTI_PACKAGES=		-main -gadgets
 
 # MIT/X
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 c Xinerama Xpm
 

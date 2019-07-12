@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/11 18:33:43 robert Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:17 sthen Exp $
 
 COMMENT=		MATE support utilities
 
@@ -8,7 +8,7 @@ MATE_PROJECT=		mate-utils
 MATE_VERSION=		1.22.1
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender c epoxy expat ffi fontconfig

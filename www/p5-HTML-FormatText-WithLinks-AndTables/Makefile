@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/02/09 17:09:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:53 sthen Exp $
 
 COMMENT =	converts HTML to Text with tables intact
 
@@ -9,7 +9,7 @@ REVISION =	0
 CATEGORIES =	www textproc
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =	www/p5-HTML-FormatText-WithLinks
 

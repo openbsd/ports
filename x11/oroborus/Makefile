@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/06 19:51:38 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:51:18 sthen Exp $
 
 COMMENT=	minimalistic X11 window manager
 
@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.mguillaud.net/ports/oroborus/ \
 HOMEPAGE=	http://www.oroborus.org/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		ICE SM X11 Xext Xpm c 
 
 CONFIGURE_STYLE=gnu

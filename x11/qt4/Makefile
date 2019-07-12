@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2019/04/29 19:33:38 cwen Exp $
+# $OpenBSD: Makefile,v 1.158 2019/07/12 20:51:20 sthen Exp $
 
 USE_WXNEEDED =		Yes # QtWebKit
 
@@ -76,7 +76,7 @@ FLAVOR ?=
 
 # GPLv3, or LGPL.
 # (GPLv2 not needed, since LGPL is more free)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MAKE_ENV =	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
 		SYS_CXX="${CXX}" SYS_CXXFLAGS="${CXXFLAGS}" \

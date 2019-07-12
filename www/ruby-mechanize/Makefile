@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/11/20 20:57:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT=		automate interaction with websites
 
@@ -9,7 +9,7 @@ CATEGORIES=		www
 HOMEPAGE=		http://docs.seattlerb.org/mechanize/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		textproc/ruby-nokogiri,${MODRUBY_FLAVOR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/20 22:15:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:51:17 sthen Exp $
 
 COMMENT=		background browser and setter for X11
 
@@ -9,7 +9,7 @@ REVISION=		1
 HOMEPAGE=		http://projects.l3ib.org/nitrogen/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:52:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:03 sthen Exp $
 
 COMMENT =	URI templates
 
@@ -12,7 +12,7 @@ CATEGORIES =	www
 HOMEPAGE =	https://uritemplate.readthedocs.io/en/latest/
 
 # BSD 3 clauses or Apache v2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PI =	Yes

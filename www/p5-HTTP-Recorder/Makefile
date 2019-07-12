@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/08 15:44:46 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:55 sthen Exp $
 
 COMMENT=	record interaction with websites
 
@@ -9,7 +9,7 @@ CATEGORIES=	www
 REVISION =	0
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	www/p5-HTTP-Request-Params \
 		www/p5-HTTP-Proxy

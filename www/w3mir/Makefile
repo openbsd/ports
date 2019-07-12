@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2015/02/16 22:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:07 sthen Exp $
 
 COMMENT=		utility to mirror web pages
 
@@ -9,7 +9,7 @@ HOMEPAGE=		http://langfeldt.net/w3mir/
 MAINTAINER=		Jeff Bachtel <jeff@cepheid.org>
 
 # Artistic license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 

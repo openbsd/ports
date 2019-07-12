@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/07/12 12:18:00 fcambus Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:11 sthen Exp $
 
 COMMENT=	GTK-based BDF font editor
 
@@ -10,7 +10,7 @@ CATEGORIES=	x11 fonts
 HOMEPAGE=	http://sofia.nmsu.edu/~mleisher/Software/gbdfed/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig

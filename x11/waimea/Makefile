@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:51:23 sthen Exp $
 
 COMMENT=		virtual desktop manager for X11
 
@@ -10,7 +10,7 @@ CATEGORIES=		x11
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/waimea
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=waimea/}
 

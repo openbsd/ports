@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/30 01:33:19 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:50:55 sthen Exp $
 
 COMMENT =	minimalist HTTP user agent cookie jar
 
@@ -9,7 +9,7 @@ CATEGORIES =	www
 MAINTAINER =		Wen Heping <wenheping2000@hotmail.com>
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 

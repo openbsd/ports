@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/11/09 16:27:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT=		modular Ruby webserver interface
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://rack.github.io/
 MAINTAINER =		Jeremy Evans <jeremy@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/29 00:42:09 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:05 sthen Exp $
 
 COMMENT =		extension language for CSS
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://sass-lang.com
 MAINTAINER =		frantisek holop <minusf@obiit.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2015/11/02 08:37:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:21 sthen Exp $
 
 COMMENT=	simple digital clock
 
@@ -7,7 +7,7 @@ REVISION=	3
 CATEGORIES=	x11
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_TEST=	Yes
 WANTLIB=	c X11

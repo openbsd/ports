@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/08 06:01:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:50:54 sthen Exp $
 
 COMMENT =	(X)HTML validation in a Perl object
 
@@ -10,7 +10,7 @@ REVISION =	1
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c perl tidyp-1.04
 

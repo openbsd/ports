@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2018/12/21 13:31:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 20:51:19 sthen Exp $
 
 COMMENT=		fast and lightweight file manager
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://pcmanfm.sourceforge.net/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo fm fm-gtk fontconfig

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2018/12/12 23:46:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:59 sthen Exp $
 
 COMMENT=	reusable split of pecl_http's property proxy API#'
 
@@ -6,7 +6,7 @@ DISTNAME=	propro-2.1.0
 REVISION=	0
 
 # PHP
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2018/06/29 22:16:21 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2019/07/12 20:50:47 sthen Exp $
 
 COMMENT-main=	checks HTML documents for broken links, CLI
 COMMENT-x11=	checks HTML documents for broken links, GUI
@@ -19,7 +19,7 @@ CATEGORIES=    	www
 HOMEPAGE=	http://wummel.github.io/linkchecker/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB+=	${MODPY_WANTLIB} pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:52:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:03 sthen Exp $
 
 COMMENT =		utility belt for advanced users of python-requests
 
@@ -12,7 +12,7 @@ CATEGORIES =		www
 HOMEPAGE =		https://github.com/sigmavirus24/requests-toolbelt
 
 # APLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

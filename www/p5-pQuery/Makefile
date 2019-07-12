@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/04 01:18:59 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:59 sthen Exp $
 
 COMMENT=	perl port of jQuery.js
 
@@ -9,7 +9,7 @@ CATEGORIES=	www
 REVISION=	0
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CPAN_AUTHOR=	INGY
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/04/28 20:52:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:51:20 sthen Exp $
 
 COMMENT	=	python Qt5 bindings
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.riverbankcomputing.co.uk/software/pyqt/intro
 MAINTAINER=	KDE porting team <openbsd-kde@googlegroups.com>
 
 # GPLv3 with exceptions for use with certain named open-source licenses
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 WANTLIB += dbus-1 glib-2.0 intl m pthread pulse pulse-mainloop-glib

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/04/26 06:21:40 tb Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:51:24 sthen Exp $
 
 COMMENT =	sets the window manager name property of the root window
 
@@ -10,7 +10,7 @@ CATEGORIES =	x11
 HOMEPAGE =	https://tools.suckless.org/x/wmname
 
 # MIT/X
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	X11 c
 

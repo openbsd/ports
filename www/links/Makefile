@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/01/27 11:23:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:50:48 sthen Exp $
 
 COMMENT=	text browser, displays while downloading
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.jikos.cz/~mikulas/links/
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c crypto ssl z
 

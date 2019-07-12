@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:51:07 sthen Exp $
 
 COMMENT=		IPv6 to IPv4 web proxy
 
@@ -8,7 +8,7 @@ CATEGORIES=		www
 HOMEPAGE=		http://www.dillema.net/software/www6to4.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=		http://www.dillema.net/software/www6to4/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/06/13 15:48:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:51:14 sthen Exp $
 
 COMMENT =	GTK+3 library for registering keyboard shortcuts
 DISTNAME =	keybinder3-0.3.0
@@ -10,7 +10,7 @@ SHARED_LIBS =	keybinder-3.0		0.0	# 0.0
 HOMEPAGE =	https://github.com/engla/keybinder
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi cairo

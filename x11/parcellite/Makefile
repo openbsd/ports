@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/20 22:15:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:51:19 sthen Exp $
 
 COMMENT=	lightweight GTK+ clipboard manager
 
@@ -11,7 +11,7 @@ MAINTAINER=	Lawrence Teo <lteo@openbsd.org>
 HOMEPAGE=	http://parcellite.sourceforge.net/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=parcellite/}
 

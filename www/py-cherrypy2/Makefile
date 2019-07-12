@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2016/01/06 17:01:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:51:01 sthen Exp $
 
 COMMENT=		pythonic, object-oriented web development framework
 
@@ -11,7 +11,7 @@ CATEGORIES=		www
 HOMEPAGE=		http://www.cherrypy.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://download.cherrypy.org/cherrypy/${V}/
 

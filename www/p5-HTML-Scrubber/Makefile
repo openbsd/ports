@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/08 15:44:46 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:54 sthen Exp $
 
 COMMENT=	HTML cleaning module
 
@@ -9,7 +9,7 @@ CATEGORIES=	www
 REVISION=	0
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	www/p5-HTML-Parser

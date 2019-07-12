@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/02 19:31:37 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:50:57 sthen Exp $
 
 COMMENT =	spawn a local HTTP server for testing
 
@@ -7,7 +7,7 @@ DISTNAME =	Test-HTTP-LocalServer-0.63
 CATEGORIES =	www
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 RUN_DEPENDS =		www/p5-CGI \

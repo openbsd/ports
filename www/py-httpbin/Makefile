@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/13 19:03:54 danj Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:01 sthen Exp $
 
 COMMENT =		HTTP request and response service
 
@@ -12,7 +12,7 @@ CATEGORIES =		www
 HOMEPAGE =		https://github.com/Runscope/httpbin
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

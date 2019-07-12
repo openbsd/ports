@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/06/13 17:00:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:22 sthen Exp $
 
 COMMENT=		easily hackable Common LISP window manager
 
@@ -13,7 +13,7 @@ HOMEPAGE=		https://stumpwm.github.io/
 MAINTAINER=		Solene Rapenne <solene@perso.pw>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m util z
 

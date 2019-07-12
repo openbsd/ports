@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/01/11 17:01:19 stu Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:08 sthen Exp $
 
 COMMENT =		high-level widget set for Tcl/Tk
 
@@ -8,7 +8,7 @@ HOMEPAGE =		http://sourceforge.net/projects/tcllib/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD style
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcllib/}
 MODULES =		x11/tk

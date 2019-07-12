@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/05/05 15:15:45 danj Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:51:19 sthen Exp $
 
 COMMENT=		lightweight window manager with emphasis on usability
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://iki.fi/tuomov/
 MASTER_SITES=		${HOMEPAGE}dl/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 c m
 
 NO_TEST=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:51:10 sthen Exp $
 
 COMMENT =		enlightenment DBus component
 
@@ -12,7 +12,7 @@ SHARED_LIBS +=		${_lib} ${SO_VERSION}
 .endfor
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender Xss Xtst c cares crypto curl dbus-1 ecore ecore_con

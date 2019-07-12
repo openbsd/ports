@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:57:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:50:50 sthen Exp $
 
 COMMENT=	sensible default end action for catalyst
 
@@ -9,7 +9,7 @@ CATEGORIES=	www
 REVISION=	0
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Data-Visitor>=0.24 \
 		devel/p5-MRO-Compat \

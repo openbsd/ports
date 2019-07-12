@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/04/28 17:03:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:51 sthen Exp $
 
 COMMENT=	Catalyst Apache engine
 
@@ -9,7 +9,7 @@ CATEGORIES=	www
 REVISION=	1
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	www/p5-Catalyst-Runtime \
 		www/ap2-mod_perl

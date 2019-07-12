@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2016/09/13 19:15:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:51:10 sthen Exp $
 
 COMMENT =		library to write an arbitary set of chunks of data to a file
 
@@ -8,7 +8,7 @@ EPOCH =			2
 SHARED_LIBS +=	eet                  4.0      # 8.10
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto eina iconv jpeg m pthread ssl z
 

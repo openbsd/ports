@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/12 16:29:44 danj Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:51:25 sthen Exp $
 
 COMMENT =		tiny monitor calibration loader for XFree86 or X.org
 
@@ -12,7 +12,7 @@ CATEGORIES =		x11
 HOMEPAGE =		http://www.etg.e-technik.uni-erlangen.de/web/doe/xcalib/
 
 # License: GPLv2 or later
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xcalib/}
 

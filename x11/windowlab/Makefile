@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/02/27 20:00:26 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:23 sthen Exp $
 
 COMMENT =	small and simple window manager of novel design
 DISTNAME =	windowlab-1.40
@@ -9,7 +9,7 @@ REVISION =	0
 HOMEPAGE =	http://nickgravgaard.com/windowlab/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 WANTLIB += X11 Xext Xft c
 

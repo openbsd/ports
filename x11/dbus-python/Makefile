@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/04/28 20:52:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 20:51:09 sthen Exp $
 
 PORTROACH=		limitw:2,even
 
@@ -20,7 +20,7 @@ HOMEPAGE =		http://dbus.freedesktop.org/
 MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # ISC-like
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB-main += dbus-1 glib-2.0 iconv intl pcre pthread
 

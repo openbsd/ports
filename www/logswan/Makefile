@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/10/16 11:32:40 fcambus Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:48 sthen Exp $
 
 COMMENT =	fast web log analyzer using probabilistic data structures
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://www.logswan.org/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB +=	c jansson m maxminddb

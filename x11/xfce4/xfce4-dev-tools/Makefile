@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/11/03 16:20:40 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:51:27 sthen Exp $
 
 COMMENT =	Xfce4 developer tools and macros
 
@@ -8,7 +8,7 @@ REVISION =	0
 HOMEPAGE =	http://users.xfce.org/~benny/projects/xfce4-dev-tools/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	x11/xfce4
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/05 08:10:31 mpi Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:19 sthen Exp $
 
 COMMENT=		modern desktop flat theme suite
 
@@ -12,7 +12,7 @@ CATEGORIES=		x11
 HOMEPAGE=		https://snwh.org/paper
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		x11/gtk-engines2 \
 			x11/gtk2-murrine-engine

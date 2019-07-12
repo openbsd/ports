@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/06/13 15:48:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:51:29 sthen Exp $
 
 COMMENT=	Xfce4 Music Player Daemon client
 
@@ -7,7 +7,7 @@ XFCE_GOODIE=	xfmpc
 REVISION =	3
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig

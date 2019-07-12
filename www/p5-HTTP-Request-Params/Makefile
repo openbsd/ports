@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/08 15:44:46 danj Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:55 sthen Exp $
 
 COMMENT=	retrieve GET/POST parameters from HTTP requests
 
@@ -9,7 +9,7 @@ CATEGORIES=	www
 REVISION =	0
 
 # Same as Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Class-Accessor \
 		mail/p5-Email-MIME>=1.910 \

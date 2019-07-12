@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/15 13:34:58 cwen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:55 sthen Exp $
 
 COMMENT =		faster implementation of HTTP::Headers
 
@@ -8,7 +8,7 @@ DISTNAME =		HTTP-Headers-Fast-0.22
 CATEGORIES =		www
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		www/p5-HTTP-Date
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/09/04 12:46:28 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:51:21 sthen Exp $
 
 COMMENT=		full-screen X11 task-switcher like Apple's Expose
 
@@ -12,7 +12,7 @@ EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://thegraveyard.org/skippy.php
 
 # X11
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext Xft Xinerama Xrender c expat fontconfig \
 		freetype m z xcb Imlib2

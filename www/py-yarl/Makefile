@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/15 12:04:43 kmos Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT =		yet another URL library
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://yarl.readthedocs.org
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
 # Apache License 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/11/21 00:13:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:51:12 sthen Exp $
 
 COMMENT=		switch GTK+2 themes quickly
 
@@ -10,7 +10,7 @@ CATEGORIES=		x11 graphics
 HOMEPAGE=		http://www.muhri.net/nav.php3?node=gts
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0

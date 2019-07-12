@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2019/05/17 16:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2019/07/12 20:51:29 sthen Exp $
 
 COMMENT=	Xfce4 xkb layout switcher panel plugin
 
@@ -7,7 +7,7 @@ XFCE_PLUGIN=	xkb
 REVISION=	3
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 X11-xcb XRes Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0

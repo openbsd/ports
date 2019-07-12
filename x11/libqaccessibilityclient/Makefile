@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/06/07 05:42:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:15 sthen Exp $
 
 COMMENT =	Qt-based library for writing accessibility apps
 
@@ -11,7 +11,7 @@ CATEGORIES =	x11 devel
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB += c m

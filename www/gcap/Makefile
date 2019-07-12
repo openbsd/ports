@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/10/01 11:54:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:46 sthen Exp $
 
 COMMENT =		Youtube closed caption downloader
 
@@ -9,7 +9,7 @@ CATEGORIES =		www
 HOMEPAGE =		https://code.google.com/p/gcap/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=gcap/}
 

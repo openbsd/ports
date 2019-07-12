@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:51:20 sthen Exp $
 
 COMMENT=	viewer for IETF RFCs
 
@@ -7,7 +7,7 @@ MAINTAINER=	Vadim Zhukov <zhuk@openbsd.org>
 CATEGORIES=	x11
 
 # GPLv2 (everything except src/TitleModel.cpp is GPLv2+)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 WANTLIB += QtGui QtNetwork c m pthread ${COMPILER_LIBCXX}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/06/29 22:16:36 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:51:27 sthen Exp $
 
 COMMENT =	Thunar vcs integration plugin
 
@@ -7,7 +7,7 @@ REVISION =	3
 THUNAR_PLUGIN =	thunar-vcs-plugin
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender apr-1 aprutil-1 atk-1.0 c cairo

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/20 22:15:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:51:14 sthen Exp $
 
 COMMENT=		Joe's Window Manager#'
 
@@ -9,7 +9,7 @@ CATEGORIES=		x11
 HOMEPAGE=		http://www.joewing.net/projects/jwm/index.shtml
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xext Xft Xinerama Xmu Xpm Xrender c cairo freetype
 WANTLIB += fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0

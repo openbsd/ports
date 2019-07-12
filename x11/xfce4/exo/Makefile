@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2019/01/22 22:09:35 landry Exp $
+# $OpenBSD: Makefile,v 1.63 2019/07/12 20:51:26 sthen Exp $
 
 COMMENT=	Xfce4 extension library
 
@@ -13,7 +13,7 @@ SHARED_LIBS=	exo-1	0.2 \
 HOMEPAGE=	http://www.xfce.org/projects
 
 # GPLv2/LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes

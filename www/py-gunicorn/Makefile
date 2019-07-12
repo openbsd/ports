@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/04/28 20:51:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:01 sthen Exp $
 
 COMMENT =		Python WSGI HTTP server
 
@@ -11,7 +11,7 @@ REVISION =		0
 HOMEPAGE =		http://gunicorn.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

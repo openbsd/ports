@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:25 sthen Exp $
 
 COMMENT =		smooth xcursor theme with shadows
 DISTNAME =		28310-neutral-1.13a
@@ -8,7 +8,7 @@ CATEGORIES =		x11
 MAINTAINER =		Lazaros Koromilas <lostd@2f30.org>
 
 # Artistic 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://gnome-look.org/CONTENT/content-files/ \
 			http://xfce-look.org/CONTENT/content-files/ \

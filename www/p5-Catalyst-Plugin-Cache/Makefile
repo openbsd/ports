@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:51 sthen Exp $
 
 COMMENT =	flexible caching support for Catalyst
 
@@ -9,7 +9,7 @@ CATEGORIES =	www
 REVISION =	0
 
 # Perl/MIT
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 BUILD_DEPENDS =		devel/p5-Test-Weaken
 RUN_DEPENDS =		devel/p5-MRO-Compat \

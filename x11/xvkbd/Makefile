@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/04/01 11:54:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:51:31 sthen Exp $
 
 COMMENT=		virtual keyboard for X Window System
 
@@ -9,7 +9,7 @@ HOMEPAGE=		http://t-sato.in.coocan.jp/xvkbd/
 MAINTAINER=		Yozo TODA <yozo@v007.vaio.ne.jp>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xau Xaw3d Xdmcp Xext Xmu Xpm Xt Xtst c
 

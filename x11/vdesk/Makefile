@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/05/25 13:01:42 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:51:23 sthen Exp $
 
 COMMENT=		virtual desktop manager
 DISTNAME=		vdesk-1.2
@@ -10,7 +10,7 @@ MASTER_SITES=		http://offog.org/files/
 HOMEPAGE=		http://offog.org/code/vdesk.html
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	gnu
 

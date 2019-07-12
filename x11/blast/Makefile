@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2015/02/16 22:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:08 sthen Exp $
 
 COMMENT=	blow holes through windows
 
@@ -9,7 +9,7 @@ DISTFILES=	${DISTNAME}-src-11.00.tar.gz
 MASTER_SITES=	http://hpux.connect.org.uk/ftp/hpux/X11/Demos/blast-1.0/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext c
 
 do-build:

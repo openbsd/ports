@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:59 sthen Exp $
 
 COMMENT=	interface to the Audioscrobbler WebService API
 
@@ -9,7 +9,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Cache-Cache \
 		devel/p5-Class-Accessor \

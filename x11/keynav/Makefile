@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/05/20 22:15:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:51:14 sthen Exp $
 
 COMMENT=	turns your keyboard into a fast pointer mover
 
@@ -11,7 +11,7 @@ CATEGORIES=	x11
 HOMEPAGE=	http://www.semicomplete.com/projects/keynav/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=semicomplete/}
 

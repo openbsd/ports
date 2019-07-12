@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:51:19 sthen Exp $
 
 COMMENT=	aewm++ based pretty themable window manager
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://www.pekwm.org/
 MAINTAINER=	Timo Myyra <timo.myyra@bittivirhe.fi>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xrandr c iconv jpeg m png z

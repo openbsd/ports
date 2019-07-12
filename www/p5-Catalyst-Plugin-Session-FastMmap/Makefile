@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:51 sthen Exp $
 
 COMMENT=	FastMmap sessions for Catalyst (deprecated)
 
@@ -9,7 +9,7 @@ CATEGORIES=	www
 REVISION=	0
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	www/p5-Catalyst-Runtime \
 		devel/p5-Cache-FastMmap \

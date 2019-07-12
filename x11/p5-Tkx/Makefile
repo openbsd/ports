@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:18 sthen Exp $
 
 COMMENT =		Tk extension module for Perl
 
@@ -7,7 +7,7 @@ CATEGORIES =		x11 devel
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan x11/tk
 PKG_ARCH =		*

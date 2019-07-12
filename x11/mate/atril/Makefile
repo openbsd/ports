@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/17 16:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:51:15 sthen Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -14,7 +14,7 @@ MATE_VERSION=		1.22.1
 REVISION=		0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm bz2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/06/13 15:48:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:51:22 sthen Exp $
 
 COMMENT=	showcase for GTK+ 2 widgets
 
@@ -9,7 +9,7 @@ CATEGORIES=	x11
 HOMEPAGE=	http://www.stellingwerff.com/?page_id=10
 
 # GPL v2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo expat ffi fontconfig freetype fribidi

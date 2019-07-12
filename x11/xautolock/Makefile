@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:51:25 sthen Exp $
 
 COMMENT= 		fire up programs in case of user inactivity under X
 
@@ -14,7 +14,7 @@ HOMEPAGE=		http://freshmeat.net/projects/xautolock/
 MAINTAINER=		Matthieu Herrb <matthieu@openbsd.org>
 
 # License: GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext Xss c
 

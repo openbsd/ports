@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/07 19:53:08 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:11 sthen Exp $
 
 COMMENT=		slit pager for fluxbox window manager
 
@@ -9,7 +9,7 @@ CATEGORIES=		x11
 HOMEPAGE=		http://benedict.isomedia.com/homes/stevencooper/projects/fluxter.html
 
 # GNU
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://benedict.isomedia.com/homes/stevencooper/files/
 

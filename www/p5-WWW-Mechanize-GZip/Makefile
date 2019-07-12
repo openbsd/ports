@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/27 11:41:14 cwen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:58 sthen Exp $
 
 COMMENT=	tries to fetch webpages with gzip-compression
 
@@ -9,7 +9,7 @@ DISTNAME=	WWW-Mechanize-GZip-0.14
 CATEGORIES=	www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS =	www/p5-WWW-Mechanize
 

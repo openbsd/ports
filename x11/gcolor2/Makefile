@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/06/13 15:48:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:51:11 sthen Exp $
 #
 COMMENT =		color selector in GTK2
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://gcolor2.sourceforge.net/
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo expat ffi fontconfig freetype fribidi

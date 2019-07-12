@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2018/12/13 19:53:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:51:18 sthen Exp $
 
 BROKEN-hppa =		missing atomic ops
 BROKEN-alpha =		missing atomic ops
@@ -31,7 +31,7 @@ HOMEPAGE =		http://www.ogre3d.org
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SM X11 Xaw Xext Xt $(MODGCC4_ATOMICWANTLIB)
 WANTLIB += boost_atomic-mt boost_date_time-mt

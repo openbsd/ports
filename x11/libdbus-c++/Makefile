@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/03/13 15:58:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:15 sthen Exp $
 
 COMMENT =	C++ API for dbus
 DISTNAME =	libdbus-c++-0.9.0
@@ -8,7 +8,7 @@ CATEGORIES =	x11 devel
 HOMEPAGE =	http://dbus-cplusplus.sourceforge.net/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 WANTLIB =		${COMPILER_LIBCXX} c dbus-1 expat glib-2.0 iconv \
 			intl m pcre
 

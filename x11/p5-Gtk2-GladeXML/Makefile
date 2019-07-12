@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:51:18 sthen Exp $
 
 COMMENT=	Glade 2.x support for Gtk2-Perl
 
@@ -8,7 +8,7 @@ REVISION=	12
 CATEGORIES=	x11
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0

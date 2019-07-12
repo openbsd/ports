@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/06/03 16:31:08 fcambus Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:47 sthen Exp $
 
 COMMENT =	web application framework for writing scalable web APIs in C
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://kore.io/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c crypto pthread ssl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:14 sthen Exp $
 
 COMMENT=	suite of tools for managing icons in an application
 
@@ -8,7 +8,7 @@ CATEGORIES=	x11
 HOMEPAGE=	https://launchpad.net/icontool/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/trunk/0.1/+download/
 

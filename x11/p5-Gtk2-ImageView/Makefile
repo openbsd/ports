@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/20 22:15:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:51:18 sthen Exp $
 
 COMMENT=		Perl bindings to the GtkImageView image viewer widget
 
@@ -9,7 +9,7 @@ CATEGORIES=		x11
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0

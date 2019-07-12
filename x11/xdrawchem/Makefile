@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/03/08 20:00:56 cwen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:51:26 sthen Exp $
 
 COMMENT=	two-dimensional molecule drawing program
 
@@ -9,7 +9,7 @@ REVISION=	0
 HOMEPAGE=	https://www.woodsidelabs.com/chemistry/xdrawchem.php
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB+=	${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB+=	Qt5Widgets Qt5Xml c m openbabel

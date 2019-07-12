@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2019/07/12 20:51:21 sthen Exp $
 
 COMMENT=	simple login manager
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://github.com/iwamatsu/slim
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=slim.berlios/}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =	devel/cmake
 LIB_DEPENDS=	graphics/jpeg \

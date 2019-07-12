@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/18 09:24:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT =		creator/parser for the NTLM authentication
 
@@ -8,7 +8,7 @@ PKGNAME =		${DISTNAME:S/ruby//}
 CATEGORIES =		www security
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

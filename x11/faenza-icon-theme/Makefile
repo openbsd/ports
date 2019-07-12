@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/04/24 16:26:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:51:10 sthen Exp $
 
 COMMENT =		complete, colourful suite of squared icons
 
@@ -13,7 +13,7 @@ MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=faenza-icon-theme/}
 EXTRACT_SUFX =		.zip
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 PKG_ARCH =		*
 NO_BUILD =		Yes

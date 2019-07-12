@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/13 03:25:18 pamela Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:01 sthen Exp $
 
 COMMENT=		simple WSGI-framework for small web-applications
 
@@ -11,7 +11,7 @@ CATEGORIES=		www
 HOMEPAGE=		https://bottlepy.org
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

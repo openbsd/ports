@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/01 19:29:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:55 sthen Exp $
 
 COMMENT =	pure Perl HTTP client
 
@@ -9,6 +9,6 @@ REVISION =	1
 CATEGORIES =	www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/02/09 17:55:27 abieber Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:50:48 sthen Exp $
 
 BROKEN-powerpc = help2man: can't get `--help' info from ./luakit
 
@@ -18,7 +18,7 @@ MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 HOMEPAGE =	http://luakit.org
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 USE_GMAKE =		Yes
 

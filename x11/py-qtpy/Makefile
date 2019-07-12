@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/05 15:44:13 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:20 sthen Exp $
 
 COMMENT =		provides an abstraction layer of various Qt bindings
 
@@ -11,7 +11,7 @@ REVISION =		1
 HOMEPAGE =		https://github.com/spyder-ide/qtpy
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

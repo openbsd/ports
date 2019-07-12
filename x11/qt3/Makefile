@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2019/02/19 05:13:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.130 2019/07/12 20:51:20 sthen Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS= m88k
@@ -64,7 +64,7 @@ PSEUDO_FLAVORS=	no_mysql no_postgresql no_sqlite2 no_examples
 FLAVOR?=
 
 # GPL/QPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
 

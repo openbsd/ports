@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/06/05 02:48:30 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:51:05 sthen Exp $
 
 COMMENT =	implementation of WebSocket extensions for ruby 
 
@@ -8,7 +8,7 @@ CATEGORIES =	www
 HOMEPAGE =	https://github.com/faye/websocket-extensions-ruby
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem

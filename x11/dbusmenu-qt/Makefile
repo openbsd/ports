@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:51:09 sthen Exp $
 
 COMMENT =	D-Bus menu implementation for Qt
 V =		0.9.3
@@ -14,7 +14,7 @@ SHARED_LIBS =	dbusmenu-qt	1.0 # 2.7
 SHARED_LIBS +=	dbusmenu-qt5	1.0 # 2.7
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://archive.ubuntu.com/ubuntu/pool/main/libd/libdbusmenu-qt/
 EXTRACT_SUFX =	.orig.tar.gz

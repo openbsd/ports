@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/06/02 20:47:12 schwarze Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:51:23 sthen Exp $
 
 COMMENT =		table/matrix widget extension to Tcl/Tk
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://tktable.sourceforge.net/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD style
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		X11
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tktable/}

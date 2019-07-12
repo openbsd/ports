@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/06/29 09:59:30 pvk Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:50:46 sthen Exp $
 
 COMMENT =		compact self-hosted Git service
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://gitea.io/
 MAINTAINER =		Pavel Korovin <pvk@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c pthread
 

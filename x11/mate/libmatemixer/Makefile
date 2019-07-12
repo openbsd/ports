@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/03/27 18:13:38 robert Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:16 sthen Exp $
 
 COMMENT=		mixer library for MATE desktop
 
@@ -9,7 +9,7 @@ SHARED_LIBS +=  matemixer                 0.0 # 0.0
 CATEGORIES=		audio
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 X11-xcb Xext Xi Xtst m pthread xcb pulse
 WANTLIB += FLAC dbus-1 execinfo ffi glib-2.0 gmodule-2.0

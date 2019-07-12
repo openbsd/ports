@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2015/11/18 21:56:27 jung Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:51:08 sthen Exp $
 
 COMMENT =		simple background setter
 
@@ -9,7 +9,7 @@ CATEGORIES =		x11 graphics
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
 # MIT/X
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		X11 Xinerama c Imlib2 m Xext freetype z
 

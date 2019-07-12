@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/05/23 19:01:39 bluhm Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:49 sthen Exp $
 
 COMMENT = 		MVC web framework for perl
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://www.cgi-app.org/
 MAINTAINER =		Ian McWilliam <kaosagnt@gmail.com>
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE =	modbuild
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:52:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:17 sthen Exp $
 
 COMMENT =	menu generation utility for X window managers
 DISTNAME =	menumaker-0.99.10
@@ -11,7 +11,7 @@ HOMEPAGE =	http://menumaker.sourceforge.net/
 MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.t28.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}

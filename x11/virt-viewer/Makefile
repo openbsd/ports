@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/05/17 16:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2019/07/12 20:51:23 sthen Exp $
 
 BROKEN-hppa=	build stuck on virt-viewer-window.c
 
@@ -14,7 +14,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 HOMEPAGE=	http://virt-manager.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += FLAC ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 atk-bridge-2.0

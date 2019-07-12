@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2019/07/02 16:04:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2019/07/12 20:51:07 sthen Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -30,7 +30,7 @@ HOMEPAGE =		https://webkitgtk.org/
 MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2 and BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL X11 Xcomposite Xdamage Xrender
 WANTLIB += Xt atk-1.0 c cairo cairo-gobject enchant-2 fontconfig

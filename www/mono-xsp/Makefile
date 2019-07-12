@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/20 22:15:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:48 sthen Exp $
 
 COMMENT=	ASP.NET implementations for Mono
 
@@ -20,7 +20,7 @@ HOMEPAGE=	http://www.mono-project.com/ASP.NET
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

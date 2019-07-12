@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/17 16:45:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:51:29 sthen Exp $
 
 COMMENT=	Xfce4 gnome-shell like dashboard
 
@@ -9,7 +9,7 @@ PORTROACH +=	limitw:1,even
 SHARED_LIBS +=	xfdashboard	0.0 # 600.0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += EGL ICE SM X11 X11-xcb XRes Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 c

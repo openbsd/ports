@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/24 17:43:05 thfr Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:09 sthen Exp $
 
 COMMENT =	lightweight compositor for X, forked from xcompmgr-dana
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://github.com/chjj/compton
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL X11 Xcomposite Xdamage Xext Xfixes Xinerama Xrandr
 WANTLIB += Xrender c config dbus-1 m pcre pthread

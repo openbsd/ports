@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/03/25 21:20:39 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:51:07 sthen Exp $
 
 COMMENT=		HTTP testing tool
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.hping.org/wbox/
 MAINTAINER=		Laurent Fanis <laurent.fanis@gmail.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

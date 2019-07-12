@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/06/13 15:48:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:51:12 sthen Exp $
 
 COMMENT=		Clearlooks based GTK+ 2.x engine
 
@@ -9,7 +9,7 @@ REVISION=		6
 CATEGORIES=		x11
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 cairo expat ffi fontconfig freetype fribidi

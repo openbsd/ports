@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/01/08 19:18:24 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:51:29 sthen Exp $
 
 COMMENT=	Xfce4 settings daemon
 
@@ -12,7 +12,7 @@ PORTROACH=	limitw:1,even
 SHARED_LIBS =	xfconf-0 0.1 # 2.0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	x11/xfce4
 LIB_DEPENDS=	x11/xfce4/libxfce4util>=4.10.0 \

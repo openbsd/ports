@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2018/04/28 16:12:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:17 sthen Exp $
 
 COMMENT=	Motif toolkit
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://motif.ics.com/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=motif/}
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xext Xft Xmu Xrender Xt c expat fontconfig \
 		freetype iconv jpeg m png xcb z

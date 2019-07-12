@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2019/07/03 16:15:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.104 2019/07/12 20:51:30 sthen Exp $
 
 COMMENT=		screen saver and locker for the X Window System
 
@@ -10,7 +10,7 @@ CATEGORIES=		x11
 HOMEPAGE=		https://www.jwz.org/xscreensaver/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL GLU ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt

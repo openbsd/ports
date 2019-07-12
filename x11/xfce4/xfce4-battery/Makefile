@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/01/22 22:10:12 landry Exp $
+# $OpenBSD: Makefile,v 1.52 2019/07/12 20:51:27 sthen Exp $
 
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
@@ -8,7 +8,7 @@ XFCE_VERSION=	1.1.2
 XFCE_PLUGIN=	battery
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 MODXFCE_WANTLIB =	xfce4panel-2.0
 
 WANTLIB+= ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage

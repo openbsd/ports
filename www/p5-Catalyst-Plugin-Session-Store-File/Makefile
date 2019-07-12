@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2016/03/20 19:57:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:50:52 sthen Exp $
 
 COMMENT=	catalyst file storage backend for session data
 
@@ -9,7 +9,7 @@ CATEGORIES=	www
 REVISION=	0
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Cache-Cache \
 		devel/p5-Class-Data-Inheritable \

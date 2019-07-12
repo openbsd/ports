@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2018/06/23 13:57:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:51:07 sthen Exp $
 
 COMMENT=	3D Athena Widget set that looks like Motif
 
@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	https://xorg.freedesktop.org/archive/individual/lib/
 
 # X11/badly worded
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xext Xmu Xt xcb
 

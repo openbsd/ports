@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:50 sthen Exp $
 
 COMMENT=	persistent session data in CGI applications
 
@@ -8,7 +8,7 @@ DISTNAME=	CGI-Session-4.48
 CATEGORIES=	www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 TEST_DEPENDS= databases/p5-DBI \
 		databases/p5-DBD-SQLite \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/08/27 17:15:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:51:21 sthen Exp $
 
 COMMENT=	Ruby implementation of the D-Bus protocol
 
@@ -8,7 +8,7 @@ PKGNAME=	${DISTNAME:S/ruby-//}
 CATEGORIES=	x11 devel
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 

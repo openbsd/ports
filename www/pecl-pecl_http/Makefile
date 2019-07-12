@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/20 22:15:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:59 sthen Exp $
 
 BROKEN= builds, but has problems picking up libcurl
 
@@ -10,7 +10,7 @@ REVISION=	0
 HOMEPAGE=	http://pecl.php.net/package/pecl_http
 
 # PHP
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += brotlicommon brotlidec brotlienc curl event_core event_extra

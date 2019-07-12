@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/06/19 16:24:06 jca Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:07 sthen Exp $
 
 COMMENT=	analogue bitmap clock
 
@@ -9,7 +9,7 @@ CATEGORIES=	x11
 HOMEPAGE=	http://www.let.rug.nl/~kleiweg/abclock/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 

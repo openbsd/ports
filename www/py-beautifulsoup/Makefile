@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/09/07 18:50:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:51:00 sthen Exp $
 
 COMMENT =	HTML/XML parser that supports invalid markup
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://www.crummy.com/software/BeautifulSoup/
 MAINTAINER =	frantisek holop <minusf@obiit.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${HOMEPAGE}bs3/download/3.x/
 

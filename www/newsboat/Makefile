@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/01 10:21:12 semarie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:48 sthen Exp $
 
 COMMENT =	RSS/Atom feed reader for text terminals
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://www.newsboat.org/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} c crypto curl curses iconv intl
 WANTLIB +=	json-c m sqlite3 stfl xml2

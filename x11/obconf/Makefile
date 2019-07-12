@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2019/05/20 22:15:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 20:51:17 sthen Exp $
 
 COMMENT=	configuration utility for openbox
 
@@ -9,7 +9,7 @@ REVISION=	4
 HOMEPAGE=	http://openbox.org/wiki/Obconf
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE Imlib2 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xft Xi Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig

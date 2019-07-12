@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/05/15 12:04:43 kmos Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:03 sthen Exp $
 
 COMMENT =		scalable, non-blocking web server
 
@@ -13,7 +13,7 @@ CATEGORIES =		www
 HOMEPAGE =		https://www.tornadoweb.org/
 
 # Apache v2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 TEST_DEPENDS =		net/py-curl${MODPY_FLAVOR}

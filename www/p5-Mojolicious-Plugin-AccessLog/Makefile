@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/05/04 01:39:09 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:50:56 sthen Exp $
 
 COMMENT =	Mojolicious AccessLog Plugin
 
@@ -11,7 +11,7 @@ CATEGORIES =	www
 MAINTAINER =	Olivier Cherrier <oc@symacx.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MAKE_ENV =	TEST_POD=Yes
 

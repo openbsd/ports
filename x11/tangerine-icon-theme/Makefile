@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/05/20 22:15:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:51:22 sthen Exp $
 
 COMMENT=		Tangerine icon theme from Ubuntu
 
@@ -11,7 +11,7 @@ REVISION=		1
 MASTER_SITES=		http://archive.ubuntu.com/ubuntu/pool/main/t/tangerine-icon-theme/
 
 # Creative Commons Attribution-ShareAlike 2.5
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		textproc/intltool
 

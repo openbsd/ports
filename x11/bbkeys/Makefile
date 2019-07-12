@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/10/24 14:28:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:51:08 sthen Exp $
 
 COMMENT=		X keygrabber for blackbox
 
@@ -10,7 +10,7 @@ REVISION=		0
 HOMEPAGE=		http://bbkeys.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xext Xft c iconv m
 

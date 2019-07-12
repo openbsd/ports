@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/05/20 22:15:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:51:14 sthen Exp $
 
 COMMENT=		gui cd image editor
 
@@ -10,7 +10,7 @@ HOMEPAGE=		http://littlesvr.ca/isomaster/
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/09 14:10:10 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:49 sthen Exp $
 
 COMMENT =	handle Common Gateway Interface requests and responses
 DISTNAME =	CGI-4.43
@@ -7,7 +7,7 @@ CATEGORIES =	www
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
 # Artistic 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*

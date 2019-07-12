@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/10/11 21:21:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:51:30 sthen Exp $
 
 COMMENT=	tool startup utility for X11
 
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB:=utilities/} \
 HOMEPAGE=	http://www.hacom.nl/~richard/software/xtoolwait.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext c 
 

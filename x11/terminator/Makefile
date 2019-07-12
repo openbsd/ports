@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/06/29 22:16:35 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:51:22 sthen Exp $
 
 COMMENT =		GTK3 terminal emulator with split-window and tabs support
 
@@ -11,7 +11,7 @@ CATEGORIES =		x11
 HOMEPAGE =		https://gnometerminator.blogspot.com/p/introduction.html
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES =		https://launchpad.net/terminator/gtk3/${MODPY_EGG_VERSION}/+download/
 

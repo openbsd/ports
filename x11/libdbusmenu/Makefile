@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/20 22:15:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:51:15 sthen Exp $
 
 COMMENT =	D-Bus menu implementation for Gtk
 DISTNAME =	libdbusmenu-16.04.0
@@ -11,7 +11,7 @@ SHARED_LIBS +=  dbusmenu-jsonloader       0.0 # 4.12
 HOMEPAGE =	https://launchpad.net/libdbusmenu/
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/
 

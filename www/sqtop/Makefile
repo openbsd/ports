@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2018/10/24 14:28:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:05 sthen Exp $
 
 COMMENT=		top-like monitor for Squid
 
@@ -14,7 +14,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c curses m
 

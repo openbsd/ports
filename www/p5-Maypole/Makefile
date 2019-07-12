@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/08 15:44:46 danj Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:56 sthen Exp $
 
 COMMENT=	Perl MVC for web applications
 
@@ -9,7 +9,7 @@ REVISION=	3
 CATEGORIES=	www
 
 # Same as Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
 

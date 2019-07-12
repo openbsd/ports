@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/15 12:04:43 kmos Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:03 sthen Exp $
 
 COMMENT =	web error handling and exception catching
 
@@ -10,7 +10,7 @@ REVISION =	2
 CATEGORIES =	www devel
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 

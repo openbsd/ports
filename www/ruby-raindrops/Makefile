@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/06/13 22:26:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT =	real-time stats toolkit for Rack HTTP servers
 
@@ -9,7 +9,7 @@ CATEGORIES =	www
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # LGPLv2.1/LGPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 

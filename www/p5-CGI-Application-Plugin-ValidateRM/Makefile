@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:49 sthen Exp $
 
 COMMENT =	helps validate CGI::Application run modes
 
@@ -9,7 +9,7 @@ CATEGORIES =	www
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 RUN_DEPENDS =		devel/p5-Data-FormValidator \
 			www/p5-CGI-Application \

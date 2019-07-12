@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2019/06/13 15:48:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2019/07/12 20:51:12 sthen Exp $
 
 PORTROACH=		limit:^2\.20
 
@@ -15,7 +15,7 @@ REVISION=		11
 CATEGORIES=		x11
 
 # LGPLv2.1/GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat ffi

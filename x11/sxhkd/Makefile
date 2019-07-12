@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/08/10 13:30:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:51:22 sthen Exp $
 
 COMMENT =		simple X hotkey daemon
 
@@ -9,7 +9,7 @@ GH_TAGNAME =		0.5.8
 CATEGORIES =		x11
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 USE_GMAKE =		Yes
 

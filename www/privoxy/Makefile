@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2018/01/11 19:27:12 rpe Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/12 20:51:00 sthen Exp $
 
 COMMENT=	web proxy with advanced filtering capabilities
 
@@ -11,7 +11,7 @@ REVISION=	0
 HOMEPAGE=	http://www.privoxy.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pcre pcreposix pthread z
 

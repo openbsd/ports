@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/11 23:51:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:51:18 sthen Exp $
 
 COMMENT=	capture standard error output, display in separate window
 
@@ -8,7 +8,7 @@ REVISION=	0
 CATEGORIES=	x11 devel perl5
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Tk/}
 

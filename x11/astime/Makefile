@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/12/05 12:50:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:51:08 sthen Exp $
 
 COMMENT=		wm-dockapp; Time/Date applet
 
@@ -9,7 +9,7 @@ CATEGORIES=		x11 x11/windowmaker
 HOMEPAGE=		http://www.tigr.net/afterstep/view.php?applet=astime/data
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		ICE SM X11 Xext Xpm c m
 
 MASTER_SITES=		http://www.tigr.net/afterstep/download/astime/

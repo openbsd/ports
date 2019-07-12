@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2015/12/07 18:24:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:51:23 sthen Exp $
 
 COMMENT=		themes and icons for Window Maker
 
@@ -10,7 +10,7 @@ CATEGORIES=		x11 x11/windowmaker
 HOMEPAGE=		http://www.windowmaker.org/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_WINDOWMAKER:=source/release/}
 

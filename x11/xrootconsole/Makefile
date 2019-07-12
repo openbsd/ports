@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/05/17 10:21:42 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:30 sthen Exp $
 
 COMMENT=		writes any log live onto the background
 V=			0.6
@@ -7,7 +7,7 @@ REVISION=		3
 CATEGORIES=		x11
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 c util
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/05/15 12:04:43 kmos Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:06 sthen Exp $
 
 COMMENT =		CLI for interacting with Mastodon/fediverse instances
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://www.github.com/magicalraccoon/tootstream
 MAINTAINER =		Kurt Mosiejczuk <kurt@cranky.work>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

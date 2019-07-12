@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:51:24 sthen Exp $
 
 COMMENT=		stylish window manager
 
@@ -9,7 +9,7 @@ CATEGORIES=		x11
 HOMEPAGE=		http://www.all-day-breakfast.com/wm2/
 
 # X11/MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext Xau Xdmcp c m ${COMPILER_LIBCXX}
 

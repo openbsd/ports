@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2019/04/24 16:26:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2019/07/12 20:50:48 sthen Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
@@ -12,7 +12,7 @@ CATEGORIES =	www multimedia
 HOMEPAGE =	http://flavio.tordini.org/minitube
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES =	devel/qmake x11/qt5
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2019/04/28 20:51:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.109 2019/07/12 20:50:47 sthen Exp $
 
 BROKEN-i386=		hangs during build while running g-ir-scanner
 
@@ -13,7 +13,7 @@ CATEGORIES=		www news x11
 HOMEPAGE=		https://lzone.de/liferea/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL GLESv2 ICE SM X11 X11-xcb
 WANTLIB += Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama

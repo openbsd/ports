@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/09/02 19:51:10 bluhm Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:58 sthen Exp $
 
 COMMENT =	interactive shell for WWW::Mechanize
 
@@ -9,7 +9,7 @@ CATEGORIES =	www
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # perl_5
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*

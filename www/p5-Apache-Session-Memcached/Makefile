@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/19 19:58:52 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:49 sthen Exp $
 
 COMMENT=	Apache::Session storage using memcached
 
@@ -9,7 +9,7 @@ REVISION=	2
 CATEGORIES=	www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	www/p5-Apache-Session \
 		devel/p5-Cache-Memcached

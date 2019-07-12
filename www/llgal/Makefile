@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/20 22:15:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:48 sthen Exp $
 
 COMMENT=	command-line online gallery generator
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://bgoglin.free.fr/llgal/
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://github.com/bgoglin/llgal/archive/
 

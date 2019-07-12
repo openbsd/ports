@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/10/11 21:21:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:51:25 sthen Exp $
 
 COMMENT=	one keyboard/mouse to multiple X displays
 
@@ -9,7 +9,7 @@ CATEGORIES=    	x11
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xtst c
 

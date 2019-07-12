@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2019/06/19 19:45:59 kili Exp $
+# $OpenBSD: Makefile,v 1.51 2019/07/12 20:51:22 sthen Exp $
 
 COMMENT =	organizer for book/dvd/music collections
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://tellico-project.org
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5Bookmarks
 WANTLIB += KF5Cddb KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

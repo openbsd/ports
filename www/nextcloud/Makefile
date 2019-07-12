@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2019/05/21 06:20:23 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.40 2019/07/12 20:50:48 sthen Exp $
 
 COMMENT=		easy and universal access to shared and/or personal files
 
@@ -19,7 +19,7 @@ MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 # User: AGPL
 # XML/RPC: MIT / PHP
 # Silk icons: Creative Commons Attribution
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://download.nextcloud.com/server/releases/
 

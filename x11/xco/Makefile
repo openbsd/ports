@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/10/11 21:21:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:51:25 sthen Exp $
 
 COMMENT=	display X11 color names and colors
 
@@ -10,7 +10,7 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.cs.purdue.edu/pub/bingle/
 
 # BSD-like, but "may not modify"
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c
 

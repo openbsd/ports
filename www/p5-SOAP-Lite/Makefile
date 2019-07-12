@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2017/05/01 20:59:53 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:50:57 sthen Exp $
 
 COMMENT=	client and server-side SOAP implementation
 
@@ -6,7 +6,7 @@ DISTNAME=	SOAP-Lite-1.20
 CATEGORIES=	www
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
 PKG_ARCH=	*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2019/05/20 22:15:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/12 20:51:30 sthen Exp $
 
 COMMENT=	graphical version of traceroute
 
@@ -16,7 +16,7 @@ MASTER_SITES0=	http://www.dtek.chalmers.se/~d3august/xt/dl/
 DISTFILES=	xtraceroute-0.9.2.tar.bz2 ndg_files.tar.gz:0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL GLU X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig

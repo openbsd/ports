@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:51:05 sthen Exp $
 
 COMMENT=		Squid Analysis Report Generator
 
@@ -9,7 +9,7 @@ REVISION=		1
 HOMEPAGE=		http://sarg.sourceforge.net/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c gd iconv intl m pcre
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/05/01 20:26:16 benoit Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:55 sthen Exp $
 
 COMMENT=	simple standalone HTTP server
 
@@ -8,7 +8,7 @@ DISTNAME =	HTTP-Server-Simple-0.52
 CATEGORIES=	www
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS =	www/p5-CGI
 BUILD_DEPENDS =	${RUN_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/20 19:57:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:53 sthen Exp $
 
 COMMENT=	perl module to detect dangerous HTML code
 
@@ -9,6 +9,6 @@ REVISION=	1
 CATEGORIES=	www security
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

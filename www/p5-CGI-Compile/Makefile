@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/06/01 07:04:54 benoit Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:49 sthen Exp $
 
 COMMENT=	compile .cgi scripts to a code reference
 
@@ -8,7 +8,7 @@ DISTNAME =	CGI-Compile-0.22
 CATEGORIES=	www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=modbuild tiny
 

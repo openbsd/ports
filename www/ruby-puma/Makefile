@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/06/13 22:26:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT =		simple, fast, threaded webserver for rack applications
 
@@ -9,7 +9,7 @@ CATEGORIES =		www
 HOMEPAGE =		http://puma.io/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

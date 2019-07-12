@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/01/28 00:37:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:59 sthen Exp $
 
 COMMENT= 	interface to RSS and Atom feeds
 
@@ -10,7 +10,7 @@ CATEGORIES=	www textproc
 CONFIGURE_STYLE=modbuild
 
 #perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	www/p5-HTML-Parser \
 		www/p5-libwww

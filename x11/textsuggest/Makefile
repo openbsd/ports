@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/03/25 11:16:36 stsp Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:22 sthen Exp $
 
 COMMENT =	auto-complete and text expansion in X11
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://bharadwaj-raju.itch.io/textsuggest
 MAINTAINER =	Stefan Sperling <stsp@openbsd.org>
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Widgets \
 			dbus-c++-1 m xcb

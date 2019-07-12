@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:52:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:02 sthen Exp $
 
 COMMENT =		python wrapper for the Mastodon API
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://github.com/halcy/Mastodon.py
 MAINTAINER =		Pamela Mosiejczuk <pamela@cranky.work>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

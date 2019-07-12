@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2018/07/01 18:33:38 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2019/07/12 20:51:10 sthen Exp $
 
 COMMENT =		complex graphical design & layout library
 
@@ -8,7 +8,7 @@ SHARED_LIBS +=	edje                 4.0      # 8.10
 REVISION =		4
 
 # BSD (epp binary GPLv2)
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  ${MODLUA_WANTLIB}
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr

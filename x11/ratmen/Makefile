@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:51:20 sthen Exp $
 
 DISTNAME=	ratmen-2.2.3
 CATEGORIES=	x11
 
 # same license as plan9/9menu
-PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 c
 
 COMMENT=	launch commands with your keyboard

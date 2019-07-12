@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/01/06 14:50:49 danj Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:51:06 sthen Exp $
 
 COMMENT =	command line interface to popular WWW search engines
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://gitlab.com/surfraw/Surfraw
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Public Domain 
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/dist/
 

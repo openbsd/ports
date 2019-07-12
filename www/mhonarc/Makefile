@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2017/03/02 09:47:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:50:48 sthen Exp $
 
 COMMENT=		highly customizable e-mail to HTML converter
 
@@ -15,7 +15,7 @@ MASTER_SITES=		http://www.mhonarc.org/release/MHonArc/tar/ \
 MAINTAINER=		Christian Rueger <cr+openbsd@rueger-net.de>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	perl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/06/25 20:25:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:51:09 sthen Exp $
 
 COMMENT =	good looking terminal emulator which mimics old CRT displays
 
@@ -19,7 +19,7 @@ USE_WXNEEDED =	Yes
 HOMEPAGE =	https://github.com/Swordfish90/cool-retro-term
 
 # GPLv3 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL Qt5Core Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5Sql
 WANTLIB += Qt5Widgets c m pthread

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2018/12/27 15:14:04 bcallah Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT=	RSS Aggregator Without Delusions Of Grandeur
 
@@ -9,7 +9,7 @@ CATEGORIES=	www news
 HOMEPAGE=	http://offog.org/code/rawdog.html
 
 # GPLv2, LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://offog.org/files/
 

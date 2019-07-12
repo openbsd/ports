@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT=		passive web application security assessment tool
 
@@ -12,7 +12,7 @@ HOMEPAGE=		https://ratproxy.googlecode.com/
 MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
 
 # Apache License 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c crypto ssl
 

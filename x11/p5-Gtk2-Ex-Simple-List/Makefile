@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/03/20 19:57:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:18 sthen Exp $
 
 COMMENT =		simple interface to Gtk2 complex MVC list widget
 
@@ -11,7 +11,7 @@ CATEGORIES =		x11
 MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>
 
 # LPGLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	x11/p5-Gtk2
 

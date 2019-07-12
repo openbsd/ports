@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2019/04/24 16:28:59 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2019/07/12 20:51:06 sthen Exp $
 
 COMMENT-main ?=	Java servlet and Java server pages server
 COMMENT-examples =example applications and full documentation
@@ -32,7 +32,7 @@ RUN_DEPENDS-examples ?=www/tomcat/v${MAJ_VER},-main>=${MAJ_VER}
 PREFIX-examples =${CATALINA_BASE}
 
 # Apache Software License 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2019/06/13 15:48:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2019/07/12 20:51:26 sthen Exp $
 
 COMMENT=	Xfce4 theme engine for Gtk+2
 
@@ -8,7 +8,7 @@ REVISION=	3
 HOMEPAGE=	http://www.xfce.org/projects/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB+= Xrender atk-1.0 cairo expat ffi fontconfig freetype fribidi

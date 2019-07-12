@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/01/08 13:08:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:51:02 sthen Exp $
 
 COMMENT =	identification and authentication framework for WSGI
 
@@ -10,7 +10,7 @@ REVISION =	1
 CATEGORIES =	www devel
 
 # BSD-derived
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 

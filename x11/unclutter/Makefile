@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/10/11 21:21:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:51:23 sthen Exp $
 
 COMMENT=	hides idle X11 cursor
 
@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB:=utilities/}
 EXTRACT_SUFX=	.tar.Z
 
 # Public Domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c
 

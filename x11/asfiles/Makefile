@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/02/16 22:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:51:08 sthen Exp $
 
 COMMENT=		X11 file manager. Dockable in Window Maker
 
@@ -8,7 +8,7 @@ REVISION=		2
 CATEGORIES=		x11 x11/windowmaker
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		ICE SM X11 Xaw Xext Xmu Xpm Xt c m Dnd
 
 MASTER_SITES=		${MASTER_SITE_AFTERSTEP:=apps/ASFiles/}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2017/09/23 10:51:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2019/07/12 20:51:18 sthen Exp $
 
 COMMENT-main=	Tk 8.4 bindings for Perl
 COMMENT-demo=	demonstrate the features of ptk
@@ -12,7 +12,7 @@ PKGNAME-demo=	p5-Tk-demo-${VERSION}
 CATEGORIES=	x11 devel
 
 # GPL + custom
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB-main=	${WANTLIB} X11 c m jpeg perl z png
 

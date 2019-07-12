@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/04/28 20:51:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:51:00 sthen Exp $
 
 COMMENT=		web interface to PuppetDB
 
@@ -10,7 +10,7 @@ REVISION=		3
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apache2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 MODPY_PI =		Yes

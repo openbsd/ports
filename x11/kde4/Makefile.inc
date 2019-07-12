@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.20 2014/11/01 21:09:39 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.21 2019/07/12 20:51:14 sthen Exp $
 
 CATEGORIES ?=		x11
 MODULES +=		x11/kde4
@@ -14,7 +14,7 @@ HOMEPAGE ?=		https://projects.kde.org/${DISTNAME:C/-[0-9].*//}
 .endif
 
 # KDE SC is mostly GPL, or LGPL/BSDL for the central libraries
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 # Do not rely on devel/cmake here: additional modules that are
 # set up in ports may have, say, lang/python before devel/cmake,

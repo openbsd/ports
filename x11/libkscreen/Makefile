@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/27 10:15:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:15 sthen Exp $
 
 COMMENT =	KDE screen management software
 CATEGORIES =	x11
@@ -16,7 +16,7 @@ WANTLIB += ${KDE4LIB}/kdeui
 WANTLIB += qjson
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/libkscreen/${VERSION}/src/}
 DIST_SUBDIR =	kde

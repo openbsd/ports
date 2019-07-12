@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/02 16:52:09 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/12 20:51:06 sthen Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
@@ -24,7 +24,7 @@ MOZILLA_LIBS +=		nssutil3 smime3 softokn3 ssl3
 MOZILLA_LIBS +=		nspr4 mozsqlite3 plc4 plds4
 
 # mozilla public license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =		www/mozilla lang/python
 

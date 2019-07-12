@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/17 16:45:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:51:14 sthen Exp $
 
 COMMENT =	freedesktop-compliant menu for openbox and tint2
 CATEGORIES =	x11
@@ -9,7 +9,7 @@ GH_TAGNAME =	v2.1
 REVISION =	1
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xrandr c cairo gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 iconv intl lzma m menu-cache pango-1.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/07/05 10:22:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:46 sthen Exp $
 
 COMMENT=	tiny cgi web script handler using shell or Lua
 
@@ -10,7 +10,7 @@ CATEGORIES=	www
 HOMEPAGE=	http://haserl.sourceforge.net/
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

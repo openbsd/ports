@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2017/11/22 12:45:44 stu Exp $
+# $OpenBSD: Makefile,v 1.46 2019/07/12 20:51:22 sthen Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		X11 Xext Xft Xss c fontconfig m tcl85
 

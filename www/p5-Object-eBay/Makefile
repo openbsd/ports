@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/20 19:57:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:56 sthen Exp $
 
 COMMENT=	OO interface to the eBay API
 
@@ -6,7 +6,7 @@ DISTNAME=	Object-eBay-0.5.0
 CATEGORIES=	www
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

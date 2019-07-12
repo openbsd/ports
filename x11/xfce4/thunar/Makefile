@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2019/05/18 14:48:15 landry Exp $
+# $OpenBSD: Makefile,v 1.75 2019/07/12 20:51:27 sthen Exp $
 
 COMMENT=	Xfce4 file manager
 
@@ -11,7 +11,7 @@ PORTROACH=	limitw:1,even
 SHARED_LIBS=	thunarx-2	0.0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1

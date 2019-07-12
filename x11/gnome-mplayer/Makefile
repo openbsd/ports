@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2019/04/24 16:26:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2019/07/12 20:51:11 sthen Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://kdekorte.googlepages.com/gnomemplayer/
 MASTER_SITES =		https://gnome-mplayer.googlecode.com/svn/packages/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xss atk-1.0 c cairo cairo-gobject dbus-1 dbus-glib-1
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmlib gmtk gobject-2.0

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2016/04/21 15:43:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:23 sthen Exp $
 
 COMMENT=		Type1 font installation helper
 DISTNAME=		type1inst-0.6.1
 CATEGORIES=		x11 print
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SUNSITE:=X11/xutils/}
 

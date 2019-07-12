@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/16 23:20:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:08 sthen Exp $
 
 COMMENT =		widgets library for graphics engines
 
@@ -23,7 +23,7 @@ HOMEPAGE =		http://cegui.org.uk/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLEW GLU Irrlicht OIS OgreMain SDL2 SDL2_image boost_system-mt
 WANTLIB += boost_thread-mt c expat freeimage freetype glfw iconv m pcre 

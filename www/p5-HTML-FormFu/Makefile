@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:53 sthen Exp $
 
 COMMENT =	HTML form creation, rendering and validation framework
 
@@ -9,7 +9,7 @@ CATEGORIES =	www textproc
 REVISION =	0
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 BUILD_DEPENDS =		devel/p5-Task-Weaken
 

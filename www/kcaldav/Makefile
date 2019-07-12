@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/04/28 21:46:35 stsp Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:47 sthen Exp $
 
 COMMENT =		a simple, safe, and minimal CalDAV server
 
@@ -9,7 +9,7 @@ HOMEPAGE =		https://kristaps.bsd.lv/kcaldav/
 MAINTAINER =		Aaron Poffenberger <akp@hypernote.com>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # "make port-lib-depends-check" can help
 WANTLIB +=		c expat m sqlite3 pthread

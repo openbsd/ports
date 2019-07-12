@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/05/25 13:01:42 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:23 sthen Exp $
 
 COMMENT=		manage opacity property of windows, extended version
 
@@ -9,7 +9,7 @@ CATEGORIES=		x11
 HOMEPAGE=		http://www.forchheimer.se/transset-df/
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xrender c m \
 			xcb

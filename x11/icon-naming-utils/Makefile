@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/05/22 11:36:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:14 sthen Exp $
 
 COMMENT=		compatibility tools from the Tango project
 
@@ -9,7 +9,7 @@ REVISION=		1
 HOMEPAGE=		http://tango.freedesktop.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/releases/
 

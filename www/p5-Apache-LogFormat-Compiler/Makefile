@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/17 03:40:00 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:49 sthen Exp $
 
 COMMENT =		compile a log format string to perl-code
 
@@ -8,7 +8,7 @@ DISTNAME =		Apache-LogFormat-Compiler-0.35
 CATEGORIES =		www
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CONFIGURE_STYLE =	modbuild tiny
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/06/02 20:22:01 schwarze Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:23 sthen Exp $
 
 COMMENT =	system tray icon support for Tk
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://code.google.com/p/tktray/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	X11
 

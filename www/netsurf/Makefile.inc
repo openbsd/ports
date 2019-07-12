@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.19 2018/07/18 10:46:54 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.20 2019/07/12 20:50:48 sthen Exp $
 
 CATEGORIES +=	www
 
@@ -14,7 +14,7 @@ MASTER_SITES ?=	https://download.netsurf-browser.org/libs/releases/
 WRKDIST ?=	${WRKDIR}/${DISTNAME:S/-src//}
 
 # MIT for libs / GPLv2 for netsurf
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 DESTDIRNAME =	${DESTDIR}
 

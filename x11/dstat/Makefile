@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/01/01 19:11:56 jung Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:09 sthen Exp $
 
 ONLY_FOR_ARCHS =	${APM_ARCHS}
 
@@ -13,7 +13,7 @@ HOMEPAGE =		https://www.umaxx.net/
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		X11 c util
 

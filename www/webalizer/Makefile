@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2016/03/01 00:07:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2019/07/12 20:51:07 sthen Exp $
 
 COMMENT=	web server log file analysis program
 
@@ -12,7 +12,7 @@ CATEGORIES=	www
 HOMEPAGE=	http://www.patrickfrei.ch/webalizer/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/rb${RB_V}/
 

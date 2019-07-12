@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/31 16:19:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:51:01 sthen Exp $
 
 COMMENT=		statistical and novel interactive HTML plots for Python
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://bokeh.pydata.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

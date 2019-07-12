@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/12 20:51:10 sthen Exp $
 
 COMMENT =		core event/X abstraction layer
 
@@ -15,7 +15,7 @@ SHARED_LIBS +=		${_lib}	${SO_VERSION}
 .endfor
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender Xss Xtst cares crypto curl eet eina evas expat ffi

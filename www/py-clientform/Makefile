@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/10 16:50:05 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:51:01 sthen Exp $
 
 COMMENT=		handle HTML forms on the client side
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://wwwsearch.sourceforge.net/ClientForm/
 MASTER_SITES=		${HOMEPAGE}src/
 
 # BSD-like or ZPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes

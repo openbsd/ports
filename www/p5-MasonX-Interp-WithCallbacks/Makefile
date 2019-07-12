@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/03/28 12:39:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:56 sthen Exp $
 
 COMMENT=	Mason callback support via Params::CallbackRequest
 
@@ -8,7 +8,7 @@ DISTNAME =	MasonX-Interp-WithCallbacks-1.19
 CATEGORIES=	www
 
 # GPL/Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Params-CallbackRequest \

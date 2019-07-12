@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/03/20 19:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:49 sthen Exp $
 
 COMMENT =	URI::Escape::XS module loader
 
@@ -8,6 +8,6 @@ DISTNAME =	Any-URI-Escape-0.01
 CATEGORIES =	www
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

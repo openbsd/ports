@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/03/05 19:35:08 jung Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:51:09 sthen Exp $
 
 COMMENT=		dynamic window manager
 
@@ -13,7 +13,7 @@ HOMEPAGE=		https://dwm.suckless.org/
 MAINTAINER=		Klemens Nanni <kn@openbsd.org>
 
 # MIT/X
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 WANTLIB=		X11 Xinerama Xft c fontconfig

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/05/17 12:53:31 giovanni Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:19 sthen Exp $
 
 COMMENT =	extras and helpers for X11::Protocol
 
@@ -8,7 +8,7 @@ REVISION =	0
 CATEGORIES =	x11
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*

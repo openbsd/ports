@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2016/04/28 16:52:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:50:49 sthen Exp $
 
 COMMENT=	DBI persistent connection, authentication and authorization
 
@@ -11,6 +11,6 @@ RUN_DEPENDS=	www/ap2-mod_perl \
 		databases/p5-DBI
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

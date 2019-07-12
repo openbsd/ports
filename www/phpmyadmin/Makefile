@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2019/07/11 17:28:27 giovanni Exp $
+# $OpenBSD: Makefile,v 1.136 2019/07/12 20:51:00 sthen Exp $
 
 COMMENT=	tool to handle the administration of MySQL over the web
 
@@ -14,7 +14,7 @@ PORTROACH=	site:https://www.phpmyadmin.net/files/
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://files.phpmyadmin.net/phpMyAdmin/${V}/
 

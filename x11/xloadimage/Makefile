@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2017/06/19 17:11:40 bcallah Exp $
+# $OpenBSD: Makefile,v 1.54 2019/07/12 20:51:29 sthen Exp $
 
 COMMENT=	graphics file viewer for X11
 
@@ -15,7 +15,7 @@ CATEGORIES=	x11 graphics
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
 MASTER_SITES0=	${MASTER_SITE_DEBIAN:=main/x/xloadimage/}

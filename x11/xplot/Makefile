@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/03/21 15:18:31 bluhm Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:51:30 sthen Exp $
 
 COMMENT=	fast tool to graph and visualize lots of data
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.xplot.org/
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 c m
 
 MASTER_SITES=	${HOMEPAGE}xplot/

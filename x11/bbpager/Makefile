@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/01/13 15:19:52 cwen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:51:08 sthen Exp $
 
 COMMENT =	pager for the Blackbox window manager
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://bbtools.sourceforge.net/
 MAINTAINER =	Josh Rivel <josh@rivels.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 BUILD_DEPENDS = x11/blackbox
 

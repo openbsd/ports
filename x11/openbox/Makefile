@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2019/06/13 15:48:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2019/07/12 20:51:18 sthen Exp $
 
 COMMENT =	small, fast & usable window manager
 
@@ -15,7 +15,7 @@ HOMEPAGE =	http://openbox.org/
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE Imlib2 SM X11 X11-xcb Xau Xcursor Xext Xfixes Xft
 WANTLIB += Xinerama Xrandr Xrender c cairo croco-0.6 expat ffi

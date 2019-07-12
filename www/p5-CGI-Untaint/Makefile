@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/08 15:44:46 danj Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:50 sthen Exp $
 
 COMMENT=	taint checking and input validation from web forms
 
@@ -9,7 +9,7 @@ REVISION=	2
 CATEGORIES=	www
 
 # Same as Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Universal-require

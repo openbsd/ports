@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/12 16:33:48 danj Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:14 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -14,7 +14,7 @@ CATEGORIES=	x11 devel
 HOMEPAGE=	http://incrtcl.sourceforge.net/iwidgets/
 
 # BSD style
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=incrtcl/}
 

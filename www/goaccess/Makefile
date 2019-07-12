@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/05/20 22:15:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:50:46 sthen Exp $
 
 COMMENT =		realtime console web log analyzer
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://goaccess.io/
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto curses intl maxminddb pthread ssl
 

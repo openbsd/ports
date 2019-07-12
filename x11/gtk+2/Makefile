@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.228 2019/05/16 20:43:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.229 2019/07/12 20:51:12 sthen Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -27,7 +27,7 @@ HOMEPAGE=		http://www.gtk.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 cairo expat ffi fontconfig

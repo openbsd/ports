@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/01/11 11:15:45 bluhm Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:50:58 sthen Exp $
 
 COMMENT =	handy web browsing in a Perl object
 
@@ -9,7 +9,7 @@ CATEGORIES =	www
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 RUN_DEPENDS =		www/p5-HTML-Form>=1.00 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:44:42 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:47 sthen Exp $
 
 COMMENT=	squid redirector
 
@@ -10,7 +10,7 @@ CATEGORIES=     www
 HOMEPAGE=	http://www.linofee.org/~jel/webtools/jesred/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	http://www.linofee.org/~jel/webtools/src/

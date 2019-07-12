@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/06/13 15:48:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2019/07/12 20:51:27 sthen Exp $
 
 COMMENT=	Xfce4 volume mixer
 
@@ -8,7 +8,7 @@ REVISION=	7
 HOMEPAGE=	https://www.xfce.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1

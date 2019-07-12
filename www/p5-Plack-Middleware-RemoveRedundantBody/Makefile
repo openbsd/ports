@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/01 19:57:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:57 sthen Exp $
 
 COMMENT =		removes body for HTTP response if it's not required
 
@@ -9,7 +9,7 @@ CATEGORIES =		www
 REVISION =		0
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 

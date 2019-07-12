@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/10 21:01:28 tj Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:51:29 sthen Exp $
 
 COMMENT=		library to handle keyboard descriptions
 
@@ -14,7 +14,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # All licenses are derivative of the MIT/X11 license, mostly identical other
 # than no-endorsement clauses (e.g. paragraph 4 of The Open Group's license).
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/download/
 EXTRACT_SUFX=		.tar.xz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2015/11/16 13:13:08 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:59 sthen Exp $
 
 COMMENT=	integrated Templates for PHP
 
@@ -8,6 +8,6 @@ CATEGORIES=	www
 MODULES=	www/pear
 
 # Modified BSD license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

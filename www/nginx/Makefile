@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2019/05/19 19:37:09 danj Exp $
+# $OpenBSD: Makefile,v 1.134 2019/07/12 20:50:48 sthen Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -55,7 +55,7 @@ HOMEPAGE=	http://nginx.org/
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	yes
+PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES =	-main -image_filter -geoip -xslt -mailproxy -stream \
 			-naxsi -perl -passenger -headers_more -ldap_auth -lua

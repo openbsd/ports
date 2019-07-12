@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:50 sthen Exp $
 
 COMMENT=	use SSI from CGI scripts
 
@@ -9,7 +9,7 @@ REVISION=	1
 CATEGORIES=	www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Time-TimeDate \
 		www/p5-HTML-SimpleParse \

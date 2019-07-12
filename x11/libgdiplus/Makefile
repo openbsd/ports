@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/05/20 22:15:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:51:15 sthen Exp $
 
 COMMENT=	GDI+ comptible API
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.mono-project.com/Libgdiplus
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # GPLv2 and Mozilla Public License 1.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xext Xrender cairo exif expat fontconfig freetype
 WANTLIB += gif glib-2.0

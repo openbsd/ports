@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:51:19 sthen Exp $
 
 COMMENT=		freedesktop.org compliant system tray
 
@@ -10,7 +10,7 @@ EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://sourceforge.net/projects/peksystray/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c X11 ICE SM
 

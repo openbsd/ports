@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2018/09/11 21:01:53 matthieu Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:20 sthen Exp $
 COMMENT =	X C Binding - protocol binding generator
 
 # please keep in sync with the version in proto/xcb-proto in Xenocara
@@ -13,7 +13,7 @@ HOMEPAGE =	https://xcb.freedesktop.org/
 MAINTAINER =	Matthieu Herrb <matthieu@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://xcb.freedesktop.org/dist/
 

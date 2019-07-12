@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2018/01/22 22:07:21 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:51:13 sthen Exp $
 
 COMMENT =		bindings to the X11 graphics library for GHC
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://code.haskell.org/X11/
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # BSD3
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register

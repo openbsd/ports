@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.15 2019/02/16 08:40:15 matthieu Exp $
+#	$OpenBSD: Makefile,v 1.16 2019/07/12 20:51:26 sthen Exp $
 
 COMMENT =	X11 Cursors themes
 DISTNAME =	xcursor-themes-1.0.6
@@ -11,7 +11,7 @@ MAINTAINER =	Matthieu Herrb <matthieu@openbsd.org>
 BUILD_DEPENDS =	x11/xcursorgen>=7
 
 # X11
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_XORG:=data/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/01/30 15:14:05 cwen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:50:58 sthen Exp $
 
 COMMENT=		automated interface to the Wikipedia encyclopedia
 
@@ -11,7 +11,7 @@ MODULES=		cpan
 PKG_ARCH=		*
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		textproc/p5-Text-Autoformat \

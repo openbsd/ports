@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/16 20:43:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:12 sthen Exp $
 
 # XXX: PORTROACH is set at the end of this file to override gnome.port.mk
   
@@ -35,7 +35,7 @@ HOMEPAGE=		http://www.gtk.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender epoxy fontconfig freetype gio-2.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2016/03/20 19:57:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:50:52 sthen Exp $
 
 COMMENT=	MVC Web Application Framework
 
@@ -11,7 +11,7 @@ CATEGORIES=	www
 HOMEPAGE=	http://www.catalystframework.org/
 
 # Artistic + GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	devel/p5-Task-Weaken
 

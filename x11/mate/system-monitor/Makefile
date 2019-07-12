@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/17 16:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:51:17 sthen Exp $
 
 COMMENT=		MATE system monitor
 
@@ -9,7 +9,7 @@ REVISION=		0
 CATEGORIES=		sysutils
 
 # GPLv2/LGPLv2/GFDLv1.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 XRes Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0

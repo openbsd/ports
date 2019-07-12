@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/07 21:35:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:02 sthen Exp $
 
 COMMENT =	tiny LRU cache implementation and decorator
 
@@ -10,7 +10,7 @@ REVISION =	1
 CATEGORIES =	www devel
 
 # BSD-derived
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 

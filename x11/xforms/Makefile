@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2016/03/11 20:28:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2019/07/12 20:51:29 sthen Exp $
 
 COMMENT=		GUI toolkit for X11
 
@@ -15,7 +15,7 @@ HOMEPAGE=		http://xforms-toolkit.org/
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=xforms/}
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL ICE SM X11 X11-xcb Xdamage Xext Xfixes
 WANTLIB += Xpm Xxf86vm c drm glapi jpeg m pthread

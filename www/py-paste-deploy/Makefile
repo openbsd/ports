@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/15 12:04:42 kmos Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:51:02 sthen Exp $
 
 COMMENT =		load, configure, compose WSGI applications and servers
 
@@ -10,7 +10,7 @@ REVISION =		1
 CATEGORIES =		www
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

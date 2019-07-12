@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2016/03/20 19:57:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2019/07/12 20:50:54 sthen Exp $
 
 COMMENT =		modules to parse and extract information from HTML
  
@@ -12,7 +12,7 @@ TEST_DEPENDS =		www/p5-URI \
 			www/p5-libwww
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 

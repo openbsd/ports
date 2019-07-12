@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/06/13 16:38:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:15 sthen Exp $
 
 COMMENT =	touch typing tutor program
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://klavaro.sourceforge.net/
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 USE_BZIP2 = 	Yes
 

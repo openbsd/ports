@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2019/06/13 15:48:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2019/07/12 20:51:20 sthen Exp $
 
 COMMENT=	GTK+ binding for librep Lisp environment
 
@@ -12,7 +12,7 @@ HOMEPAGE=       http://rep-gtk.sourceforge.net/
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 cairo expat ffi fontconfig freetype fribidi

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/15 12:04:42 kmos Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:51:01 sthen Exp $
 
 COMMENT =		freezes a Flask application into a set of static files
 
@@ -12,7 +12,7 @@ CATEGORIES =		www
 HOMEPAGE =		https://github.com/SimonSapin/Frozen-Flask
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes

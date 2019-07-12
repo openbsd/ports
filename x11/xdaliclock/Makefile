@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/02/07 12:26:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:51:26 sthen Exp $
 
 COMMENT=	rather neat animated clock
 
@@ -8,7 +8,7 @@ CATEGORIES=	x11
 HOMEPAGE=	https://www.jwz.org/xdaliclock/
 
 # License: BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		ICE SM X11 Xext Xt c
 
 MASTER_SITES=	${HOMEPAGE}

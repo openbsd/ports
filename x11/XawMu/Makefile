@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2016/03/11 19:59:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:51:07 sthen Exp $
 
 COMMENT=		modern look Athena widgets
 
@@ -15,7 +15,7 @@ HOMEPAGE=		http://xawm.sourceforge.net/
 MASTER_SITES=		http://siag.nu/pub/widgets/
 
 # X11/badly worded
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 
 CONFIGURE_STYLE=	gnu

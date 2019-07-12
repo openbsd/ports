@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/12/05 12:50:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:51:08 sthen Exp $
 
 COMMENT=	round, analog X11 clock with bezier curve hands
 
@@ -9,7 +9,7 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SUNSITE:=X11/clocks/}
 
 # X11
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xt c m
 

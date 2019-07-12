@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/08/10 16:54:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:02 sthen Exp $
 
 COMMENT=		stateful programmatic web browsing module
 
@@ -11,7 +11,7 @@ CATEGORIES=		www
 HOMEPAGE=		http://wwwsearch.sourceforge.net/mechanize/
 
 # BSD or Zope Public License v2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes

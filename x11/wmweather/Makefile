@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/13 21:35:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:51:24 sthen Exp $
 
 COMMENT=		wm-dockapp; weather monitor
 
@@ -8,7 +8,7 @@ CATEGORIES=		x11 x11/windowmaker
 HOMEPAGE=		http://people.debian.org/~godisch/wmweather/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext Xpm c curl
 

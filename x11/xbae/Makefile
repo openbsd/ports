@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/10/23 17:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:51:25 sthen Exp $
 
 COMMENT=	Motif-based table widget
 
@@ -12,7 +12,7 @@ CATEGORIES=	x11 math
 HOMEPAGE=	http://xbae.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xext Xft Xm Xmu Xpm Xrender Xt expat fontconfig
 WANTLIB += freetype iconv jpeg m png xcb z

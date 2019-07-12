@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/15 12:04:42 kmos Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:00 sthen Exp $
 
 COMMENT =		easy whitelist-based HTML-sanitizing tool
 
@@ -11,7 +11,7 @@ REVISION =		1
 HOMEPAGE =		https://github.com/mozilla/bleach
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2016/03/20 19:57:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:54 sthen Exp $
 
 COMMENT= 	simple interface to HTML::TokeParser
 
@@ -8,7 +8,7 @@ CATEGORIES=	www
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	cpan
 PKG_ARCH=	*

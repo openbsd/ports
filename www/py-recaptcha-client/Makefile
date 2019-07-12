@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/01/08 13:29:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:02 sthen Exp $
 
 COMMENT =	plugin for reCAPTCHA and reCAPTCHA Mailhide
 
@@ -10,7 +10,7 @@ REVISION =	1
 CATEGORIES =	www devel
 
 # MIT-X11
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 

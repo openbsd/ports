@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/06/22 20:15:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:30 sthen Exp $
 
 COMMENT =	X Window Protocol Viewer
 DISTNAME =	xscope-1.4.1
@@ -9,7 +9,7 @@ HOMEPAGE =	http://wiki.X.Org/
 MAINTAINER =	Matthieu Herrb <matthieu@openbsd.org>
 
 # X11
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =	${MASTER_SITE_XORG:=app/}
 

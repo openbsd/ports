@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/07 18:11:09 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:28 sthen Exp $
 
 COMMENT =	Xfce4 screensaver
 
@@ -6,7 +6,7 @@ XFCE_VERSION =	0.1.4
 XFCE_GOODIE =	xfce4-screensaver
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	x11/xfce4
 

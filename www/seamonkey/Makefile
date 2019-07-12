@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.228 2019/07/09 17:59:09 landry Exp $
+# $OpenBSD: Makefile,v 1.229 2019/07/12 20:51:05 sthen Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -28,7 +28,7 @@ MOZILLA_LIBS = ldap60 ldif60 mozavcodec mozavutil prldap60 suite xul lgpllibs
 CATEGORIES=	www mail net news
 
 # MPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No

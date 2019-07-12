@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/04/24 16:26:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:51:00 sthen Exp $
 
 COMMENT =		PHP client library for the Redis key-value database
 
@@ -10,7 +10,7 @@ CATEGORIES =		www databases
 HOMEPAGE =		http://wiki.github.com/nrk/predis
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://pear.nrk.io/get/
 EXTRACT_SUFX =		.tgz

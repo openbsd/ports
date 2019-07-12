@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/27 17:31:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:14 sthen Exp $
 
 # see https://github.com/i3/i3/issues/3085
 COMMENT =	improved dynamic tiling window manager, fork with mouse drag
@@ -14,7 +14,7 @@ CATEGORIES =	x11
 HOMEPAGE =	https://i3wm.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += c cairo ev glib-2.0 gobject-2.0 iconv intl m pango-1.0

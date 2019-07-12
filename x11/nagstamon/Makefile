@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/05/13 21:25:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:51:17 sthen Exp $
 
 COMMENT=		nagios status monitor for the Desktop
 
@@ -12,7 +12,7 @@ CATEGORIES=		x11 net
 HOMEPAGE=		http://nagstamon.ifw-dresden.de/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://nagstamon.ifw-dresden.de/files/stable/
 

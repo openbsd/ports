@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:56 sthen Exp $
 
 COMMENT=	library for enabling X-WSSE authentication in LWP
 
@@ -9,7 +9,7 @@ REVISION=	1
 CATEGORIES=	www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	security/p5-Digest-SHA1 \
 		www/p5-libwww

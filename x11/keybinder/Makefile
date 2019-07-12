@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/06/13 15:48:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:14 sthen Exp $
 
 COMMENT-main =		library for registering keyboard shortcuts
 COMMENT-python =	python bindings for keybinder
@@ -17,7 +17,7 @@ SHARED_LIBS =		keybinder		0.0	# 0.0
 HOMEPAGE =		https://github.com/engla/keybinder
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://mirrors.nycbug.org/pub/distfiles/
 

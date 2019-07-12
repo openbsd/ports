@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2019/04/24 16:26:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.110 2019/07/12 20:51:08 sthen Exp $
 
 COMMENT=		highly configurable framework window manager
 
@@ -11,7 +11,7 @@ CATEGORIES=		x11
 HOMEPAGE=		https://awesomewm.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 c cairo dbus-1 execinfo \
 			gdk_pixbuf-2.0 glib-2.0 gobject-2.0 \

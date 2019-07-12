@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/05/19 05:30:36 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:52 sthen Exp $
 
 COMMENT =	thumbnail plugin for p5-Dancer
 
@@ -8,7 +8,7 @@ DISTNAME =	Dancer-Plugin-Thumbnail-0.14
 CATEGORIES =	www
 
 # perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	www/p5-Dancer \
 		devel/p5-lib-abs \

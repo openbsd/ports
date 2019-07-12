@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2017/05/13 19:54:27 jung Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:21 sthen Exp $
 
 COMMENT =		set the color temperature of the screen
 
@@ -11,7 +11,7 @@ HOMEPAGE =		https://www.umaxx.net/
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c X11 Xrandr
 

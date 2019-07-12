@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:51:07 sthen Exp $
 
 COMMENT=	minimalistic window manager for X11
 
@@ -9,7 +9,7 @@ CATEGORIES=	x11
 HOMEPAGE=	http://www.red-bean.com/decklin/aewm/
 
 # X11/9wm
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0

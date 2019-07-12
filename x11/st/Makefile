@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/02/10 21:55:24 feinerer Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/12 20:51:22 sthen Exp $
 
 COMMENT=		simple X terminal
 
@@ -12,7 +12,7 @@ HOMEPAGE=		https://st.suckless.org/
 MAINTAINER=		Joerg Jung <jung@openbsd.org>
 
 # MIT/X Consortium License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 WANTLIB=		X11 Xft c fontconfig freetype m util z

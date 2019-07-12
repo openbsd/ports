@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2019/06/25 20:25:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.107 2019/07/12 20:51:23 sthen Exp $
 
 COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
@@ -20,7 +20,7 @@ CATEGORIES=		x11 x11/windowmaker
 HOMEPAGE=		http://windowmaker.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xext Xft Xinerama Xmu Xpm Xrandr Xrender
 WANTLIB += Xt c expat fontconfig freetype gif iconv intl jpeg

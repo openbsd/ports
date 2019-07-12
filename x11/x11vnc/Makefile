@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2019/05/19 19:13:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2019/07/12 20:51:25 sthen Exp $
 
 COMMENT =		VNC server for real X displays
 
@@ -9,7 +9,7 @@ GH_TAGNAME =		0.9.16
 CATEGORIES =		x11
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xtst avahi-client avahi-common c cairo crypto

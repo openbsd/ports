@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/06/13 15:48:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:13 sthen Exp $
 
 COMMENT=		C++ wrapper for gtksourceview3
 
@@ -17,7 +17,7 @@ CATEGORIES=		x11
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi

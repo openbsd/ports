@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/01/12 20:40:24 cwen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:52 sthen Exp $
 
 COMMENT= 	serving static pages with catalyst
 
@@ -8,7 +8,7 @@ DISTNAME=	Catalyst-Plugin-Static-Simple-0.36
 CATEGORIES=	www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Moose \
 		devel/p5-MooseX-Types \

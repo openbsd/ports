@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/17 16:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:16 sthen Exp $
 
 COMMENT=		PolicyKit authentication agent for MATE
 REVISION=		0
@@ -8,7 +8,7 @@ MATE_PROJECT=		mate-polkit
 CATEGORIES=		x11 sysutils
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject epoxy

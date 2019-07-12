@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/10/23 17:11:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:20 sthen Exp $
 
 COMMENT=	X Render extension test suite
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.freedesktop.org/
 MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>
 
 # X11/MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xrender c xcb
 

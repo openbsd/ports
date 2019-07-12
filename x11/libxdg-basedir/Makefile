@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/24 16:26:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:51:15 sthen Exp $
 
 COMMENT =	implementation of the XDG Base Directory specification
 
@@ -8,7 +8,7 @@ CATEGORIES =	x11 devel
 REVISION =	1
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://nevill.ch/libxdg-basedir/downloads/
 

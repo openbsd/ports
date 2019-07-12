@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2019/07/09 18:05:14 landry Exp $
+# $OpenBSD: Makefile,v 1.102 2019/07/12 20:50:46 sthen Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 i386
@@ -17,7 +17,7 @@ MOZILLA_LIBS =	xul clearkey lgpllibs mozavcodec mozavutil mozgtk
 CATEGORIES =	www
 
 # mozilla public license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 # lots of logic in mozilla.port.mk
 MODULES =	www/mozilla lang/python

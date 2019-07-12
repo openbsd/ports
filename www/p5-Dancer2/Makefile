@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/01 19:57:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:52 sthen Exp $
 
 COMMENT =		lightweight yet powerful web application framework
 
@@ -9,7 +9,7 @@ CATEGORIES =		www
 REVISION =		0
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =		devel/p5-File-ShareDir-Install>=0.06 \
 			${RUN_DEPENDS}

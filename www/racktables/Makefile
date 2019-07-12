@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/10/17 14:15:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:04 sthen Exp $
 
 COMMENT=	web-based rack/IP management
 
@@ -10,7 +10,7 @@ CATEGORIES=	www
 HOMEPAGE=	http://www.racktables.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=racktables/}
 

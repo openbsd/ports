@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/07/09 15:09:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:13 sthen Exp $
 
 COMMENT=		Human icon theme from Ubuntu
 
@@ -12,7 +12,7 @@ CATEGORIES=		x11
 HOMEPAGE=		https://launchpad.net/human-icon-theme
 
 # Creative Commons Attribution-ShareAlike 2.5
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://launchpad.net/ubuntu/oneiric/+source/human-icon-theme/${V}/+files/
 

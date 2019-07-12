@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/11 23:51:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:18 sthen Exp $
 
 COMMENT=	widget that looks just like a Mac OS 9 progress bar
 
@@ -8,7 +8,7 @@ REVISION=	0
 CATEGORIES=	x11 devel perl5
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Tk/}
 

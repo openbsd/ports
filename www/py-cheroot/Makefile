@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/04/28 20:51:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:01 sthen Exp $
 
 COMMENT = high-performance, pure-Python HTTP server used by CherryPy
 
@@ -12,7 +12,7 @@ CATEGORIES =		www
 HOMEPAGE =		https://github.com/cherrypy/cheroot
 
 # custom, MIT-style
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 FLAVORS =		python3
 FLAVOR ?=

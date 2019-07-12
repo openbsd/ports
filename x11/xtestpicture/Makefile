@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/10/11 21:21:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/12 20:51:30 sthen Exp $
 
 COMMENT=	full-screen image to adjust your monitor
 
@@ -7,7 +7,7 @@ REVISION=	1
 CATEGORIES=	x11
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c 
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:57 sthen Exp $
 COMMENT=	HTML objects for Rose
 
 MODULES=	cpan
@@ -20,6 +20,6 @@ RUN_DEPENDS=	mail/p5-Email-Valid \
 TEST_DEPENDS=devel/p5-Test-Memory-Cycle
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.mk>

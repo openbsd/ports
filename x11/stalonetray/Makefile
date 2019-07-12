@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/06/02 11:33:16 schwarze Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/12 20:51:22 sthen Exp $
 
 COMMENT=		stand-alone tray for EWMH-compliant window managers
 
@@ -9,7 +9,7 @@ CATEGORIES=		x11 sysutils
 HOMEPAGE=		http://stalonetray.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 Xpm c
 

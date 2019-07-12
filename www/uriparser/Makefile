@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/04/29 13:38:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:51:06 sthen Exp $
 
 COMMENT =		URI parsing library
 
@@ -12,7 +12,7 @@ CATEGORIES =		www
 HOMEPAGE =		https://uriparser.github.io/
 
 # BSD 3-clause
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 

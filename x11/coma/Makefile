@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/01/18 11:41:36 fcambus Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:51:09 sthen Exp $
 
 COMMENT =	keyboard driven tiling window manager
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://coma.one/wm/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	X11 Xft c
 

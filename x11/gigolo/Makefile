@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/06/27 21:04:07 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:11 sthen Exp $
 
 COMMENT =	GVfs mountpoint manager
 
@@ -13,7 +13,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 HOMEPAGE =	http://www.uvena.de/gigolo/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	x11/xfce4
 MODXFCE_DESKTOP_FILE =	Yes

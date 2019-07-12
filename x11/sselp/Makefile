@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/10/11 19:44:39 jung Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:22 sthen Exp $
 
 COMMENT=		print X selection to standard out
 
@@ -12,7 +12,7 @@ HOMEPAGE=		http://tools.suckless.org/x/sselp
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 c
 

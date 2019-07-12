@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2017/06/02 20:22:01 schwarze Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:08 sthen Exp $
 
 COMMENT =	confine pointer and keyboard events to a Tk window sub-tree
 
@@ -9,7 +9,7 @@ HOMEPAGE =	http://github.com/aryler/Byzi
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 GH_ACCOUNT =	aryler
 GH_PROJECT =	Byzi

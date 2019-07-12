@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2019/06/01 09:52:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.158 2019/07/12 20:50:47 sthen Exp $
 
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://www.lighttpd.net/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto m pcre ssl z ${MODLUA_WANTLIB}
 

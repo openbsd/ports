@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/04/29 15:01:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:51:07 sthen Exp $
 
 COMMENT=		WWW OFFLine Explorer
 
@@ -8,7 +8,7 @@ CATEGORIES=		www
 HOMEPAGE=		http://www.gedanken.org.uk/software/wwwoffle/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c z
 

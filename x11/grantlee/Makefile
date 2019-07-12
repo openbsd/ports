@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/01/30 18:55:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:12 sthen Exp $
 
 COMMENT =		template and text document library for Qt4
 PKG_VERSION =		0.5.1
@@ -15,7 +15,7 @@ SHARED_LIBS =		grantlee_core		1.0
 SHARED_LIBS +=		grantlee_gui		1.0
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} lib/qt4/QtGui lib/qt4/QtScript c m
 

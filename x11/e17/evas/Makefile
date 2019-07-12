@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2019/02/28 01:52:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2019/07/12 20:51:10 sthen Exp $
 
 COMMENT =		canvas API for X
 
@@ -10,7 +10,7 @@ REVISION =		12
 SHARED_LIBS +=	evas                 4.0      # 8.10
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes Xrender
 WANTLIB += Xxf86vm c crypto drm eet eina expat fontconfig freetype

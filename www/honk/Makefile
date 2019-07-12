@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/06/04 02:41:49 abieber Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:46 sthen Exp $
 
 COMMENT =		federated status updater
 
@@ -8,7 +8,7 @@ CATEGORIES =		www
 HOMEPAGE =		https://humungus.tedunangst.com/r/honk
 
 # ISC
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c pthread sqlite3
 

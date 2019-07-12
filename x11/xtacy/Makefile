@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/05/17 10:21:42 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:51:30 sthen Exp $
 
 COMMENT=	X11 trippy color-cycling toy
 
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.gweep.net/~jer/
 HOMEPAGE=	http://sidehack.gweep.net/~jer/xtacy.html
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c m 
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/03/26 18:32:27 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:51:29 sthen Exp $
 
 COMMENT =	Xfce4 alternative applications menu panel plugin
 
@@ -6,7 +6,7 @@ XFCE_VERSION =	2.3.2
 XFCE_PLUGIN =	whiskermenu
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =	x11/xfce4 devel/cmake
 CONFIGURE_STYLE =	cmake

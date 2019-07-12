@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/12 10:09:21 semarie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:51:01 sthen Exp $
 
 COMMENT =	toolkit for generation of output for the web
 
@@ -11,7 +11,7 @@ CATEGORIES =	www
 HOMEPAGE =	https://genshi.edgewall.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/05/25 13:07:59 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:21 sthen Exp $
 
 COMMENT=	slim themes bundle
 
@@ -19,7 +19,7 @@ HOMEPAGE=	http://slim.berlios.de/
 MASTER_SITES=	https://distfiles.bsdfrog.org/slim/
 
 # Freely available themes
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_TEST=	Yes
 NO_BUILD=	Yes

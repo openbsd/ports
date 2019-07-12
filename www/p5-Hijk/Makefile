@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/01/03 18:35:17 giovanni Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:56 sthen Exp $
 
 COMMENT =	Fast & minimal low-level HTTP client
 
@@ -10,7 +10,7 @@ CATEGORIES =	www
 CPAN_AUTHOR =	GUGOD
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 TEST_DEPENDS =	devel/p5-Test-Exception
 

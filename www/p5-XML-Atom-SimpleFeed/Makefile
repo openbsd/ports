@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/11 22:42:10 cwen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:59 sthen Exp $
 
 COMMENT =	no-fuss generation of Atom syndication feeds
 
@@ -10,6 +10,6 @@ DISTNAME =	XML-Atom-SimpleFeed-0.902
 CATEGORIES =	www textproc
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>

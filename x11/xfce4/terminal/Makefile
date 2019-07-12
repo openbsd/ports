@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2018/06/27 21:04:24 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2019/07/12 20:51:26 sthen Exp $
 
 COMMENT=	Xfce4 vte-based terminal
 
@@ -7,7 +7,7 @@ XFCE_GOODIE=	xfce4-terminal
 REVISION=	0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/12/08 22:48:39 bentley Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/12 20:51:07 sthen Exp $
 
 COMMENT=	web search application
 
@@ -12,7 +12,7 @@ CATEGORIES=	www textproc
 HOMEPAGE=	https://xapian.org/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m uuid ${COMPILER_LIBCXX} z xapian pcre magic
 

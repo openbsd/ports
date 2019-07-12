@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:51:08 sthen Exp $
 
 COMMENT=		Desktop wallpaper manager and X11 screensaver
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.beebgames.com/sw/gtk-ports.html
 EXTRACT_SUFX=		.tar.bz2
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB =  GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype

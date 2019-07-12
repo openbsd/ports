@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:56 sthen Exp $
 
 COMMENT =	session management for Mojo
 
@@ -8,7 +8,7 @@ DISTNAME =	MojoX-Session-0.33
 CATEGORIES =	www
 
 # Perl
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 CPAN_AUTHOR =	VTI
 

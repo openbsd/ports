@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/05/15 12:04:43 kmos Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/12 20:51:02 sthen Exp $
 
 COMMENT =		tools for using web server gateway interface stack
 
@@ -12,7 +12,7 @@ CATEGORIES =		www
 HOMEPAGE =		http://pythonpaste.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

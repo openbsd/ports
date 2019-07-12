@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/10/24 14:28:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/12 20:51:11 sthen Exp $
 
 COMMENT=		text editor widget for FLTK
 
@@ -13,7 +13,7 @@ CATEGORIES=		x11
 HOMEPAGE=		http://www.robertk.com/source/
 
 # LPGL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
 

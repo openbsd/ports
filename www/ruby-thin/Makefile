@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2018/06/13 22:26:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/12 20:51:05 sthen Exp $
 
 COMMENT =	fast and very simple Ruby web server
 
@@ -9,7 +9,7 @@ CATEGORIES =	www
 HOMEPAGE =	http://code.macournoyer.com/thin/
 
 # Ruby/GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem ext

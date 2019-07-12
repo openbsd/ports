@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/10/11 23:51:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:51:08 sthen Exp $
 
 COMMENT=		Small menubar for X11 written in Perl/Tk
 DISTNAME=		belt-1.21
@@ -12,7 +12,7 @@ DISTFILES=		${DISTNAME} menu.conf.EXAMPLE belticons.tar.gz
 DIST_SUBDIR=		belt
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_BUILD=		Yes
 PKG_ARCH=		*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:00 sthen Exp $
 
 COMMENT =		VCR imitation for python-requests
 
@@ -10,7 +10,7 @@ REVISION =		0
 CATEGORIES =		www devel
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

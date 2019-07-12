@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:00 sthen Exp $
 
 COMMENT =	WebSocket client & server library, WAMP real-time framework
 
@@ -12,7 +12,7 @@ CATEGORIES =	www
 HOMEPAGE =	https://github.com/crossbario/autobahn-python
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2019/07/05 11:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2019/07/12 20:51:13 sthen Exp $
 
 COMMENT=		OpenGL widget for GTK+2 GUI toolkit
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=  gtkgl-2.0      0.0               # .1.1
 CATEGORIES=		x11 graphics
 
 # LGPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL GLU X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig

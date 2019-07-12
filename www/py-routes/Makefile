@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2015/09/29 10:53:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:51:03 sthen Exp $
 
 COMMENT =	re-implementation of the rails routes system
 
@@ -12,7 +12,7 @@ CATEGORIES =	www devel
 HOMEPAGE =	http://routes.groovie.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 

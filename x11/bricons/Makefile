@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/06/06 15:05:44 schwarze Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:51:08 sthen Exp $
 
 COMMENT=	quick start-up utility for applications on an X11 display
 
@@ -8,7 +8,7 @@ DISTNAME=	bricons-athena-3.0
 CATEGORIES=	x11
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c
 

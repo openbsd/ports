@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2015/09/29 10:52:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:02 sthen Exp $
 
 COMMENT=		simple Python framework for web-based applications
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://quixote.ca/
 MASTER_SITES=		${HOMEPAGE}releases/
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/05/07 16:52:35 danj Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:13 sthen Exp $
 
 COMMENT =	manual tiling window manager
 DISTNAME =	herbstluftwm-0.7.1
@@ -8,7 +8,7 @@ REVISION =	0
 HOMEPAGE =	http://herbstluftwm.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xext Xinerama c glib-2.0 intl m pthread ${COMPILER_LIBCXX}
 

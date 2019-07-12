@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2019/06/29 21:42:07 kmos Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/12 20:51:02 sthen Exp $
 
 COMMENT=		elegant and simple HTTP library for Python
 
@@ -14,7 +14,7 @@ HOMEPAGE=		http://python-requests.org/
 MAINTAINER=		Daniel Jakots <obsd@chown.me>
 
 # APLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 

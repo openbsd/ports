@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:50:54 sthen Exp $
 
 COMMENT=	HTML tag cloud generator
 
@@ -8,7 +8,7 @@ DISTNAME =	HTML-TagCloud-0.38
 CATEGORIES=	www
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MAKE_ENV+=	TEST_POD=ohyes
 

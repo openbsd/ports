@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2018/05/25 13:01:42 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:24 sthen Exp $
 
 COMMENT=		wm-dockapp; application launching program
 
@@ -10,7 +10,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 HOMEPAGE=		http://greek0.net/~greek0/wmbutton/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext Xpm c
 
 MASTER_SITES=		${HOMEPAGE}

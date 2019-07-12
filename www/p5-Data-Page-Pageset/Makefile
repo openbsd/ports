@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/05/19 07:57:59 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/12 20:50:53 sthen Exp $
 
 COMMENT=	change long page list to be shorter and well navigate
 
@@ -8,7 +8,7 @@ DISTNAME=	Data-Page-Pageset-1.02
 CATEGORIES=	www
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	databases/p5-Data-Page
 

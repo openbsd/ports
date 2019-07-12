@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2018/10/24 14:28:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2019/07/12 20:51:11 sthen Exp $
 
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
@@ -21,7 +21,7 @@ SHARED_LIBS=	fltk		8.0 \
 HOMEPAGE=	http://www.fltk.org/
 
 # LGPLv2 with exceptions (see COPYING)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL GLU X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama
 WANTLIB += c fontconfig jpeg m png pthread ${COMPILER_LIBCXX} z

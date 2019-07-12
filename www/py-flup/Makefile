@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/04/28 20:51:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:51:01 sthen Exp $
 
 COMMENT =		random assortment of WSGI servers, middleware
 
@@ -10,7 +10,7 @@ REVISION =		1
 CATEGORIES =		www
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =		Yes
 

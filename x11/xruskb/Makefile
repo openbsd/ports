@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2016/05/05 19:52:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:51:30 sthen Exp $
 
 COMMENT=	english-russian keyboard switcher for X11
 
@@ -9,7 +9,7 @@ MASTER_SITES=	http://lav.yar.ru/download/xruskb/
 EXTRACT_SUFX=	.tar.bz2
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 Xext Xmu Xt c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/21 06:08:37 feinerer Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:51:15 sthen Exp $
 
 COMMENT =	featherweight lemon-scented bar
 
@@ -15,7 +15,7 @@ CATEGORIES =	x11
 MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c xcb xcb-randr xcb-xinerama
 

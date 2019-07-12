@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/02/04 01:53:04 gsoares Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:22 sthen Exp $
 
 COMMENT=		simple generic tabbed frontend
 
@@ -11,7 +11,7 @@ HOMEPAGE=		http://tools.suckless.org/tabbed
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
 
 # MIT/X
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 c
 

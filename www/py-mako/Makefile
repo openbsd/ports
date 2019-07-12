@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/05/15 12:04:42 kmos Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:51:02 sthen Exp $
 
 COMMENT =	super-fast templating language
 
@@ -12,7 +12,7 @@ CATEGORIES =	www
 HOMEPAGE =	http://www.makotemplates.org/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
 

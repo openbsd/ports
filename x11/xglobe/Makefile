@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2018/12/17 18:49:50 jca Exp $
+# $OpenBSD: Makefile,v 1.79 2019/07/12 20:51:29 sthen Exp $
 
 COMMENT=	display the Earth on X11
 
@@ -14,7 +14,7 @@ REVISION=	44
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # GPL, included map is free
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 c m pthread ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc

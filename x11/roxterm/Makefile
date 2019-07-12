@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2019/07/05 11:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2019/07/12 20:51:21 sthen Exp $
 
 COMMENT=		terminal emulator for X
 
@@ -11,7 +11,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=roxterm/}
 EXTRACT_SUFX=		.tar.bz2
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1

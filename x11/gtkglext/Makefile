@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/04/22 13:31:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:51:13 sthen Exp $
 
 COMMENT=	OpenGL extension to GTK+ 2.0 and later
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://projects.gnome.org/gtkglext/
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
 # GPLv2,  LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkglext/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/04/29 08:08:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:50:49 sthen Exp $
 
 COMMENT=	mod_perl class for generating browsable MP3 directory lists
 
@@ -9,7 +9,7 @@ REVISION=	4
 CATEGORIES=	www audio
 
 # GPL or Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	www/ap2-mod_perl \

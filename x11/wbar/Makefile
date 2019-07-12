@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/05/20 22:15:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:23 sthen Exp $
 
 COMMENT =		Mac OS-X style lightweight application launcher
 
@@ -11,7 +11,7 @@ CATEGORIES=		x11
 HOMEPAGE=		https://code.google.com/p/wbar/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += Imlib2 X11 Xext c freetype intl m ${COMPILER_LIBCXX} z
 

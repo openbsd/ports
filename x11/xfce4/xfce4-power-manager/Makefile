@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/06/25 20:25:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/12 20:51:28 sthen Exp $
 
 COMMENT =	Xfce4 power manager
 
@@ -7,7 +7,7 @@ XFCE_GOODIE =	xfce4-power-manager
 REVISION =	0
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =	x11/xfce4
 MODXFCE_DESKTOP_FILE =	Yes

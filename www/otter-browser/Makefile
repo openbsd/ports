@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/03/08 20:00:51 cwen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 20:50:49 sthen Exp $
 
 COMMENT =	browser aiming to recreate classic Opera (12.x) UI using Qt5
 
@@ -15,7 +15,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=otter-browser/}
 EXTRACT_SUFX =	.tar.bz2
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
 WANTLIB += Qt5Network Qt5PrintSupport Qt5Qml Qt5Svg Qt5WebKit

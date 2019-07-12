@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2017/11/14 17:09:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/12 20:51:05 sthen Exp $
 
 COMMENT =	DSL for quickly creating web-applications in Ruby
 
@@ -8,7 +8,7 @@ CATEGORIES =	www
 HOMEPAGE =	http://www.sinatrarb.com/
 
 # MIT
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 

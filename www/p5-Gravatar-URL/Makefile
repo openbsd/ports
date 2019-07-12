@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/08/12 22:53:35 bluhm Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:53 sthen Exp $
 
 COMMENT =		make URLs for Gravatars from an email address
 
@@ -9,7 +9,7 @@ CATEGORIES =		www mail
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 CPAN_AUTHOR =		MSCHWERN
 

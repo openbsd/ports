@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/05/13 14:42:44 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:59 sthen Exp $
 
 COMMENT= 	Atom RSS protocol for perl
 
@@ -9,7 +9,7 @@ DISTNAME =	XML-Atom-0.42
 CATEGORIES=	www textproc
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/p5-Class-Data-Inheritable \
 		devel/p5-DateTime \

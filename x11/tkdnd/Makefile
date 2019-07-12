@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2017/05/10 14:27:01 stu Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:22 sthen Exp $
 
 COMMENT =	drag n drop extension for Tk
 
@@ -11,7 +11,7 @@ HOMEPAGE = 	http://tkdnd.sourceforge.net/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE =		Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tkdnd/}
 

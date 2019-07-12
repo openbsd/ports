@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2018/06/29 22:16:25 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/12 20:51:13 sthen Exp $
 
 COMMENT=	GTK+3 based xmessage(1) clone
 
@@ -10,7 +10,7 @@ CATEGORIES=	x11
 HOMEPAGE=	http://homepages.ihug.co.nz/~trmusson/programs.html\#gxmessage
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://homepages.ihug.co.nz/~trmusson/stuff/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/07/09 15:09:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/12 20:51:27 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -9,7 +9,7 @@ XFCE_VERSION=	4.4.3
 REVISION=	14
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	textproc/intltool \
 		x11/xfce4

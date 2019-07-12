@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/06/11 00:38:36 kurt Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/12 20:50:47 sthen Exp $
 
 COMMENT =	Java web start runtime
 DISTNAME =	icedtea-web-1.6.2
@@ -8,7 +8,7 @@ CATEGORIES =	www
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	http://icedtea.classpath.org/download/source/
 HOMEPAGE =	http://icedtea.classpath.org/wiki/IcedTea-Web

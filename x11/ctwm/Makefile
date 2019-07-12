@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/08/29 21:06:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/12 20:51:09 sthen Exp $
 
 COMMENT=	twm, plus support for multiple virtual screens, etc
 
@@ -9,7 +9,7 @@ CATEGORIES=	x11
 HOMEPAGE=	https://www.ctwm.org/
 
 # BSD-like/badly worded
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xext Xmu Xpm Xt c jpeg
 

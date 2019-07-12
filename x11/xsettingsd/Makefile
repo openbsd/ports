@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/10/24 14:28:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:30 sthen Exp $
 
 COMMENT=	lightweight XSETTINGS daemon
 
@@ -10,7 +10,7 @@ REVISION=	0
 CATEGORIES=	x11
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xau Xdmcp c m ${COMPILER_LIBCXX} xcb
 

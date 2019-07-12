@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2016/03/20 19:57:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:52 sthen Exp $
 
 COMMENT=		singleton for the catalyst context (deprecated)
 
@@ -9,7 +9,7 @@ REVISION =		2
 CATEGORIES=		www
 
 # same as perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=		www/p5-Catalyst-Runtime
 

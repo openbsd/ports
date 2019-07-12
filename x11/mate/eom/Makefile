@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/05/11 18:33:42 robert Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/12 20:51:16 sthen Exp $
 
 USE_WXNEEDED=		Yes
 
@@ -10,7 +10,7 @@ MATE_PROJECT=		eom
 MATE_VERSION=		1.22.1
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 X11-xcb Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender c dconf epoxy expat

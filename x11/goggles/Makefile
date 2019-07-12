@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/10/24 14:28:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/12 20:51:12 sthen Exp $
 
 COMMENT=	gui for ogle
 CATEGORIES=	x11
@@ -45,7 +45,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKDIST}/desktop/goggles_manual.pdf ${DOCDIR}
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += FOX-1.6>=1 GL GLU X11 Xau Xcursor Xdmcp Xext Xfixes Xft
 WANTLIB += Xrandr Xrender bz2 c dvdcontrol expat fontconfig freetype

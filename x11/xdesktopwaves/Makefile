@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/05/02 14:51:49 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:26 sthen Exp $
 
 COMMENT=		simulation of water waves on the X Window desktop
 
@@ -9,7 +9,7 @@ CATEGORIES=		x11
 HOMEPAGE=		http://xdesktopwaves.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xdesktopwaves/}
 

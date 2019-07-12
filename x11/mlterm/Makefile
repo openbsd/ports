@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2019/05/20 22:15:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2019/07/12 20:51:17 sthen Exp $
 
 COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-3.8.3
@@ -12,7 +12,7 @@ CATEGORIES=	x11
 HOMEPAGE=	http://mlterm.sourceforge.net/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xft Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo expat ffi

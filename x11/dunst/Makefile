@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/05/20 22:15:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/12 20:51:09 sthen Exp $
 
 COMMENT =	customizable and lightweight notification-daemon
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://dunst-project.org/
 MAINTAINER =	Timo Myyra <timo.myyra@bittivirhe.fi>
 
 # BSD
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += X11 Xinerama Xrandr Xss c cairo dbus-1 gdk_pixbuf-2.0

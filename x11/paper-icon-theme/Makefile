@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2018/07/09 15:09:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/12 20:51:19 sthen Exp $
 
 COMMENT=		modern freedesktop flat icon theme
 
@@ -15,7 +15,7 @@ CATEGORIES=		x11
 HOMEPAGE=		https://snwh.org/paper
 
 # CC-SA-4.0
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

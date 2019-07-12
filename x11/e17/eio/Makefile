@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/11/21 00:13:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:10 sthen Exp $
 
 COMMENT =		async i/o library
 
@@ -8,7 +8,7 @@ REVISION =		0
 SHARED_LIBS +=	eio                  2.0      # 8.10
 
 # LGPL v2.1
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  crypto ecore eet eina glib-2.0 iconv intl jpeg m pcre pthread
 WANTLIB += ssl z

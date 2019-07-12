@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/05/17 22:51:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2019/07/12 20:51:11 sthen Exp $
 
 COMMENT-main=	multiple virtual desktop window manager, with icons
 COMMENT-fvicons=multiple virtual desktop window manager icons
@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} fvwm_icons-20070101.tar.gz
 HOMEPAGE=	http://www.fvwm.org/
 
 # GPL/BSD-like (badly worded)
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xcursor Xext Xft Xinerama Xpm Xrender
 WANTLIB += c cairo curses fontconfig freetype gdk_pixbuf-2.0

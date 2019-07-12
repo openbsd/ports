@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/03 12:35:00 solene Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 20:51:06 sthen Exp $
 
 COMMENT =		static git page generator
 
@@ -12,7 +12,7 @@ HOMEPAGE =		https://codemadness.org/
 MAINTAINER =		Hiltjo Posthuma <hiltjo@codemadness.org>
 
 # MIT/X Consortium License
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB =		c git2

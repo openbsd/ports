@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:44:49 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 20:51:05 sthen Exp $
 
 COMMENT=	spawn FastCGI processes
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://redmine.lighttpd.net/projects/spawn-fcgi/news
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 CONFIGURE_STYLE= autoconf

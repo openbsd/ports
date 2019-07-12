@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2019/07/12 20:51:19 sthen Exp $
 
 COMMENT-main=	python Qt4 bindings
 COMMENT-docs=	py-qt4 documentation
@@ -20,7 +20,7 @@ CATEGORIES=	x11 devel
 HOMEPAGE=	http://www.riverbankcomputing.co.uk/software/pyqt/intro
 
 # GPLv2 or v3 with exceptions for use with certain named open-source licenses
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL ICE QtDBus QtDeclarative QtDesigner QtGui QtHelp QtMultimedia
 WANTLIB += QtNetwork QtOpenGL QtScript QtScriptTools QtSql QtSvg QtTest

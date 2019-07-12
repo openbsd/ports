@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/20 19:57:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:54 sthen Exp $
 
 COMMENT=		generate nice HTML files from HTML syntax trees
 
@@ -6,7 +6,7 @@ DISTNAME=		HTML-PrettyPrinter-0.03
 CATEGORIES=		www textproc
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=		cpan
 PKG_ARCH=		*

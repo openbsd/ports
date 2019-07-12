@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/06/13 15:48:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/12 20:51:19 sthen Exp $
 
 COMMENT=	tiling window manager
 
@@ -10,7 +10,7 @@ CATEGORIES=	x11
 HOMEPAGE=	https://github.com/njsmith/partiwm
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
