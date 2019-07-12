@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/05/20 22:15:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/12 21:05:06 sthen Exp $
 
 COMMENT=	freedesktop-compliant panel
 
@@ -8,7 +8,7 @@ DISTNAME=	tint2-${V}
 HOMEPAGE=	https://gitlab.com/o9000/tint2/
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM= YES
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	https://gitlab.com/o9000/tint2/-/archive/${V}/
 

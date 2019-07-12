@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/19 14:25:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/12 21:05:06 sthen Exp $
 
 COMMENT=	CUPS printer driver for some Brother laser printers
 
@@ -11,7 +11,7 @@ CATEGORIES=	print
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM= Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB+=	${COMPILER_LIBCXX} c cups cupsimage m
 

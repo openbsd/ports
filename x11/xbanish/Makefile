@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/08/31 15:36:45 jcs Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/12 21:05:06 sthen Exp $
 
 COMMENT=	utility to automatically hide X11 cursor when typing
 
@@ -15,7 +15,7 @@ MAINTAINER=	joshua stein <jcs@openbsd.org>
 MASTER_SITES=	${HOMEPAGE}/archive/
 
 # BSD
-PERMIT_PACKAGE_CDROM= Yes
+PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 WANTLIB+=	X11 Xfixes Xi c

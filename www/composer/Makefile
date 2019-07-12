@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 17:05:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 21:05:06 sthen Exp $
 
 COMMENT=	dependency manager for PHP
 
@@ -20,7 +20,7 @@ MODULES=	lang/php
 MODPHP_VERSION=	7.3
 
 # MIT
-PERMIT_PACKAGE_CDROM= Yes
+PERMIT_PACKAGE=	Yes
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/08/10 10:19:18 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/12 21:05:06 sthen Exp $
 
 COMMENT=	lua binding of zlib
 DISTNAME=	luazlib-20100731
@@ -9,7 +9,7 @@ MASTER_SITES=	https://distfiles.nl/
 HOMEPAGE=	https://github.com/brimworks/lua-zlib/
 
 # MIT
-PERMIT_PACKAGE_CDROM= Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/lua
 TEST_DEPENDS += ${BASE_PKGPATH}

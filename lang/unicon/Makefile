@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2017/10/23 17:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/12 21:05:06 sthen Exp $
 
 # crashes & hangs on anything but i386
 ONLY_FOR_ARCHS=	i386
@@ -16,7 +16,7 @@ MASTER_SITES=	http://icon.cs.unlv.edu/v9/
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM= Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xpm c gdbm m xcb
 
