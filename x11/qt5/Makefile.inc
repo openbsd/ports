@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2018/01/25 15:02:25 rsadowski Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2019/07/13 11:02:18 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
@@ -37,7 +37,7 @@ RUN_DEPENDS-examples +=	${BUILD_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
 # Also, many parts have are dual-licensed having either commercial, GPL,
 # Apache 2.0 or other type of license as an alternative option.
 # A few components, including QtWebEngine, are LGPLv3 only, no LGPLv2.1.
-PERMIT_PACKAGE_CDROM ?=	Yes
+PERMIT_PACKAGE ?=	Yes
 
 MASTER_SITES ?=		https://download.qt.io/official_releases/qt/${QT5_DIST_VERSION:R}/${QT5_DIST_VERSION}/submodules/
 DIST_SUBDIR ?=		qt

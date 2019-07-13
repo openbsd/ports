@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/29 00:07:15 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/13 11:02:18 sthen Exp $
 
 # Many parts are copied from www/chromium port, so keep in sync
 
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} amd64
 QT5NAME =		QtWebEngine
+REVISION =		0
 COMMENT-main =		Chromium-based web engine for Qt5
 CATEGORIES =		www
 USE_WXNEEDED =		Yes
@@ -14,9 +15,8 @@ MULTI_PACKAGES =	-main -examples
 
 WANTLIB-main =		${WANTLIB}
 
-# BSD-like
-PERMIT_PACKAGE_CDROM=   patents
-PERMIT_PACKAGE_FTP =    Yes
+# BSD-like, patents
+PERMIT_PACKAGE =	Yes
 
 COMPILER =		base clang gcc
 MODULES =		lang/python
