@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/05/05 22:34:40 danj Exp $
+# $OpenBSD: Makefile,v 1.47 2019/07/13 23:05:21 naddy Exp $
 
 COMMENT-main=	file archiver with high compression ratio
 COMMENT-rar=	rar modules for p7zip
@@ -16,9 +16,7 @@ FIX_EXTRACT_PERMISSIONS =	Yes
 HOMEPAGE=	http://sourceforge.net/projects/p7zip/
 
 # LGPL, except unRar plugin which is licensed as Freeware
-PERMIT_PACKAGE_CDROM-rar=	no fee
-PERMIT_PACKAGE_CDROM=		Yes
-PERMIT_PACKAGE_FTP=		Yes
+PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 WANTLIB=	m pthread ${COMPILER_LIBCXX}
