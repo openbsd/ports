@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.71 2019/05/02 22:06:13 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.72 2019/07/13 13:30:11 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -40,7 +40,6 @@ include/dovecot/auth-cache.h
 include/dovecot/auth-client-connection.h
 include/dovecot/auth-client-interface.h
 include/dovecot/auth-client-private.h
-include/dovecot/auth-client-request.h
 include/dovecot/auth-client.h
 include/dovecot/auth-common.h
 include/dovecot/auth-fields.h
@@ -53,7 +52,6 @@ include/dovecot/auth-request-handler.h
 include/dovecot/auth-request-stats.h
 include/dovecot/auth-request-var-expand.h
 include/dovecot/auth-request.h
-include/dovecot/auth-server-connection.h
 include/dovecot/auth-settings.h
 include/dovecot/auth-stats.h
 include/dovecot/auth-token.h
@@ -319,6 +317,11 @@ include/dovecot/lib-event.h
 include/dovecot/lib-signals.h
 include/dovecot/lib.h
 include/dovecot/llist.h
+include/dovecot/lmtp-client.h
+include/dovecot/lmtp-commands.h
+include/dovecot/lmtp-common.h
+include/dovecot/lmtp-recipient.h
+include/dovecot/lmtp-settings.h
 include/dovecot/log-throttle.h
 include/dovecot/login-common.h
 include/dovecot/login-proxy-state.h
@@ -1055,6 +1058,7 @@ share/dovecot/stopwords/stopwords_pt.txt
 share/dovecot/stopwords/stopwords_ro.txt
 share/dovecot/stopwords/stopwords_ru.txt
 share/dovecot/stopwords/stopwords_sv.txt
+share/dovecot/stopwords/stopwords_tr.txt
 share/examples/dovecot/
 share/examples/dovecot/dovecot-openssl.cnf
 @sample /etc/ssl/dovecot-openssl.cnf
