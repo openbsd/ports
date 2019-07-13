@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.29 2019/03/30 11:05:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.30 2019/07/13 09:24:32 ajacoutot Exp $
 @pkgpath devel/harfbuzz
 @bin bin/hb-ot-shape-closure
 @bin bin/hb-shape
@@ -70,10 +70,10 @@ share/gtk-doc/html/harfbuzz/building.html
 share/gtk-doc/html/harfbuzz/ch01s03.html
 share/gtk-doc/html/harfbuzz/ch03s02.html
 share/gtk-doc/html/harfbuzz/ch03s03.html
-share/gtk-doc/html/harfbuzz/ch09.html
 share/gtk-doc/html/harfbuzz/ch10.html
 share/gtk-doc/html/harfbuzz/ch11.html
 share/gtk-doc/html/harfbuzz/ch12.html
+share/gtk-doc/html/harfbuzz/ch13.html
 share/gtk-doc/html/harfbuzz/clusters.html
 share/gtk-doc/html/harfbuzz/complex-scripts.html
 share/gtk-doc/html/harfbuzz/customizing-unicode-functions.html
@@ -114,6 +114,11 @@ share/gtk-doc/html/harfbuzz/install-harfbuzz.html
 share/gtk-doc/html/harfbuzz/left-insensitive.png
 share/gtk-doc/html/harfbuzz/left.png
 share/gtk-doc/html/harfbuzz/level-2.html
+share/gtk-doc/html/harfbuzz/object-model-blobs.html
+share/gtk-doc/html/harfbuzz/object-model-lifecycle.html
+share/gtk-doc/html/harfbuzz/object-model-object-types.html
+share/gtk-doc/html/harfbuzz/object-model-user-data.html
+share/gtk-doc/html/harfbuzz/object-model.html
 share/gtk-doc/html/harfbuzz/opentype-shaping-models.html
 share/gtk-doc/html/harfbuzz/plans-and-caching.html
 share/gtk-doc/html/harfbuzz/pt01.html

@@ -1,23 +1,21 @@
-# $OpenBSD: Makefile,v 1.109 2019/07/12 20:44:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.110 2019/07/13 09:24:31 ajacoutot Exp $
 
 BROKEN-hppa=		no atomic primitives
 
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-V=			2.4.0
+V=			2.5.3
 DISTNAME=		harfbuzz-${V}
-EXTRACT_SUFX=		.tar.bz2
+EXTRACT_SUFX=		.tar.xz
 
 PKGNAME-main=		harfbuzz-${V}
 PKGNAME-icu=		harfbuzz-icu-${V}
-REVISION-icu=		1
-REVISION-main=		1
 
-SHARED_LIBS +=  harfbuzz             14.3     # 20301.0
-SHARED_LIBS +=  harfbuzz-icu         1.0      # 20301.0
-SHARED_LIBS +=  harfbuzz-gobject     0.1      # 20301.0
-SHARED_LIBS +=  harfbuzz-subset      0.0      # 20301.0
+SHARED_LIBS +=  harfbuzz             14.4     # 20503.0
+SHARED_LIBS +=  harfbuzz-icu         1.1      # 20503.0
+SHARED_LIBS +=  harfbuzz-gobject     0.2      # 20503.0
+SHARED_LIBS +=  harfbuzz-subset      0.1      # 20503.0
 
 CATEGORIES=		devel graphics textproc
 
@@ -26,7 +24,7 @@ HOMEPAGE=		http://www.freedesktop.org/wiki/Software/HarfBuzz
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} freetype glib-2.0 graphite2 iconv intl m z
 
