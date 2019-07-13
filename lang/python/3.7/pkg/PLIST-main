@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2019/05/10 12:01:55 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2019/07/13 06:48:16 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python->=3.7,<3.8
@@ -1500,6 +1500,7 @@ lib/python3.7/distutils/tests/__pycache__/test_version.cpython-37.pyc
 lib/python3.7/distutils/tests/__pycache__/test_versionpredicate.cpython-37.opt-1.pyc
 lib/python3.7/distutils/tests/__pycache__/test_versionpredicate.cpython-37.opt-2.pyc
 lib/python3.7/distutils/tests/__pycache__/test_versionpredicate.cpython-37.pyc
+lib/python3.7/distutils/tests/includetest.rst
 lib/python3.7/distutils/tests/support.py
 lib/python3.7/distutils/tests/test_archive_util.py
 lib/python3.7/distutils/tests/test_bdist.py
@@ -2373,9 +2374,9 @@ lib/python3.7/lib-dynload/xxlimited.so
 lib/python3.7/lib-dynload/zlib.so
 lib/python3.7/lib2to3/
 lib/python3.7/lib2to3/Grammar.txt
-lib/python3.7/lib2to3/Grammar3.7.3.final.0.pickle
+lib/python3.7/lib2to3/Grammar3.7.4.final.0.pickle
 lib/python3.7/lib2to3/PatternGrammar.txt
-lib/python3.7/lib2to3/PatternGrammar3.7.3.final.0.pickle
+lib/python3.7/lib2to3/PatternGrammar3.7.4.final.0.pickle
 lib/python3.7/lib2to3/__init__.py
 lib/python3.7/lib2to3/__main__.py
 lib/python3.7/lib2to3/__pycache__/
