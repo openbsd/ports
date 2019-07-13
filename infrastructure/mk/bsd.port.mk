@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1472 2019/07/01 06:47:12 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1473 2019/07/13 17:06:04 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -471,6 +471,7 @@ ALL_FAKE_FLAGS += -j${MAKE_JOBS}
 
 .for _S in ${MULTI_PACKAGES}
 .  if defined(PERMIT_PACKAGE) || defined(PERMIT_PACKAGE${_S})
+_PERMIT_PACKAGE = Yes
 PERMIT_PACKAGE${_S} ?= ${PERMIT_PACKAGE}
 PERMIT_PACKAGE_FTP${_S} = ${PERMIT_PACKAGE${_S}}
 PERMIT_PACKAGE_CDROM${_S} = Unknown
@@ -493,6 +494,7 @@ _BAD_LICENSING = Yes
 .endfor
 
 .if defined(PERMIT_PACKAGE)
+_PERMIT_PACKAGE = Yes
 PERMIT_DISTFILES ?= ${PERMIT_PACKAGE}
 PERMIT_PACKAGE_FTP = ${PERMIT_PACKAGE}
 PERMIT_DISTFILES_FTP = ${PERMIT_DISTFILES}
@@ -526,6 +528,11 @@ PERMIT_PACKAGE_FTP${_S} = No
 PERMIT_PACKAGE${_S} = No
 PERMIT_DISTFILES${_S} = No
 .  endfor
+.endif
+
+.if !defined(_PERMIT_PACKAGE)
+ERRORS += "Old STYLE PERMIT_PACKAGE_*"
+_PERMIT_PACKAGE ?= No
 .endif
 
 .if ${MACHINE_ARCH} != ${ARCH}
