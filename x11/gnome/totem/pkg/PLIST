@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2019/05/08 16:37:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2019/07/13 09:54:45 ajacoutot Exp $
 @conflict nautilus-totem-*
 @pkgpath x11/gnome/totem,nautilus
 @pkgpath x11/gnome/totem,xine
@@ -25,7 +25,7 @@ lib/totem/plugins/brasero-disc-recorder/
 lib/totem/plugins/brasero-disc-recorder/brasero-disc-recorder.plugin
 lib/totem/plugins/brasero-disc-recorder/libbrasero-disc-recorder.so
 lib/totem/plugins/dbus/
-lib/totem/plugins/dbus/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/totem/plugins/dbus/${MODPY_PYCACHE}/
 lib/totem/plugins/dbus/${MODPY_PYCACHE}dbusservice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/totem/plugins/dbus/dbusservice.plugin
 lib/totem/plugins/dbus/dbusservice.py
@@ -36,7 +36,7 @@ lib/totem/plugins/media-player-keys/
 lib/totem/plugins/media-player-keys/libmedia_player_keys.so
 lib/totem/plugins/media-player-keys/media-player-keys.plugin
 lib/totem/plugins/opensubtitles/
-lib/totem/plugins/opensubtitles/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/totem/plugins/opensubtitles/${MODPY_PYCACHE}/
 lib/totem/plugins/opensubtitles/${MODPY_PYCACHE}hash.${MODPY_PYC_MAGIC_TAG}pyc
 lib/totem/plugins/opensubtitles/${MODPY_PYCACHE}opensubtitles.${MODPY_PYC_MAGIC_TAG}pyc
 lib/totem/plugins/opensubtitles/hash.py
@@ -47,7 +47,7 @@ lib/totem/plugins/properties/
 lib/totem/plugins/properties/libmovie-properties.so
 lib/totem/plugins/properties/movie-properties.plugin
 lib/totem/plugins/pythonconsole/
-lib/totem/plugins/pythonconsole/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/totem/plugins/pythonconsole/${MODPY_PYCACHE}/
 lib/totem/plugins/pythonconsole/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}pyc
 lib/totem/plugins/pythonconsole/${MODPY_PYCACHE}pythonconsole.${MODPY_PYC_MAGIC_TAG}pyc
 lib/totem/plugins/pythonconsole/console.py
@@ -143,7 +143,6 @@ share/help/bg/totem/troubleshooting-DVD.page
 share/help/bg/totem/troubleshooting-debug.page
 share/help/bg/totem/troubleshooting-subtitles.page
 share/help/bg/totem/view-zoom.page
-share/help/ca/
 share/help/ca/totem/
 share/help/ca/totem/adjust-speed.page
 share/help/ca/totem/channels.page
@@ -245,7 +244,6 @@ share/help/de/totem/troubleshooting-DVD.page
 share/help/de/totem/troubleshooting-debug.page
 share/help/de/totem/troubleshooting-subtitles.page
 share/help/de/totem/view-zoom.page
-share/help/el/
 share/help/el/totem/
 share/help/el/totem/adjust-speed.page
 share/help/el/totem/channels.page
@@ -322,7 +320,6 @@ share/help/es/totem/troubleshooting-DVD.page
 share/help/es/totem/troubleshooting-debug.page
 share/help/es/totem/troubleshooting-subtitles.page
 share/help/es/totem/view-zoom.page
-share/help/eu/
 share/help/eu/totem/
 share/help/eu/totem/adjust-speed.page
 share/help/eu/totem/channels.page
@@ -348,7 +345,6 @@ share/help/eu/totem/troubleshooting-DVD.page
 share/help/eu/totem/troubleshooting-debug.page
 share/help/eu/totem/troubleshooting-subtitles.page
 share/help/eu/totem/view-zoom.page
-share/help/fi/
 share/help/fi/totem/
 share/help/fi/totem/adjust-speed.page
 share/help/fi/totem/channels.page
@@ -374,7 +370,6 @@ share/help/fi/totem/troubleshooting-DVD.page
 share/help/fi/totem/troubleshooting-debug.page
 share/help/fi/totem/troubleshooting-subtitles.page
 share/help/fi/totem/view-zoom.page
-share/help/fr/
 share/help/fr/totem/
 share/help/fr/totem/adjust-speed.page
 share/help/fr/totem/channels.page
@@ -400,7 +395,6 @@ share/help/fr/totem/troubleshooting-DVD.page
 share/help/fr/totem/troubleshooting-debug.page
 share/help/fr/totem/troubleshooting-subtitles.page
 share/help/fr/totem/view-zoom.page
-share/help/gl/
 share/help/gl/totem/
 share/help/gl/totem/adjust-speed.page
 share/help/gl/totem/channels.page
@@ -452,7 +446,6 @@ share/help/hr/totem/troubleshooting-DVD.page
 share/help/hr/totem/troubleshooting-debug.page
 share/help/hr/totem/troubleshooting-subtitles.page
 share/help/hr/totem/view-zoom.page
-share/help/hu/
 share/help/hu/totem/
 share/help/hu/totem/adjust-speed.page
 share/help/hu/totem/channels.page
@@ -582,7 +575,6 @@ share/help/nb/totem/troubleshooting-DVD.page
 share/help/nb/totem/troubleshooting-debug.page
 share/help/nb/totem/troubleshooting-subtitles.page
 share/help/nb/totem/view-zoom.page
-share/help/oc/
 share/help/oc/totem/
 share/help/oc/totem/adjust-speed.page
 share/help/oc/totem/channels.page
@@ -608,7 +600,6 @@ share/help/oc/totem/troubleshooting-DVD.page
 share/help/oc/totem/troubleshooting-debug.page
 share/help/oc/totem/troubleshooting-subtitles.page
 share/help/oc/totem/view-zoom.page
-share/help/pa/
 share/help/pa/totem/
 share/help/pa/totem/adjust-speed.page
 share/help/pa/totem/channels.page
@@ -736,7 +727,6 @@ share/help/ru/totem/troubleshooting-DVD.page
 share/help/ru/totem/troubleshooting-debug.page
 share/help/ru/totem/troubleshooting-subtitles.page
 share/help/ru/totem/view-zoom.page
-share/help/sl/
 share/help/sl/totem/
 share/help/sl/totem/adjust-speed.page
 share/help/sl/totem/channels.page
@@ -813,7 +803,6 @@ share/help/te/totem/troubleshooting-DVD.page
 share/help/te/totem/troubleshooting-debug.page
 share/help/te/totem/troubleshooting-subtitles.page
 share/help/te/totem/view-zoom.page
-share/help/uk/
 share/help/uk/totem/
 share/help/uk/totem/adjust-speed.page
 share/help/uk/totem/channels.page
@@ -839,7 +828,6 @@ share/help/uk/totem/troubleshooting-DVD.page
 share/help/uk/totem/troubleshooting-debug.page
 share/help/uk/totem/troubleshooting-subtitles.page
 share/help/uk/totem/view-zoom.page
-share/help/zh_CN/
 share/help/zh_CN/totem/
 share/help/zh_CN/totem/adjust-speed.page
 share/help/zh_CN/totem/channels.page
