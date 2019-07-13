@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/29 13:49:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/13 20:36:30 thfr Exp $
 
 COMMENT=	validating DNS resolver library
 
 DISTNAME=	unbound-1.9.2
 PKGNAME=	lib${DISTNAME}
+REVISION=	0
 
 SHARED_LIBS +=  unbound              4.1      # 9.0
 
@@ -16,7 +17,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += crypto event ssl
+WANTLIB += crypto event pthread ssl
 
 MASTER_SITES=	https://www.unbound.net/downloads/
 
@@ -30,7 +31,7 @@ CONFIGURE_ARGS+= \
 		--with-ssl=/usr \
 		--with-libevent=/usr \
 		--with-libexpat=/usr \
-		--without-pthreads \
+		--with-pthreads \
 		--without-pythonmodule \
 		--with-chroot-dir=/var/unbound \
 		--with-pidfile="" \
