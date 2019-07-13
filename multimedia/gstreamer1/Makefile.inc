@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.57 2019/05/20 22:15:17 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.58 2019/07/13 20:32:35 naddy Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -30,9 +30,7 @@ MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 GST_PKGNAME_PREFIX=	gstreamer1
 
 # GPLv2 - GPLv2+ - LGPLv2
-PERMIT_PACKAGE_CDROM ?=	Yes
-PERMIT_PACKAGE_FTP ?=	Yes
-PERMIT_DISTFILES_FTP ?=	Yes
+PERMIT_PACKAGE ?=	Yes
 
 DIST_SUBDIR=		gstreamer
 MASTER_SITE_GST=	http://gstreamer.freedesktop.org/src/

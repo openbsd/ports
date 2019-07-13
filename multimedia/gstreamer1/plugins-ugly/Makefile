@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2019/04/21 08:50:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/13 20:32:36 naddy Exp $
 
 COMMENT=		ugly elements for GStreamer
 
 DISTNAME=		gst-plugins-ugly-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-ugly-${V}
-
-PERMIT_PACKAGE_CDROM=	patents
 
 WANTLIB += a52 cdio dvdread gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0

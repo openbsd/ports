@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2018/10/24 14:28:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2019/07/13 20:32:35 naddy Exp $
 
 COMMENT-main=		ugly elements for GStreamer
 COMMENT-sidplay=	sidplay element for GStreamer (plugins-ugly)
@@ -15,8 +15,6 @@ PKGNAME-lame=		gstreamer-lame-${V}
 REVISION-main=		11
 REVISION-sidplay=	8
 REVISION-lame=		8
-
-PERMIT_PACKAGE_CDROM=	Patent issues
 
 MULTI_PACKAGES=		-main -sidplay -lame
 
