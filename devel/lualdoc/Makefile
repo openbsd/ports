@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/04/24 16:26:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/13 22:12:09 naddy Exp $
 
 COMMENT =	LuaDoc-compatible documentation generation system
 
@@ -12,7 +12,7 @@ REVISION =	0
 HOMEPAGE =	http://stevedonovan.github.io/ldoc/
 
 # MIT
-PERMIT_PACKAGE_CDROM =Yes
+PERMIT_PACKAGE =Yes
 
 MODULES =	lang/lua
 

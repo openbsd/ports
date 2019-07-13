@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/03/16 13:38:58 jsing Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/13 22:12:08 naddy Exp $
 
 COMMENT =	Go package for low-level operating system interaction
 DISTNAME =	go-sys-20190226
@@ -12,7 +12,7 @@ HOMEPAGE =	https://godoc.org/golang.org/x/sys
 MAINTAINER =	Joel Sing <jsing@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM =Yes
+PERMIT_PACKAGE =Yes
 
 WANTLIB =	c pthread
 

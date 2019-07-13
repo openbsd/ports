@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/12/08 12:19:41 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/13 22:12:09 naddy Exp $
 
 COMMENT =	Perl bindings for GNU Libidn
 
@@ -9,7 +9,7 @@ REVISION =	1
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # Artistic
-PERMIT_PACKAGE_CDROM =Yes
+PERMIT_PACKAGE =Yes
 
 WANTLIB += c idn perl
 

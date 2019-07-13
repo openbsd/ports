@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/24 16:26:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/13 22:12:09 naddy Exp $
 
 COMMENT =	Go supplementary network libraries
 DISTNAME =	go-net-20190226
@@ -11,7 +11,7 @@ REVISION =	0
 HOMEPAGE =	https://godoc.org/golang.org/x/net/
 
 # BSD
-PERMIT_PACKAGE_CDROM =Yes
+PERMIT_PACKAGE =Yes
 
 WANTLIB =	c pthread
 
