@@ -1,36 +1,26 @@
-# $OpenBSD: Makefile,v 1.74 2019/07/07 11:20:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2019/07/13 11:38:18 ajacoutot Exp $
 
 COMMENT=		binary editor
 
 GNOME_PROJECT=		ghex
-GNOME_VERSION=		3.18.3
-REVISION=		4
+GNOME_VERSION=		3.18.4
 
-SHARED_LIBS +=  gtkhex-3                  0.0 # 0.0
+SHARED_LIBS += gtkhex-3                  0.0 # 0.0.0
 
 CATEGORIES=		sysutils editors
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo
-WANTLIB += cairo-gobject dbus-1 epoxy expat ffi fontconfig freetype
-WANTLIB += fribidi gailutil-3 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm z
+WANTLIB += atk-1.0 c cairo gailutil-3 gdk-3 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gtk-3 intl pango-1.0 pangocairo-1.0
 
 MODULES=		devel/dconf \
+			devel/meson \
 			x11/gnome
 
 LIB_DEPENDS=		x11/gtk+3
 
 MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache yelp
-
-CONFIGURE_STYLE=	gnu
-
-# fix build with clang
-CFLAGS +=		-Wno-error=format-nonliteral 
 
 .include <bsd.port.mk>

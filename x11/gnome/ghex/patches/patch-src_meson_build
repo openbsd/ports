@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_meson_build,v 1.1 2019/07/13 11:38:18 ajacoutot Exp $
+
+XXX fix and push upstream (ifndef OpenBSD)
+Undefined references to libc functions.
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -23,9 +23,7 @@ libghex_c_args = [
+   '-DG_LOG_DOMAIN="libgtkhex-3"'
+ ]
+ 
+-libghex_link_args = [
+-  '-Wl,--no-undefined'
+-]
++libghex_link_args = []
+ 
+ install_headers(
+   libghex_headers,
