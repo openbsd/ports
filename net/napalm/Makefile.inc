@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2018/02/17 14:09:19 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/07/13 10:59:27 sthen Exp $
 
 CATEGORIES +=		net net/napalm
 
@@ -9,4 +9,4 @@ MODPY_PI ?=		Yes
 MODPY_SETUPTOOLS ?=	Yes
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM ?=	Yes
+PERMIT_PACKAGE ?=	Yes

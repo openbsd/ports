@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.24 2016/04/25 09:35:19 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.25 2019/07/13 10:59:26 sthen Exp $
 
 DIST_SUBDIR=		clutter
 
@@ -10,7 +10,7 @@ MAINTAINER?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1 - MIT
-PERMIT_PACKAGE_CDROM?=  Yes
+PERMIT_PACKAGE ?=  Yes
 
 MODULES +=		x11/gnome
 

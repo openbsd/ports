@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.11 2018/04/28 14:57:32 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2019/07/13 10:59:27 sthen Exp $
 
 CATEGORIES ?=		textproc x11
 MASTER_SITES ?=		https://pwmt.org/projects/zathura/plugins/download/
 EXTRACT_SUFX ?=		.tar.xz
 
 # MIT
-PERMIT_PACKAGE_CDROM ?=	Yes
+PERMIT_PACKAGE ?=	Yes
 
 RUN_DEPENDS ?=	devel/desktop-file-utils \
 		textproc/zathura/core

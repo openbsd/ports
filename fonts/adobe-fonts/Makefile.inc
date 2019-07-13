@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2017/11/16 03:33:09 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2019/07/13 10:59:26 sthen Exp $
 
 PKG_ARCH ?=	*
 CATEGORIES +=	fonts fonts/adobe-fonts x11
@@ -11,7 +11,7 @@ PKGNAME ?=	adobe-${GH_PROJECT}-${VERSION}
 HOMEPAGE ?=	http://adobe-fonts.github.io/${GH_PROJECT}/
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM ?=		Yes
+PERMIT_PACKAGE ?=	Yes
 
 DIST_SUBDIR ?=	adobe-fonts
 

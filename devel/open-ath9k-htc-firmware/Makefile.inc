@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2017/11/06 13:50:39 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/07/13 10:59:26 sthen Exp $
 
 PKGNAME ?=	open-ath9k-htc-firmware-${ATH9K_FIRMWARE}-1.4.0pl20171105
 DISTNAME ?=	${GH_PROJECT}-${GH_COMMIT}
@@ -10,7 +10,7 @@ GH_COMMIT ?=	d19607454d656cb14d8c16dfbf161eebb542e8fe
 CATEGORIES =	devel
 
 # ISC/MIT/BSD, but with GPLv2 components
-PERMIT_PACKAGE_CDROM ?=	Yes
+PERMIT_PACKAGE ?=	Yes
 
 MODULES ?=		devel/cmake
 BUILD_DEPENDS ?=	devel/xtensa-elf/gcc

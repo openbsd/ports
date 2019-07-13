@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.19 2019/01/20 11:17:30 edd Exp $
+# $OpenBSD: Makefile.inc,v 1.20 2019/07/13 10:59:27 sthen Exp $
 
 CATEGORIES ?=	print
 HOMEPAGE ?=	http://tug.org/texlive/
 MAINTAINER ?=	Edd Barrett <edd@openbsd.org>
 
 # http://tug.org/texlive/LICENSE.TL
-PERMIT_PACKAGE_CDROM ?=		Yes
-PERMIT_PACKAGE_FTP ?=		Yes
-PERMIT_DISTFILES_FTP ?=		Yes
+PERMIT_PACKAGE ?=	Yes
 
 EXTRACT_SUFX ?=		.tar.xz
 

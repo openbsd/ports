@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.3 2013/04/23 06:52:59 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2019/07/13 10:59:26 sthen Exp $
 
 CATEGORIES ?=		devel
 
 HOMEPAGE ?=		http://rspec.info/
 
 # MIT
-PERMIT_PACKAGE_CDROM ?=	Yes
+PERMIT_PACKAGE ?=	Yes
 
 MODULES ?=		lang/ruby
 

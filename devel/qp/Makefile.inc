@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2018/03/30 04:47:59 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/07/13 10:59:26 sthen Exp $
 
 COMMENT ?=	active object framework
 
@@ -11,7 +11,7 @@ CATEGORIES ?=	devel
 HOMEPAGE ?=	https://www.state-machine.com/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM ?=	Yes
+PERMIT_PACKAGE ?=	Yes
 
 MASTER_SITES ?=		${MASTER_SITE_SOURCEFORGE:=qpc/}
 

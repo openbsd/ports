@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2019/03/26 16:46:59 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/07/13 10:59:27 sthen Exp $
 
 M17N_V =	1.8.0
 
@@ -8,7 +8,7 @@ HOMEPAGE ?=	https://www.nongnu.org/m17n/
 MAINTAINER ?=	Eric Brown <brown@fastmail.com>
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM ?=	Yes
+PERMIT_PACKAGE ?=	Yes
 
 MASTER_SITES ?=	${MASTER_SITE_SAVANNAH:=m17n/}
 

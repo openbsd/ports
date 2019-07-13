@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.27 2015/11/22 08:18:56 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.28 2019/07/13 10:59:26 sthen Exp $
 
 #
 # XXX: Don't forget to adjust meta/msp430 when updating to new LTS
@@ -34,9 +34,7 @@ HOMEPAGE?=		http://mspgcc.sourceforge.net/
 
 # binutils/gcc/gdb: GPLv3
 # libc/msp430mcu: BSD3/ISC
-PERMIT_PACKAGE_CDROM?=   Yes
-PERMIT_PACKAGE_FTP?=     Yes
-PERMIT_DISTFILES_FTP?=   Yes
+PERMIT_PACKAGE?=   Yes
 
 MASTER_SITES?=		${MASTER_SITE_SOURCEFORGE:=mspgcc/}
 

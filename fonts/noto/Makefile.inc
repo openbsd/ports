@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2019/05/10 04:14:13 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2019/07/13 10:59:26 sthen Exp $
 
 DISTNAME ?=		noto-${NOTO_PROJECT}-${V:S/-//g}
 
@@ -7,7 +7,7 @@ CATEGORIES ?=		fonts
 HOMEPAGE ?=		https://www.google.com/get/noto/
 
 # SIL OFL 1.1
-PERMIT_PACKAGE_CDROM ?=	Yes
+PERMIT_PACKAGE ?=	Yes
 
 MAINTAINER ?=		Anthony J. Bentley <anthony@anjbe.name>
 

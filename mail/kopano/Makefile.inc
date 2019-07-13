@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.24 2019/06/29 18:12:10 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.25 2019/07/13 10:59:26 sthen Exp $
 
 V?=		8.7.81
 BUILD?=		203
@@ -12,9 +12,7 @@ HOMEPAGE?=	https://kopano.io/
 MAINTAINER?=	Robert Nagy <robert@openbsd.org>
 
 # AGPLv3 (GNU Affero Public License) with exceptions
-PERMIT_PACKAGE_CDROM?=	Yes
-PERMIT_PACKAGE_FTP?=	Yes
-PERMIT_DISTFILES_FTP?=	Yes
+PERMIT_PACKAGE?=	Yes
 
 DIST_SUBDIR?=	kopano
 MASTER_SITES?=	http://nerd.hu/distfiles/ \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2018/11/05 21:55:41 edd Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2019/07/13 10:59:26 sthen Exp $
 
 # Arches suggested by upstream, unsure which work on OpenBSD for sure.
 ONLY_FOR_ARCHS ?=	amd64 i386
@@ -11,11 +11,9 @@ HOMEPAGE ?=		http://www.radare.org/r/
 MAINTAINER ?=		Edd Barrett <edd@openbsd.org>
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM ?=		Yes
-PERMIT_PACKAGE_FTP ?=		Yes
-PERMIT_DISTFILES_FTP ?=		Yes
+PERMIT_PACKAGE ?=	Yes
 
-GH_ACCOUNT =        	radare
+GH_ACCOUNT =		radare
 
 USE_GMAKE ?=		Yes
 CONFIGURE_STYLE ?=	simple

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2017/12/07 13:12:44 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2019/07/13 10:59:27 sthen Exp $
 
 # Check individual packages for overrides when bumping this!
 PKGNAMEBASE=	${DISTNAME:C/aspell[0-9]/aspell/}
@@ -13,9 +13,7 @@ EXTRACT_SUFX?=	.tar.bz2
 HOMEPAGE?=	http://aspell.sourceforge.net/
 
 # GPLv2 - LGPLv2 - FDL - CC ShareAlike
-PERMIT_DISTFILES_FTP?=	Yes
-PERMIT_PACKAGE_CDROM?=	Yes
-PERMIT_PACKAGE_FTP?=	Yes
+PERMIT_PACKAGE?=	Yes
 
 NO_TEST?=	Yes
 

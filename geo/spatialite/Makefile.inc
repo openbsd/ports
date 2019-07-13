@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.5 2019/04/16 20:13:09 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2019/07/13 10:59:26 sthen Exp $
 
 CATEGORIES ?=	geo
 
 # MPL/1.1 GPLv2.0+ LGPLv2.1+
-PERMIT_PACKAGE_CDROM ?=	Yes
+PERMIT_PACKAGE ?=	Yes
 
 HOMEPAGE ?=	https://www.gaia-gis.it/fossil/${PROJECT}/index
 MASTER_SITES ?=	https://www.gaia-gis.it/gaia-sins/

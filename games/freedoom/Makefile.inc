@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2017/11/15 08:52:59 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/07/13 10:59:26 sthen Exp $
 
 COMMENT =	free content game based on the Doom engine
 
@@ -10,7 +10,7 @@ CATEGORIES ?=	games
 HOMEPAGE ?=	https://freedoom.github.io/
 
 # BSD 3-clause
-PERMIT_PACKAGE_CDROM ?=	Yes
+PERMIT_PACKAGE ?=	Yes
 
 #WANTLIB =		???
 

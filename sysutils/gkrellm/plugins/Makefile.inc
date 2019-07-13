@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.34 2017/09/15 15:37:17 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.35 2019/07/13 10:59:27 sthen Exp $
 
 CATEGORIES +=		sysutils
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM?=	Yes
+PERMIT_PACKAGE?=	Yes
 
 .if ! defined(WANTLIB)
 LIB_DEPENDS +=		x11/gtk+2

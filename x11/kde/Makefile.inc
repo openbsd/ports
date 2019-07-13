@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile.inc,v 1.48 2016/03/16 21:40:56 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.49 2019/07/13 10:59:27 sthen Exp $
+
 DIST_SUBDIR ?=	kde
 HOMEPAGE ?=	http://www.kde.org
 
@@ -30,12 +31,10 @@ CONFIGURE_ENV +=	${MODKDE_CONFIGURE_ENV}
 MAKE_ENV =		${CONFIGURE_ENV}
 
 MAKE_FLAGS +=		${MODKDE_MAKE_FLAGS}
-FAKE_FLAGS ?=		TAR=tar 
+FAKE_FLAGS ?=		TAR=tar
 FAKE_FLAGS +=		sysconfdir=${SAMPLECONFDIR}
 
 # GPL
-PERMIT_DISTFILES_FTP ?=		Yes
-PERMIT_PACKAGE_CDROM ?=		Yes
-PERMIT_PACKAGE_FTP ?=		Yes
+PERMIT_PACKAGE ?=	Yes
 
-MODKDE_LIB_LINKS =		Yes
+MODKDE_LIB_LINKS =	Yes

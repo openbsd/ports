@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2017/02/04 12:40:43 edd Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/07/13 10:59:26 sthen Exp $
 
 V ?=		1.0.3
 DISTNAME ?=	libmpack-${V}
@@ -11,7 +11,7 @@ CATEGORIES ?=	devel
 HOMEPAGE ?=	https://github.com/tarruda/libmpack
 
 # MIT
-PERMIT_PACKAGE_CDROM ?=	Yes
+PERMIT_PACKAGE ?=	Yes
 
 USE_GMAKE ?=		Yes
 

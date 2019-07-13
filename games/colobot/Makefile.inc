@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2018/09/25 08:53:04 bentley Exp $
-
+# $OpenBSD: Makefile.inc,v 1.2 2019/07/13 10:59:26 sthen Exp $
 
 V ?=			0.1.11.1
 
@@ -8,7 +7,7 @@ CATEGORIES ?=		games
 HOMEPAGE ?=		https://colobot.info/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM ?=	Yes
+PERMIT_PACKAGE ?=	Yes
 
 MAINTAINER ?=		Anthony J. Bentley <anthony@anjbe.name>
 

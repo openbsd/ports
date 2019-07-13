@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2013/03/11 12:24:02 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2019/07/13 10:59:27 sthen Exp $
 
 CATEGORIES ?=		net devel
 
@@ -7,7 +7,7 @@ HOMEPAGE ?=		http://gupnp.org/
 MAINTAINER?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2/LGPLv2.1
-PERMIT_PACKAGE_CDROM?= 	Yes
+PERMIT_PACKAGE?=	Yes
 
 EXTRACT_SUFX?=		.tar.xz
 

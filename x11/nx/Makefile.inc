@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2016/10/15 19:14:20 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2019/07/13 10:59:27 sthen Exp $
 
 CATEGORIES+=	x11
 
@@ -7,9 +7,7 @@ HOMEPAGE?=	http://www.nomachine.com/
 MAJOR_VERSION?=	3.5.0
 
 # GPLv2/LGPLv2
-PERMIT_PACKAGE_CDROM?=	Yes
-PERMIT_PACKAGE_FTP?=	Yes
-PERMIT_DISTFILES_FTP?=	Yes
+PERMIT_PACKAGE?=	Yes
 
 MASTER_SITES_NX=	http://code.x2go.org/releases/source/nx-libs/
 DIST_SUBDIR=		nx

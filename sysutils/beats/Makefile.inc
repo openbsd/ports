@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile.inc,v 1.10 2019/03/30 04:42:31 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2019/07/13 10:59:27 sthen Exp $
 
 PKGNAME ?=		${BEAT}-${VERSION}
 
 CATEGORIES +=		sysutils
 
 # Apachev2
-PERMIT_PACKAGE_CDROM ?=	Yes
+PERMIT_PACKAGE ?=	Yes
 
-MODULES +=	     	lang/go
+MODULES +=		lang/go
 
-ELASTIC_BEAT ?=	     	Yes
+ELASTIC_BEAT ?=		Yes
 
 MODGO_ENV =		PATH="${PORTPATH}" CFLAGS="${CFLAGS}"
 

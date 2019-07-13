@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2016/01/19 03:03:18 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2019/07/13 10:59:27 sthen Exp $
 
 COMMENT ?=		${LANG} language pack for apertium
 
@@ -11,7 +11,7 @@ HOMEPAGE ?=		https://www.apertium.org/
 MAINTAINER ?=		Anthony J. Bentley <anthony@anjbe.name>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM ?=	Yes
+PERMIT_PACKAGE ?=	Yes
 
 MASTER_SITES ?=		${MASTER_SITE_SOURCEFORGE:=apertium/}
 
