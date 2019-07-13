@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.79 2019/06/29 09:43:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.80 2019/07/13 08:38:31 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1071,6 +1071,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-default-subn
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-default-vpc.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-dhcp-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-egress-only-internet-gateway.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-fleet.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-flow-logs.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-fpga-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-image.rst
@@ -1092,6 +1093,12 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-snapshot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-spot-datafeed-subscription.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-subnet.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-tags.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-traffic-mirror-filter-rule.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-traffic-mirror-filter.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-traffic-mirror-target.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-transit-gateway-route-table.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-transit-gateway-vpc-attachment.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-transit-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-volume.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-vpc-endpoint-connection-notification.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-vpc-endpoint-service-configuration.rst
@@ -1193,6 +1200,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-spot-price
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-stale-security-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-subnets.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-tags.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-traffic-mirror-sessions.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-traffic-mirror-targets.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-transit-gateways.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-volume-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-volume-status.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-volumes.rst
@@ -1469,6 +1479,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/add-instance-fleet.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/add-steps.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/add-tags.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/create-cluster-examples.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/create-cluster-synopsis.txt
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/create-default-roles.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/create-security-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/delete-security-configuration.rst
@@ -1785,6 +1796,27 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-security-pro
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-thing-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-thing.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/validate-security-profile-behaviors.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/batch-put-message.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/batch-update-detector.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/create-detector-model.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/create-input.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/delete-detector-model.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/delete-input.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/describe-detector-model.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/describe-detector.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/describe-input.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/describe-logging-options.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/list-detector-model-versions.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/list-detector-models.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/list-detectors.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/list-inputs.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/list-tags-for-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/put-logging-options.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/tag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/untag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/update-detector-model.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/update-input.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotthingsgraph/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotthingsgraph/associate-entity-to-thing.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotthingsgraph/create-flow-template.rst
@@ -1825,6 +1857,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/create-alias.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/decrypt.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/encrypt.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/get-key-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/lightsail/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/lightsail/get-instance-metric-data.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/logs/
@@ -2376,6 +2409,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/textract/start-document
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf-regional/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf-regional/associate-web-acl.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf-regional/put-logging-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf-regional/update-byte-match-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf-regional/update-ip-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf-regional/update-rule.rst
@@ -2383,6 +2417,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf-regional/update-siz
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf-regional/update-sql-injection-match-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf-regional/update-web-acl.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf-regional/update-xss-match-set.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf/put-logging-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf/update-byte-match-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf/update-ip-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/waf/update-rule.rst
