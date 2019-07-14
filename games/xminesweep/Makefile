@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/14 00:39:37 naddy Exp $
 
 COMMENT=	Windows minesweeper
 
@@ -10,8 +10,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
 EXTRACT_SUFX=	.tar.Z
 
-PERMIT_PACKAGE_CDROM=	no fee
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c xcb
 

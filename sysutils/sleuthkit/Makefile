@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/23 11:01:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/14 00:39:40 naddy Exp $
 
 COMMENT=		forensic toolkit based on TCT
 
@@ -13,8 +13,7 @@ HOMEPAGE=		http://www.sleuthkit.org/
 MAINTAINER=		Nigel Taylor <nigel@openbsd.org>
 
 # CPLv1 & IBM & GPLv2
-PERMIT_PACKAGE_CDROM=	commercial contributor must indemnify all others
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES =		https://github.com/sleuthkit/sleuthkit/releases/download/${DISTNAME}/
 

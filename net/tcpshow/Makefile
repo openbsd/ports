@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2017/05/08 18:10:25 schwarze Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/14 00:39:38 naddy Exp $
 
 COMMENT=	decode tcpdump(1) output
 
@@ -11,8 +11,7 @@ DISTFILES=	tcpshow.c tcpshow.1
 
 EXTRACT_CASES=	*)cp ${FULLDISTDIR}/$$archive ${WRKDIST};;
 
-PERMIT_PACKAGE_CDROM=	no fee
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 WRKDIST=	${WRKDIR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/07/19 10:48:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/14 00:39:39 naddy Exp $
 
 COMMENT =		AT&T Korn Shell
 
@@ -14,8 +14,7 @@ HOMEPAGE =		http://www.kornshell.com/
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # EPL
-PERMIT_PACKAGE_CDROM =	commercial distribution defend and indemnify clauses
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m util
 

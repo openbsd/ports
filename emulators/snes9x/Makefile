@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/05/17 16:45:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2019/07/14 00:39:36 naddy Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 BROKEN-alpha =	ICE/failure on filter/hq2x.cpp
@@ -17,8 +17,7 @@ HOMEPAGE =	http://www.snes9x.com/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # non-commercial
-PERMIT_PACKAGE_CDROM =	non-commercial
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 X11 Xext Xrandr Xv atk-1.0
 WANTLIB += c cairo cairo-gobject epoxy gdk-3 gdk_pixbuf-2.0 gio-2.0

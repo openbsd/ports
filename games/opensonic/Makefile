@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/05/24 15:52:52 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/14 00:39:36 naddy Exp $
 
 COMMENT =		game based on the Sonic the Hedgehog universe
 
@@ -14,8 +14,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=opensnc/}
 #MASTER_SITES =		http://downloads.sourceforge.net/project/opensnc/Open%20Sonic/${V}/
 
 # GPLv2 or later
-PERMIT_PACKAGE_CDROM=	contains potentially copyrighted artwork
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES =		devel/cmake
 

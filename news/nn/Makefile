@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/05/17 16:19:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/14 00:39:38 naddy Exp $
 
 COMMENT =		menu-based Usenet newsreader
 DISTNAME =		nn-6.7.3
@@ -8,8 +8,7 @@ HOMEPAGE =		http://www.nndev.org
 
 # 4 point NN License a la BSD but with GPL Source Restriction and Freeware
 # Requirement
-PERMIT_PACKAGE_CDROM =	CDs not sold at cost
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses
 

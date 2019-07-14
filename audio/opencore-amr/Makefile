@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2018/04/05 11:53:44 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/14 00:39:35 naddy Exp $
 
 COMMENT=	implementation of the Adaptive Multi Rate speech codec
 
@@ -12,8 +12,7 @@ CATEGORIES=	audio
 HOMEPAGE=	http://opencore-amr.sourceforge.net/
 
 # Apache 2.0
-PERMIT_PACKAGE_CDROM=	http://www.voiceage.com/amr_licterms.php
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += m
 

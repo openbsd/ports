@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/17 16:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/14 00:39:36 naddy Exp $
 
 COMMENT=	The Dungeons of Moria
 
@@ -11,8 +11,7 @@ CATEGORIES=	games
 
 HOMEPAGE=	http://www-math.bgsu.edu/~grabine/moria.html
 
-PERMIT_PACKAGE_CDROM=	not-for-profit redistribution only
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses
 

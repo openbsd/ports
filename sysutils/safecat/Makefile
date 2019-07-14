@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:41:32 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/14 00:39:40 naddy Exp $
 
 COMMENT=	copy stdin to a qmail-style maildir
 
@@ -13,8 +13,7 @@ HOMEPAGE=	http://jeenyus.net/linux/software/safecat.html
 MAINTAINER=	Armin Wolfermann <armin@wolfermann.org>
 
 # BSD+DJB
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

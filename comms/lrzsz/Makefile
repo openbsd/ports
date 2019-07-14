@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/05/12 14:29:01 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/14 00:39:35 naddy Exp $
 
 COMMENT=	receive/send files via X/Y/ZMODEM protocol
 
@@ -10,8 +10,7 @@ HOMEPAGE=	http://www.ohse.de/uwe/software/lrzsz.html
 
 MASTER_SITES=	http://www.ohse.de/uwe/releases/
 
-PERMIT_PACKAGE_CDROM=	possible copyright issue with rzsz
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 SEPARATE_BUILD=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2018/10/17 14:15:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/14 00:39:40 naddy Exp $
 
 COMMENT=	simple and clean multi-user web file manager
 
@@ -12,8 +12,7 @@ HOMEPAGE=	http://www.mollify.org/
 
 # "For non-commercial use Mollify is available with EPL 1.0 license."
 # For commercial use, see http://www.mollify.org/license.php
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=mollify/}
 

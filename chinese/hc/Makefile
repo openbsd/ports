@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2018/05/12 14:01:17 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/14 00:39:35 naddy Exp $
 
 COMMENT=	convert between GB and BIG-5 codes
 
@@ -7,8 +7,7 @@ CATEGORIES=	chinese
 REVISION =	1
 
 # Fairly restrictive licence
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 

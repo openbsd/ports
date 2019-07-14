@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/11 00:38:34 kurt Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/14 00:39:35 naddy Exp $
 
 COMMENT =		online help system for java platform applications
 
@@ -19,8 +19,7 @@ MODJAVA_VER =		1.8+
 RUN_DEPENDS =		java/javaPathHelper
 
 # Sun Binary Code License
-PERMIT_PACKAGE_CDROM =	No
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		http://www.intricatesoftware.com/distfiles/
 

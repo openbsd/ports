@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/17 06:30:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/14 00:39:36 naddy Exp $
 
 COMMENT =	Sega Genesis core for retroarch
 
@@ -13,8 +13,7 @@ CATEGORIES =	emulators
 HOMEPAGE =	https://bitbucket.org/eke/genesis-plus-gx
 
 # Noncommercial redistribution and modification explicitly allowed: LICENSE.txt
-PERMIT_PACKAGE_CDROM =	Noncommercial
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += m
 

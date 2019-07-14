@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2018/11/02 23:37:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.50 2019/07/14 00:39:38 naddy Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
@@ -17,8 +17,7 @@ HOMEPAGE=	https://www.videolan.org/developers/x264.html
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	patents
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m pthread
 

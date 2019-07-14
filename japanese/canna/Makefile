@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2018/04/16 09:53:28 bentley Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/14 00:39:37 naddy Exp $
 
 COMMENT-main= 	canna (kana-kanji converter) libraries
 COMMENT-dict=	canna (kana-kanji converter) dictionaries
@@ -32,8 +32,7 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 HOMEPAGE =	http://www.nec.co.jp/canna/
 
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_PACKAGE_CDROM=	No Fee
+PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES=-main -dict -server
 

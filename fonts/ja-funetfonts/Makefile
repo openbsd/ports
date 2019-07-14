@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2015/03/31 09:45:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/14 00:39:36 naddy Exp $
 
 COMMENT=	extra japanese fonts, marumoji
 
@@ -27,8 +27,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	No fee
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE=	imake
 

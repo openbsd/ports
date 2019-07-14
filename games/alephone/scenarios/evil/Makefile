@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.3 2013/03/11 11:07:37 espie Exp $
+#	$OpenBSD: Makefile,v 1.4 2019/07/14 00:39:36 naddy Exp $
 PKG_ARCH =		*
 
 COMMENT =		everyone was wrong. monsters do exist.
@@ -10,8 +10,7 @@ DISTFILES =		MarathonEvil.zip:5
 
 ## You may, however, freely distribute this adventure as a whole, unaltered,
 ## adventure to anyone and any place.
-PERMIT_PACKAGE_CDROM =	not for sale
-PERMIT_PACKAGE_FTP =	YES
+PERMIT_PACKAGE =	YES
 
 INSTALL_LOC =		${PREFIX}/share/alephone
 INSTALL_EVIL =		${INSTALL_LOC}/MarathonEVIL

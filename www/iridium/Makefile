@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2019/06/25 20:25:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2019/07/14 00:39:40 naddy Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -30,8 +30,7 @@ FLAVORS=		debug component
 FLAVOR?=
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	patents
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES=		https://downloads.iridiumbrowser.de/source/ \
 			http://nerd.hu/distfiles/

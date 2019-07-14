@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2016/03/16 20:15:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/14 00:39:37 naddy Exp $
 
 COMMENT=	UCB's MPEG-I video stream encoder
 
@@ -8,8 +8,7 @@ REVISION=	1
 CATEGORIES=	graphics
 
 # BSD
-PERMIT_PACKAGE_CDROM=   patents
-PERMIT_PACKAGE_FTP=     Yes
+PERMIT_PACKAGE=     Yes
 WANTLIB=		c m jpeg>=62
 
 MASTER_SITES=	http://bmrc.berkeley.edu/ftp/pub/multimedia/mpeg/encode/

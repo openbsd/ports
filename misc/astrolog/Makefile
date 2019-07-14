@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/10/23 17:10:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/14 00:39:38 naddy Exp $
 
 COMMENT=	astrology program for X11 and alpha-numeric terminals
 
@@ -18,8 +18,7 @@ EXTRACT_ONLY=	${DISTNAME}.shr
 EPHEM=		LRZ5_24 CHI_24 CPJV_24
 DISTFILES=	${EXTRACT_ONLY} ${EPHEM}
 
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 c m xcb
 

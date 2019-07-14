@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/05/01 03:51:17 kmos Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/14 00:39:35 naddy Exp $
 
 COMMENT=	descramble scrambled DVDs
 
@@ -14,8 +14,7 @@ SHARED_LIBS=	dvdcss	4.1
 HOMEPAGE=	https://www.videolan.org/developers/libdvdcss.html
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Free speech issue
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-doc

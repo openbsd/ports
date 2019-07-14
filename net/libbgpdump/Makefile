@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2018/11/28 22:09:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/14 00:39:38 naddy Exp $
 
 COMMENT=	library to analyze MRT-format BGP dump files
 
@@ -12,8 +12,7 @@ CATEGORIES=	net
 HOMEPAGE=	https://bitbucket.org/ripencc/bgpdump/wiki/Home
 
 # License_NCC: "for any purpose and without fee".
-PERMIT_PACKAGE_CDROM=	without fee
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://ris.ripe.net/source/bgpdump/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/05/07 21:41:51 stu Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/14 00:39:40 naddy Exp $
 
 COMMENT=	text search engine
 
@@ -7,8 +7,7 @@ REVISION=	6
 CATEGORIES=	textproc databases
 HOMEPAGE=	http://webglimpse.net/
 
-PERMIT_PACKAGE_CDROM=	no fee
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c 
 

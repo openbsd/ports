@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/01/06 21:26:03 thfr Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/14 00:39:37 naddy Exp $
 
 COMMENT =	roguelite dungeon crawler game
 
@@ -12,8 +12,7 @@ CATEGORIES =	games x11
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # GPLv3, Music is CC-BY-NC-SA, fonts are SIL Open Font License
-PERMIT_PACKAGE_CDROM =	Non-commercial
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
 WANTLIB += sfml-audio sfml-graphics sfml-system sfml-window

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/14 00:39:35 naddy Exp $
 
 COMMENT=	fast compression for waveform files
 
@@ -8,8 +8,7 @@ HOMEPAGE=	http://www.etree.org/shnutils/shorten/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	no fee
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m
 

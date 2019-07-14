@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/05/15 11:05:43 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/14 00:39:35 naddy Exp $
 
 COMMENT=	encode/decode binary to printable ASCII
 
@@ -7,8 +7,7 @@ PKGNAME=	btoa-5.2.1
 CATEGORIES=	converters
 REVISION =	0
 
-PERMIT_PACKAGE_CDROM=	no fee
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	http://www.netsw.org/system/tools/fileutils/encode/

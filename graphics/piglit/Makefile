@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/17 16:45:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/14 00:39:37 naddy Exp $
 
 COMMENT =	automated OpenGL and OpenCL testsuite
 ONLY_FOR_ARCHS =	amd64 i386
@@ -15,8 +15,7 @@ CATEGORIES =	graphics
 # 3Dlabs: redistribution and use permitted, no comment on selling
 # Intel CUSTOM LICENSE - no limitation to use, distribute, or sell
 # MIT GPLv2+ GPLv3 LGPL20
-PERMIT_PACKAGE_CDROM =	No comment on selling by 3Dlabs license
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL X11 Xrender c drm drm_intel gbm
 WANTLIB += m xcb xcb-dri2 z

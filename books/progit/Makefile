@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/01/08 06:35:43 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/14 00:39:35 naddy Exp $
 
 COMMENT =	book on version control with Git
 
@@ -14,8 +14,7 @@ HOMEPAGE =	https://git-scm.com/book/en/v2
 MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # CC-BY-NC-SA 3.0
-PERMIT_PACKAGE_CDROM =	non-commercial
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://github.com/progit/progit2/releases/download/$V/
 EXTRACT_SUFX =		.pdf

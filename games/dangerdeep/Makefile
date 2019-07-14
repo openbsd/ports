@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/01/18 14:41:05 cwen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/14 00:39:36 naddy Exp $
 
 COMMENT =		WWII German submarine simulator
 
@@ -12,8 +12,7 @@ HOMEPAGE =		http://dangerdeep.sourceforge.net/
 # Code GPLv2+
 # Graphics CC BY-NC-ND 2.5
 # Music CC BY-NC-ND 2.0
-PERMIT_PACKAGE_CDROM =	Noncommercial
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU SDL SDL_image SDL_mixer bz2 c fftw3f m ${COMPILER_LIBCXX}
 WANTLIB += pthread

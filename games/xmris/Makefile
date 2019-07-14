@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/14 00:39:37 naddy Exp $
 
 COMMENT=	Mr Do video arcade game for X11
 
@@ -11,8 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
 EXTRACT_SUFX=	.tgz
 
-PERMIT_PACKAGE_CDROM=	no fee
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xt c m xcb
 

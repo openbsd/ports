@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.225 2019/05/21 15:39:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.226 2019/07/14 00:39:40 naddy Exp $
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
@@ -20,8 +20,7 @@ HOMEPAGE=	https://www.videolan.org/vlc/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # LGPLv2.1+ and GPLv2+
-PERMIT_PACKAGE_CDROM=	patents
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB-common=	c dbus-1 iconv idn intl m pthread
 WANTLIB-main=	EGL GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 \

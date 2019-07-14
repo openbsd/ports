@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/14 00:39:37 naddy Exp $
 
 COMMENT =		identify control points from groups of overlapping images
 
@@ -11,8 +11,7 @@ CATEGORIES =		graphics
 HOMEPAGE =		http://hugin.sourceforge.net/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	US patent, see README
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c jpeg m pano13 png pthread ${COMPILER_LIBCXX} tiff xml2 z
 

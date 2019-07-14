@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2017/12/04 17:56:27 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2019/07/14 00:39:39 naddy Exp $
 
 COMMENT=	Pretty Good Privacy 5.0i (world wide use)
 
@@ -11,8 +11,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 MASTER_SITES=	https://spacehopper.org/mirrors/
 
 # see apps/common/pgpLicense.c
-PERMIT_PACKAGE_CDROM=	no commercial use
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/10 01:57:35 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/14 00:39:36 naddy Exp $
 
 COMMENT =	Jagged Alliance 2 engine
 
@@ -12,8 +12,7 @@ CATEGORIES =	games
 HOMEPAGE =	http://ja2-stracciatella.github.io/
 
 # SFI-SCLA / public domain
-PERMIT_PACKAGE_CDROM =	No commercial use allowed by SFI-SCLA
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	boost_filesystem boost_system c m pthread SDL ${COMPILER_LIBCXX}
 

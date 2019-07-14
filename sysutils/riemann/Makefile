@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/06/11 00:38:36 kurt Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/14 00:39:40 naddy Exp $
 
 COMMENT =	network event stream processing system
 
@@ -12,8 +12,7 @@ HOMEPAGE =	http://riemann.io
 MAINTAINER =	Pavel Korovin <pvk@openbsd.org>
 
 # Eclipse Public License Version 1.0 (http://www.eclipse.org/legal/epl-v10.html)
-PERMIT_PACKAGE_CDROM =	commercial distribution defend and indemnify clauses
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://github.com/riemann/riemann/releases/download/${V}/
 

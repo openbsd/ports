@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/06/07 01:07:06 schwarze Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/14 00:39:38 naddy Exp $
 
 COMMENT=	Cubic Circle's POP3 daemon
 
@@ -12,8 +12,7 @@ MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
 PATCHFILES=	cucipop-1.31-v6-20010223.diff.gz:0
 PATCH_DIST_STRIP= -p1
 
-PERMIT_PACKAGE_CDROM=	no fee
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -DINET6" LDFLAGS="" MD5_OBJ=""

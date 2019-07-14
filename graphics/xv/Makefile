@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2018/06/30 11:41:36 landry Exp $
+# $OpenBSD: Makefile,v 1.54 2019/07/14 00:39:37 naddy Exp $
 
 COMMENT=	X11 image display and modification tool
 
@@ -13,8 +13,7 @@ DIST_SUBDIR=	xv
 
 HOMEPAGE=	http://www.trilon.com/xv/index.html
 
-PERMIT_PACKAGE_CDROM=	Must buy license
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/jasper \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/14 00:39:38 naddy Exp $
 
 COMMENT =		BD+ support library for Blu-ray playback
 
@@ -14,8 +14,7 @@ MASTER_SITES =		https://download.videolan.org/pub/videolan/libbdplus/${V}/ \
 EXTRACT_SUFX =		.tar.bz2
 
 # LGPL v2.1
-PERMIT_PACKAGE_CDROM =	Free speech issue
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  gcrypt gpg-error iconv intl pthread
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2018/08/10 10:19:18 espie Exp $
+# $OpenBSD: Makefile,v 1.61 2019/07/14 00:39:35 naddy Exp $
 
 # gcc -iquote
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -19,8 +19,7 @@ SHARED_LIBS=	faad	3.0 \
 HOMEPAGE=	http://www.audiocoding.com/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Patents
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m
 

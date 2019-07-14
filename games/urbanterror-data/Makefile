@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/07/03 14:49:18 bcallah Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/14 00:39:37 naddy Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
@@ -17,8 +17,7 @@ MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
 # Explicit permission to redistribute unmodified data files online as distfile
 # or package.
-PERMIT_PACKAGE_CDROM =  May not be redistributed on physical media
-PERMIT_PACKAGE_FTP =    Yes
+PERMIT_PACKAGE =    Yes
 
 MASTER_SITES =	http://cdn.urbanterror.info/urt/${URT_VER}/releases/zips/
 

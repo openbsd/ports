@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/14 00:39:37 naddy Exp $
 
 COMMENT=	concurrent multi-player battle strategy game
 
@@ -9,8 +9,7 @@ CATEGORIES=	games
 
 MASTER_SITES=	ftp://cns-ftp.bu.edu/pub/xbattle/
 
-PERMIT_PACKAGE_CDROM=	no fee
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c m xcb
 

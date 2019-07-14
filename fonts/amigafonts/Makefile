@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/09/22 12:57:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/14 00:39:36 naddy Exp $
 
 COMMENT =	faithfully remade Amiga fonts
 
@@ -14,8 +14,7 @@ HOMEPAGE =	https://www.trueschool.se/html/fonts.html
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # CC BY-NC-SA 3.0
-PERMIT_PACKAGE_CDROM =	Non-commercial
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

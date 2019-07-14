@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/26 10:02:13 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/14 00:39:39 naddy Exp $
 
 COMMENT=	convert Big5 encoded files to PDF
 
@@ -7,8 +7,7 @@ REVISION=	13
 CATEGORIES=	fonts chinese print
 
 # GPL + Aladdin license
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	pdf z
 

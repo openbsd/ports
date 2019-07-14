@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/18 00:20:59 pvk Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/14 00:39:39 naddy Exp $
 
 COMMENT =	Really Awesome New Cisco confIg Differ
 
@@ -11,8 +11,7 @@ HOMEPAGE =	https://www.shrubbery.net/rancid/
 MAINTAINER =	Pavel Korovin <pvk@openbsd.org>
 
 # Custom
-PERMIT_PACKAGE_CDROM =	not for commercial use
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c util
 

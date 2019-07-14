@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/24 16:26:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/14 00:39:40 naddy Exp $
 
 COMMENT =		convert Microsoft Reader files to OEBPS packages
 V =			1.8
@@ -10,8 +10,7 @@ CATEGORIES =		textproc converters print
 HOMEPAGE =		http://www.convertlit.com/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	drm (see http://www.convertlit.com/legal.php)
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 

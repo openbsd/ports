@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2018/11/18 21:09:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/14 00:39:39 naddy Exp $
 
 COMMENT =	extremely fast password cracker, with community patches
 BROKEN-alpha =	DES_bs.c:173: internal compiler error: in get_callee_fndecl, at tree.c:5940
@@ -16,8 +16,7 @@ CATEGORIES =	security
 HOMEPAGE =	http://www.openwall.com/john/
 
 # files from various authors; see license review txt file
-PERMIT_PACKAGE_CDROM =	see doc/john-1.7.9-jumbo-7-licensing.txt
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto m nspr4 nss3 pcap plc4 plds4 pthread smime3
 WANTLIB += nssutil3 sqlite3 ssl ssl3 z

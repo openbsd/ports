@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2019/05/23 09:37:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/14 00:39:35 naddy Exp $
 
 COMMENT=	full screen simple editor
 
@@ -10,8 +10,7 @@ REVISION=	2
 HOMEPAGE=	http://uemacs.tripod.com/
 
 # see doc/readme
-PERMIT_PACKAGE_CDROM=	can be copied and distributed freely for any non-commercial purposes
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses
 

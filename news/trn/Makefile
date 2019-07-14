@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2014/09/02 19:17:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/14 00:39:38 naddy Exp $
 
 COMMENT=	threaded newsreader
 
@@ -11,10 +11,9 @@ DISTNAME=	trn-4.0-test$V
 PKGNAME=	trn-4.0.$V
 REVISION=	2
 
-PERMIT_PACKAGE_FTP=Yes
+PERMIT_PACKAGE=Yes
 # Technically, we could put trn on CD-Rom, provided we include the distfile
 # as well...
-PERMIT_PACKAGE_CDROM=No
 
 WANTLIB=c curses m
 

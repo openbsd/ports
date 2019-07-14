@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/05/20 22:15:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/14 00:39:37 naddy Exp $
 
 COMMENT=	shoot them nasty little bugs
 
@@ -6,8 +6,7 @@ DISTNAME=	xinvaders-2.1.1
 REVISION=	2
 CATEGORIES=	games
 
-PERMIT_PACKAGE_CDROM=	no fee
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xaw Xmu Xt c iconv intl
 

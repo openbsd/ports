@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2019/05/08 14:45:23 ian Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/14 00:39:38 naddy Exp $
 
 COMMENT=compile Java source into .class files (quickly!)
 
@@ -14,8 +14,7 @@ EXTRACT_SUFX=	.tar.bz2
 MAINTAINER=	Yozo TODA <yozo@v007.vaio.ne.jp>
 
 # IBM Public License
-PERMIT_PACKAGE_CDROM=	commercial contributor must indemnify all others
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c iconv m ${COMPILER_LIBCXX}
 

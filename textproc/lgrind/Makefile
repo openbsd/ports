@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/07/01 09:02:41 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/14 00:39:40 naddy Exp $
 
 COMMENT=	LaTeX vgrind(1) look-alike
 
@@ -16,8 +16,7 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # Gripe to Van Jacobson for pissing off lgrind's current caretaker
 # into not maintaining it anymore.
-PERMIT_PACKAGE_CDROM=	May not be sold
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c 
 
 WRKDIST=	${WRKDIR}

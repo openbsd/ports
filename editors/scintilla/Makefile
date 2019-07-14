@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2018/02/24 10:54:50 bket Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/14 00:39:35 naddy Exp $
 
 COMMENT=	source code editing component for GTK+
 
@@ -13,8 +13,7 @@ SHARED_LIBS=	scintilla		11.0 \
 HOMEPAGE=	http://www.scintilla.org/
 
 # old Python license
-PERMIT_PACKAGE_CDROM=	may not sell
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz

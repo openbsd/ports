@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2018/05/12 09:22:27 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/14 00:39:34 naddy Exp $
 
 COMMENT=	archive files using LZW compression (.lzh files)
 
@@ -12,8 +12,7 @@ HOMEPAGE=       https://lha.osdn.jp/
 MAINTAINER=	Yozo Toda <yozo@v007.vaio.ne.jp>
 
 # Restrictive
-PERMIT_PACKAGE_CDROM=	requires advance notification
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_OSDN_JP:=lha/22231/}

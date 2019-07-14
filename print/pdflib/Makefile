@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/04/25 18:59:11 jca Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/14 00:39:39 naddy Exp $
 
 COMMENT=		C library to produce PDF files
 
@@ -9,8 +9,7 @@ SHARED_LIBS=		pdf	2.3
 
 HOMEPAGE=		http://www.pdflib.com/pdflib/
 
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://www.pdflib.com/pdflib/download/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/04/23 18:09:00 cwen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/14 00:39:39 naddy Exp $
 
 COMMENT =		library for nipper
 
@@ -11,8 +11,7 @@ SHARED_LIBS =		nipper 0.0
 HOMEPAGE =		http://nipper.sf.net/
 
 # GPLv3, but "cannot be used as part of a commercial product"
-PERMIT_PACKAGE_CDROM =	No
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 EXTRACT_SUFX =		.tgz
 

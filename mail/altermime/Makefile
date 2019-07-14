@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/01/11 01:51:34 danj Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/14 00:39:38 naddy Exp $
 
 COMMENT=	utility for altering mime-encoded mailpacks
 
@@ -11,8 +11,7 @@ HOMEPAGE=	https://pldaniels.com/altermime/
 
 # alterMIME LICENSE
 # (see share/doc/altermime/LICENCE)
-PERMIT_PACKAGE_CDROM=	may not sell
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 

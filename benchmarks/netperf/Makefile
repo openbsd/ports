@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2018/06/01 14:24:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2019/07/14 00:39:35 naddy Exp $
 
 COMMENT=	network performance benchmark
 
@@ -15,8 +15,7 @@ CATEGORIES=	benchmarks net
 HOMEPAGE=	https://hewlettpackard.github.io/netperf/
 
 # "for non-commercial purposes only"; see COPYING
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m
 

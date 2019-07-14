@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/05/18 12:13:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/14 00:39:36 naddy Exp $
 # Original from: Robert Ruehlmann
 
 COMMENT=		rogue-like game with X11 support
@@ -16,8 +16,7 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # Multi license, including GPLv2, angband license, CC, freeware...
 # The angband license contains the line "other copyrights may also apply"
 # See ${WRKSRC}/copying.txt for a list.
-PERMIT_PACKAGE_CDROM=	unclear license
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m curses
 

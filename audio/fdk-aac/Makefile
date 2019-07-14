@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/04/24 16:26:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/14 00:39:35 naddy Exp $
 
 COMMENT =		modified Fraunhofer FDK AAC encoder and decoder
 DISTNAME =		fdk-aac-0.1.5
@@ -7,8 +7,7 @@ HOMEPAGE =		http://sourceforge.net/projects/opencore-amr/
 REVISION =		0
 
 # Custom
-PERMIT_PACKAGE_CDROM =	Patents
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 SHARED_LIBS =		fdk-aac                   1.0 # 0.4
 WANTLIB =		c m

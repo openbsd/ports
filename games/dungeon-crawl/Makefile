@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/04/16 16:09:45 cwen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/14 00:39:36 naddy Exp $
 
 COMMENT=	dungeon crawl
 CATEGORIES=	games
@@ -29,8 +29,7 @@ COMPILER =	base-clang ports-gcc base-gcc
 
 # Almost nethack... http://www.dungeoncrawl.org/?d.l
 
-PERMIT_PACKAGE_FTP=Yes
-PERMIT_PACKAGE_CDROM=No gain
+PERMIT_PACKAGE=Yes
 DOCDIR=${PREFIX}/share/doc/dungeon-crawl-$V
 
 

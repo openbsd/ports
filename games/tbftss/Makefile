@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/03/15 08:26:59 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/14 00:39:37 naddy Exp $
 
 COMMENT =		2D mission-based space shooter
 
@@ -11,8 +11,7 @@ CATEGORIES =		games
 HOMEPAGE =		https://www.battleforthesolarsystem.com/games/pw/
 
 # code GPLv2+, data CC BY-NC-SA 3.0 or freer
-PERMIT_PACKAGE_CDROM =	Non-commercial
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 SDL2_image SDL2_mixer SDL2_ttf c m
 

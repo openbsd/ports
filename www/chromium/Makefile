@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.444 2019/06/26 17:22:41 robert Exp $
+# $OpenBSD: Makefile,v 1.445 2019/07/14 00:39:40 naddy Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -28,8 +28,7 @@ FLAVORS=		debug component
 FLAVOR?=
 
 # BSD-like
-PERMIT_PACKAGE_CDROM=	patents
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 MASTER_SITES0=	http://nerd.hu/distfiles/

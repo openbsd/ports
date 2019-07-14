@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2018/07/11 22:41:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/14 00:39:37 naddy Exp $
 
 COMMENT-main=		ur-quan masters: space exploration game with battles
 COMMENT-content=	ur-quan masters: game content
@@ -44,8 +44,7 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # code GPLv2+, data Creative Commons Attribution-NonCommercial-ShareAlike 2.5
 # NC does not apply to unmodified uqm distributions, but mark it to be safe
-PERMIT_PACKAGE_CDROM=	NonCommercial
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 LIB_DEPENDS-main=	audio/libmikmod \
 			audio/libvorbis \

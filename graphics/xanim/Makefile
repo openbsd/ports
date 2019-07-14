@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2018/11/13 21:32:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2019/07/14 00:39:37 naddy Exp $
 
 COMMENT=	X11 animation player with support for lots of formats
 
@@ -14,8 +14,7 @@ MASTER_SITES=http://xanim.polter.net/files/
 MASTER_SITES0=ftp://ftp.ut.ee/pub/graphics/xanim/modules/
 
 # License: NOFEE
-PERMIT_PACKAGE_CDROM=	No Fee
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c m sndio z
 

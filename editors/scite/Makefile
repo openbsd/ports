@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2018/02/24 10:55:25 bket Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/14 00:39:35 naddy Exp $
 
 COMMENT=		flexible and small GTK+ editor
 
@@ -10,8 +10,7 @@ CATEGORIES=		editors x11
 HOMEPAGE=		http://www.scintilla.org/SciTE.html
 
 # old Python license
-PERMIT_PACKAGE_CDROM=	may not sell
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-3 pango-1.0 pangocairo-1.0 scintilla

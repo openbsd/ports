@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/17 16:19:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/14 00:39:36 naddy Exp $
 
 COMMENT =		text adventure game
 
@@ -12,8 +12,7 @@ CATEGORIES =		games
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Commercial use prohibited.
-PERMIT_PACKAGE_CDROM =	no commercial use
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/08/06 20:09:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/14 00:39:40 naddy Exp $
 
 COMMENT=	software G729A encoder and decoder library
 
@@ -11,8 +11,7 @@ CATEGORIES=	telephony audio
 HOMEPAGE=	http://www.linphone.org/technical-corner/bcg729/overview
 
 # Dual: GPLv2(only) or commercial
-PERMIT_PACKAGE_CDROM=	patents
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://download-mirror.savannah.gnu.org/releases/linphone/plugins/sources/
 

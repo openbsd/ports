@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/04/28 21:08:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/14 00:39:37 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -19,8 +19,7 @@ CATEGORIES =		lang
 MAINTAINER = Daniel Dickman <daniel@openbsd.org>
 
 # INRIA Non-Commercial License Agreement.
-PERMIT_PACKAGE_CDROM =	no commercial use
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB	+= c m
 

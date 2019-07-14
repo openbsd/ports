@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2018/10/24 14:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/07/14 00:39:37 naddy Exp $
 
 COMMENT=	Motif minesweeper game
 
@@ -8,8 +8,7 @@ CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
 
-PERMIT_PACKAGE_CDROM=	no fee
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext Xpm Xt c m ${COMPILER_LIBCXX} xcb Xm
 

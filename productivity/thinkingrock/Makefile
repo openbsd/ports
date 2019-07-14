@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/06/11 00:38:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/14 00:39:39 naddy Exp $
 
 COMMENT=	collecting and processing thoughts according to GTD
 
@@ -11,8 +11,7 @@ CATEGORIES=	productivity
 HOMEPAGE=	http://www.trgtd.com.au/
 
 # CDDL
-PERMIT_PACKAGE_CDROM=	CDDL
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=thinkingrock/}
 

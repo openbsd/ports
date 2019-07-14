@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/05/02 20:10:47 cwen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/14 00:39:38 naddy Exp $
 
 COMMENT =		read and manipulate the MP4 container format
 
@@ -12,8 +12,7 @@ SHARED_LIBS =		mp4v2	4.0 #1.9
 HOMEPAGE =		https://github.com/sergiomb2/libmp4v2
 
 # MPLv1.1
-PERMIT_PACKAGE_CDROM =	Patents
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m ${COMPILER_LIBCXX}
 

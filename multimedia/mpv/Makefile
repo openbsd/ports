@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2019/05/12 15:26:07 edd Exp $
+# $OpenBSD: Makefile,v 1.48 2019/07/14 00:39:38 naddy Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
@@ -18,8 +18,7 @@ DISTFILES =		${DISTNAME}{${GH_TAGNAME}}${EXTRACT_SUFX} ${WAF:T}:0
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	patents
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += EGL GL SDL2 X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xinerama Xrandr Xrender Xss Xv Xxf86vm ass avcodec

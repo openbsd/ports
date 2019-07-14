@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2018/10/24 14:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/14 00:39:37 naddy Exp $
 
 COMMENT=	3D image rendering package
 
@@ -8,8 +8,7 @@ CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.povray.org/
 
-PERMIT_PACKAGE_CDROM=	Perhaps we qualify for commercial distribution
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xpm c jpeg m ${COMPILER_LIBCXX} tiff z
 

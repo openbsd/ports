@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2017/10/23 17:10:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/14 00:39:36 naddy Exp $
 # $RuOBSD: Makefile,v 1.4 2009/02/05 06:38:32 form Exp $
 
 COMMENT=		DEC Professional 350 emulator based on SIMH
@@ -13,8 +13,7 @@ CATEGORIES=		emulators
 HOMEPAGE=		http://xhomer.isani.org/xhomer/
 
 # SIMH + GPLv2
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext Xxf86dga c m xcb
 

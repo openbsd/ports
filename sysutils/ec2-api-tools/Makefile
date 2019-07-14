@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/06/11 00:38:36 kurt Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/14 00:39:39 naddy Exp $
 
 COMMENT=		API tools for Amazon EC2 web service
 
@@ -15,8 +15,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # Amazon Software License (https://aws.amazon.com/asl/)
 # unclear, rather be on the safe side and set CDROM to 'No'
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		http://s3.amazonaws.com/ec2-downloads/
 

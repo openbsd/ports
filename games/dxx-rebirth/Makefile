@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/27 15:48:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/14 00:39:36 naddy Exp $
 
 .for i in aarch64 amd64 arm i386
 BROKEN-$i =	needs update following clang update in base
@@ -15,8 +15,7 @@ HOMEPAGE =	http://www.dxx-rebirth.com/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # GPLv3 with special exception for Parallax license
-PERMIT_PACKAGE_CDROM =	selling explicitly prohibited
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL SDL_mixer c m physfs
 

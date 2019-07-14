@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/01/21 06:23:35 bentley Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/14 00:39:39 naddy Exp $
 
 COMMENT=	port scan detection and active defense
 
@@ -7,8 +7,7 @@ CATEGORIES=	security
 REVISION =	0
 
 # Common Public License
-PERMIT_PACKAGE_CDROM=  	commercial distribution defend and indemnify clauses
-PERMIT_PACKAGE_FTP=    	Yes
+PERMIT_PACKAGE=    	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sentrytools/}

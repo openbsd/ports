@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.11 2016/02/02 10:17:44 bentley Exp $
+#	$OpenBSD: Makefile,v 1.12 2019/07/14 00:39:36 naddy Exp $
 PKG_ARCH =		*
 
 COMMENT =		marathon infinity data files
@@ -11,8 +11,7 @@ DISTFILES =		MarathonInfinity-${V}-Data.zip:6
 DISTFILES +=		Trilogy_Manual.pdf:4
 
 # http://trilogyrelease.bungie.org/faq.html
-PERMIT_PACKAGE_CDROM =	not for sale
-PERMIT_PACKAGE_FTP =	YES
+PERMIT_PACKAGE =	YES
 
 EXTRACT_ONLY =		MarathonInfinity-${V}-Data.zip
 INSTALL_LOC =		${PREFIX}/share/alephone

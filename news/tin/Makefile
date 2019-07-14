@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/05/20 22:15:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.55 2019/07/14 00:39:38 naddy Exp $
 
 COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
@@ -23,8 +23,7 @@ MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 # This software cannot be redistributed freely due to a few files having
 # licenses that prohibit making money from redistribution - see src/nntplib.c,
 # vms/vms.c
-PERMIT_PACKAGE_CDROM=	no fee
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c>=58.2 iconv icuuc intl curses pcre
 

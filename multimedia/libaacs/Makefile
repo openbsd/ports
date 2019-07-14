@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2017/11/21 00:13:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/14 00:39:38 naddy Exp $
 
 COMMENT =		AACS support library for Blu-ray playback
 
@@ -14,8 +14,7 @@ MASTER_SITES =		https://download.videolan.org/pub/videolan/libaacs/${V}/ \
 EXTRACT_SUFX =		.tar.bz2
 
 # LGPL v2.1
-PERMIT_PACKAGE_CDROM =	Free speech issue
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =  c gcrypt gpg-error iconv intl
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2015/12/30 14:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/14 00:39:38 naddy Exp $
 
 SHARED_LIBS =		rtmp 1.1
 
@@ -13,8 +13,7 @@ CATEGORIES =		net
 HOMEPAGE =		http://rtmpdump.mplayerhq.hu/
 
 # tools GPLv2+, librtmp LGPLv2.1+
-PERMIT_PACKAGE_CDROM =	No
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto m pthread ssl z
 

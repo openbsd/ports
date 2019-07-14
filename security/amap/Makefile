@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/04/07 01:07:23 rpe Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/14 00:39:39 naddy Exp $
 
 COMMENT=	application protocol detection tool
 
@@ -9,8 +9,7 @@ CATEGORIES=	security
 HOMEPAGE=	http://thc.org/thc-amap/
 
 # GPL with changes
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	http://freeworld.thc.org/releases/
 

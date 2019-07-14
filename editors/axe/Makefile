@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2016/03/16 18:36:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/14 00:39:35 naddy Exp $
 
 COMMENT=		simple to use text editor for X11
 
@@ -8,8 +8,7 @@ REVISION=		4
 CATEGORIES=		editors
 
 # "other than commercial exploitation"
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2019/05/20 22:15:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.142 2019/07/14 00:39:38 naddy Exp $
 
 COMMENT=	multimedia decoding library
 
@@ -15,8 +15,7 @@ HOMEPAGE=	https://www.xine-project.org/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	patents
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC GL GLU ICE SDL SM X11 X11-xcb
 WANTLIB += Xau Xdamage Xdmcp Xext Xfixes Xinerama Xv XvMCW Xxf86vm

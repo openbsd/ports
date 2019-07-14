@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2018/11/20 20:30:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/14 00:39:35 naddy Exp $
 
 BROKEN-alpha =		OOM or ICE on hqx/src/hq4x_32.c
 BROKEN-hppa =		OOM or ICE on hqx/src/hq4x_32.c
@@ -21,8 +21,7 @@ FLAVOR ?=
 #  - cz80 non-commercial license
 #  - scale2x GPLv2
 #  - hqx LGPL
-PERMIT_PACKAGE_CDROM =	No
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		GL SDL archive c m pthread ${COMPILER_LIBCXX}
 
