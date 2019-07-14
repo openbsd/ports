@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.30 2019/05/31 21:27:04 espie Exp $
+# $OpenBSD: Info.pm,v 1.31 2019/07/14 11:27:19 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -73,9 +73,6 @@ our $vars = {
     ONLY_FOR_ARCHS => 'OnlyForArchListVar',
     PERMIT_DISTFILES=> 'YesKeyVar',
     PERMIT_PACKAGE=> 'YesKeyVar',
-    PERMIT_DISTFILES_FTP=> 'YesKeyVar',
-    PERMIT_PACKAGE_CDROM => 'YesKeyVar',
-    PERMIT_PACKAGE_FTP=> 'YesKeyVar',
     PKGNAME => 'AnyVar',
     PKGSPEC => 'AnyVar',
     PKGSTEM => 'AnyVar',

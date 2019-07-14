@@ -1,5 +1,5 @@
 #! /bin/sh
-# $OpenBSD: print-ports-index,v 1.11 2019/06/04 16:05:52 espie Exp $
+# $OpenBSD: print-ports-index,v 1.12 2019/07/14 11:27:19 espie Exp $
 #
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
@@ -51,9 +51,9 @@ select fullpkgname, ports.fullpkgpath,
 	    end
 	else only_for_archs
 	end,
-    (case lower(PERMIT_PACKAGE_CDROM) when "yes" then "y" else "n" end),
-    (case lower(PERMIT_PACKAGE_FTP) when "yes" then "y" else "n" end),
-    (case lower(PERMIT_DISTFILES_FTP) when "yes" then "y" else "n" end)
+    '?',
+    (case lower(PERMIT_PACKAGE) when "yes" then "y" else "n" end),
+    (case lower(PERMIT_DISTFILES) when "yes" then "y" else "n" end)
     from ports
     	left join d2 as libd on libd.p=ports.pathid and libd.t=0
     	left join d2 as buildd on buildd.p=ports.pathid and buildd.t=2

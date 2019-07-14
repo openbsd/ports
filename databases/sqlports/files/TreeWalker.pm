@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TreeWalker.pm,v 1.11 2018/12/01 15:48:15 espie Exp $
+# $OpenBSD: TreeWalker.pm,v 1.12 2019/07/14 11:27:19 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -38,16 +38,17 @@ sub dump_dirs
 		$self->parse_dump($fd, $subdirs);
 		close $fd || die $!;
 	} else {
+		my %myenv = ();
+		my $portsdir = $ENV{PORTSDIR};
 		if (defined $subdirs) {
-			$ENV{'SUBDIR'} = $self->subdirlist($subdirs);
-			delete $ENV{'SUBDIRLIST'};
+			$myenv{'SUBDIR'} = $self->subdirlist($subdirs);
 		}
-		$ENV{'NO_IGNORE'} = 'Yes';
-		delete $ENV{'SUBPACKAGE'};
-		delete $ENV{'FLAVOR'};
+		$myenv{'NO_IGNORE'} = 'Yes';
+		$myenv{PORTSDIR} = $portsdir;
 		close STDERR;
 		open STDERR, '>&STDOUT';
-		chdir $ENV{'PORTSDIR'};
+		chdir $portsdir;
+		%ENV = %myenv;
 		exec {'make'} ("make", "dump-vars", 'LIBCXX=$${LIBCXX}',
 		    'LIBECXX=$${LIBECXX}', 
 		    'COMPILER_LIBCXX=$${COMPILER_LIBCXX}');

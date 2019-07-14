@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.116 2019/07/12 20:44:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.117 2019/07/14 11:27:19 espie Exp $
 
 CATEGORIES =		databases
-V =			7.23
+V =			7.24
 DISTNAME =		sqlports-$V
 DISTFILES =
 COMMENT =		sqlite database of ports
@@ -10,7 +10,6 @@ COMMENT-list =		full list of pkgpaths in ports
 MAINTAINER =		Marc Espie <espie@openbsd.org>
 PKGNAME-main =		sqlports-$V
 PKGNAME-list =		portslist-$V
-REVISION =		0
 
 PERMIT_PACKAGE =	Yes
 MULTI_PACKAGES =	-main -list
@@ -26,7 +25,7 @@ RUN_DEPENDS-main =	databases/sqlite3
 SCRIPTS = print-ports-index show-reverse-deps rebuild-sqlports-cache
 
 do-build:
-	@unset MAKEFLAGS; unset BUILD_ONCE; cd ${PORTSDIR} && PORTSDIR=${PORTSDIR} ${MAKE_ENV} perl ${FILESDIR}/mksqlitedb -v -V $V -p ${WRKBUILD}/ouch -C ${WRKBUILD}/${SQLCACHE} -w ${WRKBUILD}/${SQLVIEWS} ${WRKBUILD}/${DBNAME}
+	@PORTSDIR=${PORTSDIR} ${MAKE_ENV} perl ${FILESDIR}/mksqlitedb -v -V $V -p ${WRKBUILD}/ouch -C ${WRKBUILD}/${SQLCACHE} -w ${WRKBUILD}/${SQLVIEWS} ${WRKBUILD}/${DBNAME}
 	@if test -s ${WRKBUILD}/ouch; then \
 		cat ${WRKBUILD}/ouch; \
 		exit 1; \
@@ -34,12 +33,12 @@ do-build:
 	cd ${WRKBUILD} && sqlite3 <${SQLCACHE} ${DBNAME}
 
 alter-tables:
-	@unset MAKEFLAGS; unset BUILD_ONCE; cd ${PORTSDIR} && PORTSDIR=${PORTSDIR} ${MAKE_ENV} ${SUDO} -u ${BUILD_USER} perl ${FILESDIR}/rebuild_schema -v -V $V ${WRKBUILD/${DBNAME}
+	@${MAKE_ENV} ${SUDO} -u ${BUILD_USER} perl ${FILESDIR}/rebuild_schema -v -V $V ${WRKBUILD/${DBNAME}
 	@${SUDO} -u ${BUILD_USER} ${MAKE} post-build
 
 post-build:
-	cd ${WRKBUILD} && ${LOCALBASE}/bin/sqlite3 ${DBNAME} 'select min(_paths.fullpkgpath) from _paths join _ports on _paths.id=_ports.fullpkgpath where _ports.static_plist=1 group by fullpkgname order by _paths.fullpkgpath' >${DBNAME}.list
-	cd ${WRKBUILD} && sh ${FILESDIR}/scripts/print-ports-index ${DBNAME} >ports-INDEX
+	@cd ${WRKBUILD} && ${LOCALBASE}/bin/sqlite3 ${DBNAME} 'select min(_paths.fullpkgpath) from _paths join _ports on _paths.id=_ports.fullpkgpath where _ports.static_plist=1 group by fullpkgname order by _paths.fullpkgpath' >${DBNAME}.list
+	@cd ${WRKBUILD} && sh ${FILESDIR}/scripts/print-ports-index ${DBNAME} >ports-INDEX
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
