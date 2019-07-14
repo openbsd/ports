@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.789 2019/07/09 17:29:39 gsoares Exp $
+# $OpenBSD: Quirks.pm,v 1.790 2019/07/14 20:02:02 kmos Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1258,6 +1258,7 @@ my $obsolete_reason = {
 	'py-amf' => 6,
 	'lam' => 3,
 	'gxml' => 6,
+	'nulib' => 3,
 };
 
 # reasons for obsolete packages
