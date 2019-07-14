@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/14 09:30:49 espie Exp $
 
 COMMENT =		ports-readmes dancer web app
 PKG_ARCH = *
-DISTNAME =		ports-readmes-dancer-3
-REVISION =		4
 
 MAINTAINER =		Marc Espie <espie@openbsd.org>
-MASTER_SITES  =		https://distfiles.nl/
+
+GH_PROJECT = ports-readmes-dancer
+GH_TAGNAME = 3.1
+GH_ACCOUNT = marcespie
 CATEGORIES =		databases www
 
 # BSD
