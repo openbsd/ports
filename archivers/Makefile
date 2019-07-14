@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2019/03/08 17:02:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2019/07/14 20:00:38 kmos Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -35,7 +35,6 @@
      SUBDIR += lzop
      SUBDIR += macutil
      SUBDIR += makeself
-     SUBDIR += nulib
      SUBDIR += p5-Archive-Extract
      SUBDIR += p5-Archive-Zip
      SUBDIR += p5-Compress-Bzip2
