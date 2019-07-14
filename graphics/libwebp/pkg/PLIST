@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/12/03 13:10:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/07/14 08:11:54 ajacoutot Exp $
 @bin bin/cwebp
 @bin bin/dwebp
 @bin bin/gif2webp
@@ -31,5 +31,6 @@ lib/pkgconfig/libwebpmux.pc
 @man man/man1/cwebp.1
 @man man/man1/dwebp.1
 @man man/man1/gif2webp.1
+@man man/man1/img2webp.1
 @man man/man1/webpinfo.1
 @man man/man1/webpmux.1
