@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.445 2019/07/14 00:39:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.446 2019/07/14 08:08:46 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -14,7 +14,7 @@ COMMENT=		Chromium browser
 V=			75.0.3770.100
 
 DISTNAME=		chromium-${V}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		www
 
@@ -230,9 +230,10 @@ do-install:
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/chrome
 .endfor
 
-	# ANGLE
-.for f in libEGL.so libGLESv2.so
-	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/chrome
+	# ANGLE, EGL, Vk
+.for f in libEGL libGLESv2 libVkICD_mock_icd libVkLayer_core_validation libVkLayer_object_lifetimes \
+		libVkLayer_stateless_validation libVkLayer_thread_safety libVkLayer_unique_objects
+	${INSTALL_DATA} ${BUILDDIR}/${f}.so ${PREFIX}/chrome
 .endfor
 
 .if ${MACHINE_ARCH} != "aarch64"

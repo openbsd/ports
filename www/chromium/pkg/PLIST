@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.89 2019/05/10 21:55:40 robert Exp $
+@comment $OpenBSD: PLIST,v 1.90 2019/07/14 08:08:46 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 @bin bin/chromedriver
@@ -11,6 +11,12 @@ chrome/icudtl.dat
 chrome/libEGL.so
 chrome/libGLESv2.so
 %%component%%
+chrome/libVkICD_mock_icd.so
+chrome/libVkLayer_core_validation.so
+chrome/libVkLayer_object_lifetimes.so
+chrome/libVkLayer_stateless_validation.so
+chrome/libVkLayer_thread_safety.so
+chrome/libVkLayer_unique_objects.so
 chrome/locales/
 chrome/locales/am.pak
 chrome/locales/am.pak.info
