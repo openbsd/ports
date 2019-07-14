@@ -1,12 +1,13 @@
-$OpenBSD: patch-meson_build,v 1.5 2019/05/12 22:03:53 jca Exp $
+$OpenBSD: patch-meson_build,v 1.6 2019/07/14 16:58:25 ajacoutot Exp $
 
-gint64 should be long long: https://gitlab.gnome.org/GNOME/glib/issues/1442
+* base gcc
 Reordering needed to prefer long long because base-gcc doesn't recognize
   #pragma GCC diagnostic error "-Wincompatible-pointer-types"
-and doesn't fail to compile the test case.
+and doesn't fail to compile the test case (gint64 should be long long).
 
 gsize should be unsigned long: https://gitlab.gnome.org/GNOME/glib/issues/1777
 
+* base gcc
 Last hunk: __GCC_HAVE_SYNC_* macros were introduced after gcc 4.2.1,
 make the workaround more generic.
 
