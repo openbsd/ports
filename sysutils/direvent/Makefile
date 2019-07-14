@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/14 17:18:35 ajacoutot Exp $
 
 COMMENT=		directory content watcher daemon
 
-DISTNAME=		direvent-5.1
-REVISION=		0
+DISTNAME=		direvent-5.2
 
 CATEGORIES=		sysutils
+
+HOMEPAGE=		https://www.gnu.org.ua/software/direvent/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -19,5 +20,7 @@ MASTER_SITES=		${MASTER_SITE_GNU:=direvent/}
 LIB_DEPENDS=		devel/gettext,-runtime
 
 CONFIGURE_STYLE=	gnu
+
+USE_GMAKE=		Yes
 
 .include <bsd.port.mk>
