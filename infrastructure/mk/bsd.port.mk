@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1474 2019/07/14 11:29:38 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1475 2019/07/14 11:32:05 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1066,6 +1066,7 @@ PKG_ARGS${_S} += ${_PKG_ARGS_VERSION}
 PKG_ARGS${_S} += ${_substvars${_S}:N-DTRUEPREFIX=*}
 PKG_ARGS${_S} += -DFULLPKGPATH=${FULLPKGPATH${_S}}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE${_S}:Q}
+PKG_ARGS${_S} += -DPERMIT_PACKAGE=${PERMIT_PACKAGE${_S}:Q}
 
 SUBST_CMD${_S} = ${_PERLSCRIPT}/pkg_subst ${_substvars${_S}}
 SUBST_CMD${_S} += -i -B ${WRKDIR}
