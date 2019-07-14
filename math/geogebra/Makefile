@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/14 00:39:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/14 12:44:45 sthen Exp $
 
 COMMENT=	educational mathematical software
 
@@ -17,7 +17,6 @@ HOMEPAGE=	http://www.geogebra.org
 # Creative Commons Attribution-Share Alike 3.0
 # See: http://www.geogebra.org/download/license.txt
 PERMIT_PACKAGE=	Yes
-PERMIT_DISTFILE_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=geogebra/}
 
