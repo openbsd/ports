@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2015/12/06 20:12:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/14 02:16:52 naddy Exp $
 
 COMMENT=	Amiga Workbench lookalike window manager
 
@@ -11,9 +11,8 @@ MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/X11/wm/amiwm/
 
 HOMEPAGE=	http://www.lysator.liu.se/~marcus/amiwm.html
 
-PERMIT_PACKAGE_CDROM=	restrictive
-PERMIT_PACKAGE_FTP=	restrictive
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE=		restrictive
+PERMIT_DISTFILES=	Yes
 WANTLIB=		ICE SM X11 Xext Xmu c m
 
 CONFIGURE_STYLE= 	gnu dest

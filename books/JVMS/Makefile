@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/08/09 21:33:22 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/14 02:16:51 naddy Exp $
 
 COMMENT =	Sun's official Java VM Specification, 2nd Ed.
 
@@ -11,9 +11,8 @@ CATEGORIES =	books
 HOMEPAGE =	http://java.sun.com/docs/books/jvms/
 
 # http://java.sun.com/docs/books/vmspec/2nd-edition/html/Copyright.doc.html
-PERMIT_PACKAGE_CDROM =	Copyright
-PERMIT_PACKAGE_FTP =	Copyright
-PERMIT_DISTFILES_FTP =	Copyright
+PERMIT_PACKAGE =	Copyright
+PERMIT_DISTFILES =	Copyright
 
 MASTER_SITES =	${HOMEPAGE}download/
 

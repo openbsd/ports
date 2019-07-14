@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/03 15:12:28 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/14 02:16:52 naddy Exp $
 
 COMMENT=		netcat enhanced with twofish encryption
 
@@ -15,9 +15,8 @@ MAINTAINER=		Laurent Fanis <laurent.fanis@gmail.com>
 # From the README "freely given away
 # with no restrictions except giving credit where it is due"
 # Added Twofish encryption is under Cryptix General Licence
-PERMIT_PACKAGE_CDROM=	No clear Licence
-PERMIT_PACKAGE_FTP=	No clear Licence
-PERMIT_DISTFILES_FTP=	No clear Licence
+PERMIT_PACKAGE=		No clear Licence
+PERMIT_DISTFILES=	No clear Licence
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cryptcat/}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2018/11/26 21:33:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/14 02:16:51 naddy Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20171105
@@ -14,9 +14,8 @@ HOMEPAGE =	http://www.eduke32.com/
 MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
 # GPLv2, BUILD license and shareware data
-PERMIT_PACKAGE_CDROM =  "BUILD engine license is not compatible with GPLv2."
-PERMIT_PACKAGE_FTP =    "BUILD engine license is not compatible with GPLv2."
-PERMIT_DISTFILES_FTP =  "BUILD engine license is not compatible with GPLv2."
+PERMIT_PACKAGE =    "BUILD engine license is not compatible with GPLv2."
+PERMIT_DISTFILES =  "BUILD engine license is not compatible with GPLv2."
 
 BUILD_DEPENDS = archivers/unzip \
 		graphics/gdk-pixbuf2

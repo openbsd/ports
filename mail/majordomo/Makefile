@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2015/06/18 06:57:21 bentley Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/14 02:16:52 naddy Exp $
 
 COMMENT=	mailing list manager
 
@@ -12,9 +12,8 @@ HOMEPAGE=	http://www.greatcircle.com/majordomo/
 # I sent a mail to greatcircle.com asking for these permissions.
 # Until I get an answer, I assume nothing. 
 # Read http://www.greatcircle.com/majordomo/LICENSE
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_FTP=	No
+PERMIT_PACKAGE=		No
+PERMIT_DISTFILES=	No
 WANTLIB=		c
 
 MASTER_SITES=	http://www.greatcircle.com/majordomo/$V/ \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/06/11 00:38:35 kurt Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/14 02:16:52 naddy Exp $
 
 COMMENT=	Ubiquiti mfi wireless controller
 
@@ -13,9 +13,8 @@ CATEGORIES=	net
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # at least the firmware files are restricted, if not more
-PERMIT_PACKAGE_CDROM=	http://www.ubnt.com/eula/
-PERMIT_PACKAGE_FTP=	http://www.ubnt.com/eula/
-PERMIT_DISTFILES_FTP=	http://www.ubnt.com/eula/
+PERMIT_PACKAGE=		http://www.ubnt.com/eula/
+PERMIT_DISTFILES=	http://www.ubnt.com/eula/
 
 MASTER_SITES=	http://dl.ubnt.com/mfi/$V/
 

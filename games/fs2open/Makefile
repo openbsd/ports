@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/01/06 21:26:03 thfr Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/14 02:16:51 naddy Exp $
 
 COMMENT =	open source game engine based on FreeSpace 2
 
@@ -14,9 +14,8 @@ HOMEPAGE =	https://github.com/scp-fs2open/fs2open.github.com
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # Volition custom license (non-commercial, not really a license)
-PERMIT_PACKAGE_CDROM =	selling explicitly prohibited
-PERMIT_PACKAGE_FTP =	no license at all
-PERMIT_DISTFILES_FTP =	no license at all
+PERMIT_PACKAGE =	no license at all
+PERMIT_DISTFILES =	no license at all
 
 WANTLIB += ${COMPILER_LIBCXX} c m z
 WANTLIB += SDL2 ${MODLUA_WANTLIB} openal

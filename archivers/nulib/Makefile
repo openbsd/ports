@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/05/12 09:22:27 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/14 02:16:50 naddy Exp $
 
 COMMENT=	NuFX archiver
 
@@ -10,9 +10,8 @@ MASTER_SITES=	https://people.freebsd.org/~jseger/
 EXTRACT_SUFX=	.tar.Z
 
 # Restrictive
-PERMIT_PACKAGE_CDROM=	no fee
-PERMIT_PACKAGE_FTP=	no terms
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE=		no terms
+PERMIT_DISTFILES=	Yes
 
 WANTLIB=	c
 

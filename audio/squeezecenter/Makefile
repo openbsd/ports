@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2017/08/15 15:53:57 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/14 02:16:51 naddy Exp $
 
 COMMENT =	streaming audio server for Squeezebox network music players
 
@@ -14,9 +14,8 @@ HOMEPAGE =	http://wiki.slimdevices.com/index.php/SqueezeCenter
 # but unfortunately also with proprietary (required) firmware, also
 # image files/fonts etc which may not be redistributed without an
 # explicit permission being granted.
-PERMIT_PACKAGE_CDROM =	No
-PERMIT_PACKAGE_FTP =	No
-PERMIT_DISTFILES_FTP =	No
+PERMIT_PACKAGE =	No
+PERMIT_DISTFILES =	No
 
 EXTRACT_SUFX =	.tgz
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/10/23 17:11:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/14 02:16:52 naddy Exp $
 
 COMMENT=	simple menu patterned after plan9
 
@@ -13,9 +13,8 @@ MASTER_SITES=	ftp://ftp.freefriends.org/arnold/Source/
 EXTRACT_SUFX=	.shar.gz
 
 # nonstandard license
-PERMIT_PACKAGE_CDROM =	No
-PERMIT_PACKAGE_FTP =	No
-PERMIT_DISTFILES_FTP =	No
+PERMIT_PACKAGE =	No
+PERMIT_DISTFILES =	No
 WANTLIB=		X11 c xcb
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \

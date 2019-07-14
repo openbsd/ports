@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2018/10/24 14:28:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/07/14 02:16:53 naddy Exp $
 
 COMMENT=	minimal window manager
 
@@ -9,9 +9,8 @@ REVISION =	4
 HOMEPAGE=	http://www.all-day-breakfast.com/wmx/
 MASTER_SITES=	${HOMEPAGE}
 
-PERMIT_PACKAGE_CDROM=	no license
-PERMIT_PACKAGE_FTP=	no license
-PERMIT_DISTFILES_FTP=	no license
+PERMIT_PACKAGE=		no license
+PERMIT_DISTFILES=	no license
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xdmcp Xext Xft Xpm Xrender c expat
 WANTLIB += fontconfig freetype m ${COMPILER_LIBCXX} xcb z

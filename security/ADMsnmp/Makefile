@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2015/06/10 11:05:02 jca Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/14 02:16:52 naddy Exp $
 
 COMMENT=		SNMP audit scanner
 
@@ -8,9 +8,8 @@ REVISION =		1
 CATEGORIES=		security
 EXTRACT_SUFX=		.tgz
 
-PERMIT_PACKAGE_CDROM=   no license
-PERMIT_PACKAGE_FTP=     no license
-PERMIT_DISTFILES_FTP=   no license
+PERMIT_PACKAGE=		no license
+PERMIT_DISTFILES=	no license
 WANTLIB=		c
 
 MASTER_SITES=		ftp://adm.freelsd.net/pub/ADM/ \

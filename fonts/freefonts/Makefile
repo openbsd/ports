@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/06/17 09:06:36 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/14 02:16:51 naddy Exp $
 
 COMMENT=	collection of ATM fonts from the CICA archives
 
@@ -11,9 +11,8 @@ MASTER_SITES=	http://download.gimp.org/pub/gimp/fonts/
 HOMEPAGE=	http://www.gimp.org/fonts.html
 
 # lots of different custom licenses, the worst one wins
-PERMIT_PACKAGE_CDROM=	may not sell
-PERMIT_PACKAGE_FTP=	no license
-PERMIT_DISTFILES_FTP=	no license
+PERMIT_PACKAGE=		no license
+PERMIT_DISTFILES=	no license
 
 WRKDIST=	${WRKDIR}
 NO_BUILD=	Yes

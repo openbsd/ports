@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/20 19:57:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/14 02:16:52 naddy Exp $
 
 COMMENT=	summarize english text
 
@@ -8,9 +8,8 @@ DISTNAME=	Lingua-EN-Summarize-0.2
 REVISION=	0
 CATEGORIES=	textproc
 
-PERMIT_PACKAGE_CDROM=	No licence
-PERMIT_PACKAGE_FTP=	No licence
-PERMIT_DISTFILES_FTP=	No licence
+PERMIT_PACKAGE=		No licence
+PERMIT_DISTFILES=	No licence
 
 RUN_DEPENDS=	textproc/p5-HTML-Summary
 

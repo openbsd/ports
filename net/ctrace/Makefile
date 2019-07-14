@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2015/02/16 22:57:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/14 02:16:52 naddy Exp $
 
 COMMENT=	multiprotocol traceroute tool
 
@@ -7,9 +7,8 @@ REVISION=	2
 CATEGORIES=	net
 HOMEPAGE=	http://www.pratyeka.org/ctrace/
 
-PERMIT_PACKAGE_CDROM=   no license
-PERMIT_PACKAGE_FTP=     no license
-PERMIT_DISTFILES_FTP=   no license
+PERMIT_PACKAGE=		no license
+PERMIT_DISTFILES=	no license
 
 MASTER_SITES=	${HOMEPAGE}download/
 

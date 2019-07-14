@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2014/08/09 21:35:09 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/14 02:16:52 naddy Exp $
 
 COMMENT=	all W3C-published SGML DTDs for HTML
 
@@ -6,9 +6,8 @@ DISTNAME=	html-4.01
 CATEGORIES=	textproc
 
 # License: NONE
-PERMIT_PACKAGE_CDROM=	no license
-PERMIT_PACKAGE_FTP=	no license
-PERMIT_DISTFILES_FTP=	no license
+PERMIT_PACKAGE=		no license
+PERMIT_DISTFILES=	no license
 
 MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL:=kuriyama/}
 EXTRACT_ONLY=	# empty

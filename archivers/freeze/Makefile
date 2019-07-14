@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/07/17 08:29:04 zhuk Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/14 02:16:50 naddy Exp $
 
 COMMENT=	FREEZE / MELT compression program - often used in QNX
 
@@ -8,9 +8,8 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.arcane-labs.net/download/OpenBSD/
 
 # None
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_FTP=	No
+PERMIT_PACKAGE=		No
+PERMIT_DISTFILES=	No
 
 REVISION =	2
 WANTLIB=	c

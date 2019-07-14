@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2018/11/12 18:49:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/14 02:16:51 naddy Exp $
 
 COMMENT =	MAME port with advanced video support for monitors and TVs
 
@@ -13,9 +13,8 @@ HOMEPAGE =	https://www.advancemame.it/
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+ and MAME License
-PERMIT_PACKAGE_CDROM =	unclear license
-PERMIT_PACKAGE_FTP =	unclear license
-PERMIT_DISTFILES_FTP =	unclear license
+PERMIT_PACKAGE =	unclear license
+PERMIT_DISTFILES =	unclear license
 
 WANTLIB +=	SDL2 c expat freetype m pthread z
 

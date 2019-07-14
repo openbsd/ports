@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/05/10 16:50:05 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/14 02:16:52 naddy Exp $
 
 COMMENT=		netcat-like program with transparent SSL support
 
@@ -11,9 +11,8 @@ FIX_EXTRACT_PERMISSIONS=Yes
 HOMEPAGE=		http://nssl.sourceforge.net/
 
 # None
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_FTP=	No
+PERMIT_PACKAGE=		No
+PERMIT_DISTFILES=	No
 
 WANTLIB=		crypto ssl c
 

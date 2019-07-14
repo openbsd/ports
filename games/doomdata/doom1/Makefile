@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/14 02:16:51 naddy Exp $
 
 COMMENT =		DOOM I data files
 
@@ -16,9 +16,8 @@ MAINTAINER =		Paul de Weerd <weerd@weirdnet.nl>
 PKG_ARCH =		*
 
 # Commercial game data files (for GPL'ed game)
-PERMIT_PACKAGE_CDROM =	Commercial game data files
-PERMIT_PACKAGE_FTP =	Commercial game data files
-PERMIT_DISTFILES_FTP =	Commercial game data files
+PERMIT_PACKAGE =	Commercial game data files
+PERMIT_DISTFILES =	Commercial game data files
 
 FETCH_MANUALLY =	"You must copy the original DOOM.WAD from your"
 FETCH_MANUALLY +=	"original distribution media and copy it to"

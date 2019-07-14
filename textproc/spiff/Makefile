@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/14 02:16:52 naddy Exp $
 
 COMMENT=	very flexible diff-like program
 
@@ -11,9 +11,8 @@ MASTER_SITES=	http://www.darwinsys.com/freeware/
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
 # custom
-PERMIT_PACKAGE_CDROM=	no fee
-PERMIT_PACKAGE_FTP=	may not modify
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE=		may not modify
+PERMIT_DISTFILES=	Yes
 WANTLIB=		c m 
 
 NO_TEST=	Yes

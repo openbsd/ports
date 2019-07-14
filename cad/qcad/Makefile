@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2018/12/06 20:10:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/14 02:16:51 naddy Exp $
 
 COMMENT=	Qt-based 2D CAD system
 
@@ -11,9 +11,8 @@ CATEGORIES=	cad graphics
 HOMEPAGE=	http://www.ribbonsoft.com/qcad.html
 
 # Source code is GPLv2 and data not specified
-PERMIT_PACKAGE_CDROM=	Non-free data files
-PERMIT_PACKAGE_FTP=	Non-free data files
-PERMIT_DISTFILES_FTP=	Non-free data files
+PERMIT_PACKAGE=		Non-free data files
+PERMIT_DISTFILES=	Non-free data files
 
 WANTLIB=		X11 Xext c m pthread ${COMPILER_LIBCXX}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/07/29 18:21:16 jturner Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/14 02:16:52 naddy Exp $
 
 COMMENT=		client for the tarsnap.com online encrypted backup service
 V=			1.0.39
@@ -10,9 +10,8 @@ MAINTAINER=		James Turner <james@calminferno.net>
 
 # May not be modified and may only be used with tarsnap.com
 # see http://www.tarsnap.com/legal.html
-PERMIT_PACKAGE_CDROM=	restrictive licence
-PERMIT_PACKAGE_FTP=	restrictive licence
-PERMIT_DISTFILES_FTP=	restrictive licence
+PERMIT_PACKAGE=		restrictive licence
+PERMIT_DISTFILES=	restrictive licence
 
 WANTLIB += bz2>=10 c crypto lzma z
 

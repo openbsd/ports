@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/21 21:31:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/14 02:16:51 naddy Exp $
 
 COMMENT=	Oracle's official Java language specification
 
@@ -16,9 +16,8 @@ HOMEPAGE=	https://docs.oracle.com/javase/specs/
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
 # No redistribution.
-PERMIT_PACKAGE_CDROM=	Copyright
-PERMIT_PACKAGE_FTP=	Copyright
-PERMIT_DISTFILES_FTP=	Copyright
+PERMIT_PACKAGE=		Copyright
+PERMIT_DISTFILES=	Copyright
 
 MASTER_SITES=	https://docs.oracle.com/javase/specs/jls/se${MAJOR}/
 

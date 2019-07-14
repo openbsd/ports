@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/12/07 20:14:55 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/14 02:16:52 naddy Exp $
 
 COMMENT=	obfuscate passwords for VMware RemoteDisplay.vnc.key
 
@@ -11,9 +11,8 @@ FIX_EXTRACT_PERMISSIONS=Yes
 HOMEPAGE=	http://communities.vmware.com/docs/DOC-7535
 
 # no license for vmware-vncpasswd.c; other files are ISC/PD
-PERMIT_PACKAGE_CDROM=	missing license
-PERMIT_PACKAGE_FTP=	missing license
-PERMIT_DISTFILES_FTP=	missing license
+PERMIT_PACKAGE=		missing license
+PERMIT_DISTFILES=	missing license
 
 WANTLIB=	c
 

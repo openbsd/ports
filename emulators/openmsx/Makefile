@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2018/09/04 12:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/14 02:16:51 naddy Exp $
 
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 BROKEN-hppa =	OOM when building src/cpu/CPUCore.cc
@@ -14,9 +14,8 @@ CATEGORIES =	emulators
 
 HOMEPAGE =	https://openmsx.org/
 
-PERMIT_PACKAGE_CDROM =	claims GPLv2, but no copyright notices in source files
-PERMIT_PACKAGE_FTP =	claims GPLv2, but no copyright notices in source files
-PERMIT_DISTFILES_FTP =	claims GPLv2, but no copyright notices in source files
+PERMIT_PACKAGE =	claims GPLv2, but no copyright notices in source files
+PERMIT_DISTFILES =	claims GPLv2, but no copyright notices in source files
 
 WANTLIB += ${MODTCL_LIB}
 WANTLIB += GL GLEW SDL SDL_ttf c freetype iconv m ogg png

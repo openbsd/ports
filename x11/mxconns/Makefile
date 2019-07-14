@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/05/05 19:52:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2019/07/14 02:16:52 naddy Exp $
 
 COMMENT=		interactive X11 proxy with selective X request replacement
 
@@ -11,9 +11,8 @@ MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=		.tgz
 
 # Restrictive
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_FTP=	No
+PERMIT_PACKAGE=		No
+PERMIT_DISTFILES=	No
 
 WANTLIB += X11 Xau Xext Xm Xpm Xt c
 

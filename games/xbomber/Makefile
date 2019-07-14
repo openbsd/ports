@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2017/10/23 17:10:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/14 02:16:52 naddy Exp $
 
 COMMENT=		colorful game where you blow other people/robots up
 
@@ -10,9 +10,8 @@ CATEGORIES=		games x11
 
 HOMEPAGE=		http://www.newbreedsoftware.com/xbomber/
 
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_FTP=	No
+PERMIT_PACKAGE=		No
+PERMIT_DISTFILES=	No
 WANTLIB=		X11 c m xcb
 
 MASTER_SITES=		ftp://ftp.tuxpaint.org/unix/x/xbomber/

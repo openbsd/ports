@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/05/19 11:26:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/14 02:16:52 naddy Exp $
 
 COMMENT=	G.729a voice codec for Asterisk
 DISTNAME=	asterisk-g72x-1.4.3
@@ -11,9 +11,8 @@ MASTER_SITES=	http://asterisk.hosting.lv/src/
 HOMEPAGE=	http://asterisk.hosting.lv/
 
 # GPL frontend to patented algorithm; free to use for non-commercial purposes
-PERMIT_DISTFILES_FTP=	contains non-compiled proprietary Intel code
-PERMIT_PACKAGE_CDROM=	patents
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES=	contains non-compiled proprietary Intel code
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += bcg729
 

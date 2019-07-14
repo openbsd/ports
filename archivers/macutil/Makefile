@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2018/05/12 09:22:27 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/14 02:16:50 naddy Exp $
 
 COMMENT=		several programs to handle macintosh files and archives
 DISTNAME=		macutil2.0b3
@@ -6,9 +6,8 @@ PKGNAME=		macutil-2.0b3
 CATEGORIES=		archivers
 
 # None
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_FTP=	No
+PERMIT_PACKAGE=		No
+PERMIT_DISTFILES=	No
 
 REVISION =	3
 WANTLIB=		c

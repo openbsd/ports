@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/08/26 14:16:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/14 02:16:51 naddy Exp $
 
 COMMENT =		Microsoft ClearType fonts
 
@@ -8,9 +8,8 @@ PKGNAME =		msctfonts-1.0
 CATEGORIES =		fonts
 
 # No redistribution
-PERMIT_PACKAGE_CDROM =	No redistribution
-PERMIT_PACKAGE_FTP =	No redistribution
-PERMIT_DISTFILES_FTP =	No redistribution
+PERMIT_PACKAGE =	No redistribution
+PERMIT_DISTFILES =	No redistribution
 
 MASTER_SITES =		http://download.microsoft.com/download/f/5/a/f5a3df76-d856-4a61-a6bd-722f52a5be26/
 

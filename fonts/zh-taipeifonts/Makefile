@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/01/29 09:15:24 kevlo Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/14 02:16:51 naddy Exp $
 
 COMMENT=	extra chinese fonts
 
@@ -10,9 +10,8 @@ DIST_SUBDIR=    zh-fonts
 
 MASTER_SITES=	https://ftp.kh.edu.tw/Linux/CLE/fonts/bitmap/taipeifont/
 
-PERMIT_DISTFILES_FTP=   no license
-PERMIT_PACKAGE_CDROM=   no license
-PERMIT_PACKAGE_FTP=     no license
+PERMIT_DISTFILES=	no license
+PERMIT_PACKAGE=		no license
 
 FONTS=		taipei16.pcf.gz taipeik20.pcf.gz taipeim20.pcf.gz \
 		taipei24.pcf.gz taipeik24.pcf.gz taipeim24.pcf.gz

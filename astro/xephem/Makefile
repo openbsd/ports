@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2018/08/07 10:20:23 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2019/07/14 02:16:50 naddy Exp $
 
 COMMENT=	interactive astronomical ephemeris
 DISTNAME=	xephem-3.2.3
@@ -7,9 +7,8 @@ MASTER_SITES=	https://distfiles.nl/
 
 HOMEPAGE=	http://www.clearskyinstitute.com/xephem/
 
-PERMIT_PACKAGE_CDROM=   no modifications, no fee
-PERMIT_PACKAGE_FTP=     no modifications
-PERMIT_DISTFILES_FTP=   Yes
+PERMIT_PACKAGE=		no modifications
+PERMIT_DISTFILES=	Yes
 
 REVISION =	9
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c m Xm

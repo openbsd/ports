@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2018/10/24 14:28:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/14 02:16:51 naddy Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -24,9 +24,8 @@ EXTRACT_SUFX=	.tar.bz2
 PKG_ARCH-data=	*
 
 # zlib (code) + no modification (data)
-PERMIT_PACKAGE_CDROM=	no modify
-PERMIT_PACKAGE_FTP=	no modify
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE=		no modify
+PERMIT_DISTFILES=	Yes
 
 WRKDIST=		${WRKDIR}/${N}/src
 USE_GMAKE=		Yes
