@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.97 2019/07/12 20:46:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.98 2019/07/14 21:53:23 bcallah Exp $
 
 COMMENT=	lightweight image viewer
 
-DISTNAME=	feh-3.1.3
+DISTNAME=	feh-3.2
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics
 FIX_EXTRACT_PERMISSIONS=Yes
-REVISION=	1
 
 HOMEPAGE=	https://feh.finalrewind.org/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
