@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:46:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/14 04:41:36 kirby Exp $
 
 COMMENT =		lightweight mapping application for use with or without GPS
 
-DISTNAME =		foxtrotgps-1.2.1
-REVISION =		2
+DISTNAME =		foxtrotgps-1.2.2
 
 CATEGORIES =		geo x11
 
-HOMEPAGE =		http://www.foxtrotgps.org/
+HOMEPAGE =		https://www.foxtrotgps.org/
 
 MASTER_SITES =		${HOMEPAGE}/releases/
 
@@ -24,7 +23,8 @@ WANTLIB += gtk-x11-2.0 harfbuzz iconv intl lzma m nghttp2 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread sqlite3
 WANTLIB += ssl xcb xcb-render xcb-shm xml2 z
 
-MODULES = 		lang/python \
+MODULES = 		devel/dconf \
+			lang/python \
 			textproc/intltool
 
 BUILD_DEPENDS = 	devel/gettext,-tools \
