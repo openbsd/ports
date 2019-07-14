@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2018/02/14 08:57:38 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/14 00:51:55 naddy Exp $
 
 COMMENT =	realtime audio and music engine for games
 
@@ -18,8 +18,8 @@ HOMEPAGE =	http://audiality.org/
 MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 
 # zlib
-PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	test/data/*.a2s are all rights reserved
+PERMIT_PACKAGE =	Yes
+PERMIT_DISTFILES =	test/data/*.a2s are all rights reserved
 
 WANTLIB += c SDL2 m
 
