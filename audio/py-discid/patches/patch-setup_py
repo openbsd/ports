@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2019/07/14 23:01:58 kmos Exp $
+
+distutils doesn't support --single-version-externally-managed
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -2,7 +2,7 @@
+ 
+ import sys
+ import unittest
+-from distutils.core import setup, Command
++from setuptools import setup, Command
+ 
+ 
+ class Test(Command):

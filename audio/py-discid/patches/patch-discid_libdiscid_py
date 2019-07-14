@@ -1,0 +1,26 @@
+$OpenBSD: patch-discid_libdiscid_py,v 1.1.1.1 2019/07/14 23:01:58 kmos Exp $
+
+Shift to just looking for libdiscid.so to prevent future problems
+if the libdiscid major gets bumped.
+
+Index: discid/libdiscid.py
+--- discid/libdiscid.py.orig
++++ discid/libdiscid.py
+@@ -59,7 +59,7 @@ def _find_library(name, version=0):
+     else:
+         # that would be linux/UNIX-like
+         # these need to prepend ./
+-        lib_name = "./lib%s.so.%d" % (name, version)
++        lib_name = "./lib%s.so" % (name)
+         if os.path.isfile(lib_name):
+             lib_file = lib_name
+ 
+@@ -88,7 +88,7 @@ def _find_library(name, version=0):
+         elif sys.platform == "cygwin":
+             lib_file = "cyg%s-%d.dll" % (name, version)
+         else:
+-            lib_file = "lib%s.so.%d" % (name, version)
++            lib_file = "lib%s.so" % (name)
+ 
+     return lib_file
+ 
