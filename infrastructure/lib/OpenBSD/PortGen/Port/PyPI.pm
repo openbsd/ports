@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.16 2019/05/16 16:01:10 afresh1 Exp $
+# $OpenBSD: PyPI.pm,v 1.17 2019/07/15 13:35:35 kmos Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -87,7 +87,7 @@ sub fill_in_makefile
 	$self->set_modules('lang/python');
 	$self->set_other( 'HOMEPAGE', $di->{info}{home_page} );
 	$self->set_license( $di->{info}{license} );
-	$self->set_descr( $di->{info}{summary} );
+	$self->set_descr( $di->{info}{description} );
 
 	# TODO: These assume the PKGNAME is the DISTNAME
 	my $to_lower = $pkgname =~ /\p{Upper}/ ? ':L' : '';
