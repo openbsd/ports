@@ -1,0 +1,17 @@
+$OpenBSD: patch-include_netdb_h,v 1.1 2019/07/15 08:47:45 sthen Exp $
+
+struct needs to match the order in base. (We can't just directly use
+netdb.h from base because it is missing things that libbind wants).
+
+Index: include/netdb.h
+--- include/netdb.h.orig
++++ include/netdb.h
+@@ -182,7 +182,7 @@ struct	addrinfo {
+ #else
+ 	size_t		ai_addrlen;	/*%< length of ai_addr */
+ #endif
+-#ifdef __linux
++#if defined(__linux) || defined(__OpenBSD__)
+ 	struct sockaddr	*ai_addr; 	/*%< binary address */
+ 	char		*ai_canonname;	/*%< canonical name for hostname */
+ #else
