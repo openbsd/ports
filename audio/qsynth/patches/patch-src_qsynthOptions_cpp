@@ -1,27 +1,29 @@
-$OpenBSD: patch-src_qsynthOptions_cpp,v 1.3 2019/01/02 21:56:15 sebastia Exp $
+$OpenBSD: patch-src_qsynthOptions_cpp,v 1.4 2019/07/15 21:54:17 sebastia Exp $
 
 Some defaults for midi/audio to sndiod
 
 Index: src/qsynthOptions.cpp
 --- src/qsynthOptions.cpp.orig
 +++ src/qsynthOptions.cpp
-@@ -487,8 +487,9 @@ void qsynthOptions::loadSetup ( qsynthSetup *pSetup, c
- 	pSetup->iAudioBufSize    = m_settings.value("/AudioBufSize", 512).toInt();
- 	pSetup->iAudioBufCount   = m_settings.value("/AudioBufCount", 8).toInt();
- #else
--	pSetup->sMidiDriver      = m_settings.value("/MidiDriver", "alsa_seq").toString();
--	pSetup->sAudioDriver     = m_settings.value("/AudioDriver", "jack").toString();
+@@ -487,6 +487,9 @@ void qsynthOptions::loadSetup ( qsynthSetup *pSetup, c
+ #elif defined(__WIN32__) || defined(_WIN32) || defined(WIN32)
+ 	pSetup->sMidiDriver      = m_settings.value("/MidiDriver", "winmidi").toString();
+ 	pSetup->sAudioDriver     = m_settings.value("/AudioDriver", "dsound").toString();
++#elif defined(__OpenBSD__)
 +	pSetup->sMidiDriver      = m_settings.value("/MidiDriver", "sndio").toString();
-+	pSetup->sMidiDevice      = m_settings.value("/MidiDevice", "midithru/0").toString();
 +	pSetup->sAudioDriver     = m_settings.value("/AudioDriver", "sndio").toString();
- 	pSetup->iAudioBufSize    = m_settings.value("/AudioBufSize", 64).toInt();
- 	pSetup->iAudioBufCount   = m_settings.value("/AudioBufCount", 2).toInt();
- #endif
-@@ -496,7 +497,6 @@ void qsynthOptions::loadSetup ( qsynthSetup *pSetup, c
+ #else
+ 	pSetup->sMidiDriver      = m_settings.value("/MidiDriver", "alsa_seq").toString();
+ 	pSetup->sAudioDriver     = m_settings.value("/AudioDriver", "jack").toString();
+@@ -502,7 +505,11 @@ void qsynthOptions::loadSetup ( qsynthSetup *pSetup, c
  	pSetup->sJackName        = m_settings.value("/JackName", "qsynth").toString();
  	pSetup->bJackAutoConnect = m_settings.value("/JackAutoConnect", true).toBool();
  	pSetup->bJackMulti       = m_settings.value("/JackMulti", false).toBool();
--	pSetup->sMidiDevice      = m_settings.value("/MidiDevice").toString();
++#if defined(__OpenBSD__)
++	pSetup->sMidiDevice      = m_settings.value("/MidiDevice", "midithru/0").toString();
++#else
+ 	pSetup->sMidiDevice      = m_settings.value("/MidiDevice").toString();
++#endif
  	pSetup->iMidiChannels    = m_settings.value("/MidiChannels", 16).toInt();
  	pSetup->sMidiBankSelect  = m_settings.value("/MidiBankSelect", "gm").toString();
  	pSetup->sAudioDevice     = m_settings.value("/AudioDevice").toString();
