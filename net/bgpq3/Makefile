@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2019/06/26 22:19:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/15 11:05:09 job Exp $
 
 COMMENT =		bgp filtering automation for Cisco and Juniper routers
 
 GH_ACCOUNT =		snar
 GH_PROJECT =		bgpq3
 GH_TAGNAME =		v0.1.35
+
+REVISION =		0
 
 CATEGORIES =		net
 
