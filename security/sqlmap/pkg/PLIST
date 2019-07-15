@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/06/06 07:02:20 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/07/15 07:34:17 gonzalo Exp $
 bin/sqlmap
 share/sqlmap/
 share/sqlmap/.github/
@@ -31,6 +31,7 @@ share/sqlmap/data/procs/mysql/dns_request.sql
 share/sqlmap/data/procs/mysql/write_file_limit.sql
 share/sqlmap/data/procs/oracle/
 share/sqlmap/data/procs/oracle/dns_request.sql
+share/sqlmap/data/procs/oracle/read_file_export_extension.sql
 share/sqlmap/data/procs/postgresql/
 share/sqlmap/data/procs/postgresql/dns_request.sql
 share/sqlmap/data/shell/
@@ -47,6 +48,7 @@ share/sqlmap/data/shell/stagers/stager.jsp_
 share/sqlmap/data/shell/stagers/stager.php_
 share/sqlmap/data/txt/
 share/sqlmap/data/txt/common-columns.txt
+share/sqlmap/data/txt/common-files.txt
 share/sqlmap/data/txt/common-outputs.txt
 share/sqlmap/data/txt/common-tables.txt
 share/sqlmap/data/txt/keywords.txt
@@ -69,6 +71,10 @@ share/sqlmap/data/udf/mysql/windows/64/lib_mysqludf_sys.dll_
 share/sqlmap/data/udf/postgresql/
 share/sqlmap/data/udf/postgresql/linux/
 share/sqlmap/data/udf/postgresql/linux/32/
+share/sqlmap/data/udf/postgresql/linux/32/10/
+share/sqlmap/data/udf/postgresql/linux/32/10/lib_postgresqludf_sys.so_
+share/sqlmap/data/udf/postgresql/linux/32/11/
+share/sqlmap/data/udf/postgresql/linux/32/11/lib_postgresqludf_sys.so_
 share/sqlmap/data/udf/postgresql/linux/32/8.2/
 share/sqlmap/data/udf/postgresql/linux/32/8.2/lib_postgresqludf_sys.so_
 share/sqlmap/data/udf/postgresql/linux/32/8.3/
@@ -85,7 +91,15 @@ share/sqlmap/data/udf/postgresql/linux/32/9.3/
 share/sqlmap/data/udf/postgresql/linux/32/9.3/lib_postgresqludf_sys.so_
 share/sqlmap/data/udf/postgresql/linux/32/9.4/
 share/sqlmap/data/udf/postgresql/linux/32/9.4/lib_postgresqludf_sys.so_
+share/sqlmap/data/udf/postgresql/linux/32/9.5/
+share/sqlmap/data/udf/postgresql/linux/32/9.5/lib_postgresqludf_sys.so_
+share/sqlmap/data/udf/postgresql/linux/32/9.6/
+share/sqlmap/data/udf/postgresql/linux/32/9.6/lib_postgresqludf_sys.so_
 share/sqlmap/data/udf/postgresql/linux/64/
+share/sqlmap/data/udf/postgresql/linux/64/10/
+share/sqlmap/data/udf/postgresql/linux/64/10/lib_postgresqludf_sys.so_
+share/sqlmap/data/udf/postgresql/linux/64/11/
+share/sqlmap/data/udf/postgresql/linux/64/11/lib_postgresqludf_sys.so_
 share/sqlmap/data/udf/postgresql/linux/64/8.2/
 share/sqlmap/data/udf/postgresql/linux/64/8.2/lib_postgresqludf_sys.so_
 share/sqlmap/data/udf/postgresql/linux/64/8.3/
@@ -102,6 +116,10 @@ share/sqlmap/data/udf/postgresql/linux/64/9.3/
 share/sqlmap/data/udf/postgresql/linux/64/9.3/lib_postgresqludf_sys.so_
 share/sqlmap/data/udf/postgresql/linux/64/9.4/
 share/sqlmap/data/udf/postgresql/linux/64/9.4/lib_postgresqludf_sys.so_
+share/sqlmap/data/udf/postgresql/linux/64/9.5/
+share/sqlmap/data/udf/postgresql/linux/64/9.5/lib_postgresqludf_sys.so_
+share/sqlmap/data/udf/postgresql/linux/64/9.6/
+share/sqlmap/data/udf/postgresql/linux/64/9.6/lib_postgresqludf_sys.so_
 share/sqlmap/data/udf/postgresql/windows/
 share/sqlmap/data/udf/postgresql/windows/32/
 share/sqlmap/data/udf/postgresql/windows/32/8.2/
@@ -201,7 +219,6 @@ share/sqlmap/extra/shutils/
 ${MODPY_COMMENT}share/sqlmap/extra/shutils/${MODPY_PYCACHE}/
 share/sqlmap/extra/shutils/${MODPY_PYCACHE}duplicates.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/extra/shutils/${MODPY_PYCACHE}newlines.${MODPY_PYC_MAGIC_TAG}pyc
-share/sqlmap/extra/shutils/${MODPY_PYCACHE}pylint.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/extra/shutils/blanks.sh
 share/sqlmap/extra/shutils/drei.sh
 share/sqlmap/extra/shutils/duplicates.py
@@ -213,7 +230,6 @@ share/sqlmap/extra/shutils/precommit-hook.sh
 share/sqlmap/extra/shutils/pycodestyle.sh
 share/sqlmap/extra/shutils/pydiatra.sh
 share/sqlmap/extra/shutils/pyflakes.sh
-share/sqlmap/extra/shutils/pylint.py
 share/sqlmap/extra/shutils/pypi.sh
 share/sqlmap/extra/shutils/strip.sh
 share/sqlmap/extra/vulnserver/
@@ -693,7 +709,6 @@ share/sqlmap/plugins/generic/users.py
 share/sqlmap/sqlmap.conf
 share/sqlmap/sqlmap.py
 share/sqlmap/sqlmapapi.py
-share/sqlmap/swagger.yaml
 share/sqlmap/tamper/
 share/sqlmap/tamper/__init__.py
 ${MODPY_COMMENT}share/sqlmap/tamper/${MODPY_PYCACHE}/
