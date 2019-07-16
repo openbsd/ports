@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: make-readmes,v 1.7 2018/12/14 10:40:23 espie Exp $
+# $OpenBSD: make-readmes,v 1.8 2019/07/16 03:49:32 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -52,18 +52,15 @@ my $info_req = $db->prepare(
 		_ports.homepage,
 		_descr.value,
 		fullpkgname,
-		permit_cd.value,
-		permit_ftp.value
+		permit.value
 	    from _paths 
 		join _Ports on _paths.id=_Ports.fullpkgpath 
 		left join _Descr on _paths.id=_Descr.fullpkgpath
-		join _keywords2 permit_cd 
-		    on _ports.permit_package_cdrom=permit_cd.keyref
-		join _keywords2 permit_ftp 
-		    on _ports.permit_package_ftp=permit_ftp.keyref
+		join _keywords2 permit 
+		    on _ports.permit_package=permit.keyref
 	    order by _paths.fullpkgpath});
-my ($id, $path, $comment, $homepage, $descr, $fullpkgname, $permit_cd, $permit_ftp);
-$info_req->bind_columns(\($id, $path,  $comment, $homepage, $descr, $fullpkgname, $permit_cd, $permit_ftp));
+my ($id, $path, $comment, $homepage, $descr, $fullpkgname, $permit);
+$info_req->bind_columns(\($id, $path,  $comment, $homepage, $descr, $fullpkgname, $permit));
 
 my $dep_req = $db->prepare(
 	q{select 
@@ -145,11 +142,8 @@ while ($info_req->fetch) {
 		homepage => $homepage,
 		descr => $descr,
 		fullpkgname => $fullpkgname };
-	unless ($permit_cd =~ /yes/i) {
-		$e->{permit_cd} = $permit_cd;
-	}
-	unless ($permit_ftp =~ /yes/i) {
-		$e->{permit_ftp} = $permit_ftp;
+	unless ($permit =~ /yes/i) {
+		$e->{permitp} = $permit;
 	}
 	$dep_req->execute($id);
 	while ($dep_req->fetch) {

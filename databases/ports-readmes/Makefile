@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/16 03:49:32 espie Exp $
 
 COMMENT =		readmes.html
 
 PKG_ARCH = *
-DISTNAME =		ports-readmes-3
+DISTNAME =		ports-readmes-3.1
 DISTFILES =
 
 CATEGORIES =		databases

@@ -18,13 +18,9 @@ No homepage
 [% END %]
 
 <dl>
-[% IF permit_cd %]
-<dt>Distribution forbidden on cdroms<dd>
-[% permit_cd | html %]
-[% END %]
-[% IF permit_ftp %]
-<dt>Distribution forbidden on ftp<dd>
-[% permit_ftp | html %]
+[% IF permit %]
+<dt>Distribution forbidden<dd>
+[% permit | html %]
 [% END %]
 [% IF multi %]
 <dt>Multi-packages<dd>
