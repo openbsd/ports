@@ -1,15 +1,14 @@
-$OpenBSD: patch-pandas_io_formats_terminal_py,v 1.1.1.1 2018/09/14 08:09:05 sthen Exp $
+$OpenBSD: patch-pandas_io_formats_terminal_py,v 1.2 2019/07/16 20:38:03 bket Exp $
 
 Index: pandas/io/formats/terminal.py
 --- pandas/io/formats/terminal.py.orig
 +++ pandas/io/formats/terminal.py
-@@ -42,7 +42,8 @@ def get_terminal_size():
+@@ -42,7 +42,7 @@ def get_terminal_size():
+             tuple_xy = _get_terminal_size_tput()
              # needed for window's python in cygwin's xterm!
-     if current_os == 'Linux' or \
-         current_os == 'Darwin' or \
--            current_os.startswith('CYGWIN'):
-+            current_os == 'OpenBSD' or \
-+                current_os.startswith('CYGWIN'):
+     if (current_os == 'Linux' or current_os == 'Darwin' or
+-            current_os.startswith('CYGWIN')):
++            current_os.startswith('CYGWIN') or current_os == 'OpenBSD'):
          tuple_xy = _get_terminal_size_linux()
      if tuple_xy is None:
          tuple_xy = (80, 25)      # default value

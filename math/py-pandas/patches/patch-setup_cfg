@@ -1,13 +1,13 @@
-$OpenBSD: patch-setup_cfg,v 1.1.1.1 2018/09/14 08:09:05 sthen Exp $
+$OpenBSD: patch-setup_cfg,v 1.2 2019/07/16 20:38:03 bket Exp $
 
 Index: setup.cfg
 --- setup.cfg.orig
 +++ setup.cfg
-@@ -27,7 +27,6 @@ markers = 
- 	slow: mark a test as slow
- 	network: mark a test as network
+@@ -57,7 +57,6 @@ markers = 
  	high_memory: mark a test as a high-memory only
--addopts = --strict-data-files
+ 	clipboard: mark a pd.read_clipboard test
  doctest_optionflags = NORMALIZE_WHITESPACE IGNORE_EXCEPTION_DETAIL
+-addopts = --strict-data-files
+ xfail_strict = True
  
- [egg_info]
+ [coverage:run]

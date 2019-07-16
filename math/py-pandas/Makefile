@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/16 20:38:03 bket Exp $
 
 COMMENT =		data analysis and manipulation library
 
-MODPY_EGG_VERSION =	0.23.4
+MODPY_EGG_VERSION =	0.24.2
 DISTNAME =		pandas-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
 
 CATEGORIES =		math
 
@@ -39,6 +38,7 @@ TEST_DEPENDS +=		databases/py-mysqlclient${MODPY_FLAVOR} \
 			databases/py-sqlalchemy${MODPY_FLAVOR} \
 			devel/ipython${MODPY_FLAVOR} \
 			devel/py-html5lib${MODPY_FLAVOR} \
+			devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-ipykernel${MODPY_FLAVOR} \
 			devel/py-pathlib${MODPY_FLAVOR} \
 			devel/py-xlsxwriter${MODPY_FLAVOR} \
@@ -56,6 +56,8 @@ TEST_DEPENDS +=		databases/py-mysqlclient${MODPY_FLAVOR} \
 
 TEST_ENV +=		TZ=UTC
 
+# XXX tarball does not include all files required for the test suite, as such
+# numerous tests fail.
 do-test:
 	cd ${WRKSRC} && ${MODPY_CMD} build_ext --inplace
 	@${MODPY_TEST_TARGET}
