@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2019/07/12 20:49:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2019/07/16 21:29:41 sthen Exp $
 
 COMMENT=		configuration editing tool and API
 
 DISTNAME=		augeas-1.10.1
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		sysutils devel
 

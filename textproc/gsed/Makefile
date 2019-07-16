@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/16 21:29:41 sthen Exp $
 
 COMMENT=		GNU stream editor
 
 DISTNAME=		sed-4.2.2
 PKGNAME=		g${DISTNAME}
-REVISION=		2
+REVISION=		3
 CATEGORIES=		textproc
 MASTER_SITES=		${MASTER_SITE_GNU:=sed/}
 EXTRACT_SUFX=		.tar.bz2

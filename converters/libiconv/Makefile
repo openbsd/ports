@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.51 2019/06/29 15:46:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2019/07/16 21:29:41 sthen Exp $
 
 COMMENT=	character set conversion library
 
 DISTNAME=	libiconv-1.16
 CATEGORIES=	converters devel
 MASTER_SITES=	${MASTER_SITE_GNU:=libiconv/}
+REVISION=	0
 
 SHARED_LIBS=	charset		1.1 \
 		iconv		7.0

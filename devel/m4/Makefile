@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 20:44:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/07/16 21:29:41 sthen Exp $
 
 COMMENT=	GNU m4
 
@@ -6,6 +6,7 @@ DISTNAME=	m4-1.4.18
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=m4/}
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 HOMEPAGE=	https://www.gnu.org/software/m4/
 

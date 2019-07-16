@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 20:50:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/16 21:29:41 sthen Exp $
 
 COMMENT=	word differences between text files
 
@@ -6,7 +6,7 @@ DISTNAME=	wdiff-1.2.2
 CATEGORIES=	textproc
 HOMEPAGE=	https://www.gnu.org/software/wdiff
 MASTER_SITES=	${MASTER_SITE_GNU:=wdiff/}
-REVISION=	2
+REVISION=	3
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

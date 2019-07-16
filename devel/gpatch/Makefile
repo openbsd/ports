@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/16 21:29:41 sthen Exp $
 
 COMMENT=		GNU patch
 
@@ -6,6 +6,7 @@ VERSION=		2.7.6
 DISTNAME=		patch-${VERSION}
 PKGNAME=		gpatch-${VERSION}
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		https://www.gnu.org/software/patch/
 
