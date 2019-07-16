@@ -1,18 +1,18 @@
-@comment $OpenBSD: PLIST-python,v 1.2 2019/05/23 19:24:47 landry Exp $
+@comment $OpenBSD: PLIST-python,v 1.3 2019/07/16 13:14:50 landry Exp $
 lib/python${MODPY_VERSION}/site-packages/mapscript/
-lib/python${MODPY_VERSION}/site-packages/mapscript-7.4.0-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/mapscript-7.4.0-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/mapscript-7.4.0-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/mapscript-7.4.0-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/mapscript-7.4.0-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/mapscript/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mapscript/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mapscript/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mapscript/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapscript/${MODPY_PYCACHE}mapscript.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapscript/_mapscript.so
 lib/python${MODPY_VERSION}/site-packages/mapscript/examples/
 lib/python${MODPY_VERSION}/site-packages/mapscript/examples/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mapscript/examples/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mapscript/examples/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mapscript/examples/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapscript/examples/${MODPY_PYCACHE}project_csv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapscript/examples/${MODPY_PYCACHE}shpdump.${MODPY_PYC_MAGIC_TAG}pyc
@@ -25,7 +25,7 @@ lib/python${MODPY_VERSION}/site-packages/mapscript/examples/wxs.py
 lib/python${MODPY_VERSION}/site-packages/mapscript/mapscript.py
 lib/python${MODPY_VERSION}/site-packages/mapscript/tests/
 lib/python${MODPY_VERSION}/site-packages/mapscript/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/mapscript/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mapscript/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mapscript/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapscript/tests/${MODPY_PYCACHE}class_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapscript/tests/${MODPY_PYCACHE}clone_test.${MODPY_PYC_MAGIC_TAG}pyc
