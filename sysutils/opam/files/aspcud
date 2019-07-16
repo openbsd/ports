@@ -1,8 +1,0 @@
-#!/bin/sh -e
-
-SERVER=cudf-solvers.irill.org
-
-if bzip2 -c $1 | curl -f --data-binary @- http://$SERVER/cudf.bz2?criteria="$3" | bunzip2 -c > $2;
-then exit 0
-else echo FAIL > $2
-fi

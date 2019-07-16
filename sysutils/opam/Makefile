@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/16 18:02:07 chrisz Exp $
 
 COMMENT =		OCaml source-based package manager
 
 CATEGORIES =		sysutils devel
 
-V =			2.0.4
+V =			2.0.5
 PKGNAME =		opam-${V}
 DISTNAME =		opam-full-${V}
 
@@ -35,17 +35,13 @@ USE_GMAKE =		Yes
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" \
 			LDFLAGS="${LDFLAGS}" \
 			CC=cc
-CONFIGURE_STYLE =	gnu autoconf no-autoheader
-AUTOCONF_VERSION =	2.69
+CONFIGURE_STYLE =	gnu
 
 ALL_TARGET =		lib-ext all man #doc requires odoc
 INSTALL_TARGET =	install
 TEST_TARGET =		tests
 
 docdir =		${PREFIX}/share/doc/opam
-
-#pre-configure:
-#	cd ${WRKSRC} && env ${CONFIGURE_ENV} ${GMAKE} compiler
 
 post-install:
 	mv	${PREFIX}/doc/opam-installer \
