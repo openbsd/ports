@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/17 14:46:33 danj Exp $
 
 COMMENT=	automated domain testing tool
 
 DISTNAME=	doc-2.2.3
 CATEGORIES=    	net
-
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
+REVISION=	0
 
 PERMIT_PACKAGE=	Yes
 

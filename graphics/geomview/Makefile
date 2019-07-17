@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:46:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/07/17 14:46:32 danj Exp $
 
 COMMENT =		geometry viewer for OOGL file formats
 
 V =			1.9.4
 DISTNAME =		geomview-$V
-REVISION =		11
+REVISION =		12
 SHARED_LIBS =		geomview	0.0
 CATEGORIES =		graphics
 
 HOMEPAGE =		http://www.geomview.org
-MAINTAINER =		Patsy <openbsd@ethernull.org>
-
 # GPLv2
 PERMIT_PACKAGE =	Yes
 

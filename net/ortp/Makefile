@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/17 14:46:34 danj Exp $
 
 COMMENT =		RTP (RFC3550) library
 DISTNAME =		ortp-0.24.2
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS +=	ortp                 2.0      # 9.0
 
 CATEGORIES =		net multimedia
 HOMEPAGE =		http://www.linphone.org/eng/documentation/dev/ortp.html
-MAINTAINER =		Vadim Zhukov <zhuk@openbsd.org>
-
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 

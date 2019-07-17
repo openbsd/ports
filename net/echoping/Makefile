@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/17 14:46:33 danj Exp $
 
 COMMENT=	test performance of a remote TCP service
 
 VERSION=	5.2.0
-REVISION=	2
+REVISION=	3
 DISTNAME=	echoping-${VERSION}
 CATEGORIES=	net
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=echoping/}
 
 HOMEPAGE=	https://github.com/bortzmeyer/echoping
-
-MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE=	Yes

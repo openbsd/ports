@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/07/12 20:47:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2019/07/17 14:46:33 danj Exp $
 
 COMMENT-main =	anti-spam filter
 COMMENT-pgsql =	PostgreSQL driver for dspam
@@ -6,9 +6,9 @@ COMMENT-mysql =	MySQL driver for dspam
 
 VERSION =	3.10.2
 DISTNAME =	dspam-${VERSION}
-REVISION-main =	9
-REVISION-mysql = 7
-REVISION-pgsql = 6
+REVISION-main =	10
+REVISION-mysql = 8
+REVISION-pgsql = 7
 
 PKGNAME-main =	${PKGNAME}
 .for p in pgsql mysql
@@ -24,8 +24,6 @@ CATEGORIES =	mail
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=dspam/}
 
 HOMEPAGE =	http://dspam.sourceforge.net/
-
-MAINTAINER =	Todd T. Fries <todd@OpenBSD.org>
 
 # AGPLv3/BSD/GPLv2
 PERMIT_PACKAGE =	Yes

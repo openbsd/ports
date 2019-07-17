@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/17 14:46:33 danj Exp $
 
 COMMENT=	lightweight SOCKS 4 and SOCKS 5 proxy
 DISTNAME=	nylon-1.21
 CATEGORIES=	net
+REVISION=	0
 
 HOMEPAGE=	http://monkey.org/~marius/nylon/
-
-MAINTAINER=	Marius Eriksen <marius@monkey.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

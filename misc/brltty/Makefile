@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/17 14:46:33 danj Exp $
 
 COMMENT=	access software for a blind person using a braille terminal
 
 DISTNAME=	brltty-3.6
-REVISION=	2
+REVISION=	3
 CATEGORIES=	misc
 HOMEPAGE=	http://mielke.cc/brltty
 MASTER_SITES=	${HOMEPAGE}/releases/
-MAINTAINER=	Mario Lang <mlang@delysid.org>
-
 # GPL
 PERMIT_PACKAGE=	Yes
 

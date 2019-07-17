@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/17 14:46:33 danj Exp $
 # Original from: Kyle Wheeler <kyle@memoryhole.net>
 
 COMMENT =		natural-expression command-line calculator
 
 DISTNAME =		wcalc-2.5
-REVISION =		2
+REVISION =		3
 CATEGORIES =		math
 HOMEPAGE =		http://w-calc.sourceforge.net/
-MAINTAINER =		Amarendra Godbole <amarendra.godbole@gmail.com>
-
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 

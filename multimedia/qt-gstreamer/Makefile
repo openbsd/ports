@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/07/17 14:46:33 danj Exp $
 
 COMMENT =	Qt bindings to GStreamer 1.x
 
 DISTNAME =	qt-gstreamer-1.2.0
-REVISION =	6
+REVISION =	7
 
 SHARED_LIBS =   QtGLib-2.0                1.0 # 0.10
 SHARED_LIBS +=  QtGStreamer-1.0           0.0 # 1.0
@@ -13,8 +13,6 @@ SHARED_LIBS +=  QtGStreamerUtils-1.0      0.0 # 1.0
 CATEGORIES =	multimedia devel
 
 HOMEPAGE =	http://gstreamer.freedesktop.org/modules/qt-gstreamer.html
-
-MAINTAINER =	Vadim Zhukov <zhuk@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes

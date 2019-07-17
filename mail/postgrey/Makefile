@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/17 14:46:33 danj Exp $
 
 COMMENT=	postfix greylist daemon
 
 DISTNAME=	postgrey-1.35
 CATEGORIES=	mail
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://postgrey.schweikert.ch/
 
 MASTER_SITES=	${HOMEPAGE}/pub/ \
 		${HOMEPAGE}/pub/old/
-
-MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
