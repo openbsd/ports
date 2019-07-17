@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/17 14:39:43 danj Exp $
 
 COMMENT=	a software fax modem that uses an IAX channel
 
 DISTNAME=	iaxmodem-1.3.0
 CATEGORIES=	telephony
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=iaxmodem/}
+REVISION=	0
 
 HOMEPAGE=	http://iaxmodem.sourceforge.net/
-
-MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2019/07/12 21:02:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2019/07/17 14:39:42 danj Exp $
 
 COMMENT=	SOCKS client and server
 
 DISTNAME=	dante-1.4.2
+REVISION=	0
 
 CATEGORIES=	security
 
@@ -14,8 +15,6 @@ MODGNU_SHARED_LIBS=dsocks	'-all-dynamic' \
 HOMEPAGE=	https://www.inet.no/dante/
 
 MASTER_SITES=	${HOMEPAGE}/files/
-
-MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 
 # BSD/CMU
 PERMIT_PACKAGE=	Yes

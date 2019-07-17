@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2019/07/12 20:50:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/17 14:39:44 danj Exp $
 
 COMMENT=	convert memos written in XML to the RFC format
 
 MODPY_EGG_VERSION =	2.5.2
 DISTNAME=	xml2rfc-${MODPY_EGG_VERSION}
 CATEGORIES=	textproc
-
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
+REVISION=	0
 
 # BSD
 PERMIT_PACKAGE=	Yes

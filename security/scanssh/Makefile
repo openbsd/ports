@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:49:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/07/17 14:39:42 danj Exp $
 
 COMMENT=	SSH remote version scanner
 
 DISTNAME=	scanssh-2.1
-REVISION =	3
+REVISION =	4
 CATEGORIES=	security
 MASTER_SITES=	https://monkey.org/~provos/
 
 HOMEPAGE=	https://www.monkey.org/~provos/scanssh/
-
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c event pcap dnet>=1

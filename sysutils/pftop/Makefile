@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 20:49:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2019/07/17 14:39:43 danj Exp $
 
 # XXX should be fixed to use the new queuing subsystem
 
 COMMENT=	curses-based real time state and rule display for pf
 
 DISTNAME=	pftop-0.7
-REVISION=	18
+REVISION=	19
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.eee.metu.edu.tr/~canacar/pftop/
-MAINTAINER=	Can Erkin Acar <canacar@openbsd.org>
-
 # BSD
 PERMIT_PACKAGE=	Yes
 

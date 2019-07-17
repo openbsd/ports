@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/17 14:39:43 danj Exp $
 
 COMMENT=		flashes gpio led whenever pf logs to pflog0
 
 DISTNAME=		gpioflicker-0.3
 CATEGORIES=		sysutils
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://www.pro-bono-publico.de/openbsd/gpio/
-
-MAINTAINER=		Johan Fredin <johan@spelaroll.se>
 
 # BSD
 PERMIT_PACKAGE=	Yes

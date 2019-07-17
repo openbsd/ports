@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:51:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/17 14:39:44 danj Exp $
 
 COMMENT =		Gtk2 widget for displaying Plain old Documentation (POD)
 
 MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Gtk2-Ex-PodViewer-0.18
-REVISION =		2
+REVISION =		3
 CATEGORIES =		x11
-
-MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>
 
 # Perl
 PERMIT_PACKAGE =	Yes

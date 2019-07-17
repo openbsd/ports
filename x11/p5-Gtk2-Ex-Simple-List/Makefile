@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/17 14:39:44 danj Exp $
 
 COMMENT =		simple interface to Gtk2 complex MVC list widget
 
 MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Gtk2-Ex-Simple-List-0.50
-REVISION =		2
+REVISION =		3
 CATEGORIES =		x11
-
-MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>
 
 # LPGLv2
 PERMIT_PACKAGE =	Yes

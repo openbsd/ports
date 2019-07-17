@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/17 14:39:44 danj Exp $
 
 COMMENT =		smooth xcursor theme with shadows
 DISTNAME =		28310-neutral-1.13a
 PKGNAME =		xcursor-neutral-1.13
 CATEGORIES =		x11
-
-MAINTAINER =		Lazaros Koromilas <lostd@2f30.org>
+REVISION =		0
 
 # Artistic 2.0
 PERMIT_PACKAGE =	Yes

@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/07/17 14:39:43 danj Exp $
 
 COMMENT =		Google Cloud Platform (GCP) Compute Engine daemon
 
 MODPY_EGG_VERSION =	2.4.0
 DISTNAME =		google-compute-engine-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 GH_ACCOUNT =		GoogleCloudPlatform
 GH_PROJECT =		compute-image-packages
 GH_TAGNAME =		20170609
 
 CATEGORIES =		sysutils net
-
-MAINTAINER =		Helen Koike <helen.koike@collabora.com>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

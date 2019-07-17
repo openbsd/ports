@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:49:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/07/17 14:39:42 danj Exp $
 
 COMMENT=	strong hash library
 
@@ -7,13 +7,11 @@ CATEGORIES=	security
 SHARED_LIBS=	mhash	2.1	# .2.1
 MODGNU_SHARED_LIBS=mhash ''
 LIBmhash_ALIAS=	realmhash
-REVISION=	0
+REVISION=	1
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mhash/}
 
 HOMEPAGE=	http://mhash.sourceforge.net/
-
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE=	Yes

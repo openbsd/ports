@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:50:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/17 14:39:44 danj Exp $
 
 COMMENT = 		web-based SSH client
 
 DISTNAME =		Ajaxterm-0.10
 PKGNAME =		ajaxterm-0.10
-REVISION =		12
+REVISION =		13
 
 CATEGORIES =		net security www
 
 HOMEPAGE =		http://antony.lesuisse.org/software/ajaxterm/
-MAINTAINER =		Laurent Moccellin <moccel_l@epitech.eu>
-
 # Public Domain / LGPL
 PERMIT_PACKAGE =	Yes
 
