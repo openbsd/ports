@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/17 08:24:03 bentley Exp $
+@bin bin/minisign
+@man man/man1/minisign.1
