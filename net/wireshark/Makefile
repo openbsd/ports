@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.92 2019/06/03 16:06:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2019/07/17 21:45:37 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
 COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
-V =		3.0.2
+V =		3.0.3
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
@@ -26,8 +26,8 @@ EXTRACT_SUFX =	.tar.xz
 # tools/pidl is GPLv3 or later. See COPYING.
 PERMIT_PACKAGE = Yes
 
-cWANTLIB +=	bcg729 c gcrypt glib-2.0 gmodule-2.0 gnutls gpg-error
-cWANTLIB +=	m pcap spandsp z
+cWANTLIB +=	c gcrypt glib-2.0 gmodule-2.0
+cWANTLIB +=	m pcap z
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
@@ -51,8 +51,8 @@ MODLUA_SA =	Yes
 MODLUA_RUNDEP =	No
 MODPY_RUNDEP =	No
 
-WANTLIB-text =	${cWANTLIB} ${MODLUA_WANTLIB}
-WANTLIB-text += cares lz4 maxminddb nghttp2 smi snappy ssh xml2
+WANTLIB-text =	${cWANTLIB} ${MODLUA_WANTLIB} bcg729 cares gnutls
+WANTLIB-text += lz4 maxminddb nghttp2 smi snappy spandsp ssh xml2
 
 WANTLIB-main =	${cWANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-main += wireshark wiretap wscodecs wsutil

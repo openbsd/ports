@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-text,v 1.10 2019/03/01 18:06:46 sthen Exp $
+@comment $OpenBSD: PLIST-text,v 1.11 2019/07/17 21:45:37 sthen Exp $
 @newgroup _wireshark:735
 @bin bin/capinfos
 @bin bin/captype
@@ -735,7 +735,7 @@ share/wireshark/help/
 share/wireshark/help/capture_filters.txt
 share/wireshark/help/capturing.txt
 share/wireshark/help/display_filters.txt
-share/wireshark/help/faq.py
+share/wireshark/help/faq.txt
 share/wireshark/help/getting_started.txt
 share/wireshark/help/overview.txt
 share/wireshark/help/toc
