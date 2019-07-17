@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.417 2019/07/14 23:05:05 kmos Exp $
+# $OpenBSD: Makefile,v 1.418 2019/07/17 08:08:13 fcambus Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -92,6 +92,7 @@
      SUBDIR += libnjb
      SUBDIR += libofa
      SUBDIR += libogg
+     SUBDIR += libopenmpt
      SUBDIR += libopusenc
      SUBDIR += libsamplerate
      SUBDIR += libsidplay
