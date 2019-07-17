@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.13 2019/05/21 06:20:24 gonzalo Exp $
+$OpenBSD: README,v 1.14 2019/07/17 06:15:40 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -93,6 +93,14 @@ server "domain.tld" {
 	}
 
 	location "/nextcloud/" {
+		block return 301 "$DOCUMENT_URI/index.php"
+	}
+
+	location "/nextcloud/ocm-provider/" {
+		block return 301 "$DOCUMENT_URI/index.php"
+	}
+
+	location "/nextcloud/ocs-provider/" {
 		block return 301 "$DOCUMENT_URI/index.php"
 	}
 }

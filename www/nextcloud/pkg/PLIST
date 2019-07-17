@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2019/05/21 06:20:23 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.29 2019/07/17 06:15:40 gonzalo Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
 @unexec-delete rm -f ${PREFIX}/conf/modules/apache-nextcloud.conf
 conf/modules.sample/
@@ -5014,6 +5014,8 @@ nextcloud/apps/accessibility/js/accessibility.js.map
 nextcloud/apps/accessibility/l10n/
 nextcloud/apps/accessibility/l10n/af.js
 nextcloud/apps/accessibility/l10n/af.json
+nextcloud/apps/accessibility/l10n/bg.js
+nextcloud/apps/accessibility/l10n/bg.json
 nextcloud/apps/accessibility/l10n/ca.js
 nextcloud/apps/accessibility/l10n/ca.json
 nextcloud/apps/accessibility/l10n/cs.js
@@ -5034,6 +5036,8 @@ nextcloud/apps/accessibility/l10n/es_AR.js
 nextcloud/apps/accessibility/l10n/es_AR.json
 nextcloud/apps/accessibility/l10n/eu.js
 nextcloud/apps/accessibility/l10n/eu.json
+nextcloud/apps/accessibility/l10n/fa.js
+nextcloud/apps/accessibility/l10n/fa.json
 nextcloud/apps/accessibility/l10n/fi.js
 nextcloud/apps/accessibility/l10n/fi.json
 nextcloud/apps/accessibility/l10n/fo.js
@@ -5842,6 +5846,7 @@ nextcloud/apps/dav/lib/BackgroundJob/CleanupDirectLinksJob.php
 nextcloud/apps/dav/lib/BackgroundJob/CleanupInvitationTokenJob.php
 nextcloud/apps/dav/lib/BackgroundJob/GenerateBirthdayCalendarBackgroundJob.php
 nextcloud/apps/dav/lib/BackgroundJob/RefreshWebcalJob.php
+nextcloud/apps/dav/lib/BackgroundJob/RegisterRegenerateBirthdayCalendars.php
 nextcloud/apps/dav/lib/BackgroundJob/UpdateCalendarResourcesRoomsBackgroundJob.php
 nextcloud/apps/dav/lib/BackgroundJob/UploadCleanup.php
 nextcloud/apps/dav/lib/CalDAV/
@@ -8094,10 +8099,14 @@ nextcloud/apps/files_rightclick/l10n/is.js
 nextcloud/apps/files_rightclick/l10n/is.json
 nextcloud/apps/files_rightclick/l10n/it.js
 nextcloud/apps/files_rightclick/l10n/it.json
+nextcloud/apps/files_rightclick/l10n/ja.js
+nextcloud/apps/files_rightclick/l10n/ja.json
 nextcloud/apps/files_rightclick/l10n/ko.js
 nextcloud/apps/files_rightclick/l10n/ko.json
 nextcloud/apps/files_rightclick/l10n/lt_LT.js
 nextcloud/apps/files_rightclick/l10n/lt_LT.json
+nextcloud/apps/files_rightclick/l10n/lv.js
+nextcloud/apps/files_rightclick/l10n/lv.json
 nextcloud/apps/files_rightclick/l10n/nb.js
 nextcloud/apps/files_rightclick/l10n/nb.json
 nextcloud/apps/files_rightclick/l10n/nl.js
@@ -8155,7 +8164,6 @@ nextcloud/apps/files_sharing/img/
 nextcloud/apps/files_sharing/img/app.svg
 nextcloud/apps/files_sharing/js/
 nextcloud/apps/files_sharing/js/additionalScripts.js
-nextcloud/apps/files_sharing/js/additionalScripts.js.map
 nextcloud/apps/files_sharing/js/app.js
 nextcloud/apps/files_sharing/js/dist/
 nextcloud/apps/files_sharing/js/dist/additionalScripts.js
@@ -8561,8 +8569,6 @@ nextcloud/apps/files_texteditor/js/supported_mimetypes.json
 nextcloud/apps/files_texteditor/l10n/
 nextcloud/apps/files_texteditor/l10n/ast.js
 nextcloud/apps/files_texteditor/l10n/ast.json
-nextcloud/apps/files_texteditor/l10n/az.js
-nextcloud/apps/files_texteditor/l10n/az.json
 nextcloud/apps/files_texteditor/l10n/bg.js
 nextcloud/apps/files_texteditor/l10n/bg.json
 nextcloud/apps/files_texteditor/l10n/ca.js
@@ -9306,6 +9312,8 @@ nextcloud/apps/firstrunwizard/l10n/it.json
 nextcloud/apps/firstrunwizard/l10n/ja.js
 nextcloud/apps/firstrunwizard/l10n/ja.json
 nextcloud/apps/firstrunwizard/l10n/km.php
+nextcloud/apps/firstrunwizard/l10n/ko.js
+nextcloud/apps/firstrunwizard/l10n/ko.json
 nextcloud/apps/firstrunwizard/l10n/ku_IQ.php
 nextcloud/apps/firstrunwizard/l10n/lt_LT.js
 nextcloud/apps/firstrunwizard/l10n/lt_LT.json
@@ -10762,6 +10770,8 @@ nextcloud/apps/recommendations/l10n/it.js
 nextcloud/apps/recommendations/l10n/it.json
 nextcloud/apps/recommendations/l10n/ja.js
 nextcloud/apps/recommendations/l10n/ja.json
+nextcloud/apps/recommendations/l10n/ko.js
+nextcloud/apps/recommendations/l10n/ko.json
 nextcloud/apps/recommendations/l10n/lt_LT.js
 nextcloud/apps/recommendations/l10n/lt_LT.json
 nextcloud/apps/recommendations/l10n/nb.js
@@ -10770,8 +10780,12 @@ nextcloud/apps/recommendations/l10n/nl.js
 nextcloud/apps/recommendations/l10n/nl.json
 nextcloud/apps/recommendations/l10n/pl.js
 nextcloud/apps/recommendations/l10n/pl.json
+nextcloud/apps/recommendations/l10n/ps.js
+nextcloud/apps/recommendations/l10n/ps.json
 nextcloud/apps/recommendations/l10n/pt_BR.js
 nextcloud/apps/recommendations/l10n/pt_BR.json
+nextcloud/apps/recommendations/l10n/pt_PT.js
+nextcloud/apps/recommendations/l10n/pt_PT.json
 nextcloud/apps/recommendations/l10n/ru.js
 nextcloud/apps/recommendations/l10n/ru.json
 nextcloud/apps/recommendations/l10n/sk.js
@@ -12539,44 +12553,6 @@ nextcloud/apps/viewer/appinfo/
 nextcloud/apps/viewer/appinfo/app.php
 nextcloud/apps/viewer/appinfo/info.xml
 nextcloud/apps/viewer/appinfo/signature.json
-nextcloud/apps/viewer/cypress/
-nextcloud/apps/viewer/cypress.json
-nextcloud/apps/viewer/cypress/fixtures/
-nextcloud/apps/viewer/cypress/fixtures/image-small.png
-nextcloud/apps/viewer/cypress/fixtures/image.bmp
-nextcloud/apps/viewer/cypress/fixtures/image.gif
-nextcloud/apps/viewer/cypress/fixtures/image.png
-nextcloud/apps/viewer/cypress/fixtures/image.svg
-nextcloud/apps/viewer/cypress/fixtures/image1.jpg
-nextcloud/apps/viewer/cypress/fixtures/image2.jpg
-nextcloud/apps/viewer/cypress/fixtures/image3.jpg
-nextcloud/apps/viewer/cypress/fixtures/image4.jpg
-nextcloud/apps/viewer/cypress/fixtures/video.mkv
-nextcloud/apps/viewer/cypress/fixtures/video.ogv
-nextcloud/apps/viewer/cypress/fixtures/video.webm
-nextcloud/apps/viewer/cypress/fixtures/video1.mp4
-nextcloud/apps/viewer/cypress/fixtures/video2.mp4
-nextcloud/apps/viewer/cypress/integration/
-nextcloud/apps/viewer/cypress/integration/files.spec.js
-nextcloud/apps/viewer/cypress/integration/image-small.png.spec.js
-nextcloud/apps/viewer/cypress/integration/image.gif.spec.js
-nextcloud/apps/viewer/cypress/integration/image.png.spec.js
-nextcloud/apps/viewer/cypress/integration/image.svg.spec.js
-nextcloud/apps/viewer/cypress/integration/images.spec.js
-nextcloud/apps/viewer/cypress/integration/video.mkv.spec.js
-nextcloud/apps/viewer/cypress/integration/video.mp4.spec.js
-nextcloud/apps/viewer/cypress/integration/video.ogv.spec.js
-nextcloud/apps/viewer/cypress/integration/video.webm.spec.js
-nextcloud/apps/viewer/cypress/integration/videos.spec.js
-nextcloud/apps/viewer/cypress/plugins/
-nextcloud/apps/viewer/cypress/plugins/index.js
-nextcloud/apps/viewer/cypress/start.sh
-nextcloud/apps/viewer/cypress/stop.sh
-nextcloud/apps/viewer/cypress/support/
-nextcloud/apps/viewer/cypress/support/commands.js
-nextcloud/apps/viewer/cypress/support/index.js
-nextcloud/apps/viewer/cypress/utils/
-nextcloud/apps/viewer/cypress/utils/index.js
 nextcloud/apps/viewer/img/
 nextcloud/apps/viewer/img/app.svg
 nextcloud/apps/viewer/js/
@@ -12595,6 +12571,8 @@ nextcloud/apps/viewer/l10n/de.js
 nextcloud/apps/viewer/l10n/de.json
 nextcloud/apps/viewer/l10n/de_DE.js
 nextcloud/apps/viewer/l10n/de_DE.json
+nextcloud/apps/viewer/l10n/eo.js
+nextcloud/apps/viewer/l10n/eo.json
 nextcloud/apps/viewer/l10n/es.js
 nextcloud/apps/viewer/l10n/es.json
 nextcloud/apps/viewer/l10n/eu.js
@@ -12605,6 +12583,8 @@ nextcloud/apps/viewer/l10n/fr.js
 nextcloud/apps/viewer/l10n/fr.json
 nextcloud/apps/viewer/l10n/gl.js
 nextcloud/apps/viewer/l10n/gl.json
+nextcloud/apps/viewer/l10n/he.js
+nextcloud/apps/viewer/l10n/he.json
 nextcloud/apps/viewer/l10n/hu.js
 nextcloud/apps/viewer/l10n/hu.json
 nextcloud/apps/viewer/l10n/is.js
@@ -12613,8 +12593,12 @@ nextcloud/apps/viewer/l10n/it.js
 nextcloud/apps/viewer/l10n/it.json
 nextcloud/apps/viewer/l10n/ja.js
 nextcloud/apps/viewer/l10n/ja.json
+nextcloud/apps/viewer/l10n/ko.js
+nextcloud/apps/viewer/l10n/ko.json
 nextcloud/apps/viewer/l10n/lt_LT.js
 nextcloud/apps/viewer/l10n/lt_LT.json
+nextcloud/apps/viewer/l10n/lv.js
+nextcloud/apps/viewer/l10n/lv.json
 nextcloud/apps/viewer/l10n/nb.js
 nextcloud/apps/viewer/l10n/nb.json
 nextcloud/apps/viewer/l10n/nl.js
@@ -12627,6 +12611,8 @@ nextcloud/apps/viewer/l10n/pt_PT.js
 nextcloud/apps/viewer/l10n/pt_PT.json
 nextcloud/apps/viewer/l10n/ru.js
 nextcloud/apps/viewer/l10n/ru.json
+nextcloud/apps/viewer/l10n/sk.js
+nextcloud/apps/viewer/l10n/sk.json
 nextcloud/apps/viewer/l10n/sl.js
 nextcloud/apps/viewer/l10n/sl.json
 nextcloud/apps/viewer/l10n/sq.js
@@ -14336,6 +14322,8 @@ nextcloud/lib/l10n/nn_NO.js
 nextcloud/lib/l10n/nn_NO.json
 nextcloud/lib/l10n/pl.js
 nextcloud/lib/l10n/pl.json
+nextcloud/lib/l10n/ps.js
+nextcloud/lib/l10n/ps.json
 nextcloud/lib/l10n/pt_BR.js
 nextcloud/lib/l10n/pt_BR.json
 nextcloud/lib/l10n/pt_PT.js
@@ -14941,6 +14929,7 @@ nextcloud/lib/private/Repair/NC15/SetVcardDatabaseUID.php
 nextcloud/lib/private/Repair/NC${MAJOR}/
 nextcloud/lib/private/Repair/NC${MAJOR}/AddClenupLoginFlowV2BackgroundJob.php
 nextcloud/lib/private/Repair/NC${MAJOR}/CleanupCardDAVPhotoCache.php
+nextcloud/lib/private/Repair/NC${MAJOR}/RemoveCypressFiles.php
 nextcloud/lib/private/Repair/OldGroupMembershipShares.php
 nextcloud/lib/private/Repair/Owncloud/
 nextcloud/lib/private/Repair/Owncloud/DropAccountTermsTable.php
@@ -15705,12 +15694,6 @@ nextcloud/settings/js/templates/federationscopemenu.handlebars
 nextcloud/settings/js/usersettings.js
 nextcloud/settings/js/vue-0.js
 nextcloud/settings/js/vue-0.js.map
-nextcloud/settings/js/vue-1.js
-nextcloud/settings/js/vue-1.js.map
-nextcloud/settings/js/vue-2.js
-nextcloud/settings/js/vue-2.js.map
-nextcloud/settings/js/vue-3.js
-nextcloud/settings/js/vue-3.js.map
 nextcloud/settings/js/vue-4.js
 nextcloud/settings/js/vue-4.js.map
 nextcloud/settings/js/vue-5.js
@@ -15719,8 +15702,6 @@ nextcloud/settings/js/vue-6.js
 nextcloud/settings/js/vue-6.js.map
 nextcloud/settings/js/vue-7.js
 nextcloud/settings/js/vue-7.js.map
-nextcloud/settings/js/vue-8.js
-nextcloud/settings/js/vue-8.js.map
 nextcloud/settings/js/vue-settings-admin-security.js
 nextcloud/settings/js/vue-settings-admin-security.js.map
 nextcloud/settings/js/vue-settings-apps-users-management.js
