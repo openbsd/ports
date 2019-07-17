@@ -1,0 +1,9 @@
+libopenmpt is a cross-platform C++ and C library to decode tracked music
+files (modules) into a raw PCM audio stream.
+
+openmpt123 is a cross-platform command-line or terminal based module file
+player.
+
+libopenmpt is based on the player code of the OpenMPT project (Open ModPlug
+Tracker). In order to avoid code base fragmentation, libopenmpt is developed
+in the same source code repository as OpenMPT.

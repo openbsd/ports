@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/17 08:07:15 fcambus Exp $
+@bin bin/openmpt123
+include/libopenmpt/
+include/libopenmpt/libopenmpt.h
+include/libopenmpt/libopenmpt.hpp
+include/libopenmpt/libopenmpt_config.h
+include/libopenmpt/libopenmpt_ext.h
+include/libopenmpt/libopenmpt_ext.hpp
+include/libopenmpt/libopenmpt_stream_callbacks_buffer.h
+include/libopenmpt/libopenmpt_stream_callbacks_fd.h
+include/libopenmpt/libopenmpt_stream_callbacks_file.h
+include/libopenmpt/libopenmpt_version.h
+lib/libopenmpt.a
+lib/libopenmpt.la
+@lib lib/libopenmpt.so.${LIBopenmpt_VERSION}
+lib/pkgconfig/libopenmpt.pc
+@man man/man1/openmpt123.1
+share/doc/libopenmpt/
+share/doc/libopenmpt/LICENSE
+share/doc/libopenmpt/README.md
+share/doc/libopenmpt/examples/
+share/doc/libopenmpt/examples/libopenmpt_example_c.c
+share/doc/libopenmpt/examples/libopenmpt_example_c_mem.c
+share/doc/libopenmpt/examples/libopenmpt_example_c_probe.c
+share/doc/libopenmpt/examples/libopenmpt_example_c_stdout.c
+share/doc/libopenmpt/examples/libopenmpt_example_c_unsafe.c
+share/doc/libopenmpt/examples/libopenmpt_example_cxx.cpp
