@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/17 14:49:20 danj Exp $
 
 COMMENT =	Qt-based C++ library for the Last.fm webservices
 V =		1.0.9
 DISTNAME =	$V
 PKGNAME =	liblastfm-$V
 CATEGORIES =	audio devel net
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://github.com/lastfm/liblastfm
-MAINTAINER =	Vadim Zhukov <zhuk@openbsd.org>
-
 SHARED_LIBS =	lastfm			1.0
 SHARED_LIBS +=	lastfm_fingerprint	1.0
 

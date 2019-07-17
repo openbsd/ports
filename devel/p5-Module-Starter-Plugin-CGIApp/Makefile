@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 21:07:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/17 14:49:21 danj Exp $
 
 COMMENT =		template based module starter for CGI apps
 
 MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Module-Starter-Plugin-CGIApp-0.30
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 CPAN_AUTHOR =		JALDHAR
-
-MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>
 
 # Perl
 PERMIT_PACKAGE =	Yes

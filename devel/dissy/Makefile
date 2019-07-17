@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/17 14:49:20 danj Exp $
 
 COMMENT =		graphical frontend to the objdump disassembler
 
@@ -6,9 +6,7 @@ MODPY_EGG_VERSION = 	9
 DISTNAME =		dissy-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/SimonKagstrom/dissy
-REVISION =		3
-
-MAINTAINER =		Jonathan Armani <armani@openbsd.org>
+REVISION =		4
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

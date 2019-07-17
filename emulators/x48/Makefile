@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/17 14:49:22 danj Exp $
 
 COMMENT=		HP48sx emulator
 
 DISTNAME=		x48-0.6.4
 CATEGORIES=		emulators
-REVISION=		0
-
-MAINTAINER=		Todd T. Fries <todd@openbsd.org>
+REVISION=		1
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

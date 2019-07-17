@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 21:02:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/17 14:49:19 danj Exp $
 
 COMMENT =		calculate and print calendars
 
 DISTNAME =		gcal-3.6.3
-REVISION =		3
+REVISION =		4
 CATEGORIES =		astro
 
 HOMEPAGE =		https://www.gnu.org/software/gcal/
-
-MAINTAINER =		Hermann Gottschalk <magnum@pestilenz.org>
 
 # GPLv2+
 PERMIT_PACKAGE = Yes

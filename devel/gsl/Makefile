@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.37 2019/07/12 20:44:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/07/17 14:49:20 danj Exp $
 
 COMMENT=	GNU Scientific Library
 
 DISTNAME=	gsl-1.15
-REVISION=	2
+REVISION=	3
 SHARED_LIBS +=	gslcblas             1.0      # .0.0
 SHARED_LIBS +=	gsl                  12.0     # .16.0
 
 CATEGORIES=	devel
 
 HOMEPAGE=	https://www.gnu.org/software/gsl/
-
-MAINTAINER=	Can Erkin Acar <canacar@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

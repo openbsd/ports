@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:43:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/07/17 14:49:20 danj Exp $
 
 COMMENT=	audio file volume normalizer
 
 DISTNAME=	normalize-0.7.7
-REVISION=	6
+REVISION=	7
 CATEGORIES=	audio
 
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=normalize/}
 
 HOMEPAGE=	http://normalize.nongnu.org/
-
-MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

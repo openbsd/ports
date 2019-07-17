@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/17 14:49:21 danj Exp $
 
 COMMENT =		scientific number type
 
@@ -7,12 +7,10 @@ COMMENT =		scientific number type
 PORTROACH =		ignore:1
 
 DISTNAME =		scientific-0.3.4.6
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/basvandijk/scientific
-
-MAINTAINER =		David Schaefer <dawedawe@gmx.de>
 
 # BSD3
 PERMIT_PACKAGE =	Yes

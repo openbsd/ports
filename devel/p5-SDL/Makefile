@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:45:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/17 14:49:21 danj Exp $
 
 BROKEN-amd64 =		perl -e 'use SDL' segfaults
 BROKEN-i386 =		dependent ports (frozen-bubble, vacuum) fail: loadable library and perl binaries are mismatched (got handshake key 0x2b, needed 0xXXXXXX)
@@ -10,11 +10,9 @@ MODULES =		cpan
 VER =			2.1.3
 DISTNAME =		SDL_Perl-${VER}
 PKGNAME =		p5-SDL-${VER}
-REVISION =		6
+REVISION =		7
 CATEGORIES =		devel graphics
 CPAN_AUTHOR =		DGOEHRIG
-
-MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>
 
 # GPLv2
 PERMIT_PACKAGE =		Yes

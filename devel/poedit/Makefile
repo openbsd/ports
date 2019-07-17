@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 21:02:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/07/17 14:49:21 danj Exp $
 
 COMMENT=	cross-platform gettext catalogs (PO-files) editor
 
 DISTNAME=	poedit-1.3.7
-REVISION=	13
+REVISION=	14
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.poedit.net/
-
-MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=poedit/}
 

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/17 14:49:21 danj Exp $
 
 COMMENT =	a collection of n-ary tree related modules for Perl
 
 DISTNAME =	Forest-0.10
 CATEGORIES =	devel
 CPAN_AUTHOR =	STEVAN
-
-MAINTAINER =		Matthias Pitzl <pitzl@genua.de>
+REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

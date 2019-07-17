@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/17 14:49:21 danj Exp $
 
 COMMENT =	user-space USB HID access library written in C
 
 DISTNAME =	libhid-0.2.16
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	hid	0.0
 
 CATEGORIES =	devel
 
 HOMEPAGE =	https://directory.fsf.org/wiki/Libhid
-
-MAINTAINER =	Jonathan Armani <armani@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/17 14:49:20 danj Exp $
 
 COMMENT =		Android Debug Bridge
 
 V =			5.1.1_r4
 DISTNAME =		adb-${V}
 PKGNAME =		${DISTNAME:S/_r/./}
+REVISION =		0
 
 GH_ACCOUNT =		android
 GH_PROJECT =		platform_system_core
@@ -13,8 +14,6 @@ GH_TAGNAME =		android-${V}
 CATEGORIES =		devel
 
 HOMEPAGE =		https://developer.android.com/tools/help/adb.html
-MAINTAINER = 		Andrew Aldridge <i80and@foxquill.com>
-
 # Apache License v2.0
 PERMIT_PACKAGE =	Yes
 

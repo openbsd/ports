@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/17 14:49:21 danj Exp $
 
 COMMENT =	ISP tool for LPC2000 and ADUC70xx microcontrollers
 
@@ -6,10 +6,9 @@ V =		1.97
 DISTNAME =	lpc21isp_${V:S/.//}
 PKGNAME =	lpc21isp-${V}
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	http://sourceforge.net/projects/lpc21isp/
-
-MAINTAINER =	Alexander Shiryaev <shiryaev.a.v@gmail.com>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

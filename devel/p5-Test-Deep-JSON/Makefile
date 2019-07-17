@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/17 14:49:21 danj Exp $
 
 COMMENT =	compare JSON with Test::Deep
 
 DISTNAME =	Test-Deep-JSON-0.04
+REVISION =	0
 
 CATEGORIES =	devel
-
-MAINTAINER =		Matthias Pitzl <pitzl@genua.de>
 
 # Perl
 PERMIT_PACKAGE =	Yes

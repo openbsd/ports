@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/17 14:49:20 danj Exp $
 
 ONLY_FOR_ARCHS= amd64 arm i386
 
@@ -6,13 +6,11 @@ COMMENT=	Monkey's audio lossless codec
 
 DISTNAME=	mac-3.99-u4-b5
 PKGNAME=	mac-3.99.4.5
-REVISION =	4
+REVISION =	5
 SHARED_LIBS +=  mac                  0.0      # .2.0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.monkeysaudio.com/
-
-MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
 
 # Monkey's Audio Source Code License Agreement
 # http://www.monkeysaudio.com/license.html

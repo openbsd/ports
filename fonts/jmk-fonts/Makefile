@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/17 14:49:22 danj Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		nice fixed width fonts, easy on the eye
 
 V=			3.0
-REVISION=		5
+REVISION=		6
 DISTNAME=		jmk-x11-fonts-${V}
 PKGNAME=		jmk-fonts-${V}
 FIX_EXTRACT_PERMISSIONS=Yes
@@ -13,8 +13,6 @@ FIX_EXTRACT_PERMISSIONS=Yes
 CATEGORIES=		fonts x11
 
 HOMEPAGE=		http://www.jmknoble.net/fonts/
-
-MAINTAINER=		Jon Olsson <jon@abc.se>
 
 # GPL
 PERMIT_PACKAGE=	Yes

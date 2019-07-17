@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:43:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/17 14:49:20 danj Exp $
 
 COMMENT=	talk to modem devices connected via serial port
 
 DISTNAME=	Device-SerialPort-1.04
 EPOCH=		0
-REVISION=	2
+REVISION=	3
 CATEGORIES=	comms
 MODULES=	cpan
-
-MAINTAINER=	Todd T. Fries <todd@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE=	Yes

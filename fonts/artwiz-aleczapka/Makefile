@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/17 14:49:22 danj Exp $
 
 COMMENT-main=	improved artwiz fonts
 COMMENT-de=	improved artwiz fonts (german pack)
@@ -13,13 +13,11 @@ PKGNAME-se=	${NAME}-se-${V}
 CATEGORIES=	fonts x11
 USE_X11 =	Yes
 
-REVISION-main=	6
-REVISION-de=	5
-REVISION-se=	5
+REVISION-main=	7
+REVISION-de=	6
+REVISION-se=	6
 
 HOMEPAGE=	http://artwizaleczapka.sourceforge.net/
-
-MAINTAINER=	Patrick Keshishian <pkeshish@gmail.com>
 
 # GPL
 PERMIT_PACKAGE=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/17 14:49:22 danj Exp $
 
 COMMENT-main =		bubble popping game, like puzzle bobble
 COMMENT-server =	server for the frozen-bubble bubble popping game
@@ -6,14 +6,12 @@ COMMENT-server =	server for the frozen-bubble bubble popping game
 VER =			2.2.0
 DISTNAME =		frozen-bubble-${VER}
 PKGNAME-main =		${DISTNAME}
-REVISION-main =		13
+REVISION-main =		14
 PKGNAME-server =	frozen-bubble-server-${VER}
-REVISION-server =	9
+REVISION-server =	10
 CATEGORIES =		games
 
 HOMEPAGE =		http://www.frozen-bubble.org
-MAINTAINER =		James Wright <jamesw@bsdhosting.co.za>
-
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
