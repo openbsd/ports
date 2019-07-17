@@ -1,0 +1,19 @@
+$OpenBSD: patch-cmake_modules_HandleLLVMOptions_cmake,v 1.4 2019/07/17 20:15:53 jca Exp $
+
+Fix CMake Invalid Escape Sequence
+
+  https://github.com/llvm-mirror/llvm/commit/b8b62917a1566bfc6d8706d06042171aa2306bbc
++ https://github.com/llvm-mirror/llvm/commit/614d096016667810cc777db37d180accb2390cfb
+
+Index: cmake/modules/HandleLLVMOptions.cmake
+--- cmake/modules/HandleLLVMOptions.cmake.orig
++++ cmake/modules/HandleLLVMOptions.cmake
+@@ -11,7 +11,7 @@ include(HandleLLVMStdlib)
+ include(CheckCCompilerFlag)
+ include(CheckCXXCompilerFlag)
+ 
+-if(CMAKE_LINKER MATCHES "lld-link\.exe" OR (WIN32 AND LLVM_USE_LINKER STREQUAL "lld") OR LLVM_ENABLE_LLD)
++if(CMAKE_LINKER MATCHES "lld-link" OR (WIN32 AND LLVM_USE_LINKER STREQUAL "lld") OR LLVM_ENABLE_LLD)
+   set(LINKER_IS_LLD_LINK TRUE)
+ else()
+   set(LINKER_IS_LLD_LINK FALSE)
