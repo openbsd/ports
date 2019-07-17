@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/17 15:30:10 cwen Exp $
+bin/test_version
+${P5SITE}/Test/
+${P5SITE}/Test/HasVersion.pm
+@man man/man3p/Test::HasVersion.3p
