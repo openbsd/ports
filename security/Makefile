@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.547 2019/06/25 10:51:36 sebastia Exp $
+# $OpenBSD: Makefile,v 1.548 2019/07/17 08:24:42 bentley Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -141,6 +141,7 @@
      SUBDIR += lynis
      SUBDIR += mcrypt
      SUBDIR += mhash
+     SUBDIR += minisign
      SUBDIR += nbaudit
      SUBDIR += netpgp
      SUBDIR += nfsshell
