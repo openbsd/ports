@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2019/06/03 16:06:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2019/07/17 10:21:42 sthen Exp $
 
 BROKEN-hppa =	needs atomic ops; __sync_add_and_fetch_4
 
@@ -92,7 +92,7 @@ post-install:
 		${PREFIX}/share/doc/icinga2/markdown/*.md
 
 .include <bsd.port.arch.mk>
-.if !${ARCH:Mamd64}
+.if !${ARCH:Mamd64} || defined(DEBUG)
 CONFIGURE_ARGS += -DICINGA2_UNITY_BUILD=OFF
 .endif
 
