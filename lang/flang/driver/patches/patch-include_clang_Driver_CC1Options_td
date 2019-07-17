@@ -1,0 +1,14 @@
+$OpenBSD: patch-include_clang_Driver_CC1Options_td,v 1.1 2019/07/17 21:33:33 bcallah Exp $
+
+Index: include/clang/Driver/CC1Options.td
+--- include/clang/Driver/CC1Options.td.orig
++++ include/clang/Driver/CC1Options.td
+@@ -699,6 +699,8 @@ def stack_protector : Separate<["-"], "stack-protector
+   HelpText<"Enable stack protectors">;
+ def stack_protector_buffer_size : Separate<["-"], "stack-protector-buffer-size">,
+   HelpText<"Lower bound for a buffer to be considered for stack protection">;
++def ret_protector : Flag<["-"], "ret-protector">,
++  HelpText<"Enable Return Protectors">;
+ def fvisibility : Separate<["-"], "fvisibility">,
+   HelpText<"Default type and symbol visibility">;
+ def ftype_visibility : Separate<["-"], "ftype-visibility">,

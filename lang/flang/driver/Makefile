@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2019/06/24 15:53:37 bcallah Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/17 21:33:33 bcallah Exp $
 
 # If you are updating to a new version
-# (e.g. 7.0->7.1 or 8.0), you need to sync
+# (e.g. 8.0->8.1 or 9.0), you need to sync
 # patches with devel/llvm
 COMMENT =	LLVM Fortran compiler driver
-DISTNAME =	flang-driver-7.0.1.20190621
+DISTNAME =	flang-driver-8.0.0.20190621
 
 GH_PROJECT =	flang-driver
-GH_COMMIT =	984936abdd04b40140c98ba5e273a3c006780612
+GH_COMMIT =	3ed998ef28a8608cad9c045229eb37b39a402294
 
 WANTLIB += ${COMPILER_LIBCXX} c m z
 
@@ -29,7 +29,7 @@ pre-configure:
 # Don't use the LLVM shared library.
 post-configure:
 	sed -i \
-	's,-lLLVM-7,`${LOCALBASE}/bin/llvm-config --libs all --link-static --ignore-libllvm` -lz,g' \
+	's,-lLLVM-8,`${LOCALBASE}/bin/llvm-config --libs all --link-static --ignore-libllvm` -lz,g' \
 	${WRKBUILD}/build.ninja
 
 # We don't want yet another copy of clang and its utilities on the system.

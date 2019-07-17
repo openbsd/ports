@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_Frontend_CompilerInvocation_cpp,v 1.1 2019/07/17 21:33:33 bcallah Exp $
+
+Index: lib/Frontend/CompilerInvocation.cpp
+--- lib/Frontend/CompilerInvocation.cpp.orig
++++ lib/Frontend/CompilerInvocation.cpp
+@@ -1137,6 +1137,8 @@ static bool ParseCodeGenArgs(CodeGenOptions &Opts, Arg
+     Opts.StackAlignment = StackAlignment;
+   }
+ 
++  Opts.ReturnProtector = Args.hasArg(OPT_ret_protector);
++
+   if (Arg *A = Args.getLastArg(OPT_mstack_probe_size)) {
+     StringRef Val = A->getValue();
+     unsigned StackProbeSize = Opts.StackProbeSize;

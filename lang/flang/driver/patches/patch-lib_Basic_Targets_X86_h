@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_Basic_Targets_X86_h,v 1.1 2019/07/17 21:33:33 bcallah Exp $
+
+Index: lib/Basic/Targets/X86.h
+--- lib/Basic/Targets/X86.h.orig
++++ lib/Basic/Targets/X86.h
+@@ -106,6 +106,7 @@ class LLVM_LIBRARY_VISIBILITY X86TargetInfo : public T
+   bool HasMOVDIR64B = false;
+   bool HasPTWRITE = false;
+   bool HasINVPCID = false;
++  bool HasSaveArgs = false;
+ 
+ protected:
+   /// Enumeration of all of the X86 CPUs supported by Clang.

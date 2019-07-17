@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_libclang_CMakeLists_txt,v 1.1 2019/02/15 17:51:09 bcallah Exp $
+$OpenBSD: patch-tools_libclang_CMakeLists_txt,v 1.2 2019/07/17 21:33:33 bcallah Exp $
 
 Don't build a shared libclang.so...
 I don't want to make flang anything but a single static binary.
@@ -6,7 +6,7 @@ I don't want to make flang anything but a single static binary.
 Index: tools/libclang/CMakeLists.txt
 --- tools/libclang/CMakeLists.txt.orig
 +++ tools/libclang/CMakeLists.txt
-@@ -73,7 +73,7 @@ if(MSVC)
+@@ -74,7 +74,7 @@ if(MSVC)
    set(LLVM_EXPORTED_SYMBOL_FILE)
  endif()
  

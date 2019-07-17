@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_CodeGen_CGCall_cpp,v 1.1 2019/07/17 21:33:33 bcallah Exp $
+
+Index: lib/CodeGen/CGCall.cpp
+--- lib/CodeGen/CGCall.cpp.orig
++++ lib/CodeGen/CGCall.cpp
+@@ -1958,6 +1958,9 @@ void CodeGenModule::ConstructAttributeList(
+     FuncAttrs.addAttribute("disable-tail-calls",
+                            llvm::toStringRef(DisableTailCalls));
+     GetCPUAndFeaturesAttributes(CalleeInfo.getCalleeDecl(), FuncAttrs);
++
++    if (CodeGenOpts.ReturnProtector)
++      FuncAttrs.addAttribute("ret-protector");
+   }
+ 
+   ClangToLLVMArgMapping IRFunctionArgs(getContext(), FI);

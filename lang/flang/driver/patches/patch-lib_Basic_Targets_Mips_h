@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_Basic_Targets_Mips_h,v 1.1 2019/07/17 21:33:33 bcallah Exp $
+
+Index: lib/Basic/Targets/Mips.h
+--- lib/Basic/Targets/Mips.h.orig
++++ lib/Basic/Targets/Mips.h
+@@ -238,6 +238,7 @@ class LLVM_LIBRARY_VISIBILITY MipsTargetInfo : public 
+     case 'y': // Equivalent to "r", backward compatibility only.
+     case 'f': // floating-point registers.
+     case 'c': // $25 for indirect jumps
++    case 'h': // hi register
+     case 'l': // lo register
+     case 'x': // hilo register pair
+       Info.setAllowsRegister();
