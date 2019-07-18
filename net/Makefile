@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1137 2019/06/16 22:14:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.1138 2019/07/18 13:12:55 gsoares Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -707,6 +707,7 @@
      SUBDIR += supybot
      SUBDIR += syncthing
      SUBDIR += synergy
+     SUBDIR += tacacs+
      SUBDIR += tcl-snmptools
      SUBDIR += tclcurl
      SUBDIR += tcludp
