@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.24 2019/04/27 15:45:32 landry Exp $
+@comment $OpenBSD: PLIST,v 1.25 2019/07/18 06:21:54 landry Exp $
 @bin bin/ristretto
-share/appdata/
-share/appdata/ristretto.appdata.xml
 share/applications/ristretto.desktop
 share/icons/hicolor/128x128/apps/ristretto.png
 share/icons/hicolor/16x16/apps/ristretto.png
@@ -26,7 +24,9 @@ share/locale/gl/LC_MESSAGES/ristretto.mo
 share/locale/he/LC_MESSAGES/ristretto.mo
 share/locale/hr/LC_MESSAGES/ristretto.mo
 share/locale/hu/LC_MESSAGES/ristretto.mo
+share/locale/hy_AM/LC_MESSAGES/ristretto.mo
 share/locale/id/LC_MESSAGES/ristretto.mo
+share/locale/ie/LC_MESSAGES/ristretto.mo
 share/locale/is/LC_MESSAGES/ristretto.mo
 share/locale/it/LC_MESSAGES/ristretto.mo
 share/locale/ja/LC_MESSAGES/ristretto.mo
@@ -58,5 +58,6 @@ share/locale/ur_PK/LC_MESSAGES/ristretto.mo
 share/locale/vi/LC_MESSAGES/ristretto.mo
 share/locale/zh_CN/LC_MESSAGES/ristretto.mo
 share/locale/zh_TW/LC_MESSAGES/ristretto.mo
+share/metainfo/ristretto.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
