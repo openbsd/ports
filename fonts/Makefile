@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2019/06/12 05:48:25 rpointel Exp $
+# $OpenBSD: Makefile,v 1.61 2019/07/18 08:09:34 kmos Exp $
 
      SUBDIR =
      SUBDIR += abyssinica
@@ -11,6 +11,7 @@
      SUBDIR += apl-fonts
      SUBDIR += arabeyes-ttf
      SUBDIR += artwiz-aleczapka
+     SUBDIR += b612-font
      SUBDIR += blockzone
      SUBDIR += cantarell-fonts
      SUBDIR += charis
