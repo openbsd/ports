@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.93 2019/06/20 14:44:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2019/07/18 07:24:58 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 # 9.11 is an ESV.  After 9.11 the format changes: odd numbers are devel,
 # even numbers are stable (and for stable branches, point releases are
 # bug fixes only).  The next ESV will be 9.16.
-V=		9.11.8
+V=		9.11.9
 EPOCH=		0
 
 DISTNAME=	bind-$V
@@ -70,9 +70,9 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/bind9
 FLAVORS=	geoip no_ssl
 FLAVOR?=
 .if ${FLAVOR:Mgeoip}
-CONFIGURE_ARGS+= --with-geoip
-LIB_DEPENDS+=	net/GeoIP
-WANTLIB+=	GeoIP
+CONFIGURE_ARGS+= --with-geoip2
+LIB_DEPENDS+=	net/libmaxminddb
+WANTLIB+=	maxminddb
 .endif
 
 .if ${FLAVOR:Mno_ssl}

@@ -4,5 +4,5 @@ of those protocols, but it is also production-grade software,
 suitable for use in high-volume and high-reliability applications.
 
 Flavours:
-	geoip - build BIND with support for geolocation using the GeoIP api.
+	geoip - include support for geolocation using GeoIP2 (libmaxminddb)
 	no_ssl - build BIND without crypto support
