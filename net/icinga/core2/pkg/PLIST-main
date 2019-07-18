@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2018/10/19 20:42:20 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2019/07/18 16:01:05 sthen Exp $
 @newgroup _icinga:667
 @newgroup _icingaweb2:762
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
-@extraunexec rm -rf ${SYSCONFDIR}/icinga2/etc*
+@extraunexec rm -rf ${SYSCONFDIR}/icinga2/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/lib/icinga2/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/log/icinga2/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/spool/icinga2/*
-@mode 750
+@extraunexec rm -f ${SYSCONFDIR}/icinga2/features-enabled/*
+@mode 770
 @group _icinga
 @sample ${SYSCONFDIR}/icinga2/
 @mode
@@ -107,70 +108,129 @@ share/examples/icinga2/bash_completion.d/
 share/examples/icinga2/bash_completion.d/icinga2
 @sample ${SYSCONFDIR}/bash_completion.d/icinga2
 share/examples/icinga2/conf.d/
+@mode 775
 @sample ${SYSCONFDIR}/icinga2/conf.d/
+@mode
 share/examples/icinga2/conf.d/app.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/conf.d/app.conf
+@mode
 share/examples/icinga2/conf.d/commands.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/conf.d/commands.conf
+@mode
 share/examples/icinga2/conf.d/downtimes.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/conf.d/downtimes.conf
+@mode
 share/examples/icinga2/conf.d/groups.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/conf.d/groups.conf
+@mode
 share/examples/icinga2/conf.d/hosts.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/conf.d/hosts.conf
+@mode
 share/examples/icinga2/conf.d/notifications.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/conf.d/notifications.conf
+@mode
 share/examples/icinga2/conf.d/services.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/conf.d/services.conf
+@mode
 share/examples/icinga2/conf.d/templates.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/conf.d/templates.conf
+@mode
 share/examples/icinga2/conf.d/timeperiods.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/conf.d/timeperiods.conf
+@mode
 share/examples/icinga2/conf.d/users.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/conf.d/users.conf
+@mode
 share/examples/icinga2/constants.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/constants.conf
+@mode
 share/examples/icinga2/features-available/
+@mode 775
 @sample ${SYSCONFDIR}/icinga2/features-available/
+@mode
 share/examples/icinga2/features-available/api.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/features-available/api.conf
+@mode
 share/examples/icinga2/features-available/checker.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/features-available/checker.conf
+@mode
 share/examples/icinga2/features-available/command.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/features-available/command.conf
+@mode
 share/examples/icinga2/features-available/compatlog.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/features-available/compatlog.conf
+@mode
 share/examples/icinga2/features-available/debuglog.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/features-available/debuglog.conf
+@mode
 share/examples/icinga2/features-available/elasticsearch.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/features-available/elasticsearch.conf
+@mode
 share/examples/icinga2/features-available/gelf.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/features-available/gelf.conf
+@mode
 share/examples/icinga2/features-available/graphite.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/features-available/graphite.conf
+@mode
 share/examples/icinga2/features-available/influxdb.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/features-available/influxdb.conf
+@mode
 share/examples/icinga2/features-available/livestatus.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/features-available/livestatus.conf
+@mode
 share/examples/icinga2/features-available/mainlog.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/features-available/mainlog.conf
+@mode
 share/examples/icinga2/features-available/notification.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/features-available/notification.conf
+@mode
 share/examples/icinga2/features-available/opentsdb.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/features-available/opentsdb.conf
+@mode
 share/examples/icinga2/features-available/perfdata.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/features-available/perfdata.conf
+@mode
 share/examples/icinga2/features-available/statusdata.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/features-available/statusdata.conf
+@mode
 share/examples/icinga2/features-available/syslog.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/features-available/syslog.conf
+@mode
 share/examples/icinga2/features-enabled/
+@mode 775
 @sample ${SYSCONFDIR}/icinga2/features-enabled/
+@mode
 share/examples/icinga2/features-enabled/checker.conf
 share/examples/icinga2/features-enabled/mainlog.conf
 share/examples/icinga2/features-enabled/notification.conf
 @exec-add ln -fs ../features-available/{checker,mainlog,notification}.conf ${SYSCONFDIR}/icinga2/features-enabled/
-@extraunexec rm -rf ${SYSCONFDIR}/icinga2/features-enabled/*
 share/examples/icinga2/icinga2.conf
 @sample ${SYSCONFDIR}/icinga2/icinga2.conf
 share/examples/icinga2/scripts/
@@ -184,11 +244,17 @@ share/examples/icinga2/scripts/mail-service-notification.sh
 @sample ${SYSCONFDIR}/icinga2/scripts/mail-service-notification.sh
 @mode
 share/examples/icinga2/zones.conf
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/zones.conf
+@mode
 share/examples/icinga2/zones.d/
+@mode 775
 @sample ${SYSCONFDIR}/icinga2/zones.d/
+@mode
 share/examples/icinga2/zones.d/README
+@mode 664
 @sample ${SYSCONFDIR}/icinga2/zones.d/README
+@mode
 share/icinga2/
 share/icinga2/include/
 share/icinga2/include/command-icinga.conf
@@ -238,6 +304,7 @@ share/vim/vimfiles/syntax/icinga2.vim
 @sample ${LOCALSTATEDIR}/lib/icinga2/api/log/
 @sample ${LOCALSTATEDIR}/lib/icinga2/api/repository/
 @sample ${LOCALSTATEDIR}/lib/icinga2/api/zones/
+@sample ${LOCALSTATEDIR}/lib/icinga2/api/zones-stage/
 @mode 700
 @sample ${LOCALSTATEDIR}/lib/icinga2/certificate-requests/
 @sample ${LOCALSTATEDIR}/lib/icinga2/certs/
