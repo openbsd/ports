@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/18 20:46:55 sthen Exp $
 
 COMMENT=	process and decode WWW forms and cookies
 
-DISTNAME =	CGI-Lite-3.00
+DISTNAME =	CGI-Lite-3.02
 CATEGORIES=	www
 
 MAINTAINER=	Abel Abraham Camarillo Ojeda <acamari@verlet.org>
