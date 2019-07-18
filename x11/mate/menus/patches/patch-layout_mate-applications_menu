@@ -1,4 +1,5 @@
-$OpenBSD: patch-layout_mate-applications_menu,v 1.1.1.1 2017/04/30 19:01:25 robert Exp $
+$OpenBSD: patch-layout_mate-applications_menu,v 1.2 2019/07/18 07:36:29 ajacoutot Exp $
+
 --- layout/mate-applications.menu.orig	Sat Feb 25 17:55:32 2017
 +++ layout/mate-applications.menu	Sat Feb 25 17:55:53 2017
 @@ -8,8 +8,8 @@
