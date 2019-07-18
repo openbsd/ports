@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/07/18 20:20:59 sebastia Exp $
 
 COMMENT=		syntax checks for Puppet manifests and templates
 
-DISTNAME=		puppet-syntax-2.4.3
+DISTNAME=		puppet-syntax-2.5.0
 CATEGORIES=		sysutils
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
