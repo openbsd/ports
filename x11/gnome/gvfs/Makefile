@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2019/07/07 11:20:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.190 2019/07/18 07:25:55 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -7,7 +7,7 @@ COMMENT-nfs=		GVFS mount module for NFS
 COMMENT-google=		GVFS mount module for Google Drive
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.40.1
+GNOME_VERSION=		1.40.2
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
@@ -26,9 +26,8 @@ MODULES=		devel/dconf \
 WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 intl
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += archive avahi-client avahi-common avahi-glib gck-1
-WANTLIB-main += gcr-base-3 gcrypt gpg-error p11-kit pthread secret-1
-WANTLIB-main += soup-2.4 util xml2
+WANTLIB-main += archive avahi-client avahi-common avahi-glib gcr-base-3
+WANTLIB-main += gcrypt secret-1 soup-2.4 util xml2
 
 WANTLIB-smb += ${WANTLIB}
 WANTLIB-smb += smbclient
@@ -40,7 +39,7 @@ WANTLIB-nfs += ${WANTLIB}
 WANTLIB-nfs += nfs
 
 WANTLIB-google += ${WANTLIB}
-WANTLIB-google += gdata goa-1.0 json-glib-1.0 soup-2.4 xml2
+WANTLIB-google += gdata goa-1.0
 
 MODGNOME_TOOLS=		docbook
 
