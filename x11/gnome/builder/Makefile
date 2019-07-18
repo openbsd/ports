@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.95 2019/06/15 11:00:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2019/07/18 15:51:13 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		3.32.3
+GNOME_VERSION=		3.32.4
 
 CATEGORIES=		devel
 
@@ -11,13 +11,12 @@ CATEGORIES=		devel
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject clang dazzle-1.0 devhelp-3
-WANTLIB += enchant-2 fontconfig freetype gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 girepository-1.0 git2 git2-glib-1.0 gladeui-2
-WANTLIB += glib-2.0 gmodule-2.0 gnutls gobject-2.0 gspell-1 gtk-3
-WANTLIB += gtksourceview-4 intl javascriptcoregtk-4.0 json-glib-1.0
-WANTLIB += jsonrpc-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pcre2-8 peas-1.0 pthread soup-2.4 template_glib-1.0
-WANTLIB += vala-0.44 vte-2.91 webkit2gtk-4.0 xml2 z
+WANTLIB += enchant-2 fontconfig gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
+WANTLIB += git2-glib-1.0 gladeui-2 glib-2.0 gobject-2.0 gspell-1
+WANTLIB += gtk-3 gtksourceview-4 intl json-glib-1.0 jsonrpc-glib-1.0
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0
+WANTLIB += template_glib-1.0 vala-0.44 vte-2.91 webkit2gtk-4.0
+WANTLIB += xml2
 
 MODULES=		devel/dconf \
 			devel/meson \
