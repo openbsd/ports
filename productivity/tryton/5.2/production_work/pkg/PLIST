@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/09 11:48:58 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/07/18 07:49:58 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/${MODPY_PYCACHE}production.${MODPY_PYC_MAGIC_TAG}pyc
@@ -31,13 +31,14 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/locale/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/locale/sl.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/locale/tr.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/locale/zh_CN.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/message.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/production.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/production.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/routing.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/routing.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/tests/${MODPY_PYCACHE}test_production_work.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production_work/tests/scenario_production_work.rst

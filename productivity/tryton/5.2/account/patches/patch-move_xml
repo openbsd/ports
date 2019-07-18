@@ -1,0 +1,16 @@
+$OpenBSD: patch-move_xml,v 1.1 2019/07/18 07:49:58 semarie Exp $
+Backport for issue8469 https://hg.tryton.org/modules/account/rev/cd59f1314f97
+Correct domain for receivable action domain
+
+Index: move.xml
+--- move.xml.orig
++++ move.xml
+@@ -236,7 +236,7 @@ this repository contains the full copyright notices an
+             <field name="name">Receivable</field>
+             <field name="sequence" eval="20"/>
+             <field name="domain"
+-                eval="[('account.type.payable', '=', True)]" pyson="1"/>
++                eval="[('account.type.receivable', '=', True)]" pyson="1"/>
+             <field name="act_window" ref="act_move_line_payable_receivable"/>
+         </record>
+         <record model="ir.action.act_window.domain"
