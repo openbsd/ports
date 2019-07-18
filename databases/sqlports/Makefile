@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2019/07/14 11:27:19 espie Exp $
+# $OpenBSD: Makefile,v 1.118 2019/07/18 06:35:43 sthen Exp $
 
 CATEGORIES =		databases
 V =			7.24
@@ -41,6 +41,7 @@ post-build:
 	@cd ${WRKBUILD} && sh ${FILESDIR}/scripts/print-ports-index ${DBNAME} >ports-INDEX
 
 do-install:
+	if [[ `wc -l < ${WRKBUILD}/ports-INDEX` -le 666 ]]; then echo "Unexpectedly short file."; exit 1; fi
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
 .for s in ${SCRIPTS}
 	@${SUBST_PROGRAM} ${FILESDIR}/scripts/$s ${PREFIX}/bin/$s
