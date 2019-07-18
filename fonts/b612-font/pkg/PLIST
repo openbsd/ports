@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/18 08:08:50 kmos Exp $
+share/fonts/
+@fontdir share/fonts/b612/
+share/fonts/b612/B612-Bold.ttf
+share/fonts/b612/B612-BoldItalic.ttf
+share/fonts/b612/B612-Italic.ttf
+share/fonts/b612/B612-Regular.ttf
+share/fonts/b612/B612Mono-Bold.ttf
+share/fonts/b612/B612Mono-BoldItalic.ttf
+share/fonts/b612/B612Mono-Italic.ttf
+share/fonts/b612/B612Mono-Regular.ttf
