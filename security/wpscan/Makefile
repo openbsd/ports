@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/06/24 11:00:18 sebastia Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/18 20:48:26 sebastia Exp $
 
 COMMENT =	WordPress security scanner
 
-DISTNAME =	wpscan-3.5.4
+DISTNAME =	wpscan-3.6.0
 CATEGORIES =	security
 
 HOMEPAGE =	https://wpscan.org/
