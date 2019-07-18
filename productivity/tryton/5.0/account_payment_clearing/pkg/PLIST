@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/03 12:28:19 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/07/18 07:51:14 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_clearing/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_clearing/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_clearing/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_clearing/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_clearing/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_clearing/${MODPY_PYCACHE}account.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_clearing/${MODPY_PYCACHE}payment.${MODPY_PYC_MAGIC_TAG}pyc
@@ -34,7 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_clearin
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_clearing/statement.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_clearing/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_clearing/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_clearing/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_clearing/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_clearing/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_clearing/tests/${MODPY_PYCACHE}test_account_payment_clearing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_payment_clearing/tests/scenario_account_negative_payment_clearing.rst
