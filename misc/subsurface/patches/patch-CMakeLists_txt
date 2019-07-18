@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2018/08/14 17:18:22 schwarze Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2019/07/18 11:28:49 sthen Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
@@ -22,7 +22,7 @@ Index: CMakeLists.txt
  SET(SUBSURFACE_TARGET_EXECUTABLE "DesktopExecutable" CACHE STRING "The type of application, DesktopExecutable or MobileExecutable")
  LIST(APPEND SUBSURFACE_ACCEPTED_EXECUTABLES  "DesktopExecutable" "MobileExecutable")
  SET_PROPERTY(CACHE SUBSURFACE_TARGET_EXECUTABLE PROPERTY STRINGS ${SUBSURFACE_ACCEPTED_EXECUTABLES})
-@@ -122,7 +127,6 @@ include(pkgconfig_helper)
+@@ -123,7 +128,6 @@ include(pkgconfig_helper)
  # if you think a module miss anything, take a look on the specific
  # module file.
  include(HandleFindGit2)
@@ -30,7 +30,7 @@ Index: CMakeLists.txt
  if(${SUBSURFACE_TARGET_EXECUTABLE} MATCHES "DesktopExecutable")
          include(HandleFindGrantlee)
  	include(HandleUserManual)
-@@ -260,7 +264,7 @@ if(BLESUPPORT)
+@@ -267,7 +271,7 @@ if(BLESUPPORT)
  endif()
  
  #set up the subsurface_link_libraries variable
@@ -39,7 +39,7 @@ Index: CMakeLists.txt
  qt5_add_resources(SUBSURFACE_RESOURCES subsurface.qrc map-widget/qml/map-widget.qrc)
  
  # include translations
-@@ -323,6 +327,9 @@ elseif(${SUBSURFACE_TARGET_EXECUTABLE} MATCHES "Deskto
+@@ -335,6 +339,9 @@ elseif(${SUBSURFACE_TARGET_EXECUTABLE} MATCHES "Deskto
                  add_executable(${SUBSURFACE_TARGET} MACOSX_BUNDLE WIN32 ${SUBSURFACE_PKG} ${SUBSURFACE_APP} ${SUBSURFACE_RESOURCES})
          endif()
  
@@ -49,7 +49,7 @@ Index: CMakeLists.txt
  	if(FBSUPPORT)
  		set(FACEBOOK_INTEGRATION facebook_integration)
  		add_dependencies(facebook_integration subsurface_generated_ui)
-@@ -336,6 +343,7 @@ elseif(${SUBSURFACE_TARGET_EXECUTABLE} MATCHES "Deskto
+@@ -348,6 +355,7 @@ elseif(${SUBSURFACE_TARGET_EXECUTABLE} MATCHES "Deskto
  		subsurface_statistics
  		subsurface_models_desktop
  		subsurface_corelib
@@ -57,7 +57,7 @@ Index: CMakeLists.txt
  		${SUBSURFACE_LINK_LIBRARIES}
  	)
  	add_dependencies(subsurface_desktop_preferences subsurface_generated_ui)
-@@ -503,7 +511,7 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+@@ -520,7 +528,7 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
  		COMMAND ${MAKENSIS} ${WINDOWSSTAGING}/subsurface.nsi
  		DEPENDS fake_install
  	)

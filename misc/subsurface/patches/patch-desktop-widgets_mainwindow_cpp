@@ -1,17 +1,17 @@
-$OpenBSD: patch-desktop-widgets_mainwindow_cpp,v 1.1.1.1 2018/08/14 17:18:22 schwarze Exp $
+$OpenBSD: patch-desktop-widgets_mainwindow_cpp,v 1.2 2019/07/18 11:28:49 sthen Exp $
 
 Index: desktop-widgets/mainwindow.cpp
 --- desktop-widgets/mainwindow.cpp.orig
 +++ desktop-widgets/mainwindow.cpp
-@@ -244,7 +244,6 @@ MainWindow::MainWindow() : QMainWindow(),
+@@ -259,7 +259,6 @@ MainWindow::MainWindow() : QMainWindow(),
  	memset(&copyPasteDive, 0, sizeof(copyPasteDive));
  	memset(&what, 0, sizeof(what));
  
 -	updateManager = new UpdateManager(this);
- 	undoStack = new QUndoStack(this);
- 	QAction *undoAction = undoStack->createUndoAction(this, tr("&Undo"));
- 	QAction *redoAction = undoStack->createRedoAction(this, tr("&Redo"));
-@@ -1323,14 +1322,6 @@ void MainWindow::on_actionAboutSubsurface_triggered()
+ 	undoAction = Command::undoAction(this);
+ 	redoAction = Command::redoAction(this);
+ 	undoAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Z));
+@@ -1276,14 +1275,6 @@ void MainWindow::on_actionAboutSubsurface_triggered()
  	dlg.exec();
  }
  
@@ -26,7 +26,7 @@ Index: desktop-widgets/mainwindow.cpp
  void MainWindow::on_actionUserManual_triggered()
  {
  #ifndef NO_USERMANUAL
-@@ -1497,31 +1488,11 @@ void MainWindow::readSettings()
+@@ -1445,31 +1436,11 @@ void MainWindow::readSettings()
  
  	loadRecentFiles();
  	if (firstRun) {

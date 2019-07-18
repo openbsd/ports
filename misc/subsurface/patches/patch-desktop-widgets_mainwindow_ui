@@ -1,9 +1,9 @@
-$OpenBSD: patch-desktop-widgets_mainwindow_ui,v 1.1.1.1 2018/08/14 17:18:22 schwarze Exp $
+$OpenBSD: patch-desktop-widgets_mainwindow_ui,v 1.2 2019/07/18 11:28:49 sthen Exp $
 
 Index: desktop-widgets/mainwindow.ui
 --- desktop-widgets/mainwindow.ui.orig
 +++ desktop-widgets/mainwindow.ui
-@@ -115,7 +115,6 @@
+@@ -114,7 +114,6 @@
       <string>&amp;Help</string>
      </property>
      <addaction name="actionAboutSubsurface"/>
@@ -11,7 +11,7 @@ Index: desktop-widgets/mainwindow.ui
      <addaction name="actionUserSurvey"/>
      <addaction name="actionUserManual"/>
     </widget>
-@@ -414,11 +413,6 @@
+@@ -399,11 +398,6 @@
     </property>
     <property name="shortcut">
      <string notr="true">F11</string>

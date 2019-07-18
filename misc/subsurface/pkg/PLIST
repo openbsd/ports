@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/14 17:18:22 schwarze Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/07/18 11:28:49 sthen Exp $
 @bin bin/subsurface
 @comment bin/subsurface.debug
 share/applications/subsurface.desktop
@@ -66,7 +66,9 @@ share/subsurface/Documentation/images/LoadImage1_f20.jpg
 share/subsurface/Documentation/images/LoadImage2_f20.jpg
 share/subsurface/Documentation/images/LoadImage3b_f23.jpg
 share/subsurface/Documentation/images/LoadImage3c_f23.jpg
+share/subsurface/Documentation/images/LoadImage4.jpg
 share/subsurface/Documentation/images/LoadImage4_f20.jpg
+share/subsurface/Documentation/images/LoadImage5.jpg
 share/subsurface/Documentation/images/LoadImage5_f20.jpg
 share/subsurface/Documentation/images/LoadImage6_f20.jpg
 share/subsurface/Documentation/images/Location1.jpg
@@ -82,6 +84,7 @@ share/subsurface/Documentation/images/Planner_OC_deco.jpg
 share/subsurface/Documentation/images/Planner_OC_rec1.jpg
 share/subsurface/Documentation/images/Planner_OC_rec2.jpg
 share/subsurface/Documentation/images/Planner_pSCR.jpg
+share/subsurface/Documentation/images/Pref1.jpg
 share/subsurface/Documentation/images/Pref1_f23.jpg
 share/subsurface/Documentation/images/Pref2_f23.jpg
 share/subsurface/Documentation/images/Pref3_f23.jpg

@@ -1,21 +1,21 @@
-$OpenBSD: patch-desktop-widgets_mainwindow_h,v 1.1.1.1 2018/08/14 17:18:22 schwarze Exp $
+$OpenBSD: patch-desktop-widgets_mainwindow_h,v 1.2 2019/07/18 11:28:49 sthen Exp $
 
 Index: desktop-widgets/mainwindow.h
 --- desktop-widgets/mainwindow.h.orig
 +++ desktop-widgets/mainwindow.h
-@@ -80,7 +80,6 @@ class MainWindow : public QMainWindow { (public)
- 	ProfileWidget2 *graphics() const;
- 	PlannerDetails *plannerDetails() const;
+@@ -71,7 +71,6 @@ class MainWindow : public QMainWindow { (public)
+ 	void cleanUpEmpty();
+ 	void setToolButtonsEnabled(bool enabled);
  	void printPlan();
 -	void checkSurvey();
  	void setApplicationState(const QByteArray& state);
  	void setStateProperties(const QByteArray& state, const PropertyList& tl, const PropertyList& tr, const PropertyList& bl,const PropertyList& br);
  	bool inPlanner();
-@@ -135,7 +134,6 @@ slots:
+@@ -130,7 +129,6 @@ slots:
  	void on_actionUserSurvey_triggered();
  	void on_actionDivePlanner_triggered();
  	void on_actionReplanDive_triggered();
 -	void on_action_Check_for_Updates_triggered();
  
  	void on_actionDiveSiteEdit_triggered();
- 	void current_dive_changed(int divenr);
+ 	void selectionChanged();

@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_get-version,v 1.2 2018/09/30 14:32:59 schwarze Exp $
+$OpenBSD: patch-scripts_get-version,v 1.3 2019/07/18 11:28:49 sthen Exp $
 
 Index: scripts/get-version
 --- scripts/get-version.orig
@@ -9,7 +9,7 @@ Index: scripts/get-version
  else
 -	cmd="git describe --abbrev=12"
 -	v0=$($cmd) || v0=$(cat .gitversion) || croak "odd; command '$cmd' failed"
-+	v0="v4.8.2"
++	v0="v4.8.5"
  fi
  
  # strip off the 'v' prefix, if any

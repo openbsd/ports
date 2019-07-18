@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/18 11:28:49 sthen Exp $
 
 # Qt5Webkit
 USE_WXNEEDED =	Yes
 
 COMMENT =	divelog program for recreational, tech, and free-divers
 
-VER =		4.8.2
+VER =		4.8.5
 PKGNAME =	subsurface-${VER}
 DISTNAME =	Subsurface-${VER}
-REVISION =	0
 
 CATEGORIES =	misc
 HOMEPAGE =	https://subsurface-divelog.org
@@ -68,7 +67,6 @@ post-extract:
 	rmdir ${WRKSRC}/libdivecomputer
 	mv ${WRKDIR}/libdivecomputer-subsurface-branch-${VER} \
 		${WRKSRC}/libdivecomputer
-	rm ${WRKSRC}/libdivecomputer/src/aes.{c,h}
 
 pre-configure:
 	cd ${WRKSRC}/libdivecomputer && mkdir build && \
