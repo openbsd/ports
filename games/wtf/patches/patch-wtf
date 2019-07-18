@@ -1,7 +1,16 @@
-$OpenBSD: patch-wtf,v 1.4 2018/01/28 08:38:28 bcallah Exp $
+$OpenBSD: patch-wtf,v 1.5 2019/07/18 23:53:24 bcallah Exp $
 Index: wtf
 --- wtf.orig
 +++ wtf
+@@ -41,7 +41,7 @@ fi
+ 
+ if [ -z "$acronyms" ]; then
+ 	if [ -z "$ACRONYMDB" ]; then
+-		for f in /usr/share/misc/acronyms*; do
++		for f in /usr/local/share/misc/acronyms*; do
+ 			case $f in
+ 			*-o)
+ 				if $offensive; then
 @@ -91,7 +91,7 @@ for i; do
  
  	# Try pkg_info(1) next
