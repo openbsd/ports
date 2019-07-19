@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.55 2019/07/13 08:30:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2019/07/19 12:31:55 ajacoutot Exp $
 
 PROVIDER=		alicloud
-GH_TAGNAME=		v1.42.0
+GH_TAGNAME=		v1.43.0
 
 .include <bsd.port.mk>
