@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/04/28 08:03:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/07/19 11:31:58 ajacoutot Exp $
 share/help/C/gnome-help/figures/gnome-change-wallpaper.webm
 share/help/C/gnome-help/figures/gnome-launching-applications.webm
 share/help/C/gnome-help/figures/gnome-responding-to-messages.webm
@@ -17,7 +17,6 @@ share/help/C/gnome-help/gs-go-online2.svg
 share/help/C/gnome-help/gs-go-online3.svg
 share/help/C/gnome-help/gs-goa1.svg
 share/help/C/gnome-help/gs-goa2.svg
-share/help/C/gnome-help/gs-goa3.svg
 share/help/C/gnome-help/gs-goa4.svg
 share/help/C/gnome-help/gs-goa5.svg
 share/help/C/gnome-help/gs-launch-applications.page
@@ -58,7 +57,6 @@ share/help/as/gnome-help/gs-go-online2.svg
 share/help/as/gnome-help/gs-go-online3.svg
 share/help/as/gnome-help/gs-goa1.svg
 share/help/as/gnome-help/gs-goa2.svg
-share/help/as/gnome-help/gs-goa3.svg
 share/help/as/gnome-help/gs-goa4.svg
 share/help/as/gnome-help/gs-goa5.svg
 share/help/as/gnome-help/gs-launch-applications.page
@@ -99,7 +97,6 @@ share/help/ca/gnome-help/gs-go-online2.svg
 share/help/ca/gnome-help/gs-go-online3.svg
 share/help/ca/gnome-help/gs-goa1.svg
 share/help/ca/gnome-help/gs-goa2.svg
-share/help/ca/gnome-help/gs-goa3.svg
 share/help/ca/gnome-help/gs-goa4.svg
 share/help/ca/gnome-help/gs-goa5.svg
 share/help/ca/gnome-help/gs-launch-applications.page
@@ -140,7 +137,6 @@ share/help/cs/gnome-help/gs-go-online2.svg
 share/help/cs/gnome-help/gs-go-online3.svg
 share/help/cs/gnome-help/gs-goa1.svg
 share/help/cs/gnome-help/gs-goa2.svg
-share/help/cs/gnome-help/gs-goa3.svg
 share/help/cs/gnome-help/gs-goa4.svg
 share/help/cs/gnome-help/gs-goa5.svg
 share/help/cs/gnome-help/gs-launch-applications.page
@@ -181,7 +177,6 @@ share/help/da/gnome-help/gs-go-online2.svg
 share/help/da/gnome-help/gs-go-online3.svg
 share/help/da/gnome-help/gs-goa1.svg
 share/help/da/gnome-help/gs-goa2.svg
-share/help/da/gnome-help/gs-goa3.svg
 share/help/da/gnome-help/gs-goa4.svg
 share/help/da/gnome-help/gs-goa5.svg
 share/help/da/gnome-help/gs-launch-applications.page
@@ -222,7 +217,6 @@ share/help/de/gnome-help/gs-go-online2.svg
 share/help/de/gnome-help/gs-go-online3.svg
 share/help/de/gnome-help/gs-goa1.svg
 share/help/de/gnome-help/gs-goa2.svg
-share/help/de/gnome-help/gs-goa3.svg
 share/help/de/gnome-help/gs-goa4.svg
 share/help/de/gnome-help/gs-goa5.svg
 share/help/de/gnome-help/gs-launch-applications.page
@@ -263,7 +257,6 @@ share/help/el/gnome-help/gs-go-online2.svg
 share/help/el/gnome-help/gs-go-online3.svg
 share/help/el/gnome-help/gs-goa1.svg
 share/help/el/gnome-help/gs-goa2.svg
-share/help/el/gnome-help/gs-goa3.svg
 share/help/el/gnome-help/gs-goa4.svg
 share/help/el/gnome-help/gs-goa5.svg
 share/help/el/gnome-help/gs-launch-applications.page
@@ -307,7 +300,6 @@ share/help/eo/gnome-help/gs-go-online2.svg
 share/help/eo/gnome-help/gs-go-online3.svg
 share/help/eo/gnome-help/gs-goa1.svg
 share/help/eo/gnome-help/gs-goa2.svg
-share/help/eo/gnome-help/gs-goa3.svg
 share/help/eo/gnome-help/gs-goa4.svg
 share/help/eo/gnome-help/gs-goa5.svg
 share/help/eo/gnome-help/gs-launch-applications.page
@@ -348,7 +340,6 @@ share/help/es/gnome-help/gs-go-online2.svg
 share/help/es/gnome-help/gs-go-online3.svg
 share/help/es/gnome-help/gs-goa1.svg
 share/help/es/gnome-help/gs-goa2.svg
-share/help/es/gnome-help/gs-goa3.svg
 share/help/es/gnome-help/gs-goa4.svg
 share/help/es/gnome-help/gs-goa5.svg
 share/help/es/gnome-help/gs-launch-applications.page
@@ -389,7 +380,6 @@ share/help/fi/gnome-help/gs-go-online2.svg
 share/help/fi/gnome-help/gs-go-online3.svg
 share/help/fi/gnome-help/gs-goa1.svg
 share/help/fi/gnome-help/gs-goa2.svg
-share/help/fi/gnome-help/gs-goa3.svg
 share/help/fi/gnome-help/gs-goa4.svg
 share/help/fi/gnome-help/gs-goa5.svg
 share/help/fi/gnome-help/gs-launch-applications.page
@@ -430,7 +420,6 @@ share/help/fr/gnome-help/gs-go-online2.svg
 share/help/fr/gnome-help/gs-go-online3.svg
 share/help/fr/gnome-help/gs-goa1.svg
 share/help/fr/gnome-help/gs-goa2.svg
-share/help/fr/gnome-help/gs-goa3.svg
 share/help/fr/gnome-help/gs-goa4.svg
 share/help/fr/gnome-help/gs-goa5.svg
 share/help/fr/gnome-help/gs-launch-applications.page
@@ -471,7 +460,6 @@ share/help/gl/gnome-help/gs-go-online2.svg
 share/help/gl/gnome-help/gs-go-online3.svg
 share/help/gl/gnome-help/gs-goa1.svg
 share/help/gl/gnome-help/gs-goa2.svg
-share/help/gl/gnome-help/gs-goa3.svg
 share/help/gl/gnome-help/gs-goa4.svg
 share/help/gl/gnome-help/gs-goa5.svg
 share/help/gl/gnome-help/gs-launch-applications.page
@@ -512,7 +500,6 @@ share/help/gu/gnome-help/gs-go-online2.svg
 share/help/gu/gnome-help/gs-go-online3.svg
 share/help/gu/gnome-help/gs-goa1.svg
 share/help/gu/gnome-help/gs-goa2.svg
-share/help/gu/gnome-help/gs-goa3.svg
 share/help/gu/gnome-help/gs-goa4.svg
 share/help/gu/gnome-help/gs-goa5.svg
 share/help/gu/gnome-help/gs-launch-applications.page
@@ -553,7 +540,6 @@ share/help/he/gnome-help/gs-go-online2.svg
 share/help/he/gnome-help/gs-go-online3.svg
 share/help/he/gnome-help/gs-goa1.svg
 share/help/he/gnome-help/gs-goa2.svg
-share/help/he/gnome-help/gs-goa3.svg
 share/help/he/gnome-help/gs-goa4.svg
 share/help/he/gnome-help/gs-goa5.svg
 share/help/he/gnome-help/gs-launch-applications.page
@@ -594,7 +580,6 @@ share/help/hi/gnome-help/gs-go-online2.svg
 share/help/hi/gnome-help/gs-go-online3.svg
 share/help/hi/gnome-help/gs-goa1.svg
 share/help/hi/gnome-help/gs-goa2.svg
-share/help/hi/gnome-help/gs-goa3.svg
 share/help/hi/gnome-help/gs-goa4.svg
 share/help/hi/gnome-help/gs-goa5.svg
 share/help/hi/gnome-help/gs-launch-applications.page
@@ -635,7 +620,6 @@ share/help/hr/gnome-help/gs-go-online2.svg
 share/help/hr/gnome-help/gs-go-online3.svg
 share/help/hr/gnome-help/gs-goa1.svg
 share/help/hr/gnome-help/gs-goa2.svg
-share/help/hr/gnome-help/gs-goa3.svg
 share/help/hr/gnome-help/gs-goa4.svg
 share/help/hr/gnome-help/gs-goa5.svg
 share/help/hr/gnome-help/gs-launch-applications.page
@@ -676,7 +660,6 @@ share/help/hu/gnome-help/gs-go-online2.svg
 share/help/hu/gnome-help/gs-go-online3.svg
 share/help/hu/gnome-help/gs-goa1.svg
 share/help/hu/gnome-help/gs-goa2.svg
-share/help/hu/gnome-help/gs-goa3.svg
 share/help/hu/gnome-help/gs-goa4.svg
 share/help/hu/gnome-help/gs-goa5.svg
 share/help/hu/gnome-help/gs-launch-applications.page
@@ -717,7 +700,6 @@ share/help/id/gnome-help/gs-go-online2.svg
 share/help/id/gnome-help/gs-go-online3.svg
 share/help/id/gnome-help/gs-goa1.svg
 share/help/id/gnome-help/gs-goa2.svg
-share/help/id/gnome-help/gs-goa3.svg
 share/help/id/gnome-help/gs-goa4.svg
 share/help/id/gnome-help/gs-goa5.svg
 share/help/id/gnome-help/gs-launch-applications.page
@@ -758,7 +740,6 @@ share/help/it/gnome-help/gs-go-online2.svg
 share/help/it/gnome-help/gs-go-online3.svg
 share/help/it/gnome-help/gs-goa1.svg
 share/help/it/gnome-help/gs-goa2.svg
-share/help/it/gnome-help/gs-goa3.svg
 share/help/it/gnome-help/gs-goa4.svg
 share/help/it/gnome-help/gs-goa5.svg
 share/help/it/gnome-help/gs-launch-applications.page
@@ -799,7 +780,6 @@ share/help/ja/gnome-help/gs-go-online2.svg
 share/help/ja/gnome-help/gs-go-online3.svg
 share/help/ja/gnome-help/gs-goa1.svg
 share/help/ja/gnome-help/gs-goa2.svg
-share/help/ja/gnome-help/gs-goa3.svg
 share/help/ja/gnome-help/gs-goa4.svg
 share/help/ja/gnome-help/gs-goa5.svg
 share/help/ja/gnome-help/gs-launch-applications.page
@@ -840,7 +820,6 @@ share/help/kn/gnome-help/gs-go-online2.svg
 share/help/kn/gnome-help/gs-go-online3.svg
 share/help/kn/gnome-help/gs-goa1.svg
 share/help/kn/gnome-help/gs-goa2.svg
-share/help/kn/gnome-help/gs-goa3.svg
 share/help/kn/gnome-help/gs-goa4.svg
 share/help/kn/gnome-help/gs-goa5.svg
 share/help/kn/gnome-help/gs-launch-applications.page
@@ -883,7 +862,6 @@ share/help/ko/gnome-help/gs-go-online2.svg
 share/help/ko/gnome-help/gs-go-online3.svg
 share/help/ko/gnome-help/gs-goa1.svg
 share/help/ko/gnome-help/gs-goa2.svg
-share/help/ko/gnome-help/gs-goa3.svg
 share/help/ko/gnome-help/gs-goa4.svg
 share/help/ko/gnome-help/gs-goa5.svg
 share/help/ko/gnome-help/gs-launch-applications.page
@@ -927,7 +905,6 @@ share/help/lt/gnome-help/gs-go-online2.svg
 share/help/lt/gnome-help/gs-go-online3.svg
 share/help/lt/gnome-help/gs-goa1.svg
 share/help/lt/gnome-help/gs-goa2.svg
-share/help/lt/gnome-help/gs-goa3.svg
 share/help/lt/gnome-help/gs-goa4.svg
 share/help/lt/gnome-help/gs-goa5.svg
 share/help/lt/gnome-help/gs-launch-applications.page
@@ -968,7 +945,6 @@ share/help/lv/gnome-help/gs-go-online2.svg
 share/help/lv/gnome-help/gs-go-online3.svg
 share/help/lv/gnome-help/gs-goa1.svg
 share/help/lv/gnome-help/gs-goa2.svg
-share/help/lv/gnome-help/gs-goa3.svg
 share/help/lv/gnome-help/gs-goa4.svg
 share/help/lv/gnome-help/gs-goa5.svg
 share/help/lv/gnome-help/gs-launch-applications.page
@@ -1009,7 +985,6 @@ share/help/mr/gnome-help/gs-go-online2.svg
 share/help/mr/gnome-help/gs-go-online3.svg
 share/help/mr/gnome-help/gs-goa1.svg
 share/help/mr/gnome-help/gs-goa2.svg
-share/help/mr/gnome-help/gs-goa3.svg
 share/help/mr/gnome-help/gs-goa4.svg
 share/help/mr/gnome-help/gs-goa5.svg
 share/help/mr/gnome-help/gs-launch-applications.page
@@ -1050,7 +1025,6 @@ share/help/nl/gnome-help/gs-go-online2.svg
 share/help/nl/gnome-help/gs-go-online3.svg
 share/help/nl/gnome-help/gs-goa1.svg
 share/help/nl/gnome-help/gs-goa2.svg
-share/help/nl/gnome-help/gs-goa3.svg
 share/help/nl/gnome-help/gs-goa4.svg
 share/help/nl/gnome-help/gs-goa5.svg
 share/help/nl/gnome-help/gs-launch-applications.page
@@ -1091,7 +1065,6 @@ share/help/pa/gnome-help/gs-go-online2.svg
 share/help/pa/gnome-help/gs-go-online3.svg
 share/help/pa/gnome-help/gs-goa1.svg
 share/help/pa/gnome-help/gs-goa2.svg
-share/help/pa/gnome-help/gs-goa3.svg
 share/help/pa/gnome-help/gs-goa4.svg
 share/help/pa/gnome-help/gs-goa5.svg
 share/help/pa/gnome-help/gs-launch-applications.page
@@ -1132,7 +1105,6 @@ share/help/pl/gnome-help/gs-go-online2.svg
 share/help/pl/gnome-help/gs-go-online3.svg
 share/help/pl/gnome-help/gs-goa1.svg
 share/help/pl/gnome-help/gs-goa2.svg
-share/help/pl/gnome-help/gs-goa3.svg
 share/help/pl/gnome-help/gs-goa4.svg
 share/help/pl/gnome-help/gs-goa5.svg
 share/help/pl/gnome-help/gs-launch-applications.page
@@ -1173,7 +1145,6 @@ share/help/pt/gnome-help/gs-go-online2.svg
 share/help/pt/gnome-help/gs-go-online3.svg
 share/help/pt/gnome-help/gs-goa1.svg
 share/help/pt/gnome-help/gs-goa2.svg
-share/help/pt/gnome-help/gs-goa3.svg
 share/help/pt/gnome-help/gs-goa4.svg
 share/help/pt/gnome-help/gs-goa5.svg
 share/help/pt/gnome-help/gs-launch-applications.page
@@ -1214,7 +1185,6 @@ share/help/pt_BR/gnome-help/gs-go-online2.svg
 share/help/pt_BR/gnome-help/gs-go-online3.svg
 share/help/pt_BR/gnome-help/gs-goa1.svg
 share/help/pt_BR/gnome-help/gs-goa2.svg
-share/help/pt_BR/gnome-help/gs-goa3.svg
 share/help/pt_BR/gnome-help/gs-goa4.svg
 share/help/pt_BR/gnome-help/gs-goa5.svg
 share/help/pt_BR/gnome-help/gs-launch-applications.page
@@ -1255,7 +1225,6 @@ share/help/ro/gnome-help/gs-go-online2.svg
 share/help/ro/gnome-help/gs-go-online3.svg
 share/help/ro/gnome-help/gs-goa1.svg
 share/help/ro/gnome-help/gs-goa2.svg
-share/help/ro/gnome-help/gs-goa3.svg
 share/help/ro/gnome-help/gs-goa4.svg
 share/help/ro/gnome-help/gs-goa5.svg
 share/help/ro/gnome-help/gs-launch-applications.page
@@ -1296,7 +1265,6 @@ share/help/ru/gnome-help/gs-go-online2.svg
 share/help/ru/gnome-help/gs-go-online3.svg
 share/help/ru/gnome-help/gs-goa1.svg
 share/help/ru/gnome-help/gs-goa2.svg
-share/help/ru/gnome-help/gs-goa3.svg
 share/help/ru/gnome-help/gs-goa4.svg
 share/help/ru/gnome-help/gs-goa5.svg
 share/help/ru/gnome-help/gs-launch-applications.page
@@ -1340,7 +1308,6 @@ share/help/sk/gnome-help/gs-go-online2.svg
 share/help/sk/gnome-help/gs-go-online3.svg
 share/help/sk/gnome-help/gs-goa1.svg
 share/help/sk/gnome-help/gs-goa2.svg
-share/help/sk/gnome-help/gs-goa3.svg
 share/help/sk/gnome-help/gs-goa4.svg
 share/help/sk/gnome-help/gs-goa5.svg
 share/help/sk/gnome-help/gs-launch-applications.page
@@ -1381,7 +1348,6 @@ share/help/sr/gnome-help/gs-go-online2.svg
 share/help/sr/gnome-help/gs-go-online3.svg
 share/help/sr/gnome-help/gs-goa1.svg
 share/help/sr/gnome-help/gs-goa2.svg
-share/help/sr/gnome-help/gs-goa3.svg
 share/help/sr/gnome-help/gs-goa4.svg
 share/help/sr/gnome-help/gs-goa5.svg
 share/help/sr/gnome-help/gs-launch-applications.page
@@ -1422,7 +1388,6 @@ share/help/sr@latin/gnome-help/gs-go-online2.svg
 share/help/sr@latin/gnome-help/gs-go-online3.svg
 share/help/sr@latin/gnome-help/gs-goa1.svg
 share/help/sr@latin/gnome-help/gs-goa2.svg
-share/help/sr@latin/gnome-help/gs-goa3.svg
 share/help/sr@latin/gnome-help/gs-goa4.svg
 share/help/sr@latin/gnome-help/gs-goa5.svg
 share/help/sr@latin/gnome-help/gs-launch-applications.page
@@ -1463,7 +1428,6 @@ share/help/sv/gnome-help/gs-go-online2.svg
 share/help/sv/gnome-help/gs-go-online3.svg
 share/help/sv/gnome-help/gs-goa1.svg
 share/help/sv/gnome-help/gs-goa2.svg
-share/help/sv/gnome-help/gs-goa3.svg
 share/help/sv/gnome-help/gs-goa4.svg
 share/help/sv/gnome-help/gs-goa5.svg
 share/help/sv/gnome-help/gs-launch-applications.page
@@ -1504,7 +1468,6 @@ share/help/ta/gnome-help/gs-go-online2.svg
 share/help/ta/gnome-help/gs-go-online3.svg
 share/help/ta/gnome-help/gs-goa1.svg
 share/help/ta/gnome-help/gs-goa2.svg
-share/help/ta/gnome-help/gs-goa3.svg
 share/help/ta/gnome-help/gs-goa4.svg
 share/help/ta/gnome-help/gs-goa5.svg
 share/help/ta/gnome-help/gs-launch-applications.page
@@ -1545,7 +1508,6 @@ share/help/te/gnome-help/gs-go-online2.svg
 share/help/te/gnome-help/gs-go-online3.svg
 share/help/te/gnome-help/gs-goa1.svg
 share/help/te/gnome-help/gs-goa2.svg
-share/help/te/gnome-help/gs-goa3.svg
 share/help/te/gnome-help/gs-goa4.svg
 share/help/te/gnome-help/gs-goa5.svg
 share/help/te/gnome-help/gs-launch-applications.page
@@ -1589,7 +1551,6 @@ share/help/zh_HK/gnome-help/gs-go-online2.svg
 share/help/zh_HK/gnome-help/gs-go-online3.svg
 share/help/zh_HK/gnome-help/gs-goa1.svg
 share/help/zh_HK/gnome-help/gs-goa2.svg
-share/help/zh_HK/gnome-help/gs-goa3.svg
 share/help/zh_HK/gnome-help/gs-goa4.svg
 share/help/zh_HK/gnome-help/gs-goa5.svg
 share/help/zh_HK/gnome-help/gs-launch-applications.page
@@ -1633,7 +1594,6 @@ share/help/zh_TW/gnome-help/gs-go-online2.svg
 share/help/zh_TW/gnome-help/gs-go-online3.svg
 share/help/zh_TW/gnome-help/gs-goa1.svg
 share/help/zh_TW/gnome-help/gs-goa2.svg
-share/help/zh_TW/gnome-help/gs-goa3.svg
 share/help/zh_TW/gnome-help/gs-goa4.svg
 share/help/zh_TW/gnome-help/gs-goa5.svg
 share/help/zh_TW/gnome-help/gs-launch-applications.page
