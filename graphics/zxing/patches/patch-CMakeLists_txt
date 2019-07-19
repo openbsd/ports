@@ -1,9 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2018/09/28 14:14:03 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2019/07/19 10:48:52 sthen Exp $
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -43,7 +43,7 @@ if(WIN32)
+@@ -45,7 +45,7 @@ else()
  endif()
  
  # OpenCV classes
@@ -12,12 +12,3 @@ Index: CMakeLists.txt
  if(OpenCV_FOUND)
      list(APPEND LIBZXING_FILES
          opencv/src/zxing/MatSource.cpp
-@@ -61,7 +61,7 @@ set_target_properties(libzxing PROPERTIES PREFIX "")
- find_package(Iconv)
- if(ICONV_FOUND)
-     include_directories(${ICONV_INCLUDE_DIR})
--    target_link_libraries(libzxing ${ICONV_LIBRARIES})
-+    target_link_libraries(libzxing ${ICONV_LIBRARY})
- else()
-     add_definitions(-DNO_ICONV=1)
- endif()
