@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.124 2019/06/03 16:06:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.125 2019/07/19 12:32:28 sthen Exp $
 
 COMMENT=		download/stream programmes from BBC iPlayer
 
 GH_ACCOUNT=		get-iplayer
 GH_PROJECT=		get_iplayer
-GH_TAGNAME=		v3.20
+GH_TAGNAME=		v3.21
 
 CATEGORIES=		multimedia
 
