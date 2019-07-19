@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/05/01 01:24:44 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/07/19 12:09:59 kmos Exp $
 lib/python${MODPY_VERSION}/site-packages/pluggy/
 lib/python${MODPY_VERSION}/site-packages/pluggy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pluggy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/pluggy-${MODPY_EGG_VERSION}-py${MODPY_V
 lib/python${MODPY_VERSION}/site-packages/pluggy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/pluggy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pluggy/__init__.py
-${MODPY_COMMENT}${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}_tracing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
