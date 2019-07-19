@@ -1,0 +1,25 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2019/07/19 13:42:33 bcallah Exp $
+
+clang
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -35,7 +35,7 @@ if(NIGHTLY_BUILD)
+   set(FASTER ON)
+ endif()
+ 
+-if(${CMAKE_SYSTEM_NAME} STREQUAL FreeBSD)
++if(${CMAKE_SYSTEM_NAME} STREQUAL FreeBSD OR ${CMAKE_SYSTEM_NAME} STREQUAL OpenBSD)
+   set(ASAN OFF)
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DO_LARGEFILE=0 -Dstat64=stat -Dlstat64=lstat -Dlseek64=lseek -Doff64_t=off_t -Dfstat64=fstat -Dftruncate64=ftruncate")
+ endif()
+@@ -289,7 +289,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+   # Silence warnings about __int64 alignment hack not always being applicable
+   target_compile_options(devilutionx PRIVATE -Wno-ignored-attributes)
+   # Fix: error: cast from pointer to smaller type 'unsigned char' loses information
+-  target_compile_options(devilution PRIVATE -fms-extensions -fms-compatibility -fms-compatibility-version=19.00)
++  #target_compile_options(devilution PRIVATE -fms-extensions -fms-compatibility -fms-compatibility-version=19.00)
+ 	# Silence appfat.cpp warnings
+   set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -Wno-narrowing")
+ endif()

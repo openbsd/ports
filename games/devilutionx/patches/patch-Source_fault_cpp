@@ -1,0 +1,25 @@
+$OpenBSD: patch-Source_fault_cpp,v 1.1.1.1 2019/07/19 13:42:33 bcallah Exp $
+
+clang
+
+Index: Source/fault.cpp
+--- Source/fault.cpp.orig
++++ Source/fault.cpp
+@@ -153,7 +153,7 @@ void fault_unknown_module(LPCVOID lpAddress, LPSTR lpM
+ 	if (dosHeader && dosHeader->e_magic == IMAGE_DOS_SIGNATURE) {
+ 		ntOffset = dosHeader->e_lfanew;
+ 		if (ntOffset) {
+-			ntHeader = (PIMAGE_NT_HEADERS)((DWORD)dosHeader + ntOffset);
++			ntHeader = (PIMAGE_NT_HEADERS)((uintptr_t)dosHeader + ntOffset);
+ 			if (ntHeader->Signature == IMAGE_NT_SIGNATURE) {
+ 				section = IMAGE_FIRST_SECTION(ntHeader);
+ 				numSections = ntHeader->FileHeader.NumberOfSections;
+@@ -193,7 +193,7 @@ void fault_call_stack(void *instr, STACK_FRAME *stackF
+ 		oldStackFrame = stackFrame;
+ 		stackFrame = stackFrame->pNext;
+ 
+-		if ((DWORD)stackFrame % 4 != 0)
++		if ((uintptr_t)stackFrame % 4 != 0)
+ 			break;
+ 	} while (stackFrame > oldStackFrame && !IsBadWritePtr(stackFrame, 8));
+ 

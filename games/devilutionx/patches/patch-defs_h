@@ -1,0 +1,14 @@
+$OpenBSD: patch-defs_h,v 1.1.1.1 2019/07/19 13:42:33 bcallah Exp $
+
+Index: defs.h
+--- defs.h.orig
++++ defs.h
+@@ -151,7 +151,7 @@
+ // Typedef for the function pointer
+ typedef void (*_PVFV)(void);
+ 
+-#if defined(_MSC_VER) && !(defined(__APPLE__)|| defined(__FreeBSD__))
++#if defined(_MSC_VER) && !(defined(__APPLE__)|| defined(__FreeBSD__) || defined(__OpenBSD__))
+ // Define our segment names
+ #define SEGMENT_C_INIT ".CRT$XCU"
+ 

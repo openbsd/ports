@@ -1,0 +1,21 @@
+$OpenBSD: README,v 1.1.1.1 2019/07/19 13:42:33 bcallah Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+devilutionx
+===========
+devilutionx requires the original game files from Diablo I to work
+properly.  These can come from an original CD or from GOG.com.
+
+You must place the file diabdat.mpq in
+~/.local/share/diasurgical/devilution/
+If the file is uppercase (i.e. DIABDAT.MPQ), you must rename it to
+all lowercase.
+
+While this package and the game engine are open source, one still needs
+to provide the original game assets from Diablo I, which is not open
+source. You will need to purchase the original game to use this package.
+
+Multiplayer may not work on 64-bit platforms. This is known upstream.
