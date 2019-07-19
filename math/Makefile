@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2019/06/07 08:00:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.164 2019/07/19 19:49:03 cwen Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -101,6 +101,7 @@
      SUBDIR += p5-Math-Spline
      SUBDIR += p5-Math-Symbolic
      SUBDIR += p5-Math-SymbolicX-ParserExtensionFactory
+     SUBDIR += p5-Math-Utils
      SUBDIR += p5-Math-VecStat
      SUBDIR += p5-Number-WithError
      SUBDIR += p5-Set-IntSpan
