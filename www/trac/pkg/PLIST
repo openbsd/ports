@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2018/09/04 12:46:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.26 2019/07/19 12:32:44 sthen Exp $
 @conflict trac-adminplugin-*
 @conflict trac-ldapplugin-<0.6.0
 @pkgpath www/trac-adminplugin
@@ -152,6 +152,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/log_graph.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/ca.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/da.js
+lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/de.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/en_GB.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/en_US.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/eo.js
@@ -213,6 +214,10 @@ lib/python${MODPY_VERSION}/site-packages/trac/locale/cs/LC_MESSAGES/tracini.mo
 lib/python${MODPY_VERSION}/site-packages/trac/locale/da/
 lib/python${MODPY_VERSION}/site-packages/trac/locale/da/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/trac/locale/da/LC_MESSAGES/messages.mo
+lib/python${MODPY_VERSION}/site-packages/trac/locale/de/
+lib/python${MODPY_VERSION}/site-packages/trac/locale/de/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/trac/locale/de/LC_MESSAGES/messages.mo
+lib/python${MODPY_VERSION}/site-packages/trac/locale/de/LC_MESSAGES/tracini.mo
 lib/python${MODPY_VERSION}/site-packages/trac/locale/el/
 lib/python${MODPY_VERSION}/site-packages/trac/locale/el/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/trac/locale/el/LC_MESSAGES/messages.mo
