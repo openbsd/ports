@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/09/04 12:46:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/07/19 05:39:59 sebastia Exp $
 @newuser _puppetboard:739:www:daemon:Puppetboard user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/puppetboard
 puppetboard/
-puppetboard/CHANGELOG.rst
+puppetboard/CHANGELOG.md
 puppetboard/LICENSE
 puppetboard/MANIFEST.in
 puppetboard/PKG-INFO
-puppetboard/README.rst
+puppetboard/README.md
 puppetboard/puppetboard/
 puppetboard/puppetboard.egg-info/
 puppetboard/puppetboard.egg-info/PKG-INFO
@@ -50,8 +51,8 @@ puppetboard/puppetboard/static/jquery-datatables-1.10.13/
 puppetboard/puppetboard/static/jquery-datatables-1.10.13/dataTables.semanticui.min.css
 puppetboard/puppetboard/static/jquery-datatables-1.10.13/dataTables.semanticui.min.js
 puppetboard/puppetboard/static/jquery-datatables-1.10.13/jquery.dataTables.min.js
-puppetboard/puppetboard/static/jquery-tablesort-v.0.0.7/
-puppetboard/puppetboard/static/jquery-tablesort-v.0.0.7/jquery.tablesort.min.js
+puppetboard/puppetboard/static/jquery-tablesort-v.0.0.11/
+puppetboard/puppetboard/static/jquery-tablesort-v.0.0.11/jquery.tablesort.min.js
 puppetboard/puppetboard/static/js/
 puppetboard/puppetboard/static/js/c3.min.js
 puppetboard/puppetboard/static/js/d3.min.js
@@ -89,10 +90,18 @@ puppetboard/puppetboard/templates/radiator.html
 puppetboard/puppetboard/templates/report.html
 puppetboard/puppetboard/templates/reports.html
 puppetboard/puppetboard/templates/reports.json.tpl
+puppetboard/puppetboard/templates/static/
+puppetboard/puppetboard/templates/static/Semantic-UI-2.1.8/
+puppetboard/puppetboard/templates/static/Semantic-UI-2.1.8/semantic.min.css
+puppetboard/puppetboard/templates/static/css/
+puppetboard/puppetboard/templates/static/css/google_fonts.css
 puppetboard/puppetboard/tmp/
 puppetboard/puppetboard/utils.py
 puppetboard/puppetboard/version.py
 puppetboard/puppetboard_wsgi.py
+puppetboard/requirements-docker.txt
+puppetboard/requirements-test.txt
+puppetboard/requirements.txt
 puppetboard/setup.cfg
 puppetboard/setup.py
 puppetboard/test/
@@ -102,6 +111,5 @@ puppetboard/test/test_app_error.py
 puppetboard/test/test_docker_settings.py
 puppetboard/test/test_form.py
 puppetboard/test/test_utils.py
-@rcscript ${RCDIR}/puppetboard
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
 ${PKGSTEM}
