@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/07/19 18:20:08 fcambus Exp $
 
 COMMENT =	hierarchical todos manager
 
-DISTNAME =	tudu-0.10.2
-REVISION =	4
+DISTNAME =	tudu-0.10.3
 
 CATEGORIES =	productivity
 
