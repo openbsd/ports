@@ -1,0 +1,26 @@
+$OpenBSD: patch-meson_build,v 1.1 2019/07/19 11:33:24 sthen Exp $
+
+don't pick up the annoying useless port
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -365,18 +365,6 @@ else
+   message('NO backtraces support.')
+ endif
+ 
+-if cc.has_header('execinfo.h')
+-  if cc.has_function('backtrace', prefix : '#include <execinfo.h>')
+-    cdata.set('HAVE_BACKTRACE', 1)
+-  else
+-    execinfo_dep = cc.find_library('execinfo', required : false)
+-    if execinfo_dep.found() and cc.has_function('backtrace', prefix : '#include <execinfo.h>', dependencies : execinfo_dep)
+-      cdata.set('HAVE_BACKTRACE', 1)
+-      platform_deps += execinfo_dep
+-    endif
+-  endif
+-endif
+-
+ gst_debug = get_option('gst_debug')
+ if not gst_debug
+   add_project_arguments(['-Wno-unused'], language: 'c')
