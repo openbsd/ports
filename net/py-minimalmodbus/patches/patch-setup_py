@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2019/07/19 12:20:35 kmos Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -32,7 +32,7 @@ setup(
+     description="Easy-to-use Modbus RTU and Modbus ASCII implementation for Python",
+     long_description=readme + '\n\n' + history,
+     install_requires = ['pyserial'],
+-    py_modules = ['minimalmodbus', 'eurotherm3500', 'omegacn7500', 'dummy_serial'],
++    py_modules = ['minimalmodbus'],
+     keywords='minimalmodbus modbus serial RTU ASCII',
+     classifiers=[
+         'Development Status :: 4 - Beta',
