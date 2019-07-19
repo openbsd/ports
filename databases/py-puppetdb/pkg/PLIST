@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/02/13 14:20:27 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/07/19 05:39:15 sebastia Exp $
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}rc0-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}rc0-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}rc0-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}rc0-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}rc0-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}rc0-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/QueryBuilder.py
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pypuppetdb/${MODPY_PYCACHE}/
