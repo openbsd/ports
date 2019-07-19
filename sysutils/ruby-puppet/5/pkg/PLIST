@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/04/01 11:18:14 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/07/19 06:09:21 sebastia Exp $
 @option is-branch
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -891,6 +891,7 @@ ${MODRUBY_SITEDIR}/puppet/provider/package/windows/msi_package.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/windows/package.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/yum.rb
 ${MODRUBY_SITEDIR}/puppet/provider/package/zypper.rb
+${MODRUBY_SITEDIR}/puppet/provider/package_targetable.rb
 ${MODRUBY_SITEDIR}/puppet/provider/parsedfile.rb
 ${MODRUBY_SITEDIR}/puppet/provider/scheduled_task/
 ${MODRUBY_SITEDIR}/puppet/provider/scheduled_task/win32_taskscheduler.rb
