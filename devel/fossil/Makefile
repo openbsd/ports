@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.69 2019/07/12 20:44:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2019/07/19 13:49:24 jturner Exp $
 
 COMMENT =		simple distributed software configuration management
 
-DISTNAME =		fossil-src-2.8
-PKGNAME =		fossil-2.8
+DISTNAME =		fossil-src-2.9
+PKGNAME =		fossil-2.9
 EPOCH =			0
 CATEGORIES =		devel www
 
