@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1138 2019/07/18 13:12:55 gsoares Exp $
+# $OpenBSD: Makefile,v 1.1139 2019/07/19 12:22:21 kmos Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -591,6 +591,8 @@
      SUBDIR += py-libcloud,python3
      SUBDIR += py-libpcap
      SUBDIR += py-medusa
+     SUBDIR += py-minimalmodbus
+     SUBDIR += py-minimalmodbus,python3
      SUBDIR += py-msgpack
      SUBDIR += py-msgpack,python3
      SUBDIR += py-nbxmpp
