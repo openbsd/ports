@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.7 2019/07/14 17:26:48 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.8 2019/07/19 10:08:12 ajacoutot Exp $
 
 XXX base gcc
 Reordering needed to prefer long long because base-gcc doesn't recognize
@@ -7,7 +7,10 @@ and doesn't fail to compile the test case (gint64 should be long long).
 
 gsize should be unsigned long: https://gitlab.gnome.org/GNOME/glib/issues/1777
 
-https://gitlab.gnome.org/GNOME/glib/merge_requests/991
+From a76cb94308e98f948d19ebef7e0c5c0a58112be9 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sun, 14 Jul 2019 19:25:28 +0200
+Subject: [PATCH] fix atomic detection on older gcc versions
 
 Index: meson.build
 --- meson.build.orig
