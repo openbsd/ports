@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.59 2019/07/07 11:20:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2019/07/20 10:49:18 jasper Exp $
 
 COMMENT=		simple note editor
 
 GNOME_PROJECT=		bijiben
-GNOME_VERSION=		3.32.1
+GNOME_VERSION=		3.32.2
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += atk-1.0 c cairo cairo-gobject ecal-1.2 edataserver-1.2
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 goa-1.0
-WANTLIB += gobject-2.0 gtk-3 ical intl javascriptcoregtk-4.0 m
-WANTLIB += pango-1.0 pangocairo-1.0 pthread secret-1 soup-2.4
+WANTLIB += c cairo cairo-gobject ecal-1.2 edataserver-1.2 gdk-3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 goa-1.0 gobject-2.0
+WANTLIB += gtk-3 ical intl javascriptcoregtk-4.0 m pango-1.0 pangocairo-1.0
 WANTLIB += tracker-sparql-2.0 uuid webkit2gtk-4.0 xml2
 
 MODULES=		devel/dconf \
