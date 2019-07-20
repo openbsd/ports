@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/02/18 21:13:30 jung Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/07/20 21:58:33 kmos Exp $
 lib/python${MODPY_VERSION}/site-packages/yarl/
 lib/python${MODPY_VERSION}/site-packages/yarl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/yarl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,11 +8,11 @@ lib/python${MODPY_VERSION}/site-packages/yarl-${MODPY_EGG_VERSION}-py${MODPY_VER
 lib/python${MODPY_VERSION}/site-packages/yarl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/yarl/__init__.py
 lib/python${MODPY_VERSION}/site-packages/yarl/__init__.pyi
-lib/python${MODPY_VERSION}/site-packages/yarl/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yarl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yarl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yarl/${MODPY_PYCACHE}quoting.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yarl/_quoting.c
-lib/python${MODPY_VERSION}/site-packages/yarl/_quoting.pyi
 lib/python${MODPY_VERSION}/site-packages/yarl/_quoting.pyx
 lib/python${MODPY_VERSION}/site-packages/yarl/_quoting.so
+lib/python${MODPY_VERSION}/site-packages/yarl/py.typed
 lib/python${MODPY_VERSION}/site-packages/yarl/quoting.py
