@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2019/07/16 21:29:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2019/07/20 15:46:48 naddy Exp $
 
 COMMENT-runtime=	GNU gettext runtime libraries and programs
 COMMENT-textstyle=	text styling library
@@ -9,7 +9,7 @@ DISTNAME=		gettext-${VERSION}
 PKGNAME-runtime=	gettext-runtime-${VERSION}
 PKGNAME-textstyle=	libtextstyle-${VERSION}
 PKGNAME-tools=		gettext-tools-${VERSION}
-REVISION-tools=		1
+REVISION-tools=		2
 REVISION-runtime=	0
 REVISION-textstyle=	0
 
@@ -45,6 +45,8 @@ WANTLIB-tools=		c curses iconv intl m textstyle
 LIB_DEPENDS=		converters/libiconv
 LIB_DEPENDS-tools=	${BASE_PKGPATH},-runtime \
 			${BASE_PKGPATH},-textstyle
+
+RUN_DEPENDS-tools=	archivers/xz
 
 # on critical path to lang/gcc.  XXX c++ used in libasprintf but seems
 # unused at present; may need to revisit if this changes
