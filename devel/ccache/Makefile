@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.50 2019/06/03 16:06:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2019/07/20 13:43:54 sthen Exp $
 
 COMMENT =	compiler cache
 
-V =		3.7.1
+V =		3.7.2
 DISTNAME =	ccache-$V
 CATEGORIES =	devel
 
@@ -22,6 +22,9 @@ CONFIGURE_STYLE =	gnu
 # This port should not have build/run dependencies.
 NO_CCACHE =		Yes
 
+# Failure in cpp1 test suire appears to be due to an embedded filename
+# in a .o file present in one file, and not present in the file being
+# compared with.
 TEST_DEPENDS =		shells/bash \
 			sysutils/coreutils
 
