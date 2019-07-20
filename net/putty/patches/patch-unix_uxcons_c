@@ -1,6 +1,8 @@
-$OpenBSD: patch-unix_uxcons_c,v 1.1 2016/09/10 13:03:42 ajacoutot Exp $
---- unix/uxcons.c.orig	Sat Sep 10 12:06:10 2016
-+++ unix/uxcons.c	Sat Sep 10 12:06:24 2016
+$OpenBSD: patch-unix_uxcons_c,v 1.2 2019/07/20 11:55:25 sthen Exp $
+
+Index: unix/uxcons.c
+--- unix/uxcons.c.orig
++++ unix/uxcons.c
 @@ -6,6 +6,7 @@
  #include <stdio.h>
  #include <stdlib.h>

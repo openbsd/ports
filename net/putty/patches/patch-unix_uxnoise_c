@@ -1,4 +1,5 @@
-$OpenBSD: patch-unix_uxnoise_c,v 1.4 2019/03/16 22:09:30 sthen Exp $
+$OpenBSD: patch-unix_uxnoise_c,v 1.5 2019/07/20 11:55:25 sthen Exp $
+
 Index: unix/uxnoise.c
 --- unix/uxnoise.c.orig
 +++ unix/uxnoise.c
@@ -71,7 +72,7 @@ Index: unix/uxnoise.c
      read_random_seed(func);
  }
  
-@@ -102,21 +57,12 @@ void random_save_seed(void)
+@@ -90,21 +45,12 @@ void noise_get_heavy(void (*func) (void *, int))
   */
  void noise_regular(void)
  {
@@ -97,7 +98,7 @@ Index: unix/uxnoise.c
      getrusage(RUSAGE_SELF, &rusage);
      random_add_noise(NOISE_SOURCE_RUSAGE, &rusage, sizeof(rusage));
  }
-@@ -129,6 +75,9 @@ void noise_regular(void)
+@@ -117,6 +63,9 @@ void noise_regular(void)
  void noise_ultralight(NoiseSourceId id, unsigned long data)
  {
      struct timeval tv;
