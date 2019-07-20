@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.23 2019/05/08 12:59:33 espie Exp $
+# $OpenBSD: Distant.pm,v 1.24 2019/07/20 10:59:08 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -96,6 +96,7 @@ sub _run
 		}
 	}
 	# XXX ssh does not like uid games
+	$) = $(;
 	$> = $<;
 	exec {OpenBSD::Paths->ssh}
 	    ($self->ssh($self->socket), $self->hostname, join(' ', @cmd));
@@ -130,8 +131,8 @@ sub run
 		'-o', "ForwardX11=no",
 		'-o', "ForwardAgent=no",
 		'-o', "GatewayPorts=no",
-		'-N', '-M', $host);
-	exit(1);
+		'-N', '-M', $host) or
+	    exit(1);
 }
 
 # we never error out
@@ -149,14 +150,12 @@ sub new
 package DPB::Job::SshMaster;
 our @ISA = qw(DPB::Job::Infinite);
 
-my $TMPDIR;
 sub new
 {
 	my ($class, $host) = @_;
 	my $h = $host->name;
-	$TMPDIR //= $ENV{PKG_TMPDIR} || '/var/tmp';
 	my $timeout = $host->{prop}{timeout} // 10;
-	my $socket = "$TMPDIR/ssh-$h-$$";
+	my $socket = $host->{prop}{socket};
 	my $o = $class->SUPER::new(DPB::Task::SshMaster->new($socket,
 	    $timeout, $h), "ssh master for $h");
 	$o->{host} = $h;
