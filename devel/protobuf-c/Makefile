@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/20 17:44:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/20 21:45:04 sthen Exp $
 
 COMMENT =		c protocol buffers
 
@@ -25,10 +25,7 @@ CXXFLAGS +=		-std=gnu++11
 
 LIB_DEPENDS =		devel/protobuf
 
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.15
-
-CONFIGURE_STYLE =	autoreconf
+CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
