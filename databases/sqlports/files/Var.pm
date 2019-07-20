@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.57 2019/05/17 20:41:54 espie Exp $
+# $OpenBSD: Var.pm,v 1.58 2019/07/20 23:12:47 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -1128,7 +1128,9 @@ sub add
 {
 	my ($self, $ins) = @_;
 	$self->AnyVar::add($ins);
-	open my $file, '<', $self->value or return;
+	my $filename = $self->value;
+	$filename = "$portsdir/$filename" unless $filename =~ m,^/,;
+	open my $file, '<', $filename or die "Can't open $filename: $!";
 	local $/ = undef;
 	$self->add_value($ins, <$file>, $self->value);
 }
