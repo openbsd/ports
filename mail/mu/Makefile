@@ -1,28 +1,33 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/21 00:10:04 jturner Exp $
 
 COMMENT=	maildir indexer and searcher with emacs frontend
 
-GH_TAGNAME=	v1.0
-GH_ACCOUNT=	djcb
-GH_PROJECT=	mu
+DISTNAME=	mu-1.2.0
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.djcbsoftware.nl/code/mu/
-REVISION =	1
+
+MAINTAINER=	Stefan Hagen <sh+ports@codevoid.de>
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
+
+WANTLIB+=	assuan c ffi gio-2.0 glib-2.0 gmime-3.0 gmodule-2.0
+WANTLIB+=	gobject-2.0 gpg-error gpgme gthread-2.0 iconv
+WANTLIB+=	intl json-glib-1.0 m pcre pthread ${COMPILER_LIBCXX}
+WANTLIB+=	uuid xapian z
+
+MASTER_SITES=	https://github.com/djcb/mu/releases/download/1.2/
+EXTRACT_SUFX=	.tar.xz
 
 BUILD_DEPENDS=	emacs->=24:editors/emacs
 
 LIB_DEPENDS=	databases/xapian-core \
 		devel/glib2 \
-		mail/gmime \
+		devel/json-glib \
+		mail/gmime30 \
 		security/gpgme
 
-WANTLIB += assuan c ffi gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0
-WANTLIB += gobject-2.0 gpg-error gpgme gthread-2.0 iconv
-WANTLIB += intl m pcre pthread ${COMPILER_LIBCXX} uuid xapian z
 
 # C++14 required
 COMPILER=	base-clang ports-clang
