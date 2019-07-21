@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/21 09:30:14 landry Exp $
 
 COMMENT =	data recovery software
 
-VERSION =	7.0
+VERSION =	7.1
 DISTNAME =	testdisk-${VERSION}
 CATEGORIES =	sysutils
-REVISION =	0
 
 HOMEPAGE =	http://www.cgsecurity.org/
 MASTER_SITES =	${HOMEPAGE}

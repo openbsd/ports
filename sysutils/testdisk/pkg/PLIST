@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/03/14 21:30:29 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/07/21 09:30:14 landry Exp $
 @bin bin/fidentify
 @bin bin/photorec
 @bin bin/testdisk
@@ -9,6 +9,6 @@ share/doc/testdisk/
 share/doc/testdisk/AUTHORS
 share/doc/testdisk/ChangeLog
 share/doc/testdisk/NEWS
-share/doc/testdisk/README
+share/doc/testdisk/README.md
 share/doc/testdisk/THANKS
 share/doc/testdisk/documentation.html
