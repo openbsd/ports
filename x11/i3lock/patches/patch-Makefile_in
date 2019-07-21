@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2018/10/21 12:07:30 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2019/07/21 10:26:40 jasper Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -966,7 +966,7 @@ info: info-am
+@@ -983,7 +983,7 @@ info: info-am
  
  info-am:
  
