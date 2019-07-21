@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/21 04:37:46 bcallah Exp $
 
 COMMENT =		ncurses-based hex-editor with diff mode
-V =			0.68
+V =			0.69
 DISTNAME =		dhex_${V}
 PKGNAME =		dhex-${V}
 CATEGORIES =		editors
-REVISION =		1
 
 HOMEPAGE =		http://www.dettus.net/dhex/
 MAINTAINER =		Thanasoulas Spiros <dsp@2f30.org>
