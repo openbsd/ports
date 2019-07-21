@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/05/25 12:45:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/07/21 09:30:43 landry Exp $
 include/tumbler-1/
 include/tumbler-1/tumbler/
 include/tumbler-1/tumbler/tumbler-abstract-thumbnailer.h
@@ -48,6 +48,9 @@ share/examples/tumbler/tumbler.rc
 share/gtk-doc/html/tumbler/
 share/gtk-doc/html/tumbler/TumblerAbstractThumbnailer.html
 share/gtk-doc/html/tumbler/TumblerCache.html
+share/gtk-doc/html/tumbler/TumblerFileInfo.html
+share/gtk-doc/html/tumbler/TumblerProviderFactory.html
+share/gtk-doc/html/tumbler/TumblerProviderPlugin.html
 share/gtk-doc/html/tumbler/TumblerThumbnail.html
 share/gtk-doc/html/tumbler/TumblerThumbnailerProvider.html
 share/gtk-doc/html/tumbler/api-index-full.html
@@ -67,9 +70,6 @@ share/gtk-doc/html/tumbler/thumbnails.html
 share/gtk-doc/html/tumbler/tumbler-Error-Domain-and-Types.html
 share/gtk-doc/html/tumbler/tumbler-Various-Enumeration-Types.html
 share/gtk-doc/html/tumbler/tumbler-Version-Information-and-Compatibility-Checks.html
-share/gtk-doc/html/tumbler/tumbler-tumbler-file-info.html
-share/gtk-doc/html/tumbler/tumbler-tumbler-provider-factory.html
-share/gtk-doc/html/tumbler/tumbler-tumbler-provider-plugin.html
 share/gtk-doc/html/tumbler/tumbler.devhelp2
 share/gtk-doc/html/tumbler/up-insensitive.png
 share/gtk-doc/html/tumbler/up.png
@@ -95,6 +95,9 @@ share/locale/gl/LC_MESSAGES/tumbler.mo
 share/locale/he/LC_MESSAGES/tumbler.mo
 share/locale/hr/LC_MESSAGES/tumbler.mo
 share/locale/hu/LC_MESSAGES/tumbler.mo
+share/locale/hy_AM/
+share/locale/hy_AM/LC_MESSAGES/
+share/locale/hy_AM/LC_MESSAGES/tumbler.mo
 share/locale/id/LC_MESSAGES/tumbler.mo
 share/locale/is/LC_MESSAGES/tumbler.mo
 share/locale/it/LC_MESSAGES/tumbler.mo
