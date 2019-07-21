@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.58 2019/07/20 23:12:47 espie Exp $
+# $OpenBSD: Var.pm,v 1.59 2019/07/21 11:10:23 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -1124,12 +1124,29 @@ package FileVar;
 our @ISA = qw(SecondaryVar);
 sub want_in_ports_view { 1 }
 
+sub new
+{
+	my ($class, $var, $value, $arch) = @_;
+	my $path = $value;
+	if ($value =~ m,^/,) {
+		$value =~ s,^\Q$portsdir\E/,,;
+	} else {
+		$path = "$portsdir/$path";
+	}
+	my $o = $class->SUPER::new($var, $value, $arch);
+	push @$o, $path;
+	return $o;
+}
+
+sub fullpath
+{
+	return shift->[2];
+}
 sub add
 {
 	my ($self, $ins) = @_;
 	$self->AnyVar::add($ins);
-	my $filename = $self->value;
-	$filename = "$portsdir/$filename" unless $filename =~ m,^/,;
+	my $filename = $self->fullpath;
 	open my $file, '<', $filename or die "Can't open $filename: $!";
 	local $/ = undef;
 	$self->add_value($ins, <$file>, $self->value);
@@ -1186,11 +1203,9 @@ sub new
 		$readme .= $multi;
 	}
 	if (-e $readme) {
-		$readme =~ s,^\Q$portsdir\E/,,;
 		$path->{info}->create('README', $readme, $arch, $path);
 	}
 
-	$value =~ s,^\Q$portsdir\E/,,;
 	return $class->SUPER::new($var, $value, $arch, $path);
 }
 
