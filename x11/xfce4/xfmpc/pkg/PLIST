@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:04:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/07/21 09:31:30 landry Exp $
 @bin bin/xfmpc
 @man man/man1/xfmpc.1
 share/applications/xfmpc.desktop
 share/locale/am/LC_MESSAGES/xfmpc.mo
 share/locale/ar/LC_MESSAGES/xfmpc.mo
 share/locale/ast/LC_MESSAGES/xfmpc.mo
+share/locale/be/LC_MESSAGES/xfmpc.mo
 share/locale/bg/LC_MESSAGES/xfmpc.mo
 share/locale/ca/LC_MESSAGES/xfmpc.mo
 share/locale/cs/LC_MESSAGES/xfmpc.mo
@@ -21,7 +22,11 @@ share/locale/gl/LC_MESSAGES/xfmpc.mo
 share/locale/he/LC_MESSAGES/xfmpc.mo
 share/locale/hr/LC_MESSAGES/xfmpc.mo
 share/locale/hu/LC_MESSAGES/xfmpc.mo
+share/locale/hy_AM/
+share/locale/hy_AM/LC_MESSAGES/
+share/locale/hy_AM/LC_MESSAGES/xfmpc.mo
 share/locale/id/LC_MESSAGES/xfmpc.mo
+share/locale/ie/LC_MESSAGES/xfmpc.mo
 share/locale/is/LC_MESSAGES/xfmpc.mo
 share/locale/it/LC_MESSAGES/xfmpc.mo
 share/locale/ja/LC_MESSAGES/xfmpc.mo
@@ -38,6 +43,7 @@ share/locale/ru/LC_MESSAGES/xfmpc.mo
 share/locale/si/LC_MESSAGES/xfmpc.mo
 share/locale/sk/LC_MESSAGES/xfmpc.mo
 share/locale/sl/LC_MESSAGES/xfmpc.mo
+share/locale/sq/LC_MESSAGES/xfmpc.mo
 share/locale/sr/LC_MESSAGES/xfmpc.mo
 share/locale/sv/LC_MESSAGES/xfmpc.mo
 share/locale/th/LC_MESSAGES/xfmpc.mo
