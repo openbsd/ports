@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/21 04:12:10 bcallah Exp $
+
+BROKEN-sparc64 =	Bus error during build
 
 COMMENT =	GNU version of the arbitrary precision calculators bc and dc
 DISTNAME =	bc-1.07.1
