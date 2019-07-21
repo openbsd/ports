@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2018/06/27 21:04:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.25 2019/07/21 09:38:46 landry Exp $
 @conflict terminal-<=0.4.5p1
 @bin bin/xfce4-terminal
 @man man/man1/xfce4-terminal.1
@@ -28,7 +28,9 @@ share/locale/gl/LC_MESSAGES/xfce4-terminal.mo
 share/locale/he/LC_MESSAGES/xfce4-terminal.mo
 share/locale/hr/LC_MESSAGES/xfce4-terminal.mo
 share/locale/hu/LC_MESSAGES/xfce4-terminal.mo
+share/locale/hy_AM/LC_MESSAGES/xfce4-terminal.mo
 share/locale/id/LC_MESSAGES/xfce4-terminal.mo
+share/locale/ie/LC_MESSAGES/xfce4-terminal.mo
 share/locale/is/LC_MESSAGES/xfce4-terminal.mo
 share/locale/it/LC_MESSAGES/xfce4-terminal.mo
 share/locale/ja/LC_MESSAGES/xfce4-terminal.mo
