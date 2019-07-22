@@ -1,0 +1,21 @@
+$OpenBSD: patch-fasteners__utils_py,v 1.1 2019/07/22 13:00:01 kmos Exp $
+
+Patch to use native monotonic for Python 3.7+
+
+https://github.com/harlowja/fasteners/pull/40
+
+Index: fasteners/_utils.py
+--- fasteners/_utils.py.orig
++++ fasteners/_utils.py
+@@ -36,7 +36,10 @@ except (ImportError, AttributeError):
+ 
+ import six
+ 
+-from monotonic import monotonic as now  # noqa
++try:
++    from time import monotonic as now
++except (ImportError, AttributeError):
++    from monotonic import monotonic as now  # noqa
+ 
+ # log level for low-level debugging
+ BLATHER = 5
