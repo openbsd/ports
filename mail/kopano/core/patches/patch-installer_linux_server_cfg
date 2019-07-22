@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.9 2019/06/29 13:52:11 robert Exp $
+$OpenBSD: patch-installer_linux_server_cfg,v 1.10 2019/07/22 16:10:27 robert Exp $
 
 Index: installer/linux/server.cfg
 --- installer/linux/server.cfg.orig
@@ -34,7 +34,7 @@ Index: installer/linux/server.cfg
  
  # Compression level for attachments when attachment_storage is 'files'.
  # Set compression level for attachments disabled=0, max=9
-@@ -349,12 +349,12 @@ local_admin_users = root kopano
+@@ -346,12 +346,12 @@ local_admin_users = root kopano
  
  # scripts which create stores for users from an external source
  # used for ldap and unix plugins only

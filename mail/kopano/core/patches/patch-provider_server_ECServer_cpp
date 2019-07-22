@@ -1,4 +1,4 @@
-$OpenBSD: patch-provider_server_ECServer_cpp,v 1.14 2019/06/29 13:52:11 robert Exp $
+$OpenBSD: patch-provider_server_ECServer_cpp,v 1.15 2019/07/22 16:10:27 robert Exp $
 
 Index: provider/server/ECServer.cpp
 --- provider/server/ECServer.cpp.orig
@@ -14,7 +14,7 @@ Index: provider/server/ECServer.cpp
  		{ "pid_file",					"/var/run/kopano/server.pid" },
  		{"allocator_library", "libtcmalloc_minimal.so.4"},
  		{ "coredump_enabled",			"yes" },
-@@ -900,7 +900,7 @@ static int running_server(char *szName, const char *sz
+@@ -901,7 +901,7 @@ static int running_server(char *szName, const char *sz
  		{"attachment_s3_bucketname", ""},
  		{"attachment_s3_region", ""},
  #endif
@@ -23,7 +23,7 @@ Index: provider/server/ECServer.cpp
  		{ "attachment_compression",		"6" },
  
  		// Log options
-@@ -920,12 +920,12 @@ static int running_server(char *szName, const char *sz
+@@ -921,12 +921,12 @@ static int running_server(char *szName, const char *sz
  		{"plugin_path", "(ignored)", CONFIGSETTING_UNUSED},
  		{ "user_plugin",				"db" },
  		{ "user_plugin_config",			"/etc/kopano/ldap.cfg" },

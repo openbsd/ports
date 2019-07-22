@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.16 2019/06/29 13:52:11 robert Exp $
+$OpenBSD: patch-Makefile_in,v 1.17 2019/07/22 16:10:27 robert Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -903,7 +903,7 @@ am__libkcutil_la_SOURCES_DIST = common/ConsoleTable.cp
+@@ -931,7 +931,7 @@ am__libkcutil_la_SOURCES_DIST = common/ConsoleTable.cp
  libkcutil_la_OBJECTS = $(am_libkcutil_la_OBJECTS)
  libkcutil_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
@@ -12,7 +12,7 @@ Index: Makefile.in
  @ENABLE_BASE_TRUE@am_libkcutil_la_rpath = -rpath $(libdir)
  @ENABLE_BASE_TRUE@libmapi_la_DEPENDENCIES = libkcutil.la \
  @ENABLE_BASE_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@@ -1715,6 +1715,7 @@ systemunitdir = @systemunitdir@
+@@ -1748,6 +1748,7 @@ systemunitdir = @systemunitdir@
  sysusersdir = @sysusersdir@
  target_alias = @target_alias@
  tidy_CPPFLAGS = @tidy_CPPFLAGS@
@@ -20,7 +20,7 @@ Index: Makefile.in
  tmpfilesdir = @tmpfilesdir@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
-@@ -1786,7 +1787,7 @@ AM_CPPFLAGS = ${ZCPPFLAGS} -DLDAP_THREAD_SAFE \
+@@ -1819,7 +1820,7 @@ AM_CPPFLAGS = ${ZCPPFLAGS} -DLDAP_THREAD_SAFE \
  	${KRB5_CFLAGS} ${LDAP_FLAGS} ${libHX_CFLAGS} \
  	${MYSQL_INCLUDES} ${SSL_CFLAGS} \
  	${s3_CFLAGS} ${kcoidc_CFLAGS} ${TCMALLOC_CFLAGS} ${tidy_CPPFLAGS} \
@@ -29,7 +29,7 @@ Index: Makefile.in
  
  
  #
-@@ -1918,7 +1919,7 @@ dist_bin_SCRIPTS = $(am__append_4) $(am__append_6)
+@@ -1953,7 +1954,7 @@ dist_bin_SCRIPTS = $(am__append_4) $(am__append_6)
  @ENABLE_BASE_TRUE@	common/database.cpp common/include/kopano/database.hpp
  
  @ENABLE_BASE_TRUE@kopano_dbadm_CPPFLAGS = ${AM_CPPFLAGS}
@@ -38,7 +38,7 @@ Index: Makefile.in
  
  #
  # kopano-fsck
-@@ -2019,7 +2020,7 @@ dist_bin_SCRIPTS = $(am__append_4) $(am__append_6)
+@@ -2054,7 +2055,7 @@ dist_bin_SCRIPTS = $(am__append_4) $(am__append_6)
  @ENABLE_BASE_TRUE@	provider/server/ECThreadManager.cpp provider/server/ECThreadManager.h
  
  @ENABLE_BASE_TRUE@kopano_server_LDADD = \
@@ -47,7 +47,7 @@ Index: Makefile.in
  @ENABLE_BASE_TRUE@	${clock_LIBS} ${CRYPTO_LIBS} ${icu_uc_LIBS} ${icu_i18n_LIBS} ${DL_LIBS} \
  @ENABLE_BASE_TRUE@	${MYSQL_LIBS} ${SSL_LIBS} ${PAM_LIBS} ${KRB5_LIBS} ${kcoidc_LIBS} -lpthread
  
-@@ -2483,7 +2484,7 @@ dist_bin_SCRIPTS = $(am__append_4) $(am__append_6)
+@@ -2532,7 +2533,7 @@ dist_bin_SCRIPTS = $(am__append_4) $(am__append_6)
  @ENABLE_BASE_TRUE@tests_rosie_SOURCES = tests/rosie.cpp
  @ENABLE_BASE_TRUE@tests_rosie_LDADD = libkcrosie.la
  @ENABLE_BASE_TRUE@tests_zcpmd5_SOURCES = tests/zcpmd5.cpp
@@ -56,7 +56,7 @@ Index: Makefile.in
  
  #
  # soap generators
-@@ -5403,7 +5404,7 @@ default.sym provider/plugin.sym provider/provider.sym 
+@@ -5539,7 +5540,7 @@ default.sym provider/plugin.sym provider/provider.sym 
  
  .PHONY: source-moved-check
  source-moved-check:

@@ -1,4 +1,4 @@
-$OpenBSD: patch-provider_server_ECSoapServerConnection_cpp,v 1.1 2019/04/17 13:01:02 robert Exp $
+$OpenBSD: patch-provider_server_ECSoapServerConnection_cpp,v 1.2 2019/07/22 16:10:27 robert Exp $
 
 Index: provider/server/ECSoapServerConnection.cpp
 --- provider/server/ECSoapServerConnection.cpp.orig
@@ -12,4 +12,4 @@ Index: provider/server/ECSoapServerConnection.cpp
 +#endif
  #include "ECSoapServerConnection.h"
  #include "ECServerEntrypoint.h"
- #	include <dirent.h>
+ #include "SSLUtil.h"
