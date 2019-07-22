@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.50 2019/07/14 00:39:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2019/07/22 06:56:33 ajacoutot Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
-V=		20180908
+V=		20190720
 DISTNAME=	x264-snapshot-${V}-2245
 PKGNAME=	x264-${V}
-REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://downloads.videolan.org/pub/videolan/x264/snapshots/
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	x264	19.0
+SHARED_LIBS=	x264	20.0
 
 HOMEPAGE=	https://www.videolan.org/developers/x264.html
 
