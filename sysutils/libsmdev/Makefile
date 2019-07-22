@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/22 16:13:08 ajacoutot Exp $
 
 COMMENT =	library to access to storage media devices
 
@@ -21,6 +21,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =  ${MODPY_WANTLIB}
 WANTLIB += c iconv intl m pthread util
+
+BUILD_DEPENDS +=	devel/gettext,-tools
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-python
