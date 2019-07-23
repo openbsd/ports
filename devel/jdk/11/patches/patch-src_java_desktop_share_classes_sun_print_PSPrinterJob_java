@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_java_desktop_share_classes_sun_print_PSPrinterJob_java,v 1.1 2019/07/23 11:55:43 kurt Exp $
+
+Index: src/java.desktop/share/classes/sun/print/PSPrinterJob.java
+--- src/java.desktop/share/classes/sun/print/PSPrinterJob.java.orig
++++ src/java.desktop/share/classes/sun/print/PSPrinterJob.java
+@@ -1620,7 +1620,7 @@ public class PSPrinterJob extends RasterPrinterJob {
+ 
+         String osname = System.getProperty("os.name");
+         if (osname.equals("Linux") || osname.contains("OS X") || osname.endsWith("BSD")) {
+-            String lprPath = "/usr/bin/lpr";
++            String lprPath = (osname.equals("OpenBSD")) ? "/usr/local/bin/lpr" : "/usr/bin/lpr";
+             if (osname.equals("FreeBSD")) {
+                 final PrintService pservice = getPrintService();
+                 Boolean isIPPPrinter = java.security.AccessController.doPrivileged(

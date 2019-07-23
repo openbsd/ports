@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_java_base_share_classes_java_net_AbstractPlainDatagramSocketImpl_java,v 1.1 2019/07/23 11:55:42 kurt Exp $
+
+Index: src/java.base/share/classes/java/net/AbstractPlainDatagramSocketImpl.java
+--- src/java.base/share/classes/java/net/AbstractPlainDatagramSocketImpl.java.orig
++++ src/java.base/share/classes/java/net/AbstractPlainDatagramSocketImpl.java
+@@ -58,7 +58,7 @@ abstract class AbstractPlainDatagramSocketImpl extends
+     /**
+      * flag set if the native connect() call not to be used
+      */
+-    private static final boolean connectDisabled = os.contains("OS X");
++    private static final boolean connectDisabled = os.contains("OS X") || os.equals("OpenBSD");
+ 
+     /**
+      * Load net library into runtime.
