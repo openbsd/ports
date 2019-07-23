@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/07/23 19:22:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/07/23 19:50:03 kn Exp $
 
 COMMENT =		efficient SMT solver library (angr fork)
 
@@ -10,6 +10,9 @@ CATEGORIES +=		math
 
 HOMEPAGE =		https://github.com/angr/angr-z3
 
-WANTLIB += 		${COMPILER_LIBCXX} c m
+WANTLIB +=		${COMPILER_LIBCXX} c m
+
+# C++11
+COMPILER =		base-clang ports-gcc
 
 .include <bsd.port.mk>
