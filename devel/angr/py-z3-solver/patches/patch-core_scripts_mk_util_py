@@ -1,0 +1,19 @@
+$OpenBSD: patch-core_scripts_mk_util_py,v 1.1 2019/07/23 19:56:50 kn Exp $
+
+Remove hardcoded optimizations.
+
+Index: core/scripts/mk_util.py
+--- core/scripts/mk_util.py.orig
++++ core/scripts/mk_util.py
+@@ -2422,9 +2422,9 @@ def mk_config():
+             EXAMP_DEBUG_FLAG = '-g'
+         else:
+             if GPROF:
+-                CXXFLAGS     = '%s -O3 -D _EXTERNAL_RELEASE' % CXXFLAGS
++                CXXFLAGS     = '%s -D _EXTERNAL_RELEASE' % CXXFLAGS
+             else:
+-                CXXFLAGS     = '%s -O3 -D _EXTERNAL_RELEASE -fomit-frame-pointer' % CXXFLAGS
++                CXXFLAGS     = '%s -D _EXTERNAL_RELEASE -fomit-frame-pointer' % CXXFLAGS
+         if is_CXX_clangpp():
+             CXXFLAGS   = '%s -Wno-unknown-pragmas -Wno-overloaded-virtual -Wno-unused-value' % CXXFLAGS
+         sysname, _, _, _, machine = os.uname()
