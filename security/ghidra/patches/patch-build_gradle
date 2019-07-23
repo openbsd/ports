@@ -1,0 +1,66 @@
+$OpenBSD: patch-build_gradle,v 1.1 2019/07/23 02:09:20 lteo Exp $
+
+From https://github.com/NationalSecurityAgency/ghidra/pull/490
+
+Also disable the Gradle check because we are using a later version of Gradle to
+build Ghidra.
+
+Index: build.gradle
+--- build.gradle.orig
++++ build.gradle
+@@ -4,13 +4,6 @@ apply from: "gradleScripts/eclipseLauncher.gradle"
+ 
+ 
+ /***************************************************************************************
+- * Make sure the correct version of gradle is being used
+- ***************************************************************************************/
+-if (gradle.gradleVersion != "5.0") {
+-	throw new GradleException("Requires Gradle 5.0, but was run with $gradle.gradleVersion")
+-}
+-
+-/***************************************************************************************
+  * Define the location of JAVA_HOME
+  ***************************************************************************************/
+ if (System.env.JAVA_HOME) {
+@@ -58,7 +51,7 @@ apply from: "gradleScripts/setupJacoco.gradle" // Has 
+  *		project.OS_NAMES.each {...}
+  ****************************************************************************/
+ 
+-project.ext.set("OS_NAMES", ["osx64", "win32", "win64", "linux64"])
++project.ext.set("OS_NAMES", ["osx64", "win32", "win64", "linux64", "openbsd64"])
+ 
+ /*********************************************************************************
+  * Imports
+@@ -120,7 +113,20 @@ def isMac(String platformName) {
+ 	}
+ }
+ 
++/*********************************************************************************
++ * Returns true if the platform is an OpenBSD machine
++ *********************************************************************************/
++def isOpenBSD(String platformName) {
+ 
++	if (platformName.toLowerCase().startsWith("openbsd")) {
++		return true
++	}
++	else {
++		return false
++	}
++}
++
++
+ /*********************************************************************************
+  * Returns true if the platform is a Windows machine.
+  *********************************************************************************/
+@@ -278,6 +284,11 @@ String getCurrentPlatformName() {
+ 	else if (osName.startsWith("Mac OS X")) {
+ 		if (isX86_64) {
+ 			return 'osx64'
++		}
++	}
++	else if (osName.startsWith("OpenBSD")) {
++		if (isX86_64) {
++			return 'openbsd64'
+ 		}
+ 	}
+ 	throw new GradleException("Unrecognized current platform -> osName = $osName, archName = $archName")

@@ -1,0 +1,7 @@
+allprojects {
+	repositories {
+		mavenCentral()
+		jcenter()
+		flatDir name:'flat', dirs:["${WRKDIR}/flatRepo"]
+	}
+}

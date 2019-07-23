@@ -1,0 +1,25 @@
+$OpenBSD: patch-Ghidra_Framework_SoftwareModeling_build_gradle,v 1.1 2019/07/23 02:09:20 lteo Exp $
+
+This patch prevents these errors:
+
+Execution failed for task ':SoftwareModeling:generateGrammarSource'.
+> Failed to run Gradle ANTLR Worker
+   > org/antlr/runtime/RecognitionException
+
+Execution failed for task ':SoftwareModeling:generateGrammarSource'.
+> Failed to run Gradle ANTLR Worker
+   > org/stringtemplate/v4/STGroup
+
+Index: Ghidra/Framework/SoftwareModeling/build.gradle
+--- Ghidra/Framework/SoftwareModeling/build.gradle.orig
++++ Ghidra/Framework/SoftwareModeling/build.gradle
+@@ -21,6 +21,9 @@ dependencies {
+ 	// Must specify the specific antlr implementation to use or it will default to trying to find
+ 	// version 2.7.7 (which we don't have)
+ 	antlr "org.antlr:antlr:3.5.2"
++	antlr "org.antlr:antlr-runtime:3.5.2"
++	antlr group: "org.antlr", name: "ST4", version: "4.1"
++
+ }
+ 
+ // Define classpath needed to execute sleigh compiler during development

@@ -1,0 +1,19 @@
+$OpenBSD: patch-Ghidra_Framework_SoftwareModeling_Module_manifest,v 1.1 2019/07/23 02:09:20 lteo Exp $
+
+This patch prevents this error:
+
+* Where:
+Script '/usr/ports/pobj/ghidra-9.0.4/ghidra-Ghidra_9.0.4_build/gradleScripts/ip.gradle' line: 96
+
+* What went wrong:
+Execution failed for task ':SoftwareModeling:ip'.
+> No License specified for external library: lib/ST4-4.1.jar in module /usr/ports/pobj/ghidra-9.0.4/ghidra-Ghidra_9.0.4_build/Ghidra/Framework/SoftwareModeling. Expression: map.containsKey(relativePath)
+
+Index: Ghidra/Framework/SoftwareModeling/Module.manifest
+--- Ghidra/Framework/SoftwareModeling/Module.manifest.orig
++++ Ghidra/Framework/SoftwareModeling/Module.manifest
+@@ -4,3 +4,4 @@ MODULE FILE LICENSE: lib/msv-20050913.jar BSD
+ MODULE FILE LICENSE: lib/xsdlib-20050913.jar BSD
+ MODULE FILE LICENSE: lib/antlr-runtime-3.5.2.jar BSD
+ MODULE FILE LICENSE: lib/antlr-3.5.2.jar BSD
++MODULE FILE LICENSE: lib/ST4-4.1.jar BSD

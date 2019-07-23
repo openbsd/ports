@@ -1,8 +1,8 @@
-$OpenBSD: patch-support_launch_sh,v 1.1.1.1 2019/05/14 07:01:32 rpointel Exp $
+$OpenBSD: patch-Ghidra_RuntimeScripts_Linux_support_launch_sh,v 1.1 2019/07/23 02:09:20 lteo Exp $
 
-Index: support/launch.sh
---- support/launch.sh.orig
-+++ support/launch.sh
+Index: Ghidra/RuntimeScripts/Linux/support/launch.sh
+--- Ghidra/RuntimeScripts/Linux/support/launch.sh.orig
++++ Ghidra/RuntimeScripts/Linux/support/launch.sh
 @@ -89,13 +89,13 @@ else
  fi
  

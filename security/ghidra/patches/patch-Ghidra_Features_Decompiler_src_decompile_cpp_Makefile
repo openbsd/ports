@@ -1,0 +1,21 @@
+$OpenBSD: patch-Ghidra_Features_Decompiler_src_decompile_cpp_Makefile,v 1.1 2019/07/23 02:09:20 lteo Exp $
+
+From https://github.com/NationalSecurityAgency/ghidra/pull/490
+
+Index: Ghidra/Features/Decompiler/src/decompile/cpp/Makefile
+--- Ghidra/Features/Decompiler/src/decompile/cpp/Makefile.orig
++++ Ghidra/Features/Decompiler/src/decompile/cpp/Makefile
+@@ -33,6 +33,13 @@ ifeq ($(OS),Darwin)
+   OSDIR=osx64
+ endif
+ 
++ifeq ($(OS),OpenBSD)
++ifeq ($(ARCH),x86_64)
++  ARCH_TYPE=-m64
++  OSDIR=openbsd64
++endif
++endif
++
+ CC=gcc
+ CXX=g++
+ 

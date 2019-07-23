@@ -1,0 +1,26 @@
+$OpenBSD: patch-GPL_DemanglerGnu_build_gradle,v 1.1 2019/07/23 02:09:20 lteo Exp $
+
+From https://github.com/NationalSecurityAgency/ghidra/pull/490
+
+Index: GPL/DemanglerGnu/build.gradle
+--- GPL/DemanglerGnu/build.gradle.orig
++++ GPL/DemanglerGnu/build.gradle
+@@ -24,6 +24,10 @@ model {
+ 			architecture 'x86_64'
+ 			operatingSystem 'osx'
+ 		}
++		openbsd64 {
++			architecture 'x86_64'
++			operatingSystem 'openbsd'
++		}
+ 	}	
+ }
+ 
+@@ -64,6 +68,7 @@ model {
+ 			targetPlatform "win64"
+ 			targetPlatform "linux64"
+ 			targetPlatform "osx64"
++			targetPlatform "openbsd64"
+ 			sources {
+ 				c {
+ 					source {

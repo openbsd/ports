@@ -1,0 +1,50 @@
+$OpenBSD: patch-Ghidra_Features_Decompiler_build_gradle,v 1.1 2019/07/23 02:09:20 lteo Exp $
+
+From https://github.com/NationalSecurityAgency/ghidra/pull/490
+
+Index: Ghidra/Features/Decompiler/build.gradle
+--- Ghidra/Features/Decompiler/build.gradle.orig
++++ Ghidra/Features/Decompiler/build.gradle
+@@ -74,9 +74,9 @@ def buildDir = "../../../build"
+ task buildDecompilerDocumentationPdfs(type: Exec) {
+ 
+ 	// Check the OS before enabling task.
+-	if (!(org.gradle.internal.os.OperatingSystem.current().isLinux() 
+-		|| org.gradle.internal.os.OperatingSystem.current().isMacOsX())) {
+-			println "The '$it.name' task only works on Linux or Mac Os X and is therefore disabled."
++	String osName = System.getProperty("os.name")
++	if (!(isLinux(osName) || isMac(osName) || isOpenBSD(osName))) {
++			println "The '$it.name' task only works on Linux, Mac OS X, or OpenBSD and is therefore disabled."
+ 			it.enabled = false
+ 	}
+ 
+@@ -206,10 +206,10 @@ task buildDecompilerDocumentationHtml(type: Exec) {
+ 
+ 		// Check the OS before executing command.
+ 		doFirst {
+-			if ( !(org.gradle.internal.os.OperatingSystem.current().isLinux() 
+-				|| org.gradle.internal.os.OperatingSystem.current().isMacOsX())) {
++			String osName = System.getProperty("os.name")
++			if ( !(isLinux(osName) || isMac(osName) || isOpenBSD(osName)) ) {
+ 				throw new TaskExecutionException( it,
+-					new Exception( "The '$it.name' task only works on Linux or Mac Os X" ))
++					new Exception( "The '$it.name' task only works on Linux, Mac OS X, or OpenBSD" ))
+ 			}
+ 		}
+ 
+@@ -245,6 +245,7 @@ model {
+ 			targetPlatform "win64"
+ 			targetPlatform "linux64"
+ 			targetPlatform "osx64"
++			targetPlatform "openbsd64"
+ 			sources {
+ 				cpp {
+ 		            source {
+@@ -342,6 +343,7 @@ model {
+ 			targetPlatform "win64"
+ 			targetPlatform "linux64"
+ 			targetPlatform "osx64"
++			targetPlatform "openbsd64"
+ 			sources {
+ 				cpp {
+ 					source {

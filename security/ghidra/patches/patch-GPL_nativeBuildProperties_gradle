@@ -1,0 +1,18 @@
+$OpenBSD: patch-GPL_nativeBuildProperties_gradle,v 1.1 2019/07/23 02:09:20 lteo Exp $
+
+Adapted from https://github.com/NationalSecurityAgency/ghidra/pull/490
+
+Index: GPL/nativeBuildProperties.gradle
+--- GPL/nativeBuildProperties.gradle.orig
++++ GPL/nativeBuildProperties.gradle
+@@ -75,6 +75,10 @@ model {
+ 			architecture 'x86_64'
+ 			operatingSystem 'osx'
+ 		}
++		openbsd64 {
++			architecture 'x86_64'
++			operatingSystem 'openbsd'
++		}
+ 	}	
+ }
+ 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-Ghidra_Framework_Utility_src_main_java_ghidra_framework_OperatingSystem_java,v 1.1 2019/07/23 02:09:20 lteo Exp $
+
+From https://github.com/NationalSecurityAgency/ghidra/pull/490
+
+Index: Ghidra/Framework/Utility/src/main/java/ghidra/framework/OperatingSystem.java
+--- Ghidra/Framework/Utility/src/main/java/ghidra/framework/OperatingSystem.java.orig
++++ Ghidra/Framework/Utility/src/main/java/ghidra/framework/OperatingSystem.java
+@@ -20,6 +20,7 @@ public enum OperatingSystem {
+ 	WINDOWS("Windows"),
+ 	LINUX("Linux"),
+ 	MAC_OS_X("Mac OS X"),
++	OPENBSD("OpenBSD"),
+ 	UNSUPPORTED("Unsupported Operating System");
+ 
+ 	/**

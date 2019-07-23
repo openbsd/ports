@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/05/26 02:07:44 lteo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/07/23 02:09:20 lteo Exp $
 bin/ghidraRun
 share/java/
 share/java/ghidra/
 share/java/ghidra/Extensions/
 share/java/ghidra/Extensions/Eclipse/
 share/java/ghidra/Extensions/Eclipse/GhidraDev/
-share/java/ghidra/Extensions/Eclipse/GhidraDev/GhidraDev-2.0.1.zip
 share/java/ghidra/Extensions/Eclipse/GhidraDev/GhidraDev_README.html
 share/java/ghidra/Extensions/Ghidra/
 share/java/ghidra/Extensions/Ghidra/Skeleton/
@@ -57,8 +56,8 @@ share/java/ghidra/Extensions/Ghidra/Skeleton/src/main/resources/images/README.tx
 share/java/ghidra/Extensions/Ghidra/Skeleton/src/test/
 share/java/ghidra/Extensions/Ghidra/Skeleton/src/test/java/
 share/java/ghidra/Extensions/Ghidra/Skeleton/src/test/java/README.test.txt
-share/java/ghidra/Extensions/Ghidra/ghidra_9.0.4_PUBLIC_20190516_SampleTablePlugin.zip
-share/java/ghidra/Extensions/Ghidra/ghidra_9.0.4_PUBLIC_20190516_sample.zip
+share/java/ghidra/Extensions/Ghidra/ghidra_${VERSION}_PUBLIC_${GHIDRA_DATE}_SampleTablePlugin.zip
+share/java/ghidra/Extensions/Ghidra/ghidra_${VERSION}_PUBLIC_${GHIDRA_DATE}_sample.zip
 share/java/ghidra/Extensions/IDAPro/
 share/java/ghidra/Extensions/IDAPro/Python/
 share/java/ghidra/Extensions/IDAPro/Python/6xx/
@@ -156,12 +155,8 @@ share/java/ghidra/GPL/DemanglerGnu/LICENSE.txt
 share/java/ghidra/GPL/DemanglerGnu/Module.manifest
 share/java/ghidra/GPL/DemanglerGnu/build.gradle
 share/java/ghidra/GPL/DemanglerGnu/os/
-share/java/ghidra/GPL/DemanglerGnu/os/linux64/
-share/java/ghidra/GPL/DemanglerGnu/os/linux64/demangler_gnu
-share/java/ghidra/GPL/DemanglerGnu/os/osx64/
-share/java/ghidra/GPL/DemanglerGnu/os/osx64/demangler_gnu
-share/java/ghidra/GPL/DemanglerGnu/os/win64/
-share/java/ghidra/GPL/DemanglerGnu/os/win64/demangler_gnu.exe
+share/java/ghidra/GPL/DemanglerGnu/os/openbsd64/
+@bin share/java/ghidra/GPL/DemanglerGnu/os/openbsd64/demangler_gnu
 share/java/ghidra/GPL/DemanglerGnu/src/
 share/java/ghidra/GPL/DemanglerGnu/src/demangler_gnu/
 share/java/ghidra/GPL/DemanglerGnu/src/demangler_gnu/README.txt
@@ -535,15 +530,9 @@ share/java/ghidra/Ghidra/Features/Decompiler/lib/
 share/java/ghidra/Ghidra/Features/Decompiler/lib/Decompiler-src.zip
 share/java/ghidra/Ghidra/Features/Decompiler/lib/Decompiler.jar
 share/java/ghidra/Ghidra/Features/Decompiler/os/
-share/java/ghidra/Ghidra/Features/Decompiler/os/linux64/
-share/java/ghidra/Ghidra/Features/Decompiler/os/linux64/decompile
-share/java/ghidra/Ghidra/Features/Decompiler/os/linux64/sleigh
-share/java/ghidra/Ghidra/Features/Decompiler/os/osx64/
-share/java/ghidra/Ghidra/Features/Decompiler/os/osx64/decompile
-share/java/ghidra/Ghidra/Features/Decompiler/os/osx64/sleigh
-share/java/ghidra/Ghidra/Features/Decompiler/os/win64/
-share/java/ghidra/Ghidra/Features/Decompiler/os/win64/decompile.exe
-share/java/ghidra/Ghidra/Features/Decompiler/os/win64/sleigh.exe
+share/java/ghidra/Ghidra/Features/Decompiler/os/openbsd64/
+@bin share/java/ghidra/Ghidra/Features/Decompiler/os/openbsd64/decompile
+@bin share/java/ghidra/Ghidra/Features/Decompiler/os/openbsd64/sleigh
 share/java/ghidra/Ghidra/Features/DecompilerDependent/
 share/java/ghidra/Ghidra/Features/DecompilerDependent/LICENSE.txt
 share/java/ghidra/Ghidra/Features/DecompilerDependent/Module.manifest
@@ -610,18 +599,6 @@ share/java/ghidra/Ghidra/Features/FunctionID/data/
 share/java/ghidra/Ghidra/Features/FunctionID/data/building_fid.txt
 share/java/ghidra/Ghidra/Features/FunctionID/data/common_symbols_win32.txt
 share/java/ghidra/Ghidra/Features/FunctionID/data/common_symbols_win64.txt
-share/java/ghidra/Ghidra/Features/FunctionID/data/vs1998_x86.fidbf
-share/java/ghidra/Ghidra/Features/FunctionID/data/vs2003_x86.fidbf
-share/java/ghidra/Ghidra/Features/FunctionID/data/vs2005_x64.fidbf
-share/java/ghidra/Ghidra/Features/FunctionID/data/vs2005_x86.fidbf
-share/java/ghidra/Ghidra/Features/FunctionID/data/vs2008_x64.fidbf
-share/java/ghidra/Ghidra/Features/FunctionID/data/vs2008_x86.fidbf
-share/java/ghidra/Ghidra/Features/FunctionID/data/vs2010_x64.fidbf
-share/java/ghidra/Ghidra/Features/FunctionID/data/vs2010_x86.fidbf
-share/java/ghidra/Ghidra/Features/FunctionID/data/vs2012_x64.fidbf
-share/java/ghidra/Ghidra/Features/FunctionID/data/vs2012_x86.fidbf
-share/java/ghidra/Ghidra/Features/FunctionID/data/vs2015_x64.fidbf
-share/java/ghidra/Ghidra/Features/FunctionID/data/vs2015_x86.fidbf
 share/java/ghidra/Ghidra/Features/FunctionID/ghidra_scripts/
 share/java/ghidra/Ghidra/Features/FunctionID/ghidra_scripts/CollectFailedRelocations.java
 share/java/ghidra/Ghidra/Features/FunctionID/ghidra_scripts/CreateMultipleLibraries.java
@@ -769,9 +746,6 @@ share/java/ghidra/Ghidra/Features/PDB/Module.manifest
 share/java/ghidra/Ghidra/Features/PDB/lib/
 share/java/ghidra/Ghidra/Features/PDB/lib/PDB-src.zip
 share/java/ghidra/Ghidra/Features/PDB/lib/PDB.jar
-share/java/ghidra/Ghidra/Features/PDB/os/
-share/java/ghidra/Ghidra/Features/PDB/os/win64/
-share/java/ghidra/Ghidra/Features/PDB/os/win64/pdb.exe
 share/java/ghidra/Ghidra/Features/PDB/src/
 share/java/ghidra/Ghidra/Features/PDB/src/pdb/
 share/java/ghidra/Ghidra/Features/PDB/src/pdb/README.txt
@@ -3290,7 +3264,6 @@ share/java/ghidra/docs/languages/index.html
 share/java/ghidra/docs/languages/manual_index.txt
 share/java/ghidra/docs/languages/versioning.html
 share/java/ghidra/ghidraRun
-share/java/ghidra/ghidraRun.bat
 share/java/ghidra/licenses/
 share/java/ghidra/licenses/Apache_License_2.0.txt
 share/java/ghidra/licenses/BSD.txt
@@ -3311,39 +3284,13 @@ share/java/ghidra/licenses/Oxygen_Icons_-_LGPL_3.0.txt
 share/java/ghidra/licenses/Public_Domain.txt
 share/java/ghidra/licenses/Tango_Icons_-_Public_Domain.txt
 share/java/ghidra/server/
-share/java/ghidra/server/ghidraSvr
-share/java/ghidra/server/ghidraSvr.bat
 share/java/ghidra/server/server.conf
-share/java/ghidra/server/svrAdmin
-share/java/ghidra/server/svrAdmin.bat
-share/java/ghidra/server/svrInstall
-share/java/ghidra/server/svrInstall.bat
 share/java/ghidra/server/svrREADME.html
-share/java/ghidra/server/svrUninstall
-share/java/ghidra/server/svrUninstall.bat
 share/java/ghidra/support/
 share/java/ghidra/support/LaunchSupport.jar
-share/java/ghidra/support/README_createPdbXmlFiles.txt
-share/java/ghidra/support/analyzeHeadless
-share/java/ghidra/support/analyzeHeadless.bat
 share/java/ghidra/support/analyzeHeadlessREADME.html
 share/java/ghidra/support/buildExtension.gradle
-share/java/ghidra/support/buildGhidraJar
-share/java/ghidra/support/buildGhidraJar.bat
 share/java/ghidra/support/buildGhidraJarREADME.txt
-share/java/ghidra/support/convertStorage
-share/java/ghidra/support/convertStorage.bat
-share/java/ghidra/support/createPdbXmlFiles.bat
 share/java/ghidra/support/debug.log4j.xml
-share/java/ghidra/support/dumpGhidraThreads
-share/java/ghidra/support/dumpGhidraThreads.bat
-share/java/ghidra/support/ghidra.ico
-share/java/ghidra/support/ghidraDebug
-share/java/ghidra/support/ghidraDebug.bat
-share/java/ghidra/support/launch.bat
 share/java/ghidra/support/launch.properties
 share/java/ghidra/support/launch.sh
-share/java/ghidra/support/pythonRun
-share/java/ghidra/support/pythonRun.bat
-share/java/ghidra/support/sleigh
-share/java/ghidra/support/sleigh.bat

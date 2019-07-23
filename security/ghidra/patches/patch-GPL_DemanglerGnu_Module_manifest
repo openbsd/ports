@@ -1,0 +1,14 @@
+$OpenBSD: patch-GPL_DemanglerGnu_Module_manifest,v 1.1 2019/07/23 02:09:20 lteo Exp $
+
+From https://github.com/NationalSecurityAgency/ghidra/pull/490
+
+Index: GPL/DemanglerGnu/Module.manifest
+--- GPL/DemanglerGnu/Module.manifest.orig
++++ GPL/DemanglerGnu/Module.manifest
+@@ -1,3 +1,4 @@
+ MODULE FILE LICENSE: os/linux64/demangler_gnu GPL 3
+ MODULE FILE LICENSE: os/osx64/demangler_gnu GPL 3
+-MODULE FILE LICENSE: os/win64/demangler_gnu.exe GPL 3
+\ No newline at end of file
++MODULE FILE LICENSE: os/openbsd64/demangler_gnu GPL 3
++MODULE FILE LICENSE: os/win64/demangler_gnu.exe GPL 3

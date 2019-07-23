@@ -1,0 +1,24 @@
+$OpenBSD: patch-Ghidra_Framework_Help_src_main_java_help_GHelpBuilder_java,v 1.1 2019/07/23 02:09:20 lteo Exp $
+
+GHelpBuilder.java builds the Ghidra help files during build and it logs to
+$HOME/.ghidra/.ghidra-${VERSION}/application.log.  The GhidraApplicationLayout()
+constructor calls ApplicationUtilities.getDefaultUserSettingsDir() which in turn
+uses System.getproperty("user.home") to form the above path to application.log.
+
+To prevent $HOME from being touched during build, this patch changes user.home
+to ${WRKDIR}/home before the GhidraApplicationLayout() constructor is called so
+that logging goes to ${WRKDIR}/home/.ghidra/.ghidra-${VERSION}/application.log
+instead.
+
+Index: Ghidra/Framework/Help/src/main/java/help/GHelpBuilder.java
+--- Ghidra/Framework/Help/src/main/java/help/GHelpBuilder.java.orig
++++ Ghidra/Framework/Help/src/main/java/help/GHelpBuilder.java
+@@ -68,6 +68,8 @@ public class GHelpBuilder {
+ 		builder.exitOnError = true;
+ 
+ 		ApplicationConfiguration config = new ApplicationConfiguration();
++
++		System.setProperty("user.home", "${WRKDIR}/home");
+ 		Application.initializeApplication(new GhidraApplicationLayout(), config);
+ 
+ 		builder.build(args);

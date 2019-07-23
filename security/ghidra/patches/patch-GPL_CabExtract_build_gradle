@@ -1,0 +1,16 @@
+$OpenBSD: patch-GPL_CabExtract_build_gradle,v 1.1 2019/07/23 02:09:20 lteo Exp $
+
+From https://github.com/NationalSecurityAgency/ghidra/pull/490
+
+Index: GPL/CabExtract/build.gradle
+--- GPL/CabExtract/build.gradle.orig
++++ GPL/CabExtract/build.gradle
+@@ -40,7 +40,7 @@ project.ext.cabextract = "cabextract-1.6"
+  *
+  * The cabextract tool requires that its 'configure' script is called before make.
+  *********************************************************************************/
+-['linux64', 'osx64'].each { platform ->
++['linux64', 'osx64', 'openbsd64'].each { platform ->
+ 		
+ 	def configureName = "${platform}CabExtractConfigure"
+ 	def makeName = "${platform}CabExtractMake" // native Make task found automatically
