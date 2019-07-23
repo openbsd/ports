@@ -1,0 +1,16 @@
+$OpenBSD: patch-make_ffi_py,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
+
+Use 'cc' as default compiler.
+
+Index: make_ffi.py
+--- make_ffi.py.orig
++++ make_ffi.py
+@@ -76,7 +76,7 @@ def doit(vex_path):
+     errs = []
+     for cpp in cpplist:
+         cmd = [cpp, '-I' + vex_path, os.path.join("pyvex_c", "pyvex.h")]
+-        if cpp in ('cl', 'clang', 'gcc', 'cc', 'clang++', 'g++'):
++        if cpp in ('cc'):
+             cmd.append("-E")
+         try:
+             p = subprocess.Popen(cmd,

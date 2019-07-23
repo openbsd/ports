@@ -1,0 +1,28 @@
+$OpenBSD: patch-pyvex_c_pyvex_c,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
+
+- match the guest with amd64-cx16-rdtscp-sse3-avx-avx2-bmi
+  as the host and guest hardware capabilities much be equal for VEX to work
+- remove LZCNT from the guest as the host might not support it on OpenBSD
+
+Index: pyvex_c/pyvex.c
+--- pyvex_c/pyvex.c.orig
++++ pyvex_c/pyvex.c
+@@ -170,6 +170,10 @@ void vex_init() {
+ #error "Unsupported host arch"
+ #endif
+ 
++	// Set the host capabilities to match the guest as defined
++	// in vex_prepare_vai().
++	vai_host.hwcaps = 0xf60;
++
+ 	vta.archinfo_host = vai_host;
+ 
+ 	//
+@@ -216,7 +220,6 @@ static void vex_prepare_vai(VexArch arch, VexArchInfo 
+ 		case VexArchAMD64:
+ 			vai->hwcaps =   VEX_HWCAPS_AMD64_SSE3 |
+ 							VEX_HWCAPS_AMD64_CX16 |
+-							VEX_HWCAPS_AMD64_LZCNT |
+ 							VEX_HWCAPS_AMD64_AVX |
+ 							VEX_HWCAPS_AMD64_RDTSCP |
+ 							VEX_HWCAPS_AMD64_BMI |

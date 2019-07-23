@@ -1,0 +1,44 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/23 19:22:23 jasper Exp $
+@conflict z3-*
+@bin bin/z3
+lib/python${MODPY_VERSION}/site-packages/z3/
+lib/python${MODPY_VERSION}/site-packages/z3/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/z3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/z3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/z3/${MODPY_PYCACHE}z3.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/z3/${MODPY_PYCACHE}z3consts.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/z3/${MODPY_PYCACHE}z3core.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/z3/${MODPY_PYCACHE}z3num.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/z3/${MODPY_PYCACHE}z3poly.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/z3/${MODPY_PYCACHE}z3printer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/z3/${MODPY_PYCACHE}z3rcf.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/z3/${MODPY_PYCACHE}z3types.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/z3/${MODPY_PYCACHE}z3util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/z3/include/
+lib/python${MODPY_VERSION}/site-packages/z3/include/c++/
+lib/python${MODPY_VERSION}/site-packages/z3/include/c++/z3++.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/z3.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/z3_algebraic.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/z3_api.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/z3_fpa.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/z3_interp.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/z3_macros.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/z3_polynomial.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/z3_rcf.h
+lib/python${MODPY_VERSION}/site-packages/z3/include/z3_v1.h
+lib/python${MODPY_VERSION}/site-packages/z3/lib/
+lib/python${MODPY_VERSION}/site-packages/z3/lib/libz3.so
+lib/python${MODPY_VERSION}/site-packages/z3/z3.py
+lib/python${MODPY_VERSION}/site-packages/z3/z3consts.py
+lib/python${MODPY_VERSION}/site-packages/z3/z3core.py
+lib/python${MODPY_VERSION}/site-packages/z3/z3num.py
+lib/python${MODPY_VERSION}/site-packages/z3/z3poly.py
+lib/python${MODPY_VERSION}/site-packages/z3/z3printer.py
+lib/python${MODPY_VERSION}/site-packages/z3/z3rcf.py
+lib/python${MODPY_VERSION}/site-packages/z3/z3types.py
+lib/python${MODPY_VERSION}/site-packages/z3/z3util.py
+lib/python${MODPY_VERSION}/site-packages/z3_solver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/z3_solver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/z3_solver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/z3_solver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/z3_solver-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt

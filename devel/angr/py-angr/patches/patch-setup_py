@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2019/07/23 19:22:23 jasper Exp $
+
+native/Makefile requires GNU make.
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -66,7 +66,7 @@ def _build_native():
+             pass
+ 
+     cmd1 = ['nmake', '/f', 'Makefile-win']
+-    cmd2 = ['make']
++    cmd2 = ['gmake']
+     for cmd in (cmd1, cmd2):
+         try:
+             if subprocess.call(cmd, cwd='native', env=env) != 0:

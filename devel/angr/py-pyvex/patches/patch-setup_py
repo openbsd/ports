@@ -1,0 +1,71 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
+
+- Remove urllib import which is not required when not downloading the sources
+- Fix various paths to LibVEX
+- Skip building a local copy of LibVEX
+- Force use of the static library
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -7,7 +7,6 @@ import glob
+ import tarfile
+ import multiprocessing
+ import time
+-from urllib.request import urlopen
+ import platform
+ 
+ if bytes is str:
+@@ -45,7 +44,7 @@ else:
+ 
+ 
+ VEX_LIB_NAME = "vex" # can also be vex-amd64-linux
+-VEX_PATH = os.path.abspath(os.path.join(PROJECT_DIR, '..', 'vex'))
++VEX_PATH = '${LOCALBASE}'
+ 
+ if not os.path.exists(VEX_PATH):
+     VEX_PATH = os.path.join(PROJECT_DIR, 'vex')
+@@ -87,14 +86,14 @@ def _build_vex():
+ 
+ def _build_pyvex():
+     e = os.environ.copy()
+-    e['VEX_LIB_PATH'] = VEX_PATH
+-    e['VEX_INCLUDE_PATH'] = os.path.join(VEX_PATH, 'pub')
+-    e['VEX_LIB_FILE'] = os.path.join(VEX_PATH, 'libvex.lib')
++    e['VEX_LIB_PATH'] = os.path.join(VEX_PATH, 'lib')
++    e['VEX_INCLUDE_PATH'] = os.path.join(VEX_PATH, 'include/angr-vex')
++    e['VEX_LIB_FILE'] = os.path.join(VEX_PATH, 'lib/libvex.so')
+ 
+     cmd1 = ['nmake', '/f', 'Makefile-msvc']
+     cmd2 = ['make', '-j', str(multiprocessing.cpu_count())]
+     cmd3 = ['gmake', '-j', str(multiprocessing.cpu_count())]
+-    for cmd in (cmd1, cmd2, cmd3):
++    for cmd in (cmd3):
+         try:
+             if subprocess.call(cmd, cwd='pyvex_c', env=e) == 0:
+                 break
+@@ -112,7 +111,6 @@ def _shuffle_files():
+     pyvex_c_dir = os.path.join(PROJECT_DIR, 'pyvex_c')
+ 
+     shutil.copy(os.path.join(pyvex_c_dir, LIBRARY_FILE), LIB_DIR)
+-    shutil.copy(os.path.join(pyvex_c_dir, STATIC_LIBRARY_FILE), LIB_DIR)
+     shutil.copy(os.path.join(pyvex_c_dir, 'pyvex.h'), INCLUDE_DIR)
+     for f in glob.glob(os.path.join(VEX_PATH, 'pub', '*')):
+         shutil.copy(f, INCLUDE_DIR)
+@@ -138,14 +136,14 @@ def _copy_sources():
+ def _build_ffi():
+     import make_ffi
+     try:
+-        make_ffi.doit(os.path.join(VEX_PATH, 'pub'))
++        make_ffi.doit(os.path.join(VEX_PATH, 'include/angr-vex'))
+     except Exception as e:
+         print(repr(e))
+         raise
+ 
+ class build(_build):
+     def run(self):
+-        self.execute(_build_vex, (), msg="Building libVEX")
++        #self.execute(_build_vex, (), msg="Building libVEX")
+         self.execute(_build_pyvex, (), msg="Building libpyvex")
+         self.execute(_shuffle_files, (), msg="Copying libraries and headers")
+         self.execute(_build_ffi, (), msg="Creating CFFI defs file")

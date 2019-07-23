@@ -1,0 +1,14 @@
+$OpenBSD: patch-native_log_c,v 1.1.1.1 2019/07/23 19:22:23 jasper Exp $
+
+Index: native/log.c
+--- native/log.c.orig
++++ native/log.c
+@@ -107,7 +107,7 @@ void logLog(enum llevel_t ll, const char *fn, int ln, 
+         dprintf(log_fd, "%s", logLevels[ll].prefix);
+     }
+     if (logLevels[ll].print_funcline) {
+-        dprintf(log_fd, "[%s][%s][%d] %s():%d ", timestr, logLevels[ll].descr, (pid_t)syscall(__NR_gettid), fn, ln);
++        dprintf(log_fd, "[%s][%s][%d] %s():%d ", timestr, logLevels[ll].descr, getpid(), fn, ln);
+     }
+ 
+     va_list args;

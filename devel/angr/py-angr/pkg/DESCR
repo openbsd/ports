@@ -1,0 +1,10 @@
+angr is a suite of Python 3 libraries that let you load a binary
+and do a lot of cool things to it:
+
+- Disassembly and intermediate-representation lifting
+- Program instrumentation
+- Symbolic execution
+- Control-flow analysis
+- Data-dependency analysis
+- Value-set analysis (VSA)
+- Decompilation

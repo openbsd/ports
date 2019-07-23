@@ -1,0 +1,4 @@
+angr-vex is a copy of Valgrind's LibVEX for use with PyVEX.
+
+This package only allows for analyses where target and host
+architectures are identical.

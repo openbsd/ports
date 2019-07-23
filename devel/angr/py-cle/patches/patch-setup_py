@@ -1,0 +1,16 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
+
+idalink is unportable due to IDA being closed source.
+Remove dependency to unbreak tests.
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -19,7 +19,6 @@ setup(
+     install_requires=[
+         'pyelftools>=0.25',
+         'cffi',
+-        'idalink',
+         'archinfo==8.19.4.5',
+         'pyvex==8.19.4.5',
+         'pefile',

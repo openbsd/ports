@@ -1,0 +1,24 @@
+$OpenBSD: patch-Makefile-gcc,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
+
+Honour CFLAGS and DEBUG.
+
+Index: Makefile-gcc
+--- Makefile-gcc.pat.orig
++++ Makefile-gcc
+@@ -30,15 +30,7 @@ CFLAGS := -Ipub -Ipriv \
+ 	-Wcast-align -Wmissing-declarations \
+ 	-Wwrite-strings -Wformat -Wformat-security \
+ 	-std=gnu99 -fstrict-aliasing -fPIC \
+-	$(EXTRA_CFLAGS)
+-
+-# If not debugging, put -g -O2 after any flags we inherit from our invoker
+-# -O2 vs -O makes a significant difference, at least with gcc4
+-ifeq ($(DEBUG),1)
+-CFLAGS += -g
+-else
+-CFLAGS += -O2
+-endif
++	$(CFLAGS)
+ 
+ # These are a separate set of defines that compile for parallel environments
+ #CC = icc

@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
+include/angr-vex/
+include/angr-vex/libvex.h
+include/angr-vex/libvex_basictypes.h
+include/angr-vex/libvex_emnote.h
+include/angr-vex/libvex_guest_amd64.h
+include/angr-vex/libvex_guest_arm.h
+include/angr-vex/libvex_guest_arm64.h
+include/angr-vex/libvex_guest_mips32.h
+include/angr-vex/libvex_guest_mips64.h
+include/angr-vex/libvex_guest_offsets.h
+include/angr-vex/libvex_guest_ppc32.h
+include/angr-vex/libvex_guest_ppc64.h
+include/angr-vex/libvex_guest_s390x.h
+include/angr-vex/libvex_guest_tilegx.h
+include/angr-vex/libvex_guest_x86.h
+include/angr-vex/libvex_ir.h
+include/angr-vex/libvex_s390x_common.h
+include/angr-vex/libvex_trc_values.h
+lib/libvex.a
+lib/libvex.so

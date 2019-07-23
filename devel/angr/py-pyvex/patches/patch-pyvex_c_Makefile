@@ -1,0 +1,46 @@
+$OpenBSD: patch-pyvex_c_Makefile,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
+
+- Add support for OpenBSD
+- Don't overwrite CC/CFLAGS
+- Force use of shared libraries
+
+Index: pyvex_c/Makefile
+--- pyvex_c/Makefile.orig
++++ pyvex_c/Makefile
+@@ -14,6 +14,10 @@ ifeq ($(UNAME), NetBSD)
+ 	STATIC_LIBRARY_FILE=libpyvex.a
+ 	LDFLAGS=-Wl,-soname,$(LIBRARY_FILE)
+ endif
++ifeq ($(UNAME), OpenBSD)
++	LIBRARY_FILE=libpyvex.so
++	LDFLAGS=-Wl,-soname,$(LIBRARY_FILE) -L${LOCALBASE}/lib -lvex
++endif
+ ifeq ($(findstring MINGW,$(UNAME)), MINGW)
+ 	LIBRARY_FILE=pyvex.dll
+ 	STATIC_LIBRARY_FILE=libpyvex.a
+@@ -27,21 +31,20 @@ sp +=
+ qs = $(subst ?,$(sp),$1)
+ sq = $(subst $(sp),?,$1)
+ 
+-CC=gcc
++CC?=gcc
+ AR=ar
+ INCFLAGS=-I "$(VEX_INCLUDE_PATH)"
+-CFLAGS=-g -O2 -Wall -shared -fPIC -std=c99 $(INCFLAGS)
+ 
+ OBJECTS=pyvex.o logging.o analysis.o postprocess.o
+ HEADERS=pyvex.h
+ 
+-all: $(LIBRARY_FILE) $(STATIC_LIBRARY_FILE)
++all: $(LIBRARY_FILE)
+ 
+ %.o: %.c
+ 	$(CC) -c $(CFLAGS) $<
+ 
+-$(LIBRARY_FILE): $(OBJECTS) $(HEADERS) $(call sq,$(VEX_LIB_PATH)/libvex.a)
+-	$(CC) $(CFLAGS) -o $(LIBRARY_FILE) $(OBJECTS) "$(VEX_LIB_PATH)/libvex.a" $(LDFLAGS)
++$(LIBRARY_FILE): $(OBJECTS) $(HEADERS)
++	$(CC) $(CFLAGS) -o $(LIBRARY_FILE) $(OBJECTS) $(LDFLAGS)
+ 
+ $(STATIC_LIBRARY_FILE): $(OBJECTS) $(HEADERS) $(call sq,$(VEX_LIB_PATH)/libvex.a)
+ 	$(AR) rcs $(STATIC_LIBRARY_FILE) $(OBJECTS)

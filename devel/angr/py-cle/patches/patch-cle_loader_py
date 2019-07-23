@@ -1,0 +1,15 @@
+$OpenBSD: patch-cle_loader_py,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
+
+Index: cle/loader.py
+--- cle/loader.py.orig
++++ cle/loader.py
+@@ -894,6 +894,9 @@ class Loader:
+                 dirs.extend(self.main_object.extra_load_path)
+                 if sys.platform.startswith('linux'):
+                     dirs.extend(self.main_object.arch.library_search_path())
++                elif sys.platform.startswith('openbsd'):
++                    dirs.extend(self.main_object.arch.library_search_path())
++                    dirs.extend(['/usr/local/lib', '/usr/X11R6/lib'])
+                 elif sys.platform == 'win32':
+                     native_dirs = os.environ['PATH'].split(';')
+ 
