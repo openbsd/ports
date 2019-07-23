@@ -1,0 +1,17 @@
+$OpenBSD: patch-gcc_ada_cstreams_c,v 1.1 2019/07/23 21:17:47 naddy Exp $
+
+System.File_IO.Open calls full_name() for Create.  Use getcwd() approach
+instead of realpath() since the latter fails if the file doesn't exist.
+
+Index: gcc/ada/cstreams.c
+--- gcc/ada/cstreams.c.orig
++++ gcc/ada/cstreams.c
+@@ -190,7 +190,7 @@ __gnat_full_name (char *nam, char *buffer)
+ 	  *p = '\\';
+     }
+ 
+-#elif defined (__FreeBSD__) || defined (__DragonFly__) || defined (__OpenBSD__)
++#elif defined (__FreeBSD__) || defined (__DragonFly__)
+ 
+   /* Use realpath function which resolves links and references to . and ..
+      on those Unix systems that support it. Note that GNU/Linux provides it but
