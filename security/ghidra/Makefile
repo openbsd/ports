@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/23 02:09:20 lteo Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/23 02:52:58 lteo Exp $
 
 # bundled jython has amd64 components for OpenBSD
 ONLY_FOR_ARCHS =	amd64
@@ -7,7 +7,7 @@ COMMENT =	software reverse engineering (SRE) framework
 
 VERSION = 	9.0.4
 GHIDRA_DATE =	20190516
-REVISION =	1
+REVISION =	2
 
 GH_ACCOUNT =	NationalSecurityAgency
 GH_PROJECT =	ghidra
@@ -18,7 +18,7 @@ CATEGORIES =	security
 
 HOMEPAGE =	https://www.ghidra-sre.org/
 
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
+MAINTAINER =	Lawrence Teo <lteo@openbsd.org>
 
 # Apache v2
 PERMIT_PACKAGE =	Yes
@@ -39,6 +39,8 @@ JSON_SIMPLE_VER =	1.1.1
 JUNIT_VER =		4.12
 YAJSW_VER =		12.12
 
+# Note that ST4-${ST4_VER}.jar is only needed during build for antlr; it is not
+# needed at runtime and therefore does not need to be packed.
 JAR_DISTFILES +=	ST4{org/antlr/ST4/${ST4_VER}/ST4}-${ST4_VER}.jar
 JAR_DISTFILES +=	hamcrest{org/hamcrest/hamcrest-all/${HAMCREST_VER}/hamcrest}-all-${HAMCREST_VER}.jar
 JAR_DISTFILES +=	javacc{net/java/dev/javacc/javacc/${JAVACC_VER}/javacc}-${JAVACC_VER}.jar
