@@ -1,0 +1,200 @@
+$OpenBSD: patch-irc_c,v 1.1 2019/07/23 09:58:42 sthen Exp $
+
+Index: irc.c
+--- irc.c.orig
++++ irc.c
+@@ -42,7 +42,7 @@ extern void	 scan(const char **, char *, size_t, const
+ 		    const char *);
+ extern int	 sync_write(int, const char *, int);
+ 
+-static void	 irc_cmd(const char *, int, int);
++static void	 irc_cmd(char *, int, int);
+ 
+ static void	 irc_send_pong(int, const char *);
+ 
+@@ -93,44 +93,55 @@ irc_recv(const char *buf, unsigned len, int client_fd,
+ }
+ 
+ static void
+-irc_cmd(const char *cmd, int client_fd, int server_fd)
++irc_cmd(char *cmd, int client_fd, int server_fd)
+ {
+-	if (!strncasecmp(cmd, "PASS ", 5)) {
+-		cmd += 5;
+-		scan(&cmd, irc_pass, sizeof(irc_pass), " ", " ");
+-	} else if (!strncasecmp(cmd, "USER ", 5)) {
+-		cmd += 5;
+-		scan(&cmd, irc_ident, sizeof(irc_ident), " ", " ");
++	if (!strncasecmp(cmd, "RAWICB ", 7)) {
++		icb_send_raw(server_fd, cmd + 7);
++		return;
++	}
++
++	char *argv[10], *p;
++	int argc = 1;
++
++	for (p = cmd, argv[0] = p; argc < 10 && (p = strchr(p, ' ')) != NULL;
++	    argc++) {
++		*p = 0;
++		p++;
++		while (*p == ' ')
++			p++;
++		if (*p == ':') {
++			argv[argc] = p + 1;
++			argc++;
++			break;
++		}
++		argv[argc] = p;
++	}
++
++	if (!strcasecmp(argv[0], "PASS")) {
++		strlcpy(irc_pass, argv[1], sizeof(irc_pass));
++	} else if (!strcasecmp(argv[0], "USER")) {
++		strlcpy(irc_ident, argv[1], sizeof(irc_ident));
+ 		if (!icb_logged_in && irc_nick[0] && irc_ident[0])
+ 			icb_send_login(server_fd, irc_nick,
+ 			    irc_ident, irc_pass);
+-	} else if (!strncasecmp(cmd, "NICK ", 5)) {
+-		cmd += 5;
+-		scan(&cmd, irc_nick, sizeof(irc_nick), " ", " ");
++	} else if (!strcasecmp(argv[0], "NICK")) {
++		strlcpy(irc_nick, argv[1], sizeof(irc_nick));
+ 		if (icb_logged_in)
+ 			icb_send_name(server_fd, irc_nick);
+ 		else if (irc_nick[0] && irc_ident[0])
+ 			icb_send_login(server_fd, irc_nick,
+ 			    irc_ident, irc_pass);
+-	} else if (!strncasecmp(cmd, "JOIN ", 5)) {
+-		char group[128];
+-
+-		cmd += 5;
+-		if (*cmd == '#')
+-			cmd++;
+-		scan(&cmd, group, sizeof(group), " ", " ");
+-		icb_send_group(server_fd, group);
+-	} else if (!strncasecmp(cmd, "PART ", 5)) {
++	} else if (!strcasecmp(argv[0], "JOIN")) {
++		icb_send_group(server_fd,
++		    argv[1] + (argv[1][0] == '#' ? 1 : 0));
++	} else if (!strcasecmp(argv[0], "PART")) {
+ 		in_irc_channel = 0;
+-	} else if (!strncasecmp(cmd, "PRIVMSG ", 8) ||
+-	    !strncasecmp(cmd, "NOTICE ", 7)) {
+-		char dst[128];
++	} else if (!strcasecmp(argv[0], "PRIVMSG") ||
++	    !strcasecmp(argv[0], "NOTICE")) {
+ 		char msg[8192];
+ 		unsigned i, j;
+ 
+-		cmd += strncasecmp(cmd, "NOTICE ", 7) ? 8 : 7;
+-		scan(&cmd, dst, sizeof(dst), " ", " ");
+-		scan(&cmd, msg, sizeof(msg), " ", "");
++		strlcpy(msg, argv[2], sizeof(msg));
+ 		/* strip \001 found in CTCP messages */
+ 		i = 0;
+ 		while (msg[i]) {
+@@ -141,73 +152,52 @@ irc_cmd(const char *cmd, int client_fd, int server_fd)
+ 			} else
+ 				i++;
+ 		}
+-		if (!strcmp(dst, irc_channel))
+-			icb_send_openmsg(server_fd,
+-			    msg + (msg[0] == ':' ? 1 : 0));
++		if (!strcmp(argv[1], irc_channel))
++			icb_send_openmsg(server_fd, msg);
+ 		else
+-			icb_send_privmsg(server_fd, dst,
+-			    msg + (msg[0] == ':' ? 1 : 0));
+-	} else if (!strncasecmp(cmd, "MODE ", 5)) {
+-		cmd += 5;
+-		if (!strcmp(cmd, irc_channel))
++			icb_send_privmsg(server_fd, argv[1], msg);
++	} else if (!strcasecmp(argv[0], "MODE")) {
++		if (strcmp(argv[1], irc_channel))
++			return;
++		if (argc == 2)
+ 			icb_send_names(server_fd, irc_channel);
+-		else if (!strncmp(cmd, irc_channel, strlen(irc_channel))) {
+-			cmd += strlen(irc_channel);
+-			if (strncmp(cmd, " +o ", 4)) {
++		else {
++			if (strcmp(argv[2], "+o")) {
+ 				printf("irc_cmd: invalid MODE args '%s'\n",
+-				    cmd);
++				    argv[2]);
+ 				return;
+ 			}
+-			cmd += 4;
+-			icb_send_pass(server_fd, cmd);
++			icb_send_pass(server_fd, argv[3]);
+ 		}
+-	} else if (!strncasecmp(cmd, "TOPIC ", 6)) {
+-		cmd += 6;
+-		if (strncmp(cmd, irc_channel, strlen(irc_channel))) {
+-			printf("irc_cmd: invalid TOPIC args '%s'\n", cmd);
++	} else if (!strcasecmp(argv[0], "TOPIC")) {
++		if (strcmp(argv[1], irc_channel)) {
++			printf("irc_cmd: invalid TOPIC channel '%s'\n",
++			    argv[1]);
+ 			return;
+ 		}
+-		cmd += strlen(irc_channel);
+-		if (strncmp(cmd, " :", 2)) {
+-			printf("irc_cmd: invalid TOPIC args '%s'\n", cmd);
+-			return;
+-		}
+-		cmd += 2;
+-		icb_send_topic(server_fd, cmd);
+-	} else if (!strcasecmp(cmd, "LIST")) {
++		icb_send_topic(server_fd, argv[2]);
++	} else if (!strcasecmp(argv[0], "LIST")) {
+ 		icb_send_list(server_fd);
+-	} else if (!strncasecmp(cmd, "NAMES ", 6)) {
+-		cmd += 6;
+-		icb_send_names(server_fd, cmd);
+-	} else if (!strncasecmp(cmd, "WHOIS ", 6)) {
+-		cmd += 6;
+-		icb_send_whois(server_fd, cmd);
+-	} else if (!strncasecmp(cmd, "WHO ", 4)) {
+-		cmd += 4;
+-		icb_send_who(server_fd, cmd);
+-	} else if (!strncasecmp(cmd, "KICK ", 5)) {
+-		char channel[128], nick[128];
+-
+-		cmd += 5;
+-		scan(&cmd, channel, sizeof(channel), " ", " ");
+-		scan(&cmd, nick, sizeof(nick), " ", " ");
+-		if (strcmp(channel, irc_channel)) {
+-			printf("irc_cmd: invalid KICK args '%s'\n", cmd);
++	} else if (!strcasecmp(argv[0], "NAMES")) {
++		icb_send_names(server_fd, argv[1]);
++	} else if (!strcasecmp(argv[0], "WHOIS")) {
++		icb_send_whois(server_fd, argv[1]);
++	} else if (!strcasecmp(argv[0], "WHO")) {
++		icb_send_who(server_fd, argv[1]);
++	} else if (!strcasecmp(argv[0], "KICK")) {
++		if (strcmp(argv[1], irc_channel)) {
++			printf("irc_cmd: invalid KICK args '%s'\n", argv[1]);
+ 			return;
+ 		}
+-		icb_send_boot(server_fd, nick);
+-	} else if (!strncasecmp(cmd, "PING ", 5)) {
++		icb_send_boot(server_fd, argv[2]);
++	} else if (!strcasecmp(argv[0], "PING")) {
+ 		icb_send_noop(server_fd);
+-		cmd += 5;
+-		irc_send_pong(client_fd, cmd);
+-	} else if (!strncasecmp(cmd, "RAWICB ", 7)) {
+-		cmd += 7;
+-		icb_send_raw(server_fd, cmd);
+-	} else if (!strncasecmp(cmd, "QUIT ", 5)) {
++		irc_send_pong(client_fd, argv[1]);
++	} else if (!strcasecmp(argv[0], "QUIT")) {
+ 		printf("client QUIT\n");
+ 		terminate_client = 1;
+ 	} else
+-		printf("irc_cmd: unknown cmd '%s'\n", cmd);
++		printf("irc_cmd: unknown command '%s'\n", argv[0]);
+ }
+ 
+ void
