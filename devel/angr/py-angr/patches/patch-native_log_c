@@ -1,4 +1,6 @@
-$OpenBSD: patch-native_log_c,v 1.1.1.1 2019/07/23 19:22:23 jasper Exp $
+$OpenBSD: patch-native_log_c,v 1.2 2019/07/23 19:51:08 kn Exp $
+
+Replace linx specific gettid(2) with getpid(2).
 
 Index: native/log.c
 --- native/log.c.orig
