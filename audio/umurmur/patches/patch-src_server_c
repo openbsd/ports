@@ -1,40 +1,9 @@
-$OpenBSD: patch-src_server_c,v 1.5 2016/05/24 09:13:14 dcoppa Exp $
+$OpenBSD: patch-src_server_c,v 1.6 2019/07/24 12:47:13 feinerer Exp $
 
-commit c2eec4582ad6f5f759d8b9a3c7f9bf78aa59f656
-Author: Felix Morgner <felix.morgner@gmail.com>
-Date:   Mon Jul 6 11:20:34 2015 +0200
-
-Fixed mutiple possible null-pointer derefences
-
-commit 71893121fbce7762f5cd9e6a98c4ead7e5cd6211
-Author: Omri Mor <omri50@gmail.com>
-Date:   Sun Jul 12 12:34:18 2015 +0300
-
-Null pointer references
-
-commit d723b45fc42e04b9179ba29c65efc9484ec2924c
-Author: Patrick Mooney <pmooney@pfmooney.com>
-Date:   Sun Feb 21 02:11:34 2016 -0600
-
-Fix size of value passed to setsockopt
-
---- src/server.c.orig	Sat Jun 20 00:58:46 2015
-+++ src/server.c	Tue May 24 10:20:55 2016
-@@ -95,15 +95,22 @@ void checkIPversions()
- struct sockaddr_storage** Server_setupAddressesAndPorts()
- {
- 	struct sockaddr_storage** addresses = calloc(2, sizeof(void*));
-+	if(!addresses)
-+		Log_fatal("Not enough memory to allocate addresses");
- 
- 	struct sockaddr_storage* v4address = calloc(1, sizeof(struct sockaddr_storage));
-+	if(!v4address)
-+		Log_fatal("Not enough memory to allocate IPv4 address");
- 	v4address->ss_family = AF_INET;
-+
- 	struct sockaddr_storage* v6address = calloc(1, sizeof(struct sockaddr_storage));
-+	if(!v6address)
-+		Log_fatal("Not enough memory to allocate IPv6 address");
+Index: src/server.c
+--- src/server.c.orig
++++ src/server.c
+@@ -103,8 +103,8 @@ struct sockaddr_storage** Server_setupAddressesAndPort
  	v6address->ss_family = AF_INET6;
  
  #if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__APPLE__)
@@ -45,12 +14,3 @@ Fix size of value passed to setsockopt
  #endif
  
  	int error = 0;
-@@ -208,7 +215,7 @@ void Server_runLoop(struct pollfd* pollfds)
- 
- void Server_setupTCPSockets(struct sockaddr_storage* addresses[2], struct pollfd* pollfds)
- {
--	uint8_t yes = 1;
-+	int yes = 1;
- 	int sockets[2];
- 
- 	if (hasv4) {

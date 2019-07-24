@@ -1,47 +1,25 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2015/06/12 09:50:42 dcoppa Exp $
---- CMakeLists.txt.orig	Tue Apr  7 12:01:12 2015
-+++ CMakeLists.txt	Fri Jun 12 11:32:59 2015
-@@ -57,18 +57,13 @@ elseif("${SSL}" STREQUAL "gnutls")
-   endif(NETTLE_FOUND)
- endif("${SSL}" STREQUAL "openssl")
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2019/07/24 12:47:13 feinerer Exp $
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -3,7 +3,7 @@ project(umurmurd C)
  
--check_library_exists(rt clock_gettime "time.h" HAVE_CLOCK_GETTIME_RT)
-+check_function_exists(clock_gettime HAVE_CLOCK_GETTIME)
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
+ set(CMAKE_INSTALL_RPATH_USE_LINK_PATH true)
+-set(UMURMUR_BINARY_DIR "${CMAKE_BINARY_DIR}/bin")
++set(UMURMUR_BINARY_DIR "${CMAKE_BINARY_DIR}/sbin")
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${UMURMUR_BINARY_DIR}")
  
--if(NOT HAVE_CLOCK_GETTIME_RT)
--  check_function_exists(clock_gettime HAVE_CLOCK_GETTIME)
--  if(NOT HAVE_CLOCK_GETTIME)
--    check_library_exists(c clock_get_time "mach/time.h" HAVE_CLOCK_GET_TIME)
--    if(NOT HAVE_CLOCK_GET_TIME)
--      message(FATAL_ERROR "Didn't find clock_gettime() or clock_get_time()!")
--    endif()
-+if(NOT HAVE_CLOCK_GETTIME)
-+  check_library_exists(c clock_get_time "mach/time.h" HAVE_CLOCK_GET_TIME)
-+  if(NOT HAVE_CLOCK_GET_TIME)
-+    message(FATAL_ERROR "Didn't find clock_gettime() or clock_get_time()!")
-   endif()
--else()
--  set(LIBRT rt)
- endif()
+ if(NOT CMAKE_BUILD_TYPE)
+@@ -24,9 +24,5 @@ find_package(ProtobufC REQUIRED)
  
- if(USE_SHAREDMEMORY_API)
-@@ -90,16 +85,15 @@ add_subdirectory(src)
- configure_file(src/config.h.in ${CMAKE_SOURCE_DIR}/src/config.h)
+ add_subdirectory(src)
  
- include_directories(${LIBCONFIG_INCLUDE_DIR} ${PROTOBUFC_INCLUDE_DIR} ${SSLIMP_INCLUDE_DIR})
--link_directories(${LIBCONFIG_LIB_DIR} ${PROTOBUFC_LIB_DIR} ${SSLIMP_LIB_DIR})
- 
- add_executable(${PROJECT_NAME} ${SOURCE})
--install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION "bin")
-+install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION "sbin")
- 
- find_path(OLD_CONFIG_FILE NAMES "umurmur.conf" PATHS ${CMAKE_INSTALL_PREFIX} PATH_SUFFIXES "etc")
- if(NOT OLD_CONFIG_FILE)
+-find_path(OLD_CONFIG_FILE NAMES "umurmur.conf" PATHS ${CMAKE_INSTALL_PREFIX} PATH_SUFFIXES "etc")
+-
+-if(NOT OLD_CONFIG_FILE)
 -  install(FILES "umurmur.conf.example" DESTINATION "etc" RENAME "umurmur.conf")
-+  install(FILES "umurmur.conf.example" DESTINATION "share/examples/umurmur" RENAME "umurmur.conf")
- endif(NOT OLD_CONFIG_FILE)
+-endif()
++install(FILES "umurmur.conf.example" DESTINATION "share/examples/umurmur" RENAME "umurmur.conf")
  
- add_definitions(${SSLIMP_CFLAGS})
- 
--target_link_libraries(${PROJECT_NAME} ${LIBCONFIG_LIBRARIES} ${PROTOBUFC_LIBRARIES} ${SSLIMP_LIBRARIES} ${LIBRT} ${CRYPTO_LIBRARIES})
-+target_link_libraries(${PROJECT_NAME} ${LIBCONFIG_LIBRARIES} ${PROTOBUFC_LIBRARIES} ${SSLIMP_LIBRARIES} ${CRYPTO_LIBRARIES})

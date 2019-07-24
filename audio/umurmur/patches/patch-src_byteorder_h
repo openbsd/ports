@@ -1,9 +1,20 @@
-$OpenBSD: patch-src_byteorder_h,v 1.1 2014/09/04 12:33:27 dcoppa Exp $
+$OpenBSD: patch-src_byteorder_h,v 1.2 2019/07/24 12:47:13 feinerer Exp $
 
+Include correct userspace header for endian information
 Skip linuxism to fix build on LP64 archs that aren't amd64
 
---- src/byteorder.h.orig	Thu Sep  4 12:25:02 2014
-+++ src/byteorder.h	Thu Sep  4 12:26:07 2014
+Index: src/byteorder.h
+--- src/byteorder.h.orig
++++ src/byteorder.h
+@@ -36,7 +36,7 @@
+ #include <stdint.h>
+ 
+ #if defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__APPLE__)
+-#include <machine/endian.h>
++#include <endian.h>
+ #if BYTE_ORDER == BIG_ENDIAN
+ #define BYTE_ORDER_BIG_ENDIAN
+ #endif // BYTE_ORDER == BIG_ENDIAN
 @@ -55,9 +55,11 @@ typedef uint64_t subblock;
  #define SWAPPED(x) (x)
  #elif defined( __x86_64__)

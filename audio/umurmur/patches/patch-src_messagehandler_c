@@ -1,24 +1,9 @@
-$OpenBSD: patch-src_messagehandler_c,v 1.7 2015/07/10 17:30:30 dcoppa Exp $
+$OpenBSD: patch-src_messagehandler_c,v 1.8 2019/07/24 12:47:13 feinerer Exp $
 
-commit c2eec4582ad6f5f759d8b9a3c7f9bf78aa59f656
-Author: Felix Morgner <felix.morgner@gmail.com>
-Date:   Mon Jul 6 11:20:34 2015 +0200
-
-Fixed mutiple possible null-pointer derefences
-
---- src/messagehandler.c.orig	Sat Jun 20 00:58:46 2015
-+++ src/messagehandler.c	Fri Jul 10 18:47:15 2015
-@@ -285,6 +285,9 @@ void Mh_handle_message(client_t *client, message_t *ms
- 				sendmsg->payload.channelState->n_links = ch_itr->linkcount;
- 
- 				links = (uint32_t *)malloc(ch_itr->linkcount * sizeof(uint32_t));
-+				if(!links)
-+					Log_fatal("Out of memory");
-+
- 				list_iterate(itr, &ch_itr->channel_links) { /* Iterate links */
- 					channellist_t *chl;
- 					channel_t *ch;
-@@ -507,9 +510,9 @@ void Mh_handle_message(client_t *client, message_t *ms
+Index: src/messagehandler.c
+--- src/messagehandler.c.orig
++++ src/messagehandler.c
+@@ -506,9 +506,9 @@ void Mh_handle_message(client_t *client, message_t *ms
  			sendmsg->payload.textMessage->n_tree_id = 1;
  			sendmsg->payload.textMessage->tree_id = tree_id;
  			if (client->recording)

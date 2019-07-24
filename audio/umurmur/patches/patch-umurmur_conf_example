@@ -1,6 +1,7 @@
-$OpenBSD: patch-umurmur_conf_example,v 1.4 2013/10/04 08:25:09 dcoppa Exp $
---- umurmur.conf.example.orig	Sun Jun  9 20:56:17 2013
-+++ umurmur.conf.example	Tue Oct  1 14:15:41 2013
+$OpenBSD: patch-umurmur_conf_example,v 1.5 2019/07/24 12:47:13 feinerer Exp $
+Index: umurmur.conf.example
+--- umurmur.conf.example.orig
++++ umurmur.conf.example
 @@ -1,7 +1,7 @@
  max_bandwidth = 48000;
  welcometext = "Welcome to uMurmur!";
@@ -11,7 +12,7 @@ $OpenBSD: patch-umurmur_conf_example,v 1.4 2013/10/04 08:25:09 dcoppa Exp $
  password = "";
  # admin_password = "test";   # Set to enable admin functionality.
  # ban_length = 0;            # Length in seconds for a ban. Default is 0. 0 = forever.
-@@ -17,9 +17,9 @@ max_users = 10;
+@@ -18,9 +18,9 @@ max_users = 10;
  
  # username and groupname for privilege dropping.
  # Will attempt to switch user if set. 

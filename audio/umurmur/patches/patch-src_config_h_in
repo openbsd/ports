@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_config_h_in,v 1.2 2015/06/12 09:50:42 dcoppa Exp $
---- src/config.h.in.orig	Tue Apr  7 12:01:12 2015
-+++ src/config.h.in	Fri Jun 12 11:11:45 2015
-@@ -8,6 +8,6 @@
+$OpenBSD: patch-src_config_h_in,v 1.3 2019/07/24 12:47:13 feinerer Exp $
+Index: src/config.h.in
+--- src/config.h.in.orig
++++ src/config.h.in
+@@ -11,6 +11,6 @@
  
  #cmakedefine USE_SHAREDMEMORY_API
  

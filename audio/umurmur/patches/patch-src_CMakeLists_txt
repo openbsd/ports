@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2019/07/24 12:47:13 feinerer Exp $
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -50,4 +50,4 @@ target_link_libraries(${PROJECT_NAME}
+                       ${LIBRT}
+                       ${CRYPTO_LIBRARIES})
+ 
+-install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION "bin")
++install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION "sbin")
