@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/03/08 21:05:33 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/07/24 19:20:56 rsadowski Exp $
 @bin bin/kdev_dbus_socket_transformer
 @bin bin/kdev_format_source
 @bin bin/kdev_includepathsconverter
@@ -1975,8 +1975,10 @@ share/locale/kk/LC_MESSAGES/kdevvcsprojectintegration.mo
 share/locale/kk/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
 share/locale/kk/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
 share/locale/km/LC_MESSAGES/kdevelop.mo
+share/locale/ko/LC_MESSAGES/kdevandroid.mo
 share/locale/ko/LC_MESSAGES/kdevappwizard.mo
 share/locale/ko/LC_MESSAGES/kdevastyle.mo
+share/locale/ko/LC_MESSAGES/kdevbazaar.mo
 share/locale/ko/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/ko/LC_MESSAGES/kdevcmakebuilder.mo
 share/locale/ko/LC_MESSAGES/kdevcodeutils.mo
@@ -1985,37 +1987,49 @@ share/locale/ko/LC_MESSAGES/kdevcustombuildsystem.mo
 share/locale/ko/LC_MESSAGES/kdevcustommake.mo
 share/locale/ko/LC_MESSAGES/kdevcustomscript.mo
 share/locale/ko/LC_MESSAGES/kdevdebuggercommon.mo
+share/locale/ko/LC_MESSAGES/kdevdocker.mo
 share/locale/ko/LC_MESSAGES/kdevdocumentswitcher.mo
 share/locale/ko/LC_MESSAGES/kdevdocumentview.mo
 share/locale/ko/LC_MESSAGES/kdevelop.mo
 share/locale/ko/LC_MESSAGES/kdevexecute.mo
+share/locale/ko/LC_MESSAGES/kdevexecuteplasmoid.mo
 share/locale/ko/LC_MESSAGES/kdevexecutescript.mo
 share/locale/ko/LC_MESSAGES/kdevexternalscript.mo
 share/locale/ko/LC_MESSAGES/kdevfilemanager.mo
 share/locale/ko/LC_MESSAGES/kdevfiletemplates.mo
+share/locale/ko/LC_MESSAGES/kdevflatpak.mo
 share/locale/ko/LC_MESSAGES/kdevgdb.mo
 share/locale/ko/LC_MESSAGES/kdevghprovider.mo
+share/locale/ko/LC_MESSAGES/kdevgit.mo
 share/locale/ko/LC_MESSAGES/kdevgrepview.mo
+share/locale/ko/LC_MESSAGES/kdevheaptrack.mo
 share/locale/ko/LC_MESSAGES/kdevkdeprovider.mo
 share/locale/ko/LC_MESSAGES/kdevkonsole.mo
+share/locale/ko/LC_MESSAGES/kdevlldb.mo
 share/locale/ko/LC_MESSAGES/kdevmakebuilder.mo
 share/locale/ko/LC_MESSAGES/kdevmanpage.mo
 share/locale/ko/LC_MESSAGES/kdevninja.mo
 share/locale/ko/LC_MESSAGES/kdevokteta.mo
 share/locale/ko/LC_MESSAGES/kdevopenwith.mo
+share/locale/ko/LC_MESSAGES/kdevoutlineview.mo
 share/locale/ko/LC_MESSAGES/kdevpatchreview.mo
 share/locale/ko/LC_MESSAGES/kdevperforce.mo
 share/locale/ko/LC_MESSAGES/kdevplatform.mo
 share/locale/ko/LC_MESSAGES/kdevproblemreporter.mo
 share/locale/ko/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/ko/LC_MESSAGES/kdevprojectmanagerview.mo
+share/locale/ko/LC_MESSAGES/kdevqmakebuilder.mo
+share/locale/ko/LC_MESSAGES/kdevqmakemanager.mo
+share/locale/ko/LC_MESSAGES/kdevqmljs.mo
 share/locale/ko/LC_MESSAGES/kdevqthelp.mo
 share/locale/ko/LC_MESSAGES/kdevquickopen.mo
+share/locale/ko/LC_MESSAGES/kdevsourceformatter.mo
 share/locale/ko/LC_MESSAGES/kdevstandardoutputview.mo
 share/locale/ko/LC_MESSAGES/kdevsubversion.mo
 share/locale/ko/LC_MESSAGES/kdevswitchtobuddy.mo
 share/locale/ko/LC_MESSAGES/kdevtestview.mo
 share/locale/ko/LC_MESSAGES/kdevvcsprojectintegration.mo
+share/locale/ko/LC_MESSAGES/kdevwelcomepage.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
 share/locale/ku/LC_MESSAGES/kdevelop.mo
