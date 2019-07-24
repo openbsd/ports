@@ -1,8 +1,8 @@
-$OpenBSD: patch-Qt4Qt5_qscintilla_pro,v 1.4 2017/10/30 13:49:31 landry Exp $
+$OpenBSD: patch-Qt4Qt5_qscintilla_pro,v 1.5 2019/07/24 08:49:43 landry Exp $
 Index: Qt4Qt5/qscintilla.pro
 --- Qt4Qt5/qscintilla.pro.orig
 +++ Qt4Qt5/qscintilla.pro
-@@ -66,7 +66,7 @@ unix:!macx {
+@@ -68,7 +68,7 @@ unix:!macx {
  # Scintilla namespace rather than pollute the global namespace.
  #DEFINES += SCI_NAMESPACE
  

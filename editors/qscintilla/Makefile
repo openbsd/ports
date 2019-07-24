@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:46:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/07/24 08:49:43 landry Exp $
 
 COMMENT =	Qt port of the Scintilla source code editor
 
 # XXX update py-qscintilla alongside this port (same distfile).
-VERSION =	2.10.1
+VERSION =	2.11.2
 DISTNAME =	QScintilla_gpl-${VERSION}
 PKGNAME =	qscintilla-${VERSION}
-REVISION =	0
 CATEGORIES =	editors x11
 
 
@@ -15,7 +14,7 @@ HOMEPAGE =	http://www.riverbankcomputing.com/software/qscintilla/
 # GPLv2/GPLv3
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =  ${MASTER_SITE_SOURCEFORGE:=pyqt/}
+MASTER_SITES =  https://www.riverbankcomputing.com/static/Downloads/QScintilla/${VERSION}/
 
 WANTLIB =	${COMPILER_LIBCXX} m
 MODULES =	devel/qmake
@@ -30,13 +29,13 @@ CXXFLAGS +=	-std=c++11
 FULLPKGNAME =	qscintilla-qt5-${VERSION}
 QTVER =	qt5
 MODULES +=	x11/qt5
-SHARED_LIBS =	qscintilla2_qt5 0.0 #13.0
+SHARED_LIBS =	qscintilla2_qt5 1.0 # 15.0
 
 WANTLIB += GL Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets
 .else
 QTVER =	qt4
 MODULES +=	x11/qt4
-SHARED_LIBS =	qscintilla2_qt4 0.0 #13.0
+SHARED_LIBS =	qscintilla2_qt4 1.0 # 15.0
 
 WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender fontconfig
 WANTLIB += freetype pthread

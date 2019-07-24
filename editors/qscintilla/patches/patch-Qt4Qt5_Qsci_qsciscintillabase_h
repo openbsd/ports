@@ -1,0 +1,21 @@
+$OpenBSD: patch-Qt4Qt5_Qsci_qsciscintillabase_h,v 1.1 2019/07/24 08:49:43 landry Exp $
+
+Index: Qt4Qt5/Qsci/qsciscintillabase.h
+--- Qt4Qt5/Qsci/qsciscintillabase.h.orig
++++ Qt4Qt5/Qsci/qsciscintillabase.h
+@@ -26,6 +26,7 @@
+ #include <QAbstractScrollArea>
+ #include <QByteArray>
+ #include <QPoint>
++#include <QUrl>
+ #include <QTimer>
+ 
+ #include <Qsci/qsciglobal.h>
+@@ -37,7 +38,6 @@ class QImage;
+ class QMimeData;
+ class QPainter;
+ class QPixmap;
+-class QUrl;
+ QT_END_NAMESPACE
+ 
+ class QsciScintillaQt;

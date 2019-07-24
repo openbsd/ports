@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/10/30 13:49:31 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/07/24 08:49:43 landry Exp $
 include/X11/${QTVER}/Qsci/
 include/X11/${QTVER}/Qsci/qsciabstractapis.h
 include/X11/${QTVER}/Qsci/qsciapis.h
@@ -18,6 +18,7 @@ include/X11/${QTVER}/Qsci/qscilexercss.h
 include/X11/${QTVER}/Qsci/qscilexercustom.h
 include/X11/${QTVER}/Qsci/qscilexerd.h
 include/X11/${QTVER}/Qsci/qscilexerdiff.h
+include/X11/${QTVER}/Qsci/qscilexeredifact.h
 include/X11/${QTVER}/Qsci/qscilexerfortran.h
 include/X11/${QTVER}/Qsci/qscilexerfortran77.h
 include/X11/${QTVER}/Qsci/qscilexerhtml.h
@@ -67,6 +68,8 @@ lib/${QTVER}/qsci/api/python/Python-3.3.api
 lib/${QTVER}/qsci/api/python/Python-3.4.api
 lib/${QTVER}/qsci/api/python/Python-3.5.api
 lib/${QTVER}/qsci/api/python/Python-3.6.api
+lib/${QTVER}/qsci/api/python/Python-3.7.api
+lib/${QTVER}/qsci/api/python/Python-3.8.api
 lib/${QTVER}/translations/qscintilla_cs.qm
 lib/${QTVER}/translations/qscintilla_de.qm
 lib/${QTVER}/translations/qscintilla_es.qm
