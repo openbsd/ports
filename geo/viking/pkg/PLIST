@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/06/29 22:16:15 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/07/24 06:51:40 kirby Exp $
 @bin bin/viking
 share/applications/viking.desktop
 share/icons/hicolor/48x48/apps/viking.png
@@ -22,6 +22,7 @@ share/locale/jv/
 share/locale/jv/LC_MESSAGES/
 share/locale/jv/LC_MESSAGES/viking.mo
 share/locale/ko/LC_MESSAGES/viking.mo
+share/locale/ku/LC_MESSAGES/viking.mo
 share/locale/lt/LC_MESSAGES/viking.mo
 share/locale/lv/LC_MESSAGES/viking.mo
 share/locale/nb/LC_MESSAGES/viking.mo
@@ -42,5 +43,6 @@ share/viking/external_tools.xml
 share/viking/goto_tools.xml
 share/viking/latlontz.txt
 share/viking/maps.xml
+share/viking/routing.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
