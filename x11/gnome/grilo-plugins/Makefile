@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.77 2019/07/07 11:20:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2019/07/24 19:53:34 ajacoutot Exp $
 
 # XXX: PORTROACH overriden at end of this file.
 
 COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
-GNOME_VERSION=	0.3.8
-REVISION=	1
+GNOME_VERSION=	0.3.9
 
 API=		0.3
 SUBST_VARS=	API
@@ -16,13 +15,15 @@ CATEGORIES+=	multimedia
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += avahi-client avahi-common avahi-glib gdata gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 goa-1.0 gobject-2.0 grilo-0.3
-WANTLIB += grlnet-0.3 grlpls-0.3 gstreamer-1.0 intl json-glib-1.0
-WANTLIB += mediaart-2.0 oauth pthread soup-2.4 sqlite3 totem-plparser
+WANTLIB += ${MODLUA_WANTLIB}
+WANTLIB += archive avahi-client avahi-glib gdata gio-2.0 glib-2.0
+WANTLIB += goa-1.0 gobject-2.0 grilo-0.3 grlnet-0.3 grlpls-0.3
+WANTLIB += gstreamer-1.0 intl json-glib-1.0 mediaart-2.0 oauth
+WANTLIB += soup-2.4 sqlite3 totem-plparser totem-plparser-mini
 WANTLIB += tracker-sparql-2.0 xml2
 
 MODULES=	devel/meson \
+		lang/lua \
 		x11/gnome
 
 LIB_DEPENDS=	devel/libgdata \
@@ -34,6 +35,13 @@ LIB_DEPENDS=	devel/libgdata \
 RUN_DEPENDS +=	net/dleyna/server
 
 MODGNOME_TOOLS=	yelp
+MODLUA_VERSION=	5.3
+
+LUA_V=		${MODLUA_VERSION:S/.//}
+SUBST_VARS +=	LUA_V
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2018/09/27 16:57:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.29 2019/07/24 19:53:34 ajacoutot Exp $
 lib/grilo-${API}/libgrlchromaprint.so
 lib/grilo-${API}/libgrldleyna.so
 lib/grilo-${API}/libgrlfilesystem.so
@@ -7,6 +7,7 @@ lib/grilo-${API}/libgrlfreebox.so
 lib/grilo-${API}/libgrlgravatar.so
 lib/grilo-${API}/libgrljamendo.so
 lib/grilo-${API}/libgrllocalmetadata.so
+lib/grilo-${API}/libgrlluafactory.so
 lib/grilo-${API}/libgrlmagnatune.so
 lib/grilo-${API}/libgrlmetadatastore.so
 lib/grilo-${API}/libgrlopensubtitles.so
@@ -19,6 +20,26 @@ lib/grilo-${API}/libgrltracker.so
 lib/grilo-${API}/libgrlvimeo.so
 lib/grilo-${API}/libgrlyoutube.so
 lib/pkgconfig/grilo-plugins-${API}.pc
+share/grilo-plugins/
+share/grilo-plugins/grl-lua-factory/
+share/grilo-plugins/grl-lua-factory/grl-acoustid.lua
+share/grilo-plugins/grl-lua-factory/grl-appletrailers.gresource
+share/grilo-plugins/grl-lua-factory/grl-appletrailers.lua
+share/grilo-plugins/grl-lua-factory/grl-euronews.gresource
+share/grilo-plugins/grl-lua-factory/grl-euronews.lua
+share/grilo-plugins/grl-lua-factory/grl-guardianvideos.gresource
+share/grilo-plugins/grl-lua-factory/grl-guardianvideos.lua
+share/grilo-plugins/grl-lua-factory/grl-itunes-podcast.gresource
+share/grilo-plugins/grl-lua-factory/grl-itunes-podcast.lua
+share/grilo-plugins/grl-lua-factory/grl-lastfm-cover.lua
+share/grilo-plugins/grl-lua-factory/grl-musicbrainz-coverart.lua
+share/grilo-plugins/grl-lua-factory/grl-radiofrance.gresource
+share/grilo-plugins/grl-lua-factory/grl-radiofrance.lua
+share/grilo-plugins/grl-lua-factory/grl-spotify-cover.lua
+share/grilo-plugins/grl-lua-factory/grl-steam-store.lua
+share/grilo-plugins/grl-lua-factory/grl-theaudiodb-cover.lua
+share/grilo-plugins/grl-lua-factory/grl-thegamesdb.lua
+share/grilo-plugins/grl-lua-factory/grl-video-title-parsing.lua
 share/help/
 share/help/C/
 share/help/C/examples/
