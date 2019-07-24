@@ -1,14 +1,19 @@
-$OpenBSD: patch-src_dynamic-preprocessors_appid_Makefile_in,v 1.2 2019/06/02 02:07:44 lteo Exp $
+$OpenBSD: patch-src_dynamic-preprocessors_appid_Makefile_in,v 1.3 2019/07/24 02:15:57 lteo Exp $
+ 
+libsf_appid_preproc.so needs to link against libc++abi so that luajit can access
+libunwind symbols.
 
 Index: src/dynamic-preprocessors/appid/Makefile.in
 --- src/dynamic-preprocessors/appid/Makefile.in.orig
 +++ src/dynamic-preprocessors/appid/Makefile.in
-@@ -586,7 +586,7 @@ APPID_SOURCES = $(APPID_SRC_DIR)/commonAppMatcher.c \
+@@ -586,8 +586,8 @@ APPID_SOURCES = $(APPID_SRC_DIR)/commonAppMatcher.c \
  	$(APPID_SRC_DIR)/util/sfutil.c $(APPID_SRC_DIR)/util/sfutil.h
  dynamicpreprocessordir = ${libdir}/snort_dynamicpreprocessor
  dynamicpreprocessor_LTLIBRARIES = libsf_appid_preproc.la
 -libsf_appid_preproc_la_LDFLAGS = -export-dynamic -module @XCCFLAGS@
+-@SO_WITH_STATIC_LIB_FALSE@libsf_appid_preproc_la_LIBADD = $(LUA_LIBS)
 +libsf_appid_preproc_la_LDFLAGS = -export-dynamic -module -avoid-version @XCCFLAGS@
- @SO_WITH_STATIC_LIB_FALSE@libsf_appid_preproc_la_LIBADD = $(LUA_LIBS)
++@SO_WITH_STATIC_LIB_FALSE@libsf_appid_preproc_la_LIBADD = $(LUA_LIBS) -lc++abi
  @SO_WITH_STATIC_LIB_TRUE@libsf_appid_preproc_la_LIBADD = ../libsf_dynamic_preproc.la ../libsf_dynamic_utils.la $(LUA_LIBS)
  @SO_WITH_STATIC_LIB_FALSE@nodist_libsf_appid_preproc_la_SOURCES = \
+ @SO_WITH_STATIC_LIB_FALSE@../include/sf_dynamic_preproc_lib.c \

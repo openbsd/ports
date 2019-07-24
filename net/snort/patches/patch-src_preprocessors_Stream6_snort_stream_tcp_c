@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_preprocessors_Stream6_snort_stream_tcp_c,v 1.7 2019/06/02 02:07:44 lteo Exp $
+$OpenBSD: patch-src_preprocessors_Stream6_snort_stream_tcp_c,v 1.8 2019/07/24 02:15:57 lteo Exp $
 Index: src/preprocessors/Stream6/snort_stream_tcp.c
 --- src/preprocessors/Stream6/snort_stream_tcp.c.orig
 +++ src/preprocessors/Stream6/snort_stream_tcp.c
-@@ -8562,7 +8562,7 @@ static int ProcessTcp(SessionControlBlock *scb, Packet
+@@ -8575,7 +8575,7 @@ static int ProcessTcp(SessionControlBlock *scb, Packet
                          char src_addr[17];
                          char dst_addr[17];
                          memset((char *)timestamp, 0, TIMEBUF_SIZE);
