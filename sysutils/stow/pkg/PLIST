@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/05/07 11:27:59 jca Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/07/24 10:30:33 sthen Exp $
 bin/chkstow
 bin/stow
 @info info/stow.info
@@ -9,7 +9,8 @@ libdata/perl5/site_perl/Stow/Util.pm
 share/doc/stow/
 share/doc/stow/ChangeLog
 share/doc/stow/ChangeLog.OLD
-share/doc/stow/README
+share/doc/stow/INSTALL.md
+share/doc/stow/README.md
 share/doc/stow/manual-single.html
 share/doc/stow/manual-split/
 share/doc/stow/manual-split/Bootstrapping.html
