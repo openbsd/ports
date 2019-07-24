@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.59 2019/07/07 11:20:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2019/07/24 19:53:12 ajacoutot Exp $
 
 # XXX PORTROACH overriden at end of this file.
 
 COMMENT=	framework for making media discovery and browsing easy
 
 GNOME_PROJECT=	grilo
-GNOME_VERSION=	0.3.7
+GNOME_VERSION=	0.3.9
 API=		0.3
 
 SUBST_VARS=	API
 
-SHARED_LIBS +=  grilo-0.3            0.2      # 0.307.1
-SHARED_LIBS +=  grlnet-0.3           0.0      # 0.307.0
-SHARED_LIBS +=	grlpls-0.3           0.0      # 0.307.0
+SHARED_LIBS +=  grilo-0.3            0.2      # 0.309.1
+SHARED_LIBS +=  grlnet-0.3           0.0      # 0.309.0
+SHARED_LIBS +=	grlpls-0.3           0.0      # 0.309.0
 
 CATEGORIES+=	multimedia
 
@@ -31,6 +31,8 @@ LIB_DEPENDS=	devel/libsoup \
 		x11/gtk+3
 
 MODGNOME_TOOLS=	gobject-introspection vala
+
+CONFIGURE_ARGS=	-Denable-gtk-doc=false
 
 # Own the grilo plugins directory to prevent warnings that this
 # directory does not exist when no plugin is installed.
