@@ -1,6 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/05/20 08:30:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/07/24 08:50:19 landry Exp $
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/Qsci.pyi
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/Qsci.so
+lib/python${MODPY_VERSION}/site-packages/QScintilla-2.11.2.dist-info/
+lib/python${MODPY_VERSION}/site-packages/QScintilla-2.11.2.dist-info/INSTALLER
+lib/python${MODPY_VERSION}/site-packages/QScintilla-2.11.2.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/QScintilla-2.11.2.dist-info/RECORD
 lib/${QTVER}/qsci/api/python/QScintilla2.api
 ${SIPDIR}/Qsci/
 ${SIPDIR}/Qsci/qsciabstractapis.sip
@@ -20,6 +24,7 @@ ${SIPDIR}/Qsci/qscilexercss.sip
 ${SIPDIR}/Qsci/qscilexercustom.sip
 ${SIPDIR}/Qsci/qscilexerd.sip
 ${SIPDIR}/Qsci/qscilexerdiff.sip
+${SIPDIR}/Qsci/qscilexeredifact.sip
 ${SIPDIR}/Qsci/qscilexerfortran.sip
 ${SIPDIR}/Qsci/qscilexerfortran77.sip
 ${SIPDIR}/Qsci/qscilexerhtml.sip
