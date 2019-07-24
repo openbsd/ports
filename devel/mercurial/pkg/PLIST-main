@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2019/02/24 18:06:42 juanfra Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2019/07/24 17:29:23 juanfra Exp $
 @pkgpath devel/mercurial
 @bin bin/chg
 bin/hg
@@ -961,12 +961,16 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/utils/__init__.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/cborutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/cborutil.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/utils/compression.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/utils/compression.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/dateutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/dateutil.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/interfaceutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/interfaceutil.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/procutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/procutil.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/utils/repoviewutil.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/utils/repoviewutil.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/storageutil.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/storageutil.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/utils/stringutil.py

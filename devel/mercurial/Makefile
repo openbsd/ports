@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.99 2019/07/12 20:44:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.100 2019/07/24 17:29:22 juanfra Exp $
 
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
 
 # Keep in sync with:
 #   devel/tortoisehg
-MODPY_EGG_VERSION =	4.9.1
+MODPY_EGG_VERSION =	5.0.2
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 
@@ -28,11 +28,13 @@ USE_GMAKE =		Yes
 
 MULTI_PACKAGES =	-main -x11
 
-BUILD_DEPENDS =		devel/gettext,-tools
+BUILD_DEPENDS =		devel/gettext,-tools \
+			textproc/py-docutils${MODPY_FLAVOR}
 TEST_DEPENDS =		archivers/unzip \
 			devel/git \
 			devel/mercurial,-main \
 			devel/mercurial,-x11 \
+			misc/findutils \
 			sysutils/coreutils
 RUN_DEPENDS-x11 +=	${BASE_PKGPATH},-main \
 			${MODTK_RUN_DEPENDS}
@@ -67,6 +69,8 @@ pre-configure:
 
 post-build:
 	cd ${WRKSRC}/contrib/chg && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
+	cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		PYTHON=${MODPY_BIN} man
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/contrib/chg/chg.1 ${PREFIX}/man/man1
@@ -103,15 +107,24 @@ post-install:
 do-test:
 	@echo "Running the tests with ${MAKE_JOBS} jobs."
 	@rm -rf ${WRKSRC}/tmp-tests
-	@echo '#!/bin/sh\nexec gls ' "\"\$$@\"" > ${WRKDIR}/bin/ls
-	@echo '#!/bin/sh\nexec gcp ' "\"\$$@\"" > ${WRKDIR}/bin/cp
-	@chmod +x ${WRKDIR}/bin/ls ${WRKDIR}/bin/cp
+	@echo '#!/bin/sh\nexec gls   ' "\"\$$@\"" > ${WRKDIR}/bin/ls
+	@echo '#!/bin/sh\nexec gcp   ' "\"\$$@\"" > ${WRKDIR}/bin/cp
+	@echo '#!/bin/sh\nexec gfind ' "\"\$$@\"" > ${WRKDIR}/bin/find
+	@echo '#!/bin/sh\nexec gsort ' "\"\$$@\"" > ${WRKDIR}/bin/sort
+	@chmod +x ${WRKDIR}/bin/ls ${WRKDIR}/bin/cp ${WRKDIR}/bin/find \
+		${WRKDIR}/bin/sort
 	@mkdir ${WRKSRC}/tests-openbsd-home
 	@echo '[ui]\nusername = OpenBSD Tests <openbsd@localhost>' \
 		> ${WRKSRC}/tests-openbsd-home/.hgrc
+	@echo 'test-contrib-testparseutil.t' >> ${WRKSRC}/tests-openbsd-home/blacklist
+	@echo 'test-convert-cvs-branch.t' >> ${WRKSRC}/tests-openbsd-home/blacklist
+	@echo 'test-convert-cvs-detectmerge.t' >> ${WRKSRC}/tests-openbsd-home/blacklist
+	@echo 'test-convert-cvs.t' >> ${WRKSRC}/tests-openbsd-home/blacklist
+	@echo 'test-convert-cvsnt-mergepoints.t' >> ${WRKSRC}/tests-openbsd-home/blacklist
 	@cd ${WRKSRC}/tests && ${SETENV} ${ALL_TEST_ENV} \
 		HOME=${WRKSRC}/tests-openbsd-home \
 		${MODPY_BIN} run-tests.py -j${MAKE_JOBS} \
+		--blacklist ${WRKSRC}/tests-openbsd-home/blacklist \
 		--shell=/bin/ksh --with-hg=${LOCALBASE}/bin/hg 1>&2
 
 .include <bsd.port.mk>
