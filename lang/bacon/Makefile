@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/07/24 18:26:26 juanfra Exp $
 
 COMMENT =		BASIC converter to C translator for Unix system
 
-DISTNAME =		bacon-3.9
+DISTNAME =		bacon-3.9.1
 
 CATEGORIES =		lang
 
