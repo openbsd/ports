@@ -1,4 +1,7 @@
-$OpenBSD: patch-net_base_network_change_notifier_cc,v 1.30 2019/05/11 20:37:14 robert Exp $
+$OpenBSD: patch-net_base_network_change_notifier_cc,v 1.31 2019/07/25 12:07:26 robert Exp $
+
+XXX disable network change notifier and always report ONLINE
+
 Index: net/base/network_change_notifier.cc
 --- net/base/network_change_notifier.cc.orig
 +++ net/base/network_change_notifier.cc
@@ -11,16 +14,19 @@ Index: net/base/network_change_notifier.cc
  #include "net/base/network_change_notifier_posix.h"
  #elif defined(OS_FUCHSIA)
  #include "net/base/network_change_notifier_fuchsia.h"
-@@ -206,7 +206,7 @@ NetworkChangeNotifier* NetworkChangeNotifier::Create()
+@@ -206,8 +206,9 @@ NetworkChangeNotifier* NetworkChangeNotifier::Create()
    // Android builds MUST use their own class factory.
    CHECK(false);
    return NULL;
 -#elif defined(OS_CHROMEOS)
+-  return new NetworkChangeNotifierPosix(CONNECTION_NONE, SUBTYPE_NONE);
 +#elif defined(OS_CHROMEOS) || defined(OS_BSD)
-   return new NetworkChangeNotifierPosix(CONNECTION_NONE, SUBTYPE_NONE);
++  return NULL;
++//  return new NetworkChangeNotifierPosix(CONNECTION_NONE, SUBTYPE_NONE);
  #elif defined(OS_LINUX)
    return new NetworkChangeNotifierLinux(std::unordered_set<std::string>());
-@@ -215,7 +215,6 @@ NetworkChangeNotifier* NetworkChangeNotifier::Create()
+ #elif defined(OS_MACOSX)
+@@ -215,7 +216,6 @@ NetworkChangeNotifier* NetworkChangeNotifier::Create()
  #elif defined(OS_FUCHSIA)
    return new NetworkChangeNotifierFuchsia(0 /* required_features */);
  #else
