@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2017/06/19 09:12:04 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2019/07/25 22:07:47 sthen Exp $
 bin/ldapadd
 @bin bin/ldapcompare
 @bin bin/ldapdelete
@@ -17,6 +17,7 @@ include/ldap_features.h
 include/ldap_schema.h
 include/ldap_utf8.h
 include/ldif.h
+include/openldap.h
 include/slapi-plugin.h
 @lib lib/liblber-2.4.so.${LIBlber-2.4_VERSION}
 lib/liblber.a

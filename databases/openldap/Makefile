@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.169 2019/06/03 16:06:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.170 2019/07/25 22:07:47 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
 COMMENT-main =		open-source LDAP software (client)
 COMMENT-server =	open-source LDAP software (server)
 
-DISTNAME =		openldap-2.4.47
-REVISION =		0
+DISTNAME =		openldap-2.4.48
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
 
@@ -126,6 +125,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/servers/slapd/DB_CONFIG \
 		${PREFIX}/share/examples/openldap
 	@rm -rf ${DESTDIR}${SYSCONFDIR}/openldap
+.for i in lber ldap ldap_r
+	ln -s lib$i.so.${LIB$i_VERSION} ${PREFIX}/lib/lib$i-2.4.so.${LIB$i_VERSION}
+.endfor
 
 pre-test:
 	sed -i 's,^#!/bin/bash,#!${LOCALBASE}/bin/bash,' ${WRKSRC}/tests/scripts/test064-constraint

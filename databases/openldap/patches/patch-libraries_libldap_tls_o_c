@@ -1,4 +1,7 @@
-$OpenBSD: patch-libraries_libldap_tls_o_c,v 1.3 2019/01/07 23:10:13 sthen Exp $
+$OpenBSD: patch-libraries_libldap_tls_o_c,v 1.4 2019/07/25 22:07:47 sthen Exp $
+
+Unknown if these are still needed, the current state of locking code
+in libressl is unclear.
 
 Index: libraries/libldap/tls_o.c
 --- libraries/libldap/tls_o.c.orig
@@ -12,16 +15,7 @@ Index: libraries/libldap/tls_o.c
  /*
   * OpenSSL 1.1 API and later has new locking code
  */
-@@ -200,7 +200,7 @@ tlso_init( void )
- 	(void) tlso_seed_PRNG( lo->ldo_tls_randfile );
- #endif
- 
--#if OPENSSL_VERSION_NUMBER < 0x10100000
-+#if defined(LIBRESSL_VERSION_NUMBER) || OPENSSL_VERSION_NUMBER < 0x10100000
- 	SSL_load_error_strings();
- 	SSL_library_init();
- 	OpenSSL_add_all_digests();
-@@ -226,7 +226,7 @@ tlso_destroy( void )
+@@ -234,7 +234,7 @@ tlso_destroy( void )
  
  	BIO_meth_free( tlso_bio_method );
  
@@ -30,7 +24,7 @@ Index: libraries/libldap/tls_o.c
  	EVP_cleanup();
  #if OPENSSL_VERSION_NUMBER < 0x10000000
  	ERR_remove_state(0);
-@@ -414,7 +414,7 @@ tlso_ctx_init( struct ldapoptions *lo, struct ldaptls 
+@@ -453,7 +453,7 @@ tlso_ctx_init( struct ldapoptions *lo, struct ldaptls 
  	SSL_CTX_set_verify( ctx, i,
  		lo->ldo_tls_require_cert == LDAP_OPT_X_TLS_ALLOW ?
  		tlso_verify_ok : tlso_verify_cb );
@@ -39,7 +33,7 @@ Index: libraries/libldap/tls_o.c
  	SSL_CTX_set_tmp_rsa_callback( ctx, tlso_tmp_rsa_cb );
  #endif
  #ifdef HAVE_OPENSSL_CRL
-@@ -1173,7 +1173,7 @@ tlso_report_error( void )
+@@ -1225,7 +1225,7 @@ tlso_report_error( void )
  	}
  }
  

@@ -1,6 +1,8 @@
-$OpenBSD: patch-build_openldap_m4,v 1.1 2011/01/07 10:24:30 pea Exp $
---- build/openldap.m4.orig	Mon Dec  7 14:39:00 2009
-+++ build/openldap.m4	Mon Dec  7 14:39:15 2009
+$OpenBSD: patch-build_openldap_m4,v 1.2 2019/07/25 22:07:47 sthen Exp $
+
+Index: build/openldap.m4
+--- build/openldap.m4.orig
++++ build/openldap.m4
 @@ -251,7 +251,7 @@ AC_DEFUN([OL_ICU],
  AC_CHECK_HEADERS( unicode/utypes.h )
  if test $ac_cv_header_unicode_utypes_h = yes ; then

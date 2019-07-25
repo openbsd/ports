@@ -1,6 +1,10 @@
-$OpenBSD: patch-aclocal_m4,v 1.1 2011/01/07 10:24:30 pea Exp $
---- aclocal.m4.orig	Mon Dec  7 14:37:50 2009
-+++ aclocal.m4	Mon Dec  7 14:38:06 2009
+$OpenBSD: patch-aclocal_m4,v 1.2 2019/07/25 22:07:47 sthen Exp $
+
+Don't automatically run ldconfig -m.
+
+Index: aclocal.m4
+--- aclocal.m4.orig
++++ aclocal.m4
 @@ -2071,7 +2071,6 @@ openbsd*)
      *)                         need_version=no  ;;
    esac

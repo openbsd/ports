@@ -1,6 +1,8 @@
-$OpenBSD: patch-servers_slapd_slapd_conf,v 1.3 2019/01/07 23:10:13 sthen Exp $
---- servers/slapd/slapd.conf.orig	Sat Feb  6 00:57:45 2016
-+++ servers/slapd/slapd.conf	Thu Sep  1 18:40:16 2016
+$OpenBSD: patch-servers_slapd_slapd_conf,v 1.4 2019/07/25 22:07:47 sthen Exp $
+
+Index: servers/slapd/slapd.conf
+--- servers/slapd/slapd.conf.orig
++++ servers/slapd/slapd.conf
 @@ -10,8 +10,8 @@ include		%SYSCONFDIR%/schema/core.schema
  # service AND an understanding of referrals.
  #referral	ldap://root.openldap.org
