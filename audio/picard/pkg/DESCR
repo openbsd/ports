@@ -1,3 +1,8 @@
-Picard is the next generation MusicBrainz tagging application. This
-new tagging concept is album oriented, as opposed to track/file
-oriented like the ClassicTagger was.
+Picard is the official MusicBrainz tagger. It support the majority
+of audio file formats, is capable of using audio fingerprints
+(AcoustIDs), performing CD lookups and disc ID submissions, and has
+excellent Unicode support.
+
+When tagging files, Picard uses an album-oriented approach. This
+allows it to utilize the MusicBrainz data as effectively as possible
+and correctly tag your music.

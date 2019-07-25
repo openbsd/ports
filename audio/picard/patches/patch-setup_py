@@ -1,59 +1,21 @@
-$OpenBSD: patch-setup_py,v 1.3 2012/05/04 06:24:04 ajacoutot Exp $
---- setup.py.orig	Sun Oct 23 13:15:29 2011
-+++ setup.py	Sat Apr 28 18:29:55 2012
-@@ -62,12 +62,12 @@ from distutils.dist import Distribution
- defaults = {
-     'build': {
-         'with-directshow': 'False',
--        'with-avcodec': 'False',
--        'with-libofa': 'False',
-+        'with-avcodec': 'True',
-+        'with-libofa': 'True',
-     },
--    'avcodec': {'cflags': '', 'libs': ''},
-+    'avcodec': {'cflags': '-I${LOCALBASE}/include', 'libs': '-L${LOCALBASE}/lib -lavcodec -lavformat'},
-     'directshow': {'cflags': '', 'libs': ''},
--    'libofa': {'cflags': '', 'libs': ''},
-+    'libofa': {'cflags': '-I${LOCALBASE}/include', 'libs': '-L${LOCALBASE}/lib -lofa'},
- }
- cfg = RawConfigParser()
- for section, values in defaults.items():
-@@ -78,7 +78,7 @@ cfg.read(['build.cfg'])
- 
- 
- ext_modules = [
--    Extension('picard.util.astrcmp', sources=['picard/util/astrcmp.cpp']),
-+    Extension('picard.util.astrcmp', sources=['picard/util/astrcmp.cpp'], extra_link_args=['-fPIC']),
- ]
- 
- if cfg.getboolean('build', 'with-libofa'):
-@@ -372,8 +372,8 @@ class picard_config(config):
-         if have_pkgconfig:
-             if self.pkgconfig_check_module('avcodec', 'libavcodec libavformat'):
-                 include_dirs = cflags_to_include_dirs(cfg.get('avcodec', 'cflags'))
--                if self.try_compile('#include <avcodec.h>', include_dirs=include_dirs):
--                    cfg.set('avcodec', 'cflags', cfg.get('avcodec', 'cflags') + ' -DUSE_OLD_FFMPEG_LOCATIONS')
-+                if self.try_compile('#include <libavcodec/avcodec.h>', include_dirs=include_dirs):
-+                    cfg.set('avcodec', 'cflags', cfg.get('avcodec', 'cflags'))
-         else:
-             self.check_lib('avcodec', 'av_open_input_file', ['avcodec.h', 'avformat.h'], [['avcodec', 'avformat'], ['avcodec-51', 'avformat-51']])
- 
-@@ -550,12 +550,12 @@ if do_py2app:
- 
- # FIXME: this should check for the actual command ('install' vs. 'bdist_nsis', 'py2app', ...), not installed libraries
- if py2exe is None and do_py2app is False:
--    args['data_files'].append(('share/icons/hicolor/16x16/apps', ['resources/images/16x16/picard.png']))
--    args['data_files'].append(('share/icons/hicolor/24x24/apps', ['resources/images/24x24/picard.png']))
--    args['data_files'].append(('share/icons/hicolor/32x32/apps', ['resources/images/32x32/picard.png']))
--    args['data_files'].append(('share/icons/hicolor/48x48/apps', ['resources/images/48x48/picard.png']))
--    args['data_files'].append(('share/icons/hicolor/128x128/apps', ['resources/images/128x128/picard.png']))
--    args['data_files'].append(('share/icons/hicolor/256x256/apps', ['resources/images/256x256/picard.png']))
-+    args['data_files'].append(('share/pixmaps/hicolor/16x16/apps', ['resources/images/16x16/picard.png']))
-+    args['data_files'].append(('share/pixmaps/hicolor/24x24/apps', ['resources/images/24x24/picard.png']))
-+    args['data_files'].append(('share/pixmaps/hicolor/32x32/apps', ['resources/images/32x32/picard.png']))
-+    args['data_files'].append(('share/pixmaps/hicolor/48x48/apps', ['resources/images/48x48/picard.png']))
-+    args['data_files'].append(('share/pixmaps/hicolor/128x128/apps', ['resources/images/128x128/picard.png']))
-+    args['data_files'].append(('share/pixmaps/hicolor/256x256/apps', ['resources/images/256x256/picard.png']))
-     args['data_files'].append(('share/applications', ('picard.desktop',)))
- 
- 
+$OpenBSD: patch-setup_py,v 1.4 2019/07/25 20:10:28 kmos Exp $
+
+Changing to support --single-version-externally-managed
+
+This patch has been submitted upstream and will be in the next
+version of picard.
+
+https://github.com/metabrainz/picard/pull/1210
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -4,7 +4,7 @@
+ import datetime
+ from distutils import log
+ from distutils.command.build import build
+-from distutils.command.install import install as install
++from setuptools.command.install import install as install
+ from distutils.dep_util import newer
+ from distutils.spawn import find_executable
+ import glob

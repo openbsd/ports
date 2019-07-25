@@ -1,80 +1,34 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/17 14:49:20 danj Exp $
+# $OpenBSD: Makefile,v 1.28 2019/07/25 20:10:28 kmos Exp $
 
-COMMENT =		automatic audio files tagger using the MusicBrainz database
+COMMENT =	automatic audio files tagger using the MusicBrainz database
 
-MODPY_EGG_VERSION =	0.16
+MODPY_EGG_VERSION =	2.1.3
 DISTNAME =		picard-${MODPY_EGG_VERSION}
-REVISION =		6
 
 CATEGORIES =		audio
 
-HOMEPAGE =		http://musicbrainz.org/doc/Picard_Tagger
+HOMEPAGE =		https://picard.musicbrainz.org/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += avcodec avformat m ofa pthread ${COMPILER_LIBCXX}
-
-MASTER_SITES =		http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
-			ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/
-
-COMPILER =		base-clang ports-gcc base-gcc
+WANTLIB =		${MODPY_WANTLIB} pthread
 
 MODULES =		lang/python
 
+MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-# --single-version-externally-managed option used by MODPY doesn't exist
-MODPY_DISTUTILS_INSTALL=install --prefix=${LOCALBASE} --root=${DESTDIR}
+
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 # msgfmt
 BUILD_DEPENDS =		devel/gettext,-tools
 
-LIB_DEPENDS =		audio/libofa \
-			graphics/ffmpeg
-
-RUN_DEPENDS =		x11/py-qt4>=4.1 \
-			audio/py-mutagen>=1.9 \
-			devel/desktop-file-utils
-
-TEST_DEPENDS =		${BASE_PKGPATH}
-
-PLUGINS_DIRS =		lastfm \
-			lastfmplus \
-			replaygain
-PLUGINS =		classicdiscnumber.py \
-			coverart.py \
-			cuesheet.py \
-			discnumber.py \
-			featartist.py \
-			featartistsintitles.py \
-			lastfm/__init__.py \
-			lastfm/options_lastfm.ui \
-			lastfm/ui_options_lastfm.py \
-			lastfmplus/__init__.py \
-			lastfmplus/ui_options_lastfm.py \
-			no_release.py \
-			open_in_gui.py \
-			release_type.py \
-			replaygain/__init__.py \
-			replaygain/options_replaygain.ui \
-			replaygain/ui_options_replaygain.py \
-			swapprefix.py \
-			titlecase.py \
-			tracks2clipboard.py
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/setup.py
-
-post-install:
-.for dir in ${PLUGINS_DIRS}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/picard/${dir}
-.endfor
-.for file in ${PLUGINS}
-	${INSTALL_DATA} ${WRKSRC}/contrib/plugins/${file} ${PREFIX}/share/picard/${file}
-.endfor
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} ./setup.py build_ext -i test
+RUN_DEPENDS =		audio/chromaprint \
+			audio/py-discid${MODPY_FLAVOR} \
+			audio/py-mutagen${MODPY_FLAVOR} \
+			devel/desktop-file-utils \
+			x11/gtk+3,-guic \
+			x11/py-qt5${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
