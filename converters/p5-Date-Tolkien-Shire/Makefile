@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:43:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/25 16:03:53 bcallah Exp $
 
 COMMENT =	convert dates into the Shire Calendar
 
-DISTNAME =	Date-Tolkien-Shire-1.901
-REVISION =	1
+DISTNAME =	Date-Tolkien-Shire-1.902
 
 CATEGORIES =	converters
 
