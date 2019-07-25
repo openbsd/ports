@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/25 05:12:48 pvk Exp $
+lib/python${MODPY_VERSION}/site-packages/notfound/
+lib/python${MODPY_VERSION}/site-packages/notfound/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/notfound/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/notfound/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notfound/${MODPY_PYCACHE}extension.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notfound/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/notfound/extension.py
+lib/python${MODPY_VERSION}/site-packages/notfound/utils.py
+lib/python${MODPY_VERSION}/site-packages/sphinx_notfound_page-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/sphinx_notfound_page-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/sphinx_notfound_page-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/sphinx_notfound_page-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/sphinx_notfound_page-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/sphinx_notfound_page-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
