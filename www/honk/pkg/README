@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2019/04/30 07:58:17 bentley Exp $
+$OpenBSD: README,v 1.2 2019/07/25 02:18:25 lteo Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -15,10 +15,17 @@ acme-client(1)
 # acme-client.conf(5)
 domain honk.example.com {
   domain key "/etc/ssl/private/honk.example.com.key"
-  domain certificate "/etc/ssl/honk.example.com.crt"
   domain full chain certificate "/etc/ssl/honk.example.com.fullchain.pem"
   sign with letsencrypt
 }
+
+Icon and favicon
+----------------
+
+honk# mkdir /var/www/htdocs/honk
+honk# ftp -o /var/www/htdocs/honk/icon.png https://honk.tedunangst.com/icon.png
+honk# ftp -o /var/www/htdocs/honk/favicon.ico \
+  https://honk.tedunangst.com/favicon.ico
 
 httpd(8)
 --------
@@ -30,14 +37,17 @@ server "honk.example.com" {
     root "/acme"
     request strip 2
   }
+  location "/*icon.*" {
+    root "/htdocs/honk"
+  }
   location "*" {
-    block return 302 "https://honk.example.com$REQUEST_URI"
+    block return 302 "https://$HTTP_HOST$REQUEST_URI"
   }
 }
 
 honk# rcctl enable httpd
 honk# rcctl start httpd
-honk# acme-client -ADv honk.example.com
+honk# acme-client -v honk.example.com
 
 relayd(8)
 ---------
@@ -55,6 +65,8 @@ http protocol https {
     value "$SERVER_ADDR:$SERVER_PORT"
   match request header set "Connection" value "close"
 
+  match request path "/*icon.*" forward to <honk>
+
   tcp { sack, backlog 128 }
 }
 
@@ -63,6 +75,7 @@ relay wwwtls {
   protocol https
 
   forward to <honk> port $honk_port check tcp
+  forward to <honk> port http check http "/icon.png" code 200
 }
 
 relay wwwtls6 {
@@ -70,6 +83,7 @@ relay wwwtls6 {
   protocol https
 
   forward to <honk6> port $honk_port check tcp
+  forward to <honk> port http check http "/icon.png" code 200
 }
 
 honk# cd /etc/ssl
@@ -81,7 +95,6 @@ honk# ln -s honk.example.com.key 2001:0db8::1.key
 
 honk# rcctl enable relayd
 honk# rcctl start relayd
-
 
 pf(4)
 -----
@@ -96,11 +109,12 @@ Usage
 
 Please see /usr/local/share/doc/honk
 
-honk# cd /var/honk && honk init
+honk# doas -su _honk
+honk$ umask 077; cd /var/honk && honk init
 listenaddr: localhost:31337
 servername: honk.example.com
-honk# touch /var/honk/savedinbox.json
-honk# chmod 660 honk.db savedinbox.json
+honk$ touch /var/honk/savedinbox.json
+honk$ exit
 
 honk# rcctl enable honk
 honk# rcctl start honk

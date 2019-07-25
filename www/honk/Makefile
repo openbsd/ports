@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:50:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/07/25 02:18:25 lteo Exp $
 
 COMMENT =		federated status updater
 
-DISTNAME =		honk-0.6.0
+DISTNAME =		honk-0.7.4
 CATEGORIES =		www
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/honk
@@ -18,7 +18,7 @@ EXTRACT_SUFX =		.tgz
 MODULES =		lang/go
 LIB_DEPENDS =		databases/sqlite3
 
-NO_TEST =		yes
+NO_TEST =		Yes
 ALL_TARGET =		humungus.tedunangst.com/r/honk
 
 SUBST_VARS +=		VARBASE
