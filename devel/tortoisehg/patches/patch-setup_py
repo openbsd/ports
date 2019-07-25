@@ -1,8 +1,8 @@
-$OpenBSD: patch-setup_py,v 1.4 2018/11/17 21:33:39 juanfra Exp $
+$OpenBSD: patch-setup_py,v 1.5 2019/07/25 17:50:18 sthen Exp $
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -722,7 +722,7 @@ def setup_posix():
+@@ -712,7 +712,7 @@ def setup_posix():
                              [os.path.join(root, f) for f in files]))
      _data_files.extend((os.path.join('share', modir), [mofile])
                         for pofile, modir, mofile in _walklocales())
