@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.106 2019/07/12 20:49:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.107 2019/07/25 10:04:19 pvk Exp $
 
 COMMENT-main =		ssh based config management framework
 COMMENT-html =		offline Ansible documentation in HTML format
 
-MODPY_EGG_VERSION =	2.8.0
+MODPY_EGG_VERSION =	2.8.2
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-html =		ansible-html-${MODPY_EGG_VERSION}
@@ -25,7 +25,8 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
+BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR} \
+			textproc/py-sphinx-notfound-page${MODPY_FLAVOR}
 RUN_DEPENDS =		net/py-netaddr${MODPY_FLAVOR} \
 			security/py-cryptodome${MODPY_FLAVOR} \
 			security/py-paramiko${MODPY_FLAVOR} \
@@ -53,9 +54,6 @@ pre-configure:
 post-build:
 	cd ${WRKSRC}/docs/docsite; \
 	${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX} -M html rst _build -j ${MAKE_JOBS}
-	# Ansible misses this file in distribution?
-	ln ${WRKSRC}/docs/docsite/_build/html/_static/css/theme.css \
-	      ${WRKSRC}/docs/docsite/_build/html/_static/css/theme.min.css
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXDIR}/scripts ${DOCDIR}
