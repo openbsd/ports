@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/26 14:11:59 fcambus Exp $
 
 COMMENT =	convert a BDF font to PSF format for the Linux console
 
-V =		1.188
+V =		1.192
 DISTNAME =	console-setup_${V}
 PKGNAME =	bdf2psf-${V}
 EXTRACT_SUFX =	.tar.xz
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	${MASTER_SITE_DEBIAN:=main/c/console-setup/}
 
-WRKDIST =	${WRKDIR}/${DISTNAME:S/_/-/}
+WRKDIST =	${WRKDIR}/console-setup
 
 NO_BUILD =	Yes
 
