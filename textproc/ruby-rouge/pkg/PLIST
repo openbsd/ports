@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/07/10 20:30:45 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/07/26 13:53:51 fcambus Exp $
 ${GEM_BIN}/rougify${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -13,6 +13,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/cli.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/abap
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/actionscript
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ada
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/apache
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/apiblueprint
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/applescript
@@ -35,6 +36,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/cpp
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/crystal
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/csharp
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/css
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/cuda
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/d
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/dart
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/diff
@@ -50,6 +52,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/escape
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/factor
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/fortran
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/fsharp
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/gdscript
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/gherkin
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/glsl
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/go
@@ -61,6 +64,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/haml
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/handlebars
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/haskell
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/hcl
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/hocon
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/html
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/http
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/hylang
@@ -90,6 +94,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/m68k
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/magik
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/make
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/markdown
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/mason
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/mathematica
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/matlab
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/moonscript
@@ -102,6 +107,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/nix
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/objective_c
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ocaml
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/openedge
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/opentype_feature_file
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/pascal
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/perl
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/php
@@ -120,8 +126,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/q
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/qml
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/r
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/racket
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/reasonml
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ruby
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/rust
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/sas
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/sass
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/scala
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/scheme
@@ -184,6 +192,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/abap.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/actionscript.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ada.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/apache/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/apache.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/apache/keywords.yml
@@ -208,6 +217,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/cpp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/crystal.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/csharp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/css.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/cuda.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/d.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/dart.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/diff.rb
@@ -223,6 +233,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/escape.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/factor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/fortran.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/fsharp.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/gdscript.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/gherkin/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/gherkin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/gherkin/keywords.rb
@@ -236,6 +247,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/haml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/handlebars.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/haskell.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/hcl.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/hocon.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/html.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/http.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/hylang.rb
@@ -268,6 +280,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/m68k.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/magik.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/make.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/markdown.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/mason.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/mathematica/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/mathematica.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/mathematica/builtins.rb
@@ -282,8 +295,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nginx.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nim.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nix.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/objective_c.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ocaml/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ocaml.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ocaml/common.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/openedge.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/opentype_feature_file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/pascal.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/perl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/php/
@@ -304,8 +320,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/q.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/qml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/r.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/racket.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/reasonml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ruby.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/rust.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sas.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sass/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sass.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sass/common.rb
