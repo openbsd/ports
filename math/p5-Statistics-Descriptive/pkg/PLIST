@@ -1,14 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/03/21 11:42:06 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/07/26 14:56:31 sthen Exp $
 ${P5SITE}/Statistics/
 ${P5SITE}/Statistics/Descriptive/
 ${P5SITE}/Statistics/Descriptive.pm
+${P5SITE}/Statistics/Descriptive/Full.pm
 ${P5SITE}/Statistics/Descriptive/Smoother/
 ${P5SITE}/Statistics/Descriptive/Smoother.pm
 ${P5SITE}/Statistics/Descriptive/Smoother/Exponential.pm
 ${P5SITE}/Statistics/Descriptive/Smoother/Weightedexponential.pm
+${P5SITE}/Statistics/Descriptive/Sparse.pm
 @man man/man3p/Statistics::Descriptive.3p
+@man man/man3p/Statistics::Descriptive::Full.3p
 @man man/man3p/Statistics::Descriptive::Smoother.3p
 @man man/man3p/Statistics::Descriptive::Smoother::Exponential.3p
 @man man/man3p/Statistics::Descriptive::Smoother::Weightedexponential.3p
+@man man/man3p/Statistics::Descriptive::Sparse.3p
 share/examples/p5-Statistics-Descriptive/
 share/examples/p5-Statistics-Descriptive/statistical-analysis.pl
