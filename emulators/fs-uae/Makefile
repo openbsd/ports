@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:46:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/26 22:00:42 cwen Exp $
 
 BROKEN-alpha =		error: invalid 'asm': invalid %xn code
 
@@ -7,9 +7,9 @@ V =			2.4.0
 MODPY_EGG_VERSION =	${V}
 DISTNAME =		fs-uae-$V
 CATEGORIES =		emulators
-REVISION =		9
+REVISION =		10
 
-HOMEPAGE =		http://fengestad.no/fs-uae/
+HOMEPAGE =		https://fs-uae.net/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv2, LGPLv2.1

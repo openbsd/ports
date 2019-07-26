@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_od-fs_bsdsocket_posix_cpp,v 1.1 2019/07/26 22:00:42 cwen Exp $
+
+BAD_THREAD is defined as NULL, and ports-gcc doesn't want to
+compare nullptr and int.
+
+Index: src/od-fs/bsdsocket_posix.cpp
+--- src/od-fs/bsdsocket_posix.cpp.orig
++++ src/od-fs/bsdsocket_posix.cpp
+@@ -1407,7 +1407,7 @@ int host_sbinit (TrapContext *context, SB)
+     sb->hostentsize = 1024;
+ 
+     /* @@@ The thread should be PTHREAD_CREATE_DETACHED */
+-    if (uae_start_thread ("bsdsocket", bsdlib_threadfunc, (void *)sb, &sb->thread) == BAD_THREAD) {
++    if (uae_start_thread ("bsdsocket", bsdlib_threadfunc, (void *)sb, &sb->thread) == 0) {
+         write_log ("BSDSOCK: Failed to create thread.\n");
+         uae_sem_destroy (&sb->sem);
+         close (sb->sockabort[0]);

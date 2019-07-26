@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_od-fs_picasso96_cpp,v 1.1 2019/07/26 22:00:42 cwen Exp $
+
+ports-gcc fix for: 
+error: cannot convert 'std::nullptr_t' to 'uaecptr'
+
+Index: src/od-fs/picasso96.cpp
+--- src/od-fs/picasso96.cpp.orig
++++ src/od-fs/picasso96.cpp
+@@ -4916,7 +4916,7 @@ static uaecptr uaegfx_card_install (TrapContext *ctx, 
+     uaecptr exec = get_long (4);
+ 
+     if (uaegfx_old || !gfxmem_start)
+-        return NULL;
++        return (uaecptr)0;
+ 
+     uaegfx_resid = ds (_T("UAE Graphics Card 3.3"));
+     uaegfx_vblankname = ds (_T("UAE Graphics Card VBLANK"));
