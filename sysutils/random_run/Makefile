@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2019/06/27 07:19:07 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/26 14:11:49 espie Exp $
 
 COMMENT =	run command with randomized parameters
 CATEGORIES = 	sysutils
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
 
 GH_PROJECT = 	random_run
-GH_TAGNAME = 	2.7
+GH_TAGNAME = 	2.8
 GH_ACCOUNT = 	marcespie
 
 COMPILER =	base-clang ports-gcc
@@ -17,11 +17,11 @@ NO_TEST = 	Yes
 # need to add this for gcc
 # revisit when gcc drops it
 EXTRA_ports-gcc =	-lstdc++fs
-LDFLAGS += 	${EXTRA_${CHOSEN_COMPILER}}
+LDLIBS += 	${EXTRA_${CHOSEN_COMPILER}}
 
 WANTLIB =	${COMPILER_LIBCXX} c m
 
-MAKE_FLAGS =	OPTIMIZE="${CXXFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_FLAGS =	OPTIMIZE="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" LDLIBS="${LDLIBS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/rr ${PREFIX}/bin
