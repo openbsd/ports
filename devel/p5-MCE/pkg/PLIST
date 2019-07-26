@@ -1,8 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/03 11:21:05 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/07/26 15:02:07 sthen Exp $
 ${P5SITE}/MCE/
 ${P5SITE}/MCE.pm
 ${P5SITE}/MCE.pod
 ${P5SITE}/MCE/Candy.pm
+${P5SITE}/MCE/Channel/
+${P5SITE}/MCE/Channel.pm
+${P5SITE}/MCE/Channel/Mutex.pm
+${P5SITE}/MCE/Channel/Simple.pm
+${P5SITE}/MCE/Channel/Threads.pm
+${P5SITE}/MCE/Child.pm
 ${P5SITE}/MCE/Core/
 ${P5SITE}/MCE/Core.pod
 ${P5SITE}/MCE/Core/Input/
@@ -19,7 +25,11 @@ ${P5SITE}/MCE/Flow.pm
 ${P5SITE}/MCE/Grep.pm
 ${P5SITE}/MCE/Loop.pm
 ${P5SITE}/MCE/Map.pm
+${P5SITE}/MCE/Mutex/
 ${P5SITE}/MCE/Mutex.pm
+${P5SITE}/MCE/Mutex/Channel.pm
+${P5SITE}/MCE/Mutex/Channel2.pm
+${P5SITE}/MCE/Mutex/Flock.pm
 ${P5SITE}/MCE/Queue.pm
 ${P5SITE}/MCE/Relay.pm
 ${P5SITE}/MCE/Signal.pm
@@ -29,6 +39,11 @@ ${P5SITE}/MCE/Subs.pm
 ${P5SITE}/MCE/Util.pm
 @man man/man3p/MCE.3p
 @man man/man3p/MCE::Candy.3p
+@man man/man3p/MCE::Channel.3p
+@man man/man3p/MCE::Channel::Mutex.3p
+@man man/man3p/MCE::Channel::Simple.3p
+@man man/man3p/MCE::Channel::Threads.3p
+@man man/man3p/MCE::Child.3p
 @man man/man3p/MCE::Core.3p
 @man man/man3p/MCE::Examples.3p
 @man man/man3p/MCE::Flow.3p
@@ -36,6 +51,9 @@ ${P5SITE}/MCE/Util.pm
 @man man/man3p/MCE::Loop.3p
 @man man/man3p/MCE::Map.3p
 @man man/man3p/MCE::Mutex.3p
+@man man/man3p/MCE::Mutex::Channel.3p
+@man man/man3p/MCE::Mutex::Channel2.3p
+@man man/man3p/MCE::Mutex::Flock.3p
 @man man/man3p/MCE::Queue.3p
 @man man/man3p/MCE::Relay.3p
 @man man/man3p/MCE::Signal.3p
