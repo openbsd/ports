@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/07/26 14:53:25 sthen Exp $
 
-COMMENT=        cryptographic signatures for objects
+COMMENT=	cryptographic signatures for objects
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Object-Signature-1.07
-CATEGORIES=     devel
+FIX_EXTRACT_PERMISSIONS= Yes
+DISTNAME=	Object-Signature-1.08
+CATEGORIES=	devel
 
 # perl
 PERMIT_PACKAGE=	Yes
