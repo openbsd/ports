@@ -1,0 +1,43 @@
+$OpenBSD: patch-scripts_baculabackupreport_in,v 1.1 2019/07/26 13:41:19 robert Exp $
+
+This script requires GNU awk to produce proper output.
+
+Index: scripts/baculabackupreport.in
+--- scripts/baculabackupreport.in.orig
++++ scripts/baculabackupreport.in
+@@ -179,7 +179,7 @@ if [ -z "${queryresult}" ]; then
+ IFS=" "
+ msg=$(echo ${queryresult} | \
+ LC_ALL=en_US.UTF-8 \
+-awk \
++gawk \
+ -v html="${html}" \
+ -v boldstatus="${boldstatus}" \
+ -v colorstatusbg="${colorstatusbg}" \
+@@ -550,7 +550,7 @@ if [ ${emailsummaries} == "yes" ]; then
+         # a summary in the DB until the job has terminated
+         # -------------------------------------------------
+         alljobids=$(echo "${queryresult}" \
+-        | awk '{ if ($7 != "R") printf("%s ", $1) }')
++        | gawk '{ if ($7 != "R") printf("%s ", $1) }')
+ 
+ 
+         # If no jobids were returned, skip creating
+@@ -595,7 +595,7 @@ if [ ${emailbadlogs} == "yes" ]; then
+         # JobErrors != 0 from the query results
+         # --------------------------------------
+         badjobids=$(echo "${queryresult}" \
+-        | awk '{ if ($9 ~ /[ABDEIef]/ || ($9 == "T" && $13 != 0)) printf("%s ", $1) }')
++        | gawk '{ if ($9 ~ /[ABDEIef]/ || ($9 == "T" && $13 != 0)) printf("%s ", $1) }')
+ 
+ 
+         # If no jobids were returned, skip creating
+@@ -671,7 +671,7 @@ ${msg}"
+ fi
+ 
+ fi      # If there were zero results returned from the
+-                # SQL the query, we skip the entire awk script,
++                # SQL the query, we skip the entire gawk script,
+                 # and a lot of other bash stuff that generates
+                 # the email body and we end up here
+ # -------------------------------------------------
