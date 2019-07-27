@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/22 16:51:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/27 15:47:35 thfr Exp $
 
 COMMENT =	API and commands for processing SPIR-V
 
@@ -17,6 +17,9 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
+
+# C++11
+COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake
 BUILD_DEPENDS =	graphics/spirv-headers

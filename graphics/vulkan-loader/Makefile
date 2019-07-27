@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/06/22 17:02:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2019/07/27 15:47:35 thfr Exp $
 
 COMMENT =	Vulkan ICD loader
 
@@ -25,6 +25,8 @@ BUILD_DEPENDS =	graphics/vulkan-headers
 RUN_DEPENDS =	graphics/vulkan-headers
 
 CONFIGURE_ARGS =	-DBUILD_WSI_WAYLAND_SUPPORT=False
+
+COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		lang/python
