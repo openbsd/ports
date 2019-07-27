@@ -1,0 +1,14 @@
+$OpenBSD: patch-share_qtfm_pri,v 1.1.1.1 2019/07/27 02:07:33 bcallah Exp $
+
+Index: share/qtfm.pri
+--- share/qtfm.pri.orig
++++ share/qtfm.pri
+@@ -16,7 +16,7 @@ unix:!macx {
+     }
+     isEmpty(LIBDIR): LIBDIR = $$PREFIX/lib$${LIBSUFFIX}
+     isEmpty(DOCDIR): DOCDIR = $$PREFIX/share/doc
+-    isEmpty(MANDIR): MANDIR = $$PREFIX/share/man
++    isEmpty(MANDIR): MANDIR = $$PREFIX/man
+     isEmpty(XDGDIR): XDGDIR = /etc/xdg
+ }
+ 

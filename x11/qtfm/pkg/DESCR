@@ -1,0 +1,12 @@
+QtFM is a desktop-independent file manager.
+
+Features:
+* XDG integration
+* Customizable interface
+* Powerful custom command system
+* Customizable key bindings
+* Drag & drop functionality
+* Tabs support
+* Removable storage support
+* System tray daemon (qtfm-tray(1))
+* Extensive thumbnail support
