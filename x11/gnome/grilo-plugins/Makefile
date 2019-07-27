@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2019/07/24 19:53:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2019/07/27 15:37:03 ajacoutot Exp $
 
 # XXX: PORTROACH overriden at end of this file.
 
@@ -25,6 +25,8 @@ WANTLIB += tracker-sparql-2.0 xml2
 MODULES=	devel/meson \
 		lang/lua \
 		x11/gnome
+
+BUILD_DEPENDS=	devel/gperf
 
 LIB_DEPENDS=	devel/libgdata \
 		x11/gnome/grilo \
