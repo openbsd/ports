@@ -1,3 +1,0 @@
-Various DNS utilities based on top of the ldns library. These tools where
-designed with DNSSEC in mind and are useful for DNS and DNSSEC testing and
-debugging.

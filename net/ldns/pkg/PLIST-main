@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.10 2017/06/29 10:31:06 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2019/07/27 13:54:13 sthen Exp $
+@pkgpath net/ldns/libldns
 @conflict ldns-*
-bin/ldns-config
 include/ldns/
 include/ldns/buffer.h
 include/ldns/common.h
@@ -37,7 +37,7 @@ include/ldns/zone.h
 lib/libldns.a
 lib/libldns.la
 @lib lib/libldns.so.${LIBldns_VERSION}
-@man man/man1/ldns-config.1
+lib/pkgconfig/ldns.pc
 @man man/man3/ldns_algorithm.3
 @man man/man3/ldns_axfr_abort.3
 @man man/man3/ldns_axfr_complete.3

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-drill,v 1.1 2019/07/27 13:54:13 sthen Exp $
+@pkgpath net/ldns/drill
+@bin bin/drill
+@man man/man1/drill.1

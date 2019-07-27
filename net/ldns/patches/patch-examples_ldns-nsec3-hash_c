@@ -1,0 +1,15 @@
+$OpenBSD: patch-examples_ldns-nsec3-hash_c,v 1.1 2019/07/27 13:54:13 sthen Exp $
+
+Index: examples/ldns-nsec3-hash.c
+--- examples/ldns-nsec3-hash.c.orig
++++ examples/ldns-nsec3-hash.c
+@@ -18,7 +18,9 @@
+ 
+ #ifdef HAVE_SSL
+ #include <openssl/conf.h>
++#ifndef OPENSSL_NO_ENGINE
+ #include <openssl/engine.h>
++#endif /* OPENSSL_NO_ENGINE */
+ #endif /* HAVE_SSL */
+ 
+ #define MAX_FILENAME_LEN 250
