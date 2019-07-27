@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/12/13 09:42:19 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/07/27 16:36:37 fcambus Exp $
 @bin bin/bbc2psf
 @bin bin/cpi2psf
 @bin bin/cpicomp
@@ -24,6 +24,7 @@
 @bin bin/psfmerge
 @bin bin/psfpages
 @bin bin/psfs2cpi
+@bin bin/psfs2mda
 @bin bin/psfxform
 @bin bin/raw2psf
 @bin bin/txt2psf
@@ -57,6 +58,7 @@ lib/libpsf.la
 @man man/man1/psfmerge.1
 @man man/man1/psfpages.1
 @man man/man1/psfs2cpi.1
+@man man/man1/psfs2mda.1
 @man man/man1/psfxform.1
 @man man/man1/raw2psf.1
 @man man/man1/txt2psf.1
