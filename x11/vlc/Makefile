@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.226 2019/07/14 00:39:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.227 2019/07/27 12:58:08 kn Exp $
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
@@ -45,6 +45,7 @@ WANTLIB-jack=	db jack vlccore ${WANTLIB-common}
 
 AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.15
+AUTORECONF =	./bootstrap
 
 MODULES=	x11/qt4
 
@@ -94,13 +95,11 @@ RUN_DEPENDS-main= devel/desktop-file-utils \
 		x11/gtk+3,-guic
 RUN_DEPENDS-jack= ${BUILD_PKGPATH}
 
-MAKE_ENV=	AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
-
 USE_GMAKE=	Yes
 # Fails to link _pic libs properly resulting in undefined symbols in the live555 plugin
 USE_LIBTOOL=	gnu
 LIBTOOL_FLAGS=	--tag=disable-static
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoreconf
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/autotools
 CONFIGURE_ARGS+=--disable-a52 \
 		--disable-alsa \
@@ -193,12 +192,8 @@ PKG_ARGS+=-Di386=1
 PKG_ARGS+=-Di386=0
 .endif
 
-pre-configure:
-	@cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-	    ./bootstrap
-
 post-install:
-	@find ${PREFIX}/lib/vlc -name '*.la' -print | xargs rm
+	@find ${PREFIX}/lib/vlc -name '*.la' -delete
 
 .include <bsd.port.mk>
 .if ${CHOSEN_COMPILER} == "base-clang"
