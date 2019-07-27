@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/03 16:06:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/07/27 13:54:41 sthen Exp $
 
 COMMENT =	module to interface the DNS resolver using the ldns library
 
 MODULES =	cpan
 CPAN_AUTHOR =	ZNMSTR
 DISTNAME =	Zonemaster-LDNS-2.0.1
+REVISION =	0
 CATEGORIES =	net
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
@@ -16,7 +17,7 @@ WANTLIB += c crypto idn ldns perl
 
 BUILD_DEPENDS =	devel/p5-Devel-CheckLib
 LIB_DEPENDS =	devel/libidn \
-		net/ldns/libldns
+		net/ldns
 TEST_DEPENDS =	devel/p5-Test-Fatal
 
 CONFIGURE_ARGS = --no-internal-ldns

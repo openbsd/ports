@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/07/27 13:54:41 sthen Exp $
 
 COMMENT=	open-source turn-key solution for DNSSEC
 
 DISTNAME=	opendnssec-2.1.4
+REVISION=	0
 
 CATEGORIES=	security
 
@@ -20,7 +21,7 @@ MASTER_SITES=	https://dist.opendnssec.org/source/
 BUILD_DEPENDS=	devel/cunit
 
 LIB_DEPENDS=	converters/libiconv \
-		net/ldns/libldns \
+		net/ldns \
 		textproc/libxml
 
 TEST_DEPENDS=	${BUILD_DEPENDS} \
