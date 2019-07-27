@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.48 2019/05/31 05:54:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.49 2019/07/27 09:55:17 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/danetool
 @bin bin/gnutls-cli
@@ -275,6 +275,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_fingerprint.3
 @man man/man3/gnutls_fips140_mode_enabled.3
 @man man/man3/gnutls_fips140_set_mode.3
+@man man/man3/gnutls_get_system_config_file.3
 @man man/man3/gnutls_global_deinit.3
 @man man/man3/gnutls_global_init.3
 @man man/man3/gnutls_global_set_audit_log_function.3
@@ -300,6 +301,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_handshake_set_random.3
 @man man/man3/gnutls_handshake_set_timeout.3
 @man man/man3/gnutls_hash.3
+@man man/man3/gnutls_hash_copy.3
 @man man/man3/gnutls_hash_deinit.3
 @man man/man3/gnutls_hash_fast.3
 @man man/man3/gnutls_hash_get_len.3
@@ -317,6 +319,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_hex_encode.3
 @man man/man3/gnutls_hex_encode2.3
 @man man/man3/gnutls_hmac.3
+@man man/man3/gnutls_hmac_copy.3
 @man man/man3/gnutls_hmac_deinit.3
 @man man/man3/gnutls_hmac_fast.3
 @man man/man3/gnutls_hmac_get_len.3
