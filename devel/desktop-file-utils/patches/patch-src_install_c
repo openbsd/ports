@@ -1,25 +1,27 @@
-$OpenBSD: patch-src_install_c,v 1.1 2018/09/25 19:04:32 jasper Exp $
+$OpenBSD: patch-src_install_c,v 1.2 2019/07/27 09:34:40 ajacoutot Exp $
 
 Index: src/install.c
 --- src/install.c.orig
 +++ src/install.c
-@@ -839,6 +839,11 @@ main (int argc, char **argv)
+@@ -839,6 +839,13 @@ main (int argc, char **argv)
  
    setlocale (LC_ALL, "");
  
++#if HAVE_PLEDGE
 +  if (pledge("stdio rpath wpath cpath fattr", NULL) == -1) {
 +    g_printerr ("pledge\n");
 +    return 1;
 +  }
++#endif
 +
    basename = g_path_get_basename (argv[0]);
    if (g_strcmp0 (basename, "desktop-file-edit") == 0)
      edit_mode = TRUE;
-@@ -853,6 +858,14 @@ main (int argc, char **argv)
-       group = g_option_group_new ("install", _("Installation options for desktop file"), _("Show desktop file installation options"), NULL, NULL);
+@@ -854,6 +861,16 @@ main (int argc, char **argv)
        g_option_group_add_entries (group, install_options);
        g_option_context_add_group (context, group);
-+    }
+     }
++#if HAVE_PLEDGE
 +  else
 +    {
 +      /* In edit mode we can drop the fattr pledge. */
@@ -27,6 +29,8 @@ Index: src/install.c
 +        g_printerr ("pledge in edit_mode\n");
 +        return 1;
 +      }
-     }
++    }
++#endif
  
    group = g_option_group_new ("edit", _("Edition options for desktop file"), _("Show desktop file edition options"), NULL, NULL);
+   g_option_group_add_entries (group, edit_options);

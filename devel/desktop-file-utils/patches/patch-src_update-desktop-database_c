@@ -1,26 +1,21 @@
-$OpenBSD: patch-src_update-desktop-database_c,v 1.16 2019/03/27 12:49:48 ajacoutot Exp $
+$OpenBSD: patch-src_update-desktop-database_c,v 1.17 2019/07/27 09:34:40 ajacoutot Exp $
 
-- unveil the required directory with .desktop files and where the cache file needs
-  to be written out to.
-- pledge
-  https://bugs.freedesktop.org/show_bug.cgi?id=104367
+Unveil the required directory with .desktop files and where the cache file needs
+to be written out to.
 
 Index: src/update-desktop-database.c
 --- src/update-desktop-database.c.orig
 +++ src/update-desktop-database.c
-@@ -450,6 +450,11 @@ main (int    argc,
-      { NULL }
+@@ -452,7 +452,7 @@ main (int    argc,
     };
  
+ #if HAVE_PLEDGE
+-  if (pledge("stdio rpath wpath cpath fattr", NULL) == -1) {
 +  if (pledge("stdio rpath wpath cpath fattr unveil", NULL) == -1) {
-+    g_printerr ("pledge\n");
-+    return 1;
-+  }
-+
-   context = g_option_context_new ("");
-   g_option_context_set_summary (context, _("Build cache database of MIME types handled by desktop files."));
-   g_option_context_add_main_entries (context, options, NULL);
-@@ -473,6 +478,9 @@ main (int    argc,
+     g_printerr ("pledge\n");
+     return 1;
+   }
+@@ -481,6 +481,9 @@ main (int    argc,
    found_processable_dir = FALSE;
    for (i = 0; desktop_dirs[i] != NULL; i++)
      {
@@ -30,7 +25,7 @@ Index: src/update-desktop-database.c
        error = NULL;
        update_database (desktop_dirs[i], &error);
  
-@@ -487,6 +495,10 @@ main (int    argc,
+@@ -495,6 +498,10 @@ main (int    argc,
          found_processable_dir = TRUE;
      }
    g_option_context_free (context);

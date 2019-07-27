@@ -1,25 +1,29 @@
-$OpenBSD: patch-src_validator_c,v 1.1 2018/09/25 19:04:32 jasper Exp $
+$OpenBSD: patch-src_validator_c,v 1.2 2019/07/27 09:34:40 ajacoutot Exp $
 
 Index: src/validator.c
 --- src/validator.c.orig
 +++ src/validator.c
-@@ -26,6 +26,7 @@
+@@ -26,6 +26,9 @@
   * USA.
   */
  
++#if HAVE_PLEDGE
 +#include <unistd.h>
++#endif
  #include "validate.h"
  
  static gboolean   warn_kde = FALSE;
-@@ -48,6 +49,11 @@ main (int argc, char *argv[])
+@@ -48,6 +51,13 @@ main (int argc, char *argv[])
    GError         *error;
    int i;
    gboolean all_valid;
 +
++#if HAVE_PLEDGE
 +  if (pledge("stdio rpath", NULL) == -1) {
 +    g_printerr("pledge\n");
 +    return 1;
 +  }
++#endif
  
    context = g_option_context_new (NULL);
    g_option_context_set_summary (context, "Validate desktop entry files "
