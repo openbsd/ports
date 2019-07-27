@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2019/07/18 07:24:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2019/07/27 14:01:45 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
@@ -73,6 +73,8 @@ FLAVOR?=
 CONFIGURE_ARGS+= --with-geoip2
 LIB_DEPENDS+=	net/libmaxminddb
 WANTLIB+=	maxminddb
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 .endif
 
 .if ${FLAVOR:Mno_ssl}
