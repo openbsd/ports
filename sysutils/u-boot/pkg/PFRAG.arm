@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.arm,v 1.17 2019/01/20 11:51:02 jsg Exp $
+@comment $OpenBSD: PFRAG.arm,v 1.18 2019/07/28 06:57:20 jsg Exp $
 @pkgpath sysutils/u-boot,
 share/u-boot/
 share/u-boot/A10-OLinuXino-Lime/
@@ -19,13 +19,13 @@ share/u-boot/A20-OLinuXino-Lime/u-boot
 share/u-boot/A20-OLinuXino-Lime/u-boot-sunxi-with-spl.bin
 share/u-boot/A20-OLinuXino-Lime/u-boot.bin
 share/u-boot/A20-OLinuXino-Lime/u-boot.img
-share/u-boot/A20-OLinuXino-Lime2/
 share/u-boot/A20-OLinuXino-Lime2-eMMC/
 share/u-boot/A20-OLinuXino-Lime2-eMMC/sunxi-spl.bin
 share/u-boot/A20-OLinuXino-Lime2-eMMC/u-boot
 share/u-boot/A20-OLinuXino-Lime2-eMMC/u-boot-sunxi-with-spl.bin
 share/u-boot/A20-OLinuXino-Lime2-eMMC/u-boot.bin
 share/u-boot/A20-OLinuXino-Lime2-eMMC/u-boot.img
+share/u-boot/A20-OLinuXino-Lime2/
 share/u-boot/A20-OLinuXino-Lime2/sunxi-spl.bin
 share/u-boot/A20-OLinuXino-Lime2/u-boot
 share/u-boot/A20-OLinuXino-Lime2/u-boot-sunxi-with-spl.bin
@@ -121,22 +121,17 @@ share/u-boot/Orangepi_mini/u-boot
 share/u-boot/Orangepi_mini/u-boot-sunxi-with-spl.bin
 share/u-boot/Orangepi_mini/u-boot.bin
 share/u-boot/Orangepi_mini/u-boot.img
-share/u-boot/Sinovoip_BPI_M2_Plus/
-share/u-boot/Sinovoip_BPI_M2_Plus/sunxi-spl.bin
-share/u-boot/Sinovoip_BPI_M2_Plus/u-boot
-share/u-boot/Sinovoip_BPI_M2_Plus/u-boot-sunxi-with-spl.bin
-share/u-boot/Sinovoip_BPI_M2_Plus/u-boot.bin
-share/u-boot/Sinovoip_BPI_M2_Plus/u-boot.img
-share/u-boot/am335x_boneblack/
-share/u-boot/am335x_boneblack/MLO
-share/u-boot/am335x_boneblack/u-boot
-share/u-boot/am335x_boneblack/u-boot.bin
-share/u-boot/am335x_boneblack/u-boot.img
 share/u-boot/am335x_evm/
 share/u-boot/am335x_evm/MLO
 share/u-boot/am335x_evm/u-boot
 share/u-boot/am335x_evm/u-boot.bin
 share/u-boot/am335x_evm/u-boot.img
+share/u-boot/bananapi_m2_plus_h3/
+share/u-boot/bananapi_m2_plus_h3/sunxi-spl.bin
+share/u-boot/bananapi_m2_plus_h3/u-boot
+share/u-boot/bananapi_m2_plus_h3/u-boot-sunxi-with-spl.bin
+share/u-boot/bananapi_m2_plus_h3/u-boot.bin
+share/u-boot/bananapi_m2_plus_h3/u-boot.img
 share/u-boot/bananapi_m2_zero/
 share/u-boot/bananapi_m2_zero/sunxi-spl.bin
 share/u-boot/bananapi_m2_zero/u-boot
@@ -240,8 +235,8 @@ share/u-boot/rpi_3_32b/
 share/u-boot/rpi_3_32b/u-boot
 share/u-boot/rpi_3_32b/u-boot.bin
 share/u-boot/tinker-rk3288/
+share/u-boot/tinker-rk3288/idbloader.img
 share/u-boot/tinker-rk3288/u-boot
-share/u-boot/tinker-rk3288/u-boot-with-spl.bin
 share/u-boot/tinker-rk3288/u-boot.bin
 share/u-boot/tinker-rk3288/u-boot.img
 share/u-boot/turris_omnia/

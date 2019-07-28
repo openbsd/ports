@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.53 2019/07/12 20:49:53 sthen Exp $
+#	$OpenBSD: Makefile,v 1.54 2019/07/28 06:57:19 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -6,8 +6,7 @@ FLAVORS=	aarch64 arm
 FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
-VERSION=	2019.01
-REVISION=	5
+VERSION=	2019.07
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -69,11 +68,11 @@ BOARDS=\
 	mvebu_espressobin-88f3720 \
 	mvebu_mcbin-88f8040 \
 	qemu_arm64 \
+	rockpro64-rk3399 \
 	rpi_3
 .elif "${FLAVOR}" == "arm"
 OMAP=\
 	omap4_panda \
-	am335x_boneblack \
 	am335x_evm
 SUNXI64=
 SUNXI=\
@@ -85,6 +84,7 @@ SUNXI=\
 	A20-OLinuXino_MICRO \
 	Bananapi \
 	Bananapi_m2m \
+	bananapi_m2_plus_h3 \
 	bananapi_m2_zero \
 	Bananapro \
 	CHIP \
@@ -106,8 +106,7 @@ SUNXI=\
 	orangepi_pc_plus \
 	orangepi_plus \
 	orangepi_plus2e \
-	orangepi_zero \
-	Sinovoip_BPI_M2_Plus
+	orangepi_zero
 IMX=\
 	cm_fx6 \
 	mx6cuboxi \
@@ -142,6 +141,7 @@ FILES=\
 	u-boot-with-spl.bin \
 	u-boot.itb \
 	idbspl.img \
+	idbloader.img \
 	spl/sunxi-spl.bin \
 
 pre-build:
@@ -161,15 +161,14 @@ do-build:
 	        -f ${MAKE_FILE} ${ALL_TARGET}
 .if "${BOARD}" == "tinker-rk3288"
 	cd ${WRKSRC}/build/${BOARD} && \
-	    tools/mkimage -n rk3288 -T rksd -d spl/u-boot-spl-dtb.bin \
-	        u-boot-with-spl.bin && \
-	    cat u-boot-dtb.bin >> u-boot-with-spl.bin
+	    tools/mkimage -n rk3288 -T rksd -d tpl/u-boot-tpl.bin \
+	        idbloader.img && \
+	    cat spl/u-boot-spl-dtb.bin >> idbloader.img
 .endif
-.if "${BOARD}" == "firefly-rk3399"
+.if "${BOARD}" == "firefly-rk3399" || "${BOARD}" == "rockpro64-rk3399"
 	cd ${WRKSRC}/build/${BOARD} && \
-	    ln -s ${RK3399_BL31} bl31.elf && \
-	    ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
-	        O="build/${BOARD}" \
+	    ${SETENV} ${MAKE_ENV} BL31=${RK3399_BL31} ${MAKE_PROGRAM} \
+		${MAKE_FLAGS} O="build/${BOARD}" \
 	        -f ${MAKE_FILE} u-boot.itb && \
 	    tools/mkimage -n rk3399 -T rksd -d spl/u-boot-spl.bin idbspl.img
 .endif

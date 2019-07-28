@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.aarch64,v 1.10 2019/02/07 20:50:19 phessler Exp $
+@comment $OpenBSD: PFRAG.aarch64,v 1.11 2019/07/28 06:57:20 jsg Exp $
 @pkgpath sysutils/u-boot-pinebook
 share/u-boot/
 share/u-boot/a64-olinuxino/
@@ -86,6 +86,12 @@ share/u-boot/pinebook/u-boot.itb
 share/u-boot/qemu_arm64/
 share/u-boot/qemu_arm64/u-boot
 share/u-boot/qemu_arm64/u-boot.bin
+share/u-boot/rockpro64-rk3399/
+share/u-boot/rockpro64-rk3399/idbspl.img
+share/u-boot/rockpro64-rk3399/u-boot
+share/u-boot/rockpro64-rk3399/u-boot.bin
+share/u-boot/rockpro64-rk3399/u-boot.img
+share/u-boot/rockpro64-rk3399/u-boot.itb
 share/u-boot/rpi_3/
 share/u-boot/rpi_3/u-boot
 share/u-boot/rpi_3/u-boot.bin
