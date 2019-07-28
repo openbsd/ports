@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/07/28 07:33:03 ajacoutot Exp $
 
 COMMENT=	manage Elasticsearch indices
 
@@ -22,14 +22,14 @@ MODPY_SETUPTOOLS= Yes
 
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 
-RUN_DEPENDS=	devel/py-certifi,python3>=2018.10.15 \
-		devel/py-click,python3>=6.7,<7.0.0 \
-		devel/py-six,python3>=1.11.0 \
-		devel/py-voluptuous,python3>=0.9.3 \
-		net/py-boto3,python3>=1.7.24 \
-		security/py-requests-aws4auth,python3>=0.9 \
-		textproc/py-elasticsearch,python3>=6.1.0,<7.0.0 \
-		textproc/py-yaml,python3>=3.10
+RUN_DEPENDS=	devel/py-certifi${MODPY_FLAVOR}>=2018.10.15 \
+		devel/py-click${MODPY_FLAVOR}>=6.7,<7.0.0 \
+		devel/py-six${MODPY_FLAVOR}>=1.11.0 \
+		devel/py-voluptuous${MODPY_FLAVOR}>=0.9.3 \
+		net/py-boto3${MODPY_FLAVOR}>=1.7.24 \
+		security/py-requests-aws4auth${MODPY_FLAVOR}>=0.9 \
+		textproc/py-elasticsearch${MODPY_FLAVOR}>=6.1.0,<7.0.0 \
+		textproc/py-yaml${MODPY_FLAVOR}>=3.10
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
