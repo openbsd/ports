@@ -152,7 +152,8 @@ void SndioAudioOutputStream::ThreadLoop(void) {
     pthread_mutex_unlock(&mutex);
 
     // Get data to play
-    const base::TimeDelta delay = AudioTimestampHelper::FramesToTime(hw_delay, params.sample_rate() * 1000);
+    const base::TimeDelta delay = AudioTimestampHelper::FramesToTime(hw_delay,
+	params.sample_rate());
     count = source->OnMoreData(delay, base::TimeTicks::Now(), 0, audio_bus.get());
     audio_bus->ToInterleaved(count, SampleFormatToBytesPerChannel(kSampleFormat), buffer);
     if (count == 0) {
