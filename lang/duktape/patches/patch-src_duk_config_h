@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_duk_config_h,v 1.1 2018/08/06 10:26:34 fcambus Exp $
+$OpenBSD: patch-src_duk_config_h,v 1.2 2019/07/29 10:41:29 fcambus Exp $
 
 We do have inttypes.h, but gcc-4.2.1 doesn't default to C99 and
 thus doesn't #define __STDC_VERSION__ 199901L.
@@ -6,7 +6,7 @@ thus doesn't #define __STDC_VERSION__ 199901L.
 Index: src/duk_config.h
 --- src/duk_config.h.orig
 +++ src/duk_config.h
-@@ -1553,6 +1553,10 @@
+@@ -1615,6 +1615,10 @@
  #define DUK_F_HAVE_INTTYPES
  #endif
  

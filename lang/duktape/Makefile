@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/07/29 10:41:29 fcambus Exp $
 
 COMMENT =	embeddable JavaScript engine
 
-DISTNAME =	duktape-2.3.0
-REVISION =	0
+DISTNAME =	duktape-2.4.0
 EXTRACT_SUFX =	.tar.xz
 
-SHARED_LIBS +=	duktape	1.0	# 203
+SHARED_LIBS +=	duktape	1.1	# 204
 
 CATEGORIES =	lang
 
-HOMEPAGE =	http://duktape.org/
+HOMEPAGE =	https://duktape.org/
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
@@ -19,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c m
 
-MASTER_SITES =	http://duktape.org/
+MASTER_SITES =	https://duktape.org/
 
 USE_GMAKE =	Yes
 
