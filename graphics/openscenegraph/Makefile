@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/07/29 18:17:43 cwen Exp $
 
 PORTROACH =		limitw:1,even
 
@@ -9,7 +9,7 @@ GH_ACCOUNT =		openscenegraph
 GH_PROJECT =		OpenSceneGraph
 GH_TAGNAME =		OpenSceneGraph-$V
 DISTNAME =		openscenegraph-${V}
-REVISION =		3
+REVISION =		4
 
 SUBST_VARS +=		V
 
@@ -67,9 +67,3 @@ CONFIGURE_ARGS =	-DDESIRED_QT_VERSION=5 \
 NO_TEST =		Yes
 
 .include <bsd.port.mk>
-
-# fix error: #error Must have C++11 or newer.
-# XXX this should be retried once moving to ports-gcc>=8
-.if ${CHOSEN_COMPILER} == "ports-gcc"
-CONFIGURE_ENV +=     CXXFLAGS="${CXXFLAGS} -std=c++11"
-.endif

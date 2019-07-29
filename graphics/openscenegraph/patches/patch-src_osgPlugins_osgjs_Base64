@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_osgPlugins_osgjs_Base64,v 1.1 2019/07/29 18:17:43 cwen Exp $
+
+ppc, arm: from_table is actually signed, and has to be declared as such
+
+Index: src/osgPlugins/osgjs/Base64
+--- src/osgPlugins/osgjs/Base64.orig
++++ src/osgPlugins/osgjs/Base64
+@@ -61,7 +61,7 @@ namespace base64
+   extern const char* to_table;
+   extern const char* to_table_end;
+ 
+-  extern const char* from_table;
++  extern const signed char* from_table;
+ 
+ 
+   template <class InputIterator, class OutputIterator>
