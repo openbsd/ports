@@ -1,18 +1,15 @@
-$OpenBSD: patch-Cargo_toml,v 1.1.1.1 2018/04/27 09:43:18 landry Exp $
+$OpenBSD: patch-Cargo_toml,v 1.2 2019/07/29 15:39:35 semarie Exp $
 
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -46,12 +46,6 @@ zoneinfo_compiled = "0.4.5"
+@@ -57,9 +57,3 @@ datetime = "0.4.7"
  default = [ "git" ]
  git = [ "git2" ]
- 
+ vendored-openssl = ["git2/vendored-openssl"]
+-
 -[profile.release]
 -opt-level = 3
 -debug = false
 -lto = true
 -panic = "abort"
--
- [dependencies.git2]
- version = "0.6.4"
- optional = true
