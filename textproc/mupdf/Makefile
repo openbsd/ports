@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.88 2019/07/30 13:41:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.89 2019/07/30 15:59:48 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
 V =		1.16.0
+REVISION =	0
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
 
@@ -27,10 +28,11 @@ FLAVOR ?=
 # http://git.ghostscript.com/?p=mupdf.git;a=summary
 MASTER_SITES =	https://mupdf.com/downloads/archive/
 
-# possibly needed: https://marc.info/?l=openbsd-ports&m=156448467232400&w=2
-#MODULES +=	gcc4
-#MODGCC4_ARCHS =	armv7
-#MODGCC4_LANGS =	c
+# https://marc.info/?l=openbsd-ports&m=156448467232400&w=2
+# possible alignment issue?
+MODULES +=	gcc4
+MODGCC4_ARCHS =	armv7
+MODGCC4_LANGS =	c
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xdg-utils
