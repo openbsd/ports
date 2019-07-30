@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makethird,v 1.7 2019/06/25 22:03:46 sthen Exp $
+$OpenBSD: patch-Makethird,v 1.8 2019/07/30 13:41:14 sthen Exp $
 
 Index: Makethird
 --- Makethird.orig
 +++ Makethird
-@@ -220,6 +220,7 @@ endif
+@@ -225,6 +225,7 @@ endif
  
  # --- MuJS ---
  
@@ -11,7 +11,7 @@ Index: Makethird
  ifeq ($(USE_SYSTEM_MUJS),yes)
    THIRD_CFLAGS += $(SYS_MUJS_CFLAGS)
    THIRD_LIBS += $(SYS_MUJS_LIBS)
-@@ -231,6 +232,7 @@ THIRD_CFLAGS += -Ithirdparty/mujs
+@@ -236,6 +237,7 @@ THIRD_CFLAGS += -Ithirdparty/mujs
  $(OUT)/thirdparty/mujs/%.o: thirdparty/mujs/%.c
  	$(CC_CMD)
  

@@ -1,7 +1,9 @@
-$OpenBSD: patch-docs_man_mupdf_1,v 1.3 2016/10/16 09:16:52 sthen Exp $
---- docs/man/mupdf.1.orig	Thu Apr 21 12:14:32 2016
-+++ docs/man/mupdf.1	Sun Oct 16 09:47:50 2016
-@@ -92,6 +92,9 @@ Pan page left or right.
+$OpenBSD: patch-docs_man_mupdf_1,v 1.4 2019/07/30 13:41:14 sthen Exp $
+
+Index: docs/man/mupdf.1
+--- docs/man/mupdf.1.orig
++++ docs/man/mupdf.1
+@@ -94,6 +94,9 @@ Pan page left or right.
  .TP
  .B Control + Scroll wheel
  Zoom in or out.

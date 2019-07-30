@@ -1,4 +1,4 @@
-$OpenBSD: patch-source_tools_pdfclean_c,v 1.5 2019/06/25 22:03:46 sthen Exp $
+$OpenBSD: patch-source_tools_pdfclean_c,v 1.6 2019/07/30 13:41:14 sthen Exp $
 
 add pledge(2) to "mutool clean"
 
@@ -14,7 +14,7 @@ Index: source/tools/pdfclean.c
  #include <string.h>
  #include <stdlib.h>
  #include <stdio.h>
-@@ -84,6 +86,12 @@ int pdfclean_main(int argc, char **argv)
+@@ -103,6 +105,12 @@ int pdfclean_main(int argc, char **argv)
  		(strstr(argv[fz_optind], ".pdf") || strstr(argv[fz_optind], ".PDF")))
  	{
  		outfile = argv[fz_optind++];
