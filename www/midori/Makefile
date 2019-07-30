@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.88 2019/07/12 20:50:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.89 2019/07/30 16:57:41 landry Exp $
 
 COMMENT =	lightweight web browser
 
-V =	8.0
+V =	9.0
 DISTNAME =	midori-v${V}
 PKGNAME =	midori-${V}
 

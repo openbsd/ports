@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2019/03/05 12:58:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.45 2019/07/30 16:57:41 landry Exp $
 @bin bin/midori
 lib/girepository-1.0/Midori-0.6.typelib
 @lib lib/libmidori-core.so.${LIBmidori-core_VERSION}
@@ -24,9 +24,9 @@ share/doc/midori/
 share/doc/midori/COPYING
 share/doc/midori/README.md
 share/gir-1.0/Midori-0.6.gir
-share/icons/hicolor/16x16/apps/midori.png
-share/icons/hicolor/22x22/apps/midori.png
-share/icons/hicolor/scalable/apps/midori.svg
+share/icons/hicolor/16x16/apps/org.midori_browser.Midori.png
+share/icons/hicolor/22x22/apps/org.midori_browser.Midori.png
+share/icons/hicolor/scalable/apps/org.midori_browser.Midori.svg
 share/locale/af/LC_MESSAGES/midori.mo
 share/locale/am/LC_MESSAGES/midori.mo
 share/locale/ar/LC_MESSAGES/midori.mo
@@ -37,8 +37,6 @@ share/locale/bg/LC_MESSAGES/midori.mo
 share/locale/bn/LC_MESSAGES/midori.mo
 share/locale/bs/LC_MESSAGES/midori.mo
 share/locale/ca/LC_MESSAGES/midori.mo
-share/locale/ckb/
-share/locale/ckb/LC_MESSAGES/
 share/locale/ckb/LC_MESSAGES/midori.mo
 share/locale/cs/LC_MESSAGES/midori.mo
 share/locale/cy/LC_MESSAGES/midori.mo
@@ -114,6 +112,6 @@ share/locale/zh_CN/LC_MESSAGES/midori.mo
 share/locale/zh_HK/LC_MESSAGES/midori.mo
 share/locale/zh_TW/LC_MESSAGES/midori.mo
 share/metainfo/
-share/metainfo/midori.appdata.xml
+share/metainfo/org.midori_browser.Midori.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
