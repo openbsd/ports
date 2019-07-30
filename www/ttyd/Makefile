@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/07/30 15:05:39 sthen Exp $
 
 COMMENT =	share your terminal over the web
 
 GH_ACCOUNT =	tsl0922
 GH_PROJECT =	ttyd
-GH_TAGNAME =	1.4.0
+GH_TAGNAME =	1.5.1
 
 CATEGORIES =	www
 

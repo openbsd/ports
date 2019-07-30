@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_server_c,v 1.1 2019/07/30 15:05:39 sthen Exp $
+
+backout https://github.com/tsl0922/ttyd/commit/e954cb5481cf43aa08cb618cae9301c50ba5f0ee
+to avoid crashes; otherwise main tries to unlock client->mutex that was
+already unlocked in thread_run_command, triggering SIGABRT in OpenBSD's
+pthread implementation.
+
+https://github.com/tsl0922/ttyd/issues/205
+
+Index: src/server.c
+--- src/server.c.orig
++++ src/server.c
+@@ -474,7 +474,8 @@ main(int argc, char **argv) {
+         if (!LIST_EMPTY(&server->clients)) {
+             struct tty_client *client;
+             LIST_FOREACH(client, &server->clients, list) {
+-                if (client->running && pthread_mutex_trylock(&client->mutex)) {
++                if (client->running) {
++                    pthread_mutex_lock(&client->mutex);
+                     if (client->state != STATE_DONE)
+                         lws_callback_on_writable(client->wsi);
+                     else
