@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2019/07/27 09:55:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.159 2019/07/30 11:38:48 sthen Exp $
 
 COMMENT=		GNU Transport Layer Security library
 
@@ -57,8 +57,13 @@ CONFIGURE_ARGS +=	--without-tpm
 CONFIGURE_ARGS +=	--enable-local-libopts
 CONFIGURE_ARGS +=	ac_cv_prog_autogen=
 
+LDFLAGS=		-L${LOCALBASE}/lib
+.if ${MACHINE_ARCH:Mi386}
+LDFLAGS+=		-Wl,-z,notext
+.endif
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="${LDFLAGS}"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnutls
