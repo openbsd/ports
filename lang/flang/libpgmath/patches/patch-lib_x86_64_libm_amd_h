@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_x86_64_libm_amd_h,v 1.3 2018/12/26 17:37:14 bcallah Exp $
+$OpenBSD: patch-lib_x86_64_libm_amd_h,v 1.4 2019/07/30 03:49:58 bcallah Exp $
 
 We need the compat.
 
@@ -14,16 +14,26 @@ Index: lib/x86_64/libm_amd.h
  typedef long __INT8_T;
  typedef unsigned long __UINT8_T;
  
-@@ -79,6 +79,12 @@ typedef unsigned long long __UINT8_T;
- 
+@@ -80,7 +80,13 @@ typedef unsigned long long __UINT8_T;
  /* Open Tools #defines ldexpf */
  #undef ldexpf
-+
+ 
 +/* We're missing these on OpenBSD, found in NetBSD math.h */
 +#define DOMAIN		1
 +#define SING		2
 +#define OVERFLOW	3
 +#define UNDERFLOW	4
  
- 
++
  /* Types of exceptions in the `type' field.  */
+ # define DOMAIN         1
+ # define SING           2
+@@ -89,6 +95,8 @@ typedef unsigned long long __UINT8_T;
+ # define TLOSS          5
+ # define PLOSS          6
+ 
++/* The BSDs (and probably macOS too) already define HUGE in math.h */
++# undef HUGE
+ # define HUGE           3.40282347e+38F
+ 
+ #endif
