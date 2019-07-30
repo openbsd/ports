@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.54 2019/07/28 06:57:19 jsg Exp $
+#	$OpenBSD: Makefile,v 1.55 2019/07/30 17:55:47 kettenis Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -7,6 +7,7 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2019.07
+REVISION=	0
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -68,7 +69,6 @@ BOARDS=\
 	mvebu_espressobin-88f3720 \
 	mvebu_mcbin-88f8040 \
 	qemu_arm64 \
-	rockpro64-rk3399 \
 	rpi_3
 .elif "${FLAVOR}" == "arm"
 OMAP=\
@@ -140,7 +140,6 @@ FILES=\
 	u-boot-spl.kwb \
 	u-boot-with-spl.bin \
 	u-boot.itb \
-	idbspl.img \
 	idbloader.img \
 	spl/sunxi-spl.bin \
 
@@ -165,12 +164,14 @@ do-build:
 	        idbloader.img && \
 	    cat spl/u-boot-spl-dtb.bin >> idbloader.img
 .endif
-.if "${BOARD}" == "firefly-rk3399" || "${BOARD}" == "rockpro64-rk3399"
+.if "${BOARD}" == "firefly-rk3399"
 	cd ${WRKSRC}/build/${BOARD} && \
 	    ${SETENV} ${MAKE_ENV} BL31=${RK3399_BL31} ${MAKE_PROGRAM} \
 		${MAKE_FLAGS} O="build/${BOARD}" \
 	        -f ${MAKE_FILE} u-boot.itb && \
-	    tools/mkimage -n rk3399 -T rksd -d spl/u-boot-spl.bin idbspl.img
+	    tools/mkimage -n rk3399 -T rksd -d tpl/u-boot-tpl.bin \
+		idbloader.img && \
+	    cat spl/u-boot-spl-dtb.bin >> idbloader.img
 .endif
 .endfor
 .for BOARD in ${SUNXI64}
