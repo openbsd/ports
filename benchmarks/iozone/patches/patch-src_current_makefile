@@ -1,8 +1,46 @@
-$OpenBSD: patch-src_current_makefile,v 1.3 2017/08/20 10:26:27 jasper Exp $
+$OpenBSD: patch-src_current_makefile,v 1.4 2019/07/30 02:55:48 bcallah Exp $
 Index: src/current/makefile
 --- src/current/makefile.orig
 +++ src/current/makefile
-@@ -533,7 +533,7 @@ openbsd:	iozone_openbsd.o libbif.o fileop_openbsd.o pi
+@@ -227,24 +227,24 @@ linux-arm:	iozone_linux-arm.o  libbif.o libasync.o fil
+ #
+ 
+ android: iozone.c  makefile Android.mk Application.mk libbif.c
+-ifeq ($(NDK_ENV_VAR)$(NDKBUILD),)
+-	$(warning Your NDK environment is not set)
+-	$(warning Either add to your path ndk-bundle or define NDK environement variable)
+-	$(warning ndk-bundle is likely located within you android sdk e.g. <...>/Android/sdk/ndk-bundle )
+-	$(error e.g. export NDK='/home/me/Android/Sdk/ndk-bundle')
+-endif
++#ifeq ($(NDK_ENV_VAR)$(NDKBUILD),)
++#	$(warning Your NDK environment is not set)
++#	$(warning Either add to your path ndk-bundle or define NDK environement variable)
++#	$(warning ndk-bundle is likely located within you android sdk e.g. <...>/Android/sdk/ndk-bundle )
++#	$(error e.g. export NDK='/home/me/Android/Sdk/ndk-bundle')
++#endif
+ 	mkdir -p jni
+ 	ln -sf ../Android.mk ./jni/Android.mk
+ 	ln -sf ../Application.mk ./jni/Application.mk
+ 	ln -sf ../iozone.c ./jni/iozone.c
+ 	ln -sf ../libbif.c ./jni/libbif.c
+-ifeq ($(NDKBUILD),) 
+-ifneq ($(NDK_ENV_VAR),) 
+-	${NDK}/ndk-build 
+-endif 
+-else 
+-	${NDKBUILD} 
+-endif
++#ifeq ($(NDKBUILD),) 
++#ifneq ($(NDK_ENV_VAR),) 
++#	${NDK}/ndk-build 
++#endif 
++#else 
++#	${NDKBUILD} 
++#endif
+ 
+ #
+ # GNU 'C' compiler Linux build with threads, largefiles, async I/O 
+@@ -560,7 +560,7 @@ openbsd:	iozone_openbsd.o libbif.o fileop_openbsd.o pi
  #
  
  openbsd-threads:	iozone_openbsd-threads.o libbif.o
@@ -11,7 +49,7 @@ Index: src/current/makefile
  		libbif.o -o iozone
  
  #
-@@ -1427,10 +1427,10 @@ iozone_openbsd-threads.o:	iozone.c libbif.c
+@@ -1473,10 +1473,10 @@ iozone_openbsd-threads.o:	iozone.c libbif.c
  	@echo ""
  	@echo "Build iozone for OpenBSD with threads"
  	@echo ""
