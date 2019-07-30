@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/30 09:52:11 semarie Exp $
 
 COMMENT=		templating library able to output odt and pdf files
 
-MODPY_EGG_VERSION=	0.8.1
+MODPY_EGG_VERSION=	0.9.0
 DISTNAME=		relatorio-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		print textproc
 
-HOMEPAGE=		http://relatorio.tryton.org/
+HOMEPAGE=		https://relatorio.tryton.org/
 
 MAINTAINER =		Sebastien Marie <semarie@online.fr>
 
