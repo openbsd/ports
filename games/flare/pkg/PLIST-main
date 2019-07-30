@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2019/06/07 05:56:40 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2019/07/30 13:09:21 kirby Exp $
 @pkgpath games/flare
 @bin bin/flare
 @man man/man6/flare.6
@@ -72,6 +72,7 @@ share/flare/mods/default/languages/data.fr.po
 share/flare/mods/default/languages/data.gd.po
 share/flare/mods/default/languages/data.gl.po
 share/flare/mods/default/languages/data.he.po
+share/flare/mods/default/languages/data.hu.po
 share/flare/mods/default/languages/data.it.po
 share/flare/mods/default/languages/data.ja.po
 share/flare/mods/default/languages/data.nb.po
@@ -98,6 +99,7 @@ share/flare/mods/default/languages/engine.fr.po
 share/flare/mods/default/languages/engine.gd.po
 share/flare/mods/default/languages/engine.gl.po
 share/flare/mods/default/languages/engine.he.po
+share/flare/mods/default/languages/engine.hu.po
 share/flare/mods/default/languages/engine.it.po
 share/flare/mods/default/languages/engine.ja.po
 share/flare/mods/default/languages/engine.nb.po

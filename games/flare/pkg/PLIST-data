@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-data,v 1.2 2019/06/07 05:56:40 kirby Exp $
+@comment $OpenBSD: PLIST-data,v 1.3 2019/07/30 13:09:21 kirby Exp $
 @conflict flare-<0.19p3
 share/flare/mods/
 share/flare/mods/alpha_demo/
@@ -532,6 +532,7 @@ share/flare/mods/empyrean_campaign/languages/data.fr.po
 share/flare/mods/empyrean_campaign/languages/data.gd.po
 share/flare/mods/empyrean_campaign/languages/data.gl.po
 share/flare/mods/empyrean_campaign/languages/data.he.po
+share/flare/mods/empyrean_campaign/languages/data.hu.po
 share/flare/mods/empyrean_campaign/languages/data.it.po
 share/flare/mods/empyrean_campaign/languages/data.ja.po
 share/flare/mods/empyrean_campaign/languages/data.nb.po
@@ -1570,6 +1571,7 @@ share/flare/mods/fantasycore/languages/data.fr.po
 share/flare/mods/fantasycore/languages/data.gd.po
 share/flare/mods/fantasycore/languages/data.gl.po
 share/flare/mods/fantasycore/languages/data.he.po
+share/flare/mods/fantasycore/languages/data.hu.po
 share/flare/mods/fantasycore/languages/data.it.po
 share/flare/mods/fantasycore/languages/data.ja.po
 share/flare/mods/fantasycore/languages/data.nb.po
