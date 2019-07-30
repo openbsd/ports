@@ -1,0 +1,16 @@
+$OpenBSD: patch-zathura-pdf-mupdf_search_c,v 1.1 2019/07/30 13:41:37 sthen Exp $
+
+mupdf 1.16.0 api change
+
+Index: zathura-pdf-mupdf/search.c
+--- zathura-pdf-mupdf/search.c.orig
++++ zathura-pdf-mupdf/search.c
+@@ -39,7 +39,7 @@ pdf_page_search_text(zathura_page_t* page, void* data,
+     mupdf_page_extract_text(mupdf_document, mupdf_page);
+   }
+ 
+-  fz_quad* hit_bbox = fz_malloc_array(mupdf_page->ctx, N_SEARCH_RESULTS, sizeof(fz_quad));
++  fz_quad* hit_bbox = fz_malloc_array(mupdf_page->ctx, N_SEARCH_RESULTS, fz_quad);
+   int num_results = fz_search_stext_page(mupdf_page->ctx, mupdf_page->text,
+       text, hit_bbox, N_SEARCH_RESULTS);
+ 
