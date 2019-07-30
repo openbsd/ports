@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2019/07/12 20:47:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2019/07/30 15:17:47 juanfra Exp $
 
 COMMENT =		optimising static compiler for Python and Cython
 
-MODPY_EGG_VERSION =	0.29.12
+MODPY_EGG_VERSION =	0.29.13
 DISTNAME =		Cython-${MODPY_EGG_VERSION}
 PKGNAME =		py-cython-${MODPY_EGG_VERSION}
 CATEGORIES =		lang
