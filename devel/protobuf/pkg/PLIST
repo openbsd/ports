@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/07/10 10:47:42 tb Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/07/31 20:58:10 sthen Exp $
 @bin bin/protoc
 include/google/
 include/google/protobuf/
@@ -48,6 +48,7 @@ include/google/protobuf/dynamic_message.h
 include/google/protobuf/empty.pb.h
 include/google/protobuf/empty.proto
 include/google/protobuf/extension_set.h
+include/google/protobuf/extension_set_inl.h
 include/google/protobuf/field_mask.pb.h
 include/google/protobuf/field_mask.proto
 include/google/protobuf/generated_enum_reflection.h
@@ -78,6 +79,10 @@ include/google/protobuf/message.h
 include/google/protobuf/message_lite.h
 include/google/protobuf/metadata.h
 include/google/protobuf/metadata_lite.h
+include/google/protobuf/parse_context.h
+include/google/protobuf/port.h
+include/google/protobuf/port_def.inc
+include/google/protobuf/port_undef.inc
 include/google/protobuf/reflection.h
 include/google/protobuf/reflection_ops.h
 include/google/protobuf/repeated_field.h
@@ -95,14 +100,15 @@ include/google/protobuf/stubs/fastmem.h
 include/google/protobuf/stubs/hash.h
 include/google/protobuf/stubs/logging.h
 include/google/protobuf/stubs/macros.h
+include/google/protobuf/stubs/map_util.h
 include/google/protobuf/stubs/mutex.h
 include/google/protobuf/stubs/once.h
 include/google/protobuf/stubs/platform_macros.h
 include/google/protobuf/stubs/port.h
-include/google/protobuf/stubs/singleton.h
 include/google/protobuf/stubs/status.h
 include/google/protobuf/stubs/stl_util.h
 include/google/protobuf/stubs/stringpiece.h
+include/google/protobuf/stubs/strutil.h
 include/google/protobuf/stubs/template_util.h
 include/google/protobuf/text_format.h
 include/google/protobuf/timestamp.pb.h
@@ -121,7 +127,6 @@ include/google/protobuf/util/type_resolver.h
 include/google/protobuf/util/type_resolver_util.h
 include/google/protobuf/wire_format.h
 include/google/protobuf/wire_format_lite.h
-include/google/protobuf/wire_format_lite_inl.h
 include/google/protobuf/wrappers.pb.h
 include/google/protobuf/wrappers.proto
 lib/libprotobuf-lite.a

@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/07/31 20:58:10 sthen Exp $
 
 COMMENT =		c++ protocol buffers
 
-V =			3.6.1
+V =			3.9.0
 DISTNAME =		protobuf-cpp-$V
 PKGNAME =		protobuf-$V
 
 WRKDIST =		${WRKDIR}/protobuf-${V}
 
-SHARED_LIBS +=		protobuf	3.0   # 11.0
-SHARED_LIBS +=		protoc		3.0   # 11.0
-SHARED_LIBS +=		protobuf-lite	3.0   # 11.0
+SHARED_LIBS +=		protobuf	4.0   # 20.0
+SHARED_LIBS +=		protoc		4.0   # 20.0
+SHARED_LIBS +=		protobuf-lite	4.0   # 20.0
 
 CATEGORIES =		devel
 
@@ -31,6 +31,13 @@ SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-zlib
+
+.if ${MACHINE_ARCH} == aarch64
+# XXX restrict to -O1 or less to avoid runtime crashes in protoc
+# e.g. as seen while building dnsdist and mosh.
+# https://marc.info/?l=openbsd-ports&m=156363469501634&w=2
+CFLAGS := ${CFLAGS:S/-O2/-O1/}
+.endif
 
 .include <bsd.port.mk>
 

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_Makefile_in,v 1.5 2018/08/09 14:50:10 tb Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.6 2019/07/31 20:58:10 sthen Exp $
 
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -475,10 +475,7 @@ protobuf_lazy_descriptor_test_OBJECTS =  \
+@@ -483,10 +483,7 @@ protobuf_lazy_descriptor_test_OBJECTS =  \
  	$(am_protobuf_lazy_descriptor_test_OBJECTS) \
  	$(nodist_protobuf_lazy_descriptor_test_OBJECTS)
  protobuf_lazy_descriptor_test_DEPENDENCIES = $(am__DEPENDENCIES_1) \
@@ -15,7 +15,7 @@ Index: src/Makefile.in
  protobuf_lazy_descriptor_test_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
  	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
  	$(protobuf_lazy_descriptor_test_CXXFLAGS) $(CXXFLAGS) \
-@@ -498,9 +495,7 @@ protobuf_lite_arena_test_OBJECTS =  \
+@@ -506,9 +503,7 @@ protobuf_lite_arena_test_OBJECTS =  \
  	$(am_protobuf_lite_arena_test_OBJECTS) \
  	$(nodist_protobuf_lite_arena_test_OBJECTS)
  protobuf_lite_arena_test_DEPENDENCIES = $(am__DEPENDENCIES_1) \
@@ -26,7 +26,7 @@ Index: src/Makefile.in
  protobuf_lite_arena_test_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
  	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
  	$(protobuf_lite_arena_test_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) \
-@@ -521,9 +516,7 @@ nodist_protobuf_lite_test_OBJECTS = $(am__objects_10)
+@@ -529,9 +524,7 @@ nodist_protobuf_lite_test_OBJECTS = $(am__objects_10)
  protobuf_lite_test_OBJECTS = $(am_protobuf_lite_test_OBJECTS) \
  	$(nodist_protobuf_lite_test_OBJECTS)
  protobuf_lite_test_DEPENDENCIES = $(am__DEPENDENCIES_1) \
@@ -37,7 +37,7 @@ Index: src/Makefile.in
  protobuf_lite_test_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
  	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
  	$(protobuf_lite_test_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) \
-@@ -660,9 +653,7 @@ nodist_protobuf_test_OBJECTS = $(am__objects_13)
+@@ -670,9 +663,7 @@ nodist_protobuf_test_OBJECTS = $(am__objects_13)
  protobuf_test_OBJECTS = $(am_protobuf_test_OBJECTS) \
  	$(nodist_protobuf_test_OBJECTS)
  protobuf_test_DEPENDENCIES = $(am__DEPENDENCIES_1) libprotobuf.la \
@@ -48,7 +48,7 @@ Index: src/Makefile.in
  protobuf_test_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
  	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
  	$(protobuf_test_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
-@@ -676,7 +667,7 @@ am_test_plugin_OBJECTS = google/protobuf/compiler/test
+@@ -686,7 +677,7 @@ am_test_plugin_OBJECTS = google/protobuf/compiler/test
  	google/protobuf/compiler/test_plugin-test_plugin.$(OBJEXT)
  test_plugin_OBJECTS = $(am_test_plugin_OBJECTS)
  test_plugin_DEPENDENCIES = $(am__DEPENDENCIES_1) libprotobuf.la \
@@ -57,7 +57,7 @@ Index: src/Makefile.in
  am__zcgunzip_SOURCES_DIST = google/protobuf/testing/zcgunzip.cc
  @HAVE_ZLIB_TRUE@am_zcgunzip_OBJECTS =  \
  @HAVE_ZLIB_TRUE@	google/protobuf/testing/zcgunzip.$(OBJEXT)
-@@ -701,7 +692,7 @@ AM_V_at = $(am__v_at_@AM_V@)
+@@ -711,7 +702,7 @@ AM_V_at = $(am__v_at_@AM_V@)
  am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
  am__v_at_0 = @
  am__v_at_1 = 
@@ -66,7 +66,7 @@ Index: src/Makefile.in
  depcomp = $(SHELL) $(top_srcdir)/depcomp
  am__depfiles_maybe = depfiles
  am__mv = mv -f
-@@ -1850,12 +1841,9 @@ GOOGLEMOCK_BUILD_DIR = ../third_party/googletest/googl
+@@ -1882,12 +1873,9 @@ GOOGLEMOCK_BUILD_DIR = ../third_party/googletest/googl
  GOOGLETEST_SRC_DIR = $(srcdir)/../third_party/googletest/googletest
  GOOGLEMOCK_SRC_DIR = $(srcdir)/../third_party/googletest/googlemock
  protobuf_test_LDADD = $(PTHREAD_LIBS) libprotobuf.la libprotoc.la \
@@ -81,7 +81,7 @@ Index: src/Makefile.in
  
  # Disable optimization for tests unless the user explicitly asked for it,
  # since test_util.cc takes forever to compile with optimization (with GCC).
-@@ -1944,12 +1932,9 @@ nodist_protobuf_test_SOURCES = $(protoc_outputs)
+@@ -1977,12 +1965,9 @@ nodist_protobuf_test_SOURCES = $(protoc_outputs)
  # Run cpp_unittest again with PROTOBUF_TEST_NO_DESCRIPTORS defined.
  protobuf_lazy_descriptor_test_LDADD = $(PTHREAD_LIBS) libprotobuf.la \
                        libprotoc.la                                   \
@@ -96,7 +96,7 @@ Index: src/Makefile.in
                                           -DPROTOBUF_TEST_NO_DESCRIPTORS
  
  protobuf_lazy_descriptor_test_CXXFLAGS = $(NO_OPT_CXXFLAGS)
-@@ -1972,12 +1957,9 @@ COMMON_LITE_TEST_SOURCES = \
+@@ -2005,12 +1990,9 @@ COMMON_LITE_TEST_SOURCES = \
  # full runtime and we want to make sure this test builds without full
  # runtime.
  protobuf_lite_test_LDADD = $(PTHREAD_LIBS) libprotobuf-lite.la     \
@@ -111,7 +111,7 @@ Index: src/Makefile.in
  
  protobuf_lite_test_CXXFLAGS = $(NO_OPT_CXXFLAGS)
  protobuf_lite_test_SOURCES = \
-@@ -1990,12 +1972,9 @@ nodist_protobuf_lite_test_SOURCES = $(protoc_lite_outp
+@@ -2023,12 +2005,9 @@ nodist_protobuf_lite_test_SOURCES = $(protoc_lite_outp
  # gtest when building the test internally our memory sanitizer doesn't detect
  # memory leaks (don't know why).
  protobuf_lite_arena_test_LDADD = $(PTHREAD_LIBS) libprotobuf-lite.la \
@@ -126,7 +126,7 @@ Index: src/Makefile.in
  
  protobuf_lite_arena_test_CXXFLAGS = $(NO_OPT_CXXFLAGS)
  protobuf_lite_arena_test_SOURCES = \
-@@ -2006,9 +1985,9 @@ nodist_protobuf_lite_arena_test_SOURCES = $(protoc_lit
+@@ -2039,9 +2018,9 @@ nodist_protobuf_lite_arena_test_SOURCES = $(protoc_lit
  
  # Test plugin binary.
  test_plugin_LDADD = $(PTHREAD_LIBS) libprotobuf.la libprotoc.la \
