@@ -1,0 +1,18 @@
+$OpenBSD: README,v 1.1 2019/07/31 07:55:32 kirby Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Getting the games
+=================
+
+GemRB requires the original game files. These can be from original CDs or
+GOG.com.
+
+Extracting
+==========
+
+innoextract from packages can be used to extract the GOG.com version.
+
+$ innoextract -g -m setup_baldurs_gate_2.0.0.20.exe

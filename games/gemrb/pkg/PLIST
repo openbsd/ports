@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/29 22:16:13 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/07/31 07:55:32 kirby Exp $
 bin/extend2da.py
 @bin bin/gemrb
 lib/gemrb/
@@ -138,6 +138,7 @@ share/doc/gemrb/en/Tables/wstwohnd.txt
 share/doc/gemrb/en/Tables/wstwowpn.txt
 share/doc/gemrb/en/default_ini.txt
 share/doc/gemrb/en/gemrb_ini.txt
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/gemrb/
 @sample ${SYSCONFDIR}/gemrb/
 share/examples/gemrb/GemRB.cfg.noinstall.sample

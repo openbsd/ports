@@ -1,0 +1,26 @@
+$OpenBSD: patch-gemrb_core_System_VFS_cpp,v 1.1 2019/07/31 07:55:32 kirby Exp $
+
+Fixes [Core/FATAL]: Unable to create cache directory '/tmp/cache'
+Upstream commit 3225a40f0f0c236934feba773d0be0cc2a14c64b
+
+Index: gemrb/core/System/VFS.cpp
+--- gemrb/core/System/VFS.cpp.orig
++++ gemrb/core/System/VFS.cpp
+@@ -413,7 +413,7 @@ bool MakeDirectories(const char* path)
+ 	assert(strnlen(path, _MAX_PATH/2) < _MAX_PATH/2);
+ 	strcpy(Tokenized, path);
+ 
+-	char* Token = strtok(Tokenized, &PathDelimiter);
++	char* Token = strtok(Tokenized, SPathDelimiter);
+ 	while(Token != NULL) {
+ 		if(TempFilePath[0] == 0) {
+ 			if(path[0] == PathDelimiter) {
+@@ -428,7 +428,7 @@ bool MakeDirectories(const char* path)
+ 		if(!MakeDirectory(TempFilePath))
+ 			return false;
+ 
+-		Token = strtok(NULL, &PathDelimiter);
++		Token = strtok(NULL, SPathDelimiter);
+ 	}
+ 	return true;
+ }
