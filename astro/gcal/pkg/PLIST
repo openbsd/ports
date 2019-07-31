@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/06/01 20:48:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/07/31 15:13:49 bcallah Exp $
 @bin bin/gcal
 @bin bin/gcal2txt
 @bin bin/tcal
@@ -108,3 +108,4 @@ share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/gcal.mo
 share/locale/sv/LC_MESSAGES/gcal.mo
 share/locale/tr/LC_MESSAGES/gcal.mo
+share/locale/zh_CN/LC_MESSAGES/gcal.mo

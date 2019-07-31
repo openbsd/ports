@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/17 14:49:19 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/07/31 15:13:49 bcallah Exp $
 
 COMMENT =		calculate and print calendars
 
-DISTNAME =		gcal-3.6.3
-REVISION =		4
+DISTNAME =		gcal-4.1
 CATEGORIES =		astro
 
 HOMEPAGE =		https://www.gnu.org/software/gcal/
+MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE = Yes
@@ -14,14 +14,16 @@ PERMIT_PACKAGE = Yes
 MASTER_SITES =		${MASTER_SITE_GNU:=gcal/}
 
 BUILD_DEPENDS =		devel/gettext,-tools
-LIB_DEPENDS =		devel/gettext,-runtime
+LIB_DEPENDS =		converters/libunistring \
+			devel/gettext,-runtime \
 
-WANTLIB =		c iconv intl m curses
+WANTLIB += c curses iconv intl m unistring
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--enable-easc
+CONFIGURE_ARGS =	--enable-easc \
+			--enable-libunistring
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -lunistring"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gcal
