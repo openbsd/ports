@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/07/01 09:01:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.15 2019/07/31 17:30:30 naddy Exp $
 @bin bin/french-conjugator
 @bin bin/french-deconjugator
 @bin bin/verbiste-gtk
@@ -34,6 +34,7 @@ share/locale/da/LC_MESSAGES/verbiste.mo
 share/locale/de/LC_MESSAGES/verbiste.mo
 share/locale/el/LC_MESSAGES/verbiste.mo
 share/locale/fr/LC_MESSAGES/verbiste.mo
+share/locale/it/LC_MESSAGES/verbiste.mo
 share/texmf-local/
 share/texmf-local/tex/
 share/texmf-local/tex/latex/
