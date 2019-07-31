@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2015/03/20 22:47:41 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2019/07/31 15:44:31 kirby Exp $
 @conflict gpsd-python-<=2.38p3
 @pkgpath misc/gpsd,-python
 @newuser _gpsd:551:dialer:daemon:GPS server:/nonexistent:/sbin/nologin
 @bin bin/cgps
+bin/gegps
+@bin bin/gps2udp
 bin/gpscat
 @bin bin/gpsctl
 @bin bin/gpsdecode
@@ -10,39 +12,42 @@ bin/gpsfake
 @bin bin/gpsmon
 @bin bin/gpspipe
 bin/gpsprof
+@bin bin/gpsrinex
 @bin bin/gpxlogger
 @bin bin/lcdgps
+bin/ubxtool
+bin/zerk
 include/gps.h
-include/gpsd.h
 include/gpsd_config.h
 include/libgpsmm.h
-lib/libgps.a
-lib/libgps.la
 @lib lib/libgps.so.${LIBgps_VERSION}
-lib/libgpsd.a
-lib/libgpsd.la
-@lib lib/libgpsd.so.${LIBgpsd_VERSION}
 lib/pkgconfig/libgps.pc
-lib/pkgconfig/libgpsd.pc
 lib/python${MODPY_VERSION}/site-packages/gps/
-lib/python${MODPY_VERSION}/site-packages/gps-2.95-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/gps-${VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/gps/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gps/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/gps/__init__.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gps/client.py
 lib/python${MODPY_VERSION}/site-packages/gps/client.pyc
+lib/python${MODPY_VERSION}/site-packages/gps/client.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gps/clienthelpers.so
 lib/python${MODPY_VERSION}/site-packages/gps/fake.py
 lib/python${MODPY_VERSION}/site-packages/gps/fake.pyc
+lib/python${MODPY_VERSION}/site-packages/gps/fake.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gps/gps.py
 lib/python${MODPY_VERSION}/site-packages/gps/gps.pyc
+lib/python${MODPY_VERSION}/site-packages/gps/gps.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gps/misc.py
 lib/python${MODPY_VERSION}/site-packages/gps/misc.pyc
+lib/python${MODPY_VERSION}/site-packages/gps/misc.${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gps/packet.so
-lib/python${MODPY_VERSION}/site-packages/gpscap.py
-lib/python${MODPY_VERSION}/site-packages/gpscap.pyc
-lib/python${MODPY_VERSION}/site-packages/gpscap.pyo
+lib/python${MODPY_VERSION}/site-packages/gps/watch_options.py
+lib/python${MODPY_VERSION}/site-packages/gps/watch_options.pyc
+lib/python${MODPY_VERSION}/site-packages/gps/watch_options.${MODPY_PYOEXTENSION}
 @man man/man1/cgps.1
+@man man/man1/gegps.1
 @man man/man1/gps.1
+@man man/man1/gps2udp.1
 @man man/man1/gpscat.1
 @man man/man1/gpsctl.1
 @man man/man1/gpsdecode.1
@@ -50,11 +55,18 @@ lib/python${MODPY_VERSION}/site-packages/gpscap.pyo
 @man man/man1/gpsmon.1
 @man man/man1/gpspipe.1
 @man man/man1/gpsprof.1
+@man man/man1/gpsrinex.1
+@man man/man1/gpxlogger.1
 @man man/man1/lcdgps.1
+@man man/man1/ubxtool.1
+@man man/man1/zerk.1
+@man man/man3/libQgpsmm.3
 @man man/man3/libgps.3
-@man man/man3/libgpsd.3
 @man man/man3/libgpsmm.3
-@man man/man5/rtcm-104.5
+@man man/man5/gpsd_json.5
 @man man/man5/srec.5
 @man man/man8/gpsd.8
+@man man/man8/gpsdctl.8
+@man man/man8/gpsinit.8
 @bin sbin/gpsd
+@bin sbin/gpsdctl

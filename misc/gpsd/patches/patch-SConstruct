@@ -1,0 +1,45 @@
+$OpenBSD: patch-SConstruct,v 1.1 2019/07/31 15:44:30 kirby Exp $
+Index: SConstruct
+--- SConstruct.orig
++++ SConstruct
+@@ -72,8 +72,7 @@ gpsd_version = "3.19"
+ libgps_version_current = 25
+ libgps_version_revision = 0
+ libgps_version_age = 0
+-libgps_version = "%d.%d.%d" % (libgps_version_current, libgps_version_age,
+-                               libgps_version_revision)
++libgps_version = "%s" % ('${LIBgps_VERSION}')
+ #
+ # Release identification ends here
+ 
+@@ -546,7 +545,7 @@ def CheckPKG(context, name):
+ 
+ 
+ # Stylesheet URLs for making HTML and man pages from DocBook XML.
+-docbook_url_stem = 'http://docbook.sourceforge.net/release/xsl/current/'
++docbook_url_stem = '${LOCALBASE}/share/xsl/docbook/'
+ docbook_man_uri = docbook_url_stem + 'manpages/docbook.xsl'
+ docbook_html_uri = docbook_url_stem + 'html/docbook.xsl'
+ 
+@@ -1090,6 +1089,10 @@ else:
+     # if not, force qt to off
+     if config.env["qt"]:
+         qt_net_name = 'Qt%sNetwork' % config.env["qt_versioned"]
++        if env["qt_versioned"] == "5":
++                qt_net_name = 'Qt5Network'
++        elif env["qt_versioned"] == "4":
++                qt_net_name = 'QtNetwork'
+         qt_network = config.CheckPKG(qt_net_name)
+         if not qt_network:
+             config.env["qt"] = False
+@@ -1685,9 +1688,7 @@ else:
+             python_objects[ext].append(
+                 python_env.NoCache(
+                     python_env.SharedObject(
+-                        src.split(".")[0] + '-py_' +
+-                        '_'.join(['%s' % (x) for x in sys.version_info]) +
+-                        python_config['SO'], src
++                        src.split(".")[0] + python_config['SO'], src
+                     )
+                 )
+             )
