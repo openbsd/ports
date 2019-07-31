@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:46:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/07/31 15:38:27 kirby Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
@@ -13,7 +13,7 @@ HOMEPAGE=		http://geoclue.freedesktop.org/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gps iconv intl lzma m pcre pthread soup-2.4
+WANTLIB += gobject-2.0 iconv intl lzma m pcre pthread soup-2.4
 WANTLIB += soup-gnome-2.4 sqlite3 xml2 z
 WANTLIB += idn2 psl unistring
 
@@ -23,14 +23,14 @@ MODULES=		devel/dconf
 
 BUILD_DEPENDS =		textproc/libxslt
 LIB_DEPENDS =		devel/libsoup \
-			misc/gpsd \
 			x11/dbus-glib
 
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-gtk \
-			--disable-connman
+			--disable-connman \
+			--disable-gpsd
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"
 
