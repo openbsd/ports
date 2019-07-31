@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_CDeviceGPSD_cpp,v 1.1 2019/07/31 12:37:53 kirby Exp $
+
+Fix build with newer gpsd API. 
+
+Index: src/CDeviceGPSD.cpp
+--- src/CDeviceGPSD.cpp.orig
++++ src/CDeviceGPSD.cpp
+@@ -212,7 +212,9 @@ void CGPSDThread::run()
+             }                    // if
+             else if( FD_ISSET( gpsdata->gps_fd, &fds ) )
+             {
+-#if GPSD_API_MAJOR_VERSION >= 5
++#if GPSD_API_MAJOR_VERSION >= 7
++                gps_read( gpsdata, NULL, 0 );
++#elif GPSD_API_MAJOR_VERSION >= 5
+                 gps_read( gpsdata );
+ #else
+                 gps_poll( gpsdata );
