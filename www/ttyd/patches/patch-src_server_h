@@ -1,4 +1,9 @@
-$OpenBSD: patch-src_server_h,v 1.1 2019/07/30 15:05:39 sthen Exp $
+$OpenBSD: patch-src_server_h,v 1.2 2019/07/31 11:24:36 sthen Exp $
+
+From 6facf525c1bb8650628f89e348d800d9c758e9ea Mon Sep 17 00:00:00 2001
+From: Stuart Henderson <sthen@users.noreply.github.com>
+Date: Wed, 31 Jul 2019 09:09:01 +0100
+Subject: [PATCH] include pthread.h for pthread_mutex_t (#206)
 
 Index: src/server.h
 --- src/server.h.orig

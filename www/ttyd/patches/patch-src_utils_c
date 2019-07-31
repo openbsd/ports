@@ -1,4 +1,10 @@
-$OpenBSD: patch-src_utils_c,v 1.1 2019/07/30 15:05:39 sthen Exp $
+$OpenBSD: patch-src_utils_c,v 1.2 2019/07/31 11:24:36 sthen Exp $
+
+From 921ddda6581e0dfd9a51d3ec598aea04df19218d Mon Sep 17 00:00:00 2001
+From: Stuart Henderson <sthen@users.noreply.github.com>
+Date: Wed, 31 Jul 2019 09:09:13 +0100
+Subject: [PATCH] use errno.h not sys/errno.h in utils.c as in other files
+ (#207)
 
 Index: src/utils.c
 --- src/utils.c.orig
