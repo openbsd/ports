@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/07/31 16:36:47 cwen Exp $
 
 COMMENT =		asteroid-like game
 
 DISTNAME =		Maelstrom-3.0.6
 PKGNAME = 		${DISTNAME:L}
-REVISION =		3
+REVISION =		4
 CATEGORIES =		games x11
 HOMEPAGE =		http://www.devolution.com/~slouken/Maelstrom/
 MASTER_SITES =		${HOMEPAGE}/src/

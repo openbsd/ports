@@ -1,0 +1,18 @@
+$OpenBSD: patch-Maelstrom-netd_c,v 1.1 2019/07/31 16:36:47 cwen Exp $
+
+ports-gcc: fix warnings of implicit built-in functions
+
+Index: Maelstrom-netd.c
+--- Maelstrom-netd.c.orig
++++ Maelstrom-netd.c
+@@ -8,8 +8,10 @@
+ #include <sys/types.h>
+ #include <sys/time.h>
+ #include <sys/socket.h>
++#include <arpa/inet.h>
+ #include <netinet/in.h>
+ #include <netdb.h>
++#include <stdlib.h>
+ #include <unistd.h>
+ 
+ /* We wait in a loop for players to connect and tell us how many people

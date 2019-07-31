@@ -1,0 +1,35 @@
+$OpenBSD: patch-buttonlist_h,v 1.1 2019/07/31 16:36:47 cwen Exp $
+
+ports-gcc: fix redundant use of struct:
+error: using typedef-name 'ButtonList::button' after 'struct'
+
+Index: buttonlist.h
+--- buttonlist.h.orig
++++ buttonlist.h
+@@ -16,7 +16,7 @@ class ButtonList { (public)
+ 
+ 	void Add_Button(Uint16 x, Uint16 y, Uint16 width, Uint16 height, 
+ 						void (*callback)(void)) {
+-		struct button *belem;
++		button *belem;
+ 		
+ 		for ( belem=&button_list; belem->next; belem=belem->next );
+ 		belem->next = new button;
+@@ -30,7 +30,7 @@ class ButtonList { (public)
+ 	}
+ 
+ 	void Activate_Button(Uint16 x, Uint16 y) {
+-		struct button *belem;
++		button *belem;
+ 
+ 		for ( belem=button_list.next; belem; belem=belem->next ) {
+ 			if ( (x >= belem->x1) && (x <= belem->x2) &&
+@@ -42,7 +42,7 @@ class ButtonList { (public)
+ 	}
+ 
+ 	void Delete_Buttons(void) {
+-		struct button *belem, *btemp;
++		button *belem, *btemp;
+ 
+ 		for ( belem=button_list.next; belem; ) {
+ 			btemp = belem;
