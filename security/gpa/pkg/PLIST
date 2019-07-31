@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/06/27 21:04:03 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/07/31 12:47:11 sthen Exp $
 @bin bin/gpa
 @man man/man1/gpa.1
 share/applications/gpa.desktop
@@ -17,6 +17,7 @@ share/locale/pt_BR/LC_MESSAGES/gpa.mo
 share/locale/ru/LC_MESSAGES/gpa.mo
 share/locale/sv/LC_MESSAGES/gpa.mo
 share/locale/tr/LC_MESSAGES/gpa.mo
+share/locale/zh_CN/LC_MESSAGES/gpa.mo
 share/locale/zh_TW/LC_MESSAGES/gpa.mo
 share/pixmaps/
 share/pixmaps/gpa.png
