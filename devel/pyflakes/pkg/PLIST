@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/10/02 10:26:33 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/07/31 13:14:28 kmos Exp $
 bin/pyflakes${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/pyflakes/
 lib/python${MODPY_VERSION}/site-packages/pyflakes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -32,17 +32,27 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}harness.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_api.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_builtin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_checker.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_code_segment.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_dict.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_doctests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_imports.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_is_literal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_other.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_return_with_arguments_inside_generator.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_type_annotations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/${MODPY_PYCACHE}test_undefined_names.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/harness.py
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/test_api.py
+lib/python${MODPY_VERSION}/site-packages/pyflakes/test/test_builtin.py
+lib/python${MODPY_VERSION}/site-packages/pyflakes/test/test_checker.py
+lib/python${MODPY_VERSION}/site-packages/pyflakes/test/test_code_segment.py
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/test_dict.py
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/test_doctests.py
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/test_imports.py
+lib/python${MODPY_VERSION}/site-packages/pyflakes/test/test_is_literal.py
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/test_other.py
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/test_return_with_arguments_inside_generator.py
+lib/python${MODPY_VERSION}/site-packages/pyflakes/test/test_type_annotations.py
 lib/python${MODPY_VERSION}/site-packages/pyflakes/test/test_undefined_names.py
