@@ -1,0 +1,24 @@
+$OpenBSD: patch-pango_pango-bidi-type_c,v 1.1 2019/08/01 07:05:17 ajacoutot Exp $
+
+From 490f8979a260c16b1df055eab386345da18a2d54 Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Wed, 10 Jul 2019 20:26:23 -0400
+Subject: [PATCH] bidi: Be safer against bad input
+
+Index: pango/pango-bidi-type.c
+--- pango/pango-bidi-type.c.orig
++++ pango/pango-bidi-type.c
+@@ -179,8 +179,11 @@ pango_log2vis_get_embedding_levels (const gchar    *te
+   for (i = 0, p = text; p < text + length; p = g_utf8_next_char(p), i++)
+     {
+       gunichar ch = g_utf8_get_char (p);
+-      FriBidiCharType char_type;
+-      char_type = fribidi_get_bidi_type (ch);
++      FriBidiCharType char_type = fribidi_get_bidi_type (ch);
++
++      if (i == n_chars)
++        break;
++
+       bidi_types[i] = char_type;
+       ored_types |= char_type;
+       if (FRIBIDI_IS_STRONG (char_type))
