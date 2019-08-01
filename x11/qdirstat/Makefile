@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:51:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/08/01 19:40:31 rsadowski Exp $
 
 COMMENT =	Qt-based directory statistics
 
 GH_ACCOUNT =	shundhammer
 GH_PROJECT =	qdirstat
-GH_TAGNAME =	1.5
-REVISION =	0
+GH_TAGNAME =	1.6
 
 CATEGORIES =	x11
 

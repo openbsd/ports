@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_src_pro,v 1.2 2018/12/07 07:49:29 rsadowski Exp $
+$OpenBSD: patch-src_src_pro,v 1.3 2019/08/01 19:40:31 rsadowski Exp $
 
 Index: src/src.pro
 --- src/src.pro.orig
 +++ src/src.pro
-@@ -174,7 +174,7 @@ desktop.files   = *.desktop
- desktop.path    = $$INSTALL_PREFIX/share/applications
+@@ -215,7 +215,7 @@ desktop.files	= *.desktop
+ desktop.path	= $$INSTALL_PREFIX/share/applications
  
- icons.files     = icons/qdirstat.svg
--icons.path      = $$INSTALL_PREFIX/share/icons/hicolor/scalable/apps
-+icons.path      = $$INSTALL_PREFIX/share/icons/hicolor/32x32/apps
+ icons.files	= icons/qdirstat.svg
+-icons.path	= $$INSTALL_PREFIX/share/icons/hicolor/scalable/apps
++icons.path	= $$INSTALL_PREFIX/share/icons/hicolor/32x32/apps
  
  
- mac:ICON        = icons/qdirstat.icns
+ mac:ICON	= icons/qdirstat.icns
