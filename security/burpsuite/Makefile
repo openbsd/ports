@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/19 02:17:21 lteo Exp $
+# $OpenBSD: Makefile,v 1.31 2019/08/01 02:32:23 lteo Exp $
 
 COMMENT =		tool for testing security of web applications
 
-VERSION =		2.1.01
+VERSION =		2.1.02
 DISTNAME =		burpsuite_free_v${VERSION}
 PKGNAME =		burpsuite-${VERSION}
 
@@ -12,8 +12,8 @@ CATEGORIES =		security
 
 HOMEPAGE =		https://portswigger.net/burp/
 
-PERMIT_PACKAGE =	https://portswigger.net/burp/eula-free.html
-PERMIT_DISTFILES =	https://portswigger.net/burp/eula-free.html
+PERMIT_PACKAGE =	https://portswigger.net/burp/eula/community
+PERMIT_DISTFILES =	https://portswigger.net/burp/eula/community
 
 MASTER_SITES =		https://portswigger.net/Burp/Releases/
 
