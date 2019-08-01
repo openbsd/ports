@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/19 00:04:58 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/08/01 01:25:34 danj Exp $
 
 COMMENT =	open source reimplementation of Syndicate game
 DISTNAME =	freesynd-0.7.5
 CATEGORIES = 	games x11
+REVISION =	0
 
-HOMEPAGE =	https:/freesynd.sourceforge.io/
+HOMEPAGE =	https://freesynd.sourceforge.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
