@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2019/07/30 13:41:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.25 2019/08/01 12:16:50 sthen Exp $
 bin/mupdf
 %%js%%
 @bin bin/mupdf-x11
@@ -104,20 +104,8 @@ share/doc/mupdf/style.css
 share/doc/mupdf/template.html
 share/doc/mupdf/thirdparty.html
 share/examples/mupdf/
-share/examples/mupdf/bbox-device.js
-share/examples/mupdf/create-thumbnail.js
-share/examples/mupdf/draw-device.js
-share/examples/mupdf/draw-document.js
 share/examples/mupdf/example.c
-share/examples/mupdf/fix-s22pdf.js
-share/examples/mupdf/jpx-to-pdf.js
 share/examples/mupdf/multi-threaded.c
-share/examples/mupdf/pdf-create-lowlevel.js
-share/examples/mupdf/pdf-create.js
-share/examples/mupdf/pdf-dejpx.js
-share/examples/mupdf/pdf-merge.js
-share/examples/mupdf/pdf-portfolio.js
-share/examples/mupdf/trace-device.js
 share/pixmaps/
 share/pixmaps/mupdf.xpm
 @tag update-desktop-database
