@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.142 2019/07/10 22:27:31 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.143 2019/08/01 20:20:38 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -236,7 +236,7 @@ CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 # ldap
 COMMENT-ldap=		ldap protocol extensions for php
 LIB_DEPENDS-ldap=	databases/openldap
-WANTLIB-ldap=		crypto lber-2.4 ldap-2.4 pthread sasl2 ssl
+WANTLIB-ldap=		crypto lber ldap pthread sasl2 ssl
 .if ${BUILD_PACKAGES:M-ldap}
 CONFIGURE_ARGS+=	--with-ldap=shared,${LOCALBASE}
 .endif

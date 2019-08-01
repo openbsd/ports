@@ -1,9 +1,9 @@
-$OpenBSD: patch-php_ini-development,v 1.3 2019/05/04 08:00:59 sthen Exp $
+$OpenBSD: patch-php_ini-development,v 1.4 2019/08/01 20:20:39 sthen Exp $
 
 Index: php.ini-development
 --- php.ini-development.orig
 +++ php.ini-development
-@@ -725,11 +725,8 @@ default_charset = "UTF-8"
+@@ -726,11 +726,8 @@ default_charset = "UTF-8"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ; UNIX: "/path1:/path2"
@@ -16,7 +16,7 @@ Index: php.ini-development
  ; PHP's default setting for include_path is ".;/path/to/php/pear"
  ; http://php.net/include-path
  
-@@ -751,6 +748,7 @@ user_dir =
+@@ -752,6 +749,7 @@ user_dir =
  ;extension_dir = "./"
  ; On windows:
  ;extension_dir = "ext"
@@ -24,7 +24,7 @@ Index: php.ini-development
  
  ; Directory where the temporary files should be placed.
  ; Defaults to the system default (see sys_get_temp_dir)
-@@ -846,7 +844,7 @@ max_file_uploads = 20
+@@ -847,7 +845,7 @@ max_file_uploads = 20
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
  ; http://php.net/allow-url-fopen
@@ -33,7 +33,7 @@ Index: php.ini-development
  
  ; Whether to allow include/require to open URLs (like http:// or ftp://) as files.
  ; http://php.net/allow-url-include
-@@ -950,7 +948,7 @@ cli_server.color = On
+@@ -951,7 +949,7 @@ cli_server.color = On
  [Date]
  ; Defines the default timezone used by the date functions
  ; http://php.net/date.timezone
@@ -42,7 +42,7 @@ Index: php.ini-development
  
  ; http://php.net/date.default-latitude
  ;date.default_latitude = 31.7667
-@@ -1056,16 +1054,6 @@ pdo_mysql.default_socket=
+@@ -1057,16 +1055,6 @@ pdo_mysql.default_socket=
  ;phar.cache_list =
  
  [mail function]
