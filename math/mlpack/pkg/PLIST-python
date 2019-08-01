@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.3 2018/11/19 14:17:36 espie Exp $
+@comment $OpenBSD: PLIST-python,v 1.4 2019/08/01 11:44:35 espie Exp $
 @conflict mlpack-<3.0.4
 @pkgpath math/mlpack,-python${FLAVOR_EXT}
 include/mlpack/bindings/python/
@@ -8,7 +8,6 @@ include/mlpack/bindings/python/get_numpy_type.hpp
 include/mlpack/bindings/python/get_numpy_type_char.hpp
 include/mlpack/bindings/python/get_param.hpp
 include/mlpack/bindings/python/get_printable_param.hpp
-include/mlpack/bindings/python/get_python_type.hpp
 include/mlpack/bindings/python/import_decl.hpp
 include/mlpack/bindings/python/mlpack/
 include/mlpack/bindings/python/mlpack/arma_util.hpp
@@ -54,6 +53,7 @@ ${SITEDIR}/mlpack/hmm_loglik.so
 ${SITEDIR}/mlpack/hmm_train.so
 ${SITEDIR}/mlpack/hmm_viterbi.so
 ${SITEDIR}/mlpack/hoeffding_tree.so
+${SITEDIR}/mlpack/kde.so
 ${SITEDIR}/mlpack/kernel_pca.so
 ${SITEDIR}/mlpack/kfn.so
 ${SITEDIR}/mlpack/kmeans.so
@@ -61,6 +61,7 @@ ${SITEDIR}/mlpack/knn.so
 ${SITEDIR}/mlpack/krann.so
 ${SITEDIR}/mlpack/lars.so
 ${SITEDIR}/mlpack/linear_regression.so
+${SITEDIR}/mlpack/lmnn.so
 ${SITEDIR}/mlpack/local_coordinate_coding.so
 ${SITEDIR}/mlpack/logistic_regression.so
 ${SITEDIR}/mlpack/lsh.so

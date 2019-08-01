@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2018/11/19 14:17:36 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2019/08/01 11:44:35 espie Exp $
 @bin bin/mlpack_adaboost
 @bin bin/mlpack_approx_kfn
 @bin bin/mlpack_cf
@@ -16,6 +16,7 @@
 @bin bin/mlpack_hmm_train
 @bin bin/mlpack_hmm_viterbi
 @bin bin/mlpack_hoeffding_tree
+@bin bin/mlpack_kde
 @bin bin/mlpack_kernel_pca
 @bin bin/mlpack_kfn
 @bin bin/mlpack_kmeans
@@ -23,6 +24,7 @@
 @bin bin/mlpack_krann
 @bin bin/mlpack_lars
 @bin bin/mlpack_linear_regression
+@bin bin/mlpack_lmnn
 @bin bin/mlpack_local_coordinate_coding
 @bin bin/mlpack_logistic_regression
 @bin bin/mlpack_lsh
@@ -58,6 +60,8 @@ include/mlpack/bindings/cli/get_printable_param_name.hpp
 include/mlpack/bindings/cli/get_printable_param_name_impl.hpp
 include/mlpack/bindings/cli/get_printable_param_value.hpp
 include/mlpack/bindings/cli/get_printable_param_value_impl.hpp
+include/mlpack/bindings/cli/get_printable_type.hpp
+include/mlpack/bindings/cli/get_printable_type_impl.hpp
 include/mlpack/bindings/cli/get_raw_param.hpp
 include/mlpack/bindings/cli/map_parameter_name.hpp
 include/mlpack/bindings/cli/output_param.hpp
@@ -67,9 +71,35 @@ include/mlpack/bindings/cli/parse_command_line.hpp
 include/mlpack/bindings/cli/print_doc_functions.hpp
 include/mlpack/bindings/cli/print_doc_functions_impl.hpp
 include/mlpack/bindings/cli/print_help.hpp
+include/mlpack/bindings/cli/print_type_doc.hpp
+include/mlpack/bindings/cli/print_type_doc_impl.hpp
 include/mlpack/bindings/cli/set_param.hpp
 include/mlpack/bindings/cli/string_type_param.hpp
 include/mlpack/bindings/cli/string_type_param_impl.hpp
+include/mlpack/bindings/markdown/
+include/mlpack/bindings/markdown/binding_info.hpp
+include/mlpack/bindings/markdown/default_param.hpp
+include/mlpack/bindings/markdown/get_binding_name.hpp
+include/mlpack/bindings/markdown/get_param.hpp
+include/mlpack/bindings/markdown/get_printable_param.hpp
+include/mlpack/bindings/markdown/get_printable_param_name.hpp
+include/mlpack/bindings/markdown/get_printable_param_name_impl.hpp
+include/mlpack/bindings/markdown/get_printable_param_value.hpp
+include/mlpack/bindings/markdown/get_printable_param_value_impl.hpp
+include/mlpack/bindings/markdown/get_printable_type.hpp
+include/mlpack/bindings/markdown/is_serializable.hpp
+include/mlpack/bindings/markdown/md_option.hpp
+include/mlpack/bindings/markdown/print_doc_functions.hpp
+include/mlpack/bindings/markdown/print_doc_functions_impl.hpp
+include/mlpack/bindings/markdown/print_docs.hpp
+include/mlpack/bindings/markdown/print_type_doc.hpp
+include/mlpack/bindings/markdown/program_doc_wrapper.hpp
+include/mlpack/bindings/python/default_param.hpp
+include/mlpack/bindings/python/default_param_impl.hpp
+include/mlpack/bindings/python/get_printable_type.hpp
+include/mlpack/bindings/python/get_printable_type_impl.hpp
+include/mlpack/bindings/python/print_type_doc.hpp
+include/mlpack/bindings/python/print_type_doc_impl.hpp
 include/mlpack/bindings/tests/
 include/mlpack/bindings/tests/clean_memory.hpp
 include/mlpack/bindings/tests/delete_allocated_memory.hpp
@@ -89,13 +119,8 @@ include/mlpack/core/arma_extend/Mat_extra_meat.hpp
 include/mlpack/core/arma_extend/SpMat_extra_bones.hpp
 include/mlpack/core/arma_extend/SpMat_extra_meat.hpp
 include/mlpack/core/arma_extend/arma_extend.hpp
-include/mlpack/core/arma_extend/fn_ccov.hpp
 include/mlpack/core/arma_extend/fn_inplace_reshape.hpp
-include/mlpack/core/arma_extend/glue_ccov_meat.hpp
-include/mlpack/core/arma_extend/glue_ccov_proto.hpp
 include/mlpack/core/arma_extend/hdf5_misc.hpp
-include/mlpack/core/arma_extend/op_ccov_meat.hpp
-include/mlpack/core/arma_extend/op_ccov_proto.hpp
 include/mlpack/core/boost_backport/
 include/mlpack/core/boost_backport/bernoulli.hpp
 include/mlpack/core/boost_backport/boost_backport_math.hpp
@@ -137,6 +162,8 @@ include/mlpack/core/cv/simple_cv.hpp
 include/mlpack/core/cv/simple_cv_impl.hpp
 include/mlpack/core/data/
 include/mlpack/core/data/binarize.hpp
+include/mlpack/core/data/confusion_matrix.hpp
+include/mlpack/core/data/confusion_matrix_impl.hpp
 include/mlpack/core/data/dataset_mapper.hpp
 include/mlpack/core/data/dataset_mapper_impl.hpp
 include/mlpack/core/data/extension.hpp
@@ -162,11 +189,14 @@ include/mlpack/core/data/map_policies/increment_policy.hpp
 include/mlpack/core/data/map_policies/missing_policy.hpp
 include/mlpack/core/data/normalize_labels.hpp
 include/mlpack/core/data/normalize_labels_impl.hpp
+include/mlpack/core/data/one_hot_encoding.hpp
+include/mlpack/core/data/one_hot_encoding_impl.hpp
 include/mlpack/core/data/save.hpp
 include/mlpack/core/data/save_impl.hpp
 include/mlpack/core/data/serialization_template_version.hpp
 include/mlpack/core/data/split_data.hpp
 include/mlpack/core/dists/
+include/mlpack/core/dists/diagonal_gaussian_distribution.hpp
 include/mlpack/core/dists/discrete_distribution.hpp
 include/mlpack/core/dists/gamma_distribution.hpp
 include/mlpack/core/dists/gaussian_distribution.hpp
@@ -180,6 +210,7 @@ include/mlpack/core/hpt/fixed.hpp
 include/mlpack/core/hpt/hpt.hpp
 include/mlpack/core/hpt/hpt_impl.hpp
 include/mlpack/core/kernels/
+include/mlpack/core/kernels/cauchy_kernel.hpp
 include/mlpack/core/kernels/cosine_distance.hpp
 include/mlpack/core/kernels/cosine_distance_impl.hpp
 include/mlpack/core/kernels/epanechnikov_kernel.hpp
@@ -196,10 +227,14 @@ include/mlpack/core/kernels/pspectrum_string_kernel_impl.hpp
 include/mlpack/core/kernels/spherical_kernel.hpp
 include/mlpack/core/kernels/triangular_kernel.hpp
 include/mlpack/core/math/
+include/mlpack/core/math/ccov.hpp
+include/mlpack/core/math/ccov_impl.hpp
 include/mlpack/core/math/clamp.hpp
 include/mlpack/core/math/columns_to_blocks.hpp
 include/mlpack/core/math/lin_alg.hpp
 include/mlpack/core/math/lin_alg_impl.hpp
+include/mlpack/core/math/log_add.hpp
+include/mlpack/core/math/log_add_impl.hpp
 include/mlpack/core/math/make_alias.hpp
 include/mlpack/core/math/random.hpp
 include/mlpack/core/math/random_basis.hpp
@@ -214,168 +249,6 @@ include/mlpack/core/metrics/lmetric.hpp
 include/mlpack/core/metrics/lmetric_impl.hpp
 include/mlpack/core/metrics/mahalanobis_distance.hpp
 include/mlpack/core/metrics/mahalanobis_distance_impl.hpp
-include/mlpack/core/optimizers/
-include/mlpack/core/optimizers/ada_delta/
-include/mlpack/core/optimizers/ada_delta/ada_delta.hpp
-include/mlpack/core/optimizers/ada_delta/ada_delta_update.hpp
-include/mlpack/core/optimizers/ada_grad/
-include/mlpack/core/optimizers/ada_grad/ada_grad.hpp
-include/mlpack/core/optimizers/ada_grad/ada_grad_update.hpp
-include/mlpack/core/optimizers/adam/
-include/mlpack/core/optimizers/adam/adam.hpp
-include/mlpack/core/optimizers/adam/adam_impl.hpp
-include/mlpack/core/optimizers/adam/adam_update.hpp
-include/mlpack/core/optimizers/adam/adamax_update.hpp
-include/mlpack/core/optimizers/adam/amsgrad_update.hpp
-include/mlpack/core/optimizers/adam/nadam_update.hpp
-include/mlpack/core/optimizers/adam/nadamax_update.hpp
-include/mlpack/core/optimizers/adam/optimisticadam_update.hpp
-include/mlpack/core/optimizers/aug_lagrangian/
-include/mlpack/core/optimizers/aug_lagrangian/aug_lagrangian.hpp
-include/mlpack/core/optimizers/aug_lagrangian/aug_lagrangian_function.hpp
-include/mlpack/core/optimizers/aug_lagrangian/aug_lagrangian_function_impl.hpp
-include/mlpack/core/optimizers/aug_lagrangian/aug_lagrangian_impl.hpp
-include/mlpack/core/optimizers/aug_lagrangian/aug_lagrangian_test_functions.hpp
-include/mlpack/core/optimizers/bigbatch_sgd/
-include/mlpack/core/optimizers/bigbatch_sgd/adaptive_stepsize.hpp
-include/mlpack/core/optimizers/bigbatch_sgd/backtracking_line_search.hpp
-include/mlpack/core/optimizers/bigbatch_sgd/bigbatch_sgd.hpp
-include/mlpack/core/optimizers/bigbatch_sgd/bigbatch_sgd_impl.hpp
-include/mlpack/core/optimizers/cmaes/
-include/mlpack/core/optimizers/cmaes/cmaes.hpp
-include/mlpack/core/optimizers/cmaes/cmaes_impl.hpp
-include/mlpack/core/optimizers/cmaes/full_selection.hpp
-include/mlpack/core/optimizers/cmaes/random_selection.hpp
-include/mlpack/core/optimizers/cne/
-include/mlpack/core/optimizers/cne/cne.hpp
-include/mlpack/core/optimizers/cne/cne_impl.hpp
-include/mlpack/core/optimizers/function/
-include/mlpack/core/optimizers/function.hpp
-include/mlpack/core/optimizers/function/add_decomposable_evaluate.hpp
-include/mlpack/core/optimizers/function/add_decomposable_evaluate_const.hpp
-include/mlpack/core/optimizers/function/add_decomposable_evaluate_with_gradient.hpp
-include/mlpack/core/optimizers/function/add_decomposable_evaluate_with_gradient_const.hpp
-include/mlpack/core/optimizers/function/add_decomposable_gradient.hpp
-include/mlpack/core/optimizers/function/add_evaluate.hpp
-include/mlpack/core/optimizers/function/add_evaluate_with_gradient.hpp
-include/mlpack/core/optimizers/function/add_gradient.hpp
-include/mlpack/core/optimizers/function/static_checks.hpp
-include/mlpack/core/optimizers/function/traits.hpp
-include/mlpack/core/optimizers/fw/
-include/mlpack/core/optimizers/fw/atoms.hpp
-include/mlpack/core/optimizers/fw/constr_lpball.hpp
-include/mlpack/core/optimizers/fw/constr_structure_group.hpp
-include/mlpack/core/optimizers/fw/frank_wolfe.hpp
-include/mlpack/core/optimizers/fw/frank_wolfe_impl.hpp
-include/mlpack/core/optimizers/fw/func_sq.hpp
-include/mlpack/core/optimizers/fw/test_func_fw.hpp
-include/mlpack/core/optimizers/fw/update_classic.hpp
-include/mlpack/core/optimizers/fw/update_full_correction.hpp
-include/mlpack/core/optimizers/fw/update_linesearch.hpp
-include/mlpack/core/optimizers/fw/update_span.hpp
-include/mlpack/core/optimizers/gradient_descent/
-include/mlpack/core/optimizers/gradient_descent/gradient_descent.hpp
-include/mlpack/core/optimizers/gradient_descent/gradient_descent_impl.hpp
-include/mlpack/core/optimizers/gradient_descent/test_function.hpp
-include/mlpack/core/optimizers/grid_search/
-include/mlpack/core/optimizers/grid_search/grid_search.hpp
-include/mlpack/core/optimizers/grid_search/grid_search_impl.hpp
-include/mlpack/core/optimizers/iqn/
-include/mlpack/core/optimizers/iqn/iqn.hpp
-include/mlpack/core/optimizers/iqn/iqn_impl.hpp
-include/mlpack/core/optimizers/katyusha/
-include/mlpack/core/optimizers/katyusha/katyusha.hpp
-include/mlpack/core/optimizers/katyusha/katyusha_impl.hpp
-include/mlpack/core/optimizers/lbfgs/
-include/mlpack/core/optimizers/lbfgs/lbfgs.hpp
-include/mlpack/core/optimizers/lbfgs/lbfgs_impl.hpp
-include/mlpack/core/optimizers/line_search/
-include/mlpack/core/optimizers/line_search/line_search.hpp
-include/mlpack/core/optimizers/line_search/line_search_impl.hpp
-include/mlpack/core/optimizers/parallel_sgd/
-include/mlpack/core/optimizers/parallel_sgd/decay_policies/
-include/mlpack/core/optimizers/parallel_sgd/decay_policies/constant_step.hpp
-include/mlpack/core/optimizers/parallel_sgd/decay_policies/exponential_backoff.hpp
-include/mlpack/core/optimizers/parallel_sgd/parallel_sgd.hpp
-include/mlpack/core/optimizers/parallel_sgd/parallel_sgd_impl.hpp
-include/mlpack/core/optimizers/parallel_sgd/sparse_test_function.hpp
-include/mlpack/core/optimizers/problems/
-include/mlpack/core/optimizers/problems/booth_function.hpp
-include/mlpack/core/optimizers/problems/bukin_function.hpp
-include/mlpack/core/optimizers/problems/colville_function.hpp
-include/mlpack/core/optimizers/problems/drop_wave_function.hpp
-include/mlpack/core/optimizers/problems/easom_function.hpp
-include/mlpack/core/optimizers/problems/eggholder_function.hpp
-include/mlpack/core/optimizers/problems/generalized_rosenbrock_function.hpp
-include/mlpack/core/optimizers/problems/matyas_function.hpp
-include/mlpack/core/optimizers/problems/mc_cormick_function.hpp
-include/mlpack/core/optimizers/problems/rastrigin_function.hpp
-include/mlpack/core/optimizers/problems/rosenbrock_function.hpp
-include/mlpack/core/optimizers/problems/rosenbrock_wood_function.hpp
-include/mlpack/core/optimizers/problems/schwefel_function.hpp
-include/mlpack/core/optimizers/problems/sgd_test_function.hpp
-include/mlpack/core/optimizers/problems/sphere_function.hpp
-include/mlpack/core/optimizers/problems/styblinski_tang_function.hpp
-include/mlpack/core/optimizers/problems/wood_function.hpp
-include/mlpack/core/optimizers/proximal/
-include/mlpack/core/optimizers/proximal/proximal.hpp
-include/mlpack/core/optimizers/rmsprop/
-include/mlpack/core/optimizers/rmsprop/rmsprop.hpp
-include/mlpack/core/optimizers/rmsprop/rmsprop_update.hpp
-include/mlpack/core/optimizers/sa/
-include/mlpack/core/optimizers/sa/exponential_schedule.hpp
-include/mlpack/core/optimizers/sa/sa.hpp
-include/mlpack/core/optimizers/sa/sa_impl.hpp
-include/mlpack/core/optimizers/sarah/
-include/mlpack/core/optimizers/sarah/sarah.hpp
-include/mlpack/core/optimizers/sarah/sarah_impl.hpp
-include/mlpack/core/optimizers/sarah/sarah_plus_update.hpp
-include/mlpack/core/optimizers/sarah/sarah_update.hpp
-include/mlpack/core/optimizers/scd/
-include/mlpack/core/optimizers/scd/descent_policies/
-include/mlpack/core/optimizers/scd/descent_policies/cyclic_descent.hpp
-include/mlpack/core/optimizers/scd/descent_policies/greedy_descent.hpp
-include/mlpack/core/optimizers/scd/descent_policies/random_descent.hpp
-include/mlpack/core/optimizers/scd/scd.hpp
-include/mlpack/core/optimizers/scd/scd_impl.hpp
-include/mlpack/core/optimizers/sdp/
-include/mlpack/core/optimizers/sdp/lrsdp.hpp
-include/mlpack/core/optimizers/sdp/lrsdp_function.hpp
-include/mlpack/core/optimizers/sdp/lrsdp_function_impl.hpp
-include/mlpack/core/optimizers/sdp/lrsdp_impl.hpp
-include/mlpack/core/optimizers/sdp/primal_dual.hpp
-include/mlpack/core/optimizers/sdp/primal_dual_impl.hpp
-include/mlpack/core/optimizers/sdp/sdp.hpp
-include/mlpack/core/optimizers/sdp/sdp_impl.hpp
-include/mlpack/core/optimizers/sgd/
-include/mlpack/core/optimizers/sgd/decay_policies/
-include/mlpack/core/optimizers/sgd/decay_policies/no_decay.hpp
-include/mlpack/core/optimizers/sgd/sgd.hpp
-include/mlpack/core/optimizers/sgd/sgd_impl.hpp
-include/mlpack/core/optimizers/sgd/update_policies/
-include/mlpack/core/optimizers/sgd/update_policies/gradient_clipping.hpp
-include/mlpack/core/optimizers/sgd/update_policies/momentum_update.hpp
-include/mlpack/core/optimizers/sgd/update_policies/nesterov_momentum_update.hpp
-include/mlpack/core/optimizers/sgd/update_policies/vanilla_update.hpp
-include/mlpack/core/optimizers/sgdr/
-include/mlpack/core/optimizers/sgdr/cyclical_decay.hpp
-include/mlpack/core/optimizers/sgdr/sgdr.hpp
-include/mlpack/core/optimizers/sgdr/sgdr_impl.hpp
-include/mlpack/core/optimizers/sgdr/snapshot_ensembles.hpp
-include/mlpack/core/optimizers/sgdr/snapshot_sgdr.hpp
-include/mlpack/core/optimizers/sgdr/snapshot_sgdr_impl.hpp
-include/mlpack/core/optimizers/smorms3/
-include/mlpack/core/optimizers/smorms3/smorms3.hpp
-include/mlpack/core/optimizers/smorms3/smorms3_update.hpp
-include/mlpack/core/optimizers/spalera_sgd/
-include/mlpack/core/optimizers/spalera_sgd/spalera_sgd.hpp
-include/mlpack/core/optimizers/spalera_sgd/spalera_sgd_impl.hpp
-include/mlpack/core/optimizers/spalera_sgd/spalera_stepsize.hpp
-include/mlpack/core/optimizers/svrg/
-include/mlpack/core/optimizers/svrg/barzilai_borwein_decay.hpp
-include/mlpack/core/optimizers/svrg/svrg.hpp
-include/mlpack/core/optimizers/svrg/svrg_impl.hpp
-include/mlpack/core/optimizers/svrg/svrg_update.hpp
 include/mlpack/core/tree/
 include/mlpack/core/tree/address.hpp
 include/mlpack/core/tree/ballbound.hpp
@@ -558,6 +431,7 @@ include/mlpack/methods/amf/update_rules/svd_complete_incremental_learning.hpp
 include/mlpack/methods/amf/update_rules/svd_incomplete_incremental_learning.hpp
 include/mlpack/methods/ann/
 include/mlpack/methods/ann/activation_functions/
+include/mlpack/methods/ann/activation_functions/hard_sigmoid_function.hpp
 include/mlpack/methods/ann/activation_functions/identity_function.hpp
 include/mlpack/methods/ann/activation_functions/logistic_function.hpp
 include/mlpack/methods/ann/activation_functions/rectifier_function.hpp
@@ -575,11 +449,16 @@ include/mlpack/methods/ann/augmented/tasks/score.hpp
 include/mlpack/methods/ann/augmented/tasks/score_impl.hpp
 include/mlpack/methods/ann/augmented/tasks/sort.hpp
 include/mlpack/methods/ann/augmented/tasks/sort_impl.hpp
+include/mlpack/methods/ann/brnn.hpp
+include/mlpack/methods/ann/brnn_impl.hpp
 include/mlpack/methods/ann/convolution_rules/
 include/mlpack/methods/ann/convolution_rules/border_modes.hpp
 include/mlpack/methods/ann/convolution_rules/fft_convolution.hpp
 include/mlpack/methods/ann/convolution_rules/naive_convolution.hpp
 include/mlpack/methods/ann/convolution_rules/svd_convolution.hpp
+include/mlpack/methods/ann/dists/
+include/mlpack/methods/ann/dists/bernoulli_distribution.hpp
+include/mlpack/methods/ann/dists/bernoulli_distribution_impl.hpp
 include/mlpack/methods/ann/ffn.hpp
 include/mlpack/methods/ann/ffn_impl.hpp
 include/mlpack/methods/ann/init_rules/
@@ -609,10 +488,14 @@ include/mlpack/methods/ann/layer/batch_norm.hpp
 include/mlpack/methods/ann/layer/batch_norm_impl.hpp
 include/mlpack/methods/ann/layer/bilinear_interpolation.hpp
 include/mlpack/methods/ann/layer/bilinear_interpolation_impl.hpp
+include/mlpack/methods/ann/layer/c_relu.hpp
+include/mlpack/methods/ann/layer/c_relu_impl.hpp
 include/mlpack/methods/ann/layer/concat.hpp
 include/mlpack/methods/ann/layer/concat_impl.hpp
 include/mlpack/methods/ann/layer/concat_performance.hpp
 include/mlpack/methods/ann/layer/concat_performance_impl.hpp
+include/mlpack/methods/ann/layer/concatenate.hpp
+include/mlpack/methods/ann/layer/concatenate_impl.hpp
 include/mlpack/methods/ann/layer/constant.hpp
 include/mlpack/methods/ann/layer/constant_impl.hpp
 include/mlpack/methods/ann/layer/convolution.hpp
@@ -660,8 +543,6 @@ include/mlpack/methods/ann/layer/multiply_constant.hpp
 include/mlpack/methods/ann/layer/multiply_constant_impl.hpp
 include/mlpack/methods/ann/layer/multiply_merge.hpp
 include/mlpack/methods/ann/layer/multiply_merge_impl.hpp
-include/mlpack/methods/ann/layer/negative_log_likelihood.hpp
-include/mlpack/methods/ann/layer/negative_log_likelihood_impl.hpp
 include/mlpack/methods/ann/layer/parametric_relu.hpp
 include/mlpack/methods/ann/layer/parametric_relu_impl.hpp
 include/mlpack/methods/ann/layer/recurrent.hpp
@@ -670,10 +551,13 @@ include/mlpack/methods/ann/layer/recurrent_attention_impl.hpp
 include/mlpack/methods/ann/layer/recurrent_impl.hpp
 include/mlpack/methods/ann/layer/reinforce_normal.hpp
 include/mlpack/methods/ann/layer/reinforce_normal_impl.hpp
+include/mlpack/methods/ann/layer/reparametrization.hpp
+include/mlpack/methods/ann/layer/reparametrization_impl.hpp
 include/mlpack/methods/ann/layer/select.hpp
 include/mlpack/methods/ann/layer/select_impl.hpp
 include/mlpack/methods/ann/layer/sequential.hpp
 include/mlpack/methods/ann/layer/sequential_impl.hpp
+include/mlpack/methods/ann/layer/subview.hpp
 include/mlpack/methods/ann/layer/transposed_convolution.hpp
 include/mlpack/methods/ann/layer/transposed_convolution_impl.hpp
 include/mlpack/methods/ann/layer/vr_class_reward.hpp
@@ -681,13 +565,25 @@ include/mlpack/methods/ann/layer/vr_class_reward_impl.hpp
 include/mlpack/methods/ann/loss_functions/
 include/mlpack/methods/ann/loss_functions/cross_entropy_error.hpp
 include/mlpack/methods/ann/loss_functions/cross_entropy_error_impl.hpp
+include/mlpack/methods/ann/loss_functions/dice_loss.hpp
+include/mlpack/methods/ann/loss_functions/dice_loss_impl.hpp
+include/mlpack/methods/ann/loss_functions/earth_mover_distance.hpp
 include/mlpack/methods/ann/loss_functions/earth_mover_distance_impl.hpp
 include/mlpack/methods/ann/loss_functions/kl_divergence.hpp
 include/mlpack/methods/ann/loss_functions/kl_divergence_impl.hpp
 include/mlpack/methods/ann/loss_functions/mean_squared_error.hpp
 include/mlpack/methods/ann/loss_functions/mean_squared_error_impl.hpp
+include/mlpack/methods/ann/loss_functions/negative_log_likelihood.hpp
+include/mlpack/methods/ann/loss_functions/negative_log_likelihood_impl.hpp
+include/mlpack/methods/ann/loss_functions/reconstruction_loss.hpp
+include/mlpack/methods/ann/loss_functions/reconstruction_loss_impl.hpp
 include/mlpack/methods/ann/loss_functions/sigmoid_cross_entropy_error.hpp
 include/mlpack/methods/ann/loss_functions/sigmoid_cross_entropy_error_impl.hpp
+include/mlpack/methods/ann/rbm/
+include/mlpack/methods/ann/rbm/rbm.hpp
+include/mlpack/methods/ann/rbm/rbm_impl.hpp
+include/mlpack/methods/ann/rbm/rbm_policies.hpp
+include/mlpack/methods/ann/rbm/spike_slab_rbm_impl.hpp
 include/mlpack/methods/ann/rnn.hpp
 include/mlpack/methods/ann/rnn_impl.hpp
 include/mlpack/methods/ann/visitor/
@@ -715,6 +611,8 @@ include/mlpack/methods/ann/visitor/gradient_zero_visitor.hpp
 include/mlpack/methods/ann/visitor/gradient_zero_visitor_impl.hpp
 include/mlpack/methods/ann/visitor/load_output_parameter_visitor.hpp
 include/mlpack/methods/ann/visitor/load_output_parameter_visitor_impl.hpp
+include/mlpack/methods/ann/visitor/loss_visitor.hpp
+include/mlpack/methods/ann/visitor/loss_visitor_impl.hpp
 include/mlpack/methods/ann/visitor/output_height_visitor.hpp
 include/mlpack/methods/ann/visitor/output_height_visitor_impl.hpp
 include/mlpack/methods/ann/visitor/output_parameter_visitor.hpp
@@ -731,6 +629,8 @@ include/mlpack/methods/ann/visitor/reset_visitor.hpp
 include/mlpack/methods/ann/visitor/reset_visitor_impl.hpp
 include/mlpack/methods/ann/visitor/reward_set_visitor.hpp
 include/mlpack/methods/ann/visitor/reward_set_visitor_impl.hpp
+include/mlpack/methods/ann/visitor/run_set_visitor.hpp
+include/mlpack/methods/ann/visitor/run_set_visitor_impl.hpp
 include/mlpack/methods/ann/visitor/save_output_parameter_visitor.hpp
 include/mlpack/methods/ann/visitor/save_output_parameter_visitor_impl.hpp
 include/mlpack/methods/ann/visitor/set_input_height_visitor.hpp
@@ -746,23 +646,48 @@ include/mlpack/methods/approx_kfn/drusilla_select.hpp
 include/mlpack/methods/approx_kfn/drusilla_select_impl.hpp
 include/mlpack/methods/approx_kfn/qdafn.hpp
 include/mlpack/methods/approx_kfn/qdafn_impl.hpp
+include/mlpack/methods/bias_svd/
+include/mlpack/methods/bias_svd/bias_svd.hpp
+include/mlpack/methods/bias_svd/bias_svd_function.hpp
+include/mlpack/methods/bias_svd/bias_svd_function_impl.hpp
+include/mlpack/methods/bias_svd/bias_svd_impl.hpp
 include/mlpack/methods/block_krylov_svd/
 include/mlpack/methods/block_krylov_svd/randomized_block_krylov_svd.hpp
 include/mlpack/methods/cf/
 include/mlpack/methods/cf/cf.hpp
 include/mlpack/methods/cf/cf_impl.hpp
+include/mlpack/methods/cf/cf_model.hpp
+include/mlpack/methods/cf/cf_model_impl.hpp
 include/mlpack/methods/cf/decomposition_policies/
 include/mlpack/methods/cf/decomposition_policies/batch_svd_method.hpp
+include/mlpack/methods/cf/decomposition_policies/bias_svd_method.hpp
 include/mlpack/methods/cf/decomposition_policies/nmf_method.hpp
 include/mlpack/methods/cf/decomposition_policies/randomized_svd_method.hpp
 include/mlpack/methods/cf/decomposition_policies/regularized_svd_method.hpp
 include/mlpack/methods/cf/decomposition_policies/svd_complete_method.hpp
 include/mlpack/methods/cf/decomposition_policies/svd_incomplete_method.hpp
+include/mlpack/methods/cf/decomposition_policies/svdplusplus_method.hpp
+include/mlpack/methods/cf/interpolation_policies/
+include/mlpack/methods/cf/interpolation_policies/average_interpolation.hpp
+include/mlpack/methods/cf/interpolation_policies/regression_interpolation.hpp
+include/mlpack/methods/cf/interpolation_policies/similarity_interpolation.hpp
+include/mlpack/methods/cf/neighbor_search_policies/
+include/mlpack/methods/cf/neighbor_search_policies/cosine_search.hpp
+include/mlpack/methods/cf/neighbor_search_policies/lmetric_search.hpp
+include/mlpack/methods/cf/neighbor_search_policies/pearson_search.hpp
+include/mlpack/methods/cf/normalization/
+include/mlpack/methods/cf/normalization/combined_normalization.hpp
+include/mlpack/methods/cf/normalization/item_mean_normalization.hpp
+include/mlpack/methods/cf/normalization/no_normalization.hpp
+include/mlpack/methods/cf/normalization/overall_mean_normalization.hpp
+include/mlpack/methods/cf/normalization/user_mean_normalization.hpp
+include/mlpack/methods/cf/normalization/z_score_normalization.hpp
 include/mlpack/methods/cf/svd_wrapper.hpp
 include/mlpack/methods/cf/svd_wrapper_impl.hpp
 include/mlpack/methods/dbscan/
 include/mlpack/methods/dbscan/dbscan.hpp
 include/mlpack/methods/dbscan/dbscan_impl.hpp
+include/mlpack/methods/dbscan/ordered_point_selection.hpp
 include/mlpack/methods/dbscan/random_point_selection.hpp
 include/mlpack/methods/decision_stump/
 include/mlpack/methods/decision_stump/decision_stump.hpp
@@ -802,6 +727,8 @@ include/mlpack/methods/fastmks/fastmks_rules_impl.hpp
 include/mlpack/methods/fastmks/fastmks_stat.hpp
 include/mlpack/methods/gmm/
 include/mlpack/methods/gmm/diagonal_constraint.hpp
+include/mlpack/methods/gmm/diagonal_gmm.hpp
+include/mlpack/methods/gmm/diagonal_gmm_impl.hpp
 include/mlpack/methods/gmm/eigenvalue_ratio_constraint.hpp
 include/mlpack/methods/gmm/em_fit.hpp
 include/mlpack/methods/gmm/em_fit_impl.hpp
@@ -833,6 +760,14 @@ include/mlpack/methods/hoeffding_trees/hoeffding_tree_model.hpp
 include/mlpack/methods/hoeffding_trees/information_gain.hpp
 include/mlpack/methods/hoeffding_trees/numeric_split_info.hpp
 include/mlpack/methods/hoeffding_trees/typedef.hpp
+include/mlpack/methods/kde/
+include/mlpack/methods/kde/kde.hpp
+include/mlpack/methods/kde/kde_impl.hpp
+include/mlpack/methods/kde/kde_model.hpp
+include/mlpack/methods/kde/kde_model_impl.hpp
+include/mlpack/methods/kde/kde_rules.hpp
+include/mlpack/methods/kde/kde_rules_impl.hpp
+include/mlpack/methods/kde/kde_stat.hpp
 include/mlpack/methods/kernel_pca/
 include/mlpack/methods/kernel_pca/kernel_pca.hpp
 include/mlpack/methods/kernel_pca/kernel_pca_impl.hpp
@@ -871,6 +806,18 @@ include/mlpack/methods/lars/lars.hpp
 include/mlpack/methods/lars/lars_impl.hpp
 include/mlpack/methods/linear_regression/
 include/mlpack/methods/linear_regression/linear_regression.hpp
+include/mlpack/methods/linear_svm/
+include/mlpack/methods/linear_svm/linear_svm.hpp
+include/mlpack/methods/linear_svm/linear_svm_function.hpp
+include/mlpack/methods/linear_svm/linear_svm_function_impl.hpp
+include/mlpack/methods/linear_svm/linear_svm_impl.hpp
+include/mlpack/methods/lmnn/
+include/mlpack/methods/lmnn/constraints.hpp
+include/mlpack/methods/lmnn/constraints_impl.hpp
+include/mlpack/methods/lmnn/lmnn.hpp
+include/mlpack/methods/lmnn/lmnn_function.hpp
+include/mlpack/methods/lmnn/lmnn_function_impl.hpp
+include/mlpack/methods/lmnn/lmnn_impl.hpp
 include/mlpack/methods/local_coordinate_coding/
 include/mlpack/methods/local_coordinate_coding/lcc.hpp
 include/mlpack/methods/local_coordinate_coding/lcc_impl.hpp
@@ -887,8 +834,6 @@ include/mlpack/methods/matrix_completion/matrix_completion.hpp
 include/mlpack/methods/mean_shift/
 include/mlpack/methods/mean_shift/mean_shift.hpp
 include/mlpack/methods/mean_shift/mean_shift_impl.hpp
-include/mlpack/methods/mvu/
-include/mlpack/methods/mvu/mvu.hpp
 include/mlpack/methods/naive_bayes/
 include/mlpack/methods/naive_bayes/naive_bayes_classifier.hpp
 include/mlpack/methods/naive_bayes/naive_bayes_classifier_impl.hpp
@@ -971,11 +916,12 @@ include/mlpack/methods/reinforcement_learning/
 include/mlpack/methods/reinforcement_learning/async_learning.hpp
 include/mlpack/methods/reinforcement_learning/async_learning_impl.hpp
 include/mlpack/methods/reinforcement_learning/environment/
-include/mlpack/methods/reinforcement_learning/environment/acrobat.hpp
+include/mlpack/methods/reinforcement_learning/environment/acrobot.hpp
 include/mlpack/methods/reinforcement_learning/environment/cart_pole.hpp
 include/mlpack/methods/reinforcement_learning/environment/continuous_mountain_car.hpp
 include/mlpack/methods/reinforcement_learning/environment/mountain_car.hpp
 include/mlpack/methods/reinforcement_learning/environment/pendulum.hpp
+include/mlpack/methods/reinforcement_learning/environment/reward_clipping.hpp
 include/mlpack/methods/reinforcement_learning/policy/
 include/mlpack/methods/reinforcement_learning/policy/aggregated_policy.hpp
 include/mlpack/methods/reinforcement_learning/policy/greedy_policy.hpp
@@ -1003,15 +949,19 @@ include/mlpack/methods/sparse_coding/nothing_initializer.hpp
 include/mlpack/methods/sparse_coding/random_initializer.hpp
 include/mlpack/methods/sparse_coding/sparse_coding.hpp
 include/mlpack/methods/sparse_coding/sparse_coding_impl.hpp
-include/mlpack/methods/sparse_svm/
-include/mlpack/methods/sparse_svm/sparse_svm_function.hpp
-include/mlpack/methods/sparse_svm/sparse_svm_function_impl.hpp
+include/mlpack/methods/svdplusplus/
+include/mlpack/methods/svdplusplus/svdplusplus.hpp
+include/mlpack/methods/svdplusplus/svdplusplus_function.hpp
+include/mlpack/methods/svdplusplus/svdplusplus_function_impl.hpp
+include/mlpack/methods/svdplusplus/svdplusplus_impl.hpp
 include/mlpack/mlpack_export.hpp
 include/mlpack/prereqs.hpp
 include/mlpack/tests/
+include/mlpack/tests/ann_test_tools.hpp
 include/mlpack/tests/custom_layer.hpp
 include/mlpack/tests/main_tests/
 include/mlpack/tests/main_tests/hmm_test_utils.hpp
+include/mlpack/tests/main_tests/range_search_utils.hpp
 include/mlpack/tests/main_tests/test_helper.hpp
 include/mlpack/tests/mock_categorical_data.hpp
 include/mlpack/tests/serialization.hpp
@@ -1036,6 +986,7 @@ lib/pkgconfig/mlpack.pc
 @man man/man1/mlpack_hmm_train.1
 @man man/man1/mlpack_hmm_viterbi.1
 @man man/man1/mlpack_hoeffding_tree.1
+@man man/man1/mlpack_kde.1
 @man man/man1/mlpack_kernel_pca.1
 @man man/man1/mlpack_kfn.1
 @man man/man1/mlpack_kmeans.1
@@ -1043,6 +994,7 @@ lib/pkgconfig/mlpack.pc
 @man man/man1/mlpack_krann.1
 @man man/man1/mlpack_lars.1
 @man man/man1/mlpack_linear_regression.1
+@man man/man1/mlpack_lmnn.1
 @man man/man1/mlpack_local_coordinate_coding.1
 @man man/man1/mlpack_logistic_regression.1
 @man man/man1/mlpack_lsh.1
