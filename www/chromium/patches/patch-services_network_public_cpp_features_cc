@@ -1,0 +1,16 @@
+$OpenBSD: patch-services_network_public_cpp_features_cc,v 1.1 2019/08/01 08:32:00 robert Exp $
+
+XXX this needs a lot of pledge and unveil work
+
+Index: services/network/public/cpp/features.cc
+--- services/network/public/cpp/features.cc.orig
++++ services/network/public/cpp/features.cc
+@@ -18,7 +18,7 @@ const base::Feature kNetworkErrorLogging{"NetworkError
+                                          base::FEATURE_ENABLED_BY_DEFAULT};
+ // Enables the network service.
+ const base::Feature kNetworkService{"NetworkService",
+-                                    base::FEATURE_ENABLED_BY_DEFAULT};
++                                    base::FEATURE_DISABLED_BY_DEFAULT};
+ 
+ // Out of Blink CORS
+ const base::Feature kOutOfBlinkCors{"OutOfBlinkCors",

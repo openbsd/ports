@@ -1,11 +1,11 @@
-$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_window_tree_host_x11_cc,v 1.2 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-ui_views_widget_desktop_aura_desktop_window_tree_host_x11_cc,v 1.3 2019/08/01 08:32:00 robert Exp $
 
 https://bugs.chromium.org/p/chromium/issues/detail?id=956061
 
 Index: ui/views/widget/desktop_aura/desktop_window_tree_host_x11.cc
 --- ui/views/widget/desktop_aura/desktop_window_tree_host_x11.cc.orig
 +++ ui/views/widget/desktop_aura/desktop_window_tree_host_x11.cc
-@@ -1423,24 +1423,15 @@ void DesktopWindowTreeHostX11::InitX11Window(
+@@ -1463,24 +1463,15 @@ void DesktopWindowTreeHostX11::InitX11Window(
    if (override_redirect_)
      attribute_mask |= CWOverrideRedirect;
  

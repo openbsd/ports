@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_services_filesystem_file_system_app_cc,v 1.4 2019/04/26 09:38:20 robert Exp $
+$OpenBSD: patch-components_services_filesystem_file_system_app_cc,v 1.5 2019/08/01 08:31:59 robert Exp $
 
 Index: components/services/filesystem/file_system_app.cc
 --- components/services/filesystem/file_system_app.cc.orig
 +++ components/services/filesystem/file_system_app.cc
-@@ -20,7 +20,7 @@
+@@ -19,7 +19,7 @@
  #elif defined(OS_ANDROID)
  #include "base/base_paths_android.h"
  #include "base/path_service.h"
@@ -12,7 +12,7 @@ Index: components/services/filesystem/file_system_app.cc
  #include "base/environment.h"
  #include "base/nix/xdg_util.h"
  #elif defined(OS_MACOSX)
-@@ -74,7 +74,7 @@ base::FilePath FileSystemApp::GetUserDataDir() {
+@@ -68,7 +68,7 @@ base::FilePath FileSystemApp::GetUserDataDir() {
      CHECK(base::PathService::Get(base::DIR_APP_DATA, &path));
  #elif defined(OS_ANDROID)
      CHECK(base::PathService::Get(base::DIR_ANDROID_APP_DATA, &path));

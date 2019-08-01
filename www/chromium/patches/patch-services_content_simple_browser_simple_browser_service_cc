@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_content_simple_browser_simple_browser_service_cc,v 1.3 2019/03/24 12:24:45 robert Exp $
+$OpenBSD: patch-services_content_simple_browser_simple_browser_service_cc,v 1.4 2019/08/01 08:32:00 robert Exp $
 
 Index: services/content/simple_browser/simple_browser_service.cc
 --- services/content/simple_browser/simple_browser_service.cc.orig
@@ -12,7 +12,7 @@ Index: services/content/simple_browser/simple_browser_service.cc
  #include "third_party/skia/include/ports/SkFontConfigInterface.h"  // nogncheck
  #endif
  
-@@ -27,7 +27,7 @@ SimpleBrowserService::~SimpleBrowserService() = defaul
+@@ -23,7 +23,7 @@ SimpleBrowserService::~SimpleBrowserService() = defaul
  
  void SimpleBrowserService::OnStart() {
    if (ui_initialization_mode_ == UIInitializationMode::kInitializeUI) {

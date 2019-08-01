@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_ipc_gfx_param_traits_macros_h,v 1.6 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-ui_gfx_ipc_gfx_param_traits_macros_h,v 1.7 2019/08/01 08:32:00 robert Exp $
 
 Index: ui/gfx/ipc/gfx_param_traits_macros.h
 --- ui/gfx/ipc/gfx_param_traits_macros.h.orig
@@ -21,7 +21,7 @@ Index: ui/gfx/ipc/gfx_param_traits_macros.h
    IPC_STRUCT_TRAITS_MEMBER(native_pixmap_handle)
  #elif defined(OS_MACOSX)
    IPC_STRUCT_TRAITS_MEMBER(mach_port)
-@@ -66,13 +66,13 @@ IPC_STRUCT_TRAITS_BEGIN(gfx::GpuMemoryBufferId)
+@@ -66,12 +66,12 @@ IPC_STRUCT_TRAITS_BEGIN(gfx::GpuMemoryBufferId)
    IPC_STRUCT_TRAITS_MEMBER(id)
  IPC_STRUCT_TRAITS_END()
  
@@ -31,7 +31,6 @@ Index: ui/gfx/ipc/gfx_param_traits_macros.h
    IPC_STRUCT_TRAITS_MEMBER(stride)
    IPC_STRUCT_TRAITS_MEMBER(offset)
    IPC_STRUCT_TRAITS_MEMBER(size)
-   IPC_STRUCT_TRAITS_MEMBER(modifier)
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    IPC_STRUCT_TRAITS_MEMBER(fd)

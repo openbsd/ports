@@ -1,4 +1,4 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.37 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc,v 1.38 2019/08/01 08:31:59 robert Exp $
 Index: chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
 --- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
@@ -19,7 +19,7 @@ Index: chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
 +#if defined(OS_LINUX) || defined(OS_BSD)
    views::MenuRunner menu_runner(frame()->GetSystemMenuModel(),
                                  views::MenuRunner::HAS_MNEMONICS);
-   menu_runner.RunMenuAt(browser_view()->GetWidget(), window_icon_,
+   menu_runner.RunMenuAt(
 @@ -479,7 +479,7 @@ bool OpaqueBrowserFrameView::EverHasVisibleBackgroundT
  
  OpaqueBrowserFrameView::FrameButtonStyle

@@ -1,10 +1,10 @@
-$OpenBSD: patch-third_party_skia_src_sksl_SkSLString_h,v 1.2 2017/12/16 15:34:40 robert Exp $
+$OpenBSD: patch-third_party_skia_src_sksl_SkSLString_h,v 1.3 2019/08/01 08:32:00 robert Exp $
 
 Index: third_party/skia/src/sksl/SkSLString.h
 --- third_party/skia/src/sksl/SkSLString.h.orig
 +++ third_party/skia/src/sksl/SkSLString.h
 @@ -22,6 +22,8 @@
-     #include "SkString.h"
+     #include "include/core/SkString.h"
  #endif
  
 +#include <stdarg.h>

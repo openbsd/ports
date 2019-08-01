@@ -1,18 +1,18 @@
-$OpenBSD: patch-content_browser_service_manager_service_manager_context_cc,v 1.7 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-content_browser_service_manager_service_manager_context_cc,v 1.8 2019/08/01 08:31:59 robert Exp $
 
 Index: content/browser/service_manager/service_manager_context.cc
 --- content/browser/service_manager/service_manager_context.cc.orig
 +++ content/browser/service_manager/service_manager_context.cc
-@@ -99,7 +99,7 @@
+@@ -98,7 +98,7 @@
  #include "jni/ContentNfcDelegate_jni.h"
  #endif
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
  #include "components/services/font/font_service_app.h"
- #include "components/services/font/public/interfaces/constants.mojom.h"
+ #include "components/services/font/public/interfaces/constants.mojom.h"  // nogncheck
  #endif
-@@ -378,7 +378,7 @@ void CreateInProcessAudioService(
+@@ -342,7 +342,7 @@ void CreateInProcessAudioService(
                       BrowserMainLoop::GetAudioManager(), std::move(request)));
  }
  
@@ -21,12 +21,12 @@ Index: content/browser/service_manager/service_manager_context.cc
  std::unique_ptr<service_manager::Service> CreateFontService(
      service_manager::mojom::ServiceRequest request) {
    return std::make_unique<font_service::FontServiceApp>(std::move(request));
-@@ -605,7 +605,7 @@ ServiceManagerContext::ServiceManagerContext(
+@@ -665,7 +665,7 @@ ServiceManagerContext::ServiceManagerContext(
          base::BindRepeating(&CreateVideoCaptureService));
    }
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    RegisterInProcessService(
-       packaged_services_connection_.get(), font_service::mojom::kServiceName,
+       font_service::mojom::kServiceName,
        base::CreateSequencedTaskRunnerWithTraits(

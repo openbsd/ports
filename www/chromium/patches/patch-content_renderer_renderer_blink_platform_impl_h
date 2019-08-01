@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_h,v 1.13 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-content_renderer_renderer_blink_platform_impl_h,v 1.14 2019/08/01 08:31:59 robert Exp $
 
 Index: content/renderer/renderer_blink_platform_impl.h
 --- content/renderer/renderer_blink_platform_impl.h.orig
@@ -12,7 +12,7 @@ Index: content/renderer/renderer_blink_platform_impl.h
  #include "components/services/font/public/cpp/font_loader.h"  // nogncheck
  #include "third_party/skia/include/core/SkRefCnt.h"           // nogncheck
  #endif
-@@ -273,7 +273,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -258,7 +258,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    std::unique_ptr<service_manager::Connector> connector_;
    scoped_refptr<base::SingleThreadTaskRunner> io_runner_;
  
@@ -21,7 +21,7 @@ Index: content/renderer/renderer_blink_platform_impl.h
    std::unique_ptr<blink::WebSandboxSupport> sandbox_support_;
  #endif
  
-@@ -311,7 +311,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -296,7 +296,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    std::unique_ptr<blink::WebTransmissionEncodingInfoHandler>
        web_transmission_encoding_info_handler_;
  

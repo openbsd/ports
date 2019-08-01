@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_resource_coordinator_public_cpp_memory_instrumentation_os_metrics_linux_cc,v 1.6 2019/04/26 09:38:20 robert Exp $
+$OpenBSD: patch-services_resource_coordinator_public_cpp_memory_instrumentation_os_metrics_linux_cc,v 1.7 2019/08/01 08:32:00 robert Exp $
 
 Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc
 --- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc.orig
 +++ services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc
-@@ -19,8 +19,10 @@
+@@ -22,8 +22,10 @@
  #include "build/build_config.h"
  #include "services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h"
  
@@ -14,15 +14,15 @@ Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metric
  
  namespace memory_instrumentation {
  
-@@ -31,6 +33,7 @@ using mojom::VmRegionPtr;
- 
+@@ -35,6 +37,7 @@ using mojom::VmRegionPtr;
+ const char kClearPeakRssCommand[] = "5";
  const uint32_t kMaxLineSize = 4096;
  
 +#if !defined(OS_BSD)
- base::ScopedFD OpenStatm(base::ProcessId pid) {
-   std::string name =
-       "/proc/" +
-@@ -207,6 +210,7 @@ uint32_t ReadLinuxProcSmapsFile(FILE* smaps_file,
+ // TODO(chiniforooshan): Many of the utility functions in this anonymous
+ // namespace should move to base/process/process_metrics_linux.cc to make the
+ // code a lot cleaner.  However, we should do so after we made sure the metrics
+@@ -224,6 +227,7 @@ uint32_t ReadLinuxProcSmapsFile(FILE* smaps_file,
    }
    return num_valid_regions;
  }
@@ -30,17 +30,17 @@ Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metric
  
  }  // namespace
  
-@@ -220,6 +224,9 @@ void OSMetrics::SetProcSmapsForTesting(FILE* f) {
+@@ -237,6 +241,9 @@ void OSMetrics::SetProcSmapsForTesting(FILE* f) {
  // static
  bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
                                   mojom::RawOSMemDump* dump) {
 +#if defined(OS_BSD)
 +  return false;
 +#else
-   base::ScopedFD autoclose = OpenStatm(pid);
-   int statm_fd = autoclose.get();
- 
-@@ -267,10 +274,12 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
+   // TODO(chiniforooshan): There is no need to read both /statm and /status
+   // files. Refactor to get everything from /status using ProcessMetric.
+   auto statm_file = GetProcPidDir(pid).Append("statm");
+@@ -289,10 +296,12 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
  #endif  //  defined(OS_ANDROID)
  
    return true;
@@ -53,7 +53,7 @@ Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metric
    std::vector<VmRegionPtr> maps;
    uint32_t res = 0;
    if (g_proc_smaps_for_testing) {
-@@ -288,6 +297,10 @@ std::vector<VmRegionPtr> OSMetrics::GetProcessMemoryMa
+@@ -310,8 +319,13 @@ std::vector<VmRegionPtr> OSMetrics::GetProcessMemoryMa
      return std::vector<VmRegionPtr>();
  
    return maps;
@@ -63,4 +63,14 @@ Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metric
 +#endif
  }
  
++#if !defined(OS_BSD) 
  // static
+ OSMetrics::MappedAndResidentPagesDumpState OSMetrics::GetMappedAndResidentPages(
+     const size_t start_address,
+@@ -393,5 +407,6 @@ size_t OSMetrics::GetPeakResidentSetSize(base::Process
+   }
+   return 0;
+ }
++#endif
+ 
+ }  // namespace memory_instrumentation

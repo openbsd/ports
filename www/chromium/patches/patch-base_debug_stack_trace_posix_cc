@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.34 2019/05/08 22:04:25 robert Exp $
+$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.35 2019/08/01 08:31:59 robert Exp $
 
 Index: base/debug/stack_trace_posix.cc
 --- base/debug/stack_trace_posix.cc.orig
@@ -30,7 +30,7 @@ Index: base/debug/stack_trace_posix.cc
    }
  
    // Opens all object files and caches their file descriptors.
-@@ -812,7 +816,7 @@ size_t CollectStackTrace(void** trace, size_t count) {
+@@ -828,7 +832,7 @@ size_t CollectStackTrace(void** trace, size_t count) {
    // NOTE: This code MUST be async-signal safe (it's used by in-process
    // stack dumping signal handler). NO malloc or stdio is allowed here.
  

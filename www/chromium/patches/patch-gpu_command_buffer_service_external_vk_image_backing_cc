@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_backing_cc,v 1.1 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-gpu_command_buffer_service_external_vk_image_backing_cc,v 1.2 2019/08/01 08:31:59 robert Exp $
 
 Index: gpu/command_buffer/service/external_vk_image_backing.cc
 --- gpu/command_buffer/service/external_vk_image_backing.cc.orig
 +++ gpu/command_buffer/service/external_vk_image_backing.cc
-@@ -18,7 +18,7 @@
+@@ -26,7 +26,7 @@
  #include "gpu/vulkan/fuchsia/vulkan_fuchsia_ext.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: gpu/command_buffer/service/external_vk_image_backing.cc
  #define GL_HANDLE_TYPE_OPAQUE_FD_EXT 0x9586
  #endif
  
-@@ -140,7 +140,7 @@ ExternalVkImageBacking::ProduceGLTexture(SharedImageMa
+@@ -439,7 +439,7 @@ ExternalVkImageBacking::ProduceGLTexture(SharedImageMa
  #if defined(OS_FUCHSIA)
    NOTIMPLEMENTED_LOG_ONCE();
    return nullptr;

@@ -1,14 +1,14 @@
-$OpenBSD: patch-mojo_public_js_mojo_bindings_resources_grd,v 1.3 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-mojo_public_js_mojo_bindings_resources_grd,v 1.4 2019/08/01 08:31:59 robert Exp $
 
 Index: mojo/public/js/mojo_bindings_resources.grd
 --- mojo/public/js/mojo_bindings_resources.grd.orig
 +++ mojo/public/js/mojo_bindings_resources.grd
-@@ -41,7 +41,7 @@
+@@ -60,7 +60,7 @@
            use_base_dir="false"
            type="BINDATA"
            compress="gzip" />
 -      <if expr="is_win or is_macosx or is_linux">
 +      <if expr="is_win or is_macosx or is_posix">
-         <include name="IDR_MOJO_TIME_MOJOM_LITE_JS"
-             file="${root_gen_dir}/mojo/public/mojom/base/time.mojom-lite.js"
+         <include name="IDR_MOJO_TIME_MOJOM_HTML"
+             file="${root_gen_dir}/mojo/public/mojom/base/time.mojom.html"
              use_base_dir="false"

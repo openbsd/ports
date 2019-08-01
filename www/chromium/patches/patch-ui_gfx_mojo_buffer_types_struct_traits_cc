@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_mojo_buffer_types_struct_traits_cc,v 1.11 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-ui_gfx_mojo_buffer_types_struct_traits_cc,v 1.12 2019/08/01 08:32:00 robert Exp $
 
 Index: ui/gfx/mojo/buffer_types_struct_traits.cc
 --- ui/gfx/mojo/buffer_types_struct_traits.cc.orig
@@ -17,7 +17,7 @@ Index: ui/gfx/mojo/buffer_types_struct_traits.cc
    return mojo::WrapPlatformFile(plane.fd.release());
  #elif defined(OS_FUCHSIA)
    return mojo::WrapPlatformHandle(mojo::PlatformHandle(std::move(plane.vmo)));
-@@ -46,7 +46,7 @@ bool StructTraits<
+@@ -45,7 +45,7 @@ bool StructTraits<
  
    mojo::PlatformHandle handle =
        mojo::UnwrapPlatformHandle(data.TakeBufferHandle());
@@ -26,7 +26,7 @@ Index: ui/gfx/mojo/buffer_types_struct_traits.cc
    if (!handle.is_fd())
      return false;
    out->fd = handle.TakeFD();
-@@ -78,7 +78,7 @@ gfx::mojom::GpuMemoryBufferPlatformHandlePtr StructTra
+@@ -84,7 +84,7 @@ gfx::mojom::GpuMemoryBufferPlatformHandlePtr StructTra
        return gfx::mojom::GpuMemoryBufferPlatformHandle::NewSharedMemoryHandle(
            std::move(handle.region));
      case gfx::NATIVE_PIXMAP:
@@ -35,7 +35,7 @@ Index: ui/gfx/mojo/buffer_types_struct_traits.cc
        return gfx::mojom::GpuMemoryBufferPlatformHandle::NewNativePixmapHandle(
            std::move(handle.native_pixmap_handle));
  #else
-@@ -154,7 +154,7 @@ bool StructTraits<gfx::mojom::GpuMemoryBufferHandleDat
+@@ -160,7 +160,7 @@ bool StructTraits<gfx::mojom::GpuMemoryBufferHandleDat
        out->type = gfx::SHARED_MEMORY_BUFFER;
        out->region = std::move(platform_handle->get_shared_memory_handle());
        return true;

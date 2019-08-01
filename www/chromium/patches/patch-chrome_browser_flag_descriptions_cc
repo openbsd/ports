@@ -1,32 +1,31 @@
-$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.20 2019/06/06 11:36:00 robert Exp $
+$OpenBSD: patch-chrome_browser_flag_descriptions_cc,v 1.21 2019/08/01 08:31:59 robert Exp $
 
 Index: chrome/browser/flag_descriptions.cc
 --- chrome/browser/flag_descriptions.cc.orig
 +++ chrome/browser/flag_descriptions.cc
-@@ -3465,7 +3465,7 @@ const char kInstallableInkDropDescription[] =
+@@ -3256,21 +3256,21 @@ const char kInstallableInkDropDescription[] =
  
  // Random platform combinations -----------------------------------------------
- 
--#if defined(OS_WIN) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
- 
- const char kEnableInputImeApiName[] = "Enable Input IME API";
- const char kEnableInputImeApiDescription[] =
-@@ -3473,7 +3473,7 @@ const char kEnableInputImeApiDescription[] =
- 
- #endif  // defined(OS_WIN) || defined(OS_LINUX)
  
 -#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  
  const char kWebGL2ComputeContextName[] = "WebGL 2.0 Compute";
  const char kWebGL2ComputeContextDescription[] =
-@@ -3481,7 +3481,7 @@ const char kWebGL2ComputeContextDescription[] =
+     "Enable the use of WebGL 2.0 Compute API.";
  
- #endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
+-#endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
  
  const char kDirectManipulationStylusName[] = "Direct Manipulation Stylus";
  const char kDirectManipulationStylusDescription[] =
+     "If enabled, Chrome will scroll web pages on stylus drag.";
+ 
+-#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ 
+ #if defined(OS_MACOSX) || defined(OS_CHROMEOS)
+ 

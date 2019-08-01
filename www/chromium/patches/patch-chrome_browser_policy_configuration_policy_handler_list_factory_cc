@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.6 2019/05/24 19:09:15 robert Exp $
+$OpenBSD: patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc,v 1.7 2019/08/01 08:31:59 robert Exp $
 
 Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
 --- chrome/browser/policy/configuration_policy_handler_list_factory.cc.orig
 +++ chrome/browser/policy/configuration_policy_handler_list_factory.cc
-@@ -109,7 +109,7 @@
+@@ -108,7 +108,7 @@
  #include "chrome/browser/policy/browser_signin_policy_handler.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
      (defined(OS_LINUX) && !defined(OS_CHROMEOS))
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
-@@ -322,7 +322,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -321,7 +321,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
    { key::kSafeSitesFilterBehavior,
      policy_prefs::kSafeSitesFilterBehavior,
      base::Value::Type::INTEGER},
@@ -21,7 +21,7 @@ Index: chrome/browser/policy/configuration_policy_handler_list_factory.cc
    { key::kAuthNegotiateDelegateByKdcPolicy,
      prefs::kAuthNegotiateDelegateByKdcPolicy,
      base::Value::Type::BOOLEAN },
-@@ -994,7 +994,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
+@@ -1020,7 +1020,7 @@ const PolicyToPreferenceMapEntry kSimplePolicyMap[] = 
      prefs::kAllowPopupsDuringPageUnload,
      base::Value::Type::BOOLEAN },
  

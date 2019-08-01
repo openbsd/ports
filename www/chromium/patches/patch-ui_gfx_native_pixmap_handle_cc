@@ -1,4 +1,4 @@
-$OpenBSD: patch-ui_gfx_native_pixmap_handle_cc,v 1.3 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-ui_gfx_native_pixmap_handle_cc,v 1.4 2019/08/01 08:32:00 robert Exp $
 
 Index: ui/gfx/native_pixmap_handle.cc
 --- ui/gfx/native_pixmap_handle.cc.orig
@@ -18,22 +18,22 @@ Index: ui/gfx/native_pixmap_handle.cc
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
- static_assert(NativePixmapPlane::kNoModifier == DRM_FORMAT_MOD_INVALID,
-               "gfx::NativePixmapPlane::kNoModifier should be an alias for"
+ static_assert(NativePixmapHandle::kNoModifier == DRM_FORMAT_MOD_INVALID,
+               "gfx::NativePixmapHandle::kNoModifier should be an alias for"
                "DRM_FORMAT_MOD_INVALID");
-@@ -32,7 +32,7 @@ NativePixmapPlane::NativePixmapPlane()
+@@ -31,7 +31,7 @@ NativePixmapPlane::NativePixmapPlane() : stride(0), of
  NativePixmapPlane::NativePixmapPlane(int stride,
                                       int offset,
-                                      uint64_t size,
+                                      uint64_t size
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-                                      base::ScopedFD fd,
+                                      ,
+                                      base::ScopedFD fd
  #elif defined(OS_FUCHSIA)
-                                      zx::vmo vmo,
 @@ -42,7 +42,7 @@ NativePixmapPlane::NativePixmapPlane(int stride,
+     : stride(stride),
        offset(offset),
-       size(size),
-       modifier(modifier)
+       size(size)
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
        ,

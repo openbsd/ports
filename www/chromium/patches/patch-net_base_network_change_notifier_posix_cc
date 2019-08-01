@@ -1,9 +1,9 @@
-$OpenBSD: patch-net_base_network_change_notifier_posix_cc,v 1.1 2019/05/11 20:37:14 robert Exp $
+$OpenBSD: patch-net_base_network_change_notifier_posix_cc,v 1.2 2019/08/01 08:31:59 robert Exp $
 
 Index: net/base/network_change_notifier_posix.cc
 --- net/base/network_change_notifier_posix.cc.orig
 +++ net/base/network_change_notifier_posix.cc
-@@ -124,7 +124,7 @@ void NetworkChangeNotifierPosix::GetCurrentMaxBandwidt
+@@ -126,7 +126,7 @@ void NetworkChangeNotifierPosix::GetCurrentMaxBandwidt
  NetworkChangeNotifier::NetworkChangeCalculatorParams
  NetworkChangeNotifierPosix::NetworkChangeCalculatorParamsPosix() {
    NetworkChangeCalculatorParams params;

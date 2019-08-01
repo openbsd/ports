@@ -1,9 +1,9 @@
-$OpenBSD: patch-services_network_network_service_cc,v 1.8 2019/05/24 19:09:15 robert Exp $
+$OpenBSD: patch-services_network_network_service_cc,v 1.9 2019/08/01 08:32:00 robert Exp $
 
 Index: services/network/network_service.cc
 --- services/network/network_service.cc.orig
 +++ services/network/network_service.cc
-@@ -62,7 +62,7 @@
+@@ -60,7 +60,7 @@
  #include "third_party/boringssl/src/include/openssl/cpu.h"
  #endif
  
@@ -12,7 +12,7 @@ Index: services/network/network_service.cc
  #include "components/os_crypt/key_storage_config_linux.h"
  #endif
  
-@@ -596,7 +596,7 @@ void NetworkService::OnCertDBChanged() {
+@@ -625,7 +625,7 @@ void NetworkService::OnCertDBChanged() {
    net::CertDatabase::GetInstance()->NotifyObserversCertDBChanged();
  }
  

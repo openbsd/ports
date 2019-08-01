@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_signin_signin_util_cc,v 1.2 2019/03/24 12:24:45 robert Exp $
+$OpenBSD: patch-chrome_browser_signin_signin_util_cc,v 1.3 2019/08/01 08:31:59 robert Exp $
 
 Index: chrome/browser/signin/signin_util.cc
 --- chrome/browser/signin/signin_util.cc.orig
 +++ chrome/browser/signin/signin_util.cc
-@@ -42,7 +42,7 @@ namespace {
+@@ -45,7 +45,7 @@ namespace {
  
  constexpr char kSignoutSettingKey[] = "signout_setting";
  

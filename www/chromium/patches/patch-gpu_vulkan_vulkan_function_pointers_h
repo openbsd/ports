@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_h,v 1.2 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_h,v 1.3 2019/08/01 08:31:59 robert Exp $
 
 Index: gpu/vulkan/vulkan_function_pointers.h
 --- gpu/vulkan/vulkan_function_pointers.h.orig
 +++ gpu/vulkan/vulkan_function_pointers.h
-@@ -131,13 +131,13 @@ struct VulkanFunctionPointers {
+@@ -145,13 +145,13 @@ struct VulkanFunctionPointers {
  #endif
  
    // Device functions shared between Linux and Android.
@@ -19,7 +19,7 @@ Index: gpu/vulkan/vulkan_function_pointers.h
    PFN_vkGetMemoryFdKHR vkGetMemoryFdKHRFn = nullptr;
  #endif
  
-@@ -286,14 +286,14 @@ struct VulkanFunctionPointers {
+@@ -313,14 +313,14 @@ struct VulkanFunctionPointers {
        ->vkGetAndroidHardwareBufferPropertiesANDROIDFn
  #endif
  

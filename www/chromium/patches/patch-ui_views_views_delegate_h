@@ -1,8 +1,8 @@
-$OpenBSD: patch-ui_views_views_delegate_h,v 1.15 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-ui_views_views_delegate_h,v 1.16 2019/08/01 08:32:00 robert Exp $
 Index: ui/views/views_delegate.h
 --- ui/views/views_delegate.h.orig
 +++ ui/views/views_delegate.h
-@@ -147,7 +147,7 @@ class VIEWS_EXPORT ViewsDelegate {
+@@ -130,7 +130,7 @@ class VIEWS_EXPORT ViewsDelegate {
    // Returns true if the window passed in is in the Windows 8 metro
    // environment.
    virtual bool IsWindowInMetro(gfx::NativeWindow window) const;

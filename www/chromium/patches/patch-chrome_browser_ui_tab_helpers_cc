@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_tab_helpers_cc,v 1.22 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_tab_helpers_cc,v 1.23 2019/08/01 08:31:59 robert Exp $
 Index: chrome/browser/ui/tab_helpers.cc
 --- chrome/browser/ui/tab_helpers.cc.orig
 +++ chrome/browser/ui/tab_helpers.cc
-@@ -118,7 +118,7 @@
+@@ -119,7 +119,7 @@
  #include "components/zoom/zoom_controller.h"
  #endif  // defined(OS_ANDROID)
  

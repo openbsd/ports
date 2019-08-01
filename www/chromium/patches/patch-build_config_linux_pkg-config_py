@@ -1,12 +1,14 @@
-$OpenBSD: patch-build_config_linux_pkg-config_py,v 1.1 2016/08/17 11:06:50 robert Exp $
---- build/config/linux/pkg-config.py.orig.port	Sun Aug 14 13:26:34 2016
-+++ build/config/linux/pkg-config.py	Sun Aug 14 13:26:45 2016
-@@ -107,7 +107,7 @@ def main():
+$OpenBSD: patch-build_config_linux_pkg-config_py,v 1.2 2019/08/01 08:31:59 robert Exp $
+
+Index: build/config/linux/pkg-config.py
+--- build/config/linux/pkg-config.py.orig
++++ build/config/linux/pkg-config.py
+@@ -109,7 +109,7 @@ def main():
    # If this is run on non-Linux platforms, just return nothing and indicate
    # success. This allows us to "kind of emulate" a Linux build from other
    # platforms.
 -  if "linux" not in sys.platform:
 +  if "openbsd" not in sys.platform:
-     print "[[],[],[],[],[]]"
+     print("[[],[],[],[],[]]")
      return 0
  

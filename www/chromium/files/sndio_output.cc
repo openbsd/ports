@@ -139,6 +139,10 @@ void SndioAudioOutputStream::GetVolume(double* v) {
   pthread_mutex_unlock(&mutex);
 }
 
+// This stream is always used with sub second buffer sizes, where it's
+// sufficient to simply always flush upon Start().
+void SndioAudioOutputStream::Flush() {}
+
 void SndioAudioOutputStream::ThreadLoop(void) {
   int avail, count, result;
 

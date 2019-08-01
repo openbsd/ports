@@ -1,10 +1,10 @@
-$OpenBSD: patch-components_feature_engagement_public_event_constants_cc,v 1.4 2019/02/06 16:41:55 robert Exp $
+$OpenBSD: patch-components_feature_engagement_public_event_constants_cc,v 1.5 2019/08/01 08:31:59 robert Exp $
 
 Index: components/feature_engagement/public/event_constants.cc
 --- components/feature_engagement/public/event_constants.cc.orig
 +++ components/feature_engagement/public/event_constants.cc
-@@ -26,7 +26,7 @@ const char kReopenTabConditionsMet[] = "reopen_tab_con
- const char kTabReopened[] = "tab_reopened";
+@@ -29,7 +29,7 @@ const char kFocusModeOpened[] = "focus_mode_opened";
+ const char kFocusModeConditionsMet[] = "focus_mode_conditions_met";
  #endif  // BUILDFLAG(ENABLE_DESKTOP_IN_PRODUCT_HELP)
  
 -#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_IOS)

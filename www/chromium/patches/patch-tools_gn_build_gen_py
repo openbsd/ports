@@ -1,31 +1,14 @@
-$OpenBSD: patch-tools_gn_build_gen_py,v 1.5 2019/06/01 18:03:30 robert Exp $
+$OpenBSD: patch-tools_gn_build_gen_py,v 1.6 2019/08/01 08:32:00 robert Exp $
 
 Index: tools/gn/build/gen.py
 --- tools/gn/build/gen.py.orig
 +++ tools/gn/build/gen.py
-@@ -41,6 +41,8 @@ class Platform(object):
-       self._platform = 'fuchsia'
-     elif self._platform.startswith('freebsd'):
-       self._platform = 'freebsd'
-+    elif self._platform.startswith('openbsd'):
-+      self._platform = 'openbsd'
- 
-   @staticmethod
-   def known_platforms():
-@@ -68,7 +70,7 @@ class Platform(object):
-     return self._platform == 'aix'
- 
-   def is_posix(self):
--    return self._platform in ['linux', 'freebsd', 'darwin', 'aix']
-+    return self._platform in ['linux', 'freebsd', 'darwin', 'aix', 'openbsd']
- 
- 
- def main(argv):
-@@ -172,6 +174,7 @@ def WriteGenericNinja(path, static_libraries, executab
-       'darwin': 'build_mac.ninja.template',
+@@ -175,7 +175,7 @@ def WriteGenericNinja(path, static_libraries, executab
        'linux': 'build_linux.ninja.template',
        'freebsd': 'build_linux.ninja.template',
-+      'openbsd': 'build_linux.ninja.template',
        'aix': 'build_aix.ninja.template',
+-      'openbsd': 'build_openbsd.ninja.template',
++      'openbsd': 'build_linux.ninja.template',
    }[platform.platform()])
  
+   with open(template_filename) as f:

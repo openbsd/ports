@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.36 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-content_renderer_render_thread_impl_cc,v 1.37 2019/08/01 08:31:59 robert Exp $
 
 Index: content/renderer/render_thread_impl.cc
 --- content/renderer/render_thread_impl.cc.orig
 +++ content/renderer/render_thread_impl.cc
-@@ -191,12 +191,21 @@
+@@ -187,12 +187,21 @@
  #include "mojo/public/cpp/bindings/message_dumper.h"
  #endif
  
@@ -25,7 +25,7 @@ Index: content/renderer/render_thread_impl.cc
  using base::ThreadRestrictions;
  using blink::WebDocument;
  using blink::WebFrame;
-@@ -917,7 +926,7 @@ void RenderThreadImpl::Init() {
+@@ -907,7 +916,7 @@ void RenderThreadImpl::Init() {
    DCHECK(parsed_num_raster_threads) << string_value;
    DCHECK_GT(num_raster_threads, 0);
  
@@ -34,7 +34,7 @@ Index: content/renderer/render_thread_impl.cc
    categorized_worker_pool_->SetBackgroundingCallback(
        main_thread_scheduler_->DefaultTaskRunner(),
        base::BindOnce(
-@@ -958,7 +967,7 @@ void RenderThreadImpl::Init() {
+@@ -939,7 +948,7 @@ void RenderThreadImpl::Init() {
    GetConnector()->BindInterface(mojom::kBrowserServiceName,
                                  mojo::MakeRequest(&storage_partition_service_));
  

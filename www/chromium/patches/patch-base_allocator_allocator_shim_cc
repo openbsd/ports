@@ -1,9 +1,9 @@
-$OpenBSD: patch-base_allocator_allocator_shim_cc,v 1.8 2019/04/26 09:38:19 robert Exp $
+$OpenBSD: patch-base_allocator_allocator_shim_cc,v 1.9 2019/08/01 08:31:59 robert Exp $
 
 Index: base/allocator/allocator_shim.cc
 --- base/allocator/allocator_shim.cc.orig
 +++ base/allocator/allocator_shim.cc
-@@ -69,7 +69,7 @@ inline const base::allocator::AllocatorDispatch* GetCh
+@@ -70,7 +70,7 @@ inline const base::allocator::AllocatorDispatch* GetCh
    // Unfortunately due to that bug NoBarrier_Load() is mistakenly fully
    // barriered on Linux+Clang, and that causes visible perf regressons.
    return reinterpret_cast<const base::allocator::AllocatorDispatch*>(

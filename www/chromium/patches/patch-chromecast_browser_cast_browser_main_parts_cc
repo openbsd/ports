@@ -1,9 +1,9 @@
-$OpenBSD: patch-chromecast_browser_cast_browser_main_parts_cc,v 1.17 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-chromecast_browser_cast_browser_main_parts_cc,v 1.18 2019/08/01 08:31:59 robert Exp $
 
 Index: chromecast/browser/cast_browser_main_parts.cc
 --- chromecast/browser/cast_browser_main_parts.cc.orig
 +++ chromecast/browser/cast_browser_main_parts.cc
-@@ -67,7 +67,7 @@
+@@ -68,7 +68,7 @@
  #include "ui/base/ui_base_switches.h"
  #include "ui/gl/gl_switches.h"
  
@@ -12,7 +12,7 @@ Index: chromecast/browser/cast_browser_main_parts.cc
  #include <fontconfig/fontconfig.h>
  #include <signal.h>
  #include <sys/prctl.h>
-@@ -263,7 +263,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
+@@ -280,7 +280,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
      {cc::switches::kDisableThreadedAnimation, ""},
  #endif  // defined(OS_ANDROID)
  #endif  // BUILDFLAG(IS_CAST_AUDIO_ONLY)
@@ -21,10 +21,10 @@ Index: chromecast/browser/cast_browser_main_parts.cc
  #if defined(ARCH_CPU_X86_FAMILY)
      // This is needed for now to enable the x11 Ozone platform to work with
      // current Linux/NVidia OpenGL drivers.
-@@ -412,7 +412,7 @@ void CastBrowserMainParts::PostMainMessageLoopStart() 
- }
+@@ -435,7 +435,7 @@ void CastBrowserMainParts::ToolkitInitialized() {
+     views_delegate_ = std::make_unique<CastViewsDelegate>();
+ #endif  // defined(USE_AURA)
  
- void CastBrowserMainParts::ToolkitInitialized() {
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    // Without this call, the FontConfig library gets implicitly initialized

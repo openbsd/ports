@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_chrome_browser_main_extra_parts_views_cc,v 1.19 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_chrome_browser_main_extra_parts_views_cc,v 1.20 2019/08/01 08:31:59 robert Exp $
 
 Index: chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc
 --- chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc.orig
 +++ chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc
-@@ -33,7 +33,7 @@
+@@ -32,7 +32,7 @@
  #include "ui/wm/core/wm_state.h"
  #endif  // defined(USE_AURA)
  
@@ -12,7 +12,7 @@ Index: chrome/browser/ui/views/chrome_browser_main_extra_parts_views.cc
  #include <sys/stat.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -89,7 +89,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
+@@ -87,7 +87,7 @@ void ChromeBrowserMainExtraPartsViews::PreProfileInit(
          g_browser_process->system_network_context_manager()->GetContext());
    }
  

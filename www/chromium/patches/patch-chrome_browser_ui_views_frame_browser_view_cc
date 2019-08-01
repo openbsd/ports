@@ -1,11 +1,11 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_cc,v 1.19 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_cc,v 1.20 2019/08/01 08:31:59 robert Exp $
 
 Index: chrome/browser/ui/views/frame/browser_view.cc
 --- chrome/browser/ui/views/frame/browser_view.cc.orig
 +++ chrome/browser/ui/views/frame/browser_view.cc
-@@ -1502,7 +1502,7 @@ void BrowserView::UserChangedTheme(BrowserThemeChangeT
-   // light to dark mode.
+@@ -1557,7 +1557,7 @@ void BrowserView::UserChangedTheme(BrowserThemeChangeT
    const bool should_use_native_frame = frame_->ShouldUseNativeFrame();
+ 
    bool must_regenerate_frame;
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)

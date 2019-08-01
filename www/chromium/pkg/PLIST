@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.90 2019/07/14 08:08:46 robert Exp $
+@comment $OpenBSD: PLIST,v 1.91 2019/08/01 08:32:00 robert Exp $
 @pkgpath www/chromium,proprietary
 bin/chrome
 @bin bin/chromedriver
@@ -388,6 +388,8 @@ chrome/resources/inspector/timeline_model/
 chrome/resources/inspector/timeline_model/timeline_model_module.js
 chrome/resources/inspector/toolbox.html
 chrome/resources/inspector/toolbox.js
+chrome/resources/inspector/web_audio/
+chrome/resources/inspector/web_audio/web_audio_module.js
 chrome/resources/inspector/worker_app.html
 chrome/resources/inspector/worker_app.js
 chrome/resources/inspector/workspace_diff/
@@ -395,7 +397,6 @@ chrome/resources/inspector/workspace_diff/workspace_diff_module.js
 chrome/snapshot_blob.bin
 %%swiftshader%%
 chrome/v8_context_snapshot.bin
-chrome/views_mus_resources.pak
 @man man/man1/chrome.1
 share/applications/chromium-browser.desktop
 share/examples/chromium/

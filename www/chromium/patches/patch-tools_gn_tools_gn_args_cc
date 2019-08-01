@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_gn_tools_gn_args_cc,v 1.6 2019/06/30 18:46:23 robert Exp $
+$OpenBSD: patch-tools_gn_tools_gn_args_cc,v 1.7 2019/08/01 08:32:00 robert Exp $
 
 Index: tools/gn/tools/gn/args.cc
 --- tools/gn/tools/gn/args.cc.orig
@@ -11,8 +11,8 @@ Index: tools/gn/tools/gn/args.cc
 +  os = "openbsd";
  #elif defined(OS_AIX)
    os = "aix";
- #else
-@@ -322,6 +324,8 @@ void Args::SetSystemVarsLocked(Scope* dest) const {
+ #elif defined(OS_OPENBSD)
+@@ -324,6 +326,8 @@ void Args::SetSystemVarsLocked(Scope* dest) const {
      arch = kX86;
    else if (os_arch == "x86_64")
      arch = kX64;

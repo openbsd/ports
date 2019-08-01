@@ -1,14 +1,20 @@
-$OpenBSD: patch-content_browser_webui_shared_resources_data_source_cc,v 1.4 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-content_browser_webui_shared_resources_data_source_cc,v 1.5 2019/08/01 08:31:59 robert Exp $
 
 Index: content/browser/webui/shared_resources_data_source.cc
 --- content/browser/webui/shared_resources_data_source.cc.orig
 +++ content/browser/webui/shared_resources_data_source.cc
-@@ -101,7 +101,7 @@ const std::map<int, std::string> CreateMojoResourceIdT
-         {IDR_MOJO_BIG_BUFFER_MOJOM_LITE_JS, "js/big_buffer.mojom-lite.js"},
-         {IDR_MOJO_FILE_MOJOM_LITE_JS, "js/file.mojom-lite.js"},
-         {IDR_MOJO_STRING16_MOJOM_LITE_JS, "js/string16.mojom-lite.js"},
+@@ -119,12 +119,12 @@ const std::map<int, std::string> CreateMojoResourceIdT
+          "mojo/mojo/public/mojom/base/string16.mojom.html"},
+         {IDR_MOJO_STRING16_MOJOM_LITE_JS,
+          "mojo/mojo/public/mojom/base/string16.mojom-lite.js"},
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
-         {IDR_MOJO_TIME_MOJOM_LITE_JS, "js/time.mojom-lite.js"},
- #endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
+         {IDR_MOJO_TIME_MOJOM_HTML,
+          "mojo/mojo/public/mojom/base/time.mojom.html"},
+         {IDR_MOJO_TIME_MOJOM_LITE_JS,
+          "mojo/mojo/public/mojom/base/time.mojom-lite.js"},
+-#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
++#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
    };
+ }
+ 

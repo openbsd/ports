@@ -1,11 +1,11 @@
-$OpenBSD: patch-net_http_http_network_session_cc,v 1.15 2019/04/26 09:38:20 robert Exp $
+$OpenBSD: patch-net_http_http_network_session_cc,v 1.16 2019/08/01 08:31:59 robert Exp $
 
 Index: net/http/http_network_session.cc
 --- net/http/http_network_session.cc.orig
 +++ net/http/http_network_session.cc
-@@ -19,7 +19,9 @@
- #include "base/trace_event/process_memory_dump.h"
+@@ -20,7 +20,9 @@
  #include "base/values.h"
+ #include "net/base/features.h"
  #include "net/dns/host_resolver.h"
 +#if defined(USE_KERBEROS)
  #include "net/http/http_auth_handler_factory.h"

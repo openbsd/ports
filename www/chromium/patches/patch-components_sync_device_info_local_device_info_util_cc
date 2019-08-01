@@ -1,9 +1,9 @@
-$OpenBSD: patch-components_sync_device_info_local_device_info_util_cc,v 1.1 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-components_sync_device_info_local_device_info_util_cc,v 1.2 2019/08/01 08:31:59 robert Exp $
 
-Index: components/sync/device_info/local_device_info_util.cc
---- components/sync/device_info/local_device_info_util.cc.orig
-+++ components/sync/device_info/local_device_info_util.cc
-@@ -12,7 +12,7 @@ namespace syncer {
+Index: components/sync_device_info/local_device_info_util.cc
+--- components/sync_device_info/local_device_info_util.cc.orig
++++ components/sync_device_info/local_device_info_util.cc
+@@ -19,7 +19,7 @@ std::string GetSessionNameInternal();
  sync_pb::SyncEnums::DeviceType GetLocalDeviceType() {
  #if defined(OS_CHROMEOS)
    return sync_pb::SyncEnums_DeviceType_TYPE_CROS;

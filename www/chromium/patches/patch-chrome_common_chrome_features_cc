@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.17 2019/06/14 10:08:28 robert Exp $
+$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.18 2019/08/01 08:31:59 robert Exp $
 
 Index: chrome/common/chrome_features.cc
 --- chrome/common/chrome_features.cc.orig
 +++ chrome/common/chrome_features.cc
-@@ -92,7 +92,7 @@ const base::Feature kAutoFetchOnNetErrorPage{"AutoFetc
+@@ -98,7 +98,7 @@ const base::Feature kAutoFetchOnNetErrorPage{"AutoFetc
                                               base::FEATURE_DISABLED_BY_DEFAULT};
  #endif  // defined(OS_ANDROID)
  
@@ -12,21 +12,12 @@ Index: chrome/common/chrome_features.cc
  // Enables the Restart background mode optimization. When all Chrome UI is
  // closed and it goes in the background, allows to restart the browser to
  // discard memory.
-@@ -144,7 +144,7 @@ const base::Feature kThirdPartyModulesBlocking{
+@@ -150,7 +150,7 @@ const base::Feature kThirdPartyModulesBlocking{
      "ThirdPartyModulesBlocking", base::FEATURE_DISABLED_BY_DEFAULT};
  #endif
  
 -#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX)
-+#if ((defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_MACOSX) || defined(OS_BSD)
  // Enables the dual certificate verification trial feature.
  // https://crbug.com/649026
  const base::Feature kCertDualVerificationTrialFeature{
-@@ -210,7 +210,7 @@ const base::Feature kWilcoDtc{"WilcoDtc", base::FEATUR
- const base::Feature kDesktopPWAWindowing {
-   "DesktopPWAWindowing",
- #if defined(OS_CHROMEOS) || defined(OS_WIN) || defined(OS_LINUX) || \
--    defined(OS_MACOSX)
-+    defined(OS_MACOSX) || defined(OS_BSD)
-       base::FEATURE_ENABLED_BY_DEFAULT
- #else
-       base::FEATURE_DISABLED_BY_DEFAULT

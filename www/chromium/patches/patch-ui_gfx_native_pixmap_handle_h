@@ -1,9 +1,9 @@
-$OpenBSD: patch-ui_gfx_native_pixmap_handle_h,v 1.3 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-ui_gfx_native_pixmap_handle_h,v 1.4 2019/08/01 08:32:00 robert Exp $
 
 Index: ui/gfx/native_pixmap_handle.h
 --- ui/gfx/native_pixmap_handle.h.orig
 +++ ui/gfx/native_pixmap_handle.h
-@@ -13,7 +13,7 @@
+@@ -15,7 +15,7 @@
  #include "build/build_config.h"
  #include "ui/gfx/gfx_export.h"
  
@@ -12,18 +12,18 @@ Index: ui/gfx/native_pixmap_handle.h
  #include "base/files/scoped_file.h"
  #endif
  
-@@ -35,7 +35,7 @@ struct GFX_EXPORT NativePixmapPlane {
+@@ -32,7 +32,7 @@ struct GFX_EXPORT NativePixmapPlane {
    NativePixmapPlane(int stride,
                      int offset,
-                     uint64_t size,
+                     uint64_t size
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-                     base::ScopedFD fd,
+                     ,
+                     base::ScopedFD fd
  #elif defined(OS_FUCHSIA)
-                     zx::vmo vmo,
-@@ -58,7 +58,7 @@ struct GFX_EXPORT NativePixmapPlane {
-   // Chromium code. Also one per plane per entry.
-   uint64_t modifier;
+@@ -53,7 +53,7 @@ struct GFX_EXPORT NativePixmapPlane {
+   // This is necessary to map the buffers.
+   uint64_t size;
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)

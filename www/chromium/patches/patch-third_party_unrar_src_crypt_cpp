@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_unrar_src_crypt_cpp,v 1.2 2019/03/24 12:24:45 robert Exp $
+$OpenBSD: patch-third_party_unrar_src_crypt_cpp,v 1.3 2019/08/01 08:32:00 robert Exp $
 
 Index: third_party/unrar/src/crypt.cpp
 --- third_party/unrar/src/crypt.cpp.orig
 +++ third_party/unrar/src/crypt.cpp
-@@ -125,6 +125,8 @@ void GetRnd(byte *RndBuf,size_t BufSize)
+@@ -120,6 +120,8 @@ void GetRnd(byte *RndBuf,size_t BufSize)
      Success=CryptGenRandom(hProvider, (DWORD)BufSize, RndBuf) == TRUE;
      CryptReleaseContext(hProvider, 0);
    }

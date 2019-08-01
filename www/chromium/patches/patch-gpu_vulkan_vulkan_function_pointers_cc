@@ -1,9 +1,9 @@
-$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_cc,v 1.2 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-gpu_vulkan_vulkan_function_pointers_cc,v 1.3 2019/08/01 08:31:59 robert Exp $
 
 Index: gpu/vulkan/vulkan_function_pointers.cc
 --- gpu/vulkan/vulkan_function_pointers.cc.orig
 +++ gpu/vulkan/vulkan_function_pointers.cc
-@@ -305,7 +305,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -352,7 +352,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
  
  #endif
  
@@ -12,7 +12,7 @@ Index: gpu/vulkan/vulkan_function_pointers.cc
  
    vkGetSemaphoreFdKHRFn = reinterpret_cast<PFN_vkGetSemaphoreFdKHR>(
        vkGetDeviceProcAddrFn(vk_device, "vkGetSemaphoreFdKHR"));
-@@ -319,7 +319,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -366,7 +366,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
  
  #endif
  

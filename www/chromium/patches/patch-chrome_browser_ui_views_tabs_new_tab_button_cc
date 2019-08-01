@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_tabs_new_tab_button_cc,v 1.13 2019/05/10 21:55:40 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_views_tabs_new_tab_button_cc,v 1.14 2019/08/01 08:31:59 robert Exp $
 
 Index: chrome/browser/ui/views/tabs/new_tab_button.cc
 --- chrome/browser/ui/views/tabs/new_tab_button.cc.orig
 +++ chrome/browser/ui/views/tabs/new_tab_button.cc
-@@ -65,7 +65,7 @@ const gfx::Size NewTabButton::kButtonSize{28, 28};
+@@ -69,7 +69,7 @@ const gfx::Size NewTabButton::kButtonSize{28, 28};
  NewTabButton::NewTabButton(TabStrip* tab_strip, views::ButtonListener* listener)
      : views::ImageButton(listener), tab_strip_(tab_strip) {
    set_animate_on_state_change(true);
