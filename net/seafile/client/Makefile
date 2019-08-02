@@ -1,8 +1,13 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/16 15:59:17 kirby Exp $
+# $OpenBSD: Makefile,v 1.29 2019/08/02 16:44:41 sthen Exp $
 
 COMMENT =		seafile client
 
-GH_PROJECT = 		seafile-client
+GH_ACCOUNT =		haiwen
+GH_PROJECT =		seafile-client
+# upstream keep on sliding tags to pull in new commits
+# this commit is from the "v7.0.1" tag
+GH_COMMIT =		1dece9b82d66574140abca5a967705366a04d8ed
+DISTNAME =		seafile-client-7.0.1pl20190801
 
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets c
 WANTLIB += crypto event_core event_extra gio-2.0 glib-2.0 gobject-2.0
@@ -12,7 +17,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 MODULES =		devel/cmake x11/qt5
 LIB_DEPENDS =		net/seafile/seafile \
 			databases/sqlite3
-RUN_DEPENDS = 		devel/desktop-file-utils \
+RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
 NO_TEST =		Yes

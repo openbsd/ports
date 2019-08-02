@@ -1,12 +1,14 @@
-$OpenBSD: patch-Makefile_am,v 1.2 2015/07/17 22:44:04 jasper Exp $
---- Makefile.am.orig	Thu Aug 14 09:48:58 2014
-+++ Makefile.am	Fri Jul 17 16:40:05 2015
-@@ -22,7 +22,7 @@ install-data-local:
- if MACOS
+$OpenBSD: patch-Makefile_am,v 1.3 2019/08/02 16:44:41 sthen Exp $
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -25,7 +25,7 @@ else
+ if FBSD
  	sed -i '' -e "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
  else
 -	${SED} -i "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
 +	${SED} -i "s|(DESTDIR)||g" $(pcfiles)
  endif
+ endif
  
- dist-hook:

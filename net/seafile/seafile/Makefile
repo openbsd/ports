@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2019/05/18 12:13:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2019/08/02 16:44:41 sthen Exp $
 
 COMMENT =		seafile daemon
 
+GH_ACCOUNT =		haiwen
 GH_PROJECT =		seafile
-PKGNAME = 		${GH_PROJECT}-daemon-${V}
+GH_COMMIT =		099302d77a6aae8d15951621713d0d4d48b7c142
+# upstream keep on sliding tags to pull in new commits
+# this commit is from the "v7.0.1" tag
+DISTNAME =		seafile-daemon-7.0.1pl20190709
 
 SHARED_LIBS =		seafile 3.0
 
@@ -16,8 +20,8 @@ WANTLIB += lib/inotify/inotify ${cWANTLIB}
 MODULES =		lang/python
 BUILD_DEPENDS =		lang/vala
 
-RUN_DEPENDS = 		devel/py-simplejson
-LIB_DEPENDS = 		devel/libinotify \
+RUN_DEPENDS =		devel/py-simplejson
+LIB_DEPENDS =		devel/libinotify \
 			databases/sqlite3 \
 			devel/libevent2 \
 			net/curl \
@@ -31,10 +35,7 @@ CONFIGURE_ARGS +=	--disable-fuse \
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/inotify"
 
-AUTOCONF_VERSION =	2.62
-AUTOMAKE_VERSION =	1.11
-
-MODPY_ADJ_FILES = 	scripts/*.py scripts/build/*.py integration-tests/*.py \
+MODPY_ADJ_FILES =	scripts/*.py scripts/build/*.py integration-tests/*.py \
 			app/seaf-cli
 
 .include <bsd.port.mk>
