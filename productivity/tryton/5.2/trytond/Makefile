@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/18 07:49:58 semarie Exp $
+# $OpenBSD: Makefile,v 1.6 2019/08/02 11:18:44 semarie Exp $
 
 COMMENT =		3-tiers general purpose business application framework
 
-MODPY_EGG_VERSION =	5.2.3
+MODPY_EGG_VERSION =	5.2.4
 DISTNAME =		trytond-${MODPY_EGG_VERSION}
 
 TRYTON_PY =		Yes
