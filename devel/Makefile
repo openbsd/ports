@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1876 2019/07/23 19:25:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.1877 2019/08/02 15:32:29 kmos Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1665,8 +1665,6 @@
      SUBDIR += py-traitlets
      SUBDIR += py-traitlets,python3
      SUBDIR += py-trollius
-     SUBDIR += py-turbocheetah
-     SUBDIR += py-turbokid
      SUBDIR += py-twisted
      SUBDIR += py-twisted,python3
      SUBDIR += py-txaio
