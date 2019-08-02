@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/03 12:28:19 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/08/02 11:15:58 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_fr_chorus/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_fr_chorus/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_fr_chorus/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_fr_chorus/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_fr_chorus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_fr_chorus/${MODPY_PYCACHE}account.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_fr_chorus/${MODPY_PYCACHE}edocument.${MODPY_PYC_MAGIC_TAG}pyc
@@ -34,7 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_fr_chorus/party
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_fr_chorus/party.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_fr_chorus/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_fr_chorus/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_fr_chorus/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_fr_chorus/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_fr_chorus/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_fr_chorus/tests/${MODPY_PYCACHE}test_account_fr_chorus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_fr_chorus/tests/test_account_fr_chorus.py
