@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/06/17 04:32:21 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.15 2019/08/02 10:07:18 rsadowski Exp $
 @conflict calligra-<=2.9.11
 @bin bin/krita
 lib/kritaplugins/
@@ -98,8 +98,6 @@ lib/kritaplugins/kritapixelizefilter.so
 lib/kritaplugins/kritapngexport.so
 lib/kritaplugins/kritapngimport.so
 lib/kritaplugins/kritaposterize.so
-lib/kritaplugins/kritappmexport.so
-lib/kritaplugins/kritappmimport.so
 lib/kritaplugins/kritapresetdocker.so
 lib/kritaplugins/kritapresethistory.so
 lib/kritaplugins/kritapsdexport.so
@@ -219,7 +217,6 @@ share/applications/krita_kra.desktop
 share/applications/krita_ora.desktop
 share/applications/krita_pdf.desktop
 share/applications/krita_png.desktop
-share/applications/krita_ppm.desktop
 share/applications/krita_psd.desktop
 share/applications/krita_qimageio.desktop
 share/applications/krita_raw.desktop
