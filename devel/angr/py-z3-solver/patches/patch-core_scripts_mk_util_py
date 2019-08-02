@@ -1,4 +1,4 @@
-$OpenBSD: patch-core_scripts_mk_util_py,v 1.1 2019/07/23 19:56:50 kn Exp $
+$OpenBSD: patch-core_scripts_mk_util_py,v 1.2 2019/08/02 12:59:51 sthen Exp $
 
 Remove hardcoded optimizations.
 
@@ -17,3 +17,15 @@ Index: core/scripts/mk_util.py
          if is_CXX_clangpp():
              CXXFLAGS   = '%s -Wno-unknown-pragmas -Wno-overloaded-virtual -Wno-unused-value' % CXXFLAGS
          sysname, _, _, _, machine = os.uname()
+@@ -2457,9 +2457,9 @@ def mk_config():
+             SLIBFLAGS   = '-shared'
+         else:
+             raise MKException('Unsupported platform: %s' % sysname)
++        if sysname[:6] != 'CYGWIN':
++            CXXFLAGS     = '%s -fPIC' % CXXFLAGS
+         if is64():
+-            if sysname[:6] != 'CYGWIN':
+-                CXXFLAGS     = '%s -fPIC' % CXXFLAGS
+             CPPFLAGS     = '%s -D_AMD64_' % CPPFLAGS
+             if sysname == 'Linux':
+                 CPPFLAGS = '%s -D_USE_THREAD_LOCAL' % CPPFLAGS
