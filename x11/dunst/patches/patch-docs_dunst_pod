@@ -1,4 +1,4 @@
-$OpenBSD: patch-docs_dunst_pod,v 1.1 2018/02/23 22:34:18 kn Exp $
+$OpenBSD: patch-docs_dunst_pod,v 1.2 2019/08/02 13:49:29 sthen Exp $
 
 Index: docs/dunst.pod
 --- docs/dunst.pod.orig
@@ -8,31 +8,7 @@ Index: docs/dunst.pod
  =head1 CONFIGURATION
  
 -An example configuration file is included (usually /usr/share/dunst/dunstrc).
-+An example configuration file is included (usually ${PREFIX}/share/dunst/dunstrc).
++An example configuration file is included in ${PREFIX}/share/examples/dunst/dunstrc.
  To change the configuration, copy this file to ~/.config/dunst/dunstrc and edit
  it accordingly.
  
-@@ -395,7 +395,7 @@ Set to 0 to disable icon scaling. (default)
- 
- If B<icon_position> is set to off, this setting is ignored.
- 
--=item B<icon_path> (default: "/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/")
-+=item B<icon_path> (default: "${LOCALBASE}/share/icons/gnome/16x16/status/:${LOCALBASE}/share/icons/gnome/16x16/devices/")
- 
- Can be set to a colon-separated list of paths to search for icons to use with
- notifications.
-@@ -414,12 +414,12 @@ Maximum number of notifications that will be kept in h
- is reached, older notifications will be deleted once a new one arrives. See
- HISTORY.
- 
--=item B<dmenu> (default: "/usr/bin/dmenu")
-+=item B<dmenu> (default: "${PREFIX}/bin/dmenu")
- 
- The command that will be run when opening the context menu. Should be either
- a dmenu command or a dmenu-compatible menu.
- 
--=item B<browser> (default: "/usr/bin/firefox")
-+=item B<browser> (default: "${PREFIX}/bin/firefox")
- 
- The command that will be run when opening a URL. The URL to be opened will be
- appended to the end of the value of this setting.

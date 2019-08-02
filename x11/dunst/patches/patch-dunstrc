@@ -1,9 +1,9 @@
-$OpenBSD: patch-dunstrc,v 1.1 2018/02/23 22:34:18 kn Exp $
+$OpenBSD: patch-dunstrc,v 1.2 2019/08/02 13:49:29 sthen Exp $
 
 Index: dunstrc
 --- dunstrc.orig
 +++ dunstrc
-@@ -165,7 +165,7 @@
+@@ -166,7 +166,7 @@
      max_icon_size = 32
  
      # Paths to default icons.
@@ -12,7 +12,7 @@ Index: dunstrc
  
      ### History ###
  
-@@ -179,10 +179,10 @@
+@@ -180,10 +180,10 @@
      ### Misc/Advanced ###
  
      # dmenu path.

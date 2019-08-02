@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:51:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/08/02 13:49:29 sthen Exp $
 
 COMMENT =	customizable and lightweight notification-daemon
 
 GH_ACCOUNT =	dunst-project
 GH_PROJECT =	dunst
-GH_TAGNAME =	v1.3.2
-REVISION =	0
+GH_TAGNAME =	v1.4.1
 
 CATEGORIES =	x11
 
@@ -16,10 +15,9 @@ MAINTAINER =	Timo Myyra <timo.myyra@bittivirhe.fi>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-# uses pledge()
-WANTLIB += X11 Xinerama Xrandr Xss c cairo dbus-1 gdk_pixbuf-2.0
+WANTLIB += X11 Xext Xinerama Xrandr Xss c cairo dbus-1 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 intl m pango-1.0 pangocairo-1.0
-WANTLIB += pthread xdg-basedir
+WANTLIB += pthread
 
 USE_GMAKE =	Yes
 
@@ -28,17 +26,13 @@ LIB_DEPENDS +=	devel/gettext,-runtime \
 		devel/pango \
 		graphics/cairo \
 		graphics/gdk-pixbuf2 \
-		x11/dbus \
-		x11/libxdg-basedir
+		x11/dbus
 
-MAKE_FLAGS =	V=1 \
-		PREFIX="${PREFIX}" \
-		MANPREFIX="${PREFIX}/man"
+FAKE_FLAGS =	PREFIX="${PREFIX}" \
+		MANPREFIX="${PREFIX}/man" \
+		DATADIR="${PREFIX}/share/examples"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/docs/dunst.pod ${WRKSRC}/dunstrc
-
-post-install:
-	mv ${PREFIX}/share/dunst ${PREFIX}/share/examples/dunst
 
 .include <bsd.port.mk>
