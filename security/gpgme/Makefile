@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2019/08/01 12:47:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2019/08/02 15:12:07 sthen Exp $
 
 COMMENT-main =		GnuPG Made Easy
 COMMENT-qt =		Qt bindings for GPGme
@@ -74,8 +74,5 @@ USE_GMAKE =		Yes
 TEST_DEPENDS +=		security/gnupg2
 pre-build:
 	ln -sf ${LOCALBASE}/bin/gpg2 ${WRKDIR}/bin/gpg
-
-post-install:
-	rmdir ${PREFIX}/lib/cmake
 
 .include <bsd.port.mk>
