@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.380 2019/06/07 20:17:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.381 2019/08/02 22:00:54 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -31,6 +31,7 @@
      SUBDIR += cue
      SUBDIR += cyrus-imapd
      SUBDIR += dkimproxy
+     SUBDIR += dma
      SUBDIR += dovecot
      SUBDIR += dovecot-pigeonhole
      SUBDIR += dspam
