@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/02 22:00:37 bcallah Exp $
+@newgroup _dma:840
+@newuser _dma:840:_dma::DragonFly Mail Agent:/nonexistent:/sbin/nologin
+@mode 4554
+@owner _dma
+@group _dma
+@bin libexec/dma-mbox-create
+@mode
+@owner
+@group
+@man man/man8/dma.8
+@mode 2555
+@owner _dma
+@group _dma
+@bin sbin/dma
+@mode
+@owner
+@group
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/dma/
+@sample ${SYSCONFDIR}/dma/
+share/examples/dma/auth.conf
+@sample ${SYSCONFDIR}/dma/auth.conf
+share/examples/dma/dma.conf
+@sample ${SYSCONFDIR}/dma/dma.conf
+share/examples/dma/mailer.conf
+@mode 775
+@owner _dma
+@group _dma
+@sample /var/spool/dma/
+@mode 660
+@sample /var/spool/dma/flush
+@mode
+@owner
+@group
