@@ -1,4 +1,0 @@
-This package provides a template engine plugin, allowing you to
-easily use Kid with TurboGears, Buffet or other systems that support
-python.templating.engines.  Kid templates are assumed to have a
-"kid" extension.

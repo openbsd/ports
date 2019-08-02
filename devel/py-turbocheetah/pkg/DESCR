@@ -1,4 +1,0 @@
-This package provides a template engine plugin, allowing you to
-easily use Cheetah with TurboGears, Buffet and other tools that
-support the python.templating.engines entry point.  Cheetah templates
-are assumed to have a "tmpl" extension.
