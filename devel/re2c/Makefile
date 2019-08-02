@@ -1,25 +1,25 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:45:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/08/02 15:15:24 sthen Exp $
 
-COMMENT=		C-based regular expression scanner generator
+COMMENT=	C-based regular expression scanner generator
 
-V=			1.1.1
-DISTNAME=		re2c-$V
-CATEGORIES=		devel
-HOMEPAGE=		http://re2c.org/
-REVISION=		0
+V=		1.2
+DISTNAME=	re2c-$V
+EXTRACT_SUFX=	.tar.xz
+CATEGORIES=	devel
+HOMEPAGE=	http://re2c.org/
 
 # public domain
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
-MASTER_SITES=		https://github.com/skvadrik/re2c/releases/download/$V/
+MASTER_SITES=	https://github.com/skvadrik/re2c/releases/download/$V/
 
-BUILD_DEPENDS=		devel/bison
-TEST_DEPENDS=		shells/bash
+BUILD_DEPENDS=	devel/bison
+TEST_DEPENDS=	shells/bash
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>
