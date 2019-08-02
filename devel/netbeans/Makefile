@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2019/07/12 20:44:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2019/08/02 15:17:32 giovanni Exp $
 
 COMMENT=		NetBeans Java IDE
 
-V=			11.0
-REVISION=		0
-DISTNAME=		incubating-netbeans-${V}-bin
+V=			11.1
+DISTNAME=		netbeans-${V}-bin
 PKGNAME=		netbeans-${V}
 CATEGORIES=		devel
 
@@ -16,7 +15,7 @@ MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org> \
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_APACHE:=incubator/netbeans/incubating-netbeans/incubating-${V}/}
+MASTER_SITES=		${MASTER_SITE_APACHE:=netbeans/netbeans/${V}/}
 EXTRACT_SUFX=		.zip
 
 MODULES=		java
