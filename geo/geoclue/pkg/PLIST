@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/07/06 06:04:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/08/02 06:29:53 kirby Exp $
 include/geoclue/
 include/geoclue/gc-iface-address.h
 include/geoclue/gc-iface-geoclue.h
@@ -27,7 +27,6 @@ lib/libgeoclue.la
 lib/pkgconfig/geoclue.pc
 @comment libexec/geoclue-example
 @bin libexec/geoclue-geonames
-@bin libexec/geoclue-gpsd
 @bin libexec/geoclue-gsmloc
 @bin libexec/geoclue-hostip
 @bin libexec/geoclue-localnet
@@ -37,15 +36,10 @@ lib/pkgconfig/geoclue.pc
 @bin libexec/geoclue-plazes
 @bin libexec/geoclue-skyhook
 @bin libexec/geoclue-yahoo
-share/GConf/
-share/GConf/gsettings/
 share/GConf/gsettings/geoclue
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.freedesktop.Geoclue.Master.service
 @comment share/dbus-1/services/org.freedesktop.Geoclue.Providers.Example.service
 share/dbus-1/services/org.freedesktop.Geoclue.Providers.Geonames.service
-share/dbus-1/services/org.freedesktop.Geoclue.Providers.Gpsd.service
 share/dbus-1/services/org.freedesktop.Geoclue.Providers.Gsmloc.service
 share/dbus-1/services/org.freedesktop.Geoclue.Providers.Hostip.service
 share/dbus-1/services/org.freedesktop.Geoclue.Providers.Localnet.service
@@ -57,7 +51,6 @@ share/dbus-1/services/org.freedesktop.Geoclue.Providers.Yahoo.service
 share/geoclue-providers/
 @comment share/geoclue-providers/geoclue-example.provider
 share/geoclue-providers/geoclue-geonames.provider
-share/geoclue-providers/geoclue-gpsd.provider
 share/geoclue-providers/geoclue-gsmloc.provider
 share/geoclue-providers/geoclue-hostip.provider
 share/geoclue-providers/geoclue-localnet.provider
