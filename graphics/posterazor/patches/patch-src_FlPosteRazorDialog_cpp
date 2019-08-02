@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_FlPosteRazorDialog_cpp,v 1.1.1.1 2019/08/02 15:24:45 kirby Exp $
+
+Index: src/FlPosteRazorDialog.cpp
+--- src/FlPosteRazorDialog.cpp.orig
++++ src/FlPosteRazorDialog.cpp
+@@ -39,6 +39,7 @@
+   #define CASESENSITIVESTRNCMP strnicmp
+ #else
+   #include <iostream>
++  #include <unistd.h>
+   #define CASESENSITIVESTRCMP strcasecmp
+   #define CASESENSITIVESTRNCMP strncasecmp
+ #endif
