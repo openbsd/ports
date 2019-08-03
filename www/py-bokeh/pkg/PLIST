@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/07/27 09:52:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2019/08/03 11:47:59 ajacoutot Exp $
 bin/bokeh${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/bokeh/
 lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -38,6 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/_testing/plugins/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/bokeh/_testing/plugins/${MODPY_PYCACHE}examples_report.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/_testing/plugins/${MODPY_PYCACHE}file_server.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/_testing/plugins/${MODPY_PYCACHE}implicit_mark.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bokeh/_testing/plugins/${MODPY_PYCACHE}ipython.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/_testing/plugins/${MODPY_PYCACHE}jupyter_notebook.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/_testing/plugins/${MODPY_PYCACHE}log_file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bokeh/_testing/plugins/${MODPY_PYCACHE}pandas.${MODPY_PYC_MAGIC_TAG}pyc
@@ -47,6 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/_testing/plugins/bokeh_server.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/_testing/plugins/examples_report.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/_testing/plugins/file_server.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/_testing/plugins/implicit_mark.py
+lib/python${MODPY_VERSION}/site-packages/bokeh/_testing/plugins/ipython.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/_testing/plugins/jupyter_notebook.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/_testing/plugins/log_file.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/_testing/plugins/pandas.py
