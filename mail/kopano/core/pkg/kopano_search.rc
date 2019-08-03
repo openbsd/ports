@@ -1,12 +1,14 @@
 #!/bin/ksh
 #
-# $OpenBSD: kopano_search.rc,v 1.4 2018/03/18 11:30:55 robert Exp $
+# $OpenBSD: kopano_search.rc,v 1.5 2019/08/03 10:24:09 robert Exp $
 
 daemon="${TRUEPREFIX}/sbin/kopano-search"
 
 . /etc/rc.d/rc.subr
 
 pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+
+rc_bg=YES
 
 rc_pre() {
 	install -d -o _kopano -g _kopano /var/run/kopano

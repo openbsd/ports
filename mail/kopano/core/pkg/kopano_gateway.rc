@@ -1,10 +1,12 @@
 #!/bin/ksh
 #
-# $OpenBSD: kopano_gateway.rc,v 1.2 2018/01/11 19:27:03 rpe Exp $
+# $OpenBSD: kopano_gateway.rc,v 1.3 2019/08/03 10:24:09 robert Exp $
 
 daemon="${TRUEPREFIX}/sbin/kopano-gateway"
 
 . /etc/rc.d/rc.subr
+
+rc_bg=YES
 
 rc_pre() {
 	install -d -o _kopano -g _kopano /var/run/kopano
