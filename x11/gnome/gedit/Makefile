@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2019/07/07 11:20:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.164 2019/08/03 18:52:23 jca Exp $
 
 COMMENT=		lightweight GNOME text editor
 
@@ -15,6 +15,9 @@ WANTLIB += X11 atk-1.0 c cairo cairo-gobject enchant-2 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gspell-1 gtk-3 gtksourceview-4 intl m pango-1.0 pangocairo-1.0
 WANTLIB += peas-1.0 peas-gtk-1.0 pthread xml2
+
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 MODULES=		devel/dconf \
 			devel/meson \
