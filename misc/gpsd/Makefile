@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2019/07/31 15:44:30 kirby Exp $
+# $OpenBSD: Makefile,v 1.74 2019/08/03 08:44:41 kirby Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -46,7 +46,8 @@ TEST_DEPENDS=		${FULLPKGNAME-main}:${FULLPKGPATH-main} \
 			x11/dbus
 
 LIB_DEPENDS-main = 	devel/libusb1 \
-			x11/dbus
+			x11/dbus \
+			${MODGCC4_CPPLIBDEP}
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
 			devel/py-serial
 
