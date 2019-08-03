@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.90 2019/08/01 12:16:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.91 2019/08/03 19:16:22 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-V =		1.16.0
-REVISION =	1
+V =		1.16.1
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
 
