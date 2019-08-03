@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/07/22 16:10:27 robert Exp $
+# $OpenBSD: Makefile,v 1.42 2019/08/03 09:44:18 robert Exp $
 
 # undefined ref's to libicon*, libintl*
 USE_LLD=	Yes
@@ -54,7 +54,7 @@ WANTLIB-main += curl nghttp2 ical icalss
 WANTLIB-main += mariadb curses ssl xml2
 WANTLIB-main += gsoapssl++ tidy
 WANTLIB-main += ${LIBCXX}
-WANTLIB-main += icalvcal ldap_r-2.4 HX jsoncpp
+WANTLIB-main += icalvcal ldap_r HX jsoncpp
 WANTLIB-main += db_cxx uuid xapian
 
 # Do not substitute MODULE_NAME
