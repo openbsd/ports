@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/02 22:00:37 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/08/03 08:41:41 ajacoutot Exp $
 
 COMMENT =	DragonFly Mail Agent
 DISTNAME =	dma-0.11.21
 CATEGORIES =	mail
+REVISION =	0
 
 HOMEPAGE =	https://www.dragonflybsd.org/handbook/mta/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
