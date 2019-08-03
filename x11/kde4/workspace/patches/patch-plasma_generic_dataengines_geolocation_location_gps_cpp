@@ -1,0 +1,19 @@
+$OpenBSD: patch-plasma_generic_dataengines_geolocation_location_gps_cpp,v 1.1 2019/08/03 07:20:35 kirby Exp $
+
+fix build with newer gpsd API
+upstream commit 81a0fe6db9ac9044c2ec8a246878ec65651cb6dd
+
+Index: plasma/generic/dataengines/geolocation/location_gps.cpp
+--- plasma/generic/dataengines/geolocation/location_gps.cpp.orig
++++ plasma/generic/dataengines/geolocation/location_gps.cpp
+@@ -51,7 +51,9 @@ void Gpsd::run()
+     while (!m_abort) {
+         Plasma::DataEngine::Data d;
+ 
+-#if GPSD_API_MAJOR_VERSION >= 5
++#if GPSD_API_MAJOR_VERSION >= 7
++	if (gps_read(m_gpsdata, NULL, 0) != -1) {
++#elif GPSD_API_MAJOR_VERSION >= 5
+ 	if (gps_read(m_gpsdata) != -1) {
+ #else
+         if (gps_poll(m_gpsdata) != -1) {
