@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2019/07/12 20:47:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2019/08/03 19:36:04 sthen Exp $
 
 BROKEN-powerpc = Error: Kind -2 not supported for type INTEGER at (1)
 
@@ -18,9 +18,7 @@ SHARED_LIBS =	csirocsa	4.0	\
 PKGNAME-main =	${DISTNAME}
 PKGNAME-c++ =	plplot-c++-${VERSION}
 PKGNAME-fortran =	plplot-fortran-${VERSION}
-REVISION-c++ =	2
-REVISION-fortran =	2
-REVISION-main =	3
+REVISION =	4
 
 CATEGORIES =	math graphics
 
@@ -69,7 +67,7 @@ MULTI_PACKAGES =	-main -c++ -fortran
 
 myWANTLIB += ICE SM X11 Xext cairo glib-2.0
 myWANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0
-myWANTLIB += qhull intl ltdl
+myWANTLIB += qhull intl ltdl shp
 
 WANTLIB-main =	${myWANTLIB} c pthread
 WANTLIB-c++ =	plplot m ${COMPILER_LIBCXX}
@@ -78,6 +76,7 @@ WANTLIB-fortran = plplot m ${MODFORTRAN_WANTLIB}
 myLIB_DEPENDS =	devel/glib2 \
 		devel/gettext,-runtime \
 		devel/pango \
+		devel/shapelib \
 		graphics/cairo \
 		math/qhull \
 		devel/libtool,-ltdl

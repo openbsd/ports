@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2017/11/04 10:28:21 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2019/08/03 19:36:04 sthen Exp $
 @pkgpath math/plplot
 @bin bin/pltek
 include/plplot/
@@ -17,7 +17,6 @@ include/plplot/plstrm.h
 include/plplot/plxwd.h
 include/plplot/qsastime.h
 include/plplot/qsastimedll.h
-lib/cmake/
 lib/cmake/plplot/
 lib/cmake/plplot/export_plplot${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/plplot/export_plplot.cmake
@@ -235,6 +234,7 @@ share/doc/plplot/README.drivers
 share/doc/plplot/README.nn
 share/doc/plplot/README.pkg-config
 share/doc/plplot/README.release
+share/doc/plplot/README.shapefiles
 share/doc/plplot/README.testing
 share/doc/plplot/README.wxwidgets
 share/doc/plplot/html/
@@ -618,7 +618,8 @@ share/examples/plplot/test_cxx.sh
 share/examples/plplot/test_diff.sh
 share/examples/plplot/test_fortran.sh
 share/plplot/
-share/plplot/cglobe.map
+share/plplot/cglobe.shp
+share/plplot/cglobe.shx
 share/plplot/cmap0_alternate.pal
 share/plplot/cmap0_black_on_white.pal
 share/plplot/cmap0_default.pal
@@ -630,8 +631,45 @@ share/plplot/cmap1_gray.pal
 share/plplot/cmap1_highfreq.pal
 share/plplot/cmap1_lowfreq.pal
 share/plplot/cmap1_radar.pal
-share/plplot/globe.map
+share/plplot/globe.shp
+share/plplot/globe.shx
 share/plplot/plstnd5.fnt
 share/plplot/plxtnd5.fnt
-share/plplot/usa.map
-share/plplot/usaglobe.map
+share/plplot/ss/
+share/plplot/ss/os_open_conditions.txt
+share/plplot/ss/ss64ne_Building_Area.dbf
+share/plplot/ss/ss64ne_Building_Area.prj
+share/plplot/ss/ss64ne_Building_Area.shp
+share/plplot/ss/ss64ne_Building_Area.shx
+share/plplot/ss/ss64ne_General_Text.dbf
+share/plplot/ss/ss64ne_General_Text.prj
+share/plplot/ss/ss64ne_General_Text.shp
+share/plplot/ss/ss64ne_General_Text.shx
+share/plplot/ss/ss64ne_Height_Contours.dbf
+share/plplot/ss/ss64ne_Height_Contours.prj
+share/plplot/ss/ss64ne_Height_Contours.shp
+share/plplot/ss/ss64ne_Height_Contours.shx
+share/plplot/ss/ss64ne_Landform_Area.dbf
+share/plplot/ss/ss64ne_Landform_Area.prj
+share/plplot/ss/ss64ne_Landform_Area.shp
+share/plplot/ss/ss64ne_Landform_Area.shx
+share/plplot/ss/ss64ne_Landform_Line.dbf
+share/plplot/ss/ss64ne_Landform_Line.prj
+share/plplot/ss/ss64ne_Landform_Line.shp
+share/plplot/ss/ss64ne_Landform_Line.shx
+share/plplot/ss/ss64ne_Road_Centreline.dbf
+share/plplot/ss/ss64ne_Road_Centreline.prj
+share/plplot/ss/ss64ne_Road_Centreline.shp
+share/plplot/ss/ss64ne_Road_Centreline.shx
+share/plplot/ss/ss64ne_Water_Area.dbf
+share/plplot/ss/ss64ne_Water_Area.prj
+share/plplot/ss/ss64ne_Water_Area.shp
+share/plplot/ss/ss64ne_Water_Area.shx
+share/plplot/ss/ss64ne_Water_Line.dbf
+share/plplot/ss/ss64ne_Water_Line.prj
+share/plplot/ss/ss64ne_Water_Line.shp
+share/plplot/ss/ss64ne_Water_Line.shx
+share/plplot/usa.shp
+share/plplot/usa.shx
+share/plplot/usaglobe.shp
+share/plplot/usaglobe.shx
