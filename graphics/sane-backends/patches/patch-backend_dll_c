@@ -1,4 +1,5 @@
-$OpenBSD: patch-backend_dll_c,v 1.6 2017/05/23 13:00:46 ajacoutot Exp $
+$OpenBSD: patch-backend_dll_c,v 1.7 2019/08/03 12:56:09 ajacoutot Exp $
+
 Index: backend/dll.c
 --- backend/dll.c.orig
 +++ backend/dll.c

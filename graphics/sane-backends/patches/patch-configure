@@ -1,8 +1,9 @@
-$OpenBSD: patch-configure,v 1.17 2017/05/23 13:00:47 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.18 2019/08/03 12:56:09 ajacoutot Exp $
+
 Index: configure
 --- configure.orig
 +++ configure
-@@ -17039,18 +17039,6 @@ if test "${with_group+set}" = set; then :
+@@ -22183,18 +22183,6 @@ if test "${with_group+set}" = set; then :
  
  fi
  
@@ -21,16 +22,16 @@ Index: configure
    fi
    if test $use_locking = yes ; then
      INSTALL_LOCKPATH=install-lockpath
-@@ -17708,7 +17696,7 @@ $as_echo "#define STDC_HEADERS 1" >>confdefs.h
+@@ -22852,7 +22840,7 @@ $as_echo "#define STDC_HEADERS 1" >>confdefs.h
  
  fi
  
 -for ac_header in fcntl.h unistd.h libc.h sys/dsreq.h sys/select.h \
 +for ac_header in fcntl.h unistd.h sys/dsreq.h sys/select.h \
-     sys/time.h sys/shm.h sys/ipc.h sys/signal.h sys/scanio.h os2.h \
+     sys/time.h sys/shm.h sys/ipc.h sys/scanio.h os2.h \
      sys/socket.h sys/io.h sys/hw.h sys/types.h linux/ppdev.h \
      dev/ppbus/ppi.h machine/cpufunc.h sys/sem.h sys/poll.h \
-@@ -17934,6 +17922,7 @@ $as_echo_n "checking for socklen_t in <sys/socket.h>..
+@@ -23078,6 +23066,7 @@ $as_echo_n "checking for socklen_t in <sys/socket.h>..
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
@@ -38,7 +39,7 @@ Index: configure
  #include <sys/socket.h>
  
  int
-@@ -20723,8 +20712,7 @@ for be in ${BACKENDS}; do
+@@ -25861,8 +25850,7 @@ for be in ${BACKENDS}; do
      ;;
  
      v4l)
@@ -48,7 +49,7 @@ Index: configure
        echo "*** $be backend requires v4l libraries - $DISABLE_MSG"
        backend_supported="no"
      fi
-@@ -20905,8 +20893,7 @@ for be in ${BACKENDS}; do
+@@ -26050,8 +26038,7 @@ for be in ${BACKENDS}; do
      ;;
  
      v4l)

@@ -1,11 +1,11 @@
-$OpenBSD: patch-backend_epsonds_c,v 1.1 2017/05/23 13:00:46 ajacoutot Exp $
+$OpenBSD: patch-backend_epsonds_c,v 1.2 2019/08/03 12:56:09 ajacoutot Exp $
 
 Index: backend/epsonds.c
 --- backend/epsonds.c.orig
 +++ backend/epsonds.c
-@@ -42,6 +42,8 @@
- 
- #include <ctype.h>
+@@ -48,6 +48,8 @@
+ # include <sys/time.h>
+ #endif
  #include <unistd.h>
 +#include <sys/select.h> /* fd_set */
 +#include <sys/socket.h> /* setsockopt */

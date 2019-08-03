@@ -1,7 +1,9 @@
-$OpenBSD: patch-doc_saned_man,v 1.7 2015/10/09 07:06:52 ajacoutot Exp $
---- doc/saned.man.orig	Sat Sep 26 02:53:25 2015
-+++ doc/saned.man	Thu Oct  8 08:00:01 2015
-@@ -163,7 +163,7 @@ It is required to add a single line to the inetd confi
+$OpenBSD: patch-doc_saned_man,v 1.8 2019/08/03 12:56:09 ajacoutot Exp $
+
+Index: doc/saned.man
+--- doc/saned.man.orig
++++ doc/saned.man
+@@ -197,7 +197,7 @@ It is required to add a single line to the inetd confi
  The configuration line normally looks like this:
  .PP
  .RS
@@ -10,7 +12,7 @@ $OpenBSD: patch-doc_saned_man,v 1.7 2015/10/09 07:06:52 ajacoutot Exp $
  .RE
  .PP
  However, if your system uses
-@@ -176,16 +176,16 @@ and use a line of the following form in
+@@ -210,16 +210,16 @@ and use a line of the following form in
  instead:
  .PP
  .RS
@@ -19,19 +21,18 @@ $OpenBSD: patch-doc_saned_man,v 1.7 2015/10/09 07:06:52 ajacoutot Exp $
  .RE
  .PP
  Note that both examples assume that there is a
--.B saned
-+.B _saned
+ .B saned
  group and a
 -.B saned
 +.B _saned
- user.  If you follow this example, please make sure that the 
+ user.  If you follow this example, please make sure that the
  access permissions on the special device are set such that
 -.B saned
 +.B _saned
  can access the scanner (the program generally needs read and
  write access to scanner devices).
  .SH XINETD CONFIGURATION
-@@ -206,8 +206,8 @@ service sane\-port
+@@ -240,8 +240,8 @@ service sane\-port
     port        = 6566
     socket_type = stream
     wait        = no

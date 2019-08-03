@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.25 2018/09/04 12:46:14 espie Exp $
+@comment $OpenBSD: PLIST,v 1.26 2019/08/03 12:56:09 ajacoutot Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/spool/lock/sane/*
+@rcscript ${RCDIR}/saned
 @bin bin/gamma4scanimage
 bin/sane-config
 @bin bin/sane-find-scanner
@@ -56,7 +57,6 @@ lib/sane/libsane-kodak.so
 lib/sane/libsane-kodakaio.so
 lib/sane/libsane-kvs1025.so
 lib/sane/libsane-kvs20xx.so
-lib/sane/libsane-kvs40xx.so
 lib/sane/libsane-leo.so
 lib/sane/libsane-lexmark.so
 lib/sane/libsane-ma1509.so
@@ -65,7 +65,6 @@ lib/sane/libsane-matsushita.so
 lib/sane/libsane-microtek.so
 lib/sane/libsane-mustek.so
 lib/sane/libsane-mustek_usb.so
-lib/sane/libsane-mustek_usb2.so
 lib/sane/libsane-nec.so
 lib/sane/libsane-net.so
 lib/sane/libsane-niash.so
@@ -76,6 +75,7 @@ lib/sane/libsane-pixma.so
 lib/sane/libsane-plustek.so
 lib/sane/libsane-plustek_pp.so
 lib/sane/libsane-ricoh.so
+lib/sane/libsane-ricoh2.so
 lib/sane/libsane-rts8891.so
 lib/sane/libsane-s9036.so
 lib/sane/libsane-sceptre.so
@@ -142,7 +142,6 @@ lib/sane/libsane-xerox_mfp.so
 @man man/man5/sane-kodakaio.5
 @man man/man5/sane-kvs1025.5
 @man man/man5/sane-kvs20xx.5
-@man man/man5/sane-kvs40xx.5
 @man man/man5/sane-leo.5
 @man man/man5/sane-lexmark.5
 @man man/man5/sane-ma1509.5
@@ -151,7 +150,6 @@ lib/sane/libsane-xerox_mfp.so
 @man man/man5/sane-microtek.5
 @man man/man5/sane-mustek.5
 @man man/man5/sane-mustek_usb.5
-@man man/man5/sane-mustek_usb2.5
 @man man/man5/sane-nec.5
 @man man/man5/sane-net.5
 @man man/man5/sane-niash.5
@@ -426,6 +424,12 @@ share/locale/
 share/locale/bg/
 share/locale/bg/LC_MESSAGES/
 share/locale/bg/LC_MESSAGES/sane-backends.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
+share/locale/ca/LC_MESSAGES/sane-backends.mo
+share/locale/ca@valencia/
+share/locale/ca@valencia/LC_MESSAGES/
+share/locale/ca@valencia/LC_MESSAGES/sane-backends.mo
 share/locale/cs/
 share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/sane-backends.mo
@@ -459,6 +463,9 @@ share/locale/fr/LC_MESSAGES/sane-backends.mo
 share/locale/gl/
 share/locale/gl/LC_MESSAGES/
 share/locale/gl/LC_MESSAGES/sane-backends.mo
+share/locale/he/
+share/locale/he/LC_MESSAGES/
+share/locale/he/LC_MESSAGES/sane-backends.mo
 share/locale/hu/
 share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/sane-backends.mo
@@ -497,6 +504,3 @@ share/sane/snapscan/
 @mode 775
 @group _saned
 @sample /var/spool/lock/sane/
-@mode
-@group
-@rcscript ${RCDIR}/saned

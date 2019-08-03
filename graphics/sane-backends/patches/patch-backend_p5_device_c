@@ -1,13 +1,14 @@
-$OpenBSD: patch-backend_p5_device_c,v 1.1 2016/05/18 20:02:27 sthen Exp $
+$OpenBSD: patch-backend_p5_device_c,v 1.2 2019/08/03 12:56:09 ajacoutot Exp $
 
 errno.h header is required now that errno is a per-thread variable.
 "undefined symbol 'errno'" at runtime with dlopen()'d modules.
 
---- backend/p5_device.c.orig	Wed May 18 13:59:20 2016
-+++ backend/p5_device.c	Wed May 18 13:59:30 2016
+Index: backend/p5_device.c
+--- backend/p5_device.c.orig
++++ backend/p5_device.c
 @@ -1,3 +1,5 @@
 +#include <errno.h>
 +
- /** 
+ /**
   * Description of the Primax PagePartner model
   */

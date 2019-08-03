@@ -1,4 +1,5 @@
-$OpenBSD: patch-tools_openbsd_detach,v 1.1 2012/02/16 22:29:15 ajacoutot Exp $
+$OpenBSD: patch-tools_openbsd_detach,v 1.2 2019/08/03 12:56:09 ajacoutot Exp $
+
 --- tools/openbsd/detach.orig	Thu Feb 16 15:48:05 2012
 +++ tools/openbsd/detach	Thu Feb 16 15:48:46 2012
 @@ -13,7 +13,7 @@ case $DEVCLASS in

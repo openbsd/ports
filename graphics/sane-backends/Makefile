@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.85 2019/07/12 20:47:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.86 2019/08/03 12:56:09 ajacoutot Exp $
 
 BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
 COMMENT=		API for accessing scanners, backends
 
-DISTNAME=		sane-backends-1.0.27
-REVISION=		4
+DISTNAME=		sane-backends-1.0.28
 
-SHARED_LIBS +=  sane                 2.0      # unknown
+SHARED_LIBS +=  sane                 2.1      # unknown
 
 CATEGORIES=		graphics
 
@@ -16,13 +15,14 @@ HOMEPAGE=		http://www.sane-project.org/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
-WANTLIB += c execinfo jpeg m png pthread tiff usb-1.0 v4l1 v4l2
-WANTLIB += v4lconvert z
+WANTLIB += ${COMPILER_LIBCXX} c execinfo jpeg m png tiff usb-1.0
+WANTLIB += v4l1 v4l2 v4lconvert z
 
-MASTER_SITES=		https://alioth-archive.debian.org/releases/sane/sane-backends/1.0.27/ \
-			https://distfiles.bsdfrog.org/
+MASTER_SITES=		https://gitlab.com/sane-project/backends/uploads/9e718daff347826f4cfe21126c8d5091/
+
+COMPILER=		base-clang ports-gcc
 
 BUILD_DEPENDS=		devel/gettext,-tools
 
