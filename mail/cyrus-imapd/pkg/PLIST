@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2019/05/27 20:49:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2019/08/03 10:41:26 ajacoutot Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
@@ -395,6 +395,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.10.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.11.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.12.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.13.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/2.5/x/2.5.4.html
@@ -419,6 +420,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.0-rc4.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.0.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.10.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.11.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.0/x/3.0.4.html
