@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/15 09:19:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2019/08/03 11:48:29 ajacoutot Exp $
 
 PROVIDER=		rundeck
-GH_TAGNAME=		v0.3.0
+GH_TAGNAME=		v0.4.0
 
 .include <bsd.port.mk>
