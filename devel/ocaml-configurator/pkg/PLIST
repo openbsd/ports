@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/04 18:54:39 chrisz Exp $
+%%native%%
+lib/ocaml/configurator/
+lib/ocaml/configurator/META
+lib/ocaml/configurator/configurator.cma
+lib/ocaml/configurator/configurator.cmi
+lib/ocaml/configurator/configurator.cmt
+lib/ocaml/configurator/configurator.cmti
+lib/ocaml/configurator/configurator.ml
+lib/ocaml/configurator/configurator.mli
+lib/ocaml/configurator/dune-package
+lib/ocaml/configurator/opam
+share/doc/ocaml-configurator/
+share/doc/ocaml-configurator/configurator/
+share/doc/ocaml-configurator/configurator/LICENSE.txt
+share/doc/ocaml-configurator/configurator/README.org
