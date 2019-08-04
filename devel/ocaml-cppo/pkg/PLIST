@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.4 2019/08/04 18:40:20 chrisz Exp $
+%%native%%
+@bin bin/cppo
+lib/ocaml/cppo/
+lib/ocaml/cppo/META
+lib/ocaml/cppo/dune-package
+lib/ocaml/cppo/opam
+lib/ocaml/cppo_ocamlbuild/
+lib/ocaml/cppo_ocamlbuild/META
+lib/ocaml/cppo_ocamlbuild/cppo_ocamlbuild.cma
+lib/ocaml/cppo_ocamlbuild/dune-package
+lib/ocaml/cppo_ocamlbuild/ocamlbuild_cppo.cmi
+lib/ocaml/cppo_ocamlbuild/ocamlbuild_cppo.cmt
+lib/ocaml/cppo_ocamlbuild/ocamlbuild_cppo.cmti
+lib/ocaml/cppo_ocamlbuild/ocamlbuild_cppo.ml
+lib/ocaml/cppo_ocamlbuild/ocamlbuild_cppo.mli
+lib/ocaml/cppo_ocamlbuild/opam
+share/doc/ocaml-cppo/
+share/doc/ocaml-cppo/cppo/
+share/doc/ocaml-cppo/cppo/LICENSE.md
+share/doc/ocaml-cppo/cppo/README.md
+share/doc/ocaml-cppo/cppo_ocamlbuild/
+share/doc/ocaml-cppo/cppo_ocamlbuild/LICENSE.md
+share/doc/ocaml-cppo/cppo_ocamlbuild/README.md
