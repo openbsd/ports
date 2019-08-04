@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.dynlink-native,v 1.1.1.1 2019/08/04 19:13:19 chrisz Exp $
+lib/ocaml/lablgtk3-sourceview3/lablgtk3_sourceview3.cmxs
+lib/ocaml/lablgtk3/lablgtk3.cmxs

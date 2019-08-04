@@ -1,0 +1,6 @@
+LablGTK3 is an Objective Caml interface to gtk+3.
+
+It uses the rich type system of Objective Caml 4 to provide a strongly
+typed, yet very comfortable, object-oriented interface to gtk+3. This
+is not that easy if you know the dynamic typing approach taken by
+gtk+3.
