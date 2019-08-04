@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.dynlink-native,v 1.1.1.1 2019/08/04 19:09:17 chrisz Exp $
+lib/ocaml/cairo2-gtk/cairo_gtk.cmxs
+lib/ocaml/cairo2-pango/cairo_pango.cmxs
+lib/ocaml/cairo2/cairo.cmxs
