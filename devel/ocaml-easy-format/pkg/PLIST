@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/04 19:06:03 chrisz Exp $
+%%native%%
+lib/ocaml/easy-format/
+lib/ocaml/easy-format/META
+lib/ocaml/easy-format/dune-package
+lib/ocaml/easy-format/easy_format.cma
+lib/ocaml/easy-format/easy_format.cmi
+lib/ocaml/easy-format/easy_format.cmt
+lib/ocaml/easy-format/easy_format.cmti
+lib/ocaml/easy-format/easy_format.ml
+lib/ocaml/easy-format/easy_format.mli
+lib/ocaml/easy-format/opam
+share/doc/ocaml-easy-format/
+share/doc/ocaml-easy-format/easy-format/
+share/doc/ocaml-easy-format/easy-format/LICENSE
+share/doc/ocaml-easy-format/easy-format/README.md

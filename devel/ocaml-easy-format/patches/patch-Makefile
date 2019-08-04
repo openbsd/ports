@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2019/08/04 19:06:03 chrisz Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,6 +1,9 @@
+ all:
+ 	@jbuilder build
+ 
++install:
++	@jbuilder install
++
+ test:
+ 	@jbuilder runtest
+ 

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.dynlink-native,v 1.1.1.1 2019/08/04 19:06:03 chrisz Exp $
+lib/ocaml/easy-format/easy_format.cmxs
