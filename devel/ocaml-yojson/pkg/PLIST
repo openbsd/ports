@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/04 19:07:43 chrisz Exp $
+%%native%%
+@bin bin/ydump
+lib/ocaml/yojson/
+lib/ocaml/yojson/META
+lib/ocaml/yojson/dune-package
+lib/ocaml/yojson/opam
+lib/ocaml/yojson/yojson.cma
+lib/ocaml/yojson/yojson.cmi
+lib/ocaml/yojson/yojson.cmt
+lib/ocaml/yojson/yojson.cmti
+lib/ocaml/yojson/yojson.ml
+lib/ocaml/yojson/yojson.mli
+lib/ocaml/yojson/yojson_biniou.cmi
+lib/ocaml/yojson/yojson_biniou.cmt
+lib/ocaml/yojson/yojson_biniou.cmti
+lib/ocaml/yojson/yojson_biniou.ml
+lib/ocaml/yojson/yojson_biniou.mli
+share/doc/ocaml-yojson/
+share/doc/ocaml-yojson/yojson/
+share/doc/ocaml-yojson/yojson/CHANGES.md
+share/doc/ocaml-yojson/yojson/LICENSE.md
+share/doc/ocaml-yojson/yojson/README.md

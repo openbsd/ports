@@ -1,0 +1,6 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2019/08/04 19:07:43 chrisz Exp $
+%%dynlink%%
+lib/ocaml/yojson/yojson.a
+lib/ocaml/yojson/yojson.cmx
+lib/ocaml/yojson/yojson.cmxa
+lib/ocaml/yojson/yojson_biniou.cmx
