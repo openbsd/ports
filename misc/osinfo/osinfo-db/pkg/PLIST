@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/06/15 09:26:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2019/08/04 09:01:55 ajacoutot Exp $
 share/osinfo/
 share/osinfo/LICENSE
 share/osinfo/VERSION
@@ -96,9 +96,6 @@ share/osinfo/device/xen.org/xen-vkbd.xml
 share/osinfo/device/xen.org/xen-vscsi.xml
 share/osinfo/device/xen.org/xen-vtpm.xml
 share/osinfo/install-script/
-share/osinfo/install-script/centos.org/
-share/osinfo/install-script/centos.org/centos-kickstart-desktop.xml
-share/osinfo/install-script/centos.org/centos-kickstart-jeos.xml
 share/osinfo/install-script/debian.org/
 share/osinfo/install-script/debian.org/debian-preseed-desktop.xml
 share/osinfo/install-script/debian.org/debian-preseed-jeos.xml
@@ -133,6 +130,7 @@ share/osinfo/os/altlinux.org/alt-8.0.xml
 share/osinfo/os/altlinux.org/alt-8.1.xml
 share/osinfo/os/altlinux.org/alt-8.2.xml
 share/osinfo/os/altlinux.org/alt-p8.starterkits.xml
+share/osinfo/os/altlinux.org/alt-p9.starterkits.xml
 share/osinfo/os/altlinux.org/alt-sisyphus.xml
 share/osinfo/os/altlinux.org/altlinux-1.0.xml
 share/osinfo/os/altlinux.org/altlinux-2.0.xml
@@ -202,6 +200,7 @@ share/osinfo/os/debian.org/
 share/osinfo/os/debian.org/debian-1.1.xml
 share/osinfo/os/debian.org/debian-1.2.xml
 share/osinfo/os/debian.org/debian-1.3.xml
+share/osinfo/os/debian.org/debian-10.xml
 share/osinfo/os/debian.org/debian-2.0.xml
 share/osinfo/os/debian.org/debian-2.1.xml
 share/osinfo/os/debian.org/debian-2.2.xml
@@ -280,6 +279,7 @@ share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.0.xml
 share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.1.xml
 share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.2.xml
 share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.3.xml
+share/osinfo/os/dragonflybsd.org/dragonflybsd-5.6.xml
 share/osinfo/os/endlessos.com/
 share/osinfo/os/endlessos.com/eos-3.3.xml
 share/osinfo/os/endlessos.com/eos-3.4.xml
@@ -701,6 +701,7 @@ share/osinfo/os/suse.com/caasp-2.0.xml
 share/osinfo/os/suse.com/caasp-3.0.xml
 share/osinfo/os/suse.com/caasp-unknown.xml
 share/osinfo/os/suse.com/sle-15-unknown.xml
+share/osinfo/os/suse.com/sle-15.1.xml
 share/osinfo/os/suse.com/sle-15.xml
 share/osinfo/os/suse.com/sle-unknown.xml
 share/osinfo/os/suse.com/sled-10.1.xml
