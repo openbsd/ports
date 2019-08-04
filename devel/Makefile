@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1877 2019/08/02 15:32:29 kmos Exp $
+# $OpenBSD: Makefile,v 1.1878 2019/08/04 19:47:21 chrisz Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -477,11 +477,16 @@
      SUBDIR += ninja
      SUBDIR += npth
      SUBDIR += nspr
+     SUBDIR += ocaml-biniou
+     SUBDIR += ocaml-configurator
+     SUBDIR += ocaml-cppo
+     SUBDIR += ocaml-easy-format
      SUBDIR += ocaml-graph
      SUBDIR += ocaml-menhir
      SUBDIR += ocaml-ocamlbuild
      SUBDIR += ocaml-parmap
      SUBDIR += ocaml-pcre
+     SUBDIR += ocaml-yojson
      SUBDIR += ode
      SUBDIR += ois
      SUBDIR += open-ath9k-htc-firmware
