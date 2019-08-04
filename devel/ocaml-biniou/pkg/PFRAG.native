@@ -1,0 +1,12 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2019/08/04 19:04:48 chrisz Exp $
+%%dynlink%%
+lib/ocaml/biniou/bi_dump.cmx
+lib/ocaml/biniou/bi_inbuf.cmx
+lib/ocaml/biniou/bi_io.cmx
+lib/ocaml/biniou/bi_outbuf.cmx
+lib/ocaml/biniou/bi_share.cmx
+lib/ocaml/biniou/bi_stream.cmx
+lib/ocaml/biniou/bi_util.cmx
+lib/ocaml/biniou/bi_vint.cmx
+lib/ocaml/biniou/biniou.a
+lib/ocaml/biniou/biniou.cmxa
