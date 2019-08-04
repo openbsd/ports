@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_tron_gGame_cpp,v 1.1 2019/08/04 02:47:10 bcallah Exp $
+
+Index: src/tron/gGame.cpp
+--- src/tron/gGame.cpp.orig
++++ src/tron/gGame.cpp
+@@ -2173,7 +2173,7 @@ void ConnectToServer(nServerInfoBase *server)
+         std::auto_ptr< nServerInfoBase > redirectTo( sn_GetRedirectTo() );
+ 
+         // abort loop
+-        if ( !(&(*redirectTo)) )
++        if ( !(redirectTo.get()) )
+         {
+             break;
+         }

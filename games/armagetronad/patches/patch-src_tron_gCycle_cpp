@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_tron_gCycle_cpp,v 1.1 2019/08/04 02:47:10 bcallah Exp $
+
+https://svnweb.freebsd.org/ports/head/games/armagetronad/files/patch-src_tron_gCycle.cpp?revision=507190&view=co
+
+This is a fix for a bug in how std::autoptr is handled.
+clang complains:
+gCycle.cpp:*:*: warning: reference cannot be bound to dereferenced null pointer in well-defined C++ code; pointer may be assumed to always convert to true
+      [-Wundefined-bool-conversion]
+
+Index: src/tron/gCycle.cpp
+--- src/tron/gCycle.cpp.orig
++++ src/tron/gCycle.cpp
+@@ -620,7 +620,7 @@ class Sensor: public gSensor
+         tASSERT( cycle );
+ 
+         // create
+-        if ( &(*cycle->chatBot_) == 0 )
++        if ( cycle->chatBot_.get() == 0 )
+             cycle->chatBot_ = std::auto_ptr< gCycleChatBot >( new gCycleChatBot( cycle ) );
+ 
+         return *cycle->chatBot_;
+@@ -2712,7 +2712,7 @@ bool gCycle::Timestep(REAL currentTime){
+             gCycleChatBot & bot = gCycleChatBot::Get( this );
+             bot.Activate( currentTime );
+         }
+-        else if ( &(*chatBot_) )
++        else if ( chatBot_.get() )
+         {
+             chatBot_->nextChatAI_ = 0;
+         }
