@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/08/05 16:28:54 rsadowski Exp $
 
 COMMENT =		Python bindings to libuv
 
-MODPY_EGG_VERSION =	1.3.0
+MODPY_EGG_VERSION =	1.4.0
 DISTNAME =		pyuv-${MODPY_EGG_VERSION}
 PKGNAME =		py-uv-${MODPY_EGG_VERSION}
-REVISION =		2
 
 CATEGORIES =	devel
 HOMEPAGE =	https://github.com/saghul/pyuv
@@ -22,7 +21,7 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =	python3
 FLAVOR ?=
 
-LIB_DEPENDS =	devel/libuv
+LIB_DEPENDS =	devel/libuv>=1.30.1
 
 CFLAGS +=	-I${LOCALBASE}/include
 MAKE_ENV +=	LIBUV_LIB_PATH=${LOCALBASE}/lib
