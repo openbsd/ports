@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_mumble_OSS_cpp,v 1.1 2019/08/05 17:42:40 sthen Exp $
+
+unbreak with protobuf 3.7+
+
+Index: src/mumble/OSS.cpp
+--- src/mumble/OSS.cpp.orig
++++ src/mumble/OSS.cpp
+@@ -38,8 +38,9 @@
+ #include <sys/ioctl.h>
+ 
+ #include "User.h"
+-#include "Global.h"
+ #include "MainWindow.h"
++
++#include "Global.h"
+ 
+ #define NBLOCKS 8
+ 

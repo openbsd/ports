@@ -1,10 +1,27 @@
-$OpenBSD: patch-src_mumble_ConnectDialog_cpp,v 1.2 2016/05/10 07:44:11 dcoppa Exp $
+$OpenBSD: patch-src_mumble_ConnectDialog_cpp,v 1.3 2019/08/05 17:42:40 sthen Exp $
 
-Prevent method from being hidden instead of being overridden
+chunk 1 - unbreak with protobuf 3.7+
 
---- src/mumble/ConnectDialog.cpp.orig	Thu May  5 17:48:09 2016
-+++ src/mumble/ConnectDialog.cpp	Tue May 10 09:19:52 2016
-@@ -120,7 +120,7 @@ ServerView::~ServerView() {
+chunk 2 - Prevent method from being hidden instead of being overridden
+
+Index: src/mumble/ConnectDialog.cpp
+--- src/mumble/ConnectDialog.cpp.orig
++++ src/mumble/ConnectDialog.cpp
+@@ -40,10 +40,12 @@
+ 
+ #include "Channel.h"
+ #include "Database.h"
+-#include "Global.h"
+ #include "ServerHandler.h"
+ #include "WebFetch.h"
+ 
++// We define a global macro called 'g'. This can lead to issues when included code uses 'g' as a type or parameter name (like protobuf 3.7 does). As such, for now, we have to make this our last include.
++#include "Global.h"
++
+ QMap<QString, QIcon> ServerItem::qmIcons;
+ QList<PublicInfo> ConnectDialog::qlPublicServers;
+ QString ConnectDialog::qsUserCountry, ConnectDialog::qsUserCountryCode, ConnectDialog::qsUserContinentCode;
+@@ -120,7 +122,7 @@ ServerView::~ServerView() {
  	delete siPublic;
  }
  

@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_mumble_OverlayConfig_cpp,v 1.1 2019/08/05 17:42:40 sthen Exp $
+
+unbreak with protobuf 3.7+
+
+Index: src/mumble/OverlayConfig.cpp
+--- src/mumble/OverlayConfig.cpp.orig
++++ src/mumble/OverlayConfig.cpp
+@@ -34,7 +34,6 @@
+ #include "OverlayText.h"
+ #include "User.h"
+ #include "Channel.h"
+-#include "Global.h"
+ #include "Message.h"
+ #include "Database.h"
+ #include "NetworkConfig.h"
+@@ -42,6 +41,9 @@
+ #include "MainWindow.h"
+ #include "GlobalShortcut.h"
+ 
++// We define a global macro called 'g'. This can lead to issues when included code uses 'g' as a type or parameter name (like protobuf 3.7 does). As such, for now, we have to make this our last include.
++#include "Global.h"
++
+ static ConfigWidget *OverlayConfigDialogNew(Settings &st) {
+ 	return new OverlayConfig(st);
+ }
+@@ -480,6 +482,8 @@ void OverlayConfig::on_qpbLoadPreset_clicked() {
+ 	qs.beginGroup(QLatin1String("overlay"));
+ 	load_preset.load(&qs);
+ 	qs.endGroup();
++
++#include "Global.h"
+ 
+ #ifdef Q_OS_WIN
+ 	load_preset.qslBlacklist = s.os.qslBlacklist;

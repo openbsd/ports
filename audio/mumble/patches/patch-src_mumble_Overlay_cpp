@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_mumble_Overlay_cpp,v 1.1 2019/08/05 17:42:40 sthen Exp $
+
+unbreak with protobuf 3.7+
+
+Index: src/mumble/Overlay.cpp
+--- src/mumble/Overlay.cpp.orig
++++ src/mumble/Overlay.cpp
+@@ -35,7 +35,6 @@
+ #include "Channel.h"
+ #include "ClientUser.h"
+ #include "Database.h"
+-#include "Global.h"
+ #include "GlobalShortcut.h"
+ #include "MainWindow.h"
+ #include "Message.h"
+@@ -44,6 +43,9 @@
+ #include "ServerHandler.h"
+ #include "User.h"
+ #include "WebFetch.h"
++
++// We define a global macro called 'g'. This can lead to issues when included code uses 'g' as a type or parameter name (like protobuf 3.7 does). As such, for now, we have to make this our last include.
++#include "Global.h"
+ 
+ OverlayAppInfo::OverlayAppInfo(QString name, QIcon icon) {
+ 	qsDisplayName = name;

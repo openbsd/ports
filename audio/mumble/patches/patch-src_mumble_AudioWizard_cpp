@@ -1,4 +1,8 @@
-$OpenBSD: patch-src_mumble_AudioWizard_cpp,v 1.2 2014/01/23 09:52:51 dcoppa Exp $
+$OpenBSD: patch-src_mumble_AudioWizard_cpp,v 1.3 2019/08/05 17:42:40 sthen Exp $
+
+chunk 1 - unbreak with protobuf 3.7+
+
+others -
 
 Disable submitting anonymous statistics
 
@@ -12,9 +16,24 @@ this bug is only exposed by the AudioWizard configuration stuff. So,
 skip calling restartAudio() from on_qsOutputDelay_valueChanged() while
 the AudioWizard is starting up
 
---- src/mumble/AudioWizard.cpp.orig	Sat Jun  1 23:16:31 2013
-+++ src/mumble/AudioWizard.cpp	Wed Jan 22 06:40:54 2014
-@@ -62,7 +62,8 @@ AudioWizard::AudioWizard(QWidget *p) : QWizard(p) {
+Index: src/mumble/AudioWizard.cpp
+--- src/mumble/AudioWizard.cpp.orig
++++ src/mumble/AudioWizard.cpp
+@@ -34,10 +34,12 @@
+ 
+ #include "AudioInput.h"
+ #include "AudioOutputSample.h"
+-#include "Global.h"
+ #include "Log.h"
+ #include "MainWindow.h"
+ 
++// We define a global macro called 'g'. This can lead to issues when included code uses 'g' as a type or parameter name (like protobuf 3.7 does). As such, for now, we have to make this our last include.
++#include "Global.h"
++
+ CompletablePage::CompletablePage(QWizard *p) : QWizardPage(p) {
+ 	bComplete = true;
+ }
+@@ -62,7 +64,8 @@ AudioWizard::AudioWizard(QWidget *p) : QWizard(p) {
  	setupUi(this);
  
  	// Done
@@ -24,7 +43,7 @@ the AudioWizard is starting up
  
  	// Device
  	if (AudioInputRegistrar::qmNew) {
-@@ -114,18 +115,10 @@ AudioWizard::AudioWizard(QWidget *p) : QWizard(p) {
+@@ -114,18 +117,10 @@ AudioWizard::AudioWizard(QWidget *p) : QWizard(p) {
  	else
  		qrbQualityCustom->setChecked(true);
  
@@ -46,7 +65,7 @@ the AudioWizard is starting up
  	qrbNotificationCustom->setVisible(qrbNotificationCustom->isChecked());
  
  	qrbQualityCustom->setVisible(qrbQualityCustom->isChecked());
-@@ -308,7 +301,8 @@ void AudioWizard::on_qcbOutputDevice_activated(int) {
+@@ -308,7 +303,8 @@ void AudioWizard::on_qcbOutputDevice_activated(int) {
  void AudioWizard::on_qsOutputDelay_valueChanged(int v) {
  	qlOutputDelay->setText(tr("%1 ms").arg(v*10));
  	g.s.iOutputDelay = v;
