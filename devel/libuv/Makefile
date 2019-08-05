@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 21:02:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/08/05 16:28:44 rsadowski Exp $
 
 # BROKEN-hppa =	undefined reference to __sync atomic ops
 
 COMMENT =	multi-platform library for asynchronous I/O
 
-VER =		1.24.1
+VER =		1.30.1
 DISTNAME =	libuv-v${VER}
 PKGNAME =	libuv-${VER}
 CATEGORIES =	devel
-REVISION =	0
 
-SHARED_LIBS =	uv 2.0	# 1.0
+SHARED_LIBS =	uv 2.1	# 1.0
 
 HOMEPAGE =	https://libuv.org/
 
