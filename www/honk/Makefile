@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/25 02:18:25 lteo Exp $
+# $OpenBSD: Makefile,v 1.9 2019/08/05 06:19:12 gonzalo Exp $
 
 COMMENT =		federated status updater
 
-DISTNAME =		honk-0.7.4
+DISTNAME =		honk-0.7.7
 CATEGORIES =		www
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/honk
