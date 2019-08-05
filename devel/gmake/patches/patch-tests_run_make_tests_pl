@@ -1,0 +1,18 @@
+$OpenBSD: patch-tests_run_make_tests_pl,v 1.1 2019/08/05 12:14:52 naddy Exp $
+
+Find Perl modules
+https://git.savannah.gnu.org/cgit/make.git/commit/?id=d9d4e06084a4c7da480bd49a3487aadf6ba77b54
+
+Index: tests/run_make_tests.pl
+--- tests/run_make_tests.pl.orig
++++ tests/run_make_tests.pl
+@@ -58,6 +58,9 @@ if ($^O eq 'VMS')
+   *CORE::GLOBAL::rmdir = \&vms_rmdir;
+ }
+ 
++use FindBin;
++use lib "$FindBin::Bin";
++
+ require "test_driver.pl";
+ require "config-flags.pm";
+ 
