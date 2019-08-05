@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/05/17 21:49:43 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/08/05 21:27:02 pvk Exp $
 @newgroup _gitea:787
 @newuser _gitea:787:_gitea:daemon:Gitea Account:/var/gitea:/bin/sh
 @rcscript ${RCDIR}/gitea
@@ -589,6 +589,7 @@ share/gitea/options/locale/locale_ja-JP.ini
 share/gitea/options/locale/locale_ko-KR.ini
 share/gitea/options/locale/locale_lt-LT.ini
 share/gitea/options/locale/locale_lv-LV.ini
+share/gitea/options/locale/locale_ml-IN.ini
 share/gitea/options/locale/locale_nb-NO.ini
 share/gitea/options/locale/locale_nl-NL.ini
 share/gitea/options/locale/locale_nn-NO.ini
@@ -636,8 +637,11 @@ share/gitea/public/img/gitea-lg.png
 share/gitea/public/img/gitea-safari.svg
 share/gitea/public/img/gitea-sm.png
 share/gitea/public/img/gogs.ico
+share/gitea/public/img/msteams.png
 share/gitea/public/img/openid-16x16.png
+share/gitea/public/img/repo_default.png
 share/gitea/public/img/slack.png
+share/gitea/public/img/telegram.png
 share/gitea/public/js/
 share/gitea/public/js/draw.js
 share/gitea/public/js/index.js
@@ -2051,6 +2055,8 @@ share/gitea/public/vendor/plugins/highlight/default.css
 share/gitea/public/vendor/plugins/highlight/github.css
 share/gitea/public/vendor/plugins/highlight/highlight.pack.js
 share/gitea/public/vendor/plugins/jquery/
+share/gitea/public/vendor/plugins/jquery-migrate/
+share/gitea/public/vendor/plugins/jquery-migrate/jquery-migrate.min.js
 share/gitea/public/vendor/plugins/jquery.areyousure/
 share/gitea/public/vendor/plugins/jquery.areyousure/LICENSE
 share/gitea/public/vendor/plugins/jquery.areyousure/jquery.are-you-sure.js
@@ -2242,6 +2248,8 @@ share/gitea/templates/admin/base/
 share/gitea/templates/admin/base/search.tmpl
 share/gitea/templates/admin/config.tmpl
 share/gitea/templates/admin/dashboard.tmpl
+share/gitea/templates/admin/hook_new.tmpl
+share/gitea/templates/admin/hooks.tmpl
 share/gitea/templates/admin/monitor.tmpl
 share/gitea/templates/admin/nav.tmpl
 share/gitea/templates/admin/navbar.tmpl
@@ -2318,9 +2326,11 @@ share/gitea/templates/pwa/manifest_json.tmpl
 share/gitea/templates/pwa/serviceworker_js.tmpl
 share/gitea/templates/repo/
 share/gitea/templates/repo/activity.tmpl
+share/gitea/templates/repo/blame.tmpl
 share/gitea/templates/repo/branch/
 share/gitea/templates/repo/branch/list.tmpl
 share/gitea/templates/repo/branch_dropdown.tmpl
+share/gitea/templates/repo/commit_page.tmpl
 share/gitea/templates/repo/commit_status.tmpl
 share/gitea/templates/repo/commits.tmpl
 share/gitea/templates/repo/commits_table.tmpl
@@ -2330,9 +2340,9 @@ share/gitea/templates/repo/diff/box.tmpl
 share/gitea/templates/repo/diff/comment_form.tmpl
 share/gitea/templates/repo/diff/comment_form_datahandler.tmpl
 share/gitea/templates/repo/diff/comments.tmpl
+share/gitea/templates/repo/diff/compare.tmpl
 share/gitea/templates/repo/diff/new_comment.tmpl
 share/gitea/templates/repo/diff/new_review.tmpl
-share/gitea/templates/repo/diff/page.tmpl
 share/gitea/templates/repo/diff/section_unified.tmpl
 share/gitea/templates/repo/diff/whitespace_dropdown.tmpl
 share/gitea/templates/repo/editor/
@@ -2371,9 +2381,9 @@ share/gitea/templates/repo/issue/view_title.tmpl
 share/gitea/templates/repo/migrate.tmpl
 share/gitea/templates/repo/pulls/
 share/gitea/templates/repo/pulls/commits.tmpl
-share/gitea/templates/repo/pulls/compare.tmpl
 share/gitea/templates/repo/pulls/files.tmpl
 share/gitea/templates/repo/pulls/fork.tmpl
+share/gitea/templates/repo/pulls/status.tmpl
 share/gitea/templates/repo/pulls/tab_menu.tmpl
 share/gitea/templates/repo/release/
 share/gitea/templates/repo/release/list.tmpl
@@ -2398,9 +2408,11 @@ share/gitea/templates/repo/settings/webhook/gitea.tmpl
 share/gitea/templates/repo/settings/webhook/gogs.tmpl
 share/gitea/templates/repo/settings/webhook/history.tmpl
 share/gitea/templates/repo/settings/webhook/list.tmpl
+share/gitea/templates/repo/settings/webhook/msteams.tmpl
 share/gitea/templates/repo/settings/webhook/new.tmpl
 share/gitea/templates/repo/settings/webhook/settings.tmpl
 share/gitea/templates/repo/settings/webhook/slack.tmpl
+share/gitea/templates/repo/settings/webhook/telegram.tmpl
 share/gitea/templates/repo/sub_menu.tmpl
 share/gitea/templates/repo/user_cards.tmpl
 share/gitea/templates/repo/view_file.tmpl
@@ -2450,7 +2462,6 @@ share/gitea/templates/user/dashboard/navbar.tmpl
 share/gitea/templates/user/meta/
 share/gitea/templates/user/meta/followers.tmpl
 share/gitea/templates/user/meta/header.tmpl
-share/gitea/templates/user/meta/stars.tmpl
 share/gitea/templates/user/notification/
 share/gitea/templates/user/notification/notification.tmpl
 share/gitea/templates/user/profile.tmpl
@@ -2459,6 +2470,7 @@ share/gitea/templates/user/settings/account.tmpl
 share/gitea/templates/user/settings/applications.tmpl
 share/gitea/templates/user/settings/applications_oauth2.tmpl
 share/gitea/templates/user/settings/applications_oauth2_edit.tmpl
+share/gitea/templates/user/settings/grants_oauth2.tmpl
 share/gitea/templates/user/settings/keys.tmpl
 share/gitea/templates/user/settings/keys_gpg.tmpl
 share/gitea/templates/user/settings/keys_ssh.tmpl
