@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2019/07/12 20:44:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2019/08/05 15:05:09 naddy Exp $
 
 COMMENT=	GNU make
 
@@ -26,6 +26,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/config
 
 pre-test:
-	@rm ${WRKSRC}/tests/scripts/features/*.orig
+	find ${WRKSRC}/tests/scripts -name \*.orig -delete
 
 .include <bsd.port.mk>

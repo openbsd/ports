@@ -1,0 +1,20 @@
+$OpenBSD: patch-tests_scripts_misc_close_stdout,v 1.1 2019/08/05 15:05:09 naddy Exp $
+
+Don't error out on empty test: "Add test suite support to Windows"
+https://git.savannah.gnu.org/cgit/make.git/commit/?id=fda00f88d3180be1a898c19bfa23b7adba6c2a9e
+
+Index: tests/scripts/misc/close_stdout
+--- tests/scripts/misc/close_stdout.orig
++++ tests/scripts/misc/close_stdout
+@@ -2,8 +2,8 @@
+ 
+ $description = "Make sure make exits with an error if stdout is full.";
+ 
+-if (-e '/dev/full') {
+-  run_make_test('', '-v > /dev/full', '/^#MAKE#: write error/', 256);
+-}
++-e '/dev/full' or return -1;
++
++run_make_test('', '-v > /dev/full', '/^#MAKE#: write error/', 256);
+ 
+ 1;
