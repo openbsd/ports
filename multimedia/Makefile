@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2019/05/11 03:33:43 jca Exp $
+# $OpenBSD: Makefile,v 1.117 2019/08/05 13:35:54 bcallah Exp $
 
      SUBDIR =
      SUBDIR += assimp
@@ -17,6 +17,7 @@
      SUBDIR += gnome-twitch
      SUBDIR += gstreamer-0.10
      SUBDIR += gstreamer1
+     SUBDIR += handbrake
      SUBDIR += hdhomerun
      SUBDIR += imagination
      SUBDIR += kguitar
