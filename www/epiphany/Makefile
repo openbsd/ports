@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.184 2019/06/15 10:47:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.185 2019/08/05 08:45:50 ajacoutot Exp $
 
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.32.3
+GNOME_VERSION=	3.32.4
 
 CATEGORIES=	www
 
@@ -13,12 +13,11 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += atk-1.0 c cairo cairo-gobject dazzle-1.0 gck-1 gcr-base-3
-WANTLIB += gcr-ui-3 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmp
-WANTLIB += gobject-2.0 gtk-3 handy-0.0 hogweed icudata icuuc intl
-WANTLIB += javascriptcoregtk-4.0 json-glib-1.0 m nettle notify
-WANTLIB += p11-kit pango-1.0 pangocairo-1.0 secret-1 soup-2.4
-WANTLIB += sqlite3 webkit2gtk-4.0 xml2
+WANTLIB += c cairo dazzle-1.0 gcr-base-3 gcr-ui-3 gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmp gobject-2.0 gtk-3 handy-0.0 hogweed
+WANTLIB += icuuc intl javascriptcoregtk-4.0 json-glib-1.0 m nettle
+WANTLIB += notify pango-1.0 secret-1 soup-2.4 sqlite3 webkit2gtk-4.0
+WANTLIB += xml2
 
 BUILD_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas
