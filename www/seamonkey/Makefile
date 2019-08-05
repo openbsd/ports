@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.229 2019/07/12 20:51:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.230 2019/08/05 10:08:36 sthen Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -58,6 +58,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	--disable-debug-symbols
+# override parallel
 DPB_PROPERTIES =	lonesome
 .endif
 
