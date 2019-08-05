@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/17 21:33:33 bcallah Exp $
+# $OpenBSD: Makefile,v 1.21 2019/08/05 18:31:02 bcallah Exp $
 
 # If you are updating to a new version
 # (e.g. 8.0->8.1 or 9.0), you need to sync
 # patches with devel/llvm
 COMMENT =	LLVM Fortran compiler driver
 DISTNAME =	flang-driver-8.0.0.20190621
+REVISION =	0
 
 GH_PROJECT =	flang-driver
 GH_COMMIT =	3ed998ef28a8608cad9c045229eb37b39a402294
