@@ -1,0 +1,74 @@
+$OpenBSD: patch-make_configure_py,v 1.1.1.1 2019/08/05 13:35:20 bcallah Exp $
+
+Add OpenBSD to the configure args we need.
+Do not look for CMake; we don't need it.
+
+Index: make/configure.py
+--- make/configure.py.orig
++++ make/configure.py
+@@ -591,6 +591,8 @@ class ArchAction( Action ):
+         elif host.match( '*-*-freebsd.*' ):
+             self.mode['i386']   = 'i386-portsbuild-freebsd%s' % (host.release)
+             self.mode['amd64'] = 'amd64-portsbuild-freebsd%s' % (host.release)
++        elif host.match( '*-*-openbsd*' ):
++            pass
+         else:
+             self.msg_pass = 'WARNING'
+ 
+@@ -1294,17 +1296,17 @@ def createCLI():
+     h = IfHost( 'enable assembly code in non-contrib modules', 'NOMATCH*-*-darwin*', 'NOMATCH*-*-linux*', none=optparse.SUPPRESS_HELP ).value
+     grp.add_option( '--enable-asm', default=False, action='store_true', help=h )
+ 
+-    h = IfHost( 'disable GTK GUI', '*-*-linux*', '*-*-freebsd*', none=optparse.SUPPRESS_HELP ).value
++    h = IfHost( 'disable GTK GUI', '*-*-linux*', '*-*-freebsd*', '*-*-openbsd*', none=optparse.SUPPRESS_HELP ).value
+     grp.add_option( '--disable-gtk', default=False, action='store_true', help=h )
+ 
+-    h = IfHost( 'disable GTK GUI update checks', '*-*-linux*', '*-*-freebsd*', none=optparse.SUPPRESS_HELP ).value
++    h = IfHost( 'disable GTK GUI update checks', '*-*-linux*', '*-*-freebsd*', '*-*-openbsd*', none=optparse.SUPPRESS_HELP ).value
+ 
+     grp.add_option( '--disable-gtk-update-checks', default=False, action='store_true', help=h )
+ 
+     h = IfHost( 'enable GTK GUI (mingw)', '*-*-mingw*', none=optparse.SUPPRESS_HELP ).value
+     grp.add_option( '--enable-gtk-mingw', default=False, action='store_true', help=h )
+ 
+-    h = IfHost( 'disable GStreamer (live preview)', '*-*-linux*', '*-*-freebsd*', none=optparse.SUPPRESS_HELP ).value
++    h = IfHost( 'disable GStreamer (live preview)', '*-*-linux*', '*-*-freebsd*', '*-*-openbsd*', none=optparse.SUPPRESS_HELP ).value
+ 
+     grp.add_option( '--disable-gst', default=False, action='store_true', help=h )
+ 
+@@ -1327,7 +1329,7 @@ def createCLI():
+     grp.add_option( '--disable-ffmpeg-aac', dest="enable_ffmpeg_aac", action='store_false' )
+ 
+     h = IfHost( 'enable Nvidia NVEnc video encoder', '*-*-*', none=optparse.SUPPRESS_HELP ).value
+-    grp.add_option( '--enable-nvenc', dest="enable_nvenc", default=not (host.match( '*-*-darwin*' ) or host.match( '*-*-freebsd*' )), action='store_true', help=h )
++    grp.add_option( '--enable-nvenc', dest="enable_nvenc", default=not (host.match( '*-*-darwin*' ) or host.match( '*-*-freebsd*' ) or host.match( '*-*-openbsd*') ), action='store_true', help=h )
+ 
+ 
+     cli.add_option_group( grp )
+@@ -1385,7 +1387,7 @@ def createCLI():
+     grp.add_option( '--snapshot', default=False, action='store_true',
+                     help='Force a snapshot build' )
+ 
+-    h = IfHost( 'Build extra contribs for flatpak packaging', '*-*-linux*', '*-*-freebsd*', none=optparse.SUPPRESS_HELP ).value
++    h = IfHost( 'Build extra contribs for flatpak packaging', '*-*-linux*', '*-*-freebsd*', '*-*-openbsd*', none=optparse.SUPPRESS_HELP ).value
+     grp.add_option( '--flatpak', default=False, action='store_true', help=h )
+     cli.add_option_group( grp )
+ 
+@@ -1531,17 +1533,12 @@ try:
+         else:
+             gmake = ToolProbe( 'GMAKE.exe', 'gmake', 'make', abort=True )
+ 
+-        m4       = ToolProbe( 'M4.exe',       'gm4', 'm4', abort=True )
+         mkdir    = ToolProbe( 'MKDIR.exe',    'mkdir', abort=True )
+-        patch    = ToolProbe( 'PATCH.exe',    'gpatch', 'patch', abort=True )
+         rm       = ToolProbe( 'RM.exe',       'rm', abort=True )
+         ranlib   = ToolProbe( 'RANLIB.exe',   'ranlib', abort=True )
+         strip    = ToolProbe( 'STRIP.exe',    'strip', abort=True )
+-        tar      = ToolProbe( 'TAR.exe',      'gtar', 'tar', abort=True )
+-        nasm     = ToolProbe( 'NASM.exe',     'nasm', abort=False, minversion=[2,13,0] )
+         autoconf = ToolProbe( 'AUTOCONF.exe', 'autoconf', abort=True )
+         automake = ToolProbe( 'AUTOMAKE.exe', 'automake', abort=True )
+-        cmake    = ToolProbe( 'CMAKE.exe',    'cmake', abort=True )
+         libtool  = ToolProbe( 'LIBTOOL.exe',  'libtool', abort=True )
+         pkgconfig = ToolProbe( 'PKGCONFIG.exe', 'pkg-config', abort=True )
+ 

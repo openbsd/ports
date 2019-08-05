@@ -1,0 +1,43 @@
+$OpenBSD: patch-libhb_fifo_c,v 1.1.1.1 2019/08/05 13:35:20 bcallah Exp $
+
+Add OpenBSD where appropriate.
+
+Index: libhb/fifo.c
+--- libhb/fifo.c.orig
++++ libhb/fifo.c
+@@ -13,7 +13,7 @@
+ #endif
+ 
+ #ifndef SYS_DARWIN
+-#if defined( SYS_FREEBSD ) || defined ( __FreeBSD__ )
++#if defined( SYS_FREEBSD ) || defined ( __FreeBSD__ ) || defined ( __OpenBSD__ )
+ #include <stdlib.h>
+ #else
+ #include <malloc.h>
+@@ -395,7 +395,7 @@ hb_buffer_t * hb_buffer_init_internal( int size )
+ 
+     if (size)
+     {
+-#if defined( SYS_DARWIN ) || defined( SYS_FREEBSD ) || defined ( __FreeBSD__ ) || defined( SYS_MINGW )
++#if defined( SYS_DARWIN ) || defined( SYS_FREEBSD ) || defined ( __FreeBSD__ ) || defined( SYS_MINGW ) || defined ( __OpenBSD__ )
+         b->data  = malloc( b->alloc );
+ #elif defined( SYS_CYGWIN )
+         /* FIXME */
+@@ -821,7 +821,7 @@ hb_image_t * hb_image_init(int pix_fmt, int width, int
+     {
+         return NULL;
+     }
+-#if defined( SYS_DARWIN ) || defined( SYS_FREEBSD ) || defined ( __FreeBSD__ ) || defined( SYS_MINGW )
++#if defined( SYS_DARWIN ) || defined( SYS_FREEBSD ) || defined ( __FreeBSD__ ) || defined( SYS_MINGW ) || defined ( __OpenBSD__ )
+     image->data  = malloc(size);
+ #elif defined( SYS_CYGWIN )
+     /* FIXME */
+@@ -862,7 +862,7 @@ hb_image_t * hb_buffer_to_image(hb_buffer_t *buf)
+ {
+     hb_image_t *image = calloc(1, sizeof(hb_image_t));
+ 
+-#if defined( SYS_DARWIN ) || defined( SYS_FREEBSD ) || defined ( __FreeBSD__ ) || defined( SYS_MINGW )
++#if defined( SYS_DARWIN ) || defined( SYS_FREEBSD ) || defined ( __FreeBSD__ ) || defined( SYS_MINGW ) || defined ( __OpenBSD__ )
+     image->data  = malloc( buf->size );
+ #elif defined( SYS_CYGWIN )
+     /* FIXME */

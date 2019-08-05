@@ -1,0 +1,16 @@
+$OpenBSD: patch-gtk_src_callbacks_c,v 1.1.1.1 2019/08/05 13:35:20 bcallah Exp $
+
+We need this include too.
+
+Index: gtk/src/callbacks.c
+--- gtk/src/callbacks.c.orig
++++ gtk/src/callbacks.c
+@@ -44,7 +44,7 @@
+ #include <gudev/gudev.h>
+ #endif
+ 
+-#if defined( __FreeBSD__ )
++#if defined( __FreeBSD__ ) || defined( __OpenBSD__ )
+ #include <sys/socket.h>
+ #endif
+ #include <netinet/in.h>

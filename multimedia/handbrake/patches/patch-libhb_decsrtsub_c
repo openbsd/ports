@@ -1,0 +1,43 @@
+$OpenBSD: patch-libhb_decsrtsub_c,v 1.1.1.1 2019/08/05 13:35:20 bcallah Exp $
+
+iconv* => libiconv* for use with our libiconv
+
+Index: libhb/decsrtsub.c
+--- libhb/decsrtsub.c.orig
++++ libhb/decsrtsub.c
+@@ -271,7 +271,7 @@ static int utf8_fill( hb_work_private_t * pv )
+         q = pv->utf8_buf + pv->utf8_end;
+         in_size = pv->end - pv->pos;
+ 
+-        retval = iconv( pv->iconv_context, &p, &in_size, &q, &out_size);
++        retval = libiconv( pv->iconv_context, &p, &in_size, &q, &out_size);
+         if (q != pv->utf8_buf + pv->utf8_end)
+         {
+             conversion = 1;
+@@ -661,7 +661,7 @@ static int decsrtInit( hb_work_object_t * w, hb_job_t 
+         pv->start_time = AV_NOPTS_VALUE;
+     }
+ 
+-    pv->iconv_context = iconv_open( "utf-8", pv->subtitle->config.src_codeset );
++    pv->iconv_context = libiconv_open( "utf-8", pv->subtitle->config.src_codeset );
+     if( pv->iconv_context == (iconv_t) -1 )
+     {
+         hb_error("Could not open the iconv library with those file formats\n");
+@@ -692,7 +692,7 @@ fail:
+     {
+         if (pv->iconv_context != (iconv_t) -1)
+         {
+-            iconv_close(pv->iconv_context);
++            libiconv_close(pv->iconv_context);
+         }
+         if (pv->file != NULL)
+         {
+@@ -743,7 +743,7 @@ static void decsrtClose( hb_work_object_t * w )
+     if (pv != NULL)
+     {
+         fclose( pv->file );
+-        iconv_close(pv->iconv_context);
++        libiconv_close(pv->iconv_context);
+         free( w->private_data );
+     }
+ }

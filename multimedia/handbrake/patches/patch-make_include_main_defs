@@ -1,0 +1,118 @@
+$OpenBSD: patch-make_include_main_defs,v 1.1.1.1 2019/08/05 13:35:20 bcallah Exp $
+
+Rip out all the optional dependencies.
+We'll let the ports tree handle it.
+
+Index: make/include/main.defs
+--- make/include/main.defs.orig
++++ make/include/main.defs
+@@ -7,97 +7,6 @@ include $(SRC/)make/include/tool.defs
+ 
+ ###############################################################################
+ 
+-ifneq (,$(filter $(BUILD.system),cygwin mingw))
+-ifneq ($(HAS.bz2),1)
+-    MODULES += contrib/bzip2
+-endif
+-endif
+-
+-ifneq (,$(filter $(BUILD.system),darwin cygwin mingw))
+-    MODULES += contrib/freetype
+-    MODULES += contrib/fribidi
+-    MODULES += contrib/harfbuzz
+-    MODULES += contrib/libxml2
+-    MODULES += contrib/libass
+-    MODULES += contrib/libogg
+-    MODULES += contrib/libvorbis
+-    MODULES += contrib/libopus
+-    MODULES += contrib/libspeex
+-    MODULES += contrib/libtheora
+-    MODULES += contrib/libsamplerate
+-    MODULES += contrib/lame
+-    MODULES += contrib/x264
+-    MODULES += contrib/jansson
+-endif
+-
+-ifeq (1,$(FEATURE.flatpak))
+-    MODULES += contrib/libopus
+-    MODULES += contrib/lame
+-    MODULES += contrib/jansson
+-    MODULES += contrib/x264
+-endif
+-
+-ifeq (1,$(FEATURE.fdk_aac))
+-    MODULES += contrib/fdk-aac
+-endif
+-
+-ifeq (1,$(FEATURE.x265))
+-    MODULES += contrib/x265
+-    MODULES += contrib/x265_8bit
+-    MODULES += contrib/x265_10bit
+-    MODULES += contrib/x265_12bit
+-endif
+-
+-MODULES += contrib/ffmpeg
+-MODULES += contrib/libvpx
+-MODULES += contrib/libdvdread
+-MODULES += contrib/libdvdnav
+-MODULES += contrib/libbluray
+-
+-ifneq (,$(filter $(BUILD.system),mingw))
+-ifneq ($(HAS.pthread),1)
+-ifneq ($(HAS.pthreadGC2),1)
+-    MODULES += contrib/pthreadw32
+-endif
+-endif
+-endif
+-
+-ifeq (1,$(FEATURE.qsv))
+-    MODULES += contrib/libmfx
+-endif
+-
+-ifeq (1,$(FEATURE.vce))
+-    MODULES += contrib/amf
+-endif
+-
+-ifeq (1,$(FEATURE.nvenc))
+-    MODULES += contrib/nvenc
+-endif
+-
+-ifneq (,$(filter $(BUILD.system),darwin))
+-    MODULES += contrib/xz
+-endif
+-
+-ifneq (,$(filter $(BUILD.system),cygwin mingw))
+-ifneq ($(HAS.iconv),1)
+-    MODULES += contrib/libiconv
+-endif
+-ifneq ($(HAS.xz),1)
+-    MODULES += contrib/xz
+-endif
+-ifneq ($(HAS.libz),1)
+-    MODULES += contrib/zlib
+-endif
+-ifneq ($(HAS.regex),1)
+-    MODULES += contrib/libgnurx
+-endif
+-endif
+-
+-ifneq (,$(filter $(BUILD.system),solaris))
+-    MODULES += contrib/libiconv
+-endif
+-
+-
+ ## these must come after contrib since some contrib modules are optional
+ MODULES += libhb
+ 
+@@ -127,6 +36,11 @@ endif
+ 
+ ifeq (1-kfreebsd,$(FEATURE.gtk)-$(BUILD.system))
+     ## build gtk when gtk+kfreebsd
++    MODULES += gtk
++endif
++
++ifeq (1-openbsd,$(FEATURE.gtk)-$(BUILD.system))
++    ## build gtk when gtk+openbsd
+     MODULES += gtk
+ endif
+ 

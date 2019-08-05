@@ -1,0 +1,27 @@
+$OpenBSD: patch-gtk_configure_ac,v 1.1.1.1 2019/08/05 13:35:20 bcallah Exp $
+
+Get the proper library directory for -lhandbrake.
+No -ldl on OpenBSD.
+
+Index: gtk/configure.ac
+--- gtk/configure.ac.orig
++++ gtk/configure.ac
+@@ -179,7 +179,7 @@ PKG_CHECK_MODULES(GHB, [$GHB_PACKAGES])
+ 
+ GHB_CFLAGS="$HBINC $GHB_CFLAGS"
+ 
+-HB_LIBS="-lhandbrake -lavformat -lavfilter -lavcodec -lavutil -lswresample -lpostproc -ldvdnav -ldvdread -lmp3lame -lvorbis -lvorbisenc -logg -lsamplerate -lx264 -lswscale -ltheoraenc -ltheoradec -lvpx -lz -lbz2 -lbluray -lass -lfontconfig -lfreetype -lxml2 -ljansson -lopus -lspeex -llzma"
++HB_LIBS="-L../../libhb -lhandbrake -lavformat -lavfilter -lavcodec -lavutil -lswresample -lpostproc -ldvdnav -ldvdread -lmp3lame -lvorbis -lvorbisenc -logg -lsamplerate -lx264 -lswscale -ltheoraenc -ltheoradec -lvpx -lz -lbz2 -lbluray -lass -lfontconfig -lfreetype -lxml2 -ljansson -lopus -lspeex -llzma"
+ 
+ case $host in
+   *-*-mingw*)
+@@ -194,6 +194,9 @@ case $host in
+     HB_LIBS="$HB_LIBS -lbcrypt -lregex -luuid"
+     ;;
+   *-*-freebsd*)
++    HB_LIBS="$HB_LIBS -lpthread"
++    ;;
++  *-*-openbsd*)
+     HB_LIBS="$HB_LIBS -lpthread"
+     ;;
+   *)

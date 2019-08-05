@@ -1,0 +1,30 @@
+$OpenBSD: patch-make_include_gcc_defs,v 1.1.1.1 2019/08/05 13:35:20 bcallah Exp $
+
+Remove hardcoded optimization flags.
+Proper -I and -L dirs.
+
+Index: make/include/gcc.defs
+--- make/include/gcc.defs.orig
++++ make/include/gcc.defs
+@@ -60,16 +60,16 @@ GCC.args.g.none    = -g0
+ GCC.args.g.min     = -gdwarf-2 -g1
+ GCC.args.g.std     = -gdwarf-2
+ GCC.args.g.max     = -gdwarf-2 -g3
+-GCC.args.O.none    = -O0
+-GCC.args.O.size    = -Os
+-GCC.args.O.speed   = -O3
++GCC.args.O.none    =
++GCC.args.O.size    =
++GCC.args.O.speed   =
+ GCC.args.D         = -D$(1)
+-GCC.args.I         = -I$(1)
++GCC.args.I         = -I$(1) -I$(LOCALBASE)/include -I$(X11BASE)/include -I$(LOCALBASE)/include/libavcodec
+ GCC.args.muldefs   = -Wl,--allow-multiple-definition
+ GCC.args.start     = -Wl,--start-group
+ GCC.args.F         = -F$(1)
+ GCC.args.f         = -framework $(1)
+-GCC.args.L         = -L$(1)
++GCC.args.L         = -L$(1) -L$(LOCALBASE)/lib -L$(X11BASE)/lib
+ GCC.args.l         = -l$(1)
+ GCC.args.end       = -Wl,--end-group
+ 

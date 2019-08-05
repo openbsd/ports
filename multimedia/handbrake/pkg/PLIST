@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/05 13:35:20 bcallah Exp $
+bin/HandBrake
+@bin bin/HandBrakeCLI
+@bin bin/ghb
+share/applications/fr.handbrake.ghb.desktop
+share/icons/hicolor/scalable/apps/fr.handbrake.ghb.svg
+share/icons/hicolor/scalable/apps/hb-icon.svg
+share/locale/cs/LC_MESSAGES/ghb.mo
+share/locale/da/LC_MESSAGES/ghb.mo
+share/locale/de/LC_MESSAGES/ghb.mo
+share/locale/es/LC_MESSAGES/ghb.mo
+share/locale/fr/LC_MESSAGES/ghb.mo
+share/locale/it_IT/
+share/locale/it_IT/LC_MESSAGES/
+share/locale/it_IT/LC_MESSAGES/ghb.mo
+share/locale/ja_JP/
+share/locale/ja_JP/LC_MESSAGES/
+share/locale/ja_JP/LC_MESSAGES/ghb.mo
+share/locale/ko/LC_MESSAGES/ghb.mo
+share/locale/no/LC_MESSAGES/ghb.mo
+share/locale/pt_BR/LC_MESSAGES/ghb.mo
+share/locale/ro_RO/
+share/locale/ro_RO/LC_MESSAGES/
+share/locale/ro_RO/LC_MESSAGES/ghb.mo
+share/locale/ru/LC_MESSAGES/ghb.mo
+share/locale/th/LC_MESSAGES/ghb.mo
+share/locale/zh_CN/LC_MESSAGES/ghb.mo
+share/metainfo/
+share/metainfo/fr.handbrake.ghb.appdata.xml
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
