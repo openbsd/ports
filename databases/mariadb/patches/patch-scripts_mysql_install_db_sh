@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.15 2019/06/27 21:15:18 sthen Exp $
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.16 2019/08/05 19:48:49 sthen Exp $
 
 Index: scripts/mysql_install_db.sh
 --- scripts/mysql_install_db.sh.orig
@@ -22,7 +22,7 @@ Index: scripts/mysql_install_db.sh
        --skip-name-resolve) ip_only=1 ;;
        --verbose) verbose=1 ; silent_startup="" ;;
        --rpm) in_rpm=1 ;;
-@@ -451,11 +454,11 @@ do
+@@ -458,11 +461,11 @@ do
    fi
    if test -n "$user"
    then
@@ -37,7 +37,7 @@ Index: scripts/mysql_install_db.sh
        exit 1
      fi
    fi
-@@ -557,10 +560,6 @@ fi
+@@ -564,10 +567,6 @@ fi
  # the screen.
  if test "$cross_bootstrap" -eq 0 && test -z "$srcdir"
  then
@@ -48,7 +48,7 @@ Index: scripts/mysql_install_db.sh
    if test "$auth_root_authentication_method" = normal
    then
      echo
-@@ -587,10 +586,7 @@ then
+@@ -594,10 +593,7 @@ then
    then
      echo
      echo "You can start the MariaDB daemon with:"

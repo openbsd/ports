@@ -1,11 +1,11 @@
-$OpenBSD: patch-client_mysqladmin_cc,v 1.1 2019/05/12 21:56:55 jca Exp $
+$OpenBSD: patch-client_mysqladmin_cc,v 1.2 2019/08/05 19:48:49 sthen Exp $
 
 Default value for connect timeout is rejected by the kernel.
 
 Index: client/mysqladmin.cc
 --- client/mysqladmin.cc.orig
 +++ client/mysqladmin.cc
-@@ -221,7 +221,7 @@ static struct my_option my_long_options[] =
+@@ -222,7 +222,7 @@ static struct my_option my_long_options[] =
    {"wait", 'w', "Wait and retry if connection is down.", 0, 0, 0, GET_UINT,
     OPT_ARG, 0, 0, 0, 0, 0, 0},
    {"connect_timeout", OPT_CONNECT_TIMEOUT, "", &opt_connect_timeout,

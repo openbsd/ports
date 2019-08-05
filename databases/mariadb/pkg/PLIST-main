@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2019/05/26 22:28:40 jca Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2019/08/05 19:48:49 sthen Exp $
 @conflict mysql-client-*
 @conflict mysql-server-*
 @pkgpath databases/mysql,-main
@@ -26,6 +26,7 @@ include/mysql/mariadb/ma_io.h
 include/mysql/mariadb_com.h
 include/mysql/mariadb_ctype.h
 include/mysql/mariadb_dyncol.h
+include/mysql/mariadb_rpl.h
 include/mysql/mariadb_stmt.h
 include/mysql/mariadb_version.h
 include/mysql/my_config.h
