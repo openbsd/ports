@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2019/07/14 00:39:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.96 2019/08/05 10:09:51 sthen Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -6,7 +6,8 @@ USE_WXNEEDED=		Yes
 
 DPB_PROPERTIES=		parallel
 .if ${MACHINE_ARCH} == "i386"
-DPB_PROPERTIES+=	lonesome
+# override parallel
+DPB_PROPERTIES=		lonesome
 .endif
 
 COMMENT=		Iridium browser

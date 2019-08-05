@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.452 2019/08/01 08:31:59 robert Exp $
+# $OpenBSD: Makefile,v 1.453 2019/08/05 10:09:50 sthen Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -6,7 +6,8 @@ USE_WXNEEDED=		Yes
 
 DPB_PROPERTIES=		parallel parallel2
 .if ${MACHINE_ARCH} == "i386"
-DPB_PROPERTIES+=	lonesome
+# override parallel
+DPB_PROPERTIES=		lonesome
 .endif
 
 COMMENT=		Chromium browser
