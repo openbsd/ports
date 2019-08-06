@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_mpdconf_example,v 1.18 2017/11/02 19:22:40 jca Exp $
+$OpenBSD: patch-doc_mpdconf_example,v 1.19 2019/08/06 17:28:12 landry Exp $
 Index: doc/mpdconf.example
 --- doc/mpdconf.example.orig
 +++ doc/mpdconf.example
@@ -30,7 +30,7 @@ Index: doc/mpdconf.example
  # These logs are great for troubleshooting, depending on your log_level
 @@ -34,25 +34,25 @@
  # The special value "syslog" makes MPD use the local syslog daemon. This
- # setting defaults to logging to syslog, otherwise logging is disabled.
+ # setting defaults to logging to syslog.
  #
 -#log_file			"~/.mpd/log"
 +log_file                        "/var/log/mpd/mpd.log"
@@ -78,19 +78,19 @@ Index: doc/mpdconf.example
  # This setting is the TCP port that is desired for the daemon to get assigned
  # to.
  #
-@@ -307,11 +310,11 @@ input {
+@@ -303,11 +306,11 @@ input {
  #
  # An example of an sndio output.
  #
 -#audio_output {
 -#	type		"sndio"
 -#	name		"sndio output"
--#	mixer_type	"software"
+-#	mixer_type	"hardware"
 -#}
 +audio_output {
 +	type		"sndio"
 +	name		"sndio output"
-+	mixer_type	"software"
++	mixer_type	"hardware"
 +}
  #
  # An example of an OS X output:

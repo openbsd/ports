@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_net_meson_build,v 1.1 2019/08/06 17:28:12 landry Exp $
+
+Index: src/net/meson.build
+--- src/net/meson.build.orig
++++ src/net/meson.build
+@@ -19,7 +19,6 @@ have_local_socket = not is_windows and get_option('loc
+ conf.set('HAVE_UN', have_local_socket)
+ 
+ if have_local_socket
+-  conf.set('HAVE_STRUCT_UCRED', compiler.has_header_symbol('sys/socket.h', 'struct ucred') and compiler.has_header_symbol('sys/socket.h', 'SO_PEERCRED'))
+   conf.set('HAVE_GETPEEREID', compiler.has_function('getpeereid'))
+ endif
+ 

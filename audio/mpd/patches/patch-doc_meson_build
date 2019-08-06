@@ -1,0 +1,14 @@
+$OpenBSD: patch-doc_meson_build,v 1.1 2019/08/06 17:28:12 landry Exp $
+
+Index: doc/meson.build
+--- doc/meson.build.orig
++++ doc/meson.build
+@@ -11,7 +11,7 @@ sphinx_output = custom_target(
+     'conf.py',
+   ],
+   command: [sphinx, '-q', '-b', 'html', '-d', '@OUTDIR@/doctrees', meson.current_source_dir(), '@OUTPUT@'],
+-  build_by_default: true,
++  build_by_default: false,
+   install: true,
+   install_dir: join_paths(get_option('datadir'), 'doc', meson.project_name()),
+ )
