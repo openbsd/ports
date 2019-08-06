@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/05/09 15:54:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/08/06 18:13:36 jasper Exp $
 bin/fakebmc${MODPY_BIN_SUFFIX}
 bin/pyghmicons${MODPY_BIN_SUFFIX}
 bin/pyghmiutil${MODPY_BIN_SUFFIX}
@@ -116,6 +116,22 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/${MODPY_PYCACHE}command.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/command.py
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/${MODPY_PYCACHE}generic.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/${MODPY_PYCACHE}lookup.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/generic.py
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/${MODPY_PYCACHE}xcc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/main.py
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/xcc.py
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lookup.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/storage.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/tests/
 lib/python${MODPY_VERSION}/site-packages/pyghmi/tests/__init__.py
@@ -137,6 +153,8 @@ lib/python${MODPY_VERSION}/site-packages/pyghmi/util/
 lib/python${MODPY_VERSION}/site-packages/pyghmi/util/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyghmi/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyghmi/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyghmi/util/${MODPY_PYCACHE}parse.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/util/${MODPY_PYCACHE}webclient.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyghmi/util/parse.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/util/webclient.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/version.py
