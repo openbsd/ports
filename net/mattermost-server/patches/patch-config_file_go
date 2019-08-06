@@ -1,0 +1,14 @@
+$OpenBSD: patch-config_file_go,v 1.1 2019/08/06 09:38:15 pvk Exp $
+
+Index: config/file.go
+--- config/file.go.orig
++++ config/file.go
+@@ -71,7 +71,7 @@ func resolveConfigFilePath(path string) (string, error
+ 
+ 	// Search for the relative path to the file in the config folder, taking into account
+ 	// various common starting points.
+-	if configFile := fileutils.FindFile(filepath.Join("config", path)); configFile != "" {
++	if configFile := fileutils.FindFile(filepath.Join("${SYSCONFDIR}/mattermost", path)); configFile != "" {
+ 		return configFile, nil
+ 	}
+ 
