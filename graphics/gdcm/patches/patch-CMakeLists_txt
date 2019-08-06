@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2019/05/09 17:02:30 jasper Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2019/08/06 18:37:37 jasper Exp $
 
 Revert commit 966ca7e5d00a4b0bba5d6d9392303231e4e4e536 from upstream
 (enforcing c++98), because it breaks builds with newer poppler.
@@ -8,7 +8,7 @@ Unbreak build: we don't provide library symlinks
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -121,7 +121,11 @@ else()
+@@ -118,7 +118,11 @@ else()
    set(GDCM_BUILD_SHARED_LIBS ${BUILD_SHARED_LIBS})
  endif()
  
