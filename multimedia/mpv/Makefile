@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2019/07/14 00:39:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2019/08/06 23:17:54 bcallah Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
@@ -6,7 +6,9 @@ GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.29.1
 
-REVISION =		0
+REVISION =		1
+
+SHARED_LIBS +=	mpv                       0.0 # 1.101
 
 CATEGORIES =		multimedia x11
 
@@ -60,6 +62,7 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--enable-cdda \
 			--enable-dvdnav \
 			--enable-dvdread \
+			--enable-libmpv-shared \
 			--enable-sndio \
 			--enable-sdl2 \
 			--enable-tv \
@@ -110,6 +113,9 @@ post-patch:
 	cp ${DISTDIR}/${WAF:T} ${WAF}
 
 do-configure:
+	sed -i -e "s,LMAJ,${LIBmpv_VERSION:R},g" \
+		-e "s,LMIN,${LIBmpv_VERSION:E},g" \
+			${WRKSRC}/libmpv/client.h
 	${DO_WAF} configure ${CONFIGURE_ARGS}
 
 do-build:
