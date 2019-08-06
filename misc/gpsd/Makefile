@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2019/08/03 08:44:41 kirby Exp $
+# $OpenBSD: Makefile,v 1.75 2019/08/06 17:38:05 landry Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -39,6 +39,7 @@ MODSCONS_FLAGS += 	gpsd_user=_gpsd \
 MULTI_PACKAGES = 	-main -php -x11
 
 BUILD_DEPENDS=		devel/py-gobject3 \
+			textproc/xmlto \
 			textproc/libxslt \
 			textproc/docbook \
 			textproc/docbook-xsl
