@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.14 2019/07/12 20:47:16 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.15 2019/08/06 18:19:51 juanfra Exp $
 
 COMMENT=	practical and portable Scheme system
 
-V=		5.0.0
+V=		5.1.0
 DISTNAME=	chicken-${V}
 
 MAINTAINER=	Timo Myyra <timo.myyra@bittivirhe.fi>
@@ -27,7 +27,7 @@ MAKE_FILE=	GNUmakefile
 
 FAKE_FLAGS=	PREFIX=${TRUEPREFIX}
 
-BINARYVERSION=	9
+BINARYVERSION=	11
 SUBST_VARS+=	BINARYVERSION
 
 # Based on param.h:MACHINE_STACK_GROWS_UP

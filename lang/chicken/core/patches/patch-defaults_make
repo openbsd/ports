@@ -1,4 +1,4 @@
-$OpenBSD: patch-defaults_make,v 1.4 2018/11/17 13:29:17 juanfra Exp $
+$OpenBSD: patch-defaults_make,v 1.5 2019/08/06 18:19:51 juanfra Exp $
 Index: defaults.make
 --- defaults.make.orig
 +++ defaults.make
@@ -14,7 +14,7 @@ Index: defaults.make
  VARDIR ?= $(LIBDIR)
  MAN1DIR ?= $(MANDIR)/man1
  CHICKENLIBDIR ?= $(VARDIR)/$(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)
-@@ -187,8 +187,8 @@ ifeq ($(PLATFORM),cygwin)
+@@ -190,8 +190,8 @@ ifeq ($(PLATFORM),cygwin)
  PRIMARY_LIBCHICKEN = cyg$(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)-0.dll
  LIBCHICKEN_SO_FILE = cyg$(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)-0.dll
  else
@@ -25,7 +25,7 @@ Index: defaults.make
  endif
  endif
  LIBCHICKEN_SO_LIBRARIES ?= $(LIBRARIES)
-@@ -277,8 +277,8 @@ DYNAMIC_CHICKEN_UNIT_IMPORT_LIBRARIES = continuation e
+@@ -280,8 +280,8 @@ DYNAMIC_CHICKEN_UNIT_IMPORT_LIBRARIES = continuation e
  # targets
  
  CHICKEN_PROGRAM = $(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)

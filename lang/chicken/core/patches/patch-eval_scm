@@ -1,8 +1,8 @@
-$OpenBSD: patch-eval_scm,v 1.4 2018/11/17 13:29:18 juanfra Exp $
+$OpenBSD: patch-eval_scm,v 1.5 2019/08/06 18:19:51 juanfra Exp $
 Index: eval.scm
 --- eval.scm.orig
 +++ eval.scm
-@@ -1117,8 +1117,7 @@
+@@ -1110,8 +1110,7 @@
  	 (if uses-soname?
  	     (string-append
  	      load-library-extension
