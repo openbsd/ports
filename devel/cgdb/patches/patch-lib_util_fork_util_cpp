@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_util_fork_util_cpp,v 1.1 2019/08/06 20:58:26 sthen Exp $
+
+Index: lib/util/fork_util.cpp
+--- lib/util/fork_util.cpp.orig
++++ lib/util/fork_util.cpp
+@@ -182,7 +182,7 @@ int invoke_debugger(const char *path,
+         int argc, char *argv[], int *in, int *out, int choice)
+ {
+     pid_t pid;
+-    const char *const GDB = "gdb";
++    const char *const GDB = "egdb";
+     const char *const NW = "--nw";
+     const char *const EX = "-ex";
+     const char *const ANNOTATE_TWO = "--annotate=2";

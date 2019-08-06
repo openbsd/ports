@@ -1,0 +1,14 @@
+$OpenBSD: patch-cgdb_cgdb_cpp,v 1.1 2019/08/06 20:58:26 sthen Exp $
+
+Index: cgdb/cgdb.cpp
+--- cgdb/cgdb.cpp.orig
++++ cgdb/cgdb.cpp
+@@ -1790,7 +1790,7 @@ int main(int argc, char *argv[])
+     /* First create tgdb, because it has the error log */
+     if (start_gdb(argc, argv) == -1) {
+         fprintf(stderr, "%s:%d Unable to invoke debugger: %s\n",
+-                __FILE__, __LINE__, debugger_path ? debugger_path : "gdb");
++                __FILE__, __LINE__, debugger_path ? debugger_path : "egdb");
+         exit(-1);
+     }
+ 
