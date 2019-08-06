@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:16 sthen Exp $
-
-BROKEN =	does not build with LLVM 7
+# $OpenBSD: Makefile,v 1.7 2019/08/06 17:23:28 jcs Exp $
 
 # Hopefully ${CLANG_ARCHS} at some point.
 ONLY_FOR_ARCHS=	amd64
 
-V =		0.26.1
-V_SHARDS =	0.8.1
+V =		0.30.0
+V_SHARDS =	0.9.0
 REVISION =	1
 COMMENT =	statically typed object oriented language
 DISTNAME =	crystal-${V}
@@ -29,7 +27,7 @@ MASTER_SITES =	https://github.com/crystal-lang/crystal/archive/
 MASTER_SITES0 =	https://wmoxam.com/public/
 MASTER_SITES1 =	https://github.com/crystal-lang/shards/archive/
 DISTFILES =	crystal-${V}{${V}}.tar.gz \
-		crystal-${V}-OpenBSD6.4.tar.gz:0 \
+		crystal-${V}-OpenBSD6.5.tar.gz:0 \
 		shards-${V}{v${V_SHARDS}}.tar.gz:1
 
 # Build requires llvm-config which only exists in ports-clang
@@ -57,13 +55,14 @@ do-build:
 		${WRKSRC}/../crystal.o \
 		${WRKSRC}/src/llvm/ext/llvm_ext.o \
 		${WRKSRC}/src/ext/sigfault.o \
+		-L${LOCALBASE}/lib \
 		`(llvm-config --libs --system-libs --ldflags 2> /dev/null)` \
 		-lz -lpcre -lgc -lpthread -levent_core -levent_extra -lssl \
 		-lcrypto -liconv
 	# Use the compiler to re-compile the compiler
 	touch ${WRKSRC}/src/compiler/crystal.cr
 	cd ${WRKSRC}; \
-		ulimit -s 5120 -d 3145728 && \
+		ulimit -s 5120 -d 4096000 && \
 		CRYSTAL_CONFIG_PATH="lib:${TRUEPREFIX}/lib/crystal" \
 		CXX=${CXX} ${MAKE_PROGRAM} ${ALL_TARGET}
 	cd ${WRKSRC}/../shards-${V_SHARDS} && \
