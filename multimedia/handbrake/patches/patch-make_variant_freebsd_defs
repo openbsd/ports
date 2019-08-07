@@ -1,0 +1,14 @@
+$OpenBSD: patch-make_variant_freebsd_defs,v 1.1 2019/08/07 19:23:10 bcallah Exp $
+
+Index: make/variant/freebsd.defs
+--- make/variant/freebsd.defs.orig
++++ make/variant/freebsd.defs
+@@ -3,8 +3,6 @@ LOCALBASE  ?= /usr/local
+ 
+ TARGET.dylib.ext = .so
+ 
+-GCC.D       = LIBICONV_PLUG
+-
+ GCC.args.dylib = -shared
+ GCC.args.pic   = 1
+ 

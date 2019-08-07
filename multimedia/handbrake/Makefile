@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/05 13:35:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/08/07 19:23:10 bcallah Exp $
 
 V = 		1.2.2
 COMMENT =	open source video transcoder
 DISTNAME =	HandBrake-${V}-source
 PKGNAME =	handbrake-${V}
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	multimedia x11
 
@@ -69,6 +70,11 @@ MAKE_ENV =	AUTOCONF_VERSION="${AUTOCONF_VERSION}" \
 MAKE_FILE =	GNUmakefile
 MAKE_FLAGS =	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/libxml2 -D_NO_UPDATE_CHECK" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib -lx265 -liconv"
+
+.if ${MACHINE_ARCH:Mi386}
+CFLAGS +=	-msse2
+CXXFLAGS +=	-msse2
+.endif
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.16
