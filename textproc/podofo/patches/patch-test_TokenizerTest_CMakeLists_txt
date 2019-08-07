@@ -1,0 +1,15 @@
+$OpenBSD: patch-test_TokenizerTest_CMakeLists_txt,v 1.1 2019/08/07 18:11:34 rsadowski Exp $
+
+Prior to 3.12 cmake silently created an empty destination directory if the
+origin of the copy_directory does not exist.
+
+Index: test/TokenizerTest/CMakeLists.txt
+--- test/TokenizerTest/CMakeLists.txt.orig
++++ test/TokenizerTest/CMakeLists.txt
+@@ -7,5 +7,6 @@ ADD_DEPENDENCIES(TokenizerTest ${PODOFO_DEPEND_TARGET}
+ ADD_CUSTOM_COMMAND(
+     TARGET TokenizerTest
+     POST_BUILD
++    COMMAND "${CMAKE_COMMAND}" -E make_directory "${CMAKE_CURRENT_SOURCE_DIR}/objects"
+     COMMAND "${CMAKE_COMMAND}" -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/objects" "${CMAKE_CURRENT_BINARY_DIR}/objects"
+     )
