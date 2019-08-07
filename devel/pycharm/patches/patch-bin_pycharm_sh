@@ -1,16 +1,16 @@
-$OpenBSD: patch-bin_pycharm_sh,v 1.1 2018/12/27 19:14:15 rsadowski Exp $
+$OpenBSD: patch-bin_pycharm_sh,v 1.2 2019/08/07 06:02:31 rsadowski Exp $
 
 Avoid "egrep: -: No such file or directory" issue
 
 Index: bin/pycharm.sh
 --- bin/pycharm.sh.orig
 +++ bin/pycharm.sh
-@@ -174,7 +174,7 @@ fi
+@@ -180,7 +180,7 @@ fi
  VM_OPTIONS=""
  if [ -r "$VM_OPTIONS_FILE" ]; then
-   VM_OPTIONS=`"$CAT" "$VM_OPTIONS_FILE" | "$GREP" -v "^#.*"`
--  if { echo "$VM_OPTIONS" | "$GREP" -q "agentlib:yjpagent" - ; } then
-+  if { echo "$VM_OPTIONS" | "$GREP" -q "agentlib:yjpagent"; } then
+   VM_OPTIONS=$("$CAT" "$VM_OPTIONS_FILE" | "$GREP" -v "^#.*")
+-  if { echo "$VM_OPTIONS" | "$GREP" -q "agentlib:yjpagent" - ; }; then
++  if { echo "$VM_OPTIONS" | "$GREP" -q "agentlib:yjpagent"; }; then
      if [ "$OS_TYPE" = "Linux" ]; then
-       VM_OPTIONS=`echo "$VM_OPTIONS" | "$SED" -e "s|-agentlib:yjpagent\(-linux\)\?\([^=]*\)|-agentpath:$IDE_BIN_HOME/libyjpagent-linux\2.so|"`
+       VM_OPTIONS=$(echo "$VM_OPTIONS" | "$SED" -e "s|-agentlib:yjpagent\(-linux\)\?\([^=]*\)|-agentpath:$IDE_BIN_HOME/libyjpagent-linux\2.so|")
      else
