@@ -1,14 +1,31 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2015/10/27 10:51:32 giovanni Exp $
---- CMakeLists.txt.orig	Fri Sep  5 18:48:12 2014
-+++ CMakeLists.txt	Tue Oct 27 08:41:44 2015
-@@ -18,7 +18,9 @@ endif (BUILD_DOCS)
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2019/08/07 09:06:11 sthen Exp $
+
+- don't force optimizations
+
+- mydumper uses libm functions itself, and shouldn't rely on this coming
+via inter-library dependencies. unbreaks newer mariadb on LLD arches.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -18,8 +18,10 @@ endif (BUILD_DOCS)
  
  option(WITH_BINLOG "Build binlog dump options" OFF)
  
 -set(CMAKE_C_FLAGS "-Wall -Wno-deprecated-declarations -Wunused -Wwrite-strings -Wno-strict-aliasing -Wextra -Wshadow -Werror -O3 -g ${MYSQL_CFLAGS}")
 +option(WITH_BINLOG "Build binlog dump options" OFF)
-+
-+set(CMAKE_C_FLAGS "-Wall -Wno-deprecated-declarations -Wunused -Wwrite-strings -Wno-strict-aliasing -Wextra -Wshadow -Werror ${MYSQL_CFLAGS}")
  
++set(CMAKE_C_FLAGS "-Wall -Wno-deprecated-declarations -Wunused -Wwrite-strings -Wno-strict-aliasing -Wextra -Wshadow -Werror ${MYSQL_CFLAGS}")
++
  include_directories(${MYDUMPER_SOURCE_DIR} ${MYSQL_INCLUDE_DIR} ${GLIB2_INCLUDE_DIR} ${PCRE_INCLUDE_DIR} ${ZLIB_INCLUDE_DIRS})
  
+ if (NOT CMAKE_INSTALL_PREFIX)
+@@ -35,7 +37,7 @@ if (WITH_BINLOG)
+ else (WITH_BINLOG)
+   add_executable(mydumper mydumper.c server_detect.c g_unix_signal.c)
+ endif (WITH_BINLOG)
+-target_link_libraries(mydumper ${MYSQL_LIBRARIES} ${GLIB2_LIBRARIES} ${GTHREAD2_LIBRARIES} ${PCRE_PCRE_LIBRARY} ${ZLIB_LIBRARIES})
++target_link_libraries(mydumper m ${MYSQL_LIBRARIES} ${GLIB2_LIBRARIES} ${GTHREAD2_LIBRARIES} ${PCRE_PCRE_LIBRARY} ${ZLIB_LIBRARIES})
+ 
+ 
+ add_executable(myloader myloader.c)
