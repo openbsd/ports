@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1878 2019/08/04 19:47:21 chrisz Exp $
+# $OpenBSD: Makefile,v 1.1879 2019/08/07 12:51:09 kmos Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1269,7 +1269,6 @@
      SUBDIR += pycharm
      SUBDIR += py-Checker
      SUBDIR += py-SOAPpy
-     SUBDIR += py-addons
      SUBDIR += py-algorithm-munkres
      SUBDIR += py-algorithm-munkres,python3
      SUBDIR += py-altgraph
@@ -1550,7 +1549,6 @@
      SUBDIR += py-pathspec,python3
      SUBDIR += py-pbr
      SUBDIR += py-pbr,python3
-     SUBDIR += py-peak-rules
      SUBDIR += py-pexpect
      SUBDIR += py-pexpect,python3
      SUBDIR += py-pip
@@ -1563,7 +1561,6 @@
      SUBDIR += py-ply,python3
      SUBDIR += py-pretend
      SUBDIR += py-pretend,python3
-     SUBDIR += py-prioritized_methods
      SUBDIR += py-progress
      SUBDIR += py-progressbar
      SUBDIR += py-progressbar,python3

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.791 2019/08/02 14:45:54 kmos Exp $
+# $OpenBSD: Quirks.pm,v 1.792 2019/08/07 12:51:10 kmos Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1261,6 +1261,9 @@ my $obsolete_reason = {
 	'nulib' => 3,
 	'py-turbocheetah' => 3,
 	'py-turbokid' => 3,
+	'py-addons' => 3,
+	'py-peak-rules' => 3,
+	'py-prioritized_methods' => 3,
 };
 
 # reasons for obsolete packages
