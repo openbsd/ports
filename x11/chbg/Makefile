@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:51:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/08/08 08:26:28 sthen Exp $
 
-COMMENT=		Desktop wallpaper manager and X11 screensaver
+COMMENT=		desktop wallpaper manager and X11 screensaver
 
 DISTNAME=		chbg-2.0.1
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=		x11
 
