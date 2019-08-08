@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_configurator_ml,v 1.1.1.1 2019/08/04 18:54:39 chrisz Exp $
+$OpenBSD: patch-src_configurator_ml,v 1.2 2019/08/08 10:32:02 chrisz Exp $
 
 don't depend on janestreet base.
 
@@ -135,7 +135,7 @@ Index: src/configurator.ml
 +  let slurp fn =
 +    let chan = open_in fn in
 +    let buf = Buffer.create 4096 in
-+    (try Buffer.add_channel buf chan Int.max_int with End_of_file -> ());
++    (try Buffer.add_channel buf chan max_int with End_of_file -> ());
 +    close_in chan;
 +    Buffer.contents buf
 +  in
