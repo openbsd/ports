@@ -1,0 +1,23 @@
+$OpenBSD: README,v 1.1.1.1 2019/08/08 23:08:26 bcallah Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+OpenJazz
+========
+OpenJazz requires the original game files from Jazz Jackrabbit to work
+properly.  These can come from an original CD or from GOG.com.
+
+If using the GOG.com version, you must extract the files from
+setup_jazz_jackrabbit_collection_2.0_cs_(28162).exe using the
+innoextract package.
+
+The files will be in a directory named app. You must keep this
+directory, though it can be renamed and moved to a location of your
+choosing. You can delete everything else that is extracted from the exe.
+
+While this package and the game engine are open source, one still needs
+to provide the original game assets from Jazz Jackrabbit, which is not
+open source. You will need to purchase the original game to use this
+package.

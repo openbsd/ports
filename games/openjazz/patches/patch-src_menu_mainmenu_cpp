@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_menu_mainmenu_cpp,v 1.1.1.1 2019/08/08 23:08:26 bcallah Exp $
+
+Full path to openjazz.000
+
+Index: src/menu/mainmenu.cpp
+--- src/menu/mainmenu.cpp.orig
++++ src/menu/mainmenu.cpp
+@@ -50,7 +50,7 @@ MainMenu::MainMenu () {
+ 
+ 	try {
+ 
+-		file = new File("openjazz.000", false);
++		file = new File("${TRUEPREFIX}/share/openjazz/openjazz.000", false);
+ 
+ 	} catch (int e) {
+ 
