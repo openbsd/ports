@@ -1,9 +1,9 @@
-$OpenBSD: patch-cutemaze_pro,v 1.3 2018/05/30 03:06:20 bcallah Exp $
+$OpenBSD: patch-cutemaze_pro,v 1.4 2019/08/08 23:16:18 bcallah Exp $
 
 Index: cutemaze.pro
 --- cutemaze.pro.orig
 +++ cutemaze.pro
-@@ -104,7 +104,7 @@ macx {
+@@ -106,7 +106,7 @@ macx {
  	qm.CONFIG += no_check_exist
  
  	man.files = doc/cutemaze.6
