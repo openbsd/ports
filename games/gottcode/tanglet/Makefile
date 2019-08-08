@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2019/03/08 20:00:46 cwen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/08/08 23:30:50 bcallah Exp $
 
 GAME =		tanglet
 COMMENT =	word finding game
-DISTNAME =	${GAME}-1.5.3-src
+DISTNAME =	${GAME}-1.5.4-src
 WANTLIB +=	z
-REVISION =	0
 
 RUN_DEPENDS +=	misc/shared-mime-info
 

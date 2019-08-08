@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/07/01 18:33:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/08/08 23:30:51 bcallah Exp $
 @bin bin/tanglet
 @man man/man6/tanglet.6
 share/applications/tanglet.desktop
@@ -79,6 +79,7 @@ share/tanglet/translations/tanglet_nl.qm
 share/tanglet/translations/tanglet_pl.qm
 share/tanglet/translations/tanglet_pt.qm
 share/tanglet/translations/tanglet_ro.qm
+share/tanglet/translations/tanglet_ru.qm
 share/tanglet/translations/tanglet_szl.qm
 share/tanglet/translations/tanglet_tr.qm
 share/tanglet/translations/tanglet_uk.qm
