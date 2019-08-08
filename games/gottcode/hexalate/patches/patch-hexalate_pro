@@ -1,9 +1,9 @@
-$OpenBSD: patch-hexalate_pro,v 1.3 2018/05/30 03:06:49 bcallah Exp $
+$OpenBSD: patch-hexalate_pro,v 1.4 2019/08/08 23:21:19 bcallah Exp $
 
 Index: hexalate.pro
 --- hexalate.pro.orig
 +++ hexalate.pro
-@@ -91,7 +91,7 @@ macx {
+@@ -93,7 +93,7 @@ macx {
  	qm.CONFIG += no_check_exist
  
  	man.files = doc/hexalate.6

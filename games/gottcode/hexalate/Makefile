@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2019/03/08 20:00:46 cwen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/08/08 23:21:19 bcallah Exp $
 
 GAME =		hexalate
 COMMENT =	color matching game
-DISTNAME =	${GAME}-1.1.4-src
-REVISION =	0
+DISTNAME =	${GAME}-1.1.5-src
 
 .include <bsd.port.mk>
