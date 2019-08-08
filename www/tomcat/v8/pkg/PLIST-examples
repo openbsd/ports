@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.27 2019/04/24 16:32:18 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.28 2019/08/08 21:01:49 sthen Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -9,7 +9,6 @@ webapps/ROOT/WEB-INF/web.xml
 webapps/ROOT/asf-logo-wide.svg
 webapps/ROOT/bg-button.png
 webapps/ROOT/bg-middle.png
-webapps/ROOT/bg-nav-item.png
 webapps/ROOT/bg-nav.png
 webapps/ROOT/bg-upper.png
 webapps/ROOT/favicon.ico
@@ -1368,6 +1367,7 @@ webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/DelegatingResultSet.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/DelegatingStatement.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/DriverConnectionFactory.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/DriverManagerConnectionFactory.html
+webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/Jdbc41Bridge.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/ListException.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/PStmtKey.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/PoolableCallableStatement.html
@@ -1607,6 +1607,7 @@ webapps/docs/api/org/apache/tomcat/util/buf/C2BConverter.html
 webapps/docs/api/org/apache/tomcat/util/buf/CharChunk.CharInputChannel.html
 webapps/docs/api/org/apache/tomcat/util/buf/CharChunk.CharOutputChannel.html
 webapps/docs/api/org/apache/tomcat/util/buf/CharChunk.html
+webapps/docs/api/org/apache/tomcat/util/buf/CharsetCache.html
 webapps/docs/api/org/apache/tomcat/util/buf/Constants.html
 webapps/docs/api/org/apache/tomcat/util/buf/HexUtils.html
 webapps/docs/api/org/apache/tomcat/util/buf/MessageBytes.html
@@ -1765,6 +1766,7 @@ webapps/docs/api/org/apache/tomcat/util/http/Parameters.html
 webapps/docs/api/org/apache/tomcat/util/http/RequestUtil.html
 webapps/docs/api/org/apache/tomcat/util/http/ResponseUtil.html
 webapps/docs/api/org/apache/tomcat/util/http/Rfc6265CookieProcessor.html
+webapps/docs/api/org/apache/tomcat/util/http/SameSiteCookies.html
 webapps/docs/api/org/apache/tomcat/util/http/ServerCookie.html
 webapps/docs/api/org/apache/tomcat/util/http/ServerCookies.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/
@@ -1833,11 +1835,14 @@ webapps/docs/api/org/apache/tomcat/util/http/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/
 webapps/docs/api/org/apache/tomcat/util/http/parser/AcceptLanguage.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Authorization.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/ContentRange.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Cookie.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Host.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/HttpParser.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/MediaType.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/MediaTypeCache.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/Ranges.Entry.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/Ranges.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Vary.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/package-summary.html
@@ -1960,7 +1965,6 @@ webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLConfCmd.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLContext.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLEngine.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLImplementation.html
-webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLProtocols.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLSessionContext.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLSessionStats.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLUtil.html
@@ -2283,10 +2287,8 @@ webapps/docs/images/fonts/OpenSans600italic.woff
 webapps/docs/images/fonts/OpenSans700.woff
 webapps/docs/images/fonts/OpenSans700italic.woff
 webapps/docs/images/fonts/fonts.css
-webapps/docs/images/printer.gif
 webapps/docs/images/tomcat.gif
 webapps/docs/images/tomcat.png
-webapps/docs/images/tomcat.svg
 webapps/docs/images/update.gif
 webapps/docs/images/void.gif
 webapps/docs/index.html
@@ -2605,7 +2607,6 @@ webapps/examples/WEB-INF/classes/CookieExample.java
 webapps/examples/WEB-INF/classes/HelloWorldExample.class
 webapps/examples/WEB-INF/classes/HelloWorldExample.java
 webapps/examples/WEB-INF/classes/LocalStrings.properties
-webapps/examples/WEB-INF/classes/LocalStrings_en.properties
 webapps/examples/WEB-INF/classes/LocalStrings_es.properties
 webapps/examples/WEB-INF/classes/LocalStrings_fr.properties
 webapps/examples/WEB-INF/classes/LocalStrings_pt.properties
@@ -2868,7 +2869,6 @@ webapps/examples/jsp/forward/two.html
 webapps/examples/jsp/images/
 webapps/examples/jsp/images/code.gif
 webapps/examples/jsp/images/execute.gif
-webapps/examples/jsp/images/read.gif
 webapps/examples/jsp/images/return.gif
 webapps/examples/jsp/include/
 webapps/examples/jsp/include/foo.html

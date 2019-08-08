@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2019/04/24 16:32:19 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2019/08/08 21:01:49 sthen Exp $
 @option is-branch
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
@@ -77,6 +77,7 @@ tomcat/bin/
 tomcat/bin/bootstrap.jar
 tomcat/bin/catalina-tasks.xml
 tomcat/bin/catalina.sh
+tomcat/bin/ciphers.sh
 tomcat/bin/commons-daemon-native.tar.gz
 tomcat/bin/commons-daemon.jar
 tomcat/bin/configtest.sh
@@ -127,15 +128,8 @@ tomcat/webapps/host-manager/WEB-INF/jsp/403.jsp
 tomcat/webapps/host-manager/WEB-INF/jsp/404.jsp
 tomcat/webapps/host-manager/WEB-INF/web.xml
 tomcat/webapps/host-manager/images/
-tomcat/webapps/host-manager/images/add.gif
 tomcat/webapps/host-manager/images/asf-logo.svg
-tomcat/webapps/host-manager/images/code.gif
-tomcat/webapps/host-manager/images/design.gif
-tomcat/webapps/host-manager/images/docs.gif
-tomcat/webapps/host-manager/images/fix.gif
 tomcat/webapps/host-manager/images/tomcat.gif
-tomcat/webapps/host-manager/images/update.gif
-tomcat/webapps/host-manager/images/void.gif
 tomcat/webapps/host-manager/index.jsp
 tomcat/webapps/host-manager/manager.xml
 tomcat/webapps/manager/
@@ -153,15 +147,8 @@ tomcat/webapps/manager/WEB-INF/jsp/sessionDetail.jsp
 tomcat/webapps/manager/WEB-INF/jsp/sessionsList.jsp
 tomcat/webapps/manager/WEB-INF/web.xml
 tomcat/webapps/manager/images/
-tomcat/webapps/manager/images/add.gif
 tomcat/webapps/manager/images/asf-logo.svg
-tomcat/webapps/manager/images/code.gif
-tomcat/webapps/manager/images/design.gif
-tomcat/webapps/manager/images/docs.gif
-tomcat/webapps/manager/images/fix.gif
 tomcat/webapps/manager/images/tomcat.gif
-tomcat/webapps/manager/images/update.gif
-tomcat/webapps/manager/images/void.gif
 tomcat/webapps/manager/index.jsp
 tomcat/webapps/manager/status.xsd
 tomcat/webapps/manager/xform.xsl
