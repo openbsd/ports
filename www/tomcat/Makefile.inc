@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2019/07/12 20:51:06 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2019/08/08 21:03:16 sthen Exp $
 
 COMMENT-main ?=	Java servlet and Java server pages server
 COMMENT-examples =example applications and full documentation
@@ -78,10 +78,11 @@ do-install:
 		${WRKINST}/${CONFDIR}/Catalina/localhost/host-manager.xml
 	@perl -pi -e 's/manager/host-manager/' \
 		${WRKINST}/${CONFDIR}/Catalina/localhost/host-manager.xml
-	find ${WRKINST} \
-		-name \*.beforesubst -or \
-		-name \*.orig -or \
-		-name \*.bat -or \
-		-name \*.exe -or \
-		-name \*.dll \
+	find ${WRKINST} \( \
+		-name '*.beforesubst' -or \
+		-name '*.orig' -or \
+		-name '*.bat' -or \
+		-name '*.exe' -or \
+		-name '*.dll' \) \
 		-delete
+
