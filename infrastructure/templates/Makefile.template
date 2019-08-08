@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.83 2019/07/02 12:03:14 sthen Exp $
+# $OpenBSD: Makefile.template,v 1.84 2019/08/08 23:04:22 kmos Exp $
 #
 # Replace ??? with appropriate values
 # Remove extraneous comments before commit
@@ -16,6 +16,11 @@
 #		|----------------------------------------------------------|
 COMMENT =	???
 # COMMENT-foo =	???	for multi packages
+
+#
+# Version of port if using lang/python module
+#
+#MODPY_EGG_VERSION =	???
 
 #
 # What port/package will be created
@@ -102,8 +107,19 @@ MASTER_SITES =		???
 # Ports that require a non-default compiler that do *not* use C++ should set this:
 #COMPILER_LANGS =	c
 
-# Dependencies
+# Any modules we may be using
 #MODULES =		???
+
+#
+# MODPY_ settings for when using lang/python module
+#
+# Get source from pypi.org
+#MODPY_PI =		Yes
+#MODPY_SETUPTOOLS =	Yes
+# If port is python3 only
+#MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+
+# Dependencies
 #BUILD_DEPENDS =	???
 #RUN_DEPENDS =		???
 #LIB_DEPENDS =		???
