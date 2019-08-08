@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2019/04/24 16:33:09 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2019/08/08 20:59:23 sthen Exp $
 @option is-branch
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin
@@ -76,30 +76,20 @@ tomcat/RUNNING.txt
 tomcat/bin/
 tomcat/bin/bootstrap.jar
 tomcat/bin/catalina-tasks.xml
-tomcat/bin/catalina.bat
 tomcat/bin/catalina.sh
-tomcat/bin/ciphers.bat
 tomcat/bin/ciphers.sh
 tomcat/bin/commons-daemon-native.tar.gz
 tomcat/bin/commons-daemon.jar
-tomcat/bin/configtest.bat
 tomcat/bin/configtest.sh
 tomcat/bin/daemon.sh
-tomcat/bin/digest.bat
 tomcat/bin/digest.sh
-tomcat/bin/makebase.bat
 tomcat/bin/makebase.sh
-tomcat/bin/setclasspath.bat
 tomcat/bin/setclasspath.sh
-tomcat/bin/shutdown.bat
 tomcat/bin/shutdown.sh
-tomcat/bin/startup.bat
 tomcat/bin/startup.sh
 tomcat/bin/tomcat-juli.jar
 tomcat/bin/tomcat-native.tar.gz
-tomcat/bin/tool-wrapper.bat
 tomcat/bin/tool-wrapper.sh
-tomcat/bin/version.bat
 tomcat/bin/version.sh
 tomcat/lib/
 tomcat/lib/annotations-api.jar
@@ -108,7 +98,7 @@ tomcat/lib/catalina-ha.jar
 tomcat/lib/catalina-storeconfig.jar
 tomcat/lib/catalina-tribes.jar
 tomcat/lib/catalina.jar
-tomcat/lib/ecj-4.9.jar
+tomcat/lib/ecj-4.12.jar
 tomcat/lib/el-api.jar
 tomcat/lib/jasper-el.jar
 tomcat/lib/jasper.jar

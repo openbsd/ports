@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.1 2019/04/24 16:33:09 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.2 2019/08/08 20:59:23 sthen Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -200,6 +200,7 @@ webapps/docs/api/org/apache/catalina/core/ContainerBase.ContainerBackgroundProce
 webapps/docs/api/org/apache/catalina/core/ContainerBase.PrivilegedAddChild.html
 webapps/docs/api/org/apache/catalina/core/ContainerBase.html
 webapps/docs/api/org/apache/catalina/core/DefaultInstanceManager.html
+webapps/docs/api/org/apache/catalina/core/FrameworkListener.html
 webapps/docs/api/org/apache/catalina/core/JniLifecycleListener.html
 webapps/docs/api/org/apache/catalina/core/JreMemoryLeakPreventionListener.html
 webapps/docs/api/org/apache/catalina/core/NamingContextListener.html
@@ -531,6 +532,8 @@ webapps/docs/api/org/apache/catalina/startup/HostConfig.DeployedApplication.html
 webapps/docs/api/org/apache/catalina/startup/HostConfig.html
 webapps/docs/api/org/apache/catalina/startup/HostRuleSet.html
 webapps/docs/api/org/apache/catalina/startup/LifecycleListenerRule.html
+webapps/docs/api/org/apache/catalina/startup/ListenerCreateRule.OptionalListener.html
+webapps/docs/api/org/apache/catalina/startup/ListenerCreateRule.html
 webapps/docs/api/org/apache/catalina/startup/NamingRuleSet.html
 webapps/docs/api/org/apache/catalina/startup/PasswdUserDatabase.html
 webapps/docs/api/org/apache/catalina/startup/RealmRuleSet.html
@@ -1607,6 +1610,7 @@ webapps/docs/api/org/apache/tomcat/util/buf/C2BConverter.html
 webapps/docs/api/org/apache/tomcat/util/buf/CharChunk.CharInputChannel.html
 webapps/docs/api/org/apache/tomcat/util/buf/CharChunk.CharOutputChannel.html
 webapps/docs/api/org/apache/tomcat/util/buf/CharChunk.html
+webapps/docs/api/org/apache/tomcat/util/buf/CharsetCache.html
 webapps/docs/api/org/apache/tomcat/util/buf/HexUtils.html
 webapps/docs/api/org/apache/tomcat/util/buf/MessageBytes.html
 webapps/docs/api/org/apache/tomcat/util/buf/StringCache.html
@@ -1754,6 +1758,7 @@ webapps/docs/api/org/apache/tomcat/util/http/Parameters.html
 webapps/docs/api/org/apache/tomcat/util/http/RequestUtil.html
 webapps/docs/api/org/apache/tomcat/util/http/ResponseUtil.html
 webapps/docs/api/org/apache/tomcat/util/http/Rfc6265CookieProcessor.html
+webapps/docs/api/org/apache/tomcat/util/http/SameSiteCookies.html
 webapps/docs/api/org/apache/tomcat/util/http/ServerCookie.html
 webapps/docs/api/org/apache/tomcat/util/http/ServerCookies.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/
@@ -1822,11 +1827,14 @@ webapps/docs/api/org/apache/tomcat/util/http/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/
 webapps/docs/api/org/apache/tomcat/util/http/parser/AcceptLanguage.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Authorization.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/ContentRange.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Cookie.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Host.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/HttpParser.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/MediaType.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/MediaTypeCache.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/Ranges.Entry.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/Ranges.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Vary.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/package-summary.html
@@ -1845,6 +1853,7 @@ webapps/docs/api/org/apache/tomcat/util/modeler/BaseModelMBean.html
 webapps/docs/api/org/apache/tomcat/util/modeler/BaseNotificationBroadcaster.html
 webapps/docs/api/org/apache/tomcat/util/modeler/FeatureInfo.html
 webapps/docs/api/org/apache/tomcat/util/modeler/ManagedBean.html
+webapps/docs/api/org/apache/tomcat/util/modeler/NoDescriptorRegistry.html
 webapps/docs/api/org/apache/tomcat/util/modeler/NotificationInfo.html
 webapps/docs/api/org/apache/tomcat/util/modeler/OperationInfo.html
 webapps/docs/api/org/apache/tomcat/util/modeler/ParameterInfo.html
@@ -1885,6 +1894,7 @@ webapps/docs/api/org/apache/tomcat/util/net/Constants.html
 webapps/docs/api/org/apache/tomcat/util/net/ContainerThreadMarker.html
 webapps/docs/api/org/apache/tomcat/util/net/DispatchType.html
 webapps/docs/api/org/apache/tomcat/util/net/IPv6Utils.html
+webapps/docs/api/org/apache/tomcat/util/net/Nio2Channel.ClosedNio2Channel.html
 webapps/docs/api/org/apache/tomcat/util/net/Nio2Channel.html
 webapps/docs/api/org/apache/tomcat/util/net/Nio2Endpoint.Nio2Acceptor.html
 webapps/docs/api/org/apache/tomcat/util/net/Nio2Endpoint.Nio2SocketWrapper.html
@@ -1895,6 +1905,7 @@ webapps/docs/api/org/apache/tomcat/util/net/NioBlockingSelector.BlockPoller.Runn
 webapps/docs/api/org/apache/tomcat/util/net/NioBlockingSelector.BlockPoller.html
 webapps/docs/api/org/apache/tomcat/util/net/NioBlockingSelector.KeyReference.html
 webapps/docs/api/org/apache/tomcat/util/net/NioBlockingSelector.html
+webapps/docs/api/org/apache/tomcat/util/net/NioChannel.ClosedNioChannel.html
 webapps/docs/api/org/apache/tomcat/util/net/NioChannel.html
 webapps/docs/api/org/apache/tomcat/util/net/NioEndpoint.NioSocketWrapper.html
 webapps/docs/api/org/apache/tomcat/util/net/NioEndpoint.Poller.html
@@ -1928,6 +1939,8 @@ webapps/docs/api/org/apache/tomcat/util/net/SocketWrapperBase.BlockingMode.html
 webapps/docs/api/org/apache/tomcat/util/net/SocketWrapperBase.CompletionCheck.html
 webapps/docs/api/org/apache/tomcat/util/net/SocketWrapperBase.CompletionHandlerCall.html
 webapps/docs/api/org/apache/tomcat/util/net/SocketWrapperBase.CompletionState.html
+webapps/docs/api/org/apache/tomcat/util/net/SocketWrapperBase.OperationState.html
+webapps/docs/api/org/apache/tomcat/util/net/SocketWrapperBase.VectoredIOCompletionHandler.html
 webapps/docs/api/org/apache/tomcat/util/net/SocketWrapperBase.html
 webapps/docs/api/org/apache/tomcat/util/net/TLSClientHelloExtractor.ExtractorResult.html
 webapps/docs/api/org/apache/tomcat/util/net/TLSClientHelloExtractor.html
@@ -1948,7 +1961,6 @@ webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLConfCmd.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLContext.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLEngine.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLImplementation.html
-webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLProtocols.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLSessionContext.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLSessionStats.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLUtil.html
@@ -2137,6 +2149,7 @@ webapps/docs/architecture/startup/serverStartup.pdf
 webapps/docs/architecture/startup/serverStartup.txt
 webapps/docs/balancer-howto.html
 webapps/docs/building.html
+webapps/docs/cdi.html
 webapps/docs/cgi-howto.html
 webapps/docs/changelog.html
 webapps/docs/class-loader-howto.html
