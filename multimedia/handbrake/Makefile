@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/08/07 19:23:10 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2019/08/08 11:00:21 naddy Exp $
 
 V = 		1.2.2
 COMMENT =	open source video transcoder
@@ -38,6 +38,7 @@ MODPY_RUNDEP =	No
 BUILD_DEPENDS =	devel/autoconf/${AUTOCONF_VERSION} \
 		devel/automake/${AUTOMAKE_VERSION} \
 		devel/gettext,-tools \
+		devel/libtool \
 		textproc/intltool
 
 LIB_DEPENDS =	devel/jansson \
