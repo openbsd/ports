@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_ctrlssdl_cpp,v 1.1 2019/08/08 17:11:24 cwen Exp $
+
+ports-gcc fix for:
+error: invalid operands of types '__gnu_cxx::__enable_if<true, double>::__type {aka double}' and 'int' to binary 'operator>>'
+From:
+https://sourceforge.net/p/desmume/bugs/1570/
+
+Index: src/ctrlssdl.cpp
+--- src/ctrlssdl.cpp.orig
++++ src/ctrlssdl.cpp
+@@ -200,7 +200,7 @@ u16 get_joy_key(int index) {
+           break;
+         case SDL_JOYAXISMOTION:
+           /* Dead zone of 50% */
+-          if( (abs(event.jaxis.value) >> 14) != 0 )
++          if( ((u32)abs(event.jaxis.value) >> 14) != 0 )
+             {
+               key = ((event.jaxis.which & 15) << 12) | JOY_AXIS << 8 | ((event.jaxis.axis & 127) << 1);
+               if (event.jaxis.value > 0) {
+@@ -370,7 +370,7 @@ do_process_joystick_events( u16 *keypad, SDL_Event *ev
+          Note: button constants have a 1bit offset. */
+     case SDL_JOYAXISMOTION:
+       key_code = ((event->jaxis.which & 15) << 12) | JOY_AXIS << 8 | ((event->jaxis.axis & 127) << 1);
+-      if( (abs(event->jaxis.value) >> 14) != 0 )
++      if( ((u32)abs(event->jaxis.value) >> 14) != 0 )
+         {
+           if (event->jaxis.value > 0)
+             key_code |= 1;

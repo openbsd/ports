@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_MMU_timing_h,v 1.1 2019/08/08 17:11:24 cwen Exp $
+
+ports-gcc fix for:
+error: enumerator value for 'BLOCKMASK' is not an integer constant
+From:
+https://sourceforge.net/p/desmume/bugs/1570/
+
+Index: src/MMU_timing.h
+--- src/MMU_timing.h.orig
++++ src/MMU_timing.h
+@@ -155,8 +155,8 @@ class CacheController (private)
+ 	enum { ASSOCIATIVITY = 1 << ASSOCIATIVESHIFT };
+ 	enum { BLOCKSIZE = 1 << BLOCKSIZESHIFT };
+ 	enum { TAGSHIFT = SIZESHIFT - ASSOCIATIVESHIFT };
+-	enum { TAGMASK = (u32)(~0 << TAGSHIFT) };
+-	enum { BLOCKMASK = ((u32)~0 >> (32 - TAGSHIFT)) & (u32)(~0 << BLOCKSIZESHIFT) };
++	enum { TAGMASK = (u32)(~0U << TAGSHIFT) };
++	enum { BLOCKMASK = ((u32)~0U >> (32 - TAGSHIFT)) & (u32)(~0U << BLOCKSIZESHIFT) };
+ 	enum { WORDSIZE = sizeof(u32) };
+ 	enum { WORDSPERBLOCK = (1 << BLOCKSIZESHIFT) / WORDSIZE };
+ 	enum { DATAPERWORD = WORDSIZE * ASSOCIATIVITY };
