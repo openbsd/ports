@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1879 2019/08/07 12:51:09 kmos Exp $
+# $OpenBSD: Makefile,v 1.1880 2019/08/08 13:56:34 kmos Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1405,7 +1405,6 @@
      SUBDIR += py-execnet,python3
      SUBDIR += py-extras
      SUBDIR += py-extras,python3
-     SUBDIR += py-extremes
      SUBDIR += py-fasteners
      SUBDIR += py-fasteners,python3
      SUBDIR += py-fastimport
@@ -1482,7 +1481,6 @@
      SUBDIR += py-jupyter_client,python3
      SUBDIR += py-jupyter_core
      SUBDIR += py-jupyter_core,python3
-     SUBDIR += py-kid
      SUBDIR += py-kiwisolver
      SUBDIR += py-kiwisolver,python3
      SUBDIR += py-lazy-object-proxy
