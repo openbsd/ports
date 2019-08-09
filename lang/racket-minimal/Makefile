@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2019/07/12 20:47:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2019/08/09 21:16:13 juanfra Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			7.3
+V =			7.4
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -18,9 +18,8 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://mirror.racket-lang.org/installers/${V}/ \
 			https://www.cs.utah.edu/plt/installers/${V}/ \
-			http://www.eecs.northwestern.edu/racket/${V}/ \
+			https://plt.eecs.northwestern.edu/racket-mirror/${V}/ \
 			http://mirror.informatik.uni-tuebingen.de/mirror/racket/${V}/ \
-			http://racket.infogroep.be/${V}/ \
 			http://pre-release.racket-lang.org/installers/ \
 			http://pre.racket-lang.org/release/installers/ \
 			http://pre.racket-lang.org/installers/ \
