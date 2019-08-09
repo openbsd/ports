@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/31 20:58:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/08/09 06:01:21 tb Exp $
 
 COMMENT =		c++ protocol buffers
 
 V =			3.9.0
 DISTNAME =		protobuf-cpp-$V
 PKGNAME =		protobuf-$V
+REVISION =		0
 
 WRKDIST =		${WRKDIR}/protobuf-${V}
 
@@ -22,8 +23,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		c m pthread ${COMPILER_LIBCXX} z
 
 MASTER_SITES =		https://github.com/google/protobuf/releases/download/v$V/
-
-TEST_DEPENDS =		devel/gtest
 
 COMPILER =		base-clang ports-gcc
 
