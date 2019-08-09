@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:03:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/08/09 00:00:40 bcallah Exp $
 bin/bpdb${MODPY_BIN_SUFFIX}
 bin/bpython${MODPY_BIN_SUFFIX}
 bin/bpython-curses${MODPY_BIN_SUFFIX}
@@ -182,9 +182,9 @@ lib/python${MODPY_VERSION}/site-packages/bpython/translations/nl_NL/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/bpython/urwid.py
 @man man/man1/bpython${MODPY_BIN_SUFFIX}.1
 @man man/man5/bpython-config${MODPY_BIN_SUFFIX}.5
-share/appdata/
-share/appdata/bpython${MODPY_BIN_SUFFIX}.appdata.xml
-share/applications/bpython${MODPY_BIN_SUFFIX}.desktop
+share/appinfo/
+share/appinfo/org.bpython-interpreter.bpython${MODPY_BIN_SUFFIX}.appdata.xml
+share/applications/org.bpython-interpreter.bpython${MODPY_BIN_SUFFIX}.desktop
 share/pixmaps/
 share/pixmaps/bpython${MODPY_BIN_SUFFIX}.png
 @tag update-desktop-database

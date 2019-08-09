@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:44:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2019/08/09 00:00:40 bcallah Exp $
 
 COMMENT=	fancy interface to the Python interpreter
 
-MODPY_EGG_VERSION=0.17.1
-REVISION =	1
+MODPY_EGG_VERSION=0.18
 DISTNAME=	bpython-${MODPY_EGG_VERSION}
 CATEGORIES=	devel
 
@@ -48,8 +47,8 @@ post-install:
 .endfor
 	mv ${PREFIX}/man/man1/bpython{,${MODPY_BIN_SUFFIX}}.1
 	mv ${PREFIX}/man/man5/bpython-config{,${MODPY_BIN_SUFFIX}}.5
-	mv ${PREFIX}/share/appdata/bpython{,${MODPY_BIN_SUFFIX}}.appdata.xml
-	mv ${PREFIX}/share/applications/bpython{,${MODPY_BIN_SUFFIX}}.desktop
+	mv ${PREFIX}/share/appinfo/org.bpython-interpreter.bpython{,${MODPY_BIN_SUFFIX}}.appdata.xml
+	mv ${PREFIX}/share/applications/org.bpython-interpreter.bpython{,${MODPY_BIN_SUFFIX}}.desktop
 	mv ${PREFIX}/share/pixmaps/bpython{,${MODPY_BIN_SUFFIX}}.png
 
 
