@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_item_h,v 1.1 2019/08/09 16:05:17 cwen Exp $
+
+Fix the build with ports-gcc, from upstream:
+https://github.com/ledger/ledger/commit/258cab91ab702e82d477b41bb1c6a026c848bda5
+
+Index: src/item.h
+--- src/item.h.orig
++++ src/item.h
+@@ -92,7 +92,7 @@ class item_t : public supports_flags<uint_least16_t>, 
+ 
+   typedef std::pair<optional<value_t>, bool> tag_data_t;
+   typedef std::map<string, tag_data_t,
+-                   function<bool(string, string)> > string_map;
++                   std::function<bool(string, string)> > string_map;
+ 
+   state_t              _state;
+   optional<date_t>     _date;
