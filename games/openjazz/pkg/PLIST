@@ -1,16 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/08 23:08:26 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/08/09 13:33:38 bcallah Exp $
 @bin bin/OpenJazz
 @man man/man6/OpenJazz.6
-share/applications/
 share/applications/OpenJazz.desktop
 share/doc/pkg-readmes/${PKGSTEM}
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/OpenJazz.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/OpenJazz.svg
 share/openjazz/
 share/openjazz/openjazz.000

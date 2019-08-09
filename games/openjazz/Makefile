@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/08 23:08:26 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2019/08/09 13:33:37 bcallah Exp $
 
 COMMENT =	open-source version of the classic Jazz Jackrabbit games
 DISTNAME =	openjazz-20190120
+REVISION =	0
 CATEGORIES =	games x11
 
 # Upstream does make real tarballs.
