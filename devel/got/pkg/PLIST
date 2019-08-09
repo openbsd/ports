@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/09 12:47:49 stsp Exp $
+@bin bin/got
+@bin bin/tog
+@bin libexec/got-read-blob
+@bin libexec/got-read-commit
+@bin libexec/got-read-object
+@bin libexec/got-read-pack
+@bin libexec/got-read-tag
+@bin libexec/got-read-tree
+@man man/man1/got.1
+@man man/man1/tog.1
+@man man/man5/git-repository.5
+@man man/man5/got-worktree.5

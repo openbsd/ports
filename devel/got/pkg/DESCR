@@ -1,0 +1,16 @@
+Game of Trees (Got) is a version control system which prioritizes
+ease of use and simplicity over flexibility.
+
+Got is still under development; it is being developed exclusively
+on OpenBSD and its target audience are OpenBSD developers. Got is
+ISC-licensed and was designed with pledge(2) and unveil(2) in mind.
+
+Got uses Git repositories to store versioned data. At present, Got
+supports local version control operations only. Git can be used
+for any functionality which has not yet been implemented in Got.
+It will always remain possible to work with both Got and Git on
+the same repository.
+
+This package includes the got(1) command-line interface and the
+tog(1) read-only repository browser. EXAMPLES in the got(1) man
+page contains a quick-start guide for OpenBSD developers.
