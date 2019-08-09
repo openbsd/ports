@@ -1,0 +1,17 @@
+$OpenBSD: patch-libretro-common_features_features_cpu_c,v 1.1 2019/08/09 15:55:52 cwen Exp $
+
+ppc fix for:
+features_cpu.c:(.text+0x20): undefined reference to `__mftb'
+
+Index: libretro-common/features/features_cpu.c
+--- libretro-common/features/features_cpu.c.orig
++++ libretro-common/features/features_cpu.c
+@@ -39,7 +39,7 @@
+ #include <windows.h>
+ #endif
+ 
+-#if defined(__CELLOS_LV2__)
++#if defined(__CELLOS_LV2__) || ( defined(__OpenBSD__) && defined(__powerpc__) )
+ #ifndef _PPU_INTRINSICS_H
+ #include <ppu_intrinsics.h>
+ #endif
