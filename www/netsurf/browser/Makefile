@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.35 2018/09/25 08:48:58 bentley Exp $
+# $OpenBSD: Makefile,v 1.36 2019/08/09 22:37:28 bentley Exp $
 
 COMMENT =		lightweight web browser, with GTK interface
 
 NETSURF_PROJECT =	netsurf
-NETSURF_VERSION =	3.8
+NETSURF_VERSION =	3.9
 
 HOMEPAGE =		https://www.netsurf-browser.org/
 MASTER_SITES =		https://download.netsurf-browser.org/netsurf/releases/source/
 
 BUILD_DEPENDS =		www/netsurf/nsgenbind>=0.5 \
 			www/p5-HTML-Parser
-LIB_DEPENDS =		www/netsurf/hubbub>=0.3.4 \
+LIB_DEPENDS =		graphics/libwebp \
+			www/netsurf/hubbub>=0.3.4 \
 			www/netsurf/libcss>=0.7.0 \
 			www/netsurf/libnsgif>=0.2.0 \
 			www/netsurf/libnsbmp>=0.1.4 \
@@ -31,7 +32,7 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 hubbub iconv
 WANTLIB += intl jpeg m nsbmp nsgif nslog nspsl nsutils pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 parserutils png pthread rsvg-2
-WANTLIB += ssl utf8proc wapcaplet z
+WANTLIB += ssl utf8proc wapcaplet webp z
 
 MAKE_FLAGS +=		NETSURF_USE_HARU_PDF=NO \
 			NETSURF_USE_LIBICONV_PLUG=NO \
