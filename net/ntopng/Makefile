@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2019/06/03 16:06:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/08/10 21:30:28 sthen Exp $
 
 # built but not actually installed at present; patches are needed for the
 # build so it seems easier to keep the SHARED_LIBS infrastructure here.
@@ -25,7 +25,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += c crypto curl hiredis json-c m maxminddb mysqlclient
 WANTLIB += pcap radcli rrd sodium sqlite3 ssl z zmq zstd
 
-COMPILER =	base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
 
 MASTER_SITES0=	https://github.com/ntop/ndpi/archive/${NDPI_V}/
 
