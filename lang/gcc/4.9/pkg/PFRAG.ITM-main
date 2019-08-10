@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.ITM-main,v 1.2 2015/09/24 08:51:49 sthen Exp $
-@info info/libitm.info
-lib/libitm.a
-lib/libitm.spec

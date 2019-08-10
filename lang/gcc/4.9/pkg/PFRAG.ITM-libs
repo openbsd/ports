@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.ITM-libs,v 1.2 2015/09/24 08:51:49 sthen Exp $
-lib/libitm.la
-@lib lib/libitm.so.${LIBitm_VERSION}

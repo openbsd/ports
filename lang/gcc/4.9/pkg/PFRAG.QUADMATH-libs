@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.QUADMATH-libs,v 1.2 2015/09/24 08:51:49 sthen Exp $
-lib/libquadmath.la
-@lib lib/libquadmath.so.${LIBquadmath_VERSION}
