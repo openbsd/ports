@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/05/15 17:22:15 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/08/10 23:19:08 bcallah Exp $
 @bin bin/featherpad
-@bin bin/fpad
+bin/fpad
 share/applications/featherpad.desktop
 share/featherpad/
 share/featherpad/help
@@ -23,8 +23,10 @@ share/featherpad/translations/featherpad_pl.qm
 share/featherpad/translations/featherpad_pt_BR.qm
 share/featherpad/translations/featherpad_pt_PT.qm
 share/featherpad/translations/featherpad_ru.qm
+share/featherpad/translations/featherpad_sk_SK.qm
 share/featherpad/translations/featherpad_tr.qm
 share/featherpad/translations/featherpad_zh_CN.qm
+share/featherpad/translations/featherpad_zh_TW.qm
 share/icons/hicolor/scalable/apps/featherpad.svg
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
