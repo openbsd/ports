@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:48:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/08/10 21:28:18 sthen Exp $
 
 COMMENT=	passive IP network monitoring tools: traffic accounting, etc
 
@@ -20,6 +20,9 @@ LIB_DEPENDS+=	databases/sqlite3 \
 		devel/jansson \
 		net/libmaxminddb \
 		net/zeromq
+
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 CONFIGURE_STYLE= autoconf no-autoheader
 AUTOCONF_VERSION= 2.69
