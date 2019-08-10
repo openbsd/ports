@@ -1,0 +1,7 @@
+Seaborn is a library for making statistical graphics in Python. It is
+built on top of matplotlib and closely integrated with pandas data
+structures. Seaborn aims to make visualization a central part of
+exploring and understanding data. Its dataset-oriented plotting
+functions operate on dataframes and arrays containing whole datasets and
+internally perform the necessary semantic mapping and statistical
+aggregation to produce informative plots.
