@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2019/08/09 12:58:38 stsp Exp $
+# $OpenBSD: Makefile,v 1.3 2019/08/10 15:31:52 stsp Exp $
 
 COMMENT =	game of trees version control system
 
-V =		0.2
+V =		0.3
 DISTNAME =	got-${V}
 CATEGORIES =	devel
 HOMEPAGE =	https://gameoftrees.org
@@ -18,8 +18,6 @@ MASTER_SITES =		https://gameoftrees.org/releases/
 TEST_DEPENDS =		devel/git \
 			${PKGPATH}=${V}
 TEST_TARGET =		regress
-
-post-configure:
-	${MAKE_PROGRAM} -C ${WRKSRC} obj
+FAKE_FLAGS =		MANDIR=${PREFIX}/man/man
 
 .include <bsd.port.mk>
