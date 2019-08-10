@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/08/10 19:17:56 bket Exp $
 
 COMMENT =		messagepack (de)serializer
 
-# XXX: 0.5.6 is the last available version of msgpack-python, which has been
-# deprecated. Updating to the newer msgpack is currently not an option as some
-# of its consumers do not like the renaming.
-MODPY_EGG_VERSION =	0.5.6
-DISTNAME =		msgpack-python-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION =	0.6.1
+DISTNAME =		msgpack-${MODPY_EGG_VERSION}
 PKGNAME =		py-msgpack-${MODPY_EGG_VERSION}
-REVISION =		2
 
 CATEGORIES =		net textproc
 
 HOMEPAGE =		https://msgpack.org/
+
+MAINTAINER =		Bjorn Ketelaars <bket@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

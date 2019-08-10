@@ -1,18 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/10/09 08:26:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/08/10 19:17:56 bket Exp $
 lib/python${MODPY_VERSION}/site-packages/msgpack/
+lib/python${MODPY_VERSION}/site-packages/msgpack-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/msgpack-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/msgpack-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/msgpack-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/msgpack-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/msgpack/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/msgpack/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/msgpack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/msgpack/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/msgpack/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/msgpack/${MODPY_PYCACHE}fallback.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/msgpack/_packer.so
-lib/python${MODPY_VERSION}/site-packages/msgpack/_unpacker.so
+lib/python${MODPY_VERSION}/site-packages/msgpack/_cmsgpack.so
 lib/python${MODPY_VERSION}/site-packages/msgpack/_version.py
 lib/python${MODPY_VERSION}/site-packages/msgpack/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/msgpack/fallback.py
-lib/python${MODPY_VERSION}/site-packages/msgpack_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/msgpack_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/msgpack_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/msgpack_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/msgpack_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
