@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.118 2019/06/29 09:43:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.119 2019/08/10 20:09:32 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -641,6 +641,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/kms/2014-11-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kms/2014-11-01/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kms/2014-11-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kms/2014-11-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lakeformation/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lakeformation/2017-03-31/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lakeformation/2017-03-31/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/lakeformation/2017-03-31/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda/2014-11-11/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda/2014-11-11/service-2.json
