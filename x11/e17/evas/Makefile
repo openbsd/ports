@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2019/07/12 20:51:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2019/08/10 19:41:08 naddy Exp $
 
 COMMENT =		canvas API for X
 
 VERSION =		1.7.10
 DISTNAME =		evas-${VERSION}
 EPOCH =			2
-REVISION =		12
+REVISION =		13
 
 SHARED_LIBS +=	evas                 4.0      # 8.10
 
