@@ -1,32 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.21 2018/10/25 09:39:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2019/08/10 08:22:29 ajacoutot Exp $
 bin/d-feet
 lib/python${MODPY_VERSION}/site-packages/dfeet/
 lib/python${MODPY_VERSION}/site-packages/dfeet/__init__.py
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}addconnectiondialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}addconnectiondialog.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}bus_watch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}bus_watch.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}dbus_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}dbus_utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}executemethoddialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}executemethoddialog.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}introspection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}introspection.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}introspection_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}introspection_helper.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}uiloader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}uiloader.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}window.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}window.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}wnck_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/dfeet/${MODPY_PYCACHE}wnck_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dfeet/addconnectiondialog.py
 lib/python${MODPY_VERSION}/site-packages/dfeet/application.py
 lib/python${MODPY_VERSION}/site-packages/dfeet/bus_watch.py
@@ -42,7 +17,6 @@ share/applications/org.gnome.dfeet.desktop
 share/d-feet/
 share/d-feet/ui/
 share/d-feet/ui/addconnectiondialog.ui
-share/d-feet/ui/app-menu.ui
 share/d-feet/ui/bus.ui
 share/d-feet/ui/executedialog.ui
 share/d-feet/ui/introspection.ui
@@ -79,6 +53,12 @@ share/help/es/d-feet/basics.page
 share/help/es/d-feet/figures/
 share/help/es/d-feet/figures/icon.png
 share/help/es/d-feet/index.page
+share/help/hu/
+share/help/hu/d-feet/
+share/help/hu/d-feet/basics.page
+share/help/hu/d-feet/figures/
+share/help/hu/d-feet/figures/icon.png
+share/help/hu/d-feet/index.page
 share/help/pl/
 share/help/pl/d-feet/
 share/help/pl/d-feet/basics.page
@@ -97,10 +77,6 @@ share/help/sv/d-feet/basics.page
 share/help/sv/d-feet/figures/
 share/help/sv/d-feet/figures/icon.png
 share/help/sv/d-feet/index.page
-share/icons/HighContrast/
-share/icons/HighContrast/scalable/
-share/icons/HighContrast/scalable/apps/
-share/icons/HighContrast/scalable/apps/org.gnome.dfeet.svg
 share/icons/hicolor/16x16/apps/dfeet-icon-default-service.png
 share/icons/hicolor/16x16/apps/dfeet-method-category.png
 share/icons/hicolor/16x16/apps/dfeet-method.png
@@ -109,12 +85,8 @@ share/icons/hicolor/16x16/apps/dfeet-property-category.png
 share/icons/hicolor/16x16/apps/dfeet-property.png
 share/icons/hicolor/16x16/apps/dfeet-signal-category.png
 share/icons/hicolor/16x16/apps/dfeet-signal.png
-share/icons/hicolor/16x16/apps/org.gnome.dfeet.png
-share/icons/hicolor/24x24/apps/org.gnome.dfeet.png
-share/icons/hicolor/256x256/apps/org.gnome.dfeet.png
-share/icons/hicolor/32x32/apps/org.gnome.dfeet.png
-share/icons/hicolor/48x48/apps/org.gnome.dfeet.png
 share/icons/hicolor/scalable/apps/org.gnome.dfeet.svg
+share/icons/hicolor/symbolic/apps/org.gnome.dfeet-symbolic.svg
 share/locale/bs/LC_MESSAGES/d-feet.mo
 share/locale/cs/LC_MESSAGES/d-feet.mo
 share/locale/da/LC_MESSAGES/d-feet.mo
@@ -129,6 +101,7 @@ share/locale/hu/LC_MESSAGES/d-feet.mo
 share/locale/id/LC_MESSAGES/d-feet.mo
 share/locale/lv/LC_MESSAGES/d-feet.mo
 share/locale/nb/LC_MESSAGES/d-feet.mo
+share/locale/nl/LC_MESSAGES/d-feet.mo
 share/locale/oc/LC_MESSAGES/d-feet.mo
 share/locale/pl/LC_MESSAGES/d-feet.mo
 share/locale/pt/LC_MESSAGES/d-feet.mo
