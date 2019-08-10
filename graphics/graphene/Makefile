@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/08/10 20:23:12 ajacoutot Exp $
 
 COMMENT=		thin layer of graphic data types
 
 GNOME_PROJECT=		graphene
-GNOME_VERSION=		1.9.4
+GNOME_VERSION=		1.9.6
 
-SHARED_LIBS += graphene-1.0              1.2 # 0.904.0
+SHARED_LIBS += graphene-1.0              2.0 # 0.906.0
 
 CATEGORIES=		graphics
 
@@ -14,7 +14,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += glib-2.0 gobject-2.0 intl m pthread
+WANTLIB += glib-2.0 gobject-2.0 m
 
 MASTER_SITES=		https://github.com/ebassi/graphene/releases/download/${GNOME_VERSION}/
 
