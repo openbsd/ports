@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2019/07/12 21:02:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2019/08/10 06:28:40 fcambus Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	x86 with DOS emulator targeted at playing games
 
-VERSION=	0.74-2
+VERSION=	0.74-3
 DISTNAME=	dosbox-${VERSION}
 PKGNAME=	dosbox-${VERSION:S/-/./}
 CATEGORIES=	games x11 emulators

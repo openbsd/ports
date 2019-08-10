@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_cpu_core_dyn_x86_risc_x86_h,v 1.1 2014/01/09 10:10:15 sthen Exp $
+$OpenBSD: patch-src_cpu_core_dyn_x86_risc_x86_h,v 1.2 2019/08/10 06:28:40 fcambus Exp $
 
 %ebx is used by PIE so as-is this doesn't build on i386 as the compiler
 detects that the register has been clobbered. dosbox has some alternative
@@ -13,8 +13,9 @@ the related code together. -sthen
 https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/LowLevelABI/130-IA-32_Function_Calling_Conventions/IA32.htm
 https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man3/libgmalloc.3.html
 
---- src/cpu/core_dyn_x86/risc_x86.h.orig	Mon May 10 11:43:54 2010
-+++ src/cpu/core_dyn_x86/risc_x86.h	Wed Jan  8 07:34:42 2014
+Index: src/cpu/core_dyn_x86/risc_x86.h
+--- src/cpu/core_dyn_x86/risc_x86.h.orig
++++ src/cpu/core_dyn_x86/risc_x86.h
 @@ -112,7 +112,7 @@ return_address:
  		pop		ebx
  		mov		[retval],eax
@@ -42,16 +43,16 @@ https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/
  				const char * scan=pinfo[pindex].line;
  				if ((*scan=='I') || (*scan=='D')) stack_used+=4;
  				else if (*scan=='F') free_flags=true;
-@@ -771,7 +771,7 @@ static void gen_call_function(void * func,char const* 
- 			ops++;
+@@ -772,7 +772,7 @@ static void gen_call_function(void * func,char const* 
  		}
+ 		va_end(params);
  
 -#if defined (MACOSX)
 +#if defined (MACOSX) || (defined (__OpenBSD__) && defined(__i386__))
  		/* align stack */
  		stack_used+=4;			// saving esp on stack as well
  
-@@ -846,7 +846,7 @@ static void gen_call_function(void * func,char const* 
+@@ -847,7 +847,7 @@ static void gen_call_function(void * func,char const* 
  				IllegalOption("gen_call_function unknown param");
  			}
  		}
@@ -60,7 +61,7 @@ https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/
  		if (free_flags) release_flags=false;
  	} else {
  		/* align stack */
-@@ -903,7 +903,7 @@ static void gen_call_function(void * func,char const* 
+@@ -904,7 +904,7 @@ static void gen_call_function(void * func,char const* 
  	/* Restore EAX registers to be used again */
  	x86gen.regs[X86_REG_EAX]->notusable=false;
  
@@ -69,7 +70,7 @@ https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/
  	/* restore stack */
  	cache_addb(0x5c);	// pop esp
  #endif
-@@ -915,7 +915,7 @@ static void gen_call_write(DynReg * dr,Bit32u val,Bitu
+@@ -916,7 +916,7 @@ static void gen_call_write(DynReg * dr,Bit32u val,Bitu
  	x86gen.regs[X86_REG_EAX]->notusable=true;
  	gen_protectflags();
  
@@ -78,7 +79,7 @@ https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/
  	/* align stack */
  	Bitu stack_used=12;
  
-@@ -952,7 +952,7 @@ static void gen_call_write(DynReg * dr,Bit32u val,Bitu
+@@ -953,7 +953,7 @@ static void gen_call_write(DynReg * dr,Bit32u val,Bitu
  	x86gen.regs[X86_REG_EAX]->notusable=false;
  	gen_releasereg(dr);
  
