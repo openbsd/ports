@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.74 2019/07/12 20:51:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2019/08/10 08:39:48 feinerer Exp $
 
 COMMENT=	themed window manager
 
-V=		1.0.19
+V=		1.0.20
 DISTNAME=	e16-$V
 PKGNAME=	enlightenment-$V
 DOCS=		e16-docs-0.16.8.0.2

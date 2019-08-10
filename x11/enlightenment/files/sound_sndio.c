@@ -58,7 +58,7 @@ _sound_sndio_Destroy(Sample * s)
    if (!s)
       return;
 
-   _EFREE(s->ssd.data);
+   EFREE_NULL(s->ssd.data);
    Efree(s);
 }
 

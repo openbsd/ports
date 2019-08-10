@@ -1,11 +1,14 @@
-$OpenBSD: patch-eesh_main_c,v 1.1 2016/09/10 13:03:44 ajacoutot Exp $
+$OpenBSD: patch-eesh_main_c,v 1.2 2019/08/10 08:39:49 feinerer Exp $
+
+https://git.enlightenment.org/e16/e16.git/commit/?id=c423cd13f6b7b94588dccfc755055381c9d95928
+
 --- eesh/main.c.orig	Sat Sep 10 12:58:44 2016
 +++ eesh/main.c	Sat Sep 10 12:59:08 2016
 @@ -21,6 +21,7 @@
   * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
   * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   */
-+#include <sys/select.h> /* fd_set */
++#include <sys/select.h>
  #include "E.h"
  
  /* Global vars */
