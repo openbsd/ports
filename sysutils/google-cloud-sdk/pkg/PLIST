@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.120 2019/08/03 11:27:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.121 2019/08/10 20:15:12 ajacoutot Exp $
 bin/bq
 bin/gcloud
 bin/git-credential-gcloud.sh
@@ -2320,6 +2320,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/run/resource_args.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/resource_args.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/resource_name_conversion.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/resource_name_conversion.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/run/resourcemanager_operations.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/run/resourcemanager_operations.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/resources.yaml
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/serverless_operations.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/serverless_operations.pyc
@@ -2411,6 +2413,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/spanner/iam.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/spanner/resource_args.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/spanner/resource_args.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/spanner/resources.yaml
+google-cloud-sdk/lib/googlecloudsdk/command_lib/spanner/sampledb_util.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/spanner/sampledb_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/spanner/sql.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/spanner/sql.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/spanner/write_util.py
@@ -2506,6 +2510,8 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/util/apis/yaml_data.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/args/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/args/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/args/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/util/args/common_args.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/util/args/common_args.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/args/labels_util.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/args/labels_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/util/args/map_util.py
@@ -7165,6 +7171,10 @@ google-cloud-sdk/lib/surface/dataflow/snapshots/__init__.py
 google-cloud-sdk/lib/surface/dataflow/snapshots/__init__.pyc
 google-cloud-sdk/lib/surface/dataflow/snapshots/create.py
 google-cloud-sdk/lib/surface/dataflow/snapshots/create.pyc
+google-cloud-sdk/lib/surface/dataflow/snapshots/delete.py
+google-cloud-sdk/lib/surface/dataflow/snapshots/delete.pyc
+google-cloud-sdk/lib/surface/dataflow/snapshots/describe.py
+google-cloud-sdk/lib/surface/dataflow/snapshots/describe.pyc
 google-cloud-sdk/lib/surface/dataflow/snapshots/list.py
 google-cloud-sdk/lib/surface/dataflow/snapshots/list.pyc
 google-cloud-sdk/lib/surface/dataproc/
@@ -9029,6 +9039,8 @@ google-cloud-sdk/lib/surface/run/services/list.py
 google-cloud-sdk/lib/surface/run/services/list.pyc
 google-cloud-sdk/lib/surface/run/services/remove_iam_policy_binding.yaml
 google-cloud-sdk/lib/surface/run/services/set_iam_policy.yaml
+google-cloud-sdk/lib/surface/run/services/set_traffic.py
+google-cloud-sdk/lib/surface/run/services/set_traffic.pyc
 google-cloud-sdk/lib/surface/run/services/update.py
 google-cloud-sdk/lib/surface/run/services/update.pyc
 google-cloud-sdk/lib/surface/runtime_config/
@@ -9302,6 +9314,8 @@ google-cloud-sdk/lib/surface/spanner/databases/get_iam_policy.yaml
 google-cloud-sdk/lib/surface/spanner/databases/list.py
 google-cloud-sdk/lib/surface/spanner/databases/list.pyc
 google-cloud-sdk/lib/surface/spanner/databases/remove_iam_policy_binding.yaml
+google-cloud-sdk/lib/surface/spanner/databases/sampledb.py
+google-cloud-sdk/lib/surface/spanner/databases/sampledb.pyc
 google-cloud-sdk/lib/surface/spanner/databases/sessions/
 google-cloud-sdk/lib/surface/spanner/databases/sessions/__init__.py
 google-cloud-sdk/lib/surface/spanner/databases/sessions/__init__.pyc
