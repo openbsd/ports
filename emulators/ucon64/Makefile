@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/08/10 08:18:39 fcambus Exp $
 
 COMMENT =	swiss army knife for video game console emulators
 
-DISTNAME =	ucon64-2.1.0-src
+DISTNAME =	ucon64-2.2.0-src
 PKGNAME =	${DISTNAME:S/-src//}
-REVISION =	1
 
 CATEGORIES =	emulators
 
@@ -25,11 +24,7 @@ CONFIGURE_STYLE = gnu
 
 CONFIGURE_ARGS = --disable-dload
 
-.if ${MACHINE_ARCH} == "amd64"
-MAKE_ENV =	LDFLAGS="${LDFLAGS} -lamd64"
-.elif ${MACHINE_ARCH} == "i386"
-MAKE_ENV =      LDFLAGS="${LDFLAGS} -li386"
-.else
+.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS += --disable-parallel
 .endif
 

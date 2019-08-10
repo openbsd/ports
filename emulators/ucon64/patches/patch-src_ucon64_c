@@ -1,0 +1,62 @@
+$OpenBSD: patch-src_ucon64_c,v 1.1 2019/08/10 08:18:39 fcambus Exp $
+
+Index: src/ucon64.c
+--- src/ucon64.c.orig
++++ src/ucon64.c
+@@ -1164,56 +1164,6 @@ main (int argc, char **argv)
+   if (ucon64.dat_enabled)
+     ucon64_dat_indexer ();              // update cache (index) files if necessary
+ 
+-#if     defined _POSIX_PRIORITY_SCHEDULING || defined _WIN32
+-  if (get_property_int (ucon64.configfile, "gd6_send_byte_delay"))
+-    {
+-      // Cygwin defines _POSIX_PRIORITY_SCHEDULING, but sched_setscheduler()
+-      //  fails for SCHED_FIFO, even when running as Administrator.
+-#if     defined _WIN32 || defined __CYGWIN__
+-      if (SetPriorityClass (GetCurrentProcess (), REALTIME_PRIORITY_CLASS))
+-        {
+-          /*
+-            REALTIME_PRIORITY_CLASS requires Administrator access rights.
+-            SetPriorityClass() will silently fail if the process does not have
+-            sufficient access rights for REALTIME_PRIORITY_CLASS and fall back
+-            to HIGH_PRIORITY_CLASS.
+-          */
+-          DWORD priority_class = GetPriorityClass (GetCurrentProcess ());
+-
+-          printf ("Set scheduling priority class to 0x%08x",
+-                  (unsigned int) priority_class);
+-          if (priority_class == REALTIME_PRIORITY_CLASS)
+-            fputs (" (REALTIME_PRIORITY_CLASS)", stdout);
+-          else if (priority_class == HIGH_PRIORITY_CLASS)
+-            fputs (" (HIGH_PRIORITY_CLASS)", stdout);
+-          puts ("\n");
+-        }
+-      else
+-        puts ("NOTE: Could not set scheduling priority class to REALTIME_PRIORITY_CLASS\n");
+-#else
+-      struct sched_param sp;
+-
+-      memset (&sp, 0, sizeof (sp));
+-      sp.sched_priority = sched_get_priority_max (SCHED_FIFO);
+-      if (sp.sched_priority != -1)
+-        {
+-          /*
+-            The next statement makes it possible to have a higher priority
+-            process, so that the uCON64 process can be killed (even if on
+-            GNU/Linux /proc/sys/kernel/sched_rt_runtime_us is -1).
+-          */
+-          --sp.sched_priority;
+-          // SCHED_RESET_ON_FORK is specific to Linux and we ignore fork() for now
+-          if (sched_setscheduler (0, SCHED_FIFO /* | SCHED_RESET_ON_FORK */, &sp) >= 0)
+-            printf ("Set scheduling policy to SCHED_FIFO and scheduling priority to %d\n\n",
+-                    sp.sched_priority);
+-          else
+-            printf ("NOTE: Could not set scheduling policy to SCHED_FIFO with scheduling priority %d\n\n",
+-                    sp.sched_priority);
+-        }
+-#endif // _WIN32 || __CYGWIN__
+-    }
+-#endif // _POSIX_PRIORITY_SCHEDULING || _WIN32
+ #ifdef  USE_PARALLEL
+   /*
+     The copier options need root privileges for parport_open(). We can't use

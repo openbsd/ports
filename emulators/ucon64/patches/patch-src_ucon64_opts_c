@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_ucon64_opts_c,v 1.1 2017/11/24 16:00:13 fcambus Exp $
+$OpenBSD: patch-src_ucon64_opts_c,v 1.2 2019/08/10 08:18:39 fcambus Exp $
 
 Index: src/ucon64_opts.c
 --- src/ucon64_opts.c.orig
 +++ src/ucon64_opts.c
-@@ -179,8 +179,8 @@ ucon64_switches (st_ucon64_t *p)
+@@ -186,8 +186,8 @@ ucon64_switches (st_ucon64_t *p)
  #endif
  
  #ifdef  USE_ZLIB
