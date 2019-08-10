@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2019/08/09 06:01:21 tb Exp $
+# $OpenBSD: Makefile,v 1.27 2019/08/10 10:03:41 tb Exp $
 
 COMMENT =		c++ protocol buffers
 
-V =			3.9.0
+V =			3.9.1
 DISTNAME =		protobuf-cpp-$V
 PKGNAME =		protobuf-$V
-REVISION =		0
 
 WRKDIST =		${WRKDIR}/protobuf-${V}
 
