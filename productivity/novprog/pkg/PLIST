@@ -1,0 +1,38 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/10 21:27:07 bcallah Exp $
+@bin bin/novprog
+@man man/man1/novprog.1
+share/applications/novprog.desktop
+share/icons/hicolor/1024x1024/
+share/icons/hicolor/1024x1024/apps/
+share/icons/hicolor/1024x1024/apps/novprog.png
+share/icons/hicolor/128x128/apps/novprog.png
+share/icons/hicolor/16x16/apps/novprog.png
+share/icons/hicolor/22x22/apps/novprog.png
+share/icons/hicolor/24x24/apps/novprog.png
+share/icons/hicolor/256x256/apps/novprog.png
+share/icons/hicolor/32x32/apps/novprog.png
+share/icons/hicolor/48x48/apps/novprog.png
+share/icons/hicolor/512x512/apps/novprog.png
+share/icons/hicolor/64x64/apps/novprog.png
+share/icons/hicolor/scalable/apps/novprog.svg
+share/metainfo/
+share/metainfo/novprog.appdata.xml
+share/novprog/
+share/novprog/translations/
+share/novprog/translations/novprog_de.qm
+share/novprog/translations/novprog_el.qm
+share/novprog/translations/novprog_en.qm
+share/novprog/translations/novprog_es.qm
+share/novprog/translations/novprog_fr.qm
+share/novprog/translations/novprog_he.qm
+share/novprog/translations/novprog_lt.qm
+share/novprog/translations/novprog_nl.qm
+share/novprog/translations/novprog_pl.qm
+share/novprog/translations/novprog_pt.qm
+share/novprog/translations/novprog_ro.qm
+share/novprog/translations/novprog_ru.qm
+share/novprog/translations/novprog_tr.qm
+share/pixmaps/
+share/pixmaps/novprog.xpm
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

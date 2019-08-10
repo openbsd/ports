@@ -1,0 +1,16 @@
+$OpenBSD: patch-novprog_pro,v 1.1.1.1 2019/08/10 21:27:07 bcallah Exp $
+
+Install manual pages to the correct location.
+
+Index: novprog.pro
+--- novprog.pro.orig
++++ novprog.pro
+@@ -98,7 +98,7 @@ macx {
+ 	qm.CONFIG += no_check_exist
+ 
+ 	man.files = doc/novprog.1
+-	man.path = $$DATADIR/man/man1
++	man.path = $$PREFIX/man/man1
+ 
+ 	INSTALLS += target icon pixmap desktop appdata qm man
+ }

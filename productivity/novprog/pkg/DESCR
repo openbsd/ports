@@ -1,0 +1,5 @@
+NovProg is a tool to graph your progress in writing a NaNoWriMo style
+novel. You enter your wordcount and it updates a graph showing you how
+much progress you have made. It also shows you how far you are through
+your daily goal, and your total goal. Mousing over a bar in the graph
+will show a tooltip with that day's wordcount.
