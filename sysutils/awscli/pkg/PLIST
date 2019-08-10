@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.83 2019/08/03 11:23:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.84 2019/08/10 20:10:15 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -1047,6 +1047,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/dlm/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dlm/create-default-role.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dlm/create-lifecycle-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dlm/delete-lifecycle-policy.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/dlm/get-lifecycle-policies.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/dlm/get-lifecycle-policy.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/dlm/update-lifecycle-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dms/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dms/create-endpoint.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/dms/create-replication-instance.rst
@@ -1122,6 +1125,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-route-table.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-route.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-security-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-snapshot.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-snapshots.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-spot-datafeed-subscription.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-subnet.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-tags.rst
@@ -1238,6 +1242,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-transit-ga
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-transit-gateways.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-volume-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-volume-status.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-volumes-modifications.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-volumes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-classic-link-dns-support.rst
@@ -1257,6 +1262,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/detach-internet-gat
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/detach-network-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/detach-volume.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/detach-vpn-gateway.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-ebs-encryption-by-default.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-vgw-route-propagation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-vpc-classic-link-dns-support.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-vpc-classic-link.rst
@@ -1265,16 +1271,20 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-iam-in
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-route-table.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-subnet-cidr-block.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-vpc-cidr-block.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-ebs-encryption-by-default.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vgw-route-propagation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-volume-io.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vpc-classic-link-dns-support.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vpc-classic-link.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-console-output.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-ebs-default-kms-key-id.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-ebs-encryption-by-default.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-host-reservation-purchase-preview.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-launch-template-data.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-password-data.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-reserved-instances-exchange-quote.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/import-key-pair.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-ebs-default-kms-key-id.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-fpga-image-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-hosts.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-id-format.rst
@@ -1318,6 +1328,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/replace-route.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/report-instance-status.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/request-spot-fleet.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/request-spot-instances.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reset-ebs-default-kms-key-id.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reset-fpga-image-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reset-image-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reset-instance-attribute.rst
@@ -1479,6 +1490,10 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/elb/remove-tags.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elb/set-load-balancer-listener-ssl-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elb/set-load-balancer-policies-for-backend-server.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elb/set-load-balancer-policies-of-listener.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elb/wait/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elb/wait/any-instance-in-service.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elb/wait/instance-deregistered.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elb/wait/instance-in-service.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/add-listener-certificates.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/add-tags.rst
@@ -1514,6 +1529,12 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/set-ip-address-ty
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/set-rule-priorities.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/set-security-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/set-subnets.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/wait/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/wait/load-balancer-available.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/wait/load-balancer-exists.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/wait/load-balancers-deleted.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/wait/target-deregistered.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/elbv2/wait/target-in-service.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/add-instance-fleet.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/add-steps.rst
@@ -1943,20 +1964,21 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-thing-group.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-thing-groups-for-thing.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/update-thing.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot/validate-security-profile-behaviors.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click/
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click/associate-device-with-placement.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click/claim-devices-by-claim-code.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click/create-placement.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click/create-project.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click/describe-device.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click/describe-placement.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click/describe-project.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click/finalize-device-claim.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click/get-devices-in-placement.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click/initiate-device-claim.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click/list-devices.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click/list-placements.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click/list-projects.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click-devices/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click-devices/claim-devices-by-claim-code.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click-devices/describe-device.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click-devices/finalize-device-claim.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click-devices/initiate-device-claim.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click-devices/list-devices.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click-projects/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click-projects/associate-device-with-placement.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click-projects/create-placement.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click-projects/create-project.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click-projects/describe-placement.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click-projects/describe-project.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click-projects/get-devices-in-placement.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click-projects/list-placements.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/iot1click-projects/list-projects.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/batch-put-message.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/iotevents-data/batch-update-detector.rst
@@ -2702,6 +2724,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/describe-resou
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/describe-user.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/disassociate-delegate-from-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/disassociate-member-from-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/get-mailbox-details.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/list-aliases.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/list-group-members.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/list-groups.rst
@@ -2713,6 +2736,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/list-users.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/put-mailbox-permissions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/register-to-work-mail.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/reset-password.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/update-mailbox-quota.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/update-primary-email-address.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workmail/update-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/workspaces/
