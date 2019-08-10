@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/06/13 21:59:03 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/08/10 23:03:29 bcallah Exp $
 bin/nfoview
 lib/python${MODPY_VERSION}/site-packages/nfoview/
 lib/python${MODPY_VERSION}/site-packages/nfoview-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -40,15 +40,9 @@ lib/python${MODPY_VERSION}/site-packages/nfoview/util.py
 lib/python${MODPY_VERSION}/site-packages/nfoview/view.py
 lib/python${MODPY_VERSION}/site-packages/nfoview/window.py
 @man man/man1/nfoview.1
-share/applications/nfoview.desktop
-share/icons/hicolor/128x128/apps/nfoview.png
-share/icons/hicolor/16x16/apps/nfoview.png
-share/icons/hicolor/22x22/apps/nfoview.png
-share/icons/hicolor/24x24/apps/nfoview.png
-share/icons/hicolor/256x256/apps/nfoview.png
-share/icons/hicolor/32x32/apps/nfoview.png
-share/icons/hicolor/48x48/apps/nfoview.png
-share/icons/hicolor/64x64/apps/nfoview.png
+share/applications/io.otsaloma.nfoview.desktop
+share/icons/hicolor/scalable/apps/io.otsaloma.nfoview.svg
+share/icons/hicolor/symbolic/apps/io.otsaloma.nfoview-symbolic.svg
 share/locale/bg/LC_MESSAGES/nfoview.mo
 share/locale/br/LC_MESSAGES/nfoview.mo
 share/locale/cs/LC_MESSAGES/nfoview.mo
@@ -72,7 +66,7 @@ share/locale/sr/LC_MESSAGES/nfoview.mo
 share/locale/sv/LC_MESSAGES/nfoview.mo
 share/locale/tr/LC_MESSAGES/nfoview.mo
 share/metainfo/
-share/metainfo/nfoview.appdata.xml
+share/metainfo/io.otsaloma.nfoview.appdata.xml
 share/nfoview/
 share/nfoview/menu.ui
 share/nfoview/preferences-dialog.ui

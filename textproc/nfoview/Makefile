@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.27 2019/06/13 21:59:03 bcallah Exp $
+# $OpenBSD: Makefile,v 1.28 2019/08/10 23:03:29 bcallah Exp $
 
 COMMENT =	simple viewer for NFO files
-MODPY_EGG_VERSION =	1.26.1
+MODPY_EGG_VERSION =	1.27
 DISTNAME =	nfoview-${MODPY_EGG_VERSION}
 CATEGORIES =	textproc x11
 
