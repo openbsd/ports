@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.101 2019/07/13 08:10:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2019/08/10 20:01:25 ajacoutot Exp $
 
 # XXX
 # sndio: what to do with (channel) map
 # sndio: check sample format
 # sndio: support for recording
 
-PORTROACH=		skipv:12.99.1
+PORTROACH=		skipv:12.99.1,12.99.2
 
 COMMENT=		cross-platform networked sound server
 
