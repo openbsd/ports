@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/01/16 14:47:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/08/10 04:02:13 bket Exp $
 include/openconnect.h
 lib/libopenconnect.a
 lib/libopenconnect.la
@@ -43,6 +43,7 @@ share/doc/openconnect/nonroot.html
 share/doc/openconnect/packages.html
 share/doc/openconnect/pkcs11.html
 share/doc/openconnect/platforms.html
+share/doc/openconnect/pulse.html
 share/doc/openconnect/styles/
 share/doc/openconnect/styles/main.css
 share/doc/openconnect/tncc.html

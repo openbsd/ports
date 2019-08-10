@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.51 2019/06/03 16:06:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2019/08/10 04:02:12 bket Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
-DISTNAME=	openconnect-8.03
-REVISION=	0
+DISTNAME=	openconnect-8.04
 
 SHARED_LIBS +=  openconnect               4.4 # 5.5
 
