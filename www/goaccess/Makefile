@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:50:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2019/08/10 21:24:31 sthen Exp $
 
 COMMENT =		realtime console web log analyzer
 
@@ -20,6 +20,10 @@ MASTER_SITES =		https://tar.goaccess.io/
 
 LIB_DEPENDS =		devel/gettext,-runtime \
 			net/libmaxminddb
+
+# libmaxminddb headers fail with base-gcc
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-geoip=mmdb \
