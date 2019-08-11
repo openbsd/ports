@@ -1,4 +1,4 @@
-$OpenBSD: patch-libgcc_config_host,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
+$OpenBSD: patch-libgcc_config_host,v 1.2 2019/08/11 20:53:07 cwen Exp $
 Index: libgcc/config.host
 --- libgcc/config.host.orig
 +++ libgcc/config.host
@@ -45,7 +45,7 @@ Index: libgcc/config.host
  	tmake_file="$tmake_file rs6000/t-netbsd rs6000/t-crtstuff"
 +	;;
 +powerpc-*-openbsd*)
-+	tmake_file="${tmake_file} rs6000/t-ppccomm rs6000/t-crtstuff"
++	tmake_file="${tmake_file} rs6000/t-ppccomm rs6000/t-crtstuff rs6000/t-openbsd"
  	;;
  powerpc-*-eabispe*)
  	tmake_file="${tmake_file} rs6000/t-ppccomm rs6000/t-savresfgpr rs6000/t-crtstuff t-crtstuff-pic t-fdpbit"

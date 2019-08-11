@@ -1,0 +1,20 @@
+$OpenBSD: patch-libgcc_config_rs6000_t-openbsd,v 1.1 2019/08/11 20:53:07 cwen Exp $
+
+Add crt* since some symbols are required by lang/php/7.3+
+
+Index: libgcc/config/rs6000/t-openbsd
+--- libgcc/config/rs6000/t-openbsd.orig
++++ libgcc/config/rs6000/t-openbsd
+@@ -0,0 +1,12 @@
++# already added in libgcc/config/rs6000/t-ppccomm
++# LIB2ADD = $(srcdir)/config/rs6000/tramp.S
++
++LIB2ADD_ST += \
++	$(srcdir)/config/rs6000/crtsavfpr.S \
++	$(srcdir)/config/rs6000/crtresfpr.S \
++	$(srcdir)/config/rs6000/crtsavgpr.S \
++	$(srcdir)/config/rs6000/crtresgpr.S \
++	$(srcdir)/config/rs6000/crtresxfpr.S \
++	$(srcdir)/config/rs6000/crtresxgpr.S \
++	$(srcdir)/config/rs6000/crtsavevr.S \
++	$(srcdir)/config/rs6000/crtrestvr.S
