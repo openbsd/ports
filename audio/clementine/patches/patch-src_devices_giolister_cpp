@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_devices_giolister_cpp,v 1.1 2019/08/11 20:42:44 cwen Exp $
+
+Add missing header for ports-gcc, from upstream:
+https://github.com/clementine-player/Clementine/pull/5630/commits/a2f7d018c7bdee96d4cefd5a1ec0c4f710fea226
+
+Index: src/devices/giolister.cpp
+--- src/devices/giolister.cpp.orig
++++ src/devices/giolister.cpp
+@@ -17,6 +17,7 @@
+ 
+ #include "config.h"
+ 
++#include <functional>
+ #include <memory>
+ 
+ #include <QFile>

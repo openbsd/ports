@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_musicbrainz_chromaprinter_cpp,v 1.1 2019/08/11 20:42:44 cwen Exp $
+
+Unbreak with chromaprint >=1.4 (and keep backward compat), see:
+https://github.com/clementine-player/Clementine/commit/d3ea0c8482dfd3f6264a30cfceb456076d76e6cd
+
+Index: src/musicbrainz/chromaprinter.cpp
+--- src/musicbrainz/chromaprinter.cpp.orig
++++ src/musicbrainz/chromaprinter.cpp
+@@ -127,15 +127,22 @@ QString Chromaprinter::CreateFingerprint() {
+ 
+   ChromaprintContext* chromaprint = chromaprint_new(CHROMAPRINT_ALGORITHM_DEFAULT);
+   chromaprint_start(chromaprint, kDecodeRate, kDecodeChannels);
+-  chromaprint_feed(chromaprint, reinterpret_cast<void*>(data.data()), data.size() / 2);
++  chromaprint_feed(chromaprint, reinterpret_cast<int16_t*>(data.data()), data.size() / 2);
+   chromaprint_finish(chromaprint);
+ 
+-  void* fprint = NULL;
+   int size = 0;
++
++  #if CHROMAPRINT_VERSION_MAJOR >= 1 && CHROMAPRINT_VERSION_MINOR >= 4
++    u_int32_t *fprint = nullptr;
++    char *encoded = nullptr;
++  #else
++    void *fprint = nullptr;
++    void *encoded = nullptr;
++  #endif
++
+   int ret = chromaprint_get_raw_fingerprint(chromaprint, &fprint, &size);
+   QByteArray fingerprint;
+   if (ret == 1) {
+-    void* encoded = NULL;
+     int encoded_size = 0;
+     chromaprint_encode_fingerprint(
+         fprint, size, CHROMAPRINT_ALGORITHM_DEFAULT, &encoded, &encoded_size, 1);
