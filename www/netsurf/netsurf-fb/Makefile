@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/08/09 22:37:28 bentley Exp $
+# $OpenBSD: Makefile,v 1.11 2019/08/11 15:16:22 bentley Exp $
 
 COMMENT =		lightweight web browser, with SDL interface
 
@@ -9,7 +9,8 @@ DISTNAME =		netsurf-${NETSURF_VERSION}-src
 HOMEPAGE =		https://www.netsurf-browser.org/
 MASTER_SITES =		https://download.netsurf-browser.org/netsurf/releases/source/
 
-BUILD_DEPENDS =		www/netsurf/nsgenbind>=0.4 \
+BUILD_DEPENDS =		editors/vim \
+			www/netsurf/nsgenbind>=0.4 \
 			www/p5-HTML-Parser
 LIB_DEPENDS =		devel/sdl \
 			graphics/jpeg \

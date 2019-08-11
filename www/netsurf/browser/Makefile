@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/08/09 22:37:28 bentley Exp $
+# $OpenBSD: Makefile,v 1.37 2019/08/11 15:16:22 bentley Exp $
 
 COMMENT =		lightweight web browser, with GTK interface
 
@@ -8,7 +8,8 @@ NETSURF_VERSION =	3.9
 HOMEPAGE =		https://www.netsurf-browser.org/
 MASTER_SITES =		https://download.netsurf-browser.org/netsurf/releases/source/
 
-BUILD_DEPENDS =		www/netsurf/nsgenbind>=0.5 \
+BUILD_DEPENDS =		editors/vim \
+			www/netsurf/nsgenbind>=0.5 \
 			www/p5-HTML-Parser
 LIB_DEPENDS =		graphics/libwebp \
 			www/netsurf/hubbub>=0.3.4 \
