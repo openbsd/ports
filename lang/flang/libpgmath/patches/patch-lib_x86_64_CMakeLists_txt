@@ -1,14 +1,30 @@
-$OpenBSD: patch-lib_x86_64_CMakeLists_txt,v 1.3 2019/03/05 06:47:59 bcallah Exp $
+$OpenBSD: patch-lib_x86_64_CMakeLists_txt,v 1.4 2019/08/12 15:41:55 bcallah Exp $
 
 Index: lib/x86_64/CMakeLists.txt
 --- lib/x86_64/CMakeLists.txt.orig
 +++ lib/x86_64/CMakeLists.txt
-@@ -90,7 +90,7 @@ list(APPEND DEFINITIONS _GNU_SOURCE _ISOC99_SOURCE)
- if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+@@ -92,12 +92,12 @@ set(SRCS
+   tan.c
+   tanh.c)
+ list(APPEND DEFINITIONS _GNU_SOURCE _ISOC99_SOURCE)
+-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++if(${LIBPGMATH_SYSTEM_NAME} MATCHES "Linux")
    list(APPEND DEFINITIONS _GNU_SOURCE)
  endif()
--set(FLAGS "${FLAGS}-Wall -W -Wstrict-prototypes -Wwrite-strings -Werror ")
-+set(FLAGS "${FLAGS}-Wall -W -Wstrict-prototypes -Wwrite-strings ")
+ set(FLAGS "${FLAGS}-Wall -W -Wstrict-prototypes -Wwrite-strings ")
+-if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+-  set(FLAGS "${FLAGS}-Werror ")
++if(NOT ${LIBPGMATH_SYSTEM_NAME} MATCHES "Windows")
++  set(FLAGS "${FLAGS} ")
+ endif()
  libmath_add_object_library("${SRCS}" "${FLAGS}" "${DEFINITIONS}" "isoc99")
  
- # isoc99_log2
+@@ -141,7 +141,7 @@ set(SRCS
+   tan.c
+   tanh.c)
+ set(FLAGS "${FLAGS} -mavx2 -mfma")
+-if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Windows")
++if(NOT ${LIBPGMATH_SYSTEM_NAME} MATCHES "Windows")
+   set(FLAGS "${FLAGS} -ffp-contract=fast")
+ elseif (${CMAKE_COMPILER_ID} MATCHES "Clang")
+   set(FLAGS "${FLAGS} -Xclang -ffp-contract=fast -Xclang -Wno-language-extension-token")

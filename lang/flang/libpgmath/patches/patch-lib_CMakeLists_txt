@@ -1,28 +1,16 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.7 2019/02/15 17:51:10 bcallah Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.8 2019/08/12 15:41:55 bcallah Exp $
 
 Some ugly hacks here.
 
 Index: lib/CMakeLists.txt
 --- lib/CMakeLists.txt.orig
 +++ lib/CMakeLists.txt
-@@ -16,26 +16,29 @@
- 
- # This value will be the same as CMAKE_SYSTEM_PROCESSOR
- set(PROCESSOR ${CMAKE_SYSTEM_PROCESSOR})
--if(${LIBPGMATH_WITH_GENERIC} OR (NOT ${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64|aarch64"))
-+if(${LIBPGMATH_WITH_GENERIC} OR (NOT ${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64|amd64|aarch64"))
-   set(PROCESSOR "generic")
- endif()
-+if(${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD" AND ${PROCESSOR} MATCHES "amd64")
-+  set(PROCESSOR "x86_64")
-+endif()
- 
+@@ -25,19 +25,19 @@ find_program(SH_PROGRAM NAMES sh bash)
  set_property(GLOBAL APPEND PROPERTY "TARGET_OBJECTS")
  
--if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64|AMD64" AND NOT ${LIBPGMATH_WITH_GENERIC})
+ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND NOT ${LIBPGMATH_WITH_GENERIC})
 -  if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64|AMD64|amd64" AND NOT ${LIBPGMATH_WITH_GENERIC})
-+  if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|OpenBSD")
++  if(${LIBPGMATH_SYSTEM_NAME} MATCHES "Linux")
  
      set(DEFINITIONS_L1
        HOST_LINUX LINUX LINUX86 LINUX8664 MAXCPUS=256 MAXCPUSL=8 MAXCPUSR=8
@@ -35,18 +23,32 @@ Index: lib/CMakeLists.txt
      set(DEFINITIONS_L2
        LINUX LINUX86 LINUX8664 MAXCPUS=256 MAXCPUSL=8 MAXCPUSR=8 __gnu_linux__
        TARGET_LINUX TARGET_LINUX_X86 TARGET_LINUX_X8664 TARGET_X86 TARGET_X8664
-       PG_PIC)
+-      PG_PIC)
 -    set(FLAGS_L2 "-m64 -O3 -mtune=core-avx2 -march=core-avx2 ")
++      linux PG_PIC)
 +    set(FLAGS_L2 "-m64 -mtune=core-avx2 -march=core-avx2 ")
  
      # common
      # Definitions and compiler flags for level 1 directories
-@@ -147,16 +150,16 @@ elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "ppc64le")
-   set_property(GLOBAL APPEND PROPERTY "DEFINITIONS_PPC64LE_L2" ${DEFINITIONS_L2})
-   set_property(GLOBAL APPEND_STRING PROPERTY "FLAGS_PPC64LE_L2" ${FLAGS_L2})
-   # ppc64le
--elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
-+elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64" AND NOT ${LIBPGMATH_WITH_GENERIC})
+@@ -59,7 +59,7 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
+     set_property(GLOBAL APPEND_STRING PROPERTY "FLAGS_X8664_L2" ${FLAGS_L2})
+     # x86_64
+ 
+-  elseif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
++  elseif(${LIBPGMATH_SYSTEM_NAME} MATCHES "Darwin")
+     set(DEFINITIONS_L1 HOST_OSX MAXCPUS=256 MAXCPUSL=8 MAXCPUSR=4 OSX OSX86
+       OSX8664 TARGET_OSX TARGET_OSX_X86 TARGET_OSX_X8664 TARGET_X86
+       TARGET_X8664 __gnu_osx__ PG_PIC)
+@@ -87,7 +87,7 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
+     set_property(GLOBAL APPEND PROPERTY "DEFINITIONS_X8664_L2" ${DEFINITIONS_L2})
+     set_property(GLOBAL APPEND_STRING PROPERTY "FLAGS_X8664_L2" ${FLAGS_L2})
+     # x86_64
+-  elseif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
++  elseif(${LIBPGMATH_SYSTEM_NAME} MATCHES "Windows")
+     set(DEFINITIONS_L1
+       TARGET_WIN_X8664 TARGET_WIN _PGI_NOBUILTINS MAXCPUS=256
+       MAXCPUSL=8 MAXCPUSR=8 WINNT WIN64 LONG_IS_32
+@@ -155,12 +155,12 @@ elseif(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "aarch64"
    set(DEFINITIONS_L1 HOST_LINUX MAXCPUS=8192 MAXCPUSL=128 MAXCPUSR=128
      TARGET_LINUX TARGET_LINUX_ARM TARGET_LINUX_ARM64 TARGET_LLVM
      TARGET_LLVM_LINUXAARCH64 TM_I8)
@@ -61,46 +63,27 @@ Index: lib/CMakeLists.txt
  
    # common
    # Definitions and compiler flags for level 1 directories
-@@ -181,12 +184,12 @@ else()
+@@ -185,12 +185,12 @@ else()
    set(DEFINITIONS_L1 HOST_LINUX MAXCPUS=256 MAXCPUSL=8 MAXCPUSR=8 TARGET_LINUX
      TARGET_LINUX_64 TARGET_LLVM TARGET_LLVM_64 TARGET_LLVM_LINUX64
      TARGET_LINUX_GENERIC TARGET_64 PG_PIC)
 -  set(FLAGS_L1 "-O3 -ffp-contract=fast ")
-+  set(FLAGS_L1 " ")
++  set(FLAGS_L1 "-ffp-contract=fast ")
  
    set(DEFINITIONS_L2 HOST_LINUX MAXCPUS=256 MAXCPUSL=8 MAXCPUSR=8 TARGET_LINUX
      TARGET_LINUX_64 TARGET_LLVM TARGET_LLVM_64 TARGET_LLVM_LINUX64
      TARGET_LINUX_GENERIC TARGET_64 PG_PIC)
 -  set(FLAGS_L2 "-O3 -ffp-contract=fast ")
-+  set(FLAGS_L2 " ")
++  set(FLAGS_L2 "-ffp-contract=fast ")
  
    # common
    # Definitions and compiler flags for level 1 directories
-@@ -210,11 +213,11 @@ else()
- endif()
- 
- include_directories(common)
--if(${PROCESSOR} MATCHES "x86_64|AMD64" AND NOT ${LIBPGMATH_WITH_GENERIC})
-+if(${PROCESSOR} MATCHES "x86_64|AMD64|amd64" AND NOT ${LIBPGMATH_WITH_GENERIC})
-   include_directories(x86_64)
- # elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "ppc64le")
- #   include_directories(ppc64le)
--elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
-+elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64" AND NOT ${LIBPGMATH_WITH_GENERIC})
-   include_directories(generic)
-   include_directories(aarch64)
- elseif(${PROCESSOR} MATCHES "ppc64le|generic" OR ${LIBPGMATH_WITH_GENERIC})
-@@ -223,11 +226,11 @@ endif()
- 
- # Add directories to build
- add_subdirectory(common)
--if(${PROCESSOR} MATCHES "x86_64|AMD64" AND NOT ${LIBPGMATH_WITH_GENERIC})
-+if(${PROCESSOR} MATCHES "x86_64|AMD64|amd64" AND NOT ${LIBPGMATH_WITH_GENERIC})
-   add_subdirectory(x86_64)
- # elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "ppc64le")
- #   add_subdirectory(ppc64le)
--elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
-+elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64" AND NOT ${LIBPGMATH_WITH_GENERIC})
-   add_subdirectory(generic)
-   add_subdirectory(aarch64)
- elseif(${PROCESSOR} MATCHES "ppc64le|generic" OR ${LIBPGMATH_WITH_GENERIC})
+@@ -244,7 +244,7 @@ get_property(TARGET_OBJECTS GLOBAL PROPERTY "TARGET_OB
+ add_library(${LIBPGMATH_LIBRARY_NAME}_static STATIC ${TARGET_OBJECTS})
+ add_library(${LIBPGMATH_LIBRARY_NAME} SHARED ${TARGET_OBJECTS})
+ target_link_libraries(${LIBPGMATH_LIBRARY_NAME} INTERFACE ${LIBPGMATH_LIBRARY_NAME}_static)
+-if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
++if(${LIBPGMATH_SYSTEM_NAME} MATCHES "Windows")
+     set_target_properties(${LIBPGMATH_LIBRARY_NAME}_static PROPERTIES OUTPUT_NAME lib${LIBPGMATH_LIBRARY_NAME})
+     set_target_properties(${LIBPGMATH_LIBRARY_NAME} PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
+ if(${CMAKE_GENERATOR} MATCHES "MSYS Makefiles")

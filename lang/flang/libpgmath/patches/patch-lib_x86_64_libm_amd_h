@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_x86_64_libm_amd_h,v 1.4 2019/07/30 03:49:58 bcallah Exp $
+$OpenBSD: patch-lib_x86_64_libm_amd_h,v 1.5 2019/08/12 15:41:55 bcallah Exp $
 
 We need the compat.
 
@@ -19,18 +19,18 @@ Index: lib/x86_64/libm_amd.h
  #undef ldexpf
  
 +/* We're missing these on OpenBSD, found in NetBSD math.h */
-+#define DOMAIN		1
-+#define SING		2
-+#define OVERFLOW	3
-+#define UNDERFLOW	4
++#define DOMAIN         1
++#define SING           2
++#define OVERFLOW       3
++#define UNDERFLOW      4
  
 +
  /* Types of exceptions in the `type' field.  */
+ #if	! defined(TARGET_WIN)
  # define DOMAIN         1
- # define SING           2
-@@ -89,6 +95,8 @@ typedef unsigned long long __UINT8_T;
- # define TLOSS          5
+@@ -91,6 +97,8 @@ typedef unsigned long long __UINT8_T;
  # define PLOSS          6
+ #endif
  
 +/* The BSDs (and probably macOS too) already define HUGE in math.h */
 +# undef HUGE

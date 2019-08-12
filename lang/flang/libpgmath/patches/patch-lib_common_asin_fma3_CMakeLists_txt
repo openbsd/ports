@@ -1,25 +1,14 @@
-$OpenBSD: patch-lib_common_asin_fma3_CMakeLists_txt,v 1.2 2019/02/15 17:51:10 bcallah Exp $
+$OpenBSD: patch-lib_common_asin_fma3_CMakeLists_txt,v 1.3 2019/08/12 15:41:55 bcallah Exp $
 
 Index: lib/common/asin/fma3/CMakeLists.txt
 --- lib/common/asin/fma3/CMakeLists.txt.orig
 +++ lib/common/asin/fma3/CMakeLists.txt
-@@ -21,8 +21,8 @@ get_property(FLAGS GLOBAL PROPERTY "FLAGS_L2")
- set(SRCS)
+@@ -22,7 +22,7 @@ set(SRCS)
  
  # Set source files, compiler flags and definitions
--if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64")
--  if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|Darwin")
-+if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64|amd64")
-+  if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|Darwin|OpenBSD")
+ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64")
+-  if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|Darwin|Windows")
++  if(${LIBPGMATH_SYSTEM_NAME} MATCHES "Linux|Darwin|Windows")
      set(SRCS
        sdasin.cpp
        ssasin.cpp
-@@ -48,7 +48,7 @@ elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "ppc64le")
-   set_property(SOURCE sdasin.cpp vdasin2.cpp APPEND PROPERTY COMPILE_DEFINITIONS VINT=long)
-   set_property(SOURCE ssasin.cpp vsasin4.cpp APPEND PROPERTY COMPILE_DEFINITIONS VINT=)
-   libmath_add_object_library("${SRCS}" "${FLAGS}" "${DEFINITIONS}" "")
--elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
-+elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64" AND NOT ${LIBPGMATH_WITH_GENERIC})
-   set(SRCS
-     sdasin.cpp
-     ssasin.cpp

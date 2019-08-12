@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_common_dispatch_c,v 1.6 2019/03/23 23:55:14 bcallah Exp $
+$OpenBSD: patch-lib_common_dispatch_c,v 1.7 2019/08/12 15:41:55 bcallah Exp $
 
 Index: lib/common/dispatch.c
 --- lib/common/dispatch.c.orig
 +++ lib/common/dispatch.c
-@@ -97,11 +97,7 @@
-   extern  FILE    *__io_stderr(void);
+@@ -95,11 +95,7 @@
+ 
  #endif      // #ifndef _WIN64
  
 -#if defined(TARGET_LINUX_X8664) || defined(TARGET_LINUX_POWER) || defined(TARGET_WIN_X8664)

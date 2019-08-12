@@ -1,20 +1,20 @@
-$OpenBSD: patch-runtime_flangrti_x86_64-Linux_dumpregs_c,v 1.1.1.1 2017/12/31 18:06:38 bcallah Exp $
+$OpenBSD: patch-runtime_flangrti_x86_64-Linux_dumpregs_c,v 1.2 2019/08/12 15:41:55 bcallah Exp $
 
 No gregs or sys/ucontext.h
 
 Index: runtime/flangrti/x86_64-Linux/dumpregs.c
 --- runtime/flangrti/x86_64-Linux/dumpregs.c.orig
 +++ runtime/flangrti/x86_64-Linux/dumpregs.c
-@@ -15,7 +15,7 @@
-  *
-  */
+@@ -17,7 +17,7 @@
  
+ #include <stdint.h>
+ #include <inttypes.h>
 -#if !defined(TARGET_WIN)
 +#if !defined(TARGET_WIN) && !defined(__OpenBSD__)
  #include <sys/ucontext.h>
  #endif
  #include "stdioInterf.h"
-@@ -40,7 +40,7 @@
+@@ -42,7 +42,7 @@
  #define RSP 15
  #define RIP 16
  

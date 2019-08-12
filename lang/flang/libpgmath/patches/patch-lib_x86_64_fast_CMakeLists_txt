@@ -1,14 +1,23 @@
-$OpenBSD: patch-lib_x86_64_fast_CMakeLists_txt,v 1.2 2018/07/09 00:30:07 bcallah Exp $
+$OpenBSD: patch-lib_x86_64_fast_CMakeLists_txt,v 1.3 2019/08/12 15:41:55 bcallah Exp $
 
 Index: lib/x86_64/fast/CMakeLists.txt
 --- lib/x86_64/fast/CMakeLists.txt.orig
 +++ lib/x86_64/fast/CMakeLists.txt
-@@ -39,11 +39,11 @@ add_custom_command(OUTPUT tmp.${TARGET_NAME}.h PRE_BUI
+@@ -32,7 +32,7 @@ add_custom_command(OUTPUT ${TARGET_NAME}.i PRE_BUILD
+   COMMAND ${PREPROCESSOR} > ${TARGET_NAME}.i
+   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/../${TARGET_NAME}.h)
+ 
+-if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
++if(${LIBPGMATH_SYSTEM_NAME} MATCHES "Windows")
+     file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/tmp.${TARGET_NAME}.h.bak "#define __MTH_C99_CMPLX_SUFFIX _c99")
+     configure_file(${CMAKE_CURRENT_BINARY_DIR}/tmp.${TARGET_NAME}.h.bak ${CMAKE_CURRENT_BINARY_DIR}/tmp.${TARGET_NAME}.h COPYONLY)
+ else()
+@@ -44,11 +44,11 @@ endif()
  add_custom_target(${TARGET_NAME} ALL
-   DEPENDS tmp.${TARGET_NAME}.h)
+   DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/tmp.${TARGET_NAME}.h)
  
 -if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-+if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|OpenBSD")
++if(${LIBPGMATH_SYSTEM_NAME} MATCHES "Linux")
    list(APPEND DEFINITIONS LINUX_ELF)
  endif()
  include_directories(${CMAKE_CURRENT_BINARY_DIR})
