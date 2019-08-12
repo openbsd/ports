@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/12 23:58:09 kmos Exp $
+lib/python${MODPY_VERSION}/site-packages/soupsieve/
+lib/python${MODPY_VERSION}/site-packages/soupsieve-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/soupsieve-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/soupsieve-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/soupsieve-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/soupsieve-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/soupsieve-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/soupsieve/__init__.py
+lib/python${MODPY_VERSION}/site-packages/soupsieve/__meta__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/soupsieve/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/soupsieve/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/soupsieve/${MODPY_PYCACHE}__meta__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/soupsieve/${MODPY_PYCACHE}css_match.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/soupsieve/${MODPY_PYCACHE}css_parser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/soupsieve/${MODPY_PYCACHE}css_types.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/soupsieve/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/soupsieve/css_match.py
+lib/python${MODPY_VERSION}/site-packages/soupsieve/css_parser.py
+lib/python${MODPY_VERSION}/site-packages/soupsieve/css_types.py
+lib/python${MODPY_VERSION}/site-packages/soupsieve/util.py
