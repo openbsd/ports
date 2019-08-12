@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/07/15 07:34:17 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/08/12 06:23:59 gonzalo Exp $
 bin/sqlmap
 share/sqlmap/
 share/sqlmap/.github/
@@ -15,6 +15,8 @@ ${MODPY_COMMENT}share/sqlmap/${MODPY_PYCACHE}/
 share/sqlmap/${MODPY_PYCACHE}sqlmap.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/${MODPY_PYCACHE}sqlmapapi.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/data/
+share/sqlmap/data/html/
+share/sqlmap/data/html/index.html
 share/sqlmap/data/procs/
 share/sqlmap/data/procs/README.txt
 share/sqlmap/data/procs/mssqlserver/
@@ -434,7 +436,7 @@ share/sqlmap/lib/utils/${MODPY_PYCACHE}getch.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}har.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}hash.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}hashdb.${MODPY_PYC_MAGIC_TAG}pyc
-share/sqlmap/lib/utils/${MODPY_PYCACHE}htmlentities.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/lib/utils/${MODPY_PYCACHE}httpd.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}pivotdumptable.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}progress.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/lib/utils/${MODPY_PYCACHE}purge.${MODPY_PYC_MAGIC_TAG}pyc
@@ -452,7 +454,7 @@ share/sqlmap/lib/utils/getch.py
 share/sqlmap/lib/utils/har.py
 share/sqlmap/lib/utils/hash.py
 share/sqlmap/lib/utils/hashdb.py
-share/sqlmap/lib/utils/htmlentities.py
+share/sqlmap/lib/utils/httpd.py
 share/sqlmap/lib/utils/pivotdumptable.py
 share/sqlmap/lib/utils/progress.py
 share/sqlmap/lib/utils/purge.py
