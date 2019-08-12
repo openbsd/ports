@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.793 2019/08/08 13:56:35 kmos Exp $
+# $OpenBSD: Quirks.pm,v 1.794 2019/08/12 15:21:30 kmos Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1266,6 +1266,7 @@ my $obsolete_reason = {
 	'py-prioritized_methods' => 3,
 	'py-extremes' => 3,
 	'py-kid' => 3,
+	'py-Chart' => 3,
 };
 
 # reasons for obsolete packages
