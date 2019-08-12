@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2017/01/12 21:13:58 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.18 2019/08/12 21:47:24 naddy Exp $
 @bin bin/flac
 @bin bin/metaflac
 include/FLAC/
@@ -31,25 +31,24 @@ share/aclocal/libFLAC++.m4
 share/aclocal/libFLAC.m4
 share/doc/flac/
 share/doc/flac/FLAC.tag
-share/doc/flac/html/
-share/doc/flac/html/changelog.html
-share/doc/flac/html/developers.html
-share/doc/flac/html/documentation.html
-share/doc/flac/html/documentation_bugs.html
-share/doc/flac/html/documentation_example_code.html
-share/doc/flac/html/documentation_format_overview.html
-share/doc/flac/html/documentation_tools.html
-share/doc/flac/html/documentation_tools_flac.html
-share/doc/flac/html/documentation_tools_metaflac.html
-share/doc/flac/html/faq.html
-share/doc/flac/html/favicon.ico
-share/doc/flac/html/features.html
-share/doc/flac/html/flac.css
-share/doc/flac/html/format.html
-share/doc/flac/html/id.html
-share/doc/flac/html/images/
-share/doc/flac/html/images/logo.svg
-share/doc/flac/html/images/logo130.gif
-share/doc/flac/html/index.html
-share/doc/flac/html/license.html
-share/doc/flac/html/ogg_mapping.html
+share/doc/flac/changelog.html
+share/doc/flac/developers.html
+share/doc/flac/documentation.html
+share/doc/flac/documentation_bugs.html
+share/doc/flac/documentation_example_code.html
+share/doc/flac/documentation_format_overview.html
+share/doc/flac/documentation_tools.html
+share/doc/flac/documentation_tools_flac.html
+share/doc/flac/documentation_tools_metaflac.html
+share/doc/flac/faq.html
+share/doc/flac/favicon.ico
+share/doc/flac/features.html
+share/doc/flac/flac.css
+share/doc/flac/format.html
+share/doc/flac/id.html
+share/doc/flac/images/
+share/doc/flac/images/logo.svg
+share/doc/flac/images/logo130.gif
+share/doc/flac/index.html
+share/doc/flac/license.html
+share/doc/flac/ogg_mapping.html
