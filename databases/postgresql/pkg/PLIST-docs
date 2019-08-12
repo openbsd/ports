@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.91 2019/06/21 21:05:36 pea Exp $
+@comment $OpenBSD: PLIST-docs,v 1.92 2019/08/12 16:40:40 pea Exp $
 share/doc/postgresql/
 share/doc/postgresql/COPYRIGHT
 share/doc/postgresql/HISTORY
@@ -674,6 +674,7 @@ share/doc/postgresql/html/release-11-1.html
 share/doc/postgresql/html/release-11-2.html
 share/doc/postgresql/html/release-11-3.html
 share/doc/postgresql/html/release-11-4.html
+share/doc/postgresql/html/release-11-5.html
 share/doc/postgresql/html/release-11.html
 share/doc/postgresql/html/release-prior.html
 share/doc/postgresql/html/release.html
