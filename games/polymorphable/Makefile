@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/08/12 08:17:38 kn Exp $
 
 COMMENT =	action RPG mod based upon the FLARE engine
 DISTNAME =	polymorphable-20130410
@@ -17,15 +17,10 @@ RUN_DEPENDS =	games/flare
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
-post-extract:
-	rm ${WRKSRC}/maps/{demo,test}.txt~
-	rm ${WRKSRC}/tilesetdefs/{lpc_ortho,tileset_lpc}.txt~
+MODDIR =	${PREFIX}/share/flare/mods/polymorphable
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/flare/mods/polymorphable
-	cd ${WRKSRC} && find * -type d -exec ${INSTALL_DATA_DIR} \
-		"${PREFIX}/share/flare/mods/polymorphable/{}" \;
-	cd ${WRKSRC} && find * -type f -exec ${INSTALL_DATA} \
-		"{}" "${PREFIX}/share/flare/mods/polymorphable/{}" \;
+	cd ${WRKSRC} && find . -type d -exec ${INSTALL_DATA_DIR} ${MODDIR}/{} \; \
+	    -o -type f ! -name \*.txt~ -exec ${INSTALL_DATA} {} ${MODDIR}/{} \;
 
 .include <bsd.port.mk>
