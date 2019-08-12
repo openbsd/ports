@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/08/12 17:47:52 cwen Exp $
 
 COMMENT =		PC-9801 emulator
 
 DISTNAME =		xnp2-0.86
 EPOCH =			0
-REVISION =		3
+REVISION =		4
 CATEGORIES =		emulators
 
 HOMEPAGE =		https://www.nonakap.org/np2/

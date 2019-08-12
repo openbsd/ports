@@ -1,0 +1,25 @@
+$OpenBSD: patch-x11_compiler_h,v 1.1 2019/08/12 17:47:52 cwen Exp $
+
+ports-gcc fix for: 
+error: macro "min" passed 3 arguments, but takes just 2
+From:
+https://github.com/nonakap/xnp2/issues/6
+
+Index: x11/compiler.h
+--- x11/compiler.h.orig
++++ x11/compiler.h
+@@ -117,12 +117,14 @@ typedef	gboolean	BOOL;
+ #define	MAX_PATH	MAXPATHLEN
+ #endif
+ 
++#ifndef __cplusplus
+ #ifndef	max
+ #define	max(a,b)	(((a) > (b)) ? (a) : (b))
+ #endif
+ #ifndef	min
+ #define	min(a,b)	(((a) < (b)) ? (a) : (b))
+ #endif
++#endif /* __cplusplus */
+ 
+ #ifndef	ZeroMemory
+ #define	ZeroMemory(d,n)		memset((d), 0, (n))
