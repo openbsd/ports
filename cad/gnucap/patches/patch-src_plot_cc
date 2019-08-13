@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_plot_cc,v 1.1 2019/08/13 13:36:00 cwen Exp $
+
+ports-gcc fix for
+error: two or more data types in declaration of 'adata'
+
+Index: src/plot.cc
+--- src/plot.cc.orig
++++ src/plot.cc
+@@ -230,7 +230,7 @@ static void plotarg(
+ 	double yhi,
+ 	double zhi)
+ {
+-  auto char adata[MAXWIDTH+1];     /* actual data. copy emptydata, insert */
++  char adata[MAXWIDTH+1];     /* actual data. copy emptydata, insert */
+   char *xxs;				     /* string representation of xx */
+   memcpy(adata, emptydata, MAXWIDTH); /* copy prototype */
+   xxs = ftos( xx, 11, 5, IO::formaat );

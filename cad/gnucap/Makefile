@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/08/13 13:36:00 cwen Exp $
 
 # gcc spins compiling d_mos7
 NOT_FOR_ARCHS=		m88k
@@ -6,7 +6,7 @@ NOT_FOR_ARCHS=		m88k
 COMMENT=		Gnu Circuit Analysis Package
 
 DISTNAME=		gnucap-0.35
-REVISION=		8
+REVISION=		9
 CATEGORIES=		cad
 
 HOMEPAGE=		http://www.gnucap.org/
