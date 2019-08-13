@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.39 2019/08/11 20:42:44 cwen Exp $
+# $OpenBSD: Makefile,v 1.40 2019/08/13 14:50:12 sthen Exp $
 
 COMMENT =	Qt4-based featureful music player
 
-V =		1.2.3
-DISTNAME =	clementine-${V}
+GH_ACCOUNT =	clementine-player
+GH_PROJECT =	Clementine
+GH_TAGNAME =	1.2.3
 CATEGORIES =	audio x11
 REVISION =	16
 
 HOMEPAGE =	https://clementine-player.org/
-
-MASTER_SITES =	https://github.com/clementine-player/Clementine/archive/
-DISTFILES =	${PKGNAME}.tar.gz{${V}.tar.gz}
-WRKDIST =	${WRKDIR}/Clementine-${V}
 
 # GPLv2/LGPLv2/GFDL
 PERMIT_PACKAGE =		Yes
