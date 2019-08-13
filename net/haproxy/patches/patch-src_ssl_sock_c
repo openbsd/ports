@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ssl_sock_c,v 1.11 2019/06/10 23:01:13 danj Exp $
+$OpenBSD: patch-src_ssl_sock_c,v 1.12 2019/08/13 00:34:03 danj Exp $
 
 Index: src/ssl_sock.c
 --- src/ssl_sock.c.orig
@@ -21,7 +21,7 @@ Index: src/ssl_sock.c
  	if (bind_conf->ssl_conf.early_data) {
  		SSL_CTX_set_options(ctx, SSL_OP_NO_ANTI_REPLAY);
  		SSL_CTX_set_max_early_data(ctx, global.tune.bufsize - global.tune.maxrewrite);
-@@ -5217,7 +5217,7 @@ int ssl_sock_handshake(struct connection *conn, unsign
+@@ -5216,7 +5216,7 @@ int ssl_sock_handshake(struct connection *conn, unsign
  	if (!conn->xprt_ctx)
  		goto out_error;
  
@@ -30,7 +30,7 @@ Index: src/ssl_sock.c
  	/*
  	 * Check if we have early data. If we do, we have to read them
  	 * before SSL_do_handshake() is called, And there's no way to
-@@ -5285,11 +5285,11 @@ int ssl_sock_handshake(struct connection *conn, unsign
+@@ -5284,11 +5284,11 @@ int ssl_sock_handshake(struct connection *conn, unsign
  				if (!errno && conn->flags & CO_FL_WAIT_L4_CONN)
  					conn->flags &= ~CO_FL_WAIT_L4_CONN;
  				if (!conn->err_code) {
@@ -44,7 +44,7 @@ Index: src/ssl_sock.c
  					OSSL_HANDSHAKE_STATE state = SSL_get_state((SSL *)conn->xprt_ctx);
  					empty_handshake = state == TLS_ST_BEFORE;
  #else
-@@ -5369,11 +5369,11 @@ check_error:
+@@ -5368,11 +5368,11 @@ check_error:
  			if (!errno && conn->flags & CO_FL_WAIT_L4_CONN)
  				conn->flags &= ~CO_FL_WAIT_L4_CONN;
  			if (!conn->err_code) {
@@ -58,7 +58,7 @@ Index: src/ssl_sock.c
  				OSSL_HANDSHAKE_STATE state = SSL_get_state((SSL *)conn->xprt_ctx);
  				empty_handshake = state == TLS_ST_BEFORE;
  #else
-@@ -5417,7 +5417,7 @@ check_error:
+@@ -5416,7 +5416,7 @@ check_error:
  			goto out_error;
  		}
  	}
@@ -67,7 +67,7 @@ Index: src/ssl_sock.c
  	else {
  		/*
  		 * If the server refused the early data, we have to send a
-@@ -5532,7 +5532,7 @@ static size_t ssl_sock_to_buf(struct connection *conn,
+@@ -5527,7 +5527,7 @@ static size_t ssl_sock_to_buf(struct connection *conn,
  			continue;
  		}
  
@@ -76,7 +76,7 @@ Index: src/ssl_sock.c
  		if (conn->flags & CO_FL_EARLY_SSL_HS) {
  			size_t read_length;
  
-@@ -5672,7 +5672,7 @@ static size_t ssl_sock_from_buf(struct connection *con
+@@ -5658,7 +5658,7 @@ static size_t ssl_sock_from_buf(struct connection *con
  	 * in which case we accept to do it once again.
  	 */
  	while (count) {
@@ -85,7 +85,7 @@ Index: src/ssl_sock.c
  		size_t written_data;
  #endif
  
-@@ -5693,7 +5693,7 @@ static size_t ssl_sock_from_buf(struct connection *con
+@@ -5679,7 +5679,7 @@ static size_t ssl_sock_from_buf(struct connection *con
  			conn->xprt_st |= SSL_SOCK_SEND_UNLIMITED;
  		}
  
