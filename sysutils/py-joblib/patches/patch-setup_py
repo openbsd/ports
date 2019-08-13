@@ -1,0 +1,18 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2019/08/13 08:24:07 pirofti Exp $
+
+Make it use setuptools so it behaves with update-plist
+
+Submitted upstream: 
+https://patch-diff.githubusercontent.com/raw/joblib/joblib/pull/924.diff
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -1,6 +1,6 @@
+ #!/usr/bin/env python
+ 
+-from distutils.core import setup
++from setuptools import setup
+ import sys
+ 
+ import joblib
