@@ -1,9 +1,9 @@
-$OpenBSD: patch-modules_ssl_ssl_engine_init_c,v 1.14 2019/04/02 08:17:08 sthen Exp $
+$OpenBSD: patch-modules_ssl_ssl_engine_init_c,v 1.15 2019/08/13 21:14:11 sthen Exp $
 
 Index: modules/ssl/ssl_engine_init.c
 --- modules/ssl/ssl_engine_init.c.orig
 +++ modules/ssl/ssl_engine_init.c
-@@ -1504,7 +1504,7 @@ static apr_status_t ssl_init_proxy_certs(server_rec *s
+@@ -1512,7 +1512,7 @@ static apr_status_t ssl_init_proxy_certs(server_rec *s
      X509_STORE_CTX *sctx;
      X509_STORE *store = SSL_CTX_get_cert_store(mctx->ssl_ctx);
  

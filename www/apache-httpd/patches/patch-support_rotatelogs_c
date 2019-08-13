@@ -1,4 +1,5 @@
-$OpenBSD: patch-support_rotatelogs_c,v 1.7 2018/10/01 15:21:24 sthen Exp $
+$OpenBSD: patch-support_rotatelogs_c,v 1.8 2019/08/13 21:14:11 sthen Exp $
+
 Index: support/rotatelogs.c
 --- support/rotatelogs.c.orig
 +++ support/rotatelogs.c

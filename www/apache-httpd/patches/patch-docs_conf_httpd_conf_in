@@ -1,6 +1,8 @@
-$OpenBSD: patch-docs_conf_httpd_conf_in,v 1.8 2017/03/17 07:36:35 sthen Exp $
---- docs/conf/httpd.conf.in.orig	Wed Aug 17 00:12:07 2016
-+++ docs/conf/httpd.conf.in	Wed Dec 21 11:09:53 2016
+$OpenBSD: patch-docs_conf_httpd_conf_in,v 1.9 2019/08/13 21:14:11 sthen Exp $
+
+Index: docs/conf/httpd.conf.in
+--- docs/conf/httpd.conf.in.orig
++++ docs/conf/httpd.conf.in
 @@ -74,8 +74,8 @@ Listen @@Port@@
  # It is usually good practice to create a dedicated user and group for
  # running httpd, as with most system services.

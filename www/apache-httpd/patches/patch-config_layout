@@ -1,4 +1,5 @@
-$OpenBSD: patch-config_layout,v 1.9 2018/03/29 19:30:53 sthen Exp $
+$OpenBSD: patch-config_layout,v 1.10 2019/08/13 21:14:11 sthen Exp $
+
 Index: config.layout
 --- config.layout.orig
 +++ config.layout

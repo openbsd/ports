@@ -1,4 +1,5 @@
-$OpenBSD: patch-docs_man_httpd_8,v 1.8 2018/10/01 15:21:24 sthen Exp $
+$OpenBSD: patch-docs_man_httpd_8,v 1.9 2019/08/13 21:14:11 sthen Exp $
+
 Index: docs/man/httpd.8
 --- docs/man/httpd.8.orig
 +++ docs/man/httpd.8

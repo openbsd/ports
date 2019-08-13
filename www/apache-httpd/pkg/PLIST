@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2019/06/16 21:08:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.32 2019/08/13 21:14:11 sthen Exp $
 @conflict apache-httpd-common-*
 @pkgpath www/apache-httpd,-main${FLAVOR_COMMA}
 @pkgpath www/apache-httpd,-common
@@ -956,6 +956,8 @@ share/doc/apache2/mod/mod_socache_dc.html.fr.utf8
 share/doc/apache2/mod/mod_socache_memcache.html
 share/doc/apache2/mod/mod_socache_memcache.html.en
 share/doc/apache2/mod/mod_socache_memcache.html.fr.utf8
+share/doc/apache2/mod/mod_socache_redis.html
+share/doc/apache2/mod/mod_socache_redis.html.en
 share/doc/apache2/mod/mod_socache_shmcb.html
 share/doc/apache2/mod/mod_socache_shmcb.html.en
 share/doc/apache2/mod/mod_socache_shmcb.html.fr.utf8
@@ -1040,6 +1042,7 @@ share/doc/apache2/mod/mpmt_os2.html.en
 share/doc/apache2/mod/mpmt_os2.html.fr.utf8
 share/doc/apache2/mod/overrides.html
 share/doc/apache2/mod/overrides.html.en
+share/doc/apache2/mod/overrides.html.fr.utf8
 share/doc/apache2/mod/prefork.html
 share/doc/apache2/mod/prefork.html.de
 share/doc/apache2/mod/prefork.html.en

@@ -1,4 +1,4 @@
-$OpenBSD: patch-modules_ssl_ssl_private_h,v 1.6 2018/10/24 13:23:59 sthen Exp $
+$OpenBSD: patch-modules_ssl_ssl_private_h,v 1.7 2019/08/13 21:14:11 sthen Exp $
 
 Index: modules/ssl/ssl_private.h
 --- modules/ssl/ssl_private.h.orig

@@ -1,8 +1,9 @@
-$OpenBSD: patch-configure,v 1.18 2019/04/02 08:17:08 sthen Exp $
+$OpenBSD: patch-configure,v 1.19 2019/08/13 21:14:11 sthen Exp $
+
 Index: configure
 --- configure.orig
 +++ configure
-@@ -3466,7 +3466,7 @@ do
+@@ -3468,7 +3468,7 @@ do
    ap_last="${ap_cur}"
    ap_cur=`eval "echo ${ap_cur}"`
  done
@@ -11,7 +12,7 @@ Index: configure
  
  
    APACHE_VAR_SUBST="$APACHE_VAR_SUBST exp_sysconfdir"
-@@ -4672,7 +4672,7 @@ APR_INCLUDEDIR=`$apr_config --includedir`
+@@ -4674,7 +4674,7 @@ APR_INCLUDEDIR=`$apr_config --includedir`
  APR_INCLUDES=`$apr_config --includes`
  APR_VERSION=`$apr_config --version`
  apr_major_version=`echo ${APR_VERSION} | sed 's,\..*,,'`

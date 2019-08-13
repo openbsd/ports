@@ -1,6 +1,8 @@
-$OpenBSD: patch-server_mpm_unix_c,v 1.2 2017/03/17 07:36:35 sthen Exp $
---- server/mpm_unix.c.orig	Fri Dec  2 11:42:55 2016
-+++ server/mpm_unix.c	Wed Dec 21 11:10:24 2016
+$OpenBSD: patch-server_mpm_unix_c,v 1.3 2019/08/13 21:14:11 sthen Exp $
+
+Index: server/mpm_unix.c
+--- server/mpm_unix.c.orig
++++ server/mpm_unix.c
 @@ -795,7 +795,7 @@ int ap_signal_server(int *exit_status, apr_pool_t *pco
              *exit_status = 1;
              return 1;

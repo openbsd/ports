@@ -1,4 +1,5 @@
-$OpenBSD: patch-support_apachectl_in,v 1.5 2018/10/01 15:21:24 sthen Exp $
+$OpenBSD: patch-support_apachectl_in,v 1.6 2019/08/13 21:14:11 sthen Exp $
+
 Index: support/apachectl.in
 --- support/apachectl.in.orig
 +++ support/apachectl.in
