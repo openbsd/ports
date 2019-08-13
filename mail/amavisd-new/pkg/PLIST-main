@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2018/10/16 20:28:09 giovanni Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2019/08/13 08:12:57 giovanni Exp $
 @pkgpath mail/amavisd-new
 @newgroup _vscan:530
 @newuser _vscan:530:_vscan:daemon:Amavisd-new Daemon:/var/empty:/sbin/nologin
@@ -42,6 +42,7 @@ share/doc/amavisd-new/README.policy-on-notifications
 share/doc/amavisd-new/README.postfix
 share/doc/amavisd-new/README.postfix.html
 share/doc/amavisd-new/README.protocol
+share/doc/amavisd-new/README.rspamd
 share/doc/amavisd-new/README.sendmail
 share/doc/amavisd-new/README.sendmail-dual
 share/doc/amavisd-new/README.sendmail-dual.old
@@ -62,3 +63,7 @@ share/examples/amavisd-new/amavisd.conf-default
 @sample /var/amavisd/db/
 @sample /var/amavisd/var/
 @sample /var/virusmails/
+@mode
+@owner
+@group
+share/snmp/

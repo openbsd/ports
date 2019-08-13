@@ -1,4 +1,4 @@
-$OpenBSD: patch-amavisd,v 1.16 2018/10/16 20:28:09 giovanni Exp $
+$OpenBSD: patch-amavisd,v 1.17 2019/08/13 08:12:57 giovanni Exp $
 
 Hunks 1, 4: Disable File::LibMagic in favour of safer file(1) from base.
 Hunks 2, 5: fix DKIM signing
@@ -6,7 +6,7 @@ Hunks 2, 5: fix DKIM signing
 Index: amavisd
 --- amavisd.orig
 +++ amavisd
-@@ -12934,7 +12934,7 @@ sub after_chroot_init() {
+@@ -12939,7 +12939,7 @@ sub after_chroot_init() {
                 grep(/\.pm\z/, keys %INC)) {
      next  if !grep($_ eq $m, qw(Amavis::Conf
        Archive::Tar Archive::Zip Compress::Zlib Compress::Raw::Zlib
@@ -15,15 +15,7 @@ Index: amavisd
        MIME::Entity MIME::Parser MIME::Tools Mail::Header Mail::Internet
        Digest::MD5 Digest::SHA Digest::SHA1 Crypt::OpenSSL::RSA
        Authen::SASL Authen::SASL::XS Authen::SASL::Cyrus Authen::SASL::Perl
-@@ -22814,6 +22814,7 @@ sub process_smtp_request($$$$) {
-         }
-         # load policy banks from the 'client_ipaddr_policy' lookup
-         Amavis::load_policy_bank($_,$msginfo) for @bank_names_cl;
-+        $msginfo->originating(c('originating'));
- 
-         $msginfo->client_addr($cl_ip);      # ADDR
-         $msginfo->client_port($cl_port);    # PORT
-@@ -30592,7 +30593,7 @@ sub new_SpamAssassin_instance {
+@@ -30859,7 +30859,7 @@ sub new_SpamAssassin_instance {
  #   PREFIX            => '/usr/local',
  #   DEF_RULES_DIR     => '/usr/local/share/spamassassin',
  #   LOCAL_RULES_DIR   => '/etc/mail/spamassassin',
@@ -32,7 +24,7 @@ Index: amavisd
  #see Mail::SpamAssassin man page for other options
    };
    if ($sa_version_num < 3.001005 && !defined $sa_args->{LOCAL_STATE_DIR})
-@@ -31367,17 +31368,8 @@ BEGIN {
+@@ -31634,17 +31634,8 @@ BEGIN {
    import Amavis::Unpackers::NewFilename qw(consumed_bytes);
  }
  
@@ -50,11 +42,3 @@ Index: amavisd
  
  use subs @EXPORT_OK;
  
-@@ -34357,6 +34349,7 @@ sub collect_some_dkim_info($) {
-     $sig_ind++;
-   }
-   Amavis::load_policy_bank($_,$msginfo) for @bank_names;
-+  $msginfo->originating(c('originating'));
-   $msginfo->dkim_signatures_valid(\@signatures_valid)  if @signatures_valid;
- # if (ll(5) && $sig_ind > 0) {
- #   # show which header fields are covered by which signature

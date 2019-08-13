@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2019/07/12 20:47:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2019/08/13 08:12:57 giovanni Exp $
 
 COMMENT-main=		interface between mailer MTA and content checkers
 COMMENT-utils=		utilities to monitor amavisd-new server
 
-V=			2.11.1
-DISTNAME=		amavisd-new-${V}
-PKGNAME-main=		${DISTNAME}
+V=			2.12.0
+DISTNAME=		amavis-v${V}
+PKGNAME-main=		amavisd-new-${V}
 PKGNAME-utils=		amavisd-new-utils-${V}
 CATEGORIES=		mail security
 
@@ -15,11 +15,7 @@ MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 # BSD / GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE} \
-			http://mirrors.catpipe.net/amavisd-new/ \
-			http://mirror.mainloop.se/amavisd/ \
-			http://mirror.cedratnet.com/amavisd-new/ \
-			http://mirror.omroep.nl/amavisd-new/
+MASTER_SITES=		https://gitlab.com/amavis/amavis/-/archive/v${V}/
 
 EXTRACT_SUFX=		.tar.bz2
 

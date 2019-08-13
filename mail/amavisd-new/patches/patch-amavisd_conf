@@ -1,8 +1,9 @@
-$OpenBSD: patch-amavisd_conf,v 1.9 2016/02/02 21:58:32 sthen Exp $
---- amavisd.conf.orig	Sun Oct 26 00:05:54 2014
-+++ amavisd.conf	Tue Feb  2 21:57:58 2016
-@@ -14,12 +14,12 @@ use strict;
- # $bypass_decode_parts = 1;         # controls running of decoders&dearchivers
+$OpenBSD: patch-amavisd_conf,v 1.10 2019/08/13 08:12:57 giovanni Exp $
+Index: amavisd.conf
+--- amavisd.conf.orig
++++ amavisd.conf
+@@ -17,12 +17,12 @@ use strict;
+                         # truncation in /proc/<pid>/stat and ps -e output
  
  $max_servers = 2;            # num of pre-forked children (2..30 is common), -m
 -$daemon_user  = 'vscan';     # (no default;  customary: vscan or amavis), -u
@@ -17,7 +18,7 @@ $OpenBSD: patch-amavisd_conf,v 1.9 2016/02/02 21:58:32 sthen Exp $
  $TEMPBASE = "$MYHOME/tmp";   # working directory, needs to exist, -T
  $ENV{TMPDIR} = $TEMPBASE;    # environment variable TMPDIR, used by SA, etc.
  $QUARANTINEDIR = '/var/virusmails';  # -Q
-@@ -232,7 +232,7 @@ $banned_filename_re = new_RE(
+@@ -235,7 +235,7 @@ $banned_filename_re = new_RE(
  
    qr'.\.(exe|vbs|pif|scr|cpl)$'i,             # banned extension - basic
  # qr'.\.(exe|vbs|pif|scr|cpl|bat|cmd|com)$'i, # banned extension - basic+cmd
@@ -26,7 +27,7 @@ $OpenBSD: patch-amavisd_conf,v 1.9 2016/02/02 21:58:32 sthen Exp $
  #        inf|ini|ins|isp|js|jse|lib|lnk|mda|mdb|mde|mdt|mdw|mdz|msc|msi|
  #        msp|mst|ocx|ops|pcd|pif|prg|reg|scr|sct|shb|shs|sys|vb|vbe|vbs|vxd|
  #        wmf|wsc|wsf|wsh)$'ix,                # banned extensions - long
-@@ -316,7 +316,7 @@ $banned_filename_re = new_RE(
+@@ -319,7 +319,7 @@ $banned_filename_re = new_RE(
  @decoders = (
    ['mail', \&do_mime_decode],
  # [[qw(asc uue hqx ync)], \&do_ascii],  # not safe
@@ -35,7 +36,7 @@ $OpenBSD: patch-amavisd_conf,v 1.9 2016/02/02 21:58:32 sthen Exp $
    ['Z',    \&do_uncompress, ['uncompress', 'gzip -d', 'zcat'] ],
    ['gz',   \&do_uncompress, 'gzip -d'],
    ['gz',   \&do_gunzip],
-@@ -335,8 +335,8 @@ $banned_filename_re = new_RE(
+@@ -338,8 +338,8 @@ $banned_filename_re = new_RE(
             # ['/usr/local/heirloom/usr/5bin/pax', 'pax', 'gcpio', 'cpio']
    ['deb',  \&do_ar, 'ar'],
  # ['a',    \&do_ar, 'ar'],  # unpacking .a seems an overkill
