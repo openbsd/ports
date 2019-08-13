@@ -1,9 +1,0 @@
-$OpenBSD: patch-bin_xmldiff,v 1.1.1.1 2010/09/21 20:31:13 jasper Exp $
---- bin/xmldiff.orig	Tue Sep 21 20:30:40 2010
-+++ bin/xmldiff	Tue Sep 21 20:30:48 2010
-@@ -1,4 +1,4 @@
--#!/usr/bin/python
-+#!${MODPY_BIN}
- 
- from xmldiff import main 
- main.run()

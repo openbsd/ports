@@ -1,34 +1,25 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2019/08/13 13:04:54 kmos Exp $
 
 COMMENT=		show differences between XML files/DOM trees
 
-MODPY_EGG_VERSION=	0.6.10
+MODPY_EGG_VERSION=	2.3
 DISTNAME=		xmldiff-${MODPY_EGG_VERSION}
 PKGNAME=		py-xmldiff-${MODPY_EGG_VERSION}
-REVISION=		3
 CATEGORIES=		textproc
 
-HOMEPAGE=		http://www.logilab.org/859/
+HOMEPAGE=		https://github.com/Shoobx/xmldiff
 
-# GPLv2
+# MIT
 PERMIT_PACKAGE=	Yes
-
-WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += pthread
 
 MODULES=		lang/python
 
-MASTER_SITES=		http://ftp.logilab.org/pub/xmldiff/
+MODPY_PI=		Yes
+MODPY_SETUPTOOLS=	Yes
 
-RUN_DEPENDS=		shells/bash \
-			textproc/py-xml
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/bin/{xmldiff,xmlrev}
-
-do-test:
-	@cd ${WRKSRC}/test/ && \
-		${MODPY_BIN} runtests.py
+RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR} \
+			textproc/py-lxml${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
