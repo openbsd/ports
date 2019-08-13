@@ -1,2 +1,4 @@
-SHA256 (libcoap-20180531.tar.xz) = nSrDejukcKrEIW2EDmJF7wIkDS7wCs/9JAmT88EdVZY=
-SIZE (libcoap-20180531.tar.xz) = 335772
+SHA256 (libcoap-3531087b.tar.gz) = iGMDBDlUUs7zweSwQj3J3ef8PpP9KoB8YnRIM/mXNbo=
+SHA256 (tinydtls-8414f8ac.tar.gz) = 0b/bfIPAT4Q+94lBnwMs15qvTwMhqjDVyGS2RvmetOQ=
+SIZE (libcoap-3531087b.tar.gz) = 328050
+SIZE (tinydtls-8414f8ac.tar.gz) = 204832

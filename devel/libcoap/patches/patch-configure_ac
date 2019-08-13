@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2018/06/14 21:15:26 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2019/08/13 21:40:42 sthen Exp $
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -595,6 +595,11 @@ case $host in
+@@ -616,6 +616,11 @@ case $host in
      #AC_SUBST(OS_MACOS)
      ;;
  

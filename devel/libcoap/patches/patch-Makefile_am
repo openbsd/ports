@@ -1,0 +1,17 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2019/08/13 21:40:42 sthen Exp $
+
+ld.lld won't allow -shared -pie (it doesn't make sense anyway)
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -131,8 +131,7 @@ libcoap_include_HEADERS = \
+ libcoap_@LIBCOAP_NAME_SUFFIX@_la_LDFLAGS =					\
+   -version-info $(LT_LIBCOAP_CURRENT):$(LT_LIBCOAP_REVISION):$(LT_LIBCOAP_AGE)	\
+   @libcoap_SYMBOLS@ \
+-  $(DTLS_LIBS) \
+-  -pie
++  $(DTLS_LIBS)
+ 
+ ## Collect symbols here we want to ignore while building the helper files
+ ## libcoap-$(LIBCOAP_API_VERSION).{map,sym} for the linker.

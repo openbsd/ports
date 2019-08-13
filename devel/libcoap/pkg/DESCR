@@ -8,12 +8,14 @@ resource-efficient CoAP servers and clients, including resource
 observation and block-wise transfer.
 
 Example implementations show how these features can be used in
-applications:
+applications, which are also useful in their own right:
 
-coap-client is a wget-like tool to generate simple requests for
+- coap-client is a wget-like tool to generate simple requests for
 retrieval and modification of resources on a remote server.
+(https://github.com/glenndehaan/ikea-tradfri-coap-docs has details
+about using this with IKEA Tradfri).
 
-coap-server is a basic server application that illustrates various
+- coap-server is a basic server application that illustrates various
 server-side features of libcoap.
 
-coap-rd implements a simple CoAP Resource Directory.
+- coap-rd implements a simple CoAP Resource Directory.
