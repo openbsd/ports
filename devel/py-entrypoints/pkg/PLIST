@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/11/02 18:27:33 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/08/13 23:14:46 kmos Exp $
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}entrypoints.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/entrypoints-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/entrypoints.py
