@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/13 18:40:10 gilles Exp $
+@bin bin/filter-rspamd
+share/doc/pkg-readmes/${PKGSTEM}
