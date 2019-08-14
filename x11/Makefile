@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.640 2019/08/04 19:47:21 chrisz Exp $
+# $OpenBSD: Makefile,v 1.641 2019/08/14 19:08:22 kmos Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -228,8 +228,6 @@
      SUBDIR += polkit-qt,qt5
      SUBDIR += pwm
      SUBDIR += py-gtk2
-     SUBDIR += py-kiwi
-     SUBDIR += py-osd
      SUBDIR += py-pyglet
      SUBDIR += py-qt4
      SUBDIR += py-qt5
