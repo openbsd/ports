@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/12/30 09:22:33 kevlo Exp $
-lib/python${MODPY_VERSION}/site-packages/_iconv_codec.so
-lib/python${MODPY_VERSION}/site-packages/iconv_codec.pth
-lib/python${MODPY_VERSION}/site-packages/iconv_codec.py
-lib/python${MODPY_VERSION}/site-packages/iconv_codec.pyc

@@ -1,5 +1,0 @@
-The CJKCodecs provides Unicode codecs that make Python aware of
-CJK (Chinese, Japanese and Korean) encodings such as EUC-JP,
-ISO-2022-KR, BIG5 and GB18030. By using this package, their
-characters can be treated as a character string instead of a
-byte sequence.
