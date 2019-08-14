@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_core_RS_cpp,v 1.1 2019/08/14 06:56:50 feinerer Exp $
+
+Index: src/core/RS.cpp
+--- src/core/RS.cpp.orig
++++ src/core/RS.cpp
+@@ -150,6 +150,8 @@ QStringList RS::getDirectoryList(const QString& subDir
+     dirList.append(appDir + "/../Resources/" + subDirectory);
+     dirList.append(appDir + "/../../../" + subDirectory);
+     dirList.append(QDir::currentPath() + "/" + subDirectory);
++#elif defined Q_OS_OPENBSD
++    dirList.append("${LOCALBASE}/share/qcad/" + subDirectory);
+ #else
+     dirList.append(appDir + "/" + subDirectory);
+ #endif

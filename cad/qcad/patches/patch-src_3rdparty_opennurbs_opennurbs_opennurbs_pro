@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_3rdparty_opennurbs_opennurbs_opennurbs_pro,v 1.1 2019/08/14 06:56:50 feinerer Exp $
+
+Index: src/3rdparty/opennurbs/opennurbs/opennurbs.pro
+--- src/3rdparty/opennurbs/opennurbs/opennurbs.pro.orig
++++ src/3rdparty/opennurbs/opennurbs/opennurbs.pro
+@@ -225,7 +225,7 @@ CONFIG(release, debug|release) {
+ else {
+     LIBS += -L../zlib/debug
+ }
+-LIBS += -lzlib
++LIBS += -lz
+ win32 {
+     #DEFINES += ON_DLL_EXPORTS ON_COMPILING_OPENNURBS NDEBUG
+     DEFINES += ON_COMPILING_OPENNURBS NDEBUG

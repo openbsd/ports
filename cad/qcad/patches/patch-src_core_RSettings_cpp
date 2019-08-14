@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_core_RSettings_cpp,v 1.1 2019/08/14 06:56:50 feinerer Exp $
+
+Index: src/core/RSettings.cpp
+--- src/core/RSettings.cpp.orig
++++ src/core/RSettings.cpp
+@@ -362,9 +362,13 @@ QString RSettings::getApplicationPath() {
+     }
+ #endif
+ 
++#ifdef Q_OS_OPENBSD
++    ret.cd("${LOCALBASE}/share/qcad");
++#else
+     if (ret.dirName() == "debug" || ret.dirName() == "release") {
+         ret.cdUp();
+     }
++#endif
+ 
+     return ret.path();
+ }

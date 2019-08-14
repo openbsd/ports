@@ -1,0 +1,15 @@
+$OpenBSD: patch-scripts_Widgets_CommandLine_CommandLine_js,v 1.1 2019/08/14 06:56:50 feinerer Exp $
+
+Index: scripts/Widgets/CommandLine/CommandLine.js
+--- scripts/Widgets/CommandLine/CommandLine.js.orig
++++ scripts/Widgets/CommandLine/CommandLine.js
+@@ -478,6 +478,9 @@ CommandLine.init = function(basePath) {
+     case "linux":
+         system = "Linux";
+         break;
++    case "openbsd":
++        system = "OpenBSD";
++        break;
+     }
+     EAction.handleUserMessage(
+                 "%1 %2 / %3 %4"

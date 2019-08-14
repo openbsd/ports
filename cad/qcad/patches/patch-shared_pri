@@ -1,0 +1,14 @@
+$OpenBSD: patch-shared_pri,v 1.1 2019/08/14 06:56:50 feinerer Exp $
+
+Index: shared.pri
+--- shared.pri.orig
++++ shared.pri
+@@ -164,7 +164,7 @@ else {
+ 
+ CONFIG -= warn_off
+ CONFIG += warn_on
+-CONFIG += debug_and_release ordered embed_manifest_dll embed_manifest_exe
++CONFIG += release ordered embed_manifest_dll embed_manifest_exe
+ 
+ win32-msvc2010 {
+     DEFINES += _CRT_SECURE_NO_WARNINGS

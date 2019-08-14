@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_core_core_pro,v 1.1 2019/08/14 06:56:50 feinerer Exp $
+
+Index: src/core/core.pro
+--- src/core/core.pro.orig
++++ src/core/core.pro
+@@ -295,7 +295,7 @@ RC_FILE = core.rc
+ OTHER_FILES += core.dox math/math.dox
+ DEFINES += QCADCORE_LIBRARY
+ 
+-LIBS += -lopennurbs -lzlib
++LIBS += -lopennurbs -lz
+ 
+ win32 {
+     LIBS += -lRpcrt4 -lAdvapi32

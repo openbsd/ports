@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_3rdparty_opennurbs_opennurbs_pro,v 1.1 2019/08/14 06:56:50 feinerer Exp $
+
+Index: src/3rdparty/opennurbs/opennurbs.pro
+--- src/3rdparty/opennurbs/opennurbs.pro.orig
++++ src/3rdparty/opennurbs/opennurbs.pro
+@@ -1,5 +1,4 @@
+ include (../../../shared.pri)
+ TEMPLATE = subdirs
+ SUBDIRS = \
+-    zlib \
+     opennurbs

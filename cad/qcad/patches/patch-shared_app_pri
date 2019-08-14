@@ -1,0 +1,14 @@
+$OpenBSD: patch-shared_app_pri,v 1.1 2019/08/14 06:56:50 feinerer Exp $
+
+Index: shared_app.pri
+--- shared_app.pri.orig
++++ shared_app.pri
+@@ -16,7 +16,7 @@ LIBS += \
+ !r_no_opennurbs {
+     LIBS += \
+         -lopennurbs \
+-        -lzlib
++        -lz
+ }
+ 
+ win32 {

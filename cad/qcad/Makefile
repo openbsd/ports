@@ -1,59 +1,80 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/14 02:16:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2019/08/14 06:56:50 feinerer Exp $
 
-COMMENT=	Qt-based 2D CAD system
+COMMENT =	Qt-based 2D CAD system
 
-V=		2.0.5.0
-DISTNAME=	qcad-${V}-1-community.src
-PKGNAME=	qcad-${V}
-REVISION=	7
-CATEGORIES=	cad graphics
+GH_ACCOUNT =	qcad
+GH_PROJECT =	qcad
+GH_TAGNAME =	v3.23.0.0
 
-HOMEPAGE=	http://www.ribbonsoft.com/qcad.html
+SO_VERSION =	0.0
+QCAD_LIBS =	qcadcore \
+		qcadecmaapi \
+		qcadentity \
+		qcadgrid \
+		qcadgui \
+		qcadoperations \
+		qcadsnap \
+		qcadspatialindex \
+		qcadstemmer \
+		spatialindexnavel
 
-# Source code is GPLv2 and data not specified
-PERMIT_PACKAGE=		Non-free data files
-PERMIT_DISTFILES=	Non-free data files
+.for _lib in ${QCAD_LIBS}
+SHARED_LIBS +=	${_lib}	${SO_VERSION}
+.endfor
 
-WANTLIB=		X11 Xext c m pthread ${COMPILER_LIBCXX}
+CATEGORIES =	cad graphics
 
-MASTER_SITES=	http://www.ribbonsoft.com/archives/qcad/
+HOMEPAGE =	https://www.qcad.org
 
-COMPILER =		base-clang ports-gcc base-gcc
+# GPLv3
+# https://raw.githubusercontent.com/qcad/qcad/master/LICENSE.txt
+PERMIT_PACKAGE =Yes
 
-MODULES=	x11/qt3
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5Designer
+WANTLIB += Qt5Gui Qt5Help Qt5Network Qt5OpenGL Qt5PrintSupport
+WANTLIB += Qt5Script Qt5ScriptTools Qt5Sql Qt5Svg Qt5Widgets Qt5Xml
+WANTLIB += Qt5XmlPatterns c cups jpeg m sqlite3 tiff z
 
-USE_GMAKE=	Yes
-NO_TEST=	Yes
+MODULES =	devel/qmake \
+		x11/qt5
 
-PORTHOME=	${WRKDIR}
+BUILD_DEPENDS =	x11/qt5/qtimageformats
+RUN_DEPENDS =	devel/desktop-file-utils
+LIB_DEPENDS =	x11/qt5/qtscript \
+		x11/qt5/qtsvg \
+		x11/qt5/qttools \
+		x11/qt5/qtxmlpatterns
 
-MAKE_ENV+=	QTDIR=${MODQT_LIBDIR} \
-		MAKE=${MAKE_PROGRAM} \
-		CC='${CC}' CXX='${CXX}'
+SEPARATE_BUILD =No
+USE_GMAKE =	Yes
 
-SUBST_VARS=	CXXFLAGS LOCALBASE MODQT_LIBDIR
+NO_TEST =	Yes
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/mkspecs/defs.pro \
-		${WRKSRC}/qcadlib/src/engine/rs_system.h \
-		${WRKSRC}/qcadlib/src/engine/rs_system.cpp \
-		${WRKSRC}/qcad/src/qc_applicationwindow.cpp
-
-do-build:
-	cd ${WRKBUILD}/scripts && \
-		${SETENV} ${MAKE_ENV} /bin/sh ./build_qcad.sh
+	# Do not require specific Qt version
+	sed -i "s|\$$\$${QT_VERSION}|5.5.0|g" \
+		${WRKSRC}/src/3rdparty/3rdparty.pro
+	${SUBST_CMD} ${WRKSRC}/src/core/RS.cpp \
+		${WRKSRC}/src/core/RSettings.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/qcad/qcad ${PREFIX}/bin
-.for dir in fonts patterns qm
-	${INSTALL_DATA_DIR} ${PREFIX}/share/qcad/${dir}
-	${INSTALL_DATA} ${WRKSRC}/qcad/${dir}/* ${PREFIX}/share/qcad/${dir}
+	${INSTALL_PROGRAM} ${WRKSRC}/release/qcad-bin ${PREFIX}/bin/qcad
+.for _lib in ${QCAD_LIBS}
+	${INSTALL_DATA} ${WRKSRC}/release/lib${_lib}.so \
+		${PREFIX}/lib/lib${_lib}.so.${SO_VERSION}
 .endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qcad
-	${INSTALL_DATA} ${WRKSRC}/qcad/data/* ${PREFIX}/share/examples/qcad
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/qcad
-	cd ${WRKSRC}/qcad/doc && tar cf - . | \
-		tar -C ${PREFIX}/share/doc/qcad -xf -
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/qcad/*
+	${INSTALL_DATA} ${WRKSRC}/release/*.a ${PREFIX}/lib/
+	${INSTALL_MAN} ${WRKSRC}/qcad.1 ${PREFIX}/man/man1
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/qcad.desktop ${PREFIX}/share/applications
+	cp -Rp ${WRKSRC}/examples ${PREFIX}/share/examples/qcad
+.for dir in fonts libraries linetypes patterns plugins scripts themes ts
+	cp -Rp ${WRKSRC}/${dir} ${PREFIX}/share/qcad/
+.endfor
+	find ${PREFIX} \( -name .gitignore -or -name *.pr[io] -or -name *.ts \) -delete
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/share/qcad
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/scripts/qcad_icon.png \
+		${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

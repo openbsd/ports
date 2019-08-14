@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_3rdparty_qt-labs-qtscriptgenerator-5_5_0_qtbindings_qtbindingsbase_pri,v 1.1 2019/08/14 06:56:50 feinerer Exp $
+
+Index: src/3rdparty/qt-labs-qtscriptgenerator-5.5.0/qtbindings/qtbindingsbase.pri
+--- src/3rdparty/qt-labs-qtscriptgenerator-5.5.0/qtbindings/qtbindingsbase.pri.orig
++++ src/3rdparty/qt-labs-qtscriptgenerator-5.5.0/qtbindings/qtbindingsbase.pri
+@@ -12,6 +12,6 @@ DESTDIR = $$PWD/../../../../plugins/script
+ 
+ QT += script
+ #CONFIG += plugin release build_all
+-CONFIG += debug_and_release
++CONFIG += release
+ GENERATEDCPP = $$PWD/../generated_cpp
+ TARGET=$$qtLibraryTarget($$TARGET)

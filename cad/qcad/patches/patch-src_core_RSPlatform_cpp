@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_core_RSPlatform_cpp,v 1.1 2019/08/14 06:56:50 feinerer Exp $
+
+Index: src/core/RSPlatform.cpp
+--- src/core/RSPlatform.cpp.orig
++++ src/core/RSPlatform.cpp
+@@ -43,7 +43,7 @@
+ QString RS::getHostId() {
+     return QString("%1_%2")
+             .arg(getSystemId())
+-#if defined(Q_OS_LINUX)
++#if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
+     .arg(getenv("HOSTNAME"));
+ #elif defined(Q_OS_MAC)
+     // environment variable HOSTNAME not exported on OS X by default:
+@@ -56,7 +56,7 @@ QString RS::getHostId() {
+ }
+ 
+ /**
+- * \return Unique system ID ("linux", "osx", "win").
++ * \return Unique system ID ("linux", "osx", "win", "openbsd").
+  */
+ QString RS::getSystemId() {
+ #if defined(Q_OS_LINUX)
+@@ -65,6 +65,8 @@ QString RS::getSystemId() {
+     return "osx";
+ #elif defined(Q_OS_WIN)
+     return "win";
++#elif defined(Q_OS_OPENBSD)
++    return "openbsd";
+ #else
+     return "unknown";
+ #endif
