@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/02/05 05:33:24 djm Exp $
-lib/python${MODPY_VERSION}/site-packages/flowd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-lib/python${MODPY_VERSION}/site-packages/flowd.so

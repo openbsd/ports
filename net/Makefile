@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1139 2019/07/19 12:22:21 kmos Exp $
+# $OpenBSD: Makefile,v 1.1140 2019/08/14 18:50:22 kmos Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -544,7 +544,6 @@
      SUBDIR += py-IOSXR,python3
      SUBDIR += py-IP
      SUBDIR += py-IP,python3
-     SUBDIR += py-adns
      SUBDIR += py-aiodns
      SUBDIR += py-aiodns,python3
      SUBDIR += py-ripe.atlas.cousteau
@@ -572,8 +571,6 @@
      SUBDIR += py-dpkt
      SUBDIR += py-eapi
      SUBDIR += py-eapi,python3
-     SUBDIR += py-flowd
-     SUBDIR += py-flowtools
      SUBDIR += py-ftpdlib
      SUBDIR += py-ftpdlib,python3
      SUBDIR += py-geventhttpclient
@@ -590,7 +587,6 @@
      SUBDIR += py-libcloud
      SUBDIR += py-libcloud,python3
      SUBDIR += py-libpcap
-     SUBDIR += py-medusa
      SUBDIR += py-minimalmodbus
      SUBDIR += py-minimalmodbus,python3
      SUBDIR += py-msgpack

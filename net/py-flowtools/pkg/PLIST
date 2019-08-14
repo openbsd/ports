@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/05/06 21:41:57 sthen Exp $
-bin/flowprint-full
-lib/python${MODPY_VERSION}/site-packages/flowtools.so
-lib/python${MODPY_VERSION}/site-packages/pyflowtools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-share/examples/py-flowtools/
-share/examples/py-flowtools/example.py

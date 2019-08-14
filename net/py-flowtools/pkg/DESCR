@@ -1,3 +1,0 @@
-This extension module gives you a simple python interface to NetFlow
-data as stored by Mark Fullmer's flow-tools package (see
-http://www.splintered.net/sw/flow-tools).

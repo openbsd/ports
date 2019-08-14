@@ -1,3 +1,0 @@
-Medusa is a 'server platform' -- it provides a framework for
-implementing asynchronous socket-based servers (TCP/IP and on Unix, Unix
-domain, sockets).
