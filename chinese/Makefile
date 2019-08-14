@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/04/01 04:31:33 kevlo Exp $
+# $OpenBSD: Makefile,v 1.26 2019/08/14 12:47:14 kmos Exp $
 
      SUBDIR =
      SUBDIR += c2t
@@ -9,7 +9,6 @@
      SUBDIR += libpinyin
      SUBDIR += libtabe
      SUBDIR += lunar
-     SUBDIR += py-zhCodecs
      SUBDIR += ttfm
 
 .include <bsd.port.subdir.mk>
