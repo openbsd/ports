@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.121 2019/08/10 20:15:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.122 2019/08/14 17:07:15 ajacoutot Exp $
 bin/bq
 bin/gcloud
 bin/git-credential-gcloud.sh
@@ -107,8 +107,6 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/app/images/config.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/images/config.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/instances_util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/instances_util.pyc
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/logs_requestor.py
-google-cloud-sdk/lib/googlecloudsdk/api_lib/app/logs_requestor.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/logs_util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/logs_util.pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/app/metric_names.py
@@ -4149,6 +4147,19 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iam/v1/iam_v1_messages.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iam/v1/resources.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iam/v1/resources.pyc
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iam_v1.json
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iamassist/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iamassist/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iamassist/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iamassist/v1alpha2/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iamassist/v1alpha2/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iamassist/v1alpha2/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iamassist/v1alpha2/iamassist_v1alpha2_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iamassist/v1alpha2/iamassist_v1alpha2_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iamassist/v1alpha2/iamassist_v1alpha2_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iamassist/v1alpha2/iamassist_v1alpha2_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iamassist/v1alpha2/resources.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iamassist/v1alpha2/resources.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iamassist_v1alpha2.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iamcredentials/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iamcredentials/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iamcredentials/__init__.pyc
@@ -4717,6 +4728,19 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/tpu/v1beta1/tpu_v1beta1_mes
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/tpu_v1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/tpu_v1alpha1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/tpu_v1beta1.json
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/translate/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/translate/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/translate/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/translate/v3beta1/
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/translate/v3beta1/__init__.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/translate/v3beta1/__init__.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/translate/v3beta1/resources.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/translate/v3beta1/resources.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/translate/v3beta1/translate_v3beta1_client.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/translate/v3beta1/translate_v3beta1_client.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/translate/v3beta1/translate_v3beta1_messages.py
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/translate/v3beta1/translate_v3beta1_messages.pyc
+google-cloud-sdk/lib/googlecloudsdk/third_party/apis/translate_v3beta1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/videointelligence/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/videointelligence/__init__.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/videointelligence/__init__.pyc
@@ -5468,7 +5492,6 @@ google-cloud-sdk/lib/surface/build_artifacts/operations/
 google-cloud-sdk/lib/surface/build_artifacts/operations/__init__.py
 google-cloud-sdk/lib/surface/build_artifacts/operations/__init__.pyc
 google-cloud-sdk/lib/surface/build_artifacts/operations/describe.yaml
-google-cloud-sdk/lib/surface/build_artifacts/operations/list.yaml
 google-cloud-sdk/lib/surface/build_artifacts/packages/
 google-cloud-sdk/lib/surface/build_artifacts/packages/__init__.py
 google-cloud-sdk/lib/surface/build_artifacts/packages/__init__.pyc
@@ -5480,8 +5503,6 @@ google-cloud-sdk/lib/surface/build_artifacts/print_settings/gradle.py
 google-cloud-sdk/lib/surface/build_artifacts/print_settings/gradle.pyc
 google-cloud-sdk/lib/surface/build_artifacts/print_settings/maven.py
 google-cloud-sdk/lib/surface/build_artifacts/print_settings/maven.pyc
-google-cloud-sdk/lib/surface/build_artifacts/print_settings/maven_pom.py
-google-cloud-sdk/lib/surface/build_artifacts/print_settings/maven_pom.pyc
 google-cloud-sdk/lib/surface/build_artifacts/print_settings/npm.py
 google-cloud-sdk/lib/surface/build_artifacts/print_settings/npm.pyc
 google-cloud-sdk/lib/surface/build_artifacts/repositories/
@@ -6465,8 +6486,13 @@ google-cloud-sdk/lib/surface/compute/resource_policies/create/__init__.py
 google-cloud-sdk/lib/surface/compute/resource_policies/create/__init__.pyc
 google-cloud-sdk/lib/surface/compute/resource_policies/create/snapshot_schedule.py
 google-cloud-sdk/lib/surface/compute/resource_policies/create/snapshot_schedule.pyc
-google-cloud-sdk/lib/surface/compute/resource_policies/create/vm_maintenance.py
-google-cloud-sdk/lib/surface/compute/resource_policies/create/vm_maintenance.pyc
+google-cloud-sdk/lib/surface/compute/resource_policies/create/vm_maintenance/
+google-cloud-sdk/lib/surface/compute/resource_policies/create/vm_maintenance/__init__.py
+google-cloud-sdk/lib/surface/compute/resource_policies/create/vm_maintenance/__init__.pyc
+google-cloud-sdk/lib/surface/compute/resource_policies/create/vm_maintenance/concurrency_limit.py
+google-cloud-sdk/lib/surface/compute/resource_policies/create/vm_maintenance/concurrency_limit.pyc
+google-cloud-sdk/lib/surface/compute/resource_policies/create/vm_maintenance/maintenance_window.py
+google-cloud-sdk/lib/surface/compute/resource_policies/create/vm_maintenance/maintenance_window.pyc
 google-cloud-sdk/lib/surface/compute/resource_policies/create_snapshot_schedule.py
 google-cloud-sdk/lib/surface/compute/resource_policies/create_snapshot_schedule.pyc
 google-cloud-sdk/lib/surface/compute/resource_policies/create_vm_maintenance.py
@@ -10965,6 +10991,8 @@ google-cloud-sdk/lib/third_party/oauth2client/_helpers.py
 google-cloud-sdk/lib/third_party/oauth2client/_helpers.pyc
 google-cloud-sdk/lib/third_party/oauth2client/_openssl_crypt.py
 google-cloud-sdk/lib/third_party/oauth2client/_openssl_crypt.pyc
+google-cloud-sdk/lib/third_party/oauth2client/_pkce.py
+google-cloud-sdk/lib/third_party/oauth2client/_pkce.pyc
 google-cloud-sdk/lib/third_party/oauth2client/_pure_python_crypt.py
 google-cloud-sdk/lib/third_party/oauth2client/_pure_python_crypt.pyc
 google-cloud-sdk/lib/third_party/oauth2client/_pycrypto_crypt.py
