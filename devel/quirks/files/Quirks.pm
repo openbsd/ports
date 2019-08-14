@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.795 2019/08/13 13:07:11 kmos Exp $
+# $OpenBSD: Quirks.pm,v 1.796 2019/08/14 13:29:50 kmos Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1268,6 +1268,14 @@ my $obsolete_reason = {
 	'py-extremes' => 3,
 	'py-kid' => 3,
 	'py-Chart' => 3,
+	'py-id3' => 3,
+	'py-tagger' => 3,
+	'py-zhCodecs' => 3,
+	'py-iconvcodec' => 3,
+	'py-cjkcodecs' => 3,
+	'py-cdb' => 3,
+	'py-pgsql' => 3,
+	'pgworksheet' => 3,
 };
 
 # reasons for obsolete packages
