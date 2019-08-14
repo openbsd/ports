@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2019/07/12 20:47:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2019/08/14 05:59:50 bentley Exp $
 
 COMMENT=		new MH mail handling program
 
@@ -34,6 +34,8 @@ FLAVOR?=
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 SEPARATE_BUILD=		Yes
+
+# much use of .fc
 USE_GROFF =		Yes
 
 .if ${FLAVOR:Msasl}
