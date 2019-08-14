@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.418 2019/07/17 08:08:13 fcambus Exp $
+# $OpenBSD: Makefile,v 1.419 2019/08/14 12:43:52 kmos Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -196,7 +196,6 @@
      SUBDIR += py-discogs-client
      SUBDIR += py-discogs-client,python3
      SUBDIR += py-eyed3
-     SUBDIR += py-id3
      SUBDIR += py-last
      SUBDIR += py-last,python3
      SUBDIR += py-mpd
@@ -207,7 +206,6 @@
      SUBDIR += py-mutagen
      SUBDIR += py-mutagen,python3
      SUBDIR += py-ogg
-     SUBDIR += py-tagger
      SUBDIR += py-tagpy
      SUBDIR += py-tagpy,python3
      SUBDIR += py-vorbis

@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:16:55 espie Exp $
-lib/python${MODPY_VERSION}/site-packages/ID3.py
-lib/python${MODPY_VERSION}/site-packages/ID3.pyc
-share/doc/py-id3/
-share/doc/py-id3/README
