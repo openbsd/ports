@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/10 13:58:06 ajacoutot Exp $
-lib/python${MODPY_VERSION}/site-packages/easydoc.py
-lib/python${MODPY_VERSION}/site-packages/easydoc.pyc
-lib/python${MODPY_VERSION}/site-packages/easydocp.py
-lib/python${MODPY_VERSION}/site-packages/easydocp.pyc
-lib/python${MODPY_VERSION}/site-packages/htmltmpl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-lib/python${MODPY_VERSION}/site-packages/htmltmpl.py
-lib/python${MODPY_VERSION}/site-packages/htmltmpl.pyc
