@@ -1,0 +1,14 @@
+$OpenBSD: patch-scripts_postprocess-unix_sh,v 1.1.1.1 2019/08/14 12:09:41 feinerer Exp $
+
+Index: scripts/postprocess-unix.sh
+--- scripts/postprocess-unix.sh.orig
++++ scripts/postprocess-unix.sh
+@@ -8,7 +8,7 @@ APPDATADIR="${THISDIR}/unix/appdata"
+ TSDIRLC="${LCDIR}/ts"
+ TSDIRPI="${PIDIR}/ts"
+ SPTDIR="${LCDIR}/support"
+-LRELEASE="lrelease"
++LRELEASE="${MODQT_LRELEASE}"
+ 
+ cd "${THISDIR}"
+ 

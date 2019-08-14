@@ -1,0 +1,13 @@
+$OpenBSD: patch-common_pri,v 1.1.1.1 2019/08/14 12:09:41 feinerer Exp $
+
+Index: common.pri
+--- common.pri.orig
++++ common.pri
+@@ -59,7 +59,6 @@ win32 {
+ 
+ 
+ QMAKE_CXXFLAGS_DEBUG += -g
+-QMAKE_CXXFLAGS += -g
+ 
+ # fix for GitHub Issue #880
+ # prevent QMake from using -isystem flag for system include path
