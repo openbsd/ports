@@ -1,17 +1,19 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2019/02/04 21:26:06 fcambus Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2019/08/14 10:07:17 fcambus Exp $
 
-Make PortAudio and CAPSImage detection conditional and disabled by default,
-and disable building the Python GTK+2 user interface.
+Make PortAudio, PortMidi and CAPSImage detection conditional and disabled
+by default, and disable building the Python GTK+2 user interface.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -57,6 +57,12 @@ set(ENABLE_SMALL_MEM 0
+@@ -57,6 +57,14 @@ set(ENABLE_SMALL_MEM 0
      CACHE BOOL "Enable to use less memory - at the expense of emulation speed")
  set(ENABLE_WINUAE_CPU 1
      CACHE BOOL "Enable WinUAE CPU core")
 +set(ENABLE_PORTAUDIO 0
 +    CACHE BOOL "Enable building with PortAudio to enable microphone input in Falcon mode")
++set(ENABLE_PORTMIDI 0
++    CACHE BOOL "Enable building with PortMidi")
 +set(ENABLE_CAPSIMAGE 0
 +    CACHE BOOL "Enable building with CAPSImage for using .IPF, .RAW and .CTR disk images")
 +set(ENABLE_UI 0
@@ -19,7 +21,7 @@ Index: CMakeLists.txt
  
  # Run-time checks with GCC "mudflap" etc features:
  # - stack protection
-@@ -144,20 +150,24 @@ if (NOT ENABLE_OSX_BUNDLE)
+@@ -144,20 +152,26 @@ if (NOT ENABLE_OSX_BUNDLE)
  	endif(X11_FOUND)
  endif()
  
@@ -34,10 +36,16 @@ Index: CMakeLists.txt
 +	endif(PORTAUDIO_FOUND)
 +endif(ENABLE_PORTAUDIO)
  
- find_package(PortMidi)
- if(PORTMIDI_FOUND)
- 	set(HAVE_PORTMIDI 1)
- endif(PORTMIDI_FOUND)
+-find_package(PortMidi)
+-if(PORTMIDI_FOUND)
+-	set(HAVE_PORTMIDI 1)
+-endif(PORTMIDI_FOUND)
++if(ENABLE_PORTMIDI)
++	find_package(PortMidi)
++	if(PORTMIDI_FOUND)
++		set(HAVE_PORTMIDI 1)
++	endif(PORTMIDI_FOUND)
++endif(ENABLE_PORTMIDI)
  
 -find_package(CapsImage)
 -if(CAPSIMAGE_FOUND)
@@ -52,7 +60,7 @@ Index: CMakeLists.txt
  
  find_package(Udev)
  if(UDEV_FOUND)
-@@ -338,10 +348,12 @@ add_subdirectory(doc)
+@@ -338,10 +352,12 @@ add_subdirectory(doc)
  add_subdirectory(tests)
  add_subdirectory(tools)
  
@@ -69,7 +77,7 @@ Index: CMakeLists.txt
  
  if(UNIX AND NOT ENABLE_OSX_BUNDLE)
  	add_subdirectory(share)
-@@ -389,11 +401,13 @@ else()
+@@ -389,23 +405,29 @@ else()
    message( "  - png :\tnot found, install it to compress screenshot/avi files using png" )
  endif(PNG_FOUND)
  
@@ -86,11 +94,18 @@ Index: CMakeLists.txt
 +  endif(PORTAUDIO_FOUND)
 +endif(ENABLE_PORTAUDIO)
  
- if(PORTMIDI_FOUND)
-   message( "  - portmidi :\tfound, required for (non-Linux) MIDI support" )
-@@ -401,11 +415,13 @@ else()
-   message( "  - portmidi :\tnot found, install it for MIDI support on Windows / OSX" )
- endif(PORTMIDI_FOUND)
+-if(PORTMIDI_FOUND)
+-  message( "  - portmidi :\tfound, required for (non-Linux) MIDI support" )
+-else()
+-  message( "  - portmidi :\tnot found, install it for MIDI support on Windows / OSX" )
+-endif(PORTMIDI_FOUND)
++if(ENABLE_PORTMIDI)
++  if(PORTMIDI_FOUND)
++    message( "  - portmidi :\tfound, required for (non-Linux) MIDI support" )
++  else()
++    message( "  - portmidi :\tnot found, install it for MIDI support on Windows / OSX" )
++  endif(PORTMIDI_FOUND)
++endif(ENABLE_PORTMIDI)
  
 -if(CAPSIMAGE_FOUND)
 -  message( "  - capsimage :\tv${CAPSIMAGE_VERSION} found, allow to use .IPF, .RAW and .CTR disk images" )
