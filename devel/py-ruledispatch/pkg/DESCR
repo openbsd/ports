@@ -1,3 +1,0 @@
-Rule-based Dispatching and Generic Functions.  The dispatch module
-allows Python programmers to write generic functions to handle
-various problems based on rules for the arguments it receives.

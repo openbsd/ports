@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1881 2019/08/09 13:17:41 stsp Exp $
+# $OpenBSD: Makefile,v 1.1882 2019/08/14 18:39:05 kmos Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1503,7 +1503,6 @@
      SUBDIR += py-modulegraph,python3
      SUBDIR += py-monotonic
      SUBDIR += py-monotonic,python3
-     SUBDIR += py-monthdelta
      SUBDIR += py-more-itertools
      SUBDIR += py-more-itertools,python3
      SUBDIR += py-mox
@@ -1529,7 +1528,6 @@
      SUBDIR += py-objgraph,python3
      SUBDIR += py-olefile
      SUBDIR += py-olefile,python3
-     SUBDIR += py-optik
      SUBDIR += py-parallel
      SUBDIR += py-parallel,python3
      SUBDIR += py-parsedatetime
@@ -1567,7 +1565,6 @@
      SUBDIR += py-prompt_toolkit,python3
      SUBDIR += py-protobuf
      SUBDIR += py-protobuf,python3
-     SUBDIR += py-protocols
      SUBDIR += py-ptyprocess
      SUBDIR += py-ptyprocess,python3
      SUBDIR += py-py
@@ -1588,7 +1585,6 @@
      SUBDIR += py-rope
      SUBDIR += py-rope,python3
      SUBDIR += py-ruamel.ordereddict
-     SUBDIR += py-ruledispatch
      SUBDIR += py-selectors2
      SUBDIR += py-send2trash
      SUBDIR += py-send2trash,python3
@@ -1608,7 +1604,6 @@
      SUBDIR += py-setuptools_trial,python3
      SUBDIR += py-sh
      SUBDIR += py-sh,python3
-     SUBDIR += py-silc
      SUBDIR += py-simpleeval
      SUBDIR += py-simpleeval,python3
      SUBDIR += py-simplegeneric
@@ -1662,7 +1657,6 @@
      SUBDIR += py-texscythe
      SUBDIR += py-tox
      SUBDIR += py-tox,python3
-     SUBDIR += py-tpg
      SUBDIR += py-traitlets
      SUBDIR += py-traitlets,python3
      SUBDIR += py-trollius
@@ -1680,8 +1674,6 @@
      SUBDIR += py-uncompyle6,python3
      SUBDIR += py-unicorn
      SUBDIR += py-unicorn,python3
-     SUBDIR += py-unit
-     SUBDIR += py-unit,no_x11
      SUBDIR += py-unittest2
      SUBDIR += py-urwid
      SUBDIR += py-urwid,python3
@@ -1724,7 +1716,6 @@
      SUBDIR += py-zopeinterface
      SUBDIR += py-zopeinterface,python3
      SUBDIR += py-zopetesting
-     SUBDIR += pybugz
      SUBDIR += pyflakes
      SUBDIR += pyflakes,python3
      SUBDIR += pygame

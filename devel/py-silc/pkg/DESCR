@@ -1,3 +1,0 @@
-PySilc is a near-complete set of Python bindings for creating SILC
-clients using the silc-toolkit. It allows developers to write
-simple bots and clients for connecting to SILC servers.

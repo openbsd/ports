@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/01/04 13:56:24 benoit Exp $
-lib/python${MODPY_VERSION}/site-packages/MonthDelta-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/MonthDelta-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/MonthDelta-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/MonthDelta-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/MonthDelta-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/monthdelta.py
-lib/python${MODPY_VERSION}/site-packages/monthdelta.pyc
