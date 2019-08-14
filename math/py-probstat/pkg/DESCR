@@ -1,8 +1,0 @@
-probstat is a probability and statistics utilities module for Python.
-
-It currently has objects that implement:
-
- * Permutations
- * Combinations
- * Cartesian product
- * Priority Queue
