@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2019/04/03 07:29:51 bentley Exp $
+# $OpenBSD: Makefile,v 1.190 2019/08/14 18:43:48 kmos Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -86,7 +86,6 @@
      SUBDIR += py-imdb
      SUBDIR += py-memcached
      SUBDIR += py-memcached,python3
-     SUBDIR += pymissile
      SUBDIR += randtype
      SUBDIR += redshift
      SUBDIR += remind
