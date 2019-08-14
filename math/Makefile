@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2019/08/13 08:31:17 pirofti Exp $
+# $OpenBSD: Makefile,v 1.167 2019/08/14 12:03:33 feinerer Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -59,6 +59,7 @@
      SUBDIR += mlpack
      SUBDIR += mlpack,
      SUBDIR += moo
+     SUBDIR += muparser
      SUBDIR += netcdf
      SUBDIR += nlopt
      SUBDIR += nonogram
