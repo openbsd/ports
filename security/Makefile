@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.549 2019/07/23 19:27:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.550 2019/08/14 18:57:44 kmos Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -273,7 +273,6 @@
      SUBDIR += py-M2Crypto,python3
      SUBDIR += py-PyNaCl
      SUBDIR += py-PyNaCl,python3
-     SUBDIR += py-Rijndael
      SUBDIR += py-aes
      SUBDIR += py-aes,python3
      SUBDIR += py-artifacts
@@ -286,8 +285,6 @@
      SUBDIR += py-axolotl-curve25519,python3
      SUBDIR += py-bcrypt
      SUBDIR += py-bcrypt,python3
-     SUBDIR += py-crack
-     SUBDIR += py-cryptkit
      SUBDIR += py-cryptodome
      SUBDIR += py-cryptodome,python3
      SUBDIR += py-cryptography

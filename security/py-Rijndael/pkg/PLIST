@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2003/08/29 20:34:54 sturm Exp $
-lib/python${MODPY_VERSION}/site-packages/pyRijndael.py
-lib/python${MODPY_VERSION}/site-packages/pyRijndael.pyc

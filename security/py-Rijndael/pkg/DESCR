@@ -1,4 +1,0 @@
-A pure-python implementation of the AES Rijndael Block Cipher.
-Basic on Phil Fresle's VB implementation.  Notice: this has not
-been verified to correctly implement the Rijndael cipher.  You may
-want to test it yourself before using in a hostile environment.
