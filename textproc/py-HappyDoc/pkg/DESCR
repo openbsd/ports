@@ -1,4 +1,0 @@
-HappyDoc is a tool for extracting documentation from Python source
-code. It differs from other such applications by the fact that it
-uses the parse tree for a module to derive the information and does
-not import the module.

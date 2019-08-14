@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.605 2019/08/12 15:19:16 kmos Exp $
+# $OpenBSD: Makefile,v 1.606 2019/08/14 19:00:33 kmos Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -354,7 +354,6 @@
      SUBDIR += pplatex
      SUBDIR += pugixml
      SUBDIR += pup
-     SUBDIR += py-HappyDoc
      SUBDIR += py-ICU
      SUBDIR += py-ICU,python3
      SUBDIR += py-MarkupSafe
@@ -391,14 +390,12 @@
      SUBDIR += py-emoji,python3
      SUBDIR += py-enchant
      SUBDIR += py-enchant,python3
-     SUBDIR += py-epydoc
      SUBDIR += py-feedparser
      SUBDIR += py-feedparser,python3
      SUBDIR += py-humanize
      SUBDIR += py-humanize,python3
      SUBDIR += py-iso8601
      SUBDIR += py-iso8601,python3
-     SUBDIR += py-jaxml
      SUBDIR += py-jellyfish
      SUBDIR += py-jellyfish,python3
      SUBDIR += py-lxml
@@ -440,7 +437,6 @@
      SUBDIR += py-rdflib,python3
      SUBDIR += py-recommonmark
      SUBDIR += py-recommonmark,python3
-     SUBDIR += py-rtf
      SUBDIR += py-ruamel.yaml
      SUBDIR += py-ruamel.yaml,python3
      SUBDIR += py-semver

@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/10 14:00:27 xsa Exp $
-lib/python${MODPY_VERSION}/site-packages/jaxml.py
-lib/python${MODPY_VERSION}/site-packages/jaxml.pyc
-share/examples/py-jaxml/
-share/examples/py-jaxml/template.htt
-share/examples/py-jaxml/test.py
