@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2018/06/29 22:16:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.28 2019/08/15 06:51:26 landry Exp $
 @bin bin/xfdesktop
 @bin bin/xfdesktop-settings
 @man man/man1/xfdesktop.1
@@ -6,6 +6,7 @@ share/applications/xfce-backdrop-settings.desktop
 share/backgrounds/
 share/backgrounds/xfce/
 share/backgrounds/xfce/xfce-blue.jpg
+share/backgrounds/xfce/xfce-stripes.png
 share/backgrounds/xfce/xfce-teal.jpg
 share/icons/hicolor/32x32/apps/xfce4-backdrop.png
 share/icons/hicolor/32x32/apps/xfce4-menueditor.png
@@ -25,6 +26,7 @@ share/locale/da/LC_MESSAGES/xfdesktop.mo
 share/locale/de/LC_MESSAGES/xfdesktop.mo
 share/locale/el/LC_MESSAGES/xfdesktop.mo
 share/locale/en_AU/LC_MESSAGES/xfdesktop.mo
+share/locale/en_CA/LC_MESSAGES/xfdesktop.mo
 share/locale/en_GB/LC_MESSAGES/xfdesktop.mo
 share/locale/eo/LC_MESSAGES/xfdesktop.mo
 share/locale/es/LC_MESSAGES/xfdesktop.mo
@@ -37,7 +39,9 @@ share/locale/gl/LC_MESSAGES/xfdesktop.mo
 share/locale/he/LC_MESSAGES/xfdesktop.mo
 share/locale/hr/LC_MESSAGES/xfdesktop.mo
 share/locale/hu/LC_MESSAGES/xfdesktop.mo
+share/locale/hy_AM/LC_MESSAGES/xfdesktop.mo
 share/locale/id/LC_MESSAGES/xfdesktop.mo
+share/locale/ie/LC_MESSAGES/xfdesktop.mo
 share/locale/is/LC_MESSAGES/xfdesktop.mo
 share/locale/it/LC_MESSAGES/xfdesktop.mo
 share/locale/ja/LC_MESSAGES/xfdesktop.mo
@@ -47,6 +51,7 @@ share/locale/lt/LC_MESSAGES/xfdesktop.mo
 share/locale/lv/LC_MESSAGES/xfdesktop.mo
 share/locale/ms/LC_MESSAGES/xfdesktop.mo
 share/locale/nb/LC_MESSAGES/xfdesktop.mo
+share/locale/ne/LC_MESSAGES/xfdesktop.mo
 share/locale/nl/LC_MESSAGES/xfdesktop.mo
 share/locale/nn/LC_MESSAGES/xfdesktop.mo
 share/locale/oc/LC_MESSAGES/xfdesktop.mo
