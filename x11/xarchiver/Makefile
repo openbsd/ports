@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:51:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/08/15 05:43:15 landry Exp $
 
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
 GH_ACCOUNT =	ib
 GH_PROJECT =	xarchiver
-GH_COMMIT =		358d2f86a74cc37573e6c5175f40f2a810c2b0a7
-DISTNAME =		xarchiver-0.5.4.12pl0
-REVISION =		3
+GH_TAGNAME =	0.5.4.14
 
 HOMEPAGE =	http://xarchiver.sourceforge.net
 
@@ -14,8 +12,8 @@ HOMEPAGE =	http://xarchiver.sourceforge.net
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c cairo
-WANTLIB += cairo-gobject dbus-1 epoxy expat ffi fontconfig freetype
+WANTLIB += Xrender atk-1.0 atk-bridge-2.0 c cairo
+WANTLIB += cairo-gobject epoxy expat ffi fontconfig freetype
 WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png

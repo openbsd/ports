@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/06/29 22:16:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/08/15 05:43:15 landry Exp $
 @bin bin/xarchiver
 libexec/thunar-archive-plugin/
 libexec/thunar-archive-plugin/xarchiver.tap
@@ -91,6 +91,7 @@ share/locale/zh_TW/LC_MESSAGES/xarchiver.mo
 share/pixmaps/
 share/pixmaps/xarchiver/
 share/pixmaps/xarchiver/xarchiver-add.png
+share/pixmaps/xarchiver/xarchiver-close.png
 share/pixmaps/xarchiver/xarchiver-extract.png
 share/pixmaps/xarchiver/xarchiver-html.png
 @tag gtk-update-icon-cache %D/share/icons/hicolor
