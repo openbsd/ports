@@ -1,0 +1,20 @@
+$OpenBSD: patch-common_display-profiles_c,v 1.1 2019/08/15 06:49:12 landry Exp $
+
+workaround for xfce4-display-settings double-free
+
+https://bugzilla.xfce.org/show_bug.cgi?id=15816
+
+Index: common/display-profiles.c
+--- common/display-profiles.c.orig
++++ common/display-profiles.c
+@@ -162,10 +162,6 @@ display_settings_get_profiles (gchar **display_infos, 
+         g_free (profile_name);
+     }
+ 
+-    for (m = 0; m < noutput; ++m)
+-    {
+-        g_free (display_infos[m]);
+-    }
+     g_free (display_infos);
+     g_list_free (channel_contents);
+     g_hash_table_destroy (properties);
