@@ -1,9 +1,9 @@
-# $OpenBSD: xfce4.port.mk,v 1.27 2019/04/27 16:08:56 landry Exp $
+# $OpenBSD: xfce4.port.mk,v 1.28 2019/08/15 06:35:32 landry Exp $
 
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
 
-XFCE_DESKTOP_VERSION=	4.12.0
+XFCE_DESKTOP_VERSION=	4.14.0
 CATEGORIES+=	x11/xfce4
 
 USE_GMAKE?=	Yes
@@ -34,42 +34,42 @@ MODXFCE_RUN_DEPENDS+=  x11/gtk+3,-guic
 .endif
 
 .if defined(XFCE_PLUGIN)
-HOMEPAGE?=	http://goodies.xfce.org/projects/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin
+HOMEPAGE?=	https://goodies.xfce.org/projects/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin
 
-MASTER_SITES?=	http://archive.xfce.org/src/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/${XFCE_BRANCH}/
-MASTER_SITES_GIT?=	http://git.xfce.org/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/snapshot/
+MASTER_SITES?=	https://archive.xfce.org/src/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/${XFCE_BRANCH}/
+MASTER_SITES_GIT?=	https://git.xfce.org/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/snapshot/
 DISTNAME?=	xfce4-${XFCE_PLUGIN}-plugin-${XFCE_VERSION}
 DISTNAME_GIT?=	xfce4-${XFCE_PLUGIN}-plugin-${XFCE_COMMIT}
 PKGNAME?=	xfce4-${XFCE_PLUGIN}-${XFCE_VERSION}
 
 MODXFCE_LIB_DEPENDS=	x11/xfce4/xfce4-panel
-MODXFCE_WANTLIB?=	xfce4panel-1.0
+MODXFCE_WANTLIB?=	xfce4panel-2.0
 MODXFCE_PURGE_LA?=	lib/xfce4/panel/plugins lib/xfce4/panel-plugins
 .elif defined(XFCE_GOODIE)
-HOMEPAGE?=	http://goodies.xfce.org/projects/applications/${XFCE_GOODIE}
+HOMEPAGE?=	https://goodies.xfce.org/projects/applications/${XFCE_GOODIE}
 
-MASTER_SITES?=	http://archive.xfce.org/src/apps/${XFCE_GOODIE:L}/${XFCE_BRANCH}/
-MASTER_SITES_GIT?=	http://git.xfce.org/apps/${XFCE_GOODIE:L}/snapshot/
+MASTER_SITES?=	https://archive.xfce.org/src/apps/${XFCE_GOODIE:L}/${XFCE_BRANCH}/
+MASTER_SITES_GIT?=	https://git.xfce.org/apps/${XFCE_GOODIE:L}/snapshot/
 DISTNAME?=	${XFCE_GOODIE}-${XFCE_VERSION}
 DISTNAME_GIT?=	${XFCE_GOODIE}-${XFCE_COMMIT}
 PKGNAME?=	${XFCE_GOODIE}-${XFCE_VERSION}
 .elif defined(XFCE_ARTWORK)
-HOMEPAGE?=	http://www.xfce.org/projects/
+HOMEPAGE?=	https://www.xfce.org/projects/
 
-MASTER_SITES?=	http://archive.xfce.org/src/art/${XFCE_ARTWORK}/${XFCE_BRANCH}/
+MASTER_SITES?=	https://archive.xfce.org/src/art/${XFCE_ARTWORK}/${XFCE_BRANCH}/
 DISTNAME?=	${XFCE_ARTWORK}-${XFCE_VERSION}
 .elif defined(THUNAR_PLUGIN)
-HOMEPAGE?=	http://goodies.xfce.org/projects/thunar-plugins/${THUNAR_PLUGIN}
+HOMEPAGE?=	https://goodies.xfce.org/projects/thunar-plugins/${THUNAR_PLUGIN}
 
-MASTER_SITES?=	http://archive.xfce.org/src/thunar-plugins/${THUNAR_PLUGIN}/${XFCE_BRANCH}/
+MASTER_SITES?=	https://archive.xfce.org/src/thunar-plugins/${THUNAR_PLUGIN}/${XFCE_BRANCH}/
 DISTNAME?=	${THUNAR_PLUGIN}-${XFCE_VERSION}
 PKGNAME?=	${DISTNAME:S/-plugin//}
 MODXFCE_PURGE_LA ?=	lib/thunarx-2
 .elif defined(XFCE_PROJECT)
-HOMEPAGE?=	http://www.xfce.org/projects/${XFCE_PROJECT}
+HOMEPAGE?=	https://www.xfce.org/projects/${XFCE_PROJECT}
 
-MASTER_SITES?=	http://archive.xfce.org/src/xfce/${XFCE_PROJECT:L}/${XFCE_BRANCH}/
-MASTER_SITES_GIT?=	http://git.xfce.org/xfce/${XFCE_PROJECT:L}/snapshot/
+MASTER_SITES?=	https://archive.xfce.org/src/xfce/${XFCE_PROJECT:L}/${XFCE_BRANCH}/
+MASTER_SITES_GIT?=	https://git.xfce.org/xfce/${XFCE_PROJECT:L}/snapshot/
 DISTNAME?=	${XFCE_PROJECT}-${XFCE_VERSION}
 DISTNAME_GIT?=	${XFCE_PROJECT}-${XFCE_COMMIT}
 PKGNAME?=	${XFCE_PROJECT}-${XFCE_VERSION}
