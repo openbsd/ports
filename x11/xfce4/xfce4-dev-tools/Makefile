@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:51:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/08/15 06:42:11 landry Exp $
 
 COMMENT =	Xfce4 developer tools and macros
 
-XFCE_VERSION =	4.12.0
+XFCE_VERSION =	4.14.0
 XFCE_PROJECT =	xfce4-dev-tools
-REVISION =	0
 HOMEPAGE =	http://users.xfce.org/~benny/projects/xfce4-dev-tools/
 
 # GPLv2
@@ -25,8 +24,5 @@ AUTOMAKE_VERSION =	1.11
 AUTOCONF_VERSION =	2.61
 LIB_DEPENDS =	devel/glib2
 WANTLIB = c glib-2.0 pcre pthread iconv intl
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/scripts/xdt-commit
 
 .include <bsd.port.mk>

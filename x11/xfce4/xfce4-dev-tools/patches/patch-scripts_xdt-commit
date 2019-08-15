@@ -1,9 +1,0 @@
-$OpenBSD: patch-scripts_xdt-commit,v 1.2 2012/12/30 16:09:33 landry Exp $
---- scripts/xdt-commit.orig	Thu Aug 20 22:50:06 2009
-+++ scripts/xdt-commit	Thu Aug 20 22:50:34 2009
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!${TRUEPREFIX}/bin/bash
- #
- # $Id: patch-scripts_xdt-commit,v 1.2 2012/12/30 16:09:33 landry Exp $
- #
