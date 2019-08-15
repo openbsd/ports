@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/07/21 09:30:56 landry Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/08/15 06:36:51 landry Exp $
 @conflict xfdesktop-<=4.7.0
 include/garcon-1/
 include/garcon-1/garcon/
@@ -114,6 +114,7 @@ share/locale/he/LC_MESSAGES/garcon.mo
 share/locale/hi/LC_MESSAGES/garcon.mo
 share/locale/hr/LC_MESSAGES/garcon.mo
 share/locale/hu/LC_MESSAGES/garcon.mo
+share/locale/hy/LC_MESSAGES/garcon.mo
 share/locale/hy_AM/LC_MESSAGES/garcon.mo
 share/locale/id/LC_MESSAGES/garcon.mo
 share/locale/ie/LC_MESSAGES/garcon.mo
