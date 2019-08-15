@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/06/29 22:16:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/08/15 06:38:31 landry Exp $
 @conflict libxfcegui4-<4.7.0
 @conflict xfce-utils-*
 @bin bin/xfce4-about
@@ -38,6 +38,9 @@ include/xfce4/libxfce4ui-2/libxfce4ui/xfce-gtk-extensions.h
 include/xfce4/libxfce4ui-2/libxfce4ui/xfce-sm-client.h
 include/xfce4/libxfce4ui-2/libxfce4ui/xfce-spawn.h
 include/xfce4/libxfce4ui-2/libxfce4ui/xfce-titled-dialog.h
+lib/girepository-1.0/libxfce4ui-2.0.typelib
+lib/glade/modules/libxfce4uiglade2.la
+lib/glade/modules/libxfce4uiglade2.so
 lib/libxfce4kbd-private-2.la
 @lib lib/libxfce4kbd-private-2.so.${LIBxfce4kbd-private-2_VERSION}
 lib/libxfce4kbd-private-3.la
@@ -57,25 +60,32 @@ share/examples/xfconf/
 @sample ${SYSCONFDIR}/xdg/xfce4/xfconf/xfce-perchannel-xml/
 share/examples/xfconf/xfce4-keyboard-shortcuts.xml
 @sample ${SYSCONFDIR}/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+share/gir-1.0/libxfce4ui-2.0.gir
+share/glade/catalogs/libxfce4ui-2.xml
+share/glade/pixmaps/hicolor/16x16/actions/widget-libxfce4ui-xfce-titled-dialog.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-libxfce4ui-xfce-titled-dialog.png
 share/gtk-doc/html/libxfce4ui/
 share/gtk-doc/html/libxfce4ui/XfceSMClient.html
+share/gtk-doc/html/libxfce4ui/XfceTitledDialog.html
+share/gtk-doc/html/libxfce4ui/annotation-glossary.html
+share/gtk-doc/html/libxfce4ui/api-index-4-10.html
+share/gtk-doc/html/libxfce4ui/api-index-4-12.html
+share/gtk-doc/html/libxfce4ui/api-index-4-14.html
+share/gtk-doc/html/libxfce4ui/api-index-full.html
 share/gtk-doc/html/libxfce4ui/home.png
 share/gtk-doc/html/libxfce4ui/index.html
-share/gtk-doc/html/libxfce4ui/index.sgml
-share/gtk-doc/html/libxfce4ui/ix01.html
 share/gtk-doc/html/libxfce4ui/left-insensitive.png
 share/gtk-doc/html/libxfce4ui/left.png
+share/gtk-doc/html/libxfce4ui/libxfce4ui-Gdk-Extensions.html
+share/gtk-doc/html/libxfce4ui/libxfce4ui-Gtk-Extensions.html
+share/gtk-doc/html/libxfce4ui/libxfce4ui-Spawn.html
+share/gtk-doc/html/libxfce4ui/libxfce4ui-XfceDialogs.html
 share/gtk-doc/html/libxfce4ui/libxfce4ui-extensions.html
 share/gtk-doc/html/libxfce4ui/libxfce4ui-fundamentals.html
 share/gtk-doc/html/libxfce4ui/libxfce4ui-introduction.html
 share/gtk-doc/html/libxfce4ui/libxfce4ui-libxfce4ui-config.html
 share/gtk-doc/html/libxfce4ui/libxfce4ui-sm.html
 share/gtk-doc/html/libxfce4ui/libxfce4ui-widgets.html
-share/gtk-doc/html/libxfce4ui/libxfce4ui-xfce-dialogs.html
-share/gtk-doc/html/libxfce4ui/libxfce4ui-xfce-gdk-extensions.html
-share/gtk-doc/html/libxfce4ui/libxfce4ui-xfce-gtk-extensions.html
-share/gtk-doc/html/libxfce4ui/libxfce4ui-xfce-spawn.html
-share/gtk-doc/html/libxfce4ui/libxfce4ui-xfce-titled-dialog.html
 share/gtk-doc/html/libxfce4ui/libxfce4ui.devhelp2
 share/gtk-doc/html/libxfce4ui/right-insensitive.png
 share/gtk-doc/html/libxfce4ui/right.png
@@ -86,10 +96,12 @@ share/icons/hicolor/48x48/apps/xfce4-logo.png
 share/locale/am/LC_MESSAGES/libxfce4ui.mo
 share/locale/ar/LC_MESSAGES/libxfce4ui.mo
 share/locale/ast/LC_MESSAGES/libxfce4ui.mo
+share/locale/be/LC_MESSAGES/libxfce4ui.mo
 share/locale/bg/LC_MESSAGES/libxfce4ui.mo
 share/locale/bn/LC_MESSAGES/libxfce4ui.mo
 share/locale/ca/LC_MESSAGES/libxfce4ui.mo
 share/locale/cs/LC_MESSAGES/libxfce4ui.mo
+share/locale/cy/LC_MESSAGES/libxfce4ui.mo
 share/locale/da/LC_MESSAGES/libxfce4ui.mo
 share/locale/de/LC_MESSAGES/libxfce4ui.mo
 share/locale/el/LC_MESSAGES/libxfce4ui.mo
@@ -103,7 +115,10 @@ share/locale/gl/LC_MESSAGES/libxfce4ui.mo
 share/locale/he/LC_MESSAGES/libxfce4ui.mo
 share/locale/hr/LC_MESSAGES/libxfce4ui.mo
 share/locale/hu/LC_MESSAGES/libxfce4ui.mo
+share/locale/hy/LC_MESSAGES/libxfce4ui.mo
+share/locale/hy_AM/LC_MESSAGES/libxfce4ui.mo
 share/locale/id/LC_MESSAGES/libxfce4ui.mo
+share/locale/ie/LC_MESSAGES/libxfce4ui.mo
 share/locale/is/LC_MESSAGES/libxfce4ui.mo
 share/locale/it/LC_MESSAGES/libxfce4ui.mo
 share/locale/ja/LC_MESSAGES/libxfce4ui.mo
@@ -125,6 +140,7 @@ share/locale/ru/LC_MESSAGES/libxfce4ui.mo
 share/locale/si/LC_MESSAGES/libxfce4ui.mo
 share/locale/sk/LC_MESSAGES/libxfce4ui.mo
 share/locale/sl/LC_MESSAGES/libxfce4ui.mo
+share/locale/sq/LC_MESSAGES/libxfce4ui.mo
 share/locale/sr/LC_MESSAGES/libxfce4ui.mo
 share/locale/sv/LC_MESSAGES/libxfce4ui.mo
 share/locale/te/LC_MESSAGES/libxfce4ui.mo
@@ -138,5 +154,7 @@ share/locale/vi/LC_MESSAGES/libxfce4ui.mo
 share/locale/zh_CN/LC_MESSAGES/libxfce4ui.mo
 share/locale/zh_HK/LC_MESSAGES/libxfce4ui.mo
 share/locale/zh_TW/LC_MESSAGES/libxfce4ui.mo
-@tag gtk-update-icon-cache %D/share/icons/hicolor
+share/vala/vapi/libxfce4ui-2.deps
+share/vala/vapi/libxfce4ui-2.vapi
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
