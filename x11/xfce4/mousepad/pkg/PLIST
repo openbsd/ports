@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/07/06 06:04:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/08/15 06:54:43 landry Exp $
 @bin bin/mousepad
 share/applications/mousepad.desktop
 share/glib-2.0/schemas/org.xfce.mousepad.gschema.xml
 share/locale/ar/LC_MESSAGES/mousepad.mo
 share/locale/ast/LC_MESSAGES/mousepad.mo
+share/locale/be/LC_MESSAGES/mousepad.mo
 share/locale/bg/LC_MESSAGES/mousepad.mo
 share/locale/ca/LC_MESSAGES/mousepad.mo
 share/locale/cs/LC_MESSAGES/mousepad.mo
@@ -22,7 +23,13 @@ share/locale/gl/LC_MESSAGES/mousepad.mo
 share/locale/he/LC_MESSAGES/mousepad.mo
 share/locale/hr/LC_MESSAGES/mousepad.mo
 share/locale/hu/LC_MESSAGES/mousepad.mo
+share/locale/hy_AM/
+share/locale/hy_AM/LC_MESSAGES/
+share/locale/hy_AM/LC_MESSAGES/mousepad.mo
 share/locale/id/LC_MESSAGES/mousepad.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/mousepad.mo
 share/locale/is/LC_MESSAGES/mousepad.mo
 share/locale/it/LC_MESSAGES/mousepad.mo
 share/locale/ja/LC_MESSAGES/mousepad.mo
@@ -53,3 +60,6 @@ share/locale/zh_CN/LC_MESSAGES/mousepad.mo
 share/locale/zh_TW/LC_MESSAGES/mousepad.mo
 @tag update-desktop-database
 @tag glib-compile-schemas
+share/polkit-1/
+share/polkit-1/actions/
+share/polkit-1/actions/org.xfce.mousepad.policy
