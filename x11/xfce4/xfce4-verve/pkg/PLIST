@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/11/21 11:21:13 landry Exp $
-@bin bin/verve-focus
+@comment $OpenBSD: PLIST,v 1.8 2019/08/15 07:04:54 landry Exp $
 lib/xfce4/panel/plugins/libverve.so
 share/locale/ar/LC_MESSAGES/xfce4-verve-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-verve-plugin.mo
