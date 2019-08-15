@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/06/07 17:48:49 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/08/15 07:01:52 landry Exp $
 lib/xfce4/panel/plugins/libdatetime.so
 share/locale/am/LC_MESSAGES/xfce4-datetime-plugin.mo
 share/locale/ar/LC_MESSAGES/xfce4-datetime-plugin.mo
@@ -20,7 +20,9 @@ share/locale/gl/LC_MESSAGES/xfce4-datetime-plugin.mo
 share/locale/he/LC_MESSAGES/xfce4-datetime-plugin.mo
 share/locale/hr/LC_MESSAGES/xfce4-datetime-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-datetime-plugin.mo
+share/locale/hy_AM/LC_MESSAGES/xfce4-datetime-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-datetime-plugin.mo
+share/locale/ie/LC_MESSAGES/xfce4-datetime-plugin.mo
 share/locale/is/LC_MESSAGES/xfce4-datetime-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-datetime-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-datetime-plugin.mo
