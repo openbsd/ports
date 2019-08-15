@@ -1,6 +1,7 @@
-$OpenBSD: patch-doc_screen_1,v 1.4 2003/09/26 23:50:55 brad Exp $
---- doc/screen.1.orig	2003-08-27 16:36:21.000000000 +0200
-+++ doc/screen.1	2003-09-12 15:36:35.000000000 +0200
+$OpenBSD: patch-doc_screen_1,v 1.5 2019/08/15 21:01:49 naddy Exp $
+Index: doc/screen.1
+--- doc/screen.1.orig
++++ doc/screen.1
 @@ -99,7 +99,7 @@ create the new window.
  The above example would start the emacs editor (editing prog.c) and switch
  to its window.
@@ -10,7 +11,7 @@ $OpenBSD: patch-doc_screen_1,v 1.4 2003/09/26 23:50:55 brad Exp $
  .IR screen ,
  an appropriate record will be written to this file for each window, and
  removed when the window is terminated.
-@@ -228,7 +228,7 @@ See the \*Qdefflow\*U .screenrc command 
+@@ -228,7 +228,7 @@ See the \*Qdefflow\*U .screenrc command for details.
  The use of this option is discouraged.
  .TP 5
  .BR \-l " and " \-ln
@@ -52,7 +53,7 @@ $OpenBSD: patch-doc_screen_1,v 1.4 2003/09/26 23:50:55 brad Exp $
  .IP $SCREENDIR/S-<login>
  .IP /local/screens/S-<login>
  Socket directories (default)
-@@ -4442,7 +4442,7 @@ Output log files created by the log func
+@@ -4442,7 +4442,7 @@ Output log files created by the log function
  or
  .IP /etc/termcap
  Terminal capability databases

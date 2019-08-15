@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2019/07/12 20:47:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2019/08/15 21:01:49 naddy Exp $
 # Please adjust www/faq/faq15.html if updating.
 
 COMMENT=	multi-screen window manager
 
 VERSION=	4.0.3
 DISTNAME=	screen-${VERSION}
-REVISION=	6
+REVISION=	7
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU:=screen/}
 
@@ -16,9 +16,8 @@ PERMIT_PACKAGE=	Yes
 
 SUBST_VARS=	VERSION
 
-CFLAGS+=	-Wall
-
-CONFIGURE_STYLE= gnu
+AUTOCONF_VERSION=2.57
+CONFIGURE_STYLE= autoconf no-autoheader
 CONFIGURE_ARGS=	--with-sys-screenrc="${SYSCONFDIR}/screenrc"
 USE_GROFF =	Yes
 

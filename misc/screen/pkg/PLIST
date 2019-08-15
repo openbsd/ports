@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.23 2004/08/11 10:07:56 espie Exp $
-bin/screen
+@comment $OpenBSD: PLIST,v 1.24 2019/08/15 21:01:49 naddy Exp $
+@bin bin/screen
 @info info/screen.info
 @man man/man1/screen.1
 share/examples/screen/
