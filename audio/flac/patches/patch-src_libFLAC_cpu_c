@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_libFLAC_cpu_c,v 1.3 2019/08/15 18:22:34 cwen Exp $
+
+Remove getauxval(3) code for ppc because we don't implement this
+
+Index: src/libFLAC/cpu.c
+--- src/libFLAC/cpu.c.orig
++++ src/libFLAC/cpu.c
+@@ -53,10 +53,6 @@
+ #define dfprintf(file, format, ...)
+ #endif
+ 
+-#if defined FLAC__CPU_PPC
+-#include <sys/auxv.h>
+-#endif
+-
+ #if (defined FLAC__CPU_IA32 || defined FLAC__CPU_X86_64) && (defined FLAC__HAS_NASM || FLAC__HAS_X86INTRIN) && !defined FLAC__NO_ASM
+ 
+ /* these are flags in EDX of CPUID AX=00000001 */
+@@ -236,24 +232,8 @@ x86_cpu_info (FLAC__CPUInfo *info)
+ static void
+ ppc_cpu_info (FLAC__CPUInfo *info)
+ {
+-#if defined FLAC__CPU_PPC
+-#ifndef PPC_FEATURE2_ARCH_3_00
+-#define PPC_FEATURE2_ARCH_3_00		0x00800000
+-#endif
+-
+-#ifndef PPC_FEATURE2_ARCH_2_07
+-#define PPC_FEATURE2_ARCH_2_07		0x80000000
+-#endif
+-
+-	if (getauxval(AT_HWCAP2) & PPC_FEATURE2_ARCH_3_00) {
+-		info->ppc.arch_3_00 = true;
+-	} else if (getauxval(AT_HWCAP2) & PPC_FEATURE2_ARCH_2_07) {
+-		info->ppc.arch_2_07 = true;
+-	}
+-#else
+ 	info->ppc.arch_2_07 = false;
+ 	info->ppc.arch_3_00 = false;
+-#endif
+ }
+ 
+ void FLAC__cpu_info (FLAC__CPUInfo *info)
