@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2019/06/07 18:12:10 landry Exp $
+@comment $OpenBSD: PLIST,v 1.19 2019/08/15 06:54:53 landry Exp $
 @bin bin/parole
 include/parole/
 include/parole/parole-debug.h
@@ -13,8 +13,6 @@ lib/parole-0/
 lib/parole-0/parole-mpris2.so
 lib/parole-0/parole-notify.so
 lib/parole-0/tray-icon.so
-share/appdata/
-share/appdata/parole.appdata.xml
 share/applications/org.xfce.Parole.desktop
 share/icons/hicolor/128x128/apps/parole.png
 share/icons/hicolor/16x16/apps/parole-extension-symbolic.svg
@@ -45,7 +43,9 @@ share/locale/gl/LC_MESSAGES/parole.mo
 share/locale/he/LC_MESSAGES/parole.mo
 share/locale/hr/LC_MESSAGES/parole.mo
 share/locale/hu/LC_MESSAGES/parole.mo
+share/locale/hy_AM/LC_MESSAGES/parole.mo
 share/locale/id/LC_MESSAGES/parole.mo
+share/locale/ie/LC_MESSAGES/parole.mo
 share/locale/is/LC_MESSAGES/parole.mo
 share/locale/it/LC_MESSAGES/parole.mo
 share/locale/ja/LC_MESSAGES/parole.mo
@@ -74,6 +74,7 @@ share/locale/ug/LC_MESSAGES/parole.mo
 share/locale/uk/LC_MESSAGES/parole.mo
 share/locale/zh_CN/LC_MESSAGES/parole.mo
 share/locale/zh_TW/LC_MESSAGES/parole.mo
+share/metainfo/parole.appdata.xml
 share/parole/
 share/parole/parole-plugins-0/
 share/parole/parole-plugins-0/mpris2.desktop
