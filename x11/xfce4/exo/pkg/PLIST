@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2018/06/29 22:16:35 espie Exp $
+@comment $OpenBSD: PLIST,v 1.27 2019/08/15 06:36:11 landry Exp $
 @bin bin/exo-csource
 @bin bin/exo-desktop-item-edit
 @bin bin/exo-open
@@ -57,9 +57,10 @@ lib/libexo-2.la
 @lib lib/libexo-2.so.${LIBexo-2_VERSION}
 lib/pkgconfig/exo-1.pc
 lib/pkgconfig/exo-2.pc
-lib/xfce4/exo-1/
-lib/xfce4/exo-1/exo-compose-mail-1
-@bin lib/xfce4/exo-1/exo-helper-1
+lib/xfce4/exo/
+lib/xfce4/exo-2/
+@bin lib/xfce4/exo-2/exo-helper-2
+lib/xfce4/exo/exo-compose-mail
 @man man/man1/exo-csource.1
 @man man/man1/exo-open.1
 share/applications/exo-file-manager.desktop
@@ -145,7 +146,10 @@ share/locale/gl/LC_MESSAGES/exo-1.mo
 share/locale/he/LC_MESSAGES/exo-1.mo
 share/locale/hr/LC_MESSAGES/exo-1.mo
 share/locale/hu/LC_MESSAGES/exo-1.mo
+share/locale/hy/LC_MESSAGES/exo-1.mo
+share/locale/hy_AM/LC_MESSAGES/exo-1.mo
 share/locale/id/LC_MESSAGES/exo-1.mo
+share/locale/ie/LC_MESSAGES/exo-1.mo
 share/locale/is/LC_MESSAGES/exo-1.mo
 share/locale/it/LC_MESSAGES/exo-1.mo
 share/locale/ja/LC_MESSAGES/exo-1.mo
@@ -183,8 +187,8 @@ share/locale/zh_CN/LC_MESSAGES/exo-1.mo
 share/locale/zh_HK/LC_MESSAGES/exo-1.mo
 share/locale/zh_TW/LC_MESSAGES/exo-1.mo
 share/pixmaps/
-share/pixmaps/exo-1/
-share/pixmaps/exo-1/exo-thumbnail-frame.png
+share/pixmaps/exo/
+share/pixmaps/exo/exo-thumbnail-frame.png
 share/xfce4/
 share/xfce4/helpers/
 share/xfce4/helpers/Thunar.desktop

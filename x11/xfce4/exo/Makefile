@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.63 2019/07/12 20:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2019/08/15 06:36:11 landry Exp $
 
 COMMENT=	Xfce4 extension library
 
-XFCE_VERSION=	0.12.4
+XFCE_VERSION=	0.12.8
 XFCE_PROJECT=	exo
 
 PORTROACH=	limitw:1,even
@@ -37,6 +37,6 @@ WANTLIB=	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png pthread z xcb X11-xcb startup-notification-1 \
 		xcb-render xfce4util xcb-shm ffi harfbuzz graphite2 iconv intl \
-		atk-bridge-2.0 cairo-gobject dbus-1 epoxy gdk-3 gtk-3
+		atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3
 
 .include <bsd.port.mk>
