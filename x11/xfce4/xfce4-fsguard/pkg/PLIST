@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/06/29 22:16:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.19 2019/08/15 07:02:23 landry Exp $
 @conflict xfce4-fsguard-plugin-*
 lib/xfce4/panel/plugins/libfsguard.so
 share/icons/hicolor/16x16/apps/xfce4-fsguard-plugin-urgent.png
@@ -24,6 +24,7 @@ share/icons/hicolor/scalable/apps/xfce4-fsguard-plugin-warning.svg
 share/icons/hicolor/scalable/apps/xfce4-fsguard-plugin.svg
 share/locale/ar/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-fsguard-plugin.mo
+share/locale/be/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/bg/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-fsguard-plugin.mo
@@ -41,6 +42,7 @@ share/locale/he/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/hr/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-fsguard-plugin.mo
+share/locale/ie/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/is/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-fsguard-plugin.mo
