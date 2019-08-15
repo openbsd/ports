@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/21 09:40:10 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2019/08/15 07:08:00 landry Exp $
 
 COMMENT=	Xfce4 cpu usage graph panel plugin
 
 XFCE_VERSION=	1.1.0
 XFCE_PLUGIN=	cpugraph
+REVISION=	0
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MODXFCE_WANTLIB=	xfce4panel-2.0
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo
 WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
