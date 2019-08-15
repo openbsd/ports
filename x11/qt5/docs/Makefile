@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2019/03/08 20:00:42 cwen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/08/15 20:41:15 ajacoutot Exp $
 
+BROKEN =		does not package (PLIST members are missing in fakedir)
 COMMENT-html =		HTML documentation for Qt5
 COMMENT-qch =		qdoc-compiled documentation for Qt5
 
