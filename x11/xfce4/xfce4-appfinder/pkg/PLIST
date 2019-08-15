@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/06/27 21:04:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2019/08/15 06:41:33 landry Exp $
 @conflict xfce-utils-*
 @bin bin/xfce4-appfinder
 bin/xfrun4
-share/appdata/
-share/appdata/xfce4-appfinder.appdata.xml
 share/applications/xfce4-appfinder.desktop
 share/applications/xfce4-run.desktop
 share/locale/am/LC_MESSAGES/xfce4-appfinder.mo
@@ -29,7 +27,9 @@ share/locale/gl/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/he/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/hr/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/hu/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/hy_AM/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/id/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/ie/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/is/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/it/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/ja/LC_MESSAGES/xfce4-appfinder.mo
@@ -65,4 +65,5 @@ share/locale/vi/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/zh_HK/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-appfinder.mo
+share/metainfo/org.xfce.xfce4-appfinder.appdata.xml
 @tag update-desktop-database
