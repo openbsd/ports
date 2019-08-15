@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2018/09/04 12:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2019/08/15 07:16:48 landry Exp $
 
 COMMENT-main =		Xfce desktop meta-package (base installation)
 COMMENT-extras =	Xfce desktop meta-package (full installation)
 
-V =		4.12
+V =		4.14
 PKGNAME=	xfce-${V}
 
 PKGNAME-main =		xfce-${V}
 PKGNAME-extras =	xfce-extras-${V}
-REVISION-main =		10
-REVISION-extras =	1
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -29,24 +27,29 @@ RUN_DEPENDS-main += \
 # theme packages
 RUN_DEPENDS-main += \
 		x11/xfce4/xfwm4-themes \
-		x11/xfce4/gtk-xfce-engine
+		x11/greybird
+# x11/xfce4/gtk-xfce-engine (outdated)
 # x11/xfce4/xfce4-icon-theme (outdated)
 
 # common apps
 RUN_DEPENDS-main += \
 		x11/xfce4/terminal \
-		x11/xfce4/orage \
 		x11/xfce4/ristretto \
 		x11/xfce4/mousepad \
 		x11/xfce4/xfce4-appfinder \
 		x11/xfce4/xfce4-mixer \
 		x11/xfce4/xfce4-notifyd \
+		x11/xfce4/xfce4-screensaver \
 		x11/xfce4/xfce4-taskmanager \
 		x11/xfce4/tumbler
+
+# x11/xfce4/orage (outdated)
 
 # extra apps
 RUN_DEPENDS-extras += \
 		STEM-=${V}:${BASE_PKGPATH},-main \
+		textproc/catfish \
+		x11/gigolo \
 		x11/xfce4/xfdashboard \
 		x11/xfce4/xfmpc \
 		x11/xfce4/parole
@@ -75,6 +78,7 @@ RUN_DEPENDS-extras += \
 		x11/xfce4/xfce4-places \
 		x11/xfce4/xfce4-screenshooter \
 		x11/xfce4/xfce4-smartbookmark \
+		x11/xfce4/xfce4-statusnotifier \
 		x11/xfce4/xfce4-systemload \
 		x11/xfce4/xfce4-time-out \
 		x11/xfce4/xfce4-verve \

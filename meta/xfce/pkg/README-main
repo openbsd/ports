@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.13 2018/09/04 12:46:16 espie Exp $
+$OpenBSD: README-main,v 1.14 2019/08/15 07:16:48 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -23,25 +23,39 @@ If your installation supports complete shutdown, clicking on the logout
 button on panel will permit you to either logout, rebooting or halt
 the computer.
 
-Halting and rebooting require consolekit2 and polkit: you'll need to run
-a systemwide D-BUS service (add messagebus to pkg_scripts in
-rc.conf.local) and pass --with-ck-launch argument to startxfce4. If you
-run a systemwide D-BUS service, have consolekit2/polkit installed and
+If your user is part of the operator group (and thus can execute
+/sbin/shutdown), you should be able to shutdown/logout without further
+configuration.
+Otherwise, halting and rebooting require consolekit2 and polkit: you'll need to
+run a systemwide D-BUS service (enable messagebus using rcctl) and pass
+--with-ck-launch argument to startxfce4.
+
+If you run a systemwide D-BUS service, have consolekit2/polkit installed and
 don't use --with-ck-launch you will not be able to shutdown/reboot.
+
+Screen compositor
+=================
+If you're using the modesetting X driver and experience window flickering when
+the compositor is enabled, you should force the window manager to use the
+XPresent method for vblank:
+
+$xfwm4 --vblank=xpresent --replace &
+
+This is documented upstream at https://git.xfce.org/xfce/xfwm4/tree/COMPOSITOR#n114
 
 Power management
 ================
 If you use Xfce on a laptop, you can install xfce4-power-manager
 package, which will provide battery levels/information, and will allow
-to configure actions upon low battery level or AC plugging. If using
-consolekit2 and polkit, it will also allow you to suspend the laptop
-from the logout dialog.
+to configure actions upon low battery level or AC plugging. For proper
+function, it requires messagebus and upowerd running. If using consolekit2 and
+polkit, it will also allow you to suspend the laptop from the logout dialog.
 
 Screensaver management
 ======================
-xflock4 can make use of xscreensaver or gnome-screensaver. If installed,
-a 'Screensaver' icon will appear in settings manager/menu. Otherwise,
-xflock4 defaults to call xlock.
+xflock4 can make use of xfce4-screensaver, xscreensaver or gnome-screensaver.
+If installed, a 'Screensaver' icon will appear in settings manager/menu.
+Otherwise, xflock4 defaults to call xlock.
 
 Thunar file manager tips
 ========================
@@ -51,16 +65,12 @@ configure GVfs mounts.
 
 Terminal, special characters and localized applications
 =======================================================
-If you use a particular non-ascii encoding and have problems seeing
-special characters in terminal (like accentued characters in french),
-you should add this line to your .xinitrc/.xsession before startxfce4:
-
-export LC_CTYPE=fr_FR.ISO8859-15
-
-where LC_CTYPE is defined by <language>_<country>.<encoding>.
+If you use a particular non-ascii encoding and have problems seeing special
+characters in terminal (like accentued characters in french), you should
+properly configure the default encoding in terminal properties.
 
 Similarly, if you want localized graphical applications, add this line
-too:
+to your .xinitrc/.xsession before startxfce4:
 
 export LC_MESSAGES=fr
 
