@@ -1,8 +1,8 @@
 #!/bin/ksh
 #
-# $OpenBSD: mpd.rc,v 1.6 2018/01/11 19:27:01 rpe Exp $
+# $OpenBSD: mpd.rc,v 1.7 2019/08/15 05:44:37 landry Exp $
 
-daemon="${TRUEPREFIX}/sbin/mpd"
+daemon="${TRUEPREFIX}/bin/mpd"
 
 . /etc/rc.d/rc.subr
 

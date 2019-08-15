@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.123 2019/08/06 17:28:12 landry Exp $
+# $OpenBSD: Makefile,v 1.124 2019/08/15 05:44:37 landry Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
 VER =			0.21.11
+REVISION =		0
 DISTNAME =		mpd-${VER}
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		audio
@@ -48,8 +49,7 @@ LIB_DEPENDS =		audio/faad>=2.6.1p0 \
 
 MODULES =		devel/meson
 
-CONFIGURE_ARGS +=	--bindir ${PREFIX}/sbin \
-			-Dsystemd=disabled \
+CONFIGURE_ARGS +=	-Dsystemd=disabled \
 			-Dinotify=false \
 			-Depoll=false \
 			-Dsyslog=enabled \
