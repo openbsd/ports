@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/06/07 18:20:59 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/08/15 07:03:35 landry Exp $
 bin/xfce4-popup-places
 lib/xfce4/panel/plugins/libplaces.so
 share/locale/am/LC_MESSAGES/xfce4-places-plugin.mo
@@ -24,6 +24,7 @@ share/locale/he/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/hr/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-places-plugin.mo
+share/locale/ie/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/is/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-places-plugin.mo
