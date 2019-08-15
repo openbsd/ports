@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/06/29 22:16:36 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/08/15 07:03:13 landry Exp $
 lib/xfce4/panel/plugins/libnetload.so
 share/icons/hicolor/24x24/apps/xfce4-netload-plugin.png
 share/icons/hicolor/48x48/apps/xfce4-netload-plugin.png
 share/icons/hicolor/scalable/apps/xfce4-netload-plugin.svg
 share/locale/ar/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-netload-plugin.mo
+share/locale/be/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/bg/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-netload-plugin.mo
