@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2019/07/12 20:48:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2019/08/15 08:18:02 kirby Exp $
 
 PORTROACH = 	limitw:1,even
 
@@ -10,6 +10,7 @@ DISTNAME =	munin-$V
 PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V
 CATEGORIES =	net
+REVISION-server =	0
 
 HOMEPAGE =	http://munin-monitoring.org/
 MASTER_SITES =	http://downloads.munin-monitoring.org/munin/stable/$V/
@@ -43,6 +44,7 @@ RUN_DEPENDS-server +=	converters/p5-DateManip \
 			devel/p5-File-Copy-Recursive \
 			net/p5-IO-Socket-INET6 \
 			net/rrdtool \
+			security/p5-Net_SSLeay \
 			www/fcgi \
 			www/p5-HTML-Template \
 			www/p5-URI \
