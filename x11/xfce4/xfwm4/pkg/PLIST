@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/06/29 22:16:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2019/08/15 06:53:38 landry Exp $
 @bin bin/xfwm4
 @bin bin/xfwm4-settings
 @bin bin/xfwm4-tweaks-settings
@@ -19,6 +19,7 @@ share/icons/hicolor/22x22/actions/xfce-wm-unshade.png
 share/icons/hicolor/22x22/actions/xfce-wm-unstick.png
 share/icons/hicolor/48x48/apps/wmtweaks.png
 share/icons/hicolor/48x48/apps/xfce4-workspaces.png
+share/icons/hicolor/48x48/apps/xfwm4-default.png
 share/icons/hicolor/48x48/apps/xfwm4.png
 share/icons/hicolor/scalable/actions/xfce-wm-close.svg
 share/icons/hicolor/scalable/actions/xfce-wm-maximize.svg
@@ -31,6 +32,7 @@ share/icons/hicolor/scalable/actions/xfce-wm-unshade.svg
 share/icons/hicolor/scalable/actions/xfce-wm-unstick.svg
 share/icons/hicolor/scalable/apps/wmtweaks.svg
 share/icons/hicolor/scalable/apps/xfce4-workspaces.svg
+share/icons/hicolor/scalable/apps/xfwm4-default.svg
 share/icons/hicolor/scalable/apps/xfwm4.svg
 share/locale/am/LC_MESSAGES/xfwm4.mo
 share/locale/ar/LC_MESSAGES/xfwm4.mo
@@ -44,6 +46,7 @@ share/locale/da/LC_MESSAGES/xfwm4.mo
 share/locale/de/LC_MESSAGES/xfwm4.mo
 share/locale/el/LC_MESSAGES/xfwm4.mo
 share/locale/en_AU/LC_MESSAGES/xfwm4.mo
+share/locale/en_CA/LC_MESSAGES/xfwm4.mo
 share/locale/en_GB/LC_MESSAGES/xfwm4.mo
 share/locale/eo/LC_MESSAGES/xfwm4.mo
 share/locale/es/LC_MESSAGES/xfwm4.mo
@@ -55,7 +58,9 @@ share/locale/gl/LC_MESSAGES/xfwm4.mo
 share/locale/he/LC_MESSAGES/xfwm4.mo
 share/locale/hr/LC_MESSAGES/xfwm4.mo
 share/locale/hu/LC_MESSAGES/xfwm4.mo
+share/locale/hy_AM/LC_MESSAGES/xfwm4.mo
 share/locale/id/LC_MESSAGES/xfwm4.mo
+share/locale/ie/LC_MESSAGES/xfwm4.mo
 share/locale/is/LC_MESSAGES/xfwm4.mo
 share/locale/it/LC_MESSAGES/xfwm4.mo
 share/locale/ja/LC_MESSAGES/xfwm4.mo
