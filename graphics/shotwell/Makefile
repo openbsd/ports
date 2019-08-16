@@ -1,28 +1,28 @@
-# $OpenBSD: Makefile,v 1.105 2019/07/12 20:47:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.106 2019/08/16 21:59:26 ajacoutot Exp $
 
 COMMENT =		digital photo organizer
 
-GNOME_VERSION =		0.30.4
+GNOME_VERSION =		0.30.5
 GNOME_PROJECT =		shotwell
+
+SHARED_LIBS += shotwell-plugin-common    0.0 # 0.30.5
+SHARED_LIBS += shotwell-authenticator    0.0 # 0.30.5
+SHARED_LIBS += shotwell-plugin-dev-1.0   0.0 # 0.30.5
 
 CATEGORIES =		graphics
 
 HOMEPAGE =		https://wiki.gnome.org/Apps/Shotwell
 
-SHARED_LIBS += shotwell-plugin-common    0.0 # 0.30.0
-SHARED_LIBS += shotwell-authenticator    0.0 # 0.30.0
-SHARED_LIBS += shotwell-plugin-dev-1.0   0.0 # 0.30.0
+MAINTAINER = 		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += atk-1.0 c cairo cairo-gobject exif gck-1 gcr-base-3
-WANTLIB += gcr-ui-3 gdata gdk-3 gdk_pixbuf-2.0 gee-0.8 gexiv2
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gphoto2 gphoto2_port
-WANTLIB += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
-WANTLIB += gstvideo-1.0 gtk-3 intl javascriptcoregtk-4.0 json-glib-1.0
-WANTLIB += lcms2 m p11-kit pango-1.0 pangocairo-1.0 pthread raw
-WANTLIB += soup-2.4 sqlite3 webkit2gtk-4.0 xml2
+WANTLIB += c cairo exif gcr-base-3 gcr-ui-3 gdata gdk-3 gdk_pixbuf-2.0
+WANTLIB += gee-0.8 gexiv2 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gphoto2 gphoto2_port gstpbutils-1.0 gstreamer-1.0 gtk-3
+WANTLIB += intl json-glib-1.0 m pango-1.0 pangocairo-1.0 raw soup-2.4
+WANTLIB += sqlite3 webkit2gtk-4.0 xml2
 
 MODULES =		devel/dconf \
 			devel/meson \
