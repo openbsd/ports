@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/08/16 15:38:15 thfr Exp $
 
 COMMENT =	2D and 3D game engine
 
@@ -8,7 +8,7 @@ PKGNAME =	godot-${V}
 CATEGORIES =	games
 HOMEPAGE =	https://godotengine.org/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
-REVISION =	1
+REVISION =	2
 
 # MIT
 PERMIT_PACKAGE =	Yes

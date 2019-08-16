@@ -1,0 +1,16 @@
+$OpenBSD: patch-thirdparty_thekla_atlas_nvcore_nvcore_h,v 1.1 2019/08/16 15:38:15 thfr Exp $
+
+Overzealous #error, the code builds fine even if the CPU isn't known.
+
+Index: thirdparty/thekla_atlas/nvcore/nvcore.h
+--- thirdparty/thekla_atlas/nvcore/nvcore.h.orig
++++ thirdparty/thekla_atlas/nvcore/nvcore.h
+@@ -115,7 +115,7 @@
+ #elif defined POSH_CPU_STRONGARM
+ #   define NV_CPU_ARM 1
+ #else
+-#   error "Unsupported CPU"
++//#   error "Unsupported CPU"
+ #endif
+ 
+ 
