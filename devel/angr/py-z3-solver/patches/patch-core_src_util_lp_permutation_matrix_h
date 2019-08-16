@@ -1,0 +1,17 @@
+$OpenBSD: patch-core_src_util_lp_permutation_matrix_h,v 1.1 2019/08/16 23:27:09 cwen Exp $
+
+Unbreak with ports-gcc, from upstream:
+https://github.com/Z3Prover/z3/commit/2d5dd802386d78117d5ed9ddcbf8bc22ab3cb461
+
+Index: core/src/util/lp/permutation_matrix.h
+--- core/src/util/lp/permutation_matrix.h.orig
++++ core/src/util/lp/permutation_matrix.h
+@@ -117,7 +117,7 @@ class permutation_matrix : public tail_matrix<T, X> {
+ 
+         unsigned size() const { return static_cast<unsigned>(m_rev.size()); }
+ 
+-        unsigned * values() const { return m_permutation; }
++        unsigned * values() const { return m_permutation.c_ptr(); }
+ 
+         void resize(unsigned size) {
+             unsigned old_size = m_permutation.size();
