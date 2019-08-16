@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/06/22 16:51:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/08/16 15:31:23 thfr Exp $
 
 COMMENT =	Vulkan Validation Layers
 
@@ -17,6 +17,9 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m
+
+# C++11
+COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		lang/python
