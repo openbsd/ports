@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.59 2019/07/12 20:49:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2019/08/16 21:19:56 ajacoutot Exp $
 
 COMMENT=		GTK C code documentation system
 
-GNOME_VERSION=		1.30
+GNOME_VERSION=		1.32
 GNOME_PROJECT=		gtk-doc
 
 CATEGORIES=		textproc devel
@@ -10,7 +10,7 @@ CATEGORIES=		textproc devel
 HOMEPAGE=		http://www.gtk.org/gtk-doc/
 
 # GPLv3 - GFDLv1.1
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python \
 			x11/gnome
