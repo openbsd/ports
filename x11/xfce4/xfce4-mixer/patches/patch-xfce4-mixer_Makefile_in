@@ -1,0 +1,21 @@
+$OpenBSD: patch-xfce4-mixer_Makefile_in,v 1.1 2019/08/16 05:36:44 landry Exp $
+
+Index: xfce4-mixer/Makefile.in
+--- xfce4-mixer/Makefile.in.orig
++++ xfce4-mixer/Makefile.in
+@@ -427,6 +427,7 @@ xfce4_mixer_CFLAGS = \
+ 	$(GTK_CFLAGS)							\
+ 	$(UNIQUE_CFLAGS)						\
+ 	$(LIBXFCE4UTIL_CFLAGS)						\
++	$(DBUS_GLIB_CFLAGS)						\
+ 	$(LIBXFCE4UI_CFLAGS)						\
+ 	$(XFCONF_CFLAGS)						\
+ 	$(GST_PLUGINS_BASE_CFLAGS)
+@@ -441,6 +442,7 @@ xfce4_mixer_LDFLAGS = \
+ 	$(GTK_LIBS)							\
+ 	$(UNIQUE_LIBS)							\
+ 	$(LIBXFCE4UTIL_LIBS)						\
++	$(DBUS_GLIB_LIBS)						\
+ 	$(LIBXFCE4UI_LIBS)						\
+ 	$(XFCONF_LIBS)							\
+ 	$(GST_PLUGINS_BASE_LIBS)					\

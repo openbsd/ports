@@ -1,0 +1,21 @@
+$OpenBSD: patch-panel-plugin_Makefile_in,v 1.1 2019/08/16 05:36:44 landry Exp $
+
+Index: panel-plugin/Makefile.in
+--- panel-plugin/Makefile.in.orig
++++ panel-plugin/Makefile.in
+@@ -414,6 +414,7 @@ libmixer_la_CFLAGS = \
+ 	$(LIBXFCE4UTIL_CFLAGS)						\
+ 	$(LIBXFCE4UI_CFLAGS)						\
+ 	$(LIBXFCE4PANEL_CFLAGS)						\
++	$(DBUS_GLIB_CFLAGS)						\
+ 	$(XFCONF_CFLAGS)						\
+ 	$(GST_PLUGINS_BASE_CFLAGS)					\
+ 	$(KEYBINDER_CFLAGS)
+@@ -435,6 +436,7 @@ libmixer_la_LIBADD = \
+ 	$(LIBXFCE4UTIL_LIBS)						\
+ 	$(LIBXFCE4UI_LIBS)						\
+ 	$(LIBXFCE4PANEL_LIBS)						\
++	$(DBUS_GLIB_LIBS)						\
+ 	$(XFCONF_LIBS)							\
+ 	$(GST_PLUGINS_BASE_LIBS)					\
+ 	-lgstaudio-0.10							\
