@@ -1,12 +1,12 @@
-$OpenBSD: patch-similar_main_mglobal_cpp,v 1.1.1.1 2017/12/24 19:13:43 bcallah Exp $
+$OpenBSD: patch-similar_main_mglobal_cpp,v 1.2 2019/08/16 15:21:38 thfr Exp $
 
 Always enable full template instantiation.
 
 Index: similar/main/mglobal.cpp
 --- similar/main/mglobal.cpp.orig
 +++ similar/main/mglobal.cpp
-@@ -117,7 +117,7 @@ valptridx<wall>::array_managed_type Walls;
- #if (defined(__NO_INLINE__) && __NO_INLINE__ > 0)
+@@ -160,7 +160,7 @@ void reset_globals_for_new_game()
+ #if (defined(__NO_INLINE__) && __NO_INLINE__ > 0) || defined(__SANITIZE_ADDRESS__)
  #define DXX_VALPTRIDX_ENABLE_FULL_TEMPLATE_INSTANTIATION	1
  #else
 -#define DXX_VALPTRIDX_ENABLE_FULL_TEMPLATE_INSTANTIATION	0

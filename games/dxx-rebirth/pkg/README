@@ -1,14 +1,19 @@
-$OpenBSD: README,v 1.2 2018/09/04 12:46:12 espie Exp $
+$OpenBSD: README,v 1.3 2019/08/16 15:21:38 thfr Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-dxx-rebirth
-===========
+Installation of the Game Data
+=============================
+
 dxx-rebirth requires the original game files from Descent I and/or
 Descent II to work properly.  These can come from an original CD or from
 GOG.com.
+
+The shareware/demo data can be downloaded from here:
+
+https://www.dxx-rebirth.com/game-content/
 
 If using the GOG.com version of Descent I, you must extract the files
 from setup_descent_1.4a_(16596).exe using the innoextract package.
@@ -25,3 +30,16 @@ You can then delete everything extracted from the exe.
 If you own the GOG.com version of Descent II, follow the above steps
 with the setup_descent_2_1.1_(16596).exe file and using
 ~/.d2x-rebirth/Data as the directory name.
+
+Music
+=====
+
+The MIDI soundtrack requires the package timidity to be installed.
+
+Add-Ons
+=======
+
+Add-ons with high resolution images, new soundtracks, and German
+briefings are available including installation instructions at:
+
+https://www.dxx-rebirth.com/addons/
