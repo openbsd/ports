@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/11/23 21:06:32 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2019/08/16 13:57:15 landry Exp $
 bin/mapproxy-seed
 bin/mapproxy-util
 lib/python${MODPY_VERSION}/site-packages/MapProxy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -419,7 +419,6 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/arcgis.yam
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/auth.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache.mbtiles
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_band_merge.yaml
-lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_bulk_meta_tiles.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_data/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_data/dop_cache_EPSG3857/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_data/dop_cache_EPSG3857/00/
@@ -503,8 +502,6 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_auth.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_auth.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_behind_proxy.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_behind_proxy.pyc
-lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_bulk_meta_tiles.py
-lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_bulk_meta_tiles.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_cache_band_merge.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_cache_band_merge.pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_cache_geopackage.py
