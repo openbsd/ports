@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_libstd_sys_unix_ext_net_rs,v 1.14 2019/05/24 04:28:24 semarie Exp $
+$OpenBSD: patch-src_libstd_sys_unix_ext_net_rs,v 1.15 2019/08/16 18:14:21 semarie Exp $
 Disable some failing tests (related to unix socket). Needs more investigation.
 Index: src/libstd/sys/unix/ext/net.rs
 --- src/libstd/sys/unix/ext/net.rs.orig
 +++ src/libstd/sys/unix/ext/net.rs
-@@ -1304,7 +1304,7 @@ impl UnixDatagram {
+@@ -1303,7 +1303,7 @@ impl UnixDatagram {
      ///
      /// # Examples
      ///
@@ -12,7 +12,7 @@ Index: src/libstd/sys/unix/ext/net.rs
      /// use std::os::unix::net::UnixDatagram;
      /// use std::time::Duration;
      ///
-@@ -1343,7 +1343,7 @@ impl UnixDatagram {
+@@ -1342,7 +1342,7 @@ impl UnixDatagram {
      ///
      /// # Examples
      ///
@@ -21,7 +21,7 @@ Index: src/libstd/sys/unix/ext/net.rs
      /// use std::os::unix::net::UnixDatagram;
      /// use std::time::Duration;
      ///
-@@ -1374,7 +1374,7 @@ impl UnixDatagram {
+@@ -1373,7 +1373,7 @@ impl UnixDatagram {
      ///
      /// # Examples
      ///
@@ -30,7 +30,7 @@ Index: src/libstd/sys/unix/ext/net.rs
      /// use std::os::unix::net::UnixDatagram;
      /// use std::time::Duration;
      ///
-@@ -1391,7 +1391,7 @@ impl UnixDatagram {
+@@ -1390,7 +1390,7 @@ impl UnixDatagram {
      ///
      /// # Examples
      ///
@@ -39,7 +39,7 @@ Index: src/libstd/sys/unix/ext/net.rs
      /// use std::os::unix::net::UnixDatagram;
      /// use std::time::Duration;
      ///
-@@ -1484,7 +1484,7 @@ mod test {
+@@ -1483,7 +1483,7 @@ mod test {
      use crate::thread;
      use crate::io::{self, ErrorKind};
      use crate::io::prelude::*;
@@ -48,7 +48,7 @@ Index: src/libstd/sys/unix/ext/net.rs
      use crate::sys_common::io::test::tmpdir;
  
      use super::*;
-@@ -1499,6 +1499,7 @@ mod test {
+@@ -1498,6 +1498,7 @@ mod test {
      }
  
      #[test]
@@ -56,7 +56,7 @@ Index: src/libstd/sys/unix/ext/net.rs
      fn basic() {
          let dir = tmpdir();
          let socket_path = dir.path().join("sock");
-@@ -1642,6 +1643,7 @@ mod test {
+@@ -1641,6 +1642,7 @@ mod test {
      }
  
      #[test]

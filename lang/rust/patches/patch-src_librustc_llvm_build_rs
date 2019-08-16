@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_librustc_llvm_build_rs,v 1.3 2019/08/16 18:14:21 semarie Exp $
+some archs are still using estdc++ and not c++
+https://github.com/rust-lang/rust/pull/63595
+
+Index: src/librustc_llvm/build.rs
+--- src/librustc_llvm/build.rs.orig
++++ src/librustc_llvm/build.rs
+@@ -253,8 +253,11 @@ fn main() {
+     let llvm_use_libcxx = env::var_os("LLVM_USE_LIBCXX");
+ 
+     let stdcppname = if target.contains("openbsd") {
+-        // llvm-config on OpenBSD doesn't mention stdlib=libc++
+-        "c++"
++        if target.contains("sparc64") {
++            "estdc++"
++        } else {
++            "c++"
++        }
+     } else if target.contains("freebsd") {
+         "c++"
+     } else if target.contains("darwin") {

@@ -1,0 +1,17 @@
+$OpenBSD: patch-vendor_libc_src_unix_bsd_netbsdlike_openbsdlike_openbsd_mod_rs,v 1.1 2019/08/16 18:14:21 semarie Exp $
+define sparc64 on libc
+https://github.com/rust-lang/libc/pull/1470
+
+Index: vendor/libc/src/unix/bsd/netbsdlike/openbsdlike/openbsd/mod.rs
+--- vendor/libc/src/unix/bsd/netbsdlike/openbsdlike/openbsd/mod.rs.orig
++++ vendor/libc/src/unix/bsd/netbsdlike/openbsdlike/openbsd/mod.rs
+@@ -491,6 +491,9 @@ cfg_if! {
+     } else if #[cfg(target_arch = "aarch64")] {
+         mod aarch64;
+         pub use self::aarch64::*;
++    } else if #[cfg(target_arch = "sparc64")] {
++        mod sparc64;
++        pub use self::sparc64::*;
+     } else {
+         // Unknown target_arch
+     }

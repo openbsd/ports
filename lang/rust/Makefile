@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.99 2019/07/09 11:24:28 semarie Exp $
+# $OpenBSD: Makefile,v 1.100 2019/08/16 18:14:21 semarie Exp $
 
-ONLY_FOR_ARCHS =	${RUST_ARCHS}
+ONLY_FOR_ARCHS =	${RUST_ARCHS} sparc64
+
+BROKEN-sparc64 =	others ports needs rust libc update
 
 .if "${MACHINE_ARCH}" == "i386"
 DPB_PROPERTIES =	lonesome
@@ -13,16 +15,17 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.36.0
-CARGO_V =		0.37.0
+V =			1.37.0
+CARGO_V =		0.38.0
 CLIPPY_V =		0.0.212
-RUSTFMT_V =		1.2.2
+RUSTFMT_V =		1.3.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.36.0-20190703
-BV-amd64 =		1.36.0-20190630
-BV-i386 =		1.36.0-20190630
+BV-aarch64 =		1.37.0-20190815
+BV-amd64 =		1.37.0-20190813
+BV-i386 =		1.37.0-20190813
+BV-sparc64 =		1.37.0-20190813
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -46,9 +49,6 @@ WANTLIB-main =		${COMPILER_LIBCXX} c crypto curl git2 m pthread ssh2 ssl z
 WANTLIB-gdb =
 WANTLIB-clippy =	c c++abi m pthread
 WANTLIB-rustfmt =	c c++abi m pthread
-
-# XXX should this actually just be ports-clang?
-COMPILER =		base-clang
 
 MASTER_SITES =		https://static.rust-lang.org/dist/ \
 			https://dev-static.rust-lang.org/dist/
@@ -80,10 +80,17 @@ TRIPLE_ARCH =		aarch64-unknown-openbsd
 TRIPLE_ARCH =		x86_64-unknown-openbsd
 .elif "${MACHINE_ARCH}" == "i386"
 TRIPLE_ARCH =		i686-unknown-openbsd
+.elif "${MACHINE_ARCH}" == "sparc64"
+TRIPLE_ARCH =		sparc64-unknown-openbsd
 .endif
 
 SUBST_VARS +=		TRIPLE_ARCH \
 			V
+
+# on arches where the base compiler is clang: base-clang or ports-clang should be fine,
+# as we need devel/llvm only for libs.
+# on others archs, use ports-gcc as llvm libraries depends on libestdc++.so and libgcc.a.
+COMPILER =		base-clang ports-gcc
 
 MODULES +=		lang/python \
 			gnu
@@ -95,7 +102,8 @@ BUILD_DEPENDS +=	devel/llvm
 BUILD_DEPENDS +=	devel/ninja
 BUILD_DEPENDS +=	devel/gdb
 
-LIB_DEPENDS-main +=	devel/libgit2/libgit2 \
+LIB_DEPENDS-main +=	${LIB_DEPENDS} \
+			devel/libgit2/libgit2 \
 			net/curl \
 			security/libssh2
 
