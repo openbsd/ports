@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/12/30 14:14:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/08/17 12:58:04 ajacoutot Exp $
+@conflict bro-*
 @extraunexec rm -rf ${LOCALSTATEDIR}/{log,spool}/bro
 @rcscript ${RCDIR}/bro
 @bin bin/adtrace

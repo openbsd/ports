@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.9 2018/09/04 12:53:16 espie Exp $
+$OpenBSD: README,v 1.10 2019/08/17 12:58:04 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -9,8 +9,8 @@ Note that most broctl(8) commands must be run as root.
 Post-install steps
 ==================
 
-Before starting bro(8) for the first time, the "interface" must be properly
-configured under:
+Before starting zeek (bro(8)) for the first time, the "interface" must be
+properly configured under:
     ${SYSCONFDIR}/bro/node.cfg
 
 And the configuration and policies must be installed and deployed by running:
@@ -21,4 +21,4 @@ It's also recommended to enable housekeeping tasks by adding the following
 entry into root's crontab(5):
 */5	*	*	*	*	${TRUEPREFIX}/bin/broctl cron
 
-See https://www.bro.org/sphinx/quickstart/index.html for details.
+See https://docs.zeek.org/en/stable/quickstart/index.html for details.

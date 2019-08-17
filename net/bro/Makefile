@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2019/08/14 21:19:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2019/08/17 12:58:04 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
 DISTNAME=		bro-2.6.3
+PKGNAME=		zeek-2.6.3
+REVISION=		0
 
 SHARED_LIBS +=  broccoli                  6.0 # 5.1
 SHARED_LIBS +=  broker                    0.0 # XXX see patch-aux_broker_CMakeLists_txt
@@ -12,7 +14,7 @@ SHARED_LIBS +=  caf_openssl               0.0 # 0.16
 
 CATEGORIES=		net security
 
-HOMEPAGE=		https://www.bro.org/
+HOMEPAGE=		https://www.zeek.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

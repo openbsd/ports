@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.797 2019/08/14 19:16:09 kmos Exp $
+# $OpenBSD: Quirks.pm,v 1.798 2019/08/17 12:58:04 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -333,6 +333,7 @@ my $stem_extensions = {
 	'gettext' => 'gettext-runtime',
 	'kwebapp' => 'openradtool',
 	'py-xmldiff' => 'py3-xmldiff',
+	'bro' => 'zeek',
 };
 
 my $obsolete_reason = {
