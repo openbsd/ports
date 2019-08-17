@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:47:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/08/17 19:08:38 cwen Exp $
 
 COMMENT=	scim input method module for hangul
 
 DISTNAME=	scim-hangul-0.3.2
-REVISION=	14
+REVISION=	15
 
 CATEGORIES=	inputmethods korean
 
@@ -12,16 +12,16 @@ HOMEPAGE=	https://sourceforge.net/projects/scim/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB+= GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
-WANTLIB+= Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm expat ffi
-WANTLIB+= fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB+= glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB+= gtk-x11-2.0 hangul harfbuzz iconv intl m pango-1.0 pangocairo-1.0
-WANTLIB+= pangoft2-1.0 pcre pixman-1 png pthread scim-1.0
-WANTLIB+= scim-gtkutils-1.0 scim-x11utils-1.0 ${COMPILER_LIBCXX} xcb xcb-render
-WANTLIB+= xcb-shm z fribidi
+WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo expat
+WANTLIB += ffi fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-x11-2.0 hangul harfbuzz iconv intl
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png scim-1.0 scim-gtkutils-1.0 scim-x11utils-1.0 xcb
+WANTLIB += xcb-render xcb-shm z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scim/}
 
