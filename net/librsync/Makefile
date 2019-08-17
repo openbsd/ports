@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/08/17 18:54:11 bket Exp $
 
 COMMENT=	library for delta compression of streams
 
-# XXX: https://github.com/librsync/librsync/issues/146
-GH_ACCOUNT=	librsync
-GH_PROJECT=	librsync
-GH_TAGNAME=	v2.0.2
+V =		2.0.2
+DISTNAME =	librsync-${V}
 
 SHARED_LIBS +=	rsync                4.0      # 2.0
 
@@ -17,6 +15,8 @@ HOMEPAGE=	https://librsync.github.io/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += b2 c popt
+
+MASTER_SITES =	https://github.com/librsync/librsync/releases/download/v${V}/
 
 MODULES=	devel/cmake
 
