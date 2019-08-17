@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.60 2019/06/16 09:03:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2019/08/17 17:20:17 ajacoutot Exp $
 
 COMMENT=	image processing tools with stable ABI
 
-DISTNAME=	GraphicsMagick-1.3.32
+DISTNAME=	GraphicsMagick-1.3.33
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=graphicsmagick/}
 EXTRACT_SUFX=	.tar.xz
