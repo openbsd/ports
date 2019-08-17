@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2019/07/05 14:55:38 kn Exp $
+# $OpenBSD: Makefile,v 1.42 2019/08/17 08:26:24 ajacoutot Exp $
 
 COMMENT=	free H.265/HEVC encoder
 
-VER=		3.1
+VER=		3.1.2
 DISTNAME=	x265_${VER}
 PKGNAME=	x265-${VER}
 CATEGORIES=	multimedia
