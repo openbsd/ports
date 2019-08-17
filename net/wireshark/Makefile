@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2019/07/17 21:45:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.94 2019/08/17 11:02:28 ajacoutot Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
@@ -33,11 +33,13 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 MULTI_PACKAGES = -text -main
 PSEUDO_FLAVORS = no_x11 no_qt
-# sync with devel/spidermonkey52: qt -> polkit -> mozjs17
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
-    ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "hppa" || \
-    ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc64" || \
-    ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
+# sync with devel/spidermonkey60 (ONLY_FOR_ARCHS):
+# qtmultimedia -> pulseaudio -> consolekit -> polkit -> spidermonkey60
+.if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "alpha" || \
+    ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || \
+    ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "mips64el" || \
+    ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "powerpc" || \
+    ${MACHINE_ARCH} == "sparc64"
 FLAVOR ?=
 .else
 FLAVOR ?=	no_qt
