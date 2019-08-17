@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libs,v 1.8 2018/11/10 13:02:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST-libs,v 1.9 2019/08/17 08:35:32 ajacoutot Exp $
 @conflict cups-<1.6.0
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS printer spooler daemon:/nonexistent:/sbin/nologin
@@ -37,4 +37,3 @@ share/cups/model/
 share/cups/ppdc/
 @group _cups
 @sample ${SYSCONFDIR}/cups/
-@group
