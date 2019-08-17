@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.64 2019/07/12 20:51:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2019/08/17 10:31:21 ajacoutot Exp $
 
 COMMENT=		VNC viewer widget for GTK
 
 GNOME_PROJECT=		gtk-vnc
-GNOME_VERSION=		0.8.0
+GNOME_VERSION=		1.0.0
 
 PKGNAME=		${DISTNAME}
-REVISION=		0
 
-SHARED_LIBS +=  gvnc-1.0             0.1      # 0.1
-SHARED_LIBS +=  gtk-vnc-2.0          0.1      # 0.2
+SHARED_LIBS += gvnc-1.0                  1.0 # 0.0.1
+SHARED_LIBS += gvncpulse-1.0             0.0 # 0.0.1
+SHARED_LIBS += gtk-vnc-2.0               1.0 # 0.0.2
 
 CATEGORIES=		x11 net
 
@@ -17,39 +17,24 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi c cairo
-WANTLIB += cairo-gobject dbus-1 epoxy expat ffi fontconfig freetype
-WANTLIB += fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gmp gnutls gobject-2.0 gpg-error graphite2
-WANTLIB += gthread-2.0 gtk-3 harfbuzz hogweed iconv idn2 intl
-WANTLIB += m nettle p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread sasl2 tasn1 unistring xcb
-WANTLIB += xcb-render xcb-shm z
+WANTLIB += X11 c cairo gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gnutls gobject-2.0 gtk-3 intl pulse pulse-simple sasl2
+WANTLIB += z
 
-MODULES=		lang/python \
+MODULES=		devel/meson \
+			lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection vala
 MODPY_RUNDEP=		No
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
-LIB_DEPENDS=		security/cyrus-sasl2 \
+LIB_DEPENDS=		audio/pulseaudio \
+			security/cyrus-sasl2 \
 			security/gnutls \
 			security/libgcrypt \
 			x11/gtk+3
-
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--without-examples \
-			--with-sasl \
-			--without-pulseaudio \
-			--without-libview
-
-# python bindings are gtk+2 only
-CONFIGURE_ARGS +=	--without-python
-
-MAKE_FLAGS=		NO_UNDEFINED_FLAGS=
 
 .include <bsd.port.mk>

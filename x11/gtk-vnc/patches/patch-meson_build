@@ -1,0 +1,27 @@
+$OpenBSD: patch-meson_build,v 1.1 2019/08/17 10:31:21 ajacoutot Exp $
+
+No ucontext.h on OpenBSD.
+
+We only have zlib version 1.2.3 in base.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -30,7 +30,7 @@ cc = meson.get_compiler('c')
+ coroutine = get_option('with-coroutine')
+ 
+ if coroutine == 'auto'
+-  if host_machine.system() == 'windows'
++  if host_machine.system() == 'windows' or host_machine.system() == 'openbsd'
+     coroutine = 'gthread'
+   else
+     coroutine = 'ucontext'
+@@ -49,7 +49,7 @@ gdk_pixbuf_min_version = '2.12.0'
+ gcrypt_min_version = '1.5.0'
+ gnutls_min_version = '3.1.18'
+ # Should be newer, but fedora mingw pkgconfig is fubar
+-zlib_min_version = '1.2.5'
++zlib_min_version = '1.2.3'
+ libsasl_min_version = '2.1.26'
+ 
+ # gtk-vnc

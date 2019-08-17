@@ -1,0 +1,51 @@
+$OpenBSD: patch-src_meson_build,v 1.1 2019/08/17 10:31:21 ajacoutot Exp $
+
+Undefined references on libc functions are fine in BSD land...
+
+Use a version script (matches Linux).
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -89,11 +89,11 @@ else
+ endif
+ 
+ gvnc_link_args = []
+-if host_machine.system() != 'windows'
++if host_machine.system() != 'windows' and host_machine.system() != 'openbsd'
+   gvnc_link_args += ['-Wl,--no-undefined']
+ endif
+ 
+-if host_machine.system() == 'linux'
++if host_machine.system() == 'linux' or host_machine.system() == 'openbsd'
+   gvnc_link_args += ['-Wl,--version-script,@0@/@1@'.format(
+     meson.current_source_dir(), 'libgvnc_sym.version')
+ ]
+@@ -178,11 +178,11 @@ if libpulse_dep.found()
+   ]
+ 
+   gvncpulse_link_args = []
+-  if host_machine.system() != 'windows'
++  if host_machine.system() != 'windows' and host_machine.system() != 'openbsd'
+     gvncpulse_link_args += ['-Wl,--no-undefined']
+   endif
+ 
+-  if host_machine.system() == 'linux'
++  if host_machine.system() == 'linux' or host_machine.system() == 'openbsd'
+     gvncpulse_link_args += ['-Wl,--version-script,@0@/@1@'.format(
+       meson.current_source_dir(), 'libgvncpulse_sym.version')
+   ]
+@@ -337,11 +337,11 @@ endforeach
+ 
+ 
+ gtk_vnc_link_args = []
+-if host_machine.system() != 'windows'
++if host_machine.system() != 'windows' and host_machine.system() != 'openbsd'
+   gtk_vnc_link_args += ['-Wl,--no-undefined']
+ endif
+ 
+-if host_machine.system() == 'linux'
++if host_machine.system() == 'linux' or host_machine.system() == 'openbsd'
+   gtk_vnc_link_args += ['-Wl,--version-script,@0@/@1@'.format(
+     meson.current_source_dir(), 'libgtk-vnc_sym.version')
+ ]
