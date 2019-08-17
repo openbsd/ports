@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.189 2019/07/09 07:00:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.190 2019/08/17 08:23:50 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
-V=		4.1.4
+V=		4.2
 DISTNAME=	ffmpeg-${V}
 EPOCH=		0
 CATEGORIES=	graphics multimedia
@@ -31,6 +31,9 @@ WANTLIB+=	freetype fribidi gsm iconv lzma m mp3lame ogg opus
 WANTLIB+=	pthread sndio speex ssl theoradec theoraenc v4l2
 WANTLIB+=	vorbis vorbisenc vpx x264 x265 xcb xcb-shape xcb-shm
 WANTLIB+=	xcb-xfixes xml2 xvidcore z
+
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 BUILD_DEPENDS=	textproc/texi2html \
 		multimedia/frei0r-plugins
@@ -79,7 +82,7 @@ OPTFLAGS+=	-Wno-redundant-decls
 FIX_EXTRACT_PERMISSIONS=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
-CONFIGURE_ARGS+= --enable-shared \
+CONFIGURE_ARGS+=--enable-shared \
 		--arch=${MACHINE_ARCH} \
 		--cc=${CC} \
 		--disable-altivec \
