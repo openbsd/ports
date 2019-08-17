@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/19 08:19:03 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/08/17 17:24:32 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_uncefact/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_uncefact/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_uncefact/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_uncefact/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_uncefact/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_uncefact/${MODPY_PYCACHE}edocument.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_uncefact/edocument.py
@@ -92,7 +92,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_uncefact/test
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_uncefact/tests/16B-CII/identifierlist/standard/UNECE_FreightCostCode_4.xsd
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_uncefact/tests/16B-CII/identifierlist/standard/UNECE_PaymentTermsDescriptionIdentifier_D16A.xsd
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_uncefact/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_uncefact/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_uncefact/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_uncefact/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_uncefact/tests/${MODPY_PYCACHE}test_edocument_uncefact.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/edocument_uncefact/tests/test_edocument_uncefact.py

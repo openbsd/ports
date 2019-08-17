@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/03 12:28:18 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/08/17 17:24:31 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/${MODPY_PYCACHE}account.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/${MODPY_PYCACHE}invoice.${MODPY_PYC_MAGIC_TAG}pyc
@@ -39,7 +39,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/payment
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/payment_term.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/tests/${MODPY_PYCACHE}test_account_invoice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice/tests/${MODPY_PYCACHE}tools.${MODPY_PYC_MAGIC_TAG}pyc

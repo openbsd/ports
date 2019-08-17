@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/19 08:20:27 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/08/17 17:24:32 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/notification_email/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/notification_email/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/notification_email/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/notification_email/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/notification_email/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/notification_email/${MODPY_PYCACHE}ir.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/notification_email/${MODPY_PYCACHE}notification.${MODPY_PYC_MAGIC_TAG}pyc
@@ -32,7 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/notification_email/noti
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/notification_email/notification.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/notification_email/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/notification_email/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/notification_email/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/notification_email/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/notification_email/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/notification_email/tests/${MODPY_PYCACHE}test_notification_email.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/notification_email/tests/test_notification_email.py

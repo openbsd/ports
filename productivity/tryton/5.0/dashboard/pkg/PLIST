@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/19 08:18:33 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/08/17 17:24:32 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/${MODPY_PYCACHE}dashboard.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/${MODPY_PYCACHE}ir.${MODPY_PYC_MAGIC_TAG}pyc
@@ -35,7 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/res.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/res.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/tests/${MODPY_PYCACHE}test_dashboard.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/tests/test_dashboard.py

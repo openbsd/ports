@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/09 11:48:56 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/08/17 17:24:32 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/${MODPY_PYCACHE}currency.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
@@ -37,7 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/locale/zh_CN.p
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/message.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/tests/${MODPY_PYCACHE}test_currency.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/currency/tests/${MODPY_PYCACHE}tools.${MODPY_PYC_MAGIC_TAG}pyc
