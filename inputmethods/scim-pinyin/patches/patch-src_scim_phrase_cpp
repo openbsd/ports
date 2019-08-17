@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_scim_phrase_cpp,v 1.1 2019/08/17 22:17:15 cwen Exp $
+
+Add missing header for ports-gcc
+
+Index: src/scim_phrase.cpp
+--- src/scim_phrase.cpp.orig
++++ src/scim_phrase.cpp
+@@ -27,6 +27,8 @@
+ 
+ #define SCIM_PHRASE_MAX_RELATION 1000
+ 
++#include <string.h>
++
+ #include <scim.h>
+ #include "scim_pinyin_private.h"
+ #include "scim_phrase.h"

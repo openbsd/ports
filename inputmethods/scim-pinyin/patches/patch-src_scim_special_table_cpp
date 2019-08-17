@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_scim_special_table_cpp,v 1.1 2019/08/17 22:17:15 cwen Exp $
+
+Add missing header for ports-gcc
+
+Index: src/scim_special_table.cpp
+--- src/scim_special_table.cpp.orig
++++ src/scim_special_table.cpp
+@@ -20,6 +20,7 @@
+ #define Uses_STL_IOMANIP
+ #define Uscs_C_STRING
+ 
++#include <string.h>
+ #include <time.h>
+ #include <scim.h>
+ #include "scim_pinyin_private.h"
