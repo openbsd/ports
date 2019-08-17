@@ -1,7 +1,15 @@
-$OpenBSD: patch-src_sp_cpp,v 1.1.1.1 2008/10/29 02:24:17 kevlo Exp $
---- src/sp.cpp.orig	Sat Oct 25 15:36:52 2008
-+++ src/sp.cpp	Sat Oct 25 15:37:30 2008
-@@ -11,6 +11,7 @@ using namespace scim;
+$OpenBSD: patch-src_sp_cpp,v 1.2 2019/08/17 19:07:20 cwen Exp $
+
+ports-gcc: add missing headers
+
+Index: src/sp.cpp
+--- src/sp.cpp.orig
++++ src/sp.cpp
+@@ -8,9 +8,11 @@
+ using namespace scim;
+ 
+ #include <stdio.h>
++#include <string.h>
  #include <sys/stat.h>
  #include <limits.h>
  #include <ctype.h>

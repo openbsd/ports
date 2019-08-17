@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ime_cpp,v 1.1 2019/08/17 19:07:20 cwen Exp $
+
+ports-gcc: add missing header
+
+Index: src/ime.cpp
+--- src/ime.cpp.orig
++++ src/ime.cpp
+@@ -3,6 +3,7 @@
+ #define Uses_SCIM_CONFIG_BASE
+ #define Uses_SCIM_CONFIG_PATH
+ #include <ctype.h>
++#include <string.h>
+ 
+ #include <scim.h>
+ #include "scim_fcitx_imengine.h"

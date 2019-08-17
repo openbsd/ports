@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_scim_fcitx_imengine_cpp,v 1.1 2019/08/17 19:07:20 cwen Exp $
+
+ports-gcc: add missing header 
+
+Index: src/scim_fcitx_imengine.cpp
+--- src/scim_fcitx_imengine.cpp.orig
++++ src/scim_fcitx_imengine.cpp
+@@ -35,6 +35,8 @@
+ #define Uses_SCIM_CONFIG_BASE
+ #define Uses_SCIM_CONFIG_PATH
+ 
++#include <string.h>
++
+ #include <scim.h>
+ #include "scim_fcitx_imengine.h"
+ #include "main.h"
