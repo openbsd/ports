@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/04 19:07:43 chrisz Exp $
+# $OpenBSD: Makefile,v 1.2 2019/08/17 13:29:42 chrisz Exp $
 
 COMMENT =	optimized parsing and printing library for the JSON format
 CATEGORIES =	devel
@@ -19,8 +19,6 @@ BUILD_DEPENDS = devel/dune \
 		devel/ocaml-cppo \
 		devel/ocaml-easy-format \
 		devel/ocaml-biniou
-
-FAKE_FLAGS =	OCAMLFIND_DESTDIR=${LOCALBASE}/lib/ocaml
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-${GH_PROJECT}

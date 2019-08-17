@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/04 19:04:48 chrisz Exp $
+# $OpenBSD: Makefile,v 1.2 2019/08/17 13:29:42 chrisz Exp $
 
 COMMENT =	binary data format designed for speed, safety, usability
 CATEGORIES =	devel
@@ -17,8 +17,6 @@ MODULES =	lang/ocaml
 
 BUILD_DEPENDS = devel/dune \
 		devel/ocaml-easy-format
-
-FAKE_FLAGS =	OCAMLFIND_DESTDIR=${LOCALBASE}/lib/ocaml
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-${GH_PROJECT}

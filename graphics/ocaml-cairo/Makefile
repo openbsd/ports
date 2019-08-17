@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/04 19:09:17 chrisz Exp $
+# $OpenBSD: Makefile,v 1.2 2019/08/17 13:29:42 chrisz Exp $
 
 COMMENT =	binding to cairo, a 2D vector graphics library
 CATEGORIES =	graphics
@@ -25,8 +25,6 @@ BUILD_DEPENDS = devel/dune \
 LIB_DEPENDS =	devel/pango \
 		graphics/gdk-pixbuf2 \
 		x11/gtk+2
-
-FAKE_FLAGS =	OCAMLFIND_DESTDIR=${LOCALBASE}/lib/ocaml
 
 ALL_TARGET =
 

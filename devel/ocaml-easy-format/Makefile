@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/04 19:06:03 chrisz Exp $
+# $OpenBSD: Makefile,v 1.2 2019/08/17 13:29:42 chrisz Exp $
 
 COMMENT =	interface to the OCaml stdlib Format module
 CATEGORIES =	devel
@@ -15,10 +15,7 @@ WANTLIB =	c m
 
 MODULES =	lang/ocaml
 
-BUILD_DEPENDS = devel/dune \
-		sysutils/findlib
-
-FAKE_FLAGS =	OCAMLFIND_DESTDIR=${LOCALBASE}/lib/ocaml
+BUILD_DEPENDS = devel/dune
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-${GH_PROJECT}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/04 19:13:19 chrisz Exp $
+# $OpenBSD: Makefile,v 1.2 2019/08/17 13:29:42 chrisz Exp $
 
 COMMENT =	OCaml interface to GTK+3
 CATEGORIES =	x11 devel
@@ -19,8 +19,7 @@ LIB_DEPENDS =	x11/gtk+3 \
 		devel/gettext,-runtime \
 		x11/gtksourceview3
 
-BUILD_DEPENDS = sysutils/findlib \
-		devel/dune \
+BUILD_DEPENDS = devel/dune \
 		x11/gnome/librsvg \
 		x11/gnome/libgnomecanvas \
 		graphics/ocaml-cairo
