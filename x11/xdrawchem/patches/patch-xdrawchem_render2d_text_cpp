@@ -1,0 +1,18 @@
+$OpenBSD: patch-xdrawchem_render2d_text_cpp,v 1.1 2019/08/18 06:47:05 bket Exp $
+
+Fix segfault when using (hot)key on bond twice in a row. Taken from
+https://github.com/bryanherger/xdrawchem/pull/12
+
+Index: xdrawchem/render2d_text.cpp
+--- xdrawchem/render2d_text.cpp.orig
++++ xdrawchem/render2d_text.cpp
+@@ -380,6 +380,9 @@ void Render2D::keyPressEvent( QKeyEvent * k )
+                 }
+ 
+                 if ( highlightobject->Type() != TYPE_TEXT ) {
++                    delete localtexteditor;
++                    localtexteditor = 0;
++
+                     hotkeymode = false;
+                     mode = hkprevmode;
+                     return;
