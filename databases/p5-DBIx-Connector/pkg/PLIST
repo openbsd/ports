@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/18 09:09:03 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/08/18 20:16:14 afresh1 Exp $
 ${P5SITE}/DBIx/
 ${P5SITE}/DBIx/Connector/
 ${P5SITE}/DBIx/Connector.pm
 ${P5SITE}/DBIx/Connector/Driver/
 ${P5SITE}/DBIx/Connector/Driver.pm
+${P5SITE}/DBIx/Connector/Driver/Firebird.pm
 ${P5SITE}/DBIx/Connector/Driver/MSSQL.pm
 ${P5SITE}/DBIx/Connector/Driver/Oracle.pm
 ${P5SITE}/DBIx/Connector/Driver/Pg.pm
@@ -11,6 +12,7 @@ ${P5SITE}/DBIx/Connector/Driver/SQLite.pm
 ${P5SITE}/DBIx/Connector/Driver/mysql.pm
 @man man/man3p/DBIx::Connector.3p
 @man man/man3p/DBIx::Connector::Driver.3p
+@man man/man3p/DBIx::Connector::Driver::Firebird.3p
 @man man/man3p/DBIx::Connector::Driver::MSSQL.3p
 @man man/man3p/DBIx::Connector::Driver::Oracle.3p
 @man man/man3p/DBIx::Connector::Driver::Pg.3p
