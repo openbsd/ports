@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.4 2019/03/17 03:26:54 bcallah Exp $
+$OpenBSD: patch-configure,v 1.5 2019/08/18 01:15:12 daniel Exp $
 
 Fixup path locations for OpenBSD.
 
@@ -15,7 +15,7 @@ Index: configure
  coqdevdir='$(PREFIX)/lib/compcert/coq'
  toolprefix=''
  target=''
-@@ -643,14 +644,14 @@ esac
+@@ -644,14 +645,14 @@ esac
  #
  # Generate Makefile.config
  #
