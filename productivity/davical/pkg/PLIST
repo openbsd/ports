@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/09/04 12:46:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/08/18 14:30:42 landry Exp $
 davical/
 davical/INSTALL
 davical/README
@@ -10,8 +10,8 @@ davical/config/example-config.php
 @sample davical/config/config.php
 davical/config/other-config.php
 davical/davical.conf
-@sample ${PREFIX}/conf/modules.sample/
-@sample ${PREFIX}/conf/modules.sample/davical.conf
+@sample conf/modules.sample/
+@sample conf/modules.sample/davical.conf
 davical/dba/
 davical/dba/appuser_permissions.txt
 davical/dba/base-data.sql
@@ -51,6 +51,7 @@ davical/dba/patches/1.2.8.sql
 davical/dba/patches/1.2.9.sql
 davical/dba/patches/1.3.1.sql
 davical/dba/patches/1.3.2.sql
+davical/dba/patches/1.3.3.sql
 davical/dba/rrule_functions-8.1.sql
 davical/dba/rrule_functions.sql
 davical/dba/rrule_tests.sql
@@ -142,6 +143,7 @@ davical/inc/external-fetch.php
 davical/inc/freebusy-functions.php
 davical/inc/iSchedule-POST.php
 davical/inc/iSchedule.php
+davical/inc/instance_range.php
 davical/inc/interactive-page.php
 davical/inc/log_caldav_action.php
 davical/inc/other_translated_strings.php
