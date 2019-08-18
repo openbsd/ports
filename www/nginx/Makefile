@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2019/07/12 20:50:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.135 2019/08/18 14:26:32 landry Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -15,7 +15,7 @@ COMMENT-headers_more=	nginx module for setting/adding/clearing headers
 COMMENT-perl=		nginx perl scripting module
 COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
 
-VERSION=	1.16.0
+VERSION=	1.16.1
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
@@ -31,9 +31,6 @@ PKGNAME-lua=		nginx-lua-${VERSION}
 PKGNAME-headers_more=	nginx-headers-more-${VERSION}
 PKGNAME-perl=		nginx-perl-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
-
-REVISION-passenger=	0
-REVISION-stream=	0
 
 MASTER_SITES=	https://nginx.org/download/
 MASTER_SITES0=	https://github.com/simpl/ngx_devel_kit/archive/
@@ -74,7 +71,7 @@ WANTLIB-image_filter=	gd
 WANTLIB-geoip=		GeoIP
 WANTLIB-xslt=		exslt xml2 xslt
 WANTLIB-naxsi=
-WANTLIB-ldap_auth=	ldap-2.4
+WANTLIB-ldap_auth=	ldap
 WANTLIB-lua=		${MODLUA_WANTLIB} m
 WANTLIB-headers_more=
 WANTLIB-perl=		c m perl
@@ -115,7 +112,7 @@ CFLAGS+=	-Wall -Wpointer-arith \
 		-I "${LOCALBASE}/include" \
 		-L "${X11BASE}/lib"
 
-PATCHFILES+=		nginx-1.14.0-chroot.patch:3
+PATCHFILES+=		nginx-1.16.1-chroot.patch:3
 PATCH_DIST_STRIP=	-p1
 
 CONFIGURE_STYLE=	simple
