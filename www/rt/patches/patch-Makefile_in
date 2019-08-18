@@ -16,7 +16,7 @@ Index: Makefile.in
  CONFIG_FILE		=	$(CONFIG_FILE_PATH)/RT_Config.pm
  SITE_CONFIG_FILE	=	$(CONFIG_FILE_PATH)/RT_SiteConfig.pm
  
-@@ -286,13 +292,13 @@ fixperms:
+@@ -288,13 +294,13 @@ fixperms:
  
  	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_BIN_PATH)
  
@@ -34,7 +34,7 @@ Index: Makefile.in
  
  	chmod 0440 $(DESTDIR)$(CONFIG_FILE)
  	chmod 0640 $(DESTDIR)$(SITE_CONFIG_FILE)
-@@ -305,7 +311,7 @@ fixperms:
+@@ -307,7 +313,7 @@ fixperms:
  
  	# Make upgrade scripts executable if they are in the source.
  	#
@@ -43,7 +43,7 @@ Index: Makefile.in
  		chmod a+x "$(DESTDIR)$(RT_ETC_PATH)/upgrade/$$file" ; \
  	done
  
-@@ -360,7 +366,7 @@ clean-mason-cache:
+@@ -362,7 +368,7 @@ clean-mason-cache:
  	rm -rf $(DESTDIR)$(MASON_DATA_PATH)/etc/*
  	rm -rf $(DESTDIR)$(MASON_DATA_PATH)/obj/*
  
@@ -52,7 +52,7 @@ Index: Makefile.in
  
  files-install: libs-install etc-install config-install bin-install sbin-install html-install doc-install font-install po-install static-install
  
-@@ -368,6 +374,7 @@ config-install:
+@@ -370,6 +376,7 @@ config-install:
  @COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -o $(BIN_OWNER) -g $(RTGROUP) -d $(DESTDIR)$(CONFIG_FILE_PATH)
  @COMMENT_INPLACE_LAYOUT@	-$(INSTALL) -m 0440 -o $(BIN_OWNER) -g $(RTGROUP)  etc/RT_Config.pm $(DESTDIR)$(CONFIG_FILE)
  @COMMENT_INPLACE_LAYOUT@	[ -f $(DESTDIR)$(SITE_CONFIG_FILE) ] || $(INSTALL) -m 0640 -o $(BIN_OWNER) -g $(RTGROUP) etc/RT_SiteConfig.pm $(DESTDIR)$(SITE_CONFIG_FILE) 
@@ -60,7 +60,7 @@ Index: Makefile.in
  @COMMENT_INPLACE_LAYOUT@	@echo "Installed configuration. About to install RT in  $(RT_PATH)"
  
  test: 
-@@ -454,16 +461,16 @@ doc-install:
+@@ -456,16 +463,16 @@ doc-install:
  
  
  etc-install:

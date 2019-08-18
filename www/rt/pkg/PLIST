@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2018/09/28 09:03:49 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.24 2019/08/18 09:14:44 robert Exp $
 @rcscript ${RCDIR}/rt
 @sample ${SYSCONFDIR}/rt3/
 @sample ${SYSCONFDIR}/rt3/local/
@@ -399,8 +399,10 @@ sbin/rt-externalize-attachments
 sbin/rt-fulltext-indexer
 sbin/rt-importer
 sbin/rt-ldapimport
+sbin/rt-munge-attachments
 sbin/rt-passwd
 sbin/rt-preferences-viewer
+sbin/rt-search-attributes
 sbin/rt-serializer
 sbin/rt-server
 sbin/rt-server.fcgi
@@ -414,6 +416,7 @@ sbin/rt-validate-aliases
 sbin/rt-validator
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/rt3/
+share/doc/rt3/GDPR.pod
 share/doc/rt3/README
 share/doc/rt3/UPGRADING-2.0
 share/doc/rt3/UPGRADING-3.0
@@ -430,6 +433,7 @@ share/doc/rt3/authentication.pod
 share/doc/rt3/automating_rt.pod
 share/doc/rt3/backups.pod
 share/doc/rt3/charts.pod
+share/doc/rt3/custom_roles.pod
 share/doc/rt3/customizing/
 share/doc/rt3/customizing/approvals.pod
 share/doc/rt3/customizing/articles_introduction.pod
@@ -463,6 +467,10 @@ share/doc/rt3/images/complicated-search-arrows.png
 share/doc/rt3/images/create-setowner-action.png
 share/doc/rt3/images/current-search.png
 share/doc/rt3/images/customize-dashboards-menu.png
+share/doc/rt3/images/customroles-apply-to-queue.png
+share/doc/rt3/images/customroles-assign-on-ticket-create.png
+share/doc/rt3/images/customroles-create-a-customrole.png
+share/doc/rt3/images/customroles-query-builder.png
 share/doc/rt3/images/dashboard-chart.png
 share/doc/rt3/images/dashboard-content-invoices.png
 share/doc/rt3/images/dashboard-content.png
@@ -1067,6 +1075,10 @@ share/examples/rt3/upgrade/generate-rtaddressregexp
 @sample ${SYSCONFDIR}/rt3/upgrade/generate-rtaddressregexp
 share/examples/rt3/upgrade/generate-rtaddressregexp.in
 @sample ${SYSCONFDIR}/rt3/upgrade/generate-rtaddressregexp.in
+share/examples/rt3/upgrade/reset-sequences
+@sample ${SYSCONFDIR}/rt3/upgrade/reset-sequences
+share/examples/rt3/upgrade/reset-sequences.in
+@sample ${SYSCONFDIR}/rt3/upgrade/reset-sequences.in
 share/examples/rt3/upgrade/sanity-check-stylesheets
 @sample ${SYSCONFDIR}/rt3/upgrade/sanity-check-stylesheets
 share/examples/rt3/upgrade/sanity-check-stylesheets.in
@@ -1227,6 +1239,7 @@ share/rt3/html/Admin/Groups/Members.html
 share/rt3/html/Admin/Groups/Memberships.html
 share/rt3/html/Admin/Groups/Modify.html
 share/rt3/html/Admin/Groups/UserRights.html
+share/rt3/html/Admin/Groups/autohandler
 share/rt3/html/Admin/Groups/index.html
 share/rt3/html/Admin/Queues/
 share/rt3/html/Admin/Queues/CustomField.html
@@ -1462,6 +1475,7 @@ share/rt3/html/Elements/Logo
 share/rt3/html/Elements/MakeClicky
 share/rt3/html/Elements/Menu
 share/rt3/html/Elements/MessageBox
+share/rt3/html/Elements/Modal
 share/rt3/html/Elements/MyAdminQueues
 share/rt3/html/Elements/MyAssets
 share/rt3/html/Elements/MyRT
@@ -1658,6 +1672,9 @@ share/rt3/html/NoAuth/rss/dhandler
 share/rt3/html/Prefs/
 share/rt3/html/Prefs/AboutMe.html
 share/rt3/html/Prefs/DashboardsInMenu.html
+share/rt3/html/Prefs/Elements/
+share/rt3/html/Prefs/Elements/EditAboutMe
+share/rt3/html/Prefs/Elements/ShowAboutMe
 share/rt3/html/Prefs/MyRT.html
 share/rt3/html/Prefs/Other.html
 share/rt3/html/Prefs/QueueList.html
@@ -1770,6 +1787,7 @@ share/rt3/html/SelfService/Elements/
 share/rt3/html/SelfService/Elements/GotoTicket
 share/rt3/html/SelfService/Elements/Header
 share/rt3/html/SelfService/Elements/MyRequests
+share/rt3/html/SelfService/Elements/RequestUpdate
 share/rt3/html/SelfService/Elements/SearchArticle
 share/rt3/html/SelfService/Helpers/
 share/rt3/html/SelfService/Helpers/Autocomplete/
@@ -1780,7 +1798,13 @@ share/rt3/html/SelfService/Helpers/Upload/
 share/rt3/html/SelfService/Helpers/Upload/Add
 share/rt3/html/SelfService/Helpers/Upload/Delete
 share/rt3/html/SelfService/Prefs.html
+share/rt3/html/SelfService/Search/
+share/rt3/html/SelfService/Search/Results.tsv
 share/rt3/html/SelfService/Update.html
+share/rt3/html/SelfService/User/
+share/rt3/html/SelfService/User/Elements/
+share/rt3/html/SelfService/User/Elements/RelatedData
+share/rt3/html/SelfService/User/RelatedData.tsv
 share/rt3/html/SelfService/index.html
 share/rt3/html/Ticket/
 share/rt3/html/Ticket/Attachment/
@@ -1859,9 +1883,11 @@ share/rt3/html/User/Elements/Portlets/CreateTicket
 share/rt3/html/User/Elements/Portlets/ExtraInfo
 share/rt3/html/User/Elements/Portlets/InactiveTickets
 share/rt3/html/User/Elements/Portlets/UserAssets
+share/rt3/html/User/Elements/RelatedData
 share/rt3/html/User/Elements/TicketList
 share/rt3/html/User/Elements/UserInfo
 share/rt3/html/User/History.html
+share/rt3/html/User/RelatedData.tsv
 share/rt3/html/User/Search.html
 share/rt3/html/User/Summary.html
 share/rt3/html/Widgets/
@@ -1942,6 +1968,7 @@ share/rt3/po/pl.po
 share/rt3/po/pt.po
 share/rt3/po/pt_BR.po
 share/rt3/po/pt_PT.po
+share/rt3/po/ro.po
 share/rt3/po/rt.pot
 share/rt3/po/ru.po
 share/rt3/po/sk.po
@@ -2280,6 +2307,7 @@ share/rt3/static/css/base/portlets.css
 share/rt3/static/css/base/print.css
 share/rt3/static/css/base/record.css
 share/rt3/static/css/base/rights-editor.css
+share/rt3/static/css/base/shredder.css
 share/rt3/static/css/base/superfish-navbar.css
 share/rt3/static/css/base/superfish-vertical.css
 share/rt3/static/css/base/superfish.css
@@ -2400,7 +2428,7 @@ share/rt3/static/js/farbtastic.js
 share/rt3/static/js/forms.js
 share/rt3/static/js/history-folding.js
 share/rt3/static/js/i18n.js
-share/rt3/static/js/jquery-1.11.3.min.js
+share/rt3/static/js/jquery-1.12.4p1.min.js
 share/rt3/static/js/jquery-ui-patch-datepicker.js
 share/rt3/static/js/jquery-ui-timepicker-addon.js
 share/rt3/static/js/jquery-ui.min.js

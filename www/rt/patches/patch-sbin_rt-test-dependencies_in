@@ -1,11 +1,12 @@
-$OpenBSD: patch-sbin_rt-test-dependencies_in,v 1.4 2018/09/28 09:03:49 pirofti Exp $
+$OpenBSD: patch-sbin_rt-test-dependencies_in,v 1.5 2019/08/18 09:14:44 robert Exp $
+
 Index: sbin/rt-test-dependencies.in
 --- sbin/rt-test-dependencies.in.orig
 +++ sbin/rt-test-dependencies.in
 @@ -139,7 +139,7 @@ Digest::MD5 2.27
  Digest::SHA
- Email::Address 1.908
- Email::Address::List 0.02
+ Email::Address 1.912
+ Email::Address::List 0.06
 -Encode 2.64
 +Encode 2.60
  Errno
