@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/08/18 08:06:00 otto Exp $
 
 COMMENT =	optimized HTTP server with support for HTTP/1.x and HTTP/2
 
@@ -10,7 +10,7 @@ CATEGORIES =	www
 
 GH_ACCOUNT =	h2o
 GH_PROJECT =	h2o
-GH_TAGNAME =	v2.2.5
+GH_TAGNAME =	v2.2.6
 
 HOMEPAGE =	https://h2o.examp1e.net/
 MAINTAINER =	Otto Moerbeek <otto@drijf.net>
