@@ -1,0 +1,20 @@
+$OpenBSD: patch-fftools_ffplay_c,v 1.1 2019/08/18 06:54:06 ajacoutot Exp $
+
+ffplay: properly detect all window size changes
+
+SDL_WINDOWEVENT_SIZE_CHANGED should be used instead of SDL_WINDOWEVENT_RESIZED
+because SDL_WINDOWEVENT_RESIZED is only emitted if the resize happened due to
+an external event.
+
+Index: fftools/ffplay.c
+--- fftools/ffplay.c.orig
++++ fftools/ffplay.c
+@@ -3436,7 +3436,7 @@ static void event_loop(VideoState *cur_stream)
+             break;
+         case SDL_WINDOWEVENT:
+             switch (event.window.event) {
+-                case SDL_WINDOWEVENT_RESIZED:
++                case SDL_WINDOWEVENT_SIZE_CHANGED:
+                     screen_width  = cur_stream->width  = event.window.data1;
+                     screen_height = cur_stream->height = event.window.data2;
+                     if (cur_stream->vis_texture) {
