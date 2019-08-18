@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2019/05/03 16:35:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.73 2019/08/18 14:40:31 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -244,7 +244,7 @@ SUBDIR += krdc
 SUBDIR += krfb
 SUBDIR += network-filesharing
 SUBDIR += network-strigi-analyzers
-SUBDIR += zeroconf-ioslave
+#SUBDIR += zeroconf-ioslave
 
 # former kdesdk
 #SUBDIR += cervisia			x11/kde-applications

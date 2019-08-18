@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/05/03 16:35:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.67 2019/08/18 14:40:31 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -31,8 +31,9 @@ REVISION-games = 3
 REVISION-sdk = 4
 REVISION-edu = 7
 REVISION-multimedia = 0
+REVISION-network = 0
 REVISION-extras = 10
-REVISION-main =		27
+REVISION-main =		28
 REVISION-admin =	1
 REVISION-graphics =	3
 
@@ -115,8 +116,7 @@ RUN_DEPENDS-network = \
 	${MODKDE4_DEP_DIR}/kopete		\
 	${MODKDE4_DEP_DIR}/kppp			\
 	${MODKDE4_DEP_DIR}/krdc			\
-	${MODKDE4_DEP_DIR}/krfb			\
-	${MODKDE4_DEP_DIR}/zeroconf-ioslave
+	${MODKDE4_DEP_DIR}/krfb
 
 RUN_DEPENDS-sdk = \
 	${MODKDE4_DEP_DIR}/dev-scripts		\
