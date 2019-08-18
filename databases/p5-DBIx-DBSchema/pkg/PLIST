@@ -1,11 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/06 19:36:12 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/08/18 20:23:36 afresh1 Exp $
 ${P5SITE}/DBIx/
 ${P5SITE}/DBIx/DBSchema/
 ${P5SITE}/DBIx/DBSchema.pm
-${P5SITE}/DBIx/DBSchema/ColGroup/
-${P5SITE}/DBIx/DBSchema/ColGroup.pm
-${P5SITE}/DBIx/DBSchema/ColGroup/Index.pm
-${P5SITE}/DBIx/DBSchema/ColGroup/Unique.pm
 ${P5SITE}/DBIx/DBSchema/Column.pm
 ${P5SITE}/DBIx/DBSchema/DBD/
 ${P5SITE}/DBIx/DBSchema/DBD.pm
@@ -14,12 +10,11 @@ ${P5SITE}/DBIx/DBSchema/DBD/Pg.pm
 ${P5SITE}/DBIx/DBSchema/DBD/SQLite.pm
 ${P5SITE}/DBIx/DBSchema/DBD/Sybase.pm
 ${P5SITE}/DBIx/DBSchema/DBD/mysql.pm
+${P5SITE}/DBIx/DBSchema/ForeignKey.pm
+${P5SITE}/DBIx/DBSchema/Index.pm
 ${P5SITE}/DBIx/DBSchema/Table.pm
 ${P5SITE}/DBIx/DBSchema/_util.pm
 @man man/man3p/DBIx::DBSchema.3p
-@man man/man3p/DBIx::DBSchema::ColGroup.3p
-@man man/man3p/DBIx::DBSchema::ColGroup::Index.3p
-@man man/man3p/DBIx::DBSchema::ColGroup::Unique.3p
 @man man/man3p/DBIx::DBSchema::Column.3p
 @man man/man3p/DBIx::DBSchema::DBD.3p
 @man man/man3p/DBIx::DBSchema::DBD::Oracle.3p
@@ -27,4 +22,6 @@ ${P5SITE}/DBIx/DBSchema/_util.pm
 @man man/man3p/DBIx::DBSchema::DBD::SQLite.3p
 @man man/man3p/DBIx::DBSchema::DBD::Sybase.3p
 @man man/man3p/DBIx::DBSchema::DBD::mysql.3p
+@man man/man3p/DBIx::DBSchema::ForeignKey.3p
+@man man/man3p/DBIx::DBSchema::Index.3p
 @man man/man3p/DBIx::DBSchema::Table.3p

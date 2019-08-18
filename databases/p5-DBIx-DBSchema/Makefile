@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/08/18 20:23:36 afresh1 Exp $
 
 COMMENT=	database-independent schema objects
 
-DISTNAME=	DBIx-DBSchema-0.32
-REVISION=	1
+DISTNAME=	DBIx-DBSchema-0.45
 CATEGORIES=	databases
 MODULES=	cpan
 PKG_ARCH=	*
