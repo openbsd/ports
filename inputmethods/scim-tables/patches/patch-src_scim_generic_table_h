@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_scim_generic_table_h,v 1.1 2019/08/18 19:23:41 cwen Exp $
+
+Add missing header for ports-gcc
+
+Index: src/scim_generic_table.h
+--- src/scim_generic_table.h.orig
++++ src/scim_generic_table.h
+@@ -34,6 +34,7 @@
+ #include <string>
+ #include <algorithm>
+ #include <stdio.h>
++#include <string.h>
+ 
+ #define SCIM_GT_MAX_KEY_LENGTH           63
+ 

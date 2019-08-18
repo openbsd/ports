@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:47:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/08/18 19:23:41 cwen Exp $
 
 COMMENT=	input method data tables for scim
 
 DISTNAME=	scim-tables-0.5.8
-REVISION=	13
+REVISION=	14
 
 CATEGORIES=	inputmethods chinese japanese korean
 
@@ -12,16 +12,16 @@ HOMEPAGE=	https://github.com/scim-im/scim-tables
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB+= GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
-WANTLIB+= Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo drm expat ffi
-WANTLIB+= fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB+= glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
-WANTLIB+= gtk-x11-2.0 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
-WANTLIB+= pangoft2-1.0 pcre pixman-1 png pthread scim-1.0
-WANTLIB+= scim-gtkutils-1.0 scim-x11utils-1.0 ${COMPILER_LIBCXX} xcb xcb-render
-WANTLIB+= xcb-shm z fribidi
+WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat
+WANTLIB += ffi fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png scim-1.0
+WANTLIB += scim-gtkutils-1.0 scim-x11utils-1.0 xcb xcb-render
+WANTLIB += xcb-shm z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scim/}
 
