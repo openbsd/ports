@@ -1,4 +1,4 @@
-$OpenBSD: patch-etc_config_keycodes,v 1.1.1.1 2019/03/07 19:34:32 rsadowski Exp $
+$OpenBSD: patch-etc_config_keycodes,v 1.2 2019/08/18 17:45:48 rsadowski Exp $
 
 Fix keycodes for the "Left", "Down", "Up" and "Right" keys: they're
 different between Linux and OpenBSD.
@@ -6,7 +6,7 @@ different between Linux and OpenBSD.
 Index: etc/config.keycodes
 --- etc/config.keycodes.orig
 +++ etc/config.keycodes
-@@ -29,13 +29,13 @@ font pango:monospace 8
+@@ -38,13 +38,13 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-s
  floating_modifier $mod
  
  # start a terminal
@@ -22,7 +22,7 @@ Index: etc/config.keycodes
  # There also is the (new) i3-dmenu-desktop which only displays applications
  # shipping a .desktop file. It is a wrapper around dmenu, so you need that
  # installed.
-@@ -48,10 +48,10 @@ bindcode $mod+46 focus up
+@@ -57,10 +57,10 @@ bindcode $mod+46 focus up
  bindcode $mod+47 focus right
  
  # alternatively, you can use the cursor keys:
@@ -37,7 +37,7 @@ Index: etc/config.keycodes
  
  # move focused window
  bindcode $mod+Shift+44 move left
-@@ -60,10 +60,10 @@ bindcode $mod+Shift+46 move up
+@@ -69,10 +69,10 @@ bindcode $mod+Shift+46 move up
  bindcode $mod+Shift+47 move right
  
  # alternatively, you can use the cursor keys:
@@ -52,7 +52,7 @@ Index: etc/config.keycodes
  
  # split in horizontal orientation
  bindcode $mod+43 split h
-@@ -149,10 +149,10 @@ mode "resize" {
+@@ -158,10 +158,10 @@ mode "resize" {
          bindcode 47 resize grow width 10 px or 10 ppt
  
          # same bindings, but for the arrow keys
