@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_tests_hitch_test_sh,v 1.1 2019/08/18 08:34:02 kn Exp $
+
+accept(2) in parse_proxy_v2.c:111 blocks if a test is skipped;  kill
+it during cleanup().
+
+Index: src/tests/hitch_test.sh
+--- src/tests/hitch_test.sh.orig
++++ src/tests/hitch_test.sh
+@@ -67,6 +67,11 @@ cleanup() {
+ 	done
+ 
+ 	rm -rf "$TEST_TMPDIR"
++	
++	# accept(2) in parse_proxy_v2.c:111 will block if test is skipped
++	if PID=$(pgrep -o -xf 'parse_proxy_v2 [0-9]+'); then
++		kill "$PID"
++	fi
+ }
+ 
+ trap cleanup EXIT

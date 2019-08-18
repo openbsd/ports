@@ -1,7 +1,4 @@
-$OpenBSD: patch-src_hitch_c,v 1.3 2018/06/02 09:51:33 kn Exp $
-
-Prevent crash after reload with ocsp-dir change:
-https://github.com/varnish/hitch/pull/265
+$OpenBSD: patch-src_hitch_c,v 1.4 2019/08/18 08:34:02 kn Exp $
 
 Pledge oscp and worker processes.
 Pledge the main process iff chroot(2) not used.
@@ -9,7 +6,7 @@ Pledge the main process iff chroot(2) not used.
 Index: src/hitch.c
 --- src/hitch.c.orig
 +++ src/hitch.c
-@@ -2984,6 +2984,9 @@ start_workers(int start_index, int count)
+@@ -3090,6 +3090,9 @@ start_workers(int start_index, int count)
  				    "Refusing to run workers as root.\n");
  				_exit(1);
  			}
@@ -19,7 +16,7 @@ Index: src/hitch.c
  			handle_connections(pfd[0]);
  			exit(0);
  		} else { /* parent. Track new child. */
-@@ -3009,6 +3012,9 @@ start_ocsp_proc(void)
+@@ -3115,6 +3118,9 @@ start_ocsp_proc(void)
  			    "Refusing to run workers as root.\n");
  			_exit(1);
  		}
@@ -29,17 +26,7 @@ Index: src/hitch.c
  		handle_ocsp_task();
  	}
  
-@@ -3680,7 +3686,8 @@ reconfigure(int argc, char **argv)
- 	notify_workers(&wu);
- 
- 	if (CONFIG->OCSP_DIR != NULL) {
--		(void) kill(ocsp_proc_pid, SIGTERM);
-+		if (ocsp_proc_pid != 0)
-+			(void) kill(ocsp_proc_pid, SIGTERM);
- 		/*
- 		 * Restarting the OCSP process is taken
- 		 * care of in do_wait
-@@ -3824,6 +3831,20 @@ main(int argc, char **argv)
+@@ -3958,6 +3964,20 @@ main(int argc, char **argv)
  
  		AZ(VPF_Write(pfh));
  		atexit(remove_pfh);

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/08/18 08:34:02 kn Exp $
 
 COMMENT =		libev-based high performance TLS proxy
 
-DISTNAME =		hitch-1.4.8
-REVISION =		2
+DISTNAME =		hitch-1.5.0
 
 CATEGORIES =		security
 
@@ -19,17 +18,22 @@ MASTER_SITES =		https://hitch-tls.org/source/
 # uses pledge()
 WANTLIB =		c crypto ev ssl
 
-BUILD_DEPENDS =		textproc/py-docutils
+MODULES =		lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+MODPY_RUNDEP =		No
+
+BUILD_DEPENDS =		textproc/py-docutils${MODPY_FLAVOR}
 LIB_DEPENDS =		devel/libev>=4
-TEST_DEPENDS =		net/curl
+TEST_DEPENDS =		${PKGPATH}=${V} \
+			net/curl
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--with-rst2man=rst2man${MODPY_BIN_SUFFIX}
 CONFIGURE_ENV =		CPPFLAGS='${CPPFLAGS} -I${LOCALBASE}/include' \
 			LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
 
-TEST_IS_INTERACTIVE =	connects to http://hitch-tls.org, \
-			leaves parse_proxy_v2 running in background
+TEST_IS_INTERACTIVE =	connects to hitch-tls.org:80 and 127.0.0.1:443
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/{hitch.conf.man.rst,src/configuration.c}

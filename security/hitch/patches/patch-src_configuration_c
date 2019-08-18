@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_configuration_c,v 1.1.1.1 2018/05/01 13:43:59 kn Exp $
+$OpenBSD: patch-src_configuration_c,v 1.2 2019/08/18 08:34:02 kn Exp $
 
 Index: src/configuration.c
 --- src/configuration.c.orig
 +++ src/configuration.c
-@@ -202,7 +202,7 @@ config_new(void)
+@@ -207,7 +207,7 @@ config_new(void)
  	fa->pspec = strdup("default");
  	HASH_ADD_KEYPTR(hh, r->LISTEN_ARGS, fa->pspec, strlen(fa->pspec), fa);
  	r->LISTEN_DEFAULT = fa;

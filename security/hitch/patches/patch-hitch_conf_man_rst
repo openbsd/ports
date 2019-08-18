@@ -1,9 +1,9 @@
-$OpenBSD: patch-hitch_conf_man_rst,v 1.1.1.1 2018/05/01 13:43:59 kn Exp $
+$OpenBSD: patch-hitch_conf_man_rst,v 1.2 2019/08/18 08:34:02 kn Exp $
 
 Index: hitch.conf.man.rst
 --- hitch.conf.man.rst.orig
 +++ hitch.conf.man.rst
-@@ -139,7 +139,7 @@ ocsp-dir = <string>
+@@ -148,7 +148,7 @@ ocsp-dir = <string>
  -------------------
  
  Directory where Hitch will store and read OCSP responses for
@@ -12,7 +12,7 @@ Index: hitch.conf.man.rst
  
  Directory must be readable and writable for the configured Hitch user, or
  automatic retrieval and updating of OCSP responses will not take place.
-@@ -348,8 +348,8 @@ The following file shows the syntax needed to get star
+@@ -409,8 +409,8 @@ The following file shows the syntax needed to get star
  
      # We strongly recommend you create a separate non-privileged hitch
      # user and group
