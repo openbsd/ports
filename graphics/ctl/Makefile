@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/08/18 20:44:11 ajacoutot Exp $
 
 COMMENT =		Color Transformation Language interpreter
 
@@ -6,7 +6,7 @@ GH_ACCOUNT =		ampas
 GH_PROJECT =		CTL
 GH_TAGNAME =		ctl-1.5.2
 DISTNAME =		${GH_TAGNAME}
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=  IlmCtl               1.0      # .2.0
 SHARED_LIBS +=  IlmCtlMath           1.0      # .2.0

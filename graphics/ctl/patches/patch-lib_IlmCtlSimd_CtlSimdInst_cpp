@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_IlmCtlSimd_CtlSimdInst_cpp,v 1.1 2019/08/18 20:44:12 ajacoutot Exp $
+
+Fix build with ilmbase >= 2.3.0
+
+Index: lib/IlmCtlSimd/CtlSimdInst.cpp
+--- lib/IlmCtlSimd/CtlSimdInst.cpp.orig
++++ lib/IlmCtlSimd/CtlSimdInst.cpp
+@@ -189,7 +189,7 @@ SimdInst::executePath (SimdBoolMask &mask, SimdXContex
+ 	    REPLACE_EXC
+ 		(e, "\n" <<
+ 		 xcontext.fileName() << ":" <<
+-		 inst->lineNumber() << ": " << e);
++		 inst->lineNumber() << ": " << e.what());
+ 
+ 	    throw e;
+ 	}
