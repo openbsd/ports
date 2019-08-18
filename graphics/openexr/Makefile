@@ -1,52 +1,49 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:47:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/08/18 20:43:27 ajacoutot Exp $
 
-COMMENT-main=	high dynamic range image format
-COMMENT-tools=	image viewing tools for OpenEXR
-COMMENT-doc=	developer documentation for OpenEXR
+COMMENT-main=		high dynamic range image format
+COMMENT-tools=		image viewing tools for OpenEXR
+COMMENT-doc=		developer documentation for OpenEXR
 
-V=		2.2.1
-DISTNAME=	openexr-$V
-PKGNAME-main=	OpenEXR-$V
-PKGNAME-tools=  OpenEXR-tools-$V
-PKGNAME-doc=	OpenEXR-doc-$V
-REVISION-doc=	0
-REVISION-main=	0
-REVISION-tools= 0
+V=			2.3.0
+DISTNAME=		openexr-${V}
 
-SHARED_LIBS +=	IlmImf               6.0      # 23.0
-SHARED_LIBS +=	IlmImfUtil           1.0      # 23.0
+PKGNAME-main=		OpenEXR-${V}
+PKGNAME-tools=		OpenEXR-tools-${V}
+PKGNAME-doc=		OpenEXR-doc-${V}
 
-CATEGORIES=	graphics
+SHARED_LIBS +=	IlmImf               7.0      # 24.0
+SHARED_LIBS +=	IlmImfUtil           2.0      # 24.0
 
-HOMEPAGE=	http://www.openexr.com/
+CATEGORIES=		graphics
+
+HOMEPAGE=		http://www.openexr.com/
 
 # Modified BSD license
 # `name of ILM not to be used for advertizing without written agreement'
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
-MASTER_SITES=		${MASTER_SITE_SAVANNAH:=openexr/}
+MASTER_SITES=		https://github.com/openexr/openexr/releases/download/v${V}/
 
 MULTI_PACKAGES= 	-main -tools -doc
 
 WANTLIB-main=		m z ${COMPILER_LIBCXX} Half Iex IexMath Imath IlmThread pthread
-LIB_DEPENDS-main=	graphics/ilmbase
+LIB_DEPENDS-main=	graphics/ilmbase>=${V}
 
-WANTLIB-tools=		${WANTLIB-main} c m pthread ${COMPILER_LIBCXX} IlmImf>=4
-LIB_DEPENDS-tools=	${LIB_DEPENDS-main} graphics/openexr
+WANTLIB-tools=		${WANTLIB-main} c m pthread ${COMPILER_LIBCXX} IlmImf
+LIB_DEPENDS-tools=	${LIB_DEPENDS-main} \
+			graphics/openexr
+
 PKG_ARCH-doc=		*
 
-COMPILER =		base-clang ports-gcc base-gcc
-
-# Test unhappy with separate build
-#SEPARATE_BUILD=	Yes
+COMPILER=		base-clang ports-gcc base-gcc
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-namespaceversioning
+CONFIGURE_ARGS=		--disable-namespaceversioning
 
 DOCDIR= 		${PREFIX}/share/doc/OpenEXR
-FAKE_FLAGS+=		docdir=${DOCDIR}
+FAKE_FLAGS=		docdir=${DOCDIR}
 
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCDIR}
+#post-install:
+#	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCDIR}
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2015/09/22 18:36:58 pascal Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2019/08/18 20:43:27 ajacoutot Exp $
 @pkgpath graphics/openexr
-include/OpenEXR/
 include/OpenEXR/ImfAcesFile.h
 include/OpenEXR/ImfArray.h
 include/OpenEXR/ImfAttribute.h
@@ -70,6 +69,7 @@ include/OpenEXR/ImfRgba.h
 include/OpenEXR/ImfRgbaFile.h
 include/OpenEXR/ImfRgbaYca.h
 include/OpenEXR/ImfStandardAttributes.h
+include/OpenEXR/ImfStdIO.h
 include/OpenEXR/ImfStringAttribute.h
 include/OpenEXR/ImfStringVectorAttribute.h
 include/OpenEXR/ImfTestFile.h
