@@ -1,15 +1,16 @@
-$OpenBSD: patch-sshfs_c,v 1.4 2017/11/09 16:50:39 ajacoutot Exp $
---- sshfs.c.orig	Wed Jan  8 16:34:52 2014
-+++ sshfs.c	Fri Sep 25 09:16:48 2015
-@@ -11,7 +11,6 @@
- 
+$OpenBSD: patch-sshfs_c,v 1.5 2019/08/18 19:29:33 bket Exp $
+Index: sshfs.c
+--- sshfs.c.orig
++++ sshfs.c
+@@ -12,7 +12,6 @@
  #include <fuse.h>
  #include <fuse_opt.h>
+ #if !defined(__CYGWIN__)
 -#include <fuse_lowlevel.h>
- #include <assert.h>
- #include <stdio.h>
- #include <stdlib.h>
-@@ -32,6 +31,7 @@
+ #endif
+ #ifdef __APPLE__
+ #  include <fuse_darwin.h>
+@@ -39,6 +38,7 @@
  #include <sys/utsname.h>
  #include <sys/mman.h>
  #include <sys/poll.h>
@@ -17,3 +18,12 @@ $OpenBSD: patch-sshfs_c,v 1.4 2017/11/09 16:50:39 ajacoutot Exp $
  #include <netinet/in.h>
  #include <netinet/tcp.h>
  #include <glib.h>
+@@ -3302,7 +3302,7 @@ static void usage(const char *progname)
+ "    -h   --help            print help\n"
+ "    -V   --version         print version\n"
+ "\n"
+-"SSHFS options:\n"
++"SSHFS options (a complete overview is provided by sshfs(1)):\n"
+ "    -p PORT                equivalent to '-o port=PORT'\n"
+ "    -C                     equivalent to '-o compression=yes'\n"
+ "    -F ssh_configfile      specifies alternative ssh configuration file\n"

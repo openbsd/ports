@@ -1,21 +1,25 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/17 14:39:43 danj Exp $
+# $OpenBSD: Makefile,v 1.10 2019/08/18 19:29:33 bket Exp $
 
 COMMENT =	mount remote directories over ssh
 
-DISTNAME =	sshfs-fuse-2.5
-CATEGORIES =	sysutils
-REVISION =	2
+DISTNAME =	sshfs-2.10
+PKGNAME =	${DISTNAME:S/-/-fuse-/}
 
-HOMEPAGE =	http://fuse.sourceforge.net/sshfs.html
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=fuse/}
+CATEGORIES =	sysutils
+
+HOMEPAGE =	https://github.com/libfuse/sshfs
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =  c fuse glib-2.0 gthread-2.0 iconv intl pthread
+WANTLIB =	c fuse glib-2.0 gthread-2.0 intl pthread
+
+MASTER_SITES =	${HOMEPAGE}/releases/download/${DISTNAME}/
+
+LIB_DEPENDS =	devel/glib2
 
 CONFIGURE_STYLE =	gnu
 
-LIB_DEPENDS =	devel/glib2
+SEPARATE_BUILD =	Yes
 
 .include <bsd.port.mk>
