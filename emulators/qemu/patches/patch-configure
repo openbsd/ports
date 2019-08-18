@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.61 2019/07/04 17:11:05 sthen Exp $
+$OpenBSD: patch-configure,v 1.62 2019/08/18 06:56:07 ajacoutot Exp $
 
 sndio module
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -833,8 +833,8 @@ NetBSD)
+@@ -847,8 +847,8 @@ NetBSD)
  OpenBSD)
    bsd="yes"
    make="${MAKE-gmake}"
@@ -16,7 +16,7 @@ Index: configure
    HOST_VARIANT_DIR="openbsd"
    supported_os="yes"
  ;;
-@@ -3372,6 +3372,25 @@ fi
+@@ -3398,6 +3398,25 @@ fi
  ##########################################
  # Sound support libraries probe
  
@@ -42,7 +42,7 @@ Index: configure
  audio_drv_list=$(echo "$audio_drv_list" | sed -e 's/,/ /g')
  for drv in $audio_drv_list; do
      case $drv in
-@@ -3422,6 +3441,12 @@ for drv in $audio_drv_list; do
+@@ -3448,6 +3467,12 @@ for drv in $audio_drv_list; do
      fi
      ;;
  
@@ -55,7 +55,7 @@ Index: configure
      coreaudio)
        coreaudio_libs="-framework CoreAudio"
      ;;
-@@ -5937,10 +5962,6 @@ write_c_skeleton
+@@ -5980,10 +6005,6 @@ write_c_skeleton
  if test "$gcov" = "yes" ; then
    CFLAGS="-fprofile-arcs -ftest-coverage -g $CFLAGS"
    LDFLAGS="-fprofile-arcs -ftest-coverage $LDFLAGS"
@@ -66,7 +66,7 @@ Index: configure
  fi
  
  if test "$have_asan" = "yes"; then
-@@ -6591,7 +6612,7 @@ echo "CONFIG_AUDIO_DRIVERS=$audio_drv_list" >> $config
+@@ -6643,7 +6664,7 @@ echo "CONFIG_AUDIO_DRIVERS=$audio_drv_list" >> $config
  for drv in $audio_drv_list; do
      def=CONFIG_AUDIO_$(echo $drv | LC_ALL=C tr '[a-z]' '[A-Z]')
      case "$drv" in
@@ -75,7 +75,7 @@ Index: configure
  	    echo "$def=m" >> $config_host_mak ;;
  	*)
  	    echo "$def=y" >> $config_host_mak ;;
-@@ -6605,6 +6626,7 @@ echo "OSS_LIBS=$oss_libs" >> $config_host_mak
+@@ -6657,6 +6678,7 @@ echo "OSS_LIBS=$oss_libs" >> $config_host_mak
  if test "$audio_pt_int" = "yes" ; then
    echo "CONFIG_AUDIO_PT_INT=y" >> $config_host_mak
  fi

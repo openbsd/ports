@@ -1,9 +1,9 @@
-$OpenBSD: patch-audio_audio_c,v 1.4 2019/07/04 17:11:05 sthen Exp $
+$OpenBSD: patch-audio_audio_c,v 1.5 2019/08/18 06:56:07 ajacoutot Exp $
 
 Index: audio/audio.c
 --- audio/audio.c.orig
 +++ audio/audio.c
-@@ -1657,6 +1657,7 @@ void audio_create_pdos(Audiodev *dev)
+@@ -1659,6 +1659,7 @@ void audio_create_pdos(Audiodev *dev)
  
          CASE(NONE, none, );
          CASE(ALSA, alsa, Alsa);

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2019/07/04 17:11:05 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.43 2019/08/18 06:56:07 ajacoutot Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -84,12 +84,44 @@ share/doc/qemu/interop/objects.inv
 share/doc/qemu/interop/pr-helper.html
 share/doc/qemu/interop/search.html
 share/doc/qemu/interop/searchindex.js
+share/doc/qemu/interop/vhost-user-gpu.html
+share/doc/qemu/interop/vhost-user.html
 share/doc/qemu/qemu-doc.html
 share/doc/qemu/qemu-doc.txt
 share/doc/qemu/qemu-ga-ref.html
 share/doc/qemu/qemu-ga-ref.txt
 share/doc/qemu/qemu-qmp-ref.html
 share/doc/qemu/qemu-qmp-ref.txt
+share/doc/qemu/specs/
+share/doc/qemu/specs/.buildinfo
+share/doc/qemu/specs/_static/
+share/doc/qemu/specs/_static/ajax-loader.gif
+share/doc/qemu/specs/_static/alabaster.css
+share/doc/qemu/specs/_static/basic.css
+share/doc/qemu/specs/_static/comment-bright.png
+share/doc/qemu/specs/_static/comment-close.png
+share/doc/qemu/specs/_static/comment.png
+share/doc/qemu/specs/_static/custom.css
+share/doc/qemu/specs/_static/doctools.js
+share/doc/qemu/specs/_static/down-pressed.png
+share/doc/qemu/specs/_static/down.png
+share/doc/qemu/specs/_static/file.png
+share/doc/qemu/specs/_static/jquery.js
+share/doc/qemu/specs/_static/minus.png
+share/doc/qemu/specs/_static/plus.png
+share/doc/qemu/specs/_static/pygments.css
+share/doc/qemu/specs/_static/searchtools.js
+share/doc/qemu/specs/_static/underscore.js
+share/doc/qemu/specs/_static/up-pressed.png
+share/doc/qemu/specs/_static/up.png
+share/doc/qemu/specs/_static/websupport.js
+share/doc/qemu/specs/genindex.html
+share/doc/qemu/specs/index.html
+share/doc/qemu/specs/objects.inv
+share/doc/qemu/specs/ppc-spapr-xive.html
+share/doc/qemu/specs/ppc-xive.html
+share/doc/qemu/specs/search.html
+share/doc/qemu/specs/searchindex.js
 share/examples/qemu/
 share/examples/qemu/qemu-ifdown
 @mode 755
@@ -127,6 +159,15 @@ share/qemu/bamboo.dtb
 share/qemu/bios-256k.bin
 share/qemu/bios.bin
 share/qemu/canyonlands.dtb
+share/qemu/edk2-aarch64-code.fd
+share/qemu/edk2-arm-code.fd
+share/qemu/edk2-arm-vars.fd
+share/qemu/edk2-i386-code.fd
+share/qemu/edk2-i386-secure-code.fd
+share/qemu/edk2-i386-vars.fd
+share/qemu/edk2-licenses.txt
+share/qemu/edk2-x86_64-code.fd
+share/qemu/edk2-x86_64-secure-code.fd
 share/qemu/efi-e1000.rom
 share/qemu/efi-e1000e.rom
 share/qemu/efi-eepro100.rom
@@ -135,6 +176,13 @@ share/qemu/efi-pcnet.rom
 share/qemu/efi-rtl8139.rom
 share/qemu/efi-virtio.rom
 share/qemu/efi-vmxnet3.rom
+share/qemu/firmware/
+share/qemu/firmware/50-edk2-i386-secure.json
+share/qemu/firmware/50-edk2-x86_64-secure.json
+share/qemu/firmware/60-edk2-aarch64.json
+share/qemu/firmware/60-edk2-arm.json
+share/qemu/firmware/60-edk2-i386.json
+share/qemu/firmware/60-edk2-x86_64.json
 share/qemu/hppa-firmware.img
 share/qemu/keymaps/
 share/qemu/keymaps/ar
@@ -178,6 +226,9 @@ share/qemu/multiboot.bin
 share/qemu/openbios-ppc
 share/qemu/openbios-sparc32
 share/qemu/openbios-sparc64
+share/qemu/opensbi-riscv32-virt-fw_jump.bin
+share/qemu/opensbi-riscv64-sifive_u-fw_jump.bin
+share/qemu/opensbi-riscv64-virt-fw_jump.bin
 share/qemu/palcode-clipper
 share/qemu/petalogix-ml605.dtb
 share/qemu/petalogix-s3adsp1800.dtb
@@ -189,6 +240,7 @@ share/qemu/pxe-ne2k_pci.rom
 share/qemu/pxe-pcnet.rom
 share/qemu/pxe-rtl8139.rom
 share/qemu/pxe-virtio.rom
+share/qemu/qemu-nsis.bmp
 share/qemu/qemu_vga.ndrv
 share/qemu/s390-ccw.img
 share/qemu/s390-netboot.img
@@ -199,6 +251,7 @@ share/qemu/spapr-rtas.bin
 share/qemu/trace-events-all
 share/qemu/u-boot-sam460-20100605.bin
 share/qemu/u-boot.e500
+share/qemu/vgabios-ati.bin
 share/qemu/vgabios-bochs-display.bin
 share/qemu/vgabios-cirrus.bin
 share/qemu/vgabios-qxl.bin

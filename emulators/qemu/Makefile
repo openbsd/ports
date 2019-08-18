@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.189 2019/07/07 11:02:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.190 2019/08/18 06:56:07 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
-DISTNAME=	qemu-4.0.0
+DISTNAME=	qemu-4.1.0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
@@ -20,7 +20,7 @@ WANTLIB=	SDL2 X11 atk-1.0 bz2 c cairo cairo-gobject capstone curl \
 		curses epoxy fdt>=4.1 gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 \
 		glib-2.0 gnutls gobject-2.0 gthread-2.0 gtk-3 iconv intl \
 		iscsi jpeg lzo2 m nettle nfs pango-1.0 pangocairo-1.0 \
-		pcre2-8 pixman-1 png sndio ssh2 usb-1.0 util vte-2.91 \
+		pcre2-8 pixman-1 png sndio ssh usb-1.0 util vte-2.91 \
 		xkbcommon xml2 z ${COMPILER_LIBCXX}
 
 # Using TLS emulation layer
@@ -47,7 +47,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		net/curl \
 		security/gnutls \
 		security/libnettle \
-		security/libssh2 \
+		security/libssh \
 		textproc/libxml \
 		x11/gtk+3 \
 		x11/xkbcommon
