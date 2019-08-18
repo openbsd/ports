@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2019/07/07 14:58:04 daniel Exp $
+# $OpenBSD: Makefile,v 1.42 2019/08/18 01:19:36 daniel Exp $
 
 COMMENT=		maths, science and engineering modules for Python
 
-MODPY_EGG_VERSION=	1.2.1
+MODPY_EGG_VERSION=	1.2.2
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		2
 
 # XXX gcc 8 issue:
 # ld: error: dfft_subr_6.f:(.debug_loc+0x2A7D): has non-ABS relocation R_386_GOTOFF against symbol 'ntryh.3712'
@@ -42,7 +41,7 @@ MODPY_DISTUTILS_BUILDARGS = --fcompiler=gnu95
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			${MODFORTRAN_BUILD_DEPENDS}
 LIB_DEPENDS=		${MODFORTRAN_LIB_DEPENDS}
-RUN_DEPENDS=		math/py-numpy${MODPY_FLAVOR}>=1.6.0 \
+RUN_DEPENDS=		math/py-numpy${MODPY_FLAVOR}>=1.8.2 \
 			devel/swig
 
 TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR}
