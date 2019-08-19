@@ -1,0 +1,4 @@
+filter-senderscore is an opensmtpd filter that performs a DNS
+lookup in the SenderScore registry to determine reputation of
+an IP address and allow reputation-based blocking, junking or
+delaying of sessions.
