@@ -1,27 +1,27 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/24 19:20:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.29 2019/08/19 06:00:39 rsadowski Exp $
 
 # Qt5Webkit
 USE_WXNEEDED =		Yes
 
 COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 
-VERSION =	5.3.3
+VERSION =	5.4.1
 DISTNAME =	kdevelop-${VERSION}
 
 HOMEPAGE =	https://www.kdevelop.org/
 
-SHARED_LIBS +=  KDevPlatformDebugger      1.0 # 5.2
-SHARED_LIBS +=  KDevPlatformDocumentation 1.0 # 5.2
-SHARED_LIBS +=  KDevPlatformInterfaces    1.0 # 5.2
-SHARED_LIBS +=  KDevPlatformLanguage      1.0 # 5.2
-SHARED_LIBS +=  KDevPlatformOutputView    1.0 # 5.2
-SHARED_LIBS +=  KDevPlatformProject       1.0 # 5.2
-SHARED_LIBS +=  KDevPlatformSerialization 1.0 # 5.2
-SHARED_LIBS +=  KDevPlatformShell         1.0 # 5.2
-SHARED_LIBS +=  KDevPlatformSublime       1.0 # 5.2
-SHARED_LIBS +=  KDevPlatformTests         1.0 # 5.2
-SHARED_LIBS +=  KDevPlatformUtil          1.0 # 5.2
-SHARED_LIBS +=  KDevPlatformVcs           1.0 # 5.2
+SHARED_LIBS +=  KDevPlatformDebugger      2.0 # 5.2
+SHARED_LIBS +=  KDevPlatformDocumentation 2.0 # 5.2
+SHARED_LIBS +=  KDevPlatformInterfaces    2.0 # 5.2
+SHARED_LIBS +=  KDevPlatformLanguage      2.0 # 5.2
+SHARED_LIBS +=  KDevPlatformOutputView    2.0 # 5.2
+SHARED_LIBS +=  KDevPlatformProject       2.0 # 5.2
+SHARED_LIBS +=  KDevPlatformSerialization 2.0 # 5.2
+SHARED_LIBS +=  KDevPlatformShell         2.0 # 5.2
+SHARED_LIBS +=  KDevPlatformSublime       2.0 # 5.2
+SHARED_LIBS +=  KDevPlatformTests         2.0 # 5.2
+SHARED_LIBS +=  KDevPlatformUtil          2.0 # 5.2
+SHARED_LIBS +=  KDevPlatformVcs           2.0 # 5.2
 
 CATEGORIES =	devel x11
 
