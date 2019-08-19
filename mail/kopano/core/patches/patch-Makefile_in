@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.17 2019/07/22 16:10:27 robert Exp $
+$OpenBSD: patch-Makefile_in,v 1.18 2019/08/19 14:37:53 robert Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
@@ -47,6 +47,24 @@ Index: Makefile.in
  @ENABLE_BASE_TRUE@	${clock_LIBS} ${CRYPTO_LIBS} ${icu_uc_LIBS} ${icu_i18n_LIBS} ${DL_LIBS} \
  @ENABLE_BASE_TRUE@	${MYSQL_LIBS} ${SSL_LIBS} ${PAM_LIBS} ${KRB5_LIBS} ${kcoidc_LIBS} -lpthread
  
+@@ -2179,7 +2180,7 @@ dist_bin_SCRIPTS = $(am__append_4) $(am__append_6)
+ 
+ @ENABLE_BASE_TRUE@libkcclient_la_LIBADD = \
+ @ENABLE_BASE_TRUE@	libkcutil.la libkcfreebusy.la \
+-@ENABLE_BASE_TRUE@	libmapi.la ${COND_libkcrosie_la} libkcsoap.la -lstdc++ \
++@ENABLE_BASE_TRUE@	libmapi.la ${COND_libkcrosie_la} libkcsoap.la \
+ @ENABLE_BASE_TRUE@	${GSOAP_LIBS} ${ICU_LIBS} ${INTL_LIBS} ${SSL_LIBS} ${KRB5_LIBS}
+ 
+ @ENABLE_BASE_TRUE@libkcclient_la_SYFLAGS = -Wl,--version-script=provider/provider.sym
+@@ -2199,7 +2200,7 @@ dist_bin_SCRIPTS = $(am__append_4) $(am__append_6)
+ @ENABLE_BASE_TRUE@	provider/contacts/ZCMAPIProp.h provider/contacts/ZCMAPIProp.cpp
+ 
+ @ENABLE_BASE_TRUE@libkccontacts_la_LIBADD = \
+-@ENABLE_BASE_TRUE@	libkcutil.la libmapi.la -lstdc++ ${ICU_LIBS}
++@ENABLE_BASE_TRUE@	libkcutil.la libmapi.la ${ICU_LIBS}
+ 
+ @ENABLE_BASE_TRUE@libkccontacts_la_SYFLAGS = -Wl,--version-script=provider/provider.sym
+ @ENABLE_BASE_TRUE@libkccontacts_la_LDFLAGS = ${AM_LDFLAGS} -avoid-version -module \
 @@ -2532,7 +2533,7 @@ dist_bin_SCRIPTS = $(am__append_4) $(am__append_6)
  @ENABLE_BASE_TRUE@tests_rosie_SOURCES = tests/rosie.cpp
  @ENABLE_BASE_TRUE@tests_rosie_LDADD = libkcrosie.la
