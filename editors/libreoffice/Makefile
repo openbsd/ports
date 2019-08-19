@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.212 2019/07/12 20:46:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.213 2019/08/19 13:22:22 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -13,7 +13,7 @@ SHARED_LIBS +=  orcus-parser-0.14         0.0 # 0.0
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 
 BV=		6.2
-VERSION=	${BV}.5.2
+VERSION=	${BV}.6.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -209,33 +209,19 @@ LIB_DEPENDS-main=x11/gtk+2 \
 		textproc/redland \
 		textproc/hunspell
 
-WANTLIB-main=	${COMPILER_LIBCXX} gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14 \
-		xslt>=3 curl>=7 neon>=24 pq>=2 \
-		icuuc>=0 icui18n \
-		rdf>=0
-WANTLIB-main+=	ICE SM X11 Xcomposite Xcursor Xdamage \
-		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
-		crypto expat fontconfig freetype gio-2.0 glib-2.0 \
-		gobject-2.0 gthread-2.0 iconv intl \
-		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pthread ssl xml2 z gdk_pixbuf-2.0 \
-		util
-WANTLIB-main+=	hunspell-1.6
-WANTLIB-main+=	clucene-contribs-lib clucene-core clucene-shared
-WANTLIB-main+=	cups exslt lcms2
-WANTLIB-main+=	nspr4 nss3 nssutil3 plc4 plds4 smime3 ssl3
-WANTLIB-main+=	raptor2
-WANTLIB-main+=	harfbuzz harfbuzz-icu
-WANTLIB-main+=	lzma
-WANTLIB-main+=	cairo-gobject gmodule-2.0
-WANTLIB-main+=	dconf gdk-3 gtk-3
-WANTLIB-main+=	poppler
-WANTLIB-main+=	bz2 graphite2
-WANTLIB-main+=	boost_filesystem boost_filesystem-mt boost_iostreams-mt
-WANTLIB-main+=	boost_system boost_system-mt boost_date_time-mt
-WANTLIB-main+=	boost_locale-mt
-WANTLIB-main+=	epoxy mariadb
-WANTLIB-main+=	lber-2.4 ldap-2.4 png
+WANTLIB-main=	${COMPILER_LIBCXX} gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14 
+WANTLIB-main+=	xslt>=3 curl>=7 neon>=24 pq>=2 icuuc>=0 icui18n rdf>=0 ICE SM 
+WANTLIB-main+=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr 
+WANTLIB-main+=	Xrender atk-1.0 c cairo crypto expat fontconfig freetype gio-2.0 
+WANTLIB-main+=	glib-2.0 gobject-2.0 gthread-2.0 iconv intl jpeg m pango-1.0 
+WANTLIB-main+=	pangocairo-1.0 pangoft2-1.0 pthread ssl xml2 z gdk_pixbuf-2.0 
+WANTLIB-main+=	util hunspell-1.6 clucene-contribs-lib clucene-core 
+WANTLIB-main+=	clucene-shared cups exslt lcms2 nspr4 nss3 nssutil3 plc4 plds4 
+WANTLIB-main+=	smime3 ssl3 raptor2 harfbuzz harfbuzz-icu lzma cairo-gobject 
+WANTLIB-main+=	gmodule-2.0 dconf gdk-3 gtk-3 poppler bz2 graphite2 
+WANTLIB-main+=	boost_filesystem boost_filesystem-mt boost_iostreams-mt 
+WANTLIB-main+=	boost_system boost_system-mt boost_date_time-mt boost_locale-mt 
+WANTLIB-main+=	epoxy mariadb png lber ldap python${MODPY_VERSION}m
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/libexecinfo \
@@ -254,11 +240,10 @@ RUN_DEPENDS-kde=	editors/libreoffice
 LIB_DEPENDS-kde=	x11/kde4/libs \
 			${MODQT_LIB_DEPENDS} \
 			${MODGCC4_CPPLIBDEP}
-WANTLIB-kde+=		ICE SM Xext icuuc
-WANTLIB-kde+=		X11 ${COMPILER_LIBCXX} glib-2.0 intl m pthread
+
+WANTLIB-kde+=		${COMPILER_LIBCXX} ICE SM Xext icuuc X11 glib-2.0
+WANTLIB-kde+=		intl m pthread epoxy harfbuzz harfbuzz-icu
 WANTLIB-kde+=		QtCore QtGui QtNetwork kdecore kdeui kfile kio
-WANTLIB-kde+=		epoxy harfbuzz-icu
-WANTLIB-kde+=		harfbuzz
 
 .include <bsd.port.arch.mk>
 
