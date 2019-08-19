@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/08/19 18:12:31 cwen Exp $
 
 COMMENT =	collection of puzzles games
 
 DISTNAME =	puzzles-20190415
+REVISION =	0
 CATEGORIES =	games
 
 MASTER_SITES =	https://rhaalovely.net/stuff/

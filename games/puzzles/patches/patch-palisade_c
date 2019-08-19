@@ -1,0 +1,18 @@
+$OpenBSD: patch-palisade_c,v 1.1 2019/08/19 18:12:31 cwen Exp $
+
+Fix for archs where char is unsigned by default (ppc, arm):
+error: result of comparison of constant -1 with expression of type
+'clue' (aka 'char')
+
+Index: palisade.c
+--- palisade.c.orig
++++ palisade.c
+@@ -46,7 +46,7 @@ struct game_params {
+     int w, h, k;
+ };
+ 
+-typedef char clue;
++typedef signed char clue;
+ typedef unsigned char borderflag;
+ 
+ typedef struct shared_state {
