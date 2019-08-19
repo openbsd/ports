@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.382 2019/08/13 20:29:43 gilles Exp $
+# $OpenBSD: Makefile,v 1.383 2019/08/19 21:24:35 gilles Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -115,6 +115,7 @@
      SUBDIR += opendmarc
      SUBDIR += opensmtpd-extras
      SUBDIR += opensmtpd-filter-rspamd
+     SUBDIR += opensmtpd-filter-senderscore
      SUBDIR += osbf-lua
      SUBDIR += p5-Catalyst-Plugin-Email
      SUBDIR += p5-Email-Abstract
