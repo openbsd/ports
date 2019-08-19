@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2019/08/18 14:26:32 landry Exp $
+# $OpenBSD: Makefile,v 1.136 2019/08/19 13:43:21 robert Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -18,6 +18,8 @@ COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
 VERSION=	1.16.1
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
+
+REVISION-main=	0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-image_filter=	nginx-image_filter-${VERSION}
@@ -148,6 +150,7 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--user=www \
 			--group=www \
 			--with-http_auth_request_module \
+			--with-http_dav_module \
 			--with-http_image_filter_module=dynamic \
 			--with-http_geoip_module=dynamic \
 			--with-http_gzip_static_module \
