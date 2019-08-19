@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/05/11 18:33:43 robert Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/08/19 13:28:36 robert Exp $
 @bin bin/marco
 @bin bin/marco-message
 @bin bin/marco-theme-viewer
@@ -82,6 +82,9 @@ share/locale/hr/LC_MESSAGES/marco.mo
 share/locale/hu/LC_MESSAGES/marco.mo
 share/locale/hy/LC_MESSAGES/marco.mo
 share/locale/id/LC_MESSAGES/marco.mo
+share/locale/ie/
+share/locale/ie/LC_MESSAGES/
+share/locale/ie/LC_MESSAGES/marco.mo
 share/locale/ig/
 share/locale/ig/LC_MESSAGES/
 share/locale/ig/LC_MESSAGES/marco.mo
