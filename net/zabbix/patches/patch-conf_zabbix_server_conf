@@ -1,4 +1,4 @@
-$OpenBSD: patch-conf_zabbix_server_conf,v 1.10 2018/10/26 06:57:21 robert Exp $
+$OpenBSD: patch-conf_zabbix_server_conf,v 1.11 2019/08/19 13:36:29 robert Exp $
 
 Index: conf/zabbix_server.conf
 --- conf/zabbix_server.conf.orig
@@ -12,15 +12,15 @@ Index: conf/zabbix_server.conf
  
  ### Option: LogFileSize
  #	Maximum size of log file in MB.
-@@ -124,6 +124,7 @@ DBUser=zabbix
+@@ -123,6 +123,7 @@ DBUser=zabbix
  # Mandatory: no
  # Default:
  # DBSocket=
 +DBSocket=/var/www/var/run/mysql/mysql.sock
  
  ### Option: DBPort
- #	Database port when not using local socket. Ignored for SQLite.
-@@ -506,6 +507,7 @@ Timeout=4
+ #	Database port when not using local socket.
+@@ -504,6 +505,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # AlertScriptsPath=${datadir}/zabbix/alertscripts
@@ -28,7 +28,7 @@ Index: conf/zabbix_server.conf
  
  ### Option: ExternalScripts
  #	Full path to location of external scripts.
-@@ -523,6 +525,7 @@ Timeout=4
+@@ -521,6 +523,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # FpingLocation=/usr/sbin/fping
@@ -36,7 +36,7 @@ Index: conf/zabbix_server.conf
  
  ### Option: Fping6Location
  #	Location of fping6.
-@@ -532,6 +535,7 @@ Timeout=4
+@@ -530,6 +533,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # Fping6Location=/usr/sbin/fping6

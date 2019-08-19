@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.35 2018/10/26 06:57:21 robert Exp $
+@comment $OpenBSD: PLIST-web,v 1.36 2019/08/19 13:36:29 robert Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 @sample conf/modules.sample/
@@ -37,6 +37,7 @@ zabbix/app/controllers/CControllerDashboardWidgetCheck.php
 zabbix/app/controllers/CControllerDashboardWidgetEdit.php
 zabbix/app/controllers/CControllerDashboardWidgetRfRate.php
 zabbix/app/controllers/CControllerDiscoveryView.php
+zabbix/app/controllers/CControllerExportXml.php
 zabbix/app/controllers/CControllerFavouriteCreate.php
 zabbix/app/controllers/CControllerFavouriteDelete.php
 zabbix/app/controllers/CControllerMapView.php
@@ -47,6 +48,7 @@ zabbix/app/controllers/CControllerMediatypeEdit.php
 zabbix/app/controllers/CControllerMediatypeEnable.php
 zabbix/app/controllers/CControllerMediatypeList.php
 zabbix/app/controllers/CControllerMediatypeUpdate.php
+zabbix/app/controllers/CControllerMenuPopup.php
 zabbix/app/controllers/CControllerPopupGeneric.php
 zabbix/app/controllers/CControllerPopupHttpStep.php
 zabbix/app/controllers/CControllerPopupMedia.php
@@ -121,6 +123,7 @@ zabbix/app/views/layout.javascript.php
 zabbix/app/views/layout.json.php
 zabbix/app/views/layout.warning.php
 zabbix/app/views/layout.widget.php
+zabbix/app/views/layout.xml.php
 zabbix/app/views/monitoring.acknowledge.edit.js.php
 zabbix/app/views/monitoring.acknowledge.edit.php
 zabbix/app/views/monitoring.dashboard.breadcrumbs.php
@@ -153,7 +156,6 @@ zabbix/app/views/monitoring.widget.trigover.view.php
 zabbix/app/views/monitoring.widget.url.view.php
 zabbix/app/views/monitoring.widget.web.view.php
 zabbix/app/views/popup.generic.php
-zabbix/app/views/popup.httpstep.js.php
 zabbix/app/views/popup.httpstep.php
 zabbix/app/views/popup.media.js.php
 zabbix/app/views/popup.media.php
@@ -168,6 +170,23 @@ zabbix/app/views/report.services.php
 zabbix/app/views/report.status.php
 zabbix/app/views/system.warning.php
 zabbix/applications.php
+zabbix/assets/
+zabbix/assets/fonts/
+zabbix/assets/fonts/DejaVuSans.ttf
+zabbix/assets/img/
+zabbix/assets/img/apple-touch-icon-120x120-precomposed.png
+zabbix/assets/img/apple-touch-icon-152x152-precomposed.png
+zabbix/assets/img/apple-touch-icon-180x180-precomposed.png
+zabbix/assets/img/apple-touch-icon-76x76-precomposed.png
+zabbix/assets/img/browser-sprite.png
+zabbix/assets/img/icon-sprite.svg
+zabbix/assets/img/ms-tile-144x144.png
+zabbix/assets/img/touch-icon-192x192.png
+zabbix/assets/styles/
+zabbix/assets/styles/blue-theme.css
+zabbix/assets/styles/dark-theme.css
+zabbix/assets/styles/hc-dark.css
+zabbix/assets/styles/hc-light.css
 zabbix/audio/
 zabbix/audio/alarm_average.wav
 zabbix/audio/alarm_disaster.wav
@@ -203,8 +222,6 @@ zabbix/correlation.php
 zabbix/disc_prototypes.php
 zabbix/discoveryconf.php
 zabbix/favicon.ico
-zabbix/fonts/
-zabbix/fonts/DejaVuSans.ttf
 zabbix/graphs.php
 zabbix/history.php
 zabbix/host_discovery.php
@@ -217,26 +234,6 @@ zabbix/hosts.php
 zabbix/httpconf.php
 zabbix/httpdetails.php
 zabbix/image.php
-zabbix/images/
-zabbix/images/general/
-zabbix/images/general/arrow_down.png
-zabbix/images/general/arrow_up.png
-zabbix/images/general/no_icon.png
-zabbix/images/general/tr_space.gif
-zabbix/images/general/tr_top_bottom.gif
-zabbix/images/general/tr_top_right.gif
-zabbix/images/general/tr_top_right_bottom.gif
-zabbix/images/general/tree/
-zabbix/images/general/tree/zero.gif
-zabbix/img/
-zabbix/img/apple-touch-icon-120x120-precomposed.png
-zabbix/img/apple-touch-icon-152x152-precomposed.png
-zabbix/img/apple-touch-icon-180x180-precomposed.png
-zabbix/img/apple-touch-icon-76x76-precomposed.png
-zabbix/img/browser-sprite.png
-zabbix/img/icon-sprite.svg
-zabbix/img/ms-tile-144x144.png
-zabbix/img/touch-icon-192x192.png
 zabbix/imgstore.php
 zabbix/include/
 zabbix/include/.htaccess
@@ -257,8 +254,14 @@ zabbix/include/classes/api/clients/CApiClient.php
 zabbix/include/classes/api/clients/CLocalApiClient.php
 zabbix/include/classes/api/managers/
 zabbix/include/classes/api/managers/CApplicationManager.php
+zabbix/include/classes/api/managers/CGraphManager.php
+zabbix/include/classes/api/managers/CGraphPrototypeManager.php
 zabbix/include/classes/api/managers/CHistoryManager.php
 zabbix/include/classes/api/managers/CHttpTestManager.php
+zabbix/include/classes/api/managers/CItemManager.php
+zabbix/include/classes/api/managers/CItemPrototypeManager.php
+zabbix/include/classes/api/managers/CTriggerManager.php
+zabbix/include/classes/api/managers/CTriggerPrototypeManager.php
 zabbix/include/classes/api/services/
 zabbix/include/classes/api/services/CAPIInfo.php
 zabbix/include/classes/api/services/CAction.php
@@ -340,6 +343,7 @@ zabbix/include/classes/debug/CProfiler.php
 zabbix/include/classes/export/
 zabbix/include/classes/export/CConfigurationExport.php
 zabbix/include/classes/export/CConfigurationExportBuilder.php
+zabbix/include/classes/export/CConfigurationExportException.php
 zabbix/include/classes/export/writers/
 zabbix/include/classes/export/writers/CExportWriter.php
 zabbix/include/classes/export/writers/CExportWriterFactory.php
@@ -440,6 +444,7 @@ zabbix/include/classes/html/svg/CSvgGraphAxis.php
 zabbix/include/classes/html/svg/CSvgGraphGrid.php
 zabbix/include/classes/html/svg/CSvgGraphLegend.php
 zabbix/include/classes/html/svg/CSvgGraphLine.php
+zabbix/include/classes/html/svg/CSvgGraphLineGroup.php
 zabbix/include/classes/html/svg/CSvgGraphPoints.php
 zabbix/include/classes/html/svg/CSvgGroup.php
 zabbix/include/classes/html/svg/CSvgLine.php
@@ -631,6 +636,7 @@ zabbix/include/classes/widgets/CWidgetConfig.php
 zabbix/include/classes/widgets/CWidgetHelper.php
 zabbix/include/classes/widgets/fields/
 zabbix/include/classes/widgets/fields/CWidgetField.php
+zabbix/include/classes/widgets/fields/CWidgetFieldApplication.php
 zabbix/include/classes/widgets/fields/CWidgetFieldCheckBox.php
 zabbix/include/classes/widgets/fields/CWidgetFieldComboBox.php
 zabbix/include/classes/widgets/fields/CWidgetFieldDatePicker.php
@@ -812,6 +818,7 @@ zabbix/include/views/js/common.init.js.php
 zabbix/include/views/js/common.item.edit.js.php
 zabbix/include/views/js/conf.import.js.php
 zabbix/include/views/js/configuration.action.edit.js.php
+zabbix/include/views/js/configuration.copy.elements.js.php
 zabbix/include/views/js/configuration.correlation.edit.js.php
 zabbix/include/views/js/configuration.discovery.edit.js.php
 zabbix/include/views/js/configuration.graph.edit.js.php
@@ -1068,11 +1075,6 @@ zabbix/setup.php
 zabbix/slideconf.php
 zabbix/slides.php
 zabbix/srv_status.php
-zabbix/styles/
-zabbix/styles/blue-theme.css
-zabbix/styles/dark-theme.css
-zabbix/styles/hc-dark.css
-zabbix/styles/hc-light.css
 zabbix/sysmap.php
 zabbix/sysmaps.php
 zabbix/templates.php
