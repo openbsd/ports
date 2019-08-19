@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.798 2019/08/17 12:58:04 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.799 2019/08/19 21:09:41 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1304,6 +1304,10 @@ my $obsolete_reason = {
 	'py-unit' => 3,
 	'pybugz' => 3,
 	'pymissile' => 3,
+	'arm-elf-binutils' => 6,
+	'arm-elf-gcc' => 6,
+	'arm-elf-gdb' => 6,
+	'arm-elf-newlib' => 6,
 };
 
 # reasons for obsolete packages
