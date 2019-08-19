@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:47:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/08/19 06:04:22 ajacoutot Exp $
 
 COMMENT=	open video codec
 
 # e5d205b from github, plus generated configure scripts
 DISTNAME=	libtheora-1.2.20190601
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -18,6 +19,9 @@ HOMEPAGE=	https://www.theora.org/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ogg
+
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS= c
 
 # uses Ogg headers
 LIB_DEPENDS=	audio/libogg

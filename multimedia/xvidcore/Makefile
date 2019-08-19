@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/08/19 06:04:23 ajacoutot Exp $
 
 COMMENT=	ISO MPEG-4 compliant video codec
 
 DISTNAME=	xvidcore-1.3.5
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://downloads.xvid.com/downloads/
 EXTRACT_SUFX=	.tar.bz2
@@ -20,6 +21,9 @@ WANTLIB=	m pthread
 
 WRKDIST=	${WRKDIR}/xvidcore
 WRKBUILD=	${WRKSRC}/build/generic
+
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu

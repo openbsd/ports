@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.51 2019/07/22 06:56:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2019/08/19 06:04:23 ajacoutot Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
 V=		20190720
 DISTNAME=	x264-snapshot-${V}-2245
 PKGNAME=	x264-${V}
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://downloads.videolan.org/pub/videolan/x264/snapshots/
 EXTRACT_SUFX=	.tar.bz2
@@ -20,7 +21,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m pthread
 
-COMPILER=	base-clang base-gcc
+COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
 .if ${MACHINE_ARCH} == "amd64"

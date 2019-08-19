@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/08/06 23:17:54 bcallah Exp $
+# $OpenBSD: Makefile,v 1.50 2019/08/19 06:04:22 ajacoutot Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
@@ -6,7 +6,7 @@ GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.29.1
 
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=	mpv                       0.0 # 1.101
 
@@ -32,6 +32,9 @@ WANTLIB += v4lconvert xcb xcb-dri2 xcb-glx z ${MODLUA_WANTLIB}
 
 MODULES =		lang/lua \
 			lang/python
+
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 BUILD_DEPENDS =		audio/ladspa \
 			textproc/py-docutils
