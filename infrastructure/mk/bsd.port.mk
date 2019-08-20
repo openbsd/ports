@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1475 2019/07/14 11:32:05 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1476 2019/08/20 11:07:07 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -304,7 +304,7 @@ _MODULES_DONE =
 .endif
 
 # this only happens if we exit modules without having ever gone
-# thru compiler.port.mk
+# thru compiler.port.mk - update portcheck if changing COMPILER default
 COMPILER ?= base-clang base-gcc gcc3
 COMPILER_LANGS ?= c c++
 .if ${PROPERTIES:Mclang}
