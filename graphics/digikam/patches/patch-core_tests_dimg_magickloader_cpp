@@ -1,0 +1,14 @@
+$OpenBSD: patch-core_tests_dimg_magickloader_cpp,v 1.1 2019/08/20 15:27:16 sthen Exp $
+
+Index: core/tests/dimg/magickloader.cpp
+--- core/tests/dimg/magickloader.cpp.orig
++++ core/tests/dimg/magickloader.cpp
+@@ -139,7 +139,7 @@ int main(int argc, char** argv)
+         if (inf->encoder) mode.append(QLatin1Char('W'));
+         else              mode.append(QLatin1Char('-'));
+ 
+-        QString module = QLatin1String(inf->module);
++        QString module = QLatin1String(inf->magick_module);
+         QString mime   = QMimeDatabase().mimeTypeForFile(QFileInfo(QString::fromLatin1("foo.%1").arg(module))).name();
+ 
+         if (module != QLatin1String("DNG")  &&
