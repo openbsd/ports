@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.128 2019/06/23 16:06:23 kmos Exp $
+# $OpenBSD: portcheck,v 1.129 2019/08/20 11:06:06 sthen Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -844,10 +844,12 @@ sub_checks() {
 			vars="$vars MODULES"
 			vars="$vars PKG_ARCH$subpkg $wantlib_var WANTLIB-"
 			vars="$vars PERMIT_PACKAGE${subpkg%-}"
+			vars="$vars COMPILER"
 			make "${make_args[@]}" show="$vars" | {
 				local comment fullpkgname modules pkg_arch
 				local wantlib permit_package
 				local arch_independent=false
+				local default_compiler=false
 				read -r comment
 				read -r fullpkgname
 				read -r modules
@@ -856,6 +858,7 @@ sub_checks() {
 				read -r wantlib
 				read -r wantlib_ss
 				read -r permit_package
+				read -r compiler
 
 				if [[ $comment == @(a|an|the)" "* ]]; then
 					err "${portref}no leading articles in" \
@@ -869,7 +872,12 @@ sub_checks() {
 					fi
 				fi
 
-				check_wantlib "$portref" "$modules" $wantlib
+				[[ "$compiler" == "base-clang base-gcc gcc3" ]] \
+				    && default_compiler=true
+
+				check_wantlib "$portref" "$modules" \
+				    "$default_compiler" $wantlib
+
 				check_permit_subpkg "$portref" "$subpkg" \
 				    "$permit_package"
 
@@ -1301,6 +1309,7 @@ check_plist() {
 check_wantlib() {
 	local portref="$1"; shift
 	local modules="$1"; shift
+	local default_compiler="$1"; shift
 
 	local phonon_s_wantlib=false
 
@@ -1345,6 +1354,15 @@ check_wantlib() {
 				    "in MODULES (check other libs, too!)"
 			fi
 			;;
+
+		@(c++|stdc++)?(?('>')=+([0-9])))
+			if $default_compiler; then
+				err "C++ libraries in WANTLIB with default COMPILER" \
+				    "(most ports need 'COMPILER=base-clang ports-gcc'" \
+				    "or 'COMPILER=base-clang ports-gcc base-gcc')"
+			fi
+			;;
+
 		stdc++?(?('>')=+([0-9])))
 			if $gcc4_module; then
 				err "$portref$v in WANTLIB when gcc4 is" \
