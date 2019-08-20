@@ -1,0 +1,18 @@
+$OpenBSD: patch-panel-plugin_pulseaudio-config_h,v 1.1 2019/08/20 09:37:22 landry Exp $
+
+remove useless dbus-glib inclusion
+
+https://bugzilla.xfce.org/show_bug.cgi?id=15343
+
+Index: panel-plugin/pulseaudio-config.h
+--- panel-plugin/pulseaudio-config.h.orig
++++ panel-plugin/pulseaudio-config.h
+@@ -20,7 +20,7 @@
+ #define __PULSEAUDIO_CONFIG_H__
+ 
+ #include <glib.h>
+-#include <dbus/dbus-glib.h>
++#include <gtk/gtk.h>
+ 
+ G_BEGIN_DECLS
+ 
