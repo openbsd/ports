@@ -1,7 +1,3 @@
 sblg is a utility for creating static blogs: it knits together articles and
-templates, generating static HTML files and Atom feeds. It's built for use
-with make(1), as blogs depend upon articles, etc. No markdown, no "CMS", no
-CGI, no PHP. Just a simple tool for pulling data from articles and
-populating templates. sblg(1) is an ISC licensed ISO C utility that depends
-only on libexpat. (Where "simple" encompasses Atom feeds, multi-language
-support, tag filtering, etc.)
+templates in a variety of ways, generating static HTML files, Atom feeds,
+and even JSON. It is built for use with make.
