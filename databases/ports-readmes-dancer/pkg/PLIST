@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/07/14 09:30:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/08/20 12:32:06 espie Exp $
 bin/ports-readmes
 libdata/ports-readmes-dancer/
 libdata/ports-readmes-dancer/LICENSE
@@ -26,6 +26,7 @@ libdata/ports-readmes-dancer/public/images/
 libdata/ports-readmes-dancer/public/images/openbsd-logo.gif
 libdata/ports-readmes-dancer/public/javascripts/
 libdata/ports-readmes-dancer/public/javascripts/jquery.js
+libdata/ports-readmes-dancer/public/javascripts/script.js
 libdata/ports-readmes-dancer/views/
 libdata/ports-readmes-dancer/views/category.tt
 libdata/ports-readmes-dancer/views/index.tt
