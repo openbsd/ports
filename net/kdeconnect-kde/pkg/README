@@ -1,0 +1,22 @@
+$OpenBSD: README,v 1.1.1.1 2019/08/20 08:48:30 feinerer Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Browsing remote file systems
+============================
+
+kdeconnectd uses sshfs(1) for browsing a remote file system. The user needs
+doas(1) rights to mount the file system. Assuming the user is member of the
+wheel group add the following line to doas.conf(5):
+
+permit nopass :wheel cmd ${TRUEPREFIX}/bin/sshfs
+
+Firewall
+========
+
+A rule must be added to pf.conf(5) as kdeconnectd uses dynamic ports in the
+range 1714-1764 for TCP and UDP:
+
+pass proto { tcp, udp } to port 1714:1764

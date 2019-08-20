@@ -1,0 +1,44 @@
+$OpenBSD: patch-plugins_sftp_mounter_cpp,v 1.1.1.1 2019/08/20 08:48:30 feinerer Exp $
+
+https://svnweb.freebsd.org/ports/head/deskutils/kdeconnect-kde/files/patch-plugins_sftp_mounter.cpp?view=markup
+
+Index: plugins/sftp/mounter.cpp
+--- plugins/sftp/mounter.cpp.orig
++++ plugins/sftp/mounter.cpp
+@@ -108,7 +108,7 @@ void Mounter::onPackageReceived(const NetworkPacket& n
+ 
+     QDir().mkpath(m_mountPoint);
+ 
+-    const QString program = QStringLiteral("sshfs");
++    const QString program = QStringLiteral("/usr/bin/doas");
+ 
+     QString path;
+     if (np.has(QStringLiteral("multiPaths"))) path = '/';
+@@ -122,6 +122,7 @@ void Mounter::onPackageReceived(const NetworkPacket& n
+     QString ip = addr.toString();
+ 
+     const QStringList arguments = QStringList()
++        << QStringLiteral("${LOCALBASE}/bin/sshfs")
+         << QStringLiteral("%1@%2:%3").arg(
+             np.get<QString>(QStringLiteral("user")),
+             ip,
+@@ -139,7 +140,9 @@ void Mounter::onPackageReceived(const NetworkPacket& n
+         << QStringLiteral("-o") << QStringLiteral("gid=") + QString::number(getgid())
+         << QStringLiteral("-o") << QStringLiteral("reconnect")
+         << QStringLiteral("-o") << QStringLiteral("ServerAliveInterval=30")
+-        << QStringLiteral("-o") << QStringLiteral("password_stdin")
++        << QStringLiteral("-o") << QStringLiteral("allow_other")
++        << QStringLiteral("-o") << QStringLiteral("umask=0022")
++        << QStringLiteral("-o") << QStringLiteral("ssh_command=${LOCALBASE}/bin/sshpass -p ") + np.get<QString>("password").toLatin1() + (" /usr/bin/ssh")
+         ;
+ 
+     m_proc->setProgram(program, arguments);
+@@ -148,8 +151,6 @@ void Mounter::onPackageReceived(const NetworkPacket& n
+     m_proc->start();
+ 
+     //qCDebug(KDECONNECT_PLUGIN_SFTP) << "Passing password: " << np.get<QString>("password").toLatin1();
+-    m_proc->write(np.get<QString>(QStringLiteral("password")).toLatin1());
+-    m_proc->write("\n");
+ 
+ }
+ 
