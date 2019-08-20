@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/08/17 08:28:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2019/08/20 09:24:46 sthen Exp $
 
 COMMENT=	small and fast AV1 decoder
 
@@ -29,7 +29,7 @@ BUILD_DEPENDS+=	devel/nasm
 .endif
 
 .if ${MACHINE_ARCH} == "i386"
-CONFIGURE_ARGS+=-Dbuild_asm=false
+CONFIGURE_ARGS+=-Denable_asm=false
 .endif
 
 .include <bsd.port.mk>
