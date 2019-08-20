@@ -1,0 +1,14 @@
+$OpenBSD: patch-spectrwm_1,v 1.1 2019/08/20 15:22:57 bket Exp $
+
+Index: spectrwm.1
+--- spectrwm.1.orig
++++ spectrwm.1
+@@ -109,7 +109,7 @@ For example, starting
+ via
+ .Xr xinit 1 :
+ .Bd -literal -offset indent
+-LD_PRELOAD=/usr/lib/libswmhack.so.0.0 urxvtd -q -o -f
++LD_PRELOAD=${PREFIX}/lib/libswmhack.so.${LIBswmhack_VERSION} urxvtd -q -o -f
+ .Ed
+ .Pp
+ Spawned programs automatically have

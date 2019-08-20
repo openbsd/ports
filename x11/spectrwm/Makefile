@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/26 12:04:03 bket Exp $
+# $OpenBSD: Makefile,v 1.29 2019/08/20 15:22:57 bket Exp $
 
 COMMENT=		small tiling window manager
 
 SHARED_LIBS=		swmhack 1.0
 
 V=			3.2.0
-REVISION=		1
+REVISION=		2
 GH_TAGNAME=		SPECTRWM_${V:S/./_/g}
 GH_ACCOUNT=		conformal
 GH_PROJECT=		spectrwm
@@ -32,7 +32,7 @@ MAKE_FLAGS=	BINDIR="${TRUEPREFIX}/bin" \
 NO_TEST=	Yes
 
 pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/spectrwm.c
+	@${SUBST_CMD} ${WRKSRC}/spectrwm.{1,c}
 
 post-install:
 	ln -s ${TRUEPREFIX}/bin/spectrwm ${PREFIX}/bin/scrotwm
