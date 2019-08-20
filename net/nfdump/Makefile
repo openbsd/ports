@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.27 2019/06/13 15:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2019/08/20 21:29:05 sthen Exp $
 
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
 
-V =			1.6.17
+V =			1.6.18
 GH_ACCOUNT =		phaag
 GH_PROJECT =		nfdump
 GH_TAGNAME =		v$V
 FULLPKGNAME-main =	nfdump-$V
 FULLPKGNAME-nfprofile =	nfprofile-$V
-REVISION-nfprofile =	0
 
 SHARED_LIBS +=	nfdump                    0.0 # 0.0
 
@@ -23,10 +22,10 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		bz2 c z
 
 WANTLIB-nfprofile =  ${WANTLIB}
-WANTLIB-nfprofile += X11 Xext Xrender cairo expat ffi fontconfig freetype
+WANTLIB-nfprofile += X11 Xext Xrender cairo expat fontconfig freetype
 WANTLIB-nfprofile += glib-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
 WANTLIB-nfprofile += iconv intl lzma m nfdump pango-1.0 pangocairo-1.0
-WANTLIB-nfprofile += pangoft2-1.0 pcre pixman-1 png pthread rrd xcb
+WANTLIB-nfprofile += pangoft2-1.0 pixman-1 png pthread rrd xcb
 WANTLIB-nfprofile += xcb-render xcb-shm xml2 fribidi
 
 CONFIGURE_STYLE =	autoreconf
@@ -51,6 +50,10 @@ LIB_DEPENDS-nfprofile =	net/rrdtool \
 RUN_DEPENDS-nfprofile =	nfdump-$V:net/nfdump,-main
 
 REORDER_DEPENDENCIES += ${PORTSDIR}/infrastructure/mk/automake.dep
+
+post-extract:
+	sed -i 's,^libnfdump_la_LDFLAGS = -release .*,libnfdump_la_LDFLAGS =,' \
+	    ${WRKSRC}/bin/Makefile.am
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nfdump
