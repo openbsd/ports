@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2017/10/11 05:21:29 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/08/20 18:53:14 tb Exp $
 bin/fsc
 bin/scala
 bin/scalac
@@ -25,7 +25,6 @@ scala/doc/licenses/apache_jansi.txt
 scala/doc/licenses/bsd_asm.txt
 scala/doc/licenses/bsd_jline.txt
 scala/doc/licenses/mit_jquery.txt
-scala/doc/licenses/mit_sizzle.txt
 scala/doc/licenses/mit_tools.tooltip.txt
 scala/doc/tools/
 scala/doc/tools/css/
@@ -40,11 +39,11 @@ scala/doc/tools/scalac.html
 scala/doc/tools/scaladoc.html
 scala/doc/tools/scalap.html
 scala/lib/
-scala/lib/jline-2.14.4.jar
+scala/lib/jline-2.14.6.jar
 scala/lib/scala-compiler.jar
 scala/lib/scala-library.jar
-scala/lib/scala-parser-combinators_2.12-1.0.6.jar
+scala/lib/scala-parser-combinators_2.12-1.0.7.jar
 scala/lib/scala-reflect.jar
-scala/lib/scala-swing_2.12-2.0.0.jar
+scala/lib/scala-swing_2.12-2.0.3.jar
 scala/lib/scala-xml_2.12-1.0.6.jar
-scala/lib/scalap-2.12.3.jar
+scala/lib/scalap-2.12.9.jar
