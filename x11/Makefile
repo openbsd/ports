@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.641 2019/08/14 19:08:22 kmos Exp $
+# $OpenBSD: Makefile,v 1.642 2019/08/20 08:37:39 feinerer Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -156,6 +156,7 @@
      SUBDIR += libdbus-c++
      SUBDIR += libdbusmenu
      SUBDIR += libdnd
+     SUBDIR += libfakekey
      SUBDIR += libfm
      SUBDIR += libgdiplus
      SUBDIR += libhandy
