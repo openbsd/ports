@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1140 2019/08/14 18:50:22 kmos Exp $
+# $OpenBSD: Makefile,v 1.1141 2019/08/20 08:51:21 feinerer Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -179,6 +179,7 @@
      SUBDIR += jabberd,mysql,ldap
      SUBDIR += jftpgw
      SUBDIR += jnettop
+     SUBDIR += kdeconnect-kde
      SUBDIR += kea
      SUBDIR += kismet
      SUBDIR += kissd
