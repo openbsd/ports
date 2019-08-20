@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/20 08:34:08 feinerer Exp $
+include/fakekey/
+include/fakekey/fakekey.h
+lib/libfakekey.a
+lib/libfakekey.la
+@lib lib/libfakekey.so.${LIBfakekey_VERSION}
+lib/pkgconfig/libfakekey.pc
