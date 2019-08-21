@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2019/08/17 18:54:11 bket Exp $
+# $OpenBSD: Makefile,v 1.23 2019/08/21 13:13:28 bket Exp $
 
 COMMENT=	library for delta compression of streams
 
-V =		2.0.2
+V =		2.1.0
 DISTNAME =	librsync-${V}
 
-SHARED_LIBS +=	rsync                4.0      # 2.0
+SHARED_LIBS =	rsync	5.0 # 2.1.0
 
 CATEGORIES=	net
 

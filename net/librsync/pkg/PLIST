@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/02/08 22:35:19 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/08/21 13:13:28 bket Exp $
 @bin bin/rdiff
 include/librsync.h
+include/librsync_export.h
 @lib lib/librsync.so.${LIBrsync_VERSION}
 @man man/man1/rdiff.1
 @man man/man3/librsync.3
