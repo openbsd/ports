@@ -1,6 +1,8 @@
-$OpenBSD: patch-lib_Smokeping_probes_FPing_pm,v 1.1 2014/04/17 22:11:37 sthen Exp $
---- lib/Smokeping/probes/FPing.pm.orig	Thu Apr 17 23:10:47 2014
-+++ lib/Smokeping/probes/FPing.pm	Thu Apr 17 23:10:51 2014
+$OpenBSD: patch-lib_Smokeping_probes_FPing_pm,v 1.2 2019/08/21 12:35:12 sthen Exp $
+
+Index: lib/Smokeping/probes/FPing.pm
+--- lib/Smokeping/probes/FPing.pm.orig
++++ lib/Smokeping/probes/FPing.pm
 @@ -15,8 +15,8 @@ to generate the POD document.
  =cut
  

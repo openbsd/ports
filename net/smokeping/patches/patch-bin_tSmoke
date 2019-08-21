@@ -1,6 +1,8 @@
-$OpenBSD: patch-bin_tSmoke,v 1.2 2013/05/24 14:45:54 sthen Exp $
---- bin/tSmoke.orig	Sat Dec  8 22:26:25 2012
-+++ bin/tSmoke	Sat Dec  8 22:27:24 2012
+$OpenBSD: patch-bin_tSmoke,v 1.3 2019/08/21 12:35:12 sthen Exp $
+
+Index: bin/tSmoke
+--- bin/tSmoke.orig
++++ bin/tSmoke
 @@ -63,7 +63,7 @@ use Pod::Usage;
  use RRDs;
  

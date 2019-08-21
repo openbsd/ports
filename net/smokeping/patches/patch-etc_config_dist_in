@@ -1,6 +1,8 @@
-$OpenBSD: patch-etc_config_dist_in,v 1.2 2014/11/05 16:05:21 sthen Exp $
---- etc/config.dist.in.orig	Sun Oct 30 10:33:11 2011
-+++ etc/config.dist.in	Wed Nov  5 16:00:33 2014
+$OpenBSD: patch-etc_config_dist_in,v 1.3 2019/08/21 12:35:12 sthen Exp $
+
+Index: etc/config.dist.in
+--- etc/config.dist.in.orig
++++ etc/config.dist.in
 @@ -1,19 +1,19 @@
  *** General ***
  
@@ -40,16 +42,17 @@ $OpenBSD: patch-etc_config_dist_in,v 1.2 2014/11/05 16:05:21 sthen Exp $
  
  +someloss
  type = loss
-@@ -47,7 +47,7 @@ AVERAGE  0.5 144   720
+@@ -47,7 +47,8 @@ AVERAGE  0.5 144   720
  
  *** Presentation ***
  
 -template = @prefix@/etc/basepage.html.dist
 +template = @sysconfdir@/basepage.html
++
+ htmltitle = yes
+ graphborders = no
  
- + charts
- 
-@@ -105,10 +105,10 @@ unison_tolerance = 2
+@@ -107,10 +108,10 @@ unison_tolerance = 2
  
  + FPing
  

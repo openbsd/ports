@@ -1,6 +1,8 @@
-$OpenBSD: patch-lib_Smokeping_probes_DNS_pm,v 1.1 2014/11/14 17:07:24 sthen Exp $
---- lib/Smokeping/probes/DNS.pm.orig	Fri Nov 14 17:02:57 2014
-+++ lib/Smokeping/probes/DNS.pm	Fri Nov 14 17:03:17 2014
+$OpenBSD: patch-lib_Smokeping_probes_DNS_pm,v 1.2 2019/08/21 12:35:12 sthen Exp $
+
+Index: lib/Smokeping/probes/DNS.pm
+--- lib/Smokeping/probes/DNS.pm.orig
++++ lib/Smokeping/probes/DNS.pm
 @@ -73,7 +73,7 @@ sub probevars {
  		_mandatory => [ 'binary' ],
  		binary => { 

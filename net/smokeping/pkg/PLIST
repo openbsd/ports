@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/09/04 12:46:18 espie Exp $
+@comment $OpenBSD: PLIST,v 1.21 2019/08/21 12:35:12 sthen Exp $
 @newgroup _smokeping:562
 @newuser _smokeping:562:562:daemon:Smokeping account:/var/empty:/sbin/nologin
 bin/smokeinfo
@@ -30,6 +30,7 @@ lib/Smokeping/matchers/Medratio.pm
 lib/Smokeping/matchers/base.pm
 lib/Smokeping/pingMIB.pm
 lib/Smokeping/probes/
+lib/Smokeping/probes/AnotherCurl.pm
 lib/Smokeping/probes/AnotherDNS.pm
 lib/Smokeping/probes/AnotherSSH.pm
 lib/Smokeping/probes/CiscoRTTMonDNS.pm
@@ -51,8 +52,10 @@ lib/Smokeping/probes/EchoPingSmtp.pm
 lib/Smokeping/probes/EchoPingWhois.pm
 lib/Smokeping/probes/FPing.pm
 lib/Smokeping/probes/FPing6.pm
+lib/Smokeping/probes/FPingContinuous.pm
 lib/Smokeping/probes/FTPtransfer.pm
 lib/Smokeping/probes/IOSPing.pm
+lib/Smokeping/probes/IRTT.pm
 lib/Smokeping/probes/LDAP.pm
 lib/Smokeping/probes/NFSping.pm
 lib/Smokeping/probes/OpenSSHEOSPing.pm
@@ -67,6 +70,7 @@ lib/Smokeping/probes/TCPPing.pm
 lib/Smokeping/probes/TacacsPlus.pm
 lib/Smokeping/probes/TelnetIOSPing.pm
 lib/Smokeping/probes/TelnetJunOSPing.pm
+lib/Smokeping/probes/TraceroutePing.pm
 lib/Smokeping/probes/WebProxyFilter.pm
 lib/Smokeping/probes/base.pm
 lib/Smokeping/probes/basefork.pm
@@ -89,6 +93,7 @@ lib/Smokeping/sorters/base.pm
 @man man/man3/Smokeping_matchers_Median.3
 @man man/man3/Smokeping_matchers_Medratio.3
 @man man/man3/Smokeping_matchers_base.3
+@man man/man3/Smokeping_probes_AnotherCurl.3
 @man man/man3/Smokeping_probes_AnotherDNS.3
 @man man/man3/Smokeping_probes_AnotherSSH.3
 @man man/man3/Smokeping_probes_CiscoRTTMonDNS.3
@@ -110,8 +115,10 @@ lib/Smokeping/sorters/base.pm
 @man man/man3/Smokeping_probes_EchoPingWhois.3
 @man man/man3/Smokeping_probes_FPing.3
 @man man/man3/Smokeping_probes_FPing6.3
+@man man/man3/Smokeping_probes_FPingContinuous.3
 @man man/man3/Smokeping_probes_FTPtransfer.3
 @man man/man3/Smokeping_probes_IOSPing.3
+@man man/man3/Smokeping_probes_IRTT.3
 @man man/man3/Smokeping_probes_LDAP.3
 @man man/man3/Smokeping_probes_NFSping.3
 @man man/man3/Smokeping_probes_OpenSSHEOSPing.3
@@ -126,6 +133,7 @@ lib/Smokeping/sorters/base.pm
 @man man/man3/Smokeping_probes_TacacsPlus.3
 @man man/man3/Smokeping_probes_TelnetIOSPing.3
 @man man/man3/Smokeping_probes_TelnetJunOSPing.3
+@man man/man3/Smokeping_probes_TraceroutePing.3
 @man man/man3/Smokeping_probes_WebProxyFilter.3
 @man man/man3/Smokeping_probes_base.3
 @man man/man3/Smokeping_probes_basefork.3
@@ -169,29 +177,33 @@ share/examples/smokeping/tmail.dist
 @sample ${SYSCONFDIR}/tmail
 @cwd /var/www
 htdocs/smokeping/
-htdocs/smokeping/cropper/
-htdocs/smokeping/cropper/cropper.css
-htdocs/smokeping/cropper/cropper.js
-htdocs/smokeping/cropper/cropper.uncompressed.js
-htdocs/smokeping/cropper/lib/
-htdocs/smokeping/cropper/lib/builder.js
-htdocs/smokeping/cropper/lib/controls.js
-htdocs/smokeping/cropper/lib/dragdrop.js
-htdocs/smokeping/cropper/lib/effects.js
-htdocs/smokeping/cropper/lib/prototype.js
-htdocs/smokeping/cropper/lib/scriptaculous.js
-htdocs/smokeping/cropper/lib/slider.js
-htdocs/smokeping/cropper/lib/sound.js
-htdocs/smokeping/cropper/lib/unittest.js
-htdocs/smokeping/cropper/licence.txt
-htdocs/smokeping/cropper/marqueeHoriz.gif
-htdocs/smokeping/cropper/marqueeVert.gif
-htdocs/smokeping/cropper/smokeping-zoom.js
-htdocs/smokeping/smokeping.fcgi
 @owner _smokeping
 @mode 755
 htdocs/smokeping/cache/
 @mode
 @owner
+htdocs/smokeping/css/
+htdocs/smokeping/css/smokeping-print.css
+htdocs/smokeping/css/smokeping-screen.css
+htdocs/smokeping/js/
+htdocs/smokeping/js/cropper/
+htdocs/smokeping/js/cropper/cropper.js
+htdocs/smokeping/js/cropper/licence.txt
+htdocs/smokeping/js/cropper/marqueeVert.gif
+htdocs/smokeping/js/cropper/cropper.uncompressed.js
+htdocs/smokeping/js/cropper/cropper.css
+htdocs/smokeping/js/cropper/marqueeHoriz.gif
+htdocs/smokeping/js/scriptaculous/
+htdocs/smokeping/js/scriptaculous/controls.js
+htdocs/smokeping/js/scriptaculous/slider.js
+htdocs/smokeping/js/scriptaculous/sound.js
+htdocs/smokeping/js/scriptaculous/effects.js
+htdocs/smokeping/js/scriptaculous/unittest.js
+htdocs/smokeping/js/scriptaculous/builder.js
+htdocs/smokeping/js/scriptaculous/scriptaculous.js
+htdocs/smokeping/js/scriptaculous/dragdrop.js
+htdocs/smokeping/js/smokeping.js
+htdocs/smokeping/js/prototype.js
+htdocs/smokeping/smokeping.fcgi
 @rcscript ${RCDIR}/smokeping
 @rcscript ${RCDIR}/smokeping_fcgi

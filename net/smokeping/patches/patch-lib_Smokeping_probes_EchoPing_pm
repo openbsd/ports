@@ -1,6 +1,8 @@
-$OpenBSD: patch-lib_Smokeping_probes_EchoPing_pm,v 1.1 2014/11/14 17:07:24 sthen Exp $
---- lib/Smokeping/probes/EchoPing.pm.orig	Fri Nov 14 17:02:57 2014
-+++ lib/Smokeping/probes/EchoPing.pm	Fri Nov 14 17:03:28 2014
+$OpenBSD: patch-lib_Smokeping_probes_EchoPing_pm,v 1.2 2019/08/21 12:35:12 sthen Exp $
+
+Index: lib/Smokeping/probes/EchoPing.pm
+--- lib/Smokeping/probes/EchoPing.pm.orig
++++ lib/Smokeping/probes/EchoPing.pm
 @@ -18,7 +18,7 @@ use strict;
  use base qw(Smokeping::probes::basefork);
  use Carp;

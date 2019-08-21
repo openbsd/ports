@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_Smokeping_probes_base_pm,v 1.1 2019/08/21 12:35:12 sthen Exp $
+
+Index: lib/Smokeping/probes/base.pm
+--- lib/Smokeping/probes/base.pm.orig
++++ lib/Smokeping/probes/base.pm
+@@ -16,7 +16,7 @@ to generate the POD document.
+ 
+ use vars qw($VERSION);
+ use Carp;
+-use lib qw(..);
++use lib qw(/usr/local/lib);
+ use Smokeping;
+ 
+ $VERSION = 1.0;

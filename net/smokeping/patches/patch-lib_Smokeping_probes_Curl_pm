@@ -1,6 +1,8 @@
-$OpenBSD: patch-lib_Smokeping_probes_Curl_pm,v 1.1 2014/11/14 17:07:24 sthen Exp $
---- lib/Smokeping/probes/Curl.pm.orig	Fri Nov 14 17:02:57 2014
-+++ lib/Smokeping/probes/Curl.pm	Fri Nov 14 17:03:04 2014
+$OpenBSD: patch-lib_Smokeping_probes_Curl_pm,v 1.2 2019/08/21 12:35:12 sthen Exp $
+
+Index: lib/Smokeping/probes/Curl.pm
+--- lib/Smokeping/probes/Curl.pm.orig
++++ lib/Smokeping/probes/Curl.pm
 @@ -18,7 +18,7 @@ use strict;
  use base qw(Smokeping::probes::basefork);
  use Carp;

@@ -1,12 +1,14 @@
-$OpenBSD: patch-lib_Smokeping_probes_FPing6_pm,v 1.1 2014/11/14 17:07:24 sthen Exp $
---- lib/Smokeping/probes/FPing6.pm.orig	Fri Nov 14 17:01:16 2014
-+++ lib/Smokeping/probes/FPing6.pm	Fri Nov 14 17:01:34 2014
+$OpenBSD: patch-lib_Smokeping_probes_FPing6_pm,v 1.2 2019/08/21 12:35:12 sthen Exp $
+
+Index: lib/Smokeping/probes/FPing6.pm
+--- lib/Smokeping/probes/FPing6.pm.orig
++++ lib/Smokeping/probes/FPing6.pm
 @@ -45,7 +45,7 @@ sub testhost {
  sub probevars {
        my $self = shift;
        my $h = $self->SUPER::probevars;
 -      $h->{binary}{_example} = "/usr/bin/fping6";
 +      $h->{binary}{_example} = "/usr/local/sbin/fping6";
+       $h->{protocol}{_example} = "6";
+       $h->{protocol}{_default} = "6";
        $h->{sourceaddress}{_re} = "[0-9A-Fa-f:.]+";
-       $h->{sourceaddress}{_example} = "::1";
-       return $h;

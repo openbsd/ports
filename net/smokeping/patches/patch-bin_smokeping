@@ -1,11 +1,13 @@
-$OpenBSD: patch-bin_smokeping,v 1.4 2014/11/05 16:05:21 sthen Exp $
---- bin/smokeping.orig	Wed Oct  5 10:51:46 2011
-+++ bin/smokeping	Wed Nov  5 15:58:32 2014
-@@ -11,7 +11,7 @@ use lib "$FindBin::Bin/../lib";
+$OpenBSD: patch-bin_smokeping,v 1.5 2019/08/21 12:35:12 sthen Exp $
+
+Index: bin/smokeping
+--- bin/smokeping.orig
++++ bin/smokeping
+@@ -10,7 +10,7 @@ use lib "$FindBin::RealBin/../lib";use lib "$FindBin::
  
  use Smokeping;
   
--Smokeping::main("$FindBin::Bin/../etc/config");
+-Smokeping::main("$FindBin::RealBin/../etc/config");
 +Smokeping::main("${SYSCONFDIR}/config");
  
  =head1 NAME

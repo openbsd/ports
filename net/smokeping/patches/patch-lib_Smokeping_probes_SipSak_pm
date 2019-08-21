@@ -1,7 +1,9 @@
-$OpenBSD: patch-lib_Smokeping_probes_SipSak_pm,v 1.1 2014/11/14 17:07:24 sthen Exp $
---- lib/Smokeping/probes/SipSak.pm.orig	Fri Nov 14 17:02:57 2014
-+++ lib/Smokeping/probes/SipSak.pm	Fri Nov 14 17:03:38 2014
-@@ -100,7 +100,7 @@ sub probevars {
+$OpenBSD: patch-lib_Smokeping_probes_SipSak_pm,v 1.2 2019/08/21 12:35:12 sthen Exp $
+
+Index: lib/Smokeping/probes/SipSak.pm
+--- lib/Smokeping/probes/SipSak.pm.orig
++++ lib/Smokeping/probes/SipSak.pm
+@@ -108,7 +108,7 @@ sub probevars {
      return $class->_makevars($h, {
          binary => {
              _doc => "The location of your echoping binary.",

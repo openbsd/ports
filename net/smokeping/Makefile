@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.52 2019/06/03 16:06:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2019/08/21 12:35:12 sthen Exp $
 
 COMMENT=	latency logging and graphing system
 
-DISTNAME=	smokeping-2.6.11
-REVISION=	12
+V=		2.7.3
+DISTNAME=	smokeping-$V
 
 CATEGORIES=	net
 
@@ -17,25 +17,28 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 COMMON_DEPENDS=	devel/p5-Config-Grammar \
-		net/rrdtool \
-		security/p5-Digest-HMAC \
-		www/p5-CGI \
-		www/p5-libwww
-BUILD_DEPENDS=	${COMMON_DEPENDS}
-RUN_DEPENDS=	${COMMON_DEPENDS} \
-		net/fping \
 		net/p5-SNMP_Session \
 		net/p5-Socket6 \
+		net/rrdtool \
+		security/p5-Digest-HMAC \
 		www/fcgi \
+		www/p5-CGI \
 		www/p5-CGI-Fast \
+		www/p5-libwww
+RUN_DEPENDS=	${COMMON_DEPENDS} \
+		net/fping \
 		www/spawn-fcgi
+BUILD_DEPENDS=	${COMMON_DEPENDS}
+
 SYSCONFDIR=	${BASESYSCONFDIR}/smokeping
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
 PKG_ARCH=	*
 
-CONFIGURE_STYLE= gnu
+AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.15
+CONFIGURE_STYLE= autoreconf
 CONFIGURE_ENV=	PERL5LIB=${LOCALBASE}/libdata/perl5/site_perl
 CONFIGURE_ARGS=	--enable-pkgonly \
 		--with-htdocs-dir=/var/www/htdocs/smokeping
@@ -46,6 +49,9 @@ SUBST_VARS=	PMDIR
 
 MODULES=	perl
 MODPERL_ADJ_FILES= bin/smokeinfo bin/smokeping bin/smokeping_cgi bin/tSmoke
+
+post-extract:
+	[ -r ${WRKSRC}/VERSION ] || echo $V > ${WRKSRC}/VERSION
 
 pre-configure:
 	@cd ${WRKSRC} && ${SUBST_CMD} \
