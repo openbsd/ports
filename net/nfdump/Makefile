@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2019/08/20 21:29:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/08/21 07:16:45 sthen Exp $
 
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
@@ -7,6 +7,8 @@ V =			1.6.18
 GH_ACCOUNT =		phaag
 GH_PROJECT =		nfdump
 GH_TAGNAME =		v$V
+DISTFILES =		nfdump-$V-reroll.tar.gz
+RDVISION =		0
 FULLPKGNAME-main =	nfdump-$V
 FULLPKGNAME-nfprofile =	nfprofile-$V
 
