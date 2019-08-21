@@ -1,8 +1,8 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2019/06/24 10:12:06 bentley Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2019/08/21 05:47:33 rsadowski Exp $
 
-Don't set -O3.
-
-Don't install source docs.
+- Don't set -O3.
+- Don't install source docs.
+- Unbreak build with cmake 3.15
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
@@ -29,6 +29,24 @@ Index: CMakeLists.txt
    set(WL_DEBUG_FLAGS "-DNDEBUG -DNOPARACHUTE")
    option(OPTION_ASAN "Build with AddressSanitizer" ON)
  else()
+@@ -210,7 +198,7 @@ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+   wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Wno-unreachable-code")
+   wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Wno-documentation")
+ 
+-  wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=deprecated")
++  #wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=deprecated")
+   wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=non-pod-varargs")
+ 
+   wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Qunused-arguments")
+@@ -261,7 +249,7 @@ endif()
+ # Turn some warnings into errors.
+ wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=format-security")
+ wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=return-type")
+-wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=shadow")
++#wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=shadow")
+ wl_add_flag(WL_COMPILE_DIAGNOSTICS "-Werror=uninitialized")
+ 
+ IF (WIN32)
 @@ -367,15 +355,6 @@ install(
    DESTINATION ${WL_INSTALL_BASEDIR}
    CONFIGURATIONS Debug;Release
