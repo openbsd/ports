@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/06/03 16:06:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/08/21 14:26:56 sthen Exp $
 
 COMMENT=	WebSocket to TCP proxy
 
@@ -6,10 +6,9 @@ MODPY_EGG_VERSION= 0.8.0
 GH_ACCOUNT=	kanaka
 GH_PROJECT=	websockify
 GH_TAGNAME=	v${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	net
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # LGPLv3
 PERMIT_PACKAGE=	Yes
