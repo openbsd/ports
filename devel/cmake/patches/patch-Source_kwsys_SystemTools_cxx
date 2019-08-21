@@ -1,18 +1,18 @@
-$OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.24 2018/06/14 17:04:45 sthen Exp $
+$OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.25 2019/08/21 05:47:40 rsadowski Exp $
 
 Don't spam systrace by attempting to create dirs which already exist
 
 Index: Source/kwsys/SystemTools.cxx
 --- Source/kwsys/SystemTools.cxx.orig
 +++ Source/kwsys/SystemTools.cxx
-@@ -279,12 +279,14 @@ inline void Realpath(const std::string& path, std::str
+@@ -292,12 +292,14 @@ inline void Realpath(const std::string& path, std::str
  }
  #else
- #include <sys/types.h>
-+#include <sys/stat.h>
+ #  include <sys/types.h>
++#  include <sys/stat.h>
  
- #include <fcntl.h>
- #include <unistd.h>
+ #  include <fcntl.h>
+ #  include <unistd.h>
  inline int Mkdir(const std::string& dir)
  {
 -  return mkdir(dir.c_str(), 00777);

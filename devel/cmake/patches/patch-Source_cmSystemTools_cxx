@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_cmSystemTools_cxx,v 1.12 2018/06/14 17:04:45 sthen Exp $
+$OpenBSD: patch-Source_cmSystemTools_cxx,v 1.13 2019/08/21 05:47:40 rsadowski Exp $
 
 Get rid of cmLocaleRAII.
 
@@ -29,17 +29,9 @@ the invalid use of the interface.
 Index: Source/cmSystemTools.cxx
 --- Source/cmSystemTools.cxx.orig
 +++ Source/cmSystemTools.cxx
-@@ -8,7 +8,6 @@
- 
- #if defined(CMAKE_BUILD_WITH_CMAKE)
- #include "cmArchiveWrite.h"
--#include "cmLocale.h"
- #include "cm_libarchive.h"
- #ifndef __LA_INT64_T
- #define __LA_INT64_T la_int64_t
-@@ -1671,8 +1670,6 @@ long copy_data(struct archive* ar, struct archive* aw)
- 
- bool extract_tar(const char* outFileName, bool verbose, bool extract)
+@@ -1764,8 +1764,6 @@ bool extract_tar(const std::string& outFileName,
+                  const std::vector<std::string>& files, bool verbose,
+                  bool extract)
  {
 -  cmLocaleRAII localeRAII;
 -  static_cast<void>(localeRAII);

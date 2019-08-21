@@ -1,9 +1,10 @@
-$OpenBSD: patch-Modules_FindTclsh_cmake,v 1.5 2016/11/28 09:15:13 dcoppa Exp $
---- Modules/FindTclsh.cmake.orig	Fri Nov 11 15:37:13 2016
-+++ Modules/FindTclsh.cmake	Fri Nov 25 22:31:45 2016
-@@ -19,14 +19,21 @@
- # In cygwin, look for the cygwin version first.  Don't look for it later
- # to avoid finding the cygwin version on a Win32 build.
+$OpenBSD: patch-Modules_FindTclsh_cmake,v 1.6 2019/08/21 05:47:40 rsadowski Exp $
+Index: Modules/FindTclsh.cmake
+--- Modules/FindTclsh.cmake.orig
++++ Modules/FindTclsh.cmake
+@@ -20,14 +20,21 @@ In cygwin, look for the cygwin version first.  Don't l
+ to avoid finding the cygwin version on a Win32 build.
+ #]=======================================================================]
  
 +set(MODTCL_VERSION $ENV{MODTCL_VERSION})
 +set(MODTK_VERSION $ENV{MODTK_VERSION})
@@ -25,36 +26,3 @@ $OpenBSD: patch-Modules_FindTclsh_cmake,v 1.5 2016/11/28 09:15:13 dcoppa Exp $
  
  get_filename_component(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
  get_filename_component(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
-@@ -65,16 +72,22 @@ if(WIN32)
-     )
- endif()
- 
--set(TCL_TCLSH_NAMES
--  tclsh
--  tclsh${TCL_LIBRARY_VERSION} tclsh${TK_LIBRARY_VERSION} tclsh${TK_WISH_VERSION}
--  tclsh86 tclsh8.6
--  tclsh85 tclsh8.5
--  tclsh84 tclsh8.4
--  tclsh83 tclsh8.3
--  tclsh82 tclsh8.2
--  tclsh80 tclsh8.0
--  )
-+if(MODTCL_VERSION)
-+  set(TCL_TCLSH_NAMES
-+    tclsh${MODTCL_VERSION}
-+    )
-+else(MODTCL_VERSION)
-+  set(TCL_TCLSH_NAMES
-+    tclsh
-+    tclsh${TCL_LIBRARY_VERSION} tclsh${TK_LIBRARY_VERSION} tclsh${TK_WISH_VERSION}
-+    tclsh86 tclsh8.6
-+    tclsh85 tclsh8.5
-+    tclsh84 tclsh8.4
-+    tclsh83 tclsh8.3
-+    tclsh82 tclsh8.2
-+    tclsh80 tclsh8.0
-+    )
-+endif(MODTCL_VERSION)
- 
- find_program(TCL_TCLSH
-   NAMES ${TCL_TCLSH_NAMES}

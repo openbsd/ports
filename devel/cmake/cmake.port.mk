@@ -1,4 +1,4 @@
-# $OpenBSD: cmake.port.mk,v 1.64 2018/09/11 12:12:31 bcallah Exp $
+# $OpenBSD: cmake.port.mk,v 1.65 2019/08/21 05:47:40 rsadowski Exp $
 
 BUILD_DEPENDS+=	devel/cmake
 
@@ -8,11 +8,6 @@ MAKE_ENV+=LIB${_n}_VERSION=${_v}
 .endfor
 
 USE_NINJA ?= Yes
-
-# XXX: Ninja is broken on m88k
-.if ${MACHINE_ARCH} == "m88k"
-USE_NINJA = No
-.endif
 
 .if ${USE_NINJA:L} == "yes"
 BUILD_DEPENDS += devel/ninja>=1.5.1
@@ -82,15 +77,15 @@ MODCMAKE_configure=	cd ${WRKBUILD} && ${SETENV} \
 	CC="${CC}" CFLAGS="${CFLAGS}" \
 	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 	${CONFIGURE_ENV} ${LOCALBASE}/bin/cmake \
-		-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY:Bool=True \
+		-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON \
 		-G ${_MODCMAKE_GEN} ${CONFIGURE_ARGS} ${WRKSRC}
 
 .if !defined(CONFIGURE_ARGS) || ! ${CONFIGURE_ARGS:M*CMAKE_BUILD_TYPE*}
 .  if ${MODCMAKE_DEBUG:L} == "yes"
-CONFIGURE_ARGS += -DCMAKE_BUILD_TYPE:String=Debug
+CONFIGURE_ARGS += -DCMAKE_BUILD_TYPE=Debug
 MODCMAKE_BUILD_SUFFIX =	-debug.cmake
 .  else
-CONFIGURE_ARGS += -DCMAKE_BUILD_TYPE:String=Release
+CONFIGURE_ARGS += -DCMAKE_BUILD_TYPE=Release
 MODCMAKE_BUILD_SUFFIX =	-release.cmake
 .  endif
 .endif

@@ -1,7 +1,8 @@
-$OpenBSD: patch-Modules_FindTCL_cmake,v 1.15 2018/06/14 17:04:45 sthen Exp $
---- Modules/FindTCL.cmake.orig	Fri Nov 11 15:37:13 2016
-+++ Modules/FindTCL.cmake	Fri Nov 25 22:31:45 2016
-@@ -48,19 +48,36 @@ include(${CMAKE_CURRENT_LIST_DIR}/CMakeFindFrameworks.
+$OpenBSD: patch-Modules_FindTCL_cmake,v 1.16 2019/08/21 05:47:40 rsadowski Exp $
+Index: Modules/FindTCL.cmake
+--- Modules/FindTCL.cmake.orig
++++ Modules/FindTCL.cmake
+@@ -49,19 +49,36 @@ include(${CMAKE_CURRENT_LIST_DIR}/CMakeFindFrameworks.
  include(${CMAKE_CURRENT_LIST_DIR}/FindTclsh.cmake)
  include(${CMAKE_CURRENT_LIST_DIR}/FindWish.cmake)
  
@@ -42,7 +43,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.15 2018/06/14 17:04:45 sthen Exp $
  
  get_filename_component(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
  get_filename_component(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
-@@ -75,19 +92,37 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
+@@ -76,15 +93,37 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
  string(REGEX REPLACE
    "^.*tk([0-9]\\.*[0-9]).*$" "\\1" TK_LIBRARY_VERSION "${TK_LIBRARY}")
  
@@ -53,11 +54,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.15 2018/06/14 17:04:45 sthen Exp $
 -  "${TK_LIBRARY_PATH}"
 -  "${TCL_TCLSH_PATH_PARENT}/lib"
 -  "${TK_WISH_PATH_PARENT}/lib"
--  /usr/local/lib/tcl/tcl8.5
--  /usr/local/lib/tcl/tk8.5
--  /usr/local/lib/tcl/tcl8.4
--  /usr/local/lib/tcl/tk8.4
--  )
+-)
 +set(TCLTK_OPENBSD_LIB_PATHS)
  
 +if(MODTCL_LIBDIR)
@@ -89,82 +86,10 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.15 2018/06/14 17:04:45 sthen Exp $
 +    )
 +endif()
 +
- if(WIN32)
-   get_filename_component(
-     ActiveTcl_CurrentVersion
-@@ -107,31 +142,47 @@ if(WIN32)
-     )
- endif()
- 
--find_library(TCL_LIBRARY
--  NAMES
--  tcl
--  tcl${TCL_LIBRARY_VERSION} tcl${TCL_TCLSH_VERSION} tcl${TK_WISH_VERSION}
--  tcl86 tcl8.6
--  tcl85 tcl8.5
--  tcl84 tcl8.4
--  tcl83 tcl8.3
--  tcl82 tcl8.2
--  tcl80 tcl8.0
--  PATHS ${TCLTK_POSSIBLE_LIB_PATHS}
--  )
-+if(MODTCL_LIB)
-+  find_library(TCL_LIBRARY
-+    NAMES
-+    ${MODTCL_LIB}
-+    PATHS ${TCLTK_POSSIBLE_LIB_PATHS}
-+    )
-+else(MODTCL_LIB)
-+  find_library(TCL_LIBRARY
-+    NAMES
-+    tcl
-+    tcl${TCL_LIBRARY_VERSION} tcl${TCL_TCLSH_VERSION} tcl${TK_WISH_VERSION}
-+    tcl86 tcl8.6
-+    tcl85 tcl8.5
-+    tcl84 tcl8.4
-+    tcl83 tcl8.3
-+    tcl82 tcl8.2
-+    tcl80 tcl8.0
-+    PATHS ${TCLTK_POSSIBLE_LIB_PATHS}
-+    )
-+endif(MODTCL_LIB)
- 
--find_library(TK_LIBRARY
--  NAMES
--  tk
--  tk${TK_LIBRARY_VERSION} tk${TCL_TCLSH_VERSION} tk${TK_WISH_VERSION}
--  tk86 tk8.6
--  tk85 tk8.5
--  tk84 tk8.4
--  tk83 tk8.3
--  tk82 tk8.2
--  tk80 tk8.0
--  PATHS ${TCLTK_POSSIBLE_LIB_PATHS}
--  )
-+if(MODTK_LIB)
-+  find_library(TK_LIBRARY
-+    NAMES
-+    ${MODTK_LIB}
-+    PATHS ${TCLTK_POSSIBLE_LIB_PATHS}
-+    )
-+else(MODTK_LIB)
-+  find_library(TK_LIBRARY
-+    NAMES
-+    tk
-+    tk${TK_LIBRARY_VERSION} tk${TCL_TCLSH_VERSION} tk${TK_WISH_VERSION}
-+    tk86 tk8.6
-+    tk85 tk8.5
-+    tk84 tk8.4
-+    tk83 tk8.3
-+    tk82 tk8.2
-+    tk80 tk8.0
-+    PATHS ${TCLTK_POSSIBLE_LIB_PATHS}
-+    )
-+endif(MODTK_LIB)
- 
- CMAKE_FIND_FRAMEWORKS(Tcl)
- CMAKE_FIND_FRAMEWORKS(Tk)
-@@ -155,30 +206,46 @@ if(Tk_FRAMEWORKS)
+ set(TCLTK_POSSIBLE_LIB_PATH_SUFFIXES
+   lib/tcl/tcl8.7
+   lib/tcl/tk8.7
+@@ -167,16 +206,6 @@ if(Tk_FRAMEWORKS)
    endif()
  endif()
  
@@ -177,21 +102,14 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.15 2018/06/14 17:04:45 sthen Exp $
 -  ${TK_FRAMEWORK_INCLUDES}
 -  "${TCL_TCLSH_PATH_PARENT}/include"
 -  "${TK_WISH_PATH_PARENT}/include"
--  /usr/include/tcl${TK_LIBRARY_VERSION}
--  /usr/include/tcl${TCL_LIBRARY_VERSION}
--  /usr/include/tcl8.6
--  /usr/include/tcl8.5
--  /usr/include/tcl8.4
--  /usr/include/tcl8.3
--  /usr/include/tcl8.2
--  /usr/include/tcl8.0
--  /usr/local/include/tcl8.6
--  /usr/local/include/tk8.6
--  /usr/local/include/tcl8.5
--  /usr/local/include/tk8.5
--  /usr/local/include/tcl8.4
--  /usr/local/include/tk8.4
 -  )
+ 
+ set(TCLTK_POSSIBLE_INCLUDE_PATH_SUFFIXES
+   include/tcl${TK_LIBRARY_VERSION}
+@@ -193,6 +222,46 @@ set(TCLTK_POSSIBLE_INCLUDE_PATH_SUFFIXES
+   include/tcl8.2
+   include/tcl8.0
+   )
 +set(TCLTK_OPENBSD_INCLUDE_PATHS)
 +
 +if(MODTCL_INCDIR)

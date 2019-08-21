@@ -1,9 +1,10 @@
-$OpenBSD: patch-Modules_FindWish_cmake,v 1.5 2016/11/28 09:15:13 dcoppa Exp $
---- Modules/FindWish.cmake.orig	Fri Nov 11 15:37:13 2016
-+++ Modules/FindWish.cmake	Fri Nov 25 22:31:45 2016
-@@ -19,14 +19,21 @@
- #
- # if UNIX is defined, then it will look for the cygwin version first
+$OpenBSD: patch-Modules_FindWish_cmake,v 1.6 2019/08/21 05:47:40 rsadowski Exp $
+Index: Modules/FindWish.cmake
+--- Modules/FindWish.cmake.orig
++++ Modules/FindWish.cmake
+@@ -20,14 +20,21 @@ library is.  This code sets the following variables:
+ if UNIX is defined, then it will look for the cygwin version first
+ #]=======================================================================]
  
 +set(MODTCL_VERSION $ENV{MODTCL_VERSION})
 +set(MODTK_VERSION $ENV{MODTK_VERSION})
@@ -25,7 +26,7 @@ $OpenBSD: patch-Modules_FindWish_cmake,v 1.5 2016/11/28 09:15:13 dcoppa Exp $
  
  get_filename_component(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
  get_filename_component(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
-@@ -65,16 +72,22 @@ if(WIN32)
+@@ -66,16 +73,22 @@ if(WIN32)
      )
  endif()
  

@@ -1,13 +1,14 @@
-$OpenBSD: patch-Source_cmTarget_cxx,v 1.34 2018/06/14 17:04:45 sthen Exp $
+$OpenBSD: patch-Source_cmTarget_cxx,v 1.35 2019/08/21 05:47:40 rsadowski Exp $
+
 Index: Source/cmTarget.cxx
 --- Source/cmTarget.cxx.orig
 +++ Source/cmTarget.cxx
-@@ -227,7 +227,7 @@ cmTarget::cmTarget(std::string const& name, cmStateEnu
-     this->SetPropertyDefault("BUILD_RPATH", nullptr);
-     this->SetPropertyDefault("INSTALL_NAME_DIR", nullptr);
-     this->SetPropertyDefault("INSTALL_RPATH", "");
--    this->SetPropertyDefault("INSTALL_RPATH_USE_LINK_PATH", "OFF");
-+    this->SetPropertyDefault("INSTALL_RPATH_USE_LINK_PATH", "ON");
-     this->SetPropertyDefault("INTERPROCEDURAL_OPTIMIZATION", nullptr);
-     this->SetPropertyDefault("SKIP_BUILD_RPATH", "OFF");
-     this->SetPropertyDefault("BUILD_WITH_INSTALL_RPATH", "OFF");
+@@ -269,7 +269,7 @@ cmTarget::cmTarget(std::string const& name, cmStateEnu
+     InitProperty("BUILD_RPATH_USE_ORIGIN", nullptr);
+     InitProperty("INSTALL_NAME_DIR", nullptr);
+     InitProperty("INSTALL_RPATH", "");
+-    InitProperty("INSTALL_RPATH_USE_LINK_PATH", "OFF");
++    InitProperty("INSTALL_RPATH_USE_LINK_PATH", "ON");
+     InitProperty("INTERPROCEDURAL_OPTIMIZATION", nullptr);
+     InitProperty("SKIP_BUILD_RPATH", "OFF");
+     InitProperty("BUILD_WITH_INSTALL_RPATH", "OFF");

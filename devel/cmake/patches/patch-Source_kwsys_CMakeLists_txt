@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_kwsys_CMakeLists_txt,v 1.5 2018/06/14 17:04:45 sthen Exp $
+$OpenBSD: patch-Source_kwsys_CMakeLists_txt,v 1.6 2019/08/21 05:47:40 rsadowski Exp $
 
 patch to disable libexecinfo / execinfo.h; seems it can be picked up
 on ports-gcc arches.
@@ -6,7 +6,7 @@ on ports-gcc arches.
 Index: Source/kwsys/CMakeLists.txt
 --- Source/kwsys/CMakeLists.txt.orig
 +++ Source/kwsys/CMakeLists.txt
-@@ -558,7 +558,7 @@ IF(KWSYS_USE_SystemInformation)
+@@ -587,7 +587,7 @@ IF(KWSYS_USE_SystemInformation)
      SET_PROPERTY(SOURCE SystemInformation.cxx APPEND PROPERTY
        COMPILE_DEFINITIONS KWSYS_CXX_HAS__ATOI64=1)
    ENDIF()

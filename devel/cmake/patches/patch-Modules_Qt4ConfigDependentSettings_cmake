@@ -1,7 +1,8 @@
-$OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.11 2016/11/28 09:15:13 dcoppa Exp $
---- Modules/Qt4ConfigDependentSettings.cmake.orig	Fri Nov 11 15:37:13 2016
-+++ Modules/Qt4ConfigDependentSettings.cmake	Fri Nov 25 22:31:45 2016
-@@ -21,6 +21,10 @@
+$OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.12 2019/08/21 05:47:40 rsadowski Exp $
+Index: Modules/Qt4ConfigDependentSettings.cmake
+--- Modules/Qt4ConfigDependentSettings.cmake.orig
++++ Modules/Qt4ConfigDependentSettings.cmake
+@@ -22,6 +22,10 @@ This file is included by FindQt4.cmake, don't include 
  # if a user needs the dependencies, and they couldn't be found, they can set
  # the variables themselves.
  
@@ -12,7 +13,7 @@ $OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.11 2016/11/28 09:15
  set(QT_QTGUI_LIB_DEPENDENCIES "")
  set(QT_QTCORE_LIB_DEPENDENCIES "")
  set(QT_QTNETWORK_LIB_DEPENDENCIES "")
-@@ -55,10 +59,6 @@ if(Q_WS_WIN  AND  NOT QT_IS_STATIC)
+@@ -56,10 +60,6 @@ if(Q_WS_WIN  AND  NOT QT_IS_STATIC)
    set(QT_DEFINITIONS ${QT_DEFINITIONS} -DQT_DLL)
  endif()
  
@@ -23,7 +24,7 @@ $OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.11 2016/11/28 09:15
  # QtOpenGL dependencies
  find_package(OpenGL)
  set (QT_QTOPENGL_LIB_DEPENDENCIES ${OPENGL_glu_LIBRARY} ${OPENGL_gl_LIBRARY})
-@@ -88,6 +88,15 @@ if(QT_QCONFIG MATCHES "system-mng")
+@@ -89,6 +89,15 @@ if(QT_QCONFIG MATCHES "system-mng")
    set(QT_QTGUI_LIB_DEPENDENCIES ${QT_QTGUI_LIB_DEPENDENCIES} ${MNG_LIBRARY})
  endif()
  
@@ -39,7 +40,7 @@ $OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.11 2016/11/28 09:15
  # for X11, get X11 library directory
  if(Q_WS_X11)
    find_package(X11)
-@@ -175,6 +184,23 @@ if(QT_QCONFIG MATCHES "system-zlib")
+@@ -176,6 +185,23 @@ if(QT_QCONFIG MATCHES "system-zlib")
    set(QT_QTCORE_LIB_DEPENDENCIES ${QT_QTCORE_LIB_DEPENDENCIES} ${ZLIB_LIBRARIES})
  endif()
  

@@ -1,7 +1,8 @@
-$OpenBSD: patch-Modules_FindSDL_cmake,v 1.10 2016/11/28 09:15:13 dcoppa Exp $
---- Modules/FindSDL.cmake.orig	Fri Nov 11 15:37:13 2016
-+++ Modules/FindSDL.cmake	Fri Nov 25 22:31:45 2016
-@@ -85,6 +85,11 @@ else()
+$OpenBSD: patch-Modules_FindSDL_cmake,v 1.11 2019/08/21 05:47:40 rsadowski Exp $
+Index: Modules/FindSDL.cmake
+--- Modules/FindSDL.cmake.orig
++++ Modules/FindSDL.cmake
+@@ -86,6 +86,11 @@ else()
    set(VC_LIB_PATH_SUFFIX lib/x86)
  endif()
  

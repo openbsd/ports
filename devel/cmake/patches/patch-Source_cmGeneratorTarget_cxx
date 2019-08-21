@@ -1,24 +1,9 @@
-$OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.10 2018/06/14 17:04:45 sthen Exp $
+$OpenBSD: patch-Source_cmGeneratorTarget_cxx,v 1.11 2019/08/21 05:47:40 rsadowski Exp $
+
 Index: Source/cmGeneratorTarget.cxx
 --- Source/cmGeneratorTarget.cxx.orig
 +++ Source/cmGeneratorTarget.cxx
-@@ -1195,11 +1195,15 @@ std::string cmGeneratorTarget::GetCompilePDBPath(
- 
- bool cmGeneratorTarget::HasSOName(const std::string& config) const
- {
-+#if !defined(__OpenBSD__)
-   // soname is supported only for shared libraries and modules,
-   // and then only when the platform supports an soname flag.
-   return ((this->GetType() == cmStateEnums::SHARED_LIBRARY) &&
-           !this->GetPropertyAsBool("NO_SONAME") &&
-           this->Makefile->GetSONameFlag(this->GetLinkerLanguage(config)));
-+#else
-+  return false;
-+#endif
- }
- 
- bool cmGeneratorTarget::NeedRelinkBeforeInstall(
-@@ -2974,9 +2978,15 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
+@@ -3759,9 +3759,16 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
    // Check for library version properties.
    const char* version = this->GetProperty("VERSION");
    const char* soversion = this->GetProperty("SOVERSION");
@@ -28,23 +13,24 @@ Index: Source/cmGeneratorTarget.cxx
 +#else
    if (!this->HasSOName(config) ||
        this->Makefile->IsOn("CMAKE_PLATFORM_NO_VERSIONED_SONAME") ||
--      this->IsFrameworkOnApple()) {
+       this->IsFrameworkOnApple()) {
 +      this->IsFrameworkOnApple())
 +#endif
 +  {
      // Versioning is supported only for shared libraries and modules,
      // and then only when the platform supports an soname flag.
      version = nullptr;
-@@ -3002,6 +3012,34 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
-   // The library name.
-   name = prefix + base + suffix;
+@@ -3785,6 +3792,35 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
  
+   // The library name.
+   targetNames.Output = prefix + targetNames.Base + suffix;
++
 +#if defined(__OpenBSD__)
 +  // Override shared library version using LIBxxx_VERSION
 +  // environment variable. Needed for OpenBSD ports system.
 +  if (this->GetType() == cmStateEnums::SHARED_LIBRARY ||
 +      this->GetType() == cmStateEnums::MODULE_LIBRARY) {
-+    std::string env_name = "LIB" + base + "_VERSION";
++    std::string env_name = "LIB" + targetNames.Base + "_VERSION";
 +    char *env_vers_cstr = getenv(env_name.c_str());
 +
 +    if (env_vers_cstr && strlen(env_vers_cstr) > 0) {
@@ -59,48 +45,14 @@ Index: Source/cmGeneratorTarget.cxx
 +        msg += env_name;
 +        msg += " specification: ";
 +        msg += env_vers;
-+        this->LocalGenerator->IssueMessage(cmake::INTERNAL_ERROR, msg);
++        this->LocalGenerator->IssueMessage(MessageType::INTERNAL_ERROR, msg);
 +      } else {
 +        version = env_vers_cstr;
++        soversion = env_vers_cstr;
 +      }
 +    }
 +  }
 +#endif
-+
-   if (this->IsFrameworkOnApple()) {
-     realName = prefix;
-     if (!this->Makefile->PlatformIsAppleIos()) {
-@@ -3013,7 +3051,11 @@ void cmGeneratorTarget::GetLibraryNames(std::string& n
-     soName = realName;
-   } else {
-     // The library's soname.
-+#if !defined(__OpenBSD__)
-     this->ComputeVersionedName(soName, prefix, base, suffix, name, soversion);
-+#else
-+    this->ComputeVersionedName(soName, prefix, base, suffix, name, version);
-+#endif
  
-     // The library's real name on disk.
-     this->ComputeVersionedName(realName, prefix, base, suffix, name, version);
-@@ -4142,7 +4184,21 @@ void cmGeneratorTarget::ComputeVersionedName(std::stri
-   vName = this->Makefile->IsOn("APPLE") ? (prefix + base) : name;
-   if (version) {
-     vName += ".";
-+#if defined(__OpenBSD__)
-+    // OpenBSD-style versioning for shared libraries.
-+    // Convert libname.so.X.X.X to libname.so.X.X
-+    int j = 0;
-+    for (int i = 0; i < (int)strlen(version); i++) {
-+      if (version[i] == '.') {
-+        j++;
-+        if (j == 2)
-+          break;
-+      }
-+      vName += version[i];
-+    }
-+#else
-     vName += version;
-+#endif
-   }
-   vName += this->Makefile->IsOn("APPLE") ? suffix : std::string();
- }
+   if (this->IsFrameworkOnApple()) {
+     targetNames.Real = prefix;

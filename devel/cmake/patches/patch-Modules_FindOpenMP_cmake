@@ -1,0 +1,27 @@
+$OpenBSD: patch-Modules_FindOpenMP_cmake,v 1.1 2019/08/21 05:47:40 rsadowski Exp $
+
+Add libs and paths. Ensure the lib is used for the C case.
+
+Index: Modules/FindOpenMP.cmake
+--- Modules/FindOpenMP.cmake.orig
++++ Modules/FindOpenMP.cmake
+@@ -84,8 +84,8 @@ function(_OPENMP_FLAG_CANDIDATES LANG)
+   if(NOT OpenMP_${LANG}_FLAG)
+     unset(OpenMP_FLAG_CANDIDATES)
+ 
+-    set(OMP_FLAG_GNU "-fopenmp")
+-    set(OMP_FLAG_Clang "-fopenmp=libomp" "-fopenmp=libiomp5" "-fopenmp")
++    set(OMP_FLAG_GNU "-fopenmp -lgomp")
++    set(OMP_FLAG_Clang "-fopenmp -I${LOCALBASE}/include -Wl,-L${LOCALBASE}/lib,-lomp")
+     set(OMP_FLAG_AppleClang "-Xclang -fopenmp")
+     set(OMP_FLAG_HP "+Oopenmp")
+     if(WIN32)
+@@ -127,7 +127,7 @@ set(OpenMP_C_CXX_TEST_SOURCE
+ int main(void) {
+ #ifdef _OPENMP
+   omp_get_max_threads();
+-  return 0;
++  return 0*omp_get_num_threads();
+ #else
+   breaks_on_purpose
+ #endif

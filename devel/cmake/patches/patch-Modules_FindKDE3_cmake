@@ -1,16 +1,17 @@
-$OpenBSD: patch-Modules_FindKDE3_cmake,v 1.6 2018/06/14 17:04:45 sthen Exp $
+$OpenBSD: patch-Modules_FindKDE3_cmake,v 1.7 2019/08/21 05:47:40 rsadowski Exp $
+
 Index: Modules/FindKDE3.cmake
 --- Modules/FindKDE3.cmake.orig
 +++ Modules/FindKDE3.cmake
 @@ -294,12 +294,6 @@ if(KDE3_FOUND)
-       set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Wno-long-long -Wundef -Wcast-align -Wconversion -Wchar-subscripts -Wall -W -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -fno-exceptions -fno-check-new -fno-common")
-    endif ()
+     set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Wno-long-long -Wundef -Wcast-align -Wconversion -Wchar-subscripts -Wall -W -Wpointer-arith -Wwrite-strings -Wformat-security -Wmissing-format-attribute -fno-exceptions -fno-check-new -fno-common")
+   endif ()
  
--   # if no special buildtype is selected, add -O2 as default optimization
--   if (NOT CMAKE_BUILD_TYPE AND _KDE3_USE_FLAGS)
--      set ( CMAKE_C_FLAGS     "${CMAKE_C_FLAGS} -O2")
--      set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
--   endif ()
+-  # if no special buildtype is selected, add -O2 as default optimization
+-  if (NOT CMAKE_BUILD_TYPE AND _KDE3_USE_FLAGS)
+-    set ( CMAKE_C_FLAGS     "${CMAKE_C_FLAGS} -O2")
+-    set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
+-  endif ()
 -
  #set(CMAKE_SHARED_LINKER_FLAGS "-avoid-version -module -Wl,--no-undefined -Wl,--allow-shlib-undefined")
  #set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--fatal-warnings -avoid-version -Wl,--no-undefined -lc")

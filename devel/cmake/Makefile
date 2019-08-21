@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.175 2019/07/12 20:44:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.176 2019/08/21 05:47:40 rsadowski Exp $
 
-DPB_PROPERTIES =parallel
+DPB_PROPERTIES =	parallel
 
 COMMENT =	portable build system
 
-VER =		3.10.2
+VER =		3.15.2
 EPOCH =		0
-REVISION =	3
 DISTNAME =	cmake-${VER}
 CATEGORIES =	devel
 
 HOMEPAGE =	https://www.cmake.org/
 
-MASTER_SITES =	${HOMEPAGE}files/v${VER:R}/
+MASTER_SITES =	https://www.cmake.org/files/v${VER:R}/
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -20,12 +19,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} archive c curl curses expat form
 WANTLIB += jsoncpp m rhash uv z
 
-COMPILER =		base-clang ports-gcc base-gcc
-
-# XXX: Ninja is broken on m88k
-.if ${MACHINE_ARCH} != "m88k"
-BUILD_DEPENDS =		devel/ninja>=1.5.1
-.endif
+COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS +=	textproc/py-sphinx>=1.4
 
@@ -36,12 +30,13 @@ LIB_DEPENDS =		archivers/libarchive \
 			security/rhash
 
 CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS =	--prefix=${PREFIX} \
-			--datadir=share/cmake \
+
+CONFIGURE_ARGS =	--datadir=share/cmake \
 			--docdir=share/doc/cmake \
 			--mandir=man \
 			--no-qt-gui \
 			--parallel=${MAKE_JOBS} \
+			--prefix=${PREFIX} \
 			--sphinx-build=${LOCALBASE}/bin/sphinx-build \
 			--sphinx-html \
 			--sphinx-man \
@@ -50,44 +45,38 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 
 CONFIGURE_ENV +=	MAKE=${MAKE_PROGRAM}
 
+MAKE_FLAGS +=		VERBOSE=1
+
 PORTHOME =		${WRKDIR}
 
 SEPARATE_BUILD =	Yes
 
 TEST_TARGET =		test
 
-MAKE_FLAGS +=		VERBOSE=1
+TEST_DEPENDS +=		devel/git
+
+SUBST_FILES =	${WRKSRC}/Source/cmLocalGenerator.cxx \
+		${WRKSRC}/Source/CPack/cmCPackGenerator.cxx \
+		${WRKSRC}/bootstrap
+
+post-patch:
+	(find ${WRKSRC}/Modules -name "*.cmake" -print0; \
+	find ${WRKSRC}/Tests -name "CMakeLists.txt" -print0) | \
+	xargs -0 perl -e 's,/usr/local,${LOCALBASE},g; \
+	s,/usr/X11R6,${LOCALBASE},g'
+	perl -e 's,/usr/local,${LOCALBASE},g' \
+		${SUBST_FILES}
+	perl -e 's,/usr/include,${LOCALBASE}/include,' \
+		${WRKSRC}/Modules/FindDCMTK.cmake \
 
 pre-configure:
 	cp ${FILESDIR}/*.cmake ${WRKSRC}/Modules/
-	${SUBST_CMD} ${WRKSRC}/Modules/CMakeDetermineJavaCompiler.cmake \
-		${WRKSRC}/Modules/FindJNI.cmake \
-		${WRKSRC}/Modules/FindJava.cmake \
-		${WRKSRC}/Modules/FindMPEG.cmake \
-		${WRKSRC}/Modules/FindMPEG2.cmake \
-		${WRKSRC}/Modules/FindQt.cmake \
-		${WRKSRC}/Modules/FindQt4.cmake \
-		${WRKSRC}/Modules/FindSDL.cmake \
-		${WRKSRC}/Modules/FindTCL.cmake
-
-# XXX: Ninja is broken on m88k
-.if ${MACHINE_ARCH} != "m88k"
-do-build:
-	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ninja -v -j \
-		${MAKE_JOBS} ${ALL_TARGET}
-
-do-install:
-	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		${FAKE_SETUP} ninja -v -j ${MAKE_JOBS} ${FAKE_TARGET}
-
-do-test:
-	cd ${WRKBUILD} && exec ${SETENV} ${ALL_TEST_ENV} ninja -v -j \
-		${MAKE_JOBS} ${TEST_FLAGS} ${TEST_TARGET}
-.endif
+	(find ${WRKSRC}/Modules -name "*.cmake" -print0; \
+	find ${WRKSRC}/Tests -name "CMakeLists.txt" -print0) | \
+	xargs -0 ${SUBST_CMD}
+	${SUBST_CMD} ${SUBST_FILES}
 
 post-install:
-	rm ${WRKINST}${LOCALBASE}/share/cmake/Modules/*.{beforesubst,orig} \
-		${WRKINST}${LOCALBASE}/share/cmake/Modules/Compiler/*.orig \
-		${WRKINST}${LOCALBASE}/share/cmake/Modules/Platform/*.orig
+	@find ${WRKINST}${LOCALBASE} \( -name "*.bak" -o -name "*.orig" -o -name "*.beforesubst" \) -exec rm {} \;
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.22 2018/06/14 17:04:45 sthen Exp $
+$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.23 2019/08/21 05:47:40 rsadowski Exp $
 Index: Source/cmComputeLinkInformation.cxx
 --- Source/cmComputeLinkInformation.cxx.orig
 +++ Source/cmComputeLinkInformation.cxx
-@@ -366,8 +366,9 @@ cmComputeLinkInformation::cmComputeLinkInformation(
-     this->Target->GetLinkDirectories());
+@@ -364,8 +364,9 @@ cmComputeLinkInformation::cmComputeLinkInformation(
+   this->OrderRuntimeSearchPath->AddUserDirectories(directories);
  
    // Set up the implicit link directories.
 -  this->LoadImplicitLinkInfo();
@@ -13,7 +13,7 @@ Index: Source/cmComputeLinkInformation.cxx
    this->OrderRuntimeSearchPath->SetImplicitDirectories(this->ImplicitLinkDirs);
    if (this->OrderDependentRPath) {
      this->OrderDependentRPath->SetImplicitDirectories(this->ImplicitLinkDirs);
-@@ -446,6 +447,8 @@ cmComputeLinkInformation::GetSharedLibrariesLinked()
+@@ -446,6 +447,8 @@ cmComputeLinkInformation::GetSharedLibrariesLinked() c
  
  bool cmComputeLinkInformation::Compute()
  {
@@ -40,7 +40,7 @@ Index: Source/cmComputeLinkInformation.cxx
    // Restore the target link type so the correct system runtime
    // libraries are found.
    const char* lss = this->Target->GetProperty("LINK_SEARCH_END_STATIC");
-@@ -637,10 +647,16 @@ void cmComputeLinkInformation::AddItem(std::string con
+@@ -640,10 +650,16 @@ void cmComputeLinkInformation::AddItem(std::string con
          // This is a directory.
          this->AddDirectoryItem(item);
        } else {
@@ -60,7 +60,7 @@ Index: Source/cmComputeLinkInformation.cxx
        }
      } else {
        // This is a library or option specified by the user.
-@@ -982,11 +998,18 @@ void cmComputeLinkInformation::AddTargetItem(std::stri
+@@ -983,11 +999,18 @@ void cmComputeLinkInformation::AddTargetItem(std::stri
      this->SharedLibrariesLinked.insert(target);
    }
  
@@ -84,7 +84,7 @@ Index: Source/cmComputeLinkInformation.cxx
    }
  
    // If this platform wants a flag before the full path, add it.
-@@ -1539,6 +1562,57 @@ void cmComputeLinkInformation::LoadImplicitLinkInfo()
+@@ -1540,6 +1563,57 @@ void cmComputeLinkInformation::LoadImplicitLinkInfo()
    if (const char* implicitDirs =
          this->Makefile->GetDefinition(implicitDirVar)) {
      cmSystemTools::ExpandListArgument(implicitDirs, implicitDirVec);

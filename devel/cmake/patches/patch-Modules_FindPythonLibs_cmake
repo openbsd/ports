@@ -1,8 +1,8 @@
-$OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.17 2018/06/14 17:04:45 sthen Exp $
+$OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.18 2019/08/21 05:47:40 rsadowski Exp $
 Index: Modules/FindPythonLibs.cmake
 --- Modules/FindPythonLibs.cmake.orig
 +++ Modules/FindPythonLibs.cmake
-@@ -72,6 +72,9 @@ endif()
+@@ -77,6 +77,9 @@ endif()
  # To avoid picking up the system Python.h pre-maturely.
  set(CMAKE_FIND_FRAMEWORK LAST)
  
@@ -11,8 +11,8 @@ Index: Modules/FindPythonLibs.cmake
 +
  set(_PYTHON1_VERSIONS 1.6 1.5)
  set(_PYTHON2_VERSIONS 2.7 2.6 2.5 2.4 2.3 2.2 2.1 2.0)
- set(_PYTHON3_VERSIONS 3.7 3.6 3.5 3.4 3.3 3.2 3.1 3.0)
-@@ -106,11 +109,15 @@ endif()
+ set(_PYTHON3_VERSIONS 3.8 3.7 3.6 3.5 3.4 3.3 3.2 3.1 3.0)
+@@ -111,11 +114,15 @@ endif()
  # If FindPythonInterp has already found the major and minor version,
  # insert that version between the user supplied versions and the stock
  # version list.
@@ -33,10 +33,11 @@ Index: Modules/FindPythonLibs.cmake
  
  unset(_PYTHON_FIND_OTHER_VERSIONS)
  unset(_PYTHON1_VERSIONS)
-@@ -191,20 +198,24 @@ foreach(_CURRENT_VERSION ${_Python_VERSIONS})
+@@ -234,25 +241,24 @@ foreach(_CURRENT_VERSION ${_Python_VERSIONS})
+           ${dir}/Versions/${_CURRENT_VERSION}/include)
        endforeach()
      endif()
- 
+-
 -    find_path(PYTHON_INCLUDE_DIR
 -      NAMES Python.h
 -      HINTS
@@ -44,7 +45,11 @@ Index: Modules/FindPythonLibs.cmake
 -      PATHS
 -        ${PYTHON_FRAMEWORK_INCLUDES}
 -        [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\${_CURRENT_VERSION}\\InstallPath]/include
+-        [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\${_CURRENT_VERSION}-${_PYTHON_ARCH}\\InstallPath]/include
+-        [HKEY_LOCAL_MACHINE\\SOFTWARE\\Python\\PythonCore\\${_CURRENT_VERSION}-${_PYTHON_ARCH2}\\InstallPath]/include
 -        [HKEY_CURRENT_USER\\SOFTWARE\\Python\\PythonCore\\${_CURRENT_VERSION}\\InstallPath]/include
+-        [HKEY_CURRENT_USER\\SOFTWARE\\Python\\PythonCore\\${_CURRENT_VERSION}-${_PYTHON_ARCH}\\InstallPath]/include
+-        [HKEY_CURRENT_USER\\SOFTWARE\\Python\\PythonCore\\${_CURRENT_VERSION}-${_PYTHON_ARCH2}\\InstallPath]/include
 -      PATH_SUFFIXES
 -        python${_CURRENT_VERSION}mu
 -        python${_CURRENT_VERSION}m

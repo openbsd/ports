@@ -1,15 +1,15 @@
-$OpenBSD: patch-Source_cmGlobalGenerator_cxx,v 1.9 2018/06/14 17:04:45 sthen Exp $
+$OpenBSD: patch-Source_cmGlobalGenerator_cxx,v 1.10 2019/08/21 05:47:40 rsadowski Exp $
 
 Index: Source/cmGlobalGenerator.cxx
 --- Source/cmGlobalGenerator.cxx.orig
 +++ Source/cmGlobalGenerator.cxx
-@@ -2227,6 +2227,9 @@ void cmGlobalGenerator::AddGlobalTarget_Test(
-     cmCustomCommandLine singleLine;
-     singleLine.push_back(cmSystemTools::GetCTestCommand());
-     singleLine.push_back("--force-new-ctest-process");
-+    // Skip tests requiring internet access
-+    singleLine.push_back("--exclude-regex");
-+    singleLine.push_back("\"CMake.FileDownload|CTestTestUpload|RunCMake.ctest_submit\"");
-     if (cmakeCfgIntDir && *cmakeCfgIntDir && cmakeCfgIntDir[0] != '.') {
-       singleLine.push_back("-C");
-       singleLine.push_back(cmakeCfgIntDir);
+@@ -2435,6 +2435,9 @@ void cmGlobalGenerator::AddGlobalTarget_Test(
+   cmCustomCommandLine singleLine;
+   singleLine.push_back(cmSystemTools::GetCTestCommand());
+   singleLine.push_back("--force-new-ctest-process");
++  // Skip tests requiring internet access
++  singleLine.push_back("--exclude-regex");
++  singleLine.push_back("\"CMake.FileDownload|CTestTestUpload|RunCMake.ctest_submit\"");
+   if (cmakeCfgIntDir && *cmakeCfgIntDir && cmakeCfgIntDir[0] != '.') {
+     singleLine.push_back("-C");
+     singleLine.push_back(cmakeCfgIntDir);

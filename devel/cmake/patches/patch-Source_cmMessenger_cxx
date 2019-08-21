@@ -1,23 +1,24 @@
-$OpenBSD: patch-Source_cmMessenger_cxx,v 1.1 2016/11/28 09:15:13 dcoppa Exp $
---- Source/cmMessenger.cxx.orig	Fri Nov 25 23:06:59 2016
-+++ Source/cmMessenger.cxx	Fri Nov 25 23:08:39 2016
-@@ -68,7 +68,7 @@ static bool printMessagePreamble(cmake::MessageType t,
-   if (t == cmake::FATAL_ERROR) {
+$OpenBSD: patch-Source_cmMessenger_cxx,v 1.2 2019/08/21 05:47:40 rsadowski Exp $
+Index: Source/cmMessenger.cxx
+--- Source/cmMessenger.cxx.orig
++++ Source/cmMessenger.cxx
+@@ -67,7 +67,7 @@ static bool printMessagePreamble(MessageType t, std::o
+   if (t == MessageType::FATAL_ERROR) {
      msg << "CMake Error";
-   } else if (t == cmake::INTERNAL_ERROR) {
+   } else if (t == MessageType::INTERNAL_ERROR) {
 -    msg << "CMake Internal Error (please report a bug)";
 +    msg << "CMake Internal Error";
-   } else if (t == cmake::LOG) {
+   } else if (t == MessageType::LOG) {
      msg << "CMake Debug Log";
-   } else if (t == cmake::DEPRECATION_ERROR) {
-@@ -107,19 +107,6 @@ void displayMessage(cmake::MessageType t, std::ostring
+   } else if (t == MessageType::DEPRECATION_ERROR) {
+@@ -106,19 +106,6 @@ void displayMessage(MessageType t, std::ostringstream&
  
    // Add a terminating blank line.
    msg << "\n";
 -
 -#if defined(CMAKE_BUILD_WITH_CMAKE)
 -  // Add a C++ stack trace to internal errors.
--  if (t == cmake::INTERNAL_ERROR) {
+-  if (t == MessageType::INTERNAL_ERROR) {
 -    std::string stack = cmsys::SystemInformation::GetProgramStack(0, 0);
 -    if (!stack.empty()) {
 -      if (cmHasLiteralPrefix(stack, "WARNING:")) {
@@ -29,4 +30,4 @@ $OpenBSD: patch-Source_cmMessenger_cxx,v 1.1 2016/11/28 09:15:13 dcoppa Exp $
 -#endif
  
    // Output the message.
-   if (t == cmake::FATAL_ERROR || t == cmake::INTERNAL_ERROR ||
+   if (t == MessageType::FATAL_ERROR || t == MessageType::INTERNAL_ERROR ||

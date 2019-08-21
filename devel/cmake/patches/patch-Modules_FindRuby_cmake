@@ -1,12 +1,14 @@
-$OpenBSD: patch-Modules_FindRuby_cmake,v 1.16 2018/06/14 17:04:45 sthen Exp $
---- Modules/FindRuby.cmake.orig	Fri Nov 11 15:37:13 2016
-+++ Modules/FindRuby.cmake	Fri Nov 25 22:31:45 2016
-@@ -42,35 +42,53 @@
+$OpenBSD: patch-Modules_FindRuby_cmake,v 1.17 2019/08/21 05:47:40 rsadowski Exp $
+
+Index: Modules/FindRuby.cmake
+--- Modules/FindRuby.cmake.orig
++++ Modules/FindRuby.cmake
+@@ -42,7 +42,17 @@ Also:
+ 
  # uncomment the following line to get debug output for this file
  # set(_RUBY_DEBUG_OUTPUT TRUE)
- 
 +set(MODRUBY_REV $ENV{MODRUBY_REV})
-+
+ 
 +if(MODRUBY_REV AND MODRUBY_REV MATCHES "^[0-9]+\\.[0-9]$")
 +   string(REPLACE "." "" MODRUBY_REV_NO_DOTS ${MODRUBY_REV})
 +   string(REPLACE "." ";" MODRUBY_REV_LIST ${MODRUBY_REV})
@@ -14,36 +16,27 @@ $OpenBSD: patch-Modules_FindRuby_cmake,v 1.16 2018/06/14 17:04:45 sthen Exp $
 +   list(GET MODRUBY_REV_LIST 1 MODRUBY_REV_MINOR)
 +endif()
 +
++
++
  # Determine the list of possible names of the ruby executable depending
  # on which version of ruby is required
--set(_RUBY_POSSIBLE_EXECUTABLE_NAMES ruby)
-+set(_RUBY_POSSIBLE_EXECUTABLE_NAMES)
- 
- # if 1.9 is required, don't look for ruby18 and ruby1.8, default to version 1.8
- if(DEFINED Ruby_FIND_VERSION_MAJOR AND DEFINED Ruby_FIND_VERSION_MINOR)
-    set(Ruby_FIND_VERSION_SHORT_NODOT "${Ruby_FIND_VERSION_MAJOR}${RUBY_FIND_VERSION_MINOR}")
-    # we can't construct that if only major version is given
-    set(_RUBY_POSSIBLE_EXECUTABLE_NAMES
--       ruby${Ruby_FIND_VERSION_MAJOR}.${Ruby_FIND_VERSION_MINOR}
-        ruby${Ruby_FIND_VERSION_MAJOR}${Ruby_FIND_VERSION_MINOR}
-+       ruby${Ruby_FIND_VERSION_MAJOR}.${Ruby_FIND_VERSION_MINOR}
-        ${_RUBY_POSSIBLE_EXECUTABLE_NAMES})
- else()
--   set(Ruby_FIND_VERSION_SHORT_NODOT "18")
-+   if(MODRUBY_REV_NO_DOTS)
-+      set(Ruby_FIND_VERSION_SHORT_NODOT "${MODRUBY_REV_NO_DOTS}")
-+   else(MODRUBY_REV_NO_DOTS)
-+      set(Ruby_FIND_VERSION_SHORT_NODOT "18")
-+   endif(MODRUBY_REV_NO_DOTS)
+ set(_RUBY_POSSIBLE_EXECUTABLE_NAMES ruby)
+@@ -60,12 +70,16 @@ else()
  endif()
  
  if(NOT Ruby_FIND_VERSION_EXACT)
+-  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby2.4 ruby24)
+-  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby2.3 ruby23)
+-  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby2.2 ruby22)
 -  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby2.1 ruby21)
 -  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby2.0 ruby20)
 -  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby1.9 ruby19)
-+  if(MODRUBY_REV AND MODRUBY_REV_NO_DOTS)
-+    list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby${MODRUBY_REV_NO_DOTS} ruby${MODRUBY_REV})
-+  endif()
++  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby28 ruby2.8)
++  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby27 ruby2.7)
++  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby26 ruby2.6)
++  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby25 ruby2.5)
++  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby24 ruby2.4)
++  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby23 ruby2.3)
 +  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby22 ruby2.2)
 +  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby21 ruby2.1)
 +  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby20 ruby2.0)
@@ -51,43 +44,34 @@ $OpenBSD: patch-Modules_FindRuby_cmake,v 1.16 2018/06/14 17:04:45 sthen Exp $
  
    # if we want a version below 1.9, also look for ruby 1.8
    if("${Ruby_FIND_VERSION_SHORT_NODOT}" VERSION_LESS "19")
--    list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby1.8 ruby18)
-+    list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby18 ruby1.8)
+@@ -189,6 +203,26 @@ if(RUBY_EXECUTABLE AND NOT RUBY_VERSION_MAJOR)
+     set(RUBY_VERSION_MAJOR 2)
+     set(RUBY_VERSION_MINOR 4)
    endif()
--
--  list(REMOVE_DUPLICATES _RUBY_POSSIBLE_EXECUTABLE_NAMES)
- endif()
- 
-+list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby)
-+list(REMOVE_DUPLICATES _RUBY_POSSIBLE_EXECUTABLE_NAMES)
-+
- find_program(RUBY_EXECUTABLE NAMES ${_RUBY_POSSIBLE_EXECUTABLE_NAMES})
- 
- if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
-@@ -155,6 +173,10 @@ if(RUBY_EXECUTABLE AND NOT RUBY_VERSION_MAJOR)
-    set(RUBY_VERSION_MAJOR 1)
-    set(RUBY_VERSION_MINOR 8)
-    set(RUBY_VERSION_PATCH 0)
-+   if(${RUBY_EXECUTABLE} MATCHES "ruby${MODRUBY_REV_NO_DOTS}")
-+      set(RUBY_VERSION_MAJOR ${MODRUBY_REV_MAJOR})
-+      set(RUBY_VERSION_MINOR ${MODRUBY_REV_MINOR})
-+   endif()
-    # check whether we found 1.9.x
-    if(${RUBY_EXECUTABLE} MATCHES "ruby1.?9")
-       set(RUBY_VERSION_MAJOR 1)
-@@ -170,6 +192,11 @@ if(RUBY_EXECUTABLE AND NOT RUBY_VERSION_MAJOR)
-       set(RUBY_VERSION_MAJOR 2)
-       set(RUBY_VERSION_MINOR 1)
-    endif()
-+   # check whether we found 2.2.x
-+   if(${RUBY_EXECUTABLE} MATCHES "ruby2.?2")
-+      set(RUBY_VERSION_MAJOR 2)
-+      set(RUBY_VERSION_MINOR 2)
-+   endif()
++  # check whether we found 2.5.x
++  if(${RUBY_EXECUTABLE} MATCHES "ruby2\\.?5")
++    set(RUBY_VERSION_MAJOR 2)
++    set(RUBY_VERSION_MINOR 5)
++  endif()
++  # check whether we found 2.6.x
++  if(${RUBY_EXECUTABLE} MATCHES "ruby2\\.?6")
++    set(RUBY_VERSION_MAJOR 2)
++    set(RUBY_VERSION_MINOR 6)
++  endif()
++  # check whether we found 2.7.x
++  if(${RUBY_EXECUTABLE} MATCHES "ruby2\\.?7")
++    set(RUBY_VERSION_MAJOR 2)
++    set(RUBY_VERSION_MINOR 7)
++  endif()
++  # check whether we found 2.8.x
++  if(${RUBY_EXECUTABLE} MATCHES "ruby2\\.?8")
++    set(RUBY_VERSION_MAJOR 2)
++    set(RUBY_VERSION_MINOR 8)
++  endif()
  endif()
  
  if(RUBY_VERSION_MAJOR)
-@@ -203,7 +230,7 @@ endif()
+@@ -223,7 +257,7 @@ endif()
  
  
  # Determine the list of possible names for the ruby library
@@ -95,4 +79,4 @@ $OpenBSD: patch-Modules_FindRuby_cmake,v 1.16 2018/06/14 17:04:45 sthen Exp $
 +set(_RUBY_POSSIBLE_LIB_NAMES ruby${_RUBY_VERSION_SHORT_NODOT} ruby${_RUBY_VERSION_SHORT} ruby-${_RUBY_VERSION_SHORT} ruby-${RUBY_VERSION} ruby ruby-static)
  
  if(WIN32)
-    set( _RUBY_MSVC_RUNTIME "" )
+   set( _RUBY_MSVC_RUNTIME "" )

@@ -1,7 +1,8 @@
-$OpenBSD: patch-Modules_FindTclStub_cmake,v 1.6 2016/11/28 09:15:13 dcoppa Exp $
---- Modules/FindTclStub.cmake.orig	Fri Nov 11 15:37:13 2016
-+++ Modules/FindTclStub.cmake	Fri Nov 25 22:31:45 2016
-@@ -48,13 +48,21 @@ include(${CMAKE_CURRENT_LIST_DIR}/FindTCL.cmake)
+$OpenBSD: patch-Modules_FindTclStub_cmake,v 1.7 2019/08/21 05:47:40 rsadowski Exp $
+Index: Modules/FindTclStub.cmake
+--- Modules/FindTclStub.cmake.orig
++++ Modules/FindTclStub.cmake
+@@ -49,13 +49,21 @@ include(${CMAKE_CURRENT_LIST_DIR}/FindTCL.cmake)
  
  get_filename_component(TCL_TCLSH_PATH "${TCL_TCLSH}" PATH)
  get_filename_component(TCL_TCLSH_PATH_PARENT "${TCL_TCLSH_PATH}" PATH)
@@ -27,7 +28,7 @@ $OpenBSD: patch-Modules_FindTclStub_cmake,v 1.6 2016/11/28 09:15:13 dcoppa Exp $
  
  get_filename_component(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
  get_filename_component(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
-@@ -69,14 +77,20 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
+@@ -70,14 +78,20 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
  string(REGEX REPLACE
    "^.*tk([0-9]\\.*[0-9]).*$" "\\1" TK_LIBRARY_VERSION "${TK_LIBRARY}")
  

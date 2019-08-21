@@ -1,8 +1,9 @@
-$OpenBSD: patch-Modules_FindLua_cmake,v 1.6 2017/08/26 17:53:35 dcoppa Exp $
+$OpenBSD: patch-Modules_FindLua_cmake,v 1.7 2019/08/21 05:47:40 rsadowski Exp $
+
 Index: Modules/FindLua.cmake
 --- Modules/FindLua.cmake.orig
 +++ Modules/FindLua.cmake
-@@ -40,9 +40,16 @@ unset(_lua_include_subdirs)
+@@ -46,9 +46,16 @@ unset(_lua_include_subdirs)
  unset(_lua_library_names)
  unset(_lua_append_versions)
  
@@ -10,24 +11,23 @@ Index: Modules/FindLua.cmake
 +set(MODLUA_INCL_DIR $ENV{MODLUA_INCL_DIR})
 +
  # this is a function only to have all the variables inside go away automatically
- function(_lua_set_version_vars)
+ function(_lua_get_versions)
 -    set(LUA_VERSIONS5 5.3 5.2 5.1 5.0)
 +    if(MODLUA_VERSION)
-+        set(LUA_VERSIONS5 ${MODLUA_VERSION})
++         set(LUA_VERSIONS5 ${MODLUA_VERSION})
 +    else()
-+        set(LUA_VERSIONS5 5.3 5.2 5.1 5.0)
++         set(LUA_VERSIONS5 5.3 5.2 5.1 5.0)
 +    endif()
  
      if (Lua_FIND_VERSION_EXACT)
          if (Lua_FIND_VERSION_COUNT GREATER 1)
-@@ -114,6 +121,10 @@ function(_lua_check_header_version _hdr_file)
- endfunction(_lua_check_header_version)
+@@ -145,6 +152,9 @@ endfunction(_lua_get_header_version)
  
- _lua_set_version_vars()
-+
-+if(MODLUA_INCL_DIR)
-+    set(LUA_INCLUDE_DIR "${MODLUA_INCL_DIR}")
-+endif()
+ function(_lua_find_header)
+   _lua_set_version_vars()
++  if(MODLUA_INCL_DIR)
++      set(LUA_INCLUDE_DIR "${MODLUA_INCL_DIR}")
++  endif()
  
- if (LUA_INCLUDE_DIR AND EXISTS "${LUA_INCLUDE_DIR}/lua.h")
-     _lua_check_header_version("${LUA_INCLUDE_DIR}/lua.h")
+   # Initialize as local variable
+   set(CMAKE_IGNORE_PATH ${CMAKE_IGNORE_PATH})
