@@ -1,0 +1,58 @@
+$OpenBSD: patch-job_c,v 1.1 2019/08/21 17:37:23 kurt Exp $
+
+Keep SIGCHLD blocked when using pselect(2)
+
+Index: job.c
+--- job.c.orig
++++ job.c
+@@ -912,7 +912,7 @@ reap_children (int block, int err)
+                      about to put that child on the chain.  But it is
+                      already there, so it is safe for a fatal signal to
+                      arrive now; it will clean up this child's targets.  */
+-                  unblock_sigs ();
++                  reset_sigs();
+                   if (c->file->command_state == cs_running)
+                     /* We successfully started the new command.
+                        Loop to reap more children.  */
+@@ -970,7 +970,7 @@ reap_children (int block, int err)
+ 
+       free_child (c);
+ 
+-      unblock_sigs ();
++      reset_sigs ();
+ 
+       /* If the job failed, and the -k flag was not given, die,
+          unless we are already in the process of dying.  */
+@@ -1055,7 +1055,23 @@ unblock_sigs (void)
+   sigemptyset (&empty);
+   sigprocmask (SIG_SETMASK, &empty, (sigset_t *) 0);
+ }
++
++void
++reset_sigs (void)
++{
++#ifdef HAVE_PSELECT
++/* If we're using pselect(2) we need to keep SIGCHLD blocked 
++   so that we don't miss any while unblocked */
++  sigset_t block;
++  sigemptyset (&block);
++  sigaddset (&block, SIGCHLD);
++  if (sigprocmask (SIG_SETMASK, &block, NULL) < 0)
++    pfatal_with_name ("sigprocmask(SIG_SETMASK, SIGCHLD)");
++#else
++  unblock_sigs ();
+ #endif
++}
++#endif
+ 
+ 
+ /* Start a job to run the commands specified in CHILD.
+@@ -1584,7 +1600,7 @@ start_waiting_job (struct child *c)
+       children = c;
+       /* One more job slot is in use.  */
+       ++job_slots_used;
+-      unblock_sigs ();
++      reset_sigs ();
+       break;
+ 
+     case cs_not_started:

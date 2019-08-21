@@ -1,0 +1,27 @@
+$OpenBSD: patch-job_h,v 1.1 2019/08/21 17:37:23 kurt Exp $
+
+Keep SIGCHLD blocked when using pselect(2)
+
+Index: job.h
+--- job.h.orig
++++ job.h
+@@ -147,12 +147,19 @@ extern unsigned int job_slots_used;
+ void block_sigs (void);
+ #ifdef POSIX
+ void unblock_sigs (void);
++void reset_sigs (void);
+ #else
+ #ifdef  HAVE_SIGSETMASK
+ extern int fatal_signal_mask;
+ #define unblock_sigs()  sigsetmask (0)
++#ifdef HAVE_PSELECT
++#define reset_sigs()    sigsetmask (sigmask(SIGCHLD))
+ #else
++#define reset_sigs()    sigsetmask (0)
++#endif
++#else
+ #define unblock_sigs()
++#define reset_sigs()
+ #endif
+ #endif
+ 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2019/08/06 12:19:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2019/08/21 17:37:23 kurt Exp $
 
 COMMENT=	GNU make
 
 DISTNAME=	make-4.2.1
 PKGNAME=	g${DISTNAME}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=make/}
 EXTRACT_SUFX=	.tar.bz2
