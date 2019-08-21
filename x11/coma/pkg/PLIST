@@ -1,3 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/01/18 11:41:36 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/08/21 20:35:27 fcambus Exp $
 @bin bin/coma
+bin/coma-cmd
+bin/coma-remote
 @man man/man1/coma.1
+share/doc/coma/
+share/doc/coma/README.md
