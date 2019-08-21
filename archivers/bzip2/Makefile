@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.76 2019/06/28 23:48:51 tj Exp $
+# $OpenBSD: Makefile,v 1.77 2019/08/21 21:39:38 naddy Exp $
 
 COMMENT=	block-sorting file compressor, unencumbered
 
-DISTNAME=	bzip2-1.0.7
+DISTNAME=	bzip2-1.0.8
 
 CATEGORIES=	archivers
 
-HOMEPAGE=	https://gitlab.com/federicomenaquintero/bzip2
+HOMEPAGE=	https://sourceware.org/bzip2/
 
 SHARED_LIBS=	bz2	10.4
 
