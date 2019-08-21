@@ -1,0 +1,28 @@
+$OpenBSD: patch-packet_probe_c,v 1.1 2019/08/21 15:23:42 sthen Exp $
+
+From 9fe183d61f5382bd6dae1df1db6439a27e8edde2 Mon Sep 17 00:00:00 2001
+From: Chongyu Zhu <i@lembacon.com>
+Date: Tue, 6 Aug 2019 23:01:57 +0800
+Subject: [PATCH] probe: fix find_source_addr
+
+Index: packet/probe.c
+--- packet/probe.c.orig
++++ packet/probe.c
+@@ -323,7 +323,7 @@ int find_source_addr(
+        anything to the port.
+      */
+     *sockaddr_port_offset(&dest_with_port) = htons(1);
+-    len = sockaddr_addr_size(&dest_with_port);
++    len = sockaddr_size(&dest_with_port);
+ 
+     sock = socket(destaddr->ss_family, SOCK_DGRAM, IPPROTO_UDP);
+     if (sock == -1) {
+@@ -364,7 +364,7 @@ int find_source_addr(
+        Zero the port, as we may later use this address to finding, and
+        we don't want to use the port from the socket we just created.
+      */
+-    *sockaddr_port_offset(&srcaddr) = 0;
++    *sockaddr_port_offset(srcaddr) = 0;
+ 
+     return 0;
+ }

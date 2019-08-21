@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.68 2019/06/03 16:06:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2019/08/21 15:23:42 sthen Exp $
 
-COMMENT=	Matt's traceroute - network diagnostic tool#'
+COMMENT=	network diagnostic tool, similar to ping and traceroute
 
 GH_ACCOUNT=	traviscross
 GH_PROJECT=	mtr
-GH_TAGNAME=	v0.92
-
-REVISION=	2
+GH_TAGNAME=	v0.93
 EPOCH=		0
 
 CATEGORIES=	net
@@ -21,18 +19,15 @@ PERMIT_PACKAGE=	yes
 # diff for pledge(), not yet enabled
 WANTLIB += c m curses
 
-MASTER_SITES=	https://www.bitwizard.nl/mtr/files/ \
-		ftp://ftp.bitwizard.nl/mtr/
-
 FLAVORS=	gtk
 FLAVOR?=
 
-CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_STYLE= autoreconf
+AUTORECONF=	${WRKSRC}/bootstrap.sh
 AUTOCONF_VERSION= 2.69
-AUTOMAKE_VERSION= 1.11
-BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
+AUTOMAKE_VERSION= 1.15
+
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 MODULES=	lang/python # for tests only
 MODPY_BUILDDEP=	No
@@ -51,14 +46,10 @@ CONFIGURE_ARGS+=	--without-glib \
 			--without-gtk
 .endif
 
-do-gen:
-	printf '#!/bin/sh\necho -n ${GH_TAGNAME:S/v//}\n' \
-	    > ${WRKSRC}/build-aux/git-version-gen
-	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./bootstrap.sh
-	touch ${WRKSRC}/config.h.in
-
 pre-test:
 	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
+
+post-extract:
+	printf '#!/bin/sh\necho -n ${GH_TAGNAME:S/v//}\n' > ${WRKSRC}/build-aux/git-version-gen
 
 .include <bsd.port.mk>

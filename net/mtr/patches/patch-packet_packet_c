@@ -1,9 +1,9 @@
-$OpenBSD: patch-packet_packet_c,v 1.2 2017/06/02 16:50:16 sthen Exp $
+$kpenBSD: patch-packet_packet_c,v 1.2 2017/06/02 16:50:16 sthen Exp $
 
 Index: packet/packet.c
 --- packet/packet.c.orig
 +++ packet/packet.c
-@@ -23,6 +23,7 @@
+@@ -28,6 +28,7 @@
  #include <stdlib.h>
  #include <string.h>
  #include <unistd.h>
@@ -11,7 +11,7 @@ Index: packet/packet.c
  
  #ifdef HAVE_LIBCAP
  #include <sys/capability.h>
-@@ -38,11 +39,25 @@ int drop_elevated_permissions(
+@@ -43,11 +44,19 @@ int drop_elevated_permissions(
  #ifdef HAVE_LIBCAP
      cap_t cap;
  #endif
@@ -22,16 +22,10 @@ Index: packet/packet.c
 +    if ((pw = getpwnam("_mtr")) == NULL) {
          return -1;
      }
-+    if (chroot("/var/empty") == -1) {
-+        return -1;
-+    }
-+    if (chdir("/") == -1) {
-+        return -1;
-+    }
 +    if (pw) {
-+        if (setgroups(1, &pw->pw_gid) == -1 ||
-+            setresgid(pw->pw_gid, pw->pw_gid, pw->pw_gid) == -1 ||
-+            setresuid(pw->pw_uid, pw->pw_uid, pw->pw_uid) == -1) {
++        if (setgroups(1, &pw->pw_gid) ||
++            setresgid(pw->pw_gid, pw->pw_gid, pw->pw_gid) ||
++            setresuid(pw->pw_uid, pw->pw_uid, pw->pw_uid)) {
 +                return -1;
 +        }
 +    }
@@ -39,3 +33,17 @@ Index: packet/packet.c
  
      if (geteuid() != getuid() || getegid() != getgid()) {
          return -1;
+@@ -68,6 +77,13 @@ int drop_elevated_permissions(
+     if (cap_set_proc(cap)) {
+         return -1;
+     }
++#endif
++#ifdef __OpenBSD__
++    /* no filesystem visibility */
++    if (unveil("/", "") == -1)
++        return -1;
++    if (unveil(NULL, NULL) == -1)
++        return -1;
+ #endif
+ 
+     return 0;

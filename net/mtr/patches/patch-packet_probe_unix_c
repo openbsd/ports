@@ -1,0 +1,32 @@
+$OpenBSD: patch-packet_probe_unix_c,v 1.1 2019/08/21 15:23:42 sthen Exp $
+
+Index: packet/probe_unix.c
+--- packet/probe_unix.c.orig
++++ packet/probe_unix.c
+@@ -129,7 +129,7 @@ void check_length_order(
+     ssize_t bytes_sent;
+     int packet_size;
+ 
+-#ifdef __linux__
++#ifdef __linux__        // #if defined(__linux__) || defined(__OpenBSD__)
+     /*  Linux will accept either byte order and check below fails to work
+      *  in some cases due to sendto() returning EPERM. */
+     return;
+@@ -797,7 +797,7 @@ void receive_replies_from_recv_socket(
+         }
+ #endif
+ 
+-#ifdef SO_PROTOCOL
++#if defined(SO_PROTOCOL) && defined(HAVE_LINUX_ERRQUEUE_H)
+         if (icmp_connrefused_received) {
+             /* using ICMP type ICMP_ECHOREPLY is not a bug, it is an
+                indication of successfully reaching dst host.
+@@ -818,7 +818,7 @@ void receive_replies_from_recv_socket(
+             /* ICMP packets received from raw socket */
+             handle_received_packet(net_state, &remote_addr, packet,
+                                    packet_length, &timestamp);
+-#ifdef SO_PROTOCOL
++#if defined(SO_PROTOCOL) && defined(HAVE_LINUX_ERRQUEUE_H)
+         }
+ #endif
+     }

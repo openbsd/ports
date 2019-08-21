@@ -1,0 +1,42 @@
+$OpenBSD: patch-ui_dns_c,v 1.1 2019/08/21 15:23:42 sthen Exp $
+
+From fab26eacaf5484b8dcb4c14084d5d69e7266240f Mon Sep 17 00:00:00 2001
+From: Aaron Lipinski <kris.lipinski@gmail.com>
+Date: Sun, 28 Jul 2019 22:35:39 +1200
+Subject: [PATCH 1/2] show resolved hostname in raw dnsline
+
+From c938dc7725624ddf38710bc30710c6164735cb96 Mon Sep 17 00:00:00 2001
+From: Aaron Lipinski <kris.lipinski@gmail.com>
+Date: Mon, 29 Jul 2019 08:08:51 +1200
+Subject: [PATCH 2/2] rely on final return NULL
+
+Index: ui/dns.c
+--- ui/dns.c.orig
++++ ui/dns.c
+@@ -276,8 +276,6 @@ char *dns_lookup2(
+         /* we've got a result. */
+         if (r->name)
+             return r->name;
+-        else
+-            return strlongip(ctl, ip);
+     } else {
+         r = xmalloc(sizeof(struct dns_results));
+         memcpy(&r->ip, ip, sizeof(r->ip));
+@@ -289,7 +287,7 @@ char *dns_lookup2(
+         if (rv < 0)
+             error(0, errno, "couldn't write to resolver process");
+     }
+-    return strlongip(ctl, ip);
++    return NULL;
+ }
+ 
+ 
+@@ -302,7 +300,7 @@ char *dns_lookup(
+     if (!ctl->dns || !ctl->use_dns)
+         return NULL;
+     t = dns_lookup2(ctl, ip);
+-    return t;
++    return t ? t : strlongip(ctl, ip);
+ }
+ 
+ /* XXX check if necessary/exported. */
