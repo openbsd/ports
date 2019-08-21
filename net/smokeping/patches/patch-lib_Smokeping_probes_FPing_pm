@@ -1,15 +1,14 @@
-$OpenBSD: patch-lib_Smokeping_probes_FPing_pm,v 1.2 2019/08/21 12:35:12 sthen Exp $
+$OpenBSD: patch-lib_Smokeping_probes_FPing_pm,v 1.3 2019/08/21 14:00:11 sthen Exp $
 
 Index: lib/Smokeping/probes/FPing.pm
 --- lib/Smokeping/probes/FPing.pm.orig
 +++ lib/Smokeping/probes/FPing.pm
-@@ -15,8 +15,8 @@ to generate the POD document.
- =cut
- 
- use strict;
--use base qw(Smokeping::probes::base);
- use IPC::Open3;
-+use base qw(Smokeping::probes::base);
- use Symbol;
- use Carp;
- 
+@@ -119,7 +119,7 @@ sub ping ($){
+     # pinging nothing is pointless
+     return unless @{$self->addresses};
+     my @params = () ;
+-    push @params, "-$self->{properties}{protocol}";
++    push @params, "-$self->{properties}{protocol}" unless $self->binary =~ /fping6/;
+     push @params, "-b$self->{properties}{packetsize}" if $self->{properties}{packetsize};
+     push @params, "-t" . int(1000 * $self->{properties}{timeout}) if $self->{properties}{timeout};
+     push @params, "-i" . int(1000 * $self->{properties}{mininterval});
