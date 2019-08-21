@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.14 2019/07/17 06:15:40 gonzalo Exp $
+$OpenBSD: README,v 1.15 2019/08/21 13:26:01 gonzalo Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -96,12 +96,20 @@ server "domain.tld" {
 		block return 301 "$DOCUMENT_URI/index.php"
 	}
 
-	location "/nextcloud/ocm-provider/" {
-		block return 301 "$DOCUMENT_URI/index.php"
+	location "/.well-known/carddav" {
+		block return 301 "https://$SERVER_NAME/nextcloud/remote.php/dav"
 	}
 
-	location "/nextcloud/ocs-provider/" {
-		block return 301 "$DOCUMENT_URI/index.php"
+	location "/.well-known/caldav" {
+		block return 301 "https://$SERVER_NAME/nextcloud/remote.php/dav"
+	}
+
+	location "/.well-known/webfinger" {
+		block return 301 "https://$SERVER_NAME/nextcloud/public.php?service=webfinger"
+	}
+
+	location match "/nextcloud/oc[ms]%-provider/*" {
+		directory index index.php
 	}
 }
 ---8<---------------------------------------------------------------------------
