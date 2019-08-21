@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/08/13 00:52:04 kmos Exp $
+# $OpenBSD: Makefile,v 1.13 2019/08/21 16:50:10 kmos Exp $
 
 COMMENT =	HTML/XML parser that supports invalid markup
 
@@ -9,7 +9,6 @@ PKGNAME =	py-${DISTNAME}
 CATEGORIES =	www
 
 HOMEPAGE =	https://www.crummy.com/software/BeautifulSoup/
-MAINTAINER =	frantisek holop <minusf@obiit.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
