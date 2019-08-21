@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2019/08/03 19:36:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2019/08/21 05:47:45 rsadowski Exp $
 
 BROKEN-powerpc = Error: Kind -2 not supported for type INTEGER at (1)
 
@@ -6,19 +6,18 @@ COMMENT-main =	advanced 2D and 3D scientific plotting library
 COMMENT-c++ =	C++ interface to plplot
 COMMENT-fortran =	Fortran 77 interface to plplot
 
-VERSION =	5.13.0
+VERSION =	5.15.0
 DISTNAME =	plplot-${VERSION}
 SHARED_LIBS =	csirocsa	4.0	\
 		csironn		0.0	\
-		plplot		15.0	\
-		plplotcxx	13.0	\
-		plplotfortran	0.0	\
+		plplot		16.0	\
+		plplotcxx	14.0	\
+		plplotfortran	1.0	\
 		qsastime	0.0
 
 PKGNAME-main =	${DISTNAME}
 PKGNAME-c++ =	plplot-c++-${VERSION}
 PKGNAME-fortran =	plplot-fortran-${VERSION}
-REVISION =	4
 
 CATEGORIES =	math graphics
 
@@ -30,8 +29,8 @@ PERMIT_PACKAGE =		Yes
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=plplot/}
 
 COMPILER =		base-clang ports-gcc base-gcc
-MODULES =	fortran
-MODFORTRAN_COMPILER = gfortran
+MODULES =		fortran
+MODFORTRAN_COMPILER =	gfortran
 
 BUILD_DEPENDS =	print/ghostscript/gnu-fonts \
 		${MODFORTRAN_BUILD_DEPENDS}
@@ -51,7 +50,6 @@ CONFIGURE_ARGS =	-D ENABLE_ada=OFF \
 			-D ENABLE_lua=OFF \
 			-D ENABLE_ocaml=OFF \
 			-D ENABLE_octave=OFF \
-			-D ENABLE_pdl=OFF \
 			-D ENABLE_python=OFF \
 			-D ENABLE_qt=OFF \
 			-D ENABLE_pyqt4=OFF \

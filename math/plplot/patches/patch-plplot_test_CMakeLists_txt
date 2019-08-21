@@ -1,47 +1,59 @@
-$OpenBSD: patch-plplot_test_CMakeLists_txt,v 1.1 2017/11/04 10:28:21 steven Exp $
+$OpenBSD: patch-plplot_test_CMakeLists_txt,v 1.2 2019/08/21 05:47:46 rsadowski Exp $
 
 Index: plplot_test/CMakeLists.txt
 --- plplot_test/CMakeLists.txt.orig
 +++ plplot_test/CMakeLists.txt
-@@ -492,14 +492,14 @@ if(SH_EXECUTABLE)
-   foreach(SCRIPT ${SCRIPTS})
-     install(
-       FILES ${CMAKE_CURRENT_BINARY_DIR}/${SCRIPT}
--      DESTINATION ${DATA_DIR}/examples
-+      DESTINATION ${EXAMPLE_DIR}
-       PERMISSIONS ${PERM_SCRIPTS}
-       )
-   endforeach(SCRIPT ${SCRIPTS})
+@@ -77,7 +77,7 @@ if(SH_EXECUTABLE)
+     endif(ENABLE_tcl)
  
-   install(
-     FILES ${CMAKE_CURRENT_BINARY_DIR}/plplot-test.sh_install
--    DESTINATION ${DATA_DIR}/examples
-+    DESTINATION ${EXAMPLE_DIR}
-     PERMISSIONS ${PERM_SCRIPTS}
-     RENAME plplot-test.sh
-     )
-@@ -507,21 +507,21 @@ if(SH_EXECUTABLE)
-   if(ENABLE_tcl)
+     # Part 2. Install this CMakeLists.txt file.
+-    install(FILES CMakeLists.txt DESTINATION ${DATA_DIR}/examples/plplot_test)
++    install(FILES CMakeLists.txt DESTINATION ${EXAMPLE_DIR}/plplot_test)
+ 
+     # Part 3. Configure AND install PLplot test files.
+     set(PERM_SCRIPTS
+@@ -99,7 +99,7 @@ if(SH_EXECUTABLE)
+       )
      install(
-       FILES ${CMAKE_CURRENT_BINARY_DIR}/test_tcl.sh_install
+       FILES ${CMAKE_CURRENT_BINARY_DIR}/plplot-test.sh_install
 -      DESTINATION ${DATA_DIR}/examples
 +      DESTINATION ${EXAMPLE_DIR}
        PERMISSIONS ${PERM_SCRIPTS}
-       RENAME test_tcl.sh
+       RENAME plplot-test.sh
        )
-   endif(ENABLE_tcl)
-   install(
-     FILES ${CMAKE_CURRENT_BINARY_DIR}/plplot-test-interactive.sh_install
--    DESTINATION ${DATA_DIR}/examples
-+    DESTINATION ${EXAMPLE_DIR}
-     PERMISSIONS ${PERM_SCRIPTS}
-     RENAME plplot-test-interactive.sh
-     )
-   if(PLD_plmeta)
+@@ -114,7 +114,7 @@ if(SH_EXECUTABLE)
+       )
      install(
-       FILES ${CMAKE_CURRENT_BINARY_DIR}/test_plrender.sh_install
+       FILES ${CMAKE_CURRENT_BINARY_DIR}/plplot-test-interactive.sh_install
 -      DESTINATION ${DATA_DIR}/examples
 +      DESTINATION ${EXAMPLE_DIR}
        PERMISSIONS ${PERM_SCRIPTS}
-       RENAME test_plrender.sh
+       RENAME plplot-test-interactive.sh
        )
+@@ -244,7 +244,7 @@ if(SH_EXECUTABLE)
+ 	)
+       install(
+ 	FILES ${CMAKE_CURRENT_BINARY_DIR}/test_tcl.sh_install
+-	DESTINATION ${DATA_DIR}/examples
++	DESTINATION ${EXAMPLE_DIR}
+ 	PERMISSIONS ${PERM_SCRIPTS}
+ 	RENAME test_tcl.sh
+ 	)
+@@ -309,7 +309,7 @@ if(SH_EXECUTABLE)
+ 	)
+       install(
+ 	FILES ${CMAKE_CURRENT_BINARY_DIR}/test_plrender.sh_install
+-	DESTINATION ${DATA_DIR}/examples
++	DESTINATION ${EXAMPLE_DIR}
+ 	PERMISSIONS ${PERM_SCRIPTS}
+ 	RENAME test_plrender.sh
+ 	)
+@@ -328,7 +328,7 @@ if(SH_EXECUTABLE)
+     foreach(SCRIPT ${SCRIPTS})
+       install(
+ 	FILES ${CMAKE_CURRENT_BINARY_DIR}/${SCRIPT}
+-	DESTINATION ${DATA_DIR}/examples
++	DESTINATION ${EXAMPLE_DIR}
+ 	PERMISSIONS ${PERM_SCRIPTS}
+ 	)
+     endforeach(SCRIPT ${SCRIPTS})

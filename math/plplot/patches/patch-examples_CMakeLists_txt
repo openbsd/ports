@@ -1,8 +1,8 @@
-$OpenBSD: patch-examples_CMakeLists_txt,v 1.2 2017/11/04 10:28:21 steven Exp $
+$OpenBSD: patch-examples_CMakeLists_txt,v 1.3 2019/08/21 05:47:45 rsadowski Exp $
 Index: examples/CMakeLists.txt
 --- examples/CMakeLists.txt.orig
 +++ examples/CMakeLists.txt
-@@ -213,7 +213,7 @@ if(CORE_BUILD)
+@@ -225,7 +225,7 @@ if(CORE_BUILD)
      )
  
    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Makefile.examples
@@ -11,7 +11,7 @@ Index: examples/CMakeLists.txt
      RENAME Makefile
      )
  
-@@ -291,7 +291,7 @@ if(CORE_BUILD)
+@@ -393,7 +393,7 @@ if(CORE_BUILD)
      FILES
      ${CMAKE_CURRENT_SOURCE_DIR}/Chloe.pgm
      ${CMAKE_CURRENT_SOURCE_DIR}/README.Chloe
@@ -20,7 +20,7 @@ Index: examples/CMakeLists.txt
      )
  
  endif(CORE_BUILD)
-@@ -314,7 +314,7 @@ if(CORE_BUILD)
+@@ -409,7 +409,7 @@ if(CORE_BUILD)
    # Start configuration/installation of CMake-based build system for
    # installed examples.
    install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt
@@ -29,7 +29,7 @@ Index: examples/CMakeLists.txt
      )
  
    # language_info_LIST contains information about the languages used in
-@@ -351,33 +351,33 @@ if(CORE_BUILD)
+@@ -445,33 +445,33 @@ if(CORE_BUILD)
  
    install(FILES
      ${CMAKE_CURRENT_BINARY_DIR}/plplot_configure.cmake_installed_examples
@@ -68,7 +68,7 @@ Index: examples/CMakeLists.txt
        )
    endif(ANY_QT_DEVICE)
  
-@@ -424,7 +424,7 @@ if(CORE_BUILD)
+@@ -518,7 +518,7 @@ if(CORE_BUILD)
        string(REGEX REPLACE "^.*:(.*)$" "\\1" LANG_SUPPORT_FILE ${LANG_SUPPORT_info})
        install(FILES
  	${CMAKE_SOURCE_DIR}/cmake/modules/${LANG_SUPPORT_DIR}/${LANG_SUPPORT_FILE}

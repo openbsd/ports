@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2019/08/03 19:36:04 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2019/08/21 05:47:46 rsadowski Exp $
 @pkgpath math/plplot
 @bin bin/pltek
 include/plplot/
+include/plplot/csa.h
+include/plplot/csadll.h
 include/plplot/disptab.h
 include/plplot/drivers.h
+include/plplot/nn.h
+include/plplot/nndll.h
 include/plplot/pdf.h
 include/plplot/plConfig.h
 include/plplot/plDevs.h
@@ -18,9 +22,38 @@ include/plplot/plxwd.h
 include/plplot/qsastime.h
 include/plplot/qsastimedll.h
 lib/cmake/plplot/
+lib/cmake/plplot/export_cairo${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/plplot/export_cairo.cmake
+lib/cmake/plplot/export_csirocsa${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/plplot/export_csirocsa.cmake
+lib/cmake/plplot/export_csironn${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/plplot/export_csironn.cmake
+lib/cmake/plplot/export_mem${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/plplot/export_mem.cmake
+lib/cmake/plplot/export_null${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/plplot/export_null.cmake
+lib/cmake/plplot/export_plfortrandemolib${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/plplot/export_plfortrandemolib.cmake
 lib/cmake/plplot/export_plplot${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/plplot/export_plplot.cmake
+lib/cmake/plplot/export_plplotcxx${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/plplot/export_plplotcxx.cmake
+lib/cmake/plplot/export_plplotfortran${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/plplot/export_plplotfortran.cmake
+lib/cmake/plplot/export_pltek${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/plplot/export_pltek.cmake
+lib/cmake/plplot/export_ps${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/plplot/export_ps.cmake
+lib/cmake/plplot/export_qsastime${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/plplot/export_qsastime.cmake
+lib/cmake/plplot/export_svg${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/plplot/export_svg.cmake
+lib/cmake/plplot/export_xfig${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/plplot/export_xfig.cmake
+lib/cmake/plplot/export_xwin${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/plplot/export_xwin.cmake
 lib/cmake/plplot/plplotConfig.cmake
+lib/cmake/plplot/plplot_exports.cmake
 @lib lib/libcsirocsa.so.${LIBcsirocsa_VERSION}
 @lib lib/libcsironn.so.${LIBcsironn_VERSION}
 @lib lib/libplplot.so.${LIBplplot_VERSION}
@@ -235,7 +268,6 @@ share/doc/plplot/README.nn
 share/doc/plplot/README.pkg-config
 share/doc/plplot/README.release
 share/doc/plplot/README.shapefiles
-share/doc/plplot/README.testing
 share/doc/plplot/README.wxwidgets
 share/doc/plplot/html/
 share/doc/plplot/html/API-C.html
@@ -320,12 +352,10 @@ share/doc/plplot/html/part_introduction.html
 share/doc/plplot/html/part_programming.html
 share/doc/plplot/html/part_reference.html
 share/doc/plplot/html/pdf-driver.html
-share/doc/plplot/html/perl.html
 share/doc/plplot/html/plAlloc2dGrid.html
 share/doc/plplot/html/plClearOpts.html
 share/doc/plplot/html/plFree2dGrid.html
 share/doc/plplot/html/plGetCursor.html
-share/doc/plplot/html/plHLS_RGB.html
 share/doc/plplot/html/plMergeOpts.html
 share/doc/plplot/html/plMinMax2dGrid.html
 share/doc/plplot/html/plOptUsage.html
@@ -333,6 +363,7 @@ share/doc/plplot/html/plP_checkdriverinit.html
 share/doc/plplot/html/plP_getinitdriverlist.html
 share/doc/plplot/html/plResetOpts.html
 share/doc/plplot/html/plSetUsage.html
+share/doc/plplot/html/plStatic2dGrid.html
 share/doc/plplot/html/plTranslateCursor.html
 share/doc/plplot/html/pl_setcontlabelformat.html
 share/doc/plplot/html/pl_setcontlabelparam.html
@@ -347,8 +378,6 @@ share/doc/plplot/html/plbox3.html
 share/doc/plplot/html/plbtime.html
 share/doc/plplot/html/plcalc_world.html
 share/doc/plplot/html/plclear.html
-share/doc/plplot/html/plclr.html
-share/doc/plplot/html/plcol.html
 share/doc/plplot/html/plcol0.html
 share/doc/plplot/html/plcol1.html
 share/doc/plplot/html/plcolorbar.html
@@ -403,7 +432,6 @@ share/doc/plplot/html/plgxax.html
 share/doc/plplot/html/plgyax.html
 share/doc/plplot/html/plgzax.html
 share/doc/plplot/html/plhist.html
-share/doc/plplot/html/plhls.html
 share/doc/plplot/html/plhlsrgb.html
 share/doc/plplot/html/plimage.html
 share/doc/plplot/html/plimagefr.html
@@ -431,7 +459,6 @@ share/doc/plplot/html/plot3d.html
 share/doc/plplot/html/plot3dc.html
 share/doc/plplot/html/plot3dcl.html
 share/doc/plplot/html/plot3dfortran.html
-share/doc/plplot/html/plpage.html
 share/doc/plplot/html/plparseopts.html
 share/doc/plplot/html/plparseoptsfortran.html
 share/doc/plplot/html/plpat.html
@@ -447,8 +474,6 @@ share/doc/plplot/html/plptex.html
 share/doc/plplot/html/plptex3.html
 share/doc/plplot/html/plrandd.html
 share/doc/plplot/html/plreplot.html
-share/doc/plplot/html/plrgb.html
-share/doc/plplot/html/plrgb1.html
 share/doc/plplot/html/plrgbhls.html
 share/doc/plplot/html/plsabort.html
 share/doc/plplot/html/plschr.html
@@ -531,7 +556,6 @@ share/doc/plplot/html/plvpas.html
 share/doc/plplot/html/plvpor.html
 share/doc/plplot/html/plvsta.html
 share/doc/plplot/html/plw3d.html
-share/doc/plplot/html/plwid.html
 share/doc/plplot/html/plwidth.html
 share/doc/plplot/html/plwind.html
 share/doc/plplot/html/plxormod.html
@@ -612,6 +636,8 @@ share/examples/plplot/cmake/modules/plplot_configure.cmake
 share/examples/plplot/cmake/modules/plplot_functions.cmake
 share/examples/plplot/plplot-test-interactive.sh
 share/examples/plplot/plplot-test.sh
+share/examples/plplot/plplot_test/
+share/examples/plplot/plplot_test/CMakeLists.txt
 share/examples/plplot/test_c.sh
 share/examples/plplot/test_c_interactive.sh
 share/examples/plplot/test_cxx.sh

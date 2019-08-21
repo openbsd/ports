@@ -1,10 +1,10 @@
-$OpenBSD: patch-examples_fortran_CMakeLists_txt,v 1.1 2017/11/04 10:28:21 steven Exp $
+$OpenBSD: patch-examples_fortran_CMakeLists_txt,v 1.2 2019/08/21 05:47:46 rsadowski Exp $
 
 Index: examples/fortran/CMakeLists.txt
 --- examples/fortran/CMakeLists.txt.orig
 +++ examples/fortran/CMakeLists.txt
-@@ -117,7 +117,7 @@ if(CORE_BUILD)
-     )
+@@ -123,7 +123,7 @@ if(CORE_BUILD)
+     PROPERTIES GENERATED ON)
  
    install(FILES ${fortran_SRCS} README_precision
 -    DESTINATION ${DATA_DIR}/examples/fortran
@@ -12,7 +12,7 @@ Index: examples/fortran/CMakeLists.txt
      )
  
    set(FC "${CMAKE_Fortran_COMPILER} ${CMAKE_Fortran_COMPILER_ARG1} ${CMAKE_Fortran_FLAGS}")
-@@ -127,16 +127,16 @@ if(CORE_BUILD)
+@@ -133,16 +133,16 @@ if(CORE_BUILD)
      )
  
    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Makefile.examples

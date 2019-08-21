@@ -1,8 +1,8 @@
-$OpenBSD: patch-examples_c++_CMakeLists_txt,v 1.2 2017/11/04 10:28:21 steven Exp $
+$OpenBSD: patch-examples_c++_CMakeLists_txt,v 1.3 2019/08/21 05:47:45 rsadowski Exp $
 Index: examples/c++/CMakeLists.txt
 --- examples/c++/CMakeLists.txt.orig
 +++ examples/c++/CMakeLists.txt
-@@ -76,12 +76,12 @@ if(CORE_BUILD)
+@@ -74,12 +74,12 @@ if(CORE_BUILD)
      set(qt_INSTALLED_FILES qt_PlotWindow.cpp qt_PlotWindow.h qt_example.cpp README.qt_example)
    endif(PLD_extqt)
  
@@ -17,7 +17,7 @@ Index: examples/c++/CMakeLists.txt
      )
  endif(CORE_BUILD)
  
-@@ -271,7 +271,7 @@ if(CORE_BUILD)
+@@ -270,7 +270,7 @@ if(CORE_BUILD)
      )
  
    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Makefile.examples
