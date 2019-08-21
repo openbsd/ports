@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/22 12:16:56 semarie Exp $
+# $OpenBSD: Makefile,v 1.2 2019/08/21 11:20:25 cwen Exp $
 
 COMMENT =	generator for the woboq code browser
 
@@ -26,8 +26,10 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB =		${COMPILER_LIBCXX} c m
 
-MODULES =		devel/cmake \
-			lang/clang
+COMPILER =		base-clang ports-clang
+
+MODULES =		devel/cmake
+BUILD_DEPENDS =		devel/llvm
 RUN_DEPENDS =		devel/llvm
 
 NO_TEST =		Yes
