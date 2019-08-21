@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2019/03/30 09:13:49 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2019/08/21 06:18:57 rsadowski Exp $
 
 COMMENT =	KDE configuration system
 DISTNAME =	kconfig-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5ConfigCore		4.3
 SHARED_LIBS +=	KF5ConfigGui		4.3
