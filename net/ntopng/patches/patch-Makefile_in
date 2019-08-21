@@ -1,9 +1,18 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2019/01/07 18:37:22 sthen Exp $
+$OpenBSD: patch-Makefile_in,v 1.5 2019/08/21 13:18:32 sthen Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -95,12 +95,7 @@ ifeq (@NEDGE@, 0)
+@@ -36,6 +36,8 @@ else ifeq ($(OS),Darwin)
+ 	LUA_PLATFORM=macosx
+ else ifeq ($(OS), $(filter $(OS), FreeBSD))
+ 	LUA_PLATFORM=freebsd
++else ifeq ($(OS), $(filter $(OS), OpenBSD))
++	LUA_PLATFORM=bsd
+ endif
+ 
+ LUA_HOME=${PWD}/third-party/lua-5.3.5
+@@ -95,12 +97,7 @@ ifeq (@NEDGE@, 0)
   HAS_ZEROMQ=$(shell pkg-config --exists libzmq; echo $$?)
   ifeq ($(HAS_ZEROMQ), 0)
  	ZEROMQ_INC = $(shell pkg-config --cflags libzmq)
