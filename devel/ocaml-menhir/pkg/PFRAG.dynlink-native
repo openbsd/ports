@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.dynlink-native,v 1.1 2019/08/21 02:55:50 daniel Exp $
+@bin lib/ocaml/menhirLib/menhirLib.cmxs
+@bin lib/ocaml/menhirSdk/menhirSdk.cmxs

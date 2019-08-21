@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2019/08/18 01:17:02 daniel Exp $
+# $OpenBSD: Makefile,v 1.16 2019/08/21 02:55:50 daniel Exp $
 
 COMMENT =		OCaml parser generator for LR(1) grammars
 
 V =			20190626
 DISTNAME =		menhir-${V}
 PKGNAME =		ocaml-${DISTNAME}
+REVISION =		0
 
 MASTER_SITES =		https://gitlab.inria.fr/fpottier/menhir/-/archive/${V}/
 

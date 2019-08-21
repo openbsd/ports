@@ -1,18 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/08/18 01:17:02 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/08/21 02:55:50 daniel Exp $
 %%native%%
 @bin bin/menhir
 lib/ocaml/menhirLib/
 lib/ocaml/menhirLib/META
 lib/ocaml/menhirLib/menhirLib.cmi
 lib/ocaml/menhirLib/menhirLib.cmo
-@bin lib/ocaml/menhirLib/menhirLib.cmxs
 lib/ocaml/menhirLib/menhirLib.ml
 lib/ocaml/menhirLib/menhirLib.mli
 lib/ocaml/menhirSdk/
 lib/ocaml/menhirSdk/META
 lib/ocaml/menhirSdk/menhirSdk.cmi
 lib/ocaml/menhirSdk/menhirSdk.cmo
-@bin lib/ocaml/menhirSdk/menhirSdk.cmxs
 @man man/man1/menhir.1
 share/doc/ocaml-menhir/
 share/doc/ocaml-menhir/demos/

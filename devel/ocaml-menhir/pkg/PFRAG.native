@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.native,v 1.2 2018/07/31 05:43:27 daniel Exp $
+@comment $OpenBSD: PFRAG.native,v 1.3 2019/08/21 02:55:50 daniel Exp $
+%%dynlink%%
 lib/ocaml/menhirLib/menhirLib.cmx
 lib/ocaml/menhirLib/menhirLib.o
 lib/ocaml/menhirSdk/menhirSdk.cmx
