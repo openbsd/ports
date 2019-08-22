@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.1.1.1 2017/11/20 12:45:17 sebastia Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.2 2019/08/22 21:56:05 sebastia Exp $
 
 - Handle the flavor as a property, not as a parameter.  
 - Handle errors from pkg_add
@@ -203,6 +203,15 @@ Index: lib/puppet/provider/package/openbsd.rb
    end
  
    def get_full_name(latest = false)
+@@ -191,7 +156,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+   end
+ 
+   def get_version
+-    execpipe([command(:pkginfo), "-I", @resource[:name]]) do |process|
++    execpipe([:pkginfo, "-I", @resource[:name]]) do |process|
+       # our regex for matching pkg_info output
+       regex = /^(.*)-(\d[^-]*)[-]?(\w*)(.*)$/
+       master_version = 0
 @@ -229,7 +194,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    end
  
