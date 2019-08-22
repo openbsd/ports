@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/08/22 23:49:17 bcallah Exp $
 
-MODPY_EGG_VERSION =	1.1.1
+MODPY_EGG_VERSION =	1.2.0
 COMMENT =	pipe video streams into a video player
 DISTNAME =	streamlink-${MODPY_EGG_VERSION}
 CATEGORIES =	multimedia net
-REVISION =	0
 
 HOMEPAGE =	https://streamlink.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
