@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/08/19 14:37:53 robert Exp $
+# $OpenBSD: Makefile,v 1.45 2019/08/22 18:19:34 robert Exp $
 
 # undefined ref's to libicon*, libintl*
 USE_LLD=	Yes
@@ -9,7 +9,7 @@ COMMENT-mapi=	kopano MAPI extensions for PHP
 PKGNAME-main=	kopano-core-${V}.${BUILD}
 PKGNAME-mapi=	kopano-mapi-${V}.${BUILD}
 
-REVISION-main=	0
+REVISION-main=	1
 REVISION-mapi=	0
 
 CATEGORIES=	mail www productivity
@@ -59,6 +59,11 @@ WANTLIB-main += gsoapssl++ tidy
 WANTLIB-main += ${LIBCXX}
 WANTLIB-main += icalvcal ldap_r HX jsoncpp
 WANTLIB-main += db_cxx uuid xapian
+WANTLIB-main += X11 Xext Xrender expat fontconfig freetype pixman-1
+WANTLIB-main += xcb xcb-render xcb-shm
+WANTLIB-main += cairo fribidi glib-2.0 gobject-2.0 graphite2
+WANTLIB-main += gthread-2.0 harfbuzz pango-1.0 pangocairo-1.0
+WANTLIB-main += pangoft2-1.0 png rrd
 
 # Do not substitute MODULE_NAME
 UPDATE_PLIST_ARGS+=	-i MODULE_NAME
@@ -79,6 +84,7 @@ LIB_DEPENDS-main= databases/mariadb \
 		devel/libHX \
 		devel/libvmime>=0.9.4 \
 		net/curl \
+		net/rrdtool,-main \
 		textproc/icu4c \
 		textproc/libical \
 		textproc/libxml \

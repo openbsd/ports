@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2019/07/22 16:10:27 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2019/08/22 18:19:34 robert Exp $
 @conflict zarafa-*
 @pkgpath mail/zarafa/zarafa,-main
 @newgroup _kopano:793
@@ -440,6 +440,7 @@ lib/tmpfiles.d/
 lib/tmpfiles.d/kopano-tmpfiles.conf
 libexec/kopano/
 @bin libexec/kopano/kopano-indexd
+@bin libexec/kopano/kopano-statsd
 @bin libexec/kopano/kscriptrun
 @bin libexec/kopano/mapitime
 @man man/man1/kopano-fsck.1
