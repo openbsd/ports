@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.22 2019/06/21 23:14:05 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.23 2019/08/22 09:02:23 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -158,7 +158,6 @@ sub finalize
 	    	$job->new_checksum_task($self, $core->{status});
 	} else {
 		if ($job->{file}{sz} == 0) {
-			$job->no_sites;
 			$job->{sites} = $job->{bak} = [];
 			return $job->bad_file($self, $core);
 		}
