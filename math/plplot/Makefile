@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2019/08/21 05:47:45 rsadowski Exp $
-
-BROKEN-powerpc = Error: Kind -2 not supported for type INTEGER at (1)
+# $OpenBSD: Makefile,v 1.68 2019/08/22 19:33:42 rsadowski Exp $
 
 COMMENT-main =	advanced 2D and 3D scientific plotting library
 COMMENT-c++ =	C++ interface to plplot
