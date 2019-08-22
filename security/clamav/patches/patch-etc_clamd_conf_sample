@@ -1,4 +1,4 @@
-$OpenBSD: patch-etc_clamd_conf_sample,v 1.7 2018/12/04 12:33:40 sthen Exp $
+$OpenBSD: patch-etc_clamd_conf_sample,v 1.8 2019/08/22 16:22:07 sthen Exp $
 Index: etc/clamd.conf.sample
 --- etc/clamd.conf.sample.orig
 +++ etc/clamd.conf.sample
@@ -29,7 +29,7 @@ Index: etc/clamd.conf.sample
  
  # Stop daemon when libclamav reports out of memory condition.
  #ExitOnOOM yes
-@@ -499,7 +499,7 @@ Example
+@@ -509,7 +509,7 @@ Example
  # deeply the process should be continued.
  # Note: setting this limit too high may result in severe damage to the system.
  # Default: 16
