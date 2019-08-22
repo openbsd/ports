@@ -1,0 +1,14 @@
+$OpenBSD: epatch-electron_build_npm_gni,v 1.1 2019/08/22 19:20:03 robert Exp $
+
+Index: electron/build/npm.gni
+--- electron/build/npm.gni.orig
++++ electron/build/npm.gni
+@@ -35,7 +35,7 @@ template("npm_action") {
+     if (!defined(deps)) {
+       deps = []
+     }
+-    deps += [ ":npm_pre_flight_" + target_name ]
++    #deps += [ ":npm_pre_flight_" + target_name ]
+ 
+     script = "//electron/build/npm-run.py"
+     args = [

@@ -1,0 +1,41 @@
+$OpenBSD: epatch-electron_spec_api-screen-spec_js,v 1.1 2019/08/22 19:20:04 robert Exp $
+
+Index: electron/spec/api-screen-spec.js
+--- electron/spec/api-screen-spec.js.orig
++++ electron/spec/api-screen-spec.js
+@@ -17,7 +17,7 @@ describe('screen module', () => {
+     })
+ 
+     it('has the correct non-object properties', function () {
+-      if (process.platform === 'linux') this.skip()
++      if (process.platform === 'openbsd') this.skip()
+       const display = screen.getPrimaryDisplay()
+ 
+       expect(display).to.have.a.property('scaleFactor').that.is.a('number')
+@@ -33,7 +33,7 @@ describe('screen module', () => {
+     })
+ 
+     it('has a size object property', function () {
+-      if (process.platform === 'linux') this.skip()
++      if (process.platform === 'openbsd') this.skip()
+       const display = screen.getPrimaryDisplay()
+ 
+       expect(display).to.have.a.property('size').that.is.an('object')
+@@ -43,7 +43,7 @@ describe('screen module', () => {
+     })
+ 
+     it('has a workAreaSize object property', function () {
+-      if (process.platform === 'linux') this.skip()
++      if (process.platform === 'openbsd') this.skip()
+       const display = screen.getPrimaryDisplay()
+ 
+       expect(display).to.have.a.property('workAreaSize').that.is.an('object')
+@@ -53,7 +53,7 @@ describe('screen module', () => {
+     })
+ 
+     it('has a bounds object property', function () {
+-      if (process.platform === 'linux') this.skip()
++      if (process.platform === 'openbsd') this.skip()
+       const display = screen.getPrimaryDisplay()
+ 
+       expect(display).to.have.a.property('bounds').that.is.an('object')

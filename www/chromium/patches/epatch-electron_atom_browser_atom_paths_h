@@ -1,0 +1,14 @@
+$OpenBSD: epatch-electron_atom_browser_atom_paths_h,v 1.1 2019/08/22 19:20:03 robert Exp $
+
+Index: electron/atom/browser/atom_paths.h
+--- electron/atom/browser/atom_paths.h.orig
++++ electron/atom/browser/atom_paths.h
+@@ -26,7 +26,7 @@ enum {
+   DIR_USER_CACHE,              // Directory where user cache can be written.
+   DIR_APP_LOGS,                // Directory where app logs live
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   DIR_APP_DATA,  // Application Data directory under the user profile.
+ #else
+   DIR_APP_DATA = base::DIR_APP_DATA,

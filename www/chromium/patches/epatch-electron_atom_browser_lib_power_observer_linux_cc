@@ -1,0 +1,23 @@
+$OpenBSD: epatch-electron_atom_browser_lib_power_observer_linux_cc,v 1.1 2019/08/22 19:20:03 robert Exp $
+
+Index: electron/atom/browser/lib/power_observer_linux.cc
+--- electron/atom/browser/lib/power_observer_linux.cc.orig
++++ electron/atom/browser/lib/power_observer_linux.cc
+@@ -33,6 +33,9 @@ namespace atom {
+ 
+ PowerObserverLinux::PowerObserverLinux()
+     : lock_owner_name_(get_executable_basename()), weak_ptr_factory_(this) {
++#if defined(OS_BSD)
++  return;
++#else
+   auto* bus = bluez::BluezDBusThreadManager::Get()->GetSystemBus();
+   if (!bus) {
+     LOG(WARNING) << "Failed to get system bus connection";
+@@ -55,6 +58,7 @@ PowerObserverLinux::PowerObserverLinux()
+       base::BindRepeating(&PowerObserverLinux::OnSignalConnected, weakThis));
+   logind_->WaitForServiceToBeAvailable(base::BindRepeating(
+       &PowerObserverLinux::OnLoginServiceAvailable, weakThis));
++#endif
+ }
+ 
+ PowerObserverLinux::~PowerObserverLinux() = default;

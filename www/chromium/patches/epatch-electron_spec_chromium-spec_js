@@ -1,0 +1,23 @@
+$OpenBSD: epatch-electron_spec_chromium-spec_js,v 1.1 2019/08/22 19:20:04 robert Exp $
+
+Index: electron/spec/chromium-spec.js
+--- electron/spec/chromium-spec.js.orig
++++ electron/spec/chromium-spec.js
+@@ -865,7 +865,7 @@ describe('chromium feature', () => {
+     })
+ 
+     it('can be get as context in canvas', () => {
+-      if (process.platform === 'linux') {
++      if (process.platform === 'openbsd') {
+         // FIXME(alexeykuzmin): Skip the test.
+         // this.skip()
+         return
+@@ -1554,7 +1554,7 @@ describe('font fallback', () => {
+   })
+ 
+   it('should fall back to Japanese font for sans-serif Japanese script', async function () {
+-    if (process.platform === 'linux') {
++    if (process.platform === 'openbsd') {
+       return this.skip()
+     }
+     const html = `

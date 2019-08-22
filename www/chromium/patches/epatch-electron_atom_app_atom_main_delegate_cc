@@ -1,0 +1,42 @@
+$OpenBSD: epatch-electron_atom_app_atom_main_delegate_cc,v 1.1 2019/08/22 19:20:03 robert Exp $
+
+Index: electron/atom/app/atom_main_delegate.cc
+--- electron/atom/app/atom_main_delegate.cc.orig
++++ electron/atom/app/atom_main_delegate.cc
+@@ -8,7 +8,7 @@
+ #include <memory>
+ #include <string>
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include <glib.h>  // for g_setenv()
+ #endif
+ 
+@@ -185,6 +185,9 @@ bool AtomMainDelegate::BasicStartupComplete(int* exit_
+   if (env->HasVar("ELECTRON_DISABLE_SANDBOX"))
+     command_line->AppendSwitch(service_manager::switches::kNoSandbox);
+ 
++  // XXX OpenBSD -> pledge & unveil
++  command_line->AppendSwitch(service_manager::switches::kNoSandbox);
++
+   chrome::RegisterPathProvider();
+ 
+ #if defined(OS_MACOSX)
+@@ -204,7 +207,7 @@ bool AtomMainDelegate::BasicStartupComplete(int* exit_
+     base::win::PinUser32();
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // Check for --no-sandbox parameter when running as root.
+   if (getuid() == 0 && IsSandboxEnabled(command_line))
+     LOG(FATAL) << "Running as root without --"
+@@ -229,7 +232,7 @@ void AtomMainDelegate::PostEarlyInitialization(bool is
+         ui::ResourceBundle::GetSharedInstance().GetLocaleFilePath(locale, true);
+     if (!locale_file_path.empty()) {
+       custom_locale = locale;
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+       /* When built with USE_GLIB, libcc's GetApplicationLocaleInternal() uses
+        * glib's g_get_language_names(), which keys off of getenv("LC_ALL") */
+       g_setenv("LC_ALL", custom_locale.c_str(), TRUE);

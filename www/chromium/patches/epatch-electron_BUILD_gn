@@ -1,0 +1,45 @@
+$OpenBSD: epatch-electron_BUILD_gn,v 1.1 2019/08/22 19:20:03 robert Exp $
+
+Index: electron/BUILD.gn
+--- electron/BUILD.gn.orig
++++ electron/BUILD.gn
+@@ -535,6 +535,15 @@ static_library("electron_lib") {
+   sources = filenames.lib_sources
+   set_sources_assignment_filter(sources_assignment_filter)
+ 
++  if (is_openbsd) {
++    sources -= [
++      "atom/common/crash_reporter/crash_reporter_linux.cc",
++      "atom/common/crash_reporter/crash_reporter_linux.h",
++      "atom/common/crash_reporter/linux/crash_dump_handler.cc",
++      "atom/common/crash_reporter/linux/crash_dump_handler.h",
++    ]
++  }
++
+   if (is_component_build) {
+     defines += [ "NODE_SHARED_MODE" ]
+   }
+@@ -586,14 +595,12 @@ static_library("electron_lib") {
+       "//chrome/browser/ui/libgtkui",
+       "//dbus",
+       "//device/bluetooth",
+-      "//third_party/breakpad:client",
+       "//ui/events/devices/x11",
+       "//ui/events/platform/x11",
+       "//ui/views/controls/webview",
+       "//ui/wm",
+     ]
+     configs += [ ":gio_unix" ]
+-    include_dirs += [ "//third_party/breakpad" ]
+     defines += [
+       # Disable warnings for g_settings_list_schemas.
+       "GLIB_DISABLE_DEPRECATION_WARNINGS",
+@@ -1322,7 +1329,7 @@ dist_zip("electron_dist_zip") {
+     ":licenses",
+     ":electron_version",
+   ]
+-  if (is_linux) {
++  if (is_linux && !is_openbsd) {
+     data_deps += [ "//sandbox/linux:chrome_sandbox" ]
+   }
+   outputs = [

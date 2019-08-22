@@ -1,0 +1,105 @@
+$OpenBSD: epatch-third_party_electron_node_deps_cares_config_linux_ares_config_h,v 1.1 2019/08/22 19:20:04 robert Exp $
+
+Index: third_party/electron_node/deps/cares/config/linux/ares_config.h
+--- third_party/electron_node/deps/cares/config/linux/ares_config.h.orig
++++ third_party/electron_node/deps/cares/config/linux/ares_config.h
+@@ -14,14 +14,14 @@
+ /* #undef CARES_EXPOSE_STATICS */
+ 
+ /* Defined for build with symbol hiding. */
+-#define CARES_SYMBOL_HIDING 1
++/* #undef CARES_SYMBOL_HIDING */
+ 
+-/* Definition to make a library symbol externally visible. */
+-#define CARES_SYMBOL_SCOPE_EXTERN __attribute__ ((__visibility__ ("default")))
+-
+ /* the signed version of size_t */
+ #define CARES_TYPEOF_ARES_SSIZE_T ssize_t
+ 
++/* Definition to make a library symbol externally visible. */
++/* #undef CARES_SYMBOL_SCOPE_EXTERN */
++
+ /* Use resolver library to configure cares */
+ /* #undef CARES_USE_LIBRESOLV */
+ 
+@@ -41,16 +41,16 @@
+ #define GETNAMEINFO_TYPE_ARG2 socklen_t
+ 
+ /* Define to the type of args 4 and 6 for getnameinfo. */
+-#define GETNAMEINFO_TYPE_ARG46 socklen_t
++#define GETNAMEINFO_TYPE_ARG46 size_t
+ 
+ /* Define to the type of arg 7 for getnameinfo. */
+ #define GETNAMEINFO_TYPE_ARG7 int
+ 
+ /* Specifies the number of arguments to getservbyport_r */
+-#define GETSERVBYPORT_R_ARGS 6
++#define GETSERVBYPORT_R_ARGS 4
+ 
+ /* Specifies the size of the buffer to pass to getservbyport_r */
+-#define GETSERVBYPORT_R_BUFSIZE 4096
++#define GETSERVBYPORT_R_BUFSIZE sizeof(struct servent_data)
+ 
+ /* Define to 1 if you have AF_INET6. */
+ #define HAVE_AF_INET6 1
+@@ -59,7 +59,7 @@
+ #define HAVE_ARPA_INET_H 1
+ 
+ /* Define to 1 if you have the <arpa/nameser_compat.h> header file. */
+-#define HAVE_ARPA_NAMESER_COMPAT_H 1
++/* #undef HAVE_ARPA_NAMESER_COMPAT_H */
+ 
+ /* Define to 1 if you have the <arpa/nameser.h> header file. */
+ #define HAVE_ARPA_NAMESER_H 1
+@@ -110,7 +110,7 @@
+ #define HAVE_GETADDRINFO 1
+ 
+ /* Define to 1 if the getaddrinfo function is threadsafe. */
+-#define HAVE_GETADDRINFO_THREADSAFE 1
++/* #undef HAVE_GETADDRINFO_THREADSAFE */
+ 
+ /* Define to 1 if you have the getenv function. */
+ #define HAVE_GETENV 1
+@@ -137,7 +137,7 @@
+ #define HAVE_IF_INDEXTONAME 1
+ 
+ /* Define to 1 if you have a IPv6 capable working inet_net_pton function. */
+-/* #undef HAVE_INET_NET_PTON */
++#define HAVE_INET_NET_PTON 1
+ 
+ /* Define to 1 if you have a IPv6 capable working inet_ntop function. */
+ #define HAVE_INET_NTOP 1
+@@ -189,7 +189,7 @@
+ #define HAVE_MEMORY_H 1
+ 
+ /* Define to 1 if you have the MSG_NOSIGNAL flag. */
+-#define HAVE_MSG_NOSIGNAL 1
++/* #undef HAVE_MSG_NOSIGNAL */
+ 
+ /* Define to 1 if you have the <netdb.h> header file. */
+ #define HAVE_NETDB_H 1
+@@ -276,7 +276,7 @@
+ /* #undef HAVE_STRNICMP */
+ 
+ /* Define to 1 if you have the <stropts.h> header file. */
+-#define HAVE_STROPTS_H 1
++/* #undef HAVE_STROPTS_H */
+ 
+ /* Define to 1 if you have struct addrinfo. */
+ #define HAVE_STRUCT_ADDRINFO 1
+@@ -354,7 +354,7 @@
+ /* #undef NEED_THREAD_SAFE */
+ 
+ /* cpu-machine-OS */
+-#define OS "x86_64-pc-linux-gnu"
++#define OS "x86_64-unknown-freebsd10.3"
+ 
+ /* Name of package */
+ #define PACKAGE "c-ares"
+@@ -500,3 +500,6 @@
+ 
+ /* Define to `unsigned int' if <sys/types.h> does not define. */
+ /* #undef size_t */
++
++/* the signed version of size_t */
++/* #undef ssize_t */

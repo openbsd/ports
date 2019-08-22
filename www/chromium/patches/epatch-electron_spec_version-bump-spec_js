@@ -1,0 +1,14 @@
+$OpenBSD: epatch-electron_spec_version-bump-spec_js,v 1.1 2019/08/22 19:20:04 robert Exp $
+
+Index: electron/spec/version-bump-spec.js
+--- electron/spec/version-bump-spec.js.orig
++++ electron/spec/version-bump-spec.js
+@@ -51,7 +51,7 @@ describeFn('bump-version script', () => {
+   const betaPattern = /[0-9.]*(-beta[0-9.]*)/g
+ 
+   before(function () {
+-    if (process.platform === 'linux' && process.arch === 'arm') {
++    if (process.platform === 'openbsd' && process.arch === 'arm') {
+       this.skip()
+     }
+   })

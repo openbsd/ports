@@ -1,0 +1,14 @@
+$OpenBSD: epatch-electron_atom_browser_atom_browser_main_parts_cc,v 1.1 2019/08/22 19:20:03 robert Exp $
+
+Index: electron/atom/browser/atom_browser_main_parts.cc
+--- electron/atom/browser/atom_browser_main_parts.cc.orig
++++ electron/atom/browser/atom_browser_main_parts.cc
+@@ -6,7 +6,7 @@
+ 
+ #include <utility>
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ #include <glib.h>  // for g_setenv()
+ #endif
+ 

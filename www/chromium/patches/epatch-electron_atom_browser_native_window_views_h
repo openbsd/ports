@@ -1,0 +1,14 @@
+$OpenBSD: epatch-electron_atom_browser_native_window_views_h,v 1.1 2019/08/22 19:20:03 robert Exp $
+
+Index: electron/atom/browser/native_window_views.h
+--- electron/atom/browser/native_window_views.h.orig
++++ electron/atom/browser/native_window_views.h
+@@ -206,7 +206,7 @@ class NativeWindowViews : public NativeWindow,
+       content::WebContents*,
+       const content::NativeWebKeyboardEvent& event) override;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   // ui::EventHandler:
+   void OnMouseEvent(ui::MouseEvent* event) override;
+ #endif
