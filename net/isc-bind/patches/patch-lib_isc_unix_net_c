@@ -1,8 +1,23 @@
-$OpenBSD: patch-lib_isc_unix_net_c,v 1.7 2019/03/01 17:17:08 sthen Exp $
+$OpenBSD: patch-lib_isc_unix_net_c,v 1.8 2019/08/22 16:16:46 sthen Exp $
+
 Index: lib/isc/unix/net.c
 --- lib/isc/unix/net.c.orig
 +++ lib/isc/unix/net.c
-@@ -731,7 +731,7 @@ try_dscp_v6(void) {
+@@ -255,6 +255,13 @@ isc_net_probeunix(void) {
+ #ifdef WANT_IPV6
+ static void
+ try_ipv6only(void) {
++#ifdef __OpenBSD__
++/*
++ * pledge doesn't allow setting IPV6_V6ONLY, but that's ok,
++ * IPV6_V6ONLY is always enabled on OpenBSD;
++ */
++#undef IPV6_V6ONLY
++#endif
+ #ifdef IPV6_V6ONLY
+ 	int s, on;
+ 	char strbuf[ISC_STRERRORSIZE];
+@@ -731,7 +738,7 @@ try_dscp_v6(void) {
  	if (setsockopt(s, IPPROTO_IPV6, IPV6_TCLASS, &dscp, sizeof(dscp)) == 0)
  		dscp_result |= ISC_NET_DSCPSETV6;
  

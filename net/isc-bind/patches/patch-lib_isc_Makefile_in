@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_isc_Makefile_in,v 1.3 2018/07/12 10:12:30 sthen Exp $
+$OpenBSD: patch-lib_isc_Makefile_in,v 1.4 2019/08/22 16:16:46 sthen Exp $
 
 Index: lib/isc/Makefile.in
 --- lib/isc/Makefile.in.orig

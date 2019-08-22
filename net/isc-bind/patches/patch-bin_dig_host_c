@@ -1,4 +1,5 @@
-$OpenBSD: patch-bin_dig_host_c,v 1.8 2019/03/01 17:17:08 sthen Exp $
+$OpenBSD: patch-bin_dig_host_c,v 1.9 2019/08/22 16:16:46 sthen Exp $
+
 Index: bin/dig/host.c
 --- bin/dig/host.c.orig
 +++ bin/dig/host.c

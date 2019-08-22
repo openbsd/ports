@@ -1,4 +1,5 @@
-$OpenBSD: patch-bin_dig_nslookup_c,v 1.9 2019/03/01 17:17:08 sthen Exp $
+$OpenBSD: patch-bin_dig_nslookup_c,v 1.10 2019/08/22 16:16:46 sthen Exp $
+
 Index: bin/dig/nslookup.c
 --- bin/dig/nslookup.c.orig
 +++ bin/dig/nslookup.c
