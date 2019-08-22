@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.47 2019/07/12 15:50:34 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.48 2019/08/22 16:31:06 sthen Exp $
 
 MAINTAINER?=		Stuart Henderson <sthen@openbsd.org>
 
@@ -7,7 +7,7 @@ CATEGORIES?=		security/letsencrypt security
 MODPY_PI?=		Yes
 MODPY_SETUPTOOLS?=	Yes
 
-MODPY_EGG_VERSION?=	0.36.0
+MODPY_EGG_VERSION?=	0.37.2
 
 MODULES?=		lang/python
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2019/07/12 15:50:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.26 2019/08/22 16:31:06 sthen Exp $
 @extraunexec rm -rf /var/log/certbot/* /var/lib/certbot/*
 bin/certbot
 bin/letsencrypt
@@ -48,9 +48,11 @@ lib/python${MODPY_VERSION}/site-packages/certbot/compat/
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/certbot/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/compat/${MODPY_PYCACHE}_path.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/${MODPY_PYCACHE}filesystem.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/${MODPY_PYCACHE}os.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/certbot/compat/_path.py
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/filesystem.py
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/misc.py
 lib/python${MODPY_VERSION}/site-packages/certbot/compat/os.py
