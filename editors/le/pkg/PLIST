@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/10/24 08:10:46 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.4 2019/08/22 07:17:06 fcambus Exp $
 @bin bin/le
 @comment lib/charset.alias
 @man man/man1/le.1
@@ -19,6 +19,8 @@ share/le/syntax.d/
 share/le/syntax.d/ada
 share/le/syntax.d/as
 share/le/syntax.d/awk
+share/le/syntax.d/c
+share/le/syntax.d/c++
 share/le/syntax.d/c++-comment
 share/le/syntax.d/c-comment
 share/le/syntax.d/c-literal
@@ -44,6 +46,7 @@ share/le/syntax.d/pascal
 share/le/syntax.d/perl
 share/le/syntax.d/php
 share/le/syntax.d/pod
+share/le/syntax.d/puppet
 share/le/syntax.d/python
 share/le/syntax.d/sather
 share/le/syntax.d/shell
