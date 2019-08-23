@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.118 2019/07/12 20:51:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.119 2019/08/23 15:07:20 sthen Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
-DISTNAME =	i3-4.16.1
-REVISION =	0
+DISTNAME =	i3-4.17
 
 CATEGORIES =	x11
 
@@ -14,9 +13,9 @@ PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += c cairo ev glib-2.0 gobject-2.0 iconv intl m pango-1.0
-WANTLIB += pangocairo-1.0 pcre pthread startup-notification-1 xcb
-WANTLIB += xcb-cursor xcb-icccm xcb-keysyms xcb-randr xcb-util
-WANTLIB += xcb-xinerama xcb-xkb xcb-xrm xkbcommon xkbcommon-x11
+WANTLIB += pangocairo-1.0 pcre pthread startup-notification-1
+WANTLIB += xcb xcb-cursor xcb-icccm xcb-keysyms xcb-randr xcb-shape
+WANTLIB += xcb-util xcb-xinerama xcb-xkb xcb-xrm xkbcommon xkbcommon-x11
 WANTLIB += yajl
 
 MASTER_SITES =	${HOMEPAGE}/downloads/

@@ -1,4 +1,5 @@
-$OpenBSD: patch-man_i3-config-wizard_man,v 1.2 2019/01/13 12:48:10 rsadowski Exp $
+$OpenBSD: patch-man_i3-config-wizard_man,v 1.3 2019/08/23 15:07:20 sthen Exp $
+
 Index: man/i3-config-wizard.man
 --- man/i3-config-wizard.man.orig
 +++ man/i3-config-wizard.man

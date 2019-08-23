@@ -1,6 +1,8 @@
-$OpenBSD: patch-man_i3-dump-log_man,v 1.1 2016/11/13 20:46:23 dcoppa Exp $
---- man/i3-dump-log.man.orig	Fri Nov 11 11:05:52 2016
-+++ man/i3-dump-log.man	Fri Nov 11 11:07:08 2016
+$OpenBSD: patch-man_i3-dump-log_man,v 1.2 2019/08/23 15:07:20 sthen Exp $
+
+Index: man/i3-dump-log.man
+--- man/i3-dump-log.man.orig
++++ man/i3-dump-log.man
 @@ -9,7 +9,7 @@ i3-dump-log - dumps the i3 SHM log
  
  == SYNOPSIS

@@ -1,4 +1,4 @@
-$OpenBSD: patch-parser-specs_config_spec,v 1.7 2019/01/18 11:57:36 giovanni Exp $
+$OpenBSD: patch-parser-specs_config_spec,v 1.8 2019/08/23 15:07:20 sthen Exp $
 
 Index: parser-specs/config.spec
 --- parser-specs/config.spec.orig
@@ -11,7 +11,7 @@ Index: parser-specs/config.spec
    'restart_state'                          -> RESTART_STATE
    'popup_during_fullscreen'                -> POPUP_DURING_FULLSCREEN
    exectype = 'exec_always', 'exec'         -> EXEC
-@@ -287,11 +286,6 @@ state WORKSPACE_OUTPUT_STR:
+@@ -289,11 +288,6 @@ state WORKSPACE_OUTPUT_WORD:
  state IPC_SOCKET:
    path = string
        -> call cfg_ipc_socket($path)

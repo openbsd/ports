@@ -1,8 +1,9 @@
-$OpenBSD: patch-configure,v 1.3 2019/01/13 12:48:10 rsadowski Exp $
+$OpenBSD: patch-configure,v 1.4 2019/08/23 15:07:20 sthen Exp $
+
 Index: configure
 --- configure.orig
 +++ configure
-@@ -6392,7 +6392,7 @@ char iconv_open ();
+@@ -6400,7 +6400,7 @@ char iconv_open ();
  int
  main ()
  {

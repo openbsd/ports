@@ -1,4 +1,5 @@
-$OpenBSD: patch-i3-dmenu-desktop,v 1.7 2017/09/04 14:33:07 dcoppa Exp $
+$OpenBSD: patch-i3-dmenu-desktop,v 1.8 2019/08/23 15:07:20 sthen Exp $
+
 Index: i3-dmenu-desktop
 --- i3-dmenu-desktop.orig
 +++ i3-dmenu-desktop

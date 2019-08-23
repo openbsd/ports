@@ -1,7 +1,9 @@
-$OpenBSD: patch-etc_config,v 1.1 2016/11/13 20:46:23 dcoppa Exp $
---- etc/config.orig	Sun Mar 29 19:07:08 2015
-+++ etc/config		Mon Mar 30 14:13:25 2015
-@@ -35,13 +35,13 @@ set $right semicolon
+$OpenBSD: patch-etc_config,v 1.2 2019/08/23 15:07:20 sthen Exp $
+
+Index: etc/config
+--- etc/config.orig
++++ etc/config
+@@ -44,13 +44,13 @@ set $right semicolon
  floating_modifier Mod1
  
  # start a terminal
