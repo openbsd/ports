@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/08/17 13:29:42 chrisz Exp $
+# $OpenBSD: Makefile,v 1.3 2019/08/23 18:35:13 chrisz Exp $
 
 COMMENT =	binary data format designed for speed, safety, usability
 CATEGORIES =	devel
@@ -6,6 +6,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	mjambon
 GH_PROJECT =	biniou
 GH_TAGNAME =	v1.2.0
+REVISION =	0
 PKGNAME =	ocaml-${DISTNAME}
 
 # 3-clause BSD
@@ -15,8 +16,10 @@ WANTLIB =	c m
 
 MODULES =	lang/ocaml
 
-BUILD_DEPENDS = devel/dune \
-		devel/ocaml-easy-format
+RUN_DEPENDS =	devel/ocaml-easy-format
+
+BUILD_DEPENDS = ${RUN_DEPENDS} \
+		devel/dune
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-${GH_PROJECT}
