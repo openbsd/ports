@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/08/23 10:03:02 ajacoutot Exp $
 
 # bunch of undefined things in crypto/blake2b, shirou/gopsutil/disk, shirou/gopsutil/mem
 NOT_FOR_ARCHS=		i386
 
 COMMENT=		cluster scheduler
 
-GH_TAGNAME=		v0.9.1
+GH_TAGNAME=		v0.9.5
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		nomad
 
