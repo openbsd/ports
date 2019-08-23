@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/20 22:15:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2019/08/23 06:02:07 ajacoutot Exp $
 
 COMMENT =	multilingual text processing library
 
@@ -23,8 +23,10 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		inputmethods/anthy \
 		textproc/libxml
 
-BUILD_DEPENDS =	textproc/ispell \
-		${RUN_DEPENDS}
+BUILD_DEPENDS =	devel/gettext,-tools \
+		textproc/ispell \
+		misc/m17n/db=${M17N_V}
+
 RUN_DEPENDS =	misc/m17n/db=${M17N_V}
 
 CONFIGURE_ENV =	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
