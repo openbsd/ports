@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/06/25 07:52:39 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.17 2019/08/23 09:13:43 sebastia Exp $
 ${GEM_BIN}/r10k
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -6,6 +6,7 @@ ${GEM_LIB}/gems/${DISTNAME}/.gitattributes
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.mkd
+${GEM_LIB}/gems/${DISTNAME}/CODEOWNERS
 ${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTING.mkd
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
@@ -39,18 +40,16 @@ ${GEM_LIB}/gems/${DISTNAME}/docker/.rspec
 ${GEM_LIB}/gems/${DISTNAME}/docker/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/docker/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/docker/README.md
-${GEM_LIB}/gems/${DISTNAME}/docker/ci/
-${GEM_LIB}/gems/${DISTNAME}/docker/ci/build.ps1
 ${GEM_LIB}/gems/${DISTNAME}/docker/distelli-manifest.yml
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/Dockerfile
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/docker-entrypoint.d/
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/docker-entrypoint.d/10-analytics.sh
 ${GEM_LIB}/gems/${DISTNAME}/docker/r10k/docker-entrypoint.sh
-${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/
-${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/dockerfile_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/fixtures/
-${GEM_LIB}/gems/${DISTNAME}/docker/r10k/spec/fixtures/Puppetfile
+${GEM_LIB}/gems/${DISTNAME}/docker/spec/
+${GEM_LIB}/gems/${DISTNAME}/docker/spec/dockerfile_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/docker/spec/fixtures/
+${GEM_LIB}/gems/${DISTNAME}/docker/spec/fixtures/Puppetfile
 ${GEM_LIB}/gems/${DISTNAME}/integration/
 ${GEM_LIB}/gems/${DISTNAME}/integration/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/integration/README.mkd
@@ -107,7 +106,6 @@ ${GEM_LIB}/gems/${DISTNAME}/integration/tests/README.mkd
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/install_pe_only_module_with_puppetfile.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/negative/
-${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/negative/attempt_to_install_peonly_module_without_license.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/negative/neg_deploy_with_invalid_r10k_yaml.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/negative/neg_deploy_with_missing_r10k_yaml.rb
 ${GEM_LIB}/gems/${DISTNAME}/integration/tests/basic_functionality/negative/neg_invalid_git_provider.rb
@@ -330,6 +328,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/action/r10k_puppet_path.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/argument-error/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/argument-error/Puppetfile
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/default-branch-override/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/default-branch-override/Puppetfile
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/duplicate-module-error/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/duplicate-module-error/Puppetfile
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/invalid-syntax/
