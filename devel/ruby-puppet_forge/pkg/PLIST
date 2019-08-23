@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/02/26 08:44:46 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/08/23 09:13:06 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
