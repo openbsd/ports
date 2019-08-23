@@ -1,8 +1,9 @@
-$OpenBSD: patch-etc_Makefile_in,v 1.4 2018/07/25 08:38:26 sthen Exp $
+$OpenBSD: patch-etc_Makefile_in,v 1.5 2019/08/23 20:18:13 sthen Exp $
+
 Index: etc/Makefile.in
 --- etc/Makefile.in.orig
 +++ etc/Makefile.in
-@@ -501,13 +501,13 @@ uninstall-am: uninstall-local
+@@ -496,13 +496,13 @@ uninstall-am: uninstall-local
  
  install-data-local: $(INSTALL_DAEMON_SCRIPTS)
  	$(INSTALL) -m 755 -d $(DESTDIR)$(FREEIPMI_SYSCONFDIR)

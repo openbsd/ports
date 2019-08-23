@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_ac_lsh_gcc_attributes_m4,v 1.1 2017/09/25 10:37:09 sthen Exp $
+$OpenBSD: patch-config_ac_lsh_gcc_attributes_m4,v 1.2 2019/08/23 20:18:13 sthen Exp $
 
 Index: config/ac_lsh_gcc_attributes.m4
 --- config/ac_lsh_gcc_attributes.m4.orig

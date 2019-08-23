@@ -1,4 +1,4 @@
-$OpenBSD: patch-common_miscutil_network_c,v 1.1 2018/07/25 08:38:26 sthen Exp $
+$OpenBSD: patch-common_miscutil_network_c,v 1.2 2019/08/23 20:18:13 sthen Exp $
 
 Index: common/miscutil/network.c
 --- common/miscutil/network.c.orig
