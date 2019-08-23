@@ -1,38 +1,40 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/08/23 20:18:04 cwen Exp $
 
 COMMENT =		audio fingerprint extraction library
 
-DISTNAME =		chromaprint-1.1
+GH_ACCOUNT =		acoustid
+GH_PROJECT =		chromaprint
+GH_TAGNAME =		v1.4.3
+
+SHARED_LIBS =		chromaprint               2.0 # 1.4.3
+
 CATEGORIES =		audio devel
+
 HOMEPAGE =		https://acoustid.org/chromaprint
-MASTER_SITES =		https://bitbucket.org/acoustid/chromaprint/downloads/
-REVISION =		3
 
-SHARED_LIBS =		chromaprint               1.0 # 0.1
-
-# LGPL2.1+
+# MIT with LGPL2.1+ parts
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += avcodec avformat avutil c m pthread ${COMPILER_LIBCXX} swresample
+WANTLIB += ${COMPILER_LIBCXX} avcodec avformat avutil c m swresample
 
-COMPILER =		base-clang ports-gcc base-gcc
+# C++11
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
-BUILD_DEPENDS =		audio/taglib \
-			devel/boost
+BUILD_DEPENDS =		audio/taglib
+# gtest presence is checked in configure stage, so this cannot be
+# in TEST_DEPENDS
+BUILD_DEPENDS +=	devel/gtest
 
 LIB_DEPENDS =		graphics/ffmpeg
 
-# gtest presence is checked in configure stage, so this cannot be in TEST_DEPENDS
-BUILD_DEPENDS +=	devel/gtest
-CONFIGURE_ARGS =	-DBUILD_TESTS:Bool=Yes -DBUILD_EXAMPLES=ON
+CONFIGURE_ARGS =	-DBUILD_TOOLS=ON \
+			-DBUILD_TESTS=ON
 
-post-patch:
-	sed -i 's,/usr/local,${LOCALBASE},' \
-		${WRKSRC}/cmake/modules/FindGTest.cmake
+TEST_TARGET =		check
 
-do-test:
-	cd ${WRKBUILD}/tests && ./all_tests
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/cmake/modules/FindGTest.cmake
 
 .include <bsd.port.mk>

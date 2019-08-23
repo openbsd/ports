@@ -1,0 +1,29 @@
+$OpenBSD: patch-tests_test_utils_cpp,v 1.1 2019/08/23 20:18:04 cwen Exp $
+
+Make tests endian neutral. Can be removed with chromaprint>=1.4.4:
+https://github.com/acoustid/chromaprint/commit/8d5f2ca81db8fae6b59b6b9b8bda91526507dbd1
+
+Index: tests/test_utils.cpp
+--- tests/test_utils.cpp.orig
++++ tests/test_utils.cpp
+@@ -2,6 +2,7 @@
+ #include <algorithm>
+ #include <limits>
+ #include "utils.h"
++#include "test_utils.h"
+ 
+ using namespace chromaprint;
+ 
+@@ -91,4 +92,12 @@ TEST(Utils, CountSetBits64) {
+     EXPECT_EQ(56, CountSetBits(0xFFFFFFFFFFFFFFU));
+     EXPECT_EQ(64, CountSetBits(0xFFFFFFFFFFFFFFFFU));
+     EXPECT_EQ(8, CountSetBits(0x0101010101010101U));
++}
++
++TEST(Utils, LoadAudioFile) {
++	std::vector<short> data = LoadAudioFile("data/test_mono_44100.raw");
++	ASSERT_EQ(data.size(), 176400/2);
++	EXPECT_EQ(data[1000], 0);
++	EXPECT_EQ(data[2000], 107);
++	EXPECT_EQ(data[3000], 128);
+ }

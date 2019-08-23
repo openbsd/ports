@@ -1,6 +1,10 @@
-$OpenBSD: patch-cmake_modules_FindGTest_cmake,v 1.1 2014/05/09 09:00:19 sthen Exp $
---- cmake/modules/FindGTest.cmake.orig	Sat Nov 23 16:43:42 2013
-+++ cmake/modules/FindGTest.cmake	Wed May  7 16:29:15 2014
+$OpenBSD: patch-cmake_modules_FindGTest_cmake,v 1.2 2019/08/23 20:18:04 cwen Exp $
+
+Find gtest from devel/gtest.
+
+Index: cmake/modules/FindGTest.cmake
+--- cmake/modules/FindGTest.cmake.orig
++++ cmake/modules/FindGTest.cmake
 @@ -71,12 +71,24 @@ find_path(GTEST_INCLUDE_DIR
  )
  mark_as_advanced(GTEST_INCLUDE_DIR)
@@ -10,7 +14,7 @@ $OpenBSD: patch-cmake_modules_FindGTest_cmake,v 1.1 2014/05/09 09:00:19 sthen Ex
 +    FIND_LIBRARY(${varname}
 +        NAMES ${shortname}
 +        PATHS
-+        /usr/local/lib
++	${LOCALBASE}/lib
 +		NO_DEFAULT_PATH
 +        DOC "Location of GTEST Libraries"
 +    )
@@ -22,9 +26,10 @@ $OpenBSD: patch-cmake_modules_FindGTest_cmake,v 1.1 2014/05/09 09:00:19 sthen Ex
 +find_package_handle_standard_args(GTest DEFAULT_MSG GTEST_INCLUDE_DIR)
  
  if(GTEST_FOUND)
- 	set(GTEST_INCLUDE_DIRS ${GTEST_INCLUDE_DIR})
+-	set(GTEST_INCLUDE_DIRS ${GTEST_INCLUDE_DIR})
 -	set(GTEST_LIBRARIES gtest)
 -	set(GTEST_MAIN_LIBRARIES gtest_main)
++    set(GTEST_INCLUDE_DIRS ${GTEST_INCLUDE_DIR})
 +    GTEST_FIND(GTEST_LIBRARIES gtest)
 +    GTEST_FIND(GTEST_MAIN_LIBRARIES gtest_main)
      set(GTEST_BOTH_LIBRARIES ${GTEST_LIBRARIES} ${GTEST_MAIN_LIBRARIES})
