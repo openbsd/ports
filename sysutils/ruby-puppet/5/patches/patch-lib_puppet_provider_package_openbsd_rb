@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.2 2019/08/22 21:56:05 sebastia Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.3 2019/08/23 08:18:12 sebastia Exp $
 
 - Handle the flavor as a property, not as a parameter.  
 - Handle errors from pkg_add
@@ -203,16 +203,58 @@ Index: lib/puppet/provider/package/openbsd.rb
    end
  
    def get_full_name(latest = false)
-@@ -191,7 +156,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -183,6 +148,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+       if /(\d[^-]*)$/.match(@resource[:ensure].to_s)
+         use_version = @resource[:ensure]
+       else
++ 
+         use_version = get_version
+       end
+ 
+@@ -191,26 +157,26 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    end
  
    def get_version
 -    execpipe([command(:pkginfo), "-I", @resource[:name]]) do |process|
-+    execpipe([:pkginfo, "-I", @resource[:name]]) do |process|
-       # our regex for matching pkg_info output
-       regex = /^(.*)-(\d[^-]*)[-]?(\w*)(.*)$/
-       master_version = 0
-@@ -229,7 +194,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+-      # our regex for matching pkg_info output
+-      regex = /^(.*)-(\d[^-]*)[-]?(\w*)(.*)$/
+-      master_version = 0
+-      version = -1
++    # our regex for matching pkg_info output
++    regex = /^(.*)-(\d[^-]*)[-]?(\w*)(.*)$/
++    master_version = 0
++    version = -1
+ 
+-      process.each_line do |line|
+-        if match = regex.match(line.split[0])
+-          # now we return the first version, unless ensure is latest
+-          version = match.captures[1]
+-          return version unless @resource[:ensure] == "latest"
++    # pkg_info -I might return multiple lines, i.e. flavors
++    matching_pkgs = pkginfo("-I", @resource[:name])
++    matching_pkgs.each_line do |line|
++      if match = regex.match(line.split[0])
++        # now we return the first version, unless ensure is latest
++        version = match.captures[1]
++        return version unless @resource[:ensure] == "latest"
+ 
+-          master_version = version unless master_version > version
+-        end
++        master_version = version unless master_version > version
+       end
+-
+-      return master_version unless master_version == 0
+-      return '' if version == -1
+-      raise Puppet::Error, _("%{version} is not available for this package") % { version: version }
+     end
++
++    return master_version unless master_version == 0
++    return '' if version == -1
++    raise Puppet::Error, _("%{version} is not available for this package") % { version: version }
+   rescue Puppet::ExecutionFailure
+     return nil
+   end
+@@ -229,7 +195,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    end
  
    def uninstall_options
