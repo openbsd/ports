@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_3rdparty_opennurbs_opennurbs_zlib_h,v 1.1 2019/08/24 05:11:26 feinerer Exp $
+
+Index: src/3rdparty/opennurbs/opennurbs_zlib.h
+--- src/3rdparty/opennurbs/opennurbs_zlib.h.orig
++++ src/3rdparty/opennurbs/opennurbs_zlib.h
+@@ -30,7 +30,7 @@
+ 
+ #if !defined(Z_PREFIX)
+ /* decorates zlib functions with a "z_" prefix to prevent symbol collision. */
+-#define Z_PREFIX
++//#define Z_PREFIX
+ #endif
+ 
+ #if !defined(MY_ZCALLOC)
+@@ -38,7 +38,7 @@
+ //#define MY_ZCALLOC
+ #endif
+ 
+-#include "./zlib/zlib.h"
++#include <zlib.h>
+ 
+ ON_BEGIN_EXTERNC
+ voidpf zcalloc (voidpf, unsigned, unsigned);

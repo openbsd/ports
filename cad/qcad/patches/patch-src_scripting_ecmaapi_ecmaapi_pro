@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_scripting_ecmaapi_ecmaapi_pro,v 1.1 2019/08/24 05:11:26 feinerer Exp $
+
+Index: src/scripting/ecmaapi/ecmaapi.pro
+--- src/scripting/ecmaapi/ecmaapi.pro.orig
++++ src/scripting/ecmaapi/ecmaapi.pro
+@@ -4,7 +4,6 @@ CONFIG += plugin
+ TARGET = $${RLIBNAME}ecmaapi
+ CONFIG -= warn_on
+ CONFIG += warn_off
+-CONFIG += precompile_header
+ PRECOMPILED_HEADER = stable.h
+ OTHER_FILES += ecmaapi.dox
+ DEFINES += QCADECMAAPI_LIBRARY
