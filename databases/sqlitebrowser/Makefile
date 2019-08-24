@@ -1,27 +1,27 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:44:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/08/24 07:46:57 rsadowski Exp $
 
-COMMENT=	graphical interface to sqlite databases
+COMMENT =	graphical interface to sqlite databases
 
 GH_ACCOUNT =	sqlitebrowser
 GH_PROJECT =	sqlitebrowser
-GH_TAGNAME =	v3.10.1
-REVISION =	3
+GH_TAGNAME =	v3.11.2
 
-CATEGORIES=	databases x11
+CATEGORIES =	databases x11
 
-HOMEPAGE=	http://sqlitebrowser.org/
+HOMEPAGE =	https://sqlitebrowser.org/
 
 # MPLv2/GPLv3+
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Test Qt5Widgets c m sqlite3 qscintilla2_qt5
+WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
+WANTLIB += Qt5PrintSupport Qt5Test Qt5Widgets Qt5Xml c m qscintilla2_qt5
+WANTLIB += sqlite3
 
-MODULES=	x11/qt5 \
+MODULES =	x11/qt5 \
 		devel/cmake
 
 LIB_DEPENDS =	databases/sqlite3 \
-		editors/qscintilla,qt5
+		editors/qscintilla,qt5>=2.10.2
 
 RUN_DEPENDS =	x11/gtk+3,-guic \
 		devel/desktop-file-utils
