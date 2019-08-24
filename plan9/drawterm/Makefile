@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/08/24 20:46:30 daniel Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64 mips64 mips64el arm
 
@@ -9,6 +9,8 @@ DISTNAME=	drawterm-20190309
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{${V}${EXTRACT_SUFX}}
 WRKDIST=	${WRKDIR}/drawterm-${V}
 EXTRACT_SUFX=	.tar.gz
+
+REVISION=	0
 
 CATEGORIES=	plan9
 
