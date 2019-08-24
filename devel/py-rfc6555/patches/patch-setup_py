@@ -1,0 +1,21 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2019/08/24 20:13:01 remi Exp $
+
+Only require selectors 2 for Python 2.x
+
+Pull request: 
+https://patch-diff.githubusercontent.com/raw/sethmlarson/rfc6555/pull/3
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -24,7 +24,9 @@ if __name__ == '__main__':
+           author_email='sethmichaellarson@protonmail.com',
+           maintainer='Seth Michael Larson',
+           maintainer_email='sethmichaellarson@protonmail.com',
+-          install_requires=['selectors2'],
++          install_requires=[
++              'selectors2;python_version<"3.4"'
++          ],
+           py_modules=['rfc6555'],
+           zip_safe=False,
+           classifiers=['Intended Audience :: Developers',

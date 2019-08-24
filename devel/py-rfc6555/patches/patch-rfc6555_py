@@ -1,0 +1,22 @@
+$OpenBSD: patch-rfc6555_py,v 1.1.1.1 2019/08/24 20:13:01 remi Exp $
+
+Only require selectors 2 for Python 2.x
+
+Pull request: 
+https://patch-diff.githubusercontent.com/raw/sethmlarson/rfc6555/pull/3
+
+Index: rfc6555.py
+--- rfc6555.py.orig
++++ rfc6555.py
+@@ -16,7 +16,10 @@
+ 
+ import errno
+ import socket
+-from selectors2 import DefaultSelector, EVENT_WRITE
++try:
++    from selectors  import DefaultSelector, EVENT_WRITE
++except (ImportError, AttributeError):
++    from selectors2 import DefaultSelector, EVENT_WRITE
+ 
+ # time.perf_counter() is defined in Python 3.3
+ try:
