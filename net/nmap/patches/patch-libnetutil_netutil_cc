@@ -1,4 +1,4 @@
-$OpenBSD: patch-libnetutil_netutil_cc,v 1.10 2016/12/22 21:58:40 sthen Exp $
+$OpenBSD: patch-libnetutil_netutil_cc,v 1.11 2019/08/24 06:37:13 giovanni Exp $
 
 first chunk:
 http://marc.info/?l=openbsd-ports&m=140284432321370&w=2
@@ -8,9 +8,10 @@ http://marc.info/?l=nmap-dev&m=140179174718457&w=2
 
 chunks dealing with iovec: ???
 
---- libnetutil/netutil.cc.orig	Wed Dec 14 00:12:23 2016
-+++ libnetutil/netutil.cc	Thu Dec 22 05:45:11 2016
-@@ -3179,7 +3179,6 @@ static int route_dst_netlink(const struct sockaddr_sto
+Index: libnetutil/netutil.cc
+--- libnetutil/netutil.cc.orig
++++ libnetutil/netutil.cc
+@@ -3159,7 +3159,6 @@ static int route_dst_netlink(const struct sockaddr_sto
                               const struct sockaddr_storage *spoofss) {
    struct sockaddr_nl snl;
    struct msghdr msg;
@@ -18,7 +19,7 @@ chunks dealing with iovec: ???
    struct nlmsghdr *nlmsg;
    struct rtmsg *rtmsg;
    struct rtattr *rtattr;
-@@ -3231,22 +3230,14 @@ static int route_dst_netlink(const struct sockaddr_sto
+@@ -3211,22 +3210,14 @@ static int route_dst_netlink(const struct sockaddr_sto
      add_rtattr_addr(nlmsg, &rtattr, &len, RTA_SRC, spoofss, intf_index);
    }
  
@@ -41,7 +42,7 @@ chunks dealing with iovec: ???
    len = recvmsg(fd, &msg, 0);
    if (len <= 0)
      netutil_fatal("%s: cannot recvmsg: %s", __func__, strerror(errno));
-@@ -3877,7 +3868,6 @@ static const unsigned char *add_exthdr_ancillary(struc
+@@ -3857,7 +3848,6 @@ static const unsigned char *add_exthdr_ancillary(struc
  static int send_ipv6_ip(const struct sockaddr_in6 *dst,
    const unsigned char *packet, size_t packetlen) {
    struct msghdr msg;
@@ -49,7 +50,7 @@ chunks dealing with iovec: ???
  
    const unsigned char *end;
    struct ip6_hdr *hdr;
-@@ -3896,8 +3886,6 @@ static int send_ipv6_ip(const struct sockaddr_in6 *dst
+@@ -3876,8 +3866,6 @@ static int send_ipv6_ip(const struct sockaddr_in6 *dst
    /* Set up sendmsg data structure. iov is filled in below. */
    msg.msg_name = (void *) dst;
    msg.msg_namelen = sizeof(*dst);
@@ -58,7 +59,7 @@ chunks dealing with iovec: ???
    msg.msg_control = NULL;
    msg.msg_controllen = 0;
    msg.msg_flags = 0;
-@@ -3956,8 +3944,6 @@ static int send_ipv6_ip(const struct sockaddr_in6 *dst
+@@ -3936,8 +3924,6 @@ static int send_ipv6_ip(const struct sockaddr_in6 *dst
    }
  
    assert(packet <= end);
@@ -67,7 +68,7 @@ chunks dealing with iovec: ???
  
    n = sendmsg(sd, &msg, 0);
    if (n == -1)
-@@ -4160,9 +4146,6 @@ int datalink_offset(int datalink)
+@@ -4165,9 +4151,6 @@ int datalink_offset(int datalink)
  {
    if (datalink == DLT_EN10MB)
      return ETH_HDR_LEN;
@@ -77,7 +78,7 @@ chunks dealing with iovec: ???
    else
      return -1;
  }
-@@ -4288,10 +4271,6 @@ static bool accept_arp(const unsigned char *p, const s
+@@ -4293,10 +4276,6 @@ static bool accept_arp(const unsigned char *p, const s
  
    if (datalink == DLT_EN10MB) {
      return ntohs(*((u16 *) (p + 12))) == ETH_TYPE_ARP;

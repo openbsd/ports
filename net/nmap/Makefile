@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.136 2019/07/12 20:48:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.137 2019/08/24 06:37:13 giovanni Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
 
-MODPY_EGG_VERSION=	7.70
+MODPY_EGG_VERSION=	7.80
 DISTNAME=		nmap-${MODPY_EGG_VERSION}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}
-REVISION-zenmap=	1
-REVISION-main=		1
 
 CATEGORIES=	net security
-MASTER_SITES=	http://nmap.org/dist/
+MASTER_SITES=	${HOMEPAGE}/dist/
 EXTRACT_SUFX=	.tgz
 
-HOMEPAGE=	http://www.nmap.org/
+HOMEPAGE=	https://www.nmap.org/
 
 MAINTAINER=	David Carlier <devnexen@gmail.com>
 
@@ -37,7 +35,8 @@ AUTOCONF_VERSION=2.69
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${MODLUA_INCL_DIR}" \
 		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${MODLUA_LIBDIR}"
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${MODLUA_LIB}" \
+		YACC="${LOCALBASE}/bin/bison -y"
 # XXX uses internal copy of libpcap, previous attempts to deal with the
 #     bpf_timeval changes in base libpcap have not been entirely successful
 CONFIGURE_ARGS=	--with-libpcap=included \
@@ -54,12 +53,12 @@ LIB_DEPENDS-main=devel/pcre \
 		${MODLUA_LIB_DEPENDS} \
 		security/libssh2
 
-RUN_DEPENDS-main=
-
 RUN_DEPENDS-zenmap=	x11/py-gtk2 \
 			databases/py-sqlite2 \
 			devel/desktop-file-utils \
 			net/nmap
+
+BUILD_DEPENDS=		devel/bison
 
 post-extract:
 	@cd ${WRKSRC} && rm -rf liblua/ libpcre/

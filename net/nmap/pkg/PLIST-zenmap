@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST-zenmap,v 1.18 2018/06/27 21:04:00 espie Exp $
+@comment $OpenBSD: PLIST-zenmap,v 1.19 2019/08/24 06:37:13 giovanni Exp $
 bin/nmapfe
 bin/xnmap
 bin/zenmap
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/ndiff.py
 lib/python${MODPY_VERSION}/site-packages/ndiff.pyc
 lib/python${MODPY_VERSION}/site-packages/radialnet/

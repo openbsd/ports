@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.20 2018/04/08 21:02:45 jca Exp $
+$OpenBSD: patch-Makefile_in,v 1.21 2019/08/24 06:37:13 giovanni Exp $
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -48,7 +48,7 @@ DEFS += -D_FORTIFY_SOURCE=2
+@@ -45,7 +45,7 @@ DEFS += -D_FORTIFY_SOURCE=2
  # Should only be enabled during debugging and not in any real release.
  # DEFS += -DMTRACE=1
  CXXFLAGS = @CXXFLAGS@ $(DBGFLAGS) $(CCOPT)
@@ -11,7 +11,7 @@ Index: Makefile.in
  CFLAGS = @CFLAGS@ $(DBGFLAGS) $(CCOPT)
  STATIC =
  LDFLAGS = @LDFLAGS@ $(DBGFLAGS) $(STATIC)
-@@ -354,8 +354,8 @@ $(NPINGDIR)/nping.h: nmap.h
+@@ -351,8 +351,8 @@ $(NPINGDIR)/nping.h: nmap.h
  	mv -f $@.tmp $@
  
  # Update the version number used by Zenmap.
