@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/08/24 16:38:09 chrisz Exp $
 
-V =		7.07
+V =		7.08
 COMMENT =	OCaml Preprocessor and Pretty-Printer
 DISTFILES =	camlp5-rel${V}{rel${V:S/.//}}${EXTRACT_SUFX}
 PKGNAME =	ocaml-camlp5-${V}
 CATEGORIES =	lang
 
 HOMEPAGE =	https://camlp5.github.io/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
