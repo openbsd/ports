@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.59 2019/07/21 11:10:23 espie Exp $
+# $OpenBSD: Var.pm,v 1.60 2019/08/24 23:16:25 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -1126,12 +1126,13 @@ sub want_in_ports_view { 1 }
 
 sub new
 {
-	my ($class, $var, $value, $arch) = @_;
+	my ($class, $var, $value, $arch, $pkg) = @_;
 	my $path = $value;
 	if ($value =~ m,^/,) {
 		$value =~ s,^\Q$portsdir\E/,,;
 	} else {
-		$path = "$portsdir/$path";
+		$value = join("/", $pkg->pkgpath, $value);
+		$path = join("/", $portsdir, $pkg->pkgpath, $path);
 	}
 	my $o = $class->SUPER::new($var, $value, $arch);
 	push @$o, $path;
