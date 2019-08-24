@@ -1,0 +1,4 @@
+#!/bin/sh
+${LOCALBASE}/bin/keybase --debug --use-default-log-file service \
+	--auto-forked &
+${LOCALBASE}/bin/kbfsfuse -debug -log-to-file &

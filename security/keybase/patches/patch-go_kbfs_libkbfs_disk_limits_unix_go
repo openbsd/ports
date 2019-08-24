@@ -1,25 +1,14 @@
-$OpenBSD: patch-go_kbfs_libkbfs_disk_limits_unix_go,v 1.1 2019/06/19 21:07:05 juanfra Exp $  
-                                                                                
+$OpenBSD: patch-go_kbfs_libkbfs_disk_limits_unix_go,v 1.2 2019/08/24 18:40:58 abieber Exp $
+
 Index: go/kbfs/libkbfs/disk_limits_unix.go
---- go/kbfs/libkbfs/disk_limits_unix.go.orig	Sat Jun 15 22:30:45 2019
-+++ go/kbfs/libkbfs/disk_limits_unix.go	Sat Jun 15 22:30:56 2019
-@@ -28,14 +28,14 @@
- 	}
+--- go/kbfs/libkbfs/disk_limits_unix.go.orig
++++ go/kbfs/libkbfs/disk_limits_unix.go
+@@ -2,7 +2,7 @@
+ // Use of this source code is governed by a BSD
+ // license that can be found in the LICENSE file.
  
- 	// Bavail is the free block count for an unprivileged user.
--	availableBytes = uint64(stat.Bavail) * uint64(stat.Bsize)
--	totalBytes = uint64(stat.Blocks) * uint64(stat.Bsize)
-+	availableBytes = uint64(stat.F_bavail) * uint64(stat.F_bsize)
-+	totalBytes = uint64(stat.F_blocks) * uint64(stat.F_bsize)
- 	// Some filesystems, like btrfs, don't keep track of inodes.
- 	// (See https://github.com/keybase/client/issues/6206 .) Use
- 	// the total inode count to detect that case.
--	if stat.Files > 0 {
--		availableFiles = uint64(stat.Ffree)
--		totalFiles = uint64(stat.Files)
-+	if stat.F_files > 0 {
-+		availableFiles = uint64(stat.F_ffree)
-+		totalFiles = uint64(stat.F_files)
- 	} else {
- 		availableFiles = math.MaxInt64
- 		totalFiles = math.MaxInt64
+-// +build !windows
++// +build !windows,!openbsd
+ 
+ package libkbfs
+ 

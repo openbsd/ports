@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/08/24 18:40:58 abieber Exp $
 
 # go-ps only supports amd64 on OpenBSD
 # ../vendor/github.com/keybase/go-ps/process.go:39: undefined: processes
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS = amd64
 COMMENT =	client for keybase.io
 
 # XXX: https://github.com/keybase/client/issues/10800
-V =		4.2.0
+V =		4.3.2
 GH_ACCOUNT =	keybase
 GH_PROJECT =	client
 GH_TAGNAME =	v${V}
@@ -59,5 +59,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/go/keybase/keybase ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/go/kbfs/kbfsgit/git-remote-keybase/git-remote-keybase ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/go/kbfs/kbfsfuse/kbfsfuse ${PREFIX}/bin/
+	${SUBST_CMD} -m 755 -c ${FILESDIR}/run_keybase \
+		${PREFIX}/bin/run_keybase
 
 .include <bsd.port.mk>

@@ -1,0 +1,50 @@
+$OpenBSD: patch-go_kbfs_libkbfs_disk_limits_openbsd_go,v 1.1 2019/08/24 18:40:58 abieber Exp $
+
+Index: go/kbfs/libkbfs/disk_limits_openbsd.go
+--- go/kbfs/libkbfs/disk_limits_openbsd.go.orig
++++ go/kbfs/libkbfs/disk_limits_openbsd.go
+@@ -0,0 +1,44 @@
++// Copyright 2017 Keybase Inc. All rights reserved.
++// Use of this source code is governed by a BSD
++// license that can be found in the LICENSE file.
++
++// +build openbsd
++
++package libkbfs
++
++import (
++	"math"
++	"syscall"
++
++	"github.com/pkg/errors"
++)
++
++// getDiskLimits gets the disk limits for the logical disk containing
++// the given path.
++func getDiskLimits(path string) (
++	availableBytes, totalBytes, availableFiles, totalFiles uint64, err error) {
++	// Notably we are using syscall rather than golang.org/x/sys/unix here.
++	// The latter is broken on iOS with go1.11.8 (and likely earlier versions)
++	// and always gives us 0 as available storage space. go1.12.3 is known to
++	// work fine with sys/unix.
++	var stat syscall.Statfs_t
++	err = syscall.Statfs(path, &stat)
++	if err != nil {
++		return 0, 0, 0, 0, errors.WithStack(err)
++	}
++
++	// Bavail is the free block count for an unprivileged user.
++	availableBytes = uint64(stat.F_bavail) * uint64(stat.F_bsize)
++	totalBytes = uint64(stat.F_blocks) * uint64(stat.F_bsize)
++	// Some filesystems, like btrfs, don't keep track of inodes.
++	// (See https://github.com/keybase/client/issues/6206 .) Use
++	// the total inode count to detect that case.
++	if stat.F_files > 0 {
++		availableFiles = uint64(stat.F_ffree)
++		totalFiles = uint64(stat.F_files)
++	} else {
++		availableFiles = math.MaxInt64
++		totalFiles = math.MaxInt64
++	}
++	return availableBytes, totalBytes, availableFiles, totalFiles, nil
++}
