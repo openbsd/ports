@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.457 2019/08/24 11:22:17 robert Exp $
+# $OpenBSD: Makefile,v 1.458 2019/08/24 15:39:26 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -129,6 +129,7 @@ PLIST=			${PKGDIR}/PLIST-electron
 DESCR=			${PKGDIR}/DESCR-electron
 PATCH_LIST=		patch-* epatch-*
 
+BUILD_DEPENDS+=		devel/libnotify
 LIB_DEPENDS+=		www/nghttp2
 WANTLIB+=		nghttp2
 .else
