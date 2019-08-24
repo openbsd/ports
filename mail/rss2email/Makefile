@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/08/24 20:14:06 sthen Exp $
 
 COMMENT=	get news from RSS feeds in email
 
-DISTNAME=	rss2email-2.70
+DISTNAME=	rss2email-2.71
+FIX_EXTRACT_PERMISSIONS= Yes
 
 CATEGORIES=	mail textproc
 
