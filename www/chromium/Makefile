@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.456 2019/08/24 07:56:34 espie Exp $
+# $OpenBSD: Makefile,v 1.457 2019/08/24 11:22:17 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -132,7 +132,7 @@ PATCH_LIST=		patch-* epatch-*
 LIB_DEPENDS+=		www/nghttp2
 WANTLIB+=		nghttp2
 .else
-REVISION=		0
+REVISION=		1
 EXTRACT_ONLY=		${DISTFILES:C/electron.*//}
 ALL_TARGET=		chrome chromedriver
 TEST_TARGET=		base_unittests

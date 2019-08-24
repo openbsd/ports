@@ -1,4 +1,4 @@
-$OpenBSD: patch-base_base_paths_posix_cc,v 1.4 2019/08/22 19:20:04 robert Exp $
+$OpenBSD: patch-base_base_paths_posix_cc,v 1.5 2019/08/24 11:22:17 robert Exp $
 
 Index: base/base_paths_posix.cc
 --- base/base_paths_posix.cc.orig
@@ -18,7 +18,7 @@ Index: base/base_paths_posix.cc
  #elif defined(OS_SOLARIS) || defined(OS_AIX)
  #include <stdlib.h>
  #endif
-@@ -67,13 +71,58 @@ bool PathProviderPosix(int key, FilePath* result) {
+@@ -67,13 +71,65 @@ bool PathProviderPosix(int key, FilePath* result) {
        *result = FilePath(bin_dir);
        return true;
  #elif defined(OS_OPENBSD) || defined(OS_AIX)
@@ -50,6 +50,13 @@ Index: base/base_paths_posix.cc
 +
 +      if (stat(command_line->argv()[0].c_str(), &sb) < 0)
 +        goto out;
++
++      if (!command_line->HasSwitch("no-sandbox")) {
++        ret = true;
++        *result = FilePath(retval);
++        VLOG(1) << "PathProviderPosix (sandbox) result: " << retval;
++        goto out;
++      }
 +
 +      if ((kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, errbuf)) == NULL)
 +        goto out;
