@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/05/12 11:59:49 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/08/24 07:27:20 rsadowski Exp $
 @newgroup _bitcoind:813
 @newuser _bitcoind:813:813:daemon:Bitcoind Account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/bitcoind
@@ -34,6 +34,7 @@ lib/pkgconfig/libsecp256k1.pc
 lib/pkgconfig/libunivalue.pc
 @man man/man1/bitcoin-cli.1
 @man man/man1/bitcoin-tx.1
+@man man/man1/bitcoin-wallet.1
 @man man/man1/bitcoind.1
 share/bash-completion/completions/bitcoin/
 share/bash-completion/completions/bitcoin/bitcoin-cli.bash-completion
