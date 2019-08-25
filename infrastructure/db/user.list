@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.350 2019/08/02 21:59:35 bcallah Exp $
+$OpenBSD: user.list,v 1.351 2019/08/25 12:06:28 robert Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -349,3 +349,4 @@ id  user		group		port options
 838 _i2pd		_i2pd		net/i2pd
 839 _exabgp		_exabgp		net/exabgp
 840 _dma		_dma		mail/dma
+841 _rt			_rt		www/rt
