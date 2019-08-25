@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/25 23:06:19 afresh1 Exp $
+${P5SITE}/Test2/
+${P5SITE}/Test2/Event/
+${P5SITE}/Test2/Event/Warning.pm
+${P5SITE}/Test2/Plugin/
+${P5SITE}/Test2/Plugin/NoWarnings.pm
+@man man/man3p/Test2::Event::Warning.3p
+@man man/man3p/Test2::Plugin::NoWarnings.3p

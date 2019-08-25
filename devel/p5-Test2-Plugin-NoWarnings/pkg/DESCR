@@ -1,0 +1,3 @@
+Loading this plugin causes your tests to fail if there any
+warnings while they run. Each warning generates a new failing
+test and the warning content is outputted via diag.
