@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_3rdparty_assimp_code_glTFAsset_inl,v 1.1 2019/08/25 20:10:37 cwen Exp $
+
+Fix the build on big endian archs. From:
+https://github.com/assimp/assimp/pull/986/commits/c2c12c1db5c8d7610ad46b1970aabf4afde0eef4
+
+Index: src/3rdparty/assimp/code/glTFAsset.inl
+--- src/3rdparty/assimp/code/glTFAsset.inl.orig
++++ src/3rdparty/assimp/code/glTFAsset.inl
+@@ -40,6 +40,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY O
+ 
+ #include "StringUtils.h"
+ 
++using namespace Assimp;
++
+ namespace glTF {
+ 
+ namespace {

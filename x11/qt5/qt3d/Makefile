@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/06/24 20:56:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/08/25 20:10:37 cwen Exp $
 
 # TODO: port Assimp and switch qt3d to it after Assimp >3.3.1 gets
 # released.
 
 QT5NAME =		Qt3D
 COMMENT-main =		Qt5 components for 3D graphics
-REVISION-main =		1
+REVISION-main =		2
 
 MULTI_PACKAGES =	-main -examples
 
