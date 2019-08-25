@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.87 2019/07/12 20:47:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.88 2019/08/25 20:29:40 naddy Exp $
 
 COMMENT=	toolkit for manipulation and conversion of graphic images
 
-DISTNAME=	netpbm-10.85.01
-SHARED_LIBS=	netpbm	5.0
+DISTNAME=	netpbm-10.87.01
+SHARED_LIBS=	netpbm	5.1
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
-REVISION=	1
 
 PERMIT_PACKAGE=	Yes
 
@@ -57,6 +56,9 @@ pre-test:
 
 # must run after fake
 test: fake
+
+# pamhue.test is known to be broken (undefined qsort(3) ordering if
+# items compare equal) and will be fixed in 10.88
 
 # Get the latest release in a release series from Netpbm Subversion.
 # Requires devel/subversion.

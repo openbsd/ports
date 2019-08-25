@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Makefile,v 1.8 2019/01/12 22:27:40 naddy Exp $
+$OpenBSD: patch-lib_Makefile,v 1.9 2019/08/25 20:29:40 naddy Exp $
 Index: lib/Makefile
 --- lib/Makefile.orig
 +++ lib/Makefile
@@ -68,7 +68,7 @@ Index: lib/Makefile
  .PHONY: install.lib
  ifeq ($(NETPBMLIBTYPE),unixshared)
  # install a Unix-style shared library
--install.lib: $(PKGDIR)/lib $(PKGDIR)/link
+-install.lib: $(PKGDIR)/lib $(PKGDIR)/sharedlink
 -	cd $(PKGDIR)/lib ; rm -f libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).*
 +install.lib: $(PKGDIR)/lib
  	$(INSTALL) -c -m $(INSTALL_PERM_LIBD) \
@@ -84,10 +84,10 @@ Index: lib/Makefile
  	  $(SRCDIR)/lib/$(@:%_installhdr=%) $(PKGDIR)/include/netpbm/
  
  .PHONY: install.staticlib
--install.staticlib: $(PKGDIR)/link
+-install.staticlib: $(PKGDIR)/staticlink
 +install.staticlib: $(PKGDIR)/lib
  	$(INSTALL) -c -m $(INSTALL_PERM_LIBS) libnetpbm.$(STATICLIBSUFFIX) \
--	  $(PKGDIR)/link
+-	  $(PKGDIR)/staticlink
 +	  $(PKGDIR)/lib
  
  # Install a shared library stub -- the ".so" file used at link time to
