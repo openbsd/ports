@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:45:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/08/25 07:30:37 kmos Exp $
 
-COMMENT =		Python easy_install replacement
+COMMENT =		tool for installing Python packages
 
-MODPY_EGG_VERSION =	9.0.3
+MODPY_EGG_VERSION =	19.1.1
 DISTNAME =		pip-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
 
 HOMEPAGE =		https://pip.pypa.io/en/stable/
 
@@ -18,23 +17,10 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
-
 FLAVORS =		python3
 FLAVOR ?=
 
 # No test suites in pypi tarball
 NO_TEST =		Yes
-
-DOCSRC =	${WRKSRC}/docs
-post-build:
-	cd ${DOCSRC} && PYTHONPATH=${WRKSRC} \
-		${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX} -N . _build/html
-
-DOCS =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}pip
-
-post-install:
-	${INSTALL_DATA_DIR} ${DOCS}
-	cd ${DOCSRC}/_build/html && pax -rw * ${DOCS}
 
 .include <bsd.port.mk>
