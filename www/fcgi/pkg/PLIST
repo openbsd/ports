@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/04/04 16:09:10 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/08/25 12:05:12 robert Exp $
 @bin bin/cgi-fcgi
 include/fastcgi.h
 include/fcgi_config.h
@@ -13,17 +13,11 @@ lib/libfcgi++.la
 lib/libfcgi.a
 lib/libfcgi.la
 @lib lib/libfcgi.so.${LIBfcgi_VERSION}
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/FCGI.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/FCGI/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/FCGI/FCGI.so
 @man man/cat1/cgi-fcgi.0
 @man man/cat3/FCGI_Accept.0
 @man man/cat3/FCGI_Finish.0
 @man man/cat3/FCGI_SetExitStatus.0
 @man man/cat3/FCGI_StartFilterData.0
-@man man/man3p/FCGI.3p
 share/doc/fcgi/
 share/doc/fcgi/fcgi-devel-kit.htm
 share/doc/fcgi/fcgi-java.htm
