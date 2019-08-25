@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_googlecloudsdk_core_docker_client_lib_py,v 1.5 2018/07/20 13:36:29 ajacoutot Exp $
+$OpenBSD: patch-lib_googlecloudsdk_core_docker_client_lib_py,v 1.6 2019/08/25 12:02:10 ajacoutot Exp $
 
 Index: lib/googlecloudsdk/core/docker/client_lib.py
 --- lib/googlecloudsdk/core/docker/client_lib.py.orig
 +++ lib/googlecloudsdk/core/docker/client_lib.py
-@@ -34,7 +34,7 @@ from googlecloudsdk.core.util import platforms
+@@ -35,7 +35,7 @@ import six
  from six.moves import urllib
  
  
