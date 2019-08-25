@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/25 12:03:27 robert Exp $
+@conflict fcgi-<=2.4.0p17
+${P5ARCH}/
+${P5ARCH}/FCGI.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/FCGI/
+${P5ARCH}/auto/FCGI/FCGI.so
+@man man/man3p/FCGI.3p
