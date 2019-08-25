@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/25 23:09:01 afresh1 Exp $
+${P5SITE}/Params/
+${P5SITE}/Params/ValidationCompiler/
+${P5SITE}/Params/ValidationCompiler.pm
+${P5SITE}/Params/ValidationCompiler/Compiler.pm
+${P5SITE}/Params/ValidationCompiler/Exceptions.pm
+@man man/man3p/Params::ValidationCompiler.3p
+@man man/man3p/Params::ValidationCompiler::Compiler.3p
+@man man/man3p/Params::ValidationCompiler::Exceptions.3p
