@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1885 2019/08/24 20:40:05 remi Exp $
+# $OpenBSD: Makefile,v 1.1886 2019/08/25 22:43:23 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -718,6 +718,7 @@
      SUBDIR += p5-Event
      SUBDIR += p5-Event-ExecFlow
      SUBDIR += p5-Exception-Class
+     SUBDIR += p5-Exception-Class-TryCatch
      SUBDIR += p5-Expect
      SUBDIR += p5-Expect-Simple
      SUBDIR += p5-Exporter-Lite
