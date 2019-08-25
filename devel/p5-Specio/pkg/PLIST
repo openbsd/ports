@@ -1,0 +1,87 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/25 23:07:47 afresh1 Exp $
+${P5SITE}/Specio/
+${P5SITE}/Specio.pm
+${P5SITE}/Specio/Coercion.pm
+${P5SITE}/Specio/Constraint/
+${P5SITE}/Specio/Constraint/AnyCan.pm
+${P5SITE}/Specio/Constraint/AnyDoes.pm
+${P5SITE}/Specio/Constraint/AnyIsa.pm
+${P5SITE}/Specio/Constraint/Enum.pm
+${P5SITE}/Specio/Constraint/Intersection.pm
+${P5SITE}/Specio/Constraint/ObjectCan.pm
+${P5SITE}/Specio/Constraint/ObjectDoes.pm
+${P5SITE}/Specio/Constraint/ObjectIsa.pm
+${P5SITE}/Specio/Constraint/Parameterizable.pm
+${P5SITE}/Specio/Constraint/Parameterized.pm
+${P5SITE}/Specio/Constraint/Role/
+${P5SITE}/Specio/Constraint/Role/CanType.pm
+${P5SITE}/Specio/Constraint/Role/DoesType.pm
+${P5SITE}/Specio/Constraint/Role/Interface.pm
+${P5SITE}/Specio/Constraint/Role/IsaType.pm
+${P5SITE}/Specio/Constraint/Simple.pm
+${P5SITE}/Specio/Constraint/Structurable.pm
+${P5SITE}/Specio/Constraint/Structured.pm
+${P5SITE}/Specio/Constraint/Union.pm
+${P5SITE}/Specio/Declare.pm
+${P5SITE}/Specio/DeclaredAt.pm
+${P5SITE}/Specio/Exception.pm
+${P5SITE}/Specio/Exporter.pm
+${P5SITE}/Specio/Helpers.pm
+${P5SITE}/Specio/Library/
+${P5SITE}/Specio/Library/Builtins.pm
+${P5SITE}/Specio/Library/Numeric.pm
+${P5SITE}/Specio/Library/Perl.pm
+${P5SITE}/Specio/Library/String.pm
+${P5SITE}/Specio/Library/Structured/
+${P5SITE}/Specio/Library/Structured.pm
+${P5SITE}/Specio/Library/Structured/Dict.pm
+${P5SITE}/Specio/Library/Structured/Map.pm
+${P5SITE}/Specio/Library/Structured/Tuple.pm
+${P5SITE}/Specio/OO.pm
+${P5SITE}/Specio/PartialDump.pm
+${P5SITE}/Specio/Registry.pm
+${P5SITE}/Specio/Role/
+${P5SITE}/Specio/Role/Inlinable.pm
+${P5SITE}/Specio/Subs.pm
+${P5SITE}/Specio/TypeChecks.pm
+${P5SITE}/Test/Specio.pm
+@man man/man3p/Specio.3p
+@man man/man3p/Specio::Coercion.3p
+@man man/man3p/Specio::Constraint::AnyCan.3p
+@man man/man3p/Specio::Constraint::AnyDoes.3p
+@man man/man3p/Specio::Constraint::AnyIsa.3p
+@man man/man3p/Specio::Constraint::Enum.3p
+@man man/man3p/Specio::Constraint::Intersection.3p
+@man man/man3p/Specio::Constraint::ObjectCan.3p
+@man man/man3p/Specio::Constraint::ObjectDoes.3p
+@man man/man3p/Specio::Constraint::ObjectIsa.3p
+@man man/man3p/Specio::Constraint::Parameterizable.3p
+@man man/man3p/Specio::Constraint::Parameterized.3p
+@man man/man3p/Specio::Constraint::Role::CanType.3p
+@man man/man3p/Specio::Constraint::Role::DoesType.3p
+@man man/man3p/Specio::Constraint::Role::Interface.3p
+@man man/man3p/Specio::Constraint::Role::IsaType.3p
+@man man/man3p/Specio::Constraint::Simple.3p
+@man man/man3p/Specio::Constraint::Structurable.3p
+@man man/man3p/Specio::Constraint::Structured.3p
+@man man/man3p/Specio::Constraint::Union.3p
+@man man/man3p/Specio::Declare.3p
+@man man/man3p/Specio::DeclaredAt.3p
+@man man/man3p/Specio::Exception.3p
+@man man/man3p/Specio::Exporter.3p
+@man man/man3p/Specio::Helpers.3p
+@man man/man3p/Specio::Library::Builtins.3p
+@man man/man3p/Specio::Library::Numeric.3p
+@man man/man3p/Specio::Library::Perl.3p
+@man man/man3p/Specio::Library::String.3p
+@man man/man3p/Specio::Library::Structured.3p
+@man man/man3p/Specio::Library::Structured::Dict.3p
+@man man/man3p/Specio::Library::Structured::Map.3p
+@man man/man3p/Specio::Library::Structured::Tuple.3p
+@man man/man3p/Specio::OO.3p
+@man man/man3p/Specio::PartialDump.3p
+@man man/man3p/Specio::Registry.3p
+@man man/man3p/Specio::Role::Inlinable.3p
+@man man/man3p/Specio::Subs.3p
+@man man/man3p/Specio::TypeChecks.3p
+@man man/man3p/Test::Specio.3p

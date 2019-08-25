@@ -1,0 +1,2 @@
+The Specio distribution provides classes for representing type constraints and
+coercion, along with syntax sugar for declaring them.
