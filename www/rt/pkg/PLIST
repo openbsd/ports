@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.24 2019/08/18 09:14:44 robert Exp $
+@comment $OpenBSD: PLIST,v 1.25 2019/08/25 12:07:48 robert Exp $
+@newgroup _rt:841
+@newuser _rt:841:_rt:daemon:RT Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/rt
 @sample ${SYSCONFDIR}/rt3/
 @sample ${SYSCONFDIR}/rt3/local/
@@ -519,11 +521,19 @@ share/examples/rt3/
 @mode 0444
 share/examples/rt3/RT_Config.pm
 @mode 0600
+@owner _rt
+@group _rt
 @sample ${SYSCONFDIR}/rt3/RT_Config.pm
+@owner
+@group
 @mode 0444
 share/examples/rt3/RT_SiteConfig.pm
 @mode 0600
+@owner _rt
+@group _rt
 @sample ${SYSCONFDIR}/rt3/RT_SiteConfig.pm
+@owner
+@group
 @mode 0400
 share/examples/rt3/acl.Oracle
 @mode
@@ -2447,7 +2457,7 @@ share/rt3/static/js/supersubs.js
 share/rt3/static/js/titlebox-state.js
 share/rt3/static/js/util.js
 @mode 770
-@owner www
+@owner _rt
 @group www
 @sample /var/www/rt3/
 @sample /var/www/rt3/mason_data/

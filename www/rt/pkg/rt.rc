@@ -1,12 +1,13 @@
 #!/bin/ksh
 #
-# $OpenBSD: rt.rc,v 1.6 2018/01/11 19:27:12 rpe Exp $
+# $OpenBSD: rt.rc,v 1.7 2019/08/25 12:07:49 robert Exp $
 
 daemon="${TRUEPREFIX}/sbin/rt-server"
+daemon_user="_rt"
 
 . /etc/rc.d/rc.subr
 
-pexp="/usr/bin/perl -w ${daemon}.fcgi"
+pexp=".*perl.*(${daemon}|perl-fcgi-pm).*"
 rc_bg=YES
 rc_reload=NO
 
