@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/25 22:55:45 afresh1 Exp $
+${P5SITE}/HTTP/Entity/
+${P5SITE}/HTTP/Entity/Parser/
+${P5SITE}/HTTP/Entity/Parser.pm
+${P5SITE}/HTTP/Entity/Parser/JSON.pm
+${P5SITE}/HTTP/Entity/Parser/MultiPart.pm
+${P5SITE}/HTTP/Entity/Parser/OctetStream.pm
+${P5SITE}/HTTP/Entity/Parser/UrlEncoded.pm
+@man man/man3p/HTTP::Entity::Parser.3p
+@man man/man3p/HTTP::Entity::Parser::JSON.3p
+@man man/man3p/HTTP::Entity::Parser::MultiPart.3p
+@man man/man3p/HTTP::Entity::Parser::OctetStream.3p
+@man man/man3p/HTTP::Entity::Parser::UrlEncoded.3p
