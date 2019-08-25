@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.248 2019/08/17 08:35:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.249 2019/08/25 09:59:18 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
 
-VERSION=		2.2.12
+VERSION=		2.3.0
 GH_ACCOUNT=		apple
 GH_PROJECT=		cups
 GH_TAGNAME=		v${VERSION}
@@ -14,22 +14,24 @@ PKGNAME-libs=		cups-libs-${VERSION}
 CATEGORIES=		print sysutils
 
 # config-scripts/cups-sharedlibs.m4
-SHARED_LIBS+=  cupsimage       6.0 # so.2
-SHARED_LIBS+=  cups            7.0 # so.2
+SHARED_LIBS+=  cupsimage       6.1 # 2
+SHARED_LIBS+=  cups            7.1 # 2
 
 HOMEPAGE=		http://www.cups.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPLv2 - LGPLv2
+# Apache v2.0
 PERMIT_PACKAGE=	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-WANTLIB += avahi-client avahi-common gnutls iconv m pthread z
+WANTLIB += avahi-client avahi-common iconv m pthread z
 
 WANTLIB-main += ${WANTLIB} ${COMPILER_LIBCXX}
-WANTLIB-main += c cups cupsimage dbus-1 usb-1.0
+WANTLIB-main += c cups dbus-1 usb-1.0
+
+WANTLIB-libs += ${WANTLIB} gnutls
 
 MULTI_PACKAGES=		-main -libs
 
@@ -86,19 +88,12 @@ CONFIGURE_ARGS=		--enable-static \
 			--with-smbconfigfile="samba://${SYSCONFDIR}/samba/smb.conf" \
 			--disable-cdsassl \
 			--disable-pam \
-			--disable-systemd \
-			--without-java \
-			--without-php \
-			--without-python
+			--disable-systemd
 
 do-gen:
 	${SUBST_CMD} ${WRKSRC}/Makedefs.in
 	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} aclocal -I config-scripts
 	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} autoconf -I config-scripts
-
-post-configure:
-	cd ${WRKBUILD} && sed -i 's|\$${DESTDIR}||g' \
-		config.h cups-config man/*.man
 
 post-install:
 	ln -sf ${LOCALBASE}/bin/smbspool \

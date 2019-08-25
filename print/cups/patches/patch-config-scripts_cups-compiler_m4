@@ -1,11 +1,11 @@
-$OpenBSD: patch-config-scripts_cups-compiler_m4,v 1.10 2018/11/10 13:02:52 ajacoutot Exp $
+$OpenBSD: patch-config-scripts_cups-compiler_m4,v 1.11 2019/08/25 09:59:18 ajacoutot Exp $
 
 /usr/bin/ld: error: -shared and -pie may not be used together
 
 Index: config-scripts/cups-compiler.m4
 --- config-scripts/cups-compiler.m4.orig
 +++ config-scripts/cups-compiler.m4
-@@ -143,6 +143,8 @@ if test -n "$GCC"; then
+@@ -157,6 +157,8 @@ if test -n "$GCC"; then
  					AC_MSG_RESULT(no))
  				;;
  

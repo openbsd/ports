@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST-main,v 1.30 2018/09/04 12:46:20 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.31 2019/08/25 09:59:18 ajacoutot Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap
 @extraunexec rm -rf ${SYSCONFDIR}/cups/*.conf.O /var/log/cups
 @rcscript ${RCDIR}/cupsd
 @bin bin/cancel
-@bin bin/cupstestdsc
 @bin bin/cupstestppd
+@bin bin/ippeveprinter
 @bin bin/ippfind
 @bin bin/ipptool
 @bin bin/lp
@@ -42,6 +42,9 @@ libexec/cups/cgi-bin/
 @bin libexec/cups/cgi-bin/help.cgi
 @bin libexec/cups/cgi-bin/jobs.cgi
 @bin libexec/cups/cgi-bin/printers.cgi
+libexec/cups/command/
+@bin libexec/cups/command/ippevepcl
+@bin libexec/cups/command/ippeveps
 libexec/cups/daemon/
 @bin libexec/cups/daemon/cups-deviced
 @bin libexec/cups/daemon/cups-driverd
@@ -50,7 +53,6 @@ libexec/cups/daemon/
 @bin libexec/cups/filter/commandtops
 @bin libexec/cups/filter/gziptoany
 @bin libexec/cups/filter/pstops
-libexec/cups/filter/rastertodymo
 @bin libexec/cups/filter/rastertoepson
 @bin libexec/cups/filter/rastertohp
 @bin libexec/cups/filter/rastertolabel
@@ -64,8 +66,8 @@ libexec/cups/notifier/
 @bin libexec/cups/notifier/rss
 @man man/man1/cancel.1
 @man man/man1/cups.1
-@man man/man1/cupstestdsc.1
 @man man/man1/cupstestppd.1
+@man man/man1/ippeveprinter.1
 @man man/man1/ippfind.1
 @man man/man1/ipptool.1
 @man man/man1/lp.1
@@ -94,15 +96,15 @@ libexec/cups/notifier/
 @man man/man5/subscriptions.conf.5
 @man man/man7/backend.7
 @man man/man7/filter.7
+@man man/man7/ippevepcl.7
+@man man/man7/ippeveps.7
 @man man/man7/notifier.7
-@man man/man8/accept.8
 @man man/man8/cups-deviced.8
 @man man/man8/cups-driverd.8
 @man man/man8/cups-exec.8
 @man man/man8/cups-lpd.8
 @man man/man8/cups-snmp.8
 @man man/man8/cupsaccept.8
-@man man/man8/cupsaddsmb.8
 @man man/man8/cupsctl.8
 @man man/man8/cupsd-helper.8
 @man man/man8/cupsd.8
@@ -114,10 +116,7 @@ libexec/cups/notifier/
 @man man/man8/lpc.8
 @man man/man8/lpinfo.8
 @man man/man8/lpmove.8
-@man man/man8/reject.8
-sbin/accept
 @bin sbin/cupsaccept
-@bin sbin/cupsaddsmb
 @bin sbin/cupsctl
 @mode 0500
 @bin sbin/cupsd
@@ -130,7 +129,6 @@ sbin/cupsreject
 @bin sbin/lpc
 @bin sbin/lpinfo
 @bin sbin/lpmove
-sbin/reject
 share/cups/drv/sample.drv
 share/cups/examples/
 share/cups/examples/color.drv
@@ -145,30 +143,66 @@ share/cups/examples/r300-basic.drv
 share/cups/examples/r300-colorman.drv
 share/cups/examples/r300-remote.drv
 share/cups/ipptool/
+share/cups/ipptool/cancel-current-job.test
 share/cups/ipptool/color.jpg
+share/cups/ipptool/create-job-format.test
+share/cups/ipptool/create-job-sheets.test
+share/cups/ipptool/create-job-timeout.test
+share/cups/ipptool/create-job.test
 share/cups/ipptool/create-printer-subscription.test
+share/cups/ipptool/cups-create-local-printer.test
 share/cups/ipptool/document-a4.pdf
 share/cups/ipptool/document-a4.ps
 share/cups/ipptool/document-letter.pdf
 share/cups/ipptool/document-letter.ps
+share/cups/ipptool/fax-job.test
 share/cups/ipptool/get-completed-jobs.test
+share/cups/ipptool/get-devices.test
+share/cups/ipptool/get-job-attributes.test
+share/cups/ipptool/get-job-attributes2.test
+share/cups/ipptool/get-job-template-attributes.test
 share/cups/ipptool/get-jobs.test
 share/cups/ipptool/get-notifications.test
+share/cups/ipptool/get-ppd-printer.test
+share/cups/ipptool/get-ppd.test
+share/cups/ipptool/get-ppds-drv-only.test
+share/cups/ipptool/get-ppds-language.test
+share/cups/ipptool/get-ppds-make-and-model.test
+share/cups/ipptool/get-ppds-make.test
+share/cups/ipptool/get-ppds-product.test
+share/cups/ipptool/get-ppds-psversion.test
+share/cups/ipptool/get-ppds.test
+share/cups/ipptool/get-printer-attributes-suite.test
 share/cups/ipptool/get-printer-attributes.test
+share/cups/ipptool/get-printer-description-attributes.test
+share/cups/ipptool/get-printers-printer-id.test
+share/cups/ipptool/get-printers.test
 share/cups/ipptool/get-subscriptions.test
 share/cups/ipptool/gray.jpg
+share/cups/ipptool/identify-printer-display.test
+share/cups/ipptool/identify-printer-multiple.test
+share/cups/ipptool/identify-printer.test
 share/cups/ipptool/ipp-1.1.test
 share/cups/ipptool/ipp-2.0.test
 share/cups/ipptool/ipp-2.1.test
 share/cups/ipptool/ipp-2.2.test
+share/cups/ipptool/ipp-backend.test
 share/cups/ipptool/ipp-everywhere.test
 share/cups/ipptool/onepage-a4.pdf
 share/cups/ipptool/onepage-a4.ps
 share/cups/ipptool/onepage-letter.pdf
 share/cups/ipptool/onepage-letter.ps
+share/cups/ipptool/print-job-and-wait.test
 share/cups/ipptool/print-job-deflate.test
 share/cups/ipptool/print-job-gzip.test
+share/cups/ipptool/print-job-hold.test
+share/cups/ipptool/print-job-letter.test
+share/cups/ipptool/print-job-manual.test
+share/cups/ipptool/print-job-media-col.test
+share/cups/ipptool/print-job-password.test
 share/cups/ipptool/print-job.test
+share/cups/ipptool/print-uri.test
+share/cups/ipptool/set-attrs-hold.test
 share/cups/ipptool/testfile.jpg
 share/cups/ipptool/testfile.pcl
 share/cups/ipptool/testfile.pdf
@@ -187,7 +221,6 @@ share/cups/profiles/
 share/cups/templates/
 share/cups/templates/add-class.tmpl
 share/cups/templates/add-printer.tmpl
-share/cups/templates/add-rss-subscription.tmpl
 share/cups/templates/admin.tmpl
 share/cups/templates/choose-device.tmpl
 share/cups/templates/choose-make.tmpl
@@ -206,7 +239,6 @@ share/cups/templates/command.tmpl
 share/cups/templates/de/
 share/cups/templates/de/add-class.tmpl
 share/cups/templates/de/add-printer.tmpl
-share/cups/templates/de/add-rss-subscription.tmpl
 share/cups/templates/de/admin.tmpl
 share/cups/templates/de/choose-device.tmpl
 share/cups/templates/de/choose-make.tmpl
@@ -264,13 +296,9 @@ share/cups/templates/de/printer.tmpl
 share/cups/templates/de/printers-header.tmpl
 share/cups/templates/de/printers.tmpl
 share/cups/templates/de/restart.tmpl
-share/cups/templates/de/samba-export.tmpl
-share/cups/templates/de/samba-exported.tmpl
 share/cups/templates/de/search.tmpl
 share/cups/templates/de/set-printer-options-header.tmpl
 share/cups/templates/de/set-printer-options-trailer.tmpl
-share/cups/templates/de/subscription-added.tmpl
-share/cups/templates/de/subscription-canceled.tmpl
 share/cups/templates/de/test-page.tmpl
 share/cups/templates/de/trailer.tmpl
 share/cups/templates/de/users.tmpl
@@ -280,7 +308,6 @@ share/cups/templates/error.tmpl
 share/cups/templates/es/
 share/cups/templates/es/add-class.tmpl
 share/cups/templates/es/add-printer.tmpl
-share/cups/templates/es/add-rss-subscription.tmpl
 share/cups/templates/es/admin.tmpl
 share/cups/templates/es/choose-device.tmpl
 share/cups/templates/es/choose-make.tmpl
@@ -338,20 +365,15 @@ share/cups/templates/es/printer.tmpl
 share/cups/templates/es/printers-header.tmpl
 share/cups/templates/es/printers.tmpl
 share/cups/templates/es/restart.tmpl
-share/cups/templates/es/samba-export.tmpl
-share/cups/templates/es/samba-exported.tmpl
 share/cups/templates/es/search.tmpl
 share/cups/templates/es/set-printer-options-header.tmpl
 share/cups/templates/es/set-printer-options-trailer.tmpl
-share/cups/templates/es/subscription-added.tmpl
-share/cups/templates/es/subscription-canceled.tmpl
 share/cups/templates/es/test-page.tmpl
 share/cups/templates/es/trailer.tmpl
 share/cups/templates/es/users.tmpl
 share/cups/templates/fr/
 share/cups/templates/fr/add-class.tmpl
 share/cups/templates/fr/add-printer.tmpl
-share/cups/templates/fr/add-rss-subscription.tmpl
 share/cups/templates/fr/admin.tmpl
 share/cups/templates/fr/choose-device.tmpl
 share/cups/templates/fr/choose-make.tmpl
@@ -409,13 +431,9 @@ share/cups/templates/fr/printer.tmpl
 share/cups/templates/fr/printers-header.tmpl
 share/cups/templates/fr/printers.tmpl
 share/cups/templates/fr/restart.tmpl
-share/cups/templates/fr/samba-export.tmpl
-share/cups/templates/fr/samba-exported.tmpl
 share/cups/templates/fr/search.tmpl
 share/cups/templates/fr/set-printer-options-header.tmpl
 share/cups/templates/fr/set-printer-options-trailer.tmpl
-share/cups/templates/fr/subscription-added.tmpl
-share/cups/templates/fr/subscription-canceled.tmpl
 share/cups/templates/fr/test-page.tmpl
 share/cups/templates/fr/trailer.tmpl
 share/cups/templates/fr/users.tmpl
@@ -426,7 +444,6 @@ share/cups/templates/help-trailer.tmpl
 share/cups/templates/ja/
 share/cups/templates/ja/add-class.tmpl
 share/cups/templates/ja/add-printer.tmpl
-share/cups/templates/ja/add-rss-subscription.tmpl
 share/cups/templates/ja/admin.tmpl
 share/cups/templates/ja/choose-device.tmpl
 share/cups/templates/ja/choose-make.tmpl
@@ -484,13 +501,9 @@ share/cups/templates/ja/printer.tmpl
 share/cups/templates/ja/printers-header.tmpl
 share/cups/templates/ja/printers.tmpl
 share/cups/templates/ja/restart.tmpl
-share/cups/templates/ja/samba-export.tmpl
-share/cups/templates/ja/samba-exported.tmpl
 share/cups/templates/ja/search.tmpl
 share/cups/templates/ja/set-printer-options-header.tmpl
 share/cups/templates/ja/set-printer-options-trailer.tmpl
-share/cups/templates/ja/subscription-added.tmpl
-share/cups/templates/ja/subscription-canceled.tmpl
 share/cups/templates/ja/test-page.tmpl
 share/cups/templates/ja/trailer.tmpl
 share/cups/templates/ja/users.tmpl
@@ -531,7 +544,6 @@ share/cups/templates/printers.tmpl
 share/cups/templates/pt_BR/
 share/cups/templates/pt_BR/add-class.tmpl
 share/cups/templates/pt_BR/add-printer.tmpl
-share/cups/templates/pt_BR/add-rss-subscription.tmpl
 share/cups/templates/pt_BR/admin.tmpl
 share/cups/templates/pt_BR/choose-device.tmpl
 share/cups/templates/pt_BR/choose-make.tmpl
@@ -589,13 +601,9 @@ share/cups/templates/pt_BR/printer.tmpl
 share/cups/templates/pt_BR/printers-header.tmpl
 share/cups/templates/pt_BR/printers.tmpl
 share/cups/templates/pt_BR/restart.tmpl
-share/cups/templates/pt_BR/samba-export.tmpl
-share/cups/templates/pt_BR/samba-exported.tmpl
 share/cups/templates/pt_BR/search.tmpl
 share/cups/templates/pt_BR/set-printer-options-header.tmpl
 share/cups/templates/pt_BR/set-printer-options-trailer.tmpl
-share/cups/templates/pt_BR/subscription-added.tmpl
-share/cups/templates/pt_BR/subscription-canceled.tmpl
 share/cups/templates/pt_BR/test-page.tmpl
 share/cups/templates/pt_BR/trailer.tmpl
 share/cups/templates/pt_BR/users.tmpl
@@ -603,7 +611,6 @@ share/cups/templates/restart.tmpl
 share/cups/templates/ru/
 share/cups/templates/ru/add-class.tmpl
 share/cups/templates/ru/add-printer.tmpl
-share/cups/templates/ru/add-rss-subscription.tmpl
 share/cups/templates/ru/admin.tmpl
 share/cups/templates/ru/choose-device.tmpl
 share/cups/templates/ru/choose-make.tmpl
@@ -661,23 +668,15 @@ share/cups/templates/ru/printer.tmpl
 share/cups/templates/ru/printers-header.tmpl
 share/cups/templates/ru/printers.tmpl
 share/cups/templates/ru/restart.tmpl
-share/cups/templates/ru/samba-export.tmpl
-share/cups/templates/ru/samba-exported.tmpl
 share/cups/templates/ru/search.tmpl
 share/cups/templates/ru/set-printer-options-header.tmpl
 share/cups/templates/ru/set-printer-options-trailer.tmpl
-share/cups/templates/ru/subscription-added.tmpl
-share/cups/templates/ru/subscription-canceled.tmpl
 share/cups/templates/ru/test-page.tmpl
 share/cups/templates/ru/trailer.tmpl
 share/cups/templates/ru/users.tmpl
-share/cups/templates/samba-export.tmpl
-share/cups/templates/samba-exported.tmpl
 share/cups/templates/search.tmpl
 share/cups/templates/set-printer-options-header.tmpl
 share/cups/templates/set-printer-options-trailer.tmpl
-share/cups/templates/subscription-added.tmpl
-share/cups/templates/subscription-canceled.tmpl
 share/cups/templates/test-page.tmpl
 share/cups/templates/trailer.tmpl
 share/cups/templates/users.tmpl
@@ -693,6 +692,7 @@ share/doc/cups/es/
 share/doc/cups/es/index.html
 share/doc/cups/help/
 share/doc/cups/help/accounting.html
+share/doc/cups/help/admin.html
 share/doc/cups/help/api-admin.html
 share/doc/cups/help/api-filter.html
 share/doc/cups/help/api-ppd.html
@@ -700,6 +700,7 @@ share/doc/cups/help/api-raster.html
 share/doc/cups/help/cgi.html
 share/doc/cups/help/cupspm.html
 share/doc/cups/help/encryption.html
+share/doc/cups/help/firewalls.html
 share/doc/cups/help/glossary.html
 share/doc/cups/help/kerberos.html
 share/doc/cups/help/license.html
@@ -713,15 +714,16 @@ share/doc/cups/help/man-cups-lpd.html
 share/doc/cups/help/man-cups-snmp.html
 share/doc/cups/help/man-cups.html
 share/doc/cups/help/man-cupsaccept.html
-share/doc/cups/help/man-cupsaddsmb.html
 share/doc/cups/help/man-cupsd-helper.html
 share/doc/cups/help/man-cupsd-logs.html
 share/doc/cups/help/man-cupsd.conf.html
 share/doc/cups/help/man-cupsd.html
 share/doc/cups/help/man-cupsenable.html
-share/doc/cups/help/man-cupstestdsc.html
 share/doc/cups/help/man-cupstestppd.html
 share/doc/cups/help/man-filter.html
+share/doc/cups/help/man-ippevepcl.html
+share/doc/cups/help/man-ippeveprinter.html
+share/doc/cups/help/man-ippfind.html
 share/doc/cups/help/man-ipptool.html
 share/doc/cups/help/man-ipptoolfile.html
 share/doc/cups/help/man-lp.html
@@ -758,8 +760,6 @@ share/doc/cups/help/spec-banner.html
 share/doc/cups/help/spec-command.html
 share/doc/cups/help/spec-design.html
 share/doc/cups/help/spec-ipp.html
-share/doc/cups/help/spec-pdf.html
-share/doc/cups/help/spec-postscript.html
 share/doc/cups/help/spec-ppd.html
 share/doc/cups/help/spec-raster.html
 share/doc/cups/help/spec-stp.html
@@ -833,6 +833,7 @@ share/examples/cups/ssl/
 share/locale/ca/cups_ca.po
 share/locale/cs/cups_cs.po
 share/locale/de/cups_de.po
+share/locale/en/cups_en.po
 share/locale/es/cups_es.po
 share/locale/fr/cups_fr.po
 share/locale/it/cups_it.po

@@ -1,0 +1,18 @@
+$OpenBSD: patch-cups_getifaddrs-internal_h,v 1.1 2019/08/25 09:59:18 ajacoutot Exp $
+
+In file included from getifaddrs.c:15:
+In file included from ./getifaddrs-internal.h:42:
+/usr/include/resolv.h:137:14: error: array has incomplete element type 'struct sockaddr_in'
+                nsaddr_list[MAXNS];     /* address of name server */
+
+Index: cups/getifaddrs-internal.h
+--- cups/getifaddrs-internal.h.orig
++++ cups/getifaddrs-internal.h
+@@ -38,6 +38,7 @@ typedef int socklen_t;
+ #  endif /* __APPLE__ && !_SOCKLEN_T */
+ 
+ #  ifndef _WIN32
++#    include <netinet/in.h>
+ #    include <net/if.h>
+ #    include <resolv.h>
+ #    ifdef HAVE_GETIFADDRS

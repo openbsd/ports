@@ -1,9 +1,9 @@
-$OpenBSD: patch-test_run-stp-tests_sh,v 1.22 2019/03/23 12:19:54 ajacoutot Exp $
+$OpenBSD: patch-test_run-stp-tests_sh,v 1.23 2019/08/25 09:59:18 ajacoutot Exp $
 
 Index: test/run-stp-tests.sh
 --- test/run-stp-tests.sh.orig
 +++ test/run-stp-tests.sh
-@@ -34,7 +34,7 @@ umask 022
+@@ -31,7 +31,7 @@ umask 022
  # Make the IPP test program...
  #
  
@@ -12,12 +12,12 @@ Index: test/run-stp-tests.sh
  
  #
  # Solaris has a non-POSIX grep in /bin...
-@@ -586,7 +586,7 @@ else
- 	LD_LIBRARY_PATH="$root/cups:$root/filter:$LD_LIBRARY_PATH"
- fi
+@@ -595,7 +595,7 @@ if test -f "$root/cups/libcups.so.2"; then
+ 		LD_LIBRARY_PATH="$root/cups:$LD_LIBRARY_PATH"
+ 	fi
  
--LD_PRELOAD="$root/cups/libcups.so.2:$root/filter/libcupsimage.so.2"
-+LD_PRELOAD="$root/cups/libcups.so.${LIBcups_VERSION}:$root/filter/libcupsimage.so.${LIBcupsimage_VERSION}"
- if test `uname` = SunOS -a -r /usr/lib/libCrun.so.1; then
- 	LD_PRELOAD="/usr/lib/libCrun.so.1:$LD_PRELOAD"
- fi
+-	LD_PRELOAD="$root/cups/libcups.so.2:$root/cups/libcupsimage.so.2"
++	LD_PRELOAD="$root/cups/libcups.so.${LIBcups_VERSION}:$root/cups/libcupsimage.so.${LIBcupsimage_VERSION}"
+ 	if test `uname` = SunOS -a -r /usr/lib/libCrun.so.1; then
+ 		LD_PRELOAD="/usr/lib/libCrun.so.1:$LD_PRELOAD"
+ 	fi
