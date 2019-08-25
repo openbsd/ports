@@ -1,0 +1,8 @@
+Exception::Class::TryCatch provides syntactic sugar for use with
+Exception::Class using the familiar keywords try and catch. Its
+primary objective is to allow users to avoid dealing directly with
+$@ by ensuring that any exceptions caught in an eval are captured
+as Exception::Class objects, whether they were thrown objects to
+begin with or whether the error resulted from die. This means that
+users may immediately use isa and various Exception::Class methods
+to process the exception.

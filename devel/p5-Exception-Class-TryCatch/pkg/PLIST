@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/25 22:42:28 afresh1 Exp $
+${P5SITE}/Exception/Class/TryCatch.pm
+@man man/man3p/Exception::Class::TryCatch.3p
