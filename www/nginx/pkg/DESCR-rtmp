@@ -1,0 +1,4 @@
+nginx-rtmp is an nginx module to allow RTMP/HLS/MPEG-DASH streaming.
+It has features like live streaming, relaying, saving and transcoding
+on the fly using ffmpeg.
+It supports http callbacks and controls.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2019/08/19 13:43:21 robert Exp $
+# $OpenBSD: Makefile,v 1.137 2019/08/25 12:22:04 solene Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -14,12 +14,14 @@ COMMENT-lua=		nginx lua scripting module
 COMMENT-headers_more=	nginx module for setting/adding/clearing headers
 COMMENT-perl=		nginx perl scripting module
 COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
+COMMENT-rtmp=		nginx module for RTMP streaming
 
 VERSION=	1.16.1
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
 REVISION-main=	0
+VERSION-rtmp=1.2.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-image_filter=	nginx-image_filter-${VERSION}
@@ -33,6 +35,8 @@ PKGNAME-lua=		nginx-lua-${VERSION}
 PKGNAME-headers_more=	nginx-headers-more-${VERSION}
 PKGNAME-perl=		nginx-perl-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
+PKGNAME-rtmp=		nginx-rtmp-${VERSION}
+
 
 MASTER_SITES=	https://nginx.org/download/
 MASTER_SITES0=	https://github.com/simpl/ngx_devel_kit/archive/
@@ -41,13 +45,15 @@ MASTER_SITES2=	https://github.com/openresty/lua-nginx-module/archive/
 MASTER_SITES3=	https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master/
 MASTER_SITES4=	https://github.com/openresty/headers-more-nginx-module/archive/
 MASTER_SITES5=	https://github.com/kvspb/nginx-auth-ldap/archive/
+MASTER_SITES6=	https://github.com/arut/nginx-rtmp-module/archive/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		ngx_devel_kit-{}v0.3.0.tar.gz:0 \
 		naxsi-{}0.55.3.tar.gz:1 \
 		lua-nginx-module-{}v0.10.11.tar.gz:2 \
 		headers-more-nginx-module-{}v0.33.tar.gz:4 \
-		nginx-auth-ldap-0.20170725{42d195d7a7575ebab1c369ad3fc5d78dc2c2669c}.tar.gz:5
+		nginx-auth-ldap-0.20170725{42d195d7a7575ebab1c369ad3fc5d78dc2c2669c}.tar.gz:5 \
+		nginx-rtmp-module-{v${VERSION-rtmp}}.tar.gz:6
 
 HOMEPAGE=	http://nginx.org/
 
@@ -57,7 +63,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES =	-main -image_filter -geoip -xslt -mailproxy -stream \
-			-naxsi -perl -passenger -headers_more -ldap_auth -lua
+			-naxsi -perl -passenger -headers_more -ldap_auth -lua -rtmp
 
 FLAVOR ?=
 PSEUDO_FLAVORS =	no_lua no_passenger
@@ -86,6 +92,8 @@ LIB_DEPENDS-image_filter=graphics/gd
 LIB_DEPENDS-geoip=	net/GeoIP
 LIB_DEPENDS-ldap_auth=	databases/openldap
 LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS}
+LIB_DEPENDS-rtmp=	textproc/libxml \
+			textproc/libxslt
 
 MODLUA_RUNDEP=		No
 RUN_DEPENDS=		www/nginx,-main=${VERSION}
@@ -108,6 +116,7 @@ PREFIX-ldap_auth=	${NGINX_MODULES_DIR}
 PREFIX-lua=		${NGINX_MODULES_DIR}
 PREFIX-headers_more=	${NGINX_MODULES_DIR}
 PREFIX-passenger=	${NGINX_MODULES_DIR}
+PREFIX-rtmp=	${NGINX_MODULES_DIR}
 
 CFLAGS+=	-Wall -Wpointer-arith \
 		-I "${LOCALBASE}/include/libxml2" \
@@ -133,6 +142,10 @@ MODRUBY_BUILDDEP=	No
 MODRUBY_RUNDEP=		No
 BUILD_DEPENDS+=		${MODRUBY_PKG_PREFIX}-passenger-*:www/ruby-passenger
 CONFIGURE_ARGS+=	--add-dynamic-module=${LOCALBASE}/lib/phusion-passenger${GEM_BIN_SUFFIX}/src/nginx_module
+.endif
+
+.if ${BUILD_PACKAGES:M-rtmp}
+CONFIGURE_ARGS+=	--add-dynamic-module=${WRKDIR}/nginx-rtmp-module-${VERSION-rtmp}/
 .endif
 
 CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
