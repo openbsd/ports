@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.799 2019/08/19 21:09:41 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.800 2019/08/26 17:51:38 pamela Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1326,6 +1326,7 @@ my @msg = (
 	"no longer packageable", #11
 	"replace with IMAPSieve, see https://wiki.dovecot.org/HowTo/AntispamWithSieve", #12
 	"has a dependency on obsolete software", #13
+	"python2 port superseded by python3 version", #14
 );
 
 # ->is_base_system($handle, $state):
