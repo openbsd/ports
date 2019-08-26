@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2019/08/25 12:22:04 solene Exp $
+# $OpenBSD: Makefile,v 1.138 2019/08/26 06:58:08 solene Exp $
 
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
@@ -53,7 +53,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		lua-nginx-module-{}v0.10.11.tar.gz:2 \
 		headers-more-nginx-module-{}v0.33.tar.gz:4 \
 		nginx-auth-ldap-0.20170725{42d195d7a7575ebab1c369ad3fc5d78dc2c2669c}.tar.gz:5 \
-		nginx-rtmp-module-{v${VERSION-rtmp}}.tar.gz:6
+		nginx-rtmp-module-{}v${VERSION-rtmp}.tar.gz:6
 
 HOMEPAGE=	http://nginx.org/
 
