@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2019/07/25 10:04:19 pvk Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2019/08/26 17:35:21 jasper Exp $
 @pkgpath sysutils/ansible
 bin/ansible
 bin/ansible-config
@@ -348,6 +348,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/aws/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/aws/${MODPY_PYCACHE}elbv2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/aws/${MODPY_PYCACHE}iam.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/aws/${MODPY_PYCACHE}rds.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/aws/${MODPY_PYCACHE}s3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/aws/${MODPY_PYCACHE}urls.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/aws/${MODPY_PYCACHE}waf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/aws/${MODPY_PYCACHE}waiters.${MODPY_PYC_MAGIC_TAG}pyc
@@ -359,6 +360,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/aws/elb_utils.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/aws/elbv2.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/aws/iam.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/aws/rds.py
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/aws/s3.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/aws/urls.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/aws/waf.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/aws/waiters.py
@@ -6560,14 +6562,10 @@ lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/delle
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/dellemc/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/dellemc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/dellemc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/dellemc/idrac/
-lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/dellemc/idrac/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/dellemc/idrac/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/dellemc/idrac/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/dellemc/idrac/${MODPY_PYCACHE}idrac_firmware.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/dellemc/idrac/${MODPY_PYCACHE}idrac_server_config_profile.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/dellemc/idrac/idrac_firmware.py
-lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/dellemc/idrac/idrac_server_config_profile.py
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/dellemc/${MODPY_PYCACHE}idrac_firmware.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/dellemc/${MODPY_PYCACHE}idrac_server_config_profile.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/dellemc/idrac_firmware.py
+lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/dellemc/idrac_server_config_profile.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/foreman/
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/foreman/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible/modules/remote_management/foreman/${MODPY_PYCACHE}/
@@ -8981,6 +8979,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/vars/reserved.py
 share/doc/ansible/
 share/doc/ansible/COPYING
 share/doc/ansible/README.rst
+share/doc/ansible/html/reference_appendices/general_precedence.html
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/ansible/
 @sample ${SYSCONFDIR}/ansible/
