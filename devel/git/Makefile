@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.202 2019/08/15 16:24:46 jca Exp $
+# $OpenBSD: Makefile,v 1.203 2019/08/26 23:35:24 kn Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
 COMMENT-x11 =	GIT - graphical tools
 
-V =		2.22.0
-REVISION =	0
-REVISION-main =	1
+V =		2.23.0
 DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
@@ -15,7 +13,8 @@ CATEGORIES =	devel
 
 HOMEPAGE =	https://git-scm.com/
 
-MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
+MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>, \
+		Klemens Nanni <kn@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
@@ -43,7 +42,8 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 
 MULTI_PACKAGES =	-main -svn -x11
 
-WANTLIB-main =		c crypto curl expat iconv intl nghttp2 pthread ssl z
+WANTLIB-main =		c charset crypto curl expat iconv intl nghttp2 pthread \
+			ssl z
 
 RUN_DEPENDS-main =	devel/cvsps \
 			devel/p5-Error

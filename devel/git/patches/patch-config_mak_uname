@@ -1,11 +1,11 @@
-$OpenBSD: patch-config_mak_uname,v 1.9 2019/06/26 15:07:57 kn Exp $
+$OpenBSD: patch-config_mak_uname,v 1.10 2019/08/26 23:35:24 kn Exp $
 
 OpenBSD wants DIR_HAS_BSD_GROUP_SEMANTICS, just like FreeBSD
 
 Index: config.mak.uname
---- config.mak.uname.pat.orig
+--- config.mak.uname.orig
 +++ config.mak.uname
-@@ -228,6 +228,7 @@ endif
+@@ -247,6 +247,7 @@ endif
  ifeq ($(uname_S),OpenBSD)
  	NO_STRCASESTR = YesPlease
  	NO_MEMMEM = YesPlease

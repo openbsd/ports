@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.89 2019/06/26 15:07:57 kn Exp $
+@comment $OpenBSD: PLIST-main,v 1.90 2019/08/26 23:35:24 kn Exp $
 @pkgpath devel/git
 @newgroup _gitdaemon:778
 @newuser _gitdaemon:778:_gitdaemon:daemon:GIT Daemon:/nonexistent:/sbin/nologin
@@ -56,6 +56,7 @@ libexec/git/git-cvsserver
 @bin libexec/git/git-diff-tree
 @bin libexec/git/git-difftool
 libexec/git/git-difftool--helper
+@bin libexec/git/git-env--helper
 @bin libexec/git/git-fast-export
 @bin libexec/git/git-fast-import
 @bin libexec/git/git-fetch
@@ -120,8 +121,6 @@ libexec/git/git-quiltimport
 @bin libexec/git/git-range-diff
 @bin libexec/git/git-read-tree
 @bin libexec/git/git-rebase
-libexec/git/git-rebase--am
-libexec/git/git-rebase--common
 libexec/git/git-rebase--preserve-merges
 @bin libexec/git/git-receive-pack
 @bin libexec/git/git-reflog
@@ -138,6 +137,7 @@ libexec/git/git-rebase--preserve-merges
 libexec/git/git-request-pull
 @bin libexec/git/git-rerere
 @bin libexec/git/git-reset
+@bin libexec/git/git-restore
 @bin libexec/git/git-rev-list
 @bin libexec/git/git-rev-parse
 @bin libexec/git/git-revert
@@ -160,6 +160,7 @@ libexec/git/git-sh-setup
 libexec/git/git-submodule
 @bin libexec/git/git-submodule--helper
 libexec/git/git-subtree
+@bin libexec/git/git-switch
 @bin libexec/git/git-symbolic-ref
 @bin libexec/git/git-tag
 @bin libexec/git/git-unpack-file
@@ -314,6 +315,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-request-pull.1
 @man man/man1/git-rerere.1
 @man man/man1/git-reset.1
+@man man/man1/git-restore.1
 @man man/man1/git-rev-list.1
 @man man/man1/git-rev-parse.1
 @man man/man1/git-revert.1
@@ -335,6 +337,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-stripspace.1
 @man man/man1/git-submodule.1
 @man man/man1/git-subtree.1
+@man man/man1/git-switch.1
 @man man/man1/git-symbolic-ref.1
 @man man/man1/git-tag.1
 @man man/man1/git-unpack-file.1
