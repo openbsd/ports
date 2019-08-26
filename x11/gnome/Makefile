@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.278 2019/05/08 21:29:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.279 2019/08/26 12:51:05 mpi Exp $
 
      SUBDIR =
+     SUBDIR += accerciser
      SUBDIR += adwaita-icon-theme
      SUBDIR += aisleriot
      SUBDIR += amtk
