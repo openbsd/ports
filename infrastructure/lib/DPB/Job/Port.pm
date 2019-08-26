@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.193 2019/06/21 23:14:05 espie Exp $
+# $OpenBSD: Port.pm,v 1.194 2019/08/26 16:51:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -693,7 +693,17 @@ sub run
 			$opt .= 'q';
 		}
 		my @cmd = ('/usr/sbin/pkg_delete', $opt, sort keys %$h);
-		print join(' ', @cmd, "\n");
+		my $s = join(' ', @cmd)."\n";
+		print $s;
+		if (!$core->prop->{silentjunking}) {
+			for my $j ($core->same_host_jobs) {
+				next if $j eq $job;
+				print {$j->{logfh}} 
+				    ">> JUNKING in $job->{path}:\n",
+				    ">>    $s";
+
+			}
+		}
 		$core->shell->as_root->exec(@cmd);
 		exit(1);
 	} else {
@@ -707,7 +717,14 @@ sub finalize
 
 	# did we really run ? then clean up stuff
 	if ($core->{status} == 0) {
-		$core->prop->{last_junk} = $core->job->{v};
+		my $job = $core->job;
+		if (!$core->prop->{silentjunking}) {
+			for my $j ($core->same_host_jobs) {
+				next if $j eq $job;
+				print {$j->{logfh}} ">> JUNKING end\n";
+			}
+		}
+		$core->prop->{last_junk} = $job->{v};
 		$core->prop->{junk_count} = 0;
 		$core->prop->{ports_count} = 0;
 		$core->prop->{depends_count} = 0;
