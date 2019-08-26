@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.642 2019/08/20 08:37:39 feinerer Exp $
+# $OpenBSD: Makefile,v 1.643 2019/08/26 12:41:33 mpi Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -241,6 +241,8 @@
      SUBDIR += py-virtualdisplay,python3
      SUBDIR += py-wxPython
      SUBDIR += py-xcbgen
+     SUBDIR += py-xlib
+     SUBDIR += py-xlib,python3
      SUBDIR += qrfcview
      SUBDIR += qt3
      SUBDIR += qt4
