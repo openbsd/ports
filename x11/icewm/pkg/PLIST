@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2019/04/29 16:12:28 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.20 2019/08/26 19:43:45 bcallah Exp $
 @bin bin/icehelp
 @bin bin/icesh
 @bin bin/icesound
@@ -9,7 +9,6 @@ bin/icewm-menu-xrandr
 bin/icewm-set-gnomewm
 @bin bin/icewmbg
 @bin bin/icewmhint
-@bin bin/icewmtray
 @man man/man1/icehelp.1
 @man man/man1/icesh.1
 @man man/man1/icesound.1
@@ -19,7 +18,6 @@ bin/icewm-set-gnomewm
 @man man/man1/icewm.1
 @man man/man1/icewmbg.1
 @man man/man1/icewmhint.1
-@man man/man1/icewmtray.1
 @man man/man5/icewm-env.5
 @man man/man5/icewm-focus_mode.5
 @man man/man5/icewm-keys.5
@@ -57,7 +55,6 @@ share/doc/icewm/icewm.1.html
 share/doc/icewm/icewm.html
 share/doc/icewm/icewmbg.1.html
 share/doc/icewm/icewmhint.1.html
-share/doc/icewm/icewmtray.1.html
 share/icewm/
 share/icewm/icons/
 share/icewm/icons/about_16x16.xpm

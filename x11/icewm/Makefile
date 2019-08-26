@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.69 2019/06/13 21:53:34 bcallah Exp $
+# $OpenBSD: Makefile,v 1.70 2019/08/26 19:43:45 bcallah Exp $
 
-V=		1.5.5
+V=		1.6.1
 COMMENT=	small and fast window manager
 DISTNAME=	icewm-${V}
-EXTRACT_SUFX=	.tar.xz
+EXTRACT_SUFX=	.tar.lz
 CATEGORIES=	x11
 
 HOMEPAGE=	https://www.ice-wm.org/
-MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # LGPLv2 only
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} FLAC ICE SM X11 Xext Xft Xinerama
-WANTLIB += Xrandr Xrender ao c expat ffi fontconfig freetype fribidi
-WANTLIB += gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 iconv intl m ogg pcre sndfile
-WANTLIB += vorbis vorbisenc xcb z
+WANTLIB += ${COMPILER_LIBCXX} FLAC ICE SM X11 Xcomposite Xdamage
+WANTLIB += Xext Xfixes Xft Xinerama Xrandr Xrender ao c expat
+WANTLIB += ffi fontconfig freetype fribidi gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv intl
+WANTLIB += m ogg pcre sndfile vorbis vorbisenc xcb z
 
 COMPILER=	base-clang ports-gcc base-gcc
 
@@ -47,12 +46,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 # make: don't know how to make %.html: (prerequisite of: icewm.html)
 USE_GMAKE=	Yes
-
-.include <bsd.port.arch.mk>
-
-.if ${PROPERTIES:Mapm}
-PATCH_LIST=	patch-* apm-*
-.endif
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/doc/icewm.adoc

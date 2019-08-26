@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_yapp_cc,v 1.7 2019/04/29 16:12:28 bcallah Exp $
+$OpenBSD: patch-src_yapp_cc,v 1.8 2019/08/26 19:43:45 bcallah Exp $
 
 Index: src/yapp.cc
 --- src/yapp.cc.orig
 +++ src/yapp.cc
-@@ -265,7 +265,7 @@ int YApplication::mainLoop() {
+@@ -264,7 +264,7 @@ int YApplication::mainLoop() {
              // This is irrelevant when using monotonic clocks:
              // if time travel to past, decrease the timeouts
              if (diff < zerotime()) {
--                warn("time warp of %ld.%06ld", diff.tv_sec, diff.tv_usec);
+-                warn("time warp of %ld.%06ld", long(diff.tv_sec), diff.tv_usec);
 +                warn("time warp of %lld.%06ld", diff.tv_sec, diff.tv_usec);
                  decreaseTimeouts(diff);
              } else {
