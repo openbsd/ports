@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1476 2019/08/20 11:07:07 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1477 2019/08/26 23:38:12 kn Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1660,7 +1660,7 @@ _LOCKNAME = ${PKGNAME}
 .    if empty(_LOCKS_HELD:M${_i})
 _DO_LOCK = \
 	lock=${_LOCKNAME}; \
-	_LOCKS_HELD="${_LOCKS_HELD} ${_LOCKNAME}"; export _LOCKS_HELD; \
+	export _LOCKS_HELD="${_LOCKS_HELD} ${_LOCKNAME}"; \
 	${_SIMPLE_LOCK}
 .    endif
 .  endfor
@@ -3149,8 +3149,7 @@ license-check:
 .  if ${PERMIT_PACKAGE${_S}:L} == "yes"
 	@SUBPACKAGE=${_S} PKGPATH=${PKGPATH} ${MAKE} all-dir-depends|${_sort_dependencies}|while read subdir; do \
 		${_flavor_fragment}; \
-		_MASTER_PERMIT=${PERMIT_PACKAGE${_S}:Q}; \
-		export _MASTER_PERMIT; \
+		export _MASTER_PERMIT=${PERMIT_PACKAGE${_S}:Q}; \
 		eval $$toset ${MAKE} _license-check; \
 	done
 .  endif
