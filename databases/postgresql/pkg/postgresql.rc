@@ -1,11 +1,9 @@
 #!/bin/ksh
 #
-# $OpenBSD: postgresql.rc,v 1.12 2018/01/11 19:27:01 rpe Exp $
-
-datadir="/var/postgresql/data"
+# $OpenBSD: postgresql.rc,v 1.13 2019/08/27 19:49:46 awolk Exp $
 
 daemon="${TRUEPREFIX}/bin/pg_ctl"
-daemon_flags="-w -l /var/postgresql/logfile"
+daemon_flags="-D /var/postgresql/data -w -l /var/postgresql/logfile"
 daemon_user="_postgresql"
 
 . /etc/rc.d/rc.subr
@@ -13,21 +11,20 @@ daemon_user="_postgresql"
 rc_usercheck=NO
 
 rc_check() {
-	${rcexec} "${daemon} -D ${datadir} status"
+	${rcexec} "${daemon} status ${daemon_flags}"
 }
 
 rc_reload() {
-	${rcexec} "${daemon} -D ${datadir} reload"
+	${rcexec} "${daemon} reload ${daemon_flags}"
 }
 
 rc_start() {
-	rm -f ${datadir}/postmaster.pid
-	${rcexec} "${daemon} -D ${datadir} start ${daemon_flags}"
+	${rcexec} "${daemon} start ${daemon_flags}"
 }
 
 rc_stop() {
-	${rcexec} "${daemon} -D ${datadir} stop -m fast" || \
-		${rcexec} "${daemon} -D ${datadir} stop -m immediate"
+	${rcexec} "${daemon} stop ${daemon_flags} -m fast" || \
+		${rcexec} "${daemon} stop ${daemon_flags} -m immediate"
 }
 
 rc_cmd $1

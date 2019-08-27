@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.255 2019/08/12 16:40:40 pea Exp $
+# $OpenBSD: Makefile,v 1.256 2019/08/27 19:49:46 awolk Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -9,6 +9,7 @@ COMMENT-pg_upgrade=Support for upgrading PostgreSQL data from previous version
 
 VERSION=	11.5
 PREV_MAJOR=	10
+REVISION-server=0
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
