@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.85 2019/08/17 08:18:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.86 2019/08/27 11:24:46 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -995,24 +995,29 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/devicefarm/create-uploa
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/devicefarm/get-upload.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/devicefarm/list-projects.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/accept-direct-connect-gateway-association-proposal.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/allocate-connection-on-interconnect.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/allocate-hosted-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/allocate-private-virtual-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/allocate-public-virtual-interface.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/allocate-transit-virtual-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/associate-connection-with-lag.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/associate-hosted-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/associate-virtual-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/confirm-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/confirm-private-virtual-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/confirm-public-virtual-interface.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/confirm-transit-virtual-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-bgp-peer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-connection.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-direct-connect-gateway-association-proposal.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-direct-connect-gateway-association.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-direct-connect-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-interconnect.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-lag.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-private-virtual-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-public-virtual-interface.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/create-transit-virtual-interface.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-bgp-peer.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-direct-connect-gateway-association.rst
@@ -1023,6 +1028,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-vi
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connection-loa.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connections-on-interconnect.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connections.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-direct-connect-gateway-association-proposals.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-direct-connect-gateway-associations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-direct-connect-gateway-attachments.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-direct-connect-gateways.rst
@@ -1038,7 +1044,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/disassociate-connection-from-lag.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/tag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/untag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/update-direct-connect-gateway-association.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/update-lag.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/update-virtual-interface-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/discovery/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/discovery/describe-agents.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/discovery/describe-configurations.rst
