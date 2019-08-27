@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.459 2019/08/27 15:30:09 robert Exp $
+# $OpenBSD: Makefile,v 1.460 2019/08/27 19:59:38 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,7 +12,7 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Chromium browser
 
-V=			76.0.3809.100
+V=			76.0.3809.132
 ELECTRON_V=		6.0.3
 
 DISTNAME=		chromium-${V}
@@ -117,6 +117,7 @@ BUILDTYPE=	Release
 SUBST_VARS+=	WRKSRC WRKDIR ELECTRON_ARCH
 
 .if ${FLAVOR:Melectron}
+REVISION=		0
 ELECTRON_V=		6.0.3
 DISTNAME=		electron-${ELECTRON_V}
 WRKDIST=		${WRKDIR}/chromium-${V}
@@ -133,7 +134,6 @@ BUILD_DEPENDS+=		devel/libnotify
 LIB_DEPENDS+=		www/nghttp2
 WANTLIB+=		nghttp2
 .else
-REVISION=		1
 EXTRACT_ONLY=		${DISTFILES:C/electron.*//}
 ALL_TARGET=		chrome chromedriver
 TEST_TARGET=		base_unittests
