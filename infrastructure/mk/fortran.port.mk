@@ -1,16 +1,12 @@
-# $OpenBSD: fortran.port.mk,v 1.16 2019/05/08 20:13:57 bcallah Exp $
+# $OpenBSD: fortran.port.mk,v 1.17 2019/08/27 14:30:38 jca Exp $
 
-MODFORTRAN_COMPILER ?= g77
+MODFORTRAN_COMPILER ?= gfortran
 
 .if empty(MODFORTRAN_COMPILER)
 ERRORS += "Fatal: need to specify MODFORTRAN_COMPILER"
 .endif
 
-.if ${MODFORTRAN_COMPILER:L} == "g77"
-MODFORTRAN_BUILD_DEPENDS += lang/g77 devel/libf2c
-MODFORTRAN_LIB_DEPENDS += devel/libf2c
-MODFORTRAN_WANTLIB += g2c
-.elif ${MODFORTRAN_COMPILER:L} == "gfortran"
+.if ${MODFORTRAN_COMPILER:L} == "gfortran"
 MODULES += gcc4
 MODGCC4_ARCHS ?= *
 MODGCC4_LANGS += fortran
@@ -22,5 +18,5 @@ MODFORTRAN_BUILD_DEPENDS += lang/flang/flang
 MODFORTRAN_LIB_DEPENDS += lang/flang/flang
 MODFORTRAN_WANTLIB += flang flangmain flangrti pgmath
 .else
-ERRORS += "Fatal: MODFORTRAN_COMPILER must be one of: g77 gfortran flang"
+ERRORS += "Fatal: MODFORTRAN_COMPILER must be one of: gfortran flang"
 .endif
