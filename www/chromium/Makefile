@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.458 2019/08/24 15:39:26 robert Exp $
+# $OpenBSD: Makefile,v 1.459 2019/08/27 15:30:09 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -114,7 +114,7 @@ BUILDTYPE=	Debug
 BUILDTYPE=	Release
 .endif
 
-SUBST_VARS+=	WRKSRC WRKDIR
+SUBST_VARS+=	WRKSRC WRKDIR ELECTRON_ARCH
 
 .if ${FLAVOR:Melectron}
 ELECTRON_V=		6.0.3
@@ -168,12 +168,15 @@ GN_ARGS=	enable_nacl=false \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\"
 
 .if ${MACHINE_ARCH} == "i386"
+ELECTRON_ARCH=	ia32
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memory\"
 .else
+ELECTRON_ARCH=	x64
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
 .endif
 
 .if ${MACHINE_ARCH} == "aarch64"
+ELECTRON_ARCH=	arm64
 PKG_ARGS+=	-Dswiftshader=0
 .else
 PKG_ARGS+=	-Dswiftshader=1

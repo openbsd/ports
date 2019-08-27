@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-electron,v 1.1 2019/08/22 19:20:04 robert Exp $
+@comment $OpenBSD: PLIST-electron,v 1.2 2019/08/27 15:30:09 robert Exp $
 bin/electron
 electron/
 electron/chrome_100_percent.pak
@@ -119,9 +119,9 @@ electron/natives_blob.bin
 electron/protoc
 electron/releases/
 electron/releases/SHASUMS256.txt
-electron/releases/chromedriver-v6.0.3-openbsd-x64.zip
-electron/releases/electron-v6.0.3-openbsd-x64.zip
-electron/releases/mksnapshot-v6.0.3-openbsd-x64.zip
+electron/releases/chromedriver-v6.0.3-openbsd-${ELECTRON_ARCH}.zip
+electron/releases/electron-v6.0.3-openbsd-${ELECTRON_ARCH}.zip
+electron/releases/mksnapshot-v6.0.3-openbsd-${ELECTRON_ARCH}.zip
 electron/resources/
 electron/resources.pak
 electron/resources/default_app.asar
