@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2019/04/28 20:51:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/08/27 15:35:55 landry Exp $
 
 COMMENT =	grid view web interface plugin for buildbot
-REVISION =	0
 
 PART = grid-view
 BUILD_DEPENDS =	devel/py-buildbot/pkg

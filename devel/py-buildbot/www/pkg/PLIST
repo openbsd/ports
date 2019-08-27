@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/05/28 18:54:26 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/08/27 15:35:55 landry Exp $
 @conflict py-buildbot-www-*
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/
 lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -12,20 +12,29 @@ lib/python${MODPY_VERSION}/site-packages/buildbot_www/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/buildbot_www/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/
-lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/d3.min.js
-lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/fonts/
-lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/fonts/FontAwesome.otf
-lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/fonts/fontawesome-webfont.eot
-lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/fonts/fontawesome-webfont.svg
-lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/fonts/fontawesome-webfont.ttf
-lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/fonts/fontawesome-webfont.woff
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/2.js
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/2.js.map
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/448c34a56d699c29117adc64c43affeb.woff2
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/674f50d287a8c48dc19ba404d20fe713.eot
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/af7ae505a9eed503f8b8e6982036873e.woff2
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/b06871f281fee6b241d60582ae9369b9.ttf
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/browser-warning-list.js
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/browser-warning.css
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/browser-warning.js
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/e18bbf611f2a2e43afc071aa2f4e1512.ttf
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/f4769f9bdb7466be65088239c12046d1.eot
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/fa2772327f55d8198301fdb8bcfc8158.woff
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/fee66e712a8a08eef5805a46892932ad.woff
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/img/
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/img/favicon.ico
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/img/fontawesome-webfont.svg
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/img/glyphicons-halflings-regular.svg
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/img/icon.png
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/img/icon.svg
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/img/icon16.svg
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/img/nobody.png
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/index.html
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/scripts.js
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/scripts.js.map
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/styles.css
-lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/tests.js
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/styles.css.map

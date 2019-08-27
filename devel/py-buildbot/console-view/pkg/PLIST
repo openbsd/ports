@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/05/28 18:54:26 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/08/27 15:35:55 landry Exp $
 @conflict py-buildbot-console-view-*
 lib/python${MODPY_VERSION}/site-packages/buildbot_console_view/
 lib/python${MODPY_VERSION}/site-packages/buildbot_console_view-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -12,7 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot_console_view/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/buildbot_console_view/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/buildbot_console_view/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_console_view/static/
-lib/python${MODPY_VERSION}/site-packages/buildbot_console_view/static/fixtures.js
 lib/python${MODPY_VERSION}/site-packages/buildbot_console_view/static/scripts.js
+lib/python${MODPY_VERSION}/site-packages/buildbot_console_view/static/scripts.js.map
 lib/python${MODPY_VERSION}/site-packages/buildbot_console_view/static/styles.css
-lib/python${MODPY_VERSION}/site-packages/buildbot_console_view/static/tests.js
+lib/python${MODPY_VERSION}/site-packages/buildbot_console_view/static/styles.css.map
