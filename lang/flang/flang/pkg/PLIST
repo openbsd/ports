@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 00:09:26 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/08/27 16:02:47 bcallah Exp $
 @bin bin/flang1
 @bin bin/flang2
+include/__norm2.mod
+include/__norm2_i8.mod
 include/ieee_arithmetic.mod
 include/ieee_arithmetic_la.mod
 include/ieee_exceptions.mod

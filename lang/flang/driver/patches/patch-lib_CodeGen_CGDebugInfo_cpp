@@ -1,11 +1,11 @@
-$OpenBSD: patch-lib_CodeGen_CGDebugInfo_cpp,v 1.2 2019/07/17 21:33:33 bcallah Exp $
+$OpenBSD: patch-lib_CodeGen_CGDebugInfo_cpp,v 1.3 2019/08/27 16:02:47 bcallah Exp $
 
 Remove extra arguments found only in NVidia's forked LLVM.
 
 Index: lib/CodeGen/CGDebugInfo.cpp
 --- lib/CodeGen/CGDebugInfo.cpp.orig
 +++ lib/CodeGen/CGDebugInfo.cpp
-@@ -3265,7 +3265,7 @@ CGDebugInfo::getGlobalVariableForwardDeclaration(const
+@@ -3257,7 +3257,7 @@ CGDebugInfo::getGlobalVariableForwardDeclaration(const
    auto *GV = DBuilder.createTempGlobalVariableFwdDecl(
        DContext, Name, LinkageName, Unit, Line, getOrCreateType(T, Unit),
        !VD->isExternallyVisible(), nullptr, TemplateParameters,
@@ -14,7 +14,7 @@ Index: lib/CodeGen/CGDebugInfo.cpp
    FwdDeclReplaceMap.emplace_back(
        std::piecewise_construct,
        std::make_tuple(cast<VarDecl>(VD->getCanonicalDecl())),
-@@ -4215,7 +4215,7 @@ void CGDebugInfo::EmitGlobalVariable(llvm::GlobalVaria
+@@ -4207,7 +4207,7 @@ void CGDebugInfo::EmitGlobalVariable(llvm::GlobalVaria
          Var->hasLocalLinkage(),
          Expr.empty() ? nullptr : DBuilder.createExpression(Expr),
          getOrCreateStaticDataMemberDeclarationOrNull(D), TemplateParameters,
@@ -23,7 +23,7 @@ Index: lib/CodeGen/CGDebugInfo.cpp
      Var->addDebugInfo(GVE);
    }
    DeclCache[D->getCanonicalDecl()].reset(GVE);
-@@ -4284,7 +4284,7 @@ void CGDebugInfo::EmitGlobalVariable(const ValueDecl *
+@@ -4276,7 +4276,7 @@ void CGDebugInfo::EmitGlobalVariable(const ValueDecl *
    GV.reset(DBuilder.createGlobalVariableExpression(
        DContext, Name, StringRef(), Unit, getLineNumber(VD->getLocation()), Ty,
        true, InitExpr, getOrCreateStaticDataMemberDeclarationOrNull(VarD),
