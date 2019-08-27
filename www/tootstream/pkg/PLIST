@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/02 21:58:21 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/08/27 03:20:18 kmos Exp $
 bin/tootstream
 lib/python${MODPY_VERSION}/site-packages/tootstream/
 lib/python${MODPY_VERSION}/site-packages/tootstream-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/tootstream-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/tootstream-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/tootstream-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tootstream/__init__.py
-lib/python${MODPY_VERSION}/site-packages/tootstream/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tootstream/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tootstream/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tootstream/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tootstream/${MODPY_PYCACHE}toot.${MODPY_PYC_MAGIC_TAG}pyc
