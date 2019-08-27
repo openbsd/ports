@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.921 2019/08/25 22:56:10 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.922 2019/08/27 03:18:28 pamela Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -452,7 +452,6 @@
      SUBDIR += py-mako
      SUBDIR += py-mako,python3
      SUBDIR += py-mastodon.py
-     SUBDIR += py-mastodon.py,python3
      SUBDIR += py-mechanize
      SUBDIR += py-meld3
      SUBDIR += py-meld3,python3
