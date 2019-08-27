@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/13 21:38:33 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/08/27 23:02:55 kmos Exp $
 lib/python${MODPY_VERSION}/site-packages/arrow/
 lib/python${MODPY_VERSION}/site-packages/arrow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/arrow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -10,6 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/arrow-${MODPY_EGG_VERSION}-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/arrow/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/arrow/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/arrow/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/arrow/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/arrow/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/arrow/${MODPY_PYCACHE}arrow.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/arrow/${MODPY_PYCACHE}factory.${MODPY_PYC_MAGIC_TAG}pyc
@@ -17,6 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/arrow/${MODPY_PYCACHE}formatter.${MODPY
 lib/python${MODPY_VERSION}/site-packages/arrow/${MODPY_PYCACHE}locales.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/arrow/${MODPY_PYCACHE}parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/arrow/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/arrow/_version.py
 lib/python${MODPY_VERSION}/site-packages/arrow/api.py
 lib/python${MODPY_VERSION}/site-packages/arrow/arrow.py
 lib/python${MODPY_VERSION}/site-packages/arrow/factory.py
