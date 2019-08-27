@@ -1,4 +1,4 @@
-# $OpenBSD: xfce4.port.mk,v 1.28 2019/08/15 06:35:32 landry Exp $
+# $OpenBSD: xfce4.port.mk,v 1.29 2019/08/27 06:55:06 landry Exp $
 
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
@@ -97,5 +97,6 @@ MODXFCE4_post-install = for f in ${MODXFCE_PURGE_LA} ; do \
 LIB_DEPENDS+=	${MODXFCE_LIB_DEPENDS}
 WANTLIB+=	${MODXFCE_WANTLIB}
 RUN_DEPENDS+=	${MODXFCE_RUN_DEPENDS}
+CFLAGS+=	-std=gnu99
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
