@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/26 12:30:49 mpi Exp $
+# $OpenBSD: Makefile,v 1.2 2019/08/27 11:29:24 ajacoutot Exp $
 
 COMMENT =	 	X11 library for Python
 
@@ -14,7 +14,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES=		lang/python
 
-BUILD_DEPENDS =		devel/py-six${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR} \
+			devel/py-six${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
 
