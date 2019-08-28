@@ -1,4 +1,4 @@
-$OpenBSD: patch-test_unit_ProgramArgsTest_cpp,v 1.1.1.1 2017/06/20 17:12:15 landry Exp $
+$OpenBSD: patch-test_unit_ProgramArgsTest_cpp,v 1.2 2019/08/28 06:53:02 landry Exp $
 
 no wordexp on OpenBSD
 
@@ -6,7 +6,7 @@ Index: test/unit/ProgramArgsTest.cpp
 --- test/unit/ProgramArgsTest.cpp.orig
 +++ test/unit/ProgramArgsTest.cpp
 @@ -37,7 +37,7 @@
- #include <json/json.h>
+ #include <nlohmann/json.hpp>
  
  // No wordexp() on windows and I don't feel like doing something special.
 -#ifndef _WIN32
