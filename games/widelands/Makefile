@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2019/08/21 05:47:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.27 2019/08/28 14:12:49 naddy Exp $
 
 COMMENT=	economic and military simulation game
 BROKEN-sparc64=	generates 240Mb log with 'terminate called recursively'
+BROKEN=		excessive warnings generate a 319 MB log file
 
 V =		20
 DISTNAME = 	widelands-build${V}
