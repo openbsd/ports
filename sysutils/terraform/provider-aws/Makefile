@@ -1,4 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2019/08/23 11:14:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2019/08/28 11:59:29 sthen Exp $
+
+.if ${MACHINE_ARCH} == "i386"
+# uses ~3GB
+DPB_PROPERTIES=		lonesome
+.endif
 
 PROVIDER=		aws
 GH_TAGNAME=		v2.25.0
