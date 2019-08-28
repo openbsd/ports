@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/09/24 18:43:39 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/08/28 13:38:14 landry Exp $
 @pkgpath devel/nspr,-main
 bin/compile-et.pl
 bin/nspr-config
@@ -7,26 +7,20 @@ include/nspr/
 include/nspr/md/
 include/nspr/md/_aix32.cfg
 include/nspr/md/_aix64.cfg
-include/nspr/md/_beos.cfg
 include/nspr/md/_bsdi.cfg
 include/nspr/md/_darwin.cfg
-include/nspr/md/_dgux.cfg
 include/nspr/md/_freebsd.cfg
 include/nspr/md/_hpux32.cfg
 include/nspr/md/_hpux64.cfg
-include/nspr/md/_irix32.cfg
-include/nspr/md/_irix64.cfg
 include/nspr/md/_linux.cfg
 include/nspr/md/_netbsd.cfg
 include/nspr/md/_nto.cfg
 include/nspr/md/_openbsd.cfg
 include/nspr/md/_os2.cfg
-include/nspr/md/_osf1.cfg
 include/nspr/md/_qnx.cfg
 include/nspr/md/_riscos.cfg
 include/nspr/md/_scoos.cfg
 include/nspr/md/_solaris.cfg
-include/nspr/md/_symbian.cfg
 include/nspr/md/_unixware.cfg
 include/nspr/md/_unixware7.cfg
 include/nspr/md/_win95.cfg

@@ -1,7 +1,8 @@
-$OpenBSD: patch-nspr_pr_tests_nameshm1_c,v 1.1 2013/06/23 18:36:50 landry Exp $
---- nspr/pr/tests/nameshm1.c.orig	Tue May 28 23:39:29 2013
-+++ nspr/pr/tests/nameshm1.c	Wed Jun 12 21:26:28 2013
-@@ -566,7 +566,9 @@ int main(int argc, char **argv)
+$OpenBSD: patch-nspr_pr_tests_nameshm1_c,v 1.2 2019/08/28 13:38:14 landry Exp $
+Index: nspr/pr/tests/nameshm1.c
+--- nspr/pr/tests/nameshm1.c.orig
++++ nspr/pr/tests/nameshm1.c
+@@ -559,7 +559,9 @@ int main(int argc, char **argv)
          ReadOnlyTest();
          if ( failed_already != 0 )
              goto Finished;

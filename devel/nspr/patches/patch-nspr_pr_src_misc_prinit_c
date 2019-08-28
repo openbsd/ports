@@ -1,7 +1,8 @@
-$OpenBSD: patch-nspr_pr_src_misc_prinit_c,v 1.1 2013/06/23 18:36:50 landry Exp $
---- nspr/pr/src/misc/prinit.c.orig	Tue May 28 23:39:29 2013
-+++ nspr/pr/src/misc/prinit.c	Wed Jun 12 21:26:27 2013
-@@ -384,8 +384,6 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
+$OpenBSD: patch-nspr_pr_src_misc_prinit_c,v 1.2 2019/08/28 13:38:14 landry Exp $
+Index: nspr/pr/src/misc/prinit.c
+--- nspr/pr/src/misc/prinit.c.orig
++++ nspr/pr/src/misc/prinit.c
+@@ -376,8 +376,6 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
          _PR_CleanupDtoa();
          _PR_CleanupCallOnce();
  		_PR_ShutdownLinker();
@@ -10,7 +11,7 @@ $OpenBSD: patch-nspr_pr_src_misc_prinit_c,v 1.1 2013/06/23 18:36:50 landry Exp $
          /* Release the primordial thread's private data, etc. */
          _PR_CleanupThread(me);
  
-@@ -396,6 +394,12 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
+@@ -388,6 +386,12 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
  	    _PR_LogCleanup();
  
          /*
@@ -23,7 +24,7 @@ $OpenBSD: patch-nspr_pr_src_misc_prinit_c,v 1.1 2013/06/23 18:36:50 landry Exp $
           * This part should look like the end of _PR_NativeRunThread
           * and _PR_UserRunThread.
           */
-@@ -407,6 +411,7 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
+@@ -399,6 +403,7 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
              PR_DELETE(me->stack);
              PR_DELETE(me);
          }

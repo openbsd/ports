@@ -1,0 +1,23 @@
+$OpenBSD: patch-nspr_pr_tests_stack_c,v 1.1 2019/08/28 13:38:14 landry Exp $
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1575821
+
+Index: nspr/pr/tests/stack.c
+--- nspr/pr/tests/stack.c.orig
++++ nspr/pr/tests/stack.c
+@@ -53,7 +53,6 @@ PRFileDesc  *errhandle;
+ 
+ int main(int argc, char **argv)
+ {
+-#if defined(__WINS__))
+     PRInt32 rv, cnt, sum;
+ 	DataRecord	*Item;
+ 	PRStack		*list1, *list2;
+@@ -203,7 +202,6 @@ int main(int argc, char **argv)
+ 								SUM_OF_NUMBERS(data_cnt * thread_cnt));
+ 		return 2;
+ 	}
+-#endif
+ }
+ 
+ static void stackop(void *thread_arg)

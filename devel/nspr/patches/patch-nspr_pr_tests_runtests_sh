@@ -1,8 +1,8 @@
-$OpenBSD: patch-nspr_pr_tests_runtests_sh,v 1.3 2018/09/06 18:35:27 landry Exp $
+$OpenBSD: patch-nspr_pr_tests_runtests_sh,v 1.4 2019/08/28 13:38:14 landry Exp $
 Index: nspr/pr/tests/runtests.sh
 --- nspr/pr/tests/runtests.sh.orig
 +++ nspr/pr/tests/runtests.sh
-@@ -58,11 +58,10 @@ fi
+@@ -56,11 +56,10 @@ fi
  # Tests not run (but should)
  #
  
@@ -16,7 +16,7 @@ Index: nspr/pr/tests/runtests.sh
  
  LOGFILE=${NSPR_TEST_LOGFILE:-$NULL_DEVICE}
  
-@@ -93,6 +92,7 @@ exit
+@@ -91,6 +90,7 @@ exit
  fdcach
  fileio
  foreign
@@ -24,7 +24,7 @@ Index: nspr/pr/tests/runtests.sh
  formattm
  fsync
  gethost
-@@ -137,6 +137,7 @@ perf
+@@ -135,6 +135,7 @@ perf
  pipeping
  pipeping2
  pipeself
@@ -32,7 +32,7 @@ Index: nspr/pr/tests/runtests.sh
  poll_nm
  poll_to
  pollable
-@@ -155,9 +156,6 @@ selct_er
+@@ -153,9 +154,6 @@ selct_er
  selct_nm
  selct_to
  selintr
