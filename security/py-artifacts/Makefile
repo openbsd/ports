@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/08/28 21:50:47 kmos Exp $
 
 COMMENT =	ForensicArtifacts.com Artifact Repository
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =	python3
 FLAVOR ?=
