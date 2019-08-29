@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 21:05:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/08/29 20:36:16 sthen Exp $
 
 # crashes & hangs on anything but i386
 ONLY_FOR_ARCHS=	i386
@@ -9,6 +9,8 @@ CATEGORIES=	lang
 DISTNAME=	unicon-10.0beta
 REVISION=	2
 DISTFILES=	uni.zip
+
+FIX_EXTRACT_PERMISSIONS= Yes
 
 HOMEPAGE=	http://unicon.sourceforge.net/
 
@@ -26,6 +28,7 @@ LIB_DEPENDS=	databases/gdbm
 
 
 MAKE_ENV=	ARCH="${MACHINE_ARCH}"
+MAKE_FLAGS=	CC="${CC}"
 CONF_DIR=	${WRKSRC}/config/unix/openbsd
 ALL_TARGET=	Unicon
 
