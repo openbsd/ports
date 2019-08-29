@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2019/07/12 20:48:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2019/08/29 13:22:20 jca Exp $
 
 COMMENT=		API for handling SSDP resource discovery and announcement
 
 GNOME_PROJECT=		gssdp
 GNOME_VERSION=		1.2.1
+REVISION=		0
 
 SHARED_LIBS +=  gssdp-1.2            2.1      # 3.0
 CATEGORIES=		net devel

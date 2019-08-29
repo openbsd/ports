@@ -1,0 +1,22 @@
+$OpenBSD: patch-libgssdp_gssdp-net-posix_c,v 1.3 2019/08/29 13:22:20 jca Exp $
+
+- check whether 'mask' is NULL before dereferencing it
+- on OpenBSD netmasks returned by getifaddrs(3) may have a zero af_family
+
+Index: libgssdp/gssdp-net-posix.c
+--- libgssdp/gssdp-net-posix.c.orig
++++ libgssdp/gssdp-net-posix.c
+@@ -324,10 +324,11 @@ get_netmask (struct sockaddr *address,
+         GError *error = NULL;
+ 
+         g_return_val_if_fail (address != NULL, NULL);
+-        g_return_val_if_fail (address->sa_family == mask->sa_family, NULL);
++        g_return_val_if_fail (mask != NULL, NULL);
++        g_return_val_if_fail (address->sa_family == mask->sa_family ||
++                              mask->sa_family == 0, NULL);
+         g_return_val_if_fail (address->sa_family == G_SOCKET_FAMILY_IPV4 ||
+                               address->sa_family == G_SOCKET_FAMILY_IPV6, NULL);
+-        g_return_val_if_fail (mask != NULL, NULL);
+ 
+         if (address->sa_family == G_SOCKET_FAMILY_IPV4) {
+                 struct sockaddr_in *s4  = (struct sockaddr_in *) address;
