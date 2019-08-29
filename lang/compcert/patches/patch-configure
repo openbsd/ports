@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.6 2019/08/24 16:50:27 chrisz Exp $
+$OpenBSD: patch-configure,v 1.7 2019/08/29 22:48:30 daniel Exp $
 
 Fixup path locations for OpenBSD.
 
@@ -15,7 +15,33 @@ Index: configure
  coqdevdir='$(PREFIX)/lib/compcert/coq'
  toolprefix=''
  target=''
-@@ -503,7 +504,7 @@ missingtools=false
+@@ -38,6 +39,7 @@ Supported targets:
+   ppc-eabi             (PowerPC, EABI with GNU/Unix tools)
+   ppc-eabi-diab        (PowerPC, EABI with Diab tools)
+   ppc-linux            (PowerPC, Linux)
++  ppc-bsd              (PowerPC, BSD)
+   arm-eabi             (ARM, EABI, little endian)
+   arm-linux            (ARM, EABI, little endian)
+   arm-eabihf           (ARM, EABI using hardware FP registers, little endian)
+@@ -60,7 +62,7 @@ Supported targets:
+ For x86 targets, the "x86_32-" prefix can also be written "ia32-" or "i386-".
+ For x86 targets, the "x86_64-" prefix can also be written "amd64-".
+ 
+-For PowerPC targets, the "ppc-" prefix can be refined into:
++For PowerPC targets, the "ppc-" prefix can also be written "powerpc-" and can be refined into:
+   ppc64-               PowerPC 64 bits
+   e5500-               Freescale e5500 core (PowerPC 64 bit, EREF extensions)
+ 
+@@ -236,7 +238,7 @@ fi
+ if test "$arch" = "powerpc"; then
+ 
+   case "$target" in
+-    eabi|eabi-diab|linux)
++    eabi|eabi-diab|linux|bsd)
+         ;;
+     *)
+         echo "Error: invalid eabi/system '$target' for architecture PowerPC." 1>&2
+@@ -503,7 +505,7 @@ missingtools=false
  echo "Testing Coq... " | tr -d '\n'
  coq_ver=$(${COQBIN}coqc -v 2>/dev/null | sed -n -e 's/The Coq Proof Assistant, version \([^ ]*\).*$/\1/p')
  case "$coq_ver" in
@@ -24,7 +50,7 @@ Index: configure
          echo "version $coq_ver -- good!";;
    ?*)
          echo "version $coq_ver -- UNSUPPORTED"
-@@ -644,14 +645,14 @@ esac
+@@ -644,14 +646,14 @@ esac
  #
  # Generate Makefile.config
  #

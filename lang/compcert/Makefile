@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/08/24 16:50:27 chrisz Exp $
+# $OpenBSD: Makefile,v 1.11 2019/08/29 22:48:30 daniel Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 COMMENT =		high assurance C compiler
 
 V =			3.5.20190813
-REVISION =		0
+REVISION =		1
 GH_ACCOUNT =		AbsInt
 GH_PROJECT =		CompCert
 GH_COMMIT =		192bd462233d0284fa3d5f8e8994a514b549713e
