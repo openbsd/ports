@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 21:02:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/08/29 13:47:47 fcambus Exp $
 
 COMMENT =	monospaced bitmap fonts for consoles and terminals
 
-V =		1.0.5
+V =		1.1.0
 DISTNAME =	spleen-${V}
 
 CATEGORIES =	fonts
