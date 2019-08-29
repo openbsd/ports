@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2018/09/04 12:46:19 espie Exp $
+$OpenBSD: README,v 1.3 2019/08/29 18:58:49 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -8,7 +8,11 @@ If using UniFi on a system with other threaded programs, it is likely that
 sysctl kern.maxthread would need to be increased from the default (usually
 done in /etc/sysctl.conf)..
 
-WARNING: UniFi admin password is available without authentication to localhost.
+After installing and starting UniFi, connect to https://localhost:8443/ to
+configure. (Additional ports are used for AP<>controller communications).
+
+WARNING: In this LTS version of UniFi, the admin password is available
+to localhost users without authentication:
 $ echo 'db.admin.find()' | mongo --quiet 127.0.0.1:27117/ace
 
 To import your own signed SSL key/certificate:
