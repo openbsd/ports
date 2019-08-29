@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 21:02:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/08/29 10:40:53 solene Exp $
 
 COMMENT =	global, versioned, peer-to-peer filesystem
 
-V =		0.4.18
-DISTNAME =	go-ipfs-source
-PKGNAME =	go-ipfs-$V
-REVISION =	0
+V =		0.4.22
+DISTNAME =	go-ipfs-$V
 
 CATEGORIES =	net
 HOMEPAGE =	https://ipfs.io
@@ -16,6 +14,8 @@ PERMIT_PACKAGE = Yes
 WANTLIB =	c pthread
 
 MASTER_SITES =	https://github.com/ipfs/go-ipfs/releases/download/v$V/
+DISTFILES =	${DISTNAME}{go-ipfs-source}${EXTRACT_SUFX}
+
 MODULES =	lang/go
 ALL_TARGET =	github.com/ipfs/go-ipfs
 SUBST_VARS =	VARBASE
