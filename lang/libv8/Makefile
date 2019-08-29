@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/08/29 20:43:36 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -34,7 +34,7 @@ LIB_DEPENDS=	devel/libexecinfo
 
 WANTLIB +=	c execinfo m pthread ssl ${COMPILER_LIBCXX} 
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
 
 USE_GMAKE=	Yes
 
@@ -49,7 +49,12 @@ SUBST_VARS+= 	V8_ARCH
 MAKE_FLAGS+=	library=shared ARCHES=${V8_ARCH} MODES=${V8_RELEASE} \
 		DEFAULT_ARCHES=${V8_ARCH}
 
-MAKE_ENV+=	V=1 CXX="${CXX}" LINK="${CXX} ${LDFLAGS}" CCFLAGS+="${CFLAGS}" \
+MAKE_ENV+=	V=1 \
+		CXX="${CXX}" \
+		CXX_host="${CXX}" \
+		CXX_target="${CXX}" \
+		LINK="${CXX} ${LDFLAGS}" \
+		CCFLAGS+="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS} -I${WRKSRC}/src -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		PATH=${WRKSRC}/bin:${PATH}
