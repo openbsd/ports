@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_dynamic-plugins_sf_engine_Makefile_in,v 1.12 2019/06/02 02:07:44 lteo Exp $
+$OpenBSD: patch-src_dynamic-plugins_sf_engine_Makefile_in,v 1.13 2019/08/29 02:47:15 lteo Exp $
 
 Disable libsf_sorules in the examples directory.
 
 Index: src/dynamic-plugins/sf_engine/Makefile.in
 --- src/dynamic-plugins/sf_engine/Makefile.in.orig
 +++ src/dynamic-plugins/sf_engine/Makefile.in
-@@ -388,7 +388,7 @@ top_srcdir = @top_srcdir@
+@@ -376,7 +376,7 @@ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
  dynamicengine_LTLIBRARIES = libsf_engine.la
  dynamicenginedir = $(libdir)/snort_dynamicengine
@@ -14,7 +14,7 @@ Index: src/dynamic-plugins/sf_engine/Makefile.in
  @BUILD_OPENSSL_MD5_TRUE@OPENSSL_MD5 = \
  @BUILD_OPENSSL_MD5_TRUE@    md5.c md5.h 
  
-@@ -529,7 +529,7 @@ massage_ipv6_headers = \
+@@ -517,7 +517,7 @@ massage_ipv6_headers = \
  		$(sed_ipv6_headers); \
  	fi
  

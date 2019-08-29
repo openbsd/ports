@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_dynamic-preprocessors_ftptelnet_Makefile_in,v 1.18 2019/06/02 02:07:44 lteo Exp $
+$OpenBSD: patch-src_dynamic-preprocessors_ftptelnet_Makefile_in,v 1.19 2019/08/29 02:47:15 lteo Exp $
 Index: src/dynamic-preprocessors/ftptelnet/Makefile.in
 --- src/dynamic-preprocessors/ftptelnet/Makefile.in.orig
 +++ src/dynamic-preprocessors/ftptelnet/Makefile.in
-@@ -368,7 +368,7 @@ top_srcdir = @top_srcdir@
+@@ -356,7 +356,7 @@ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
  dynamicpreprocessordir = ${libdir}/snort_dynamicpreprocessor
  dynamicpreprocessor_LTLIBRARIES = libsf_ftptelnet_preproc.la
@@ -11,7 +11,7 @@ Index: src/dynamic-preprocessors/ftptelnet/Makefile.in
  @SO_WITH_STATIC_LIB_TRUE@libsf_ftptelnet_preproc_la_LIBADD = ../libsf_dynamic_preproc.la ../libsf_dynamic_utils.la
  @SO_WITH_STATIC_LIB_FALSE@nodist_libsf_ftptelnet_preproc_la_SOURCES = \
  @SO_WITH_STATIC_LIB_FALSE@../include/sf_dynamic_preproc_lib.c \
-@@ -606,7 +606,7 @@ distdir-am: $(DISTFILES)
+@@ -592,7 +592,7 @@ distdir: $(DISTFILES)
  	done
  check-am: all-am
  check: check-am

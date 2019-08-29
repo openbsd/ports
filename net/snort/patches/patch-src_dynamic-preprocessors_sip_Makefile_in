@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_dynamic-preprocessors_sip_Makefile_in,v 1.13 2019/06/02 02:07:44 lteo Exp $
+$OpenBSD: patch-src_dynamic-preprocessors_sip_Makefile_in,v 1.14 2019/08/29 02:47:15 lteo Exp $
 Index: src/dynamic-preprocessors/sip/Makefile.in
 --- src/dynamic-preprocessors/sip/Makefile.in.orig
 +++ src/dynamic-preprocessors/sip/Makefile.in
-@@ -363,7 +363,7 @@ top_srcdir = @top_srcdir@
+@@ -351,7 +351,7 @@ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
  dynamicpreprocessordir = ${libdir}/snort_dynamicpreprocessor
  dynamicpreprocessor_LTLIBRARIES = libsf_sip_preproc.la
@@ -11,7 +11,7 @@ Index: src/dynamic-preprocessors/sip/Makefile.in
  @SO_WITH_STATIC_LIB_TRUE@libsf_sip_preproc_la_LIBADD =  \
  @SO_WITH_STATIC_LIB_TRUE@	../libsf_dynamic_preproc.la \
  @SO_WITH_STATIC_LIB_TRUE@	$(am__append_1)
-@@ -586,7 +586,7 @@ distdir-am: $(DISTFILES)
+@@ -572,7 +572,7 @@ distdir: $(DISTFILES)
  	done
  check-am: all-am
  check: check-am
