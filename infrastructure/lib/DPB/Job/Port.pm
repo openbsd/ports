@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.194 2019/08/26 16:51:38 espie Exp $
+# $OpenBSD: Port.pm,v 1.195 2019/08/30 17:56:55 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -721,7 +721,8 @@ sub finalize
 		if (!$core->prop->{silentjunking}) {
 			for my $j ($core->same_host_jobs) {
 				next if $j eq $job;
-				print {$j->{logfh}} ">> JUNKING end\n";
+				print {$j->{logfh}} 
+				    ">> JUNKING end in $job->{path}\n";
 			}
 		}
 		$core->prop->{last_junk} = $job->{v};
