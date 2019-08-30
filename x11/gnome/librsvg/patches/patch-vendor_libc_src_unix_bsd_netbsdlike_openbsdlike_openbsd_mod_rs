@@ -1,0 +1,18 @@
+$OpenBSD: patch-vendor_libc_src_unix_bsd_netbsdlike_openbsdlike_openbsd_mod_rs,v 1.1 2019/08/30 12:26:08 semarie Exp $
+add minimal sparc64 support
+could be removed with libc>=0.2.63
+Index: vendor/libc/src/unix/bsd/netbsdlike/openbsdlike/openbsd/mod.rs
+--- vendor/libc/src/unix/bsd/netbsdlike/openbsdlike/openbsd/mod.rs.orig
++++ vendor/libc/src/unix/bsd/netbsdlike/openbsdlike/openbsd/mod.rs
+@@ -273,6 +273,11 @@ cfg_if! {
+     } else if #[cfg(target_arch = "aarch64")] {
+         mod aarch64;
+         pub use self::aarch64::*;
++    } else if #[cfg(target_arch = "sparc64")] {
++        pub type c_long = i64;
++        pub type c_ulong = u64;
++        pub type c_char = i8;
++        pub const _ALIGNBYTES: usize = 0xf;
+     } else {
+         // Unknown target_arch
+     }

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2019/07/07 11:20:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.151 2019/08/30 12:26:08 semarie Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
@@ -21,6 +21,7 @@ BUILD_DEPENDS=		lang/rust
 PKG_ARGS=		-Dold=0 -Dstable=1
 MAKE_ENV+=		CARGO_BUILD_JOBS=${MAKE_JOBS} \
 			CARGO_HOME=${WRKBUILD}/cargo-home
+COMPILER=		base-clang ports-gcc
 .else
 ### old
 REVISION=		3
@@ -55,6 +56,11 @@ CONFIGURE_ARGS=		--disable-tools
 
 # error: -Bsymbolic-functions requested but not supported by ld
 CONFIGURE_ARGS +=	--disable-Bsymbolic
+
+post-patch:
+	# permit patching libc-rs to support sparc64 (could be removed with libc>=0.2.63)
+	-sed -i 's/"files":{[^}]*}/"files":{}/' \
+		${WRKSRC}/vendor/libc/.cargo-checksum.json
 
 post-install:
 	rm ${PREFIX}/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.{a,la}
