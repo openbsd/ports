@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.61 2019/04/01 10:29:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.62 2019/08/30 12:08:09 sthen Exp $
 @extraunexec rm -rf %D/roundcubemail/logs/*
 roundcubemail/
 roundcubemail/.htaccess.dist
@@ -2712,24 +2712,8 @@ roundcubemail/vendor/composer/autoload_real.php
 roundcubemail/vendor/composer/autoload_static.php
 roundcubemail/vendor/composer/include_paths.php
 roundcubemail/vendor/composer/installed.json
-roundcubemail/vendor/composer/semver/
-roundcubemail/vendor/composer/semver/CHANGELOG.md
-roundcubemail/vendor/composer/semver/LICENSE
-roundcubemail/vendor/composer/semver/README.md
-roundcubemail/vendor/composer/semver/composer.json
-roundcubemail/vendor/composer/semver/src/
-roundcubemail/vendor/composer/semver/src/Comparator.php
-roundcubemail/vendor/composer/semver/src/Constraint/
-roundcubemail/vendor/composer/semver/src/Constraint/AbstractConstraint.php
-roundcubemail/vendor/composer/semver/src/Constraint/Constraint.php
-roundcubemail/vendor/composer/semver/src/Constraint/ConstraintInterface.php
-roundcubemail/vendor/composer/semver/src/Constraint/EmptyConstraint.php
-roundcubemail/vendor/composer/semver/src/Constraint/MultiConstraint.php
-roundcubemail/vendor/composer/semver/src/Semver.php
-roundcubemail/vendor/composer/semver/src/VersionParser.php
 roundcubemail/vendor/endroid/
 roundcubemail/vendor/endroid/qr-code/
-roundcubemail/vendor/endroid/qr-code/.travis.yml
 roundcubemail/vendor/endroid/qr-code/LICENSE
 roundcubemail/vendor/endroid/qr-code/README.md
 roundcubemail/vendor/endroid/qr-code/assets/
@@ -3022,6 +3006,8 @@ roundcubemail/vendor/endroid/qr-code/src/Exceptions/ImageFunctionUnknownExceptio
 roundcubemail/vendor/endroid/qr-code/src/Exceptions/ImageSizeTooLargeException.php
 roundcubemail/vendor/endroid/qr-code/src/Exceptions/VersionTooLargeException.php
 roundcubemail/vendor/endroid/qr-code/src/QrCode.php
+roundcubemail/vendor/endroid/qr-code/tests/
+roundcubemail/vendor/endroid/qr-code/tests/QrCodeTest.php
 roundcubemail/vendor/kolab/
 roundcubemail/vendor/kolab/net_ldap3/
 roundcubemail/vendor/kolab/net_ldap3/.arcconfig
@@ -3034,7 +3020,6 @@ roundcubemail/vendor/kolab/net_ldap3/lib/Net/LDAP3.php
 roundcubemail/vendor/kolab/net_ldap3/lib/Net/LDAP3/Result.php
 roundcubemail/vendor/pear/
 roundcubemail/vendor/pear/auth_sasl/
-roundcubemail/vendor/pear/auth_sasl/.travis.yml
 roundcubemail/vendor/pear/auth_sasl/Auth/
 roundcubemail/vendor/pear/auth_sasl/Auth/SASL/
 roundcubemail/vendor/pear/auth_sasl/Auth/SASL.php
@@ -3051,7 +3036,6 @@ roundcubemail/vendor/pear/auth_sasl/composer.json
 roundcubemail/vendor/pear/auth_sasl/package.xml
 roundcubemail/vendor/pear/auth_sasl/phpunit.xml.dist
 roundcubemail/vendor/pear/console_commandline/
-roundcubemail/vendor/pear/console_commandline/.travis.yml
 roundcubemail/vendor/pear/console_commandline/Console/
 roundcubemail/vendor/pear/console_commandline/Console/CommandLine/
 roundcubemail/vendor/pear/console_commandline/Console/CommandLine.php
@@ -3092,7 +3076,6 @@ roundcubemail/vendor/pear/console_commandline/data/
 roundcubemail/vendor/pear/console_commandline/data/xmlschema.rng
 roundcubemail/vendor/pear/console_commandline/package.xml
 roundcubemail/vendor/pear/console_getopt/
-roundcubemail/vendor/pear/console_getopt/.travis.yml
 roundcubemail/vendor/pear/console_getopt/Console/
 roundcubemail/vendor/pear/console_getopt/Console/Getopt.php
 roundcubemail/vendor/pear/console_getopt/LICENSE
@@ -3100,7 +3083,6 @@ roundcubemail/vendor/pear/console_getopt/README.rst
 roundcubemail/vendor/pear/console_getopt/composer.json
 roundcubemail/vendor/pear/console_getopt/package.xml
 roundcubemail/vendor/pear/crypt_gpg/
-roundcubemail/vendor/pear/crypt_gpg/.travis.yml
 roundcubemail/vendor/pear/crypt_gpg/Crypt/
 roundcubemail/vendor/pear/crypt_gpg/Crypt/GPG/
 roundcubemail/vendor/pear/crypt_gpg/Crypt/GPG.php
@@ -3126,7 +3108,6 @@ roundcubemail/vendor/pear/crypt_gpg/package.xml
 roundcubemail/vendor/pear/crypt_gpg/scripts/
 roundcubemail/vendor/pear/crypt_gpg/scripts/crypt-gpg-pinentry
 roundcubemail/vendor/pear/mail_mime/
-roundcubemail/vendor/pear/mail_mime/.travis.yml
 roundcubemail/vendor/pear/mail_mime/Mail/
 roundcubemail/vendor/pear/mail_mime/Mail/mime.php
 roundcubemail/vendor/pear/mail_mime/Mail/mimePart.php
@@ -3134,7 +3115,6 @@ roundcubemail/vendor/pear/mail_mime/README
 roundcubemail/vendor/pear/mail_mime/composer.json
 roundcubemail/vendor/pear/mail_mime/package.xml
 roundcubemail/vendor/pear/net_idna2/
-roundcubemail/vendor/pear/net_idna2/.travis.yml
 roundcubemail/vendor/pear/net_idna2/Net/
 roundcubemail/vendor/pear/net_idna2/Net/IDNA2/
 roundcubemail/vendor/pear/net_idna2/Net/IDNA2.php
@@ -3146,7 +3126,6 @@ roundcubemail/vendor/pear/net_idna2/composer.json
 roundcubemail/vendor/pear/net_idna2/package.xml
 roundcubemail/vendor/pear/net_idna2/phpunit.xml.dist
 roundcubemail/vendor/pear/net_ldap2/
-roundcubemail/vendor/pear/net_ldap2/.travis.yml
 roundcubemail/vendor/pear/net_ldap2/LICENSE
 roundcubemail/vendor/pear/net_ldap2/Net/
 roundcubemail/vendor/pear/net_ldap2/Net/LDAP2/
@@ -3163,12 +3142,10 @@ roundcubemail/vendor/pear/net_ldap2/Net/LDAP2/Util.php
 roundcubemail/vendor/pear/net_ldap2/composer.json
 roundcubemail/vendor/pear/net_ldap2/package.xml
 roundcubemail/vendor/pear/net_sieve/
-roundcubemail/vendor/pear/net_sieve/.travis.yml
 roundcubemail/vendor/pear/net_sieve/Sieve.php
 roundcubemail/vendor/pear/net_sieve/composer.json
 roundcubemail/vendor/pear/net_sieve/package.xml
 roundcubemail/vendor/pear/net_smtp/
-roundcubemail/vendor/pear/net_smtp/.travis.yml
 roundcubemail/vendor/pear/net_smtp/LICENSE
 roundcubemail/vendor/pear/net_smtp/Net/
 roundcubemail/vendor/pear/net_smtp/Net/SMTP.php
@@ -3176,7 +3153,6 @@ roundcubemail/vendor/pear/net_smtp/composer.json
 roundcubemail/vendor/pear/net_smtp/package.xml
 roundcubemail/vendor/pear/net_smtp/phpdoc.sh
 roundcubemail/vendor/pear/net_socket/
-roundcubemail/vendor/pear/net_socket/.travis.yml
 roundcubemail/vendor/pear/net_socket/Net/
 roundcubemail/vendor/pear/net_socket/Net/Socket.php
 roundcubemail/vendor/pear/net_socket/composer.json
@@ -3193,7 +3169,6 @@ roundcubemail/vendor/pear/pear-core-minimal/src/PEAR/Error.php
 roundcubemail/vendor/pear/pear-core-minimal/src/PEAR/ErrorStack.php
 roundcubemail/vendor/pear/pear-core-minimal/src/System.php
 roundcubemail/vendor/pear/pear_exception/
-roundcubemail/vendor/pear/pear_exception/.travis.yml
 roundcubemail/vendor/pear/pear_exception/LICENSE
 roundcubemail/vendor/pear/pear_exception/PEAR/
 roundcubemail/vendor/pear/pear_exception/PEAR/Exception.php

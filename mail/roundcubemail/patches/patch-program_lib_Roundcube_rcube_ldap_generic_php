@@ -1,9 +1,9 @@
-$OpenBSD: patch-program_lib_Roundcube_rcube_ldap_generic_php,v 1.1 2018/12/21 13:18:26 sthen Exp $
+$OpenBSD: patch-program_lib_Roundcube_rcube_ldap_generic_php,v 1.2 2019/08/30 12:08:09 sthen Exp $
 
 Index: program/lib/Roundcube/rcube_ldap_generic.php
 --- program/lib/Roundcube/rcube_ldap_generic.php.orig
 +++ program/lib/Roundcube/rcube_ldap_generic.php
-@@ -83,7 +83,7 @@ class rcube_ldap_generic extends Net_LDAP3
+@@ -70,7 +70,7 @@ class rcube_ldap_generic extends Net_LDAP3
              }
              break;
  
