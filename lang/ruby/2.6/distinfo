@@ -1,4 +1,2 @@
-SHA256 (1ef39d8d099f145222b9352423af16a2bab6e05b.patch) = eiBIYlSeJXKklacgt8QHVE6arFAY9eCjWODxjNWBXVg=
-SHA256 (ruby-2.6.3.tar.gz) = V3/TeV8iuNkcHU5nM2N7A5TUCC22WfzPIkx3Siscgvs=
-SIZE (1ef39d8d099f145222b9352423af16a2bab6e05b.patch) = 2584
-SIZE (ruby-2.6.3.tar.gz) = 16784748
+SHA256 (ruby-2.6.4.tar.gz) = T8HYunVQWzeXAgpv/IWovP9q3E2rrjQ7ZXK/KB7heTc=
+SIZE (ruby-2.6.4.tar.gz) = 16503137

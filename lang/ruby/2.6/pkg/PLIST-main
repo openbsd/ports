@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2019/04/26 15:46:28 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2019/08/30 15:58:26 jeremy Exp $
 @option no-default-conflict
 @conflict ruby->=2.6,<2.7
 bin/bundle26
@@ -42,7 +42,7 @@ include/ruby-${REV}/ruby/util.h
 include/ruby-${REV}/ruby/version.h
 include/ruby-${REV}/ruby/vm.h
 include/ruby-${REV}/${SUB}/
-include/ruby-${REV}/${SUB}/rb_mjit_min_header-2.6.3.h
+include/ruby-${REV}/${SUB}/rb_mjit_min_header-2.6.4.h
 include/ruby-${REV}/${SUB}/ruby/
 include/ruby-${REV}/${SUB}/ruby/config.h
 lib/libruby26.so
@@ -655,7 +655,6 @@ lib/ruby/${REV}/rdoc/generator/template/darkfish/images/zoom.png
 lib/ruby/${REV}/rdoc/generator/template/darkfish/index.rhtml
 lib/ruby/${REV}/rdoc/generator/template/darkfish/js/
 lib/ruby/${REV}/rdoc/generator/template/darkfish/js/darkfish.js
-lib/ruby/${REV}/rdoc/generator/template/darkfish/js/jquery.js
 lib/ruby/${REV}/rdoc/generator/template/darkfish/js/search.js
 lib/ruby/${REV}/rdoc/generator/template/darkfish/page.rhtml
 lib/ruby/${REV}/rdoc/generator/template/darkfish/servlet_not_found.rhtml
@@ -1521,10 +1520,10 @@ lib/ruby/gems/${REV}/gems/rake-12.3.2/lib/rake/trace_output.rb
 lib/ruby/gems/${REV}/gems/rake-12.3.2/lib/rake/version.rb
 lib/ruby/gems/${REV}/gems/rake-12.3.2/lib/rake/win32.rb
 lib/ruby/gems/${REV}/gems/rake-12.3.2/rake.gemspec
-lib/ruby/gems/${REV}/gems/rdoc-6.1.0/
-lib/ruby/gems/${REV}/gems/rdoc-6.1.0/exe/
-lib/ruby/gems/${REV}/gems/rdoc-6.1.0/exe/rdoc
-lib/ruby/gems/${REV}/gems/rdoc-6.1.0/exe/ri
+lib/ruby/gems/${REV}/gems/rdoc-6.1.2/
+lib/ruby/gems/${REV}/gems/rdoc-6.1.2/exe/
+lib/ruby/gems/${REV}/gems/rdoc-6.1.2/exe/rdoc
+lib/ruby/gems/${REV}/gems/rdoc-6.1.2/exe/ri
 lib/ruby/gems/${REV}/gems/test-unit-3.2.9/
 lib/ruby/gems/${REV}/gems/test-unit-3.2.9/COPYING
 lib/ruby/gems/${REV}/gems/test-unit-3.2.9/GPL
@@ -1696,7 +1695,7 @@ lib/ruby/gems/${REV}/specifications/default/openssl-2.1.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/ostruct-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/prime-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/psych-3.1.0.gemspec
-lib/ruby/gems/${REV}/specifications/default/rdoc-6.1.0.gemspec
+lib/ruby/gems/${REV}/specifications/default/rdoc-6.1.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/rexml-3.1.9.gemspec
 lib/ruby/gems/${REV}/specifications/default/rss-0.2.7.gemspec
 lib/ruby/gems/${REV}/specifications/default/scanf-1.0.0.gemspec
