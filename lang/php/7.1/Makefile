@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.31 2019/08/01 20:20:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2019/08/30 17:09:45 sthen Exp $
 
 PORTROACH=	limit:^7\.1
 PV=		7.1
-V=		${PV}.31
+V=		${PV}.32
 
 .include <bsd.port.mk>
