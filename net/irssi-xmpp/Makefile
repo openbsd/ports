@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2019/06/29 14:54:45 tj Exp $
+# $OpenBSD: Makefile,v 1.16 2019/08/30 07:24:49 kn Exp $
 
 COMMENT=		XMPP plugin for irssi
 
 DISTNAME=		irssi-xmpp-0.54
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		net
 

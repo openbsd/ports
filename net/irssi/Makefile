@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.85 2019/07/02 20:30:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.86 2019/08/30 07:24:49 kn Exp $
 
 MULTI_PACKAGES = -main -otr
 
 COMMENT-main =	modular IRC client with many features
 COMMENT-otr =	OTR (off-the-record) plugin for irssi
 
-V =		1.2.1
+V =		1.2.2
 DISTNAME =	irssi-$V
 PKGSPEC =	irssi-=$V
 PKGNAME-main =	irssi-$V
-
-REVISION-main =	1
-REVISION-otr =	0
 
 # -otr module doesn't vary between FLAVORs; override default FLAVOR suffix
 FULLPKGNAME-otr = irssi-otr-$V
@@ -67,6 +64,9 @@ MAKE_FLAGS =	scriptdir="${SYSCONFDIR}/irssi/scripts" \
 FAKE_FLAGS =	confdir="${PREFIX}/share/examples/irssi" \
 		scriptdir="${PREFIX}/share/examples/irssi/scripts" \
 		themedir="${PREFIX}/share/examples/irssi/themes"
+
+# tests write to it
+PORTHOME =	${WRKDIR}
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/docs/irssi.1
