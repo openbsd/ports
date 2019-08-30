@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2018/10/22 14:45:52 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2019/08/30 15:56:31 jeremy Exp $
 @option no-default-conflict
 @conflict ruby->=2.4,<2.5
 bin/erb24
@@ -369,7 +369,6 @@ lib/ruby/${REV}/rdoc/generator/template/darkfish/images/zoom.png
 lib/ruby/${REV}/rdoc/generator/template/darkfish/index.rhtml
 lib/ruby/${REV}/rdoc/generator/template/darkfish/js/
 lib/ruby/${REV}/rdoc/generator/template/darkfish/js/darkfish.js
-lib/ruby/${REV}/rdoc/generator/template/darkfish/js/jquery.js
 lib/ruby/${REV}/rdoc/generator/template/darkfish/js/search.js
 lib/ruby/${REV}/rdoc/generator/template/darkfish/page.rhtml
 lib/ruby/${REV}/rdoc/generator/template/darkfish/servlet_not_found.rhtml
@@ -1202,10 +1201,10 @@ lib/ruby/gems/${REV}/gems/rake-12.0.0/lib/rake/thread_pool.rb
 lib/ruby/gems/${REV}/gems/rake-12.0.0/lib/rake/trace_output.rb
 lib/ruby/gems/${REV}/gems/rake-12.0.0/lib/rake/version.rb
 lib/ruby/gems/${REV}/gems/rake-12.0.0/lib/rake/win32.rb
-lib/ruby/gems/${REV}/gems/rdoc-5.0.0/
-lib/ruby/gems/${REV}/gems/rdoc-5.0.0/exe/
-lib/ruby/gems/${REV}/gems/rdoc-5.0.0/exe/rdoc
-lib/ruby/gems/${REV}/gems/rdoc-5.0.0/exe/ri
+lib/ruby/gems/${REV}/gems/rdoc-5.0.1/
+lib/ruby/gems/${REV}/gems/rdoc-5.0.1/exe/
+lib/ruby/gems/${REV}/gems/rdoc-5.0.1/exe/rdoc
+lib/ruby/gems/${REV}/gems/rdoc-5.0.1/exe/ri
 lib/ruby/gems/${REV}/gems/test-unit-3.2.3/
 lib/ruby/gems/${REV}/gems/test-unit-3.2.3/COPYING
 lib/ruby/gems/${REV}/gems/test-unit-3.2.3/GPL
@@ -1353,7 +1352,7 @@ lib/ruby/gems/${REV}/specifications/default/io-console-0.4.6.gemspec
 lib/ruby/gems/${REV}/specifications/default/json-2.0.4.gemspec
 lib/ruby/gems/${REV}/specifications/default/openssl-2.0.9.gemspec
 lib/ruby/gems/${REV}/specifications/default/psych-2.2.2.gemspec
-lib/ruby/gems/${REV}/specifications/default/rdoc-5.0.0.gemspec
+lib/ruby/gems/${REV}/specifications/default/rdoc-5.0.1.gemspec
 lib/ruby/gems/${REV}/specifications/did_you_mean-1.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/minitest-5.10.1.gemspec
 lib/ruby/gems/${REV}/specifications/net-telnet-0.1.1.gemspec
