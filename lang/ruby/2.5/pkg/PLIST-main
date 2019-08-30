@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2018/10/22 14:46:53 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2019/08/30 15:57:24 jeremy Exp $
 @option no-default-conflict
 @conflict ruby->=2.5,<2.6
 bin/erb25
@@ -366,7 +366,6 @@ lib/ruby/${REV}/rdoc/generator/template/darkfish/images/zoom.png
 lib/ruby/${REV}/rdoc/generator/template/darkfish/index.rhtml
 lib/ruby/${REV}/rdoc/generator/template/darkfish/js/
 lib/ruby/${REV}/rdoc/generator/template/darkfish/js/darkfish.js
-lib/ruby/${REV}/rdoc/generator/template/darkfish/js/jquery.js
 lib/ruby/${REV}/rdoc/generator/template/darkfish/js/search.js
 lib/ruby/${REV}/rdoc/generator/template/darkfish/page.rhtml
 lib/ruby/${REV}/rdoc/generator/template/darkfish/servlet_not_found.rhtml
@@ -1213,10 +1212,10 @@ lib/ruby/gems/${REV}/gems/rake-12.3.0/lib/rake/trace_output.rb
 lib/ruby/gems/${REV}/gems/rake-12.3.0/lib/rake/version.rb
 lib/ruby/gems/${REV}/gems/rake-12.3.0/lib/rake/win32.rb
 lib/ruby/gems/${REV}/gems/rake-12.3.0/rake.gemspec
-lib/ruby/gems/${REV}/gems/rdoc-6.0.1/
-lib/ruby/gems/${REV}/gems/rdoc-6.0.1/exe/
-lib/ruby/gems/${REV}/gems/rdoc-6.0.1/exe/rdoc25
-lib/ruby/gems/${REV}/gems/rdoc-6.0.1/exe/ri25
+lib/ruby/gems/${REV}/gems/rdoc-6.0.1.1/
+lib/ruby/gems/${REV}/gems/rdoc-6.0.1.1/exe/
+lib/ruby/gems/${REV}/gems/rdoc-6.0.1.1/exe/rdoc25
+lib/ruby/gems/${REV}/gems/rdoc-6.0.1.1/exe/ri25
 lib/ruby/gems/${REV}/gems/test-unit-3.2.7/
 lib/ruby/gems/${REV}/gems/test-unit-3.2.7/COPYING
 lib/ruby/gems/${REV}/gems/test-unit-3.2.7/GPL
@@ -1378,7 +1377,7 @@ lib/ruby/gems/${REV}/specifications/default/ipaddr-1.2.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/json-2.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/openssl-2.1.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/psych-3.0.2.gemspec
-lib/ruby/gems/${REV}/specifications/default/rdoc-6.0.1.gemspec
+lib/ruby/gems/${REV}/specifications/default/rdoc-6.0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/scanf-1.0.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/sdbm-1.0.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/stringio-0.0.1.gemspec
