@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.4 2018/02/01 21:47:43 sthen Exp $
+@comment $OpenBSD: PLIST-pgsql,v 1.5 2019/08/30 18:41:31 otto Exp $
 @conflict powerdns-<3.4.3
 lib/pdns/libgpgsqlbackend.so
 share/doc/pdns/3.4.0_to_4.1.0_schema.pgsql.sql
 share/doc/pdns/dnssec-3.x_to_3.4.0_schema.pgsql.sql
 share/doc/pdns/nodnssec-3.x_to_3.4.0_schema.pgsql.sql
+share/doc/pdns/4.1.0_to_4.2.0_schema.pgsql.sql
 share/doc/pdns/schema.pgsql.sql

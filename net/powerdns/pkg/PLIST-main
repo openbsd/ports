@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2018/11/06 22:52:06 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2019/08/30 18:41:31 otto Exp $
 @conflict powerdns-sqlite-*
 @conflict powerdns-sqlite3-*
 @pkgpath net/powerdns,-sqlite
@@ -7,8 +7,10 @@
 @newuser _powerdns:609:_powerdns:daemon:PowerDNS Server:/nonexistent:/sbin/nologin
 @sample ${SYSCONFDIR}/
 @rcscript ${RCDIR}/pdns_server
+@bin bin/calidns
 @bin bin/dnsbulktest
 @bin bin/dnsgram
+@bin bin/dnspcap2calidns
 @bin bin/dnsreplay
 @bin bin/dnsscan
 @bin bin/dnsscope
@@ -32,6 +34,7 @@ lib/pdns/libgsqlite3backend.so
 @man man/man1/calidns.1
 @man man/man1/dnsbulktest.1
 @man man/man1/dnsgram.1
+@man man/man1/dnspcap2calidns.1
 @man man/man1/dnsreplay.1
 @man man/man1/dnsscan.1
 @man man/man1/dnsscope.1
@@ -51,6 +54,8 @@ lib/pdns/libgsqlite3backend.so
 @man man/man1/zone2sql.1
 @bin sbin/pdns_server
 share/doc/pdns/
+share/doc/pdns/3.4.0_to_4.0.0_schema.sqlite3.sql
+share/doc/pdns/4.0.0_to_4.2.0_schema.sqlite3.sql
 share/doc/pdns/dnssec-3.x_to_3.4.0_schema.sqlite3.sql
 share/doc/pdns/nodnssec-3.x_to_3.4.0_schema.sqlite3.sql
 share/doc/pdns/schema.sqlite3.sql
