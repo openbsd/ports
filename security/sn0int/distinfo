@@ -137,7 +137,7 @@ SHA256 (cargo/kuchiki-0.7.3.tar.gz) = SnwOkVm13/OofTMVtlqnnllsfsypvjIjCyBUMN31dV
 SHA256 (cargo/language-tags-0.2.2.tar.gz) = qR2IS2ZnzWBrtaaaoMmbqBGhFfxokV5wVuwIpG6TGZo=
 SHA256 (cargo/lazy_static-1.3.0.tar.gz) = vFcp8n8Vnd1h9N9iKOgn6GZD1NPnwyGDyzChwI9gShQ=
 SHA256 (cargo/lazycell-1.2.1.tar.gz) = spTW+p7kCaBUNUr8Q1Kwue98oiLGm4gSy+qefSvzeD8=
-SHA256 (cargo/libc-0.2.54.tar.gz) = xnhap92Xb1+/O3HP2c1J1/eDwf9WWoWNcQMcbDE6pcY=
+SHA256 (cargo/libc-0.2.63.tar.gz) = 15WDUCv/BSPhB8pE3TZv+AfGRCtKlMzvBDLH6E+FZYM=
 SHA256 (cargo/libflate-0.1.22.tar.gz) = xSOErrItDOgqENjd819/tHF9GyPqxblM040gUPtTdmo=
 SHA256 (cargo/libsqlite3-sys-0.12.0.tar.gz) = /WRXxwu/9FbZ/kneq6NexHw+WYv415UP8Fdc63qKatE=
 SHA256 (cargo/libz-sys-1.0.25.tar.gz) = LrXkM2LjjivKL9X1E0xNRWSiOlwo6blUEWUgIahnXr4=
@@ -518,7 +518,7 @@ SIZE (cargo/kuchiki-0.7.3.tar.gz) = 17390
 SIZE (cargo/language-tags-0.2.2.tar.gz) = 12754
 SIZE (cargo/lazy_static-1.3.0.tar.gz) = 10616
 SIZE (cargo/lazycell-1.2.1.tar.gz) = 11691
-SIZE (cargo/libc-0.2.54.tar.gz) = 401259
+SIZE (cargo/libc-0.2.63.tar.gz) = 437880
 SIZE (cargo/libflate-0.1.22.tar.gz) = 35923
 SIZE (cargo/libsqlite3-sys-0.12.0.tar.gz) = 2197131
 SIZE (cargo/libz-sys-1.0.25.tar.gz) = 650151

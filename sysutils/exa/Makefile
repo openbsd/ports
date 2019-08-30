@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/29 15:39:35 semarie Exp $
+# $OpenBSD: Makefile,v 1.7 2019/08/30 12:24:00 semarie Exp $
 
 COMMENT =		ls alternative written in Rust
 
@@ -15,7 +15,8 @@ PERMIT_PACKAGE =	Yes
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		devel/cargo
-BUILD_DEPENDS =		lang/rust
+
+MODCARGO_CRATES_UPDATE +=	libc
 
 MODCARGO_CRATES +=	aho-corasick	0.7.3	# Unlicense/MIT
 MODCARGO_CRATES +=	ansi_term	0.12.0	# MIT
@@ -34,7 +35,7 @@ MODCARGO_CRATES +=	idna	0.1.5	# MIT/Apache-2.0
 MODCARGO_CRATES +=	iso8601	0.1.1	# MIT
 MODCARGO_CRATES +=	kernel32-sys	0.2.2	# MIT
 MODCARGO_CRATES +=	lazy_static	1.3.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	libc	0.2.51	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	libc	0.2.63	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	libgit2-sys	0.8.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	libz-sys	1.0.25	# MIT/Apache-2.0
 MODCARGO_CRATES +=	locale	0.2.2	# MIT

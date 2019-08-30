@@ -15,7 +15,7 @@ SHA256 (cargo/idna-0.1.5.tar.gz) = OPCeDwsftV/e4fF0cK2ADad69RhqGnbAJrZ5NYt+hE4=
 SHA256 (cargo/iso8601-0.1.1.tar.gz) = EdxGT4xvF1ldGRRHycZVkpiy0CPW+EakojrH6jxGxHc=
 SHA256 (cargo/kernel32-sys-0.2.2.tar.gz) = dQdiSylINDHAui2Crs6Mps26k4K/9N3Q90kFYMBWCY0=
 SHA256 (cargo/lazy_static-1.3.0.tar.gz) = vFcp8n8Vnd1h9N9iKOgn6GZD1NPnwyGDyzChwI9gShQ=
-SHA256 (cargo/libc-0.2.51.tar.gz) = vtzHqAkHZlZIb/4EWr7qwWPaG1WOljox4p+/vrqRaRc=
+SHA256 (cargo/libc-0.2.63.tar.gz) = 15WDUCv/BSPhB8pE3TZv+AfGRCtKlMzvBDLH6E+FZYM=
 SHA256 (cargo/libgit2-sys-0.8.1.tar.gz) = lBpB4j93MjuMnS7hGK7J7jnfwXYHjBi0dX07rQSdn/c=
 SHA256 (cargo/libz-sys-1.0.25.tar.gz) = LrXkM2LjjivKL9X1E0xNRWSiOlwo6blUEWUgIahnXr4=
 SHA256 (cargo/locale-0.2.2.tar.gz) = X9vkkqnAI42pAKEWXEL8UGcWHOKSZ4pv6Akh8w/jB/0=
@@ -79,7 +79,7 @@ SIZE (cargo/idna-0.1.5.tar.gz) = 258735
 SIZE (cargo/iso8601-0.1.1.tar.gz) = 7770
 SIZE (cargo/kernel32-sys-0.2.2.tar.gz) = 24537
 SIZE (cargo/lazy_static-1.3.0.tar.gz) = 10616
-SIZE (cargo/libc-0.2.51.tar.gz) = 397323
+SIZE (cargo/libc-0.2.63.tar.gz) = 437880
 SIZE (cargo/libgit2-sys-0.8.1.tar.gz) = 1264574
 SIZE (cargo/libz-sys-1.0.25.tar.gz) = 650151
 SIZE (cargo/locale-0.2.2.tar.gz) = 18910

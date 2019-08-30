@@ -20,7 +20,7 @@ SHA256 (cargo/fuchsia-zircon-sys-0.3.3.tar.gz) = Pcqprncl0SzbhbOtmaQ023C0aMCd7Rf
 SHA256 (cargo/glob-0.2.11.tar.gz) = i+GN4JpWtg7Q7fhLyd8AfjAEBpGves0cQYdPqsWJW/s=
 SHA256 (cargo/itoa-0.4.2.tar.gz) = WttYVY3NHXhrXwvRXzIm7iNIbiS3tYMEtg9k3GjmJgY=
 SHA256 (cargo/lazy_static-1.1.0.tar.gz) = ykiLiaVlewouzUW5Vgmz6EjPF1XaMyoNpG4rKxyzcac=
-SHA256 (cargo/libc-0.2.43.tar.gz) = duOj7xcvGguan/DdFJGuXmyUi5RHmjAhgZun2GDIZF0=
+SHA256 (cargo/libc-0.2.63.tar.gz) = 15WDUCv/BSPhB8pE3TZv+AfGRCtKlMzvBDLH6E+FZYM=
 SHA256 (cargo/lock_api-0.1.3.tar.gz) = lJgmpczxjBs6fD1XaSd40hdot55G653Qe/xMIWADbFQ=
 SHA256 (cargo/log-0.4.5.tar.gz) = 1PzOX6ScxpPDEgAdrx0TQRxKUoN5a6wQhCmeo+VnET8=
 SHA256 (cargo/memchr-2.0.2.tar.gz) = o7QUKrhzinjFGJb3BPg8Ed8Ef/G9qakqZhqmNhVS2T0=
@@ -97,7 +97,7 @@ SIZE (cargo/fuchsia-zircon-sys-0.3.3.tar.gz) = 7191
 SIZE (cargo/glob-0.2.11.tar.gz) = 18065
 SIZE (cargo/itoa-0.4.2.tar.gz) = 10581
 SIZE (cargo/lazy_static-1.1.0.tar.gz) = 12317
-SIZE (cargo/libc-0.2.43.tar.gz) = 353810
+SIZE (cargo/libc-0.2.63.tar.gz) = 437880
 SIZE (cargo/lock_api-0.1.3.tar.gz) = 12167
 SIZE (cargo/log-0.4.5.tar.gz) = 22221
 SIZE (cargo/memchr-2.0.2.tar.gz) = 10092

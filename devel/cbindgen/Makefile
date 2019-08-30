@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:44:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/08/30 12:24:00 semarie Exp $
 
 COMMENT =		C bindings generator from rust code
 
@@ -14,9 +14,13 @@ PERMIT_PACKAGE =	Yes
 # as devel/cargo MODULES adds DISTFILES, GH_* didn't
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 
+COMPILER =		base-clang ports-gcc
+
 MODULES =		devel/cargo
 
 CONFIGURE_STYLE =	cargo
+
+MODCARGO_CRATES_UPDATE +=	libc
 
 MODCARGO_CRATES +=      ansi_term       0.11.0  # MIT
 MODCARGO_CRATES +=      atty    0.2.11  # MIT
@@ -27,7 +31,7 @@ MODCARGO_CRATES +=      clap    2.33.0  # MIT
 MODCARGO_CRATES +=      cloudabi        0.0.3   # BSD-2-Clause
 MODCARGO_CRATES +=      fuchsia-cprng   0.1.1   # LICENSE
 MODCARGO_CRATES +=      itoa    0.4.4   # MIT/Apache-2.0
-MODCARGO_CRATES +=      libc    0.2.58  # MIT OR Apache-2.0
+MODCARGO_CRATES +=      libc    0.2.63  # MIT OR Apache-2.0
 MODCARGO_CRATES +=      log     0.4.6   # MIT/Apache-2.0
 MODCARGO_CRATES +=      numtoa  0.1.0   # MIT OR Apache-2.0
 MODCARGO_CRATES +=      proc-macro2     0.4.30  # MIT/Apache-2.0

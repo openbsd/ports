@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/04 06:58:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/08/30 12:24:00 semarie Exp $
 
 BROKEN-i386 =	error[E0428]: the name `U1024` is defined multiple times
+BROKEN-sparc64=	ring build-script error: called `Option::unwrap()` on a `None` value
 
 COMMENT =	semi-automatic OSINT framework and package manager
 
@@ -25,6 +26,8 @@ BUILD_DEPENDS =		lang/rust>=1.34 \
 			textproc/py-sphinx
 RUN_DEPENDS =		net/libmaxminddb,-asn \
 			net/libmaxminddb,-city
+
+MODCARGO_CRATES_UPDATE +=	libc
 
 MODCARGO_CRATES +=	adler32	1.0.3	# BSD-3-Clause AND Zlib
 MODCARGO_CRATES +=	aho-corasick	0.7.3	# Unlicense/MIT
@@ -165,7 +168,7 @@ MODCARGO_CRATES +=	kuchiki	0.7.3	# MIT
 MODCARGO_CRATES +=	language-tags	0.2.2	# MIT
 MODCARGO_CRATES +=	lazy_static	1.3.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	lazycell	1.2.1	# MIT/Apache-2.0
-MODCARGO_CRATES +=	libc	0.2.54	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	libc	0.2.63	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	libflate	0.1.22	# MIT
 MODCARGO_CRATES +=	libsqlite3-sys	0.12.0	# MIT
 MODCARGO_CRATES +=	libz-sys	1.0.25	# MIT/Apache-2.0
