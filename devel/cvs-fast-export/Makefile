@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/08/31 15:26:39 sthen Exp $
 
 COMMENT=	export an RCS or CVS history as a fast-import stream
 
-DISTNAME=	cvs-fast-export-1.46
+DISTNAME=	cvs-fast-export-1.48
 
 CATEGORIES=	devel
 
@@ -15,11 +15,15 @@ WANTLIB += c pthread
 
 MASTER_SITES=	http://www.catb.org/esr/cvs-fast-export/
 
+# XXX weird tar, includes files symlinked to themselves
+BUILD_DEPENDS=	archivers/gtar
+TAR=		gtar
+
 USE_GMAKE=	Yes
 MODULES=	lang/python
 CONFIGURE_STYLE= x	# bad python.port.mk
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"
-BUILD_DEPENDS=	devel/bison \
+BUILD_DEPENDS+=	devel/bison \
 		textproc/asciidoc
 
 ALL_TARGET=	cvs-fast-export
