@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2019/06/03 16:06:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/08/31 14:01:19 sthen Exp $
 
 COMMENT=	transparent and scalable SSL/TLS interception
 
-DISTNAME=	sslsplit-0.5.4
+DISTNAME=	sslsplit-0.5.5
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	security
@@ -22,15 +22,15 @@ MASTER_SITES=	https://mirror.roe.ch/rel/sslsplit/
 LIB_DEPENDS=	devel/libevent2 \
 		net/libnet/1.1
 TEST_DEPENDS=	devel/check
-MAKE_FLAGS=	MANDIR=man PREFIX=${TRUEPREFIX}
+MAKE_FLAGS=	MANDIR=${TRUEPREFIX}/man PREFIX=${TRUEPREFIX}
+FAKE_FLAGS=	SYSCONFDIR=${TRUEPREFIX}/share/examples
 
 USE_GMAKE=	Yes
 
 MAKE_FILE=	GNUmakefile
 
 post-install:
-	mv ${PREFIX}/sslsplit ${PREFIX}/share/examples/
-	sed -i 's,/usr/local/etc/,${SYSCONFDIR}/,' \
+	sed -i 's,/usr/local/share/examples/,${SYSCONFDIR}/,' \
 		${PREFIX}/share/examples/sslsplit/* \
 		${PREFIX}/man/man*/*
 

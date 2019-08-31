@@ -1,9 +1,9 @@
-$OpenBSD: patch-sslsplit_1_in,v 1.1 2019/01/29 23:05:21 sthen Exp $
+$OpenBSD: patch-sslsplit_1_in,v 1.2 2019/08/31 14:01:20 sthen Exp $
 
 Index: sslsplit.1.in
 --- sslsplit.1.in.orig
 +++ sslsplit.1.in
-@@ -351,7 +351,7 @@ Drop privileges after opening sockets and files by set
+@@ -364,7 +364,7 @@ Drop privileges after opening sockets and files by set
  effective and stored user IDs to \fIuser\fP and loading the appropriate
  primary and ancillary groups.  If \fB-u\fP is not given, SSLsplit will drop
  privileges to the stored UID if EUID != UID (setuid bit scenario), or to
