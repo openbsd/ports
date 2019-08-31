@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.69 2019/07/19 12:32:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2019/08/31 15:07:56 sthen Exp $
 
 COMMENT=	wiki and bug tracking system for software projects
 
-MODPY_EGG_VERSION=1.2.4
+MODPY_EGG_VERSION=1.4
 PORTROACH=	limitw:1,even
 DISTNAME=	Trac-${MODPY_EGG_VERSION:S/post/.post/}
 PKGNAME=	trac-${MODPY_EGG_VERSION:S/post/pl/}
@@ -22,7 +22,7 @@ PERMIT_PACKAGE=   Yes
 MODULES=	lang/python
 
 COMMON_DEPS=	devel/py-babel>=0.9.6 \
-		www/py-genshi>=0.6
+		www/py-jinja2>=2.9.3
 
 RUN_DEPENDS=	${COMMON_DEPS} \
 		devel/subversion,-python \
