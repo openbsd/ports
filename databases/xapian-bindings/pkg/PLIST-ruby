@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ruby,v 1.3 2018/12/20 09:59:26 robert Exp $
+@comment $OpenBSD: PLIST-ruby,v 1.4 2019/08/31 18:28:08 jeremy Exp $
 @comment ${MODRUBY_SITEARCHDIR}/_xapian.a
 ${MODRUBY_SITEARCHDIR}/_xapian.so
 ${MODRUBY_SITEDIR}/xapian.rb
@@ -69,7 +69,6 @@ share/doc/xapian-bindings/ruby${MODRUBY_BINREV}/rdocs/images/zoom.png
 share/doc/xapian-bindings/ruby${MODRUBY_BINREV}/rdocs/index.html
 share/doc/xapian-bindings/ruby${MODRUBY_BINREV}/rdocs/js/
 share/doc/xapian-bindings/ruby${MODRUBY_BINREV}/rdocs/js/darkfish.js
-share/doc/xapian-bindings/ruby${MODRUBY_BINREV}/rdocs/js/jquery.js
 share/doc/xapian-bindings/ruby${MODRUBY_BINREV}/rdocs/js/navigation.js
 share/doc/xapian-bindings/ruby${MODRUBY_BINREV}/rdocs/js/navigation.js.gz
 share/doc/xapian-bindings/ruby${MODRUBY_BINREV}/rdocs/js/search.js
