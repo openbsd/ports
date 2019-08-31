@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_libsec_386_mkfile,v 1.1 2019/08/31 14:09:13 sthen Exp $
+
+Index: src/libsec/386/mkfile
+--- src/libsec/386/mkfile.orig
++++ src/libsec/386/mkfile
+@@ -1,4 +1,5 @@
+ <$PLAN9/src/mkhdr
++CC?=cc
+ 
+ LIB=libsec.a
+ SFILES=\
+@@ -18,7 +19,7 @@ UPDATE=mkfile\
+ %.s: %.spp
+ 	if [ `uname` = OpenBSD ] || [ `uname` = Darwin ]
+ 	then
+-		gcc -xc -D__`uname`__ -E $stem.spp >$stem.s
++		${CC} -xc -D__`uname`__ -E $stem.spp >$stem.s
+ 	else
+ 		cpp $stem.spp >$stem.s
+ 	fi
