@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2019/08/31 17:21:33 sthen Exp $
 
 COMMENT =	perl interface to libev
 
 MODULES =	cpan
-DISTNAME =	EV-4.22
-REVISION =	0
+DISTNAME =	EV-4.27
 CATEGORIES =	devel
 CPAN_AUTHOR =	MLEHMANN
 

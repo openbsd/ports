@@ -1,7 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2016/11/18 09:17:10 dcoppa Exp $
---- Makefile.in.orig	Wed Nov 16 18:27:12 2016
-+++ Makefile.in	Fri Nov 18 10:06:56 2016
-@@ -354,9 +354,9 @@ EXTRA_DIST = LICENSE Changes libev.m4 autogen.sh \
+$OpenBSD: patch-Makefile_in,v 1.7 2019/08/31 17:21:33 sthen Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -356,9 +356,9 @@ EXTRA_DIST = LICENSE Changes libev.m4 autogen.sh \
  	     ev.3 ev.pod Symbols.ev Symbols.event
  
  man_MANS = ev.3

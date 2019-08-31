@@ -1,7 +1,9 @@
-$OpenBSD: patch-configure,v 1.7 2016/11/18 09:17:10 dcoppa Exp $
---- configure.orig	Wed Nov 16 18:27:08 2016
-+++ configure	Fri Nov 18 10:06:56 2016
-@@ -3892,11 +3892,6 @@ fi
+$OpenBSD: patch-configure,v 1.8 2019/08/31 17:21:33 sthen Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -3901,11 +3901,6 @@ fi
  
  
  
