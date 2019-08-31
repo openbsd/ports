@@ -1,44 +1,21 @@
-# $OpenBSD: patch-postgrey,v 1.6 2014/08/19 13:54:56 giovanni Exp $
+# $OpenBSD: patch-postgrey,v 1.7 2019/08/31 15:55:55 sthen Exp $
 
-default path/uid/gid changes, plus untaint for Perl 5.18
-
-From 9673b54064691a5b9c295ffea340d8a1f9ee1cb8 Mon Sep 17 00:00:00 2001
-From: Yasuhiro KIMURA <yasu@utahime.org>
-Date: Sat, 17 Aug 2013 22:05:27 +0900
-Subject: [PATCH] Make postgrey work with Perl 5.18
-
---- postgrey.orig	Wed Jun 11 15:13:50 2014
-+++ postgrey	Sat Jul 12 17:18:21 2014
-@@ -23,7 +23,7 @@ use vars qw(@ISA);
+Index: postgrey
+--- postgrey.orig
++++ postgrey
+@@ -24,7 +24,7 @@ use vars qw(@ISA);
  @ISA = qw(Net::Server::Multiplex);
  
- my $VERSION = '1.35';
+ my $VERSION = '1.37';
 -my $DEFAULT_DBDIR = '/var/spool/postfix/postgrey';
 +my $DEFAULT_DBDIR = '/var/db/postgrey';
  my $CONFIG_DIR = '/etc/postfix';
  
- sub cidr_parse($)
-@@ -551,6 +551,16 @@ sub main()
-                 "       followed by 'h' for hours ('6h' for example).\n";
-         }
-     }
-+    # untaint what is given on --pidfile. It is not security sensitive since
-+    # it is provided by the admin
-+    if($opt{pidfile}) {
-+        $opt{pidfile} =~ /^(.*)$/; $opt{pidfile} = $1;
-+    }
-+    # untaint what is given on --inet. It is not security sensitive since
-+    # it is provided by the admin
-+    if($opt{inet}) {
-+        $opt{inet} =~ /^(.*)$/; $opt{inet} = $1;
-+    }
- 
-     # untaint what is given on --dbdir. It is not security sensitive since
-     # it is provided by the admin
-@@ -595,8 +605,8 @@ sub main()
-             commandline      => [ 'postgrey', @ARGV_saved ],
+ sub read_clients_whitelists($)
+@@ -598,8 +598,8 @@ sub main()
              port             => [ $opt{inet} ? $opt{inet} : $opt{unix}."|unix" ],
              proto            => $opt{inet} ? 'tcp' : 'unix',
+             socketmode       => $opt{socketmode} || '0666',
 -            user             => $opt{user} || 'postgrey',
 -            group            => $opt{group} || 'nogroup',
 +            user             => $opt{user} || '_postgrey',
@@ -46,7 +23,7 @@ Subject: [PATCH] Make postgrey work with Perl 5.18
              dbdir            => $opt{dbdir} || $DEFAULT_DBDIR,
              setsid           => $opt{daemonize} ? 1 : undef,
              pid_file         => $opt{daemonize} ? $opt{pidfile} : undef,
-@@ -804,9 +814,9 @@ B<postgrey> [I<options>...]
+@@ -810,9 +810,9 @@ B<postgrey> [I<options>...]
   -i, --inet=[HOST:]PORT  listen on PORT, localhost if HOST is not specified
   -d, --daemonize         run in the background
       --pidfile=PATH      put daemon pid into this file

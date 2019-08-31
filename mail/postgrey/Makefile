@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/17 14:46:33 danj Exp $
+# $OpenBSD: Makefile,v 1.25 2019/08/31 15:55:55 sthen Exp $
 
 COMMENT=	postfix greylist daemon
 
-DISTNAME=	postgrey-1.35
+DISTNAME=	postgrey-1.37
 CATEGORIES=	mail
-REVISION=	2
 
-HOMEPAGE=	http://postgrey.schweikert.ch/
+HOMEPAGE=	https://postgrey.schweikert.ch/
 
 MASTER_SITES=	${HOMEPAGE}/pub/ \
 		${HOMEPAGE}/pub/old/
@@ -14,8 +13,10 @@ MASTER_SITES=	${HOMEPAGE}/pub/ \
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-NO_BUILD=		Yes
-NO_TEST=		Yes
+NO_BUILD=	Yes
+
+# tests need more work
+NO_TEST=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/p5-Net-Server \
