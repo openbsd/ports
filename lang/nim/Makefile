@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/08/31 15:36:56 sthen Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
+
+BROKEN-i386 = hardcodes gcc; see config/nim.cfg
 
 COMMENT =		statically typed, imperative programming language
 
