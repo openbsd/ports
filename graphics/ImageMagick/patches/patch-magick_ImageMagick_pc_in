@@ -1,4 +1,5 @@
-$OpenBSD: patch-magick_ImageMagick_pc_in,v 1.5 2018/05/21 21:12:48 sthen Exp $
+$OpenBSD: patch-magick_ImageMagick_pc_in,v 1.6 2019/08/31 15:20:15 sthen Exp $
+
 Index: magick/ImageMagick.pc.in
 --- magick/ImageMagick.pc.in.orig
 +++ magick/ImageMagick.pc.in

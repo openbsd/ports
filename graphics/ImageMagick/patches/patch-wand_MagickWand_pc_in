@@ -1,4 +1,5 @@
-$OpenBSD: patch-wand_MagickWand_pc_in,v 1.7 2019/08/19 15:27:10 sthen Exp $
+$OpenBSD: patch-wand_MagickWand_pc_in,v 1.8 2019/08/31 15:20:15 sthen Exp $
+
 Index: wand/MagickWand.pc.in
 --- wand/MagickWand.pc.in.orig
 +++ wand/MagickWand.pc.in

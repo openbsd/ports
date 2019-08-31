@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_policy_xml,v 1.4 2018/11/06 22:27:13 sthen Exp $
+$OpenBSD: patch-config_policy_xml,v 1.5 2019/08/31 15:20:15 sthen Exp $
 
 As recommended in http://www.openwall.com/lists/oss-security/2018/08/21/2
 plus followups.

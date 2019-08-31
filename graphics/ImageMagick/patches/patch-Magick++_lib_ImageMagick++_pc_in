@@ -1,6 +1,8 @@
-$OpenBSD: patch-Magick++_lib_ImageMagick++_pc_in,v 1.4 2015/11/06 20:37:21 sthen Exp $
---- Magick++/lib/ImageMagick++.pc.in.orig	Sat Oct 10 11:45:02 2015
-+++ Magick++/lib/ImageMagick++.pc.in	Fri Oct 30 00:14:49 2015
+$OpenBSD: patch-Magick++_lib_ImageMagick++_pc_in,v 1.5 2019/08/31 15:20:15 sthen Exp $
+
+Index: Magick++/lib/ImageMagick++.pc.in
+--- Magick++/lib/ImageMagick++.pc.in.orig
++++ Magick++/lib/ImageMagick++.pc.in
 @@ -1,14 +1,14 @@
  prefix=@prefix@
  exec_prefix=@exec_prefix@
