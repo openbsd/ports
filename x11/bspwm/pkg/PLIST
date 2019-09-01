@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/10 13:30:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/09/01 14:01:24 jasper Exp $
 @bin bin/bspc
 @bin bin/bspwm
 @man man/man1/bspc.1
@@ -18,15 +18,6 @@ share/examples/bspwm/bspwmrc
 share/examples/bspwm/external_rules/
 share/examples/bspwm/external_rules/bspwmrc
 share/examples/bspwm/external_rules/external_rules
-share/examples/bspwm/external_rules/pseudo_automatic_mode/
-share/examples/bspwm/external_rules/pseudo_automatic_mode/README.md
-share/examples/bspwm/external_rules/pseudo_automatic_mode/external_rules
-share/examples/bspwm/loop/
-share/examples/bspwm/loop/bspwmrc
-share/examples/bspwm/loop/profile
-share/examples/bspwm/loop/sxhkdrc
-share/examples/bspwm/loop/wm
-share/examples/bspwm/loop/xinitrc
 share/examples/bspwm/overlapping_borders/
 share/examples/bspwm/overlapping_borders/bspwmrc
 share/examples/bspwm/panel/
