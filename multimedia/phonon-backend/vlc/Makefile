@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/05/20 22:15:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2019/09/01 18:56:40 rsadowski Exp $
 
 COMMENT =	VLC-based Phonon backend
-VERSION =	0.10.1
+VERSION =	0.10.3
 DISTNAME =	phonon-backend-vlc-${VERSION}
 
-# Mirrors out of sync
 MASTER_SITES =		https://download.kde.org/stable/phonon/phonon-backend-vlc/${VERSION}/
 
 WANTLIB += ${COMPILER_LIBCXX} m vlc vlccore
