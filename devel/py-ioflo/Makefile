@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:45:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/09/01 09:51:37 jasper Exp $
 
 COMMENT=		automated reasoning engine, flow based programming framework
 
-MODPY_EGG_VERSION=	1.7.5
+MODPY_EGG_VERSION=	1.7.6
 DISTNAME=		ioflo-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		devel
 
