@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/09/01 10:58:44 jasper Exp $
 
+BROKEN =		update requires QT5 webengine (not ported)
 COMMENT =		keyboard-focused browser with a minimal GUI
 
 MODPY_EGG_VERSION =	0.11.1
