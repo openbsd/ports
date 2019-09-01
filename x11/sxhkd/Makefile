@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:51:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/09/01 14:01:08 jasper Exp $
 
 COMMENT =		simple X hotkey daemon
 
 GH_ACCOUNT =		baskerville
 GH_PROJECT =		sxhkd
-GH_TAGNAME =		0.5.8
+GH_TAGNAME =		0.6.1
 
 CATEGORIES =		x11
 
