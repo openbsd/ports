@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/10/22 20:30:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/09/01 18:45:34 rsadowski Exp $
 @bin bin/krusader
 lib/qt5/plugins/kio_iso.so
 lib/qt5/plugins/kio_krarc.so
@@ -302,7 +302,6 @@ share/doc/HTML/uk/krusader/vfs.docbook
 share/doc/HTML/uk/krusader/viewer-editor.docbook
 share/examples/krusader/
 share/examples/krusader/xdg/
-@sample ${SYSCONFDIR}/xdg/
 share/examples/krusader/xdg/kio_isorc
 @sample ${SYSCONFDIR}/xdg/kio_isorc
 share/icons/hicolor/128x128/apps/krusader_root.png
@@ -366,7 +365,6 @@ share/krusader/total_commander.keymap.info
 share/krusader/useraction_examples.xml
 share/kservices5/iso.protocol
 share/kservices5/krarc.protocol
-share/kxmlgui5/
 share/kxmlgui5/krusader/
 share/kxmlgui5/krusader/krusaderlisterui.rc
 share/kxmlgui5/krusader/krusaderui.rc
@@ -384,6 +382,7 @@ share/locale/en_GB/LC_MESSAGES/krusader.mo
 share/locale/eo/LC_MESSAGES/krusader.mo
 share/locale/es/LC_MESSAGES/krusader.mo
 share/locale/et/LC_MESSAGES/krusader.mo
+share/locale/eu/LC_MESSAGES/krusader.mo
 share/locale/fi/LC_MESSAGES/krusader.mo
 share/locale/fr/LC_MESSAGES/krusader.mo
 share/locale/ga/LC_MESSAGES/krusader.mo
@@ -419,7 +418,6 @@ share/locale/ug/LC_MESSAGES/krusader.mo
 share/locale/uk/LC_MESSAGES/krusader.mo
 share/locale/zh_CN/LC_MESSAGES/krusader.mo
 share/locale/zh_TW/LC_MESSAGES/krusader.mo
-share/metainfo/
 share/metainfo/org.kde.krusader.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
