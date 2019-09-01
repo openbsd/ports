@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile.inc,v 1.59 2019/08/24 08:44:05 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.60 2019/09/01 09:04:33 ajacoutot Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
 # plugins-base	minimal set: audio (sndio), gio, playback, Ogg Vorbis
 # plugins-good	audio mixer (oss)
-# plugins-ugly	mp3 decoding, dvd
+# plugins-ugly	dvd
 # plugins-bad	vaapi
-# plugins-libav	divx, mpeg4, h264, vp8 (same decoding capabilities as FFmpeg)
+# plugins-libav	divx, mp3, mpeg4, h264, vp8 (same decoding capabilities as FFmpeg)
 #
-# i.e. applications that use GStreamer require:
+# Most applications that use GStreamer require:
 #     gstreamer1-plugins-base and gstreamer1-plugins-good
-# audio/video support for MP3 decoding requires:
-#     gstreamer1-plugins-ugly or gstreamer1-plugins-libav
-# support for most video codecs is provided by
+# Support for most audio and video codecs is provided by
 #     gstreamer1-plugins-libav
 
 PORTROACH=		limitw:1,even
