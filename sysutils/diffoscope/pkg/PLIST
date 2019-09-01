@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/04/29 13:57:43 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/09/01 21:35:18 bcallah Exp $
 bin/diffoscope
 lib/python${MODPY_VERSION}/site-packages/diffoscope/
 lib/python${MODPY_VERSION}/site-packages/diffoscope-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/diffoscope-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/diffoscope-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/diffoscope/__init__.py
-lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}changes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
@@ -30,7 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/${MODPY_PYCACHE}tools.${MODP
 lib/python${MODPY_VERSION}/site-packages/diffoscope/changes.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/__init__.py
-lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}android.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}apk.${MODPY_PYC_MAGIC_TAG}pyc
@@ -159,7 +159,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/tar.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/text.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/__init__.py
-lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/${MODPY_PYCACHE}archive.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/${MODPY_PYCACHE}command.${MODPY_PYC_MAGIC_TAG}pyc
@@ -195,7 +195,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/main.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/path.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/presenters/
 lib/python${MODPY_VERSION}/site-packages/diffoscope/presenters/__init__.py
-lib/python${MODPY_VERSION}/site-packages/diffoscope/presenters/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/diffoscope/presenters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/diffoscope/presenters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/presenters/${MODPY_PYCACHE}formats.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/presenters/${MODPY_PYCACHE}icon.${MODPY_PYC_MAGIC_TAG}pyc
@@ -207,7 +207,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/presenters/${MODPY_PYCACHE}u
 lib/python${MODPY_VERSION}/site-packages/diffoscope/presenters/formats.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/presenters/html/
 lib/python${MODPY_VERSION}/site-packages/diffoscope/presenters/html/__init__.py
-lib/python${MODPY_VERSION}/site-packages/diffoscope/presenters/html/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/diffoscope/presenters/html/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/diffoscope/presenters/html/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/presenters/html/${MODPY_PYCACHE}html.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/presenters/html/${MODPY_PYCACHE}templates.${MODPY_PYC_MAGIC_TAG}pyc
@@ -223,7 +223,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/profiling.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/progress.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/readers/
 lib/python${MODPY_VERSION}/site-packages/diffoscope/readers/__init__.py
-lib/python${MODPY_VERSION}/site-packages/diffoscope/readers/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/diffoscope/readers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/diffoscope/readers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/readers/${MODPY_PYCACHE}json.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/readers/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
