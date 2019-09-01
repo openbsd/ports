@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/09/01 09:54:36 jasper Exp $
 
 COMMENT =		simple Python interface for Graphviz
 
-MODPY_EGG_VERSION =	0.11.1
+MODPY_EGG_VERSION =	0.12
 DISTNAME =		graphviz-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
