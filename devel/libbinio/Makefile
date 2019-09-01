@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/09/01 20:10:32 fcambus Exp $
 
 COMMENT =	binary I/O stream class library
 
-DISTNAME =	libbinio-1.4
-REVISION =	2
+DISTNAME =	libbinio-1.5
+EXTRACT_SUFX =	.tar.bz2
 SHARED_LIBS +=	binio	0.0	# 1.0
+
 CATEGORIES =	devel
 
-HOMEPAGE =	http://libbinio.sourceforge.net/
+HOMEPAGE =	https://adplug.github.io/libbinio/
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
@@ -18,7 +19,7 @@ WANTLIB +=	m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=libbinio/}
+MASTER_SITES =	https://github.com/adplug/libbinio/releases/download/${DISTNAME}/
 
 CONFIGURE_STYLE = gnu
 
