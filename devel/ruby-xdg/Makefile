@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/09/01 11:10:23 jasper Exp $
 
 COMMENT =		module for supporting XDG Base Directory Standard
 
-DISTNAME =		xdg-2.2.3
+DISTNAME =		xdg-2.2.5
 CATEGORIES =		devel
 
 # BSD

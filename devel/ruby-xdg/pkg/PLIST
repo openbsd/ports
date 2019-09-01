@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/05 16:43:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/09/01 11:10:23 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.index
@@ -17,19 +17,10 @@ ${GEM_LIB}/gems/${DISTNAME}/demo/applique/fakeroot.rb
 ${GEM_LIB}/gems/${DISTNAME}/demo/applique/xdg.rb
 ${GEM_LIB}/gems/${DISTNAME}/demo/fixtures/
 ${GEM_LIB}/gems/${DISTNAME}/demo/fixtures/fakeroot/
-${GEM_LIB}/gems/${DISTNAME}/demo/fixtures/fakeroot/.cache/
-${GEM_LIB}/gems/${DISTNAME}/demo/fixtures/fakeroot/.cache/DUMMY.txt
 ${GEM_LIB}/gems/${DISTNAME}/demo/fixtures/fakeroot/etc/
 ${GEM_LIB}/gems/${DISTNAME}/demo/fixtures/fakeroot/etc/xdg/
 ${GEM_LIB}/gems/${DISTNAME}/demo/fixtures/fakeroot/etc/xdg/bar.config
 ${GEM_LIB}/gems/${DISTNAME}/demo/fixtures/fakeroot/home/
-${GEM_LIB}/gems/${DISTNAME}/demo/fixtures/fakeroot/home/.cache/
-${GEM_LIB}/gems/${DISTNAME}/demo/fixtures/fakeroot/home/.cache/foo.cache
-${GEM_LIB}/gems/${DISTNAME}/demo/fixtures/fakeroot/home/.config/
-${GEM_LIB}/gems/${DISTNAME}/demo/fixtures/fakeroot/home/.config/foo.config
-${GEM_LIB}/gems/${DISTNAME}/demo/fixtures/fakeroot/home/.local/
-${GEM_LIB}/gems/${DISTNAME}/demo/fixtures/fakeroot/home/.local/share/
-${GEM_LIB}/gems/${DISTNAME}/demo/fixtures/fakeroot/home/.local/share/foo.dat
 ${GEM_LIB}/gems/${DISTNAME}/demo/fixtures/fakeroot/home/joe/
 ${GEM_LIB}/gems/${DISTNAME}/demo/fixtures/fakeroot/home/joe/foo.txt
 ${GEM_LIB}/gems/${DISTNAME}/demo/fixtures/fakeroot/usr/
@@ -47,19 +38,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/xdg/base_dir/mixin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/xdg/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/fakeroot/
-${GEM_LIB}/gems/${DISTNAME}/test/fakeroot/.cache/
-${GEM_LIB}/gems/${DISTNAME}/test/fakeroot/.cache/DUMMY.txt
 ${GEM_LIB}/gems/${DISTNAME}/test/fakeroot/etc/
 ${GEM_LIB}/gems/${DISTNAME}/test/fakeroot/etc/xdg/
 ${GEM_LIB}/gems/${DISTNAME}/test/fakeroot/etc/xdg/bar.config
-${GEM_LIB}/gems/${DISTNAME}/test/fakeroot/home/
-${GEM_LIB}/gems/${DISTNAME}/test/fakeroot/home/.cache/
-${GEM_LIB}/gems/${DISTNAME}/test/fakeroot/home/.cache/foo.cache
-${GEM_LIB}/gems/${DISTNAME}/test/fakeroot/home/.config/
-${GEM_LIB}/gems/${DISTNAME}/test/fakeroot/home/.config/foo.config
-${GEM_LIB}/gems/${DISTNAME}/test/fakeroot/home/.local/
-${GEM_LIB}/gems/${DISTNAME}/test/fakeroot/home/.local/share/
-${GEM_LIB}/gems/${DISTNAME}/test/fakeroot/home/.local/share/foo.dat
 ${GEM_LIB}/gems/${DISTNAME}/test/fakeroot/usr/
 ${GEM_LIB}/gems/${DISTNAME}/test/fakeroot/usr/share/
 ${GEM_LIB}/gems/${DISTNAME}/test/fakeroot/usr/share/bar.dat
