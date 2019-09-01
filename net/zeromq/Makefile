@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:48:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/09/01 12:07:57 jasper Exp $
 
 COMMENT =		open source message queue optimised for performance
 
-V =			4.3.1
+V =			4.3.2
 DISTNAME =		zeromq-${V}
 
 SHARED_LIBS +=  zmq                  5.1      # 7.1

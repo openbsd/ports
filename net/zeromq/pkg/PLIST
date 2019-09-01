@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/01/28 19:39:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/09/01 12:07:57 jasper Exp $
 @bin bin/curve_keygen
 include/zmq.h
 include/zmq_utils.h
@@ -54,6 +54,7 @@ lib/pkgconfig/libzmq.pc
 @man man/man3/zmq_setsockopt.3
 @man man/man3/zmq_socket.3
 @man man/man3/zmq_socket_monitor.3
+@man man/man3/zmq_socket_monitor_versioned.3
 @man man/man3/zmq_strerror.3
 @man man/man3/zmq_timers.3
 @man man/man3/zmq_unbind.3
