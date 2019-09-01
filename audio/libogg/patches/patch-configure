@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.15 2017/11/11 20:21:05 naddy Exp $
+$OpenBSD: patch-configure,v 1.16 2019/09/01 18:04:25 naddy Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -12183,7 +12183,7 @@ if test -z "$GCC"; then
+@@ -12791,7 +12791,7 @@ if test -z "$GCC"; then
  		;;
          *)
                  DEBUG="-g"
@@ -11,7 +11,7 @@ Index: configure
                  PROFILE="-g -p"
  		;;
          esac
-@@ -12206,8 +12206,8 @@ else
+@@ -12814,8 +12814,8 @@ else
  		;;
          *)
                  DEBUG="-g -Wall -fsigned-char"
