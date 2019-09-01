@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/08/16 15:21:38 thfr Exp $
+# $OpenBSD: Makefile,v 1.8 2019/09/01 19:28:32 sthen Exp $
 
 V =		0.60pl20190731
 COMMENT =	source port of Descent, a 6-degrees-of-freedom shooter
@@ -26,6 +26,7 @@ MODSCONS_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LINKFLAGS="-L${LOCALBASE}/lib"
 MODSCONS_FLAGS =	ignore_unknown_variables=1 verbosebuild=1
 
+BUILD_DEPENDS =	devel/boost,-main
 LIB_DEPENDS =	devel/physfs \
 		devel/sdl \
 		devel/sdl-mixer \
