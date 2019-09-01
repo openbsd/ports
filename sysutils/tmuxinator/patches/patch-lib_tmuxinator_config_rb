@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_tmuxinator_config_rb,v 1.5 2018/06/02 12:48:31 jasper Exp $
+$OpenBSD: patch-lib_tmuxinator_config_rb,v 1.6 2019/09/01 11:10:36 jasper Exp $
 
 Prevent: "tmux: unknown option -- V" and just report the latest version
 for the value is used to decide if it's newer than 2.2
@@ -6,7 +6,7 @@ for the value is used to decide if it's newer than 2.2
 Index: lib/tmuxinator/config.rb
 --- lib/tmuxinator/config.rb.orig
 +++ lib/tmuxinator/config.rb
-@@ -49,15 +49,7 @@ module Tmuxinator
+@@ -61,15 +61,7 @@ module Tmuxinator
        end
  
        def version

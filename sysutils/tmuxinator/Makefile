@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2019/09/01 11:10:36 jasper Exp $
 
 COMMENT =		create and manage complex tmux sessions easily
 
-DISTNAME =		tmuxinator-0.15.0
-REVISION =		0
+DISTNAME =		tmuxinator-1.1.1
 FULLPKGNAME =		${DISTNAME}
 CATEGORIES =		sysutils
 
@@ -21,7 +20,7 @@ GEM_FLAGS =		--no-format-executable
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/ruby-thor,${MODRUBY_FLAVOR} \
-			devel/ruby-xdg,${MODRUBY_FLAVOR} \
+			devel/ruby-xdg,${MODRUBY_FLAVOR}<3 \
 			textproc/ruby-erubis,${MODRUBY_FLAVOR}
 
 # Fix mux.fish symlink
