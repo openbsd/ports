@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/08/16 15:38:15 thfr Exp $
+# $OpenBSD: Makefile,v 1.9 2019/09/02 18:20:12 thfr Exp $
 
 COMMENT =	2D and 3D game engine
 
@@ -8,7 +8,7 @@ PKGNAME =	godot-${V}
 CATEGORIES =	games
 HOMEPAGE =	https://godotengine.org/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
-REVISION =	2
+REVISION =	3
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -68,6 +68,18 @@ LIB_DEPENDS =		archivers/zstd \
 			net/enet
 
 NO_TEST =		Yes
+
+.if ${MACHINE_ARCH:Mhppa} || ${MACHINE_ARCH:Mpowerpc}
+LDFLAGS +=     -latomic
+WANTLIB +=     atomic
+.endif
+
+# Fix relocation overflows
+.if ${MACHINE_ARCH:Mpowerpc}
+CFLAGS +=      -mlongcall
+CXXFLAGS +=    -mlongcall
+LDFLAGS +=     -Wl,--relax
+.endif
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/drivers/unix/os_unix.cpp

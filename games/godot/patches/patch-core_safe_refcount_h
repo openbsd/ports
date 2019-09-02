@@ -1,0 +1,68 @@
+$OpenBSD: patch-core_safe_refcount_h,v 1.1 2019/09/02 18:20:12 thfr Exp $
+
+hppa, ppc: use __atomic functions as 64-bit __sync operators
+are not supported, from:
+https://github.com/godotengine/godot/pull/31321 
+
+Index: core/safe_refcount.h
+--- core/safe_refcount.h.orig
++++ core/safe_refcount.h
+@@ -99,8 +99,8 @@ static _ALWAYS_INLINE_ T atomic_exchange_if_greater(re
+ 
+ /* Implementation for GCC & Clang */
+ 
+-// GCC guarantees atomic intrinsics for sizes of 1, 2, 4 and 8 bytes.
+-// Clang states it supports GCC atomic builtins.
++#include <stdbool.h>
++#include <atomic>
+ 
+ template <class T>
+ static _ALWAYS_INLINE_ T atomic_conditional_increment(register T *pw) {
+@@ -109,7 +109,7 @@ static _ALWAYS_INLINE_ T atomic_conditional_increment(
+ 		T tmp = static_cast<T const volatile &>(*pw);
+ 		if (tmp == 0)
+ 			return 0; // if zero, can't add to it anymore
+-		if (__sync_val_compare_and_swap(pw, tmp, tmp + 1) == tmp)
++		if (__atomic_compare_exchange_n(pw, &tmp, tmp + 1, false, __ATOMIC_SEQ_CST, __ATOMIC_SEQ_CST) == true)
+ 			return tmp + 1;
+ 	}
+ }
+@@ -117,25 +117,25 @@ static _ALWAYS_INLINE_ T atomic_conditional_increment(
+ template <class T>
+ static _ALWAYS_INLINE_ T atomic_decrement(register T *pw) {
+ 
+-	return __sync_sub_and_fetch(pw, 1);
++	return __atomic_sub_fetch(pw, 1, __ATOMIC_SEQ_CST);
+ }
+ 
+ template <class T>
+ static _ALWAYS_INLINE_ T atomic_increment(register T *pw) {
+ 
+-	return __sync_add_and_fetch(pw, 1);
++	return __atomic_add_fetch(pw, 1, __ATOMIC_SEQ_CST);
+ }
+ 
+ template <class T, class V>
+ static _ALWAYS_INLINE_ T atomic_sub(register T *pw, register V val) {
+ 
+-	return __sync_sub_and_fetch(pw, val);
++	return __atomic_sub_fetch(pw, val, __ATOMIC_SEQ_CST);
+ }
+ 
+ template <class T, class V>
+ static _ALWAYS_INLINE_ T atomic_add(register T *pw, register V val) {
+ 
+-	return __sync_add_and_fetch(pw, val);
++	return __atomic_add_fetch(pw, val, __ATOMIC_SEQ_CST);
+ }
+ 
+ template <class T, class V>
+@@ -145,7 +145,7 @@ static _ALWAYS_INLINE_ T atomic_exchange_if_greater(re
+ 		T tmp = static_cast<T const volatile &>(*pw);
+ 		if (tmp >= val)
+ 			return tmp; // already greater, or equal
+-		if (__sync_val_compare_and_swap(pw, tmp, val) == tmp)
++		if (__atomic_compare_exchange_n(pw, &tmp, val, false, __ATOMIC_SEQ_CST, __ATOMIC_SEQ_CST) == true)
+ 			return val;
+ 	}
+ }
