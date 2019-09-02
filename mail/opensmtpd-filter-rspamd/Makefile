@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/13 18:40:10 gilles Exp $
+# $OpenBSD: Makefile,v 1.2 2019/09/02 19:01:24 gilles Exp $
 
 COMMENT =	rspamd integration to the OpenSMTPD daemon
 
-V =		0.1.0
+V =		0.1.1
 DISTNAME =	filter-rspamd-${V}
 
 CATEGORIES =	mail
