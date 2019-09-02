@@ -1,0 +1,15 @@
+NuGet is the package manager for .NET. The NuGet client tools provide the
+ability to produce and consume packages. The NuGet Gallery is the central
+package repository used by all package authors and consumers.
+
+For .NET (including .NET Core), the Microsoft-supported mechanism for sharing
+code is NuGet, which defines how packages for .NET are created, hosted, and
+consumed, and provides the tools for each of those roles.
+
+Put simply, a NuGet package is a single ZIP file with the .nupkg extension that
+contains compiled code (DLLs), other files related to that code, and a
+descriptive manifest that includes information like the package's version
+number. Developers with code to share create packages and publish them to a
+public or private host. Package consumers obtain those packages from suitable
+hosts, add them to their projects, and then call a package's functionality in
+their project code. NuGet itself then handles all of the intermediate details.

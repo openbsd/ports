@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/02 18:11:46 thfr Exp $
+bin/nuget
+share/nuget/
+share/nuget/nuget.exe
