@@ -1,0 +1,16 @@
+$OpenBSD: patch-sys_linux_glimp_dlopen_cpp_m4,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+dlopen libGL.so without version suffix
+
+Index: sys/linux/glimp_dlopen.cpp.m4
+--- sys/linux/glimp_dlopen.cpp.m4.orig
++++ sys/linux/glimp_dlopen.cpp.m4
+@@ -84,7 +84,7 @@ GLimp_dlopen
+ ======================
+ */
+ bool GLimp_dlopen() {
+-	const char *driverName = r_glDriver.GetString()[0] ? r_glDriver.GetString() : "libGL.so.1";
++	const char *driverName = r_glDriver.GetString()[0] ? r_glDriver.GetString() : "libGL.so";
+ 	common->Printf("dlopen(%s)\n", driverName);
+ 	if ( !( glHandle = dlopen( driverName, RTLD_NOW | RTLD_GLOBAL ) ) ) {
+ 		common->DPrintf("dlopen(%s) failed: %s\n", driverName, dlerror());

@@ -1,0 +1,16 @@
+$OpenBSD: patch-sys_posix_posix_main_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+fix return type discrepancy
+
+Index: sys/posix/posix_main.cpp
+--- sys/posix/posix_main.cpp.orig
++++ sys/posix/posix_main.cpp
+@@ -423,7 +423,7 @@ ID_TIME_T Sys_FileTimeStamp(FILE * fp) {
+ Sys_DosToUnixTime
+ =================
+ */
+-long Sys_DosToUnixTime( unsigned long dostime ) {
++ID_TIME_T Sys_DosToUnixTime( unsigned long dostime ) {
+ 	ID_TIME_T unix_time = 0;
+     unsigned int sec, min, hour, day, mon, year;
+     struct tm dostm;

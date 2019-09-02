@@ -1,0 +1,71 @@
+$OpenBSD: patch-sys_sys_public_h,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+include openbsd in definitions
+cpuid_t conflicts with system types.h
+add include <cstdarg> for va_list
+
+Index: sys/sys_public.h
+--- sys/sys_public.h.orig
++++ sys/sys_public.h
+@@ -24,6 +24,7 @@
+ ===============================================================================
+ */
+ 
++#include <cstdarg>
+ 
+ // Win32
+ #if defined(WIN32) || defined(_WIN32)
+@@ -137,8 +138,8 @@
+ #endif
+ 
+ 
+-// Linux
+-#ifdef __linux__
++// Linux or OpenBSD
++#if defined(__linux__) || defined(__OpenBSD__)
+ 
+ #define BUILD_OS_ID					2
+ 
+@@ -206,26 +207,25 @@
+ #endif
+ 
+ typedef enum {
+-	CPUID_NONE							= 0x00000,
+-	CPUID_UNSUPPORTED					= 0x00001,	// unsupported (386/486)
+-	CPUID_GENERIC						= 0x00002,	// unrecognized processor
+-	CPUID_INTEL							= 0x00004,	// Intel
+-	CPUID_AMD							= 0x00008,	// AMD
++  CPUID_NONE							= 0x00000,
++ 	CPUID_UNSUPPORTED					= 0x00001,	// unsupported (386/486)
++ 	CPUID_GENERIC						= 0x00002,	// unrecognized processor
++ 	CPUID_INTEL							= 0x00004,	// Intel
++ 	CPUID_AMD							= 0x00008,	// AMD
+ 
+-	CPUID_MMX							= 0x00010,	// Multi Media Extensions
+-	CPUID_SSE							= 0x00020,	// Streaming SIMD Extensions
+-	CPUID_SSE2							= 0x00040,	// Streaming SIMD Extensions 2
+-	CPUID_SSE3							= 0x00080,	// Streaming SIMD Extentions 3 aka Prescott's New Instructions
+-	CPUID_SSSE3							= 0x00100,	// Supplemental Streaming SIMD Extentions (Core 2)
+-	CPUID_SSE41							= 0x00200,	// Streaming SIMD Extentions 4.1 (Penryn)
+-	CPUID_AVX							= 0x00400,	// AVX extenstions (SandyBridge)
+-	CPUID_AVX2							= 0x00800,	// AVX2 extenstions (Haswell)
+-	
+-	CPUID_FMA3							= 0x01000,	// FMA3 instruction (Haswell)
+-//	CPUID_CMOV							= 0x02000,	// Conditional Move (CMOV) and fast floating point comparison (FCOMI) instructions
++ 	CPUID_MMX							= 0x00010,	// Multi Media Extensions
++ 	CPUID_SSE							= 0x00020,	// Streaming SIMD Extensions
++ 	CPUID_SSE2							= 0x00040,	// Streaming SIMD Extensions 2
++ 	CPUID_SSE3							= 0x00080,	// Streaming SIMD Extentions 3 aka Prescott's New Instructions
++ 	CPUID_SSSE3							= 0x00100,	// Supplemental Streaming SIMD Extentions (Core 2)
++ 	CPUID_SSE41							= 0x00200,	// Streaming SIMD Extentions 4.1 (Penryn)
++ 	CPUID_AVX							= 0x00400,	// AVX extenstions (SandyBridge)
++ 	CPUID_AVX2							= 0x00800,	// AVX2 extenstions (Haswell)
++ 	CPUID_FMA3							= 0x01000,	// FMA3 instruction (Haswell)
++// 	CPUID_CMOV							= 0x02000,	// Conditional Move (CMOV) and fast floating point comparison (FCOMI) instructions
+ 	CPUID_FTZ							= 0x04000,	// Flush-To-Zero mode (denormal results are flushed to zero)
+ 	CPUID_DAZ							= 0x08000	// Denormals-Are-Zero mode (denormal source operands are set to zero)
+-} cpuid_t;
++} cpuid_tdm;
+ 
+ typedef enum {
+ 	FPU_ROUNDING_TO_NEAREST				= 0,

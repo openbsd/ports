@@ -1,0 +1,17 @@
+$OpenBSD: patch-renderer_RenderSystem_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+fix vararg clang error, see
+https://stackoverflow.com/questions/14432539/c-passing-classes-to-vararg-function
+
+Index: renderer/RenderSystem.cpp
+--- renderer/RenderSystem.cpp.orig
++++ renderer/RenderSystem.cpp
+@@ -856,7 +856,7 @@ void idRenderSystemLocal::CaptureRenderToImage( idImag
+ 		session->writeDemo->WriteHashString( image.imgName );
+ 
+ 		if ( r_showDemo.GetBool() )
+-		{ common->Printf( "write DC_CAPTURE_RENDER: %s\n", image.imgName ); }
++		{ common->Printf( "write DC_CAPTURE_RENDER: %s\n", static_cast<const char*>(image.imgName) ); }
+ 	}
+ 
+ 	renderCrop_t &rc = renderCrops[currentRenderCrop];

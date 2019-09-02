@@ -1,0 +1,80 @@
+$OpenBSD: patch-framework_minizip_zip_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+use malloc, not doom3's Mem_Alloc; similarly for free/Mem_Free
+replace ExtLibs functions with systems ones
+
+Index: framework/minizip/zip.cpp
+--- framework/minizip/zip.cpp.orig
++++ framework/minizip/zip.cpp
+@@ -53,7 +53,7 @@
+ #include "../sys/sys_public.h" //"sys/platform.h"
+ #include "../BuildDefines.h"
+ #include "../idlib/Heap.h"     //"idlib/Heap.h"
+-#include "../ExtLibs/zlib.h"
++#include <zlib.h>
+ 
+ // we don't need crypt support
+ #define NOCRYPT 1
+@@ -80,17 +80,12 @@
+ #define Z_MAXFILENAMEINZIP (256)
+ #endif
+ 
+-#if 0 // don't use system malloc but doom3's allocator
+ #ifndef ALLOC
+ # define ALLOC(size) (malloc(size))
+ #endif
+ #ifndef TRYFREE
+ # define TRYFREE(p) {if (p) free(p);}
+ #endif
+-#else // 0
+-#define ALLOC(size) (Mem_Alloc(size))
+-#define TRYFREE(p) {Mem_Free(p);} // Mem_Free - as well as free() - check for NULL themselves, no need to do it here
+-#endif // 0
+ 
+ /*
+ #define SIZECENTRALDIRITEM (0x2e)
+@@ -1245,7 +1240,7 @@ extern int ZEXPORT zipOpenNewFileInZip4_64 (zipFile fi
+           if (windowBits>0)
+               windowBits = -windowBits;
+ 
+-          err = ExtLibs::deflateInit2(&zi->ci.stream, level, Z_DEFLATED, windowBits, memLevel, strategy);
++          err = deflateInit2(&zi->ci.stream, level, Z_DEFLATED, windowBits, memLevel, strategy);
+ 
+           if (err==Z_OK)
+               zi->ci.stream_initialised = Z_DEFLATED;
+@@ -1438,7 +1433,7 @@ extern int ZEXPORT zipWriteInFileInZip (zipFile file,c
+     if (zi->in_opened_file_inzip == 0)
+         return ZIP_PARAMERROR;
+ 
+-    zi->ci.crc32 = ExtLibs::crc32(zi->ci.crc32,(const Bytef *)buf,(uInt)len);
++    zi->ci.crc32 = crc32(zi->ci.crc32,(const Bytef *)buf,(uInt)len);
+ 
+ #ifdef HAVE_BZIP2
+     if(zi->ci.method == Z_BZIP2ED && (!zi->ci.raw))
+@@ -1497,7 +1492,7 @@ extern int ZEXPORT zipWriteInFileInZip (zipFile file,c
+           if ((zi->ci.method == Z_DEFLATED) && (!zi->ci.raw))
+           {
+               uLong uTotalOutBefore = zi->ci.stream.total_out;
+-			  err = ExtLibs::deflate( &zi->ci.stream, Z_NO_FLUSH );
++			  err = deflate( &zi->ci.stream, Z_NO_FLUSH );
+               if(uTotalOutBefore > zi->ci.stream.total_out)
+               {
+                 int bBreak = 0;
+@@ -1567,7 +1562,7 @@ extern int ZEXPORT zipCloseFileInZipRaw64 (zipFile fil
+                                         zi->ci.stream.next_out = zi->ci.buffered_data;
+                                 }
+                                 uTotalOutBefore = zi->ci.stream.total_out;
+-								err = ExtLibs::deflate( &zi->ci.stream, Z_FINISH );
++								err = deflate( &zi->ci.stream, Z_FINISH );
+                                 zi->ci.pos_in_buffered_data += (uInt)(zi->ci.stream.total_out - uTotalOutBefore) ;
+                         }
+                 }
+@@ -1609,7 +1604,7 @@ extern int ZEXPORT zipCloseFileInZipRaw64 (zipFile fil
+ 
+     if ((zi->ci.method == Z_DEFLATED) && (!zi->ci.raw))
+     {
+-		int tmp_err = ExtLibs::deflateEnd( &zi->ci.stream );
++		int tmp_err = deflateEnd( &zi->ci.stream );
+         if (err == ZIP_OK)
+             err = tmp_err;
+         zi->ci.stream_initialised = 0;

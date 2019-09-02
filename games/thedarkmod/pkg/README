@@ -1,0 +1,32 @@
+$OpenBSD: README,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Run tdm_update before the first start
+=====================================
+
+In order to play missions, you need to download the base game assets. The
+package contains only the runtime (thedarkmod) and the game data updater
+(tdm_update). Before you launch the game the first time, run
+
+$ tdm_update
+
+to install the base game data in ~/.local/share/thedarkmod. Note that the base
+game data requires about 3.5G of free space on your home partition. If you want
+to update the game data later to the most recent version, run tdm_updater again.
+
+Launch the game with thedarkmod
+===============================
+
+After installation of the base game data, run the game with
+
+$ thedarkmod
+
+The core configuration of the game is in
+
+~/.local/share/thedarkmod/Darkmod.cfg
+
+The game has been noticed to not display fullscreen mode properly. In that
+case, change r_fullscreen to "0".

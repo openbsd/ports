@@ -1,0 +1,32 @@
+$OpenBSD: patch-idlib_math_Simd_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+add CPUID defines
+
+Index: idlib/math/Simd.cpp
+--- idlib/math/Simd.cpp.orig
++++ idlib/math/Simd.cpp
+@@ -21,6 +21,24 @@
+ #include <cpuid.h>
+ #endif
+ 
++#include "sys/sys_public.h"
++
++/*
++#define CPUID_GENERIC   0x00002
++#define CPUID_AMD       0x00008
++#define CPUID_INTEL     0x00004
++#define CPUID_3DNOW     0x00020
++#define CPUID_HTT       0x01000
++#define CPUID_MMX       0x00010
++#define CPUID_SSE       0x00040
++#define CPUID_SSE2      0x00080
++#define CPUID_SSE3      0x00100
++#define CPUID_CMOV      0x02000
++#define CPUID_ALTIVEC   0x00200
++#define CPUID_FTZ       0x04000
++#define CPUID_DAZ       0x08000
++*/
++
+ #include "Simd_Generic.h"
+ #include "Simd_MMX.h"
+ #include "Simd_SSE.h"

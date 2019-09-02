@@ -1,0 +1,16 @@
+$OpenBSD: patch-game_physics_Physics_RigidBody_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+include float.h to attempt to fix missing FLT_MAX
+
+Index: game/physics/Physics_RigidBody.cpp
+--- game/physics/Physics_RigidBody.cpp.orig
++++ game/physics/Physics_RigidBody.cpp
+@@ -16,7 +16,7 @@
+ #include "precompiled.h"
+ #pragma hdrstop
+ 
+-
++#include <float.h>
+ 
+ #include "../Game_local.h"
+ #include "../Grabber.h"

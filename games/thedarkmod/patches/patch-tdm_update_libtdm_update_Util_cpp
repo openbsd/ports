@@ -1,0 +1,113 @@
+$OpenBSD: patch-tdm_update_libtdm_update_Util_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+add OpenBSD to ifdef
+stub CheckProcessFile which looks through procfs on Linux to see if
+thedarkmod or darkradiant are running. User should only run tdm_update
+if they know thedarkmod isn't running.
+
+Index: tdm_update/libtdm_update/Util.cpp
+--- tdm_update/libtdm_update/Util.cpp.orig
++++ tdm_update/libtdm_update/Util.cpp
+@@ -152,7 +152,7 @@ bool Util::DarkRadiantIsRunning()
+ 
+ } // namespace
+ 
+-#elif defined(__linux__)
++#elif defined(__linux__) | defined(__OpenBSD__)
+ // Linux implementation
+ 
+ #include <iostream>
+@@ -165,47 +165,11 @@ namespace tdm
+ namespace
+ {
+ 	const std::string PROC_FOLDER("/proc/");
+-	const std::string TDM_PROCESS_NAME("thedarkmod.x86"); // grayman - looking for tdm now instead of doom3 
+-    const std::string TDM_PROCESS_NAME_X64("thedarkmod.x64");
++	const std::string TDM_PROCESS_NAME("thedarkmod"); // grayman - looking for tdm now instead of doom3 
++    const std::string TDM_PROCESS_NAME_X64("thedarkmod4");
+ 
+ 	bool CheckProcessFile(const std::string& name, const std::string& processName)
+ 	{
+-		// Try to cast the filename to an integer number (=PID)
+-		try
+-		{
+-			unsigned long pid = std::stoul(name);
+-		
+-			// Was the PID read correctly?
+-			if (pid == 0)
+-			{
+-				return false;
+-			}
+-			
+-			const std::string cmdLineFileName = PROC_FOLDER + name + "/cmdline";
+-			
+-			std::ifstream cmdLineFile(cmdLineFileName.c_str());
+-
+-			if (cmdLineFile.is_open())
+-			{
+-				// Read the command line from the process file
+-				std::string cmdLine;
+-				getline(cmdLineFile, cmdLine);
+-				
+-				if (cmdLine.find(processName) != std::string::npos)
+-				{
+-					// Process found, return success
+-					return true;
+-				}
+-			}
+-			
+-			// Close the file
+-			cmdLineFile.close();
+-		}
+-		catch (std::invalid_argument&)
+-		{
+-			// Cast to int failed, no PID
+-		}
+-
+ 		return false;
+ 	}
+ 
+@@ -214,14 +178,14 @@ namespace
+ bool Util::TDMIsRunning()
+ {
+ 	// Traverse the /proc folder, this sets the flag to TRUE if the process was found
+-	for (fs::directory_iterator i = fs::directory_iterator(PROC_FOLDER); i != fs::directory_iterator(); ++i)
+-	{
+-		if (CheckProcessFile(i->path().leaf().string(), TDM_PROCESS_NAME) ||
+-            CheckProcessFile(i->path().leaf().string(), TDM_PROCESS_NAME_X64)) // grayman - looking for tdm now instead of doom3
+-		{
+-			return true;
+-		}
+-	}
++	//for (fs::directory_iterator i = fs::directory_iterator(PROC_FOLDER); i != fs::directory_iterator(); ++i)
++	//{
++		//if (CheckProcessFile(i->path().leaf().string(), TDM_PROCESS_NAME) ||
++            //CheckProcessFile(i->path().leaf().string(), TDM_PROCESS_NAME_X64)) // grayman - looking for tdm now instead of doom3
++		//{
++			//return true;
++		//}
++	//}
+ 	
+ 	return false;
+ }
+@@ -229,13 +193,13 @@ bool Util::TDMIsRunning()
+ bool Util::DarkRadiantIsRunning()
+ {
+ 	// Traverse the /proc folder, this sets the flag to TRUE if the process was found
+-	for (fs::directory_iterator i = fs::directory_iterator(PROC_FOLDER); i != fs::directory_iterator(); ++i)
+-	{
+-		if (CheckProcessFile(i->path().leaf().string(), "darkradiant"))
+-		{
+-			return true;
+-		}
+-	}
++	//for (fs::directory_iterator i = fs::directory_iterator(PROC_FOLDER); i != fs::directory_iterator(); ++i)
++	//{
++		//if (CheckProcessFile(i->path().leaf().string(), "darkradiant"))
++		//{
++			//return true;
++		//}
++	//}
+ 	
+ 	return false;
+ }

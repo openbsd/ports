@@ -1,0 +1,136 @@
+$OpenBSD: patch-game_pugixml_pugixml_hpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+include libraries: string
+get basic_string from boost::container (best working solution I could find)
+include ostream for basic_ostream
+
+Index: game/pugixml/pugixml.hpp
+--- game/pugixml/pugixml.hpp.orig
++++ game/pugixml/pugixml.hpp
+@@ -15,6 +15,8 @@
+ #define HEADER_PUGIXML_HPP
+ 
+ #include "pugiconfig.hpp"
++#include <string>
++#include <ostream>
+ 
+ #ifndef PUGIXML_NO_STL
+ #if defined(__clang__) || defined(__GNUC__)
+@@ -98,7 +100,7 @@ namespace pugi
+ 
+ #ifndef PUGIXML_NO_STL
+ 	// String type used for operations that work with STL string; depends on PUGIXML_WCHAR_MODE
+-	typedef std::basic_string<PUGIXML_CHAR, std::char_traits<PUGIXML_CHAR>, std::allocator<PUGIXML_CHAR> > string_t;
++	typedef std::__1::basic_string<PUGIXML_CHAR, std::__1::char_traits<PUGIXML_CHAR>, std::__1::allocator<PUGIXML_CHAR> > string_t;
+ #endif
+ }
+ 
+@@ -245,14 +247,14 @@ namespace pugi
+ 	{
+ 	public:
+         // Construct writer from an output stream object
+-		xml_writer_stream(std::basic_ostream<char, std::char_traits<char> >& stream);
+-		xml_writer_stream(std::basic_ostream<wchar_t, std::char_traits<wchar_t> >& stream);
++		xml_writer_stream(std::__1::basic_ostream<char, std::__1::char_traits<char> >& stream);
++		xml_writer_stream(std::__1::basic_ostream<wchar_t, std::__1::char_traits<wchar_t> >& stream);
+ 
+ 		virtual void write(const void* data, size_t size);
+ 
+ 	private:
+-		std::basic_ostream<char, std::char_traits<char> >* narrow_stream;
+-		std::basic_ostream<wchar_t, std::char_traits<wchar_t> >* wide_stream;
++		std::__1::basic_ostream<char, std::__1::char_traits<char> >* narrow_stream;
++		std::__1::basic_ostream<wchar_t, std::__1::char_traits<wchar_t> >* wide_stream;
+ 	};
+ 	#endif
+ 
+@@ -530,8 +532,8 @@ namespace pugi
+ 
+ 	#ifndef PUGIXML_NO_STL
+ 		// Print subtree to stream
+-		void print(std::basic_ostream<char, std::char_traits<char> >& os, const char_t* indent = PUGIXML_TEXT("\t"), unsigned int flags = format_default, xml_encoding encoding = encoding_auto, unsigned int depth = 0) const;
+-		void print(std::basic_ostream<wchar_t, std::char_traits<wchar_t> >& os, const char_t* indent = PUGIXML_TEXT("\t"), unsigned int flags = format_default, unsigned int depth = 0) const;
++		void print(std::__1::basic_ostream<char, std::__1::char_traits<char> >& os, const char_t* indent = PUGIXML_TEXT("\t"), unsigned int flags = format_default, xml_encoding encoding = encoding_auto, unsigned int depth = 0) const;
++		void print(std::__1::basic_ostream<wchar_t, std::__1::char_traits<wchar_t> >& os, const char_t* indent = PUGIXML_TEXT("\t"), unsigned int flags = format_default, unsigned int depth = 0) const;
+ 	#endif
+ 
+ 		// Child nodes iterators
+@@ -581,7 +583,7 @@ namespace pugi
+ 		typedef xml_node& reference;
+ 
+ 	#ifndef PUGIXML_NO_STL
+-		typedef std::bidirectional_iterator_tag iterator_category;
++		typedef std::__1::bidirectional_iterator_tag iterator_category;
+ 	#endif
+ 
+         // Default constructor
+@@ -623,7 +625,7 @@ namespace pugi
+ 		typedef xml_attribute& reference;
+ 
+ 	#ifndef PUGIXML_NO_STL
+-		typedef std::bidirectional_iterator_tag iterator_category;
++		typedef std::__1::bidirectional_iterator_tag iterator_category;
+ 	#endif
+ 
+         // Default constructor
+@@ -749,8 +751,8 @@ namespace pugi
+ 
+ 	#ifndef PUGIXML_NO_STL
+ 		// Load document from stream.
+-		xml_parse_result load(std::basic_istream<char, std::char_traits<char> >& stream, unsigned int options = parse_default, xml_encoding encoding = encoding_auto);
+-		xml_parse_result load(std::basic_istream<wchar_t, std::char_traits<wchar_t> >& stream, unsigned int options = parse_default);
++		xml_parse_result load(std::__1::basic_istream<char, std::__1::char_traits<char> >& stream, unsigned int options = parse_default, xml_encoding encoding = encoding_auto);
++		xml_parse_result load(std::__1::basic_istream<wchar_t, std::__1::char_traits<wchar_t> >& stream, unsigned int options = parse_default);
+ 	#endif
+ 
+ 		// Load document from zero-terminated string. No encoding conversions are applied.
+@@ -776,8 +778,8 @@ namespace pugi
+ 
+ 	#ifndef PUGIXML_NO_STL
+ 		// Save XML document to stream (semantics is slightly different from xml_node::print, see documentation for details).
+-		void save(std::basic_ostream<char, std::char_traits<char> >& stream, const char_t* indent = PUGIXML_TEXT("\t"), unsigned int flags = format_default, xml_encoding encoding = encoding_auto) const;
+-		void save(std::basic_ostream<wchar_t, std::char_traits<wchar_t> >& stream, const char_t* indent = PUGIXML_TEXT("\t"), unsigned int flags = format_default) const;
++		void save(std::__1::basic_ostream<char, std::__1::char_traits<char> >& stream, const char_t* indent = PUGIXML_TEXT("\t"), unsigned int flags = format_default, xml_encoding encoding = encoding_auto) const;
++		void save(std::__1::basic_ostream<wchar_t, std::__1::char_traits<wchar_t> >& stream, const char_t* indent = PUGIXML_TEXT("\t"), unsigned int flags = format_default) const;
+ 	#endif
+ 
+ 		// Save XML to file
+@@ -1067,12 +1069,12 @@ namespace pugi
+ 
+ #ifndef PUGIXML_NO_STL
+ 	// Convert wide string to UTF8
+-	std::basic_string<char, std::char_traits<char>, std::allocator<char> > PUGIXML_FUNCTION as_utf8(const wchar_t* str);
+-	std::basic_string<char, std::char_traits<char>, std::allocator<char> > PUGIXML_FUNCTION as_utf8(const std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >& str);
++	std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > PUGIXML_FUNCTION as_utf8(const wchar_t* str);
++	std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > PUGIXML_FUNCTION as_utf8(const std::__1::basic_string<wchar_t, std::__1::char_traits<wchar_t>, std::__1::allocator<wchar_t> >& str);
+ 	
+ 	// Convert UTF8 to wide string
+-	std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > PUGIXML_FUNCTION as_wide(const char* str);
+-	std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > PUGIXML_FUNCTION as_wide(const std::basic_string<char, std::char_traits<char>, std::allocator<char> >& str);
++	std::__1::basic_string<wchar_t, std::__1::char_traits<wchar_t>, std::__1::allocator<wchar_t> > PUGIXML_FUNCTION as_wide(const char* str);
++	std::__1::basic_string<wchar_t, std::__1::char_traits<wchar_t>, std::__1::allocator<wchar_t> > PUGIXML_FUNCTION as_wide(const std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >& str);
+ #endif
+ 
+ 	// Memory allocation function interface; returns pointer to allocated memory or NULL on failure
+@@ -1093,8 +1095,8 @@ namespace pugi
+ namespace std
+ {
+ 	// Workarounds for (non-standard) iterator category detection for older versions (MSVC7/IC8 and earlier)
+-	std::bidirectional_iterator_tag PUGIXML_FUNCTION _Iter_cat(const pugi::xml_node_iterator&);
+-	std::bidirectional_iterator_tag PUGIXML_FUNCTION _Iter_cat(const pugi::xml_attribute_iterator&);
++	std::__1::bidirectional_iterator_tag PUGIXML_FUNCTION _Iter_cat(const pugi::xml_node_iterator&);
++	std::__1::bidirectional_iterator_tag PUGIXML_FUNCTION _Iter_cat(const pugi::xml_attribute_iterator&);
+ }
+ #endif
+ 
+@@ -1102,8 +1104,8 @@ namespace std
+ namespace std
+ {
+ 	// Workarounds for (non-standard) iterator category detection
+-	std::bidirectional_iterator_tag PUGIXML_FUNCTION __iterator_category(const pugi::xml_node_iterator&);
+-	std::bidirectional_iterator_tag PUGIXML_FUNCTION __iterator_category(const pugi::xml_attribute_iterator&);
++	std::__1::bidirectional_iterator_tag PUGIXML_FUNCTION __iterator_category(const pugi::xml_node_iterator&);
++	std::__1::bidirectional_iterator_tag PUGIXML_FUNCTION __iterator_category(const pugi::xml_attribute_iterator&);
+ }
+ #endif
+ 

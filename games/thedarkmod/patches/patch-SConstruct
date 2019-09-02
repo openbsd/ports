@@ -1,0 +1,75 @@
+$OpenBSD: patch-SConstruct,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+add some lib configuration
+add include dirs and lib dirs
+remove CPU arch from binary name
+remove optimization flags
+
+Index: SConstruct
+--- SConstruct.orig
++++ SConstruct
+@@ -13,6 +13,7 @@ conf_filename='site.conf'
+ # choose configuration variables which should be saved between runs
+ # ( we handle all those as strings )
+ serialized=['CC', 'CXX', 'JOBS', 'BUILD', 'GL_HARDLINK',
++	'JOBS',
+ 	'DEBUG_MEMORY', 'LIBC_MALLOC', 'ID_MCHECK', 'NOCURL',
+ 	'BUILD_ROOT', 'BASEFLAGS', 'SILENT', 'NO_GCH', 'OPENMP',
+ 	'TARGET_ARCH' ]
+@@ -214,17 +215,21 @@ LINK = CXX
+ # BASE + GAME + OPT for game
+ # _noopt versions of the environements are built without the OPT
+ 
+-BASECPPFLAGS = [ ]
++BASECPPFLAGS = [ CXXFLAGS.split(" ") ]
+ CORECPPPATH = [ ]
+ CORELIBPATH = [ ]
+ CORECPPFLAGS = [ ]
+-BASELINKFLAGS = [ ]
++BASELINKFLAGS = [ LINKFLAGS.split(" ") ]
+ CORELINKFLAGS = [ ]
+ 
+ # for release build, further optimisations that may not work on all files
+ OPTCPPFLAGS = [ ]
+ 
+ BASECPPFLAGS.append( BASEFLAGS )
++BASECPPFLAGS.append( '-I${LOCALBASE}/include' )
++BASELINKFLAGS.append( '-L${LOCALBASE}/lib' )
++BASECPPFLAGS.append( '-I${X11BASE}/include' )
++BASELINKFLAGS.append( '-L${X11BASE}/lib' )
+ BASECPPFLAGS.append( '-pipe' )
+ # warn all
+ BASECPPFLAGS.append( '-Wall' )
+@@ -257,7 +262,6 @@ if ( g_os == 'Linux' ):
+ 		BASECPPFLAGS.append( '-m64' )
+ 		BASELINKFLAGS.append( '-m64' )
+ 		# current ffmpeg dep was built without -fPIC, so can't use position-independent code generation
+-		BASELINKFLAGS.append( '-no-pie' )
+     
+ 	if ( OPENMP != '0' ):
+ 		# openmp support for changes made to the renderer
+@@ -284,7 +288,6 @@ elif ( BUILD == 'release' ):
+ 	# -finline-functions: implicit at -O3
+ 	# -fschedule-insns2: implicit at -O2
+ 	# -fno-unsafe-math-optimizations: that should be on by default really. hit some wonko bugs in physics code because of that
+-	OPTCPPFLAGS = [ '-g', '-O3', '-ffast-math', '-fno-unsafe-math-optimizations' ] 
+ 	if ( ID_MCHECK == '0' ):
+ 		ID_MCHECK = '2'
+ else:
+@@ -305,6 +308,7 @@ if ( ID_MCHECK == '1' ):
+ 	
+ # create the build environements
+ g_env_base = Environment( ENV = os.environ, CC = CC, CXX = CXX, LINK = LINK, CPPFLAGS = BASECPPFLAGS, LINKFLAGS = BASELINKFLAGS, CPPPATH = CORECPPPATH, LIBPATH = CORELIBPATH )
++g_env_base.ParseConfig("pkg-config x11 --cflags --libs")
+ scons_utils.SetupUtils( g_env_base )
+ 
+ g_env_base.Prepend(CPPPATH=['.'])
+@@ -373,7 +377,7 @@ SConscript( g_build + '/core/glimp/sys/scons/SConscrip
+ VariantDir( g_build + '/core', '.', duplicate = 0 )
+ thedarkmod = SConscript( g_build + '/core/sys/scons/SConscript.darkmod' )
+ 
+-exe_name = 'thedarkmod.' + ('x64' if TARGET_ARCH == 'x64' else cpu)
++exe_name = 'thedarkmod'
+ # Note: this target only runs if you append ".." (without quotes) as the last argument to scons command line
+ # It copies executable into ../darkmod, which is default location of darkmod installation in development environment
+ InstallAs( '../darkmod/' + exe_name, thedarkmod )

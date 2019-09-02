@@ -1,0 +1,149 @@
+$OpenBSD: patch-sound_snd_decoder_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+use system vorbis instead of the one from ExtLibs
+this requires struct ov_alloc_callbacks from ExtLibs/vorbis.h and
+function ov_use_custom_alloc from ExtLibs/vorbis.cpp (and more)
+
+Index: sound/snd_decoder.cpp
+--- sound/snd_decoder.cpp.orig
++++ sound/snd_decoder.cpp
+@@ -19,9 +19,42 @@
+ 
+ 
+ #include "snd_local.h"
+-#include "../ExtLibs/vorbis.h"
++#include <vorbis/vorbisfile.h>
++#include <stdlib.h>
++#include <string.h>
+ 
++// from ExtLibs/vorbis.h
++struct ov_alloc_callbacks {
++        void* (*_decoder_malloc)( size_t size );
++        void* (*_decoder_calloc)( size_t num, size_t size );
++        void* (*_decoder_realloc)( void *memblock, size_t size );
++        void (*_decoder_free)( void *memblock );
++};
+ 
++// from ExtLibs/vorbis.cpp
++static ov_alloc_callbacks allocation_callbacks = {0};
++extern "C" {
++        void *_decoder_malloc( size_t size );
++        void *_decoder_calloc( size_t num, size_t size );
++        void *_decoder_realloc( void *memblock, size_t size );
++        void _decoder_free( void *memblock );
++}
++void *_decoder_malloc( size_t size ) {
++        return allocation_callbacks._decoder_malloc(size);
++}
++void *_decoder_calloc( size_t num, size_t size ) {
++        return allocation_callbacks._decoder_calloc(num, size);
++}
++void *_decoder_realloc( void *memblock, size_t size ) {
++        return allocation_callbacks._decoder_realloc(memblock, size);
++}
++void _decoder_free( void *memblock ) {
++        return allocation_callbacks._decoder_free(memblock);
++}
++void ov_use_custom_alloc(ov_alloc_callbacks callbacks) {
++	allocation_callbacks = callbacks;
++}
++
+ /*
+ ===================================================================================
+ 
+@@ -132,7 +165,7 @@ int ov_openFile( idFile *f, OggVorbis_File *vf ) {
+ 	callbacks.seek_func = FS_SeekOGG;
+ 	callbacks.close_func = FS_CloseOGG;
+ 	callbacks.tell_func = FS_TellOGG;
+-	return ExtLibs::ov_open_callbacks( (void *)f, vf, NULL, -1, callbacks );
++	return ov_open_callbacks( (void *)f, vf, NULL, -1, callbacks );
+ }
+ 
+ /*
+@@ -164,17 +197,17 @@ int idWaveFile::OpenOGG( const char* strFileName, wave
+ 
+ 	mfileTime = mhmmio->Timestamp();
+ 
+-	vorbis_info *vi = ExtLibs::ov_info( ov, -1 );
++	vorbis_info *vi = ov_info( ov, -1 );
+ 
+ 	mpwfx.Format.nSamplesPerSec = vi->rate;
+ 	mpwfx.Format.nChannels = vi->channels;
+ 	mpwfx.Format.wBitsPerSample = sizeof(short) * 8;
+-	mdwSize = ExtLibs::ov_pcm_total( ov, -1 ) * vi->channels;	// pcm samples * num channels
++	mdwSize = ov_pcm_total( ov, -1 ) * vi->channels;	// pcm samples * num channels
+ 	mbIsReadingFromMemory = false;
+ 
+ 	if ( idSoundSystemLocal::s_realTimeDecoding.GetBool() ) {
+ 
+-		ExtLibs::ov_clear( ov );
++		ov_clear( ov );
+ 		fileSystem->CloseFile( mhmmio );
+ 		mhmmio = NULL;
+ 		delete ov;
+@@ -209,9 +242,10 @@ int idWaveFile::ReadOGG( byte* pBuffer, int dwSizeToRe
+ 	int total = dwSizeToRead;
+ 	char *bufferPtr = (char *)pBuffer;
+ 	OggVorbis_File *ov = (OggVorbis_File *) ogg;
++	int current_section;
+ 
+ 	do {
+-		int ret = ExtLibs::ov_read( ov, bufferPtr, total >= 4096 ? 4096 : total, Swap_IsBigEndian(), 2, 1, &ov->stream );
++		int ret = ov_read( ov, bufferPtr, total >= 4096 ? 4096 : total, Swap_IsBigEndian(), 2, 1, &current_section );
+ 		if ( ret == 0 ) {
+ 			break;
+ 		}
+@@ -240,7 +274,7 @@ int idWaveFile::CloseOGG( void ) {
+ 	OggVorbis_File *ov = (OggVorbis_File *) ogg;
+ 	if ( ov != NULL ) {
+ 		Sys_EnterCriticalSection( CRITICAL_SECTION_ONE );
+-		ExtLibs::ov_clear( ov );
++		ov_clear( ov );
+ 		delete ov;
+ 		Sys_LeaveCriticalSection( CRITICAL_SECTION_ONE );
+ 		fileSystem->CloseFile( mhmmio );
+@@ -292,7 +326,7 @@ idSampleDecoder::Init
+ */
+ void idSampleDecoder::Init( void ) {
+ 	ov_alloc_callbacks alloc_callbacks = {custom_decoder_malloc, custom_decoder_calloc, custom_decoder_realloc, custom_decoder_free};
+-	ExtLibs::ov_use_custom_alloc(alloc_callbacks);
++	ov_use_custom_alloc(alloc_callbacks);
+ 
+ 	decoderMemoryAllocator.Init();
+ 	decoderMemoryAllocator.SetLockMemory( true );
+@@ -375,7 +409,7 @@ void idSampleDecoderLocal::ClearDecoder( void ) {
+ 			break;
+ 		}
+ 		case WAVE_FORMAT_TAG_OGG: {
+-			ExtLibs::ov_clear( &ogg );
++			ov_clear( &ogg );
+ 			memset( &ogg, 0, sizeof( ogg ) );
+ 			break;
+ 		}
+@@ -518,6 +552,8 @@ int idSampleDecoderLocal::DecodeOGG( idSoundSample *sa
+ 	int sampleOffset = sampleOffset44k >> shift;
+ 	int sampleCount = sampleCount44k >> shift;
+ 
++	int current_section;
++
+ 	// open OGG file if not yet opened
+ 	if ( lastSample == NULL ) {
+ 		// make sure there is enough space for another decoder
+@@ -540,7 +576,7 @@ int idSampleDecoderLocal::DecodeOGG( idSoundSample *sa
+ 
+ 	// seek to the right offset if necessary
+ 	if ( sampleOffset != lastSampleOffset ) {
+-		if (ExtLibs::ov_pcm_seek( &ogg, sampleOffset / sample->objectInfo.nChannels ) != 0) {
++		if (ov_pcm_seek( &ogg, sampleOffset / sample->objectInfo.nChannels ) != 0) {
+ 			failed = true;
+ 			return 0;
+ 		}
+@@ -553,7 +589,7 @@ int idSampleDecoderLocal::DecodeOGG( idSoundSample *sa
+ 	readSamples = 0;
+ 	do {
+ 		float **samples;
+-		int ret = ExtLibs::ov_read_float( &ogg, &samples, totalSamples / sample->objectInfo.nChannels, &ogg.stream );
++		int ret = ov_read_float( &ogg, &samples, totalSamples / sample->objectInfo.nChannels, &current_section );
+ 		if ( ret == 0 ) {
+ 			failed = true;
+ 			break;

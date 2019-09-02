@@ -1,0 +1,43 @@
+$OpenBSD: patch-idlib_math_Simd_AVX2_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+work around problematic AVX functions
+
+Index: idlib/math/Simd_AVX2.cpp
+--- idlib/math/Simd_AVX2.cpp.orig
++++ idlib/math/Simd_AVX2.cpp
+@@ -48,8 +48,9 @@ idSIMD_AVX2::CullByFrustum
+ ============
+ */
+ void VPCALL idSIMD_AVX2::CullByFrustum( idDrawVert *verts, const int numVerts, const idPlane frustum[6], byte *pointCull, float epsilon ) {
+-	if ( !com_tempAllowAVX.GetBool() ) { // hidden under this cvar for now
++	/*if ( !com_tempAllowAVX.GetBool() ) {*/ // hidden under this cvar for now
+ 		return idSIMD_SSE::CullByFrustum( verts, numVerts, frustum, pointCull, epsilon );
++	/*
+ 	}
+ 	const __m256 fA = _mm256_set_ps( 0, 0, frustum[5][0], frustum[4][0], frustum[3][0], frustum[2][0], frustum[1][0], frustum[0][0] );
+ 	const __m256 fB = _mm256_set_ps( 0, 0, frustum[5][1], frustum[4][1], frustum[3][1], frustum[2][1], frustum[1][1], frustum[0][1] );
+@@ -70,6 +71,7 @@ void VPCALL idSIMD_AVX2::CullByFrustum( idDrawVert *ve
+ 		pointCull[j] = (byte)mask_lo & mask6;
+ 	}
+ 	_mm256_zeroupper();
++	*/
+ }
+ 
+ /*
+@@ -78,8 +80,9 @@ idSIMD_AVX2::CullByFrustum2
+ ============
+ */
+ void VPCALL idSIMD_AVX2::CullByFrustum2( idDrawVert *verts, const int numVerts, const idPlane frustum[6], unsigned short *pointCull, float epsilon ) {
+-	if ( !com_tempAllowAVX.GetBool() ) { // hidden under this cvar for now
++	/*if ( !com_tempAllowAVX.GetBool() ) {*/ // hidden under this cvar for now
+ 		return idSIMD_SSE::CullByFrustum2( verts, numVerts, frustum, pointCull, epsilon );
++	/*
+ 	}
+ 	const __m256 fA = _mm256_set_ps( 0, 0, frustum[5][0], frustum[4][0], frustum[3][0], frustum[2][0], frustum[1][0], frustum[0][0] );
+ 	const __m256 fB = _mm256_set_ps( 0, 0, frustum[5][1], frustum[4][1], frustum[3][1], frustum[2][1], frustum[1][1], frustum[0][1] );
+@@ -102,4 +105,5 @@ void VPCALL idSIMD_AVX2::CullByFrustum2( idDrawVert *v
+ 		pointCull[j] = (unsigned short)(mask_lo & mask6 | (mask_hi & mask6) << 6);
+ 	}
+ 	_mm256_zeroupper();
++	*/
+ }

@@ -1,0 +1,25 @@
+$OpenBSD: patch-idlib_Lib_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+use header from system
+
+Index: idlib/Lib.cpp
+--- idlib/Lib.cpp.orig
++++ idlib/Lib.cpp
+@@ -22,7 +22,7 @@
+ #include <unistd.h>
+ #endif
+ 
+-#include <../ExtLibs/devil.h>
++#include <IL/il.h>
+ 
+ /*
+ ===============================================================================
+@@ -72,7 +72,7 @@ void idLib::Init( void ) {
+ 	idDict::Init();
+ 
+ 	// greebo: Initialize the image library, so we can use it later on.
+-	ExtLibs::ilInit();
++	ilInit();
+ }
+ 
+ /*

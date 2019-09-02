@@ -1,0 +1,31 @@
+$OpenBSD: patch-sys_gllog_gl_extensions_cpp_m4,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+add OpenBSD to ifdef and add include file
+
+Index: sys/gllog/gl_extensions.cpp.m4
+--- sys/gllog/gl_extensions.cpp.m4.orig
++++ sys/gllog/gl_extensions.cpp.m4
+@@ -1,4 +1,6 @@
+ #include "idlib/precompiled.h"
++#include <GL/glx.h>
++#include "renderer/qgl_linked.h"
+ #pragma hdrstop
+ 
+ dnl =====================================================
+@@ -15,6 +17,7 @@ dnl ==================================================
+ dnl GL extensions
+ dnl =====================================================
+ 
++
+ typedef struct {
+ 	const char *ext_name;
+ } glExtName_t;
+@@ -46,7 +49,7 @@ GLExtension_t GLimp_ExtensionPointer( const char *name
+ 	}
+ 	#endif
+ 	GLExtension_t ret;
+-	#if defined(__linux__)    
++	#if defined(__linux__) || defined(__OpenBSD__)
+ 	// for some reason glXGetProcAddressARB doesn't work on RH9?
+ 	ret = qglXGetProcAddressARB((const GLubyte *) name);
+ 	if ( !ret ) {

@@ -1,0 +1,25 @@
+$OpenBSD: patch-sound_snd_system_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+fix type for ALUint NULL -> 0
+
+Index: sound/snd_system.cpp
+--- sound/snd_system.cpp.orig
++++ sound/snd_system.cpp
+@@ -1143,7 +1143,7 @@ ALuint idSoundSystemLocal::AllocOpenALSource( idSoundC
+ 
+ 		return openalSources[index].handle;
+ 	} else {
+-		return NULL;
++		return 0;
+ 	}
+ }
+ 
+@@ -1157,7 +1157,7 @@ void idSoundSystemLocal::FreeOpenALSource( ALuint hand
+ 	for ( i = 0; i < openalSourceCount; i++ ) {
+ 		if ( openalSources[i].handle == handle ) {
+ 			if ( openalSources[i].chan ) {
+-				openalSources[i].chan->openalSource = NULL;
++				openalSources[i].chan->openalSource = 0;
+ 			}
+ 
+ 			// Initialize structure

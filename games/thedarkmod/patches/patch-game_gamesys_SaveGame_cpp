@@ -1,0 +1,39 @@
+$OpenBSD: patch-game_gamesys_SaveGame_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+use system zlib
+
+Index: game/gamesys/SaveGame.cpp
+--- game/gamesys/SaveGame.cpp.orig
++++ game/gamesys/SaveGame.cpp
+@@ -22,7 +22,7 @@
+ 
+ #include "TypeInfo.h"
+ 
+-#include "../ExtLibs/zlib.h"
++#include <zlib.h>
+ 
+ /*
+ Save game related helper classes.
+@@ -117,11 +117,11 @@ void idSaveGame::FinalizeCache( void ) {
+ 
+ 	//resize destination buffer
+ 	CRawVector zipped;
+-	uLongf zipsize = ExtLibs::compressBound((uLongf)cache.size());
++	uLongf zipsize = compressBound((uLongf)cache.size());
+ 	zipped.resize(zipsize);
+ 
+ 	//compress the cache
+-	int err = ExtLibs::compress(
++	int err = compress(
+ 		(Bytef *)&zipped[0], &zipsize,
+ 		(const Bytef *)&cache[0], (uLongf)cache.size()
+ 	);
+@@ -603,7 +603,7 @@ void idRestoreGame::InitializeCache() {
+ 
+ 	//decompress data
+ 	uLongf cacheSizeL = cacheSize;
+-	int err = ExtLibs::uncompress(
++	int err = uncompress(
+ 		(Bytef *)&cache[0], &cacheSizeL,
+ 		(const Bytef *)&zipped[0], (uLongf)zipped.size()
+ 	);

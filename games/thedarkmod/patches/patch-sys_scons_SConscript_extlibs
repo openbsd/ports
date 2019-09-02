@@ -1,0 +1,43 @@
+$OpenBSD: patch-sys_scons_SConscript_extlibs,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+disable bundled libs
+
+Index: sys/scons/SConscript.extlibs
+--- sys/scons/SConscript.extlibs.orig
++++ sys/scons/SConscript.extlibs
+@@ -18,12 +18,7 @@ import scons_utils
+ Import( 'GLOBALS' )
+ Import( GLOBALS )
+ 
+-extlibs_string = ' \
+-	devil.cpp \
+-	ffmpeg.cpp \
+-	jpeg.cpp \
+-	vorbis.cpp \
+-	zlib.cpp'
++extlibs_string = ''
+ extlibs_list = scons_utils.BuildList( '../../ExtLibs', extlibs_string )
+ 
+ 
+@@ -34,15 +29,15 @@ obj_list = []
+ for f in extlibs_list:
+ 	obj_list += local_env.StaticObject( source = f )
+ # Add ogg library
+-obj_list += SConscript( '../../sys/scons/SConscript.ogg' )
++#obj_list += SConscript( '../../sys/scons/SConscript.ogg' )
+ # Add curl library (built separately)
+-obj_list += curl_lib
++#obj_list += curl_lib
+ # greebo: Use custom compiled devIL and libjpeg (since the engine requires 4 bytes per pixel format) in Linux
+-obj_list += SConscript( '../../sys/scons/SConscript.devil' )
+-obj_list += SConscript( '../../sys/scons/SConscript.libjpeg' )
+-obj_list += SConscript( '../../sys/scons/SConscript.libpng' )
++#obj_list += SConscript( '../../sys/scons/SConscript.devil' )
++#obj_list += SConscript( '../../sys/scons/SConscript.libjpeg' )
++#obj_list += SConscript( '../../sys/scons/SConscript.libpng' )
+ # stgatilov: we need only zlib code, because internal minizip uses it
+-obj_list += SConscript( '../../sys/scons/SConscript.zlib' )
++#obj_list += SConscript( '../../sys/scons/SConscript.zlib' )
+ 
+ # Note: Unlike windows version, we built ExtLibs as static library,
+ # because Linux forbids wrapping prebuilt static libraries into a shared library.

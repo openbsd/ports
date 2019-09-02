@@ -1,0 +1,43 @@
+$OpenBSD: patch-tdm_update_SConscript_tdm_update,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+remove librt linking
+remove bundled boost, curl etc libs
+don't add cpu arch to binary name
+
+Index: tdm_update/SConscript.tdm_update
+--- tdm_update/SConscript.tdm_update.orig
++++ tdm_update/SConscript.tdm_update
+@@ -50,24 +50,6 @@ if g_os == 'MacOSX':
+ 		File('#/../macosx/boost/lib/libboost_system.a'),
+ 		File('#/../macosx/libcurl/libcurl.a')
+ 	])
+-elif TARGET_ARCH == 'x64':
+-	local_env.Append(LIBS = [
+-		File('#/../linux/boost/lib64/libboost_filesystem.a'),
+-		File('#/../linux/boost/lib64/libboost_program_options.a'),
+-		File('#/../linux/boost/lib64/libboost_system.a'),
+-		File('#/../linux/libcurl/lib64/libcurl.a'),
+-		File('#/../linux/polarssl/lib64/libpolarssl.a'),
+-		'rt',
+-	])
+-else:
+-	local_env.Append(LIBS = [
+-		File('#/../linux/boost/lib/libboost_filesystem.a'),
+-		File('#/../linux/boost/lib/libboost_program_options.a'),
+-		File('#/../linux/boost/lib/libboost_system.a'),
+-		File('#/../linux/libcurl/libcurl.a'),
+-		File('#/../linux/polarssl/libpolarssl.a'),
+-		'rt',
+-	])
+ 
+ minizip_list = SConscript( './SConscript.minizip' )
+ libtdm_update_list = SConscript( './SConscript.libtdm_update' )
+@@ -76,8 +58,6 @@ executable_name = 'tdm_update'
+ 
+ if g_os == 'MacOSX':
+ 	executable_name = executable_name + '.macosx'
+-else:
+-	executable_name = executable_name + '.linux'
+ 
+ ret = local_env.Program(executable_name, tdm_update_list + minizip_list + libtdm_update_list)
+ Return( 'ret' )

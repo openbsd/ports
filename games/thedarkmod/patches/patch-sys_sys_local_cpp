@@ -1,0 +1,16 @@
+$OpenBSD: patch-sys_sys_local_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+account for OpenBSD
+
+Index: sys/sys_local.cpp
+--- sys/sys_local.cpp.orig
++++ sys/sys_local.cpp
+@@ -84,7 +84,7 @@ void idSysLocal::DLL_GetFileName( const char *baseName
+ #ifdef _WIN32
+     // e.g. gamex64.dll
+     idStr::snPrintf(dllName, maxLength, "%s%s.dll", baseName, CPUSTRING);
+-#elif defined( __linux__ )
++#elif defined( __linux__ ) || defined(__OpenBSD__)
+     // e.g. gamex64.so
+     idStr::snPrintf(dllName, maxLength, "%s%s.so", baseName, CPUSTRING);
+ #elif defined( MACOS_X )

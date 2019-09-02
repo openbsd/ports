@@ -1,0 +1,16 @@
+$OpenBSD: patch-sound_snd_emitter_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+use 0 instead of NULL for int type (ALUint)
+
+Index: sound/snd_emitter.cpp
+--- sound/snd_emitter.cpp.orig
++++ sound/snd_emitter.cpp
+@@ -174,7 +174,7 @@ void idSoundChannel::Clear( void ) {
+ 	memset( &parms, 0, sizeof(parms) );
+ 
+ 	triggered = false;
+-	openalSource = NULL;
++	openalSource = 0;
+ 	openalStreamingOffset = 0;
+ 	openalStreamingBuffer[0] = openalStreamingBuffer[1] = openalStreamingBuffer[2] = 0;
+ 	lastopenalStreamingBuffer[0] = lastopenalStreamingBuffer[1] = lastopenalStreamingBuffer[2] = 0;

@@ -1,0 +1,58 @@
+$OpenBSD: patch-sys_scons_SConscript_darkmod,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+add libIL, libz, libavformat, libjpeg, libvorbisfile to linker and more
+remove libdl linking
+remove bundled libcurl.a from the build and more
+remove stdc++fs which should be taken care of by clang/libcxx
+
+Index: sys/scons/SConscript.darkmod
+--- sys/scons/SConscript.darkmod.orig
++++ sys/scons/SConscript.darkmod
+@@ -44,36 +44,23 @@ source_list += SConscript( '../../sys/scons/SConscript
+ 
+ local_env = g_env_game.Clone()
+ 
+-# greebo: Add all custom-built libraries
+-if (TARGET_ARCH == 'x86'):
+-	local_env.Append(LIBS = [
+-		File('#/linux/libcurl/libcurl.a'),
+-		File('#/linux/polarssl/libpolarssl.a'),
+-		File('#/linux/ffmpeg/libavformat.a'),
+-		File('#/linux/ffmpeg/libavcodec.a'),
+-		File('#/linux/ffmpeg/libavutil.a'),
+-		File('#/linux/ffmpeg/libswscale.a'),
+-		File('#/linux/ffmpeg/libswresample.a')
+-	])
+-if (TARGET_ARCH == 'x64'):
+-	local_env.Append(LIBS = [
+-		File('#/linux/libcurl/lib64/libcurl.a'),
+-		File('#/linux/polarssl/lib64/libpolarssl.a'),
+-		File('#/linux/ffmpeg/lib64/libavformat.a'),
+-		File('#/linux/ffmpeg/lib64/libavcodec.a'),
+-		File('#/linux/ffmpeg/lib64/libavutil.a'),
+-		File('#/linux/ffmpeg/lib64/libswscale.a'),
+-		File('#/linux/ffmpeg/lib64/libswresample.a')
+-	])
+-
+ # Add all standard libraries (taken from system)
+ local_env.Append( LIBS = [ 'X11', 'Xext', 'Xxf86vm' ] ) # 'Xxf86dga', 
+ #local_env.Append( LIBPATH = [ '/usr/X11R6/lib' ] )
+ local_env.Append( LIBPATH = [ '/usr/lib/i386-linux-gnu' ] )
+ local_env.Append( LIBS = [ 'openal' ] )
+-local_env.Append( LIBS = [ 'dl' ] )
+ local_env.Append( LIBS = [ 'pthread' ] )
+-local_env.Append( LIBS = [ 'stdc++fs' ] )
++local_env.Append( LIBS = [ 'IL' ] )
++local_env.Append( LIBS = [ 'jpeg' ] )
++local_env.Append( LIBS = [ 'z' ] )
++local_env.Append( LIBS = [ 'avformat' ] )
++local_env.Append( LIBS = [ 'vorbisfile' ] )
++local_env.Append( LIBS = [ 'GL' ] )
++local_env.Append( LIBS = [ 'curl' ] )
++local_env.Append( LIBS = [ 'avutil' ] )
++local_env.Append( LIBS = [ 'swscale' ] )
++local_env.Append( LIBS = [ 'swresample' ] )
++local_env.Append( LIBS = [ 'avcodec' ] )
+ 
+ thedarkmod = local_env.Program( target = 'thedarkmod', source = source_list )
+ Return( 'thedarkmod' )

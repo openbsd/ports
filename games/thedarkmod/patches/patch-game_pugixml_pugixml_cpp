@@ -1,0 +1,85 @@
+$OpenBSD: patch-game_pugixml_pugixml_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+fix namespace
+
+Index: game/pugixml/pugixml.cpp
+--- game/pugixml/pugixml.cpp.orig
++++ game/pugixml/pugixml.cpp
+@@ -3167,10 +3167,10 @@ namespace
+ 	}
+ 
+ #ifndef PUGIXML_NO_STL
+-	template <typename T> xml_parse_result load_stream_impl(xml_document& doc, std::basic_istream<T>& stream, unsigned int options, xml_encoding encoding)
++	template <typename T> xml_parse_result load_stream_impl(xml_document& doc, std::__1::basic_istream<T>& stream, unsigned int options, xml_encoding encoding)
+ 	{
+ 		// get length of remaining data in stream
+-		typename std::basic_istream<T>::pos_type pos = stream.tellg();
++		typename std::__1::basic_istream<T>::pos_type pos = stream.tellg();
+ 		stream.seekg(0, std::ios::end);
+ 		std::streamoff length = stream.tellg() - pos;
+ 		stream.seekg(pos);
+@@ -3256,11 +3256,11 @@ namespace pugi
+ 	}
+ 
+ #ifndef PUGIXML_NO_STL
+-	xml_writer_stream::xml_writer_stream(std::basic_ostream<char, std::char_traits<char> >& stream): narrow_stream(&stream), wide_stream(0)
++	xml_writer_stream::xml_writer_stream(std::__1::basic_ostream<char, std::__1::char_traits<char> >& stream): narrow_stream(&stream), wide_stream(0)
+ 	{
+ 	}
+ 
+-	xml_writer_stream::xml_writer_stream(std::basic_ostream<wchar_t, std::char_traits<wchar_t> >& stream): narrow_stream(0), wide_stream(&stream)
++	xml_writer_stream::xml_writer_stream(std::__1::basic_ostream<wchar_t, std::__1::char_traits<wchar_t> >& stream): narrow_stream(0), wide_stream(&stream)
+ 	{
+ 	}
+ 
+@@ -4278,14 +4278,14 @@ namespace pugi
+ 	}
+ 
+ #ifndef PUGIXML_NO_STL
+-	void xml_node::print(std::basic_ostream<char, std::char_traits<char> >& stream, const char_t* indent, unsigned int flags, xml_encoding encoding, unsigned int depth) const
++	void xml_node::print(std::__1::basic_ostream<char, std::__1::char_traits<char> >& stream, const char_t* indent, unsigned int flags, xml_encoding encoding, unsigned int depth) const
+ 	{
+ 		xml_writer_stream writer(stream);
+ 
+ 		print(writer, indent, flags, encoding, depth);
+ 	}
+ 
+-	void xml_node::print(std::basic_ostream<wchar_t, std::char_traits<wchar_t> >& stream, const char_t* indent, unsigned int flags, unsigned int depth) const
++	void xml_node::print(std::__1::basic_ostream<wchar_t, std::__1::char_traits<wchar_t> >& stream, const char_t* indent, unsigned int flags, unsigned int depth) const
+ 	{
+ 		xml_writer_stream writer(stream);
+ 
+@@ -4574,14 +4574,14 @@ namespace pugi
+ 	}
+ 
+ #ifndef PUGIXML_NO_STL
+-	xml_parse_result xml_document::load(std::basic_istream<char, std::char_traits<char> >& stream, unsigned int options, xml_encoding encoding)
++	xml_parse_result xml_document::load(std::__1::basic_istream<char, std::__1::char_traits<char> >& stream, unsigned int options, xml_encoding encoding)
+ 	{
+ 		reset();
+ 
+ 		return load_stream_impl(*this, stream, options, encoding);
+ 	}
+ 
+-	xml_parse_result xml_document::load(std::basic_istream<wchar_t, std::char_traits<wchar_t> >& stream, unsigned int options)
++	xml_parse_result xml_document::load(std::__1::basic_istream<wchar_t, std::__1::char_traits<wchar_t> >& stream, unsigned int options)
+ 	{
+ 		reset();
+ 
+@@ -4681,14 +4681,14 @@ namespace pugi
+ 	}
+ 
+ #ifndef PUGIXML_NO_STL
+-	void xml_document::save(std::basic_ostream<char, std::char_traits<char> >& stream, const char_t* indent, unsigned int flags, xml_encoding encoding) const
++	void xml_document::save(std::__1::basic_ostream<char, std::__1::char_traits<char> >& stream, const char_t* indent, unsigned int flags, xml_encoding encoding) const
+ 	{
+ 		xml_writer_stream writer(stream);
+ 
+ 		save(writer, indent, flags, encoding);
+ 	}
+ 
+-	void xml_document::save(std::basic_ostream<wchar_t, std::char_traits<wchar_t> >& stream, const char_t* indent, unsigned int flags) const
++	void xml_document::save(std::__1::basic_ostream<wchar_t, std::__1::char_traits<wchar_t> >& stream, const char_t* indent, unsigned int flags) const
+ 	{
+ 		xml_writer_stream writer(stream);
+ 

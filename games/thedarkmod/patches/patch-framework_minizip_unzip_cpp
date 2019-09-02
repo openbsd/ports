@@ -1,0 +1,80 @@
+$OpenBSD: patch-framework_minizip_unzip_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+use system zlib instead of the one from ExtLibs
+use malloc, not doom3's Mem_Alloc; similarly for free/Mem_Free
+
+Index: framework/minizip/unzip.cpp
+--- framework/minizip/unzip.cpp.orig
++++ framework/minizip/unzip.cpp
+@@ -111,7 +111,7 @@ typedef unsigned char byte;
+ #include "../sys/sys_public.h" //"sys/platform.h"
+ #include "../BuildDefines.h"
+ #include "../idlib/Heap.h"     //"idlib/Heap.h"
+-#include "../ExtLibs/zlib.h"
++#include <zlib.h>
+ 
+ // we don't need crypt support
+ #define NOUNCRYPT 1
+@@ -141,17 +141,12 @@ typedef unsigned char byte;
+ #define UNZ_MAXFILENAMEINZIP (256)
+ #endif
+ 
+-#if 0 // don't use system malloc but doom3's allocator
+ #ifndef ALLOC
+ # define ALLOC(size) (malloc(size))
+ #endif
+ #ifndef TRYFREE
+ # define TRYFREE(p) {if (p) free(p);}
+ #endif
+-#else // 0
+-#define ALLOC(size) (Mem_Alloc(size))
+-#define TRYFREE(p) {Mem_Free(p);} // Mem_Free - as well as free() - check for NULL themselves, no need to do it here
+-#endif // 0
+ 
+ #define SIZECENTRALDIRITEM (0x2e)
+ #define SIZEZIPLOCALHEADER (0x1e)
+@@ -1619,7 +1614,7 @@ extern int ZEXPORT unzOpenCurrentFile3 (unzFile file, 
+       pfile_in_zip_read_info->stream.next_in = 0;
+       pfile_in_zip_read_info->stream.avail_in = 0;
+ 
+-      err=ExtLibs::inflateInit2(&pfile_in_zip_read_info->stream, -MAX_WBITS);
++      err=inflateInit2(&pfile_in_zip_read_info->stream, -MAX_WBITS);
+       if (err == Z_OK)
+         pfile_in_zip_read_info->stream_initialised=Z_DEFLATED;
+       else
+@@ -1822,7 +1817,7 @@ extern int ZEXPORT unzReadCurrentFile  (unzFile file, 
+ 
+             pfile_in_zip_read_info->total_out_64 = pfile_in_zip_read_info->total_out_64 + uDoCopy;
+ 
+-			pfile_in_zip_read_info->crc32 = ExtLibs::crc32( pfile_in_zip_read_info->crc32,
++			pfile_in_zip_read_info->crc32 = crc32( pfile_in_zip_read_info->crc32,
+                                 pfile_in_zip_read_info->stream.next_out,
+                                 uDoCopy);
+             pfile_in_zip_read_info->rest_read_uncompressed-=uDoCopy;
+@@ -1892,7 +1887,7 @@ extern int ZEXPORT unzReadCurrentFile  (unzFile file, 
+                 (pfile_in_zip_read_info->rest_read_compressed == 0))
+                 flush = Z_FINISH;
+             */
+-            err=ExtLibs::inflate(&pfile_in_zip_read_info->stream,flush);
++            err=inflate(&pfile_in_zip_read_info->stream,flush);
+ 
+             if ((err>=0) && (pfile_in_zip_read_info->stream.msg!=NULL))
+               err = Z_DATA_ERROR;
+@@ -1903,7 +1898,7 @@ extern int ZEXPORT unzReadCurrentFile  (unzFile file, 
+             pfile_in_zip_read_info->total_out_64 = pfile_in_zip_read_info->total_out_64 + uOutThis;
+ 
+             pfile_in_zip_read_info->crc32 =
+-                ExtLibs::crc32(pfile_in_zip_read_info->crc32,bufBefore,
++                crc32(pfile_in_zip_read_info->crc32,bufBefore,
+                         (uInt)(uOutThis));
+ 
+             pfile_in_zip_read_info->rest_read_uncompressed -=
+@@ -2137,7 +2132,7 @@ extern int ZEXPORT unzCloseCurrentFile (unzFile file)
+     TRYFREE(pfile_in_zip_read_info->read_buffer);
+     pfile_in_zip_read_info->read_buffer = NULL;
+     if (pfile_in_zip_read_info->stream_initialised == Z_DEFLATED)
+-        ExtLibs::inflateEnd(&pfile_in_zip_read_info->stream);
++        inflateEnd(&pfile_in_zip_read_info->stream);
+ #ifdef HAVE_BZIP2
+     else if (pfile_in_zip_read_info->stream_initialised == Z_BZIP2ED)
+         BZ2_bzDecompressEnd(&pfile_in_zip_read_info->bstream);

@@ -1,0 +1,53 @@
+$OpenBSD: patch-tdm_update_SConstruct,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+add include dir
+remove __linux__ define, librt, lib32 mentions
+add boost libs to linker
+add environment flags
+
+Index: tdm_update/SConstruct
+--- tdm_update/SConstruct.orig
++++ tdm_update/SConstruct
+@@ -163,6 +163,14 @@ CORECPPFLAGS.append( '-DXTHREADS' )
+ # don't wrap gcc messages
+ BASECPPFLAGS.append( '-fmessage-length=0' )
+ 
++BASECPPFLAGS.append( '-I${LOCALBASE}/include' )
++BASELINKFLAGS.append( '-L${LOCALBASE}/lib' )
++BASELINKFLAGS.append( '-lboost_filesystem' )
++BASELINKFLAGS.append( '-lboost_program_options' )
++BASELINKFLAGS.append( '-lboost_system' )
++BASELINKFLAGS.append( '-lcurl' )
++BASELINKFLAGS.append( '-lz' )
++
+ if ( g_os == 'Linux' or g_os == 'MacOSX' ):
+ 	if ( TARGET_ARCH == 'x86' ):
+ 		BASECPPFLAGS.append( '-m32' )
+@@ -173,13 +181,7 @@ if ( g_os == 'Linux' or g_os == 'MacOSX' ):
+ 
+ 	if g_os == 'Linux':
+ 		# help 64 bit machines to find the compatibility 32bit libraries
+-		BASELINKFLAGS.append( '-L/lib32' )
+-		BASELINKFLAGS.append( '-L/usr/lib32' )
+ 		BASELINKFLAGS.append( '-pthread' )
+-		BASELINKFLAGS.append( '-lrt' )
+-	
+-		# Add the __linux__ define
+-		BASECPPFLAGS.append('-D__linux__')
+ 	else:
+ 		# Mac OS X
+ 		BASECPPFLAGS.append('-DMACOS_X')
+@@ -196,12 +198,7 @@ if ( g_os == 'Linux' or g_os == 'MacOSX' ):
+ if ( BUILD == 'debug' ):
+ 	OPTCPPFLAGS = [ '-g', '-O1', '-D_DEBUG' ]
+ elif ( BUILD == 'release' ):
+-	# -fomit-frame-pointer: "-O also turns on -fomit-frame-pointer on machines where doing so does not interfere with debugging."
+-	#   on x86 have to set it explicitely
+-	# -finline-functions: implicit at -O3
+-	# -fschedule-insns2: implicit at -O2
+-	# no-unsafe-math-optimizations: that should be on by default really. hit some wonko bugs in physics code because of that
+-	OPTCPPFLAGS = [ '-O3', '-ffast-math', '-fno-unsafe-math-optimizations', '-fomit-frame-pointer' ]
++	OPTCPPFLAGS = [ ]
+ else:
+ 	print 'Unknown build configuration ' + BUILD
+ 	sys.exit(0)

@@ -1,0 +1,16 @@
+$OpenBSD: patch-idlib_Image_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+use system header, not bundled one
+
+Index: idlib/Image.cpp
+--- idlib/Image.cpp.orig
++++ idlib/Image.cpp
+@@ -17,7 +17,7 @@
+ #pragma hdrstop
+ 
+ #include "Image.h"
+-#include "../ExtLibs/devil.h"
++#include <IL/il.h>
+ 
+ #define IL_IMAGE_NONE ((ILuint)-1)
+ 

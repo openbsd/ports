@@ -1,0 +1,79 @@
+$OpenBSD: patch-idlib_math_Simd_h,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+Since CPUID_NONE definition was removed from sys....h, replace it here
+with its value 0x00000
+also add other CPUID define (from previously sys/sys_public.h) - now cpuid.h
+
+Index: idlib/math/Simd.h
+--- idlib/math/Simd.h.orig
++++ idlib/math/Simd.h
+@@ -16,7 +16,60 @@
+ #ifndef __MATH_SIMD_H__
+ #define __MATH_SIMD_H__
+ 
++#include "sys/sys_public.h"
++
+ /*
++#define CPUID_GENERIC	0x00002
++#define CPUID_AMD	0x00008
++#define CPUID_INTEL	0x00004
++#define CPUID_3DNOW	0x00020
++#define CPUID_HTT	0x01000
++#define CPUID_MMX	0x00010
++#define CPUID_SSE	0x00040
++#define CPUID_SSE2	0x00080
++#define CPUID_SSE3	0x00100
++#define CPUID_CMOV	0x02000
++#define CPUID_ALTIVEC	0x00200
++#define CPUID_FTZ	0x04000
++#define CPUID_DAZ	0x08000
++
++#define CPUID_SSE3        0x00000001
++#define CPUID_PCLMULQDQ   0x00000002
++#define CPUID_PCLMUL      CPUID_PCLMULQDQ
++#define CPUID_DTES64      0x00000004
++#define CPUID_MONITOR     0x00000008
++#define CPUID_DSCPL       0x00000010
++#define CPUID_VMX         0x00000020
++#define CPUID_SMX         0x00000040
++#define CPUID_EIST        0x00000080
++#define CPUID_TM2         0x00000100
++#define CPUID_SSSE3       0x00000200
++#define CPUID_CNXTID      0x00000400
++#define CPUID_FMA         0x00001000
++#define CPUID_CMPXCHG16B  0x00002000
++#define CPUID_xTPR        0x00004000
++#define CPUID_PDCM        0x00008000
++#define CPUID_PCID        0x00020000
++#define CPUID_DCA         0x00040000
++#define CPUID_SSE41       0x00080000
++#define CPUID_SSE4_1      CPUID_SSE41
++#define CPUID_SSE42       0x00100000
++#define CPUID_SSE4_2      CPUID_SSE42
++#define CPUID_x2APIC      0x00200000
++#define CPUID_MOVBE       0x00400000
++#define CPUID_POPCNT      0x00800000
++#define CPUID_TSCDeadline 0x01000000
++#define CPUID_AESNI       0x02000000
++#define CPUID_AES         CPUID_AESNI
++#define CPUID_XSAVE       0x04000000
++#define CPUID_OSXSAVE     0x08000000
++#define CPUID_AVX         0x10000000
++#define CPUID_F16C        0x20000000
++#define CPUID_RDRAND      0x40000000
++#define CPUID_AVX2        0x00000020
++*/
++
++/*
+ ===============================================================================
+ 
+ 	Single Instruction Multiple Data (SIMD)
+@@ -89,7 +142,7 @@ typedef enum {
+ 
+ class idSIMDProcessor {
+ public:
+-									idSIMDProcessor( void ) { cpuid = CPUID_NONE; }
++									idSIMDProcessor( void ) { cpuid = 0x00000; } // 0x00000 is the value of CPUID_NONE in original code
+ 
+ 	cpuid_t							cpuid;
+ 

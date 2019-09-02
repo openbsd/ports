@@ -1,0 +1,16 @@
+$OpenBSD: patch-sound_snd_world_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+use 0 for ALint type, not NULL
+
+Index: sound/snd_world.cpp
+--- sound/snd_world.cpp.orig
++++ sound/snd_world.cpp
+@@ -2124,7 +2124,7 @@ void idSoundWorldLocal::AddChannelContribution( idSoun
+ 
+ 				// handle streaming sounds (decode on the fly) both single shot AND looping
+ 				if ( chan->triggered ) {
+-					alSourcei( chan->openalSource, AL_BUFFER, NULL );
++					alSourcei( chan->openalSource, AL_BUFFER, 0 );
+ 					alDeleteBuffers( 3, &chan->lastopenalStreamingBuffer[0] );
+ 					chan->lastopenalStreamingBuffer[0] = chan->openalStreamingBuffer[0];
+ 					chan->lastopenalStreamingBuffer[1] = chan->openalStreamingBuffer[1];

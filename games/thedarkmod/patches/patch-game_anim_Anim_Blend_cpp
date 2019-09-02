@@ -1,0 +1,16 @@
+$OpenBSD: patch-game_anim_Anim_Blend_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+add OpenBSD, so that strcasecmp is used
+
+Index: game/anim/Anim_Blend.cpp
+--- game/anim/Anim_Blend.cpp.orig
++++ game/anim/Anim_Blend.cpp
+@@ -3666,7 +3666,7 @@ bool idDeclModelDef::Parse( const char *text, const in
+ 			}
+ 
+ 			for( i = ANIMCHANNEL_ALL + 1; i < ANIM_NumAnimChannels; i++ ) {
+-#if MACOS_X || __linux__
++#if MACOS_X || __linux__ || __OpenBSD__
+ 				if ( !strcasecmp( channelNames[ i ], token2.c_str() ) )
+ #else
+ 				if ( !stricmp( channelNames[ i ], token2.c_str() ) )

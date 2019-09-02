@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+bin/tdm_update
+bin/thedarkmod
+share/doc/pkg-readmes/${PKGSTEM}
+share/thedarkmod/
+share/thedarkmod/Darkmod.cfg
+@bin share/thedarkmod/tdm_update
+@bin share/thedarkmod/thedarkmod

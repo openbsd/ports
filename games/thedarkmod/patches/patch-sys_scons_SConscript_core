@@ -1,0 +1,17 @@
+$OpenBSD: patch-sys_scons_SConscript_core,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+remove nVidia from build
+
+Index: sys/scons/SConscript.core
+--- sys/scons/SConscript.core.orig
++++ sys/scons/SConscript.core
+@@ -208,8 +208,7 @@ sys_string = ' \
+ 	stub/util_stub.cpp \
+ 	linux/glimp.cpp \
+ 	posix/posix_input.cpp \
+-	linux/input.cpp \
+-	linux/libXNVCtrl/NVCtrl.c'
++	linux/input.cpp'
+ sys_list = scons_utils.BuildList( 'sys', sys_string )
+ 
+ tools_string = ' \

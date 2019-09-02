@@ -1,0 +1,75 @@
+$OpenBSD: patch-renderer_Image_files_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+replace functions from ExtLibs with system ones
+
+Index: renderer/Image_files.cpp
+--- renderer/Image_files.cpp.orig
++++ renderer/Image_files.cpp
+@@ -35,7 +35,7 @@ void R_LoadImage( const char *name, byte **pic, int *w
+  * You may also wish to include "jerror.h".
+  */
+ 
+-#include "../ExtLibs/jpeg.h"
++#include <jpeglib.h>
+ 
+ extern "C" {
+ 	// hooks from jpeg lib to our system
+@@ -961,18 +961,18 @@ static void LoadJPG( const char *name, byte **pic, int
+ 	 * This routine fills in the contents of struct jerr, and returns jerr's
+ 	 * address which we place into the link field in cinfo.
+ 	 */
+-	cinfo.err = ExtLibs::jpeg_std_error( &jerr );
++	cinfo.err = jpeg_std_error( &jerr );
+ 
+ 	/* Now we can initialize the JPEG decompression object. */
+-	ExtLibs::jpeg_create_decompress( &cinfo );
++	jpeg_create_decompress( &cinfo );
+ 
+ 	/* Step 2: specify data source (eg, a file) */
+ 
+-	ExtLibs::jpeg_mem_src( &cinfo, fbuffer, len );
++	jpeg_mem_src( &cinfo, fbuffer, len );
+ 
+ 	/* Step 3: read file parameters with jpeg_read_header() */
+ 
+-	( void ) ExtLibs::jpeg_read_header( &cinfo, true );
++	( void ) jpeg_read_header( &cinfo, true );
+ 	/* We can ignore the return value from jpeg_read_header since
+ 	 *   (a) suspension is not possible with the stdio data source, and
+ 	 *   (b) we passed TRUE to reject a tables-only JPEG file as an error.
+@@ -987,7 +987,7 @@ static void LoadJPG( const char *name, byte **pic, int
+ 
+ 	/* Step 5: Start decompressor */
+ 
+-	( void ) ExtLibs::jpeg_start_decompress( &cinfo );
++	( void ) jpeg_start_decompress( &cinfo );
+ 	/* We can ignore the return value since suspension is not possible
+ 	 * with the stdio data source.
+ 	 */
+@@ -1024,7 +1024,7 @@ static void LoadJPG( const char *name, byte **pic, int
+ 		 */
+ 		bbuf = ( ( out + ( row_stride * cinfo.output_scanline ) ) );
+ 		buffer = &bbuf;
+-		( void )ExtLibs::jpeg_read_scanlines( &cinfo, buffer, 1 );
++		( void )jpeg_read_scanlines( &cinfo, buffer, 1 );
+ 	}
+ 
+ 	// clear all the alphas to 255
+@@ -1042,7 +1042,7 @@ static void LoadJPG( const char *name, byte **pic, int
+ 
+ 	/* Step 7: Finish decompression */
+ 
+-	( void )ExtLibs::jpeg_finish_decompress( &cinfo );
++	( void )jpeg_finish_decompress( &cinfo );
+ 	/* We can ignore the return value since suspension is not possible
+ 	 * with the stdio data source.
+ 	 */
+@@ -1050,7 +1050,7 @@ static void LoadJPG( const char *name, byte **pic, int
+ 	/* Step 8: Release JPEG decompression object */
+ 
+ 	/* This is an important step since it will release a good deal of memory. */
+-	ExtLibs::jpeg_destroy_decompress( &cinfo );
++	jpeg_destroy_decompress( &cinfo );
+ 
+ 	/* After finish_decompress, we can close the input file.
+ 	 * Here we postpone it until after no more JPEG errors are possible,

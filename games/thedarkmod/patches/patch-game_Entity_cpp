@@ -1,0 +1,15 @@
+$OpenBSD: patch-game_Entity_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+
+float.h needed for FLOAT_MAX used in this file
+
+Index: game/Entity.cpp
+--- game/Entity.cpp.orig
++++ game/Entity.cpp
+@@ -32,6 +32,7 @@
+ #include "Inventory/Cursor.h"
+ #include "AbsenceMarker.h"
+ #include "Objectives/MissionData.h"
++#include <float.h>
+ 
+ /*
+ ===============================================================================
