@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/09/02 20:55:08 kn Exp $
 
 COMMENT =		Virtual Private Network (VPN) daemon
-DISTNAME =		tinc-1.0.35
+DISTNAME =		tinc-1.0.36
 CATEGORIES =		net security
 EPOCH =			0
 
 HOMEPAGE =		https://www.tinc-vpn.org/
 
-MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
+MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -18,7 +18,7 @@ MASTER_SITES =		https://www.tinc-vpn.org/packages/
 
 LIB_DEPENDS +=		archivers/lzo2
 
-CONFIGURE_STYLE = 	gnu
+CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
