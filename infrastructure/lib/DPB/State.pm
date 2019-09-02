@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.26 2019/07/01 12:03:41 espie Exp $
+# $OpenBSD: State.pm,v 1.27 2019/09/02 13:15:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -48,6 +48,7 @@ sub init
 	$self->{heuristics} = DPB::Heuristics->new($self);
 	$self->{make} = $ENV{MAKE} || OpenBSD::Paths->make;
 	$self->{starttime} = time();
+	$self->{master_pid} = $$;
 
 	return $self;
 }
@@ -87,7 +88,7 @@ sub expand_path_with_ports
 	$path =~ s/\%t/$self->{starttime}/g;
 	$path =~ s/\%d/$self->startdate/ge;
 	$path =~ s/\%f/$self->{realdistdir}/g;
-	$path =~ s/\%\$/$$/g;
+	$path =~ s/\%\$/$self->{master_pid}/g;
 	return $path;
 }
 

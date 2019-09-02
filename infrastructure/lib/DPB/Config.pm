@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.82 2019/07/01 12:03:41 espie Exp $
+# $OpenBSD: Config.pm,v 1.83 2019/09/02 13:15:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -389,6 +389,7 @@ sub parse_config_files
 		small => 120,
 		repair => 1,
 		nochecksum => 1,
+		master_pid => $state->{master_pid},
 	};
 
 	if ($state->{config_files}) {

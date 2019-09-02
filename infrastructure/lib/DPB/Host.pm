@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Host.pm,v 1.13 2019/07/20 10:59:08 espie Exp $
+# $OpenBSD: Host.pm,v 1.14 2019/09/02 13:15:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -20,7 +20,6 @@ use warnings;
 package DPB::Host;
 
 my $hosts = {};
-my $master_pid = $$;
 
 sub shell
 {
@@ -45,7 +44,7 @@ sub new
 	} else {
 		require DPB::Core::Distant;
 		$class = "DPB::Host::Distant";
-		$prop->{socket} = "/tmp/ssh-$name-$master_pid";
+		$prop->{socket} = "/tmp/ssh-$name-$prop->{master_pid}";
 	}
 	$hosts->{$name} //= $class->create($name, $prop);
 	return $hosts->{$name};

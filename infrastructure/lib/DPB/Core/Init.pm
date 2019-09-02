@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.37 2019/05/08 12:59:33 espie Exp $
+# $OpenBSD: Init.pm,v 1.38 2019/09/02 13:15:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -153,7 +153,7 @@ sub alive_hosts
 		if ($c->is_alive) {
 			push(@l, $host.$c->shell->stringize_master_pid);
 		} else {
-			push(@l, $host.'-');
+			push(@l, $c->prop->{socket}.'-');
 		}
 	}
 	return "Hosts: ".join(' ', sort(@l))."\n";

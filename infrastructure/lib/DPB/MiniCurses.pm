@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: MiniCurses.pm,v 1.14 2017/12/29 17:08:18 espie Exp $
+# $OpenBSD: MiniCurses.pm,v 1.15 2019/09/02 13:15:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -191,7 +191,7 @@ sub mogrify
 		$self->default_fg(RED);
 	} elsif ($line =~ m/^Hosts:/) {
 		$line =~ s/([\@\w\.\-]*[\@\w.])(\s|\(|$)/$self->color($1, RED).$2/ge;
-		$line =~ s/([\@\w\.\-]+\-)(\s|\(|$)/$self->blink($self->bg($self->color($1, BLACK), RED)).$2/ge;
+		$line =~ s/([\/\@\w\.\-]+\-)(\s|\(|$)/$self->blink($self->bg($self->color($1, BLACK), RED)).$2/ge;
 		$line =~ s/(^Hosts:)/$self->color($1, BLUE)/ge;
 	}
 	$line =~ s/(\[\d+\])/$self->color($1, GREEN)/ge;
