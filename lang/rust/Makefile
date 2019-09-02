@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.100 2019/08/16 18:14:21 semarie Exp $
+# $OpenBSD: Makefile,v 1.101 2019/09/02 07:05:48 semarie Exp $
 
-ONLY_FOR_ARCHS =	${RUST_ARCHS} sparc64
-
-BROKEN-sparc64 =	others ports needs rust libc update
+ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
 .if "${MACHINE_ARCH}" == "i386"
 DPB_PROPERTIES =	lonesome
