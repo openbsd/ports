@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/09/02 07:03:39 semarie Exp $
 
 COMMENT =	RSS/Atom feed reader for text terminals
 
@@ -31,6 +31,8 @@ MODCARGO_BUILD =	No
 MODCARGO_INSTALL =	No
 MODCARGO_TEST =		No
 
+MODCARGO_CRATES_UPDATE +=	libc
+
 MODCARGO_CRATES +=	aho-corasick	0.6.9	# Unlicense/MIT
 MODCARGO_CRATES +=	argon2rs	0.2.5	# MIT
 MODCARGO_CRATES +=	arrayvec	0.4.10	# MIT/Apache-2.0
@@ -50,7 +52,7 @@ MODCARGO_CRATES +=	failure_derive	0.1.5	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	fuchsia-cprng	0.1.1	# LICENSE
 MODCARGO_CRATES +=	idna	0.1.5	# MIT/Apache-2.0
 MODCARGO_CRATES +=	lazy_static	1.2.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	libc	0.2.48	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	libc	0.2.63	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	lock_api	0.1.5	# Apache-2.0/MIT
 MODCARGO_CRATES +=	matches	0.1.8	# MIT
 MODCARGO_CRATES +=	memchr	2.1.3	# Unlicense/MIT

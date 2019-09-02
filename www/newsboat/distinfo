@@ -17,7 +17,7 @@ SHA256 (cargo/failure_derive-0.1.5.tar.gz) = 6hBjkV/X70MJ4iKloHz5wxn7nHg2sfibhUW
 SHA256 (cargo/fuchsia-cprng-0.1.1.tar.gz) = oG931SbBpgG3xM3Zj1S16qv/wU1fLwKW/r3H81fG07o=
 SHA256 (cargo/idna-0.1.5.tar.gz) = OPCeDwsftV/e4fF0cK2ADad69RhqGnbAJrZ5NYt+hE4=
 SHA256 (cargo/lazy_static-1.2.0.tar.gz) = o3TIm521WJVFOnTB44hh2d7sCwG0BaglFunV3kgg3qE=
-SHA256 (cargo/libc-0.2.48.tar.gz) = 6WLHZBAIrAEPpgp9/cFxJEnynETvLUcCOUrqlD7nUEc=
+SHA256 (cargo/libc-0.2.63.tar.gz) = 15WDUCv/BSPhB8pE3TZv+AfGRCtKlMzvBDLH6E+FZYM=
 SHA256 (cargo/lock_api-0.1.5.tar.gz) = YuvxOR9qytYOXItDcG3eRYLfdcBmmKtEUR0VAWvCRCw=
 SHA256 (cargo/matches-0.1.8.tar.gz) = f/xcUzhGnU0+oX0mn6jqNRKtJHJHwwvS32nmgwntCgg=
 SHA256 (cargo/memchr-2.1.3.tar.gz) = 4d1OqsKYwyzgfrbtkkLtp9gpVbkXC31ttZsuAsxj/Lg=
@@ -92,7 +92,7 @@ SIZE (cargo/failure_derive-0.1.5.tar.gz) = 4884
 SIZE (cargo/fuchsia-cprng-0.1.1.tar.gz) = 2950
 SIZE (cargo/idna-0.1.5.tar.gz) = 258735
 SIZE (cargo/lazy_static-1.2.0.tar.gz) = 10840
-SIZE (cargo/libc-0.2.48.tar.gz) = 353045
+SIZE (cargo/libc-0.2.63.tar.gz) = 437880
 SIZE (cargo/lock_api-0.1.5.tar.gz) = 16967
 SIZE (cargo/matches-0.1.8.tar.gz) = 2216
 SIZE (cargo/memchr-2.1.3.tar.gz) = 20069

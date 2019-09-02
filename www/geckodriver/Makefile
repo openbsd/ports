@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/09/02 07:03:39 semarie Exp $
 
 COMMENT =	W3C webdriver for Gecko-based browsers
 
@@ -19,6 +19,8 @@ MODULES =		devel/cargo
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
+
+MODCARGO_CRATES_UPDATE +=	libc
 
 MODCARGO_CRATES +=	adler32	1.0.3		# BSD-3-Clause AND Zlib
 MODCARGO_CRATES +=	aho-corasick	0.6.8		# Unlicense/MIT
@@ -57,7 +59,7 @@ MODCARGO_CRATES +=	itoa	0.4.3		# MIT/Apache-2.0
 MODCARGO_CRATES +=	kernel32-sys	0.2.2		# MIT
 MODCARGO_CRATES +=	lazy_static	1.1.0		# MIT/Apache-2.0
 MODCARGO_CRATES +=	lazycell	1.1.0		# MIT/Apache-2.0
-MODCARGO_CRATES +=	libc	0.2.43		# MIT/Apache-2.0
+MODCARGO_CRATES +=	libc	0.2.63		# MIT/Apache-2.0
 MODCARGO_CRATES +=	lock_api	0.1.3		# Apache-2.0/MIT
 MODCARGO_CRATES +=	log	0.4.5		# MIT/Apache-2.0
 MODCARGO_CRATES +=	mio	0.6.16		# MIT

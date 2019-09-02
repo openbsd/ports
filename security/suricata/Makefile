@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/09/02 07:03:39 semarie Exp $
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
@@ -56,6 +56,11 @@ CONFIGURE_ARGS =	--disable-gccmarch-native \
 			--enable-ipfw
 
 SUBST_VARS =		VARBASE SURICATA_V SUPDATE_V
+
+post-patch:
+	# permit patching libc-rs to support sparc64 (could be removed with libc>=0.2.63)
+	sed -i 's/"files":{[^}]*}/"files":{}/' \
+		${WRKSRC}/rust/vendor/libc/.cargo-checksum.json
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/suricata/rules
