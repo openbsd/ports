@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2019/09/03 16:56:43 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
+BROKEN-i386 =	Simd_SSE.cpp fails, unknown type name '__m128'
 
 COMMENT =	first-person stealth game inspired by Thief
 
