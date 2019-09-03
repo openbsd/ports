@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.390 2019/08/15 05:47:59 landry Exp $
+# $OpenBSD: Makefile,v 1.391 2019/09/03 16:27:04 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	68.0.2
+MOZILLA_VERSION =	69.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
@@ -48,7 +48,7 @@ BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_3}
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
-BUILD_DEPENDS +=	devel/cbindgen>=0.8.7
+BUILD_DEPENDS +=	devel/cbindgen>=0.9.0
 # 67 requires nasm for bundled libav1d
 BUILD_DEPENDS +=	devel/nasm
 
@@ -62,9 +62,6 @@ CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1"
 
 CONFIGURE_ARGS +=	--enable-release #1386371
-# rust-simd doesn't work with lang/rust>=1.33
-#CONFIGURE_ARGS +=	--enable-rust-simd #1261841
-CONFIGURE_ARGS +=	--enable-webrender=build
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	--disable-debug-symbols
 MAKE_ENV +=		RUSTFLAGS="-C target-cpu=pentium4 --cfg target_feature=\"sse2\""
@@ -72,7 +69,7 @@ MAKE_ENV +=		RUSTFLAGS="-C target-cpu=pentium4 --cfg target_feature=\"sse2\""
 DPB_PROPERTIES =	lonesome
 .endif
 CONFIGURE_ARGS +=	--enable-sandbox --enable-content-sandbox
-
+CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 SUBST_VARS +=	LOCALBASE X11BASE
 
 show-commit:
