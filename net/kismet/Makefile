@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/07/12 20:48:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2019/09/03 10:50:33 sthen Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -11,8 +11,9 @@ V=		2016-07-R1
 DISTNAME=	kismet-${V}
 PKGNAME=	kismet-${V:S,-,,g}
 CATEGORIES=	net security
+REVISION=	0
 
-HOMEPAGE=	http://www.kismetwireless.net/
+HOMEPAGE=	https://www.kismetwireless.net/
 MASTER_SITES=	${HOMEPAGE}code/
 EXTRACT_SUFX=	.tar.xz
 
