@@ -1,7 +1,4 @@
-$OpenBSD: patch-storage_mozStorageConnection_cpp,v 1.4 2019/03/11 19:04:37 semarie Exp $
-
-chunk 1:
-https://bugzilla.mozilla.org/show_bug.cgi?id=1470961
+$OpenBSD: patch-storage_mozStorageConnection_cpp,v 1.5 2019/09/03 16:31:12 landry Exp $
 
 set secure_delete PRAGMA on by default, instead of using internal sqlite copy
 https://bugzilla.mozilla.org/show_bug.cgi?id=546162
@@ -9,28 +6,17 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=546162
 Index: storage/mozStorageConnection.cpp
 --- storage/mozStorageConnection.cpp.orig
 +++ storage/mozStorageConnection.cpp
-@@ -227,9 +227,7 @@ void basicFunctionHelper(sqlite3_context *aCtx, int aA
-     return;
+@@ -782,6 +782,13 @@ nsresult Connection::initializeInternal() {
+     return convertResultCode(srv);
    }
-   int retcode = variantToSQLiteT(aCtx, result);
--  if (retcode == SQLITE_IGNORE) {
--    ::sqlite3_result_int(aCtx, SQLITE_IGNORE);
--  } else if (retcode != SQLITE_OK) {
-+  if (retcode != SQLITE_OK) {
-     NS_WARNING("User function returned invalid data type!");
-     ::sqlite3_result_error(aCtx, "User function returned invalid data type",
-                            -1);
-@@ -751,6 +749,13 @@ nsresult Connection::initializeInternal() {
-   // Register our built-in SQL collating sequences.
-   srv = registerCollations(mDBConn, mStorageService);
-   if (srv != SQLITE_OK) {
-+    return convertResultCode(srv);
-+  }
-+
+ 
 +  srv = ::sqlite3_exec(mDBConn, "PRAGMA secure_delete = ON", NULL, NULL, NULL);
 +  if (srv != SQLITE_OK) {
 +    ::sqlite3_close(mDBConn);
 +    mDBConn = nullptr;
-     return convertResultCode(srv);
-   }
- 
++    return convertResultCode(srv);
++  }
++
+   // Set the synchronous PRAGMA, according to the preference.
+   switch (Service::getSynchronousPref()) {
+     case 2:

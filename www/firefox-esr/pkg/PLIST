@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/09/04 12:46:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/09/03 16:31:12 landry Exp $
 bin/${MOZILLA_PROJECT}-esr
 lib/${MOZILLA_PROJECT}-esr/
 lib/${MOZILLA_PROJECT}-esr/application.ini
@@ -17,16 +17,11 @@ lib/${MOZILLA_PROJECT}-esr/browser/chrome/icons/default/default64.png
 lib/${MOZILLA_PROJECT}-esr/browser/defaults/
 lib/${MOZILLA_PROJECT}-esr/browser/defaults/preferences/
 lib/${MOZILLA_PROJECT}-esr/browser/defaults/preferences/all-openbsd.js
-lib/${MOZILLA_PROJECT}-esr/browser/extensions/
-lib/${MOZILLA_PROJECT}-esr/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
 lib/${MOZILLA_PROJECT}-esr/browser/features/
-lib/${MOZILLA_PROJECT}-esr/browser/features/activity-stream@mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-esr/browser/features/aushelper@mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-esr/browser/features/${MOZILLA_PROJECT}@getpocket.com.xpi
-lib/${MOZILLA_PROJECT}-esr/browser/features/followonsearch@mozilla.com.xpi
 lib/${MOZILLA_PROJECT}-esr/browser/features/formautofill@mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-esr/browser/features/onboarding@mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-esr/browser/features/fxmonitor@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}-esr/browser/features/screenshots@mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-esr/browser/features/webcompat-reporter@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}-esr/browser/features/webcompat@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}-esr/browser/omni.ja
 lib/${MOZILLA_PROJECT}-esr/chrome.manifest
@@ -34,9 +29,6 @@ lib/${MOZILLA_PROJECT}-esr/defaults/
 lib/${MOZILLA_PROJECT}-esr/defaults/pref/
 lib/${MOZILLA_PROJECT}-esr/defaults/pref/channel-prefs.js
 lib/${MOZILLA_PROJECT}-esr/dependentlibs.list
-lib/${MOZILLA_PROJECT}-esr/dictionaries/
-lib/${MOZILLA_PROJECT}-esr/dictionaries/en-US.aff
-lib/${MOZILLA_PROJECT}-esr/dictionaries/en-US.dic
 lib/${MOZILLA_PROJECT}-esr/distribution/
 lib/${MOZILLA_PROJECT}-esr/distribution/distribution.ini
 @bin lib/${MOZILLA_PROJECT}-esr/${MOZILLA_PROJECT}-esr

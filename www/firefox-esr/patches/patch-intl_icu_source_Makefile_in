@@ -1,4 +1,4 @@
-$OpenBSD: patch-intl_icu_source_Makefile_in,v 1.4 2018/06/27 05:11:34 landry Exp $
+$OpenBSD: patch-intl_icu_source_Makefile_in,v 1.5 2019/09/03 16:31:12 landry Exp $
 
 https://bugzilla.mozilla.org/show_bug.cgi?id=990196
 
@@ -12,7 +12,7 @@ Makefile:77: recipe for target 'buildicu' failed
 Index: intl/icu/source/Makefile.in
 --- intl/icu/source/Makefile.in.orig
 +++ intl/icu/source/Makefile.in
-@@ -331,7 +331,7 @@ $(top_builddir)/config/pkgdataMakefile:
+@@ -337,7 +337,7 @@ $(top_builddir)/config/pkgdataMakefile:
  
  $(top_builddir)/config/icu-config: $(top_builddir)/Makefile $(top_srcdir)/config/icu-config-top $(top_srcdir)/config/icu-config-bottom $(top_builddir)/config/Makefile.inc @platform_make_fragment@ $(top_srcdir)/config/make2sh.sed
  	-$(RMV) $@
