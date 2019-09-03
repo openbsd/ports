@@ -1,24 +1,14 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2012/02/18 22:04:07 sthen Exp $
---- Makefile.in.orig	Sun Jan  8 01:11:51 2012
-+++ Makefile.in	Sun Jan  8 01:15:47 2012
-@@ -98,7 +98,7 @@ LIBOBJS = queue.o route.o waypt.o filter_vecs.o util.o
-           uuid.o formspec.o xmltag.o cet.o cet_util.o fatal.o rgbcolors.o \
- 	  inifile.o garmin_fs.o gbsleep.o units.o @GBSER@ gbser.o \
- 	  gbfile.o parse.o avltree.o session.o \
--	$(PALM_DB) $(GARMIN) $(JEEPS) $(SHAPE) @ZLIB@ $(FMTS) $(FILTERS)
-+	$(PALM_DB) $(GARMIN) $(JEEPS) @SHAPE@ @ZLIB@ $(FMTS) $(FILTERS)
- OBJS = main.o globals.o $(LIBOBJS) @FILEINFO@
- 
- .c.o:
-@@ -193,7 +193,6 @@ dep:
+--- Makefile.in.orig	Thu May  2 17:26:47 2019
++++ Makefile.in	Mon Sep  2 22:09:45 2019
+@@ -236,7 +236,6 @@ dep:
  $(WEB)/htmldoc-$(DOCVERSION)/index.html: FORCE
  	mkdir -p $(WEB)/htmldoc-$(DOCVERSION)
  	perl xmldoc/makedoc
 -	xmlwf xmldoc/readme.xml		#check for well-formedness
  	xmllint --noout --valid xmldoc/readme.xml    	#validate
- 	xsltproc \
+ 	xsltproc --load-trace \
  	 --stringparam base.dir "$(WEB)/htmldoc-$(DOCVERSION)/" \
-@@ -246,7 +245,7 @@ changes.html: FORCE
+@@ -293,7 +292,7 @@ changes.html: FORCE
  	wget -O $(WEB)/changes.html http://www.gpsbabel.org/changes.html || exit 1
  	rm -f $(WEB)/changes.html.1 > /dev/null
  

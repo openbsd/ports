@@ -1,5 +1,5 @@
---- gbser_posix.c.orig	Tue Jul 26 10:56:33 2011
-+++ gbser_posix.c	Tue Dec 25 21:52:11 2012
+--- gbser_posix.cc.orig	Thu May  2 17:26:47 2019
++++ gbser_posix.cc	Sat Aug 24 19:55:42 2019
 @@ -142,7 +142,7 @@ void* gbser_init(const char* port_name)
    if (0 == strcmp(port_name, "-")) {
      h->fd = 0;

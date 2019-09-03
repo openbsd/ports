@@ -1,0 +1,21 @@
+--- gui/serial_unix.cc.orig	Thu May  2 17:26:47 2019
++++ gui/serial_unix.cc	Sat Aug 24 19:55:42 2019
+@@ -84,12 +84,12 @@ static QStringList dynamicDevices()
+ 
+ 
+ static const char* deviceNames[] = {
+-  "/dev/ttyS0",
+-  "/dev/ttyS1",
+-  "/dev/ttyS2",
+-  "/dev/ttyS3",
+-  "/dev/ttyUSB0",
+-  "/dev/rfcomm0",
++  "/dev/cua00",
++  "/dev/cua01",
++  "/dev/cua02",
++  "/dev/cua03",
++  "/dev/cuaU0",
++  "/dev/cuaU1",
+   nullptr
+ };
+ 
