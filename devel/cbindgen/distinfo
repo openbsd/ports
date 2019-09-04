@@ -7,7 +7,7 @@ SHA256 (cargo/clap-2.33.0.tar.gz) = UGf1uy2A711otMh9uBYB8LdbymJ7wu92sUHXuEajxtk=
 SHA256 (cargo/cloudabi-0.0.3.tar.gz) = 3fxbmqXUUHrK+HLecQUd/Q4wmGDoiWbhBR5GKgd6rE8=
 SHA256 (cargo/fuchsia-cprng-0.1.1.tar.gz) = oG931SbBpgG3xM3Zj1S16qv/wU1fLwKW/r3H81fG07o=
 SHA256 (cargo/itoa-0.4.4.tar.gz) = UBJmt+3QF0+FMCSPh/mciPvmDKTvPdSGg1uNjVMTb38=
-SHA256 (cargo/libc-0.2.58.tar.gz) = YoG4Z5a6XkNmAAvm6eGL81WArfnmP74ilKrbWHYToxk=
+SHA256 (cargo/libc-0.2.63.tar.gz) = 15WDUCv/BSPhB8pE3TZv+AfGRCtKlMzvBDLH6E+FZYM=
 SHA256 (cargo/log-0.4.6.tar.gz) = yE7EtSeVCqg6MpdUsB2+P1g2HRxe+s0fbWjElNCKF8Y=
 SHA256 (cargo/numtoa-0.1.0.tar.gz) = uPi98z3xlYWQduVKsR7nihsgg4LTom7EDRQv/B7MSe8=
 SHA256 (cargo/proc-macro2-1.0.0.tar.gz) = GfKHwjTJstAwjWkt7lxEnBoXEWem+BUPfPKknY/ZaWc=
@@ -52,7 +52,7 @@ SIZE (cargo/clap-2.33.0.tar.gz) = 196458
 SIZE (cargo/cloudabi-0.0.3.tar.gz) = 22156
 SIZE (cargo/fuchsia-cprng-0.1.1.tar.gz) = 2950
 SIZE (cargo/itoa-0.4.4.tar.gz) = 11147
-SIZE (cargo/libc-0.2.58.tar.gz) = 409031
+SIZE (cargo/libc-0.2.63.tar.gz) = 437880
 SIZE (cargo/log-0.4.6.tar.gz) = 22303
 SIZE (cargo/numtoa-0.1.0.tar.gz) = 8999
 SIZE (cargo/proc-macro2-1.0.0.tar.gz) = 34625
