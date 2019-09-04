@@ -1,0 +1,2 @@
+filter-rspamd is an opensmtpd filter that passes mail through
+rspamd to flag or reject spam messages at session time.

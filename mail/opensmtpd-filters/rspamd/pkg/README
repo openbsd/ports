@@ -1,0 +1,18 @@
+$OpenBSD: README,v 1.1 2019/09/04 12:27:42 martijn Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+To use filter-rspamd, you must declare it in smtpd.
+
+Edit the /etc/mail/smtpd.conf file to declare the filter:
+
+  filter "rspamd" proc-exec "${PREFIX}/libexec/smtpd/filter-rspamd"
+
+Then add the filter to each listener that should be filtered:
+
+  listen on socket filter "rspamd" listen on all filter "rspamd"
+
+The filter itself doesn't have configuration and is controlled by
+the Rspamd configuration itself.

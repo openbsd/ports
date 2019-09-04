@@ -1,0 +1,28 @@
+$OpenBSD: README,v 1.1 2019/09/04 12:27:42 martijn Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+To use filter-senderscore, you must declare it in smtpd.
+
+Edit the /etc/mail/smtpd.conf file to declare the filter:
+
+  filter "senderscore" \
+  	 proc-exec "${PREFIX}/libexec/smtpd/filter-senderscore [...]"
+
+The following options may be passed to filter-senderscore:
+
+-blockBelow 10
+block at banner sessions score below 10
+
+-junkBelow 70
+add X-Spam header to sessions below 70
+
+-slowFactor 1000
+delay by up to 1000 ms (proportionally to reputation) each reply
+
+Then add the filter to each listener that should be filtered:
+
+  listen on socket filter "senderscore"
+  listen on all filter "senderscore"

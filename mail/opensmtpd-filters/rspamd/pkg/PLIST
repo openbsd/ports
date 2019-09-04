@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1 2019/09/04 12:27:42 martijn Exp $
+@pkgpath mail/opensmtpd-filter-rspamd
+libexec/smtpd/
+@bin libexec/smtpd/filter-rspamd
+share/doc/pkg-readmes/${PKGSTEM}
