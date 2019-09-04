@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1888 2019/09/02 18:12:43 thfr Exp $
+# $OpenBSD: Makefile,v 1.1889 2019/09/04 09:37:49 jca Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -322,7 +322,6 @@
      SUBDIR += libevent2
      SUBDIR += libeventextra
      SUBDIR += libexecinfo
-     SUBDIR += libf2c
      SUBDIR += libfastjson
      SUBDIR += libffi
      SUBDIR += libfirm

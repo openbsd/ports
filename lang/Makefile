@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.236 2019/04/29 15:10:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.237 2019/09/04 09:37:49 jca Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -35,7 +35,6 @@
      SUBDIR += freebasic
      SUBDIR += freehdl
      SUBDIR += fsharp
-     SUBDIR += g77
      SUBDIR += gambit
      SUBDIR += gawk
      SUBDIR += gcc

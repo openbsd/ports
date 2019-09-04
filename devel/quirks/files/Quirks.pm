@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.801 2019/08/27 03:21:32 pamela Exp $
+# $OpenBSD: Quirks.pm,v 1.802 2019/09/04 09:37:49 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1309,6 +1309,8 @@ my $obsolete_reason = {
 	'arm-elf-gdb' => 6,
 	'arm-elf-newlib' => 6,
 	'py-mastodon.py' => 14,
+	'g77' => 5,
+	'libf2c' => 5,
 };
 
 # reasons for obsolete packages
