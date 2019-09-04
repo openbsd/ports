@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/04 21:35:17 bcallah Exp $
+share/fonts/
+@fontdir share/fonts/unifont/
+share/fonts/unifont/unifont.ttf
