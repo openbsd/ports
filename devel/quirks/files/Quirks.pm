@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.802 2019/09/04 09:37:49 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.803 2019/09/04 12:33:52 martijn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -334,6 +334,8 @@ my $stem_extensions = {
 	'kwebapp' => 'openradtool',
 	'py-xmldiff' => 'py3-xmldiff',
 	'bro' => 'zeek',
+	'filter-rspamd' => 'opensmtpd-filter-rspamd',
+	'filter-senderscore' => 'opensmtpd-filter-senderscore',
 };
 
 my $obsolete_reason = {
