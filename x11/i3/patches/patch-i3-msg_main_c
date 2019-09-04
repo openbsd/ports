@@ -1,0 +1,14 @@
+$OpenBSD: patch-i3-msg_main_c,v 1.6 2019/09/04 20:25:48 sthen Exp $
+
+Index: i3-msg/main.c
+--- i3-msg/main.c.orig
++++ i3-msg/main.c
+@@ -156,7 +156,7 @@ static yajl_callbacks config_callbacks = {
+ };
+ 
+ int main(int argc, char *argv[]) {
+-#if defined(__OpenBSD__)
++#if 0
+     if (pledge("stdio rpath unix", NULL) == -1)
+         err(EXIT_FAILURE, "pledge");
+ #endif
