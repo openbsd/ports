@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.22 2019/05/04 21:46:16 sthen Exp $
+# $OpenBSD: go.port.mk,v 1.23 2019/09/04 12:22:03 martijn Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -27,6 +27,7 @@ MAKE_ENV +=		GOCACHE="${MODGO_GOCACHE}" GOPATH="${MODGO_GOPATH}"
 MODGO_CMD ?=		${SETENV} ${MAKE_ENV} go
 MODGO_BUILD_CMD =	${MODGO_CMD} install ${MODGO_FLAGS}
 MODGO_TEST_CMD =	${MODGO_CMD} test ${MODGO_FLAGS} ${MODGO_TEST_FLAGS}
+MODGO_BINDIR ?=		bin
 
 .if ! empty(MODGO_LDFLAGS)
 MODGO_BUILD_CMD +=	-ldflags="${MODGO_LDFLAGS}"
@@ -57,8 +58,9 @@ MODGO_FLAGS +=		-x
 
 INSTALL_STRIP =
 .if ${MODGO_TYPE:L:Mbin}
-MODGO_INSTALL_TARGET =	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/* \
-				${PREFIX}/bin;
+MODGO_INSTALL_TARGET =	${INSTALL_PROGRAM_DIR} ${PREFIX}/${MODGO_BINDIR} && \
+			${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/* \
+				${PREFIX}/${MODGO_BINDIR};
 .endif
 
 # Go source files serve the purpose of libraries, so sources should be included
