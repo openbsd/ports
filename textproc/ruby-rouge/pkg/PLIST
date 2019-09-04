@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/08/21 07:49:04 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/09/04 16:26:56 fcambus Exp $
 ${GEM_BIN}/rougify${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -28,6 +28,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/bsl
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/c
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ceylon
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/cfscript
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/clean
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/clojure
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/cmake
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/cmhg
@@ -86,6 +87,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/irb_output
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/java
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/javascript
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/jinja
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/jsl
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/json
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/json-doc
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/jsonnet
@@ -99,6 +101,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/literate_coffeescript
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/literate_haskell
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/llvm
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/lua
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/lustre
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/lutin
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/m68k
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/magik
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/make
@@ -151,6 +155,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/slim
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/smalltalk
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/smarty
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/sml
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/sparql
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/sqf
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/sql
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/supercollider
@@ -219,6 +224,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/bsl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/c.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ceylon.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/cfscript.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/clean.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/clojure.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/cmake.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/cmhg.rb
@@ -278,6 +284,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/irb.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/java.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/javascript.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/jinja.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/jsl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/json.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/json_doc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/jsonnet.rb
@@ -295,6 +302,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/llvm.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lua/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lua.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lua/builtins.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lustre.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lutin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/m68k.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/magik.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/make.rb
@@ -357,6 +366,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/slim.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/smalltalk.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/smarty.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sml.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sparql.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sqf/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sqf.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sqf/commands.rb
