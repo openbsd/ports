@@ -1,0 +1,26 @@
+$OpenBSD: patch-tun_tun_openbsd_go,v 1.1 2019/09/04 16:50:23 jasper Exp $
+
+Revert commit 4d5819183e218e040fa0a73df560b4a4a9a768d7 as it
+breaks some setups.
+
+Index: tun/tun_openbsd.go
+--- tun/tun_openbsd.go.orig
++++ tun/tun_openbsd.go
+@@ -173,13 +173,10 @@ func CreateTUNFromFile(file *os.File, mtu int) (Device
+ 
+ 	go tun.routineRouteListener(tunIfindex)
+ 
+-	currentMTU, err := tun.MTU()
+-	if err != nil || currentMTU != mtu {
+-		err = tun.setMTU(mtu)
+-		if err != nil {
+-			tun.Close()
+-			return nil, err
+-		}
++	err = tun.setMTU(mtu)
++	if err != nil {
++		tun.Close()
++		return nil, err
+ 	}
+ 
+ 	return tun, nil
