@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/09/03 18:33:39 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2019/09/04 06:18:20 semarie Exp $
 
 COMMENT =		C bindings generator from rust code
 
@@ -31,7 +31,7 @@ MODCARGO_CRATES +=      clap    2.33.0  # MIT
 MODCARGO_CRATES +=      cloudabi        0.0.3   # BSD-2-Clause
 MODCARGO_CRATES +=      fuchsia-cprng   0.1.1   # LICENSE
 MODCARGO_CRATES +=      itoa    0.4.4   # MIT/Apache-2.0
-MODCARGO_CRATES +=      libc    0.2.58  # MIT OR Apache-2.0
+MODCARGO_CRATES +=      libc    0.2.63  # MIT OR Apache-2.0
 MODCARGO_CRATES +=      log     0.4.6   # MIT/Apache-2.0
 MODCARGO_CRATES +=      numtoa  0.1.0   # MIT OR Apache-2.0
 MODCARGO_CRATES +=      proc-macro2     1.0.0   # MIT OR Apache-2.0
