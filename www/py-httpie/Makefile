@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2019/06/05 13:26:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/09/04 09:51:23 sthen Exp $
 
 COMMENT =	command-line HTTP client
 
-MODPY_EGG_VERSION =	1.0.2
-REVISION =	0
+MODPY_EGG_VERSION =	1.0.3
 GH_TAGNAME =	${MODPY_EGG_VERSION}
 GH_ACCOUNT =	jkbrzt
 GH_PROJECT =	httpie
