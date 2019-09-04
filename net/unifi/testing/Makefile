@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2019/08/29 18:58:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/09/04 21:56:34 sthen Exp $
 
-V=		5.11.39
+V=		5.11.45
 SNAPPY_V=	1.1.7.2
-REVISION=	0
 
 # for stable-candidate versions
-BUILD_V=	-54b4ab1ed1
+BUILD_V=	-6cc8cc5c2a
 
 .if !defined(BUILD_V)
 FETCH_MANUALLY+= ""
