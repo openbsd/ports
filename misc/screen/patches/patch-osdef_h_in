@@ -1,0 +1,14 @@
+$OpenBSD: patch-osdef_h_in,v 1.1 2019/09/05 17:35:06 sthen Exp $
+
+Index: osdef.h.in
+--- osdef.h.in.orig
++++ osdef.h.in
+@@ -111,7 +111,7 @@ extern int   setsid __P((void));
+ extern int   setpgid __P((int, int));
+ extern int   tcsetpgrp __P((int, int));
+ #endif
+-extern int   ioctl __P((int, int, char *));
++extern int   ioctl __P((int, unsigned long, char *));
+ 
+ extern int   kill __P((int, int));
+ 
