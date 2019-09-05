@@ -1,0 +1,83 @@
+$OpenBSD: patch-screen_c,v 1.1.1.1 2019/09/05 11:49:08 sthen Exp $
+
+Index: screen.c
+--- screen.c.orig
++++ screen.c
+@@ -71,6 +71,14 @@
+ #if (defined(AUX) || defined(_AUX_SOURCE)) && defined(POSIX)
+ # include <compat.h>
+ #endif
++
++#ifdef IPC_EXPORT_IMAGE
++# include <sys/ipc.h>
++# include <sys/shm.h>
++#endif
++
++
++
+ #if defined(USE_LOCALE) || defined(ENCODINGS)
+ # include <locale.h>
+ #endif
+@@ -78,6 +86,11 @@
+ # include <langinfo.h>
+ #endif
+ 
++#ifdef IPC_EXPORT_IMAGE
++# include <sys/ipc.h>
++# include <sys/shm.h>
++#endif
++
+ #include "screen.h"
+ #ifdef HAVE_BRAILLE
+ # include "braille.h"
+@@ -234,6 +247,12 @@ struct win *console_window;
+ 
+ 
+ 
++
++#ifdef IPC_EXPORT_IMAGE
++char *shm;              /* pointer to shared memory segment */
++#endif
++
++
+ /*
+  * Do this last
+  */
+@@ -459,6 +478,37 @@ char **av;
+ #ifdef ZMODEM
+   zmodem_sendcmd = SaveStr("!!! sz -vv -b ");
+   zmodem_recvcmd = SaveStr("!!! rz -vv -b -E");
++#endif
++
++#ifdef IPC_EXPORT_IMAGE
++  {
++    key_t key = 0xBACD072F;     /* random static IPC key */
++    int shmid;
++
++    /* Allocation of shared mem for 18000 bytes (screen text and attributes
++     * + few coord.).  We supose no screen will be wider than 132x66.
++     * 0x1C0 = [rwx------].
++     */
++    shmid = shmget( key, 18000, IPC_CREAT | 0x1C0 );
++    if( shmid < 0 )
++      {
++        Panic( errno, "shmget" );
++        /* NOTRECHED */
++      }
++    shm = shmat( shmid, 0, 0);
++    if ( shm == (void*)-1 )
++      {
++        Panic( errno, "shmat" );
++        /* NOTRECHED */
++      }
++    /* minimal initialisation just to have valid data */
++    shm[0] = 80;   /* scrdim x */
++    shm[1] = 1;    /* scrdim y */
++    shm[2] = 0;    /* csrpos x */
++    shm[3] = 0;    /* csrpos y */
++    strcpy( shm+4, "screen is initializing..." );
++    memset( shm+4+strlen(shm+4), ' ', 80);
++  }
+ #endif
+ 
+ #ifdef COPY_PASTE

@@ -1,0 +1,15 @@
+$OpenBSD: patch-os_h,v 1.1.1.1 2019/09/05 11:49:08 sthen Exp $
+
+Index: os.h
+--- os.h.orig
++++ os.h
+@@ -70,6 +70,9 @@ extern int errno;
+ #undef strerror
+ #endif
+ 
++#ifdef POSIX
++# include <string.h>
++#endif
+ #if !defined(SYSV) && !defined(linux)
+ # ifdef NEWSOS
+ #  define strlen ___strlen___

@@ -1,0 +1,41 @@
+$OpenBSD: patch-ansi_c,v 1.1.1.1 2019/09/05 11:49:08 sthen Exp $
+
+Index: ansi.c
+--- ansi.c.orig
++++ ansi.c
+@@ -2425,13 +2425,13 @@ int n, ys, ye, bce;
+     return;
+   if (n > 0)
+     {
++      if (ye - ys + 1 < n)
++	n = ye - ys + 1;
+       if (n > 256)
+ 	{
+ 	  MScrollV(p, n - 256, ys, ye, bce);
+ 	  n = 256;
+ 	}
+-      if (ye - ys + 1 < n)
+-	n = ye - ys + 1;
+ #ifdef COPY_PASTE
+       if (compacthist)
+ 	{
+@@ -2482,14 +2482,14 @@ int n, ys, ye, bce;
+     }
+   else
+     {
+-      if (n < -256)
+-	{
+-	  MScrollV(p, n + 256, ys, ye, bce);
+-	  n = -256;
+-	}
+       n = -n;
+       if (ye - ys + 1 < n)
+ 	n = ye - ys + 1;
++      if (n > 256)
++	{
++	  MScrollV(p, - (n - 256), ys, ye, bce);
++	  n = 256;
++	}
+ 
+       ml = p->w_mlines + ye;
+       /* Clear lines */

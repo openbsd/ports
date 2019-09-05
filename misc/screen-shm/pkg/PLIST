@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/05 11:49:08 sthen Exp $
+@pkgpath misc/screen,shm
+@bin bin/screen
+@info info/screen.info
+@man man/man1/screen.1
+share/examples/screen/
+share/examples/screen/screenrc
+@sample ${SYSCONFDIR}/screenrc
+share/screen/
+share/screen/utf8encodings/
+share/screen/utf8encodings/01
+share/screen/utf8encodings/02
+share/screen/utf8encodings/03
+share/screen/utf8encodings/04
+share/screen/utf8encodings/18
+share/screen/utf8encodings/19
+share/screen/utf8encodings/a1
+share/screen/utf8encodings/bf
+share/screen/utf8encodings/c2
+share/screen/utf8encodings/c3
+share/screen/utf8encodings/c4
+share/screen/utf8encodings/c6
+share/screen/utf8encodings/c7
+share/screen/utf8encodings/c8
+share/screen/utf8encodings/cc
+share/screen/utf8encodings/cd
+share/screen/utf8encodings/d6

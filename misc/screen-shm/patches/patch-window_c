@@ -1,0 +1,81 @@
+$OpenBSD: patch-window_c,v 1.1.1.1 2019/09/05 11:49:08 sthen Exp $
+
+Index: window.c
+--- window.c.orig
++++ window.c
+@@ -1387,6 +1387,7 @@ char **args, *ttyn;
+   return pid;
+ }
+ 
++#if 0
+ void
+ execvpe(prog, args, env)
+ char *prog, **args, **env;
+@@ -1432,6 +1433,7 @@ char *prog, **args, **env;
+   if (eaccess)
+     errno = EACCES;
+ }
++#endif
+ 
+ #ifdef PSEUDOS
+ 
+@@ -1992,6 +1994,59 @@ char *data;
+       Msg(0, "Window %d: silence for %d seconds", p->w_number, p->w_silencewait);
+     }
+ }
++
++
++#ifdef IPC_EXPORT_IMAGE
++
++void
++CopyWinImage( p, dest )
++struct win *p;
++char *dest;
++{
++  register char *s, *d = dest, *m;
++  register int x, y;
++  struct display *display = p->w_pdisplay;
++  int st = (display) ? D_status : 0;
++
++  if( p && p->w_mlines )
++    {
++      *d++ = p->w_width;                        /* scrdim x */
++      *d++ = p->w_height;                       /* scrdim y */
++      *d++ = (st) ? D_status_len : p->w_x;      /* csrpos x */
++      *d++ = (st) ? STATLINE : p->w_y;          /* csrpos y */
++      /* copy window image to buffer */
++      for( y = 0; y < p->w_height; y++ )
++        {
++          s = p->w_mlines[y].image;
++          x = p->w_width;
++          if( st && y == STATLINE )
++            for( m = D_status_lastmsg; *m && x; *d++ = *m++, s++, x-- );
++          for( ; x; *d++ = *s++, x-- );
++        }
++      /* copy attributes from window image to buffer */
++      for( y = 0; y < p->w_height; y++ )
++        {
++          s = p->w_mlines[y].attr;
++          x = p->w_width;
++          if( st && y == STATLINE )
++            for( ; x; *d++ = 0, s++, x-- );
++          for( ; x; *d++ = *s++, x-- );
++        }
++    }
++  else
++    {
++      /* no window pointer */
++      *d++ = 80;   /* scrdim x */
++      *d++ = 1;    /* scrdim y */
++      *d++ = 0;    /* csrpos x */
++      *d++ = 0;    /* csrpos y */
++      strcpy( d, "*** screen: no window pointer ***" );
++      memset( d+strlen(d), ' ', 80);
++    }
++}
++
++#endif	/* IPC_EXPORT_IMAGE */
++ 
+ 
+ #ifdef ZMODEM
+ 

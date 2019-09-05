@@ -1,0 +1,16 @@
+$OpenBSD: patch-screen_h,v 1.1.1.1 2019/09/05 11:49:08 sthen Exp $
+
+Index: screen.h
+--- screen.h.orig
++++ screen.h
+@@ -288,6 +288,10 @@ struct baud_values
+   int sym;	/* symbol defined in ttydev.h */
+ };
+ 
++#ifdef IPC_EXPORT_IMAGE
++char *shm;		  /* pointer to shared memory segment */
++#endif
++
+ /*
+  * windowlist orders
+  */

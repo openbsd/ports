@@ -1,0 +1,27 @@
+$OpenBSD: patch-extern_h,v 1.1.1.1 2019/09/05 11:49:08 sthen Exp $
+
+Index: extern.h
+--- extern.h.orig
++++ extern.h
+@@ -139,6 +139,11 @@ extern int   winexec __P((char **));
+ extern void  FreePseudowin __P((struct win *));
+ #endif
+ extern void  nwin_compose __P((struct NewWindow *, struct NewWindow *, struct NewWindow *));
++
++#ifdef IPC_EXPORT_IMAGE
++extern void  CopyWinImage __P((struct win *, char *));
++#endif
++
+ extern int   DoStartLog __P((struct win *, char *, int));
+ extern int   ReleaseAutoWritelock __P((struct display *, struct win *));
+ extern int   ObtainAutoWritelock __P((struct display *, struct win *));
+@@ -146,7 +151,9 @@ extern void  CloseDevice __P((struct win *));
+ #ifdef ZMODEM
+ extern void  zmodem_abort __P((struct win *, struct display *));
+ #endif
++#if 0
+ extern void  execvpe __P((char *, char **, char **));
++#endif
+ 
+ /* utmp.c */
+ #ifdef UTMPOK

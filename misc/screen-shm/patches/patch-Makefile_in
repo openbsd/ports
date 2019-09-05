@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2019/09/05 11:49:08 sthen Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -46,7 +46,12 @@ AWK = @AWK@
+ # -DDUMPSHADOW
+ #	With shadow-pw screen would never dump core. Use this option if
+ #	you still want to have a core. Use only for debugging.
+-OPTIONS=
++# -DIPC_EXPORT_IMAGE
++#	Allows an other program to get the screen contetn through shared mem 
++#	 and ipc. This is used e.g. for braille and speech software.
++
++OPTIONS=-DIPC_EXPORT_IMAGE
++#OPTIONS=
+ #OPTIONS= -DDEBUG
+ 
+ SHELL=/bin/sh

@@ -1,0 +1,62 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2019/09/05 11:49:08 sthen Exp $
+
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -359,7 +359,7 @@ main()
+ }
+ ], AC_NOTE(- your fifos are usable) fifo=1,
+ AC_NOTE(- your fifos are not usable))
+-rm -f /tmp/conftest*
++rm -f /tmp/conftest$$
+ 
+ if test -n "$fifo"; then
+ AC_CHECKING(for broken fifo implementation)
+@@ -409,7 +409,7 @@ main()
+ }
+ ], AC_NOTE(- your implementation is ok), 
+ AC_NOTE(- you have a broken implementation) AC_DEFINE(BROKEN_PIPE) fifobr=1)
+-rm -f /tmp/conftest*
++rm -f /tmp/conftest$$
+ fi
+ 
+ dnl
+@@ -471,7 +471,7 @@ main()
+ }
+ ], AC_NOTE(- your sockets are usable) sock=1,
+ AC_NOTE(- your sockets are not usable))
+-rm -f /tmp/conftest*
++rm -f /tmp/conftest$$
+ 
+ if test -n "$sock"; then
+ AC_CHECKING(socket implementation)
+@@ -503,7 +503,7 @@ main()
+ ],AC_NOTE(- you are normal),
+ AC_NOTE(- unix domain sockets are not kept in the filesystem)
+ AC_DEFINE(SOCK_NOT_IN_FS) socknofs=1)
+-rm -f /tmp/conftest*
++rm -f /tmp/conftest$$
+ fi
+ 
+ 
+@@ -636,6 +636,7 @@ main()
+ }
+ ],AC_NOTE(- select is ok),
+ AC_NOTE(- select can't count) AC_DEFINE(SELECT_BROKEN))
++rm -f /tmp/conftest$$
+ 
+ dnl
+ dnl    ****  termcap or terminfo  ****
+@@ -1203,10 +1204,10 @@ else
+ AC_MSG_RESULT(no)
+ AC_DEFINE(NAME_MAX, 14)
+ fi
+-rm -f /tmp/conftest*
++rm -f /tmp/conftest9012345 /tmp/conftest9012346
+ 
+ AC_MSG_CHECKING(for vsprintf)
+-AC_TRY_LINK(,[vsprintf(0,0,0);], AC_MSG_RESULT(yes);AC_DEFINE(USEVARARGS), AC_MSG_RESULT(no))
++AC_TRY_LINK([#include <stdarg.h>],[va_list ap; vsprintf(0,0,ap);], AC_MSG_RESULT(yes);AC_DEFINE(USEVARARGS), AC_MSG_RESULT(no))
+ 
+ AC_HEADER_DIRENT
+ 

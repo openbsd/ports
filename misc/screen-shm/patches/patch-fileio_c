@@ -1,0 +1,14 @@
+$OpenBSD: patch-fileio_c,v 1.1.1.1 2019/09/05 11:49:08 sthen Exp $
+
+Index: fileio.c
+--- fileio.c.orig
++++ fileio.c
+@@ -779,7 +779,7 @@ char *cmd;
+ #ifdef SIGPIPE
+       signal(SIGPIPE, SIG_DFL);
+ #endif
+-      execl("/bin/sh", "sh", "-c", cmd, 0);
++      execl("/bin/sh", "sh", "-c", cmd, NULL);
+       Panic(errno, "/bin/sh");
+     default:
+       break;

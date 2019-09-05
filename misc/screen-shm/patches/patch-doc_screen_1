@@ -1,0 +1,77 @@
+$OpenBSD: patch-doc_screen_1,v 1.1.1.1 2019/09/05 11:49:08 sthen Exp $
+
+Index: doc/screen.1
+--- doc/screen.1.orig
++++ doc/screen.1
+@@ -99,7 +99,7 @@ create the new window.
+ The above example would start the emacs editor (editing prog.c) and switch
+ to its window.
+ .PP
+-If \*Q/etc/utmp\*U is writable by
++If \*Q/var/run/utmp\*U is writable by
+ .IR screen ,
+ an appropriate record will be written to this file for each window, and
+ removed when the window is terminated.
+@@ -228,7 +228,7 @@ See the \*Qdefflow\*U .screenrc command for details.
+ The use of this option is discouraged.
+ .TP 5
+ .BR \-l " and " \-ln
+-turns login mode on or off (for /etc/utmp updating).
++turns login mode on or off (for /var/run/utmp updating).
+ This can also be defined through the \*Qdeflogin\*U .screenrc command.
+ .TP 5
+ .BR \-ls " and " \-list
+@@ -594,7 +594,7 @@ in the environment variable $SCREENDIR.
+ When
+ .I screen
+ is invoked, it executes initialization commands from the files
+-\*Q/usr/local/etc/screenrc\*U and
++\*Q!!sysconfdir!!/screenrc\*U and
+ \*Q.screenrc\*U in the user's home directory. These are the \*Qprogrammer's
+ defaults\*U that can be overridden in the following ways: for the
+ global screenrc file 
+@@ -1669,7 +1669,7 @@ and then compile the entry with 
+ The echo command may be used to annoy 
+ .I screen
+ users with a 'message of the
+-day'. Typically installed in a global /local/etc/screenrc. 
++day'. Typically installed in a global !!sysconfdir!!/screenrc. 
+ The option \*Q-n\*U may be used to suppress the line feed.
+ See also \*Qsleep\*U.
+ Echo is also useful for online checking of environment variables.
+@@ -4416,12 +4416,12 @@ Examples in the 
+ .I screen
+ distribution package for private and global initialization files.
+ .IP $SYSSCREENRC 
+-.IP /usr/local/etc/screenrc
++.IP !!sysconfdir!!/screenrc
+ .I screen
+ initialization commands
+ .IP $SCREENRC
+ .IP $HOME/.screenrc
+-Read in after /usr/local/etc/screenrc
++Read in after !!sysconfdir!!/screenrc
+ .IP $SCREENDIR/S-<login>
+ .IP /local/screens/S-<login>
+ Socket directories (default)
+@@ -4442,7 +4442,7 @@ Output log files created by the log function
+ or
+ .IP /etc/termcap
+ Terminal capability databases
+-.IP /etc/utmp
++.IP /var/run/utmp
+ Login records
+ .IP $LOCKPRG
+ Program that locks a terminal.
+@@ -4555,9 +4555,9 @@ does not make use of hardware tabs.
+ must be installed as set-uid with owner root on most systems in order
+ to be able to correctly change the owner of the tty device file for
+ each window.
+-Special permission may also be required to write the file \*Q/etc/utmp\*U.
++Special permission may also be required to write the file \*Q/var/run/utmp\*U.
+ .IP \(bu
+-Entries in \*Q/etc/utmp\*U are not removed when
++Entries in \*Q/var/run/utmp\*U are not removed when
+ .I screen
+ is killed with SIGKILL.
+ This will cause some programs (like "w" or "rwho")
