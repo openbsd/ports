@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.31 2019/06/06 15:04:22 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.32 2019/09/05 18:47:53 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -255,6 +255,7 @@ share/vim/${P}/doc/tags
 share/vim/${P}/doc/tagsrch.txt
 share/vim/${P}/doc/term.txt
 share/vim/${P}/doc/terminal.txt
+share/vim/${P}/doc/testing.txt
 share/vim/${P}/doc/textprop.txt
 share/vim/${P}/doc/tips.txt
 share/vim/${P}/doc/todo.txt
@@ -362,6 +363,7 @@ share/vim/${P}/ftplugin/dosbatch.vim
 share/vim/${P}/ftplugin/dosini.vim
 share/vim/${P}/ftplugin/dtd.vim
 share/vim/${P}/ftplugin/dtrace.vim
+share/vim/${P}/ftplugin/dune.vim
 share/vim/${P}/ftplugin/eiffel.vim
 share/vim/${P}/ftplugin/elinks.vim
 share/vim/${P}/ftplugin/erlang.vim
@@ -401,6 +403,7 @@ share/vim/${P}/ftplugin/ishd.vim
 share/vim/${P}/ftplugin/j.vim
 share/vim/${P}/ftplugin/java.vim
 share/vim/${P}/ftplugin/javascript.vim
+share/vim/${P}/ftplugin/javascriptreact.vim
 share/vim/${P}/ftplugin/jproperties.vim
 share/vim/${P}/ftplugin/json.vim
 share/vim/${P}/ftplugin/jsp.vim
@@ -585,6 +588,7 @@ share/vim/${P}/indent/ishd.vim
 share/vim/${P}/indent/j.vim
 share/vim/${P}/indent/java.vim
 share/vim/${P}/indent/javascript.vim
+share/vim/${P}/indent/javascriptreact.vim
 share/vim/${P}/indent/json.vim
 share/vim/${P}/indent/jsp.vim
 share/vim/${P}/indent/ld.vim
@@ -643,6 +647,7 @@ share/vim/${P}/indent/tex.vim
 share/vim/${P}/indent/tf.vim
 share/vim/${P}/indent/tilde.vim
 share/vim/${P}/indent/treetop.vim
+share/vim/${P}/indent/typescript.vim
 share/vim/${P}/indent/vb.vim
 share/vim/${P}/indent/verilog.vim
 share/vim/${P}/indent/vhdl.vim
@@ -1015,6 +1020,7 @@ share/vim/${P}/syntax/dtd.vim
 share/vim/${P}/syntax/dtml.vim
 share/vim/${P}/syntax/dtrace.vim
 share/vim/${P}/syntax/dts.vim
+share/vim/${P}/syntax/dune.vim
 share/vim/${P}/syntax/dylan.vim
 share/vim/${P}/syntax/dylanintr.vim
 share/vim/${P}/syntax/dylanlid.vim
@@ -1090,6 +1096,7 @@ share/vim/${P}/syntax/hex.vim
 share/vim/${P}/syntax/hgcommit.vim
 share/vim/${P}/syntax/hitest.vim
 share/vim/${P}/syntax/hog.vim
+share/vim/${P}/syntax/hollywood.vim
 share/vim/${P}/syntax/hostconf.vim
 share/vim/${P}/syntax/hostsaccess.vim
 share/vim/${P}/syntax/html.vim
@@ -1119,6 +1126,7 @@ share/vim/${P}/syntax/jargon.vim
 share/vim/${P}/syntax/java.vim
 share/vim/${P}/syntax/javacc.vim
 share/vim/${P}/syntax/javascript.vim
+share/vim/${P}/syntax/javascriptreact.vim
 share/vim/${P}/syntax/jess.vim
 share/vim/${P}/syntax/jgraph.vim
 share/vim/${P}/syntax/jovial.vim
@@ -1415,6 +1423,7 @@ share/vim/${P}/syntax/tssop.vim
 share/vim/${P}/syntax/tt2.vim
 share/vim/${P}/syntax/tt2html.vim
 share/vim/${P}/syntax/tt2js.vim
+share/vim/${P}/syntax/typescript.vim
 share/vim/${P}/syntax/uc.vim
 share/vim/${P}/syntax/udevconf.vim
 share/vim/${P}/syntax/udevperm.vim
@@ -1443,6 +1452,7 @@ share/vim/${P}/syntax/voscm.vim
 share/vim/${P}/syntax/vrml.vim
 share/vim/${P}/syntax/vroom.vim
 share/vim/${P}/syntax/vsejcl.vim
+share/vim/${P}/syntax/vue.vim
 share/vim/${P}/syntax/wast.vim
 share/vim/${P}/syntax/wdiff.vim
 share/vim/${P}/syntax/web.vim
@@ -1501,6 +1511,7 @@ share/vim/${P}/tools/xcmdsrv_client.c
 share/vim/${P}/tutor/
 share/vim/${P}/tutor/README.txt
 share/vim/${P}/tutor/tutor
+share/vim/${P}/tutor/tutor.ko
 share/vim/${P}/tutor/tutor.utf-8
 share/vim/${P}/tutor/tutor.vim
 share/vim/${P}/vimrc_example.vim

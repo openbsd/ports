@@ -1,6 +1,8 @@
-$OpenBSD: patch-runtime_autoload_tar_vim,v 1.2 2013/10/04 08:44:03 sthen Exp $
---- runtime/autoload/tar.vim.orig	Fri Sep 20 19:13:53 2013
-+++ runtime/autoload/tar.vim	Sat Sep 21 23:43:47 2013
+$OpenBSD: patch-runtime_autoload_tar_vim,v 1.3 2019/09/05 18:47:53 sthen Exp $
+
+Index: runtime/autoload/tar.vim
+--- runtime/autoload/tar.vim.orig
++++ runtime/autoload/tar.vim
 @@ -43,7 +43,7 @@ if !exists("g:tar_readoptions")
   let g:tar_readoptions= "OPxf"
  endif

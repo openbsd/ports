@@ -1,4 +1,5 @@
-$OpenBSD: patch-src_configure_ac,v 1.7 2019/01/24 09:32:15 sthen Exp $
+$OpenBSD: patch-src_configure_ac,v 1.8 2019/09/05 18:47:53 sthen Exp $
+
 Index: src/configure.ac
 --- src/configure.ac.orig
 +++ src/configure.ac

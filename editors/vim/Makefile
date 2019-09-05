@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.191 2019/06/06 15:04:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.192 2019/09/05 18:47:53 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-V=		8.1.1483
+V=		8.1.1987
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
@@ -71,7 +71,7 @@ WANTLIB+=	${MODLUA_WANTLIB}
 
 .if ${FLAVOR:Mperl}
 CONFIGURE_ARGS+= --enable-perlinterp
-WANTLIB+=	perl util
+WANTLIB+=	perl
 .endif
 
 .if ${FLAVOR:Mpython}
@@ -81,7 +81,7 @@ CONFIGURE_ARGS+= --enable-pythoninterp=yes \
 		--enable-python3interp=no \
 		--with-python-config-dir=${MODPY_LIBDIR}/config
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
-WANTLIB+=	pthread util ${MODPY_WANTLIB}
+WANTLIB+=	${MODPY_WANTLIB}
 .endif
 
 .if ${FLAVOR:Mpython3}
@@ -92,7 +92,7 @@ CONFIGURE_ARGS+= --enable-python3interp=yes \
 		--enable-pythoninterp=no \
 		--with-python3-config-dir=${MODPY_LIBDIR}/config-${MODPY_VERSION}m
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
-WANTLIB+=	pthread util ${MODPY_WANTLIB}
+WANTLIB+=	${MODPY_WANTLIB}
 .endif
 
 # Some parts of vim (like python autocompletion) require a version of vim
@@ -124,11 +124,8 @@ LIB_DEPENDS+=	x11/gtk+2
 CONFIGURE_ARGS+= --enable-gui="gtk2" \
 		--enable-xim \
 		--with-x
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender Xt atk-1.0 cairo fontconfig
-WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-x11-2.0 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 z
+WANTLIB += ICE SM X11 Xt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 gtk-x11-2.0 pango-1.0
 .endif
 
 .if ${FLAVOR:Mgtk3}
@@ -137,8 +134,8 @@ LIB_DEPENDS+=	x11/gtk+3
 CONFIGURE_ARGS+= --enable-gui="gtk3" \
 		--enable-xim \
 		--with-x
-WANTLIB += ICE SM X11 Xt atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 pango-1.0 pangocairo-1.0
+WANTLIB += ICE SM X11 Xt cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 gtk-3 pango-1.0 pangocairo-1.0
 .endif
 
 .if "${_GUISET}" != ok

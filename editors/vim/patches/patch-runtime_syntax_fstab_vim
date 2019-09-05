@@ -1,4 +1,5 @@
-$OpenBSD: patch-runtime_syntax_fstab_vim,v 1.4 2018/03/08 16:04:30 sthen Exp $
+$OpenBSD: patch-runtime_syntax_fstab_vim,v 1.5 2019/09/05 18:47:53 sthen Exp $
+
 Index: runtime/syntax/fstab.vim
 --- runtime/syntax/fstab.vim.orig
 +++ runtime/syntax/fstab.vim
