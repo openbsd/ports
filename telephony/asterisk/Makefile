@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.304 2019/07/25 22:23:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.305 2019/09/05 20:06:34 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		16.5.0
+VER=		16.5.1
 PJ_V=		2.9
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
@@ -194,7 +194,7 @@ CONFIGURE_ARGS+=	--with-gmime=no
 # ldap
 COMMENT-ldap=		LDAP support for Asterisk
 LIB_DEPENDS-ldap=	databases/openldap,-main
-WANTLIB-ldap=		ldap-2.4 pthread
+WANTLIB-ldap=		ldap pthread
 .if !${BUILD_PACKAGES:M-ldap}
 CONFIGURE_ARGS+=	--with-ldap=no
 .endif
