@@ -1,0 +1,37 @@
+$OpenBSD: patch-rsf_py,v 1.1 2019/09/05 08:33:27 sebastia Exp $
+
+change to the site-packages directory, otherwise the
+relative includes for the payloads don't work
+therefore save the routersploit.log in the home directory
+instead of current working directory
+
+
+Index: rsf.py
+--- rsf.py.orig
++++ rsf.py
+@@ -1,15 +1,18 @@
+ #!/usr/bin/env python3
+ 
+ from __future__ import print_function
++from pathlib import Path
+ import logging.handlers
+ import sys
++import os
++import site
+ if sys.version_info.major < 3:
+     print("RouterSploit supports only Python3. Rerun application in Python3 environment.")
+     exit(0)
+ 
+ from routersploit.interpreter import RoutersploitInterpreter
+ 
+-log_handler = logging.handlers.RotatingFileHandler(filename="routersploit.log", maxBytes=500000)
++log_handler = logging.handlers.RotatingFileHandler(filename=str(Path.home()) + "/routersploit.log", maxBytes=500000)
+ log_formatter = logging.Formatter("%(asctime)s %(levelname)s %(name)s       %(message)s")
+ log_handler.setFormatter(log_formatter)
+ LOGGER = logging.getLogger()
+@@ -23,4 +26,5 @@ def routersploit():
+ 
+ 
+ if __name__ == "__main__":
++    os.chdir(site.getsitepackages()[0])
+     routersploit()
