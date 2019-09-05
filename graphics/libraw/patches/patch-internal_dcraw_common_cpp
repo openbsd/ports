@@ -1,32 +1,25 @@
-$OpenBSD: patch-internal_dcraw_common_cpp,v 1.3 2019/03/27 23:29:06 ajacoutot Exp $
+$OpenBSD: patch-internal_dcraw_common_cpp,v 1.4 2019/09/05 16:20:25 rsadowski Exp $
 
 OpenBSD has its own strnlen and strcasestr.
 
 Index: internal/dcraw_common.cpp
 --- internal/dcraw_common.cpp.orig
 +++ internal/dcraw_common.cpp
-@@ -51,6 +51,7 @@ int CLASS fcol (int row, int col)
-   if (filters == 9) return xtrans[(row+6) % 6][(col+6) % 6];
-   return FC(row,col);
+@@ -46,7 +46,7 @@ int CLASS fcol(int row, int col)
+   return FC(row, col);
  }
-+#if !defined(__OpenBSD__)
+ 
+-#if !defined(__FreeBSD__)
++#if !defined(__FreeBSD__) || !defined(__OpenBSD__)
  static size_t local_strnlen(const char *s, size_t n)
  {
    const char *p = (const char *)memchr(s, 0, n);
-@@ -58,6 +59,7 @@ static size_t local_strnlen(const char *s, size_t n)
- }
- /* add OS X version check here ?? */
- #define strnlen(a,b) local_strnlen(a,b)
-+#endif
- 
- #ifdef LIBRAW_LIBRARY_BUILD
- static int stread(char *buf, size_t len, LibRaw_abstract_datastream *fp)
-@@ -74,7 +76,7 @@ static int stread(char *buf, size_t len, LibRaw_abstra
- #define stmread(buf,maxlen,fp) stread(buf,MIN(maxlen,sizeof(buf)),fp)
+@@ -130,7 +130,7 @@ static int stread(char *buf, size_t len, LibRaw_abstra
+ #define stmread(buf, maxlen, fp) stread(buf, MIN(maxlen, sizeof(buf)), fp)
  #endif
  
--#ifndef __GLIBC__
-+#if !defined(__GLIBC__) && !defined(__OpenBSD__)
- char *my_memmem (char *haystack, size_t haystacklen,
- 	      char *needle, size_t needlelen)
+-#if !defined(__GLIBC__) && !defined(__FreeBSD__)
++#if !defined(__GLIBC__) && (!defined(__FreeBSD__) || !defined(__OpenBSD__))
+ char *my_memmem(char *haystack, size_t haystacklen, char *needle, size_t needlelen)
  {
+   char *c;
