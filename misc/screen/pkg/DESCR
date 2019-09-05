@@ -9,4 +9,3 @@ regions between windows.
 
 Flavors:
 	static - Build with statically linked binaries.
-	shm - export screen as shared memory, useful for brltty.

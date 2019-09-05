@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.70 2019/08/15 21:01:49 naddy Exp $
-# Please adjust www/faq/faq15.html if updating.
+# $OpenBSD: Makefile,v 1.71 2019/09/05 11:50:48 sthen Exp $
 
 COMMENT=	multi-screen window manager
 
 VERSION=	4.0.3
 DISTNAME=	screen-${VERSION}
-REVISION=	7
+REVISION=	8
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU:=screen/}
 
@@ -21,16 +20,13 @@ CONFIGURE_STYLE= autoconf no-autoheader
 CONFIGURE_ARGS=	--with-sys-screenrc="${SYSCONFDIR}/screenrc"
 USE_GROFF =	Yes
 
-FLAVORS=	static shm
+FLAVORS=	static
 FLAVOR?=
 
 .if ${FLAVOR} == "static"
 CONFIGURE_ENV=	LDFLAGS="${STATIC}"
 .else
 WANTLIB=	c curses util
-.endif
-.if ${FLAVOR} == "shm"
-PATCH_LIST=	patch-* shmpatch-*
 .endif
 
 ALL_TARGET=	screen screen.info

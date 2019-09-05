@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/17 14:46:33 danj Exp $
+# $OpenBSD: Makefile,v 1.19 2019/09/05 11:50:48 sthen Exp $
 
 COMMENT=	access software for a blind person using a braille terminal
 
 DISTNAME=	brltty-3.6
-REVISION=	3
+REVISION=	4
 CATEGORIES=	misc
 HOMEPAGE=	http://mielke.cc/brltty
 MASTER_SITES=	${HOMEPAGE}/releases/
+
 # GPL
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses pthread sndio
 
-RUN_DEPENDS=	screen-*-shm:misc/screen,shm
+RUN_DEPENDS=	screen-*-shm:misc/screen-shm
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-install-root=${WRKINST} \
