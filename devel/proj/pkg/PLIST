@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/05/12 08:00:45 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/09/05 15:47:24 landry Exp $
 @bin bin/cct
 @bin bin/cs2cs
 @bin bin/geod
@@ -23,6 +23,7 @@ include/proj/util.hpp
 include/proj_api.h
 include/proj_constants.h
 include/proj_experimental.h
+include/proj_json_streaming_writer.hpp
 include/proj_symbol_rename.h
 lib/libproj.a
 lib/libproj.la
@@ -61,6 +62,7 @@ share/proj/null
 share/proj/nzgd2kgrid0005.gsb
 share/proj/other.extra
 share/proj/proj.db
+share/proj/projjson.schema.json
 share/proj/prvi
 share/proj/stgeorge
 share/proj/stlrnc
