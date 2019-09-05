@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.27 2019/01/01 11:33:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2019/09/05 21:01:22 sthen Exp $
 @conflict gtk+2-<2.22
 @conflict gtk+2-docs-<2.22
 @unexec-delete rm -f %D/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
+@define-tag update-gdk-pixbuf at-end %D/bin/gdk-pixbuf-query-loaders --update-cache
+@tag update-gdk-pixbuf
 @bin bin/gdk-pixbuf-csource
 @bin bin/gdk-pixbuf-pixdata
 @bin bin/gdk-pixbuf-query-loaders
@@ -187,4 +189,3 @@ share/locale/zh_HK/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/zh_TW/LC_MESSAGES/gdk-pixbuf.mo
 share/thumbnailers/
 share/thumbnailers/gdk-pixbuf-thumbnailer.thumbnailer
-@exec %D/bin/gdk-pixbuf-query-loaders --update-cache
