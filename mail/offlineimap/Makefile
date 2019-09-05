@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2019/07/12 20:47:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2019/09/05 20:22:41 remi Exp $
 
 COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
-MODPY_EGG_VERSION = 7.2.4
+MODPY_EGG_VERSION = 7.3.0
 DISTNAME =	offlineimap-v${MODPY_EGG_VERSION}
 PKGNAME =	offlineimap-${MODPY_EGG_VERSION}
 
@@ -20,9 +20,11 @@ NO_TEST=	Yes
 MODULES=	lang/python
 
 BUILD_DEPENDS=	textproc/asciidoc \
+		devel/py-rfc6555 \
 		devel/py-six
 
-RUN_DEPENDS=	devel/py-six
+RUN_DEPENDS=	devel/py-rfc6555 \
+		devel/py-six
 
 MASTER_SITES=	http://www.offlineimap.org/uploads/
 
