@@ -1,0 +1,33 @@
+$OpenBSD: patch-feedparser_feedparser_py,v 1.3 2019/09/05 11:07:45 sthen Exp $
+
+adapted from:
+
+From cc6bf700d230e7927b0e5c99a0857914d2ee1e5b Mon Sep 17 00:00:00 2001
+From: Roger Gammans <rgammans@gammascience.co.uk>
+Date: Mon, 4 Jun 2018 20:50:55 +0100
+Subject: [PATCH] Fix error with Python3.7 now PEP479 is enforced.
+
+ - Change _gen_georss_coords to capture StopIteration
+   from value list, using pattern from PEP
+
+Index: feedparser/feedparser.py
+--- feedparser/feedparser.py.orig
++++ feedparser/feedparser.py
+@@ -3764,10 +3764,13 @@ def _gen_georss_coords(value, swap=True, dims=2):
+     latlons = itertools.imap(float, value.strip().replace(',', ' ').split())
+     nxt = latlons.next
+     while True:
+-        t = [nxt(), nxt()][::swap and -1 or 1]
+-        if dims == 3:
+-            t.append(nxt())
+-        yield tuple(t)
++        try:
++            t = [nxt(), nxt()][::swap and -1 or 1]
++            if dims == 3:
++                t.append(nxt())
++            yield tuple(t)
++        except StopIteration:
++            return
+ 
+ def _parse_georss_point(value, swap=True, dims=2):
+     # A point contains a single latitude-longitude pair, separated by
