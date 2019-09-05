@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.55 2019/07/30 17:55:47 kettenis Exp $
+#	$OpenBSD: Makefile,v 1.56 2019/09/05 16:23:49 jsing Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -7,7 +7,7 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2019.07
-REVISION=	0
+REVISION=	1
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
@@ -18,7 +18,7 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/
+MASTER_SITES=	https://ftp.denx.de/pub/u-boot/
 EXTRACT_SUFX=	.tar.bz2
 PKG_ARCH=	*
 
@@ -83,6 +83,7 @@ SUNXI=\
 	A20-OLinuXino-Lime2-eMMC \
 	A20-OLinuXino_MICRO \
 	Bananapi \
+	Bananapi_M2_Ultra \
 	Bananapi_m2m \
 	bananapi_m2_plus_h3 \
 	bananapi_m2_zero \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.arm,v 1.18 2019/07/28 06:57:20 jsg Exp $
+@comment $OpenBSD: PFRAG.arm,v 1.19 2019/09/05 16:23:49 jsing Exp $
 @pkgpath sysutils/u-boot,
 share/u-boot/
 share/u-boot/A10-OLinuXino-Lime/
@@ -43,6 +43,12 @@ share/u-boot/Bananapi/u-boot
 share/u-boot/Bananapi/u-boot-sunxi-with-spl.bin
 share/u-boot/Bananapi/u-boot.bin
 share/u-boot/Bananapi/u-boot.img
+share/u-boot/Bananapi_M2_Ultra/
+share/u-boot/Bananapi_M2_Ultra/sunxi-spl.bin
+share/u-boot/Bananapi_M2_Ultra/u-boot
+share/u-boot/Bananapi_M2_Ultra/u-boot-sunxi-with-spl.bin
+share/u-boot/Bananapi_M2_Ultra/u-boot.bin
+share/u-boot/Bananapi_M2_Ultra/u-boot.img
 share/u-boot/Bananapi_m2m/
 share/u-boot/Bananapi_m2m/sunxi-spl.bin
 share/u-boot/Bananapi_m2m/u-boot
