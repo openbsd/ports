@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.391 2019/09/03 16:27:04 landry Exp $
+# $OpenBSD: Makefile,v 1.392 2019/09/06 15:27:26 jcs Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
@@ -9,6 +9,8 @@ MOZILLA_VERSION =	69.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
+
+REVISION=	0
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
@@ -68,7 +70,7 @@ MAKE_ENV +=		RUSTFLAGS="-C target-cpu=pentium4 --cfg target_feature=\"sse2\""
 # override parallel
 DPB_PROPERTIES =	lonesome
 .endif
-CONFIGURE_ARGS +=	--enable-sandbox --enable-content-sandbox
+CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 SUBST_VARS +=	LOCALBASE X11BASE
 
