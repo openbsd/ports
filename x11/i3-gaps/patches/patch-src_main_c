@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_main_c,v 1.1 2019/09/06 18:54:56 rsadowski Exp $
+
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -947,7 +947,7 @@ int main(int argc, char *argv[]) {
+         xcb_free_pixmap(conn, pixmap);
+     }
+ 
+-#if defined(__OpenBSD__)
++#if 0
+     if (pledge("stdio rpath wpath cpath proc exec unix", NULL) == -1)
+         err(EXIT_FAILURE, "pledge");
+ #endif
