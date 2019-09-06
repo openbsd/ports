@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.40 2019/07/12 20:47:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2019/09/06 22:10:18 chrisz Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
-V=			8.8.0
+V=			8.10+beta2
 GH_ACCOUNT =		coq
 GH_PROJECT =		coq
 GH_TAGNAME =		V${V}
-DISTNAME =		${GH_PROJECT}-${V}
-WRKDIST =		${WRKDIR}/${GH_PROJECT}-${V}
+DISTNAME =		${GH_PROJECT}-${V:S/+//}
+WRKDIST =		${WRKDIR}/${GH_PROJECT}-${V:S/+/-/}
 
 CATEGORIES=		math
 HOMEPAGE=		https://coq.inria.fr/
@@ -17,27 +17,23 @@ MAINTAINER=		Yozo Toda <yozo@v007.vaio.ne.jp>
 # LGPL 2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype fribidi
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtksourceview-2.0 gtk-x11-2.0 intl m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pthread z 
+WANTLIB += atk-1.0 c cairo cairo-gobject fontconfig freetype gdk-3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3 gtksourceview-3.0
+WANTLIB += intl m pango-1.0 pangocairo-1.0 pthread z
 
 MODULES=	lang/ocaml
 
-BUILD_DEPENDS=	x11/lablgtk2 \
-		lang/ocaml-camlp5 \
+BUILD_DEPENDS=	x11/lablgtk3 \
 		math/ocaml-num \
 		sysutils/findlib
-RUN_DEPENDS=	x11/lablgtk2
+RUN_DEPENDS=	x11/lablgtk3
 
 DESTDIRNAME=	COQINSTALLPREFIX
 
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= simple
-CONFIGURE_ARGS=	-emacslib ${PREFIX}/share/emacs/site-lisp \
-		-prefix ${PREFIX} \
+CONFIGURE_ARGS=	-prefix ${PREFIX} \
 		-libdir ${PREFIX}/lib/ocaml/coq \
 		-mandir ${PREFIX}/man \
 		-configdir ${SYSCONFDIR}/xdg/coq
@@ -65,7 +61,7 @@ post-install:
 	${INSTALL_DATA_DIR} \
 		${PREFIX}/share/doc/coq/
 	${INSTALL_DATA} \
-		${WRKDIST}/{LICENSE,CREDITS,CHANGES,CONTRIBUTING.md,README.md} \
+		${WRKDIST}/{LICENSE,CREDITS,CONTRIBUTING.md,README.md} \
 		${PREFIX}/share/doc/coq/
 
 .include <bsd.port.mk>
