@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/06 17:02:02 jcs Exp $
+bin/_rubyshim
+bin/bundle
+bin/bundler
+bin/erb
+bin/gem
+bin/irb
+bin/rake
+bin/rdoc
+bin/ri
+bin/ruby

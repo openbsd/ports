@@ -1,0 +1,3 @@
+ruby-shims is a set of symlinks to a script that executes Ruby binaries
+based on a per-directory .ruby-version or system-wide /etc/ruby-version
+file.
