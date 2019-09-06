@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/09/05 11:49:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2019/09/06 13:28:32 sthen Exp $
 
 COMMENT=	multi-screen window manager, with shm support for brltty
+
+# updates depend on availability of patches, not of updates to screen itself
+PORTROACH=	ignore:1
 
 DISTNAME=	screen-4.0.3
 REVISION=	8
