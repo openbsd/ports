@@ -1,0 +1,16 @@
+$OpenBSD: patch-old-configure,v 1.1 2019/09/06 17:13:22 landry Exp $
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1579323
+
+Index: old-configure
+--- old-configure.orig
++++ old-configure
+@@ -10113,7 +10113,7 @@ fi
+ 
+ 
+ case "$OS_TARGET" in
+-WINNT|Darwin)
++WINNT|Darwin|OpenBSD)
+ ;;
+ Linux)
+     case $CPU_ARCH in
