@@ -1,7 +1,9 @@
-$OpenBSD: patch-plugin_taglist_vim,v 1.1.1.1 2008/05/26 09:33:54 simon Exp $
---- plugin/taglist.vim.orig	Sat May 24 23:10:15 2008
-+++ plugin/taglist.vim	Sat May 24 23:11:49 2008
-@@ -87,6 +87,9 @@ if !exists('loaded_taglist')
+$OpenBSD: patch-plugin_taglist_vim,v 1.2 2019/09/06 14:51:46 sthen Exp $
+
+Index: plugin/taglist.vim
+--- plugin/taglist.vim.orig
++++ plugin/taglist.vim
+@@ -92,6 +92,9 @@ if !exists('loaded_taglist')
          elseif executable('exctags')
              " On Free-BSD, exuberant ctags is installed as exctags
              let Tlist_Ctags_Cmd = 'exctags'
