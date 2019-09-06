@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.192 2019/09/05 18:47:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.193 2019/09/06 14:50:23 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
 V=		8.1.1987
+REVISION=	0
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
@@ -48,6 +49,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_lib_elf_main=no
 CONFIGURE_ARGS+= --with-tlib="curses" \
+		--disable-canberra \
 		--enable-multibyte \
 		--enable-cscope
 
