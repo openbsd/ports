@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1889 2019/09/04 09:37:49 jca Exp $
+# $OpenBSD: Makefile,v 1.1890 2019/09/06 17:06:47 jcs Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1824,6 +1824,7 @@
      SUBDIR += ruby-safe_yaml
      SUBDIR += ruby-semantic_puppet
      SUBDIR += ruby-sexp_processor
+     SUBDIR += ruby-shims
      SUBDIR += ruby-subset_sum,ruby25
      SUBDIR += ruby-subset_sum,ruby26
      SUBDIR += ruby-systemu
