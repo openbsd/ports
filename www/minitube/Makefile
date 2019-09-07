@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.60 2019/09/07 19:38:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2019/09/07 19:39:24 sthen Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
 V =		3.1
 DISTNAME =	minitube-$V
 EXTRACT_SUFX =	.tar.bz2
+REVISION =	0
 
 CATEGORIES =	www multimedia
 
-HOMEPAGE =	http://flavio.tordini.org/minitube
+HOMEPAGE =	https://flavio.tordini.org/minitube
 
 # GPLv3
 PERMIT_PACKAGE =		Yes
