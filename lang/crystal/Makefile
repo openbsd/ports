@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2019/08/06 17:23:28 jcs Exp $
+# $OpenBSD: Makefile,v 1.8 2019/09/07 08:46:41 ajacoutot Exp $
 
 # Hopefully ${CLANG_ARCHS} at some point.
 ONLY_FOR_ARCHS=	amd64
 
-V =		0.30.0
+V =		0.30.1
 V_SHARDS =	0.9.0
-REVISION =	1
 COMMENT =	statically typed object oriented language
 DISTNAME =	crystal-${V}
 CATEGORIES =	lang
