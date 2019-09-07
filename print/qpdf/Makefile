@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:48:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2019/09/07 16:16:36 ajacoutot Exp $
 
 COMMENT=	PDF transformation and inspection utility
 
-DISTNAME=	qpdf-8.4.2
+DISTNAME=	qpdf-9.0.0
 
-SHARED_LIBS +=  qpdf                 6.3      # 25.2
+SHARED_LIBS +=  qpdf                 7.0      # 26.0
 
 CATEGORIES=	print graphics
 
@@ -26,6 +26,7 @@ USE_GMAKE=	Yes
 LIB_DEPENDS=	graphics/jpeg
 
 CONFIGURE_STYLE=gnu
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_prog_FOP= \
