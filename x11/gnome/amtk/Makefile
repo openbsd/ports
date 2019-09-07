@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/07 11:20:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2019/09/07 11:51:39 ajacoutot Exp $
 
 COMMENT=		Actions, Menus and Toolbars Kit
 
 GNOME_PROJECT=		amtk
-GNOME_VERSION=		5.0.0
+GNOME_VERSION=		5.0.1
 
 CATEGORIES=		devel
 
