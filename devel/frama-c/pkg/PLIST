@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/03/04 12:51:12 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/09/07 17:11:53 chrisz Exp $
 %%native%%
 bin/e-acsl-gcc.sh
 @bin bin/frama-c
@@ -16,6 +16,9 @@ lib/frama-c/FCMap.cmi
 lib/frama-c/FCMap.cmo
 lib/frama-c/FCSet.cmi
 lib/frama-c/FCSet.cmo
+lib/frama-c/GSourceView.cmi
+lib/frama-c/GSourceView.cmo
+lib/frama-c/META.frama-c
 lib/frama-c/abstract_interp.cmi
 lib/frama-c/abstract_interp.cmo
 lib/frama-c/alarms.cmi
@@ -116,6 +119,9 @@ lib/frama-c/design.cmi
 lib/frama-c/design.cmo
 lib/frama-c/destructors.cmi
 lib/frama-c/destructors.cmo
+lib/frama-c/dgraph.cmi
+lib/frama-c/dgraph.cmo
+lib/frama-c/dllframa-c.so
 lib/frama-c/dominators.cmi
 lib/frama-c/dominators.cmo
 lib/frama-c/dynamic.cmi
@@ -150,6 +156,7 @@ lib/frama-c/float_interval_sig.cmi
 lib/frama-c/float_sig.cmi
 lib/frama-c/floating_point.cmi
 lib/frama-c/floating_point.cmo
+lib/frama-c/frama-c.cma
 lib/frama-c/frama_c_init.cmi
 lib/frama-c/frama_c_init.cmo
 lib/frama-c/frontc.cmi
@@ -160,6 +167,8 @@ lib/frama-c/fval.cmi
 lib/frama-c/fval.cmo
 lib/frama-c/globals.cmi
 lib/frama-c/globals.cmo
+lib/frama-c/gtk_compat.cmi
+lib/frama-c/gtk_compat.cmo
 lib/frama-c/gtk_form.cmi
 lib/frama-c/gtk_form.cmo
 lib/frama-c/gtk_helper.cmi
@@ -217,6 +226,7 @@ lib/frama-c/leftistheap.cmi
 lib/frama-c/leftistheap.cmo
 lib/frama-c/lexerhack.cmi
 lib/frama-c/lexerhack.cmo
+lib/frama-c/libframa-c.a
 lib/frama-c/lmap.cmi
 lib/frama-c/lmap.cmo
 lib/frama-c/lmap_bitwise.cmi
@@ -343,8 +353,6 @@ lib/frama-c/plugins/Users.cmi
 lib/frama-c/plugins/Variadic.cmi
 lib/frama-c/plugins/Wp.cmi
 lib/frama-c/plugins/gui/
-lib/frama-c/plugins/gui/Callgraph.cmi
-lib/frama-c/plugins/gui/Callgraph.cmo
 lib/frama-c/plugins/gui/Eva.cmi
 lib/frama-c/plugins/gui/Eva.cmo
 lib/frama-c/plugins/gui/From.cmi
@@ -406,6 +414,8 @@ lib/frama-c/printer.cmo
 lib/frama-c/printer_api.cmi
 lib/frama-c/printer_builder.cmi
 lib/frama-c/printer_builder.cmo
+lib/frama-c/printer_tag.cmi
+lib/frama-c/printer_tag.cmo
 lib/frama-c/project.cmi
 lib/frama-c/project.cmo
 lib/frama-c/project_manager.cmi
@@ -429,6 +439,8 @@ lib/frama-c/rich_text.cmi
 lib/frama-c/rich_text.cmo
 lib/frama-c/rmtmps.cmi
 lib/frama-c/rmtmps.cmo
+lib/frama-c/sanitizer.cmi
+lib/frama-c/sanitizer.cmo
 lib/frama-c/service_graph.cmi
 lib/frama-c/service_graph.cmo
 lib/frama-c/source_manager.cmi
@@ -508,6 +520,8 @@ lib/frama-c/wto_statement.cmi
 lib/frama-c/wto_statement.cmo
 lib/frama-c/wutil.cmi
 lib/frama-c/wutil.cmo
+lib/frama-c/wutil_once.cmi
+lib/frama-c/wutil_once.cmo
 lib/libeacsl-dlmalloc.a
 lib/libeacsl-gmp.a
 @man man/man1/e-acsl-gcc.sh.1
@@ -523,6 +537,8 @@ share/frama-c/Makefile.plugin.template
 share/frama-c/_frama-c
 share/frama-c/analysis-scripts/
 share/frama-c/analysis-scripts/README.md
+share/frama-c/analysis-scripts/benchmark_database.py
+share/frama-c/analysis-scripts/clone.sh
 share/frama-c/analysis-scripts/cmd-dep.sh
 share/frama-c/analysis-scripts/concat-csv.sh
 share/frama-c/analysis-scripts/examples/
@@ -531,11 +547,17 @@ share/frama-c/analysis-scripts/examples/example-multi.mk
 share/frama-c/analysis-scripts/examples/example-slevel.mk
 share/frama-c/analysis-scripts/examples/example.c
 share/frama-c/analysis-scripts/examples/example.mk
+share/frama-c/analysis-scripts/fc_stubs.c
+share/frama-c/analysis-scripts/find_fun.py
 share/frama-c/analysis-scripts/flamegraph.pl
 share/frama-c/analysis-scripts/frama-c.mk
+share/frama-c/analysis-scripts/frama_c_results.py
+share/frama-c/analysis-scripts/git_utils.py
 share/frama-c/analysis-scripts/list_files.py
+share/frama-c/analysis-scripts/make_wrapper.py
 share/frama-c/analysis-scripts/parse-coverage.sh
-share/frama-c/analysis-scripts/summary.sh
+share/frama-c/analysis-scripts/results_display.py
+share/frama-c/analysis-scripts/summary.py
 share/frama-c/analysis-scripts/template.mk
 share/frama-c/autocomplete_frama-c
 share/frama-c/builtin.h
@@ -624,9 +646,11 @@ share/frama-c/libc/__fc_define_uid_and_gid.h
 share/frama-c/libc/__fc_define_useconds_t.h
 share/frama-c/libc/__fc_define_wchar_t.h
 share/frama-c/libc/__fc_define_wint_t.h
+share/frama-c/libc/__fc_gcc_builtins.h
 share/frama-c/libc/__fc_inet.h
 share/frama-c/libc/__fc_machdep.h
-share/frama-c/libc/__fc_machdep_linux_gcc_shared.h
+share/frama-c/libc/__fc_machdep_linux_shared.h
+share/frama-c/libc/__fc_runtime.c
 share/frama-c/libc/__fc_select.h
 share/frama-c/libc/__fc_string_axiomatic.h
 share/frama-c/libc/alloca.h
@@ -643,7 +667,6 @@ share/frama-c/libc/dlfcn.h
 share/frama-c/libc/endian.h
 share/frama-c/libc/errno.c
 share/frama-c/libc/errno.h
-share/frama-c/libc/fc_runtime.c
 share/frama-c/libc/fcntl.h
 share/frama-c/libc/features.h
 share/frama-c/libc/fenv.c
@@ -661,14 +684,7 @@ share/frama-c/libc/inttypes.c
 share/frama-c/libc/inttypes.h
 share/frama-c/libc/iso646.h
 share/frama-c/libc/libgen.h
-share/frama-c/libc/libintl.h
 share/frama-c/libc/limits.h
-share/frama-c/libc/linux/
-share/frama-c/libc/linux/fs.h
-share/frama-c/libc/linux/if_addr.h
-share/frama-c/libc/linux/if_netlink.h
-share/frama-c/libc/linux/netlink.h
-share/frama-c/libc/linux/rtnetlink.h
 share/frama-c/libc/locale.c
 share/frama-c/libc/locale.h
 share/frama-c/libc/malloc.h
@@ -681,9 +697,6 @@ share/frama-c/libc/netdb.c
 share/frama-c/libc/netdb.h
 share/frama-c/libc/netinet/
 share/frama-c/libc/netinet/in.h
-share/frama-c/libc/netinet/in_systm.h
-share/frama-c/libc/netinet/ip.h
-share/frama-c/libc/netinet/ip_icmp.h
 share/frama-c/libc/netinet/tcp.h
 share/frama-c/libc/nl_types.h
 share/frama-c/libc/poll.h
@@ -694,6 +707,7 @@ share/frama-c/libc/resolv.h
 share/frama-c/libc/sched.h
 share/frama-c/libc/semaphore.h
 share/frama-c/libc/setjmp.h
+share/frama-c/libc/signal.c
 share/frama-c/libc/signal.h
 share/frama-c/libc/stdarg.h
 share/frama-c/libc/stdbool.h
@@ -712,7 +726,6 @@ share/frama-c/libc/sys/file.h
 share/frama-c/libc/sys/ioctl.h
 share/frama-c/libc/sys/ipc.h
 share/frama-c/libc/sys/mman.h
-share/frama-c/libc/sys/param.h
 share/frama-c/libc/sys/random.h
 share/frama-c/libc/sys/resource.h
 share/frama-c/libc/sys/select.h
@@ -720,7 +733,6 @@ share/frama-c/libc/sys/shm.h
 share/frama-c/libc/sys/signal.h
 share/frama-c/libc/sys/socket.h
 share/frama-c/libc/sys/stat.h
-share/frama-c/libc/sys/sysctl.h
 share/frama-c/libc/sys/time.h
 share/frama-c/libc/sys/times.h
 share/frama-c/libc/sys/timex.h
@@ -732,8 +744,8 @@ share/frama-c/libc/sys/wait.h
 share/frama-c/libc/syslog.h
 share/frama-c/libc/termios.h
 share/frama-c/libc/tgmath.h
+share/frama-c/libc/time.c
 share/frama-c/libc/time.h
-share/frama-c/libc/uchar.h
 share/frama-c/libc/unistd.h
 share/frama-c/libc/utime.h
 share/frama-c/libc/utmpx.h
@@ -797,6 +809,7 @@ share/frama-c/wp/coqwp/Cfloat.v
 share/frama-c/wp/coqwp/Cint.v
 share/frama-c/wp/coqwp/Cmath.v
 share/frama-c/wp/coqwp/ExpLog.v
+share/frama-c/wp/coqwp/HighOrd.v
 share/frama-c/wp/coqwp/Memory.v
 share/frama-c/wp/coqwp/Qed.v
 share/frama-c/wp/coqwp/Qedlib.v
@@ -809,8 +822,10 @@ share/frama-c/wp/coqwp/bool/Bool.v
 share/frama-c/wp/coqwp/int/
 share/frama-c/wp/coqwp/int/Abs.v
 share/frama-c/wp/coqwp/int/ComputerDivision.v
+share/frama-c/wp/coqwp/int/Exponentiation.v
 share/frama-c/wp/coqwp/int/Int.v
 share/frama-c/wp/coqwp/int/MinMax.v
+share/frama-c/wp/coqwp/int/Power.v
 share/frama-c/wp/coqwp/map/
 share/frama-c/wp/coqwp/map/Const.v
 share/frama-c/wp/coqwp/map/Map.v

@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.1 2019/03/04 12:51:12 chrisz Exp $
+$OpenBSD: patch-configure_in,v 1.2 2019/09/07 17:11:53 chrisz Exp $
 
 Use system threads if available - even on bytecode builds.
 Vmthreads are broken and deprecated.
@@ -6,7 +6,7 @@ Vmthreads are broken and deprecated.
 Index: configure.in
 --- configure.in.orig
 +++ configure.in
-@@ -436,23 +436,23 @@ else
+@@ -446,23 +446,19 @@ else
      EXE=
    fi
  
@@ -24,13 +24,9 @@ Index: configure.in
 -      AC_MSG_WARN([unsupported.]);
 -    fi
 -    rm -f test_native_threads*;
-+  # OCaml native threads
 +  AC_MSG_CHECKING([OCaml native threads])
 +  echo "let f = Thread.create (fun () -> ())" > test_native_threads.ml
 +  if
-+    test "$OCAMLBEST" = opt &&
-+    ($OCAMLOPT -thread -o test_native_threads unix.cma threads.cma \
-+       test_native_threads.ml) 2> /dev/null ||
 +    ($OCAMLC -thread -o test_native_threads unix.cma threads.cma \
 +       test_native_threads.ml) 2> /dev/null
 +  then

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.3 2019/03/04 12:51:12 chrisz Exp $
-@bin lib/frama-c/plugins/gui/Callgraph.cmxs
+@comment $OpenBSD: PFRAG.dynlink-native,v 1.4 2019/09/07 17:11:53 chrisz Exp $
 @bin lib/frama-c/plugins/gui/Eva.cmxs
 @bin lib/frama-c/plugins/gui/From.cmxs
 @bin lib/frama-c/plugins/gui/Impact.cmxs

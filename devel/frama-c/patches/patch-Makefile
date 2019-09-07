@@ -1,26 +1,55 @@
-$OpenBSD: patch-Makefile,v 1.1 2019/03/04 12:51:12 chrisz Exp $
+$OpenBSD: patch-Makefile,v 1.2 2019/09/07 17:11:53 chrisz Exp $
 
-don't try to install cmx* files on bytecode builds.
+don't try to build or install cmx* files on bytecode builds.
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -1863,14 +1863,16 @@ install:: install-lib
- 	if [ -d "$(FRAMAC_PLUGIN)" ]; then \
- 	  $(CP)  $(PLUGIN_DYN_CMI_LIST) $(PLUGIN_META_LIST) \
- 		 $(FRAMAC_PLUGINDIR); \
--	  $(CP)  $(PLUGIN_DYN_CMO_LIST) $(PLUGIN_DYN_CMX_LIST) \
-+	  $(CP)  $(PLUGIN_DYN_CMO_LIST) \
-+		 $(if $(filter opt, $(OCAMLBEST)), $(PLUGIN_DYN_CMX_LIST),) \
- 		 $(FRAMAC_PLUGINDIR)/top; \
- 	fi
- 	$(PRINT_INSTALL) gui plug-ins
- 	if [ -d "$(FRAMAC_PLUGIN_GUI)" -a "$(PLUGIN_DYN_GUI_EXISTS)" = "yes" ]; \
- 	then \
- 	  $(CP) $(patsubst %.cma,%.cmi,$(PLUGIN_DYN_GUI_CMO_LIST:.cmo=.cmi)) \
--		$(PLUGIN_DYN_GUI_CMO_LIST) $(PLUGIN_DYN_GUI_CMX_LIST) \
-+		$(PLUGIN_DYN_GUI_CMO_LIST) \
-+		$(if $(filter opt, $(OCAMLBEST)), $(PLUGIN_DYN_GUI_CMX_LIST),) \
- 		$(FRAMAC_PLUGINDIR)/gui; \
- 	fi
- 	$(PRINT_INSTALL) man pages
+@@ -1234,12 +1234,15 @@ bin/toplevel.opt$(EXE): $(ALL_BATCH_CMX) $(GEN_OPT_LIB
+ LIB_KERNEL_CMO= $(filter-out src/kernel_internals/runtime/gui_init.cmo, $(CMO))
+ LIB_KERNEL_CMX= $(filter-out src/kernel_internals/runtime/gui_init.cmx, $(CMX))
+ 
+-lib/fc/frama-c.cma: $(LIB_KERNEL_CMO) $(GEN_OPT_LIBS) $(LIB_KERNEL_CMX) lib/fc/META.frama-c
+-	$(PRINT_LINKING) $@ and lib/fc/frama-c.cmxa
++lib/fc/frama-c.cma: $(LIB_KERNEL_CMO) $(GEN_OPT_LIBS) lib/fc/META.frama-c
++	$(PRINT_LINKING) $@
+ 	$(MKDIR) $(FRAMAC_LIB)
+-	$(OCAMLMKLIB) -o lib/fc/frama-c $(OPT_LIBS) $(LIB_KERNEL_CMO) $(LIB_KERNEL_CMX)
++	$(OCAMLMKLIB) -o lib/fc/frama-c $(OPT_LIBS) $(LIB_KERNEL_CMO)
+ 
+ lib/fc/frama-c.cmxa: lib/fc/frama-c.cma
++	$(MKDIR) $(FRAMAC_LIB)
++	$(PRINT_LINKING) $@
++	$(OCAMLMKLIB) -o lib/fc/frama-c $(OPT_LIBS) $(LIB_KERNEL_CMX)
+ 
+ ####################
+ # (Ocaml) Toplevel #
+@@ -1863,12 +1866,16 @@ clean-install:
+ 	$(PRINT_RM) "Installation directory"
+ 	$(RM) -r $(FRAMAC_LIBDIR)
+ 
+-install-lib: clean-install
++install-lib-byte: clean-install
+ 	$(PRINT_INSTALL) kernel API
+ 	$(MKDIR) $(FRAMAC_LIBDIR)
+-	$(CP) $(LIB_BYTE_TO_INSTALL) $(LIB_OPT_TO_INSTALL) $(FRAMAC_LIBDIR)
+-	$(CP) $(addprefix lib/fc/,dllframa-c.so libframa-c.a frama-c.cma frama-c.a frama-c.cmxa META.frama-c)  $(FRAMAC_LIBDIR)
++	$(CP) $(LIB_BYTE_TO_INSTALL) $(FRAMAC_LIBDIR)
++	$(CP) $(addprefix lib/fc/,dllframa-c.so libframa-c.a frama-c.cma META.frama-c)  $(FRAMAC_LIBDIR)
+ 
++install-lib-opt: install-lib-byte
++	$(CP) $(LIB_OPT_TO_INSTALL) $(FRAMAC_LIBDIR)
++	$(CP) $(addprefix lib/fc/,frama-c.a frama-c.cmxa)  $(FRAMAC_LIBDIR)
++
+ install-doc-code:
+ 	$(PRINT_INSTALL) API documentation
+ 	$(MKDIR) $(FRAMAC_DATADIR)/doc/code
+@@ -1879,7 +1886,7 @@ install-doc-code:
+ 		| (cd $(FRAMAC_DATADIR)/doc ; tar xf -))
+ 
+ .PHONY: install
+-install:: install-lib
++install:: install-lib-$(OCAMLBEST)
+ 	$(PRINT_MAKING) destination directories
+ 	$(MKDIR) $(BINDIR)
+ 	$(MKDIR) $(MANDIR)/man1

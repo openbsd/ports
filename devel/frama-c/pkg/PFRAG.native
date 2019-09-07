@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.4 2019/03/04 12:51:12 chrisz Exp $
+@comment $OpenBSD: PFRAG.native,v 1.5 2019/09/07 17:11:53 chrisz Exp $
 %%dynlink%%
 @bin bin/ptests.opt
 lib/frama-c/FCBuffer.cmx
@@ -9,6 +9,8 @@ lib/frama-c/FCMap.cmx
 lib/frama-c/FCMap.o
 lib/frama-c/FCSet.cmx
 lib/frama-c/FCSet.o
+lib/frama-c/GSourceView.cmx
+lib/frama-c/GSourceView.o
 lib/frama-c/abstract_interp.cmx
 lib/frama-c/abstract_interp.o
 lib/frama-c/alarms.cmx
@@ -107,6 +109,8 @@ lib/frama-c/design.cmx
 lib/frama-c/design.o
 lib/frama-c/destructors.cmx
 lib/frama-c/destructors.o
+lib/frama-c/dgraph.cmx
+lib/frama-c/dgraph.o
 lib/frama-c/dominators.cmx
 lib/frama-c/dominators.o
 lib/frama-c/dynamic.cmx
@@ -139,6 +143,8 @@ lib/frama-c/float_interval.cmx
 lib/frama-c/float_interval.o
 lib/frama-c/floating_point.cmx
 lib/frama-c/floating_point.o
+lib/frama-c/frama-c.a
+lib/frama-c/frama-c.cmxa
 lib/frama-c/frama_c_init.cmx
 lib/frama-c/frama_c_init.o
 lib/frama-c/frontc.cmx
@@ -149,6 +155,8 @@ lib/frama-c/fval.cmx
 lib/frama-c/fval.o
 lib/frama-c/globals.cmx
 lib/frama-c/globals.o
+lib/frama-c/gtk_compat.cmx
+lib/frama-c/gtk_compat.o
 lib/frama-c/gtk_form.cmx
 lib/frama-c/gtk_form.o
 lib/frama-c/gtk_helper.cmx
@@ -304,6 +312,8 @@ lib/frama-c/printer.cmx
 lib/frama-c/printer.o
 lib/frama-c/printer_builder.cmx
 lib/frama-c/printer_builder.o
+lib/frama-c/printer_tag.cmx
+lib/frama-c/printer_tag.o
 lib/frama-c/project.cmx
 lib/frama-c/project.o
 lib/frama-c/project_manager.cmx
@@ -328,6 +338,8 @@ lib/frama-c/rich_text.cmx
 lib/frama-c/rich_text.o
 lib/frama-c/rmtmps.cmx
 lib/frama-c/rmtmps.o
+lib/frama-c/sanitizer.cmx
+lib/frama-c/sanitizer.o
 lib/frama-c/service_graph.cmx
 lib/frama-c/service_graph.o
 lib/frama-c/source_manager.cmx
@@ -406,3 +418,5 @@ lib/frama-c/wto_statement.cmx
 lib/frama-c/wto_statement.o
 lib/frama-c/wutil.cmx
 lib/frama-c/wutil.o
+lib/frama-c/wutil_once.cmx
+lib/frama-c/wutil_once.o
