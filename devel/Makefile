@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1890 2019/09/06 17:06:47 jcs Exp $
+# $OpenBSD: Makefile,v 1.1891 2019/09/07 15:52:14 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -364,6 +364,7 @@
      SUBDIR += libproplist
      SUBDIR += libregexp9
      SUBDIR += libsigc++-2
+     SUBDIR += libsigc++30
      SUBDIR += libsigsegv
      SUBDIR += libslang
      SUBDIR += libsoup
