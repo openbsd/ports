@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.9 2019/05/31 21:24:19 fcambus Exp $
+$OpenBSD: patch-makefile,v 1.10 2019/09/07 07:02:29 fcambus Exp $
 
 - Disable hardcoded -O3 optimizations
 - Fix GCC_VERSION and CLANG_VERSION detection
@@ -38,7 +38,7 @@ Index: makefile
  PYTHON_AVAILABLE := $(shell $(PYTHON) --version > /dev/null 2>&1 && echo python)
  GIT_AVAILABLE    := $(shell git --version > /dev/null 2>&1 && echo git)
  else
-@@ -996,9 +991,9 @@ else
+@@ -994,9 +989,9 @@ else
  $(info Clang $(CLANG_VERSION) detected)
  ifneq ($(TARGETOS),asmjs)
  ifeq ($(ARCHITECTURE),_x64)
