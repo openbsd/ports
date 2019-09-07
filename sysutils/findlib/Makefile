@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:49:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/09/07 18:45:02 chrisz Exp $
 
 COMMENT=	OCaml package manager
 CATEGORIES=	sysutils
-DISTNAME=	findlib-1.8.0
+DISTNAME=	findlib-1.8.1
 
 MASTER_SITES=	http://download.camlcity.org/download/
 
