@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.185 2019/08/05 08:45:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.186 2019/09/07 17:53:23 ajacoutot Exp $
 
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.32.4
+GNOME_VERSION=	3.32.5
 
 CATEGORIES=	www
 
@@ -42,9 +42,6 @@ COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
 MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache yelp
-
-
-CONFIGURE_ARGS=		-Ddistributor_name="OpenBSD ports"
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
