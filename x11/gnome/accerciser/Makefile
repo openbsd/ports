@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/26 12:49:38 mpi Exp $
+# $OpenBSD: Makefile,v 1.2 2019/09/07 19:05:12 ajacoutot Exp $
 
 COMMENT =		interactive accessibility explorer
 
 GNOME_PROJECT =		accerciser
-GNOME_VERSION =		3.33.4
+GNOME_VERSION =		3.34.0
 
 # BSD 3-clause
 PERMIT_PACKAGE =	Yes
@@ -28,6 +28,6 @@ RUN_DEPENDS =	 	devel/ipython${MODPY_FLAVOR} \
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODGNOME_TOOLS = 	desktop-file-utils gtk-update-icon-cache yelp
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.mk>
