@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2019/09/07 13:16:47 naddy Exp $
 
 COMMENT =		async i/o library
 
 DISTNAME =		eio-1.7.10
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=	eio                  2.0      # 8.10
 
