@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.22 2016/03/16 20:02:12 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.23 2019/09/07 11:48:33 naddy Exp $
 
 CATEGORIES ?=		x11
 
 HOMEPAGE ?=		http://www.enlightenment.org/
 
-MASTER_SITES ?=		http://download.enlightenment.org/releases/
+MASTER_SITES ?=		https://download.enlightenment.org/att/releases/
+EXTRACT_SUFX ?=		.tar.bz2
 
 DIST_SUBDIR ?=		e17
 
