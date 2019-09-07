@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/01/22 20:09:42 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/09/07 07:23:56 landry Exp $
 bin/pysol
 lib/python${MODPY_VERSION}/site-packages/PySolFC-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pysollib/
@@ -17668,10 +17668,21 @@ share/PySolFC/html/images/camelot-goal.gif
 share/PySolFC/html/images/d.gif
 share/PySolFC/html/images/h.gif
 share/PySolFC/html/images/hanahelp.gif
+share/PySolFC/html/images/high_res/
+share/PySolFC/html/images/high_res/logo.png
+share/PySolFC/html/images/high_res/logo.svg
+share/PySolFC/html/images/high_res/logo_black.png
+share/PySolFC/html/images/high_res/logo_horizontal.png
+share/PySolFC/html/images/high_res/logo_horizontal.svg
+share/PySolFC/html/images/high_res/logo_vertical.png
+share/PySolFC/html/images/pysollogo0.png
 share/PySolFC/html/images/pysollogo00.gif
 share/PySolFC/html/images/pysollogo01.gif
+share/PySolFC/html/images/pysollogo01.png
 share/PySolFC/html/images/pysollogo02.gif
+share/PySolFC/html/images/pysollogo02.png
 share/PySolFC/html/images/pysollogo03.gif
+share/PySolFC/html/images/pysollogo03.png
 share/PySolFC/html/images/s.gif
 share/PySolFC/html/index.html
 share/PySolFC/html/install.html
