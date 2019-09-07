@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2019/07/12 20:50:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2019/09/07 19:38:57 sthen Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
-GH_ACCOUNT =	flaviotordini
-GH_PROJECT =	minitube
-GH_TAGNAME =	2.8
-REVISION =	4
+V =		3.1
+DISTNAME =	minitube-$V
+EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	www multimedia
 
@@ -14,18 +13,27 @@ HOMEPAGE =	http://flavio.tordini.org/minitube
 # GPLv3
 PERMIT_PACKAGE =		Yes
 
-MODULES =	devel/qmake x11/qt5
+MASTER_SITES =	https://github.com/flaviotordini/minitube/releases/download/$V/
+
+# minitube-3.1.tar.bz2 is actually gzipped.
+# i would just use GH_* rather than EXTRACT_CASES, but the git tree uses
+# submodules (build fails with missing media.h) so this is easier.
+EXTRACT_CASES += minitube*.tar.bz2) ${GZIP_CMD} -d <${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 
 WANTLIB +=	GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Sql
-WANTLIB +=	Qt5Widgets c m phonon4qt5 ${COMPILER_LIBCXX}
+WANTLIB +=	Qt5Widgets Qt5X11Extras c m mpv ${COMPILER_LIBCXX}
 
-LIB_DEPENDS +=	multimedia/phonon-qt5
+MODULES =	devel/qmake x11/qt5
+
+LIB_DEPENDS +=	multimedia/phonon-qt5 \
+		multimedia/mpv
+
 RUN_DEPENDS +=	multimedia/phonon-backend/gstreamer,qt5 \
 		devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-MAKE_FLAGS =	CXX=${CXX} \
-		LINK=${CXX}
+MAKE_FLAGS =	CXX="${CXX}" \
+		LINK="${CXX}"
 
 NO_TEST =	Yes
 

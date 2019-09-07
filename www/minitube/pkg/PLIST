@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2018/09/04 12:46:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.27 2019/09/07 19:38:57 sthen Exp $
 @bin bin/minitube
 share/appdata/
 share/appdata/minitube.appdata.xml
@@ -26,6 +26,7 @@ share/minitube/locale/da.qm
 share/minitube/locale/de_DE.qm
 share/minitube/locale/el.qm
 share/minitube/locale/en.qm
+share/minitube/locale/en_GB.qm
 share/minitube/locale/es.qm
 share/minitube/locale/es_AR.qm
 share/minitube/locale/es_ES.qm
@@ -50,6 +51,7 @@ share/minitube/locale/pl.qm
 share/minitube/locale/pl_PL.qm
 share/minitube/locale/pt.qm
 share/minitube/locale/pt_BR.qm
+share/minitube/locale/pt_PT.qm
 share/minitube/locale/ro.qm
 share/minitube/locale/ru.qm
 share/minitube/locale/sk.qm
@@ -66,3 +68,5 @@ share/minitube/locale/zh_CN.qm
 share/minitube/locale/zh_TW.qm
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/minitube/sounds/
+share/minitube/sounds/snapshot.wav

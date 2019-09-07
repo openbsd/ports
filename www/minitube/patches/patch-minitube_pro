@@ -1,22 +1,13 @@
-$OpenBSD: patch-minitube_pro,v 1.1 2017/08/04 21:55:19 dcoppa Exp $
+$OpenBSD: patch-minitube_pro,v 1.2 2019/09/07 19:38:57 sthen Exp $
 
 Index: minitube.pro
 --- minitube.pro.orig
 +++ minitube.pro
-@@ -12,6 +12,7 @@ DEFINES += APP_UNIX_NAME="$$APP_UNIX_NAME"
- DEFINES += APP_PHONON
- DEFINES += APP_PHONON_SEEK
+@@ -11,6 +11,7 @@ APP_UNIX_NAME = minitube
+ DEFINES += APP_UNIX_NAME="$$APP_UNIX_NAME"
+ 
  DEFINES += APP_SNAPSHOT
 +DEFINES += APP_GOOGLE_API_KEY=AIzaSyClNIH5RZEdJA0286p_Km4hMxL0ujgdbZM
  
  message(Building $${APP_NAME} $${VERSION})
  message(Qt $$[QT_VERSION] in $$[QT_INSTALL_PREFIX])
-@@ -192,7 +193,7 @@ DISTFILES += CHANGES COPYING
- unix:!mac {
-     DEFINES += APP_LINUX
-     LIBS += -lphonon4qt5
--    INCLUDEPATH += /usr/include/phonon4qt5
-+    INCLUDEPATH += ${LOCALBASE}/include/phonon4qt5
-     QT += dbus
-     HEADERS += src/gnomeglobalshortcutbackend.h
-     SOURCES += src/gnomeglobalshortcutbackend.cpp
