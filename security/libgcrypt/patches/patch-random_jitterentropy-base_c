@@ -1,4 +1,4 @@
-$OpenBSD: patch-random_jitterentropy-base_c,v 1.2 2017/08/27 17:10:25 ajacoutot Exp $
+$OpenBSD: patch-random_jitterentropy-base_c,v 1.3 2019/09/07 16:46:01 ajacoutot Exp $
 
 Fix pointer type to prevent warnings.
 
@@ -23,7 +23,7 @@ Index: random/jitterentropy-base.c
  	uint64_t current_delta = 0;
  	int stuck;
  
-@@ -667,8 +667,8 @@ int jent_entropy_init(void)
+@@ -669,8 +669,8 @@ int jent_entropy_init(void)
  #define TESTLOOPCOUNT 300
  #define CLEARCACHE 100
  	for (i = 0; (TESTLOOPCOUNT + CLEARCACHE) > i; i++) {
