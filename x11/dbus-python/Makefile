@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.41 2019/07/12 20:51:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2019/09/07 16:29:48 ajacoutot Exp $
 
 PORTROACH=		limitw:2,even
 
 COMMENT-main =		dbus bindings for Python
 COMMENT-common =	common files for py-dbus
 
-V =			1.2.8
+V =			1.2.10
 DISTNAME =		dbus-python-${V}
 
 PKGNAME-main =		py-dbus-${V}
 FULLPKGNAME-common =	py-dbus-common-${V}
 FULLPKGPATH-common =	x11/dbus-python,-common
-REVISION-common =	0
 
 CATEGORIES =		x11
 
@@ -41,7 +40,6 @@ USE_GMAKE=		Yes
 FULLPKGNAME-main=	${PKGNAME-main:S/^py-/py3-/}
 FULLPKGPATH-main=	x11/dbus-python,-main${MODPY_FLAVOR}
 .endif
-REVISION-main=		0
 
 LIB_DEPENDS-main =	devel/glib2 \
 			x11/dbus
@@ -50,7 +48,8 @@ RUN_DEPENDS-main =	${MODPY_RUN_DEPENDS} \
 			x11/dbus-python,-common
 
 LIB_DEPENDS-common =	#empty
-RUN_DEPENDS-common =	#empty
+# we don't want to own include/dbus-1.0/ and include/dbus-1.0/dbus/
+RUN_DEPENDS-common =	x11/dbus
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-documentation
