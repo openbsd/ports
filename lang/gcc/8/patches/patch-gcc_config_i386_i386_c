@@ -1,6 +1,5 @@
-Backport: https://gcc.gnu.org/git/?p=gcc.git;a=commitdiff;h=b44e9be23d38be8997ae64d7509ac22cb4c556d6
+$OpenBSD: patch-gcc_config_i386_i386_c,v 1.3 2019/09/07 19:32:44 daniel Exp $
 
-$OpenBSD: patch-gcc_config_i386_i386_c,v 1.2 2019/03/25 20:17:47 pascal Exp $
 Index: gcc/config/i386/i386.c
 --- gcc/config/i386/i386.c.orig
 +++ gcc/config/i386/i386.c
