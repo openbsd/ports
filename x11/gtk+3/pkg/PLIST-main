@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.48 2019/01/01 11:35:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.49 2019/09/07 11:08:51 ajacoutot Exp $
 @conflict gtk+3-docs-*
 @conflict gettext-tools-<0.19.7p1
 @pkgpath x11/gtk+3,-docs
@@ -102,6 +102,7 @@ include/gtk-3.0/gtk/a11y/gtkexpanderaccessible.h
 include/gtk-3.0/gtk/a11y/gtkflowboxaccessible.h
 include/gtk-3.0/gtk/a11y/gtkflowboxchildaccessible.h
 include/gtk-3.0/gtk/a11y/gtkframeaccessible.h
+include/gtk-3.0/gtk/a11y/gtkheaderbaraccessible.h
 include/gtk-3.0/gtk/a11y/gtkiconviewaccessible.h
 include/gtk-3.0/gtk/a11y/gtkimageaccessible.h
 include/gtk-3.0/gtk/a11y/gtkimagecellaccessible.h
