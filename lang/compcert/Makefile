@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2019/08/29 22:48:30 daniel Exp $
+# $OpenBSD: Makefile,v 1.12 2019/09/07 17:24:37 daniel Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 COMMENT =		high assurance C compiler
 
-V =			3.5.20190813
-REVISION =		1
+V =			3.5.20190905
 GH_ACCOUNT =		AbsInt
 GH_PROJECT =		CompCert
-GH_COMMIT =		192bd462233d0284fa3d5f8e8994a514b549713e
-DISTNAME =              ${GH_PROJECT}-${V}
+GH_COMMIT =		d3eba50731c23546c6e9ccb14230460fc1da592e
+DISTNAME =		${GH_PROJECT}-${V}
 PKGNAME =		${DISTNAME:L}
 
 HOMEPAGE =		http://compcert.inria.fr/
