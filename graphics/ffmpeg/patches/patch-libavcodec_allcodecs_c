@@ -1,0 +1,22 @@
+$OpenBSD: patch-libavcodec_allcodecs_c,v 1.3 2019/09/08 10:08:59 ajacoutot Exp $
+
+Prioritize the dav1d decoder over the aom decoder for AV1
+
+Index: libavcodec/allcodecs.c
+--- libavcodec/allcodecs.c.orig
++++ libavcodec/allcodecs.c
+@@ -679,13 +679,13 @@ extern AVCodec ff_pcm_mulaw_at_encoder;
+ extern AVCodec ff_pcm_mulaw_at_decoder;
+ extern AVCodec ff_qdmc_at_decoder;
+ extern AVCodec ff_qdm2_at_decoder;
++extern AVCodec ff_libdav1d_decoder;
+ extern AVCodec ff_libaom_av1_decoder;
+ extern AVCodec ff_libaom_av1_encoder;
+ extern AVCodec ff_libaribb24_decoder;
+ extern AVCodec ff_libcelt_decoder;
+ extern AVCodec ff_libcodec2_encoder;
+ extern AVCodec ff_libcodec2_decoder;
+-extern AVCodec ff_libdav1d_decoder;
+ extern AVCodec ff_libdavs2_decoder;
+ extern AVCodec ff_libfdk_aac_encoder;
+ extern AVCodec ff_libfdk_aac_decoder;
