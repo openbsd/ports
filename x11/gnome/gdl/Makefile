@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2019/07/07 11:20:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2019/09/08 10:15:24 ajacoutot Exp $
 
 COMMENT=		GNOME Docking Library
 
 GNOME_PROJECT=		gdl
-GNOME_VERSION=		3.28.0
-REVISION=		0
+GNOME_VERSION=		3.34.0
 
 SHARED_LIBS +=  gdl-3                3.1      # 5.9
 
@@ -12,12 +11,12 @@ SHARED_LIBS +=  gdl-3                3.1      # 5.9
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi cairo cairo-gobject
-WANTLIB += dbus-1 epoxy expat ffi fontconfig freetype fribidi
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl lzma
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread xcb xcb-render xcb-shm xml2 z
+WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 cairo cairo-gobject
+WANTLIB += epoxy expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl lzma m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 MODULES=		x11/gnome
 
