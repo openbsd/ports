@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2019/08/10 20:23:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2019/09/08 16:48:59 ajacoutot Exp $
 
 COMMENT=		thin layer of graphic data types
 
 GNOME_PROJECT=		graphene
-GNOME_VERSION=		1.9.6
+GNOME_VERSION=		1.10.0
 
-SHARED_LIBS += graphene-1.0              2.0 # 0.906.0
+SHARED_LIBS += graphene-1.0              2.1 # 0.1000.0
 
 CATEGORIES=		graphics
 
