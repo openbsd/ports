@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.21 2018/11/18 15:52:18 ajacoutot Exp $
+$OpenBSD: README-main,v 1.22 2019/09/08 19:19:06 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -10,8 +10,7 @@ using the CUPS command line, make sure to use the full path, e.g.
 The same is true for manual pages, e.g.
     man -m ${PREFIX}/man lpr
 
-Adding and/or configuring CUPS printers can be done with lpadmin(8), but
-for a quick and easy (graphical) setup, after starting the CUPS daemon,
+For a quick and easy (graphical) setup, after starting the CUPS daemon,
 point your browser to:
     https://localhost:631
 
@@ -19,6 +18,11 @@ Alternatively, adding and/or configuring CUPS printers can be done with
 lpadmin(8) (the foomatic tools may be needed as well, to create the
 corresponding PPD file see below).
 
+To be able to use CUPS printers from GTK+ applications, the gtk+2-cups,
+gtk+3-cups and/or gtk+4-cups package need to be installed.
+
+Printer drivers
+===============
 Printer drivers are available as separate packages. The Foomatic
 framework provides most of them (see the foomatic-db-engine package
 documentation for more information and creating PPD files;
@@ -27,8 +31,9 @@ ${LOCALBASE}/share/doc/pkg-readmes/foomatic-db-engine-*).
 Printer backends are also available as packages.
 e.g. cups-bjnp, hpcups/hplip, ptouch-driver, splix...
 
-To be able to use CUPS printers from GTK+ applications, the gtk+2-cups,
-gtk+3-cups and/or gtk+4-cups package need to be installed.
+Some PPD files are only available as part of vendor distributed Linux
+driver packages (deb or rpm); if you're lucky, extracting the PPD file and
+using it with CUPS on OpenBSD could work.
 
 USB
 ===
