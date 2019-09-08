@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.232 2019/08/10 19:41:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.233 2019/09/08 10:40:39 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -11,15 +11,13 @@ COMMENT-python =	Python bindings for Clang
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
-LLVM_V =	8.0.0
+LLVM_V =	8.0.1
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION =	1
-REVISION-main =	3
 
 CATEGORIES =	devel
 
@@ -36,7 +34,7 @@ MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://releases.llvm.org/${LLVM_V}/
+MASTER_SITES =	https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_V}/
 EXTRACT_SUFX =	.tar.xz
 DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
 		cfe-${LLVM_V}.src${EXTRACT_SUFX} \

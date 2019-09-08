@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.11 2019/07/06 15:06:36 jca Exp $
+$OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.12 2019/09/08 10:40:39 jca Exp $
 
 - Merge '.openbsd.randomdata.*' sections into a single '.openbsd.randomdata'
   section when linking, as we do when using ld from binutils.
@@ -28,7 +28,7 @@ Index: tools/lld/ELF/Writer.cpp
    ElfSym::End1 = Add("end", -1);
    ElfSym::End2 = Add("_end", -1);
    ElfSym::Etext1 = Add("etext", -1);
-@@ -703,7 +705,11 @@ static bool isRelroSection(const OutputSection *Sec) {
+@@ -708,7 +710,11 @@ static bool isRelroSection(const OutputSection *Sec) {
    // However, if "-z now" is given, the lazy symbol resolution is
    // disabled, which enables us to put it into RELRO.
    if (Sec == In.GotPlt->getParent())
@@ -40,7 +40,7 @@ Index: tools/lld/ELF/Writer.cpp
  
    // .dynamic section contains data for the dynamic linker, and
    // there's no need to write to it at runtime, so it's better to put
-@@ -1006,6 +1012,9 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
+@@ -1011,6 +1017,9 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
    if (ElfSym::Bss)
      ElfSym::Bss->Section = findSection(".bss");
  
@@ -50,7 +50,7 @@ Index: tools/lld/ELF/Writer.cpp
    // Setup MIPS _gp_disp/__gnu_local_gp symbols which should
    // be equal to the _gp symbol's value.
    if (ElfSym::MipsGp) {
-@@ -2042,6 +2051,23 @@ template <class ELFT> void Writer<ELFT>::fixSectionAli
+@@ -2047,6 +2056,23 @@ template <class ELFT> void Writer<ELFT>::fixSectionAli
          return alignTo(Script->getDot(), Config->MaxPageSize);
        };
    };

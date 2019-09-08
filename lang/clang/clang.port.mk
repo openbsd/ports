@@ -1,6 +1,6 @@
-# $OpenBSD: clang.port.mk,v 1.33 2019/07/06 15:06:37 jca Exp $
+# $OpenBSD: clang.port.mk,v 1.34 2019/09/08 10:40:39 jca Exp $
 
-MODCLANG_VERSION=	8.0.0
+MODCLANG_VERSION=	8.0.1
 
 MODCLANG_ARCHS ?= ${LLVM_ARCHS}
 MODCLANG_LANGS ?=

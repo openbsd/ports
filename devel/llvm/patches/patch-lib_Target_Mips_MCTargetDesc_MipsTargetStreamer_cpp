@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_Target_Mips_MCTargetDesc_MipsTargetStreamer_cpp,v 1.1 2019/07/09 13:21:37 jca Exp $
+$OpenBSD: patch-lib_Target_Mips_MCTargetDesc_MipsTargetStreamer_cpp,v 1.2 2019/09/08 10:40:39 jca Exp $
 
 - Implement .cplocal directive. Needed when building libcrypto.
 
@@ -23,7 +23,7 @@ Index: lib/Target/Mips/MCTargetDesc/MipsTargetStreamer.cpp
  }
  
  /// Emit a store instruction with an immediate offset.
-@@ -1133,7 +1133,7 @@ void MipsTargetELFStreamer::emitDirectiveCpLoad(unsign
+@@ -1136,7 +1136,7 @@ void MipsTargetELFStreamer::emitDirectiveCpLoad(unsign
  
    MCInst TmpInst;
    TmpInst.setOpcode(Mips::LUi);
@@ -32,7 +32,7 @@ Index: lib/Target/Mips/MCTargetDesc/MipsTargetStreamer.cpp
    const MCExpr *HiSym = MipsMCExpr::create(
        MipsMCExpr::MEK_HI,
        MCSymbolRefExpr::create("_gp_disp", MCSymbolRefExpr::VK_None,
-@@ -1145,8 +1145,8 @@ void MipsTargetELFStreamer::emitDirectiveCpLoad(unsign
+@@ -1148,8 +1148,8 @@ void MipsTargetELFStreamer::emitDirectiveCpLoad(unsign
    TmpInst.clear();
  
    TmpInst.setOpcode(Mips::ADDiu);
@@ -43,7 +43,7 @@ Index: lib/Target/Mips/MCTargetDesc/MipsTargetStreamer.cpp
    const MCExpr *LoSym = MipsMCExpr::create(
        MipsMCExpr::MEK_LO,
        MCSymbolRefExpr::create("_gp_disp", MCSymbolRefExpr::VK_None,
-@@ -1158,8 +1158,8 @@ void MipsTargetELFStreamer::emitDirectiveCpLoad(unsign
+@@ -1161,8 +1161,8 @@ void MipsTargetELFStreamer::emitDirectiveCpLoad(unsign
    TmpInst.clear();
  
    TmpInst.setOpcode(Mips::ADDu);
@@ -54,7 +54,7 @@ Index: lib/Target/Mips/MCTargetDesc/MipsTargetStreamer.cpp
    TmpInst.addOperand(MCOperand::createReg(RegNo));
    getStreamer().EmitInstruction(TmpInst, STI);
  
-@@ -1182,7 +1182,7 @@ bool MipsTargetELFStreamer::emitDirectiveCpRestore(
+@@ -1185,7 +1185,7 @@ bool MipsTargetELFStreamer::emitDirectiveCpRestore(
      return true;
  
    // Store the $gp on the stack.
@@ -63,7 +63,7 @@ Index: lib/Target/Mips/MCTargetDesc/MipsTargetStreamer.cpp
                           STI);
    return true;
  }
-@@ -1203,10 +1203,10 @@ void MipsTargetELFStreamer::emitDirectiveCpsetup(unsig
+@@ -1206,10 +1206,10 @@ void MipsTargetELFStreamer::emitDirectiveCpsetup(unsig
    // Either store the old $gp in a register or on the stack
    if (IsReg) {
      // move $save, $gpreg
@@ -76,7 +76,7 @@ Index: lib/Target/Mips/MCTargetDesc/MipsTargetStreamer.cpp
    }
  
    if (getABI().IsN32()) {
-@@ -1219,10 +1219,10 @@ void MipsTargetELFStreamer::emitDirectiveCpsetup(unsig
+@@ -1222,10 +1222,10 @@ void MipsTargetELFStreamer::emitDirectiveCpsetup(unsig
          MCA.getContext());
  
      // lui $gp, %hi(__gnu_local_gp)
@@ -89,7 +89,7 @@ Index: lib/Target/Mips/MCTargetDesc/MipsTargetStreamer.cpp
              SMLoc(), &STI);
  
      return;
-@@ -1236,14 +1236,14 @@ void MipsTargetELFStreamer::emitDirectiveCpsetup(unsig
+@@ -1239,14 +1239,14 @@ void MipsTargetELFStreamer::emitDirectiveCpsetup(unsig
        MCA.getContext());
  
    // lui $gp, %hi(%neg(%gp_rel(funcSym)))
@@ -107,7 +107,7 @@ Index: lib/Target/Mips/MCTargetDesc/MipsTargetStreamer.cpp
  }
  
  void MipsTargetELFStreamer::emitDirectiveCpreturn(unsigned SaveLocation,
-@@ -1256,12 +1256,12 @@ void MipsTargetELFStreamer::emitDirectiveCpreturn(unsi
+@@ -1259,12 +1259,12 @@ void MipsTargetELFStreamer::emitDirectiveCpreturn(unsi
    // Either restore the old $gp from a register or on the stack
    if (SaveLocationIsRegister) {
      Inst.setOpcode(Mips::OR);

@@ -1,4 +1,4 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.9 2019/07/06 15:06:36 jca Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.10 2019/09/08 10:40:39 jca Exp $
 
 - Make LLVM create strict aligned code for OpenBSD/arm64.
 - Disable -fstrict-aliasing per default on OpenBSD.
@@ -32,7 +32,7 @@ $OpenBSD: patch-tools_clang_lib_Driver_ToolChains_Clang_cpp,v 1.9 2019/07/06 15:
 Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
 --- tools/clang/lib/Driver/ToolChains/Clang.cpp.orig
 +++ tools/clang/lib/Driver/ToolChains/Clang.cpp
-@@ -3893,9 +3893,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -3899,9 +3899,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
    // We turn strict aliasing off by default if we're in CL mode, since MSVC
    // doesn't do any TBAA.
@@ -47,7 +47,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
      CmdArgs.push_back("-relaxed-aliasing");
    if (!Args.hasFlag(options::OPT_fstruct_path_tbaa,
                      options::OPT_fno_struct_path_tbaa))
-@@ -4521,7 +4524,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -4527,7 +4530,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                        options::OPT_fno_strict_overflow)) {
      if (A->getOption().matches(options::OPT_fno_strict_overflow))
        CmdArgs.push_back("-fwrapv");
@@ -57,7 +57,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
  
    if (Arg *A = Args.getLastArg(options::OPT_freroll_loops,
                                 options::OPT_fno_reroll_loops))
-@@ -4538,9 +4542,44 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -4544,9 +4548,44 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                     false))
      CmdArgs.push_back(Args.MakeArgString("-mspeculative-load-hardening"));
  
@@ -103,7 +103,7 @@ Index: tools/clang/lib/Driver/ToolChains/Clang.cpp
    // Translate -mstackrealign
    if (Args.hasFlag(options::OPT_mstackrealign, options::OPT_mno_stackrealign,
                     false))
-@@ -5023,6 +5062,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5029,6 +5068,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                       options::OPT_fno_rewrite_imports, false);
    if (RewriteImports)
      CmdArgs.push_back("-frewrite-imports");
