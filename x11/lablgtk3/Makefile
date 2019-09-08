@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/08/17 13:29:42 chrisz Exp $
+# $OpenBSD: Makefile,v 1.3 2019/09/08 07:21:21 chrisz Exp $
 
 COMMENT =	OCaml interface to GTK+3
 CATEGORIES =	x11 devel
@@ -6,6 +6,7 @@ CATEGORIES =	x11 devel
 GH_ACCOUNT =	garrigue
 GH_PROJECT =	lablgtk
 GH_TAGNAME =	3.0.beta6
+REVISION =	0
 PKGNAME =	lablgtk3-${GH_TAGNAME}
 
 # LGPL
@@ -17,16 +18,14 @@ WANTLIB += intl m pango-1.0 pangocairo-1.0 pthread z
 
 LIB_DEPENDS =	x11/gtk+3 \
 		devel/gettext,-runtime \
-		x11/gtksourceview3
-
-BUILD_DEPENDS = devel/dune \
+		x11/gtksourceview3 \
 		x11/gnome/librsvg \
-		x11/gnome/libgnomecanvas \
-		graphics/ocaml-cairo
+		x11/gnome/libgnomecanvas
 
-FAKE_FLAGS =	BINDIR=${WRKINST}${PREFIX}/bin \
-		INSTALLDIR=${WRKINST}${PREFIX}/lib/ocaml/lablgtk2 \
-		DLLDIR=${WRKINST}${PREFIX}/lib/ocaml/stublibs
+RUN_DEPENDS =	graphics/ocaml-cairo
+
+BUILD_DEPENDS = ${RUN_DEPENDS} \
+		devel/dune
 
 USE_GMAKE =	Yes
 MODULES =	lang/ocaml
