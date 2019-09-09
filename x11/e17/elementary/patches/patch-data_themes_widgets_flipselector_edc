@@ -1,0 +1,23 @@
+$OpenBSD: patch-data_themes_widgets_flipselector_edc,v 1.1 2019/09/09 21:07:21 naddy Exp $
+
+Index: data/themes/widgets/flipselector.edc
+--- data/themes/widgets/flipselector.edc.orig
++++ data/themes/widgets/flipselector.edc
+@@ -20,7 +20,7 @@ group { name: "elm/flipselector/base/default";
+    script {
+       public cur, prev, next, lock;
+ 
+-      flip_up(str[]) {
++     flip_up(str[]) {
+          new tmp[FLIP_PICKER_MAX_LEN];
+          if (get_int(lock) == 1) {
+             replace_str(next, 0, str);
+@@ -54,7 +54,7 @@ group { name: "elm/flipselector/base/default";
+          anim(0.2, "animator_top_down", 1);
+       }
+ 
+-      flip_dn(str[]) {      
++     flip_dn(str[]) {      
+          new tmp[FLIP_PICKER_MAX_LEN];
+          if (get_int(lock) == 1) {
+             replace_str(next, 0, str);
