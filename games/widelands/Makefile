@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.27 2019/08/28 14:12:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2019/09/09 04:42:10 rsadowski Exp $
 
 COMMENT=	economic and military simulation game
-BROKEN-sparc64=	generates 240Mb log with 'terminate called recursively'
-BROKEN=		excessive warnings generate a 319 MB log file
 
 V =		20
 DISTNAME = 	widelands-build${V}
 PKGNAME=	widelands-0.${V}
 CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://wl.widelands.org/
 MASTER_SITES =	https://launchpad.net/widelands/build${V}/build${V}/+download/
@@ -45,9 +43,7 @@ CONFIGURE_ARGS =	-DWL_INSTALL_DATADIR=${PREFIX}/share/widelands \
 			-DWL_INSTALL_BASEDIR=${PREFIX}/share/widelands \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
-CONFIGURE_ENV =	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include \
-			-I${X11BASE}/include" \
-		LDFLAGS="${LDFLAGS} -lGL -lexecinfo -lintl -liconv \
+CONFIGURE_ENV =	LDFLAGS="${LDFLAGS} -lGL -lexecinfo -lintl -liconv \
 			-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 NO_TEST=	Yes
