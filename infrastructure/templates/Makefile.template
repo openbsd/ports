@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.84 2019/08/08 23:04:22 kmos Exp $
+# $OpenBSD: Makefile.template,v 1.85 2019/09/09 19:19:05 kmos Exp $
 #
 # Replace ??? with appropriate values
 # Remove extraneous comments before commit
@@ -25,7 +25,9 @@ COMMENT =	???
 #
 # What port/package will be created
 #
+# DISTNAME should not include suffix (like .tar.gz .tgz .tar.bz2 etc.)
 DISTNAME =	???
+# PKGNAME defaults to DISTNAME unless changed
 #PKGNAME =	???
 #PKGNAME-foo =	???	for multi packages
 
@@ -45,12 +47,13 @@ DISTNAME =	???
 # for any port that creates shared libraries.
 # both libtool and cmake automatically set filenames based on this variable.
 # for libtool- or cmake-based ports, have a look at WRKBUILD/shared_libs.log
-#SHARED_LIBS =	???
+#SHARED_LIBS =	???	0.0
 
 # the category used in the directory name, /usr/ports/<category>/portname,
 # must be included and listed first.
 CATEGORIES =	???
 
+# https preferred for HOMEPAGE
 #HOMEPAGE =	???	URL
 
 # person who is responsible for the port. Use a complete email address with
@@ -92,8 +95,11 @@ MASTER_SITES =		???
 # ...
 #DISTFILES =		???
 #EXTRACT_ONLY =		???
+
+# Needs to be specified if tarball does not end with .tar.gz
 #EXTRACT_SUFX =		.tar.bz2
 
+# Optional subdirectory of DISTDIR where distfiles and patches will be placed
 #DIST_SUBDIR =		???
 
 # PATCHFILES are also retrieved from MASTER_SITES*
