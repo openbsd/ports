@@ -12,3 +12,4 @@ pref("security.sandbox.pledge.content","stdio rpath wpath cpath inet recvfd send
 pref("extensions.pocket.enabled", false);
 pref("browser.newtabpage.enabled", false);
 pref("browser.startup.homepage", "about:blank");
+pref("network.trr.mode", 5);
