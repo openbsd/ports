@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2019/08/27 03:20:18 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2019/09/09 21:36:14 kmos Exp $
 
 COMMENT =		CLI for interacting with Mastodon/fediverse instances
 
 MODPY_EGG_VERSION =	0.3.7
 DISTNAME =		tootstream-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		www
 
 HOMEPAGE =		https://www.github.com/magicalraccoon/tootstream
 
-MAINTAINER =		Kurt Mosiejczuk <kurt@cranky.work>
+MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
