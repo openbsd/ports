@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.28 2019/09/05 21:01:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.29 2019/09/09 08:00:44 ajacoutot Exp $
 @conflict gtk+2-<2.22
 @conflict gtk+2-docs-<2.22
-@unexec-delete rm -f %D/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
 @define-tag update-gdk-pixbuf at-end %D/bin/gdk-pixbuf-query-loaders --update-cache
+@unexec-delete rm -f %D/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
 @tag update-gdk-pixbuf
 @bin bin/gdk-pixbuf-csource
 @bin bin/gdk-pixbuf-pixdata
