@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-powerpc-main,v 1.3 2019/07/06 15:06:36 jca Exp $
+@comment $OpenBSD: PFRAG.no-powerpc-main,v 1.4 2019/09/09 21:15:16 jca Exp $
 lib/libLLVMAArch64AsmParser.a
 lib/libLLVMAArch64AsmPrinter.a
 lib/libLLVMAArch64CodeGen.a
@@ -65,6 +65,12 @@ lib/libLLVMSystemZCodeGen.a
 lib/libLLVMSystemZDesc.a
 lib/libLLVMSystemZDisassembler.a
 lib/libLLVMSystemZInfo.a
+lib/libLLVMWebAssemblyAsmParser.a
+lib/libLLVMWebAssemblyAsmPrinter.a
+lib/libLLVMWebAssemblyCodeGen.a
+lib/libLLVMWebAssemblyDesc.a
+lib/libLLVMWebAssemblyDisassembler.a
+lib/libLLVMWebAssemblyInfo.a
 lib/libLLVMX86AsmParser.a
 lib/libLLVMX86AsmPrinter.a
 lib/libLLVMX86CodeGen.a
@@ -77,9 +83,3 @@ lib/libLLVMXCoreCodeGen.a
 lib/libLLVMXCoreDesc.a
 lib/libLLVMXCoreDisassembler.a
 lib/libLLVMXCoreInfo.a
-lib/libLLVMWebAssemblyAsmParser.a
-lib/libLLVMWebAssemblyAsmPrinter.a
-lib/libLLVMWebAssemblyCodeGen.a
-lib/libLLVMWebAssemblyDesc.a
-lib/libLLVMWebAssemblyDisassembler.a
-lib/libLLVMWebAssemblyInfo.a
