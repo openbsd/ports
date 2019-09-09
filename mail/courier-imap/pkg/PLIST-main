@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2019/06/19 21:59:01 giovanni Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2019/09/09 07:44:45 giovanni Exp $
 @conflict imap-uw-*
 @conflict courier-utils-*
 @pkgpath ${BASE_PKGPATH}
@@ -8,7 +8,6 @@
 @mode 755
 @owner _courier
 @group _courier
-@sample ${SYSCONFDIR}/
 @sample ${SYSCONFDIR}/imapaccess/
 @mode
 @owner
