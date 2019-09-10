@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/09/10 13:51:28 kili Exp $
 
 COMMENT =		portable POSIX-compatibility layer
 
 DISTNAME =		unix-compat-0.4.1.1
-REVISION =		6
+REVISION =		7
 CATEGORIES =		devel
 
 # BSD4

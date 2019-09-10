@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:44:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/09/10 13:51:26 kili Exp $
 
 COMMENT =		Software Transactional Memory
 
@@ -7,7 +7,7 @@ COMMENT =		Software Transactional Memory
 PORTROACH =		ignore:1
 
 DISTNAME =		stm-2.4.4.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2019/09/10 13:51:23 kili Exp $
 
 COMMENT =		Levenshtein edit distances
 
 DISTNAME =		edit-distance-0.2.2.1
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

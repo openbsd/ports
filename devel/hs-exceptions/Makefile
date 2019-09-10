@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/09/10 13:51:24 kili Exp $
 
 COMMENT =		extensible optionally-pure exceptions
 
 DISTNAME =		exceptions-0.8.3
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

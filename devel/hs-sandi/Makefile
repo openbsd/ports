@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/09/10 13:51:26 kili Exp $
 
 COMMENT =		data encoding library
 
 DISTNAME =		sandi-0.4.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 # BSD

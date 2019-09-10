@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:44:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/09/10 13:51:22 kili Exp $
 
 COMMENT =		parser and writer for config files
 
 DISTNAME =		ConfigFile-1.1.4
-REVISION =		9
+REVISION =		10
 CATEGORIES =		devel sysutils
 HOMEPAGE =		https://github.com/jgoerzen/configfile/wiki
 

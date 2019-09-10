@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/09/10 13:51:24 kili Exp $
 
 COMMENT =		class for hashable data types
 
@@ -7,6 +7,7 @@ COMMENT =		class for hashable data types
 PORTROACH =		ignore:1
 
 DISTNAME =		hashable-1.2.6.1
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3

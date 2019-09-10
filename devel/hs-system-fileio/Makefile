@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/09/10 13:51:27 kili Exp $
 
 COMMENT =		consistent filesystem interaction
 
 DISTNAME =		system-fileio-0.3.16.3
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 # BSD3

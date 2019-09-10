@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/09/10 13:51:25 kili Exp $
 
 COMMENT =		old time library
 
@@ -7,7 +7,7 @@ COMMENT =		old time library
 PORTROACH =		ignore:1
 
 DISTNAME =		old-time-1.1.0.3
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

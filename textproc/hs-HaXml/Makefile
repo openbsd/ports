@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:49:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/09/10 13:51:29 kili Exp $
 
 COMMENT =		utilities for manipulating XML documents
 
 DISTNAME =		HaXml-1.25.4
 CATEGORIES =		textproc
 HOMEPAGE =		http://projects.haskell.org/HaXml/
-REVISION =		2
+REVISION =		3
 
 WANTLIB =		c iconv m pthread util
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/09/10 13:51:27 kili Exp $
 
 COMMENT =		file and directory path manipulations
 
 DISTNAME =		system-filepath-0.4.13.4
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 # BSD3

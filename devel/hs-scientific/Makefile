@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/17 14:49:21 danj Exp $
+# $OpenBSD: Makefile,v 1.12 2019/09/10 13:51:26 kili Exp $
 
 COMMENT =		scientific number type
 
@@ -7,7 +7,7 @@ COMMENT =		scientific number type
 PORTROACH =		ignore:1
 
 DISTNAME =		scientific-0.3.4.6
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/basvandijk/scientific

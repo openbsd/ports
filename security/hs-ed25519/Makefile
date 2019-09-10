@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/09/10 13:51:29 kili Exp $
 
 # used by hs-hackage-security, which is used by cabal-install
 
@@ -6,7 +6,7 @@ COMMENT=		ed25519 cryptographics signatures
 
 DISTNAME=		ed25519-0.0.5.0
 CATEGORIES=		security
-REVISION=		0
+REVISION=		1
 
 # MIT
 PERMIT_PACKAGE =	Yes

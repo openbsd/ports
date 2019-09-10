@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/09/10 13:51:27 kili Exp $
 
 COMMENT =		high-quality splittable PRNG
 
@@ -7,7 +7,7 @@ COMMENT =		high-quality splittable PRNG
 PORTROACH =		ignore:1
 
 DISTNAME =		tf-random-0.5
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

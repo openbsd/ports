@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2018/01/22 00:42:30 kili Exp $
+@comment $OpenBSD: PLIST,v 1.12 2019/09/10 13:51:21 kili Exp $
 @conflict hs-xhtml-*
 @conflict hs-deepseq-<=1.1.0.2p0
 @conflict hs-binary-*
@@ -18,6 +18,8 @@
 @pkgpath devel/hs-haskeline
 @pkgpath devel/hs-terminfo
 @pkgpath devel/hs-transformers
+@define-tag ghc-pkg-recache at-end %D/bin/ghc-pkg recache --global --no-user-package-db
+@tag ghc-pkg-recache
 bin/ghc
 bin/ghc-${GHC_VER}
 bin/ghc-pkg
@@ -32,7 +34,6 @@ bin/hsc2hs
 bin/runghc
 bin/runghc-${GHC_VER}
 bin/runhaskell
-@unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/unregister.sh
 lib/ghc/
 lib/ghc/Cabal-${CABAL_VER}/
 lib/ghc/Cabal-${CABAL_VER}/Distribution/
@@ -2434,9 +2435,37 @@ lib/ghc/integer-gmp-${INTEGER_GMP_VER}/libHSinteger-gmp-${INTEGER_GMP_VER}_p.a
 lib/ghc/latex/
 lib/ghc/latex/haddock.sty
 lib/ghc/package.conf.d/
+lib/ghc/package.conf.d/Cabal-${CABAL_VER}.conf
+lib/ghc/package.conf.d/array-${ARRAY_VER}.conf
+lib/ghc/package.conf.d/base-${BASE_VER}.conf
+lib/ghc/package.conf.d/binary-${BINARY_VER}.conf
+lib/ghc/package.conf.d/bytestring-${BYTESTRING_VER}.conf
+lib/ghc/package.conf.d/containers-${CONTAINERS_VER}.conf
+lib/ghc/package.conf.d/deepseq-${DEEPSEQ_VER}.conf
+lib/ghc/package.conf.d/directory-${DIRECTORY_VER}.conf
+lib/ghc/package.conf.d/filepath-${FILEPATH_VER}.conf
+lib/ghc/package.conf.d/ghc-${GHC_VER}.conf
+lib/ghc/package.conf.d/ghc-boot-${GHC_VER}.conf
+lib/ghc/package.conf.d/ghc-boot-th-${GHC_VER}.conf
+lib/ghc/package.conf.d/ghc-compact-${GHC_COMPACT_VER}.conf
+lib/ghc/package.conf.d/ghc-prim-${GHC_PRIM_VER}.conf
+lib/ghc/package.conf.d/ghci-${GHC_VER}.conf
+lib/ghc/package.conf.d/haskeline-${HASKELINE_VER}.conf
+lib/ghc/package.conf.d/hoopl-${HOOPL_VER}.conf
+lib/ghc/package.conf.d/hpc-${HPC_VER}.conf
+lib/ghc/package.conf.d/integer-gmp-${INTEGER_GMP_VER}.conf
 @comment no checksum
 lib/ghc/package.conf.d/package.cache
 @comment lib/ghc/package.conf.d/package.cache.lock
+lib/ghc/package.conf.d/pretty-${PRETTY_VER}.conf
+lib/ghc/package.conf.d/process-${PROCESS_VER}.conf
+lib/ghc/package.conf.d/rts.conf
+lib/ghc/package.conf.d/template-haskell-${TEMPLATE_HASKELL_VER}.conf
+lib/ghc/package.conf.d/terminfo-${TERMINFO_VER}.conf
+lib/ghc/package.conf.d/time-${TIME_VER}.conf
+lib/ghc/package.conf.d/transformers-${TRANSFORMERS_VER}.conf
+lib/ghc/package.conf.d/unix-${UNIX_VER}.conf
+lib/ghc/package.conf.d/xhtml-${XHTML_VER}.conf
 lib/ghc/platformConstants
 lib/ghc/pretty-${PRETTY_VER}/
 lib/ghc/pretty-${PRETTY_VER}/HSpretty-${PRETTY_VER}.o
@@ -2477,7 +2506,6 @@ lib/ghc/process-${PROCESS_VER}/include/processFlags.h
 lib/ghc/process-${PROCESS_VER}/include/runProcess.h
 lib/ghc/process-${PROCESS_VER}/libHSprocess-${PROCESS_VER}.a
 lib/ghc/process-${PROCESS_VER}/libHSprocess-${PROCESS_VER}_p.a
-lib/ghc/register.sh
 lib/ghc/rts/
 lib/ghc/rts/libCffi.a
 lib/ghc/rts/libCffi_debug.a
@@ -2782,7 +2810,6 @@ lib/ghc/unix-${UNIX_VER}/include/HsUnixConfig.h
 lib/ghc/unix-${UNIX_VER}/include/execvpe.h
 lib/ghc/unix-${UNIX_VER}/libHSunix-${UNIX_VER}.a
 lib/ghc/unix-${UNIX_VER}/libHSunix-${UNIX_VER}_p.a
-lib/ghc/unregister.sh
 lib/ghc/xhtml-${XHTML_VER}/
 lib/ghc/xhtml-${XHTML_VER}/HSxhtml-${XHTML_VER}.o
 lib/ghc/xhtml-${XHTML_VER}/Text/
@@ -4679,4 +4706,3 @@ share/doc/ghc/html/users_guide/using-warnings.html
 share/doc/ghc/html/users_guide/using.html
 share/doc/ghc/html/users_guide/utils.html
 share/doc/ghc/html/users_guide/win32-dlls.html
-@exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/register.sh -v0

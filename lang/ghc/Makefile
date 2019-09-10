@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2019/07/12 20:47:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.164 2019/09/10 13:51:21 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -12,7 +12,7 @@ COMMENT =		compiler for the functional language Haskell
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
-REVISION =		4
+REVISION =		5
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
@@ -168,28 +168,6 @@ post-patch:
 		echo 'LD_LIBRARY_PATH=${BOOTSTRAP_SHLIBS} \' && \
 		printf 'exec ${WRKDIR}/bootstrap/bin/%s "$$@"\n' "$$f"; \
 	done
-
-post-install:
-	cd ${PREFIX}/lib/ghc && \
-	GHC_PKG="./bin/ghc-pkg --no-user-package-db --global-package-db ./package.conf.d" && \
-	${INSTALL_SCRIPT} /dev/null register.sh && \
-	exec > register.sh && \
-	echo '#!/bin/sh' && \
-	echo 'p="$${0%/*}/bin/ghc-pkg --no-user-package-db --global-package-db $${0%/*}/package.conf.d"' && \
-	for p in $$($$GHC_PKG dot | sed -n -e 's/^"\([^"]*\)" -> "\([^"]*\)"$$/\1 \2/p' | tsort -r); do \
-		echo \$$p register --force - \<\< \'EOF\' && \
-		$$GHC_PKG describe $$p | sed '/^pkgpath:$$/s@$$@ ${PKGPATH}@' && \
-		echo EOF; \
-	done && \
-	${INSTALL_SCRIPT} /dev/null unregister.sh && \
-	exec > unregister.sh && \
-	echo '#!/bin/sh' && \
-	echo 'p="$${0%/*}/bin/ghc-pkg --no-user-package-db --global-package-db $${0%/*}/package.conf.d"' && \
-	for p in $$($$GHC_PKG dot | sed -n -e 's/^"\([^"]*\)" -> "\([^"]*\)"$$/\1 \2/p' | tsort); do \
-		echo \$$p unregister --force $$p; \
-	done && \
-	rm package.conf.d/* && \
-	$$GHC_PKG recache
 
 do-test:
 	ulimit -c 0 && \

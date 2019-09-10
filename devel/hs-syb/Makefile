@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2019/09/10 13:51:26 kili Exp $
 
 COMMENT =		Scrap Your Boilerplate library for generic programming
 
@@ -7,6 +7,7 @@ COMMENT =		Scrap Your Boilerplate library for generic programming
 PORTROACH =		ignore:1
 
 DISTNAME =		syb-0.7
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

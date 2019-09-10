@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/09/10 13:51:24 kili Exp $
 
 COMMENT =		lifted asynchronous IO operations
 
 DISTNAME =		lifted-async-0.9.3.2
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3

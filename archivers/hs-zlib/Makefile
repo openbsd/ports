@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:43:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2019/09/10 13:51:21 kili Exp $
 
 COMMENT =		zlib bindings for Haskell
 
@@ -7,7 +7,7 @@ COMMENT =		zlib bindings for Haskell
 PORTROACH =		ignore:1
 
 DISTNAME =		zlib-0.5.4.2
-REVISION =		3
+REVISION =		4
 CATEGORIES =		archivers devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

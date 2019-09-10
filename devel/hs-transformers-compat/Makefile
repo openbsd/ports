@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/09/10 13:51:28 kili Exp $
 
 COMMENT =		compat lib exposing transformers 0.3 and 0.4 types
 
 DISTNAME =		transformers-compat-0.5.1.4
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 # BSD3

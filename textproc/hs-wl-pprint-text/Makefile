@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/09/10 13:51:30 kili Exp $
 
 COMMENT =		Wadler/Leijen pretty printer for text values
 
@@ -7,7 +7,7 @@ COMMENT =		Wadler/Leijen pretty printer for text values
 PORTROACH =		limit:^1\.1\.0\.
 
 DISTNAME =		wl-pprint-text-1.1.0.4
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel textproc
 
 # BSD3

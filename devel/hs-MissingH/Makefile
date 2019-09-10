@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:44:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2019/09/10 13:51:22 kili Exp $
 
 COMMENT =		large library of utility functions
 
 DISTNAME =		MissingH-1.4.0.1
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/jgoerzen/missingh/wiki
 

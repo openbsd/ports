@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/01/22 21:43:45 kili Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/09/10 13:51:27 kili Exp $
+@tag ghc-pkg-recache
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Codec/
 lib/ghc/${DISTNAME}/Codec/Archive/
@@ -29,7 +30,7 @@ lib/ghc/${DISTNAME}/Codec/Archive/Tar/Write.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}-${MODGHC_PACKAGE_KEY}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}-${MODGHC_PACKAGE_KEY}_p.a
-lib/ghc/${DISTNAME}/register.sh
+lib/ghc/package.conf.d/${DISTNAME}.conf
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
@@ -46,6 +47,3 @@ share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
 share/doc/hs-${DISTNAME}/html/synopsis.png
 share/doc/hs-${DISTNAME}/html/tar.haddock
-@exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
-@unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
-lib/ghc/${DISTNAME}/unregister.sh

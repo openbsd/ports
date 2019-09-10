@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/09/10 13:51:28 kili Exp $
 
 COMMENT =		graphviz bindings
 
@@ -6,7 +6,7 @@ COMMENT =		graphviz bindings
 PORTROACH =		limit:^2999\.18\.
 
 DISTNAME =		graphviz-2999.18.1.2
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel graphics
 
 # BSD3

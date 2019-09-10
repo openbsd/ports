@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/09/10 13:51:30 kili Exp $
 
 COMMENT =		simple XML library
 
 DISTNAME =		xml-1.3.7
-REVISION =		12
+REVISION =		13
 CATEGORIES =		textproc
 
 # BSD3

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/09/10 13:51:27 kili Exp $
 
 COMMENT =		lift computations from the bottom of a transformer stack
 
 DISTNAME =		transformers-base-0.4.4
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 # BSD3

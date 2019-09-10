@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.42 2018/01/22 00:42:30 kili Exp $
+# $OpenBSD: ghc.port.mk,v 1.43 2019/09/10 13:51:21 kili Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -23,8 +23,9 @@ BUILD_DEPENDS +=	lang/ghc
 
 # Set to "cabal" to get the typical Cabal targets defined. Add "haddock"
 # to generate API documentation using Haddock. Add "register" to create
-# and include register/unregister scripts (you'll still have to add the
-# necessary tags to your PLIST by hand).
+# and include a package registration file in
+# ${PREFIX}/lib/ghc/package.conf.d (you'll still have to add the
+# necessary @tag ghc-pkg-recache to your PLIST by hand).
 # Add "nort" if the port doesn't depend on the GHC runtime. This will
 # also turn off the default "hs-" prefix for PKGNAME.
 # If "nort" is not added, MODGHC_PACKAGE_KEY may be set to the 'package
@@ -102,9 +103,7 @@ MODGHC_BUILD_TARGET += \
 .  if ${MODGHC_BUILD:L:Mregister}
 MODGHC_BUILD_TARGET += \
 	;cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
-		${MODGHC_SETUP_PROG} register --gen-script; \
-	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
-		${MODGHC_SETUP_PROG} unregister --gen-script
+		${MODGHC_SETUP_PROG} register --gen-pkg-config
 .  endif
 
 MODGHC_INSTALL_TARGET = \
@@ -112,8 +111,9 @@ MODGHC_INSTALL_TARGET = \
 		${MODGHC_SETUP_PROG} copy --destdir=${DESTDIR}
 .  if ${MODGHC_BUILD:L:Mregister}
 MODGHC_INSTALL_TARGET += \
-	;${INSTALL_SCRIPT} ${WRKBUILD}/register.sh ${PREFIX}/lib/ghc/${DISTNAME} \
-	;${INSTALL_SCRIPT} ${WRKBUILD}/unregister.sh ${PREFIX}/lib/ghc/${DISTNAME}
+	;${INSTALL_DATA_DIR} ${PREFIX}/lib/ghc/package.conf.d && \
+	${INSTALL_DATA} ${WRKBUILD}/${DISTNAME}.conf \
+		${PREFIX}/lib/ghc/package.conf.d/
 .  endif
 
 MODGHC_TEST_TARGET = \

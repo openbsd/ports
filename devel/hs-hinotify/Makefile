@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/09/10 13:51:24 kili Exp $
 
 COMMENT =		inotify lib for haskell
 
 DISTNAME =		hinotify-0.3.8.1
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 # BSD3

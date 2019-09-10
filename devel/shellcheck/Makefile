@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/09/10 13:51:28 kili Exp $
 
 BROKEN-i386 =		needs a fixed rts/Linker.c in ghc
 
@@ -8,7 +8,7 @@ COMMENT-lib =		ShellCheck library
 V =			0.4.7
 DISTNAME =		ShellCheck-${V}
 REVISION-main =		0
-REVISION-lib =		1
+REVISION-lib =		2
 PKGNAME-main =		shellcheck-${V}
 PKGNAME-lib =		hs-shellcheck-${V}
 CATEGORIES =		devel

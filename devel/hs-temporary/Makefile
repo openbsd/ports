@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/09/10 13:51:27 kili Exp $
 
 COMMENT =		portable temporary file and directory support
 
 DISTNAME =		temporary-1.2.1.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 # BSD3

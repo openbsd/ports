@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/09/10 13:51:26 kili Exp $
 
 COMMENT =		deterministic allocation and freeing of scarce resources
 
 DISTNAME =		resourcet-1.1.9
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

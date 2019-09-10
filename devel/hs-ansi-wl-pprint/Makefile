@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/09/10 13:51:22 kili Exp $
 
 COMMENT =		ANSI Wadler/Leijen pretty printer
 
 DISTNAME =		ansi-wl-pprint-0.6.7.3
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 HOMEPAGE =		http://batterseapower.github.com/ansi-wl-pprint/

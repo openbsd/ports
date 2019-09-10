@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:44:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2019/09/10 13:51:25 kili Exp $
 
 COMMENT =		primitive memory-related operations
 
@@ -8,7 +8,7 @@ PORTROACH =		ignore:1
 
 DISTNAME =		primitive-0.6.2.0
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 # BSD3
 PERMIT_PACKAGE =	Yes

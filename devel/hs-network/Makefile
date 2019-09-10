@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:44:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/09/10 13:51:25 kili Exp $
 
 COMMENT =		Haskell networking library
 
@@ -7,7 +7,7 @@ COMMENT =		Haskell networking library
 PORTROACH =		ignore:1
 
 DISTNAME =		network-2.6.2.1
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel net
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/09/10 13:51:24 kili Exp $
 
 COMMENT =		monad morphisms
 
 DISTNAME =		mmorph-1.0.9
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:44:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2019/09/10 13:51:27 kili Exp $
 
 COMMENT =		efficient packed Unicode text type
 
@@ -7,7 +7,7 @@ COMMENT =		efficient packed Unicode text type
 PORTROACH =		ignore:1
 
 DISTNAME =		text-1.2.1.3
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

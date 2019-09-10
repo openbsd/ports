@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/09/10 13:51:23 kili Exp $
 
 COMMENT =		set and multiset operations on ordered lists
 
 DISTNAME =		data-ordlist-0.4.7.0
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 # BSD3

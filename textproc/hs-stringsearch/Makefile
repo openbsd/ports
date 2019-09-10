@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/09/10 13:51:30 kili Exp $
 
 COMMENT =		fast ByteString search and replace functions
 
 DISTNAME =		stringsearch-0.3.6.6
-REVISION =		0
+REVISION =		1
 CATEGORIES =		textproc
 
 # BSD

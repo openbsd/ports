@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/09/10 13:51:23 kili Exp $
 
 COMMENT =		constraint manipulation
 
 DISTNAME=		constraints-0.9.1
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3

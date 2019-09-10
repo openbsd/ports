@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/09/10 13:51:25 kili Exp $
 
 COMMENT =		URI manipulation
 
@@ -7,7 +7,7 @@ COMMENT =		URI manipulation
 PORTROACH =		ignore:1
 
 DISTNAME =		network-uri-2.6.0.3
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel net
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

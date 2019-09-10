@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2019/09/10 13:51:23 kili Exp $
 
 COMMENT =		streaming data processing library
 
 DISTNAME =		conduit-1.2.12.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

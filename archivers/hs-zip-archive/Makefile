@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:43:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/09/10 13:51:21 kili Exp $
 
 COMMENT =		library dealing with zip archives
 
 DISTNAME =		zip-archive-0.2.3.7
-REVISION =		2
+REVISION =		3
 CATEGORIES =		archivers devel
 
 # BSD3

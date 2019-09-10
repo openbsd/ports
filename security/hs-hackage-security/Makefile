@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2019/09/10 13:51:29 kili Exp $
 
 # used by cabal-install
 
 COMMENT=		hackage security library
 
 DISTNAME=		hackage-security-0.5.2.2
-REVISION =		0
+REVISION =		1
 CATEGORIES=		security
 
 # BSD3
