@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/05/28 22:19:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/09/10 23:55:24 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict openssl->=1.1.0,openssl-<1.2
@@ -773,6 +773,7 @@ lib/eopenssl11/man/man3/
 @man lib/eopenssl11/man/man3/CRYPTO_mem_leaks.3
 @man lib/eopenssl11/man/man3/CRYPTO_mem_leaks_cb.3
 @man lib/eopenssl11/man/man3/CRYPTO_mem_leaks_fp.3
+@man lib/eopenssl11/man/man3/CRYPTO_memcmp.3
 @man lib/eopenssl11/man/man3/CRYPTO_new_ex_data.3
 @man lib/eopenssl11/man/man3/CRYPTO_realloc.3
 @man lib/eopenssl11/man/man3/CRYPTO_secure_clear_free.3
@@ -3234,6 +3235,7 @@ lib/eopenssl11/man/man3/
 @man lib/eopenssl11/man/man3/X509_CRL_add0_revoked.3
 @man lib/eopenssl11/man/man3/X509_CRL_add1_ext_i2d.3
 @man lib/eopenssl11/man/man3/X509_CRL_add_ext.3
+@man lib/eopenssl11/man/man3/X509_CRL_cmp.3
 @man lib/eopenssl11/man/man3/X509_CRL_delete_ext.3
 @man lib/eopenssl11/man/man3/X509_CRL_digest.3
 @man lib/eopenssl11/man/man3/X509_CRL_dup.3
@@ -3254,6 +3256,7 @@ lib/eopenssl11/man/man3/
 @man lib/eopenssl11/man/man3/X509_CRL_get_issuer.3
 @man lib/eopenssl11/man/man3/X509_CRL_get_signature_nid.3
 @man lib/eopenssl11/man/man3/X509_CRL_get_version.3
+@man lib/eopenssl11/man/man3/X509_CRL_match.3
 @man lib/eopenssl11/man/man3/X509_CRL_new.3
 @man lib/eopenssl11/man/man3/X509_CRL_set1_lastUpdate.3
 @man lib/eopenssl11/man/man3/X509_CRL_set1_nextUpdate.3
@@ -3318,6 +3321,7 @@ lib/eopenssl11/man/man3/
 @man lib/eopenssl11/man/man3/X509_NAME_add_entry_by_NID.3
 @man lib/eopenssl11/man/man3/X509_NAME_add_entry_by_OBJ.3
 @man lib/eopenssl11/man/man3/X509_NAME_add_entry_by_txt.3
+@man lib/eopenssl11/man/man3/X509_NAME_cmp.3
 @man lib/eopenssl11/man/man3/X509_NAME_delete_entry.3
 @man lib/eopenssl11/man/man3/X509_NAME_digest.3
 @man lib/eopenssl11/man/man3/X509_NAME_dup.3
@@ -3518,13 +3522,16 @@ lib/eopenssl11/man/man3/
 @man lib/eopenssl11/man/man3/X509_check_ip_asc.3
 @man lib/eopenssl11/man/man3/X509_check_issued.3
 @man lib/eopenssl11/man/man3/X509_check_private_key.3
+@man lib/eopenssl11/man/man3/X509_cmp.3
 @man lib/eopenssl11/man/man3/X509_cmp_current_time.3
 @man lib/eopenssl11/man/man3/X509_cmp_time.3
 @man lib/eopenssl11/man/man3/X509_delete_ext.3
 @man lib/eopenssl11/man/man3/X509_digest.3
 @man lib/eopenssl11/man/man3/X509_dup.3
 @man lib/eopenssl11/man/man3/X509_free.3
+@man lib/eopenssl11/man/man3/X509_get0_authority_issuer.3
 @man lib/eopenssl11/man/man3/X509_get0_authority_key_id.3
+@man lib/eopenssl11/man/man3/X509_get0_authority_serial.3
 @man lib/eopenssl11/man/man3/X509_get0_extensions.3
 @man lib/eopenssl11/man/man3/X509_get0_notAfter.3
 @man lib/eopenssl11/man/man3/X509_get0_notBefore.3
@@ -3557,6 +3564,8 @@ lib/eopenssl11/man/man3/
 @man lib/eopenssl11/man/man3/X509_get_version.3
 @man lib/eopenssl11/man/man3/X509_getm_notAfter.3
 @man lib/eopenssl11/man/man3/X509_getm_notBefore.3
+@man lib/eopenssl11/man/man3/X509_issuer_and_serial_cmp.3
+@man lib/eopenssl11/man/man3/X509_issuer_name_cmp.3
 @man lib/eopenssl11/man/man3/X509_load_cert_crl_file.3
 @man lib/eopenssl11/man/man3/X509_load_cert_file.3
 @man lib/eopenssl11/man/man3/X509_load_crl_file.3
@@ -3574,6 +3583,7 @@ lib/eopenssl11/man/man3/
 @man lib/eopenssl11/man/man3/X509_set_version.3
 @man lib/eopenssl11/man/man3/X509_sign.3
 @man lib/eopenssl11/man/man3/X509_sign_ctx.3
+@man lib/eopenssl11/man/man3/X509_subject_name_cmp.3
 @man lib/eopenssl11/man/man3/X509_time_adj.3
 @man lib/eopenssl11/man/man3/X509_time_adj_ex.3
 @man lib/eopenssl11/man/man3/X509_up_ref.3
