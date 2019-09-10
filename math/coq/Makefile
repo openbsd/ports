@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/09/06 22:10:18 chrisz Exp $
+# $OpenBSD: Makefile,v 1.42 2019/09/10 14:09:17 sthen Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
@@ -25,6 +25,7 @@ MODULES=	lang/ocaml
 
 BUILD_DEPENDS=	x11/lablgtk3 \
 		math/ocaml-num \
+		shells/bash \
 		sysutils/findlib
 RUN_DEPENDS=	x11/lablgtk3
 
