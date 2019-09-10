@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.786 2019/09/04 12:33:52 martijn Exp $
+# $OpenBSD: Makefile,v 1.787 2019/09/10 13:50:33 kili Exp $
 
 COMMENT =	exceptions to pkg_add rules
 CATEGORIES =	devel databases
 DISTFILES =
 
 # API.rev
-PKGNAME =	quirks-3.177
+PKGNAME =	quirks-3.178
 PKG_ARCH =	*
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
@@ -18,7 +18,8 @@ do-build:
 	@perl -c ${FILESDIR}/Quirks.pm
 
 do-install:
-	${INSTALL_DATA_DIR} ${PERLDIR}/OpenBSD
+	${INSTALL_DATA_DIR} ${PERLDIR}/OpenBSD/Quirks
 	${INSTALL_DATA} ${FILESDIR}/Quirks.pm ${PERLDIR}/OpenBSD/Quirks.pm
+	${INSTALL_DATA} ${FILESDIR}/Quirks/ghc.pm ${PERLDIR}/OpenBSD/Quirks/ghc.pm
 
 .include <bsd.port.mk>
