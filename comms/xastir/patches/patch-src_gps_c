@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_gps_c,v 1.1 2019/09/10 11:21:24 jca Exp $
+
+
+
+Index: src/gps.c
+--- src/gps.c.orig
++++ src/gps.c
+@@ -559,7 +559,6 @@ int gps_data_find(char *gps_line_data, int port) {
+     int have_valid_string = 0;
+ #ifndef __CYGWIN__
+     struct timeval tv;
+-    struct timezone tz;
+ #endif  // __CYGWIN__
+  
+ 
+@@ -620,8 +619,6 @@ int gps_data_find(char *gps_line_data, int port) {
+             if (devices[port].set_time) {
+                 tv.tv_sec=t;
+                 tv.tv_usec=0;
+-                tz.tz_minuteswest=0;
+-                tz.tz_dsttime=0;
+ 
+                 if (debug_level & 128) {
+                     fprintf(stderr,"Setting Time %ld EUID: %d, RUID: %d\n",
+@@ -631,7 +628,7 @@ int gps_data_find(char *gps_line_data, int port) {
+ #ifdef HAVE_SETTIMEOFDAY
+ 
+ ENABLE_SETUID_PRIVILEGE;
+-                settimeofday(&tv, &tz);
++                settimeofday(&tv, NULL);
+ DISABLE_SETUID_PRIVILEGE;
+ 
+ #endif  // HAVE_SETTIMEOFDAY
