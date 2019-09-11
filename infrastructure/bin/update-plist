@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.175 2019/06/29 14:50:52 espie Exp $
+# $OpenBSD: update-plist,v 1.176 2019/09/11 09:05:53 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -917,6 +917,14 @@ sub check_specific
 {
 	my ($self, $h) = @_;
 	$h->{should}{'update-mime-database'} = 1;
+}
+
+package OpenBSD::PackingElement::GhcConf;
+our @ISA=qw(OpenBSD::PackingElement::File);
+sub check_specific
+{
+	my ($self, $h) = @_;
+	$h->{should}{'ghc-pkg-recache'} = 1;
 }
 
 package OpenBSD::PackingElement::Sampledir;
