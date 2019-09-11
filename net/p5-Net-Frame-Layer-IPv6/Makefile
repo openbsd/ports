@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/09/11 01:37:57 gsoares Exp $
+# $OpenBSD: Makefile,v 1.7 2019/09/11 02:14:08 gsoares Exp $
 
 COMMENT=	Internet Protocol v6 layer object
 
@@ -16,6 +16,6 @@ RUN_DEPENDS=	net/p5-Net-Frame
 
 MODCPAN_EXAMPLES=	Yes
 
-TEST_POD=	Yes
+MAKE_ENV=	TEST_POD=Yes
 
 .include <bsd.port.mk>
