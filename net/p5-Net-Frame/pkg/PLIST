@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/03/15 17:38:19 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/09/11 02:18:52 gsoares Exp $
 ${P5SITE}/Net/Frame/
 ${P5SITE}/Net/Frame.pm
 ${P5SITE}/Net/Frame/Layer/
@@ -28,6 +28,7 @@ share/examples/p5-Net-Frame/arp-lookup.pl
 share/examples/p5-Net-Frame/build-tcp-syn.pl
 share/examples/p5-Net-Frame/pack-eth-ipv4-tcp-compute.pl
 share/examples/p5-Net-Frame/pack-eth-ipv4-tcp.pl
+share/examples/p5-Net-Frame/resolv-ipv6.pl
 share/examples/p5-Net-Frame/send-recv-tcp.pl
 share/examples/p5-Net-Frame/send-recv-udp.pl
 share/examples/p5-Net-Frame/send-tcp-with-padding.pl
