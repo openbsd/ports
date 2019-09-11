@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/03/05 00:19:27 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/09/11 03:22:39 jsg Exp $
 @bin bin/cppcheck
 @man man/man1/cppcheck.1
 share/cppcheck/
@@ -8,18 +8,27 @@ share/cppcheck/cfg/boost.cfg
 share/cppcheck/cfg/bsd.cfg
 share/cppcheck/cfg/cppcheck-cfg.rng
 share/cppcheck/cfg/cppcheck-lib.cfg
+share/cppcheck/cfg/cppunit.cfg
+share/cppcheck/cfg/daca.cfg
 share/cppcheck/cfg/embedded_sql.cfg
 share/cppcheck/cfg/gnu.cfg
 share/cppcheck/cfg/googletest.cfg
 share/cppcheck/cfg/gtk.cfg
+share/cppcheck/cfg/libcerror.cfg
+share/cppcheck/cfg/libcurl.cfg
+share/cppcheck/cfg/lua.cfg
 share/cppcheck/cfg/microsoft_sal.cfg
 share/cppcheck/cfg/motif.cfg
+share/cppcheck/cfg/nspr.cfg
+share/cppcheck/cfg/opengl.cfg
+share/cppcheck/cfg/openmp.cfg
 share/cppcheck/cfg/posix.cfg
 share/cppcheck/cfg/python.cfg
 share/cppcheck/cfg/qt.cfg
 share/cppcheck/cfg/ruby.cfg
 share/cppcheck/cfg/sdl.cfg
 share/cppcheck/cfg/sfml.cfg
+share/cppcheck/cfg/sqlite3.cfg
 share/cppcheck/cfg/std.cfg
 share/cppcheck/cfg/tinyxml2.cfg
 share/cppcheck/cfg/windows.cfg
