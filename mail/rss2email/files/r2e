@@ -1,4 +1,0 @@
-#!/bin/sh -e
-[ -d ~/.rss2email ] || mkdir ~/.rss2email
-cd ~/.rss2email
-exec ${MODPY_BIN} ${MODPY_SITEPKG}/rss2email.py feeds.dat $*

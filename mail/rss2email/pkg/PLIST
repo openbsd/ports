@@ -1,8 +1,43 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/06/26 16:23:10 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/09/11 00:15:43 sthen Exp $
+@ask-update rss2email-<3 Make sure your feed list is exported
 bin/r2e
-lib/python${MODPY_VERSION}/site-packages/rss2email.py
-lib/python${MODPY_VERSION}/site-packages/rss2email.pyc
-share/doc/rss2email/
-share/doc/rss2email/readme.html
-share/examples/rss2email/
-share/examples/rss2email/config.py.example
+lib/python${MODPY_VERSION}/site-packages/rss2email/
+lib/python${MODPY_VERSION}/site-packages/rss2email-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/rss2email-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/rss2email-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/rss2email-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/rss2email-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/rss2email-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/rss2email/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rss2email/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rss2email/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rss2email/${MODPY_PYCACHE}command.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rss2email/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rss2email/${MODPY_PYCACHE}email.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rss2email/${MODPY_PYCACHE}error.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rss2email/${MODPY_PYCACHE}feed.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rss2email/${MODPY_PYCACHE}feeds.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rss2email/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rss2email/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rss2email/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rss2email/command.py
+lib/python${MODPY_VERSION}/site-packages/rss2email/config.py
+lib/python${MODPY_VERSION}/site-packages/rss2email/email.py
+lib/python${MODPY_VERSION}/site-packages/rss2email/error.py
+lib/python${MODPY_VERSION}/site-packages/rss2email/feed.py
+lib/python${MODPY_VERSION}/site-packages/rss2email/feeds.py
+lib/python${MODPY_VERSION}/site-packages/rss2email/main.py
+lib/python${MODPY_VERSION}/site-packages/rss2email/post_process/
+lib/python${MODPY_VERSION}/site-packages/rss2email/post_process/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rss2email/post_process/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rss2email/post_process/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rss2email/post_process/${MODPY_PYCACHE}downcase.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rss2email/post_process/${MODPY_PYCACHE}prettify.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rss2email/post_process/${MODPY_PYCACHE}redirect.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rss2email/post_process/downcase.py
+lib/python${MODPY_VERSION}/site-packages/rss2email/post_process/prettify.py
+lib/python${MODPY_VERSION}/site-packages/rss2email/post_process/redirect.py
+lib/python${MODPY_VERSION}/site-packages/rss2email/util.py
+lib/python${MODPY_VERSION}/site-packages/rss2email/version.py
+@man man/man1/r2e.1
+share/doc/pkg-readmes/${PKGSTEM}

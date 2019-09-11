@@ -1,39 +1,29 @@
-# $OpenBSD: Makefile,v 1.4 2019/08/24 20:14:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/09/11 00:15:43 sthen Exp $
 
-COMMENT=	get news from RSS feeds in email
+COMMENT =	convert RSS/Atom newsfeeds to email
 
-DISTNAME=	rss2email-2.71
-FIX_EXTRACT_PERMISSIONS= Yes
+MODPY_EGG_VERSION = 3.10
+DISTNAME =	rss2email-${MODPY_EGG_VERSION}
+CATEGORIES =	mail www
 
-CATEGORIES=	mail textproc
+MAINTAINER =	Kaashif Hymabaccus <kaashif@kaashif.co.uk>
 
-HOMEPAGE=	http://www.allthingsrss.com/rss2email/
+# GPLv2+
+PERMIT_PACKAGE =	Yes
 
-# GPLv2/v3
-PERMIT_PACKAGE=	Yes
+MODULES =	lang/python
 
-MASTER_SITES=	${HOMEPAGE}
+RUN_DEPENDS +=	converters/py-html2text${MODPY_FLAVOR} \
+		textproc/py-feedparser${MODPY_FLAVOR}
 
-MODULES=	lang/python
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	converters/py-html2text \
-		textproc/py-feedparser
-SUBST_VARS+=	MODPY_SITEPKG
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
 
-NO_BUILD=	Yes
-NO_TEST=	Yes
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/r2e.1 ${PREFIX}/man/man1/
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rss2email/ \
-	    ${PREFIX}/share/doc/rss2email/ ${WRKINST}/${MODPY_SITEPKG}/
-	${INSTALL_SCRIPT} ${WRKSRC}/rss2email.py ${WRKINST}/${MODPY_SITEPKG}/
-	${INSTALL_DATA} ${WRKSRC}/readme.html ${PREFIX}/share/doc/rss2email/
-	${INSTALL_DATA} ${WRKSRC}/config.py.example \
-	    ${PREFIX}/share/examples/rss2email/
-	${INSTALL_DATA} ${WRKSRC}/config.py.example \
-	    ${PREFIX}/share/examples/rss2email/
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-	    ${WRKINST}/${MODPY_SITEPKG}/rss2email.py
-	${SUBST_PROGRAM} ${FILESDIR}/r2e ${PREFIX}/bin/r2e
+do-test:
+	cd ${WRKSRC} && env PYTHONPATH=. ${MODPY_BIN} test/test.py
 
 .include <bsd.port.mk>

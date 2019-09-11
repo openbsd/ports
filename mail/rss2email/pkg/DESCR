@@ -1,2 +1,6 @@
-rss2email is a free tool for delivering news from RSS feeds to your
-email program.
+rss2email is a simple program which you can run in your crontab. It
+watches RSS feeds and sends you nicely formatted email messages for
+each new item.
+
+rss2email was started by Aaron Swartz and is currently maintained by
+by the community at https://github.com/rss2email.

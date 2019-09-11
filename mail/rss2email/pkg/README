@@ -1,0 +1,36 @@
+$OpenBSD: README,v 1.1 2019/09/11 00:15:43 sthen Exp $
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+Migrating from rss2email 2
+==========================
+rss2email 3 uses a different config and data format from previous versions.
+
+Hopefully you read the OpenBSD upgrade instructions before updating the
+package and have saved the old feed list with "r2e opmlexport > ~/r2e.opml".
+Also save the output of "r2e list" if you have any feeds sending to a
+non-default email address.
+
+After updating, create a new feed database, set the default email address
+and import saved feeds:
+
+    r2e new
+    r2e email defaultaddress@example.com
+    cat ~/r2e.opml | r2e opmlimport
+
+For any feeds with a non-default email address, delete and re-add with the
+correct address. Adjust other config in ~/.config/rss2email.cfg as needed
+based on the old settings in ~/.rss2email/config.py.
+
+The "last read" information is not transferred. If you don't want to re-send
+old messages (and don't mind missing any new messages since the last run with
+the old version), you can skip sending mail for the first run:
+
+    r2e run --no-send
+
+Alternatively use "r2e run" as usual if you want to be sure to avoid missing
+anything.
+
+The new feed data is stored in ~/.local/share/rss2email.json.
