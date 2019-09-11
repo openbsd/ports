@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2019/05/28 14:24:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/09/11 21:06:22 sthen Exp $
 
 COMMENT=	client for certificate authorities using ACME protocols
 
@@ -13,7 +13,8 @@ RUN_DEPENDS=	devel/py-configargparse${MODPY_FLAVOR} \
 		devel/py-zopecomponent${MODPY_FLAVOR} \
 		devel/py-zopeinterface${MODPY_FLAVOR} \
 		security/py-josepy${MODPY_FLAVOR} \
-		security/letsencrypt/py-acme${MODPY_FLAVOR}=${MODPY_EGG_VERSION}
+		security/letsencrypt/py-acme${MODPY_FLAVOR}=${MODPY_EGG_VERSION} \
+		sysutils/py-distro
 TEST_DEPENDS=	${RUN_DEPENDS}
 
 MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
