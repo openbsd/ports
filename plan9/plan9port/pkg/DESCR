@@ -5,6 +5,4 @@ variety of other platforms. Plan 9 became a convenient platform for
 experimenting with new ideas, applications, and services.
 
 Plan 9 from User Space provides many of the ideas, applications,
-and services from Plan 9 on Unix-like systems. It runs on FreeBSD
-(x86), Linux (x86 and PowerPC), Mac OS X (PowerPC), OpenBSD (x86),
-and SunOS (Sparc).
+and services from Plan 9 on Unix-like systems.
