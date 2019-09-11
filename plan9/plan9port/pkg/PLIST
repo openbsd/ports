@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/09/04 12:46:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2019/09/11 00:40:54 gsoares Exp $
 @unexec-delete rm -f ${PREFIX}/plan9/man/whatis.db
 bin/9
 plan9/
@@ -199,6 +199,7 @@ plan9/bin/nroff
 @comment plan9/bin/osxvers
 @bin plan9/bin/p
 @bin plan9/bin/page
+@bin plan9/bin/paint
 @bin plan9/bin/passwd
 @bin plan9/bin/pbd
 @bin plan9/bin/pemdecode
@@ -4349,6 +4350,7 @@ plan9/man/man1/INDEX
 @man plan9/man/man1/news.1
 @man plan9/man/man1/p.1
 @man plan9/man/man1/page.1
+@man plan9/man/man1/paint.1
 @man plan9/man/man1/passwd.1
 @man plan9/man/man1/pem.1
 @man plan9/man/man1/pic.1
@@ -5479,6 +5481,7 @@ plan9/src/cmd/delatex.lx
 plan9/src/cmd/deroff.c
 plan9/src/cmd/devdraw/
 plan9/src/cmd/devdraw/bigarrow.h
+plan9/src/cmd/devdraw/cocoa-screen-metal.m
 plan9/src/cmd/devdraw/cocoa-screen.h
 plan9/src/cmd/devdraw/cocoa-screen.m
 plan9/src/cmd/devdraw/cocoa-srv.c
@@ -5499,9 +5502,6 @@ plan9/src/cmd/devdraw/nowsys.c
 @bin plan9/src/cmd/devdraw/o.devdraw
 plan9/src/cmd/devdraw/osx-draw.c
 plan9/src/cmd/devdraw/osx-keycodes.h
-plan9/src/cmd/devdraw/osx-screen-carbon.m
-plan9/src/cmd/devdraw/osx-screen.h
-plan9/src/cmd/devdraw/osx-srv.c
 plan9/src/cmd/devdraw/snarf.c
 plan9/src/cmd/devdraw/winsize.c
 plan9/src/cmd/devdraw/x11-alloc.c
@@ -6056,6 +6056,10 @@ plan9/src/cmd/page/ps.c
 plan9/src/cmd/page/rotate.c
 plan9/src/cmd/page/util.c
 plan9/src/cmd/page/view.c
+plan9/src/cmd/paint/
+plan9/src/cmd/paint/eenter.c
+plan9/src/cmd/paint/mkfile
+plan9/src/cmd/paint/paint.c
 plan9/src/cmd/pbd.c
 plan9/src/cmd/pic/
 plan9/src/cmd/pic/arcgen.c
@@ -6268,7 +6272,6 @@ plan9/src/cmd/read.c
 plan9/src/cmd/readcons.c
 plan9/src/cmd/resample.c
 plan9/src/cmd/rio/
-plan9/src/cmd/rio/Imakefile
 plan9/src/cmd/rio/README
 plan9/src/cmd/rio/client.c
 plan9/src/cmd/rio/color.c
@@ -7239,8 +7242,9 @@ plan9/src/libdraw/chan.c
 plan9/src/libdraw/cloadimage.c
 plan9/src/libdraw/computil.c
 plan9/src/libdraw/creadimage.c
+plan9/src/libdraw/cursor.c
 plan9/src/libdraw/debug.c
-plan9/src/libdraw/defont.c
+plan9/src/libdraw/defont.h
 plan9/src/libdraw/draw.c
 plan9/src/libdraw/drawclient.c
 plan9/src/libdraw/drawfcall.c
@@ -7251,7 +7255,6 @@ plan9/src/libdraw/emenuhit.c
 plan9/src/libdraw/event.c
 plan9/src/libdraw/font.c
 plan9/src/libdraw/freesubfont.c
-plan9/src/libdraw/getdefont.c
 plan9/src/libdraw/getrect.c
 plan9/src/libdraw/getsubfont.c
 plan9/src/libdraw/icossin.c
@@ -7463,7 +7466,6 @@ plan9/src/libmemdraw/cload-stub.c
 plan9/src/libmemdraw/cload.c
 plan9/src/libmemdraw/cmap.c
 plan9/src/libmemdraw/cread.c
-plan9/src/libmemdraw/defont.c
 plan9/src/libmemdraw/draw-stub.c
 plan9/src/libmemdraw/draw.c
 plan9/src/libmemdraw/drawtest.c

@@ -1,17 +1,18 @@
-$OpenBSD: patch-INSTALL,v 1.6 2017/02/28 02:27:41 gsoares Exp $
+$OpenBSD: patch-INSTALL,v 1.7 2019/09/11 00:40:54 gsoares Exp $
 
---- INSTALL.orig	Wed Nov  2 20:17:40 2016
-+++ INSTALL	Mon Feb 27 21:57:58 2017
-@@ -128,7 +128,7 @@ fi
+Index: INSTALL
+--- INSTALL.orig
++++ INSTALL
+@@ -134,7 +134,7 @@ fi
  if [ `uname` != Darwin ]; then
  	# Determine whether fontsrv X11 files are available.
  	rm -f a.out
--	gcc -o a.out -c -Iinclude -I/usr/include -I/usr/local/include -I/usr/include/freetype2 -I/usr/local/include/freetype2 \
+-	cc -o a.out -c -Iinclude -I/usr/include -I/usr/local/include -I/usr/include/freetype2 -I/usr/local/include/freetype2 \
 +	${CC} -o a.out -c -Iinclude -I/usr/include -I/usr/local/include -I/usr/include/freetype2 -I/usr/local/include/freetype2 \
  	    -I/usr/X11R6/include -I/usr/X11R6/include/freetype2 src/cmd/fontsrv/x11.c >/dev/null 2>&1
  	if [ -f a.out ]; then
  		echo "	fontsrv dependencies found."
-@@ -151,7 +151,7 @@ cd src
+@@ -160,7 +160,7 @@ cd src
  if $dobuild; then
  	if [ ! -x ../bin/mk ]; then
  		echo "* Building mk..."
@@ -20,7 +21,7 @@ $OpenBSD: patch-INSTALL,v 1.6 2017/02/28 02:27:41 gsoares Exp $
  	fi
  	if [ ! -x ../bin/mk ]; then
  		echo "* Error: mk failed to build."
-@@ -159,7 +159,6 @@ if $dobuild; then
+@@ -168,7 +168,6 @@ if $dobuild; then
  	fi
  	
  	echo "* Building everything (be patient)..."
@@ -28,7 +29,7 @@ $OpenBSD: patch-INSTALL,v 1.6 2017/02/28 02:27:41 gsoares Exp $
  	mk libs-nuke
  	mk all || exit 1
  	if [ ! -x $PLAN9/src/cmd/o.cleanname -o ! -x $PLAN9/src/cmd/acme/o.acme ]; then
-@@ -218,5 +217,5 @@ if $doinstall; then
+@@ -227,5 +226,5 @@ if $doinstall; then
  	echo "	PLAN9=$PLAN9 export PLAN9"
  	echo '	PATH=$PATH:$PLAN9/bin export PATH'
  fi
