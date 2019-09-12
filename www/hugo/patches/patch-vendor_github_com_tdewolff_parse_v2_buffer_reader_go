@@ -1,0 +1,11 @@
+$OpenBSD: patch-vendor_github_com_tdewolff_parse_v2_buffer_reader_go,v 1.1 2019/09/12 19:02:59 jsing Exp $
+
+Index: vendor/github.com/tdewolff/parse/v2/buffer/reader.go
+--- vendor/github.com/tdewolff/parse/v2/buffer/reader.go.orig
++++ vendor/github.com/tdewolff/parse/v2/buffer/reader.go
+@@ -1,4 +1,4 @@
+-package buffer // import "github.com/tdewolff/parse/buffer"
++package buffer
+ 
+ import "io"
+ 

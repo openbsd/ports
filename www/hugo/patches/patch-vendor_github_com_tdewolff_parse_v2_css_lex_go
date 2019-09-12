@@ -1,0 +1,12 @@
+$OpenBSD: patch-vendor_github_com_tdewolff_parse_v2_css_lex_go,v 1.1 2019/09/12 19:02:59 jsing Exp $
+
+Index: vendor/github.com/tdewolff/parse/v2/css/lex.go
+--- vendor/github.com/tdewolff/parse/v2/css/lex.go.orig
++++ vendor/github.com/tdewolff/parse/v2/css/lex.go
+@@ -1,5 +1,5 @@
+ // Package css is a CSS3 lexer and parser following the specifications at http://www.w3.org/TR/css-syntax-3/.
+-package css // import "github.com/tdewolff/parse/css"
++package css
+ 
+ // TODO: \uFFFD replacement character for NULL bytes in strings for example, or atleast don't end the string early
+ 

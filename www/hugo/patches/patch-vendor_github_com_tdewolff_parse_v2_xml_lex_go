@@ -1,0 +1,12 @@
+$OpenBSD: patch-vendor_github_com_tdewolff_parse_v2_xml_lex_go,v 1.1 2019/09/12 19:02:59 jsing Exp $
+
+Index: vendor/github.com/tdewolff/parse/v2/xml/lex.go
+--- vendor/github.com/tdewolff/parse/v2/xml/lex.go.orig
++++ vendor/github.com/tdewolff/parse/v2/xml/lex.go
+@@ -1,5 +1,5 @@
+ // Package xml is an XML1.0 lexer following the specifications at http://www.w3.org/TR/xml/.
+-package xml // import "github.com/tdewolff/parse/xml"
++package xml
+ 
+ import (
+ 	"io"

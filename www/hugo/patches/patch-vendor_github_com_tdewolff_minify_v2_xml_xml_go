@@ -1,0 +1,12 @@
+$OpenBSD: patch-vendor_github_com_tdewolff_minify_v2_xml_xml_go,v 1.1 2019/09/12 19:02:59 jsing Exp $
+
+Index: vendor/github.com/tdewolff/minify/v2/xml/xml.go
+--- vendor/github.com/tdewolff/minify/v2/xml/xml.go.orig
++++ vendor/github.com/tdewolff/minify/v2/xml/xml.go
+@@ -1,5 +1,5 @@
+ // Package xml minifies XML1.0 following the specifications at http://www.w3.org/TR/xml/.
+-package xml // import "github.com/tdewolff/minify/xml"
++package xml
+ 
+ import (
+ 	"io"

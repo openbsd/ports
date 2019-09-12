@@ -1,0 +1,12 @@
+$OpenBSD: patch-vendor_github_com_tdewolff_minify_v2_minify_go,v 1.1 2019/09/12 19:02:59 jsing Exp $
+
+Index: vendor/github.com/tdewolff/minify/v2/minify.go
+--- vendor/github.com/tdewolff/minify/v2/minify.go.orig
++++ vendor/github.com/tdewolff/minify/v2/minify.go
+@@ -1,5 +1,5 @@
+ // Package minify relates MIME type to minifiers. Several minifiers are provided in the subpackages.
+-package minify // import "github.com/tdewolff/minify"
++package minify
+ 
+ import (
+ 	"errors"

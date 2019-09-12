@@ -1,0 +1,11 @@
+$OpenBSD: patch-vendor_github_com_tdewolff_minify_v2_xml_buffer_go,v 1.1 2019/09/12 19:02:59 jsing Exp $
+
+Index: vendor/github.com/tdewolff/minify/v2/xml/buffer.go
+--- vendor/github.com/tdewolff/minify/v2/xml/buffer.go.orig
++++ vendor/github.com/tdewolff/minify/v2/xml/buffer.go
+@@ -1,4 +1,4 @@
+-package xml // import "github.com/tdewolff/minify/xml"
++package xml
+ 
+ import "github.com/tdewolff/parse/v2/xml"
+ 
