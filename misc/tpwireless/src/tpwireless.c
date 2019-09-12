@@ -70,7 +70,7 @@ main(int argc, char **argv)
 	}
 
 	if (i386_iopl(3) == -1)
-		errx(1, "iopl");
+		errx(1, "iopl failed: set machdep.allowaperture=1 or run single-user");
 	outb(0x70, 0x6a);
 	before = inb(0x71);
 
