@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2019/08/06 09:38:15 pvk Exp $
+# $OpenBSD: Makefile,v 1.15 2019/09/12 19:07:56 jsing Exp $
 
 COMMENT =	open source Slack-alternative
 
@@ -6,6 +6,7 @@ V =		5.13.2
 GH_ACCOUNT =	mattermost
 GH_PROJECT =	mattermost-server
 GH_TAGNAME =	v${V}
+REVISION =	0
 
 MASTER_SITES0 =	https://releases.mattermost.com/${V}/
 
@@ -26,6 +27,7 @@ WANTLIB += c pthread
 
 MODULES =	lang/go
 MODGO_LDFLAGS =	-X github.com/mattermost/mattermost-server/model.BuildNumber=${V}
+MAKE_ENV +=	GO111MODULE=off
 NO_TEST =	Yes
 
 pre-configure:
