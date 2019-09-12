@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2019/08/29 10:40:53 solene Exp $
+# $OpenBSD: Makefile,v 1.5 2019/09/12 19:05:23 jsing Exp $
 
 COMMENT =	global, versioned, peer-to-peer filesystem
 
 V =		0.4.22
 DISTNAME =	go-ipfs-$V
+REVISION = 	0
 
 CATEGORIES =	net
 HOMEPAGE =	https://ipfs.io

@@ -1,0 +1,25 @@
+$OpenBSD: patch-vendor_golang_org_x_xerrors_format_go1_13_go,v 1.1 2019/09/12 19:05:23 jsing Exp $
+
+Index: vendor/golang.org/x/xerrors/format_go1_13.go
+--- vendor/golang.org/x/xerrors/format_go1_13.go.orig
++++ vendor/golang.org/x/xerrors/format_go1_13.go
+@@ -1,19 +1 @@
+-// Copyright 2018 The Go Authors. All rights reserved.
+-// Use of this source code is governed by a BSD-style
+-// license that can be found in the LICENSE file.
+-
+-// +build go1.13
+-
+ package xerrors
+-
+-import "errors"
+-
+-// A Formatter formats error messages.
+-type Formatter = errors.Formatter
+-
+-// A Printer formats error messages.
+-//
+-// The most common implementation of Printer is the one provided by package fmt
+-// during Printf (as of Go 1.13). Localization packages such as golang.org/x/text/message
+-// typically provide their own implementations.
+-type Printer = errors.Printer
