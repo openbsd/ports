@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2019/07/12 20:49:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2019/09/12 21:13:05 remi Exp $
 
 BROKEN-powerpc =	64-bit atomics (__sync_bool_compare_and_swap_8)
 
@@ -10,7 +10,7 @@ COMMENT-elasticsearch =	Elasticsearch plugin for rsyslog
 
 MULTI_PACKAGES =	-main -mysql -normalize -pgsql -elasticsearch
 
-V =			8.1905.0
+V =			8.1908.0
 DISTNAME =		rsyslog-$V
 PKGNAME-main =		rsyslog-$V
 PKGNAME-mysql =		rsyslog-mysql-$V
