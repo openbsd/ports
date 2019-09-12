@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.95 2019/09/03 10:50:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2019/09/12 08:14:59 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
 COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
-V =		3.0.3
+V =		3.0.4
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
 PKGNAME-text =	tshark-$V
-REVISION =	0
 
 SHARED_LIBS +=	wscodecs             1.0
 SHARED_LIBS +=	wsutil               4.0
@@ -59,9 +58,7 @@ WANTLIB-text += lz4 maxminddb nghttp2 smi snappy spandsp ssh xml2
 
 WANTLIB-main =	${cWANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-main += wireshark wiretap wscodecs wsutil
-# XXX the above are incorrectly listed as "Extra", cmake internal
-# linkages are done with .so symlinks present, so the soname is wrong
-WANTLIB-main += Qt5Core Qt5Gui Qt5Multimedia Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB-main += Qt5Core Qt5Gui Qt5Multimedia Qt5PrintSupport Qt5Widgets
 
 MASTER_SITES =		https://www.wireshark.org/download/src/all-versions/ \
 			https://www.wireshark.org/download/automated/src/
