@@ -1,11 +1,13 @@
-$OpenBSD: patch-GPL_nativeBuildProperties_gradle,v 1.1 2019/07/23 02:09:20 lteo Exp $
+$OpenBSD: patch-GPL_nativeBuildProperties_gradle,v 1.2 2019/09/12 02:10:07 lteo Exp $
 
 Adapted from https://github.com/NationalSecurityAgency/ghidra/pull/490
+
+Force use of Clang and honor CXX.
 
 Index: GPL/nativeBuildProperties.gradle
 --- GPL/nativeBuildProperties.gradle.orig
 +++ GPL/nativeBuildProperties.gradle
-@@ -75,6 +75,10 @@ model {
+@@ -75,7 +75,23 @@ model {
  			architecture 'x86_64'
  			operatingSystem 'osx'
  		}
@@ -14,5 +16,18 @@ Index: GPL/nativeBuildProperties.gradle
 +			operatingSystem 'openbsd'
 +		}
  	}	
++
++	toolChains {
++		// Force use of Clang
++		clang(Clang) {
++			eachPlatform { tools ->
++				tools.cppCompiler.executable = "${CXX}"
++				tools.linker.executable = "${CXX}"
++				println "C++ compiler is [${tools.cppCompiler.executable}]"
++				println "Linker is [${tools.linker.executable}]"
++			}
++		}
++	}
  }
  
+ /*******************************************************************************************

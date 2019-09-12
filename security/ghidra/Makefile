@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/23 02:52:58 lteo Exp $
+# $OpenBSD: Makefile,v 1.7 2019/09/12 02:10:07 lteo Exp $
 
 # bundled jython has amd64 components for OpenBSD
 ONLY_FOR_ARCHS =	amd64
@@ -7,7 +7,7 @@ COMMENT =	software reverse engineering (SRE) framework
 
 VERSION = 	9.0.4
 GHIDRA_DATE =	20190516
-REVISION =	2
+REVISION =	3
 
 GH_ACCOUNT =	NationalSecurityAgency
 GH_PROJECT =	ghidra
@@ -23,7 +23,7 @@ MAINTAINER =	Lawrence Teo <lteo@openbsd.org>
 # Apache v2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c m stdc++
+WANTLIB +=		c m ${COMPILER_LIBCXX}
 
 MASTER_SITES0 =		${HOMEPAGE}
 MASTER_SITES1 =		https://sourceforge.net/projects/yajsw/files/yajsw/yajsw-stable-${YAJSW_VER}/
@@ -55,6 +55,8 @@ DISTFILES +=		${JAR_DISTFILES:C/$/:2/}
 
 EXTRACT_ONLY =		${DISTNAME}.tar.gz
 
+COMPILER =		base-clang ports-clang
+
 MODULES =		java
 MODJAVA_VER =		11+
 
@@ -68,7 +70,7 @@ RUN_DEPENDS =		shells/bash \
 
 NO_TEST =		Yes
 
-SUBST_VARS +=		GHIDRA_DATE VERSION WRKDIR
+SUBST_VARS +=		CXX GHIDRA_DATE VERSION WRKDIR
 
 JAR_DIRS +=		Features-FileFormats
 JAR_DIRS +=		Features-Python
@@ -94,6 +96,7 @@ post-extract:
 pre-build:
 	cp ${FILESDIR}/repos.gradle ${WRKDIR}
 	${SUBST_CMD} ${WRKDIR}/repos.gradle \
+		${WRKSRC}/GPL/nativeBuildProperties.gradle \
 		${WRKSRC}/Ghidra/Framework/Help/src/main/java/help/GHelpBuilder.java
 	mkdir ${WRKDIR}/{flatRepo,gradle,home}
 .for dir in ${JAR_DIRS}
@@ -113,11 +116,13 @@ pre-build:
 	cp ${DISTDIR}/yajsw-stable-${YAJSW_VER}.zip \
 		${WRKDIR}/ghidra.bin/Ghidra/Features/GhidraServer
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle -g ${WRKDIR}/gradle \
-		--no-daemon --offline -I ${WRKDIR}/repos.gradle yajswDevUnpack
+		--no-daemon --offline --stacktrace -I ${WRKDIR}/repos.gradle \
+		yajswDevUnpack
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle -g ${WRKDIR}/gradle \
-		--no-daemon --offline -I ${WRKDIR}/repos.gradle buildGhidra
+		--no-daemon --offline --stacktrace -I ${WRKDIR}/repos.gradle \
+		buildGhidra
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/java
