@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 21:02:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/09/12 18:51:19 jsing Exp $
 
 COMMENT =	Go supplementary cryptography libraries
-DISTNAME =	go-crypto-20190226
+DISTNAME =	go-crypto-20190904
 GH_ACCOUNT =	golang
 GH_PROJECT =	crypto
-GH_COMMIT =	7f87c0fbb88b590338857bcb720678c2583d4dea
+GH_COMMIT =	9756ffdc24725223350eb3266ffb92590d28f278
 CATEGORIES =	security devel
-REVISION =	0
 
 HOMEPAGE =	https://godoc.org/golang.org/x/crypto
 
@@ -21,10 +20,14 @@ MODGO_TYPE =	lib
 
 BUILD_DEPENDS = devel/go-sys
 
+# acme/autocert now imports golang.org/x/net/idna, which creates a circular
+# import between go-crypto and go-net.
+#
+#acme/autocert
+#acme/autocert/internal/acmetest
+
 _MAIN =		golang.org/x/crypto
 _SUBPKGS =	acme \
-		acme/autocert \
-		acme/autocert/internal/acmetest \
 		argon2 \
 		bcrypt \
 		blake2b \
