@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.77 2019/07/12 21:02:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2019/09/12 20:50:54 giovanni Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
-VERSION =		4.0.7
+VERSION =		4.0.8
 DISTNAME =		SOPE-${VERSION}
 PKGNAME-main =		sope-${VERSION}
 PKGNAME-mysql =		sope-mysql-${VERSION}
@@ -33,9 +33,9 @@ MODGNUSTEP_NEEDS_GUI=	No
 
 BUILD_DEPENDS =		shells/bash
 
-WANTLIB-main = 		c crypto ssl iconv lber-2.4 ldap-2.4 lzma xml2 z \
+WANTLIB-main = 		c crypto ssl iconv lber ldap lzma xml2 z \
 			${COMPILER_LIBCXX} ${MODGNUSTEP_WANTLIB}
-WANTLIB-mysql = 	GDLAccess mysqlclient crypto ssl \
+WANTLIB-mysql = 	GDLAccess mariadb \
 			${COMPILER_LIBCXX} ${MODGNUSTEP_WANTLIB}
 WANTLIB-postgres = 	GDLAccess EOControl pq ${COMPILER_LIBCXX} \
 			${MODGNUSTEP_WANTLIB}
