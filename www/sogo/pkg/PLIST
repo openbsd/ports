@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2019/03/13 08:58:31 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.42 2019/09/12 20:52:23 giovanni Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:${VARBASE}/sogo:/bin/sh
 @rcscript ${RCDIR}/sogod
@@ -641,6 +641,8 @@ lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Hungarian.lproj/
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Hungarian.lproj/Localizable.strings
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Icelandic.lproj/
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Icelandic.lproj/Localizable.strings
+lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Indonesian.lproj/
+lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Indonesian.lproj/Localizable.strings
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/Italian.lproj/Localizable.strings
@@ -722,6 +724,8 @@ lib/GNUstep/SOGo/Appointments.SOGo/Resources/Hungarian.lproj/
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/Hungarian.lproj/Localizable.strings
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/Icelandic.lproj/
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/Icelandic.lproj/Localizable.strings
+lib/GNUstep/SOGo/Appointments.SOGo/Resources/Indonesian.lproj/
+lib/GNUstep/SOGo/Appointments.SOGo/Resources/Indonesian.lproj/Localizable.strings
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/Italian.lproj/Localizable.strings
@@ -807,6 +811,8 @@ lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Hungarian.lproj/
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Hungarian.lproj/Localizable.strings
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Icelandic.lproj/
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Icelandic.lproj/Localizable.strings
+lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Indonesian.lproj/
+lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Indonesian.lproj/Localizable.strings
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/Italian.lproj/Localizable.strings
@@ -888,6 +894,8 @@ lib/GNUstep/SOGo/Contacts.SOGo/Resources/Hungarian.lproj/
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/Hungarian.lproj/Localizable.strings
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/Icelandic.lproj/
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/Icelandic.lproj/Localizable.strings
+lib/GNUstep/SOGo/Contacts.SOGo/Resources/Indonesian.lproj/
+lib/GNUstep/SOGo/Contacts.SOGo/Resources/Indonesian.lproj/Localizable.strings
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/Italian.lproj/Localizable.strings
@@ -968,6 +976,8 @@ lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Hungarian.lproj/
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Hungarian.lproj/Localizable.strings
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Icelandic.lproj/
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Icelandic.lproj/Localizable.strings
+lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Indonesian.lproj/
+lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Indonesian.lproj/Localizable.strings
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/Italian.lproj/Localizable.strings
@@ -1050,6 +1060,8 @@ lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Hungarian.lproj/
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Hungarian.lproj/Localizable.strings
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Icelandic.lproj/
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Icelandic.lproj/Localizable.strings
+lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Indonesian.lproj/
+lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Indonesian.lproj/Localizable.strings
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/Italian.lproj/Localizable.strings
@@ -1130,6 +1142,8 @@ lib/GNUstep/SOGo/Mailer.SOGo/Resources/Hungarian.lproj/
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/Hungarian.lproj/Localizable.strings
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/Icelandic.lproj/
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/Icelandic.lproj/Localizable.strings
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Indonesian.lproj/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/Indonesian.lproj/Localizable.strings
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/Italian.lproj/Localizable.strings
@@ -1249,6 +1263,12 @@ lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailIcelandicForward.wo/SOGoMailIcela
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailIcelandicReply.wo/
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailIcelandicReply.wo/SOGoMailIcelandicReply.html
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailIcelandicReply.wo/SOGoMailIcelandicReply.wod
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailIndonesianForward.wo/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailIndonesianForward.wo/SOGoMailIndonesianForward.html
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailIndonesianForward.wo/SOGoMailIndonesianForward.wod
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailIndonesianReply.wo/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailIndonesianReply.wo/SOGoMailIndonesianReply.html
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailIndonesianReply.wo/SOGoMailIndonesianReply.wod
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailItalianForward.wo/
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailItalianForward.wo/SOGoMailItalianForward.html
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailItalianForward.wo/SOGoMailItalianForward.wod
@@ -1427,6 +1447,8 @@ lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Hungarian.lproj/
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Hungarian.lproj/Localizable.strings
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Icelandic.lproj/
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Icelandic.lproj/Localizable.strings
+lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Indonesian.lproj/
+lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Indonesian.lproj/Localizable.strings
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/Italian.lproj/Localizable.strings
@@ -1528,6 +1550,9 @@ lib/GNUstep/SOGo/MainUI.SOGo/Resources/Hungarian.lproj/Localizable.strings
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/Icelandic.lproj/
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/Icelandic.lproj/Locale
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/Icelandic.lproj/Localizable.strings
+lib/GNUstep/SOGo/MainUI.SOGo/Resources/Indonesian.lproj/
+lib/GNUstep/SOGo/MainUI.SOGo/Resources/Indonesian.lproj/Locale
+lib/GNUstep/SOGo/MainUI.SOGo/Resources/Indonesian.lproj/Localizable.strings
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/Italian.lproj/Locale
@@ -1641,6 +1666,8 @@ lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Hungarian.lproj/
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Hungarian.lproj/Localizable.strings
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Icelandic.lproj/
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Icelandic.lproj/Localizable.strings
+lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Indonesian.lproj/
+lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Indonesian.lproj/Localizable.strings
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/Italian.lproj/Localizable.strings
@@ -1721,6 +1748,8 @@ lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Hungarian.lproj/
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Hungarian.lproj/Localizable.strings
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Icelandic.lproj/
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Icelandic.lproj/Localizable.strings
+lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Indonesian.lproj/
+lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Indonesian.lproj/Localizable.strings
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Info-gnustep.plist
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Italian.lproj/
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Italian.lproj/Localizable.strings
@@ -1889,6 +1918,9 @@ lib/GNUstep/SOGo/Templates/SOGoACLHungarianRemovalAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoACLIcelandicAdditionAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoACLIcelandicModificationAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoACLIcelandicRemovalAdvisory.wox
+lib/GNUstep/SOGo/Templates/SOGoACLIndonesianAdditionAdvisory.wox
+lib/GNUstep/SOGo/Templates/SOGoACLIndonesianModificationAdvisory.wox
+lib/GNUstep/SOGo/Templates/SOGoACLIndonesianRemovalAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoACLItalianAdditionAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoACLItalianModificationAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoACLItalianRemovalAdvisory.wox
@@ -1980,6 +2012,8 @@ lib/GNUstep/SOGo/Templates/SOGoFolderHungarianAdditionAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderHungarianRemovalAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderIcelandicAdditionAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderIcelandicRemovalAdvisory.wox
+lib/GNUstep/SOGo/Templates/SOGoFolderIndonesianAdditionAdvisory.wox
+lib/GNUstep/SOGo/Templates/SOGoFolderIndonesianRemovalAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderItalianAdditionAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderItalianRemovalAdvisory.wox
 lib/GNUstep/SOGo/Templates/SOGoFolderJapaneseAdditionAdvisory.wox

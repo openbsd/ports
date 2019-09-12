@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.81 2019/07/12 20:51:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.82 2019/09/12 20:52:23 giovanni Exp $
 
 COMMENT = 	web based groupware server
 
-VERSION =	4.0.7
+VERSION =	4.0.8
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}
 
