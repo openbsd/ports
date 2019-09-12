@@ -1,4 +1,4 @@
-$OpenBSD: patch-netshot_conf,v 1.2 2019/02/08 21:33:40 remi Exp $
+$OpenBSD: patch-netshot_conf,v 1.3 2019/09/12 21:21:25 remi Exp $
 
 Index: netshot.conf
 --- netshot.conf.orig
@@ -20,16 +20,23 @@ Index: netshot.conf
  
  # REST
 -netshot.http.ssl.keystore.file = /usr/local/netshot/netshot.jks
-+netshot.http.ssl.keystore.file = ${PREFIX}/netshot/netshot.jks
++netshot.http.ssl.keystore.file = ${SYSCONFDIR}/netshot.jks
  netshot.http.ssl.keystore.pass = password
  #netshot.http.baseurl = https://localhost
  netshot.http.baseurl = https://0.0.0.0
-@@ -35,7 +35,7 @@ netshot.snmptrap.community = Netsh01
- # General settings
- netshot.snapshots.auto.interval = 15
+@@ -38,12 +38,12 @@ netshot.snapshots.auto.interval = 15
+ # Allow a trap received from any IP of a device to trigger an automatic snapshot
  netshot.snapshots.auto.anyip = true
+ # After a snapshot, dump the last configuration to a file in this directory
+-#netshot.snapshots.dump = /usr/local/netshot/dumps
++#netshot.snapshots.dump = ${VARBASE}/netshot/dumps
+ # Where to store the binary snapshot files
+-netshot.snapshots.binary.path = /var/local/netshot
++netshot.snapshots.binary.path = ${VARBASE}/netshot
+ 
+ # Where to look for additional drivers
 -netshot.drivers.path = /usr/local/netshot/drivers
 +netshot.drivers.path = ${PREFIX}/netshot/drivers
  
+ 
  # Authentication
- netshot.aaa.maxidletime = 1800

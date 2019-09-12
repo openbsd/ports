@@ -1,0 +1,46 @@
+$OpenBSD: README,v 1.1 2019/09/12 21:21:25 remi Exp $
+
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Netshot requires a database which might be on the same server as Netshot
+or remote. It supports PostgreSQL and MySQL/MariaDB. Below example uses
+MariaDB on the same host.
+
+- Install the package mariadb-server.
+  See ${LOCALBASE}/share/doc/pkg-readmes/mariadb-server for the first
+  steps after the installation.
+
+- Create a database and a database user (change the password!):
+  $ mysql -u root
+  > CREATE DATABASE netshot01 CHARACTER SET utf8
+    DEFAULT COLLATE utf8_general_ci;
+  > GRANT ALL PRIVILEGES ON netshot01.*
+    TO 'netshot'@'localhost' IDENTIFIED BY 'password';
+  > quit
+
+- Check the database connection config in ${SYSCONFDIR}/netshot.conf.
+  Should netshot not start but log "The server time zone value 'CEST' is
+  unreconized or represents more than one time zone" the connect string
+  might be modified to look like this:
+  netshot.db.url = jdbc:mysql://localhost/netshot01?serverTimezone=UTC
+
+- Create a TLS certificate in a Java keystore:
+  # ${LOCALBASE}/jdk-1.8.0/bin/keytool -genkey -keyalg RSA -alias selfsigned \
+    -keystore ${SYSCONFDIR}/netshot.jks -storepass password -validity 3600 \
+    -keysize 4096
+  # chmod 640 ${SYSCONFDIR}/netshot.jks
+  # chgrp _netshot ${SYSCONFDIR}/netshot.jks
+
+- Enable and start Netshot to create the database tables.
+  # rcctl enable netshot; rcctl start netshot
+
+- Add an initial application user to the database:
+  $ mysql -u root
+  > USE netshot01;
+  > INSERT INTO user (level, local, username, hashed_password)
+    VALUES (1000, 1, 'netshot', '7htrot2BNjUV/g57h/HJ/C1N0Fqrj+QQ');
+
+- Access Netshot with a browser on https://localhost:8443.
+  (username 'netshot' with password 'netshot')

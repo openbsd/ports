@@ -1,23 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/28 11:25:53 remi Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/09/12 21:21:25 remi Exp $
 @newgroup _netshot:817
 @newuser _netshot:817:_netshot:daemon:Netshot Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/netshot
 netshot/
-@sample netshot/drivers/
+netshot/drivers/
 netshot/netshot.jar
 share/doc/netshot/
 share/doc/netshot/COPYING
-share/doc/netshot/INSTALL.Debian-Ubuntu-Mint.txt
-share/doc/netshot/INSTALL.Redhat-CentOS.txt
 share/doc/netshot/LICENSE.txt
 share/doc/netshot/README.txt
 share/doc/netshot/UPDATE.txt
 share/doc/netshot/VERSION.txt
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/netshot/
 share/examples/netshot/netshot.conf
 @mode 0640
 @group _netshot
 @sample ${SYSCONFDIR}/netshot.conf
+@extra ${SYSCONFDIR}/netshot.jks
 @mode 0750
 @owner _netshot
 @sample ${VARBASE}/log/netshot/
+@sample ${VARBASE}/netshot/
+@sample ${VARBASE}/netshot/dumps/
+@extraunexec rm -rf netshot/drivers/*
+@extraunexec rm -rf ${VARBASE}/netshot/dumps/*
+@extraunexec rm -rf ${VARBASE}/netshot/!(dumps)

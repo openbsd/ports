@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 21:15:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2019/09/12 21:21:25 remi Exp $
 
 COMMENT =		config backup and policy check for network devices
 
-V =			0.11.0
-REVISION =		1
+V =			0.14.0
 DISTNAME =		netshot_${V}
 PKGNAME =		${DISTNAME:S/_/-/}
 WRKDIST =		${WRKDIR}
@@ -22,7 +21,8 @@ MASTER_SITES =		https://github.com/netfishers-onl/Netshot/releases/download/v${V
 EXTRACT_SUFX =		.zip
 
 MODULES =		java
-MODJAVA_VER =		1.8+
+# when changing MODJAVA_VER: adpat jdk path in README
+MODJAVA_VER =		1.8
 
 RUN_DEPENDS =		java/javaPathHelper
 
