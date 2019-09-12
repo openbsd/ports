@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.55 2019/05/25 16:09:26 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.56 2019/09/12 19:51:43 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -59,6 +59,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLINFO_REDIRECT_URL.3
 @man man/man3/CURLINFO_REQUEST_SIZE.3
 @man man/man3/CURLINFO_RESPONSE_CODE.3
+@man man/man3/CURLINFO_RETRY_AFTER.3
 @man man/man3/CURLINFO_RTSP_CLIENT_CSEQ.3
 @man man/man3/CURLINFO_RTSP_CSEQ_RECV.3
 @man man/man3/CURLINFO_RTSP_SERVER_CSEQ.3
@@ -285,6 +286,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_RTSP_SESSION_ID.3
 @man man/man3/CURLOPT_RTSP_STREAM_URI.3
 @man man/man3/CURLOPT_RTSP_TRANSPORT.3
+@man man/man3/CURLOPT_SASL_AUTHZID.3
 @man man/man3/CURLOPT_SASL_IR.3
 @man man/man3/CURLOPT_SEEKDATA.3
 @man man/man3/CURLOPT_SEEKFUNCTION.3
@@ -409,6 +411,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/curl_multi_info_read.3
 @man man/man3/curl_multi_init.3
 @man man/man3/curl_multi_perform.3
+@man man/man3/curl_multi_poll.3
 @man man/man3/curl_multi_remove_handle.3
 @man man/man3/curl_multi_setopt.3
 @man man/man3/curl_multi_socket.3
