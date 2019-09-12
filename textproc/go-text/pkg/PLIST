@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/03/16 13:39:34 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/09/12 18:50:31 jsing Exp $
 @bin bin/colcmp
 go-pkg/
 go-pkg/pkg/
@@ -103,6 +103,8 @@ ${MODGO_SOURCES}/golang.org/x/text/cases/map.go
 ${MODGO_SOURCES}/golang.org/x/text/cases/map_test.go
 ${MODGO_SOURCES}/golang.org/x/text/cases/tables10.0.0.go
 ${MODGO_SOURCES}/golang.org/x/text/cases/tables10.0.0_test.go
+${MODGO_SOURCES}/golang.org/x/text/cases/tables11.0.0.go
+${MODGO_SOURCES}/golang.org/x/text/cases/tables11.0.0_test.go
 ${MODGO_SOURCES}/golang.org/x/text/cases/tables9.0.0.go
 ${MODGO_SOURCES}/golang.org/x/text/cases/tables9.0.0_test.go
 ${MODGO_SOURCES}/golang.org/x/text/cases/trieval.go
@@ -343,6 +345,7 @@ ${MODGO_SOURCES}/golang.org/x/text/internal/export/
 ${MODGO_SOURCES}/golang.org/x/text/internal/export/README
 ${MODGO_SOURCES}/golang.org/x/text/internal/export/idna/
 ${MODGO_SOURCES}/golang.org/x/text/internal/export/idna/common_test.go
+${MODGO_SOURCES}/golang.org/x/text/internal/export/idna/conformance_test.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/export/idna/example_test.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/export/idna/gen.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/export/idna/gen10.0.0_test.go
@@ -357,12 +360,14 @@ ${MODGO_SOURCES}/golang.org/x/text/internal/export/idna/idna_test.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/export/idna/punycode.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/export/idna/punycode_test.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/export/idna/tables10.0.0.go
+${MODGO_SOURCES}/golang.org/x/text/internal/export/idna/tables11.0.0.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/export/idna/tables9.0.0.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/export/idna/trie.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/export/idna/trieval.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/export/unicode/
 ${MODGO_SOURCES}/golang.org/x/text/internal/export/unicode/doc.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/export/unicode/gen.go
+${MODGO_SOURCES}/golang.org/x/text/internal/export/unicode/unicode_test.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/format/
 ${MODGO_SOURCES}/golang.org/x/text/internal/format/format.go
 ${MODGO_SOURCES}/golang.org/x/text/internal/format/parser.go
@@ -578,6 +583,7 @@ ${MODGO_SOURCES}/golang.org/x/text/secure/precis/profile.go
 ${MODGO_SOURCES}/golang.org/x/text/secure/precis/profile_test.go
 ${MODGO_SOURCES}/golang.org/x/text/secure/precis/profiles.go
 ${MODGO_SOURCES}/golang.org/x/text/secure/precis/tables10.0.0.go
+${MODGO_SOURCES}/golang.org/x/text/secure/precis/tables11.0.0.go
 ${MODGO_SOURCES}/golang.org/x/text/secure/precis/tables9.0.0.go
 ${MODGO_SOURCES}/golang.org/x/text/secure/precis/tables_test.go
 ${MODGO_SOURCES}/golang.org/x/text/secure/precis/transformer.go
@@ -598,6 +604,7 @@ ${MODGO_SOURCES}/golang.org/x/text/unicode/bidi/gen_trieval.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/bidi/prop.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/bidi/ranges_test.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/bidi/tables10.0.0.go
+${MODGO_SOURCES}/golang.org/x/text/unicode/bidi/tables11.0.0.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/bidi/tables9.0.0.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/bidi/tables_test.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/bidi/trieval.go
@@ -621,6 +628,7 @@ ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/
 ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/composition.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/composition_test.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/data10.0.0_test.go
+${MODGO_SOURCES}/golang.org/x/text/unicode/norm/data11.0.0_test.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/data9.0.0_test.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/example_iter_test.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/example_test.go
@@ -635,6 +643,7 @@ ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/normalize_test.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/readwriter.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/readwriter_test.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/tables10.0.0.go
+${MODGO_SOURCES}/golang.org/x/text/unicode/norm/tables11.0.0.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/tables9.0.0.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/transform.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/norm/transform_test.go
@@ -648,6 +657,7 @@ ${MODGO_SOURCES}/golang.org/x/text/unicode/rangetable/merge_test.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/rangetable/rangetable.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/rangetable/rangetable_test.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/rangetable/tables10.0.0.go
+${MODGO_SOURCES}/golang.org/x/text/unicode/rangetable/tables11.0.0.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/rangetable/tables9.0.0.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/runenames/
 ${MODGO_SOURCES}/golang.org/x/text/unicode/runenames/example_test.go
@@ -655,6 +665,7 @@ ${MODGO_SOURCES}/golang.org/x/text/unicode/runenames/gen.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/runenames/runenames.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/runenames/runenames_test.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/runenames/tables10.0.0.go
+${MODGO_SOURCES}/golang.org/x/text/unicode/runenames/tables11.0.0.go
 ${MODGO_SOURCES}/golang.org/x/text/unicode/runenames/tables9.0.0.go
 ${MODGO_SOURCES}/golang.org/x/text/width/
 ${MODGO_SOURCES}/golang.org/x/text/width/common_test.go
@@ -665,6 +676,7 @@ ${MODGO_SOURCES}/golang.org/x/text/width/gen_trieval.go
 ${MODGO_SOURCES}/golang.org/x/text/width/kind_string.go
 ${MODGO_SOURCES}/golang.org/x/text/width/runes_test.go
 ${MODGO_SOURCES}/golang.org/x/text/width/tables10.0.0.go
+${MODGO_SOURCES}/golang.org/x/text/width/tables11.0.0.go
 ${MODGO_SOURCES}/golang.org/x/text/width/tables9.0.0.go
 ${MODGO_SOURCES}/golang.org/x/text/width/tables_test.go
 ${MODGO_SOURCES}/golang.org/x/text/width/transform.go
