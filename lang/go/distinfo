@@ -1,4 +1,4 @@
 SHA256 (go-openbsd-arm-bootstrap-1.12.1.tar.gz) = kSI4RLbQBfSCcAqAa07uBYPH/SBKOuNjWovSuzL2LeU=
-SHA256 (go1.12.8.src.tar.gz) = Ea0uLjH/Y/z4or3/vpv6LhhFZTNY2u1ZPIwtA0U8mJg=
+SHA256 (go1.13.src.tar.gz) = P8C4thAdQu/X2h2jApwKE/IgecDDfvlzAgnY7GZb8SI=
 SIZE (go-openbsd-arm-bootstrap-1.12.1.tar.gz) = 119075008
-SIZE (go1.12.8.src.tar.gz) = 21978756
+SIZE (go1.13.src.tar.gz) = 21621948

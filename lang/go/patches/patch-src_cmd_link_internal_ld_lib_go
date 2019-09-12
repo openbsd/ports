@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_cmd_link_internal_ld_lib_go,v 1.11 2019/09/12 18:48:30 jsing Exp $
+
+Work around currently broken --print-libgcc-file-name behaviour in clang 8.x.
+
+Index: src/cmd/link/internal/ld/lib.go
+--- src/cmd/link/internal/ld/lib.go.orig
++++ src/cmd/link/internal/ld/lib.go
+@@ -562,8 +562,9 @@ func (ctxt *Link) loadlib() {
+ 			if *flagLibGCC == "" {
+ 				*flagLibGCC = ctxt.findLibPathCmd("--print-libgcc-file-name", "libgcc")
+ 			}
+-			if runtime.GOOS == "openbsd" && *flagLibGCC == "libgcc.a" {
+-				// On OpenBSD `clang --print-libgcc-file-name` returns "libgcc.a".
++			if runtime.GOOS == "openbsd" && *flagLibGCC == "libgcc.a" || strings.Contains(*flagLibGCC, "libclang_rt.builtins") {
++				// On OpenBSD `clang --print-libgcc-file-name` previously returned "libgcc.a"
++				// and now returns a path to a non-existent "libclang_rt.builtins-x86_64.a".
+ 				// In this case we fail to load libgcc.a and can encounter link
+ 				// errors - see if we can find libcompiler_rt.a instead.
+ 				*flagLibGCC = ctxt.findLibPathCmd("--print-file-name=libcompiler_rt.a", "libcompiler_rt")
