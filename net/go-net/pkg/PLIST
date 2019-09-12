@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/03/16 13:41:01 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/09/12 18:52:16 jsing Exp $
 @conflict go-websocket-*
 @pkgpath net/go-websocket
 go-pkg/
@@ -29,7 +29,6 @@ ${MODGO_PACKAGES}/golang.org/x/net/icmp.a
 ${MODGO_PACKAGES}/golang.org/x/net/idna.a
 ${MODGO_PACKAGES}/golang.org/x/net/internal/
 ${MODGO_PACKAGES}/golang.org/x/net/internal/iana.a
-${MODGO_PACKAGES}/golang.org/x/net/internal/nettest.a
 ${MODGO_PACKAGES}/golang.org/x/net/internal/socket.a
 ${MODGO_PACKAGES}/golang.org/x/net/internal/socks.a
 ${MODGO_PACKAGES}/golang.org/x/net/internal/sockstest.a
@@ -99,6 +98,8 @@ ${MODGO_SOURCES}/golang.org/x/net/dns/dnsmessage/
 ${MODGO_SOURCES}/golang.org/x/net/dns/dnsmessage/example_test.go
 ${MODGO_SOURCES}/golang.org/x/net/dns/dnsmessage/message.go
 ${MODGO_SOURCES}/golang.org/x/net/dns/dnsmessage/message_test.go
+${MODGO_SOURCES}/golang.org/x/net/go.mod
+${MODGO_SOURCES}/golang.org/x/net/go.sum
 ${MODGO_SOURCES}/golang.org/x/net/html/
 ${MODGO_SOURCES}/golang.org/x/net/html/atom/
 ${MODGO_SOURCES}/golang.org/x/net/html/atom/atom.go
@@ -139,6 +140,8 @@ ${MODGO_SOURCES}/golang.org/x/net/html/render.go
 ${MODGO_SOURCES}/golang.org/x/net/html/render_test.go
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/go/
+${MODGO_SOURCES}/golang.org/x/net/html/testdata/go/issue_30600_parse_panics_in_cell_mode.dat
+${MODGO_SOURCES}/golang.org/x/net/html/testdata/go/issue_30961_error_nested_unknown_tag_types.dat
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/go/select.dat
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/go/template.dat
 ${MODGO_SOURCES}/golang.org/x/net/html/testdata/go1.html
@@ -232,6 +235,8 @@ ${MODGO_SOURCES}/golang.org/x/net/http2/h2demo/Dockerfile
 ${MODGO_SOURCES}/golang.org/x/net/http2/h2demo/Makefile
 ${MODGO_SOURCES}/golang.org/x/net/http2/h2demo/README
 ${MODGO_SOURCES}/golang.org/x/net/http2/h2demo/deployment-prod.yaml
+${MODGO_SOURCES}/golang.org/x/net/http2/h2demo/go.mod
+${MODGO_SOURCES}/golang.org/x/net/http2/h2demo/go.sum
 ${MODGO_SOURCES}/golang.org/x/net/http2/h2demo/h2demo.go
 ${MODGO_SOURCES}/golang.org/x/net/http2/h2demo/rootCA.key
 ${MODGO_SOURCES}/golang.org/x/net/http2/h2demo/rootCA.pem
@@ -299,27 +304,20 @@ ${MODGO_SOURCES}/golang.org/x/net/icmp/sys_freebsd.go
 ${MODGO_SOURCES}/golang.org/x/net/icmp/timeexceeded.go
 ${MODGO_SOURCES}/golang.org/x/net/idna/
 ${MODGO_SOURCES}/golang.org/x/net/idna/example_test.go
-${MODGO_SOURCES}/golang.org/x/net/idna/idna.go
+${MODGO_SOURCES}/golang.org/x/net/idna/idna10.0.0.go
+${MODGO_SOURCES}/golang.org/x/net/idna/idna9.0.0.go
 ${MODGO_SOURCES}/golang.org/x/net/idna/idna_test.go
 ${MODGO_SOURCES}/golang.org/x/net/idna/punycode.go
 ${MODGO_SOURCES}/golang.org/x/net/idna/punycode_test.go
-${MODGO_SOURCES}/golang.org/x/net/idna/tables.go
+${MODGO_SOURCES}/golang.org/x/net/idna/tables10.0.0.go
+${MODGO_SOURCES}/golang.org/x/net/idna/tables11.0.0.go
+${MODGO_SOURCES}/golang.org/x/net/idna/tables9.0.0.go
 ${MODGO_SOURCES}/golang.org/x/net/idna/trie.go
 ${MODGO_SOURCES}/golang.org/x/net/idna/trieval.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/
 ${MODGO_SOURCES}/golang.org/x/net/internal/iana/
 ${MODGO_SOURCES}/golang.org/x/net/internal/iana/const.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/iana/gen.go
-${MODGO_SOURCES}/golang.org/x/net/internal/nettest/
-${MODGO_SOURCES}/golang.org/x/net/internal/nettest/helper_bsd.go
-${MODGO_SOURCES}/golang.org/x/net/internal/nettest/helper_nobsd.go
-${MODGO_SOURCES}/golang.org/x/net/internal/nettest/helper_posix.go
-${MODGO_SOURCES}/golang.org/x/net/internal/nettest/helper_stub.go
-${MODGO_SOURCES}/golang.org/x/net/internal/nettest/helper_unix.go
-${MODGO_SOURCES}/golang.org/x/net/internal/nettest/helper_windows.go
-${MODGO_SOURCES}/golang.org/x/net/internal/nettest/interface.go
-${MODGO_SOURCES}/golang.org/x/net/internal/nettest/rlimit.go
-${MODGO_SOURCES}/golang.org/x/net/internal/nettest/stack.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/cmsghdr.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/cmsghdr_bsd.go
@@ -327,6 +325,7 @@ ${MODGO_SOURCES}/golang.org/x/net/internal/socket/cmsghdr_linux_32bit.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/cmsghdr_linux_64bit.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/cmsghdr_solaris_64bit.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/cmsghdr_stub.go
+${MODGO_SOURCES}/golang.org/x/net/internal/socket/defs_aix.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/defs_darwin.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/defs_dragonfly.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/defs_freebsd.go
@@ -356,18 +355,16 @@ ${MODGO_SOURCES}/golang.org/x/net/internal/socket/rawconn_mmsg.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/rawconn_msg.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/rawconn_nommsg.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/rawconn_nomsg.go
-${MODGO_SOURCES}/golang.org/x/net/internal/socket/rawconn_stub.go
-${MODGO_SOURCES}/golang.org/x/net/internal/socket/reflect.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/socket.go
-${MODGO_SOURCES}/golang.org/x/net/internal/socket/socket_go1_9_test.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/socket_test.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_bsd.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_bsdvar.go
+${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_const_unix.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_darwin.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_dragonfly.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_go1_11_darwin.go
-${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_go1_12_darwin.go
+${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_linkname.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_linux.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_linux_386.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_linux_386.s
@@ -380,6 +377,7 @@ ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_linux_mips64le.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_linux_mipsle.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_linux_ppc64.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_linux_ppc64le.go
+${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_linux_riscv64.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_linux_s390x.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_linux_s390x.s
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_netbsd.go
@@ -389,6 +387,7 @@ ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_solaris_amd64.s
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_stub.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_unix.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/sys_windows.go
+${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_aix_ppc64.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_darwin_386.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_darwin_amd64.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_darwin_arm.go
@@ -397,6 +396,7 @@ ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_dragonfly_amd64.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_freebsd_386.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_freebsd_amd64.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_freebsd_arm.go
+${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_freebsd_arm64.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_linux_386.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_linux_amd64.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_linux_arm.go
@@ -407,13 +407,16 @@ ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_linux_mips64le.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_linux_mipsle.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_linux_ppc64.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_linux_ppc64le.go
+${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_linux_riscv64.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_linux_s390x.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_netbsd_386.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_netbsd_amd64.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_netbsd_arm.go
+${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_netbsd_arm64.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_openbsd_386.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_openbsd_amd64.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_openbsd_arm.go
+${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_openbsd_arm64.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socket/zsys_solaris_amd64.go
 ${MODGO_SOURCES}/golang.org/x/net/internal/socks/
 ${MODGO_SOURCES}/golang.org/x/net/internal/socks/client.go
@@ -435,6 +438,7 @@ ${MODGO_SOURCES}/golang.org/x/net/ipv4/control_stub.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/control_test.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/control_unix.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/control_windows.go
+${MODGO_SOURCES}/golang.org/x/net/ipv4/defs_aix.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/defs_darwin.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/defs_dragonfly.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/defs_freebsd.go
@@ -451,6 +455,8 @@ ${MODGO_SOURCES}/golang.org/x/net/ipv4/genericopt.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/header.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/header_test.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/helper.go
+${MODGO_SOURCES}/golang.org/x/net/ipv4/helper_posix_test.go
+${MODGO_SOURCES}/golang.org/x/net/ipv4/helper_stub_test.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/iana.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/icmp.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/icmp_linux.go
@@ -460,19 +466,14 @@ ${MODGO_SOURCES}/golang.org/x/net/ipv4/multicast_test.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/multicastlistener_test.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/multicastsockopt_test.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/packet.go
-${MODGO_SOURCES}/golang.org/x/net/ipv4/packet_go1_8.go
-${MODGO_SOURCES}/golang.org/x/net/ipv4/packet_go1_9.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/payload.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/payload_cmsg.go
-${MODGO_SOURCES}/golang.org/x/net/ipv4/payload_cmsg_go1_8.go
-${MODGO_SOURCES}/golang.org/x/net/ipv4/payload_cmsg_go1_9.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/payload_nocmsg.go
-${MODGO_SOURCES}/golang.org/x/net/ipv4/readwrite_go1_8_test.go
-${MODGO_SOURCES}/golang.org/x/net/ipv4/readwrite_go1_9_test.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/readwrite_test.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/sockopt.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/sockopt_posix.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/sockopt_stub.go
+${MODGO_SOURCES}/golang.org/x/net/ipv4/sys_aix.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/sys_asmreq.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/sys_asmreq_stub.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/sys_asmreqn.go
@@ -491,6 +492,7 @@ ${MODGO_SOURCES}/golang.org/x/net/ipv4/sys_stub.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/sys_windows.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/unicast_test.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/unicastsockopt_test.go
+${MODGO_SOURCES}/golang.org/x/net/ipv4/zsys_aix_ppc64.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/zsys_darwin.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/zsys_dragonfly.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/zsys_freebsd_386.go
@@ -507,6 +509,7 @@ ${MODGO_SOURCES}/golang.org/x/net/ipv4/zsys_linux_mipsle.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/zsys_linux_ppc.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/zsys_linux_ppc64.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/zsys_linux_ppc64le.go
+${MODGO_SOURCES}/golang.org/x/net/ipv4/zsys_linux_riscv64.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/zsys_linux_s390x.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/zsys_netbsd.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv4/zsys_openbsd.go
@@ -521,6 +524,7 @@ ${MODGO_SOURCES}/golang.org/x/net/ipv6/control_stub.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/control_test.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/control_unix.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/control_windows.go
+${MODGO_SOURCES}/golang.org/x/net/ipv6/defs_aix.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/defs_darwin.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/defs_dragonfly.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/defs_freebsd.go
@@ -537,6 +541,10 @@ ${MODGO_SOURCES}/golang.org/x/net/ipv6/genericopt.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/header.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/header_test.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/helper.go
+${MODGO_SOURCES}/golang.org/x/net/ipv6/helper_posix_test.go
+${MODGO_SOURCES}/golang.org/x/net/ipv6/helper_stub_test.go
+${MODGO_SOURCES}/golang.org/x/net/ipv6/helper_unix_test.go
+${MODGO_SOURCES}/golang.org/x/net/ipv6/helper_windows_test.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/iana.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/icmp.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/icmp_bsd.go
@@ -551,16 +559,13 @@ ${MODGO_SOURCES}/golang.org/x/net/ipv6/multicastlistener_test.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/multicastsockopt_test.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/payload.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/payload_cmsg.go
-${MODGO_SOURCES}/golang.org/x/net/ipv6/payload_cmsg_go1_8.go
-${MODGO_SOURCES}/golang.org/x/net/ipv6/payload_cmsg_go1_9.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/payload_nocmsg.go
-${MODGO_SOURCES}/golang.org/x/net/ipv6/readwrite_go1_8_test.go
-${MODGO_SOURCES}/golang.org/x/net/ipv6/readwrite_go1_9_test.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/readwrite_test.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/sockopt.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/sockopt_posix.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/sockopt_stub.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/sockopt_test.go
+${MODGO_SOURCES}/golang.org/x/net/ipv6/sys_aix.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/sys_asmreq.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/sys_asmreq_stub.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/sys_bpf.go
@@ -576,6 +581,7 @@ ${MODGO_SOURCES}/golang.org/x/net/ipv6/sys_stub.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/sys_windows.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/unicast_test.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/unicastsockopt_test.go
+${MODGO_SOURCES}/golang.org/x/net/ipv6/zsys_aix_ppc64.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/zsys_darwin.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/zsys_dragonfly.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/zsys_freebsd_386.go
@@ -592,6 +598,7 @@ ${MODGO_SOURCES}/golang.org/x/net/ipv6/zsys_linux_mipsle.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/zsys_linux_ppc.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/zsys_linux_ppc64.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/zsys_linux_ppc64le.go
+${MODGO_SOURCES}/golang.org/x/net/ipv6/zsys_linux_riscv64.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/zsys_linux_s390x.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/zsys_netbsd.go
 ${MODGO_SOURCES}/golang.org/x/net/ipv6/zsys_openbsd.go
@@ -610,13 +617,20 @@ ${MODGO_SOURCES}/golang.org/x/net/lif/syscall.go
 ${MODGO_SOURCES}/golang.org/x/net/lif/zsys_solaris_amd64.go
 ${MODGO_SOURCES}/golang.org/x/net/nettest/
 ${MODGO_SOURCES}/golang.org/x/net/nettest/conntest.go
-${MODGO_SOURCES}/golang.org/x/net/nettest/conntest_go16.go
-${MODGO_SOURCES}/golang.org/x/net/nettest/conntest_go17.go
 ${MODGO_SOURCES}/golang.org/x/net/nettest/conntest_test.go
+${MODGO_SOURCES}/golang.org/x/net/nettest/nettest.go
+${MODGO_SOURCES}/golang.org/x/net/nettest/nettest_stub.go
+${MODGO_SOURCES}/golang.org/x/net/nettest/nettest_unix.go
+${MODGO_SOURCES}/golang.org/x/net/nettest/nettest_windows.go
 ${MODGO_SOURCES}/golang.org/x/net/netutil/
+${MODGO_SOURCES}/golang.org/x/net/netutil/helper_stub_test.go
+${MODGO_SOURCES}/golang.org/x/net/netutil/helper_unix_test.go
+${MODGO_SOURCES}/golang.org/x/net/netutil/helper_windows_test.go
 ${MODGO_SOURCES}/golang.org/x/net/netutil/listen.go
 ${MODGO_SOURCES}/golang.org/x/net/netutil/listen_test.go
 ${MODGO_SOURCES}/golang.org/x/net/proxy/
+${MODGO_SOURCES}/golang.org/x/net/proxy/dial.go
+${MODGO_SOURCES}/golang.org/x/net/proxy/dial_test.go
 ${MODGO_SOURCES}/golang.org/x/net/proxy/direct.go
 ${MODGO_SOURCES}/golang.org/x/net/proxy/per_host.go
 ${MODGO_SOURCES}/golang.org/x/net/proxy/per_host_test.go
@@ -624,6 +638,7 @@ ${MODGO_SOURCES}/golang.org/x/net/proxy/proxy.go
 ${MODGO_SOURCES}/golang.org/x/net/proxy/proxy_test.go
 ${MODGO_SOURCES}/golang.org/x/net/proxy/socks5.go
 ${MODGO_SOURCES}/golang.org/x/net/publicsuffix/
+${MODGO_SOURCES}/golang.org/x/net/publicsuffix/example_test.go
 ${MODGO_SOURCES}/golang.org/x/net/publicsuffix/gen.go
 ${MODGO_SOURCES}/golang.org/x/net/publicsuffix/list.go
 ${MODGO_SOURCES}/golang.org/x/net/publicsuffix/list_test.go
