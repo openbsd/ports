@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2019/08/24 18:40:58 abieber Exp $
+# $OpenBSD: Makefile,v 1.22 2019/09/13 13:22:03 abieber Exp $
 
 # go-ps only supports amd64 on OpenBSD
 # ../vendor/github.com/keybase/go-ps/process.go:39: undefined: processes
@@ -12,6 +12,7 @@ V =		4.3.2
 GH_ACCOUNT =	keybase
 GH_PROJECT =	client
 GH_TAGNAME =	v${V}
+REVISION =	0
 
 DISTNAME =	keybase-${V}
 
