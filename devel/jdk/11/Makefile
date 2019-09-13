@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/23 11:55:42 kurt Exp $
+# $OpenBSD: Makefile,v 1.9 2019/09/13 16:18:33 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_WXNEEDED=	Yes
@@ -67,6 +67,7 @@ BOOT_JDK=	${WRKDIR}/bootjdk
 
 AUTOCONF_VERSION= 2.69
 BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
+		archivers/gtar \
 		archivers/zip \
 		archivers/unzip \
 		print/cups,-libs \
