@@ -1,58 +1,114 @@
-$OpenBSD: patch-job_c,v 1.1 2019/08/21 17:37:23 kurt Exp $
+$OpenBSD: patch-job_c,v 1.2 2019/09/13 16:59:34 kurt Exp $
 
-Keep SIGCHLD blocked when using pselect(2)
+Only unblock fatal signals after child invocation
+http://git.savannah.gnu.org/cgit/make.git/commit/?id=78b5fec6898c26956d00548427cda1101cb80f8a
 
 Index: job.c
 --- job.c.orig
 +++ job.c
-@@ -912,7 +912,7 @@ reap_children (int block, int err)
-                      about to put that child on the chain.  But it is
-                      already there, so it is safe for a fatal signal to
-                      arrive now; it will clean up this child's targets.  */
--                  unblock_sigs ();
-+                  reset_sigs();
-                   if (c->file->command_state == cs_running)
-                     /* We successfully started the new command.
-                        Loop to reap more children.  */
-@@ -970,7 +970,7 @@ reap_children (int block, int err)
- 
-       free_child (c);
- 
--      unblock_sigs ();
-+      reset_sigs ();
- 
-       /* If the job failed, and the -k flag was not given, die,
-          unless we are already in the process of dying.  */
-@@ -1055,7 +1055,23 @@ unblock_sigs (void)
-   sigemptyset (&empty);
-   sigprocmask (SIG_SETMASK, &empty, (sigset_t *) 0);
+@@ -461,6 +461,62 @@ is_bourne_compatible_shell (const char *path)
+   return 0;
  }
+ 
++#ifdef POSIX
++extern sigset_t fatal_signal_set;
++
++static void
++block_sigs ()
++{
++  sigprocmask (SIG_BLOCK, &fatal_signal_set, (sigset_t *) 0);
++}
++
++static void
++unblock_sigs ()
++{
++  sigprocmask (SIG_UNBLOCK, &fatal_signal_set, (sigset_t *) 0);
++}
 +
 +void
-+reset_sigs (void)
++unblock_all_sigs ()
 +{
-+#ifdef HAVE_PSELECT
-+/* If we're using pselect(2) we need to keep SIGCHLD blocked 
-+   so that we don't miss any while unblocked */
-+  sigset_t block;
-+  sigemptyset (&block);
-+  sigaddset (&block, SIGCHLD);
-+  if (sigprocmask (SIG_SETMASK, &block, NULL) < 0)
-+    pfatal_with_name ("sigprocmask(SIG_SETMASK, SIGCHLD)");
-+#else
-+  unblock_sigs ();
- #endif
++  sigset_t empty;
++  sigemptyset (&empty);
++  sigprocmask (SIG_SETMASK, &empty, (sigset_t *) 0);
 +}
++
++#elif defined(HAVE_SIGSETMASK)
++
++extern int fatal_signal_mask;
++
++static void
++block_sigs ()
++{
++  sigblock (fatal_signal_mask);
++}
++
++static void
++unblock_sigs ()
++{
++  sigsetmask (siggetmask (0) & ~fatal_signal_mask)
++}
++
++void
++unblock_all_sigs ()
++{
++  sigsetmask (0);
++}
++
++#else
++
++#define block_sigs()
++#define unblock_sigs()
++
++void
++unblock_all_sigs ()
++{
++}
++
 +#endif
+ 
+ /* Write an error message describing the exit status given in
+    EXIT_CODE, EXIT_SIG, and COREDUMP, for the target TARGET_NAME.
+@@ -1031,33 +1087,7 @@ free_child (struct child *child)
+   free (child);
+ }
+ 
+-#ifdef POSIX
+-extern sigset_t fatal_signal_set;
+-#endif
  
- 
+-void
+-block_sigs (void)
+-{
+-#ifdef POSIX
+-  (void) sigprocmask (SIG_BLOCK, &fatal_signal_set, (sigset_t *) 0);
+-#else
+-# ifdef HAVE_SIGSETMASK
+-  (void) sigblock (fatal_signal_mask);
+-# endif
+-#endif
+-}
+-
+-#ifdef POSIX
+-void
+-unblock_sigs (void)
+-{
+-  sigset_t empty;
+-  sigemptyset (&empty);
+-  sigprocmask (SIG_SETMASK, &empty, (sigset_t *) 0);
+-}
+-#endif
+-
+-
  /* Start a job to run the commands specified in CHILD.
-@@ -1584,7 +1600,7 @@ start_waiting_job (struct child *c)
-       children = c;
-       /* One more job slot is in use.  */
-       ++job_slots_used;
--      unblock_sigs ();
-+      reset_sigs ();
-       break;
+    CHILD is updated to reflect the commands and ID of the child process.
  
-     case cs_not_started:
+@@ -2138,7 +2168,7 @@ child_execute_job (struct output *out, int good_stdin,
+     return pid;
+ 
+   /* We are the child.  */
+-  unblock_sigs ();
++  unblock_all_sigs ();
+ 
+ #ifdef SET_STACK_SIZE
+   /* Reset limits, if necessary.  */

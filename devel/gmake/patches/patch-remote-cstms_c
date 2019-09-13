@@ -1,0 +1,17 @@
+$OpenBSD: patch-remote-cstms_c,v 1.1 2019/09/13 16:59:34 kurt Exp $
+
+Only unblock fatal signals after child invocation
+http://git.savannah.gnu.org/cgit/make.git/commit/?id=78b5fec6898c26956d00548427cda1101cb80f8a
+
+Index: remote-cstms.c
+--- remote-cstms.c.orig
++++ remote-cstms.c
+@@ -246,7 +246,7 @@ start_remote_job (char **argv, char **envp, int stdin_
+         (void) dup2 (stdin_fd, 0);
+ 
+       /* Unblock signals in the child.  */
+-      unblock_sigs ();
++      unblock_all_sigs ();
+ 
+       /* Run the command.  */
+       exec_command (new_argv, envp);

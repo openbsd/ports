@@ -1,0 +1,23 @@
+$OpenBSD: patch-main_c,v 1.5 2019/09/13 16:59:34 kurt Exp $
+
+Only unblock fatal signals after child invocation
+http://git.savannah.gnu.org/cgit/make.git/commit/?id=78b5fec6898c26956d00548427cda1101cb80f8a
+
+Index: main.c
+--- main.c.orig
++++ main.c
+@@ -590,12 +590,10 @@ struct output make_sync;
+ 
+ /* Mask of signals that are being caught with fatal_error_signal.  */
+ 
+-#ifdef POSIX
++#if defined(POSIX)
+ sigset_t fatal_signal_set;
+-#else
+-# ifdef HAVE_SIGSETMASK
++#elif defined(HAVE_SIGSETMASK)
+ int fatal_signal_mask;
+-# endif
+ #endif
+ 
+ #if !HAVE_DECL_BSD_SIGNAL && !defined bsd_signal
