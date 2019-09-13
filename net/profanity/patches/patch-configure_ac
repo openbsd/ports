@@ -1,0 +1,28 @@
+$OpenBSD: patch-configure_ac,v 1.4 2019/09/13 09:04:05 rsadowski Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -80,7 +80,7 @@ elif test "x$enable_python_plugins" != xno; then
+         AC_MSG_NOTICE([Symlinking Python.framework to $PYTHON_FRAMEWORK])
+         rm -f Python.framework
+         ln -s $PYTHON_FRAMEWORK Python.framework ])
+-    AC_CHECK_PROG(PYTHON_CONFIG_EXISTS, python-config, yes, no)
++    AC_CHECK_PROG(PYTHON_CONFIG_EXISTS, python${MODPY_VERSION}-config, yes, no)
+     if test "$PYTHON_CONFIG_EXISTS" == "yes"; then
+         AX_PYTHON_DEVEL
+         AM_CONDITIONAL([BUILD_PYTHON_API], [true])
+@@ -188,10 +188,10 @@ AS_IF([test "x$PLATFORM" = xosx],
+         [AC_MSG_ERROR([libreadline is required for profanity])])],
+ 
+       [test "x$PLATFORM" = xopenbsd],
+-      [AC_CHECK_FILE([/usr/local/include/ereadline],
++      [AC_CHECK_FILE([${LOCALBASE}/include/ereadline],
+           [LIBS="-lereadline $LIBS"
+-              AM_CPPFLAGS="-I/usr/local/include/ereadline $AM_CPPFLAGS"
+-              AM_LDFLAGS="-L/usr/local/lib $AM_LDFLAGS"
++              AM_CPPFLAGS="-I${LOCALBASE}/include/ereadline $AM_CPPFLAGS"
++              AM_LDFLAGS="-L${LOCALBASE}/lib $AM_LDFLAGS"
+               AC_SUBST(AM_LDFLAGS)])],
+ 
+     [AC_CHECK_LIB([readline], [main], [],

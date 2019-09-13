@@ -3,14 +3,10 @@ libstrophe, inspired by irssi.
 
 Features:
 
-* Supports XMPP chat services.
-* Command driven user interface.
-* Customizable functionality and user interface.
-* OTR (Off The Record) message encryption.
-* Chat room support.
-* Roster management.
-* Flexible resource and priority settings.
-* Desktop notifications.
-* Unicode support.
-* Integrated DuckDuckGo searching.
-* Send tiny URLs.
+* Supports XMPP chat services
+* MUC chat room support
+* OTR, PGP and OMEMO message encryption
+* Roster management
+* Flexible resource and priority settings
+* Desktop notifications
+* Plugins in Python and C
