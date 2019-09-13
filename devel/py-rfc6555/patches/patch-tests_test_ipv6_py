@@ -1,0 +1,22 @@
+$OpenBSD: patch-tests_test_ipv6_py,v 1.1 2019/09/13 12:58:08 kmos Exp $
+
+Only require mock and selectors 2 for Python 2.x
+
+Pull request: 
+https://patch-diff.githubusercontent.com/raw/sethmlarson/rfc6555/pull/3
+
+Index: tests/test_ipv6.py
+--- tests/test_ipv6.py.orig
++++ tests/test_ipv6.py
+@@ -1,6 +1,10 @@
+ import socket
+-import mock
+ import rfc6555
++
++try:
++    from unittest import mock
++except (ImportError, AttributeError):
++    import mock
+ 
+ 
+ def test_ipv6_available():
