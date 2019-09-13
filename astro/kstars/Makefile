@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2019/08/18 13:55:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.21 2019/09/13 05:47:20 rsadowski Exp $
 
 COMMENT =	planetarium simulator for KDE
 
-DISTNAME =	kstars-3.3.4
+DISTNAME =	kstars-3.3.6
 EPOCH =		0
 
 CATEGORIES =	astro education
@@ -66,7 +66,6 @@ LIB_DEPENDS +=		astro/wcslib \
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_INDI=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_AstrometryNet=ON
 
-#CONFIGURE_ARGS +=	-DFETCH_TRANSLATIONS=ON
 TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>

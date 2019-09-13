@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/08/04 15:29:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2019/09/13 05:47:20 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kstars
@@ -1736,7 +1736,6 @@ share/kstars/venus.R3.vsop
 share/kstars/venus.R4.vsop
 share/kstars/venus.R5.vsop
 share/kstars/venus.orbit
-share/kstars/windi.png
 share/kstars/wzdownload.png
 share/kstars/wzekos.png
 share/kstars/wzgeo.png
@@ -1799,7 +1798,6 @@ share/locale/ro/LC_MESSAGES/kstars.mo
 share/locale/ru/LC_MESSAGES/kstars.mo
 share/locale/se/LC_MESSAGES/kstars.mo
 share/locale/si/LC_MESSAGES/kstars.mo
-share/locale/sk/LC_MESSAGES/kstars.mo
 share/locale/sl/LC_MESSAGES/kstars.mo
 share/locale/sq/LC_MESSAGES/kstars.mo
 share/locale/sv/LC_MESSAGES/kstars.mo
