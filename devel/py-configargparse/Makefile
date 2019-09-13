@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2019/09/01 03:17:28 kmos Exp $
+# $OpenBSD: Makefile,v 1.9 2019/09/13 13:00:48 kmos Exp $
 
 COMMENT=		argparse replacement, allows options to be set via files/env
 
@@ -19,11 +19,11 @@ MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 MODPY_PYTEST=		Yes
 
-TEST_DEPENDS=		devel/py-mock${MODPY_FLAVOR} \
-			textproc/py-yaml${MODPY_FLAVOR}
+TEST_DEPENDS=		textproc/py-yaml${MODPY_FLAVOR}
 
 .if !${FLAVOR:Mpython3}
-TEST_DEPENDS+=		devel/py-unittest2
+TEST_DEPENDS+=		devel/py-mock \
+			devel/py-unittest2
 .endif
 
 .include <bsd.port.mk>
