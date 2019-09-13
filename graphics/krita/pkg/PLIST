@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2019/08/02 10:07:18 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.16 2019/09/13 16:47:29 rsadowski Exp $
 @conflict calligra-<=2.9.11
 @bin bin/krita
 lib/kritaplugins/
@@ -266,26 +266,26 @@ share/examples/krita/xdg/kritarc
 @sample ${SYSCONFDIR}/xdg/kritarc
 share/icons/hicolor/1024x1024/
 share/icons/hicolor/1024x1024/apps/
-share/icons/hicolor/1024x1024/apps/calligrakrita.png
+share/icons/hicolor/1024x1024/apps/krita.png
 share/icons/hicolor/1024x1024/mimetypes/
 share/icons/hicolor/1024x1024/mimetypes/application-x-krita.png
-share/icons/hicolor/128x128/apps/calligrakrita.png
+share/icons/hicolor/128x128/apps/krita.png
 share/icons/hicolor/128x128/mimetypes/application-x-krita.png
-share/icons/hicolor/16x16/apps/calligrakrita.png
+share/icons/hicolor/16x16/apps/krita.png
 share/icons/hicolor/16x16/mimetypes/application-x-krita.png
-share/icons/hicolor/22x22/apps/calligrakrita.png
+share/icons/hicolor/22x22/apps/krita.png
 share/icons/hicolor/22x22/mimetypes/application-x-krita.png
-share/icons/hicolor/256x256/apps/calligrakrita.png
+share/icons/hicolor/256x256/apps/krita.png
 share/icons/hicolor/256x256/mimetypes/application-x-krita.png
-share/icons/hicolor/32x32/apps/calligrakrita.png
+share/icons/hicolor/32x32/apps/krita.png
 share/icons/hicolor/32x32/mimetypes/application-x-krita.png
-share/icons/hicolor/48x48/apps/calligrakrita.png
+share/icons/hicolor/48x48/apps/krita.png
 share/icons/hicolor/48x48/mimetypes/application-x-krita.png
-share/icons/hicolor/512x512/apps/calligrakrita.png
+share/icons/hicolor/512x512/apps/krita.png
 share/icons/hicolor/512x512/mimetypes/application-x-krita.png
-share/icons/hicolor/64x64/apps/calligrakrita.png
+share/icons/hicolor/64x64/apps/krita.png
 share/icons/hicolor/64x64/mimetypes/application-x-krita.png
-share/icons/hicolor/scalable/apps/calligrakrita.svgz
+share/icons/hicolor/scalable/apps/krita.svgz
 share/krita/
 share/krita/actions/
 share/krita/actions/ConnectionTool.action
