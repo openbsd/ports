@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.805 2019/09/12 14:17:34 bket Exp $
+# $OpenBSD: Quirks.pm,v 1.806 2019/09/13 09:54:46 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1313,6 +1313,7 @@ my $obsolete_reason = {
 	'py-mastodon.py' => 14,
 	'g77' => 5,
 	'libf2c' => 5,
+	'p5-WWW-Curl' => 3,
 };
 
 # reasons for obsolete packages
