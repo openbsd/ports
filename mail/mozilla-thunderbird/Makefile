@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.294 2019/09/03 16:25:31 landry Exp $
+# $OpenBSD: Makefile,v 1.295 2019/09/13 15:05:17 landry Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 COMMENT-main =		Mozilla e-mail, rss and usenet client
@@ -6,7 +6,7 @@ COMMENT-lightning =	Mozilla Thunderbird calendar extension
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	60.8.0
+MOZILLA_VERSION =	68.1.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
@@ -14,14 +14,12 @@ EXTRACT_SUFX =		.tar.xz
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-# version = (TB+2)/10
-PKGNAME-lightning =	lightning-6.2.8.0
+PKGNAME-lightning =	lightning-${MOZILLA_VERSION}
 EPOCH-lightning =	0
-REVISION-main =	0
 
 HOMEPAGE =	http://www.mozilla.org/thunderbird/
 
-SO_VERSION =	33.0
+SO_VERSION =	34.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
@@ -47,8 +45,21 @@ MOZILLA_USE_BUNDLED_SQLITE =	Yes
 MOZILLA_USE_BUNDLED_ICU =	Yes
 # 59 is broken with system cairo and the option is being dropped
 MOZILLA_USE_BUNDLED_CAIRO = Yes
+# #1460600
+MOZILLA_USE_BUNDLED_HUNSPELL = Yes
+
 # 53 needs rust
 BUILD_DEPENDS +=	lang/rust
+# stylo build needs LLVM
+BUILD_DEPENDS +=	devel/llvm
+# 61 requires both versions of python
+BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_3}
+# 63 requires node because why not #1483595
+BUILD_DEPENDS +=	lang/node
+# 63 requires cbindgen #1478813
+BUILD_DEPENDS +=	devel/cbindgen
+# 67 requires nasm for bundled libav1d
+BUILD_DEPENDS +=	devel/nasm
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 
@@ -69,12 +80,6 @@ WANTLIB-main += ${WANTLIB} X11-xcb Xcursor Xi intl xcb xcb-shm
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar
 
-# bug 1341234
-CONFIGURE_ARGS +=	--disable-stylo
-
-# bug 857628
-CONFIGURE_ARGS +=	--enable-pie
-
 ALL_TARGET =	default
 
 GNU_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}
@@ -82,21 +87,18 @@ GNU_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}
 GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} #\
 #	lightning {e2fda1a4-762b-4020-b5ad-a41df1933103}
 
-.if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	--disable-debug-symbols		#maybe also needed
+.if ${MACHINE_ARCH} == "i386"
 DPB_PROPERTIES +=	lonesome
 .endif
 
-EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}/extensions/
+EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}/distribution/extensions/
 
 post-install:
-#.for xpi guid in ${GUIDS}
-#	cp ${WRKBUILD}/dist/xpi-stage/${xpi}*.xpi ${EXTDIR}/${guid}.xpi
-#.endfor
+.for xpi guid in ${GUIDS}
+	cp ${WRKBUILD}/dist/xpi-stage/${xpi}*.xpi ${EXTDIR}/${guid}.xpi
+.endfor
 
-	mv ${PREFIX}/lib/${MOZILLA_PROJECT}/distribution/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}.xpi \
-		${EXTDIR}
-	rmdir ${PREFIX}/lib/${MOZILLA_PROJECT}/distribution/extensions/
 	# install prefs
 	${SUBST_DATA} ${FILESDIR}/all-openbsd.js \
 		${PREFIX}/lib/${MOZILLA_PROJECT}/defaults/pref/all-openbsd.js

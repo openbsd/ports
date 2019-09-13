@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-lightning,v 1.22 2018/10/03 06:43:10 landry Exp $
+@comment $OpenBSD: PLIST-lightning,v 1.23 2019/09/13 15:05:17 landry Exp $
 @conflict lightning-<=1.0b1
 @pkgpath productivity/sunbird,-lightning
-lib/${MOZILLA_PROJECT}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}.xpi
+lib/${MOZILLA_PROJECT}/distribution/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}.xpi
+lib/${MOZILLA_PROJECT}/distribution/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}.xpi

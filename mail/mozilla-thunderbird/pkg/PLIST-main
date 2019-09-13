@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2018/10/03 06:43:10 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2019/09/13 15:05:17 landry Exp $
 @conflict mozilla-thunderbird-<=3.1.11
 @pkgpath mail/mozilla-thunderbird
 bin/${MOZILLA_PROJECT}
@@ -24,13 +24,11 @@ lib/${MOZILLA_PROJECT}/defaults/pref/
 lib/${MOZILLA_PROJECT}/defaults/pref/all-openbsd.js
 lib/${MOZILLA_PROJECT}/defaults/pref/channel-prefs.js
 lib/${MOZILLA_PROJECT}/dependentlibs.list
-lib/${MOZILLA_PROJECT}/dictionaries/
-lib/${MOZILLA_PROJECT}/dictionaries/en-US.aff
-lib/${MOZILLA_PROJECT}/dictionaries/en-US.dic
 lib/${MOZILLA_PROJECT}/distribution/
 lib/${MOZILLA_PROJECT}/distribution/distribution.ini
-lib/${MOZILLA_PROJECT}/extensions/
-lib/${MOZILLA_PROJECT}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
+lib/${MOZILLA_PROJECT}/distribution/extensions/
+lib/${MOZILLA_PROJECT}/features/
+lib/${MOZILLA_PROJECT}/features/wetransfer@extensions.${MOZILLA_PROJECT}.net.xpi
 lib/${MOZILLA_PROJECT}/gtk2/
 @lib lib/${MOZILLA_PROJECT}/gtk2/libmozgtk.so.${LIBmozgtk_VERSION}
 lib/${MOZILLA_PROJECT}/isp/
