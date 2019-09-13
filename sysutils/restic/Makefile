@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/09/13 13:05:50 abieber Exp $
 
 COMMENT =	fast, efficient and secure backup program
 
 V =		0.9.5
 DISTNAME =	restic-${V}
+REVISION =	0
 
 CATEGORIES =	sysutils
 
@@ -20,6 +21,7 @@ MASTER_SITES =	https://github.com/restic/restic/releases/download/v${V}/
 
 MODULES =	lang/go
 MODGO_TYPE =	bin
+MAKE_ENV +=	GO111MODULE=off
 
 NO_TEST =	Yes
 
