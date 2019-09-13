@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.69 2019/09/12 18:48:30 jsing Exp $
+# $OpenBSD: Makefile,v 1.70 2019/09/13 09:04:07 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 BIN_BOOTSTRAP_GOARCHS =	arm
-BIN_BOOTSTRAP_VERSION = 1.12.1
+BIN_BOOTSTRAP_VERSION = 1.13
 
 COMMENT =		Go programming language
 
