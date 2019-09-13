@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2019/08/23 08:12:38 fcambus Exp $
+# $OpenBSD: Makefile,v 1.6 2019/09/13 08:12:57 fcambus Exp $
 
 COMMENT =	library for converting ANSI, ASCII, and other formats to PNG
 
-V =		1.1.3
+V =		1.1.4
 DISTNAME =	libansilove-${V}
 
 SHARED_LIBS +=	ansilove	0.0 # 1.1
