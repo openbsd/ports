@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2017/11/10 21:08:56 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.4 2019/09/14 21:18:18 sthen Exp $
 
 Using $< in a non-suffix rule context is a GNUmake idiom (Makefile:1279)
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -1294,7 +1294,7 @@ cleanall: clean distclean
+@@ -1297,7 +1297,7 @@ cleanall: clean distclean
  	-rm -rf m4 config
  
  monit.1: doc/monit.pod
