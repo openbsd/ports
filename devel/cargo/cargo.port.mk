@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.8 2018/12/16 08:50:11 semarie Exp $
+# $OpenBSD: cargo.port.mk,v 1.9 2019/09/14 17:34:46 semarie Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -204,6 +204,10 @@ do-test:
 
 # modcargo-metadata: regenerate metadata. useful target when working on a port.
 modcargo-metadata: patch
+	@${_PMAKE} _modcargo-metadata
+
+# run as _pbuild
+_modcargo-metadata:
 	@${MODCARGO_post-patch}
 
 # modcargo-gen-crates will output crates list from Cargo.lock file.
