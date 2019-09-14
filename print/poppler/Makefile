@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2019/09/10 13:52:42 kili Exp $
+# $OpenBSD: Makefile,v 1.147 2019/09/14 20:14:26 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt5=	Qt5 interface to PDF rendering library
@@ -6,6 +6,7 @@ COMMENT-utils=	PDF conversion tools and utilities
 
 V=		0.80.0
 DISTNAME=	poppler-$V
+REVISION-main=	0
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
 PKGNAME-utils=	poppler-utils-$V
@@ -13,7 +14,7 @@ PKGNAME-qt5=	poppler-qt5-$V
 
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS +=	poppler              54.0     # 90.0
+SHARED_LIBS +=	poppler              55.0     # 90.0
 SHARED_LIBS +=	poppler-glib         19.3     # 8.14
 SHARED_LIBS +=	poppler-qt5          7.3      # 1.21
 SHARED_LIBS +=	poppler-cpp          11.0     # 0.7
@@ -42,7 +43,10 @@ MODULES=	devel/cmake
 
 MODULES+=	x11/qt5
 
-BUILD_DEPENDS+= devel/gobject-introspection
+# devel/boost only as build dependency, because poppler uses
+# header-only classes (from boost/containers/small_vector.hpp).
+BUILD_DEPENDS+= devel/boost \
+		devel/gobject-introspection
 
 RUN_DEPENDS-main= \
 		print/poppler-data>=0.4.7
