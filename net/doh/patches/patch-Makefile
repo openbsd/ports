@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2019/09/14 23:40:40 sthen Exp $
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -1,7 +1,7 @@
+ TARGET = doh
+ OBJS = doh.o
+ LDLIBS = `curl-config --libs`
+-CFLAGS = -W -Wall -pedantic -g `curl-config --cflags`
++CFLAGS = -W -Wall -pedantic -g `curl-config --cflags` ${COPTFLAGS}
+ 
+ $(TARGET): $(OBJS)
+ 
