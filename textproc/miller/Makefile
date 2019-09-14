@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2019/09/01 19:47:56 fcambus Exp $
+# $OpenBSD: Makefile,v 1.5 2019/09/14 21:41:15 fcambus Exp $
 
 COMMENT =	name-indexed data processing tool
 
-V =		5.5.0
+V =		5.6.0
 DISTNAME =	mlr-$V
 PKGNAME =	miller-$V
 
