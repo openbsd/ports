@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2018/06/14 23:38:06 bcallah Exp $
+$OpenBSD: patch-Makefile,v 1.2 2019/09/14 19:13:16 bcallah Exp $
 
 Install manual pages to the correct location.
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -61,7 +61,7 @@ install:
- 	mkdir -p $(DESTDIR)$(DATADIR)/appdata/
+@@ -63,7 +63,7 @@ install:
+ 	mkdir -p $(DESTDIR)$(DATADIR)/metainfo/
  	mkdir -p $(DESTDIR)$(DATADIR)/applications/
  	mkdir -p $(DESTDIR)$(DATADIR)/icons/
 -	mkdir -p $(DESTDIR)$(DATADIR)/man/man6/
@@ -15,11 +15,11 @@ Index: Makefile
  	install -m 644 data/jumpbump.dat \
  		$(DESTDIR)$(GAMEDATADIR)/jumpnbump/jumpbump.dat
 @@ -73,7 +73,7 @@ install:
- 		$(DESTDIR)$(DATADIR)/applications/jumpnbump-menu.desktop
+ 		$(DESTDIR)$(DATADIR)/applications/jumpnbump.desktop
  	install -m 644 dist/jumpnbump.png \
  		$(DESTDIR)$(DATADIR)/icons/jumpnbump.png
 -	install -m 644 dist/jumpnbump.6 $(DESTDIR)$(DATADIR)/man/man6/
 +	install -m 644 dist/jumpnbump.6 $(DESTDIR)$(PREFIX)/man/man6/
  
- 	$(MAKE) -C menu install
+ #	$(MAKE) -C menu install
  

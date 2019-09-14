@@ -1,18 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2019/09/14 19:13:16 bcallah Exp $
 @bin bin/gobpack
 @bin bin/jnbpack
 @bin bin/jnbunpack
 @bin bin/jumpnbump
-bin/jumpnbump-menu
 @man man/man6/jumpnbump.6
-share/appdata/
-share/appdata/jumpnbump.appdata.xml
-share/applications/jumpnbump-menu.desktop
 share/applications/jumpnbump.desktop
 share/icons/
 share/icons/jumpnbump.png
 share/jumpnbump/
 share/jumpnbump/jumpbump.dat
-share/jumpnbump/jumpnbump_menu.glade
-share/locale/fr/LC_MESSAGES/jumpnbump-menu.mo
+share/metainfo/
+share/metainfo/jumpnbump.appdata.xml
 @tag update-desktop-database

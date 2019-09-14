@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/09/14 19:13:16 bcallah Exp $
 
-V =		1.60
+V =		1.61
 COMMENT =	game of cute bunnies jumping on each other's heads
 DISTNAME =	jumpnbump-${V}
 CATEGORIES =	games x11
-REVISION =	0
 
 HOMEPAGE =	https://gitlab.com/LibreGames/jumpnbump
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -15,11 +14,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += SDL2 SDL2_mixer SDL2_net bz2 c m z
 
 MASTER_SITES =	https://gitlab.com/LibreGames/jumpnbump/-/archive/${V}/
-
-MODULES =	lang/python
-MODPY_BUILDDEP =	No
-MODPY_RUNDDEP =		No
-MODPY_ADJ_FILES =	menu/jumpnbump_menu.py.pre
 
 BUILD_DEPENDS =	devel/gettext,-tools
 
