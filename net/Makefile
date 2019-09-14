@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1141 2019/08/20 08:51:21 feinerer Exp $
+# $OpenBSD: Makefile,v 1.1142 2019/09/14 23:42:13 sthen Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -78,6 +78,7 @@
      SUBDIR += dnstop
      SUBDIR += dnstracer
      SUBDIR += doc
+     SUBDIR += doh
      SUBDIR += dsocks
      SUBDIR += dxpc
      SUBDIR += echoping
