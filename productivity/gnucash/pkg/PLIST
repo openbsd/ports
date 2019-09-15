@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2019/04/01 14:57:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.45 2019/09/15 12:14:01 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -25,7 +25,6 @@ include/gnucash/Transaction.h
 include/gnucash/account-quickfill.h
 include/gnucash/assistant-xml-encoding.h
 include/gnucash/basiccell.h
-include/gnucash/business-helpers.h
 include/gnucash/business-options.h
 include/gnucash/cap-gains.h
 include/gnucash/cashobjects.h
@@ -329,6 +328,7 @@ lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/advanced-portfolio.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/average-balance.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/balance-forecast.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/balance-sheet.go
+lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/balsheet-pnl.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/budget-balance-sheet.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/budget-barchart.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/budget-flow.go
@@ -346,6 +346,7 @@ lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/income-statement.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/net-charts.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/portfolio.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/price-scatter.go
+lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/reconcile-report.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/register.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/sx-summary.go
 lib/gnucash/scm/ccache/2.2/gnucash/report/standard-reports/test/
@@ -413,7 +414,9 @@ lib/gnucash/scm/ccache/2.2/simple-obj.go
 lib/gnucash/scm/ccache/2.2/test-account.go
 lib/gnucash/scm/ccache/2.2/test-c-interface.go
 lib/gnucash/scm/ccache/2.2/test-create-account.go
+lib/gnucash/scm/ccache/2.2/test-libgnucash-scm-utilities.go
 lib/gnucash/scm/ccache/2.2/test-split.go
+lib/gnucash/scm/ccache/2.2/trep-engine.go
 lib/gnucash/scm/ccache/2.2/txf-de_DE.go
 lib/gnucash/scm/ccache/2.2/txf-help-de_DE.go
 lib/gnucash/scm/ccache/2.2/txf-help.go
@@ -493,6 +496,7 @@ share/examples/gnucash/
 @sample ${SYSCONFDIR}/gnucash/
 share/examples/gnucash/environment
 @sample ${SYSCONFDIR}/gnucash/environment
+share/glib-2.0/schemas/gschemas.compiled
 share/glib-2.0/schemas/org.gnucash.dialogs.business.gschema.xml
 share/glib-2.0/schemas/org.gnucash.dialogs.checkprinting.gschema.xml
 share/glib-2.0/schemas/org.gnucash.dialogs.commodities.gschema.xml
@@ -541,6 +545,7 @@ share/gnome/help/gnucash-guide/C/ch_python_bindings.xml
 share/gnome/help/gnucash-guide/C/ch_reports.xml
 share/gnome/help/gnucash-guide/C/ch_txns.xml
 share/gnome/help/gnucash-guide/C/fdl-appendix.xml
+share/gnome/help/gnucash-guide/C/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/C/gnc-glossary.xml
 share/gnome/help/gnucash-guide/C/gnucash-guide.xml
 share/gnome/help/gnucash-guide/C/legal.xml
@@ -573,8 +578,10 @@ share/gnome/help/gnucash-guide/de/ch_python_bindings.xml
 share/gnome/help/gnucash-guide/de/ch_txns.xml
 share/gnome/help/gnucash-guide/de/fdl-appendix.xml
 share/gnome/help/gnucash-guide/de/glossary.xml
+share/gnome/help/gnucash-guide/de/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/de/gnucash-guide.xml
 share/gnome/help/gnucash-guide/it/
+share/gnome/help/gnucash-guide/it/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/it/gnucash-guide.xml
 share/gnome/help/gnucash-guide/ja/
 share/gnome/help/gnucash-guide/ja/appendixa.xml
@@ -599,6 +606,7 @@ share/gnome/help/gnucash-guide/ja/ch_oview.xml
 share/gnome/help/gnucash-guide/ja/ch_python_bindings.xml
 share/gnome/help/gnucash-guide/ja/ch_txns.xml
 share/gnome/help/gnucash-guide/ja/fdl-appendix.xml
+share/gnome/help/gnucash-guide/ja/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/ja/gnucash-guide.xml
 share/gnome/help/gnucash-guide/ja/legal.xml
 share/gnome/help/gnucash-guide/pt/
@@ -627,6 +635,7 @@ share/gnome/help/gnucash-guide/pt/ch_oview.xml
 share/gnome/help/gnucash-guide/pt/ch_python_bindings.xml
 share/gnome/help/gnucash-guide/pt/ch_txns.xml
 share/gnome/help/gnucash-guide/pt/fdl-appendix.xml
+share/gnome/help/gnucash-guide/pt/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/pt/gnucash-guide.xml
 share/gnome/help/gnucash-guide/pt/legal.xml
 share/gnome/help/gnucash-guide/ru/
@@ -653,6 +662,7 @@ share/gnome/help/gnucash-guide/ru/ch_python_bindings.xml
 share/gnome/help/gnucash-guide/ru/ch_reports.xml
 share/gnome/help/gnucash-guide/ru/ch_txns.xml
 share/gnome/help/gnucash-guide/ru/fdl-appendix.xml
+share/gnome/help/gnucash-guide/ru/gnc-docbookx.dtd
 share/gnome/help/gnucash-guide/ru/gnc-glossary.xml
 share/gnome/help/gnucash-guide/ru/gnucash-guide.xml
 share/gnome/help/gnucash-guide/ru/legal.xml
@@ -674,6 +684,7 @@ share/gnome/help/gnucash-help/C/Help_fdl-appendix.xml
 share/gnome/help/gnucash-help/C/Help_legal.xml
 share/gnome/help/gnucash-help/C/Help_tips-appendix.xml
 share/gnome/help/gnucash-help/C/Help_txf-categories.xml
+share/gnome/help/gnucash-help/C/gnc-docbookx.dtd
 share/gnome/help/gnucash-help/C/gnucash-help.xml
 share/gnome/help/gnucash-help/de/
 share/gnome/help/gnucash-help/de/Help_ch_GettingStarted.xml
@@ -684,8 +695,10 @@ share/gnome/help/gnucash-help/de/Help_fdl-appendix.xml
 share/gnome/help/gnucash-help/de/Help_legal.xml
 share/gnome/help/gnucash-help/de/Help_tips-appendix.xml
 share/gnome/help/gnucash-help/de/Help_txf-categories.xml
+share/gnome/help/gnucash-help/de/gnc-docbookx.dtd
 share/gnome/help/gnucash-help/de/gnucash-help.xml
 share/gnome/help/gnucash-help/it/
+share/gnome/help/gnucash-help/it/gnc-docbookx.dtd
 share/gnome/help/gnucash-help/it/gnucash-help.xml
 share/gnome/help/gnucash-help/pt/
 share/gnome/help/gnucash-help/pt/Help_ch_Account-Actions.xml
@@ -704,6 +717,7 @@ share/gnome/help/gnucash-help/pt/Help_fdl-appendix.xml
 share/gnome/help/gnucash-help/pt/Help_legal.xml
 share/gnome/help/gnucash-help/pt/Help_tips-appendix.xml
 share/gnome/help/gnucash-help/pt/Help_txf-categories.xml
+share/gnome/help/gnucash-help/pt/gnc-docbookx.dtd
 share/gnome/help/gnucash-help/pt/gnucash-help.xml
 share/gnucash/
 share/gnucash/accounts/
@@ -919,6 +933,23 @@ share/gnucash/accounts/fr_FR/acctchrt_renter.gnucash-xea
 share/gnucash/accounts/fr_FR/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/fr_FR/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/fr_FR/acctchrt_spouseretire.gnucash-xea
+share/gnucash/accounts/he/
+share/gnucash/accounts/he/acctchrt_brokerage.gnucash-xea
+share/gnucash/accounts/he/acctchrt_business.gnucash-xea
+share/gnucash/accounts/he/acctchrt_carloan.gnucash-xea
+share/gnucash/accounts/he/acctchrt_cdmoneymkt.gnucash-xea
+share/gnucash/accounts/he/acctchrt_checkbook.gnucash-xea
+share/gnucash/accounts/he/acctchrt_childcare.gnucash-xea
+share/gnucash/accounts/he/acctchrt_common.gnucash-xea
+share/gnucash/accounts/he/acctchrt_eduloan.gnucash-xea
+share/gnucash/accounts/he/acctchrt_fixedassets.gnucash-xea
+share/gnucash/accounts/he/acctchrt_homeloan.gnucash-xea
+share/gnucash/accounts/he/acctchrt_homeown.gnucash-xea
+share/gnucash/accounts/he/acctchrt_otherloan.gnucash-xea
+share/gnucash/accounts/he/acctchrt_renter.gnucash-xea
+share/gnucash/accounts/he/acctchrt_retiremt.gnucash-xea
+share/gnucash/accounts/he/acctchrt_spouseinc.gnucash-xea
+share/gnucash/accounts/he/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/hr/
 share/gnucash/accounts/hr/acctchrt_car.gnucash-xea
 share/gnucash/accounts/hr/acctchrt_cdmoneymkt.gnucash-xea
@@ -1397,6 +1428,7 @@ share/gnucash/scm/gnucash/report/standard-reports/advanced-portfolio.scm
 share/gnucash/scm/gnucash/report/standard-reports/average-balance.scm
 share/gnucash/scm/gnucash/report/standard-reports/balance-forecast.scm
 share/gnucash/scm/gnucash/report/standard-reports/balance-sheet.scm
+share/gnucash/scm/gnucash/report/standard-reports/balsheet-pnl.scm
 share/gnucash/scm/gnucash/report/standard-reports/budget-balance-sheet.scm
 share/gnucash/scm/gnucash/report/standard-reports/budget-barchart.scm
 share/gnucash/scm/gnucash/report/standard-reports/budget-flow.scm
@@ -1414,6 +1446,7 @@ share/gnucash/scm/gnucash/report/standard-reports/income-statement.scm
 share/gnucash/scm/gnucash/report/standard-reports/net-charts.scm
 share/gnucash/scm/gnucash/report/standard-reports/portfolio.scm
 share/gnucash/scm/gnucash/report/standard-reports/price-scatter.scm
+share/gnucash/scm/gnucash/report/standard-reports/reconcile-report.scm
 share/gnucash/scm/gnucash/report/standard-reports/register.scm
 share/gnucash/scm/gnucash/report/standard-reports/sx-summary.scm
 share/gnucash/scm/gnucash/report/standard-reports/test/
@@ -1483,7 +1516,9 @@ share/gnucash/scm/simple-obj.scm
 share/gnucash/scm/test-account.scm
 share/gnucash/scm/test-c-interface.scm
 share/gnucash/scm/test-create-account.scm
+share/gnucash/scm/test-libgnucash-scm-utilities.scm
 share/gnucash/scm/test-split.scm
+share/gnucash/scm/trep-engine.scm
 share/gnucash/scm/txf-de_DE.scm
 share/gnucash/scm/txf-help-de_DE.scm
 share/gnucash/scm/txf-help.scm
