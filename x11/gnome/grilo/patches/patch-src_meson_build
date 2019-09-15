@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_meson_build,v 1.1 2018/11/30 08:03:05 ajacoutot Exp $
+$OpenBSD: patch-src_meson_build,v 1.2 2019/09/15 16:43:22 ajacoutot Exp $
 
 Undefined symbol of libc functions (e.g. __stack_smash_handler)
 
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build
-@@ -96,7 +96,6 @@ libgrl = shared_library(grl_name,
+@@ -100,7 +100,6 @@ libgrl = shared_library(grl_name,
      version: grilo_lt_version,
-     dependencies: [glib_dep, gobject_dep, gmodule_dep, gio_dep, libxml_dep],
+     dependencies: libgrl_deps,
      c_args: c_args,
 -    link_args: '-Wl,--no-undefined',
      include_directories: libgrl_inc)
-                             
+ 
  libgrl_dep = declare_dependency(link_with: libgrl,
