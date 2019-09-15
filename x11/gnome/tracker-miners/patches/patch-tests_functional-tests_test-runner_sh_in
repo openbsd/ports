@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_functional-tests_test-runner_sh_in,v 1.1 2019/09/15 16:08:42 ajacoutot Exp $
+
+XXX push upstream (we don't use GNU mktemp(1)).
+
+Index: tests/functional-tests/test-runner.sh.in
+--- tests/functional-tests/test-runner.sh.in.orig
++++ tests/functional-tests/test-runner.sh.in
+@@ -6,7 +6,7 @@ set -e
+ 
+ SCRIPT=$1
+ 
+-export TEMP_DIR=`mktemp --tmpdir -d tracker-test-XXXX`
++export TEMP_DIR=`mktemp -p /tmp -d tracker-test-XXXXXX`
+ 
+ # We need to use the actual home directory for some tests because
+ # Tracker will explicitly ignore files in /tmp ...

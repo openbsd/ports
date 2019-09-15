@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_libtracker-miners-common_meson_build,v 1.1 2019/09/15 16:08:42 ajacoutot Exp $
+
+https://gitlab.gnome.org/GNOME/tracker-miners/merge_requests/106
+
+Index: src/libtracker-miners-common/meson.build
+--- src/libtracker-miners-common/meson.build.orig
++++ src/libtracker-miners-common/meson.build
+@@ -28,6 +28,10 @@ if libseccomp.found()
+   tracker_miners_common_private_dependencies += [libseccomp]
+ endif
+ 
++if build_machine.system() == 'openbsd'
++  libkvm = meson.get_compiler('c').find_library('kvm')
++  tracker_miners_common_dependencies += libkvm
++endif
+ 
+ libtracker_miners_common = static_library('tracker-miners-common',
+   tracker_miners_common_sources,

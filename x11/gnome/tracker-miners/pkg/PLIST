@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/02/21 17:08:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2019/09/15 16:08:42 ajacoutot Exp $
 @conflict meta-tracker-<2.0
 lib/tracker-miners-2.0/
 lib/tracker-miners-2.0/extract-modules/
@@ -30,9 +30,8 @@ lib/tracker-miners-2.0/extract-modules/libextract-vorbis.so
 lib/tracker-miners-2.0/extract-modules/libextract-xmp.so
 lib/tracker-miners-2.0/extract-modules/libextract-xps.so
 @lib lib/tracker-miners-2.0/libtracker-extract.so.${LIBtracker-extract_VERSION}
-lib/tracker-miners-2.0/libtracker-miners-common.so
 lib/tracker-miners-2.0/writeback-modules/
-lib/tracker-miners-2.0/writeback-modules/libwriteback-taglib.so
+lib/tracker-miners-2.0/writeback-modules/libwriteback-gstreamer.so
 lib/tracker-miners-2.0/writeback-modules/libwriteback-xmp.so
 @bin libexec/tracker-extract
 @bin libexec/tracker-miner-fs
@@ -56,6 +55,7 @@ share/glib-2.0/schemas/org.freedesktop.Tracker.Writeback.gschema.xml
 share/glib-2.0/schemas/org.freedesktop.TrackerMiners.enums.xml
 share/locale/ar/LC_MESSAGES/tracker-miners.mo
 share/locale/as/LC_MESSAGES/tracker-miners.mo
+share/locale/be/LC_MESSAGES/tracker-miners.mo
 share/locale/be@latin/LC_MESSAGES/tracker-miners.mo
 share/locale/bg/LC_MESSAGES/tracker-miners.mo
 share/locale/bs/LC_MESSAGES/tracker-miners.mo
