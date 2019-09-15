@@ -1,16 +1,16 @@
-$OpenBSD: patch-storage_connect_reldef_cpp,v 1.11 2019/06/27 21:15:19 sthen Exp $
+$OpenBSD: patch-storage_connect_reldef_cpp,v 1.12 2019/09/15 12:37:01 sthen Exp $
 
 Index: storage/connect/reldef.cpp
 --- storage/connect/reldef.cpp.orig
 +++ storage/connect/reldef.cpp
-@@ -536,6 +536,10 @@ PTABDEF OEMDEF::GetXdef(PGLOBAL g)
+@@ -541,6 +541,10 @@ PTABDEF OEMDEF::GetXdef(PGLOBAL g)
  #else   // !__WIN__
    const char *error = NULL;
-     
+ 
 +#ifndef RTLD_NOLOAD
 +#define RTLD_NOLOAD 0
 +#endif
 +
  #if 0  // Don't know what all this stuff does
- 	Dl_info dl_info;
+   Dl_info dl_info;
  
