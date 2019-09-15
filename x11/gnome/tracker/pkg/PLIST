@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2019/02/21 17:08:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.47 2019/09/15 15:52:06 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @conflict tracker-*
@@ -39,8 +39,12 @@ lib/pkgconfig/tracker-control-2.0.pc
 lib/pkgconfig/tracker-miner-2.0.pc
 lib/pkgconfig/tracker-sparql-2.0.pc
 lib/tracker-2.0/
-@lib lib/tracker-2.0/libtracker-common.so.${LIBtracker-common_VERSION}
 @lib lib/tracker-2.0/libtracker-data.so.${LIBtracker-data_VERSION}
+lib/tracker-2.0/trackertestutils/
+lib/tracker-2.0/trackertestutils/__init__.py
+lib/tracker-2.0/trackertestutils/dconf.py
+lib/tracker-2.0/trackertestutils/helpers.py
+lib/tracker-2.0/trackertestutils/mainloop.py
 @bin libexec/tracker-store
 @man man/man1/tracker-daemon.1
 @man man/man1/tracker-index.1

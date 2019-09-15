@@ -1,28 +1,26 @@
-# $OpenBSD: Makefile,v 1.246 2019/08/17 09:50:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.247 2019/09/15 15:52:06 ajacoutot Exp $
 
 PORTROACH=		skipv:2.2.99.0
 
 COMMENT=		metadata database and search tool
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		2.2.2
+GNOME_VERSION=		2.3.0
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker
 PKGNAME=		meta-tracker-${VERSION}
-REVISION=		0
 
-SHARED_LIBS +=  tracker-common       4.0      # unknown
 SHARED_LIBS +=  tracker-data         4.0      # unknown
-SHARED_LIBS +=  tracker-sparql-2.0   0.1      # 0.200.0
-SHARED_LIBS +=  tracker-miner-2.0    0.0      # 0.200.0
-SHARED_LIBS +=  tracker-control-2.0  0.0      # 0.200.0
+SHARED_LIBS +=  tracker-sparql-2.0   0.1      # 0.300.0
+SHARED_LIBS +=  tracker-miner-2.0    0.0      # 0.300.0
+SHARED_LIBS +=  tracker-control-2.0  0.0      # 0.300.0
 
 # GPLv2+ - LGPLv2.1+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 icudata icui18n icuuc
-WANTLIB += intl json-glib-1.0 kvm m soup-2.4 sqlite3 uuid xml2
+WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 icui18n icuuc intl
+WANTLIB += json-glib-1.0 kvm m soup-2.4 sqlite3 uuid xml2
 
 COMPILER =		base-clang ports-gcc base-gcc
 
