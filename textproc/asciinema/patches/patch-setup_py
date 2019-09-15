@@ -1,0 +1,14 @@
+$OpenBSD: patch-setup_py,v 1.1 2019/09/15 21:46:45 ajacoutot Exp $
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -35,7 +35,7 @@ setup(
+                                          'README.md',
+                                          'doc/asciicast-v1.md',
+                                          'doc/asciicast-v2.md']),
+-                ('share/man/man1', ['man/asciinema.1'])],
++                ('man/man1', ['man/asciinema.1'])],
+     install_requires=requirements,
+     tests_require=test_requirements,
+     classifiers=[
