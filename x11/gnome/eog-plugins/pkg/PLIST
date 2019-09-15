@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2018/07/23 19:26:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2019/09/15 13:43:00 ajacoutot Exp $
 lib/eog/plugins/${MODPY_PYCACHE}/
 lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}pyc
@@ -30,7 +30,7 @@ lib/eog/plugins/postasa.plugin
 lib/eog/plugins/pythonconsole/
 lib/eog/plugins/pythonconsole.plugin
 lib/eog/plugins/pythonconsole/__init__.py
-lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}/
 lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

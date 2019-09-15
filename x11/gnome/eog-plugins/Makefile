@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.82 2019/07/07 11:20:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2019/09/15 13:43:00 ajacoutot Exp $
 
 # XXX the "postr" plugin needs postr which hasn't been ported yet
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
-GNOME_VERSION=		3.26.3
-REVISION=		0
+GNOME_VERSION=		3.26.4
 
 CATEGORIES=		graphics
 
@@ -14,20 +13,21 @@ CATEGORIES=		graphics
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += EGL X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi cairo
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 cairo
 WANTLIB += cairo-gobject champlain-0.12 champlain-gtk-0.12 clutter-1.0
-WANTLIB += clutter-gtk-1.0 cogl cogl-pango cogl-path crypto curl dbus-1
-WANTLIB += drm epoxy exif expat ffi fontconfig freetype gbm gck-1
-WANTLIB += gcr-base-3 gcrypt gdata gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += girepository-1.0 glib-2.0 gmodule-2.0 goa-1.0 gobject-2.0
-WANTLIB += gpg-error graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl
-WANTLIB += json-glib-1.0 lzma m nghttp2 nspr4 nss3 oauth p11-kit
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 pixman-1
-WANTLIB += plc4 plds4 png pthread smime3 nssutil3 soup-2.4
-WANTLIB += sqlite3 ssl ssl3 xcb xcb-dri2 xcb-render xcb-shm
-WANTLIB += xcb-xfixes xml2 z
-WANTLIB += croco-0.6 exempi fribidi gnome-desktop-3 jpeg lcms2
-WANTLIB += peas-gtk-1.0 rsvg-2 xcb-dri3 xcb-present xcb-sync xshmfence
+WANTLIB += clutter-gtk-1.0 cogl cogl-pango cogl-path croco-0.6
+WANTLIB += crypto curl drm epoxy exempi exif expat ffi fontconfig
+WANTLIB += freetype fribidi gbm gck-1 gcr-base-3 gcrypt gdata
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0 glapi
+WANTLIB += glib-2.0 gmodule-2.0 gnome-desktop-3 goa-1.0 gobject-2.0
+WANTLIB += gpg-error graphite2 gthread-2.0 gtk-3 harfbuzz iconv
+WANTLIB += idn2 intl jpeg json-glib-1.0 lcms2 lzma m nghttp2 nspr4
+WANTLIB += nss3 nssutil3 oauth p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 plc4
+WANTLIB += plds4 png psl pthread rsvg-2 smime3 soup-2.4 sqlite3
+WANTLIB += ssl ssl3 unistring xcb xcb-dri2 xcb-dri3 xcb-present
+WANTLIB += xcb-render xcb-shm xcb-sync xcb-xfixes xml2 xshmfence
+WANTLIB += z
 
 MODULES=		devel/dconf \
 			lang/python \
