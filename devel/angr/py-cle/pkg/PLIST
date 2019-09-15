@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/09/15 13:29:50 kn Exp $
 lib/python${MODPY_VERSION}/site-packages/cle/
 lib/python${MODPY_VERSION}/site-packages/cle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -23,8 +23,8 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}binja.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}blob.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}idabin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}ihex.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}named_region.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}region.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}regions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/${MODPY_PYCACHE}relocation.${MODPY_PYC_MAGIC_TAG}pyc
@@ -49,6 +49,7 @@ lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}hashta
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}metaelf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}regions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}symbol.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/${MODPY_PYCACHE}symbol_type.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/elf.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/elfcore.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/hashtable.py
@@ -87,6 +88,7 @@ lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/relocation/pcc64.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/relocation/ppc.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/relocation/s390x.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/symbol.py
+lib/python${MODPY_VERSION}/site-packages/cle/backends/elf/symbol_type.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/${MODPY_PYCACHE}/
@@ -101,7 +103,6 @@ lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/simdata/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/simdata/common.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/simdata/glibc_startup.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/externs/simdata/io_file.py
-lib/python${MODPY_VERSION}/site-packages/cle/backends/idabin.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/ihex.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/java/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/java/__init__.py
@@ -127,6 +128,7 @@ lib/python${MODPY_VERSION}/site-packages/cle/backends/macho/macho.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/macho/section.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/macho/segment.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/macho/symbol.py
+lib/python${MODPY_VERSION}/site-packages/cle/backends/named_region.py
 lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/
 lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cle/backends/pe/${MODPY_PYCACHE}/

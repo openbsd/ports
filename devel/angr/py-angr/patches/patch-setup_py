@@ -1,11 +1,11 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2019/07/23 19:22:23 jasper Exp $
+$OpenBSD: patch-setup_py,v 1.2 2019/09/15 13:29:50 kn Exp $
 
 native/Makefile requires GNU make.
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -66,7 +66,7 @@ def _build_native():
+@@ -68,7 +68,7 @@ def _build_native():
              pass
  
      cmd1 = ['nmake', '/f', 'Makefile-win']

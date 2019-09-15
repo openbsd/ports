@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2019/09/15 13:29:50 kn Exp $
 
 MAINTAINER ?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Klemens Nanni <kn@openbsd.org>
@@ -18,7 +18,7 @@ MODPY_PI ?=		Yes
 MODPY_SETUPTOOLS ?=	Yes
 MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_3}
 
-MODPY_EGG_VERSION ?=	8.19.4.5
+MODPY_EGG_VERSION ?=	8.19.7.25
 DISTNAME ?=		${ANGR_PYTHON_MODULE}-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 .endif

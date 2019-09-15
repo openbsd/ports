@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/23 19:22:22 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/09/15 13:29:50 kn Exp $
 lib/python${MODPY_VERSION}/site-packages/claripy/
 lib/python${MODPY_VERSION}/site-packages/claripy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/claripy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -14,6 +14,7 @@ lib/python${MODPY_VERSION}/site-packages/claripy/${MODPY_PYCACHE}backend_manager
 lib/python${MODPY_VERSION}/site-packages/claripy/${MODPY_PYCACHE}backend_object.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/claripy/${MODPY_PYCACHE}balancer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/claripy/${MODPY_PYCACHE}bv.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/claripy/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/claripy/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/claripy/${MODPY_PYCACHE}fp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/claripy/${MODPY_PYCACHE}frontend.${MODPY_PYC_MAGIC_TAG}pyc
@@ -80,6 +81,7 @@ lib/python${MODPY_VERSION}/site-packages/claripy/backends/celeryconfig.py
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/remotetasks.py
 lib/python${MODPY_VERSION}/site-packages/claripy/balancer.py
 lib/python${MODPY_VERSION}/site-packages/claripy/bv.py
+lib/python${MODPY_VERSION}/site-packages/claripy/debug.py
 lib/python${MODPY_VERSION}/site-packages/claripy/errors.py
 lib/python${MODPY_VERSION}/site-packages/claripy/fp.py
 lib/python${MODPY_VERSION}/site-packages/claripy/frontend.py

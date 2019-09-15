@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/09/15 13:29:50 kn Exp $
 lib/python${MODPY_VERSION}/site-packages/ailment/
 lib/python${MODPY_VERSION}/site-packages/ailment-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/ailment-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -20,11 +20,9 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ailment/analyses/${MODP
 lib/python${MODPY_VERSION}/site-packages/ailment/analyses/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ailment/analyses/${MODPY_PYCACHE}block_simplifier.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ailment/analyses/${MODPY_PYCACHE}callsite_maker.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ailment/analyses/${MODPY_PYCACHE}propagator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ailment/analyses/${MODPY_PYCACHE}simplifier.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ailment/analyses/block_simplifier.py
 lib/python${MODPY_VERSION}/site-packages/ailment/analyses/callsite_maker.py
-lib/python${MODPY_VERSION}/site-packages/ailment/analyses/propagator.py
 lib/python${MODPY_VERSION}/site-packages/ailment/analyses/simplifier.py
 lib/python${MODPY_VERSION}/site-packages/ailment/block.py
 lib/python${MODPY_VERSION}/site-packages/ailment/converter.py

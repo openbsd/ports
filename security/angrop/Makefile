@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/07/23 19:24:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/09/15 13:29:50 kn Exp $
 
 COMMENT =		ROP chain builder based off of angr
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
-MODPY_EGG_VERSION =	8.19.4.5
+MODPY_EGG_VERSION =	8.19.7.25
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
