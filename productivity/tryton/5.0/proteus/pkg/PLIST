@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/03 12:28:16 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/09/15 16:37:26 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/proteus/
 lib/python${MODPY_VERSION}/site-packages/proteus-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -9,7 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/proteus-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/proteus-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/proteus-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/proteus/__init__.py
-lib/python${MODPY_VERSION}/site-packages/proteus/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/proteus/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/proteus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/proteus/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/proteus/${MODPY_PYCACHE}pyson.${MODPY_PYC_MAGIC_TAG}pyc
@@ -17,7 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/proteus/config.py
 lib/python${MODPY_VERSION}/site-packages/proteus/pyson.py
 lib/python${MODPY_VERSION}/site-packages/proteus/tests/
 lib/python${MODPY_VERSION}/site-packages/proteus/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/proteus/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/proteus/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/proteus/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/proteus/tests/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/proteus/tests/${MODPY_PYCACHE}test_config.${MODPY_PYC_MAGIC_TAG}pyc

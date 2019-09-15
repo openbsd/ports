@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2019/04/28 20:51:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2019/09/15 16:37:25 semarie Exp $
 
-MODPY_EGG_VERSION =	5.0.2
+MODPY_EGG_VERSION =	5.0.3
 TRYTON_MODULE =		carrier_weight
-REVISION =		0
 
 TRYTON_DEPENDS +=	carrier \
 			company \
