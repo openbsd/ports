@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2019/09/13 13:06:19 abieber Exp $
+# $OpenBSD: Makefile,v 1.8 2019/09/15 02:04:00 jsing Exp $
 
 COMMENT =	REST backend for the restic backup tool
 
@@ -20,7 +20,6 @@ MASTER_SITES =	https://github.com/restic/rest-server/releases/download/v${V}/
 
 MODULES =	lang/go
 MODGO_TYPE =	bin
-MAKE_ENV +=	GO111MODULE=off
 
 NO_TEST =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.24 2019/09/14 21:30:41 sthen Exp $
+# $OpenBSD: go.port.mk,v 1.25 2019/09/15 02:04:00 jsing Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -23,7 +23,7 @@ MODGO_TYPE ?=		bin
 MODGO_WORKSPACE ?=	${WRKDIR}/go
 MODGO_GOCACHE ?=	${WRKDIR}/go-cache
 MODGO_GOPATH ?=		${MODGO_WORKSPACE}:${MODGO_PACKAGE_PATH}
-MAKE_ENV +=		GOCACHE="${MODGO_GOCACHE}" GOPATH="${MODGO_GOPATH}"
+MAKE_ENV +=		GOCACHE="${MODGO_GOCACHE}" GOPATH="${MODGO_GOPATH}" GO111MODULE=off
 # ports are not allowed to fetch from the network at build time; point
 # GOPROXY at an unreachable host so that failures are also visible to
 # developers who don't have PORTS_PRIVSEP and a "deny .. _pbuild" PF rule.

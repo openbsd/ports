@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2019/09/13 13:05:50 abieber Exp $
+# $OpenBSD: Makefile,v 1.11 2019/09/15 02:04:00 jsing Exp $
 
 COMMENT =	fast, efficient and secure backup program
 
@@ -21,7 +21,6 @@ MASTER_SITES =	https://github.com/restic/restic/releases/download/v${V}/
 
 MODULES =	lang/go
 MODGO_TYPE =	bin
-MAKE_ENV +=	GO111MODULE=off
 
 NO_TEST =	Yes
 

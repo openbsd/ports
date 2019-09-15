@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2019/09/12 19:07:56 jsing Exp $
+# $OpenBSD: Makefile,v 1.16 2019/09/15 02:04:00 jsing Exp $
 
 COMMENT =	open source Slack-alternative
 
@@ -27,7 +27,6 @@ WANTLIB += c pthread
 
 MODULES =	lang/go
 MODGO_LDFLAGS =	-X github.com/mattermost/mattermost-server/model.BuildNumber=${V}
-MAKE_ENV +=	GO111MODULE=off
 NO_TEST =	Yes
 
 pre-configure:
