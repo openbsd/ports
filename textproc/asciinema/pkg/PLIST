@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/04/06 07:41:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2019/09/15 11:12:14 ajacoutot Exp $
 bin/asciinema
 lib/python${MODPY_VERSION}/site-packages/asciinema/
 lib/python${MODPY_VERSION}/site-packages/asciinema-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -9,20 +9,20 @@ lib/python${MODPY_VERSION}/site-packages/asciinema-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/asciinema-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/asciinema/__init__.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/__main__.py
-lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}http_adapter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}player.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}pty_recorder.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}pty.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}term.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}urllib_http_adapter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/api.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/
 lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/__init__.py
-lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/${MODPY_PYCACHE}events.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/${MODPY_PYCACHE}raw.${MODPY_PYC_MAGIC_TAG}pyc
@@ -34,7 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/v1.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/v2.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/commands/
 lib/python${MODPY_VERSION}/site-packages/asciinema/commands/__init__.py
-lib/python${MODPY_VERSION}/site-packages/asciinema/commands/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/asciinema/commands/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/asciinema/commands/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/commands/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/commands/${MODPY_PYCACHE}cat.${MODPY_PYC_MAGIC_TAG}pyc
@@ -51,7 +51,14 @@ lib/python${MODPY_VERSION}/site-packages/asciinema/commands/upload.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/config.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/http_adapter.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/player.py
-lib/python${MODPY_VERSION}/site-packages/asciinema/pty_recorder.py
+lib/python${MODPY_VERSION}/site-packages/asciinema/pty.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/term.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/urllib_http_adapter.py
 @man man/man1/asciinema.1
+share/doc/asciinema/
+share/doc/asciinema/CHANGELOG.md
+share/doc/asciinema/CODE_OF_CONDUCT.md
+share/doc/asciinema/CONTRIBUTING.md
+share/doc/asciinema/README.md
+share/doc/asciinema/asciicast-v1.md
+share/doc/asciinema/asciicast-v2.md

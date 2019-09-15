@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2019/09/15 11:12:14 ajacoutot Exp $
 
 COMMENT=		terminal session recorder
 
-MODPY_EGG_VERSION=	2.0.1
-REVISION=		0
+MODPY_EGG_VERSION=	2.0.2
 
 # MODPY_PI does not work
 GH_PROJECT=		asciinema
@@ -23,9 +22,6 @@ MODPY_SETUPTOOLS=	Yes
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 TEST_DEPENDS=		devel/py-nose${MODPY_FLAVOR}
-
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/man/asciinema.1 ${PREFIX}/man/man1/
 
 do-test:
 	cd ${WRKSRC} && nosetests${MODPY_BIN_SUFFIX}
