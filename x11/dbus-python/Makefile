@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2019/09/07 16:29:48 ajacoutot Exp $
+#+ $OpenBSD: Makefile,v 1.43 2019/09/15 11:07:37 ajacoutot Exp $
 
 PORTROACH=		limitw:2,even
 
 COMMENT-main =		dbus bindings for Python
 COMMENT-common =	common files for py-dbus
 
-V =			1.2.10
+V =			1.2.12
 DISTNAME =		dbus-python-${V}
 
 PKGNAME-main =		py-dbus-${V}
@@ -21,7 +21,7 @@ MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 # ISC-like
 PERMIT_PACKAGE =	Yes
 
-WANTLIB-main += dbus-1 glib-2.0 iconv intl pcre pthread
+WANTLIB-main += dbus-1 glib-2.0 iconv intl pthread
 
 WANTLIB-common +=	#empty
 
@@ -34,11 +34,11 @@ MODULES =		lang/python
 FLAVORS =		python3
 FLAVOR ?=
 
-USE_GMAKE=		Yes
+USE_GMAKE =		Yes
 
 .if ${FLAVOR:Mpython3}
-FULLPKGNAME-main=	${PKGNAME-main:S/^py-/py3-/}
-FULLPKGPATH-main=	x11/dbus-python,-main${MODPY_FLAVOR}
+FULLPKGNAME-main =	${PKGNAME-main:S/^py-/py3-/}
+FULLPKGPATH-main =	x11/dbus-python,-main${MODPY_FLAVOR}
 .endif
 
 LIB_DEPENDS-main =	devel/glib2 \
