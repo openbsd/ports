@@ -1,8 +1,9 @@
-$OpenBSD: patch-examples_mk,v 1.8 2019/02/14 09:44:26 jca Exp $
+$OpenBSD: patch-examples_mk,v 1.9 2019/09/15 16:03:31 ajacoutot Exp $
+
 Index: examples.mk
 --- examples.mk.orig
 +++ examples.mk
-@@ -318,7 +318,7 @@ else
+@@ -332,7 +332,7 @@ else
  SHARED_LIB_SUF=.so
  endif
  endif

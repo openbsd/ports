@@ -1,8 +1,9 @@
-$OpenBSD: patch-configure,v 1.18 2019/02/14 09:44:26 jca Exp $
+$OpenBSD: patch-configure,v 1.19 2019/09/15 16:03:31 ajacoutot Exp $
+
 Index: configure
 --- configure.orig
 +++ configure
-@@ -115,7 +115,9 @@ all_platforms="${all_platforms} armv7s-darwin-gcc"
+@@ -114,7 +114,9 @@ all_platforms="${all_platforms} armv7s-darwin-gcc"
  all_platforms="${all_platforms} armv8-linux-gcc"
  all_platforms="${all_platforms} mips32-linux-gcc"
  all_platforms="${all_platforms} mips64-linux-gcc"
@@ -12,7 +13,7 @@ Index: configure
  all_platforms="${all_platforms} sparc-solaris-gcc"
  all_platforms="${all_platforms} x86-android-gcc"
  all_platforms="${all_platforms} x86-darwin8-gcc"
-@@ -166,7 +168,7 @@ for t in ${all_targets}; do
+@@ -165,7 +167,7 @@ for t in ${all_targets}; do
      [ -f "${source_path}/${t}.mk" ] && enable_feature ${t}
  done
  
@@ -21,7 +22,7 @@ Index: configure
    die "diff missing: Try installing diffutils via your package manager."
  fi
  
-@@ -181,19 +183,6 @@ if [ "`cd \"${source_path}\" && pwd`" != "`pwd`" ]; th
+@@ -180,19 +182,6 @@ if [ "`cd \"${source_path}\" && pwd`" != "`pwd`" ]; th
    fi
  fi
  
@@ -41,7 +42,7 @@ Index: configure
  # disable codecs when their source directory does not exist
  [ -d "${source_path}/vp8" ] || disable_codec vp8
  [ -d "${source_path}/vp9" ] || disable_codec vp9
-@@ -518,7 +507,7 @@ process_detect() {
+@@ -526,7 +515,7 @@ process_detect() {
          # here rather than at option parse time because the target auto-detect
          # magic happens after the command line has been parsed.
          case "${tgt_os}" in

@@ -1,15 +1,16 @@
-$OpenBSD: patch-vpx_ports_arm_cpudetect_c,v 1.1 2018/10/17 08:22:29 ajacoutot Exp $
+$OpenBSD: patch-vpx_ports_arm_cpudetect_c,v 1.2 2019/09/15 16:03:31 ajacoutot Exp $
 
 Allow ARM CPU runtime detection code to build on OpenBSD.
 
 Index: vpx_ports/arm_cpudetect.c
 --- vpx_ports/arm_cpudetect.c.orig
 +++ vpx_ports/arm_cpudetect.c
-@@ -147,6 +147,19 @@ int arm_cpu_caps(void) {
+@@ -147,7 +147,20 @@ int arm_cpu_caps(void) {
    }
    return flags & mask;
  }
-+#elif defined(__OpenBSD__)
+-#else  /* end __linux__ */
++#elif defined(__OpenBSD__) /* end __linux__ */
 +int arm_cpu_caps(void) {
 +  int flags;
 +  int mask;
@@ -22,6 +23,7 @@ Index: vpx_ports/arm_cpudetect.c
 +#endif /* HAVE_NEON  || HAVE_NEON_ASM */
 +  return flags & mask;
 +}
- #else  /* end __linux__ */
++#else  /* end __OpenBSD__ */
  #error \
      "--enable-runtime-cpu-detect selected, but no CPU detection method " \
+ "available for your platform. Reconfigure with --disable-runtime-cpu-detect."
