@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_libtracker-miners-common_meson_build,v 1.1 2019/09/15 16:08:42 ajacoutot Exp $
+$OpenBSD: patch-src_libtracker-miners-common_meson_build,v 1.2 2019/09/15 16:38:27 ajacoutot Exp $
 
-https://gitlab.gnome.org/GNOME/tracker-miners/merge_requests/106
+From 6721c8592937b425349573a910b383a0f4392a8f Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sun, 15 Sep 2019 17:48:06 +0200
+Subject: [PATCH] libtracker-common: fix build on OpenBSD
 
 Index: src/libtracker-miners-common/meson.build
 --- src/libtracker-miners-common/meson.build.orig
