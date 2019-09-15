@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.44 2019/09/11 17:53:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2019/09/15 10:15:54 ajacoutot Exp $
 
-PORTROACH=		limitw:2,even
+PORTROACH=		limit:^2
 
 COMMENT=		callback framework for C++
 
