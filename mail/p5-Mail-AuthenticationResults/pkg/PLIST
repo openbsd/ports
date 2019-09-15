@@ -1,0 +1,41 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/15 17:23:23 afresh1 Exp $
+${P5SITE}/Mail/
+${P5SITE}/Mail/AuthenticationResults/
+${P5SITE}/Mail/AuthenticationResults.pm
+${P5SITE}/Mail/AuthenticationResults/FoldableHeader.pm
+${P5SITE}/Mail/AuthenticationResults/Header/
+${P5SITE}/Mail/AuthenticationResults/Header.pm
+${P5SITE}/Mail/AuthenticationResults/Header/AuthServID.pm
+${P5SITE}/Mail/AuthenticationResults/Header/Base.pm
+${P5SITE}/Mail/AuthenticationResults/Header/Comment.pm
+${P5SITE}/Mail/AuthenticationResults/Header/Entry.pm
+${P5SITE}/Mail/AuthenticationResults/Header/Group.pm
+${P5SITE}/Mail/AuthenticationResults/Header/SubEntry.pm
+${P5SITE}/Mail/AuthenticationResults/Header/Version.pm
+${P5SITE}/Mail/AuthenticationResults/Parser.pm
+${P5SITE}/Mail/AuthenticationResults/Token/
+${P5SITE}/Mail/AuthenticationResults/Token.pm
+${P5SITE}/Mail/AuthenticationResults/Token/Assignment.pm
+${P5SITE}/Mail/AuthenticationResults/Token/Comment.pm
+${P5SITE}/Mail/AuthenticationResults/Token/QuotedString.pm
+${P5SITE}/Mail/AuthenticationResults/Token/Separator.pm
+${P5SITE}/Mail/AuthenticationResults/Token/Space.pm
+${P5SITE}/Mail/AuthenticationResults/Token/String.pm
+@man man/man3p/Mail::AuthenticationResults.3p
+@man man/man3p/Mail::AuthenticationResults::FoldableHeader.3p
+@man man/man3p/Mail::AuthenticationResults::Header.3p
+@man man/man3p/Mail::AuthenticationResults::Header::AuthServID.3p
+@man man/man3p/Mail::AuthenticationResults::Header::Base.3p
+@man man/man3p/Mail::AuthenticationResults::Header::Comment.3p
+@man man/man3p/Mail::AuthenticationResults::Header::Entry.3p
+@man man/man3p/Mail::AuthenticationResults::Header::Group.3p
+@man man/man3p/Mail::AuthenticationResults::Header::SubEntry.3p
+@man man/man3p/Mail::AuthenticationResults::Header::Version.3p
+@man man/man3p/Mail::AuthenticationResults::Parser.3p
+@man man/man3p/Mail::AuthenticationResults::Token.3p
+@man man/man3p/Mail::AuthenticationResults::Token::Assignment.3p
+@man man/man3p/Mail::AuthenticationResults::Token::Comment.3p
+@man man/man3p/Mail::AuthenticationResults::Token::QuotedString.3p
+@man man/man3p/Mail::AuthenticationResults::Token::Separator.3p
+@man man/man3p/Mail::AuthenticationResults::Token::Space.3p
+@man man/man3p/Mail::AuthenticationResults::Token::String.3p

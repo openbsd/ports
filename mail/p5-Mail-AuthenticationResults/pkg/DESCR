@@ -1,0 +1,3 @@
+Mail::AuthenticationResults provides object-oriented authentication-results
+email headers. This parser copes with most styles of Authentication-Results
+header seen in the wild, but is not yet fully RFC7601 compliant.
