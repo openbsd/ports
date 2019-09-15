@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/09 11:48:55 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/09/15 16:42:39 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/${MODPY_PYCACHE}carrier.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}pyc
@@ -37,7 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/sale.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/stock.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/tests/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/tests/${MODPY_PYCACHE}test_carrier_weight.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/tests/scenario_carrier_weight.rst
