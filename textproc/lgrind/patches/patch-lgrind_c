@@ -1,9 +1,10 @@
-$OpenBSD: patch-lgrind_c,v 1.2 2014/11/30 05:41:34 brad Exp $
+$OpenBSD: patch-lgrind_c,v 1.3 2019/09/16 12:22:03 espie Exp $
 
 Don't use malloc.h header on OpenBSD.
 
---- lgrind.c.orig	Thu Nov 20 04:15:55 2014
-+++ lgrind.c	Thu Nov 20 04:21:30 2014
+Index: lgrind.c
+--- lgrind.c.orig
++++ lgrind.c
 @@ -94,7 +94,6 @@ static char rcsid[] =
  #include <stdlib.h>
  #include <ctype.h>
@@ -22,3 +23,21 @@ Don't use malloc.h header on OpenBSD.
        }
  
        code = FALSE;
+@@ -1383,7 +1383,7 @@ boolean putKcp(char *start, char *end, boolean nix)
+       /*
+        * First split off numbers.  We have a rather ad hoc
+        * definition:  A number is a digit followed by any number
+-       * of digits or letters, and periods.
++       * of hex digits, and periods.
+        * (Additionally a number can start with %|$|% (e.g. hex numbers).)
+        * This produces meaningless parses --- %$.2$% is parsed as %|.|%
+        * followed by the number %|2|% --- but should produce decent
+@@ -1413,7 +1413,7 @@ boolean putKcp(char *start, char *end, boolean nix)
+ 		       else
+ 				  outchar(c);
+ 		       c = *start++;
+-		    } while (isalnum(c) || (c == '.' && *start != '.'));
++		    } while (isxdigit(c) || (c == '.' && *start != '.'));
+ 		    putchar('}');
+ 		    start--;
+ 		    continue;
