@@ -1,0 +1,16 @@
+$OpenBSD: patch-nss_tests_policy_policy_sh,v 1.1 2019/09/16 14:16:17 naddy Exp $
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1581507
+
+Index: nss/tests/policy/policy.sh
+--- nss/tests/policy/policy.sh.orig
++++ nss/tests/policy/policy.sh
+@@ -14,7 +14,7 @@
+ 
+ ignore_blank_lines()
+ {
+-  LC_ALL=C grep -v '^[[:space:]]*\(#\|$\)' "$1"
++  LC_ALL=C egrep -v '^[[:space:]]*(#|$)' "$1"
+ }
+ 
+ policy_run_tests()

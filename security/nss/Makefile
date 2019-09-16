@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2019/09/03 16:22:56 landry Exp $
+# $OpenBSD: Makefile,v 1.108 2019/09/16 14:16:17 naddy Exp $
 
 COMMENT=		libraries to support development of security-enabled apps
 
@@ -62,10 +62,13 @@ do-install:
 	${SUBST_CMD} -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} \
 		-c ${WRKSRC}/pkg/pkg-config/nss-config.in ${PREFIX}/bin/nss-config
 
+TEST_DEPENDS=	shells/bash
+
 do-test:
 	cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} \
 		PATH="${NSSOBJ}/bin:${PATH}" \
-		LD_LIBRARY_PATH="${NSSOBJ}/lib" /bin/sh ./all.sh
+		LD_LIBRARY_PATH="${NSSOBJ}/lib" \
+		UID=$$UID ${LOCALBASE}/bin/bash ./all.sh
 
 .include <bsd.port.arch.mk>
 
