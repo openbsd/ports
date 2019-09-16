@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.113 2019/09/15 12:14:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2019/09/16 06:02:53 ajacoutot Exp $
 
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
 GNOME_VERSION =		3.7
 EXTRACT_SUFX =		.tar.bz2
+REVISION =		0
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			gnucash-docs-${GNOME_VERSION}.tar.gz
@@ -59,7 +60,8 @@ LIB_DEPENDS =		databases/libdbi \
 			productivity/aqbanking \
 			www/webkitgtk4
 
-CONFIGURE_ARGS =	-DENABLE_BINRELOC=OFF
+CONFIGURE_ARGS =	-DENABLE_BINRELOC=OFF \
+			-DCOMPILE_GSCHEMAS=OFF
 
 # XXX make sure guile2 headers are picked up first (over guile1);
 # cannot use CPPFLAGS/CFLAGS since they get appended last
