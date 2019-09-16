@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1477 2019/08/26 23:38:12 kn Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1478 2019/09/16 16:50:08 kmos Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1680,8 +1680,8 @@ _PACKAGE_CHECKSUM_DIR = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cksums
 _do_checksum_package = \
 	install -d ${PACKAGE_REPOSITORY_MODE} ${_PACKAGE_CHECKSUM_DIR} && \
 	cd ${_TMP_REPO} && \
-	cksum -b -a sha256 -- $$pkgname \
-		>${_PACKAGE_CHECKSUM_DIR}/$$(basename $$pkgname .tgz).sha256
+	cksum -b -a ${_CIPHER} -- $$pkgname \
+		>${_PACKAGE_CHECKSUM_DIR}/$$(basename $$pkgname .tgz).${_CIPHER}
 
 .if ${CHECKSUM_PACKAGES:L} == "yes"
 _checksum_package = ${_do_checksum_package}
