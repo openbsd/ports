@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.82 2019/09/15 13:49:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2019/09/16 06:09:10 ajacoutot Exp $
 
 COMMENT=		gettext(1) files editor for GNOME
 
 GNOME_PROJECT=		gtranslator
 GNOME_VERSION=		3.34.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		textproc devel
 
@@ -27,6 +27,7 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes
 
 LIB_DEPENDS=		devel/gettext,-tools \
+			devel/json-glib \
 			textproc/gspell \
 			x11/gtksourceview4 \
 			x11/gnome/libgda
