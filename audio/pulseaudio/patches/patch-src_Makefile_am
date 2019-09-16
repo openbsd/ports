@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_Makefile_am,v 1.16 2018/11/17 11:55:01 ajacoutot Exp $
+$OpenBSD: patch-src_Makefile_am,v 1.17 2019/09/16 06:04:27 ajacoutot Exp $
 
 libpulsecommon-12.2.so: undefined symbol 'libintl_bindtextdomain'
 
 Index: src/Makefile.am
 --- src/Makefile.am.orig
 +++ src/Makefile.am
-@@ -750,7 +750,7 @@ endif
+@@ -772,7 +772,7 @@ endif
  
  libpulsecommon_@PA_MAJORMINOR@_la_CFLAGS = $(AM_CFLAGS) $(LIBSNDFILE_CFLAGS)
  libpulsecommon_@PA_MAJORMINOR@_la_LDFLAGS = $(AM_LDFLAGS) $(AM_LIBLDFLAGS) -avoid-version
@@ -14,7 +14,7 @@ Index: src/Makefile.am
  
  if HAVE_MEMFD
  libpulsecommon_@PA_MAJORMINOR@_la_SOURCES += \
-@@ -1291,6 +1291,9 @@ modlibexec_LTLIBRARIES += \
+@@ -1316,6 +1316,9 @@ modlibexec_LTLIBRARIES += \
  		module-oss.la
  endif
  
@@ -24,7 +24,7 @@ Index: src/Makefile.am
  if HAVE_COREAUDIO
  modlibexec_LTLIBRARIES += \
  		module-coreaudio-detect.la \
-@@ -1768,6 +1771,13 @@ module_oss_la_SOURCES = modules/oss/module-oss.c
+@@ -1790,6 +1793,13 @@ module_oss_la_SOURCES = modules/oss/module-oss.c
  module_oss_la_LDFLAGS = $(MODULE_LDFLAGS)
  module_oss_la_LIBADD = $(MODULE_LIBADD) liboss-util.la
  module_oss_la_CFLAGS = $(AM_CFLAGS) -DPA_MODULE_NAME=module_oss

@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.26 2018/06/21 15:23:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2019/09/16 06:04:27 ajacoutot Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
 @unexec-delete rm -rf /var/db/pulse
+bin/pa-info
 @bin bin/pacat
 @bin bin/pacmd
 @bin bin/pactl
@@ -187,11 +188,13 @@ share/examples/pulseaudio/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/pulseaudio/xdg/autostart/pulseaudio.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/pulseaudio.desktop
+share/locale/af/LC_MESSAGES/pulseaudio.mo
 share/locale/as/LC_MESSAGES/pulseaudio.mo
 share/locale/be/LC_MESSAGES/pulseaudio.mo
 share/locale/bn_IN/LC_MESSAGES/pulseaudio.mo
 share/locale/ca/LC_MESSAGES/pulseaudio.mo
 share/locale/cs/LC_MESSAGES/pulseaudio.mo
+share/locale/da/LC_MESSAGES/pulseaudio.mo
 share/locale/de/LC_MESSAGES/pulseaudio.mo
 share/locale/de_CH/
 share/locale/de_CH/LC_MESSAGES/

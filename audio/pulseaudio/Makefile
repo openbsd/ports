@@ -1,20 +1,17 @@
-# $OpenBSD: Makefile,v 1.103 2019/09/02 07:08:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2019/09/16 06:04:27 ajacoutot Exp $
 
 # XXX
 # sndio: what to do with (channel) map
 # sndio: check sample format
 # sndio: support for recording
 
-PORTROACH=		skipv:12.99.1,12.99.2,12.99.3
-
 COMMENT=		cross-platform networked sound server
 
-VERSION=		12.2
+VERSION=		13.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		1
 
-SHARED_LIBS +=  pulse                7.0      # .20.3
+SHARED_LIBS +=  pulse                7.0      # .21.1
 SHARED_LIBS +=  pulse-simple         1.1      # .1.1
 SHARED_LIBS +=  pulse-mainloop-glib  1.1      # .0.5
 
@@ -35,8 +32,6 @@ WANTLIB += sndfile sndio speexdsp ssl tdb vorbis vorbisenc xcb
 
 MASTER_SITES=		https://freedesktop.org/software/pulseaudio/releases/
 
-MODULES=		textproc/intltool
-
 # C++11; no associated WANTLIB: only checked by configure but never used
 COMPILER=		base-clang ports-gcc
 
@@ -47,6 +42,8 @@ USE_GMAKE=		Yes
 # and remove the following patches:
 # patch-libpulse-mainloop-glib_pc_in patch-libpulse-simple_pc_in patch-libpulse_pc_in
 USE_LIBTOOL=		gnu
+
+BUILD_DEPENDS=		devel/gettext,-tools
 
 # needed for tests
 BUILD_DEPENDS +=	devel/check
@@ -63,7 +60,7 @@ LIB_DEPENDS=		audio/libsndfile \
 # module-console-kit.so
 RUN_DEPENDS +=		sysutils/consolekit
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 
 # We only enable the strict minimum for basic volume control support.
 # sndiod(1) is the default sound server on OpenBSD and pulseaudio is only
@@ -81,13 +78,13 @@ CONFIGURE_ARGS=		--disable-atomic-arm-linux-helpers \
 			--disable-adrian-aec \
 			--disable-alsa \
 			--disable-asyncns \
-			--disable-bluez4 \
 			--disable-bluez5 \
 			--disable-esound \
 			--disable-gtk3 \
 			--disable-jack \
 			--disable-hal-compat \
-			--disable-systemd \
+			--disable-systemd-daemon \
+			--disable-systemd-login \
 			--disable-systemd-journal \
 			--disable-udev \
 			--disable-lirc \
@@ -115,17 +112,10 @@ FAKE_FLAGS=		pulseconfdir="${PREFIX}/share/examples/pulseaudio/pulse" \
 ### SNDIO ###
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
-BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
-			${MODGNU_AUTOCONF_DEPENDS}
-BUILD_DEPENDS +=	devel/libtool # needs libtoolize
-
 post-extract:
 	cp ${FILESDIR}/module-sndio*.{c,h} ${WRKSRC}/src/modules/
 
-do-gen:
-	cd ${WRKSRC} && ${SETENV} ${AUTOCONF_ENV} autoreconf -i --force && \
-		${SETENV} ${AUTOCONF_ENV} aclocal && intltoolize --force
-### END SNDIO ###
+pre-configure:
 	sed -i 's,/bin/bash,/usr/bin/env bash,' \
 		${WRKSRC}/shell-completion/bash/pulseaudio
 
