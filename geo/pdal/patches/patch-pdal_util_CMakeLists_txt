@@ -1,0 +1,15 @@
+$OpenBSD: patch-pdal_util_CMakeLists_txt,v 1.5 2019/09/16 18:02:31 landry Exp $
+
+Index: pdal/util/CMakeLists.txt
+--- pdal/util/CMakeLists.txt.orig
++++ pdal/util/CMakeLists.txt
+@@ -6,9 +6,6 @@ if(EXISTS)
+     return()
+ endif()
+ 
+-include(${PDAL_CMAKE_DIR}/execinfo.cmake)
+-include(${PDAL_CMAKE_DIR}/unwind.cmake)
+-
+ if(LIBUNWIND_FOUND)
+     set(BACKTRACE_SOURCE BacktraceUnwind.cpp)
+     set(BACKTRACE_LIBRARIES ${LIBUNWIND_LIBRARIES})
