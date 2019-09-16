@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2019/09/16 06:04:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2019/09/16 21:48:23 ajacoutot Exp $
 
 # XXX
 # sndio: what to do with (channel) map
@@ -44,6 +44,9 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		gnu
 
 BUILD_DEPENDS=		devel/gettext,-tools
+
+# bundled xmltoman
+BUILD_DEPENDS +=	textproc/p5-XML-Parser
 
 # needed for tests
 BUILD_DEPENDS +=	devel/check
