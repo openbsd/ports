@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2019/09/17 13:39:59 sthen Exp $
 
 COMMENT=	DKIM and DomainKeys message-signing implementation
 
-DISTNAME=	Mail-DKIM-0.54
+DISTNAME=	Mail-DKIM-0.56
 CATEGORIES=	mail
 
 # Perl
@@ -13,6 +13,7 @@ PKG_ARCH=	*
 
 RUN_DEPENDS=	security/p5-Crypt-OpenSSL-RSA \
 		mail/p5-Mail-Tools \
+		mail/p5-Mail-AuthenticationResults>=1.20180215 \
 		net/p5-Net-DNS
 
 TEST_DEPENDS=	devel/p5-Test-RequiresInternet \
