@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/03/08 20:35:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2019/09/17 16:46:08 sthen Exp $
 @newgroup _scamper:677
 @newuser _scamper:677:_scamper:daemon:Scamper Account:/nonexistent:/sbin/nologin
 @bin bin/sc_ally
 @bin bin/sc_analysis_dump
 @bin bin/sc_attach
 @bin bin/sc_bdrmap
+@bin bin/sc_erosprober
 @bin bin/sc_filterpolicy
 @bin bin/sc_ipiddump
 @bin bin/sc_prefixscan
@@ -34,6 +35,7 @@
 include/scamper_addr.h
 include/scamper_dealias.h
 include/scamper_file.h
+include/scamper_host.h
 include/scamper_icmpext.h
 include/scamper_list.h
 include/scamper_neighbourdisc.h
@@ -50,6 +52,7 @@ lib/libscamperfile.la
 @man man/man1/sc_analysis_dump.1
 @man man/man1/sc_attach.1
 @man man/man1/sc_bdrmap.1
+@man man/man1/sc_erosprober.1
 @man man/man1/sc_filterpolicy.1
 @man man/man1/sc_ipiddump.1
 @man man/man1/sc_prefixscan.1
