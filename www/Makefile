@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.923 2019/09/13 09:54:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.924 2019/09/18 16:34:51 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -35,6 +35,7 @@
      SUBDIR += dokuwiki
      SUBDIR += drupal7
      SUBDIR += drush
+     SUBDIR += e2guardian
      SUBDIR += edbrowse
      SUBDIR += epiphany
      SUBDIR += erl-mochiweb
