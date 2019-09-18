@@ -1,15 +1,15 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.24 2019/08/23 08:48:46 sebastia Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.25 2019/09/18 00:36:21 sebastia Exp $
 
 - Override library version
-- only include utmpx_file when there is utmpx.h on the system
 
 Index: lib/CMakeLists.txt
 --- lib/CMakeLists.txt.orig
 +++ lib/CMakeLists.txt
-@@ -334,6 +334,7 @@ set_target_properties(libfactersrc PROPERTIES POSITION
+@@ -334,7 +334,7 @@ add_library(libfactersrc OBJECT ${LIBFACTER_COMMON_SOU
+ set_target_properties(libfactersrc PROPERTIES POSITION_INDEPENDENT_CODE true)
  add_library(libfacter $<TARGET_OBJECTS:libfactersrc>)
  if (BUILD_SHARED_LIBS)
-     set_target_properties(libfacter PROPERTIES PREFIX "" SUFFIX ".so" IMPORT_PREFIX "" IMPORT_SUFFIX ".so.a" VERSION ${PROJECT_VERSION})
+-    set_target_properties(libfacter PROPERTIES PREFIX "" SUFFIX ".so" IMPORT_PREFIX "" IMPORT_SUFFIX ".so.a" VERSION ${PROJECT_VERSION})
 +    set_target_properties(libfacter PROPERTIES PREFIX "" SUFFIX ".so" IMPORT_PREFIX "" IMPORT_SUFFIX ".so.a" VERSION ${LIBfacter_VERSION})
  endif()
  
