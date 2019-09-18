@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2019/05/14 15:03:18 jasper Exp $
+$OpenBSD: README,v 1.2 2019/09/18 10:59:37 jasper Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -31,11 +31,11 @@ On wg1 a few setting are required:
 
 Configure the tun0 interfaces for wg1:
 
-# ifconfig tun2 up 10.0.0.1 10.0.0.2 netmask 255.255.255.0
+# ifconfig tun0 up 10.0.0.1 10.0.0.2 netmask 255.255.255.0
 
 and wg2:
 
-# ifconfig tun2 up 10.0.0.2 10.0.0.1 netmask 255.255.255.0
+# ifconfig tun0 up 10.0.0.2 10.0.0.1 netmask 255.255.255.0
 
 Configure the wireguard_go service on both nodes:
 
