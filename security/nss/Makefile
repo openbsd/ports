@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2019/09/16 14:16:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.109 2019/09/18 21:14:39 naddy Exp $
 
 COMMENT=		libraries to support development of security-enabled apps
 
@@ -68,7 +68,7 @@ do-test:
 	cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} \
 		PATH="${NSSOBJ}/bin:${PATH}" \
 		LD_LIBRARY_PATH="${NSSOBJ}/lib" \
-		UID=$$UID ${LOCALBASE}/bin/bash ./all.sh
+		${LOCALBASE}/bin/bash ./all.sh
 
 .include <bsd.port.arch.mk>
 
