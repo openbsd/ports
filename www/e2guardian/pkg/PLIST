@@ -1,0 +1,594 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/18 16:34:03 sthen Exp $
+@newgroup _e2guardian:842
+@newuser _e2guardian:842:842:daemon:e2guardian user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/e2guardian
+@extraunexec rm -f /var/log/e2guardian/*
+@man man/man8/e2guardian.8
+@bin sbin/e2guardian
+share/doc/e2guardian/
+share/doc/e2guardian/AuthPlugins
+share/doc/e2guardian/ContentScanners
+share/doc/e2guardian/DownloadManagers
+share/doc/e2guardian/FAQ
+share/doc/e2guardian/FAQ.html
+share/doc/e2guardian/Plugins
+share/e2guardian/
+share/e2guardian/blockedflash.swf
+share/e2guardian/e2guardian.pl
+share/e2guardian/languages/
+share/e2guardian/languages/arspanish/
+share/e2guardian/languages/arspanish/fancydmtemplate.html
+share/e2guardian/languages/arspanish/messages
+share/e2guardian/languages/arspanish/neterr_template.html
+share/e2guardian/languages/arspanish/template.html
+share/e2guardian/languages/bulgarian/
+share/e2guardian/languages/bulgarian/fancydmtemplate.html
+share/e2guardian/languages/bulgarian/messages
+share/e2guardian/languages/bulgarian/neterr_template.html
+share/e2guardian/languages/bulgarian/template.html
+share/e2guardian/languages/chinesebig5/
+share/e2guardian/languages/chinesebig5/fancydmtemplate.html
+share/e2guardian/languages/chinesebig5/messages
+share/e2guardian/languages/chinesebig5/neterr_template.html
+share/e2guardian/languages/chinesebig5/template.html
+share/e2guardian/languages/chinesegb2312/
+share/e2guardian/languages/chinesegb2312/fancydmtemplate.html
+share/e2guardian/languages/chinesegb2312/messages
+share/e2guardian/languages/chinesegb2312/neterr_template.html
+share/e2guardian/languages/chinesegb2312/template.html
+share/e2guardian/languages/czech/
+share/e2guardian/languages/czech/fancydmtemplate.html
+share/e2guardian/languages/czech/messages
+share/e2guardian/languages/czech/neterr_template.html
+share/e2guardian/languages/czech/template.html
+share/e2guardian/languages/danish/
+share/e2guardian/languages/danish/fancydmtemplate.html
+share/e2guardian/languages/danish/messages
+share/e2guardian/languages/danish/neterr_template.html
+share/e2guardian/languages/danish/template.html
+share/e2guardian/languages/dutch/
+share/e2guardian/languages/dutch/fancydmtemplate.html
+share/e2guardian/languages/dutch/messages
+share/e2guardian/languages/dutch/neterr_template.html
+share/e2guardian/languages/dutch/template.html
+share/e2guardian/languages/french/
+share/e2guardian/languages/french/fancydmtemplate.html
+share/e2guardian/languages/french/messages
+share/e2guardian/languages/french/neterr_template.html
+share/e2guardian/languages/french/template.html
+share/e2guardian/languages/german/
+share/e2guardian/languages/german/fancydmtemplate.html
+share/e2guardian/languages/german/messages
+share/e2guardian/languages/german/neterr_template.html
+share/e2guardian/languages/german/template.html
+share/e2guardian/languages/hebrew/
+share/e2guardian/languages/hebrew/fancydmtemplate.html
+share/e2guardian/languages/hebrew/messages
+share/e2guardian/languages/hebrew/neterr_template.html
+share/e2guardian/languages/hebrew/template.html
+share/e2guardian/languages/hungarian/
+share/e2guardian/languages/hungarian/fancydmtemplate.html
+share/e2guardian/languages/hungarian/messages
+share/e2guardian/languages/hungarian/neterr_template.html
+share/e2guardian/languages/hungarian/template.html
+share/e2guardian/languages/indonesian/
+share/e2guardian/languages/indonesian/fancydmtemplate.html
+share/e2guardian/languages/indonesian/messages
+share/e2guardian/languages/indonesian/neterr_template.html
+share/e2guardian/languages/indonesian/template.html
+share/e2guardian/languages/italian/
+share/e2guardian/languages/italian/fancydmtemplate.html
+share/e2guardian/languages/italian/messages
+share/e2guardian/languages/italian/neterr_template.html
+share/e2guardian/languages/italian/template.html
+share/e2guardian/languages/japanese/
+share/e2guardian/languages/japanese/fancydmtemplate.html
+share/e2guardian/languages/japanese/messages
+share/e2guardian/languages/japanese/neterr_template.html
+share/e2guardian/languages/japanese/template.html
+share/e2guardian/languages/lithuanian/
+share/e2guardian/languages/lithuanian/fancydmtemplate.html
+share/e2guardian/languages/lithuanian/messages
+share/e2guardian/languages/lithuanian/neterr_template.html
+share/e2guardian/languages/lithuanian/template.html
+share/e2guardian/languages/malay/
+share/e2guardian/languages/malay/fancydmtemplate.html
+share/e2guardian/languages/malay/messages
+share/e2guardian/languages/malay/neterr_template.html
+share/e2guardian/languages/malay/template.html
+share/e2guardian/languages/mxspanish/
+share/e2guardian/languages/mxspanish/fancydmtemplate.html
+share/e2guardian/languages/mxspanish/messages
+share/e2guardian/languages/mxspanish/neterr_template.html
+share/e2guardian/languages/mxspanish/template.html
+share/e2guardian/languages/polish/
+share/e2guardian/languages/polish/fancydmtemplate.html
+share/e2guardian/languages/polish/messages
+share/e2guardian/languages/polish/neterr_template.html
+share/e2guardian/languages/polish/template.html
+share/e2guardian/languages/portuguese/
+share/e2guardian/languages/portuguese/fancydmtemplate.html
+share/e2guardian/languages/portuguese/messages
+share/e2guardian/languages/portuguese/neterr_template.html
+share/e2guardian/languages/portuguese/template.html
+share/e2guardian/languages/ptbrazilian/
+share/e2guardian/languages/ptbrazilian/fancydmtemplate.html
+share/e2guardian/languages/ptbrazilian/messages
+share/e2guardian/languages/ptbrazilian/neterr_template.html
+share/e2guardian/languages/ptbrazilian/template.html
+share/e2guardian/languages/russian-1251/
+share/e2guardian/languages/russian-1251/fancydmtemplate.html
+share/e2guardian/languages/russian-1251/messages
+share/e2guardian/languages/russian-1251/neterr_template.html
+share/e2guardian/languages/russian-1251/template.html
+share/e2guardian/languages/russian-koi8-r/
+share/e2guardian/languages/russian-koi8-r/fancydmtemplate.html
+share/e2guardian/languages/russian-koi8-r/messages
+share/e2guardian/languages/russian-koi8-r/neterr_template.html
+share/e2guardian/languages/russian-koi8-r/template.html
+share/e2guardian/languages/slovak/
+share/e2guardian/languages/slovak/fancydmtemplate.html
+share/e2guardian/languages/slovak/messages
+share/e2guardian/languages/slovak/neterr_template.html
+share/e2guardian/languages/slovak/template.html
+share/e2guardian/languages/spanish/
+share/e2guardian/languages/spanish/fancydmtemplate.html
+share/e2guardian/languages/spanish/messages
+share/e2guardian/languages/spanish/neterr_template.html
+share/e2guardian/languages/spanish/template.html
+share/e2guardian/languages/swedish/
+share/e2guardian/languages/swedish/fancydmtemplate.html
+share/e2guardian/languages/swedish/messages
+share/e2guardian/languages/swedish/neterr_template.html
+share/e2guardian/languages/swedish/template.html
+share/e2guardian/languages/turkish/
+share/e2guardian/languages/turkish/fancydmtemplate.html
+share/e2guardian/languages/turkish/messages
+share/e2guardian/languages/turkish/neterr_template.html
+share/e2guardian/languages/turkish/template.html
+share/e2guardian/languages/ukenglish/
+share/e2guardian/languages/ukenglish/fancydmtemplate.html
+share/e2guardian/languages/ukenglish/messages
+share/e2guardian/languages/ukenglish/neterr_template.html
+share/e2guardian/languages/ukenglish/template.html
+share/e2guardian/scripts/
+share/e2guardian/scripts/bsd-init
+share/e2guardian/scripts/e2guardian
+share/e2guardian/scripts/e2guardian.service
+share/e2guardian/scripts/logrotation
+share/e2guardian/scripts/solaris-init
+share/e2guardian/scripts/systemv-init
+share/e2guardian/transparent1x1.gif
+share/examples/e2guardian/
+@sample ${SYSCONFDIR}/e2guardian/
+share/examples/e2guardian/authplugins/
+@sample ${SYSCONFDIR}/e2guardian/authplugins/
+share/examples/e2guardian/authplugins/ident.conf
+@sample ${SYSCONFDIR}/e2guardian/authplugins/ident.conf
+share/examples/e2guardian/authplugins/ip.conf
+@sample ${SYSCONFDIR}/e2guardian/authplugins/ip.conf
+share/examples/e2guardian/authplugins/port.conf
+@sample ${SYSCONFDIR}/e2guardian/authplugins/port.conf
+share/examples/e2guardian/authplugins/proxy-basic.conf
+@sample ${SYSCONFDIR}/e2guardian/authplugins/proxy-basic.conf
+share/examples/e2guardian/authplugins/proxy-digest.conf
+@sample ${SYSCONFDIR}/e2guardian/authplugins/proxy-digest.conf
+share/examples/e2guardian/common.story
+@sample ${SYSCONFDIR}/e2guardian/common.story
+share/examples/e2guardian/contentscanners/
+@sample ${SYSCONFDIR}/e2guardian/contentscanners/
+share/examples/e2guardian/contentscanners/clamdscan.conf
+@sample ${SYSCONFDIR}/e2guardian/contentscanners/clamdscan.conf
+share/examples/e2guardian/downloadmanagers/
+@sample ${SYSCONFDIR}/e2guardian/downloadmanagers/
+share/examples/e2guardian/downloadmanagers/default.conf
+@sample ${SYSCONFDIR}/e2guardian/downloadmanagers/default.conf
+share/examples/e2guardian/e2guardian.conf
+@sample ${SYSCONFDIR}/e2guardian/e2guardian.conf
+share/examples/e2guardian/e2guardianf1.conf
+@sample ${SYSCONFDIR}/e2guardian/e2guardianf1.conf
+share/examples/e2guardian/examplef1.story
+@sample ${SYSCONFDIR}/e2guardian/examplef1.story
+share/examples/e2guardian/lists/
+@sample ${SYSCONFDIR}/e2guardian/lists/
+share/examples/e2guardian/lists/addheaderregexplist
+@sample ${SYSCONFDIR}/e2guardian/lists/addheaderregexplist
+share/examples/e2guardian/lists/authexceptioniplist
+@sample ${SYSCONFDIR}/e2guardian/lists/authexceptioniplist
+share/examples/e2guardian/lists/authexceptionsiteiplist
+@sample ${SYSCONFDIR}/e2guardian/lists/authexceptionsiteiplist
+share/examples/e2guardian/lists/authexceptionsitelist
+@sample ${SYSCONFDIR}/e2guardian/lists/authexceptionsitelist
+share/examples/e2guardian/lists/authexceptionurllist
+@sample ${SYSCONFDIR}/e2guardian/lists/authexceptionurllist
+share/examples/e2guardian/lists/authplugins/
+@sample ${SYSCONFDIR}/e2guardian/lists/authplugins/
+share/examples/e2guardian/lists/authplugins/ipgroups
+@sample ${SYSCONFDIR}/e2guardian/lists/authplugins/ipgroups
+share/examples/e2guardian/lists/authplugins/portgroups
+@sample ${SYSCONFDIR}/e2guardian/lists/authplugins/portgroups
+share/examples/e2guardian/lists/bannedclientlist
+@sample ${SYSCONFDIR}/e2guardian/lists/bannedclientlist
+share/examples/e2guardian/lists/bannedextensionlist
+@sample ${SYSCONFDIR}/e2guardian/lists/bannedextensionlist
+share/examples/e2guardian/lists/bannediplist
+@sample ${SYSCONFDIR}/e2guardian/lists/bannediplist
+share/examples/e2guardian/lists/bannedmimetypelist
+@sample ${SYSCONFDIR}/e2guardian/lists/bannedmimetypelist
+share/examples/e2guardian/lists/bannedphraselist
+@sample ${SYSCONFDIR}/e2guardian/lists/bannedphraselist
+share/examples/e2guardian/lists/bannedregexpheaderlist
+@sample ${SYSCONFDIR}/e2guardian/lists/bannedregexpheaderlist
+share/examples/e2guardian/lists/bannedregexpurllist
+@sample ${SYSCONFDIR}/e2guardian/lists/bannedregexpurllist
+share/examples/e2guardian/lists/bannedregexpuseragentlist
+@sample ${SYSCONFDIR}/e2guardian/lists/bannedregexpuseragentlist
+share/examples/e2guardian/lists/bannedrooms/
+@sample ${SYSCONFDIR}/e2guardian/lists/bannedrooms/
+share/examples/e2guardian/lists/bannedrooms/default
+@sample ${SYSCONFDIR}/e2guardian/lists/bannedrooms/default
+share/examples/e2guardian/lists/bannedsearchlist
+@sample ${SYSCONFDIR}/e2guardian/lists/bannedsearchlist
+share/examples/e2guardian/lists/bannedsearchoveridelist
+@sample ${SYSCONFDIR}/e2guardian/lists/bannedsearchoveridelist
+share/examples/e2guardian/lists/bannedsiteiplist
+@sample ${SYSCONFDIR}/e2guardian/lists/bannedsiteiplist
+share/examples/e2guardian/lists/bannedsitelist
+@sample ${SYSCONFDIR}/e2guardian/lists/bannedsitelist
+share/examples/e2guardian/lists/bannedsslsiteiplist
+@sample ${SYSCONFDIR}/e2guardian/lists/bannedsslsiteiplist
+share/examples/e2guardian/lists/bannedsslsitelist
+@sample ${SYSCONFDIR}/e2guardian/lists/bannedsslsitelist
+share/examples/e2guardian/lists/bannedurllist
+@sample ${SYSCONFDIR}/e2guardian/lists/bannedurllist
+share/examples/e2guardian/lists/contentregexplist
+@sample ${SYSCONFDIR}/e2guardian/lists/contentregexplist
+share/examples/e2guardian/lists/contentscanners/
+@sample ${SYSCONFDIR}/e2guardian/lists/contentscanners/
+share/examples/e2guardian/lists/contentscanners/exceptionvirusextensionlist
+@sample ${SYSCONFDIR}/e2guardian/lists/contentscanners/exceptionvirusextensionlist
+share/examples/e2guardian/lists/contentscanners/exceptionvirusmimetypelist
+@sample ${SYSCONFDIR}/e2guardian/lists/contentscanners/exceptionvirusmimetypelist
+share/examples/e2guardian/lists/contentscanners/exceptionvirussitelist
+@sample ${SYSCONFDIR}/e2guardian/lists/contentscanners/exceptionvirussitelist
+share/examples/e2guardian/lists/contentscanners/exceptionvirusurllist
+@sample ${SYSCONFDIR}/e2guardian/lists/contentscanners/exceptionvirusurllist
+share/examples/e2guardian/lists/embededreferersiteiplist
+@sample ${SYSCONFDIR}/e2guardian/lists/embededreferersiteiplist
+share/examples/e2guardian/lists/embededreferersitelist
+@sample ${SYSCONFDIR}/e2guardian/lists/embededreferersitelist
+share/examples/e2guardian/lists/embededrefererurllist
+@sample ${SYSCONFDIR}/e2guardian/lists/embededrefererurllist
+share/examples/e2guardian/lists/exceptionclientlist
+@sample ${SYSCONFDIR}/e2guardian/lists/exceptionclientlist
+share/examples/e2guardian/lists/exceptionextensionlist
+@sample ${SYSCONFDIR}/e2guardian/lists/exceptionextensionlist
+share/examples/e2guardian/lists/exceptionfilesiteiplist
+@sample ${SYSCONFDIR}/e2guardian/lists/exceptionfilesiteiplist
+share/examples/e2guardian/lists/exceptionfilesitelist
+@sample ${SYSCONFDIR}/e2guardian/lists/exceptionfilesitelist
+share/examples/e2guardian/lists/exceptionfileurllist
+@sample ${SYSCONFDIR}/e2guardian/lists/exceptionfileurllist
+share/examples/e2guardian/lists/exceptioniplist
+@sample ${SYSCONFDIR}/e2guardian/lists/exceptioniplist
+share/examples/e2guardian/lists/exceptionmimetypelist
+@sample ${SYSCONFDIR}/e2guardian/lists/exceptionmimetypelist
+share/examples/e2guardian/lists/exceptionphraselist
+@sample ${SYSCONFDIR}/e2guardian/lists/exceptionphraselist
+share/examples/e2guardian/lists/exceptionregexpheaderlist
+@sample ${SYSCONFDIR}/e2guardian/lists/exceptionregexpheaderlist
+share/examples/e2guardian/lists/exceptionregexpurllist
+@sample ${SYSCONFDIR}/e2guardian/lists/exceptionregexpurllist
+share/examples/e2guardian/lists/exceptionregexpuseragentlist
+@sample ${SYSCONFDIR}/e2guardian/lists/exceptionregexpuseragentlist
+share/examples/e2guardian/lists/exceptionsiteiplist
+@sample ${SYSCONFDIR}/e2guardian/lists/exceptionsiteiplist
+share/examples/e2guardian/lists/exceptionsitelist
+@sample ${SYSCONFDIR}/e2guardian/lists/exceptionsitelist
+share/examples/e2guardian/lists/exceptionurllist
+@sample ${SYSCONFDIR}/e2guardian/lists/exceptionurllist
+share/examples/e2guardian/lists/exceptionvirusextensionlist
+@sample ${SYSCONFDIR}/e2guardian/lists/exceptionvirusextensionlist
+share/examples/e2guardian/lists/exceptionvirussiteiplist
+@sample ${SYSCONFDIR}/e2guardian/lists/exceptionvirussiteiplist
+share/examples/e2guardian/lists/filtergroupslist
+@sample ${SYSCONFDIR}/e2guardian/lists/filtergroupslist
+share/examples/e2guardian/lists/greysiteiplist
+@sample ${SYSCONFDIR}/e2guardian/lists/greysiteiplist
+share/examples/e2guardian/lists/greysitelist
+@sample ${SYSCONFDIR}/e2guardian/lists/greysitelist
+share/examples/e2guardian/lists/greysslsiteiplist
+@sample ${SYSCONFDIR}/e2guardian/lists/greysslsiteiplist
+share/examples/e2guardian/lists/greysslsitelist
+@sample ${SYSCONFDIR}/e2guardian/lists/greysslsitelist
+share/examples/e2guardian/lists/greyurllist
+@sample ${SYSCONFDIR}/e2guardian/lists/greyurllist
+share/examples/e2guardian/lists/headerregexplist
+@sample ${SYSCONFDIR}/e2guardian/lists/headerregexplist
+share/examples/e2guardian/lists/ipnobypass
+@sample ${SYSCONFDIR}/e2guardian/lists/ipnobypass
+share/examples/e2guardian/lists/localbannedsearchlist
+@sample ${SYSCONFDIR}/e2guardian/lists/localbannedsearchlist
+share/examples/e2guardian/lists/localbannedsiteiplist
+@sample ${SYSCONFDIR}/e2guardian/lists/localbannedsiteiplist
+share/examples/e2guardian/lists/localbannedsitelist
+@sample ${SYSCONFDIR}/e2guardian/lists/localbannedsitelist
+share/examples/e2guardian/lists/localbannedsslsiteiplist
+@sample ${SYSCONFDIR}/e2guardian/lists/localbannedsslsiteiplist
+share/examples/e2guardian/lists/localbannedsslsitelist
+@sample ${SYSCONFDIR}/e2guardian/lists/localbannedsslsitelist
+share/examples/e2guardian/lists/localbannedurllist
+@sample ${SYSCONFDIR}/e2guardian/lists/localbannedurllist
+share/examples/e2guardian/lists/localexceptionsiteiplist
+@sample ${SYSCONFDIR}/e2guardian/lists/localexceptionsiteiplist
+share/examples/e2guardian/lists/localexceptionsitelist
+@sample ${SYSCONFDIR}/e2guardian/lists/localexceptionsitelist
+share/examples/e2guardian/lists/localexceptionurllist
+@sample ${SYSCONFDIR}/e2guardian/lists/localexceptionurllist
+share/examples/e2guardian/lists/localgreysiteiplist
+@sample ${SYSCONFDIR}/e2guardian/lists/localgreysiteiplist
+share/examples/e2guardian/lists/localgreysitelist
+@sample ${SYSCONFDIR}/e2guardian/lists/localgreysitelist
+share/examples/e2guardian/lists/localgreysslsiteiplist
+@sample ${SYSCONFDIR}/e2guardian/lists/localgreysslsiteiplist
+share/examples/e2guardian/lists/localgreysslsitelist
+@sample ${SYSCONFDIR}/e2guardian/lists/localgreysslsitelist
+share/examples/e2guardian/lists/localgreyurllist
+@sample ${SYSCONFDIR}/e2guardian/lists/localgreyurllist
+share/examples/e2guardian/lists/logregexpurllist
+@sample ${SYSCONFDIR}/e2guardian/lists/logregexpurllist
+share/examples/e2guardian/lists/logsiteiplist
+@sample ${SYSCONFDIR}/e2guardian/lists/logsiteiplist
+share/examples/e2guardian/lists/logsitelist
+@sample ${SYSCONFDIR}/e2guardian/lists/logsitelist
+share/examples/e2guardian/lists/logurllist
+@sample ${SYSCONFDIR}/e2guardian/lists/logurllist
+share/examples/e2guardian/lists/nocheckcertsiteiplist
+@sample ${SYSCONFDIR}/e2guardian/lists/nocheckcertsiteiplist
+share/examples/e2guardian/lists/nocheckcertsitelist
+@sample ${SYSCONFDIR}/e2guardian/lists/nocheckcertsitelist
+share/examples/e2guardian/lists/phraselists/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/
+share/examples/e2guardian/lists/phraselists/badwords/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/badwords/
+share/examples/e2guardian/lists/phraselists/badwords/weighted_dutch
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/badwords/weighted_dutch
+share/examples/e2guardian/lists/phraselists/badwords/weighted_french
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/badwords/weighted_french
+share/examples/e2guardian/lists/phraselists/badwords/weighted_german
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/badwords/weighted_german
+share/examples/e2guardian/lists/phraselists/badwords/weighted_portuguese
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/badwords/weighted_portuguese
+share/examples/e2guardian/lists/phraselists/badwords/weighted_spanish
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/badwords/weighted_spanish
+share/examples/e2guardian/lists/phraselists/chat/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/chat/
+share/examples/e2guardian/lists/phraselists/chat/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/chat/weighted
+share/examples/e2guardian/lists/phraselists/chat/weighted_italian
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/chat/weighted_italian
+share/examples/e2guardian/lists/phraselists/conspiracy/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/conspiracy/
+share/examples/e2guardian/lists/phraselists/conspiracy/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/conspiracy/weighted
+share/examples/e2guardian/lists/phraselists/domainsforsale/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/domainsforsale/
+share/examples/e2guardian/lists/phraselists/domainsforsale/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/domainsforsale/weighted
+share/examples/e2guardian/lists/phraselists/drugadvocacy/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/drugadvocacy/
+share/examples/e2guardian/lists/phraselists/drugadvocacy/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/drugadvocacy/weighted
+share/examples/e2guardian/lists/phraselists/forums/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/forums/
+share/examples/e2guardian/lists/phraselists/forums/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/forums/weighted
+share/examples/e2guardian/lists/phraselists/gambling/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/gambling/
+share/examples/e2guardian/lists/phraselists/gambling/banned
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/gambling/banned
+share/examples/e2guardian/lists/phraselists/gambling/banned_portuguese
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/gambling/banned_portuguese
+share/examples/e2guardian/lists/phraselists/gambling/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/gambling/weighted
+share/examples/e2guardian/lists/phraselists/gambling/weighted_portuguese
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/gambling/weighted_portuguese
+share/examples/e2guardian/lists/phraselists/games/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/games/
+share/examples/e2guardian/lists/phraselists/games/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/games/weighted
+share/examples/e2guardian/lists/phraselists/goodphrases/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/goodphrases/
+share/examples/e2guardian/lists/phraselists/goodphrases/exception
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/goodphrases/exception
+share/examples/e2guardian/lists/phraselists/goodphrases/exception_email
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/goodphrases/exception_email
+share/examples/e2guardian/lists/phraselists/goodphrases/weighted_general
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/goodphrases/weighted_general
+share/examples/e2guardian/lists/phraselists/goodphrases/weighted_general_danish
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/goodphrases/weighted_general_danish
+share/examples/e2guardian/lists/phraselists/goodphrases/weighted_general_dutch
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/goodphrases/weighted_general_dutch
+share/examples/e2guardian/lists/phraselists/goodphrases/weighted_general_malay
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/goodphrases/weighted_general_malay
+share/examples/e2guardian/lists/phraselists/goodphrases/weighted_general_polish
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/goodphrases/weighted_general_polish
+share/examples/e2guardian/lists/phraselists/goodphrases/weighted_general_portuguese
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/goodphrases/weighted_general_portuguese
+share/examples/e2guardian/lists/phraselists/goodphrases/weighted_general_swedish
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/goodphrases/weighted_general_swedish
+share/examples/e2guardian/lists/phraselists/goodphrases/weighted_news
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/goodphrases/weighted_news
+share/examples/e2guardian/lists/phraselists/googlesearches/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/googlesearches/
+share/examples/e2guardian/lists/phraselists/googlesearches/banned
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/googlesearches/banned
+share/examples/e2guardian/lists/phraselists/gore/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/gore/
+share/examples/e2guardian/lists/phraselists/gore/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/gore/weighted
+share/examples/e2guardian/lists/phraselists/gore/weighted_portuguese
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/gore/weighted_portuguese
+share/examples/e2guardian/lists/phraselists/idtheft/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/idtheft/
+share/examples/e2guardian/lists/phraselists/idtheft/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/idtheft/weighted
+share/examples/e2guardian/lists/phraselists/illegaldrugs/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/illegaldrugs/
+share/examples/e2guardian/lists/phraselists/illegaldrugs/banned
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/illegaldrugs/banned
+share/examples/e2guardian/lists/phraselists/illegaldrugs/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/illegaldrugs/weighted
+share/examples/e2guardian/lists/phraselists/illegaldrugs/weighted_portuguese
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/illegaldrugs/weighted_portuguese
+share/examples/e2guardian/lists/phraselists/intolerance/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/intolerance/
+share/examples/e2guardian/lists/phraselists/intolerance/banned_portuguese
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/intolerance/banned_portuguese
+share/examples/e2guardian/lists/phraselists/intolerance/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/intolerance/weighted
+share/examples/e2guardian/lists/phraselists/intolerance/weighted_portuguese
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/intolerance/weighted_portuguese
+share/examples/e2guardian/lists/phraselists/legaldrugs/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/legaldrugs/
+share/examples/e2guardian/lists/phraselists/legaldrugs/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/legaldrugs/weighted
+share/examples/e2guardian/lists/phraselists/malware/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/malware/
+share/examples/e2guardian/lists/phraselists/malware/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/malware/weighted
+share/examples/e2guardian/lists/phraselists/music/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/music/
+share/examples/e2guardian/lists/phraselists/music/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/music/weighted
+share/examples/e2guardian/lists/phraselists/news/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/news/
+share/examples/e2guardian/lists/phraselists/news/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/news/weighted
+share/examples/e2guardian/lists/phraselists/nudism/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/nudism/
+share/examples/e2guardian/lists/phraselists/nudism/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/nudism/weighted
+share/examples/e2guardian/lists/phraselists/peer2peer/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/peer2peer/
+share/examples/e2guardian/lists/phraselists/peer2peer/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/peer2peer/weighted
+share/examples/e2guardian/lists/phraselists/personals/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/personals/
+share/examples/e2guardian/lists/phraselists/personals/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/personals/weighted
+share/examples/e2guardian/lists/phraselists/personals/weighted_portuguese
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/personals/weighted_portuguese
+share/examples/e2guardian/lists/phraselists/pornography/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/
+share/examples/e2guardian/lists/phraselists/pornography/banned
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/banned
+share/examples/e2guardian/lists/phraselists/pornography/banned_portuguese
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/banned_portuguese
+share/examples/e2guardian/lists/phraselists/pornography/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/weighted
+share/examples/e2guardian/lists/phraselists/pornography/weighted_chinese
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/weighted_chinese
+share/examples/e2guardian/lists/phraselists/pornography/weighted_danish
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/weighted_danish
+share/examples/e2guardian/lists/phraselists/pornography/weighted_dutch
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/weighted_dutch
+share/examples/e2guardian/lists/phraselists/pornography/weighted_french
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/weighted_french
+share/examples/e2guardian/lists/phraselists/pornography/weighted_german
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/weighted_german
+share/examples/e2guardian/lists/phraselists/pornography/weighted_italian
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/weighted_italian
+share/examples/e2guardian/lists/phraselists/pornography/weighted_japanese
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/weighted_japanese
+share/examples/e2guardian/lists/phraselists/pornography/weighted_malay
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/weighted_malay
+share/examples/e2guardian/lists/phraselists/pornography/weighted_norwegian
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/weighted_norwegian
+share/examples/e2guardian/lists/phraselists/pornography/weighted_polish
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/weighted_polish
+share/examples/e2guardian/lists/phraselists/pornography/weighted_portuguese
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/weighted_portuguese
+share/examples/e2guardian/lists/phraselists/pornography/weighted_russian
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/weighted_russian
+share/examples/e2guardian/lists/phraselists/pornography/weighted_russian_utf8
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/weighted_russian_utf8
+share/examples/e2guardian/lists/phraselists/pornography/weighted_spanish
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/weighted_spanish
+share/examples/e2guardian/lists/phraselists/pornography/weighted_swedish
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/pornography/weighted_swedish
+share/examples/e2guardian/lists/phraselists/proxies/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/proxies/
+share/examples/e2guardian/lists/phraselists/proxies/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/proxies/weighted
+share/examples/e2guardian/lists/phraselists/rta/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/rta/
+share/examples/e2guardian/lists/phraselists/rta/banned
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/rta/banned
+share/examples/e2guardian/lists/phraselists/safelabel/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/safelabel/
+share/examples/e2guardian/lists/phraselists/safelabel/banned
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/safelabel/banned
+share/examples/e2guardian/lists/phraselists/secretsocieties/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/secretsocieties/
+share/examples/e2guardian/lists/phraselists/secretsocieties/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/secretsocieties/weighted
+share/examples/e2guardian/lists/phraselists/sport/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/sport/
+share/examples/e2guardian/lists/phraselists/sport/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/sport/weighted
+share/examples/e2guardian/lists/phraselists/translation/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/translation/
+share/examples/e2guardian/lists/phraselists/translation/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/translation/weighted
+share/examples/e2guardian/lists/phraselists/travel/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/travel/
+share/examples/e2guardian/lists/phraselists/travel/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/travel/weighted
+share/examples/e2guardian/lists/phraselists/upstreamfilter/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/upstreamfilter/
+share/examples/e2guardian/lists/phraselists/upstreamfilter/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/upstreamfilter/weighted
+share/examples/e2guardian/lists/phraselists/violence/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/violence/
+share/examples/e2guardian/lists/phraselists/violence/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/violence/weighted
+share/examples/e2guardian/lists/phraselists/violence/weighted_portuguese
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/violence/weighted_portuguese
+share/examples/e2guardian/lists/phraselists/warezhacking/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/warezhacking/
+share/examples/e2guardian/lists/phraselists/warezhacking/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/warezhacking/weighted
+share/examples/e2guardian/lists/phraselists/weapons/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/weapons/
+share/examples/e2guardian/lists/phraselists/weapons/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/weapons/weighted
+share/examples/e2guardian/lists/phraselists/weapons/weighted_portuguese
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/weapons/weighted_portuguese
+share/examples/e2guardian/lists/phraselists/webmail/
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/webmail/
+share/examples/e2guardian/lists/phraselists/webmail/weighted
+@sample ${SYSCONFDIR}/e2guardian/lists/phraselists/webmail/weighted
+share/examples/e2guardian/lists/refererexceptionsiteiplist
+@sample ${SYSCONFDIR}/e2guardian/lists/refererexceptionsiteiplist
+share/examples/e2guardian/lists/refererexceptionsitelist
+@sample ${SYSCONFDIR}/e2guardian/lists/refererexceptionsitelist
+share/examples/e2guardian/lists/refererexceptionurllist
+@sample ${SYSCONFDIR}/e2guardian/lists/refererexceptionurllist
+share/examples/e2guardian/lists/searchregexplist
+@sample ${SYSCONFDIR}/e2guardian/lists/searchregexplist
+share/examples/e2guardian/lists/sslsiteregexplist
+@sample ${SYSCONFDIR}/e2guardian/lists/sslsiteregexplist
+share/examples/e2guardian/lists/urlredirectregexplist
+@sample ${SYSCONFDIR}/e2guardian/lists/urlredirectregexplist
+share/examples/e2guardian/lists/urlregexplist
+@sample ${SYSCONFDIR}/e2guardian/lists/urlregexplist
+share/examples/e2guardian/lists/weightedphraselist
+@sample ${SYSCONFDIR}/e2guardian/lists/weightedphraselist
+share/examples/e2guardian/preauth.story
+@sample ${SYSCONFDIR}/e2guardian/preauth.story
+share/examples/e2guardian/site.story
+@sample ${SYSCONFDIR}/e2guardian/site.story
+@owner _e2guardian
+@group _e2guardian
+@sample /var/log/e2guardian/

@@ -1,0 +1,14 @@
+$OpenBSD: patch-configs_e2guardian_conf_in,v 1.1.1.1 2019/09/18 16:34:03 sthen Exp $
+
+Index: configs/e2guardian.conf.in
+--- configs/e2guardian.conf.in.orig
++++ configs/e2guardian.conf.in
+@@ -568,7 +568,7 @@ logconnectionhandlingerrors = on
+ # This figure is the maximum number of concurrent connections.
+ # If more connections are made, connections will queue until a worker thread is free.
+ # On large site you might want to try 5000 (max value 20000)
+-httpworkers = 500 
++httpworkers = 50
+ 
+ # Process options
+ # (Change these only if you really know what you are doing).

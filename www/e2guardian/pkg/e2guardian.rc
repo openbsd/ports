@@ -1,0 +1,9 @@
+#!/bin/ksh
+#
+# $OpenBSD: e2guardian.rc,v 1.1.1.1 2019/09/18 16:34:03 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/e2guardian"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

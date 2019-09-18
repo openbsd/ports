@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2019/09/18 16:34:03 sthen Exp $
+
+openbsd has a bogus version in openssl.pc
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -592,7 +592,7 @@ else
+ 	LIBS="${LIBS} -lssl -lcrypto"
+ 	AC_DEFINE([__SSLMITM],[],[Define to enable SSL MITM ])
+ 	AC_DEFINE([__SSLCERT],[],[Define to enable SSL CERT ])
+-	PKG_CHECK_MODULES([OPENSSL],[ openssl >= 1.0.1])
++	PKG_CHECK_MODULES([OPENSSL],[openssl])
+ fi],
+ [
+ 	AC_MSG_RESULT(no)

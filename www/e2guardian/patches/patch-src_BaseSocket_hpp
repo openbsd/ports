@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_BaseSocket_hpp,v 1.1.1.1 2019/09/18 16:34:03 sthen Exp $
+
+Index: src/BaseSocket.hpp
+--- src/BaseSocket.hpp.orig
++++ src/BaseSocket.hpp
+@@ -12,6 +12,7 @@
+ #include <string>
+ #include <sys/types.h>
+ #include <sys/socket.h>
++#include <sys/select.h>
+ #include <sys/un.h>
+ #include <exception>
+ #include <netinet/in.h>

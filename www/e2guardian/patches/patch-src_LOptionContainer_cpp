@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_LOptionContainer_cpp,v 1.1.1.1 2019/09/18 16:34:03 sthen Exp $
+
+Index: src/LOptionContainer.cpp
+--- src/LOptionContainer.cpp.orig
++++ src/LOptionContainer.cpp
+@@ -40,7 +40,7 @@ LOptionContainer::LOptionContainer(int load_id)
+ {
+     char buff[40];
+ 
+-    sprintf(buff, "%ld", time(NULL));
++    sprintf(buff, "%lld", (long long)time(NULL));
+     start_time = buff;
+ 
+     loaded_ok = true;

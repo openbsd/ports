@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_String_cpp,v 1.1.1.1 2019/09/18 16:34:03 sthen Exp $
+
+Index: src/String.cpp
+--- src/String.cpp.orig
++++ src/String.cpp
+@@ -166,7 +166,7 @@ off_t String::toOffset()
+ 
+     this->removeWhiteSpace();
+ 
+-#if defined(_FILE_OFFSET_BITS) && (_FILE_OFFSET_BITS == 64)
++#if defined(__OpenBSD__) || defined(_FILE_OFFSET_BITS) && (_FILE_OFFSET_BITS == 64)
+     sscanf(this->c_str(), "%lld", &t);
+ #else
+     sscanf(this->c_str(), "%ld", &t);

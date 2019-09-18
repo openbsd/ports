@@ -1,0 +1,9 @@
+E2Guardian is a web proxy that filters the actual content of pages based
+on various methods including phrase matching, PICS filtering and URL
+filtering.
+
+E2Guardian is designed to be completely flexible and allows you to
+tailor the filtering to your exact needs. It can be as draconian or as
+unobstructive as you want. The default settings are geared towards what
+a primary school might want but E2Guardian puts you in control of what
+you want to block.
