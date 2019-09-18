@@ -1,0 +1,84 @@
+$OpenBSD: patch-configure_ac,v 1.1 2019/09/18 17:49:37 chrisz Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -644,6 +644,11 @@ AS_CASE([$CC,$host],
+ )
+ 
+ 
++# Respect LDFLAGS and CFLAGS
++common_cflags="$common_cflags $CFLAGS"
++oc_ldflags="$oc_ldflags $LDFLAGS"
++
++
+ ## Program to use to install files
+ AC_PROG_INSTALL
+ 
+@@ -760,8 +765,8 @@ AS_IF([test x"$enable_shared" != "xno"],
+     [[*-*-linux*|*-*-freebsd[3-9]*|*-*-freebsd[1-9][0-9]*\
+     |*-*-openbsd*|*-*-netbsd*|*-*-dragonfly*|*-*-gnu*|*-*-haiku*]],
+       [sharedlib_cflags="-fPIC"
+-      mksharedlib="$CC -shared"
+       oc_ldflags="$oc_ldflags -Wl,-E"
++      mksharedlib="$CC -shared $oc_ldflags"
+       rpath="-Wl,-rpath,"
+       mksharedlibrpath="-Wl,-rpath,"
+       natdynlinkopts="-Wl,-E"
+@@ -1564,27 +1569,39 @@ AS_IF([test x"$enable_graph_lib" = "xno" ],
+ ## libbfd
+ 
+ AC_CHECK_HEADER([bfd.h],
+-  [libbfd_ling=""
+-  AC_CHECK_LIB([bfd], [bfd_openr], [libbfd_link="-lbfd"])
+-  AS_IF([test -z "$libbfd_link"],
+-    [AC_CHECK_LIB([bfd], [bfd_openr], [libbfd_link="-lbfd -ldl"], [], [-ldl])])
+-  AS_IF([test -z "$libbfd_link"],
+-    [AC_CHECK_LIB([bfd], [bfd_openr],
+-      [libbfd_link="-lbfd -ldl -liberty"], [], [-ldl -liberty])])
+-  AS_IF([test -z "$libbfd_link"],
+-    [AC_CHECK_LIB([bfd], [bfd_openr],
+-      [libbfd_link="-lbfd -ldl -liberty -lz"], [], [-ldl -liberty -lz])])
+-  AS_IF([test -z "$libbfd_link"],
+-    [AC_CHECK_LIB([bfd], [bfd_openr],
++  [AS_IF([test x"${ac_cv_lib_bfd_bfd_openr}" != "xyes" ],
++    [unset ac_cv_lib_bfd_bfd_openr
++    AC_CHECK_LIB([bfd], [bfd_openr], [libbfd_link="-lbfd"])])]
++  [AS_IF([test x"${ac_cv_lib_bfd_bfd_openr}" != "xyes" ],
++    [unset ac_cv_lib_bfd_bfd_openr
++    AC_CHECK_LIB([bfd], [bfd_openr], [libbfd_link="-lbfd -ldl"], [], [-ldl])])]
++  [AS_IF([test x"${ac_cv_lib_bfd_bfd_openr}" != "xyes" ],
++    [unset ac_cv_lib_bfd_bfd_openr
++    AC_CHECK_LIB([bfd], [bfd_openr],
++      [libbfd_link="-lbfd -liberty -lz"], [], [-liberty -lz])])]
++  [AS_IF([test x"${ac_cv_lib_bfd_bfd_openr}" != "xyes" ],
++    [unset ac_cv_lib_bfd_bfd_openr
++    AC_CHECK_LIB([bfd], [bfd_openr],
++      [libbfd_link="-lbfd -ldl -liberty"], [], [-ldl -liberty])])]
++  [AS_IF([test x"${ac_cv_lib_bfd_bfd_openr}" != "xyes" ],
++    [unset ac_cv_lib_bfd_bfd_openr
++    AC_CHECK_LIB([bfd], [bfd_openr],
++      [libbfd_link="-lbfd -ldl -liberty -lz"], [], [-ldl -liberty -lz])])]
++  [AS_IF([test x"${ac_cv_lib_bfd_bfd_openr}" != "xyes" ],
++    [unset ac_cv_lib_bfd_bfd_openr
++    AC_CHECK_LIB([bfd], [bfd_openr],
+       [libbfd_link="-lbfd -ldl -liberty -lz -lintl"], [],
+-      [-ldl -liberty -lz -lintl])])
+-  AS_IF([test -n "$libbfd_link"],
+-    [AC_DEFINE([HAS_LIBBFD])],
++      [-ldl -liberty -lz -lintl])])]
++  [AS_IF(
++    [test x"${ac_cv_lib_bfd_bfd_openr}" = "xyes" ],
++    [libbfd_link="${oc_ldflags} ${libbfd_link}"
++    AC_DEFINE([HAS_LIBBFD])],
+     [AC_MSG_NOTICE(m4_normalize([
+       BFD library not found, 'objinfo' will be unable to display
+       info on .cmxs files.
+-    ]))])
+-  ])
++    ]))]
++  )]
++)
+ 
+ ## Does the assembler support debug prefix map and CFI directives
+ as_has_debug_prefix_map=false

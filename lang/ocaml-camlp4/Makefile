@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2019/09/18 17:49:36 chrisz Exp $
+
+BROKEN =	Not yet compatible with OCaml 4.08
 
 COMMENT =	OCaml Preprocessor and Pretty-Printer
 CATEGORIES =	lang

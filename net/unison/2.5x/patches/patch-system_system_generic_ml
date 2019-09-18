@@ -1,0 +1,14 @@
+$OpenBSD: patch-system_system_generic_ml,v 1.1 2019/09/18 17:49:36 chrisz Exp $
+
+Index: system/system_generic.ml
+--- system/system_generic.ml.orig
++++ system/system_generic.ml
+@@ -47,7 +47,7 @@ let open_out_gen = open_out_gen
+ let chmod = Unix.chmod
+ let chown = Unix.chown
+ let utimes = Unix.utimes
+-let link = Unix.link
++let link source dest = Unix.link source dest
+ let openfile = Unix.openfile
+ let opendir f =
+   let h = Unix.opendir f in

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2019/07/12 20:47:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.84 2019/09/18 17:49:37 chrisz Exp $
 
 MULTI_PACKAGES = -graphics -main
 
@@ -7,7 +7,7 @@ COMMENT-graphics = OCaml Graphics library providing basic drawing primitives
 
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them.
-VERSION=		4.07.1
+VERSION=		4.08.1
 
 PKGNAME-main =		ocaml-${VERSION}
 PKGNAME-graphics =	ocaml-graphics-${VERSION}
@@ -29,19 +29,18 @@ MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 # QPL/LGPL
 PERMIT_PACKAGE=	Yes
 
-CONFIGURE_STYLE=	simple dest
-CONFIGURE_ARGS+=	-prefix ${PREFIX} \
-			-aspp '${CC} -c' \
-			-cc ${CC} \
-			-x11include ${X11BASE}/include \
-			-x11lib ${X11BASE}/lib
+AUTOCONF_VERSION =	2.69
+CONFIGURE_STYLE =	gnu autoconf no-autoheader
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" \
-			LDFLAGS="${LDFLAGS}" \
-			OPENBSD_LOCALBASE="${LOCALBASE}"
+			CPPFLAGS="${CFLAGS} ${CPPFLAGS}" \
+			LDFLAGS="${LDFLAGS}"
+
+CFLAGS +=	-I${LOCALBASE}/include
+LDFLAGS +=	-L${LOCALBASE}/lib
 
 # non-PIC assembly in asmrun/i386.S
 .if ${MACHINE_ARCH} == "i386"
-LDFLAGS+=		-Wl,-znotext
+LDFLAGS+=		-Wl,-z,notext
 .endif
 
 USE_GMAKE=	Yes

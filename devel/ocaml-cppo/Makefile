@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2019/08/17 13:29:42 chrisz Exp $
+# $OpenBSD: Makefile,v 1.6 2019/09/18 17:49:36 chrisz Exp $
 
 COMMENT =	OCaml preprocessor
 CATEGORIES =	devel
@@ -6,6 +6,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	ocaml-community
 GH_PROJECT =	cppo
 GH_TAGNAME =	v1.6.6
+REVISION =	0
 PKGNAME =	ocaml-${DISTNAME}
 
 # 3-clause BSD

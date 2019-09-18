@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2019/08/24 16:38:09 chrisz Exp $
+# $OpenBSD: Makefile,v 1.6 2019/09/18 17:49:36 chrisz Exp $
 
 V =		7.08
+REVISION =	0
 COMMENT =	OCaml Preprocessor and Pretty-Printer
 DISTFILES =	camlp5-rel${V}{rel${V:S/.//}}${EXTRACT_SUFX}
 PKGNAME =	ocaml-camlp5-${V}
