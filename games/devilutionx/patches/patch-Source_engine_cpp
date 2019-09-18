@@ -1,11 +1,11 @@
-$OpenBSD: patch-Source_engine_cpp,v 1.1.1.1 2019/07/19 13:42:33 bcallah Exp $
+$OpenBSD: patch-Source_engine_cpp,v 1.2 2019/09/18 13:32:16 bcallah Exp $
 
 clang
 
 Index: Source/engine.cpp
 --- Source/engine.cpp.orig
 +++ Source/engine.cpp
-@@ -517,14 +517,14 @@ void CelDecDatLightTrans(BYTE *pDecodeTo, BYTE *pRLEBy
+@@ -264,14 +264,14 @@ void CelDecDatLightTrans(BYTE *pDecodeTo, BYTE *pRLEBy
  	dst = pDecodeTo;
  	tbl = &pLightTbl[light_table_index * 256];
  	w = nWidth;
@@ -22,7 +22,7 @@ Index: Source/engine.cpp
  					if (!(width & 1)) {
  						goto L_ODD;
  					} else {
-@@ -1301,7 +1301,7 @@ void Cel2DecDatLightTrans(BYTE *pDecodeTo, BYTE *pRLEB
+@@ -733,7 +733,7 @@ void Cel2DecDatLightTrans(BYTE *pDecodeTo, BYTE *pRLEB
  	dst = pDecodeTo;
  	tbl = &pLightTbl[light_table_index * 256];
  	w = nWidth;
@@ -31,7 +31,7 @@ Index: Source/engine.cpp
  
  	for (; src != &pRLEBytes[nDataSize]; dst -= BUFFER_WIDTH + w, shift = (shift + 1) & 1) {
  		for (i = w; i;) {
-@@ -1309,7 +1309,7 @@ void Cel2DecDatLightTrans(BYTE *pDecodeTo, BYTE *pRLEB
+@@ -741,7 +741,7 @@ void Cel2DecDatLightTrans(BYTE *pDecodeTo, BYTE *pRLEB
  			if (!(width & 0x80)) {
  				i -= width;
  				if (dst < gpBufEnd) {

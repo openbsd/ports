@@ -1,4 +1,4 @@
-$OpenBSD: patch-SourceS_miniwin_h,v 1.1.1.1 2019/07/19 13:42:33 bcallah Exp $
+$OpenBSD: patch-SourceS_miniwin_h,v 1.2 2019/09/18 13:32:16 bcallah Exp $
 
 clang
 
@@ -14,8 +14,12 @@ Index: SourceS/miniwin.h
  #include "macos_stdarg.h"
  #else
  #include <stdarg.h>
-@@ -17,6 +17,10 @@
- #if !defined(_MSC_VER) && defined(DEVILUTION_ENGINE)
+@@ -15,9 +15,13 @@
+ #include <time.h>
+ // For _rotr()
+ // _rotl and _rotr are predeclared in Clang.
+-#if !defined(_MSC_VER) && !defined(__clang__) && defined(DEVILUTION_ENGINE)
++#if !defined(_MSC_VER) && defined(DEVILUTION_ENGINE)
  #if defined(__x86_64__) || defined(__i386__)
  #include <x86intrin.h>
 +#if defined(__clang__)

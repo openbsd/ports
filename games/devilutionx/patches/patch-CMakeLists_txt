@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2019/07/19 13:42:33 bcallah Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2019/09/18 13:32:16 bcallah Exp $
 
 clang
 
@@ -14,7 +14,7 @@ Index: CMakeLists.txt
    set(ASAN OFF)
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DO_LARGEFILE=0 -Dstat64=stat -Dlstat64=lstat -Dlseek64=lseek -Doff64_t=off_t -Dfstat64=fstat -Dftruncate64=ftruncate")
  endif()
-@@ -289,7 +289,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+@@ -280,7 +280,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
    # Silence warnings about __int64 alignment hack not always being applicable
    target_compile_options(devilutionx PRIVATE -Wno-ignored-attributes)
    # Fix: error: cast from pointer to smaller type 'unsigned char' loses information
