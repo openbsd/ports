@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2019/08/19 02:29:34 lteo Exp $
+# $OpenBSD: Makefile,v 1.4 2019/09/18 02:16:40 lteo Exp $
 
 COMMENT =	build automation tool
 
-DISTNAME =	gradle-5.6
+DISTNAME =	gradle-5.6.2
 EXTRACT_SUFX =	-bin.zip
 
 CATEGORIES =	java
 
 HOMEPAGE =	https://gradle.org/
+
+MAINTAINER =	Lawrence Teo <lteo@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
