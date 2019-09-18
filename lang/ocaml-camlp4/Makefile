@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2019/09/18 17:49:36 chrisz Exp $
-
-BROKEN =	Not yet compatible with OCaml 4.08
+# $OpenBSD: Makefile,v 1.11 2019/09/18 19:42:58 chrisz Exp $
 
 COMMENT =	OCaml Preprocessor and Pretty-Printer
 CATEGORIES =	lang
 
-V =		4.07+1
+V =		4.08+1
 GH_ACCOUNT =	ocaml
 GH_PROJECT =	camlp4
 GH_TAGNAME =	${V}
 WRKDIST =	${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:S/+/-/}
 PKGNAME =	ocaml-${DISTNAME}
-REVISION = 	0
 # No dynlink compatibility between releases
 PKGSPEC =	ocaml-camlp4-=${V}
 
