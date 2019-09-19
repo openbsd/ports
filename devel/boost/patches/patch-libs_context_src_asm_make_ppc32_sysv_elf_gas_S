@@ -1,0 +1,78 @@
+$OpenBSD: patch-libs_context_src_asm_make_ppc32_sysv_elf_gas_S,v 1.1 2019/09/19 07:38:14 otto Exp $
+
+Stack should have alignment 16 after jump_fcontext drops 244 bytes.
+
+ELF systems other than Linux use a different convention to return a
+small struct like transfer_t.
+
+Index: libs/context/src/asm/make_ppc32_sysv_elf_gas.S
+--- libs/context/src/asm/make_ppc32_sysv_elf_gas.S.orig
++++ libs/context/src/asm/make_ppc32_sysv_elf_gas.S
+@@ -85,12 +85,19 @@ make_fcontext:
+     # shift address in R3 to lower 16 byte boundary
+     clrrwi  %r3, %r3, 4
+ 
+-    # reserve space for context-data on context-stack
+-    # including 64 byte of linkage + parameter area (R1 % 16 == 0)
+-    subi  %r3, %r3, 336
++    # reserve space on context-stack, including 16 bytes of linkage
++    # and parameter area + 244 bytes of context-data; jump_fcontext
++    # will drop 244 bytes to align the stack (244 % 16 != 0)
++    subi  %r3, %r3, 16 + 244
+ 
+     # third arg of make_fcontext() == address of context-function
++#ifdef __Linux__
++    # save context-function as PC
+     stw  %r5, 240(%r3)
++#else
++    # save context-function for trampoline
++    stw  %r5, 252(%r3)
++#endif
+ 
+     # set back-chain to zero
+     li   %r0, 0
+@@ -99,10 +106,12 @@ make_fcontext:
+     mffs  %f0  # load FPSCR
+     stfd  %f0, 144(%r3)  # save FPSCR
+ 
++#ifdef __Linux__
+     # compute address of returned transfer_t
+     addi  %r0, %r3, 252
+     mr    %r4, %r0 
+     stw   %r4, 228(%r3) 
++#endif
+ 
+     # load LR
+     mflr  %r0
+@@ -111,6 +120,11 @@ make_fcontext:
+ 1:
+     # load LR into R4
+     mflr  %r4
++#ifndef __Linux__
++    # compute abs address of trampoline; use as PC
++    addi  %r7, %r4, trampoline - 1b
++    stw   %r7, 240(%r3)
++#endif
+     # compute abs address of label finish
+     addi  %r4, %r4, finish - 1b
+     # restore LR
+@@ -123,6 +137,19 @@ make_fcontext:
+     mtlr  %r6
+ 
+     blr  # return pointer to context-data
++
++#ifndef __Linux__
++trampoline:
++    # On systems other than Linux, jump_fcontext is returning the
++    # transfer_t in %r3:%r4, but we need to pass transfer_t * %r3 to
++    # our context-function.
++    lwz   %r0, 8(%r1)   # address of context-function
++    mtctr %r0
++    stw   %r3, 8(%r1)
++    stw   %r4, 12(%r1)  # move transfer_t to stack
++    la    %r3, 8(%r1)   # address of transfer_t
++    bctr
++#endif
+ 
+ finish:
+     # save return address into R0

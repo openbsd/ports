@@ -1,4 +1,4 @@
-$OpenBSD: patch-boost_context_pooled_fixedsize_stack_hpp,v 1.1 2018/12/13 19:52:46 sthen Exp $
+$OpenBSD: patch-boost_context_pooled_fixedsize_stack_hpp,v 1.2 2019/09/19 07:38:14 otto Exp $
 
 Index: boost/context/pooled_fixedsize_stack.hpp
 --- boost/context/pooled_fixedsize_stack.hpp.orig
@@ -18,7 +18,7 @@ Index: boost/context/pooled_fixedsize_stack.hpp
          stack_context allocate() {
 -            void * vp = storage_.malloc();
 -            if ( ! vp) {
-+            void * vp = mmap(NULL, size_, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON | MAP_STACK, -1, 0);
++            void * vp = mmap(NULL, stack_size_, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON | MAP_STACK, -1, 0);
 +            if ( vp == MAP_FAILED ) {
                  throw std::bad_alloc();
              }

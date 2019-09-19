@@ -1,0 +1,17 @@
+$OpenBSD: patch-libs_context_build_Jamfile_v2,v 1.1 2019/09/19 07:38:14 otto Exp $
+
+ppc32_sysv_elf has 2 instances of "<toolset>clang".
+The second "clang" should be "gcc".
+
+Index: libs/context/build/Jamfile.v2
+--- libs/context/build/Jamfile.v2.orig
++++ libs/context/build/Jamfile.v2
+@@ -326,7 +326,7 @@ alias asm_sources
+      <address-model>32
+      <architecture>power
+      <binary-format>elf
+-     <toolset>clang
++     <toolset>gcc
+    ;
+ 
+ alias asm_sources

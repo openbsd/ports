@@ -1,0 +1,75 @@
+$OpenBSD: patch-libs_context_src_asm_ontop_ppc32_sysv_elf_gas_S,v 1.1 2019/09/19 07:38:14 otto Exp $
+
+ELF systems other than Linux use a different convention to return a
+small struct like transfer_t.
+
+Index: libs/context/src/asm/ontop_ppc32_sysv_elf_gas.S
+--- libs/context/src/asm/ontop_ppc32_sysv_elf_gas.S.orig
++++ libs/context/src/asm/ontop_ppc32_sysv_elf_gas.S
+@@ -78,6 +78,9 @@
+ .align 2
+ .type ontop_fcontext,@function
+ ontop_fcontext:
++    # Linux: ontop_fcontext( hidden transfer_t * %r3, %r4, %r5, %r6)
++    # Other: transfer_t %r3:%r4 = ontop_fcontext( %r3, %r4, %r5)
++
+     # reserve space on stack
+     subi  %r1, %r1, 244
+ 
+@@ -121,7 +124,9 @@ ontop_fcontext:
+     stw  %r29, 216(%r1)  # save R29
+     stw  %r30, 220(%r1)  # save R30
+     stw  %r31, 224(%r1)  # save R31
++#ifdef __Linux__
+     stw  %r3,  228(%r1)  # save hidden
++#endif
+ 
+     # save CR
+     mfcr  %r0
+@@ -135,8 +140,12 @@ ontop_fcontext:
+     # store RSP (pointing to context-data) in R7
+     mr  %r7, %r1
+ 
+-    # restore RSP (pointing to context-data) from R4
++    # restore RSP (pointing to context-data) from R4/R3
++#ifdef __Linux__
+     mr  %r1, %r4
++#else
++    mr  %r1, %r3
++#endif
+ 
+     lfd  %f14, 0(%r1)  # restore F14
+     lfd  %f15, 8(%r1)  # restore F15
+@@ -178,7 +187,9 @@ ontop_fcontext:
+     lwz  %r29, 216(%r1)  # restore R29
+     lwz  %r30, 220(%r1)  # restore R30
+     lwz  %r31, 224(%r1)  # restore R31
++#ifdef __Linux__
+     lwz  %r4,  228(%r1)  # restore hidden
++#endif
+ 
+     # restore CR
+     lwz   %r0, 232(%r1)
+@@ -191,12 +202,22 @@ ontop_fcontext:
+     # adjust stack
+     addi  %r1, %r1, 244
+ 
++#ifdef __Linux__
+     # return transfer_t 
+     stw  %r7, 0(%r4)
+     stw  %r5, 4(%r4)
+ 
+     # restore CTR
+     mtctr %r6
++#else
++    # On systems other than Linux, we allocate a transfer_t on the
++    # other stack, below its stack pointer %r7.
++    stw  %r7, -8(%r7)
++    stw  %r4, -4(%r7)
++    la   %r3, -8(%r7)  # address of transfer_t
++
++    mtctr %r5
++#endif
+ 
+     # jump to ontop-function
+     bctr
