@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/09/18 02:16:40 lteo Exp $
+# $OpenBSD: Makefile,v 1.5 2019/09/19 02:02:17 lteo Exp $
 
 COMMENT =	build automation tool
 
 DISTNAME =	gradle-5.6.2
+REVISION =	0
 EXTRACT_SUFX =	-bin.zip
 
 CATEGORIES =	java
@@ -21,6 +22,9 @@ MODJAVA_VER =		1.8+
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
+
+GRADLE_JAR =		${DISTNAME:S/gradle//}.jar
+SUBST_VARS +=		GRADLE_JAR
 
 RUN_DEPENDS =		java/javaPathHelper
 
