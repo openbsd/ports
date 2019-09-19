@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/09/04 16:26:56 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.10 2019/09/19 11:26:35 fcambus Exp $
 ${GEM_BIN}/rougify${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -15,6 +15,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/abap
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/actionscript
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ada
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/apache
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/apex
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/apiblueprint
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/applescript
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/armasm
@@ -41,6 +42,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/cpp
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/crystal
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/csharp
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/css
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/csvs
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/cuda
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/cython
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/d
@@ -141,6 +143,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/qml
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/r
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/racket
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/reasonml
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/robot_framework
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ruby
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/rust
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/sas
@@ -211,6 +214,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ada.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/apache/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/apache.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/apache/keywords.yml
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/apex.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/apiblueprint.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/apple_script.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/armasm.rb
@@ -237,6 +241,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/cpp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/crystal.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/csharp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/css.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/csvs.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/cuda.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/cython.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/d.rb
@@ -350,6 +355,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/qml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/r.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/racket.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/reasonml.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/robot_framework.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ruby.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/rust.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sas.rb
