@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/19 13:59:22 bcallah Exp $
+share/fonts/
+@fontdir share/fonts/siji/
+share/fonts/siji/siji.pcf.gz
