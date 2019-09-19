@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2019/09/19 13:33:57 jasper Exp $
 
 COMMENT =		kevent based inotify
 
@@ -6,6 +6,7 @@ GH_ACCOUNT =		libinotify-kqueue
 GH_PROJECT =		libinotify-kqueue
 GH_TAGNAME =		20170711
 PKGNAME =		libinotify-${GH_TAGNAME}
+REVISION =		0
 
 SHARED_LIBS =		inotify 2.1
 
@@ -28,7 +29,6 @@ AUTOMAKE_VERSION =	1.14
 
 TEST_TARGET =		test
 
-post-install:
-	@rm -rf ${WRKINST}${LOCALBASE}/lib/inotify/pkgconfig
+FAKE_FLAGS +=		pkgconfigdir=${PREFIX}/lib/pkgconfig/
 
 .include <bsd.port.mk>

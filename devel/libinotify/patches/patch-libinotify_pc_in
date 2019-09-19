@@ -1,0 +1,15 @@
+$OpenBSD: patch-libinotify_pc_in,v 1.1 2019/09/19 13:33:57 jasper Exp $
+
+Index: libinotify.pc.in
+--- libinotify.pc.in.orig
++++ libinotify.pc.in
+@@ -1,7 +1,7 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
+-includedir=${prefix}/include
++libdir=${exec_prefix}/lib/inotify
++includedir=${prefix}/include/inotify
+ 
+ Name: @PACKAGE_NAME@
+ Description: Kqueue based inotify shim library
