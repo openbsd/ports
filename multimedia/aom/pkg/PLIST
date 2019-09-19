@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/19 14:21:27 ajacoutot Exp $
+@bin bin/aomdec
+@bin bin/aomenc
+include/aom/
+include/aom/aom.h
+include/aom/aom_codec.h
+include/aom/aom_decoder.h
+include/aom/aom_encoder.h
+include/aom/aom_frame_buffer.h
+include/aom/aom_image.h
+include/aom/aom_integer.h
+include/aom/aomcx.h
+include/aom/aomdx.h
+@lib lib/libaom.so.${LIBaom_VERSION}
+lib/pkgconfig/aom.pc

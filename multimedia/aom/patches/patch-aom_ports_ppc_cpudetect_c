@@ -1,0 +1,34 @@
+$OpenBSD: patch-aom_ports_ppc_cpudetect_c,v 1.1.1.1 2019/09/19 14:21:27 ajacoutot Exp $
+
+Allow PowerPC CPU runtime detection code to build on OpenBSD.
+
+Index: aom_ports/ppc_cpudetect.c
+--- aom_ports/ppc_cpudetect.c.orig
++++ aom_ports/ppc_cpudetect.c
+@@ -9,17 +9,20 @@
+  * PATENTS file, you can obtain it at www.aomedia.org/license/patent.
+  */
+ 
++#i defined(__linux__)
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <stdint.h>
+ #include <asm/cputable.h>
+ #include <linux/auxvec.h>
++#endif
+ 
+ #include "config/aom_config.h"
+ 
+ #include "aom_ports/ppc.h"
+ 
+ #if CONFIG_RUNTIME_CPU_DETECT
++#if defined(__linux__)
+ static int cpu_env_flags(int *flags) {
+   char *env;
+   env = getenv("AOM_SIMD_CAPS");
+@@ -79,4 +82,5 @@ out_close:
+ // If there is no RTCD the function pointers are not used and can not be
+ // changed.
+ int ppc_simd_caps(void) { return 0; }
++#endif
+ #endif  // CONFIG_RUNTIME_CPU_DETECT
