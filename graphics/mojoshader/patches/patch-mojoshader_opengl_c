@@ -1,0 +1,37 @@
+$OpenBSD: patch-mojoshader_opengl_c,v 1.1 2019/09/19 16:36:07 thfr Exp $
+
+re-add MOJOSHADER_glProgramViewportFlip() for backwards compatibility.
+Was removed by upstream in changeset 1210
+(https://hg.icculus.org/icculus/mojoshader/rev/c586d4590241)
+
+Index: mojoshader_opengl.c
+--- mojoshader_opengl.c.orig
++++ mojoshader_opengl.c
+@@ -2657,6 +2657,27 @@ void MOJOSHADER_glDestroyContext(MOJOSHADER_glContext 
+     ctx = ((current_ctx == _ctx) ? NULL : current_ctx);
+ } // MOJOSHADER_glDestroyContext
+ 
++#ifdef MOJOSHADER_FLIP_RENDERTARGET
++
++
++void MOJOSHADER_glProgramViewportFlip(int flip)
++{
++	assert(ctx->bound_program->vs_flip_loc != -1);
++
++	/* Some compilers require that vpFlip be a float value, rather than int.
++	 * However, there's no real reason for it to be a float in the API, so we
++	 * do a cast in here. That's not so bad, right...?
++	 * -flibit
++	 */
++	if (flip != ctx->bound_program->current_flip)
++	{
++		ctx->glUniform1f(ctx->bound_program->vs_flip_loc, (float) flip);
++		ctx->bound_program->current_flip = flip;
++	} // if
++}
++
++#endif
++
+ 
+ #ifdef MOJOSHADER_EFFECT_SUPPORT
+ 

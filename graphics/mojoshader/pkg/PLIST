@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/12 22:50:45 awolk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2019/09/19 16:36:07 thfr Exp $
 include/mojoshader.h
 include/mojoshader_effects.h
 include/mojoshader_internal.h
-include/mojoshader_parser_hlsl.h
 include/mojoshader_version.h
 @lib lib/libmojoshader.so.${LIBmojoshader_VERSION}
