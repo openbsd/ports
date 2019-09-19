@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.117 2019/08/05 13:35:54 bcallah Exp $
+# $OpenBSD: Makefile,v 1.118 2019/09/19 14:22:32 ajacoutot Exp $
 
      SUBDIR =
+     SUBDIR += aom
      SUBDIR += assimp
      SUBDIR += atomicparsley
      SUBDIR += audiopreview
