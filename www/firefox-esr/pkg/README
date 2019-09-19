@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2018/09/04 12:46:24 espie Exp $
+$OpenBSD: README,v 1.4 2019/09/19 19:15:55 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -14,8 +14,6 @@ firefox -ProfileManager, and click "Create Profile".
 If Firefox doesn't start at all, try starting it with -safe-mode
 switch, which disables extensions and themes for your session.
 
-To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
-
 Using mailto: links
 ===================
 To enable mailto: links in Firefox to open in your mail program,
@@ -30,19 +28,58 @@ right click, choose New String. Set the name to
 "network.protocol-handler.app.mailto" and the value to the path to
 your mailer.
 
-Plugins
-=======
-Firefox looks for plugins in ~/.mozilla/plugins and
-${TRUEPREFIX}/lib/mozilla/plugins.
-If the environment variable MOZ_PLUGIN_PATH is specified, this
-location will be overridden.
-
 Debugging
 =========
 If you encounter crashes, you might want to build the debug FLAVOR of
-this package, and run firefox inside gdb, so that you can gather
+this package, and run firefox inside egdb, so that you can gather
 debugging logs and traces (for all threads!).
-Bug reports without that information will be ignored.
+If this is a pledge violation, you should figure out which codepath
+in which process leads to calling a forbidden syscall, and which pledge
+is missing from the two default sets configured in
+security.sandbox.pledge.main and security.sandbox.pledge.content
+about:config keys. MOZ_LOG=SandboxPledge:5 should help.
+Bug reports without enough information will be ignored.
+
+Note that if you're using NIS or your profile is located on a NFS share,
+you might need to add 'getpw' to security.sandbox.pledge.content in
+about:config.
+
+If using the amdgpu driver, you might need to add 'ioctl' to
+security.sandbox.pledge.content in about:config.
+
+If you're not running sndiod(8) you will need to add 'audio' to
+security.sandbox.pledge.main in about:config.
+
+D-BUS
+=====
+For proper integration with various desktop-oriented components, firefox
+needs a session bus instance running.
+If you're not running a desktop environment that takes care of it,
+refer to /usr/local/share/doc/pkg-readmes/dbus-* to configure your
+session startup script to start one.
+Without a session bus running, the port is faking one (see
+https://bugzilla.mozilla.org/show_bug.cgi?id=1466593), but GLIB might still try
+to spawn one which might lead to a 'proc' pledge violation in the content
+process.
+
+HTML5 audio/video support
+=========================
+For a full multimedia experience, such as playing MP3 audio or MPEG
+videos, install the "ffmpeg" package. It will be used at runtime if
+firefox finds it.
+
+# pkg_add ffmpeg
+
+WebRTC support
+==============
+For WebRTC to properly work, it is required to enable audio recording:
+
+# sysctl kern.audio.record=1
+
+It is also required to change the ownership of the video(4) device so that your
+regular user can access the webcam device.
+
+# chown youruser /dev/video0
 
 KerberosV support
 =================
@@ -59,3 +96,20 @@ To instruct Firefox to use Kerberos for specific domains, open
 'about:config' and modify the following key:
 
 network.negotiate-auth.trusted-uris: .example.com
+
+Graphic Acceleration
+====================
+By default on unices the OpenGL acceleration is disabled. One can enable it by
+setting MOZ_ACCELERATED=1 in the environment, or by switching the about:config
+layers.acceleration.force-enable knob to true.  Check the 'Decision log'
+section in about:support to see whether HW_COMPOSITING and OPENGL_COMPOSITING
+are enabled.
+
+Similarly, for the rust-based WebRender compositor, it is enabled by setting
+MOZ_WEBRENDER=1 in the environment, or by switching the about:config
+gfx.webrender.enabled knob to true. Check it is enabled in the 'Features'
+section of about:support. For this feature, WebGL2 is necessary, so your
+hardware must support at least OpenGL 4.
+
+Check
+https://wiki.mozilla.org/Platform/GFX/Quantum_Render for more details.
