@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.120 2019/08/27 11:24:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.121 2019/09/19 07:30:31 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -818,6 +818,14 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/qldb/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/qldb-session/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/qldb-session/2019-07-11/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/qldb-session/2019-07-11/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/qldb-session/2019-07-11/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/qldb/2019-01-02/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/qldb/2019-01-02/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/qldb/2019-01-02/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/quicksight/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/quicksight/2018-04-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/quicksight/2018-04-01/paginators-1.json
@@ -1033,6 +1041,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/workmail/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/workmail/2017-10-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/workmail/2017-10-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/workmail/2017-10-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/workmailmessageflow/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/workmailmessageflow/2019-05-01/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/workmailmessageflow/2019-05-01/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/workmailmessageflow/2019-05-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/workspaces/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/workspaces/2015-04-08/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/workspaces/2015-04-08/examples-1.json
