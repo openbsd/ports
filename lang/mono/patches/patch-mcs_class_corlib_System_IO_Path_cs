@@ -1,0 +1,16 @@
+$OpenBSD: patch-mcs_class_corlib_System_IO_Path_cs,v 1.1 2019/09/19 12:02:59 thfr Exp $
+
+fix dealing with double directory separators in relative paths
+https://github.com/mono/mono/issues/15407
+
+Index: mcs/class/corlib/System.IO/Path.cs
+--- mcs/class/corlib/System.IO/Path.cs.orig
++++ mcs/class/corlib/System.IO/Path.cs
+@@ -403,6 +403,7 @@ namespace System.IO {
+ 						path = cwd + path;
+ 					else
+ 						path = cwd + DirectorySeparatorChar + path;					
++					path = path.Replace(@"//", @"/");
+ 				} else if (DirectorySeparatorChar == '\\' &&
+ 					path.Length >= 2 &&
+ 					IsDirectorySeparator (path [0]) &&

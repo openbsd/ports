@@ -1,4 +1,4 @@
-$OpenBSD: patch-mono_utils_mono-threads-coop_c,v 1.3 2019/03/31 18:28:39 thfr Exp $
+$OpenBSD: patch-mono_utils_mono-threads-coop_c,v 1.4 2019/09/19 12:02:59 thfr Exp $
 
 adapt to coop-by-default approach of the port
 
@@ -6,11 +6,11 @@ Index: mono/utils/mono-threads-coop.c
 --- mono/utils/mono-threads-coop.c.orig
 +++ mono/utils/mono-threads-coop.c
 @@ -511,7 +511,7 @@ mono_threads_assert_gc_unsafe_region (void)
- static MonoThreadsSuspendPolicy
+ static int
  threads_suspend_policy_default (void)
  {
 -#if defined (ENABLE_COOP_SUSPEND)
 +#if !defined (DISABLE_COOP_SUSPEND)
  	return MONO_THREADS_SUSPEND_FULL_COOP;
- #else
- #if defined (ENABLE_HYBRID_SUSPEND)
+ #elif defined (ENABLE_HYBRID_SUSPEND)
+ 	return MONO_THREADS_SUSPEND_HYBRID;

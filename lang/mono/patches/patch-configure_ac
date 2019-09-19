@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.8 2019/03/31 18:28:39 thfr Exp $
+$OpenBSD: patch-configure_ac,v 1.9 2019/09/19 12:02:59 thfr Exp $
 
 enable cooperative suspend by default
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1163,7 +1163,7 @@ with_unreal_default=no
+@@ -1137,7 +1137,7 @@ with_unreal_default=no
  with_wasm_default=no
  
  with_bitcode_default=no
@@ -14,7 +14,7 @@ Index: configure.ac
  enable_hybrid_suspend_default=no
  
  INVARIANT_AOT_OPTIONS=nimt-trampolines=2000,ntrampolines=10000,nrgctx-fetch-trampolines=256,ngsharedvt-trampolines=4000
-@@ -5039,7 +5039,7 @@ fi
+@@ -5035,7 +5035,7 @@ fi
  dnl Now check if there were flags overriding the defaults
  
  AC_ARG_WITH(cooperative_gc,        [  --with-cooperative-gc=yes|no        Enable cooperative stop-the-world garbage collection (sgen only) (defaults to no)], [AC_MSG_WARN([--with-cooperative-gc is deprecated, use --enable-cooperative-suspend instead])], [with_cooperative_gc=default])
@@ -23,7 +23,7 @@ Index: configure.ac
  
  if test x$enable_cooperative_suspend = xdefault -a x$with_cooperative_gc != xdefault; then
  	enable_cooperative_suspend=$with_cooperative_gc
-@@ -5053,7 +5053,7 @@ if test x$enable_cooperative_suspend != xno; then
+@@ -5049,7 +5049,7 @@ if test x$enable_cooperative_suspend != xno; then
  	AC_DEFINE(ENABLE_COOP_SUSPEND,1,[Enable cooperative stop-the-world garbage collection.])
  fi
  
