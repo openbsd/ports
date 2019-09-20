@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2019/09/16 06:02:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.115 2019/09/20 16:36:57 sthen Exp $
 
 COMMENT =		personal and small-business financial-accounting software
 
@@ -44,7 +44,8 @@ MODULES =		devel/dconf \
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache yelp
 
 BUILD_DEPENDS =		databases/libdbi-drivers,-sqlite3 \
-			devel/gtest
+			devel/gtest \
+			shells/bash
 
 RUN_DEPENDS =		databases/libdbi-drivers,-sqlite3
 
