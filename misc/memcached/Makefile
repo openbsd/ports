@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2019/08/02 14:04:27 giovanni Exp $
+# $OpenBSD: Makefile,v 1.49 2019/09/20 21:40:41 giovanni Exp $
 
 COMMENT=	distributed memory object caching system
 
-DISTNAME=	memcached-1.5.16
+DISTNAME=	memcached-1.5.18
 CATEGORIES=	misc
 
 HOMEPAGE=	https://www.memcached.org/
