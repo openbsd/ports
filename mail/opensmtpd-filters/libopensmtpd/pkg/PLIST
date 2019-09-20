@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/20 12:11:05 martijn Exp $
+include/opensmtpd.h
+lib/libopensmtpd.a
+@lib lib/libopensmtpd.so.${LIBopensmtpd_VERSION}
+lib/libopensmtpd_p.a
+@man man/man3/osmtpd_run.3
