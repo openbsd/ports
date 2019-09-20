@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.643 2019/08/26 12:41:33 mpi Exp $
+# $OpenBSD: Makefile,v 1.644 2019/09/20 08:20:49 jasper Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -227,6 +227,7 @@
      SUBDIR += podbrowser
      SUBDIR += polkit-qt
      SUBDIR += polkit-qt,qt5
+     SUBDIR += polybar
      SUBDIR += pwm
      SUBDIR += py-gtk2
      SUBDIR += py-pyglet
