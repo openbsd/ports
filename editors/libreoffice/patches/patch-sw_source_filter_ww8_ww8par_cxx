@@ -1,0 +1,16 @@
+$OpenBSD: patch-sw_source_filter_ww8_ww8par_cxx,v 1.1 2019/09/20 13:34:54 robert Exp $
+
+https://bugs.documentfoundation.org/show_bug.cgi?id=127048
+
+Index: sw/source/filter/ww8/ww8par.cxx
+--- sw/source/filter/ww8/ww8par.cxx.orig
++++ sw/source/filter/ww8/ww8par.cxx
+@@ -4699,8 +4699,6 @@ void SwWW8ImplReader::StoreMacroCmds()
+ 
+         try
+         {
+-            NotifyMacroEventRead();
+-
+             uno::Reference < io::XStream > xStream =
+                     xRoot->openStreamElement( SL::aMSMacroCmds, embed::ElementModes::READWRITE );
+             std::unique_ptr<SvStream> xOutStream(::utl::UcbStreamHelper::CreateStream(xStream));

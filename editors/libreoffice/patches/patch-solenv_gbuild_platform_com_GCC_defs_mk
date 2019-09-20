@@ -1,8 +1,8 @@
-$OpenBSD: patch-solenv_gbuild_platform_com_GCC_defs_mk,v 1.7 2019/02/09 15:23:07 robert Exp $
+$OpenBSD: patch-solenv_gbuild_platform_com_GCC_defs_mk,v 1.8 2019/09/20 13:34:54 robert Exp $
 Index: solenv/gbuild/platform/com_GCC_defs.mk
 --- solenv/gbuild/platform/com_GCC_defs.mk.orig
 +++ solenv/gbuild/platform/com_GCC_defs.mk
-@@ -63,6 +63,7 @@ gb_CFLAGS_COMMON := \
+@@ -66,6 +66,7 @@ gb_CFLAGS_COMMON := \
  	-finput-charset=UTF-8 \
  	-fmessage-length=0 \
  	-fno-common \
@@ -10,11 +10,11 @@ Index: solenv/gbuild/platform/com_GCC_defs.mk
  	-pipe \
  
  gb_CXXFLAGS_COMMON := \
-@@ -77,6 +78,7 @@ gb_CXXFLAGS_COMMON := \
+@@ -80,6 +81,7 @@ gb_CXXFLAGS_COMMON := \
  	-finput-charset=UTF-8 \
  	-fmessage-length=0 \
  	-fno-common \
 +	-fno-stack-protector \
  	-pipe \
  
- gb_CXXFLAGS_Wundef = -Wno-undef
+ gb_Helper_disable_warnings = $(1) -w

@@ -1,4 +1,4 @@
-$OpenBSD: patch-sal_osl_unx_thread_cxx,v 1.1 2019/03/05 15:38:32 robert Exp $
+$OpenBSD: patch-sal_osl_unx_thread_cxx,v 1.2 2019/09/20 13:34:54 robert Exp $
 
 Index: sal/osl/unx/thread.cxx
 --- sal/osl/unx/thread.cxx.orig
@@ -64,7 +64,7 @@ Index: sal/osl/unx/thread.cxx
  #elif defined __FreeBSD_kernel__
      pthread_setname_np( pthread_self(), name );
  #elif defined MACOSX || defined IOS
-@@ -567,7 +566,7 @@ static int HashSize = SAL_N_ELEMENTS(HashTable);
+@@ -567,7 +566,7 @@ static const int HashSize = SAL_N_ELEMENTS(HashTable);
  
  static pthread_mutex_t HashLock = PTHREAD_MUTEX_INITIALIZER;
  

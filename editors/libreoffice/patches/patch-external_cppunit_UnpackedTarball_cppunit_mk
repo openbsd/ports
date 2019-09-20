@@ -1,12 +1,12 @@
-$OpenBSD: patch-external_cppunit_UnpackedTarball_cppunit_mk,v 1.5 2019/02/09 15:23:07 robert Exp $
+$OpenBSD: patch-external_cppunit_UnpackedTarball_cppunit_mk,v 1.6 2019/09/20 13:34:54 robert Exp $
 
 Index: external/cppunit/UnpackedTarball_cppunit.mk
 --- external/cppunit/UnpackedTarball_cppunit.mk.orig
 +++ external/cppunit/UnpackedTarball_cppunit.mk
-@@ -22,6 +22,7 @@ $(eval $(call gb_UnpackedTarball_add_patches,cppunit,\
- 	external/cppunit/enable-win32-debug.patch \
+@@ -25,6 +25,7 @@ $(eval $(call gb_UnpackedTarball_add_patches,cppunit,\
  	external/cppunit/rtti.patch.0 \
  	external/cppunit/gcc9.patch.0 \
+ 	external/cppunit/0001-Unconditionally-use-C-11-noreturn.patch.1 \
 +	external/cppunit/openbsd-cppunit.patch.0 \
  ))
  ifeq ($(DISABLE_DYNLOADING),TRUE)

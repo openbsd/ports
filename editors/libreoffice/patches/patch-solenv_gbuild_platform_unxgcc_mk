@@ -1,9 +1,45 @@
-$OpenBSD: patch-solenv_gbuild_platform_unxgcc_mk,v 1.7 2019/02/09 15:23:07 robert Exp $
+$OpenBSD: patch-solenv_gbuild_platform_unxgcc_mk,v 1.8 2019/09/20 13:34:54 robert Exp $
 
 Index: solenv/gbuild/platform/unxgcc.mk
 --- solenv/gbuild/platform/unxgcc.mk.orig
 +++ solenv/gbuild/platform/unxgcc.mk
-@@ -152,8 +152,7 @@ $(call gb_Helper_abbreviate_dirs,\
+@@ -118,6 +118,15 @@ gb_LinkTarget_CXXFLAGS := $(gb_CXXFLAGS)
+ # contains .c sources:
+ define gb_LinkTarget__command_dynamiclink
+ $(call gb_Helper_abbreviate_dirs,\
++	FILELIST=$(call var2file,$(shell $(gb_MKTEMP)),200, \
++		$(foreach object,$(COBJECTS),$(call gb_CObject_get_target,$(object))) \
++		$(foreach object,$(CXXOBJECTS),$(call gb_CxxObject_get_target,$(object))) \
++		$(foreach object,$(ASMOBJECTS),$(call gb_AsmObject_get_target,$(object))) \
++		$(foreach object,$(GENCOBJECTS),$(call gb_GenCObject_get_target,$(object))) \
++		$(foreach object,$(GENCXXOBJECTS),$(call gb_GenCxxObject_get_target,$(object))) \
++		$(foreach extraobjectlist,$(EXTRAOBJECTLISTS),$(shell cat $(extraobjectlist)))) && \
++	cat $${FILELIST} | tr "[:space:]" "\n" | grep -v '^$$' > $${FILELIST}.1 && \
++	mv $${FILELIST}.1 $${FILELIST} && \
+ 	$(if $(CXXOBJECTS)$(GENCXXOBJECTS)$(EXTRAOBJECTLISTS)$(filter-out XTRUE,X$(ENABLE_RUNTIME_OPTIMIZATIONS)),$(gb_CXX) $(gb_CXX_LINKFLAGS),$(gb_CC)) \
+ 		$(if $(filter Library CppunitTest,$(TARGETTYPE)),$(gb_Library_TARGETTYPEFLAGS)) \
+ 		$(gb_LTOFLAGS) \
+@@ -125,12 +134,7 @@ $(call gb_Helper_abbreviate_dirs,\
+ 			-Wl$(COMMA)--version-script=$(SOVERSIONSCRIPT)) \
+ 		$(subst \d,$$,$(RPATH)) \
+ 		$(T_LDFLAGS) \
+-		$(foreach object,$(COBJECTS),$(call gb_CObject_get_target,$(object))) \
+-		$(foreach object,$(CXXOBJECTS),$(call gb_CxxObject_get_target,$(object))) \
+-		$(foreach object,$(ASMOBJECTS),$(call gb_AsmObject_get_target,$(object))) \
+-		$(foreach object,$(GENCOBJECTS),$(call gb_GenCObject_get_target,$(object))) \
+-		$(foreach object,$(GENCXXOBJECTS),$(call gb_GenCxxObject_get_target,$(object))) \
+-		$(foreach extraobjectlist,$(EXTRAOBJECTLISTS),`cat $(extraobjectlist)`) \
++		@$${FILELIST} \
+ 		$(if $(filter TRUE,$(DISABLE_DYNLOADING)), \
+ 		    -Wl$(COMMA)--start-group \
+ 		    $(patsubst lib%.a,-l%,$(patsubst lib%.so,-l%,$(patsubst %.$(gb_Library_UDK_MAJORVER),%,$(foreach lib,$(LINKED_LIBS),$(call gb_Library_get_filename,$(lib)))))) \
+@@ -145,12 +149,12 @@ $(call gb_Helper_abbreviate_dirs,\
+ 		    -Wl$(COMMA)--no-as-needed \
+ 		    $(patsubst lib%.a,-l%,$(patsubst lib%.so,-l%,$(patsubst %.$(gb_Library_UDK_MAJORVER),%,$(foreach lib,$(LINKED_LIBS),$(call gb_Library_get_filename,$(lib)))))) \
+                 ) \
+-		-o $(1) \
++		-o $(1) && \
++	rm -f $${FILELIST} \
  	$(if $(SOVERSIONSCRIPT),&& ln -sf ../../program/$(notdir $(1)) $(ILIBTARGET)))
  	$(if $(filter Library,$(TARGETTYPE)), $(call gb_Helper_abbreviate_dirs,\
  		$(READELF) -d $(1) | grep SONAME > $(WORKDIR)/LinkTarget/$(2).exports.tmp; \

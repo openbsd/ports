@@ -1,4 +1,4 @@
-$OpenBSD: patch-vcl_unx_generic_app_geninst_cxx,v 1.1 2019/03/05 15:38:32 robert Exp $
+$OpenBSD: patch-vcl_unx_generic_app_geninst_cxx,v 1.2 2019/09/20 13:34:54 robert Exp $
 
 Index: vcl/unx/generic/app/geninst.cxx
 --- vcl/unx/generic/app/geninst.cxx.orig
@@ -14,7 +14,7 @@ Index: vcl/unx/generic/app/geninst.cxx
  // SalYieldMutex
  
  SalYieldMutex::SalYieldMutex()
-@@ -77,6 +81,14 @@ OUString SalGenericInstance::getOSVersion()
+@@ -76,6 +80,14 @@ OUString SalGenericInstance::getOSVersion()
          }
          fclose( pVersion );
      }

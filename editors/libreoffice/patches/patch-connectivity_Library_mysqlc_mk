@@ -1,4 +1,4 @@
-$OpenBSD: patch-connectivity_Library_mysqlc_mk,v 1.1 2019/02/09 15:23:07 robert Exp $
+$OpenBSD: patch-connectivity_Library_mysqlc_mk,v 1.2 2019/09/20 13:34:54 robert Exp $
 
 Index: connectivity/Library_mysqlc.mk
 --- connectivity/Library_mysqlc.mk.orig
@@ -10,5 +10,5 @@ Index: connectivity/Library_mysqlc.mk
 -	$(if $(filter-out WNT,$(OS)),$(if $(filter HAIKU MACOSX SOLARIS,$(OS)),\
 +	$(if $(filter-out WNT,$(OS)),$(if $(filter OPENBSD HAIKU MACOSX SOLARIS,$(OS)),\
  	-lz -lm,-rdynamic -lz -lcrypt -lm)) \
- 	$(if $(filter LINUX,$(OS)),-lpthread -ldl,) \
+ 	$(if $(filter LINUX,$(OS)),-ldl,) \
  ))

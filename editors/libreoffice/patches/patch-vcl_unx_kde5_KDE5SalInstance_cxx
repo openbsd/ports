@@ -1,0 +1,26 @@
+$OpenBSD: patch-vcl_unx_kde5_KDE5SalInstance_cxx,v 1.1 2019/09/20 13:34:54 robert Exp $
+
+Index: vcl/unx/kde5/KDE5SalInstance.cxx
+--- vcl/unx/kde5/KDE5SalInstance.cxx.orig
++++ vcl/unx/kde5/KDE5SalInstance.cxx
+@@ -43,9 +43,9 @@ KDE5SalInstance::KDE5SalInstance(std::unique_ptr<QAppl
+ SalFrame* KDE5SalInstance::CreateFrame(SalFrame* pParent, SalFrameStyleFlags nState)
+ {
+     SalFrame* pRet(nullptr);
+-    RunInMainThread(std::function([&pRet, pParent, nState]() {
++    RunInMainThread([&pRet, pParent, nState] {
+         pRet = new KDE5SalFrame(static_cast<KDE5SalFrame*>(pParent), nState, true);
+-    }));
++    });
+     assert(pRet);
+     return pRet;
+ }
+@@ -65,7 +65,7 @@ KDE5SalInstance::createPicker(css::uno::Reference<css:
+     {
+         SolarMutexGuard g;
+         Qt5FilePicker* pPicker;
+-        RunInMainThread(std::function([&, this]() { pPicker = createPicker(context, eMode); }));
++        RunInMainThread([&pPicker, this, context, eMode] { pPicker = createPicker(context, eMode); });
+         assert(pPicker);
+         return pPicker;
+     }

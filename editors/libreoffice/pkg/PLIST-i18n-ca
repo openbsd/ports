@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-ca,v 1.16 2018/02/05 17:15:05 robert Exp $
+@comment $OpenBSD: PLIST-i18n-ca,v 1.17 2019/09/20 13:34:54 robert Exp $
 !%%no_java%%
 lib/libreoffice/program/resource/
 lib/libreoffice/program/resource/ca/
@@ -44,7 +44,6 @@ lib/libreoffice/share/extensions/dict-ca/LICENSES-en.txt
 lib/libreoffice/share/extensions/dict-ca/LLICENCIES-ca.txt
 lib/libreoffice/share/extensions/dict-ca/META-INF/
 lib/libreoffice/share/extensions/dict-ca/META-INF/manifest.xml
-lib/libreoffice/share/extensions/dict-ca/SC-logo.png
 lib/libreoffice/share/extensions/dict-ca/ca-valencia.aff
 lib/libreoffice/share/extensions/dict-ca/ca-valencia.dic
 lib/libreoffice/share/extensions/dict-ca/ca.aff

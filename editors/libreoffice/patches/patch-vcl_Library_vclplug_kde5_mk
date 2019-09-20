@@ -1,0 +1,18 @@
+$OpenBSD: patch-vcl_Library_vclplug_kde5_mk,v 1.1 2019/09/20 13:34:54 robert Exp $
+
+Index: vcl/Library_vclplug_kde5.mk
+--- vcl/Library_vclplug_kde5.mk.orig
++++ vcl/Library_vclplug_kde5.mk
+@@ -84,10 +84,10 @@ $(eval $(call gb_Library_add_exception_objects,vclplug
+     vcl/unx/kde5/KDE5SalInstance \
+ ))
+ 
+-ifeq ($(OS),LINUX)
++ifneq (,$(filter LINUX OPENBSD,$(OS)))
+ $(eval $(call gb_Library_add_libs,vclplug_kde5,\
+ 	-lm \
+-	-ldl \
++        $(if $(filter LINUX,$(OS)),-ldl) \
+ ))
+ endif
+ 

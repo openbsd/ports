@@ -1,9 +1,9 @@
-$OpenBSD: patch-basic_source_classes_sbxmod_cxx,v 1.1 2019/02/28 22:09:41 robert Exp $
+$OpenBSD: patch-basic_source_classes_sbxmod_cxx,v 1.2 2019/09/20 13:34:54 robert Exp $
 
 Index: basic/source/classes/sbxmod.cxx
 --- basic/source/classes/sbxmod.cxx.orig
 +++ basic/source/classes/sbxmod.cxx
-@@ -1069,7 +1069,7 @@ void SbModule::Run( SbMethod* pMeth )
+@@ -1060,7 +1060,7 @@ void SbModule::Run( SbMethod* pMeth )
            struct rlimit rl;
            getrlimit ( RLIMIT_STACK, &rl );
  #endif

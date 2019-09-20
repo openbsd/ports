@@ -1,8 +1,8 @@
-$OpenBSD: patch-desktop_source_app_app_cxx,v 1.15 2019/02/09 15:23:07 robert Exp $
+$OpenBSD: patch-desktop_source_app_app_cxx,v 1.16 2019/09/20 13:34:54 robert Exp $
 Index: desktop/source/app/app.cxx
 --- desktop/source/app/app.cxx.orig
 +++ desktop/source/app/app.cxx
-@@ -554,6 +554,7 @@ void Desktop::InitFinished()
+@@ -557,6 +557,7 @@ void Desktop::InitFinished()
  
  void Desktop::DeInit()
  {
@@ -10,7 +10,7 @@ Index: desktop/source/app/app.cxx
      try {
          // instead of removing of the configManager just let it commit all the changes
          utl::ConfigManager::storeConfigItems();
-@@ -570,7 +571,9 @@ void Desktop::DeInit()
+@@ -573,7 +574,9 @@ void Desktop::DeInit()
          // clear lockfile
          m_xLockfile.reset();
  

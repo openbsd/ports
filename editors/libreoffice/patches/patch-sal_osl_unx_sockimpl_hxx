@@ -1,11 +1,11 @@
-$OpenBSD: patch-sal_osl_unx_sockimpl_hxx,v 1.1 2019/02/28 22:09:41 robert Exp $
+$OpenBSD: patch-sal_osl_unx_sockimpl_hxx,v 1.2 2019/09/20 13:34:54 robert Exp $
 
 Index: sal/osl/unx/sockimpl.hxx
 --- sal/osl/unx/sockimpl.hxx.orig
 +++ sal/osl/unx/sockimpl.hxx
-@@ -24,7 +24,7 @@
- #include <osl/socket.h>
- #include <osl/interlck.h>
+@@ -26,7 +26,7 @@
+ 
+ #include "system.hxx"
  
 -#if defined(LINUX) || defined(FREEBSD) || defined(NETBSD)
 +#if defined(LINUX) || defined(FREEBSD) || defined(NETBSD) || defined(OPENBSD)

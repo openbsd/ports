@@ -1,12 +1,12 @@
-$OpenBSD: patch-sdext_Module_sdext_mk,v 1.1 2018/02/05 17:15:05 robert Exp $
+$OpenBSD: patch-sdext_Module_sdext_mk,v 1.2 2019/09/20 13:34:54 robert Exp $
 
 Index: sdext/Module_sdext.mk
 --- sdext/Module_sdext.mk.orig
 +++ sdext/Module_sdext.mk
-@@ -24,12 +24,6 @@ $(eval $(call gb_Module_add_targets,sdext,\
-     Library_pdfimport \
+@@ -29,12 +29,6 @@ $(eval $(call gb_Module_add_targets,sdext,\
      Package_pdfimport_xpdfimport \
  ))
+ endif
 -
 -$(eval $(call gb_Module_add_check_targets,sdext,\
 -    CppunitTest_sdext_pdfimport \

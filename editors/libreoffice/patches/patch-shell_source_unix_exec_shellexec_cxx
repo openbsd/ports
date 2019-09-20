@@ -1,9 +1,9 @@
-$OpenBSD: patch-shell_source_unix_exec_shellexec_cxx,v 1.10 2019/02/09 15:23:07 robert Exp $
+$OpenBSD: patch-shell_source_unix_exec_shellexec_cxx,v 1.11 2019/09/20 13:34:54 robert Exp $
 
 Index: shell/source/unix/exec/shellexec.cxx
 --- shell/source/unix/exec/shellexec.cxx.orig
 +++ shell/source/unix/exec/shellexec.cxx
-@@ -138,7 +138,7 @@ void SAL_CALL ShellExec::execute( const OUString& aCom
+@@ -175,7 +175,7 @@ void SAL_CALL ShellExec::execute( const OUString& aCom
          aBuffer.append("open --");
  #else
          // Just use xdg-open on non-Mac
@@ -12,7 +12,7 @@ Index: shell/source/unix/exec/shellexec.cxx
  #endif
          aBuffer.append(" ");
          escapeForShell(aBuffer, OUStringToOString(aURL, osl_getThreadTextEncoding()));
-@@ -178,7 +178,7 @@ void SAL_CALL ShellExec::execute( const OUString& aCom
+@@ -215,7 +215,7 @@ void SAL_CALL ShellExec::execute( const OUString& aCom
      }
  
      OString cmd =

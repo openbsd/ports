@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.214 2019/09/08 14:05:53 robert Exp $
+# $OpenBSD: Makefile,v 1.215 2019/09/20 13:34:54 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -12,8 +12,8 @@ SHARED_LIBS +=  orcus-0.14                0.0 # 0.0
 SHARED_LIBS +=  orcus-parser-0.14         0.0 # 0.0
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 
-BV=		6.2
-VERSION=	${BV}.7.1
+BV=		6.3
+VERSION=	${BV}.1.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -21,7 +21,7 @@ PKGNAME-main=	libreoffice-${VERSION}
 PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
-DPB_PROPERTIES=	parallel tag:kde4
+DPB_PROPERTIES=	parallel
 
 EPOCH=		0
 
@@ -56,7 +56,8 @@ DISTFILES += 0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz:0
 DISTFILES += liberation-fonts-ttf-2.00.4.tar.gz:0
 DISTFILES += liberation-narrow-fonts-ttf-1.07.6.tar.gz:0
 DISTFILES += source-serif-font-2.007R.tar.gz:0
-DISTFILES += 49a64f3bcf20a7909ba2751349231d6652ded9cd2840e961b5164d09de3ffa63-opens___.ttf:0
+DISTFILES += source-serif-pro-3.000R.tar.gz:0
+DISTFILES += 884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf:0
 DISTFILES += 1725634df4bb3dcb1b2c91a6175f8789-GentiumBasic_1102.zip:0
 DISTFILES += 17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:0
 DISTFILES += 26b3e95ddf3d9c077c480ea45874b3b8-lp_solve_5.5.tar.gz:0
@@ -70,7 +71,7 @@ DISTFILES += 5ade6ae2a99bc1e9e57031ca88d36dad-hyphen-2.8.8.tar.gz:0
 DISTFILES += 5c781723a0d9ed6188960defba8e91cf-liberation-fonts-ttf-2.00.1.tar.gz:0
 DISTFILES += 798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:0
 DISTFILES += 7a15edea7d415ac5150ea403e27401fd-open-sans-font-ttf-1.10.tar.gz:0
-DISTFILES += xmlsec1-1.2.27.tar.gz:0
+DISTFILES += xmlsec1-1.2.28.tar.gz:0
 DISTFILES += lxml-4.1.1.tgz:0
 DISTFILES += 8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:0
 DISTFILES += 907d6e99f241876695c19ff3db0b8923-source-code-pro-2.030R-ro-1.050R-it.tar.gz:0
@@ -106,7 +107,7 @@ DISTFILES += libfreehand-0.1.2.tar.xz:0
 DISTFILES += libgltf-0.0.2.tar.bz2:1
 DISTFILES += liblangtag-0.6.2.tar.bz2:0
 DISTFILES += libmspub-0.1.4.tar.xz:0
-DISTFILES += libmwaw-0.3.14.tar.xz:0
+DISTFILES += libmwaw-0.3.15.tar.xz:0
 DISTFILES += libodfgen-0.1.6.tar.bz2:0
 DISTFILES += liborcus-0.14.1.tar.gz:0
 DISTFILES += libre-hebrew-1.0.tar.gz:0
@@ -123,7 +124,7 @@ DISTFILES += libwps-0.4.10.tar.xz:0
 DISTFILES += libwps-0.4.8.tar.xz:0
 DISTFILES += libzmf-0.0.2.tar.xz:0
 DISTFILES += mdds-1.4.3.tar.bz2:0
-DISTFILES += pdfium-3550.tar.bz2:0
+DISTFILES += pdfium-3794.tar.bz2:0
 DISTFILES += noto-fonts-20171024.tar.gz:0
 DISTFILES += ReemKufi-0.7.zip:0
 DISTFILES += Scheherazade-2.100.zip:0
@@ -169,10 +170,10 @@ BUILD_DEPENDS+=	archivers/zip \
 		shells/bash \
 		archivers/p5-Archive-Zip \
 		misc/findutils \
-		print/poppler \
 		security/nss \
 		sysutils/coreutils \
 		textproc/clucene \
+		textproc/gsed \
 		x11/gtk+3 \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
@@ -196,6 +197,7 @@ LIB_DEPENDS-main=x11/gtk+2 \
 		databases/postgresql \
 		devel/boost \
 		devel/harfbuzz,-icu \
+		devel/pango \
 		graphics/lcms2 \
 		graphics/graphite2 \
 		${MODGCC4_CPPLIBDEP} \
@@ -209,19 +211,22 @@ LIB_DEPENDS-main=x11/gtk+2 \
 		textproc/redland \
 		textproc/hunspell
 
-WANTLIB-main=	${COMPILER_LIBCXX} gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14 
-WANTLIB-main+=	xslt>=3 curl>=7 neon>=24 pq>=2 icuuc>=0 icui18n rdf>=0 ICE SM 
-WANTLIB-main+=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr 
-WANTLIB-main+=	Xrender atk-1.0 c cairo crypto expat fontconfig freetype gio-2.0 
-WANTLIB-main+=	glib-2.0 gobject-2.0 gthread-2.0 iconv intl jpeg m pango-1.0 
-WANTLIB-main+=	pangocairo-1.0 pangoft2-1.0 pthread ssl xml2 z gdk_pixbuf-2.0 
-WANTLIB-main+=	util hunspell-1.6 clucene-contribs-lib clucene-core 
-WANTLIB-main+=	clucene-shared cups exslt lcms2 nspr4 nss3 nssutil3 plc4 plds4 
-WANTLIB-main+=	smime3 ssl3 raptor2 harfbuzz harfbuzz-icu lzma cairo-gobject 
-WANTLIB-main+=	gmodule-2.0 dconf gdk-3 gtk-3 poppler bz2 graphite2 
-WANTLIB-main+=	boost_filesystem boost_filesystem-mt boost_iostreams-mt 
-WANTLIB-main+=	boost_system boost_system-mt boost_date_time-mt boost_locale-mt 
-WANTLIB-main+=	epoxy mariadb png lber ldap python${MODPY_VERSION}m
+WANTLIB-main=	${COMPILER_LIBCXX} gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14
+WANTLIB-main+=	xslt>=3 curl>=7 neon>=24 pq>=2 icuuc>=0 icui18n rdf>=0
+WANTLIB-main+=	ICE SM X11 Xcomposite Xcursor Xdamage
+WANTLIB-main+=	Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
+WANTLIB-main+=	crypto expat fontconfig freetype gio-2.0 glib-2.0
+WANTLIB-main+=	gobject-2.0 gthread-2.0 iconv intl util
+WANTLIB-main+=	jpeg m pthread ssl xml2 z gdk_pixbuf-2.0 poppler
+WANTLIB-main+=	pango-1.0 pangocairo-1.0 pangoft2-1.0 hunspell-1.6
+WANTLIB-main+=	clucene-contribs-lib clucene-core clucene-shared
+WANTLIB-main+=	cups exslt lcms2 raptor2 harfbuzz harfbuzz-icu
+WANTLIB-main+=	nspr4 nss3 nssutil3 plc4 plds4 smime3 ssl3
+WANTLIB-main+=	lzma cairo-gobject gmodule-2.0 dconf gdk-3 gtk-3
+WANTLIB-main+=	bz2 graphite2 epoxy mariadb png boost_locale-mt
+WANTLIB-main+=	boost_filesystem boost_filesystem-mt boost_iostreams-mt
+WANTLIB-main+=	boost_system boost_system-mt boost_date_time-mt
+WANTLIB-main+=	lber ldap python${MODPY_VERSION}m
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/libexecinfo \
@@ -235,15 +240,17 @@ RUN_DEPENDS-main=	devel/desktop-file-utils \
 			x11/gtk+3 \
 			x11/gtk+3,-guic
 
-MODULES+=		x11/qt4
+MODULES+=		x11/qt5
 RUN_DEPENDS-kde=	editors/libreoffice
-LIB_DEPENDS-kde=	x11/kde4/libs \
+LIB_DEPENDS-kde=	devel/kf5/kcoreaddons \
+			devel/kf5/kio \
 			${MODQT_LIB_DEPENDS} \
 			${MODGCC4_CPPLIBDEP}
-
-WANTLIB-kde+=		${COMPILER_LIBCXX} ICE SM Xext icuuc X11 glib-2.0
-WANTLIB-kde+=		intl m pthread epoxy harfbuzz harfbuzz-icu
-WANTLIB-kde+=		QtCore QtGui QtNetwork kdecore kdeui kfile kio
+WANTLIB-kde+=		icuuc ${COMPILER_LIBCXX} m pthread xcb
+WANTLIB-kde+=		cairo graphite2 epoxy harfbuzz harfbuzz-icu
+WANTLIB-kde+=		KF5ConfigCore KF5CoreAddons KF5I18n KF5KIOCore
+WANTLIB-kde+=		KF5KIOFileWidgets KF5KIOWidgets KF5WindowSystem
+WANTLIB-kde+=		Qt5Core Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras
 
 .include <bsd.port.arch.mk>
 
@@ -271,36 +278,33 @@ AUTOMAKE_VERSION=	1.12
 CONFIGURE_ENV=	CONFIG_SHELL=${LOCALBASE}/bin/bash \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		KDE4INC="${LOCALBASE}/include/kde4" KDE4LIB="${LOCALBASE}/lib/kde4/libs"\
-		QT4DIR="${LOCALBASE}/lib/qt4" QT4LIB="${LOCALBASE}/qt4" \
-		QT4INC="${LOCALBASE}/include/X11/qt4"
+		KDE5INC="${LOCALBASE}/include/kde4" KDE5LIB="${LOCALBASE}/lib/kde5/libs"\
+		KF5INC="${LOCALBASE}/include" KF5LIB="${LOCALBASE}/lib" \
+		QT5DIR="${LOCALBASE}/lib/qt5" QT5LIB="${LOCALBASE}/qt5" \
+		QT5INC="${LOCALBASE}/include/X11/qt5" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 CONFIGURE_ARGS+=\
 		--disable-coinmp \
-		--disable-collada \
 		--disable-ccache \
 		--disable-dbus \
 		--disable-epm \
 		--disable-fetch-external \
 		--disable-odk \
 		--disable-firebird-sdbc \
-		--disable-mergelibs \
 		--disable-dependency-tracking \
 		--disable-online-update \
 		--disable-libnumbertext \
-		--enable-orcus \
+		--enable-mergelibs \
 		--enable-gio \
-		--enable-kde4 \
-		--enable-systray \
+		--enable-kde5 \
 		--enable-release-build \
 		--enable-cairo-canvas \
-		--with-alloc=system \
 		--with-compat-oowrappers \
 		--with-external-tar=${DISTDIR}/libreoffice \
 		--with-fonts \
 		--with-myspell-dicts \
 		--with-system-harfbuzz \
-		--with-system-glew \
 		--with-system-clucene \
 		--without-system-cppunit \
 		--with-system-libxml \
@@ -378,6 +382,7 @@ SUBST_VARS+=	BV OA MODPY_DEFAULT_VERSION_3
 
 pre-patch:
 	@ln -fs /bin/md5 ${WRKDIR}/bin/md5sum
+	@ln -fs /usr/local/bin/gsed ${WRKDIR}/bin/sed
 	@ln -fs /usr/local/bin/gfind ${WRKDIR}/bin/find
 	@ln -fs /usr/local/bin/gpatch ${WRKDIR}/bin/patch
 	@ln -fs /usr/local/bin/gcat ${WRKDIR}/bin/cat

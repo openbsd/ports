@@ -1,17 +1,19 @@
-$OpenBSD: patch-external_libwps_ExternalProject_libwps_mk,v 1.3 2018/08/18 07:07:17 robert Exp $
+$OpenBSD: patch-external_libwps_ExternalProject_libwps_mk,v 1.4 2019/09/20 13:34:54 robert Exp $
 
 Index: external/libwps/ExternalProject_libwps.mk
 --- external/libwps/ExternalProject_libwps.mk.orig
 +++ external/libwps/ExternalProject_libwps.mk
-@@ -41,9 +41,10 @@ $(call gb_ExternalProject_get_state_target,libwps,buil
- 			$(if $(ENABLE_DEBUG),--enable-debug,--disable-debug) \
- 			--disable-werror \
- 			$(if $(verbose),--disable-silent-rules,--enable-silent-rules) \
-+			CPPFLAGS="$(gb_CPPFLAGS) -fPIC" \
- 			CXXFLAGS="$(gb_CXXFLAGS) $(if $(ENABLE_OPTIMIZED),$(gb_COMPILEROPTFLAGS),$(gb_COMPILERNOOPTFLAGS))" \
- 			$(if $(libwps_CPPFLAGS),CPPFLAGS='$(libwps_CPPFLAGS)') \
--			$(if $(filter LINUX,$(OS)),$(if $(SYSTEM_REVENGE),, \
-+			$(if $(filter OPENBSD,$(OS)),$(if $(SYSTEM_REVENGE),, \
- 				'LDFLAGS=-Wl$(COMMA)-z$(COMMA)origin \
- 					-Wl$(COMMA)-rpath$(COMMA)\$$$$ORIGIN')) \
- 			$(if $(CROSS_COMPILING),--build=$(BUILD_PLATFORM) --host=$(HOST_PLATFORM)) \
+@@ -25,10 +25,12 @@ libwps_CPPFLAGS+=-D_GLIBCXX_DEBUG
+ endif
+ endif
+ 
++libwps_CPPFLAGS+=-fPIC
++
+ libwps_CXXFLAGS=$(gb_CXXFLAGS) $(if $(ENABLE_OPTIMIZED),$(gb_COMPILEROPTFLAGS),$(gb_COMPILERNOOPTFLAGS))
+ 
+ libwps_LDFLAGS=
+-ifeq ($(OS),LINUX)
++ifeq ($(OS),OPENBSD)
+ ifeq ($(SYSTEM_REVENGE),)
+ libwps_LDFLAGS+=-Wl,-z,origin -Wl,-rpath,\$$$$ORIGIN
+ endif

@@ -1,9 +1,9 @@
-$OpenBSD: patch-vcl_source_app_svapp_cxx,v 1.1 2019/02/28 22:09:41 robert Exp $
+$OpenBSD: patch-vcl_source_app_svapp_cxx,v 1.2 2019/09/20 13:34:54 robert Exp $
 
 Index: vcl/source/app/svapp.cxx
 --- vcl/source/app/svapp.cxx.orig
 +++ vcl/source/app/svapp.cxx
-@@ -1103,7 +1103,7 @@ OUString Application::GetHWOSConfInfo()
+@@ -1163,7 +1163,7 @@ OUString Application::GetHWOSConfInfo()
          aDetails.append( VclResId(SV_APP_DEFAULT) );
      aDetails.append( "; " );
  

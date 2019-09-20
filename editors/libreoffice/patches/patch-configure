@@ -1,17 +1,19 @@
-$OpenBSD: patch-configure,v 1.29 2019/08/19 13:22:23 robert Exp $
-
 Index: configure
 --- configure.orig
 +++ configure
-@@ -5972,6 +5972,7 @@ aix*)
+@@ -5990,8 +5990,11 @@ aix*)
  openbsd*)
      test_gtk=yes
      test_freetype=yes
-+    test_kde4=yes
++    test_kde5=yes
++    test_gtk3_kde5=yes
      PTHREAD_CFLAGS="-D_THREAD_SAFE"
      PTHREAD_LIBS="-pthread"
++    SED="/usr/local/bin/gsed"
      _os=OpenBSD
-@@ -18567,9 +18568,6 @@ _ACEOF
+     ;;
+ 
+@@ -18884,9 +18887,6 @@ _ACEOF
          rm -fr libconftest*
          { $as_echo "$as_me:${as_lineno-$LINENO}: result: $gccvisinlineshiddenok" >&5
  $as_echo "$gccvisinlineshiddenok" >&6; }
@@ -21,34 +23,34 @@ Index: configure
      fi
  
     { $as_echo "$as_me:${as_lineno-$LINENO}: checking if gcc has a visibility bug with class-level attributes (GCC bug 26905)" >&5
-@@ -24891,7 +24889,7 @@ if ${am_cv_pathless_PYTHON+:} false; then :
+@@ -25164,7 +25164,7 @@ if ${am_cv_pathless_PYTHON+:} false; then :
    $as_echo_n "(cached) " >&6
  else
  
 -	for am_cv_pathless_PYTHON in python python2 python3  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
-+	for am_cv_pathless_PYTHON in python${MODPY_VERSION} python2 python3  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
++	for am_cv_pathless_PYTHON in python3.7 python python2 python3  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -25192,7 +25190,7 @@ if ${am_cv_pathless_PYTHON+:} false; then :
+@@ -25465,7 +25465,7 @@ if ${am_cv_pathless_PYTHON+:} false; then :
    $as_echo_n "(cached) " >&6
  else
  
 -	for am_cv_pathless_PYTHON in python python2 python3  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
-+	for am_cv_pathless_PYTHON in python${MODPY_VERSION} python2 python3  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
++	for am_cv_pathless_PYTHON in python3.7 python python2 python3  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -25512,7 +25510,7 @@ if ${am_cv_pathless_PYTHON+:} false; then :
+@@ -25777,7 +25777,7 @@ if ${am_cv_pathless_PYTHON+:} false; then :
    $as_echo_n "(cached) " >&6
  else
  
 -	for am_cv_pathless_PYTHON in python python2 python3  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
-+	for am_cv_pathless_PYTHON in python${MODPY_VERSION} python2 python3  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
++	for am_cv_pathless_PYTHON in python3.7 python python2 python3  python3.9 python3.8 python3.7 python3.6 python3.5 python3.4 python3.3  python3.2 python3.1 python3.0  python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1  python2.0 none; do
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -33262,7 +33260,7 @@ $as_echo "internal" >&6; }
+@@ -33626,7 +33626,7 @@ $as_echo "internal" >&6; }
      if test "$COM" = "MSC"; then
          HYPHEN_LIB="${WORKDIR}/LinkTarget/StaticLibrary/hyphen.lib"
      else
@@ -57,7 +59,7 @@ Index: configure
      fi
  fi
  
-@@ -33455,7 +33453,7 @@ $as_echo "internal" >&6; }
+@@ -33819,7 +33819,7 @@ $as_echo "internal" >&6; }
      if test "$COM" = "MSC"; then
          MYTHES_LIBS="${WORKDIR}/LinkTarget/StaticLibrary/mythes.lib"
      else
@@ -66,60 +68,26 @@ Index: configure
      fi
  fi
  
-@@ -36997,8 +36995,8 @@ if test "$test_kde4" = "yes" -a "$ENABLE_KDE4" = "TRUE
-     qt4_incdirs="$QT4INC /usr/include/qt4 /usr/include $x_includes"
-     qt4_libdirs="$QT4LIB /usr/lib/qt4 /usr/lib $x_libraries"
- 
--    kde4_incdirs="/usr/include /usr/include/kde4 $x_includes"
--    kde4_libdirs="/usr/lib /usr/lib/kde4 /usr/lib/kde4/devel $x_libraries"
-+    kde4_incdirs="$KDE4INC /usr/include /usr/include/kde4 $x_includes"
-+    kde4_libdirs="$KDE4LIB /usr/lib /usr/lib/kde4 /usr/lib/kde4/devel $x_libraries"
- 
-     if test -n "$supports_multilib"; then
-         qt4_libdirs="$qt4_libdirs /usr/lib64/qt4 /usr/lib64/qt /usr/lib64"
-@@ -37023,11 +37021,11 @@ if test "$test_kde4" = "yes" -a "$ENABLE_KDE4" = "TRUE
+@@ -34630,7 +34630,7 @@ else
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking the flex version" >&5
+ $as_echo_n "checking the flex version... " >&6; }
+     _flex_version=$($FLEX --version | $SED -e 's/^.*\([[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\).*$/\1/')
+-    if test $(echo $_flex_version | $AWK -F. '{printf("%d%03d%03d", $1, $2, $3)}') -lt 2006000; then
++    if test $(echo $_flex_version | $AWK -F. '{printf("%d%03d%03d", $1, $2, $3)}') -lt 2005000; then
+         as_fn_error $? "failed ($FLEX $_flex_version found, but need at least 2.6.0)" "$LINENO" 5
      fi
- 
-     if test -n "$KDEDIR"; then
--        kde4_incdirs="$KDEDIR/include $kde4_incdirs"
-+        kde4_incdirs="$KDEDIR/include/kde $KDEDIR/include $kde4_incdirs"
-         if test -z "$supports_multilib"; then
--            kde4_libdirs="$KDEDIR/lib $kde4_libdirs"
-+            kde4_libdirs="$KDEDIR/lib/kde4 $KDEDIR/lib $kde4_libdirs"
-         else
--            kde4_libdirs="$KDEDIR/lib64 $KDEDIR/lib $kde4_libdirs"
-+            kde4_libdirs="$KDEDIR/lib64 $KDEDIR/lib/kde4 $KDEDIR/lib $kde4_libdirs"
-         fi
-     fi
-     if test -n "$KDE4DIR"; then
-@@ -37121,7 +37119,7 @@ test -n "$QMAKE4" || QMAKE4="no"
- $as_echo_n "checking for Qt4 libraries... " >&6; }
-     qt4_lib_dir="no"
-     for lib_dir in $qt4_libdirs; do
--        if test -r "$lib_dir/$qt4_test_library"; then
-+        if ls $lib_dir/$qt4_test_library* /dev/null 2>&1 >/dev/null; then
-             qt4_lib_dir="$lib_dir"
-             PKG_CONFIG_PATH="$qt4_lib_dir"/pkgconfig:$PKG_CONFIG_PATH
-             break
-@@ -37248,7 +37246,7 @@ $as_echo "$kde4_incdir" >&6; }
- $as_echo_n "checking for KDE4 libraries... " >&6; }
-     kde4_libdir="no"
-     for kde4_check in $kde4_libdirs; do
--        if test -r "$kde4_check/$kde4_test_library"; then
-+        if ls $kde4_check/$kde4_test_library* /dev/null 2>&1 >/dev/null; then
-             kde4_libdir="$kde4_check"
-             break
-         fi
-@@ -37745,7 +37743,7 @@ $as_echo "$qt5_incdir" >&6; }
+ fi
+@@ -37477,7 +37477,8 @@ $as_echo "$qt5_incdir" >&6; }
  $as_echo_n "checking for Qt5 libraries... " >&6; }
      qt5_libdir="no"
      for lib_dir in $qt5_libdirs; do
 -        if test -r "$lib_dir/$qt5_test_library"; then
 +        if ls $lib_dir/$qt5_test_library* /dev/null 2>&1 >/dev/null; then
++
              qt5_libdir="$lib_dir"
              break
          fi
-@@ -37991,7 +37989,7 @@ $as_echo "$kf5_incdir" >&6; }
+@@ -37803,7 +37804,7 @@ $as_echo "$kf5_incdir" >&6; }
  $as_echo_n "checking for KF5 libraries... " >&6; }
      kf5_libdir="no"
      for kf5_check in $kf5_libdirs; do
@@ -128,7 +96,7 @@ Index: configure
              kf5_libdir="$kf5_check"
              break
          fi
-@@ -39677,7 +39675,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
+@@ -39415,7 +39416,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
  done
  
  if test -z "$SHA256SUM"; then
