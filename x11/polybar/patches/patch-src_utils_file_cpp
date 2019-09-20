@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_utils_file_cpp,v 1.1.1.1 2019/09/20 08:18:42 jasper Exp $
+
+Don't use the CPP define for fileno in stdio.h
+It causes clang++ to blow up.
+
+Index: src/utils/file.cpp
+--- src/utils/file.cpp.orig
++++ src/utils/file.cpp
+@@ -43,6 +43,7 @@ file_ptr::operator int() {
+   return static_cast<const file_ptr&>(*this);
+ }
+ file_ptr::operator int() const {
++#undef fileno
+   return fileno(*this);
+ }
+ 

@@ -1,0 +1,44 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/20 08:18:42 jasper Exp $
+@bin bin/polybar
+@bin bin/polybar-msg
+@man man/man1/polybar.1
+share/bash-completion/completions/polybar
+share/doc/polybar/
+share/doc/polybar/.buildinfo
+share/doc/polybar/_sources/
+share/doc/polybar/_sources/index.txt
+share/doc/polybar/_sources/man/
+share/doc/polybar/_sources/man/polybar.1.txt
+share/doc/polybar/_static/
+share/doc/polybar/_static/ajax-loader.gif
+share/doc/polybar/_static/alabaster.css
+share/doc/polybar/_static/basic.css
+share/doc/polybar/_static/comment-bright.png
+share/doc/polybar/_static/comment-close.png
+share/doc/polybar/_static/comment.png
+share/doc/polybar/_static/custom.css
+share/doc/polybar/_static/doctools.js
+share/doc/polybar/_static/down-pressed.png
+share/doc/polybar/_static/down.png
+share/doc/polybar/_static/file.png
+share/doc/polybar/_static/jquery.js
+share/doc/polybar/_static/minus.png
+share/doc/polybar/_static/plus.png
+share/doc/polybar/_static/pygments.css
+share/doc/polybar/_static/searchtools.js
+share/doc/polybar/_static/underscore.js
+share/doc/polybar/_static/up-pressed.png
+share/doc/polybar/_static/up.png
+share/doc/polybar/_static/websupport.js
+share/doc/polybar/config
+share/doc/polybar/genindex.html
+share/doc/polybar/index.html
+share/doc/polybar/man/
+share/doc/polybar/man/polybar.1.html
+share/doc/polybar/objects.inv
+share/doc/polybar/search.html
+share/doc/polybar/searchindex.js
+share/examples/polybar/
+share/examples/polybar/config
+share/zsh/site-functions/_polybar
+share/zsh/site-functions/_polybar_msg

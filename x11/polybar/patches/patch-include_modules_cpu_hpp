@@ -1,0 +1,25 @@
+$OpenBSD: patch-include_modules_cpu_hpp,v 1.1.1.1 2019/09/20 08:18:42 jasper Exp $
+
+Index: include/modules/cpu.hpp
+--- include/modules/cpu.hpp.orig
++++ include/modules/cpu.hpp
+@@ -7,10 +7,19 @@ POLYBAR_NS
+ 
+ namespace modules {
+   struct cpu_time {
++#ifdef __OpenBSD__
+     unsigned long long user;
+     unsigned long long nice;
++    unsigned long long sys;
++    unsigned long long spin;
++    unsigned long long intr;
++    unsigned long long idle;
++#else
++    unsigned long long user;
++    unsigned long long nice;
+     unsigned long long system;
+     unsigned long long idle;
++#endif
+     unsigned long long total;
+   };
+ 

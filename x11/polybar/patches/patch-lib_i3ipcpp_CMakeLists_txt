@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_i3ipcpp_CMakeLists_txt,v 1.1.1.1 2019/09/20 08:18:42 jasper Exp $
+
+https://github.com/polybar/i3ipcpp/pull/8
+
+Index: lib/i3ipcpp/CMakeLists.txt
+--- lib/i3ipcpp/CMakeLists.txt.orig
++++ lib/i3ipcpp/CMakeLists.txt
+@@ -35,6 +35,10 @@ elseif(NOT JSONCPP_LIBRARIES AND JSONCPP_LIBS)
+   set(JSONCPP_LIBRARIES "${JSONCPP_LIBS}")
+ endif()
+ 
++if(CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
++  list(APPEND JSONCPP_INCLUDEDIR "${LOCALBASE}/include/jsoncpp")
++endif()
++
+ target_link_libraries(${PROJECT_NAME} PUBLIC ${JSONCPP_LIBRARIES})
+ target_include_directories(${PROJECT_NAME} PUBLIC ${JSONCPP_INCLUDEDIR})
+ 

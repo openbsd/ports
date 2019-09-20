@@ -1,0 +1,15 @@
+$OpenBSD: patch-cmake_03-libs_cmake,v 1.1.1.1 2019/09/20 08:18:42 jasper Exp $
+
+Detect libinotify using pkg-config.
+
+Index: cmake/03-libs.cmake
+--- cmake/03-libs.cmake.orig
++++ cmake/03-libs.cmake
+@@ -25,6 +25,6 @@ querylib(WITH_XRM "pkg-config" xcb-xrm libs dirs)
+ querylib(WITH_XCURSOR "pkg-config" xcb-cursor libs dirs)
+ 
+ # FreeBSD Support
+-if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD" OR CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
+   querylib(TRUE "pkg-config" libinotify libs dirs)
+ endif()

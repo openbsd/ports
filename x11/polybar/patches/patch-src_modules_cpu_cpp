@@ -1,0 +1,63 @@
+$OpenBSD: patch-src_modules_cpu_cpp,v 1.1.1.1 2019/09/20 08:18:42 jasper Exp $
+
+Index: src/modules/cpu.cpp
+--- src/modules/cpu.cpp.orig
++++ src/modules/cpu.cpp
+@@ -1,6 +1,12 @@
+ #include <fstream>
+ #include <istream>
+ 
++#ifdef __OpenBSD__
++#include <sys/types.h>
++#include <sys/sched.h>
++#include <sys/sysctl.h>
++#endif /* __OpenBSD__ */
++
+ #include "modules/cpu.hpp"
+ 
+ #include "drawtypes/label.hpp"
+@@ -106,6 +112,35 @@ namespace modules {
+     m_cputimes_prev.swap(m_cputimes);
+     m_cputimes.clear();
+ 
++#ifdef __OpenBSD__
++    m_cputimes.emplace_back(new cpu_time);
++
++    /* This currently only retrieves the information of the boot cpu,
++     * statistics of other CPUs are currently not taken into account yet.
++     */
++    long cp_time[CPUSTATES];
++    int mib[2];
++    size_t size = sizeof(cp_time);
++
++    mib[0] = CTL_KERN;
++    mib[1] = KERN_CPTIME;
++
++    if (sysctl(mib, 2, cp_time, &size, NULL, 0)) {
++        m_log.err("Failed to read CPU values (sysctl)");
++        return false;
++    }
++
++    m_cputimes.back()->user = cp_time[CP_USER];
++    m_cputimes.back()->nice = cp_time[CP_NICE];
++    m_cputimes.back()->sys = cp_time[CP_SYS];
++    m_cputimes.back()->spin = cp_time[CP_SPIN];
++    m_cputimes.back()->intr = cp_time[CP_INTR];
++    m_cputimes.back()->idle = cp_time[CP_IDLE];
++    m_cputimes.back()->total =
++        m_cputimes.back()->intr + m_cputimes.back()->spin +
++	m_cputimes.back()->sys + m_cputimes.back()->user +
++	m_cputimes.back()->idle;
++#else
+     try {
+       std::ifstream in(PATH_CPU_INFO);
+       string str;
+@@ -129,7 +164,7 @@ namespace modules {
+     } catch (const std::ios_base::failure& e) {
+       m_log.err("Failed to read CPU values (what: %s)", e.what());
+     }
+-
++#endif
+     return !m_cputimes.empty();
+   }
+ 
