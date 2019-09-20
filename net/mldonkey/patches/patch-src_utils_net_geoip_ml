@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_utils_net_geoip_ml,v 1.1 2019/09/20 20:04:44 chrisz Exp $
+
+Index: src/utils/net/geoip.ml
+--- src/utils/net/geoip.ml.orig
++++ src/utils/net/geoip.ml
+@@ -225,8 +225,9 @@ type geoip_database = {
+ } 
+ 
+ let new_map file =
+-  Array1.map_file (Unix.descr_of_in_channel file) 
+-    int8_unsigned c_layout false (-1)
++  Bigarray.array1_of_genarray @@
++  Unix.map_file (Unix.descr_of_in_channel file) 
++    int8_unsigned c_layout false [|-1|]
+ 
+ let unpack filename =
+   let ext = String.lowercase (Filename2.extension filename) in
