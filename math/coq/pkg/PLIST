@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2019/09/06 22:10:18 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/09/20 03:28:34 daniel Exp $
 %%native%%
 @bin bin/coq-tex
 @bin bin/coq_makefile
@@ -287,6 +287,7 @@ lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrHaskellString.c
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrHaskellZInt.cmi
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrHaskellZInteger.cmi
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrHaskellZNum.cmi
+lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrOCamlInt63.cmi
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrOcamlBasic.cmi
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrOcamlBigIntConv.cmi
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrOcamlIntConv.cmi
@@ -320,6 +321,9 @@ lib/ocaml/coq/plugins/extraction/ExtrHaskellZInteger.vo
 lib/ocaml/coq/plugins/extraction/ExtrHaskellZNum.glob
 lib/ocaml/coq/plugins/extraction/ExtrHaskellZNum.v
 lib/ocaml/coq/plugins/extraction/ExtrHaskellZNum.vo
+lib/ocaml/coq/plugins/extraction/ExtrOCamlInt63.glob
+lib/ocaml/coq/plugins/extraction/ExtrOCamlInt63.v
+lib/ocaml/coq/plugins/extraction/ExtrOCamlInt63.vo
 lib/ocaml/coq/plugins/extraction/ExtrOcamlBasic.glob
 lib/ocaml/coq/plugins/extraction/ExtrOcamlBasic.v
 lib/ocaml/coq/plugins/extraction/ExtrOcamlBasic.vo

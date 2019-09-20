@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.4 2019/09/06 22:10:18 chrisz Exp $
+@comment $OpenBSD: PFRAG.native,v 1.5 2019/09/20 03:28:34 daniel Exp $
 %%dynlink%%
 @bin bin/coqidetop.opt
 @bin bin/coqproofworker.opt
@@ -241,6 +241,8 @@ lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrHaskellZInteger
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrHaskellZInteger.o
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrHaskellZNum.cmx
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrHaskellZNum.o
+lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrOCamlInt63.cmx
+lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrOCamlInt63.o
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrOcamlBasic.cmx
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrOcamlBasic.o
 lib/ocaml/coq/plugins/extraction/.coq-native/NCoq_extraction_ExtrOcamlBigIntConv.cmx

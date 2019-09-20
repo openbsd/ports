@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2019/09/18 17:49:35 chrisz Exp $
+# $OpenBSD: Makefile,v 1.44 2019/09/20 03:28:33 daniel Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
-V=			8.10+beta2
-REVISION=		0
+V=			8.10+beta3
 GH_ACCOUNT =		coq
 GH_PROJECT =		coq
 GH_TAGNAME =		V${V}
@@ -51,6 +50,7 @@ ALL_TARGET=		byte coq documentation \
 INSTALL_TARGET=		install-coq install-byte install-meta
 .endif
 
+TEST_ENV=		VERBOSE=1
 TEST_TARGET=		check
 
 do-build:
