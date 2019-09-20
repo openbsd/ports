@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.7 2019/08/29 22:48:30 daniel Exp $
+$OpenBSD: patch-configure,v 1.8 2019/09/20 11:32:16 daniel Exp $
 
 Fixup path locations for OpenBSD.
 
@@ -23,16 +23,23 @@ Index: configure
    arm-eabi             (ARM, EABI, little endian)
    arm-linux            (ARM, EABI, little endian)
    arm-eabihf           (ARM, EABI using hardware FP registers, little endian)
-@@ -60,7 +62,7 @@ Supported targets:
+@@ -56,13 +58,14 @@ Supported targets:
+   rv32-linux           (RISC-V 32 bits, Linux)
+   rv64-linux           (RISC-V 64 bits, Linux)
+   aarch64-linux        (AArch64, i.e. ARMv8 in 64-bit mode, Linux)
++  aarch64-bsd          (AArch64, i.e. ARMv8 in 64-bit mode, BSD)
+   manual               (edit configuration file by hand)
+ 
  For x86 targets, the "x86_32-" prefix can also be written "ia32-" or "i386-".
  For x86 targets, the "x86_64-" prefix can also be written "amd64-".
+ For AArch64 targets, the "aarch64-" prefix can also be written "arm64-".
  
 -For PowerPC targets, the "ppc-" prefix can be refined into:
 +For PowerPC targets, the "ppc-" prefix can also be written "powerpc-" and can be refined into:
    ppc64-               PowerPC 64 bits
    e5500-               Freescale e5500 core (PowerPC 64 bit, EREF extensions)
  
-@@ -236,7 +238,7 @@ fi
+@@ -240,7 +243,7 @@ fi
  if test "$arch" = "powerpc"; then
  
    case "$target" in
@@ -41,7 +48,25 @@ Index: configure
          ;;
      *)
          echo "Error: invalid eabi/system '$target' for architecture PowerPC." 1>&2
-@@ -503,7 +505,7 @@ missingtools=false
+@@ -448,6 +451,17 @@ if test "$arch" = "aarch64"; then
+         cprepro_options="-std=c99 -U__GNUC__ -E"
+         libmath="-lm"
+         system="linux";;
++    bsd)
++        abi="standard"
++        casm="${toolprefix}egcc"
++        casm_options="-c"
++        cc="${toolprefix}egcc"
++        clinker="${toolprefix}egcc"
++        clinker_options=""
++        cprepro="${toolprefix}egcc"
++        cprepro_options="-std=c99 -U__GNUC__ -E"
++        libmath="-lm"
++        system="bsd";;
+     *)
+         echo "Error: invalid eabi/system '$target' for architecture AArch64." 1>&2
+         echo "$usage" 1>&2
+@@ -530,7 +544,7 @@ missingtools=false
  echo "Testing Coq... " | tr -d '\n'
  coq_ver=$(${COQBIN}coqc -v 2>/dev/null | sed -n -e 's/The Coq Proof Assistant, version \([^ ]*\).*$/\1/p')
  case "$coq_ver" in
@@ -50,7 +75,7 @@ Index: configure
          echo "version $coq_ver -- good!";;
    ?*)
          echo "version $coq_ver -- UNSUPPORTED"
-@@ -644,14 +646,14 @@ esac
+@@ -671,14 +685,14 @@ esac
  #
  # Generate Makefile.config
  #
