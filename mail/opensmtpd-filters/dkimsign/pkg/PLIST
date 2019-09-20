@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/20 12:57:48 martijn Exp $
+libexec/smtpd/
+@bin libexec/smtpd/filter-dkimsign
+@man man/man8/filter-dkimsign.8
