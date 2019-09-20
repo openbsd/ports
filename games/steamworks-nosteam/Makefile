@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2019/09/02 18:24:42 thfr Exp $
+# $OpenBSD: Makefile,v 1.4 2019/09/20 23:21:15 thfr Exp $
 
 COMMENT =	Steamworks stub libraries
 
-V =		0.2.1
+V =		0.3.0
 DISTNAME =	Steamworks.NET-nosteam-v${V}
 PKGNAME =	steamworks-nosteam-${V}
 
