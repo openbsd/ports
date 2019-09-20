@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/09/20 08:54:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2019/09/20 09:21:05 jasper Exp $
 
 COMMENT =	fast and easy-to-use status bar
 V =		3.4.0
@@ -26,7 +26,8 @@ COMPILER =	base-clang ports-gcc
 MODULES =	devel/cmake \
 		lang/python
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS} \
+		textproc/py-sphinx
 
 LIB_DEPENDS =	audio/libmpdclient \
 		audio/pulseaudio \
