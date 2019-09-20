@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/09/20 12:42:56 martijn Exp $
+libexec/smtpd/
+@bin libexec/smtpd/filter-dnsbl
+@man man/man8/filter-dnsbl.8

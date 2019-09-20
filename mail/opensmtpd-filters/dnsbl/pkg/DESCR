@@ -1,0 +1,2 @@
+filter-dnsbl is an opensmtpd filter that checks the sender's IP address
+against one or more dnsbl lists to flag or reject spam messages at session time.
