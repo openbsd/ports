@@ -1,0 +1,97 @@
+$OpenBSD: patch-src_modules_temperature_cpp,v 1.1 2019/09/20 08:54:33 jasper Exp $
+
+Index: src/modules/temperature.cpp
+--- src/modules/temperature.cpp.orig
++++ src/modules/temperature.cpp
+@@ -8,8 +8,21 @@
+ 
+ #include "modules/meta/base.inl"
+ 
++#ifdef __OpenBSD__
++#include <sys/param.h>
++#include <sys/types.h>
++#include <sys/sysctl.h>
++#include <sys/sensors.h>
++#include <errno.h>
++#include <err.h>
++
++#define MUKTOC(v) ((v - 273150000) / 1000000.0)
++#endif
++
+ POLYBAR_NS
+ 
++using std::snprintf;
++
+ namespace modules {
+   template class module<temperature_module>;
+ 
+@@ -22,6 +35,7 @@ namespace modules {
+     m_interval = m_conf.get<decltype(m_interval)>(name(), "interval", 1s);
+     m_units = m_conf.get(name(), "units", m_units);
+ 
++#ifndef __OpenBSD__
+     if (m_path.empty()) {
+       m_path = string_util::replace(PATH_TEMPERATURE_INFO, "%zone%", to_string(m_zone));
+     }
+@@ -29,6 +43,7 @@ namespace modules {
+     if (!file_util::exists(m_path)) {
+       throw module_error("The file '" + m_path + "' does not exist");
+     }
++#endif /* !__OpenBSD__ */
+ 
+     m_formatter->add(DEFAULT_FORMAT, TAG_LABEL, {TAG_LABEL, TAG_RAMP});
+     m_formatter->add(FORMAT_WARN, TAG_LABEL_WARN, {TAG_LABEL_WARN, TAG_RAMP});
+@@ -51,8 +66,52 @@ namespace modules {
+   }
+ 
+   bool temperature_module::update() {
++    int temp_f;
++#ifdef __OpenBSD__
++    /*
++     * The following code was copied from i3status/print_cpu_temperature.c
++     */
++    struct sensordev sensordev;
++    struct sensor sensor;
++    size_t sdlen, slen;
++    int dev, numt, mib[5] = {CTL_HW, HW_SENSORS, 0, 0, 0};
++
++    sdlen = sizeof(sensordev);
++    slen = sizeof(sensor);
++
++    char thermal_zone[8];
++    std::snprintf(thermal_zone, sizeof(thermal_zone), "acpitz%d", m_zone);
++
++    for (dev = 0;; dev++) {
++        mib[2] = dev;
++        if (sysctl(mib, 3, &sensordev, &sdlen, NULL, 0) == -1) {
++            if (errno == ENXIO)
++                continue;
++            if (errno == ENOENT)
++                break;
++            return false;
++        }
++
++	if (strncmp(sensordev.xname, thermal_zone, strlen(thermal_zone)) == 0) {
++            mib[3] = SENSOR_TEMP;
++            /* Limit to temp0, but should retrieve from a full path... */
++            for (numt = 0; numt < 1 /*sensordev.maxnumt[SENSOR_TEMP]*/; numt++) {
++                mib[4] = numt;
++                if (sysctl(mib, 5, &sensor, &slen, NULL, 0) == -1) {
++                    if (errno != ENOENT) {
++                        m_log.warn("sysctl failed");
++                        continue;
++                    }
++                }
++            }
++        }
++    }
++    m_temp = MUKTOC(sensor.value);
++#else
+     m_temp = std::strtol(file_util::contents(m_path).c_str(), nullptr, 10) / 1000.0f + 0.5f;
+-    int temp_f = floor(((1.8 * m_temp) + 32) + 0.5);
++#endif
++
++    temp_f = floor(((1.8 * m_temp) + 32) + 0.5);
+     m_perc = math_util::cap(math_util::percentage(m_temp, m_tempbase, m_tempwarn), 0, 100);
+ 
+     string temp_c_string = to_string(m_temp);

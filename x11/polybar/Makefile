@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/09/20 08:18:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2019/09/20 08:54:33 jasper Exp $
 
 COMMENT =	fast and easy-to-use status bar
 V =		3.4.0
 DISTNAME =	polybar-$V
+REVISION =	0
 CATEGORIES =	x11
 
 HOMEPAGE =	https://polybar.github.io/
