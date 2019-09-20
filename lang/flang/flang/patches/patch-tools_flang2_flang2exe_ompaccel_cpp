@@ -1,0 +1,21 @@
+$OpenBSD: patch-tools_flang2_flang2exe_ompaccel_cpp,v 1.1 2019/09/20 14:51:52 bcallah Exp $
+
+https://github.com/flang-compiler/flang/pull/801
+
+Index: tools/flang2/flang2exe/ompaccel.cpp
+--- tools/flang2/flang2exe/ompaccel.cpp.orig
++++ tools/flang2/flang2exe/ompaccel.cpp
+@@ -2412,7 +2412,6 @@ init_test()
+   init_tgtutil();
+ }
+ 
+-#endif
+ /* Expander - OpenMP Accelerator Model */
+  
+ 
+@@ -2475,3 +2474,5 @@ ompaccel_tinfo_get_current_parent_devsptr(SPTR sptr)
+   }
+   return SPTR_NULL;
+ }
++
++#endif

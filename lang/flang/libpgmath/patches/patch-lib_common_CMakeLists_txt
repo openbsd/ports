@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_common_CMakeLists_txt,v 1.10 2019/08/12 15:41:55 bcallah Exp $
+$OpenBSD: patch-lib_common_CMakeLists_txt,v 1.11 2019/09/20 14:51:52 bcallah Exp $
 
 Index: lib/common/CMakeLists.txt
 --- lib/common/CMakeLists.txt.orig
 +++ lib/common/CMakeLists.txt
-@@ -39,7 +39,7 @@ get_property(DEFINITIONS GLOBAL PROPERTY "DEFINITIONS_
+@@ -43,7 +43,7 @@ get_property(DEFINITIONS GLOBAL PROPERTY "DEFINITIONS_
  
  set(SRCS)
  if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND NOT ${LIBPGMATH_WITH_GENERIC})
@@ -12,7 +12,7 @@ Index: lib/common/CMakeLists.txt
      add_subdirectory("sincosf")
      add_subdirectory("tanf")
  
-@@ -79,7 +79,7 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
+@@ -83,7 +83,7 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
      set(SRCS
        mth_yintrinsics.c
        mth_zintrinsics.c)
@@ -21,7 +21,7 @@ Index: lib/common/CMakeLists.txt
      add_subdirectory("sincosf")
      add_subdirectory("tanf")
  
-@@ -284,9 +284,9 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
+@@ -288,9 +288,9 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
    add_custom_command(OUTPUT ${TARGET_NAME}.c DEPENDS ${LIBPGMATH_TOOLS_DIR}/mth_mask.awk PRE_BUILD
      COMMAND awk -v MAX_VREG_SIZE=128 -v TARGET=X8664 -f ${LIBPGMATH_TOOLS_DIR}/mth_mask.awk > ${TARGET_NAME}.c)
    add_custom_target(${TARGET_NAME} ALL DEPENDS "${TARGET_NAME}.c")
@@ -33,7 +33,7 @@ Index: lib/common/CMakeLists.txt
      set_property(SOURCE ${TARGET_NAME}.c APPEND_STRING PROPERTY COMPILE_FLAGS "-msse2")
    endif()
    libmath_add_object_library("${TARGET_NAME}.c" "${FLAGS}" "${DEFINITIONS}" "${TARGET_NAME}_build")
-@@ -297,9 +297,9 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
+@@ -301,9 +301,9 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
    add_custom_command(OUTPUT ${TARGET_NAME}.c DEPENDS ${LIBPGMATH_TOOLS_DIR}/mth_generic_frp.awk PRE_BUILD
      COMMAND awk -v MAX_VREG_SIZE=128 -v TARGET=X8664 -f ${LIBPGMATH_TOOLS_DIR}/mth_generic_frp.awk > ${TARGET_NAME}.c)
    add_custom_target(${TARGET_NAME} ALL DEPENDS "${TARGET_NAME}.c")
@@ -45,7 +45,7 @@ Index: lib/common/CMakeLists.txt
      set_property(SOURCE ${TARGET_NAME}.c APPEND_STRING PROPERTY COMPILE_FLAGS "-msse2")
    endif()
    libmath_add_object_library("${TARGET_NAME}.c" "${FLAGS}" "${DEFINITIONS}" "${TARGET_NAME}_build")
-@@ -310,9 +310,9 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
+@@ -314,9 +314,9 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
    add_custom_command(OUTPUT ${TARGET_NAME}.c DEPENDS ${LIBPGMATH_TOOLS_DIR}/mth_mask.awk PRE_BUILD
      COMMAND awk -v MAX_VREG_SIZE=256 -v TARGET=X8664 -f ${LIBPGMATH_TOOLS_DIR}/mth_mask.awk > ${TARGET_NAME}.c)
    add_custom_target(${TARGET_NAME} ALL DEPENDS "${TARGET_NAME}.c")
@@ -57,7 +57,7 @@ Index: lib/common/CMakeLists.txt
      set_property(SOURCE ${TARGET_NAME}.c APPEND_STRING PROPERTY COMPILE_FLAGS "-mavx")
    endif()
    libmath_add_object_library("${TARGET_NAME}.c" "${FLAGS}" "${DEFINITIONS}" "${TARGET_NAME}_build")
-@@ -323,9 +323,9 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
+@@ -327,9 +327,9 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
    add_custom_command(OUTPUT ${TARGET_NAME}.c DEPENDS ${LIBPGMATH_TOOLS_DIR}/mth_generic_frp.awk PRE_BUILD
      COMMAND awk -v MAX_VREG_SIZE=256 -v TARGET=X8664 -f ${LIBPGMATH_TOOLS_DIR}/mth_generic_frp.awk > ${TARGET_NAME}.c)
    add_custom_target(${TARGET_NAME} ALL DEPENDS "${TARGET_NAME}.c")
@@ -69,7 +69,7 @@ Index: lib/common/CMakeLists.txt
      set_property(SOURCE ${TARGET_NAME}.c APPEND_STRING PROPERTY COMPILE_FLAGS "-mavx")
    endif()
    libmath_add_object_library("${TARGET_NAME}.c" "${FLAGS}" "${DEFINITIONS}" "${TARGET_NAME}_build")
-@@ -337,9 +337,9 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
+@@ -341,9 +341,9 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
      COMMAND awk -v MAX_VREG_SIZE=512 -v TARGET=X8664 -f ${LIBPGMATH_TOOLS_DIR}/mth_mask.awk > ${TARGET_NAME}.c)
    add_custom_target(${TARGET_NAME} ALL DEPENDS "${TARGET_NAME}.c")
    set_property(SOURCE ${TARGET_NAME}.c APPEND_STRING PROPERTY COMPILE_FLAGS "")
@@ -81,7 +81,7 @@ Index: lib/common/CMakeLists.txt
      set_property(SOURCE ${TARGET_NAME}.c APPEND_STRING PROPERTY COMPILE_FLAGS "-mavx512f -mfma")
    endif()
    libmath_add_object_library("${TARGET_NAME}.c" "${FLAGS}" "${DEFINITIONS}" "${TARGET_NAME}_build")
-@@ -350,9 +350,9 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
+@@ -354,9 +354,9 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
    add_custom_command(OUTPUT ${TARGET_NAME}.c DEPENDS ${LIBPGMATH_TOOLS_DIR}/mth_generic_frp.awk PRE_BUILD
      COMMAND awk -v MAX_VREG_SIZE=512 -v TARGET=X8664 -f ${LIBPGMATH_TOOLS_DIR}/mth_generic_frp.awk > ${TARGET_NAME}.c)
    add_custom_target(${TARGET_NAME} ALL DEPENDS "${TARGET_NAME}.c")
@@ -93,7 +93,7 @@ Index: lib/common/CMakeLists.txt
      set_property(SOURCE ${TARGET_NAME}.c APPEND_STRING PROPERTY COMPILE_FLAGS "-mavx512f -mfma")
    endif()
    libmath_add_object_library("${TARGET_NAME}.c" "${FLAGS}" "${DEFINITIONS}" "${TARGET_NAME}_build")
-@@ -363,9 +363,9 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
+@@ -367,9 +367,9 @@ if(${LIBPGMATH_SYSTEM_PROCESSOR} MATCHES "x86_64" AND 
    add_custom_command(OUTPUT ${TARGET_NAME}.c DEPENDS ${LIBPGMATH_TOOLS_DIR}/mth_z2yy.awk PRE_BUILD
      COMMAND awk -v MAX_VREG_SIZE=512 -v TARGET=X8664 -f ${LIBPGMATH_TOOLS_DIR}/mth_z2yy.awk > ${TARGET_NAME}.c)
    add_custom_target(${TARGET_NAME} ALL DEPENDS "${TARGET_NAME}.c")
