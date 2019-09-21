@@ -1,0 +1,25 @@
+$OpenBSD: patch-build_xml,v 1.1 2019/09/21 21:30:39 kurt Exp $
+
+Index: build.xml
+--- build.xml.orig
++++ build.xml
+@@ -4,8 +4,8 @@
+     <property environment="env"/>
+     <property name="debug" value="false"/>
+     <property name="debuglevel" value="source,lines,vars"/>
+-    <property name="target" value="1.5"/>
+-    <property name="source" value="1.5"/>
++    <property name="target" value="1.8"/>
++    <property name="source" value="1.8"/>
+     <property name="name" value="jbrickshooter"/>
+     <property name="failonviolation" value="true"/>
+ 
+@@ -58,7 +58,7 @@
+ 
+     <target name="pmd">
+         <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="lib.classpath"/>
+-        <pmd failonerror="true" failonruleviolation="${failonviolation}" targetjdk="1.5">
++        <pmd failonerror="true" failonruleviolation="${failonviolation}">
+             <ruleset>doc/pmd_rules.xml</ruleset>
+             <fileset dir="src" includes="**/*.java"/>
+             <formatter type="text" toConsole="true"/>
