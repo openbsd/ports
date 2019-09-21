@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2019/09/21 15:56:20 bcallah Exp $
 
 COMMENT=		library for reading, creating and modifying zip archives
 
-DISTNAME=		libzip-1.5.1
+DISTNAME=		libzip-1.5.2
 CATEGORIES=		archivers
 SHARED_LIBS +=  zip                  3.0      # 5.0
 
@@ -19,5 +19,9 @@ MASTER_SITES=		https://libzip.org/download/
 MODULES =		devel/cmake
 
 LIB_DEPENDS =		archivers/bzip2
+
+CONFIGURE_ARGS =	-DENABLE_COMMONCRYPTO=OFF \
+			-DENABLE_GNUTLS=OFF \
+			-DENABLE_MBEDTLS=OFF
 
 .include <bsd.port.mk>
