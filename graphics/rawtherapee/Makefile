@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:47:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2019/09/21 09:35:09 kirby Exp $
 
 # http://rawpedia.rawtherapee.com/The_Floating_Point_Engine
 ONLY_FOR_ARCHS = 	amd64
 
 COMMENT =		RAW image processing application
 
-DISTNAME =		rawtherapee-5.6
+DISTNAME =		rawtherapee-5.7
 
 CATEGORIES =		graphics
 
@@ -21,11 +21,12 @@ WANTLIB += canberra canberra-gtk3 expat fftw3f gdk-3 gdk_pixbuf-2.0
 WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 gtkmm-3.0 intl iptcdata jpeg lcms2
 WANTLIB += lensfun m pango-1.0 pangocairo-1.0 pangomm-1.4 png pthread
-WANTLIB += sigc-2.0 tiff z ${COMPILER_LIBCXX}
+WANTLIB += rsvg-2 sigc-2.0 tiff z ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+# c++11
+COMPILER =		base-clang ports-gcc
 
-MASTER_SITES =		http://www.rawtherapee.com/shared/source/
+MASTER_SITES =		https://www.rawtherapee.com/shared/source/
 EXTRACT_SUFX = 		.tar.xz
 
 MODULES =		devel/cmake
