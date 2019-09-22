@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/10/21 13:29:48 edd Exp $
+@comment $OpenBSD: PLIST,v 1.13 2019/09/22 11:37:04 edd Exp $
 bin/pypy
 lib/libpypy-c.so
 pypy/
@@ -49,6 +49,7 @@ pypy/include/intobject.h
 pypy/include/listobject.h
 pypy/include/longintrepr.h
 pypy/include/longobject.h
+pypy/include/marshal.h
 pypy/include/memoryobject.h
 pypy/include/methodobject.h
 pypy/include/missing.h
@@ -64,6 +65,7 @@ pypy/include/pymem.h
 pypy/include/pyport.h
 pypy/include/pypy_decl.h
 pypy/include/pypy_macros.h
+pypy/include/pypy_marshal_decl.h
 pypy/include/pypy_numpy.h
 pypy/include/pypy_structmember_decl.h
 pypy/include/pysignals.h
@@ -3053,8 +3055,6 @@ pypy/lib_pypy/_codecs_tw.py
 pypy/lib_pypy/_codecs_tw.pyc
 pypy/lib_pypy/_collections.py
 pypy/lib_pypy/_collections.pyc
-pypy/lib_pypy/_csv.py
-pypy/lib_pypy/_csv.pyc
 pypy/lib_pypy/_ctypes/
 pypy/lib_pypy/_ctypes/__init__.py
 pypy/lib_pypy/_ctypes/__init__.pyc
@@ -3235,6 +3235,8 @@ pypy/lib_pypy/cffi/lock.pyc
 pypy/lib_pypy/cffi/model.py
 pypy/lib_pypy/cffi/model.pyc
 pypy/lib_pypy/cffi/parse_c_type.h
+pypy/lib_pypy/cffi/pkgconfig.py
+pypy/lib_pypy/cffi/pkgconfig.pyc
 pypy/lib_pypy/cffi/recompiler.py
 pypy/lib_pypy/cffi/recompiler.pyc
 pypy/lib_pypy/cffi/setuptools_ext.py
@@ -3273,8 +3275,6 @@ pypy/lib_pypy/marshal.py
 pypy/lib_pypy/marshal.pyc
 pypy/lib_pypy/msvcrt.py
 pypy/lib_pypy/msvcrt.pyc
-pypy/lib_pypy/pwd.py
-pypy/lib_pypy/pwd.pyc
 pypy/lib_pypy/pyrepl/
 pypy/lib_pypy/pyrepl/__init__.py
 pypy/lib_pypy/pyrepl/__init__.pyc

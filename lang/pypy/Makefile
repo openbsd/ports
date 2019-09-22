@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:47:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2019/09/22 11:37:04 edd Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -11,16 +11,18 @@ COMMENT =		fast implementation of the Python language
 #   * make plist (fix anything along the way)
 #   * make package
 #   * Set BOOTSTRAP_V back to ${V} in the port Makefile
-#   * make bootstrap && make makesum
-#   * Try the build using the bootstrap
+#   * make bootstrap && make makesum (which will put a new PyPy bootstrap
+#     into ${FULLDISTDIR} such that subsequent builds will use it)
+#   * make clean && make clean=packages
+#   * make package (using the new bootstrap build)
 #
 # If the old bootstrap no longer works (e.g. due to an ABI change), then
 # You can use the no_bootstrap FLAVOR to make a new bootstrap. This uses
 # CPython to build PyPy instead. Note this is slower.
 
-V =			6.0.0
+V =			7.1.1
 BOOTSTRAP_V =		${V}
-DISTNAME =		pypy2-v${V}-src
+DISTNAME =		pypy2.7-v${V}-src
 PKGNAME =		pypy-${V}
 BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
 
