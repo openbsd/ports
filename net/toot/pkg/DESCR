@@ -1,3 +1,5 @@
-toot lets you read, post and manage accounts on Mastadon social networks. It
-supports logging in through both your webbrowser and the console with optional
-two factor authentication. Toots can be pasted directly via standard input.
+Toot is a CLI and TUI (curses-based Terminal User Interface) tool for
+interacting with Mastodon instances from the command line.
+It supports posting/replying/deleting statuses, media/spoiler/sensitive
+content uploads, search by account or hashtag, following/muting/blocking
+accounts.
