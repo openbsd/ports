@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2018/09/23 18:39:34 thfr Exp $
+$OpenBSD: README,v 1.2 2019/09/22 14:46:55 thfr Exp $
 
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -34,4 +34,4 @@ Some games known to work
 - Skulls of the Shogun
 - Stardew Valley
 
-More up-to-date information can be found (soon) at https://www.PlayOnBSD.com/.
+More information can be found in the accompanying man page.
