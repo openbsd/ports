@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2019/07/12 04:42:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.44 2019/09/22 19:34:56 rsadowski Exp $
 
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
@@ -6,7 +6,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		2.5
+V=		2.6
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -53,6 +53,8 @@ LIB_DEPENDS=	devel/gettext,-runtime \
 		security/gnutls \
 		net/curl \
 		textproc/aspell/core
+
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS}
 RUN_DEPENDS-lua=	net/weechat,-main ${MODLUA_RUN_DEPENDS}
