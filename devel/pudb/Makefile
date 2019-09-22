@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:45:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2019/09/22 15:35:16 kmos Exp $
 
 COMMENT =		console-based visual debugger for Python
 
@@ -15,9 +15,11 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/py-urwid${MODPY_FLAVOR}>=1.1.1 \
 			textproc/py-pygments${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test-mock${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
