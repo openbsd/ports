@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.56 2019/09/05 16:23:49 jsing Exp $
+#	$OpenBSD: Makefile,v 1.57 2019/09/22 05:28:20 jsg Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -7,12 +7,12 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2019.07
-REVISION=	1
+REVISION=	2
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
 CATEGORIES=	sysutils
-HOMEPAGE=	http://www.denx.de/wiki/U-Boot
+HOMEPAGE=	https://www.denx.de/wiki/U-Boot
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # GPLv2
@@ -28,6 +28,7 @@ BUILD_DEPENDS=	devel/bison \
 		textproc/gsed
 
 MODULES=	lang/python
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP=	No
 
 MODPY_ADJ_FILES=\
@@ -38,7 +39,7 @@ MAKE_ENV=	KBUILD_VERBOSE=1 \
 
 .if "${FLAVOR}" == "aarch64"
 BUILD_DEPENDS+=	devel/arm-none-eabi/gcc-linaro,aarch64 \
-		devel/py-elftools \
+		devel/py-elftools,python3 \
 		sysutils/arm-trusted-firmware
 MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-"
 RK3399_BL31=	"${LOCALBASE}/share/arm-trusted-firmware/rk3399-bl31.elf"
@@ -143,11 +144,6 @@ FILES=\
 	u-boot.itb \
 	idbloader.img \
 	spl/sunxi-spl.bin \
-
-pre-build:
-.for f in ${MODPY_ADJ_FILES}
-	${MODPY_BIN_ADJ} ${WRKSRC}/${f}
-.endfor
 
 do-build:
 .for BOARD in ${BOARDS}
