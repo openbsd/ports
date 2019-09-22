@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.193 2019/09/08 10:08:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.194 2019/09/22 08:47:28 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		4.2.1
 DISTNAME=	ffmpeg-${V}
+REVISION=	0
 EPOCH=		0
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -26,7 +27,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1 and GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB+=	SDL2 X11 Xext Xv ass bz2 c crypto dav1d fontconfig
+WANTLIB+=	SDL2 X11 Xext Xv aom ass bz2 c crypto dav1d fontconfig
 WANTLIB+=	freetype fribidi gsm iconv lzma m mp3lame ogg opus
 WANTLIB+=	pthread sndio speex ssl theoradec theoraenc v4l2
 WANTLIB+=	vorbis vorbisenc vpx x264 x265 xcb xcb-shape xcb-shm
@@ -49,6 +50,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		audio/gsm \
 		converters/libiconv \
 		devel/sdl2 \
+		multimedia/aom \
 		multimedia/dav1d \
 		multimedia/libass \
 		multimedia/libtheora \
@@ -60,7 +62,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		textproc/libxml
 
 # inter-library dependencies for the current configuration
-LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -ldav1d -lgsm -liconv -llzma -lmp3lame -lopus -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lx265 -lxvidcore -lm -lz -pthread
+LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -laom -ldav1d -lgsm -liconv -llzma -lmp3lame -lopus -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lx265 -lxvidcore -lm -lz -pthread
 LIBavdevice_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 -lXext -lXv -lxcb-shape -lxcb-shm -lxcb-xfixes -lxcb -lsndio -lv4l2 -lm
 LIBavfilter_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lass -lfontconfig -lfreetype -lfribidi -lm -lz -pthread
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lxml2 -lssl -lcrypto -lm -lz
@@ -100,6 +102,7 @@ CONFIGURE_ARGS+=--enable-shared \
 		--enable-fontconfig \
 		--enable-frei0r \
 		--enable-gpl \
+		--enable-libaom \
 		--enable-libass \
 		--enable-libdav1d \
 		--enable-libfreetype \
