@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.9 2019/04/15 20:44:16 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.10 2019/09/22 13:13:48 sthen Exp $
 
 Avoid the broken libwsutil.so that gets generated with -pie -shared
 (probably following tools/clang/lib/Driver/Tools.cpp r1.13 "push back
@@ -7,7 +7,7 @@ Avoid the broken libwsutil.so that gets generated with -pie -shared
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -923,11 +923,6 @@ if(NOT CMAKE_C_COMPILER_ID MATCHES "MSVC" AND NOT OSS_
+@@ -924,11 +924,6 @@ if(NOT CMAKE_C_COMPILER_ID MATCHES "MSVC" AND NOT OSS_
  	if(CMAKE_VERSION VERSION_GREATER "3.13.999")
  		include(CheckPIESupported)
  		check_pie_supported()

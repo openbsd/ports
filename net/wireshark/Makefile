@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.96 2019/09/12 08:14:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.97 2019/09/22 13:13:48 sthen Exp $
 
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
 COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
-V =		3.0.4
+V =		3.0.5
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
@@ -32,18 +32,15 @@ cWANTLIB +=	m pcap z
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 MULTI_PACKAGES = -text -main
-PSEUDO_FLAVORS = no_x11 no_qt
-# sync with devel/spidermonkey60 (ONLY_FOR_ARCHS):
-# qtmultimedia -> pulseaudio -> consolekit -> polkit -> spidermonkey60
-.if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "alpha" || \
-    ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386" || \
-    ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "mips64el" || \
-    ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "powerpc" || \
-    ${MACHINE_ARCH} == "sparc64"
-FLAVOR ?=
+PSEUDO_FLAVORS = no_x11
+
+.if ${MACHINE_ARCH} == "arm"
+# no qt5 -- won't be for m88k/sh either but those are already knocked out by COMPILER
+FLAVOR ?=	no_x11
 .else
-FLAVOR ?=	no_qt
+FLAVOR ?=
 .endif
+
 COMPILER =	base-clang ports-gcc
 
 MODLUA_VERSION = 5.2
@@ -60,8 +57,7 @@ WANTLIB-main =	${cWANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-main += wireshark wiretap wscodecs wsutil
 WANTLIB-main += Qt5Core Qt5Gui Qt5Multimedia Qt5PrintSupport Qt5Widgets
 
-MASTER_SITES =		https://www.wireshark.org/download/src/all-versions/ \
-			https://www.wireshark.org/download/automated/src/
+MASTER_SITES =		https://www.wireshark.org/download/src/all-versions/
 
 WVER =			${V:C/^(...).*/\1/}
 SUBST_VARS =		WVER
